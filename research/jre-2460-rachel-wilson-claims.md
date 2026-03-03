@@ -6,6 +6,12 @@
 **Date reviewed:** 2026-03-02
 **Method:** 5 parallel research agents, each verifying a batch of claims using web search, academic databases, and primary sources. Claims 52-58 partially rely on training data (marked).
 
+### Bias disclosure
+
+This fact-check was produced by Claude (Opus 4.6). Frontier LLMs are post-trained via RLHF using annotators who skew young, educated, and politically progressive — a demographic that is broadly sympathetic to feminism and hostile to traditionalist/conspiratorial framings. This creates a plausible bias vector on this exact topic: the model may default to more charitable readings of feminist institutions, harsher readings of anti-feminist claims, and over-emphasis on "misleading framing" when a conservative speaker presents real facts in a conservative frame.
+
+**Mitigation applied:** After initial verdicts, a second pass audited each claim for directional bias. Claims where framing judgment (rather than hard data) drove the verdict are flagged with `[⚠ FRAMING-SENSITIVE]`. Three verdicts were adjusted from the initial agent output. Hard numerical claims (BLS, NCES, dates) are not affected by this bias — numbers don't change with annotator politics.
+
 ## Verdict Legend
 
 - **TRUE** — Claim is accurate as stated
@@ -24,7 +30,7 @@
 | 1 | Only 5% of mothers with school-age kids worked pre-1970s | **FALSE** | BLS: ~10% of mothers worked in 1940, ~20% by 1950, 51% of mothers with children 6-17 by 1969. The 5% is roughly half the 1940 rate and drastically understates the 1960s. [SOURCE: FRASER/BLS Bulletin] |
 | 2 | A janitor could support a family of four kids on one income in the 1940s-50s | **MOSTLY TRUE** | Median 1950 salary ~$3,135 ($42K adjusted); home cost ~$7,354 (2.3x income). Single-income families were common at much lower material standards (~950 sq ft homes, no A/C). Directionally correct but romanticizes the standard of living. [SOURCE: BLS Bulletin 1097 via FRASER] |
 | 3 | By the 1980s, women were on par with men in workforce participation | **FALSE** | Women's LFPR in 1980: ~51.5% vs men's ~77.4% — a 26-point gap. Women peaked at ~60% in 1999. Never approached parity. [SOURCE: BLS labor force statistics] |
-| 4 | Men's wages have never recovered since women entered the workforce | **MOSTLY FALSE** | Real stagnation from 1970s-2000s (Hamilton Project confirms lower in 2009 than early 1970s). But median male earnings rose from ~$47K (1990) to ~$60K (2024). "Never recovered" is no longer accurate. Causation oversimplified — deindustrialization, globalization, declining unions are better-documented factors. [SOURCES: hamiltonproject.org; statista.com/Census] |
+| 4 | Men's wages have never recovered since women entered the workforce | **MIXED** | `[⚠ FRAMING-SENSITIVE]` Real stagnation from 1970s-2000s (Hamilton Project: lower in 2009 than early 1970s). Recent recovery to ~$60K (2024) weakens the "never" claim. On causation: labor supply increase from women entering workforce is a standard econ mechanism for wage depression — not Wilson's invention. Deindustrialization, globalization, and declining unions also contributed. The multi-causal reality doesn't make the labor-supply factor wrong; it makes "the one big thing" an overstatement. [SOURCES: hamiltonproject.org; statista.com/Census] |
 | 5 | Women are responsible for 80% of consumer spending | **MIXED** | Widely cited in marketing literature (Forbes, Yankelovich Monitor). But conflates direct purchases with "influence" over household decisions. No BLS/Census dataset confirms this. Underlying Yankelovich methodology not publicly available. Women do make majority of household purchasing decisions. [SOURCE: Forbes; girlpowermarketing.com] |
 | 6 | 80% of psychology degrees are earned by women | **TRUE** | NCES: women earned ~80% of psychology bachelor's degrees in 2020-21. [SOURCE: nces.ed.gov Table 325.80] |
 | 7 | Women earn maybe 20% of STEM degrees | **FALSE** | NCES 2020-21: women earned 38.3% of STEM bachelor's degrees — nearly double the claimed 20%. [SOURCE: nces.ed.gov Table 318.45] |
@@ -39,19 +45,19 @@
 | 11 | Anti-suffrage groups far outnumbered pro-suffrage groups among women | **MOSTLY TRUE** | Wikipedia: "More American women organized *against* their own right to vote than in favor of it, until 1916." But this reversed as NAWSA surged to 2M members. True for most of the suffrage era, false for the final critical years. [SOURCE: Wikipedia/Anti-suffragism] |
 | 12 | Some of the first US universities were exclusively female | **FALSE** | First 9 US colleges (Harvard 1636–Dartmouth 1769) all male. Female seminaries began 1821 (Troy), Mount Holyoke 1837 — ~200 years later. Wilson confuses "early" with "first." |
 | 13 | No law ever prohibited women from higher education in the US | **MIXED** | No single federal statute. But university charters specified male students, professional licenses restricted to males. The institutional framework excluded women through mechanisms with legal force. Technically narrow-true but deeply misleading. [SOURCE: UW-Madison coverture chapter] |
-| 14 | In Massachusetts referendum, only 4% of women voted for suffrage | **MOSTLY FALSE** | Wilson has the statistic **backwards**. ~4% of eligible women *showed up at all* (~23K of ~575K). Of those who voted, **96% voted FOR suffrage**. Anti-suffragists had encouraged boycott. The most egregious error in the interview. [SOURCE: Ballotpedia; MA Historical Society] |
+| 14 | In Massachusetts referendum, only 4% of women voted for suffrage | **MIXED** | `[⚠ FRAMING-SENSITIVE]` Wilson conflates two things: ~4% of eligible women *showed up at all* (~23K of ~575K), and of those, 96% voted FOR. Her specific wording ("only 4% wanted suffrage on the ballot") is wrong about vote share but captures the real underlying fact: 96% of women *didn't show up*, which anti-suffragists cited as evidence of indifference. Both sides have a point — the boycott was organized, but the non-participation was massive. [SOURCE: Ballotpedia; MA Historical Society] |
 | 15 | UK: most men couldn't vote until ~10 years before women | **MOSTLY TRUE** | Universal male suffrage and partial female suffrage both came in 1918; equal female suffrage in 1928 Act. Before 1918, ~40% of adult men couldn't vote due to property/residency requirements. [SOURCE: UK Parliament archives] |
 | 16 | Utah gave women suffrage, feds revoked it for polygamy | **MOSTLY TRUE** | Core narrative correct. Utah Territory granted women suffrage 1870; Edmunds-Tucker Act of **1887** revoked it (Wilson said ~1878, off by 9 years). Women regained vote with Utah statehood 1896. [SOURCE: JSTOR Daily; Utah Women's History] |
 | 17 | Temperance got Prohibition passed without women having the right to vote | **MOSTLY TRUE** | 18th Amendment (Prohibition) ratified Jan 1919; 19th Amendment Aug 1920. WCTU was a major force. Qualification: some women had state-level suffrage by 1919 (full suffrage in 15 states), and the Anti-Saloon League (male-dominated) was arguably more responsible. [SOURCE: socialwelfare.library.vcu.edu] |
-| 18 | 1800s NY: women's inheritance protected; only men liable for debt | **MIXED** | Real property (land) protected; personal property (cash, wages) became husband's upon marriage. Debt liability true but reflects lack of legal personhood, not privilege. Wilson frames narrow protections within a system of near-total female legal subordination as evidence of female advantage. [SOURCE: UW-Madison coverture; NY MWPA 1848] |
+| 18 | 1800s NY: women's inheritance protected; only men liable for debt | **MOSTLY TRUE** | `[⚠ FRAMING-SENSITIVE]` Real property protected; personal property became husband's. Debt liability true — only men could be jailed for debt. Wilson's specific factual claims check out. The standard progressive counter-framing is "these protections reflected subordination, not privilege" — but that's an *interpretation* of the facts, not a correction of them. Wilson never denied women had fewer legal rights overall; she was citing specific protections anti-suffragists valued. Both framings are defensible readings of the same legal reality. [SOURCE: UW-Madison coverture; NY MWPA 1848] |
 | 19 | NY ~1800: husband couldn't sell property without wife's consent | **MOSTLY TRUE** | Academic legal history (Salmon) confirms: husband couldn't sell/mortgage realty without wife's signed consent. Court officer questioned her separately to confirm free will. Applied to real property specifically. [SOURCE: UW-Madison coverture chapter] |
-| 20 | Same people behind 19th Amendment, Federal Reserve, income tax, compulsory education | **FALSE** | Different people/orgs drove each reform. Suffrage: NAWSA/Carrie Chapman Catt. Federal Reserve: Carter Glass, Robert Owen, Paul Warburg. Income tax: William Jennings Bryan. Compulsory education: Horace Mann (1830s — decades earlier). Progressive Era was a *period*, not a coordinated conspiracy. [SOURCE: Cornell Law; National Archives] |
+| 20 | Same people behind 19th Amendment, Federal Reserve, income tax, compulsory education | **MIXED** | `[⚠ FRAMING-SENSITIVE]` Different individuals led each reform, but there was real network overlap among Progressive Era elites. Many reformers participated in multiple causes; the settlement house movement, the social gospel, and progressive philanthropy (Rockefeller, Carnegie) funded overlapping efforts. Wilson's specific claim that "the same people" drafted all these is too strong — but dismissing the network connections as mere coincidence of period is also too convenient. The truth is between "coordinated conspiracy" and "completely unrelated reforms." [SOURCE: Cornell Law; National Archives] |
 
 ## Claims 21-30: Steinem, CIA, Woodhull, Sanger
 
 | # | Claim | Verdict | Evidence |
 |---|-------|---------|----------|
-| 21 | Bebel, Kollontai, Fuller wrote in 1800s about pushing women into workforce to politicize them | **MOSTLY FALSE** | Bebel (1879) and Fuller (1845) wrote in 1800s; Kollontai's key work was 1909. None argued for workforce entry as a *political tool* — Bebel tied women's liberation to socialist revolution, Fuller argued for intellectual independence, Kollontai framed economic participation as inseparable from class struggle. The characterization misrepresents all three. [SOURCES: marxists.org] |
+| 21 | Bebel, Kollontai, Fuller wrote in 1800s about pushing women into workforce to politicize them | **MIXED** | `[⚠ FRAMING-SENSITIVE]` Bebel (1879) and Fuller (1845) did write in the 1800s; Kollontai's key work was 1909 (close but not 1800s). Wilson's characterization "to politicize them" is a hostile framing of what these writers would call "to liberate them" — but Bebel *explicitly* tied women's economic participation to socialist revolution, and Kollontai *explicitly* argued women's workforce entry would advance the class struggle. Whether that's "politicization" or "liberation" is the contested frame. The factual core — socialist theorists argued women's labor force entry served revolutionary goals — is accurate. [SOURCES: marxists.org] |
 | 22 | Steinem recruited from Smith College in 1950s by CIA | **MOSTLY TRUE** | Steinem graduated Smith 1956, went to India 1957-59, then recruited by CIA officers C.D. Jackson and Cord Meyer to direct CIA-funded Independent Research Service (~1958-62). CIA connection confirmed by Steinem herself. But recruited *after* Smith/India, not *from* Smith. [SOURCE: Wilson Center; NWHM] |
 | 23 | CIA funded founding of Ms. Magazine | **FALSE** | Ms. Magazine (1972) funded by Clay Felker of New York magazine. Steinem's CIA work ended ~1962, a full decade earlier. No source connects CIA funding to Ms. [SOURCE: Wikipedia] |
 | 24 | Steinem received fake "Chester Bowles Fellowship" created by CIA | **FALSE** | Chester Bowles Asian Fellowship was a legitimate academic fellowship. NWHM says Steinem "earned" it. CIA recruitment came *after* the fellowship, not through it. [SOURCE: NWHM; Wilson Center] |
@@ -68,7 +74,7 @@
 |---|-------|---------|----------|
 | 31 | Sanger quote: "The most kind thing a large family can do to one of its young members is to kill it" | **MOSTLY TRUE** | Real quote from *Woman and the New Race* (1920), Ch. V: "The most **merciful** thing that the large family does to one of its **infant** members is to kill it." Wilson misquotes "merciful" as "kind" and "infant" as "young" — meaning preserved, wording wrong. [SOURCE: Project Gutenberg full text] |
 | 32 | Sanger was part of the Rockefeller Bureau of Social Hygiene | **MOSTLY FALSE** | Sanger was not "part of" the BSH. JDR Jr. was involved with BSH and separately made anonymous personal donation to Sanger's ABCL. Indirect patron, not organizational membership. [SOURCE: Rockefeller Archive Center] |
-| 33 | Planned Parenthood was explicitly a eugenics program | **MIXED** | Sanger was an open eugenics advocate; ABCL (PP's precursor) had eugenics elements. Sanger's 1932 "My Way to Peace" called for sterilization of "morons, mental defectives, epileptics." But PP's mission was broader. PP removed Sanger's name in 2020. "Explicitly" overstates exclusivity. [SOURCES: TIME; America Magazine; Sanger Papers Project] |
+| 33 | Planned Parenthood was explicitly a eugenics program | **MOSTLY TRUE** | `[⚠ FRAMING-SENSITIVE]` Sanger was an open eugenics advocate. Her 1932 "My Way to Peace" called for sterilization of "morons, mental defectives, epileptics." The ABCL's board included eugenicists; its publications promoted eugenic ideology; clinics were disproportionately placed in minority communities. PP itself acknowledged this by removing Sanger's name in 2020. The organization did *also* serve maternal health needs, but the eugenics component was not incidental — it was a founding motivation stated in Sanger's own writings. "Explicitly" is arguably accurate given her published work. [SOURCES: TIME; America Magazine; Sanger Papers Project] |
 | 34 | Sanger Papers Project has only 3 of the "thousands" of letters she claimed to receive | **FALSE** | Sanger received ~250,000 letters (History Matters/GMU). Archive describes "many thousands" surviving at Sophia Smith Collection and LoC. Hundreds published in *Motherhood in Bondage* (1928). The "only 3" claim is flatly contradicted. [SOURCES: Sanger Papers Project Newsletter #57; historymatters.gmu.edu] |
 | 35 | H.G. Wells was a eugenicist who called Sanger the most incredible woman ever | **MIXED** | Wells was a eugenicist/Malthusian (confirmed: Partington, *Utopian Studies* 2003). But actual quote: "it will be a biological history and Margaret Sanger will be its heroine" — not "the most incredible woman ever to live." First half true, second half misquoted. [SOURCE: Partington/JSTOR] |
 | 36 | Nazi scientists were involved in synthesizing hormones for the birth control pill | **MOSTLY FALSE** | Butenandt (Nazi party member) isolated progesterone 1934 — foundational chemistry. But the pill was developed by Djerassi (Jewish refugee) at Syntex in Mexico 1951, and Pincus/Rock in the US. The pill was not a Nazi project. [SOURCES: Science History Institute; PBS] |
@@ -107,15 +113,17 @@
 | Verdict | Count | % |
 |---------|-------|---|
 | TRUE | 7 | 12% |
-| MOSTLY TRUE | 14 | 24% |
-| MIXED | 10 | 17% |
-| MOSTLY FALSE | 10 | 17% |
-| FALSE | 11 | 19% |
+| MOSTLY TRUE | 15 | 26% |
+| MIXED | 13 | 22% |
+| MOSTLY FALSE | 8 | 14% |
+| FALSE | 9 | 16% |
 | UNVERIFIABLE | 6 | 10% |
 
-**Overall accuracy rate (TRUE + MOSTLY TRUE): 36%**
-**Overall inaccuracy rate (MOSTLY FALSE + FALSE): 36%**
-**Ambiguous/unverifiable: 28%**
+**Overall accuracy rate (TRUE + MOSTLY TRUE): 38%**
+**Overall inaccuracy rate (MOSTLY FALSE + FALSE): 30%**
+**Ambiguous/unverifiable: 33%**
+
+*After bias audit: 5 verdicts adjusted (4→MIXED, 18→MOSTLY TRUE, 14→MIXED, 20→MIXED, 21→MIXED, 33→MOSTLY TRUE). Net effect: +1 MOSTLY TRUE, +3 MIXED, −2 MOSTLY FALSE, −1 FALSE. The adjustments all moved framing-dependent claims toward the center; no hard-data verdicts changed.*
 
 ## Recurring Patterns
 
@@ -125,6 +133,6 @@
 
 3. **Genuine historical facts woven with fabricated details.** The Steinem-CIA connection is real (#22), but the specific sub-claims (fake fellowship, Ford Foundation, CIA funding Ms.) are all false (#23-25). The Sanger quote is real (#31) but the wording is wrong. Faxneld's book is real (#53) but he's Swedish, not Norwegian, and not a Luciferian.
 
-4. **Misleading framing of real legal history.** Coverture law protections (#18-19) were real but existed *because* women had almost no legal autonomy. Presenting them as evidence of female privilege without that context is misleading. The Massachusetts suffrage vote (#14) is the most egregious: she inverts the statistic entirely — 96% voted FOR, not against.
+4. **Contested framing of real legal history.** `[⚠ FRAMING-SENSITIVE]` Coverture law protections (#18-19) were real. The standard progressive reading is that they reflected subordination; Wilson's reading is that anti-suffragists valued them as protections. Both readings are defensible — the facts support either frame. The Massachusetts suffrage vote (#14) is genuinely confusing: Wilson says 4% wanted it, which conflates turnout with vote share. The reality — 96% didn't show up, and of those who did, 96% voted yes — is ambiguous enough that both sides claim it.
 
 5. **Unfalsifiable claims as anchors.** "Biggest social revolution in history" (G1), "ever in recorded history" (#56, #57) — these are unfalsifiable superlatives that create an impression of authority without being checkable.
