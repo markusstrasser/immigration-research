@@ -1,0 +1,12 @@
+# Claude Code
+.claude/plans/
+.claude/current-session-id
+.mcp.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store

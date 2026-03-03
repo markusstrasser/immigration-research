@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "WebSearch",
+      "WebFetch",
+      "mcp__exa__web_search_exa",
+      "mcp__exa__crawling_exa",
+      "mcp__research__search_papers",
+      "mcp__research__save_paper",
+      "mcp__research__fetch_paper",
+      "mcp__research__read_paper",
+      "mcp__research__ask_papers",
+      "mcp__research__save_source",
+      "Agent"
+    ]
+  }
+}
