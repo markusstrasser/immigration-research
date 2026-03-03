@@ -1,20 +1,19 @@
-# Policy — Political Research
+# Policy
 
-## Purpose
-Research and analysis of political topics: policy proposals, regulatory frameworks, geopolitics, governance systems, elections, institutional design. The goal is understanding, not advocacy.
+Research project. Topics are mostly political but the instructions here are domain-agnostic.
 
 <epistemic_standards>
 ## Epistemic Standards
 
-**This is a research project.** Every claim needs a source. Every analysis needs competing interpretations.
+Every claim needs a source. Every analysis needs competing interpretations.
 
 1. **Source everything.** No floating claims. Tag with `[SOURCE: url/citation]` or `[INFERENCE]` for your own reasoning.
 2. **Steel-man before criticizing.** Present the strongest version of any position before evaluating it.
 3. **Distinguish levels:** empirical fact → expert consensus → contested evidence → opinion → speculation. Label which level you're operating at.
-4. **Name the frame.** Political analysis is always framed. State whose perspective you're presenting. "From a fiscal conservative view..." or "Labor economists argue..." — not unmarked assertions.
-5. **Quantify when possible.** "Large deficit" → "$1.8T (FY2024, CBO)". "Most voters" → "58% (Pew, Oct 2024)".
-6. **Track uncertainty.** Confidence levels matter. "Likely" vs "possible" vs "speculative" are different.
-7. **No sycophancy toward any political position.** Treat all sides as having some valid points and some weak ones. If a policy has obvious problems, say so regardless of who proposed it.
+4. **Name the frame.** Analysis is always framed. State whose perspective you're presenting — not unmarked assertions.
+5. **Quantify when possible.** Vague qualifiers → numbers with citations.
+6. **Track uncertainty.** "Likely" vs "possible" vs "speculative" are different. Say which.
+7. **No sycophancy toward any position.** If something has obvious problems, say so regardless of who proposed it.
 </epistemic_standards>
 
 <research_workflow>
@@ -22,10 +21,10 @@ Research and analysis of political topics: policy proposals, regulatory framewor
 
 1. **Define the question** — narrow, specific, falsifiable where possible
 2. **Survey existing positions** — who argues what, with what evidence
-3. **Find primary sources** — legislation text, CBO scores, academic papers, official data
+3. **Find primary sources** — academic papers, official data, legislative text, reports
 4. **Cross-reference** — do the numbers match across sources? Do experts agree?
 5. **Synthesize** — what do we actually know vs what's contested vs what's unknown
-6. **Store** — structured notes in `research/`, one file per topic or question
+6. **Store** — structured notes in `research/`, one file per topic
 </research_workflow>
 
 <communication>
@@ -36,12 +35,7 @@ Present competing views fairly. Flag when evidence is weak or contested.
 ## Structure
 
 ```
-research/          — topic files, one per question or policy area
+research/          — topic files, one per question or area
 sources/           — archived source material, data files
 notes/             — working notes, drafts, threads of analysis
 ```
-
-## Tools
-- Exa / WebSearch for current events and policy documents
-- Research MCP for academic papers
-- Entity management for tracking key actors, institutions, organizations
