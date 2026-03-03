@@ -29,16 +29,16 @@
 | 18 | In 1800s New York, women's inheritance was protected in marriage; only men could be held liable for debt | Historical/Legal | Wilson | MIXED — real property protected, personal property not; debt liability true but reflects lack of legal personhood |
 | 19 | A married man in the state of New York in 1800 couldn't sell marital property without wife's written consent and court approval | Historical/Legal | Wilson | MOSTLY TRUE — applied to real property; wife examined separately by court officer |
 | 20 | The same people who pushed the 19th Amendment also drafted Federal Reserve legislation, income tax, and compulsory education | Historical/Conspiracy | Wilson | FALSE — different people/orgs drove each reform; Progressive Era ≠ conspiracy |
-| 21 | August Bebel, Alexandra Kollontai, and Margaret Fuller wrote in the 1800s about pushing women into the workforce to politicize them | Historical/Ideological | Wilson | PENDING |
-| 22 | Gloria Steinem was recruited from Smith College in the 1950s by the CIA | Historical/Intelligence | Wilson | PENDING |
-| 23 | The CIA funded the founding of Ms. Magazine | Historical/Intelligence | Wilson | PENDING |
-| 24 | Gloria Steinem received a fake "Chester Bowles Fellowship" created by the CIA | Historical/Intelligence | Wilson | PENDING |
-| 25 | Gloria Steinem worked for the Ford Foundation in India | Historical | Wilson | PENDING |
-| 26 | Gloria Steinem was undercover as a Playboy Bunny | Historical | Wilson | PENDING |
-| 27 | Victoria Woodhull sold fake cancer cures and was wanted in multiple states | Historical | Wilson | PENDING |
-| 28 | Victoria Woodhull ran a prostitution ring providing insider trading information to Cornelius Vanderbilt | Historical | Wilson | PENDING |
-| 29 | Cornelius Vanderbilt made the equivalent of $26 million (1.3M in 1869 dollars) on the first Black Friday using tips from Woodhull | Historical/Financial | Wilson | PENDING |
-| 30 | Margaret Sanger's mother died of tuberculosis, not from "overbreeding" as Sanger claimed | Historical/Biographical | Wilson | PENDING |
+| 21 | August Bebel, Alexandra Kollontai, and Margaret Fuller wrote in the 1800s about pushing women into the workforce to politicize them | Historical/Ideological | Wilson | MOSTLY FALSE — all three wrote about women's rights, but Kollontai's key work was 1909; none argued for workforce entry as political tool; framing misrepresents their actual arguments |
+| 22 | Gloria Steinem was recruited from Smith College in the 1950s by the CIA | Historical/Intelligence | Wilson | MOSTLY TRUE — CIA recruited Steinem after Smith/India (not from Smith); she directed CIA-funded Independent Research Service ~1958-62 |
+| 23 | The CIA funded the founding of Ms. Magazine | Historical/Intelligence | Wilson | FALSE — Ms. (1972) was funded by Clay Felker; Steinem's CIA work ended ~1962, a decade earlier; no source connects CIA to Ms. |
+| 24 | Gloria Steinem received a fake "Chester Bowles Fellowship" created by the CIA | Historical/Intelligence | Wilson | FALSE — Chester Bowles Asian Fellowship was a legitimate academic fellowship; CIA recruitment came after, not through it |
+| 25 | Gloria Steinem worked for the Ford Foundation in India | Historical | Wilson | FALSE — Steinem was in India on the Chester Bowles Asian Fellowship (1957-59), not for the Ford Foundation |
+| 26 | Gloria Steinem was undercover as a Playboy Bunny | Historical | Wilson | MOSTLY TRUE — Steinem worked undercover as a Bunny in 1963 for investigative journalism (Show magazine), not intelligence work |
+| 27 | Victoria Woodhull sold fake cancer cures and was wanted in multiple states | Historical | Wilson | MOSTLY FALSE — cancer cure fraud was run by father Buck Claflin and sister Tennessee, not Victoria; Tennessee faced indictment |
+| 28 | Victoria Woodhull ran a prostitution ring providing insider trading information to Cornelius Vanderbilt | Historical | Wilson | MOSTLY FALSE — biographers note sex work under "free love" banner, but stock tips came via friend Josie Mansfield (Fisk's mistress); not an organized "ring" |
+| 29 | Cornelius Vanderbilt made the equivalent of $26 million (1.3M in 1869 dollars) on the first Black Friday using tips from Woodhull | Historical/Financial | Wilson | UNVERIFIABLE — Vanderbilt profited from Black Friday 1869, tips came via Woodhull from Josie Mansfield, but the $1.3M/$26M figures appear unsourced |
+| 30 | Margaret Sanger's mother died of tuberculosis, not from "overbreeding" as Sanger claimed | Historical/Biographical | Wilson | MIXED — Anne Higgins died of TB (confirmed); Sanger never denied TB but argued frequent pregnancies weakened her mother, contributing to early death |
 | 31 | Margaret Sanger quote: "The most kind thing a large family can do to one of its young members is to kill it" | Historical/Quote | Wilson | PENDING |
 | 32 | Margaret Sanger was part of the Rockefeller Bureau for Social Hygiene | Historical | Wilson | PENDING |
 | 33 | Planned Parenthood was explicitly a eugenics program | Historical/Ideological | Wilson | PENDING |
