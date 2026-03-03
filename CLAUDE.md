@@ -14,6 +14,7 @@ Every claim needs a source. Every analysis needs competing interpretations.
 5. **Quantify when possible.** Vague qualifiers → numbers with citations.
 6. **Track uncertainty.** "Likely" vs "possible" vs "speculative" are different. Say which.
 7. **No sycophancy toward any position.** If something has obvious problems, say so regardless of who proposed it.
+8. **Flag the instrument's bias.** This research is conducted through an LLM. The model has systematic dispositions from post-training (see `notes/llm-bias-caveat.md`). On politically charged topics, flag verdicts that depend on framing judgment vs hard data with `[⚠ FRAMING-SENSITIVE]`.
 </epistemic_standards>
 
 <research_workflow>

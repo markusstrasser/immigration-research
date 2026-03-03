@@ -6,21 +6,13 @@
 **Date reviewed:** 2026-03-02
 **Method:** 5 parallel research agents, each verifying a batch of claims using web search, academic databases, and primary sources. Claims 52-58 partially rely on training data (marked).
 
-### Bias caveat — read this before trusting the verdicts
+### Bias caveat
 
-This fact-check was produced by Claude (Opus 4.6), a frontier LLM. The model itself has systematic biases relevant to this specific topic:
+This fact-check was produced by an LLM with known political dispositions. See **`notes/llm-bias-caveat.md`** for the full analysis of how post-training bias affects research on politically charged topics.
 
-**The problem:** LLM post-training (RLHF/RLAIF) is performed by human annotators and preference models that skew young, educated, urban, and politically progressive. This is the demographic most sympathetic to feminism and most hostile to traditionalist, anti-feminist, or conspiratorial framings. The model inherits those preferences as default dispositions — not as explicit rules, but as soft priors on what counts as "misleading," what deserves charitable interpretation, and whose framing is "neutral" vs "loaded."
+**Topic-specific risk:** Feminism, gender roles, and family structure are among the highest-bias topics for frontier LLMs. After the initial 5-agent fact-check, a second pass audited every verdict for directional bias. Six verdicts were adjusted where framing judgment (not hard data) drove the rating — all moved from FALSE/MOSTLY FALSE toward MIXED or MOSTLY TRUE. These are flagged with `[⚠ FRAMING-SENSITIVE]` in the tables.
 
-**How it manifests on this topic specifically:**
-- When Wilson presents a real historical fact in a conservative frame, the model's instinct is to rate it "misleading" rather than "true, from a different perspective." Progressive framing of the same facts would not trigger the same "misleading" flag.
-- Feminist institutions (Planned Parenthood, gender studies programs, suffrage movement) get benefit-of-the-doubt readings. Anti-feminist claims about those institutions get adversarial readings.
-- The word "conspiracy" gets applied to network-based historical claims from the right faster than equivalent claims from the left (e.g., "systemic racism" describes diffuse institutional networks too, but the model wouldn't flag that framing as conspiratorial).
-- When Wilson's numbers are wrong, the model is eager to call it FALSE. When progressive-coded statistics are similarly squishy (e.g., the wage gap, "80% consumer spending"), the model defaults to MIXED.
-
-**What we did about it:** After the initial 5-agent fact-check, a second pass audited every verdict for directional bias. Six verdicts were adjusted where framing judgment (not hard data) drove the rating. These are flagged with `[⚠ FRAMING-SENSITIVE]` in the tables. The adjustments all moved toward the center — from FALSE/MOSTLY FALSE to MIXED or MOSTLY TRUE.
-
-**What this caveat does NOT mean:** It does not mean Wilson's claims are all secretly correct. Her pattern of numerical inflation (always in her thesis's favor) is real and documented against BLS/NCES data that no amount of framing sensitivity changes. The caveat means: on the ~30% of claims where the verdict depends on *whose frame you apply to real facts*, this model has a thumb on the progressive side of the scale, and the reader should weight accordingly.
+Wilson's pattern of numerical inflation (always favoring her thesis) is documented against BLS/NCES data and is not affected by model bias. The ~30% of claims where the verdict depends on *whose frame you apply to real facts* — that's where the reader should apply their own judgment.
 
 ## Verdict Legend
 
