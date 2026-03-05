@@ -6,18 +6,21 @@
 
 ## The Short Answer
 
-**There is no battery-independent sex difference in general intelligence (g).** The direction and magnitude of the g sex difference depends entirely on which tests you use to measure it:
+**The sex difference in g depends on what tests you use to measure it.** [⚠ FRAMING-SENSITIVE — this conclusion is real but the framing may be shaped by LLM post-training dispositions toward egalitarian conclusions. The data genuinely point in multiple directions.]
 
+**In children (ages 7-14):** No sex difference on any battery. Strand CAT NVR (N=320,000, UK, ages 11-12): d≈0.02. Savage-McGlynn Raven's SPM+ (N=926, UK, MG-CFA): null. Molenaar et al. 2022: null.
+
+**In adults (ages 18+):** Battery-dependent.
 - **WJ-III** (speed/fluency-heavy, N=8,818): **Females +1-3.5 IQ pts** on latent g (Keith et al. 2008)
 - **WAIS** (balanced): **Null** (Colom 2002) or **Males +3 pts** (Irwing 2012) — depends on analyst
 - **BPR** (mechanical/spatial, no speed): **Males +2-4.3 pts** (Lemos et al. 2013)
 - **ASVAB** (sibling design, balanced): **Null** d=0.07 (Deary et al. 2007)
-- **Raven's SPM+** (MG-CFA, UK standardization): **Null** (Savage-McGlynn 2012)
-- **Strand CAT NVR** (N=320,000, UK): **d≈0.02 (null)**
 
-On Lynn & Irwing's 2004 meta-analysis of Raven's (d=0.33 for adult males) — this used non-representative samples and contested methodology. When Savage-McGlynn tested the same hypothesis with proper methodology (MG-CFA, representative UK sample), the difference was zero.
+The distribution is NOT symmetrical: most broad-spectrum batteries (WAIS across 4 countries, BPR) yield male advantages of 2-4 IQ points on manifest FSIQ. Only the WJ-III (heavily weighted toward processing speed/fluency) yields a female g advantage. When the memo's own meta-analysis restricts to "core cognitive" subtests (spatial + fluid + verbal reasoning + working memory, excluding both speed and vocational knowledge), the pooled estimate is **d=-0.177 (~2.7 IQ points, males)**.
 
-**What IS robust across all studies:** Males have greater variability (SD ratio ~1.1), producing ~2:1 overrepresentation at both tails. Males advantage on spatial/rotation (d≈0.3-0.5) and mechanical knowledge (d≈0.5-0.9, interest-driven). Females advantage on processing speed (d≈0.3-0.5, training-confounded) and memory retrieval.
+On Lynn & Irwing's 2004 meta-analysis of Raven's (d=0.33 for adult males) — methodology was contested (Blinkhorn 2005-2006), but the memo has not adequately steel-manned their position. Their strongest argument: males outperform on the highest g-loaded subtests (spatial, fluid), while females outperform on the lowest g-loaded subtests (processing speed). If g is defined by the highest g-loaded tests, a male advantage follows.
+
+**What IS robust across all studies:** Males have greater variability (SD ratio ~1.1-1.16). At pure SD ratio 1.1 with equal means, the top-2% ratio is ~1.5:1. With a small mean shift (d≈0.07-0.2) added, the ratio reaches ~1.7-2:1, matching Deary's actual ASVAB data (33:17). Males advantage on spatial/rotation (d≈0.3-0.5) and mechanical knowledge (d≈0.5-0.9, interest-driven). Females advantage on processing speed (d≈0.3-0.5, partially training-confounded — evidence is suggestive but not conclusive) and memory retrieval.
 
 ## Claims Table
 
@@ -133,7 +136,7 @@ This is the core question. There is no objectively "fair" weighting — the weig
 **The variability finding is arguably more important than the mean:**
 - Males show greater variance on most cognitive measures (more at both extremes)
 - This means more males at both the very top AND very bottom of the distribution
-- At +2 SD (IQ 130+), male:female ratios of roughly 2:1 are commonly reported
+- At +2 SD (IQ 130+), male:female ratios of ~1.5:1 from variability alone; ~1.7-2:1 when combined with a small mean advantage
 - This matters more for "who's at the top" than a 3-5 point mean shift does
 
 ## What's Uncertain
@@ -915,7 +918,9 @@ Updated meta-analysis using DerSimonian-Laird random-effects across 61 subtest e
 | Without DIF-biased/knowledge subtests | 48 | -0.085 | -1.3 | Male (barely) |
 | Core cognitive only (spatial+fluid+VR+WM) | 26 | -0.177 | -2.7 | Male |
 
-**Every scenario shows a male advantage (1.3 to 3.6 IQ pts).** Processing speed (d=+0.15, now significantly > 0) is the only female-favoring domain. The I2=95% reflects the Italy anomaly.
+**Every scenario shows a male advantage (1.3 to 3.6 IQ pts).** Processing speed (d=+0.15, now significantly > 0) is the only female-favoring domain.
+
+**I² caveat:** Several domains show I²>75% (Knowledge 86%, Speed 95%, Numerical 96%), indicating the pooled effect size is unreliable for those domains — the studies are measuring different things or populations. The pooled estimates for these high-heterogeneity domains should be interpreted as "the average of inconsistent findings," not "the true effect." Only WAIS FSIQ (I²=15%) shows genuine cross-study consistency.
 
 ## Latent g and Raw Reasoning: What Happens When You Measure Actual Ability?
 
@@ -1128,19 +1133,33 @@ Helland-Riise et al. 2024 — Large-scale item-level analysis of the NAF figural
 
 **The fundamental finding:** Latent g is not sex-neutral by construction — it absorbs whatever sex-differentiated variance the battery's tests carry. If processing speed tests load on g (they do, moderately), female PS advantage raises female g. If mechanical reasoning loads on g, male mechanical advantage raises male g. The question "who scores higher on g?" has no battery-independent answer.
 
+**However, the distribution of results is NOT symmetrical.** Most broad-spectrum batteries yield male advantages or null results. Only the WJ-III (heavily weighted toward speed/fluency) produces a female g advantage. This asymmetry deserves acknowledgment.
+
+**The g-loading hierarchy argument (not adequately addressed earlier):** [⚠ FRAMING-SENSITIVE] The subtests with the highest g-loadings in the CHC model (Matrix Reasoning, Block Design, Figure Weights — spatial/fluid) tend to show male advantages (d≈0.15-0.30). The subtests with the lowest g-loadings (Coding, Symbol Search — processing speed) show the largest female advantages (d≈0.3-0.5). If g is primarily defined by the highest g-loaded tests (as hierarchical models assume), then the male advantage on high-g tests should pull latent g toward males. This is the strongest psychometric argument FOR a genuine male g advantage — and the memo's earlier versions did not adequately address it.
+
+**Counter to the g-loading argument:** Processing speed DOES load on g (Gs → g path in CHC models is typically λ≈0.4-0.6). The claim that speed is "less central to intelligence" is a theoretical position, not an empirical fact. Carroll's three-stratum model places Gs at the same level as Gf and Gc. Defining g as "everything except speed" is as arbitrary as including it.
+
+### Toward a "Fair" Baseline
+
+The original question was: "What would the gap be if tests weren't balanced?" To answer this, we need the "least-biased" battery — subtests confirmed DIF-free, no vocational knowledge, no processing speed.
+
+From the meta-analysis: restricting to DIF-free subtests without knowledge/speed (Vocabulary, Similarities, Matrix Reasoning — subtests with near-zero DIF across studies), the pooled estimate is **d ≈ -0.085 (~1.3 IQ points, males)**. This is the closest to a "fair" answer: a trivially small male advantage that would have negligible real-world consequences. But note: this estimate also has high I² (95%), meaning even these "clean" subtests don't produce a consistent answer across countries.
+
+The honest answer to the original question: **somewhere between 0 and 3 IQ points favoring males**, depending on defensible choices about which subtests count. The exact number is underdetermined by the data.
+
 **What IS battery-independent (replicable across all studies):**
 
 1. **Males have a genuine advantage in spatial/rotation ability** (d ≈ 0.3-0.5). This is not g — it persists after removing g (Johnson & Bouchard 2007). It's the strongest and most replicable cognitive sex difference.
 
 2. **Males have a genuine advantage in mechanical/technical knowledge** (d ≈ 0.5-0.9). This is interest/exposure-driven, not cognitive ability. Nobody would argue knowing about carburetors measures intelligence.
 
-3. **Females have a genuine advantage in processing speed** on pencil-and-paper tasks (d ≈ 0.3-0.5). Real but NOT a general speed factor. Substantially training-confounded (reading/writing practice). Males faster on reaction time.
+3. **Females have a genuine advantage in processing speed** on pencil-and-paper tasks (d ≈ 0.3-0.5). Real but NOT a general speed factor. Partially training-confounded (Roivainen's hypothesis — suggestive evidence from cross-national variation and reading practice correlations, but not conclusive). Males faster on reaction time — this dissociation is the strongest evidence that WAIS Coding ≠ raw processing speed.
 
 4. **Females have a genuine advantage in memory retrieval** — content memory, retrieval fluency, rapid naming (d ≈ 0.2-0.4). Documented by Johnson & Bouchard 2007 and Keith 2008.
 
-5. **Vocabulary shows no sex difference** across every dataset in every country. This is the single most replicated null finding.
+5. **Vocabulary shows near-zero sex difference** across most datasets (d = -0.07 to +0.07 in 4/5 datasets). Exception: German WAIS-IV d=-0.12 (small male advantage), possibly reflecting cohort education gaps.
 
-6. **Greater male variability is the most robust and consequential finding.** SD ratio ~1.1 on g/FSIQ across all studies. Produces ~2:1 male:female ratio at the top 2%. This explains more of the observed sex ratios in high-achievement domains than any mean difference could — regardless of which direction the mean difference goes.
+6. **Greater male variability is the most robust and consequential finding.** SD ratio ~1.1-1.16 on g/FSIQ across all studies. At pure SD ratio 1.1 with equal means, the top-2% ratio is ~1.5:1. Deary's actual ASVAB data (SD ratio 1.16 + d=0.068 mean shift) gives 33:17 = ~1.9:1. The commonly cited "2:1" requires both greater variability AND a small mean shift working together.
 
 
 
@@ -1158,7 +1177,7 @@ Helland-Riise et al. 2024 — Large-scale item-level analysis of the NAF figural
 
    g is a statistical extraction that inherits whatever sex-differentiated variance the battery carries.
 
-2. **Greater male variability is real and consequential.** SD ratio ~1.1 on g/FSIQ across all studies. Produces ~2:1 male:female ratio at the top 2%. This matters far more than means for explaining sex ratios in high-achievement domains.
+2. **Greater male variability is real and consequential.** SD ratio ~1.1-1.16 on g/FSIQ across all studies. At pure variability (equal means), produces ~1.5:1 at top 2%. Combined with even a small mean shift (d≈0.07), reaches ~1.7-2:1. Deary's ASVAB data: 33:17 (~1.9:1) at top 2%.
 
 3. **Spatial/rotation is the strongest genuine male cognitive advantage** (d ≈ 0.3-0.5). Not g — persists after removing g (Johnson & Bouchard 2007). Grows with age (Keith 2008: Gv from ~2 to ~9 IQ pts). The most replicable specific-ability sex difference.
 
