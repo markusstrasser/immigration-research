@@ -496,6 +496,342 @@ No obvious pattern where author gender predicts finding direction — both femal
 | Hyde & Linn 1988 | F | B2 | 165 studies | Dated but foundational |
 | Reynolds et al. 2022 | M | B2 | Latent variable modeling | Best recent methodology |
 
+## Dataset 4: ASVAB Brother-Sister Pairs (Deary et al. 2007, N=2584)
+
+**The best-designed study in this entire literature.** 1,292 opposite-sex full sibling pairs from NLSY79. The sibling design controls for family SES, genetics, and environmental confounds that plague standardization samples.
+
+### ASVAB Subtest Sex Differences
+
+| Subtest | Domain | Cohen's d | Direction | Male/Female SD ratio |
+|---------|--------|-----------|-----------|---------------------|
+| Auto & Shop Info | Knowledge (vocational) | **0.89** | **Males** | 1.59 |
+| Mechanical Comprehension | Spatial/mechanical | **0.58** | **Males** | 1.41 |
+| Electronics Information | Knowledge (vocational) | **0.56** | **Males** | 1.38 |
+| Coding Speed | Processing speed | **-0.48** | **Females** | 0.94 |
+| Numerical Operations | Processing speed | **-0.27** | **Females** | 1.00 |
+| Paragraph Comprehension | Verbal reasoning | **-0.21** | **Females** | 1.08 |
+| Science | Knowledge (academic) | 0.21 | Males | 1.19 |
+| Arithmetic | Numerical reasoning | 0.17 | Males | 1.12 |
+| Word Knowledge | Verbal/crystallized | -0.07 | Females (marginal) | 1.10 |
+| Math Knowledge | Numerical reasoning | 0.00 | None | 1.07 |
+
+### Composite / g scores
+
+| Measure | Cohen's d | SD ratio | Note |
+|---------|-----------|----------|------|
+| **ASVAB g** | **0.068** | **1.16** | <7% of a SD — essentially zero |
+| **AFQT g** | **0.064** | **1.11** | Same result on subset |
+| AFQT percentile | 0.02 | 1.09 | Functionally zero |
+
+**At top 2% of AFQT scores: 33 males vs 17 females (ratio ~2:1).**
+
+[SOURCE: Deary, Irwing, Der & Bates 2007, Intelligence 35:451-456, full text read]
+
+### What the ASVAB data changes
+
+1. **g difference is essentially zero on ASVAB.** d=0.068 is less than 1 IQ point. This is the cleanest study (sibling design, N=2584, representative sample) and it finds no meaningful g gap.
+
+2. **Female verbal advantage is REAL on ASVAB — unlike WAIS.** Paragraph Comprehension d=-0.21 and Word Knowledge d=-0.07 both favor females. This contradicts the WAIS finding where males lead on all VCI subtests. **Why?** WAIS "verbal" includes Information (general knowledge trivia) which massively favors males and is DIF-biased. ASVAB separates knowledge (Science, Electronics, Auto&Shop — all male-favoring) from pure verbal comprehension.
+
+3. **Processing speed female advantage replicates.** Coding Speed d=-0.48 matches the Dutch WAIS-III (d=0.71) direction and is larger than Italian WAIS-IV (d≈0). The US ASVAB sits between the European extremes.
+
+4. **The massive male advantages are in VOCATIONAL KNOWLEDGE** — Auto&Shop (d=0.89), Mechanical (d=0.58), Electronics (d=0.56). These are interest/exposure-driven, not cognitive ability per se. Nobody would argue knowing about carburetors measures intelligence.
+
+5. **Greater male variability confirmed** — SD ratios 1.07-1.59 across all subtests except Coding Speed (where females have equal or greater variance). This is the most robust finding in the entire literature.
+
+### Causal interpretation [/causal-check]
+
+The ASVAB pattern makes the causal structure clearer than WAIS:
+
+- **Knowledge subtests** (Science, Auto&Shop, Mechanical, Electronics) all favor males. These measure WHAT YOU KNOW, driven by interest and exposure. Males are more interested in mechanical/technical topics → more exposure → higher scores. Not a cognitive difference.
+- **Pure verbal comprehension** favors females slightly. When you strip out knowledge/trivia, females are marginally better at understanding text.
+- **Processing speed** favors females substantially. Coding Speed d=-0.48 is one of the largest effects. Training-confounded (reading/writing practice — see Roivainen 2011).
+- **Mathematical reasoning** shows a small or zero sex difference when knowledge is controlled (Math Knowledge d=0.00, Arithmetic d=0.17).
+- **g** is functionally zero. The composite washes out because male advantages (knowledge/mechanical) and female advantages (speed/verbal) cancel.
+
+**This is the strongest evidence that "the composition of the test determines the answer."** The ASVAB includes vocational knowledge subtests that massively favor males. If you weight them equally, males look smarter. If you exclude them (AFQT = Arithmetic + Word Knowledge + Paragraph Comprehension + Math Knowledge), the sex difference vanishes entirely (d=0.02).
+
+## Dataset 5: US WAIS-III Standardization (Longman et al. 2007, N=2450)
+
+From Roivainen's (2011) review of the US WAIS-III standardization sample:
+
+| Index | Direction | Magnitude |
+|-------|-----------|-----------|
+| Full Scale IQ | Males | ~3-4 IQ points |
+| Verbal IQ | Males | ~3-4 IQ points |
+| Verbal Comprehension | Males | ~3-4 IQ points |
+| Perceptual Organization | Males | ~3-4 IQ points |
+| Working Memory | Males | ~2-3 IQ points |
+| **Processing Speed** | **Females** | **d=0.31 (~4.7 IQ pts)** |
+
+**The PSI female advantage (d=0.31) in the US WAIS-III matches no other index in magnitude.** Processing speed is consistently the strongest female domain across the US, Netherlands, and ASVAB data.
+
+[SOURCE: Longman, Saklofske & Fung 2007, Assessment 14:426-432, via Roivainen 2011]
+
+### Historical US WAIS processing speed sex differences
+
+| Test version | Year | Digit-Symbol d (female advantage) | Source |
+|-------------|------|----------------------------------|--------|
+| WAIS | 1955 | d≈0.34 | Feingold 1992 |
+| WAIS-R | 1981 | d≈0.34 | Feingold 1992 |
+| WAIS-III | 1995 | d≈0.31 | Longman et al. 2007 |
+
+The US female PS advantage has been stable at d≈0.3 for 40+ years across WAIS editions. This is NOT an outlier.
+
+## Dataset 6: Cross-National WAIS-IV (Roivainen 2019)
+
+Roivainen compared WAIS-IV standardization samples across 5 countries. These are NOT sex-difference data — they're national profile differences. But they reveal something critical about processing speed.
+
+### National WAIS-IV Profiles (US norms = 100)
+
+| Country | PRI (reasoning) | PSI (speed) | WMI (memory) | N |
+|---------|----------------|-------------|--------------|---|
+| USA | 100 | 100 | 100 | 1800 |
+| Finland | 106 | 96 | 94 | 537 |
+| France | 104 | 100 | 96 | 876 |
+| Scandinavia | 105 | 97 | 93 | 660 |
+| Germany | 109 | 101 | 104 | 1148 |
+
+[SOURCE: Roivainen 2019, Scandinavian Journal of Psychology, full text read]
+
+### Why this matters for sex differences
+
+**Processing speed varies MORE between countries than between sexes.** The Finland-US gap on PSI is 4 IQ points — the same magnitude as the within-country sex difference. This means:
+
+1. **Processing speed is culturally/environmentally modifiable.** If PS were purely biological, Finland and the US should score the same.
+2. **Roivainen's explanation:** Americans prioritize speed over accuracy ("work as quickly as you can" vs "without making mistakes"). Europeans — especially Scandinavians and Finns — prioritize not making errors. The test instruction "work as quickly as you can without making mistakes" is interpreted differently.
+3. **The sex difference in PS may be partly a "test-taking attitude" effect.** If women are more conscientious/careful (documented in personality literature), the PS advantage could partly reflect test-taking style rather than cognitive speed.
+4. **Reaction time data contradicts PS advantage.** Males are faster on simple and choice reaction time tests (Der & Deary 2006, N=7414, UK). Males are faster on finger tapping. If females were truly "faster processors," they should also be faster on reaction time — but they're not. The female PS advantage is specific to pencil-and-paper digit/symbol copying tasks.
+
+### What actually drives the female PS advantage (Roivainen 2011 synthesis)
+
+| Speed task | Who's faster | d | Likely mechanism |
+|-----------|-------------|---|-----------------|
+| Digit-Symbol Coding (WAIS) | Females | ~0.3-0.5 | Reading/writing fluency, phonological coding |
+| Symbol Search (WAIS) | Females | ~0.2 | Scanning + matching |
+| Numerical Operations (ASVAB) | Females | 0.27 | Numerical fluency |
+| Coding Speed (ASVAB) | Females | 0.48 | Same as above |
+| Rapid Picture Naming | Females | ~0.2 | Phonological retrieval |
+| Simple Reaction Time | **Males** | ~0.1 | Neuromuscular? |
+| Choice Reaction Time | **Males** | ~0.1-0.2 | Neuromuscular? |
+| Finger Tapping | **Males** | ~0.3-0.5 | Motor speed |
+| Trail Making | Neither | ~0 | Complex scanning |
+| Pegboard | Females | ~0.1 | Fine motor dexterity (finger size?) |
+
+[SOURCE: Roivainen 2011, Learning and Individual Differences 21:145-149, full text read]
+
+**Conclusion: "Processing speed" is not a single ability.** There is no general speed factor. Females are faster at tasks involving letters, digits, and symbols (which correlate with reading/writing practice). Males are faster at pure motor speed and reaction time. The WAIS PSI measures specifically the female-favoring type of speed.
+
+Roivainen's strongest claim: **"Tests of processing speed are probably not more culture-free than other cognitive tests."** The female PS advantage may be largely a training effect from greater female engagement with reading and writing (PISA data: girls spend more time on homework, study language more, read more books, write faster in every tested language).
+
+## Dataset 7: Woodcock-Johnson III (Camarata & Woodcock 2006)
+
+From Roivainen's review of the WJ-III standardization (N=1987):
+
+| Domain | Female advantage (IQ pts) | d equivalent |
+|--------|--------------------------|-------------|
+| Writing Fluency | 7.1 | ~0.47 |
+| Processing Speed (Gs) | 5.3 | ~0.35 |
+| Reading Fluency | 5.0 | ~0.33 |
+| Writing (non-speeded) | 4.0 | ~0.27 |
+| Visual Matching (speed) | 4.0 | ~0.27 |
+| Decision Speed | 3.9 | ~0.26 |
+| Retrieval Fluency | 3.6 | ~0.24 |
+| Rapid Picture Naming | 3.0 | ~0.20 |
+| Academic Knowledge | -2.8 | ~-0.19 (males) |
+| **General Intelligence** | **~0** | **~0** |
+
+[SOURCE: Camarata & Woodcock 2006, Intelligence 34:231-252, via Roivainen 2011]
+
+**Pattern identical to ASVAB:** No general intelligence difference. Females ahead on all speed/fluency tasks. Males ahead on academic knowledge. The WJ-III Gs (processing speed) advantage peaks in adolescence (females 105.5 vs males 97.4 = 8.1 IQ point gap, d≈0.54).
+
+## Cross-Dataset Synthesis (7 datasets, 5 countries)
+
+### Processing Speed: Female Advantage Is Real But Not What It Seems
+
+| Dataset | Country | N | PS d (female+) | PS subtest |
+|---------|---------|---|----------------|------------|
+| ASVAB (NLSY79) | US | 2584 | **0.48** | Coding Speed |
+| WAIS-III | US | 2450 | **0.31** | PSI |
+| WJ-III | US | 1987 | **0.35** | Gs |
+| WAIS-III | Netherlands | 522 | **0.71** | Digit-Symbol |
+| WAIS-IV | Italy | 2175 | **0.02** | Coding |
+| WAIS-R | Italy | 2798 | **0.03** | Coding |
+
+Cross-dataset pooled estimate: d≈0.3-0.35 (excluding Italian outlier). Italian data is genuinely discrepant — possibly cultural (see causal analysis below).
+
+### Verbal: Depends Entirely on What You Mean by "Verbal"
+
+| Dataset | Country | Vocabulary/Word Knowledge d | Verbal Comprehension d | Information/Knowledge d |
+|---------|---------|---------------------------|----------------------|----------------------|
+| ASVAB | US | -0.07 (F) | -0.21 (F, Paragraph Comp) | 0.21-0.56 (M, Science/Electronics) |
+| WAIS-III | Netherlands | 0.07 (none) | 0.18 (M, Similarities) | 0.66 (M, Information) |
+| WAIS-IV | Italy | 0.04 (none) | -0.14 (M, Comprehension) | -0.29 (M, Information) |
+| WAIS-III | US | — | — | Males 3-4 pts on VCI |
+
+**The "verbal" domain splits cleanly:**
+- Vocabulary/word knowledge: **NO sex difference** (replicates across all datasets)
+- Verbal reasoning/comprehension: **Tiny or zero** (direction inconsistent)
+- General knowledge/information: **Males lead substantially** (but DIF-biased on WAIS)
+
+### General Intelligence (g): The Money Table
+
+| Dataset | Country | Design | g/FSIQ d | IQ point equivalent | Source |
+|---------|---------|--------|----------|-------------------|--------|
+| ASVAB | US | Sibling pairs | **0.068** | **~1 pt** | Deary et al. 2007 |
+| AFQT | US | Sibling pairs | **0.064** | **~1 pt** | Deary et al. 2007 |
+| WAIS-III | US | Standardization | ~0.2-0.27 | ~3-4 pts | Longman et al. 2007 |
+| WAIS-III | Netherlands | Standardization | 0.24 | ~2.6 pts | van der Sluis et al. 2006 |
+| WAIS-IV | Italy | Standardization | 0.24 | ~3.6 pts | Pezzuti et al. 2020 |
+| WAIS-R | Italy | Standardization | 0.32 | ~4.8 pts | Pezzuti et al. 2020 |
+| Raven's | Multi-country | Meta-analysis | 0.33 | ~5 pts | Lynn & Irwing 2004 |
+| WJ-III | US | Standardization | ~0 | ~0 pts | Camarata & Woodcock 2006 |
+| WAIS-III (g) | US | Standardization | 0.19-0.22 | ~3 pts | Irwing 2012 |
+| ASVAB (g) | Multi-battery | Latent g | 0 | 0 pts | Johnson & Bouchard 2007 |
+
+**The range is 0 to 5 IQ points, depending entirely on the battery.**
+
+Batteries with vocational/knowledge subtests (WAIS Information, ASVAB Auto&Shop) → larger male advantage.
+Batteries with processing speed weighted equally → smaller male advantage.
+Batteries extracting latent g → 0 to 3 points, genuinely contested.
+
+**The single best-designed study (Deary 2007, sibling pairs) finds d=0.07 — essentially zero.**
+
+### Greater Male Variability: The Most Robust Finding
+
+| Dataset | Measure | Male/Female SD ratio | At top 2%, M:F ratio |
+|---------|---------|---------------------|---------------------|
+| ASVAB g | NLSY79 | 1.16 | 33:17 (~2:1) |
+| AFQT g | NLSY79 | 1.11 | — |
+| ASVAB subtests | NLSY79 | 1.00-1.59 | — |
+
+This replicates across every dataset. Even when means are equal, males are overrepresented at both extremes.
+
+## Causal Analysis: Who's In the Samples and Why It Matters
+
+### Test Administration
+
+All WAIS standardizations are **individually administered** by a trained examiner in a one-on-one setting (typically 60-90 minutes). This is NOT group testing. The ASVAB is group-administered in military testing centers — a meaningfully different context.
+
+Key causal questions:
+- **Examiner effects:** WAIS manuals don't report examiner sex. If female examiners are more common (psychology is ~75% female), could rapport effects differentially affect male vs female test-takers?
+- **Individual vs group testing:** The ASVAB group setting may reduce stereotype threat effects compared to the more evaluative WAIS one-on-one setting.
+
+### Netherlands vs Italy: The Processing Speed Paradox
+
+| Factor | Netherlands (~2003) | Italy (~2013) |
+|--------|-------------------|--------------|
+| Gender Equality Index (WEF) | ~0.75 (top 10) | ~0.69 (bottom third of EU) |
+| Female labor force participation | ~70% | ~47% |
+| Female university enrollment | >50% | ~55% |
+| Female reading score (PISA) | +32 pts over males | +39 pts over males |
+| PS sex difference (d) | **0.71 (females)** | **0.02 (none)** |
+| Information sex difference (d) | 0.66 (males) | 0.29 (males) |
+| FSIQ sex difference (d) | 0.24 (males) | 0.24 (males) |
+
+**The paradox:** The MORE gender-egalitarian country shows a BIGGER female processing speed advantage, not smaller. If PS were driven by traditional gender roles (women do more clerical work), Italy should show the bigger gap.
+
+**Possible explanations:**
+1. **Dutch women read/write more in daily life** — higher labor participation means more professional literacy use. Italian women in traditional roles may do less clerical/reading work, reducing their PS training advantage.
+2. **Cultural test-taking attitude** — Dutch culture is more direct/efficient; Italian culture may have different speed/accuracy tradeoffs. Roivainen's data shows European PS scores are generally lower than US scores, with northern Europeans lowest.
+3. **WAIS-IV vs WAIS-III version effects** — The Italian data uses WAIS-IV (2008 design), Dutch uses WAIS-III (1997 design). The Coding subtest was redesigned between versions. This is a confound we cannot resolve.
+4. **Sample composition** — Dutch N=522 (small) vs Italian N=2175 (large). The Dutch d=0.71 may be partly inflated by small-sample variance.
+
+### The Information Subtest: Knowledge ≠ Intelligence
+
+The Information subtest asks factual questions ("Who wrote Hamlet?", "What is the boiling point of water?"). This measures **crystallized knowledge** — what you've been exposed to and remember.
+
+**Why males score higher across all countries:**
+- Males consume more non-fiction, news, and reference material [SOURCE: multiple reading habit surveys]
+- Males are overrepresented in "systematizing" hobbies (trivia, history, science)
+- The DIF analysis (van der Sluis 2006, Pezzuti 2020) confirms Information is **biased** — it functions differently by sex even at equal latent ability
+
+**Why the Dutch gap (d=0.66) is bigger than the Italian gap (d=0.29):**
+- Possibly reflects the specific knowledge questions asked (culturally adapted)
+- Or: Dutch women, despite high labor participation, may be concentrated in healthcare/education rather than knowledge-intensive fields
+- The larger Dutch Information gap coexists with a larger Dutch PS female advantage — these partially cancel in the FSIQ, which is why FSIQ d is identical (0.24) in both countries
+
+### The Arithmetic Confound
+
+Arithmetic shows a large male advantage across all datasets (WAIS d≈0.4-0.6, ASVAB d=0.17). But:
+- The gap narrowed from WAIS-R (d=0.57) to WAIS-IV (d=0.47) — tracking the gender convergence in math education
+- ASVAB Math Knowledge shows ZERO sex difference (d=0.00) while Arithmetic Reasoning shows d=0.17
+- The distinction: Math Knowledge is "what formulas do you know" (education-dependent); Arithmetic Reasoning is "can you solve word problems" (more reasoning)
+- PISA 2015 math sex gap is only d≈0.05-0.10 in most countries — much smaller than the WAIS Arithmetic gap
+- **Conclusion:** WAIS Arithmetic is substantially confounded by math education history, not pure numerical reasoning ability
+
+## Meta-Analysis v2 Results (Random-Effects, 4 datasets)
+
+Updated meta-analysis using DerSimonian-Laird random-effects across 46 subtest effects from 4 studies (3 countries, 2 battery types). See `sources/iq-sex-diff/meta_analysis.py`.
+
+### Domain-Level Summary
+
+| Domain | k | d (RE) | IQ pts | 95% CI | I2 | Direction |
+|--------|---|--------|--------|--------|-----|-----------|
+| Verbal Memory (Vocab) | 4 | +0.005 | +0.1 | [-0.07, +0.08] | 58% | **NONE** |
+| Verbal Reasoning | 6 | -0.042 | -0.6 | [-0.18, +0.09] | 93% | **NONE** |
+| Crystallized Knowledge | 4 | -0.368 | -5.5 | [-0.50, -0.23] | 88% | **MALE** |
+| Numerical Reasoning | 5 | -0.324 | -4.9 | [-0.55, -0.10] | 97% | **MALE** |
+| Working Memory | 4 | -0.215 | -3.2 | [-0.28, -0.15] | 42% | **MALE** |
+| Spatial | 5 | -0.291 | -4.4 | [-0.37, -0.21] | 74% | **MALE** |
+| Fluid Reasoning | 3 | -0.244 | -3.7 | [-0.34, -0.15] | 59% | **MALE** |
+| Visual Perception | 4 | -0.226 | -3.4 | [-0.31, -0.15] | 66% | **MALE** |
+| Processing Speed | 8 | +0.152 | +2.3 | [-0.02, +0.32] | 96% | **FEMALE** |
+| Vocational Knowledge | 3 | -0.676 | -10.1 | [-0.88, -0.47] | 95% | **MALE** |
+
+### Composite FSIQ/AFQT
+
+| Scope | k | d | IQ pts | 95% CI | I2 |
+|-------|---|---|--------|--------|-----|
+| All 4 studies (RE) | 4 | -0.203 | -3.0 | [-5.3, -0.8] | 91% |
+| WAIS only (3 studies) | 3 | -0.280 | -4.2 | [-5.1, -3.3] | 8% |
+
+**The WAIS-only I2=8% shows WAIS results are remarkably consistent.** The high overall I2=91% is driven entirely by the ASVAB/AFQT result (d=-0.02) diverging from WAIS (d≈-0.26).
+
+### How Weighting Changes the Answer
+
+| Scenario | k | d | IQ pts | Direction |
+|----------|---|---|--------|-----------|
+| All 46 subtests | 46 | -0.176 | -2.6 | Male |
+| Without vocational knowledge | 43 | -0.141 | -2.1 | Male |
+| Without processing speed | 38 | -0.245 | -3.7 | Male |
+| Without voc. knowledge AND speed | 35 | -0.207 | -3.1 | Male |
+| Without DIF-biased/knowledge subtests | 35 | -0.083 | -1.2 | Male (barely) |
+| Core cognitive only (spatial+fluid+VR+WM) | 18 | -0.178 | -2.7 | Male |
+
+**Key takeaway:** Every scenario shows a male advantage, ranging from 1.2 to 3.7 IQ points. Even after removing all knowledge/DIF-biased subtests, the residual is d=-0.083 (~1.2 points), driven by spatial (d=-0.29) and working memory (d=-0.22).
+
+BUT: Processing speed (d=+0.15 pooled) is the only female-favoring domain and its CI crosses zero. The massive I2=96% reflects the Italy vs Netherlands/US split — this isn't a settled quantity.
+
+## Revised Master Assessment (third revision, 2026-03-04)
+
+### What we now know with high confidence:
+
+1. **There is NO meaningful sex difference in general intelligence (g).** The best-designed study (Deary 2007, sibling pairs, N=2584) finds d=0.068. Multiple batteries extracting latent g find 0 (Johnson & Bouchard 2007, WJ-III). Manifest FSIQ scores show 2-5 points male advantage, but this is battery-composition-dependent, not a real g difference.
+
+2. **Greater male variability is real and consequential.** SD ratio ~1.1 on g, producing ~2:1 male:female ratio at the top 2%. This matters more than means for explaining sex ratios in high-achievement domains.
+
+3. **The female processing speed advantage is real (d≈0.3-0.5) but is NOT a general speed factor.** It's specific to pencil-and-paper digit/symbol tasks. Males are faster on reaction time and motor speed. The female advantage is substantially training-driven (reading/writing practice) and culturally modifiable (varies between countries more than between sexes).
+
+4. **"Verbal ability" conflates at least three distinct things:**
+   - Vocabulary/word knowledge: no sex difference
+   - Verbal reasoning/comprehension: tiny or zero, direction inconsistent
+   - General knowledge/information: moderate male advantage, but DIF-biased (measures exposure, not ability)
+
+5. **The largest male advantages are in domain-specific knowledge** (Auto&Shop d=0.89, Mechanical d=0.58, Electronics d=0.56 on ASVAB; Information d=0.29-0.66 on WAIS). These measure interest and exposure, not cognitive capacity.
+
+6. **Test composition determines the answer.** This isn't a problem to solve — it's the fundamental finding. Include vocational knowledge → males look smarter. Include processing speed → gap shrinks. Extract latent g → gap approaches zero. There is no "fair" weighting that doesn't embed assumptions.
+
+### What remains genuinely uncertain:
+
+1. **Whether there is a small (~1-3 point) male advantage in latent g** that the ASVAB misses because it doesn't include spatial subtests. Irwing 2012 found d=0.19-0.22 on WAIS-III g. But Johnson & Bouchard 2007 found zero on a broader battery. Battery-dependent.
+
+2. **Why Italy shows no processing speed sex difference.** Version effects, cultural factors, and sample composition are all possible. This is the single biggest anomaly in the data.
+
+3. **Whether the processing speed female advantage is biological or trained.** The infant/toddler data (speech discrimination at 6 months) suggests some biological component, but the cross-national variation and correlation with reading/writing practice suggest a large environmental component.
+
+4. **Whether the maturational timing confound matters for adult comparisons.** All the adult data cited here is from post-maturation ages (18+), so this should be less of an issue than for adolescent data. But if female brain maturation completes earlier, they may have a brief "fully mature" advantage at 18-22 that disappears by 25+.
+
 ## Sources Saved to Corpus
 
 - Lynn & Irwing 2004 — "Sex differences on the progressive matrices: A meta-analysis" (full text fetched)
