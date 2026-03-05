@@ -202,6 +202,109 @@ The attack on the *overall IQ balancing question* is stronger: the asymmetry in 
 
 [FRAMING-SENSITIVE: The claim "IQ tests are rigged against men" and the claim "IQ tests fairly measure all cognitive domains" are both overstated. The truth is that design choices in test construction have non-trivial consequences for group comparisons, and there is no Archimedean point from which to define "fair weighting."]
 
+## Deep Dive: Are Verbal Subtests Really Measuring Memory?
+
+### The Subtest-Level Data (Dutch WAIS-III, van der Sluis et al. 2006)
+
+This study (N=522, ages 18-46) is methodologically strong — used multi-group covariance and means structure analysis with DIF (differential item functioning) testing. It breaks apart what "verbal IQ" actually measures at the subtest level.
+
+**Verbal Comprehension subtests:**
+
+| Subtest | What it measures | Males M(SD) | Females M(SD) | d | Direction |
+|---------|-----------------|-------------|---------------|-----|-----------|
+| **Information** | General knowledge (crystallized memory) | 10.74 (2.92) | 8.82 (2.91) | **0.66** | **Males** |
+| **Similarities** | Verbal abstract reasoning | 7.35 (2.28) | 6.96 (1.98) | 0.18 | Males |
+| **Vocabulary** | Word meaning knowledge (crystallized memory) | 9.97 (2.80) | 9.79 (2.44) | **0.07** | ≈ None |
+
+**Other subtests:**
+
+| Subtest | What it measures | d | Direction |
+|---------|-----------------|-----|-----------|
+| Arithmetic | Numerical reasoning | 0.42 | Males |
+| Letter-Number Seq. | Working memory | 0.10 | ≈ None |
+| Block Design | Spatial reasoning | 0.26 | Males |
+| Matrix Reasoning | Fluid reasoning (like Raven's) | 0.20 | Males |
+| Picture Completion | Visual perception | 0.23 | Males |
+| **Digit-Symbol Sub.** | **Processing speed** | **0.71** | **Females** |
+| Copying | Processing speed | 0.19 | Males |
+
+**Composite scores:**
+
+| Composite | Males | Females | d | IQ point gap |
+|-----------|-------|---------|-----|-------------|
+| Verbal IQ | 98.62 | 93.04 | 0.44 | **5.6 pts** (males) |
+| Performance IQ | 102.02 | 102.86 | 0.07 | ≈ 0 |
+| Full Scale IQ | 99.19 | 96.63 | 0.24 | **2.6 pts** (males) |
+
+[SOURCE: van der Sluis et al. 2006, Intelligence 34:263-282, full text read. N=228 males, 294 females]
+
+### The Critical Finding: Information Is Biased
+
+Van der Sluis et al. performed DIF analysis and found **Information was biased in favor of males** — it functions differently by sex even at equal ability levels. When they removed Information from the model:
+
+> **"No sex differences were found with respect to the factor Verbal Comprehension (once Information was effectively removed from the model)."**
+
+This is a bombshell. The male VIQ advantage (d = 0.44, ~5.6 IQ points) is **driven by a single biased subtest** — Information (general knowledge questions). Remove it, and the verbal sex difference disappears.
+
+### So Is "Verbal = Memory"? No — It's More Specific Than That
+
+The user's question was whether verbal subtests are biased toward memory (vocabulary). The answer:
+
+**Vocabulary (word knowledge) shows NO sex difference** (d = 0.07). This kills the hypothesis that vocabulary-as-memory drives a female advantage. In fact, there IS no female advantage on Wechsler verbal subtests — males lead on all three VCI subtests.
+
+The female "verbal advantage" from meta-analyses (Hyde & Linn d = 0.11) comes from **different tasks entirely:**
+- Verbal episodic memory (remembering word lists, stories): d = 0.28 female advantage
+- Phonemic fluency (generating words starting with F, A, S): d = 0.12-0.14 female advantage
+- These are NOT standard IQ test subtests
+
+What verbal IQ tests actually measure, subtest by subtest:
+1. **Information** (general knowledge) — massive male advantage (d = 0.66), but **confirmed biased** via DIF. This is crystallized knowledge about the world, not "verbal ability." Men know more trivia. Whether this reflects intelligence or differential exposure to reference material is debatable.
+2. **Vocabulary** (word definitions) — no sex difference. This IS crystallized verbal memory. Equal.
+3. **Similarities** ("How are X and Y alike?") — small male advantage (d = 0.18). This is genuine verbal *reasoning*, not memory.
+
+### Causal Structure [/causal-check applied]
+
+The question "is verbal IQ confounded by memory?" involves three distinct causal claims:
+
+**Claim 1: "Women score higher on verbal because they talk more / practice more"**
+- Null: Women don't actually talk more (Mehl 2007, equal word counts)
+- Prediction if true: Vocabulary (most practice-dependent) should show largest female advantage
+- Observation: Vocabulary shows NO sex difference (d = 0.07)
+- **Verdict: REFUTED by evidence pattern**
+
+**Claim 2: "Verbal IQ subtests measure accumulated knowledge, not reasoning"**
+- Partially true: Information and Vocabulary are crystallized. Similarities is reasoning.
+- But: Vocabulary shows no sex difference, and the male advantage on Information is driven by general knowledge (geography, science, history), not verbal skill per se
+- The question is mis-framed: the issue isn't "verbal = memory" but "which kind of knowledge does each subtest tap?"
+
+**Claim 3: "The female verbal advantage exists and inflates women's overall IQ"**
+- On Wechsler tests: FALSE. Males lead on VCI (d = 0.18-0.66 across subtests)
+- On non-IQ verbal tasks: True but small (verbal fluency d = 0.07-0.14, verbal memory d = 0.28)
+- The female advantage that IQ test construction "balances against" is primarily **processing speed** (Digit-Symbol Substitution, d = 0.71), not verbal ability
+- **This reframes the original question entirely.** The balancing isn't "verbal up to help women." It's "processing speed tasks (where women lead by d = 0.71) balanced against spatial + knowledge tasks (where men lead by d = 0.2-0.66)."
+
+### The Revised Picture
+
+The common narrative — "IQ tests boost verbal to help women" — is wrong in its specifics:
+
+1. Women don't lead on verbal IQ subtests at all (males lead on Information, Similarities; tie on Vocabulary)
+2. The largest female advantage in the entire WAIS battery is **Digit-Symbol Substitution** (processing speed, d = 0.71) — this is a psychomotor/speed task, not verbal
+3. The largest male advantage is **Information** (d = 0.66) — but this is biased via DIF
+4. If you remove the biased Information subtest AND the large processing speed advantage, the remaining sex differences are small and mostly favor males
+
+**What test construction balancing actually did:** It balanced the large female processing speed advantage against the large male knowledge/spatial advantages. Not "verbal up for women" — "speed up for women."
+
+### Evidence Quality Assessment [/source-grading applied]
+
+| Source | Reliability | Credibility | Notes |
+|--------|-----------|-------------|-------|
+| van der Sluis et al. 2006 | B (Usually reliable — peer-reviewed, Intelligence journal, N=522) | 2 (Probably true — DIF analysis, replicable) | Best subtest-level study found |
+| Lynn & Irwing 2004 meta-analysis | C (Fairly reliable — peer-reviewed but author has known advocacy position) | 3 (Possibly true — methodology contested by Blinkhorn) | Large N aggregated, but sample quality varies |
+| Mehl et al. 2007 | B (Usually reliable — Science, novel methodology) | 2 (Probably true — objective measurement) | N=396, US only |
+| Hirnstein et al. 2022 | B (Usually reliable — Perspectives on Psychological Science) | 2 (Probably true — large meta-analysis) | Best available for fluency/memory |
+| Hyde & Linn 1988 | B (Usually reliable — Psychological Bulletin) | 2 (Probably true — 165 studies) | Dated but foundational |
+| Taiwan WAIS-IV | C (Fairly reliable — smaller journal) | 3 (Possibly true — single country) | Standardization sample is a strength |
+
 ## Sources Saved to Corpus
 
 - Lynn & Irwing 2004 — "Sex differences on the progressive matrices: A meta-analysis" (full text fetched)
