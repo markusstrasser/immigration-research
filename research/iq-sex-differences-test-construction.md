@@ -559,7 +559,30 @@ The ASVAB pattern makes the causal structure clearer than WAIS:
 
 **This is the strongest evidence that "the composition of the test determines the answer."** The ASVAB includes vocational knowledge subtests that massively favor males. If you weight them equally, males look smarter. If you exclude them (AFQT = Arithmetic + Word Knowledge + Paragraph Comprehension + Math Knowledge), the sex difference vanishes entirely (d=0.02).
 
-## Dataset 5: US WAIS-III Standardization (Longman et al. 2007, N=2450)
+## Dataset 5: US WAIS-IV Standardization (Piffer 2016, N≈2200)
+
+From the US WAIS-IV standardization sample (Wechsler 2008). Piffer published the sex differences data.
+
+### US WAIS-IV Index Scores
+
+| Index | Male advantage | d equivalent |
+|-------|---------------|-------------|
+| Full Scale IQ | **2.25 IQ points** | ~0.15 |
+| General Ability Index | **4.05 IQ points** | ~0.27 |
+| Verbal Comprehension | Males higher (sig) | — |
+| Perceptual Reasoning | Males higher (sig) | — |
+| Working Memory | Males higher (sig) | — |
+| **Processing Speed** | **Females 4.4 pts** | **~0.29** |
+
+**Greater male variability on 12/15 subtests and on FSIQ and GAI.**
+
+[SOURCE: Piffer 2016, Mankind Quarterly 57(1):25-33; Holdnack et al. 2014]
+
+**Note on Irwing 2012 latent analysis of US WAIS-III (N=2450):** Using multi-group CFA, Irwing found g d=0.19-0.22 (male), Information d=0.40, Arithmetic d=0.37-0.39, and **Processing Speed latent factor d=0.72-1.30 (female).** The latent PS effect is much larger than the manifest PSI because it removes measurement error. This confirms the US female PS advantage is genuinely large.
+
+[SOURCE: Irwing 2012, Personality and Individual Differences 53:126-131]
+
+## Dataset 6: US WAIS-III Standardization (Longman et al. 2007, N=2450)
 
 From Roivainen's (2011) review of the US WAIS-III standardization sample:
 
@@ -688,14 +711,19 @@ Cross-dataset pooled estimate: d≈0.3-0.35 (excluding Italian outlier). Italian
 |---------|---------|--------|----------|-------------------|--------|
 | ASVAB | US | Sibling pairs | **0.068** | **~1 pt** | Deary et al. 2007 |
 | AFQT | US | Sibling pairs | **0.064** | **~1 pt** | Deary et al. 2007 |
+| **WAIS-IV** | **US** | Standardization | **0.15** | **2.25 pts** | Piffer 2016 |
+| WAIS-IV (GAI) | US | Standardization | 0.27 | 4.05 pts | Piffer 2016 |
 | WAIS-III | US | Standardization | ~0.2-0.27 | ~3-4 pts | Longman et al. 2007 |
+| WAIS-III (g) | US | Standardization | 0.19-0.22 | ~3 pts | Irwing 2012 |
 | WAIS-III | Netherlands | Standardization | 0.24 | ~2.6 pts | van der Sluis et al. 2006 |
 | WAIS-IV | Italy | Standardization | 0.24 | ~3.6 pts | Pezzuti et al. 2020 |
 | WAIS-R | Italy | Standardization | 0.32 | ~4.8 pts | Pezzuti et al. 2020 |
+| **WAIS-IV** | **Germany** | Standardization | **0.21** | **3.2 pts** | Daseking et al. 2017 |
 | Raven's | Multi-country | Meta-analysis | 0.33 | ~5 pts | Lynn & Irwing 2004 |
 | WJ-III | US | Standardization | ~0 | ~0 pts | Camarata & Woodcock 2006 |
-| WAIS-III (g) | US | Standardization | 0.19-0.22 | ~3 pts | Irwing 2012 |
 | ASVAB (g) | Multi-battery | Latent g | 0 | 0 pts | Johnson & Bouchard 2007 |
+
+**10 estimates from 4 countries, range 0-5 IQ points.** The WAIS FSIQ estimates cluster around 2-4 points. The extremes (0 for ASVAB/WJ-III, 5 for Raven's/WAIS-R) reflect battery composition.
 
 **The range is 0 to 5 IQ points, depending entirely on the battery.**
 
