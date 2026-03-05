@@ -159,13 +159,29 @@ The answer to "what would IQ be without balancing" depends on **what you measure
 
 | Method | Result | Confidence |
 |--------|--------|-----------|
-| **Latent g (general factor)** | **No sex difference** | HIGH — Johnson & Bouchard 2007, Reynolds et al. 2022 |
-| Manifest FSIQ (current WAIS) | ~2-4 pts male advantage | MEDIUM — depends on which subtests included |
-| DIF-free subtests only | ~0-1 pts | MEDIUM — limited to invariant measures |
-| Including biased subtests (Info, Arith) | ~4-5 pts male advantage | LOW — includes measurement artifacts |
-| Raven's Progressive Matrices (adults) | ~3-5 pts male advantage | MEDIUM — but varies by national gender equality |
+| **Latent g (general factor)** | **Contested: 0 to ~3 pts male** | CONTESTED — Johnson & Bouchard 2007 found none; Irwing 2012 found d=0.19-0.22 male advantage on US WAIS-III. Battery-dependent. |
+| Manifest FSIQ (current WAIS) | ~2-4 pts male advantage | MEDIUM-HIGH — replicates across Netherlands, Italy, Taiwan, US |
+| DIF-free subtests only | ~0-1 pts | LOW — DIF analysis has circularity problem (Borsboom 2006): assumes equal latent means to detect bias |
+| Including all subtests | ~3-5 pts male advantage | MEDIUM — includes subtests with known DIF, but DIF ≠ definitely invalid |
+| Raven's Progressive Matrices (adults) | ~3-5 pts male advantage | MEDIUM — but varies by national gender equality (Flynn 2012) |
 
-**The honest answer, revised:** There is no sex difference in general intelligence (latent g). There IS a male advantage in spatial visualization (d≈0.3-0.5) and possibly fluid reasoning, and a female advantage in processing speed (d≈0.4-0.6 globally) and verbal episodic memory (d≈0.28). On manifest IQ composites, males lead by ~2-4 points because current composites happen to weight spatial/knowledge content heavily. But this reflects **test composition**, not a difference in general cognitive ability. The greater male variability finding (more males at both extremes) remains the most robust and practically important sex difference in cognition.
+### Counter-review (Sonnet 4.6 adversarial + Perplexity, 2026-03-04)
+
+The Gemini corrections were themselves challenged by a second adversarial round:
+
+1. **"No g difference" is NOT settled.** Irwing (2012) analyzed the US WAIS-III standardization sample and found a male g advantage of d=0.19-0.22 — directly contradicting Johnson & Bouchard. The finding is battery-dependent: which tests you include determines the g you extract. Brain volume data (males ~10% larger corrected for body size, brain-IQ r≈0.3-0.4) creates a biological prior favoring a small male g advantage. [SOURCE: Irwing 2012 via Perplexity; Sonnet adversarial analysis]
+
+2. **Processing speed: the range is the finding, not any single number.** Cross-national variation from d=0.02 (Italy) to d=0.71 (Netherlands) on the same instrument is signal, not noise. True cross-nationally stable effect is probably **d≈0.2-0.4**, not the 0.4-0.6 Gemini claimed. WAIS processing speed subtests are confounded by fine motor speed and clerical training — reaction time paradigms show smaller effects. [SOURCE: Sonnet adversarial analysis]
+
+3. **DIF-restriction is circular (Borsboom 2006).** DIF analysis assumes equal latent means to detect bias. If males genuinely have higher ability on some dimensions, DIF will flag items where males outperform as "biased" — then removing them "eliminates" the difference by construction. The three subtests surviving DIF (Vocabulary, Similarities, Matrix Reasoning) are also the three with smallest sex differences. This could be genuine measurement invariance or post-hoc cherry-picking — **we cannot distinguish these interpretations without an independent criterion.** [SOURCE: Sonnet adversarial analysis; Borsboom 2006]
+
+**The honest answer, twice-revised:** The question "what is the real IQ gap?" has no single answer because it depends on unresolvable measurement choices:
+
+- **Latent g:** Genuinely contested (d=0 to d=0.22 depending on study/battery). Not settled.
+- **Manifest FSIQ:** ~2-4 points male advantage. Most stable finding. Replicates widely.
+- **Specific domains:** Males lead on spatial (d≈0.3-0.5), arithmetic (d≈0.4-0.5 but education-confounded), and knowledge (d≈0.3-0.4 but DIF-biased). Females lead on processing speed (d≈0.2-0.4 cross-nationally) and verbal memory (d≈0.28).
+- **Greater male variability** (more males at both extremes) remains the most robust and practically important finding.
+- **The composition of the test determines the answer.** This isn't a problem to solve — it's the actual state of the science. There is no "fair" weighting that doesn't embed assumptions about what intelligence is.
 
 ## Adversarial Attack: Is the Female Verbal Advantage Real or Practice-Confounded?
 
