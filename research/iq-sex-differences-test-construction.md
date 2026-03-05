@@ -294,16 +294,166 @@ The common narrative — "IQ tests boost verbal to help women" — is wrong in i
 
 **What test construction balancing actually did:** It balanced the large female processing speed advantage against the large male knowledge/spatial advantages. Not "verbal up for women" — "speed up for women."
 
+## Replication: Italian WAIS-IV and WAIS-R (Pezzuti et al. 2020)
+
+**Independent replication on a much larger sample.** Lead author: Lina Pezzuti [F]. N=2,175 (WAIS-IV) + N=2,798 (WAIS-R), Italian standardization data.
+
+### Italian WAIS-IV subtest effect sizes (census-weighted, negative = male advantage)
+
+| Subtest | Type | d | Direction |
+|---------|------|---|-----------|
+| **Arithmetic** | Numerical reasoning | **-0.47** | **Males** |
+| Information | General knowledge | -0.29 | Males |
+| Block Design | Spatial | -0.29 | Males |
+| Visual Puzzles | Spatial | -0.30 | Males |
+| Figure Weights | Fluid reasoning | -0.32 | Males |
+| Matrix Reasoning | Fluid reasoning | -0.19 | Males |
+| Letter-Number Seq. | Working memory | -0.22 | Males |
+| Digit Span | Working memory | -0.18 | Males |
+| Comprehension | Verbal reasoning | -0.14 | Males |
+| Picture Completion | Visual | -0.14 | Males |
+| Symbol Search | Processing speed | -0.09 | ≈ None |
+| **Similarities** | Verbal reasoning | **0.03** | **≈ None** |
+| **Vocabulary** | Word knowledge | **0.04** | **≈ None** |
+| **Coding** | Processing speed | **0.02** | **≈ None** |
+| Cancellation | Processing speed | 0.01 | ≈ None |
+
+**Index-level:**
+
+| Index | d | Direction |
+|-------|---|-----------|
+| Working Memory | -0.37 | Males |
+| Perceptual Reasoning | -0.31 | Males |
+| **Full Scale IQ** | **-0.24** | **Males (~3.6 pts)** |
+| Verbal Comprehension | -0.08 | ≈ None |
+| Processing Speed | 0.04 | ≈ None |
+
+[SOURCE: Pezzuti et al. 2020, Intelligence 79:101436, full text read]
+
+### What the Italian data confirms and contradicts
+
+**Confirms (replicates Dutch findings):**
+- Vocabulary: NO sex difference (d = 0.04, vs Dutch d = 0.07)
+- Similarities: NO sex difference (d = 0.03, vs Dutch d = 0.18)
+- Information: male advantage (d = -0.29, vs Dutch d = 0.66) — present but SMALLER
+- Arithmetic: large male advantage (d = -0.47, vs Dutch d = 0.42)
+- Verbal Comprehension Index: NO sex difference (d = -0.08, vs Dutch: no difference after DIF correction)
+- Full Scale IQ: male advantage (d = -0.24, ~3.6 points, vs Dutch d = 0.24, ~2.6 points)
+
+**Contradicts / qualifies Dutch findings:**
+- Information effect much smaller in Italy (d = 0.29 vs 0.66) — the Dutch d = 0.66 may be an outlier
+- Processing speed: NO female advantage in Italy (d = 0.02-0.04), vs Dutch d = 0.71 female advantage
+- The massive Dutch Digit-Symbol female advantage (d = 0.71) does NOT replicate in Italy (Coding d = 0.02)
+
+**DIF / Bias findings (CONFIRMS Dutch):**
+> "Information, Arithmetic, and Comprehension subtests were gender-biased in both editions."
+
+Partial scalar invariance required releasing intercepts for Information, Comprehension, and Arithmetic on WAIS-IV. Same pattern as Dutch study — **Information is biased in favor of males across two independent countries.**
+
+### Italian WAIS-R (older test, N=2,798, census-weighted)
+
+Larger effects than WAIS-IV, especially:
+- Arithmetic: d = -0.57 (males)
+- Information: d = -0.39 (males)
+- Block Design: d = -0.40 (males)
+- Vocabulary: d = -0.06 (≈ none)
+- Similarities: d = 0.01 (≈ none)
+- Coding: d = 0.03 (≈ none)
+- Full Scale IQ: d = -0.32 (~4.8 points, males)
+
+**Key pattern: sex differences were LARGER on the older WAIS-R than on the newer WAIS-IV.** This suggests test revisions have progressively reduced sex differences — consistent with the "construction balancing" thesis, but also consistent with genuine cultural convergence.
+
+## Cross-Study Comparison: Is the Pattern Stable?
+
+| Subtest | Dutch WAIS-III (2006) | Italian WAIS-IV (2020) | Italian WAIS-R (2020) | Stable? |
+|---------|----------------------|----------------------|----------------------|---------|
+| Vocabulary | d = 0.07 (none) | d = 0.04 (none) | d = -0.06 (none) | **YES — no sex diff** |
+| Similarities | d = 0.18 (M) | d = 0.03 (none) | d = 0.01 (none) | Weak — Dutch outlier? |
+| Information | d = 0.66 (M) | d = -0.29 (M) | d = -0.39 (M) | Direction stable, magnitude varies wildly |
+| Arithmetic | d = 0.42 (M) | d = -0.47 (M) | d = -0.57 (M) | **YES — moderate-large male advantage** |
+| Processing Speed | d = -0.71 (F) | d = 0.02 (none) | d = 0.03 (none) | **NO — Dutch is outlier** |
+| Full Scale IQ | d = 0.24 (M, ~2.6) | d = -0.24 (M, ~3.6) | d = -0.32 (M, ~4.8) | **YES — small-moderate male advantage** |
+
+**Stable findings across both countries:**
+1. Vocabulary: no sex difference (highly replicated)
+2. Arithmetic: moderate-large male advantage (highly replicated)
+3. Information: male advantage but magnitude unstable (and biased via DIF)
+4. Full Scale IQ: small male advantage (~2.5-5 IQ points)
+5. VCI as a latent factor: no sex difference after DIF correction
+
+**Unstable findings:**
+1. Processing speed: huge female advantage in Netherlands, none in Italy — **the single largest "female" effect doesn't replicate**
+2. Information effect size: ranges from 0.29 to 0.66 — too variable to anchor conclusions on
+3. Similarities: male advantage in Netherlands, none in Italy
+
+**This validates your skepticism about single-study conclusions.** The Dutch processing speed finding (d = 0.71) that I earlier called the "biggest female advantage in the battery" is an outlier. The Italian data (N=2,175, standardization sample) shows no processing speed difference at all.
+
+## Author Gender Tracking
+
+| Study | Lead Author | Gender | Finding Direction |
+|-------|------------|--------|------------------|
+| van der Sluis et al. 2006 | Sophie van der Sluis | **F** | Males lead on VIQ, no g difference |
+| Pezzuti et al. 2020 | Lina Pezzuti | **F** | Males lead on FSIQ, Information biased |
+| Lynn & Irwing 2004 | Richard Lynn | **M** | Males 5 pts higher on Raven's |
+| Irwing & Lynn 2005 | Paul Irwing | **M** | Males 4.6 pts higher in university |
+| Blinkhorn 2005-2006 | Steve Blinkhorn | **M** | Methodology "deeply flawed" |
+| Hyde & Linn 1988 | Janet Hyde | **F** | Verbal difference trivial (d = 0.11) |
+| Hirnstein et al. 2022 | Marco Hirnstein | **M** | Small female verbal fluency/memory advantages |
+| Reynolds et al. 2022 | Matthew Reynolds | **M** | No g difference, specific ability differences |
+| Molenaar et al. 2022 | — | — | No g difference in children |
+| Kaufman (commentary) | Scott Barry Kaufman | **M** | Test constructors "discovered" equality |
+
+**Notable: Both lead authors on the highest-quality subtest-level studies (van der Sluis, Pezzuti) are women, and both found male advantages that survived DIF correction.** The advocacy-positioned researchers (Lynn, Irwing) who claim the largest male advantages are men publishing in lower-impact outlets (Mankind Quarterly). The methodological critic (Blinkhorn) is also male.
+
+No obvious pattern where author gender predicts finding direction — both female-led studies found genuine male advantages on specific subtests while also finding DIF bias. This is what careful methodology looks like: nuanced, not advocacy.
+
+## Downloadable Data for Independent Analysis
+
+**NLSY79 — Best option for DIY analysis:**
+- ASVAB (Armed Services Vocational Aptitude Battery): 10 subtests, individually downloadable
+- Subtests: General Science, Arithmetic Reasoning, Word Knowledge, Paragraph Comprehension, Numerical Operations, Coding Speed, Auto & Shop Info, Math Knowledge, Mechanical Comprehension, Electronics Info
+- Maps well to our question: Word Knowledge (verbal/memory), Paragraph Comprehension (verbal reasoning), Coding Speed (processing speed), spatial/mechanical subtests
+- N ≈ 12,000+, sex recorded, publicly available at nlsinfo.org
+- Deary et al. 2007 already used NLSY79 for brother-sister g analysis (paper in our corpus)
+
+**NLSY97:**
+- CAT-ASVAB (computerized version), same subtests
+- N ≈ 9,000, more recent cohort
+
+**UK Biobank:**
+- Multiple cognitive tests (fluid intelligence, reaction time, symbol digit, matrix reasoning, vocabulary)
+- N > 170,000, sex recorded
+- Requires formal application + data use agreement (not trivially downloadable)
+
+**What we could do with NLSY data:**
+1. Download ASVAB subtest scores by sex
+2. Compute effect sizes for each subtest independently
+3. Test whether "Word Knowledge" (verbal memory) shows any sex difference
+4. Test whether "Coding Speed" (processing speed) shows the female advantage
+5. Compare verbal subtests (WK, PC) vs. knowledge subtests (GS, AS, EI, MC) vs. math (AR, MK)
+6. Run our own factor analysis and test measurement invariance
+7. This would be a true independent check on the Wechsler-based findings using a completely different test battery
+
+**Statistical traps to watch for** (per your note about older methodology):
+- Multiple comparisons without correction (many older studies)
+- Treating standardization samples as random samples (they're stratified)
+- Ignoring range restriction in university samples
+- Not testing measurement invariance before comparing group means (pre-2000 studies rarely did this)
+- Conflating composite-level and subtest-level effects
+- Publication bias toward significant findings
+
 ### Evidence Quality Assessment [/source-grading applied]
 
-| Source | Reliability | Credibility | Notes |
-|--------|-----------|-------------|-------|
-| van der Sluis et al. 2006 | B (Usually reliable — peer-reviewed, Intelligence journal, N=522) | 2 (Probably true — DIF analysis, replicable) | Best subtest-level study found |
-| Lynn & Irwing 2004 meta-analysis | C (Fairly reliable — peer-reviewed but author has known advocacy position) | 3 (Possibly true — methodology contested by Blinkhorn) | Large N aggregated, but sample quality varies |
-| Mehl et al. 2007 | B (Usually reliable — Science, novel methodology) | 2 (Probably true — objective measurement) | N=396, US only |
-| Hirnstein et al. 2022 | B (Usually reliable — Perspectives on Psychological Science) | 2 (Probably true — large meta-analysis) | Best available for fluency/memory |
-| Hyde & Linn 1988 | B (Usually reliable — Psychological Bulletin) | 2 (Probably true — 165 studies) | Dated but foundational |
-| Taiwan WAIS-IV | C (Fairly reliable — smaller journal) | 3 (Possibly true — single country) | Standardization sample is a strength |
+| Source | Lead [M/F] | Reliability | Credibility | Notes |
+|--------|-----------|-----------|-------------|-------|
+| van der Sluis et al. 2006 | F | B2 | DIF analysis, N=522 | Dutch WAIS-III standardization |
+| Pezzuti et al. 2020 | F | B2 | MGCFA + DIF, N=2175+2798 | Italian WAIS-IV + WAIS-R, best available |
+| Lynn & Irwing 2004 | M | C3 | Methodology contested | 57 studies aggregated, variable quality |
+| Irwing & Lynn 2005 | M | C3 | University samples non-representative | Blinkhorn critique applies |
+| Mehl et al. 2007 | M | B2 | Objective measurement | N=396, US only |
+| Hirnstein et al. 2022 | M | B2 | Large meta-analysis | Best for verbal fluency/memory |
+| Hyde & Linn 1988 | F | B2 | 165 studies | Dated but foundational |
+| Reynolds et al. 2022 | M | B2 | Latent variable modeling | Best recent methodology |
 
 ## Sources Saved to Corpus
 
@@ -311,3 +461,5 @@ The common narrative — "IQ tests boost verbal to help women" — is wrong in i
 - Irwing & Lynn 2005 — "Sex differences in means and variability on the progressive matrices in university students"
 - Deary et al. 2007 — "Brother-sister differences in the g factor"
 - Helland-Riise et al. 2024 — "Large-scale item-level analysis of the Figural Matrices Test in the Norwegian Armed Forces"
+- van der Sluis et al. 2006 — "Sex differences on the Dutch WAIS-III" (full text fetched)
+- Pezzuti et al. 2020 — "Gender differences and measurement bias: Italian WAIS-IV and WAIS-R" (full text fetched)
