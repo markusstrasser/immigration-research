@@ -753,25 +753,31 @@ Key causal questions:
 - **Examiner effects:** WAIS manuals don't report examiner sex. If female examiners are more common (psychology is ~75% female), could rapport effects differentially affect male vs female test-takers?
 - **Individual vs group testing:** The ASVAB group setting may reduce stereotype threat effects compared to the more evaluative WAIS one-on-one setting.
 
-### Netherlands vs Italy: The Processing Speed Paradox
+### The Processing Speed Paradox: 5-Country View
 
-| Factor | Netherlands (~2003) | Italy (~2013) |
-|--------|-------------------|--------------|
-| Gender Equality Index (WEF) | ~0.75 (top 10) | ~0.69 (bottom third of EU) |
-| Female labor force participation | ~70% | ~47% |
-| Female university enrollment | >50% | ~55% |
-| Female reading score (PISA) | +32 pts over males | +39 pts over males |
-| PS sex difference (d) | **0.71 (females)** | **0.02 (none)** |
-| Information sex difference (d) | 0.66 (males) | 0.29 (males) |
-| FSIQ sex difference (d) | 0.24 (males) | 0.24 (males) |
+| Factor | Netherlands | Italy | Germany | USA | Direction of PS sex diff |
+|--------|------------|-------|---------|-----|------------------------|
+| GGI (WEF, ~test year) | ~0.75 (top 10) | ~0.69 (bottom EU) | ~0.76 (top 15) | ~0.72 (mid) | — |
+| Employment rate 20-64 | ~83% | ~67% | ~79% | ~76% | — |
+| Female employment gap | ~10 pp | ~19 pp | ~8 pp | ~12 pp | — |
+| PISA reading F-M gap | +24 pts | +39 pts | +44 pts | +31 pts | — |
+| **PS sex diff (d)** | **+0.71** | **+0.02** | **+0.22** | **+0.31** | — |
+| WAIS version | III (1997) | IV (2008) | IV (2012) | III (1995)/IV (2006) | — |
+| N | 522 | 2175 | 1425 | 2450/2200 | — |
 
-**The paradox:** The MORE gender-egalitarian country shows a BIGGER female processing speed advantage, not smaller. If PS were driven by traditional gender roles (women do more clerical work), Italy should show the bigger gap.
+**Correlation with gender equality: ZERO.** Netherlands (most equal) has biggest PS gap. Italy (least equal) has no gap. Germany and US fall in between. If anything, the PS female advantage is LARGER in more egalitarian countries — the opposite of what an "oppression" model predicts.
 
-**Possible explanations:**
-1. **Dutch women read/write more in daily life** — higher labor participation means more professional literacy use. Italian women in traditional roles may do less clerical/reading work, reducing their PS training advantage.
-2. **Cultural test-taking attitude** — Dutch culture is more direct/efficient; Italian culture may have different speed/accuracy tradeoffs. Roivainen's data shows European PS scores are generally lower than US scores, with northern Europeans lowest.
-3. **WAIS-IV vs WAIS-III version effects** — The Italian data uses WAIS-IV (2008 design), Dutch uses WAIS-III (1997 design). The Coding subtest was redesigned between versions. This is a confound we cannot resolve.
-4. **Sample composition** — Dutch N=522 (small) vs Italian N=2175 (large). The Dutch d=0.71 may be partly inflated by small-sample variance.
+**Correlation with PISA reading gap: NEGATIVE.** Italy has the largest female reading advantage (+39 pts) but no PS sex difference. Germany has an even larger reading gap (+44 pts) with moderate PS gap. Reading practice alone doesn't explain the pattern.
+
+**Possible explanations (none fully satisfying):**
+
+1. **WAIS version confound is the strongest candidate.** Netherlands used WAIS-III (1997 Digit-Symbol task), Italy used WAIS-IV (2008 Coding task). The subtests are similar but not identical. The German WAIS-IV Coding d=+0.29 is much smaller than Dutch WAIS-III d=+0.71, even though the countries are culturally similar. The US WAIS-III PSI d=0.31 vs US WAIS-IV PSI d≈0.29 shows less shrinkage. **The WAIS-III → WAIS-IV transition may have reduced PS sex differences through test redesign.**
+
+2. **Small Dutch sample (N=522).** With 228 males and 294 females, the sampling error on d is ±0.12. The true Dutch d could be 0.59-0.83. The other studies (N>1400) have tighter CIs.
+
+3. **Cultural test-taking attitude.** Roivainen's (2010, 2019) data shows Northern Europeans (Finland, Scandinavia) score LOW on PS compared to Americans, while scoring HIGH on reasoning. His explanation: Europeans prioritize accuracy, Americans prioritize speed. **If Dutch women are particularly accuracy-focused while Dutch men prioritize speed, this would inflate the sex difference.** But we have no direct evidence for sex × culture interaction in test-taking style.
+
+4. **Italian cultural conservatism may reduce sex differentiation.** If Italian education and socialization provide less sex-typed experiences (paradoxically, through restricting both sexes' opportunities), the sex-specific training effects might be smaller.
 
 ### The Information Subtest: Knowledge ≠ Intelligence
 
