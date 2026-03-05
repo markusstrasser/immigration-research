@@ -4,6 +4,7 @@ Meta-analysis of sex differences in cognitive subtests.
 Datasets:
 - van der Sluis et al. 2006 (Dutch WAIS-III, N=522)
 - Pezzuti et al. 2020 (Italian WAIS-IV, N=2175; Italian WAIS-R, N=2798)
+- Daseking et al. 2017 (German WAIS-IV, N=1425)
 - Deary et al. 2007 (US ASVAB/NLSY79, N=2584 sibling pairs)
 
 Convention: negative d = male advantage, positive d = female advantage
@@ -95,6 +96,34 @@ studies = {
             "Full Scale IQ": {"d": -0.32},
         },
     },
+    "german_wais4": {
+        "citation": "Daseking et al. 2017",
+        "lead_gender": "F",
+        "country": "Germany",
+        "test": "WAIS-IV",
+        "n_male": 679,
+        "n_female": 746,
+        "subtests": {
+            "Information":       {"d": -0.424, "type": "crystallized_knowledge"},
+            "Similarities":      {"d": -0.056, "type": "verbal_reasoning"},
+            "Vocabulary":        {"d": -0.122, "type": "verbal_memory"},
+            "Arithmetic":        {"d": -0.478, "type": "numerical_reasoning"},
+            "Digit Span":        {"d": -0.114, "type": "working_memory"},
+            "Letter-Number":     {"d": -0.115, "type": "working_memory"},
+            "Block Design":      {"d": -0.180, "type": "spatial"},
+            "Matrix Reasoning":  {"d": -0.157, "type": "fluid_reasoning"},
+            "Visual Puzzles":    {"d": -0.315, "type": "spatial"},
+            "Figure Weights":    {"d": -0.293, "type": "fluid_reasoning"},
+            "Comprehension":     {"d": -0.165, "type": "verbal_reasoning"},
+            "Symbol Search":     {"d":  0.108, "type": "processing_speed"},
+            "Coding":            {"d":  0.285, "type": "processing_speed"},
+            "Cancellation":      {"d":  0.070, "type": "processing_speed"},
+            "Picture Completion": {"d": -0.116, "type": "visual_perception"},
+        },
+        "composites": {
+            "Full Scale IQ": {"d": -0.211},
+        },
+    },
     "us_asvab": {
         "citation": "Deary et al. 2007",
         "lead_gender": "M",
@@ -184,7 +213,7 @@ for study_key, study in studies.items():
 print("=" * 90)
 print("META-ANALYSIS v2: Sex Differences by Cognitive Domain (Random-Effects)")
 print("Convention: negative = male advantage, positive = female advantage")
-print("4 datasets, 3 countries, 2 battery types (WAIS + ASVAB)")
+print("5 datasets, 4 countries, 2 battery types (WAIS + ASVAB)")
 print("=" * 90)
 print()
 
@@ -296,7 +325,7 @@ print("  2. Subtests within a study are correlated (r≈0.3-0.7) — CIs still s
 print("     Proper fix requires robust variance estimation (RVE) in R/metafor")
 print("  3. ASVAB 'vocational knowledge' subtests (Auto&Shop, Mechanical, Electronics)")
 print("     are interest/exposure measures, not cognitive ability per se")
-print("  4. 4 studies from 3 countries is still a small k for random-effects estimation")
+print("  4. 5 studies from 4 countries — better but still small k for some domains")
 print()
 
 # ── Thought experiments ───────────────────────────────────────────────────

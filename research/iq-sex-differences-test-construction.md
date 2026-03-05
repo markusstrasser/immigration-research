@@ -404,16 +404,18 @@ Larger effects than WAIS-IV, especially:
 
 **Key pattern: sex differences were LARGER on the older WAIS-R than on the newer WAIS-IV.** This suggests test revisions have progressively reduced sex differences — consistent with the "construction balancing" thesis, but also consistent with genuine cultural convergence.
 
-## Cross-Study Comparison: Is the Pattern Stable?
+## Cross-Study Comparison: Is the Pattern Stable? (5 datasets)
 
-| Subtest | Dutch WAIS-III (2006) | Italian WAIS-IV (2020) | Italian WAIS-R (2020) | Stable? |
-|---------|----------------------|----------------------|----------------------|---------|
-| Vocabulary | d = 0.07 (none) | d = 0.04 (none) | d = -0.06 (none) | **YES — no sex diff** |
-| Similarities | d = 0.18 (M) | d = 0.03 (none) | d = 0.01 (none) | Weak — Dutch outlier? |
-| Information | d = 0.66 (M) | d = -0.29 (M) | d = -0.39 (M) | Direction stable, magnitude varies wildly |
-| Arithmetic | d = 0.42 (M) | d = -0.47 (M) | d = -0.57 (M) | **YES — moderate-large male advantage** |
-| Processing Speed | d = -0.71 (F) | d = 0.02 (none) | d = 0.03 (none) | **NO — Dutch is outlier** |
-| Full Scale IQ | d = 0.24 (M, ~2.6) | d = -0.24 (M, ~3.6) | d = -0.32 (M, ~4.8) | **YES — small-moderate male advantage** |
+| Subtest | Dutch WAIS-III | Italian WAIS-IV | Italian WAIS-R | German WAIS-IV | Stable? |
+|---------|---------------|----------------|---------------|---------------|---------|
+| Vocabulary | 0.07 (none) | 0.04 (none) | -0.06 (none) | -0.12 (M) | **Mostly none** — German outlier |
+| Similarities | 0.18 (M) | 0.03 (none) | 0.01 (none) | -0.06 (none) | **None** — Dutch outlier |
+| Information | **0.66 (M)** | -0.29 (M) | -0.39 (M) | **-0.42 (M)** | **Direction stable, magnitude varies** |
+| Arithmetic | 0.42 (M) | **-0.47 (M)** | **-0.57 (M)** | **-0.48 (M)** | **YES — moderate-large male** |
+| Block Design | 0.26 (M) | -0.29 (M) | -0.40 (M) | -0.18 (M) | **YES — small-moderate male** |
+| Matrix Reasoning | 0.20 (M) | -0.19 (M) | — | -0.16 (M) | **YES — small male** |
+| Coding/Digit-Symbol | **-0.71 (F)** | 0.02 (none) | 0.03 (none) | **+0.29 (F)** | **Direction varies — NL huge, Italy none, Germany moderate** |
+| Full Scale IQ | **0.24 (M)** | **-0.24 (M)** | **-0.32 (M)** | **-0.21 (M)** | **YES — d≈0.2-0.3, ~3-5 IQ pts male** |
 
 **Stable findings across both countries:**
 1. Vocabulary: no sex difference (highly replicated)
@@ -435,6 +437,10 @@ Larger effects than WAIS-IV, especially:
 |-------|------------|--------|------------------|
 | van der Sluis et al. 2006 | Sophie van der Sluis | **F** | Males lead on VIQ, no g difference |
 | Pezzuti et al. 2020 | Lina Pezzuti | **F** | Males lead on FSIQ, Information biased |
+| Daseking et al. 2017 | Monika Daseking | **F** | Males 3.2 pts FSIQ, education effect 53x > sex |
+| Deary et al. 2007 | Ian Deary | **M** | g difference d=0.068 (essentially zero), variability key |
+| Roivainen 2011, 2019 | Eka Roivainen | **M** | PS female advantage cultural/training, cross-national profiles |
+| Camarata & Woodcock 2006 | Stephen Camarata | **M** | No g difference, females lead speed/fluency |
 | Lynn & Irwing 2004 | Richard Lynn | **M** | Males 5 pts higher on Raven's |
 | Irwing & Lynn 2005 | Paul Irwing | **M** | Males 4.6 pts higher in university |
 | Blinkhorn 2005-2006 | Steve Blinkhorn | **M** | Methodology "deeply flawed" |
@@ -443,6 +449,8 @@ Larger effects than WAIS-IV, especially:
 | Reynolds et al. 2022 | Matthew Reynolds | **M** | No g difference, specific ability differences |
 | Molenaar et al. 2022 | — | — | No g difference in children |
 | Kaufman (commentary) | Scott Barry Kaufman | **M** | Test constructors "discovered" equality |
+
+**Pattern: All three female-led studies on WAIS data found genuine male advantages on specific subtests while also identifying methodological issues (DIF bias, education confounds).** The advocacy-positioned researchers claiming the largest male advantages (Lynn, Irwing) are all men publishing in lower-impact venues. The most methodologically careful work comes from both genders.
 
 **Notable: Both lead authors on the highest-quality subtest-level studies (van der Sluis, Pezzuti) are women, and both found male advantages that survived DIF correction.** The advocacy-positioned researchers (Lynn, Irwing) who claim the largest male advantages are men publishing in lower-impact outlets (Mankind Quarterly). The methodological critic (Blinkhorn) is also male.
 
@@ -760,48 +768,90 @@ Arithmetic shows a large male advantage across all datasets (WAIS d≈0.4-0.6, A
 - PISA 2015 math sex gap is only d≈0.05-0.10 in most countries — much smaller than the WAIS Arithmetic gap
 - **Conclusion:** WAIS Arithmetic is substantially confounded by math education history, not pure numerical reasoning ability
 
-## Meta-Analysis v2 Results (Random-Effects, 4 datasets)
+## Dataset 8: German WAIS-IV (Daseking et al. 2017, N=1425)
 
-Updated meta-analysis using DerSimonian-Laird random-effects across 46 subtest effects from 4 studies (3 countries, 2 battery types). See `sources/iq-sex-diff/meta_analysis.py`.
+German WAIS-IV standardization sample. Lead authors: Monika Daseking [F] & Franz Petermann [M]. Census-matched, stratified by education.
+
+### German WAIS-IV Index Scores
+
+| Index | Male M(SD) | Female M(SD) | Diff | d | Direction |
+|-------|-----------|-------------|------|---|-----------|
+| FSIQ | 101.6 (15.4) | 98.5 (14.6) | +3.2 | -0.211 | **Males** |
+| VCI | 101.8 (15.0) | 98.4 (14.8) | +3.3 | -0.225 | **Males** |
+| PRI | 102.1 (15.2) | 98.2 (14.5) | +4.0 | -0.267 | **Males** |
+| WMI | 102.6 (15.7) | 97.6 (14.0) | +5.0 | -0.335 | **Males** |
+| **PSI** | **98.3 (14.7)** | **101.5 (15.1)** | **-3.3** | **+0.221** | **Females** |
+
+### German WAIS-IV Subtest Effects
+
+| Subtest | d | Domain | Direction |
+|---------|---|--------|-----------|
+| Arithmetic | **-0.478** | Numerical reasoning | **Males** |
+| Information | **-0.424** | Crystallized knowledge | **Males** |
+| Visual Puzzles | -0.315 | Spatial | Males |
+| Figure Weights | -0.293 | Fluid reasoning | Males |
+| Coding | **+0.285** | Processing speed | **Females** |
+| Block Design | -0.180 | Spatial | Males |
+| Comprehension | -0.165 | Verbal reasoning | Males |
+| Matrix Reasoning | -0.157 | Fluid reasoning | Males |
+| Vocabulary | -0.122 | Verbal memory | Males |
+| Picture Completion | -0.116 | Visual perception | Males |
+| Letter-Number | -0.115 | Working memory | Males |
+| Digit Span | -0.114 | Working memory | Males |
+| Symbol Search | +0.108 | Processing speed | Females |
+| Cancellation | +0.070 | Processing speed | Females |
+| Similarities | -0.056 | Verbal reasoning | ~None |
+
+[SOURCE: Daseking, Petermann & Waldmann 2017, Personality and Individual Differences 115:117-122, full text read]
+
+### Key German findings
+
+1. **FSIQ male advantage = 3.2 IQ points (d=0.21)** — matches Netherlands (3.6) and Italy (3.6) almost exactly.
+2. **PSI female advantage = 3.3 IQ points (d=0.22)** — confirms the female PS advantage is real, not just a Dutch outlier. Germany sits between Netherlands (d=0.71) and Italy (d=0.02).
+3. **Education effect dwarfs sex effect:** omega2=0.264 for education vs omega2=0.005 for sex on FSIQ. Education explains 53x more variance than sex.
+4. **No sex × education interaction** on ANY subtest — the sex differences are the same at all education levels.
+5. **Vocabulary shows a small male advantage** (d=-0.12) — unlike other datasets where it's essentially zero. This is the first dataset where males lead on Vocabulary. Possibly reflects the German gender gap in higher education participation (older cohorts have much lower female education).
+
+## Meta-Analysis v3 Results (Random-Effects, 5 datasets)
+
+Updated meta-analysis using DerSimonian-Laird random-effects across 61 subtest effects from 5 studies (4 countries, 2 battery types). See `sources/iq-sex-diff/meta_analysis.py`.
 
 ### Domain-Level Summary
 
 | Domain | k | d (RE) | IQ pts | 95% CI | I2 | Direction |
 |--------|---|--------|--------|--------|-----|-----------|
-| Verbal Memory (Vocab) | 4 | +0.005 | +0.1 | [-0.07, +0.08] | 58% | **NONE** |
-| Verbal Reasoning | 6 | -0.042 | -0.6 | [-0.18, +0.09] | 93% | **NONE** |
-| Crystallized Knowledge | 4 | -0.368 | -5.5 | [-0.50, -0.23] | 88% | **MALE** |
-| Numerical Reasoning | 5 | -0.324 | -4.9 | [-0.55, -0.10] | 97% | **MALE** |
-| Working Memory | 4 | -0.215 | -3.2 | [-0.28, -0.15] | 42% | **MALE** |
-| Spatial | 5 | -0.291 | -4.4 | [-0.37, -0.21] | 74% | **MALE** |
-| Fluid Reasoning | 3 | -0.244 | -3.7 | [-0.34, -0.15] | 59% | **MALE** |
-| Visual Perception | 4 | -0.226 | -3.4 | [-0.31, -0.15] | 66% | **MALE** |
-| Processing Speed | 8 | +0.152 | +2.3 | [-0.02, +0.32] | 96% | **FEMALE** |
+| Verbal Memory (Vocab) | 5 | -0.021 | -0.3 | [-0.09, +0.05] | 67% | **NONE** |
+| Verbal Reasoning | 8 | -0.059 | -0.9 | [-0.16, +0.05] | 91% | **NONE** |
+| Crystallized Knowledge | 5 | -0.377 | -5.7 | [-0.49, -0.26] | 86% | **MALE** |
+| Numerical Reasoning | 6 | -0.350 | -5.2 | [-0.55, -0.15] | 96% | **MALE** |
+| Working Memory | 6 | -0.181 | -2.7 | [-0.24, -0.12] | 55% | **MALE** |
+| Spatial | 7 | -0.279 | -4.2 | [-0.34, -0.21] | 70% | **MALE** |
+| Fluid Reasoning | 5 | -0.237 | -3.6 | [-0.30, -0.17] | 52% | **MALE** |
+| Visual Perception | 5 | -0.205 | -3.1 | [-0.28, -0.13] | 69% | **MALE** |
+| Processing Speed | 11 | **+0.152** | **+2.3** | **[+0.02, +0.28]** | 95% | **FEMALE** |
 | Vocational Knowledge | 3 | -0.676 | -10.1 | [-0.88, -0.47] | 95% | **MALE** |
 
 ### Composite FSIQ/AFQT
 
 | Scope | k | d | IQ pts | 95% CI | I2 |
 |-------|---|---|--------|--------|-----|
-| All 4 studies (RE) | 4 | -0.203 | -3.0 | [-5.3, -0.8] | 91% |
-| WAIS only (3 studies) | 3 | -0.280 | -4.2 | [-5.1, -3.3] | 8% |
+| All 5 studies (RE) | 5 | -0.204 | -3.1 | [-4.8, -1.3] | 87% |
+| WAIS only (4 studies) | 4 | **-0.264** | **-4.0** | **[-4.8, -3.2]** | **15%** |
 
-**The WAIS-only I2=8% shows WAIS results are remarkably consistent.** The high overall I2=91% is driven entirely by the ASVAB/AFQT result (d=-0.02) diverging from WAIS (d≈-0.26).
+**WAIS FSIQ is remarkably consistent across 4 countries (I2=15%): d≈-0.26, ~4 IQ points male advantage.**
 
 ### How Weighting Changes the Answer
 
 | Scenario | k | d | IQ pts | Direction |
 |----------|---|---|--------|-----------|
-| All 46 subtests | 46 | -0.176 | -2.6 | Male |
-| Without vocational knowledge | 43 | -0.141 | -2.1 | Male |
-| Without processing speed | 38 | -0.245 | -3.7 | Male |
-| Without voc. knowledge AND speed | 35 | -0.207 | -3.1 | Male |
-| Without DIF-biased/knowledge subtests | 35 | -0.083 | -1.2 | Male (barely) |
-| Core cognitive only (spatial+fluid+VR+WM) | 18 | -0.178 | -2.7 | Male |
+| All 61 subtests | 61 | -0.167 | -2.5 | Male |
+| Without vocational knowledge | 58 | -0.140 | -2.1 | Male |
+| Without processing speed | 50 | -0.237 | -3.6 | Male |
+| Without voc. knowledge AND speed | 47 | -0.208 | -3.1 | Male |
+| Without DIF-biased/knowledge subtests | 48 | -0.085 | -1.3 | Male (barely) |
+| Core cognitive only (spatial+fluid+VR+WM) | 26 | -0.177 | -2.7 | Male |
 
-**Key takeaway:** Every scenario shows a male advantage, ranging from 1.2 to 3.7 IQ points. Even after removing all knowledge/DIF-biased subtests, the residual is d=-0.083 (~1.2 points), driven by spatial (d=-0.29) and working memory (d=-0.22).
-
-BUT: Processing speed (d=+0.15 pooled) is the only female-favoring domain and its CI crosses zero. The massive I2=96% reflects the Italy vs Netherlands/US split — this isn't a settled quantity.
+**Every scenario shows a male advantage (1.3 to 3.6 IQ pts).** Processing speed (d=+0.15, now significantly > 0) is the only female-favoring domain. The I2=95% reflects the Italy anomaly.
 
 ## Revised Master Assessment (third revision, 2026-03-04)
 
@@ -840,3 +890,10 @@ BUT: Processing speed (d=+0.15 pooled) is the only female-favoring domain and it
 - Helland-Riise et al. 2024 — "Large-scale item-level analysis of the Figural Matrices Test in the Norwegian Armed Forces"
 - van der Sluis et al. 2006 — "Sex differences on the Dutch WAIS-III" (full text fetched)
 - Pezzuti et al. 2020 — "Gender differences and measurement bias: Italian WAIS-IV and WAIS-R" (full text fetched)
+- Daseking et al. 2017 — "Sex differences in cognitive abilities: German WAIS-IV" (full text fetched)
+- Deary et al. 2007 — "Brother-sister differences in g: NLSY79 ASVAB" (full text fetched)
+- Roivainen 2011 — "Gender differences in processing speed: A review" (full text read)
+- Roivainen 2010 — "European and American WAIS III norms: Cross-national differences" (full text read)
+- Roivainen 2019 — "European and American WAIS IV norms: Cross-national differences" (full text read)
+- Camarata & Woodcock 2006 — "Sex differences in processing speed: WJ-III" (via Roivainen 2011)
+- Longman, Saklofske & Fung 2007 — "WAIS-III percentile scores by education and sex" (via Roivainen)
