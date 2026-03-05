@@ -130,7 +130,7 @@ This is the core question. There is no objectively "fair" weighting — the weig
 
 2. **Whether the Raven's difference reflects g or spatial-specific ability** — Progressive Matrices load heavily on spatial reasoning, not just fluid g. If the male advantage is spatial-specific rather than g-general, it doesn't generalize to "males are smarter."
 
-3. **Developmental trajectory** — The near-consensus is no difference in childhood, possible male advantage emerging in adolescence. But is this biological maturation or differential socialization? The data don't resolve this.
+3. **Developmental trajectory and the maturational confound** — The "no difference in childhood, male advantage at 15+" finding has a major confound: female neurodevelopment leads male by ~1.5-2 years through adolescence (prefrontal cortex maturation ~22-23 in females vs ~25 in males). IQ tests are age-normed, not maturation-normed. This means a 12-year-old girl is being compared to a 12-year-old boy whose brain is developmentally ~2 years behind hers. The "childhood equality" finding may actually mask a female maturational advantage that disappears as males catch up. The "male advantage emerges at 15" could simply be males finishing their developmental catch-up, not a new advantage appearing. If this is correct, the adult difference (post-25, when both sexes are fully mature) is the real signal — and it appears to be ~3-5 IQ points on fluid measures. [INFERENCE]
 
 4. **Population specificity** — Most data is WEIRD (Western, Educated, Industrialized, Rich, Democratic). Cross-cultural patterns are inconsistent.
 
