@@ -142,6 +142,66 @@ The answer to "what would IQ be without balancing" depends on what you consider 
 
 **The honest answer:** There is *probably* a small male advantage in mean adult IQ of ~3-5 points on tests not constructed to eliminate it, concentrated in fluid/spatial reasoning. But the methodological quality of the studies claiming the larger numbers (5+ points) is questionable, and the greater male variability finding (which is more robust) matters more practically than the mean difference.
 
+## Adversarial Attack: Is the Female Verbal Advantage Real or Practice-Confounded?
+
+### The "Yapping" Hypothesis — Dead on Arrival
+
+**Women don't actually talk more than men.** Mehl et al. (2007) attached electronically activated recorders to 396 people and counted actual daily word production: women 16,215 words/day, men 15,669. Statistically identical. The "women talk 20,000 words, men 7,000" is an urban myth with no empirical basis. [SOURCE: Mehl et al. 2007, Science; verified via Perplexity]
+
+So the crude version — women score higher on verbal because they practice talking more — is wrong.
+
+### The Subtler Practice Confound — Reading
+
+The stronger version of the argument: **verbal IQ (especially vocabulary) correlates strongly with reading, and women read more.** Reading predicts longitudinal VIQ gains across subtests. If the verbal advantage reflects differential reading exposure rather than innate ability, it's a practice artifact, not a cognitive difference. [SOURCE: Reynolds & Turek 2012; PMC3853584]
+
+This is a real confound, but it doesn't fully explain the pattern because:
+- Female advantages in speech sound discrimination appear as early as **6 months** [SOURCE: PMC3769140]
+- Verbal advantages appear at **2-4 years**, before literacy [SOURCE: PMC10561781]
+- The direction of causation is ambiguous — maybe women read more *because* they have higher verbal ability, not the other way around
+
+### The Female Verbal Advantage Is Tiny — and Non-Uniform
+
+This is the most important point:
+
+| Verbal Subtype | Female Advantage (d) | Source |
+|---------------|---------------------|--------|
+| **Overall verbal ability** | **0.11** | Hyde & Linn 1988, 165 studies |
+| Phonemic fluency | 0.12-0.14 | Hirnstein et al. 2022 |
+| Verbal episodic memory (recall) | 0.28 | Hirnstein et al. 2022 |
+| Verbal memory (recognition) | 0.12-0.17 | Hirnstein et al. 2022 |
+| Semantic fluency | ~0.01-0.02 | Hirnstein et al. 2022 |
+| Overall verbal fluency | 0.07 | Hirnstein et al. 2022 |
+| Verbal comprehension (WAIS) | ~0 (or male advantage) | Taiwan WAIS-IV: d = -0.27 male advantage |
+
+Key observations:
+1. The female verbal advantage is concentrated in **verbal memory and phonemic fluency** — not verbal reasoning or comprehension
+2. On the WAIS-IV Verbal Comprehension Index, **males actually lead** (d = 0.27 in Taiwan standardization)
+3. Semantic fluency (generating category members) shows essentially **no sex difference**
+4. The largest female advantage (verbal episodic memory, d = 0.28) is a **memory** skill, not a reasoning skill
+
+### The Asymmetry That Makes "Balancing" Misleading
+
+Here's the adversarial punchline:
+
+- Female verbal advantage: d ≈ 0.11 (overall)
+- Male spatial advantage: d ≈ 0.4-0.7 (mental rotation d ≈ 0.7, spatial visualization d ≈ 0.4)
+- Male math advantage: d ≈ 0.15-0.25 (depending on type)
+
+If you "balance" a test by including equal parts verbal and spatial, you're treating a d = 0.11 female advantage as equal counterweight to a d = 0.5+ male advantage. **This is not "fairness" — it's over-weighting the smaller effect.** A truly "effect-size-balanced" test would produce a net male advantage because the male-favoring domains have larger effect sizes.
+
+However, this argument assumes all cognitive domains are equally valid components of intelligence, which is itself a contestable assumption. Verbal memory and processing speed matter in real-world functioning even if their sex differences are small.
+
+### What Survives the Attack
+
+The practice confound is real for **vocabulary and crystallized verbal knowledge** — these are demonstrably influenced by reading exposure. But it cannot explain:
+- Verbal advantages appearing at 6 months to 2 years (pre-literacy)
+- The fact that women don't actually talk more
+- The verbal memory advantage (d = 0.28), which is not obviously practice-dependent
+
+The attack on the *overall IQ balancing question* is stronger: the asymmetry in effect sizes (large male spatial advantage vs small female verbal advantage) means that "equal weighting" systematically under-represents the male advantage. Whether this constitutes "unfairness" depends on what you think intelligence tests should measure.
+
+[FRAMING-SENSITIVE: The claim "IQ tests are rigged against men" and the claim "IQ tests fairly measure all cognitive domains" are both overstated. The truth is that design choices in test construction have non-trivial consequences for group comparisons, and there is no Archimedean point from which to define "fair weighting."]
+
 ## Sources Saved to Corpus
 
 - Lynn & Irwing 2004 — "Sex differences on the progressive matrices: A meta-analysis" (full text fetched)
