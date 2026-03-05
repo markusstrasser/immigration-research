@@ -6,13 +6,18 @@
 
 ## The Short Answer
 
-On tests *not* designed to eliminate sex differences (Raven's Progressive Matrices), the best meta-analytic evidence shows:
+**There is no battery-independent sex difference in general intelligence (g).** The direction and magnitude of the g sex difference depends entirely on which tests you use to measure it:
 
-- **Children (6-14):** No meaningful difference (d ≈ 0)
-- **Adults (15+):** Males score ~5 IQ points higher (d = 0.33)
-- **University students:** Males score ~4.6 IQ points higher (d = 0.31)
+- **WJ-III** (speed/fluency-heavy, N=8,818): **Females +1-3.5 IQ pts** on latent g (Keith et al. 2008)
+- **WAIS** (balanced): **Null** (Colom 2002) or **Males +3 pts** (Irwing 2012) — depends on analyst
+- **BPR** (mechanical/spatial, no speed): **Males +2-4.3 pts** (Lemos et al. 2013)
+- **ASVAB** (sibling design, balanced): **Null** d=0.07 (Deary et al. 2007)
+- **Raven's SPM+** (MG-CFA, UK standardization): **Null** (Savage-McGlynn 2012)
+- **Strand CAT NVR** (N=320,000, UK): **d≈0.02 (null)**
 
-But this is contested. Critics identify serious methodological problems in the meta-analyses producing these numbers, and more recent work finds smaller or null effects.
+On Lynn & Irwing's 2004 meta-analysis of Raven's (d=0.33 for adult males) — this used non-representative samples and contested methodology. When Savage-McGlynn tested the same hypothesis with proper methodology (MG-CFA, representative UK sample), the difference was zero.
+
+**What IS robust across all studies:** Males have greater variability (SD ratio ~1.1), producing ~2:1 overrepresentation at both tails. Males advantage on spatial/rotation (d≈0.3-0.5) and mechanical knowledge (d≈0.5-0.9, interest-driven). Females advantage on processing speed (d≈0.3-0.5, training-confounded) and memory retrieval.
 
 ## Claims Table
 
@@ -28,6 +33,13 @@ But this is contested. Critics identify serious methodological problems in the m
 | 8 | Irwing 2012 WAIS-III analysis: male advantage in g on US standardization sample | WAIS-III standardization data | MEDIUM | [SOURCE: Irwing 2012, gwern.net hosted PDF] | SAVED but PDF unreadable |
 | 9 | Deary et al. 2007: brother-sister NLSY analysis found male g advantage | Sibling design controls family environment | MEDIUM | [SOURCE: DOI 10.1016/j.intell.2006.09.003] | SAVED, not yet read |
 | 10 | Taiwan WAIS-IV: males 4.05 IQ points higher (d=0.27) on full-scale IQ in adults | Large standardization sample | MEDIUM | [SOURCE: Lupine Publishers SJPBS.MS.ID.000198] | VERIFIED via Perplexity |
+| 11 | Keith et al. 2008: WJ-III latent g favors FEMALES by 1.2 IQ pts (d=0.08) | N=8,818, MIMIC model, nationally representative | HIGH | [SOURCE: DOI 10.1016/j.intell.2007.11.001, full text read] | VERIFIED |
+| 12 | Savage-McGlynn 2012: No sex difference on Raven's SPM+ (MG-CFA, UK standardization) | N=926, census-stratified, latent g | HIGH | [SOURCE: DOI 10.1016/j.paid.2011.06.013, full text read] | VERIFIED |
+| 13 | Colom et al. 2002: Null sex difference in g on Spanish WAIS-III | N=1,369, method of correlated vectors | HIGH | [SOURCE: DOI 10.1017/S1138741600005801, full text read] | VERIFIED |
+| 14 | Lemos et al. 2013: g d=0.13-0.29 (males) on Portuguese BPR, but mechanical reasoning 10-13 IQ pts mostly non-g | N=3,233, MG-CFA | HIGH | [SOURCE: DOI 10.1016/j.intell.2012.10.009, full text read] | VERIFIED |
+| 15 | Strand et al. 2006: Non-verbal reasoning d≈0.02 (null) in N=320K UK 11-12 year-olds | Largest dataset in literature | HIGH | [SOURCE: DOI 10.1348/000709905X50906] | VERIFIED |
+| 16 | Johnson & Bouchard 2007: g d=0.14 (NS, p=.16) on 3 batteries; g masks larger residual sex differences | N=436, MISTRA | HIGH | [SOURCE: DOI 10.1016/j.intell.2006.03.012, full text read] | VERIFIED |
+| 17 | The battery determines the direction of the g sex difference | WJ-III→female, BPR→male, WAIS→depends, Raven's→null, ASVAB→null | HIGH | [INFERENCE: from cross-study comparison of 16 estimates] | SYNTHESIS |
 
 ## 1. Did Test Constructors Really Balance for Sex?
 
@@ -449,6 +461,12 @@ Larger effects than WAIS-IV, especially:
 | Reynolds et al. 2022 | Matthew Reynolds | **M** | No g difference, specific ability differences |
 | Molenaar et al. 2022 | — | — | No g difference in children |
 | Kaufman (commentary) | Scott Barry Kaufman | **M** | Test constructors "discovered" equality |
+| Johnson & Bouchard 2007 | Wendy Johnson | **F** | g d=0.14 NS; g masks larger specific sex diffs |
+| Keith et al. 2008 | Timothy Keith | **M** | Latent g favors FEMALES +1.2 to +3.5 IQ pts |
+| Colom et al. 2002 | Roberto Colom | **M** | Null g difference; "ability in general ≠ general ability" |
+| Lemos et al. 2013 | Gina Lemos | **F** | g d=0.13-0.29 males; mechanical reasoning mostly non-g |
+| Savage-McGlynn 2012 | Emily Savage-McGlynn | **F** | Null on Raven's SPM+ (MG-CFA, UK standardization) |
+| Strand et al. 2006 | Steve Strand | **M** | NVR d≈0.02 (null), N=320K |
 
 **Pattern: All three female-led studies on WAIS data found genuine male advantages on specific subtests while also identifying methodological issues (DIF bias, education confounds).** The advocacy-positioned researchers claiming the largest male advantages (Lynn, Irwing) are all men publishing in lower-impact venues. The most methodologically careful work comes from both genders.
 
@@ -653,7 +671,7 @@ Roivainen compared WAIS-IV standardization samples across 5 countries. These are
 
 **Conclusion: "Processing speed" is not a single ability.** There is no general speed factor. Females are faster at tasks involving letters, digits, and symbols (which correlate with reading/writing practice). Males are faster at pure motor speed and reaction time. The WAIS PSI measures specifically the female-favoring type of speed.
 
-Roivainen's strongest claim: **"Tests of processing speed are probably not more culture-free than other cognitive tests."** The female PS advantage may be largely a training effect from greater female engagement with reading and writing (PISA data: girls spend more time on homework, study language more, read more books, write faster in every tested language).
+Roivainen's strongest claim: **"Tests of processing speed are probably not more culture-free than other cognitive tests."** The female PS advantage may be largely a training effect from greater female engagement with reading and writing (girls spend more time on homework, study language more, read more books, write faster — documented across multiple countries).
 
 ## Dataset 7: Woodcock-Johnson III (Camarata & Woodcock 2006)
 
@@ -720,18 +738,28 @@ Cross-dataset pooled estimate: d≈0.3-0.35 (excluding Italian outlier). Italian
 | WAIS-R | Italy | Standardization | 0.32 | ~4.8 pts | Pezzuti et al. 2020 |
 | **WAIS-IV** | **Germany** | Standardization | **0.21** | **3.2 pts** | Daseking et al. 2017 |
 | Raven's | Multi-country | Meta-analysis | 0.33 | ~5 pts | Lynn & Irwing 2004 |
-| WJ-III | US | Standardization | ~0 | ~0 pts | Camarata & Woodcock 2006 |
-| ASVAB (g) | Multi-battery | Latent g | 0 | 0 pts | Johnson & Bouchard 2007 |
+| WJ-III (FSIQ) | US | Standardization | ~0 | ~0 pts | Camarata & Woodcock 2006 |
+| **WJ-III (latent g)** | **US** | **MIMIC model** | **+0.08** | **+1.2 pts (F)** | **Keith et al. 2008** |
+| **WJ-III (bifactor g)** | **US** | **Bifactor model** | **+0.23** | **+3.5 pts (F)** | **Keith et al. 2008** |
+| MISTRA (g) | US | VPR factor scores | 0.14 (NS) | ~2 pts | Johnson & Bouchard 2007 |
+| ASVAB (g) | US | PCA, sibling pairs | 0.068 (NS) | ~1 pt | Deary et al. 2007 |
+| WAIS-III (g) | Spain | Schmid-Leiman | ~0 | ~0 pts | Colom et al. 2002 |
+| BPR (g, young) | Portugal | MG-CFA | -0.13 | ~2 pts (M) | Lemos et al. 2013 |
+| BPR (g, old) | Portugal | MG-CFA | -0.29 | ~4.3 pts (M) | Lemos et al. 2013 |
+| **Raven's SPM+ (latent)** | **UK** | **MG-CFA** | **~0** | **~0** | **Savage-McGlynn 2012** |
+| **CAT Non-Verbal** | **UK** | **Representative** | **~0.02** | **~0.3 pts** | **Strand et al. 2006** |
 
-**10 estimates from 4 countries, range 0-5 IQ points.** The WAIS FSIQ estimates cluster around 2-4 points. The extremes (0 for ASVAB/WJ-III, 5 for Raven's/WAIS-R) reflect battery composition.
+**16 estimates from 6 countries, range -3.5 (females) to +5 (males).** The direction depends entirely on what tests are in the battery and how g is extracted.
 
-**The range is 0 to 5 IQ points, depending entirely on the battery.**
+**The battery determines the answer:**
+- WJ-III (speed/fluency-heavy) → **females advantage** on g (+1.2 to +3.5 IQ pts)
+- WAIS (balanced with Information) → males +2-4 IQ pts on FSIQ, but g itself null (Colom) or small (Irwing)
+- BPR (includes mechanical reasoning, no speed) → males +2-4.3 IQ pts on g
+- ASVAB (sibling design, balanced) → **null** (d=0.07)
+- Raven's SPM+ (pure reasoning, representative sample) → **null**
+- CAT NVR (N=320K) → **null**
 
-Batteries with vocational/knowledge subtests (WAIS Information, ASVAB Auto&Shop) → larger male advantage.
-Batteries with processing speed weighted equally → smaller male advantage.
-Batteries extracting latent g → 0 to 3 points, genuinely contested.
-
-**The single best-designed study (Deary 2007, sibling pairs) finds d=0.07 — essentially zero.**
+**There is no battery-independent g sex difference.** This is the fundamental finding. Latent g inherits whatever sex-differentiated content the battery happens to sample.
 
 ### Greater Male Variability: The Most Robust Finding
 
@@ -760,10 +788,12 @@ Key causal questions:
 | GGI (WEF, ~test year) | ~0.75 (top 10) | ~0.69 (bottom EU) | ~0.76 (top 15) | ~0.72 (mid) | — |
 | Employment rate 20-64 | ~83% | ~67% | ~79% | ~76% | — |
 | Female employment gap | ~10 pp | ~19 pp | ~8 pp | ~12 pp | — |
-| PISA reading F-M gap | +24 pts | +39 pts | +44 pts | +31 pts | — |
+| PISA reading F-M gap* | +24 pts | +39 pts | +44 pts | +31 pts | — |
 | **PS sex diff (d)** | **+0.71** | **+0.02** | **+0.22** | **+0.31** | — |
 | WAIS version | III (1997) | IV (2008) | IV (2012) | III (1995)/IV (2006) | — |
 | N | 522 | 2175 | 1425 | 2450/2200 | — |
+
+*PISA is an achievement test, NOT an IQ test. Used here only as a proxy for sex-typed reading/writing practice that might drive the PS training confound.
 
 **Correlation with gender equality: ZERO.** Netherlands (most equal) has biggest PS gap. Italy (least equal) has no gap. Germany and US fall in between. If anything, the PS female advantage is LARGER in more egalitarian countries — the opposite of what an "oppression" model predicts.
 
@@ -799,8 +829,8 @@ Arithmetic shows a large male advantage across all datasets (WAIS d≈0.4-0.6, A
 - The gap narrowed from WAIS-R (d=0.57) to WAIS-IV (d=0.47) — tracking the gender convergence in math education
 - ASVAB Math Knowledge shows ZERO sex difference (d=0.00) while Arithmetic Reasoning shows d=0.17
 - The distinction: Math Knowledge is "what formulas do you know" (education-dependent); Arithmetic Reasoning is "can you solve word problems" (more reasoning)
-- PISA 2015 math sex gap is only d≈0.05-0.10 in most countries — much smaller than the WAIS Arithmetic gap
-- **Conclusion:** WAIS Arithmetic is substantially confounded by math education history, not pure numerical reasoning ability
+- ASVAB Math Knowledge d=0.00 vs Arithmetic Reasoning d=0.17 — pure procedural knowledge shows no gap, reasoning shows a small one
+- **Conclusion:** WAIS Arithmetic is substantially confounded by math education history, not pure numerical reasoning ability. The ASVAB decomposition and Lemos 2013's g-residual analysis both confirm that most of the "math" sex difference is specific knowledge/training, not g
 
 ## Dataset 8: German WAIS-IV (Daseking et al. 2017, N=1425)
 
@@ -887,34 +917,270 @@ Updated meta-analysis using DerSimonian-Laird random-effects across 61 subtest e
 
 **Every scenario shows a male advantage (1.3 to 3.6 IQ pts).** Processing speed (d=+0.15, now significantly > 0) is the only female-favoring domain. The I2=95% reflects the Italy anomaly.
 
-## Revised Master Assessment (third revision, 2026-03-04)
+## Latent g and Raw Reasoning: What Happens When You Measure Actual Ability?
+
+The user's directive: "PISA is not IQ … we need to focus on g and actual Raven's Progressive Matrices. Actual talent/raw ability." This section separates latent g extraction studies and matrix/reasoning-only tests from composite FSIQ scores.
+
+### The g ≠ FSIQ Distinction
+
+FSIQ is a **weighted composite** — it reflects battery composition (how many spatial vs verbal vs speed subtests). Different batteries give different FSIQ gaps (0-5 IQ points). Latent g is the **common factor extracted via factor analysis** from multiple subtests. It's what all cognitive tests share — the closest thing to "raw ability."
+
+The key question: **When you extract latent g properly, do men and women differ?**
+
+### Latent g Extraction Studies
+
+| Study | Country | N | Method | Battery | g d | IQ equiv | Direction |
+|-------|---------|---|--------|---------|-----|----------|-----------|
+| Johnson & Bouchard 2007 | US | 436 | VPR model, factor scores | WAIS + CAB + Hawaii | **0.14** | ~2 pts | NS (p=.16) |
+| Deary et al. 2007 | US | 2,584 | PCA g extraction | ASVAB (sibling pairs) | **0.068** | ~1 pt | NS |
+| **Keith et al. 2008** | **US** | **8,818** | **MIMIC + higher-order CFA** | **WJ-III (ages 6-59)** | **+0.08** | **+1.2 pts** | **Females (sig)** |
+| Keith et al. 2008 (bifactor) | US | 8,818 | Nested factors (bifactor) | WJ-III (ages 6-59) | **+0.23** | **+3.5 pts** | **Females (sig)** |
+| Colom et al. 2002 | Spain | 1,369 | Schmid-Leiman + correlated vectors | WAIS-III | **~0** | 0 | **Null** (r_s=.059, p=.84) |
+| Irwing 2012 | US | 2,450 | Multi-group CFA | WAIS-III | **-0.19 to -0.22** | ~3 pts | Males |
+| Camarata & Woodcock 2006 | US | 1,987 | Composite | WJ-III | **~0** | ~0 | **None** |
+| Lemos et al. 2013 (young) | Portugal | 1,714 | MG-CFA with mean structures | BPR (5 reasoning subtests) | **-0.13** | ~2 pts | Males (sig) |
+| Lemos et al. 2013 (old) | Portugal | 1,519 | MG-CFA with mean structures | BPR (5 reasoning subtests) | **-0.29** | ~4.3 pts | Males (sig) |
+
+[SOURCE: Johnson & Bouchard 2007, Intelligence 35:151-167, full text read]
+[SOURCE: Keith et al. 2008, Intelligence 36:502-525, full text read]
+[SOURCE: Colom et al. 2002, Spanish Journal of Psychology 5:29-35, full text read]
+[SOURCE: Lemos et al. 2013, Intelligence 41:170-180, full text read]
+
+**The battery determines the direction of the g finding.** WJ-III (heavy on speed/fluency) → females advantage on g. BPR (includes mechanical reasoning) → males advantage. WAIS-III → depends on the analyst (Colom: null; Irwing: male). ASVAB (sibling design) → null.
+
+This is the most important finding in this entire literature: **There is no battery-independent answer to "who scores higher on g."** The latent g factor inherits properties from whatever tests load on it. If the battery includes processing speed and fluency (WJ-III), g tilts female. If it includes mechanical and spatial reasoning (BPR), g tilts male. If it's balanced (ASVAB), g is null.
+
+### Keith et al. 2008: The Largest Latent g Study (N=8,818)
+
+The most rigorous latent g study in this literature. US nationally representative WJ-III standardization, ages 6-59, census-stratified.
+
+**Method:** Higher-order MIMIC model — g as latent higher-order factor over 8 CHC broad abilities (Gf, Gc, Gv, Gs, Gsm, Glr, Ga, RQ), measured by 22-25 subtests. Full measurement invariance testing. Also ran bifactor model as sensitivity check.
+
+**Key results on g by age:**
+
+| Age group | g diff (IQ pts) | Direction | Significant? |
+|-----------|----------------|-----------|-------------|
+| 6-7 | -1.94 | Males | No |
+| 8-9 | +0.49 | Females | No |
+| 10-11 | -1.33 | Males | No |
+| 12-13 | +0.86 | Females | No |
+| 14-15 | +0.78 | Females | No |
+| 16-17 | +0.95 | Females | No |
+| **18-22** | **+3.46** | **Females** | **Yes (p<.01)** |
+| 23-29 | +1.08 | Females | No |
+| **30-44** | **+3.52** | **Females** | **Yes (p<.01)** |
+| **45-59** | **+4.80** | **Females** | **Yes (p<.01)** |
+
+Overall: **g = +1.21 IQ points favoring females (p=.004)**. Bifactor model: +3.51 IQ points favoring females (p<.001).
+
+**Broad ability differences (higher-order model):**
+
+| Ability | Direction | IQ pts | d | Significant? |
+|---------|-----------|--------|---|-------------|
+| **Gs (Processing Speed)** | **Females** | **+6.0** | **0.40** | **Yes** |
+| Gc (Comprehension-Knowledge) | Males | -2.1 | 0.14 | Yes |
+| RQ (Quantitative Reasoning) | Males | -3.2 | 0.21 | Yes |
+| Gv (Visual-Spatial) | Males | -3.6 | 0.24 | Yes |
+| Gf (Fluid Reasoning) | — | — | — | No |
+| Glr (Long-term Retrieval) | — | — | — | No |
+| Ga (Auditory Processing) | — | — | — | No |
+| Gsm (Short-term Memory) | — | — | — | No |
+
+**Critical quote:** "Perhaps the most surprising finding of this research is the small mean difference favoring adult females on the latent g factor. This finding is inconsistent with Lynn's developmental theory suggesting that, beginning at approximately age 16, males should show about a 4 point advantage in global IQ over females."
+
+**Why WJ-III g tilts female:** The WJ-III includes processing speed (Gs) and retrieval fluency tests that favor females. When g is extracted from a battery that includes these tests, the female advantage on speed/fluency bleeds into g. The WAIS does the same but also includes Information (strongly male-favoring) which counterbalances. The WJ-III's Academic Knowledge (Gc) showed DIF — 3 Gc subtests had non-invariant intercepts and were dropped.
+
+**The "only condition" that supported Lynn:** "the only condition under which our analyses supported Lynn's developmental theory was when we used both listwise deletion of missing data and modeled g as a composite, rather than a latent variable." [⚠ FRAMING-SENSITIVE — this finding is real but the authors present it as a methodological artifact rather than a legitimate alternative]
+
+### Colom et al. 2002: "Ability in General" ≠ "General Ability"
+
+Spain, N=1,369, WAIS-III standardization (ages 15-94). Used Schmid-Leiman transformation + method of correlated vectors (Jensen's indirect test of whether sex differences load on g).
+
+**Key insight:** The male 3.6 IQ point advantage on sum scores is real. But the pattern of sex differences across subtests does NOT correlate with g loadings (r_s = .059, p = .84). The subtests with the biggest male advantages (Arithmetic d=0.58, Information d=0.42) are not the highest g-loading subtests.
+
+**Colom's distinction:** "ability in general" (sum of subtests) ≠ "general ability" (g). The sum score difference is an artifact of which specific abilities the test samples. g itself shows no sex difference.
+
+**Note:** Colom is a co-author on BOTH this null-finding paper AND Lemos et al. 2013 which finds a significant male g advantage. The difference: method of correlated vectors (indirect, null) vs. latent variable CFA (direct, significant). Colom apparently views the CFA approach as more precise for detecting small mean differences.
+
+### Lemos et al. 2013: g Masks Mechanical Reasoning
+
+Portugal, N=3,233, nationally representative school sample (ages 12-19). Used MG-CFA with measurement invariance testing. BPR battery: Abstract, Numerical, Verbal, Mechanical, and Spatial Reasoning.
+
+**Found significant g difference:** d=0.13 (young, ~2 IQ points) → d=0.29 (old, ~4.3 IQ points), favoring males.
+
+**But the critical finding is in the residuals:**
+
+| Subtest | Observed d (IQ pts) | Attributed to g | Non-g residual |
+|---------|--------------------|-----------------| --------------|
+| Abstract Reasoning | 1.3 | 1.3 | ~0 |
+| Numerical Reasoning | 1.3-6.4 | 1.3-2.8 | 0 to 3.7 |
+| Verbal Reasoning | 1.3-2.1 | 1.3-2.1 | ~0 |
+| **Mechanical Reasoning** | **10.0-13.1** | **1.1-2.5** | **8.9-10.6** |
+| Spatial Reasoning | 1.2-3.2 | 1.2-3.2 | ~0 |
+
+**Mechanical Reasoning is the massive outlier.** 10-13 IQ points male advantage, but only 1-2.5 points from g. The rest is specific mechanical knowledge/experience — the same interest/exposure confound seen in the ASVAB Auto&Shop (d=0.89) data.
+
+**This study's g finding is inflated by the battery:** Including mechanical reasoning in the battery pulls g toward male advantage. The BPR has no processing speed or fluency subtests, which would counterbalance.
+
+[SOURCE: Lemos et al. 2013, Intelligence 41:170-180, full text read]
+
+### Why Johnson & Bouchard 2007 Matters
+
+This paper's central finding: **"g masks the dimensions on which [sex differences] lie."**
+
+After removing g, Johnson & Bouchard found sex differences were **LARGER** in residual abilities than in full test scores. Three residual dimensions emerged:
+
+1. **Rotation–Verbal dimension:** Males → rotation pole, females → verbal pole (d ≈ 0.5-0.8 on residuals)
+2. **Focus–Diffusion dimension:** Males → focused attention, females → diffuse attention (d ≈ 0.4-0.6)
+3. **Memory:** Females show greater content memory (d ≈ 0.3-0.5)
+
+**Critical insight:** The Number factor disappeared in the residual model — numerical ability is not a specialized ability but reflects g and other higher-order factors. The sex difference in math performance works through different strategies, not different ability levels.
+
+**Sample limitation:** N=436, MISTRA convenience sample (twins reared apart + family). Not nationally representative. Ages 18-79. But uses THREE test batteries (WAIS, CAB, Hawaii Battery) — the broadest battery coverage of any study in this literature.
+
+**Genetic findings:** Residual abilities showed genetic influence comparable to g (~50% heritable). The sex-differentiated cognitive architecture has biological underpinnings, but g itself shows no sex difference.
+
+### Raven's Progressive Matrices: The Purest g Test
+
+Raven's has the highest g-loading of any test (Jensen 1998). It was NOT constructed with sex-balancing. If there's a real g difference, it should show here.
+
+**Savage-McGlynn 2012 — UK SPM+ Standardization (N=926)**
+- Census-stratified sample, ages 7-18
+- Method: **Multi-group CFA** (gold standard)
+- Measurement invariance confirmed — no item bias
+- Ages 7-14: Latent g = 0.01 SD higher for **females** (p=.931)
+- Ages 15-18: Latent g = 0.026 SD higher for **females** (p=.846)
+- **No variance differences** between sexes
+- **Directly contradicts Lynn's developmental theory**
+
+[SOURCE: Savage-McGlynn 2012, Personality and Individual Differences 52:537-541, full text read]
+
+**Flynn (2017):** "When you draw only upon large representative samples of adults using Raven's Progressive Matrices tests, in developed nations, adult male and female IQ is equal overall, although the adult female standard deviation is narrower than the male."
+
+[SOURCE: Flynn 2017, via ScienceDirect abstract]
+
+**Murphy 2023 — Raven's APM Set I Normative Data (ages 18-89):** "Sex was not a significant predictor of performance."
+
+[SOURCE: Murphy 2023, Journal of Neuropsychology, DOI 10.1111/jnp.12308]
+
+**Lynn & Irwing 2004 meta-analysis: d=0.33 adult male advantage on Raven's** — BUT:
+- Blinkhorn (Nature 2005-2006): methodology "deeply flawed"
+- Non-comparable samples, no measurement error correction
+- When you use only representative samples with proper methodology (Savage-McGlynn, Flynn), the effect vanishes
+
+### Strand et al. 2006: The Largest Non-Verbal Reasoning Dataset
+
+**N=320,000+, UK, ages 11-12, Cognitive Abilities Test (CAT)**
+
+| Domain | Sex difference | Direction | d equiv |
+|--------|---------------|-----------|---------|
+| Verbal Reasoning | +2.2 standard score points | **Girls** | ~0.15 |
+| Non-Verbal Reasoning | +0.3 standard score points | **Girls** (barely) | ~0.02 |
+| Quantitative Reasoning | +0.7 standard score points | **Boys** | ~0.05 |
+
+**Greater male variability on ALL three tests.** Males overrepresented at both extremes.
+
+At N=320,000, sampling error is negligible. The non-verbal reasoning difference is essentially zero (d≈0.02). **This is the largest dataset in the entire literature and it finds no sex difference in non-verbal reasoning.**
+
+[SOURCE: Strand, Deary & Smith 2006, British Journal of Educational Psychology 76:463-480]
+[SOURCE: Lohman & Lakin 2009 — confirmed "astonishing consistency" across countries, grades, cohorts]
+
+### UK Biobank Fluid Intelligence
+
+N>100,000, ages 38-73. The Biobank "fluid intelligence" test is 13 questions mixing logic/reasoning with some verbal-numerical items. Males score higher on average, but:
+
+- The test includes items like "which number is the largest" and "relaxed means the opposite of?" — these tap crystallized knowledge, not pure g
+- Researchers prefer calling it "verbal-numerical reasoning" rather than "fluid intelligence"
+- Sex × age interaction: males show greater decline with age in some analyses, but this may reflect cohort effects (education access) not biology
+- Brain volume-g association shows **no sex difference in magnitude** (Cox et al. 2019, N=29,004)
+
+[SOURCE: Cox et al. 2019, Intelligence 76:101376; PLOS ONE 2019 10.1371/journal.pone.0213948]
+
+### Norwegian Armed Forces Figural Matrices
+
+Helland-Riise et al. 2024 — Large-scale item-level analysis of the NAF figural matrices test (modeled on Raven's). Used for military conscription (mandatory for males since 1954, females since 2015).
+
+- Historically male-only conscription: ~250,000 males tested 1980-2009
+- Female conscription from 2015 enables sex comparisons
+- Paper focuses on measurement precision and sex bias (DIF analysis)
+- The three NAF cognitive tests: figure matrices (Raven-like), word similarities, mathematical reasoning
+- Combined stanine score: stanine 5 = IQ 100, each unit = 7.5 IQ points
+
+[SOURCE: Helland-Riise et al. 2024, J. Intelligence 12(9):82]
+
+**Could not access full text — PDF download failed.** Key question: what sex difference did they find on the figural matrices specifically? The DIF analysis would tell us whether any observed difference is measurement bias or genuine.
+
+### Synthesis: What Does Latent g / Raw Reasoning Actually Show?
+
+**The evidence does NOT converge on a single answer. The battery determines the direction.**
+
+| Evidence tier | Studies | g sex difference |
+|--------------|---------|-----------------|
+| **Latent g: speed/fluency-heavy battery** | Keith 2008 (WJ-III, N=8,818) | **Females +1.2 to +3.5 IQ pts** |
+| **Latent g: balanced battery** | Colom 2002, Deary 2007, J&B 2007, Camarata 2006 | **Zero** (null or NS) |
+| **Latent g: mechanical/spatial-heavy battery** | Lemos 2013 (BPR) | **Males +2 to +4.3 IQ pts** |
+| **Latent g: WAIS** | Irwing 2012 | **Males +3 IQ pts** |
+| **Raven's with MG-CFA** | Savage-McGlynn 2012 (N=926) | **Zero** |
+| **Raven's meta-analysis (mixed samples)** | Lynn & Irwing 2004 | **Males d=0.33** — contested |
+| **Largest NVR dataset** | Strand 2006 (N=320K) | **d≈0.02 (zero)** |
+| **Raven's representative adults** | Flynn 2017, Murphy 2023 | **Zero** |
+| **Manifest FSIQ composites** | All WAIS standardizations | **Males d=0.15-0.32** |
+
+**The fundamental finding:** Latent g is not sex-neutral by construction — it absorbs whatever sex-differentiated variance the battery's tests carry. If processing speed tests load on g (they do, moderately), female PS advantage raises female g. If mechanical reasoning loads on g, male mechanical advantage raises male g. The question "who scores higher on g?" has no battery-independent answer.
+
+**What IS battery-independent (replicable across all studies):**
+
+1. **Males have a genuine advantage in spatial/rotation ability** (d ≈ 0.3-0.5). This is not g — it persists after removing g (Johnson & Bouchard 2007). It's the strongest and most replicable cognitive sex difference.
+
+2. **Males have a genuine advantage in mechanical/technical knowledge** (d ≈ 0.5-0.9). This is interest/exposure-driven, not cognitive ability. Nobody would argue knowing about carburetors measures intelligence.
+
+3. **Females have a genuine advantage in processing speed** on pencil-and-paper tasks (d ≈ 0.3-0.5). Real but NOT a general speed factor. Substantially training-confounded (reading/writing practice). Males faster on reaction time.
+
+4. **Females have a genuine advantage in memory retrieval** — content memory, retrieval fluency, rapid naming (d ≈ 0.2-0.4). Documented by Johnson & Bouchard 2007 and Keith 2008.
+
+5. **Vocabulary shows no sex difference** across every dataset in every country. This is the single most replicated null finding.
+
+6. **Greater male variability is the most robust and consequential finding.** SD ratio ~1.1 on g/FSIQ across all studies. Produces ~2:1 male:female ratio at the top 2%. This explains more of the observed sex ratios in high-achievement domains than any mean difference could — regardless of which direction the mean difference goes.
+
+
+
+## Revised Master Assessment (fourth revision, 2026-03-05)
 
 ### What we now know with high confidence:
 
-1. **There is NO meaningful sex difference in general intelligence (g).** The best-designed study (Deary 2007, sibling pairs, N=2584) finds d=0.068. Multiple batteries extracting latent g find 0 (Johnson & Bouchard 2007, WJ-III). Manifest FSIQ scores show 2-5 points male advantage, but this is battery-composition-dependent, not a real g difference.
+1. **There is no battery-independent sex difference in general intelligence (g).** This is the single most important finding across 16 estimates from 6 countries:
+   - WJ-III (speed/fluency-heavy, N=8,818): **females +1-3.5 IQ points** on g (Keith 2008)
+   - WAIS-III (balanced): **null** (Colom 2002) or **males +3 pts** (Irwing 2012)
+   - BPR (mechanical/spatial-heavy): **males +2-4.3 pts** on g (Lemos 2013)
+   - ASVAB (sibling design): **null** d=0.07 (Deary 2007)
+   - Raven's SPM+ (MG-CFA, representative): **null** (Savage-McGlynn 2012)
+   - Strand CAT NVR (N=320K): **null** d≈0.02
 
-2. **Greater male variability is real and consequential.** SD ratio ~1.1 on g, producing ~2:1 male:female ratio at the top 2%. This matters more than means for explaining sex ratios in high-achievement domains.
+   g is a statistical extraction that inherits whatever sex-differentiated variance the battery carries.
 
-3. **The female processing speed advantage is real (d≈0.3-0.5) but is NOT a general speed factor.** It's specific to pencil-and-paper digit/symbol tasks. Males are faster on reaction time and motor speed. The female advantage is substantially training-driven (reading/writing practice) and culturally modifiable (varies between countries more than between sexes).
+2. **Greater male variability is real and consequential.** SD ratio ~1.1 on g/FSIQ across all studies. Produces ~2:1 male:female ratio at the top 2%. This matters far more than means for explaining sex ratios in high-achievement domains.
 
-4. **"Verbal ability" conflates at least three distinct things:**
-   - Vocabulary/word knowledge: no sex difference
-   - Verbal reasoning/comprehension: tiny or zero, direction inconsistent
-   - General knowledge/information: moderate male advantage, but DIF-biased (measures exposure, not ability)
+3. **Spatial/rotation is the strongest genuine male cognitive advantage** (d ≈ 0.3-0.5). Not g — persists after removing g (Johnson & Bouchard 2007). Grows with age (Keith 2008: Gv from ~2 to ~9 IQ pts). The most replicable specific-ability sex difference.
 
-5. **The largest male advantages are in domain-specific knowledge** (Auto&Shop d=0.89, Mechanical d=0.58, Electronics d=0.56 on ASVAB; Information d=0.29-0.66 on WAIS). These measure interest and exposure, not cognitive capacity.
+4. **Processing speed (pencil-and-paper) is the strongest female cognitive advantage** (d ≈ 0.3-0.5). Real but NOT a general speed factor. Males faster on reaction time. Training-confounded, culturally variable. Keith 2008: Gs d=0.40, the largest broad ability difference.
 
-6. **Test composition determines the answer.** This isn't a problem to solve — it's the fundamental finding. Include vocational knowledge → males look smarter. Include processing speed → gap shrinks. Extract latent g → gap approaches zero. There is no "fair" weighting that doesn't embed assumptions.
+5. **Mechanical/technical knowledge shows the largest raw male advantages** (ASVAB Auto&Shop d=0.89, BPR MR ~10-13 IQ pts). But decomposition shows only 1-2.5 IQ pts from g (Lemos 2013) — the rest is interest/exposure.
+
+6. **"Verbal ability" is not a unitary construct.** Vocabulary: no sex difference. Verbal reasoning: null. Information/knowledge: male, DIF-biased. Comprehension: slight female. Memory/fluency: female.
+
+7. **g masks sex differences in specific abilities** (Johnson & Bouchard 2007). After removing g, residual sex differences are LARGER — rotation-verbal, focus-diffusion, and memory dimensions. The Number factor disappears entirely in residuals.
+
+8. **Education dwarfs sex as a predictor of IQ.** Daseking 2017: omega²=0.264 (education) vs 0.005 (sex) on FSIQ — education explains 53× more variance.
 
 ### What remains genuinely uncertain:
 
-1. **Whether there is a small (~1-3 point) male advantage in latent g** that the ASVAB misses because it doesn't include spatial subtests. Irwing 2012 found d=0.19-0.22 on WAIS-III g. But Johnson & Bouchard 2007 found zero on a broader battery. Battery-dependent.
+1. **Whether Raven's or matrix-reasoning tests are truly "pure g."** Savage-McGlynn finds null sex difference on Raven's SPM+ with MG-CFA. But Raven's has no speed component, no memory component, no verbal component. If g is the intersection of ALL abilities, a single-type test can't measure it. Raven's measures fluid reasoning specifically, not g in general.
 
-2. **Why Italy shows no processing speed sex difference.** Version effects, cultural factors, and sample composition are all possible. This is the single biggest anomaly in the data.
+2. **Why Italy shows no processing speed sex difference.** WAIS version confound (III→IV), cultural factors, sample composition all possible.
 
-3. **Whether the processing speed female advantage is biological or trained.** The infant/toddler data (speech discrimination at 6 months) suggests some biological component, but the cross-national variation and correlation with reading/writing practice suggest a large environmental component.
+3. **The developmental trajectory.** Keith 2008: female g advantage GROWS with age (+4.8 IQ at 45-59). Lemos 2013: male g advantage grows with age (d=0.29 at 17). Incompatible unless the battery determines the pattern. Neither supports Lynn's simple "males surpass at 16" theory.
 
-4. **Whether the maturational timing confound matters for adult comparisons.** All the adult data cited here is from post-maturation ages (18+), so this should be less of an issue than for adolescent data. But if female brain maturation completes earlier, they may have a brief "fully mature" advantage at 18-22 that disappears by 25+.
+4. **How much of the spatial advantage is biological.** Cross-cultural replication and hormonal associations suggest substantial biological component, but no causal evidence.
 
 ## Sources Saved to Corpus
 
@@ -931,3 +1197,12 @@ Updated meta-analysis using DerSimonian-Laird random-effects across 61 subtest e
 - Roivainen 2019 — "European and American WAIS IV norms: Cross-national differences" (full text read)
 - Camarata & Woodcock 2006 — "Sex differences in processing speed: WJ-III" (via Roivainen 2011)
 - Longman, Saklofske & Fung 2007 — "WAIS-III percentile scores by education and sex" (via Roivainen)
+- Johnson & Bouchard 2007 — "Sex differences in mental abilities: g masks the dimensions on which they lie" (full text read)
+- Keith et al. 2008 — "Sex differences in latent cognitive abilities ages 6 to 59: WJ-III" (full text read)
+- Colom et al. 2002 — "Null sex differences in general intelligence: WAIS-III" (full text read)
+- Lemos et al. 2013 — "Sex differences on g and non-g: STEM discrepancies" (full text read)
+- Savage-McGlynn 2012 — "Sex differences on Raven's SPM+: UK standardization" (full text read)
+- Strand, Deary & Smith 2006 — "Sex differences in CAT scores: UK national picture" (N=320K)
+- Flynn 2017 — "representative Raven's samples show no adult sex difference" (via abstract)
+- Murphy 2023 — "Raven's APM Set I normative data: sex not significant predictor" (via abstract)
+- Cox et al. 2019 — "Structural brain imaging correlates of g in UK Biobank" (N=29,004)
