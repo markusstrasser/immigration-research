@@ -112,13 +112,18 @@ Again, this is a real restricted-use gate, not a missing download script. [INFER
 - public-use microdata are available through the `Online Codebook`
 - restricted-use data are separately available [SOURCE: https://nces.ed.gov/surveys/hsb/accessingData.asp]
 
-### Current local blocker
+### Current local blocker (updated 2026-03-06)
 
-- the current `Online Codebook` file endpoint in our acquisition path returns `HTTP 500` [SOURCE: `research/iq-sex-differences-nces-datalab-acquisition.md`; `sources/iq-sex-diff/data/hsb/hsb_onlinecodebook_probe.txt`]
+- the old `Online Codebook` file endpoint returned `HTTP 500` [SOURCE: `research/iq-sex-differences-nces-datalab-acquisition.md`]
+- NCES has migrated to a new DataLab Online Codebook at `https://nces.ed.gov/datalab/onlinecodebook/` — this is a JavaScript SPA that loads successfully
+- **However, HS&B is NOT listed in the Online Codebook.** The dropdown includes ECLS-K, ELS, HSLS, NELS, NHES, SSOCS, SASS — all 1991+ studies. HS&B (1980s) was never added. [SOURCE: direct browser verification 2026-03-06]
+- NCES DataLab **PowerStats** does list HS&B for online analysis (run regressions remotely) but does NOT provide microdata download [SOURCE: NCES "Accessing the Data" page]
+- ICPSR (studies 7896, 8297, 8443, 8896) returns codebook-only zips without institutional membership
+- codebook zips stored at `sources/iq-sex-diff/data/hsb/codebooks/`
 
 ### Operational read
 
-This one is still worth retrying because it looks like a broken endpoint rather than a conceptual access wall. [INFERENCE]
+HS&B public-use microdata download is a dead end without either: (1) ICPSR institutional membership, or (2) NCES restricted-use license application (individual researchers can apply regardless of institution). PowerStats is the only free analysis option. [INFERENCE]
 
 ## 5. `SECCYD` (ICPSR 21940)
 
@@ -135,9 +140,9 @@ This one is still worth retrying because it looks like a broken endpoint rather 
 - study-level download returned codebook-only zip (docs, questionnaires, measures chart — no `.sav` or `.dat` files)
 - codebook zip stored at `sources/iq-sex-diff/data/seccyd/codebooks/ICPSR_21940-V6.zip`
 
-### Operational read
+### Operational read (updated 2026-03-06)
 
-Same as HS&B — ICPSR "freely available" studies return codebooks without data files for individual (non-institutional) accounts. [INFERENCE]
+**Misleading "public-use" label.** The DSDR page says "Access does not require affiliation with an ICPSR member institution" but all data datasets (DS1-DS26+) have no download buttons — only DS0 (documentation, 9 MB) is downloadable. Same pattern in Phase IV (ICPSR 22361): DS1-DS29+ are restricted. The "public-use" note refers to metadata/documentation access, not data files. SECCYD data across all phases requires a Restricted Data Use Agreement. [SOURCE: direct browser verification 2026-03-06]
 
 ## 6. ICPSR Download Architecture (discovered 2026-03-06)
 
@@ -177,8 +182,8 @@ Either obtain institutional ICPSR membership, or find alternative public sources
 | `Add Health` public-use | 169 MB downloaded (waves 1-6) from UNC Dataverse | no live blocker | build extract |
 | `HSTS` transcript microdata | real dataset, real transcript leverage | NCES restricted-use license | licensing decision |
 | `NAEP` process data | real dataset, strongest U.S. process target | NCES restricted-use license | licensing decision |
-| `HS&B` public-use | codebooks downloaded, no data files | ICPSR institutional membership | obtain membership or find alt source |
-| `SECCYD` Phase I | codebooks downloaded, no data files | ICPSR institutional membership | obtain membership or find alt source |
+| `HS&B` public-use | codebooks only | ICPSR institutional membership OR NCES restricted-use license | PowerStats for remote analysis; microdata requires license |
+| `SECCYD` all phases | codebooks only | Restricted Data Use Agreement (despite "public-use" label) | apply for restricted access or deprioritize |
 | `Fragile Families` | **ACQUIRED** (289 MB, 4,898 children, 19k vars) | no live blocker | build extract (PPVT, WJ, WISC at Years 3-9) |
 
 ## Bottom Line (updated 2026-03-06)
