@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 
-ROOT = Path("/Users/alien/Projects/research/sources/iq-sex-diff")
+ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data" / "pisa"
 
 ITEM_PATH = DATA_DIR / "pisa2018_item_level_gaps.tsv"

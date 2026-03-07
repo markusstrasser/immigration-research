@@ -11,7 +11,7 @@ import pandas as pd
 import statsmodels.formula.api as smf
 
 
-ROOT = Path("/Users/alien/Projects/research/sources/iq-sex-diff")
+ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data" / "addhealth"
 
 OUT_EXTRACT = DATA / "addhealth_first_pass_extract.parquet"

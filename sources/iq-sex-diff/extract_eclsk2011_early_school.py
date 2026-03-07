@@ -7,7 +7,7 @@ import zipfile
 from pathlib import Path
 
 
-ROOT = Path("/Users/alien/Projects/research/sources/iq-sex-diff")
+ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data" / "ecls_k2011"
 
 DCT_PATH = DATA_DIR / "ECLSK2011_K5PUF.dct"

@@ -11,7 +11,7 @@ import pandas as pd
 from psid_cds_build_panel import read_fixed_width, to_numeric
 
 
-ROOT = Path("/Users/alien/Projects/research/sources/iq-sex-diff")
+ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data" / "psid"
 UNPACKED = DATA_DIR / "unpacked"
 

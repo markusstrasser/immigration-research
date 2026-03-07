@@ -9,7 +9,7 @@ from pathlib import Path
 import pandas as pd
 
 
-ROOT = Path("/Users/alien/Projects/research/sources/iq-sex-diff")
+ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data" / "addhealth"
 OUT = DATA / "addhealth_public_pair_probe.json"
 

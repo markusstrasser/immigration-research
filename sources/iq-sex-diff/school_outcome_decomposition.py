@@ -10,7 +10,7 @@ import pandas as pd
 import statsmodels.formula.api as smf
 
 
-ROOT = Path("/Users/alien/Projects/research/sources/iq-sex-diff")
+ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data" / "school_outcome_decomposition"
 ADDHEALTH_PATH = ROOT / "data" / "addhealth" / "addhealth_school_surface_extract.parquet"
 FFCWS_PATH = ROOT / "data" / "ffcws" / "ffcws_achievement_extract.parquet"
