@@ -118,6 +118,10 @@ Request the smallest bundle that can answer the current node:
 
 [INFERENCE]
 
+### Exact scope
+
+The exact `Add Health` / `AHAA` request language, bundle families, and variable-family checklist are now frozen in `research/iq-sex-differences-addhealth-ahaa-application-scope.md`. [SOURCE: `research/iq-sex-differences-addhealth-ahaa-application-scope.md`]
+
 ## 2. `HSTS` Transcript Microdata
 
 ### Why it is still high value

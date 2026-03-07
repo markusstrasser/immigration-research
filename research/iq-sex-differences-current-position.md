@@ -10,6 +10,8 @@ For execution rules, see `research/iq-sex-differences-analysis-protocol.md`.
 For the explicit causal tree and discriminating-node logic, see `research/iq-sex-differences-decisive-causal-tree.md`.
 For the strict node-by-node causal table, see `research/iq-sex-differences-node-table.md`.
 For the current highest-value move beyond the public observational frontier, see `research/iq-sex-differences-next-level-research-plan.md`.
+For the exact `Add Health` restricted-use / `AHAA` request scope, see `research/iq-sex-differences-addhealth-ahaa-application-scope.md`.
+For the exact `AHAA` file/component map behind that request, see `research/iq-sex-differences-addhealth-ahaa-file-crosswalk.md`.
 For the operational stage order and deliverables, see `research/iq-sex-differences-execution-plan.md`.
 For the full end-to-end roadmap, validation ladder, and stage-completion criteria, see `research/iq-sex-differences-master-plan.md`.
 
