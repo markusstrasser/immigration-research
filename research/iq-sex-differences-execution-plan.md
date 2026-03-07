@@ -13,6 +13,7 @@ This is the operational companion to:
 - `research/iq-sex-differences-next-level-research-plan.md`
 - `research/iq-sex-differences-mediator-design.md`
 - `research/iq-sex-differences-restricted-data-plan.md`
+- `research/iq-sex-differences-addhealth-ahaa-application-scope.md`
 
 For the full end-to-end roadmap, literature tracks, validation ladder, and completion criteria, read `research/iq-sex-differences-master-plan.md` first. This file remains the shorter execution-order companion.
 
@@ -242,7 +243,7 @@ Do not let adolescent transcript or advanced-track stories absorb early broad-sc
 
 Do not use grades or transcript variables as nuisance controls in any general-ability claim unless this pass first shows they are not wedge surfaces. Do not interpret any new late-school OLS as causal without a named estimand, a DAG-valid adjustment set, and a robustness read. Once course and pre-test behavior blocks have both failed internally, shift effort to external replication before adding more same-cohort slices.
 
-Do not treat descendant-heavy public `sex -> attainment` decompositions as a substitute for mediator identification. Once the broad public outcome branch has been stress-tested in `Add Health`, `PSID TAS`, and `FFCWS`, the next honest move is the frozen mediator design or restricted transcript/process access rather than more attenuation tables. `Add Health` restricted-use / `AHAA` is the best live path; `HSTS` and `NAEP` are currently preparation targets because the official `NCES` / `ResearchDataGov` path is paused for new applications. [SOURCE: `research/iq-sex-differences-mediator-design.md`; `research/iq-sex-differences-restricted-data-plan.md`; https://manager.researchdatagov.org/RDG_User_Guide.pdf]
+Do not treat descendant-heavy public `sex -> attainment` decompositions as a substitute for mediator identification. Once the broad public outcome branch has been stress-tested in `Add Health`, `PSID TAS`, and `FFCWS`, the next honest move is the frozen mediator design or restricted transcript/process access rather than more attenuation tables. `Add Health` restricted-use / `AHAA` is the best live path; `HSTS` and `NAEP` are currently preparation targets because the official `NCES` / `ResearchDataGov` path is paused for new applications. The exact `Add Health` request scope, bundle families, and copy-ready project language are now frozen in `research/iq-sex-differences-addhealth-ahaa-application-scope.md`. [SOURCE: `research/iq-sex-differences-mediator-design.md`; `research/iq-sex-differences-restricted-data-plan.md`; `research/iq-sex-differences-addhealth-ahaa-application-scope.md`; https://manager.researchdatagov.org/RDG_User_Guide.pdf]
 
 ---
 
