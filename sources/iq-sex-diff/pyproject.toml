@@ -1,0 +1,22 @@
+[project]
+name = "iq-sex-diff-analysis"
+version = "0.1.0"
+description = "Reproducible analysis environment for the IQ sex-differences research program."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "duckdb>=1.4.1",
+    "linearmodels>=6.1",
+    "matplotlib>=3.10.0",
+    "numpy>=2.3.0",
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.0",
+    "pyarrow>=20.0.0",
+    "pyreadstat>=1.3.1",
+    "scikit-learn>=1.7.0",
+    "scipy>=1.16.0",
+    "seaborn>=0.13.2",
+    "statsmodels>=0.14.5",
+]
+
+[tool.uv]
+package = false
