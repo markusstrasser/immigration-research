@@ -479,6 +479,11 @@ No obvious pattern where author gender predicts finding direction — both femal
 
 ## Downloadable Data for Independent Analysis
 
+**Local acquisition status (2026-03-05):**
+- `NLSY79` and `NLSY97` public-use bundles are now local in `sources/iq-sex-diff/data/nlsy/`
+- explicit `ASVAB` / `AFQT` variable mapping is at `sources/iq-sex-diff/data/nlsy/nlsy_asvab_variables.tsv`
+- `PIAAC` main public-use CSVs and `ICAR / SAPA` open data are also local; see `sources/iq-sex-diff/data/README.md`
+
 **NLSY79 — Best option for DIY analysis:**
 - ASVAB (Armed Services Vocational Aptitude Battery): 10 subtests, individually downloadable
 - Subtests: General Science, Arithmetic Reasoning, Word Knowledge, Paragraph Comprehension, Numerical Operations, Coding Speed, Auto & Shop Info, Math Knowledge, Mechanical Comprehension, Electronics Info
