@@ -21,12 +21,12 @@
 | PIAAC | `data/piaac/` | — | — | Age-stratified, occupation proxy passes built |
 | ICAR | local | — | — | Decomposition pass built |
 
-### Downloading (2026-03-06)
+### Codebooks only (ICPSR institutional membership required for data)
 
-| Dataset | Source | Status |
-|---------|--------|--------|
-| HSB (7896, 8297, 8443, 8896) | ICPSR | Download triggered via authenticated Chrome session |
-| SECCYD Phase I (21940) | ICPSR (DSDR) | Download triggered via authenticated Chrome session |
+| Dataset | Location | Status |
+|---------|----------|--------|
+| HSB (7896, 8297, 8443, 8896) | `data/hsb/codebooks/` | 4 codebook zips. Data files require ICPSR institutional membership. |
+| SECCYD Phase I (21940) | `data/seccyd/codebooks/` | Codebook zip. Data files require ICPSR institutional membership. |
 
 ### Blocked — requires decision
 
