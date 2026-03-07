@@ -4,6 +4,7 @@
 **Purpose:** turn the live `Add Health` restricted-use frontier into an exact request scope, variable family list, and causal identification plan instead of a vague “get transcripts” placeholder.
 
 For the exact `AHAA` file/component crosswalk behind this request, see `research/iq-sex-differences-addhealth-ahaa-file-crosswalk.md`.
+For the filing checklist and attachment workflow, see `research/iq-sex-differences-addhealth-contract-checklist.md`.
 
 ---
 
