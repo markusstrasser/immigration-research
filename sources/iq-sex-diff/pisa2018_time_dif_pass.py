@@ -8,7 +8,7 @@ import pandas as pd
 import statsmodels.api as sm
 
 
-ROOT = Path("/Users/alien/Projects/research/sources/iq-sex-diff")
+ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data" / "pisa"
 
 EXTRACT_PATH = DATA_DIR / "pisa2018_math_item_extract.parquet"

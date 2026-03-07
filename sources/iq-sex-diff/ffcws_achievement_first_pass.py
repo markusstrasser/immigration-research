@@ -18,7 +18,7 @@ import pandas as pd
 import statsmodels.formula.api as smf
 
 
-ROOT = Path("/Users/alien/Projects/research/sources/iq-sex-diff")
+ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "data" / "ffcws" / "ICPSR_31622" / "DS0001"
 OUTDIR = ROOT / "data" / "ffcws"
 

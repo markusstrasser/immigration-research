@@ -12,7 +12,7 @@ import pyreadstat
 import statsmodels.formula.api as smf
 
 
-ROOT = Path("/Users/alien/Projects/research/sources/iq-sex-diff")
+ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data" / "pisa"
 DOCS_DIR = DATA_DIR / "docs"
 OUTPUT_DIR = DATA_DIR

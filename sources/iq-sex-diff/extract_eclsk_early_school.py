@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 
-ROOT = Path("/Users/alien/Projects/research/sources/iq-sex-diff")
+ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data" / "ecls_k"
 
 DCT_PATH = DATA_DIR / "ECLSK_Kto8_child_STATA.dct"

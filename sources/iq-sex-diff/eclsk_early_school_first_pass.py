@@ -8,7 +8,7 @@ import pandas as pd
 import statsmodels.formula.api as smf
 
 
-ROOT = Path("/Users/alien/Projects/research/sources/iq-sex-diff")
+ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data" / "ecls_k"
 
 EXTRACT_PATH = DATA_DIR / "eclsk_early_school_extract.tsv.gz"
