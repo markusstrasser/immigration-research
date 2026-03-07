@@ -179,7 +179,7 @@ Either obtain institutional ICPSR membership, or find alternative public sources
 | `NAEP` process data | real dataset, strongest U.S. process target | NCES restricted-use license | licensing decision |
 | `HS&B` public-use | codebooks downloaded, no data files | ICPSR institutional membership | obtain membership or find alt source |
 | `SECCYD` Phase I | codebooks downloaded, no data files | ICPSR institutional membership | obtain membership or find alt source |
-| `Fragile Families` | not attempted | Princeton OPR registration | register at oprdata.princeton.edu |
+| `Fragile Families` | **ACQUIRED** (289 MB, 4,898 children, 19k vars) | no live blocker | build extract (PPVT, WJ, WISC at Years 3-9) |
 
 ## Bottom Line (updated 2026-03-06)
 

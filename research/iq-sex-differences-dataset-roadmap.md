@@ -10,6 +10,7 @@
 |---------|----------|------|--------|-------|
 | PSID CDS/TAS | `data/psid/` | 20 files | various | All CDS + TAS public bundles. Child panel + transition panel built. |
 | Add Health public-use | `data/addhealth/` | 169 MB | .tab, .sas7bdat, .xpt | Waves 1-6 from UNC Dataverse. Public subset of variables. |
+| FFCWS (Fragile Families) | `data/ffcws/` | 289 MB | .dta | ICPSR DSDR 31622. 4,898 children, 19k vars. PPVT+WJ achievement. |
 | NLSY79 | `data/nlsy79/` | — | — | ASVAB + schooling extracts built |
 | NLSY97 | `data/nlsy97/` | — | — | PIAT, transcript, behavior, course, stage-A passes built |
 | ECLS-K / ECLS-K:2011 | `data/ecls*/` | — | — | Early school extracts built |
@@ -50,7 +51,7 @@
 
 4. **SECCYD** — Public at ICPSR. Repeated child development / achievement structure for stress-testing the early-school node. Source: [ICPSR 21940](https://www.icpsr.umich.edu/web/DSDR/studies/21940)
 
-5. **Fragile Families** — Stress-test cohort for family structure, behavior, urban disadvantage. Public waves via Princeton with replicate weights. Tests "does the wedge survive in a very different family/social environment?" Source: [Princeton FFCWS](https://fragilefamilies.princeton.edu/)
+5. **~~Fragile Families~~** — **ACQUIRED.** ICPSR DSDR 31622, 289 MB Stata. 4,898 children, 19,120 variables. PPVT (Years 3,5,9), WJ (Years 5,9), WISC digit span (Year 9). Stress-test cohort for urban disadvantage.
 
 6. **ABCD** — School records + neurocognition (picture vocabulary, processing speed, matrix reasoning, visuospatial). Good for construct-family work at ages 9-10. Source: [ABCD](https://abcdstudy.org/scientists/data-sharing-archive/)
 
