@@ -1,3 +1,17 @@
+---
+id: 2026-03-06-stop-public-regressions-pursue-identification
+concept: research-strategy
+repo: research
+decision_date: 2026-03-06
+recorded_date: 2026-03-07
+provenance: backfilled
+status: accepted
+initial_leaning: continue public-use dataset expansion
+relations:
+  - type: depends_on
+    target: 2026-03-05-adopt-causal-dag-discipline
+---
+
 # 2026-03-06: Stop treating more public-use regressions as the default next step
 
 ## Context

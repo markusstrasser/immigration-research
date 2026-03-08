@@ -1,3 +1,19 @@
+---
+id: 2026-03-05-nlsy97-anomaly-diagnosis
+concept: nlsy97-anomaly
+repo: research
+decision_date: 2026-03-05
+recorded_date: 2026-03-07
+provenance: backfilled
+status: accepted
+initial_leaning: accept sign flip as real cohort shift
+relations:
+  - type: depends_on
+    target: 2026-03-04-battery-determines-answer
+  - type: depends_on
+    target: 2026-03-05-adopt-causal-dag-discipline
+---
+
 # 2026-03-05: NLSY97 quantitative female edge is a fragile artifact, not a real signal
 
 ## Context

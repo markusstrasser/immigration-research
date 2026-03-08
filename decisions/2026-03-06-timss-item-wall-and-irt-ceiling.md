@@ -1,3 +1,15 @@
+---
+id: 2026-03-06-timss-item-wall-and-irt-ceiling
+concept: measurement-tools
+repo: research
+decision_date: 2026-03-06
+recorded_date: 2026-03-07
+provenance: backfilled
+status: accepted
+initial_leaning: push through TIMSS item wall via IEA access
+relations: []
+---
+
 # 2026-03-06: TIMSS item-level data is walled; local IRT tooling hits ceiling
 
 ## Context

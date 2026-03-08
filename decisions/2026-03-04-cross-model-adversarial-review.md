@@ -1,3 +1,15 @@
+---
+id: 2026-03-04-cross-model-adversarial-review
+concept: methodology
+repo: research
+decision_date: 2026-03-04
+recorded_date: 2026-03-07
+provenance: backfilled
+status: accepted
+initial_leaning: trust one model (Claude) with bias caveats
+relations: []
+---
+
 # 2026-03-04: Adopt cross-model adversarial review for framing-sensitive claims
 
 ## Context

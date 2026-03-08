@@ -1,3 +1,17 @@
+---
+id: 2026-03-05-adopt-causal-dag-discipline
+concept: methodology
+repo: research
+decision_date: 2026-03-05
+recorded_date: 2026-03-07
+provenance: backfilled
+status: accepted
+initial_leaning: continue observational attenuation tables
+relations:
+  - type: depends_on
+    target: 2026-03-04-cross-model-adversarial-review
+---
+
 # 2026-03-05: Adopt explicit causal DAG discipline for all regression specifications
 
 ## Context
