@@ -80,11 +80,13 @@ notes/             — working notes, drafts, threads of analysis
 
 ## Decision Journal (`decisions/`)
 
-Records of concept-level pivots — when an interpretation shifts, a methodology is adopted/dropped, a causal node gets resolved or reopened. One file per decision, `YYYY-MM-DD-slug.md`. Template in `decisions/.template.md`.
+Records of concept-level pivots — when an interpretation shifts, a methodology is adopted/dropped, a causal node gets resolved or reopened. One file per decision, `YYYY-MM-DD-slug.md`. Template in `decisions/.template.md`. Records use YAML frontmatter for machine-readable metadata (concept grouping, typed relations, provenance).
 
-**When to write:** choosing between competing interpretations, dropping a hypothesis after evidence, adopting a new dataset/method, resolving a causal fork. Any point where the research direction branches and someone later would ask "why this path?"
+**When to write:** path-dependent interpretation choices, dropping a hypothesis after evidence, adopting a new dataset/method that forecloses alternatives, resolving a causal fork where the reasoning is costly to reconstruct. Do NOT write for: parameter tweaks, routine implementation, local execution details.
 
-**Research memos:** when updating with revised understanding, add a dated `## Revisions` entry at the bottom linking to the triggering decision. The git diff shows what changed; the revision note says *why*. Commits touching `research/` or `decisions/` need a non-empty body naming the concept affected.
+**Research memos:** when updating with revised understanding, add a dated `## Revisions` entry at the bottom linking to the triggering decision. Only for claim/interpretation/confidence changes — not for wording or organization edits. The git diff shows what changed; the revision note says *why*. Commits touching `research/` or `decisions/` need a non-empty body naming the concept affected.
+
+**Cross-repo:** Cross-repo decisions live canonically in one repo (usually the repo where the evidence lives). Affected repos get a one-line stub: `See [repo]/decisions/YYYY-MM-DD-slug.md`.
 
 ## Research & Docs Index
 
@@ -103,6 +105,8 @@ Files the agent should consult before acting. Start with the current-state files
 | `research/iq-sex-differences-open-matrix-assets.md` | Exact status of the currently usable open matrix assets, separating `ICAR`, `MaRs-IB`, and the fully recovered `OMIB` repository | Deciding whether another open matrix dataset is actually in hand, checking whether `MaRs-IB` raw rows are public, or seeing what can be used immediately for an original study |
 | `research/iq-sex-differences-matrix-experiment-protocol.md` | Smallest original randomized matrix-study design that can test timing and item-design channels using the local `OMIB` assets | Moving from observational matrix claims to a direct experiment, choosing the first manipulations, or seeing how the local `OMIB` package should actually be used |
 | `research/iq-sex-differences-marsib-request-draft.md` | Ready-to-send request for the non-public `MaRs-IB` participant-level data | Taking the next step once the public `MaRs-IB` archive dead-ends, or asking what exactly should be requested from the authors |
+| `research/iq-sex-differences-psid-cds-behavior-pass.md` | Family-linked `PSID CDS` child behavior/compliance split showing what a common caregiver-rated behavior block does and does not explain | Asking whether generic child behavior/compliance explains the public early-school bridge, or deciding whether the next child mechanism needs school-facing rather than caregiver-facing variables |
+| `research/iq-sex-differences-next-public-causal-step.md` | Highest-value remaining public-data causal design, centered on `PSID CDS` sibling fixed effects for the early-school branch | Choosing the next public-data causal analysis, deciding whether to keep working on child versus late-school nodes, or checking what would actually reduce uncertainty now |
 | `research/iq-sex-differences-next-level-research-plan.md` | Ranked agenda for genuinely higher-leverage work beyond the current public observational frontier, including restricted-data upgrades, process-data rescoring, formal mediation, and original experiments | Deciding what could still produce novel insight, choosing between more datasets versus new designs, or checking whether the next step is another regression or a real identification upgrade |
 | `research/iq-sex-differences-master-plan.md` | Canonical end-to-end roadmap with stage order, experiments, statistics, literature tracks, validation ladder, and completion criteria | Planning the remaining project, deciding what "solid" means, or assigning the next tranche of work |
 | `research/iq-sex-differences-execution-plan.md` | Ordered work plan with stages, estimands, outputs, and stop rules | Choosing the next tranche, assigning work, or checking what "done" means before moving to the next node |
