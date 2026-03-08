@@ -1,3 +1,17 @@
+---
+id: 2026-03-05-ach-for-early-school-conflict
+concept: methodology
+repo: research
+decision_date: 2026-03-05
+recorded_date: 2026-03-07
+provenance: backfilled
+status: accepted
+initial_leaning: average across datasets
+relations:
+  - type: depends_on
+    target: 2026-03-04-battery-determines-answer
+---
+
 # 2026-03-05: Use Analysis of Competing Hypotheses for the early-school dataset conflict
 
 ## Context

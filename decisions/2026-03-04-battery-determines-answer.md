@@ -1,3 +1,15 @@
+---
+id: 2026-03-04-battery-determines-answer
+concept: measurement
+repo: research
+decision_date: 2026-03-04
+recorded_date: 2026-03-07
+provenance: backfilled
+status: accepted
+initial_leaning: side with one camp (Lynn/Irwing vs Keith)
+relations: []
+---
+
 # 2026-03-04: Battery composition determines the sex-difference answer
 
 ## Context
