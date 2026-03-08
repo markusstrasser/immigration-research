@@ -45,6 +45,18 @@ All commits to main. No branches.
 
 Scopes: `[research]` (findings), `[analysis]` (data work), `[docs]` (index/notes), `[infra]` (tooling/config).
 
+## Analysis Quick-Start
+
+```bash
+# Run any analysis script
+uv run python3 sources/iq-sex-diff/<script>.py
+
+# Data lives in sources/iq-sex-diff/data/<dataset>/
+# Output TSVs land alongside the data or in the same data subdir
+```
+
+Key script families: `pisa2018_dif_*.py` (measurement/DIF), `psid_cds_*.py` (child/family), `*_first_pass.py` / `*_pass.py` (dataset surface passes), `*_prototype.py` (latent models). Dependencies in `sources/iq-sex-diff/pyproject.toml`.
+
 ## Tools Available
 
 ### Skills (symlinked from `~/Projects/skills/`)
@@ -92,91 +104,192 @@ Records of concept-level pivots — when an interpretation shifts, a methodology
 
 Files the agent should consult before acting. Start with the current-state files, then drill down.
 
+### Core State
+
 | File | Topic | Consult before |
 |------|-------|----------------|
-| `research/iq-sex-differences-current-position.md` | Current best synthesized take, established vs open claims, next discriminating tests | Answering "what do we know now?", updating summaries, deciding what matters next |
-| `research/iq-sex-differences-claim-register.md` | Claim-level ledger with status, confidence, provenance, and falsifiers | Making or revising any strong claim about sex differences, `g`, schooling, or measurement artifacts |
-| `research/iq-sex-differences-decisive-causal-tree.md` | Explicit causal tree showing which nodes are already live, which remain open, and which analyses can actually kill them | Proposing new causal stories, prioritizing DOE, or deciding what would count as a decisive next result |
-| `research/iq-sex-differences-master-dag.md` | One inspectable ASCII DAG for the current project, showing the upstream background nodes, score-generation layer, school-pipeline nodes, adult accumulation, and the outcome branch | Asking “what causes what?”, deciding which nodes are upstream versus downstream, or checking whether a proposed control variable is a background confounder or a descendant |
-| `research/iq-sex-differences-node-table.md` | Strict node-by-node table mapping the master DAG to parents, children, observed proxies, example local coefficients, and current status | Asking which nodes actually have estimated coefficients, what the background causes mean operationally, or whether a specific part of the DAG is structural versus empirically quantified |
-| `research/iq-battery-design-matrix.md` | Battery-family matrix for time limits, speed reward, adaptive/ceiling behavior, and what "exhaust items" actually means across `WAIS`, `WJ`, `SB5`, `Raven`, `CAT-ASVAB`, `CogAT`, and `PISA` | Answering whether a battery is really measuring untimed "raw talent", checking which batteries are speeded versus power-oriented, or avoiding category errors about "running out of items" |
-| `research/iq-sex-differences-raven-open-data.md` | Exact status of public `Raven` raw-data recovery versus the local `ICAR` matrix-only follow-up, including what the `OSF` / supplementary routes did and did not yield | Claiming that public `Raven` raw data are already in hand, asking what open matrix-style data we can analyze ourselves, or checking whether harder matrix items are more male-leaning in the best current local open dataset |
-| `research/iq-sex-differences-matrix-certainty-plan.md` | Branch-specific certainty ladder for the matrix / Raven-like question, including the DAG, why OVB robustness is secondary here, and which next studies would actually change the posterior | Answering “how do we get more certainty on the matrix branch?”, deciding whether the matrix result is saturated, or choosing between more observational slicing and a real matrix-specific design upgrade |
-| `research/iq-sex-differences-open-matrix-assets.md` | Exact status of the currently usable open matrix assets, separating `ICAR`, `MaRs-IB`, and the fully recovered `OMIB` repository | Deciding whether another open matrix dataset is actually in hand, checking whether `MaRs-IB` raw rows are public, or seeing what can be used immediately for an original study |
-| `research/iq-sex-differences-matrix-experiment-protocol.md` | Smallest original randomized matrix-study design that can test timing and item-design channels using the local `OMIB` assets | Moving from observational matrix claims to a direct experiment, choosing the first manipulations, or seeing how the local `OMIB` package should actually be used |
-| `research/iq-sex-differences-marsib-request-draft.md` | Ready-to-send request for the non-public `MaRs-IB` participant-level data | Taking the next step once the public `MaRs-IB` archive dead-ends, or asking what exactly should be requested from the authors |
-| `research/iq-sex-differences-psid-cds-behavior-pass.md` | Family-linked `PSID CDS` child behavior/compliance split showing what a common caregiver-rated behavior block does and does not explain | Asking whether generic child behavior/compliance explains the public early-school bridge, or deciding whether the next child mechanism needs school-facing rather than caregiver-facing variables |
-| `research/iq-sex-differences-next-public-causal-step.md` | Highest-value remaining public-data causal design, centered on `PSID CDS` sibling fixed effects for the early-school branch | Choosing the next public-data causal analysis, deciding whether to keep working on child versus late-school nodes, or checking what would actually reduce uncertainty now |
-| `research/iq-sex-differences-next-level-research-plan.md` | Ranked agenda for genuinely higher-leverage work beyond the current public observational frontier, including restricted-data upgrades, process-data rescoring, formal mediation, and original experiments | Deciding what could still produce novel insight, choosing between more datasets versus new designs, or checking whether the next step is another regression or a real identification upgrade |
-| `research/iq-sex-differences-master-plan.md` | Canonical end-to-end roadmap with stage order, experiments, statistics, literature tracks, validation ladder, and completion criteria | Planning the remaining project, deciding what "solid" means, or assigning the next tranche of work |
-| `research/iq-sex-differences-execution-plan.md` | Ordered work plan with stages, estimands, outputs, and stop rules | Choosing the next tranche, assigning work, or checking what "done" means before moving to the next node |
-| `research/iq-sex-differences-frontier-literature-audit.md` | Audit of 2023-2025 literature showing which pieces the frontier already sees and what this repo may be integrating better | Answering whether the repo has a genuinely new synthesis, checking recent-paper updates, or aligning the causal tree to the latest literature |
-| `research/iq-sex-differences-model-review-2026-03-06.md` | Cross-model blind-spot review of the current project state, including what Gemini and GPT criticism survived local scrutiny | Reusing the latest external-model critique, deciding what to soften in the canonical claims, or checking whether a proposed interpretation already failed the blind-spot review |
-| `research/iq-sex-differences-early-school-intake.md` | Operational intake note for the early-school node, including why `NLSCYA` goes first, `ECLS-K:2011` second, and `ECLS-K` third | Starting Stage 2, choosing which early-school dataset to parse next, or checking whether `ECLS` is actually locally usable |
-| `research/review-1-audit.md` | Audit of the external GPT review, including what was adopted vs rejected | Reusing claims from `review-1.md`, revising the `NLSY97` Stage A interpretation, or choosing the next data pass |
-| `research/iq-sex-differences-evaluation-placement-node.md` | Grade-test wedge, evaluation / placement asymmetry, and why grades are not clean ability proxies | Using grades, honors, recommendations, or school-linked placement variables in causal models |
-| `research/iq-sex-differences-dataset-expansion.md` | Which external datasets are actually staged, partial, metadata-only, or access-gated | Planning dataset acquisition, deciding what can be run now, or checking whether a cited dataset is local versus aspirational |
-| `research/iq-sex-differences-remaining-dataset-frontier.md` | Ranked remaining external datasets after the current local stack, with current access status and which causal node each one would still attack | Deciding what to acquire next beyond the local stack, checking whether another dataset would actually reduce uncertainty, or distinguishing family panels from transcript/test linkage targets |
-| `research/iq-sex-differences-access-playbook.md` | Exact live access states for the remaining external frontier, plus the now-resolved `PSID CDS/TAS` acquisition | Touching the remaining external frontier, deciding whether acquisition is blocked by credentials versus licensing, or avoiding circular scraping attempts |
-| `research/iq-sex-differences-psid-cds-first-pass.md` | First cleaned public-use `PSID CDS` result, including the family-linked child panel build, hygiene fixes, weighted early-school surfaces, and within-family aligned checks | Making claims about the new `PSID` child evidence, deciding whether the child branch still lacks a family-linked panel, or checking whether `PSID` is still only an access problem |
-| `research/iq-sex-differences-psid-tas-transition-first-pass.md` | First cleaned public-use `PSID TAS` transition result, including normalized GPA surfaces, `SAT/ACT` surfaces, aligned GPA-versus-tested wedges, and within-family checks | Making claims about the new `PSID` transition evidence, deciding whether the school-linked wedge extends into early-adult outcomes, or checking the 2019 weight caveat |
-| `research/iq-sex-differences-addhealth-school-surface-first-pass.md` | First canonical public-use `Add Health` school-surface pass, including wave I parent-background handling, wave II grade surfaces, wave IV attainment, DAG-valid grade-to-attainment models, and robustness checks | Making claims about what `Add Health` does and does not add, checking whether the broad school-performance family replicates outside the NCES / `PSID` stack, or avoiding overreading public `Add Health` as a transcript/test adjudication dataset |
-| `research/iq-sex-differences-addhealth-public-pair-note.md` | Public-file probe showing that the current local `Add Health` waves expose sibling/twin flags but no obvious recoverable pair identifier for a clean within-family design | Proposing any public within-family `Add Health` extension, deciding whether that branch is actually available now, or avoiding circular file-hunting |
-| `research/iq-sex-differences-ffcws-achievement-first-pass.md` | First public `FFCWS` child/transition pass showing anchor-sensitive Year 9 math-versus-verbal geometry and a female-leaning Year 22 college-exposure residual that survives the Year 9 battery plus baseline family background | Making claims about what `FFCWS` adds to the child and transition branches, checking whether the school-linked wedge survives in a different cohort, or deciding whether anchor sensitivity is now a cross-cohort problem rather than an `NLSY` quirk |
-| `research/iq-sex-differences-school-outcome-decomposition.md` | Public-use outcome decomposition showing that adolescent school/evaluation surfaces explain a meaningful but partial share of the female later-attainment edge in `Add Health`, while the observed early-childhood battery barely attenuates the later female college-years residual in `FFCWS` | Discussing whether the public outcome branch adds a real life-course split, checking why attenuation cannot be read as direct-effect identification, or deciding whether the next honest step is mediator design versus restricted transcript/process access |
-| `research/iq-sex-differences-school-outcome-interactions.md` | Public-use predictive-validity interaction pass showing that `Add Health` grade slopes are not materially weaker for girls and that `FFCWS` child-score interactions are mostly negative but imprecise, with `PPVT` the only near-nonzero case | Discussing whether female school surfaces are obviously inflated and low-value, checking whether downstream returns differ by sex on the staged public cohorts, or deciding whether stronger outcome claims now require richer selective outcomes or restricted data |
-| `research/iq-sex-differences-mediator-design.md` | Frozen DAG-valid mediator design for the outcome branch, separating total effects, descriptive attenuation, predictor-value checks, and what would count as identified mediation | Using the words “mediation,” “direct effect,” or “explained by” on the outcome branch, planning a new attainment model, or checking whether a proposed decomposition is structurally valid |
-| `research/iq-sex-differences-restricted-data-plan.md` | Operational plan for the remaining restricted-data frontier, showing that `Add Health` restricted-use / `AHAA` is the best live path while `NCES` `HSTS` / `NAEP` routes are scientifically valuable but administratively paused | Planning restricted-data acquisition, deciding what to apply for now, or avoiding stale assumptions about the `NCES` application path |
-| `research/iq-sex-differences-addhealth-ahaa-application-scope.md` | Exact `Add Health` restricted-use / `AHAA` request scope, bundle families, causal DAG target, and copy-ready project language for the application | Starting the actual `Add Health` request, deciding which transcript/curriculum files to ask for, or avoiding a bloated restricted-use application |
-| `research/iq-sex-differences-addhealth-ahaa-file-crosswalk.md` | File-level `AHAA` crosswalk mapping official component names and file names (`edumsov`, `edu1`, `edutmsum`, `edugrad`, `eduocr`, `eduwgt`, etc.) onto the project DAG and request priorities | Filling `Attachment B`, checking which exact transcript/curriculum files to request, or translating conceptual transcript needs into actual `AHAA` file names |
-| `research/iq-sex-differences-addhealth-contract-checklist.md` | Practical filing checklist for the `Add Health` restricted-use request, including portal steps, attachments, IRB/security requirements, and the main ways to bloat or stall the contract | Actually filing the `Add Health` request, preparing `Attachment B`, or avoiding administrative mistakes that do not show up in the science memos |
-| `research/iq-sex-differences-addhealth-attachment-b-draft.md` | Copy-ready draft language for the `Add Health` restricted-use `Attachment B` data-details / justification section | Filling the portal/request form quickly, translating the scope memo into application text, or keeping the restricted-use request narrow and technically coherent |
-| `research/iq-sex-differences-nces-datalab-acquisition.md` | Exact NCES `Online Codebook` API path, landed `HSLS` / `ELS` / `NELS` bundles, and the `HS&B` server failure | Touching NCES longitudinal data acquisition, deciding whether `HSLS` / `ELS` / `NELS` are truly local, or debugging the `HS&B` access path |
-| `research/iq-sex-differences-analysis-protocol.md` | Frozen estimands, score rules, weights, and covariate blocks | Running models, comparing datasets, or questioning field choices |
-| `research/iq-sex-differences-doe.md` | Full staged research program and decision thresholds | Planning new analyses or new dataset acquisition |
-| `research/iq-sex-differences-next-node-validation.md` | Why the `NLSY97` quantitative anomaly is the active causal fork | Choosing the next causal node or evaluating the `NLSY97` sign flip |
-| `research/iq-sex-differences-pisa2018-item-split.md` | First public `PISA 2018` item/process pass showing broad male-leaning math with heterogeneous item-level gaps | Discussing whether school-age disagreement is generic process burden versus item-family heterogeneity |
-| `research/iq-sex-differences-pisa2018-framework-proxy.md` | Proxy content/context decomposition of `PISA 2018` units showing the current school-age item geometry by framework family | Discussing whether the school-age split is coherent by content family, or deciding what the next `PISA` hardening step should be |
-| `research/iq-sex-differences-pisa2018-dif-proxy.md` | First ability-conditioned `PISA 2018` item-fairness pass, separating raw item gaps from residual content-family effects | Discussing school-age item fairness, deciding whether `space_shape` survives conditioning, or choosing between `TIMSS` porting and heavier IRT / anchor-item work |
-| `research/iq-sex-differences-pisa2018-dif-leaveout.md` | Contamination-aware `PISA 2018` follow-up using focal-item and focal-family leave-out matching scores | Using the current best `PISA` conditioning result, checking whether the residual family ordering survived the blind-spot fix, or deciding whether full IRT is still worth the marginal gain |
-| `research/iq-sex-differences-pisa2018-dif-iterative.md` | Iterative `PISA 2018` purification pass showing what survives repeated anchor updating rather than a one-shot fixed anchor set | Deciding whether the `PISA` residual family ordering is still just an anchor artifact, reusing the strongest current local `PISA` hardening step, or checking what remains open before full IRT |
-| `research/iq-sex-differences-pisa2018-dif-logit.md` | Binary-response `PISA 2018` confirmation showing whether the same family ordering survives a weighted binomial item model with country fixed effects | Deciding whether the local `PISA` ordering is only a linear-model artifact, checking the strongest non-IRT item-model confirmation, or deciding whether the next step must now be full latent-variable psychometrics |
-| `research/iq-sex-differences-pisa2018-dif-rasch.md` | Anchored-Rasch `PISA 2018` sensitivity showing whether the same family ordering survives separate male/female latent-item calibration within each country | Deciding whether the local `PISA` ordering is still just a matching-score artifact, checking the strongest current latent-item sensitivity short of weighted multi-group IRT, or judging whether the public `PISA` branch is close to saturation |
-| `research/iq-sex-differences-pisa2018-dif-theta-logit.md` | Latent-anchor `PISA 2018` DIF pass showing whether the same family ordering survives once the focal item models are conditioned on a Rasch-based anchor `theta` rather than a hand-built anchor score | Deciding whether the local `PISA` ordering is still just a constructed-score artifact, checking the strongest hybrid local psychometric pass short of weighted joint IRT, or judging whether the public `PISA` branch is now saturated |
-| `research/iq-sex-differences-pisa2018-time-dif-theta.md` | Theta-conditioned `PISA 2018` response-time pass showing whether the broad female-slower timing pattern survives the same latent anchor upgrade used on the score branch | Deciding whether timing still looks broad rather than family-localized under the strongest current local match surface, checking whether the process branch is still live, or judging whether the local `PISA` timing story is now saturated |
-| `research/iq-sex-differences-pisa-frontier-comparison.md` | Direct comparison between the repo’s current `PISA 2018` hardening stack and older `PISA 2003` Rasch / item-family literature | Deciding whether the current `PISA` result is actually novel, checking where the repo aligns with older direct comparators, or keeping novelty claims honest on the measurement branch |
-| `research/iq-sex-differences-irt-tooling-feasibility.md` | Short feasibility note on what the local environment can and cannot honestly support for weighted multi-group IRT right now | Deciding whether “run full IRT next” is actually executable here, checking why the current local branch stopped at hybrid psychometrics, or choosing between a tooling upgrade and a restricted-data pivot |
-| `research/iq-sex-differences-pisa2018-dif-purified.md` | Fixed-anchor purified `PISA 2018` pass showing whether the residual content-family ordering survives when the matching score is rebuilt from a narrower low-DIF anchor core | Deciding whether the `PISA` family ordering is still alive after an anchor-based rescoring, checking whether the repo’s measurement-branch novelty is improving, or judging whether full IRT is still the next marginal gain |
-| `research/iq-sex-differences-pisa2018-process-nuisance.md` | First process-style nuisance prototype on `PISA 2018`, testing whether non-focal time/visit/count style materially compresses the surviving residual family ordering after leave-out matching | Deciding whether simple process style is enough to explain the residual `PISA` family geometry, or whether the next measurement step should be a real process-data rescoring / response-time DIF pass |
-| `research/iq-sex-differences-pisa2018-time-dif-pilot.md` | First same-ability response-time DIF pilot on `PISA 2018`, showing broad female-slower timing across content families but weak alignment between time geometry and the localized score-residual geometry | Deciding whether timing is the master explanation of the surviving `PISA` score pattern, or whether the score and time layers should be treated as distinct process footprints |
-| `research/iq-sex-differences-nlscya-early-school-first-pass.md` | First local early-school pass showing how `PIAT Math`, reading comprehension, and `PPVT` behave in public `NLSCYA` | Discussing whether the early-school node is already locally resolved or deciding what `ECLS-K:2011` needs to replicate |
-| `research/iq-sex-differences-eclsk2011-early-school-first-pass.md` | First `ECLS-K:2011` replication of the early-school node, showing near-parity kindergarten math and male widening by spring first/second grade | Discussing whether early-school emergence is real, whether `NLSCYA` generalizes, or what the older `ECLS-K` cohort must now adjudicate |
-| `research/iq-sex-differences-eclsk-early-school-first-pass.md` | Older `ECLS-K` replication of the early-school node, showing broad school-entry math already modestly male and more male by spring first grade | Discussing whether the two `ECLS` cohorts align, whether `NLSCYA` is the outlier score family, or what the next early-school alignment step should be |
-| `research/iq-sex-differences-early-school-ach.md` | Formal ACH and causal-check memo on the `NLSCYA` versus `ECLS` early-school anomaly | Deciding whether the live early-school disagreement is mainly score-family, sample-frame, cohort shift, or artifact |
-| `research/iq-sex-differences-early-school-score-alignment.md` | First bridge pass aligning child math to same-wave reading, showing the raw `NLSCYA` anomaly mostly collapses directionally | Discussing whether the early-school conflict is real, checking the ACH prediction, or choosing the next child-score alignment step |
-| `research/iq-sex-differences-early-school-age-matched-alignment.md` | Second bridge pass using explicit overlapping age windows, showing the child-level sign conflict stays gone and the remaining difference is magnitude | Discussing whether the child branch is directionally resolved, or deciding whether to stay on child alignment versus move back to the late-school transcript node |
-| `research/iq-sex-differences-child-bridge-multi-anchor.md` | Multi-anchor child bridge pass showing that `PSID CDS` stays male-leaning across reading, passage, letter-word, and mean-verbal anchors while `NLSCYA` stays male under reading/mean-verbal and `PPVT` remains the unstable exception | Deciding whether the early-school bridge is still reading-only, checking whether `PPVT` overturns the child branch, or judging how much multi-anchor evidence now exists |
-| `research/iq-sex-differences-child-bridge-rank-sensitivity.md` | Rank-based child bridge sensitivity pass showing the same broad ordering after percentile-rank transformation, with `PSID CDS` still male-leaning across anchors and `PPVT` still the weak exception | Deciding whether the child bridge is just a raw-scale artifact, checking whether Stage 2 is basically closed on public data, or choosing between psychometric refinement and moving back to the late-school frontier |
-| `research/iq-sex-differences-item-face-validity-audit.md` | Direct inspection of released `PISA` items and official `ASVAB` sample items, separating visible construct-loading from overread claims about obvious bias | Making page-level claims about "biased items," deciding whether visible item burden matches the current content-family results, or checking whether the repo has any face-valid smoking gun |
-| `research/iq-sex-differences-els-wedge-first-pass.md` | First public-use `ELS` replication showing later tested math male-leaning while school-linked track and evaluation surfaces tilt female | Checking whether the school-linked wedge survives outside `HSLS`, deciding what public `ELS` can and cannot identify, or judging whether behavior/compliance explains the external split |
-| `research/iq-sex-differences-hsls-wedge-refinement.md` | First `HSLS` mechanism refinement showing that the obvious pre-follow-up homework, belonging, self-efficacy, teacher-encouragement, and math-teacher climate block does not materially compress the transcript-grade/track wedge | Checking whether the `HSLS` wedge is just a shallow school-process artifact, deciding whether the school-linked node survives a first mechanism stress test, or choosing between more local refinement and new external replication |
-| `research/iq-sex-differences-nels-wedge-first-pass.md` | First public-use `NELS` replication showing later tested math male-leaning or near null while school-linked evaluation surfaces tilt female and transcript math quantity stays near neutral | Checking whether the school-linked wedge is newer-cohort-specific, deciding whether transcript quantity behaves like grades/recognition, or judging how much older-cohort `NELS` narrows the school-pipeline story |
-| `research/iq-sex-differences-school-wedge-synthesis.md` | Cross-cohort late-school synthesis separating tested math, GPA/grades, evaluation, track, and transcript quantity across `NLSY97`, `HSLS`, `ELS`, and `NELS` | Discussing what the late-school wedge actually consists of, deciding which surface family replicates most cleanly, or avoiding pooled “school pipeline” rhetoric |
-| `research/iq-sex-differences-school-wedge-extended-synthesis.md` | Extended school/transition synthesis adding public `Add Health` and family-linked `PSID TAS` to the late-school family map | Answering whether the wedge survives beyond transcript-rich NCES cohorts, deciding if the evaluation-versus-tested split extends into transition/adult panels, or checking whether the late-school synthesis is still just a narrow cohort artifact |
-| `research/iq-sex-differences-school-wedge-mechanism-triage.md` | Cross-cohort mechanism triage showing that the obvious measured behavior / identity / climate / anchor blocks mostly move tested-math surfaces and do not eliminate the evaluation family or the `NLSY97` school-knowledge residual | Deciding whether the late-school wedge is already explained by measured behavior/exposure blocks, choosing between more local regression slicing and restricted transcript/process access, or reusing the best current causal triage on the school-pipeline node |
-| `research/iq-sex-differences-timss-public-item-wall.md` | Probe note showing why the staged public `TIMSS` Grade 8 files are usable for domain summaries but not yet for item-level DIF hardening | Deciding whether a `TIMSS` item-level pass is actually feasible, avoiding fake item-DIF claims on public `TIMSS`, or checking whether the current wall is access-related versus parser-related |
-| `research/iq-sex-differences-nlsy97-piat-cat-pass.md` | Same-cohort `PIAT Math` versus `CAT-ASVAB` pass showing where the `NLSY97` anomaly actually lives | Discussing whether `NLSY97` reflects broad quantitative ability, a `Math Knowledge` wedge, or a school-surface effect |
-| `research/iq-sex-differences-nlsy97-course-dag-robustness.md` | Explicit late-school DAG and sensitivity pass separating the total `sex` effect from the course-exposure effect and showing why many tempting controls are structurally invalid | Proposing any new late-school regression, deciding whether a control set is admissible, or interpreting `sensemakr` / omitted-confounding results for the `NLSY97` anomaly |
-| `research/iq-sex-differences-nlsy97-behavior-evaluation-pass.md` | First pre-test late-school mechanism pass showing that the available `NLSY97` behavior/compliance and climate/fairness blocks do not materially explain the female `Math Knowledge` and transcript-GPA wedge | Deciding whether homework, absence, suspension, or school-climate variables are the main internal explanation of the `NLSY97` anomaly, or whether effort should move to external replication |
-| `research/iq-sex-differences-nlsy97-transcript-deep-pass.md` | First deep late-school transcript pass showing the `NLSY97` wedge survives `PIAT`, design, exposure, and school-offer controls while `Arithmetic Reasoning` stays separate | Discussing whether the late-school anomaly is still alive after transcript unpacking, or deciding whether the next node is behavior/compliance versus evaluation |
-| `research/iq-sex-differences-timss-cognitive-split.md` | Focused `TIMSS` knowing / applying / reasoning memo that tests whether the `NLSY97` wedge generalizes across school-age batteries | Discussing whether the active node is really about school-knowledge surfaces versus applied / reasoning and track selection |
-| `research/iq-sex-differences-nlsy97-stage-a.md` | Current best internal evidence on process / precision vs raw `NLSY97` quantitative gap | Discussing whether the raw `NLSY97` female edge is real |
-| `research/iq-sex-differences-piaac-frontier.md` | Adult numeracy by country and education | Discussing education-stratified adult numeracy patterns |
-| `research/iq-sex-differences-piaac-age-occupation.md` | Adult numeracy by age band and broad occupation | Discussing whether age or occupation creates vs amplifies the adult numeracy gap |
-| `research/iq-sex-differences-second-pass-results.md` | [current] `NLSY79` same-sample schooling pass | Discussing schooling / practice attenuation in the within-family design |
-| `research/iq-sex-differences-first-pass-results.md` | [historical] initial `NLSY79` pass | Recovering earlier assumptions or checking how the same-sample correction changed the story |
-| `research/iq-sex-differences-nlsy97-replication.md` | [historical] raw cohort replication before Stage A | Recovering the pre-process view of the `NLSY97` anomaly |
-| `research/iq-sex-differences-verification.md` | Literature audit of the repo's main conclusions | Making literature claims about overall `g`, variability, or domain differences |
-| `research/iq-sex-differences-causal-graph.md` | Outside narratives, causal graph, and harden/soften nodes | Mapping Taleb / Cremieux / Gwern / Gelman style arguments into testable nodes |
-| `research/iq-sex-differences-test-construction.md` | [historical, monolith] original long-form research memo | Needing the original stitched narrative and full extracted notes |
-| `notes/iq-sex-differences-context-open-questions.md` | Outcome relevance, schooling-confounding, and popular-culture argument spillover | Asking whether any of these subtest gaps matter for productivity, earnings, or life outcomes |
+| `research/iq-sex-differences-current-position.md` | Synthesized position, established vs open claims | Answering "what do we know?", updating summaries |
+| `research/iq-sex-differences-claim-register.md` | Claim ledger with status, confidence, falsifiers | Making/revising strong claims |
+| `research/iq-sex-differences-decisive-causal-tree.md` | Causal tree: live nodes, open nodes, killing analyses | Proposing causal stories, prioritizing DOE |
+| `research/iq-sex-differences-master-dag.md` | ASCII DAG: background → scores → school → adult → outcomes | Asking "what causes what?", checking control validity |
+| `research/iq-sex-differences-node-table.md` | Node-by-node DAG table with proxies and coefficients | Checking which nodes have estimates |
+| `research/iq-sex-differences-master-plan.md` | End-to-end roadmap with stages and completion criteria | Planning remaining project |
+| `research/iq-sex-differences-execution-plan.md` | Ordered work plan with estimands and stop rules | Choosing next tranche |
+| `research/iq-sex-differences-analysis-protocol.md` | Frozen estimands, score rules, weights, covariates | Running models, comparing datasets |
+| `research/iq-sex-differences-doe.md` | Full staged research program and decision thresholds | Planning new analyses or dataset acquisition |
+
+### Strategy & Novelty
+
+| File | Topic | Consult before |
+|------|-------|----------------|
+| `research/iq-sex-differences-novel-synthesis-roadmap.md` | Strongest defensible claims, paper-shaped directions | Reframing contribution, choosing next design |
+| `research/iq-sex-differences-novelty-audit.md` | Literature-backed audit: known vs distinct | Making novelty claims |
+| `research/iq-sex-differences-alpha-research-program.md` | Where genuine alpha remains, next designs with info value | Planning next research tranche |
+| `research/iq-sex-differences-alpha-master-plan.md` | Full alpha execution plan with estimands and stop rules | Choosing what runs first vs parallel |
+| `research/iq-sex-differences-next-level-research-plan.md` | Higher-leverage work beyond public observational frontier | Choosing between more datasets vs new designs |
+| `research/iq-sex-differences-causal-methods-frontier.md` | Which newer causal machinery helps here and which does not | Proposing proximal/transport/hidden-mediator upgrades |
+| `research/iq-sex-differences-frontier-literature-audit.md` | 2023-2025 literature audit | Checking if synthesis is genuinely new |
+| `research/iq-sex-differences-frontier-refresh-2026-03-06.md` | Latest literature refresh confirming integration novelty | Checking whether findings are already established |
+| `research/iq-sex-differences-model-review-2026-03-06.md` | Cross-model blind-spot review (Gemini + GPT) | Reusing external critique, softening claims |
+
+### Battery & Measurement
+
+| File | Topic | Consult before |
+|------|-------|----------------|
+| `research/iq-battery-design-matrix.md` | Battery-family matrix: time limits, speed, adaptive behavior | Checking whether a battery is speeded vs power |
+| `research/iq-sex-differences-raven-open-data.md` | Public Raven raw-data status vs local ICAR follow-up | Claiming public Raven data are in hand |
+| `research/iq-sex-differences-matrix-certainty-plan.md` | Certainty ladder for matrix/Raven branch | Getting more certainty on matrix branch |
+| `research/iq-sex-differences-open-matrix-assets.md` | Usable open matrix assets: ICAR, MaRs-IB, OMIB | Checking what matrix data is available now |
+| `research/iq-sex-differences-matrix-experiment-protocol.md` | Smallest randomized matrix-study design using OMIB | Moving from observational to experimental |
+| `research/iq-sex-differences-matrix-experiment-deployment.md` | Deployable OMIB pilot run path and checklist | Actually fielding the OMIB timing pilot |
+| `research/iq-sex-differences-matrix-experiment-runbook.md` | Operational deployment guide for OMIB pilot | Ready-to-run experiment checklist |
+| `research/iq-sex-differences-marsib-request-draft.md` | Ready-to-send MaRs-IB data request | Requesting non-public MaRs-IB data |
+| `research/iq-sex-differences-timing-channels.md` | Processing speed and timing design rationale | Challenging claims about female-friendly speed correction |
+| `research/iq-sex-differences-item-face-validity-audit.md` | Released PISA/ASVAB item inspection | Making claims about "biased items" |
+
+### PISA 2018 Measurement Branch
+
+| File | Topic | Consult before |
+|------|-------|----------------|
+| `research/iq-sex-differences-pisa2018-item-split.md` | Item/process pass: broad male-leaning math, heterogeneous items | School-age process burden vs item-family heterogeneity |
+| `research/iq-sex-differences-pisa2018-framework-proxy.md` | Content/context decomposition by framework family | School-age split coherence by content family |
+| `research/iq-sex-differences-pisa2018-dif-proxy.md` | First ability-conditioned item-fairness pass | School-age item fairness, `space_shape` conditioning |
+| `research/iq-sex-differences-pisa2018-dif-leaveout.md` | Contamination-aware leave-out matching follow-up | Current best PISA conditioning result |
+| `research/iq-sex-differences-pisa2018-dif-iterative.md` | Iterative purification: what survives anchor updating | Whether family ordering is anchor artifact |
+| `research/iq-sex-differences-pisa2018-dif-logit.md` | Binary-response weighted binomial confirmation | Whether ordering is linear-model artifact |
+| `research/iq-sex-differences-pisa2018-dif-rasch.md` | Anchored-Rasch with separate male/female calibration | Strongest latent-item sensitivity pre-IRT |
+| `research/iq-sex-differences-pisa2018-dif-theta-logit.md` | Latent-anchor DIF conditioned on Rasch theta | Whether ordering is constructed-score artifact |
+| `research/iq-sex-differences-pisa2018-dif-2pl-anchor.md` | 2PL anchor sensitivity — branch saturated | Whether stronger 2PL bought new certainty |
+| `research/iq-sex-differences-pisa2018-dif-purified.md` | Fixed-anchor purified pass from low-DIF anchor core | Whether ordering survives anchor rescoring |
+| `research/iq-sex-differences-pisa2018-process-nuisance.md` | Process-style nuisance prototype (time/visit/count) | Whether simple process style explains residual |
+| `research/iq-sex-differences-pisa2018-process-residualized-dif.md` | Strongest process-DIF reduction with residualized TT/V | Whether public process branch has headroom |
+| `research/iq-sex-differences-pisa2018-time-dif-pilot.md` | Response-time DIF pilot: broad female-slower timing | Whether timing explains the score pattern |
+| `research/iq-sex-differences-pisa2018-time-dif-theta.md` | Theta-conditioned timing pass with latent anchor | Whether timing is broad vs family-localized |
+| `research/iq-sex-differences-pisa-frontier-comparison.md` | Comparison with older PISA 2003 Rasch literature | Whether current PISA result is novel |
+| `research/iq-sex-differences-irt-tooling-feasibility.md` | Local environment IRT feasibility | Whether "run full IRT next" is executable |
+| `research/iq-sex-differences-timss-public-item-wall.md` | Why public TIMSS files block item-level DIF | Whether TIMSS item-level pass is feasible |
+| `research/iq-sex-differences-timss-cognitive-split.md` | TIMSS knowing/applying/reasoning split | Whether NLSY97 wedge generalizes across batteries |
+| `research/iq-sex-differences-timss-frontier.md` | TIMSS 2019/2015 Advanced grade surfaces and tracking | International school-age math comparisons |
+
+### Early-School / Child Branch
+
+| File | Topic | Consult before |
+|------|-------|----------------|
+| `research/iq-sex-differences-early-school-intake.md` | Early-school node intake: NLSCYA → ECLS-K:2011 → ECLS-K | Starting Stage 2 |
+| `research/iq-sex-differences-nlscya-early-school-first-pass.md` | NLSCYA: PIAT Math, reading, PPVT | Whether early-school is locally resolved |
+| `research/iq-sex-differences-eclsk2011-early-school-first-pass.md` | ECLS-K:2011: near-parity K, male widening by 1st/2nd | Whether early-school emergence is real |
+| `research/iq-sex-differences-eclsk-early-school-first-pass.md` | Older ECLS-K: school-entry math already modestly male | Whether two ECLS cohorts align |
+| `research/iq-sex-differences-early-school-ach.md` | ACH on NLSCYA vs ECLS disagreement | Whether disagreement is score-family vs cohort |
+| `research/iq-sex-differences-early-school-score-alignment.md` | Bridge pass: NLSCYA anomaly collapses directionally | Whether early-school conflict is real |
+| `research/iq-sex-differences-early-school-age-matched-alignment.md` | Age-matched bridge: sign conflict gone, magnitude differs | Whether child branch is directionally resolved |
+| `research/iq-sex-differences-child-bridge-multi-anchor.md` | Multi-anchor bridge: PSID CDS male-leaning, PPVT exception | Whether bridge is reading-only |
+| `research/iq-sex-differences-child-bridge-rank-sensitivity.md` | Rank-based sensitivity: same ordering after percentile rank | Whether child bridge is raw-scale artifact |
+| `research/iq-sex-differences-psid-cds-first-pass.md` | PSID CDS cleaned family-linked child panel | Making PSID child claims |
+| `research/iq-sex-differences-psid-cds-behavior-pass.md` | PSID CDS caregiver-rated behavior block | Whether behavior explains early-school bridge |
+| `research/iq-sex-differences-psid-cds-teacher-pass.md` | PSID CDS teacher behavior/competence/math-reading ratings | Whether teacher reports dissolve child bridge |
+| `research/iq-sex-differences-psid-cds-mtmm-prototype.md` | Child MTMM prototype with teacher-rating method structure | Whether child branch has formal latent support |
+| `research/iq-sex-differences-public-child-branch-ach.md` | Competing-hypotheses closure for public child branch | Whether public child branch is still open |
+| `research/iq-sex-differences-next-public-causal-step.md` | Best remaining public-data causal design (PSID CDS sibling FE) | Choosing next public-data analysis |
+
+### Late-School / Wedge Branch
+
+| File | Topic | Consult before |
+|------|-------|----------------|
+| `research/iq-sex-differences-next-node-validation.md` | Why NLSY97 quantitative anomaly is the active fork | Choosing next causal node |
+| `research/iq-sex-differences-nlsy97-stage-a.md` | Best internal evidence on NLSY97 process/precision | Whether raw NLSY97 female edge is real |
+| `research/iq-sex-differences-nlsy97-piat-cat-pass.md` | PIAT Math vs CAT-ASVAB: where the anomaly lives | Whether NLSY97 is broad QA vs Math Knowledge |
+| `research/iq-sex-differences-nlsy97-transcript-deep-pass.md` | Wedge survives PIAT, design, exposure, school-offer controls | Whether anomaly is alive after transcript unpacking |
+| `research/iq-sex-differences-nlsy97-course-dag-robustness.md` | Late-school DAG and sensemakr sensitivity | Proposing new late-school regressions |
+| `research/iq-sex-differences-nlsy97-behavior-evaluation-pass.md` | Behavior/compliance/climate blocks don't explain MK wedge | Whether behavior explains NLSY97 anomaly |
+| `research/iq-sex-differences-evaluation-placement-node.md` | Grade-test wedge and why grades aren't clean ability proxies | Using grades/honors/placement in causal models |
+| `research/iq-sex-differences-hsls-wedge-first-pass.md` | First HSLS:09 grade-test wedge confirmation | Replicating wedge beyond NLSY |
+| `research/iq-sex-differences-hsls-wedge-refinement.md` | HSLS mechanism refinement: school-process block doesn't compress | Whether HSLS wedge is shallow process artifact |
+| `research/iq-sex-differences-els-wedge-first-pass.md` | ELS replication: tested math male, evaluation female | Whether wedge survives outside HSLS |
+| `research/iq-sex-differences-nels-wedge-first-pass.md` | NELS replication: older cohort, evaluation still female | Whether wedge is newer-cohort-specific |
+| `research/iq-sex-differences-school-wedge-synthesis.md` | Cross-cohort synthesis: NLSY97, HSLS, ELS, NELS | What the late-school wedge consists of |
+| `research/iq-sex-differences-school-wedge-extended-synthesis.md` | Extended synthesis adding Add Health and PSID TAS | Whether wedge survives beyond NCES cohorts |
+| `research/iq-sex-differences-school-wedge-mechanism-triage.md` | Cross-cohort mechanism triage: behavior/identity blocks insufficient | Whether wedge is explained by measured mechanisms |
+
+### Latent-Family / MTMM Branch
+
+| File | Topic | Consult before |
+|------|-------|----------------|
+| `research/iq-sex-differences-mtmm-crosswalk.md` | Trait/method crosswalk mapping datasets to MTMM workstreams | Starting latent-family branch |
+| `research/iq-sex-differences-hsls-mtmm-invariance-prototype.md` | HSLS: tested and evaluation math are not one factor | Whether late-school wedge has formal latent support |
+| `research/iq-sex-differences-addhealth-evaluation-invariance-prototype.md` | Add Health: evaluation factor coherent, prediction mixed | Whether evaluation family is real beyond HSLS |
+| `research/iq-sex-differences-addhealth-evaluation-invariance-pilot.md` | Add Health evaluation measurement and prediction invariance pilot | Testing evaluation factor coherence, latent vs surface models |
+| `research/iq-sex-differences-weighted-mtmm-sensitivity.md` | Weighted sensitivity: HSLS/Add Health split survives weighting | Whether latent branch is unweighted artifact |
+| `research/iq-sex-differences-measurement-error-pilot.md` | Lightweight EIV: high reliability, modest geometry changes | Whether attenuation correction generates major new result |
+
+### Transition / Outcome Branch
+
+| File | Topic | Consult before |
+|------|-------|----------------|
+| `research/iq-sex-differences-psid-tas-transition-first-pass.md` | PSID TAS: GPA, SAT/ACT, wedges, within-family | Making PSID transition claims |
+| `research/iq-sex-differences-addhealth-school-surface-first-pass.md` | Add Health: grades, attainment, grade-to-attainment models | What Add Health adds to the story |
+| `research/iq-sex-differences-addhealth-public-pair-note.md` | Add Health public within-family: no clean pair ID | Proposing public within-family Add Health |
+| `research/iq-sex-differences-ffcws-achievement-first-pass.md` | FFCWS: anchor-sensitive child math, female college residual | What FFCWS adds to child/transition branches |
+| `research/iq-sex-differences-school-outcome-decomposition.md` | Outcome decomposition: school surfaces partial, child battery weak | Whether public outcome branch adds life-course split |
+| `research/iq-sex-differences-school-outcome-interactions.md` | Predictive-validity interactions: grade slopes not weaker for girls | Whether female school surfaces are inflated |
+| `research/iq-sex-differences-mediator-design.md` | Frozen DAG-valid mediator design for outcome branch | Using "mediation" or "direct effect" language |
+
+### Datasets & Access
+
+| File | Topic | Consult before |
+|------|-------|----------------|
+| `research/iq-sex-differences-dataset-expansion.md` | Dataset access status: staged, partial, metadata-only, gated | Planning acquisition, checking what's local |
+| `research/iq-sex-differences-dataset-cards.md` | Detailed local dataset field mappings and variable availability | Checking exact variables available per dataset |
+| `research/iq-sex-differences-dataset-roadmap.md` | Complete dataset status including access and analysis progress | Planning acquisition order |
+| `research/iq-sex-differences-additional-datasets.md` | Pre-PSID prospect datasets beyond current stack | Considering new acquisition targets |
+| `research/iq-sex-differences-remaining-dataset-frontier.md` | Ranked remaining datasets with access status by causal node | Deciding what to acquire next |
+| `research/iq-sex-differences-access-playbook.md` | Live access states for external frontier | Whether acquisition is credentials vs licensing |
+| `research/iq-sex-differences-nces-datalab-acquisition.md` | NCES API path, landed HSLS/ELS/NELS, HS&B failure | Touching NCES data acquisition |
+
+### Restricted Data (Add Health / AHAA)
+
+| File | Topic | Consult before |
+|------|-------|----------------|
+| `research/iq-sex-differences-restricted-data-plan.md` | Restricted-data frontier: Add Health best path, NCES paused | Planning restricted-data acquisition |
+| `research/iq-sex-differences-addhealth-ahaa-application-scope.md` | Add Health/AHAA request scope and project language | Starting the Add Health request |
+| `research/iq-sex-differences-addhealth-ahaa-file-crosswalk.md` | File-level AHAA crosswalk: official names → DAG priorities | Filling Attachment B |
+| `research/iq-sex-differences-addhealth-contract-checklist.md` | Filing checklist: portal steps, IRB, security | Actually filing the request |
+| `research/iq-sex-differences-addhealth-attachment-b-draft.md` | Copy-ready Attachment B language | Filling the portal form |
+| `research/iq-sex-differences-addhealth-portal-fill-guide.md` | Field-by-field portal handoff | Opening the live portal |
+| `research/iq-sex-differences-addhealth-irb-language-draft.md` | Copy-ready IRB wording for restricted Add Health | Drafting/revising IRB text |
+| `research/iq-sex-differences-addhealth-ahaa-literature-gap.md` | AHAA literature-gap audit: repo decomposition still distinct | Whether AHAA branch creates new information |
+| `research/addhealth_ahaa_submission_packet/README.md` | Submission-ready handoff folder | Filing the Add Health request |
+
+### Adult / Historical
+
+| File | Topic | Consult before |
+|------|-------|----------------|
+| `research/iq-sex-differences-piaac-frontier.md` | Adult numeracy by country and education | Education-stratified adult numeracy |
+| `research/iq-sex-differences-piaac-age-occupation.md` | Adult numeracy by age band and occupation | Whether age/occupation creates vs amplifies gap |
+| `research/iq-sex-differences-second-pass-results.md` | [current] NLSY79 same-sample schooling pass | Schooling/practice attenuation in within-family design |
+| `research/iq-sex-differences-first-pass-results.md` | [historical] initial NLSY79 pass | Recovering earlier assumptions |
+| `research/iq-sex-differences-nlsy97-replication.md` | [historical] raw cohort replication before Stage A | Pre-process view of NLSY97 anomaly |
+| `research/iq-sex-differences-verification.md` | Literature audit of repo conclusions | Literature claims about `g`, variability, domains |
+| `research/iq-sex-differences-causal-graph.md` | Outside narratives and harden/soften nodes | Mapping Taleb/Cremieux/Gwern/Gelman arguments |
+| `research/iq-sex-differences-test-construction.md` | [historical, monolith] original long-form memo | Needing original stitched narrative |
+
+### Experiment Designs
+
+| File | Topic | Consult before |
+|------|-------|----------------|
+| `research/iq-sex-differences-blinded-grading-audit.md` | Blinded grading/recommendation audit design | Working on school-evaluation branch |
+
+### External Fact-Checks
+
+| File | Topic | Consult before |
+|------|-------|----------------|
+| `research/jre-2460-rachel-wilson-claims.md` | 5-agent verification of 58 Wilson feminism/history claims | Historical feminism, suffrage, family economics facts |
+| `research/jre-2460-claims-11-20.md` | Wilson JRE #2460 fact-check: suffrage and coverture claims | Wilson's specific historical/legal facts |
+| `research/jre-2460-exa-crosscheck.md` | Cross-validation of multi-agent vs Exa verdicts | Comparing multi-agent vs external fact-check |
+| `research/jiang-xueqin-prediction-scorecard.md` | Credibility audit of geopolitical commentator (~60% accuracy) | Evaluating Jiang assertions |
+
+### Notes & Context
+
+| File | Topic | Consult before |
+|------|-------|----------------|
+| `notes/iq-sex-differences-context-open-questions.md` | Outcome relevance, schooling-confounding, pop-culture spillover | Whether subtest gaps matter for outcomes |
+| `research/review-1-audit.md` | Audit of external GPT review | Reusing review-1 claims |
