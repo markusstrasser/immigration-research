@@ -212,4 +212,63 @@ Heritage counts the costs but uses a short horizon that excludes the contributio
 
 ## Dataset Catalog
 
-*(Dataset discovery agent still running — will be appended)*
+**Fundamental constraint:** No US dataset directly identifies unauthorized status. All analyses use the **residual method** (subtract legal immigrants from total foreign-born) or imputation filters. Error margins ~10-15%.
+
+### Priority 1: Core Fiscal Data
+
+| # | Dataset | What it gives you | Access | Immigration ID | Used by |
+|---|---------|------------------|--------|----------------|---------|
+| 1 | **CPS ASEC** | ~100K HH. Income, benefit receipt (SNAP, Medicaid, SSI, TANF), employment, nativity, citizenship | [census.gov](https://www.census.gov/data/datasets/time-series/demo/cps/cps-asec.html) or [IPUMS](https://cps.ipums.org) — free | Residual method required | NAS 2017, CBO, Pew |
+| 2 | **SIPP** | ~50K HH longitudinal panel. Most detailed public benefit receipt data | [census.gov](https://www.census.gov/programs-surveys/sipp/data/datasets.html) — free | Residual method | NAS 2017 |
+| 3 | **ACS PUMS** | ~3.5M persons/yr. Best for state/local due to large N. Income, housing, education, citizenship, year of entry | [census.gov](https://www.census.gov/programs-surveys/acs/microdata.html) or [IPUMS-USA](https://usa.ipums.org/usa/) — free | Residual method. CMS publishes ACS-derived unauthorized estimates by state | State-level analyses |
+| 4 | **SSA Earnings Suspense File** | Payroll taxes paid with mismatched SSNs (proxy for unauthorized contributions) | **NOT public** (PII). Aggregate stats in [SSA Actuarial Note 151](https://www.ssa.gov/oact/NOTES/pdf_notes/note151.pdf) and [OIG audits](https://oig.ssa.gov/) | Direct proxy | SSA actuarial estimates (~$12B/yr OASDI contribution) |
+
+### Priority 2: Cost-Side Data
+
+| # | Dataset | Fiscal component | Access |
+|---|---------|-----------------|--------|
+| 5 | **NCES Education Finance** | K-12 per-pupil expenditure by state/district (largest state/local cost) | [nces.ed.gov](https://nces.ed.gov/ccd/elsi/) — free |
+| 6 | **MEPS** | Individual healthcare utilization & expenditure (~40K persons/yr) | [meps.ahrq.gov](https://meps.ahrq.gov/) — free |
+| 7 | **DOJ/BOP + SCAAP** | Incarceration costs. Federal: [$44,090/yr per prisoner (FY2023)](https://www.federalregister.gov/documents/2025/12/15/2025-22777/annual-determination-of-average-cost-of-incarceration-fee-coif). SCAAP reimburses states for incarcerating undocumented aliens | [bjs.ojp.gov](https://bjs.ojp.gov/document/fpscufsa24.pdf), [bja.ojp.gov](https://bja.ojp.gov/program/state-criminal-alien-assistance-program-scaap/overview) |
+| 8 | **DHS Budget (CBP/ICE/EOIR)** | Enforcement line items | [dhs.gov](https://www.dhs.gov/dhs-budget) — Congressional Budget Justifications (PDF) |
+| 9 | **USDA/FNS (SNAP/WIC)** | Benefit participation & costs. Unauthorized ineligible; their US-citizen children eligible | [fns.usda.gov/snap](https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap), [fns.usda.gov/wic](https://www.fns.usda.gov/pd/wic-program) — free |
+
+### Priority 3: Tax Revenue Data
+
+| # | Dataset | What it gives you | Access |
+|---|---------|------------------|--------|
+| 10 | **IRS ITIN filing data** | Returns filed & taxes paid by ITIN holders (predominantly unauthorized) | [IRS Data Book](https://www.irs.gov/statistics/soi-tax-stats-irs-data-book) — aggregate only |
+| 11 | **ITEP estimates** | Microsimulation of state/local taxes paid by unauthorized immigrants. Headline: ~$96.7B total taxes (2022) | [itep.org](https://itep.org/undocumented-immigrants-taxes-2024/) — free. Note: advocacy-adjacent org, cross-check |
+| 12 | **State comptroller reports** | Texas 2006 (positive state, negative local). CBO state/local: [$9.2B cost in 2023](https://www.cbo.gov/publication/61464) | Various PDFs |
+
+### Priority 4: Labor Market Data
+
+| # | Dataset | Access | Note |
+|---|---------|--------|------|
+| 13 | **LEHD / QWI** | [QWI](https://ledextract.ces.census.gov/static/data.html) free; microdata restricted (FSRDC only) | No immigration status. Useful for wage/industry analysis |
+| 14 | **QCEW** | [bls.gov](https://www.bls.gov/cew/downloadable-data-files.htm) — free CSV | Aggregate employer-level. Cross-reference with ACS industry × nativity |
+
+### Priority 5: Integration/Outcomes
+
+| # | Dataset | Access | Limitation |
+|---|---------|--------|-----------|
+| 15 | **NIS** | [nis.princeton.edu](https://nis.princeton.edu/data.html) — free | Legal immigrants only (2003 cohort). Comparator group, not direct |
+| 16 | **CILS** | [ICPSR](https://www.icpsr.umich.edu/web/DSDR/studies/20520) — free with registration | 2nd-gen outcomes, 1991-2006, two metros only. Dated. |
+
+### Key Derived/Population Sources
+
+| Source | URL | Provides |
+|--------|-----|----------|
+| Pew unauthorized estimates | [pewresearch.org](https://www.pewresearch.org/unauthorized-immigrant-estimates) | State-level counts by year (residual method on CPS) |
+| CMS estimates | [cmsny.org](https://data.cmsny.org) | ACS-derived counts by state, year, country of origin |
+| DHS estimates | [ohss.dhs.gov](https://ohss.dhs.gov/topics/immigration/illegal/population-estimates) | Official DHS estimates |
+| SSA Actuarial Note 151 | [ssa.gov](https://www.ssa.gov/oact/NOTES/pdf_notes/note151.pdf) | Unauthorized worker effects on Social Security trust funds |
+| NAS 2017 full report | [nap.nationalacademies.org](https://nap.nationalacademies.org/read/23550) | Canonical methodology and estimates |
+
+### Dataset Gaps
+
+1. **No dataset directly identifies unauthorized status.** Everything depends on residual method (+/- 10-15%).
+2. **SSA Earnings Suspense File microdata is a black box.** Best proxy for payroll tax contributions, but only aggregate OIG/actuarial figures available.
+3. **Tax compliance rates are assumed, not measured.** ITEP assumes 50-75% income tax compliance. True rate unknown.
+4. **Emergency Medicaid costs** have no clean aggregate attributable to unauthorized immigrants.
+5. **Dynamic/long-run effects are model-dependent** — not a data gap, but a framing choice.
