@@ -19,7 +19,7 @@ However, this evidence base has real limitations that an honest assessment must 
 3. **Heterogeneity:** "Unauthorized immigrants" is not a monolithic group. Crime rates likely vary by country of origin, age at entry, length of residence, and local context. Aggregate comparisons obscure this variation.
 4. **The ICE docket numbers** (large absolute counts of noncitizens with criminal records) are real administrative data but measure something different from per-capita crime rates. They are stock figures accumulated over decades, not rates.
 
-**Confidence:** HIGH that the directional finding (lower rates) is robust. MODERATE on the precise magnitude. LOW on whether this generalizes uniformly across all subpopulations and time periods.
+**Confidence:** HIGH that the directional finding (lower rates) is robust even after race-stratified correction (see §5 below). MODERATE on the precise magnitude — the headline "2x lower" overstates the gap because it compares predominantly Hispanic unauthorized immigrants to all native-born citizens including Black Americans; the race-corrected gap is ~30% lower, not ~50% lower. LOW on whether this generalizes uniformly across all subpopulations and time periods.
 
 ---
 
@@ -153,7 +153,33 @@ People who undertake the costs and risks of unauthorized migration may be system
 ### 4. Deportation as censoring
 Unauthorized immigrants who commit crimes may be deported, removing them from the population before they accumulate long criminal records. This would mechanically lower observed crime rates without meaning the underlying propensity is lower. However, Light & Miller (2020) note that this should show up as declining rates over time, which they do not observe. [SOURCE: PNAS 117(51)]
 
-### 5. Generational assimilation
+### 5. Composition of the "native-born" comparison group (race confound)
+
+**This is the most important methodological caveat.** The "native-born citizens" category is not homogeneous. Black Americans have substantially higher incarceration rates than white or Hispanic Americans. Since unauthorized immigrants are predominantly Hispanic, comparing them to ALL native-born citizens (which includes Black Americans) inflates the apparent gap.
+
+**What happens when you correct for this:**
+
+Landgrave & Nowrasteh (Cato Policy Analysis 994, April 2025) provide the race-stratified data:
+
+| Group | Incarceration rate per 100k (2023) |
+|-------|-----------------------------------|
+| Native-born (all) | **1,221** |
+| Native-born (excluding Black) | **891** |
+| Illegal immigrants (all) | **613** |
+| Illegal immigrants (excluding Black) | **626** |
+| Legal immigrants | **319** |
+
+[SOURCE: https://www.cato.org/sites/cato.org/files/2025-03/Policy-Analysis-994.pdf]
+
+- **Without race correction:** illegal immigrants ~50% less likely to be incarcerated than native-born
+- **Excluding Black Americans from both groups:** gap narrows to ~30% less likely [SOURCE: https://www.alexnowrasteh.com/p/immigrants-have-a-lower-incarceration — Nowrasteh Apr 2025]
+- **Within each racial/ethnic group:** immigrants have lower incarceration rates than their native-born counterparts. Hispanic immigrants < native-born Hispanics. Black immigrants < native-born Blacks. White immigrants < native-born whites. [SOURCE: same]
+
+**Assessment:** The user critique is valid — the aggregate comparison overstates the gap by ~20 percentage points. The corrected comparison still shows unauthorized immigrants with lower rates, but the margin is ~30% lower rather than ~50% lower. The strongest version of this finding is the within-race comparison, which eliminates the compositional confound entirely and still shows lower immigrant rates. [INFERENCE]
+
+**What Light et al. (2020) did NOT do:** Their PNAS study does not stratify the native-born comparison group by race. This is a real limitation of that paper's headline numbers.
+
+### 6. Generational assimilation
 Multiple studies find that the children of immigrants (second generation, typically US-born citizens) have higher crime rates than their parents, converging toward native-born rates. This is consistent with both the "immigrant revitalization" thesis and with the observation that first-generation immigrants are unusually law-abiding. [SOURCE: Ousey & Kubrin 2018; Rumbaut 2008]
 
 ---
@@ -225,3 +251,9 @@ The US finding (immigrants commit less crime) does **not** generalize internatio
 - Ousey & Kubrin (2018) — `33034e4c0080fa686d177bb0e4f52afe7914c852` [previously saved]
 - Skardhamar et al. (2014) — `54b2f4ed7f408d6bb823617ec9c2d7cb82e11f6e` [fetched this session]
 - Bell, Fasani, & Machin (2024) — `1f48d32d03bf156d871a2632e516e9064b28b750` [previously saved]
+
+## Sources Not in Corpus (web-sourced)
+
+- Landgrave & Nowrasteh (2025) "Illegal Immigrant Incarceration Rates, 2010–2023" — Cato Policy Analysis 994. [SOURCE: https://www.cato.org/sites/cato.org/files/2025-03/Policy-Analysis-994.pdf] **Race-stratified incarceration data.**
+- Nowrasteh (Apr 2025) blog post with race-corrected comparison tables. [SOURCE: https://www.alexnowrasteh.com/p/immigrants-have-a-lower-incarceration]
+- Nowrasteh & Chanwong (Sep 2025) "Immigrants Have Lower Lifetime Incarceration Rates" — 1990 cohort tracked through ACS 2006-2023 by race/ethnicity/immigration status. [SOURCE: https://www.cato.org/blog/immigrants-have-lower-lifetime-incarceration-rates-native-born-americans]
