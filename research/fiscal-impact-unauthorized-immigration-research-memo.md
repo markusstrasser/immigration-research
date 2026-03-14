@@ -89,6 +89,22 @@ Senate Budget Committee testimony, September 2023.
 - Short time horizon (doesn't credit intergenerational fiscal gains)
 - Does not use marginal cost framework preferred by most economists
 
+### CIS / Camarota (2024 congressional testimony)
+*The Cost of Illegal Immigration to Taxpayers*, prepared testimony for the House Judiciary immigration subcommittee.
+
+- Claims a lifetime fiscal drain of **`-$68,390`** per illegal immigrant in 2023 dollars [SOURCE: https://www.congress.gov/118/meeting/house/116727/witnesses/HHRG-118-JU01-Wstate-CamarotaS-20240111.pdf]
+- Claims **`59.4%`** of illegal-immigrant-headed households use one or more welfare programs and that those programs cost roughly **`$42B`** [SOURCE: same testimony]
+- Claims roughly **`$68.1B`** in K-12 costs from children of illegal immigrants in public school, mostly U.S.-born [SOURCE: same testimony]
+
+**Assessment:**
+- The testimony is **not a neutral baseline estimate**. It is congressional advocacy from CIS, which openly describes itself as pursuing a `pro-immigrant, low-immigration vision`. [SOURCE: https://cis.org/Center-For-Immigration-Studies-Background]
+- The core mechanism tying lower education to lower tax payments is mainstream and consistent with NAS/Orrenius. [SOURCE: https://doi.org/10.24149/wp1704] [SOURCE: https://www.nap.edu/catalog/23550/the-economic-and-fiscal-consequences-of-immigration]
+- The scalar estimates are **model outputs**, not direct measurements. The `-$68,390` figure is Camarota's construction from averaged NAS scenarios plus CIS legality adjustments; it is not a National Academies estimate for unauthorized immigrants. [SOURCE: https://www.congress.gov/118/meeting/house/116727/witnesses/HHRG-118-JU01-Wstate-CamarotaS-20240111.pdf] [SOURCE: https://www.nap.edu/catalog/23550/the-economic-and-fiscal-consequences-of-immigration]
+- The welfare and population estimates depend on inferred unauthorized status in survey data, exactly the kind of fragile residual/imputation problem highlighted in recent methods work. [SOURCE: https://www.ssa.gov/policy/docs/ssb/v85n2/v85n2p1.html] [SOURCE: https://pmc.ncbi.nlm.nih.gov/articles/PMC9107075/] [SOURCE: https://pmc.ncbi.nlm.nih.gov/articles/PMC12439705/]
+- The school-cost estimate is fair only within a **current local-budget incidence** frame that assigns U.S.-born children's K-12 costs to immigration; it is incomplete as a total lifetime fiscal estimate unless those children's later tax contributions are also counted. [SOURCE: https://www.urban.org/sites/default/files/publication/90796/state_and_local_fiscal_effects_of_immigration.pdf] [SOURCE: https://doi.org/10.24149/wp1704]
+
+**Repo classification:** Use Camarota as an adversarial source and a generator of categories/claims to verify, not as the repo's baseline estimator. See [immigration-fiscal-camarota-cis-testimony-audit.md](/Users/alien/Projects/research/research/immigration-fiscal-camarota-cis-testimony-audit.md).
+
 ### Cato Institute (Bier, Feb 2026) [CONTESTED]
 *Immigrants' Recent Effects on Government Budgets: 1994–2023*
 
@@ -144,7 +160,7 @@ Senate Budget Committee testimony, September 2023.
 | Medicaid for citizen children | Citizen children of unauthorized parents eligible | Statutory |
 | SNAP/WIC for citizen children | Citizen children eligible | Statutory |
 | Immigration enforcement (total) | CBP + ICE + EOIR budgets are public | To be quantified from DHS data |
-| Incarceration | Lower crime rates than natives (multiple studies) but nonzero | [SOURCE: Cato/Nowrasteh, Texas TDCJ data] |
+| Incarceration | Lower crime rates than natives — see [immigration-crime-rates-unauthorized-vs-native-born.md](immigration-crime-rates-unauthorized-vs-native-born.md) for full evidence review (Light et al. 2020 PNAS, Ousey & Kubrin 2018 meta-analysis, Gunadi 2019 IV) | [SOURCE: PNAS 117(51); Cato/Nowrasteh Texas DPS data] |
 
 ### Remittances
 | Year | Amount to Mexico | Source |
@@ -272,3 +288,7 @@ Heritage counts the costs but uses a short horizon that excludes the contributio
 3. **Tax compliance rates are assumed, not measured.** ITEP assumes 50-75% income tax compliance. True rate unknown.
 4. **Emergency Medicaid costs** have no clean aggregate attributable to unauthorized immigrants.
 5. **Dynamic/long-run effects are model-dependent** — not a data gap, but a framing choice.
+
+## Revisions
+
+- **2026-03-13:** Added a source audit for the January 2024 Camarota/CIS testimony and downgraded it from "another estimate" to "adversarial briefing with reusable subclaims only". Trigger: [2026-03-13-treat-cis-camarota-as-advocacy-not-baseline](/Users/alien/Projects/research/decisions/2026-03-13-treat-cis-camarota-as-advocacy-not-baseline.md).
