@@ -48,30 +48,47 @@ Scopes: `[research]` (findings), `[analysis]` (data work), `[docs]` (index/notes
 ## Tools Available
 
 ### Skills (symlinked from `~/Projects/skills/`)
-- **researcher** — autonomous research orchestration with epistemic rigor
-- **epistemics** — bio/medical/scientific evidence hierarchy
-- **causal-dag** — DAG-first causal analysis, back-door criterion validation
-- **causal-robustness** — post-estimation sensitivity analysis (PySensemakr)
-- **causal-check** — lightweight causal reasoning discipline
-- **competing-hypotheses** — Analysis of Competing Hypotheses (ACH)
-- **model-review** — cross-model adversarial review
-- **entity-management** — versioned knowledge management
-- **source-grading** — NATO Admiralty System for source/info grading
-- **project-upgrade** — autonomous codebase improvement
-- **google-workspace** — Google Workspace automation
+
+Research & evidence:
+- **research** — one-shot research with source grading
+- **research-ops** — autonomous research loops, knowledge compilation, training-data diff
+- **bio-verify** — bio/medical/scientific claim verification with evidence hierarchy
+- **analyze** — causal/DAG/hypotheses/forensic analysis modes
+- **observe** — session retrospectives, architectural patterns, supervision audits
+- **review** — adversarial review (model-review, verify, close)
+- **brainstorm** — divergent ideation via systematic perturbation
+- **negative-space-sweep** — discover what's MISSING from an optimized system
+- **de-slop** — adversarial editor for AI-generated prose patterns
+
+Workflow & project:
+- **upgrade** — full codebase audit and improvement
+- **improve** — harvest findings, suggest skills, maintain quality
+- **goals** — project goals and constitutional principles elicitation
+- **constitution** — constitution authoring for projects
+- **entity-management** — versioned knowledge management for entities
+- **trending-scout** — scan for new AI/agent developments
+
+Infra & integrations:
+- **browse** — persistent headless browser daemon
+- **google-workspace** — Google Workspace automation (Drive, Sheets, Gmail, Calendar)
+- **scientific-drawing** — Typst/CeTZ, TikZ, D2, Asymptote diagrams
+- **modal** — Modal serverless Python cloud compute
+- **llmx-guide** — llmx CLI routing and gotchas
+- **model-guide** — frontier model selection and prompting
 
 ### MCP Servers (`.mcp.json`)
 - **exa** — semantic web search, entity enrichment, deep research
-- **research** (papers-mcp) — Semantic Scholar (220M+ papers), corpus management, claim verification
+- **research** (research-mcp) — Semantic Scholar, corpus management, claim verification, preprint surveillance
 - **brave-search** — independent web index (triangulation with Exa)
-- **perplexity** — grounded AI answers, deep research, reasoning
-- **paper-search** — arXiv, PubMed, bioRxiv, medRxiv, Google Scholar
-- **meta-knowledge** — cross-project knowledge base (hook designs, agent patterns, research findings)
+- **agent-infra** — cross-project knowledge base (hook designs, agent patterns, research findings)
+- **firecrawl** — web scraping and structured extraction
+- **parallel** — deep web research via Parallel Task API (lite/core/ultra tiers)
 - **context7** — library documentation lookup
 
 ## Structure
 
 ```
+GOALS.md           — human-owned mission, strategy, success metrics (read at session start)
 research/          — topic files, one per question or area
 decisions/         — concept-level pivots, approach selections, methodology shifts
 sources/           — archived source material, data files
@@ -94,9 +111,12 @@ Each topic has a file prefix and its own index. Read the relevant topic index wh
 
 | Topic | Prefix | Index | Files |
 |-------|--------|-------|-------|
-| IQ sex differences | `iq-sex-differences-*` | `research/iq-sex-differences-INDEX.md` | 124 |
+| IQ sex differences | `iq-sex-differences-*` | `research/iq-sex-differences-INDEX.md` | 118 |
+| Immigration (fiscal/crime) | `immigration-*` | `research/immigration-INDEX.md` | 28 |
 
 New topics: create `research/<topic>-INDEX.md`, add a row here, use `<topic>-*` prefix for all files.
+
+**Unprefixed files:** Some older files (`jre-2460-*`, `review-1*`, `fiscal-impact-*`, `full-spectrum-costs-*`, `zion/`) predate the prefix rule. When touching them, migrate to the right topic prefix; don't create new unprefixed files.
 
 ## Cross-Topic Notes
 
@@ -105,3 +125,11 @@ New topics: create `research/<topic>-INDEX.md`, add a row here, use `<topic>-*` 
 | `notes/llm-bias-caveat.md` | LLM instrument bias on politically charged topics | Any politically sensitive analysis |
 | `notes/fact-check-prompt-template.md` | Multi-agent fact-check template | Running fact-check sweeps |
 | `notes/exa-answer-evaluation.md` | Exa /answer accuracy evaluation | Choosing Exa vs alternatives |
+
+<!-- knowledge-index
+generated: 2026-04-11T23:56:55Z
+hash: fc1e5ab65fc7
+
+cross_refs: decisions/.template.md, decisions/YYYY-MM-DD-slug.md, research/<topic>-INDEX.md, research/immigration-INDEX.md, research/iq-sex-differences-INDEX.md
+
+end-knowledge-index -->
