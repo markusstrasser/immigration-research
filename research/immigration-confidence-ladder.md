@@ -119,6 +119,28 @@ Reason: At immigrant-welfare-weight w=0 (current repo's implicit framing): negat
 Rating: `medium (calibration not estimate)`
 Reason: BEA Use Table 2023 partial-equilibrium with industry FB-share assumptions from Pew/CMS. First-order $1.45T, with Type-II multiplier (~1.6) $2.32T. Per-removed-worker loss $207K-$332K. Most affected: Construction (-5.9%), Other services / cleaning (-8.8%), Agriculture (-4.3%). Calibration consistent with E-Verify empirical finding (-6% E1 employment under 50% compliance). [SOURCE: scripts/mass_deportation_sim.py]
 
+## Surge layer added 2026-04-18 (late evening)
+
+25. `Title 42 lift was not the surge cause; surge was a regime shift starting Dec 2022`
+Rating: `medium`
+Reason: SWB encounters peaked Jan-Mar 2023 at 50K+/month BEFORE Title 42 lift (May 2023). Lift coincided with April-May lull, then gradual rebuild to surge levels. Pre/post comparison is composition-driven, not policy-causal. [SOURCE: research/immigration-causal-surge-2021-2024.md]
+
+26. `CHNV parole did not substitute legal flow for illegal flow; it added on top`
+Rating: `strong`
+Reason: TWFE β=+3.29 (t=4.78) on CHNV nationality vs control after Jan 2023. Encounters from CHNV nationalities ROSE 787% post-program, not fell. Refutes the stated rationale that legal pathway would reduce irregular migration. [SOURCE: data/cbp/swb_encounters_by_citizenship_monthly.parquet]
+
+27. `Receiver-city local fiscal load was real and concentrated`
+Rating: `strong (administrative data)`
+Reason: NYC FY24 $3.7B (3.5% of operating budget); MA FY24 $1B; Chicago $228M peak; Denver $89M (with cuts to other services). Combined ~$5B+/yr peak across major receivers. System-collapse claim has empirical bite. [SOURCE: data/bused_cities/receiver_city_costs.csv]
+
+28. `Receiver cities swung +4.41 pp more Republican in 2024 than comparable non-receivers`
+Rating: `medium (correlation, multiple confounders)`
+Reason: Multivariate OLS with state FE: receiver_city β=+0.024 (t=6.96***). Top receivers (Bronx +11pp, Queens +11pp, Hidalgo +10pp, Cameron +10pp, El Paso +10pp, Miami-Dade +9pp) swung massively toward Trump. Confounders include national Hispanic realignment, inflation, and policy-endogenous busing destinations. Magnitude implausibly large for non-immigration causes alone. [SOURCE: research/immigration-causal-surge-2021-2024.md]
+
+29. `Static-cycle Card-wins finding is BOUNDED to marginal-policy variation; surge is OUTSIDE that variation`
+Rating: `meta-update on prior entries 17, 19, 21`
+Reason: Prior entries claim "decisive Card-side win for U.S. policy variation." True for variation 2008-2021 (E-Verify, sanctuary). The 2021-2024 surge is a regime shift outside that variation. Linear extrapolation is not warranted. Surge-period wage estimates remain to be done (require ACS PUMS 2023). [SOURCE: research/immigration-causal-surge-2021-2024.md]
+
 ## Two weakest assumptions
 
 1. `Federal-side proxy ledger`
@@ -134,9 +156,9 @@ Why weak: local service burden depends on actual district context, renter mix, c
 If a conclusion depends mainly on items `10` through `16`, present it as a hypothesis or descriptive tendency, not a settled result.
 
 <!-- knowledge-index
-generated: 2026-04-19T04:22:39Z
-hash: 9e9261aa9b11
+generated: 2026-04-19T04:47:35Z
+hash: 7c9873d31903
 
-cross_refs: research/immigration-causal-everify-card-vs-borjas.md, research/immigration-causal-internal-vs-immigrant-newcomers.md, research/immigration-causal-saiz-elasticity-rent.md, research/research/immigration-adversarial-review.md, research/research/immigration-economist-effects-matrix.md, research/research/immigration-household-weighted-correction.md, research/research/immigration-local-burden-puma-layer.md, research/research/immigration-low-skill-origin-incidence-memo.md, research/research/immigration-stage2-county-bridge-batch.md
+cross_refs: research/immigration-causal-everify-card-vs-borjas.md, research/immigration-causal-internal-vs-immigrant-newcomers.md, research/immigration-causal-saiz-elasticity-rent.md, research/immigration-causal-surge-2021-2024.md, research/research/immigration-adversarial-review.md, research/research/immigration-economist-effects-matrix.md, research/research/immigration-household-weighted-correction.md, research/research/immigration-local-burden-puma-layer.md, research/research/immigration-low-skill-origin-incidence-memo.md, research/research/immigration-stage2-county-bridge-batch.md
 
 end-knowledge-index -->

@@ -71,6 +71,7 @@ Files the agent should consult before acting. Start with Core State, then branch
 | `immigration-causal-saiz-elasticity-rent.md` | Saiz 2010 housing supply elasticity × ACS rent + foreign-born | Treating PUMA rent burden as elasticity-neutral |
 | `immigration-causal-paradigm-escape-synthesis-2026-04-18.md` | Evening cycle synthesis: 5 verdict updates, 8-finding ladder | Writing the headline immigration position; asking "what changed?" |
 | `immigration-causal-internal-vs-immigrant-newcomers.md` | IRS SOI × ACS — native county inflow is 33× immigrant inflow | Treating "newcomer burden" as immigration-driven by default |
+| `immigration-causal-surge-2021-2024.md` | OHSS encounters + CHNV + city costs + 2024 election: surge analysis | Extrapolating pre-2020 findings to surge magnitudes; discussing 2024 election in immigration terms |
 
 ## Raw Data & Warehouse
 
@@ -92,8 +93,8 @@ If the question is:
 5. `What is the current `<HS` / `HS` / `some college` stock split?` Start with `immigration-education-bucket-stock-and-lifetime-status-2026-04-11.md`.
 
 <!-- knowledge-index
-generated: 2026-04-19T04:22:10Z
-hash: 664d7e8f10d3
+generated: 2026-04-19T04:47:48Z
+hash: 25555c17344c
 
 table_claims: 12
 
