@@ -1,0 +1,134 @@
+# Immigration causal analysis — synthesis (2026-04-18)
+
+**Inputs from this autonomous cycle:**
+1. `immigration-causal-saiz-elasticity-rent.md` — Saiz 2010 housing supply elasticity × ACS rent + foreign-born share, n=237 MSAs
+2. `immigration-causal-everify-card-vs-borjas.md` — TWFE on QWI 2003-2023, 9 E-Verify states vs 42 controls, 151k observations
+
+**Question revisited:** "On the immigration questions, can we find interpretations or datasets that would change the conclusions or something more descriptive and causal?"
+
+## Bottom line — what the new evidence updates
+
+| Repo claim (pre-cycle) | New evidence | Updated verdict |
+|------------------------|--------------|-----------------|
+| Rent exposure ≠ welfare loss (adversarial review §2) | Immigrants concentrate in inelastic MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40); top 10 inelastic MSAs include all the major immigrant gateways | **Rent exposure IS closer to welfare loss in destination markets** because supply can't respond. Update: "rent exposure" should be tagged elasticity-conditional — high welfare loss in inelastic destinations, modest in elastic. |
+| Clark "agree" economists are scope-limited but not wrong on their narrow channel | E-Verify mandates produced no positive wage effect on native low-skill workers in any of 12 specifications | **Clark "agree" economists were also right on the wage channel** (the actual narrow channel they mostly answered). Borjas wage prediction rejected at α=0.05 for U.S. policy variation 2008-2023. |
+| "Borjas vs Card" presented as live debate | Direct multi-state TWFE with 21-year panel finds Card-side pattern: supply contracts via E-Verify but native wages do not rise | **For U.S. policy-relevant variation, Card wins.** Borjas's restricted-Mariel result does not generalize to broader staggered enforcement shocks. |
+| Federal-positive / local-negative split is plausible but unquantified | This cycle did not produce federal-side estimates (federal microsim still requires SIPP fix) | **Unchanged.** Federal side remains the weakest part of the repo. |
+| Local-burden story is real but heterogeneous | Saiz merge sharpens the housing component; QWI confirms wage channel is small | **Strengthened on the housing side, not on schooling.** School-burden findings are unchanged by this cycle. |
+
+## Card vs Borjas — explicit verdict
+
+Three converging pieces of evidence on the U.S. wage channel:
+
+1. **Card (1990) Mariel:** zero wage effect on Miami HS dropouts.
+2. **This cycle's E-Verify TWFE:** +0.5% (n.s.) wage effect on E1 workers in exposed industries across 9 mandate states 2003-2023.
+3. **Foged-Peri (2016) Denmark:** native low-skill wages *rose* under random refugee assignment.
+
+Against:
+- **Borjas (2017) Mariel reanalysis:** -10 to -30% on HS dropouts with restricted sample. **This finding does not replicate in broader staggered designs.**
+
+**Verdict:** For the U.S. policy variation we have, the Borjas wage prediction is rejected at conventional significance levels. The remaining uncertainty is about hypothetical extreme shocks (mass deportation, border closure) that have no direct empirical analog. **The Clark Center "agree" economists who said wage effects on natives are small were correct, not just scope-limited.**
+
+This is a meaningful update to the repo's prior position. The verified-findings report (2026-04-10) said the Clark agree economists were "mostly right on a narrow question" but bracketed this carefully. The new evidence justifies elevating that to: **right on the wage channel, full stop, for actual policy variation.**
+
+## Incidence — federal vs local — what this cycle changes
+
+The Saiz finding sharpens the **local** side:
+- Renter incidence is structurally larger than the adversarial review allowed. In inelastic markets (where >40% of immigrants live), housing supply does not absorb inflow, so rent appreciation is welfare loss for incumbent renters and welfare gain for landowners.
+- Owner-gain-to-renter-loss ratio differs by destination elasticity. The repo's existing PUMA rent table can be re-tagged elasticity-conditional once the SSD is remounted.
+
+The E-Verify finding clarifies the **labor-market** side:
+- Native low-skill workers do not lose from immigrant inflows at observed magnitudes.
+- They also do not gain from enforcement that contracts immigrant labor supply.
+- Therefore the labor-market component of the local-burden ledger is approximately zero for natives.
+- The total local burden is school-finance + housing-rent + service-capacity, NOT wage compression.
+
+Combined effect on incidence narrative:
+- Pre-cycle: native low-skill workers maybe lose wages (Borjas), bear school burden, face rent competition.
+- Post-cycle: native low-skill workers do NOT measurably lose wages, but DO bear school burden and DO face rent competition concentrated in inelastic markets.
+
+The political-economy reading: the policy push from native low-skill voters cannot easily be justified by their own wage data. It can be justified by their school finance and rent exposure, depending on whether they are renters or owners.
+
+## What this cycle did NOT settle
+
+1. **Federal microsimulation.** SIPP donor library is still broken (HHINC handled wrong). Same blocker as 2026-04-10. Not addressed this cycle.
+2. **Causal IV for housing.** Saiz finding is descriptive cross-section. Card shift-share IV would be cleaner. Requires warehouse remount.
+3. **DACA pre-post analysis.** Timeline + design coded but no execution this cycle (required ACS PUMS pull deferred for disk space).
+4. **Spatial wage compression test.** State-level analysis may miss within-state heterogeneity. County-level QWI extension is feasible (data is there).
+5. **Mass deportation counterfactual.** No data analog. The claim "tightening immigration won't help native workers" is supported for marginal enforcement, not for mass shocks.
+6. **Indirect federal fiscal effects.** Colas-Sachs (2024) argument that low-skill immigration has positive indirect federal effects via consumer demand → tax base is not tested here.
+
+## Reframing the original question
+
+The user asked which interpretations or datasets could change conclusions. After this cycle:
+
+- **Borjas vs Card debate:** Resolved for U.S. policy variation. Card.
+- **Rent burden as welfare loss:** Partially resolved. In destination markets, yes. Caveat about owner/renter incidence still applies.
+- **Federal-positive / local-negative split:** Sharpened on local side, unchanged on federal side.
+- **Race-stratified crime gap:** From earlier work — gap narrows from 50% to 30% but immigrants still lower than natives.
+- **Place-premium / immigrant welfare weighting:** Untested this cycle. Remains the biggest single lever for flipping the verdict.
+- **AGI-soon timing:** Untested empirically. Remains the biggest framing lever.
+
+## Updated confidence ladder (additions)
+
+Add to `immigration-confidence-ladder.md`:
+
+```
+17. `Borjas wage prediction for U.S. native low-skill workers from E-Verify`
+Rating: STRONG REJECTION
+Reason: TWFE on QWI 2003-2023 with 9 treated states finds +0.5% (n.s.) on E1 in
+exposed industries. 95% CI excludes Borjas magnitudes. Replicates Card direction.
+[SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
+
+18. `Immigrants concentrate in inelastic-supply MSAs`
+Rating: STRONG (descriptive)
+Reason: top FB-share quintile median Saiz elasticity 1.51, bottom 3.40. n=237 MSAs.
+Implication: rent exposure is closer to welfare loss than the adversarial review allowed.
+[SOURCE: research/immigration-causal-saiz-elasticity-rent.md]
+
+19. `Card-style labor-market complementarity for U.S. low-skill immigration`
+Rating: MEDIUM-STRONG
+Reason: replicates across (a) Card 1990 Mariel, (b) this cycle E-Verify TWFE, (c)
+Foged-Peri 2016 Denmark. Borjas 2017 restricted-Mariel reanalysis does not
+generalize.
+[SOURCE: research/immigration-causal-everify-card-vs-borjas.md, multiple papers]
+```
+
+## What to do next
+
+In priority order, given evidence value:
+
+1. **Mount the SSD and rerun the Saiz×PUMA merge with the existing warehouse**, using `origin_puma_household_context_2023` × Saiz elasticity by MSA-PUMA crosswalk. This produces the *origin-conditional* rent welfare estimate. ~1 day with warehouse access.
+
+2. **Fix the SIPP donor library.** This is the same call from 2026-04-10. The federal microsim remains the biggest gap. Highest-leverage single fix on the repo.
+
+3. **County-level QWI extension** for E-Verify analysis, focused on border/non-border counties within mandate states. This would address the within-state heterogeneity caveat. Disk-cheap (similar to current pull).
+
+4. **Card shift-share IV for housing.** Use 1990 origin-share × current national flow as instrument for current immigrant share by MSA. Rerun rent regressions with IV. Removes the cross-sectional endogeneity caveat. Requires warehouse remount.
+
+5. **DACA pre-post on PUMS.** Implement the design already coded in `daca_timeline_and_design.md`. Tests labor-market spillovers from a clean shock. Requires ~2 GB ACS PUMS pull (defer until disk free or SSD).
+
+6. **Continue chasing Foged-Peri analog in U.S. data.** Look for refugee resettlement quasi-random assignment (HUD voucher rollout, ORR placement quotas).
+
+## Honest reflection
+
+This cycle did what it set out to do: produced two original empirical findings using fresh datasets, both pointing in the Card direction. The findings are not novel relative to academic literature — they replicate well-known patterns. The contribution is internal to this repo: **the prior epistemic posture ("Clark agree economists are right on their narrow channel but the question is broader") understated the strength of the Card-side wage evidence**. The labor-market wage channel is closed for the policy variation we have.
+
+The federal-fiscal side is still open. The political-economy and rent-exposure sides got sharper. The crime-rate side was already strong (separate memo earlier).
+
+The *biggest* unresolved interpretation lever — Clemens place-premium, weighting immigrant welfare — remains untouched. That's a values choice, not an empirical question, and no amount of additional data resolves it.
+
+[SOURCE: research/immigration-causal-saiz-elasticity-rent.md]
+[SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
+[SOURCE: research/immigration-verified-findings-report-2026-04-10.md]
+[SOURCE: research/immigration-confidence-ladder.md]
+[SOURCE: research/immigration-adversarial-review.md]
+
+<!-- knowledge-index
+generated: 2026-04-19T03:45:13Z
+hash: 09b8c2f5eb8f
+
+cross_refs: research/immigration-adversarial-review.md, research/immigration-causal-everify-card-vs-borjas.md, research/immigration-causal-saiz-elasticity-rent.md, research/immigration-confidence-ladder.md, research/immigration-verified-findings-report-2026-04-10.md
+table_claims: 5
+
+end-knowledge-index -->
