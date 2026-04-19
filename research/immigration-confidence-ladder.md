@@ -97,6 +97,28 @@ Reason: top FB-share quintile median Saiz 2010 elasticity = 1.51, bottom = 3.40.
 Rating: `medium-strong`
 Reason: convergent evidence — Card 1990 Mariel, Foged-Peri 2016 Denmark refugee assignment, this cycle's E-Verify TWFE 2003-2023. Borjas 2017 restricted-Mariel reanalysis does not generalize to broader staggered designs. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md, multiple papers]
 
+## Paradigm-escape layer added 2026-04-18 (evening)
+
+20. `Saiz elasticity-immigrant correlation operates through regulatory not topographic channel`
+Rating: `strong`
+Reason: log(FB share) ~ unaval (β=+0.12, t=0.58, n.s.) + WRLURI (β=+0.33, t=6.29***) + log_pop. The inelastic-MSA immigrant concentration is driven by zoning, not topography. Implication: zoning reform is a viable lever for the rent-burden problem; immigration restriction is not the only policy response. [SOURCE: scripts/saiz_decomposition.py]
+
+21. `Sanctuary policy variation does not change native low-skill wages either direction`
+Rating: `strong rejection (replicates E-Verify finding)`
+Reason: TWFE on QWI 2003-2023 with 12 pro-sanctuary + 9 anti-sanctuary states; all E1 specifications |t|<1.0. Third convergent confirmation of Card-side null on the wage channel. [SOURCE: scripts/analyze_sanctuary_wages.py]
+
+22. `Native US migration is ~33x larger per capita than recent immigration at median county`
+Rating: `strong (administrative data, not survey)`
+Reason: IRS SOI county-county migration 2022-23 + ACS B05005 recent-FB. Median county receives 3.0% native inflow vs 0.08% immigrant inflow per year. Top native-inflow counties (Geary KS, Liberty GA, Texas exurbs) are non-immigrant gateways. Reframes "newcomer burden" as predominantly native-driven outside specific immigrant gateways. [SOURCE: research/immigration-causal-internal-vs-immigrant-newcomers.md]
+
+23. `Open-borders welfare verdict is welfare-weight-determined, not data-determined`
+Rating: `strong (framing claim)`
+Reason: At immigrant-welfare-weight w=0 (current repo's implicit framing): negative by construction. At w≥0.25 under 25%-of-gross-gains native-cost benchmark: positive. At w=1.0 even under harsh 50%-cost benchmark: positive. Empirical evidence cannot adjudicate the values choice. Honest framing must name the weight. [SOURCE: data/clemens/gpt54_calibration_review.md, GPT-5.4 sensitivity analysis]
+
+24. `Mass deportation of 7M unauthorized → ~$1.5-2.3T one-time output shock (5-8% GDP)`
+Rating: `medium (calibration not estimate)`
+Reason: BEA Use Table 2023 partial-equilibrium with industry FB-share assumptions from Pew/CMS. First-order $1.45T, with Type-II multiplier (~1.6) $2.32T. Per-removed-worker loss $207K-$332K. Most affected: Construction (-5.9%), Other services / cleaning (-8.8%), Agriculture (-4.3%). Calibration consistent with E-Verify empirical finding (-6% E1 employment under 50% compliance). [SOURCE: scripts/mass_deportation_sim.py]
+
 ## Two weakest assumptions
 
 1. `Federal-side proxy ledger`
@@ -112,9 +134,9 @@ Why weak: local service burden depends on actual district context, renter mix, c
 If a conclusion depends mainly on items `10` through `16`, present it as a hypothesis or descriptive tendency, not a settled result.
 
 <!-- knowledge-index
-generated: 2026-04-19T03:45:46Z
-hash: fcda332542b1
+generated: 2026-04-19T04:22:39Z
+hash: 9e9261aa9b11
 
-cross_refs: research/immigration-causal-everify-card-vs-borjas.md, research/immigration-causal-saiz-elasticity-rent.md, research/research/immigration-adversarial-review.md, research/research/immigration-economist-effects-matrix.md, research/research/immigration-household-weighted-correction.md, research/research/immigration-local-burden-puma-layer.md, research/research/immigration-low-skill-origin-incidence-memo.md, research/research/immigration-stage2-county-bridge-batch.md
+cross_refs: research/immigration-causal-everify-card-vs-borjas.md, research/immigration-causal-internal-vs-immigrant-newcomers.md, research/immigration-causal-saiz-elasticity-rent.md, research/research/immigration-adversarial-review.md, research/research/immigration-economist-effects-matrix.md, research/research/immigration-household-weighted-correction.md, research/research/immigration-local-burden-puma-layer.md, research/research/immigration-low-skill-origin-incidence-memo.md, research/research/immigration-stage2-county-bridge-batch.md
 
 end-knowledge-index -->

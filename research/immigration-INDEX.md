@@ -69,6 +69,8 @@ Files the agent should consult before acting. Start with Core State, then branch
 | `immigration-causal-synthesis-2026-04-18.md` | Cycle synthesis: Saiz × E-Verify findings, Card-vs-Borjas verdict | Saying "Borjas vs Card is unresolved" or "rent exposure is just price discovery" |
 | `immigration-causal-everify-card-vs-borjas.md` | E-Verify staggered TWFE on QWI 2003-2023, native low-skill wages | Citing Borjas wage prediction for the U.S. policy variation |
 | `immigration-causal-saiz-elasticity-rent.md` | Saiz 2010 housing supply elasticity × ACS rent + foreign-born | Treating PUMA rent burden as elasticity-neutral |
+| `immigration-causal-paradigm-escape-synthesis-2026-04-18.md` | Evening cycle synthesis: 5 verdict updates, 8-finding ladder | Writing the headline immigration position; asking "what changed?" |
+| `immigration-causal-internal-vs-immigrant-newcomers.md` | IRS SOI × ACS — native county inflow is 33× immigrant inflow | Treating "newcomer burden" as immigration-driven by default |
 
 ## Raw Data & Warehouse
 
@@ -90,8 +92,8 @@ If the question is:
 5. `What is the current `<HS` / `HS` / `some college` stock split?` Start with `immigration-education-bucket-stock-and-lifetime-status-2026-04-11.md`.
 
 <!-- knowledge-index
-generated: 2026-04-19T03:45:28Z
-hash: efa6d104dfd8
+generated: 2026-04-19T04:22:10Z
+hash: 664d7e8f10d3
 
 table_claims: 12
 
