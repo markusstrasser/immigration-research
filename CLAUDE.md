@@ -68,6 +68,12 @@ Workflow & project:
 - **entity-management** — versioned knowledge management for entities
 - **trending-scout** — scan for new AI/agent developments
 
+Data acquisition:
+- **data-acquisition** — probe→stage→register pattern for external datasets (Census, NCES, PSID, MEPS, etc.)
+- **census-data** — Census Data API + IPUMS extracts (ACS, CPS, SIPP, QWI variable codes)
+- **youtube-transcript** — fetch video transcripts via yt-dlp (podcasts, interviews)
+- **dataset-register** — standardize per-topic dataset catalogs
+
 Infra & integrations:
 - **browse** — persistent headless browser daemon
 - **google-workspace** — Google Workspace automation (Drive, Sheets, Gmail, Calendar)
@@ -127,8 +133,8 @@ New topics: create `research/<topic>-INDEX.md`, add a row here, use `<topic>-*` 
 | `notes/exa-answer-evaluation.md` | Exa /answer accuracy evaluation | Choosing Exa vs alternatives |
 
 <!-- knowledge-index
-generated: 2026-04-11T23:56:55Z
-hash: fc1e5ab65fc7
+generated: 2026-04-19T04:06:29Z
+hash: ff7356d91502
 
 cross_refs: decisions/.template.md, decisions/YYYY-MM-DD-slug.md, research/<topic>-INDEX.md, research/immigration-INDEX.md, research/iq-sex-differences-INDEX.md
 
