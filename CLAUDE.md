@@ -118,7 +118,7 @@ Each topic has a file prefix and its own index. Read the relevant topic index wh
 | Topic | Prefix | Index | Files |
 |-------|--------|-------|-------|
 | IQ sex differences | `iq-sex-differences-*` | `research/iq-sex-differences-INDEX.md` | 118 |
-| Immigration (fiscal/crime) | `immigration-*` | `research/immigration-INDEX.md` | 28 |
+| Immigration (fiscal/crime) | `immigration-*` | `research/immigration-INDEX.md` | 30 |
 
 New topics: create `research/<topic>-INDEX.md`, add a row here, use `<topic>-*` prefix for all files.
 
