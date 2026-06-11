@@ -129,7 +129,7 @@ New topics: create `research/<topic>-INDEX.md`, add a row here, use `<topic>-*` 
 | File | Topic | Consult before |
 |------|-------|----------------|
 | `notes/llm-bias-caveat.md` | LLM instrument bias on politically charged topics | Any politically sensitive analysis |
-| `notes/quant-bias-checklist.md` | Pre-publication gate: 32 econ/stats/reasoning biases with historical anchors | Committing any memo with numbers doing argumentative work, causal language, or welfare conclusions |
+| `notes/quant-bias-checklist.md` | Quant-bias gate, project instance + self-audit record (canonical 32-item list: research skill `references/quant-bias-checklist.md`) | Committing any memo with numbers doing argumentative work, causal language, or welfare conclusions |
 | `notes/fact-check-prompt-template.md` | Multi-agent fact-check template | Running fact-check sweeps |
 | `notes/exa-answer-evaluation.md` | Exa /answer accuracy evaluation | Choosing Exa vs alternatives |
 
