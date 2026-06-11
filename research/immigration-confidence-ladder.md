@@ -107,9 +107,9 @@ Reason: log(FB share) ~ unaval (β=+0.12, t=0.58, n.s.) + WRLURI (β=+0.33, t=6.
 Rating: `strong rejection (replicates E-Verify finding)`
 Reason: TWFE on QWI 2003-2023 with 12 pro-sanctuary + 9 anti-sanctuary states; all E1 specifications |t|<1.0. Third convergent confirmation of Card-side null on the wage channel. [SOURCE: scripts/analyze_sanctuary_wages.py]
 
-22. `Native US migration is ~33x larger per capita than recent immigration at median county`
-Rating: `strong (administrative data, not survey)`
-Reason: IRS SOI county-county migration 2022-23 + ACS B05005 recent-FB. Median county receives 3.0% native inflow vs 0.08% immigrant inflow per year. Top native-inflow counties (Geary KS, Liberty GA, Texas exurbs) are non-immigrant gateways. Reframes "newcomer burden" as predominantly native-driven outside specific immigrant gateways. [SOURCE: research/immigration-causal-internal-vs-immigrant-newcomers.md]
+22. `Domestic newcomer counts are much larger than moved-from-abroad counts at median county`
+Rating: `medium`
+Reason: IRS SOI `Total Migration-US` 2022-23 and ACS `B07001_081E` point in the same descriptive direction, but they are not like-for-like universes. The current median county comparison is roughly `4.59%` vs `0.21%`, with a ratio of medians around `21.7x` and a median county-level ratio around `20.5x`, so the safe claim is order-of-magnitude disparity, not a precise burden ratio. [SOURCE: research/immigration-causal-internal-vs-immigrant-newcomers.md]
 
 23. `Open-borders welfare verdict is welfare-weight-determined, not data-determined`
 Rating: `strong (framing claim)`
@@ -140,6 +140,22 @@ Reason: Multivariate OLS with state FE: receiver_city β=+0.024 (t=6.96***). Top
 29. `Static-cycle Card-wins finding is BOUNDED to marginal-policy variation; surge is OUTSIDE that variation`
 Rating: `meta-update on prior entries 17, 19, 21`
 Reason: Prior entries claim "decisive Card-side win for U.S. policy variation." True for variation 2008-2021 (E-Verify, sanctuary). The 2021-2024 surge is a regime shift outside that variation. Linear extrapolation is not warranted. Surge-period wage estimates remain to be done (require ACS PUMS 2023). [SOURCE: research/immigration-causal-surge-2021-2024.md]
+
+## Bias-audit layer added 2026-06-11
+
+Trigger: mirror-test against the criticisms of the Cato 2026 fiscal study ("did we commit its biases?"). Full audit and the general checklist live in [notes/quant-bias-checklist.md](../notes/quant-bias-checklist.md). Prior entries are not rewritten (append-only); these supersede where they conflict.
+
+30. `CHNV parole did not substitute legal flow for illegal flow; it added on top` — **downgraded from strong to medium**
+Reason: the source memo itself lists reverse causation as a live mechanism (the program was created because flows from these nationalities were already rising), and no event-study leads/pre-trend test adjudicated it. The TWFE post coefficient cannot separate "program signaled openness" from "continuation of the pre-program trajectory." The descriptive fact survives (encounters rose alongside ~530K paroles; substitution did not happen); the causal "program added flow" reading is medium until a pre-trend pass is run. Also: any reuse of the `+787%` figure must carry its base (2,598/month treated-nationality baseline). [SOURCE: research/immigration-causal-surge-2021-2024.md]
+
+31. `Receiver-city 2024 GOP swing` (entry 28) — **grade unchanged (medium), headline language corrected**
+The phrase "magnitude implausibly large for non-immigration causes alone" is a plausibility assertion doing causal work and should not be reused. The top swing counties (Bronx, Queens, Miami-Dade, Hidalgo, El Paso) are among the most Hispanic-populous counties in the country; the national 2024 Hispanic realignment is near-collinear with "receiver city" in that list, and the multivariate pass controls FB share but not Hispanic share. Use the controlled estimate (+2.4pp, receiver_city β=+0.024, state FE) rather than the raw +4.41pp gap, and treat even that as upper-bound until a Hispanic-share control or within-Hispanic-county comparison is run. [SOURCE: research/immigration-causal-surge-2021-2024.md] [SOURCE: notes/quant-bias-checklist.md item 25]
+
+32. `Mass deportation output shock` (entry 24) — **grade unchanged (medium, calibration), presentation rule added**
+Lead with the first-order figure (`~$1.45T`, ~5% GDP); the `$2.32T` Type-II-multiplier endpoint appears only as labeled sensitivity, never inside a headline range. Stacking the modeled amplifier into the headline is the same move as Cato's `$3.9T` interest-savings add-on (27% of their `$14.5T`), in the opposite political direction. The calibration also freezes replacement hiring, wage response, and capital reallocation at zero — state this when quoting. [SOURCE: sources/immigration-causal/scripts/mass_deportation_sim.py] [SOURCE: notes/quant-bias-checklist.md items 4, 15]
+
+33. `Receiver-city fiscal load` (entry 27) — **grade unchanged (strong, administrative data), scope annotation**
+The figures are **gross city outlays**, not net burden: federal Shelter and Services Program reimbursements and the counterfactual baseline growth of homeless-services spending are not netted out. "NYC spent $3.7B in FY24" is strong; "the surge cost NYC $3.7B net" is not yet supported. [SOURCE: sources/immigration-causal/data/bused_cities/receiver_city_costs.csv] [SOURCE: notes/quant-bias-checklist.md item 10]
 
 ## Two weakest assumptions
 

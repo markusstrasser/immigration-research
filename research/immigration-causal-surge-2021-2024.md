@@ -247,6 +247,10 @@ But:
 [SOURCE: scripts/analyze_surge_title42_chnv.py]
 [SOURCE: scripts/analyze_surge_election_shift.py]
 
+## Revisions
+
+- **2026-06-11:** Bias self-audit (mirror test against the Cato 2026 study criticisms) downgraded two of this memo's headline readings. (1) The CHNV finding drops from strong to medium as a *causal* claim: reverse causation (program created in response to already-rising flows) is listed above but was never adjudicated with pre-trend/event-study leads; the descriptive non-substitution fact stands. The `+787%` figure must always carry its 2,598/month base. (2) The "+4.4 pp implausibly large for non-immigration causes alone" sentence is retracted as headline language: the top swing counties are among the most Hispanic in the country, the regression controls FB share but not Hispanic share, so the national Hispanic realignment is not decomposed out. Use the controlled +2.4pp (receiver_city β=+0.024) as an upper bound. Ladder entries 30-31 supersede; checklist items 8/25 in [notes/quant-bias-checklist.md](../notes/quant-bias-checklist.md).
+
 <!-- knowledge-index
 generated: 2026-04-19T04:46:29Z
 hash: 9631c1d1846f
