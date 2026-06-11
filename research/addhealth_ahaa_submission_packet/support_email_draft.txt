@@ -1,0 +1,21 @@
+To: addhealth_contracts@unc.edu
+Subject: Add Health AHAA file names in current restricted-use portal
+
+Hello,
+
+I am preparing a narrow restricted-use Add Health request that includes core restricted files plus a small AHAA transcript bundle. I am using the current public guides and wanted to confirm that the current portal still exposes the following AHAA components, or their current equivalents:
+
+- linking indicators
+- edumsov1
+- edumsov2
+- edu1
+- edueng
+- edutmsum
+- edutssum
+- edugrad
+- eduocr
+- eduwgt
+
+If the current portal uses updated labels or a bundled transcript package that already contains these components, please let me know the preferred current naming.
+
+Thanks,

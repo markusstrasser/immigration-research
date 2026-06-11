@@ -1,0 +1,104 @@
+{
+  "findings": [
+    {
+      "category": "logic",
+      "confidence": 1.0,
+      "description": "The falsification regressors use a 2022-based exposure proxy against 2017\u20132019 outcomes. This is a lead-association or placebo test of the geographic proxy, not a literal pretrend test of pre-measured treatment, yet it is labeled 'pretrend' in outputs.",
+      "file": "sources/immigration-causal/data/outcomes/analysis/county_capacity_falsification_summary.json",
+      "fix": "Rename all 'pretrend' objects to 'lead_association' and add 'exposure_reference_year' metadata to schemas.",
+      "line": 0,
+      "severity": "high",
+      "title": "Semantically incorrect 'pretrend' naming for lead associations"
+    },
+    {
+      "category": "logic",
+      "confidence": 1.0,
+      "description": "The absolute value of the post-surge coefficient for employment (|\u03b2_2023_2024|=0.00230) is smaller than both clean pre-surge lead coefficients (0.00246 and 0.00299), invalidating claims that the panel isolates a surge-specific effect.",
+      "file": "sources/immigration-causal/data/outcomes/analysis/county_capacity_pretrend_results.csv",
+      "fix": "Remove causal prose regarding employment; introduce effect-size benchmarks comparing lead vs. post magnitudes in memo tables.",
+      "line": 0,
+      "severity": "high",
+      "title": "Employment post-effect fails magnitude check against pre-surge leads"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.95,
+      "description": "In threshold validation, margin and employment outcomes use the same training statistics as wage. The 'test_sign_matches_train' field represents cross-outcome transfer from a wage-trained model, not within-outcome holdout stability.",
+      "file": "sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_validation.csv",
+      "fix": "Rename field to 'test_sign_matches_wage_train' to reflect actual statistical operation.",
+      "line": 0,
+      "severity": "high",
+      "title": "Threshold validation mislabeled as holdout stability"
+    },
+    {
+      "category": "logic",
+      "confidence": 1.0,
+      "description": "The script computes modal_recent_quantile and modal_permit_quantile separately. This can yield a modal pair that is not the most frequent joint combination in the distribution.",
+      "file": "sources/immigration-causal/scripts/analyze_capacity_falsification.py",
+      "fix": "Compute the joint mode of (recent_quantile, permit_quantile) and add concentration metrics like HHI or entropy.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Modal threshold calculated using marginal modes instead of joint mode"
+    },
+    {
+      "category": "missing",
+      "confidence": 0.85,
+      "description": "The audit shows non-disclosure rows in raw data but zero missing cells in the analysis panel. While plausible if suppressed rows are outside the 2,390-county sample, it is not currently verifiable from the JSON logs.",
+      "file": "sources/immigration-causal/data/outcomes/county_outcome_panel_audit.json",
+      "fix": "Add fields for 'suppressed_rows_in_analysis_sample_by_year' and 'suppressed_window_endpoints'.",
+      "line": 0,
+      "severity": "medium",
+      "title": "QCEW nondisclosure audit lacks analysis-sample intersection evidence"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.9,
+      "description": "Despite downgrading IRS 97/000 interpretation, comparison scripts still label ACS 'Moved from abroad' as 'FB-inflow' (foreign-born), which incorrectly excludes native-born returnees and reintroduces semantic error.",
+      "file": "sources/immigration-causal/scripts/analyze_internal_vs_immigrant_newcomers.py",
+      "fix": "Implement a semantic quarantine via grep/lint tests to ban 'FB-inflow' labels for non-FB variables.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Semantic regression in migration-series labels"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.9,
+      "description": "Memo text claims capacity likely operates as a 'real amplifier of local strain', which goes beyond the descriptive stress markers identified, as annual causal channel tests remain unresolved.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "fix": "Downgrade language to 'descriptive stress marker' and separate descriptive vs. causal headings in memo claims.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Narrative overreach regarding 'causal amplifier' vs 'stress marker'"
+    },
+    {
+      "category": "architecture",
+      "confidence": 0.8,
+      "description": "The system lacks an enforceable rule to prevent causal synthesis when basic clean-window lead tests fail (as seen in the employment data).",
+      "file": "",
+      "fix": "Adopt rule: No causal wage/employment wording allowed unless lead coefficients are |lead| < 0.5 * |post|.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Lack of hard narrative gate for causal prose"
+    },
+    {
+      "category": "architecture",
+      "confidence": 0.8,
+      "description": "Current inference reporting does not include the exact finite-sample formula or minimum detectable p-values for the permutation tests.",
+      "file": "",
+      "fix": "Report permutation results as (b+1)/(B+1) with confidence intervals.",
+      "line": 0,
+      "severity": "low",
+      "title": "Missing finite-sample permutation reporting"
+    },
+    {
+      "category": "constitutional",
+      "confidence": 0.7,
+      "description": "In accordance with Principle 1, threshold semantics are not currently source-transparent within the summary output labels.",
+      "file": "",
+      "fix": "Embed schema/column definitions directly into the summary JSON outputs.",
+      "line": 0,
+      "severity": "low",
+      "title": "Lack of source-transparency in threshold metadata"
+    }
+  ]
+}

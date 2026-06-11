@@ -1,0 +1,94 @@
+{
+  "findings": [
+    {
+      "category": "bug",
+      "confidence": 0.98,
+      "description": "The review states that `analyze_capacity_falsification.py` defines the stress object with `permit_units_2021_2024` and then regresses `wage_log_change_2021_2022` on it. This creates reverse-causality risk: a 2021\u20132022 local economic shock can reduce 2023\u20132024 permitting, shrinking the denominator and mechanically raising `recent_fb_per_permit_unit`. The reviewer argues this makes the negative placebo result a mathematical artifact rather than evidence of pre-existing structural weakness.",
+      "file": "analyze_capacity_falsification.py",
+      "fix": "Refactor `prepare()` to use a strictly pre-shock capacity baseline such as `permit_units_2017_2019 / 3.0`, with no denominator inputs from post-2020 data.",
+      "line": 0,
+      "severity": "critical",
+      "title": "\"Pre-trend\" placebo uses a post-treatment, endogenous permit denominator"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.96,
+      "description": "The review argues that the immigration surge began in early-to-mid 2021, so `wage_log_change_2021_2022` is already within an early treatment period, not a valid pre-trend. Therefore a negative coefficient in that window cannot support the memo's claim that high-load counties were already structurally weaker before treatment. The reviewer says a true placebo should use pre-surge windows such as 2018\u20132019 or 2019\u20132020.",
+      "file": "analyze_capacity_falsification.py",
+      "fix": "Replace the 2021\u20132022 placebo with genuinely pre-treatment outcome windows, ideally 2018\u20132019 and 2019\u20132020, and rerun the same stress-object regressions on those periods.",
+      "line": 0,
+      "severity": "high",
+      "title": "2021\u20132022 is mislabeled as a placebo/pre-trend window"
+    },
+    {
+      "category": "performance",
+      "confidence": 0.95,
+      "description": "The review notes that `PERMUTATIONS = 300` implies a minimum nonzero permutation p-value of about `1/300 \u2248 0.0033`. Because the script reports `p\u22480.0033` after the estimate beat all permutations, the reviewer says the result is at the floor of the test's resolution and should be reported as a bound rather than an exact-looking value.",
+      "file": "analyze_capacity_falsification.py",
+      "fix": "Increase permutations to at least 1000 and preferably 2000+, and report the result as `p < 1/N` when the observed statistic exceeds all simulated draws.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Permutation test resolution is too low and reported p-value is falsely precise"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.67,
+      "description": "The review claims `annual_recent_fb_persons` is derived from `recent_fb_annual_share * totpop`, and warns that if `recent_fb_annual_share` comes from ACS 2022/2023 5-year data, it is a rolling average rather than a clean post-surge flow measure. That would introduce temporal leakage and weaken the interpretation of the numerator as a sharp post-2020 shock.",
+      "file": "analyze_capacity_falsification.py",
+      "fix": "Audit the construction of `recent_fb_annual_share`; if it uses rolling ACS shares, replace or supplement it with a cleaner post-surge flow proxy and document the measurement window explicitly.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Recent foreign-born numerator may blur the treatment window via ACS rolling averages"
+    },
+    {
+      "category": "architecture",
+      "confidence": 0.87,
+      "description": "The review argues that `leave_one_state_out` does not adequately address spatial autocorrelation because immigration shocks are regionally clustered. Dropping one state may leave the same regional signal intact through neighboring states, especially in corridors like the Southwest or broader Sunbelt.",
+      "file": "analyze_capacity_falsification.py",
+      "fix": "Add stronger geographic robustness checks such as leave-one-Census-division-out or leave-one-region-out, and compare results against state-level LOSO.",
+      "line": 0,
+      "severity": "medium",
+      "title": "State-level leave-one-out is too weak for geographically clustered shocks"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.92,
+      "description": "The review points to `wage_acceleration_2023_2024_vs_2021_2022 = df[\"wage_log_change_2023_2024\"] - df[\"wage_log_change_2021_2022\"]` and argues that because the surge was active in both periods, a null acceleration term only shows that deterioration may have remained constant rather than intensified. The reviewer says the memo incorrectly treats this as a reason to narrow the claim.",
+      "file": "immigration-reasoning-evolution-2026-04-21.md",
+      "fix": "Revise the interpretation of the acceleration test to note that a null difference-in-differences between two treated periods does not imply no treatment effect; it may reflect a stable negative effect across both intervals.",
+      "line": 0,
+      "severity": "high",
+      "title": "Acceleration null is misinterpreted as evidence against an effect"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.58,
+      "description": "The review infers that `threshold_validation` searches for the best `(recent-flow quantile, permit quantile)` pair on a training split and then evaluates on holdout using the same target variable, which would create optimization bias without nested validation. The reviewer specifically flags the reported modal quantiles (`80` and `50`) as vulnerable to noise if threshold selection is not fully separated from evaluation.",
+      "file": "analyze_capacity_falsification.py",
+      "fix": "Use nested cross-validation or a fully separated tuning/validation design for threshold discovery, and report uncertainty around selected quantiles rather than treating the modal pair as stable.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Threshold validation likely leaks target information and overstates threshold stability"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.9,
+      "description": "The review says `immigration-capacity-falsification-2026-04-21.md` heavily downgrades causal confidence based on the placebo and acceleration failures, but argues those failures are themselves compromised by the endogenous denominator and concurrent-treatment timing. It recommends treating the downgrade as unverified until corrected pre-trend tests are run.",
+      "file": "immigration-capacity-falsification-2026-04-21.md",
+      "fix": "Mark the placebo-based downgrade as `[UNVERIFIED]` or `[BUG]`, pause the current conclusion, and revisit the narrative only after rerunning falsification with a pre-shock denominator and true pre-treatment windows.",
+      "line": 0,
+      "severity": "high",
+      "title": "Causal downgrade in falsification memo is premature because it relies on flawed tests"
+    },
+    {
+      "category": "missing",
+      "confidence": 0.81,
+      "description": "The review explicitly recommends adding `wage_log_change_2018_2019` and `employment_log_change_2018_2019` to the parquet build so the exact same stress-object analysis can be run on pre-surge windows. Without those fields, the falsification framework cannot test a genuine pre-trend placebo.",
+      "file": "build_county_outcome_panel.py",
+      "fix": "Extend the panel-building pipeline to compute and store pre-2021 outcome changes, including at minimum 2018\u20132019 and 2019\u20132020 wage and employment log-change columns.",
+      "line": 0,
+      "severity": "medium",
+      "title": "True pre-trend outcome windows are missing from the panel build"
+    }
+  ]
+}

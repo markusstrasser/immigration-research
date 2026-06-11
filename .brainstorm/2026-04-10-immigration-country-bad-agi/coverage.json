@@ -1,0 +1,17 @@
+{
+  "requested_axes": ["denial", "domain", "constraint"],
+  "executed_axes": ["denial", "domain", "constraint"],
+  "counts": {
+    "denial": 5,
+    "domain": 5,
+    "constraint": 4,
+    "total": 14
+  },
+  "merge_counts": 0,
+  "uncovered_cells": [
+    "No dedicated political-assimilation measurement design yet",
+    "No formal defense or security framing yet",
+    "No explicit environmental/resource-capacity framing yet"
+  ],
+  "mature_frontier_stop_reason": "Further domain forcing was starting to produce reframings of incidence and capacity rather than genuinely new survivors."
+}

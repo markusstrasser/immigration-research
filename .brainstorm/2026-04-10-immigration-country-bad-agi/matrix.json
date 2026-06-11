@@ -1,0 +1,177 @@
+{
+  "topic": "Is low-skill immigration bad for a country, assuming AGI soon?",
+  "current_frame": "Single scalar national verdict on low-skill immigration",
+  "hard_constraints": [
+    "Need honest uncertainty",
+    "Need incidence by group and horizon",
+    "Cannot assume local costs equal national welfare loss",
+    "Must account for fast automation or AGI as a scenario variable"
+  ],
+  "evaluation_criteria": [
+    "Truth-seeking",
+    "Policy usefulness",
+    "Robustness to framing",
+    "Compatibility with available public data"
+  ],
+  "ideas": [
+    {
+      "id": "I01",
+      "axis": "denial",
+      "title": "Ban the scalar verdict",
+      "paradigm_escaped": "One-number national good/bad answer",
+      "transfer_mechanism": "Replace scalar with incidence tensor",
+      "idea": "Model the question as origin x destination x horizon x incidence group instead of one national sign.",
+      "disposition": "EXPLORE",
+      "speculative": false,
+      "caller_evidence": "Directly addresses repeated framing problems in existing immigration memos."
+    },
+    {
+      "id": "I02",
+      "axis": "denial",
+      "title": "Ban wages as the central metric",
+      "paradigm_escaped": "Labor-market-first economics",
+      "transfer_mechanism": "Use system-capacity accounting",
+      "idea": "Ask whether immigration improves or worsens a country’s constrained systems: housing, schools, care, logistics, and fiscal coordination.",
+      "disposition": "EXPLORE",
+      "speculative": false,
+      "caller_evidence": "Matches the user’s stated concern about omitted local costs."
+    },
+    {
+      "id": "I03",
+      "axis": "denial",
+      "title": "Ban current equilibrium assumptions",
+      "paradigm_escaped": "Stable labor market and technology baseline",
+      "transfer_mechanism": "Scenario-split by AGI timing",
+      "idea": "Run separate ledgers for AGI in 3 years, 10 years, and not soon. The sign may flip by horizon.",
+      "disposition": "EXPLORE",
+      "speculative": false,
+      "caller_evidence": "User explicitly added the AGI-soon assumption."
+    },
+    {
+      "id": "I04",
+      "axis": "domain",
+      "domain": "disaster triage",
+      "title": "Treat immigration like surge-capacity management",
+      "paradigm_escaped": "Static welfare accounting",
+      "transfer_mechanism": "Stress systems under capacity constraints",
+      "idea": "Measure whether inflows hit systems with spare capacity or overloaded ones; the same flow can be good in slack regions and bad in brittle ones.",
+      "disposition": "EXPLORE",
+      "speculative": false,
+      "caller_evidence": "Fits the county bridge we just built."
+    },
+    {
+      "id": "I05",
+      "axis": "domain",
+      "domain": "venture portfolio",
+      "title": "Immigration as option value under deep uncertainty",
+      "paradigm_escaped": "Point-estimate welfare",
+      "transfer_mechanism": "Value reversibility and downside protection",
+      "idea": "Compare immigration against automation, pronatalism, and offshoring as alternative ways to buy labor and demographic option value.",
+      "disposition": "EXPLORE",
+      "speculative": true,
+      "caller_evidence": "No direct incident, but useful for AGI-era framing."
+    },
+    {
+      "id": "I06",
+      "axis": "domain",
+      "domain": "queueing theory",
+      "title": "Look for bottleneck relief, not average output",
+      "paradigm_escaped": "Average-productivity framing",
+      "transfer_mechanism": "Find the slowest node",
+      "idea": "Evaluate whether low-skill immigration unclogs high-leverage bottlenecks like elder care, food processing, warehousing, or housing construction.",
+      "disposition": "EXPLORE",
+      "speculative": false,
+      "caller_evidence": "Explains why some sectors may benefit even if broad averages mislead."
+    },
+    {
+      "id": "I07",
+      "axis": "domain",
+      "domain": "ecology",
+      "title": "Study carrying capacity and niche overlap",
+      "paradigm_escaped": "Homogeneous labor and household assumptions",
+      "transfer_mechanism": "Separate substitution from complementarity",
+      "idea": "Estimate where immigrant labor overlaps directly with low-skill natives versus where it occupies underfilled niches.",
+      "disposition": "PARK",
+      "speculative": false,
+      "caller_evidence": "Important but already common in labor literature; lower novelty."
+    },
+    {
+      "id": "I08",
+      "axis": "constraint",
+      "title": "Assume housing supply is nearly fixed",
+      "paradigm_escaped": "Housing adjusts smoothly",
+      "transfer_mechanism": "Stress renter incidence",
+      "idea": "Under near-fixed supply, the right question is who bears crowding and rent stress, not whether GDP rose.",
+      "disposition": "EXPLORE",
+      "speculative": false,
+      "caller_evidence": "Directly connected to the CHAS housing-stress layer."
+    },
+    {
+      "id": "I09",
+      "axis": "constraint",
+      "title": "Assume robots become cheaper than people soon",
+      "paradigm_escaped": "Labor remains scarce",
+      "transfer_mechanism": "Compare imported labor to imported capital",
+      "idea": "Ask whether a country should import low-skill workers or accelerate automation and capital deepening instead.",
+      "disposition": "EXPLORE",
+      "speculative": true,
+      "caller_evidence": "Required by the AGI-soon scenario."
+    },
+    {
+      "id": "I10",
+      "axis": "constraint",
+      "title": "Assume local budgets cannot smooth shocks",
+      "paradigm_escaped": "Federal and local budgets effectively pooled",
+      "transfer_mechanism": "Force fiscal mismatch into the core model",
+      "idea": "Treat federal-positive and local-negative splits as a first-class result, not an afterthought.",
+      "disposition": "EXPLORE",
+      "speculative": false,
+      "caller_evidence": "This is already the strongest pattern in the project."
+    },
+    {
+      "id": "I11",
+      "axis": "constraint",
+      "title": "Assume descendant outcomes improve under AI tutoring",
+      "paradigm_escaped": "Static descendant-performance assumptions",
+      "transfer_mechanism": "Reopen the intergenerational channel under AGI",
+      "idea": "If AI sharply compresses skill acquisition costs, descendants may matter more positively than older fiscal models assume.",
+      "disposition": "PARK",
+      "speculative": true,
+      "caller_evidence": "Interesting but weakly grounded today."
+    },
+    {
+      "id": "I12",
+      "axis": "denial",
+      "title": "Ban the nation-state average entirely",
+      "paradigm_escaped": "Country as the unit of moral and economic analysis",
+      "transfer_mechanism": "Use institutional resilience instead",
+      "idea": "Judge immigration by whether institutions remain functional: school quality, public order, housing adequacy, fiscal solvency, and political legitimacy.",
+      "disposition": "EXPLORE",
+      "speculative": false,
+      "caller_evidence": "Closer to what the user actually means by bad for a country."
+    },
+    {
+      "id": "I13",
+      "axis": "domain",
+      "domain": "industrial organization",
+      "title": "Measure employer pass-through versus rent capture",
+      "paradigm_escaped": "Consumer gains assumed to diffuse broadly",
+      "transfer_mechanism": "Ask who keeps the surplus",
+      "idea": "Estimate how much of the gain from cheaper labor goes to consumers versus employers, landlords, and incumbent capital.",
+      "disposition": "EXPLORE",
+      "speculative": false,
+      "caller_evidence": "Critical for testing the Clark-style average-citizen claim."
+    },
+    {
+      "id": "I14",
+      "axis": "denial",
+      "title": "Ban immigrant-only framing",
+      "paradigm_escaped": "Immigration judged in isolation",
+      "transfer_mechanism": "Use explicit counterfactual policy menu",
+      "idea": "Compare low-skill immigration against pronatalism, internal mobility, automation, training, offshoring, and higher labor-force participation by natives.",
+      "disposition": "EXPLORE",
+      "speculative": false,
+      "caller_evidence": "Without a counterfactual the verdict is underspecified."
+    }
+  ]
+}

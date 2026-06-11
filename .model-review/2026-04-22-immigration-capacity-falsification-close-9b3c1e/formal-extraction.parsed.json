@@ -1,0 +1,84 @@
+{
+  "findings": [
+    {
+      "category": "logic",
+      "confidence": 1.0,
+      "description": "The newcomer memo calculates a 4.49% IRS inflow vs 0.21% moved-from-abroad flow, implying a ratio of 21.38, yet reports a 'roughly 20.5x' ratio. This suggests the 20.5x figure is a median of county-level ratios, which is a different estimand than the ratio of medians.",
+      "file": "research/immigration-causal-internal-vs-immigrant-newcomers.md",
+      "fix": "Separate and name all newcomer ratio estimands: ratio-of-medians, median-of-ratios, and zero-denominator share.",
+      "line": 0,
+      "severity": "high",
+      "title": "Conflation of newcomer ratio estimands"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.95,
+      "description": "The claim that the domestic-vs-foreign gap is a 'lower-bound' is undermined by a timing mismatch between IRS (2022-2023) and ACS (2022 5-year). If foreign-origin flow accelerated late in the window, the ACS pooled estimate understates current flow, potentially making the gap look too large rather than too small.",
+      "file": "research/immigration-causal-internal-vs-immigrant-newcomers.md",
+      "fix": "Downgrade directional-bias claim to 'sign ambiguous' unless verified by a sensitivity grid across population thresholds and MOE filters.",
+      "line": 0,
+      "severity": "high",
+      "title": "Ambiguous directional bias in newcomer comparison"
+    },
+    {
+      "category": "bug",
+      "confidence": 1.0,
+      "description": "The threshold-search null CI uses Wilson intervals over repeated random state splits. Because splits over a finite set of states are dependent, Wilson intervals (which assume i.i.d. Bernoulli trials) are not calibrated for inferential use.",
+      "file": "sources/immigration-causal/scripts/analyze_capacity_falsification.py",
+      "fix": "Replace with descriptive intervals or use state-blocked/leave-one-state-out (LOSO) inference.",
+      "line": 0,
+      "severity": "high",
+      "title": "Invalid Wilson intervals on dependent splits"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.9,
+      "description": "The memo upgrades the stress-marker result to 'moderate causal confidence' based on geographic robustness, despite clean-window leads being non-null and employment pre-trends being negative. This jump from association to causality is not supported by the cited artifacts.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "fix": "Implement a causal-confidence gate: forbid 'moderate' or 'high' ratings if clean pre-surge windows show sign instability or nontrivial lead effects.",
+      "line": 0,
+      "severity": "high",
+      "title": "Unjustified upgrade to moderate causal confidence"
+    },
+    {
+      "category": "bug",
+      "confidence": 0.9,
+      "description": "The median ratio for newcomer flow is reported without defining how counties with zero 'moved_from_abroad' shares are handled. For sparse data, this omission significantly changes the estimand.",
+      "file": "sources/immigration-causal/scripts/analyze_internal_vs_immigrant_newcomers.py",
+      "fix": "Add an explicit machine-readable field for the share of zero or undefined ratio counties and document the handling of zero denominators.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Underspecified newcomer ratio for zero denominators"
+    },
+    {
+      "category": "style",
+      "confidence": 0.85,
+      "description": "Semantic claims regarding construct definitions (e.g., newcomer totals not being immigration-specific) are sourced to data parquets rather than the scripts or data dictionaries that define those constructs.",
+      "file": "research/immigration-causal-internal-vs-immigrant-newcomers.md",
+      "fix": "Cite scripts and data dictionaries for construct meaning; reserve parquet citations for data provenance.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Improper source attribution for semantic claims"
+    },
+    {
+      "category": "missing",
+      "confidence": 0.9,
+      "description": "The claim that the threshold-location surface is 'diffuse' is qualitative and impressionistic. With only 100 splits across a 14-cell grid, selection shares move in 1-point increments without a formal concentration metric.",
+      "file": "sources/immigration-causal/scripts/analyze_capacity_falsification.py",
+      "fix": "Quantify instability using concentration metrics like entropy, HHI, or actual-minus-null top-cell share.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Lack of quantitative metrics for threshold surface diffuseness"
+    },
+    {
+      "category": "missing",
+      "confidence": 0.8,
+      "description": "The claim that 'policy relevance remains high' lacks an operationalized metric or success criterion, making it untestable and framing-sensitive.",
+      "file": "",
+      "fix": "Define a specific, falsifiable metric for policy relevance or tag the claim as [FRAMING-SENSITIVE].",
+      "line": 0,
+      "severity": "low",
+      "title": "Non-falsifiable policy relevance claim"
+    }
+  ]
+}

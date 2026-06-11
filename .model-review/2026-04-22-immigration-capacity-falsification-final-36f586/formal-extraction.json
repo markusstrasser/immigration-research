@@ -1,0 +1,84 @@
+{
+  "findings": [
+    {
+      "category": "logic",
+      "severity": "medium",
+      "title": "County panel audit does not actually audit the new 2018–2020 falsification windows",
+      "description": "The script 'build_county_outcome_panel.py' sets 'qcew_row_missing' based solely on 'annual_avg_emplvl_2021.isna()'. This means it fails to audit the 2018, 2019, and 2020 pretrend windows or wage data, making the memo's claim of 'explicit sample accounting' unsupported for the specific windows used in the corrected falsification.",
+      "file": "sources/immigration-causal/scripts/build_county_outcome_panel.py",
+      "line": 0,
+      "fix": "Update the audit logic to count non-missing rows for wage and employment across every year in the falsification window (2018, 2019, 2020, 2021, 2023, 2024).",
+      "confidence": 0.95
+    },
+    {
+      "category": "logic",
+      "severity": "low",
+      "title": "'Zero base' audit counts are semantically contaminated by missingness",
+      "description": "In 'add_log_change', 'zero_base_flag' is calculated by filling NAs with 0, meaning missing base values are counted as both 'zero_base' and 'missing_input'. This renders the '*_zero_base_count' metrics formally incorrect.",
+      "file": "sources/immigration-causal/scripts/build_county_outcome_panel.py",
+      "line": 0,
+      "fix": "Relabel or recompute 'zero_base_count' to explicitly exclude missing bases so that categories are mutually exclusive.",
+      "confidence": 0.9
+    },
+    {
+      "category": "missing",
+      "severity": "low",
+      "title": "Memo claims more window construction than the visible builder shows",
+      "description": "The memo claims the panel includes '2018–2020 cumulative' QCEW windows, but the builder script only shows annual levels and pairwise log changes (e.g., 2018_2019, 2018_2020). The provenance chain for the cumulative variable is incomplete.",
+      "file": "sources/immigration-causal/scripts/build_county_outcome_panel.py",
+      "line": 0,
+      "fix": "Explicitly materialize the cumulative window in the builder script or cite the specific analysis code where it is derived.",
+      "confidence": 0.8
+    },
+    {
+      "category": "logic",
+      "severity": "high",
+      "title": "Threshold-surface concentration comparison is likely apples-to-oranges",
+      "description": "In 'analyze_capacity_falsification.py', 'surface_actual' is compared to 'surface_null' without filtering to the same outcome. Since the null search is wage-only, pooling wage, employment, and margin outcomes in the 'actual' set mechanically flattens the concentration metrics, potentially invalidating the comparison.",
+      "file": "sources/immigration-causal/scripts/analyze_capacity_falsification.py",
+      "line": 0,
+      "fix": "Filter 'surface_actual' to wage-only outcomes before comparing modal share and top-3 share against the null distribution.",
+      "confidence": 0.85
+    },
+    {
+      "category": "logic",
+      "severity": "medium",
+      "title": "Spatial robustness wording may outrun the demonstrated leave-out design",
+      "description": "The memo claims the signal is 'not a one-state artifact', but the provided materials only verify 'division' leave-out. Division-level robustness does not necessarily prove state-level robustness.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "line": 0,
+      "fix": "Either add explicit leave-one-state-out results to 'county_capacity_geographic_leaveout.csv' or adjust the memo wording to refer only to census divisions.",
+      "confidence": 0.75
+    },
+    {
+      "category": "constitutional",
+      "severity": "medium",
+      "title": "Remaining bare [SOURCE] placeholders in memos",
+      "description": "The corrected memo contains multiple instances of bare '[SOURCE]' tags without paths or citations. This violates the 'Source everything' principle and renders key claims non-auditable.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "line": 0,
+      "fix": "Perform a citation scrub and replace all bare placeholders with specific file paths or output artifact citations.",
+      "confidence": 1.0
+    },
+    {
+      "category": "style",
+      "severity": "low",
+      "title": "Review artifact is being used as empirical evidence, not just provenance",
+      "description": "The memo cites '.model-review/verified-disposition.md' to support substantive empirical claims. While appropriate for history, primary empirical support should point to raw data outputs (CSV/JSON) or code.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "line": 0,
+      "fix": "Relink empirical claims to primary output artifacts and reserve .model-review citations for procedural/correction history.",
+      "confidence": 0.9
+    },
+    {
+      "category": "architecture",
+      "severity": "low",
+      "title": "Missing memo-to-output consistency checks",
+      "description": "There is a risk of narrative drift where memo claims (e.g., permutation counts, p-values) may not match the actual exported values in JSON/CSV files.",
+      "file": "",
+      "line": 0,
+      "fix": "Implement a lightweight 'claim-check' script that asserts that values cited in the memo match the machine-readable output files.",
+      "confidence": 0.8
+    }
+  ]
+}

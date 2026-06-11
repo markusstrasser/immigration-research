@@ -1,0 +1,114 @@
+{
+  "findings": [
+    {
+      "category": "logic",
+      "confidence": 0.95,
+      "description": "The code constructs exposure from permit_units_2021_2024 and contemporaneous share, then tests windows like 2021_2022. A true placebo requires exposure fixed before the outcome window. Currently, it only shows high-load places had weaker earlier outcomes, which is a persistence check, not a pre-trend identification.",
+      "file": "sources/immigration-causal/scripts/analyze_capacity_falsification.py",
+      "fix": "Use strictly pre-treatment exposures or windows; alternatively, rename sections to 'earlier-window overlap/persistence check'.",
+      "line": 0,
+      "severity": "high",
+      "title": "Invalid placebo/pre-trend semantics"
+    },
+    {
+      "category": "bug",
+      "confidence": 0.95,
+      "description": "The 'share_same_sign' metric measures consistency relative to the median holdout beta rather than the original full-sample or train-selected estimate. This could report high stability even if holdout results contradict the original claim.",
+      "file": "sources/immigration-causal/scripts/analyze_capacity_falsification.py",
+      "fix": "Redefine the metric to compare holdout sign against the full-sample or train-selected sign.",
+      "line": 0,
+      "severity": "high",
+      "title": "Threshold stability metric uses median instead of original estimate"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.85,
+      "description": "Split-sample threshold search is a model-selection problem. Without repeating the nested search under a null/permuted treatment, it is unknown if the observed concentration around specific quantiles exceeds what random search would produce.",
+      "file": "sources/immigration-causal/scripts/analyze_capacity_falsification.py",
+      "fix": "Add a nested permutation test for the full threshold search procedure to verify the 'family' is not a search artifact.",
+      "line": 0,
+      "severity": "high",
+      "title": "Over-claimed 'Real Threshold Family' without null benchmark"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.9,
+      "description": "With 300 permutations, the minimum possible p-value is 0.0033, which is a resolution floor. The memo treats this floor as a precise tail probability and fails to account for multiplicity across four primary outcomes.",
+      "file": "sources/immigration-causal/scripts/analyze_capacity_falsification.py",
+      "fix": "Increase permutation count to 5,000 and report multiplicity-adjusted results or exact uncertainty bounds for p-values.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Coarse permutation inference and missing multiplicity adjustment"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.95,
+      "description": "Division by permit units replaces zeros with NaNs, causing the regression to silently drop counties with no permit issuance. This shifts the estimand from 'counties' to 'counties with positive permits' without disclosure.",
+      "file": "sources/immigration-causal/scripts/analyze_capacity_falsification.py",
+      "fix": "Disclose sample exclusions and add sensitivity analyses (e.g., using an indicator or capped ratio) to include zero-permit counties.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Silent exclusion of zero-permit counties"
+    },
+    {
+      "category": "constitutional",
+      "confidence": 0.8,
+      "description": "The timeline and artifact sequence are presented as narrative without commit hashes, revision blocks, or dated cross-links, making it an unverified reconstruction.",
+      "file": "research/immigration-reasoning-evolution-2026-04-21.md",
+      "fix": "Add commit IDs, memo revision links, or explicitly label as narrative inference.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Reasoning-evolution doc lacks artifact provenance"
+    },
+    {
+      "category": "constitutional",
+      "confidence": 0.8,
+      "description": "Non-causal explanations such as selection into economically weak counties and omitted regional shocks are not fully addressed or modeled.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "fix": "Add an explicit rival-model section predicting signatures for these alternative theories.",
+      "line": 0,
+      "severity": "low",
+      "title": "Insufficient steel-manning of alternative explanations"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.85,
+      "description": "'Real family' and 'pre-trend' descriptions overstate the evidentiary level provided by the current descriptive analysis.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "fix": "Label these findings as exploratory or descriptive until more rigorous tests (nested-null, lagged-placebo) are completed.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Mislabeling of exploratory findings as causal evidence"
+    },
+    {
+      "category": "constitutional",
+      "confidence": 0.9,
+      "description": "Statements regarding policy relevance are framing-sensitive but not tagged as such per constitutional principles.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "fix": "Mark policy-significance claims with [FRAMING-SENSITIVE] tags.",
+      "line": 0,
+      "severity": "low",
+      "title": "Missing framing-sensitivity tags on policy claims"
+    },
+    {
+      "category": "missing",
+      "confidence": 0.9,
+      "description": "The report provides percentages for split-sample consistency and permutation results without binomial confidence intervals or tail uncertainty bounds.",
+      "file": "",
+      "fix": "Add binomial/Wilson confidence intervals for split-share metrics and permutation p-value bounds.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Lack of uncertainty intervals for split-share and permutation metrics"
+    },
+    {
+      "category": "constitutional",
+      "confidence": 0.85,
+      "description": "The memos do not include a required caveat regarding potential LLM instrument bias on a politically charged topic.",
+      "file": "",
+      "fix": "Add a short instrument-bias note in the synthesis sections.",
+      "line": 0,
+      "severity": "low",
+      "title": "Missing LLM-bias disclosure"
+    }
+  ]
+}

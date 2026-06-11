@@ -1,0 +1,44 @@
+{
+  "findings": [
+    {
+      "category": "logic",
+      "confidence": 0.95,
+      "description": "The donor pool for synthetic controls contains cities that were also significant 'receivers' or 'dispatchers' of the same immigration intervention. Specifically, Denver's synthetic control is weighted heavily on 'District of Columbia CoC' (34.3%) and 'Washington CoC' (20.5%), both of which were primary destinations for migrant busing in the same period. Chicago's donors include 'Harris County CoC' (Houston), a major transit hub. This 'interference' biases the counterfactual toward the treatment effect, likely understating the true impact.",
+      "file": "sources/immigration-causal/data/outcomes/analysis/receiver_synth_weights.csv",
+      "fix": "Exclude all known 'receiver' cities (NYC, DC, Chicago, Denver, Boston) and major border/transit hubs (El Paso, Harris County, Bexar County) from the donor pool for all models.",
+      "line": 0,
+      "severity": "high",
+      "title": "Interference/Leakage in Donor Pool"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.85,
+      "description": "The script defines the post-intervention period as starting after 2022 (year > 2022). However, significant migrant busing to New York City and Chicago began in the spring and summer of 2022. By including 2022 in the pre-treatment optimization, the model attempts to fit the synthetic control to a period where the intervention had already begun, potentially contaminating the baseline.",
+      "file": "sources/immigration-causal/scripts/analyze_receiver_synthetic_controls.py",
+      "fix": "Shift the intervention start year to 2022 or use 2021 as the final pre-treatment year to ensure the donor weights are calculated on an uncontaminated baseline.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Temporal Misalignment of Post-Period Start"
+    },
+    {
+      "category": "architecture",
+      "confidence": 0.8,
+      "description": "The optimization uses SLSQP to enforce weights that sum exactly to 1.0 with no intercept term. For extreme outliers like New York City (sheltered homelessness > 80k), there are few or no donors with comparable magnitudes. This forces the synthetic control to the upper boundary of the donor pool's convex hull, resulting in a poor pre-treatment fit (high pre_rmse) and a 'mechanical' gap that may not represent a true causal divergence.",
+      "file": "sources/immigration-causal/scripts/analyze_receiver_synthetic_controls.py",
+      "fix": "Implement an intercept/bias term in the synthetic control calculation (Abadie 2021) or de-mean the series prior to optimization to allow for level differences between the target and donors.",
+      "line": 0,
+      "severity": "low",
+      "title": "Strict Convex Hull Constraint Without Intercept"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.9,
+      "description": "The placebo analysis in 'receiver_synth_placebos.csv' includes rank-based p-values but doesn't consistently apply a pre-treatment fit filter (e.g., excluding donors with pre-RMSPE > 5x the target's). Without this, the p-value is diluted by 'bad' donors that don't provide a valid counterfactual, leading to potentially misleading 'decisive' results in the memo.",
+      "file": "sources/immigration-causal/data/outcomes/analysis/receiver_synth_placebos.csv",
+      "fix": "Calculate p-values based on the ratio of post-intervention RMSPE to pre-intervention RMSPE, rather than the absolute gap, to normalize for the quality of pre-treatment fit across donors.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Inconsistent Placebo P-Value Filtering"
+    }
+  ]
+}

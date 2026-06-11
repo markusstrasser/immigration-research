@@ -1,0 +1,114 @@
+{
+  "findings": [
+    {
+      "category": "logic",
+      "confidence": 0.85,
+      "description": "The panel builder materializes pairwise changes (2018\u21922019 and 2019\u21922020) rather than a direct cumulative 2018\u21922020 change, creating ambiguity if downstream memos imply a single cumulative preperiod.",
+      "file": "sources/immigration-causal/scripts/build_county_outcome_panel.py",
+      "fix": "Rewrite memo language to specify pairwise windows or update the build script to include a true qcew_*_log_change_2018_2020 variable.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Ambiguous semantic definition of 2018-2020 pretrend windows"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.9,
+      "description": "The analysis code reports the modal selected quantiles (q60 recent-flow & q50 permit) but fails to report the concentration or entropy of selections across splits. Labeling it 'the threshold' is materially too strong if the selection surface is diffuse.",
+      "file": "sources/immigration-causal/scripts/analyze_capacity_falsification.py",
+      "fix": "Export the full threshold-selection distribution (share per quantile pair) and a concentration metric to validate the stability of the q60&q50 cell.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Over-reification of modal threshold selection in wage analysis"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.75,
+      "description": "The claim that the search 'clearly beats a null search' is not supported by a direct statistical test (e.g., delta statistic, CI, or p-value) comparing real and null holdout distributions in the current output.",
+      "file": "sources/immigration-causal/scripts/analyze_capacity_falsification.py",
+      "fix": "Add a formal comparison statistic, such as a bootstrap CI for the difference in sign-match rate and median holdout absolute t-statistics between real and null runs.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Overstated evidentiary level for real-vs-null search superiority"
+    },
+    {
+      "category": "bug",
+      "confidence": 0.7,
+      "description": "IRS migration missingness is coded as literal zero via fillna(0). If absent rows in the source represent suppression or non-reporting rather than zero flows, the net_migration outcome is mechanically biased.",
+      "file": "sources/immigration-causal/scripts/build_county_outcome_panel.py",
+      "fix": "Treat IRS absent rows as missingness with an audit flag and rerun net_migration analyses to check sensitivity compared to the zero-fill method.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Silent semantic failure in IRS migration zero-fill"
+    },
+    {
+      "category": "bug",
+      "confidence": 0.9,
+      "description": "The script uses drop_duplicates([\"fips5\", \"year\"]) without a row-count audit or assertion. This hides potential data-integrity failures or schema changes in the upstream QCEW data.",
+      "file": "sources/immigration-causal/scripts/build_county_outcome_panel.py",
+      "fix": "Replace silent deduplication with hard uniqueness assertions and exception logging; the build should fail if unexpected duplicates are detected.",
+      "line": 0,
+      "severity": "high",
+      "title": "Silent deduplication of QCEW county-year records"
+    },
+    {
+      "category": "architecture",
+      "confidence": 0.7,
+      "description": "The provenance document cites later synthesis memos for chronology-sensitive claims, weakening the separation between bug-driven corrections and evidence-driven updates.",
+      "file": "research/immigration-reasoning-evolution-2026-04-21.md",
+      "fix": "Recast the document as a matrix mapping each claim version to specific commit IDs, raw result files, or dated artifacts rather than narrative summaries.",
+      "line": 0,
+      "severity": "low",
+      "title": "Circular provenance in reasoning-evolution documentation"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.7,
+      "description": "The reasoning-evolution doc states employment effects 'still survive controls' while also declaring employment 'materially confounded,' which may be misinterpreted as claiming substantively robust identification.",
+      "file": "research/immigration-reasoning-evolution-2026-04-21.md",
+      "fix": "Clarify that survival-after-controls in this context does not satisfy clean identification requirements given the preexisting trends.",
+      "line": 0,
+      "severity": "low",
+      "title": "Tension between employment control survival and confounding claims"
+    },
+    {
+      "category": "missing",
+      "confidence": 0.85,
+      "description": "There is no visible export of sample counts (N) included or excluded by outcome and reason (e.g., missing QCEW, zero permit, missing IRS), risking over-interpretation of results from shifting samples.",
+      "file": "",
+      "fix": "Add outcome-window sample ledgers that explicitly bound sample loss for each regression family.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Missing outcome-window sample ledgers"
+    },
+    {
+      "category": "constitutional",
+      "confidence": 0.8,
+      "description": "Some claims rest on summary memos citing other memos rather than raw data artifacts, which violates the 'Source everything' principle for quantitative claims.",
+      "file": "",
+      "fix": "Replace internal memo citations with raw CSV, JSON, or commit-level citations for all quantitative and chronological claims.",
+      "line": 0,
+      "severity": "low",
+      "title": "Memo-to-memo citation chains weaken source traceability"
+    },
+    {
+      "category": "constitutional",
+      "confidence": 0.75,
+      "description": "Rival explanations like pandemic resilience and structural decline are listed but not fully steel-maned into measurable, discriminating empirical tests.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "fix": "For each rival explanation, add one discriminating empirical test and the expected sign pattern that would distinguish it from the capacity-marker hypothesis.",
+      "line": 0,
+      "severity": "low",
+      "title": "Incomplete operationalization of rival explanations"
+    },
+    {
+      "category": "constitutional",
+      "confidence": 0.8,
+      "description": "The [FRAMING-SENSITIVE] tag is used broadly at the end of the memo rather than being attached to individual policy-facing inferences, reducing granular transparency.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "fix": "Tag each policy-facing sentence or inference individually as [FRAMING-SENSITIVE] to distinguish descriptive findings from policy extrapolations.",
+      "line": 0,
+      "severity": "low",
+      "title": "Sparse application of framing-sensitivity tags"
+    }
+  ]
+}

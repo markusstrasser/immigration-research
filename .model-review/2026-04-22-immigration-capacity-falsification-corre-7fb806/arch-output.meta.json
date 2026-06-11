@@ -1,0 +1,38 @@
+{
+  "api_only": true,
+  "context_budget_metric": "tokens",
+  "context_estimate_method": "heuristic:chars_div_4",
+  "context_manifest_path": ".model-review/2026-04-22-immigration-capacity-falsification-corre-7fb806/shared-context.manifest.json",
+  "context_payload_hash": "5b876001a3a3c66bbe7b9dc39eba5478c44a6c4e5a3d2dc5b325ebdd57e7f418",
+  "context_sha256": "5b876001a3a3c66bbe7b9dc39eba5478c44a6c4e5a3d2dc5b325ebdd57e7f418",
+  "context_token_estimate": 16229,
+  "error_message": null,
+  "error_path": null,
+  "error_type": null,
+  "finished_at": "2026-04-22T07:23:12Z",
+  "helper_version": "2026-04-10-v1",
+  "latency": 65.71442675590515,
+  "llmx_version": "0.6.0.post9.dev0+9ee7c42",
+  "output_path": ".model-review/2026-04-22-immigration-capacity-falsification-corre-7fb806/arch-output.md",
+  "parsed_path": null,
+  "profile_fingerprint": "c74af409ba691fb6",
+  "profile_version": "v1",
+  "prompt_sha256": "2154ffa14a29bdebc87763265178061cbae729cfbbe6ded8d6259ca0cde675a4",
+  "requested_profile": "deep_review",
+  "resolved_kwargs": {
+    "reasoning_effort": "high",
+    "search": false,
+    "timeout": 300
+  },
+  "resolved_model": "gemini-3.1-pro-preview",
+  "resolved_provider": "google",
+  "retryable": false,
+  "schema_used": false,
+  "started_at": "2026-04-22T07:22:06Z",
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0
+  }
+}

@@ -1,0 +1,12 @@
+1. Check the live Add Health data page for the applicant-eligibility gate before spending time on forms.
+2. If your current status does not clearly fit the official eligibility language, send support_email_draft.txt to addhealth_contracts@unc.edu and ask before filing.
+3. Open the CPC Data Portal project page.
+4. Add Core Files first.
+5. Add the mandatory AHAA files from attachment_b_manifest.tsv.
+6. Paste project_summary.txt into the short project description field.
+7. Paste restricted_justification.txt into the restricted-data justification field.
+8. Fill Attachment B from attachment_b_manifest.tsv.
+9. Use irb_language.txt in the IRB submission or amendment.
+10. Keep the user roster minimal and match the actual access location.
+11. Use the live portal as the authority on fee status; it currently says no fee is required.
+12. Do not add extra AHAA files until the narrow packet is coherent.

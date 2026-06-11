@@ -1,0 +1,39 @@
+{
+  "api_only": true,
+  "context_budget_metric": "tokens",
+  "context_estimate_method": "heuristic:chars_div_4",
+  "context_manifest_path": ".model-review/2026-04-22-immigration-capacity-falsification-close-9b3c1e/shared-context.manifest.json",
+  "context_payload_hash": "bf3c196fee9de21a26a3ca9e066c65e3d44b5a1753c2a94b9ac383d50885c2cb",
+  "context_sha256": "bf3c196fee9de21a26a3ca9e066c65e3d44b5a1753c2a94b9ac383d50885c2cb",
+  "context_token_estimate": 42275,
+  "error_message": null,
+  "error_path": null,
+  "error_type": null,
+  "finished_at": "2026-04-22T23:14:57Z",
+  "helper_version": "2026-04-10-v1",
+  "latency": 148.52204418182373,
+  "llmx_version": "0.6.0.post9.dev0+9ee7c42",
+  "output_path": ".model-review/2026-04-22-immigration-capacity-falsification-close-9b3c1e/formal-output.md",
+  "parsed_path": null,
+  "profile_fingerprint": "859bda7b479f5cae",
+  "profile_version": "v1",
+  "prompt_sha256": "59b6dcce350a632dda823b1b04a1f19be184a20411fe2b3232c0c6be278ab762",
+  "requested_profile": "gpt_general",
+  "resolved_kwargs": {
+    "max_tokens": 16384,
+    "reasoning_effort": "medium",
+    "search": false,
+    "timeout": 600
+  },
+  "resolved_model": "gpt-5.4",
+  "resolved_provider": "openai",
+  "retryable": false,
+  "schema_used": false,
+  "started_at": "2026-04-22T23:12:28Z",
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0
+  }
+}

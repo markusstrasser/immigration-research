@@ -1,0 +1,38 @@
+{
+  "api_only": true,
+  "context_budget_metric": "tokens",
+  "context_estimate_method": "heuristic:chars_div_4",
+  "context_manifest_path": ".model-review/2026-04-22-immigration-capacity-falsification-final-36f586/shared-context.manifest.json",
+  "context_payload_hash": "59640c2ba041a87f4f9cfa938c6b3a9fc43f67911eb408f607264c49286e5640",
+  "context_sha256": "59640c2ba041a87f4f9cfa938c6b3a9fc43f67911eb408f607264c49286e5640",
+  "context_token_estimate": 16858,
+  "error_message": null,
+  "error_path": null,
+  "error_type": null,
+  "finished_at": "2026-04-22T07:33:43Z",
+  "helper_version": "2026-04-10-v1",
+  "latency": 51.509780168533325,
+  "llmx_version": "0.6.0.post9.dev0+9ee7c42",
+  "output_path": ".model-review/2026-04-22-immigration-capacity-falsification-final-36f586/arch-output.md",
+  "parsed_path": null,
+  "profile_fingerprint": "c74af409ba691fb6",
+  "profile_version": "v1",
+  "prompt_sha256": "09d9cea70f8d7bf7ad3d693bb2d6d06aa8b70f74249625f784d7d41ced295786",
+  "requested_profile": "deep_review",
+  "resolved_kwargs": {
+    "reasoning_effort": "high",
+    "search": false,
+    "timeout": 300
+  },
+  "resolved_model": "gemini-3.1-pro-preview",
+  "resolved_provider": "google",
+  "retryable": false,
+  "schema_used": false,
+  "started_at": "2026-04-22T07:32:51Z",
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 0,
+    "prompt_tokens": 0,
+    "total_tokens": 0
+  }
+}

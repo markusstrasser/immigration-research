@@ -1,0 +1,15 @@
+file_or_component	priority	why_needed
+Core Files	must	needed to merge baseline background baseline anchors school-process variables and later educational outcomes to the transcript sample
+linking indicators	must	needed to align transcript years to Add Health survey timing and grade placement
+edumsov1	must	needed to recover transcript-coded math/science course structure transcript GPA failures and credit intensity so the project can distinguish transcript exposure from transcript evaluation
+edumsov2	must	needed to recover transcript-coded math/science course structure transcript GPA failures and credit intensity so the project can distinguish transcript exposure from transcript evaluation
+edu1	must	needed to recover transcript-coded math/science course structure transcript GPA failures and credit intensity so the project can distinguish transcript exposure from transcript evaluation
+edueng	must	needed as an English negative-control subject family to distinguish math/science-specific from broader school-evaluation patterns
+edutmsum	must	needed for transcript-coded math curriculum exposure rather than course title alone
+edutssum	must	needed for transcript-coded science curriculum exposure rather than course title alone
+edugrad	must	needed for transcript-coded graduation and exit outcomes
+eduocr	must	needed for school-level OCR context so transcript differences are not overread as purely individual
+eduwgt	must	needed for defensible weighted inference on the transcript sample
+eduhis	optional	useful negative-control school surface if low marginal request cost
+edutmcl	optional	useful if student-level curriculum summaries are too coarse for identifying content and performance expectations
+edutscl	optional	useful if student-level curriculum summaries are too coarse for identifying content and performance expectations

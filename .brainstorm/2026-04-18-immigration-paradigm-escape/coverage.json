@@ -1,0 +1,21 @@
+{
+  "requested_axes": ["denial", "domain", "constraint"],
+  "executed_axes": ["denial", "domain", "constraint", "fresh-design"],
+  "denial_rounds": 4,
+  "denial_targets_used": ["US-centric framing", "quantitative econometric estimation", "immigrant-as-treatment-variable", "linear treatment effects"],
+  "domains_used": ["epidemiology", "ecology", "financial-markets", "urban-planning", "military-strategy"],
+  "inversions_used": ["open borders", "mass deportation 11M", "time-reversed multi-generational", "perfect microdata"],
+  "n_ideas_total": 23,
+  "n_explore": 16,
+  "n_park": 6,
+  "n_reject": 0,
+  "n_merge": 1,
+  "uncovered_cells": ["religious institution participation as integration mechanism (under-explored)", "language acquisition trajectories (under-explored)", "workplace fatality / VSL compensation differentials (under-explored)", "ethnographic synthesis from existing fieldwork"],
+  "mature_frontier_stop": false,
+  "stop_reason": null,
+  "anti_duplication": {
+    "checked_prior_brainstorms": ["2026-04-10-immigration-country-bad-agi", "2026-04-10-immigration-datasets", "2026-04-11-immigration-frontier-gaps-b7d2"],
+    "duplicate_concepts_excluded": ["court/interpreter friction", "school service complexity", "labor-standards erosion", "institutional overload scorecard", "stress-test scenario engine", "political feedback module", "admission-channel composition"],
+    "current_cycle_duplicates_excluded": ["Saiz × rent merge", "E-Verify TWFE", "race-stratified crime gap", "Card-vs-Borjas synthesis"]
+  }
+}
