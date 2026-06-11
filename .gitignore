@@ -2,6 +2,7 @@
 .claude/plans/
 .claude/current-session-id
 .mcp.json
+.scratch/
 
 # Python
 __pycache__/
