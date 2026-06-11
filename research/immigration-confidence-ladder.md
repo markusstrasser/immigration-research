@@ -157,6 +157,26 @@ Lead with the first-order figure (`~$1.45T`, ~5% GDP); the `$2.32T` Type-II-mult
 33. `Receiver-city fiscal load` (entry 27) — **grade unchanged (strong, administrative data), scope annotation**
 The figures are **gross city outlays**, not net burden: federal Shelter and Services Program reimbursements and the counterfactual baseline growth of homeless-services spending are not netted out. "NYC spent $3.7B in FY24" is strong; "the surge cost NYC $3.7B net" is not yet supported. [SOURCE: sources/immigration-causal/data/bused_cities/receiver_city_costs.csv] [SOURCE: notes/quant-bias-checklist.md item 10]
 
+## Data-correction layer added 2026-06-11 (evening)
+
+Trigger: the morning layer's two open kill-tests were run against local data and exposed two bugs in the OHSS encounter parser (fiscal-index dates; agency-block overwrite that made the series OFO-ports-only). Full trace: [decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md](../decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md). These entries supersede 25, 26, and 30 where they conflict.
+
+34. `CHNV substituted lawful port flow for irregular crossings in its initial year` — **reversal of entry 26**
+Rating: `strong (initial period); medium beyond ~12 months`
+Reason: corrected USBP (between-ports) event study with staggered dates and flat pre-trends: Cuba −95.3%, Nicaragua −96.2%, Venezuela −57.5% (initial, decaying by τ+11 — Darién rebound), Haiti structurally ~0 between ports. Mean τ[0,+3] = −2.17 log points. The old "+787% — added on top" figure was the program's own lawful OFO channel on a scrambled clock; corrected total-CBP DiD is null (β=+0.45, t=1.29). Ledger discipline: lawful parole inflow (~530K) still lands in receiver cities — substitution-of-channel, not reduction-of-arrivals. [SOURCE: sources/immigration-causal/data/outcomes/analysis/chnv_pretrends/results.json]
+
+35. `Title 42 lift did not cause the surge` — **conclusion of entry 25 retained, evidence replaced**
+Rating: `medium`
+Reason: the entry's timing facts were artifacts. Corrected series: Dec-2022 local peak 252K → Jan-Feb 2023 trough (CHNV substitution visible) → April-May 2023 anticipation spike (212K/207K) → June post-lift crash (−30%) → Dec 2023 record 301,980. Post-lift 6-month mean −14.5% vs pre-lift. [SOURCE: scripts/analyze_surge_title42_chnv.py rerun 2026-06-11]
+
+36. `Receiver-city 2024 GOP swing survives the Hispanic-realignment control` — **closes entry 31's open work**
+Rating: `medium (correlation; robust to the named rival channel)`
+Reason: pre-registered kill-test with 2020 county Hispanic share (popest baseline): receiver β +0.0256 → +0.0238 (t≈7.2) with the control in; Hispanic share itself β=+0.062 (t=17.2); within top-Hispanic-quintile, receivers +4.3pp raw vs comparable counties. Replication gate passed. Still cross-sectional; busing destinations policy-endogenous; use the controlled +2.4pp. [SOURCE: sources/immigration-causal/data/outcomes/analysis/swing_hispanic_control/results.json]
+
+37. `OHSS-derived series require an external-anchor check before regression`
+Rating: `strong (process rule)`
+Reason: one known published value per series (e.g., Dec 2023 = 302K) would have caught both bugs at build time; the bugs survived 7 weeks and three ladder entries because year-boundary cuts masked them. [SOURCE: decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md]
+
 ## Two weakest assumptions
 
 1. `Federal-side proxy ledger`

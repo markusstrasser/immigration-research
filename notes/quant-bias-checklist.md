@@ -25,7 +25,9 @@ Question: did this repo commit the moves the Cato $14.5T study was criticized fo
 
 Counter-evidence (moves NOT committed): welfare-weight sensitivity run honestly (open-borders bounds); falsification pass killed our own placebo result; newcomer ratio self-corrected 33x → ~20.5x "contextual, not burden"; scalar verdicts refused at headline level throughout. Directional spread of findings 1-4: two flatter restriction, one cuts against it, one neutral-sloppy — residual bias is **favorable-construction drift per claim**, not a political lean.
 
-Open work from the audit: CHNV pre-trend event study; Hispanic-share control (or within-Hispanic-county comparison) for the swing regression; receiver-cost netting against SSP reimbursements.
+**Kill-test outcomes (same day, evening):** both open items were run pre-registered. (1) Swing: receiver effect *survived* the Hispanic-share control (+0.0256 → +0.0238, t≈7.2) — the morning's retraction of the assertion stands, but the decomposition restores the claim (ladder 36). (2) CHNV: the event study failed an external-anchor sanity check, exposing two parser bugs (fiscal-index dates; OFO-universe overwrite) — entry 26 *reversed*: between-port crossings collapsed 95-96% (Cuba/Nicaragua) post-program; the "+787%" was the program's own lawful channel (ladder 34, decision record 2026-06-11). Calibration lesson: the audit downgraded the right claim for the wrong reason — distrust was correct, the mechanism (reverse causation) was not; the real failure was upstream data, caught only by item-23 pre-registration plus an external-anchor check. New checklist candidate promoted to the canonical list: **anchor every series to one known published value before regressing on it.**
+
+Remaining open work: receiver-cost netting against SSP reimbursements; USBP-universe long-run (post-June-2024) substitution picture.
 
 ## Relationship to repo machinery
 
