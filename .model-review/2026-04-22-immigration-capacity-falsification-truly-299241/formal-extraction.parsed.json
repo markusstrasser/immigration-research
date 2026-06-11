@@ -1,0 +1,84 @@
+{
+  "findings": [
+    {
+      "category": "logic",
+      "confidence": 0.9,
+      "description": "The index and reasoning-evolution doc describe the tranche as using 'true 2018\u20132020 QCEW pretrend windows,' while the final memo says windows touching 2020 are COVID-contaminated and should not support the wage/employment split. This is a meaning bug where 'includes 2020 windows' is true but 'supports causal pretrend inference' is not.",
+      "file": "research/immigration-INDEX.md",
+      "fix": "Align terminology across all documents to distinguish between the presence of data windows and their valid usage for causal inference.",
+      "line": 0,
+      "severity": "medium",
+      "title": "\"2018\u20132020 pretrend windows\" language remains semantically loose"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.95,
+      "description": "The review scope emphasized division leave-out, but the memo claims the result is not a 'one-state' artifact. The visible code and output files (county_capacity_geographic_leaveout.csv) only support division-level analysis, making the state-level claim too strong.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "fix": "Either add explicit state leave-out analysis or delete 'one-state artifact' language from the memo.",
+      "line": 0,
+      "severity": "high",
+      "title": "\"Rules out a one-state artifact\" appears unsupported by the visible artifact set"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.8,
+      "description": "Evidence supports monotonicity by decile and threshold-search robustness, which protects against specific discretization artifacts but not against binning dependence in general. Invariance across multiple schemes or a continuous-specification check is missing.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "fix": "Add a binning-invariance check (quintiles/ventiles) or narrow the wording from 'not a binning accident' to 'not driven by the specific threshold search.'",
+      "line": 0,
+      "severity": "medium",
+      "title": "\"Not a binning accident\" is broader than the demonstrated checks"
+    },
+    {
+      "category": "style",
+      "confidence": 0.9,
+      "description": "The memo uses qualitative terms like 'beats the null strongly' and 'diffuse cutoff surface' without exposing the actual margins (e.g., sign-match share difference, median |t| difference).",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "fix": "Quantify threshold claims in the memo with exact margins pulled from the summary JSON/CSV artifacts.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Threshold-language is still under-quantified"
+    },
+    {
+      "category": "bug",
+      "confidence": 0.85,
+      "description": "The script build_county_outcome_panel.py keys qcew_row_missing to annual_avg_emplvl_2021. However, the substantive clean-window claim rests on 2018\u20132019. A county missing data in 2018 but present in 2021 would be incorrectly counted as present for the falsification window.",
+      "file": "sources/immigration-causal/scripts/build_county_outcome_panel.py",
+      "fix": "Expand audit/sample accounting to per-window usable N and zero-base counts for the specific years used in the causal analysis.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Sample-accounting audit is not aligned to the actual clean-window claim"
+    },
+    {
+      "category": "architecture",
+      "confidence": 0.95,
+      "description": "The final conclusion depends on NOT using 2019\u20132020 or 2020\u20132021 windows causally, but these are generated without explicit contamination flags. This creates a risk of future semantic regression where downstream scripts misuse contaminated data.",
+      "file": "sources/immigration-causal/scripts/build_county_outcome_panel.py",
+      "fix": "Add a window_registry artifact and label each derived window as clean_pre_covid, covid_contaminated, or post_surge.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Code materializes contaminated windows without machine-readable metadata"
+    },
+    {
+      "category": "style",
+      "confidence": 1.0,
+      "description": "Several major claims in the memo use bare [SOURCE] placeholders rather than explicit citation-grade file paths or direct CSV/JSON links.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "fix": "Replace bare [SOURCE] placeholders with explicit file paths and cite CSV/JSON outputs directly where possible.",
+      "line": 0,
+      "severity": "low",
+      "title": "Inconsistent sourcing with bare placeholders"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.8,
+      "description": "The claim 'Policy relevance remains high' is not testable as written because it lacks a specified policy objective, welfare metric, or counterfactual.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "fix": "Explicitly state whose welfare function or policy objective is being optimized, or re-label the claim as framing-sensitive.",
+      "line": 0,
+      "severity": "low",
+      "title": "Policy relevance claim is not falsifiable"
+    }
+  ]
+}

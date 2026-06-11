@@ -1,0 +1,104 @@
+{
+  "findings": [
+    {
+      "category": "logic",
+      "severity": "high",
+      "title": "Mislabeling of pretrend test as pure placebo",
+      "description": "The pretrend test is not a pure presurge placebo because the treatment numerator uses ACS 2022 5-year data (entered-2010-or-later stock) while only the permit denominator is moved to a 2017-2019 baseline. This constitutes a lead-exposure association test rather than a clean pre-treatment placebo.",
+      "file": "sources/immigration-causal/data/outcomes/analysis/county_capacity_falsification_summary.json",
+      "line": 0,
+      "fix": "Rename the test family to lead-exposure presurge-window and rebuild the numerator using pre-2020 immigrant flow proxies for a true placebo.",
+      "confidence": 0.95
+    },
+    {
+      "category": "missing",
+      "severity": "high",
+      "title": "Unreported sample attrition for zero-permit counties",
+      "description": "Regression samples exclude 77 counties with zero prebase permits (3.2% of the panel), which are likely the most capacity-constrained edge cases. Claims about the county panel do not specify that they represent only the nonzero-prebase-permit subset.",
+      "file": "sources/immigration-causal/data/outcomes/analysis/county_capacity_pretrend_results.csv",
+      "line": 0,
+      "fix": "Add explicit sample-attrition reporting and include a sensitivity analysis that treats zero-permit counties as a separate structural category.",
+      "confidence": 0.9
+    },
+    {
+      "category": "logic",
+      "severity": "high",
+      "title": "Contradictory employment effect claims across documents",
+      "description": "The older county-outcome memo claims employment effects are null/unclear with high confidence, while the corrected falsification pass finds negative employment associations in both pre-COVID and post-surge windows.",
+      "file": "research/immigration-county-outcome-panel-2026-04-21.md",
+      "line": 0,
+      "fix": "Apply a supersession banner to the older memo and update the index to clarify that the employment-null story is downgraded.",
+      "confidence": 0.9
+    },
+    {
+      "category": "logic",
+      "severity": "medium",
+      "title": "Inconsistent county universes across analysis sections",
+      "description": "Descriptive reporting uses 2326 counties while falsification regressions use 2313. This discrepancy weakens rhetorical contrasts between descriptive and causal findings.",
+      "file": "sources/immigration-causal/data/outcomes/analysis/county_capacity_falsification_summary.json",
+      "line": 0,
+      "fix": "Harmonize the analysis samples or explicitly document the reason for the count divergence in the summary text.",
+      "confidence": 0.85
+    },
+    {
+      "category": "architecture",
+      "severity": "medium",
+      "title": "Cross-outcome transfer of threshold discovery",
+      "description": "Training statistics (beta, t, p) are identical across wage, margin, and employment outcomes in validation tables, indicating that threshold discovery was tuned only for wages and transferred to other outcomes without independent discovery.",
+      "file": "sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_validation.csv",
+      "line": 0,
+      "fix": "Perform independent threshold searches for each outcome or explicitly label metadata to show these are wage-tuned exploratory results.",
+      "confidence": 0.95
+    },
+    {
+      "category": "performance",
+      "severity": "medium",
+      "title": "Low absolute concentration of threshold location",
+      "description": "The modal cutoff pair is selected in only 25% of splits, while null-search modal share reaches 16.7%, indicating that while performance may beat the null, the specific threshold location remains diffuse.",
+      "file": "sources/immigration-causal/data/outcomes/analysis/county_capacity_falsification_summary.json",
+      "line": 0,
+      "fix": "Formalize threshold diffuseness using metrics like HHI or normalized entropy to prevent overclaiming location stability.",
+      "confidence": 0.85
+    },
+    {
+      "category": "bug",
+      "severity": "medium",
+      "title": "Underspecified QCEW nondisclosure handling",
+      "description": "The audit reports 4 nondisclosure rows but zero missing numeric cells, without clarifying if these rows were retained as-is, manually verified, or coerced.",
+      "file": "sources/immigration-causal/data/outcomes/county_outcome_panel_audit.json",
+      "line": 0,
+      "fix": "Update the audit JSON to specify the exact policy for handling disclosure_code == 'N' rows (e.g., counts of rows retained vs dropped).",
+      "confidence": 0.9
+    },
+    {
+      "category": "style",
+      "severity": "medium",
+      "title": "Inconsistent document provenance and timestamps",
+      "description": "The reasoning-evolution document cites revised memos dated 2026-04-21 that contain content from 2026-04-22, creating a weak provenance chain for tracking the sequence of records.",
+      "file": "research/immigration-reasoning-evolution-2026-04-21.md",
+      "line": 0,
+      "fix": "Implement standard file-level metadata for 'created' and 'last materially revised' dates across the research folder.",
+      "confidence": 0.8
+    },
+    {
+      "category": "missing",
+      "severity": "low",
+      "title": "Missing instrument-bias caveats in index documentation",
+      "description": "While caveats are present in detailed memos, the top-level README/index lacks framing notes regarding instrument bias, which may lead to misuse during downstream consumption.",
+      "file": "research/immigration-INDEX.md",
+      "line": 0,
+      "fix": "Add a topic-level framing note to the index documentation summarizing known instrument limitations.",
+      "confidence": 0.75
+    },
+    {
+      "category": "missing",
+      "severity": "low",
+      "title": "Persistent [DATA] placeholders in county-outcome memo",
+      "description": "The older county-outcome memo still contains [DATA] placeholders instead of concrete file path citations, violating the 'Source everything' principle.",
+      "file": "research/immigration-county-outcome-panel-2026-04-21.md",
+      "line": 0,
+      "fix": "Replace all remaining data placeholders with stable, versioned file paths.",
+      "confidence": 0.8
+    }
+  ]
+}

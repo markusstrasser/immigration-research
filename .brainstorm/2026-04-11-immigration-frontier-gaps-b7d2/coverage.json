@@ -1,0 +1,30 @@
+{
+  "topic": "immigration frontier gaps beyond current fiscal core",
+  "requested_axes": ["denial", "domain", "constraint"],
+  "executed_axes": ["denial", "domain", "constraint"],
+  "counts": {
+    "ideas_total": 12,
+    "by_axis": {
+      "denial": 3,
+      "domain": 5,
+      "constraint": 4
+    },
+    "by_disposition": {
+      "EXPLORE": 7,
+      "PARK": 4,
+      "REJECT": 1,
+      "MERGE": 0
+    }
+  },
+  "uncovered_cells": [
+    "federal macro spillovers were intentionally not re-explored because they are already over-covered relative to local operational gaps",
+    "pure housing sub-branches were intentionally deprioritized because the repo already has meaningful housing coverage"
+  ],
+  "merge_counts": {
+    "merged_into_existing_housing_branch": 1
+  },
+  "prior_overlap": [
+    ".brainstorm/2026-04-10-immigration-country-bad-agi/synthesis.md"
+  ],
+  "mature_frontier_stop_reason": "After one forced-domain pass, additional domains mostly rephrased the same local-capacity idea. The frontier is mature enough that more volume would likely create weaker duplicates."
+}

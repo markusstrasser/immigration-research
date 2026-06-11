@@ -1,0 +1,86 @@
+{
+  "budget_limit": 120000,
+  "budget_metric": "tokens",
+  "builder_name": "model_review_context",
+  "builder_version": "2026-04-10-v1",
+  "created_at": "2026-04-22T07:03:57Z",
+  "estimate_method": "heuristic:chars_div_4",
+  "normalization_version": "v1",
+  "packet_metadata": {
+    "Axes": "arch,formal",
+    "Project": "/Users/alien/Projects/research",
+    "budget_enforcement": {
+      "dropped_blocks": [],
+      "estimate_method": "heuristic:chars_div_4",
+      "limit": 120000,
+      "metric": "tokens",
+      "truncated_blocks": [],
+      "usage": 15858
+    }
+  },
+  "packet_title": "Model Review Context Packet",
+  "payload_hash": "064344dc03f472962a7c125a8b773547448486af5c6d8af0f536cee278d7b0de",
+  "rendered_bytes": 63613,
+  "rendered_content_hash": "064344dc03f472962a7c125a8b773547448486af5c6d8af0f536cee278d7b0de",
+  "source_blocks": [
+    {
+      "block_hash": "a49132904373d599da67eb0152cac49ad14c94d917dae222085e32cb77c97c03",
+      "block_index": 0,
+      "block_title": "PROJECT CONSTITUTION (verbatim \u2014 review against these, not your priors)",
+      "block_type": "preamble",
+      "drop_if_needed": false,
+      "metadata": {},
+      "priority": 1000,
+      "section_index": 0,
+      "section_title": "Preamble",
+      "source_path": null,
+      "truncated": false
+    },
+    {
+      "block_hash": "a13660b446a72d5850473582f937f452455f9452f41e7b20374f44f8594019ea",
+      "block_index": 1,
+      "block_title": "PROJECT GOALS",
+      "block_type": "preamble",
+      "drop_if_needed": false,
+      "metadata": {},
+      "priority": 1000,
+      "section_index": 0,
+      "section_title": "Preamble",
+      "source_path": null,
+      "truncated": false
+    },
+    {
+      "block_hash": "d0cf76175c0edfdd5e22299bf830891f5108d454520cb3792f85b069b102f7e5",
+      "block_index": 2,
+      "block_title": "DEVELOPMENT CONTEXT",
+      "block_type": "preamble",
+      "drop_if_needed": false,
+      "metadata": {},
+      "priority": 1000,
+      "section_index": 0,
+      "section_title": "Preamble",
+      "source_path": null,
+      "truncated": false
+    },
+    {
+      "block_hash": "a71642de92e59e58cfffc0b6feadc1c1d2b9d9a5d8fcc6f73775d7d7b4db5842",
+      "block_index": 0,
+      "block_title": ".model-review/plan-close-context.md",
+      "block_type": "text",
+      "drop_if_needed": false,
+      "metadata": {
+        "path": ".model-review/plan-close-context.md"
+      },
+      "priority": 400,
+      "section_index": 1,
+      "section_title": "Provided Context",
+      "source_path": ".model-review/plan-close-context.md",
+      "truncated": false
+    }
+  ],
+  "source_paths": [
+    ".model-review/plan-close-context.md"
+  ],
+  "token_estimate": 15858,
+  "truncation_events": []
+}

@@ -1,0 +1,31 @@
+{
+  "topic": "immigration surge-capacity frontier rethink",
+  "requested_axes": ["denial", "domain", "constraint"],
+  "executed_axes": ["initial", "denial", "domain", "constraint"],
+  "idea_count_by_axis": {
+    "initial": 7,
+    "denial": 5,
+    "domain": 3,
+    "constraint": 4
+  },
+  "distinct_paradigms_escaped": 15,
+  "domain_row_coverage": {
+    "Natural systems": 1,
+    "Human institutions": 3,
+    "Engineering": 3
+  },
+  "duplicate_count": 0,
+  "merge_count": 2,
+  "uncovered_cells": [
+    "subgroup/pathway microdata design with current local assets",
+    "true receiver-city synthetic controls with current staging",
+    "federal-vs-state-local welfare ledger with audited transfer timing"
+  ],
+  "pain_points_checked": [
+    "2026-04-22 critique-close on annual-county causal ambiguity",
+    "2026-04-22 critique-close on newcomer ratio mismeasurement",
+    "existing receiver-city saturation and regime memos",
+    "git history showing the recent threshold/falsification loop"
+  ],
+  "mature_frontier_stop_reason": "Additional forced variants mostly collapsed into rephrasings of queueing, regime, resident-weighting, or bounds. The surviving non-duplicate ideas all change the unit of analysis or the claim type rather than adding another county threshold model."
+}

@@ -1,0 +1,104 @@
+{
+  "findings": [
+    {
+      "category": "logic",
+      "confidence": 0.97,
+      "description": "The review flags that `analyze_internal_vs_immigrant_newcomers.py` computes the stylized fact using the median county-level `us_inflow_share` versus the median `moved_from_abroad_share` for counties with `totpop >= 10k`. This overweights small counties, so the quoted `20.5x` ratio reflects the median county rather than the exposure faced by the median resident. The reviewer specifically recommends population-weighted means and also an aggregate national ratio because median-county statistics can systematically overweight rural dynamics.",
+      "file": "analyze_internal_vs_immigrant_newcomers.py",
+      "fix": "Replace or supplement median-county reporting with population-weighted means (e.g. `np.average(..., weights=totpop)`) and compute aggregate IRS inflow totals divided by aggregate ACS moved-from-abroad totals; update the memo to report these measures.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Median-county newcomer ratios likely misstate typical resident exposure"
+    },
+    {
+      "category": "bug",
+      "confidence": 0.95,
+      "description": "The review notes a denominator mismatch in `analyze_internal_vs_immigrant_newcomers.py`: `moved_from_abroad_share` uses ACS `B07001_081E / B07001_001E` (population age 1+), while `us_inflow_share` uses `us_inflow_persons / totpop` where `totpop` is `B01003_001E` (total population). Even if the numerical effect is small, the two ratios are not strictly comparable and may introduce silent measurement drift.",
+      "file": "analyze_internal_vs_immigrant_newcomers.py",
+      "fix": "Normalize both shares to the same population denominator, preferably using a consistent ACS universe or total population for both measures, and document the choice.",
+      "line": 0,
+      "severity": "low",
+      "title": "Newcomer shares use inconsistent denominators"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.94,
+      "description": "The review argues that `build_county_outcome_panel.py` relies on QCEW `annual_avg_wkly_wage` in nominal dollars across 2021-2024, a period of elevated inflation. Comparing log changes in nominal wages across counties may confound wage effects with differing regional inflation trajectories, especially if high-permit and low-permit counties experienced different price growth. The reviewer suggests the reported wage penalty could shrink, vanish, or grow after deflation.",
+      "file": "build_county_outcome_panel.py",
+      "fix": "Deflate base and end-year wages before computing log changes, at minimum with a national CPI series and ideally with BEA Regional Price Parities or another local price adjustment.",
+      "line": 0,
+      "severity": "high",
+      "title": "QCEW wage growth is analyzed in nominal terms without inflation adjustment"
+    },
+    {
+      "category": "missing",
+      "confidence": 0.92,
+      "description": "The review says `analyze_capacity_falsification.py` only uses a within-state permutation null for recent-flow thresholds. That controls for state-level confounding but may miss cross-state spatial blocks such as a whole Census division moving together. The reviewer recommends a tougher adversarial null, such as within-division permutation or a spatial-lag-aware design, and notes that some small states may have too few counties for a meaningful within-state null.",
+      "file": "analyze_capacity_falsification.py",
+      "fix": "Add alternative null designs such as within-division permutation or spatially constrained permutation, and record the null design in the output JSON.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Threshold-search null lacks regional or spatial correlation structure"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.91,
+      "description": "The review points out that `build_county_outcome_panel.py` converts QCEW `disclosure_code == 'N'` observations to `NA` and drops them from downstream analysis, while suppressions are likely concentrated in low-population, single-employer counties. The concern is that the panel may systematically exclude rural counties where immigrant labor shocks are theoretically important, producing missing-not-at-random bias. The reviewer specifically asks for an audit comparing immigrant-flow measures in suppressed versus non-suppressed counties.",
+      "file": "build_county_outcome_panel.py",
+      "fix": "Quantify suppression bias in `county_outcome_panel_audit.json` by comparing characteristics of disclosed versus nondisclosed counties, especially `recent_fb_annual_share`, and consider sensitivity analyses or explicit missingness flags rather than silent exclusion.",
+      "line": 0,
+      "severity": "high",
+      "title": "Dropped QCEW nondisclosures may create MNAR sample bias"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.83,
+      "description": "The review argues that the flow/capacity construct has a zero lower bound in the permit denominator, so counties with near-zero historical permit rates can generate explosive or undefined continuous stress ratios. The current analysis reportedly sidesteps this with quantiles, but the underlying continuous manifold is left unexamined, raising concerns about monotonicity and interpretability.",
+      "file": "analyze_capacity_falsification.py",
+      "fix": "Inspect the continuous stress measure directly, regularize or floor the denominator, and test robustness to alternative formulations such as log transforms, winsorization, or discrete bins justified by data support.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Flow-to-capacity stress metric may be unstable near zero permit capacity"
+    },
+    {
+      "category": "missing",
+      "confidence": 0.88,
+      "description": "The review notes that `analyze_internal_vs_immigrant_newcomers.py` flags high ACS margins of error for moved-from-abroad estimates but does not provide an analogous quantified warning for IRS SOI migration undercoverage, especially omission of low-income non-filers. This asymmetry can make the domestic inflow numerator appear more trustworthy than the foreign inflow numerator and may exaggerate the domestic-versus-foreign newcomer contrast.",
+      "file": "analyze_internal_vs_immigrant_newcomers.py",
+      "fix": "Add an explicit IRS coverage caveat or uncertainty flag, and if possible quantify sensitivity to non-filer undercount or report the domestic-versus-foreign ratio as descriptive with stronger source-limitations language.",
+      "line": 0,
+      "severity": "medium",
+      "title": "IRS migration data uncertainty is not quantified alongside ACS error"
+    },
+    {
+      "category": "missing",
+      "confidence": 0.9,
+      "description": "The review agrees with downgrading the wage-channel claim but criticizes the current approach for relying on sign comparisons between `2017-2018` and `2018-2019` windows. It recommends that `analyze_capacity_falsification.py` compute an explicit pre-treatment variance or stability score and penalize the post-surge effect when pretrend variance exceeds effect magnitude. The proposed output includes a formal `wage_pretrend_stability_index`.",
+      "file": "analyze_capacity_falsification.py",
+      "fix": "Add a quantitative pretrend-stability metric based on the variance or standard error of pre-period estimates and include it in summary outputs used to qualify post-period claims.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Pretrend instability is not formalized with an explicit stability metric"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.72,
+      "description": "The review flags a statistical validity issue in the threshold-evaluation code: Wilson score intervals assume approximately independent Bernoulli trials, but the holdout folds are states that may share regional economic shocks and intra-class correlation. If folds are correlated, the reported confidence intervals for transfer or sign success could be anti-conservative.",
+      "file": "analyze_capacity_falsification.py",
+      "fix": "Use a dependence-robust uncertainty method for fold-level success rates, such as block bootstrap, cluster-robust intervals, or explicitly report that Wilson intervals are heuristic under correlated folds.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Wilson intervals may be too narrow if holdout folds are correlated"
+    },
+    {
+      "category": "bug",
+      "confidence": 0.49,
+      "description": "The review raises a specific implementation risk in `analyze_capacity_falsification.py`: if the null permutation is generated with something like `df['recent_fb_annual_share'].sample(frac=1)` and then assigned back without stripping the original index, pandas may align values back to their original rows. In that failure mode, the 'permuted' null could accidentally equal the actual data, making the null benchmark moot. The reviewer explicitly notes this depends on implementation details and cannot verify it without execution.",
+      "file": "analyze_capacity_falsification.py",
+      "fix": "Ensure permutations break index alignment by resetting the index or assigning `.to_numpy()`/`.values` from the shuffled series before reattachment; add a test asserting that the permuted column differs from the original ordering.",
+      "line": 0,
+      "severity": "high",
+      "title": "Permutation null may be invalid if shuffled series re-aligns on original index"
+    }
+  ]
+}

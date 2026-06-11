@@ -1,0 +1,11 @@
+{
+  "topic": "new datasets to fuse for immigration local/federal incidence analysis",
+  "date": "2026-04-10",
+  "requested_axes": ["denial", "domain", "constraint"],
+  "executed_axes": ["denial", "domain", "constraint"],
+  "domain_rows": ["school-admin", "housing-market", "transport-engineering", "tax-admin"],
+  "idea_count": 12,
+  "uncovered_cells": ["private proprietary traffic feeds", "state Medicaid claims microdata"],
+  "merge_count": 3,
+  "mature_frontier_stop_reason": "official public datasets dominate the high-value remaining space; additional forced-domain rounds mostly rephrase existing admin-data ideas"
+}

@@ -1,0 +1,64 @@
+## 1. Logical Inconsistencies
+
+| Issue | Formal problem | Evidence | Severity |
+|---|---|---|---|
+| `pretrend` naming is still semantically wrong | The falsification regressors use a **2022-based exposure proxy** (`ACS 2022 5-year B05005 entered-2010+ stock / 12`) against `2017–2018` and `2018–2019` outcomes. That is not a literal pretrend test of pre-measured treatment; it is a **lead-association / place-type test**. Calling it `pretrend` overstates identification. | `recent_fb_proxy` in summary JSON explicitly says ACS 2022 proxy; `county_capacity_pretrend_results.csv` labels windows as presurge/pretrend. [SOURCE: sources/immigration-causal/data/outcomes/analysis/county_capacity_falsification_summary.json] [SOURCE: sources/immigration-causal/data/outcomes/analysis/county_capacity_pretrend_results.csv] | High |
+| Employment post effect is weaker than both clean presurge lead effects | If a post coefficient is smaller in absolute value than both clean presurge coefficients, the annual panel does **not** isolate a surge-specific employment effect. Numerically: `|β_2023_2024|=0.00230 < |β_2017_2018|=0.00246 < |β_2018_2019|=0.00299`. Any prose implying the post employment result “survives” as suggestive causal evidence is invalid. | Pretrend CSV coefficients. [SOURCE: sources/immigration-causal/data/outcomes/analysis/county_capacity_pretrend_results.csv] | High |
+| Threshold holdout semantics are easy to misread | In `county_capacity_threshold_validation.csv`, each split has the **same train stats repeated across wage/margin/employment**, so the training object is wage-selected. Therefore `test_sign_matches_train` for `margin` and `employment` is **cross-outcome transfer relative to wage-trained sign**, not within-outcome holdout stability. If described as generic “holdout stability,” that is a semantic failure. | Repeated `train_beta/train_t/train_p` across outcomes within split. [SOURCE: sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_validation.csv] | High |
+| Summary code computes marginal modes, not joint threshold mode | `modal_recent_quantile` and `modal_permit_quantile` are computed separately. That can imply a “modal cutoff” pair that is not the most frequent joint pair, and in edge cases may not even exist as the dominant combination. Stability claims should use the **joint mode** plus concentration metrics. | `pd.Series(...).mode()` run separately for recent and permit quantiles in `build_summary`. [SOURCE: sources/immigration-causal/scripts/analyze_capacity_falsification.py] | Medium |
+| QCEW nondisclosure audit is not falsifiable from current JSON | Audit shows non-disclosure rows in `2017`, `2018`, `2023`, but **zero missing cells** for every panel year/window. That may be true if all suppressed rows are outside the 2,390-county analysis sample, but the current audit does not prove it. Missingness policy is stated; sample-intersection evidence is not. | Non-disclosure counts >0 and yearly missing counts all 0. [SOURCE: sources/immigration-causal/data/outcomes/county_outcome_panel_audit.json] | Medium |
+| IRS/ACS newcomer quarantine is incomplete | The repo correctly downgrades IRS `97/000` as not native-only, but the comparison script still prints `Median US-inflow / FB-inflow ratio` even though the ACS comparator is `Moved from abroad`, not foreign-born-only immigrant inflow. That silently reintroduces the wrong semantic object. | Script and README text. [SOURCE: sources/immigration-causal/scripts/analyze_internal_vs_immigrant_newcomers.py] [SOURCE: sources/immigration-causal/README.md] | Medium |
+| One memo claim still outruns the evidence | “`it likely operates as a real amplifier of local strain`” goes beyond the demonstrated result. What is shown robustly is a **descriptive stress marker**. The annual causal channel tests are explicitly unresolved. The inference may be plausible, but it is not identified by this tranche. | Memo bottom line and best current formulation. [SOURCE: research/immigration-capacity-falsification-2026-04-21.md] | Medium |
+
+## 2. Cost-Benefit Analysis
+
+| Rank | Proposed change | Expected impact | Ongoing maintenance | Composability | Risk | Value-adjusted verdict |
+|---|---|---:|---:|---:|---:|---|
+| 1 | Rename all `pretrend/placebo` outputs using post-measured exposure to `lead_association` and add exposure-timing metadata | Very high: removes the main silent causal overread | Low | High | Low | Best value |
+| 2 | Replace marginal threshold modes with joint-mode + entropy/HHI + null gap | High: fixes the threshold-stability semantics directly | Low | High | Low | Best value |
+| 3 | Add audit fields for **suppressed rows intersecting analysis sample and windows** | High: makes QCEW nondisclosure handling independently checkable | Very low | High | Low | Excellent |
+| 4 | Enforce migration-series quarantine in code/docs (`not_native_only`, `not_immigrant_only`) and ban misleading labels via grep/test | Medium-high: prevents semantic relapse | Low | High | Low | Excellent |
+| 5 | Introduce a hard narrative gate: no wage/employment causal prose unless higher-frequency or truly pre-measured exposure passes predeclared thresholds | Very high truth impact | Medium | Medium | Medium (can slow synthesis) | Worth it if human approves protocol change |
+| 6 | Add exact finite-sample permutation reporting (`(b+1)/(B+1)`, min detectable p, CI) | Medium: improves inference hygiene | Low | High | Low | Good |
+| 7 | Add effect-size benchmarks comparing clean presurge vs clean post magnitudes in memo tables | Medium: makes overclaim harder | Very low | High | Low | Good |
+
+## 3. Testable Predictions
+
+| Claim | Convert to prediction | Success criterion | If fails |
+|---|---|---|---|
+| `flow/capacity is a robust county stress marker` | In a new clean post window or alternate public outcome, sign remains negative for wage/employment and positive for backlash; within-state permutation still extreme | Same sign in ≥8/9 division leave-outs and permutation `p <= 0.01` with exact finite-sample reporting | Downgrade from “robust marker” to “current-sample marker” |
+| `employment is more confounded than wages in the annual design` | In higher-frequency pre-2020 data, employment lead coefficients remain same-signed and at least half as large as post; wage leads do not show consistent same-sign dominance | Employment lead/post abs-ratio `>= 0.5`; wage lead signs mixed or smaller | If not, employment-specific suspicion weakens |
+| `wage threshold beats null on performance but not on stable location` | Wage sign-match / median `|t|` exceeds null, but joint cutoff concentration does not clearly separate from null | `Δ sign-match >= 0.15` and CI excludes 0; joint-mode share or HHI gap vs null `< 0.10` | If concentration gap is large, stable-threshold claim strengthens |
+| `QCEW nondisclosure handling is defensible` | Every suppressed analysis-sample endpoint produces NA in affected yearly/window variables; if no suppressed sample rows, audit shows zero intersections explicitly | Window-level suppressed-endpoint count equals NA attribution count | If mismatch, panel construction bug |
+| `IRS domestic migration is quarantined from native-sorting claims` | No output labels describe `97/000` as native-only, and no ACS `B07001_081E` labels describe it as foreign-born-only | Automated grep/lint returns 0 violations | If violated, quarantine failed |
+| `policy relevance remains high` | **Not testable as written.** Needs an explicit loss function: e.g., policy relevance = effect size × affected population × tractability. | Define metric first | Otherwise keep as `[FRAMING-SENSITIVE]` only |
+
+## 4. Constitutional Alignment (Quantified)
+
+| Principle | Coverage | Gaps | Suggested fix |
+|---|---:|---|---|
+| 1. Source everything | 84% | Most claims are sourced, but some key narrative claims remain broad `[INFERENCE]`; threshold semantics are not source-transparent in output labels | Add schema/column definitions into JSON summaries; downgrade any causal prose not directly tied to a table |
+| 2. Steel-man before criticizing | 58% | Strong on self-critique, weaker on articulating strongest positive interpretation before downgrading it | Add a short “best surviving pro-story” block before each falsification section |
+| 3. Distinguish levels of evidence | 88% | Clean vs contaminated windows are explicit, but `pretrend` terminology blurs evidence level | Rename to `lead_association`; expose exposure timing |
+| 4. Disconfirmation is mandatory | 93% | Very strong: permutation, leave-out, null, extra clean window | Next gap is a truly pre-measured exposure rather than a later proxy |
+| 5. Name the frame | 80% | `stress marker` vs `causal amplifier` sometimes slides together | Separate “descriptive,” “predictive,” and “causal” headings in memo claims tables |
+| 6. Quantify when possible | 90% | Good coefficients/p-values/counts, but no threshold concentration metric; no pre/post magnitude comparison table | Add HHI/entropy and lead/post ratio columns |
+| 7. Flag the instrument’s bias | 96% | Instrument notes are present in index and memos | Mirror the caution in machine-readable outputs only if these JSONs feed later synthesis |
+
+## 5. My Top 5 Recommendations (different from the originals)
+
+| Rank | What | Why, quantitatively | How to verify |
+|---|---|---|---|
+| 1 | **Rename and re-schema the “pretrend” objects as `lead_association` wherever exposure is measured after the outcome windows** | This is the largest semantics bug. The exposure proxy is 2022-based while the “pretrend” outcomes are `2017–2018` and `2018–2019`; current naming overstates identification strength. [SOURCE: summary JSON, pretrend CSV] | Add fields `exposure_reference_year_start/end`; automated rule: no object may be labeled `pretrend` unless exposure window ends `<= base_year` |
+| 2 | **Fix threshold stability reporting: export joint mode, joint-mode share, entropy/HHI, and rename `test_sign_matches_train` to `test_sign_matches_wage_train`** | Current summary can overstate stability and misstate what is being matched. The train object is wage-only; margin/employment are transfer tests, not own-outcome validation. | New CSV/JSON fields present; unit test that joint mode equals most frequent pair; memo language matches field names |
+| 3 | **Make QCEW nondisclosure handling auditable at the sample/window level** | Current audit shows `2017:1`, `2018:2`, `2023:2` nondisclosure rows but all-zero missing counts in analysis windows. That may be fine, but right now readers cannot prove it. | Add `suppressed_rows_in_analysis_sample_by_year`, `suppressed_window_endpoints_by_window`; counts reconcile exactly with NA attribution |
+| 4 | **Add a semantic quarantine test for migration-series labels** | The repo correctly fixed the IRS interpretation, but the script still prints `FB-inflow ratio` for `Moved from abroad`. That is a silent semantic regression risk. | Grep/lint test over docs/scripts/output strings; zero occurrences of `native-only` for IRS `97/000` and zero `FB-inflow` labels for `B07001_081E` |
+| 5 | **Adopt a hard stopping rule for annual causal prose** | Employment already fails a basic clean-window check: both clean presurge coefficients are same-signed and larger in absolute value than the post coefficient. Without a stronger design, more prose adds confidence, not truth. | Predeclare criterion: no causal wage/employment wording unless a higher-frequency or truly pre-measured design yields all clean leads with `|lead| < 0.5*|post|` |
+
+## 6. Where I'm Likely Wrong
+
+1. I may be **over-penalizing the word `pretrend`** if the local convention already means “future-exposure falsification” rather than literal treatment lead. The safer claim is still that outside readers will read it causally unless renamed.
+2. I am reviewing from excerpts, not the full scripts. The omitted parts may already document exact permutation formulas or null-search mechanics better than the visible summary code suggests.
+3. I may be overstating the nondisclosure concern. The all-zero missing counts could be entirely correct if every suppressed QCEW row lies outside the 2,390-county analysis sample.
+4. I may be **too scope-limiting**: for a personal research repo, some of my recommended schema/tests may be more formal than necessary. I’m biased toward machine-checkable semantics because qualitative reviewers usually miss silent label drift.
+5. I may be too cautious about causal language after seeing the employment pre/post comparison. The repo already downgraded substantially; my recommendation is mainly to harden that downgrade into enforceable terminology rather than to reverse the substantive descriptive result.

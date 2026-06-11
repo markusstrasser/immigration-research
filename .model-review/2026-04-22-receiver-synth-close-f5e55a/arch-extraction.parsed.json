@@ -1,0 +1,114 @@
+{
+  "findings": [
+    {
+      "category": "logic",
+      "confidence": 0.84,
+      "description": "The review argues that `analyze_receiver_synthetic_controls.py` uses a national donor universe of roughly 370 CoCs, which likely includes major post-2022 migrant-receiving jurisdictions such as Washington, DC, Los Angeles, El Paso, Miami, and San Diego. If such cities are used as donors for treated units like NYC or Denver, the synthetic control is exposed to treatment leakage, which would mechanically suppress the estimated treatment effect. The reviewer cites `receiver_synth_weights.csv` as the place where this contamination may already be visible.",
+      "file": "analyze_receiver_synthetic_controls.py",
+      "fix": "Explicitly filter the donor pool before fitting weights, excluding major border CoCs and known busing/receiving hubs; verify that excluded cities do not appear in `receiver_synth_weights.csv`.",
+      "line": 0,
+      "severity": "high",
+      "title": "Donor pool is likely contaminated by quasi-treated migrant hubs"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.95,
+      "description": "The review claims the method fits roughly 370 donor weights to only 4-5 annual pre-treatment observations (2018-2021/2022). With far more parameters than pre-treatment periods, the model can fit noise and achieve near-zero pre-treatment error without identifying a stable counterfactual, making post-treatment gaps highly sensitive to random donor variation.",
+      "file": "analyze_receiver_synthetic_controls.py",
+      "fix": "Regularize the weight-fitting objective with an L2 penalty or use subset selection / constrained donor selection so the fitted control cannot overfit a tiny pre-period.",
+      "line": 0,
+      "severity": "high",
+      "title": "Synthetic control is underdetermined and prone to severe overfitting"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.86,
+      "description": "The reviewer argues that HIC is not fixed: CoCs such as NYC and Denver expanded shelters, hotels, and transitional inventory in response to the migrant surge. Because the treatment can increase the denominator, the `overall_to_hic_ratio` may remain flat even when absolute sheltered or total homeless counts rise sharply, causing the analysis to understate physical system stress.",
+      "file": "analyze_receiver_synthetic_controls.py",
+      "fix": "Do not rely on HIC-based ratios alone; add parallel analyses on log-transformed absolute counts such as `log(sheltered)` and `log(total_homeless)` and treat ratio-based conclusions as potentially attenuated by denominator endogeneity.",
+      "line": 0,
+      "severity": "high",
+      "title": "`overall_to_hic_ratio` uses an endogenous denominator that can mask overload"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.78,
+      "description": "The review states that raw placebo gap distributions are not meaningful when placebo units have poor pre-treatment fit. It specifically warns that if `receiver_synth_placebos.csv` is built from absolute post-treatment gaps without filtering on pre-treatment MSPE or using post/pre RMSPE ratios, the resulting placebo p-values are structurally invalid.",
+      "file": "analyze_receiver_synthetic_controls.py",
+      "fix": "For treated units and all placebos, compute pre-MSPE, post-MSPE, and post/pre RMSPE ratio; drop placebos with pre-MSPE substantially worse than the treated unit (for example >5x), and rank inference by RMSPE ratio rather than raw post-gap. Include these metrics in `receiver_synth_placebos.csv`.",
+      "line": 0,
+      "severity": "high",
+      "title": "Placebo inference may be invalid if placebos are ranked by raw post-gap without fit-quality filtering"
+    },
+    {
+      "category": "missing",
+      "confidence": 0.88,
+      "description": "The review says the conclusion in `research/immigration-receiver-counterfactuals-2026-04-22.md` that Boston and Chicago do not survive as simple positive shelter-divergence cases is based entirely on ratio metrics. It argues this misses an obvious disconfirming test: absolute `sheltered` and `unsheltered` PIT counts could have risen substantially while HIC expanded in parallel, leaving ratios near 1.0 and hiding real overload.",
+      "file": "research/immigration-receiver-counterfactuals-2026-04-22.md",
+      "fix": "Re-run the counterfactual analysis on absolute count outcomes and revisit memo conclusions wherever ratio-based null findings could be explained by concurrent HIC expansion.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Memo conclusions rely on ratios and omit absolute sheltered/unsheltered count checks"
+    },
+    {
+      "category": "logic",
+      "confidence": 0.82,
+      "description": "The review notes that HUD PIT counts occur on a single night in late January, while migrant inflows spiked in late spring/summer 2023. Under that timing, January 2023 largely reflects pre-crisis conditions and January 2024 reflects the shock, so treating 2023 as fully post-treatment creates an overly sharp structural break and may misclassify a transition year.",
+      "file": "analyze_receiver_synthetic_controls.py",
+      "fix": "Model 2023 as a partial-treatment or transition period, or shift treatment timing so annual PIT measurement dates align better with when the migrant shock would appear in the observed outcomes.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Treatment timing is oversimplified despite PIT counts being annual January snapshots"
+    },
+    {
+      "category": "missing",
+      "confidence": 0.76,
+      "description": "The review argues the implementation appears to rely only on lagged dependent variables despite a very short pre-period. It says this leaves the model blind to major structural differences across CoCs, such as population density, housing costs, and climate, which standard synthetic control workflows often include to improve match quality and plausibility.",
+      "file": "analyze_receiver_synthetic_controls.py",
+      "fix": "Augment the matching/fitting step with structural covariates relevant to homelessness dynamics, in addition to lagged outcomes.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Synthetic control specification omits structural covariates"
+    },
+    {
+      "category": "architecture",
+      "confidence": 0.67,
+      "description": "The review claims the script applies one common panel setup to places with different roles in the migrant network, such as Bexar/San Antonio as a transit hub versus NYC and Chicago as terminal destinations. This may blur distinct overload mechanisms and undermine causal interpretation because the same treatment ontology is imposed on heterogeneous node types.",
+      "file": "analyze_receiver_synthetic_controls.py",
+      "fix": "Stratify analyses by node type or run separate specifications for transit hubs, border hubs, and terminal destination CoCs rather than assuming a single common treatment mechanism.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Unified panel treats transit hubs and destination cities as causally identical"
+    },
+    {
+      "category": "missing",
+      "confidence": 0.61,
+      "description": "The review recommends excluding CoCs with large pre-treatment PIT volatility, noting that localized methodological changes in counting can create artifact-driven fits. It proposes flagging donor units with more than 30% year-over-year variance in the pre-treatment period and dropping them so unstable measurement practices do not distort the synthetic control weights.",
+      "file": "analyze_receiver_synthetic_controls.py",
+      "fix": "Add donor-pool scrubbing that detects unusually volatile pre-treatment series (for example >30% YoY changes) and excludes those CoCs from eligibility as donors.",
+      "line": 0,
+      "severity": "medium",
+      "title": "Donor pool is not screened for unstable pre-treatment measurement artifacts"
+    },
+    {
+      "category": "missing",
+      "confidence": 0.69,
+      "description": "The review recommends an in-time falsification test by assigning treatment to 2020 and checking whether the model still produces a non-zero effect during 2020-2022. A significant pseudo-effect in that period would indicate the pre-treatment fit is artifactual rather than identifying a real post-2022 shock.",
+      "file": "analyze_receiver_synthetic_controls.py",
+      "fix": "Add an in-time placebo test that shifts treatment earlier (for example to 2020) and require the pseudo-treatment effect to be near zero before trusting the main specification.",
+      "line": 0,
+      "severity": "medium",
+      "title": "No in-time placebo falsification is reported"
+    },
+    {
+      "category": "constitutional",
+      "confidence": 0.72,
+      "description": "The review argues the memo and script do not acknowledge that HUD PIT counts are politically sensitive, subject to local methodological changes, and structurally weak for fast-moving migrant populations, especially for winter unsheltered undercount. It characterizes this as a failure to name the frame and flag instrument bias while drawing causal conclusions from the PIT-based outcomes.",
+      "file": "research/immigration-receiver-counterfactuals-2026-04-22.md",
+      "fix": "Add explicit limitations on PIT measurement bias, document known undercount risks and methodological sensitivity, and qualify causal claims accordingly.",
+      "line": 0,
+      "severity": "medium",
+      "title": "HUD PIT data are treated as neutral despite known instrument bias"
+    }
+  ]
+}

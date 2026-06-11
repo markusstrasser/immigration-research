@@ -1,0 +1,94 @@
+{
+  "findings": [
+    {
+      "category": "logic",
+      "severity": "medium",
+      "title": "Reasoning-evolution doc claims exceed falsification memo limits",
+      "description": "The evolution doc describes wage-side local effects as 'more credibly surge-amplified', whereas the falsification memo calls the split 'provisional, not settled' and 'unverified pending reruns'. This creates an internal inconsistency where narrative synthesis overstates the primary evidence.",
+      "file": "research/immigration-reasoning-evolution-2026-04-21.md",
+      "line": 0,
+      "fix": "Align the evolution doc to the narrower formulation: one clean annual pre-COVID window favors wages over employment, but the contrast is not yet causally secure.",
+      "confidence": 0.85
+    },
+    {
+      "category": "logic",
+      "severity": "medium",
+      "title": "Semantically broad plural 'pretrends' usage for single window",
+      "description": "The memo refers to 'wage pretrends', but since windows touching 2020 are downgraded as contaminated, the evidence rests on a single window (2018-2019). The plural phrasing risks laundering one clean window into a broader pattern claim.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "line": 0,
+      "fix": "Downgrade prose from 'wage pretrends' to 'the clean 2018-2019 wage pretrend window'.",
+      "confidence": 0.9
+    },
+    {
+      "category": "bug",
+      "severity": "high",
+      "title": "Estimand mismatch in threshold-surface null comparison",
+      "description": "In build_summary, actual_wage filters for 'wage', but surface_actual and surface_null may compare pooled actual outcomes against wage-only null searches. This makes concentration metrics (modal share, top-3 share) formally invalid for comparison.",
+      "file": "sources/immigration-causal/scripts/analyze_capacity_falsification.py",
+      "line": 0,
+      "fix": "Make threshold-surface comparisons outcome-matched (wage actual vs wage null) and export stratified concentration metrics.",
+      "confidence": 0.95
+    },
+    {
+      "category": "logic",
+      "severity": "medium",
+      "title": "Threshold analysis universe restriction is understated",
+      "description": "The analysis excludes counties with zero permits or zero pre-surge baselines, meaning the result applies to a restricted subset, not the full county panel. The current prose understates this universe restriction.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "line": 0,
+      "fix": "State the threshold-analysis universe explicitly in the memo headline claims (e.g., eligible_counties / total_counties).",
+      "confidence": 0.85
+    },
+    {
+      "category": "missing",
+      "severity": "medium",
+      "title": "Lack of window-specific sample accounting in builder",
+      "description": "The builder's audit object stores aggregate missing counts based on a single flag rather than window-specific accounting (e.g., 2018-2019 vs 2023-2024), which undermines the 'explicit sample accounting' claim.",
+      "file": "sources/immigration-causal/scripts/build_county_outcome_panel.py",
+      "line": 0,
+      "fix": "Add a regression-by-regression sample table documenting eligible N, missing N, and exclusions for every spec.",
+      "confidence": 0.8
+    },
+    {
+      "category": "logic",
+      "severity": "medium",
+      "title": "Wilson CIs over repeated splits are anti-conservative",
+      "description": "The script applies Wilson intervals to counts over 60 splits. Because these splits use the same county sample, they are not IID Bernoulli trials; treating them as such overstates inferential precision.",
+      "file": "sources/immigration-causal/scripts/analyze_capacity_falsification.py",
+      "line": 0,
+      "fix": "Relabel as 'heuristic split-stability interval' or replace with bootstrap intervals over counties.",
+      "confidence": 0.9
+    },
+    {
+      "category": "constitutional",
+      "severity": "low",
+      "title": "Unsourced scalar constant OCCUPANTS_PER_UNIT",
+      "description": "The constant OCCUPANTS_PER_UNIT = 2.5 is used in capacity conversion but lacks an explicit source reference in the code or comments.",
+      "file": "sources/immigration-causal/scripts/analyze_capacity_falsification.py",
+      "line": 0,
+      "fix": "Source or footnote the fixed scalars used in capacity conversion.",
+      "confidence": 0.95
+    },
+    {
+      "category": "constitutional",
+      "severity": "low",
+      "title": "Missing steel-man for smooth-response threshold interpretation",
+      "description": "The memo lacks an articulation of the opposing view that there may be no stable breakpoint at all, only a smooth response surface.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "line": 0,
+      "fix": "Add one explicit steel-man paragraph for the null/smooth-response interpretation.",
+      "confidence": 0.8
+    },
+    {
+      "category": "constitutional",
+      "severity": "low",
+      "title": "Qualitative evidence descriptions lack quantification",
+      "description": "Several key claims like 'beats the null strongly' and 'poor transfer' remain qualitative without exact thresholds or statistics in the memo body.",
+      "file": "research/immigration-capacity-falsification-2026-04-21.md",
+      "line": 0,
+      "fix": "Add exact thresholds or reported statistics for qualitative phrasing in the memo appendix.",
+      "confidence": 0.85
+    }
+  ]
+}
