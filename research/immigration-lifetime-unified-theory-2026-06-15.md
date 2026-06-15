@@ -198,11 +198,11 @@ Each model is a **ledger grammar** + **prediction map**. Critique = compare gram
 
 ### Sweep 10 thesis (verbatim)
 
-> Fiscal immigration "truth" is a tensor. Mexico is a weight, not a number. Federal annual +, lifetime NPV −, local episodic − can coexist. Sign wars are accounting wars. Return migration and native out-migration explain why stock photos lie. Next: fix unit bugs, bridge annual→lifetime formally, stop downloading papers without updating this section.
+> Fiscal immigration "truth" is a tensor. Mexico is a weight, not a number. Federal annual +, `<HS` lifetime NPV −, education-mix age-25 benchmark +, and local episodic − can coexist. Sign wars are accounting wars. Return migration and native out-migration explain why stock photos lie. Next: fix unit bugs, bridge annual→lifetime formally, stop downloading papers without updating this section.
 
 ### Sweep 11 revision
 
-> The tensor got a unit correction: local school was off 1000× until F-33 thousands were fixed (~$21 → ~$21k/pupil). Annual federal+ and lifetime NPV− still don't refute each other — they need an explicit bridge (Lee-Miller lifecycle, remittance private layer, CBO surge-vs-stock tags). Restriction and welfare politics shift **which cells arrive**, not just how many; admin and receiver ledgers are real layers politicians ignore when exporting scalars.
+> The tensor got a unit correction: local school was off 1000× until F-33 thousands were fixed (~$21 → ~$21k/pupil). Annual federal+, `<HS` lifetime NPV−, and education-mix age-25 benchmark+ still don't refute each other — they need an explicit bridge (Lee-Miller lifecycle, remittance private layer, CBO surge-vs-stock tags). Restriction and welfare politics shift **which cells arrive**, not just how many; admin and receiver ledgers are real layers politicians ignore when exporting scalars.
 
 **Sharper:** 80 generators; F-33 bug killed; Mexico remittance scale (~$152k/adult inbound to Mexico) dwarfs federal net proxy (~$1.5k/adult) on private ℓ — public ledger fights ignore household budget.
 
@@ -210,7 +210,7 @@ Each model is a **ledger grammar** + **prediction map**. Critique = compare gram
 
 **Survived (weak data):** GE flip magnitude; Mariel bracket for 2020s surge; Storesletten correct PDF still missing (w9489 mis-staged).
 
-**New falsifier:** If post-fix K-12 local assignment × school-age share still << federal annual for Mexico `<HS` surge cells, local-flow layer may be secondary at **annual** frequency even when lifetime NAS negative.
+**New falsifier:** If post-fix K-12 local assignment × school-age share still << federal annual for Mexico `<HS` surge cells, local-flow layer may be secondary at **annual** frequency even when the NAS `<HS` cell is negative.
 
 ---
 
