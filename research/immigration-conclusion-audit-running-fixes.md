@@ -1060,3 +1060,43 @@ Changed the row to say QWI supports a small/null wage response in the observed E
 ### Updated conclusion
 
 The synthesis still treats the wage channel as weak in the tested E-Verify design, while preserving the open questions for untested shock regimes and other labor-market margins. [INFERENCE]
+
+---
+
+## 2026-06-16 — E-Verify verdict sentence narrowed to large-gain margin
+
+### Issue
+
+`research/immigration-causal-synthesis-2026-04-18.md` still said "the Borjas wage prediction is rejected at conventional significance levels." That sentence remained broader than the table and ladder wording fixed earlier in the same memo. [DATA]
+
+### Why it was wrong
+
+The E-Verify TWFE result is strong against large Borjas-style native wage gains from E-Verify-style labor-supply contraction. It is not a rejection of the full Borjas wage-prediction family across Mariel-style composition shocks, surge regimes, mass deportation, cash-economy sectors, or longer-run adjustment. This was an external-validity weak link: design margin -> claim family. [INFERENCE]
+
+### Fix
+
+Replaced the broad verdict with the narrower claim that large Borjas-style native wage gains from E-Verify-style labor-supply contraction are rejected at conventional significance levels, and added a synthesis revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The causal synthesis is now consistent across table, ladder block, and verdict paragraph: strong against high-end Borjas magnitudes in the observed E-Verify margin, not a global labor-substitution verdict. [INFERENCE]
+
+---
+
+## 2026-06-16 — Mexico +$46k all-in row changed from falsified to unsupported
+
+### Issue
+
+`research/immigration-mexico-npv-population-synthesis-2026-06-15.md` labeled the hypothesis `+$46k = immigrant pays for themselves all-in` as **Falsified** because school, admin, courts, and shelter were not netted into the warehouse layer. [DATA]
+
+### Why it was wrong
+
+Missing ledgers block the all-in inference, but they do not by themselves prove the all-in sign is negative or that the immigrant fails to pay for themselves after all offsets are modeled. This is an inference-validity problem, not a falsified empirical proposition. The correct claim is narrower: `+$46k` is not a valid all-in export from the synthetic NAS age-25 benchmark. [INFERENCE]
+
+### Fix
+
+Changed the row to `Unsupported / not a valid export — school, admin, courts, shelter not netted` and added a memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The memo still blocks scalar laundering of the `+$46k` benchmark into an all-in fiscal verdict, but it no longer overclaims that the full all-in sign has been falsified. [INFERENCE]
