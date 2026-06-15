@@ -180,3 +180,51 @@ Comparable school-layer row from `v_three_layer_annual` remains about `$771/adul
 The useful conclusion is not that local per-pupil costs are small. The corrected conclusion is narrower: after bridging to the current full-stock adult denominator, the built Mexico school layer is smaller than the narrow federal proxy on an annual basis, leaving a crude `+$748/adult/yr` federal-minus-school row. [INFERENCE]
 
 This does not settle marginal school cost, descendant attribution, legal-status/cohort incidence, or receiver-city episodic costs. [INFERENCE]
+
+---
+
+## 2026-06-16 — Pre-rebuild sweep rows marked superseded
+
+### Issue
+
+Several still-indexed June 15 memos carried first-pass sweep rows after the underlying tensor had changed:
+
+- `immigration-europe-caucasian-fiscal-findings-2026-06-15.md` reported Mexico-origin lifetime NPV as `−$79k` and US foreign-born stock as `−$71k`, from the older `<HS`/HS-only NAS seed.
+- `immigration-sweep-cycles-13-22-2026-06-15.md` still reported Mexico crude annual `federal − school` as `−$13.5k/adult` and "Mexico ~4x worse than NH white US-born", from the scenario-subset school denominator.
+- `immigration-lifetime-unified-theory-2026-06-15.md` had a compressed thesis line implying Mexico's lifetime layer was simply negative.
+
+### Evidence Checked
+
+Current `v_three_layer_annual` rows:
+
+| population | federal/adult | school/adult | crude net/adult |
+|------------|--------------:|-------------:|----------------:|
+| Mexico-origin | $1,519.28 | $771.29 | $747.99 |
+| MX + N. Triangle | $1,519.02 | $1,091.46 | $427.55 |
+| EU27-origin | $4,694.65 | $63.71 | $4,657.82 |
+| NH white US-born | $2,746.33 | $6,023.53 | −$3,277.20 |
+
+Current `v_country_fiscal_rollup` lifetime rows:
+
+| population | layer | per adult |
+|------------|-------|----------:|
+| FB `<HS` | synthetic age-25 NPV benchmark | −$109,000 |
+| Mexico-origin | synthetic age-25 NPV benchmark | $45,631.19 |
+| US foreign-born stock | synthetic age-25 NPV benchmark | $212,535.19 |
+
+### Fixes Made
+
+1. Updated `immigration-europe-caucasian-fiscal-findings-2026-06-15.md`:
+   - Replaced stale negative Mexico and US-FB lifetime rows with current synthetic age-25 benchmark rows.
+   - Replaced the old "college+ missing" warehouse gap with the current caveat: benchmark is age-25 composition, not current-stock lifetime truth.
+
+2. Updated `immigration-sweep-cycles-13-22-2026-06-15.md`:
+   - Added a superseded/corrected status note.
+   - Replaced stale cycle tables and conclusions with current `v_three_layer_annual` values.
+
+3. Updated `immigration-lifetime-unified-theory-2026-06-15.md`:
+   - Clarified that the coexistence claim is federal annual positive, `<HS` lifetime negative, education-mix age-25 benchmark positive, and local episodic negative.
+
+### Current Conclusion
+
+The old negative Mexico rows were not independent evidence. They were stale artifacts of two fixed bugs: the scenario-subset school denominator and the incomplete NAS education-cell seed. [INFERENCE]
