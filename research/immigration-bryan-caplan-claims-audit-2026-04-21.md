@@ -30,7 +30,7 @@ Caplan is strongest where the current repo already agrees with the classic open-
 2. the U.S. crime objection to first-generation and unauthorized immigrants is weaker than restrictionists usually claim [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md]
 3. broad `employment-collapse` rhetoric is too strong [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
 
-Caplan is weakest where recent surge and threshold evidence makes local incidence impossible to wave away:
+Caplan is weakest where recent surge and threshold evidence make local incidence unsafe to wave away:
 
 1. the claim that immigration restrictions are not needed to protect `taxpayers` is too broad once the `federal` and `state/local` ledgers are separated [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf]
 2. the claim that immigration restrictions are not needed to protect `workers` is too broad once housing/permit constraints and low-education wage exposure are added [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf]
@@ -53,7 +53,7 @@ The clean verdict is:
 | `Immigration restrictions are not necessary to protect American taxpayers.` | `Fails as a blanket claim` | Federal gains can coexist with state/local costs in education, shelter, and related services. [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] |
 | `Immigrants commit much less crime than natives.` | `Mostly survives for the current U.S. first-generation / unauthorized case` | The U.S. evidence is strong in that direction, though some headline gaps are overstated by compositional comparisons and the international generalization is weaker. [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md] |
 | `Immigration restrictions are not necessary to protect American culture.` | `Partly survives, but culture is not the main modern bottleneck` | Apocalyptic culture-collapse arguments are weak; assimilation is real. But the current U.S. stress channels run more through housing, services, and politics than through a clean culture mechanism. [SOURCE: https://www.econlib.org/archives/2015/12/krikorian_again.html] [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] |
-| `Political externalities are limited because immigrants vote less, accept the status quo, and may restrain redistribution.` | `Partly survives in a narrow median-voter sense, fails as a full political-incidence answer` | National voting mechanics are only one channel; backlash, local overload, and legitimacy effects are real. [SOURCE: https://www.econlib.org/archives/2010/04/the_social_and.html] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md] |
+| `Political externalities are limited because immigrants vote less, accept the status quo, and may restrain redistribution.` | `Partly survives in a narrow median-voter sense, fails as a full political-incidence answer` | National voting mechanics are only one channel; local overload, legitimacy effects, and possible citizen political response remain live. [SOURCE: https://www.econlib.org/archives/2010/04/the_social_and.html] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md] |
 | `Cheaper and more humane alternatives exist for each complaint.` | `Partly survives as institutional design logic, not as practical closure` | Keyhole solutions mitigate some objections, but do not dissolve housing, school, shelter, and credibility problems. [SOURCE: https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2012/1/cj32n1-2.pdf] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] |
 
 ## Claim 1: `There is a moral presumption in favor of free migration`
@@ -167,7 +167,7 @@ What survives:
 
 What remains open:
 
-1. Trust, solidarity, and backlash are not zero merely because assimilation exists. [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md]
+1. Trust, solidarity, and political-response channels are not zero merely because assimilation exists. [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md]
 2. Caplan's welfare-state and trust optimism is partly a political-economy claim, not just a culture claim. [SOURCE: https://www.econlib.org/archives/2011/06/immigration_and_2.html] [SOURCE: https://www.econlib.org/does-immigration-shrink-the-welfare-state/]
 
 Verdict:
@@ -191,8 +191,8 @@ What survives:
 
 What fails:
 
-1. The relevant political channel is not only immigrant voting. It is also native backlash, local overload, policy churn, and perceived unfairness. [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md]
-2. The repo's threshold and county-outcome work shows more backlash in high-immigration constrained places, especially where permit capacity is weak and rent burden high. [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
+1. The relevant political channel is not only immigrant voting. It also includes possible citizen response, local overload, policy churn, and perceived unfairness. [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md]
+2. The repo's threshold and county-outcome analyses show stronger political-response signals in high-immigration constrained places, especially where permit capacity is weak and rent burden high. The mechanism is not yet cleanly separated into persuasion, turnout, sorting, Hispanic realignment, or busing-target endogeneity. [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
 3. The surge memo already treats the `2021–2024` period as a different regime from the older low-intensity local-labor literature. [SOURCE: research/immigration-causal-surge-2021-2024.md]
 
 Verdict:
@@ -240,13 +240,13 @@ The cleanest way to see where Caplan is right and where he is too optimistic is 
 -> `inflow volume and composition`
 -> `housing demand`
 -> `rent burden / crowding`
--> `native sorting + backlash`
+-> `native sorting / political response`
 
 `migration liberalization`
 -> `inflow volume and composition`
 -> `school / shelter / service load`
 -> `state-local fiscal costs`
--> `backlash / legitimacy costs`
+-> `political response / legitimacy costs`
 
 `migration liberalization`
 -> `inflow volume and composition`
@@ -260,7 +260,7 @@ The cleanest way to see where Caplan is right and where he is too optimistic is 
 
 ### Main moderators
 
-The current repo says the decisive moderators are:
+The current repo says the current load-bearing moderators are:
 
 1. `permit throughput / housing-supply response` [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
 2. `baseline rent burden / affordability` [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
@@ -282,10 +282,10 @@ These are real and durable parts of the case. [SOURCE: research/immigration-open
 
 Caplan is weakest where omitted or downweighted right-side edges become first-order:
 
-1. `housing demand -> rent burden -> native sorting/backlash`
+1. `housing demand -> rent burden -> native sorting / political response`
 2. `school / shelter / service load -> state-local costs`
 3. `capacity-constrained labor absorption -> slower wage growth`
-4. `native backlash and legitimacy effects`, which do not require immigrant voting to matter
+4. `citizen political response and legitimacy effects`, which do not require immigrant voting to matter
 
 That is the core causal disagreement between Caplan's optimistic package and the repo's current evidence. [INFERENCE]
 
@@ -304,7 +304,7 @@ The best current summary is:
 1. `Caplan wins on migrant welfare and global gains.`
 2. `Caplan wins on crime more than on almost any other empirical lane.`
 3. `Caplan partly wins on labor, but only after dropping collapse rhetoric and admitting wage-growth pressure in constrained places.`
-4. `Caplan loses as a blanket taxpayer and political-incidence analyst because recent surge evidence makes local capacity, housing, shelter, and backlash impossible to price at zero.`
+4. `Caplan loses as a blanket taxpayer and political-incidence analyst because recent surge evidence means local capacity, housing, shelter, and political-response channels cannot be assumed zero.`
 
 So the final score is:
 

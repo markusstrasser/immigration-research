@@ -580,3 +580,23 @@ Replaced the embedded ladder sentence with the narrower claim that receiver-load
 ### Updated conclusion
 
 The surge memo is now internally consistent on receiver-cost scope: receiver-city costs are strong gross-load evidence, not a completed net-burden or national-collapse estimate. [INFERENCE]
+
+---
+
+## 2026-06-16 — Caplan audit political-incidence mechanism bounded
+
+### Issue
+
+`research/immigration-bryan-caplan-claims-audit-2026-04-21.md` still treated "backlash" as a settled mechanism in several verdict and DAG lines. Later receiver-city work supports a political-response association, but explicitly leaves mechanism unresolved: persuasion, turnout, sorting, Hispanic realignment, and busing-target endogeneity are not cleanly separated. [DATA]
+
+### Why it was wrong
+
+Caplan's narrow median-voter argument still fails as a full political-incidence answer because immigrant voting is not the only channel. But the repo should not convert a bounded receiver-city correlation into a completed backlash mechanism. [INFERENCE]
+
+### Fix
+
+Replaced the stale backlash/decisive/impossible phrasing with bounded political-response language. The Caplan audit now says local overload, legitimacy effects, and possible citizen response remain live, while mechanism identification remains unresolved. [SOURCE: memo]
+
+### Updated conclusion
+
+The Caplan critique survives, but on a narrower basis: his political-externality answer is incomplete because local political-response channels cannot be assumed zero, not because the repo has cleanly proven a backlash mechanism. [INFERENCE]
