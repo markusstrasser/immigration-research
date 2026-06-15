@@ -121,7 +121,7 @@ Per-migrant per-day cost: ~$190 NYC, ~$200 Denver, ~$140 Chicago. Total 5-year c
 [BIAS CAVEAT] The instrument (LLM) has known training-time priors on politically charged interpretation. The numbers above are administrative; interpretations below are scenarios.
 
 **Most-defensible reading:**
-The 2024 election shift was real and partially related to surge exposure. Counties that received bused migrants (NYC, Chicago, Boston, Denver) plus border counties handling the surge directly (TX RGV, El Paso, Miami-Dade) swung 4-11pp more GOP than comparable counties. After controlling for state effects and population size, receiver-city status alone is associated with +2.4pp GOP shift. The fb_share coefficient (positive) and recent_fb_inflow coefficient (negative) suggest different mechanisms: established immigrant communities (Hispanic citizens in TX/FL/NY) moved toward Trump, while areas absorbing CURRENT inflow may have voted more Democratic on net (could reflect new immigrants / sympathetic natives).
+The 2024 election shift was real and correlated with receiver-city / border-surge exposure. Counties that received bused migrants (NYC, Chicago, Boston, Denver) plus border counties handling the surge directly (TX RGV, El Paso, Miami-Dade) swung 4-11pp more GOP than comparable counties. After controlling for state effects and population size, receiver-city status alone is associated with +2.4pp GOP shift. The fb_share coefficient (positive) and recent_fb_inflow coefficient (negative) suggest different mechanisms: established immigrant communities (Hispanic citizens in TX/FL/NY) moved toward Trump, while areas absorbing CURRENT inflow may have voted more Democratic on net (could reflect new citizens, sympathetic natives, or unresolved compositional confounding).
 
 **The "receiver capacity stress" reading has empirical support:**
 NYC went from $1.4B→$3.7B on migrant care in one year. Cook County (Chicago) cost $228M peak. MA hit shelter cap. Denver cut services to fund migrant care. These are observable, quantifiable gross system loads concentrated in specific places — not net burden estimates — and those places swung substantially toward Trump in 2024.
@@ -133,7 +133,7 @@ Both effects exist. The pre-registered Hispanic-share kill-test left the receive
 - Hispanic Americans (citizens) shifted nationally toward Trump for many reasons unrelated to the surge (inflation, abortion stance, masculinity politics, religion, foreign policy, anti-incumbency)
 - DC went OPPOSITE direction (-0.3pp) — federal employee composition / political bubble, but also a control showing that high-FB-share doesn't automatically produce GOP shift
 - The Texas RGV +10pp swings predate the surge in some ways (RGV trended GOP under Trump in 2020 already)
-- Recent immigrants don't vote (non-citizens), so "GOP shift in receiver cities" reflects natives' response, not immigrants' political behavior
+- Recent noncitizen migrants don't vote, so "GOP shift in receiver cities" reflects the citizen electorate's response or composition, not direct voting by those noncitizen arrivals
 - Inflation 2022-2024 hit working-class urban voters disproportionately
 
 ## What this updates in the prior cycles' findings
