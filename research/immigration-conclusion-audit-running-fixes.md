@@ -640,3 +640,23 @@ Changed the ladder entry and surge memo to lead with the first-order `~$1.45T` /
 ### Updated conclusion
 
 The mass-deportation output-shock claim remains medium-confidence calibration evidence, but the headline is now the first-order estimate; multiplier amplification is not presented as coequal estimate truth. [INFERENCE]
+
+---
+
+## 2026-06-16 — ICE docket denominator error removed from crime memo
+
+### Issue
+
+`research/immigration-crime-rates-unauthorized-vs-native-born.md` correctly warned that the ICE ERO criminal-history counts are docket stock figures rather than rates, but then said dividing by the `~11M` unauthorized immigrant population and an accumulation period yields rates far below native-born equivalents. It also described the source as a non-detained-docket table when the ICE letter reports the **national docket** split into detained and non-detained columns. The source table is for **noncitizens on ICE's national docket**, not an unauthorized-only numerator. [SOURCE: ICE ERO letter]
+
+### Why it was wrong
+
+That denominator move silently mixes universes: all noncitizens on an ICE docket in the numerator, unauthorized immigrant stock in the denominator, and an unspecified accumulation period for person-time. It turns a valid stock-vs-rate warning into a new rate-base error. [INFERENCE]
+
+### Fix
+
+Replaced the naive division claim with a refusal to compute a native comparison from those counts, and relabeled the table as national-docket rather than non-detained-docket. The memo now says the ICE counts do not by themselves provide a per-capita native comparison or overturn rate-based studies. [SOURCE: memo]
+
+### Updated conclusion
+
+The crime memo's bottom-line directional claim is unchanged, but its ICE-docket section no longer uses an invalid unauthorized-stock denominator. [INFERENCE]

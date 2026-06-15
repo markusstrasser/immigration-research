@@ -117,11 +117,11 @@ The study has been criticized for a **fundamental data classification error:**
 
 ## The ICE Docket Numbers (frequently cited in political debate)
 
-In September 2024, ICE ERO data released to Congress showed large absolute numbers of noncitizens with criminal records on the non-detained docket, including ~15,000 with homicide convictions or pending charges and ~20,000 with sexual assault convictions or charges. [SOURCE: https://homeland.house.gov/wp-content/uploads/2024/09/24-01143-ICEs-Signed-Response-to-Representative-Tony-Gonzales.pdf, verified via Exa]
+In September 2024, ICE ERO data released to Congress showed large absolute numbers of noncitizens with criminal records on ICE's national docket, split into detained and non-detained columns. The table totals include ~15,000 with homicide convictions or pending charges and ~20,000 with sexual assault convictions or charges. [SOURCE: https://homeland.house.gov/wp-content/uploads/2024/09/24-01143-ICEs-Signed-Response-to-Representative-Tony-Gonzales.pdf, verified via Exa]
 
 **Why these numbers do not contradict the per-capita findings:**
 
-1. **Stock vs. rate:** These are cumulative counts accumulated over **decades** of entries on the non-detained docket, not annual crime rates. Dividing by the ~11 million unauthorized immigrant population and the accumulation period yields per-capita rates far below native-born equivalents. [INFERENCE]
+1. **Stock vs. rate:** These are cumulative docket counts, not annual crime rates. They also describe **noncitizens on ICE's national docket**, not an unauthorized-only population. Dividing this numerator by the ~11 million unauthorized immigrant stock is therefore a denominator error; the valid conclusion is narrower: the ICE counts do not by themselves provide a per-capita native comparison or overturn the rate-based studies above. [SOURCE: same document] [INFERENCE]
 
 2. **"Convictions or pending charges":** The numbers conflate convictions with pending (unresolved) charges, inflating the apparent count. [SOURCE: same document]
 
@@ -205,7 +205,7 @@ The US finding (immigrants commit less crime) does **not** generalize internatio
 | 4 | Meta-analytic average effect of immigration on crime: r = -0.031 (negative, very weak) | 51 studies, 543 effect sizes | HIGH | Ousey & Kubrin 2018 | VERIFIED |
 | 5 | Longitudinal studies show stronger negative effect (r = -0.147) than cross-sectional (r = 0.000) | Moderator analysis within meta-analysis | HIGH | Ousey & Kubrin 2018 | VERIFIED |
 | 6 | Lott's Arizona study claiming higher rates has a fundamental data classification flaw | Multiple independent critiques (Cato, WaPo, Latino Decisions) | HIGH | Nowrasteh 2022; WaPo 2018 | VERIFIED |
-| 7 | ICE non-detained docket shows ~15K noncitizens with homicide convictions/charges | Official ICE data released to Congress | HIGH (as administrative count) | ICE ERO letter, Sept 2024 | VERIFIED — but measures stock, not rate |
+| 7 | ICE national docket shows ~15K noncitizens with homicide convictions/charges | Official ICE data released to Congress | HIGH (as administrative count) | ICE ERO letter, Sept 2024 | VERIFIED — but measures stock, not rate |
 | 8 | European evidence is more mixed; some immigrant groups show higher crime | Scandinavian studies | MODERATE | Skardhamar et al. 2014 | VERIFIED (direction), not fully analyzed |
 | 9 | Second-generation immigrants have higher crime rates than first generation, converging toward native-born levels | Multiple studies | HIGH | Ousey & Kubrin 2018; Rumbaut 2008 | VERIFIED |
 | 10 | Reporting bias (fear of deportation suppressing police contact) could partially explain lower observed rates | Theoretical + indirect evidence | MODERATE | Gunadi 2019; general literature | INFERENCE |
