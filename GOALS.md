@@ -1,7 +1,7 @@
 # Research — Goals
 
 **Owner:** human (agent may propose changes, must not modify without explicit approval)
-**Last revised:** 2026-03-06
+**Last revised:** 2026-06-15
 
 ---
 
@@ -36,6 +36,8 @@ No time-based deadlines. Done when the evidence is solid enough to publish or wh
 
 **Implication for agent behavior:**
 - Maximize autonomous work. Download datasets, run analyses, write memos without waiting for human input.
+- **Default to executing the next obvious step.** "Probe-first" and "offer-mode" are not licenses to defer; when directed, build. (Mined from session steers 2026-06-15 — the agent's most common miss is over-caution, the inverse of this.)
+- **Ship only durable, root-cause, high-leverage changes.** Reject band-aids, nagware, and marginal churn — especially at session close.
 - When human action is required (API key, manual download, restricted-data application), surface it as an explicit to-do — don't block silently.
 - API/compute costs are shielded by subscriptions. Use available MCP tools and multi-model review freely.
 - The intel project has dataset utilities (Chromium scraping, download pipelines) that may be portable for data acquisition.
