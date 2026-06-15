@@ -960,3 +960,23 @@ Changed the proposed ladder label to "strong against large Borjas-style gains in
 ### Updated conclusion
 
 The source memo's short-form update now matches the main evidence statement: strong against high-end Borjas magnitudes for this policy margin, not a universal rejection. [INFERENCE]
+
+---
+
+## 2026-06-16 — Causal synthesis inherited stale global E-Verify rejection label
+
+### Issue
+
+`research/immigration-causal-synthesis-2026-04-18.md` still embedded a suggested confidence-ladder addition rating the E-Verify wage result as `STRONG REJECTION`. That block is reusable guidance, so it would keep propagating the pre-boundary label even after the source E-Verify memo was narrowed. [DATA]
+
+### Why it was wrong
+
+The synthesis itself already says surge and mass-shock regimes remain open. The E-Verify design excludes large Borjas-style native wage gains for observed mandate variation; it does not reject every labor-substitution claim or every counterfactual enforcement shock. A ladder suggestion cannot be broader than the identification margin that produced it. [INFERENCE]
+
+### Fix
+
+Replaced the embedded ladder rating with "strong against large Borjas-style gains in the E-Verify margin," changed the reason to name the observed mandate design, and narrowed the summary table row from "Borjas wage prediction rejected" to "large Borjas-style native wage gains" in that policy variation. Added a synthesis revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The April causal synthesis is now aligned with the later bounded source memo: strong Card-side evidence for observed E-Verify policy variation, not a global E-Verify-based rejection of Borjas-style claims. [INFERENCE]

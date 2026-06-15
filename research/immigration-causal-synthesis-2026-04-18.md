@@ -11,7 +11,7 @@
 | Repo claim (pre-cycle) | New evidence | Updated verdict |
 |------------------------|--------------|-----------------|
 | Rent exposure ≠ welfare loss (adversarial review §2) | Immigrants concentrate in inelastic MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40); top 10 inelastic MSAs include all the major immigrant gateways | **Rent exposure is a stronger renter-incidence warning in inelastic destination markets** because supply response is weaker. Update: "rent exposure" should be tagged elasticity-conditional — higher incidence risk in inelastic destinations, lower in elastic. |
-| Clark "agree" economists are scope-limited but not wrong on their narrow channel | E-Verify mandates produced no positive wage effect on native low-skill workers in any of 12 specifications | **Clark "agree" economists were also right on the wage channel** (the actual narrow channel they mostly answered). Borjas wage prediction rejected at α=0.05 for U.S. policy variation 2008-2023. |
+| Clark "agree" economists are scope-limited but not wrong on their narrow channel | E-Verify mandates produced no positive wage effect on native low-skill workers in any of 12 specifications | **Clark "agree" economists were also right on the wage channel** (the actual narrow channel they mostly answered). Large Borjas-style native wage gains are rejected at α=0.05 for the observed E-Verify policy variation. |
 | "Borjas vs Card" presented as live debate | Direct multi-state TWFE with 21-year panel finds Card-side pattern: supply contracts via E-Verify but native wages do not rise | **For observed marginal enforcement variation, the Card-side pattern wins.** Borjas's restricted-Mariel result does not generalize to the broader staggered enforcement shocks tested here; this does not settle surge or mass-shock regimes. |
 | Federal-positive / local-negative split is plausible but unquantified | This cycle did not produce federal-side estimates (federal microsim still requires SIPP fix) | **Unchanged.** Federal side remains the weakest part of the repo. |
 | Local-burden story is real but heterogeneous | Saiz merge sharpens the housing component; QWI confirms wage channel is small | **Strengthened on the housing side, not on schooling.** School-burden findings are unchanged by this cycle. |
@@ -75,9 +75,10 @@ Add to `immigration-confidence-ladder.md`:
 
 ```
 17. `Borjas wage prediction for U.S. native low-skill workers from E-Verify`
-Rating: STRONG REJECTION
+Rating: strong against large Borjas-style gains in the E-Verify margin
 Reason: TWFE on QWI 2003-2023 with 9 treated states finds +0.5% (n.s.) on E1 in
-exposed industries. 95% CI excludes Borjas magnitudes. Replicates Card direction.
+exposed industries. 95% CI excludes large Borjas magnitudes in this observed
+mandate design. Surge and mass-shock regimes remain outside this result.
 [SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
 
 18. `Immigrants concentrate in inelastic-supply MSAs`
@@ -129,6 +130,7 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 | Date | Change |
 |------|--------|
 | 2026-06-16 | Bounded the political-economy reading: wage evidence alone weakens the native-low-skill wage story, but school/rent exposure is only a plausible incidence channel, not identified voter motivation or policy justification. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Narrowed the embedded E-Verify confidence-ladder suggestion from global `STRONG REJECTION` to strong evidence against large Borjas-style gains in the E-Verify margin. See `immigration-conclusion-audit-running-fixes.md`. |
 
 <!-- knowledge-index
 generated: 2026-04-19T03:45:13Z
