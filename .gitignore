@@ -16,4 +16,16 @@ sources/*/data/
 .DS_Store
 .env.local
 .project-upgrade/
-/sources
+# immigration-fiscal: track rebuild tooling; ignore staged bytes
+sources/immigration-fiscal/data/**
+!sources/immigration-fiscal/data/derived/
+!sources/immigration-fiscal/data/derived/**
+sources/immigration-fiscal/data/derived/**/*.duckdb
+sources/immigration-fiscal/data/derived/_tmp/
+sources/immigration-fiscal/data/derived/stage2/**
+sources/immigration-fiscal/data/derived/stage3_proto/**
+sources/immigration-fiscal/data/derived/stage4/**
+sources/immigration-fiscal/data/derived/origin/**
+sources/immigration-fiscal/setup.log
+warehouse/*.duckdb
+
