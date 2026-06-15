@@ -800,3 +800,23 @@ Added a scope note below the claims table: `HIGH` and `VERIFIED` mean the report
 ### Updated conclusion
 
 The capacity-frontier evidence remains useful as a descriptive stress surface. Its table is now explicitly scoped so reproducibility of the model output is not confused with causal validity. [INFERENCE]
+
+---
+
+## 2026-06-16 — E-Verify Card-vs-Borjas source memo bounded to design margin
+
+### Issue
+
+`research/immigration-causal-everify-card-vs-borjas.md` correctly narrowed several later synthesis claims, but the source memo still said "the data side with Card, not Borjas" and described the result as "a Card-style world." It also said Friedman's Card-style premise was "confirmed" and Camarota's native-wage argument "doesn't pass this test" without enough scope language. [DATA]
+
+### Why it was wrong
+
+The E-Verify TWFE design can reject large Borjas-style native wage gains for the observed enforcement margin. It cannot settle all low-skill immigration wage effects, surge regimes, mass deportation, open borders, or non-wage channels. The commentator-update language needed to inherit that same external-validity bound. [INFERENCE]
+
+### Fix
+
+Replaced the global "data side with Card" phrasing with "in this E-Verify design, the wage results are closer to the Card-style null than to large Borjas-style native wage gains." Reframed "Card-style world" as "for this enforcement margin" and bounded the Friedman/Camarota update lines to the wage-channel test. Added a memo revision note. [SOURCE: memo]
+
+### Updated conclusion
+
+The E-Verify result remains strong against large native wage gains from marginal enforcement. It no longer reads as a global settlement of Card vs Borjas, open borders, or all native labor-market channels. [INFERENCE]
