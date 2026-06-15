@@ -680,3 +680,23 @@ Changed the mass-deportation rows and ladder excerpt to lead with the first-orde
 ### Updated conclusion
 
 The paradigm synthesis still flags large-output and capacity risks, but now treats both as calibration outputs with sensitivity labels rather than measured all-scenario thresholds. [INFERENCE]
+
+---
+
+## 2026-06-16 — Capacity-frontier threshold language made descriptive
+
+### Issue
+
+`research/immigration-capacity-frontier-2026-04-21.md` still described the threshold as "real," called `flow / local build capacity` the "right object," and closed by saying "`flow + capacity` is where the new causal traction is coming from." The memo's own design is a county-panel/model-comparison surface, not a clean causal identification design. [DATA]
+
+### Why it was wrong
+
+The threshold grid and model comparisons show recurring descriptive patterns, but they do not by themselves separate inflow effects from housing response, destination selection, baseline affordability, policy targeting, or omitted local shocks. Calling that "causal traction" overstates the design. [INFERENCE]
+
+### Fix
+
+Replaced "real threshold" and "causal traction" phrasing with "recurring/observed/descriptive threshold pattern" and named the need for stronger counterfactual design before causal interpretation. [SOURCE: memo]
+
+### Updated conclusion
+
+The capacity-frontier memo still says load/capacity is the better county stress surface, but it no longer treats the threshold-grid pattern as identified causal truth. [INFERENCE]

@@ -8,7 +8,7 @@
 
 1. The repo's strongest current predictor for `political response` remains `immigrant stock share`, but `flow-to-build-capacity` still adds residual signal once stock and flow are both included. [DATA]
 2. For `wage growth`, `employment growth`, and `native net migration`, the cleaner signal is not stock share. It is `recent immigrant flow relative to local permit capacity`. [DATA]
-3. The threshold is real, but it is not best described as `foreign-born share crosses X`. It looks more like a `high-flow tail x weak build response` problem. The interaction is clearest around the `70th-80th` flow percentiles with `bottom-half or bottom-quartile` permit capacity. [DATA]
+3. A recurring threshold pattern is visible, but it is not best described as `foreign-born share crosses X`. It looks more like a `high-flow tail x weak build response` pattern. The interaction is clearest around the `70th-80th` flow percentiles with `bottom-half or bottom-quartile` permit capacity. [DATA]
 4. This tightens the current repo view:
    - `politics`: stock + load both matter
    - `wages`: load/capacity matters more than stock
@@ -45,7 +45,7 @@ This is not a full housing-market model. It is a tractable public-data proxy for
 
 `flow / local build capacity`
 
-That is the right object if the real threshold story is about absorption rather than stock. [INFERENCE]
+That is the more relevant descriptive object if the threshold story is about absorption rather than stock. [INFERENCE]
 
 ## Claims table
 
@@ -97,7 +97,7 @@ But the combined model matters too:
 So the stronger claim is:
 
 1. `stock` drives the broad political map
-2. `load / capacity` still adds real residual strain in that map
+2. `load / capacity` still adds residual strain in that map
 
 ### 2) Wages: load-capacity is cleaner than stock
 
@@ -186,7 +186,7 @@ Employment appears in some of the same bands:
 
 The `q90` extreme-flow interactions are weaker and less stable for politics and wages. [DATA]
 
-That suggests the real threshold is **not**:
+That suggests the observed threshold pattern is **not**:
 
 1. `only the absolute top-decile explodes`
 
@@ -194,7 +194,7 @@ It looks more like:
 
 1. `once a county enters the broad high-flow tail and also has weak building response, strain becomes visible`
 
-That is a better and more realistic threshold story. [INFERENCE]
+That is a better descriptive threshold story. Causal interpretation still needs a design that separates inflow, housing response, and destination selection. [INFERENCE]
 
 ## Decile read: how large is the gap?
 
@@ -278,4 +278,4 @@ The better formula is:
 
 `incidence = stock + flow + capacity + composition + regime`
 
-and in the current public-data stack, `flow + capacity` is where the new causal traction is coming from. [INFERENCE]
+and in the current public-data stack, `flow + capacity` is where the new descriptive traction is coming from. Causal identification still needs stronger counterfactual design. [INFERENCE]
