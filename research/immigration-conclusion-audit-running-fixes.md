@@ -328,3 +328,31 @@ Both were too broad. Later surge work bounds the wage result to observed margina
 ### Current Conclusion
 
 The paradigm synthesis now carries the same scope discipline as the later claim ledger: marginal enforcement wage evidence is not surge evidence, and county newcomer comparisons are descriptive domestic-vs-abroad denominator corrections, not direct burden estimates. [INFERENCE]
+
+---
+
+## 2026-06-16 — Surge memo removes stale heading frames
+
+### Issue
+
+`research/immigration-causal-surge-2021-2024.md` qualified two stale prior-cycle claims in body text, but its section headings still carried the old frames:
+
+1. "Card wins decisively for U.S. policy variation."
+2. "`33x` native to immigrant newcomer ratio at median county."
+
+Those headings were doing rhetorical work against the corrected evidence. The first overstated scope; the second mixed an outdated ratio with a native-identity label unsupported by the IRS `Total Migration-US` measure. [DATA]
+
+### Evidence Checked
+
+- `research/immigration-causal-surge-2021-2024.md`: surge wage estimates remain unmeasured; the surge and mass-deportation regimes sit outside observed E-Verify/sanctuary variation. [SOURCE: memo]
+- `research/immigration-causal-internal-vs-immigrant-newcomers.md`: current median comparison is `21.7x` ratio of medians and `20.5x` median county-level ratio; IRS `Total Migration-US` is not native-only. [SOURCE: memo]
+
+### Fixes Made
+
+1. Replaced the Card heading with "Card-side pattern for marginal pre-surge policy variation — surge caveat."
+2. Replaced the `33x` native/immigrant heading with a domestic-vs-abroad median ratio caveat.
+3. Weakened the receiver-node paragraph to an estimand caveat: the median county comparison does not measure concentrated receiver-city shelter, legal, language, or school burdens.
+
+### Current Conclusion
+
+The surge memo now says what the evidence can support: marginal pre-surge wage evidence stays bounded, and median domestic-vs-abroad flow comparisons cannot dismiss receiver-node burden channels. [INFERENCE]
