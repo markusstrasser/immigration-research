@@ -27,7 +27,7 @@ This is a claim audit, not a general evaluation of Caplan as a thinker.
 Caplan is strongest where the current repo already agrees with the classic open-borders literature:
 
 1. the `migrant-welfare` and `global-output` case for much freer movement is real [SOURCE: https://www.aeaweb.org/articles?id=10.1257/jep.25.3.83] [SOURCE: research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md]
-2. the U.S. crime objection to first-generation and unauthorized immigrants is weaker than restrictionists usually claim [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md]
+2. the U.S. observed-criminal-justice-rate objection to first-generation and unauthorized immigrants is weaker than restrictionists usually claim [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md]
 3. broad `employment-collapse` rhetoric is too strong [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
 
 Caplan is weakest where recent surge and threshold evidence make local incidence unsafe to wave away:
@@ -51,7 +51,7 @@ The clean verdict is:
 | `The economic case for much freer migration is extremely strong.` | `Mostly survives in direction, not in strongest magnitude` | Large global gains survive; realistic `double world GDP` style readings do not. [SOURCE: research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md] |
 | `Immigration restrictions are not necessary to protect American workers.` | `Too broad` | Broad job-loss stories are weak, but constrained counties show slower wage growth and official projections show slight low-education wage-growth pressure. [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf] |
 | `Immigration restrictions are not necessary to protect American taxpayers.` | `Fails as a blanket claim` | Federal gains can coexist with state/local costs in education, shelter, and related services. [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] |
-| `Immigrants commit much less crime than natives.` | `Mostly survives for the current U.S. first-generation / unauthorized case` | The U.S. evidence is strong in that direction, though some headline gaps are overstated by compositional comparisons and the international generalization is weaker. [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md] |
+| `Immigrants commit much less crime than natives.` | `Mostly survives for observed U.S. first-generation / unauthorized justice-system rates` | The U.S. evidence is strong for lower observed arrest, conviction, and incarceration rates, though some headline gaps are overstated by compositional comparisons and the international generalization is weaker. True offending is less directly identified. [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md] |
 | `Immigration restrictions are not necessary to protect American culture.` | `Partly survives, but culture is not the main modern bottleneck` | Apocalyptic culture-collapse arguments are weak; assimilation is real. But the current U.S. stress channels run more through housing, services, and politics than through a clean culture mechanism. [SOURCE: https://www.econlib.org/archives/2015/12/krikorian_again.html] [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] |
 | `Political externalities are limited because immigrants vote less, accept the status quo, and may restrain redistribution.` | `Partly survives in a narrow median-voter sense, fails as a full political-incidence answer` | National voting mechanics are only one channel; local overload, legitimacy effects, and possible citizen political response remain live. [SOURCE: https://www.econlib.org/archives/2010/04/the_social_and.html] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md] |
 | `Cheaper and more humane alternatives exist for each complaint.` | `Partly survives as institutional design logic, not as practical closure` | Keyhole solutions mitigate some objections, but do not dissolve housing, school, shelter, and credibility problems. [SOURCE: https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2012/1/cj32n1-2.pdf] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] |
@@ -143,13 +143,13 @@ Caplan has long treated the crime objection as empirically weak. On current U.S.
 
 What survives:
 
-1. The repo's crime memo finds the weight of U.S. evidence supports lower first-generation and unauthorized crime rates than native-born rates. [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md]
+1. The repo's crime memo finds the weight of U.S. evidence supports lower observed first-generation and unauthorized arrest, conviction, or incarceration rates than native-born rates. [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md]
 2. The Texas administrative-data line remains one of the strongest direct sources. [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md]
 
 Important caveats:
 
 1. Some headline gaps are overstated when comparing unauthorized immigrants to all native-born citizens rather than better-matched subgroups. [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md]
-2. This is strongest for the current U.S. first-generation / unauthorized case, not a universal all-country rule. [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md]
+2. This is strongest for observed current U.S. first-generation / unauthorized justice-system rates, not a universal all-country or true-offending rule. [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md]
 
 Verdict:
 

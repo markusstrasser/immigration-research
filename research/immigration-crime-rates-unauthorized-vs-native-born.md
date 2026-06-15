@@ -1,6 +1,6 @@
 # Crime Rates of Unauthorized Immigrants vs. Native-Born US Citizens — Research Memo
 
-**Question:** What does the empirical evidence say about crime rates of unauthorized (illegal) immigrants compared to native-born US citizens?
+**Question:** What does the empirical evidence say about observed arrest, conviction, and incarceration rates of unauthorized (illegal) immigrants compared to native-born US citizens?
 **Tier:** Deep | **Date:** 2026-03-14
 **Ground truth:** Multiple papers already in corpus (Light & Miller 2020, Gunadi 2019, Ousey & Kubrin 2018, Nowrasteh/Cato analyses). No prior synthesis memo on this specific topic existed.
 
@@ -10,7 +10,7 @@
 
 ## Bottom Line
 
-The weight of the peer-reviewed evidence consistently finds that unauthorized immigrants commit crimes at **lower rates** than native-born US citizens. This finding holds across multiple study designs, datasets, crime categories, and time periods. The one prominent study claiming the opposite (Lott 2018, Arizona) has been criticized for a fundamental data classification error by researchers across the political spectrum, including the libertarian Cato Institute.
+The weight of the evidence consistently finds that unauthorized immigrants have **lower observed arrest, conviction, or incarceration rates** than native-born US citizens in the best current U.S. datasets. That is the right measured estimand. It should not be silently upgraded to directly observed true offending, because reporting, detection, deportation, and denominator problems still matter. The one prominent study claiming the opposite (Lott 2018, Arizona) has been criticized for a fundamental data classification error by researchers across the political spectrum, including the libertarian Cato Institute.
 
 However, this evidence base has real limitations that an honest assessment must name:
 
@@ -19,7 +19,7 @@ However, this evidence base has real limitations that an honest assessment must 
 3. **Heterogeneity:** "Unauthorized immigrants" is not a monolithic group. Crime rates likely vary by country of origin, age at entry, length of residence, and local context. Aggregate comparisons obscure this variation.
 4. **The ICE docket numbers** (large absolute counts of noncitizens with criminal records) are real administrative data but measure something different from per-capita crime rates. They are stock figures accumulated over decades, not rates.
 
-**Confidence:** HIGH that the directional finding (lower rates) is robust even after race-stratified correction (see §5 below). MODERATE on the precise magnitude — the headline "2x lower" overstates the gap because it compares predominantly Hispanic unauthorized immigrants to all native-born citizens including Black Americans; the race-corrected gap is ~30% lower, not ~50% lower. LOW on whether this generalizes uniformly across all subpopulations and time periods.
+**Confidence:** HIGH that the directional finding for observed criminal-justice rates is robust even after race-stratified correction (see §5 below). MODERATE on the precise magnitude — the headline "2x lower" overstates the gap because it compares predominantly Hispanic unauthorized immigrants to all native-born citizens including Black Americans; the race-corrected gap is ~30% lower, not ~50% lower. LOW on whether this generalizes to true offending uniformly across all subpopulations and time periods.
 
 ---
 
@@ -186,7 +186,7 @@ Multiple studies find that the children of immigrants (second generation, typica
 
 ## International Context
 
-The US finding (immigrants commit less crime) does **not** generalize internationally without qualification.
+The US finding (lower observed criminal-justice rates for first-generation / unauthorized immigrants) does **not** generalize internationally without qualification.
 
 **European evidence is more mixed:**
 - Saved but not fully analyzed: Skardhamar et al. (2014) on immigrant crime in Norway and Finland finds higher crime rates among some immigrant groups. [SOURCE: S2 ID 54b2f4ed7f408d6bb823617ec9c2d7cb82e11f6e]
@@ -214,7 +214,7 @@ The US finding (immigrants commit less crime) does **not** generalize internatio
 
 ## What's Uncertain
 
-1. **Magnitude precision:** We know the direction (lower) with high confidence, but the exact ratio varies by study, crime type, time period, and geography. "2x lower" vs "50% lower" vs "33% lower" depends on the specific comparison.
+1. **Magnitude precision:** We know the direction for observed justice-system rates with high confidence, but the exact ratio varies by study, crime type, time period, and geography. "2x lower" vs "50% lower" vs "33% lower" depends on the specific comparison.
 
 2. **Causal mechanism:** Is it positive selection (migrants are unusually motivated/law-abiding), deterrence (fear of deportation), underreporting, deportation-as-censoring, or some combination? The literature has not cleanly identified the mechanism. [INFERENCE]
 
