@@ -900,3 +900,23 @@ Changed the trigger to the current `~1.8×` NH-white-US-born/Mexico-origin feder
 ### Updated conclusion
 
 The brainstorm still motivates a lifetime/country tensor, but no longer inherits the stale `~2–3×` federal-proxy premise. [INFERENCE]
+
+---
+
+## 2026-06-16 — School crude-net table made symmetric on child attribution
+
+### Issue
+
+`research/immigration-school-burden-per-adult-2026-06-15.md` warned that immigrant-headed household school costs should not be read without descendant future taxes, but the headline table also showed NH-white crude rows around `−$3,277/adult` without an equally explicit warning that those native rows are not a native fiscal-loss finding. [DATA]
+
+### Why it was wrong
+
+The `net_crude_federal_minus_school` view assigns current average K–12 costs to current adults and omits descendant future taxes, lifetime accounting, marginal pupil costs, Medicaid, non-school local services, and full federal taxes. That limitation is symmetric. Reading the NH-white negative row as "native whites are fiscally negative" would be the same layer-laundering error as reading the Mexico positive row as all-government fiscal positivity. [INFERENCE]
+
+### Fix
+
+Added a table-scope warning below the headline table and expanded the child-attribution caveat to say the native rows have the same accounting limitation. Added a memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The school layer still shows static visibility math: Mexico-origin is `+$748/adult` and NH-white US-born is `−$3,277/adult` under this crude average-cost assignment. Neither row is a welfare verdict or lifetime fiscal sign. [INFERENCE]

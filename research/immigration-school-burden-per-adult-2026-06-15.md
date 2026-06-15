@@ -46,6 +46,8 @@ Tagged **`derived_crude`** — excludes descendant future taxes, Medicaid, state
 
 [SOURCE: `warehouse/immigration_fiscal_union.duckdb` view `v_three_layer_annual`, effect_order=1, queried 2026-06-15 with DuckDB CLI]
 
+**Table-scope warning:** The negative NH-white crude rows are not evidence that native whites are fiscally negative. This view assigns current average K–12 costs to current adults without descendant future taxes or a lifetime accounting frame, just as it does for immigrant-origin households. Use it as a static visibility layer only. [INFERENCE]
+
 ---
 
 ## III. What changes vs prior memos
@@ -81,6 +83,8 @@ This does **not** make the all-government fiscal question positive. It only kill
 
 School-age children in immigrant-headed HHs are often **US-born citizens**. This layer assigns full average K–12 cost to the **household origin stock** without crediting those children's future payroll. NAS descendant column is the correct place for intergenerational offset — not this crude net. [SOURCE: `immigration-fiscal-camarota-cis-testimony-audit.md`, Orrenius/Urban Institute framing in corpus]
 
+The same accounting caveat applies symmetrically to native rows: assigning native children's current K–12 costs to current native adults without descendant future taxes is not a welfare or lifetime fiscal sign. [INFERENCE]
+
 ---
 
 ## VI. Known limitations
@@ -115,3 +119,4 @@ SELECT * FROM v_three_layer_annual ORDER BY net_crude_per_adult;
 |------|--------|
 | 2026-06-15 | Initial build — school_burden_per_adult + net_crude layers in tensor |
 | 2026-06-15 | Corrected denominator: Mexico school/adult now $771 and crude net +$748 in live `v_three_layer_annual`; prior −$13.5k used the scenario subset denominator |
+| 2026-06-16 | Added symmetric table-scope warning: negative NH-white crude rows are static school-cost assignment, not evidence that native whites are fiscally negative. See `immigration-conclusion-audit-running-fixes.md`. |
