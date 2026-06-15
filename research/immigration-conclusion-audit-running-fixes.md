@@ -135,3 +135,48 @@ Current Mexico-origin age mix:
 The `+$45,631/adult` and `+$387.7B` numbers should be read only as **current education mix × NAS age-25 cells**. They kill a crude claim that Mexico-origin adults should all be mapped to the `<HS` NAS cell, but they do **not** establish the actual lifetime NPV of the current Mexico-born stock. [INFERENCE]
 
 The corrected full-stock annual federal proxy is about `$12.9B/yr`; `$664M/yr` is a scenario-subset calculation and should not be used against whole-stock or city-episodic totals without denominator matching. [DATA]
+
+---
+
+## 2026-06-16 — Local school-flow unit comparison corrected
+
+### Issue
+
+`research/immigration-lifetime-country-approx-brainstorm-2026-06-15.md` still contained an iteration-table verdict saying **"Local per-pupil ≪ federal annual"** and calling it confirmed by `~$21k/pupil vs ~$1.5k federal/adult`. That comparison mixed units and was numerically backwards: `$21k/pupil` is not less than `$1.5k/adult`, and neither number is comparable until the school value is bridged to an adult denominator. [DATA]
+
+The same table still carried superseded Mexico and MX+Central America lifetime rows around `−$79k`/`−$80k`, which came from the older `<HS`-heavy-only approximation rather than the current ACS education-mix benchmark. [DATA]
+
+### Evidence Checked
+
+Live DuckDB rollup:
+
+```sql
+SELECT population_group, fiscal_layer, effect_order,
+       ROUND(value_per_adult_weighted,2) AS per_adult,
+       ROUND(value_total_usd/1e9,3) AS total_b,
+       ROUND(weight_adults,0) AS adults
+FROM v_country_fiscal_rollup
+WHERE fiscal_layer IN ('federal_annual','lifetime_npv')
+  AND population_group IN ('mexico_origin','fb_lt_hs','mx_ca_cluster');
+```
+
+| population | layer | per adult | total |
+|------------|-------|----------:|------:|
+| Mexico-origin | federal annual | $1,519.28/yr | $12.908B/yr |
+| Mexico-origin | synthetic age-25 NPV benchmark | $45,631.19 | $387.698B |
+| FB `<HS` | synthetic age-25 NPV benchmark | −$109,000 | −$837.868B |
+| MX + N. Triangle | synthetic age-25 NPV benchmark | $42,971.52 | $476.122B |
+
+Comparable school-layer row from `v_three_layer_annual` remains about `$771/adult/yr`, making the current crude annual federal-minus-school row `+$748/adult/yr` for Mexico-origin adults under the full-stock denominator. [DATA]
+
+### Fixes Made
+
+1. Updated `research/immigration-lifetime-country-approx-brainstorm-2026-06-15.md`:
+   - Replaced the stale Mexico and MX+Central America `~−$80k` lifetime rows with current synthetic age-25 benchmarks.
+   - Replaced the invalid `per-pupil ≪ federal annual` verdict with the comparable adult-denominator statement: `$771/adult` school burden vs `$1,519/adult` federal proxy.
+
+### Current Conclusion
+
+The useful conclusion is not that local per-pupil costs are small. The corrected conclusion is narrower: after bridging to the current full-stock adult denominator, the built Mexico school layer is smaller than the narrow federal proxy on an annual basis, leaving a crude `+$748/adult/yr` federal-minus-school row. [INFERENCE]
+
+This does not settle marginal school cost, descendant attribution, legal-status/cohort incidence, or receiver-city episodic costs. [INFERENCE]
