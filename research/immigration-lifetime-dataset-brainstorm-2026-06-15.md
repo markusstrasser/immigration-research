@@ -269,7 +269,7 @@ Wired from `acquire/setup.sh` after stage5 pass.
 ### Round 9 brainstorm (2026-06-15)
 
 **New layers (housing + high-skill + legal-status floor + refugee/mortality):**
-1. **Saiz elasticity × destination rent** — MSA housing supply inelasticity; immigrants concentrate in low-elasticity markets → rent burden is welfare loss, not price discovery [SOURCE: immigration-causal-saiz-elasticity-rent.md].
+1. **Saiz elasticity × destination rent** — MSA housing supply inelasticity; immigrants concentrate in low-elasticity markets → rent burden is an elasticity-conditional renter-incidence screen, not proof of aggregate welfare loss [SOURCE: immigration-causal-saiz-elasticity-rent.md].
 2. **Ottaviano-Peri w12497** — wage decomposition precursor to w11672/w14188; separate short/long-run band.
 3. **H-1B fiscal layer** — Bound-Khanna-Morales w23153: high-skill path distinct from Mexico `<HS` cells.
 4. **Border enforcement selection** — Lozano-Lopez IZA dp4898: enforcement shifts composition, not just stock.
