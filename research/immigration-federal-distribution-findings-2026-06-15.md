@@ -58,29 +58,29 @@ ACS 2023 person microdata, ages 25–64, weighted PINCP:
 
 | Group | $/adult/yr | Method |
 |-------|------------|--------|
-| Mexico-born | **~$1,300–1,600** | `acs_origin_household_federal_microsim_2023` by education (SIPP FB donors) |
-| NH white | **~$3,600–4,000** | ACS `WAGP` → FICA − SIPP US-born transfers by education |
-| **Ratio** | **~2.3–3.0×** | Per person |
+| Mexico-born | **~$1,519** | `acs_origin_household_federal_microsim_2023` by education (SIPP FB donors) |
+| NH white US-born | **~$2,746** | `acs_nh_white_federal_microsim_2023` (SIPP US-born donors × ACS NH white persons) |
+| **Ratio** | **~1.8×** | Per adult |
 
-Sensitivity (white payroll from ACS, transfer assumptions): **~2.8–3.1×** [INFERENCE]
+The older wage-imputation sensitivity of **~2.8–3.1×** is superseded as the anchor by the built native-white microsim. Use it only as a stale sensitivity path, not the current memo headline. [SOURCE: `immigration-country-fiscal-tensor-2026-06-15.md`]
 
 ### Aggregate (people × per-capita)
 
 | Group | Total proxy $/yr |
 |-------|-------------------|
-| Mexico-born (~8.5M) | **~$13–14B** |
-| NH white (~93.6M) | **~$340B** |
-| **Ratio** | **~25×** |
+| Mexico-born (~8.5M) | **~$12.9B** |
+| NH white US-born (~93.6M) | **~$253B** |
+| **Ratio** | **~19.6×** |
 
-**~11×** of the 25× is **population** (93.6M / 8.5M), not per-person tax rate.
+**~11×** of the ~19.6× is **population** (93.6M / 8.5M), not per-person tax rate.
 
 ### Decomposition (per-capita gap)
 
-1. **Education composition alone ~1.9×** — Mexico-born with NH-white education shares but Mexico microsim cells → ~$2,970/yr vs actual ~$1,580/yr.
-2. **Within-cell earnings / transfers ~1.2–1.5×** — NH white weighted `WAGP` ~$60k vs Mexico ~$31k (~**1.9×**); same-education gaps smaller (Section III).
+1. **Education composition alone ~1.9×** — Mexico-born with NH-white education shares but Mexico microsim cells → ~$2,970/yr vs actual ~$1,580/yr. That counterfactual is slightly above the current NH-white built proxy, so composition explains essentially all of the headline per-adult gap on this narrow ledger. [INFERENCE]
+2. **Within-cell earnings / transfers are not uniformly white-favoring** — NH white weighted `WAGP` is higher in the aggregate, but matched-education fiscal cells can flip by education bucket; do not export one within-cell multiplier. [SOURCE: `immigration-europe-caucasian-fiscal-findings-2026-06-15.md`]
 3. **Both groups positive** on this proxy — Mexico scenario table **~+$1,519/yr** federal net at origin level is consistent in sign.
 
-**Verdict:** “Whites pay multiples more” is **~2–3× per adult** on this **narrow federal cash proxy**, mostly **education mix + earnings**, not 25× per person and not school per-pupil.
+**Verdict:** “Whites pay multiples more” is **~1.8× per adult** on the current built **narrow federal cash proxy**, mostly **education mix**, not 25× per person and not school per-pupil.
 
 ---
 
@@ -88,9 +88,9 @@ Sensitivity (white payroll from ACS, transfer assumptions): **~2.8–3.1×** [IN
 
 | Limitation | Implication |
 |------------|-------------|
-| Federal microsim donors are **foreign-born SIPP only** | No native-white microsim; white side uses ACS wages + transfer imputation |
+| Federal microsim donor cells are still coarse | Native-white microsim now exists, but donor matching is education/household-cell based and not a full tax-transfer model |
 | One federal-net number per education in scenario ledger | Hides origin×education heterogeneity unless microsim queried |
-| Proxy omits income tax, Medicare, EITC mechanics, capital gains | True federal liability gap may differ from 2–3× |
+| Proxy omits income tax, Medicare, EITC mechanics, capital gains | True federal liability gap may differ from the current ~1.8× proxy |
 | NH white `<HS` SIPP transfer cell is noisy | Can imply negative federal net for that tiny slice — do not use for scalar exports |
 | Stock 25–64 ≠ surge cohort, ≠ lifetime NPV | CBO 60569 surge federal channel is a different **t** |
 
@@ -110,9 +110,15 @@ Sensitivity (white payroll from ACS, transfer assumptions): **~2.8–3.1×** [IN
 2. ~~Annual ↔ NPV bridge~~ → `annual_npv_bridge_grid` (all `scope_mismatch`) [done]
 3. ~~Country-level stack v1~~ → `immigration-country-fiscal-tensor-2026-06-15.md` [done]
 
+## VIII. Revisions
+
+| Date | Change |
+|------|--------|
+| 2026-06-16 | Replaced stale NH-white wage-imputation headline (`~$3.6–4.0k`, `~2–3×`) with the later built native-white microsim anchor (`~$2,746`, `~1.8×`). Updated aggregate ratio and decomposition wording. See `immigration-conclusion-audit-running-fixes.md`. |
+
 ---
 
-## VIII. Country tensor query
+## IX. Country tensor query
 
 `warehouse/immigration_fiscal_union.duckdb` → `v_country_fiscal_rollup`, `v_country_fiscal_compare`
 
