@@ -52,7 +52,7 @@ Event study:
 
 **Corrected conclusion:** CHNV substituted lawful port flow for irregular crossings in its initial year, strongest for Cuba/Nicaragua and initially Venezuela. It did **not** reduce total arrivals because roughly **530K** lawful paroles were planned inflow and still landed in receiver-city ledgers. [INFERENCE]
 
-### Receiver-city cost trajectories (system-collapse evidence)
+### Receiver-city cost trajectories (gross-load and shelter-stress evidence)
 
 **NYC** (Comptroller data): FY23 $1.41B → FY24 $3.70B → FY25 $3.02B → FY26 YTD ~$0.95B (annualizes to ~$2.5B). Peak ~70K migrants in shelter mid-2024 vs ~45K pre-surge baseline. **Peak spending in FY24 = ~3.5% of NYC's $107B operating budget.**
 
@@ -64,7 +64,7 @@ Event study:
 
 **DC:** $15M → $40M (smaller scale).
 
-**Combined major receivers:** ~$5B+/year peak (FY2024) across the most-affected cities. This is real fiscal pressure on local budgets — clearly visible system load consistent with the "phase transition" claim from the user's critique.
+**Combined major receivers:** ~$5B+/year peak (FY2024) across the most-affected cities. This is real gross fiscal pressure on local budgets — clearly visible system load consistent with a receiver-capacity stress interpretation. It is not a net fiscal-burden estimate.
 
 Per-migrant per-day cost: ~$190 NYC, ~$200 Denver, ~$140 Chicago. Total 5-year cost across these cities: $13B+ across local + state combined.
 
@@ -123,8 +123,8 @@ Per-migrant per-day cost: ~$190 NYC, ~$200 Denver, ~$140 Chicago. Total 5-year c
 **Most-defensible reading:**
 The 2024 election shift was real and partially related to surge exposure. Counties that received bused migrants (NYC, Chicago, Boston, Denver) plus border counties handling the surge directly (TX RGV, El Paso, Miami-Dade) swung 4-11pp more GOP than comparable counties. After controlling for state effects and population size, receiver-city status alone is associated with +2.4pp GOP shift. The fb_share coefficient (positive) and recent_fb_inflow coefficient (negative) suggest different mechanisms: established immigrant communities (Hispanic citizens in TX/FL/NY) moved toward Trump, while areas absorbing CURRENT inflow may have voted more Democratic on net (could reflect new immigrants / sympathetic natives).
 
-**The "system collapse" reading has empirical support:**
-NYC went from $1.4B→$3.7B on migrant care in one year. Cook County (Chicago) cost $228M peak. MA hit shelter cap. Denver cut services to fund migrant care. These are observable, quantifiable system loads concentrated in specific places — and those places swung substantially toward Trump in 2024.
+**The "receiver capacity stress" reading has empirical support:**
+NYC went from $1.4B→$3.7B on migrant care in one year. Cook County (Chicago) cost $228M peak. MA hit shelter cap. Denver cut services to fund migrant care. These are observable, quantifiable gross system loads concentrated in specific places — not net burden estimates — and those places swung substantially toward Trump in 2024.
 
 **The "this was just inflation/Hispanic-realignment" reading is incomplete:**
 Both effects exist. The pre-registered Hispanic-share kill-test left the receiver coefficient nearly unchanged (+0.0256 → +0.0238), so the named rival channel did not erase the receiver association. But the raw +4.4pp receiver/non-receiver gap is not a causal headline; use the controlled +2.4pp as the bounded claim.
@@ -148,10 +148,10 @@ Bounded to enforcement at observed magnitudes (E-Verify mandates, sanctuary poli
 The corrected median-county comparison is about 21.7x for the ratio of medians and 20.5x for the median county-level ratio among counties with nonzero moved-from-abroad share. This is domestic U.S.-origin movement versus moved-from-abroad flow, not native identity. But the median county is not a receiver-node estimand: concentrated surge destinations can face immigrant-specific shelter, legal, language, and school burdens that the national median domestic-vs-abroad ratio does not measure. [SOURCE: research/immigration-causal-internal-vs-immigrant-newcomers.md] [INFERENCE]
 
 ### "Open-borders verdict is welfare-weight-determined" — strengthened
-The surge revealed that the U.S. capacity-to-absorb constraint was real and binding faster than the static calibration suggested. NYC/Chicago/Denver hit budget thresholds within ~12-18 months of surge onset. The GPT-5.4 calibration's claim that "housing/construction binds in year 1 at any 10M+/year arrival scenario" turned out to be empirically validated at much smaller magnitudes (~0.7M/year of NYC-bound migrants saturated NYC's shelter system in <12 months).
+The surge revealed that some receiver-node capacity constraints can bind faster than the static calibration suggested. NYC/Chicago/Denver hit visible budget or shelter thresholds within ~12-18 months of surge onset. This is directionally consistent with the GPT-5.4 calibration's claim that housing/construction can bind in year 1 under very large arrival scenarios, but it is not a validation of the calibration's national 10M+/year threshold or a measured national capacity function.
 
-### Mass-deportation simulation — partially validated
-The simulation predicted ~5-8% GDP cost from removing 7M unauthorized workers. The Trump 2025+ enforcement push is testing this. Early indicators (Construction labor shortages, agricultural labor reports, deportation flight costs) qualitatively match the simulation but quantitative replication awaits 2025 data.
+### Mass-deportation simulation — not yet quantitatively validated
+The simulation predicted ~5-8% GDP cost from removing 7M unauthorized workers. The Trump 2025+ enforcement push is a different regime that may test parts of the mechanism, but this memo does not contain a quantitative validation pass. Early qualitative indicators, if used, must be sourced separately; quantitative replication awaits post-2025 data.
 
 ## What we STILL can't say with high confidence
 
@@ -216,7 +216,7 @@ The user's critique was correct: linear/static models calibrated on pre-2020 var
 
 1. **The flows were real and large** (~50K/month sustained 2023-2024)
 2. **CHNV substituted channels in its initial year** (irregular USBP crossings fell, lawful port/parole flow rose)
-3. **Receiving cities hit budget walls** (NYC, MA, Chicago, Denver all visibly stressed)
+3. **Receiving cities hit visible gross-load and shelter-stress thresholds** (NYC, MA, Chicago, Denver all visibly stressed)
 4. **The 2024 election bears a political imprint** (receiver cities about +2.4 pp more GOP after Hispanic-share control; correlational)
 
 But:

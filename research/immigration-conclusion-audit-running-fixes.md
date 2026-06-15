@@ -506,3 +506,33 @@ The E-Verify design measures wage response to observed state mandate variation, 
 ### Current Conclusion
 
 The wage evidence is strong against large native wage gains from observed marginal enforcement contractions. It is not a direct proof that current low-skill immigration levels or surge inflows have zero native labor-market effect. [INFERENCE]
+
+---
+
+## 2026-06-16 — Surge capacity and deportation validation claims bounded
+
+### Issue
+
+`research/immigration-causal-surge-2021-2024.md` overstated two validation claims:
+
+1. Receiver-city gross outlays and shelter stress were described as "system-collapse evidence" and as empirical validation of a national housing/construction capacity calibration.
+2. The mass-deportation simulation was labeled "partially validated" using qualitative early indicators, while the same paragraph said quantitative replication awaited post-2025 data.
+
+The available local evidence supports gross receiver-node load and visible shelter/budget stress. It does not estimate net fiscal burden, validate a national 10M+/year arrival threshold, or quantitatively validate the mass-deportation output simulation. [DATA]
+
+### Evidence Checked
+
+- `research/immigration-causal-surge-2021-2024.md`: receiver-city figures are city/state cost trajectories and shelter caps, not a netted burden model. [SOURCE: memo]
+- `research/immigration-confidence-ladder.md` entry 33: receiver-city figures are gross outlays; federal reimbursements and counterfactual baseline growth are not netted out. [SOURCE: memo]
+- `research/immigration-confidence-ladder.md` entry 32: mass-deportation output shock is a calibration with frozen replacement hiring, wage response, and capital reallocation. [SOURCE: memo]
+
+### Fixes Made
+
+1. Reframed receiver-city evidence as gross-load and shelter-stress evidence, not "system collapse" or national capacity validation.
+2. Replaced "empirically validated" with "directionally consistent" and named the missing national capacity function.
+3. Replaced "Mass-deportation simulation — partially validated" with "not yet quantitatively validated."
+4. Marked confidence-ladder entry 27 as scope-qualified by entry 33's gross-vs-net caveat.
+
+### Current Conclusion
+
+The surge evidence shows concentrated receiver-node stress. It should not be cited as a net fiscal-burden estimate, a national capacity threshold validation, or a quantitative validation of the mass-deportation output model. [INFERENCE]
