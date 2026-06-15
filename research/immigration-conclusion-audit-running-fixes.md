@@ -1120,3 +1120,23 @@ Changed the disconfirmation row to `Unsupported / invalid scalar export` and add
 ### Updated conclusion
 
 Both memos now carry the same inference boundary: the `+$46k` benchmark cannot be quoted as all-in net contribution, but the full stacked sign remains an open modeling question. [INFERENCE]
+
+---
+
+## 2026-06-16 — Borjas Mariel wording changed from replication to generalization
+
+### Issue
+
+`research/immigration-causal-synthesis-2026-04-18.md` described Borjas's restricted-Mariel reanalysis as a finding that "does not replicate in broader staggered designs." [DATA]
+
+### Why it was wrong
+
+E-Verify TWFE and Foged-Peri refugee-assignment evidence are not direct replications of the Mariel reanalysis. They are adjacent external-validity tests of whether large Borjas-style native low-skill wage losses/gains appear in other quasi-experimental designs. Calling that "replication" overstates the methodological relationship. [INFERENCE]
+
+### Fix
+
+Changed the sentence to "does not generalize to the broader staggered designs tested here" and added a synthesis revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The wage synthesis now distinguishes direct replication from external-validity evidence: Borjas's restricted-Mariel estimate remains a contested Mariel result, while the repo's newer designs cut against extrapolating that magnitude to observed E-Verify-style policy variation. [INFERENCE]
