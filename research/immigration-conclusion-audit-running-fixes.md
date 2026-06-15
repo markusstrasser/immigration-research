@@ -760,3 +760,23 @@ Replaced the "can be justified" line with a narrower statement: wage data alone 
 ### Updated conclusion
 
 The political-economy conclusion survives only as a channel map: wage evidence is weak for the observed range, and school/rent channels remain live. The memo no longer claims those channels identify voter motivation or justify the policy push. [INFERENCE]
+
+---
+
+## 2026-06-16 — Crime search-log absence claim bounded
+
+### Issue
+
+`research/immigration-crime-rates-unauthorized-vs-native-born.md` logged the Exa verification pass for higher-rate studies as "No peer-reviewed support found." In a search log, that reads like a literature-wide proof of absence rather than the result of a particular pass. [DATA]
+
+### Why it was wrong
+
+Search tools can support "not found in this query/pass" much more safely than "does not exist." The memo already has a strong bottom line from named studies and named critiques; it does not need an unbounded absence claim in the provenance table. [INFERENCE]
+
+### Fix
+
+Changed the row to "No peer-reviewed higher-rate study found in this pass; Lott Arizona remained the prominent non-peer-reviewed outlier" and added a memo revision note. [SOURCE: memo]
+
+### Updated conclusion
+
+The crime memo's substantive conclusion is unchanged. The provenance is now narrower: the pass failed to find a peer-reviewed higher-rate study; it does not claim an exhaustive proof that none exists. [INFERENCE]
