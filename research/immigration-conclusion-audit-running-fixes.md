@@ -1100,3 +1100,23 @@ Changed the row to `Unsupported / not a valid export — school, admin, courts, 
 ### Updated conclusion
 
 The memo still blocks scalar laundering of the `+$46k` benchmark into an all-in fiscal verdict, but it no longer overclaims that the full all-in sign has been falsified. [INFERENCE]
+
+---
+
+## 2026-06-16 — Restrictionist steel-man aligned on Mexico +$46k export
+
+### Issue
+
+`research/immigration-restrictionist-arguments-steelman-2026-06-15.md` still summarized `+$46k Mexico = net contributor all-in` as **False** because admin, courts, and full local layers were missing. That conflicted with the corrected Mexico NPV memo, which now treats the export as unsupported rather than empirically falsified. [DATA]
+
+### Why it was wrong
+
+The restrictionist steel-man should not turn an omitted-ledger critique into a completed negative all-in verdict. Missing admin, court, school, and shelter layers invalidate the scalar export; they do not by themselves measure the all-in sign. [INFERENCE]
+
+### Fix
+
+Changed the disconfirmation row to `Unsupported / invalid scalar export` and added a memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+Both memos now carry the same inference boundary: the `+$46k` benchmark cannot be quoted as all-in net contribution, but the full stacked sign remains an open modeling question. [INFERENCE]

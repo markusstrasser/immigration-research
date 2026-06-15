@@ -214,7 +214,7 @@ That is essentially our unified theory sentence 1 — restrictionists are right 
 | Crime wave from unauthorized | **Mostly false** — repo crime memo |
 | Local shelter/school shock in surge cities | **Supported as gross episodic receiver-stress layer** — Gould 60%, NYC $B; not net/system-collapse proof |
 | Low-skill lifetime fiscal negative (individual NAS) | **True under NAS assumptions** for `<HS` cell |
-| +$46k Mexico = net contributor all-in | **False** — missing admin, courts, full local |
+| +$46k Mexico = net contributor all-in | **Unsupported / invalid scalar export** — missing admin, courts, full local |
 
 ---
 
@@ -252,3 +252,4 @@ That is essentially our unified theory sentence 1 — restrictionists are right 
 | 2026-06-15 | Initial steel-man map from corpus PDFs + FAIR web |
 | 2026-06-16 | Reframed FAIR from "upper-bound political ledger" to advocacy high-cost ledger; its assumptions are not a mathematical upper bound and need reconciliation against ITEP/Pew before warehouse use. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Narrowed receiver-city language from crisis/system-collapse/catastrophic wording to gross-load shelter/budget stress and receiver-capacity ledgers. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Aligned the `+$46k Mexico` all-in row with the Mexico NPV memo: omitted layers make the scalar export unsupported, not a measured all-in negative result. See `immigration-conclusion-audit-running-fixes.md`. |
