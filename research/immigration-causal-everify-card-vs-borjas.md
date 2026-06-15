@@ -6,7 +6,7 @@
 
 ## Bottom line
 
-E-Verify mandates produced **no statistically significant positive wage effect** on low-education workers in any of 12 specifications. Point estimates are tiny (within ±1.5%) with mixed signs. The Borjas wage prediction (~5-15% rise for less-than-HS workers) is rejected at conventional levels for this policy variation. **The data side with Card, not Borjas, for the U.S. policy experiment from 2008-2023.**
+E-Verify mandates produced **no statistically significant positive wage effect** on low-education workers in any of 12 specifications. Point estimates are tiny (within ±1.5%) with mixed signs. The Borjas wage prediction (~5-15% rise for less-than-HS workers) is rejected at conventional levels for this policy variation. **In this E-Verify design, the wage results are closer to the Card-style null than to large Borjas-style native wage gains.**
 
 Employment side: E1 (less than HS) workers in E-Verify-exposed industries (Ag, Constr, Mfg, Food Service) fell ~6% post-treatment (t=-1.40, marginal). Combined picture: labor supply contracted but wages did NOT rise → employer adjustment via capital/automation/relocation, not via bidding up native low-skill labor.
 
@@ -114,7 +114,7 @@ Total-economy E4 (BA+) employment grew ~4% (p<0.05) but this likely reflects nat
   3. Cash economy / non-W-2 hiring (which doesn't show up in QWI)
   4. Outsourcing across state lines
 
-This is a Card-style world: the wage curve is flatter than Borjas assumed, and removing low-skill immigrant labor doesn't transfer its rents to native low-skill workers.
+For this enforcement margin, the adjustment looks Card-style: the wage curve is flatter than the large-Borjas-gain prediction, and removing low-skill immigrant labor through these mandates does not measurably transfer rents to native low-skill workers.
 
 ### Power and caveats
 
@@ -146,8 +146,8 @@ This is a Card-style world: the wage curve is flatter than Borjas assumed, and r
 - It narrows one open question: the labor-market wage channel for native low-skill workers under observed marginal enforcement variation. That contributes to the ledger from the credit side only within this policy range, not as a universal no-native-loss claim.
 
 ### Updates to the smith-decker-friedman audit
-- David D. Friedman's open-borders argument relies in part on the Card-style elasticity. Confirmed by this analysis.
-- Camarota's CIS argument that immigration depresses native wages doesn't pass this test.
+- David D. Friedman's open-borders argument relies in part on Card-style wage elasticity. This analysis supports that wage-channel premise for observed E-Verify variation, not the full open-borders conclusion.
+- Camarota's CIS-style native-wage-depression argument does not pass this E-Verify wage-channel test.
 - Smith and Decker's average-consumer-gains framing is consistent with this finding.
 
 ## Comparison to literature
@@ -175,6 +175,12 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
    - Whether the long-run (>10 year) effect differs from the medium-run captured here
 
 3. **Replication invitation.** Code: `sources/immigration-causal/scripts/analyze_everify_wages.py` and `analyze_everify_employment.py`. Data: `data/lehd/qwi_state_panel.parquet` (151k rows, 2 MB). Treatment panel: `data/everify/everify_state_mandates.csv`.
+
+## Revisions
+
+| Date | Change |
+|------|--------|
+| 2026-06-16 | Bounded "data side with Card" and commentator-update language to the observed E-Verify wage-channel design; the result rejects large Borjas-style native wage gains for this margin, not all wage or open-borders questions. See `immigration-conclusion-audit-running-fixes.md`. |
 
 [SOURCE: data/analysis/everify_twfe_results.csv]
 [SOURCE: data/analysis/everify_event_study_E1.csv]
