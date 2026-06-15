@@ -19,7 +19,7 @@ Restrictionists win politically when they **switch ledgers** the same way expans
 | **L1 Labor** | More immigrants → lower wages / employment for competing natives | Borjas w9755, w11610 | Partial (earnings proxy, no wage panel) |
 | **L2 Subgroup** | Black low-skill men hit on wages, employment, incarceration | BGH w12518 | Not built |
 | **F1 Lifetime fiscal** | Low-education immigrants net fiscal drain over life | NAS 2017 Table 8-13; Orrenius wp1704 | Built (`lifetime_npv`) — **partial ℓ** |
-| **F2 Annual full budget** | Unauthorized = $150B+ net cost all levels | FAIR 2023 [advocacy] | ITEP floor only; no FAIR ledger |
+| **F2 Annual advocacy ledger** | Unauthorized = $150B+ net cost all levels | FAIR 2023 [advocacy] | ITEP floor only; no reconciled FAIR/ITEP/Pew ledger |
 | **C1 Local capacity** | Schools, shelter, homelessness spike with inflow | Gould w33655; receiver cities | School layer + episodic CSV |
 | **P1 Political economy** | Low-skill immigration + welfare state → worse policy mix | Razin w15597, w17515 | Not modeled |
 | **A1 Admin** | Border/courts/detention = real taxpayer cost | CBP/ICE budgets; EOIR staged | Cluster J, not allocated |
@@ -90,7 +90,7 @@ National **education×experience** framing is more coherent than “city has imm
 
 ---
 
-## Chain F2 — FAIR / advocacy full ledger
+## Chain F2 — FAIR / advocacy high-cost ledger
 
 ### Argument structure
 
@@ -105,7 +105,7 @@ National **education×experience** framing is more coherent than “city has imm
 - **Citizen children** counted as cost of immigration — normative accounting choice
 - Benefit use often at **household** level; tax at **individual** level — asymmetric
 - **Compare:** ITEP **$96.7B** taxes (2022, 10.9M stock) — different stock year/method [SOURCE: cluster G]
-- **Our stance:** Use FAIR as **upper-bound political ledger**, not empirical fact — but **don't ignore** that a full-budget line exists and NAS individual NPV doesn't include it all.
+- **Our stance:** Use FAIR as an **advocacy high-cost ledger**, not empirical fact and not a proven mathematical upper bound — but **don't ignore** that a full-budget line exists and NAS individual NPV doesn't include it all.
 
 ---
 
@@ -179,7 +179,7 @@ From `immigration-economist-rhetorical-failures.md` — **mirror image**:
 |------|------------------------|
 | Ledger switch | NAS `<HS` lifetime → “all immigration” |
 | Flow → stock | CBP encounters → “millions living here” |
-| Upper bound | FAIR $150B, Gould 60% homelessness |
+| Advocacy high-cost ledger | FAIR $150B; Gould 60% homelessness as episodic-city evidence |
 | Erase offsets | Ignore ITEP taxes, Clemens capital tax, CBO GDP |
 | Capacity as proof | NYC shelter = entire national story |
 | Subgroup → average | BGH black effects → all natives harmed |
@@ -250,3 +250,4 @@ That is essentially our unified theory sentence 1 — restrictionists are right 
 | Date | Note |
 |------|------|
 | 2026-06-15 | Initial steel-man map from corpus PDFs + FAIR web |
+| 2026-06-16 | Reframed FAIR from "upper-bound political ledger" to advocacy high-cost ledger; its assumptions are not a mathematical upper bound and need reconciliation against ITEP/Pew before warehouse use. See `immigration-conclusion-audit-running-fixes.md`. |

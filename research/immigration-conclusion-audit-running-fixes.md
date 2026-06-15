@@ -920,3 +920,23 @@ Added a table-scope warning below the headline table and expanded the child-attr
 ### Updated conclusion
 
 The school layer still shows static visibility math: Mexico-origin is `+$748/adult` and NH-white US-born is `−$3,277/adult` under this crude average-cost assignment. Neither row is a welfare verdict or lifetime fiscal sign. [INFERENCE]
+
+---
+
+## 2026-06-16 — FAIR ledger no longer labeled mathematical upper bound
+
+### Issue
+
+`research/immigration-restrictionist-arguments-steelman-2026-06-15.md` described FAIR's `$150.7B` unauthorized-immigration cost estimate as an "upper-bound political ledger." That language was too generous statistically: FAIR is advocacy-sourced and uses contested attribution choices, including citizen-child cost assignment and stock/method differences versus Pew and ITEP. [DATA]
+
+### Why it was wrong
+
+"Upper bound" implies the number bounds the true cost from above. FAIR's construction is better treated as an advocacy high-cost ledger: it may include broad cost categories omitted by NAS individual NPV, but that does not make it a validated upper limit. Some choices can overstate marginal public cost, while omitted or differently treated categories could move in either direction. [INFERENCE]
+
+### Fix
+
+Renamed the chain from "Annual full budget" to "Annual advocacy ledger," replaced "upper-bound political ledger" with "advocacy high-cost ledger," and changed the rhetoric table's "Upper bound" row accordingly. Added a memo revision note. [SOURCE: memo]
+
+### Updated conclusion
+
+The restrictionist steel-man still preserves the full-budget ledger as a real argument family, but FAIR is now source-graded correctly: useful as a high-cost advocacy construction, not as empirical fact or a mathematical upper bound. [INFERENCE]
