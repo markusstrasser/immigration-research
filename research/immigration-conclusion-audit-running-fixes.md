@@ -536,3 +536,27 @@ The available local evidence supports gross receiver-node load and visible shelt
 ### Current Conclusion
 
 The surge evidence shows concentrated receiver-node stress. It should not be cited as a net fiscal-burden estimate, a national capacity threshold validation, or a quantitative validation of the mass-deportation output model. [INFERENCE]
+
+---
+
+## 2026-06-16 — Receiver-election wording made correlational
+
+### Issue
+
+`research/immigration-causal-surge-2021-2024.md` already warned that the receiver-city election result is a correlational upper-bound, but its interpretation still said the 2024 election shift was "partially related to surge exposure" and that receiver-city GOP shift reflected "natives' response." That wording overstates identification and erases naturalized-citizen / electorate-composition channels. [DATA]
+
+### Evidence Checked
+
+- `research/immigration-causal-surge-2021-2024.md`: the reading rule says the raw receiver-city gap is descriptive only and the `+2.4pp` coefficient is a correlational upper-bound. [SOURCE: memo]
+- The same memo lists unresolved confounders: Hispanic realignment, inflation, pre-existing RGV trend, and noncitizen voting ineligibility. [SOURCE: memo]
+- `research/immigration-confidence-ladder.md` entries 31 and 36: use the controlled `+2.4pp` as an upper-bound; causal interpretation needs more work. [SOURCE: memo]
+
+### Fixes Made
+
+1. Replaced "partially related to surge exposure" with "correlated with receiver-city / border-surge exposure."
+2. Replaced "natives' response" with "citizen electorate's response or composition."
+3. Added unresolved compositional confounding to the CURRENT-inflow interpretation.
+
+### Current Conclusion
+
+The receiver-city election result remains a medium-strength association that survived the named Hispanic-share kill-test. It is not clean causal evidence of voter backlash from the surge. [INFERENCE]
