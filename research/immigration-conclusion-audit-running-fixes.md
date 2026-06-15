@@ -560,3 +560,23 @@ The surge evidence shows concentrated receiver-node stress. It should not be cit
 ### Current Conclusion
 
 The receiver-city election result remains a medium-strength association that survived the named Hispanic-share kill-test. It is not clean causal evidence of voter backlash from the surge. [INFERENCE]
+
+---
+
+## 2026-06-16 — Embedded surge ladder gross-load wording aligned
+
+### Issue
+
+`research/immigration-causal-surge-2021-2024.md` had already reframed receiver-city costs as gross-load and shelter-stress evidence, but its embedded confidence-ladder entry 27 still ended with "System-collapse claim has empirical bite." That sentence recreated the same overclaim inside a later section of the same memo. [DATA]
+
+### Why it was wrong
+
+The administrative cost rows support visible receiver-load stress and concentrated gross outlays. They do not by themselves identify net fiscal burden after reimbursements and counterfactual baseline costs, and they do not validate a national system-collapse threshold. [INFERENCE]
+
+### Fix
+
+Replaced the embedded ladder sentence with the narrower claim that receiver-load stress has empirical bite while the figures remain gross outlays, not net fiscal-burden or national system-collapse proof. [SOURCE: memo]
+
+### Updated conclusion
+
+The surge memo is now internally consistent on receiver-cost scope: receiver-city costs are strong gross-load evidence, not a completed net-burden or national-collapse estimate. [INFERENCE]
