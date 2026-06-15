@@ -1020,3 +1020,23 @@ Annotated entry 20's title with `QUALIFIED by entry 38` while leaving the histor
 ### Updated conclusion
 
 The confidence ladder now keeps its append-only history while making the current Saiz scope correction visible where the older causal title appears. [INFERENCE]
+
+---
+
+## 2026-06-16 — Crime memo downgraded fetched-but-unread European row
+
+### Issue
+
+`research/immigration-crime-rates-unauthorized-vs-native-born.md` marked the European mixed-evidence row as `VERIFIED (direction), not fully analyzed`. That status is self-contradictory: the row relied on a fetched Skardhamar et al. paper that the memo explicitly says was not fully analyzed. [DATA]
+
+### Why it was wrong
+
+"Verified" should mean the memo has checked enough of the source to certify the claim. Here the safer claim is only that European evidence may be more mixed and that at least one fetched Scandinavian study appears relevant. Without analyzing the paper's definitions, denominators, offense categories, adjustment set, and immigrant subgroups, the memo should not certify the direction as verified. [INFERENCE]
+
+### Fix
+
+Changed the claims-table row from `MODERATE | VERIFIED (direction), not fully analyzed` to `LOW-MODERATE | PRELIMINARY — fetched but not fully analyzed`, and added a memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The U.S. crime-rate conclusion remains unchanged. The international caveat is now properly provisional until the European paper is read and source-graded. [INFERENCE]

@@ -206,7 +206,7 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 | 5 | Longitudinal studies show stronger negative effect (r = -0.147) than cross-sectional (r = 0.000) | Moderator analysis within meta-analysis | HIGH | Ousey & Kubrin 2018 | VERIFIED |
 | 6 | Lott's Arizona study claiming higher rates has a fundamental data classification flaw | Multiple independent critiques (Cato, WaPo, Latino Decisions) | HIGH | Nowrasteh 2022; WaPo 2018 | VERIFIED |
 | 7 | ICE national docket shows ~15K noncitizens with homicide convictions/charges | Official ICE data released to Congress | HIGH (as administrative count) | ICE ERO letter, Sept 2024 | VERIFIED — but measures stock, not rate |
-| 8 | European evidence is more mixed; some immigrant groups show higher crime | Scandinavian studies | MODERATE | Skardhamar et al. 2014 | VERIFIED (direction), not fully analyzed |
+| 8 | European evidence is more mixed; some immigrant groups show higher crime | Scandinavian studies | LOW-MODERATE | Skardhamar et al. 2014 | PRELIMINARY — fetched but not fully analyzed |
 | 9 | Second-generation immigrants have higher crime rates than first generation, converging toward native-born levels | Multiple studies | HIGH | Ousey & Kubrin 2018; Rumbaut 2008 | VERIFIED |
 | 10 | Reporting bias (fear of deportation suppressing police contact) could partially explain lower observed rates | Theoretical + indirect evidence | MODERATE | Gunadi 2019; general literature | INFERENCE |
 
@@ -263,3 +263,4 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 | Date | Change |
 |------|--------|
 | 2026-06-16 | Bounded the search-log wording for higher-rate studies: the Exa pass did not find a peer-reviewed higher-rate study, but that is a search-result statement, not a proof of absence across the literature. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Downgraded the European mixed-evidence table row from `VERIFIED (direction), not fully analyzed` to `PRELIMINARY`; fetched-but-unread evidence should not carry a verified status. See `immigration-conclusion-audit-running-fixes.md`. |
