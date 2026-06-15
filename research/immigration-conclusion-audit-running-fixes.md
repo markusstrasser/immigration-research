@@ -1040,3 +1040,23 @@ Changed the claims-table row from `MODERATE | VERIFIED (direction), not fully an
 ### Updated conclusion
 
 The U.S. crime-rate conclusion remains unchanged. The international caveat is now properly provisional until the European paper is read and source-graded. [INFERENCE]
+
+---
+
+## 2026-06-16 — QWI table wording changed from confirmatory to margin-specific
+
+### Issue
+
+`research/immigration-causal-synthesis-2026-04-18.md` still said the Saiz/QWI cycle "confirms wage channel is small" in the local-burden summary table. That phrase was too broad even though the same memo elsewhere bounded the E-Verify design. [DATA]
+
+### Why it was wrong
+
+QWI state-panel evidence supports a small/null wage response in the observed E-Verify mandate margin. It does not confirm that every wage channel is small across surge inflows, mass deportation, cash-economy sectors, within-state heterogeneity, or longer-run adjustment. The table row should not be broader than the tested design. [INFERENCE]
+
+### Fix
+
+Changed the row to say QWI supports a small/null wage response in the observed E-Verify margin, and added a synthesis revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The synthesis still treats the wage channel as weak in the tested E-Verify design, while preserving the open questions for untested shock regimes and other labor-market margins. [INFERENCE]
