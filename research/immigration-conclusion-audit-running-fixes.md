@@ -356,3 +356,26 @@ Those headings were doing rhetorical work against the corrected evidence. The fi
 ### Current Conclusion
 
 The surge memo now says what the evidence can support: marginal pre-surge wage evidence stays bounded, and median domestic-vs-abroad flow comparisons cannot dismiss receiver-node burden channels. [INFERENCE]
+
+---
+
+## 2026-06-16 — Confidence ladder marks receiver-swing causal sentence stale
+
+### Issue
+
+`research/immigration-confidence-ladder.md` entry 28 still contained the sentence "Magnitude implausibly large for non-immigration causes alone." Entry 31 later says that phrase should not be reused, and entry 36 closes the Hispanic-share control with a bounded `+2.4pp` receiver coefficient. Leaving the sentence unmarked created a grep hazard: an agent could quote the old causal-strength language while missing the later correction. [DATA]
+
+### Evidence Checked
+
+- `research/immigration-confidence-ladder.md` entry 31: the "implausibly large" phrase is a plausibility assertion doing causal work and should not be reused. [SOURCE: memo]
+- `research/immigration-confidence-ladder.md` entry 36: Hispanic-share control leaves receiver coefficient about `+2.4pp`, still cross-sectional and policy-endogenous; use as bounded upper-bound framing. [SOURCE: memo]
+- `research/immigration-causal-surge-2021-2024.md`: current most-defensible reading uses the controlled `+2.4pp` as the bounded claim and keeps confounders unresolved. [SOURCE: memo]
+
+### Fixes Made
+
+1. Kept entry 28 append-only, but marked its final causal-implausibility sentence as superseded by entries 31 and 36.
+2. Added an inline warning not to reuse the sentence and to use the controlled `+2.4pp` upper-bound framing instead.
+
+### Current Conclusion
+
+The receiver-city election evidence remains a medium-strength correlation that survived the named Hispanic-share kill-test, not a causal proof that the surge alone drove the full raw GOP swing. [INFERENCE]
