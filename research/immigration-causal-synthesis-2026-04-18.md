@@ -10,7 +10,7 @@
 
 | Repo claim (pre-cycle) | New evidence | Updated verdict |
 |------------------------|--------------|-----------------|
-| Rent exposure ≠ welfare loss (adversarial review §2) | Immigrants concentrate in inelastic MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40); top 10 inelastic MSAs include all the major immigrant gateways | **Rent exposure IS closer to welfare loss in destination markets** because supply can't respond. Update: "rent exposure" should be tagged elasticity-conditional — high welfare loss in inelastic destinations, modest in elastic. |
+| Rent exposure ≠ welfare loss (adversarial review §2) | Immigrants concentrate in inelastic MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40); top 10 inelastic MSAs include all the major immigrant gateways | **Rent exposure is a stronger renter-incidence warning in inelastic destination markets** because supply response is weaker. Update: "rent exposure" should be tagged elasticity-conditional — higher incidence risk in inelastic destinations, lower in elastic. |
 | Clark "agree" economists are scope-limited but not wrong on their narrow channel | E-Verify mandates produced no positive wage effect on native low-skill workers in any of 12 specifications | **Clark "agree" economists were also right on the wage channel** (the actual narrow channel they mostly answered). Borjas wage prediction rejected at α=0.05 for U.S. policy variation 2008-2023. |
 | "Borjas vs Card" presented as live debate | Direct multi-state TWFE with 21-year panel finds Card-side pattern: supply contracts via E-Verify but native wages do not rise | **For observed marginal enforcement variation, the Card-side pattern wins.** Borjas's restricted-Mariel result does not generalize to the broader staggered enforcement shocks tested here; this does not settle surge or mass-shock regimes. |
 | Federal-positive / local-negative split is plausible but unquantified | This cycle did not produce federal-side estimates (federal microsim still requires SIPP fix) | **Unchanged.** Federal side remains the weakest part of the repo. |
@@ -34,7 +34,7 @@ This is a meaningful update to the repo's prior position. The verified-findings 
 ## Incidence — federal vs local — what this cycle changes
 
 The Saiz finding sharpens the **local** side:
-- Renter incidence is structurally larger than the adversarial review allowed. In inelastic markets (where >40% of immigrants live), housing supply does not absorb inflow, so rent appreciation is welfare loss for incumbent renters and welfare gain for landowners.
+- Renter-incidence risk is structurally larger than the adversarial review allowed. In inelastic markets (where >40% of immigrants live), weaker supply response makes rent exposure more decision-relevant, but immigrant-specific rent causation still needs panel/IV identification.
 - Owner-gain-to-renter-loss ratio differs by destination elasticity. The repo's existing PUMA rent table can be re-tagged elasticity-conditional once the SSD is remounted.
 
 The E-Verify finding clarifies the **labor-market** side:
@@ -63,7 +63,7 @@ The political-economy reading: the policy push from native low-skill voters cann
 The user asked which interpretations or datasets could change conclusions. After this cycle:
 
 - **Borjas vs Card debate:** Bounded to observed marginal U.S. policy variation. Card-side pattern there; surge and mass-shock regimes remain open.
-- **Rent burden as welfare loss:** Partially resolved. In destination markets, yes. Caveat about owner/renter incidence still applies.
+- **Rent burden as welfare loss:** Narrowed, not resolved. In inelastic destination markets it is a stronger renter-incidence warning; owner/renter incidence and causal identification caveats still apply.
 - **Federal-positive / local-negative split:** Sharpened on local side, unchanged on federal side.
 - **Race-stratified crime gap:** From earlier work — gap narrows from 50% to 30% but immigrants still lower than natives.
 - **Place-premium / immigrant welfare weighting:** Untested this cycle. Remains the biggest single lever for flipping the verdict.
@@ -98,7 +98,7 @@ generalize.
 
 In priority order, given evidence value:
 
-1. **Mount the SSD and rerun the Saiz×PUMA merge with the existing warehouse**, using `origin_puma_household_context_2023` × Saiz elasticity by MSA-PUMA crosswalk. This produces the *origin-conditional* rent welfare estimate. ~1 day with warehouse access.
+1. **Mount the SSD and rerun the Saiz×PUMA merge with the existing warehouse**, using `origin_puma_household_context_2023` × Saiz elasticity by MSA-PUMA crosswalk. This produces an *origin-conditional* renter-incidence screen, not a final welfare estimate. ~1 day with warehouse access.
 
 2. **Fix the SIPP donor library.** This is the same call from 2026-04-10. The federal microsim remains the biggest gap. Highest-leverage single fix on the repo.
 

@@ -426,3 +426,27 @@ The housing evidence defeats the blanket "rent exposure is not welfare loss" dis
 ### Current Conclusion
 
 The Saiz merge strengthens an elasticity-conditional housing-burden warning. It does not by itself prove immigrant-specific rent causation or aggregate welfare loss. [INFERENCE]
+
+---
+
+## 2026-06-16 — Causal synthesis mirrors Saiz rent caveat
+
+### Issue
+
+`research/immigration-causal-synthesis-2026-04-18.md` preserved the same housing overstatement after the Saiz source memo was narrowed. It said supply "can't respond," "rent appreciation is welfare loss," the rent burden question was "Partially resolved ... yes," and the proposed Saiz x PUMA rerun would produce a "rent welfare estimate." Those claims exceed the current cross-sectional evidence. [DATA]
+
+### Evidence Checked
+
+- `research/immigration-causal-saiz-elasticity-rent.md`: descriptive correlation is high-confidence; immigrant-specific rent causation and welfare incidence need panel/IV identification and tenure accounting. [SOURCE: memo]
+- `research/immigration-causal-synthesis-2026-04-18.md`: the same memo already lists "Causal IV for housing" as unsettled, so its verdict language needed to match its own limitation section. [SOURCE: memo]
+
+### Fixes Made
+
+1. Replaced "closer to welfare loss because supply can't respond" with "stronger renter-incidence warning because supply response is weaker."
+2. Replaced "rent appreciation is welfare loss" with a panel/IV caveat.
+3. Replaced "partially resolved ... yes" with "narrowed, not resolved."
+4. Relabeled the proposed Saiz x PUMA rerun as an origin-conditional renter-incidence screen, not a final welfare estimate.
+
+### Current Conclusion
+
+The April 18 causal synthesis now treats housing as an elasticity-conditional local-burden warning, not as a completed rent-welfare causal estimate. [INFERENCE]
