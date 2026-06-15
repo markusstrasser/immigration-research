@@ -1,6 +1,6 @@
 # Paradigm-escape cycle synthesis (2026-04-18, evening)
 
-**Cycle goal:** Run Paths A + B + C from the brainstorm — sharpen the prior cycle's findings (Saiz decomposition, Foged-Peri lag, mass-deportation simulation) AND escape the prior frame (open-borders calibration, internal-native comparison, sanctuary city DiD).
+**Cycle goal:** Run Paths A + B + C from the brainstorm — sharpen the prior cycle's findings (Saiz decomposition, Foged-Peri lag, mass-deportation simulation) AND escape the prior frame (open-borders calibration, domestic-vs-abroad mover comparison, sanctuary city DiD).
 
 **Inputs to this synthesis:**
 1. `immigration-causal-internal-vs-immigrant-newcomers.md` — IRS SOI × ACS comparison
@@ -14,8 +14,8 @@
 | Pre-cycle position | New evidence | Updated verdict |
 |---|---|---|
 | "Rent exposure ≠ welfare loss" was a strong adversarial caveat | Saiz decomposition: log(FB share) ~ unaval (β=0.12, n.s.) + WRLURI (β=0.33, t=6.29***); regulatory channel dominates | **Rent exposure IS welfare loss AND zoning reform is a viable policy lever** — rent burden is policy-tractable, not topographic |
-| Card-vs-Borjas "live debate"; prior cycle showed E-Verify null wage effect | Sanctuary state DiD on same QWI panel: pro-sanctuary E1 wages +0.5% (n.s.), anti-sanctuary E1 wages +0.8% (n.s.) — **third confirmation** | **Native low-skill wages do not respond to enforcement variation in either direction.** Card wins decisively on observed U.S. policy variation. |
-| "Newcomer burden" treated as immigration-driven by default | IRS SOI: median county receives 3.0% native + 0.08% immigrant inflow per year (33× ratio). Texas exurbs / military bases dominate the top inflow list, not immigrant gateways | **Most local newcomer pressure is internal native migration, not immigration.** Restricting immigration cannot fix newcomer-driven burden in fast-growing counties. |
+| Card-vs-Borjas "live debate"; prior cycle showed E-Verify null wage effect | Sanctuary state DiD on same QWI panel: pro-sanctuary E1 wages +0.5% (n.s.), anti-sanctuary E1 wages +0.8% (n.s.) — **third confirmation** | **For observed marginal enforcement variation, the Card-side pattern wins.** Native low-skill wages do not measurably respond to the E-Verify/sanctuary-style variation tested here; this does not settle surge or mass-shock regimes. |
+| "Newcomer burden" treated as immigration-driven by default | IRS SOI `Total Migration-US` and ACS `Moved from abroad` still show an order-of-magnitude county gap, but the exact ratio is measurement-sensitive and not a clean burden ratio | **Most county newcomer pressure is not immigration-specific.** Treat this as a descriptive frame correction, not a precise causal burden split. |
 | Mass-deportation hypothetical had no empirical analog | BEA I-O 2023 calibration: removing 7M unauthorized → $1.45T first-order output loss (5.3% GDP); $2.32T with multiplier (8.5%); per-removed-worker loss $207K-$332K, ~7-11× their own annual earnings | **Mass deportation would impose a one-time $1.5-2.3T output shock**, concentrated in Construction (-5.9%), Other Services / cleaning (-8.8%), Agriculture (-4.3%) |
 | Repo verdict implicitly weights immigrant welfare at zero | GPT-5.4 calibration with project's findings as inputs: at w=0 negative by construction; at w≥0.25 positive under 25%-cost benchmark; housing/construction binds in year 1 for every scenario S1+ | **Verdict is welfare-weight-driven, not data-driven, in the dimension that matters most.** Honest framing must name the weight. Feasibility constraint: U.S. housing/construction binds immediately at any scenario above ~10M/year arrivals. |
 
@@ -38,17 +38,17 @@
 | 3 | Sanctuary policy variation produces null E1 wage effects (both directions) | STRONG REJECTION of enforcement-channel wage effects | TWFE on QWI 2003-23, 12 sanctuary + 9 anti |
 | 4 | Immigrants concentrate in inelastic-supply MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40) | STRONG (descriptive) | Saiz × ACS 2022 5-yr, 237 MSAs |
 | 5 | The inelastic-MSA concentration is driven by REGULATORY constraint (WRLURI), not topography | STRONG | Saiz decomposition regression |
-| 6 | Native US migration is ~33× larger per capita per year than recent immigration at the median county | STRONG | IRS SOI 2022-23 × ACS B05005 |
+| 6 | Domestic U.S.-origin mover flow is order-of-magnitude larger than moved-from-abroad flow at the median county | STRONG descriptive, not burden-causal | IRS SOI 2022-23 × ACS `B07001_081E` |
 | 7 | Mass deportation of 7M unauthorized → $1.5-2.3T output loss (5-8% GDP), concentrated in Construction, Other Services, Agriculture | MEDIUM (calibration, not estimate) | BEA Use Table 2023 partial-equilibrium sim |
 | 8 | Open-borders welfare calculation depends entirely on weight assigned to immigrant welfare; at w≥0.25 positive even under harsh native-cost benchmarks; housing capacity binds in year 1 at any scenario above ~10M arrivals/year | MEDIUM (sensitivity analysis on Clemens parameters) | GPT-5.4 review of calibration |
 
 ### Three new policy-relevant statements
 
-**Statement 1 — Card wins decisively on the wage channel.**
-Three convergent tests now (E-Verify + sanctuary state + GPT-5.4 calibration interpretation) all show that native low-skill wages do not respond to immigration enforcement variation. The Borjas Mariel-restriction result does not generalize to the U.S. policy variation we have. Future repo memos should treat this as settled, not open.
+**Statement 1 — Card-side pattern wins for observed marginal wage variation.**
+Three convergent tests now (E-Verify + sanctuary state + GPT-5.4 calibration interpretation) show no measurable native low-skill wage gains from the enforcement contractions tested here. The Borjas Mariel-restriction result does not generalize to this observed E-Verify/sanctuary-style range. Future repo memos should treat the wage claim as **bounded to marginal policy variation**; surge and mass-shock regimes remain open.
 
-**Statement 2 — The local-burden ledger is mostly native-newcomer driven; immigration is a small visible component.**
-At the median U.S. county, 33× more newcomer flow comes from natives than from immigrants. The Texas exurbs (Comal, Kaufman, Rockwall) experiencing 12-14% annual population replacement are doing so without immigration as the primary driver. Where immigration IS the dominant proximate driver (Miami-Dade, Hudson NJ, Santa Clara CA), it operates at much smaller scale than internal native migration in equally-stressed Sun Belt counties.
+**Statement 2 — The local-burden ledger is mostly domestic-mover driven; moved-from-abroad flow is a small visible component.**
+At the median U.S. county, IRS `Total Migration-US` inflow is roughly an order of magnitude larger than ACS moved-from-abroad flow: the current corrected memo gives about **21.7x** for the ratio of medians and about **20.5x** for the median county-level ratio among counties with nonzero moved-from-abroad share. This is a descriptive frame correction, not a precise burden ratio, and the IRS series is not native-only. The Texas exurbs (Comal, Kaufman, Rockwall) experiencing 12-14% annual population replacement are doing so without moved-from-abroad flow as the primary driver. Where moved-from-abroad flow IS the dominant proximate driver (Miami-Dade, Hudson NJ, Santa Clara CA), it operates at much smaller scale than internal U.S. migration in equally-stressed Sun Belt counties.
 
 **Statement 3 — The open-borders verdict is a values question, not an empirical one.**
 The headline arithmetic flips on the welfare weight assigned to immigrants. At w=0 (the repo's implicit framing), the verdict is negative by construction. At w=1.0 (full equal weight), the verdict is positive even under harsh 50%-of-gross-gains native-cost benchmarks. The repo cannot resolve this empirically — but it MUST stop hiding the weight assumption.
@@ -70,10 +70,14 @@ Reason: TWFE on QWI 2003-23 with 12 pro-sanctuary + 9 anti-sanctuary states; all
 E1 specifications |t|<1.0; third confirmation of Card-side null
 [SOURCE: scripts/analyze_sanctuary_wages.py]
 
-22. `Native US migration is ~33x larger per capita than recent immigration at median county`
-Rating: STRONG (admin data, not survey)
-Reason: IRS SOI 2022-23 + ACS B05005. Reframes "newcomer burden" as
-predominantly native-driven outside specific immigrant gateways.
+22. `Domestic U.S.-origin mover flow is order-of-magnitude larger than moved-from-abroad flow at median county`
+Rating: STRONG descriptive, not burden-causal
+Reason: IRS SOI 2022-23 `Total Migration-US` and ACS `B07001_081E` imply about
+21.7x for the ratio of medians and about 20.5x for the median county-level
+ratio among counties with nonzero moved-from-abroad share. The IRS flow is not
+native-only, so this reframes "newcomer burden" as predominantly domestic-
+movement-driven outside specific gateways, but does not identify school,
+shelter, or wage incidence directly.
 [SOURCE: research/immigration-causal-internal-vs-immigrant-newcomers.md]
 
 23. `Open-borders welfare verdict is welfare-weight-determined, not data-determined`
@@ -112,7 +116,7 @@ Items 1-4 should be sequential; 5-8 can run independently in parallel cycles.
 ## Honest reflection
 
 This was a productive cycle, but the *data* additions did not produce paradigm shifts — they sharpened existing positions. The two findings that genuinely change the repo's framing are:
-- **Internal-native migration comparison** (the 33× ratio) — disrupts the "newcomer = immigrant" frame
+- **Internal/domestic mover comparison** (corrected ~20–22x median-ratio range) — disrupts the "newcomer = immigrant" frame
 - **Welfare-weight reframing of open-borders** — names the implicit zero-weight assumption that drives the verdict
 
 The other findings (Saiz decomposition, sanctuary DiD, mass-deportation sim) are confirmatory or refining. Useful, not transformative.
