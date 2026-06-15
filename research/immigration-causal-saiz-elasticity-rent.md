@@ -6,7 +6,7 @@
 
 ## Bottom line
 
-Immigrants are concentrated in MSAs where housing supply *cannot respond*. The most inelastic quartile of MSAs (Saiz elasticity 0.6–1.5) has **2.6× the foreign-born share** of the most elastic quartile (11.6% vs 4.4%) and **45% higher median rent** ($1,343 vs $929). This re-grades the existing repo's "rent exposure ≠ welfare loss" caveat: in the actual destination markets immigrants pick, rent appreciation has nowhere to go but into renter cost burden. **Confidence:** HIGH on the descriptive correlation, MODERATE on the welfare-loss implication (needs IV identification to attribute causation to immigrant inflow specifically).
+Immigrants are concentrated in MSAs where housing supply is relatively inelastic. The most inelastic quartile of MSAs (Saiz elasticity 0.6–1.5) has **2.6× the foreign-born share** of the most elastic quartile (11.6% vs 4.4%) and **45% higher median rent** ($1,343 vs $929). This re-grades the existing repo's "rent exposure ≠ welfare loss" caveat: in the actual destination markets immigrants pick, rent exposure is a stronger renter-incidence warning than a raw price-level measure. **Confidence:** HIGH on the descriptive correlation, MODERATE on the welfare-loss implication (needs IV identification to attribute causation to immigrant inflow specifically).
 
 ## Method
 
@@ -27,7 +27,7 @@ Immigrants are concentrated in MSAs where housing supply *cannot respond*. The m
 | Q3 | 59 | $994 | $66,823 | 18.2% | 6.4% | 2.79 |
 | Q4 elastic | 59 | $929 | $62,941 | 17.7% | **4.4%** | 4.26 |
 
-**Reading:** Going from elastic to inelastic, immigrant share roughly triples and rent burden rises 3 percentage points. The inelastic quartile is a different country: ~$80K incomes paying $1,343 rent in places where housing supply cannot expand to absorb new arrivals.
+**Reading:** Going from elastic to inelastic, immigrant share roughly triples and rent burden rises 3 percentage points. The inelastic quartile is a different country: ~$80K incomes paying $1,343 rent in places where housing supply is more constrained.
 
 ### MSAs binned by foreign-born share (D1 lowest → D5 highest)
 
@@ -41,7 +41,7 @@ Immigrants are concentrated in MSAs where housing supply *cannot respond*. The m
 
 **Reading:** The places immigrants concentrate are systematically less elastic. The top-quintile FB MSAs have median elasticity 1.51 — meaning a 10% population shock produces a ~6.5% price increase rather than a ~3% increase you'd see in the median MSA.
 
-### Top 10 inelastic MSAs (where immigrant inflow has nowhere to go)
+### Top 10 inelastic MSAs (where renter-incidence risk is highest)
 
 | MSA | Elasticity | Rent | FB share | Rent/income |
 |-----|-----------|------|----------|-------------|
@@ -82,8 +82,8 @@ These are the destinations that anchor the existing repo's `origin_puma_househol
 Adversarial review §2 said: "PUMA rent layer measures exposure to expensive rental markets ... not by itself a measure of net welfare loss." [SOURCE: research/immigration-adversarial-review.md]
 
 The Saiz merge sharpens that:
-- In **inelastic** destination markets (which is where immigrants actually concentrate), rent exposure is much closer to welfare loss because the housing supply can't expand. Marginal newcomers compete for a fixed stock and drive up cost burden for incumbent renters.
-- In **elastic** destination markets, immigrant inflow gets absorbed by new construction. But these markets contain few immigrants in the first place.
+- In **inelastic** destination markets (which is where immigrants actually concentrate), rent exposure is much closer to a renter-incidence problem because supply response is weaker. The causal claim that marginal immigrant inflows raise incumbent renter costs still needs panel/IV identification.
+- In **elastic** destination markets, population inflow should be absorbed more by new construction in expectation. But these markets contain few immigrants in the first place.
 - Net: the existing PUMA rent burden findings should be read as *closer* to welfare loss than the adversarial review allowed.
 
 ### Confidence ladder upgrades
@@ -95,7 +95,7 @@ The Saiz merge sharpens that:
 
 The existing verified-findings report bottom-line said: "Higher rents are bad for renters, but they are not automatically a pure aggregate welfare loss because there are offsetting gains to owners and tax bases. The correct object is incidence, not just price level." [SOURCE: research/immigration-verified-findings-report-2026-04-10.md, finding #8]
 
-This finding doesn't overturn that — owner gains still exist. But it raises the *renter incidence* component because most immigrants live in places where supply doesn't respond. Owner-gain-to-renter-loss ratio in inelastic markets is structurally different from elastic markets. The aggregate welfare frame requires accounting for tenure mix (which the warehouse can do via ACS housing file once SSD is mounted again).
+This finding doesn't overturn that — owner gains still exist. But it raises the *renter incidence risk* component because most immigrants live in places where supply response is weaker. Owner-gain-to-renter-loss ratio in inelastic markets is structurally different from elastic markets. The aggregate welfare frame requires accounting for tenure mix (which the warehouse can do via ACS housing file once SSD is mounted again).
 
 ## Limitations and next steps
 
@@ -109,7 +109,7 @@ This finding doesn't overturn that — owner gains still exist. But it raises th
 
 ## Decision-relevant claim
 
-For the current evidence base, this finding **strengthens the housing-burden side of the local-burden ledger**. The earlier adversarial caveat "rent exposure isn't welfare loss" is partially defeated when destination is in the inelastic quartile, which is where >40% of immigrant population lives.
+For the current evidence base, this finding **strengthens the housing-burden side of the local-burden ledger**. The earlier adversarial caveat "rent exposure isn't welfare loss" is narrowed when destination is in the inelastic quartile, which is where >40% of immigrant population lives.
 
 Confidence: **HIGH** that the descriptive correlation is real (n=237 MSAs, monotonic gradient across quartiles, replicates Saiz's own pattern); **MODERATE** that this should update the welfare interpretation (causal step requires IV).
 
