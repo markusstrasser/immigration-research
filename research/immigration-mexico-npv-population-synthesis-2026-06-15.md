@@ -129,7 +129,7 @@ Missing from warehouse rollup: EOIR $/case, ICE bed-days allocated, shelter epis
 
 | Hypothesis | Result |
 |------------|--------|
-| +$46k = immigrant pays for themselves all-in | **Falsified** — school, admin, courts, shelter not netted |
+| +$46k = immigrant pays for themselves all-in | **Unsupported / not a valid export** — school, admin, courts, shelter not netted |
 | Subtract `local_flow` from NPV | **Falsified** — per_pupil ≠ per_adult burden |
 | 10M+ net new unauthorized since Biden | **Falsified** — stock +3.5M to +5.6M |
 | Mexico drove surge | **Falsified** — Mexico unauthorized flat |
@@ -157,3 +157,4 @@ Missing from warehouse rollup: EOIR $/case, ICE bed-days allocated, shelter epis
 | 2026-06-15 | Initial: multiply-out, denominator, Biden stock vs flow (cluster Q) |
 | 2026-06-15 | Full-ledger critique: NAS ≠ net; cluster R generators; stacked bounds −$37k to +$28k |
 | 2026-06-16 | Corrected lifetime label: `+$45,631/adult` and `+$387.7B` are synthetic NAS age-25 education-mix benchmarks, not actual current-stock lifetime NPV |
+| 2026-06-16 | Reframed `+$46k = pays for themselves all-in` from falsified to unsupported/not a valid export: omitted ledgers block the inference, but the full all-in sign remains unmeasured. See `immigration-conclusion-audit-running-fixes.md`. |
