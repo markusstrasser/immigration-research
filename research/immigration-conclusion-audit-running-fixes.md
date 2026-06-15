@@ -66,3 +66,72 @@ This does **not** prove Mexico-origin immigration is all-government fiscally pos
 ### Remaining Risk
 
 The full-stock denominator may understate school incidence for recent-arrival or unauthorized subgroups if those subgroups are younger and more child-heavy than the full Mexico-born 25-64 stock. That is a legal-status/cohort split, not a license to reuse the scenario denominator for a full-stock conclusion. [INFERENCE]
+
+---
+
+## 2026-06-16 — NAS age-25 benchmark relabeled; current-stock NPV claim killed
+
+### Issue
+
+Several memos described the warehouse `lifetime_npv` rollup as "Mexico lifetime NPV" or treated the `+$387.7B` multiply-out as if it were the lifetime value of the current Mexico-born adult stock. The live tensor actually multiplies current ACS education weights by NAS Table 8-13 cells for an immigrant entering at **age 25**. [DATA]
+
+That is a useful composition benchmark, but it is not an actual remaining-lifetime NPV for current residents. Current Mexico-origin adults in the microsim are not a cohort of new age-25 entrants: only `17.4%` are age `25-34`, while `53.2%` are age `45-64`. [DATA]
+
+### Evidence Checked
+
+NAS source text around Table 8-13 states that the table compares an immigrant entering at age 25 with a native-born person followed from age 25. [SOURCE: local NAS 2017 PDF via `pdftotext`; `external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf`]
+
+Live DuckDB result:
+
+```sql
+SELECT population_group, fiscal_layer, effect_order,
+       ROUND(weight_adults,0) AS w,
+       ROUND(value_per_adult_weighted,2) AS per_adult,
+       ROUND(value_total_usd/1e9,3) AS total_b
+FROM v_country_fiscal_rollup
+WHERE population_group='mexico_origin'
+  AND fiscal_layer IN ('federal_annual','lifetime_npv');
+```
+
+| layer | adults | per adult | total |
+|-------|-------:|----------:|------:|
+| federal_annual | 8,496,334 | $1,519.28/yr | $12.908B/yr |
+| lifetime_npv | 8,496,334 | $45,631.19 | $387.698B |
+
+Current Mexico-origin age mix:
+
+| age band | adults | share |
+|----------|-------:|------:|
+| 25-34 | 1,482,136 | 17.4% |
+| 35-44 | 2,493,309 | 29.3% |
+| 45-54 | 2,656,957 | 31.3% |
+| 55-64 | 1,863,932 | 21.9% |
+
+### Fixes Made
+
+1. Updated `research/immigration-mexico-npv-population-synthesis-2026-06-15.md`:
+   - Reframed `+$45,631/adult` and `+$387.7B` as **synthetic NAS age-25 education-mix benchmarks**.
+   - Added the current-age distribution warning.
+   - Replaced "NAS mix negative for Mexico falsified" with the narrower claim that `<HS`-only application is falsified by education mix, while actual current-stock NPV remains unmeasured.
+
+2. Updated `research/immigration-lifetime-unified-theory-2026-06-15.md`:
+   - Relabeled the verifiable anchor as a synthetic age-25 benchmark.
+   - Corrected the Mexico federal annual total: full microsim stock is about `$12.9B/yr`; `$664M/yr` is the scenario subset only.
+   - Corrected receiver-vs-federal dominance language to match denominators.
+
+3. Updated `research/immigration-country-fiscal-tensor-2026-06-15.md`:
+   - Replaced stale pre-college-cell negative NAS rows with current positive synthetic benchmark rows.
+   - Added a limitation that age-25 NPV benchmarks are not current-stock remaining-lifetime estimates.
+
+4. Updated `research/immigration-lifetime-fiscal-generators.md`:
+   - Added G-LIF-Q06: age-25 NPV benchmark is not current-stock NPV.
+   - Corrected the remittance comparison to distinguish scenario-subset federal net from full-stock federal net.
+
+5. Updated `infra/immigration-fiscal/build/build_country_fiscal_tensor.py`:
+   - Tensor row notes now label `lifetime_npv` as a synthetic age-at-arrival-25 benchmark applied to current ACS education weights.
+
+### Current Conclusion
+
+The `+$45,631/adult` and `+$387.7B` numbers should be read only as **current education mix × NAS age-25 cells**. They kill a crude claim that Mexico-origin adults should all be mapped to the `<HS` NAS cell, but they do **not** establish the actual lifetime NPV of the current Mexico-born stock. [INFERENCE]
+
+The corrected full-stock annual federal proxy is about `$12.9B/yr`; `$664M/yr` is a scenario-subset calculation and should not be used against whole-stock or city-episodic totals without denominator matching. [DATA]

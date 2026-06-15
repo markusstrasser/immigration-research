@@ -320,7 +320,7 @@ def build() -> None:
         "CREATE TEMP TABLE _pop_fed AS " + " UNION ALL ".join(pop_sql_parts)
     )
 
-    # --- Lifetime NPV by population (weights from ACS; NPV from NAS cells) ---
+    # --- Synthetic age-25 NPV benchmarks by population (ACS weights; NAS cells) ---
     con.execute("""
         CREATE TEMP TABLE _pop_npv AS
         SELECT 'us_foreign_born_stock' AS population_group, e.education_bucket,
@@ -462,11 +462,13 @@ def build() -> None:
           FROM _pop_fed
           UNION ALL
           SELECT population_group, education_bucket, 'lifetime_npv', 1, weight_adults, npv_per_adult,
-                 weight_adults * npv_per_adult, 'USD_npv_per_adult', study || '/' || adjustment, 'NAS education cell'
+                 weight_adults * npv_per_adult, 'USD_npv_per_adult', study || '/' || adjustment,
+                 'Synthetic age-at-arrival-25 NPV benchmark applied to current ACS stock education weights; not actual current-stock lifetime NPV'
           FROM _pop_npv WHERE adjustment = 'baseline_public_goods'
           UNION ALL
           SELECT population_group, education_bucket, 'lifetime_npv', 2, weight_adults, npv_per_adult,
-                 weight_adults * npv_per_adult, 'USD_npv_per_adult', study, 'GE capital-tax overlay'
+                 weight_adults * npv_per_adult, 'USD_npv_per_adult', study,
+                 'GE capital-tax overlay on synthetic age-at-arrival-25 NPV benchmark'
           FROM _pop_npv WHERE adjustment = 'capital_tax_adjustment'
           UNION ALL
           SELECT population_group, NULL, 'local_flow', 1, weight_adults,
