@@ -569,9 +569,9 @@
 
 ### G-LIF-M02 — Remittance private-layer offset
 
-**Prompt:** Join World Bank remittance series to origin_fiscal_scenario weighted_adults. Compare remittance per adult to avg_federal_net.
+**Prompt:** Join World Bank remittance series to both (a) `origin_fiscal_scenario_2023` scenario-subset adults and (b) full `mexico_origin` microsim adults. Compare remittance per adult to `avg_federal_net` only after labeling the denominator.
 
-**Retrodiction:** Mexico ~$66B remittances vs ~$664M federal net scale gap before treating federal layer as household budget.
+**Retrodiction:** Mexico ~$66B remittances vs ~$664M scenario-subset federal net, or vs ~$12.9B full-stock federal net, before treating federal layer as household budget.
 
 **Negative space:** Public fiscal ledger = complete household accounting.
 
@@ -750,6 +750,14 @@
 **Retrodiction:** Would have bounded undercount debate to ~1–2M national band instead of +10M.
 
 **Negative space:** One advocacy stock count applied to all fiscal layers.
+
+### G-LIF-Q06 — Age-25 NPV benchmark ≠ current-stock NPV
+
+**Prompt:** Before multiplying NAS Table 8-13 cells by ACS stock weights, verify whether the claim is about an immigrant entering at age 25, a recent-arrival cohort, or the current age-25–64 stock. If the warehouse lacks age-at-arrival/current-age NPV paths, label the result `synthetic_age25_benchmark`, not lifetime NPV of the stock.
+
+**Retrodiction:** Would have blocked reading Mexico `+$387.7B` as actual stock lifetime NPV when the tensor only applies NAS age-25 cells to current ACS education weights.
+
+**Negative space:** Current-stock population count treated as a cohort of new age-25 entrants.
 
 ---
 
