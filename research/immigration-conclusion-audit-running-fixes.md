@@ -600,3 +600,23 @@ Replaced the stale backlash/decisive/impossible phrasing with bounded political-
 ### Updated conclusion
 
 The Caplan critique survives, but on a narrower basis: his political-externality answer is incomplete because local political-response channels cannot be assumed zero, not because the repo has cleanly proven a backlash mechanism. [INFERENCE]
+
+---
+
+## 2026-06-16 — Capacity-frontier political outcome label bounded
+
+### Issue
+
+`research/immigration-capacity-frontier-2026-04-21.md` used "backlash" in its bottom line, claims table, and synthesis even though its own open-questions section says county returns do not identify whether the effect is turnout, persuasion, composition change, or precinct-level backlash. [DATA]
+
+### Why it was wrong
+
+The data rows support a county-level political-response association. They do not identify the voter-level mechanism. Calling the outcome "backlash" hard-codes one interpretation that the memo itself lists as unresolved. [INFERENCE]
+
+### Fix
+
+Replaced the active backlash labels with political-response language, changed "settled enough" to "stable enough," and updated the immigration index descriptions for the Caplan, threshold, and county-outcome memos. [SOURCE: memo]
+
+### Updated conclusion
+
+The capacity-frontier memo now treats GOP margin movement as a political-response metric. Backlash remains one possible mechanism to test, not the name of the measured outcome. [INFERENCE]
