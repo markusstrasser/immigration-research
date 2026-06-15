@@ -12,7 +12,7 @@
 |------------------------|--------------|-----------------|
 | Rent exposure ≠ welfare loss (adversarial review §2) | Immigrants concentrate in inelastic MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40); top 10 inelastic MSAs include all the major immigrant gateways | **Rent exposure IS closer to welfare loss in destination markets** because supply can't respond. Update: "rent exposure" should be tagged elasticity-conditional — high welfare loss in inelastic destinations, modest in elastic. |
 | Clark "agree" economists are scope-limited but not wrong on their narrow channel | E-Verify mandates produced no positive wage effect on native low-skill workers in any of 12 specifications | **Clark "agree" economists were also right on the wage channel** (the actual narrow channel they mostly answered). Borjas wage prediction rejected at α=0.05 for U.S. policy variation 2008-2023. |
-| "Borjas vs Card" presented as live debate | Direct multi-state TWFE with 21-year panel finds Card-side pattern: supply contracts via E-Verify but native wages do not rise | **For U.S. policy-relevant variation, Card wins.** Borjas's restricted-Mariel result does not generalize to broader staggered enforcement shocks. |
+| "Borjas vs Card" presented as live debate | Direct multi-state TWFE with 21-year panel finds Card-side pattern: supply contracts via E-Verify but native wages do not rise | **For observed marginal enforcement variation, the Card-side pattern wins.** Borjas's restricted-Mariel result does not generalize to the broader staggered enforcement shocks tested here; this does not settle surge or mass-shock regimes. |
 | Federal-positive / local-negative split is plausible but unquantified | This cycle did not produce federal-side estimates (federal microsim still requires SIPP fix) | **Unchanged.** Federal side remains the weakest part of the repo. |
 | Local-burden story is real but heterogeneous | Saiz merge sharpens the housing component; QWI confirms wage channel is small | **Strengthened on the housing side, not on schooling.** School-burden findings are unchanged by this cycle. |
 
@@ -27,9 +27,9 @@ Three converging pieces of evidence on the U.S. wage channel:
 Against:
 - **Borjas (2017) Mariel reanalysis:** -10 to -30% on HS dropouts with restricted sample. **This finding does not replicate in broader staggered designs.**
 
-**Verdict:** For the U.S. policy variation we have, the Borjas wage prediction is rejected at conventional significance levels. The remaining uncertainty is about hypothetical extreme shocks (mass deportation, border closure) that have no direct empirical analog. **The Clark Center "agree" economists who said wage effects on natives are small were correct, not just scope-limited.**
+**Verdict:** For the observed marginal U.S. policy variation in this file, the Borjas wage prediction is rejected at conventional significance levels. The remaining uncertainty is about surge regimes and hypothetical extreme shocks (mass deportation, border closure) that have no direct empirical analog. **The Clark Center "agree" economists who said wage effects on natives are small were correct for the narrow wage channel and observed-policy range, not for the all-in immigration question.**
 
-This is a meaningful update to the repo's prior position. The verified-findings report (2026-04-10) said the Clark agree economists were "mostly right on a narrow question" but bracketed this carefully. The new evidence justifies elevating that to: **right on the wage channel, full stop, for actual policy variation.**
+This is a meaningful update to the repo's prior position. The verified-findings report (2026-04-10) said the Clark agree economists were "mostly right on a narrow question" but bracketed this carefully. The new evidence justifies elevating that to: **right on the wage channel within observed marginal policy variation.**
 
 ## Incidence — federal vs local — what this cycle changes
 
@@ -62,7 +62,7 @@ The political-economy reading: the policy push from native low-skill voters cann
 
 The user asked which interpretations or datasets could change conclusions. After this cycle:
 
-- **Borjas vs Card debate:** Resolved for U.S. policy variation. Card.
+- **Borjas vs Card debate:** Bounded to observed marginal U.S. policy variation. Card-side pattern there; surge and mass-shock regimes remain open.
 - **Rent burden as welfare loss:** Partially resolved. In destination markets, yes. Caveat about owner/renter incidence still applies.
 - **Federal-positive / local-negative split:** Sharpened on local side, unchanged on federal side.
 - **Race-stratified crime gap:** From earlier work — gap narrows from 50% to 30% but immigrants still lower than natives.

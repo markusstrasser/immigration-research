@@ -271,3 +271,30 @@ Other corrected anchors:
 ### Current Conclusion
 
 CHNV did substitute lawful port flow for irregular between-port crossings in its initial year. It did **not** reduce total receiver load, because the lawful parole inflow still arrived and still belonged in city, shelter, and political ledgers. [INFERENCE]
+
+---
+
+## 2026-06-16 — Card-vs-Borjas wage verdict bounded to observed marginal policy variation
+
+### Issue
+
+`research/immigration-causal-synthesis-2026-04-18.md` still said **"For U.S. policy-relevant variation, Card wins"** and summarized the debate as **"Resolved for U.S. policy variation. Card."** That was too broad after later surge work. The same memo already had the correct caveat that mass-deportation and border-closure shocks have no direct empirical analog; later surge analysis also says the 2021–2024 regime is outside the pre-2021 marginal-policy variation. [DATA]
+
+### Evidence Checked
+
+Local claim surfaces:
+
+- `immigration-causal-synthesis-2026-04-18.md` E-Verify/QWI evidence: native low-skill wage effects were null under observed staggered enforcement mandates. [SOURCE: memo]
+- `immigration-confidence-ladder.md` entry 29: "Static-cycle Card-wins finding is BOUNDED to marginal-policy variation; surge is OUTSIDE that variation." [SOURCE: memo]
+- `immigration-causal-surge-2021-2024.md`: wage estimates for the 2021–2024 surge period remain unmeasured; mass-deportation enforcement is outside the E-Verify/sanctuary variation. [SOURCE: memo]
+
+### Fixes Made
+
+1. Updated `research/immigration-causal-synthesis-2026-04-18.md`:
+   - Replaced "Card wins" with "Card-side pattern wins for observed marginal enforcement variation."
+   - Replaced "resolved" with "bounded to observed marginal U.S. policy variation."
+   - Made explicit that surge and mass-shock regimes remain open.
+
+### Current Conclusion
+
+The wage-channel evidence rejects large Borjas-style wage losses for the observed E-Verify/sanctuary-style policy variation in the repo. It does **not** prove workers are unaffected under the 2021–2024 surge, mass deportation, border closure, or other capacity-constrained shock regimes. [INFERENCE]
