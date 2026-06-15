@@ -38,14 +38,14 @@ The Saiz finding sharpens the **local** side:
 - Owner-gain-to-renter-loss ratio differs by destination elasticity. The repo's existing PUMA rent table can be re-tagged elasticity-conditional once the SSD is remounted.
 
 The E-Verify finding clarifies the **labor-market** side:
-- Native low-skill workers do not lose from immigrant inflows at observed magnitudes.
-- They also do not gain from enforcement that contracts immigrant labor supply.
-- Therefore the labor-market component of the local-burden ledger is approximately zero for natives.
+- Native low-skill wages do not rise when E-Verify contracts unauthorized labor supply in the observed mandate range.
+- The evidence rejects large Borjas-style native wage gains from marginal enforcement, but does not directly measure the full wage effect of current inflow levels or surge regimes.
+- Therefore the observed marginal-enforcement wage component of the local-burden ledger is small/null for natives; the broader labor-market ledger still includes employment composition, hours, occupational sorting, and unmeasured shock regimes.
 - The total local burden is school-finance + housing-rent + service-capacity, NOT wage compression.
 
 Combined effect on incidence narrative:
 - Pre-cycle: native low-skill workers maybe lose wages (Borjas), bear school burden, face rent competition.
-- Post-cycle: native low-skill workers do NOT measurably lose wages, but DO bear school burden and DO face rent competition concentrated in inelastic markets.
+- Post-cycle: native low-skill wages do not measurably rise from E-Verify-style enforcement contractions; school burden and housing incidence remain separate local channels.
 
 The political-economy reading: the policy push from native low-skill voters cannot easily be justified by their own wage data. It can be justified by their school finance and rent exposure, depending on whether they are renters or owners.
 
@@ -112,7 +112,7 @@ In priority order, given evidence value:
 
 ## Honest reflection
 
-This cycle did what it set out to do: produced two original empirical findings using fresh datasets, both pointing in the Card direction. The findings are not novel relative to academic literature — they replicate well-known patterns. The contribution is internal to this repo: **the prior epistemic posture ("Clark agree economists are right on their narrow channel but the question is broader") understated the strength of the Card-side wage evidence**. The labor-market wage channel is closed for the policy variation we have.
+This cycle did what it set out to do: produced two original empirical findings using fresh datasets, both pointing in the Card direction. The findings are not novel relative to academic literature — they replicate well-known patterns. The contribution is internal to this repo: **the prior epistemic posture ("Clark agree economists are right on their narrow channel but the question is broader") understated the strength of the Card-side wage evidence**. The marginal-enforcement wage channel is bounded for the policy variation we have; surge and mass-shock regimes remain open.
 
 The federal-fiscal side is still open. The political-economy and rent-exposure sides got sharper. The crime-rate side was already strong (separate memo earlier).
 

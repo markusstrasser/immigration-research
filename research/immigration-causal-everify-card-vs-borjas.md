@@ -139,11 +139,11 @@ This is a Card-style world: the wage curve is flatter than Borjas assumed, and r
 
 ### Verified-findings report bottom line
 - The previous report said: "Some national output and consumer-price gains exist; some indirect federal fiscal offsets likely exist; but local schooling, housing, and service-capacity costs remain concentrated." [SOURCE: research/immigration-verified-findings-report-2026-04-10.md, finding #6]
-- This holds. **Add:** for the wage channel specifically, U.S. policy variation 2008-2023 supports the Card view. Native low-skill workers are not measurably hurt by current low-skill immigration levels, and not measurably helped when that immigration is restricted via E-Verify.
+- This holds. **Add:** for the wage channel specifically, observed E-Verify policy variation in 2008-2023 supports the Card view. Native low-skill workers are not measurably helped when unauthorized labor is restricted through these mandates; this rejects large Borjas-style gains from marginal removal but does not directly measure the full wage effect of current low-skill immigration levels.
 
 ### Adversarial review §1 ("we still don't have a full national welfare ledger")
 - This finding doesn't deliver a full national welfare ledger.
-- It does close one open question: the labor-market wage channel for native low-skill workers. That contributes to the ledger from the credit side (no native loss) rather than the debit side.
+- It narrows one open question: the labor-market wage channel for native low-skill workers under observed marginal enforcement variation. That contributes to the ledger from the credit side only within this policy range, not as a universal no-native-loss claim.
 
 ### Updates to the smith-decker-friedman audit
 - David D. Friedman's open-borders argument relies in part on the Card-style elasticity. Confirmed by this analysis.
@@ -162,7 +162,7 @@ This is a Card-style world: the wage curve is flatter than Borjas assumed, and r
 | Foged-Peri (2016) | Denmark refugee assignment | RA quasi-IV | Native low-skill wages ↑ from refugee shock | Anti-Borjas |
 | Card-Peri (2016) | Cumulative immigration | National panel | Small / null on natives | Card |
 
-This analysis adds a 21-year multi-state version of the E-Verify test. It finds essentially what Card (1990) found in Miami and what Foged-Peri found in Denmark: tightening or expanding low-skill labor supply doesn't move native low-skill wages much.
+This analysis adds a 21-year multi-state version of the E-Verify test. Read with Card (1990) and Foged-Peri (2016), it supports the bounded claim that observed low-skill labor-supply shocks in these designs do not move native low-skill wages much.
 
 ## Honest limits
 

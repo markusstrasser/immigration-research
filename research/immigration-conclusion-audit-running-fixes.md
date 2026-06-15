@@ -477,3 +477,32 @@ That would make later agents build a scalar welfare-loss line from a screen that
 ### Current Conclusion
 
 Future lifetime-country work should use Saiz as a targeting and incidence screen until it has the missing causal and tenure-incidence pieces needed for a welfare scalar. [INFERENCE]
+
+---
+
+## 2026-06-16 — E-Verify wage null no longer becomes inflow null
+
+### Issue
+
+Two wage memos still converted a marginal-enforcement result into a broader immigration-level conclusion:
+
+1. `research/immigration-causal-everify-card-vs-borjas.md` said native low-skill workers are "not measurably hurt by current low-skill immigration levels."
+2. `research/immigration-causal-synthesis-2026-04-18.md` said native low-skill workers "do not lose from immigrant inflows" and the labor-market component is "approximately zero for natives."
+
+The E-Verify design measures wage response to observed state mandate variation, not the full wage effect of current low-skill immigration levels, surge regimes, cash-economy substitution, employment composition, hours, or mass shocks. [DATA]
+
+### Evidence Checked
+
+- `research/immigration-causal-everify-card-vs-borjas.md`: treatment is state E-Verify mandate timing; caveats include external validity, partial compliance, cash-economy substitution, and non-wage channels. [SOURCE: memo]
+- `research/immigration-causal-surge-2021-2024.md`: surge-period wage estimates remain unmeasured and outside pre-2021 marginal-policy variation. [SOURCE: memo]
+- `research/immigration-confidence-ladder.md` entry 29: Card-side finding is bounded to marginal-policy variation; surge is outside that variation. [SOURCE: memo]
+
+### Fixes Made
+
+1. Replaced "not measurably hurt by current low-skill immigration levels" with a narrower claim: no measurable native wage gains from E-Verify-style restrictions, rejecting large Borjas-style gains from marginal removal.
+2. Replaced "do not lose from immigrant inflows" and "labor-market component ... approximately zero" with "observed marginal-enforcement wage component is small/null."
+3. Reopened non-wage labor-market channels and surge/mass-shock regimes explicitly.
+
+### Current Conclusion
+
+The wage evidence is strong against large native wage gains from observed marginal enforcement contractions. It is not a direct proof that current low-skill immigration levels or surge inflows have zero native labor-market effect. [INFERENCE]
