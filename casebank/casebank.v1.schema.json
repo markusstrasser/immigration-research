@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schema.local/research/casebank/v1.0.0",
+  "title": "research case-bank entry",
+  "description": "One specific, verbatim, ground-truth case — NOT a summary. Summaries smooth over the particular example an LLM needs to reason from; this store preserves the raw case + provenance + the generative payload (what it seeds). Core fields are genre-independent; `extension` carries genre-specific structure. Append-only jsonl, one entry per line. Follows substrate/schemas SchemaVer + content-addressed-identity conventions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "schema_version",
+    "conformsTo",
+    "domain",
+    "genre",
+    "title",
+    "verbatim",
+    "payload",
+    "provenance",
+    "asserted_at",
+    "recorded_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["1-0-0"],
+      "description": "SchemaVer (MODEL-REVISION-ADDITION), NOT SemVer. New genres = ADDITION; changing a required field = MODEL."
+    },
+    "conformsTo": {
+      "type": "string",
+      "enum": ["https://schema.local/research/casebank/v1.0.0"],
+      "description": "Per-record schema URI. Readers route by this first, fall back to schema_version."
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "^cb_[0-9a-f]{16}$",
+      "description": "cb_ + first 16 hex of sha256_hex(canonical_json({domain, genre, verbatim, provenance.source})). Content-addressed → idempotent append; the same case re-added collapses to one row."
+    },
+    "domain": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Topic/area the case belongs to: a research topic prefix (immigration-fiscal, iq-sex-differences) OR a methodology area (agent-review, eval-design, manim-expression)."
+    },
+    "genre": {
+      "type": "string",
+      "enum": [
+        "ground-truth-exemplar",
+        "defect-trap",
+        "capability-target",
+        "failure-mode",
+        "generator-seed"
+      ],
+      "description": "What kind of case. ground-truth-exemplar: a specific real example to reason from (the primary research use — the thing summaries lose). defect-trap: a verified defect for detection/eval gold. capability-target: a target pattern from an external gold corpus. failure-mode: a way a system broke. generator-seed: a case that minted an idea-generator. Add a genre = ADDITION bump."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "description": "Short human-scannable label."
+    },
+    "verbatim": {
+      "type": "string",
+      "minLength": 80,
+      "description": "THE load-bearing field. The specific case text, PRESERVED VERBATIM — the actual excerpt/quote/artifact, not a paraphrase. May be markdown. minLength is the anti-summary guard: a one-line gist is not a case. If the real artifact is large, store the decisive passage verbatim and point to the full source via provenance.source_ref."
+    },
+    "payload": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The generative content — what this case SEEDS: the lesson, the trap, the capability, the pattern. This is why it's a bank and not an archive. Distinct from verbatim: verbatim is the raw case; payload is what to DO with it."
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "tag", "capture"],
+      "properties": {
+        "source": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Where the verbatim came from: a URL, a citation, or a repo path + commit (e.g. evals/critique_replay/cases.md C5, or doi:..., or https://...)."
+        },
+        "source_ref": {
+          "type": ["string", "null"],
+          "description": "Optional pointer to the FULL source when verbatim is an excerpt: corpus source_id (cases may cite the corpus; they are not corpus documents), file path, or anchor."
+        },
+        "tag": {
+          "type": "string",
+          "description": "Canonical provenance tag — the bare token of skills/references/provenance-tags.md (SOURCE | DATABASE | DATA | INFERENCE | SPEC | CALC | QUOTE | TRAINING-DATA | PREPRINT | FRONTIER | UNVERIFIED) or a source-grade A1..F6. Validated by loading hooks/provenance_tags.re — NOT restated here (single-source invariant)."
+        },
+        "capture": {
+          "type": "string",
+          "enum": ["verbatim", "reconstructed"],
+          "description": "verbatim = the original artifact is preserved as-is. reconstructed = the pattern is faithfully re-created (original in transcript/git history). Matches evals/critique_replay/cases.md's per-case label."
+        },
+        "retrieved_at": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "description": "When the source was captured (UTC ISO-8601 Z)."
+        }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "description": "Free-form retrieval tags."
+    },
+    "asserted_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "World time the case occurred / was first asserted (UTC ISO-8601 Z). Bitemporal pair with recorded_at."
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Append time, writer-assigned (UTC ISO-8601 Z)."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "superseded", "retracted"],
+      "default": "active"
+    },
+    "supersedes_case_id": {
+      "type": ["string", "null"],
+      "pattern": "^(cb_[0-9a-f]{16})?$",
+      "description": "Append a corrected case pointing here; never edit in place (append-only, the history of belief change IS calibration data)."
+    },
+    "extension": {
+      "type": "object",
+      "description": "Genre-specific structure (open object — documented per genre in README, deliberately not over-constrained at v1). defect-trap: {anchor, invention_traps[], gold, stratum}. capability-target: {gate, coverage_status, in_scope[], out_scope[]}. ground-truth-exemplar: usually empty."
+    },
+    "adjudication_log": {
+      "type": "array",
+      "description": "Append-only record of belief changes about this case (mirrors evals cases.md gold-adjudication log + the append-only-over-edit principle).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["date", "note"],
+        "properties": {
+          "date": {"type": "string", "format": "date"},
+          "note": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}
