@@ -13,7 +13,7 @@
 
 | Pre-cycle position | New evidence | Updated verdict |
 |---|---|---|
-| "Rent exposure ≠ welfare loss" was a strong adversarial caveat | Saiz decomposition: log(FB share) ~ unaval (β=0.12, n.s.) + WRLURI (β=0.33, t=6.29***); regulatory channel dominates | **Rent exposure is closer to welfare loss in inelastic destination markets, and zoning reform is a plausible policy lever** — the descriptive channel is strong, but immigrant-specific rent causation still needs panel/IV identification |
+| "Rent exposure ≠ welfare loss" was a strong adversarial caveat | Saiz decomposition: log(FB share) ~ unaval (β=0.12, n.s.) + WRLURI (β=0.33, t=6.29***); WRLURI is the stronger correlate | **Rent exposure is closer to welfare loss in inelastic destination markets, and zoning reform is a plausible policy hypothesis** — the descriptive channel is strong, but neither immigrant-specific rent causation nor zoning causation is identified without panel/IV evidence |
 | Card-vs-Borjas "live debate"; prior cycle showed E-Verify null wage effect | Sanctuary state DiD on same QWI panel: pro-sanctuary E1 wages +0.5% (n.s.), anti-sanctuary E1 wages +0.8% (n.s.) — **third confirmation** | **For observed marginal enforcement variation, the Card-side pattern wins.** Native low-skill wages do not measurably respond to the E-Verify/sanctuary-style variation tested here; this does not settle surge or mass-shock regimes. |
 | "Newcomer burden" treated as immigration-driven by default | IRS SOI `Total Migration-US` and ACS `Moved from abroad` still show an order-of-magnitude county gap, but the exact ratio is measurement-sensitive and not a clean burden ratio | **Most county newcomer pressure is not immigration-specific.** Treat this as a descriptive frame correction, not a precise causal burden split. |
 | Mass-deportation hypothetical had no empirical analog | BEA I-O 2023 calibration: removing 7M unauthorized → $1.45T first-order output loss (5.3% GDP); $2.32T with multiplier (8.5%) as Type-II sensitivity; per-removed-worker loss $207K first-order and $332K under Type-II sensitivity | **Mass deportation would impose a large first-order output shock**, concentrated in Construction (-5.9%), Other Services / cleaning (-8.8%), Agriculture (-4.3%); multiplier amplification should be labeled as sensitivity |
@@ -37,7 +37,7 @@
 | 2 | E-Verify mandates reduce E1 employment in exposed industries ~6% (marginal) | MEDIUM | Same |
 | 3 | Sanctuary policy variation produces null E1 wage effects (both directions) | STRONG null result for the tested policy variations | TWFE on QWI 2003-23, 12 sanctuary + 9 anti |
 | 4 | Immigrants concentrate in inelastic-supply MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40) | STRONG (descriptive) | Saiz × ACS 2022 5-yr, 237 MSAs |
-| 5 | The inelastic-MSA concentration is driven by REGULATORY constraint (WRLURI), not topography | STRONG | Saiz decomposition regression |
+| 5 | The inelastic-MSA concentration is more strongly associated with WRLURI than topographic unavailability | STRONG descriptive regression, not causal channel proof | Saiz decomposition regression |
 | 6 | Domestic U.S.-origin mover flow is order-of-magnitude larger than moved-from-abroad flow at the median county | STRONG descriptive, not burden-causal | IRS SOI 2022-23 × ACS `B07001_081E` |
 | 7 | Mass deportation of 7M unauthorized → ~$1.45T first-order output loss (~5% GDP), concentrated in Construction, Other Services, Agriculture; ~$2.32T / ~8% is Type-II sensitivity | MEDIUM (calibration, not estimate) | BEA Use Table 2023 partial-equilibrium sim |
 | 8 | Open-borders welfare calculation depends entirely on weight assigned to immigrant welfare; at w≥0.25 positive even under harsh native-cost benchmarks; housing capacity is a modeled early-binding constraint in very-large-arrival scenarios | MEDIUM (sensitivity analysis on Clemens parameters) | GPT-5.4 review of calibration |
@@ -58,10 +58,10 @@ The headline arithmetic flips on the welfare weight assigned to immigrants. At w
 Four entries to add (in addition to the three from morning cycle):
 
 ```
-20. `Saiz elasticity-immigrant correlation operates through regulatory not topographic channel`
-Rating: STRONG
-Reason: log(FB share) ~ WRLURI t=6.29*** vs unaval t=0.58. Zoning reform is a
-policy lever for the rent-burden problem.
+20. `Saiz elasticity-immigrant correlation is stronger for regulatory index than topographic unavailability`
+Rating: STRONG descriptive regression
+Reason: log(FB share) ~ WRLURI t=6.29*** vs unaval t=0.58. This makes zoning reform
+a plausible policy hypothesis, not an identified causal lever for immigrant rent burden.
 [SOURCE: research/immigration-causal-everify-card-vs-borjas.md, saiz_decomposition.py]
 
 21. `Sanctuary policy variation does not change native low-skill wages either direction`
@@ -130,6 +130,7 @@ The biggest *interpretation* lever remains the welfare-weight question, which is
 | Date | Change |
 |------|--------|
 | 2026-06-16 | Bounded short-form E-Verify/sanctuary confidence language: the findings reject large enforcement-channel wage gains within the tested policy margins, not every Borjas-style or enforcement-channel claim. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Bounded Saiz decomposition language: WRLURI is a stronger descriptive correlate than topographic unavailability, not proof that zoning drives immigrant concentration or that zoning reform is an identified causal lever. See `immigration-conclusion-audit-running-fixes.md`. |
 
 [SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
 [SOURCE: research/immigration-causal-saiz-elasticity-rent.md]
