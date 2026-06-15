@@ -780,3 +780,23 @@ Changed the row to "No peer-reviewed higher-rate study found in this pass; Lott 
 ### Updated conclusion
 
 The crime memo's substantive conclusion is unchanged. The provenance is now narrower: the pass failed to find a peer-reviewed higher-rate study; it does not claim an exhaustive proof that none exists. [INFERENCE]
+
+---
+
+## 2026-06-16 — Capacity-frontier claims table scoped to model output
+
+### Issue
+
+`research/immigration-capacity-frontier-2026-04-21.md` had already been narrowed away from causal-threshold language, but its claims table still listed several county model patterns as `HIGH | VERIFIED` without explaining that those labels were about artifact-backed model output, not causal identification. [DATA]
+
+### Why it was wrong
+
+For a reader scanning the table, `HIGH | VERIFIED` can look like a validated causal effect. The listed artifacts verify correlations, model rankings, interaction-grid patterns, and decile summaries; they do not by themselves identify immigration-caused wage, employment, sorting, or political effects. [INFERENCE]
+
+### Fix
+
+Added a scope note below the claims table: `HIGH` and `VERIFIED` mean the reported model-output pattern is file-backed and reproducible from the listed artifacts, not that the county associations are clean causal effects. Added a memo revision entry. [SOURCE: memo]
+
+### Updated conclusion
+
+The capacity-frontier evidence remains useful as a descriptive stress surface. Its table is now explicitly scoped so reproducibility of the model output is not confused with causal validity. [INFERENCE]
