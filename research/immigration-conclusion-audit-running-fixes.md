@@ -298,3 +298,33 @@ Local claim surfaces:
 ### Current Conclusion
 
 The wage-channel evidence rejects large Borjas-style wage losses for the observed E-Verify/sanctuary-style policy variation in the repo. It does **not** prove workers are unaffected under the 2021–2024 surge, mass deportation, border closure, or other capacity-constrained shock regimes. [INFERENCE]
+
+---
+
+## 2026-06-16 — Paradigm synthesis bounded wage and newcomer-ratio claims
+
+### Issue
+
+`research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md` still contained two stale summary claims:
+
+1. "Card wins decisively" and "Future repo memos should treat this as settled" for the wage channel.
+2. Domestic U.S.-origin newcomer flow was summarized as `~33x` recent immigration at the median county.
+
+Both were too broad. Later surge work bounds the wage result to observed marginal enforcement variation, and the corrected internal-vs-immigrant newcomer memo replaced the older `33x` annualized stock proxy with ACS `B07001_081E`, giving about `21.7x` for the ratio of medians and `20.5x` for the median county-level ratio among counties with nonzero moved-from-abroad share. The IRS series is domestic U.S.-origin movement, not native-only identity. [DATA]
+
+### Evidence Checked
+
+- `research/immigration-confidence-ladder.md` entry 29: static-cycle Card-wins finding is bounded to marginal-policy variation; surge is outside that variation. [SOURCE: memo]
+- `research/immigration-causal-surge-2021-2024.md`: 2021–2024 surge wage estimates remain unmeasured; mass-deportation enforcement is outside observed E-Verify/sanctuary variation. [SOURCE: memo]
+- `research/immigration-causal-internal-vs-immigrant-newcomers.md`: current median county comparison is about `4.59%` IRS `Total Migration-US` inflow versus `0.21%` ACS moved-from-abroad, with ratio of medians `21.7x` and median county-level ratio `20.5x`. [SOURCE: memo]
+
+### Fixes Made
+
+1. Updated `research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md`:
+   - Replaced "Card wins decisively" with the bounded claim that the Card-side pattern wins for observed marginal wage variation.
+   - Removed the "settled" language for surge/mass-shock regimes.
+   - Replaced `33x` newcomer-ratio language with the corrected `20–22x` descriptive range, unit caveat, and domestic-movement caveat.
+
+### Current Conclusion
+
+The paradigm synthesis now carries the same scope discipline as the later claim ledger: marginal enforcement wage evidence is not surge evidence, and county newcomer comparisons are descriptive domestic-vs-abroad denominator corrections, not direct burden estimates. [INFERENCE]
