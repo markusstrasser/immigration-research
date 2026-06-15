@@ -20,7 +20,7 @@ Restrictionists win politically when they **switch ledgers** the same way expans
 | **L2 Subgroup** | Black low-skill men hit on wages, employment, incarceration | BGH w12518 | Not built |
 | **F1 Lifetime fiscal** | Low-education immigrants net fiscal drain over life | NAS 2017 Table 8-13; Orrenius wp1704 | Built (`lifetime_npv`) — **partial ℓ** |
 | **F2 Annual advocacy ledger** | Unauthorized = $150B+ net cost all levels | FAIR 2023 [advocacy] | ITEP floor only; no reconciled FAIR/ITEP/Pew ledger |
-| **C1 Local capacity** | Schools, shelter, homelessness spike with inflow | Gould w33655; receiver cities | School layer + episodic CSV |
+| **C1 Local capacity** | School/shelter loads and homelessness rise in receiver settings | Gould w33655; receiver cities | School layer + episodic CSV |
 | **P1 Political economy** | Low-skill immigration + welfare state → worse policy mix | Razin w15597, w17515 | Not modeled |
 | **A1 Admin** | Border/courts/detention = real taxpayer cost | CBP/ICE budgets; EOIR staged | Cluster J, not allocated |
 
@@ -116,13 +116,13 @@ National **education×experience** framing is more coherent than “city has imm
 1. **Premise:** HUD sheltered homelessness **+43%** 2022–2024 after 16-year decline. [SOURCE: Gould w33655, abstract]
 2. **Mechanism:** Asylum seekers placed in **emergency shelter** in NYC, Chicago, Massachusetts, Denver — not absorbed by private housing market.
 3. **Evidence:** **~60%** of two-year rise in sheltered homelessness = asylum seekers (direct local gov + demographic methods). [SOURCE: Gould w33655]
-4. **Policy implication:** Surge-era immigration created **visible local fiscal/social crisis** independent of lifetime NAS averages.
+4. **Policy implication:** Surge-era arrivals can create or intensify **visible receiver-city shelter/budget stress** independent of lifetime NAS averages; this is gross-load evidence, not a net fiscal-burden or national-collapse estimate.
 
 ### Repo alignment
 
 - NYC **$3.7B** FY24 shelter — `receiver_city_migrant_costs` [SOURCE: cluster P]
 - **Kill-test survived** in surge memo for receiver political swing
-- **Not** in the synthetic Mexico age-25 NAS benchmark; **is** in restrictionist “system collapse” story
+- **Not** in the synthetic Mexico age-25 NAS benchmark; **is** in the restrictionist receiver-capacity stress story
 
 ### Hanson composition (w23753) — supporting thread
 
@@ -159,7 +159,7 @@ Not in DuckDB — political ℓ layer. Explains why **fiscal sign co-evolves** w
 
 ### Our gap
 
-Cluster J mined budgets; **not allocated** to `mexico_origin` or unauthorized path — validates user critique on +$46k NPV.
+Cluster J mined budgets; **not allocated** to `mexico_origin` or unauthorized path — supports the critique that +$46k NPV omits the admin-allocation layer.
 
 ---
 
@@ -186,7 +186,7 @@ From `immigration-economist-rhetorical-failures.md` — **mirror image**:
 
 **Strongest fair restrictionist claim (repo-aligned):**
 
-> Low-skill, surge-era, unauthorized-heavy inflows can be **federal-positive on thin annual cash-flow** while **lifetime-negative on education cells**, **locally catastrophic on shelter/school**, and **administratively expensive** — and these are **compatible**.
+> Low-skill, surge-era, unauthorized-heavy inflows can be **federal-positive on thin annual cash-flow** while **lifetime-negative on education cells**, **locally severe in shelter/school-capacity ledgers**, and **administratively expensive** — and these are **compatible**.
 
 That is essentially our unified theory sentence 1 — restrictionists are right on **layer multiplication**, wrong on **single-scalar panic**.
 
@@ -212,7 +212,7 @@ That is essentially our unified theory sentence 1 — restrictionists are right 
 | All immigration hurts average native wages | **Contested** — Card/null areas; small average effects |
 | 10M encounters = 10M new illegals | **False** — stock +3.5–5.6M |
 | Crime wave from unauthorized | **Mostly false** — repo crime memo |
-| Local shelter/school shock in surge cities | **True** as episodic ℓ — Gould 60%, NYC $B |
+| Local shelter/school shock in surge cities | **Supported as gross episodic receiver-stress layer** — Gould 60%, NYC $B; not net/system-collapse proof |
 | Low-skill lifetime fiscal negative (individual NAS) | **True under NAS assumptions** for `<HS` cell |
 | +$46k Mexico = net contributor all-in | **False** — missing admin, courts, full local |
 
@@ -251,3 +251,4 @@ That is essentially our unified theory sentence 1 — restrictionists are right 
 |------|------|
 | 2026-06-15 | Initial steel-man map from corpus PDFs + FAIR web |
 | 2026-06-16 | Reframed FAIR from "upper-bound political ledger" to advocacy high-cost ledger; its assumptions are not a mathematical upper bound and need reconciliation against ITEP/Pew before warehouse use. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Narrowed receiver-city language from crisis/system-collapse/catastrophic wording to gross-load shelter/budget stress and receiver-capacity ledgers. See `immigration-conclusion-audit-running-fixes.md`. |

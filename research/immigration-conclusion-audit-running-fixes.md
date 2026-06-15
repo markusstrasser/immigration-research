@@ -980,3 +980,23 @@ Replaced the embedded ladder rating with "strong against large Borjas-style gain
 ### Updated conclusion
 
 The April causal synthesis is now aligned with the later bounded source memo: strong Card-side evidence for observed E-Verify policy variation, not a global E-Verify-based rejection of Borjas-style claims. [INFERENCE]
+
+---
+
+## 2026-06-16 — Restrictionist steel-man overread receiver stress as collapse
+
+### Issue
+
+`research/immigration-restrictionist-arguments-steelman-2026-06-15.md` still used crisis/collapse/catastrophe language around the receiver-city layer: surge-era immigration "created visible local fiscal/social crisis," the NAS benchmark omitted a "system collapse" story, the admin-budget gap "validates" the +$46k critique, and the strongest fair claim described shelter/school effects as "locally catastrophic." [DATA]
+
+### Why it was wrong
+
+The cited receiver evidence supports gross shelter/budget load and visible receiver-city stress. Gould's sheltered-homelessness result and NYC/receiver-city cost rows are material, but they do not by themselves estimate net fiscal burden after reimbursements and baseline costs, identify national system collapse, or allocate administrative costs to the Mexico-origin NPV cell. The steel-man should preserve the layer without overstating what it identifies. [INFERENCE]
+
+### Fix
+
+Changed the policy implication to receiver-city shelter/budget stress; replaced "system collapse" with receiver-capacity stress; changed "validates" to support for an omitted admin-allocation layer; changed "locally catastrophic" to locally severe in shelter/school-capacity ledgers; and bounded the disconfirmation table to gross episodic receiver-stress evidence rather than net/collapse proof. Added a memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The restrictionist steel-man still keeps the receiver-stress objection alive, but it no longer upgrades gross local outlays and shelter stress into a national-collapse or completed net-fiscal verdict. [INFERENCE]
