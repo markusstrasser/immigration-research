@@ -620,3 +620,23 @@ Replaced the active backlash labels with political-response language, changed "s
 ### Updated conclusion
 
 The capacity-frontier memo now treats GOP margin movement as a political-response metric. Backlash remains one possible mechanism to test, not the name of the measured outcome. [INFERENCE]
+
+---
+
+## 2026-06-16 — Mass-deportation output headline separated from sensitivity
+
+### Issue
+
+`research/immigration-confidence-ladder.md` entry 32 already said the mass-deportation output shock should lead with the first-order figure and keep the Type-II multiplier endpoint only as a labeled sensitivity. But entry 24 still headlined the combined `$1.5-2.3T` / `5-8% GDP` range, and `research/immigration-causal-surge-2021-2024.md` repeated the same `~5-8% GDP` presentation. [DATA]
+
+### Why it was wrong
+
+The Type-II endpoint stacks a modeled multiplier on top of a calibration that freezes replacement hiring, wage response, and capital reallocation. It is useful as a sensitivity, but headlining it as a range launders a modeled amplifier into the main estimate. [INFERENCE]
+
+### Fix
+
+Changed the ladder entry and surge memo to lead with the first-order `~$1.45T` / `~5% GDP` figure and label the `~$2.32T` / `~8%` endpoint as Type-II sensitivity only. [SOURCE: memo]
+
+### Updated conclusion
+
+The mass-deportation output-shock claim remains medium-confidence calibration evidence, but the headline is now the first-order estimate; multiplier amplification is not presented as coequal estimate truth. [INFERENCE]
