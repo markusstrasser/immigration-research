@@ -16,8 +16,8 @@
 | "Rent exposure ≠ welfare loss" was a strong adversarial caveat | Saiz decomposition: log(FB share) ~ unaval (β=0.12, n.s.) + WRLURI (β=0.33, t=6.29***); regulatory channel dominates | **Rent exposure is closer to welfare loss in inelastic destination markets, and zoning reform is a plausible policy lever** — the descriptive channel is strong, but immigrant-specific rent causation still needs panel/IV identification |
 | Card-vs-Borjas "live debate"; prior cycle showed E-Verify null wage effect | Sanctuary state DiD on same QWI panel: pro-sanctuary E1 wages +0.5% (n.s.), anti-sanctuary E1 wages +0.8% (n.s.) — **third confirmation** | **For observed marginal enforcement variation, the Card-side pattern wins.** Native low-skill wages do not measurably respond to the E-Verify/sanctuary-style variation tested here; this does not settle surge or mass-shock regimes. |
 | "Newcomer burden" treated as immigration-driven by default | IRS SOI `Total Migration-US` and ACS `Moved from abroad` still show an order-of-magnitude county gap, but the exact ratio is measurement-sensitive and not a clean burden ratio | **Most county newcomer pressure is not immigration-specific.** Treat this as a descriptive frame correction, not a precise causal burden split. |
-| Mass-deportation hypothetical had no empirical analog | BEA I-O 2023 calibration: removing 7M unauthorized → $1.45T first-order output loss (5.3% GDP); $2.32T with multiplier (8.5%); per-removed-worker loss $207K-$332K, ~7-11× their own annual earnings | **Mass deportation would impose a one-time $1.5-2.3T output shock**, concentrated in Construction (-5.9%), Other Services / cleaning (-8.8%), Agriculture (-4.3%) |
-| Repo verdict implicitly weights immigrant welfare at zero | GPT-5.4 calibration with project's findings as inputs: at w=0 negative by construction; at w≥0.25 positive under 25%-cost benchmark; housing/construction binds in year 1 for every scenario S1+ | **Verdict is welfare-weight-driven, not data-driven, in the dimension that matters most.** Honest framing must name the weight. Feasibility constraint: U.S. housing/construction binds immediately at any scenario above ~10M/year arrivals. |
+| Mass-deportation hypothetical had no empirical analog | BEA I-O 2023 calibration: removing 7M unauthorized → $1.45T first-order output loss (5.3% GDP); $2.32T with multiplier (8.5%) as Type-II sensitivity; per-removed-worker loss $207K first-order and $332K under Type-II sensitivity | **Mass deportation would impose a large first-order output shock**, concentrated in Construction (-5.9%), Other Services / cleaning (-8.8%), Agriculture (-4.3%); multiplier amplification should be labeled as sensitivity |
+| Repo verdict implicitly weights immigrant welfare at zero | GPT-5.4 calibration with project's findings as inputs: at w=0 negative by construction; at w≥0.25 positive under 25%-cost benchmark; housing/construction is modeled as binding in year 1 for every scenario S1+ | **Verdict is welfare-weight-driven, not data-driven, in the dimension that matters most.** Honest framing must name the weight. Feasibility constraint should be framed as a calibration warning: U.S. housing/construction may bind quickly at very large arrival scenarios, not as a validated national threshold. |
 
 ## What this cycle didn't settle
 
@@ -39,8 +39,8 @@
 | 4 | Immigrants concentrate in inelastic-supply MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40) | STRONG (descriptive) | Saiz × ACS 2022 5-yr, 237 MSAs |
 | 5 | The inelastic-MSA concentration is driven by REGULATORY constraint (WRLURI), not topography | STRONG | Saiz decomposition regression |
 | 6 | Domestic U.S.-origin mover flow is order-of-magnitude larger than moved-from-abroad flow at the median county | STRONG descriptive, not burden-causal | IRS SOI 2022-23 × ACS `B07001_081E` |
-| 7 | Mass deportation of 7M unauthorized → $1.5-2.3T output loss (5-8% GDP), concentrated in Construction, Other Services, Agriculture | MEDIUM (calibration, not estimate) | BEA Use Table 2023 partial-equilibrium sim |
-| 8 | Open-borders welfare calculation depends entirely on weight assigned to immigrant welfare; at w≥0.25 positive even under harsh native-cost benchmarks; housing capacity binds in year 1 at any scenario above ~10M arrivals/year | MEDIUM (sensitivity analysis on Clemens parameters) | GPT-5.4 review of calibration |
+| 7 | Mass deportation of 7M unauthorized → ~$1.45T first-order output loss (~5% GDP), concentrated in Construction, Other Services, Agriculture; ~$2.32T / ~8% is Type-II sensitivity | MEDIUM (calibration, not estimate) | BEA Use Table 2023 partial-equilibrium sim |
+| 8 | Open-borders welfare calculation depends entirely on weight assigned to immigrant welfare; at w≥0.25 positive even under harsh native-cost benchmarks; housing capacity is a modeled early-binding constraint in very-large-arrival scenarios | MEDIUM (sensitivity analysis on Clemens parameters) | GPT-5.4 review of calibration |
 
 ### Three new policy-relevant statements
 
@@ -87,10 +87,12 @@ benchmark; at w=1.0 positive even at 50%-cost. Empirical evidence cannot
 adjudicate values. Honest framing must name the weight.
 [SOURCE: data/clemens/gpt54_calibration_review.md]
 
-24. `Mass deportation of 7M unauthorized would impose ~$1.5-2.3T one-time output shock (5-8% GDP)`
+24. `Mass deportation of 7M unauthorized would impose ~$1.45T first-order output shock (~5% GDP); Type-II endpoint is sensitivity only`
 Rating: MEDIUM (calibration not estimate)
 Reason: BEA I-O 2023 partial-equilibrium with industry FB-share assumptions;
-consistent with E-Verify -6% E1 employment finding under 50% compliance
+the ~$2.32T / ~8% Type-II endpoint is a labeled multiplier sensitivity, not
+coequal headline estimate truth. Consistent with E-Verify -6% E1 employment
+finding under 50% compliance.
 [SOURCE: scripts/mass_deportation_sim.py]
 ```
 

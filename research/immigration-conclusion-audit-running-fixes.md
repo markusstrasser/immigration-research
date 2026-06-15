@@ -660,3 +660,23 @@ Replaced the naive division claim with a refusal to compute a native comparison 
 ### Updated conclusion
 
 The crime memo's bottom-line directional claim is unchanged, but its ICE-docket section no longer uses an invalid unauthorized-stock denominator. [INFERENCE]
+
+---
+
+## 2026-06-16 — Paradigm synthesis calibration headlines bounded
+
+### Issue
+
+`research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md` still carried two stale calibration presentations: mass deportation was headlined as a `$1.5-2.3T` / `5-8% GDP` range, and the open-borders calibration row described housing capacity as binding above `~10M/year` arrivals without enough warning that this was a modeled threshold, not a validated national capacity function. [DATA]
+
+### Why it was wrong
+
+Later fixes established that the deportation multiplier endpoint is a Type-II sensitivity, not a coequal estimate, and that surge-era receiver stress is only directionally consistent with the national capacity calibration. The April synthesis had not inherited those scope bounds. [INFERENCE]
+
+### Fix
+
+Changed the mass-deportation rows and ladder excerpt to lead with the first-order `~$1.45T` / `~5% GDP` output shock, labeling `~$2.32T` / `~8%` as Type-II sensitivity. Reframed the `~10M/year` housing/construction statement as a calibration warning for very-large-arrival scenarios rather than a validated national threshold. [SOURCE: memo]
+
+### Updated conclusion
+
+The paradigm synthesis still flags large-output and capacity risks, but now treats both as calibration outputs with sensitivity labels rather than measured all-scenario thresholds. [INFERENCE]
