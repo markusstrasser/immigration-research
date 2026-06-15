@@ -59,6 +59,8 @@ That is the more relevant descriptive object if the threshold story is about abs
 | 6 | Native net migration becomes more negative as load-capacity rises | Load deciles show about `-1.07 pp` gap from `D1` to `D10`; load-based models outperform stock-only on adjusted `R²` | HIGH | [county_load_capacity_deciles.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_load_capacity_deciles.csv), [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
 | 7 | Receiver-city spending is more tightly tied to absolute shelter shortfall than to saturation ratio alone | In 2024 receiver descriptives, `corr(shelter_gap_vs_hic, spending) ≈ 0.93`, much larger than `corr(sheltered_to_hic_ratio, spending)` | MEDIUM | [receiver_capacity_descriptives_2024.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_capacity_descriptives_2024.csv) | VERIFIED |
 
+**Scope note:** In this table, `HIGH` and `VERIFIED` mean the reported model-output pattern is file-backed and reproducible from the listed artifacts. They do not mean the county associations are clean causal effects; the causal caveats below still apply. [INFERENCE]
+
 ## What changed from the prior position?
 
 The prior county memo said:
@@ -279,3 +281,9 @@ The better formula is:
 `incidence = stock + flow + capacity + composition + regime`
 
 and in the current public-data stack, `flow + capacity` is where the new descriptive traction is coming from. Causal identification still needs stronger counterfactual design. [INFERENCE]
+
+## Revisions
+
+| Date | Change |
+|------|--------|
+| 2026-06-16 | Added a claims-table scope note: `HIGH`/`VERIFIED` refer to reproducible model-output patterns, not causal identification. See `immigration-conclusion-audit-running-fixes.md`. |
