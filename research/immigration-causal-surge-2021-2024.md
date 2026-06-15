@@ -192,7 +192,8 @@ SWB encounters. Corrected total-CBP DiD is null (β=+0.45, t=1.29).
 Rating: strong (administrative data)
 Reason: NYC FY24 $3.7B (3.5% of operating budget); MA FY24 $1B; Chicago $228M
 peak; Denver $89M (cuts elsewhere to fund). Combined 5+ city load $5B+/yr at
-peak. System-collapse claim has empirical bite.
+peak. Receiver-load stress has empirical bite, but these are gross outlays, not
+net fiscal-burden or national system-collapse proof.
 [SOURCE: data/bused_cities/receiver_city_costs.csv]
 
 28. `Receiver cities swung about +2.4 pp more Republican after Hispanic-share control`
