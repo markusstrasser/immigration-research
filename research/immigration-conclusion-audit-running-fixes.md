@@ -740,3 +740,23 @@ Replaced the universal "survives all datasets" and "data cannot kill" language w
 ### Updated conclusion
 
 The fiscal-tensor synthesis still stands as the best current organizing frame, but it is no longer presented as immune to future evidence. Its strongest conclusion is anti-scalar: do not collapse layer, cell, and cohort into one immigration fiscal number. [INFERENCE]
+
+---
+
+## 2026-06-16 — Native-low-skill political-economy inference narrowed
+
+### Issue
+
+`research/immigration-causal-synthesis-2026-04-18.md` said the policy push from native low-skill voters could not easily be justified by their wage data, but "can be justified" by their school-finance and rent exposure. That moved too quickly from incidence evidence to voter motivation and policy justification. [DATA]
+
+### Why it was wrong
+
+The E-Verify wage evidence can weaken a wage-only restriction story within observed marginal-enforcement variation. It does not identify why voters support restriction, and the Saiz/school channels are exposure mechanisms, not proofs that a particular voter group is correctly optimizing over those burdens. Rent incidence depends on renter/owner status; school incidence depends on local fiscal institutions and child composition; political support also includes values and credibility beliefs. [INFERENCE]
+
+### Fix
+
+Replaced the "can be justified" line with a narrower statement: wage data alone are weak support for the native-low-skill wage story, while school-finance and renter exposure remain plausible incidence channels. Added a revision note to the synthesis memo. [SOURCE: memo]
+
+### Updated conclusion
+
+The political-economy conclusion survives only as a channel map: wage evidence is weak for the observed range, and school/rent channels remain live. The memo no longer claims those channels identify voter motivation or justify the policy push. [INFERENCE]
