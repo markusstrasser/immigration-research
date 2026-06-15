@@ -720,3 +720,23 @@ Reframed the crime memo's question, bottom line, confidence statement, internati
 ### Updated conclusion
 
 The directional crime finding survives, but its estimand is now explicit: lower observed justice-system rates in current U.S. evidence, not directly measured lower true offending in every subgroup or context. [INFERENCE]
+
+---
+
+## 2026-06-16 — Unified fiscal synthesis bounded from universal survival claim
+
+### Issue
+
+`research/immigration-lifetime-unified-theory-2026-06-15.md` said its explanatory story "survives all datasets," that "data cannot kill" the coherent mechanism, and that "all channels are real in their layer." That overstated what a heterogeneous warehouse of annual proxies, lifetime NPV benchmarks, local descriptive burdens, receiver-city ledgers, and theory papers can identify. [DATA]
+
+### Why it was wrong
+
+A layered tensor is the right anti-scalar frame, but it is still falsifiable. New data can kill channel magnitudes, signs for particular cells, annual-to-lifetime bridges, destination-specific incidence, or equilibrium assumptions. The robust correction is narrower: one dataset layer should not be exported as the total immigration conclusion without matching the ledger, cell, and cohort. [INFERENCE]
+
+### Fix
+
+Replaced the universal "survives all datasets" and "data cannot kill" language with a current-warehouse-compatible working synthesis. Reframed the narrative spine as still falsifiable and changed "all channels are real" to evidence-in-layer language with varying identification strength. Added a memo revision row documenting the confidence bound. [SOURCE: memo]
+
+### Updated conclusion
+
+The fiscal-tensor synthesis still stands as the best current organizing frame, but it is no longer presented as immune to future evidence. Its strongest conclusion is anti-scalar: do not collapse layer, cell, and cohort into one immigration fiscal number. [INFERENCE]

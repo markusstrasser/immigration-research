@@ -29,7 +29,7 @@ There is **no** legitimate reduction to one number. Debate collapse happens when
 
 **Sign flips are dominated by accounting rules (public goods, capital-tax GE, descendants, attrition, lifecycle phase), not by "pro- vs anti-immigration" honesty — and sweep 11 showed that even *within* the local layer, a 1000× unit bug made K-12 costs disappear until F-33 thousands were corrected.** Clemens capital-tax adjustment moves the same `<HS` cell from −$109k to +$128k without changing the underlying earnings path. [SOURCE: `npv_education_benchmarks`; Clemens 2023 PDF in corpus]
 
-**The explanatory story that survives all datasets: immigration fiscal politics is a fight over which layer, which cell, and which cohort (surge vs stock) get to stand in for "the immigrant," while restriction and welfare-state politics add equilibrium feedback on skill mix and admin spend.** Data can narrow cells and layers; it cannot, by itself, retire a coherent mechanism — only a misapplied scalar.
+**The current warehouse-compatible explanation: immigration fiscal politics is a fight over which layer, which cell, and which cohort (surge vs stock) get to stand in for "the immigrant," while restriction and welfare-state politics add equilibrium feedback on skill mix and admin spend.** This is a working synthesis, not proof that every dataset endorses the mechanism. New data can still kill channel magnitudes, cell signs, and annual-to-lifetime bridges; the repeated failure is the one-scalar export.
 
 ### What the warehouse actually measures (honest stack)
 
@@ -68,7 +68,7 @@ There is **no** legitimate reduction to one number. Debate collapse happens when
 | Mexico school burden/adult (microsim weights) | $771 | `v_three_layer_annual` — sweep 26 |
 | Mexico crude annual (fed − school) | +$748 | `v_three_layer_annual` — sweep 32 |
 
-### Narrative spine (explanation that data has not killed)
+### Narrative spine (current synthesis, still falsifiable)
 
 Politicians and advocates pick **one layer** to moralize:
 
@@ -77,7 +77,7 @@ Politicians and advocates pick **one layer** to moralize:
 - Restrictionists reply: local episodic shelter (Gould) + welfare magnet (Razin)
 - Expansionists reply: Clemens/Colas GE + Card-Peri complementarity
 
-**All channels are real in their layer.** Failure modes: **layer laundering** (prove layer A, conclude layer B) and **unit laundering** (sweep 0–10 local school field was 1000× too small).
+Each channel has evidence in its own layer, with different strength and identification quality. Failure modes: **layer laundering** (prove layer A, conclude layer B) and **unit laundering** (sweep 0–10 local school field was 1000× too small).
 
 Return migration (Duleep-Regets) and native out-migration (Borjas w11610) explain why **stock snapshots misstate who bears costs**. Razin political-economy models explain why **skill mix and transfer policy co-evolve** — fiscal sign is not an immigrant fixed effect.
 
@@ -171,7 +171,7 @@ Each model is a **ledger grammar** + **prediction map**. Critique = compare gram
 | **CBO surge federal** | n/a | macro band | n/a | n/a | cohort tag |
 | **Data we have** | benchmarks | papers | Saiz+stage2/5 fixed | Mariel stack | Hanson+IZA+Razin+LPR |
 
-**Irreconcilables (frame fights, not data typos):**
+**Current irreconcilables (scope choices plus empirical gaps):**
 
 1. **Lifetime vs annual** — M1 vs SIPP (+$1,519/yr) — bridge required (G-LIF-M01)
 2. **GE inclusion** — M1 vs M2 (−$109k vs +$128k)
@@ -179,7 +179,7 @@ Each model is a **ledger grammar** + **prediction map**. Critique = compare gram
 4. **Stock vs surge cohort** — ACS weights vs CBO 2021+ scenario
 5. **Wage → fiscal** — M4 vs M2
 
-**What data cannot kill:** Coherent **layer-laundering** — each model true in its ledger if scalars not exported.
+**What current data has not killed:** The layered-accounting explanation — several models can be locally informative if their ledger and cell scopes are explicit.
 
 **What data can kill:** Specific **scalar exports** and **unit errors** — pre-fix $21/pupil local layer; "Mexico lifetime NPV"; "immigrants don't pay taxes" vs ITEP.
 
@@ -253,3 +253,4 @@ Full text: `research/immigration-lifetime-fiscal-generators.md`
 | 2026-06-15 | 23–32 | **NAS Table 8-13 college+ cells** staged (`HS` +$49k, some college +$205k, BA +$514k) → Mexico **synthetic age-25 benchmark +$45,631/adult** (education-mix weighted). **Microsim adult weights** revised school burden: Mexico $771/adult (was ~$15k with scenario N) → **crude annual net +$748** (fed $1,519 − school). Return-migration haircut scenarios in `life.return_migration_haircut_scenarios`. LPR xlsx still missing. Saiz median ε = 2.54 (269 MSAs). Memo: `immigration-sweep-cycles-23-32-2026-06-15.md`. **Still blocked:** EU27/NH-white lifetime rollup; UK/EU school rows thin-N; descendant attribution (Akers-Boustan mined only); age-at-arrival/current-age NPV for Mexico stock. |
 | 2026-06-15 | session | **Stock vs flow:** Mexico multiply-out +$387.7B / +$46k/adult on **8.5M Mexico-born FB 25–64** is an **age-25 NAS benchmark applied to current stock education weights**, not actual current-stock lifetime NPV. BA+ **10.2%**. Biden: **~10.8M encounters ≠ +10M stock**; Pew **+3.5M** (2021–23), CIS **+5.6M** (2021–25). Mexico unauthorized **flat ~4.3M**. Cluster **Q** generators + memo `immigration-mexico-npv-population-synthesis-2026-06-15.md`. |
 | 2026-06-15 | session | **Full ledger (cluster R):** +$46k synthetic NAS age-25 benchmark **not** net of school ($771/yr), state/local surge ($657/yr), CBP/ICE (~$2.1k/yr), courts, shelter. Honest annual crude **+$748**. Illustrative stacked band **−$37k to +$28k/adult** [INFERENCE]. Generators G-LIF-R01–R05; mining `cluster-r-full-ledger.json`. **Kill:** scalar Mexico net without ℓ vector. |
+| 2026-06-16 | conclusion audit | **Synthesis confidence bound:** replaced "survives all datasets" / "data cannot kill" language with a current-warehouse-compatible working synthesis. New evidence can still kill channel magnitudes, cell signs, and annual-to-lifetime bridges; the robust correction is against exporting one scalar across layers. See `immigration-conclusion-audit-running-fixes.md`. |
