@@ -402,3 +402,27 @@ The receiver-city election evidence remains a medium-strength correlation that s
 ### Current Conclusion
 
 The housing evidence defeats the blanket "rent exposure is not welfare loss" dismissal, but only conditionally: in inelastic destination markets, rent exposure is a stronger renter-incidence warning, not a completed aggregate welfare proof. [INFERENCE]
+
+---
+
+## 2026-06-16 — Saiz rent memo removes causal language from cross-section
+
+### Issue
+
+`research/immigration-causal-saiz-elasticity-rent.md` labeled itself "Cross-sectional descriptive," but the bottom line and implication bullets still used causal phrases: housing supply "cannot respond," rent appreciation has "nowhere to go," marginal newcomers "drive up cost burden," and the adversarial caveat was "partially defeated." Those phrases overstate what the Saiz x ACS cross-section identifies. [DATA]
+
+### Evidence Checked
+
+- The memo's own status line says the instrumental-variable extension is the next step. [SOURCE: memo]
+- The limitations section says the causal reading "immigrant inflows raise rent more in inelastic markets" needs panel variation and an instrument for immigrant share. [SOURCE: memo]
+- The numeric results support a descriptive pattern: low-elasticity MSAs have higher foreign-born share and higher rent, but the cross-section does not separate immigrant inflow from amenities, wages, native demand, or other destination selection. [INFERENCE]
+
+### Fixes Made
+
+1. Replaced "cannot respond" / "nowhere to go" / "fixed stock" language with relatively inelastic supply and renter-incidence risk.
+2. Added the explicit panel/IV caveat to the implication bullet.
+3. Replaced "partially defeated" with "narrowed" for the adversarial rent-exposure caveat.
+
+### Current Conclusion
+
+The Saiz merge strengthens an elasticity-conditional housing-burden warning. It does not by itself prove immigrant-specific rent causation or aggregate welfare loss. [INFERENCE]
