@@ -56,11 +56,11 @@ Files the agent should consult before acting. Start with Core State, then branch
 | `immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md` | Unified comparative audit with one quantitative framework across all three commentators | Wanting a more decisive first-principles comparison |
 | `immigration-claims-matrix-2026-04-11.md` | One-page verified/inferred/unresolved claim ledger for current artifacts and commentators | Making a quick final assertion |
 | `immigration-david-d-friedman-claims-audit-2026-04-11.md` | Named audit of David D. Friedman claims with a first-principles quantitative pass | Checking libertarian open-borders arguments against the repo and official sources |
-| `immigration-bryan-caplan-claims-audit-2026-04-21.md` | Claim-by-claim audit of Bryan Caplan with a causal graph tying his optimistic channels to current surge, housing, fiscal, and backlash evidence | Evaluating Caplan directly rather than treating him as generic open-borders rhetoric |
+| `immigration-bryan-caplan-claims-audit-2026-04-21.md` | Claim-by-claim audit of Bryan Caplan with a causal graph tying his optimistic channels to current surge, housing, fiscal, and political-response evidence | Evaluating Caplan directly rather than treating him as generic open-borders rhetoric |
 | `immigration-noah-smith-nicholas-decker-claims-audit-2026-04-11.md` | Named audit of Noah Smith and Nicholas Decker claims | Checking pundit or commentator claims against the repo and official sources |
 | `immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md` | Audit of the Open Borders “double world GDP” slogan, cited papers, repo capacity constraints, and apartheid framing | Evaluating classic open-borders macro claims or apartheid analogies |
 | `immigration-threshold-first-panel-2026-04-21.md` | First joined-data threshold pass using BPS permits, HUD PIT/HIC, election shift, and receiver-city costs | Asking whether threshold effects are measurable in current public data |
-| `immigration-threshold-causal-levers-2026-04-21.md` | Deeper normalized pass identifying which levers actually move backlash and receiver stress | Asking what the real causal levers are after joining threshold datasets |
+| `immigration-threshold-causal-levers-2026-04-21.md` | Deeper normalized pass identifying which levers actually move political response and receiver stress | Asking what the real causal levers are after joining threshold datasets |
 | `immigration-low-skill-origin-incidence-memo.md` | Why origin mix and household structure matter | Treating low-skill immigration as one undifferentiated object |
 | `immigration-fiscal-deceptive-data-reading-pack.md` | Common bad-faith or sloppy readings of the data | Debunking a chart, thread, or pundit claim |
 | `immigration-fiscal-camarota-cis-testimony-audit.md` | Restrictionist benchmark audit | Using CIS/Camarota as baseline evidence |
@@ -77,7 +77,7 @@ Files the agent should consult before acting. Start with Core State, then branch
 | `immigration-causal-paradigm-escape-synthesis-2026-04-18.md` | Evening cycle synthesis: 5 verdict updates, 8-finding ladder | Writing the headline immigration position; asking "what changed?" |
 | `immigration-causal-internal-vs-immigrant-newcomers.md` | IRS SOI × ACS — native county inflow is 33× immigrant inflow | Treating "newcomer burden" as immigration-driven by default |
 | `immigration-causal-surge-2021-2024.md` | OHSS encounters + CHNV + city costs + 2024 election: surge analysis | Extrapolating pre-2020 findings to surge magnitudes; discussing 2024 election in immigration terms |
-| `immigration-county-outcome-panel-2026-04-21.md` | QCEW + IRS + threshold spine: county wages, employment, native mobility, and backlash in one frame | Saying threshold effects show up in wages, employment, or native sorting |
+| `immigration-county-outcome-panel-2026-04-21.md` | QCEW + IRS + threshold spine: county wages, employment, native mobility, and political response in one frame | Saying threshold effects show up in wages, employment, or native sorting |
 | `immigration-capacity-frontier-2026-04-21.md` | Stock vs flow vs flow-to-capacity comparison, threshold robustness grid, and a clearer statement of what still remains open on subgroups, voting, welfare, and receiver counterfactuals | Asking what is actually left to check after the first county threshold passes |
 
 ## Raw Data & Warehouse

@@ -6,14 +6,14 @@
 
 ## Bottom line
 
-1. The repo's strongest current predictor for `political backlash` remains `immigrant stock share`, but `flow-to-build-capacity` still adds residual signal once stock and flow are both included. [DATA]
+1. The repo's strongest current predictor for `political response` remains `immigrant stock share`, but `flow-to-build-capacity` still adds residual signal once stock and flow are both included. [DATA]
 2. For `wage growth`, `employment growth`, and `native net migration`, the cleaner signal is not stock share. It is `recent immigrant flow relative to local permit capacity`. [DATA]
 3. The threshold is real, but it is not best described as `foreign-born share crosses X`. It looks more like a `high-flow tail x weak build response` problem. The interaction is clearest around the `70th-80th` flow percentiles with `bottom-half or bottom-quartile` permit capacity. [DATA]
 4. This tightens the current repo view:
    - `politics`: stock + load both matter
    - `wages`: load/capacity matters more than stock
    - `employment`: still not a generic collapse story, but a negative signal does appear under direct load-capacity formulations
-   - `native sorting`: load/capacity and affordability both matter; the native exit channel is not just ideological backlash [INFERENCE]
+   - `native sorting`: load/capacity and affordability both matter; the native exit channel is not just ideology or partisan response [INFERENCE]
 5. The remaining frontier is now clearer:
    - `subgroup composition` needs the missing origin warehouse or new acquisition
    - `voting` needs a native-turnout / precinct or survey design, not county returns alone
@@ -52,7 +52,7 @@ That is the right object if the real threshold story is about absorption rather 
 | # | Claim | Evidence | Confidence | Source | Status |
 |---|---|---|---|---|---|
 | 1 | Stock share remains the strongest simple county predictor of GOP margin shift | In separate one-predictor county models, standardized `fb_share` has larger `t` and higher adjusted `R²` than flow or load | HIGH | [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
-| 2 | Load-capacity still adds residual backlash signal beyond stock and flow | In the combined margin model, standardized load remains positive and significant (`t≈2.74`, `p≈0.006`) | HIGH | [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
+| 2 | Load-capacity still adds residual political-response signal beyond stock and flow | In the combined margin model, standardized load remains positive and significant (`t≈2.74`, `p≈0.006`) | HIGH | [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
 | 3 | Wage growth responds more cleanly to load-capacity than to stock or flow alone | Load-only wage model has the strongest negative `t` and best adjusted `R²` among single-predictor formulations | HIGH | same | VERIFIED |
 | 4 | A negative employment signal appears under direct load-capacity formulations even though the earlier coarse threshold did not show broad job loss | Load-only and combined employment models are negative and highly significant; stock and flow alone are weak or null | HIGH | same | VERIFIED |
 | 5 | The threshold is clearest in the broad high-flow tail (`70th-80th percentile`) interacted with low permit capacity, not at one single extreme cutoff | Interaction grid shows stronger wage and some politics/employment effects at `q70-q80` than at `q90` | HIGH | [county_capacity_threshold_grid.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_grid.csv) | VERIFIED |
@@ -88,7 +88,7 @@ For `margin_shift`, the simple one-predictor ranking is:
 2. `flow_only`: `beta≈+0.0099`, `t≈9.32`, `adj_R²≈0.369` [DATA]
 3. `load_only`: `beta≈+0.0054`, `t≈6.96`, `adj_R²≈0.345` [DATA]
 
-So the stock variable still carries the most countywide political signal. That matters because it means the backlash story is **not** reducible to a pure recent-surge story. Established immigrant concentration, long-run demographic sorting, and Hispanic realignment are still in the political mix. [INFERENCE]
+So the stock variable still carries the most countywide political signal. That matters because it means the political-response story is **not** reducible to a pure recent-surge story. Established immigrant concentration, long-run demographic sorting, and Hispanic realignment are still in the political mix. [INFERENCE]
 
 But the combined model matters too:
 
@@ -234,10 +234,10 @@ One caution remains:
 
 ## What this settles, and what it does not
 
-### What now looks settled enough for the repo
+### What now looks stable enough for the repo
 
 1. `Foreign-born share` alone is not the right master threshold variable. [DATA]
-2. `Flow x capacity` is the cleaner county stress object for wages, employment, and native sorting. [DATA]
+2. `Flow x capacity` is the cleaner descriptive county stress object for wages, employment, and native sorting. [DATA]
 3. `Politics` still loads heavily on stock, but capacity strain adds real residual signal. [DATA]
 4. The relevant threshold is broad high-flow exposure under weak building response, not only an extreme top-decile event. [DATA]
 
@@ -266,8 +266,8 @@ The repo's current best answer is now:
 
 1. `Global gains` are still possible at bounded margins, but destination-country incidence depends heavily on capacity. [SOURCE: research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md]
 2. `County stress` is best understood as `flow relative to build capacity`, not as immigrant share in the abstract. [DATA]
-3. `Stock` still matters politically, so the backlash story is not just about the recent surge. [DATA]
-4. `High load / low capacity` is where wages, employment, native sorting, and backlash all worsen together. [DATA]
+3. `Stock` still matters politically, so the political-response story is not just about the recent surge. [DATA]
+4. `High load / low capacity` is where wage growth, employment growth, domestic net migration, and political-response metrics move in the adverse direction together. [DATA]
 
 That is a stricter and more useful answer than either:
 
