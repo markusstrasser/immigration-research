@@ -73,7 +73,7 @@ Enforcement allocation is **[FRAMING-SENSITIVE]** — fixed vs marginal split no
 
 - **~10.8M encounters** (events) + **~2M gotaways** ≠ net residents
 - **Net stock Δ:** Pew **+3.5M** (2021→23); CIS **+5.6M** (2021→25)
-- **Mexico unauthorized flat ~4.3M**; surge was non-Mexico
+- **Mexico unauthorized flat ~4.3M**; post-2021 unauthorized-stock growth was non-Mexico on this ledger
 
 ### 6. Build priorities (from generators)
 
@@ -132,7 +132,7 @@ Missing from warehouse rollup: EOIR $/case, ICE bed-days allocated, shelter epis
 | +$46k = immigrant pays for themselves all-in | **Unsupported / not a valid export** — school, admin, courts, shelter not netted |
 | Subtract `local_flow` from NPV | **Falsified** — per_pupil ≠ per_adult burden |
 | 10M+ net new unauthorized since Biden | **Falsified** — stock +3.5M to +5.6M |
-| Mexico drove surge | **Falsified** — Mexico unauthorized flat |
+| Mexico drove post-2021 unauthorized-stock growth | **Falsified on this stock ledger** — Mexico unauthorized flat |
 | NAS `<HS` cell applies to the whole Mexico-origin stock | **Falsified** by education mix — but actual current-stock NPV remains unmeasured |
 | +$387.7B is the actual lifetime NPV of the current Mexico-born stock | **Falsified** — it is current ACS education weights × NAS age-25 cells |
 
@@ -158,3 +158,4 @@ Missing from warehouse rollup: EOIR $/case, ICE bed-days allocated, shelter epis
 | 2026-06-15 | Full-ledger critique: NAS ≠ net; cluster R generators; stacked bounds −$37k to +$28k |
 | 2026-06-16 | Corrected lifetime label: `+$45,631/adult` and `+$387.7B` are synthetic NAS age-25 education-mix benchmarks, not actual current-stock lifetime NPV |
 | 2026-06-16 | Reframed `+$46k = pays for themselves all-in` from falsified to unsupported/not a valid export: omitted ledgers block the inference, but the full all-in sign remains unmeasured. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Scoped "Mexico drove surge" to post-2021 unauthorized-stock growth; the flat Mexico stock result does not adjudicate encounter events or receiver-load composition. See `immigration-conclusion-audit-running-fixes.md`. |

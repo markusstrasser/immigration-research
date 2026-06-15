@@ -1140,3 +1140,23 @@ Changed the sentence to "does not generalize to the broader staggered designs te
 ### Updated conclusion
 
 The wage synthesis now distinguishes direct replication from external-validity evidence: Borjas's restricted-Mariel estimate remains a contested Mariel result, while the repo's newer designs cut against extrapolating that magnitude to observed E-Verify-style policy variation. [INFERENCE]
+
+---
+
+## 2026-06-16 — Mexico surge row scoped to unauthorized-stock growth
+
+### Issue
+
+`research/immigration-mexico-npv-population-synthesis-2026-06-15.md` said "Mexico drove surge" was **Falsified** because Mexico unauthorized stock was flat, and its Biden-stock section said "surge was non-Mexico." [DATA]
+
+### Why it was wrong
+
+The evidence cited there is a stock ledger: Mexico unauthorized population was roughly flat while the post-2021 unauthorized-stock increase came from non-Mexico origins. That does not adjudicate every surge metric. Encounter events, lawful/parole flows, receiver-city shelter load, and local operational pressure are different ledgers. Flat Mexico unauthorized stock falsifies a Mexico-driven unauthorized-stock-growth claim, not the broader phrase "Mexico drove surge." [INFERENCE]
+
+### Fix
+
+Changed the Biden-stock bullet to say post-2021 unauthorized-stock growth was non-Mexico on this ledger, and changed the disconfirmation row to `Mexico drove post-2021 unauthorized-stock growth | Falsified on this stock ledger`. Added a memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The Mexico memo still blocks the "10M+ new Mexican unauthorized residents" style claim, but it no longer overextends a stock finding to all encounter, flow, or receiver-load surge interpretations. [INFERENCE]
