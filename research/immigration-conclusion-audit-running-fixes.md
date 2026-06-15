@@ -860,3 +860,23 @@ Replaced "regulatory channel dominates" / "driven by regulatory constraint" lang
 ### Updated conclusion
 
 The Saiz result still strengthens the housing-incidence warning in inelastic destination markets, but the regulatory decomposition is descriptive. It should motivate a panel/IV zoning test, not be used as proof that zoning caused the concentration or that zoning reform resolves the rent-burden channel. [INFERENCE]
+
+---
+
+## 2026-06-16 — Federal distribution memo aligned to native-white microsim anchor
+
+### Issue
+
+`research/immigration-federal-distribution-findings-2026-06-15.md` still reported an older NH-white federal proxy of `~$3,600–4,000/adult` and a `~2.3–3.0×` per-adult white/Mexico ratio. Later built tensor artifacts report `NH white US-born ~$2,746/adult`, `Mexico-origin ~$1,519/adult`, and an `~1.8×` ratio from `acs_nh_white_federal_microsim_2023`. [DATA]
+
+### Why it was wrong
+
+The older row came from an ACS wage-imputation sensitivity path. Once the native-white microsim existed, keeping the old range as the headline silently forked the current conclusion and overstated the narrow federal-cash-proxy gap. The aggregate total also changed: `~$253B` vs `~$12.9B` is about `19.6×`, not `25×`, with roughly `11×` from population count alone. [DATA]
+
+### Fix
+
+Updated the distribution memo's per-adult table, aggregate table, decomposition, verdict, limitation row, and revision log to use the current built native-white microsim anchor. Marked the older `~2.8–3.1×` wage-imputation sensitivity as superseded for headline use. [SOURCE: memo]
+
+### Updated conclusion
+
+The distribution conclusion is narrower: on the current built narrow federal cash proxy, NH white US-born adults are about `1.8×` Mexico-origin adults, mostly because of education composition. This remains layer-specific and does not settle full federal liability, lifetime NPV, or all-government fiscal incidence. [INFERENCE]
