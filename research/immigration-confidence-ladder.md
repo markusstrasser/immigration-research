@@ -99,7 +99,7 @@ Reason: convergent evidence — Card 1990 Mariel, Foged-Peri 2016 Denmark refuge
 
 ## Paradigm-escape layer added 2026-04-18 (evening)
 
-20. `Saiz elasticity-immigrant correlation operates through regulatory not topographic channel`
+20. `Saiz elasticity-immigrant correlation operates through regulatory not topographic channel` — **QUALIFIED by entry 38**
 Rating: `strong`
 Reason: log(FB share) ~ unaval (β=+0.12, t=0.58, n.s.) + WRLURI (β=+0.33, t=6.29***) + log_pop. The inelastic-MSA immigrant concentration is driven by zoning, not topography. Implication: zoning reform is a viable lever for the rent-burden problem; immigration restriction is not the only policy response. [SOURCE: scripts/saiz_decomposition.py]
 

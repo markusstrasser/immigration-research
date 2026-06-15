@@ -1000,3 +1000,23 @@ Changed the policy implication to receiver-city shelter/budget stress; replaced 
 ### Updated conclusion
 
 The restrictionist steel-man still keeps the receiver-stress objection alive, but it no longer upgrades gross local outlays and shelter stress into a national-collapse or completed net-fiscal verdict. [INFERENCE]
+
+---
+
+## 2026-06-16 — Saiz ladder correction made visible at old entry
+
+### Issue
+
+`research/immigration-confidence-ladder.md` already had append-only entry 38 correcting entry 20's zoning-causation language, but entry 20's title still presented the old causal reading without an inline qualification. A reader scanning the original ladder section could miss the later scope correction. [DATA]
+
+### Why it was wrong
+
+The append-only rule preserves old judgments, but superseded or qualified claims need visible pointers at the old claim site when they are likely to be reused. Entry 20's title said the correlation "operates through" regulation; entry 38 says the WRLURI result is descriptive and not identified zoning causation. Without a title pointer, the old claim remained too easy to quote out of scope. [INFERENCE]
+
+### Fix
+
+Annotated entry 20's title with `QUALIFIED by entry 38` while leaving the historical reason text intact. [SOURCE: memo]
+
+### Updated conclusion
+
+The confidence ladder now keeps its append-only history while making the current Saiz scope correction visible where the older causal title appears. [INFERENCE]
