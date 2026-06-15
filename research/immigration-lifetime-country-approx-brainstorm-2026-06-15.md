@@ -1,7 +1,7 @@
 # Brainstorm — approximating lifetime fiscal +/- to the country (1st–3rd order)
 
 **Date:** 2026-06-15
-**Trigger:** Distribution findings show **~2–3× per-capita federal proxy** (white vs Mexico-born) is mostly composition + earnings, not per-pupil — but **lifetime NPV** and **country-level net** still need a stacked approximation.
+**Trigger:** Distribution findings now show a **~1.8× per-adult federal proxy** (NH white US-born vs Mexico-origin) on the built native-white microsim, mostly education composition rather than per-pupil cost — but **lifetime NPV** and **country-level net** still need a stacked approximation.
 **Prior:** `research/immigration-federal-distribution-findings-2026-06-15.md`, `research/immigration-lifetime-unified-theory-2026-06-15.md`
 **Rule:** No scalar “US immigration is +$X” or “Mexico is −$Y” — output is **cell × layer × time** with explicit order tags.
 
@@ -306,3 +306,4 @@ Output:                Table of (cell, ℓ, order) → $ ; NO single scalar
 | 2026-06-15 | Initial brainstorm after distribution findings memo |
 | 2026-06-15 | Iteration 2 — disconfirmation sweep (matched education, population tensor) |
 | 2026-06-15 | Iteration 3 — two-corridor surge; EU tensor groups; write-up memo |
+| 2026-06-16 | Trigger line aligned to the corrected distribution memo: current built NH-white/Mexico federal proxy ratio is ~1.8×, not the older ~2–3× wage-imputation headline. See `immigration-conclusion-audit-running-fixes.md`. |
