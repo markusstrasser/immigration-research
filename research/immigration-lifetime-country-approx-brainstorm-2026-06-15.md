@@ -117,8 +117,8 @@ Three paths per `<HS` cell: Borjas pessimistic, Card-Peri baseline, Clemens-GE o
 **C12. Capital-tax overlay (Clemens eq. 14)**
 Mechanical α/(1−α) adjustment on same NAS table — **sign flip band** already in corpus.
 
-**C13. Housing welfare country slice**
-Saiz ε × rent burden × FB destination concentration — **welfare loss $** separate from government budget.
+**C13. Housing incidence country slice**
+Saiz ε × rent burden × FB destination concentration — **renter-incidence screen** separate from government budget and not a final welfare-loss scalar.
 
 ### Tier D — 3rd order (dynamic / political)
 
@@ -259,7 +259,7 @@ Output:                Table of (cell, ℓ, order) → $ ; NO single scalar
 | Compare EU to **India** not Mexico | Same corridor B grammar (~$6.2k India) |
 | Use **lifetime only** | Blocked until NAS college+ staged — do not improvise |
 | Use **surge cohort only** | CBO −$897B federal vs stock EU positive annual — **time dimension required** |
-| Drop federal, keep local only | EU concentrated in high-rent PUMAs — local welfare loss may offset federal gain [SPECULATION] |
+| Drop federal, keep local only | EU concentrated in high-rent PUMAs — local renter-incidence risk may offset federal gain [SPECULATION] |
 
 ### Candidate ideas (iteration 3)
 
@@ -267,7 +267,7 @@ Output:                Table of (cell, ℓ, order) → $ ; NO single scalar
 
 **E2. NAS college+ seed from Ch.8** — `some college / associate` + `other` cells → unlock EU/white/Mexico lifetime ordering.
 
-**E3. EU × PUMA rent join** — federal annual vs Saiz rent burden same cells — test “rich federal, poor local welfare.”
+**E3. EU × PUMA rent join** — federal annual vs Saiz rent burden same cells — test “rich federal, poor local incidence.”
 
 **E4. LPR-by-country weights** — replace static ACS origin weights for EU/Mexico surge counterfactuals.
 
@@ -294,7 +294,7 @@ Output:                Table of (cell, ℓ, order) → $ ; NO single scalar
 | Test | Prediction if thesis wrong |
 |------|---------------------------|
 | EU federal premium vanishes at matched education + earnings band | Selection story weakens |
-| EU destinations have **lower** rent burden than NH white | Spatial story kills local-welfare offset |
+| EU destinations have **lower** rent burden than NH white | Spatial story weakens local-incidence offset |
 | NAS college+ cells show Mexico > EU lifetime | Composition story inverts — unlikely [INFERENCE] |
 
 ---

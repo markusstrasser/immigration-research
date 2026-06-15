@@ -450,3 +450,30 @@ The Saiz merge strengthens an elasticity-conditional housing-burden warning. It 
 ### Current Conclusion
 
 The April 18 causal synthesis now treats housing as an elasticity-conditional local-burden warning, not as a completed rent-welfare causal estimate. [INFERENCE]
+
+---
+
+## 2026-06-16 — Lifetime brainstorms stop scalarizing Saiz rent screen
+
+### Issue
+
+Two tracked lifetime-planning memos carried the same Saiz overstatement into future work:
+
+1. `research/immigration-lifetime-dataset-brainstorm-2026-06-15.md` said the Saiz layer shows "rent burden is welfare loss, not price discovery."
+2. `research/immigration-lifetime-country-approx-brainstorm-2026-06-15.md` framed the Saiz country slice as "welfare loss $" and "local welfare loss."
+
+That would make later agents build a scalar welfare-loss line from a screen that is only descriptive until tenure mix and panel/IV identification are added. [DATA]
+
+### Evidence Checked
+
+- `research/immigration-causal-saiz-elasticity-rent.md`: the current evidence is a high-confidence descriptive correlation and only a moderate welfare-interpretation update. [SOURCE: memo]
+- `research/immigration-causal-synthesis-2026-04-18.md`: the corrected downstream synthesis now treats the Saiz x PUMA rerun as an origin-conditional renter-incidence screen, not a final welfare estimate. [SOURCE: memo]
+
+### Fixes Made
+
+1. Replaced "rent burden is welfare loss" with "elasticity-conditional renter-incidence screen."
+2. Replaced "welfare loss $" / "local welfare loss" future-work language with renter-incidence risk / local-incidence offset language.
+
+### Current Conclusion
+
+Future lifetime-country work should use Saiz as a targeting and incidence screen until it has the missing causal and tenure-incidence pieces needed for a welfare scalar. [INFERENCE]
