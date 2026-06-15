@@ -700,3 +700,23 @@ Replaced "real threshold" and "causal traction" phrasing with "recurring/observe
 ### Updated conclusion
 
 The capacity-frontier memo still says load/capacity is the better county stress surface, but it no longer treats the threshold-grid pattern as identified causal truth. [INFERENCE]
+
+---
+
+## 2026-06-16 — Crime conclusion estimand made explicit
+
+### Issue
+
+`research/immigration-crime-rates-unauthorized-vs-native-born.md` correctly listed reporting, detection, deportation, and denominator problems, but its bottom line still said unauthorized immigrants "commit crimes" at lower rates. The Caplan audit inherited the same blur when summarizing the crime objection. [DATA]
+
+### Why it was wrong
+
+The strongest evidence is about observed arrest, conviction, incarceration, and institutionalization outcomes. Those are not identical to true offending when underreporting, police contact, deportation censoring, and denominator uncertainty are active mechanisms. [INFERENCE]
+
+### Fix
+
+Reframed the crime memo's question, bottom line, confidence statement, international caveat, and uncertainty section around observed criminal-justice rates. Updated the Caplan audit to say the claim mostly survives for observed U.S. first-generation / unauthorized justice-system rates, while true offending is less directly identified. [SOURCE: memo]
+
+### Updated conclusion
+
+The directional crime finding survives, but its estimand is now explicit: lower observed justice-system rates in current U.S. evidence, not directly measured lower true offending in every subgroup or context. [INFERENCE]
