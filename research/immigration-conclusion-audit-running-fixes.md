@@ -820,3 +820,23 @@ Replaced the global "data side with Card" phrasing with "in this E-Verify design
 ### Updated conclusion
 
 The E-Verify result remains strong against large native wage gains from marginal enforcement. It no longer reads as a global settlement of Card vs Borjas, open borders, or all native labor-market channels. [INFERENCE]
+
+---
+
+## 2026-06-16 — Paradigm synthesis wage-rejection labels scoped
+
+### Issue
+
+`research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md` still compressed the E-Verify and sanctuary wage results into short-form labels like "STRONG REJECTION of Borjas" and "STRONG REJECTION of enforcement-channel wage effects." That was sharper than the source designs justified. [DATA]
+
+### Why it was wrong
+
+The source designs are strong against large native wage gains under observed E-Verify/sanctuary-style policy variation. They do not reject every Borjas-style claim, every enforcement-channel wage effect, or shock regimes outside the tested policy margins. The short-form table needed to carry the same external-validity bound as the body text. [INFERENCE]
+
+### Fix
+
+Changed the findings table and embedded ladder snippet to say the evidence is strong against large Borjas-style wage gains in the tested enforcement margin and shows a strong null result for the tested policy variations. Added a memo revision note. [SOURCE: memo]
+
+### Updated conclusion
+
+The paradigm synthesis still supports a Card-side null for observed marginal wage variation, but its short labels no longer imply global rejection of Borjas or all enforcement-channel wage effects. [INFERENCE]

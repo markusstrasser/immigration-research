@@ -33,9 +33,9 @@
 
 | # | Finding | Confidence | Method |
 |---|---------|------------|--------|
-| 1 | E-Verify mandates do not raise native low-skill wages | STRONG REJECTION of Borjas | TWFE on QWI 2003-23, 9 states |
+| 1 | E-Verify mandates do not raise native low-skill wages | STRONG against large Borjas-style wage gains in this enforcement margin | TWFE on QWI 2003-23, 9 states |
 | 2 | E-Verify mandates reduce E1 employment in exposed industries ~6% (marginal) | MEDIUM | Same |
-| 3 | Sanctuary policy variation produces null E1 wage effects (both directions) | STRONG REJECTION of enforcement-channel wage effects | TWFE on QWI 2003-23, 12 sanctuary + 9 anti |
+| 3 | Sanctuary policy variation produces null E1 wage effects (both directions) | STRONG null result for the tested policy variations | TWFE on QWI 2003-23, 12 sanctuary + 9 anti |
 | 4 | Immigrants concentrate in inelastic-supply MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40) | STRONG (descriptive) | Saiz × ACS 2022 5-yr, 237 MSAs |
 | 5 | The inelastic-MSA concentration is driven by REGULATORY constraint (WRLURI), not topography | STRONG | Saiz decomposition regression |
 | 6 | Domestic U.S.-origin mover flow is order-of-magnitude larger than moved-from-abroad flow at the median county | STRONG descriptive, not burden-causal | IRS SOI 2022-23 × ACS `B07001_081E` |
@@ -65,9 +65,9 @@ policy lever for the rent-burden problem.
 [SOURCE: research/immigration-causal-everify-card-vs-borjas.md, saiz_decomposition.py]
 
 21. `Sanctuary policy variation does not change native low-skill wages either direction`
-Rating: STRONG REJECTION (replicates E-Verify finding)
+Rating: STRONG null result in this design (replicates E-Verify margin)
 Reason: TWFE on QWI 2003-23 with 12 pro-sanctuary + 9 anti-sanctuary states; all
-E1 specifications |t|<1.0; third confirmation of Card-side null
+E1 specifications |t|<1.0; another Card-side null for observed marginal policy variation
 [SOURCE: scripts/analyze_sanctuary_wages.py]
 
 22. `Domestic U.S.-origin mover flow is order-of-magnitude larger than moved-from-abroad flow at median county`
@@ -124,6 +124,12 @@ This was a productive cycle, but the *data* additions did not produce paradigm s
 The other findings (Saiz decomposition, sanctuary DiD, mass-deportation sim) are confirmatory or refining. Useful, not transformative.
 
 The biggest *interpretation* lever remains the welfare-weight question, which is a values choice that no additional empirical work resolves. The repo can either (a) make the implicit zero weight explicit and own it, (b) shift to a documented non-zero weight and re-grade everything, or (c) report multiple weighted scenarios as scenario analysis. Option (c) is honest; (a) and (b) are equally legitimate but should stop hiding the choice.
+
+## Revisions
+
+| Date | Change |
+|------|--------|
+| 2026-06-16 | Bounded short-form E-Verify/sanctuary confidence language: the findings reject large enforcement-channel wage gains within the tested policy margins, not every Borjas-style or enforcement-channel claim. See `immigration-conclusion-audit-running-fixes.md`. |
 
 [SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
 [SOURCE: research/immigration-causal-saiz-elasticity-rent.md]
