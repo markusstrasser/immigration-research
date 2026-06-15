@@ -880,3 +880,23 @@ Updated the distribution memo's per-adult table, aggregate table, decomposition,
 ### Updated conclusion
 
 The distribution conclusion is narrower: on the current built narrow federal cash proxy, NH white US-born adults are about `1.8×` Mexico-origin adults, mostly because of education composition. This remains layer-specific and does not settle full federal liability, lifetime NPV, or all-government fiscal incidence. [INFERENCE]
+
+---
+
+## 2026-06-16 — Lifetime-country brainstorm trigger aligned to corrected proxy ratio
+
+### Issue
+
+`research/immigration-lifetime-country-approx-brainstorm-2026-06-15.md` still opened from the stale premise that distribution findings showed a `~2–3×` per-capita federal proxy gap between whites and Mexico-born adults. That was the older wage-imputation headline superseded by the built native-white microsim. [DATA]
+
+### Why it was wrong
+
+Even though the brainstorm's main tensor logic remained valid, the trigger line would send future readers back into the older ratio. The correct current anchor is `~1.8×` per adult on the narrow federal proxy, with the same larger point intact: lifetime NPV and country-level net still require stacked layer accounting. [INFERENCE]
+
+### Fix
+
+Changed the trigger to the current `~1.8×` NH-white-US-born/Mexico-origin federal proxy ratio and added a revision row pointing back to this audit. [SOURCE: memo]
+
+### Updated conclusion
+
+The brainstorm still motivates a lifetime/country tensor, but no longer inherits the stale `~2–3×` federal-proxy premise. [INFERENCE]
