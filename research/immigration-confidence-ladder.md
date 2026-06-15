@@ -177,6 +177,10 @@ Reason: pre-registered kill-test with 2020 county Hispanic share (popest baselin
 Rating: `strong (process rule)`
 Reason: one known published value per series (e.g., Dec 2023 = 302K) would have caught both bugs at build time; the bugs survived 7 weeks and three ladder entries because year-boundary cuts masked them. [SOURCE: decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md]
 
+38. `Saiz WRLURI result is descriptive, not identified zoning causation` — **scope correction to entry 20**
+Rating: `strong descriptive regression; causal lever unverified`
+Reason: WRLURI is a much stronger correlate of foreign-born share than topographic unavailability in the Saiz decomposition, but the cross-section does not prove that zoning causes immigrant concentration, that zoning reform would reduce immigrant renter burden, or that immigration restriction is dominated as a policy response. Treat zoning reform as a plausible policy hypothesis pending panel/IV evidence. [SOURCE: research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md] [SOURCE: research/immigration-causal-saiz-elasticity-rent.md]
+
 ## Two weakest assumptions
 
 1. `Federal-side proxy ledger`

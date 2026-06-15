@@ -840,3 +840,23 @@ Changed the findings table and embedded ladder snippet to say the evidence is st
 ### Updated conclusion
 
 The paradigm synthesis still supports a Card-side null for observed marginal wage variation, but its short labels no longer imply global rejection of Borjas or all enforcement-channel wage effects. [INFERENCE]
+
+---
+
+## 2026-06-16 — Saiz zoning-channel inference made descriptive
+
+### Issue
+
+`research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md` and `research/immigration-confidence-ladder.md` described the Saiz decomposition as showing that the inelastic-MSA immigrant concentration was "driven by" regulatory constraint and that zoning reform was a viable policy lever. The source regression only showed WRLURI was a stronger correlate of foreign-born share than topographic unavailability. [DATA]
+
+### Why it was wrong
+
+A cross-sectional regression of foreign-born share on WRLURI, topographic unavailability, and log population does not identify the causal direction. WRLURI may proxy high-demand metro governance, amenities, historical settlement, political economy, or endogenous restrictions. It can make zoning reform a plausible hypothesis, but not a proven causal substitute for immigration restriction or a verified way to reduce immigrant renter burden. [INFERENCE]
+
+### Fix
+
+Replaced "regulatory channel dominates" / "driven by regulatory constraint" language with "WRLURI is the stronger correlate" and "strong descriptive regression, not causal channel proof." Reframed zoning reform as a plausible policy hypothesis rather than an identified causal lever. Added append-only confidence-ladder entry 38 as a scope correction to entry 20. [SOURCE: memo]
+
+### Updated conclusion
+
+The Saiz result still strengthens the housing-incidence warning in inelastic destination markets, but the regulatory decomposition is descriptive. It should motivate a panel/IV zoning test, not be used as proof that zoning caused the concentration or that zoning reform resolves the rent-burden channel. [INFERENCE]
