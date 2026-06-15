@@ -47,7 +47,7 @@ Combined effect on incidence narrative:
 - Pre-cycle: native low-skill workers maybe lose wages (Borjas), bear school burden, face rent competition.
 - Post-cycle: native low-skill wages do not measurably rise from E-Verify-style enforcement contractions; school burden and housing incidence remain separate local channels.
 
-The political-economy reading: the policy push from native low-skill voters cannot easily be justified by their own wage data. It can be justified by their school finance and rent exposure, depending on whether they are renters or owners.
+The political-economy reading: wage data alone are a weak justification for a native-low-skill restriction story in the observed marginal-enforcement range. School-finance exposure and renter exposure remain plausible incidence channels, but this cycle does not identify voter motivation or prove that those exposures justify the policy push; owner/renter status, local fiscal regime, and service geography still matter.
 
 ## What this cycle did NOT settle
 
@@ -123,6 +123,12 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 [SOURCE: research/immigration-verified-findings-report-2026-04-10.md]
 [SOURCE: research/immigration-confidence-ladder.md]
 [SOURCE: research/immigration-adversarial-review.md]
+
+## Revisions
+
+| Date | Change |
+|------|--------|
+| 2026-06-16 | Bounded the political-economy reading: wage evidence alone weakens the native-low-skill wage story, but school/rent exposure is only a plausible incidence channel, not identified voter motivation or policy justification. See `immigration-conclusion-audit-running-fixes.md`. |
 
 <!-- knowledge-index
 generated: 2026-04-19T03:45:13Z
