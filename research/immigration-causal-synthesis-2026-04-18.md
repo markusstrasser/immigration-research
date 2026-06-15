@@ -25,7 +25,7 @@ Three converging pieces of evidence on the U.S. wage channel:
 3. **Foged-Peri (2016) Denmark:** native low-skill wages *rose* under random refugee assignment.
 
 Against:
-- **Borjas (2017) Mariel reanalysis:** -10 to -30% on HS dropouts with restricted sample. **This finding does not replicate in broader staggered designs.**
+- **Borjas (2017) Mariel reanalysis:** -10 to -30% on HS dropouts with restricted sample. **This finding does not generalize to the broader staggered designs tested here.**
 
 **Verdict:** For the observed marginal U.S. policy variation in this file, large Borjas-style native wage gains from E-Verify-style labor-supply contraction are rejected at conventional significance levels. The remaining uncertainty is about surge regimes and hypothetical extreme shocks (mass deportation, border closure) that have no direct empirical analog. **The Clark Center "agree" economists who said wage effects on natives are small were correct for the narrow wage channel and observed-policy range, not for the all-in immigration question.**
 
@@ -133,6 +133,7 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 | 2026-06-16 | Narrowed the embedded E-Verify confidence-ladder suggestion from global `STRONG REJECTION` to strong evidence against large Borjas-style gains in the E-Verify margin. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "QWI confirms wage channel is small" with margin-specific support for a small/null wage response in the observed E-Verify design. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Narrowed the explicit Card-vs-Borjas verdict sentence to large Borjas-style gains from E-Verify-style labor-supply contraction, not the full Borjas wage-prediction family. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Replaced "does not replicate in broader staggered designs" with "does not generalize" because E-Verify/Foged-Peri are adjacent external-validity tests, not direct Mariel replications. See `immigration-conclusion-audit-running-fixes.md`. |
 
 <!-- knowledge-index
 generated: 2026-04-19T03:45:13Z
