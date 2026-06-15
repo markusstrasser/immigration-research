@@ -134,7 +134,7 @@ For this enforcement margin, the adjustment looks Card-style: the wage curve is 
 
 ### Confidence ladder
 - Move `Federal-positive vs federal-negative origin ranking from ACS income/benefit proxies` from `weak` → unchanged (this finding addresses wages, not federal fiscal)
-- Add new entry: **`Borjas substitution prediction for U.S. low-skill native wages from E-Verify policy variation`** — `STRONG REJECTION`. Point estimate ±1%, 95% CI excludes Borjas magnitudes.
+- Add new entry: **`Borjas substitution prediction for U.S. low-skill native wages from E-Verify policy variation`** — `strong against large Borjas-style gains in this E-Verify margin`. Point estimate ±1%, 95% CI excludes the high-end Borjas magnitudes.
 - Strengthen entry on `Claim that the Clark agree papers are scope-limited rather than obviously false` from `strong` → `strong+`. The Clark economists who said wage effects on natives are small were correct on this margin.
 
 ### Verified-findings report bottom line
@@ -181,6 +181,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 | Date | Change |
 |------|--------|
 | 2026-06-16 | Bounded "data side with Card" and commentator-update language to the observed E-Verify wage-channel design; the result rejects large Borjas-style native wage gains for this margin, not all wage or open-borders questions. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Aligned the proposed confidence-ladder update with the same margin-specific wording: strong against large Borjas-style gains in the E-Verify margin, not a global "STRONG REJECTION." See `immigration-conclusion-audit-running-fixes.md`. |
 
 [SOURCE: data/analysis/everify_twfe_results.csv]
 [SOURCE: data/analysis/everify_event_study_E1.csv]

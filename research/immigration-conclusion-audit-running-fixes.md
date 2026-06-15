@@ -940,3 +940,23 @@ Renamed the chain from "Annual full budget" to "Annual advocacy ledger," replace
 ### Updated conclusion
 
 The restrictionist steel-man still preserves the full-budget ledger as a real argument family, but FAIR is now source-graded correctly: useful as a high-cost advocacy construction, not as empirical fact or a mathematical upper bound. [INFERENCE]
+
+---
+
+## 2026-06-16 — E-Verify proposed ladder label aligned to margin-specific verdict
+
+### Issue
+
+`research/immigration-causal-everify-card-vs-borjas.md` had already bounded its headline Card-vs-Borjas conclusion, but its "What this updates" section still proposed adding a confidence-ladder entry labeled `STRONG REJECTION`. That leftover label conflicted with the source memo's own external-validity caveat. [DATA]
+
+### Why it was wrong
+
+The E-Verify design is strong against large Borjas-style native wage gains in the observed E-Verify margin. It is not a global rejection of all Borjas-style substitution claims, all enforcement-channel wage effects, or surge/mass-shock regimes. A suggested ladder entry should not be broader than the result it summarizes. [INFERENCE]
+
+### Fix
+
+Changed the proposed ladder label to "strong against large Borjas-style gains in this E-Verify margin" and added a source-memo revision note. The append-only confidence ladder already has entry 29 bounding the older wage entries to marginal policy variation, so no ladder rewrite was needed. [SOURCE: memo]
+
+### Updated conclusion
+
+The source memo's short-form update now matches the main evidence statement: strong against high-end Borjas magnitudes for this policy margin, not a universal rejection. [INFERENCE]
