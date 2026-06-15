@@ -138,14 +138,14 @@ Both effects exist. The pre-registered Hispanic-share kill-test left the receive
 
 ## What this updates in the prior cycles' findings
 
-### "Card wins decisively for U.S. policy variation" — qualified
+### Card-side pattern for marginal pre-surge policy variation — surge caveat
 Still true for marginal-policy variation 2008-2021. The surge is OUTSIDE that variation. We don't have wage estimates for the 2021-2024 surge period yet (ACS PUMS 2023 1-yr would help; deferred for disk space).
 
 ### "Native low-skill wages don't respond to enforcement variation" — bounded
 Bounded to enforcement at observed magnitudes (E-Verify mandates, sanctuary policies). Mass-deportation enforcement (Trump 2025+) is OUTSIDE this variation.
 
-### "33× native to immigrant newcomer ratio at median county" — partially overturned at receiver nodes
-Median county ratio holds. But at the actual destinations of the surge (NYC, Chicago, Denver, Boston, TX border), the immigrant newcomer flow CAN exceed native flow per year for the duration of the surge. Bronx/Queens/Miami-Dade absorbed massive immigrant inflows in 2023-2024 that exceeded their native inflow.
+### Domestic-vs-abroad median newcomer ratio — receiver-node caveat
+The corrected median-county comparison is about 21.7x for the ratio of medians and 20.5x for the median county-level ratio among counties with nonzero moved-from-abroad share. This is domestic U.S.-origin movement versus moved-from-abroad flow, not native identity. But the median county is not a receiver-node estimand: concentrated surge destinations can face immigrant-specific shelter, legal, language, and school burdens that the national median domestic-vs-abroad ratio does not measure. [SOURCE: research/immigration-causal-internal-vs-immigrant-newcomers.md] [INFERENCE]
 
 ### "Open-borders verdict is welfare-weight-determined" — strengthened
 The surge revealed that the U.S. capacity-to-absorb constraint was real and binding faster than the static calibration suggested. NYC/Chicago/Denver hit budget thresholds within ~12-18 months of surge onset. The GPT-5.4 calibration's claim that "housing/construction binds in year 1 at any 10M+/year arrival scenario" turned out to be empirically validated at much smaller magnitudes (~0.7M/year of NYC-bound migrants saturated NYC's shelter system in <12 months).
