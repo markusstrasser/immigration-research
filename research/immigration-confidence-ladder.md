@@ -129,9 +129,9 @@ Reason: SWB encounters peaked Jan-Mar 2023 at 50K+/month BEFORE Title 42 lift (M
 Rating: `strong`
 Reason: TWFE β=+3.29 (t=4.78) on CHNV nationality vs control after Jan 2023. Encounters from CHNV nationalities ROSE 787% post-program, not fell. Refutes the stated rationale that legal pathway would reduce irregular migration. [SOURCE: data/cbp/swb_encounters_by_citizenship_monthly.parquet]
 
-27. `Receiver-city local fiscal load was real and concentrated`
+27. `Receiver-city local fiscal load was real and concentrated` — **scope qualified by entry 33**
 Rating: `strong (administrative data)`
-Reason: NYC FY24 $3.7B (3.5% of operating budget); MA FY24 $1B; Chicago $228M peak; Denver $89M (with cuts to other services). Combined ~$5B+/yr peak across major receivers. System-collapse claim has empirical bite. [SOURCE: data/bused_cities/receiver_city_costs.csv]
+Reason: NYC FY24 $3.7B (3.5% of operating budget); MA FY24 $1B; Chicago $228M peak; Denver $89M (with cuts to other services). Combined ~$5B+/yr peak across major receivers. Receiver-load stress has empirical bite, but these are gross outlays; entry 33 supplies the net-burden caveat. [SOURCE: data/bused_cities/receiver_city_costs.csv]
 
 28. `Receiver cities swung +4.41 pp more Republican in 2024 than comparable non-receivers` — **QUALIFIED by entries 31 and 36; final causal-implausibility sentence superseded**
 Rating: `medium (correlation, multiple confounders)`
