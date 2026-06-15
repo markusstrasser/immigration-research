@@ -235,7 +235,7 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 | Read Gunadi 2019 full text | read_paper | Key findings extracted |
 | Read Ousey & Kubrin 2018 full text | read_paper | Meta-analytic effect sizes extracted |
 | Synthesize meta-analysis numbers | ask_papers | Detailed moderator analysis retrieved |
-| Verify claim: studies finding higher rates | verify_claim (Exa) | No peer-reviewed support found |
+| Verify claim: studies finding higher rates | verify_claim (Exa) | No peer-reviewed higher-rate study found in this pass; Lott Arizona remained the prominent non-peer-reviewed outlier |
 | Search: Lott Arizona criticism | web_search_exa + verify_claim | Multiple critiques documented |
 | Verify: ICE docket numbers | verify_claim (Exa) | Confirmed as administrative data |
 | Verify: Cato/Nowrasteh Texas findings | verify_claim (Exa) | Confirmed, consistent with Light et al. |
@@ -257,3 +257,9 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 - Landgrave & Nowrasteh (2025) "Illegal Immigrant Incarceration Rates, 2010–2023" — Cato Policy Analysis 994. [SOURCE: https://www.cato.org/sites/cato.org/files/2025-03/Policy-Analysis-994.pdf] **Race-stratified incarceration data.**
 - Nowrasteh (Apr 2025) blog post with race-corrected comparison tables. [SOURCE: https://www.alexnowrasteh.com/p/immigrants-have-a-lower-incarceration]
 - Nowrasteh & Chanwong (Sep 2025) "Immigrants Have Lower Lifetime Incarceration Rates" — 1990 cohort tracked through ACS 2006-2023 by race/ethnicity/immigration status. [SOURCE: https://www.cato.org/blog/immigrants-have-lower-lifetime-incarceration-rates-native-born-americans]
+
+## Revisions
+
+| Date | Change |
+|------|--------|
+| 2026-06-16 | Bounded the search-log wording for higher-rate studies: the Exa pass did not find a peer-reviewed higher-rate study, but that is a search-result statement, not a proof of absence across the literature. See `immigration-conclusion-audit-running-fixes.md`. |
