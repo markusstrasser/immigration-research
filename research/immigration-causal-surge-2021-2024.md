@@ -151,7 +151,7 @@ The corrected median-county comparison is about 21.7x for the ratio of medians a
 The surge revealed that some receiver-node capacity constraints can bind faster than the static calibration suggested. NYC/Chicago/Denver hit visible budget or shelter thresholds within ~12-18 months of surge onset. This is directionally consistent with the GPT-5.4 calibration's claim that housing/construction can bind in year 1 under very large arrival scenarios, but it is not a validation of the calibration's national 10M+/year threshold or a measured national capacity function.
 
 ### Mass-deportation simulation — not yet quantitatively validated
-The simulation predicted ~5-8% GDP cost from removing 7M unauthorized workers. The Trump 2025+ enforcement push is a different regime that may test parts of the mechanism, but this memo does not contain a quantitative validation pass. Early qualitative indicators, if used, must be sourced separately; quantitative replication awaits post-2025 data.
+The simulation's lead figure is a first-order ~5% GDP cost from removing 7M unauthorized workers; the ~8% endpoint comes from a Type-II multiplier sensitivity and should not be headlined as the estimate. The Trump 2025+ enforcement push is a different regime that may test parts of the mechanism, but this memo does not contain a quantitative validation pass. Early qualitative indicators, if used, must be sourced separately; quantitative replication awaits post-2025 data.
 
 ## What we STILL can't say with high confidence
 

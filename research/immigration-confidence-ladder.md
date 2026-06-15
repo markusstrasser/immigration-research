@@ -115,9 +115,9 @@ Reason: IRS SOI `Total Migration-US` 2022-23 and ACS `B07001_081E` point in the 
 Rating: `strong (framing claim)`
 Reason: At immigrant-welfare-weight w=0 (current repo's implicit framing): negative by construction. At w≥0.25 under 25%-of-gross-gains native-cost benchmark: positive. At w=1.0 even under harsh 50%-cost benchmark: positive. Empirical evidence cannot adjudicate the values choice. Honest framing must name the weight. [SOURCE: data/clemens/gpt54_calibration_review.md, GPT-5.4 sensitivity analysis]
 
-24. `Mass deportation of 7M unauthorized → ~$1.5-2.3T one-time output shock (5-8% GDP)`
+24. `Mass deportation of 7M unauthorized → ~$1.45T first-order output shock (~5% GDP); Type-II endpoint is sensitivity only` — **presentation qualified by entry 32**
 Rating: `medium (calibration not estimate)`
-Reason: BEA Use Table 2023 partial-equilibrium with industry FB-share assumptions from Pew/CMS. First-order $1.45T, with Type-II multiplier (~1.6) $2.32T. Per-removed-worker loss $207K-$332K. Most affected: Construction (-5.9%), Other services / cleaning (-8.8%), Agriculture (-4.3%). Calibration consistent with E-Verify empirical finding (-6% E1 employment under 50% compliance). [SOURCE: scripts/mass_deportation_sim.py]
+Reason: BEA Use Table 2023 partial-equilibrium with industry FB-share assumptions from Pew/CMS. First-order $1.45T; a Type-II multiplier (~1.6) gives a $2.32T sensitivity, not a headline estimate. Per-removed-worker loss $207K first-order and $332K under Type-II sensitivity. Most affected: Construction (-5.9%), Other services / cleaning (-8.8%), Agriculture (-4.3%). Calibration consistent with E-Verify empirical finding (-6% E1 employment under 50% compliance). [SOURCE: scripts/mass_deportation_sim.py]
 
 ## Surge layer added 2026-04-18 (late evening)
 
