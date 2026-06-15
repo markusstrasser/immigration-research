@@ -4,71 +4,53 @@
 **Question:** What can we actually say about the 2021-2024 immigration surge that static models couldn't capture?
 **Method:** OHSS DHS monthly enforcement tables (encounters by citizenship), CHNV parole data, NYC Comptroller / Chicago / Denver / MA migrant cost trajectories, county-level 2020 vs 2024 election results, ACS county FB share.
 
-> **⚠ SUPERSEDED IN PART (2026-06-11):** the encounter series this memo was built on carried two parser bugs (fiscal-index dates; OFO-ports-only universe). Key finding 2 (CHNV "did not substitute") is **reversed**; the monthly narrative and Title-42 windows are wrong as printed; finding 3 (receiver swing) survived its kill-test. See the Revisions entries below and [decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md](../decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md). Body retained unedited as the historical record.
+> **CORRECTED (2026-06-11):** the encounter series this memo was built on carried two parser bugs (fiscal-index dates; OFO-ports-only universe). Key finding 2 (CHNV "did not substitute") is **reversed**; the monthly narrative and Title-42 windows are replaced below; finding 3 (receiver swing) survived its kill-test. See [decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md](../decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md).
 **Bias caveat:** Politically charged subject matter. Per `notes/llm-bias-caveat.md`, this memo flags interpretation that depends on the LLM instrument's training-time priors. Empirical numbers below are administrative data; interpretations are explicitly framed as scenarios.
 
 ## Bottom line
 
-Three findings the static cycle missed:
+Three corrected findings the static cycle missed:
 
-1. **The Title 42 lift was a non-event for total flows. The December 2022 - March 2023 surge to 50K+/month and the eventual normalization at ~50K/month was a regime shift independent of Title 42 timing.** The "lift" itself coincided with a brief lull (anticipation surge in March + April crash + May low + gradual rebuild). Pre-lift 12-mo mean: 27K/month; post-lift 12-mo mean: 44K/month (+62%) — but this is composition of compared periods, not a Title 42 causal effect.
+1. **The Title 42 lift did not cause the surge, but the original monthly evidence was wrong.** Corrected Total-CBP data show Dec-2022 local peak 252K, Jan-Feb 2023 trough, Apr-May anticipation spike at 212K/207K, June post-lift crash, and Dec-2023 record 301,980. Post-lift 6-month mean was **14.5% below** pre-lift. [SOURCE: `scripts/analyze_surge_title42_chnv.py` rerun 2026-06-11; decision record]
 
-2. **CHNV parole INCREASED total flow from those nationalities by ~700pp more than control nationalities (TWFE β=+3.29, t=4.78).** Cuban/Haitian/Venezuelan encounters at SW border ROSE post-program, alongside their parole arrivals. Did not substitute legal for illegal — added legal alongside illegal. Strongly contradicts the program's stated rationale of reducing irregular migration. Plausible mechanism: program signaled US openness to these nationalities, lowering perceived migration cost broadly.
+2. **CHNV substituted lawful port flow for irregular between-port crossings in its initial year.** Corrected USBP event study shows Cuba −95.3%, Nicaragua −96.2%, and Venezuela −57.5% between-port crossings after program start; the old "+787%" rise was the program's own lawful OFO channel read as total SWB encounters. Corrected total-CBP DiD is null (β=+0.45, t=1.29). [SOURCE: `sources/immigration-causal/data/outcomes/analysis/chnv_pretrends/results.json`; decision record]
 
-3. **Receiver cities (Abbott busing destinations) swung +4.4 pp more Republican in 2024 than comparable non-receiver counties** — a magnitude that is implausibly large for non-immigration causes alone. Bronx +11pp, Queens +11pp, El Paso +10pp, Hidalgo +10pp, Miami-Dade +9pp. The system-collapse claim has empirical bite via the political feedback loop.
+3. **Receiver cities still show a political signal after the Hispanic-share kill-test.** The receiver coefficient moves from +0.0256 to +0.0238 with 2020 county Hispanic share controlled (t≈7.2); use the controlled +2.4pp as a correlational upper-bound, not the raw +4.4pp as a causal headline. [SOURCE: `sources/immigration-causal/data/outcomes/analysis/swing_hispanic_control/results.json`; decision record]
 
 ## Findings in detail
 
-### Title 42 lift event study (2023-05-11)
+### Title 42 lift event study (corrected 2026-06-11)
 
-Monthly SWB encounters around the lift date:
+The original month table was built from fiscal-index dates and the wrong agency universe. Corrected Total-CBP data show:
 
-| Month | Total | Mexico | Venezuela | Cuba | Haiti |
-|-------|-------|--------|-----------|------|-------|
-| 2022-11 | 22,310 | 8,370 | 60 | 40 | 6,370 |
-| 2022-12 | 19,950 | 8,060 | 60 | 20 | 4,980 |
-| **2023-01** | **52,180** | 14,000 | 11,220 | 11,280 | 4,650 |
-| 2023-02 | 47,580 | 10,340 | 14,710 | 7,800 | 2,560 |
-| 2023-03 | 52,240 | 12,800 | 10,930 | 12,600 | 7,670 |
-| 2023-04 | 27,850 | 9,800 | 6,750 | 250 | 3,130 |
-| 2023-05 | 26,110 | 5,790 | 4,110 | 580 | 7,410 *← Title 42 lift* |
-| 2023-06 | 29,580 | 9,260 | 4,990 | 1,200 | 4,250 |
-| 2023-09 | 45,020 | 15,300 | 7,900 | 2,330 | 7,330 |
-| 2023-12 | 50,970 | 13,520 | 11,750 | 9,790 | 4,590 |
-| 2024-12 | 47,930 | 10,240 | 14,680 | 8,860 | 4,050 |
+- Dec-2022 local peak: **252K**
+- Jan-Feb 2023 trough: CHNV substitution visible at total level
+- Apr-May 2023 anticipation spike: **212K / 207K**
+- Jun-2023 post-lift crash: **145K**, about **−30%**
+- Dec-2023 record: **301,980**
+- Post-lift 6-month mean: **−14.5%** vs pre-lift
 
-**Pre-lift 12mo mean:** 26,930/month. **Post-lift 12mo mean:** 43,661/month (+62%).
+The corrected reading is still that Title 42's lift did not cause the surge. The evidence is not "pre-lift 50K/month and post-lift +62%"; that was a parser artifact. [SOURCE: `scripts/analyze_surge_title42_chnv.py` rerun 2026-06-11; decision record]
 
-The lift itself was a non-event in the sense that:
-- The 50K+ surge happened BEFORE the lift (Dec 2022-Mar 2023)
-- April-May 2023 saw a TEMPORARY dip (CHNV program absorbing demand + lift anticipation effects)
-- June 2023 onward saw gradual rebuild back to surge levels
-- The "+62%" pre-vs-post comparison is mostly about WHICH months you compare
+### CHNV channel-substitution event study (corrected 2026-06-11)
 
-The honest reading: there was a regime shift around Dec 2022 driven by CHNV starting, Title 42 expectations, and global push factors. Title 42 lifting in May 2023 was one event in this regime shift, not its cause.
+Corrected universe: **USBP between-ports** for irregular crossings, with OFO reported separately as the lawful port channel. [SOURCE: `sources/immigration-causal/data/outcomes/analysis/chnv_pretrends/results.json`]
 
-### CHNV nationality-DiD (parole started 2023-01-05)
+| Nationality | USBP pre-6 mean | USBP post-6 mean | Change | OFO pre-6 mean | OFO post-6 mean |
+|-------------|----------------:|-----------------:|-------:|---------------:|----------------:|
+| Venezuela | 16,488 | 7,000 | −57.5% | 47 | 3,210 |
+| Cuba | 28,563 | 1,355 | −95.3% | 32 | 1,252 |
+| Nicaragua | 22,063 | 830 | −96.2% | — | — |
+| Haiti | 152 | 150 | ~flat | 5,585 | 5,658 |
 
-Monthly encounters at SW border, treated (CHN+V, n=3 nationalities present in OHSS) vs control (Mex+NTCA, n=4):
+Event study:
 
-| Group | Pre-Jan23 mean | Post-Jan23 mean | Change |
-|-------|----------------|-----------------|--------|
-| Treated (CHNV) | 2,598/month | 23,041/month | **+786.7%** |
-| Control (Mex+NTCA) | 9,069/month | 16,025/month | +76.7% |
+- Mean event-time effect τ[0,+3]: **−2.17 log points**
+- Mean event-time effect τ[+6,+12]: **−1.83 log points**
+- Monotone-rising pre-trend flag: **false**
+- Corrected total-CBP DiD: **β=+0.45, t=1.29** — null [SOURCE: decision record]
 
-**TWFE estimate** (nationality FE + month FE, clustered SE): log encounters increased by **β=+3.29 (SE 0.69, t=+4.78)** for CHNV nationalities relative to controls after Jan 2023. Translation: encounters rose ~2,600% MORE for CHNV nationalities than for controls.
-
-CHNV parole approvals (from same OHSS file):
-- 2023-01 to 2024-09: ~28-30K/month at 4-nationality steady state
-- Total CHNV paroles 2023-2024: ~530K
-
-**Combined:** CHNV created ~530K legal pathway entries AND coincided with massively-increased SW border encounters from those same nationalities. The two channels operated in PARALLEL, not as substitutes.
-
-Plausible interpretations (not adjudicated by data alone):
-- Signaling: CHNV announcement signaled US openness, lowering perceived migration cost broadly
-- Anchor effects: parolee sponsors create networks for subsequent migrants
-- Reverse causation: CHNV was created BECAUSE flows from these nationalities were already rising
-- Contemporaneous push factors: Cuba/Venezuela/Nicaragua political crises 2022-2023
+**Corrected conclusion:** CHNV substituted lawful port flow for irregular crossings in its initial year, strongest for Cuba/Nicaragua and initially Venezuela. It did **not** reduce total arrivals because roughly **530K** lawful paroles were planned inflow and still landed in receiver-city ledgers. [INFERENCE]
 
 ### Receiver-city cost trajectories (system-collapse evidence)
 
@@ -87,6 +69,8 @@ Plausible interpretations (not adjudicated by data alone):
 Per-migrant per-day cost: ~$190 NYC, ~$200 Denver, ~$140 Chicago. Total 5-year cost across these cities: $13B+ across local + state combined.
 
 ### 2024 election shift × surge exposure
+
+**Reading rule after 2026-06-11 kill-test:** the raw receiver-city gap below is descriptive only. Use the Hispanic-share-controlled receiver coefficient, about **+2.4pp**, as the headline correlational upper-bound. [SOURCE: `sources/immigration-causal/data/outcomes/analysis/swing_hispanic_control/results.json`]
 
 **National GOP shift:** +1.94 pp (population-weighted +2.50 pp).
 
@@ -143,7 +127,7 @@ The 2024 election shift was real and partially related to surge exposure. Counti
 NYC went from $1.4B→$3.7B on migrant care in one year. Cook County (Chicago) cost $228M peak. MA hit shelter cap. Denver cut services to fund migrant care. These are observable, quantifiable system loads concentrated in specific places — and those places swung substantially toward Trump in 2024.
 
 **The "this was just inflation/Hispanic-realignment" reading is incomplete:**
-Both effects exist but cannot fully explain the +4.4pp differential between receiver and non-receiver counties controlling for state FE. National GOP shift was +2.5pp; receiver cities went +6.4pp. Inflation/realignment would predict roughly uniform shifts; the data show a CONCENTRATED shift in surge-exposed places.
+Both effects exist. The pre-registered Hispanic-share kill-test left the receiver coefficient nearly unchanged (+0.0256 → +0.0238), so the named rival channel did not erase the receiver association. But the raw +4.4pp receiver/non-receiver gap is not a causal headline; use the controlled +2.4pp as the bounded claim.
 
 **Confounders that remain unresolved:**
 - Hispanic Americans (citizens) shifted nationally toward Trump for many reasons unrelated to the surge (inflation, abortion stance, masculinity politics, religion, foreign policy, anti-incumbency)
@@ -190,18 +174,19 @@ The simulation predicted ~5-8% GDP cost from removing 7M unauthorized workers. T
 ## Updated repo confidence ladder additions
 
 ```
-25. `Title 42 lift was not the surge cause; surge was a regime shift starting Dec 2022`
+25. `Title 42 lift did not cause the surge`
 Rating: medium
-Reason: Encounters peaked Jan-Mar 2023 BEFORE Title 42 lift; lift coincided with
-April-May lull then gradual rebuild. Pre/post comparison is composition-driven.
-[SOURCE: research/immigration-causal-surge-2021-2024.md]
+Reason: corrected Total-CBP data show Apr-May 2023 anticipation spike, June
+post-lift crash, and post-lift 6-month mean 14.5% below pre-lift. The old
+monthly facts are superseded by the 2026-06-11 parser fix.
+[SOURCE: decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md]
 
-26. `CHNV parole did not substitute legal flow for illegal flow; it added on top`
-Rating: strong
-Reason: TWFE β=+3.29 (t=4.78) on CHNV nationality vs control after Jan 2023.
-Encounters from CHNV nationalities ROSE 787% post-program. Refutes the program's
-stated rationale.
-[SOURCE: data/cbp/swb_encounters_by_citizenship_monthly.parquet]
+26. `CHNV substituted lawful port flow for irregular crossings in its initial year`
+Rating: strong initial-period; medium beyond ~12 months
+Reason: corrected USBP event study shows Cuba −95.3%, Nicaragua −96.2%,
+Venezuela −57.5%; the old "+787%" was OFO lawful port throughput read as total
+SWB encounters. Corrected total-CBP DiD is null (β=+0.45, t=1.29).
+[SOURCE: sources/immigration-causal/data/outcomes/analysis/chnv_pretrends/results.json]
 
 27. `Receiver-city local fiscal load was real and concentrated`
 Rating: strong (administrative data)
@@ -210,14 +195,12 @@ peak; Denver $89M (cuts elsewhere to fund). Combined 5+ city load $5B+/yr at
 peak. System-collapse claim has empirical bite.
 [SOURCE: data/bused_cities/receiver_city_costs.csv]
 
-28. `Receiver cities swung +4.41 pp more Republican in 2024 than comparable non-receivers`
+28. `Receiver cities swung about +2.4 pp more Republican after Hispanic-share control`
 Rating: medium (correlation, multiple confounders)
-Reason: Multivariate OLS with state FE: receiver_city β=+0.024 (t=6.96***).
-Top receivers (Bronx, Queens, Hidalgo, Cameron, Miami-Dade, El Paso) swung
-+9-11 pp toward Trump. Confounders include national Hispanic realignment, inflation,
-and policy-endogenous busing destinations. NOT clean causal identification but
-magnitude is implausibly large for non-immigration causes alone.
-[SOURCE: research/immigration-causal-surge-2021-2024.md]
+Reason: Hispanic-share kill-test leaves receiver β +0.0256 → +0.0238 (t≈7.2).
+Use this as correlational upper-bound; do not reuse the raw +4.41pp as a causal
+headline.
+[SOURCE: sources/immigration-causal/data/outcomes/analysis/swing_hispanic_control/results.json]
 
 29. `Static-cycle Card-wins finding is bounded; surge is OUTSIDE that variation`
 Rating: meta-update on prior entries 17, 19, 21
@@ -232,9 +215,9 @@ variation. Linear extrapolation is not warranted.
 The user's critique was correct: linear/static models calibrated on pre-2020 variation cannot tell us what the surge did. Direct surge-period data show:
 
 1. **The flows were real and large** (~50K/month sustained 2023-2024)
-2. **CHNV did not work as stated** (encounters rose alongside parole approvals)
+2. **CHNV substituted channels in its initial year** (irregular USBP crossings fell, lawful port/parole flow rose)
 3. **Receiving cities hit budget walls** (NYC, MA, Chicago, Denver all visibly stressed)
-4. **The 2024 election bears the political imprint** (receiver cities +4.4 pp more GOP)
+4. **The 2024 election bears a political imprint** (receiver cities about +2.4 pp more GOP after Hispanic-share control; correlational)
 
 But:
 - Mechanism is not cleanly identified

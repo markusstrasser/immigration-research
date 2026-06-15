@@ -228,3 +228,46 @@ Current `v_country_fiscal_rollup` lifetime rows:
 ### Current Conclusion
 
 The old negative Mexico rows were not independent evidence. They were stale artifacts of two fixed bugs: the scenario-subset school denominator and the incomplete NAS education-cell seed. [INFERENCE]
+
+---
+
+## 2026-06-16 — CHNV non-substitution headline reversed
+
+### Issue
+
+`research/immigration-causal-surge-2021-2024.md` still presented the active bottom-line claim that CHNV parole **did not substitute** legal flow for illegal flow and instead added on top. That claim had already been reversed by the later parser-bug decision record: the source series was OFO port-of-entry encounters, the program's own lawful channel, misread as total SWB encounters. [DATA]
+
+The confidence ladder had a later correction entry 34, but older entries 26 and 30 still appeared without inline supersession markers. [DATA]
+
+### Evidence Checked
+
+Corrected `chnv_pretrends/results.json`:
+
+| Nationality | USBP pre-6 mean | USBP post-6 mean | Change | OFO pre-6 mean | OFO post-6 mean |
+|-------------|----------------:|-----------------:|-------:|---------------:|----------------:|
+| Venezuela | 16,488 | 7,000 | −57.5% | 47 | 3,210 |
+| Cuba | 28,563 | 1,355 | −95.3% | 32 | 1,252 |
+| Nicaragua | 22,063 | 830 | −96.2% | — | — |
+| Haiti | 152 | 150 | ~flat | 5,585 | 5,658 |
+
+Other corrected anchors:
+
+- Event-time mean τ[0,+3]: `−2.17` log points.
+- Event-time mean τ[+6,+12]: `−1.83` log points.
+- Corrected total-CBP DiD: `β=+0.45`, `t=1.29`, null. [SOURCE: decision record]
+- The old `+787%` rise was the lawful OFO channel on a scrambled clock. [SOURCE: decision record]
+
+### Fixes Made
+
+1. Updated `research/immigration-causal-surge-2021-2024.md`:
+   - Replaced the active bottom-line CHNV claim with the corrected channel-substitution result.
+   - Replaced the stale Title-42 evidence summary with the corrected monthly path.
+   - Replaced the stale CHNV DiD section with USBP/OFO-separated evidence.
+   - Replaced the receiver-city political headline with the Hispanic-share-controlled `+2.4pp` correlational upper-bound.
+
+2. Updated `research/immigration-confidence-ladder.md`:
+   - Marked entries 26 and 30 as superseded by entry 34.
+
+### Current Conclusion
+
+CHNV did substitute lawful port flow for irregular between-port crossings in its initial year. It did **not** reduce total receiver load, because the lawful parole inflow still arrived and still belonged in city, shelter, and political ledgers. [INFERENCE]

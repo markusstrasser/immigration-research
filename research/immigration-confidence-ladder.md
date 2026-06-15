@@ -121,11 +121,11 @@ Reason: BEA Use Table 2023 partial-equilibrium with industry FB-share assumption
 
 ## Surge layer added 2026-04-18 (late evening)
 
-25. `Title 42 lift was not the surge cause; surge was a regime shift starting Dec 2022`
+25. `Title 42 lift was not the surge cause; surge was a regime shift starting Dec 2022` — **EVIDENCE SUPERSEDED by entry 35**
 Rating: `medium`
 Reason: SWB encounters peaked Jan-Mar 2023 at 50K+/month BEFORE Title 42 lift (May 2023). Lift coincided with April-May lull, then gradual rebuild to surge levels. Pre/post comparison is composition-driven, not policy-causal. [SOURCE: research/immigration-causal-surge-2021-2024.md]
 
-26. `CHNV parole did not substitute legal flow for illegal flow; it added on top`
+26. `CHNV parole did not substitute legal flow for illegal flow; it added on top` — **SUPERSEDED by entry 34**
 Rating: `strong`
 Reason: TWFE β=+3.29 (t=4.78) on CHNV nationality vs control after Jan 2023. Encounters from CHNV nationalities ROSE 787% post-program, not fell. Refutes the stated rationale that legal pathway would reduce irregular migration. [SOURCE: data/cbp/swb_encounters_by_citizenship_monthly.parquet]
 
@@ -133,7 +133,7 @@ Reason: TWFE β=+3.29 (t=4.78) on CHNV nationality vs control after Jan 2023. En
 Rating: `strong (administrative data)`
 Reason: NYC FY24 $3.7B (3.5% of operating budget); MA FY24 $1B; Chicago $228M peak; Denver $89M (with cuts to other services). Combined ~$5B+/yr peak across major receivers. System-collapse claim has empirical bite. [SOURCE: data/bused_cities/receiver_city_costs.csv]
 
-28. `Receiver cities swung +4.41 pp more Republican in 2024 than comparable non-receivers`
+28. `Receiver cities swung +4.41 pp more Republican in 2024 than comparable non-receivers` — **QUALIFIED by entries 31 and 36**
 Rating: `medium (correlation, multiple confounders)`
 Reason: Multivariate OLS with state FE: receiver_city β=+0.024 (t=6.96***). Top receivers (Bronx +11pp, Queens +11pp, Hidalgo +10pp, Cameron +10pp, El Paso +10pp, Miami-Dade +9pp) swung massively toward Trump. Confounders include national Hispanic realignment, inflation, and policy-endogenous busing destinations. Magnitude implausibly large for non-immigration causes alone. [SOURCE: research/immigration-causal-surge-2021-2024.md]
 
@@ -145,7 +145,7 @@ Reason: Prior entries claim "decisive Card-side win for U.S. policy variation." 
 
 Trigger: mirror-test against the criticisms of the Cato 2026 fiscal study ("did we commit its biases?"). Full audit and the general checklist live in [notes/quant-bias-checklist.md](../notes/quant-bias-checklist.md). Prior entries are not rewritten (append-only); these supersede where they conflict.
 
-30. `CHNV parole did not substitute legal flow for illegal flow; it added on top` — **downgraded from strong to medium**
+30. `CHNV parole did not substitute legal flow for illegal flow; it added on top` — **SUPERSEDED by entry 34 after interim downgrade**
 Reason: the source memo itself lists reverse causation as a live mechanism (the program was created because flows from these nationalities were already rising), and no event-study leads/pre-trend test adjudicated it. The TWFE post coefficient cannot separate "program signaled openness" from "continuation of the pre-program trajectory." The descriptive fact survives (encounters rose alongside ~530K paroles; substitution did not happen); the causal "program added flow" reading is medium until a pre-trend pass is run. Also: any reuse of the `+787%` figure must carry its base (2,598/month treated-nationality baseline). [SOURCE: research/immigration-causal-surge-2021-2024.md]
 
 31. `Receiver-city 2024 GOP swing` (entry 28) — **grade unchanged (medium), headline language corrected**
