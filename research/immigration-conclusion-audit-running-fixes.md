@@ -2507,3 +2507,23 @@ Updated:
 ### Updated conclusion
 
 The current verified surface is narrower and cleaner: strong linked-household child-exposure evidence; medium-strong descriptive evidence for a narrow annual federal cash-flow proxy; no live all-in federal number; and no current origin `federal - school` sign until the school numerator and adult denominator are rebuilt on the same universe. [INFERENCE]
+
+---
+
+## 2026-06-16 — Full-protocol sweep rows marked superseded
+
+### Issue
+
+`research/immigration-sweep-cycles-23-32-2026-06-15.md` was still routed by the topic index as the "full protocol" sweep and contained old origin school/net rows: Mexico `school` `$771`, Mexico `crude` `+$748`, EU27 `school` `$64`, and similar rows for cycle 32. Those rows came from the intermediate correction that was later rejected by the same-universe guard. [DATA]
+
+### Why it was wrong
+
+The current `v_three_layer_annual` view withholds origin and aggregate foreign-born school/net rows. A direct DuckDB query on 2026-06-16 returned `NULL` `school_per_adult` and `net_crude_per_adult` for `mexico_origin`, `mx_ca_cluster`, `eu27_origin`, `uk_origin`, and `fb_lt_hs`; only `nh_white_usborn` retained a built school/net row in that slice. Leaving the old numeric rows unqualified in the full-protocol memo made it too easy for later agents to cite a stale `federal - school` sign. [DATABASE: `warehouse/immigration_fiscal_union.duckdb` view `v_three_layer_annual`] [INFERENCE]
+
+### Fix
+
+Updated `research/immigration-sweep-cycles-23-32-2026-06-15.md` with a 2026-06-16 status block, supersession notes on cycles 24, 26, 30, and 32, and a revisions table. Updated `research/immigration-INDEX.md` so the route row warns not to cite the old `$771/+748` origin school/net outputs. [SOURCE: memo]
+
+### Updated conclusion
+
+Sweeps 23–32 still preserve useful NAS education-mix, federal-proxy, and thesis-generation work, but their origin school/net numbers are historical traces, not current facts. Current live origin `federal - school` signs remain withheld until same-universe school numerators are rebuilt. [INFERENCE]

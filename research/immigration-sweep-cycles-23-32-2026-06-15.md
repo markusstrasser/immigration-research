@@ -2,6 +2,8 @@
 
 **Protocol:** `notes/immigration-lifetime-sweep-protocol.md`
 
+**Status update (2026-06-16):** Partially superseded. The NAS education-mix and federal annual proxy pieces remain useful, but the origin `school_burden_per_adult` and `net_crude` rows exported in cycles 24, 26, 30, and 32 are historical intermediate outputs. The live `v_three_layer_annual` view now withholds origin school/net rows because those rows paired a scenario-household school numerator with full-microsim adult denominators. Query run 2026-06-16 returned `NULL` school/net rows for `mexico_origin`, `mx_ca_cluster`, `eu27_origin`, `uk_origin`, and `fb_lt_hs`; `nh_white_usborn` school/net remains built. [SOURCE: `warehouse/immigration_fiscal_union.duckdb` view `v_three_layer_annual`] [SOURCE: `research/immigration-school-burden-per-adult-2026-06-15.md`]
+
 Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.
 
 ---
@@ -52,11 +54,12 @@ Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.
 
 **Paper:** `external/lifetime/dallasfed/orrenius_nas_fiscal_sensitivity_wp1704.pdf` — excerpt: _New Findings on the Fiscal Impact of Immigration in the United States  Pia Orrenius  Federal Reserve Bank of Dallas Research Department Working Paper 1704  New Findings on the Fiscal Impact of Immigration in the United States *  Pia Orrenius Federal Reserve Bank of Dallas 2200 N. Pearl St. Dallas, TX 75201 214-922-5747 Pia.Orrenius@dal.frb.org  April 2017  Abstract The National Academies of Scien…_
 
-**Data:**
+**Data:** Historical intermediate output; do not cite as the current origin school/net surface.
 ```json
 [
   {
     "population_group": "mexico_origin",
+    "status": "superseded_do_not_cite_same_universe_mismatch",
     "school": 771.0,
     "crude": 748.0
   },
@@ -68,7 +71,7 @@ Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.
 ]
 ```
 
-**Synthesis:** Query returned 2 rows; see data block.
+**Synthesis:** Superseded for origin school/net exports. Static school-cost critique remains relevant, but current origin rows are withheld pending a same-universe school numerator.
 
 ---
 
@@ -118,7 +121,7 @@ Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.
 
 **Rebuild:** tensor
 
-**Data:**
+**Data:** Historical intermediate output; origin and aggregate foreign-born school/net rows below are not live after the same-universe guard.
 ```json
 [
   {
@@ -141,30 +144,35 @@ Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.
   },
   {
     "population_group": "fb_lt_hs",
+    "status": "superseded_do_not_cite_same_universe_mismatch",
     "school": 1005.0,
     "fed": 677.0,
     "net": -329.0
   },
   {
     "population_group": "mx_ca_cluster",
+    "status": "superseded_do_not_cite_same_universe_mismatch",
     "school": 1091.0,
     "fed": 1519.0,
     "net": 428.0
   },
   {
     "population_group": "mexico_origin",
+    "status": "superseded_do_not_cite_same_universe_mismatch",
     "school": 771.0,
     "fed": 1519.0,
     "net": 748.0
   },
   {
     "population_group": "eu27_origin",
+    "status": "superseded_do_not_cite_same_universe_mismatch",
     "school": 64.0,
     "fed": 4695.0,
     "net": 4658.0
   },
   {
     "population_group": "uk_origin",
+    "status": "superseded_do_not_cite_same_universe_mismatch",
     "school": 92.0,
     "fed": 5486.0,
     "net": 5372.0
@@ -172,7 +180,7 @@ Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.
 ]
 ```
 
-**Synthesis:** Mexico school/adult revised to $771 with microsim weights.
+**Synthesis:** Superseded. The `$771` Mexico school/adult and `+$748` crude net rows paired a scenario-household school numerator with the full Mexico microsim adult denominator. Current conclusion: Mexico federal annual proxy remains about `$1,519/adult/yr`; Mexico school/adult and `federal - school` are withheld.
 
 ---
 
@@ -182,11 +190,12 @@ Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.
 
 **Rebuild:** tensor
 
-**Data:**
+**Data:** Historical intermediate output; the aggregate foreign-born `<HS` school/net row below is not live after the same-universe guard.
 ```json
 [
   {
     "population_group": "fb_lt_hs",
+    "status": "superseded_do_not_cite_same_universe_mismatch",
     "federal_per_adult": 676.7904040735388,
     "school_per_adult": 1004.8071554499852,
     "net_crude_per_adult": -329.492597700376,
@@ -225,7 +234,7 @@ Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.
 
 **Paper:** `external/lifetime/nber/akers_boustan_2024_immigration_inequality_next_generation_w33961.pdf` — excerpt: _NBER WORKING PAPER SERIES  IMMIGRATION AND INEQUALITY IN THE NEXT GENERATION Mark Borgschulte Heepyung Cho Darren Lubotsky Jonathan L. Rothbaum Working Paper 33961 http://www.nber.org/papers/w33961  NATIONAL BUREAU OF ECONOMIC RESEARCH 1050 Massachusetts Avenue Cambridge, MA 02138 June 2025  We thank David Card, Ronald Lee, and Giovanni Peri, as well as audiences and discussants at NBER Cohort Stu…_
 
-**Data:**
+**Data:** Historical intermediate output; origin `base` and marginal rows below depend on the superseded school/net export.
 ```json
 []
 ```
@@ -245,11 +254,13 @@ Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.
 [
   {
     "population_group": "eu27_origin",
+    "status": "superseded_do_not_cite_same_universe_mismatch",
     "base": 4658.0,
     "half_marg": 4663.0
   },
   {
     "population_group": "mexico_origin",
+    "status": "superseded_do_not_cite_same_universe_mismatch",
     "base": 748.0,
     "half_marg": 1134.0
   },
@@ -261,7 +272,7 @@ Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.
 ]
 ```
 
-**Synthesis:** Query returned 3 rows; see data block.
+**Synthesis:** Superseded for origin rows. Marginal-vs-average pupil costing remains a required sensitivity after a same-universe origin school row exists; it cannot rescue the stale `$771/+748` export.
 
 ---
 
@@ -287,11 +298,12 @@ Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.
 
 **Diverge:** Integrate sweeps 23–31 into revised thesis.
 
-**Data:**
+**Data:** Historical intermediate output for origin school/net rows; live 2026-06-16 `v_three_layer_annual` withholds `school` and `crude` for `eu27_origin`, `fb_lt_hs`, and `mexico_origin`.
 ```json
 [
   {
     "population_group": "eu27_origin",
+    "status": "superseded_do_not_cite_same_universe_mismatch",
     "fed": 4695.0,
     "school": 64.0,
     "crude": 4658.0,
@@ -299,6 +311,7 @@ Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.
   },
   {
     "population_group": "fb_lt_hs",
+    "status": "superseded_do_not_cite_same_universe_mismatch",
     "fed": 677.0,
     "school": 1005.0,
     "crude": -329.0,
@@ -306,6 +319,7 @@ Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.
   },
   {
     "population_group": "mexico_origin",
+    "status": "superseded_do_not_cite_same_universe_mismatch",
     "fed": 1519.0,
     "school": 771.0,
     "crude": 748.0,
@@ -321,7 +335,12 @@ Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.
 ]
 ```
 
-**Synthesis:** Final object: federal_annual | school_burden_per_adult | net_crude | lifetime_npv — never one scalar.
+**Synthesis:** Final object: federal_annual | school_burden_per_adult | net_crude | lifetime_npv — never one scalar. Current live export has `federal_annual` and synthetic NAS `lifetime_npv` for the relevant groups, but origin `school_burden_per_adult` and `net_crude` are withheld until the numerator and denominator use the same universe.
 
 ---
 
+## Revisions
+
+| Date | Change | Trigger |
+|---|---|---|
+| 2026-06-16 | Marked cycles 24, 26, 30, and 32 school/net rows as historical superseded outputs; current origin school/net rows are withheld by `v_three_layer_annual`. | DuckDB query on `warehouse/immigration_fiscal_union.duckdb` and `research/immigration-school-burden-per-adult-2026-06-15.md`. |
