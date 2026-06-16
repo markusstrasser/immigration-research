@@ -29,7 +29,7 @@
 | Population | Adults | Avg wage (`WAGP`) | % `<HS` | % college+ | Fed $/adult/yr |
 |------------|--------|-------------------|---------|------------|----------------|
 | **NH white US-born** | 93.6M | $60,401 | 4.9% | 52.2% | **$2,746** |
-| **NH white all nativity** | 98.3M | $61,127 | 5.0% | 52.8% | **$2,803–3,005** |
+| **NH white all nativity** | 98.3M | $61,127 | 5.0% | 52.8% | **$2,803** |
 | NH white foreign-born | 4.7M | $75,480 | 6.7% | 63.7% | **$3,898** |
 | **EU27 foreign-born** | 1.46M | $80,771 | 6.2% | 54–62% | **$4,695** |
 | **UK foreign-born** | 0.42M | $99,621 | 3.0% | 61–69% | **$5,486** |
@@ -184,3 +184,4 @@ bash rebuild_lifetime_warehouse.sh
 | Date | Change |
 |------|--------|
 | 2026-06-15 | Initial write-up — EU vs Caucasian vs low-skill corridors after sweep 12 distribution pass |
+| 2026-06-16 | Replaced stale NH-white-all federal range `$2,803–3,005` with the current tensor anchor `$2,803`. See `immigration-conclusion-audit-running-fixes.md`. |
