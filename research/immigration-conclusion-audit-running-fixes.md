@@ -2571,3 +2571,23 @@ Updated:
 ### Updated conclusion
 
 The public economist critique remains intact: partial efficiency and migrant-gain arguments do not settle destination-country welfare. The evidence basis is now stated more precisely: current capacity/surge support is descriptive and correlational where the underlying designs do not identify causal mechanisms. [INFERENCE]
+
+---
+
+## 2026-06-16 — Legacy synthesis surfaces aligned with same-universe guard
+
+### Issue
+
+Two high-reuse synthesis surfaces still carried language from before the June 16 narrowing pass. `research/immigration-mexico-npv-population-synthesis-2026-06-15.md` said the executive short-horizon row was withheld, but its warehouse-layer table still printed the superseded Mexico-origin `$771` school and `+$748` crude-net rows. `research/immigration-claims-evolution-ledger-2026-04-23.md` also kept older Card/Borjas and native-backlash shorthand that could be read as stronger than the current E-Verify and political-response surfaces support. [DATA]
+
+### Why it was wrong
+
+The same-universe guard withholds origin `school_burden_per_adult` and `net_crude_federal_minus_school` until the school numerator is rebuilt on the same population universe as the adult denominator. Separately, the current E-Verify conclusion is mandate-margin and nonsignificance-scoped, and receiver-election evidence is correlational political response, not identified backlash motivation. [SOURCE: `research/immigration-conclusion-audit-running-fixes.md`] [INFERENCE]
+
+### Fix
+
+Updated `research/immigration-mexico-npv-population-synthesis-2026-06-15.md` to mark the old `$771/+748` rows as withheld/superseded and added an explicit disconfirmation row against citing them as current. Updated `research/immigration-claims-evolution-ledger-2026-04-23.md` with a 2026-06-16 status note, narrowed the labor-market summary to observed E-Verify mandate variation, and replaced native-backlash wording with citizen political-response language. [SOURCE: memos]
+
+### Updated conclusion
+
+The evolution ledger and Mexico synthesis now match the current frontier: no live Mexico-origin `federal - school` sign, no measured E-Verify labor-supply contraction, and no identified fiscal-load-to-vote or backlash mechanism. [INFERENCE]

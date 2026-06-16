@@ -117,8 +117,8 @@ Full prompts: `immigration-lifetime-fiscal-generators.md` §Q, §R.
 |--------------|---------|---------------------------|
 | `lifetime_npv` | +$45,631 synthetic age-25 benchmark | — |
 | `federal_annual` | +$1,519/yr | partial overlap |
-| `school_burden_per_adult` | $771/yr | **NO** |
-| `net_crude_federal_minus_school` | +$748/yr | **NO** |
+| `school_burden_per_adult` | **withheld** — prior `$771/yr` mixed scenario-household numerator with full-stock adult denominator | **NO** |
+| `net_crude_federal_minus_school` | **withheld** — prior `+$748/yr` depends on the superseded school row | **NO** |
 | `local_flow` | $20,907/pupil | **NO** (unit mismatch) |
 
 Missing from warehouse rollup: EOIR $/case, ICE bed-days allocated, shelter episodic per Mexico adult.
@@ -131,6 +131,7 @@ Missing from warehouse rollup: EOIR $/case, ICE bed-days allocated, shelter epis
 |------------|--------|
 | +$46k = immigrant pays for themselves all-in | **Unsupported / not a valid export** — school, admin, courts, shelter not netted |
 | Subtract `local_flow` from NPV | **Falsified** — per_pupil ≠ per_adult burden |
+| Use the old `$771` school row or `+$748` crude net as current Mexico-origin fiscal result | **Falsified** — same-universe school numerator is not built |
 | 10M+ net new unauthorized since Biden | **Falsified** — stock +3.5M to +5.6M |
 | Mexico drove post-2021 unauthorized-stock growth | **Falsified on this stock ledger** — Mexico unauthorized flat |
 | NAS `<HS` cell applies to the whole Mexico-origin stock | **Falsified** by education mix — but actual current-stock NPV remains unmeasured |
@@ -159,3 +160,4 @@ Missing from warehouse rollup: EOIR $/case, ICE bed-days allocated, shelter epis
 | 2026-06-16 | Corrected lifetime label: `+$45,631/adult` and `+$387.7B` are synthetic NAS age-25 education-mix benchmarks, not actual current-stock lifetime NPV |
 | 2026-06-16 | Reframed `+$46k = pays for themselves all-in` from falsified to unsupported/not a valid export: omitted ledgers block the inference, but the full all-in sign remains unmeasured. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Scoped "Mexico drove surge" to post-2021 unauthorized-stock growth; the flat Mexico stock result does not adjudicate encounter events or receiver-load composition. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Replaced the stale `$771/+748` warehouse-layer rows with withheld status after the same-universe school guard. See `immigration-conclusion-audit-running-fixes.md`. |

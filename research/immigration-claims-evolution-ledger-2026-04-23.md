@@ -4,6 +4,8 @@ Date: 2026-04-23
 
 Purpose: collapse the repo's immigration claims into a claim-by-claim evolution map: what the claim now says, how it changed, what it connects to, the takeaway, and the common misunderstanding. This is a synthesis over existing repo artifacts, not a fresh external verification pass. Source tags point to the repo documents that carry the underlying citations, data pulls, or prior audits.
 
+**Status note (2026-06-16):** June denominator and model-review passes narrowed several older shortcuts: E-Verify is an observed mandate-margin wage test, not measured labor-supply contraction; capacity/surge evidence is descriptive or correlational unless a design identifies the mechanism; and origin `federal - school` signs are withheld until school numerators and adult denominators share the same universe. [SOURCE: research/immigration-conclusion-audit-running-fixes.md]
+
 ## Claim List
 
 ### 1. The central question is not "is immigration good or bad?"
@@ -36,7 +38,7 @@ The repo initially treated housing as one component among many; later work eleva
 
 ### 8. The old labor-market collapse story weakened, but the "no worker effects" story is also too broad.
 
-The repo's labor view evolved through Card/Borjas/E-Verify and QWI work. Marginal-policy evidence rejects large Borjas-style wage losses in the tested E-Verify settings and supports Card-style complementarity as a bounded claim. But the surge-era and capacity-constrained analyses prevent upgrading that into "workers are unaffected everywhere." The takeaway is that crude native job-collapse claims are weak in the best marginal-policy evidence, while wage progression, housing-mediated real income, and local capacity channels remain open. The misunderstanding is treating "small average wage effect" as "no economic incidence on workers." [SOURCE: research/immigration-confidence-ladder.md] [SOURCE: research/immigration-reasoning-evolution-2026-04-21.md] [SOURCE: research/immigration-evidence-base-audit.md]
+The repo's labor view evolved through Card/Borjas/E-Verify and QWI work. The current E-Verify surface shows no statistically significant positive QWI wage effect in the observed mandate margin and cuts against large native wage gains there, while leaving small effects, scaled Borjas benchmarks, and out-of-margin shocks unresolved. Surge-era and capacity-constrained analyses also prevent upgrading older average-effect results into "workers are unaffected everywhere." The takeaway is that crude native job-collapse claims are weak in the best marginal-policy evidence, while wage progression, housing-mediated real income, and local capacity channels remain open. The misunderstanding is treating "small average wage effect" as "no economic incidence on workers." [SOURCE: research/immigration-confidence-ladder.md] [SOURCE: research/immigration-reasoning-evolution-2026-04-21.md] [SOURCE: research/immigration-evidence-base-audit.md] [SOURCE: research/immigration-conclusion-audit-running-fixes.md]
 
 ### 9. Pre-2020 marginal immigration studies do not settle surge-era politics or receiver-city capacity.
 
@@ -46,7 +48,7 @@ The reasoning-evolution memo explicitly demotes older labor-market evidence as a
 
 The project tried to find county-level thresholds using flow/capacity and outcome panels, then narrowed the claim after critique. Descriptive load/capacity markers survived robustness checks, but clean annual pre-COVID wage windows did not line up and employment signals looked more confounded. The current claim is that flow-to-capacity is a strong screening surface, not a proven universal causal breakpoint. The takeaway is to use it for case selection and hypothesis generation, not as a final law. The misunderstanding is either declaring "thresholds proved" or throwing away the signal because one annual wage panel is not clean. [SOURCE: research/immigration-reasoning-evolution-2026-04-21.md] [SOURCE: research/immigration-frontier-rethink-2026-04-22.md] [LIMIT]
 
-### 11. Receiver-node saturation is now the frontier causal object.
+### 11. Receiver-node saturation is now the frontier causal-design object.
 
 The repo's newest move is from national averages and county screens to receiver nodes: specific cities/counties where recent-entry exposure, housing stress, shelter capacity, EOIR load, labor indicators, and electoral shifts can be compared together. The first public-data kill test finds Miami-Dade and NYC as the strongest survivors, Bexar as second-tier, and Harris, Denver, Boston, Chicago, DC, and El Paso as mixed or channel-specific. The takeaway is that the most informative cases are not "high immigrant share" in general; they are places where multiple pressure channels synchronize. The misunderstanding is assuming every politically salient receiver city has the same mechanism. [SOURCE: research/immigration-receiver-node-kill-test-2026-04-23.md] [SOURCE: research/immigration-frontier-rethink-2026-04-22.md]
 
@@ -60,7 +62,7 @@ The repo previously leaned too hard on domestic-versus-abroad newcomer ratios. T
 
 ### 14. Political feedback became first-order, not an afterthought.
 
-The repo's political claim evolved from "immigrants may vote differently" to a broader feedback model: native backlash, local overload, perceived loss of institutional control, and legitimacy costs can matter before naturalization or voting. Receiver cities swung more Republican in 2024 than comparable nonreceivers in the current medium-confidence correlation, but causality remains confounded. The takeaway is that political effects are part of the policy cost function even when immigrants themselves do not vote. The misunderstanding is to restrict political externalities to immigrant median-voter effects, or to treat backlash as irrational noise outside welfare analysis. [SOURCE: research/immigration-confidence-ladder.md] [SOURCE: research/immigration-economist-rhetorical-failures-2026-04-22.md] [SOURCE: research/immigration-receiver-node-kill-test-2026-04-23.md]
+The repo's political claim evolved from "immigrants may vote differently" to a broader feedback model: citizen political response, local overload, perceived loss of institutional control, and legitimacy costs can matter before naturalization or voting. Receiver cities swung more Republican in 2024 than comparable nonreceivers in the current medium-confidence correlation, but causality and voter motivation remain confounded. The takeaway is that political-response evidence belongs in the policy cost function even when immigrants themselves do not vote. The misunderstanding is to restrict political externalities to immigrant median-voter effects, or to treat citizen response as irrational noise outside welfare analysis. [SOURCE: research/immigration-confidence-ladder.md] [SOURCE: research/immigration-economist-rhetorical-failures-2026-04-22.md] [SOURCE: research/immigration-receiver-node-kill-test-2026-04-23.md] [SOURCE: research/immigration-conclusion-audit-running-fixes.md]
 
 ### 15. The crime objection is weaker than many restrictionist arguments imply.
 
