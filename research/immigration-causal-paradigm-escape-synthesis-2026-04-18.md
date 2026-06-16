@@ -16,7 +16,7 @@
 | "Rent exposure ≠ welfare loss" was a strong adversarial caveat | Saiz decomposition: log(FB share) ~ unaval (β=0.12, n.s.) + WRLURI (β=0.33, t=6.29***); WRLURI is the stronger correlate | **Rent exposure is a stronger renter-incidence warning in inelastic destination markets, and zoning reform is a plausible policy hypothesis** — the descriptive channel is strong, but neither immigrant-specific rent causation nor zoning causation is identified without panel/IV evidence |
 | Card-vs-Borjas "live debate"; prior cycle showed E-Verify null wage effect | Sanctuary state DiD on same QWI panel: pro-sanctuary E1 wages +0.5% (n.s.), anti-sanctuary E1 wages +0.8% (n.s.) — additional QWI policy-margin check | **For observed marginal enforcement variation, the Card-side pattern is favored.** No statistically significant native low-skill QWI wage gains are observed in the E-Verify/sanctuary-style variation tested here; this does not rule out small effects or settle surge or mass-shock regimes. |
 | "Newcomer burden" treated as immigration-driven by default | IRS SOI `Total Migration-US` and ACS `Moved from abroad` still show an order-of-magnitude median-county count gap, but the exact ratio is measurement-sensitive and not a clean burden ratio | **Median-county newcomer counts are not mostly moved-from-abroad counts.** Treat this as a descriptive denominator correction, not a direct pressure, causal burden, or receiver-node split. |
-| Mass-deportation hypothetical had no empirical analog | BEA I-O 2023 calibration: removing 7M unauthorized → $1.45T first-order output loss (5.3% GDP); $2.32T with multiplier (8.5%) as Type-II sensitivity; per-removed-worker loss $207K first-order and $332K under Type-II sensitivity | **Mass deportation would impose a large first-order output shock**, concentrated in Construction (-5.9%), Other Services / cleaning (-8.8%), Agriculture (-4.3%); multiplier amplification should be labeled as sensitivity |
+| Mass-deportation hypothetical had no empirical analog | BEA I-O 2023 calibration: removing 7M unauthorized → $1.45T first-order output loss (5.3% GDP); $2.32T with multiplier (8.5%) as Type-II sensitivity; per-removed-worker loss $207K first-order and $332K under Type-II sensitivity | **The partial-equilibrium model produces a large first-order output-shock calibration**, concentrated in Construction (-5.9%), Other Services / cleaning (-8.8%), Agriculture (-4.3%); multiplier amplification should be labeled as sensitivity |
 | Repo verdict implicitly weights immigrant welfare at zero | GPT-5.4 calibration with project's findings as inputs: at w=0 negative by construction; at w≥0.25 positive under 25%-cost benchmark; housing/construction is modeled as binding in year 1 for every scenario S1+ | **Verdict is welfare-weight-sensitive under the current cost/capacity calibration.** Honest framing must name the welfare weight; empirical work can still move native-cost, fiscal, housing, and feasibility inputs. Feasibility constraint should be framed as a calibration warning: U.S. housing/construction may bind quickly at very large arrival scenarios, not as a validated national threshold. |
 
 ## What this cycle didn't settle
@@ -87,7 +87,7 @@ evidence cannot adjudicate the value weight, but can change native-cost,
 fiscal, capacity, and sending-country inputs. Honest framing must name both.
 [SOURCE: data/clemens/gpt54_calibration_review.md]
 
-24. `Mass deportation of 7M unauthorized would impose ~$1.45T first-order output shock (~5% GDP); Type-II endpoint is sensitivity only`
+24. `Mass deportation of 7M unauthorized calibrates to ~$1.45T first-order output shock (~5% GDP); Type-II endpoint is sensitivity only`
 Rating: MEDIUM (calibration not estimate)
 Reason: BEA I-O 2023 partial-equilibrium with industry FB-share assumptions;
 the ~$2.32T / ~8% Type-II endpoint is a labeled multiplier sensitivity, not
@@ -129,6 +129,7 @@ The biggest *interpretation* lever remains the welfare-weight question, which is
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced mass-deportation "would impose" wording with partial-equilibrium model-output calibration language. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "do not measurably respond" wage shorthand with no-statistically-significant-gains language, preserving that small effects are not ruled out. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced sanctuary "strong null result" language with "no statistically significant E1 wage change observed"; all `|t|<1.0` is not an equivalence test. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "Card-side pattern wins" wording with "is favored" to avoid debate-closure language outside the tested policy margins. See `immigration-conclusion-audit-running-fixes.md`. |

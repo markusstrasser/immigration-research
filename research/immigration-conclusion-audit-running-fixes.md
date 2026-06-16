@@ -2020,3 +2020,23 @@ Replaced the incidence-summary bullets with no-statistically-significant-positiv
 ### Updated conclusion
 
 The causal synthesis now keeps the E-Verify wage result at the same statistical strength in both the top table and the incidence narrative. [INFERENCE]
+
+---
+
+## 2026-06-16 — Mass-deportation simulation kept as calibration output
+
+### Issue
+
+`research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md` still said mass deportation "would impose" the first-order output shock, and `research/immigration-causal-surge-2021-2024.md` described the lead figure as a GDP "cost" from removing 7M unauthorized workers. [DATA]
+
+### Why it was wrong
+
+The source is a BEA input-output partial-equilibrium calibration, not an observed or validated deportation episode. It freezes replacement hiring, wage response, and capital reallocation, and the Type-II endpoint is a multiplier sensitivity. The claim should present model output under assumptions, not a direct forecast. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the paradigm synthesis and surge memo to say the model produces or calibrates to a first-order output shock under calibration assumptions, while keeping the Type-II endpoint labeled as sensitivity. [SOURCE: memo]
+
+### Updated conclusion
+
+The mass-deportation result remains a medium-confidence calibration warning about possible output scale, not an empirical estimate of what would happen under an actual enforcement regime. [INFERENCE]
