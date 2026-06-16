@@ -1920,3 +1920,23 @@ Changed confidence-ladder entry 23 to "welfare-weight-sensitive under current em
 ### Updated conclusion
 
 The open-borders framing now distinguishes the non-empirical welfare-weight choice from empirical cost and capacity inputs that remain live research targets. [INFERENCE]
+
+---
+
+## 2026-06-16 — Title 42 surge claim narrowed to proximate timing
+
+### Issue
+
+`research/immigration-causal-surge-2021-2024.md` and confidence-ladder entry 35 said the Title 42 lift "did not cause the surge." The corrected event-study evidence shows a Dec-2022 local peak, April-May anticipation spike, June post-lift crash, and a lower six-month post-lift mean; it does not prove a universal zero causal effect. [DATA]
+
+### Why it was wrong
+
+The timing evidence refutes the prior parser-artifact story that a post-lift jump caused the surge. But event timing alone cannot exclude effects through anticipation, routing, composition, enforcement expectations, or later equilibrium channels. "Did not cause" was stronger than the identified claim. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the active surge memo and confidence-ladder entries to say the corrected timing does not support the Title 42 lift as the proximate surge onset, and added explicit caveats about nonzero policy effects through other channels. [SOURCE: memo]
+
+### Updated conclusion
+
+The repo now rejects the simple post-lift-jump causal story, while leaving other Title 42 policy-effect channels open unless separately tested. [INFERENCE]

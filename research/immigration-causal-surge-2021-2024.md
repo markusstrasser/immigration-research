@@ -11,7 +11,7 @@
 
 Three corrected findings the static cycle missed:
 
-1. **The Title 42 lift did not cause the surge, but the original monthly evidence was wrong.** Corrected Total-CBP data show Dec-2022 local peak 252K, Jan-Feb 2023 trough, Apr-May anticipation spike at 212K/207K, June post-lift crash, and Dec-2023 record 301,980. Post-lift 6-month mean was **14.5% below** pre-lift. [SOURCE: `scripts/analyze_surge_title42_chnv.py` rerun 2026-06-11; decision record]
+1. **The corrected timing does not support the Title 42 lift as the proximate surge onset, but the original monthly evidence was wrong.** Corrected Total-CBP data show Dec-2022 local peak 252K, Jan-Feb 2023 trough, Apr-May anticipation spike at 212K/207K, June post-lift crash, and Dec-2023 record 301,980. Post-lift 6-month mean was **14.5% below** pre-lift. [SOURCE: `scripts/analyze_surge_title42_chnv.py` rerun 2026-06-11; decision record]
 
 2. **CHNV substituted lawful port flow for irregular between-port crossings in its initial year.** Corrected USBP event study shows Cuba −95.3%, Nicaragua −96.2%, and Venezuela −57.5% between-port crossings after program start; the old "+787%" rise was the program's own lawful OFO channel read as total SWB encounters. Corrected total-CBP DiD is null (β=+0.45, t=1.29). [SOURCE: `sources/immigration-causal/data/outcomes/analysis/chnv_pretrends/results.json`; decision record]
 
@@ -30,7 +30,7 @@ The original month table was built from fiscal-index dates and the wrong agency 
 - Dec-2023 record: **301,980**
 - Post-lift 6-month mean: **−14.5%** vs pre-lift
 
-The corrected reading is still that Title 42's lift did not cause the surge. The evidence is not "pre-lift 50K/month and post-lift +62%"; that was a parser artifact. [SOURCE: `scripts/analyze_surge_title42_chnv.py` rerun 2026-06-11; decision record]
+The corrected reading is that the Title 42 lift is not supported as the proximate timing cause of the surge. The evidence is not "pre-lift 50K/month and post-lift +62%"; that was a parser artifact. This timing pass does not prove that Title 42 policy had zero effect through anticipation, routing, composition, or later equilibrium channels. [SOURCE: `scripts/analyze_surge_title42_chnv.py` rerun 2026-06-11; decision record]
 
 ### CHNV channel-substitution event study (corrected 2026-06-11)
 
@@ -174,11 +174,12 @@ The simulation's lead figure is a first-order ~5% GDP cost from removing 7M unau
 ## Updated repo confidence ladder additions
 
 ```
-25. `Title 42 lift did not cause the surge`
+25. `Corrected timing does not support Title 42 lift as proximate surge onset`
 Rating: medium
 Reason: corrected Total-CBP data show Apr-May 2023 anticipation spike, June
 post-lift crash, and post-lift 6-month mean 14.5% below pre-lift. The old
-monthly facts are superseded by the 2026-06-11 parser fix.
+monthly facts are superseded by the 2026-06-11 parser fix; this does not prove
+a zero effect through anticipation, routing, composition, or later-equilibrium channels.
 [SOURCE: decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md]
 
 26. `CHNV substituted lawful port flow for irregular crossings in its initial year`
@@ -244,6 +245,8 @@ But:
 - **2026-06-16:** Replaced residual "surge exposure" election wording with receiver/border indicator language; the association is not a measured exposure dose or causal surge effect. See `immigration-conclusion-audit-running-fixes.md`.
 
 - **2026-06-16:** Replaced residual "welfare-weight-determined" heading with normative-weight plus empirical-capacity-input language. See `immigration-conclusion-audit-running-fixes.md`.
+
+- **2026-06-16:** Narrowed Title 42 causal wording from "did not cause the surge" to a proximate-timing conclusion; the corrected event study does not prove zero policy effect through anticipation, routing, composition, or later-equilibrium channels. See `immigration-conclusion-audit-running-fixes.md`.
 
 - **2026-06-11b (supersedes 2026-06-11a where they conflict):** Running the morning's two pre-registered kill-tests exposed two bugs in `parse_ohss_enforcement.py`: fiscal-index dates (every non-January window scrambled) and an agency-block dict-overwrite (the series was OFO port-of-entry encounters — the CHNV program's own lawful channel — read as total SWB). Consequences: (1) Key finding 2 is **reversed** — corrected USBP data show between-port crossings collapsed −95%/−96%/−58% (Cuba/Nicaragua/Venezuela) after each nationality's program start with flat pre-trends; the "+787% rise" was the lawful channel itself; corrected total-CBP DiD is null (β=+0.45, t=1.29). CHNV substituted channels; it did not reduce total arrivals (~530K paroles are planned lawful inflow — receiver-load ledger unaffected). (2) The monthly narrative (incl. "April-May 2023 lull") is wrong: corrected series shows an April-May anticipation spike, June post-lift crash (−30%), and the Dec 2023 record (301,980); the conclusion "lift ≠ surge cause" survives on this new evidence. (3) Finding 3's receiver swing **survived** its Hispanic-share kill-test (β +0.0256 → +0.0238, t≈7.2; Hispanic share itself t=17.2). Ladder entries 34-37; decision record [2026-06-11-ohss-date-universe-bugs-chnv-reversal](../decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md).
 
