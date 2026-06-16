@@ -63,7 +63,7 @@ The political-economy reading: wage data alone are a weak justification for a na
 The user asked which interpretations or datasets could change conclusions. After this cycle:
 
 - **Borjas vs Card debate:** Bounded to observed marginal U.S. policy variation. Card-side pattern there; surge and mass-shock regimes remain open.
-- **Rent burden as welfare loss:** Narrowed, not resolved. In inelastic destination markets it is a stronger renter-incidence warning; owner/renter incidence and causal identification caveats still apply.
+- **Rent burden as renter-incidence risk:** Narrowed, not resolved. In inelastic destination markets it is a stronger renter-incidence warning; owner/renter incidence and causal identification caveats still apply.
 - **Federal-positive / local-negative split:** Sharpened on local side, unchanged on federal side.
 - **Race-stratified crime gap:** From earlier work — gap narrows from 50% to 30% but immigrants still lower than natives.
 - **Place-premium / immigrant welfare weighting:** Untested this cycle. Remains the biggest single lever for flipping the verdict.
@@ -84,7 +84,7 @@ mandate design. Surge and mass-shock regimes remain outside this result.
 18. `Immigrants concentrate in inelastic-supply MSAs`
 Rating: STRONG (descriptive)
 Reason: top FB-share quintile median Saiz elasticity 1.51, bottom 3.40. n=237 MSAs.
-Implication: rent exposure is closer to welfare loss than the adversarial review allowed.
+Implication: rent exposure in inelastic destination markets is a stronger renter-incidence warning than the adversarial review allowed.
 [SOURCE: research/immigration-causal-saiz-elasticity-rent.md]
 
 19. `Card-style labor-market complementarity for U.S. low-skill immigration`
@@ -138,6 +138,7 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 | 2026-06-16 | Replaced "random refugee assignment" with "refugee dispersal-policy quasi-experiment"; Foged-Peri is exogenous/quasi-experimental, not a simple randomized trial. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Removed remaining "replicates well-known patterns" language; this cycle's findings are convergent/consistent evidence, not direct replications of Card, Foged-Peri, or Card-Peri. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Reframed the Clemens/welfare-weight lever: the weight is normative, but place-premium and cost/capacity inputs remain empirical. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Changed residual Saiz ladder implication from "closer to welfare loss" to a stronger renter-incidence warning in inelastic destination markets. See `immigration-conclusion-audit-running-fixes.md`. |
 
 <!-- knowledge-index
 generated: 2026-04-19T03:45:13Z

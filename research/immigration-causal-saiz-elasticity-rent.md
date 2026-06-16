@@ -6,7 +6,7 @@
 
 ## Bottom line
 
-Immigrants are concentrated in MSAs where housing supply is relatively inelastic. The most inelastic quartile of MSAs (Saiz elasticity 0.6–1.5) has **2.6× the foreign-born share** of the most elastic quartile (11.6% vs 4.4%) and **45% higher median rent** ($1,343 vs $929). This re-grades the existing repo's "rent exposure ≠ welfare loss" caveat: in the actual destination markets immigrants pick, rent exposure is a stronger renter-incidence warning than a raw price-level measure. **Confidence:** HIGH on the descriptive correlation, MODERATE on the welfare-loss implication (needs IV identification to attribute causation to immigrant inflow specifically).
+Immigrants are concentrated in MSAs where housing supply is relatively inelastic. The most inelastic quartile of MSAs (Saiz elasticity 0.6–1.5) has **2.6× the foreign-born share** of the most elastic quartile (11.6% vs 4.4%) and **45% higher median rent** ($1,343 vs $929). This re-grades the existing repo's "rent exposure ≠ welfare loss" caveat: in the actual destination markets immigrants pick, rent exposure is a stronger renter-incidence warning than a raw price-level measure. **Confidence:** HIGH on the descriptive correlation, MODERATE on translating it into aggregate welfare loss (needs IV identification to attribute causation to immigrant inflow specifically, plus owner/renter incidence).
 
 ## Method
 
@@ -84,7 +84,7 @@ Adversarial review §2 said: "PUMA rent layer measures exposure to expensive ren
 The Saiz merge sharpens that:
 - In **inelastic** destination markets (which is where immigrants actually concentrate), rent exposure is much closer to a renter-incidence problem because supply response is weaker. The causal claim that marginal immigrant inflows raise incumbent renter costs still needs panel/IV identification.
 - In **elastic** destination markets, population inflow should be absorbed more by new construction in expectation. But these markets contain few immigrants in the first place.
-- Net: the existing PUMA rent burden findings should be read as *closer* to welfare loss than the adversarial review allowed.
+- Net: the existing PUMA rent burden findings should be read as a stronger renter-incidence warning than the adversarial review allowed.
 
 ### Confidence ladder upgrades
 
@@ -121,6 +121,7 @@ Confidence: **HIGH** that the descriptive correlation is real (n=237 MSAs, monot
 | Date | Change |
 |------|--------|
 | 2026-06-16 | Replaced "replicates Saiz's own pattern" with consistency language; the memo is a 2022 descriptive cross-section, not a direct panel replication of Saiz. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Replaced residual "closer to welfare loss" language with renter-incidence warning; aggregate welfare loss still requires owner/renter incidence and causal identification. See `immigration-conclusion-audit-running-fixes.md`. |
 
 <!-- knowledge-index
 generated: 2026-04-19T03:34:38Z
