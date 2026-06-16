@@ -37,17 +37,18 @@ NAS Table 8-13 is explicitly a comparison of an immigrant **entering at age 25**
 
 **Honest short-horizon (built):** federal annual proxy remains **+$1,519/adult/yr**; the origin `federal − school` row is **withheld** after a scenario-household numerator vs full-microsim denominator mismatch was confirmed. [SOURCE: `v_three_layer_annual`; `immigration-conclusion-audit-running-fixes.md`]
 
-**Illustrative lifetime stack [INFERENCE]:**
+**Non-additive layer checks [INFERENCE]:**
 
-| Step | $/adult |
-|------|---------|
-| NAS age-25 education-mix benchmark | +$45,631 |
-| − school annuitized | unresolved — needs same-universe origin school row |
-| − CBO state/local surge annuitized ($657/yr) | −$15,300 |
-| − enforcement if fully loaded ($2,100/yr) | −$49,000 |
-| **Band** | **−$37k to +$28k** |
+Do **not** export a lifetime band yet. These rows are useful reminders of omitted layers, but they are not on one population universe, rate/horizon convention, price base, or overlap matrix.
 
-Enforcement allocation is **[FRAMING-SENSITIVE]** — fixed vs marginal split not resolved.
+| Layer | Current usable claim | Why it is not additive yet |
+|-------|----------------------|----------------------------|
+| NAS age-25 education-mix benchmark | +$45,631 synthetic benchmark | 2012$, 3%, 75yr age-25 entrant benchmark; not remaining-life NPV for current stock |
+| School | withheld | same-universe origin school numerator not rebuilt |
+| State/local surge | CBO-style annual state/local shock exists as a separate layer | surge/additional-resident layer, not current Mexico stock; NAS cell already includes some state/local |
+| Enforcement | CBP/ICE can be allocated only under an explicit rule | national per-unauthorized or fixed-budget allocation, not per Mexico-birthplace adult |
+
+No `-$37k to +$28k` Mexico-origin lifetime band is live. A band can be rebuilt only after same-universe school rows, legal-status allocation, state/local overlap, and shared discount/price-base choices are explicit.
 
 ### 3. Multiply-out (synthetic NAS age-25 benchmark only)
 
@@ -156,8 +157,9 @@ Missing from warehouse rollup: EOIR $/case, ICE bed-days allocated, shelter epis
 | Date | Change |
 |------|--------|
 | 2026-06-15 | Initial: multiply-out, denominator, Biden stock vs flow (cluster Q) |
-| 2026-06-15 | Full-ledger critique: NAS ≠ net; cluster R generators; stacked bounds −$37k to +$28k |
+| 2026-06-15 | Full-ledger critique: NAS ≠ net; cluster R generators; initial illustrative band later removed |
 | 2026-06-16 | Corrected lifetime label: `+$45,631/adult` and `+$387.7B` are synthetic NAS age-25 education-mix benchmarks, not actual current-stock lifetime NPV |
 | 2026-06-16 | Reframed `+$46k = pays for themselves all-in` from falsified to unsupported/not a valid export: omitted ledgers block the inference, but the full all-in sign remains unmeasured. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Scoped "Mexico drove surge" to post-2021 unauthorized-stock growth; the flat Mexico stock result does not adjudicate encounter events or receiver-load composition. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced the stale `$771/+748` warehouse-layer rows with withheld status after the same-universe school guard. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Removed the illustrative `-$37k to +$28k` lifetime band because it mixed withheld school, surge, enforcement, discount, and population-universe assumptions. |

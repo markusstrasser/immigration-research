@@ -2,7 +2,7 @@
 
 **Purpose:** Reusable prompt template for the loop that worked in rounds 1–10: **diverge** (data + generators + angles) → **converge** (unified theory + formal multi-model critique) → repeat with a sharper thesis.
 
-**Instance memos:** `research/immigration-lifetime-unified-theory-2026-06-15.md`, `notes/immigration-lifetime-sweep-protocol.md`, `research/immigration-thesis-generator-audit-2026-06-16.md`
+**Instance memos:** `research/immigration-knowledge-delta-agent-loop-2026-06-16.md` (canonical umbrella), `research/immigration-lifetime-unified-theory-2026-06-15.md`, `notes/immigration-lifetime-sweep-protocol.md`, `research/immigration-thesis-generator-audit-2026-06-16.md`
 
 **Principle:** Data does not automatically kill a good explanation — it kills bad **scalar exports** and unnamed **layer laundering**. Synthesis names the object; divergence hunts what the current frame excludes.
 
@@ -17,7 +17,7 @@
                             ▼
 ┌─────────────────────────────────────────────────────────────┐
 │  DIVERGE (expand surface)                                   │
-│  1. Denial cascade / constraint inversion brainstorm        │
+│  1. XDISC + denial cascade / constraint inversion           │
 │  2. Probe URLs → setup-lifetime.sh → rebuild warehouse      │
 │  3. Parallel mine clusters → .mining/*.json → generators MD │
 └───────────────────────────┬─────────────────────────────────┘
@@ -189,6 +189,8 @@ You are writing the post-sweep CONVERGE pass for immigration lifetime fiscal res
 **Read first:**
 - research/immigration-lifetime-unified-theory-2026-06-15.md (prior thesis burst)
 - research/immigration-lifetime-fiscal-generators.md (new generators)
+- research/immigration-conclusion-audit-running-fixes.md (stale/scoped claim ledger)
+- research/immigration-thesis-generator-audit-2026-06-16.md (XDISC packet and self-prompt)
 - Query DuckDB:
   ATTACH 'warehouse/immigration_context.duckdb' AS ctx (READ_ONLY);
   ATTACH 'warehouse/immigration_lifetime_evidence.duckdb' AS life (READ_ONLY);
@@ -202,6 +204,7 @@ You are writing the post-sweep CONVERGE pass for immigration lifetime fiscal res
 - 3-sentence thesis: what is compatible, what only looks contradictory, why politics fights over layers.
 - Table: layer → best instrument → what it is NOT.
 - Verifiable anchors table (number | value | DuckDB/SOURCE).
+- Withheld-row check: no origin `school_burden_per_adult` or `federal - school` sign is live unless same-universe numerator/denominator is shown.
 
 ## II. Five formal models
 For M1–M5 (mechanisms, not authors):

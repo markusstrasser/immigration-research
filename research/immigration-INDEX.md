@@ -10,7 +10,7 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 |------|-------|----------------|
 | `immigration-main-question-reset.md` | What the repo is actually trying to answer | Reframing the project or proposing new scope |
 | `immigration-evidence-base-audit.md` | Which claims are well-supported vs thin | Repeating literature claims or writing summaries |
-| `immigration-verified-findings-report-2026-04-10.md` | Current verified findings snapshot | Answering "what do we know?" |
+| `immigration-verified-findings-report-2026-04-10.md` | Verified findings snapshot, June-scoped by running fixes | Answering "what do we know?" after checking the June delta/fixes |
 | `immigration-confidence-ladder.md` | Claim confidence by tier | Making strong claims or publishing conclusions |
 | `immigration-claims-evolution-ledger-2026-04-23.md` | Claim-by-claim evolution ledger with takeaways and recurring misunderstandings | Asking how the immigration claims changed or how they relate |
 | `immigration-glossary.md` | Definitions and term discipline | Using terms like `unauthorized`, `low-skill`, `surge`, `fiscal` |
@@ -42,7 +42,7 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 | `immigration-federal-distribution-findings-2026-06-15.md` | Distribution pass — school units, federal proxy white vs Mexico | “Do whites pay multiples?” |
 | `immigration-europe-caucasian-fiscal-findings-2026-06-15.md` | **EU27 / UK / Caucasian natives / low-skill corridors** — federal proxy + matched-education | “European immigrants vs white Americans”; corridor A vs B |
 | `immigration-school-burden-per-adult-2026-06-15.md` | **per_pupil × kids/adult** — three-layer annual (`v_three_layer_annual`) | “Did you multiply child burden?” |
-| `immigration-sweep-cycles-13-22-2026-06-15.md` | Diverge/synthesis cycles 13–22 (school burden build) — **rushed SQL pass, superseded by 23–32** | Post-sweep thesis burst |
+| `immigration-sweep-cycles-13-22-2026-06-15.md` | Diverge/synthesis cycles 13–22 (school burden build) — **rushed SQL pass, superseded by 23–32 and same-universe guard; do not cite old `$771/+748` origin school/net rows** | Historical thesis burst only |
 | `immigration-sweep-cycles-23-32-2026-06-15.md` | **Full protocol** sweeps 23–32: NAS college+ NPV, school weights, lifetime flip, converge; origin school/net rows partly superseded by same-universe guard | Post-rebuild thesis; three-layer + lifetime; do not cite old `$771/+748` origin school/net rows |
 | `immigration-mexico-npv-population-synthesis-2026-06-15.md` | **Mexico NPV multiply-out**, ACS denominator, Biden stock vs encounters, **full ledger stack (Q+R)** | "Reported Mexicans"; "10M illegals"; NAS ≠ net fiscal |
 | `immigration-restrictionist-arguments-steelman-2026-06-15.md` | **Steel-man** restrictionist chains: Borjas, BGH, NAS/Orrenius, Gould, Razin, FAIR | Arguing against immigration; follow their logic |
@@ -99,7 +99,7 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 
 | File | Topic | Consult before |
 |------|-------|----------------|
-| `immigration-causal-synthesis-2026-04-18.md` | Cycle synthesis: Saiz × E-Verify findings, Card-vs-Borjas verdict | Saying "Borjas vs Card is unresolved" or "rent exposure is just price discovery" |
+| `immigration-causal-synthesis-2026-04-18.md` | Cycle synthesis: Saiz × E-Verify findings, observed mandate-margin wage read; not global Card-vs-Borjas verdict | Citing the bounded E-Verify wage result or Saiz rent screen |
 | `immigration-causal-everify-card-vs-borjas.md` | E-Verify staggered TWFE on QWI 2003-2023, native low-skill wages | Citing Borjas wage prediction for the U.S. policy variation |
 | `immigration-causal-saiz-elasticity-rent.md` | Saiz 2010 housing supply elasticity × ACS rent + foreign-born | Treating PUMA rent burden as elasticity-neutral |
 | `immigration-causal-paradigm-escape-synthesis-2026-04-18.md` | Evening cycle synthesis: 5 verdict updates, 8-finding ladder | Writing the headline immigration position; asking "what changed?" |
@@ -135,16 +135,16 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 
 If the question is:
 
-1. `What do we currently think?` Start with `immigration-verified-findings-report-2026-04-10.md`, then `immigration-confidence-ladder.md`.
+1. `What do we currently think?` Start with `immigration-knowledge-delta-agent-loop-2026-06-16.md`, then `immigration-conclusion-audit-running-fixes.md`, then `immigration-confidence-ladder.md`; use `immigration-verified-findings-report-2026-04-10.md` only with its June scoping notes.
 2. `Is low-skill immigration good or bad for natives?` Start with `immigration-economist-effects-matrix.md`, then `fiscal-impact-unauthorized-immigration-research-memo.md`, then `full-spectrum-costs-unauthorized-immigration-research-memo.md`.
 3. `What data do we have locally?` Start with `immigration-dataset-register.md`, then `../sources/immigration-fiscal/data/MANIFEST.md`.
 4. `Can we model this ourselves?` Start with `immigration-lifetime-fiscal-data-stack-2026-04-10.md`, then `immigration-public-data-acquisition-2026-04-11.md`, then `immigration-frontier-data-acquisition-2026-04-11.md`, then the DuckDB build files.
 5. `What is the current `<HS` / `HS` / `some college` stock split?` Start with `immigration-education-bucket-stock-and-lifetime-status-2026-04-11.md`.
-6. `How do I run the next fiscal/generator sweep?` Start with `../notes/immigration-lifetime-synthesis-diverge-cookbook.md`, then `immigration-thesis-generator-audit-2026-06-16.md`, then `immigration-conclusion-audit-running-fixes.md`.
+6. `How do I run the next fiscal/generator sweep?` Start with `immigration-knowledge-delta-agent-loop-2026-06-16.md`, then `../notes/immigration-lifetime-synthesis-diverge-cookbook.md`, `../notes/immigration-lifetime-sweep-protocol.md`, `immigration-thesis-generator-audit-2026-06-16.md`, and `immigration-conclusion-audit-running-fixes.md`.
 
 <!-- knowledge-index
-generated: 2026-04-19T04:47:48Z
-hash: 25555c17344c
+generated: 2026-06-16T11:56:44Z
+hash: manual-june-route-refresh
 
 table_claims: 97
 

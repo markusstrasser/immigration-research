@@ -49,7 +49,7 @@ So the economist case is weakest exactly where it acts as if one efficiency argu
 Before attacking the economist case, keep the strongest version in view:
 
 1. place-premium and migrant-income gains are real [SOURCE: research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md]
-2. broad `job collapse` rhetoric is too crude [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
+2. broad `job collapse` rhetoric is too crude in the observed E-Verify wage-channel margin, while constrained-place county screens still leave wage-progression concerns open [SOURCE: research/immigration-causal-everify-card-vs-borjas.md] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
 3. first-generation / unauthorized crime claims are usually overstated by restrictionists [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md]
 4. some national aggregate channels are genuinely favorable in recent official scoring [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf]
 

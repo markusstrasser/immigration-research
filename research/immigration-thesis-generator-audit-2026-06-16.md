@@ -2,7 +2,7 @@
 
 **Purpose:** evaluate the current immigration thesis-generation loop, compare what it knows now against the June 14 baseline, and add better cross-disciplinary generators from economics, micro, macro, psychology, political economy, and urbanism.
 
-**Companion loop (broader):** `research/immigration-knowledge-delta-agent-loop-2026-06-16.md` owns full claim inventory, probe, adversarial review, and commit routing. This memo owns generator and XDISC divergence only.
+**Companion loop (broader):** `research/immigration-knowledge-delta-agent-loop-2026-06-16.md` owns the canonical umbrella loop: claim inventory, probe, adversarial review, commit routing, and stop/escalation. This memo owns the generator and XDISC sub-loop for that loop's divergence/probe steps.
 
 **Verdict:** the current generator system is useful and materially better than two days ago, but it is still too fiscal-ledger-native. It catches scalar exports, denominator slips, and layer laundering; it does not yet force enough narrative, legitimacy, sorting, contact/threat, spatial-equilibrium, and agenda-setting alternatives before convergence. [SOURCE: `notes/immigration-lifetime-synthesis-diverge-cookbook.md`; `research/immigration-lifetime-fiscal-generators.md`; DuckDB query on `warehouse/immigration_lifetime_evidence.duckdb`] [INFERENCE]
 
@@ -144,9 +144,9 @@ Use this as the agent's self-prompt before and after research sweeps.
 
 ---
 
-## Agent flowchart for replacing constant human search-space shaping
+## Generator Sub-Loop Flowchart
 
-The human has been doing three jobs: interrupting stale narratives, forcing better search axes, and catching overclaims. The agent loop has to mechanize those jobs.
+This flowchart expands steps 3-5 of `research/immigration-knowledge-delta-agent-loop-2026-06-16.md`. It helps mechanize stale-narrative interruption, search-axis generation, and overclaim catching; it is not a standalone replacement for the umbrella loop.
 
 ```
 START
@@ -183,7 +183,7 @@ START
   v
 6. Mine evidence
    - extract parameter claims, identification limits, assumptions, and narrative frames
-   - tag every load-bearing claim with SOURCE / DATA / INFERENCE / FRAMING-SENSITIVE
+   - tag every load-bearing claim with canonical provenance tags from notes/provenance-tags.md
   |
   v
 7. Converge
@@ -208,6 +208,7 @@ START
 10. RSI / yield accounting
    - fired? adopted output? false lead? retired?
    - adoption must be judged by a separate pass or artifact diff, not the generator author alone
+   - manual until lifecycle sidecar or DuckDB fields exist
    - two dry applicable sweeps parks a generator; retirement is manual
    - if a human correction repeats, turn it into a generator, hook, or checklist row
   |
@@ -252,7 +253,10 @@ Next concrete run:
 
 ## Review disposition
 
-Reviewer packet: `.model-review/2026-06-16-immigration-thesis-generator-audit/`.
+Reviewer packets:
+
+- `.model-review/2026-06-16-immigration-thesis-generator-audit/` — initial generator-audit Opus/Cursor lanes.
+- `.model-review/2026-06-16-final-immigration-review/` — final post-cleanup Opus/Cursor lanes.
 
 Accepted from Opus/Cursor review:
 
