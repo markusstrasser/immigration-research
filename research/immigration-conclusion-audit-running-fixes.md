@@ -2320,3 +2320,23 @@ Changed the line to say that in the repo's current worker-incidence evidence sur
 ### Updated conclusion
 
 The Caplan audit still rejects crude job-collapse rhetoric, while keeping the alternative worker-incidence channel scoped to the current evidence surface. [INFERENCE]
+
+---
+
+## 2026-06-16 — E-Verify event-study interpretation kept unresolved
+
+### Issue
+
+`research/immigration-causal-everify-card-vs-borjas.md` said slightly negative, nonsignificant event-study point estimates were "suggestive of mild complementarity loss," and said a mass-deportation shock would "probably not" behave the same as the E-Verify design. [DATA]
+
+### Why it was wrong
+
+The event-study coefficients are not statistically distinguishable from zero, so the memo should not give one mechanism a suggestive gloss. Likewise, mass deportation is outside the observed mandate margin; "probably not" is plausible, but the stronger source-anchored statement is simply that the behavior is unknown because magnitudes and equilibria differ. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the event-study sentence to say the slightly negative points should not be read as evidence for a specific complementarity-loss mechanism, and changed the mass-deportation bullet to "unknown" rather than "probably not." [SOURCE: memo]
+
+### Updated conclusion
+
+The E-Verify memo now keeps nonsignificant event-study movement and out-of-margin mass-shock behavior unresolved instead of assigning them a preferred mechanism. [INFERENCE]
