@@ -2000,3 +2000,23 @@ Replaced the active shorthand with no-statistically-significant-positive-QWI-wag
 ### Updated conclusion
 
 The wage evidence now reads as a bounded statistical result: large native wage gains are not observed in the tested QWI policy margins, but small or unmeasured labor-market effects remain open. [INFERENCE]
+
+---
+
+## 2026-06-16 — E-Verify incidence summary stopped saying wages do not rise
+
+### Issue
+
+`research/immigration-causal-synthesis-2026-04-18.md` still said native low-skill wages "do not rise" and "do not measurably rise" under observed E-Verify mandate variation in its incidence-summary bullets. [DATA]
+
+### Why it was wrong
+
+Those lines were active reader-facing summaries. The source result is no statistically significant positive QWI wage effect plus rejection of large Borjas-style gains in that margin, not a literal no-rise or equivalence-tested zero. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Replaced the incidence-summary bullets with no-statistically-significant-positive-QWI-wage-effect language and kept the large-gain rejection scoped to the E-Verify-style enforcement design. [SOURCE: memo]
+
+### Updated conclusion
+
+The causal synthesis now keeps the E-Verify wage result at the same statistical strength in both the top table and the incidence narrative. [INFERENCE]
