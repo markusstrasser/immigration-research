@@ -39,7 +39,7 @@ Caplan is weakest where recent surge and threshold evidence make local incidence
 The clean verdict is:
 
 1. `strong on migrant-welfare / global-gains direction, not strongest magnitude`
-2. `strong on crime skepticism`
+2. `strong on observed U.S. justice-system-rate skepticism`
 3. `partial on labor`
 4. `weak on destination-local fiscal and political incidence`
 
@@ -139,7 +139,7 @@ Verdict:
 
 ## Claim 5: `Immigrants commit much less crime than natives`
 
-Caplan has long treated the crime objection as empirically weak. On current U.S. evidence, this is one of his strongest empirical claims. [SOURCE: https://www.econlib.org/archives/2010/04/the_social_and.html]
+Caplan has long treated the crime objection as empirically weak. On current U.S. observed justice-system-rate evidence, this is one of his strongest empirical claims. [SOURCE: https://www.econlib.org/archives/2010/04/the_social_and.html]
 
 What survives:
 
@@ -274,9 +274,9 @@ Caplan's model is strongest on the left side of the DAG:
 
 1. `migrant earnings gains`
 2. `global output gains`
-3. `crime skepticism`
+3. `observed U.S. justice-system-rate skepticism`
 
-These are real and durable parts of the case. [SOURCE: research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md] [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md]
+These are real and durable parts of the case at that scope. [SOURCE: research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md] [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md]
 
 ### Where Caplan is weakest
 
@@ -302,7 +302,7 @@ If the question is `Has Caplan shown that immigration restrictions are unnecessa
 The best current summary is:
 
 1. `Caplan wins on migrant-welfare direction and large global-gains sign, not on the strongest open-borders magnitude or destination-capacity closure.`
-2. `Caplan wins on crime more than on almost any other empirical lane.`
+2. `Caplan wins on observed U.S. justice-system-rate crime skepticism more than on almost any other empirical lane.`
 3. `Caplan partly wins on labor, but only after dropping collapse rhetoric and admitting wage-growth pressure in constrained places.`
 4. `Caplan loses as a blanket taxpayer and political-incidence analyst because recent surge evidence means local capacity, housing, shelter, and political-response channels cannot be assumed zero.`
 
@@ -316,3 +316,4 @@ So the final score is:
 | Date | Change |
 |------|--------|
 | 2026-06-16 | Bounded the Caplan global-gains verdict to direction/sign rather than strongest magnitude or destination-capacity closure. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Scoped shorthand "wins on crime" language to observed U.S. justice-system-rate skepticism, matching the crime memo's true-offending caveat. See `immigration-conclusion-audit-running-fixes.md`. |
