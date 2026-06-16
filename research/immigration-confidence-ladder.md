@@ -91,7 +91,7 @@ Reason: TWFE on QWI 2003-2023, 9 treated states (AZ, MS, SC, UT, GA, AL, NC, TN,
 
 18. `Immigrants concentrate in inelastic-supply MSAs (welfare implication for rent burden)`
 Rating: `strong (descriptive)`
-Reason: top FB-share quintile median Saiz 2010 elasticity = 1.51, bottom = 3.40. n=237 MSAs, ACS 2018-22. Implication: rent exposure in destination markets is closer to welfare loss than the adversarial review allowed. [SOURCE: research/immigration-causal-saiz-elasticity-rent.md]
+Reason: top FB-share quintile median Saiz 2010 elasticity = 1.51, bottom = 3.40. n=237 MSAs, ACS 2018-22. Implication: rent exposure in inelastic destination markets is a stronger renter-incidence warning than the adversarial review allowed; aggregate welfare loss remains unmeasured. [SOURCE: research/immigration-causal-saiz-elasticity-rent.md]
 
 19. `Card-style labor-market complementarity for U.S. low-skill immigration`
 Rating: `medium-strong`

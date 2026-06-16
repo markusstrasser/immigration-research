@@ -1580,3 +1580,23 @@ Renamed the section to receiver/border indicators, changed the interpretation pa
 ### Updated conclusion
 
 The receiver-election result remains a bounded correlational signal: receiver-city status is associated with about +2.4pp GOP shift after controls, but it is not a measured surge-exposure effect. [INFERENCE]
+
+---
+
+## 2026-06-16 — Saiz housing language narrowed to renter incidence
+
+### Issue
+
+Several active Saiz/housing summaries still said rent exposure was "closer to welfare loss" than the adversarial review allowed. The source Saiz memo, the causal synthesis embedded ladder, the paradigm synthesis verdict table, and confidence-ladder entry 18 all carried some version of that shorthand. [DATA]
+
+### Why it was wrong
+
+The Saiz evidence supports an elasticity-conditional renter-incidence warning: immigrants are concentrated in inelastic/high-rent MSAs, so rent exposure is more decision-relevant for renters than a raw price-level measure. But aggregate welfare loss still requires causal identification of immigrant-specific rent effects plus owner/renter incidence and tax-base offsets. [INFERENCE]
+
+### Fix
+
+Replaced the residual "closer to welfare loss" phrasing with "stronger renter-incidence warning" in the source Saiz memo, the causal synthesis, the paradigm synthesis, and confidence-ladder entry 18. Added revision rows where those memos keep revision tables. [SOURCE: memo]
+
+### Updated conclusion
+
+The housing layer remains a real local-incidence warning, especially in inelastic destinations, but it is no longer exported as an aggregate welfare-loss claim. [INFERENCE]
