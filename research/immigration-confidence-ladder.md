@@ -99,9 +99,9 @@ Reason: convergent evidence — Card 1990 Mariel, Foged-Peri 2016 Denmark refuge
 
 ## Paradigm-escape layer added 2026-04-18 (evening)
 
-20. `Saiz elasticity-immigrant correlation operates through regulatory not topographic channel` — **QUALIFIED by entry 38**
-Rating: `strong`
-Reason: log(FB share) ~ unaval (β=+0.12, t=0.58, n.s.) + WRLURI (β=+0.33, t=6.29***) + log_pop. The inelastic-MSA immigrant concentration is driven by zoning, not topography. Implication: zoning reform is a viable lever for the rent-burden problem; immigration restriction is not the only policy response. [SOURCE: scripts/saiz_decomposition.py]
+20. `Saiz elasticity-immigrant correlation is stronger for regulatory index than topographic unavailability` — **QUALIFIED by entry 38**
+Rating: `strong descriptive`
+Reason: log(FB share) ~ unaval (β=+0.12, t=0.58, n.s.) + WRLURI (β=+0.33, t=6.29***) + log_pop. WRLURI is the stronger correlate in this cross-section; this does not identify zoning as the causal driver or prove zoning reform would reduce immigrant renter burden. Treat zoning reform as a plausible policy hypothesis, not a verified lever. [SOURCE: scripts/saiz_decomposition.py]
 
 21. `Sanctuary policy variation shows no significant native low-skill wage change either direction`
 Rating: `no significant E1 wage change observed in this design`

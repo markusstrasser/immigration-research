@@ -1820,3 +1820,23 @@ Changed the active paradigm synthesis row, embedded ladder snippet, and standalo
 ### Updated conclusion
 
 The sanctuary QWI pass remains a useful policy-margin check against obvious large wage movement, but the repo no longer treats non-significance as a proven strong null. [INFERENCE]
+
+---
+
+## 2026-06-16 — Confidence ladder Saiz zoning entry made descriptive
+
+### Issue
+
+`research/immigration-confidence-ladder.md` entry 20 still said the inelastic-MSA immigrant concentration was "driven by zoning, not topography" and exported zoning reform as a viable lever, even though entry 38 later qualified the result. [DATA]
+
+### Why it was wrong
+
+The Saiz decomposition is a cross-sectional regression where WRLURI is a stronger correlate than topographic unavailability. It does not identify causal direction or prove that zoning reform would reduce immigrant renter burden. Leaving the old causal wording in entry 20 created a grep hazard despite the later qualifier. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Replaced entry 20's title, rating, and reason with stronger-correlate/descriptive wording and recast zoning reform as a plausible hypothesis rather than a verified causal lever. [SOURCE: memo]
+
+### Updated conclusion
+
+The confidence ladder now treats the Saiz regulatory result as descriptive evidence for a zoning hypothesis, not as proof that zoning caused immigrant concentration or solves renter incidence. [INFERENCE]
