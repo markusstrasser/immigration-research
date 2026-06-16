@@ -1480,3 +1480,23 @@ Changed the wage row to model-loading language, changed the native-migration row
 ### Updated conclusion
 
 The capacity-frontier memo still supports load-capacity as the cleaner county stress screen, but it no longer overstates the table rows as causal response estimates. [INFERENCE]
+
+---
+
+## 2026-06-16 — Standalone E-Verify ladder row aligned to bounded margin
+
+### Issue
+
+`research/immigration-confidence-ladder.md` entry 17 still rated the E-Verify/Borjas wage result as `strong rejection`, even though the source memo and causal synthesis had already narrowed the result to large Borjas-style native wage gains in the observed E-Verify mandate margin. [DATA]
+
+### Why it was wrong
+
+The QWI design can reject high-end native wage gains for the tested E-Verify policy variation. It does not reject every Borjas-style labor-substitution claim, surge regime, mass-deportation shock, cash-economy margin, or longer-run adjustment channel. [INFERENCE]
+
+### Fix
+
+Renamed the ladder row to "Large Borjas-style native wage gains under observed E-Verify mandates," changed the rating to `strong against large gains in this design`, and made the reason explicitly margin-specific. [SOURCE: memo]
+
+### Updated conclusion
+
+The ladder now matches the source memos: strong Card-side evidence for the tested E-Verify margin, not a global wage-family rejection. [INFERENCE]
