@@ -98,7 +98,7 @@ But the combined model matters too:
 
 So the stronger claim is:
 
-1. `stock` drives the broad political map
+1. `stock` carries the broad political-map signal in this county model
 2. `load / capacity` still adds residual strain in that map
 
 ### 2) Wages: load-capacity is cleaner than stock
@@ -286,6 +286,7 @@ and in the current public-data stack, `flow + capacity` is where the new descrip
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced the remaining "stock drives the broad political map" shortcut with descriptive model-signal language. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "established"/"settles" wording with suggested/updates language; county capacity models remain descriptive model-output evidence, not settled causal identification. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Added a claims-table scope note: `HIGH`/`VERIFIED` refer to reproducible model-output patterns, not causal identification. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Reframed the native-sorting sentence as a descriptive association rather than a causal incumbent-exit claim. See `immigration-conclusion-audit-running-fixes.md`. |

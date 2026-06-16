@@ -2220,3 +2220,23 @@ Changed the cycle goal, queue, discovery bullets, completion note, and verificat
 ### Updated conclusion
 
 The cycle summary no longer exports a broad labor-market verdict from one marginal enforcement design. [INFERENCE]
+
+---
+
+## 2026-06-16 — Capacity frontier political-map verb kept descriptive
+
+### Issue
+
+`research/immigration-capacity-frontier-2026-04-21.md` said "`stock` drives the broad political map" even though the same section and claims-table scope note treat the county models as descriptive model-output evidence rather than causal identification. [DATA]
+
+### Why it was wrong
+
+The model ranking shows that stock share carries the strongest one-predictor countywide political signal. "Drives" implies causal direction that this model does not identify, especially given confounders like long-run demographic sorting and Hispanic realignment already named in the memo. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the summary bullet to say stock carries the broad political-map signal in this county model. [SOURCE: memo]
+
+### Updated conclusion
+
+The capacity frontier memo now keeps its politics result at the descriptive model-signal level throughout that section. [INFERENCE]
