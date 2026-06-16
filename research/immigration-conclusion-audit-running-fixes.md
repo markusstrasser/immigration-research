@@ -2100,3 +2100,23 @@ Replaced "does not generalize" with "should not be mechanically extrapolated" to
 ### Updated conclusion
 
 The wage synthesis now treats Borjas's restricted-Mariel result as a contested shock-specific estimate whose magnitude should not be mechanically exported to other designs, while leaving broader external-validity questions open. [INFERENCE]
+
+---
+
+## 2026-06-16 — Crime denominator and race-correction caveats tightened
+
+### Issue
+
+`research/immigration-crime-rates-unauthorized-vs-native-born.md` said a larger true unauthorized population would make crime rates "even lower," called the race-corrected gap a general correction to observed criminal-justice rates, and said within-race comparison "eliminates the compositional confound entirely." [DATA]
+
+### Why it was wrong
+
+The denominator statement is only mechanically true if the arrest numerator and immigration-status classification are held fixed. The race correction cited in the memo is an incarceration comparison, not a correction to every arrest/conviction measure. Within-race comparison removes racial composition as a confound, but it does not remove age, sex, geography, detection/reporting, or legal-status-classification uncertainty. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Scoped the confidence statement to observed U.S. criminal-justice outcomes while naming the race-corrected figure as incarceration-specific; rewrote denominator sensitivity as conditional on fixed numerator/classification; and narrowed the within-race assessment to removal of the racial-composition confound. [SOURCE: memo]
+
+### Updated conclusion
+
+The crime memo's directional observed-rate finding remains, but its construction caveats now distinguish denominator arithmetic, incarceration-specific race correction, and remaining non-race confounders. [INFERENCE]
