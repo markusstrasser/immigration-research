@@ -2200,3 +2200,23 @@ Replaced the `+24%` wage-effect and resumed-inflow forecast phrasing with the so
 ### Updated conclusion
 
 The restrictionist steelman still gets to use Hanson as a labor-supply counterfactual and secular-supply warning, but not as an unbridged surge-era wage forecast. [INFERENCE]
+
+---
+
+## 2026-06-16 — Cycle summary narrowed to E-Verify wage margin
+
+### Issue
+
+`CYCLE.md` still said the causal cycle would "resolve Card-vs-Borjas verdict for U.S. data," that E-Verify mandates produced "no positive wage effect" and rejected Borjas's wage prediction, and that supply fell with wages flat implying employer adjustment through capital/relocation. [DATA]
+
+### Why it was wrong
+
+The underlying QWI design is an observed E-Verify mandate-margin test. It can reject large Borjas-style native wage gains in that design, but it does not settle the full Card-vs-Borjas family, surge or mass-shock regimes, or the mechanism behind the W-2 employment decline. [SOURCE: CYCLE.md] [SOURCE: research/immigration-causal-everify-card-vs-borjas.md] [INFERENCE]
+
+### Fix
+
+Changed the cycle goal, queue, discovery bullets, completion note, and verification result to describe a bounded observed E-Verify QWI wage-channel update. Mechanism language now lists capital, output, relocation, cash-economy substitution, hours, and composition as candidate channels rather than measured adjustment. [SOURCE: memo]
+
+### Updated conclusion
+
+The cycle summary no longer exports a broad labor-market verdict from one marginal enforcement design. [INFERENCE]
