@@ -1440,3 +1440,23 @@ Changed the paragraph and claims-table row to a scope-limited supported literatu
 ### Updated conclusion
 
 The crime memo can still flag generational convergence as a caveat, but not as a high-certainty claim about unauthorized immigrants or the 2021-2024 cohort. [INFERENCE]
+
+---
+
+## 2026-06-16 — Residual replication labels narrowed to consistency checks
+
+### Issue
+
+Two tracked memos still used "replication" language for checks that were not direct replications: `immigration-causal-saiz-elasticity-rent.md` said the 2022 cross-section "replicates Saiz's own pattern," and `immigration-confidence-ladder.md` said the E-Verify QWI result "Replicates Card direction." A receiver-city ladder entry also called a Hispanic-share control a "Replication gate." [DATA]
+
+### Why it was wrong
+
+The Saiz pass is a 2022 descriptive cross-section, not Saiz's 1980-2000 panel/IV design. The E-Verify result is an adjacent QWI policy-margin check that aligns with Card-side direction, not a direct Card replication. The receiver-city Hispanic-share pass is a robustness gate against a named confounder, not a replication. [INFERENCE]
+
+### Fix
+
+Changed the Saiz memo to "consistent with the Saiz elasticity/rent mechanism," changed the E-Verify ladder line to "Aligns with Card direction; not a direct replication," and renamed the receiver-city phrase to "Hispanic-share robustness gate passed." Added a Saiz memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The affected claims remain useful consistency or robustness evidence, but the repo no longer exports them as direct replications. [INFERENCE]

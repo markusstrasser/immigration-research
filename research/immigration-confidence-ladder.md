@@ -87,7 +87,7 @@ Reason: without explicit horizon and counterfactuals, the phrase has almost no a
 
 17. `Borjas wage prediction for U.S. native low-skill workers from E-Verify`
 Rating: `strong rejection`
-Reason: TWFE on QWI 2003-2023, 9 treated states (AZ, MS, SC, UT, GA, AL, NC, TN, FL), 42 controls. Coefficient on E1 in E-Verify-exposed industries: +0.51% (SE 0.81%, n=16,736). 95% CI excludes Borjas magnitudes (>2.1%). Replicates Card direction. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
+Reason: TWFE on QWI 2003-2023, 9 treated states (AZ, MS, SC, UT, GA, AL, NC, TN, FL), 42 controls. Coefficient on E1 in E-Verify-exposed industries: +0.51% (SE 0.81%, n=16,736). 95% CI excludes Borjas magnitudes (>2.1%). Aligns with Card direction; not a direct replication. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
 
 18. `Immigrants concentrate in inelastic-supply MSAs (welfare implication for rent burden)`
 Rating: `strong (descriptive)`
@@ -171,7 +171,7 @@ Reason: the entry's timing facts were artifacts. Corrected series: Dec-2022 loca
 
 36. `Receiver-city 2024 GOP swing survives the Hispanic-realignment control` — **closes entry 31's open work**
 Rating: `medium (correlation; robust to the named rival channel)`
-Reason: pre-registered kill-test with 2020 county Hispanic share (popest baseline): receiver β +0.0256 → +0.0238 (t≈7.2) with the control in; Hispanic share itself β=+0.062 (t=17.2); within top-Hispanic-quintile, receivers +4.3pp raw vs comparable counties. Replication gate passed. Still cross-sectional; busing destinations policy-endogenous; use the controlled +2.4pp. [SOURCE: sources/immigration-causal/data/outcomes/analysis/swing_hispanic_control/results.json]
+Reason: pre-registered kill-test with 2020 county Hispanic share (popest baseline): receiver β +0.0256 → +0.0238 (t≈7.2) with the control in; Hispanic share itself β=+0.062 (t=17.2); within top-Hispanic-quintile, receivers +4.3pp raw vs comparable counties. Hispanic-share robustness gate passed. Still cross-sectional; busing destinations policy-endogenous; use the controlled +2.4pp. [SOURCE: sources/immigration-causal/data/outcomes/analysis/swing_hispanic_control/results.json]
 
 37. `OHSS-derived series require an external-anchor check before regression`
 Rating: `strong (process rule)`
