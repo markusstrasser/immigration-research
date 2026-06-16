@@ -34,7 +34,7 @@ Caplan is weakest where recent surge and threshold evidence make local incidence
 
 1. the claim that immigration restrictions are not needed to protect `taxpayers` is too broad once the `federal` and `state/local` ledgers are separated [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf]
 2. the claim that immigration restrictions are not needed to protect `workers` is too broad once housing/permit constraints and low-education wage exposure are added [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf]
-3. the claim that political externalities are manageable by default is too optimistic under surge conditions and capacity thresholds [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] [SOURCE: research/immigration-causal-surge-2021-2024.md]
+3. the claim that political externalities are manageable by default is not established under surge conditions and capacity thresholds [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] [SOURCE: research/immigration-causal-surge-2021-2024.md]
 
 The clean verdict is:
 
@@ -52,7 +52,7 @@ The clean verdict is:
 | `Immigration restrictions are not necessary to protect American workers.` | `Too broad` | Broad job-loss stories are weak, but constrained counties show slower wage growth and official projections show slight low-education wage-growth pressure. [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf] |
 | `Immigration restrictions are not necessary to protect American taxpayers.` | `Fails as a blanket claim` | Federal gains can coexist with state/local costs in education, shelter, and related services. [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] |
 | `Immigrants commit much less crime than natives.` | `Mostly survives for observed U.S. first-generation / unauthorized justice-system rates` | The U.S. evidence is strong for lower observed arrest, conviction, and incarceration rates, though some headline gaps are overstated by compositional comparisons and the international generalization is weaker. True offending is less directly identified. [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md] |
-| `Immigration restrictions are not necessary to protect American culture.` | `Partly survives, but culture is not the main modern bottleneck` | Apocalyptic culture-collapse arguments are weak; assimilation is real. But the current U.S. stress channels run more through housing, services, and politics than through a clean culture mechanism. [SOURCE: https://www.econlib.org/archives/2015/12/krikorian_again.html] [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] |
+| `Immigration restrictions are not necessary to protect American culture.` | `Partly survives, but culture is not the best-developed bottleneck in this evidence surface` | Apocalyptic culture-collapse arguments are weak; assimilation is real. But the repo's current U.S. stress evidence is better developed for housing, services, and politics than for a clean culture mechanism. [SOURCE: https://www.econlib.org/archives/2015/12/krikorian_again.html] [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] |
 | `Political externalities are limited because immigrants vote less, accept the status quo, and may restrain redistribution.` | `Partly survives in a narrow median-voter sense, fails as a full political-incidence answer` | National voting mechanics are only one channel; local overload, legitimacy effects, and possible citizen political response remain live. [SOURCE: https://www.econlib.org/archives/2010/04/the_social_and.html] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md] |
 | `Cheaper and more humane alternatives exist for each complaint.` | `Partly survives as institutional design logic, not as practical closure` | Keyhole solutions mitigate some objections, but do not dissolve housing, school, shelter, and credibility problems. [SOURCE: https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2012/1/cj32n1-2.pdf] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] |
 
@@ -163,7 +163,7 @@ Caplan often treats the cultural objection as weak: immigrants assimilate, their
 What survives:
 
 1. The hardest-line permanent non-assimilation claim is too strong. [SOURCE: https://www.econlib.org/archives/2015/12/krikorian_again.html]
-2. The repo's current evidence does **not** point to `culture` as the first binding destination-country channel. It points to `housing`, `services`, `shelter`, and `politics`. [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
+2. The repo's current evidence surface is better developed for `housing`, `services`, `shelter`, and `politics` than for `culture` as the first binding destination-country channel. That is not proof that culture is never first-binding. [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [INFERENCE]
 
 What remains open:
 
@@ -192,7 +192,7 @@ What survives:
 What fails:
 
 1. The relevant political channel is not only immigrant voting. It also includes possible citizen response, local overload, policy churn, and perceived unfairness. [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md]
-2. The repo's threshold and county-outcome analyses show stronger political-response signals in high-immigration constrained places, especially where permit capacity is weak and rent burden high. The mechanism is not yet cleanly separated into persuasion, turnout, sorting, Hispanic realignment, or busing-target endogeneity. [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
+2. The repo's threshold and county-outcome analyses report stronger political-response association signals in high-immigration constrained places, especially where permit capacity is weak and rent burden high. The mechanism is not yet cleanly separated into persuasion, turnout, sorting, Hispanic realignment, or busing-target endogeneity. [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
 3. The surge memo already treats the `2021–2024` period as a different regime from the older low-intensity local-labor literature. [SOURCE: research/immigration-causal-surge-2021-2024.md]
 
 Verdict:
@@ -315,6 +315,7 @@ So the final score is:
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced first-binding culture and political-externality shortcuts with evidence-surface language: housing/service/political channels are better developed in current memos, not proven universally primary. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced remaining "Caplan is right" labels with claim-support language, including global-gains, ledger-blurring, labor-collapse, and DAG framing. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual right/wrong and wins/loses verdict labels with strongest/weakest/support language while preserving the same claim ranking. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Bounded the Caplan global-gains verdict to direction/sign rather than strongest magnitude or destination-capacity closure. See `immigration-conclusion-audit-running-fixes.md`. |

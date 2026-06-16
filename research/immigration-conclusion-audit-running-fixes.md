@@ -2140,3 +2140,23 @@ Changed the synthesis to say wage compression is not the supported local-burden 
 ### Updated conclusion
 
 The local-incidence synthesis now distinguishes a bounded wage-margin result from broader wage-shock uncertainty. [INFERENCE]
+
+---
+
+## 2026-06-16 — Caplan channel ranking bounded to evidence surface
+
+### Issue
+
+`research/immigration-bryan-caplan-claims-audit-2026-04-21.md` said the repo's evidence did not point to culture as the "first binding destination-country channel," that current U.S. stress channels run more through housing/services/politics, and that political externalities being manageable by default is "too optimistic." [DATA]
+
+### Why it was wrong
+
+The repo has better-developed evidence for housing, services, shelter, and political-response channels than for a clean culture-collapse mechanism. That does not prove a universal channel ordering or show that culture is never first-binding; it only supports a bounded criticism of Caplan's destination-incidence closure. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the Caplan audit to describe the current evidence surface as better developed for housing/service/shelter/political channels; added that this is not proof culture is never first-binding; changed political-response language from stronger signals to association signals; and replaced "too optimistic" with "not established" for manageable-by-default political externalities. [SOURCE: memo]
+
+### Updated conclusion
+
+The Caplan critique still says his destination-local incidence answer is incomplete, but it no longer turns the repo's current evidence coverage into a proved first-binding channel ranking. [INFERENCE]
