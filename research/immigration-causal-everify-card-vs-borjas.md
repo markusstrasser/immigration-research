@@ -135,7 +135,7 @@ For this enforcement margin, the adjustment looks Card-style: the wage curve is 
 ### Confidence ladder
 - Move `Federal-positive vs federal-negative origin ranking from ACS income/benefit proxies` from `weak` → unchanged (this finding addresses wages, not federal fiscal)
 - Add new entry: **`Borjas substitution prediction for U.S. low-skill native wages from E-Verify policy variation`** — `strong against large Borjas-style gains in this E-Verify margin`. Point estimate ±1%, 95% CI excludes the high-end Borjas magnitudes.
-- Strengthen entry on `Claim that the Clark agree papers are scope-limited rather than obviously false` from `strong` → `strong+`. The Clark economists who said wage effects on natives are small were correct on this margin.
+- Strengthen entry on `Claim that the Clark agree papers are scope-limited rather than obviously false` from `strong` → `strong+`. The small-native-wage-effect reading associated with those Clark responses is supported on this E-Verify margin.
 
 ### Verified-findings report bottom line
 - The previous report said: "Some national output and consumer-price gains exist; some indirect federal fiscal offsets likely exist; but local schooling, housing, and service-capacity costs remain concentrated." [SOURCE: research/immigration-verified-findings-report-2026-04-10.md, finding #6]
@@ -166,7 +166,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 
 ## Honest limits
 
-1. The wage-effect non-result is what I expected from prior literature. **Confirmation, not surprise.** This is not a novel finding — it extends the E-Verify policy-margin check with a longer QWI panel and broader treatment set, and is consistent with the Card-Peri wage literature. The contribution is updating the *repo's* confidence in the Card view from "the agree economists are scope-limited" to "the agree economists are also right on the wage channel for the policy variation we have."
+1. The wage-effect non-result is what I expected from prior literature. **Confirmation, not surprise.** This is not a novel finding — it extends the E-Verify policy-margin check with a longer QWI panel and broader treatment set, and is consistent with the Card-Peri wage literature. The contribution is updating the *repo's* confidence in the Card view from "the agree economists are scope-limited" to "their small-native-wage-effect premise is better supported for the policy variation we have."
 
 2. **What this does NOT settle:**
    - Whether a mass-deportation shock would behave the same (probably not — different magnitudes, different equilibria)
@@ -180,6 +180,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced "Clark economists were correct/right" language with support for the small-native-wage-effect premise in the observed E-Verify margin. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Bounded "data side with Card" and commentator-update language to the observed E-Verify wage-channel design; the result rejects large Borjas-style native wage gains for this margin, not all wage or open-borders questions. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Aligned the proposed confidence-ladder update with the same margin-specific wording: strong against large Borjas-style gains in the E-Verify margin, not a global "STRONG REJECTION." See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Clarified Foged-Peri design shorthand from opaque "RA quasi-IV" to dispersal-policy IV / DiD, matching the paper's quasi-experimental design. See `immigration-conclusion-audit-running-fixes.md`. |
