@@ -1283,6 +1283,26 @@ The initial synthesis now matches the corrected paradigm memo: state the welfare
 
 ---
 
+## 2026-06-16 — Caplan global-gains verdict bounded to direction
+
+### Issue
+
+`research/immigration-bryan-caplan-claims-audit-2026-04-21.md` already said the economic case mostly survives in direction rather than strongest magnitude, but its bottom-line score still said Caplan was simply "strong on global gains" and "wins on migrant welfare and global gains." [DATA]
+
+### Why it was wrong
+
+That shorthand could be read as endorsing the strongest open-borders magnitude or as closing destination-capacity concerns. The memo's own evidence supports a narrower claim: migrant-welfare direction and large global-gains sign survive, while realistic volume, housing, congestion, and political constraints bound magnitude and destination-country incidence. [INFERENCE]
+
+### Fix
+
+Changed the clean verdict and net-summary bullet to say Caplan wins on migrant-welfare direction and large global-gains sign, not strongest magnitude or destination-capacity closure. Added a revision section to the Caplan audit. [SOURCE: memo]
+
+### Updated conclusion
+
+The Caplan audit now keeps its pro-open-borders credit without laundering sign evidence into an unconstrained magnitude/capacity verdict. [INFERENCE]
+
+---
+
 ## 2026-06-16 — Open-borders weight framing separated from empirical inputs
 
 ### Issue
