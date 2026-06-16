@@ -1680,3 +1680,23 @@ Changed the synthesis to say the restrictionist case is best supported on layer 
 ### Updated conclusion
 
 The steel-man keeps its strongest mechanism without presenting restrictionism as simply right or wrong in aggregate. [INFERENCE]
+
+---
+
+## 2026-06-16 — Caplan verdict labels changed from wins/loses to strength lanes
+
+### Issue
+
+`research/immigration-bryan-caplan-claims-audit-2026-04-21.md` still used active verdict labels like "mostly right on the sign," "partly right on one channel," and "Caplan wins/loses" in the net summary. [DATA]
+
+### Why it was wrong
+
+The supporting evidence in the memo is lane-specific: global migrant-welfare direction, observed-rate crime skepticism, labor-market caveats, and destination-capacity/political-incidence failures. Binary win/loss language hides that decomposition and invites copying the shorthand without the scoped claims. [INFERENCE]
+
+### Fix
+
+Replaced the residual verdict labels with direction/sign survives, partly supported, strongest/weakest lane language, while preserving the same substantive ranking. [SOURCE: memo]
+
+### Updated conclusion
+
+The Caplan audit now reads as a lane-by-lane support map rather than a debate scorecard. [INFERENCE]
