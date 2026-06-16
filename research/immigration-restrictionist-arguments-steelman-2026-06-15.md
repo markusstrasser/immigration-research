@@ -139,7 +139,7 @@ National **education×experience** framing is more coherent than “city has imm
 2. **Mechanism:** Migrants arrive young, higher fertility → shift political coalitions → equilibrium **tax rate, migrant skill mix, migrant count** respond.
 3. **Prediction:** Unskilled voters' preferred policies featured more often than group size would suggest; **fiscal burden and redistribution** drive voting coalitions. [SOURCE: Razin w15597, abstract]
 4. **Magnet extension (Razin–Wahba w17515):** Generous welfare **attracts** low-skill migrants — fiscal sign depends on **destination policy**, not immigrant fixed effect. [SOURCE: cluster O generators]
-5. **Policy implication:** Immigration + welfare expansion = **fiscal unsustainability** and wrong skill mix; restrict low-skill or restrict benefits.
+5. **Policy implication [Razin-style model claim]:** Immigration plus welfare expansion can push toward adverse fiscal and skill-mix equilibria; the model's response margin is to restrict low-skill inflows, restrict benefits, or change the welfare-state design.
 
 ### Our gap
 
@@ -257,3 +257,4 @@ That is essentially our unified theory sentence 1 — the restrictionist case is
 | 2026-06-16 | Scoped the "Mexico +$46k kills Mexican drain" line: the benchmark blocks `<HS`-only exports, not full-ledger all-in drain claims. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Marked the FAIR taxpayer-drain policy implication as FAIR's conditional claim, not the repo's unqualified conclusion. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Scoped the crime-wave disconfirmation row to observed U.S. justice-system-rate evidence rather than true offending or all current-surge subgroups. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Marked the welfare-magnet policy implication as a Razin-style model claim rather than an unqualified repo finding of fiscal unsustainability. See `immigration-conclusion-audit-running-fixes.md`. |
