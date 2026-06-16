@@ -58,6 +58,38 @@ What changed:
 
 Use these as a new "XDISC" packet before the next immigration sweep. They are not yet loaded into `lifetime_generators`; the first implementation should either add a new loaded cluster or keep them as a separate `thesis_generators` table so fiscal generators do not silently become all-purpose narrative prompts. [INFERENCE]
 
+### Source-anchor audit added 2026-06-16
+
+The XDISC rows below are prompts, not literature-review conclusions. Before registry loading, each source-backed row needs either a verified DOI/local source path or an explicit `[INFERENCE]` tag. This spot check verified the following anchors through `mcp__research.resolve_doi`; rows outside this table, especially book/framework-only sources, still need bibliographic cleanup before they become machine-loaded source claims. [DATA]
+
+| Area | Verified anchor | DOI |
+|---|---|---|
+| Social effects / reflection | Manski, "Identification of Endogenous Social Effects: The Reflection Problem" (1993) | `10.2307/2298123` |
+| Shift-share identification | Goldsmith-Pinkham, Sorkin & Swift, "Bartik Instruments: What, When, Why, and How" (2020) | `10.1257/aer.20181047` |
+| Housing supply | Saiz, "The Geographic Determinants of Housing Supply" (2010) | `10.1162/qjec.2010.125.3.1253` |
+| Local public goods | Tiebout, "A Pure Theory of Local Expenditures" (1956) | `10.1086/257839` |
+| Spatial equilibrium | Roback, "Wages, Rents, and the Quality of Life" (1982) | `10.1086/261120` |
+| Skill sorting / amenities | Diamond, "The Determinants and Welfare Implications of US Workers' Diverging Location Choices by Skill" (2016) | `10.1257/aer.20131706` |
+| Housing constraints / macro misallocation | Hsieh & Moretti, "Housing Constraints and Spatial Misallocation" (2019) | `10.1257/mac.20170388` |
+| Local multipliers | Moretti, "Local Multipliers" (2010) | `10.1257/aer.100.2.373` |
+| High-skill immigration / innovation | Kerr & Lincoln, "The Supply Side of Innovation: H-1B Visa Reforms and U.S. Ethnic Invention" (2010) | `10.1086/651934` |
+| Immigration / innovation | Hunt & Gauthier-Loiselle, "How Much Does Immigration Boost Innovation?" (2010) | `10.1257/mac.2.2.31` |
+| Club goods | Buchanan, "An Economic Theory of Clubs" (1965) | `10.2307/2552442` |
+| Resource governance | Ostrom, "A General Framework for Analyzing Sustainability of Social-Ecological Systems" (2009) | `10.1126/science.1172133` |
+| Diversity / social capital | Putnam, "E Pluribus Unum" (2007) | `10.1111/j.1467-9477.2007.00176.x` |
+| Group threat | Quillian, "Prejudice as a Response to Perceived Group Threat" (1995) | `10.2307/2096296` |
+| Contact theory | Pettigrew & Tropp, "A meta-analytic test of intergroup contact theory" (2006) | `10.1037/0022-3514.90.5.751` |
+| Immigration attitudes | Hainmueller & Hopkins, "Public Attitudes Toward Immigration" (2014) | `10.1146/annurev-polisci-102512-194818` |
+| Immigration misperceptions / redistribution | Alesina, Miano & Stantcheva, "Immigration and Redistribution" (2018) | `10.3386/w24733` |
+| Information and attitudes | Grigorieff, Roth & Ubfal, "Does Information Change Attitudes Toward Immigrants?" (2020) | `10.1007/s13524-020-00882-8` |
+| Diversity / redistribution | Alesina & Stantcheva, "Diversity, Immigration, and Redistribution" (2020) | `10.1257/pandp.20201088` |
+| Motivated numeracy | Kahan et al., "Motivated numeracy and enlightened self-government" (2017) | `10.1017/bpp.2016.2` |
+| Agenda-setting | McCombs & Shaw, "The Agenda-Setting Function of Mass Media" (1972) | `10.1086/267990` |
+| Issue ownership | Petrocik, "Issue Ownership in Presidential Elections, with a 1980 Case Study" (1996) | `10.2307/2111797` |
+| Causal stories | Stone, "Causal Stories and the Formation of Policy Agendas" (1989) | `10.2307/2151585` |
+| Framing | Entman, "Framing: Toward Clarification of a Fractured Paradigm" (1993) | `10.1111/j.1460-2466.1993.tb01304.x` |
+| Deservingness | van Oorschot, "Who should get what, and why?" (2000) | `10.1332/0305573002500811` |
+
 | ID | Family | Generator prompt | Retrodicts / first probe |
 |---|---|---|---|
 | XDISC-ECO-01 | Policy economics | For every recommendation, name the target variable and the policy instrument. Fail the claim if one instrument is asserted to solve multiple independent targets without tradeoff. | Retrodicts layer laundering: enforcement, welfare, housing, and fiscal goals were being treated as one target. First probe: annotate one memo's recommendations. [SOURCE: Tinbergen 1952/1956 policy framework] |
@@ -79,11 +111,11 @@ Use these as a new "XDISC" packet before the next immigration sweep. They are no
 | XDISC-PE-02 | Diversity and redistribution | Ask whether heterogeneity changes support for redistribution/public goods separately from measured fiscal cost. | Retrodicts welfare-state and public-goods political feedback arguments without collapsing them into budget arithmetic. Probe: tag each welfare claim as cost-channel vs solidarity-channel. [SOURCE: Alesina & Glaeser 2004; Putnam 2007] |
 | XDISC-PSY-01 | Threat vs load | Split material burden from perceived group threat; tag theory as realistic threat, symbolic threat, group-conflict, or authoritarian-by-threat interaction. | Retrodicts political-response mechanism ambiguity. Probe: compare actual vs perceived immigrant share where available. [SOURCE: Quillian 1995] |
 | XDISC-PSY-02 | Contact vs segregation | Ask whether contact is equal-status/cooperative/institutionally supported or concentrated, competitive, and capacity-stressed; apply XDISC-MIC-02 to check contact selection/reverse causation. | Retrodicts why "more contact reduces prejudice" is not a universal migration argument. Probe: classify receiver settings by contact conditions. [SOURCE: Pettigrew & Tropp 2006] |
-| XDISC-PSY-03 | Misperception mediator | For any public-opinion or redistribution claim, insert a belief-mediator row: perceived immigrant share, skill, benefit use, origin, legality, and fiscal contribution. Then test whether correcting the belief changes the attitude; do not assume it does. | Retrodicts Alesina-style salience/redistribution channel and anti-overclaiming fixes. Probe: list belief variables before causal story. [SOURCE: Alesina, Miano & Stantcheva 2018] |
+| XDISC-PSY-03 | Misperception mediator | For any public-opinion or redistribution claim, insert a belief-mediator row: perceived immigrant share, skill, benefit use, origin, legality, and fiscal contribution. Then test whether correcting the belief changes the attitude; do not assume it does. | Retrodicts Alesina-style salience/redistribution channel and anti-overclaiming fixes. Probe: list belief variables before causal story. [SOURCE: Alesina, Miano & Stantcheva 2018; Grigorieff, Roth & Ubfal 2020] |
 | XDISC-PSY-04 | Sociotropic vs egocentric | Split personal/pocketbook from national/collective, and economic from cultural. Fail attitude claims that infer personal self-interest from group-level correlations. | Retrodicts why immigration opposition can be weakly tied to direct local exposure. Probe: classify one opinion finding on both axes. [SOURCE: Hainmueller & Hopkins 2014] |
 | XDISC-PSY-05 | Motivated reasoning | Ask whether the belief is identity-expressive; if so, predict that more evidence may widen, not narrow, group gaps. | Retrodicts why source-corrected memos may not move public narratives. Probe: mark each public-facing claim as accuracy-driven vs identity-expressive. [SOURCE: Kahan et al. 2017] |
 | XDISC-AGS-01 | Agenda-setting/priming | Separate salience, attribute framing, priming/evaluation criteria, issue ownership, and elite cueing; ask whether perceived share is bottom-up or messaging-driven. | Retrodicts salience shifts without matching ground-condition changes. Probe: decompose one "why salient now" story into agenda/prime/frame/owner rows. [SOURCE: McCombs & Shaw 1972; Petrocik 1996] |
-| XDISC-POL-01 | Agenda process (MSF) | Ask why this issue is salient now: indicator change, focusing event, policy entrepreneur, media frame, or coalition opening. Tag MSF output as narrative/process, not causal identification. | Retrodicts surge-era timing errors as process hypotheses only. Probe: problem/policy/politics stream table. [SOURCE: Kingdon/MSF literature] |
+| XDISC-POL-01 | Agenda process (MSF) | Ask why this issue is salient now: indicator change, focusing event, policy entrepreneur, media frame, or coalition opening. Tag MSF output as narrative/process, not causal identification. | Retrodicts surge-era timing errors as process hypotheses only. Probe: problem/policy/politics stream table. [SOURCE: Kingdon/MSF literature; framework/book anchor, not DOI-verified in this pass] |
 | XDISC-NAR-01 | Causal-story audit | For each narrative, name cause type: mechanical, accidental, intentional, inadvertent. Ask who becomes victim, villain, beneficiary, and fixer. Name one absent frame and one observation that would distinguish frame-effect from null. | Retrodicts overstrong "backlash" and "system collapse" language. Probe: annotate one public-facing paragraph. [SOURCE: Stone 1989] |
 | XDISC-NAR-02 | Frame function | For each paragraph, identify problem definition, causal interpretation, moral evaluation, and treatment recommendation. Fail if the frame cannot be falsified or contrasted with an absent frame. | Retrodicts hidden policy conclusion drift. Probe: Entman-frame one memo section before publishing. [SOURCE: Entman 1993] |
 | XDISC-NAR-03 | Deservingness | Score implicit deservingness criteria by migrant category: control, attitude, reciprocity, identity, and need. | Retrodicts refugee-vs-economic-migrant splits and legality/deservingness shortcuts. Probe: tag one public paragraph. [SOURCE: van Oorschot 2000] |
@@ -296,9 +328,11 @@ Deferred:
 - Ostrom social-ecological systems/resource governance: `https://www.science.org/doi/10.1126/science.1172133`; `https://pubmed.ncbi.nlm.nih.gov/19628857/`
 - Pettigrew & Tropp intergroup contact meta-analysis: `https://pubmed.ncbi.nlm.nih.gov/16737372/`; `https://ideas.wharton.upenn.edu/wp-content/uploads/2018/07/Pettigrew-Tropp.pdf`
 - Quillian perceived group threat: `https://www.semanticscholar.org/paper/Prejudice-as-a-response-to-perceived-group-threat%3A-Quillian/d4ceb81eb7a2e67d10db27545b8f2ec6c2702cd7`; `https://perception.org/other-publications/prejudice-as-a-response-to-perceived-group-threat-population-composition-and-anti-immigrant-and-racial-prejudice-in-europe/`
-- Alesina, Miano & Stantcheva on immigration and redistribution perceptions: `https://www.nber.org/papers/w24733`; `https://www.nber.org/system/files/working_papers/w24733/w24733.pdf`
+- Alesina, Miano & Stantcheva on immigration and redistribution perceptions: `https://www.nber.org/papers/w24733`; `https://doi.org/10.3386/w24733`
+- Grigorieff, Roth & Ubfal on information and immigrant attitudes: `https://doi.org/10.1007/s13524-020-00882-8`
 - Hainmueller & Hopkins public attitudes review: `https://www.annualreviews.org/content/journals/10.1146/annurev-polisci-102512-194818`
-- Kahan motivated numeracy: `https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2319992`
+- Kahan motivated numeracy: `https://doi.org/10.1017/bpp.2016.2`
+- Alesina & Stantcheva diversity/immigration/redistribution overview: `https://doi.org/10.1257/pandp.20201088`
 - Alesina & Glaeser diversity/redistribution: `https://academic.oup.com/book/36351`
 - Putnam diversity/social capital: `https://onlinelibrary.wiley.com/doi/10.1111/j.1467-9477.2007.00176.x`
 - McCombs & Shaw agenda setting: `https://academic.oup.com/poq/article-abstract/36/2/176/1853310`

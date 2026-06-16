@@ -2650,3 +2650,23 @@ Updated `research/immigration-verified-findings-report-2026-04-10.md` to remove 
 ### Updated conclusion
 
 The current headline ladder still supports the same qualitative reading: large native wage gains are not observed in the E-Verify mandate-margin design, and the receiver-city swing result survives the named Hispanic-share control. The corrected wording now prevents those claims from being exported as a clean ATT, a global wage-family verdict, or an unqualified causal election mechanism. [INFERENCE]
+
+---
+
+## 2026-06-16 — XDISC generator sources separated from recalled citations
+
+### Issue
+
+The thesis-generator audit added a broad XDISC packet across public finance, micro, macro, urbanism, psychology, political economy, and narrative analysis. It named many classic frameworks, but the first draft did not clearly distinguish DOI-verified source anchors from remembered or book/framework references. That creates a downstream registry-loading risk: a later agent could treat a useful prompt source as a verified citation claim. [DATA]
+
+### Why it was wrong
+
+The XDISC packet is meant to shape future search space. If its source tags are overtrusted, it can smuggle unverified authority into the generator registry while still appearing rigorous. Source-grade discipline matters more here than in ordinary prose because generator rows are designed to be reused mechanically. [INFERENCE]
+
+### Fix
+
+Verified a compact source-anchor set with `mcp__research.resolve_doi`, including Manski reflection, Goldsmith-Pinkham/Sorkin/Swift shift-share, Saiz/Tiebout/Roback/Diamond/Hsieh-Moretti/Moretti urban anchors, Buchanan/Ostrom public-goods anchors, Quillian/Pettigrew-Tropp/Hainmueller-Hopkins/Kahan psychology anchors, Alesina/Miano/Stantcheva and Grigorieff/Roth/Ubfal immigration-attitude anchors, and Entman/Stone/McCombs-Shaw/Petrocik/van Oorschot narrative anchors. Added the verified DOI table to `research/immigration-thesis-generator-audit-2026-06-16.md`, updated the misperception and motivated-numeracy source rows, and marked Kingdon/MSF as a framework/book anchor not DOI-verified in this pass. [SOURCE: `research/immigration-thesis-generator-audit-2026-06-16.md`]
+
+### Updated conclusion
+
+The XDISC generator packet remains useful, but it is now explicitly a prompt/source-anchor layer rather than a loaded citation registry. Rows with verified DOIs can be promoted more safely; book/framework and inference-only rows still need bibliographic cleanup or local-source paths before machine loading. [INFERENCE]
