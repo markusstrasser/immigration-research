@@ -1460,3 +1460,23 @@ Changed the Saiz memo to "consistent with the Saiz elasticity/rent mechanism," c
 ### Updated conclusion
 
 The affected claims remain useful consistency or robustness evidence, but the repo no longer exports them as direct replications. [INFERENCE]
+
+---
+
+## 2026-06-16 — Capacity-frontier causal verbs made descriptive
+
+### Issue
+
+`research/immigration-capacity-frontier-2026-04-21.md` had a scope note saying `HIGH`/`VERIFIED` referred to reproducible model-output patterns rather than causal identification, but the claims table still said wage growth "responds" to load-capacity and native net migration "becomes" more negative as load-capacity rises. The wage section also called the row the "clearest county confirmation" of the worker question. [DATA]
+
+### Why it was wrong
+
+Those phrases made the descriptive county models sound like response or mechanism estimates. The listed artifacts verify coefficient patterns, not the counterfactual effect of immigrant load on wages, employment, or native sorting. [INFERENCE]
+
+### Fix
+
+Changed the wage row to model-loading language, changed the native-migration row to a decile association, and replaced "confirmation" with "descriptive evidence." Added a memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The capacity-frontier memo still supports load-capacity as the cleaner county stress screen, but it no longer overstates the table rows as causal response estimates. [INFERENCE]

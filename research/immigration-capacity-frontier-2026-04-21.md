@@ -53,10 +53,10 @@ That is the more relevant descriptive object if the threshold story is about abs
 |---|---|---|---|---|---|
 | 1 | Stock share remains the strongest simple county predictor of GOP margin shift | In separate one-predictor county models, standardized `fb_share` has larger `t` and higher adjusted `R²` than flow or load | HIGH | [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
 | 2 | Load-capacity still adds residual political-response signal beyond stock and flow | In the combined margin model, standardized load remains positive and significant (`t≈2.74`, `p≈0.006`) | HIGH | [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
-| 3 | Wage growth responds more cleanly to load-capacity than to stock or flow alone | Load-only wage model has the strongest negative `t` and best adjusted `R²` among single-predictor formulations | HIGH | same | VERIFIED |
+| 3 | Wage-growth models load more cleanly on load-capacity than on stock or flow alone | Load-only wage model has the strongest negative `t` and best adjusted `R²` among single-predictor formulations | HIGH | same | VERIFIED |
 | 4 | A negative employment signal appears under direct load-capacity formulations even though the earlier coarse threshold did not show broad job loss | Load-only and combined employment models are negative and highly significant; stock and flow alone are weak or null | HIGH | same | VERIFIED |
 | 5 | The threshold is clearest in the broad high-flow tail (`70th-80th percentile`) interacted with low permit capacity, not at one single extreme cutoff | Interaction grid shows stronger wage and some politics/employment effects at `q70-q80` than at `q90` | HIGH | [county_capacity_threshold_grid.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_grid.csv) | VERIFIED |
-| 6 | Native net migration becomes more negative as load-capacity rises | Load deciles show about `-1.07 pp` gap from `D1` to `D10`; load-based models outperform stock-only on adjusted `R²` | HIGH | [county_load_capacity_deciles.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_load_capacity_deciles.csv), [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
+| 6 | Native net migration is more negative in higher load-capacity deciles | Load deciles show about `-1.07 pp` gap from `D1` to `D10`; load-based models outperform stock-only on adjusted `R²` | HIGH | [county_load_capacity_deciles.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_load_capacity_deciles.csv), [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
 | 7 | Receiver-city spending is more tightly tied to absolute shelter shortfall than to saturation ratio alone | In 2024 receiver descriptives, `corr(shelter_gap_vs_hic, spending) ≈ 0.93`, much larger than `corr(sheltered_to_hic_ratio, spending)` | MEDIUM | [receiver_capacity_descriptives_2024.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_capacity_descriptives_2024.csv) | VERIFIED |
 
 **Scope note:** In this table, `HIGH` and `VERIFIED` mean the reported model-output pattern is file-backed and reproducible from the listed artifacts. They do not mean the county associations are clean causal effects; the causal caveats below still apply. [INFERENCE]
@@ -113,7 +113,7 @@ And in the combined model:
 
 1. `load` stays negative with `t≈-2.49`, `p≈0.013` [DATA]
 
-This is the clearest county confirmation yet that the `worker` question is really about:
+This is the clearest county descriptive evidence yet that the `worker` question is tied to:
 
 `inflow under weak absorption capacity`
 
@@ -288,3 +288,4 @@ and in the current public-data stack, `flow + capacity` is where the new descrip
 |------|--------|
 | 2026-06-16 | Added a claims-table scope note: `HIGH`/`VERIFIED` refer to reproducible model-output patterns, not causal identification. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Reframed the native-sorting sentence as a descriptive association rather than a causal incumbent-exit claim. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Removed residual causal verbs from the claims table and wage section: the load-capacity rows are verified descriptive model-output patterns, not causal response estimates. See `immigration-conclusion-audit-running-fixes.md`. |
