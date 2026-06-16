@@ -116,6 +116,8 @@ Per sheltered-migrant-day gross cost: ~$190 NYC, ~$200 Denver, ~$140 Chicago, us
 - receiver_city: **+0.024 (t=6.96***)** → being a busing/border receiver was associated with +2.4 pp MORE GOP shift even after FB share + state + pop controls
 - log_pop: -0.003 (t=-10.40***) → bigger counties shifted less
 
+This table is the original no-Hispanic-share specification. The later Hispanic-share kill-test runs on `n=2,390` counties and reports receiver β `+0.0256` without Hispanic share and `+0.0238` with Hispanic share; use the controlled `+0.0238` / `+2.4pp` result as the current headline. [SOURCE: `sources/immigration-causal/data/outcomes/analysis/swing_hispanic_control/results.json`]
+
 ## Interpretation (heavily caveated)
 
 [BIAS CAVEAT] The instrument (LLM) has known training-time priors on politically charged interpretation. The numbers above are administrative; interpretations below are scenarios.
