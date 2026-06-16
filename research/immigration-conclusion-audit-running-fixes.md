@@ -2300,3 +2300,23 @@ Changed the bullet to say counties with higher recent inflow swung less GOP in t
 ### Updated conclusion
 
 The surge memo now keeps the recent-inflow election coefficient at the model-association level until a mechanism-specific design is run. [INFERENCE]
+
+---
+
+## 2026-06-16 — Caplan worker-incidence channel kept evidence-surface scoped
+
+### Issue
+
+`research/immigration-bryan-caplan-claims-audit-2026-04-21.md` said the "strongest current worker-incidence channel" is slower wage progression in constrained places rather than job destruction. [DATA]
+
+### Why it was wrong
+
+The memo can say current repo evidence better develops constrained-place wage progression than broad job-destruction rhetoric. But "strongest current channel" implies a global channel ranking across worker incidence that the cited county panel does not establish. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the line to say that in the repo's current worker-incidence evidence surface, the better-developed concern is slower wage progression in constrained places rather than broad job destruction. [SOURCE: memo]
+
+### Updated conclusion
+
+The Caplan audit still rejects crude job-collapse rhetoric, while keeping the alternative worker-incidence channel scoped to the current evidence surface. [INFERENCE]
