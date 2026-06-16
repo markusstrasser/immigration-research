@@ -154,9 +154,9 @@ The decile table is intuitive:
 2. `D10` median net domestic migration share: about `-0.24 pp` [DATA]
 3. gap: about `-1.07 pp` [DATA]
 
-This is a more direct answer to the destination-country question than global-output arguments:
+This is a more directly relevant descriptive screen for the destination-country question than global-output arguments:
 
-1. once immigrant inflow materially outruns local build response, domestic incumbents sort away more aggressively
+1. counties where immigrant inflow materially outruns local build response show more negative domestic net migration; whether incumbents sort away because of that load still needs counterfactual identification
 
 ## Threshold effects: where do they actually show up?
 
@@ -287,3 +287,4 @@ and in the current public-data stack, `flow + capacity` is where the new descrip
 | Date | Change |
 |------|--------|
 | 2026-06-16 | Added a claims-table scope note: `HIGH`/`VERIFIED` refer to reproducible model-output patterns, not causal identification. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Reframed the native-sorting sentence as a descriptive association rather than a causal incumbent-exit claim. See `immigration-conclusion-audit-running-fixes.md`. |

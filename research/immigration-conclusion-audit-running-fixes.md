@@ -1303,6 +1303,26 @@ The Caplan audit now keeps its pro-open-borders credit without laundering sign e
 
 ---
 
+## 2026-06-16 — Capacity frontier native-sorting sentence made descriptive
+
+### Issue
+
+`research/immigration-capacity-frontier-2026-04-21.md` said the load-capacity decile table was a direct answer to the destination-country question because "once immigrant inflow materially outruns local build response, domestic incumbents sort away more aggressively." [DATA]
+
+### Why it was wrong
+
+The decile evidence is a county association: high load-capacity deciles show more negative domestic net migration. It does not by itself identify whether immigrant load caused incumbents to leave, whether destination selection drives both variables, or whether unmodeled local shocks explain part of the pattern. [INFERENCE]
+
+### Fix
+
+Changed the sentence to call the decile table a descriptive screen and state that causal incumbent-exit interpretation still needs counterfactual identification. Added a memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The capacity memo still shows a useful load-capacity/native-migration association, but it no longer exports the association as a causal sorting mechanism. [INFERENCE]
+
+---
+
 ## 2026-06-16 — Open-borders weight framing separated from empirical inputs
 
 ### Issue
