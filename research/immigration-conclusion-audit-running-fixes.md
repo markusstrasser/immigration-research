@@ -1540,3 +1540,23 @@ Changed the line to "Policy implication [FAIR claim, conditional on its conteste
 ### Updated conclusion
 
 The steel-man still records FAIR's full-budget argument, but the taxpayer-drain implication is now explicitly conditional on FAIR's construction. [INFERENCE]
+
+---
+
+## 2026-06-16 — Steel-man crime-wave row scoped to observed-rate evidence
+
+### Issue
+
+`research/immigration-restrictionist-arguments-steelman-2026-06-15.md` summarized "Crime wave from unauthorized" as `Mostly false — repo crime memo`. [DATA]
+
+### Why it was wrong
+
+The repo crime memo now supports a narrower claim: observed U.S. justice-system rates for first-generation / unauthorized immigrants are lower in the best current evidence. It does not directly measure true offending, all international contexts, or every current-surge subgroup. [INFERENCE]
+
+### Fix
+
+Changed the disconfirmation row to `Unsupported by observed U.S. justice-system-rate evidence` and added the true-offending/current-surge scope caveat. Added a memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The steel-man still rejects the simple unauthorized-crime-wave claim, but on the correct observed-rate evidence surface rather than a broader true-crime assertion. [INFERENCE]
