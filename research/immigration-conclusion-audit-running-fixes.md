@@ -2160,3 +2160,23 @@ Changed the Caplan audit to describe the current evidence surface as better deve
 ### Updated conclusion
 
 The Caplan critique still says his destination-local incidence answer is incomplete, but it no longer turns the repo's current evidence coverage into a proved first-binding channel ranking. [INFERENCE]
+
+---
+
+## 2026-06-16 — Cash-economy substitution caveat kept measurable
+
+### Issue
+
+`research/immigration-causal-everify-card-vs-borjas.md` said the true labor-supply contraction was "probably less" than the QWI E1 employment drop suggests and that this made the wage non-result "MORE puzzling for Borjas." [DATA]
+
+### Why it was wrong
+
+Off-W-2 substitution is a real measurement caveat, but the memo did not directly measure how much displaced unauthorized labor moved into cash work. "Probably less" and "MORE puzzling" turned a plausible measurement channel into an unmeasured directional claim. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the caveat to say cash-economy substitution weakens interpretation of the QWI E1 drop as a full labor-supply contraction, while not rescuing a large QWI-wage-gain prediction in this design. [SOURCE: memo]
+
+### Updated conclusion
+
+The E-Verify memo now treats cash-economy substitution as a measurement limitation, not as an unmeasured estimate of true labor-supply contraction. [INFERENCE]
