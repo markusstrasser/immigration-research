@@ -93,7 +93,7 @@ Total-economy E4 (BA+) employment grew ~4% (p<0.05) but this likely reflects nat
 ### What Card predicted
 
 - Low-skill immigrants are imperfect substitutes for low-skill natives
-- Removing them via enforcement will produce small or zero wage gains for natives
+- Removing them via enforcement is predicted to produce small or zero wage gains for natives
 - General-equilibrium effects (output loss, capital reallocation, output-mix shift) may even hurt natives
 - Card-Peri (2016) and Foged-Peri (2016) Denmark: native low-skill workers move into more communication-intensive tasks, see no wage loss
 
@@ -181,6 +181,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Rephrased the Card-side setup from "will produce" wage gains to prediction language, keeping theory expectations distinct from measured findings. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced speculative cash-economy substitution language with a narrower measurement caveat: off-W-2 substitution weakens E1 as a total labor-supply proxy, while leaving the QWI wage-gain result bounded to this design. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Narrowed the external-validity caveat from "the relevant test for the actual policy debate" to one relevant test for marginal enforcement mandates. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "do not move wages much" summary with bounded no-large-native-wage-loss/gain language and separated it from any shared mechanism claim. See `immigration-conclusion-audit-running-fixes.md`. |
