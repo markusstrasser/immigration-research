@@ -106,7 +106,7 @@ Total-economy E4 (BA+) employment grew ~4% (p<0.05) but this likely reflects nat
 
 ### What the data show
 
-- **Wages of native low-skill workers did not rise after E-Verify**, in any of 12 specifications, including the most sympathetic test (E1 workers in the exact industries where unauthorized are concentrated — Ag, Constr, Mfg, Food Service)
+- **No statistically significant positive QWI wage effect was observed for native low-skill workers after E-Verify**, in any of 12 specifications, including the most sympathetic test (E1 workers in the exact industries where unauthorized are concentrated — Ag, Constr, Mfg, Food Service)
 - **Stable W-2 employment in exposed industries did fall** for E1 workers (~6%, marginal). This is qualitatively consistent with the Bohn-Lofstrom-Raphael Arizona result, but QWI cannot by itself distinguish true labor-supply contraction from cash-economy movement, hours changes, establishment composition, or worker reclassification.
 - **Together: QWI employment ↓ but wages flat = the large native wage-bidding channel is not observed in this design.** Candidate adjustment channels remain hypotheses, not measured mechanisms:
   1. Capital substitution (mechanization in Ag, prefab in Constr)
@@ -182,7 +182,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 | Date | Change |
 |------|--------|
 | 2026-06-16 | Replaced "removing/restricting unauthorized labor" exports with observed E-Verify mandate variation and QWI wage language; the design does not directly observe total unauthorized labor supply. See `immigration-conclusion-audit-running-fixes.md`. |
-| 2026-06-16 | Narrowed the employment/wage mechanism interpretation: QWI shows stable W-2 employment fell while wages did not rise, but it does not identify capital, output, relocation, cash-economy, hours, or composition adjustment mechanisms. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Narrowed the employment/wage mechanism interpretation: QWI shows stable W-2 employment fell while no statistically significant positive wage effect was observed, but it does not identify capital, output, relocation, cash-economy, hours, or composition adjustment mechanisms. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "Clark economists were correct/right" language with support for the small-native-wage-effect premise in the observed E-Verify margin. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Bounded "data side with Card" and commentator-update language to the observed E-Verify wage-channel design; the result rejects large Borjas-style native wage gains for this margin, not all wage or open-borders questions. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Aligned the proposed confidence-ladder update with the same margin-specific wording: strong against large Borjas-style gains in the E-Verify margin, not a global "STRONG REJECTION." See `immigration-conclusion-audit-running-fixes.md`. |
