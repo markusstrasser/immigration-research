@@ -205,9 +205,11 @@ headline.
 
 29. `Static-cycle Card-wins finding is bounded; surge is OUTSIDE that variation`
 Rating: meta-update on prior entries 17, 19, 21
-Reason: Prior entries claim "decisive Card-side win for U.S. policy variation."
-True for variation 2008-2021. The 2021-2024 surge is a regime shift outside that
-variation. Linear extrapolation is not warranted.
+Reason: Prior entries over-compressed the E-Verify/sanctuary wage results as a
+"decisive Card-side win for U.S. policy variation." The safer reading is strong
+Card-side evidence for observed 2008-2021 marginal policy variation. The
+2021-2024 surge is a regime shift outside that variation. Linear extrapolation is
+not warranted.
 [SOURCE: this memo + research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md]
 ```
 
@@ -234,6 +236,8 @@ But:
 [SOURCE: scripts/analyze_surge_election_shift.py]
 
 ## Revisions
+
+- **2026-06-16:** Bounded ladder entry 29: the static-cycle wage work is strong Card-side evidence for observed 2008-2021 marginal policy variation, not a "decisive Card-side win" for all U.S. policy variation. See `immigration-conclusion-audit-running-fixes.md`.
 
 - **2026-06-11b (supersedes 2026-06-11a where they conflict):** Running the morning's two pre-registered kill-tests exposed two bugs in `parse_ohss_enforcement.py`: fiscal-index dates (every non-January window scrambled) and an agency-block dict-overwrite (the series was OFO port-of-entry encounters — the CHNV program's own lawful channel — read as total SWB). Consequences: (1) Key finding 2 is **reversed** — corrected USBP data show between-port crossings collapsed −95%/−96%/−58% (Cuba/Nicaragua/Venezuela) after each nationality's program start with flat pre-trends; the "+787% rise" was the lawful channel itself; corrected total-CBP DiD is null (β=+0.45, t=1.29). CHNV substituted channels; it did not reduce total arrivals (~530K paroles are planned lawful inflow — receiver-load ledger unaffected). (2) The monthly narrative (incl. "April-May 2023 lull") is wrong: corrected series shows an April-May anticipation spike, June post-lift crash (−30%), and the Dec 2023 record (301,980); the conclusion "lift ≠ surge cause" survives on this new evidence. (3) Finding 3's receiver swing **survived** its Hispanic-share kill-test (β +0.0256 → +0.0238, t≈7.2; Hispanic share itself t=17.2). Ladder entries 34-37; decision record [2026-06-11-ohss-date-universe-bugs-chnv-reversal](../decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md).
 

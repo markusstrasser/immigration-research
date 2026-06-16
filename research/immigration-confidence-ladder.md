@@ -139,7 +139,7 @@ Reason: Multivariate OLS with state FE: receiver_city β=+0.024 (t=6.96***). Top
 
 29. `Static-cycle Card-wins finding is BOUNDED to marginal-policy variation; surge is OUTSIDE that variation`
 Rating: `meta-update on prior entries 17, 19, 21`
-Reason: Prior entries claim "decisive Card-side win for U.S. policy variation." True for variation 2008-2021 (E-Verify, sanctuary). The 2021-2024 surge is a regime shift outside that variation. Linear extrapolation is not warranted. Surge-period wage estimates remain to be done (require ACS PUMS 2023). [SOURCE: research/immigration-causal-surge-2021-2024.md]
+Reason: Prior entries over-compressed the E-Verify/sanctuary wage results as a "decisive Card-side win for U.S. policy variation." The safer reading is strong Card-side evidence for observed 2008-2021 marginal policy variation. The 2021-2024 surge is a regime shift outside that variation. Linear extrapolation is not warranted. Surge-period wage estimates remain to be done (require ACS PUMS 2023). [SOURCE: research/immigration-causal-surge-2021-2024.md]
 
 ## Bias-audit layer added 2026-06-11
 
