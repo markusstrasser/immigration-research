@@ -933,7 +933,7 @@ The user's directive: "PISA is not IQ … we need to focus on g and actual Raven
 
 ### The g ≠ FSIQ Distinction
 
-FSIQ is a **weighted composite** — it reflects battery composition (how many spatial vs verbal vs speed subtests). Different batteries give different FSIQ gaps (0-5 IQ points). Latent g is the **common factor extracted via factor analysis** from multiple subtests. It's what all cognitive tests share — the closest thing to "raw ability."
+FSIQ is a **weighted composite** — it reflects battery composition (how many spatial vs verbal vs speed subtests). Different batteries give different FSIQ gaps (0-5 IQ points). Latent g is the **common factor extracted via factor analysis** from multiple subtests. It is a useful summary of shared variance, but it is **not** a battery-free essence of "raw ability." It inherits properties from the tests that define it.
 
 The key question: **When you extract latent g properly, do men and women differ?**
 
@@ -1001,6 +1001,18 @@ Overall: **g = +1.21 IQ points favoring females (p=.004)**. Bifactor model: +3.5
 **Why WJ-III g tilts female:** The WJ-III includes processing speed (Gs) and retrieval fluency tests that favor females. When g is extracted from a battery that includes these tests, the female advantage on speed/fluency bleeds into g. The WAIS does the same but also includes Information (strongly male-favoring) which counterbalances. The WJ-III's Academic Knowledge (Gc) showed DIF — 3 Gc subtests had non-invariant intercepts and were dropped.
 
 **The "only condition" that supported Lynn:** "the only condition under which our analyses supported Lynn's developmental theory was when we used both listwise deletion of missing data and modeled g as a composite, rather than a latent variable." [⚠ FRAMING-SENSITIVE — this finding is real but the authors present it as a methodological artifact rather than a legitimate alternative]
+
+### What This Does And Does Not Say About `16F` Versus `18M`
+
+It does **not** support a single clean average number for "a 16-year-old female versus an 18-year-old male on `g`."
+
+Why:
+
+1. IQ / latent-ability comparisons are already age-standardized, so the `16` versus `18` age gap is mostly normalized away.
+2. The late-adolescent sex difference itself is battery-dependent: `Keith et al. 2008` gives a small female tilt at `16-17` and a larger female tilt at `18-22`, while representative `Raven` work is near null and some adult `WAIS` analyses tilt male.
+3. The available studies report age-band means, not a direct same-design `16F` versus `18M` cross-band estimand.
+
+**Best practical read:** the direct age-standardized gap is probably **near zero on average**, with a defensible literature range of roughly `female +3` to `male +3` IQ points depending on battery and latent model. Anything sharper than that is false precision. [INFERENCE]
 
 ### Colom et al. 2002: "Ability in General" ≠ "General Ability"
 
@@ -1181,6 +1193,8 @@ The honest answer to the original question: **somewhere between 0 and 3 IQ point
    - Strand CAT NVR (N=320K): **null** d≈0.02
 
    g is a statistical extraction that inherits whatever sex-differentiated variance the battery carries.
+
+   For a direct late-adolescent comparison such as `16F` versus `18M`, the safest compression is **approximately null on average**, not because the literature converges on zero, but because the positive and negative battery-specific estimates cancel and no direct same-design estimand is established. [INFERENCE]
 
 2. **Greater male variability is real and consequential.** SD ratio ~1.1-1.16 on g/FSIQ across all studies. At pure variability (equal means), produces ~1.5:1 at top 2%. Combined with even a small mean shift (d≈0.07), reaches ~1.7-2:1. Deary's ASVAB data: 33:17 (~1.9:1) at top 2%.
 

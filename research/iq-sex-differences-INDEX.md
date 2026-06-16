@@ -28,6 +28,7 @@ Files the agent should consult before acting. Start with Core State, then drill 
 | `iq-sex-differences-causal-methods-frontier.md` | Which newer causal machinery helps here and which does not | Proposing proximal/transport/hidden-mediator upgrades |
 | `iq-sex-differences-frontier-literature-audit.md` | 2023-2025 literature audit | Checking if synthesis is genuinely new |
 | `iq-sex-differences-frontier-refresh-2026-03-06.md` | Latest literature refresh confirming integration novelty | Checking whether findings are already established |
+| `iq-sex-differences-new-insight-refresh-2026-04-23.md` | 2026 refresh: manifest composite vs latent `g` vs surface-family fork | Checking the newest update before hardening canonical claims |
 | `iq-sex-differences-model-review-2026-03-06.md` | Cross-model blind-spot review (Gemini + GPT) | Reusing external critique, softening claims |
 
 ## Battery & Measurement
