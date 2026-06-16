@@ -1520,3 +1520,23 @@ Changed the shorthand verdicts to observed U.S. justice-system-rate skepticism a
 ### Updated conclusion
 
 Caplan remains strongest on the U.S. crime-objection lane, but only for the observed justice-system-rate claim already defended in the crime memo. [INFERENCE]
+
+---
+
+## 2026-06-16 — FAIR taxpayer-drain line marked as conditional claim
+
+### Issue
+
+`research/immigration-restrictionist-arguments-steelman-2026-06-15.md` had already renamed FAIR as an advocacy high-cost ledger, but the F2 argument chain still said "Policy implication: Massive net drain; every taxpayer ~$956-1,156/yr" without marking that line as FAIR's implication rather than the repo's conclusion. [DATA]
+
+### Why it was wrong
+
+The number comes from FAIR's contested ledger. It can be preserved as part of the restrictionist steel-man, but it should not read like a validated taxpayer-incidence estimate until FAIR/ITEP/Pew stock, child-attribution, household-benefit, and cost-allocation choices are reconciled. [INFERENCE]
+
+### Fix
+
+Changed the line to "Policy implication [FAIR claim, conditional on its contested ledger]" and added a memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The steel-man still records FAIR's full-budget argument, but the taxpayer-drain implication is now explicitly conditional on FAIR's construction. [INFERENCE]

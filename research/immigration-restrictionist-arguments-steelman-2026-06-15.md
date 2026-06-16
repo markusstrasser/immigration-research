@@ -97,7 +97,7 @@ National **education×experience** framing is more coherent than “city has imm
 1. **Premise:** Count all federal, state, local spend on unauthorized + US-born children of unauthorized. [SOURCE: FAIR 2023]
 2. **Numbers:** **$182B** gross cost − **$32B** taxes = **$150.7B net**/yr; **$8,776**/illegal or US-born child of illegal; **15.5M** + **5.4M** citizen children. [SOURCE: FAIR 2023; Congress testimony Kirchner 2024]
 3. **Mechanism:** Education, Medicaid, law enforcement, justice, general public services — **full budget**, not NAS cell.
-4. **Policy implication:** Massive net drain; every taxpayer **~$956–1,156**/yr.
+4. **Policy implication [FAIR claim, conditional on its contested ledger]:** Massive net drain; every taxpayer **~$956–1,156**/yr.
 
 ### Critical limits [DISCONFIRMATION]
 
@@ -254,3 +254,4 @@ That is essentially our unified theory sentence 1 — restrictionists are right 
 | 2026-06-16 | Narrowed receiver-city language from crisis/system-collapse/catastrophic wording to gross-load shelter/budget stress and receiver-capacity ledgers. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Aligned the `+$46k Mexico` all-in row with the Mexico NPV memo: omitted layers make the scalar export unsupported, not a measured all-in negative result. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Scoped the "Mexico +$46k kills Mexican drain" line: the benchmark blocks `<HS`-only exports, not full-ledger all-in drain claims. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Marked the FAIR taxpayer-drain policy implication as FAIR's conditional claim, not the repo's unqualified conclusion. See `immigration-conclusion-audit-running-fixes.md`. |
