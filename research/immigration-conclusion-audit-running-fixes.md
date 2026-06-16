@@ -1560,3 +1560,23 @@ Changed the disconfirmation row to `Unsupported by observed U.S. justice-system-
 ### Updated conclusion
 
 The steel-man still rejects the simple unauthorized-crime-wave claim, but on the correct observed-rate evidence surface rather than a broader true-crime assertion. [INFERENCE]
+
+---
+
+## 2026-06-16 — Receiver-election exposure wording narrowed to indicators
+
+### Issue
+
+`research/immigration-causal-surge-2021-2024.md` still titled the election section "2024 election shift x surge exposure" and said the shift was correlated with "receiver-city / border-surge exposure." [DATA]
+
+### Why it was wrong
+
+The memo's verified object is a county screen using receiver-city and border/high-immigration indicators, plus foreign-born share and recent foreign-born inflow controls. It does not measure an exposure dose, identify causal voter response to the surge, or decompose border counties from broader Hispanic realignment and local political trends. [INFERENCE]
+
+### Fix
+
+Renamed the section to receiver/border indicators, changed the interpretation paragraph to describe indicator associations, and removed "handling the surge directly" / "absorbing current inflow" language. Added a memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The receiver-election result remains a bounded correlational signal: receiver-city status is associated with about +2.4pp GOP shift after controls, but it is not a measured surge-exposure effect. [INFERENCE]

@@ -68,7 +68,7 @@ Event study:
 
 Per-migrant per-day cost: ~$190 NYC, ~$200 Denver, ~$140 Chicago. Total 5-year cost across these cities: $13B+ across local + state combined.
 
-### 2024 election shift × surge exposure
+### 2024 election shift x receiver/border indicators
 
 **Reading rule after 2026-06-11 kill-test:** the raw receiver-city gap below is descriptive only. Use the Hispanic-share-controlled receiver coefficient, about **+2.4pp**, as the headline correlational upper-bound. [SOURCE: `sources/immigration-causal/data/outcomes/analysis/swing_hispanic_control/results.json`]
 
@@ -121,7 +121,7 @@ Per-migrant per-day cost: ~$190 NYC, ~$200 Denver, ~$140 Chicago. Total 5-year c
 [BIAS CAVEAT] The instrument (LLM) has known training-time priors on politically charged interpretation. The numbers above are administrative; interpretations below are scenarios.
 
 **Most-defensible reading:**
-The 2024 election shift was real and correlated with receiver-city / border-surge exposure. Counties that received bused migrants (NYC, Chicago, Boston, Denver) plus border counties handling the surge directly (TX RGV, El Paso, Miami-Dade) swung 4-11pp more GOP than comparable counties. After controlling for state effects and population size, receiver-city status alone is associated with +2.4pp GOP shift. The fb_share coefficient (positive) and recent_fb_inflow coefficient (negative) suggest different mechanisms: established immigrant communities (Hispanic citizens in TX/FL/NY) moved toward Trump, while areas absorbing CURRENT inflow may have voted more Democratic on net (could reflect new citizens, sympathetic natives, or unresolved compositional confounding).
+The 2024 election shift was real and correlated with the memo's receiver-city / border-county indicators. Bused-migrant receiver counties (NYC, Chicago, Boston, Denver) and border/high-immigration counties in the screen (TX RGV, El Paso, Miami-Dade) swung 4-11pp more GOP than the national county baseline. After controlling for state effects and population size, receiver-city status alone is associated with +2.4pp GOP shift. The fb_share coefficient (positive) and recent_fb_inflow coefficient (negative) suggest different mechanisms: established immigrant communities (Hispanic citizens in TX/FL/NY) moved toward Trump, while areas with higher recent foreign-born inflow moved less Republican on net (could reflect new citizens, sympathetic natives, or unresolved compositional confounding).
 
 **The "receiver capacity stress" reading has empirical support:**
 NYC went from $1.4B→$3.7B on migrant care in one year. Cook County (Chicago) cost $228M peak. MA hit shelter cap. Denver cut services to fund migrant care. These are observable, quantifiable gross system loads concentrated in specific places — not net burden estimates — and those places swung substantially toward Trump in 2024.
@@ -238,6 +238,8 @@ But:
 ## Revisions
 
 - **2026-06-16:** Bounded ladder entry 29: the static-cycle wage work is strong Card-side evidence for observed 2008-2021 marginal policy variation, not a "decisive Card-side win" for all U.S. policy variation. See `immigration-conclusion-audit-running-fixes.md`.
+
+- **2026-06-16:** Replaced residual "surge exposure" election wording with receiver/border indicator language; the association is not a measured exposure dose or causal surge effect. See `immigration-conclusion-audit-running-fixes.md`.
 
 - **2026-06-11b (supersedes 2026-06-11a where they conflict):** Running the morning's two pre-registered kill-tests exposed two bugs in `parse_ohss_enforcement.py`: fiscal-index dates (every non-January window scrambled) and an agency-block dict-overwrite (the series was OFO port-of-entry encounters — the CHNV program's own lawful channel — read as total SWB). Consequences: (1) Key finding 2 is **reversed** — corrected USBP data show between-port crossings collapsed −95%/−96%/−58% (Cuba/Nicaragua/Venezuela) after each nationality's program start with flat pre-trends; the "+787% rise" was the lawful channel itself; corrected total-CBP DiD is null (β=+0.45, t=1.29). CHNV substituted channels; it did not reduce total arrivals (~530K paroles are planned lawful inflow — receiver-load ledger unaffected). (2) The monthly narrative (incl. "April-May 2023 lull") is wrong: corrected series shows an April-May anticipation spike, June post-lift crash (−30%), and the Dec 2023 record (301,980); the conclusion "lift ≠ surge cause" survives on this new evidence. (3) Finding 3's receiver swing **survived** its Hispanic-share kill-test (β +0.0256 → +0.0238, t≈7.2; Hispanic share itself t=17.2). Ladder entries 34-37; decision record [2026-06-11-ohss-date-universe-bugs-chnv-reversal](../decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md).
 
