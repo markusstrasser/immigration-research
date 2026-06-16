@@ -1940,3 +1940,23 @@ Changed the active surge memo and confidence-ladder entries to say the corrected
 ### Updated conclusion
 
 The repo now rejects the simple post-lift-jump causal story, while leaving other Title 42 policy-effect channels open unless separately tested. [INFERENCE]
+
+---
+
+## 2026-06-16 — Welfare-magnet policy implication made conditional
+
+### Issue
+
+`research/immigration-restrictionist-arguments-steelman-2026-06-15.md` stated "Immigration + welfare expansion = fiscal unsustainability and wrong skill mix" as a policy implication in the Razin welfare-state chain. [DATA]
+
+### Why it was wrong
+
+The memo is mapping a restrictionist argument chain, and this channel is not modeled in the repo's DuckDB layer. Razin-style welfare-magnet models can support a conditional adverse fiscal/skill-mix equilibrium claim, but the memo had not established an unqualified finding of fiscal unsustainability. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Marked the implication as a "Razin-style model claim" and reframed it as a possible adverse fiscal and skill-mix equilibrium with response margins of low-skill restrictions, benefit restrictions, or welfare-state design changes. [SOURCE: memo]
+
+### Updated conclusion
+
+The welfare-magnet chain remains a live restrictionist mechanism, but it is now explicitly conditional on the model rather than a repo-level fiscal-unsustainability verdict. [INFERENCE]
