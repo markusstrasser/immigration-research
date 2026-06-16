@@ -1800,3 +1800,23 @@ Replaced "beat"/"raise average" with narrow federal-proxy comparison language, a
 ### Updated conclusion
 
 The Europe/Caucasian memo still supports a corridor-selection screen on the federal proxy, but no longer exports that screen as a broad fiscal verdict or measured selection mechanism. [INFERENCE]
+
+---
+
+## 2026-06-16 — Sanctuary wage null phrasing changed to non-significance
+
+### Issue
+
+`research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md` and confidence-ladder entry 21 called the sanctuary QWI wage result a "STRONG null result" and said policy variation "does not change" native low-skill wages either direction. [DATA]
+
+### Why it was wrong
+
+The cited evidence is that all E1 specifications had `|t|<1.0` in the TWFE design. That is a non-significance statement, not an equivalence test proving a zero effect or bounding all practically meaningful effects. The result still aligns with the bounded Card-side reading, but the statistical claim should not exceed "no statistically significant E1 wage change observed." [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the active paradigm synthesis row, embedded ladder snippet, and standalone confidence-ladder entry to say no statistically significant E1 wage change was observed, and added that equivalence was not tested. [SOURCE: memo]
+
+### Updated conclusion
+
+The sanctuary QWI pass remains a useful policy-margin check against obvious large wage movement, but the repo no longer treats non-significance as a proven strong null. [INFERENCE]
