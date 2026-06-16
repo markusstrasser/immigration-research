@@ -69,13 +69,12 @@ Workflow & project:
 - **trending-scout** — scan for new AI/agent developments
 
 Data acquisition:
-- **data-acquisition** — probe→stage→register pattern for external datasets (Census, NCES, PSID, MEPS, etc.)
+- **data-acquisition** — probe→stage→register for external datasets (research + intel patterns)
 - **census-data** — Census Data API + IPUMS extracts (ACS, CPS, SIPP, QWI variable codes)
 - **youtube-transcript** — fetch video transcripts via yt-dlp (podcasts, interviews)
 - **dataset-register** — standardize per-topic dataset catalogs
 
 Infra & integrations:
-- **browse** — persistent headless browser daemon
 - **google-workspace** — Google Workspace automation (Drive, Sheets, Gmail, Calendar)
 - **scientific-drawing** — Typst/CeTZ, TikZ, D2, Asymptote diagrams
 - **modal** — Modal serverless Python cloud compute
