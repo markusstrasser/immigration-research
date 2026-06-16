@@ -125,7 +125,7 @@ Reason: BEA Use Table 2023 partial-equilibrium with industry FB-share assumption
 Rating: `medium`
 Reason: SWB encounters peaked Jan-Mar 2023 at 50K+/month BEFORE Title 42 lift (May 2023). Lift coincided with April-May lull, then gradual rebuild to surge levels. Pre/post comparison is composition-driven, not policy-causal. [SOURCE: research/immigration-causal-surge-2021-2024.md]
 
-26. `CHNV parole did not substitute legal flow for illegal flow; it added on top` — **SUPERSEDED by entry 34**
+26. `CHNV parole did not substitute legal flow for illegal flow; it added on top` — **INVALIDATED by entry 34; historical only, do not quote**
 Rating: `strong`
 Reason: TWFE β=+3.29 (t=4.78) on CHNV nationality vs control after Jan 2023. Encounters from CHNV nationalities ROSE 787% post-program, not fell. Refutes the stated rationale that legal pathway would reduce irregular migration. [SOURCE: data/cbp/swb_encounters_by_citizenship_monthly.parquet]
 
@@ -145,8 +145,8 @@ Reason: Prior entries over-compressed the E-Verify/sanctuary wage results as a "
 
 Trigger: mirror-test against the criticisms of the Cato 2026 fiscal study ("did we commit its biases?"). Full audit and the general checklist live in [notes/quant-bias-checklist.md](../notes/quant-bias-checklist.md). Prior entries are not rewritten (append-only); these supersede where they conflict.
 
-30. `CHNV parole did not substitute legal flow for illegal flow; it added on top` — **SUPERSEDED by entry 34 after interim downgrade**
-Reason: the source memo itself lists reverse causation as a live mechanism (the program was created because flows from these nationalities were already rising), and no event-study leads/pre-trend test adjudicated it. The TWFE post coefficient cannot separate "program signaled openness" from "continuation of the pre-program trajectory." The descriptive fact survives (encounters rose alongside ~530K paroles; substitution did not happen); the causal "program added flow" reading is medium until a pre-trend pass is run. Also: any reuse of the `+787%` figure must carry its base (2,598/month treated-nationality baseline). [SOURCE: research/immigration-causal-surge-2021-2024.md]
+30. `CHNV parole did not substitute legal flow for illegal flow; it added on top` — **INVALIDATED by entry 34; historical only, do not quote**
+Reason: interim downgrade before the OHSS parser correction. The source memo itself listed reverse causation as a live mechanism, but entry 34 later reversed the descriptive reading too: the "+787%" rise was the program's lawful OFO channel on a scrambled clock, while corrected USBP between-port crossings fell sharply. Do not reuse the "substitution did not happen" language or the `+787%` figure except as an error trace. [SOURCE: research/immigration-causal-surge-2021-2024.md] [SOURCE: decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md]
 
 31. `Receiver-city 2024 GOP swing` (entry 28) — **grade unchanged (medium), headline language corrected**
 The phrase "magnitude implausibly large for non-immigration causes alone" is a plausibility assertion doing causal work and should not be reused. The top swing counties (Bronx, Queens, Miami-Dade, Hidalgo, El Paso) are among the most Hispanic-populous counties in the country; the national 2024 Hispanic realignment is near-collinear with "receiver city" in that list, and the multivariate pass controls FB share but not Hispanic share. Use the controlled estimate (+2.4pp, receiver_city β=+0.024, state FE) rather than the raw +4.41pp gap, and treat even that as upper-bound until a Hispanic-share control or within-Hispanic-county comparison is run. [SOURCE: research/immigration-causal-surge-2021-2024.md] [SOURCE: notes/quant-bias-checklist.md item 25]
