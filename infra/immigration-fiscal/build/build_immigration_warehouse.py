@@ -254,6 +254,24 @@ def build() -> None:
     """)
 
     con.execute("""
+        CREATE OR REPLACE TABLE acs_nh_white_education_by_nativity_2023 AS
+        SELECT
+          TRY_CAST(NATIVITY AS INTEGER) AS nativity,
+          CASE
+            WHEN TRY_CAST(SCHL AS INTEGER) < 16 THEN '<HS'
+            WHEN TRY_CAST(SCHL AS INTEGER) IN (16, 17) THEN 'HS / GED'
+            WHEN TRY_CAST(SCHL AS INTEGER) IN (18, 19, 20) THEN 'some college / associate'
+            ELSE 'other'
+          END AS education_bucket,
+          SUM(TRY_CAST(PWGTP AS DOUBLE)) AS weighted_adults
+        FROM acs_person_raw
+        WHERE TRY_CAST(AGEP AS INTEGER) BETWEEN 25 AND 64
+          AND LPAD(CAST(HISP AS VARCHAR), 2, '0') = '01'
+          AND TRY_CAST(RAC1P AS INTEGER) = 1
+        GROUP BY 1, 2
+    """)
+
+    con.execute("""
         CREATE OR REPLACE TABLE acs_foreign_born_education_state_shares_2023 AS
         SELECT
           LPAD(CAST(STATE AS VARCHAR), 2, '0') AS state_fips,
@@ -275,6 +293,7 @@ def build() -> None:
     for tbl in (
         "acs_foreign_born_education_bucket_totals_2023",
         "acs_foreign_born_education_state_shares_2023",
+        "acs_nh_white_education_by_nativity_2023",
     ):
         con.execute(f"COPY {tbl} TO '{proto / (tbl + '.csv')}' (HEADER, DELIMITER ',')")
 
@@ -285,21 +304,32 @@ def build() -> None:
     build_stage2(stage2_dir)
     load_stage2_into_duckdb(con, stage2_dir)
 
+    # Stage 5 local-cost context (EL anchor, RPP, Medicaid, receiver cities)
+    from build_stage5_local_cost_context import build_stage5, load_stage5_into_duckdb
+
+    stage5_dir = DERIVED / "stage5"
+    build_stage5(stage5_dir)
+    load_stage5_into_duckdb(con, stage5_dir)
+
     # SIPP federal donor cells (replaces broken CPS HHINC prototype)
     try:
-        from build_federal_microsim_sipp_2024 import build_donor_cells, load_federal_microsim_into_duckdb
+        from build_federal_microsim_sipp_2024 import build_all_donor_cells, load_federal_microsim_into_duckdb
 
-        donor_rows = build_donor_cells()
-        load_federal_microsim_into_duckdb(con, donor_rows)
+        fb_rows, usb_rows = build_all_donor_cells()
+        load_federal_microsim_into_duckdb(con, fb_rows, ebornus="2")
+        load_federal_microsim_into_duckdb(con, usb_rows, ebornus="1")
         proto.mkdir(parents=True, exist_ok=True)
         import csv as _csv
 
-        donor_path = proto / "sipp_household_donor_cells_2024.csv"
-        with donor_path.open("w", newline="") as f:
-            w = _csv.DictWriter(f, fieldnames=list(donor_rows[0].keys()))
-            w.writeheader()
-            w.writerows(donor_rows)
-        print(f"Wrote {donor_path} ({len(donor_rows)} donor cells)")
+        for path, rows in (
+            (proto / "sipp_household_donor_cells_2024.csv", fb_rows),
+            (proto / "sipp_household_donor_cells_usborn_2024.csv", usb_rows),
+        ):
+            with path.open("w", newline="") as f:
+                w = _csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+                w.writeheader()
+                w.writerows(rows)
+            print(f"Wrote {path} ({len(rows)} donor cells)")
     except Exception as exc:
         print(f"WARN: federal microsim skipped: {exc}", file=sys.stderr)
 
@@ -313,6 +343,7 @@ def build() -> None:
         "acs_origin_household_national_2023",
         "acs_foreign_born_education_bucket_totals_2023",
         "acs_foreign_born_education_state_shares_2023",
+        "acs_nh_white_education_by_nativity_2023",
         "school_finance_county_2023",
         "chas_county_housing_stress_2018_2022",
         "irs_migration_county_2022_2023",
@@ -321,7 +352,13 @@ def build() -> None:
         "puma_county_context_2023",
         "origin_puma_household_stage2_context_2023",
         "sipp_household_donor_cells_2024",
+        "sipp_household_donor_cells_usborn_2024",
         "acs_origin_household_federal_microsim_2023",
+        "acs_nh_white_federal_microsim_2023",
+        "state_stage5_context_2023",
+        "state_el_lep_2018",
+        "receiver_city_migrant_costs",
+        "origin_puma_household_stage5_context_2023",
     ]
     slim = DUCKDB_PATH.with_suffix(".build.duckdb")
     if slim.exists():
@@ -405,6 +442,20 @@ def _validate(con) -> None:
     ]
     print("\n--- stage2 ---")
     for tbl, target in stage2_checks:
+        n = con.execute(
+            "SELECT COUNT(*) FROM information_schema.tables WHERE table_name=?", [tbl]
+        ).fetchone()[0]
+        if n:
+            cnt = con.execute(f"SELECT COUNT(*) FROM {tbl}").fetchone()[0]
+            flag = " OK" if cnt >= target else " WARN"
+            print(f"  {tbl}: {cnt:,} (target >={target:,}{flag})")
+
+
+    print("\n--- stage5 ---")
+    for tbl, target in [
+        ("state_stage5_context_2023", 50),
+        ("origin_puma_household_stage5_context_2023", 5000),
+    ]:
         n = con.execute(
             "SELECT COUNT(*) FROM information_schema.tables WHERE table_name=?", [tbl]
         ).fetchone()[0]

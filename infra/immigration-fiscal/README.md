@@ -32,6 +32,9 @@ bash rebuild_mvp.sh
 |------|------|
 | `acquire/setup.sh` | Main acquisition (~80 URLs) |
 | `acquire/setup-net-negative.sh` | Stage-5 fiscal/local-cost datasets |
+| `acquire/setup-lifetime.sh` | Lifetime benchmarks + linkage docs (NAS/NRC/Orrenius/Storesletten) |
+| `rebuild_lifetime_warehouse.sh` | `immigration_lifetime_evidence.duckdb` + `immigration_fiscal_union.duckdb` (country tensor) |
+| `build/build_country_fiscal_tensor.py` | Population × ledger × order tensor + bridge grid |
 | `acquire/config.env.example` | Portable default paths |
 | `acquire/config.local.env` | Your machine (gitignored) |
 | `DOWNLOAD_MANIFEST.tsv` | Machine-readable catalog + verify script input |

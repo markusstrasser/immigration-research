@@ -18,4 +18,112 @@ stage5	optional	external/stage5_net_negative/cms/medicaid_financial_management.c
 stage5	optional	external/stage5_net_negative/bea/rpp_state_metro_2024.xlsx	10000	setup-net-negative.sh	BEA regional price parities
 stage5	optional	external/stage5_net_negative/nces/ccd_lea_141_1718_english_learners.zip	100000	setup-net-negative.sh	District EL counts 2017-18
 stage5	optional	external/stage5_net_negative/census/gov_finances_2022_individual_unit.zip	100000	setup-net-negative.sh	Census gov finances individual units
+stage5	optional	derived/stage5/state_stage5_context_2023.csv	1000	build	Built by rebuild.sh
+stage5	optional	derived/stage3_proto/sipp_scenario_ledger_2024.csv	50	compose	98-cell SIPP scenario ledger
+stage5	optional	derived/stage3_proto/origin_fiscal_scenario_2023.csv	50	compose	Per-origin fiscal scenario
 stage5	optional	external/stage5_net_negative/receiver/receiver_city_migrant_costs.csv	100	setup-net-negative.sh	Copied from immigration-causal
+lifetime	optional	external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf	1000000	setup-lifetime.sh	NAS 2017 full report (education NPV tables)
+lifetime	optional	external/lifetime/nrc/nrc_1997_new_americans.pdf	500000	setup-lifetime.sh	NRC 1997 New Americans benchmark
+lifetime	optional	external/lifetime/dallasfed/orrenius_nas_fiscal_sensitivity_wp1704.pdf	50000	setup-lifetime.sh	Orrenius NAS sensitivity synthesis
+lifetime	optional	external/lifetime/nber/storesletten_2003_fiscal_heterogeneity_w9489.pdf	50000	setup-lifetime.sh	Storesletten fiscal heterogeneity
+lifetime	optional	external/lifetime/census/sehsd_wp2024_01_sipp_research_files.pdf	100000	setup-lifetime.sh	SIPP restricted research files WP
+lifetime	optional	external/lifetime/census/census_linkage_data_file_inventory.pdf	100000	setup-lifetime.sh	Census admin linkage inventory
+lifetime	optional	external/lifetime/irs/irs_soi_puf_limitations_06resconf.pdf	100000	setup-lifetime.sh	IRS PUF field limitations
+lifetime	optional	external/lifetime/applications/synthetic_sipp_beta_landing.html	5000	setup-lifetime.sh	Synthetic SIPP application landing (HTML)
+lifetime	optional	external/lifetime/imf/g20_2025_aging_and_migration.pdf	100000	setup-lifetime.sh	IMF G20 aging-migration macro frame
+lifetime	optional	external/lifetime/iza/iza_dp18218_agi_soon_migration.pdf	500000	setup-lifetime.sh	IZA AGI-soon migration reframing
+lifetime	optional	external/lifetime/worldbank/mexico_worker_remittances_bx_trf_pwkr_cd_dt.json	1000	setup-lifetime.sh	World Bank Mexico remittance series
+lifetime	optional	external/lifetime/nap/nap_1998_immigration_debate_fiscal_effects.pdf	500000	setup-lifetime.sh	NAP Immigration Debate Lee/Miller fiscal
+lifetime	optional	external/lifetime/nber/lee_miller_1998_generational_accounting_immigration_w7041.pdf	50000	setup-lifetime.sh	Lee Miller generational accounting
+lifetime	optional	external/lifetime/nber/auerbach_oreopoulos_2000_generational_accounting_immigration.pdf	50000	setup-lifetime.sh	Auerbach Oreopoulos GA immigration
+lifetime	optional	external/lifetime/aer/lee_miller_2000_immigration_social_security_fiscal_aer.pdf	10000	setup-lifetime.sh	Lee Miller AER Social Security fiscal
+lifetime	optional	external/lifetime/nber/borjas_2016_undocumented_labor_supply_w22102.pdf	50000	setup-lifetime.sh	Borjas undocumented labor supply
+lifetime	optional	external/lifetime/nber/card_2005_is_new_immigration_really_so_bad_w11547.pdf	50000	setup-lifetime.sh	Card immigration disconfirmation
+lifetime	optional	external/lifetime/bea/spi_state_summary_2023.zip	5000	setup-lifetime.sh	BEA state personal income summary
+lifetime	optional	external/lifetime/cms/medicare_trustees_report_2024.pdf	500000	setup-lifetime.sh	Medicare Trustees 2024 late-life costs
+lifetime	optional	external/lifetime/cdc/nvsr72_12_us_life_tables_2021_hispanic_origin.pdf	500000	setup-lifetime.sh	CDC life tables by Hispanic origin 2021
+lifetime	optional	external/lifetime/cgdev/clemens_2023_fiscal_effect_capital_tax_adjustment.pdf	50000	setup-lifetime.sh	Clemens capital-tax NAS adjustment
+lifetime	optional	external/lifetime/cgdev/clemens_pritchett_2016_migration_restrictions_wp423.pdf	50000	setup-lifetime.sh	Clemens Pritchett migration restrictions
+lifetime	optional	external/lifetime/cgdev/clemens_huang_graham_2018_refugee_labor_market_access_wp496.pdf	50000	setup-lifetime.sh	Refugee labor market access fiscal
+lifetime	optional	external/lifetime/nber/alesina_miano_stantcheva_2018_immigration_redistribution_w24733.pdf	50000	setup-lifetime.sh	Alesina immigration redistribution
+lifetime	optional	external/lifetime/cbo/cbo_60165_immigration_federal_macro.pdf	50000	setup-lifetime.sh	CBO federal immigration (copy from data/cbo)
+lifetime	optional	external/lifetime/cbo/cbo_61256_immigration_state_local.pdf	50000	setup-lifetime.sh	CBO state-local immigration (copy from data/cbo)
+lifetime	optional	external/lifetime/borjas/borjas_2000_handbook_issues_economics_immigration_intro_c6051.pdf	50000	setup-lifetime.sh	Borjas handbook intro fiscal framing
+lifetime	optional	external/lifetime/borjas/borjas_1994_immigration_welfare_1970_1990_w4872.pdf	50000	setup-lifetime.sh	Borjas immigrant welfare 1970-1990
+lifetime	optional	external/lifetime/nber/duncan_trejo_2018_socioeconomic_integration_second_gen_w24394.pdf	50000	setup-lifetime.sh	Duncan Trejo 2nd-gen integration
+lifetime	optional	external/lifetime/nber/kuka_shenhav_shih_2018_daca_education_returns_w24315.pdf	50000	setup-lifetime.sh	DACA education returns
+lifetime	optional	external/lifetime/worldbank/usa_worker_remittances_bx_trf_pwkr_cd_dt.json	1000	setup-lifetime.sh	World Bank USA remittance outflows
+lifetime	optional	external/lifetime/omb/budget_fy2025_table_3_1_outlays_by_function.xlsx	5000	setup-lifetime.sh	OMB FY2025 outlays by function
+lifetime	optional	external/lifetime/omb/budget_fy2025_table_12_1_federal_grants_state_local.xlsx	5000	setup-lifetime.sh	OMB FY2025 federal grants S&L
+lifetime	optional	external/lifetime/cream/dustmann_frattini_2013_fiscal_effects_immigration_uk_cdp_22_13.pdf	100000	setup-lifetime.sh	Dustmann Frattini UK fiscal comparator
+lifetime	optional	external/lifetime/nber/abramitzky_boustan_eriksson_2016_cultural_assimilation_mass_migration_w22381.pdf	50000	setup-lifetime.sh	Abramitzky cultural assimilation
+lifetime	optional	external/lifetime/nber/abramitzky_boustan_2019_intergenerational_mobility_immigrants_w26408.pdf	50000	setup-lifetime.sh	Abramitzky intergenerational mobility
+lifetime	optional	external/lifetime/nber/alesina_murard_rapoport_2019_immigration_redistribution_europe_w25562.pdf	50000	setup-lifetime.sh	Alesina EU redistribution
+lifetime	optional	external/lifetime/methodology/green_kotlikoff_2006_relativity_fiscal_language_w12344.pdf	50000	setup-lifetime.sh	Green Kotlikoff fiscal language
+lifetime	optional	external/lifetime/econstor/colas_sachs_2024_indirect_fiscal_benefits_low_skill.pdf	500000	setup-lifetime.sh	Colas Sachs indirect fiscal offset (~$750/yr)
+lifetime	optional	external/lifetime/aei/orrenius_viard_zavodny_2025_fiscal_impact_update.pdf	100000	setup-lifetime.sh	Orrenius AEI 2025 fiscal synthesis
+lifetime	optional	external/lifetime/nber/gould_2024_asylum_seekers_homelessness_w33655.pdf	500000	setup-lifetime.sh	Asylum seekers local shelter shock
+lifetime	optional	external/lifetime/nber/akers_boustan_2024_immigration_inequality_next_generation_w33961.pdf	500000	setup-lifetime.sh	Native-child mobility in immigrant cities
+lifetime	optional	external/lifetime/nber/bitler_hoynes_2012_immigrants_welfare_safety_net_w17667.pdf	50000	setup-lifetime.sh	Bitler Hoynes safety-net calibration
+lifetime	optional	external/lifetime/nber/clemens_lewis_2022_low_skill_immigration_restrictions_w30589.pdf	500000	setup-lifetime.sh	Clemens Lewis firm-level disconfirmation
+lifetime	optional	external/lifetime/nber/razin_wahba_2012_welfare_magnet_immigration_w17515.pdf	50000	setup-lifetime.sh	Razin Wahba welfare magnet hypothesis
+lifetime	optional	external/lifetime/nber/landais_posch_muller_2017_welfare_magnet_denmark_w26454.pdf	50000	setup-lifetime.sh	Denmark welfare magnet evidence
+lifetime	optional	external/lifetime/nber/blau_kahn_2012_immigration_distribution_incomes_w18515.pdf	50000	setup-lifetime.sh	Blau Kahn immigration income distribution
+lifetime	optional	external/lifetime/brookings/vmt_external_cost_congestion_jpube_2017.pdf	100000	setup-lifetime.sh	VMT congestion external cost proxy
+lifetime	optional	external/lifetime/frbsf/econ_letter_2023_immigration_urban_phenomenon.html	50000	setup-lifetime.sh	FRBSF housing-demand nuance (HTML)
+lifetime	optional	external/lifetime/banqueducanada/swp2023_57_immigration_fiscal_capacity.pdf	500000	setup-lifetime.sh	BoC immigration fiscal capacity comparator
+lifetime	optional	external/lifetime/nber/foged_peri_2016_immigrants_effect_native_workers_w19315.pdf	100000	setup-lifetime.sh	Foged Peri Denmark task-upgrading
+lifetime	optional	external/lifetime/iza/iza_dp8961_foged_peri_immigrants_native_workers.pdf	100000	setup-lifetime.sh	IZA mirror Foged Peri
+lifetime	optional	external/lifetime/nber/peri_ottaviano_2008_immigration_national_wages_w14188.pdf	100000	setup-lifetime.sh	Peri Ottaviano national wage path
+lifetime	optional	external/lifetime/nber/peri_ottaviano_2005_rethinking_gains_immigration_w11672.pdf	100000	setup-lifetime.sh	Peri Ottaviano complementarity gains
+lifetime	optional	external/lifetime/nber/card_peri_2024_immigration_wages_2000_2022_w32389.pdf	100000	setup-lifetime.sh	Card Peri recent wage effects 2000-2022
+lifetime	optional	external/lifetime/card/card_peri_2016_jel_review_borjas_immigration_economics.pdf	100000	setup-lifetime.sh	Card Peri JEL Borjas review
+lifetime	optional	external/lifetime/nber/borjas_2017_still_more_mariel_role_race_w23504.pdf	100000	setup-lifetime.sh	Borjas Mariel race sensitivity
+lifetime	optional	external/lifetime/nber/shapiro_2003_immigration_quality_jobs_w6195.pdf	100000	setup-lifetime.sh	Immigration and job quality
+lifetime	optional	external/lifetime/nber/borjas_1997_ethnicity_intergenerational_welfare_w6175.pdf	100000	setup-lifetime.sh	Ethnic welfare dependency transmission
+lifetime	optional	external/lifetime/nber/abel_1997_immigrants_children_pension_transition_w6229.pdf	100000	setup-lifetime.sh	Immigrants in PAYG pension system
+lifetime	optional	external/lifetime/nber/butchart_1998_recent_immigrants_crime_incarceration_w6067.pdf	100000	setup-lifetime.sh	Immigrants crime/incarceration local cost
+lifetime	optional	external/lifetime/brookings/edelberg_veuger_watson_2026_cps_foreign_born_controls_warning.html	50000	setup-lifetime.sh	Brookings CPS foreign-born level warning
+lifetime	optional	external/lifetime/census/sipp_2024_users_guide.pdf	500000	setup-lifetime.sh	SIPP 2024 users guide (earnings imputation)
+lifetime	optional	external/lifetime/nces/digest_dt23_236_20_current_expenditure_per_pupil.html	50000	setup-lifetime.sh	NCES per-pupil expenditure table (HTML)
+lifetime	optional	external/lifetime/nber/dustmann_2014_economic_impacts_immigration_survey_w16736.pdf	100000	setup-lifetime.sh	Dustmann immigration impacts survey
+lifetime	optional	external/lifetime/nber/razin_sadka_swagel_2011_migration_welfare_state_w15597.pdf	50000	setup-lifetime.sh	Migration and welfare state theory
+lifetime	optional	external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf	500000	setup-lifetime.sh	Low-skilled immigration composition time series
+lifetime	optional	external/lifetime/nber/borjas_monras_2018_hurricanes_migrant_networks_immigration_w23756.pdf	500000	setup-lifetime.sh	Migrant networks and immigration paths
+lifetime	optional	external/lifetime/nber/borjas_2003_labor_demand_curve_immigration_w9755.pdf	100000	setup-lifetime.sh	Borjas labor demand curve (pessimistic wage path)
+lifetime	optional	external/lifetime/nber/borjas_2005_native_internal_migration_immigration_w11610.pdf	100000	setup-lifetime.sh	Native out-migration attenuates local wage shock 40-60%
+lifetime	optional	external/lifetime/nber/card_1989_mariel_boatlift_miami_labor_market_w3069.pdf	100000	setup-lifetime.sh	Card Mariel null result (disconfirmation anchor)
+lifetime	optional	external/lifetime/nber/borjas_2016_wage_impact_marielitos_additional_evidence_w21850.pdf	100000	setup-lifetime.sh	Borjas Mariel rejoinder
+lifetime	optional	external/lifetime/nber/peri_sparber_2007_task_specialization_immigration_wages_w13389.pdf	100000	setup-lifetime.sh	Peri Sparber task specialization complementarity
+lifetime	optional	external/lifetime/nber/borjas_grogger_hanson_2006_immigration_african_american_employment_w12518.pdf	100000	setup-lifetime.sh	Immigration labor-market spillovers to Black workers
+lifetime	optional	external/lifetime/nber/ottaviano_peri_2006_rethinking_immigration_wages_w12497.pdf	100000	setup-lifetime.sh	Ottaviano Peri wage decomposition (pre-11672 frame)
+lifetime	optional	external/lifetime/nber/bound_khanna_morales_2017_h1b_economic_impact_w23153.pdf	500000	setup-lifetime.sh	H-1B high-skill fiscal/labor impact
+lifetime	optional	external/lifetime/iza/iza_dp4898_lozano_lopez_border_enforcement_mexican_selection.pdf	100000	setup-lifetime.sh	Border enforcement and Mexican immigrant selection
+lifetime	optional	external/lifetime/iza/iza_dp452_immigrant_occupational_mobility_longitudinal.pdf	100000	setup-lifetime.sh	Immigrant occupational mobility panel
+lifetime	optional	external/lifetime/iza/iza_dp10234_economics_politics_refugee_migration.pdf	500000	setup-lifetime.sh	Refugee migration political economy
+lifetime	optional	external/lifetime/cdc/nvsr72_12_us_life_tables_2021_all_races.pdf	500000	setup-lifetime.sh	CDC life tables all races 2021 (full NVSR)
+lifetime	optional	external/lifetime/census/np2023_t1_population_projections_summary.xls	5000	setup-lifetime.sh	Census 2023 national population projections
+lifetime	optional	external/lifetime/saiz/saiz_2010_msa_elasticity.dta	10000	setup-lifetime.sh	Saiz 2010 MSA housing supply elasticity (copy)
+lifetime	optional	external/lifetime/itep/ITEP-Tax-Payments-by-Undocumented-Immigrants-2024.pdf	50000	setup-lifetime.sh	ITEP undocumented tax payments (copy)
+lifetime	optional	external/lifetime/itep/itep_2024_tax_contributions.json	500	setup-lifetime.sh	ITEP tax totals JSON (copy)
+lifetime	optional	external/lifetime/pew/pew-unauthorized-immigrants-2025.pdf	50000	setup-lifetime.sh	Pew unauthorized stock 2025 (copy)
+lifetime	optional	external/lifetime/derived/stage3_proto/origin_fiscal_scenario_2023.csv	50	setup-lifetime.sh	Origin scenario ledger (copy)
+lifetime	optional	external/lifetime/derived/stage3_proto/sipp_scenario_ledger_2024.csv	50	setup-lifetime.sh	SIPP scenario ledger (copy)
+lifetime	optional	external/lifetime/nber/ortega_peri_2009_causes_effects_international_migrations_w14833.pdf	100000	setup-lifetime.sh	Ortega Peri OECD migration flows 1980-2005
+lifetime	optional	external/lifetime/iza/iza_dp631_duleep_regets_immigrant_quality_human_capital.pdf	100000	setup-lifetime.sh	Duleep Regets immigrant quality / human capital investment
+lifetime	optional	external/lifetime/iza/iza_dp8628_duleep_regets_country_origin_earnings_return_migration.pdf	500000	setup-lifetime.sh	Duleep Regets return migration and assimilation
+lifetime	optional	external/lifetime/iza/iza_dp331_winkelmann_international_employer_recruitment.pdf	100000	setup-lifetime.sh	International employer recruitment survey
+lifetime	optional	external/lifetime/fed/feds_note_20240105_immigration_us_economy.html	5000	setup-lifetime.sh	Fed FEDS note immigration and US economy (HTML)
+lifetime	optional	external/lifetime/derived/stage2/school_finance_county_2023.csv	1000	setup-lifetime.sh	County school finance bridge (copy)
+lifetime	optional	external/lifetime/derived/stage2/chas_county_housing_stress_2018_2022.csv	1000	setup-lifetime.sh	County housing stress bridge (copy)
+lifetime	optional	external/lifetime/derived/stage2/irs_migration_county_2022_2023.csv	1000	setup-lifetime.sh	IRS county migration bridge (copy)
+lifetime	optional	external/lifetime/derived/stage2/puma_county_area_xwalk_2023.csv	1000	setup-lifetime.sh	PUMA-county crosswalk bridge (copy)
+lifetime	optional	external/lifetime/derived/stage5/state_stage5_context_2023.csv	1000	setup-lifetime.sh	State stage5 context bridge (copy)
+lifetime	optional	external/lifetime/derived/stage5/receiver_city_migrant_costs.csv	100	setup-lifetime.sh	Receiver city migrant costs (copy)
+lifetime	optional	external/lifetime/derived/stage3_proto/meps_health_cost_module_2023.csv	100	setup-lifetime.sh	MEPS health cost module (copy)
+lifetime	optional	external/lifetime/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv	100	setup-lifetime.sh	SIPP-MEPS health cost cells (copy)
+lifetime	optional	external/lifetime/derived/stage3_proto/acs_foreign_born_education_bucket_totals_2023.csv	100	setup-lifetime.sh	ACS education bucket totals (copy)
+lifetime	optional	external/lifetime/derived/stage3_proto/sipp_public_mvp_cells_2024.csv	100	setup-lifetime.sh	SIPP public MVP cells (copy)
+lifetime	optional	external/lifetime/admin/cbp_fy25_budget_justification.pdf	50000	setup-lifetime.sh	CBP FY25 admin cost (copy)
+lifetime	optional	external/lifetime/admin/ice_fy25_budget_justification.pdf	50000	setup-lifetime.sh	ICE FY25 admin cost (copy)
+lifetime	optional	external/lifetime/dhs/plcy_lpr_by_country_of_birth_fy2005_2022.xlsx	5000	setup-lifetime.sh	DHS LPR by country pathway mix (copy)

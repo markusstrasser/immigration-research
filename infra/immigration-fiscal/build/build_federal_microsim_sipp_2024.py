@@ -22,7 +22,9 @@ from public_mvp_io import (
     write_meta,
 )
 
-DONOR_OUT = PROTO / "sipp_household_donor_cells_2024.csv"
+DONOR_OUT_FB = PROTO / "sipp_household_donor_cells_2024.csv"
+DONOR_OUT_USB = PROTO / "sipp_household_donor_cells_usborn_2024.csv"
+DONOR_OUT = DONOR_OUT_FB  # backward compat
 DONOR_META = PROTO / "sipp_household_donor_cells_2024.meta.json"
 
 COLS = (
@@ -81,11 +83,12 @@ def _sipp_to_acs_education(code: int) -> str:
     return "other"
 
 
-def build_donor_cells() -> list[dict]:
+def build_donor_cells(ebornus: str = "2") -> list[dict]:
+    """Build SIPP household donor cells. ebornus: '1' US-born, '2' foreign-born."""
     idx = _load_indices()
-    # household-month -> aggregated metrics
     hh: dict[tuple, dict] = {}
     n_rows = 0
+    label = "US-born" if ebornus == "1" else "foreign-born"
 
     with zipfile.ZipFile(SIPP_ZIP) as zf:
         with zf.open("pu2024.csv") as fh:
@@ -94,7 +97,7 @@ def build_donor_cells() -> list[dict]:
                 n_rows += 1
                 if len(row) < max(idx.values()) + 1:
                     continue
-                if row[idx["EBORNUS"]].strip() != "2":
+                if row[idx["EBORNUS"]].strip() != ebornus:
                     continue
                 age = _num(row[idx["TAGE"]])
                 wt = _num(row[idx["WPFINWGT"]])
@@ -183,6 +186,8 @@ def build_donor_cells() -> list[dict]:
         rows.append(
             {
                 **c,
+                "ebornus": ebornus,
+                "nativity_code": "1" if ebornus == "1" else "2",
                 "mean_monthly_hh_tpearn": mean_earn,
                 "mean_monthly_hh_tptotinc": weighted_mean(c["sum_monthly_tptotinc"], w),
                 "mean_monthly_hh_tsnap": weighted_mean(c["sum_monthly_tsnap"], w),
@@ -198,6 +203,8 @@ def build_donor_cells() -> list[dict]:
         DONOR_META,
         {
             "builder": "build_federal_microsim_sipp_2024.py",
+            "ebornus": ebornus,
+            "nativity_label": label,
             "person_month_rows_scanned": n_rows,
             "household_months": len(hh),
             "donor_cells": len(rows),
@@ -205,20 +212,24 @@ def build_donor_cells() -> list[dict]:
             "notes": "Proxy only — SIPP lacks verified federal tax liability fields in this build.",
         },
     )
-    print(f"Donor cells: {len(rows)} from {len(hh):,} foreign-born household-months")
+    print(f"Donor cells ({label}): {len(rows)} from {len(hh):,} household-months")
     return rows
 
 
-def load_federal_microsim_into_duckdb(con, donor_rows: list[dict]) -> None:
+def build_all_donor_cells() -> tuple[list[dict], list[dict]]:
+    return build_donor_cells("2"), build_donor_cells("1")
+
+
+def load_federal_microsim_into_duckdb(con, donor_rows: list[dict], ebornus: str = "2") -> None:
     """Requires acs_person_raw in an open warehouse build connection."""
     import pandas as pd
 
+    table = "sipp_household_donor_cells_2024" if ebornus == "2" else "sipp_household_donor_cells_usborn_2024"
     con.register("_donor_rows", pd.DataFrame(donor_rows))
-    con.execute(
-        "CREATE OR REPLACE TABLE sipp_household_donor_cells_2024 AS SELECT * FROM _donor_rows"
-    )
+    con.execute(f"CREATE OR REPLACE TABLE {table} AS SELECT * FROM _donor_rows")
 
-    con.execute("""
+    if ebornus == "2":
+        con.execute(f"""
         CREATE OR REPLACE TABLE acs_origin_household_federal_microsim_2023 AS
         WITH person_cells AS (
           SELECT
@@ -263,27 +274,83 @@ def load_federal_microsim_into_duckdb(con, donor_rows: list[dict]) -> None:
           s.federal_net_proxy_annual,
           s.household_weight_sum AS donor_household_weight
         FROM person_cells c
-        LEFT JOIN sipp_household_donor_cells_2024 s
+        LEFT JOIN {table} s
           ON c.education_bucket = s.education_bucket
          AND c.age_band = s.age_band
          AND c.earnings_band = s.earnings_band
     """)
-    n = con.execute("SELECT COUNT(*) FROM acs_origin_household_federal_microsim_2023").fetchone()[0]
+        n = con.execute("SELECT COUNT(*) FROM acs_origin_household_federal_microsim_2023").fetchone()[0]
+        matched = con.execute(
+            "SELECT COUNT(*) FROM acs_origin_household_federal_microsim_2023 WHERE donor_household_weight IS NOT NULL"
+        ).fetchone()[0]
+        print(f"federal microsim (FB origins): {n:,} cells, {matched:,} with SIPP donor match")
+        return
+
+    con.execute(f"""
+        CREATE OR REPLACE TABLE acs_nh_white_federal_microsim_2023 AS
+        WITH person_cells AS (
+          SELECT
+            CASE
+              WHEN TRY_CAST(p.SCHL AS INTEGER) < 16 THEN '<HS'
+              WHEN TRY_CAST(p.SCHL AS INTEGER) IN (16, 17) THEN 'HS / GED'
+              WHEN TRY_CAST(p.SCHL AS INTEGER) IN (18, 19, 20) THEN 'some college / associate'
+              ELSE 'other'
+            END AS education_bucket,
+            CASE
+              WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 25 AND 34 THEN '25-34'
+              WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 35 AND 44 THEN '35-44'
+              WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 45 AND 54 THEN '45-54'
+              WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 55 AND 64 THEN '55-64'
+            END AS age_band,
+            CASE
+              WHEN TRY_CAST(p.PINCP AS DOUBLE) < 20000 THEN 'lt20k'
+              WHEN TRY_CAST(p.PINCP AS DOUBLE) < 40000 THEN '20-40k'
+              WHEN TRY_CAST(p.PINCP AS DOUBLE) < 75000 THEN '40-75k'
+              WHEN TRY_CAST(p.PINCP AS DOUBLE) < 150000 THEN '75-150k'
+              ELSE '150k+'
+            END AS earnings_band,
+            SUM(TRY_CAST(p.PWGTP AS DOUBLE)) AS weighted_adults
+          FROM acs_person_raw p
+          WHERE TRY_CAST(p.AGEP AS INTEGER) BETWEEN 25 AND 64
+            AND TRY_CAST(p.NATIVITY AS INTEGER) = 1
+            AND LPAD(CAST(p.HISP AS VARCHAR), 2, '0') = '01'
+            AND TRY_CAST(p.RAC1P AS INTEGER) = 1
+          GROUP BY 1, 2, 3
+        )
+        SELECT
+          'nh_white_usborn' AS population_group,
+          c.education_bucket,
+          c.age_band,
+          c.earnings_band,
+          c.weighted_adults,
+          s.mean_monthly_hh_tpearn,
+          s.payroll_tax_proxy_annual,
+          s.transfer_outflow_proxy_annual,
+          s.federal_net_proxy_annual,
+          s.household_weight_sum AS donor_household_weight
+        FROM person_cells c
+        LEFT JOIN {table} s
+          ON c.education_bucket = s.education_bucket
+         AND c.age_band = s.age_band
+         AND c.earnings_band = s.earnings_band
+    """)
+    n = con.execute("SELECT COUNT(*) FROM acs_nh_white_federal_microsim_2023").fetchone()[0]
     matched = con.execute(
-        "SELECT COUNT(*) FROM acs_origin_household_federal_microsim_2023 WHERE donor_household_weight IS NOT NULL"
+        "SELECT COUNT(*) FROM acs_nh_white_federal_microsim_2023 WHERE donor_household_weight IS NOT NULL"
     ).fetchone()[0]
-    print(f"federal microsim: {n:,} origin cells, {matched:,} with SIPP donor match")
+    print(f"federal microsim (NH white US-born): {n:,} cells, {matched:,} with SIPP donor match")
 
 
 def build() -> Path:
     PROTO.mkdir(parents=True, exist_ok=True)
-    rows = build_donor_cells()
-    with DONOR_OUT.open("w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
-        w.writeheader()
-        w.writerows(rows)
-    print(f"Wrote {DONOR_OUT}")
-    return DONOR_OUT
+    fb_rows, usb_rows = build_all_donor_cells()
+    for path, rows in ((DONOR_OUT_FB, fb_rows), (DONOR_OUT_USB, usb_rows)):
+        with path.open("w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+            w.writeheader()
+            w.writerows(rows)
+        print(f"Wrote {path}")
+    return DONOR_OUT_FB
 
 
 if __name__ == "__main__":

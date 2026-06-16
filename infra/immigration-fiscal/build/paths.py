@@ -25,3 +25,15 @@ def duckdb_path() -> Path:
     if v := os.environ.get("DUCKDB_PATH"):
         return Path(v)
     return Path.home() / "Projects" / "research" / "warehouse" / "immigration_context.duckdb"
+
+
+def lifetime_duckdb_path() -> Path:
+    if v := os.environ.get("LIFETIME_DUCKDB_PATH"):
+        return Path(v)
+    return Path.home() / "Projects" / "research" / "warehouse" / "immigration_lifetime_evidence.duckdb"
+
+
+def fiscal_union_duckdb_path() -> Path:
+    if v := os.environ.get("FISCAL_UNION_DUCKDB_PATH"):
+        return Path(v)
+    return Path.home() / "Projects" / "research" / "warehouse" / "immigration_fiscal_union.duckdb"
