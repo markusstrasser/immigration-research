@@ -11,7 +11,7 @@
 | Repo claim (pre-cycle) | New evidence | Updated verdict |
 |------------------------|--------------|-----------------|
 | Rent exposure ≠ welfare loss (adversarial review §2) | Immigrants concentrate in inelastic MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40); top 10 inelastic MSAs include all the major immigrant gateways | **Rent exposure is a stronger renter-incidence warning in inelastic destination markets** because supply response is weaker. Update: "rent exposure" should be tagged elasticity-conditional — higher incidence risk in inelastic destinations, lower in elastic. |
-| Clark "agree" economists are scope-limited but not wrong on their narrow channel | E-Verify mandates produced no positive wage effect on native low-skill workers in any of 12 specifications | **Clark "agree" economists were also right on the wage channel** (the actual narrow channel they mostly answered). Large Borjas-style native wage gains are rejected at α=0.05 for the observed E-Verify policy variation. |
+| Clark "agree" economists are scope-limited but not wrong on their narrow channel | E-Verify mandates produced no positive wage effect on native low-skill workers in any of 12 specifications | **The small-native-wage-effect channel in the Clark "agree" position is better supported** in the observed E-Verify policy variation. Large Borjas-style native wage gains are rejected at α=0.05 for this margin. |
 | "Borjas vs Card" presented as live debate | Direct multi-state TWFE with 21-year panel finds Card-side pattern: supply contracts via E-Verify but native wages do not rise | **For observed marginal enforcement variation, the Card-side pattern is favored.** Borjas's restricted-Mariel result does not generalize to the broader staggered enforcement shocks tested here; this does not settle surge or mass-shock regimes. |
 | Federal-positive / local-negative split is plausible but unquantified | This cycle did not produce federal-side estimates (federal microsim still requires SIPP fix) | **Unchanged.** Federal side remains the weakest part of the repo. |
 | Local-burden story is real but heterogeneous | Saiz merge sharpens the housing component; QWI supports a small/null wage response in the observed E-Verify margin | **Strengthened on the housing side, not on schooling.** School-burden findings are unchanged by this cycle. |
@@ -27,9 +27,9 @@ Three converging pieces of evidence on the U.S. wage channel:
 Against:
 - **Borjas (2017) Mariel reanalysis:** -10 to -30% on HS dropouts with restricted sample. **This finding does not generalize to the broader staggered designs tested here.**
 
-**Verdict:** For the observed marginal U.S. policy variation in this file, large Borjas-style native wage gains from E-Verify-style labor-supply contraction are rejected at conventional significance levels. The remaining uncertainty is about surge regimes and hypothetical extreme shocks (mass deportation, border closure) that have no direct empirical analog. **The Clark Center "agree" economists who said wage effects on natives are small were correct for the narrow wage channel and observed-policy range, not for the all-in immigration question.**
+**Verdict:** For the observed marginal U.S. policy variation in this file, large Borjas-style native wage gains from E-Verify-style labor-supply contraction are rejected at conventional significance levels. The remaining uncertainty is about surge regimes and hypothetical extreme shocks (mass deportation, border closure) that have no direct empirical analog. **The Clark Center "agree" small-native-wage-effect premise is supported for the narrow wage channel and observed-policy range, not for the all-in immigration question.**
 
-This is a meaningful update to the repo's prior position. The verified-findings report (2026-04-10) said the Clark agree economists were "mostly right on a narrow question" but bracketed this carefully. The new evidence justifies elevating that to: **right on the wage channel within observed marginal policy variation.**
+This is a meaningful update to the repo's prior position. The verified-findings report (2026-04-10) said the Clark agree economists were "mostly right on a narrow question" but bracketed this carefully. The new evidence justifies elevating only the wage-channel premise: **small native wage effects are better supported within observed marginal policy variation.**
 
 ## Incidence — federal vs local — what this cycle changes
 
@@ -114,7 +114,7 @@ In priority order, given evidence value:
 
 ## Honest reflection
 
-This cycle did what it set out to do: produced two original empirical findings using fresh datasets, both pointing in the Card direction. The findings are not novel relative to academic literature — they are consistent with well-known patterns rather than direct replications of those papers. The contribution is internal to this repo: **the prior epistemic posture ("Clark agree economists are right on their narrow channel but the question is broader") understated the strength of the Card-side wage evidence**. The marginal-enforcement wage channel is bounded for the policy variation we have; surge and mass-shock regimes remain open.
+This cycle did what it set out to do: produced two original empirical findings using fresh datasets, both pointing in the Card direction. The findings are not novel relative to academic literature — they are consistent with well-known patterns rather than direct replications of those papers. The contribution is internal to this repo: **the prior epistemic posture ("Clark agree economists are scope-limited, but not false on the wage channel") understated the strength of the Card-side wage evidence**. The marginal-enforcement wage channel is bounded for the policy variation we have; surge and mass-shock regimes remain open.
 
 The federal-fiscal side is still open. The political-economy and rent-exposure sides got sharper. The crime-rate side was already strong (separate memo earlier).
 
@@ -130,6 +130,7 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced "Clark economists were right/correct" exports with support for the small-native-wage-effect premise within observed marginal policy variation. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "Card-side pattern wins" wording with "is favored" to avoid treating a bounded design comparison as debate closure. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Bounded the political-economy reading: wage evidence alone weakens the native-low-skill wage story, but school/rent exposure is only a plausible incidence channel, not identified voter motivation or policy justification. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Narrowed the embedded E-Verify confidence-ladder suggestion from global `STRONG REJECTION` to strong evidence against large Borjas-style gains in the E-Verify margin. See `immigration-conclusion-audit-running-fixes.md`. |

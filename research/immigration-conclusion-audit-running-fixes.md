@@ -1620,3 +1620,23 @@ Replaced active "wins" labels with "Card-side pattern is favored" or "Card-side 
 ### Updated conclusion
 
 The Card-side wage reading remains strong for observed marginal enforcement designs, but the repo no longer labels the bounded comparison as a global win. [INFERENCE]
+
+---
+
+## 2026-06-16 — Clark economist correctness language narrowed to channel support
+
+### Issue
+
+The E-Verify memo and causal synthesis still said the Clark "agree" economists were "correct" or "right" on the wage channel after the underlying findings had been bounded to observed marginal policy variation. [DATA]
+
+### Why it was wrong
+
+The source Clark audit treated the strongest agree responses as mostly right only if read as small native-wage-effect or complementarity claims, and explicitly rejected the idea that the poll settled the full welfare/local-capacity question. The E-Verify design supports that narrow premise; it does not adjudicate the economists' broader survey answers or every wage regime. [SOURCE: research/immigration-verified-findings-report-2026-04-10.md] [INFERENCE]
+
+### Fix
+
+Replaced "right/correct" language with support for the small-native-wage-effect premise in the observed E-Verify / marginal-policy wage channel. [SOURCE: memo]
+
+### Updated conclusion
+
+The Clark-side wage premise is stronger than the repo initially allowed for observed marginal enforcement variation, but the repo no longer calls the economists globally right even on a compressed "wage channel" label. [INFERENCE]
