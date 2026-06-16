@@ -111,9 +111,9 @@ Reason: TWFE on QWI 2003-2023 with 12 pro-sanctuary + 9 anti-sanctuary states; a
 Rating: `medium`
 Reason: IRS SOI `Total Migration-US` 2022-23 and ACS `B07001_081E` point in the same descriptive direction, but they are not like-for-like universes. The current median county comparison is roughly `4.59%` vs `0.21%`, with a ratio of medians around `21.7x` and a median county-level ratio around `20.5x`, so the safe claim is order-of-magnitude disparity, not a precise burden ratio. [SOURCE: research/immigration-causal-internal-vs-immigrant-newcomers.md]
 
-23. `Open-borders welfare verdict is welfare-weight-determined, not data-determined` — **QUALIFIED by entry 39**
+23. `Open-borders welfare verdict is welfare-weight-sensitive under current empirical inputs` — **QUALIFIED by entry 39**
 Rating: `strong (framing claim)`
-Reason: At immigrant-welfare-weight w=0 (current repo's implicit framing): negative by construction. At w≥0.25 under 25%-of-gross-gains native-cost benchmark: positive. At w=1.0 even under harsh 50%-cost benchmark: positive. Empirical evidence cannot adjudicate the values choice. Honest framing must name the weight. [SOURCE: data/clemens/gpt54_calibration_review.md, GPT-5.4 sensitivity analysis]
+Reason: At immigrant-welfare-weight w=0 (current repo's implicit framing): negative by construction. At w≥0.25 under 25%-of-gross-gains native-cost benchmark: positive. At w=1.0 even under harsh 50%-cost benchmark: positive. Empirical evidence cannot choose the value weight, but native-cost, fiscal, housing/capacity, and sending-country inputs can move break-even thresholds. Honest framing must name both the weight and the empirical calibration. [SOURCE: data/clemens/gpt54_calibration_review.md, GPT-5.4 sensitivity analysis]
 
 24. `Mass deportation of 7M unauthorized → ~$1.45T first-order output shock (~5% GDP); Type-II endpoint is sensitivity only` — **presentation qualified by entry 32**
 Rating: `medium (calibration not estimate)`

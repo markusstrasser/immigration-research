@@ -1900,3 +1900,23 @@ Retitled the E-Verify memo as an observed wage-channel test, narrowed the questi
 ### Updated conclusion
 
 The E-Verify material now presents itself as a bounded wage-channel design: strong against large Borjas-style gains in observed mandate variation, not a general Card-vs-Borjas verdict for U.S. immigration data. [INFERENCE]
+
+---
+
+## 2026-06-16 — Open-borders weight shorthand replaced at old claim sites
+
+### Issue
+
+`research/immigration-confidence-ladder.md` entry 23 and `research/immigration-causal-surge-2021-2024.md` still used "welfare-weight-determined" / "not data-determined" shorthand for the open-borders verdict, despite later corrections separating the normative weight from empirical inputs. [DATA]
+
+### Why it was wrong
+
+The immigrant-welfare weight is a value choice, but native-cost benchmarks, fiscal ledgers, housing/capacity constraints, and sending-country effects are empirical inputs that can move break-even thresholds. Leaving "not data-determined" at old claim sites risks turning a framing correction into a reason to stop measuring costs and feasibility. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed confidence-ladder entry 23 to "welfare-weight-sensitive under current empirical inputs," expanded its reason to name empirical break-even inputs, and changed the surge memo heading to "welfare-weight and capacity-input components." [SOURCE: memo]
+
+### Updated conclusion
+
+The open-borders framing now distinguishes the non-empirical welfare-weight choice from empirical cost and capacity inputs that remain live research targets. [INFERENCE]
