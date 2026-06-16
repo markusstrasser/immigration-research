@@ -6,11 +6,12 @@
 
 ## After each sweep (mandatory order)
 
+0. **XDISC / generator divergence preflight** — run the `research/immigration-thesis-generator-audit-2026-06-16.md` packet before new source search so denominator, estimand, urban, political, psychology, and narrative alternatives shape the sweep rather than arrive after convergence.
 1. **Unified theory** — one memo section answering: *What is the single best story that holds all layers together?* Name the central object (not a scalar), the dimensions, what is compatible vs contradictory, and the current thesis in ≤3 sentences.
 2. **Five-model formal critique** — state five competing models (not authors — *mechanisms*). For each: core equation/ledger, predictions, data that would falsify, unnamed assumptions exposed.
 3. **Thesis burst (carry-forward)** — paste the prior sweep's thesis; revise it in place. Mark what got sharper, what got killed, what survived despite weak data.
 4. **Disconfirmation pass** — three active hunts for evidence that would flip the thesis sign on any layer.
-5. **Only then** — run `research/immigration-thesis-generator-audit-2026-06-16.md` XDISC packet, then brainstorm round N+1 downloads, generators, DuckDB loads.
+5. **Only then** — brainstorm round N+1 downloads, generators, DuckDB loads, using the XDISC findings and disconfirmation pass as the filter.
 
 ## Output locations
 

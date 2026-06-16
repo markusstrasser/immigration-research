@@ -1,8 +1,10 @@
 # Immigration knowledge delta and autonomous research loop (2026-06-16)
 
-**Question:** What do we know now that we did not know two days ago, and what loop should an agent run to replace constant human steering of search space and narrative?
+**Question:** What do we know now that we did not know two days ago, and what loop should an agent run to reduce constant human steering of search space and narrative?
 
 **Comparison baseline:** state before the 2026-06-15 fiscal sweeps and the 2026-06-16 conclusion audit. At that point, the repo already had the April wage/housing/capacity/crime/surge analyses and the 2026-06-11 CHNV/receiver-election correction, but not the June 15-16 fiscal tensor, denominator audit, or model-review cleanup pass.
+
+**Canonical status:** this memo is the umbrella loop. `research/immigration-thesis-generator-audit-2026-06-16.md` expands steps 3-5 for generator/XDISC divergence; `notes/immigration-lifetime-synthesis-diverge-cookbook.md` and `notes/immigration-lifetime-sweep-protocol.md` are sub-procedures for sweep execution.
 
 ---
 
@@ -43,7 +45,8 @@ The June 16 Opus review then caught the mirror-image bug: the school numerator s
 Two days ago, short forms still overread E-Verify as a broad Card-side or Borjas-rejection result. Current wording:
 
 - no statistically significant positive QWI wage effect in the observed mandate margin;
-- large native wage gains are not observed in that margin;
+- the source memo's E1 exposed-industry wage CI excludes gains above about `+2.1%`, with MDE roughly `2-3%` before compliance sensitivity;
+- large native wage gains are not observed in that static-TWFE mandate margin, while heterogeneity-robust staggered-DiD remains an unresolved check;
 - small effects and scaled-shock Borjas benchmarks are not ruled out;
 - the E1 employment point estimate is negative but nonsignificant (`t=-1.40`, `p≈0.16`);
 - adjustment channels remain hypotheses, not measured mechanisms.
@@ -91,7 +94,7 @@ The narrative is now:
 2. **Federal annual proxy:** Mexico-origin full microsim row remains about `+$1,519/adult/yr`.
 3. **School/full-stock origin row:** unresolved after same-universe guard.
 4. **NAS benchmark:** Mexico education mix looks positive under age-25 NAS cells, but that is not current-stock lifetime NPV.
-5. **Wages:** observed E-Verify/sanctuary-style policy margins cut against large native wage gains, not all wage effects.
+5. **Wages:** observed E-Verify/sanctuary-style policy margins cut against large native wage gains where the source CI/MDE supports that read, not all wage effects; static-TWFE estimates remain design-dependent until heterogeneity-robust checks run.
 6. **Capacity/surge:** receiver gross load and county load/capacity screens are real descriptive signals; mechanisms and welfare signs remain open.
 7. **Crime:** lower observed justice-system rates remain supported; true-offending and subgroup generalization remain lower confidence.
 
@@ -115,7 +118,7 @@ START
   v
 1. Load Constitution + Current Frontier
   - read topic index, current synthesis, running fixes, last decisions
-  - list live claims with SOURCE / INFERENCE / UNVERIFIED tags
+  - list live claims with canonical provenance tags from notes/provenance-tags.md
   - identify what changed since last run
   |
   v
@@ -135,6 +138,7 @@ START
   - generate 5+ different kill paths:
     data bug, denominator mismatch, rival estimand, omitted layer,
     alternative causal mechanism, external-validity boundary, value-frame shift
+  - run the XDISC/generator packet from immigration-thesis-generator-audit
   - search by functionality and claim structure, not filenames
   |
   v
@@ -173,9 +177,10 @@ START
   - compare knowledge state to previous baseline
   - promote one process guard if recurrence is hookable
   - choose the next frontier by value of information
+  - after 2 consecutive dry sweeps or a budget/max-sweep cap, stop and escalate to human
   |
   v
-REPEAT
+REPEAT only if a frontier remains live and the stop rule has not fired
 ```
 
 ---
@@ -194,7 +199,7 @@ Each cycle should maintain a frontier table:
 | Counterfactual | What would falsify the current narrative? | explicit kill path or unresolved label |
 | Narrative | What slogan would a reader wrongly quote? | grepable stale phrase removed or marked historical |
 
-The agent replaces constant human steering by forcing every cycle through this table before and after evidence work.
+The loop reduces constant human steering by forcing every cycle through this table before and after evidence work. It does not fully replace human judgment until claim inventory, dead-path logging, generator-yield state, and adoption judging are persisted.
 
 ---
 

@@ -2419,7 +2419,7 @@ Updated `research/immigration-causal-everify-card-vs-borjas.md`, `CYCLE.md`, `re
 
 ### Updated conclusion
 
-The current E-Verify conclusion is narrower: observed mandate variation shows no statistically significant positive QWI wage effect for native low-skill workers and cuts against large native wage gains in that margin. It does not prove an exact zero wage effect, a measured labor-supply contraction, a significant employment decline, or a global rejection of Borjas-style mechanisms. [INFERENCE]
+The current E-Verify conclusion is narrower: observed mandate variation shows no statistically significant positive QWI wage effect for native low-skill workers and cuts against large native wage gains where the source CI/MDE supports that read. It does not prove an exact zero wage effect, a measured labor-supply contraction, a significant employment decline, a heterogeneity-robust staggered-DiD ATT, or a global rejection of Borjas-style mechanisms. [INFERENCE]
 
 ---
 
@@ -2591,3 +2591,35 @@ Updated `research/immigration-mexico-npv-population-synthesis-2026-06-15.md` to 
 ### Updated conclusion
 
 The evolution ledger and Mexico synthesis now match the current frontier: no live Mexico-origin `federal - school` sign, no measured E-Verify labor-supply contraction, and no identified fiscal-load-to-vote or backlash mechanism. [INFERENCE]
+
+---
+
+## 2026-06-16 — Final Opus/Cursor review disposed
+
+### Issue
+
+The final post-cleanup Opus/Cursor review packet found three remaining high-impact drift classes: the Mexico NPV synthesis still exported an illustrative `-$37k to +$28k` lifetime band that mixed withheld school, surge, enforcement, discount, and population-universe assumptions; generator/index/cookbook routes still carried stale fiscal or Card/Borjas labels; and the agent-loop docs still presented partially overlapping loops as if they were fully operational automation. [SOURCE: `.model-review/2026-06-16-final-immigration-review/`]
+
+### Why it was wrong
+
+The Mexico lifetime band could not be reproduced from live additive rows without either reintroducing the withheld school row or mixing rate/horizon conventions. The route/process problem was also real: if the index, cookbook, and generator registry point agents at stale or conflicting surfaces, the loop will rediscover known failures instead of replacing human search-space shaping. [INFERENCE]
+
+### Fix
+
+Updated:
+
+- `research/immigration-mexico-npv-population-synthesis-2026-06-15.md`: removed the numeric lifetime band and replaced it with non-additive layer checks.
+- `research/immigration-lifetime-fiscal-generators.md`: fixed rounds label, scoped the `$1,519` proxy to `mexico_origin`, and marked the `$771` school retrodiction as withheld.
+- `research/immigration-claims-evolution-ledger-2026-04-23.md`, `research/immigration-INDEX.md`, `CYCLE.md`, and `research/immigration-knowledge-delta-agent-loop-2026-06-16.md`: carried June scoping, CI/MDE, and static-TWFE caveats into high-reuse surfaces.
+- `research/immigration-economist-rhetorical-failures-2026-04-22.md`: made the job-collapse steel-man cite E-Verify for the wage-channel margin and keep county evidence scoped to constrained-place screens.
+- `research/immigration-thesis-generator-audit-2026-06-16.md`, `notes/immigration-lifetime-synthesis-diverge-cookbook.md`, and `notes/immigration-lifetime-sweep-protocol.md`: made `immigration-knowledge-delta-agent-loop-2026-06-16.md` the canonical umbrella loop and the generator audit an XDISC sub-loop.
+- `notes/provenance-tags.md`: added a single local tag vocabulary and pointed loop docs at it.
+- `infra/immigration-fiscal/derived/stage3_proto/three_layer_annual_2023.csv`: synced the tracked staged mirror to the withheld-origin build output; local ignored `sources/.../stage3_proto` CSV mirrors were synced as well. [DATA]
+
+### Remaining process debt
+
+Generator lifecycle is still manual: Markdown has `106` `G-LIF-*` headings, DuckDB has `104` `lifetime_generators` rows, MD-only IDs are `G-LIF-Q06` and `G-LIF-S15`, and no lifecycle sidecar or DuckDB table yet records `fired`, `adopted`, `dry`, `parked`, and `adoption_judge`. Do not automate yield-based parking or retirement until that state exists. [SOURCE: `research/immigration-thesis-generator-audit-2026-06-16.md`] [LIMIT]
+
+### Updated conclusion
+
+The final reviewed state is narrower: no Mexico-origin lifetime band, no live origin `federal - school` sign, E-Verify remains a bounded static-TWFE mandate-margin wage result with source CI/MDE caveats, and the agent loop is a canonical assisted process rather than a fully autonomous replacement until lifecycle state and adoption judging are implemented. [INFERENCE]

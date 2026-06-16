@@ -1,6 +1,6 @@
 # Immigration lifetime fiscal — idea generators
 
-**Date:** 2026-06-15 (rounds A–P)
+**Date:** 2026-06-15 (rounds A–S)
 **DuckDB:** `warehouse/immigration_lifetime_evidence.duckdb`
 
 **Totals:** 563 DuckDB `parameter_claims`, 106 Markdown `G-LIF-*` headings / 104 DuckDB `lifetime_generators` rows across 19 clusters (Q,R,S added 2026-06-15; S06–S15 from marker-modal parse 2026-06-15). Count reconciliation pending: MD-only IDs are `G-LIF-Q06` and `G-LIF-S15`. See `immigration-thesis-generator-audit-2026-06-16.md`.
@@ -113,7 +113,7 @@
 
 ### G-LIF-C01 — Federal-positive / local-negative ledger split
 
-**Prompt:** For each fiscal immigration study, tag every cost and revenue line as FEDERAL vs STATE/LOCAL vs EPISODIC-SHOCK (shelter, border). Where does the paper silently aggregate jurisdictions? Cross-walk to our SIPP annual federal proxy (+$1,519/yr Mexico <HS) vs CBO-style local shock ledger (school, shelter, Medicaid). List papers that report net positive lifetime NPV but omit local surge lines.
+**Prompt:** For each fiscal immigration study, tag every cost and revenue line as FEDERAL vs STATE/LOCAL vs EPISODIC-SHOCK (shelter, border). Where does the paper silently aggregate jurisdictions? Cross-walk to our narrow SIPP-style `mexico_origin` annual federal proxy (+$1,519/adult/yr; payroll/FICA minus SNAP/TANF/SSI only) vs CBO-style local shock ledger (school, shelter, Medicaid). List papers that report net positive lifetime NPV but omit local surge lines.
 
 **Retrodiction:** Would have surfaced CBO 61256 $9.2B direct net cost, Gould shelter 60% of homelessness rise, Orrenius 2025 federal-positive/state-local-negative split, and our scenario-composition frame tension before treating SIPP cells as scalar verdict.
 
@@ -775,7 +775,7 @@
 
 **Prompt:** Cross-check NAS cell (individual, no descendants) vs `school_burden_per_adult`. If NAS excludes kids' K-12, add school layer; if NAS includes immigrant own education only, do not subtract cross-section school twice.
 
-**Retrodiction:** Would have separated individual NAS path from current-HH school burden ($771/yr) before merging layers.
+**Retrodiction:** Would have separated individual NAS path from current-household school burden before merging layers; the interim `$771/yr` origin row is now withheld pending same-universe rebuild.
 
 **Negative space:** Subtract school on top of NAS without checking descendant booking.
 
