@@ -1343,6 +1343,26 @@ The surge memo still marks 2021-2024 as outside the static-cycle wage variation,
 
 ---
 
+## 2026-06-16 — CHNV superseded ladder entries marked invalid, not just superseded
+
+### Issue
+
+`research/immigration-confidence-ladder.md` entries 26 and 30 still carried the old CHNV "did not substitute / added on top" conclusion. Entry 30 even said the descriptive fact survived and "substitution did not happen," despite entry 34 reversing that reading after the OHSS parser correction. [DATA]
+
+### Why it was wrong
+
+The corrected USBP/OFO split changed the descriptive sign: CHNV substituted lawful port flow for irregular between-port crossings in its initial year, even though total lawful parole inflow still landed in receiver-city ledgers. A mere "superseded" label left too much room to quote the old conclusion as a weaker live claim. [SOURCE: decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md] [INFERENCE]
+
+### Fix
+
+Marked entries 26 and 30 as invalidated/historical-only, and rewrote entry 30's reason to say the old `+787%` figure is an error trace from the lawful OFO channel on a scrambled clock. [SOURCE: memo]
+
+### Updated conclusion
+
+The standalone ladder now exports only entry 34 for CHNV: channel substitution occurred initially for USBP between-port crossings, while total lawful parole inflow remains a receiver-load ledger. [INFERENCE]
+
+---
+
 ## 2026-06-16 — Open-borders weight framing separated from empirical inputs
 
 ### Issue
