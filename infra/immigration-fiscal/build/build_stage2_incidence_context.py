@@ -76,11 +76,14 @@ def build_school_finance_county() -> pd.DataFrame:
     for c in ["ENROLL", *spend_cols]:
         df[c] = pd.to_numeric(df[c], errors="coerce").fillna(0)
     df["current_spend"] = df[spend_cols].sum(axis=1)
+    # F-33 expenditure columns are thousands of dollars; ENROLL is pupil count.
     county = (
         df.groupby("county_fips", as_index=False)
         .agg(enrollment=("ENROLL", "sum"), current_spend=("current_spend", "sum"))
         .assign(
-            current_spend_per_pupil=lambda d: d["current_spend"] / d["enrollment"].replace(0, pd.NA)
+            current_spend_per_pupil=lambda d: (
+                d["current_spend"] * 1000 / d["enrollment"].replace(0, pd.NA)
+            )
         )
     )
     return county

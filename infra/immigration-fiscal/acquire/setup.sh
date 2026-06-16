@@ -378,6 +378,11 @@ if [[ -f "$HERE/setup-net-negative.sh" ]]; then
     IMMIGRATION_FISCAL_ROOT="$IMMIGRATION_FISCAL_ROOT" bash "$HERE/setup-net-negative.sh" || true
 fi
 
+# Lifetime benchmarks + linkage docs (optional pass)
+if [[ -f "$HERE/setup-lifetime.sh" ]]; then
+    IMMIGRATION_FISCAL_ROOT="$IMMIGRATION_FISCAL_ROOT" bash "$HERE/setup-lifetime.sh" || true
+fi
+
 if (( ERRORS == 0 )); then
     exit 0
 else
