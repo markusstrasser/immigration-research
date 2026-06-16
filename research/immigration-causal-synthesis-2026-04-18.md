@@ -118,7 +118,7 @@ This cycle did what it set out to do: produced two original empirical findings u
 
 The federal-fiscal side is still open. The political-economy and rent-exposure sides got sharper. The crime-rate side was already strong (separate memo earlier).
 
-The *biggest* unresolved interpretation lever — Clemens place-premium, weighting immigrant welfare — remains untouched. That's a values choice, not an empirical question, and no amount of additional data resolves it.
+The *biggest* unresolved interpretation lever — Clemens place-premium, weighting immigrant welfare — remains untouched by this cycle. The welfare weight is a values choice; the place-premium, native-cost, fiscal, housing/capacity, and sending-country inputs are empirical and can still move the scenario break-evens.
 
 [SOURCE: research/immigration-causal-saiz-elasticity-rent.md]
 [SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
@@ -137,6 +137,7 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 | 2026-06-16 | Replaced "does not replicate in broader staggered designs" with "does not generalize" because E-Verify/Foged-Peri are adjacent external-validity tests, not direct Mariel replications. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "random refugee assignment" with "refugee dispersal-policy quasi-experiment"; Foged-Peri is exogenous/quasi-experimental, not a simple randomized trial. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Removed remaining "replicates well-known patterns" language; this cycle's findings are convergent/consistent evidence, not direct replications of Card, Foged-Peri, or Card-Peri. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Reframed the Clemens/welfare-weight lever: the weight is normative, but place-premium and cost/capacity inputs remain empirical. See `immigration-conclusion-audit-running-fixes.md`. |
 
 <!-- knowledge-index
 generated: 2026-04-19T03:45:13Z

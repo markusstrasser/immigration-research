@@ -1263,6 +1263,26 @@ The Card-side wage reading is still supported for observed marginal-policy desig
 
 ---
 
+## 2026-06-16 — First causal synthesis stopped treating welfare weight as fully non-empirical
+
+### Issue
+
+`research/immigration-causal-synthesis-2026-04-18.md` said the Clemens place-premium / immigrant-welfare-weight lever was "a values choice, not an empirical question" and that no amount of additional data could resolve it. [DATA]
+
+### Why it was wrong
+
+The welfare weight itself is normative, but the place-premium, native-cost, fiscal, housing/capacity, and sending-country inputs are empirical. Evidence cannot choose the moral weight, but it can move scenario break-evens under any chosen weight. [INFERENCE]
+
+### Fix
+
+Changed the honest-reflection paragraph to separate the normative welfare weight from empirical inputs, and added a revision row to the first causal synthesis. [SOURCE: memo]
+
+### Updated conclusion
+
+The initial synthesis now matches the corrected paradigm memo: state the welfare-weight assumption, but keep collecting and grading the non-weight inputs. [INFERENCE]
+
+---
+
 ## 2026-06-16 — Open-borders weight framing separated from empirical inputs
 
 ### Issue
