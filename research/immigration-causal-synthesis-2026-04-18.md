@@ -89,9 +89,10 @@ Implication: rent exposure is closer to welfare loss than the adversarial review
 
 19. `Card-style labor-market complementarity for U.S. low-skill immigration`
 Rating: MEDIUM-STRONG
-Reason: replicates across (a) Card 1990 Mariel, (b) this cycle E-Verify TWFE, (c)
-Foged-Peri 2016 Denmark. Borjas 2017 restricted-Mariel reanalysis does not
-generalize.
+Reason: convergent evidence from (a) Card 1990 Mariel, (b) this cycle's E-Verify
+TWFE, and (c) Foged-Peri 2016 Denmark points against large native low-skill wage
+losses/gains in these designs. Borjas 2017 restricted-Mariel reanalysis does not
+generalize to the broader designs cited here.
 [SOURCE: research/immigration-causal-everify-card-vs-borjas.md, multiple papers]
 ```
 
@@ -113,7 +114,7 @@ In priority order, given evidence value:
 
 ## Honest reflection
 
-This cycle did what it set out to do: produced two original empirical findings using fresh datasets, both pointing in the Card direction. The findings are not novel relative to academic literature — they replicate well-known patterns. The contribution is internal to this repo: **the prior epistemic posture ("Clark agree economists are right on their narrow channel but the question is broader") understated the strength of the Card-side wage evidence**. The marginal-enforcement wage channel is bounded for the policy variation we have; surge and mass-shock regimes remain open.
+This cycle did what it set out to do: produced two original empirical findings using fresh datasets, both pointing in the Card direction. The findings are not novel relative to academic literature — they are consistent with well-known patterns rather than direct replications of those papers. The contribution is internal to this repo: **the prior epistemic posture ("Clark agree economists are right on their narrow channel but the question is broader") understated the strength of the Card-side wage evidence**. The marginal-enforcement wage channel is bounded for the policy variation we have; surge and mass-shock regimes remain open.
 
 The federal-fiscal side is still open. The political-economy and rent-exposure sides got sharper. The crime-rate side was already strong (separate memo earlier).
 
@@ -135,6 +136,7 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 | 2026-06-16 | Narrowed the explicit Card-vs-Borjas verdict sentence to large Borjas-style gains from E-Verify-style labor-supply contraction, not the full Borjas wage-prediction family. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "does not replicate in broader staggered designs" with "does not generalize" because E-Verify/Foged-Peri are adjacent external-validity tests, not direct Mariel replications. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "random refugee assignment" with "refugee dispersal-policy quasi-experiment"; Foged-Peri is exogenous/quasi-experimental, not a simple randomized trial. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Removed remaining "replicates well-known patterns" language; this cycle's findings are convergent/consistent evidence, not direct replications of Card, Foged-Peri, or Card-Peri. See `immigration-conclusion-audit-running-fixes.md`. |
 
 <!-- knowledge-index
 generated: 2026-04-19T03:45:13Z

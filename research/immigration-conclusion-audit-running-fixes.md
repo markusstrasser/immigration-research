@@ -1243,6 +1243,26 @@ Foged-Peri remains useful external evidence against large native low-skill wage 
 
 ---
 
+## 2026-06-16 — Residual wage replication language narrowed
+
+### Issue
+
+After the first Mariel/generalization fix, several wage memos still said this cycle "replicates" Card/Foged-Peri/Card-Peri/Orrenius-Zavodny patterns or that the sanctuary design "replicates E-Verify margin." [DATA]
+
+### Why it was wrong
+
+Those are not direct replications of the same estimands, populations, data, or designs. They are convergent or consistency checks: QWI E-Verify and QWI sanctuary policy margins line up with the Card-side literature, while Foged-Peri is a distinct Danish dispersal-policy design. [INFERENCE]
+
+### Fix
+
+Changed the causal synthesis, E-Verify memo, and paradigm synthesis to use "convergent," "consistent with," "extends," and "aligned with" instead of replication language. Added revision rows in the affected memos. [SOURCE: memo]
+
+### Updated conclusion
+
+The Card-side wage reading is still supported for observed marginal-policy designs, but the repo no longer claims direct replication where it only has adjacent evidence. [INFERENCE]
+
+---
+
 ## 2026-06-16 — Open-borders weight framing separated from empirical inputs
 
 ### Issue
