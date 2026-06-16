@@ -1600,3 +1600,23 @@ Replaced the residual "closer to welfare loss" phrasing with "stronger renter-in
 ### Updated conclusion
 
 The housing layer remains a real local-incidence warning, especially in inelastic destinations, but it is no longer exported as an aggregate welfare-loss claim. [INFERENCE]
+
+---
+
+## 2026-06-16 — Card-side wage labels softened from wins to favored
+
+### Issue
+
+Active synthesis and ladder text still used "Card-side pattern wins" / "Card-wins" after earlier fixes had bounded the result to observed marginal enforcement variation. [DATA]
+
+### Why it was wrong
+
+"Wins" language suggests debate closure. The evidence is strong against large Borjas-style native wage gains in the tested E-Verify/sanctuary-style margins, but surge, mass-shock, cash-economy, and longer-run channels remain open. [INFERENCE]
+
+### Fix
+
+Replaced active "wins" labels with "Card-side pattern is favored" or "Card-side wage finding is bounded" in the causal synthesis, paradigm synthesis, surge memo embedded ladder, and standalone confidence ladder. [SOURCE: memo]
+
+### Updated conclusion
+
+The Card-side wage reading remains strong for observed marginal enforcement designs, but the repo no longer labels the bounded comparison as a global win. [INFERENCE]

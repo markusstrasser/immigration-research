@@ -203,7 +203,7 @@ Use this as correlational upper-bound; do not reuse the raw +4.41pp as a causal
 headline.
 [SOURCE: sources/immigration-causal/data/outcomes/analysis/swing_hispanic_control/results.json]
 
-29. `Static-cycle Card-wins finding is bounded; surge is OUTSIDE that variation`
+29. `Static-cycle Card-side wage finding is bounded; surge is OUTSIDE that variation`
 Rating: meta-update on prior entries 17, 19, 21
 Reason: Prior entries over-compressed the E-Verify/sanctuary wage results as a
 "decisive Card-side win for U.S. policy variation." The safer reading is strong
@@ -238,6 +238,8 @@ But:
 ## Revisions
 
 - **2026-06-16:** Bounded ladder entry 29: the static-cycle wage work is strong Card-side evidence for observed 2008-2021 marginal policy variation, not a "decisive Card-side win" for all U.S. policy variation. See `immigration-conclusion-audit-running-fixes.md`.
+
+- **2026-06-16:** Replaced residual "Card-wins" ladder title with bounded Card-side wage-finding language. See `immigration-conclusion-audit-running-fixes.md`.
 
 - **2026-06-16:** Replaced residual "surge exposure" election wording with receiver/border indicator language; the association is not a measured exposure dose or causal surge effect. See `immigration-conclusion-audit-running-fixes.md`.
 
