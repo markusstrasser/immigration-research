@@ -85,9 +85,9 @@ Reason: without explicit horizon and counterfactuals, the phrase has almost no a
 
 ## Causal-design layer added 2026-04-18
 
-17. `Borjas wage prediction for U.S. native low-skill workers from E-Verify`
-Rating: `strong rejection`
-Reason: TWFE on QWI 2003-2023, 9 treated states (AZ, MS, SC, UT, GA, AL, NC, TN, FL), 42 controls. Coefficient on E1 in E-Verify-exposed industries: +0.51% (SE 0.81%, n=16,736). 95% CI excludes Borjas magnitudes (>2.1%). Aligns with Card direction; not a direct replication. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
+17. `Large Borjas-style native wage gains under observed E-Verify mandates`
+Rating: `strong against large gains in this design`
+Reason: TWFE on QWI 2003-2023, 9 treated states (AZ, MS, SC, UT, GA, AL, NC, TN, FL), 42 controls. Coefficient on E1 in E-Verify-exposed industries: +0.51% (SE 0.81%, n=16,736). 95% CI excludes large Borjas-style magnitudes (>2.1%) for this observed mandate margin. Aligns with Card direction; not a direct replication or a global wage-family rejection. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
 
 18. `Immigrants concentrate in inelastic-supply MSAs (welfare implication for rent burden)`
 Rating: `strong (descriptive)`
