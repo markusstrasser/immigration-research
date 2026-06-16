@@ -1363,6 +1363,26 @@ The standalone ladder now exports only entry 34 for CHNV: channel substitution o
 
 ---
 
+## 2026-06-16 — Lott crime critique downgraded from verified flaw to supported critique
+
+### Issue
+
+`research/immigration-crime-rates-unauthorized-vs-native-born.md` rated the claim that Lott's Arizona study had a "fundamental data classification flaw" as `HIGH` and `VERIFIED`. The memo cited Cato, Washington Post, and Latino Decisions critiques, but did not itself reanalyze the Arizona DOC data. [DATA]
+
+### Why it was wrong
+
+Multiple independent critiques are enough to mark Lott as an unresolved outlier and weak source, but they are not the same thing as an independent verification of the underlying classification error. The status label should distinguish "supported critique" from "verified by our own reanalysis." [INFERENCE]
+
+### Fix
+
+Changed the assessment wording from "shown to be unreliable" to "seriously challenged," and changed the claims-table row to `MODERATE-HIGH` / `SUPPORTED CRITIQUE — not independent reanalysis`. Added a memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The crime memo still treats Lott as an outlier whose central data issue is unresolved, but it no longer overstates the memo's own evidentiary posture against the contrarian study. [INFERENCE]
+
+---
+
 ## 2026-06-16 — Open-borders weight framing separated from empirical inputs
 
 ### Issue
