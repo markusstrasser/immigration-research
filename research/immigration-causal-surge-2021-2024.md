@@ -112,7 +112,7 @@ Per-migrant per-day cost: ~$190 NYC, ~$200 Denver, ~$140 Chicago. Total 5-year c
 
 **Multivariate regression** (gop_shift ~ fb_share + recent_fb_annual_share + receiver_city + log_pop + state FE):
 - fb_share: **+0.163 (t=13.22***)** → 1pp more FB share → 0.16pp more GOP shift
-- recent_fb_annual_share: **-1.82 (t=-4.42***)** → counties with higher RECENT inflow swung LESS GOP (probably reflects D-leaning new immigrants voting D, or already-D establishment)
+- recent_fb_annual_share: **-1.82 (t=-4.42***)** -> counties with higher recent inflow swung less GOP in this model; mechanism remains unresolved and may reflect citizenship timing, already-D county context, sympathetic natives, or other compositional confounding
 - receiver_city: **+0.024 (t=6.96***)** → being a busing/border receiver was associated with +2.4 pp MORE GOP shift even after FB share + state + pop controls
 - log_pop: -0.003 (t=-10.40***) → bigger counties shifted less
 
@@ -237,6 +237,8 @@ But:
 [SOURCE: scripts/analyze_surge_election_shift.py]
 
 ## Revisions
+
+- **2026-06-16:** Replaced the recent-inflow coefficient's "probably reflects" mechanism gloss with unresolved-mechanism language matching the caveated interpretation paragraph. See `immigration-conclusion-audit-running-fixes.md`.
 
 - **2026-06-16:** Bounded ladder entry 29: the static-cycle wage work is strong Card-side evidence for observed 2008-2021 marginal policy variation, not a "decisive Card-side win" for all U.S. policy variation. See `immigration-conclusion-audit-running-fixes.md`.
 

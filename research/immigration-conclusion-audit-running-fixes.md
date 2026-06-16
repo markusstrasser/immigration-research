@@ -2280,3 +2280,23 @@ Changed the line to "is predicted to produce small or zero wage gains," keeping 
 ### Updated conclusion
 
 The E-Verify memo now distinguishes theory expectations from observed QWI findings in the interpretation setup. [INFERENCE]
+
+---
+
+## 2026-06-16 — Recent-inflow election mechanism left unresolved
+
+### Issue
+
+`research/immigration-causal-surge-2021-2024.md` said the negative `recent_fb_annual_share` coefficient "probably reflects D-leaning new immigrants voting D, or already-D establishment." [DATA]
+
+### Why it was wrong
+
+The regression output identifies an association in the model, not the mechanism. The memo's own interpretation paragraph correctly lists multiple possibilities, including new citizens, sympathetic natives, and unresolved compositional confounding. The bullet should not promote one mechanism with "probably" language. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the bullet to say counties with higher recent inflow swung less GOP in this model, while the mechanism remains unresolved across citizenship timing, already-D county context, sympathetic natives, and other compositional confounding. [SOURCE: memo]
+
+### Updated conclusion
+
+The surge memo now keeps the recent-inflow election coefficient at the model-association level until a mechanism-specific design is run. [INFERENCE]
