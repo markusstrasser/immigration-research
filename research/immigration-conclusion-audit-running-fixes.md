@@ -1420,3 +1420,23 @@ Reframed the paradigm synthesis and embedded ladder text around a normative weig
 ### Updated conclusion
 
 The open-borders conclusion still must state its welfare-weight assumption, but the repo should keep collecting and grading cost/feasibility evidence rather than treating the scenario as fully non-empirical. [INFERENCE]
+
+---
+
+## 2026-06-16 — Second-generation crime row scoped to broad literature pattern
+
+### Issue
+
+`research/immigration-crime-rates-unauthorized-vs-native-born.md` rated "second-generation immigrants have higher crime rates..." as `HIGH` / `VERIFIED`. [DATA]
+
+### Why it was wrong
+
+The memo cites broad generational immigration-crime literature for that row. It is not an unauthorized-only, current-surge, or source-read-fresh estimate, so it should not carry the same status as the Texas DPS/PNAS administrative rows. [INFERENCE]
+
+### Fix
+
+Changed the paragraph and claims-table row to a scope-limited supported literature pattern with `MODERATE` confidence. Added a revision row to the memo. [SOURCE: memo]
+
+### Updated conclusion
+
+The crime memo can still flag generational convergence as a caveat, but not as a high-certainty claim about unauthorized immigrants or the 2021-2024 cohort. [INFERENCE]
