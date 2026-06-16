@@ -1180,3 +1180,23 @@ Changed the line to say the benchmark blocks `<HS`-only "Mexican drain" exports,
 ### Updated conclusion
 
 The steel-man now preserves both sides of the correction: restrictionists cannot launder a low-education NAS cell into "all Mexicans," and expansionists cannot launder the `+$46k` benchmark into an all-in positive origin verdict. [INFERENCE]
+
+---
+
+## 2026-06-16 — GPT calibration removed from wage-evidence stack
+
+### Issue
+
+`research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md` said three convergent tests showed no measurable native low-skill wage gains: E-Verify, sanctuary state DiD, and "GPT-5.4 calibration interpretation." Its verdict table also called the sanctuary result a "third confirmation." [DATA]
+
+### Why it was wrong
+
+The GPT-5.4 calibration is model-assisted parameter-sensitivity reasoning for the open-borders welfare-weight frame. It is not an empirical wage design. Counting it as a wage test inflates the evidence stack and blurs measurement with model interpretation. The wage stack should be QWI E-Verify + QWI sanctuary, read alongside external Card/Foged-Peri literature. [INFERENCE]
+
+### Fix
+
+Changed the sanctuary row to "additional QWI policy-margin check" and rewrote Statement 1 to say two repo QWI policy-margin tests, read alongside Card/Foged-Peri literature, support the bounded wage conclusion. Explicitly moved GPT-5.4 calibration back to the welfare-weight sensitivity frame. Added a memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The wage conclusion remains strong for the tested marginal-policy range, but the evidence count is now honest: model sensitivity is not empirical wage confirmation. [INFERENCE]
