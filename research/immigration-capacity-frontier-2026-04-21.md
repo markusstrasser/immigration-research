@@ -2,7 +2,7 @@
 
 **Question:** After extending the county panel again, what is the cleanest current answer on thresholds, counterfactual levers, subgroup needs, voting, and welfare?  
 **Tier:** Deep | **Date:** 2026-04-21  
-**Ground truth:** The prior county and threshold passes established that `permit throughput` and `rent burden` mattered more than generic immigrant-share rhetoric, but they still leaned on one or two threshold constructions. This memo compares `stock`, `flow`, and `flow-to-build-capacity` directly and checks whether the threshold survives outside a single arbitrary split. [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md]
+**Ground truth:** The prior county and threshold passes suggested that `permit throughput` and `rent burden` were more informative than generic immigrant-share rhetoric, but they still leaned on one or two threshold constructions. This memo compares `stock`, `flow`, and `flow-to-build-capacity` directly and checks whether the threshold survives outside a single arbitrary split. [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md]
 
 ## Bottom line
 
@@ -234,13 +234,13 @@ One caution remains:
 
 1. Denver's `peak_minus_baseline_shelter` denominator is still distorted by the baseline issue already noted in the threshold memo, so cost-per-extra-shelter normalization should still be handled carefully. [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md]
 
-## What this settles, and what it does not
+## What this updates, and what it does not settle
 
 ### What now looks stable enough for the repo
 
 1. `Foreign-born share` alone is not the right master threshold variable. [DATA]
 2. `Flow x capacity` is the cleaner descriptive county stress object for wages, employment, and native sorting. [DATA]
-3. `Politics` still loads heavily on stock, but capacity strain adds real residual signal. [DATA]
+3. `Politics` still loads heavily on stock, but capacity strain adds model residual signal. [DATA]
 4. The relevant threshold is broad high-flow exposure under weak building response, not only an extreme top-decile event. [DATA]
 
 ### What is still open
@@ -286,6 +286,7 @@ and in the current public-data stack, `flow + capacity` is where the new descrip
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced residual "established"/"settles" wording with suggested/updates language; county capacity models remain descriptive model-output evidence, not settled causal identification. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Added a claims-table scope note: `HIGH`/`VERIFIED` refer to reproducible model-output patterns, not causal identification. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Reframed the native-sorting sentence as a descriptive association rather than a causal incumbent-exit claim. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Removed residual causal verbs from the claims table and wage section: the load-capacity rows are verified descriptive model-output patterns, not causal response estimates. See `immigration-conclusion-audit-running-fixes.md`. |
