@@ -3,6 +3,8 @@
 **Purpose:** Quote-driven sheet for live debate, writing, or adversarial review.  
 **Method:** Each row uses a short direct quote or exact title, identifies the hidden move, and gives the strongest repo-backed counter.
 
+**Status update (2026-06-16):** Use these as debate counters, not as causal proof. Later corrections keep capacity/load evidence descriptive, receiver fiscal evidence gross rather than net, and election evidence correlational rather than a fiscal-load-to-vote mechanism. [SOURCE: research/immigration-conclusion-audit-running-fixes.md]
+
 ## How to use this
 
 For each claim:
@@ -34,11 +36,11 @@ That question alone kills a lot of bad argument. [SOURCE: research/immigration-c
 | “`we've only a partial grasp`” | Caroline Hoxby comment on Clark survey [SOURCE: https://kentclarkcenter.org/surveys/low-skilled-immigrants/] | Admits the GE confidence is weaker than the public consensus rhetoric suggests | `Then the public-facing certainty is doing more work than the underlying knowledge.` | [immigration-economist-effects-matrix.md](/Users/alien/Projects/research/research/immigration-economist-effects-matrix.md:1) |
 | “`The data is not decisive, though`” | Christopher Udry comment on Clark survey [SOURCE: https://kentclarkcenter.org/surveys/low-skilled-immigrants/] | Survey rhetoric sounds more decisive than some economists' own comments | `Then "economists agree" is already overstated.` | [immigration-economist-effects-matrix.md](/Users/alien/Projects/research/research/immigration-economist-effects-matrix.md:1) |
 | “`economically, the U.S. needs large-scale immigration in order to support its economy`” | Noah Smith, *A bunch of thoughts and evidence on immigration* [SOURCE: https://www.noahpinion.blog/p/a-bunch-of-thoughts-and-evidence] | National macro need is presented as if it settles destination incidence | `Maybe on the aggregate-growth ledger. It still does not settle per-person or local-incumbent welfare.` | [immigration-noah-smith-nicholas-decker-claims-audit-2026-04-11.md](/Users/alien/Projects/research/research/immigration-noah-smith-nicholas-decker-claims-audit-2026-04-11.md:1) |
-| “`Why immigration doesn't reduce wages`” | Noah Smith title [SOURCE: https://www.noahpinion.blog/p/why-immigration-doesnt-reduce-wages] | Turns a narrow labor-market question into a broad exoneration | `Even if average wage effects are small, housing, shelter, schools, and local budgets can still go negative.` | [immigration-county-outcome-panel-2026-04-21.md](/Users/alien/Projects/research/research/immigration-county-outcome-panel-2026-04-21.md:1) |
+| “`Why immigration doesn't reduce wages`” | Noah Smith title [SOURCE: https://www.noahpinion.blog/p/why-immigration-doesnt-reduce-wages] | Turns a narrow labor-market question into a broad exoneration | `Even if average wage effects are small, housing, shelter, schools, and local budgets remain separate stress ledgers.` | [immigration-county-outcome-panel-2026-04-21.md](/Users/alien/Projects/research/research/immigration-county-outcome-panel-2026-04-21.md:1) |
 | “`immigration is mostly unrelated to the inflation issue`” | Noah Smith, *Did immigration bring down inflation?* [SOURCE: https://www.noahpinion.blog/p/did-immigration-bring-down-inflation] | Uses headline inflation to erase housing incidence | `The better read is: not the main driver of overall disinflation, but still a real housing-pressure channel.` | [immigration-noah-smith-nicholas-decker-claims-audit-2026-04-11.md](/Users/alien/Projects/research/research/immigration-noah-smith-nicholas-decker-claims-audit-2026-04-11.md:1) |
 | “`Immigrants Must Make Us Richer`” | Nicholas Decker title [SOURCE: https://nicholasdecker.substack.com/p/yes-immigrants-must-make-us-richer] | Converts some increasing-returns channels into a universal conclusion | `No. Official and repo evidence support an incidence split, not a must-be-positive theorem.` | [immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md](/Users/alien/Projects/research/research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md:1) |
-| “`restrictions are not necessary to protect American workers`” | Bryan Caplan, Cato Journal [SOURCE: https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2012/1/cj32n1-2.pdf] | Collapses `job collapse is false` into `worker objection is trivial` | `The broad collapse story is false, but slower wage growth in constrained places is not trivial.` | [immigration-bryan-caplan-claims-audit-2026-04-21.md](/Users/alien/Projects/research/research/immigration-bryan-caplan-claims-audit-2026-04-21.md:1) |
-| “`the fiscal effects are small`” | Bryan Caplan, Cato Journal [SOURCE: https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2012/1/cj32n1-2.pdf] | Treats federal and state/local incidence as one small ledger | `That fails once you separate federal gains from state/local school and shelter costs.` | [immigration-bryan-caplan-claims-audit-2026-04-21.md](/Users/alien/Projects/research/research/immigration-bryan-caplan-claims-audit-2026-04-21.md:1) |
+| “`restrictions are not necessary to protect American workers`” | Bryan Caplan, Cato Journal [SOURCE: https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2012/1/cj32n1-2.pdf] | Collapses `job collapse is false` into `worker objection is trivial` | `The broad collapse story is false, but constrained-place wage pressure remains a live descriptive screen, not a settled causal zero.` | [immigration-bryan-caplan-claims-audit-2026-04-21.md](/Users/alien/Projects/research/research/immigration-bryan-caplan-claims-audit-2026-04-21.md:1) |
+| “`the fiscal effects are small`” | Bryan Caplan, Cato Journal [SOURCE: https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2012/1/cj32n1-2.pdf] | Treats federal and state/local incidence as one small ledger | `That fails once you separate narrow federal gains, state/local costs, gross receiver loads, and still-withheld origin school-net rows.` | [immigration-bryan-caplan-claims-audit-2026-04-21.md](/Users/alien/Projects/research/research/immigration-bryan-caplan-claims-audit-2026-04-21.md:1) |
 | “`double world GDP`” | Open Borders slogan [SOURCE: https://openborders.info/double-world-gdp/] | Launders stylized upper bounds into realistic forecast language | `Large gains in principle survive. The realistic near-doubling baseline does not.` | [immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md](/Users/alien/Projects/research/research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md:1) |
 
 ## Failure-mode map
@@ -52,7 +54,7 @@ Use this when you want to label the trick quickly.
 | `Open borders could double world GDP` | `upper-bound laundering` | `Why are you presenting a stylized upper bound as a realistic policy baseline?` |
 | `Moderate inflows were absorbed fine` | `marginal-to-mass extrapolation` | `Why should that survive concentrated surge conditions and weak housing response?` |
 | `Ratios look stable` | `denominator masking` | `Did capacity expand endogenously while the absolute burden still rose?` |
-| `Immigrant voting is low` | `political-economy erasure` | `What about native backlash, assignment rules, and legitimacy effects?` |
+| `Immigrant voting is low` | `political-economy erasure` | `What about citizen political response, assignment rules, and legitimacy effects?` |
 | `Housing will adjust` | `capacity erasure` | `Show the actual build-rate and service-capacity path, not a scalar assumption.` |
 
 ## Best counters by topic
@@ -67,7 +69,7 @@ Say:
 
 Say:
 
-`Broad job-collapse rhetoric is too strong. That still does not erase slower wage growth in constrained places or the rest of the local ledger.`
+`Broad job-collapse rhetoric is too strong. That still does not erase constrained-place wage screens or the rest of the local ledger.`
 
 ### If the economist is talking about housing
 
@@ -83,4 +85,10 @@ Say:
 
 ## Best closing line
 
-**The economist case is strongest where it talks about migrant gains and aggregate efficiency. It becomes evasive where it acts as if those gains settle destination-country welfare, local capacity, and political feedback.**
+**The economist case is strongest where it talks about migrant gains and aggregate efficiency. It becomes evasive where it acts as if those gains settle destination-country welfare, local capacity, and political-response channels.**
+
+## Revisions
+
+| Date | Change | Trigger |
+|---|---|---|
+| 2026-06-16 | Scoped wage/capacity, fiscal, and political counters to descriptive/gross/correlational evidence. | `research/immigration-conclusion-audit-running-fixes.md` capacity/surge corrections. |
