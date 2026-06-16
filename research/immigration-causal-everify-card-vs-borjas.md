@@ -127,7 +127,7 @@ For this enforcement margin, the adjustment looks Card-style: the wage curve is 
 
 4. **Compliance is partial.** US E-Verify compliance ~50% even in mandate states (CIS 2017 estimate). The intent-to-treat estimate underweights actual treated workers. Adjust by 2× → MDE roughly 4-6%, still rejects high-end Borjas.
 
-5. **Unauthorized substitution to cash economy.** If displaced unauthorized workers stayed in the same labor market but moved to off-W-2 jobs (day labor, gig), QWI misses them. The "true" labor supply contraction was probably less than the QWI E1 employment drop suggests, which makes the wage non-result MORE puzzling for Borjas, not less.
+5. **Unauthorized substitution to cash economy.** If displaced unauthorized workers stayed in the same labor market but moved to off-W-2 jobs (day labor, gig), QWI misses them. That possibility weakens any interpretation of the QWI E1 drop as a full labor-supply contraction; it does not rescue a large QWI-wage-gain prediction in this design.
 
 6. **External validity.** This is the policy variation we have. Results may not generalize to a hypothetical mass deportation, large refugee inflow, or border closure. It is one relevant test for marginal tightening of unauthorized labor supply via state enforcement mandates, not the policy debate as a whole.
 
@@ -181,6 +181,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced speculative cash-economy substitution language with a narrower measurement caveat: off-W-2 substitution weakens E1 as a total labor-supply proxy, while leaving the QWI wage-gain result bounded to this design. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Narrowed the external-validity caveat from "the relevant test for the actual policy debate" to one relevant test for marginal enforcement mandates. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "do not move wages much" summary with bounded no-large-native-wage-loss/gain language and separated it from any shared mechanism claim. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "does not measurably transfer rents" shorthand with no-statistically-significant higher-QWI-wage transfer language; small effects remain outside rejection. See `immigration-conclusion-audit-running-fixes.md`. |
