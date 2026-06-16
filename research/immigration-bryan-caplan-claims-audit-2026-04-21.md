@@ -83,7 +83,7 @@ What survives:
 
 1. The direction of the global-gains claim survives. [SOURCE: research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md]
 2. The repo's own bounded calibration still finds large gains under substantial movement, just far below the strongest slogans. [SOURCE: research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md]
-3. Caplan is right that many anti-immigration arguments ignore the scale of migrant place-premium gains. [SOURCE: https://www.aeaweb.org/articles?id=10.1257/jep.25.3.83]
+3. Many anti-immigration arguments ignore the scale of migrant place-premium gains. [SOURCE: https://www.aeaweb.org/articles?id=10.1257/jep.25.3.83]
 
 What fails:
 
@@ -102,7 +102,7 @@ Caplan repeatedly argues that most Americans gain, while the losers do not lose 
 What survives:
 
 1. The repo's current county panel does **not** show a broad employment-collapse story. [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
-2. Caplan is right to reject the crudest version of `immigration destroys jobs`. [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
+2. The evidence supports Caplan's objection to the crudest version of `immigration destroys jobs`. [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
 
 What cuts against him:
 
@@ -112,7 +112,7 @@ What cuts against him:
 
 Verdict:
 
-1. `Caplan is right against collapse rhetoric`
+1. `collapse rhetoric is unsupported by the current county panel`
 2. `Caplan is too broad when he compresses worker protection into near-triviality`
 
 ## Claim 4: `Immigration restrictions are not necessary to protect American taxpayers`
@@ -124,7 +124,7 @@ That formulation no longer survives cleanly once the fiscal ledger is split.
 What survives:
 
 1. The `federal` ledger can indeed be positive. CBO estimates the recent surge lowers federal deficits by about `$897B` over `2024–2034`. [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf]
-2. Caplan is right that restrictionists often blur national and local fiscal ledgers. [INFERENCE]
+2. Caplan's criticism is supported where restrictionists blur national and local fiscal ledgers. [INFERENCE]
 
 What fails:
 
@@ -221,7 +221,7 @@ Verdict:
 
 ## Causal graph
 
-The cleanest way to see where Caplan is right and where he is too optimistic is to write the omitted edges explicitly.
+The cleanest way to see where Caplan's case is supported and where it is too optimistic is to write the omitted edges explicitly.
 
 ### Baseline DAG
 
@@ -315,6 +315,7 @@ So the final score is:
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced remaining "Caplan is right" labels with claim-support language, including global-gains, ledger-blurring, labor-collapse, and DAG framing. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual right/wrong and wins/loses verdict labels with strongest/weakest/support language while preserving the same claim ranking. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Bounded the Caplan global-gains verdict to direction/sign rather than strongest magnitude or destination-capacity closure. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Scoped shorthand "wins on crime" language to observed U.S. justice-system-rate skepticism, matching the crime memo's true-offending caveat. See `immigration-conclusion-audit-running-fixes.md`. |

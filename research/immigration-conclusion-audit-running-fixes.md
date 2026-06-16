@@ -1700,3 +1700,23 @@ Replaced the residual verdict labels with direction/sign survives, partly suppor
 ### Updated conclusion
 
 The Caplan audit now reads as a lane-by-lane support map rather than a debate scorecard. [INFERENCE]
+
+---
+
+## 2026-06-16 — Caplan right-label residue narrowed
+
+### Issue
+
+After the broader Caplan verdict cleanup, the audit still used "Caplan is right" labels in the global-gains, worker-protection, fiscal-ledger, and causal-graph sections. [DATA]
+
+### Why it was wrong
+
+The source evidence is lane-specific and asymmetric: place-premium scale survives, ledger-blurring criticism survives in some fiscal arguments, broad employment-collapse rhetoric is unsupported, and constrained-place wage pressure remains live. Calling Caplan "right" compresses those separable claims with unresolved destination-incidence lanes. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the surviving points to claim-support language: place-premium scale, ledger-blurring criticism, unsupported collapse rhetoric, and "where Caplan's case is supported" DAG framing. [SOURCE: memo]
+
+### Updated conclusion
+
+The Caplan audit now separates supported objections from unresolved destination-incidence concerns without relying on "Caplan is right" shorthand. [INFERENCE]
