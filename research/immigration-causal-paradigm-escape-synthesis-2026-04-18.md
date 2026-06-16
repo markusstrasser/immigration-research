@@ -35,7 +35,7 @@
 |---|---------|------------|--------|
 | 1 | E-Verify mandates do not raise native low-skill wages | STRONG against large Borjas-style wage gains in this enforcement margin | TWFE on QWI 2003-23, 9 states |
 | 2 | E-Verify mandates reduce E1 employment in exposed industries ~6% (marginal) | MEDIUM | Same |
-| 3 | Sanctuary policy variation produces null E1 wage effects (both directions) | STRONG null result for the tested policy variations | TWFE on QWI 2003-23, 12 sanctuary + 9 anti |
+| 3 | Sanctuary policy variation shows no statistically significant E1 wage effects in either direction | No significant E1 wage change observed in this design; equivalence is not tested | TWFE on QWI 2003-23, 12 sanctuary + 9 anti |
 | 4 | Immigrants concentrate in inelastic-supply MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40) | STRONG (descriptive) | Saiz × ACS 2022 5-yr, 237 MSAs |
 | 5 | The inelastic-MSA concentration is more strongly associated with WRLURI than topographic unavailability | STRONG descriptive regression, not causal channel proof | Saiz decomposition regression |
 | 6 | Domestic U.S.-origin mover flow is order-of-magnitude larger than moved-from-abroad flow at the median county | STRONG descriptive, not burden-causal | IRS SOI 2022-23 × ACS `B07001_081E` |
@@ -45,7 +45,7 @@
 ### Three new policy-relevant statements
 
 **Statement 1 — Card-side pattern is favored for observed marginal wage variation.**
-Two repo QWI policy-margin tests now (E-Verify + sanctuary state), read alongside Card/Foged-Peri literature, show no measurable native low-skill wage gains in the tested E-Verify/sanctuary-style range. The GPT-5.4 calibration belongs to the welfare-weight sensitivity frame, not the wage-evidence stack. The Borjas Mariel-restriction result does not generalize to this observed range. Future repo memos should treat the wage claim as **bounded to marginal policy variation**; surge and mass-shock regimes remain open.
+Two repo QWI policy-margin tests now (E-Verify + sanctuary state), read alongside Card/Foged-Peri literature, show no statistically significant native low-skill wage gains in the tested E-Verify/sanctuary-style range. The GPT-5.4 calibration belongs to the welfare-weight sensitivity frame, not the wage-evidence stack. The Borjas Mariel-restriction result does not generalize to this observed range. Future repo memos should treat the wage claim as **bounded to marginal policy variation**; surge and mass-shock regimes remain open.
 
 **Statement 2 — The local-burden ledger is mostly domestic-mover driven; moved-from-abroad flow is a small visible component.**
 At the median U.S. county, IRS `Total Migration-US` inflow is roughly an order of magnitude larger than ACS moved-from-abroad flow: the current corrected memo gives about **21.7x** for the ratio of medians and about **20.5x** for the median county-level ratio among counties with nonzero moved-from-abroad share. This is a descriptive frame correction, not a precise burden ratio, and the IRS series is not native-only. The Texas exurbs (Comal, Kaufman, Rockwall) experiencing 12-14% annual population replacement are doing so without moved-from-abroad flow as the primary driver. Where moved-from-abroad flow IS the dominant proximate driver (Miami-Dade, Hudson NJ, Santa Clara CA), it operates at much smaller scale than internal U.S. migration in equally-stressed Sun Belt counties.
@@ -64,10 +64,10 @@ Reason: log(FB share) ~ WRLURI t=6.29*** vs unaval t=0.58. This makes zoning ref
 a plausible policy hypothesis, not an identified causal lever for immigrant rent burden.
 [SOURCE: research/immigration-causal-everify-card-vs-borjas.md, saiz_decomposition.py]
 
-21. `Sanctuary policy variation does not change native low-skill wages either direction`
-Rating: STRONG null result in this design (aligned with E-Verify margin)
+21. `Sanctuary policy variation shows no significant native low-skill wage change either direction`
+Rating: no significant E1 wage change observed in this design (aligned with E-Verify margin)
 Reason: TWFE on QWI 2003-23 with 12 pro-sanctuary + 9 anti-sanctuary states; all
-E1 specifications |t|<1.0; another Card-side null for observed marginal policy variation
+E1 specifications |t|<1.0; another QWI policy-margin check consistent with the bounded Card-side reading for observed marginal policy variation
 [SOURCE: scripts/analyze_sanctuary_wages.py]
 
 22. `Domestic U.S.-origin mover flow is order-of-magnitude larger than moved-from-abroad flow at median county`
@@ -130,6 +130,7 @@ The biggest *interpretation* lever remains the welfare-weight question, which is
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced sanctuary "strong null result" language with "no statistically significant E1 wage change observed"; all `|t|<1.0` is not an equivalence test. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "Card-side pattern wins" wording with "is favored" to avoid debate-closure language outside the tested policy margins. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Bounded short-form E-Verify/sanctuary confidence language: the findings reject large enforcement-channel wage gains within the tested policy margins, not every Borjas-style or enforcement-channel claim. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Bounded Saiz decomposition language: WRLURI is a stronger descriptive correlate than topographic unavailability, not proof that zoning drives immigrant concentration or that zoning reform is an identified causal lever. See `immigration-conclusion-audit-running-fixes.md`. |
