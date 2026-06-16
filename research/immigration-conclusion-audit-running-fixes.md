@@ -1500,3 +1500,23 @@ Renamed the ladder row to "Large Borjas-style native wage gains under observed E
 ### Updated conclusion
 
 The ladder now matches the source memos: strong Card-side evidence for the tested E-Verify margin, not a global wage-family rejection. [INFERENCE]
+
+---
+
+## 2026-06-16 — Caplan crime shorthand scoped to observed justice-system rates
+
+### Issue
+
+`research/immigration-bryan-caplan-claims-audit-2026-04-21.md` correctly bounded the crime row in its executive table and caveats, but its shorthand verdict still said `strong on crime skepticism`, `crime skepticism`, and `Caplan wins on crime`. [DATA]
+
+### Why it was wrong
+
+The crime memo's corrected estimand is observed U.S. arrest, conviction, incarceration, and institutionalization rates for first-generation / unauthorized immigrants. It is not directly observed true offending, not international evidence, and not a current-surge subgroup estimate. The shorthand needed to carry the same scope as the body. [INFERENCE]
+
+### Fix
+
+Changed the shorthand verdicts to observed U.S. justice-system-rate skepticism and added a Caplan-audit revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+Caplan remains strongest on the U.S. crime-objection lane, but only for the observed justice-system-rate claim already defended in the crime memo. [INFERENCE]
