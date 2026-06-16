@@ -1,14 +1,14 @@
-# E-Verify staggered DiD on QWI — Card-vs-Borjas verdict for U.S. data
+# E-Verify staggered DiD on QWI — observed wage-channel test
 
 **Date:** 2026-04-18
-**Question:** Does tightening unauthorized labor supply (via state E-Verify mandates) raise wages of low-education native workers? Borjas predicts yes (large); Card predicts no (or even negative due to lost complementarity).
+**Question:** Do state E-Verify mandates produce positive QWI wage effects for low-education native workers? Borjas-style large-gain predictions imply yes; Card-style small/native-null predictions imply small or no observed gains.
 **Design:** Two-way fixed effects (state + year) on log earnings of stable workers, by education and industry, 2003-2023. Treatment = year ≥ state E-Verify effective year. 9 treated states (AZ, MS, SC, UT, GA, AL, NC, TN, FL), 42 control states.
 
 ## Bottom line
 
 E-Verify mandates produced **no statistically significant positive wage effect** on low-education workers in any of 12 specifications. Point estimates are tiny (within ±1.5%) with mixed signs. The Borjas wage prediction (~5-15% rise for less-than-HS workers) is rejected at conventional levels for this policy variation. **In this E-Verify design, the wage results are closer to the Card-style null than to large Borjas-style native wage gains.**
 
-Employment side: E1 (less than HS) stable W-2 employment in E-Verify-exposed industries (Ag, Constr, Mfg, Food Service) fell ~6% post-treatment (t=-1.40, marginal). Combined picture: QWI employment fell but wages did NOT rise. That points away from large native wage bidding in this observed design; it does not identify whether adjustment happened through capital, output, relocation, cash-economy substitution, hours, or composition.
+Employment side: E1 (less than HS) stable W-2 employment in E-Verify-exposed industries (Ag, Constr, Mfg, Food Service) fell ~6% post-treatment (t=-1.40, marginal). Combined picture: QWI employment fell but no statistically significant positive wage effect was observed. That points away from large native wage bidding in this observed design; it does not identify whether adjustment happened through capital, output, relocation, cash-economy substitution, hours, or composition.
 
 ## Method
 
@@ -181,6 +181,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Scoped the title/question and bottom-line employment/wage shortcut to the observed QWI E-Verify wage-channel test rather than a broad Card-vs-Borjas verdict for U.S. data. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "removing/restricting unauthorized labor" exports with observed E-Verify mandate variation and QWI wage language; the design does not directly observe total unauthorized labor supply. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Narrowed the employment/wage mechanism interpretation: QWI shows stable W-2 employment fell while no statistically significant positive wage effect was observed, but it does not identify capital, output, relocation, cash-economy, hours, or composition adjustment mechanisms. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "Clark economists were correct/right" language with support for the small-native-wage-effect premise in the observed E-Verify margin. See `immigration-conclusion-audit-running-fixes.md`. |

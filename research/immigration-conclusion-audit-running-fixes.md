@@ -1880,3 +1880,23 @@ Replaced the active verdict with synthesis language about strongest and weakest 
 ### Updated conclusion
 
 The steel-man now evaluates claim structure without presenting restrictionism as a binary winner or loser in aggregate. [INFERENCE]
+
+---
+
+## 2026-06-16 — E-Verify Card-vs-Borjas title scoped to wage channel
+
+### Issue
+
+`research/immigration-causal-everify-card-vs-borjas.md` was titled as a "Card-vs-Borjas verdict for U.S. data," and the synthesis section was headed as an "explicit verdict" even though the current evidence is an observed E-Verify/QWI wage-channel test. [DATA]
+
+### Why it was wrong
+
+The body already says the result is bounded to observed mandate variation and does not settle surge regimes, mass shocks, open borders, cash-economy sectors, or all wage-family claims. Title and heading text are high-reuse surfaces; if overbroad, they can undo the caveats below. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Retitled the E-Verify memo as an observed wage-channel test, narrowed the question to positive QWI wage effects under state mandates, changed the synthesis heading to "E-Verify wage-channel verdict," and replaced another "wages did NOT rise" shortcut with statistical non-significance wording. [SOURCE: memo]
+
+### Updated conclusion
+
+The E-Verify material now presents itself as a bounded wage-channel design: strong against large Borjas-style gains in observed mandate variation, not a general Card-vs-Borjas verdict for U.S. immigration data. [INFERENCE]
