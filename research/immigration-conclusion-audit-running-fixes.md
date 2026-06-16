@@ -2180,3 +2180,23 @@ Changed the caveat to say cash-economy substitution weakens interpretation of th
 ### Updated conclusion
 
 The E-Verify memo now treats cash-economy substitution as a measurement limitation, not as an unmeasured estimate of true labor-supply contraction. [INFERENCE]
+
+---
+
+## 2026-06-16 — Hanson wage counterfactual kept out of surge forecast
+
+### Issue
+
+`research/immigration-restrictionist-arguments-steelman-2026-06-15.md` said that when low-skill inflows resume in `2021–2023`, wage pressure on low-skill natives returns, and that Hanson implies a `+24% wage effect` if inflow had stayed at the `1994–2007` pace. [DATA]
+
+### Why it was wrong
+
+The local extract of Hanson w23753 frames the result as a counterfactual college/low-skill skill-premium gap: if low-skill inflow had continued, the `2015` skill premium would have been about `6–9` percentage points higher. That is a useful restrictionist labor-supply input, but it is not a direct estimate of surge-era native wage pressure and needs a cohort/geography/demand bridge before being exported to `2021–2023`. [SOURCE: research/immigration-restrictionist-corpus-parse-2026-06-15.md] [INFERENCE]
+
+### Fix
+
+Replaced the `+24%` wage-effect and resumed-inflow forecast phrasing with the source's narrower `6–9pp` skill-premium counterfactual and an explicit bridge requirement. [SOURCE: memo]
+
+### Updated conclusion
+
+The restrictionist steelman still gets to use Hanson as a labor-supply counterfactual and secular-supply warning, but not as an unbridged surge-era wage forecast. [INFERENCE]
