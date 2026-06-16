@@ -121,7 +121,7 @@ Reason: BEA Use Table 2023 partial-equilibrium with industry FB-share assumption
 
 ## Surge layer added 2026-04-18 (late evening)
 
-25. `Title 42 lift was not the surge cause; surge was a regime shift starting Dec 2022` — **EVIDENCE SUPERSEDED by entry 35**
+25. `Title 42 lift timing did not match surge onset; surge was a regime shift starting Dec 2022` — **EVIDENCE SUPERSEDED by entry 35**
 Rating: `medium`
 Reason: SWB encounters peaked Jan-Mar 2023 at 50K+/month BEFORE Title 42 lift (May 2023). Lift coincided with April-May lull, then gradual rebuild to surge levels. Pre/post comparison is composition-driven, not policy-causal. [SOURCE: research/immigration-causal-surge-2021-2024.md]
 
@@ -165,9 +165,9 @@ Trigger: the morning layer's two open kill-tests were run against local data and
 Rating: `strong (initial period); medium beyond ~12 months`
 Reason: corrected USBP (between-ports) event study with staggered dates and flat pre-trends: Cuba −95.3%, Nicaragua −96.2%, Venezuela −57.5% (initial, decaying by τ+11 — Darién rebound), Haiti structurally ~0 between ports. Mean τ[0,+3] = −2.17 log points. The old "+787% — added on top" figure was the program's own lawful OFO channel on a scrambled clock; corrected total-CBP DiD is null (β=+0.45, t=1.29). Ledger discipline: lawful parole inflow (~530K) still lands in receiver cities — substitution-of-channel, not reduction-of-arrivals. [SOURCE: sources/immigration-causal/data/outcomes/analysis/chnv_pretrends/results.json]
 
-35. `Title 42 lift did not cause the surge` — **conclusion of entry 25 retained, evidence replaced**
+35. `Corrected timing does not support Title 42 lift as proximate surge onset` — **replaces entry 25 evidence and narrows conclusion**
 Rating: `medium`
-Reason: the entry's timing facts were artifacts. Corrected series: Dec-2022 local peak 252K → Jan-Feb 2023 trough (CHNV substitution visible) → April-May 2023 anticipation spike (212K/207K) → June post-lift crash (−30%) → Dec 2023 record 301,980. Post-lift 6-month mean −14.5% vs pre-lift. [SOURCE: scripts/analyze_surge_title42_chnv.py rerun 2026-06-11]
+Reason: the entry's timing facts were artifacts. Corrected series: Dec-2022 local peak 252K → Jan-Feb 2023 trough (CHNV substitution visible) → April-May 2023 anticipation spike (212K/207K) → June post-lift crash (−30%) → Dec 2023 record 301,980. Post-lift 6-month mean −14.5% vs pre-lift. This timing result refutes the old simple post-lift jump story, not every possible Title 42 effect through anticipation, routing, composition, or later-equilibrium channels. [SOURCE: scripts/analyze_surge_title42_chnv.py rerun 2026-06-11]
 
 36. `Receiver-city 2024 GOP swing survives the Hispanic-realignment control` — **closes entry 31's open work**
 Rating: `medium (correlation; robust to the named rival channel)`
