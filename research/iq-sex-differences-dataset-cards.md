@@ -612,3 +612,61 @@ countries
 - useful as infrastructure, not as a standalone adjudicator
 
 **Official source:** <https://nces.ed.gov/use-work/elementarysecondary/hst-high-school-transcript-studies>
+
+## PISA 2022
+
+**Local files:**
+
+- `sources/iq-sex-diff/data/pisa2022/STU_QQQ_SPSS.zip`
+- `sources/iq-sex-diff/data/pisa2022/STU_COG_SPSS.zip`
+- `sources/iq-sex-diff/data/pisa2022/STU_TIM_SPSS.zip`
+
+**Acquisition log:** `sources/iq-sex-diff/data/pisa2022/ACQUIRED.md`
+
+**Unit:** student
+
+**Observed rows from the first `STU_QQQ` plausible-value pass:** `613,665`
+
+**Key fields in the first pass:**
+
+- sex: `ST004D01T`
+- student weight: `W_FSTUWT`
+- mathematics plausible values: `PV1MATH` to `PV10MATH`
+- reading plausible values: `PV1READ` to `PV10READ`
+- science plausible values: `PV1SCIE` to `PV10SCIE`
+- mathematics content subscales:
+  - `MCCR`: change and relationships
+  - `MCQN`: quantity
+  - `MCSS`: space and shape
+  - `MCUD`: uncertainty and data
+- mathematics process subscales:
+  - `MPEM`: employing mathematical concepts, facts, and procedures
+  - `MPFS`: formulating situations mathematically
+  - `MPIN`: interpreting, applying, and evaluating mathematical outcomes
+  - `MPRE`: reasoning
+
+**Current derived outputs:**
+
+- `sources/iq-sex-diff/data/pisa2022/pisa2022_pv_gender_summary.tsv`
+- `sources/iq-sex-diff/data/pisa2022/pisa2022_pv_gender_country.tsv`
+- `sources/iq-sex-diff/data/pisa2022/pisa2022_metadata_probe.txt`
+
+**Metadata probe:**
+
+- `STU_QQQ`: `1,278` columns, including `110` plausible-value columns and `80` replicate weights
+- `STU_COG`: `5,023` columns, including `417` math cognitive item/process columns, `1,266` reading cognitive item/process columns, and `694` science cognitive item/process columns
+- `STU_TIM`: `172` columns, including `154` questionnaire timing columns
+
+**Primary use:**
+
+- current public replication target for the PISA 2018 measurement-surface branch
+- official plausible-value check before porting item-level and process-DIF scripts
+- content/process family bridge for the surface-family model
+
+**Main limitations:**
+
+- first pass is descriptive and uses final student weights, not full replicate-weight variance estimation
+- `STU_COG` and `STU_TIM` are acquired and metadata-probed, but item-level scoring/timing analyses have not been ported yet
+- country subscale availability differs; country rows with no subscale plausible values are dropped by the local script
+
+**Official source:** <https://www.oecd.org/en/data/datasets/pisa-2022-database.html>

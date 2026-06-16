@@ -104,6 +104,7 @@ It is **not** a substitute for the full literature memo or the full DOE. [INFERE
 1. A large stable male advantage in battery-independent general ability is **not** established by the current project state. [SOURCE: `research/iq-sex-differences-verification.md`; `research/iq-sex-differences-piaac-frontier.md`; `research/iq-sex-differences-nlsy97-stage-a.md`]
 2. A strong "female-favoring pedagogy is masking a true male `g` advantage" story is **not** established either. The current footprint is too measurement-sensitive for that conclusion. [INFERENCE from `research/iq-sex-differences-second-pass-results.md`; `research/iq-sex-differences-nlsy97-stage-a.md`; `research/iq-sex-differences-piaac-frontier.md`]
 3. "`g` is bullshit" is too strong. A weaker claim is better supported: `g` is a useful but theory-laden summary, and sex-gap claims about it are much less clean than popular discussion implies. [⚠ FRAMING-SENSITIVE] [INFERENCE from `research/iq-sex-differences-verification.md`; `research/iq-sex-differences-causal-graph.md`]
+4. A single average latent-`g` difference for a `16`-year-old female versus an `18`-year-old male is **not** established by the current evidence. The cleanest practical read is near zero on average, but the plausible battery-specific range still runs from small female-favoring to small male-favoring estimates. [INFERENCE from `research/iq-sex-differences-test-construction.md`; `research/iq-sex-differences-verification.md`]
 
 ## Current Causal Read
 
