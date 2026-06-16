@@ -117,7 +117,7 @@ Reason: At immigrant-welfare-weight w=0 (current repo's implicit framing): negat
 
 24. `Mass deportation of 7M unauthorized → ~$1.45T first-order output shock (~5% GDP); Type-II endpoint is sensitivity only` — **presentation qualified by entry 32**
 Rating: `medium (calibration not estimate)`
-Reason: BEA Use Table 2023 partial-equilibrium with industry FB-share assumptions from Pew/CMS. First-order $1.45T; a Type-II multiplier (~1.6) gives a $2.32T sensitivity, not a headline estimate. Per-removed-worker loss $207K first-order and $332K under Type-II sensitivity. Most affected: Construction (-5.9%), Other services / cleaning (-8.8%), Agriculture (-4.3%). Calibration consistent with E-Verify empirical finding (-6% E1 employment under 50% compliance). [SOURCE: scripts/mass_deportation_sim.py]
+Reason: BEA Use Table 2023 partial-equilibrium with industry FB-share assumptions from Pew/CMS. First-order $1.45T; a Type-II multiplier (~1.6) gives a $2.32T sensitivity, not a headline estimate. Per-removed-worker loss $207K first-order and $332K under Type-II sensitivity. Most affected: Construction (-5.9%), Other services / cleaning (-8.8%), Agriculture (-4.3%). The E-Verify employment result is, at most, a weak plausibility check for employment response under one marginal enforcement setting; it does not validate the mass-deportation calibration or its industry loss magnitudes. [SOURCE: scripts/mass_deportation_sim.py] [SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
 
 ## Surge layer added 2026-04-18 (late evening)
 
@@ -184,6 +184,10 @@ Reason: WRLURI is a much stronger correlate of foreign-born share than topograph
 39. `Open-borders verdict has a normative weight and empirical-input components`
 Rating: `strong framing correction`
 Reason: The immigrant-welfare weight is a value parameter; empirical evidence cannot choose it. But native-cost benchmarks, fiscal ledgers, housing/capacity constraints, and sending-country effects remain empirical inputs that can move scenario break-evens. Treat entry 23 as a weight-sensitivity claim under the then-current GPT-5.4/Clemens calibration, not as a reason to stop collecting cost or feasibility evidence. [SOURCE: research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md] [SOURCE: data/clemens/gpt54_calibration_review.md]
+
+40. `E-Verify employment does not validate mass-deportation calibration`
+Rating: `strong scope correction`
+Reason: E-Verify observed mandate variation is a marginal enforcement design with partial compliance and QWI W-2 measurement. The BEA mass-deportation run is a partial-equilibrium calibration that freezes replacement hiring, wage response, and capital reallocation. Similar directional employment pressure is not validation of the calibration's national shock size or industry-loss magnitudes. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md] [SOURCE: sources/immigration-causal/scripts/mass_deportation_sim.py]
 
 ## Two weakest assumptions
 

@@ -2240,3 +2240,23 @@ Changed the summary bullet to say stock carries the broad political-map signal i
 ### Updated conclusion
 
 The capacity frontier memo now keeps its politics result at the descriptive model-signal level throughout that section. [INFERENCE]
+
+---
+
+## 2026-06-16 — E-Verify employment not used as deportation validation
+
+### Issue
+
+`research/immigration-confidence-ladder.md` said the mass-deportation calibration was "consistent with E-Verify empirical finding (-6% E1 employment under 50% compliance)." [DATA]
+
+### Why it was wrong
+
+The E-Verify employment result is a marginal state-enforcement design with partial compliance and QWI W-2 measurement. The mass-deportation run is a BEA partial-equilibrium calibration that freezes replacement hiring, wage response, and capital reallocation. Similar directional employment pressure is not validation of the national shock size or industry-loss magnitudes. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md] [SOURCE: sources/immigration-causal/scripts/mass_deportation_sim.py] [INFERENCE]
+
+### Fix
+
+Changed entry 24 to treat E-Verify employment as, at most, a weak plausibility check under one marginal enforcement setting, and added entry 40 explicitly saying E-Verify employment does not validate the mass-deportation calibration. [SOURCE: memo]
+
+### Updated conclusion
+
+The ladder now separates a bounded empirical employment signal from a national partial-equilibrium deportation calibration. [INFERENCE]
