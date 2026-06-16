@@ -45,7 +45,7 @@
 ### Three new policy-relevant statements
 
 **Statement 1 — Card-side pattern is favored for observed marginal wage variation.**
-Two repo QWI policy-margin tests now (E-Verify + sanctuary state), read alongside Card/Foged-Peri literature, show no statistically significant native low-skill wage gains in the tested E-Verify/sanctuary-style range. The GPT-5.4 calibration belongs to the welfare-weight sensitivity frame, not the wage-evidence stack. The Borjas Mariel-restriction result does not generalize to this observed range. Future repo memos should treat the wage claim as **bounded to marginal policy variation**; surge and mass-shock regimes remain open.
+Two repo QWI policy-margin tests now (E-Verify + sanctuary state), read alongside Card/Foged-Peri literature, show no statistically significant native low-skill wage gains in the tested E-Verify/sanctuary-style range. The GPT-5.4 calibration belongs to the welfare-weight sensitivity frame, not the wage-evidence stack. The Borjas restricted-Mariel magnitude should not be mechanically extrapolated to this observed range. Future repo memos should treat the wage claim as **bounded to marginal policy variation**; surge and mass-shock regimes remain open.
 
 **Statement 2 — Median-county newcomer counts are mostly domestic U.S.-origin movement, not moved-from-abroad flow.**
 At the median U.S. county, IRS `Total Migration-US` inflow is roughly an order of magnitude larger than ACS moved-from-abroad flow: the current corrected memo gives about **21.7x** for the ratio of medians and about **20.5x** for the median county-level ratio among counties with nonzero moved-from-abroad share. This is a descriptive denominator correction, not a precise burden ratio or receiver-node pressure estimate, and the IRS series is not native-only. The Texas exurbs (Comal, Kaufman, Rockwall) experiencing 12-14% annual population replacement are doing so without moved-from-abroad flow as the primary driver. Where moved-from-abroad flow IS the dominant proximate driver (Miami-Dade, Hudson NJ, Santa Clara CA), this median-county comparison does not measure shelter, legal, language, school, or wage incidence.
@@ -129,6 +129,7 @@ The biggest *interpretation* lever remains the welfare-weight question, which is
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced residual hard non-generalization wording with a narrower no-mechanical-extrapolation claim for observed E-Verify/sanctuary-style margins. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced mass-deportation "would impose" wording with partial-equilibrium model-output calibration language. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "do not measurably respond" wage shorthand with no-statistically-significant-gains language, preserving that small effects are not ruled out. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced sanctuary "strong null result" language with "no statistically significant E1 wage change observed"; all `|t|<1.0` is not an equivalence test. See `immigration-conclusion-audit-running-fixes.md`. |

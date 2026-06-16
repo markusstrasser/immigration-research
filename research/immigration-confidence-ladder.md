@@ -95,7 +95,7 @@ Reason: top FB-share quintile median Saiz 2010 elasticity = 1.51, bottom = 3.40.
 
 19. `Card-side bounded native-wage-impact evidence for observed low-skill shocks`
 Rating: `medium-strong`
-Reason: convergent evidence — Card 1990 Mariel, Foged-Peri 2016 Denmark refugee assignment, this cycle's E-Verify TWFE 2003-2023 — points against large native low-skill wage losses/gains in these designs. It does not identify one shared complementarity mechanism. Borjas 2017 restricted-Mariel reanalysis does not generalize to broader staggered designs. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md, multiple papers]
+Reason: convergent evidence — Card 1990 Mariel, Foged-Peri 2016 Denmark refugee assignment, this cycle's E-Verify TWFE 2003-2023 — points against large native low-skill wage losses/gains in these designs. It does not identify one shared complementarity mechanism. Borjas 2017 restricted-Mariel magnitude should not be mechanically extrapolated to broader staggered designs. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md, multiple papers]
 
 ## Paradigm-escape layer added 2026-04-18 (evening)
 

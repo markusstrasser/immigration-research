@@ -12,7 +12,7 @@
 |------------------------|--------------|-----------------|
 | Rent exposure ≠ welfare loss (adversarial review §2) | Immigrants concentrate in inelastic MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40); top 10 inelastic MSAs include all the major immigrant gateways | **Rent exposure is a stronger renter-incidence warning in inelastic destination markets** because supply response is weaker. Update: "rent exposure" should be tagged elasticity-conditional — higher incidence risk in inelastic destinations, lower in elastic. |
 | Clark "agree" economists are scope-limited but not wrong on their narrow channel | E-Verify mandates produced no statistically significant positive QWI wage effect for native low-skill workers in any of 12 specifications | **The small-native-wage-effect channel in the Clark "agree" position is better supported** in the observed E-Verify policy variation. Large Borjas-style native wage gains are rejected at α=0.05 for this margin. |
-| "Borjas vs Card" presented as live debate | Direct multi-state TWFE with 21-year panel finds Card-side pattern: no statistically significant positive QWI wage effect after E-Verify mandate variation | **For observed marginal enforcement variation, the Card-side pattern is favored.** Borjas's restricted-Mariel result does not generalize to the broader staggered enforcement shocks tested here; this does not settle surge or mass-shock regimes. |
+| "Borjas vs Card" presented as live debate | Direct multi-state TWFE with 21-year panel finds Card-side pattern: no statistically significant positive QWI wage effect after E-Verify mandate variation | **For observed marginal enforcement variation, the Card-side pattern is favored.** Borjas's restricted-Mariel magnitude should not be mechanically extrapolated to the broader staggered enforcement shocks tested here; this does not settle surge or mass-shock regimes. |
 | Federal-positive / local-negative split is plausible but unquantified | This cycle did not produce federal-side estimates (federal microsim still requires SIPP fix) | **Unchanged.** Federal side remains the weakest part of the repo. |
 | Local-burden story is real but heterogeneous | Saiz merge sharpens the housing component; QWI shows no statistically significant positive wage response in the observed E-Verify margin, with large Borjas-style gains rejected | **Strengthened on the housing side, not on schooling.** School-burden findings are unchanged by this cycle. |
 
@@ -25,7 +25,7 @@ Three converging pieces of evidence on the U.S. wage channel:
 3. **Foged-Peri (2016) Denmark:** native low-skill wages *rose* in a refugee dispersal-policy quasi-experiment.
 
 Against:
-- **Borjas (2017) Mariel reanalysis:** -10 to -30% on HS dropouts with restricted sample. **This finding does not generalize to the broader staggered designs tested here.**
+- **Borjas (2017) Mariel reanalysis:** -10 to -30% on HS dropouts with restricted sample. **This magnitude should not be mechanically extrapolated to the broader staggered designs tested here.**
 
 **Verdict:** For the observed marginal U.S. policy variation in this file, large Borjas-style native wage gains from E-Verify-style labor-supply contraction are rejected at conventional significance levels. The remaining uncertainty is about surge regimes and hypothetical extreme shocks (mass deportation, border closure) that have no direct empirical analog. **The Clark Center "agree" small-native-wage-effect premise is supported for the narrow wage channel and observed-policy range, not for the all-in immigration question.**
 
@@ -92,8 +92,8 @@ Rating: MEDIUM-STRONG
 Reason: convergent evidence from (a) Card 1990 Mariel, (b) this cycle's E-Verify
 TWFE, and (c) Foged-Peri 2016 Denmark points against large native low-skill wage
 losses/gains in these designs; it does not identify one shared complementarity
-mechanism. Borjas 2017 restricted-Mariel reanalysis does not
-generalize to the broader designs cited here.
+mechanism. Borjas 2017 restricted-Mariel magnitude should not be mechanically
+extrapolated to the broader designs cited here.
 [SOURCE: research/immigration-causal-everify-card-vs-borjas.md, multiple papers]
 ```
 
@@ -131,6 +131,7 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced residual hard non-generalization wording for Borjas restricted-Mariel with a narrower no-mechanical-extrapolation claim. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced Card/Mariel "zero wage effect" and "Card-style complementarity" shorthand with no-detected-adverse-effect and bounded-native-wage-impact language. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "small/null" wage-response shorthand with no-statistically-significant-positive-QWI-wage-effect language; large gains are rejected but small effects are not. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced remaining incidence-summary shortcuts saying native wages "do not rise" / "do not measurably rise" with no-statistically-significant-positive-QWI-wage-effect language. See `immigration-conclusion-audit-running-fixes.md`. |
@@ -142,7 +143,7 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 | 2026-06-16 | Narrowed the embedded E-Verify confidence-ladder suggestion from global `STRONG REJECTION` to strong evidence against large Borjas-style gains in the E-Verify margin. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "QWI confirms wage channel is small" with margin-specific no-statistically-significant-positive-wage-effect language for the observed E-Verify design. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Narrowed the explicit Card-vs-Borjas verdict sentence to large Borjas-style gains from E-Verify-style labor-supply contraction, not the full Borjas wage-prediction family. See `immigration-conclusion-audit-running-fixes.md`. |
-| 2026-06-16 | Replaced "does not replicate in broader staggered designs" with "does not generalize" because E-Verify/Foged-Peri are adjacent external-validity tests, not direct Mariel replications. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Replaced direct-replication language with external-validity language because E-Verify/Foged-Peri are adjacent tests, not direct Mariel replications; later narrowed to no-mechanical-extrapolation wording. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "random refugee assignment" with "refugee dispersal-policy quasi-experiment"; Foged-Peri is exogenous/quasi-experimental, not a simple randomized trial. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Removed remaining "replicates well-known patterns" language; this cycle's findings are convergent/consistent evidence, not direct replications of Card, Foged-Peri, or Card-Peri. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Reframed the Clemens/welfare-weight lever: the weight is normative, but place-premium and cost/capacity inputs remain empirical. See `immigration-conclusion-audit-running-fixes.md`. |
