@@ -27,5 +27,7 @@ sources/immigration-fiscal/data/derived/stage3_proto/**
 sources/immigration-fiscal/data/derived/stage4/**
 sources/immigration-fiscal/data/derived/origin/**
 sources/immigration-fiscal/setup.log
+infra/immigration-fiscal/acquire/config.local.env
+infra/immigration-fiscal/acquire/setup.log
 warehouse/*.duckdb
 
