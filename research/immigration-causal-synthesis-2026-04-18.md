@@ -38,14 +38,14 @@ The Saiz finding sharpens the **local** side:
 - Owner-gain-to-renter-loss ratio differs by destination elasticity. The repo's existing PUMA rent table can be re-tagged elasticity-conditional once the SSD is remounted.
 
 The E-Verify finding clarifies the **labor-market** side:
-- Native low-skill wages do not rise under observed E-Verify mandate variation in the QWI panel.
+- No statistically significant positive QWI wage effect is observed for native low-skill workers under observed E-Verify mandate variation.
 - The evidence rejects large Borjas-style native wage gains from marginal enforcement, but does not directly measure the full wage effect of current inflow levels or surge regimes.
 - Therefore the observed marginal-enforcement wage component shows no statistically significant positive QWI wage effect for natives, with large Borjas-style gains rejected in this design; the broader labor-market ledger still includes small effects, employment composition, hours, occupational sorting, and unmeasured shock regimes.
 - The total local burden is school-finance + housing-rent + service-capacity, NOT wage compression.
 
 Combined effect on incidence narrative:
 - Pre-cycle: native low-skill workers maybe lose wages (Borjas), bear school burden, face rent competition.
-- Post-cycle: native low-skill wages do not measurably rise from E-Verify-style enforcement contractions; school burden and housing incidence remain separate local channels.
+- Post-cycle: the E-Verify-style enforcement design shows no statistically significant positive native low-skill QWI wage effect and rejects large Borjas-style gains in that margin; school burden and housing incidence remain separate local channels.
 
 The political-economy reading: wage data alone are a weak justification for a native-low-skill restriction story in the observed marginal-enforcement range. School-finance exposure and renter exposure remain plausible incidence channels, but this cycle does not identify voter motivation or prove that those exposures justify the policy push; owner/renter status, local fiscal regime, and service geography still matter.
 
@@ -131,6 +131,7 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 | Date | Change |
 |------|--------|
 | 2026-06-16 | Replaced residual "small/null" wage-response shorthand with no-statistically-significant-positive-QWI-wage-effect language; large gains are rejected but small effects are not. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Replaced remaining incidence-summary shortcuts saying native wages "do not rise" / "do not measurably rise" with no-statistically-significant-positive-QWI-wage-effect language. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Scoped the Card-vs-Borjas section heading to the E-Verify wage-channel verdict rather than a broad theory verdict. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "E-Verify contracts unauthorized labor supply" synthesis exports with observed mandate-variation/QWI wage language; total unauthorized labor supply is not directly observed. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "Clark economists were right/correct" exports with support for the small-native-wage-effect premise within observed marginal policy variation. See `immigration-conclusion-audit-running-fixes.md`. |
