@@ -2080,3 +2080,23 @@ Changed the external-validity caveat to say the E-Verify design is one relevant 
 ### Updated conclusion
 
 The E-Verify memo now keeps its policy relevance without treating one marginal-enforcement design as sufficient for all immigration-policy wage claims. [INFERENCE]
+
+---
+
+## 2026-06-16 — Borjas restricted-Mariel extrapolation narrowed
+
+### Issue
+
+`research/immigration-causal-synthesis-2026-04-18.md`, `research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md`, and confidence-ladder entry 19 still said Borjas's restricted-Mariel result "does not generalize" to the broader designs. [DATA]
+
+### Why it was wrong
+
+The newer E-Verify/sanctuary/Foged-Peri-adjacent evidence cuts against mechanically exporting the restricted-Mariel magnitude to observed marginal enforcement designs. But it does not prove a universal non-generalization of the Mariel result across all possible low-skill shocks. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Replaced "does not generalize" with "should not be mechanically extrapolated" to the observed E-Verify/sanctuary-style or broader staggered designs. [SOURCE: memo]
+
+### Updated conclusion
+
+The wage synthesis now treats Borjas's restricted-Mariel result as a contested shock-specific estimate whose magnitude should not be mechanically exported to other designs, while leaving broader external-validity questions open. [INFERENCE]
