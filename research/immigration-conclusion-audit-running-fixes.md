@@ -2484,3 +2484,26 @@ Added `research/immigration-thesis-generator-audit-2026-06-16.md`, with cross-di
 ### Updated conclusion
 
 The current loop should not run another immigration sweep from fiscal generators alone. Before source search, it should run the cross-disciplinary packet, then converge with explicit data-vs-frame separation and generator-yield accounting. [INFERENCE]
+
+---
+
+## 2026-06-16 — Verified federal and school surfaces refreshed
+
+### Issue
+
+`research/immigration-verified-findings-report-2026-04-10.md` and `research/immigration-confidence-ladder.md` still treated two April surfaces as if they were current: the household-normalized child-burden correction was easy to read as a live full-stock school/adult or origin net sign, and the failed Texas/CPS donor prototype was still described as the repo's current federal surface. [DATA]
+
+### Why it was wrong
+
+June work changed both surfaces. The school-burden tensor now withholds origin school/net rows because the available school numerator came from the scenario-household universe while the federal row uses full microsim adults. Separately, the SIPP-style federal annual proxy supersedes the April ACS/CPS shortcut for the narrow cash-flow ledger, but only as payroll/FICA minus SNAP, TANF, and SSI; it is not income tax, Medicare/Medicaid, EITC, capital/corporate tax, household filing, lifetime NPV, or all-government net. [SOURCE: `research/immigration-school-burden-per-adult-2026-06-15.md`] [SOURCE: `research/immigration-federal-distribution-findings-2026-06-15.md`] [SOURCE: `research/immigration-country-fiscal-tensor-2026-06-15.md`]
+
+### Fix
+
+Updated:
+
+- `research/immigration-verified-findings-report-2026-04-10.md`: scoped household-normalized school language to linked-household child exposure, marked origin school/net rows as withheld pending same-universe rebuild, replaced the current-federal-prototype language with the June SIPP-style narrow annual proxy plus all-in limitations, and added a revisions table.
+- `research/immigration-confidence-ladder.md`: qualified the household metric, downgraded the old ACS income/benefit ranking to historical screen, added entry `41` for the current narrow federal annual proxy, and updated the reading rule.
+
+### Updated conclusion
+
+The current verified surface is narrower and cleaner: strong linked-household child-exposure evidence; medium-strong descriptive evidence for a narrow annual federal cash-flow proxy; no live all-in federal number; and no current origin `federal - school` sign until the school numerator and adult denominator are rebuilt on the same universe. [INFERENCE]

@@ -23,7 +23,7 @@ Reason: official ACS geography, directly observed, useful as exposure context. I
 
 3. `Household-normalized school-age child metrics after WGTP correction`
 Rating: `strong`
-Reason: the prior proxy was wrong; the corrected household join is materially better and uses the right unit. [SOURCE: /Users/alien/Projects/research/research/immigration-household-weighted-correction.md]
+Reason: the prior proxy was wrong; the corrected household join is materially better and uses the right unit for linked-household child exposure. Do not export this as a current full-stock school-burden-per-adult or origin fiscal-net row; June 2026 tensor work withholds origin school/net rows until the school numerator and federal adult denominator use the same universe. [SOURCE: /Users/alien/Projects/research/research/immigration-household-weighted-correction.md] [SOURCE: research/immigration-school-burden-per-adult-2026-06-15.md]
 
 4. `Claim that the Clark “agree” papers are scope-limited rather than obviously false`
 Rating: `strong`
@@ -61,9 +61,9 @@ Reason: land area is not people, renters, students, or immigrant households. Thi
 Rating: `weak`
 Reason: at best it is contextual mobility climate. It is not immigrant-specific and not causal. [SOURCE: /Users/alien/Projects/research/research/immigration-stage2-county-bridge-batch.md]
 
-12. `Federal-positive versus federal-negative origin ranking from ACS income and benefit proxies`
+12. `Old ACS income/benefit proxy origin rankings`
 Rating: `weak`
-Reason: this is not a tax-transfer microsimulation. It is a partial proxy stack. [SOURCE: /Users/alien/Projects/research/research/immigration-low-skill-origin-incidence-memo.md]
+Reason: the April ACS income/benefit shortcut was not a tax-transfer microsimulation. It remains useful only as a weak historical screen, superseded for current narrow federal annual proxy work by the SIPP-style FICA-minus-SNAP/TANF/SSI build. [SOURCE: /Users/alien/Projects/research/research/immigration-low-skill-origin-incidence-memo.md] [SOURCE: research/immigration-federal-distribution-findings-2026-06-15.md]
 
 13. `Magnitude claims for local school burden from current warehouse`
 Rating: `weak`
@@ -189,11 +189,17 @@ Reason: The immigrant-welfare weight is a value parameter; empirical evidence ca
 Rating: `strong scope correction`
 Reason: E-Verify observed mandate variation is a marginal enforcement design with partial compliance and QWI W-2 measurement. The BEA mass-deportation run is a partial-equilibrium calibration that freezes replacement hiring, wage response, and capital reallocation. Similar directional employment pressure is not validation of the calibration's national shock size or industry-loss magnitudes. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md] [SOURCE: sources/immigration-causal/scripts/mass_deportation_sim.py]
 
+## Fiscal-tensor layer added 2026-06-16
+
+41. `SIPP-style federal annual proxy is a narrow cash-flow layer, not all-in federal liability`
+Rating: `medium-strong descriptive for the named ledger; weak for all-in federal`
+Reason: the current built proxy estimates annual payroll/FICA minus SNAP, TANF, and SSI by origin/education cells. It is materially stronger than the old ACS income/benefit shortcut for that ledger, but it omits income tax, Medicare/Medicaid, EITC mechanics, capital/corporate tax, household filing, and lifetime NPV. Mexico-origin adults are about `$1,519` per adult per year and NH white US-born adults about `$2,746` on this narrow proxy; those figures must not be laundered into all-federal or all-government net claims. [SOURCE: research/immigration-federal-distribution-findings-2026-06-15.md] [SOURCE: research/immigration-country-fiscal-tensor-2026-06-15.md]
+
 ## Two weakest assumptions
 
 1. `Federal-side proxy ledger`
-Current shortcut: infer federal incidence from income plus selected benefit flags.
-Why weak: taxes, credits, SNAP, SSI, Medicaid, payroll taxes, and household composition are not directly modeled.
+Current state: the old shortcut inferred federal incidence from ACS income plus selected benefit flags; the current built proxy improves this to a SIPP-style annual FICA-minus-SNAP/TANF/SSI ledger.
+Why weak: even the current proxy omits income tax, Medicare/Medicaid, EITC mechanics, capital/corporate tax, household filing, and lifetime NPV.
 
 2. `Coarse local burden bridge`
 Current shortcut: state school-spend plus PUMA rent plus area-weighted county overlays.
@@ -201,7 +207,7 @@ Why weak: local service burden depends on actual district context, renter mix, c
 
 ## Practical reading rule
 
-If a conclusion depends mainly on items `10` through `16`, present it as a hypothesis or descriptive tendency, not a settled result.
+If a conclusion depends mainly on items `10` through `16`, present it as a hypothesis or descriptive tendency, not a settled result. If it depends on item `41`, name the exact federal cash-flow ledger and do not combine it with origin school rows until the school numerator and adult denominator use the same universe.
 
 <!-- knowledge-index
 generated: 2026-04-19T04:47:35Z
