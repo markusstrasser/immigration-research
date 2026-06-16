@@ -10,7 +10,7 @@
 2. **Five-model formal critique** — state five competing models (not authors — *mechanisms*). For each: core equation/ledger, predictions, data that would falsify, unnamed assumptions exposed.
 3. **Thesis burst (carry-forward)** — paste the prior sweep's thesis; revise it in place. Mark what got sharper, what got killed, what survived despite weak data.
 4. **Disconfirmation pass** — three active hunts for evidence that would flip the thesis sign on any layer.
-5. **Only then** — brainstorm round N+1 downloads, generators, DuckDB loads.
+5. **Only then** — run `research/immigration-thesis-generator-audit-2026-06-16.md` XDISC packet, then brainstorm round N+1 downloads, generators, DuckDB loads.
 
 ## Output locations
 

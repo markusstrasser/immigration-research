@@ -2464,3 +2464,23 @@ Updated:
 ### Updated conclusion
 
 The capacity/surge evidence remains decision-relevant as descriptive screening: it points to load/capacity, receiver fiscal load, and constrained-place wage-growth concerns. It does not yet identify a causal native-exit mechanism, a fiscal-load-to-vote mechanism, or a globally ranked worker-incidence channel. [INFERENCE]
+
+---
+
+## 2026-06-16 — Thesis generator loop widened beyond fiscal ledger monoculture
+
+### Issue
+
+The lifetime generator loop was strong on fiscal layers, denominator discipline, and scalar-export prevention, but the active prompts were still mostly fiscal/lifetime-native. The registry also had a lifecycle-sync problem: `research/immigration-lifetime-fiscal-generators.md` had 106 `G-LIF-*` headings, its header said 105 generators, and DuckDB had 104 `lifetime_generators` rows. [DATA]
+
+### Why it was wrong
+
+The user's search-space shaping has repeatedly added non-fiscal axes: psychology, political legitimacy, narrative formation, urban capacity, macro transition paths, and micro adaptation. A generator loop that only mines fiscal papers risks converging too early on ledger-correct but narrative-blind theses. The count mismatch also blocks honest yield tracking and retirement rules. [SOURCE: `research/immigration-thesis-generator-audit-2026-06-16.md`] [INFERENCE]
+
+### Fix
+
+Added `research/immigration-thesis-generator-audit-2026-06-16.md`, with cross-disciplinary `XDISC-*` generators, a self-prompt packet, a human-replacement flowchart for search-space shaping, and an implementation recommendation for generator lifecycle fields. Updated the topic index, sweep protocol, and divergence cookbook to route future sweeps through this packet. Changed the fiscal-generator header and index wording from stale counts to warehouse-grounded counts plus the explicit reconciliation issue (`G-LIF-Q06`, `G-LIF-S15` MD-only). [SOURCE: memo]
+
+### Updated conclusion
+
+The current loop should not run another immigration sweep from fiscal generators alone. Before source search, it should run the cross-disciplinary packet, then converge with explicit data-vs-frame separation and generator-yield accounting. [INFERENCE]

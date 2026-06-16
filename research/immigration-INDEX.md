@@ -18,6 +18,7 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 | `immigration-economist-effects-matrix.md` | What economists are actually pricing vs omitting | Comparing Smith, Decker, Borjas, Clark poll economists |
 | `immigration-dataset-register.md` | Use-case-oriented data register | Asking "what data do we have?" |
 | `immigration-verification-handoff.md` | Verification map: repo files, datasets, paper families, disciplines | Handing the topic to another agent |
+| `immigration-conclusion-audit-running-fixes.md` | Live overclaim/denominator/layer fix ledger | Auditing conclusions, applying XDISC-DS-02, checking what changed on 2026-06-16 |
 
 ## Fiscal Ledger
 
@@ -50,7 +51,9 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 | `immigration-restrictionist-dataset-integration-2026-06-15.md` | **Paper → dataset → DuckDB** map; Tier A–C acquire list | Planning integration after restrictionist corpus read |
 | `immigration-lifetime-country-approx-brainstorm-2026-06-15.md` | Brainstorm: country lifetime +/- with 1st/2nd/3rd order stacks | Designing country rollup without scalar lies |
 | `immigration-lifetime-dataset-brainstorm-2026-06-15.md` | Brainstorm + tier map for lifetime proxies; `setup-lifetime.sh` acquisition | Picking datasets for lifetime NPV calibration |
-| `immigration-lifetime-fiscal-generators.md` | 80 mined idea-generators + 166 parameter claims (clusters A–P) | Negative-space sweeps, unnamed-assumption audits |
+| `immigration-lifetime-fiscal-generators.md` | 563 DuckDB parameter claims; 106 MD / 104 DuckDB generators (MD-only Q06, S15) | Negative-space sweeps, unnamed-assumption audits |
+| `immigration-thesis-generator-audit-2026-06-16.md` | Cross-disciplinary generator/self-prompt audit (economics, micro/macro, urbanism, psychology, narrative) | Running divergence/convergence loops; asking what to search next |
+| `immigration-knowledge-delta-agent-loop-2026-06-16.md` | Two-day delta + parent-controlled agent loop (claim inventory → probe → converge → review) | Starting a full immigration research epoch; pairing with generator audit |
 | `immigration-lifetime-unified-theory-2026-06-15.md` | **Living synthesis** — unified theory + 5 formal models + critique matrix (update each sweep) | After every corpus round; before next download burst |
 | `../notes/immigration-lifetime-sweep-protocol.md` | Mandatory post-sweep workflow (theory → 5 models → thesis burst → disconfirm → round N+1) | Structuring research cycles |
 | `../notes/immigration-lifetime-synthesis-diverge-cookbook.md` | **Prompt template / cookbook** — full diverge↔converge loop, subagent JSON schema, synthesis prompt | Running sweeps; adapting to new topics |
@@ -137,11 +140,12 @@ If the question is:
 3. `What data do we have locally?` Start with `immigration-dataset-register.md`, then `../sources/immigration-fiscal/data/MANIFEST.md`.
 4. `Can we model this ourselves?` Start with `immigration-lifetime-fiscal-data-stack-2026-04-10.md`, then `immigration-public-data-acquisition-2026-04-11.md`, then `immigration-frontier-data-acquisition-2026-04-11.md`, then the DuckDB build files.
 5. `What is the current `<HS` / `HS` / `some college` stock split?` Start with `immigration-education-bucket-stock-and-lifetime-status-2026-04-11.md`.
+6. `How do I run the next fiscal/generator sweep?` Start with `../notes/immigration-lifetime-synthesis-diverge-cookbook.md`, then `immigration-thesis-generator-audit-2026-06-16.md`, then `immigration-conclusion-audit-running-fixes.md`.
 
 <!-- knowledge-index
 generated: 2026-04-19T04:47:48Z
 hash: 25555c17344c
 
-table_claims: 12
+table_claims: 97
 
 end-knowledge-index -->
