@@ -38,7 +38,7 @@ Caplan is weakest where recent surge and threshold evidence make local incidence
 
 The clean verdict is:
 
-1. `strong on global gains and moral presumption`
+1. `strong on migrant-welfare / global-gains direction, not strongest magnitude`
 2. `strong on crime skepticism`
 3. `partial on labor`
 4. `weak on destination-local fiscal and political incidence`
@@ -301,7 +301,7 @@ If the question is `Has Caplan shown that immigration restrictions are unnecessa
 
 The best current summary is:
 
-1. `Caplan wins on migrant welfare and global gains.`
+1. `Caplan wins on migrant-welfare direction and large global-gains sign, not on the strongest open-borders magnitude or destination-capacity closure.`
 2. `Caplan wins on crime more than on almost any other empirical lane.`
 3. `Caplan partly wins on labor, but only after dropping collapse rhetoric and admitting wage-growth pressure in constrained places.`
 4. `Caplan loses as a blanket taxpayer and political-incidence analyst because recent surge evidence means local capacity, housing, shelter, and political-response channels cannot be assumed zero.`
@@ -310,3 +310,9 @@ So the final score is:
 
 1. `strong on the left side of the causal graph`
 2. `too optimistic on the right side`
+
+## Revisions
+
+| Date | Change |
+|------|--------|
+| 2026-06-16 | Bounded the Caplan global-gains verdict to direction/sign rather than strongest magnitude or destination-capacity closure. See `immigration-conclusion-audit-running-fixes.md`. |
