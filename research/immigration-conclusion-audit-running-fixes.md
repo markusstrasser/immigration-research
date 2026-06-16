@@ -1720,3 +1720,23 @@ Changed the surviving points to claim-support language: place-premium scale, led
 ### Updated conclusion
 
 The Caplan audit now separates supported objections from unresolved destination-incidence concerns without relying on "Caplan is right" shorthand. [INFERENCE]
+
+---
+
+## 2026-06-16 — School burden denominator fix scoped to narrow export
+
+### Issue
+
+`research/immigration-school-burden-per-adult-2026-06-15.md` said the corrected denominator "kills the stale claim" that the built annual school layer alone overwhelms Mexico's federal proxy. [DATA]
+
+### Why it was wrong
+
+The correction is real, but its scope is a specific annual school-burden export under the corrected full Mexico adult denominator. "Kills" can be copied as if the broader school-cost or all-government fiscal claim family had been falsified. The memo itself says lifetime NPV, state/local surge, enforcement, courts, and episodic shelter layers remain separate. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Replaced "kills" with "invalidates the stale narrow export" and named the corrected adult denominator as the reason. [SOURCE: memo]
+
+### Updated conclusion
+
+The school-burden memo now says the corrected denominator blocks one narrow annual-school-layer export, without implying that broader fiscal or school-burden questions are settled. [INFERENCE]
