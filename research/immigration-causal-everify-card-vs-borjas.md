@@ -159,7 +159,7 @@ For this enforcement margin, the adjustment looks Card-style: the wage curve is 
 | Bohn-Lofstrom-Raphael (2014) | AZ LAWA | Pop survey on unauth share | Unauth ↓; native effects mixed | Mixed |
 | Orrenius-Zavodny (2015) | E-Verify rollout | DiD on CPS earnings | Small positive on Hispanic native women only | Weak Borjas |
 | **This analysis** | **9 E-Verify states** | **TWFE on QWI 2003-2023** | **+0.5% (n.s.) E1 in exposed industries** | **Card** |
-| Foged-Peri (2016) | Denmark refugee assignment | RA quasi-IV | Native low-skill wages ↑ from refugee shock | Anti-Borjas |
+| Foged-Peri (2016) | Denmark refugee-country inflow | Dispersal-policy IV / DiD | Native low-skill wages ↑ from refugee shock | Anti-Borjas |
 | Card-Peri (2016) | Cumulative immigration | National panel | Small / null on natives | Card |
 
 This analysis adds a 21-year multi-state version of the E-Verify test. Read with Card (1990) and Foged-Peri (2016), it supports the bounded claim that observed low-skill labor-supply shocks in these designs do not move native low-skill wages much.
@@ -182,6 +182,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 |------|--------|
 | 2026-06-16 | Bounded "data side with Card" and commentator-update language to the observed E-Verify wage-channel design; the result rejects large Borjas-style native wage gains for this margin, not all wage or open-borders questions. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Aligned the proposed confidence-ladder update with the same margin-specific wording: strong against large Borjas-style gains in the E-Verify margin, not a global "STRONG REJECTION." See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Clarified Foged-Peri design shorthand from opaque "RA quasi-IV" to dispersal-policy IV / DiD, matching the paper's quasi-experimental design. See `immigration-conclusion-audit-running-fixes.md`. |
 
 [SOURCE: data/analysis/everify_twfe_results.csv]
 [SOURCE: data/analysis/everify_event_study_E1.csv]
