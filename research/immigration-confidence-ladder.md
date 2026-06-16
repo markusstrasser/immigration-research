@@ -137,7 +137,7 @@ Reason: NYC FY24 $3.7B (3.5% of operating budget); MA FY24 $1B; Chicago $228M pe
 Rating: `medium (correlation, multiple confounders)`
 Reason: Multivariate OLS with state FE: receiver_city β=+0.024 (t=6.96***). Top receivers (Bronx +11pp, Queens +11pp, Hidalgo +10pp, Cameron +10pp, El Paso +10pp, Miami-Dade +9pp) swung massively toward Trump. Confounders include national Hispanic realignment, inflation, and policy-endogenous busing destinations. Magnitude implausibly large for non-immigration causes alone. **Do not reuse the final sentence; entries 31 and 36 supersede it with the controlled +2.4pp upper-bound framing.** [SOURCE: research/immigration-causal-surge-2021-2024.md]
 
-29. `Static-cycle Card-wins finding is BOUNDED to marginal-policy variation; surge is OUTSIDE that variation`
+29. `Static-cycle Card-side wage finding is BOUNDED to marginal-policy variation; surge is OUTSIDE that variation`
 Rating: `meta-update on prior entries 17, 19, 21`
 Reason: Prior entries over-compressed the E-Verify/sanctuary wage results as a "decisive Card-side win for U.S. policy variation." The safer reading is strong Card-side evidence for observed 2008-2021 marginal policy variation. The 2021-2024 surge is a regime shift outside that variation. Linear extrapolation is not warranted. Surge-period wage estimates remain to be done (require ACS PUMS 2023). [SOURCE: research/immigration-causal-surge-2021-2024.md]
 
