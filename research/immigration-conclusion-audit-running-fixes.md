@@ -1660,3 +1660,23 @@ Changed "established" to "suggested," retitled the final section as "What this u
 ### Updated conclusion
 
 The capacity-frontier memo now exports descriptive model-output updates rather than settled causal conclusions about flow/capacity thresholds. [INFERENCE]
+
+---
+
+## 2026-06-16 — Restrictionist steel-man binary verdict softened
+
+### Issue
+
+`research/immigration-restrictionist-arguments-steelman-2026-06-15.md` summarized the steel-man as "restrictionists are right on layer multiplication, wrong on single-scalar panic." [DATA]
+
+### Why it was wrong
+
+The memo is a steel-man of claim structure, not a final side-taking verdict. The evidence supports the restrictionist insight that fiscal, local, legal-status, cohort, and service-capacity layers can diverge, but the "right/wrong" formulation over-compressed a mixed evidentiary map into a binary judgment. [INFERENCE]
+
+### Fix
+
+Changed the synthesis to say the restrictionist case is best supported on layer multiplication and weakest when those layers collapse into single-scalar panic. [SOURCE: memo]
+
+### Updated conclusion
+
+The steel-man keeps its strongest mechanism without presenting restrictionism as simply right or wrong in aggregate. [INFERENCE]

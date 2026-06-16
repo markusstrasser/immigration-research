@@ -188,7 +188,7 @@ From `immigration-economist-rhetorical-failures.md` — **mirror image**:
 
 > Low-skill, surge-era, unauthorized-heavy inflows can be **federal-positive on thin annual cash-flow** while **lifetime-negative on education cells**, **locally severe in shelter/school-capacity ledgers**, and **administratively expensive** — and these are **compatible**.
 
-That is essentially our unified theory sentence 1 — restrictionists are right on **layer multiplication**, wrong on **single-scalar panic**.
+That is essentially our unified theory sentence 1 — the restrictionist case is best supported on **layer multiplication**, and weakest when it collapses those layers into **single-scalar panic**.
 
 ---
 
@@ -250,6 +250,7 @@ That is essentially our unified theory sentence 1 — restrictionists are right 
 | Date | Note |
 |------|------|
 | 2026-06-15 | Initial steel-man map from corpus PDFs + FAIR web |
+| 2026-06-16 | Replaced binary "restrictionists are right/wrong" synthesis with support/weakness language around layer multiplication versus scalar collapse. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Reframed FAIR from "upper-bound political ledger" to advocacy high-cost ledger; its assumptions are not a mathematical upper bound and need reconciliation against ITEP/Pew before warehouse use. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Narrowed receiver-city language from crisis/system-collapse/catastrophic wording to gross-load shelter/budget stress and receiver-capacity ledgers. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Aligned the `+$46k Mexico` all-in row with the Mexico NPV memo: omitted layers make the scalar export unsupported, not a measured all-in negative result. See `immigration-conclusion-audit-running-fixes.md`. |
