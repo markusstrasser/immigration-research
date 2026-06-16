@@ -3,7 +3,7 @@
 **Protocol:** `notes/immigration-lifetime-sweep-protocol.md`, cookbook diverge→converge loop
 **Trigger:** User — build school burden (per_pupil × kids/adult), then **10** analyze/write cycles
 **Artifact:** `v_three_layer_annual`; memos `immigration-school-burden-per-adult-2026-06-15.md`
-**Status:** Superseded/corrected on 2026-06-16 after the scenario-subset denominator bug was found. This file now records the corrected rows; the first-pass `~−$13.5k/adult` Mexico result is not a live conclusion.
+**Status:** Superseded. The first-pass `~−$13.5k/adult` Mexico result used the scenario-subset denominator. The later `$771` / `+$748` correction also proved invalid because it paired a scenario-household numerator with the full microsim denominator. Origin school/net rows are not live until same-universe rebuilt.
 
 ---
 
@@ -15,11 +15,11 @@
 
 | Group | Fed | School | Crude net |
 |-------|-----|--------|-----------|
-| Mexico | $1,519 | $771 | +$748 |
+| Mexico | $1,519 | withheld | withheld |
 | NH white USB | $2,746 | $6,024 | −$3,277 |
-| EU27 | $4,695 | $64 | +$4,658 |
+| EU27 | $4,695 | withheld | withheld |
 
-**Synthesis:** Federal-only headlines can understate local school drag, but the corrected full-stock denominator no longer makes Mexico crude-negative on this built layer. Layer must be labeled **crude static**, not lifetime.
+**Synthesis:** Federal-only headlines can understate local school drag, but origin `federal - school` signs are not live in this build. Layer must be labeled **crude static**, not lifetime, and origin rows need same-universe school numerators.
 
 ---
 
@@ -27,9 +27,9 @@
 
 **Diverge:** Does school burden flip “natives vs immigrants”?
 
-**Data:** NH white school/adult ~$6k (ACS HH linkage + county median pupil); Mexico ~$771 after the full-stock denominator correction.
+**Data:** NH white school/adult ~$6k (ACS HH linkage + county median pupil); Mexico origin row withheld after the scenario-household/full-microsim universe mismatch was confirmed.
 
-**Synthesis:** On crude net, Mexico is positive while NH white US-born is negative under the current average-cost school layer. This is a denominator-sensitive static layer, not a welfare verdict.
+**Synthesis:** On crude net, NH white US-born is negative under the current average-cost school layer, but Mexico-origin crude net is unresolved. This is a denominator-sensitive static layer, not a welfare verdict.
 
 ---
 
@@ -37,9 +37,9 @@
 
 **Diverge:** Rank populations by `federal − school`.
 
-**Order (lowest crude net first):** NH white ≈ NH white US-born < MX-CA cluster < Mexico < EU27.
+**Order (lowest crude net first):** not live for origin rows; NH white rows remain built, while MX-CA/Mexico/EU27 require same-universe school recomputation.
 
-**Synthesis:** Corridor A no longer dominates crude annual losses after denominator correction. EU27 remains strongly positive on this narrow annual layer.
+**Synthesis:** Corridor A crude annual ranking is reopened. EU27 federal annual remains high, but EU27 school/net rows are withheld for the same-universe guard.
 
 **Kill:** UK at bottom — **reject** (scenario N≈1k adults); flag for rebuild.
 
@@ -61,10 +61,10 @@
 
 | Group | School/Fed |
 |-------|------------|
-| MX-CA | 0.72× |
-| Mexico | 0.51× |
+| MX-CA | withheld |
+| Mexico | withheld |
 | NH white | 2.2× |
-| EU27 | 0.01× |
+| EU27 | withheld |
 
 **Synthesis:** Restrictionists citing school **without** federal layer mirror expansionists citing federal **without** school. Both are layer laundering.
 
@@ -96,11 +96,11 @@ Mexico **52%** vs Poland **6%**; kids/HH Mexico **0.97** vs Poland **0.13**.
 
 | Group | Base crude | Half-marginal crude |
 |-------|------------|---------------------|
-| Mexico | +$748 | +$1,134 |
+| Mexico | withheld | withheld |
 | NH white | −$3,277 | −$265 |
-| EU27 | +$4,658 | +$4,663 |
+| EU27 | withheld | withheld |
 
-**Synthesis:** Mexico stays positive under both average and half-marginal school assignment. NH white remains near the sign boundary under this crude average-cost layer.
+**Synthesis:** Mexico-origin sign is unresolved. NH white remains near the sign boundary under this crude average-cost layer.
 
 ---
 
@@ -108,7 +108,7 @@ Mexico **52%** vs Poland **6%**; kids/HH Mexico **0.97** vs Poland **0.13**.
 
 **Diverge:** Does crude annual net predict NAS lifetime sign?
 
-Mexico: crude **+$748/yr** vs synthetic age-25 NAS benchmark **+$45.6k** (education-mix weighted, not current-stock remaining-lifetime NPV).
+Mexico: crude annual `federal - school` **withheld** vs synthetic age-25 NAS benchmark **+$45.6k** (education-mix weighted, not current-stock remaining-lifetime NPV).
 
 **Synthesis:** **Do not sum or rank across layers.** Bridge grid `scope_mismatch` confirmed again.
 
@@ -122,7 +122,7 @@ Mexico: crude **+$748/yr** vs synthetic age-25 NAS benchmark **+$45.6k** (educat
 
 1. **Three coexisting ledgers:** federal cash-flow proxy (often **+** for working-age), school burden per adult (separate annual local layer), and lifetime NAS education cells (`<HS` negative, college+ positive). They are **compatible**, not contradictory.
 
-2. **Crude `federal − school` no longer makes Mexico negative** under the full-stock denominator: Mexico is about `+$748/adult/yr`, while NH white US-born is about `−$3,277/adult/yr` on this static average-cost school layer. The result omits descendant taxes, Medicaid, marginal pupil economics, and legal-status/cohort splits; it is a **political visibility** layer, not a welfare verdict.
+2. **Crude `federal − school` is unresolved for Mexico-origin rows** because the school numerator and adult denominator did not share a population universe. NH white US-born remains about `−$3,277/adult/yr` on this static average-cost school layer. The result omits descendant taxes, Medicaid, marginal pupil economics, and legal-status/cohort splits; it is a **political visibility** layer, not a welfare verdict.
 
 3. **Scalar collapse error now has three faces:** (a) federal-only “immigrants pay in,” (b) school-only “immigrants bankrupt schools,” (c) lifetime-only “−$109k `<HS`.” The tensor object is **`v_three_layer_annual`**, not any single column.
 
@@ -148,4 +148,4 @@ Mexico: crude **+$748/yr** vs synthetic age-25 NAS benchmark **+$45.6k** (educat
 | Date | Change |
 |------|--------|
 | 2026-06-15 | Cycles 13–22 after school burden tensor build |
-| 2026-06-16 | Corrected scenario-denominator carryover: Mexico school burden now $771/adult and crude net +$748/adult/yr; old ~−$13.5k result superseded |
+| 2026-06-16 | Reopened origin school layer: the $771/adult and +$748/adult Mexico correction paired a scenario-household numerator with the full microsim denominator; old ~−$13.5k and +$748 signs are both not live. |

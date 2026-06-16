@@ -376,12 +376,17 @@ def build() -> None:
         SELECT
           s.origin_label,
           m.micro_adults AS weight_adults,
+          s.weighted_adults AS school_numerator_adults,
           h.linked_household_wgt,
           h.linked_mean_hh_school_age_children,
           s.area_wtd_current_spend_per_pupil,
           s.avg_federal_net,
-          s.area_wtd_current_spend_per_pupil * h.linked_mean_hh_school_age_children
-            * h.linked_household_wgt / NULLIF(m.micro_adults, 0) AS school_burden_per_adult
+          CASE
+            WHEN ABS(m.micro_adults - s.weighted_adults) <= 0.05 * m.micro_adults
+            THEN s.area_wtd_current_spend_per_pupil * h.linked_mean_hh_school_age_children
+                 * h.linked_household_wgt / NULLIF(m.micro_adults, 0)
+            ELSE NULL
+          END AS school_burden_per_adult
         FROM life.origin_fiscal_scenario_2023 s
         JOIN ctx.acs_origin_household_national_2023 h USING (origin_label)
         JOIN (
@@ -397,13 +402,19 @@ def build() -> None:
         CREATE TEMP TABLE _pop_school AS
         SELECT 'mexico_origin' AS population_group,
                SUM(weight_adults) AS weight_adults,
-               SUM(school_burden_per_adult * weight_adults) / NULLIF(SUM(weight_adults), 0) AS school_per_adult,
+               CASE WHEN COUNT(*) = COUNT(school_burden_per_adult)
+                    THEN SUM(school_burden_per_adult * weight_adults) / NULLIF(SUM(weight_adults), 0)
+                    ELSE NULL
+               END AS school_per_adult,
                SUM(avg_federal_net * weight_adults) / NULLIF(SUM(weight_adults), 0) AS fed_per_adult
         FROM _origin_school WHERE origin_label = 'Mexico'
         UNION ALL
         SELECT 'eu27_origin',
                SUM(weight_adults),
-               SUM(school_burden_per_adult * weight_adults) / NULLIF(SUM(weight_adults), 0),
+               CASE WHEN COUNT(*) = COUNT(school_burden_per_adult)
+                    THEN SUM(school_burden_per_adult * weight_adults) / NULLIF(SUM(weight_adults), 0)
+                    ELSE NULL
+               END,
                SUM(avg_federal_net * weight_adults) / NULLIF(SUM(weight_adults), 0)
         FROM _origin_school
         WHERE origin_label IN (
@@ -414,7 +425,10 @@ def build() -> None:
         )
         UNION ALL
         SELECT 'uk_origin', SUM(weight_adults),
-               SUM(school_burden_per_adult * weight_adults) / NULLIF(SUM(weight_adults), 0),
+               CASE WHEN COUNT(*) = COUNT(school_burden_per_adult)
+                    THEN SUM(school_burden_per_adult * weight_adults) / NULLIF(SUM(weight_adults), 0)
+                    ELSE NULL
+               END,
                SUM(avg_federal_net * weight_adults) / NULLIF(SUM(weight_adults), 0)
         FROM _origin_school
         WHERE origin_label IN (
@@ -422,14 +436,20 @@ def build() -> None:
         )
         UNION ALL
         SELECT 'mx_ca_cluster', SUM(weight_adults),
-               SUM(school_burden_per_adult * weight_adults) / NULLIF(SUM(weight_adults), 0),
+               CASE WHEN COUNT(*) = COUNT(school_burden_per_adult)
+                    THEN SUM(school_burden_per_adult * weight_adults) / NULLIF(SUM(weight_adults), 0)
+                    ELSE NULL
+               END,
                SUM(avg_federal_net * weight_adults) / NULLIF(SUM(weight_adults), 0)
         FROM _origin_school
         WHERE origin_label IN ('Mexico', 'El Salvador', 'Guatemala', 'Honduras')
         UNION ALL
         SELECT 'fb_lt_hs',
                SUM(m.weighted_adults),
-               SUM(s.school_burden_per_adult * m.weighted_adults) / NULLIF(SUM(m.weighted_adults), 0),
+               CASE WHEN COUNT(*) = COUNT(s.school_burden_per_adult)
+                    THEN SUM(s.school_burden_per_adult * m.weighted_adults) / NULLIF(SUM(m.weighted_adults), 0)
+                    ELSE NULL
+               END,
                SUM(m.federal_net_proxy_annual * m.weighted_adults) / NULLIF(SUM(m.weighted_adults), 0)
         FROM ctx.acs_origin_household_federal_microsim_2023 m
         JOIN _origin_school s ON m.origin_label = s.origin_label

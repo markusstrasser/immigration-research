@@ -1,7 +1,7 @@
 # School burden per adult — built layer (2026-06-15)
 
 **Date:** 2026-06-15
-**Status:** Working — new tensor layers `school_burden_per_adult`, `net_crude_federal_minus_school`
+**Status:** Superseded for origin rows — native rows still built; origin school/net rows withheld pending same-universe recomputation
 **Frame:** [FRAMING-SENSITIVE] — crude static local burden; **not** NAS lifetime; **not** marginal pupil cost.
 **Related:** `immigration-federal-distribution-findings-2026-06-15.md`, `immigration-europe-caucasian-fiscal-findings-2026-06-15.md`
 **View:** `v_three_layer_annual` in `warehouse/immigration_fiscal_union.duckdb`
@@ -36,17 +36,17 @@ Tagged **`derived_crude`** — excludes descendant future taxes, Medicaid, state
 
 | Population | Federal $/adult | School $/adult | Crude net $/adult | School/Fed |
 |------------|-----------------|----------------|-------------------|------------|
-| **Mexico-origin** | **$1,519** | **$771** | **+$748** | **0.5×** |
-| MX + N. Triangle | $1,519 | $1,091 | +$428 | 0.7× |
+| **Mexico-origin** | **$1,519** | **withheld** | **withheld** | n/a |
+| MX + N. Triangle | $1,519 | withheld | withheld | n/a |
 | **NH white US-born** | **$2,746** | **$6,024** | **−$3,277** | 2.2× |
 | NH white all | $2,803 | $6,055 | −$3,293 | 2.2× |
 | NH white FB | $3,898 | $6,537 | −$3,534 | 1.7× |
-| **EU27-origin** | **$4,695** | **$64** | **+$4,658** | <0.1× ⚠️ thin school-age row |
-| UK-origin | $5,486 | $92 | +$5,372 | <0.1× ⚠️ thin school-age row |
+| **EU27-origin** | **$4,695** | **withheld** | **withheld** | n/a |
+| UK-origin | $5,486 | withheld | withheld | n/a |
 
-[SOURCE: `warehouse/immigration_fiscal_union.duckdb` view `v_three_layer_annual`, effect_order=1, queried 2026-06-15 with DuckDB CLI]
+[SOURCE: `warehouse/immigration_fiscal_union.duckdb` view `v_three_layer_annual`, effect_order=1, rebuilt 2026-06-16 with same-universe guard]
 
-**Table-scope warning:** The negative NH-white crude rows are not evidence that native whites are fiscally negative. This view assigns current average K–12 costs to current adults without descendant future taxes or a lifetime accounting frame, just as it does for immigrant-origin households. Use it as a static visibility layer only. [INFERENCE]
+**Table-scope warning:** The negative NH-white crude rows are not evidence that native whites are fiscally negative. This view assigns current average K–12 costs to current adults without descendant future taxes or a lifetime accounting frame. Origin school rows are withheld because the available school numerator came from the scenario household universe while the federal row uses full microsim adults. [INFERENCE]
 
 ---
 
@@ -56,11 +56,11 @@ Tagged **`derived_crude`** — excludes descendant future taxes, Medicaid, state
 |----------------|--------------|
 | Federal: white ~1.8× Mexico | **Yes** — school layer **not** in federal proxy |
 | Per-pupil ~$20k both groups | **Yes** — that's **per enrolled pupil**, not per adult |
-| “Whites pay more taxes” | **Partial** — on **federal annual only**; current crude federal-minus-school has Mexico still positive because the earlier school denominator was wrong |
+| “Whites pay more taxes” | **Partial** — on **federal annual only**; current crude federal-minus-school is unresolved for origin rows |
 
-**Correction:** the first pass divided Mexico household school burden by the `origin_fiscal_scenario_2023` PUMA-linked recent-low-skill denominator (~437k adults). The current tensor divides by the full Mexico microsim adult denominator (~8.50M adults), revising Mexico from ~−$13.5k/adult to **+$748/adult** on the crude annual federal-minus-school layer. [SOURCE: `v_three_layer_annual`; `origin_fiscal_scenario_2023`; `acs_origin_household_federal_microsim_2023`] [INFERENCE: denominator bug]
+**Correction:** the first pass divided Mexico household school burden by the `origin_fiscal_scenario_2023` PUMA-linked recent-low-skill denominator (~437k adults). The second pass divided the same scenario-household numerator by the full Mexico microsim adult denominator (~8.50M adults), producing the now-superseded `+$748/adult` net. The current tensor withholds the origin school/net row until numerator and denominator universes match. [SOURCE: `v_three_layer_annual`; `origin_fiscal_scenario_2023`; `acs_origin_household_federal_microsim_2023`] [INFERENCE: denominator-universe bug]
 
-This does **not** make the all-government fiscal question positive. It only invalidates the stale narrow export that the built annual school layer alone overwhelms Mexico's federal proxy under the corrected adult denominator. The lifetime NPV, state/local surge, enforcement, courts, and episodic shelter layers remain separate ledger objects. [SOURCE: `immigration-mexico-npv-population-synthesis-2026-06-15.md`]
+This does **not** make the all-government fiscal question positive or negative. The origin school layer needs a same-universe rebuild before any full-stock `federal - school` sign is live. The lifetime NPV, state/local surge, enforcement, courts, and episodic shelter layers remain separate ledger objects. [SOURCE: `immigration-mexico-npv-population-synthesis-2026-06-15.md`]
 
 ---
 
@@ -73,9 +73,9 @@ This does **not** make the all-government fiscal question positive. It only inva
 | Household weight | 322,540 |
 | School-age children / household | 0.9718 |
 | Per-pupil (area-wtd) | ~$20,907 |
-| **School/adult with full denominator** | **~$771** |
+| **School/adult with full denominator** | **withheld — numerator was not full-stock** |
 
-**Driver:** the per-pupil cost is high, but the denominator is the full Mexico adult microsim stock, not the recent-low-skill scenario subset. Household structure still matters, but it no longer creates a built $15k/adult Mexico school burden after the denominator correction. [SOURCE: `immigration-sweep-cycles-23-32-2026-06-15.md`]
+**Driver:** the per-pupil cost is high, but the available Mexico household numerator is scenario-universe while the federal row is full microsim stock. Household structure still matters; the current build refuses to export a full-stock school/adult scalar until that mismatch is fixed. [SOURCE: `immigration-conclusion-audit-running-fixes.md`]
 
 ---
 
@@ -92,8 +92,8 @@ The same accounting caveat applies symmetrically to native rows: assigning nativ
 | Issue | Impact |
 |-------|--------|
 | **Average vs marginal** pupil cost | Overstates burden if immigrants enroll in already-funded seats |
-| **Scenario `weighted_adults`** | PUMA-linked recent-low-skill subset for origins — do **not** use it as the full adult denominator |
-| **UK / EU school rows** | Very low school-age children after microsim-denominator correction; cite only as a sensitivity screen, not a stable conclusion |
+| **Scenario `weighted_adults`** | PUMA-linked recent-low-skill subset for origins — do **not** pair its household numerator with the full adult denominator |
+| **UK / EU school rows** | Withheld for same-universe reasons; do not cite old thin-row values |
 | **NH white per-pupil** | County median, not PUMA area-weighted — ~$19,385 vs origin ~$21k |
 | **No Medicaid / state / shelter** | Crude net is **not** full local ledger |
 | **Lifetime NAS** | Separate layer; college+ cells are staged, but not netted into this crude annual view |
@@ -118,6 +118,7 @@ SELECT * FROM v_three_layer_annual ORDER BY net_crude_per_adult;
 | Date | Change |
 |------|--------|
 | 2026-06-15 | Initial build — school_burden_per_adult + net_crude layers in tensor |
-| 2026-06-15 | Corrected denominator: Mexico school/adult now $771 and crude net +$748 in live `v_three_layer_annual`; prior −$13.5k used the scenario subset denominator |
+| 2026-06-15 | Intermediate correction: Mexico school/adult $771 and crude net +$748 in `v_three_layer_annual`; now superseded by same-universe guard |
 | 2026-06-16 | Added symmetric table-scope warning: negative NH-white crude rows are static school-cost assignment, not evidence that native whites are fiscally negative. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "kills the stale claim" with invalidates-the-narrow-export wording; the corrected denominator only blocks the built annual school-layer export, not the all-government fiscal question. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Marked origin school/net rows withheld after confirming scenario-household numerator vs full-microsim denominator mismatch; rebuilt tensor with guard. |
