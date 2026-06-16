@@ -71,7 +71,7 @@ Pre-trends are flat. Post-treatment coefficients are slightly negative through y
 | +7 | -0.004 | 0.010 |
 | +8 | +0.011 | 0.012 |
 
-No significant pre-trend. No significant post-treatment jump in either direction. Point estimates lean slightly negative for years 1-7, suggestive of mild complementarity loss but not statistically distinguishable from zero.
+No significant pre-trend. No significant post-treatment jump in either direction. Point estimates lean slightly negative for years 1-7, but they are not statistically distinguishable from zero and should not be read as evidence for a specific complementarity-loss mechanism.
 
 ### Employment side
 
@@ -170,7 +170,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 1. The wage-effect non-result is what I expected from prior literature. **Confirmation, not surprise.** This is not a novel finding — it extends the E-Verify policy-margin check with a longer QWI panel and broader treatment set, and is consistent with the Card-Peri wage literature. The contribution is updating the *repo's* confidence in the Card view from "the agree economists are scope-limited" to "their small-native-wage-effect premise is better supported for the policy variation we have."
 
 2. **What this does NOT settle:**
-   - Whether a mass-deportation shock would behave the same (probably not — different magnitudes, different equilibria)
+   - Whether a mass-deportation shock would behave the same (unknown — different magnitudes and equilibria)
    - Whether wage effects exist for sub-groups outside QWI's coverage (cash economy, very small firms exempt from mandate)
    - Whether non-wage channels (employment composition, occupational sorting, hours) absorb the supply shock
    - Whether the long-run (>10 year) effect differs from the medium-run captured here
@@ -181,6 +181,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced "suggestive of mild complementarity loss" and "probably not" mass-shock shorthand with interpretation language that keeps nonsignificant coefficients and out-of-margin shocks unresolved. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Rephrased the Card-side setup from "will produce" wage gains to prediction language, keeping theory expectations distinct from measured findings. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced speculative cash-economy substitution language with a narrower measurement caveat: off-W-2 substitution weakens E1 as a total labor-supply proxy, while leaving the QWI wage-gain result bounded to this design. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Narrowed the external-validity caveat from "the relevant test for the actual policy debate" to one relevant test for marginal enforcement mandates. See `immigration-conclusion-audit-running-fixes.md`. |
