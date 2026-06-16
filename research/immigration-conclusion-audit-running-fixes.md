@@ -1840,3 +1840,23 @@ Replaced entry 20's title, rating, and reason with stronger-correlate/descriptiv
 ### Updated conclusion
 
 The confidence ladder now treats the Saiz regulatory result as descriptive evidence for a zoning hypothesis, not as proof that zoning caused immigrant concentration or solves renter incidence. [INFERENCE]
+
+---
+
+## 2026-06-16 — E-Verify wage shorthand changed to statistical non-significance
+
+### Issue
+
+`research/immigration-causal-everify-card-vs-borjas.md` and `research/immigration-causal-synthesis-2026-04-18.md` still used shortcuts like "wages did not rise" and "does not raise native wages" for the E-Verify QWI wage result. [DATA]
+
+### Why it was wrong
+
+The memo's own power caveat says the design rejects large Borjas-style gains for the observed mandate margin but cannot reject small positive effects. The shortcut wording could be reused as an exact-zero or equivalence claim rather than a no-statistically-significant-positive-effect finding. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the active E-Verify bullet and synthesis table rows to "no statistically significant positive QWI wage effect" while preserving the existing large-gain rejection and observed-mandate scope. [SOURCE: memo]
+
+### Updated conclusion
+
+The E-Verify wage evidence remains strong against large native wage gains in the tested QWI mandate design, but the repo no longer phrases the result as if it proves wages literally did not rise or could not rise by a small amount. [INFERENCE]
