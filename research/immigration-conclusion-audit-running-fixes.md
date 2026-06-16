@@ -2623,3 +2623,30 @@ Generator lifecycle is still manual: Markdown has `106` `G-LIF-*` headings, Duck
 ### Updated conclusion
 
 The final reviewed state is narrower: no Mexico-origin lifetime band, no live origin `federal - school` sign, E-Verify remains a bounded static-TWFE mandate-margin wage result with source CI/MDE caveats, and the agent loop is a canonical assisted process rather than a fully autonomous replacement until lifecycle state and adoption judging are implemented. [INFERENCE]
+
+---
+
+## 2026-06-16 — Confidence ladder headline surfaces scoped after DS audit
+
+### Issue
+
+The confidence ladder still lagged the current DS-01/DS-02 surface in two high-reuse places. Entry 17 named the E-Verify wage finding as strong against large gains, but did not carry the current CI/MDE and static-TWFE caveats from the source memo and CYCLE. Entry 31 still told readers to treat the receiver-city result as upper-bound until a Hispanic-share control was run, even though entry 36 later ran that control. The ladder footer also retained an April generated timestamp and stale `research/research/...` index paths. [DATA]
+
+### Why it was wrong
+
+The E-Verify result is not a clean global Card-vs-Borjas verdict: it is an observed mandate-margin QWI static-TWFE result whose CI excludes large gains above about `+2.1%`, with MDE roughly `2-3%` before compliance sensitivity; heterogeneity-robust staggered-DiD remains an unresolved check. The receiver-city swing result should route readers to the later Hispanic-share-control entry, not to stale open-work language. Bad index/source paths are a smaller but real agent-routing error on a file meant to guide future synthesis. [SOURCE: `research/immigration-causal-everify-card-vs-borjas.md`] [SOURCE: `CYCLE.md`] [SOURCE: `research/immigration-confidence-ladder.md`]
+
+### Fix
+
+Updated `research/immigration-confidence-ladder.md` to:
+
+- add CI/MDE, compliance-sensitivity, static-TWFE, and heterogeneity-robust-DiD caveats to entry 17;
+- mark entry 19 as cross-design external-validity evidence rather than one pooled U.S. estimate;
+- change entry 31 to point readers to entry 36's Hispanic-share-control result for the current scoped reading;
+- refresh the manual knowledge-index timestamp and remove stale `research/research/...` cross-references and absolute source paths.
+
+Updated `research/immigration-verified-findings-report-2026-04-10.md` to remove one stale absolute source path from the stage-3 prototype table. [DATA]
+
+### Updated conclusion
+
+The current headline ladder still supports the same qualitative reading: large native wage gains are not observed in the E-Verify mandate-margin design, and the receiver-city swing result survives the named Hispanic-share control. The corrected wording now prevents those claims from being exported as a clean ATT, a global wage-family verdict, or an unqualified causal election mechanism. [INFERENCE]
