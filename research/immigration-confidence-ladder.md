@@ -23,11 +23,11 @@ Reason: official ACS geography, directly observed, useful as exposure context. I
 
 3. `Household-normalized school-age child metrics after WGTP correction`
 Rating: `strong`
-Reason: the prior proxy was wrong; the corrected household join is materially better and uses the right unit for linked-household child exposure. Do not export this as a current full-stock school-burden-per-adult or origin fiscal-net row; June 2026 tensor work withholds origin school/net rows until the school numerator and federal adult denominator use the same universe. [SOURCE: /Users/alien/Projects/research/research/immigration-household-weighted-correction.md] [SOURCE: research/immigration-school-burden-per-adult-2026-06-15.md]
+Reason: the prior proxy was wrong; the corrected household join is materially better and uses the right unit for linked-household child exposure. Do not export this as a current full-stock school-burden-per-adult or origin fiscal-net row; June 2026 tensor work withholds origin school/net rows until the school numerator and federal adult denominator use the same universe. [SOURCE: research/immigration-household-weighted-correction.md] [SOURCE: research/immigration-school-burden-per-adult-2026-06-15.md]
 
 4. `Claim that the Clark “agree” papers are scope-limited rather than obviously false`
 Rating: `strong`
-Reason: that conclusion survives repeated paper review and is consistent with the actual paper scopes. [SOURCE: /Users/alien/Projects/research/research/immigration-economist-effects-matrix.md]
+Reason: that conclusion survives repeated paper review and is consistent with the actual paper scopes. [SOURCE: research/immigration-economist-effects-matrix.md]
 
 ## Medium
 
@@ -45,7 +45,7 @@ Reason: official and clean, but too coarse for marginal burden or district-speci
 
 8. `Housing-heavy versus school-heavy origin-group typology`
 Rating: `medium`
-Reason: useful descriptive shorthand for destination exposure, but still proxy-based and sensitive to geography choice. [SOURCE: /Users/alien/Projects/research/research/immigration-local-burden-puma-layer.md]
+Reason: useful descriptive shorthand for destination exposure, but still proxy-based and sensitive to geography choice. [SOURCE: research/immigration-local-burden-puma-layer.md]
 
 9. `Descendant upside as a real channel`
 Rating: `medium`
@@ -59,15 +59,15 @@ Reason: land area is not people, renters, students, or immigrant households. Thi
 
 11. `IRS county migration balance as burden evidence`
 Rating: `weak`
-Reason: at best it is contextual mobility climate. It is not immigrant-specific and not causal. [SOURCE: /Users/alien/Projects/research/research/immigration-stage2-county-bridge-batch.md]
+Reason: at best it is contextual mobility climate. It is not immigrant-specific and not causal. [SOURCE: research/immigration-stage2-county-bridge-batch.md]
 
 12. `Old ACS income/benefit proxy origin rankings`
 Rating: `weak`
-Reason: the April ACS income/benefit shortcut was not a tax-transfer microsimulation. It remains useful only as a weak historical screen, superseded for current narrow federal annual proxy work by the SIPP-style FICA-minus-SNAP/TANF/SSI build. [SOURCE: /Users/alien/Projects/research/research/immigration-low-skill-origin-incidence-memo.md] [SOURCE: research/immigration-federal-distribution-findings-2026-06-15.md]
+Reason: the April ACS income/benefit shortcut was not a tax-transfer microsimulation. It remains useful only as a weak historical screen, superseded for current narrow federal annual proxy work by the SIPP-style FICA-minus-SNAP/TANF/SSI build. [SOURCE: research/immigration-low-skill-origin-incidence-memo.md] [SOURCE: research/immigration-federal-distribution-findings-2026-06-15.md]
 
 13. `Magnitude claims for local school burden from current warehouse`
 Rating: `weak`
-Reason: district assignment, ELL intensity, migrant composition, and marginal cost are not modeled well enough yet. [SOURCE: /Users/alien/Projects/research/research/immigration-adversarial-review.md]
+Reason: district assignment, ELL intensity, migrant composition, and marginal cost are not modeled well enough yet. [SOURCE: research/immigration-adversarial-review.md]
 
 ## Contextual-only
 
@@ -87,7 +87,7 @@ Reason: without explicit horizon and counterfactuals, the phrase has almost no a
 
 17. `Large Borjas-style native wage gains under observed E-Verify mandates`
 Rating: `strong against large gains in this design`
-Reason: TWFE on QWI 2003-2023, 9 treated states (AZ, MS, SC, UT, GA, AL, NC, TN, FL), 42 controls. Coefficient on E1 in E-Verify-exposed industries: +0.51% (SE 0.81%, n=16,736). 95% CI cuts against large Borjas-style magnitudes for this observed mandate margin, while small effects and scaled-shock benchmarks are not ruled out. Aligns with Card direction; not a direct replication or a global wage-family rejection. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
+Reason: TWFE on QWI 2003-2023, 9 treated states (AZ, MS, SC, UT, GA, AL, NC, TN, FL), 42 controls. Coefficient on E1 in E-Verify-exposed industries: +0.51% (SE 0.81%, n=16,736); the 95% CI excludes gains above about +2.1%, with MDE roughly 2-3% before compliance sensitivity. This cuts against large Borjas-style magnitudes for the observed static-TWFE mandate margin, while small effects, scaled-shock benchmarks, surge regimes, and heterogeneity-robust staggered-DiD checks remain unresolved. Aligns with Card direction; not a direct replication, clean ATT, or global wage-family rejection. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
 
 18. `Immigrants concentrate in inelastic-supply MSAs (renter-incidence warning)`
 Rating: `strong (descriptive)`
@@ -95,7 +95,7 @@ Reason: top FB-share quintile median Saiz 2010 elasticity = 1.51, bottom = 3.40.
 
 19. `Card-side bounded native-wage-impact evidence for observed low-skill shocks`
 Rating: `medium-strong`
-Reason: convergent evidence — Card 1990 Mariel, Foged-Peri 2016 Denmark dispersal-policy quasi-experiment, this cycle's E-Verify TWFE 2003-2023 — points against large native low-skill wage losses/gains in these designs. It does not identify one shared complementarity mechanism. Borjas 2017 restricted-Mariel magnitude should not be mechanically extrapolated to broader staggered designs. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md, multiple papers]
+Reason: convergent evidence — Card 1990 Mariel, Foged-Peri 2016 Denmark dispersal-policy quasi-experiment, this cycle's E-Verify TWFE 2003-2023 — points against large native low-skill wage losses/gains in these designs. This is a cross-design external-validity pattern, not one pooled U.S. estimate. It does not identify one shared complementarity mechanism. Borjas 2017 restricted-Mariel magnitude should not be mechanically extrapolated to broader staggered designs. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md, multiple papers]
 
 ## Paradigm-escape layer added 2026-04-18 (evening)
 
@@ -149,7 +149,7 @@ Trigger: mirror-test against the criticisms of the Cato 2026 fiscal study ("did 
 Reason: interim downgrade before the OHSS parser correction. The source memo itself listed reverse causation as a live mechanism, but entry 34 later reversed the descriptive reading too: the "+787%" rise was the program's lawful OFO channel on a scrambled clock, while corrected USBP between-port crossings fell sharply. Do not reuse the "substitution did not happen" language or the `+787%` figure except as an error trace. [SOURCE: research/immigration-causal-surge-2021-2024.md] [SOURCE: decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md]
 
 31. `Receiver-city 2024 GOP swing` (entry 28) — **grade unchanged (medium), headline language corrected**
-The phrase "magnitude implausibly large for non-immigration causes alone" is a plausibility assertion doing causal work and should not be reused. The top swing counties (Bronx, Queens, Miami-Dade, Hidalgo, El Paso) are among the most Hispanic-populous counties in the country; the national 2024 Hispanic realignment is near-collinear with "receiver city" in that list, and the multivariate pass controls FB share but not Hispanic share. Use the controlled estimate (+2.4pp, receiver_city β=+0.024, state FE) rather than the raw +4.41pp gap, and treat even that as upper-bound until a Hispanic-share control or within-Hispanic-county comparison is run. [SOURCE: research/immigration-causal-surge-2021-2024.md] [SOURCE: notes/quant-bias-checklist.md item 25]
+The phrase "magnitude implausibly large for non-immigration causes alone" is a plausibility assertion doing causal work and should not be reused. The top swing counties (Bronx, Queens, Miami-Dade, Hidalgo, El Paso) are among the most Hispanic-populous counties in the country; the national 2024 Hispanic realignment is near-collinear with "receiver city" in that list, and the multivariate pass controls FB share but not Hispanic share. Entry 36 later runs this Hispanic-share control and keeps the controlled estimate at about +2.4pp; use entry 36 for the current scoped reading rather than the raw +4.41pp gap or the stale open-work framing. [SOURCE: research/immigration-causal-surge-2021-2024.md] [SOURCE: notes/quant-bias-checklist.md item 25]
 
 32. `Mass deportation output shock` (entry 24) — **grade unchanged (medium, calibration), presentation rule added**
 Lead with the first-order figure (`~$1.45T`, ~5% GDP); the `$2.32T` Type-II-multiplier endpoint appears only as labeled sensitivity, never inside a headline range. Stacking the modeled amplifier into the headline is the same move as Cato's `$3.9T` interest-savings add-on (27% of their `$14.5T`), in the opposite political direction. The calibration also freezes replacement hiring, wage response, and capital reallocation at zero — state this when quoting. [SOURCE: sources/immigration-causal/scripts/mass_deportation_sim.py] [SOURCE: notes/quant-bias-checklist.md items 4, 15]
@@ -210,9 +210,9 @@ Why weak: local service burden depends on actual district context, renter mix, c
 If a conclusion depends mainly on items `10` through `16`, present it as a hypothesis or descriptive tendency, not a settled result. If it depends on item `41`, name the exact federal cash-flow ledger and do not combine it with origin school rows until the school numerator and adult denominator use the same universe.
 
 <!-- knowledge-index
-generated: 2026-04-19T04:47:35Z
-hash: 7c9873d31903
+generated: 2026-06-16T12:05:35Z
+hash: manual-june-ds-refresh
 
-cross_refs: research/immigration-causal-everify-card-vs-borjas.md, research/immigration-causal-internal-vs-immigrant-newcomers.md, research/immigration-causal-saiz-elasticity-rent.md, research/immigration-causal-surge-2021-2024.md, research/research/immigration-adversarial-review.md, research/research/immigration-economist-effects-matrix.md, research/research/immigration-household-weighted-correction.md, research/research/immigration-local-burden-puma-layer.md, research/research/immigration-low-skill-origin-incidence-memo.md, research/research/immigration-stage2-county-bridge-batch.md
+cross_refs: research/immigration-adversarial-review.md, research/immigration-causal-everify-card-vs-borjas.md, research/immigration-causal-internal-vs-immigrant-newcomers.md, research/immigration-causal-saiz-elasticity-rent.md, research/immigration-causal-surge-2021-2024.md, research/immigration-economist-effects-matrix.md, research/immigration-federal-distribution-findings-2026-06-15.md, research/immigration-household-weighted-correction.md, research/immigration-local-burden-puma-layer.md, research/immigration-low-skill-origin-incidence-memo.md, research/immigration-school-burden-per-adult-2026-06-15.md, research/immigration-stage2-county-bridge-batch.md
 
 end-knowledge-index -->
