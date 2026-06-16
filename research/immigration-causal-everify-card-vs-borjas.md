@@ -166,7 +166,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 
 ## Honest limits
 
-1. The wage-effect non-result is what I expected from prior literature. **Confirmation, not surprise.** This is not a novel finding — it replicates Orrenius-Zavodny and Card-Peri using a longer panel and broader treatment set. The contribution is updating the *repo's* confidence in the Card view from "the agree economists are scope-limited" to "the agree economists are also right on the wage channel for the policy variation we have."
+1. The wage-effect non-result is what I expected from prior literature. **Confirmation, not surprise.** This is not a novel finding — it extends the E-Verify policy-margin check with a longer QWI panel and broader treatment set, and is consistent with the Card-Peri wage literature. The contribution is updating the *repo's* confidence in the Card view from "the agree economists are scope-limited" to "the agree economists are also right on the wage channel for the policy variation we have."
 
 2. **What this does NOT settle:**
    - Whether a mass-deportation shock would behave the same (probably not — different magnitudes, different equilibria)
@@ -183,6 +183,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 | 2026-06-16 | Bounded "data side with Card" and commentator-update language to the observed E-Verify wage-channel design; the result rejects large Borjas-style native wage gains for this margin, not all wage or open-borders questions. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Aligned the proposed confidence-ladder update with the same margin-specific wording: strong against large Borjas-style gains in the E-Verify margin, not a global "STRONG REJECTION." See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Clarified Foged-Peri design shorthand from opaque "RA quasi-IV" to dispersal-policy IV / DiD, matching the paper's quasi-experimental design. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Replaced "replicates Orrenius-Zavodny and Card-Peri" with extension/consistency language; the QWI E-Verify panel is not a direct replication of those papers. See `immigration-conclusion-audit-running-fixes.md`. |
 
 [SOURCE: data/analysis/everify_twfe_results.csv]
 [SOURCE: data/analysis/everify_event_study_E1.csv]

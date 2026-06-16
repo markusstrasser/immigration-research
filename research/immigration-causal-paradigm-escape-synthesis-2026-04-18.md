@@ -65,7 +65,7 @@ a plausible policy hypothesis, not an identified causal lever for immigrant rent
 [SOURCE: research/immigration-causal-everify-card-vs-borjas.md, saiz_decomposition.py]
 
 21. `Sanctuary policy variation does not change native low-skill wages either direction`
-Rating: STRONG null result in this design (replicates E-Verify margin)
+Rating: STRONG null result in this design (aligned with E-Verify margin)
 Reason: TWFE on QWI 2003-23 with 12 pro-sanctuary + 9 anti-sanctuary states; all
 E1 specifications |t|<1.0; another Card-side null for observed marginal policy variation
 [SOURCE: scripts/analyze_sanctuary_wages.py]
@@ -108,7 +108,7 @@ This is the right division of labor: **Claude orchestrates and runs analyses on 
 1. **Mount SSD and re-run Saiz×PUMA + warehouse merges** — the Saiz finding is at MSA level; the existing warehouse has PUMA-level data that would sharpen everything. Same blocker as morning cycle.
 2. **Fix SIPP donor library + run federal microsim** — same call from 2026-04-10. Highest-leverage single fix on the repo.
 3. **Run DACA pre-post on ACS PUMS** — the design is documented, just needs execution. Free up disk first.
-4. **Run Foged-Peri 6-yr lag replication** — also disk-constrained but smaller. Could explain Card-side wage finding via lag distribution.
+4. **Run Foged-Peri-style 6-yr lag analogue test** — also disk-constrained but smaller. Could explain Card-side wage finding via lag distribution.
 5. **Sending-country welfare ledger** — natural extension of open-borders frame.
 6. **Comparative international regimes** — Gulf Kafala / Canada points / Germany 2015 to test what's regime-specific.
 7. **Diversity Visa lottery RCT** — true random assignment data for cleanest causal evidence.
@@ -134,6 +134,7 @@ The biggest *interpretation* lever remains the welfare-weight question, which is
 | 2026-06-16 | Bounded Saiz decomposition language: WRLURI is a stronger descriptive correlate than topographic unavailability, not proof that zoning drives immigrant concentration or that zoning reform is an identified causal lever. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Removed GPT-5.4 calibration from the wage-evidence stack; it is welfare-weight sensitivity/model reasoning, not an empirical wage test. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Reframed open-borders welfare-weight language: the value weight is normative, but native-cost, fiscal, capacity, and sending-country inputs remain empirical. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Replaced remaining sanctuary "replicates E-Verify margin" phrasing with alignment language; it is an additional QWI policy-margin check, not a direct replication. See `immigration-conclusion-audit-running-fixes.md`. |
 
 [SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
 [SOURCE: research/immigration-causal-saiz-elasticity-rent.md]
