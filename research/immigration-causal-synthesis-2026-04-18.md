@@ -22,7 +22,7 @@ Three converging pieces of evidence on the U.S. wage channel:
 
 1. **Card (1990) Mariel:** zero wage effect on Miami HS dropouts.
 2. **This cycle's E-Verify TWFE:** +0.5% (n.s.) wage effect on E1 workers in exposed industries across 9 mandate states 2003-2023.
-3. **Foged-Peri (2016) Denmark:** native low-skill wages *rose* under random refugee assignment.
+3. **Foged-Peri (2016) Denmark:** native low-skill wages *rose* in a refugee dispersal-policy quasi-experiment.
 
 Against:
 - **Borjas (2017) Mariel reanalysis:** -10 to -30% on HS dropouts with restricted sample. **This finding does not generalize to the broader staggered designs tested here.**
@@ -134,6 +134,7 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 | 2026-06-16 | Replaced "QWI confirms wage channel is small" with margin-specific support for a small/null wage response in the observed E-Verify design. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Narrowed the explicit Card-vs-Borjas verdict sentence to large Borjas-style gains from E-Verify-style labor-supply contraction, not the full Borjas wage-prediction family. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "does not replicate in broader staggered designs" with "does not generalize" because E-Verify/Foged-Peri are adjacent external-validity tests, not direct Mariel replications. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Replaced "random refugee assignment" with "refugee dispersal-policy quasi-experiment"; Foged-Peri is exogenous/quasi-experimental, not a simple randomized trial. See `immigration-conclusion-audit-running-fixes.md`. |
 
 <!-- knowledge-index
 generated: 2026-04-19T03:45:13Z

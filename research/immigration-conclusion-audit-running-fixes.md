@@ -1223,6 +1223,26 @@ The wage conclusion is unchanged, but its evidence count is no longer inflated. 
 
 ---
 
+## 2026-06-16 — Foged-Peri design label downgraded from random assignment
+
+### Issue
+
+`research/immigration-causal-synthesis-2026-04-18.md` said Foged-Peri native wages rose under "random refugee assignment," and `research/immigration-causal-everify-card-vs-borjas.md` used the opaque design label "RA quasi-IV." [DATA]
+
+### Why it was wrong
+
+The Foged-Peri design is strong, but not a simple randomized trial. The paper describes a Danish refugee dispersal policy that allocated refugees using nationality, family size, housing availability, and clustering goals; identification comes from quasi-experimental dispersal unrelated to local labor demand plus later refugee-country inflows. Calling it merely "random assignment" overstates the design and hides the IV/DiD structure. [SOURCE: /Volumes/2TBPNY/research-data/immigration-fiscal/data/external/lifetime/nber/foged_peri_2016_immigrants_effect_native_workers_w19315.pdf] [INFERENCE]
+
+### Fix
+
+Changed the synthesis wording to "refugee dispersal-policy quasi-experiment" and changed the comparison-table design label to "Dispersal-policy IV / DiD." Added revision rows to both memos. [SOURCE: memo]
+
+### Updated conclusion
+
+Foged-Peri remains useful external evidence against large native low-skill wage losses in that Danish setting, but the repo should export it as quasi-experimental dispersal evidence, not as RCT-style random assignment. [INFERENCE]
+
+---
+
 ## 2026-06-16 — Open-borders weight framing separated from empirical inputs
 
 ### Issue
