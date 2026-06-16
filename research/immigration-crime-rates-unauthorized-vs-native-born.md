@@ -180,7 +180,7 @@ Landgrave & Nowrasteh (Cato Policy Analysis 994, April 2025) provide the race-st
 **What Light et al. (2020) did NOT do:** Their PNAS study does not stratify the native-born comparison group by race. This is a real limitation of that paper's headline numbers.
 
 ### 6. Generational assimilation
-Multiple studies find that the children of immigrants (second generation, typically US-born citizens) have higher crime rates than their parents, converging toward native-born rates. This is consistent with both the "immigrant revitalization" thesis and with the observation that first-generation immigrants are unusually law-abiding. [SOURCE: Ousey & Kubrin 2018; Rumbaut 2008]
+The cited immigration-crime literature reports a broad generational-assimilation pattern: second-generation outcomes often move toward native-born rates rather than preserving first-generation lows. Treat this as a scope-limited caveat, not as an unauthorized-only estimate or a post-2020-surge claim. [SOURCE: Ousey & Kubrin 2018; Rumbaut 2008] [INFERENCE]
 
 ---
 
@@ -207,7 +207,7 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 | 6 | Lott's Arizona study claiming higher rates faces a serious unresolved immigration-status classification critique | Multiple independent critiques (Cato, WaPo, Latino Decisions); no independent reanalysis in this memo | MODERATE-HIGH | Nowrasteh 2022; WaPo 2018 | SUPPORTED CRITIQUE — not independent reanalysis |
 | 7 | ICE national docket shows ~15K noncitizens with homicide convictions/charges | Official ICE data released to Congress | HIGH (as administrative count) | ICE ERO letter, Sept 2024 | VERIFIED — but measures stock, not rate |
 | 8 | European evidence is more mixed; some immigrant groups show higher crime | Scandinavian studies | LOW-MODERATE | Skardhamar et al. 2014 | PRELIMINARY — fetched but not fully analyzed |
-| 9 | Second-generation immigrants have higher crime rates than first generation, converging toward native-born levels | Multiple studies | HIGH | Ousey & Kubrin 2018; Rumbaut 2008 | VERIFIED |
+| 9 | Second-generation assimilation evidence points toward higher observed crime/incarceration than first generation, often converging toward native-born levels | Broad generational literature; not unauthorized-only or post-2020-surge evidence | MODERATE | Ousey & Kubrin 2018; Rumbaut 2008 | SUPPORTED LITERATURE PATTERN — scope-limited |
 | 10 | Reporting bias (fear of deportation suppressing police contact) could partially explain lower observed rates | Theoretical + indirect evidence | MODERATE | Gunadi 2019; general literature | INFERENCE |
 
 ---
@@ -265,3 +265,4 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 | 2026-06-16 | Bounded the search-log wording for higher-rate studies: the Exa pass did not find a peer-reviewed higher-rate study, but that is a search-result statement, not a proof of absence across the literature. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Downgraded the European mixed-evidence table row from `VERIFIED (direction), not fully analyzed` to `PRELIMINARY`; fetched-but-unread evidence should not carry a verified status. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Reframed the Lott Arizona critique row from `HIGH/VERIFIED` fundamental flaw to a supported unresolved classification critique, because the memo cites critiques rather than running an independent data reanalysis. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Downgraded the second-generation crime row from `HIGH/VERIFIED` to a scope-limited supported literature pattern; the cited evidence is broad generational literature, not unauthorized-only or current-surge evidence. See `immigration-conclusion-audit-running-fixes.md`. |
