@@ -104,8 +104,8 @@ Rating: `strong`
 Reason: log(FB share) ~ unaval (β=+0.12, t=0.58, n.s.) + WRLURI (β=+0.33, t=6.29***) + log_pop. The inelastic-MSA immigrant concentration is driven by zoning, not topography. Implication: zoning reform is a viable lever for the rent-burden problem; immigration restriction is not the only policy response. [SOURCE: scripts/saiz_decomposition.py]
 
 21. `Sanctuary policy variation does not change native low-skill wages either direction`
-Rating: `strong rejection (replicates E-Verify finding)`
-Reason: TWFE on QWI 2003-2023 with 12 pro-sanctuary + 9 anti-sanctuary states; all E1 specifications |t|<1.0. Third convergent confirmation of Card-side null on the wage channel. [SOURCE: scripts/analyze_sanctuary_wages.py]
+Rating: `strong null result in this design`
+Reason: TWFE on QWI 2003-2023 with 12 pro-sanctuary + 9 anti-sanctuary states; all E1 specifications |t|<1.0. Additional QWI policy-margin check consistent with the E-Verify null; supports the bounded Card-side reading for observed marginal policy variation. [SOURCE: scripts/analyze_sanctuary_wages.py]
 
 22. `Domestic newcomer counts are much larger than moved-from-abroad counts at median county`
 Rating: `medium`

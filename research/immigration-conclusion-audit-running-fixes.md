@@ -1203,6 +1203,26 @@ The wage conclusion remains strong for the tested marginal-policy range, but the
 
 ---
 
+## 2026-06-16 — Confidence ladder stopped calling sanctuary a third wage confirmation
+
+### Issue
+
+`research/immigration-confidence-ladder.md` entry 21 still called the sanctuary QWI null a "Third convergent confirmation" of the Card-side wage channel after the paradigm synthesis had removed GPT-5.4 calibration from the wage-evidence stack. [DATA]
+
+### Why it was wrong
+
+Once model calibration is excluded, the repo has two internal QWI policy-margin wage checks in this cycle: E-Verify and sanctuary policy. External Card/Foged-Peri evidence still matters, but the ladder should not imply a third internal empirical wage design. [INFERENCE]
+
+### Fix
+
+Changed entry 21 to "strong null result in this design" and described it as an additional QWI policy-margin check consistent with E-Verify, bounded to observed marginal policy variation. [SOURCE: memo]
+
+### Updated conclusion
+
+The wage conclusion is unchanged, but its evidence count is no longer inflated. [INFERENCE]
+
+---
+
 ## 2026-06-16 — Open-borders weight framing separated from empirical inputs
 
 ### Issue
