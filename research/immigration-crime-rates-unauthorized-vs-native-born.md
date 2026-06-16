@@ -19,7 +19,7 @@ However, this evidence base has real limitations that an honest assessment must 
 3. **Heterogeneity:** "Unauthorized immigrants" is not a monolithic group. Crime rates likely vary by country of origin, age at entry, length of residence, and local context. Aggregate comparisons obscure this variation.
 4. **The ICE docket numbers** (large absolute counts of noncitizens with criminal records) are real administrative data but measure something different from per-capita crime rates. They are stock figures accumulated over decades, not rates.
 
-**Confidence:** HIGH that the directional finding for observed criminal-justice rates is robust even after race-stratified correction (see §5 below). MODERATE on the precise magnitude — the headline "2x lower" overstates the gap because it compares predominantly Hispanic unauthorized immigrants to all native-born citizens including Black Americans; the race-corrected gap is ~30% lower, not ~50% lower. LOW on whether this generalizes to true offending uniformly across all subpopulations and time periods.
+**Confidence:** HIGH that the directional finding for observed U.S. criminal-justice outcomes is supported across the strongest current datasets. MODERATE on the precise magnitude — the headline "2x lower" overstates the gap because it compares predominantly Hispanic unauthorized immigrants to all native-born citizens including Black Americans; the race-corrected incarceration gap is ~30% lower, not ~50% lower. LOW on whether this generalizes to true offending uniformly across all subpopulations and time periods.
 
 ---
 
@@ -138,7 +138,7 @@ In September 2024, ICE ERO data released to Congress showed large absolute numbe
 ## Key Methodological Challenges (applying to ALL studies)
 
 ### 1. Denominator problem
-No census perfectly counts unauthorized immigrants. Population estimates from CMS and Pew have uncertainty bands. If the true unauthorized population is larger than estimated (likely), crime rates are even lower than reported. If smaller, rates are higher. Light & Miller (2020) test sensitivity to alternative population estimates and find results robust. [SOURCE: PNAS 117(51)]
+No census perfectly counts unauthorized immigrants. Population estimates from CMS and Pew have uncertainty bands. Holding the arrest numerator and immigration-status classification fixed, a larger true unauthorized denominator mechanically lowers the calculated rate, while a smaller denominator raises it. That denominator-only sensitivity should not be confused with numerator or classification uncertainty. Light & Miller (2020) test sensitivity to alternative population estimates and find results robust. [SOURCE: PNAS 117(51)]
 
 ### 2. Reporting / detection bias
 Unauthorized immigrants may avoid police contact, leading to:
@@ -175,7 +175,7 @@ Landgrave & Nowrasteh (Cato Policy Analysis 994, April 2025) provide the race-st
 - **Excluding Black Americans from both groups:** gap narrows to ~30% less likely [SOURCE: https://www.alexnowrasteh.com/p/immigrants-have-a-lower-incarceration — Nowrasteh Apr 2025]
 - **Within each racial/ethnic group:** immigrants have lower incarceration rates than their native-born counterparts. Hispanic immigrants < native-born Hispanics. Black immigrants < native-born Blacks. White immigrants < native-born whites. [SOURCE: same]
 
-**Assessment:** The user critique is valid — the aggregate comparison overstates the gap by ~20 percentage points. The corrected comparison still shows unauthorized immigrants with lower rates, but the margin is ~30% lower rather than ~50% lower. The strongest version of this finding is the within-race comparison, which eliminates the compositional confound entirely and still shows lower immigrant rates. [INFERENCE]
+**Assessment:** The user critique is valid — the aggregate comparison overstates the incarceration gap by ~20 percentage points. The corrected comparison still shows unauthorized immigrants with lower incarceration rates, but the margin is ~30% lower rather than ~50% lower. The strongest version of this specific incarceration comparison is the within-race comparison, which removes the racial-composition confound; it does not remove age, sex, geography, detection/reporting, or legal-status-classification uncertainty. [INFERENCE]
 
 **What Light et al. (2020) did NOT do:** Their PNAS study does not stratify the native-born comparison group by race. This is a real limitation of that paper's headline numbers.
 
@@ -262,6 +262,7 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Scoped race correction to incarceration magnitude, made denominator sensitivity conditional on fixed numerator/classification, and narrowed within-race comparison from "eliminates confound entirely" to removing the racial-composition confound. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Bounded the search-log wording for higher-rate studies: the Exa pass did not find a peer-reviewed higher-rate study, but that is a search-result statement, not a proof of absence across the literature. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Downgraded the European mixed-evidence table row from `VERIFIED (direction), not fully analyzed` to `PRELIMINARY`; fetched-but-unread evidence should not carry a verified status. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Reframed the Lott Arizona critique row from `HIGH/VERIFIED` fundamental flaw to a supported unresolved classification critique, because the memo cites critiques rather than running an independent data reanalysis. See `immigration-conclusion-audit-running-fixes.md`. |
