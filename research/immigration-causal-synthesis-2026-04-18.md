@@ -18,7 +18,7 @@
 
 ## E-Verify wage-channel verdict
 
-Three converging pieces of evidence on the U.S. wage channel:
+Three converging pieces of wage-channel evidence, one from the U.S. policy-margin test and two from adjacent literature:
 
 1. **Card (1990) Mariel:** no detected adverse wage effect on Miami high-school dropouts in that design.
 2. **This cycle's E-Verify TWFE:** +0.5% (n.s.) wage effect on E1 workers in exposed industries across 9 mandate states 2003-2023.

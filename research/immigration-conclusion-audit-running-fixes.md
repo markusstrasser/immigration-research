@@ -2458,7 +2458,7 @@ The county capacity pass is useful descriptive screening, not causal identificat
 Updated:
 
 - `research/immigration-capacity-frontier-2026-04-21.md`: stock/load claims now say "one-predictor county model signal," wage ranking is "marginally best-fitting," q90 threshold weakness is caveated for power/multiple-testing, and permit-denominator confounding is explicit.
-- `research/immigration-causal-surge-2021-2024.md`: per-migrant costs are scoped to sheltered-migrant-day gross cost, receiver load is separated from the correlational election result, and the stale `~50K/month` flow line is replaced with the corrected Total-CBP range.
+- `research/immigration-causal-surge-2021-2024.md`: per-migrant costs are scoped to sheltered-migrant-day gross cost, receiver load is separated from the correlational election result, the stale `~50K/month` flow line is replaced with the corrected Total-CBP range, and the original no-Hispanic receiver regression is reconciled with the later Hispanic-share kill-test sample.
 - `research/immigration-bryan-caplan-claims-audit-2026-04-21.md`: constrained-place wage pressure is evidence-consistent rather than a settled pressure channel.
 
 ### Updated conclusion
