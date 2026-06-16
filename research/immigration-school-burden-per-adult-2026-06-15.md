@@ -60,7 +60,7 @@ Tagged **`derived_crude`** — excludes descendant future taxes, Medicaid, state
 
 **Correction:** the first pass divided Mexico household school burden by the `origin_fiscal_scenario_2023` PUMA-linked recent-low-skill denominator (~437k adults). The current tensor divides by the full Mexico microsim adult denominator (~8.50M adults), revising Mexico from ~−$13.5k/adult to **+$748/adult** on the crude annual federal-minus-school layer. [SOURCE: `v_three_layer_annual`; `origin_fiscal_scenario_2023`; `acs_origin_household_federal_microsim_2023`] [INFERENCE: denominator bug]
 
-This does **not** make the all-government fiscal question positive. It only kills the stale claim that the built annual school layer alone overwhelms Mexico's federal proxy. The lifetime NPV, state/local surge, enforcement, courts, and episodic shelter layers remain separate ledger objects. [SOURCE: `immigration-mexico-npv-population-synthesis-2026-06-15.md`]
+This does **not** make the all-government fiscal question positive. It only invalidates the stale narrow export that the built annual school layer alone overwhelms Mexico's federal proxy under the corrected adult denominator. The lifetime NPV, state/local surge, enforcement, courts, and episodic shelter layers remain separate ledger objects. [SOURCE: `immigration-mexico-npv-population-synthesis-2026-06-15.md`]
 
 ---
 
@@ -120,3 +120,4 @@ SELECT * FROM v_three_layer_annual ORDER BY net_crude_per_adult;
 | 2026-06-15 | Initial build — school_burden_per_adult + net_crude layers in tensor |
 | 2026-06-15 | Corrected denominator: Mexico school/adult now $771 and crude net +$748 in live `v_three_layer_annual`; prior −$13.5k used the scenario subset denominator |
 | 2026-06-16 | Added symmetric table-scope warning: negative NH-white crude rows are static school-cost assignment, not evidence that native whites are fiscally negative. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Replaced "kills the stale claim" with invalidates-the-narrow-export wording; the corrected denominator only blocks the built annual school-layer export, not the all-government fiscal question. See `immigration-conclusion-audit-running-fixes.md`. |
