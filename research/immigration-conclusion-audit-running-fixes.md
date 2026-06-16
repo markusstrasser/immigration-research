@@ -2396,3 +2396,71 @@ Changed the event-study sentence to say the slightly negative points should not 
 ### Updated conclusion
 
 The E-Verify memo now keeps nonsignificant event-study movement and out-of-margin mass-shock behavior unresolved instead of assigning them a preferred mechanism. [INFERENCE]
+
+---
+
+## 2026-06-16 — E-Verify null and Borjas-scaling language made symmetric
+
+### Issue
+
+A post-fix model review found that the E-Verify memo and summaries still applied significance discipline asymmetrically: wage coefficients were described as nonsignificant, but the E1 employment coefficient was still written as a realized `~6%` fall despite `t=-1.40` / `p≈0.16`. The same review flagged that the memo's `~5-15%` Borjas benchmark was not scaled to the observed mandate-margin shock. [DATA]
+
+### Why it was wrong
+
+The QWI employment point estimate is negative, but not conventionally significant. Treating it as a measured drop made the "employment fell while wages did not rise" contrast too strong. Separately, Borjas's own elasticity framing implies that a smaller effective supply shock maps to a smaller wage benchmark, so the memo can cut against large gains in the observed margin without rejecting every scaled Borjas effect. [SOURCE: `research/immigration-causal-everify-card-vs-borjas.md`] [INFERENCE]
+
+### Fix
+
+Updated `research/immigration-causal-everify-card-vs-borjas.md`, `CYCLE.md`, `research/immigration-causal-synthesis-2026-04-18.md`, `research/immigration-confidence-ladder.md`, `research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md`, and `research/immigration-restrictionist-arguments-steelman-2026-06-15.md`:
+
+- E1 employment is now a negative, statistically nonsignificant point estimate rather than a measured drop.
+- The wage result now cuts against large Borjas-style native wage gains in the observed mandate margin, while leaving small effects and scaled-shock benchmarks unresolved.
+- "Card/Borjas" comparison labels now name directional readings in each design rather than global debate verdicts.
+
+### Updated conclusion
+
+The current E-Verify conclusion is narrower: observed mandate variation shows no statistically significant positive QWI wage effect for native low-skill workers and cuts against large native wage gains in that margin. It does not prove an exact zero wage effect, a measured labor-supply contraction, a significant employment decline, or a global rejection of Borjas-style mechanisms. [INFERENCE]
+
+---
+
+## 2026-06-16 — Crime memo Lott narrative matched critique status
+
+### Issue
+
+`research/immigration-crime-rates-unauthorized-vs-native-born.md` had downgraded the Lott Arizona row to `SUPPORTED CRITIQUE — not independent reanalysis`, but the bottom line and contrarian-case heading still said Lott had been criticized for a "fundamental data classification error." [DATA]
+
+### Why it was wrong
+
+The memo cites serious critiques from Cato, Washington Post, and Latino Decisions; it does not independently reanalyze Arizona DOC records. The supported claim is an unresolved immigration-status classification critique, not a verified data error. The Texas `>2x` violent-arrest row also needed the memo's own aggregate-native-denominator / race-composition caveat. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the bottom-line and contrarian-case Lott wording to "serious unresolved" / "serious possible" immigration-status classification problem. Added a denominator caveat to the Texas `>2x` violent-arrest claim row. [SOURCE: memo]
+
+### Updated conclusion
+
+The crime memo still supports lower observed criminal-justice rates for unauthorized immigrants in the best current U.S. datasets, but it no longer treats the Lott classification critique as independently verified by this memo or the aggregate Texas ratio as race-composition-adjusted. [INFERENCE]
+
+---
+
+## 2026-06-16 — Capacity and surge model rankings kept descriptive
+
+### Issue
+
+Model review flagged several remaining places where descriptive county or receiver-city model output was being read too strongly: the capacity memo called load/capacity the "cleaner" wage signal despite tiny adjusted-`R²` gaps, the surge memo bundled gross fiscal load and election shift into one "empirical support" story, and the Caplan audit treated constrained-place wage pressure as more established than the county screen supports. [DATA]
+
+### Why it was wrong
+
+The county capacity pass is useful descriptive screening, not causal identification. For wages, the load-only adjusted-`R²` edge over stock/flow is only about 0.007-0.010, and permit units in the denominator can proxy local economic vitality. The surge receiver fiscal figures are observable gross loads, but the +2.4pp receiver election coefficient is still correlational. Caplan's labor critique should cite evidence consistent with constrained-place wage pressure, not treat it as a settled channel. [SOURCE: memos] [INFERENCE]
+
+### Fix
+
+Updated:
+
+- `research/immigration-capacity-frontier-2026-04-21.md`: stock/load claims now say "one-predictor county model signal," wage ranking is "marginally best-fitting," q90 threshold weakness is caveated for power/multiple-testing, and permit-denominator confounding is explicit.
+- `research/immigration-causal-surge-2021-2024.md`: per-migrant costs are scoped to sheltered-migrant-day gross cost, receiver load is separated from the correlational election result, and the stale `~50K/month` flow line is replaced with the corrected Total-CBP range.
+- `research/immigration-bryan-caplan-claims-audit-2026-04-21.md`: constrained-place wage pressure is evidence-consistent rather than a settled pressure channel.
+
+### Updated conclusion
+
+The capacity/surge evidence remains decision-relevant as descriptive screening: it points to load/capacity, receiver fiscal load, and constrained-place wage-growth concerns. It does not yet identify a causal native-exit mechanism, a fiscal-load-to-vote mechanism, or a globally ranked worker-incidence channel. [INFERENCE]

@@ -6,14 +6,14 @@
 
 ## Bottom line
 
-1. The repo's strongest current predictor for `political response` remains `immigrant stock share`, but `flow-to-build-capacity` still adds residual signal once stock and flow are both included. [DATA]
-2. For `wage growth`, `employment growth`, and `native net migration`, the cleaner signal is not stock share. It is `recent immigrant flow relative to local permit capacity`. [DATA]
-3. A recurring threshold pattern is visible, but it is not best described as `foreign-born share crosses X`. It looks more like a `high-flow tail x weak build response` pattern. The interaction is clearest around the `70th-80th` flow percentiles with `bottom-half or bottom-quartile` permit capacity. [DATA]
+1. The repo's strongest current one-predictor county model signal for `political response` remains `immigrant stock share`, but `flow-to-build-capacity` still adds residual signal once stock and flow are both included. [DATA]
+2. For `wage growth`, `employment growth`, and `native net migration`, `recent immigrant flow relative to local permit capacity` is the more relevant descriptive stress proxy than stock share alone. For wages, the adjusted-`R²` edge is small and should not be treated as a settled ranking. [DATA] [INFERENCE]
+3. A recurring threshold pattern is visible, but it is not best described as `foreign-born share crosses X`. It looks more like a `high-flow tail x weak build response` pattern. The interaction appears around the `70th-80th` flow percentiles with `bottom-half or bottom-quartile` permit capacity, but q90 comparisons may be power-limited and the grid is not multiplicity-adjusted. [DATA] [INFERENCE]
 4. This tightens the current repo view:
    - `politics`: stock + load both matter
-   - `wages`: load/capacity matters more than stock
+   - `wages`: load/capacity is marginally best-fitting in this one-predictor pass
    - `employment`: still not a generic collapse story, but a negative signal does appear under direct load-capacity formulations
-   - `native sorting`: load/capacity and affordability both matter; the native exit channel is not just ideology or partisan response [INFERENCE]
+   - `native sorting`: load/capacity and affordability both matter descriptively; whether this is native exit caused by capacity strain still needs counterfactual identification [INFERENCE]
 5. The remaining frontier is now clearer:
    - `subgroup composition` needs the missing origin warehouse or new acquisition
    - `voting` needs a native-turnout / precinct or survey design, not county returns alone
@@ -45,17 +45,17 @@ This is not a full housing-market model. It is a tractable public-data proxy for
 
 `flow / local build capacity`
 
-That is the more relevant descriptive object if the threshold story is about absorption rather than stock. [INFERENCE]
+That is the more relevant descriptive object if the threshold story is about absorption rather than stock. But permit units also proxy local economic vitality, so a load ratio can pick up weak local growth mechanically; a stronger design should show load adds signal beyond permit level itself. [INFERENCE]
 
 ## Claims table
 
 | # | Claim | Evidence | Confidence | Source | Status |
 |---|---|---|---|---|---|
-| 1 | Stock share remains the strongest simple county predictor of GOP margin shift | In separate one-predictor county models, standardized `fb_share` has larger `t` and higher adjusted `R²` than flow or load | HIGH | [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
+| 1 | Stock share has the highest adjusted `R²` among one-predictor county margin models | In separate one-predictor county models, standardized `fb_share` has larger `t` and higher adjusted `R²` than flow or load | HIGH | [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED DESCRIPTIVE MODEL OUTPUT |
 | 2 | Load-capacity still adds residual political-response signal beyond stock and flow | In the combined margin model, standardized load remains positive and significant (`t≈2.74`, `p≈0.006`) | HIGH | [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
-| 3 | Wage-growth models load more cleanly on load-capacity than on stock or flow alone | Load-only wage model has the strongest negative `t` and best adjusted `R²` among single-predictor formulations | HIGH | same | VERIFIED |
+| 3 | Wage-growth models are marginally best-fitting under load-capacity in this one-predictor pass | Load-only wage model has the strongest negative `t` and best adjusted `R²`, but the adjusted-`R²` spread versus stock/flow is only about 0.007-0.010 | MEDIUM | same | VERIFIED DESCRIPTIVE MODEL OUTPUT — RANKING THIN |
 | 4 | A negative employment signal appears under direct load-capacity formulations even though the earlier coarse threshold did not show broad job loss | Load-only and combined employment models are negative and highly significant; stock and flow alone are weak or null | HIGH | same | VERIFIED |
-| 5 | The threshold is clearest in the broad high-flow tail (`70th-80th percentile`) interacted with low permit capacity, not at one single extreme cutoff | Interaction grid shows stronger wage and some politics/employment effects at `q70-q80` than at `q90` | HIGH | [county_capacity_threshold_grid.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_grid.csv) | VERIFIED |
+| 5 | The threshold screen appears in the broad high-flow tail (`70th-80th percentile`) interacted with low permit capacity | Interaction grid shows stronger wage and some politics/employment effects at `q70-q80` than at `q90`, but q90 power and multiple-testing concerns remain | MEDIUM | [county_capacity_threshold_grid.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_grid.csv) | VERIFIED DESCRIPTIVE SCREEN |
 | 6 | Native net migration is more negative in higher load-capacity deciles | Load deciles show about `-1.07 pp` gap from `D1` to `D10`; load-based models outperform stock-only on adjusted `R²` | HIGH | [county_load_capacity_deciles.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_load_capacity_deciles.csv), [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
 | 7 | Receiver-city spending is more tightly tied to absolute shelter shortfall than to saturation ratio alone | In 2024 receiver descriptives, `corr(shelter_gap_vs_hic, spending) ≈ 0.93`, much larger than `corr(sheltered_to_hic_ratio, spending)` | MEDIUM | [receiver_capacity_descriptives_2024.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_capacity_descriptives_2024.csv) | VERIFIED |
 
@@ -101,7 +101,7 @@ So the stronger claim is:
 1. `stock` carries the broad political-map signal in this county model
 2. `load / capacity` still adds residual strain in that map
 
-### 2) Wages: load-capacity is cleaner than stock
+### 2) Wages: load-capacity is marginally best-fitting in this pass
 
 For `weekly wage growth`:
 
@@ -113,7 +113,7 @@ And in the combined model:
 
 1. `load` stays negative with `t≈-2.49`, `p≈0.013` [DATA]
 
-This is the clearest county descriptive evidence yet that the `worker` question is tied to:
+This is the strongest county-level associative signal in this panel that the `worker` question may be tied to:
 
 `inflow under weak absorption capacity`
 
@@ -186,9 +186,9 @@ Employment appears in some of the same bands:
 
 ### What weakens
 
-The `q90` extreme-flow interactions are weaker and less stable for politics and wages. [DATA]
+The `q90` extreme-flow interactions are weaker and less stable for politics and wages, but that may partly reflect lower tail power rather than a weaker underlying effect. [DATA] [INFERENCE]
 
-That suggests the observed threshold pattern is **not**:
+That suggests, but does not prove, the observed threshold pattern is **not**:
 
 1. `only the absolute top-decile explodes`
 
@@ -239,7 +239,7 @@ One caution remains:
 ### What now looks stable enough for the repo
 
 1. `Foreign-born share` alone is not the right master threshold variable. [DATA]
-2. `Flow x capacity` is the cleaner descriptive county stress object for wages, employment, and native sorting. [DATA]
+2. `Flow x capacity` is a useful descriptive county stress object for wages, employment, and native sorting, but the wage ranking is thin and the permit denominator may proxy local economic vitality. [DATA] [INFERENCE]
 3. `Politics` still loads heavily on stock, but capacity strain adds model residual signal. [DATA]
 4. The relevant threshold is broad high-flow exposure under weak building response, not only an extreme top-decile event. [DATA]
 

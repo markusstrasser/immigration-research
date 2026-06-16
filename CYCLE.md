@@ -25,8 +25,8 @@ Output memos: `research/immigration-causal-*.md`
 ## Discoveries
 - QWI `se` endpoint supports multi-state, multi-quarter batching → 36 API calls returned full 2003-2023 panel for 51 states × 9 industries × 4 education = 151k rows in ~2 min (vs ~20h with naive per-cell loop).
 - Saiz 2010 elasticity correlates inversely with FB share at MSA level (descriptive correlation, n=237). Top FB-share quintile median elasticity 1.51 vs bottom 3.40.
-- E-Verify mandates show no statistically significant positive QWI wage effect on native low-skill workers in any of 12 specifications. This rejects large Borjas-style native wage gains in the observed mandate margin, not every Borjas wage claim or surge/mass-shock regime.
-- E-Verify mandates show a ~6% drop in stable E1 W-2 employment in exposed industries (marginal). Consistent with Bohn-Lofstrom-Raphael 2014 AZ finding. Combined: W-2 employment falls while QWI wages show no significant positive response; capital, output, relocation, cash-economy substitution, hours, and composition remain candidate channels rather than measured mechanisms.
+- E-Verify mandates show no statistically significant positive QWI wage effect on native low-skill workers in the wage specifications. This cuts against large Borjas-style native wage gains in the observed mandate margin, not every Borjas wage claim or surge/mass-shock regime.
+- E-Verify mandates have a negative ~6% stable E1 W-2 employment point estimate in exposed industries, but it is not conventionally significant (t=-1.40, p≈0.16). Consistent in sign with Bohn-Lofstrom-Raphael 2014 AZ finding, but not a measured pooled employment drop. Capital, output, relocation, cash-economy substitution, hours, and composition remain candidate channels rather than measured mechanisms.
 
 ## Autonomous (done)
 - 2026-04-18 Saiz 2010 MSA elasticity acquired (269 MSAs, 33 KB). Reflection: MIT Urban Economics Lab Google Drive link works one-shot; no scraping needed.
@@ -39,7 +39,7 @@ Output memos: `research/immigration-causal-*.md`
 
 ## Verification Results
 - Saiz finding: descriptive cross-section with monotonic gradient across quartiles. Replicates known pattern (top-FB MSAs are coastal/inelastic — Miami, LA, SF, NY). PASS as descriptive claim; needs IV for causal interpretation.
-- E-Verify TWFE: pre-trends flat in event study, supporting the identifying assumption for the observed mandate-margin check. The result is consistent with bounded Card-side wage evidence and passes at the level of "large Borjas-style native wage gains are rejected in this design"; it is not a direct replication of Card-Peri / Foged-Peri or a test of surge, mass-deportation, or extreme counterfactual regimes.
+- E-Verify TWFE: pre-trends visually flat in event study; formal staggered-DiD robustness was not run. The result is consistent with bounded Card-side wage evidence and passes at the level of "large Borjas-style native wage gains are not observed in this design"; it is not a direct replication of Card-Peri / Foged-Peri or a test of surge, mass-deportation, or extreme counterfactual regimes.
 
 ## Known blockers
 - SSD unmount blocks reuse of existing warehouse (`acs_origin_*`, `origin_puma_household_context_2023`, etc.). Workaround: rebuild minimal PUMA rent table from Census API for Saiz merge. Not a blocker for LEHD/E-Verify/DACA analyses.

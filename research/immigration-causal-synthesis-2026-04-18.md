@@ -10,8 +10,8 @@
 
 | Repo claim (pre-cycle) | New evidence | Updated verdict |
 |------------------------|--------------|-----------------|
-| Rent exposure ≠ welfare loss (adversarial review §2) | Immigrants concentrate in inelastic MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40); top 10 inelastic MSAs include all the major immigrant gateways | **Rent exposure is a stronger renter-incidence warning in inelastic destination markets** because supply response is weaker. Update: "rent exposure" should be tagged elasticity-conditional — higher incidence risk in inelastic destinations, lower in elastic. |
-| Clark "agree" economists are scope-limited but not wrong on their narrow channel | E-Verify mandates produced no statistically significant positive QWI wage effect for native low-skill workers in any of 12 specifications | **The small-native-wage-effect channel in the Clark "agree" position is better supported** in the observed E-Verify policy variation. Large Borjas-style native wage gains are rejected at α=0.05 for this margin. |
+| Rent exposure ≠ welfare loss (adversarial review §2) | Immigrants concentrate in inelastic MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40); top 10 inelastic MSAs include all the major immigrant gateways | **Rent exposure is a stronger renter-incidence warning in inelastic destination markets** where supply response is descriptively weaker. Update: "rent exposure" should be tagged elasticity-conditional — higher incidence risk in inelastic destinations, lower in elastic; immigrant-specific rent causation still needs panel/IV identification. |
+| Clark "agree" economists are scope-limited but not wrong on their narrow channel | E-Verify mandates produced no statistically significant positive QWI wage effect for native low-skill workers in the wage specifications | **The small-native-wage-effect channel in the Clark "agree" position is better supported** in the observed E-Verify policy variation. Large Borjas-style native wage gains are not observed in this margin, while small effects and scaled-shock benchmarks are not ruled out. |
 | "Borjas vs Card" presented as live debate | Direct multi-state TWFE with 21-year panel finds Card-side pattern: no statistically significant positive QWI wage effect after E-Verify mandate variation | **For observed marginal enforcement variation, the Card-side pattern is favored.** Borjas's restricted-Mariel magnitude should not be mechanically extrapolated to the broader staggered enforcement shocks tested here; this does not settle surge or mass-shock regimes. |
 | Federal-positive / local-negative split is plausible but unquantified | This cycle did not produce federal-side estimates (federal microsim still requires SIPP fix) | **Unchanged.** Federal side remains the weakest part of the repo. |
 | Local-burden story is real but heterogeneous | Saiz merge sharpens the housing component; QWI shows no statistically significant positive wage response in the observed E-Verify margin, with large Borjas-style gains rejected | **Strengthened on the housing side, not on schooling.** School-burden findings are unchanged by this cycle. |
@@ -27,25 +27,25 @@ Three converging pieces of evidence on the U.S. wage channel:
 Against:
 - **Borjas (2017) Mariel reanalysis:** -10 to -30% on HS dropouts with restricted sample. **This magnitude should not be mechanically extrapolated to the broader staggered designs tested here.**
 
-**Verdict:** For the observed marginal U.S. policy variation in this file, large Borjas-style native wage gains from E-Verify-style labor-supply contraction are rejected at conventional significance levels. The remaining uncertainty is about surge regimes and hypothetical extreme shocks (mass deportation, border closure) that have no direct empirical analog. **The Clark Center "agree" small-native-wage-effect premise is supported for the narrow wage channel and observed-policy range, not for the all-in immigration question.**
+**Verdict:** For the observed marginal U.S. policy variation in this file, large Borjas-style native wage gains under E-Verify mandate variation are not observed. The remaining uncertainty is about small scaled effects, surge regimes, and hypothetical extreme shocks (mass deportation, border closure) that have no direct empirical analog. **The Clark Center "agree" small-native-wage-effect premise is supported for the narrow wage channel and observed-policy range, not for the all-in immigration question.**
 
 This is a meaningful update to the repo's prior position. The verified-findings report (2026-04-10) said the Clark agree economists were "mostly right on a narrow question" but bracketed this carefully. The new evidence justifies elevating only the wage-channel premise: **small native wage effects are better supported within observed marginal policy variation.**
 
 ## Incidence — federal vs local — what this cycle changes
 
 The Saiz finding sharpens the **local** side:
-- Renter-incidence risk is structurally larger than the adversarial review allowed. In inelastic markets (where >40% of immigrants live), weaker supply response makes rent exposure more decision-relevant, but immigrant-specific rent causation still needs panel/IV identification.
+- Renter-incidence risk is structurally larger than the adversarial review allowed in the top FB-share / low-elasticity destination slice. Weaker supply response makes rent exposure more decision-relevant there, but immigrant-specific rent causation still needs panel/IV identification.
 - Owner-gain-to-renter-loss ratio differs by destination elasticity. The repo's existing PUMA rent table can be re-tagged elasticity-conditional once the SSD is remounted.
 
 The E-Verify finding clarifies the **labor-market** side:
 - No statistically significant positive QWI wage effect is observed for native low-skill workers under observed E-Verify mandate variation.
-- The evidence rejects large Borjas-style native wage gains from marginal enforcement, but does not directly measure the full wage effect of current inflow levels or surge regimes.
-- Therefore the observed marginal-enforcement wage component shows no statistically significant positive QWI wage effect for natives, with large Borjas-style gains rejected in this design; the broader labor-market ledger still includes small effects, employment composition, hours, occupational sorting, and unmeasured shock regimes.
+- The evidence cuts against large Borjas-style native wage gains from marginal enforcement, but does not directly measure the full wage effect of current inflow levels or surge regimes.
+- Therefore the observed marginal-enforcement wage component shows no statistically significant positive QWI wage effect for natives, cutting against large Borjas-style gains in this design; the broader labor-market ledger still includes small effects, employment composition, hours, occupational sorting, and unmeasured shock regimes.
 - In this cycle's observed E-Verify wage margin, wage compression is not the supported local-burden channel; school-finance, housing-rent, and service capacity remain separate live channels. Surge/current-inflow wage compression remains unmeasured here.
 
 Combined effect on incidence narrative:
 - Pre-cycle: native low-skill workers maybe lose wages (Borjas), bear school burden, face rent competition.
-- Post-cycle: the E-Verify-style enforcement design shows no statistically significant positive native low-skill QWI wage effect and rejects large Borjas-style gains in that margin; school burden and housing incidence remain separate local channels.
+- Post-cycle: the E-Verify-style enforcement design shows no statistically significant positive native low-skill QWI wage effect and cuts against large Borjas-style gains in that margin; school burden and housing incidence remain separate local channels.
 
 The political-economy reading: wage data alone are a weak justification for a native-low-skill restriction story in the observed marginal-enforcement range. School-finance exposure and renter exposure remain plausible incidence channels, but this cycle does not identify voter motivation or prove that those exposures justify the policy push; owner/renter status, local fiscal regime, and service geography still matter.
 
@@ -65,7 +65,7 @@ The user asked which interpretations or datasets could change conclusions. After
 - **Borjas vs Card debate:** Bounded to observed marginal U.S. policy variation. Card-side pattern there; surge and mass-shock regimes remain open.
 - **Rent burden as renter-incidence risk:** Narrowed, not resolved. In inelastic destination markets it is a stronger renter-incidence warning; owner/renter incidence and causal identification caveats still apply.
 - **Federal-positive / local-negative split:** Sharpened on local side, unchanged on federal side.
-- **Race-stratified crime gap:** From earlier work — gap narrows from 50% to 30% but immigrants still lower than natives.
+- **Race-stratified incarceration gap:** From earlier work — the observed incarceration gap narrows from roughly 50% to roughly 30% under the race-composition correction, but immigrants remain lower than natives on that justice-system measure.
 - **Place-premium / immigrant welfare weighting:** Untested this cycle. Remains the biggest single lever for flipping the verdict.
 - **AGI-soon timing:** Untested empirically. Remains the biggest framing lever.
 
@@ -74,11 +74,12 @@ The user asked which interpretations or datasets could change conclusions. After
 Add to `immigration-confidence-ladder.md`:
 
 ```
-17. `Borjas wage prediction for U.S. native low-skill workers from E-Verify`
+17. `Large Borjas-style native wage gains under observed E-Verify mandates`
 Rating: strong against large Borjas-style gains in the E-Verify margin
 Reason: TWFE on QWI 2003-2023 with 9 treated states finds +0.5% (n.s.) on E1 in
-exposed industries. 95% CI excludes large Borjas magnitudes in this observed
-mandate design. Surge and mass-shock regimes remain outside this result.
+exposed industries. 95% CI cuts against large Borjas magnitudes in this observed
+mandate design, while small effects and scaled-shock benchmarks are not ruled out.
+Surge and mass-shock regimes remain outside this result.
 [SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
 
 18. `Immigrants concentrate in inelastic-supply MSAs`
@@ -143,7 +144,7 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 | 2026-06-16 | Bounded the political-economy reading: wage evidence alone weakens the native-low-skill wage story, but school/rent exposure is only a plausible incidence channel, not identified voter motivation or policy justification. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Narrowed the embedded E-Verify confidence-ladder suggestion from global `STRONG REJECTION` to strong evidence against large Borjas-style gains in the E-Verify margin. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "QWI confirms wage channel is small" with margin-specific no-statistically-significant-positive-wage-effect language for the observed E-Verify design. See `immigration-conclusion-audit-running-fixes.md`. |
-| 2026-06-16 | Narrowed the explicit Card-vs-Borjas verdict sentence to large Borjas-style gains from E-Verify-style labor-supply contraction, not the full Borjas wage-prediction family. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Narrowed the explicit Card-vs-Borjas verdict sentence to large Borjas-style gains under observed E-Verify mandate variation, not measured labor-supply contraction or the full Borjas wage-prediction family. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced direct-replication language with external-validity language because E-Verify/Foged-Peri are adjacent tests, not direct Mariel replications; later narrowed to no-mechanical-extrapolation wording. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "random refugee assignment" with "refugee dispersal-policy quasi-experiment"; Foged-Peri is exogenous/quasi-experimental, not a simple randomized trial. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Removed remaining "replicates well-known patterns" language; this cycle's findings are convergent/consistent evidence, not direct replications of Card, Foged-Peri, or Card-Peri. See `immigration-conclusion-audit-running-fixes.md`. |

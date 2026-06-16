@@ -49,7 +49,7 @@ The clean verdict is:
 |---|---|---|
 | `There is a moral presumption in favor of free migration.` | `Coherent normative starting point, not an empirical result` | Caplan is entitled to this only on a libertarian moral frame; it does not answer native-local welfare by itself. [SOURCE: https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2012/1/cj32n1-2.pdf] [FRAMING-SENSITIVE] |
 | `The economic case for much freer migration is extremely strong.` | `Mostly survives in direction, not in strongest magnitude` | Large global gains survive; realistic `double world GDP` style readings do not. [SOURCE: research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md] |
-| `Immigration restrictions are not necessary to protect American workers.` | `Too broad` | Broad job-loss stories are weak, but constrained counties show slower wage growth and official projections show slight low-education wage-growth pressure. [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf] |
+| `Immigration restrictions are not necessary to protect American workers.` | `Too broad` | Broad job-loss stories are weak, but the repo has constrained-place evidence consistent with slower wage growth and official projections show slight low-education wage-growth pressure. [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf] |
 | `Immigration restrictions are not necessary to protect American taxpayers.` | `Fails as a blanket claim` | Federal gains can coexist with state/local costs in education, shelter, and related services. [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] |
 | `Immigrants commit much less crime than natives.` | `Mostly survives for observed U.S. first-generation / unauthorized justice-system rates` | The U.S. evidence is strong for lower observed arrest, conviction, and incarceration rates, though some headline gaps are overstated by compositional comparisons and the international generalization is weaker. True offending is less directly identified. [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md] |
 | `Immigration restrictions are not necessary to protect American culture.` | `Partly survives, but culture is not the best-developed bottleneck in this evidence surface` | Apocalyptic culture-collapse arguments are weak; assimilation is real. But the repo's current U.S. stress evidence is better developed for housing, services, and politics than for a clean culture mechanism. [SOURCE: https://www.econlib.org/archives/2015/12/krikorian_again.html] [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] |
@@ -106,7 +106,7 @@ What survives:
 
 What cuts against him:
 
-1. In counties with very high recent immigration and low permit throughput, `2021–2024` weekly wage growth is about `1.5 pp` lower. [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
+1. In counties with very high recent immigration and low permit throughput, `2021–2024` weekly wage growth is about `1.5 pp` lower in the repo's county screen. [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
 2. CBO projects that through `2026`, wage growth for non-surge workers with `12 or fewer years of education` is slightly lower than in the no-surge counterfactual. [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf]
 3. In the repo's current worker-incidence evidence surface, the better-developed concern is not broad `job destruction`; it is slower wage progression in constrained places. [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [INFERENCE]
 
@@ -303,7 +303,7 @@ The best current summary is:
 
 1. `Caplan is strongest on migrant-welfare direction and large global-gains sign, not on the strongest open-borders magnitude or destination-capacity closure.`
 2. `Caplan is strongest on observed U.S. justice-system-rate crime skepticism relative to his other empirical lanes.`
-3. `Caplan is partially supported on labor, but only after dropping collapse rhetoric and admitting wage-growth pressure in constrained places.`
+3. `Caplan is partially supported on labor, but only after dropping collapse rhetoric and admitting evidence consistent with a constrained-place wage-growth concern.`
 4. `Caplan is weakest as a blanket taxpayer and political-incidence analyst because recent surge evidence means local capacity, housing, shelter, and political-response channels cannot be assumed zero.`
 
 So the final score is:
