@@ -1740,3 +1740,23 @@ Replaced "kills" with "invalidates the stale narrow export" and named the correc
 ### Updated conclusion
 
 The school-burden memo now says the corrected denominator blocks one narrow annual-school-layer export, without implying that broader fiscal or school-burden questions are settled. [INFERENCE]
+
+---
+
+## 2026-06-16 — E-Verify adjustment mechanism made unresolved
+
+### Issue
+
+`research/immigration-causal-everify-card-vs-borjas.md` inferred that E-Verify produced employer adjustment through capital, automation, relocation, cash-economy hiring, outsourcing, and similar channels after observing lower QWI E1 employment and flat wages. [DATA]
+
+### Why it was wrong
+
+The QWI design observes stable W-2 employment and earnings cells. It can support the pattern "QWI E1 employment fell while wages did not rise" in the tested state mandate design, but it does not directly measure true labor-supply contraction, capital substitution, firm exit, relocation, cash-economy movement, hours, occupation, or establishment-composition shifts. The weak link was mechanism attribution from a reduced-form wage/employment pattern. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Replaced mechanism-identifying language with a bounded interpretation: the large native wage-bidding channel is not observed in this design; the listed adjustment channels are candidate hypotheses, not measured mechanisms. [SOURCE: memo]
+
+### Updated conclusion
+
+The E-Verify result remains evidence against large native wage gains in the observed mandate margin, but the mechanism absorbing the shock is unresolved. [INFERENCE]
