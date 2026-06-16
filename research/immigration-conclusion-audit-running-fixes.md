@@ -1383,6 +1383,26 @@ The crime memo still treats Lott as an outlier whose central data issue is unres
 
 ---
 
+## 2026-06-16 — NH-white fiscal ratios aligned to tensor anchor
+
+### Issue
+
+`research/immigration-europe-caucasian-fiscal-findings-2026-06-15.md` still listed NH-white-all federal annual as `$2,803–3,005`, and `research/immigration-lifetime-country-approx-brainstorm-2026-06-15.md` still listed headline ratios `nh_white_all/fb_lt_hs ~4.4x`, `nh_white_all/mexico_origin ~2.0x`, and `nh_white_fborn/nh_white_usborn ~1.5x`. [DATA]
+
+### Why it was wrong
+
+The current tensor export gives `nh_white_all` federal annual `2802.7`, `fb_lt_hs` `676.8`, `mexico_origin` `1519.3`, `nh_white_fborn` `3897.6`, and `nh_white_usborn` `2746.3`. Those imply roughly `4.1x`, `1.8x`, and `1.4x`, respectively. Keeping stale rounded ratios overstates the white-vs-Mexico and white-vs-low-skill gaps. [SOURCE: infra/immigration-fiscal/build/stage3_proto/country_fiscal_rollup_2023.csv] [DATA]
+
+### Fix
+
+Replaced the stale NH-white-all range with `$2,803` and aligned the brainstorm ratios to the current tensor export. Added revision rows to both affected memos. [SOURCE: memo]
+
+### Updated conclusion
+
+The corridor story remains the same, but the numeric headline is tighter: the current narrow federal proxy shows about `1.8x` NH-white-all/Mexico and about `4.1x` NH-white-all/FB-`<HS`, not the older larger rounded ratios. [DATA]
+
+---
+
 ## 2026-06-16 — Open-borders weight framing separated from empirical inputs
 
 ### Issue

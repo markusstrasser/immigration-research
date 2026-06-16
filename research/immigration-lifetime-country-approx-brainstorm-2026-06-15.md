@@ -216,9 +216,9 @@ Output:                Table of (cell, ℓ, order) → $ ; NO single scalar
 
 | Comparison | Ratio |
 |------------|-------|
-| nh_white_all / fb_lt_hs | **~4.4×** federal annual |
-| nh_white_all / mexico_origin | **~2.0×** |
-| nh_white_fborn / nh_white_usborn | **~1.5×** (FB whites **raise** white average) |
+| nh_white_all / fb_lt_hs | **~4.1×** federal annual |
+| nh_white_all / mexico_origin | **~1.8×** |
+| nh_white_fborn / nh_white_usborn | **~1.4×** (FB whites **raise** white average) |
 
 ### Still open
 
@@ -307,3 +307,4 @@ Output:                Table of (cell, ℓ, order) → $ ; NO single scalar
 | 2026-06-15 | Iteration 2 — disconfirmation sweep (matched education, population tensor) |
 | 2026-06-15 | Iteration 3 — two-corridor surge; EU tensor groups; write-up memo |
 | 2026-06-16 | Trigger line aligned to the corrected distribution memo: current built NH-white/Mexico federal proxy ratio is ~1.8×, not the older ~2–3× wage-imputation headline. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Aligned headline federal ratios to current `country_fiscal_rollup_2023.csv` values: `nh_white_all/fb_lt_hs` ~4.1x, `nh_white_all/mexico_origin` ~1.8x, and `nh_white_fborn/nh_white_usborn` ~1.4x. See `immigration-conclusion-audit-running-fixes.md`. |
