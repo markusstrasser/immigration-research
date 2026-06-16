@@ -45,7 +45,7 @@
 
 | Comparison | Ratio | Interpretation |
 |------------|-------|----------------|
-| EU27 FB / NH white US-born | **1.71×** | Selected European immigrants **beat** native Caucasians on this proxy |
+| EU27 FB / NH white US-born | **1.71×** | EU27 foreign-born are higher than NH white US-born on this narrow federal proxy |
 | UK FB / NH white US-born | **2.00×** | Same, stronger |
 | NH white US-born / Mexico-origin | **1.81×** | Mostly education mix, not race tariff |
 | NH white all / FB `<HS` | **~4.1×** | “Caucasian average” vs strict low-skill pool |
@@ -55,7 +55,7 @@
 
 ## III. Caucasian natives vs foreign-born whites
 
-**Foreign-born whites raise the Caucasian average — they do not drag it down.**
+**Foreign-born whites are higher on this federal proxy, raising the NH-white all-nativity average in this table.**
 
 | Group | Fed $/adult/yr |
 |-------|----------------|
@@ -63,7 +63,7 @@
 | NH white all | $2,803 |
 | NH white foreign-born | $3,898 |
 
-Mechanism: **positive selection** — H-1B/L-1/skilled paths, Anglosphere professionals, age-at-arrival, English proficiency. EU27 and NH-white-FB have **similar education mix** to US-born whites (~5–7% `<HS`, ~54% college+) but **higher within-cell wages**. [INFERENCE]
+Interpretation: the pattern is **consistent with positive selection**, but this memo does not decompose visa path, age-at-arrival, English proficiency, or cohort timing. EU27 and NH-white-FB have **similar broad education mix** to US-born whites (~5–7% `<HS`, ~54% college+) but **higher observed wages within available cells**. [INFERENCE]
 
 **Tail below natives (NH white FB only):** small Eastern European / UK cohorts at ~0.7–1.0× US-born wages; dominated in the aggregate by Germany, France, Ireland, Poland professionals. [SOURCE: ACS `WAGP` by POBP — conversation query 2026-06-15]
 
@@ -83,7 +83,7 @@ Top EU-origin countries (microsim, donor-matched):
 | Romania | 0.11M | $4,511 |
 | Sweden | 0.03M | $6,557 |
 
-**Verdict:** EU immigration on this ledger looks like **high-skill FB white / Canada tier**, not like Mexico / Central America. Poland is the EU floor here (~$4k); still **above** NH white US-born.
+**Verdict:** On this narrow federal annual proxy, EU immigration looks closer to the **high-skill FB white / Canada tier** than to Mexico / Central America. Poland is the EU floor here (~$4k) and is still **above** NH white US-born on this proxy.
 
 ---
 
@@ -185,3 +185,4 @@ bash rebuild_lifetime_warehouse.sh
 |------|--------|
 | 2026-06-15 | Initial write-up — EU vs Caucasian vs low-skill corridors after sweep 12 distribution pass |
 | 2026-06-16 | Replaced stale NH-white-all federal range `$2,803–3,005` with the current tensor anchor `$2,803`. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Replaced "beat"/"raise average"/mechanism language with narrow federal-proxy comparison and positive-selection-as-interpretation wording. See `immigration-conclusion-audit-running-fixes.md`. |
