@@ -111,10 +111,16 @@ This finding doesn't overturn that — owner gains still exist. But it raises th
 
 For the current evidence base, this finding **strengthens the housing-burden side of the local-burden ledger**. The earlier adversarial caveat "rent exposure isn't welfare loss" is narrowed when destination is in the inelastic quartile, which is where >40% of immigrant population lives.
 
-Confidence: **HIGH** that the descriptive correlation is real (n=237 MSAs, monotonic gradient across quartiles, replicates Saiz's own pattern); **MODERATE** that this should update the welfare interpretation (causal step requires IV).
+Confidence: **HIGH** that the descriptive correlation is real (n=237 MSAs, monotonic gradient across quartiles, consistent with the Saiz elasticity/rent mechanism); **MODERATE** that this should update the welfare interpretation (causal step requires IV).
 
 [SOURCE: data/analysis/saiz_msa_rent_immigrant_2022.parquet]
 [SOURCE: scripts/merge_saiz_rent_immigrant.py]
+
+## Revisions
+
+| Date | Change |
+|------|--------|
+| 2026-06-16 | Replaced "replicates Saiz's own pattern" with consistency language; the memo is a 2022 descriptive cross-section, not a direct panel replication of Saiz. See `immigration-conclusion-audit-running-fixes.md`. |
 
 <!-- knowledge-index
 generated: 2026-04-19T03:34:38Z
