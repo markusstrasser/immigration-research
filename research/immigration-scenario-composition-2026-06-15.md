@@ -47,7 +47,7 @@ Per origin (recent low-skill 25-64 adults from warehouse filter):
 4. State RPP + Medicaid + EL (stage5, PUMA→state join)
 5. Origin-weighted federal microsim from `acs_origin_household_federal_microsim_2023`
 
-Example — Mexico: `weighted_adults` ≈ 436,819 for the origin scenario subset; `avg_federal_net` ≈ +$1,519/yr (payroll proxy > transfer proxy at matched donor cells); `area_wtd_current_spend_per_pupil` ≈ $20,907 after the F-33 thousands fix. Do **not** use the 436,819 scenario subset as the denominator for full Mexico-origin adult stock. [SOURCE: `origin_fiscal_scenario_2023`; `v_three_layer_annual`]
+Example — Mexico: `weighted_adults` ≈ 436,819 for the origin scenario subset; `avg_federal_net` ≈ +$1,519/yr (payroll proxy > transfer proxy at matched donor cells); `area_wtd_current_spend_per_pupil` ≈ $20,907 after the F-33 thousands fix. Do **not** use the 436,819 scenario subset as the denominator for full Mexico-origin adult stock, and do **not** pair its household school numerator with the full microsim adult denominator. [SOURCE: `origin_fiscal_scenario_2023`; `v_three_layer_annual`; `immigration-conclusion-audit-running-fixes.md`]
 
 ## Disconfirmation (mandatory)
 

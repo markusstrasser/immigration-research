@@ -199,7 +199,7 @@ Output:                Table of (cell, ℓ, order) → $ ; NO single scalar
 | **D1** Native symmetric microsim at matched education | **Composition story holds for aggregate** — but **within-cell Mexico ≥ white at HS / some-college**; only college+ (`other`) shows white higher (~1.36×). NH white `<HS` SIPP cell **still broken** (−$7.5k); use FB `<HS` donor ($677) for parity. |
 | **D2** Annual ↔ lifetime bridge | **Confirmed scope_mismatch** — all education rows; do not sum. |
 | **D3** Return-migration haircut | **Not run** — still open. |
-| **D4** Local school layer vs federal annual | **Corrected** — never compare ~$21k/pupil directly with ~$1.5k/adult. The built comparable Mexico row is ~$771/adult school burden vs ~$1,519/adult federal proxy, so crude federal-minus-school remains +$748/adult/yr under the full-stock denominator. |
+| **D4** Local school layer vs federal annual | **Reopened** — never compare ~$21k/pupil directly with ~$1.5k/adult, but the later ~$771/adult Mexico school row paired a scenario-household numerator with the full microsim denominator. Origin `federal - school` needs same-universe recomputation. |
 
 ### Matched-education federal (Mexico vs NH white, `<HS` white cell patched)
 

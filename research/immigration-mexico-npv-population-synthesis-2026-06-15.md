@@ -27,7 +27,7 @@ Honest fiscal object is a **vector across ledger layers ℓ**:
 | What +$46k is | What it is NOT |
 |---------------|----------------|
 | NAS Table 8-13 **individual age-at-arrival-25** education-mix benchmark | Actual remaining-lifetime NPV of current Mexico-born stock |
-| Federal + some state/local inside NAS cell | School burden for current HH kids (−$771/yr) |
+| Federal + some state/local inside NAS cell | School burden for current HH kids (same-universe origin row currently withheld) |
 | Public goods **excluded** | Descendants / US-born kids path |
 | 2012$, 3%, 75yr | CBP/ICE/detention (~$2.1k/yr if ÷ stock) |
 | Composition-weighted **mean** | EOIR / immigration courts |
@@ -35,14 +35,14 @@ Honest fiscal object is a **vector across ledger layers ℓ**:
 
 NAS Table 8-13 is explicitly a comparison of an immigrant **entering at age 25** with a native-born person followed from age 25. The warehouse applies those age-25 education cells to the current Mexico-born 25–64 stock because public data lack a full age-at-arrival × education × origin NPV table. That makes `+$45,631/adult` a **synthetic composition benchmark**, not a measured lifetime NPV for existing residents. [SOURCE: NAS 2017 Table 8-13 text via local PDF; `country_fiscal_tensor` notes] [INFERENCE]
 
-**Honest short-horizon (built):** federal − school = **+$748/adult/yr** [SOURCE: `v_three_layer_annual`]
+**Honest short-horizon (built):** federal annual proxy remains **+$1,519/adult/yr**; the origin `federal − school` row is **withheld** after a scenario-household numerator vs full-microsim denominator mismatch was confirmed. [SOURCE: `v_three_layer_annual`; `immigration-conclusion-audit-running-fixes.md`]
 
 **Illustrative lifetime stack [INFERENCE]:**
 
 | Step | $/adult |
 |------|---------|
 | NAS age-25 education-mix benchmark | +$45,631 |
-| − school annuitized ($771/yr) | −$18,000 |
+| − school annuitized | unresolved — needs same-universe origin school row |
 | − CBO state/local surge annuitized ($657/yr) | −$15,300 |
 | − enforcement if fully loaded ($2,100/yr) | −$49,000 |
 | **Band** | **−$37k to +$28k** |

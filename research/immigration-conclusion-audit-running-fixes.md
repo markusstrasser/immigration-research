@@ -8,6 +8,8 @@
 
 ## 2026-06-15 — School-burden denominator correction
 
+**Status update (2026-06-16): superseded again.** The 2026-06-15 correction fixed one denominator misuse but introduced the mirror-image problem: the school numerator still came from the `origin_fiscal_scenario_2023` household universe (~436,819 Mexico scenario adults / 322,540 linked household weight), while the denominator was changed to the full microsim adult stock (~8,496,334). The live builder now withholds origin school and `federal - school` rows until numerator and denominator universes match.
+
 ### Issue
 
 The school-burden memo and a stale exported CSV still supported the conclusion that Mexico-origin adults had a crude annual federal-minus-school balance of about **-$13.5k/adult**. That result used the `origin_fiscal_scenario_2023` scenario subset denominator (~436,819 adults) after multiplying area-weighted per-pupil school spend by household school-age children. [DATA]
@@ -41,9 +43,9 @@ The old ~-$13.5k conclusion came from dividing the household school burden by th
 ### Fixes Made
 
 1. Updated `research/immigration-school-burden-per-adult-2026-06-15.md`:
-   - Mexico-origin row now reads `$1,519` federal, `$771` school, `+$748` crude annual.
-   - Removed the stale verdict that Mexico looks far worse than natives on crude static federal-minus-school math.
-   - Added a revision note explaining the scenario-denominator bug.
+   - Briefly changed the Mexico-origin row to `$1,519` federal, `$771` school, `+$748` crude annual.
+   - This row is now superseded by the 2026-06-16 universe-mismatch fix below.
+   - Removed the stale verdict that Mexico looks far worse than natives on crude static federal-minus-school math, but the replacement positive net is also not live.
 
 2. Updated `research/immigration-scenario-composition-2026-06-15.md`:
    - Replaced obsolete `~$21/pupil` text with post-F-33 `~$20,907/pupil`.
@@ -59,13 +61,67 @@ The old ~-$13.5k conclusion came from dividing the household school burden by th
 
 ### Current Conclusion
 
-The corrected finding is narrower and less rhetorically satisfying: the built annual **federal-minus-school** layer is **positive for Mexico-origin adults** under the current full-stock microsim denominator. [DATA]
+This intermediate finding is now superseded: the built annual **federal-minus-school** layer should not be reported for Mexico-origin adults until its school numerator and adult denominator use the same universe. [DATA]
 
-This does **not** prove Mexico-origin immigration is all-government fiscally positive. The lifetime NPV, state/local surge, enforcement, courts, and episodic shelter layers are still separate and cannot be collapsed into this crude annual layer. [INFERENCE]
+The lifetime NPV, state/local surge, enforcement, courts, and episodic shelter layers remain separate and cannot be collapsed into the narrow federal annual row. [INFERENCE]
 
 ### Remaining Risk
 
-The full-stock denominator may understate school incidence for recent-arrival or unauthorized subgroups if those subgroups are younger and more child-heavy than the full Mexico-born 25-64 stock. That is a legal-status/cohort split, not a license to reuse the scenario denominator for a full-stock conclusion. [INFERENCE]
+The corrected current conclusion is now narrower: the Mexico-origin **federal annual** row remains about `$1,519/adult/yr`, but the origin-specific `school_burden_per_adult` and `net_crude_federal_minus_school` rows are unresolved until the school numerator is rebuilt on the same population universe as the adult denominator. The old `+$748/adult/yr` net should not be cited as a live finding. [DATA]
+
+---
+
+## 2026-06-16 — Origin school layer withheld after universe mismatch
+
+### Issue
+
+The 2026-06-15 school correction divided a school-cost numerator from the origin scenario household universe by the full Mexico microsim adult denominator:
+
+`20907.09 * 0.9718 * 322540 / 8496334 = ~$771/adult`
+
+That arithmetic was reproducible, but the numerator and denominator did not describe the same population. `322,540 * 0.9718` is about `313k` linked school-age children in the scenario household universe; spreading that numerator over `8.5M` full-stock adults implies only about `0.037` school-age children per adult for Mexico-origin households, which is not a defensible full-stock school-incidence estimate. [DATA] [INFERENCE]
+
+### Evidence Checked
+
+Current DB probes:
+
+```text
+ctx.acs_origin_household_national_2023 Mexico:
+linked_household_wgt=322,539.5
+linked_mean_hh_school_age_children=0.971785
+
+ctx.acs_origin_national_2023 Mexico:
+weighted_adults=436,819
+
+ctx.acs_origin_household_federal_microsim_2023 Mexico:
+weighted_adults=8,496,334
+```
+
+After adding the builder guard and rebuilding:
+
+```text
+v_three_layer_annual Mexico:
+federal_per_adult=1519.278396
+school_per_adult=NULL
+net_crude_per_adult=NULL
+weight_adults=8496334
+```
+
+### Fixes Made
+
+1. Updated `infra/immigration-fiscal/build/build_country_fiscal_tensor.py`:
+   - Origin school burden is now emitted only when the school numerator adult universe and microsim denominator are within 5%.
+   - Aggregate school rows stay `NULL` if any component origin lacks a same-universe school value.
+
+2. Regenerated tracked staged exports:
+   - `infra/immigration-fiscal/build/stage3_proto/country_fiscal_rollup_2023.csv`
+   - `infra/immigration-fiscal/build/stage3_proto/three_layer_annual_2023.csv`
+
+3. Updated school and lifetime memos so the `+$748/adult/yr` Mexico net is marked superseded/unresolved rather than corrected.
+
+### Current Conclusion
+
+The school layer is still a necessary ledger object, but the origin rows need a same-universe rebuild. Until then, the only live Mexico-origin annual scalar in this tensor is the narrow federal proxy (`~$1,519/adult/yr`). The sign of `federal - school` for the full Mexico-origin stock is unresolved in this build. [DATA]
 
 ---
 
@@ -167,17 +223,17 @@ WHERE fiscal_layer IN ('federal_annual','lifetime_npv')
 | FB `<HS` | synthetic age-25 NPV benchmark | −$109,000 | −$837.868B |
 | MX + N. Triangle | synthetic age-25 NPV benchmark | $42,971.52 | $476.122B |
 
-Comparable school-layer row from `v_three_layer_annual` remains about `$771/adult/yr`, making the current crude annual federal-minus-school row `+$748/adult/yr` for Mexico-origin adults under the full-stock denominator. [DATA]
+The previous comparable school-layer row from `v_three_layer_annual` (`~$771/adult/yr`, crude `+$748/adult/yr`) is now marked invalid for Mexico-origin adults because its numerator and denominator used different population universes. [DATA]
 
 ### Fixes Made
 
 1. Updated `research/immigration-lifetime-country-approx-brainstorm-2026-06-15.md`:
    - Replaced the stale Mexico and MX+Central America `~−$80k` lifetime rows with current synthetic age-25 benchmarks.
-   - Replaced the invalid `per-pupil ≪ federal annual` verdict with the comparable adult-denominator statement: `$771/adult` school burden vs `$1,519/adult` federal proxy.
+   - Replaced the invalid `per-pupil ≪ federal annual` verdict; the later `$771/adult` school comparison is now also superseded by the universe-mismatch guard.
 
 ### Current Conclusion
 
-The useful conclusion is not that local per-pupil costs are small. The corrected conclusion is narrower: after bridging to the current full-stock adult denominator, the built Mexico school layer is smaller than the narrow federal proxy on an annual basis, leaving a crude `+$748/adult/yr` federal-minus-school row. [INFERENCE]
+The useful conclusion is not that local per-pupil costs are small. The live conclusion is narrower: per-pupil school costs must be bridged to an adult denominator on a same-universe basis before comparing with the narrow federal proxy. [INFERENCE]
 
 This does not settle marginal school cost, descendant attribution, legal-status/cohort incidence, or receiver-city episodic costs. [INFERENCE]
 
@@ -195,13 +251,13 @@ Several still-indexed June 15 memos carried first-pass sweep rows after the unde
 
 ### Evidence Checked
 
-Current `v_three_layer_annual` rows:
+Current `v_three_layer_annual` rows at the time of that sweep revision (now superseded for origin school rows):
 
 | population | federal/adult | school/adult | crude net/adult |
 |------------|--------------:|-------------:|----------------:|
-| Mexico-origin | $1,519.28 | $771.29 | $747.99 |
-| MX + N. Triangle | $1,519.02 | $1,091.46 | $427.55 |
-| EU27-origin | $4,694.65 | $63.71 | $4,657.82 |
+| Mexico-origin | $1,519.28 | superseded | superseded |
+| MX + N. Triangle | $1,519.02 | superseded | superseded |
+| EU27-origin | $4,694.65 | superseded | superseded |
 | NH white US-born | $2,746.33 | $6,023.53 | −$3,277.20 |
 
 Current `v_country_fiscal_rollup` lifetime rows:
