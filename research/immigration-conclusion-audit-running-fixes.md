@@ -1160,3 +1160,23 @@ Changed the Biden-stock bullet to say post-2021 unauthorized-stock growth was no
 ### Updated conclusion
 
 The Mexico memo still blocks the "10M+ new Mexican unauthorized residents" style claim, but it no longer overextends a stock finding to all encounter, flow, or receiver-load surge interpretations. [INFERENCE]
+
+---
+
+## 2026-06-16 — Steel-man Mexico +$46k line scoped to `<HS` export
+
+### Issue
+
+`research/immigration-restrictionist-arguments-steelman-2026-06-15.md` said "Mexico +$46k mix kills monolithic 'Mexican drain'." After the Mexico NPV memo was corrected, that wording was too strong. [DATA]
+
+### Why it was wrong
+
+The `+$46k` figure is a synthetic NAS age-25 education-mix benchmark. It blocks the restrictionist move of applying the NAS `<HS` cell to all Mexico-origin adults, because the observed education mix includes HS, some-college, and BA+ cells. But it does not kill every possible full-ledger Mexico-origin drain claim once school, state/local, admin, court, legal-status, and episodic shelter layers are modeled. [INFERENCE]
+
+### Fix
+
+Changed the line to say the benchmark blocks `<HS`-only "Mexican drain" exports, but is not an all-in origin scalar. Added a memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The steel-man now preserves both sides of the correction: restrictionists cannot launder a low-education NAS cell into "all Mexicans," and expansionists cannot launder the `+$46k` benchmark into an all-in positive origin verdict. [INFERENCE]

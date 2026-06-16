@@ -80,7 +80,7 @@ National **education×experience** framing is more coherent than “city has imm
 
 ### Where restrictionists overreach
 
-- Collapse to **one scalar** per origin (Mexico +$46k mix kills monolithic “Mexican drain” — see synthesis memo).
+- Collapse to **one scalar** per origin (Mexico +$46k age-25 education-mix benchmark blocks `<HS`-only "Mexican drain" exports, but is not an all-in origin scalar — see synthesis memo).
 - Ignore **descendants booked separately** — child costs partly in descendant column, not individual.
 - Ignore **ITEP tax floor** ($97B taxes paid by unauthorized) — restrictionists undercount taxes; expansionists undercount costs.
 
@@ -253,3 +253,4 @@ That is essentially our unified theory sentence 1 — restrictionists are right 
 | 2026-06-16 | Reframed FAIR from "upper-bound political ledger" to advocacy high-cost ledger; its assumptions are not a mathematical upper bound and need reconciliation against ITEP/Pew before warehouse use. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Narrowed receiver-city language from crisis/system-collapse/catastrophic wording to gross-load shelter/budget stress and receiver-capacity ledgers. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Aligned the `+$46k Mexico` all-in row with the Mexico NPV memo: omitted layers make the scalar export unsupported, not a measured all-in negative result. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Scoped the "Mexico +$46k kills Mexican drain" line: the benchmark blocks `<HS`-only exports, not full-ledger all-in drain claims. See `immigration-conclusion-audit-running-fixes.md`. |
