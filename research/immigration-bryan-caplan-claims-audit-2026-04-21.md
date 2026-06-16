@@ -92,7 +92,7 @@ What fails:
 
 Verdict:
 
-1. `mostly right on the sign`
+1. `direction/sign survives`
 2. `not entitled to the strongest magnitude or destination-local gloss`
 
 ## Claim 3: `Immigration restrictions are not necessary to protect American workers`
@@ -197,8 +197,8 @@ What fails:
 
 Verdict:
 
-1. `partly right on one channel`
-2. `wrong as a full political-incidence answer`
+1. `welfare-state-voting channel is partly supported`
+2. `incomplete as a full political-incidence answer`
 
 ## Claim 8: `Cheaper and more humane alternatives exist for each complaint`
 
@@ -291,7 +291,7 @@ That is the core causal disagreement between Caplan's optimistic package and the
 
 ## Net verdict
 
-If the question is `Is Caplan right that freer migration can create huge gains and that many standard restrictionist objections are overstated?`
+If the question is `Does Caplan's case that freer migration can create huge gains and that many standard restrictionist objections are overstated survive?`
 
 1. `Yes, mostly.`
 
@@ -301,10 +301,10 @@ If the question is `Has Caplan shown that immigration restrictions are unnecessa
 
 The best current summary is:
 
-1. `Caplan wins on migrant-welfare direction and large global-gains sign, not on the strongest open-borders magnitude or destination-capacity closure.`
-2. `Caplan wins on observed U.S. justice-system-rate crime skepticism more than on almost any other empirical lane.`
-3. `Caplan partly wins on labor, but only after dropping collapse rhetoric and admitting wage-growth pressure in constrained places.`
-4. `Caplan loses as a blanket taxpayer and political-incidence analyst because recent surge evidence means local capacity, housing, shelter, and political-response channels cannot be assumed zero.`
+1. `Caplan is strongest on migrant-welfare direction and large global-gains sign, not on the strongest open-borders magnitude or destination-capacity closure.`
+2. `Caplan is strongest on observed U.S. justice-system-rate crime skepticism relative to his other empirical lanes.`
+3. `Caplan is partially supported on labor, but only after dropping collapse rhetoric and admitting wage-growth pressure in constrained places.`
+4. `Caplan is weakest as a blanket taxpayer and political-incidence analyst because recent surge evidence means local capacity, housing, shelter, and political-response channels cannot be assumed zero.`
 
 So the final score is:
 
@@ -315,5 +315,6 @@ So the final score is:
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced residual right/wrong and wins/loses verdict labels with strongest/weakest/support language while preserving the same claim ranking. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Bounded the Caplan global-gains verdict to direction/sign rather than strongest magnitude or destination-capacity closure. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Scoped shorthand "wins on crime" language to observed U.S. justice-system-rate skepticism, matching the crime memo's true-offending caveat. See `immigration-conclusion-audit-running-fixes.md`. |
