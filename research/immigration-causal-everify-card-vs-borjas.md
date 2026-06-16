@@ -163,7 +163,7 @@ For this enforcement margin, the adjustment looks Card-style: the wage curve is 
 | Foged-Peri (2016) | Denmark refugee-country inflow | Dispersal-policy IV / DiD | Native low-skill wages ↑ from refugee shock | Anti-Borjas |
 | Card-Peri (2016) | Cumulative immigration | National panel | Small / null on natives | Card |
 
-This analysis adds a 21-year multi-state version of the E-Verify test. Read with Card (1990) and Foged-Peri (2016), it supports the bounded claim that observed low-skill labor-supply shocks in these designs do not move native low-skill wages much.
+This analysis adds a 21-year multi-state version of the E-Verify test. Read with Card (1990) and Foged-Peri (2016), it supports the bounded claim that large native low-skill wage losses/gains are not observed in these designs; it does not identify one shared adjustment mechanism or rule out small effects.
 
 ## Honest limits
 
@@ -181,6 +181,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced residual "do not move wages much" summary with bounded no-large-native-wage-loss/gain language and separated it from any shared mechanism claim. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "does not measurably transfer rents" shorthand with no-statistically-significant higher-QWI-wage transfer language; small effects remain outside rejection. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Scoped the title/question and bottom-line employment/wage shortcut to the observed QWI E-Verify wage-channel test rather than a broad Card-vs-Borjas verdict for U.S. data. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "removing/restricting unauthorized labor" exports with observed E-Verify mandate variation and QWI wage language; the design does not directly observe total unauthorized labor supply. See `immigration-conclusion-audit-running-fixes.md`. |

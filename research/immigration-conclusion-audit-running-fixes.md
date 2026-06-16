@@ -2040,3 +2040,23 @@ Changed the paradigm synthesis and surge memo to say the model produces or calib
 ### Updated conclusion
 
 The mass-deportation result remains a medium-confidence calibration warning about possible output scale, not an empirical estimate of what would happen under an actual enforcement regime. [INFERENCE]
+
+---
+
+## 2026-06-16 — Card-side wage evidence separated from complementarity mechanism
+
+### Issue
+
+`research/immigration-causal-synthesis-2026-04-18.md`, `research/immigration-confidence-ladder.md`, and `research/immigration-causal-everify-card-vs-borjas.md` still used shorthand such as Card (1990) "zero wage effect," "Card-style labor-market complementarity," and observed shocks "do not move native low-skill wages much." [DATA]
+
+### Why it was wrong
+
+The cited designs support bounded native-wage-impact evidence against large losses or gains in those designs. They do not prove literal zero effects, identify one shared complementarity mechanism across Mariel/E-Verify/Foged-Peri, or rule out small effects. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the Card/Mariel wording to no detected adverse effect, retitled the confidence-ladder and embedded ladder entry as "Card-side bounded native-wage-impact evidence," and replaced "do not move wages much" with no-large-native-wage-loss/gain language plus a mechanism caveat. [SOURCE: memo]
+
+### Updated conclusion
+
+The repo now treats the Card-side stack as bounded wage-impact evidence, not as proof of zero wages or a single identified complementarity mechanism. [INFERENCE]

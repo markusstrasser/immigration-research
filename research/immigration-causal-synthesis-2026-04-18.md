@@ -20,7 +20,7 @@
 
 Three converging pieces of evidence on the U.S. wage channel:
 
-1. **Card (1990) Mariel:** zero wage effect on Miami HS dropouts.
+1. **Card (1990) Mariel:** no detected adverse wage effect on Miami high-school dropouts in that design.
 2. **This cycle's E-Verify TWFE:** +0.5% (n.s.) wage effect on E1 workers in exposed industries across 9 mandate states 2003-2023.
 3. **Foged-Peri (2016) Denmark:** native low-skill wages *rose* in a refugee dispersal-policy quasi-experiment.
 
@@ -87,11 +87,12 @@ Reason: top FB-share quintile median Saiz elasticity 1.51, bottom 3.40. n=237 MS
 Implication: rent exposure in inelastic destination markets is a stronger renter-incidence warning than the adversarial review allowed.
 [SOURCE: research/immigration-causal-saiz-elasticity-rent.md]
 
-19. `Card-style labor-market complementarity for U.S. low-skill immigration`
+19. `Card-side bounded native-wage-impact evidence for observed low-skill shocks`
 Rating: MEDIUM-STRONG
 Reason: convergent evidence from (a) Card 1990 Mariel, (b) this cycle's E-Verify
 TWFE, and (c) Foged-Peri 2016 Denmark points against large native low-skill wage
-losses/gains in these designs. Borjas 2017 restricted-Mariel reanalysis does not
+losses/gains in these designs; it does not identify one shared complementarity
+mechanism. Borjas 2017 restricted-Mariel reanalysis does not
 generalize to the broader designs cited here.
 [SOURCE: research/immigration-causal-everify-card-vs-borjas.md, multiple papers]
 ```
@@ -130,6 +131,7 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced Card/Mariel "zero wage effect" and "Card-style complementarity" shorthand with no-detected-adverse-effect and bounded-native-wage-impact language. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "small/null" wage-response shorthand with no-statistically-significant-positive-QWI-wage-effect language; large gains are rejected but small effects are not. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced remaining incidence-summary shortcuts saying native wages "do not rise" / "do not measurably rise" with no-statistically-significant-positive-QWI-wage-effect language. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Scoped the Card-vs-Borjas section heading to the E-Verify wage-channel verdict rather than a broad theory verdict. See `immigration-conclusion-audit-running-fixes.md`. |
