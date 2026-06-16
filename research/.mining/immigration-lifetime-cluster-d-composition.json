@@ -1,0 +1,347 @@
+{
+  "cluster": "D_composition_descendants",
+  "mined_at": "2026-06-15",
+  "frame": {
+    "mexico_role": "ACS composition weights only — no scalar Mexican lifetime NPV",
+    "education_bucket_weights": "NAS education cells weighted by ACS Mexico mix (~47% <HS among FB 25–64); Hanson w23753 supplies time-varying <HS composition, not a single ACS snapshot",
+    "descendant_band": "Optimistic bound: Abramitzky-Boustan w26408 intergenerational mobility; Pessimistic bound: Duncan-Trejo w24394 Hispanic 3rd+ stagnation + ethnic-attrition measurement bias",
+    "unnamed_assumption_flagged": "Fiscal ledger = native taxpayer wallet only (excludes remittances, origin-country human-capital subsidy, political-economy preference shifts)"
+  },
+  "parameter_claims": [
+    {
+      "claim_id": "D-001",
+      "source_rel_path": "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
+      "parameter_name": "undocumented_net_inflow_1990_2007",
+      "value_numeric": 510000,
+      "unit": "persons/year",
+      "population": "undocumented US residents (Pew/Passel estimates cited)",
+      "unnamed_assumption": false,
+      "page_ref": "pdftotext:intro",
+      "notes": "Undocumented accounted for ~two-thirds of foreign-born adults with ≤12 years schooling as of 2013."
+    },
+    {
+      "claim_id": "D-002",
+      "source_rel_path": "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
+      "parameter_name": "undocumented_net_outflow_2007_2014",
+      "value_numeric": -160000,
+      "unit": "persons/year",
+      "population": "undocumented US residents",
+      "unnamed_assumption": false,
+      "page_ref": "pdftotext:intro",
+      "notes": "Low-skilled foreign-born working-age stock stable post-recession despite undocumented decline — attrition channel active."
+    },
+    {
+      "claim_id": "D-003",
+      "source_rel_path": "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
+      "parameter_name": "low_skilled_foreign_born_working_age_1990_2007",
+      "value_numeric": null,
+      "value_range": [8500000, 17800000],
+      "unit": "persons",
+      "population": "working-age immigrants with ≤12 years schooling",
+      "unnamed_assumption": false,
+      "page_ref": "pdftotext:intro",
+      "notes": "More than doubled 1990–2007; composition shifted toward Mexico/Latin America."
+    },
+    {
+      "claim_id": "D-004",
+      "source_rel_path": "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
+      "parameter_name": "mexico_share_low_skilled_immigrants_2015",
+      "value_numeric": 0.593,
+      "unit": "share",
+      "population": "foreign-born with high school education or less",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext:table_discussion",
+      "notes": "Mexico share peaked 2005 at 48.1% (≤HS) / 64.0% (<HS); paper treats ACS/Census skill bins as neutral cross-national comparator — maps directly to NAS <HS cell weights."
+    },
+    {
+      "claim_id": "D-005",
+      "source_rel_path": "external/lifetime/nber/abramitzky_boustan_2019_intergenerational_mobility_immigrants_w26408.pdf",
+      "parameter_name": "upward_mobility_advantage_25th_percentile",
+      "value_numeric": null,
+      "value_range": [3, 6],
+      "unit": "percentile_rank_points",
+      "population": "second-generation immigrants vs US-born children at parental 25th percentile",
+      "unnamed_assumption": false,
+      "page_ref": "pdftotext:intro",
+      "notes": "Historical and modern cohorts; at 75th percentile advantage only 2–5 (past) and <2 (today). Supports optimistic descendant earnings-path offset to NAS."
+    },
+    {
+      "claim_id": "D-006",
+      "source_rel_path": "external/lifetime/nber/abramitzky_boustan_2019_intergenerational_mobility_immigrants_w26408.pdf",
+      "parameter_name": "geographic_mobility_gap_reduction",
+      "value_numeric": 0.70,
+      "unit": "fraction_of_gap_closed",
+      "population": "immigrant vs native-born intergenerational mobility",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext:mechanisms",
+      "notes": "Controlling for US region reduces immigrant mobility advantage 70%; same-county comparison eliminates gap — unnamed assumption that location choice is separable from immigrant fiscal externality."
+    },
+    {
+      "claim_id": "D-007",
+      "source_rel_path": "external/lifetime/nber/duncan_trejo_2018_socioeconomic_integration_second_gen_w24394.pdf",
+      "parameter_name": "hispanic_earnings_deficit_men_first_to_second_gen",
+      "value_numeric": null,
+      "value_range": [0.50, 0.21],
+      "unit": "log_weekly_earnings_differential_vs_third_plus_nhw",
+      "population": "Hispanic men by immigrant generation",
+      "unnamed_assumption": false,
+      "page_ref": "pdftotext:earnings_section",
+      "notes": "Deficit falls from >50% (1st gen) to 21% (2nd gen) but no further decline at 3rd+ — pessimistic descendant band for Mexico-heavy cells."
+    },
+    {
+      "claim_id": "D-008",
+      "source_rel_path": "external/lifetime/nber/duncan_trejo_2018_socioeconomic_integration_second_gen_w24394.pdf",
+      "parameter_name": "ethnic_attrition_dropout_bias_mexican_3rd_gen",
+      "value_numeric": 0.25,
+      "unit": "relative_increase",
+      "population": "third-generation Mexican youth ages 16–17 high-school dropout rate",
+      "unnamed_assumption": false,
+      "page_ref": "pdftotext:measurement_section",
+      "notes": "Dropout rate 25% higher when sample limited to youth who still identify as Mexican; selective ethnic attrition may understate true 3rd+ progress — key falsifier for Abramitzky optimistic band."
+    },
+    {
+      "claim_id": "D-009",
+      "source_rel_path": "external/lifetime/nber/kuka_shenhav_shih_2018_daca_education_returns_w24315.pdf",
+      "parameter_name": "daca_high_school_completion_effect",
+      "value_numeric": 0.059,
+      "unit": "percentage_points",
+      "population": "Hispanic ages 19–22",
+      "unnamed_assumption": false,
+      "page_ref": "pdftotext:results",
+      "notes": "7.5% increase; closed citizen–noncitizen graduation gap by 40%; ~49,000 additional Hispanic HS diplomas attributed to DACA."
+    },
+    {
+      "claim_id": "D-010",
+      "source_rel_path": "external/lifetime/nber/dustmann_2014_economic_impacts_immigration_survey_w16736.pdf",
+      "parameter_name": "storesletten_lifetime_fiscal_heterogeneity",
+      "value_numeric": null,
+      "value_range": [-36000, 96000],
+      "unit": "USD_NPV",
+      "population": "single US immigrant by education/age cell",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext:section5_fiscal",
+      "notes": "Average immigrant +$7.4k lifetime; survey flags that generational-accounting studies typically assume no return migration — systematic upward bias in assimilation and fiscal duration."
+    },
+    {
+      "claim_id": "D-011",
+      "source_rel_path": "external/lifetime/cream/dustmann_frattini_2013_fiscal_effects_immigration_uk_cdp_22_13.pdf",
+      "parameter_name": "eea_net_fiscal_contribution_1995_2011",
+      "value_numeric": 8800000000,
+      "unit": "GBP_2011_equiv",
+      "population": "EEA immigrants UK cumulative",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext:table5",
+      "notes": "Recent (post-2000) EEA +£22.1bn; recent EEA+non-EEA +£25bn; non-EEA negative overall. Second-gen descendants counted as immigrants until age 16 only — descendant NPV line omitted for adults."
+    },
+    {
+      "claim_id": "D-012",
+      "source_rel_path": "external/lifetime/nber/razin_sadka_swagel_2011_migration_welfare_state_w15597.pdf",
+      "parameter_name": "nrc_low_education_fiscal_burden_cited",
+      "value_text": "immigrants with less than high school typically net fiscal burden",
+      "value_numeric": null,
+      "unit": "qualitative",
+      "population": "US immigrants <HS (NRC 1997 cited in model motivation)",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext:motivation",
+      "notes": "Political-economy model: proportional labor tax finances demogrant; unskilled voters' preferred policies prevail most often regardless of group size — fiscal=taxpayer redistribution, not efficiency."
+    },
+    {
+      "claim_id": "D-013",
+      "source_rel_path": "external/lifetime/nber/borjas_monras_2018_hurricanes_migrant_networks_immigration_w23756.pdf",
+      "parameter_name": "migrant_stock_threshold_hurricane_response",
+      "value_numeric": 0.0086,
+      "unit": "share_of_origin_1980_population",
+      "population": "US migrant stock by origin country",
+      "unnamed_assumption": false,
+      "page_ref": "pdftotext:results",
+      "notes": "Hurricane-induced immigration positive only above ~0.86% prior stock (~70th percentile); at 90th percentile (5.6%) 1-SD hurricane shock → inflow 0.029% of origin population — network lowers fixed migration cost."
+    },
+    {
+      "claim_id": "D-014",
+      "source_rel_path": "external/lifetime/nber/alesina_miano_stantcheva_2018_immigration_redistribution_w24733.pdf",
+      "parameter_name": "immigrant_share_misperception_floor",
+      "value_numeric": 15,
+      "unit": "percentage_points",
+      "population": "survey respondents France/Italy/Germany/Sweden/UK/US",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext:perceptions",
+      "notes": "No respondent group average misperception below 15pp; priming immigration before redistribution questions reduces support including real charity donations — welfare-free-rider belief dominates facts."
+    },
+    {
+      "claim_id": "D-015",
+      "source_rel_path": "external/lifetime/imf/g20_2025_aging_and_migration.pdf",
+      "parameter_name": "mexico_remittances_gdp_share",
+      "value_numeric": 0.04,
+      "unit": "share_of_GDP",
+      "population": "Mexico",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext:remittances",
+      "notes": "Younger immigrant inflows can alleviate fiscal pressures in aging destinations; remittance outflows are private transfer offset absent from NAS taxpayer-wallet ledger."
+    }
+  ],
+  "generators": [
+    {
+      "id": "G-LIF-D01",
+      "name": "Static ACS snapshot vs Hanson composition time series",
+      "prompt": "For each origin×education_bucket cell in the scenario ledger, compare (a) a single ACS 2023 composition weight to (b) a Hanson w23753 time-varying weight series (1990–2015 Mexico/Latin America <HS shares, post-2007 inflow slowdown). Where does a static snapshot mis-state the stock entering the NAS <HS age-25 NPV cell?",
+      "retrodiction": "Would have surfaced Hanson 510k→−160k undocumented swing, Mexico share peaking 2005 then declining, and the brainstorm memo's Round 8 'composition over time' angle before building origin_fiscal_scenario with fixed ACS weights.",
+      "negative_space": "Standing frame treats ACS 2023 as sufficient composition prior; excludes epochal composition drift and attrition-driven stock stabilization.",
+      "unnamed_assumptions_surfaced": [
+        "Cross-sectional ACS weight is interchangeable with cohort arrival-year composition",
+        "Mexico ≈ NAS <HS cell without time index"
+      ],
+      "topics": ["composition", "education_bucket", "mexico_weights"],
+      "source_rel_paths": [
+        "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf"
+      ],
+      "theory_tested": "Time-varying Hanson weights vs static ACS weights change Mexico-heavy NAS cell NPV aggregation"
+    },
+    {
+      "id": "G-LIF-D02",
+      "name": "Return migration / attrition ledger (CHCP blocked)",
+      "prompt": "Build an attrition sensitivity band on lifetime NPV: (1) Lubotsky/Dustmann selective re-migration bias on assimilation, (2) Hanson post-2007 net undocumented outflow, (3) Duncan-Trejo ethnic attrition on 3rd+ Hispanic measurement. Flag data gaps: Aydemir-Robinson CHCP working paper HTML-only trap; no US fiscal micro for return migration. What ledger line adjusts NPV horizon when attrition is negatively selected?",
+      "retrodiction": "Would have flagged brainstorm Round 8 item 10 (CHCP blocked) and Dustmann survey §5.9 return-migration gap before treating SIPP annual proxy as full lifetime residence.",
+      "negative_space": "Lifetime fiscal models assume immigrants remain until death; cross-sectional assimilation overstates economic success.",
+      "unnamed_assumptions_surfaced": [
+        "Immigrant remains in host country full horizon",
+        "CPS 3rd+ generation identifies true descendants without ethnic attrition"
+      ],
+      "topics": ["attrition", "return_migration", "data_gap"],
+      "source_rel_paths": [
+        "external/lifetime/nber/dustmann_2014_economic_impacts_immigration_survey_w16736.pdf",
+        "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
+        "external/lifetime/nber/duncan_trejo_2018_socioeconomic_integration_second_gen_w24394.pdf"
+      ],
+      "theory_tested": "Attrition rate × selective outflow direction shifts expected years in US for federal transfer and payroll ledger lines",
+      "data_gaps": [
+        {
+          "dataset": "Aydemir-Robinson CHCP return-migration micro",
+          "status": "blocked",
+          "notes": "HTML trap per brainstorm Round 8; Canada paywall — no clean US public fiscal attrition micro"
+        }
+      ]
+    },
+    {
+      "id": "G-LIF-D03",
+      "name": "Descendant NPV as separate ledger line",
+      "prompt": "Split lifetime ledger into (A) first-generation immigrant NPV from NAS education×age cells and (B) descendant offset line with two bounds: Abramitzky w26408 (+3–6 percentile mobility at bottom; geographic sorting explains 70%) vs Duncan-Trejo w24394 (Hispanic 2nd→3rd+ earnings stall; ethnic attrition may understate progress). UK Dustmann-Frattini shows descendant accounting breaks at age 16. Where is descendant NPV missing from compose_scenario_ledger?",
+      "retrodiction": "Would have paired brainstorm Round 5 items 3–4 (descendant upside/downside) and UK methodology comparator before collapsing descendants into same NAS cell as parents.",
+      "negative_space": "NAS descendant column treated as single calibrated offset; no explicit Abramitzky–Duncan-Trejo band or separate ledger row.",
+      "unnamed_assumptions_surfaced": [
+        "Second-generation fiscal externalities net to zero within parent education cell",
+        "CPS third+ generation identifies immigrant descendants without selective ethnic attrition"
+      ],
+      "topics": ["descendants", "npv", "intergenerational_mobility"],
+      "source_rel_paths": [
+        "external/lifetime/nber/abramitzky_boustan_2019_intergenerational_mobility_immigrants_w26408.pdf",
+        "external/lifetime/nber/duncan_trejo_2018_socioeconomic_integration_second_gen_w24394.pdf",
+        "external/lifetime/cream/dustmann_frattini_2013_fiscal_effects_immigration_uk_cdp_22_13.pdf"
+      ],
+      "theory_tested": "Descendant earnings/education path as additive NPV line item vs embedded in parent NAS cell"
+    },
+    {
+      "id": "G-LIF-D04",
+      "name": "Political economy of transfers (taxpayer wallet frame)",
+      "prompt": "Audit lifetime fiscal memos for the unnamed assumption fiscal impact = native taxpayer wallet only. Cross-read Razin-Sadka-Swagel (demogrant coalitions; unskilled policy dominance), Alesina w24733/w25562 (immigration salience → less redistribution; welfare-state size heterogeneity), and IMF remittance offset. What transfers are excluded from the ledger (remittances, origin-country education subsidy, voter preference shift)?",
+      "retrodiction": "Would have surfaced brainstorm Round 3 item 4 (Alesina redistribution) and Round 5 political-economy pairing before treating NAS net fiscal as welfare-neutral accounting.",
+      "negative_space": "Technical NPV treated as sufficient for policy; political feedback on transfer generosity and native fiscal capacity ignored.",
+      "unnamed_assumptions_surfaced": [
+        "Fiscal = taxes paid minus benefits received by immigrant household only",
+        "Native redistribution preferences invariant to immigrant composition",
+        "Remittances and origin-country human-capital investment are out of scope"
+      ],
+      "topics": ["political_economy", "welfare_state", "redistribution"],
+      "source_rel_paths": [
+        "external/lifetime/nber/razin_sadka_swagel_2011_migration_welfare_state_w15597.pdf",
+        "external/lifetime/nber/alesina_miano_stantcheva_2018_immigration_redistribution_w24733.pdf",
+        "external/lifetime/nber/alesina_murard_rapoport_2019_immigration_redistribution_europe_w25562.pdf",
+        "external/lifetime/imf/g20_2025_aging_and_migration.pdf"
+      ],
+      "theory_tested": "Taxpayer-wallet NPV vs political-economy equilibrium transfer rate under varying immigrant skill mix"
+    },
+    {
+      "id": "G-LIF-D05",
+      "name": "Legal-status → education-bucket transition path",
+      "prompt": "Map legal-status shocks (DACA w24315: +5.9pp HS completion, 40% citizen gap closure; Hanson undocumented share of <HS stock) to education_bucket transitions in the scenario ledger. Does a legalization path move cells from <HS toward HS, changing NAS NPV sign within the same ACS origin weight?",
+      "retrodiction": "Would have connected brainstorm Round 4 Kuka DACA item to education-bucket composition before treating legal status as orthogonal to NAS cell assignment.",
+      "negative_space": "Legal status treated as parallel unauthorized earnings path, not as human-capital investment response shifting education bucket.",
+      "unnamed_assumptions_surfaced": [
+        "Unauthorized share is a scalar on earnings, not a state machine across education buckets"
+      ],
+      "topics": ["legal_status", "education_bucket", "daca"],
+      "source_rel_paths": [
+        "external/lifetime/nber/kuka_shenhav_shih_2018_daca_education_returns_w24315.pdf",
+        "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf"
+      ],
+      "theory_tested": "Legalization elasticity on HS completion × NAS education-cell NPV step function"
+    },
+    {
+      "id": "G-LIF-D06",
+      "name": "Migrant networks and destination-selection composition",
+      "prompt": "Borjas-Monras w23756: hurricane shocks × prior US migrant stock (threshold 0.86%) → legal immigration via family reunification. Abramitzky w22381: name-based assimilation closes half the gap in 20 years. How does network-driven destination selection reweight state/PUMA fiscal incidence vs national ACS composition weights?",
+      "retrodiction": "Would have surfaced network-fixed-cost mechanism and border-state concentration (Hanson table 3) before applying national Mexico weights to state stage5 context.",
+      "negative_space": "Origin composition weights applied nationally; destination network sorting and border-state hours-share ignored.",
+      "unnamed_assumptions_surfaced": [
+        "Immigrants distribute proportionally to ACS national origin stock",
+        "Migration fixed costs are homogeneous across origin countries"
+      ],
+      "topics": ["networks", "destination_selection", "assimilation"],
+      "source_rel_paths": [
+        "external/lifetime/nber/borjas_monras_2018_hurricanes_migrant_networks_immigration_w23756.pdf",
+        "external/lifetime/nber/abramitzky_boustan_eriksson_2016_cultural_assimilation_mass_migration_w22381.pdf",
+        "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf"
+      ],
+      "theory_tested": "Network-threshold origin inflows × state destination sorting vs flat ACS national weights"
+    }
+  ],
+  "theories_tested": [
+    {
+      "theory": "Static ACS Mexico <HS weight is sufficient for NAS cell aggregation",
+      "prediction": "Time-varying Hanson weights (Mexico share peak 2005, post-2007 slowdown) do not materially change weighted NPV vs 2023 ACS snapshot for recent-surge slice",
+      "duckdb_test": "Join acs_origin_national_2023 education mix to hypothetical hanson_composition_weights_by_decade; compare weighted NAS <HS NPV on origin_fiscal_scenario_2023 Mexico rows",
+      "falsifier": "≥10% NPV difference between static and 2005-peak composition weights for YOEP≥2014 <HS adults"
+    },
+    {
+      "theory": "Abramitzky optimistic descendant band dominates Duncan-Trejo pessimistic band for Mexico-heavy cells",
+      "prediction": "Descendant offset line is positive (mobility advantage +3–6 percentiles) after geographic controls",
+      "duckdb_test": "Add descendant_ledger_line with bounds from w26408 (+mobility) and w24394 (3rd+ earnings stall + ethnic attrition); sensitivity on sipp_scenario_ledger education_bucket transitions",
+      "falsifier": "Duncan-Trejo 3rd+ stagnation + 25% ethnic-attrition dropout bias flips descendant line negative for Mexican CPS-identified 3rd+ gen"
+    },
+    {
+      "theory": "Lifetime NPV horizon unbiased without return-migration adjustment",
+      "prediction": "Hanson post-2007 net outflow and Lubotsky selective re-migration do not change expected years-in-US by >5%",
+      "duckdb_test": "Apply attrition_scenario table (low/base/high expected residence years) to federal_net_proxy_annual × horizon; flag NULL until CHCP micro acquired",
+      "falsifier": "Attrition sensitivity moves Mexico <HS cell sign at 3% discount; CHCP remains blocked — manual band only"
+    },
+    {
+      "theory": "Fiscal ledger = taxpayer wallet is policy-sufficient",
+      "prediction": "Alesina immigration-salience reduction in redistribution support is uncorrelated with immigrant fiscal NPV sign in high-immigrant PUMAs",
+      "duckdb_test": "Cross-walk origin_puma_household_stage5_context to Alesina mechanism (welfare-free-rider belief); no DuckDB table yet — register as FRAMING-SENSITIVE overlay not in warehouse",
+      "falsifier": "High <HS immigrant-share PUMAs show federal-positive ledger but political-economy generator predicts transfer restriction — taxpayer wallet omits equilibrium policy response"
+    }
+  ],
+  "disconfirmation": [
+    "Abramitzky w26408: immigrant children more upwardly mobile at bottom of distribution — weakens descendant-pessimism scalar",
+    "Duncan-Trejo: Hispanic Americans may have progressed more beyond 2nd generation than CPS data show (ethnic attrition) — widens descendant band upward",
+    "Dustmann-Frattini UK: EEA recent immigrants net-positive even under 'worst case' immigrant-side allocation — composition (skill×recency) flips sign within same accounting grammar",
+    "Dustmann survey: Storesletten −$36k to +$96k range — education bucket dominates; composition matters more than origin label",
+    "IMF G20: aging + automation may reduce low-skill immigration rebound — Hanson structural slowdown disconfirms static surge composition",
+    "IZA dp18218 (AGI/automation): joint automation+immigration shocks amplify non-college losses — lifetime earnings path may deteriorate even if fiscal transfers stable"
+  ],
+  "papers_mined": [
+    "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
+    "external/lifetime/nber/borjas_monras_2018_hurricanes_migrant_networks_immigration_w23756.pdf",
+    "external/lifetime/nber/abramitzky_boustan_eriksson_2016_cultural_assimilation_mass_migration_w22381.pdf",
+    "external/lifetime/nber/abramitzky_boustan_2019_intergenerational_mobility_immigrants_w26408.pdf",
+    "external/lifetime/nber/duncan_trejo_2018_socioeconomic_integration_second_gen_w24394.pdf",
+    "external/lifetime/nber/kuka_shenhav_shih_2018_daca_education_returns_w24315.pdf",
+    "external/lifetime/nber/dustmann_2014_economic_impacts_immigration_survey_w16736.pdf",
+    "external/lifetime/nber/razin_sadka_swagel_2011_migration_welfare_state_w15597.pdf",
+    "external/lifetime/nber/alesina_miano_stantcheva_2018_immigration_redistribution_w24733.pdf",
+    "external/lifetime/nber/alesina_murard_rapoport_2019_immigration_redistribution_europe_w25562.pdf",
+    "external/lifetime/cream/dustmann_frattini_2013_fiscal_effects_immigration_uk_cdp_22_13.pdf",
+    "external/lifetime/imf/g20_2025_aging_and_migration.pdf",
+    "external/lifetime/iza/iza_dp18218_agi_soon_migration.pdf"
+  ],
+  "extraction_method": "pdftotext full-document on 13 PDFs; frame from immigration-lifetime-dataset-brainstorm-2026-06-15.md"
+}

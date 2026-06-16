@@ -1,0 +1,331 @@
+{
+  "cluster": "A_npv_generational",
+  "mined_at": "2026-06-15",
+  "frame_note": "No scalar Mexican lifetime NPV. Model education × age-at-arrival × state × descendants. NAS <HS age-25 ≈ -$109k (2012$); Clemens capital-tax band flips sign.",
+  "staging_gaps": [
+    "external/lifetime/nrc/nrc_1997_new_americans.pdf is an HTML landing page, not the 1997 report PDF — NRC 1997 numbers below relay via Orrenius (2017) citing NAS/NRC lineage.",
+    "external/lifetime/nber/storesletten_2003_fiscal_heterogeneity_w9489.pdf is mis-staged (NBER w9489 Blomström/Kokko FDI incentives, not Storesletten fiscal heterogeneity) — Storesletten (2000) parameters cited via Colas-Sachs (2024)."
+  ],
+  "parameter_claims": [
+    {
+      "claim_id": "NAS-A01",
+      "source_rel_path": "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf",
+      "parameter_name": "individual_npv_less_than_hs_age25_immigrant",
+      "value_numeric": -109000,
+      "unit": "2012 USD NPV (75-year, consolidated govt)",
+      "population": "Immigrant arriving at age 25, <HS education, CBO long-term budget outlook, public goods excluded",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext p~358 (printed p.344, Table 8-13)",
+      "notes": "Individual-only column; immigrant less costly than native (-$251k) mainly via lower welfare uptake. Treating 'no public goods' as neutral hides large sensitivity."
+    },
+    {
+      "claim_id": "NAS-A02",
+      "source_rel_path": "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf",
+      "parameter_name": "total_npv_recent_immigrant_avg",
+      "value_numeric": 259000,
+      "unit": "2012 USD NPV (75-year)",
+      "population": "New immigrant resembling recent arrivals (past 5 years), immigrant + descendants, CBO scenario",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext p~352 (printed p.339, Table 8-12)",
+      "notes": "Highlighted cell '259'; $173k individual + $85k descendants. CBO future budget assumptions drive magnitude — No Budget Adjustments scenario yields $77k total."
+    },
+    {
+      "claim_id": "NAS-A03",
+      "source_rel_path": "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf",
+      "parameter_name": "real_discount_rate",
+      "value_numeric": 0.03,
+      "unit": "annual real rate",
+      "population": "All 75-year NPV projections",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext p~352 (printed p.339)",
+      "notes": "3% real discount; with 1% productivity growth effective rate ~2%. Retirement benefits discounted ~35 years later → NPV heavily front-loaded to working years."
+    },
+    {
+      "claim_id": "NAS-A04",
+      "source_rel_path": "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf",
+      "parameter_name": "cross_section_fiscal_shortfall_second_gen_2013",
+      "value_numeric": 109000000000,
+      "unit": "2013 USD (annual flow, not NPV)",
+      "population": "Second generation group, all government levels, 1994-2013 cross-section",
+      "unnamed_assumption": false,
+      "page_ref": "pdftotext p~1-30 (Summary, ~p.18-19 of report body)",
+      "notes": "2013 total shortfall $279B (1st gen), $109B (2nd gen), $856B (3rd+). Distinct from lifetime NPV — easy to conflate in debate."
+    },
+    {
+      "claim_id": "NRC-A01",
+      "source_rel_path": "external/lifetime/nrc/nrc_1997_new_americans.pdf",
+      "parameter_name": "lifetime_net_cost_less_than_hs_immigrant",
+      "value_numeric": -89000,
+      "unit": "1996 USD NPV (relay)",
+      "population": "Immigrants with less than high school education",
+      "unnamed_assumption": true,
+      "page_ref": "secondary: orrenius pdftotext p.5 citing NRC 1997 via NAS Ch.7",
+      "notes": "Primary PDF not extractable (HTML stub). Orrenius: '<HS immigrants cost $89,000 more than they contribute in taxes over lifetimes.' Assumed fiscal sustainability in NRC descendants modeling."
+    },
+    {
+      "claim_id": "NRC-A02",
+      "source_rel_path": "external/lifetime/nrc/nrc_1997_new_americans.pdf",
+      "parameter_name": "lifetime_net_surplus_more_than_hs_immigrant",
+      "value_numeric": 105000,
+      "unit": "1996 USD NPV (relay)",
+      "population": "Immigrants with more than high school education",
+      "unnamed_assumption": true,
+      "page_ref": "secondary: orrenius pdftotext p.5",
+      "notes": "Relay only. NRC assumed policy would adjust to restore fiscal balance — descendants net positive partly by construction."
+    },
+    {
+      "claim_id": "CLEM-A01",
+      "source_rel_path": "external/lifetime/cgdev/clemens_2023_fiscal_effect_capital_tax_adjustment.pdf",
+      "parameter_name": "npv_flip_less_than_hs_individual",
+      "value_numeric": 128000,
+      "unit": "2012 USD NPV lower bound (75-year)",
+      "population": "Average recent immigrant <HS, individual only, capital-tax adjustment applied to NAS baseline",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext p.1 (abstract); p.4 (NAS comparison); Table 3 p~25",
+      "notes": "Sign flip from NAS -$109k to ≥+$128k by adding omitted capital tax revenue (α=0.436, τ_K/τ_L from Saez-Zucman). Assumes fixed capital stock short-run + profit-maximizing firms."
+    },
+    {
+      "claim_id": "CLEM-A02",
+      "source_rel_path": "external/lifetime/cgdev/clemens_2023_fiscal_effect_capital_tax_adjustment.pdf",
+      "parameter_name": "npv_adjustment_factor_average_immigrant",
+      "value_numeric": 3.2,
+      "unit": "multiplier on unadjusted NPV",
+      "population": "Average recent U.S. immigrant (all education levels)",
+      "unnamed_assumption": false,
+      "page_ref": "pdftotext p.1; Table 1 p~17",
+      "notes": "Conservative capital-tax correction raises standard partial-equilibrium estimates by factor 3.2; education gradient flattens (BA/postgrad ratio 2.6 vs 4.5 unadjusted)."
+    },
+    {
+      "claim_id": "CLEM-A03",
+      "source_rel_path": "external/lifetime/cgdev/clemens_2023_fiscal_effect_capital_tax_adjustment.pdf",
+      "parameter_name": "capital_share_alpha",
+      "value_numeric": 0.436,
+      "unit": "fraction of income",
+      "population": "U.S. economy, adjustment formula",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext Table 3 notes p~25",
+      "notes": "Used in equation (14) correction; robustness claimed for all modern labor-share values."
+    },
+    {
+      "claim_id": "COLAS-A01",
+      "source_rel_path": "external/lifetime/econstor/colas_sachs_2024_indirect_fiscal_benefits_low_skill.pdf",
+      "parameter_name": "indirect_fiscal_benefit_low_skill_annual",
+      "value_numeric": 753,
+      "unit": "USD per year (not NPV)",
+      "population": "Average low-skilled immigrant, preferred spec σ=2, fixed labor supply",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext p.6; Table main results p~24 ($753)",
+      "notes": "Wage-incidence channel via CES production; 1% gov discount rate for NPV annex tables. HS dropouts stay net negative even after +$641–778 indirect."
+    },
+    {
+      "claim_id": "COLAS-A02",
+      "source_rel_path": "external/lifetime/econstor/colas_sachs_2024_indirect_fiscal_benefits_low_skill.pdf",
+      "parameter_name": "direct_fiscal_annuity_hs_dropout_mc_ac",
+      "value_numeric": -2429,
+      "unit": "USD per year (annuitized direct, age 23–65)",
+      "population": "HS dropout immigrant, marginal cost = average cost public goods",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext p.24 (Table 3, MC=AC row)",
+      "notes": "With MC=0 (zero marginal public goods) direct = -$86/yr; total with indirect ≈ $744/yr. Public-goods allocation dominates sign."
+    },
+    {
+      "claim_id": "LM-A01",
+      "source_rel_path": "external/lifetime/nber/lee_miller_1998_generational_accounting_immigration_w7041.pdf",
+      "parameter_name": "fiscal_imbalance_pct_gps_baseline",
+      "value_numeric": 0.72,
+      "unit": "fraction (72% tax/transfer adjustment needed)",
+      "population": "U.S. natives, standard generational accounting (immigrants folded into natives)",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext p.13",
+      "notes": "Revised immigrant-explicit GA finds 54% imbalance vs 72% GPS — attribution convention moves the needle."
+    },
+    {
+      "claim_id": "LM-A02",
+      "source_rel_path": "external/lifetime/nber/lee_miller_1998_generational_accounting_immigration_w7041.pdf",
+      "parameter_name": "per_capita_immigration_benefit_future_gen_male",
+      "value_numeric": 2200,
+      "unit": "USD generational account change",
+      "population": "Future-generation males, 'responsibility' scenario, defense as pure public good",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext p.20",
+      "notes": "Eliminating immigration hurts future gens by $2,200 (M) / $1,700 (F) under defense-fixed assumption; reverses sign vs proportional gov purchases. Tiny vs $49,700 newborn male baseline imbalance."
+    },
+    {
+      "claim_id": "AO-A01",
+      "source_rel_path": "external/lifetime/nber/auerbach_oreopoulos_2000_generational_accounting_immigration.pdf",
+      "parameter_name": "fiscal_imbalance_pct_updated_outlook",
+      "value_numeric": 0.085,
+      "unit": "fraction (8.5% adjustment needed)",
+      "population": "U.S. after late-1990s fiscal improvement",
+      "unnamed_assumption": false,
+      "page_ref": "pdftotext p.12",
+      "notes": "Down from 72% (GPS) / 54% (Lee-Miller w/ old outlook). Improved baseline reduces immigration's marginal fiscal relief."
+    },
+    {
+      "claim_id": "ORR-A01",
+      "source_rel_path": "external/lifetime/dallasfed/orrenius_nas_fiscal_sensitivity_wp1704.pdf",
+      "parameter_name": "npv_less_than_hs_recent_immigrant_cbo",
+      "value_numeric": -117000,
+      "unit": "2012 USD NPV (75-year, relay of NAS Table 8-12)",
+      "population": "Typical recent immigrant lacking HS diploma",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext p.8 (Table 2 relay)",
+      "notes": "Orrenius Table 2 row <HS = -109 to -117 depending on column; emphasizes education heterogeneity over population-average +$259k headline."
+    }
+  ],
+  "unnamed_assumptions_cross_cutting": [
+    "Public goods treated as zero marginal cost (pure nonrival) vs average-cost allocation — swings NAS <HS from deeply negative to near-zero or positive.",
+    "Future budget path (CBO long-term vs no-adjustments) embeds optimistic/pessimistic benefit growth without sensitivity labels in headlines.",
+    "Age-25 arrival counterfactual excludes pre-arrival education costs for immigrants and parental finance for natives — framed as neutral lifecycle comparison.",
+    "Generational accounting counts taxes minus transfers, largely excluding education spending except occasional treatment — education cost pushed off balance sheet.",
+    "Partial-equilibrium fiscal accounting assumes zero short-run capital tax response (fixed K) — Clemens shows this is load-bearing for sign.",
+    "Immigrant vs native comparison holds education constant but not language, network, or emigration — presented as apples-to-apples fiscal test.",
+    "Discount rate (1–3% real) and 75-year horizon treated as standard rather than welfare-weighted choice.",
+    "Composition (education mix) vs level (immigrant count) — Auerbach/Lee-Miller: composition dominates, but policy debate still scalar."
+  ],
+  "generators": [
+    {
+      "id": "G-LIF-A01",
+      "name": "Capital-tax omission audit",
+      "prompt": "For each lifetime fiscal NPV study in the corpus: list every tax base counted on the revenue side. If corporate/capital income is absent, mechanically apply α/(1-α) × τ_K/τ_L × labor tax base (Clemens 2023 eq. 14) and re-rank education cells by sign. Flag any headline scalar that flips.",
+      "retrodiction": "Would have surfaced Clemens (2023) capital-tax flip (-$109k→+$128k for <HS) AND Colas-Sachs critique that Storesletten (2000) omits capital-supply response — both hinge on the same omitted tax base before reading either paper's policy conclusion.",
+      "negative_space": "Standing frame treats 'taxes paid by immigrants' as labor+payroll cashflow only; excludes owner-side capital incidence entirely.",
+      "unnamed_assumptions_surfaced": [
+        "Fixed capital stock in short run ⇒ zero capital tax response",
+        "Partial equilibrium fiscal accounting = total fiscal effect"
+      ],
+      "topics": ["npv", "capital_tax", "sign_sensitivity"],
+      "source_rel_paths": [
+        "external/lifetime/cgdev/clemens_2023_fiscal_effect_capital_tax_adjustment.pdf",
+        "external/lifetime/econstor/colas_sachs_2024_indirect_fiscal_benefits_low_skill.pdf"
+      ],
+      "theory_tested": "If α×τ_K channel is material, annual federal proxy rows should correlate with labor tax base × education_bucket but NOT with raw transfer receipt rates alone."
+    },
+    {
+      "id": "G-LIF-A02",
+      "name": "Public-goods allocation stress grid",
+      "prompt": "Build a 3×3 grid for every NPV table: {zero marginal, 0.25×AC, full AC} × {exclude defense, include defense, include all public goods}. Extract the cell each paper reports as 'the' estimate. Never cite a scalar without grid coordinates.",
+      "retrodiction": "Would have flagged NAS Table 8-12/8-13 dual panels (public goods in/out) AND Orrenius marginal-cost sensitivity AND Colas-Sachs Table 3 (-$86/yr vs -$2,429/yr for HS dropouts) before treating -$109k as robust.",
+      "negative_space": "Debates anchor a single NPV number; papers bury allocation rules in table notes.",
+      "unnamed_assumptions_surfaced": [
+        "Marginal cost of public goods = 0",
+        "Defense spending invariant to population"
+      ],
+      "topics": ["npv", "public_goods", "allocation"],
+      "source_rel_paths": [
+        "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf",
+        "external/lifetime/dallasfed/orrenius_nas_fiscal_sensitivity_wp1704.pdf",
+        "external/lifetime/econstor/colas_sachs_2024_indirect_fiscal_benefits_low_skill.pdf"
+      ],
+      "theory_tested": "DuckDB scenario_ledger should expose public_goods_scenario dimension; join to npv_education_benchmarks.adjustment column."
+    },
+    {
+      "id": "G-LIF-A03",
+      "name": "Composition-vs-level decomposition",
+      "prompt": "For generational-accounting immigration papers: (1) simulate level change holding 1990 education mix fixed; (2) simulate education-mix shift holding count fixed; (3) report which moves fiscal imbalance >10× more than the other. Reject any study reporting only total immigrant NPV.",
+      "retrodiction": "Would have extracted Auerbach-Oreopoulos (2000) finding that composition beats level AND Lee-Miller (1998) $2.2k vs $49.7k scale result AND NAS contrast of recent (+$259k) vs all-immigrant (+$58k) pools.",
+      "negative_space": "Policy argument uses 'more immigrants' scalar; literature says education mix is first-order.",
+      "unnamed_assumptions_surfaced": [
+        "Representative immigrant = stock average",
+        "Immigrant count policy is separable from skill selectivity"
+      ],
+      "topics": ["npv", "generational_accounting", "education_gradient"],
+      "source_rel_paths": [
+        "external/lifetime/nber/auerbach_oreopoulos_2000_generational_accounting_immigration.pdf",
+        "external/lifetime/nber/lee_miller_1998_generational_accounting_immigration_w7041.pdf",
+        "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf"
+      ],
+      "theory_tested": "education_bucket share shifts in ACS should predict NPV benchmark selection (recent vs stock) better than total foreign-born count."
+    },
+    {
+      "id": "G-LIF-A04",
+      "name": "Unit harmonizer: annual incidence vs lifetime NPV",
+      "prompt": "Whenever a fiscal claim uses $/year (incidence, MVPF, annuitized direct), convert to 75-year NPV at stated discount AND label incomparable if indirect/general-equilibrium. Block synthesis until units match.",
+      "retrodiction": "Would have caught Colas-Sachs ~$753/yr indirect vs NAS -$109k lifetime as different objects AND Clemens factor-3.2 adjustment on same NAS table AND Orrenius mixing cross-section billions with NPV thousands.",
+      "negative_space": "Standing frame collapses 'fiscal effect' into one ledger line.",
+      "unnamed_assumptions_surfaced": [
+        "Annual wage-incidence externality commensurate with lifetime NPV",
+        "Cross-section annual shortfall ≈ lifetime immigrant cost"
+      ],
+      "topics": ["npv", "incidence", "units"],
+      "source_rel_paths": [
+        "external/lifetime/econstor/colas_sachs_2024_indirect_fiscal_benefits_low_skill.pdf",
+        "external/lifetime/cgdev/clemens_2023_fiscal_effect_capital_tax_adjustment.pdf",
+        "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf"
+      ],
+      "theory_tested": "Compare life.npv_education_benchmarks (USD NPV) to ctx annual federal proxy; correlation should break for Colas-Sachs rows tagged indirect_annual_usd."
+    },
+    {
+      "id": "G-LIF-A05",
+      "name": "Immigrant attribution convention check",
+      "prompt": "In generational accounting papers: trace whether immigrants' taxes are folded into native cohorts or separate Q_{s,k} terms. Recompute headline imbalance under both conventions. Document which convention each citation uses.",
+      "retrodiction": "Would have found Lee-Miller 54% vs GPS 72% imbalance gap AND Green-Kotlikoff warning that fiscal labels are reference-dependent AND NAS Table 8-13 native/immigrant pairing.",
+      "negative_space": "Treats generational accounting as objective balance sheet.",
+      "unnamed_assumptions_surfaced": [
+        "Immigrants attributed to native generational accounts",
+        "Equal percentage tax hikes on natives and immigrants is realistic closure rule"
+      ],
+      "topics": ["generational_accounting", "methodology"],
+      "source_rel_paths": [
+        "external/lifetime/nber/lee_miller_1998_generational_accounting_immigration_w7041.pdf",
+        "external/lifetime/methodology/green_kotlikoff_2006_relativity_fiscal_language_w12344.pdf"
+      ],
+      "theory_tested": "Warehouse should tag npv_education_benchmarks.study with attribution_convention metadata; falsify if two studies at same education_bucket differ only by convention."
+    },
+    {
+      "id": "G-LIF-A06",
+      "name": "Descendant ledger split",
+      "prompt": "For every lifetime NPV, force extraction of {individual, descendants, total} columns. Flag papers that report total only. Test whether descendant surplus drives positive headline for low-skilled arrivals.",
+      "retrodiction": "Would have surfaced NAS $173k individual + $85k descendants (= $259k) AND Clemens -$109k individual vs +$326k with grandchildren AND NAS No-Budget scenario where descendants are -$15k while immigrant +$92k.",
+      "negative_space": "Headline 'immigrant fiscal impact' silently includes second/third generation without education×age path.",
+      "unnamed_assumptions_surfaced": [
+        "Descendant education upgrade is causal fiscal credit to arrival cohort",
+        "Intermarriage and emigration ignored in descendant projection"
+      ],
+      "topics": ["npv", "intergenerational", "education_transmission"],
+      "source_rel_paths": [
+        "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf",
+        "external/lifetime/cgdev/clemens_2023_fiscal_effect_capital_tax_adjustment.pdf"
+      ],
+      "theory_tested": "Filter npv_education_benchmarks.includes_descendants; individual_npv should remain negative for <HS under NAS baseline while total may flip."
+    }
+  ],
+  "theories_tested": [
+    {
+      "theory": "Education bucket is sufficient statistic for lifetime NPV rank order",
+      "prediction": "Within NAS/Clemens benchmarks, <HS < HS < some college < BA < postgrad monotonic in individual_npv_2012_usd at age 25",
+      "duckdb_test": "SELECT acs_education_bucket, individual_npv_2012_usd, study, adjustment FROM life.npv_education_benchmarks WHERE age_at_arrival=25 AND includes_descendants=false ORDER BY individual_npv_2012_usd;",
+      "falsifier": "Any pair inverted after holding adjustment constant (e.g., HS worse than <HS under same public_goods_scenario)"
+    },
+    {
+      "theory": "Capital-tax adjustment flips sign only for lowest education buckets",
+      "prediction": "Clemens capital_tax_adjustment rows positive for <HS; NAS baseline rows negative for <HS; ratio post/pre ≈ 3.2 for average bucket",
+      "duckdb_test": "SELECT study, acs_education_bucket, individual_npv_2012_usd FROM life.npv_education_benchmarks WHERE acs_education_bucket='<HS' AND study IN ('NAS 2017','Clemens 2023');",
+      "falsifier": "Clemens-adjusted NPV still negative for <HS in warehouse after re-seed from Table 3"
+    },
+    {
+      "theory": "Annual federal proxy correlates with lifetime NPV rank across education buckets",
+      "prediction": "ctx federal microsim annual net contribution by education_bucket should rank-order match life.npv_education_benchmarks individual NPV",
+      "duckdb_test": "SELECT e.education_bucket, e.weighted_total AS acs_stock, f.annual_federal_net_proxy, b.individual_npv_2012_usd, b.study FROM ctx.acs_foreign_born_education_bucket_totals_2023 e JOIN ctx.public_mvp_federal_by_education f ON e.education_bucket=f.education_bucket LEFT JOIN life.npv_education_benchmarks b ON e.education_bucket=b.acs_education_bucket WHERE b.study='NAS 2017';",
+      "falsifier": "Annual proxy positive for <HS while NAS NPV negative — indicates unit/scope mismatch (supports G-LIF-A04)"
+    },
+    {
+      "theory": "Indirect annual incidence does not rescue HS dropouts in Colas-Sachs framework",
+      "prediction": "Colas-Sachs indirect_annual_usd (~750) + direct annuitized NPV still net negative for HS dropouts under MC=AC public goods",
+      "duckdb_test": "SELECT * FROM life.npv_education_benchmarks WHERE study='Colas-Sachs 2024' AND acs_education_bucket='<HS'; -- compare magnitude to NAS -109k; annual 750×40yr ≠ 109k without discount harmonization",
+      "falsifier": "Harmonized NPV of indirect+$753/yr exceeds |direct| for dropouts under stated 1% discount"
+    },
+    {
+      "theory": "Recent-arrival pool NPV exceeds stock-average NPV conditional on education mix",
+      "prediction": "Weighted mean of npv by recent-arrival education shares > stock shares, controlling for adjustment",
+      "duckdb_test": "SELECT b.study, SUM(e.share * b.individual_npv_2012_usd) AS weighted_npv FROM ctx.acs_foreign_born_education_bucket_totals_2023 e JOIN life.npv_education_benchmarks b ON e.education_bucket=b.acs_education_bucket WHERE b.study='NAS 2017' GROUP BY b.study;",
+      "falsifier": "Stock and recent weights produce same weighted NPV within 5% — contradicts NAS $259k vs $58k narrative"
+    },
+    {
+      "theory": "No single origin_label scalar maps to lifetime NPV",
+      "prediction": "Mexican or any origin share vector produces wide NPV range when joined to education_bucket benchmarks — variance dominates mean",
+      "duckdb_test": "SELECT m.origin_label, m.education_bucket, m.share, b.individual_npv_2012_usd FROM ctx.origin_education_composition m JOIN life.npv_education_benchmarks b ON m.education_bucket=b.acs_education_bucket WHERE b.study='NAS 2017' ORDER BY origin_label, education_bucket; -- reject collapse to one number per origin",
+      "falsifier": "One origin's education mix maps to a stable scalar cited in advocacy without bucket decomposition"
+    }
+  ]
+}

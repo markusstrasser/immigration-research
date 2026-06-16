@@ -1,0 +1,174 @@
+{
+  "cluster": "O_welfare_political",
+  "mined_at": "2026-06-15",
+  "round": 11,
+  "frame_note": "Welfare-state political economy selects skill mix of migrants and transfer policy jointly — fiscal sign is equilibrium object, not exogenous immigrant trait.",
+  "parameter_claims": [
+    {
+      "claim_id": "O-RAZ-01",
+      "source_rel_path": "external/lifetime/nber/razin_sadka_swagel_2011_migration_welfare_state_w15597.pdf",
+      "parameter_name": "political_equilibrium_tax_demogrant",
+      "value_numeric": null,
+      "value_text": "Skilled, unskilled, retirees vote on tax rate + migrant skill composition + migrant count",
+      "unit": "model structure",
+      "population": "Dynamic politico-economic equilibrium",
+      "unnamed_assumption": true,
+      "page_ref": "pdftotext p.1-2 abstract",
+      "notes": "Fiscal impact depends on policy response — not static NAS cell"
+    },
+    {
+      "claim_id": "O-RAZ-02",
+      "source_rel_path": "external/lifetime/nber/razin_sadka_swagel_2011_migration_welfare_state_w15597.pdf",
+      "parameter_name": "migrant_birth_rate_exceeds_native",
+      "value_numeric": null,
+      "value_text": "Migrants arrive young; birth rate exceeds native — affects intergenerational redistribution",
+      "unit": "qualitative",
+      "population": "Model migrants vs native-born",
+      "unnamed_assumption": true,
+      "page_ref": "abstract",
+      "notes": "Descendant path endogenous to political equilibrium"
+    },
+    {
+      "claim_id": "O-MAG-01",
+      "source_rel_path": "external/lifetime/nber/razin_wahba_2012_welfare_magnet_immigration_w17515.pdf",
+      "parameter_name": "welfare_magnet_selection",
+      "value_numeric": null,
+      "value_text": "Generous welfare states attract lower-skilled migrants — fiscal burden endogenous to magnet policy",
+      "unit": "qualitative",
+      "population": "OECD-style welfare states",
+      "unnamed_assumption": true,
+      "page_ref": "title/abstract",
+      "notes": "US state heterogeneity partial analog via Medicaid/RPP stage5"
+    },
+    {
+      "claim_id": "O-CBO-01",
+      "source_rel_path": "external/lifetime/cbo/cbo_60569_immigration_federal_macro_alt.pdf",
+      "parameter_name": "federal_deficit_reduction_surge_2024_2034",
+      "value_numeric": 897000000000,
+      "unit": "USD",
+      "population": "Recent immigration surge scenario, federal budget",
+      "unnamed_assumption": true,
+      "page_ref": "[SOURCE: research/fiscal-impact-unauthorized-immigration-research-memo.md citing CBO 60569]",
+      "notes": "Surge-specific federal ledger — not Mexico <HS lifetime NPV"
+    },
+    {
+      "claim_id": "O-CBO-02",
+      "source_rel_path": "external/lifetime/cbo/cbo_61256_immigration_state_local_alt.pdf",
+      "parameter_name": "state_local_net_cost_surge_2023",
+      "value_numeric": 9200000000,
+      "unit": "USD",
+      "population": "Added residents from surge, state/local direct costs 2023",
+      "unnamed_assumption": true,
+      "page_ref": "[SOURCE: research/immigration-claims-evolution-ledger-2026-04-23.md]",
+      "notes": "Official split: federal+ vs state/local− for same surge"
+    },
+    {
+      "claim_id": "O-ITEP-01",
+      "source_rel_path": "external/lifetime/itep/itep_2024_tax_contributions.json",
+      "parameter_name": "undocumented_taxes_national_2022",
+      "value_numeric": 96700000000,
+      "unit": "USD",
+      "population": "Unauthorized immigrants US",
+      "unnamed_assumption": true,
+      "page_ref": "itep json",
+      "notes": "Tax paid floor — political argument uses without benefit side"
+    },
+    {
+      "claim_id": "O-ST5-01",
+      "source_rel_path": "external/lifetime/derived/stage5/state_stage5_context_2023.csv",
+      "parameter_name": "state_medicaid_spend_heterogeneity",
+      "value_numeric": null,
+      "unit": "USD total computable",
+      "population": "US states",
+      "unnamed_assumption": true,
+      "page_ref": "stage5 CSV",
+      "notes": "Magnet/policy variation across destinations — Razin mechanism partial US analog"
+    }
+  ],
+  "generators": [
+    {
+      "id": "G-LIF-O01",
+      "name": "Federal vs state-local ledger split enforcer",
+      "prompt": "For any surge-era fiscal claim: tag FEDERAL (CBO 60569) or STATE_LOCAL (61256) or LIFETIME_NPV (NAS). Reject synthesis that sums unlike ledgers. Report both signs explicitly.",
+      "retrodiction": "Would have blocked using CBO federal $897B surplus to dismiss NYC $3.7B shelter and state/local $9.2B costs before sweep 3.",
+      "negative_space": "One government budget — federal gains settle local costs.",
+      "unnamed_assumptions_surfaced": [
+        "Federal transfers fully offset state/local shocks",
+        "Surge cohort equals steady-state stock"
+      ],
+      "topics": ["layer_laundering", "federal_annual", "local_episodic"],
+      "source_rel_paths": [
+        "external/lifetime/cbo/cbo_60569_immigration_federal_macro_alt.pdf",
+        "external/lifetime/cbo/cbo_61256_immigration_state_local_alt.pdf"
+      ]
+    },
+    {
+      "id": "G-LIF-O02",
+      "name": "Welfare magnet destination sort",
+      "prompt": "Rank states by medicaid_total_computable per capita × immigrant PUMA weights by origin. Test if high-Medicaid states attract disproportionate Mexico-origin share vs BEA RPP-adjusted prediction.",
+      "retrodiction": "Would have connected Razin magnet theory to stage5 Medicaid heterogeneity and Saiz destination sorting before treating fiscal sign as immigrant-fixed.",
+      "negative_space": "Immigrant fiscal type independent of destination policy environment.",
+      "unnamed_assumptions_surfaced": [
+        "Medicaid spend proxies welfare magnet",
+        "ACS stock reflects equilibrium sort"
+      ],
+      "topics": ["welfare_state", "sorting"],
+      "source_rel_paths": [
+        "external/lifetime/nber/razin_wahba_2012_welfare_magnet_immigration_w17515.pdf",
+        "external/lifetime/derived/stage5/state_stage5_context_2023.csv"
+      ]
+    },
+    {
+      "id": "G-LIF-O03",
+      "name": "Tax-paid floor without benefit ceiling",
+      "prompt": "When citing ITEP undocumented taxes: always pair with transfer receipt proxy from SIPP cells for same legal-status band. Compute taxes/benefits ratio — flag one-sided advocacy.",
+      "retrodiction": "Would have blocked 'immigrants pay $96.7B taxes' rhetoric without SIPP transfer_outflow in same sentence.",
+      "negative_space": "Tax contributions cited as net fiscal verdict.",
+      "unnamed_assumptions_surfaced": [
+        "ITEP captures all tax incidence",
+        "Unauthorized receive zero public benefits"
+      ],
+      "topics": ["legal_status_tax", "transfers"],
+      "source_rel_paths": [
+        "external/lifetime/itep/itep_2024_tax_contributions.json",
+        "external/lifetime/derived/stage3_proto/sipp_public_mvp_cells_2024.csv"
+      ]
+    },
+    {
+      "id": "G-LIF-O04",
+      "name": "Political equilibrium skill-mix shift",
+      "prompt": "From Razin w15597: list three voter blocs and policy instruments. Map to US LPR mix by class (DHS xlsx) — does family vs employment share predict education bucket shift over time?",
+      "retrodiction": "Would have linked legal-path mix (cluster J) to education composition (cluster D) via political-economy mechanism before static NAS weights.",
+      "negative_space": "Immigrant skill mix exogenous to US policy.",
+      "unnamed_assumptions_surfaced": [
+        "US approximates median-voter welfare state model",
+        "LPR class maps to skill on arrival"
+      ],
+      "topics": ["composition", "legal_status"],
+      "source_rel_paths": [
+        "external/lifetime/nber/razin_sadka_swagel_2011_migration_welfare_state_w15597.pdf",
+        "external/lifetime/dhs/plcy_lpr_by_country_of_birth_fy2005_2022.xlsx"
+      ]
+    }
+  ],
+  "theories_tested": [
+    {
+      "theory": "CBO federal and state-local signs oppose for surge",
+      "prediction": "federal deficit effect negative (improvement) AND state_local direct cost positive",
+      "duckdb_test": "Manual — CBO 60569 vs 61256 headline numbers in parameter_claims",
+      "falsifier": "Both same sign in official CBO — layer fight collapses"
+    },
+    {
+      "theory": "ITEP tax floor exceeds Mexico federal net × stock",
+      "prediction": "96700000000 > 436819*1519",
+      "duckdb_test": "SELECT 96700000000 AS itep, 436819*1519.28 AS mex_federal_proxy",
+      "falsifier": "Mexico-scaled federal proxy larger — ITEP not binding for origin debate"
+    },
+    {
+      "theory": "High-Medicaid states overweight Mexico PUMA mass",
+      "prediction": "correlation(medicaid_per_capita, mexico_puma_weight) > 0",
+      "duckdb_test": "JOIN state_stage5_context with origin PUMA weights by state_fips",
+      "falsifier": "Null or negative — magnet sort weak in ACS cross-section"
+    }
+  ]
+}

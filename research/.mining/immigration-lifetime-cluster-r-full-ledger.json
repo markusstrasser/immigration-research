@@ -1,0 +1,163 @@
+{
+  "cluster": "R_full_ledger_stack",
+  "mined_at": "2026-06-15",
+  "round": 15,
+  "frame": "NAS education-cell lifetime NPV is one ledger layer ℓ — not all-government net. School (cross-section), state/local surge, enforcement (CBP/ICE), immigration courts (EOIR), and episodic shelter are separate ℓ with overlap rules vs NAS state/local already inside cells.",
+  "parameter_claims": [
+    {
+      "claim_id": "R-001",
+      "source_rel_path": "warehouse/immigration_fiscal_union.duckdb",
+      "parameter_name": "mexico_lifetime_npv_nas_only",
+      "value_numeric": 45631,
+      "unit": "USD per adult NPV",
+      "population": "mexico_origin, NAS 2017 individual, baseline_public_goods, no descendants",
+      "unnamed_assumption": true,
+      "page_ref": "v_country_fiscal_rollup lifetime_npv",
+      "notes": "NOT net of school_burden, admin, courts, shelter — partial ledger"
+    },
+    {
+      "claim_id": "R-002",
+      "source_rel_path": "warehouse/immigration_fiscal_union.duckdb",
+      "parameter_name": "mexico_school_burden_per_adult_annual",
+      "value_numeric": 771,
+      "unit": "USD per adult per year",
+      "population": "mexico_origin, per_pupil x school_age_kids/adult microsim weights",
+      "unnamed_assumption": false,
+      "page_ref": "v_three_layer_annual",
+      "notes": "Not netted into lifetime_npv; descendants K-12 not in NAS individual cell"
+    },
+    {
+      "claim_id": "R-003",
+      "source_rel_path": "warehouse/immigration_fiscal_union.duckdb",
+      "parameter_name": "mexico_crude_annual_fed_minus_school",
+      "value_numeric": 748,
+      "unit": "USD per adult per year",
+      "population": "mexico_origin",
+      "unnamed_assumption": false,
+      "page_ref": "v_three_layer_annual net_crude",
+      "notes": "Honest short-horizon object; still excludes courts, ICE, Medicaid beyond school"
+    },
+    {
+      "claim_id": "R-004",
+      "source_rel_path": "warehouse/immigration_fiscal_union.duckdb",
+      "parameter_name": "mexico_local_flow_per_pupil_scenario",
+      "value_numeric": 20907,
+      "unit": "USD per pupil",
+      "population": "mexico_origin scenario ledger",
+      "unnamed_assumption": true,
+      "page_ref": "v_country_fiscal_rollup local_flow",
+      "notes": "UNIT MISMATCH — do not subtract from NPV per adult directly"
+    },
+    {
+      "claim_id": "R-005",
+      "source_rel_path": "external/lifetime/cbo/cbo_61256_immigration_state_local_alt.pdf",
+      "parameter_name": "cbo_state_local_direct_per_surge_resident_2023",
+      "value_numeric": 657,
+      "unit": "USD per person per year",
+      "population": "added surge residents, state/local direct costs",
+      "unnamed_assumption": true,
+      "page_ref": "cluster O O-02; $9.2B / 14M unauthorized [INFERENCE]",
+      "notes": "Not in NAS lifetime_npv rollup"
+    },
+    {
+      "claim_id": "R-006",
+      "source_rel_path": "research/.mining/immigration-lifetime-cluster-j-admin.json",
+      "parameter_name": "cbp_ice_budget_per_unauthorized_stock",
+      "value_numeric": 2107,
+      "unit": "USD per unauthorized per year",
+      "population": "FY25 CBP $19.8B + ICE $9.7B / 14M Pew stock",
+      "unnamed_assumption": true,
+      "page_ref": "J-001 + J-005 / Pew 14M",
+      "notes": "Full-budget allocation overstates marginal cost; fixed overhead not separable in headline"
+    },
+    {
+      "claim_id": "R-007",
+      "source_rel_path": "research/.mining/immigration-lifetime-cluster-j-admin.json",
+      "parameter_name": "ice_detention_bed_cost_per_day_fy23",
+      "value_numeric": 187.48,
+      "unit": "USD per bed-day",
+      "population": "ICE adult detention FY2023",
+      "unnamed_assumption": false,
+      "page_ref": "J-007",
+      "notes": "Marginal path for G-LIF-R03; not in NAS NPV"
+    },
+    {
+      "claim_id": "R-008",
+      "source_rel_path": "life.receiver_city_migrant_costs",
+      "parameter_name": "nyc_asylum_shelter_fy2024",
+      "value_numeric": 3700000000,
+      "unit": "USD annual",
+      "population": "NYC citywide asylum/shelter FY2024",
+      "unnamed_assumption": false,
+      "page_ref": "receiver_city_migrant_costs",
+      "notes": "Episodic local ℓ — surge-era, not Mexico-stock lifetime scalar"
+    },
+    {
+      "claim_id": "R-009",
+      "source_rel_path": "life.npv_education_benchmarks",
+      "parameter_name": "nas_individual_excludes_descendants",
+      "value_numeric": null,
+      "value_text": "includes_descendants=false for warehouse lifetime_npv cells",
+      "unit": "boolean",
+      "population": "NAS Table 8-13 individual column",
+      "unnamed_assumption": false,
+      "page_ref": "build_country_fiscal_tensor.py join filter",
+      "notes": "US-born children fiscal path booked separately in NAS total columns"
+    },
+    {
+      "claim_id": "R-010",
+      "source_rel_path": "immigration-mexico-npv-population-synthesis-2026-06-15.md",
+      "parameter_name": "mexico_stacked_npv_band_after_missing_layers",
+      "value_range": [-37000, 28000],
+      "unit": "USD per adult NPV equiv",
+      "population": "mexico_origin illustrative stack",
+      "unnamed_assumption": true,
+      "page_ref": "memo §I stacked ledger",
+      "notes": "INFERENCE — enforcement allocation dominates sign swing"
+    }
+  ],
+  "generators": [
+    {
+      "id": "G-LIF-R01",
+      "prompt": "Before citing any NAS NPV scalar: list {in: federal, state/local in cell, descendants, public goods, enforcement, courts, episodic shelter}. Block net-contributor language until missing ℓ tagged.",
+      "retrodiction": "Would have blocked +$46k Mexico headline without descendants excluded and ICE/EOIR absent.",
+      "negative_space": "NAS individual NPV treated as all-government lifetime net"
+    },
+    {
+      "id": "G-LIF-R02",
+      "prompt": "Cross-check NAS individual cell vs school_burden_per_adult for double-count. Individual=no descendants → add current-HH school layer separately.",
+      "retrodiction": "Would have separated NAS path from $771/yr school before merging.",
+      "negative_space": "Subtract school on NAS without descendant booking check"
+    },
+    {
+      "id": "G-LIF-R03",
+      "prompt": "Allocate CBP+ICE via explicit rule: per encounter, per bed-day, per unauthorized stock, or fixed national. Tag fixed vs marginal.",
+      "retrodiction": "Would have flagged ~$2.1k/yr enforcement missing from lifetime NPV.",
+      "negative_space": "Full agency budget per average immigrant"
+    },
+    {
+      "id": "G-LIF-R04",
+      "prompt": "Join EOIR case load × nationality to origin cells; $/case for asylum backlog cohorts. Separate from NAS criminal justice.",
+      "retrodiction": "Would have surfaced staged EOIR with no Mexico rollup.",
+      "negative_space": "Court costs zero or inside NAS cell"
+    },
+    {
+      "id": "G-LIF-R05",
+      "prompt": "Export v_full_fiscal_stack: columns per ℓ + overlap matrix. Headline = vector never scalar.",
+      "retrodiction": "Would have required three-layer + lifetime + admin before Mexico net thesis.",
+      "negative_space": "Single number politics"
+    }
+  ],
+  "overlap_matrix": {
+    "lifetime_npv_vs_school_burden": "NAS individual excludes descendants → school_burden_per_adult is largely additive, not double-count",
+    "lifetime_npv_vs_local_flow": "local_flow is per_pupil scenario — incompatible unit; use school_burden_per_adult instead",
+    "lifetime_npv_vs_nas_state_local_inside_cell": "partial overlap — do not subtract full CBO state/local without bridge",
+    "enforcement_vs_federal_annual_proxy": "SIPP federal proxy excludes detention/ICE — additive",
+    "eoir_vs_nas": "additive — not in education NPV rows"
+  },
+  "honest_objects": {
+    "short_horizon_crude": "federal_annual - school_burden_per_adult = +$748/yr (mexico_origin)",
+    "lifetime_partial": "lifetime_npv NAS mix = +$45,631/adult — federal/education-cell upper bound",
+    "lifetime_stack_target": "lifetime_npv | school_npv | state_local_npv | admin | courts | episodic_local"
+  }
+}

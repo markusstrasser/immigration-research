@@ -1,0 +1,34 @@
+{
+  "sweep": 23,
+  "mined_at": "2026-06-15T11:26:59.905451+00:00",
+  "claims": [
+    {
+      "id": "S23-01",
+      "param": "npv_immigrant_lt_hs_individual",
+      "value": -109000,
+      "unit": "2012 USD",
+      "ref": "Table 8-13"
+    },
+    {
+      "id": "S23-02",
+      "param": "npv_immigrant_hs_individual",
+      "value": 49000,
+      "unit": "2012 USD",
+      "ref": "Table 8-13"
+    },
+    {
+      "id": "S23-03",
+      "param": "npv_immigrant_somcol_individual",
+      "value": 205000,
+      "unit": "2012 USD",
+      "ref": "Table 8-13"
+    },
+    {
+      "id": "S23-04",
+      "param": "npv_immigrant_ba_individual",
+      "value": 514000,
+      "unit": "2012 USD",
+      "ref": "Table 8-13"
+    }
+  ]
+}
