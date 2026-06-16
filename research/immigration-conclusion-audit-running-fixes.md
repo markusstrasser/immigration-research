@@ -1980,3 +1980,23 @@ Replaced "pressure" and "local-burden ledger" phrasing with median-county count/
 ### Updated conclusion
 
 The domestic-vs-abroad comparison now supports only a descriptive median-county denominator correction; it cannot dismiss immigrant-specific receiver-node burden channels without a separate incidence design. [INFERENCE]
+
+---
+
+## 2026-06-16 — Wage-response shorthand kept off equivalence
+
+### Issue
+
+`research/immigration-causal-synthesis-2026-04-18.md`, `research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md`, and `research/immigration-causal-everify-card-vs-borjas.md` still used residual shorthand such as "small/null," "do not measurably respond," and "does not measurably transfer rents" for observed E-Verify/sanctuary QWI wage results. [DATA]
+
+### Why it was wrong
+
+The designs support no statistically significant positive QWI wage effect and reject large Borjas-style gains in the tested margins. They do not prove an equivalence-tested zero or rule out small wage effects. Shorthand like "small/null" can collapse large-gain rejection into a stronger no-effect conclusion. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Replaced the active shorthand with no-statistically-significant-positive-QWI-wage-effect language, kept the large-gain rejection, and explicitly preserved small effects, employment composition, hours, occupational sorting, cash-economy, and shock-regime channels as outside the current wage result. [SOURCE: memo]
+
+### Updated conclusion
+
+The wage evidence now reads as a bounded statistical result: large native wage gains are not observed in the tested QWI policy margins, but small or unmeasured labor-market effects remain open. [INFERENCE]
