@@ -211,7 +211,7 @@ That is essentially our unified theory sentence 1 — restrictionists are right 
 | All immigrants fiscal negative | **False** — NAS BA/+ cells strongly positive |
 | All immigration hurts average native wages | **Contested** — Card/null areas; small average effects |
 | 10M encounters = 10M new illegals | **False** — stock +3.5–5.6M |
-| Crime wave from unauthorized | **Mostly false** — repo crime memo |
+| Crime wave from unauthorized | **Unsupported by observed U.S. justice-system-rate evidence** — true-offending and current-surge subgroup scope remain narrower |
 | Local shelter/school shock in surge cities | **Supported as gross episodic receiver-stress layer** — Gould 60%, NYC $B; not net/system-collapse proof |
 | Low-skill lifetime fiscal negative (individual NAS) | **True under NAS assumptions** for `<HS` cell |
 | +$46k Mexico = net contributor all-in | **Unsupported / invalid scalar export** — missing admin, courts, full local |
@@ -255,3 +255,4 @@ That is essentially our unified theory sentence 1 — restrictionists are right 
 | 2026-06-16 | Aligned the `+$46k Mexico` all-in row with the Mexico NPV memo: omitted layers make the scalar export unsupported, not a measured all-in negative result. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Scoped the "Mexico +$46k kills Mexican drain" line: the benchmark blocks `<HS`-only exports, not full-ledger all-in drain claims. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Marked the FAIR taxpayer-drain policy implication as FAIR's conditional claim, not the repo's unqualified conclusion. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Scoped the crime-wave disconfirmation row to observed U.S. justice-system-rate evidence rather than true offending or all current-surge subgroups. See `immigration-conclusion-audit-running-fixes.md`. |
