@@ -1960,3 +1960,23 @@ Marked the implication as a "Razin-style model claim" and reframed it as a possi
 ### Updated conclusion
 
 The welfare-magnet chain remains a live restrictionist mechanism, but it is now explicitly conditional on the model rather than a repo-level fiscal-unsustainability verdict. [INFERENCE]
+
+---
+
+## 2026-06-16 — Newcomer denominator comparison kept off burden pressure
+
+### Issue
+
+`research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md` said "Most county newcomer pressure is not immigration-specific" and that the "local-burden ledger is mostly domestic-mover driven" based on the IRS domestic U.S.-origin flow versus ACS moved-from-abroad median-county comparison. [DATA]
+
+### Why it was wrong
+
+The comparison is a useful denominator correction: at the median county, domestic U.S.-origin mover counts are much larger than moved-from-abroad counts. But the inputs are not like-for-like burden measures, the IRS series is not native-only, and the median-county comparison does not measure concentrated receiver-node shelter, legal, language, school, or wage incidence. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Replaced "pressure" and "local-burden ledger" phrasing with median-county count/denominator language in the top verdict table, Statement 2, and embedded ladder reason. [SOURCE: memo]
+
+### Updated conclusion
+
+The domestic-vs-abroad comparison now supports only a descriptive median-county denominator correction; it cannot dismiss immigrant-specific receiver-node burden channels without a separate incidence design. [INFERENCE]
