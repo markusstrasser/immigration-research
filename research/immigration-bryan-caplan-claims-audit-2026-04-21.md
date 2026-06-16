@@ -108,7 +108,7 @@ What cuts against him:
 
 1. In counties with very high recent immigration and low permit throughput, `2021–2024` weekly wage growth is about `1.5 pp` lower. [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
 2. CBO projects that through `2026`, wage growth for non-surge workers with `12 or fewer years of education` is slightly lower than in the no-surge counterfactual. [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf]
-3. The strongest current worker-incidence channel is not `job destruction`; it is `slower wage progression in constrained places`. [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
+3. In the repo's current worker-incidence evidence surface, the better-developed concern is not broad `job destruction`; it is slower wage progression in constrained places. [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [INFERENCE]
 
 Verdict:
 
@@ -315,6 +315,7 @@ So the final score is:
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced the "strongest current worker-incidence channel" shortcut with evidence-surface language: current memos better develop constrained-place wage progression than broad job destruction. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced first-binding culture and political-externality shortcuts with evidence-surface language: housing/service/political channels are better developed in current memos, not proven universally primary. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced remaining "Caplan is right" labels with claim-support language, including global-gains, ledger-blurring, labor-collapse, and DAG framing. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual right/wrong and wins/loses verdict labels with strongest/weakest/support language while preserving the same claim ranking. See `immigration-conclusion-audit-running-fixes.md`. |
