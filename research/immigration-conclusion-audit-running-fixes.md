@@ -24,7 +24,7 @@ FROM v_three_layer_annual
 WHERE population_group = 'mexico_origin';
 ```
 
-Current DuckDB result from `warehouse/immigration_fiscal_union.duckdb`:
+Then-current DuckDB result from `warehouse/immigration_fiscal_union.duckdb`, now superseded by the 2026-06-16 same-universe guard:
 
 | federal_per_adult | school_per_adult | net_crude_per_adult | weight_adults |
 |------------------:|-----------------:|--------------------:|--------------:|
@@ -36,7 +36,7 @@ Scenario source check from `warehouse/immigration_lifetime_evidence.duckdb`:
 |--------|----------------:|----------------:|-------------------:|-------------------:|----------:|
 | Mexico | 436819 | 1519.278 | 20907.09 | 0.9718 | 322540 |
 
-The old ~-$13.5k conclusion came from dividing the household school burden by the scenario subset. The corrected school burden is about:
+The old ~-$13.5k conclusion came from dividing the household school burden by the scenario subset. The intermediate correction computed school burden as:
 
 `20907.09 * 0.9718 * 322540 / 8496334 = ~$771/adult` [INFERENCE]
 
