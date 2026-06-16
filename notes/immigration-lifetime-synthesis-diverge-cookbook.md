@@ -2,7 +2,7 @@
 
 **Purpose:** Reusable prompt template for the loop that worked in rounds 1–10: **diverge** (data + generators + angles) → **converge** (unified theory + formal multi-model critique) → repeat with a sharper thesis.
 
-**Instance memos:** `research/immigration-lifetime-unified-theory-2026-06-15.md`, `notes/immigration-lifetime-sweep-protocol.md`
+**Instance memos:** `research/immigration-lifetime-unified-theory-2026-06-15.md`, `notes/immigration-lifetime-sweep-protocol.md`, `research/immigration-thesis-generator-audit-2026-06-16.md`
 
 **Principle:** Data does not automatically kill a good explanation — it kills bad **scalar exports** and unnamed **layer laundering**. Synthesis names the object; divergence hunts what the current frame excludes.
 
@@ -169,13 +169,13 @@ After mining: rebuild DuckDB, regenerate `research/immigration-lifetime-fiscal-g
 
 ### A5. Generator quality gate
 
-From `leverage/references/generators.md`:
+From `~/Projects/skills/leverage/references/generators.md`:
 
 1. **Cluster** miss-patterns into abstract moves (not one generator per paper).
 2. **Retrodiction:** each generator must retrodict ≥2 prior findings.
 3. **Negative space:** name what the frame excludes.
 4. **Consumption:** every generator links to DuckDB test or explicit data gap.
-5. **Retire** generators that cycle twice with zero adopted output.
+5. **Park** generators that cycle twice with zero adopted output while applicable; retirement is manual and append-only.
 
 ---
 
@@ -287,11 +287,13 @@ Paste at top of `## V. Thesis burst` every sweep:
 |----------|------|-------|
 | Brainstorm angles | `research/immigration-lifetime-dataset-brainstorm-*.md` | ☐ |
 | Manifest rows | `infra/immigration-fiscal/DOWNLOAD_MANIFEST.tsv` | ☐ |
-| Staged files | `external/lifetime/` | ☐ |
+| Staged files | `infra/immigration-fiscal/external/lifetime/` (from acquisition cwd) | ☐ |
 | Mining JSON | `research/.mining/immigration-lifetime-cluster-*.json` | ☐ |
 | Generators registry | `research/immigration-lifetime-fiscal-generators.md` | ☐ |
 | DuckDB rebuild | `bash rebuild_lifetime_warehouse.sh` | ☐ |
 | **Unified theory** | `research/immigration-lifetime-unified-theory-*.md` | ☐ |
+| Cross-disciplinary audit | `research/immigration-thesis-generator-audit-2026-06-16.md` | ☐ |
+| Running fixes | `research/immigration-conclusion-audit-running-fixes.md` | ☐ |
 | Index row | `research/immigration-INDEX.md` | ☐ |
 
 ---
@@ -318,6 +320,7 @@ Paste at top of `## V. Thesis burst` every sweep:
 | Full sweep diverge | `brainstorm more angles → probe → acquire → mine 4 clusters → rebuild DuckDB` |
 | Full sweep converge | `run converge pass per notes/immigration-lifetime-synthesis-diverge-cookbook.md Phase B` |
 | Generators only | `mine cluster {X}; retrodiction-test; append to generators MD` |
+| Cross-disciplinary generators | `run research/immigration-thesis-generator-audit-2026-06-16.md XDISC packet before source search` |
 | Theory only | `update unified theory + 5 models; thesis burst; 3 falsifiers` |
 | Negative space | `what layer is the current thesis silently exporting? name 5 unnamed assumptions` |
 

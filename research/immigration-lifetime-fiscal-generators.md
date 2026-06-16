@@ -3,7 +3,7 @@
 **Date:** 2026-06-15 (rounds A–P)
 **DuckDB:** `warehouse/immigration_lifetime_evidence.duckdb`
 
-**Totals:** 179 claims, 105 generators across 19 clusters (Q,R,S added 2026-06-15; S06–S15 from marker-modal parse 2026-06-15).
+**Totals:** 563 DuckDB `parameter_claims`, 106 Markdown `G-LIF-*` headings / 104 DuckDB `lifetime_generators` rows across 19 clusters (Q,R,S added 2026-06-15; S06–S15 from marker-modal parse 2026-06-15). Count reconciliation pending: MD-only IDs are `G-LIF-Q06` and `G-LIF-S15`. See `immigration-thesis-generator-audit-2026-06-16.md`.
 
 ## A_npv_generational
 
