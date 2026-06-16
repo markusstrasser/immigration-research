@@ -1640,3 +1640,23 @@ Replaced "right/correct" language with support for the small-native-wage-effect 
 ### Updated conclusion
 
 The Clark-side wage premise is stronger than the repo initially allowed for observed marginal enforcement variation, but the repo no longer calls the economists globally right even on a compressed "wage channel" label. [INFERENCE]
+
+---
+
+## 2026-06-16 — Capacity frontier settling language narrowed to descriptive updates
+
+### Issue
+
+`research/immigration-capacity-frontier-2026-04-21.md` still said earlier county passes "established" the relevant variables and titled its final synthesis "What this settles, and what it does not." [DATA]
+
+### Why it was wrong
+
+The memo's own scope note says `HIGH` and `VERIFIED` refer to reproducible model-output patterns, not clean causal effects. County capacity regressions can sharpen descriptive stress objects and research priorities, but they do not settle the local-incidence causal graph. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed "established" to "suggested," retitled the final section as "What this updates, and what it does not settle," and changed "real residual signal" to "model residual signal." [SOURCE: memo]
+
+### Updated conclusion
+
+The capacity-frontier memo now exports descriptive model-output updates rather than settled causal conclusions about flow/capacity thresholds. [INFERENCE]
