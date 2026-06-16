@@ -127,7 +127,7 @@ National **education×experience** framing is more coherent than “city has imm
 ### Hanson composition (w23753) — supporting thread
 
 - Low-skilled immigration **slowed** post-2007; undocumented **declined**; selection from Mexico less negative over time. [SOURCE: Hanson w23753 abstract region]
-- Restrictionist use: when inflows **resume** (2021–23), wage pressure on low-skill natives returns — Hanson implies **+24% wage effect** if inflow had stayed at 1994–2007 pace [INFERENCE from Hanson model discussion in paper].
+- Restrictionist use: Hanson supplies a labor-supply counterfactual, not a direct `2021–2023` wage forecast. His model implies the college/low-skill skill premium would have been about **6–9 percentage points higher in 2015** if low-skill inflows had continued at the earlier pace; applying that to surge-era wage pressure requires a separate cohort, geography, and labor-demand bridge. [SOURCE: research/immigration-restrictionist-corpus-parse-2026-06-15.md] [INFERENCE]
 
 ---
 
@@ -249,6 +249,7 @@ That is essentially our unified theory sentence 1 — the restrictionist case is
 
 | Date | Note |
 |------|------|
+| 2026-06-16 | Replaced the Hanson `+24% wage effect` / 2021-23 wage-pressure export with the source's narrower skill-premium counterfactual and an explicit bridge requirement. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-15 | Initial steel-man map from corpus PDFs + FAIR web |
 | 2026-06-16 | Replaced binary "restrictionists are right/wrong" synthesis with support/weakness language around layer multiplication versus scalar collapse. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Reframed FAIR from "upper-bound political ledger" to advocacy high-cost ledger; its assumptions are not a mathematical upper bound and need reconciliation against ITEP/Pew before warehouse use. See `immigration-conclusion-audit-running-fixes.md`. |
