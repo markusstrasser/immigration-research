@@ -129,7 +129,7 @@ For this enforcement margin, the adjustment looks Card-style: the wage curve is 
 
 5. **Unauthorized substitution to cash economy.** If displaced unauthorized workers stayed in the same labor market but moved to off-W-2 jobs (day labor, gig), QWI misses them. The "true" labor supply contraction was probably less than the QWI E1 employment drop suggests, which makes the wage non-result MORE puzzling for Borjas, not less.
 
-6. **External validity.** This is the policy variation we have. Results may not generalize to a hypothetical mass deportation, large refugee inflow, or border closure. But it IS the relevant test for the actual policy debate: marginal tightening of unauthorized labor supply via enforcement.
+6. **External validity.** This is the policy variation we have. Results may not generalize to a hypothetical mass deportation, large refugee inflow, or border closure. It is one relevant test for marginal tightening of unauthorized labor supply via state enforcement mandates, not the policy debate as a whole.
 
 ## What this updates in the existing repo
 
@@ -181,6 +181,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Narrowed the external-validity caveat from "the relevant test for the actual policy debate" to one relevant test for marginal enforcement mandates. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "do not move wages much" summary with bounded no-large-native-wage-loss/gain language and separated it from any shared mechanism claim. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "does not measurably transfer rents" shorthand with no-statistically-significant higher-QWI-wage transfer language; small effects remain outside rejection. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Scoped the title/question and bottom-line employment/wage shortcut to the observed QWI E-Verify wage-channel test rather than a broad Card-vs-Borjas verdict for U.S. data. See `immigration-conclusion-audit-running-fixes.md`. |

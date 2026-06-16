@@ -2060,3 +2060,23 @@ Changed the Card/Mariel wording to no detected adverse effect, retitled the conf
 ### Updated conclusion
 
 The repo now treats the Card-side stack as bounded wage-impact evidence, not as proof of zero wages or a single identified complementarity mechanism. [INFERENCE]
+
+---
+
+## 2026-06-16 — E-Verify external-validity claim narrowed
+
+### Issue
+
+`research/immigration-causal-everify-card-vs-borjas.md` said the E-Verify QWI design "IS the relevant test for the actual policy debate" after noting it may not generalize to mass deportation, large refugee inflow, or border closure. [DATA]
+
+### Why it was wrong
+
+Observed state E-Verify mandates are one important marginal-enforcement design. They are not the whole policy debate, which includes border closure, interior enforcement intensity, mass deportation, benefit restrictions, legal admissions, and surge regimes. Calling it "the" relevant test overstates external validity. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the external-validity caveat to say the E-Verify design is one relevant test for marginal tightening of unauthorized labor supply via state enforcement mandates, not the policy debate as a whole. [SOURCE: memo]
+
+### Updated conclusion
+
+The E-Verify memo now keeps its policy relevance without treating one marginal-enforcement design as sufficient for all immigration-policy wage claims. [INFERENCE]
