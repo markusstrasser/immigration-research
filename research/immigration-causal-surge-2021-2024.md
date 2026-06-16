@@ -147,7 +147,7 @@ Bounded to enforcement at observed magnitudes (E-Verify mandates, sanctuary poli
 ### Domestic-vs-abroad median newcomer ratio — receiver-node caveat
 The corrected median-county comparison is about 21.7x for the ratio of medians and 20.5x for the median county-level ratio among counties with nonzero moved-from-abroad share. This is domestic U.S.-origin movement versus moved-from-abroad flow, not native identity. But the median county is not a receiver-node estimand: concentrated surge destinations can face immigrant-specific shelter, legal, language, and school burdens that the national median domestic-vs-abroad ratio does not measure. [SOURCE: research/immigration-causal-internal-vs-immigrant-newcomers.md] [INFERENCE]
 
-### "Open-borders verdict is welfare-weight-determined" — strengthened
+### Open-borders verdict has welfare-weight and capacity-input components
 The surge revealed that some receiver-node capacity constraints can bind faster than the static calibration suggested. NYC/Chicago/Denver hit visible budget or shelter thresholds within ~12-18 months of surge onset. This is directionally consistent with the GPT-5.4 calibration's claim that housing/construction can bind in year 1 under very large arrival scenarios, but it is not a validation of the calibration's national 10M+/year threshold or a measured national capacity function.
 
 ### Mass-deportation simulation — not yet quantitatively validated
@@ -242,6 +242,8 @@ But:
 - **2026-06-16:** Replaced residual "Card-wins" ladder title with bounded Card-side wage-finding language. See `immigration-conclusion-audit-running-fixes.md`.
 
 - **2026-06-16:** Replaced residual "surge exposure" election wording with receiver/border indicator language; the association is not a measured exposure dose or causal surge effect. See `immigration-conclusion-audit-running-fixes.md`.
+
+- **2026-06-16:** Replaced residual "welfare-weight-determined" heading with normative-weight plus empirical-capacity-input language. See `immigration-conclusion-audit-running-fixes.md`.
 
 - **2026-06-11b (supersedes 2026-06-11a where they conflict):** Running the morning's two pre-registered kill-tests exposed two bugs in `parse_ohss_enforcement.py`: fiscal-index dates (every non-January window scrambled) and an agency-block dict-overwrite (the series was OFO port-of-entry encounters — the CHNV program's own lawful channel — read as total SWB). Consequences: (1) Key finding 2 is **reversed** — corrected USBP data show between-port crossings collapsed −95%/−96%/−58% (Cuba/Nicaragua/Venezuela) after each nationality's program start with flat pre-trends; the "+787% rise" was the lawful channel itself; corrected total-CBP DiD is null (β=+0.45, t=1.29). CHNV substituted channels; it did not reduce total arrivals (~530K paroles are planned lawful inflow — receiver-load ledger unaffected). (2) The monthly narrative (incl. "April-May 2023 lull") is wrong: corrected series shows an April-May anticipation spike, June post-lift crash (−30%), and the Dec 2023 record (301,980); the conclusion "lift ≠ surge cause" survives on this new evidence. (3) Finding 3's receiver swing **survived** its Hispanic-share kill-test (β +0.0256 → +0.0238, t≈7.2; Hispanic share itself t=17.2). Ladder entries 34-37; decision record [2026-06-11-ohss-date-universe-bugs-chnv-reversal](../decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md).
 
