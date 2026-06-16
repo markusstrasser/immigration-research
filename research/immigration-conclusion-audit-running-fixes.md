@@ -1323,6 +1323,26 @@ The capacity memo still shows a useful load-capacity/native-migration associatio
 
 ---
 
+## 2026-06-16 — Surge ladder stopped endorsing decisive Card-side phrasing
+
+### Issue
+
+`research/immigration-causal-surge-2021-2024.md` and confidence-ladder entry 29 said prior entries claimed a "decisive Card-side win for U.S. policy variation" and then treated that as true for 2008-2021 variation. [DATA]
+
+### Why it was wrong
+
+The static-cycle wage work supports a bounded Card-side reading for observed E-Verify/sanctuary-style marginal policy variation. Calling it "decisive" for U.S. policy variation over-compresses the external-validity boundary and conflicts with later caveats around surge and mass-shock regimes. [INFERENCE]
+
+### Fix
+
+Rewrote entry 29 in both the surge memo and standalone confidence ladder to say the prior phrasing was overcompressed and that the safer reading is strong Card-side evidence for observed 2008-2021 marginal policy variation. Added a surge memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The surge memo still marks 2021-2024 as outside the static-cycle wage variation, but it no longer endorses the static-cycle result as a decisive general U.S. policy verdict. [INFERENCE]
+
+---
+
 ## 2026-06-16 — Open-borders weight framing separated from empirical inputs
 
 ### Issue
