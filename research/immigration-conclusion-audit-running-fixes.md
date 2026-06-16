@@ -2260,3 +2260,23 @@ Changed entry 24 to treat E-Verify employment as, at most, a weak plausibility c
 ### Updated conclusion
 
 The ladder now separates a bounded empirical employment signal from a national partial-equilibrium deportation calibration. [INFERENCE]
+
+---
+
+## 2026-06-16 — Card setup kept as prediction language
+
+### Issue
+
+`research/immigration-causal-everify-card-vs-borjas.md` described the Card-side theory setup as "Removing [low-skill immigrants] via enforcement will produce small or zero wage gains for natives." [DATA]
+
+### Why it was wrong
+
+That section is a theory/prediction contrast, not a measured result. "Will produce" can read as an established claim rather than the Card-side prediction being tested by the E-Verify design. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the line to "is predicted to produce small or zero wage gains," keeping the subsequent empirical result separate from the setup. [SOURCE: memo]
+
+### Updated conclusion
+
+The E-Verify memo now distinguishes theory expectations from observed QWI findings in the interpretation setup. [INFERENCE]
