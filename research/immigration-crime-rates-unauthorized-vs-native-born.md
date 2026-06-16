@@ -111,7 +111,7 @@ The study has been criticized for a **fundamental data classification error:**
 
 5. **Author context:** Lott has a history of controversial methodological claims (the "More Guns, Less Crime" debate) and has faced criticism of his research practices in other domains.
 
-**Assessment:** [D4] — not usually reliable source (advocacy-adjacent), doubtful information given that the specific data classification it depends on has been shown to be unreliable by multiple independent critics. This study is an outlier in the literature and its central data problem has not been resolved.
+**Assessment:** [D4] — not usually reliable source (advocacy-adjacent), doubtful information given that the specific data classification it depends on has been seriously challenged by multiple independent critics. This study is an outlier in the literature and its central data problem has not been resolved.
 
 ---
 
@@ -204,7 +204,7 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 | 3 | Undocumented immigrants 33% less likely to be institutionalized than US natives nationally | ACS data + IV | MODERATE | Gunadi 2019 | VERIFIED |
 | 4 | Meta-analytic average effect of immigration on crime: r = -0.031 (negative, very weak) | 51 studies, 543 effect sizes | HIGH | Ousey & Kubrin 2018 | VERIFIED |
 | 5 | Longitudinal studies show stronger negative effect (r = -0.147) than cross-sectional (r = 0.000) | Moderator analysis within meta-analysis | HIGH | Ousey & Kubrin 2018 | VERIFIED |
-| 6 | Lott's Arizona study claiming higher rates has a fundamental data classification flaw | Multiple independent critiques (Cato, WaPo, Latino Decisions) | HIGH | Nowrasteh 2022; WaPo 2018 | VERIFIED |
+| 6 | Lott's Arizona study claiming higher rates faces a serious unresolved immigration-status classification critique | Multiple independent critiques (Cato, WaPo, Latino Decisions); no independent reanalysis in this memo | MODERATE-HIGH | Nowrasteh 2022; WaPo 2018 | SUPPORTED CRITIQUE — not independent reanalysis |
 | 7 | ICE national docket shows ~15K noncitizens with homicide convictions/charges | Official ICE data released to Congress | HIGH (as administrative count) | ICE ERO letter, Sept 2024 | VERIFIED — but measures stock, not rate |
 | 8 | European evidence is more mixed; some immigrant groups show higher crime | Scandinavian studies | LOW-MODERATE | Skardhamar et al. 2014 | PRELIMINARY — fetched but not fully analyzed |
 | 9 | Second-generation immigrants have higher crime rates than first generation, converging toward native-born levels | Multiple studies | HIGH | Ousey & Kubrin 2018; Rumbaut 2008 | VERIFIED |
@@ -264,3 +264,4 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 |------|--------|
 | 2026-06-16 | Bounded the search-log wording for higher-rate studies: the Exa pass did not find a peer-reviewed higher-rate study, but that is a search-result statement, not a proof of absence across the literature. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Downgraded the European mixed-evidence table row from `VERIFIED (direction), not fully analyzed` to `PRELIMINARY`; fetched-but-unread evidence should not carry a verified status. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Reframed the Lott Arizona critique row from `HIGH/VERIFIED` fundamental flaw to a supported unresolved classification critique, because the memo cites critiques rather than running an independent data reanalysis. See `immigration-conclusion-audit-running-fixes.md`. |
