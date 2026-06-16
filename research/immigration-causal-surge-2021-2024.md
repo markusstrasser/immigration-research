@@ -66,7 +66,7 @@ Event study:
 
 **Combined major receivers:** ~$5B+/year peak (FY2024) across the most-affected cities. This is real gross fiscal pressure on local budgets — clearly visible system load consistent with a receiver-capacity stress interpretation. It is not a net fiscal-burden estimate.
 
-Per-migrant per-day cost: ~$190 NYC, ~$200 Denver, ~$140 Chicago. Total 5-year cost across these cities: $13B+ across local + state combined.
+Per sheltered-migrant-day gross cost: ~$190 NYC, ~$200 Denver, ~$140 Chicago, using city-reported shelter/care denominators where available. Total 5-year cost across these cities: $13B+ across local + state combined.
 
 ### 2024 election shift x receiver/border indicators
 
@@ -121,10 +121,10 @@ Per-migrant per-day cost: ~$190 NYC, ~$200 Denver, ~$140 Chicago. Total 5-year c
 [BIAS CAVEAT] The instrument (LLM) has known training-time priors on politically charged interpretation. The numbers above are administrative; interpretations below are scenarios.
 
 **Most-defensible reading:**
-The 2024 election shift was real and correlated with the memo's receiver-city / border-county indicators. Bused-migrant receiver counties (NYC, Chicago, Boston, Denver) and border/high-immigration counties in the screen (TX RGV, El Paso, Miami-Dade) swung 4-11pp more GOP than the national county baseline. After controlling for state effects and population size, receiver-city status alone is associated with +2.4pp GOP shift. The fb_share coefficient (positive) and recent_fb_inflow coefficient (negative) suggest different mechanisms: established immigrant communities (Hispanic citizens in TX/FL/NY) moved toward Trump, while areas with higher recent foreign-born inflow moved less Republican on net (could reflect new citizens, sympathetic natives, or unresolved compositional confounding).
+The 2024 election shift was real and correlated with the memo's receiver-city / border-county indicators. Individual bused-migrant receiver counties (NYC, Chicago, Boston, Denver) and border/high-immigration counties in the screen (TX RGV, El Paso, Miami-Dade) had raw GOP shifts in the +4 to +11pp range. After controlling for state effects and population size, receiver-city status alone is associated with about +2.4pp GOP shift. The fb_share coefficient (positive) and recent_fb_inflow coefficient (negative) suggest different mechanisms: established immigrant communities (Hispanic citizens in TX/FL/NY) moved toward Trump, while areas with higher recent foreign-born inflow moved less Republican on net (could reflect new citizens, sympathetic natives, or unresolved compositional confounding).
 
-**The "receiver capacity stress" reading has empirical support:**
-NYC went from $1.4B→$3.7B on migrant care in one year. Cook County (Chicago) cost $228M peak. MA hit shelter cap. Denver cut services to fund migrant care. These are observable, quantifiable gross system loads concentrated in specific places — not net burden estimates — and those places swung substantially toward Trump in 2024.
+**The "receiver capacity stress" gross-load reading has empirical support; the election link remains correlational:**
+NYC went from $1.4B→$3.7B on migrant care in one year. Cook County (Chicago) cost $228M peak. MA hit shelter cap. Denver cut services to fund migrant care. These are observable, quantifiable gross system loads concentrated in specific places — not net burden estimates. Those places also swung toward Trump in 2024, but the political link should be read as a correlational receiver-indicator result (about +2.4pp after controls), not a joint causal fiscal-load→vote estimate.
 
 **The "this was just inflation/Hispanic-realignment" reading is incomplete:**
 Both effects exist. The pre-registered Hispanic-share kill-test left the receiver coefficient nearly unchanged (+0.0256 → +0.0238), so the named rival channel did not erase the receiver association. But the raw +4.4pp receiver/non-receiver gap is not a causal headline; use the controlled +2.4pp as the bounded claim.
@@ -218,7 +218,7 @@ not warranted.
 
 The user's critique was correct: linear/static models calibrated on pre-2020 variation cannot tell us what the surge did. Direct surge-period data show:
 
-1. **The flows were real and large** (~50K/month sustained 2023-2024)
+1. **The flows were real and large**: Total-CBP monthly encounters in the corrected series ranged from roughly 145K after the Title 42 lift lull to about 302K at the Dec-2023 peak.
 2. **CHNV substituted channels in its initial year** (irregular USBP crossings fell, lawful port/parole flow rose)
 3. **Receiving cities hit visible gross-load and shelter-stress thresholds** (NYC, MA, Chicago, Denver all visibly stressed)
 4. **The 2024 election bears a political imprint** (receiver cities about +2.4 pp more GOP after Hispanic-share control; correlational)

@@ -43,7 +43,7 @@ Restrictionists win politically when they **switch ledgers** the same way expans
 
 - **Mariel / area studies:** Card null in Miami; Borjas w21850, w23504 dispute with race/experience composition — **contested**, not settled. [CONTESTED EVIDENCE]
 - **GE offsets:** Peri-Ottaviano complementarity, Clemens capital-tax — partial fiscal/labor offsets. [SOURCE: unified theory M2]
-- **Our E-Verify TWFE:** Weak native wage response in QWI panel — see `immigration-causal-everify-card-vs-borjas.md`.
+- **Our E-Verify TWFE:** No statistically significant positive QWI wage effect, cutting against large native wage gains in the observed mandate margin — see `immigration-causal-everify-card-vs-borjas.md`.
 
 ### Supported restrictionist insight
 

@@ -34,7 +34,7 @@
 | # | Finding | Confidence | Method |
 |---|---------|------------|--------|
 | 1 | E-Verify mandates do not raise native low-skill wages | STRONG against large Borjas-style wage gains in this enforcement margin | TWFE on QWI 2003-23, 9 states |
-| 2 | E-Verify mandates reduce E1 employment in exposed industries ~6% (marginal) | MEDIUM | Same |
+| 2 | E-Verify mandates have a negative E1 employment point estimate in exposed industries (~6%, not conventionally significant) | LOW-MEDIUM | Same |
 | 3 | Sanctuary policy variation shows no statistically significant E1 wage effects in either direction | No significant E1 wage change observed in this design; equivalence is not tested | TWFE on QWI 2003-23, 12 sanctuary + 9 anti |
 | 4 | Immigrants concentrate in inelastic-supply MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40) | STRONG (descriptive) | Saiz × ACS 2022 5-yr, 237 MSAs |
 | 5 | The inelastic-MSA concentration is more strongly associated with WRLURI than topographic unavailability | STRONG descriptive regression, not causal channel proof | Saiz decomposition regression |
@@ -64,7 +64,7 @@ Reason: log(FB share) ~ WRLURI t=6.29*** vs unaval t=0.58. This makes zoning ref
 a plausible policy hypothesis, not an identified causal lever for immigrant rent burden.
 [SOURCE: research/immigration-causal-everify-card-vs-borjas.md, saiz_decomposition.py]
 
-21. `Sanctuary policy variation shows no significant native low-skill wage change either direction`
+21. `Sanctuary policy variation shows no statistically significant E1 QWI wage change`
 Rating: no significant E1 wage change observed in this design (aligned with E-Verify margin)
 Reason: TWFE on QWI 2003-23 with 12 pro-sanctuary + 9 anti-sanctuary states; all
 E1 specifications |t|<1.0; another QWI policy-margin check consistent with the bounded Card-side reading for observed marginal policy variation

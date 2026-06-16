@@ -10,7 +10,7 @@
 
 ## Bottom Line
 
-The weight of the evidence consistently finds that unauthorized immigrants have **lower observed arrest, conviction, or incarceration rates** than native-born US citizens in the best current U.S. datasets. That is the right measured estimand. It should not be silently upgraded to directly observed true offending, because reporting, detection, deportation, and denominator problems still matter. The one prominent study claiming the opposite (Lott 2018, Arizona) has been criticized for a fundamental data classification error by researchers across the political spectrum, including the libertarian Cato Institute.
+The weight of the evidence consistently finds that unauthorized immigrants have **lower observed arrest, conviction, or incarceration rates** than native-born US citizens in the best current U.S. datasets. That is the right measured estimand. It should not be silently upgraded to directly observed true offending, because reporting, detection, deportation, and denominator problems still matter. The one prominent study claiming the opposite (Lott 2018, Arizona) faces a serious unresolved immigration-status classification critique from researchers across the political spectrum, including the libertarian Cato Institute.
 
 However, this evidence base has real limitations that an honest assessment must name:
 
@@ -31,7 +31,7 @@ However, this evidence base has real limitations that an honest assessment must 
 - **Population denominator:** Center for Migration Studies and Pew annual state-level estimates of undocumented population.
 - **Key findings:**
   - Undocumented immigrants had substantially lower felony arrest rates than native-born citizens across all offense categories. [SOURCE: PNAS 117(51), doi:10.1073/pnas.2014704117]
-  - US-born citizens were **>2x** more likely to be arrested for violent crimes, **2.5x** for drug crimes, **>4x** for property crimes relative to undocumented immigrants. [SOURCE: same]
+  - US-born citizens were **>2x** more likely to be arrested for violent crimes, **2.5x** for drug crimes, **>4x** for property crimes relative to undocumented immigrants in the aggregate native-born denominator. This does not remove race-composition confounding by itself. [SOURCE: same] [INFERENCE]
   - For specific offenses: undocumented immigrants were roughly **half** as likely to be arrested for homicide, felonious assault, and sexual assault compared to native-born citizens. [SOURCE: same]
   - Gaps for property crimes were larger: native-born citizens 3-5x more likely for robbery, burglary, theft, arson. [SOURCE: same]
   - Trend analysis: proportion of arrests involving undocumented immigrants was stable or decreasing 2012-2018. [SOURCE: same]
@@ -99,7 +99,7 @@ John R. Lott Jr. published "Undocumented Immigrants, U.S. Citizens, and Convicte
 
 **Critical assessment:**
 
-The study has been criticized for a **fundamental data classification error:**
+The study has been criticized for a **serious possible immigration-status classification problem:**
 
 1. **Cato Institute critique (Nowrasteh):** The Arizona data Lott used does not reliably distinguish illegal immigrants from legal immigrants or naturalized citizens. The database flags were unreliable, leading to systematic misclassification. [SOURCE: https://www.cato.org/blog/fatal-flaw-john-r-lott-jrs-study-illegal-immigrant-crime-arizona]
 
@@ -200,7 +200,7 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 | # | Claim | Evidence | Confidence | Source | Status |
 |---|-------|----------|------------|--------|--------|
 | 1 | Undocumented immigrants in Texas had substantially lower felony arrest rates than native-born citizens (2012-2018) | Administrative arrest data, PNAS peer review | HIGH | Light et al. 2020, PNAS 117(51) | VERIFIED |
-| 2 | US-born citizens >2x more likely to be arrested for violent crimes than undocumented immigrants in Texas | Same dataset | HIGH | Light et al. 2020 | VERIFIED |
+| 2 | US-born citizens >2x more likely to be arrested for violent crimes than undocumented immigrants in Texas | Same dataset; aggregate native-born denominator, race-composition confound remains | HIGH | Light et al. 2020 | VERIFIED WITH DENOMINATOR CAVEAT |
 | 3 | Undocumented immigrants 33% less likely to be institutionalized than US natives nationally | ACS data + IV | MODERATE | Gunadi 2019 | VERIFIED |
 | 4 | Meta-analytic average effect of immigration on crime: r = -0.031 (negative, very weak) | 51 studies, 543 effect sizes | HIGH | Ousey & Kubrin 2018 | VERIFIED |
 | 5 | Longitudinal studies show stronger negative effect (r = -0.147) than cross-sectional (r = 0.000) | Moderator analysis within meta-analysis | HIGH | Ousey & Kubrin 2018 | VERIFIED |
@@ -267,3 +267,4 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 | 2026-06-16 | Downgraded the European mixed-evidence table row from `VERIFIED (direction), not fully analyzed` to `PRELIMINARY`; fetched-but-unread evidence should not carry a verified status. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Reframed the Lott Arizona critique row from `HIGH/VERIFIED` fundamental flaw to a supported unresolved classification critique, because the memo cites critiques rather than running an independent data reanalysis. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Downgraded the second-generation crime row from `HIGH/VERIFIED` to a scope-limited supported literature pattern; the cited evidence is broad generational literature, not unauthorized-only or current-surge evidence. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Aligned the bottom-line and contrarian-case Lott wording with the claims table: serious unresolved classification critique, not independently verified fundamental error. Added a race-composition caveat to the aggregate Texas `>2x` violent-arrest row. |

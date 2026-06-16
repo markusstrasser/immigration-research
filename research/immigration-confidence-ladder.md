@@ -87,15 +87,15 @@ Reason: without explicit horizon and counterfactuals, the phrase has almost no a
 
 17. `Large Borjas-style native wage gains under observed E-Verify mandates`
 Rating: `strong against large gains in this design`
-Reason: TWFE on QWI 2003-2023, 9 treated states (AZ, MS, SC, UT, GA, AL, NC, TN, FL), 42 controls. Coefficient on E1 in E-Verify-exposed industries: +0.51% (SE 0.81%, n=16,736). 95% CI excludes large Borjas-style magnitudes (>2.1%) for this observed mandate margin. Aligns with Card direction; not a direct replication or a global wage-family rejection. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
+Reason: TWFE on QWI 2003-2023, 9 treated states (AZ, MS, SC, UT, GA, AL, NC, TN, FL), 42 controls. Coefficient on E1 in E-Verify-exposed industries: +0.51% (SE 0.81%, n=16,736). 95% CI cuts against large Borjas-style magnitudes for this observed mandate margin, while small effects and scaled-shock benchmarks are not ruled out. Aligns with Card direction; not a direct replication or a global wage-family rejection. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md]
 
-18. `Immigrants concentrate in inelastic-supply MSAs (welfare implication for rent burden)`
+18. `Immigrants concentrate in inelastic-supply MSAs (renter-incidence warning)`
 Rating: `strong (descriptive)`
 Reason: top FB-share quintile median Saiz 2010 elasticity = 1.51, bottom = 3.40. n=237 MSAs, ACS 2018-22. Implication: rent exposure in inelastic destination markets is a stronger renter-incidence warning than the adversarial review allowed; aggregate welfare loss remains unmeasured. [SOURCE: research/immigration-causal-saiz-elasticity-rent.md]
 
 19. `Card-side bounded native-wage-impact evidence for observed low-skill shocks`
 Rating: `medium-strong`
-Reason: convergent evidence — Card 1990 Mariel, Foged-Peri 2016 Denmark refugee assignment, this cycle's E-Verify TWFE 2003-2023 — points against large native low-skill wage losses/gains in these designs. It does not identify one shared complementarity mechanism. Borjas 2017 restricted-Mariel magnitude should not be mechanically extrapolated to broader staggered designs. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md, multiple papers]
+Reason: convergent evidence — Card 1990 Mariel, Foged-Peri 2016 Denmark dispersal-policy quasi-experiment, this cycle's E-Verify TWFE 2003-2023 — points against large native low-skill wage losses/gains in these designs. It does not identify one shared complementarity mechanism. Borjas 2017 restricted-Mariel magnitude should not be mechanically extrapolated to broader staggered designs. [SOURCE: research/immigration-causal-everify-card-vs-borjas.md, multiple papers]
 
 ## Paradigm-escape layer added 2026-04-18 (evening)
 
@@ -103,7 +103,7 @@ Reason: convergent evidence — Card 1990 Mariel, Foged-Peri 2016 Denmark refuge
 Rating: `strong descriptive`
 Reason: log(FB share) ~ unaval (β=+0.12, t=0.58, n.s.) + WRLURI (β=+0.33, t=6.29***) + log_pop. WRLURI is the stronger correlate in this cross-section; this does not identify zoning as the causal driver or prove zoning reform would reduce immigrant renter burden. Treat zoning reform as a plausible policy hypothesis, not a verified lever. [SOURCE: scripts/saiz_decomposition.py]
 
-21. `Sanctuary policy variation shows no significant native low-skill wage change either direction`
+21. `Sanctuary policy variation shows no statistically significant E1 QWI wage change`
 Rating: `no significant E1 wage change observed in this design`
 Reason: TWFE on QWI 2003-2023 with 12 pro-sanctuary + 9 anti-sanctuary states; all E1 specifications |t|<1.0. This is an additional QWI policy-margin check consistent with the bounded Card-side reading for observed marginal policy variation, but it is not an equivalence-tested zero. [SOURCE: scripts/analyze_sanctuary_wages.py]
 

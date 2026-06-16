@@ -6,9 +6,9 @@
 
 ## Bottom line
 
-E-Verify mandates produced **no statistically significant positive wage effect** on low-education workers in any of 12 specifications. Point estimates are tiny (within ±1.5%) with mixed signs. The Borjas wage prediction (~5-15% rise for less-than-HS workers) is rejected at conventional levels for this policy variation. **In this E-Verify design, the wage results are closer to the Card-style null than to large Borjas-style native wage gains.**
+E-Verify mandates produced **no statistically significant positive wage effect** on low-education workers in the wage specifications. Point estimates are tiny (within ±1.5%) with mixed signs. The 95% CI rules out large native-wage gains in this observed mandate margin, but it does not rule out small effects or a Borjas prediction scaled to a smaller realized labor-supply shock. **In this E-Verify design, the wage results are closer to the Card-style null than to large Borjas-style native wage gains.**
 
-Employment side: E1 (less than HS) stable W-2 employment in E-Verify-exposed industries (Ag, Constr, Mfg, Food Service) fell ~6% post-treatment (t=-1.40, marginal). Combined picture: QWI employment fell but no statistically significant positive wage effect was observed. That points away from large native wage bidding in this observed design; it does not identify whether adjustment happened through capital, output, relocation, cash-economy substitution, hours, or composition.
+Employment side: E1 (less than HS) stable W-2 employment in E-Verify-exposed industries (Ag, Constr, Mfg, Food Service) has a negative, statistically nonsignificant point estimate of about -6% (t=-1.40, p≈0.16). Combined picture: QWI wages show no statistically significant positive response, while the W-2 employment point estimate is negative but not conventionally significant. That points away from large native wage bidding in this observed design; it does not identify whether adjustment happened through capital, output, relocation, cash-economy substitution, hours, or composition.
 
 ## Method
 
@@ -47,7 +47,7 @@ Run separately by education group, with three industry restrictions:
 | E3 (some col) | E-Verify-exposed | +0.0039 | +0.39% | 0.0080 | +0.49 | 16,737 |
 | E4 (BA+) | E-Verify-exposed | -0.0096 | -0.95% | 0.0125 | -0.76 | 16,737 |
 
-**No coefficient reaches conventional significance (|t|>1.96). Point estimates are mostly within ±1%.** Borjas's prediction for E1 in exposed industries was a wage rise on the order of 5-15%; the 95% CI here excludes anything above +2.1%.
+**No coefficient reaches conventional significance (|t|>1.96). Point estimates are mostly within ±1%.** The 95% CI excludes E1 exposed-industry wage gains above about +2.1%. That rules out large gains in this observed mandate margin, but a benchmark mechanically scaled from Borjas's 10% supply -> 3-4% wage elasticity to a smaller effective shock would be closer to the CI boundary.
 
 ### Event study (E1 in E-Verify-exposed industries)
 
@@ -84,7 +84,7 @@ No significant pre-trend. No significant post-treatment jump in either direction
 | E4 | E-Verify-exposed | -0.0129 | -1.28% | -0.50 | 16,719 |
 | E4 | Total aggregate | +0.0405 | **+4.13%** | +2.19** | 4,196 |
 
-**E1 stable-employment in exposed industries fell ~6% post-mandate** (marginal, p≈0.16). Consistent with Bohn-Lofstrom-Raphael (2014) finding for Arizona alone (~10pp unauthorized-pop decline). My pooled estimate is smaller because (a) I average across mandate states with varying enforcement intensity, (b) QWI captures W-2 employment so it underweights cash-economy displacement.
+**E1 stable-employment in exposed industries has a negative ~6% point estimate post-mandate** (not conventionally significant, p≈0.16). The sign is qualitatively consistent with Bohn-Lofstrom-Raphael (2014) for Arizona alone (~10pp unauthorized-pop decline), but this pooled QWI estimate should not be treated as a measured employment decline. QWI also captures W-2 employment, so it underweights cash-economy displacement.
 
 Total-economy E4 (BA+) employment grew ~4% (p<0.05) but this likely reflects national skill-upgrading rather than mandate causal effect.
 
@@ -106,9 +106,9 @@ Total-economy E4 (BA+) employment grew ~4% (p<0.05) but this likely reflects nat
 
 ### What the data show
 
-- **No statistically significant positive QWI wage effect was observed for native low-skill workers after E-Verify**, in any of 12 specifications, including the most sympathetic test (E1 workers in the exact industries where unauthorized are concentrated — Ag, Constr, Mfg, Food Service)
-- **Stable W-2 employment in exposed industries did fall** for E1 workers (~6%, marginal). This is qualitatively consistent with the Bohn-Lofstrom-Raphael Arizona result, but QWI cannot by itself distinguish true labor-supply contraction from cash-economy movement, hours changes, establishment composition, or worker reclassification.
-- **Together: QWI employment ↓ but wages flat = the large native wage-bidding channel is not observed in this design.** Candidate adjustment channels remain hypotheses, not measured mechanisms:
+- **No statistically significant positive QWI wage effect was observed for native low-skill workers after E-Verify**, including the most sympathetic test (E1 workers in the exact industries where unauthorized are concentrated — Ag, Constr, Mfg, Food Service)
+- **Stable W-2 employment in exposed industries has a negative point estimate** for E1 workers (~6%, p≈0.16). This is qualitatively consistent with the Bohn-Lofstrom-Raphael Arizona result, but QWI cannot by itself distinguish true labor-supply contraction from cash-economy movement, hours changes, establishment composition, or worker reclassification.
+- **Together: no statistically significant positive QWI wage effect, plus a negative but nonsignificant W-2 employment point estimate, means the large native wage-bidding channel is not observed in this design.** Candidate adjustment channels remain hypotheses, not measured mechanisms:
   1. Capital substitution (mechanization in Ag, prefab in Constr)
   2. Output reduction or relocation (firms exit; consumers face higher prices/lower service)
   3. Cash economy / non-W-2 hiring (which doesn't show up in QWI)
@@ -119,13 +119,13 @@ For this enforcement margin, the adjustment looks Card-style: the wage curve is 
 
 ### Power and caveats
 
-1. **Power.** With 9 treated states, 42 controls, and 21 years, the minimum detectable effect (MDE) at α=0.05 with 80% power is roughly ±2-3% for E1 in exposed industries given clustered SE. Borjas's predicted +5-15% would be detectable. **We can reject the Borjas magnitudes; we cannot reject small (sub-2%) positive effects.**
+1. **Power.** With 9 treated states, 42 controls, and 21 years, the minimum detectable effect (MDE) at α=0.05 with 80% power is roughly ±2-3% for E1 in exposed industries given clustered SE. Large Borjas-style gains would be detectable in this margin, but a benchmark scaled to the nonsignificant employment point estimate could be around the CI boundary. **We can reject large gains in this observed mandate design; we cannot reject small positive effects.**
 
 2. **TWFE under heterogeneous treatment.** Sun-Abraham (2021), Goodman-Bacon (2021) caution: TWFE with staggered timing can be biased when effect sizes vary across cohorts. Robustness check should use Callaway-Sant'Anna or Sun-Abraham. Given the mostly-flat event-study coefficients here, I judge the bias is unlikely to flip the sign or magnitude meaningfully.
 
 3. **Treatment intensity heterogeneity.** AZ all-employer mandate (2008) is much tighter than UT 15+ employee (2010). A continuous "fraction of workers covered" treatment would sharpen the test. Doable as a follow-up.
 
-4. **Compliance is partial.** US E-Verify compliance ~50% even in mandate states (CIS 2017 estimate). The intent-to-treat estimate underweights actual treated workers. Adjust by 2× → MDE roughly 4-6%, still rejects high-end Borjas.
+4. **Compliance is partial.** US E-Verify compliance ~50% even in mandate states (CIS 2017 estimate). The intent-to-treat estimate underweights actual treated workers. A 2× adjustment is a sensitivity only, not a measured compliance correction; it would put the MDE around 4-6%, weakening claims about the low end while still cutting against high-end Borjas magnitudes.
 
 5. **Unauthorized substitution to cash economy.** If displaced unauthorized workers stayed in the same labor market but moved to off-W-2 jobs (day labor, gig), QWI misses them. That possibility weakens any interpretation of the QWI E1 drop as a full labor-supply contraction; it does not rescue a large QWI-wage-gain prediction in this design.
 
@@ -140,7 +140,7 @@ For this enforcement margin, the adjustment looks Card-style: the wage curve is 
 
 ### Verified-findings report bottom line
 - The previous report said: "Some national output and consumer-price gains exist; some indirect federal fiscal offsets likely exist; but local schooling, housing, and service-capacity costs remain concentrated." [SOURCE: research/immigration-verified-findings-report-2026-04-10.md, finding #6]
-- This holds. **Add:** for the wage channel specifically, observed E-Verify policy variation in 2008-2023 supports the Card view. No statistically significant positive higher-QWI-wage effect is observed for native low-skill workers under these mandates; this rejects large Borjas-style gains in the observed mandate margin but does not directly measure the full wage effect of current low-skill immigration levels.
+- This holds. **Add:** for the wage channel specifically, observed E-Verify policy variation in 2008-2023 supports the Card-side reading on this margin. No statistically significant positive higher-QWI-wage effect is observed for native low-skill workers under these mandates; this cuts against large Borjas-style gains in the observed mandate margin but does not directly measure the full wage effect of current low-skill immigration levels.
 
 ### Adversarial review §1 ("we still don't have a full national welfare ledger")
 - This finding doesn't deliver a full national welfare ledger.
@@ -148,20 +148,20 @@ For this enforcement margin, the adjustment looks Card-style: the wage curve is 
 
 ### Updates to the smith-decker-friedman audit
 - David D. Friedman's open-borders argument relies in part on Card-style wage elasticity. This analysis supports that wage-channel premise for observed E-Verify variation, not the full open-borders conclusion.
-- Camarota's CIS-style native-wage-depression argument does not pass this E-Verify wage-channel test.
+- Camarota's CIS-style native-wage-depression argument is not supported for large native wage effects in this observed E-Verify wage-channel test.
 - Smith and Decker's average-consumer-gains framing is consistent with this finding.
 
 ## Comparison to literature
 
-| Study | Population | Design | Wage effect | Sign |
+| Study | Population | Design | Wage effect | Direction in that design |
 |-------|-----------|--------|-------------|------|
 | Card (1990) | Mariel Boatlift, Miami | Synthetic control vs comparison cities | ~0% on Miami HS dropouts | Card |
 | Borjas (2017) | Mariel reanalysis, restricted to HS dropouts | Same data, narrower group | -10 to -30% | Borjas |
 | Bohn-Lofstrom-Raphael (2014) | AZ LAWA | Pop survey on unauth share | Unauth ↓; native effects mixed | Mixed |
 | Orrenius-Zavodny (2015) | E-Verify rollout | DiD on CPS earnings | Small positive on Hispanic native women only | Weak Borjas |
-| **This analysis** | **9 E-Verify states** | **TWFE on QWI 2003-2023** | **+0.5% (n.s.) E1 in exposed industries** | **Card** |
-| Foged-Peri (2016) | Denmark refugee-country inflow | Dispersal-policy IV / DiD | Native low-skill wages ↑ from refugee shock | Anti-Borjas |
-| Card-Peri (2016) | Cumulative immigration | National panel | Small / null on natives | Card |
+| **This analysis** | **9 E-Verify states** | **TWFE on QWI 2003-2023** | **+0.5% (n.s.) E1 in exposed industries** | **no detected large native gain in this margin** |
+| Foged-Peri (2016) | Denmark refugee-country inflow | Dispersal-policy IV / DiD | Native low-skill wages ↑ from refugee shock | cuts against large native loss in that setting |
+| Card-Peri (2016) | Cumulative immigration | National panel | Small / null on natives | small/native-null in that design |
 
 This analysis adds a 21-year multi-state version of the E-Verify test. Read with Card (1990) and Foged-Peri (2016), it supports the bounded claim that large native low-skill wage losses/gains are not observed in these designs; it does not identify one shared adjustment mechanism or rule out small effects.
 
@@ -189,7 +189,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 | 2026-06-16 | Replaced residual "does not measurably transfer rents" shorthand with no-statistically-significant higher-QWI-wage transfer language; small effects remain outside rejection. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Scoped the title/question and bottom-line employment/wage shortcut to the observed QWI E-Verify wage-channel test rather than a broad Card-vs-Borjas verdict for U.S. data. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "removing/restricting unauthorized labor" exports with observed E-Verify mandate variation and QWI wage language; the design does not directly observe total unauthorized labor supply. See `immigration-conclusion-audit-running-fixes.md`. |
-| 2026-06-16 | Narrowed the employment/wage mechanism interpretation: QWI shows stable W-2 employment fell while no statistically significant positive wage effect was observed, but it does not identify capital, output, relocation, cash-economy, hours, or composition adjustment mechanisms. See `immigration-conclusion-audit-running-fixes.md`. |
+| 2026-06-16 | Narrowed the employment/wage mechanism interpretation: QWI shows a negative but nonsignificant stable W-2 employment point estimate while no statistically significant positive wage effect was observed; it does not identify capital, output, relocation, cash-economy, hours, or composition adjustment mechanisms. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "Clark economists were correct/right" language with support for the small-native-wage-effect premise in the observed E-Verify margin. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Bounded "data side with Card" and commentator-update language to the observed E-Verify wage-channel design; the result rejects large Borjas-style native wage gains for this margin, not all wage or open-borders questions. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Aligned the proposed confidence-ladder update with the same margin-specific wording: strong against large Borjas-style gains in the E-Verify margin, not a global "STRONG REJECTION." See `immigration-conclusion-audit-running-fixes.md`. |
