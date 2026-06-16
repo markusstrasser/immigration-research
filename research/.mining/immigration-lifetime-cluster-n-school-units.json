@@ -1,0 +1,160 @@
+{
+  "cluster": "N_school_unit_harmonization",
+  "mined_at": "2026-06-15",
+  "round": 11,
+  "frame_note": "F-33 school expenditures are reported in thousands of dollars; failure to multiply by 1,000 made per-pupil ~$21 instead of ~$21k — local K-12 lifetime assignment was off by 1000x until sweep 11 fix.",
+  "parameter_claims": [
+    {
+      "claim_id": "N-UNIT-01",
+      "source_rel_path": "external/lifetime/derived/stage2/school_finance_county_2023.csv",
+      "parameter_name": "county_per_pupil_median_post_fix",
+      "value_numeric": 19384.78,
+      "unit": "USD per pupil",
+      "population": "3119 counties, FY2023 F-33",
+      "unnamed_assumption": false,
+      "page_ref": "derived median after *1000 fix",
+      "notes": "Pre-fix median was ~19.38 (thousands treated as dollars)"
+    },
+    {
+      "claim_id": "N-UNIT-02",
+      "source_rel_path": "external/lifetime/derived/stage3_proto/origin_fiscal_scenario_2023.csv",
+      "parameter_name": "mexico_area_wtd_per_pupil_post_fix",
+      "value_numeric": 20907.09,
+      "unit": "USD per pupil",
+      "population": "Mexico origin PUMA-weighted counties",
+      "unnamed_assumption": false,
+      "page_ref": "derived CSV post sweep-11 rebuild",
+      "notes": "Was ~20.91 before fix — same 1000x error"
+    },
+    {
+      "claim_id": "N-UNIT-03",
+      "source_rel_path": "external/census_school_finance_2023_summary.txt",
+      "parameter_name": "f33_expenditure_units",
+      "value_numeric": 1000,
+      "unit": "multiplier (thousands USD)",
+      "population": "Census F-33 district finance",
+      "unnamed_assumption": false,
+      "page_ref": "F-33 codebook / ENROLL vs TCUR* columns",
+      "notes": "ENROLL is pupil count; expenditure columns are thousands"
+    },
+    {
+      "claim_id": "N-UNIT-04",
+      "source_rel_path": "external/lifetime/nces/digest_dt23_236_20_per_pupil_expenditure.html",
+      "parameter_name": "nces_national_per_pupil_anchor",
+      "value_numeric": null,
+      "unit": "USD per pupil",
+      "population": "US average current expenditure per pupil",
+      "unnamed_assumption": true,
+      "page_ref": "NCES Digest Table 236.20",
+      "notes": "Sanity-check county median ~$19–21k against national digest"
+    },
+    {
+      "claim_id": "N-K12-01",
+      "source_rel_path": "external/lifetime/derived/stage3_proto/origin_fiscal_scenario_2023.csv",
+      "parameter_name": "mexico_linked_mean_school_age_children",
+      "value_numeric": null,
+      "unit": "children per linked household",
+      "population": "Mexico origin",
+      "unnamed_assumption": true,
+      "page_ref": "derived CSV",
+      "notes": "K-12 lifetime cost = per_pupil × years × children share — requires correct per_pupil units"
+    },
+    {
+      "claim_id": "N-CHI-01",
+      "source_rel_path": "external/lifetime/derived/stage2/chas_county_housing_stress_2018_2022.csv",
+      "parameter_name": "housing_stress_county_rows",
+      "value_numeric": 3222,
+      "unit": "counties",
+      "population": "ACS proxy when CHAS missing",
+      "unnamed_assumption": true,
+      "page_ref": "stage2 meta",
+      "notes": "School unit fix independent of housing stress source"
+    }
+  ],
+  "generators": [
+    {
+      "id": "G-LIF-N01",
+      "name": "F-33 thousands gate",
+      "prompt": "On any school finance ingest: verify spend/enroll ratio is $8k–$30k/pupil. If median < $500, multiply expenditure columns by 1000 and re-run. Log fix in scenario meta.",
+      "retrodiction": "Would have caught ~$21 per-pupil in origin_fiscal_scenario before any local lifetime K-12 assignment; explains absurd local layer in sweep 0–10 memos.",
+      "negative_space": "Derived CSVs trusted without unit sanity band.",
+      "unnamed_assumptions_surfaced": [
+        "Census finance fields are nominal dollars",
+        "County aggregation preserves units"
+      ],
+      "topics": ["school_finance", "unit_harmonization"],
+      "source_rel_paths": [
+        "external/census_school_finance_2023_summary.txt",
+        "external/lifetime/derived/stage2/school_finance_county_2023.csv"
+      ]
+    },
+    {
+      "id": "G-LIF-N02",
+      "name": "County vs origin per-pupil join audit",
+      "prompt": "CORR(county current_spend_per_pupil, origin area_wtd_current_spend_per_pupil) after PUMA×origin join. Flag if r<0.3 or median ratio outside [0.5,2].",
+      "retrodiction": "Would have failed pre-fix correlation (scale mismatch) and passed post-fix (~$20k band).",
+      "negative_space": "Origin-level school cost accepted without county anchor check.",
+      "unnamed_assumptions_surfaced": [
+        "PUMA area weights represent immigrant school placement",
+        "Current spend = marginal cost of immigrant pupil"
+      ],
+      "topics": ["incidence_bridge", "school_finance"],
+      "source_rel_paths": [
+        "external/lifetime/derived/stage2/school_finance_county_2023.csv",
+        "external/lifetime/derived/stage3_proto/origin_fiscal_scenario_2023.csv"
+      ]
+    },
+    {
+      "id": "G-LIF-N03",
+      "name": "K-12 lifetime cost band",
+      "prompt": "For origin cell: area_wtd_per_pupil × 13 years × linked_share_with_school_age_children. Compare to NAS education cost component for <HS — same order of magnitude?",
+      "retrodiction": "Would have shown pre-fix K-12 cost ~1000x too low to matter in any local fiscal sum.",
+      "negative_space": "School costs omitted from local layer because proxy was numerically negligible (bug).",
+      "unnamed_assumptions_surfaced": [
+        "Immigrant children use average county spend",
+        "13-year public school horizon"
+      ],
+      "topics": ["lifetime_npv", "local_episodic"],
+      "source_rel_paths": [
+        "external/lifetime/derived/stage3_proto/origin_fiscal_scenario_2023.csv",
+        "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf"
+      ]
+    },
+    {
+      "id": "G-LIF-N04",
+      "name": "NCES digest triangulation",
+      "prompt": "Pull NCES Table 236.20 national per-pupil; compare to weighted mean of county F-33. Reject if national/county ratio outside [0.7,1.3] without RPP adjustment.",
+      "retrodiction": "Would have triangulated ~$19k county median against NCES national anchor after unit fix.",
+      "negative_space": "Single derived table accepted without external scalar check.",
+      "unnamed_assumptions_surfaced": [
+        "National average equals immigrant destination average",
+        "No state RPP adjustment needed"
+      ],
+      "topics": ["school_finance", "validation"],
+      "source_rel_paths": [
+        "external/lifetime/nces/digest_dt23_236_20_per_pupil_expenditure.html",
+        "external/lifetime/derived/stage2/school_finance_county_2023.csv"
+      ]
+    }
+  ],
+  "theories_tested": [
+    {
+      "theory": "Per-pupil unit bug explained local layer null result",
+      "prediction": "post-fix mexico per_pupil > 15000",
+      "duckdb_test": "SELECT origin_label, area_wtd_current_spend_per_pupil FROM life.origin_fiscal_scenario_2023 WHERE origin_label='Mexico'",
+      "falsifier": "Still ~$21 after rebuild — fix did not propagate"
+    },
+    {
+      "theory": "County median aligns with NCES band",
+      "prediction": "median county per_pupil between 12000 and 25000",
+      "duckdb_test": "SELECT MEDIAN(current_spend_per_pupil) FROM life.school_finance_county_2023",
+      "falsifier": "Median outside band — remaining unit or aggregation error"
+    },
+    {
+      "theory": "K-12 local cost material vs federal annual for Mexico",
+      "prediction": "per_pupil × school_age_share rivals avg_federal_net",
+      "duckdb_test": "SELECT area_wtd_current_spend_per_pupil, linked_mean_hh_school_age_children, avg_federal_net FROM life.origin_fiscal_scenario_2023 WHERE origin_label='Mexico'",
+      "falsifier": "Federal annual still dominates even with correct units — local layer secondary at annual frequency"
+    }
+  ]
+}

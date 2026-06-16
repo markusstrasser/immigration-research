@@ -1,0 +1,176 @@
+{
+  "cluster": "P_restriction_admin",
+  "mined_at": "2026-06-15",
+  "round": 11,
+  "frame_note": "Enforcement and restriction are federal admin ledger lines; receiver episodic costs are local shock lines — neither substitutes for education-cell lifetime NPV but both shift incidence across layers.",
+  "parameter_claims": [
+    {
+      "claim_id": "P-CBP-01",
+      "source_rel_path": "external/lifetime/admin/cbp_fy25_budget_justification.pdf",
+      "parameter_name": "cbp_fy25_budget_request",
+      "value_numeric": null,
+      "value_text": "CBP FY2025 budget justification — border/entry enforcement spend vector",
+      "unit": "USD",
+      "population": "Federal CBP",
+      "unnamed_assumption": true,
+      "page_ref": "budget overview metadata",
+      "notes": "Admin cost not in NAS immigrant NPV; restriction counterfactual must book enforcement"
+    },
+    {
+      "claim_id": "P-ICE-01",
+      "source_rel_path": "external/lifetime/admin/ice_fy25_budget_justification.pdf",
+      "parameter_name": "ice_fy25_budget_request",
+      "value_numeric": null,
+      "value_text": "ICE FY2025 budget — detention/removal/enforcement",
+      "unit": "USD",
+      "population": "Federal ICE",
+      "unnamed_assumption": true,
+      "page_ref": "budget overview metadata",
+      "notes": "Marginal deportation cost absent from lifetime NAS tables"
+    },
+    {
+      "claim_id": "P-LPR-01",
+      "source_rel_path": "external/lifetime/dhs/plcy_lpr_by_country_of_birth_fy2005_2022.xlsx",
+      "parameter_name": "mexico_lpr_family_vs_employment_mix",
+      "value_numeric": null,
+      "unit": "count by class",
+      "population": "Mexico-born LPRs FY2005-2022",
+      "unnamed_assumption": true,
+      "page_ref": "xlsx tables",
+      "notes": "Legal path conditions education/age at arrival — restriction changes mix not just level"
+    },
+    {
+      "claim_id": "P-NYC-01",
+      "source_rel_path": "external/lifetime/derived/stage5/receiver_city_migrant_costs.csv",
+      "parameter_name": "nyc_asylum_spend_fy2024",
+      "value_numeric": 3700000000,
+      "unit": "USD",
+      "population": "NYC city fiscal",
+      "unnamed_assumption": true,
+      "page_ref": "receiver CSV FY2024 row",
+      "notes": "Episodic local shock — restriction reduces inflow but sunk costs remain"
+    },
+    {
+      "claim_id": "P-NYC-02",
+      "source_rel_path": "external/lifetime/derived/stage5/receiver_city_migrant_costs.csv",
+      "parameter_name": "nyc_shelter_peak_census_fy2024",
+      "value_numeric": 70000,
+      "unit": "persons",
+      "population": "NYC shelter",
+      "unnamed_assumption": true,
+      "page_ref": "receiver CSV",
+      "notes": "~$190/diem cited in notes — episodic not smooth NPV"
+    },
+    {
+      "claim_id": "P-FED-01",
+      "source_rel_path": "external/lifetime/cbo/cbo_60569_immigration_federal_macro_alt.pdf",
+      "parameter_name": "restriction_gdp_cost_channel",
+      "value_numeric": null,
+      "value_text": "CBO surge analysis implies reversing inflow affects GDP, revenue, productivity — restriction has fiscal cost on federal layer",
+      "unit": "qualitative",
+      "population": "US macro 2024-2034",
+      "unnamed_assumption": true,
+      "page_ref": "[SOURCE: CBO 60569; corpus strings fig2_gdp-effects]",
+      "notes": "Restriction counterfactual is not free even if local costs fall"
+    },
+    {
+      "claim_id": "P-ENF-01",
+      "source_rel_path": "external/lifetime/iza/iza_dp4898_border_enforcement_mexican_selection.pdf",
+      "parameter_name": "enforcement_composition_shift",
+      "value_numeric": null,
+      "value_text": "Border enforcement changes Mexican immigrant skill/legal composition",
+      "unit": "qualitative",
+      "population": "Mexican immigration to US",
+      "unnamed_assumption": true,
+      "page_ref": "IZA dp4898",
+      "notes": "Restriction alters cell weights — not just aggregate count"
+    }
+  ],
+  "generators": [
+    {
+      "id": "G-LIF-P01",
+      "name": "Enforcement admin ledger",
+      "prompt": "Sum CBP+ICE requested budgets (FY25–26 PDFs). Express per estimated unauthorized person (Pew stock). Compare to ITEP tax per unauthorized — is enforcement spend rival to tax paid?",
+      "retrodiction": "Would have added missing admin ℓ layer before restriction advocacy used only NAS lifetime negatives.",
+      "negative_space": "Restriction costless aside from lost immigrant fiscal surplus.",
+      "unnamed_assumptions_surfaced": [
+        "Budget request equals marginal enforcement cost",
+        "All CBP/ICE spend attributable to unauthorized population"
+      ],
+      "topics": ["admin_enforcement_cost", "restriction"],
+      "source_rel_paths": [
+        "external/lifetime/admin/cbp_fy25_budget_justification.pdf",
+        "external/lifetime/admin/ice_fy25_budget_justification.pdf",
+        "external/lifetime/pew/pew-unauthorized-immigrants-2025.pdf"
+      ]
+    },
+    {
+      "id": "G-LIF-P02",
+      "name": "Receiver episodic vs federal annual dominance",
+      "prompt": "For surge cohort size N (~437k Mexico <HS adults): compute N × avg_federal_net annual vs sum(receiver_city total_spending) for FY2023-24. Which layer dominates for incidence storytelling?",
+      "retrodiction": "Would have shown NYC+Chicago episodic can rival federal proxy for surge narrative before scalar export.",
+      "negative_space": "Federal annual surplus settles city shelter bills.",
+      "unnamed_assumptions_surfaced": [
+        "Receiver costs are immigrant-attributable marginal",
+        "Surge cohort concentrated in receiver cities"
+      ],
+      "topics": ["local_episodic", "federal_annual"],
+      "source_rel_paths": [
+        "external/lifetime/derived/stage5/receiver_city_migrant_costs.csv",
+        "external/lifetime/derived/stage3_proto/origin_fiscal_scenario_2023.csv"
+      ]
+    },
+    {
+      "id": "G-LIF-P03",
+      "name": "Restriction changes cell not scalar",
+      "prompt": "Simulate 20% reduction in `<HS` recent-arrival weight vs 20% reduction in high-skill LPR employment class (DHS xlsx). Re-weight NAS NPV cells — which restriction policy moves lifetime sign more?",
+      "retrodiction": "Would have connected Lozano-Lopez enforcement selection and DHS LPR mix to M5 composition before count-only restriction debate.",
+      "negative_space": "Restriction modeled as fewer identical immigrants.",
+      "unnamed_assumptions_surfaced": [
+        "LPR class maps to education bucket",
+        "NAS cells apply to marginal restrictee"
+      ],
+      "topics": ["composition", "restriction"],
+      "source_rel_paths": [
+        "external/lifetime/dhs/plcy_lpr_by_country_of_birth_fy2005_2022.xlsx",
+        "external/lifetime/iza/iza_dp4898_border_enforcement_mexican_selection.pdf",
+        "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf"
+      ]
+    },
+    {
+      "id": "G-LIF-P04",
+      "name": "CBO restriction macro offset",
+      "prompt": "From CBO 60569: extract GDP/revenue/deficit channels for surge. Invert sign for restriction counterfactual sketch — federal cost of lost workers vs local savings from reduced inflow. Label partial equilibrium.",
+      "retrodiction": "Would have required federal GDP/revenue loss line in restriction debates that only cite local shelter savings.",
+      "negative_space": "Local fiscal relief from restriction has no federal offset cost.",
+      "unnamed_assumptions_surfaced": [
+        "Surge productivity effects externalize to restriction",
+        "Macro elasticities apply to marginal policy change"
+      ],
+      "topics": ["restriction", "federal_annual"],
+      "source_rel_paths": [
+        "external/lifetime/cbo/cbo_60569_immigration_federal_macro_alt.pdf"
+      ]
+    }
+  ],
+  "theories_tested": [
+    {
+      "theory": "Receiver episodic exceeds Mexico federal annual proxy for surge scale",
+      "prediction": "sum(receiver FY2024 spend) > 436819 * 1519",
+      "duckdb_test": "SELECT 3700000000+138000000 AS receiver_sample, 436819*1519.28 AS mex_fed",
+      "falsifier": "Federal proxy larger — episodic cities not dominant nationally"
+    },
+    {
+      "theory": "Enforcement budget rivals ITEP tax floor per unauthorized",
+      "prediction": "cbp+ice budget / pew_stock ~ same order as 96700000000/pew_stock",
+      "duckdb_test": "Manual until budget tables parsed — compare orders of magnitude",
+      "falsifier": "Enforcement trivial vs tax paid — admin layer secondary"
+    },
+    {
+      "theory": "Restriction lowers `<HS` cell weight more than total count",
+      "prediction": "enforcement shifts composition per IZA4898",
+      "duckdb_test": "Qualitative — crosswalk LPR employment class to education_bucket over time",
+      "falsifier": "Composition stable under enforcement — count-only model sufficient"
+    }
+  ]
+}

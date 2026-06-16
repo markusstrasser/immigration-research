@@ -1,0 +1,356 @@
+{
+  "cluster": "C_local_welfare_capacity",
+  "mined_at": "2026-06-15",
+  "frame": {
+    "annual_federal_proxy": "+$1,519/yr for Mexico <HS recent-surge adults (SIPP donor cells; payroll > transfers)",
+    "local_shock_ledger": "school enrollment + per-pupil, shelter/emergency housing, Medicaid/state health — episodic and jurisdictional, not in lifetime NPV scalars",
+    "tension": "Federal-positive cell proxies can coexist with state/local net-negative surge ledgers (CBO 61256) and asylum shelter shocks (Gould w33655)"
+  },
+  "papers_mined": [
+    "external/lifetime/nber/bitler_hoynes_2012_immigrants_welfare_safety_net_w17667.pdf",
+    "external/lifetime/nber/razin_wahba_2012_welfare_magnet_immigration_w17515.pdf",
+    "external/lifetime/nber/landais_posch_muller_2017_welfare_magnet_denmark_w26454.pdf",
+    "external/lifetime/nber/blau_kahn_2012_immigration_distribution_incomes_w18515.pdf",
+    "external/lifetime/nber/gould_2024_asylum_seekers_homelessness_w33655.pdf",
+    "external/lifetime/nber/akers_boustan_2024_immigration_inequality_next_generation_w33961.pdf",
+    "external/lifetime/nber/butchart_1998_recent_immigrants_crime_incarceration_w6067.pdf",
+    "external/lifetime/borjas/borjas_1994_immigration_welfare_1970_1990_w4872.pdf",
+    "external/lifetime/nber/borjas_1997_ethnicity_intergenerational_welfare_w6175.pdf",
+    "external/lifetime/brookings/vmt_external_cost_congestion_jpube_2017.pdf",
+    "external/lifetime/frbsf/econ_letter_2023_immigration_urban_phenomenon.html",
+    "external/lifetime/banqueducanada/swp2023_57_immigration_fiscal_capacity.pdf",
+    "external/lifetime/aei/orrenius_viard_zavodny_2025_fiscal_impact_update.pdf",
+    "external/lifetime/cbo/cbo_61256_immigration_state_local.pdf"
+  ],
+  "extraction_notes": {
+    "butchart_w6067": "Local PDF is scanned (CVISION 1997); pdftotext unusable. Quantitative claims from NBER w6067 non-technical summary [SOURCE: https://www.nber.org/papers/w6067].",
+    "borjas_w6175": "Local PDF is scanned; pdftotext unusable. Claims from NBER/SSRN abstract and published RLE chapter summary [SOURCE: https://ssrn.com/abstract=225933]."
+  },
+  "parameter_claims": [
+    {
+      "claim_id": "C-001",
+      "source_rel_path": "external/lifetime/cbo/cbo_61256_immigration_state_local.pdf",
+      "parameter_name": "direct_net_cost_state_local_2023",
+      "value_numeric": 9.2,
+      "unit": "USD_billion",
+      "population": "2021 immigration surge cohort, state+local budgets 2023",
+      "unnamed_assumption": false,
+      "page_ref": "summary p.1",
+      "notes": "Direct revenues +$10.1B vs spending +$19.3B; 0.3% of state-local spending net of federal grants-in-aid."
+    },
+    {
+      "claim_id": "C-002",
+      "source_rel_path": "external/lifetime/cbo/cbo_61256_immigration_state_local.pdf",
+      "parameter_name": "potential_net_cost_state_local_2023",
+      "value_numeric": 9.8,
+      "unit": "USD_billion",
+      "population": "surge population including nonbudgetary crowding costs",
+      "unnamed_assumption": true,
+      "page_ref": "summary p.1",
+      "notes": "Potential revenues +$18.8B, spending +$28.6B. Treats classroom/transport crowding as fiscal pressure even when spending unchanged — framing choice."
+    },
+    {
+      "claim_id": "C-003",
+      "source_rel_path": "external/lifetime/cbo/cbo_61256_immigration_state_local.pdf",
+      "parameter_name": "k12_direct_spending_increase_2023",
+      "value_numeric": 5.7,
+      "unit": "USD_billion",
+      "population": "surge children in public schools",
+      "unnamed_assumption": false,
+      "page_ref": "education spending section",
+      "notes": "550,000 surge children = 1.1% of public school students; potential K-12 cost band up to $9.4B."
+    },
+    {
+      "claim_id": "C-004",
+      "source_rel_path": "external/lifetime/cbo/cbo_61256_immigration_state_local.pdf",
+      "parameter_name": "shelter_related_spending_2023",
+      "value_numeric": 3.3,
+      "unit": "USD_billion",
+      "population": "surge population, NY+MA+IL+CO",
+      "unnamed_assumption": false,
+      "page_ref": "shelter section",
+      "notes": "Episodic local shock line item; not in federal lifetime NPV studies."
+    },
+    {
+      "claim_id": "C-005",
+      "source_rel_path": "external/lifetime/nber/gould_2024_asylum_seekers_homelessness_w33655.pdf",
+      "parameter_name": "asylum_share_of_sheltered_homelessness_rise_2022_2024",
+      "value_numeric": 60,
+      "unit": "percent",
+      "population": "HUD PIT sheltered homeless, US",
+      "unnamed_assumption": false,
+      "page_ref": "abstract",
+      "notes": "43% national sheltered rise (149k people); 75% concentrated in NYC, Chicago, MA, Denver."
+    },
+    {
+      "claim_id": "C-006",
+      "source_rel_path": "external/lifetime/nber/bitler_hoynes_2012_immigrants_welfare_safety_net_w17667.pdf",
+      "parameter_name": "food_stamps_did_immigrant_vs_native_post_prwora",
+      "value_numeric": -3.9,
+      "unit": "percentage_points",
+      "population": "children, 1994-95 vs 2008-09 CPS",
+      "unnamed_assumption": false,
+      "page_ref": "section IV program participation",
+      "notes": "Within <200% poverty, immigrants participate safety net at lower rates than natives for most programs; school lunch exception."
+    },
+    {
+      "claim_id": "C-007",
+      "source_rel_path": "external/lifetime/borjas/borjas_1994_immigration_welfare_1970_1990_w4872.pdf",
+      "parameter_name": "immigrant_share_cash_assistance_1990",
+      "value_numeric": 13.1,
+      "unit": "percent_of_total_cash_assistance",
+      "population": "households, Census 1990",
+      "unnamed_assumption": false,
+      "page_ref": "abstract",
+      "notes": "8.4% foreign-born households received 10.1% of assistance-recipient households; welfare participation 9.1% vs natives +1.7pp gap by 1990."
+    },
+    {
+      "claim_id": "C-008",
+      "source_rel_path": "external/lifetime/nber/landais_posch_muller_2017_welfare_magnet_denmark_w26454.pdf",
+      "parameter_name": "non_eu_immigration_reduction_post_50pct_benefit_cut",
+      "value_numeric": 5000,
+      "unit": "persons_per_year",
+      "population": "non-EU immigrants to Denmark, 2002 reform",
+      "unnamed_assumption": false,
+      "page_ref": "abstract / section 3",
+      "notes": "≈4.2% of flow; benefit elasticity 1.3. Causal treatment effect on destination choice, not selection into low skill."
+    },
+    {
+      "claim_id": "C-009",
+      "source_rel_path": "external/lifetime/nber/razin_wahba_2012_welfare_magnet_immigration_w17515.pdf",
+      "parameter_name": "welfare_generosity_skill_composition_sign_flip",
+      "value_numeric": null,
+      "unit": "qualitative",
+      "population": "EUR free-migration vs non-EUR restricted migration, 1990-2000",
+      "unnamed_assumption": true,
+      "page_ref": "abstract / results",
+      "notes": "Negative generosity→skill under free migration (magnet); positive under policy-controlled migration (fiscal burden/selectivity). Papers often pool regimes."
+    },
+    {
+      "claim_id": "C-010",
+      "source_rel_path": "external/lifetime/banqueducanada/swp2023_57_immigration_fiscal_capacity.pdf",
+      "parameter_name": "presidio_tx_per_capita_public_spending_change_1990_2010",
+      "value_numeric": -15,
+      "unit": "percent",
+      "population": "Presidio County TX (+10pp low-skilled immigrant share)",
+      "unnamed_assumption": false,
+      "page_ref": "abstract",
+      "notes": "Monterey CA +14% with opposite skill mix; national net ≈0.3%/yr because low- and high-skilled offset."
+    },
+    {
+      "claim_id": "C-011",
+      "source_rel_path": "external/lifetime/aei/orrenius_viard_zavodny_2025_fiscal_impact_update.pdf",
+      "parameter_name": "fiscal_cost_jurisdiction_split",
+      "value_numeric": null,
+      "unit": "qualitative",
+      "population": "US immigrants overall vs by education",
+      "unnamed_assumption": true,
+      "page_ref": "opening summary",
+      "notes": "Aggregate federal positive (CBO 2024 cited); state/local cost mainly K-12 for US-born children of immigrants — assigns descendant costs to immigrant row."
+    },
+    {
+      "claim_id": "C-012",
+      "source_rel_path": "external/lifetime/nber/akers_boustan_2024_immigration_inequality_next_generation_w33961.pdf",
+      "parameter_name": "hs_completion_effect_bottom_decile_10pp_inflow",
+      "value_numeric": 2.2,
+      "unit": "percentage_points",
+      "population": "native-born children, 3rd parental-income decile",
+      "unnamed_assumption": false,
+      "page_ref": "introduction / education results",
+      "notes": "Local distributional offset: bottom-decile mobility gain vs 8th-decile college completion −3.5pp; not a fiscal ledger item."
+    },
+    {
+      "claim_id": "C-013",
+      "source_rel_path": "external/lifetime/nber/butchart_1998_recent_immigrants_crime_incarceration_w6067.pdf",
+      "parameter_name": "male_institutionalization_rate_recent_immigrants_1990",
+      "value_numeric": 0.7,
+      "unit": "percent",
+      "population": "recent immigrant men, Census 1990",
+      "unnamed_assumption": false,
+      "page_ref": "NBER non-technical summary [SOURCE: nber.org/papers/w6067]",
+      "notes": "Native-born men 2.16% (1990) vs 1.35% (1980). Crime/incarceration is local cost channel but immigrants lower per-capita — disconfirms naive fiscal-crime link."
+    },
+    {
+      "claim_id": "C-014",
+      "source_rel_path": "external/lifetime/nber/borjas_1997_ethnicity_intergenerational_welfare_w6175.pdf",
+      "parameter_name": "ethnic_welfare_spillover_child_recipiency",
+      "value_numeric": 0.606,
+      "unit": "percentage_points_per_1pp_parental_ethnic_rate",
+      "population": "NLYS youth by ethnic environment",
+      "unnamed_assumption": false,
+      "page_ref": "NBER/SSRN abstract [SOURCE: ssrn.com/abstract=225933]",
+      "notes": "~80% of ethnic welfare participation gap transmitted parent→child. Selection vs treatment confound for lifetime NPV."
+    },
+    {
+      "claim_id": "C-015",
+      "source_rel_path": "external/lifetime/frbsf/econ_letter_2023_immigration_urban_phenomenon.html",
+      "parameter_name": "immigrant_housing_demand_attenuation",
+      "value_numeric": null,
+      "unit": "qualitative",
+      "population": "US MSAs, foreign-born concentration",
+      "unnamed_assumption": true,
+      "page_ref": "body para citing Albert-Monras 2022",
+      "notes": "Immigrants consume less housing per equivalent wage; remittance motive reduces local cost-of-living pass-through — offsets naive rent-demand local shock."
+    },
+    {
+      "claim_id": "C-016",
+      "source_rel_path": "external/lifetime/brookings/vmt_external_cost_congestion_jpube_2017.pdf",
+      "parameter_name": "urban_congestion_externality_per_mile",
+      "value_numeric": 0.218,
+      "unit": "USD_2013_per_urban_mile",
+      "population": "US drivers, county-level",
+      "unnamed_assumption": true,
+      "page_ref": "methods / Small-Verhoef adjustment",
+      "notes": "Add-on local cost not in NAS lifetime ledger; immigrant urban concentration (FRBSF) maps to this margin."
+    }
+  ],
+  "generators": [
+    {
+      "id": "G-LIF-C01",
+      "name": "Federal-positive / local-negative ledger split",
+      "prompt": "For each fiscal immigration study, tag every cost and revenue line as FEDERAL vs STATE/LOCAL vs EPISODIC-SHOCK (shelter, border). Where does the paper silently aggregate jurisdictions? Cross-walk to our SIPP annual federal proxy (+$1,519/yr Mexico <HS) vs CBO-style local shock ledger (school, shelter, Medicaid). List papers that report net positive lifetime NPV but omit local surge lines.",
+      "retrodiction": "Would have surfaced CBO 61256 $9.2B direct net cost, Gould shelter 60% of homelessness rise, Orrenius 2025 federal-positive/state-local-negative split, and our scenario-composition frame tension before treating SIPP cells as scalar verdict.",
+      "negative_space": "Lifetime NPV and generational accounting collapse jurisdiction and time horizon — hiding episodic shelter shocks and balanced-budget state constraints.",
+      "unnamed_assumptions_surfaced": [
+        "Federal surplus on immigrant row implies locality solvent",
+        "Annual SIPP proxy and lifetime NPV are interchangeable signs",
+        "Crowding costs don't count unless budget line moves"
+      ],
+      "topics": ["federal_local_split", "shelter", "school", "npv_vs_annual"],
+      "source_rel_paths": [
+        "external/lifetime/cbo/cbo_61256_immigration_state_local.pdf",
+        "external/lifetime/aei/orrenius_viard_zavodny_2025_fiscal_impact_update.pdf",
+        "external/lifetime/nber/gould_2024_asylum_seekers_homelessness_w33655.pdf"
+      ],
+      "theory_tested": "sign(federal_proxy) * sign(local_ledger) < 0 for surge cells"
+    },
+    {
+      "id": "G-LIF-C02",
+      "name": "Welfare magnet: selection vs treatment vs policy regime",
+      "prompt": "Map each welfare-migration paper to (a) migrant self-selection (treatment on movers), (b) host policy filter (treatment on admissions), (c) free vs restricted mobility regime. Does generosity affect skill mix (Razin-Wahba) or flow level (Landais Denmark DiD)? Flag studies that interpret correlation as magnet without regime dummies.",
+      "retrodiction": "Would have found Razin-Wahba sign flip, Landais 5k/yr causal reduction and elasticity 1.3, Bitler-Hoynes post-PRWORA immigrant lower participation within poor households, Borjas w4872 assimilation-into-welfare cohort effects.",
+      "negative_space": "US interstate magnet literature often ignores that PRWORA made immigration policy federalism — treatment is policy+selection entangled.",
+      "unnamed_assumptions_surfaced": [
+        "Higher immigrant welfare use proves magnet caused inflow",
+        "Benefit cuts only affect intensive margin not location choice",
+        "Denmark quasi-experiment generalizes to US unauthorized surge"
+      ],
+      "topics": ["welfare_magnet", "selection", "prwora", "skill_mix"],
+      "source_rel_paths": [
+        "external/lifetime/nber/razin_wahba_2012_welfare_magnet_immigration_w17515.pdf",
+        "external/lifetime/nber/landais_posch_muller_2017_welfare_magnet_denmark_w26454.pdf",
+        "external/lifetime/nber/bitler_hoynes_2012_immigrants_welfare_safety_net_w17667.pdf",
+        "external/lifetime/borjas/borjas_1994_immigration_welfare_1970_1990_w4872.pdf"
+      ],
+      "theory_tested": "welfare_generosity → skill_mix depends on mobility_regime"
+    },
+    {
+      "id": "G-LIF-C03",
+      "name": "Crime/incarceration: fiscal line item or labor spillover?",
+      "prompt": "Separate incarceration as (1) direct state/local budget line (CBO incarceration spending) from (2) labor-market/competition spillover (Borjas-Grogger-Hanson) from (3) compositional base-rate artifact (Butcher-Piehl native 2.16% vs immigrant 0.7%). Which lifetime fiscal models include any of these channels?",
+      "retrodiction": "Would have flagged Butcher w6067 low immigrant incarceration vs rising native rates, CBO surge prison share (4% state, 7% pop), and brainstorm note that NAS ledger omits crime channel.",
+      "negative_space": "Advocacy frames swap fiscal incarceration costs for crime rates; empirical lit shows immigrants lower institutionalization — channel is distributional not average fiscal drain.",
+      "unnamed_assumptions_surfaced": [
+        "Immigration raises incarceration spend proportionally to stock",
+        "Comparing immigrants to all natives is race-neutral",
+        "Crime costs belong in lifetime NPV if not in annual SIPP proxy"
+      ],
+      "topics": ["crime", "incarceration", "labor_spillover"],
+      "source_rel_paths": [
+        "external/lifetime/nber/butchart_1998_recent_immigrants_crime_incarceration_w6067.pdf",
+        "external/lifetime/cbo/cbo_61256_immigration_state_local.pdf"
+      ],
+      "theory_tested": "incarceration_rate_immigrant < incarceration_rate_native within ethnicity"
+    },
+    {
+      "id": "G-LIF-C04",
+      "name": "Asylum/shelter episodic shock outside lifetime NPV",
+      "prompt": "Identify spending that is (a) emergency/episodic, (b) city-concentrated, (c) absent from NAS/CBO federal lifetime tables. Quantify shelter PIT/HUD linkage (Gould) vs K-12 entitlement (CBO Plyler) vs Medicaid federal-state match. Would discounting lifetime NPV miss 2022-2024 shelter spike?",
+      "retrodiction": "Would have surfaced Gould 60% of 43% sheltered rise, CBO $3.3B shelter in 4 states, NYC +77,352 sheltered 2022-2024, and mismatch with smooth lifetime NPV curves.",
+      "negative_space": "Lifetime fiscal synthesis uses steady-state education/transfer paths — asylum parole surges are state-local balance-sheet events.",
+      "unnamed_assumptions_surfaced": [
+        "Emergency shelter is temporary so NPV≈0",
+        "Federal parole policy externalizes costs to destination cities",
+        "HUD PIT counts equal budget appropriations"
+      ],
+      "topics": ["asylum", "shelter", "episodic_shock", "npv_horizon"],
+      "source_rel_paths": [
+        "external/lifetime/nber/gould_2024_asylum_seekers_homelessness_w33655.pdf",
+        "external/lifetime/cbo/cbo_61256_immigration_state_local.pdf"
+      ],
+      "theory_tested": "shelter_spending_2023 / k12_spending_2023 ratio for surge cohort"
+    },
+    {
+      "id": "G-LIF-C05",
+      "name": "County fiscal capacity heterogeneity",
+      "prompt": "Where do national-average fiscal estimates hide county-level capacity constraints? Use BoC county IV design: low-skilled inflow → per-capita revenue down, spending down (Presidio −15%) vs high-skilled uplift (Monterey +14%). Cross to our PUMA/stage5 school spend weights and FRBSF urban concentration.",
+      "retrodiction": "Would have found BoC 0.3%/yr national offset masking ±15% county swings, FRBSF urban/remittance concentration, VMT $0.218/urban-mile congestion add-on, CBO 56% surge in 6 states.",
+      "negative_space": "Scalar 'Mexico NPV' erases geography — same immigrant type can expand or contract local public goods depending on county skill mix and transfer insurance.",
+      "unnamed_assumptions_surfaced": [
+        "National NAS cell applies to border county",
+        "Intergovernmental transfers fully insure local fiscal shocks",
+        "Urban settlement implies higher per-capita local costs unconditionally"
+      ],
+      "topics": ["fiscal_capacity", "county_heterogeneity", "urban", "congestion"],
+      "source_rel_paths": [
+        "external/lifetime/banqueducanada/swp2023_57_immigration_fiscal_capacity.pdf",
+        "external/lifetime/frbsf/econ_letter_2023_immigration_urban_phenomenon.html",
+        "external/lifetime/brookings/vmt_external_cost_congestion_jpube_2017.pdf",
+        "external/lifetime/cbo/cbo_61256_immigration_state_local.pdf"
+      ],
+      "theory_tested": "delta_per_capita_school_spend ~ low_skill_share * (1 - transfer_offset) by county"
+    },
+    {
+      "id": "G-LIF-C06",
+      "name": "Descendant and mobility offsets on local burden",
+      "prompt": "Track who bears local costs vs who captures fiscal upside: Orrenius assigns K-12 cost to US-born children; Akers-Boustan shows bottom-decile native HS completion +2.2pp per 10pp inflow; Blau-Kahn decomposes inequality not net fiscal position. Does immigrant-headed household federal proxy include citizen-child benefits without citizen-child future taxes?",
+      "retrodiction": "Would have connected Orrenius descendant-cost framing, Akers-Boustan decile-heterogeneous mobility, Blau-Kahn compositional inequality, Bitler-Hoynes 90% immigrant households contain native-born members.",
+      "negative_space": "Household-weighted federal proxy treats citizen children as immigrant fiscal property in both costs and benefits.",
+      "unnamed_assumptions_surfaced": [
+        "School cost of US-born child belongs in immigrant lifetime NPV",
+        "Bottom-decile mobility gains net out top-decile losses in fiscal ledger",
+        "Income distribution effects ≡ fiscal incidence"
+      ],
+      "topics": ["descendants", "mobility", "household_weighting"],
+      "source_rel_paths": [
+        "external/lifetime/aei/orrenius_viard_zavodny_2025_fiscal_impact_update.pdf",
+        "external/lifetime/nber/akers_boustan_2024_immigration_inequality_next_generation_w33961.pdf",
+        "external/lifetime/nber/blau_kahn_2012_immigration_distribution_incomes_w18515.pdf",
+        "external/lifetime/nber/bitler_hoynes_2012_immigrants_welfare_safety_net_w17667.pdf"
+      ],
+      "theory_tested": "federal_proxy_per_immigrant_head vs school_cost_per_household_child"
+    }
+  ],
+  "theories_tested": [
+    {
+      "theory": "Federal-positive annual proxy and local-negative shock ledger coexist for Mexico <HS surge cells",
+      "prediction": "sign(avg_federal_net_proxy) > 0 while sign(state_local_net_2023) < 0 for same origin-education bucket",
+      "duckdb_test": "JOIN origin_fiscal_scenario_2023 (avg_federal_net) WITH state_stage5_context_2023 + receiver_city_migrant_costs ON origin/state; compare federal_proxy to shelter+k12 shock lines",
+      "falsifier": "Local net ledger turns positive after scaling school/shelter to per-adult and netting descendant payroll"
+    },
+    {
+      "theory": "Welfare magnet operates on location/treatment more than skill selection in restricted regimes",
+      "prediction": "Benefit cuts reduce inflows (Landais elasticity ~1.3) without raising immigrant education percentile",
+      "duckdb_test": "No direct test in warehouse — register Landais/Denmark as external prior; US test uses state TANF/SNAP variation × ACS origin flows",
+      "falsifier": "Post-PRWORA immigrant inflows rose to high-benefit states with no DiD break"
+    },
+    {
+      "theory": "Asylum shelter shock is episodic and not captured in smooth lifetime NPV",
+      "prediction": "shelter_spending_2022_2024 >> discounted NPV increment from annual federal proxy for same cohort",
+      "duckdb_test": "Compare receiver_city_migrant_costs annual shelter to origin_fiscal_scenario avg_federal_net * weighted_adults for surge origins",
+      "falsifier": "Shelter costs revert to zero in 2025+ and NPV amortization matches cumulative shelter"
+    },
+    {
+      "theory": "County fiscal capacity mediates local burden more than national average NAS cell",
+      "prediction": "High low_skill_share counties show per_pupil_spend pressure (stage5) even when national federal proxy positive",
+      "duckdb_test": "JOIN origin_puma_household_stage5_context_2023 WITH state_el_lep_2018 and area_wtd_current_spend_per_pupil; stratify by low_skill_share tercile",
+      "falsifier": "Per-pupil spend and EL counts uncorrelated with immigrant share after RPP adjustment"
+    },
+    {
+      "theory": "Immigrant incarceration channel is fiscal rounding error not primary local cost driver",
+      "prediction": "CBO incarceration spend increment << K-12 + shelter for surge population",
+      "duckdb_test": "Extract incarceration line from CBO 61256 spending table vs education+shelter subtotals",
+      "falsifier": "Incarceration spend >10% of direct surge spending increase"
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "cluster": "G_legal_status_tax",
+  "mined_at": "2026-06-15",
+  "round": 9,
+  "frame": "Legal-status layer sets the tax floor (ITIN/undocumented payments) and the population stock (Pew residual) feeding lifetime NPV. Border enforcement shifts Mexican immigrant selection (Lozano-López) — earnings path, not just headcount.",
+  "parameter_claims": [
+    {
+      "claim_id": "G01",
+      "source_rel_path": "external/lifetime/itep/ITEP-Tax-Payments-by-Undocumented-Immigrants-2024.pdf",
+      "parameter_name": "undocumented_total_tax_2022",
+      "value_numeric": 96700000000,
+      "unit": "USD annual",
+      "population": "10.9 million undocumented immigrants, tax year 2022",
+      "unnamed_assumption": true,
+      "page_ref": "p.3 Key Findings; p.5 Figure 1",
+      "notes": "Federal $59.4B + state/local $37.3B. Unnamed: annual flow ≈ lifetime NPV tax floor without mortality/discount bridge."
+    },
+    {
+      "claim_id": "G02",
+      "source_rel_path": "external/lifetime/itep/itep_2024_tax_contributions.json",
+      "parameter_name": "undocumented_per_capita_tax",
+      "value_numeric": 8889,
+      "unit": "USD per person per year",
+      "population": "10.9 million undocumented, 2022",
+      "unnamed_assumption": true,
+      "page_ref": "json national_totals; ITEP p.5",
+      "notes": "$8.9B per 1M population. Microsim on Pew/CMS stock — not independently observed payments."
+    },
+    {
+      "claim_id": "G03",
+      "source_rel_path": "external/lifetime/itep/ITEP-Tax-Payments-by-Undocumented-Immigrants-2024.pdf",
+      "parameter_name": "social_insurance_share_excluded_benefits",
+      "value_numeric": 0.35,
+      "unit": "fraction_of_total_taxes",
+      "population": "undocumented workers, 2022",
+      "unnamed_assumption": false,
+      "page_ref": "p.3 Key Findings; p.6 Figure 2 ($33.9B of $96.7B)",
+      "notes": "SS $25.7B + Medicare $6.4B + UI $1.8B. Workers barred from most program benefits — pure fiscal transfer to PAYG systems."
+    },
+    {
+      "claim_id": "G04",
+      "source_rel_path": "external/lifetime/itep/ITEP-Tax-Payments-by-Undocumented-Immigrants-2024.pdf",
+      "parameter_name": "effective_tax_rate_vs_median",
+      "value_numeric": 0.261,
+      "unit": "fraction_of_income",
+      "population": "undocumented immigrants vs median U.S. income group",
+      "unnamed_assumption": true,
+      "page_ref": "p.5",
+      "notes": "26.1% vs 26.4% median. Unnamed: effective rate parity implies similar federal proxy once income matched — ignores benefit ineligibility wedge."
+    },
+    {
+      "claim_id": "G05",
+      "source_rel_path": "external/lifetime/itep/ITEP-Tax-Payments-by-Undocumented-Immigrants-2024.pdf",
+      "parameter_name": "federal_income_tax_contribution_rate_assumed",
+      "value_numeric": 0.60,
+      "unit": "share_of_taxes_owed",
+      "population": "undocumented tax units, federal individual income tax",
+      "unnamed_assumption": true,
+      "page_ref": "Appendix B p.26",
+      "notes": "Midpoint of 50–75% CBO literature band; sensitivity ±15.5% on grand total per json. Unnamed: contribution rate = compliance for lifetime scenarios."
+    },
+    {
+      "claim_id": "G06",
+      "source_rel_path": "external/lifetime/itep/itep_2024_tax_contributions.json",
+      "parameter_name": "work_authorization_uplift",
+      "value_numeric": 40200000000,
+      "unit": "USD additional annual revenue",
+      "population": "scenario: all current undocumented granted work authorization",
+      "unnamed_assumption": true,
+      "page_ref": "json legalization_scenario; ITEP p.3",
+      "notes": "Total rises to $136.9B (+$33.1B federal, +$7.1B state/local). Unnamed: legalization uplift applied linearly over remaining lifetime."
+    },
+    {
+      "claim_id": "G07",
+      "source_rel_path": "external/lifetime/pew/pew-unauthorized-immigrants-2025.pdf",
+      "parameter_name": "unauthorized_population_2023",
+      "value_numeric": 14000000,
+      "unit": "persons",
+      "population": "U.S. unauthorized immigrants, July 2023",
+      "unnamed_assumption": false,
+      "page_ref": "p.4–5",
+      "notes": "Record high; +3.5M in two years (2021–2023). Supersedes prior Pew estimates. Stock input for fiscal models — 2.5M gap vs ITEP 10.9M (2022) reflects timing + definition."
+    },
+    {
+      "claim_id": "G08",
+      "source_rel_path": "external/lifetime/pew/pew-unauthorized-immigrants-2025.pdf",
+      "parameter_name": "temp_protection_share_2023",
+      "value_numeric": 0.40,
+      "unit": "fraction_of_unauthorized",
+      "population": "unauthorized with some deportation protection, 2023",
+      "unnamed_assumption": true,
+      "page_ref": "p.5",
+      "notes": "~6M of 14M with parole/asylum/TPS-style protection. Unnamed: treated as unauthorized for tax but may differ in work authorization and benefit access — fiscal status heterogeneous."
+    },
+    {
+      "claim_id": "G09",
+      "source_rel_path": "external/lifetime/pew/pew-unauthorized-immigrants-2025.pdf",
+      "parameter_name": "non_mexico_unauthorized_surge_2021_2023",
+      "value_numeric": 3300000,
+      "unit": "persons net increase",
+      "population": "unauthorized born outside Mexico",
+      "unnamed_assumption": true,
+      "page_ref": "p.10",
+      "notes": "6.4M → 9.7M; Mexico flat ~4.3M. Unnamed: Mexico-weighted lifetime cells understate recent-surge composition shift (Venezuela, Cuba, Haiti parole paths)."
+    },
+    {
+      "claim_id": "G10",
+      "source_rel_path": "external/lifetime/pew/pew-unauthorized-immigrants-2025.pdf",
+      "parameter_name": "unauthorized_labor_force_share_2023",
+      "value_numeric": 0.056,
+      "unit": "fraction_of_civilian_workforce",
+      "population": "9.7M unauthorized in labor force, 2023",
+      "unnamed_assumption": false,
+      "page_ref": "p.16",
+      "notes": "5.6% of workforce vs 4.1% of total population — age composition skew. ITEP reports 4.7% workforce / 3.4% population on 2022 stock."
+    },
+    {
+      "claim_id": "G11",
+      "source_rel_path": "external/lifetime/iza/iza_dp4898_lozano_lopez_border_enforcement_mexican_selection.pdf",
+      "parameter_name": "border_enforcement_budget_increase",
+      "value_numeric": 1.94,
+      "unit": "USD billions annual (2007)",
+      "population": "U.S.–Mexico border operations",
+      "unnamed_assumption": false,
+      "page_ref": "p.2",
+      "notes": "Up from $400M (1992). Context for rising coyote costs and female-biased crossing mortality (9%→21% of deaths 1998–2005)."
+    },
+    {
+      "claim_id": "G12",
+      "source_rel_path": "external/lifetime/iza/iza_dp4898_lozano_lopez_border_enforcement_mexican_selection.pdf",
+      "parameter_name": "mexican_female_flow_decline_diff_in_diff",
+      "value_numeric": -0.122,
+      "unit": "change_in_female_immigrant_share",
+      "population": "Mexican immigrants, post-2000 vs 1984 cohort, triple-diff vs other Latin America",
+      "unnamed_assumption": true,
+      "page_ref": "Table 4–5, p.32",
+      "notes": "Diff-in-diff female share −12.2pp (p<0.001); earnings diff-in-diff +10.4–12.5% for selected groups. Unnamed: 2000s selection parameters apply to 2020s Mexico surge."
+    }
+  ],
+  "generators": [
+    {
+      "id": "G-LIF-G01",
+      "name": "Tax-floor vs benefit-ban ledger split",
+      "prompt": "For any undocumented/refugee fiscal cell, decompose annual flows into (a) taxes paid regardless of status — payroll, sales, property pass-through, ITIN income tax — and (b) benefits legally barred. ITEP shows 35% of taxes fund SS/Medicare/UI with exclusion from benefits. Do not net to zero without explicit benefit-access matrix.",
+      "retrodiction": "Would have separated ITEP $96.7B tax floor from NAS benefit-cost rows before treating unauthorized as net-negative by default.",
+      "negative_space": "Single net fiscal scalar assuming undocumented immigrants receive Medicaid/SNAP at citizen rates.",
+      "unnamed_assumptions_surfaced": [
+        "Tax payments require legal status to count toward lifetime NPV",
+        "Payroll taxes without benefit eligibility are fiscally neutral"
+      ],
+      "topics": ["tax_floor", "benefit_ban", "payroll"],
+      "source_rel_paths": [
+        "external/lifetime/itep/ITEP-Tax-Payments-by-Undocumented-Immigrants-2024.pdf",
+        "external/lifetime/itep/itep_2024_tax_contributions.json"
+      ],
+      "theory_tested": "Undocumented immigrants pay meaningful taxes while barred from major benefits"
+    },
+    {
+      "id": "G-LIF-G02",
+      "name": "Legal-status stock reconciler",
+      "prompt": "Before lifetime NPV, reconcile population stocks: Pew residual (14M 2023, upward undercount adjustment) vs ITEP/Warren (10.9M 2022) vs temp-protection subgroups (6M). Map each stock to work-authorization, ITIN filing, and benefit-eligibility states. Flag when model uses one stock for taxes and another for costs.",
+      "retrodiction": "Would have caught 2.5M headcount mismatch and 40% temp-protection heterogeneity before applying scalar Mexico undocumented parameters.",
+      "negative_space": "Single undocumented count from one source year applied to all fiscal lines.",
+      "unnamed_assumptions_surfaced": [
+        "Unauthorized = undocumented = same benefit and tax treatment",
+        "Parolees/asylum seekers follow ITEP undocumented tax parameters"
+      ],
+      "topics": ["stock_reconciliation", "pew", "residual_method"],
+      "source_rel_paths": [
+        "external/lifetime/pew/pew-unauthorized-immigrants-2025.pdf",
+        "external/lifetime/itep/itep_2024_tax_contributions.json"
+      ],
+      "theory_tested": "Legal-status heterogeneity within unauthorized stock drives tax vs transfer mapping"
+    },
+    {
+      "id": "G-LIF-G03",
+      "name": "ITIN compliance sensitivity band",
+      "prompt": "Treat federal income tax contribution rate as explicit sensitivity: ITEP base 60% (50–75% literature), json pessimistic −10.6% / optimistic +15.5% on grand total. Require any lifetime undocumented cell to show tax floor under {50%, 60%, 75%} before point estimate.",
+      "retrodiction": "Would have surfaced ITEP advocacy-adjacent microsim and CBO 50–75% band before locking undocumented federal income proxy.",
+      "negative_space": "100% compliance or 0% undocumented income tax as unstated extremes.",
+      "unnamed_assumptions_surfaced": [
+        "60% contribution rate is representative across states and origins",
+        "Over-withholding non-filers net to zero lifetime fiscal effect"
+      ],
+      "topics": ["compliance", "itn", "sensitivity"],
+      "source_rel_paths": [
+        "external/lifetime/itep/ITEP-Tax-Payments-by-Undocumented-Immigrants-2024.pdf",
+        "external/lifetime/itep/itep_2024_tax_contributions.json"
+      ],
+      "theory_tested": "Undocumented tax floor is robust to ±15% contribution-rate perturbation"
+    },
+    {
+      "id": "G-LIF-G04",
+      "name": "Border-selection earnings updater",
+      "prompt": "When calibrating Mexico-origin lifetime cells, ask whether border-enforcement era shifted immigrant selection (Lozano-López: fewer older/high-ed women, higher earnings among survivors). Compare pre-2000 vs post-2000 arrival cohorts; do not use pooled Mexico <HS wage path for recent-surge entrants without selection flag.",
+      "retrodiction": "Would have linked IZA dp4898 positive selection channel to Mexico earnings donor cells before assuming uniform undocumented wage floor.",
+      "negative_space": "Random emigration from Mexican wage distribution (no gender/cost selection).",
+      "unnamed_assumptions_surfaced": [
+        "Border enforcement selection estimated on 1990–2008 cohorts applies to 2021–2023 surge",
+        "Higher selected earnings imply higher lifetime NPV without tenure offset"
+      ],
+      "topics": ["border_enforcement", "selection", "mexico"],
+      "source_rel_paths": [
+        "external/lifetime/iza/iza_dp4898_lozano_lopez_border_enforcement_mexican_selection.pdf"
+      ],
+      "theory_tested": "Rising migration costs positively select Mexican immigrant women on observables"
+    },
+    {
+      "id": "G-LIF-G05",
+      "name": "Tenure-split forward stock",
+      "prompt": "Pew 2023: 3.2M unauthorized <5 years vs 4.3M 18+ years. Split lifetime NPV into forward stock (short tenure, high flow uncertainty, temp protection) vs established stock (ITEP 16+ year median). Apply different discount horizons and legalization uplift ($40.2B/yr scenario) by tenure bucket.",
+      "retrodiction": "Would have prevented applying established-immigrant tax parameters to 2021–2023 parole-heavy inflow before forward-stock analysis.",
+      "negative_space": "Steady-state unauthorized population with homogeneous tenure.",
+      "unnamed_assumptions_surfaced": [
+        "Average tenure equals marginal entrant tenure",
+        "Short-tenure unauthorized have same per-capita tax as 16+ year residents"
+      ],
+      "topics": ["tenure", "forward_stock", "recent_surge"],
+      "source_rel_paths": [
+        "external/lifetime/pew/pew-unauthorized-immigrants-2025.pdf",
+        "external/lifetime/itep/ITEP-Tax-Payments-by-Undocumented-Immigrants-2024.pdf"
+      ],
+      "theory_tested": "Tenure heterogeneity splits undocumented lifetime NPV into distinct forward vs established stocks"
+    }
+  ],
+  "theories_tested": [
+    {
+      "theory": "Undocumented tax floor (~$8.9k/yr cap-weighted) offsets fiscal cost even with benefit exclusion",
+      "prediction": "Applying ITEP per-capita tax × Pew stock − barred-benefit transfers yields positive federal/state flow for working-age unauthorized cells before Medicaid retirement phase",
+      "duckdb_test": "Compose scenario: pew_unauthorized_stock × itep_per_capita_tax by state; subtract NAS benefit rows scaled to documented-ineligible matrix; compare to zero under SSA 3% discount",
+      "falsifier": "Barred-benefit savings exceed ITEP tax floor for Mexico-weighted <HS unauthorized cell at 2023 stock levels"
+    },
+    {
+      "theory": "Border enforcement positively selects Mexican immigrant earnings (especially women)",
+      "prediction": "Post-2000 Mexico female arrivals show higher ACS wage percentiles than pre-1990 cohort controlling for education — consistent with Lozano-López +10% earnings diff-in-diff",
+      "duckdb_test": "Split acs_origin_household by arrival_era {pre-2000, post-2000}; compare female Mexico wage donor to male and to non-Mexico Latin America placebo",
+      "falsifier": "No earnings premium on post-2000 female Mexico cohort; selection parameters indistinguishable from zero"
+    },
+    {
+      "theory": "Recent-surge unauthorized (short tenure + temp protection) carry lower lifetime forward stock than established cohort",
+      "prediction": "Pew <5yr bucket (3.2M) has lower NPV than 18+yr bucket (4.3M) when temp-protection revocation risk and incomplete labor attachment priced in",
+      "duckdb_test": "Two-scenario compose: tenure<5 vs tenure18+ × {ITEP base tax, legalization uplift}; apply higher discount or exit hazard to temp-protection 40% subshare",
+      "falsifier": "Tenure buckets produce identical lifetime NPV under reasonable exit/revocation bands"
+    }
+  ]
+}

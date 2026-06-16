@@ -1,0 +1,12 @@
+{
+  "sweep": 25,
+  "mined_at": "2026-06-15T11:27:29.731399+00:00",
+  "claims": [
+    {
+      "id": "S25-01",
+      "param": "mexico_growth_sensitivity_pp_per_1k_entry",
+      "value": 0.199,
+      "ref": "IZA dp631"
+    }
+  ]
+}

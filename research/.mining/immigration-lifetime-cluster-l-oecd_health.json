@@ -1,0 +1,249 @@
+{
+  "cluster": "L_oecd_health_bridge",
+  "mined_at": "2026-06-15",
+  "frame": {
+    "oecd_flows_role": "Ortega-Peri push-driven OECD flows justify macro GDP scale-up without micro fiscal sign; employer recruitment (Winkelmann) splits high-skill complementarity from shortage substitution",
+    "health_bridge_role": "Annual MEPS/SIPP cells are payer-incidence inputs — not lifetime NPV until age-path + discount + elderly phase applied",
+    "tension": "Working-age foreign-born health spend ≈18% below US-born in bridge cells, but 65+ Medicaid reverses; naive Medicaid-drain story fails at arrival, may bind at retirement"
+  },
+  "papers_mined": [
+    "external/lifetime/nber/ortega_peri_2009_causes_effects_international_migrations_w14833.pdf",
+    "external/lifetime/iza/iza_dp331_winkelmann_international_employer_recruitment.pdf",
+    "external/lifetime/derived/stage3_proto/meps_health_cost_module_2023.csv",
+    "external/lifetime/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv"
+  ],
+  "staging_gaps": [
+    "MEPS/SIPP CSV copies not yet on external/lifetime/derived/stage3_proto/ — numbers mined from sources/immigration-fiscal mirror (builder meta confirms same schema).",
+    "Winkelmann (2001) is European employer-demand survey — maps to high-skill/OECD channel, not US <HS Mexico surge cells."
+  ],
+  "parameter_claims": [
+    {
+      "claim_id": "L-001",
+      "source_rel_path": "external/lifetime/nber/ortega_peri_2009_causes_effects_international_migrations_w14833.pdf",
+      "parameter_name": "income_gap_migration_elasticity",
+      "value_numeric": 0.10,
+      "unit": "fraction_flow_change_per_1000_PPP_USD_gap",
+      "population": "74 origins × 14 OECD destinations, 1980-2005 bilateral flows",
+      "unnamed_assumption": true,
+      "page_ref": "abstract; intro p.3",
+      "notes": "+1000 PPP$ (2000) origin-destination income gap → ~10% bilateral flow increase. Gravity push side — not US fiscal ledger."
+    },
+    {
+      "claim_id": "L-002",
+      "source_rel_path": "external/lifetime/nber/ortega_peri_2009_causes_effects_international_migrations_w14833.pdf",
+      "parameter_name": "entry_law_reform_flow_reduction",
+      "value_numeric": 0.06,
+      "unit": "fraction",
+      "population": "OECD destination entry-law tightening reforms",
+      "unnamed_assumption": false,
+      "page_ref": "intro p.3; Table 2",
+      "notes": "Each tighter entry reform ↓ immigration ~6% on average. Policy lever absent from static lifetime NPV tables."
+    },
+    {
+      "claim_id": "L-003",
+      "source_rel_path": "external/lifetime/nber/ortega_peri_2009_causes_effects_international_migrations_w14833.pdf",
+      "parameter_name": "push_instrument_r_squared_share",
+      "value_numeric": null,
+      "value_range": [0.30, 0.40],
+      "unit": "fraction_of_migration_variance",
+      "population": "OECD receiving countries, origin×bilateral-cost IV",
+      "unnamed_assumption": true,
+      "page_ref": "intro p.3",
+      "notes": "Push factors explain 30-40% of destination-year migration variation — treated as exogenous to destination economy."
+    },
+    {
+      "claim_id": "L-004",
+      "source_rel_path": "external/lifetime/nber/ortega_peri_2009_causes_effects_international_migrations_w14833.pdf",
+      "parameter_name": "iv_labor_supply_response_delta_L_over_L",
+      "value_numeric": 1.0,
+      "value_range": [0.96, 1.02],
+      "unit": "elasticity_one_for_one",
+      "population": "14 OECD destinations, 2SLS Table 5",
+      "unnamed_assumption": true,
+      "page_ref": "section 5; Table 5 p.24",
+      "notes": "Immigration ↑ employment/hours 1:1; capital adjusts within 1yr (ΔK/K ≥ 1); ΔA/A ≈ 0. US inflow 0.3-0.4%/yr → GDP +0.3-0.4%/yr, flat wages. Macro scale ≠ NAS micro fiscal sign."
+    },
+    {
+      "claim_id": "L-005",
+      "source_rel_path": "external/lifetime/iza/iza_dp331_winkelmann_international_employer_recruitment.pdf",
+      "parameter_name": "firm_share_employing_foreign_hq_graduates",
+      "value_numeric": 0.388,
+      "unit": "fraction_of_firms",
+      "population": "850 firms, DE/FR/UK/NL, IZA Employer Survey 2000",
+      "unnamed_assumption": false,
+      "page_ref": "Table 2",
+      "notes": "38.8% employ foreign HQEs; among them FHQE share ≈11.1% of HQ staff. Germany economy-wide ≈3.5% (=9.1% × 38.9%). UK highest incidence (49.7%), NL highest conditional share (16.7%)."
+    },
+    {
+      "claim_id": "L-006",
+      "source_rel_path": "external/lifetime/iza/iza_dp331_winkelmann_international_employer_recruitment.pdf",
+      "parameter_name": "reject_lower_wage_motive_share",
+      "value_numeric": 0.8976,
+      "unit": "fraction_disagree",
+      "population": "German firms with FHQE, subjective motives Table 6",
+      "unnamed_assumption": true,
+      "page_ref": "Table 6; section 4",
+      "notes": "89.8% reject 'lower wage demands'; 46% strongly agree 'speak foreign languages'. Complementarity > shortage-substitution for recruited high-skill — separate bucket from <HS fiscal cells."
+    },
+    {
+      "claim_id": "L-007",
+      "source_rel_path": "external/lifetime/derived/stage3_proto/meps_health_cost_module_2023.csv",
+      "parameter_name": "working_age_mean_totexp_foreign_vs_us",
+      "value_numeric": 4626.1,
+      "value_range": [4626.1, 7973.0],
+      "unit": "USD_2023_per_person",
+      "population": "MEPS 2023, ages 25-64, person-weighted, nativity_code 2 vs 1",
+      "unnamed_assumption": false,
+      "page_ref": "csv aggregate; 77 cells from 18,919 persons",
+      "notes": "Foreign-born working-age mean totexp $4,626 vs US-born $7,973 (−42%). Medicaid component $623 vs $1,065. Weakens arrival-phase Medicaid-drain prior."
+    },
+    {
+      "claim_id": "L-008",
+      "source_rel_path": "external/lifetime/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv",
+      "parameter_name": "sipp_bridge_expected_totexp_25_29",
+      "value_numeric": 3695.0,
+      "value_range": [3695.0, 4526.2],
+      "unit": "USD_2023_annual_expected",
+      "population": "SIPP cells 25-29, all education buckets, nativity 2 vs 1",
+      "unnamed_assumption": true,
+      "page_ref": "csv rows; 98/98 exact MEPS match",
+      "notes": "Bridge collapses insurance mix to nativity×age expected spend; invariant to education within nativity at 25-29 (education enters federal proxy separately). expected_mean_totmcd23: $600 FB vs $734 US."
+    },
+    {
+      "claim_id": "L-009",
+      "source_rel_path": "external/lifetime/derived/stage3_proto/meps_health_cost_module_2023.csv",
+      "parameter_name": "elderly_medicaid_mean_totmcd_foreign_vs_us",
+      "value_numeric": 1282.3,
+      "value_range": [363.7, 1282.3],
+      "unit": "USD_2023_per_person",
+      "population": "MEPS 2023, ages 65+, medicare insurance cells, nativity 2 vs 1",
+      "unnamed_assumption": false,
+      "page_ref": "csv aggregate",
+      "notes": "Phase reversal: FB 65+ Medicaid $1,282 vs US $364 (+252%). Lifetime NPV must weight elderly phase — working-age gap alone understates fiscal health channel for long-horizon immigrants."
+    },
+    {
+      "claim_id": "L-010",
+      "source_rel_path": "external/lifetime/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv",
+      "parameter_name": "bridge_match_rate",
+      "value_numeric": 1.0,
+      "unit": "fraction_sipp_cells_matched",
+      "population": "98 SIPP working-age profile cells → MEPS branches",
+      "unnamed_assumption": false,
+      "page_ref": "sipp_meps_bridge_cells_2024.meta.json",
+      "notes": "294 bridge rows, 98 expected rows, zero fallback/unmatched. Ready for scenario_ledger join but not yet discounted to 75yr NPV."
+    }
+  ],
+  "unnamed_assumptions_cross_cutting": [
+    "OECD macro 1:1 GDP scale-up (Ortega-Peri IV) treated as equivalent to NAS individual NPV — different unit, horizon, and public-goods scope.",
+    "Employer-recruited high-skill complementarity (Winkelmann) applied to stock-average or Mexico <HS surge composition.",
+    "Annual MEPS payer incidence commensurate with lifetime fiscal NPV without age-path, survival, or Medicare eligibility timing.",
+    "Working-age lower foreign-born health spend extrapolated to full lifecycle — ignores 65+ Medicaid reversal in module.",
+    "SIPP→MEPS bridge education invariance within nativity treated as 'health costs don't vary by skill' rather than 'insurance mix not yet education-stratified'.",
+    "Push-driven OECD flows exogenous to US destination fiscal conditions — valid for macro IV, not for cell-level SIPP donor matching."
+  ],
+  "generators": [
+    {
+      "id": "G-LIF-L01",
+      "name": "Push-flow vs pull-fiscal attribution split",
+      "prompt": "For every lifetime fiscal claim citing 'immigration increases GDP/jobs': tag whether evidence is Ortega-Peri-style push-IV macro (scale, flat per-capita) or NAS/CBO micro ledger (education × transfers). Block synthesis that imports macro 1:1 employment response into individual NPV cells without capital-tax and public-goods grid.",
+      "retrodiction": "Would have separated Ortega-Peri Table 5 ΔL/L≈1 from NAS -$109k <HS before debate conflated 'immigrants grow GDP' with 'immigrants are net fiscal drains'.",
+      "negative_space": "Standing frame: macro OECD panel = US lifetime fiscal scalar.",
+      "unnamed_assumptions_surfaced": [
+        "GDP scale-up implies per-capita fiscal surplus",
+        "Push-driven flows uncorrelated with US Medicaid/Medicare enrollment path"
+      ],
+      "topics": ["oecd_flows", "macro_micro_gap", "iv_attribution"],
+      "source_rel_paths": [
+        "external/lifetime/nber/ortega_peri_2009_causes_effects_international_migrations_w14833.pdf"
+      ],
+      "theory_tested": "Macro push-IV migration variance should not rank-order NAS npv_education_benchmarks individual_npv"
+    },
+    {
+      "id": "G-LIF-L02",
+      "name": "MEPS annual cell → lifetime health NPV harmonizer",
+      "prompt": "Given meps_health_cost_module_2023 age×nativity×insurance cells: (1) map SIPP arrival age to age-band path; (2) apply survival/ Medicare eligibility; (3) discount at NAS 3% real over 75yr; (4) split payer columns (MCR/MCD/PRV/SLF). Never cite expected_mean_totexp23 as lifetime cost without horizon tag.",
+      "retrodiction": "Would have flagged scenario-composition memo disconfirmation #2 (FB working-age lower) AND elderly Medicaid reversal (L-009) before treating $600/yr bridge as −$109k NPV health line.",
+      "negative_space": "Annual cross-section MEPS mean = lifetime immigrant health fiscal externality.",
+      "unnamed_assumptions_surfaced": [
+        "Constant annual health spend from arrival age 25",
+        "Medicare/Medicaid incidence static at 2023 payer shares",
+        "Private/self-pay not netted against tax base in fiscal ledger"
+      ],
+      "topics": ["health_cost_bridge", "npv_horizon", "units"],
+      "source_rel_paths": [
+        "external/lifetime/derived/stage3_proto/meps_health_cost_module_2023.csv",
+        "external/lifetime/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv"
+      ],
+      "theory_tested": "Discounted 75yr Medicaid NPV from bridge cells ranks opposite working-age annual cross-section for long-stay cohorts"
+    },
+    {
+      "id": "G-LIF-L03",
+      "name": "Employer-recruitment channel vs stock composition",
+      "prompt": "When Winkelmann-style employer demand shows complementarity (languages, know-how; not wage undercutting), require separate high-skill recruited bucket in scenario ledger — do not pool with ACS stock <HS Mexico weights. Cross-check: firms with ≥1000 employees +32pp FHQE probability vs economy-wide 3.5% FHQE share.",
+      "retrodiction": "Would have blocked mapping IZA employer survey (IT/R&D 50-68% firm incidence) onto NAS average-recent-immigrant +$259k without education×visa path.",
+      "negative_space": "All immigrants modeled as undifferentiated labor supply shock.",
+      "unnamed_assumptions_surfaced": [
+        "Employer recruitment motives represent marginal US immigrant cohort",
+        "High-skill complementarity fiscal externality equals average stock NPV"
+      ],
+      "topics": ["employer_recruitment", "high_skill", "composition"],
+      "source_rel_paths": [
+        "external/lifetime/iza/iza_dp331_winkelmann_international_employer_recruitment.pdf"
+      ],
+      "theory_tested": "Recruitment-intensive industries should map to positive federal proxy cells, not <HS NPV benchmarks"
+    },
+    {
+      "id": "G-LIF-L04",
+      "name": "Lifecycle Medicaid phase-shift audit",
+      "prompt": "Compare MEPS mean_totmcd23 by age_band for foreign_born vs us_born. Identify crossover age where fiscal sign flips. For lifetime NPV: stress-test with (a) working-age-only horizon to 65, (b) full 75yr with elderly weights, (c) uninsured→Medicaid transition scenarios. Flag any headline using only 25-44 cells.",
+      "retrodiction": "Would have surfaced L-007 (−42% working-age totexp) AND L-009 (+252% elderly Medicaid) as mandatory paired disconfirmation before Medicaid-drain advocacy.",
+      "negative_space": "Health fiscal sign from single working-age snapshot.",
+      "unnamed_assumptions_surfaced": [
+        "Immigrants remain in public-only insurance mix at US rates",
+        "YRSINUS tenure codes ignored for Medicare eligibility timing"
+      ],
+      "topics": ["medicaid", "medicare", "lifecycle", "health_cost_bridge"],
+      "source_rel_paths": [
+        "external/lifetime/derived/stage3_proto/meps_health_cost_module_2023.csv"
+      ],
+      "theory_tested": "Elderly Medicaid cells dominate lifetime health NPV gap despite lower working-age means"
+    },
+    {
+      "id": "G-LIF-L05",
+      "name": "OECD policy-shock × health-bridge scenario grid",
+      "prompt": "Cross Ortega-Peri entry-law elasticity (−6%/reform) with SIPP scenario_ledger health columns. For each policy counterfactual (tighter entry, income-gap shock): re-weight origin cells AND recompute expected_mean_totmcd23 — immigration policy and health incidence treated as joint state, not independent scalars.",
+      "retrodiction": "Would have connected OECD law-reform flow shifts to which SIPP nativity/education cells enter the ledger, instead of static 98-cell health attach.",
+      "negative_space": "Immigration policy affects counts only; payer incidence held fixed at 2023 MEPS.",
+      "unnamed_assumptions_surfaced": [
+        "Entry restrictions select same health/insurance profile as stock",
+        "European employer survey parameters transfer to US policy shocks"
+      ],
+      "topics": ["oecd_flows", "policy", "scenario_ledger"],
+      "source_rel_paths": [
+        "external/lifetime/nber/ortega_peri_2009_causes_effects_international_migrations_w14833.pdf",
+        "external/lifetime/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv"
+      ],
+      "theory_tested": "Policy-tightening scenarios change cell weights more than per-cell expected_mean_totmcd23"
+    }
+  ],
+  "theories_tested": [
+    {
+      "theory": "Working-age MEPS/SIPP expected health spend ranks foreign-born below US-born and predicts lower undiscounted 25-64 health ledger",
+      "prediction": "For ages 25-64, foreign_born weighted mean totexp and expected_mean_totexp23 strictly < us_born across bridge and module tables",
+      "duckdb_test": "SELECT nativity_group, SUM(person_weight_sum * mean_totexp23)/SUM(person_weight_sum) AS wavg_totexp FROM meps_health_cost_module_2023 WHERE age_band IN ('25-34','35-44','45-54','55-64') GROUP BY 1; SELECT sipp_nativity_code, AVG(expected_mean_totexp23) AS exp_totexp FROM sipp_meps_expected_health_cost_cells_2024 WHERE sipp_age_band LIKE '25-%' OR sipp_age_band LIKE '3%' GROUP BY 1;",
+      "falsifier": "Foreign-born working-age wavg ≥ US-born in either table after nativity_code harmonization"
+    },
+    {
+      "theory": "Lifetime 75yr health NPV at 3% real flips sign vs working-age annual gap when elderly Medicaid phase included",
+      "prediction": "NPV_75yr(totmcd) foreign_born > US_born even though annual 25-64 totmcd FB < US; working-age-only NPV component FB < US",
+      "duckdb_test": "WITH age_path AS (SELECT age_band, nativity_group, mean_totmcd23, person_weight_sum FROM meps_health_cost_module_2023), discounted AS (SELECT nativity_group, age_band, mean_totmcd23 * POW(1.03, - (CAST(SPLIT_PART(age_band,'-',1) AS INT) - 25)) AS disc_mcd FROM age_path WHERE age_band ~ '^[0-9]') SELECT nativity_group, SUM(disc_mcd) AS approx_lifetime_mcd_npv FROM discounted GROUP BY 1; -- compare to NAS 3% benchmark; elderly 65+ bands must flip ordering",
+      "falsifier": "Full lifecycle discounted Medicaid NPV remains lower for foreign_born after joining 65+ cells (L-009 reversal absent in warehouse)"
+    },
+    {
+      "theory": "SIPP→MEPS bridge expected health costs are sufficient at nativity×age for scenario ledger — education gradient in health must enter via separate insurance path, not bridge column",
+      "prediction": "Within sipp_nativity_code and sipp_age_band, expected_mean_totexp23 has zero variance across sipp_education_bucket (bridge design); federal/education effects live in sipp_scenario_ledger federal columns only",
+      "duckdb_test": "SELECT sipp_nativity_code, sipp_age_band, COUNT(DISTINCT expected_mean_totexp23) AS n_totexp, COUNT(DISTINCT expected_mean_totmcd23) AS n_mcd FROM sipp_meps_expected_health_cost_cells_2024 GROUP BY 1,2 HAVING n_totexp > 1 OR n_mcd > 1; -- expect empty; JOIN sipp_scenario_ledger_2024 ON keys and verify health columns constant within nativity×age",
+      "falsifier": "Any nativity×age cell shows >1 distinct expected_mean_totexp23 across education buckets — bridge silently encodes skill gradient"
+    }
+  ]
+}
