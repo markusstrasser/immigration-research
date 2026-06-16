@@ -8,7 +8,7 @@
 
 E-Verify mandates produced **no statistically significant positive wage effect** on low-education workers in any of 12 specifications. Point estimates are tiny (within ±1.5%) with mixed signs. The Borjas wage prediction (~5-15% rise for less-than-HS workers) is rejected at conventional levels for this policy variation. **In this E-Verify design, the wage results are closer to the Card-style null than to large Borjas-style native wage gains.**
 
-Employment side: E1 (less than HS) workers in E-Verify-exposed industries (Ag, Constr, Mfg, Food Service) fell ~6% post-treatment (t=-1.40, marginal). Combined picture: labor supply contracted but wages did NOT rise → employer adjustment via capital/automation/relocation, not via bidding up native low-skill labor.
+Employment side: E1 (less than HS) stable W-2 employment in E-Verify-exposed industries (Ag, Constr, Mfg, Food Service) fell ~6% post-treatment (t=-1.40, marginal). Combined picture: QWI employment fell but wages did NOT rise. That points away from large native wage bidding in this observed design; it does not identify whether adjustment happened through capital, output, relocation, cash-economy substitution, hours, or composition.
 
 ## Method
 
@@ -107,12 +107,13 @@ Total-economy E4 (BA+) employment grew ~4% (p<0.05) but this likely reflects nat
 ### What the data show
 
 - **Wages of native low-skill workers did not rise after E-Verify**, in any of 12 specifications, including the most sympathetic test (E1 workers in the exact industries where unauthorized are concentrated — Ag, Constr, Mfg, Food Service)
-- **Employment in exposed industries did fall** for E1 workers (~6%, marginal). This is qualitatively consistent with the Bohn-Lofstrom-Raphael Arizona result and means the labor supply did contract.
-- **Together: supply ↓ but wages flat = the "substitution" margin is not where the adjustment happened.** Employers adjusted via:
+- **Stable W-2 employment in exposed industries did fall** for E1 workers (~6%, marginal). This is qualitatively consistent with the Bohn-Lofstrom-Raphael Arizona result, but QWI cannot by itself distinguish true labor-supply contraction from cash-economy movement, hours changes, establishment composition, or worker reclassification.
+- **Together: QWI employment ↓ but wages flat = the large native wage-bidding channel is not observed in this design.** Candidate adjustment channels remain hypotheses, not measured mechanisms:
   1. Capital substitution (mechanization in Ag, prefab in Constr)
   2. Output reduction or relocation (firms exit; consumers face higher prices/lower service)
   3. Cash economy / non-W-2 hiring (which doesn't show up in QWI)
   4. Outsourcing across state lines
+  5. Hours, occupation, or establishment-composition shifts inside QWI cells
 
 For this enforcement margin, the adjustment looks Card-style: the wage curve is flatter than the large-Borjas-gain prediction, and removing low-skill immigrant labor through these mandates does not measurably transfer rents to native low-skill workers.
 
@@ -180,6 +181,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Narrowed the employment/wage mechanism interpretation: QWI shows stable W-2 employment fell while wages did not rise, but it does not identify capital, output, relocation, cash-economy, hours, or composition adjustment mechanisms. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "Clark economists were correct/right" language with support for the small-native-wage-effect premise in the observed E-Verify margin. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Bounded "data side with Card" and commentator-update language to the observed E-Verify wage-channel design; the result rejects large Borjas-style native wage gains for this margin, not all wage or open-borders questions. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Aligned the proposed confidence-ladder update with the same margin-specific wording: strong against large Borjas-style gains in the E-Verify margin, not a global "STRONG REJECTION." See `immigration-conclusion-audit-running-fixes.md`. |
