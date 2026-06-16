@@ -79,7 +79,7 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 |------|-------|----------------|
 | `immigration-clark-respondent-audit.md` | How to read the Clark poll without overclaiming | Saying "economists agree" |
 | `immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md` | Unified comparative audit with one quantitative framework across all three commentators | Wanting a more decisive first-principles comparison |
-| `immigration-claims-matrix-2026-04-11.md` | One-page verified/inferred/unresolved claim ledger for current artifacts and commentators | Making a quick final assertion |
+| `immigration-claims-matrix-2026-04-11.md` | One-page verified/inferred/unresolved claim ledger for artifacts and commentators; 2026-06-16 scoped to quick ledger, not latest tensor | Making a quick final assertion; confirm latest fiscal/school rows in verified findings and running fixes |
 | `immigration-david-d-friedman-claims-audit-2026-04-11.md` | Named audit of David D. Friedman claims with a first-principles quantitative pass | Checking libertarian open-borders arguments against the repo and official sources |
 | `immigration-bryan-caplan-claims-audit-2026-04-21.md` | Claim-by-claim audit of Bryan Caplan with a causal graph tying his optimistic channels to current surge, housing, fiscal, and political-response evidence | Evaluating Caplan directly rather than treating him as generic open-borders rhetoric |
 | `immigration-economist-one-pager-2026-04-22.md` | Short public-facing one-pager on why the strongest pro-immigration economics rhetoric keeps answering the wrong question | Needing a concise forwardable version rather than a full memo |

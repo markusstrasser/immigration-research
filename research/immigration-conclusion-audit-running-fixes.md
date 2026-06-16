@@ -2527,3 +2527,23 @@ Updated `research/immigration-sweep-cycles-23-32-2026-06-15.md` with a 2026-06-1
 ### Updated conclusion
 
 Sweeps 23–32 still preserve useful NAS education-mix, federal-proxy, and thesis-generation work, but their origin school/net numbers are historical traces, not current facts. Current live origin `federal - school` signs remain withheld until same-universe school numerators are rebuilt. [INFERENCE]
+
+---
+
+## 2026-06-16 — Quick claims matrix labels narrowed
+
+### Issue
+
+`research/immigration-claims-matrix-2026-04-11.md` was still framed as the current defensible claim set and used terse verdict labels such as `MODERATE-FALSE`, `VERIFIED false`, and `MODERATE-FALSE (as complete fix)` for commentator claims. It also described the household child metric as "school burden" without carrying the later same-universe guard. [DATA]
+
+### Why it was wrong
+
+The named Smith/Decker and Friedman audits support strong critiques, but their own language is narrower: Decker's "must make us richer" fails as a universal theorem; the politics-only claim is false as an exclusivity claim; Friedman's transfer/voting proposal is incomplete rather than empirically false in all frames. Separately, the child rows are linked-household exposure metrics, not current full-stock school-burden-per-adult or origin `federal - school` signs. [SOURCE: `research/immigration-noah-smith-nicholas-decker-claims-audit-2026-04-11.md`] [SOURCE: `research/immigration-david-d-friedman-claims-audit-2026-04-11.md`] [SOURCE: `research/immigration-school-burden-per-adult-2026-06-15.md`]
+
+### Fix
+
+Updated `research/immigration-claims-matrix-2026-04-11.md` with a 2026-06-16 status note, added an `OVERBROAD` legend entry, scoped row 5 to linked-household child exposure, replaced hard false labels with scoped overbreadth/incomplete verdicts, and updated the verdict envelope to include the narrow SIPP-style federal proxy plus withheld origin school/net signs. Updated the index route row to warn that this matrix is a quick ledger, not the latest tensor. [SOURCE: memo]
+
+### Updated conclusion
+
+The quick matrix still supports the same broad incidence split, but it no longer exports overconfident boolean labels or treats linked-household child exposure as a live school/adult fiscal scalar. [INFERENCE]
