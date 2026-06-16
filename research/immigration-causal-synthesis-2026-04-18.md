@@ -41,7 +41,7 @@ The E-Verify finding clarifies the **labor-market** side:
 - No statistically significant positive QWI wage effect is observed for native low-skill workers under observed E-Verify mandate variation.
 - The evidence rejects large Borjas-style native wage gains from marginal enforcement, but does not directly measure the full wage effect of current inflow levels or surge regimes.
 - Therefore the observed marginal-enforcement wage component shows no statistically significant positive QWI wage effect for natives, with large Borjas-style gains rejected in this design; the broader labor-market ledger still includes small effects, employment composition, hours, occupational sorting, and unmeasured shock regimes.
-- The total local burden is school-finance + housing-rent + service-capacity, NOT wage compression.
+- In this cycle's observed E-Verify wage margin, wage compression is not the supported local-burden channel; school-finance, housing-rent, and service capacity remain separate live channels. Surge/current-inflow wage compression remains unmeasured here.
 
 Combined effect on incidence narrative:
 - Pre-cycle: native low-skill workers maybe lose wages (Borjas), bear school burden, face rent competition.
@@ -131,6 +131,7 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced the "NOT wage compression" burden shortcut with margin-specific language: E-Verify QWI does not support wage compression in that design, but surge/current-inflow wage compression remains unmeasured. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual hard non-generalization wording for Borjas restricted-Mariel with a narrower no-mechanical-extrapolation claim. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced Card/Mariel "zero wage effect" and "Card-style complementarity" shorthand with no-detected-adverse-effect and bounded-native-wage-impact language. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "small/null" wage-response shorthand with no-statistically-significant-positive-QWI-wage-effect language; large gains are rejected but small effects are not. See `immigration-conclusion-audit-running-fixes.md`. |

@@ -2120,3 +2120,23 @@ Scoped the confidence statement to observed U.S. criminal-justice outcomes while
 ### Updated conclusion
 
 The crime memo's directional observed-rate finding remains, but its construction caveats now distinguish denominator arithmetic, incarceration-specific race correction, and remaining non-race confounders. [INFERENCE]
+
+---
+
+## 2026-06-16 — Local-burden wage channel scoped to observed margin
+
+### Issue
+
+`research/immigration-causal-synthesis-2026-04-18.md` said "The total local burden is school-finance + housing-rent + service-capacity, NOT wage compression." [DATA]
+
+### Why it was wrong
+
+The E-Verify QWI design rejects large positive native wage gains from marginal enforcement and does not support wage compression as the local-burden channel in that observed margin. It does not measure all current-inflow or surge wage effects, so "NOT wage compression" overstated the scope of the null. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Changed the synthesis to say wage compression is not the supported local-burden channel in this cycle's observed E-Verify wage margin, while school-finance, housing-rent, and service capacity remain live channels and surge/current-inflow wage compression remains unmeasured. [SOURCE: memo]
+
+### Updated conclusion
+
+The local-incidence synthesis now distinguishes a bounded wage-margin result from broader wage-shock uncertainty. [INFERENCE]
