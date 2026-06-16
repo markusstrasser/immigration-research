@@ -17,9 +17,9 @@ The report integrates the verified local warehouse work, the survey/economist au
 1. The strongest verified result is an **incidence split**, not a scalar verdict. National consumer and employer gains can coexist with local school, housing, and capacity pressure. `High certainty`, `A1/A2`. [SOURCE: research/immigration-unified-scenarios-memo.md] [SOURCE: https://d279m997dpfwgl.cloudfront.net/wp/2016/09/0922_immigrant-economics-full-report.pdf] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf]
 2. The local warehouse does support a real local-burden story, but for a **narrow operational definition** of low-skill: foreign-born adults ages `25-64`, `YOEP >= 2014`, and `SCHL < 16`. In ACS coding, `SCHL = 16` is a regular high-school diploma, so the current warehouse's `low-skill` group is effectively **less than high school**, not the broader public-use meaning of "non-college." `High certainty`, `A1`. [SOURCE: sources/immigration-fiscal/data/derived/extend_immigration_context_with_pumas.sql] [SOURCE: https://api.census.gov/data/2023/acs/acs5/pums/variables/SCHL.json] [SOURCE: https://api.census.gov/data/2023/acs/acs5/pums/variables/YOEP.json] [SOURCE: https://api.census.gov/data/2023/acs/acs5/pums/variables/AGEP.json]
 3. Within that narrow group, origin mix matters a lot. The largest recent low-education origin groups in the warehouse are `Mexico`, `Guatemala`, `Honduras`, `El Salvador`, `Cuba`, and `Haiti`. `High certainty`, `A1`. [SOURCE: DuckDB query on `acs_origin_national_2023` run 2026-04-10]
-4. The household-normalized child-burden correction materially improved the analysis and did **not** rescue the optimistic reading. The strongest school-age burden groups remain `Afghanistan`, `Honduras`, `Myanmar`, `El Salvador`, `Mexico`, and `Guatemala`. `High certainty`, `A1`. [SOURCE: research/immigration-household-weighted-correction.md] [SOURCE: DuckDB query on `acs_origin_household_national_2023` run 2026-04-10]
+4. The household-normalized child-burden correction materially improved the analysis, but its verified object is **linked-household child exposure**, not a current full-stock school-burden-per-adult or origin `federal - school` sign. On that linked-household metric, the strongest school-age exposure groups remain `Afghanistan`, `Honduras`, `Myanmar`, `El Salvador`, `Mexico`, and `Guatemala`. June 2026 tensor work now withholds origin school/net rows until numerator and denominator universes match. `High certainty` for the exposure correction; `unresolved` for full-stock origin school/adult net. `A1`. [SOURCE: research/immigration-household-weighted-correction.md] [SOURCE: DuckDB query on `acs_origin_household_national_2023` run 2026-04-10] [SOURCE: research/immigration-school-burden-per-adult-2026-06-15.md]
 5. State averages hid real destination sorting. On a `PUMA` basis, some origins are substantially more rent-exposed than the state average suggested. `China`, `Colombia`, `Brazil`, and `Venezuela` are the clearest large-group cases in the current warehouse. `High certainty`, `A1`. [SOURCE: research/immigration-local-burden-puma-layer.md] [SOURCE: DuckDB query on `origin_puma_household_context_2023` run 2026-04-10]
-6. The current repo does **not** yet support a hard all-in federal fiscal number. The Texas federal prototype is useful as a scaffold, but its donor library is not trustworthy enough for substantive fiscal claims because the CPS `HHINC` field was handled as if it were a dollar field when official CPS documentation shows it is a household-income recode. All `24` donor cells collapsed into `lt30k`, which is an immediate red flag. `High certainty` that the prototype is weak; `Low certainty` on any substantive federal number from it. `A1`. [SOURCE: sources/immigration-fiscal/data/derived/build_federal_microsim_prototype.py] [SOURCE: DuckDB query on `sipp_household_donor_cells_2023` run 2026-04-10] [SOURCE: https://www2.census.gov/programs-surveys/cps/datasets/2024/march/asec2024_ddl_pub_full.pdf] [SOURCE: https://api.census.gov/data/2024/cps/asec/mar/variables.html]
+6. The current repo still does **not** support a hard all-in federal or full fiscal number. The April Texas/CPS prototype remains a useful failure trace, but June 2026 work supersedes it for the current narrow federal cash-flow layer with a SIPP-style proxy: payroll/FICA minus SNAP, TANF, and SSI. That proxy is stronger than the old CPS shortcut, but it is not income tax, Medicare/Medicaid, EITC, capital/corporate tax, a household-filing model, or a lifetime NPV. `High certainty` that the old prototype was weak; `Moderate certainty` for the current narrow annual federal proxy; `Low certainty` for any all-in federal number. `A1`. [SOURCE: sources/immigration-fiscal/data/derived/build_federal_microsim_prototype.py] [SOURCE: DuckDB query on `sipp_household_donor_cells_2023` run 2026-04-10] [SOURCE: research/immigration-federal-distribution-findings-2026-06-15.md] [SOURCE: research/immigration-country-fiscal-tensor-2026-06-15.md]
 7. The Clark Center economists who agreed are usually **not factually wrong on the channel they are talking about**. The problem is that many are answering a narrower question than readers think: wages, prices, firm efficiency, or average consumer surplus, not a full local-capacity or fiscal ledger. `Moderate certainty`, `A2/B1`. [SOURCE: https://kentclarkcenter.org/surveys/low-skilled-immigrants/] [SOURCE: research/immigration-clark-respondent-audit.md] [SOURCE: research/immigration-economist-effects-matrix.md]
 8. Under an `AGI-soon` frame, long-run lifetime-NPV arguments become less decisive, and short-run adjustment, housing, schooling, and political legitimacy become more central. `Moderate certainty`, `A2/B2`, partly inferential. [SOURCE: research/immigration-agi-reframing.md] [SOURCE: https://docs.iza.org/dp18218.pdf] [SOURCE: https://www.imf.org/-/media/files/research/imf-and-g20/2025/g20-background-note-on-aging-and-migration.pdf] [INFERENCE]
 
@@ -45,8 +45,8 @@ This report uses two separate grading axes.
 1. I split the problem into ledgers instead of asking for a single sign: labor-market prices, federal budget, state/local budget, housing, descendants, political economy, and `AGI-soon` transition. [SOURCE: research/immigration-unified-scenarios-memo.md]
 2. I treated origin, destination, household structure, and time-since-entry as first-order. I did **not** use ad hoc exclusions like "not Japan" or "not the EU." [SOURCE: research/immigration-origin-data-stack.md]
 3. I preferred direct public-use geography over fake metro precision. That is why the local warehouse is built around `PUMA`, then bridged outward carefully, rather than pretending ACS microdata identify exact districts or metros. [SOURCE: research/immigration-local-burden-puma-layer.md] [SOURCE: research/immigration-stage2-county-bridge-batch.md]
-4. I corrected unit-of-analysis errors before interpreting results. The household correction mattered because adult-linked child counts are not the same thing as household-normalized school burden. [SOURCE: research/immigration-household-weighted-correction.md]
-5. I treated the federal prototype as provisional once the donor-library failure became visible. That is the correct move; forcing a precise federal number out of a broken donor design would be worse than leaving the question unresolved. [SOURCE: sources/immigration-fiscal/data/derived/build_federal_microsim_prototype.py] [SOURCE: research/immigration-prototype-progress.md]
+4. I corrected unit-of-analysis errors before interpreting results. The household correction mattered because adult-linked child counts are not the same thing as household-normalized child exposure, and June 2026 work later showed that scenario-household school numerators cannot be paired with full-microsim adult denominators. [SOURCE: research/immigration-household-weighted-correction.md] [SOURCE: research/immigration-school-burden-per-adult-2026-06-15.md]
+5. I treated the April federal prototype as provisional once the donor-library failure became visible, then treated the June SIPP-style build as a narrow annual federal proxy rather than a full federal answer. That is the correct move; forcing a precise all-in federal number out of either surface would be worse than leaving the broader question unresolved. [SOURCE: sources/immigration-fiscal/data/derived/build_federal_microsim_prototype.py] [SOURCE: research/immigration-prototype-progress.md] [SOURCE: research/immigration-federal-distribution-findings-2026-06-15.md]
 
 ## Terms and assumptions
 
@@ -56,7 +56,7 @@ This report uses two separate grading axes.
 2. `ACS PUMS`: American Community Survey Public Use Microdata Sample. Person and housing microdata used for the core warehouse. [SOURCE: research/immigration-glossary.md]
 3. `Origin x destination x household`: the main analytical cell. Origin is birthplace, destination is `state x PUMA`, household comes from `SERIALNO`-linked person and housing files. [SOURCE: research/immigration-origin-data-stack.md]
 4. `Incidence`: who gets the gains or bears the costs. This report separates employers/consumers, competing low-skill natives, federal taxpayers, local governments, renters, and homeowners. [SOURCE: research/immigration-glossary.md]
-5. `Household-normalized child burden`: school-age and preschool child exposure measured with the ACS housing file and `WGTP`, not by naively attaching all children to every qualifying adult. [SOURCE: research/immigration-household-weighted-correction.md]
+5. `Household-normalized child burden`: school-age and preschool child exposure measured with the ACS housing file and `WGTP`, not by naively attaching all children to every qualifying adult. This term describes linked-household exposure; it is not itself a full-stock school-burden-per-adult, district marginal-cost estimate, or all-government net. [SOURCE: research/immigration-household-weighted-correction.md] [SOURCE: research/immigration-school-burden-per-adult-2026-06-15.md]
 
 ### Core operational assumptions in the current warehouse
 
@@ -64,7 +64,7 @@ This report uses two separate grading axes.
 2. `Recent`: `YOEP >= 2014`. [SOURCE: sources/immigration-fiscal/data/derived/extend_immigration_context_with_pumas.sql]
 3. `Low-skill`: `SCHL < 16`, which in ACS coding means less than a regular high-school diploma. This is narrower than the usual policy shorthand for low-skill. [SOURCE: sources/immigration-fiscal/data/derived/extend_immigration_context_with_pumas.sql] [SOURCE: https://api.census.gov/data/2023/acs/acs5/pums/variables/SCHL.json]
 4. `Local burden`: measured through schooling context, rent exposure, and housing stress, not through a fully specified municipal general-equilibrium model. [SOURCE: research/immigration-stage2-county-bridge-batch.md] [SOURCE: research/immigration-local-burden-puma-layer.md]
-5. `Federal burden`: still provisional inside this repo. The current Texas/CPS donor prototype is not good enough for a headline federal net number. [SOURCE: research/immigration-prototype-progress.md]
+5. `Federal burden`: still provisional as an all-in concept. The April Texas/CPS donor prototype is not good enough for a headline federal net number; the current June SIPP-style federal annual proxy is usable only for its narrow FICA-minus-selected-cash-benefits ledger. [SOURCE: research/immigration-prototype-progress.md] [SOURCE: research/immigration-federal-distribution-findings-2026-06-15.md] [SOURCE: research/immigration-country-fiscal-tensor-2026-06-15.md]
 
 ## Datasets used and how they are fused
 
@@ -97,15 +97,16 @@ This report uses two separate grading axes.
 
 | Dataset | Role | Key fields | How fused | Status |
 |---|---|---|---|---|
-| CPS ASEC 2024 March | Prototype federal donor library | household fields, income recodes | Used to build donor cells for household earnings / net estimates | **Not trustworthy yet for headline estimates** because `HHINC` was mishandled, `A1` for identifying the problem [SOURCE: sources/immigration-fiscal/data/derived/build_federal_microsim_prototype.py] [SOURCE: https://www2.census.gov/programs-surveys/cps/datasets/2024/march/asec2024_ddl_pub_full.pdf] |
+| CPS ASEC 2024 March | Historical prototype federal donor library | household fields, income recodes | Used in the April Texas scaffold for household earnings / net estimates | **Superseded for current federal-proxy work**; still useful as a failure mode because `HHINC` was mishandled, `A1` for identifying the problem [SOURCE: sources/immigration-fiscal/data/derived/build_federal_microsim_prototype.py] [SOURCE: https://www2.census.gov/programs-surveys/cps/datasets/2024/march/asec2024_ddl_pub_full.pdf] |
+| SIPP-style federal annual proxy tables | Narrow federal annual cash-flow layer | ACS adults, education/origin cells, SIPP donor cells | Builds origin and NH-white annual proxy rows for FICA minus SNAP/TANF/SSI | Useful for a narrow annual federal cash proxy only; not all-in federal liability, Medicare/Medicaid, income tax, EITC, capital/corporate tax, or NPV [SOURCE: research/immigration-federal-distribution-findings-2026-06-15.md] [SOURCE: research/immigration-country-fiscal-tensor-2026-06-15.md] |
 | Texas ACS person/housing extract | State-specific local prototype | `SERIALNO`, `PUMA`, state-specific records | Built verified Texas stage-3 local tables | Prototype, locally useful, `A1` [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/external/acs/psam_p48.csv] |
 | Texas stage-3 tract and PUMA context outputs | Local prototype integration | tract, PUMA | Combined local finance and housing stress context | Prototype, `A1` [SOURCE: /Users/alien/Projects/research/research/immigration-prototype-progress.md] |
 
 ### Materialized warehouse layers
 
-The main fused warehouse is [immigration_context.duckdb](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/immigration_context.duckdb).
+The original fused warehouse is [immigration_context.duckdb](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/immigration_context.duckdb). Later June 2026 fiscal-tensor work also uses the fiscal-union warehouse views named below.
 
-Important materialized tables include:
+Important materialized tables and views include:
 
 1. `acs_origin_national_2023`
 2. `acs_origin_puma_2023`
@@ -120,8 +121,12 @@ Important materialized tables include:
 11. `puma_county_area_xwalk_2023`
 12. `origin_puma_household_stage2_context_2023`
 13. `tx_origin_puma_household_stage3_context_2023`
+14. `acs_origin_household_federal_microsim_2023`
+15. `acs_nh_white_federal_microsim_2023`
+16. `v_country_fiscal_rollup`
+17. `v_three_layer_annual`
 
-[SOURCE: research/immigration-origin-data-stack.md] [SOURCE: research/immigration-stage2-county-bridge-batch.md] [SOURCE: research/immigration-prototype-progress.md]
+[SOURCE: research/immigration-origin-data-stack.md] [SOURCE: research/immigration-stage2-county-bridge-batch.md] [SOURCE: research/immigration-prototype-progress.md] [SOURCE: research/immigration-country-fiscal-tensor-2026-06-15.md] [SOURCE: research/immigration-school-burden-per-adult-2026-06-15.md]
 
 ## Verified findings by certainty
 
@@ -156,7 +161,7 @@ Direct warehouse query on `acs_origin_national_2023` shows the largest recent lo
 
 [SOURCE: DuckDB query on `acs_origin_national_2023` run 2026-04-10]
 
-#### 3. School-age burden differs sharply by origin even after the household correction.
+#### 3. Linked-household school-age child exposure differs sharply by origin even after the household correction.
 
 Direct warehouse query on `acs_origin_household_national_2023` for origins with at least `10,000` recent low-education adults shows:
 
@@ -169,7 +174,7 @@ Direct warehouse query on `acs_origin_household_national_2023` for origins with 
 
 `High certainty`, `A1`.
 
-That is one of the cleanest verified findings in the repo. It survives the correction from adult-linked counts to housing-weighted household estimates. [SOURCE: research/immigration-household-weighted-correction.md] [SOURCE: DuckDB query on `acs_origin_household_national_2023` run 2026-04-10]
+That is one of the cleanest verified findings in the repo as a **linked-household exposure metric**. It survives the correction from adult-linked counts to housing-weighted household estimates. It should not be cited as a current full-stock school-burden-per-adult or origin fiscal net row: the June 2026 tensor withholds origin school/net rows pending a same-universe rebuild. [SOURCE: research/immigration-household-weighted-correction.md] [SOURCE: DuckDB query on `acs_origin_household_national_2023` run 2026-04-10] [SOURCE: research/immigration-school-burden-per-adult-2026-06-15.md]
 
 #### 4. Housing exposure also differs sharply by origin, and `PUMA` geography matters.
 
@@ -211,7 +216,7 @@ This is one of the most plausible readings of the combined literature and local 
 
 `Moderate certainty`, `A2`.
 
-This is consistent with the National Academies framing, the newer CBO state/local work, and the indirect-fiscal-effects literature, but the repo does not yet have a clean federal microsimulation to quantify it. [SOURCE: https://d279m997dpfwgl.cloudfront.net/wp/2016/09/0922_immigrant-economics-full-report.pdf] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] [SOURCE: https://www.econstor.eu/bitstream/10419/282044/1/352.pdf]
+This is consistent with the National Academies framing, the newer CBO state/local work, and the indirect-fiscal-effects literature. The repo now has a cleaner narrow annual federal proxy than it had in April, but that proxy does not quantify all federal channels or the local offset numerically. [SOURCE: https://d279m997dpfwgl.cloudfront.net/wp/2016/09/0922_immigrant-economics-full-report.pdf] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] [SOURCE: https://www.econstor.eu/bitstream/10419/282044/1/352.pdf] [SOURCE: research/immigration-federal-distribution-findings-2026-06-15.md]
 
 #### 7. Descendants are a real positive channel, but they do not erase local burdens by assumption.
 
@@ -239,19 +244,21 @@ This is partly inferential, but it follows from the combination of automation un
 
 ### Low-certainty or unresolved findings
 
-#### 11. The repo does not yet have a trustworthy federal microsimulation.
+#### 11. The repo does not yet have a full federal/all-in fiscal microsimulation.
 
-The live Texas prototype table is useful mainly because it reveals the problem.
+The April Texas prototype table is useful mainly because it reveals an old problem.
 
-Verified live counts from `tx_origin_puma_household_stage3_context_2023`:
+April verified counts from `tx_origin_puma_household_stage3_context_2023`:
 1. total rows: `845`
 2. matched donor rows: `238`
 3. matched row share: `28.17%`
 4. matched qualifying-adult weight share: `26.84%`
 
-The donor library table `sipp_household_donor_cells_2023` currently contains `24` cells, and both the minimum and maximum `income_band` are `lt30k`. That makes the current federal side unfit for a serious net-fiscal claim. `High certainty` that this prototype is weak; `Low certainty` on any federal number derived from it. `A1`.
+The donor library table `sipp_household_donor_cells_2023` then contained `24` cells, and both the minimum and maximum `income_band` were `lt30k`. That made the April prototype unfit for a serious net-fiscal claim. `High certainty` that this prototype was weak; `Low certainty` on any federal number derived from it. `A1`.
 
 [SOURCE: DuckDB queries on `tx_origin_puma_household_stage3_context_2023` and `sipp_household_donor_cells_2023` run 2026-04-10] [SOURCE: sources/immigration-fiscal/data/derived/build_federal_microsim_prototype.py] [SOURCE: research/immigration-prototype-progress.md]
+
+June 2026 work added a better SIPP-style annual federal proxy and country tensor. That newer surface supports narrow statements such as Mexico-origin adults scoring about `$1,519` per adult per year and NH white US-born adults about `$2,746` on the FICA-minus-SNAP/TANF/SSI ledger. It does **not** support an all-in federal number, a full tax-transfer household filing model, or a lifetime NPV. [SOURCE: research/immigration-federal-distribution-findings-2026-06-15.md] [SOURCE: research/immigration-country-fiscal-tensor-2026-06-15.md]
 
 #### 12. The current local county bridge is useful, but still imperfect.
 
@@ -314,7 +321,7 @@ That is closer to the actual state of evidence than a flat `Agree` or `Disagree`
 
 1. one all-in net fiscal number for the country,
 2. one all-in net welfare number for the average citizen,
-3. a precise federal-positive / local-negative estimate by origin,
+3. a precise all-in federal-positive / local-negative estimate by origin,
 4. a clean causal housing or school-cost effect size from this repo alone.
 
 ### Claims this report rejects
@@ -322,7 +329,7 @@ That is closer to the actual state of evidence than a flat `Agree` or `Disagree`
 1. `"Low-skill immigration is simply good for the average American."`
 2. `"Low-skill immigration is simply bad for the country."`
 3. `"The Clark economist poll settled the issue."`
-4. `"Our current federal prototype is good enough for a hard fiscal number."`
+4. `"The current narrow federal proxy is good enough for a hard all-in fiscal number."`
 
 ## Bottom line
 
@@ -334,7 +341,13 @@ What it does support is this:
 2. Those burdens are not evenly distributed across origins or destinations.
 3. Some national gains from labor supply, complementarity, and consumer prices are plausible and well supported in the literature.
 4. Many economists who answered `Agree` were mostly right about those narrow gains, but wrong or overbroad if their answer is taken as a full-country, full-ledger verdict.
-5. The current repo is strongest on the local side and weakest on the federal-side microsimulation.
+5. The current repo is strongest on descriptive origin/destination/household surfaces and now has a useful narrow federal annual proxy, but it remains weak on all-in federal, lifetime, and same-universe origin school-net estimates.
 6. Under an `AGI-soon` frame, transition management and institutional resilience become more important than distant average-lifetime NPV.
 
 That is the actual verified picture.
+
+## Revisions
+
+| Date | Change | Trigger |
+|---|---|---|
+| 2026-06-16 | Scoped April household-normalized school language to linked-household child exposure; updated the federal section for the June SIPP-style narrow annual proxy and same-universe school/net guard. | `research/immigration-federal-distribution-findings-2026-06-15.md`, `research/immigration-country-fiscal-tensor-2026-06-15.md`, and `research/immigration-school-burden-per-adult-2026-06-15.md` superseded parts of the April prototype surface. |
