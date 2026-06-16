@@ -1780,3 +1780,23 @@ Replaced those exports with "observed E-Verify mandate variation" and QWI wage l
 ### Updated conclusion
 
 The result remains strong against large native wage gains in observed E-Verify mandate designs, but it no longer implies that total unauthorized labor supply contraction was directly measured. [INFERENCE]
+
+---
+
+## 2026-06-16 — Europe/Caucasian fiscal comparison kept on proxy surface
+
+### Issue
+
+`research/immigration-europe-caucasian-fiscal-findings-2026-06-15.md` said EU27 foreign-born "beat" native Caucasians, that foreign-born whites "raise the Caucasian average," and listed positive-selection mechanisms as if the table decomposed them. [DATA]
+
+### Why it was wrong
+
+The memo's ledger is a narrow federal annual proxy: payroll/FICA minus SNAP, TANF, and SSI. It does not measure full federal taxes, state/local services, lifetime NPV, visa path, age-at-arrival, English proficiency, or cohort timing. The table can show a higher proxy value for EU27/NH-white-FB groups; it cannot by itself prove the selection mechanism or a broad fiscal superiority claim. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Replaced "beat"/"raise average" with narrow federal-proxy comparison language, and changed mechanism wording to "consistent with positive selection" while naming unmeasured channels. [SOURCE: memo]
+
+### Updated conclusion
+
+The Europe/Caucasian memo still supports a corridor-selection screen on the federal proxy, but no longer exports that screen as a broad fiscal verdict or measured selection mechanism. [INFERENCE]
