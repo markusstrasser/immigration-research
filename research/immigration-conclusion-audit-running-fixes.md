@@ -1760,3 +1760,23 @@ Replaced mechanism-identifying language with a bounded interpretation: the large
 ### Updated conclusion
 
 The E-Verify result remains evidence against large native wage gains in the observed mandate margin, but the mechanism absorbing the shock is unresolved. [INFERENCE]
+
+---
+
+## 2026-06-16 — E-Verify supply-contraction wording narrowed to measured design
+
+### Issue
+
+The E-Verify source memo and causal synthesis still exported the design as "removing/restricting unauthorized labor" or "E-Verify contracts unauthorized labor supply." [DATA]
+
+### Why it was wrong
+
+The design observes state E-Verify mandate timing, QWI stable W-2 employment, and QWI earnings. It does not directly observe total unauthorized labor supply, off-W-2 work, compliance intensity, or cross-state reallocation. Treating mandate variation as measured labor-supply contraction overstates the data surface. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Replaced those exports with "observed E-Verify mandate variation" and QWI wage language in the E-Verify memo and causal synthesis. [SOURCE: memo]
+
+### Updated conclusion
+
+The result remains strong against large native wage gains in observed E-Verify mandate designs, but it no longer implies that total unauthorized labor supply contraction was directly measured. [INFERENCE]

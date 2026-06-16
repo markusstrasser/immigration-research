@@ -115,7 +115,7 @@ Total-economy E4 (BA+) employment grew ~4% (p<0.05) but this likely reflects nat
   4. Outsourcing across state lines
   5. Hours, occupation, or establishment-composition shifts inside QWI cells
 
-For this enforcement margin, the adjustment looks Card-style: the wage curve is flatter than the large-Borjas-gain prediction, and removing low-skill immigrant labor through these mandates does not measurably transfer rents to native low-skill workers.
+For this enforcement margin, the adjustment looks Card-style: the wage curve is flatter than the large-Borjas-gain prediction, and observed E-Verify mandate variation does not measurably transfer rents to native low-skill workers through higher QWI wages.
 
 ### Power and caveats
 
@@ -140,7 +140,7 @@ For this enforcement margin, the adjustment looks Card-style: the wage curve is 
 
 ### Verified-findings report bottom line
 - The previous report said: "Some national output and consumer-price gains exist; some indirect federal fiscal offsets likely exist; but local schooling, housing, and service-capacity costs remain concentrated." [SOURCE: research/immigration-verified-findings-report-2026-04-10.md, finding #6]
-- This holds. **Add:** for the wage channel specifically, observed E-Verify policy variation in 2008-2023 supports the Card view. Native low-skill workers are not measurably helped when unauthorized labor is restricted through these mandates; this rejects large Borjas-style gains from marginal removal but does not directly measure the full wage effect of current low-skill immigration levels.
+- This holds. **Add:** for the wage channel specifically, observed E-Verify policy variation in 2008-2023 supports the Card view. Native low-skill workers are not measurably helped through higher QWI wages under these mandates; this rejects large Borjas-style gains in the observed mandate margin but does not directly measure the full wage effect of current low-skill immigration levels.
 
 ### Adversarial review §1 ("we still don't have a full national welfare ledger")
 - This finding doesn't deliver a full national welfare ledger.
@@ -181,6 +181,7 @@ This analysis adds a 21-year multi-state version of the E-Verify test. Read with
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced "removing/restricting unauthorized labor" exports with observed E-Verify mandate variation and QWI wage language; the design does not directly observe total unauthorized labor supply. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Narrowed the employment/wage mechanism interpretation: QWI shows stable W-2 employment fell while wages did not rise, but it does not identify capital, output, relocation, cash-economy, hours, or composition adjustment mechanisms. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "Clark economists were correct/right" language with support for the small-native-wage-effect premise in the observed E-Verify margin. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Bounded "data side with Card" and commentator-update language to the observed E-Verify wage-channel design; the result rejects large Borjas-style native wage gains for this margin, not all wage or open-borders questions. See `immigration-conclusion-audit-running-fixes.md`. |

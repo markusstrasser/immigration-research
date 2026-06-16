@@ -12,7 +12,7 @@
 |------------------------|--------------|-----------------|
 | Rent exposure ≠ welfare loss (adversarial review §2) | Immigrants concentrate in inelastic MSAs (top FB-share quintile median elasticity 1.51 vs bottom 3.40); top 10 inelastic MSAs include all the major immigrant gateways | **Rent exposure is a stronger renter-incidence warning in inelastic destination markets** because supply response is weaker. Update: "rent exposure" should be tagged elasticity-conditional — higher incidence risk in inelastic destinations, lower in elastic. |
 | Clark "agree" economists are scope-limited but not wrong on their narrow channel | E-Verify mandates produced no positive wage effect on native low-skill workers in any of 12 specifications | **The small-native-wage-effect channel in the Clark "agree" position is better supported** in the observed E-Verify policy variation. Large Borjas-style native wage gains are rejected at α=0.05 for this margin. |
-| "Borjas vs Card" presented as live debate | Direct multi-state TWFE with 21-year panel finds Card-side pattern: supply contracts via E-Verify but native wages do not rise | **For observed marginal enforcement variation, the Card-side pattern is favored.** Borjas's restricted-Mariel result does not generalize to the broader staggered enforcement shocks tested here; this does not settle surge or mass-shock regimes. |
+| "Borjas vs Card" presented as live debate | Direct multi-state TWFE with 21-year panel finds Card-side pattern: E-Verify mandate variation does not raise native wages in QWI | **For observed marginal enforcement variation, the Card-side pattern is favored.** Borjas's restricted-Mariel result does not generalize to the broader staggered enforcement shocks tested here; this does not settle surge or mass-shock regimes. |
 | Federal-positive / local-negative split is plausible but unquantified | This cycle did not produce federal-side estimates (federal microsim still requires SIPP fix) | **Unchanged.** Federal side remains the weakest part of the repo. |
 | Local-burden story is real but heterogeneous | Saiz merge sharpens the housing component; QWI supports a small/null wage response in the observed E-Verify margin | **Strengthened on the housing side, not on schooling.** School-burden findings are unchanged by this cycle. |
 
@@ -38,7 +38,7 @@ The Saiz finding sharpens the **local** side:
 - Owner-gain-to-renter-loss ratio differs by destination elasticity. The repo's existing PUMA rent table can be re-tagged elasticity-conditional once the SSD is remounted.
 
 The E-Verify finding clarifies the **labor-market** side:
-- Native low-skill wages do not rise when E-Verify contracts unauthorized labor supply in the observed mandate range.
+- Native low-skill wages do not rise under observed E-Verify mandate variation in the QWI panel.
 - The evidence rejects large Borjas-style native wage gains from marginal enforcement, but does not directly measure the full wage effect of current inflow levels or surge regimes.
 - Therefore the observed marginal-enforcement wage component of the local-burden ledger is small/null for natives; the broader labor-market ledger still includes employment composition, hours, occupational sorting, and unmeasured shock regimes.
 - The total local burden is school-finance + housing-rent + service-capacity, NOT wage compression.
@@ -130,6 +130,7 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Replaced "E-Verify contracts unauthorized labor supply" synthesis exports with observed mandate-variation/QWI wage language; total unauthorized labor supply is not directly observed. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "Clark economists were right/correct" exports with support for the small-native-wage-effect premise within observed marginal policy variation. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "Card-side pattern wins" wording with "is favored" to avoid treating a bounded design comparison as debate closure. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Bounded the political-economy reading: wage evidence alone weakens the native-low-skill wage story, but school/rent exposure is only a plausible incidence channel, not identified voter motivation or policy justification. See `immigration-conclusion-audit-running-fixes.md`. |
