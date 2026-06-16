@@ -16,7 +16,7 @@
 | Federal-positive / local-negative split is plausible but unquantified | This cycle did not produce federal-side estimates (federal microsim still requires SIPP fix) | **Unchanged.** Federal side remains the weakest part of the repo. |
 | Local-burden story is real but heterogeneous | Saiz merge sharpens the housing component; QWI supports a small/null wage response in the observed E-Verify margin | **Strengthened on the housing side, not on schooling.** School-burden findings are unchanged by this cycle. |
 
-## Card vs Borjas — explicit verdict
+## E-Verify wage-channel verdict
 
 Three converging pieces of evidence on the U.S. wage channel:
 
@@ -130,6 +130,7 @@ The *biggest* unresolved interpretation lever — Clemens place-premium, weighti
 
 | Date | Change |
 |------|--------|
+| 2026-06-16 | Scoped the Card-vs-Borjas section heading to the E-Verify wage-channel verdict rather than a broad theory verdict. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "E-Verify contracts unauthorized labor supply" synthesis exports with observed mandate-variation/QWI wage language; total unauthorized labor supply is not directly observed. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "Clark economists were right/correct" exports with support for the small-native-wage-effect premise within observed marginal policy variation. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced residual "Card-side pattern wins" wording with "is favored" to avoid treating a bounded design comparison as debate closure. See `immigration-conclusion-audit-running-fixes.md`. |
