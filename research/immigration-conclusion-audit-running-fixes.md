@@ -1200,3 +1200,23 @@ Changed the sanctuary row to "additional QWI policy-margin check" and rewrote St
 ### Updated conclusion
 
 The wage conclusion remains strong for the tested marginal-policy range, but the evidence count is now honest: model sensitivity is not empirical wage confirmation. [INFERENCE]
+
+---
+
+## 2026-06-16 — Open-borders weight framing separated from empirical inputs
+
+### Issue
+
+`research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md` and confidence-ladder entry 23 described the open-borders verdict as "welfare-weight-determined, not data-determined" and said the repo could not resolve it empirically. That phrasing risked treating model cost/capacity inputs as settled merely because the welfare weight itself is normative. [DATA]
+
+### Why it was wrong
+
+The welfare weight assigned to immigrants is a value choice. But scenario costs, fiscal ledgers, housing/capacity constraints, labor-market adjustment, and sending-country effects are empirical inputs. New evidence cannot pick the moral weight, but it can move the break-even thresholds under any chosen weight. [INFERENCE]
+
+### Fix
+
+Reframed the paradigm synthesis and embedded ladder text around a normative weight plus empirical inputs, annotated confidence-ladder entry 23 as qualified, and added entry 39 with the corrected reading. Added a memo revision row. [SOURCE: memo]
+
+### Updated conclusion
+
+The open-borders conclusion still must state its welfare-weight assumption, but the repo should keep collecting and grading cost/feasibility evidence rather than treating the scenario as fully non-empirical. [INFERENCE]

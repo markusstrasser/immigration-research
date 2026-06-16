@@ -111,7 +111,7 @@ Reason: TWFE on QWI 2003-2023 with 12 pro-sanctuary + 9 anti-sanctuary states; a
 Rating: `medium`
 Reason: IRS SOI `Total Migration-US` 2022-23 and ACS `B07001_081E` point in the same descriptive direction, but they are not like-for-like universes. The current median county comparison is roughly `4.59%` vs `0.21%`, with a ratio of medians around `21.7x` and a median county-level ratio around `20.5x`, so the safe claim is order-of-magnitude disparity, not a precise burden ratio. [SOURCE: research/immigration-causal-internal-vs-immigrant-newcomers.md]
 
-23. `Open-borders welfare verdict is welfare-weight-determined, not data-determined`
+23. `Open-borders welfare verdict is welfare-weight-determined, not data-determined` — **QUALIFIED by entry 39**
 Rating: `strong (framing claim)`
 Reason: At immigrant-welfare-weight w=0 (current repo's implicit framing): negative by construction. At w≥0.25 under 25%-of-gross-gains native-cost benchmark: positive. At w=1.0 even under harsh 50%-cost benchmark: positive. Empirical evidence cannot adjudicate the values choice. Honest framing must name the weight. [SOURCE: data/clemens/gpt54_calibration_review.md, GPT-5.4 sensitivity analysis]
 
@@ -180,6 +180,10 @@ Reason: one known published value per series (e.g., Dec 2023 = 302K) would have 
 38. `Saiz WRLURI result is descriptive, not identified zoning causation` — **scope correction to entry 20**
 Rating: `strong descriptive regression; causal lever unverified`
 Reason: WRLURI is a much stronger correlate of foreign-born share than topographic unavailability in the Saiz decomposition, but the cross-section does not prove that zoning causes immigrant concentration, that zoning reform would reduce immigrant renter burden, or that immigration restriction is dominated as a policy response. Treat zoning reform as a plausible policy hypothesis pending panel/IV evidence. [SOURCE: research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md] [SOURCE: research/immigration-causal-saiz-elasticity-rent.md]
+
+39. `Open-borders verdict has a normative weight and empirical-input components`
+Rating: `strong framing correction`
+Reason: The immigrant-welfare weight is a value parameter; empirical evidence cannot choose it. But native-cost benchmarks, fiscal ledgers, housing/capacity constraints, and sending-country effects remain empirical inputs that can move scenario break-evens. Treat entry 23 as a weight-sensitivity claim under the then-current GPT-5.4/Clemens calibration, not as a reason to stop collecting cost or feasibility evidence. [SOURCE: research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md] [SOURCE: data/clemens/gpt54_calibration_review.md]
 
 ## Two weakest assumptions
 
