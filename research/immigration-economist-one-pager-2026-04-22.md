@@ -3,6 +3,8 @@
 **Purpose:** Short public-facing one-pager.  
 **Use:** Forwardable summary of the strongest fair critique of the mainstream pro-immigration economics line after the repo's current evidence.
 
+**Status update (2026-06-16):** Public-facing summary only. Later audit passes narrowed the capacity evidence to descriptive stress screens, gross receiver-load evidence, and correlational political-response signals. Do not read this as a causal fiscal-load-to-vote model, a native-exit proof, or an origin `federal - school` estimate. [SOURCE: research/immigration-conclusion-audit-running-fixes.md]
+
 ## The core problem
 
 The slick economist case for immigration usually works by answering a **different question** than the one ordinary people are asking.
@@ -65,7 +67,7 @@ They do **not** therefore have evidence that:
 2. weak housing response
 3. shelter overload
 4. school and court strain
-5. multi-year backlash
+5. multi-year political response
 
 will also be absorbed cleanly.
 
@@ -77,15 +79,15 @@ Housing, shelter, schools, courts, and administrative systems are not one small 
 
 They are separate bottlenecks.
 
-The repo's current evidence points to `flow x capacity x composition x regime`, not a simple stock-share story. [SOURCE: research/immigration-capacity-frontier-2026-04-21.md] [SOURCE: research/immigration-receiver-failure-atlas-2026-04-22.md]
+The repo's current descriptive screens point to `flow x capacity x composition x regime`, not a simple stock-share story. That is a research object and warning surface, not clean causal identification. [SOURCE: research/immigration-capacity-frontier-2026-04-21.md] [SOURCE: research/immigration-receiver-failure-atlas-2026-04-22.md]
 
 ### 5) Denominator masking
 
-If a city expands beds or emergency capacity in response to a surge, then a ratio like `PIT/HIC` can look stable even while the actual crisis worsens.
+If a city expands beds or emergency capacity in response to a surge, then a ratio like `PIT/HIC` can look stable even while absolute sheltered load and gross emergency burden rise.
 
 That is why the receiver work had to check absolute load, not just ratios.
 
-`Chicago` is the cleanest case. [SOURCE: research/immigration-receiver-counterfactuals-2026-04-22.md]
+`Chicago` is the clearest ratio-vs-absolute-load warning in that pass. [SOURCE: research/immigration-receiver-counterfactuals-2026-04-22.md]
 
 ### 6) Political-economy erasure
 
@@ -96,7 +98,7 @@ The economist often reduces politics to:
 
 But the real channels also include:
 
-1. native backlash
+1. citizen political response
 2. legitimacy effects
 3. assignment rules
 4. emergency procurement
@@ -112,8 +114,8 @@ But the official U.S. evidence already blocks that move:
 
 1. aggregate GDP can rise
 2. GDP per person can fall
-3. federal fiscal effects can be positive
-4. state/local effects can be negative
+3. CBO or narrow federal-proxy channels can be positive
+4. state/local and receiver gross-load channels can be negative or unresolved on the all-in net
 
 [SOURCE: research/immigration-claims-matrix-2026-04-11.md]
 
@@ -125,7 +127,7 @@ The honest current position is:
 2. some national aggregate gains are real
 3. crude collapse rhetoric is too strong
 4. blanket economist optimism is also too strong
-5. destination incidence depends on `flow x capacity x composition x regime`
+5. destination incidence likely depends on `flow x capacity x composition x regime`, with current public-data evidence strongest as descriptive screening
 
 [SOURCE: research/immigration-economist-rhetorical-failures-2026-04-22.md]
 
@@ -135,7 +137,7 @@ The economist case is not wrong because immigration has no gains.
 
 It is wrong because it repeatedly uses a bounded efficiency argument to answer a different question:
 
-`Is this good for incumbent residents once housing, local capacity, and political feedback are priced in?`
+`Is this good for incumbent residents once housing, local capacity, and political-response channels are priced in?`
 
 That question is not answered by:
 
@@ -146,3 +148,9 @@ That question is not answered by:
 ## Best final line
 
 **The economist case does not fail on first-order gains. It fails where it pretends those gains settle every ledger at once.**
+
+## Revisions
+
+| Date | Change | Trigger |
+|---|---|---|
+| 2026-06-16 | Scoped capacity, denominator, and political-response wording to descriptive/gross/correlational evidence rather than causal mechanism. | `research/immigration-conclusion-audit-running-fixes.md` capacity/surge corrections. |

@@ -2547,3 +2547,27 @@ Updated `research/immigration-claims-matrix-2026-04-11.md` with a 2026-06-16 sta
 ### Updated conclusion
 
 The quick matrix still supports the same broad incidence split, but it no longer exports overconfident boolean labels or treats linked-household child exposure as a live school/adult fiscal scalar. [INFERENCE]
+
+---
+
+## 2026-06-16 — Public economist summaries scoped to descriptive evidence
+
+### Issue
+
+The public-facing economist one-pager, debate sheet, and rhetorical-failures memo still used several stronger causal or mechanism-flavored phrases after the underlying capacity/surge corrections had been narrowed. Examples included treating `flow x capacity x composition x regime` as a live causal object, describing destination-local "harm" rather than stress/gross-load evidence, using native-backlash language where the measured object is political-response association, and presenting constrained-place wage pressure as firmer than the county screen supports. [DATA]
+
+### Why it was wrong
+
+The later capacity/surge corrections say the county capacity pass is useful descriptive screening, not causal identification; the receiver fiscal rows are gross load and shelter-stress evidence, not net fiscal-burden estimates; and the receiver-election result is a correlational `+2.4pp` upper-bound after controls, not a fiscal-load-to-vote mechanism. Public summaries are high-reuse artifacts, so causal overtones there can undo the narrower source memos. [SOURCE: `research/immigration-capacity-frontier-2026-04-21.md`] [SOURCE: `research/immigration-causal-surge-2021-2024.md`] [SOURCE: `research/immigration-conclusion-audit-running-fixes.md`]
+
+### Fix
+
+Updated:
+
+- `research/immigration-economist-one-pager-2026-04-22.md`: added a 2026-06-16 status warning and changed capacity, denominator, federal/local, and political wording to descriptive/gross/correlational language.
+- `research/immigration-economist-debate-sheet-2026-04-22.md`: added the same scope warning and narrowed the wage, fiscal, and political counters.
+- `research/immigration-economist-rhetorical-failures-2026-04-22.md`: changed "harm," "rejected," "native backlash," and "live causal object" style language to stress/gross-load/political-response/descriptive-screen language.
+
+### Updated conclusion
+
+The public economist critique remains intact: partial efficiency and migrant-gain arguments do not settle destination-country welfare. The evidence basis is now stated more precisely: current capacity/surge support is descriptive and correlational where the underlying designs do not identify causal mechanisms. [INFERENCE]

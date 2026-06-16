@@ -4,6 +4,8 @@
 **Tier:** Deep | **Date:** 2026-04-22  
 **Instrument caveat:** Immigration is politically charged and the LLM instrument has known asymmetry risk here. This memo leans on repo-built artifacts, official sources, and named claim audits rather than generic training-data impressions. [SOURCE: notes/llm-bias-caveat.md]
 
+**Status update (2026-06-16):** Later conclusion audits narrowed the capacity/surge evidence. Treat load/capacity and receiver-city panels as descriptive screens, receiver-cost rows as gross-load evidence, and election rows as correlational political-response signals. They do not identify a fiscal-load-to-vote mechanism, a native-exit mechanism, or a globally ranked worker-incidence channel. [SOURCE: research/immigration-conclusion-audit-running-fixes.md]
+
 ## Bottom line
 
 The strongest attack is **not**:
@@ -15,8 +17,8 @@ The strongest attack is:
 1. a large share of the pro-immigration economics rhetoric relies on `ledger switching`
 2. it repeatedly `launders upper-bound model outputs into realistic baselines`
 3. it `extrapolates marginal mover gains to mass inflow regimes`
-4. it often `erases destination capacity as a causal system`
-5. it underprices `political feedback and local incidence`
+4. it often `erases destination capacity as a separate stress system`
+5. it underprices `political-response channels and local incidence`
 
 That is enough to kill the strongest economist slogans without making claims the repo cannot prove. [INFERENCE]
 
@@ -25,9 +27,9 @@ That is enough to kill the strongest economist slogans without making claims the
 The current repo position is:
 
 1. `global gains` are real enough that pure restrictionist collapse rhetoric fails [SOURCE: research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md]
-2. `destination-local harm` is also real enough that blanket economist optimism fails [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: research/immigration-receiver-failure-atlas-2026-04-22.md]
+2. `destination-local stress and gross-load evidence` is serious enough that blanket economist optimism fails [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: research/immigration-receiver-failure-atlas-2026-04-22.md]
 3. the clean synthesis is not `immigration good` or `immigration bad`
-4. the clean synthesis is `flow x capacity x composition x regime` [SOURCE: research/immigration-frontier-rethink-2026-04-22.md]
+4. the current descriptive synthesis is `flow x capacity x composition x regime` [SOURCE: research/immigration-frontier-rethink-2026-04-22.md]
 
 So the economist case is weakest exactly where it acts as if one efficiency argument settles all ledgers at once. [INFERENCE]
 
@@ -38,8 +40,8 @@ So the economist case is weakest exactly where it acts as if one efficiency argu
 | 1 | `Economists agree immigration is good for Americans` | `Misleading` | The Clark-style consensus rhetoric compresses multiple ledgers into one answer and outruns the evidence. [SOURCE: research/immigration-economist-effects-matrix.md] |
 | 2 | `Large migrant gains imply large gains for destination-country incumbents` | `Rejected` | Migrant/global gains survive, but destination per-capita and local-incidence claims do not follow automatically. [SOURCE: research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md] |
 | 3 | `Open-borders papers justify near-doubling as a realistic forecast` | `Rejected` | The strong papers are stylized upper-bound models, not policy-realist central forecasts. [SOURCE: research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md] |
-| 4 | `Capacity is a second-order friction that does not change the sign` | `Too broad` | Housing, shelter, and local service capacity are first-order in the repo's current evidence. [SOURCE: research/immigration-capacity-frontier-2026-04-21.md] [SOURCE: research/immigration-receiver-failure-atlas-2026-04-22.md] |
-| 5 | `Political effects are mostly about immigrant voting` | `Rejected` | Native backlash, legitimacy, assignment regimes, and local overload are major channels. [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md] |
+| 4 | `Capacity is a second-order friction that does not change the sign` | `Too broad` | Housing, shelter, and local service capacity are first-order stress systems in the repo's current descriptive evidence, even where causal identification is incomplete. [SOURCE: research/immigration-capacity-frontier-2026-04-21.md] [SOURCE: research/immigration-receiver-failure-atlas-2026-04-22.md] |
+| 5 | `Political effects are mostly about immigrant voting` | `Too narrow` | Citizen political response, legitimacy, assignment regimes, and local overload remain live channels; the current receiver-election evidence is correlational, not a clean backlash mechanism estimate. [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md] |
 | 6 | `If overall GDP rises, restrictionist objections are mostly answered` | `Rejected` | Aggregate GDP, GDP per capita, and local incumbent welfare are distinct ledgers. [SOURCE: research/immigration-claims-matrix-2026-04-11.md] |
 
 ## The strongest fair steel-man
@@ -117,7 +119,7 @@ What they often do **not** have is evidence that these results survive:
 3. shelter and school bottlenecks
 4. multi-year political feedback
 
-The repo's current frontier moved away from county stock-share arguments for exactly this reason. The live causal object is now `flow x capacity x composition x regime`, not a generic stock effect. [SOURCE: research/immigration-frontier-rethink-2026-04-22.md]
+The repo's current frontier moved away from county stock-share arguments for exactly this reason. The live descriptive object is now `flow x capacity x composition x regime`, not a generic stock effect. Causal identification still needs stronger counterfactual design. [SOURCE: research/immigration-frontier-rethink-2026-04-22.md] [SOURCE: research/immigration-capacity-frontier-2026-04-21.md]
 
 **Best accusation:** `external-validity abuse`
 
@@ -131,9 +133,9 @@ The strongest economist rhetoric often treats capacity as:
 
 The repo no longer supports that.
 
-The strongest local evidence now points to:
+The strongest local descriptive evidence now points to:
 
-1. `permit throughput` and `flow/build capacity` as the cleaner wage-side stress object [SOURCE: research/immigration-capacity-frontier-2026-04-21.md]
+1. `permit throughput` and `flow/build capacity` as a useful wage-side stress screen, with thin ranking margins [SOURCE: research/immigration-capacity-frontier-2026-04-21.md]
 2. concrete receiver-node overload in shelter and related systems, especially `Denver` [SOURCE: research/immigration-receiver-failure-atlas-2026-04-22.md]
 3. `Chicago` surviving as an absolute-load case even when the saturation ratios are muted [SOURCE: research/immigration-receiver-counterfactuals-2026-04-22.md]
 4. `Boston` looking like a regime-cost / assignment-burden case rather than a simple physical saturation case [SOURCE: same]
@@ -149,7 +151,7 @@ This is the cleanest technical attack on some optimistic rhetoric.
 If a city expands shelter beds or emergency capacity in response to a surge, then:
 
 1. `PIT/HIC` ratios can stay flat or even improve
-2. while absolute sheltered load and emergency burden still explode
+2. while absolute sheltered load and gross emergency burden still rise
 
 That is exactly why the receiver counterfactual pass needed log-count outcomes instead of only ratios. `Chicago` is the clearest example. [SOURCE: research/immigration-receiver-counterfactuals-2026-04-22.md]
 
@@ -169,7 +171,7 @@ That is too narrow.
 
 The repo's current work points to:
 
-1. native backlash in high-immigration constrained places [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md]
+1. citizen political-response associations in high-immigration constrained places [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md]
 2. local burden channels in shelter, schools, and services [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md]
 3. assignment rules, right-to-shelter, and emergency procurement as separate causal levers [SOURCE: research/immigration-frontier-rethink-2026-04-22.md]
 
@@ -190,7 +192,7 @@ The move is:
 The repo's comparative and official-source work already blocks that:
 
 1. aggregate GDP can rise while GDP per capita falls [SOURCE: research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md]
-2. federal fiscal effects can be positive while state/local effects are negative [SOURCE: research/immigration-claims-matrix-2026-04-11.md]
+2. CBO or narrow federal-proxy channels can be positive while state/local and receiver gross-load ledgers are negative or unresolved on all-in net [SOURCE: research/immigration-claims-matrix-2026-04-11.md]
 3. local receiver systems can overload while national macro aggregates still look fine [SOURCE: research/immigration-causal-surge-2021-2024.md]
 
 So the aggregate-output trump card is not serious if the question is about incumbent resident welfare. [INFERENCE]
@@ -204,7 +206,7 @@ The repo can cleanly support the following accusations when the rhetoric does th
 1. `equivocation across ledgers`
 2. `presenting upper-bound model outputs as realistic forecasts`
 3. `using marginal mover evidence to answer mass-flow policy questions`
-4. `ignoring capacity and political feedback after being shown they are first-order`
+4. `ignoring capacity and political-response channels after being shown they are first-order stress systems`
 5. `using aggregate GDP as if it settles local incidence`
 
 What the repo cannot yet cleanly support:
@@ -223,7 +225,7 @@ These are the sharpest fair questions to ask an economist making a strong optimi
 2. `Why should marginal mover estimates survive under mass inflow and stressed destination capacity?`
 3. `What exact destination-country degradation would be required to wipe out your claimed gains?`
 4. `Why are you treating stylized long-run upper bounds as realistic policy baselines?`
-5. `Why does your model ignore housing, shelter, schools, courts, and backlash as separate capacity systems?`
+5. `Why does your model ignore housing, shelter, schools, courts, and political-response channels as separate capacity systems?`
 6. `If your destination denominator expands endogenously, why should your ratio metric be taken as evidence of no overload?`
 
 ## Best current formulation
@@ -233,6 +235,12 @@ The best current repo line is:
 1. the economist case survives on `migrant gains`, `global gains`, and the rejection of crude collapse rhetoric
 2. it fails as a blanket destination-country welfare story
 3. it fails hardest where it compresses all ledgers into one efficiency claim
-4. the real object is `flow x capacity x composition x regime`, not a scalar immigration sign
+4. the current public-data object is `flow x capacity x composition x regime`, not a scalar immigration sign, and remains partly descriptive rather than fully causal
 
 That is the strongest fair version of `the economist rhetoric is dishonest` that the repo can defend right now.
+
+## Revisions
+
+| Date | Change | Trigger |
+|---|---|---|
+| 2026-06-16 | Scoped capacity, wage, receiver-load, and political-response language to descriptive/gross/correlational evidence. | `research/immigration-conclusion-audit-running-fixes.md` capacity/surge corrections. |
