@@ -24,7 +24,7 @@ Restrictionists win politically when they **switch ledgers** the same way expans
 | **P1 Political economy** | Low-skill immigration + welfare state → worse policy mix | Razin w15597, w17515 | Not modeled |
 | **A1 Admin** | Border/courts/detention = real taxpayer cost | CBP/ICE budgets; EOIR staged | Cluster J, not allocated |
 
-**Verdict:** Restrictionists are **often right that expansionists omit layers**; **often wrong** when they treat encounters as stock, FAIR as science, or NAS `<HS` as “all Mexicans.”
+**Synthesis:** Restrictionist arguments are strongest where they expose omitted fiscal, local-capacity, legal-status, cohort, and subgroup layers; they are weakest when they collapse those layers into encounter-stock, FAIR-as-science, or NAS `<HS`-as-all-Mexicans shortcuts.
 
 ---
 
@@ -45,7 +45,7 @@ Restrictionists win politically when they **switch ledgers** the same way expans
 - **GE offsets:** Peri-Ottaviano complementarity, Clemens capital-tax — partial fiscal/labor offsets. [SOURCE: unified theory M2]
 - **Our E-Verify TWFE:** Weak native wage response in QWI panel — see `immigration-causal-everify-card-vs-borjas.md`.
 
-### What restrictionists get right
+### Supported restrictionist insight
 
 National **education×experience** framing is more coherent than “city has immigrants → city wages” for **incumbent workers in competing cells**.
 

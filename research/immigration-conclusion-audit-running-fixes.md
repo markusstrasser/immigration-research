@@ -1860,3 +1860,23 @@ Changed the active E-Verify bullet and synthesis table rows to "no statistically
 ### Updated conclusion
 
 The E-Verify wage evidence remains strong against large native wage gains in the tested QWI mandate design, but the repo no longer phrases the result as if it proves wages literally did not rise or could not rise by a small amount. [INFERENCE]
+
+---
+
+## 2026-06-16 — Restrictionist steel-man verdict residue removed
+
+### Issue
+
+`research/immigration-restrictionist-arguments-steelman-2026-06-15.md` still opened with "restrictionists are often right" / "often wrong" verdict language even though the revision log said the binary right/wrong synthesis had been replaced. [DATA]
+
+### Why it was wrong
+
+The memo is a steel-man and layer map, not a side-scoring artifact. The evidence supports some restrictionist claims about omitted layers and weakens some scalar shortcuts, but a right/wrong verdict compresses distinct labor, fiscal, local-capacity, crime, and status claims into a side label. [SOURCE: memo] [INFERENCE]
+
+### Fix
+
+Replaced the active verdict with synthesis language about strongest and weakest claim forms, and renamed the labor-market section header from "What restrictionists get right" to "Supported restrictionist insight." [SOURCE: memo]
+
+### Updated conclusion
+
+The steel-man now evaluates claim structure without presenting restrictionism as a binary winner or loser in aggregate. [INFERENCE]
