@@ -443,6 +443,7 @@ def build() -> None:
         "safmr_county_2025",
         "safmr_puma_2025",
         "safmr_state_2025",
+        "snap_state_2023",
         "origin_puma_household_stage5_context_2023",
         "origin_puma_household_fullstock_stage5_context_2023",
     ]

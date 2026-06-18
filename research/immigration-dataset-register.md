@@ -188,7 +188,8 @@ If the question is:
 | BEA regional price parities | `external/stage5_net_negative/bea/` | Acquired | Deflate local costs |
 | NCES district EL 2017-18 | `external/stage5_net_negative/nces/ccd_lea_141_1718_english_learners.zip` | Acquired | School-cost intensity anchor |
 | Receiver-city migrant spend | `external/stage5_net_negative/receiver/receiver_city_migrant_costs.csv` | Copied from causal | Assigned local fiscal shock |
-| State stage5 context | `derived/stage5/state_stage5_context_2023.csv` | Built | RPP + Medicaid + EL by state |
+| State stage5 context | `derived/stage5/state_stage5_context_2023.csv` | Built | RPP + Medicaid + EL + SAFMR + SNAP by state |
+| SNAP state panel FY2023 | `derived/stage5/snap_state_2023.csv` | Built | Avg households/persons/benefits by state | From NDB public xlsx in USDA zip |
 | SIPP scenario ledger 2024 | `derived/stage3_proto/sipp_scenario_ledger_2024.csv` | Built | 98-cell federal+health scenario inputs |
 | Origin fiscal scenario 2023 | `derived/stage3_proto/origin_fiscal_scenario_2023.csv` | Built | Per-origin integrated scenario row |
 | Manual acquire list | `external/stage5_net_negative/kff_refs/MANUAL_ACQUIRE.md` | Reference | KFF, CHAS, SNAP, TRAC, NAS |

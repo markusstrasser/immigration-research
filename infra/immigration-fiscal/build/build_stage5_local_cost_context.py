@@ -13,6 +13,7 @@ from pathlib import Path
 import pandas as pd
 
 from parse_safmr_panel import build_safmr_panels
+from parse_snap_state_panel import build_snap_state_panel
 from paths import data_root, derived_root
 
 DATA = data_root()
@@ -98,7 +99,10 @@ def build_receiver_costs() -> pd.DataFrame:
     return pd.read_csv(path)
 
 
-def build_state_stage5_context(safmr_state: pd.DataFrame | None = None) -> pd.DataFrame:
+def build_state_stage5_context(
+    safmr_state: pd.DataFrame | None = None,
+    snap_state: pd.DataFrame | None = None,
+) -> pd.DataFrame:
     rpp = build_bea_state_rpp()
     med = build_cms_state_medicaid()
     el = build_state_el_2018()
@@ -109,6 +113,14 @@ def build_state_stage5_context(safmr_state: pd.DataFrame | None = None) -> pd.Da
         safmr_state["state_fips"] = safmr_state["state_fips"].astype(str).str.zfill(2)
         state = state.merge(
             safmr_state.drop(columns=["fy", "source"], errors="ignore"),
+            on="state_fips",
+            how="left",
+        )
+    if snap_state is not None and len(snap_state):
+        snap_state = snap_state.copy()
+        snap_state["state_fips"] = snap_state["state_fips"].astype(str).str.zfill(2)
+        state = state.merge(
+            snap_state.drop(columns=["state_name", "fy", "source"], errors="ignore"),
             on="state_fips",
             how="left",
         )
@@ -124,6 +136,7 @@ def load_stage5_into_duckdb(con, stage5_dir: Path) -> None:
         "safmr_county_2025": stage5_dir / "safmr_county_2025.csv",
         "safmr_puma_2025": stage5_dir / "safmr_puma_2025.csv",
         "safmr_state_2025": stage5_dir / "safmr_state_2025.csv",
+        "snap_state_2023": stage5_dir / "snap_state_2023.csv",
     }
     for table, path in paths.items():
         if path.exists():
@@ -150,6 +163,10 @@ def load_stage5_into_duckdb(con, stage5_dir: Path) -> None:
               st.safmr_2br_median_2025,
               st.safmr_2br_mean_2025,
               st.county_count,
+              st.snap_households_avg,
+              st.snap_persons_avg,
+              st.snap_benefits_usd,
+              st.snap_benefit_per_person,
               {puma_col.rstrip(",")}
     """.rstrip()
     if con.execute(
@@ -184,10 +201,14 @@ def build_stage5(out_dir: Path | None = None) -> dict:
     out.mkdir(parents=True, exist_ok=True)
 
     safmr_meta = build_safmr_panels(out)
+    snap_df = build_snap_state_panel(2023, out)
     safmr_state_path = out / "safmr_state_2025.csv"
     safmr_state = pd.read_csv(safmr_state_path) if safmr_state_path.exists() else pd.DataFrame()
 
-    state = build_state_stage5_context(safmr_state if len(safmr_state) else None)
+    state = build_state_stage5_context(
+        safmr_state if len(safmr_state) else None,
+        snap_df if len(snap_df) else None,
+    )
     el = build_state_el_2018()
     rcv = build_receiver_costs()
 
@@ -202,6 +223,8 @@ def build_stage5(out_dir: Path | None = None) -> dict:
         "states_with_medicaid": int(state["medicaid_total_computable"].notna().sum()),
         "states_with_el": int(state["lep_count_reported"].notna().sum()),
         "states_with_safmr": int(state.get("safmr_2br_median_2025", pd.Series(dtype=float)).notna().sum()),
+        "states_with_snap": int(state.get("snap_persons_avg", pd.Series(dtype=float)).notna().sum()),
+        "snap_state_rows": int(len(snap_df)),
         "receiver_city_rows": int(len(rcv)),
         **safmr_meta,
     }
