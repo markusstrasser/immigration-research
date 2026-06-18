@@ -43,7 +43,7 @@ _fetch() {
 }
 
 _log "=== stage5 net-negative evidence datasets ==="
-mkdir -p "$S5"/{cms,bea,nces,receiver,kff_refs,census}
+mkdir -p "$S5"/{cms,bea,nces,receiver,kff_refs,census,usda}
 
 _fetch "https://data.medicaid.gov/api/1/datastore/query/5b19d1d4-ae43-5fcd-ba14-3cecd99f473f/0/download?format=csv" \
        "$S5/cms/medicaid_financial_management.csv" 100000
@@ -55,6 +55,8 @@ _fetch "https://nces.ed.gov/ccd/Data/zip/ccd_lea_141_1718_l_1a_083118.zip" \
        "$S5/nces/ccd_lea_141_1718_english_learners.zip" 100000
 _fetch "https://www2.census.gov/programs-surveys/gov-finances/tables/2022/2022_Individual_Unit_File.zip" \
        "$S5/census/gov_finances_2022_individual_unit.zip" 100000
+_fetch "https://fns-prod.azureedge.us/sites/default/files/resource-files/snap-zip-fy69tocurrent-6.zip" \
+       "$S5/usda/snap-zip-fy69tocurrent-6.zip" 500000
 
 _fetch_hud_safmr() {
     local url="$1" dest="$2"
@@ -93,7 +95,7 @@ cat > "$S5/kff_refs/MANUAL_ACQUIRE.md" <<'EOF'
 | CBO Emergency Medicaid FY17-23 | Emergency spend on noncitizens | https://www.cbo.gov/ |
 | HUD CHAS Table 11 | County housing stress | Automated via `setup.sh` + Playwright (`2018thru2022-050-csv.zip`) |
 | HUD SAFMR 2025 | Zip-level rent caps | Automated via `setup-net-negative.sh` + Playwright (`fy2025_safmrs_revised.xlsx`) |
-| USDA SNAP state summaries | Transfer program scale | https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap |
+| USDA SNAP state summaries | Transfer program scale | Automated via `setup-net-negative.sh` (`snap-zip-fy69tocurrent-6.zip` → FY23 panel) |
 | TRAC immigration court backlog | Court-system cost proxy | https://trac.syr.edu/immigration/ (no stable CSV; EOIR PDFs scripted) |
 | NAS 2017 fiscal tables | Benchmark NPV by education | https://nap.nationalacademies.org/catalog/23550 |
 | EDFacts FS141 district EL 2022-23 | Current district EL counts | https://eddataexpress.ed.gov/ |

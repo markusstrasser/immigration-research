@@ -30,7 +30,8 @@ stage5	optional	external/stage2/census/geo/tab20_zcta520_county20_natl.txt	50000
 stage5	optional	derived/stage5/safmr_zip_2025.csv	1000000	build	SAFMR zip-level rent panel FY2025
 stage5	optional	derived/stage5/safmr_county_2025.csv	100000	build	SAFMR county-weighted 2BR rents
 stage5	optional	derived/stage5/safmr_puma_2025.csv	50000	build	SAFMR PUMA-weighted 2BR rents
-stage5	optional	derived/stage5/safmr_state_2025.csv	5000	build	SAFMR state median/mean 2BR rents
+stage5	optional	external/stage5_net_negative/usda/snap-zip-fy69tocurrent-6.zip	500000	setup-net-negative.sh	USDA SNAP FY69–current state xlsx archive (azureedge)
+stage5	optional	derived/stage5/snap_state_2023.csv	5000	build	SNAP FY2023 avg households/persons/benefits by state
 stage5	optional	derived/stage4/eoir/eoir_court_workload_historical_fy.csv	500	build	EOIR historical workload FY1983+
 stage5	optional	derived/stage4/eoir/eoir_pending_cases_fy.csv	100	build	EOIR pending/receipts/completions FY2016+
 stage5	optional	derived/stage4/eoir/eoir_amnesty_cases_by_state.csv	500	build	EOIR amnesty cases by state
