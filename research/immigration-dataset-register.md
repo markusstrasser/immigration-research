@@ -19,17 +19,22 @@ That is what this file is for.
 
 ## Reproducing downloads (git-tracked)
 
-`research/sources` is an SSD symlink — **not in git**. All acquisition scripts live at:
-
-- **`infra/immigration-fiscal/`** — `acquire/setup.sh`, `acquire/setup-net-negative.sh`, `DOWNLOAD_MANIFEST.tsv`
-- Guide: `infra/immigration-fiscal/REPRODUCE.md`
+**Entry point:** `./scripts/reproduce-immigration-data.sh` (or `infra/immigration-fiscal/reproduce.sh`)
 
 ```bash
-cd infra/immigration-fiscal && cp acquire/config.local.env.example acquire/config.local.env
-# edit PNY_DATA_ROOT, then: bash acquire/setup.sh
+./scripts/reproduce-immigration-data.sh init
+./scripts/reproduce-immigration-data.sh doctor
+./scripts/reproduce-immigration-data.sh all minimal    # ~2 GB → immigration_context.duckdb
+./scripts/reproduce-immigration-data.sh all standard   # full public stack
 ```
 
-Builders: `infra/immigration-fiscal/build/` (env-driven via `PNY_DATA_ROOT`).
+Guide: `infra/immigration-fiscal/REPRODUCE.md` — tiers, manual-acquire list, verify modes.
+
+`research/sources` is an SSD symlink — **not in git**. Scripts + manifest live at:
+
+- **`infra/immigration-fiscal/`** — `reproduce.sh`, `acquire/setup.sh`, `DOWNLOAD_MANIFEST.tsv`
+- `acquire/config.env.example` — portable `$HOME/research-data/...` defaults
+- `acquire/config.local.env` — machine overrides (gitignored)
 
 Key builders: `build_immigration_warehouse.py`, `build_stage5_local_cost_context.py`, `compose_scenario_ledger.py`.
 

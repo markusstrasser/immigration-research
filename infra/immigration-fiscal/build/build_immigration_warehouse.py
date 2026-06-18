@@ -237,6 +237,84 @@ def build() -> None:
             GROUP BY 1
         """)
 
+        # Full-stock household context for fiscal tensor school rows.
+        # Universe: all foreign-born adults 25-64, matching the ACS side of the
+        # SIPP federal microsim denominator. Household child burden is allocated
+        # across origin groups by qualifying adult counts within each household.
+        con.execute("""
+            CREATE OR REPLACE TABLE origin_puma_household_fullstock_context_2023 AS
+            WITH full_person AS (
+              SELECT
+                SERIALNO,
+                COALESCE(d.origin_label, CAST(p.POBP AS VARCHAR)) AS origin_label,
+                LPAD(CAST(STATE AS VARCHAR), 2, '0') AS state_fips,
+                LPAD(CAST(PUMA AS VARCHAR), 5, '0') AS puma_code,
+                TRY_CAST(PWGTP AS DOUBLE) AS person_wgt
+              FROM acs_person_raw p
+              LEFT JOIN pobp_dim d
+                ON LPAD(CAST(p.POBP AS VARCHAR), 4, '0') = d.pobp
+                OR CAST(p.POBP AS VARCHAR) = TRIM(LEADING '0' FROM d.pobp)
+              WHERE TRY_CAST(AGEP AS INTEGER) BETWEEN 25 AND 64
+                AND CAST(NATIVITY AS VARCHAR) = '2'
+            ),
+            origin_serial AS (
+              SELECT
+                SERIALNO,
+                origin_label,
+                state_fips,
+                puma_code,
+                COUNT(*) AS origin_adults_in_hh,
+                SUM(person_wgt) AS person_weighted_adults
+              FROM full_person
+              GROUP BY 1, 2, 3, 4
+            ),
+            serial_totals AS (
+              SELECT SERIALNO, SUM(origin_adults_in_hh) AS total_fb_adults_in_hh
+              FROM origin_serial
+              GROUP BY 1
+            ),
+            linked AS (
+              SELECT
+                o.origin_label,
+                o.state_fips,
+                o.puma_code,
+                o.person_weighted_adults,
+                TRY_CAST(h.WGTP AS DOUBLE) * o.origin_adults_in_hh
+                  / NULLIF(t.total_fb_adults_in_hh, 0) AS allocated_household_wgt,
+                COALESCE(c.school_age_children, 0) AS school_age_children,
+                COALESCE(c.has_school_age, 0) AS has_school_age
+              FROM origin_serial o
+              JOIN serial_totals t USING (SERIALNO)
+              JOIN acs_household_raw h USING (SERIALNO)
+              LEFT JOIN hh_person_child c USING (SERIALNO)
+            )
+            SELECT
+              origin_label,
+              state_fips,
+              puma_code,
+              SUM(person_weighted_adults) AS person_weighted_adults,
+              SUM(allocated_household_wgt) AS linked_household_wgt,
+              SUM(allocated_household_wgt * school_age_children)
+                / NULLIF(SUM(allocated_household_wgt), 0) AS linked_mean_hh_school_age_children,
+              100.0 * SUM(CASE WHEN has_school_age = 1 THEN allocated_household_wgt ELSE 0 END)
+                / NULLIF(SUM(allocated_household_wgt), 0) AS linked_share_households_with_school_age_children_pct
+            FROM linked
+            GROUP BY 1, 2, 3
+        """)
+        con.execute("""
+            CREATE OR REPLACE TABLE acs_origin_household_fullstock_national_2023 AS
+            SELECT
+              origin_label,
+              SUM(person_weighted_adults) AS person_weighted_adults,
+              SUM(linked_household_wgt) AS linked_household_wgt,
+              SUM(linked_mean_hh_school_age_children * linked_household_wgt)
+                / NULLIF(SUM(linked_household_wgt), 0) AS linked_mean_hh_school_age_children,
+              SUM(linked_share_households_with_school_age_children_pct * linked_household_wgt)
+                / NULLIF(SUM(linked_household_wgt), 0) AS linked_share_households_with_school_age_children_pct
+            FROM origin_puma_household_fullstock_context_2023
+            GROUP BY 1
+        """)
+
     con.execute("""
         CREATE OR REPLACE TABLE acs_foreign_born_education_bucket_totals_2023 AS
         SELECT
@@ -341,6 +419,8 @@ def build() -> None:
         "origin_puma_context_2023",
         "origin_puma_household_context_2023",
         "acs_origin_household_national_2023",
+        "origin_puma_household_fullstock_context_2023",
+        "acs_origin_household_fullstock_national_2023",
         "acs_foreign_born_education_bucket_totals_2023",
         "acs_foreign_born_education_state_shares_2023",
         "acs_nh_white_education_by_nativity_2023",
@@ -351,6 +431,7 @@ def build() -> None:
         "county_stage2_context_2023",
         "puma_county_context_2023",
         "origin_puma_household_stage2_context_2023",
+        "origin_puma_household_fullstock_stage2_context_2023",
         "sipp_household_donor_cells_2024",
         "sipp_household_donor_cells_usborn_2024",
         "acs_origin_household_federal_microsim_2023",
@@ -359,6 +440,7 @@ def build() -> None:
         "state_el_lep_2018",
         "receiver_city_migrant_costs",
         "origin_puma_household_stage5_context_2023",
+        "origin_puma_household_fullstock_stage5_context_2023",
     ]
     slim = DUCKDB_PATH.with_suffix(".build.duckdb")
     if slim.exists():
@@ -413,6 +495,22 @@ def _validate(con) -> None:
             ok = abs(val - target) / target <= tol
             print(f"Honduras school-age/hh: {val:.4f} (pusa-only memo {target}, {'OK' if ok else 'WARN'})")
 
+    if con.execute(
+        "SELECT COUNT(*) FROM information_schema.tables WHERE table_name = 'acs_origin_household_fullstock_national_2023'"
+    ).fetchone()[0]:
+        row = con.execute("""
+            SELECT person_weighted_adults,
+                   linked_household_wgt,
+                   linked_mean_hh_school_age_children
+            FROM acs_origin_household_fullstock_national_2023
+            WHERE origin_label = 'Mexico'
+        """).fetchone()
+        if row:
+            print(
+                "Mexico full-stock household context: "
+                f"{row[0]:,.0f} adults, {row[1]:,.0f} linked HH, {row[2]:.3f} kids/HH"
+            )
+
     targets = {
         "<HS": 8_606_906,
         "HS / GED": 8_231_926,
@@ -439,6 +537,7 @@ def _validate(con) -> None:
         ("irs_migration_county_2022_2023", 3000),
         ("puma_county_area_xwalk_2023", 14000),
         ("county_stage2_context_2023", 3000),
+        ("origin_puma_household_fullstock_stage2_context_2023", 5000),
     ]
     print("\n--- stage2 ---")
     for tbl, target in stage2_checks:
@@ -455,6 +554,7 @@ def _validate(con) -> None:
     for tbl, target in [
         ("state_stage5_context_2023", 50),
         ("origin_puma_household_stage5_context_2023", 5000),
+        ("origin_puma_household_fullstock_stage5_context_2023", 5000),
     ]:
         n = con.execute(
             "SELECT COUNT(*) FROM information_schema.tables WHERE table_name=?", [tbl]

@@ -4,17 +4,9 @@
 set -uo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-IMMIGRATION_FISCAL_ROOT="$(cd "$HERE/.." && pwd)"
-if [[ -f "$HERE/config.local.env" ]]; then
-    # shellcheck source=config.local.env
-    source "$HERE/config.local.env"
-elif [[ -f "$HERE/config.env" ]]; then
-    # shellcheck source=config.env
-    source "$HERE/config.env"
-else
-    # shellcheck source=config.env.example
-    source "$HERE/config.env.example"
-fi
+# shellcheck source=lib.sh
+source "$HERE/lib.sh"
+immigration_fiscal_load_config
 DATA="$PNY_DATA_ROOT"
 LOG="$HERE/setup.log"
 SCRIPTS="$IMMIGRATION_FISCAL_ROOT/scripts"
@@ -140,6 +132,17 @@ _fetch "https://www2.census.gov/programs-surveys/acs/data/pums/2023/1-Year/csv_h
        "$DATA/census/acs_pums_2023_household.zip" --required || ERRORS=$((ERRORS+1))
 _fetch "https://www2.census.gov/programs-surveys/cps/datasets/2024/march/asecpub24csv.zip" \
        "$DATA/census/cps_asec_2024_march.zip" --required || ERRORS=$((ERRORS+1))
+
+if [[ "${REPRODUCE_TIER:-standard}" == "minimal" ]]; then
+    _log "REPRODUCE_TIER=minimal — skipping optional downloads"
+    if (( ERRORS == 0 )); then
+        _log "=== setup OK (minimal tier) ==="
+        exit 0
+    fi
+    _log "=== setup FAILED ($ERRORS required download(s) missing) ==="
+    exit 1
+fi
+
 _fetch "https://data.bls.gov/cew/data/files/2023/csv/2023_annual_by_industry.zip" \
        "$DATA/bls/qcew_2023_annual_by_industry.zip" --optional
 _fetch "https://www.dhs.gov/sites/default/files/2024-04/2024_0314_us_customs_and_border_protection.pdf" \
@@ -373,13 +376,13 @@ else
     _log "=== setup FAILED ($ERRORS required download(s) missing) ==="
 fi
 
-# Stage-5 fiscal / local-cost evidence (optional pass)
-if [[ -f "$HERE/setup-net-negative.sh" ]]; then
+# Stage-5 fiscal / local-cost evidence (optional pass; skipped on minimal tier)
+if [[ "${REPRODUCE_TIER:-standard}" != "minimal" && -f "$HERE/setup-net-negative.sh" ]]; then
     IMMIGRATION_FISCAL_ROOT="$IMMIGRATION_FISCAL_ROOT" bash "$HERE/setup-net-negative.sh" || true
 fi
 
-# Lifetime benchmarks + linkage docs (optional pass)
-if [[ -f "$HERE/setup-lifetime.sh" ]]; then
+# Lifetime benchmarks + linkage docs (optional pass; skipped on minimal tier)
+if [[ "${REPRODUCE_TIER:-standard}" != "minimal" && -f "$HERE/setup-lifetime.sh" ]]; then
     IMMIGRATION_FISCAL_ROOT="$IMMIGRATION_FISCAL_ROOT" bash "$HERE/setup-lifetime.sh" || true
 fi
 

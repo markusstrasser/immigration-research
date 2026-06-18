@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Download HUD CHAS files through headless Chromium (WAF blocks curl)."""
+"""Download HUD CHAS files (WAF blocks bare curl)."""
 from __future__ import annotations
 
 import sys
@@ -15,7 +15,7 @@ def main() -> int:
     try:
         from playwright.sync_api import sync_playwright
     except ImportError:
-        print("playwright not installed", file=sys.stderr)
+        print("playwright not installed — run: uv run --with playwright python -m playwright install chromium", file=sys.stderr)
         return 1
 
     with sync_playwright() as p:
@@ -30,19 +30,22 @@ def main() -> int:
         page = context.new_page()
         page.goto(
             "https://www.huduser.gov/portal/datasets/chas.html",
-            wait_until="domcontentloaded",
+            wait_until="networkidle",
             timeout=120_000,
         )
-        fname = Path(url).name
-        with page.expect_download(timeout=180_000) as dl_info:
-            page.locator(f'a[href*="{fname}"]').first.click()
-        download = dl_info.value
-        download.save_as(str(dest))
+        resp = context.request.get(url, timeout=180_000)
+        if not resp.ok:
+            print(f"HTTP {resp.status} for {url}", file=sys.stderr)
+            browser.close()
+            return 1
+        body = resp.body()
+        if len(body) < 10_240:
+            print(f"download too small ({len(body)} bytes): {url}", file=sys.stderr)
+            browser.close()
+            return 1
+        dest.write_bytes(body)
         browser.close()
 
-    if not dest.exists() or dest.stat().st_size < 10_240:
-        print(f"download too small: {dest}", file=sys.stderr)
-        return 1
     print(f"saved {dest} ({dest.stat().st_size} bytes)")
     return 0
 

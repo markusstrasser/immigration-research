@@ -133,6 +133,23 @@ def load_stage5_into_duckdb(con, stage5_dir: Path) -> None:
             LEFT JOIN state_stage5_context_2023 st ON s.state_fips = st.state_fips
         """)
 
+    if con.execute(
+        "SELECT COUNT(*) FROM information_schema.tables WHERE table_name='origin_puma_household_fullstock_stage2_context_2023'"
+    ).fetchone()[0]:
+        con.execute("""
+            CREATE OR REPLACE TABLE origin_puma_household_fullstock_stage5_context_2023 AS
+            SELECT
+              s.*,
+              st.rpp_all_items_2023,
+              st.medicaid_total_computable,
+              st.medicaid_year,
+              st.lep_count_reported,
+              st.districts_with_el,
+              st.el_school_year
+            FROM origin_puma_household_fullstock_stage2_context_2023 s
+            LEFT JOIN state_stage5_context_2023 st ON s.state_fips = st.state_fips
+        """)
+
 
 def build_stage5(out_dir: Path | None = None) -> dict:
     out = out_dir or OUT

@@ -18,7 +18,7 @@ def data_root() -> Path:
 def derived_root() -> Path:
     if v := os.environ.get("DERIVED_ROOT"):
         return Path(v)
-    return _PKG
+    return data_root() / "derived"
 
 
 def duckdb_path() -> Path:
