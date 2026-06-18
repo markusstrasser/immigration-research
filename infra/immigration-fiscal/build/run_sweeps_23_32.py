@@ -13,7 +13,9 @@ ROOT = Path(__file__).resolve().parents[3]
 RESEARCH = ROOT / "research"
 MINING = RESEARCH / ".mining"
 INFRA = Path(__file__).resolve().parents[1]
-DATA = Path(os.environ.get("PNY_DATA_ROOT", "/Volumes/2TBPNY/research-data/immigration-fiscal/data"))
+from paths import data_root
+
+DATA = data_root()
 MEMO = RESEARCH / "immigration-sweep-cycles-23-32-2026-06-15.md"
 
 

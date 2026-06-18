@@ -319,6 +319,14 @@ def build() -> None:
     con.execute(
         "CREATE TEMP TABLE _pop_fed AS " + " UNION ALL ".join(pop_sql_parts)
     )
+    con.execute("""
+        CREATE TEMP TABLE _pop_fed_rollup AS
+        SELECT population_group,
+               SUM(weight_adults) AS weight_adults,
+               SUM(fed_net_per_adult * weight_adults) / NULLIF(SUM(weight_adults), 0) AS fed_per_adult
+        FROM _pop_fed
+        GROUP BY 1
+    """)
 
     # --- Synthetic age-25 NPV benchmarks by population (ACS weights; NAS cells) ---
     con.execute("""
@@ -370,33 +378,77 @@ def build() -> None:
         GROUP BY 1, 2
     """)
 
-    # --- Local / school burden per origin (scenario ledger) ---
-    con.execute("""
-        CREATE TEMP TABLE _origin_school AS
-        SELECT
-          s.origin_label,
-          m.micro_adults AS weight_adults,
-          s.weighted_adults AS school_numerator_adults,
-          h.linked_household_wgt,
-          h.linked_mean_hh_school_age_children,
-          s.area_wtd_current_spend_per_pupil,
-          s.avg_federal_net,
-          CASE
-            WHEN ABS(m.micro_adults - s.weighted_adults) <= 0.05 * m.micro_adults
-            THEN s.area_wtd_current_spend_per_pupil * h.linked_mean_hh_school_age_children
-                 * h.linked_household_wgt / NULLIF(m.micro_adults, 0)
-            ELSE NULL
-          END AS school_burden_per_adult
-        FROM life.origin_fiscal_scenario_2023 s
-        JOIN ctx.acs_origin_household_national_2023 h USING (origin_label)
-        JOIN (
-          SELECT origin_label, SUM(weighted_adults) AS micro_adults
-          FROM ctx.acs_origin_household_federal_microsim_2023
-          WHERE donor_household_weight IS NOT NULL
-          GROUP BY 1
-        ) m USING (origin_label)
-        WHERE h.linked_household_wgt > 0 AND m.micro_adults > 0
-    """)
+    # --- Local / school burden per origin (full-stock same-universe ACS household linkage) ---
+    school_table = None
+    for candidate in (
+        "origin_puma_household_fullstock_stage5_context_2023",
+        "origin_puma_household_fullstock_stage2_context_2023",
+    ):
+        exists = con.execute(
+            """
+            SELECT COUNT(*) FROM duckdb_tables()
+            WHERE database_name = 'ctx' AND table_name = ?
+            """,
+            [candidate],
+        ).fetchone()[0]
+        if exists:
+            school_table = candidate
+            break
+
+    if school_table:
+        con.execute(f"""
+            CREATE TEMP TABLE _origin_school AS
+            WITH origin_school AS (
+              SELECT
+                origin_label,
+                SUM(person_weighted_adults) AS school_person_adults,
+                SUM(linked_household_wgt) AS linked_household_wgt,
+                SUM(linked_mean_hh_school_age_children * linked_household_wgt)
+                  AS allocated_school_age_children,
+                SUM(CASE WHEN area_wtd_current_spend_per_pupil IS NOT NULL
+                         THEN linked_household_wgt ELSE 0 END)
+                  / NULLIF(SUM(linked_household_wgt), 0) AS spend_coverage,
+                SUM(area_wtd_current_spend_per_pupil
+                    * linked_mean_hh_school_age_children
+                    * linked_household_wgt) AS school_cost_numerator
+              FROM ctx.{school_table}
+              GROUP BY 1
+            ),
+            micro AS (
+              SELECT origin_label, SUM(weighted_adults) AS micro_adults
+              FROM ctx.acs_origin_household_federal_microsim_2023
+              WHERE donor_household_weight IS NOT NULL
+              GROUP BY 1
+            )
+            SELECT
+              o.origin_label,
+              m.micro_adults AS weight_adults,
+              o.school_person_adults,
+              o.linked_household_wgt,
+              o.allocated_school_age_children,
+              o.spend_coverage,
+              CASE
+                WHEN ABS(m.micro_adults - o.school_person_adults) <= 0.05 * m.micro_adults
+                 AND o.spend_coverage >= 0.95
+                THEN o.school_cost_numerator / NULLIF(m.micro_adults, 0)
+                ELSE NULL
+              END AS school_burden_per_adult
+            FROM origin_school o
+            JOIN micro m USING (origin_label)
+            WHERE o.linked_household_wgt > 0 AND m.micro_adults > 0
+        """)
+    else:
+        con.execute("""
+            CREATE TEMP TABLE _origin_school (
+              origin_label VARCHAR,
+              weight_adults DOUBLE,
+              school_person_adults DOUBLE,
+              linked_household_wgt DOUBLE,
+              allocated_school_age_children DOUBLE,
+              spend_coverage DOUBLE,
+              school_burden_per_adult DOUBLE
+            )
+        """)
 
     con.execute("""
         CREATE TEMP TABLE _pop_school AS
@@ -405,8 +457,7 @@ def build() -> None:
                CASE WHEN COUNT(*) = COUNT(school_burden_per_adult)
                     THEN SUM(school_burden_per_adult * weight_adults) / NULLIF(SUM(weight_adults), 0)
                     ELSE NULL
-               END AS school_per_adult,
-               SUM(avg_federal_net * weight_adults) / NULLIF(SUM(weight_adults), 0) AS fed_per_adult
+               END AS school_per_adult
         FROM _origin_school WHERE origin_label = 'Mexico'
         UNION ALL
         SELECT 'eu27_origin',
@@ -414,8 +465,7 @@ def build() -> None:
                CASE WHEN COUNT(*) = COUNT(school_burden_per_adult)
                     THEN SUM(school_burden_per_adult * weight_adults) / NULLIF(SUM(weight_adults), 0)
                     ELSE NULL
-               END,
-               SUM(avg_federal_net * weight_adults) / NULLIF(SUM(weight_adults), 0)
+               END
         FROM _origin_school
         WHERE origin_label IN (
           'Austria','Belgium','Bulgaria','Croatia','Cyprus','Czech Republic','Denmark',
@@ -428,8 +478,7 @@ def build() -> None:
                CASE WHEN COUNT(*) = COUNT(school_burden_per_adult)
                     THEN SUM(school_burden_per_adult * weight_adults) / NULLIF(SUM(weight_adults), 0)
                     ELSE NULL
-               END,
-               SUM(avg_federal_net * weight_adults) / NULLIF(SUM(weight_adults), 0)
+               END
         FROM _origin_school
         WHERE origin_label IN (
           'United Kingdom, not specified','England','Scotland','Northern Ireland','Wales'
@@ -439,21 +488,9 @@ def build() -> None:
                CASE WHEN COUNT(*) = COUNT(school_burden_per_adult)
                     THEN SUM(school_burden_per_adult * weight_adults) / NULLIF(SUM(weight_adults), 0)
                     ELSE NULL
-               END,
-               SUM(avg_federal_net * weight_adults) / NULLIF(SUM(weight_adults), 0)
+               END
         FROM _origin_school
         WHERE origin_label IN ('Mexico', 'El Salvador', 'Guatemala', 'Honduras')
-        UNION ALL
-        SELECT 'fb_lt_hs',
-               SUM(m.weighted_adults),
-               CASE WHEN COUNT(*) = COUNT(s.school_burden_per_adult)
-                    THEN SUM(s.school_burden_per_adult * m.weighted_adults) / NULLIF(SUM(m.weighted_adults), 0)
-                    ELSE NULL
-               END,
-               SUM(m.federal_net_proxy_annual * m.weighted_adults) / NULLIF(SUM(m.weighted_adults), 0)
-        FROM ctx.acs_origin_household_federal_microsim_2023 m
-        JOIN _origin_school s ON m.origin_label = s.origin_label
-        WHERE m.donor_household_weight IS NOT NULL AND m.education_bucket = '<HS'
     """)
 
     # --- Local flow: per-pupil from scenario (Mexico + FB weighted via origins) ---
@@ -507,17 +544,18 @@ def build() -> None:
                weight_adults, school_per_adult AS value_per_adult,
                weight_adults * school_per_adult AS value_total_usd,
                'USD_per_adult_per_year' AS unit,
-               'origin_fiscal_scenario_2023' AS source_ref,
-               'per_pupil × school_age_kids/HH ÷ adults/HH; average not marginal; citizen children in HH' AS notes
+               'origin_puma_household_fullstock_context_2023' AS source_ref,
+               'full-stock FB adults 25-64 household linkage; average school spend, not marginal; citizen children in HH' AS notes
         FROM _pop_school
         UNION ALL
         SELECT population_group, NULL,
                'net_crude_federal_minus_school', 1,
-               weight_adults, fed_per_adult - school_per_adult,
-               weight_adults * (fed_per_adult - school_per_adult),
+               ps.weight_adults, pf.fed_per_adult - ps.school_per_adult,
+               ps.weight_adults * (pf.fed_per_adult - ps.school_per_adult),
                'USD_per_adult_per_year', 'derived_crude',
                'CRUDE static: federal proxy minus average school burden; no descendant taxes; not NAS lifetime'
-        FROM _pop_school
+        FROM _pop_school ps
+        JOIN _pop_fed_rollup pf USING (population_group)
     """)
 
     # --- GE fan applied to Mexico <HS federal annual (2nd order) ---

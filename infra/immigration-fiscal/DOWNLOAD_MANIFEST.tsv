@@ -7,13 +7,13 @@ base	optional	external/census_school_finance_2023_summary.txt	10000	setup.sh	F-3
 stage2	optional	external/stage2/irs/countyinflow2223.csv	100000	setup.sh	IRS SOI migration inflow
 stage2	optional	external/stage2/irs/countyoutflow2223.csv	100000	setup.sh	IRS SOI migration outflow
 stage2	optional	external/stage2/census/geo/tab20_puma520_cousub20_natl.txt	100000	setup.sh	PUMA-county crosswalk
-stage2	optional	external/stage2/hud/chas/2018thru2022-140-csv.zip	10240	setup.sh	HUD CHAS Table 11 (often WAF-blocked)
+stage2	blocked	external/stage2/hud/chas/2018thru2022-140-csv.zip	10240	setup.sh	HUD CHAS Table 11 (old direct URLs 404; portal WAF; ACS proxy in build)
 stage3	optional	external/stage3/census/sipp/pu2024_csv.zip	100000000	setup.sh	SIPP 2024 (~3.4GB)
 stage3	optional	external/stage3/census/sipp/pu2024_schema.json	100000	setup.sh	SIPP column schema JSON
 stage3	optional	external/stage3/ahrq/meps/h251dat.zip	1000000	setup.sh	MEPS HC-251 fixed-width
 stage3	optional	external/stage3/ahrq/meps/h251su.txt	10000	setup.sh	MEPS SAS setup / labels
 stage4	optional	external/stage4/saipe/ussd23.txt	100000	setup.sh	SAIPE school districts 2023
-stage4	optional	external/stage4/nces/ccd_lea_029_2324_w_1a_073124.zip	100000	setup.sh	NCES LEA directory 2023-24
+stage2	optional	external/stage2/nces/ccd_lea_029_2324_w_1a_073124.zip	100000	setup.sh	NCES LEA directory 2023-24
 stage5	optional	external/stage5_net_negative/cms/medicaid_financial_management.csv	100000	setup-net-negative.sh	CMS Medicaid financial management
 stage5	optional	external/stage5_net_negative/bea/rpp_state_metro_2024.xlsx	10000	setup-net-negative.sh	BEA regional price parities
 stage5	optional	external/stage5_net_negative/nces/ccd_lea_141_1718_english_learners.zip	100000	setup-net-negative.sh	District EL counts 2017-18
@@ -102,7 +102,7 @@ lifetime	optional	external/lifetime/iza/iza_dp4898_lozano_lopez_border_enforceme
 lifetime	optional	external/lifetime/iza/iza_dp452_immigrant_occupational_mobility_longitudinal.pdf	100000	setup-lifetime.sh	Immigrant occupational mobility panel
 lifetime	optional	external/lifetime/iza/iza_dp10234_economics_politics_refugee_migration.pdf	500000	setup-lifetime.sh	Refugee migration political economy
 lifetime	optional	external/lifetime/cdc/nvsr72_12_us_life_tables_2021_all_races.pdf	500000	setup-lifetime.sh	CDC life tables all races 2021 (full NVSR)
-lifetime	optional	external/lifetime/census/np2023_t1_population_projections_summary.xls	5000	setup-lifetime.sh	Census 2023 national population projections
+lifetime	optional	external/lifetime/census/np2023_t1_population_projections_summary.xlsx	5000	setup-lifetime.sh	Census 2023 national population projections
 lifetime	optional	external/lifetime/saiz/saiz_2010_msa_elasticity.dta	10000	setup-lifetime.sh	Saiz 2010 MSA housing supply elasticity (copy)
 lifetime	optional	external/lifetime/itep/ITEP-Tax-Payments-by-Undocumented-Immigrants-2024.pdf	50000	setup-lifetime.sh	ITEP undocumented tax payments (copy)
 lifetime	optional	external/lifetime/itep/itep_2024_tax_contributions.json	500	setup-lifetime.sh	ITEP tax totals JSON (copy)
@@ -113,7 +113,7 @@ lifetime	optional	external/lifetime/nber/ortega_peri_2009_causes_effects_interna
 lifetime	optional	external/lifetime/iza/iza_dp631_duleep_regets_immigrant_quality_human_capital.pdf	100000	setup-lifetime.sh	Duleep Regets immigrant quality / human capital investment
 lifetime	optional	external/lifetime/iza/iza_dp8628_duleep_regets_country_origin_earnings_return_migration.pdf	500000	setup-lifetime.sh	Duleep Regets return migration and assimilation
 lifetime	optional	external/lifetime/iza/iza_dp331_winkelmann_international_employer_recruitment.pdf	100000	setup-lifetime.sh	International employer recruitment survey
-lifetime	optional	external/lifetime/fed/feds_note_20240105_immigration_us_economy.html	5000	setup-lifetime.sh	Fed FEDS note immigration and US economy (HTML)
+lifetime	optional	external/lifetime/fed/fed_mpr_20240301_immigration_labor_supply.pdf	500000	setup-lifetime.sh	Fed MPR Mar 2024 (immigration/labor supply; FEDS note slug 404)
 lifetime	optional	external/lifetime/derived/stage2/school_finance_county_2023.csv	1000	setup-lifetime.sh	County school finance bridge (copy)
 lifetime	optional	external/lifetime/derived/stage2/chas_county_housing_stress_2018_2022.csv	1000	setup-lifetime.sh	County housing stress bridge (copy)
 lifetime	optional	external/lifetime/derived/stage2/irs_migration_county_2022_2023.csv	1000	setup-lifetime.sh	IRS county migration bridge (copy)

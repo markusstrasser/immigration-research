@@ -255,8 +255,8 @@ _fetch "https://docs.iza.org/dp10234.pdf" \
        "$LT/iza/iza_dp10234_economics_politics_refugee_migration.pdf" 500000
 _fetch "https://www.cdc.gov/nchs/data/nvsr/nvsr72/nvsr72-12.pdf" \
        "$LT/cdc/nvsr72_12_us_life_tables_2021_all_races.pdf" 500000
-_fetch "https://www2.census.gov/programs-surveys/popproj/tables/2023-summary-tables/np2023-t1.xls" \
-       "$LT/census/np2023_t1_population_projections_summary.xls" 5000
+_fetch "https://www2.census.gov/programs-surveys/popproj/tables/2023/2023-summary-tables/np2023-t1.xlsx" \
+       "$LT/census/np2023_t1_population_projections_summary.xlsx" 5000
 
 # Copies from main fiscal stack (no new download)
 SAIZ_SRC="$PNY_DATA_ROOT/../immigration-causal/data/saiz/saiz_2010_msa_elasticity.dta"
@@ -300,8 +300,9 @@ _fetch "https://docs.iza.org/dp8628.pdf" \
        "$LT/iza/iza_dp8628_duleep_regets_country_origin_earnings_return_migration.pdf" 500000
 _fetch "https://docs.iza.org/dp331.pdf" \
        "$LT/iza/iza_dp331_winkelmann_international_employer_recruitment.pdf" 100000
-_fetch "https://www.federalreserve.gov/econres/notes/feds-notes/immigration-and-the-u-s-economy-20240105.htm" \
-       "$LT/fed/feds_note_20240105_immigration_us_economy.html" 5000
+# Fed FEDS note slug 404 as of 2026-06; MPR Mar 2024 covers immigration/labor supply.
+_fetch "https://www.federalreserve.gov/publications/files/20240301_mprfullreport.pdf" \
+       "$LT/fed/fed_mpr_20240301_immigration_labor_supply.pdf" 500000
 
 # Derived incidence + health bridge (from DERIVED_ROOT / main stack)
 DERIVED_BASE="${DERIVED_ROOT:-$PNY_DATA_ROOT/derived}"
@@ -339,7 +340,12 @@ for _pair in \
         _ok "copy $LT/$_dst"
     fi
 done
-if [[ -f "$PNY_DATA_ROOT/external/origin/plcy_lpr_by_country_of_birth_by_major_class_fy2005-2022_d.xlsx" ]]; then
+if [[ -f "$PNY_DATA_ROOT/external/origin/ohss/lpr_country_birth_major_class_2005_2022.xlsx" ]]; then
+    mkdir -p "$LT/dhs"
+    cp -f "$PNY_DATA_ROOT/external/origin/ohss/lpr_country_birth_major_class_2005_2022.xlsx" \
+          "$LT/dhs/plcy_lpr_by_country_of_birth_fy2005_2022.xlsx"
+    _ok "copy $LT/dhs/plcy_lpr_by_country_of_birth_fy2005_2022.xlsx"
+elif [[ -f "$PNY_DATA_ROOT/external/origin/plcy_lpr_by_country_of_birth_by_major_class_fy2005-2022_d.xlsx" ]]; then
     mkdir -p "$LT/dhs"
     cp -f "$PNY_DATA_ROOT/external/origin/plcy_lpr_by_country_of_birth_by_major_class_fy2005-2022_d.xlsx" \
           "$LT/dhs/plcy_lpr_by_country_of_birth_fy2005_2022.xlsx"

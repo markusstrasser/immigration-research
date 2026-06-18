@@ -252,6 +252,29 @@ def load_stage2_into_duckdb(con, stage2_dir: Path) -> None:
             GROUP BY 1, 2, 3, 4, 5, 6
         """)
 
+    if con.execute(
+        "SELECT COUNT(*) FROM information_schema.tables WHERE table_name='origin_puma_household_fullstock_context_2023'"
+    ).fetchone()[0]:
+        con.execute("""
+            CREATE OR REPLACE TABLE origin_puma_household_fullstock_stage2_context_2023 AS
+            SELECT
+              o.origin_label,
+              o.state_fips,
+              o.puma_code,
+              o.person_weighted_adults,
+              o.linked_household_wgt,
+              o.linked_mean_hh_school_age_children,
+              o.linked_share_households_with_school_age_children_pct,
+              SUM(p.area_weight * c.current_spend_per_pupil) AS area_wtd_current_spend_per_pupil,
+              SUM(p.area_weight * c.share_one_plus_housing_problems_pct) AS area_wtd_housing_stress_pct,
+              SUM(p.area_weight * c.netflow_balance_pct) AS area_wtd_netflow_balance_pct
+            FROM origin_puma_household_fullstock_context_2023 o
+            JOIN puma_county_area_xwalk_2023 p
+              ON o.state_fips = p.state_fips AND o.puma_code = p.puma_code
+            LEFT JOIN county_stage2_context_2023 c ON p.county_fips = c.county_fips
+            GROUP BY 1, 2, 3, 4, 5, 6, 7
+        """)
+
 
 def build_stage2(out_dir: Path | None = None) -> dict:
     out = out_dir or STAGE2

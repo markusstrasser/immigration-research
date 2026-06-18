@@ -7,22 +7,13 @@ The `sources/` symlink points at an external SSD and is **not** in git. All down
 ## New machine quickstart
 
 ```bash
-cd /path/to/research/infra/immigration-fiscal
-
-# 1. Configure where bytes land (~50GB+ for full stack)
-cp acquire/config.env.example acquire/config.local.env
-# edit PNY_DATA_ROOT, CORPUS_ROOT, DUCKDB_PATH
-
-# 2. Download (idempotent — skips valid existing files)
-bash acquire/setup.sh
-
-# 3. Verify key artifacts
-bash scripts/verify-downloads.sh
-
-# 4. Build warehouse + MVP modules
-bash rebuild.sh
-bash rebuild_mvp.sh
+cd /path/to/research
+./scripts/reproduce-immigration-data.sh init
+./scripts/reproduce-immigration-data.sh doctor
+./scripts/reproduce-immigration-data.sh all minimal   # or: standard | full
 ```
+
+See `REPRODUCE.md` for tiers, verify modes, and manual-acquire list.
 
 **Requirements:** `bash`, `curl`, `unzip`, `uv` (for Python builders). Optional: `playwright` for HUD CHAS WAF bypass (`uv run --with playwright`).
 
@@ -30,6 +21,7 @@ bash rebuild_mvp.sh
 
 | Path | Role |
 |------|------|
+| `reproduce.sh` | **One-command** init / download / verify / build |
 | `acquire/setup.sh` | Main acquisition (~80 URLs) |
 | `acquire/setup-net-negative.sh` | Stage-5 fiscal/local-cost datasets |
 | `acquire/setup-lifetime.sh` | Lifetime benchmarks + linkage docs (NAS/NRC/Orrenius/Storesletten) |

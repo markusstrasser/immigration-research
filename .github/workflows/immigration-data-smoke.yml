@@ -1,0 +1,20 @@
+name: immigration-data-smoke
+
+on:
+  push:
+    paths:
+      - 'infra/immigration-fiscal/**'
+      - 'scripts/reproduce-immigration-data.sh'
+      - '.github/workflows/immigration-data-smoke.yml'
+  pull_request:
+    paths:
+      - 'infra/immigration-fiscal/**'
+      - 'scripts/reproduce-immigration-data.sh'
+
+jobs:
+  doctor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reproduce doctor
+        run: bash infra/immigration-fiscal/reproduce.sh doctor

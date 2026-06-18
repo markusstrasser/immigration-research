@@ -1,81 +1,80 @@
 # Reproduce immigration-fiscal data stack
 
+**One command:** from repo root:
+
+```bash
+./scripts/reproduce-immigration-data.sh init
+./scripts/reproduce-immigration-data.sh all minimal   # ~2 GB download + warehouse
+./scripts/reproduce-immigration-data.sh all standard  # full public stack (~50 GB attempts)
+```
+
+Or from `infra/immigration-fiscal/`:
+
+```bash
+./reproduce.sh init
+./reproduce.sh doctor
+./reproduce.sh download standard
+./reproduce.sh verify required
+./reproduce.sh build all
+```
+
 ## Why scripts live in `infra/`
 
-`research/sources` is a symlink to an external SSD. Git cannot track files there. **All download and build scripts are versioned under `infra/immigration-fiscal/`.**
+`research/sources` is often a symlink to an external SSD and is **not in git**. Download and build logic is versioned under `infra/immigration-fiscal/`.
 
-## Steps (any machine)
+## Tiers
 
-### 1. Clone + configure
+| Tier | Download | Build | Disk (approx) |
+|------|----------|-------|----------------|
+| `minimal` | ACS 2023 PUMS + CPS ASEC | `immigration_context.duckdb` | ~2 GB |
+| `standard` | + stage2/3/5, IRS panel, lifetime PDFs | + MVP + lifetime union | ~50 GB |
+| `full` | + tier-a labor + restrictionist + causal (Saiz, BEA) | same as standard | +5 GB |
+
+## Configure paths
+
+`./reproduce.sh init` creates `acquire/config.local.env` from portable defaults:
 
 ```bash
-git clone <research-repo> ~/Projects/research
-cd ~/Projects/research/infra/immigration-fiscal
-cp acquire/config.env.example acquire/config.local.env
+PNY_DATA_ROOT=$HOME/research-data/immigration-fiscal/data
+DERIVED_ROOT=$PNY_DATA_ROOT/derived
+DUCKDB_PATH=$REPO_ROOT/warehouse/immigration_context.duckdb
 ```
 
-Edit `acquire/config.local.env`:
+On machines with `sources/` in-repo (not symlinked), `init` also links:
+
+`sources/immigration-fiscal/data` → `$PNY_DATA_ROOT`
+
+## Verify
 
 ```bash
-export PNY_DATA_ROOT="$HOME/research-data/immigration-fiscal/data"   # ~50GB+
-export CORPUS_ROOT="$HOME/research-data/corpus"                      # optional mirrors
-export DERIVED_ROOT="$HOME/research-data/immigration-fiscal/derived"
-export DUCKDB_PATH="$HOME/Projects/research/warehouse/immigration_context.duckdb"
+./reproduce.sh verify required    # 3 census zips (pre-build)
+./reproduce.sh verify optional    # full manifest downloads
+./reproduce.sh verify derived     # post-build CSV outputs
 ```
 
-### 2. Download
+Manifest: `DOWNLOAD_MANIFEST.tsv`
+
+## Manual / blocked
+
+Scripts **skip** (not fail) when WAF/403 blocks: HUD CHAS, ORR, some SSA/CBO PDFs.
+
+After `download`, see:
+
+- `$PNY_DATA_ROOT/external/stage5_net_negative/kff_refs/MANUAL_ACQUIRE.md`
+- `$PNY_DATA_ROOT/external/lifetime/applications/MANUAL_ACQUIRE.md`
+
+Application-gated (never scripted): PSID, IRS SOI PUF, Synthetic SIPP, FSRDC LEHD.
+
+## Requirements
+
+`bash`, `curl`, `unzip`, `uv` (Python builders). Optional: `playwright` for HUD CHAS retry.
+
+## CI smoke
+
+GitHub Actions runs `./reproduce.sh doctor` only (no multi-GB download).
+
+Local end-to-end:
 
 ```bash
-bash acquire/setup.sh          # required: ACS + CPS zips; optional: SIPP, MEPS, stage2-5
-bash scripts/verify-downloads.sh
-```
-
-Logs: `acquire/setup.log`
-
-**Required failures** exit non-zero if ACS person/household or CPS ASEC zips are missing.
-
-### 3. Build
-
-```bash
-bash rebuild.sh                # DuckDB warehouse (stage1+2 + federal microsim)
-bash rebuild_mvp.sh            # SIPP/MEPS cells + bridge (~2 min SIPP stream)
-```
-
-### 4. Query
-
-```bash
-uv run --with duckdb python -c "
-import duckdb
-c=duckdb.connect('$DUCKDB_PATH', read_only=True)
-print(c.execute('SHOW TABLES').fetchall())
-"
-```
-
-## Disk budget (approximate)
-
-| Tier | Size | Scripts |
-|------|------|---------|
-| Minimum (warehouse) | ~2 GB | ACS + CPS required |
-| Stage 2 county bridge | +500 MB | IRS migration, school finance, crosswalk |
-| Stage 3 MVP | +4 GB | SIPP 2024 + MEPS HC-251 |
-| Full corpus mirror | +10 GB | IRS SOI migration panel, ACS corpus zip |
-
-## Blocked sources
-
-Automated scripts **skip** (not fail) when WAF/403 blocks: HUD CHAS, BLS LAUS, ORR, ACF. Manual list written to:
-
-`$PNY_DATA_ROOT/external/stage5_net_negative/kff_refs/MANUAL_ACQUIRE.md`
-
-## Updating URLs
-
-1. Edit `acquire/setup.sh` or `acquire/setup-net-negative.sh`
-2. Add a row to `DOWNLOAD_MANIFEST.tsv`
-3. Run `bash scripts/verify-downloads.sh`
-
-## PNY symlink users
-
-If `sources/immigration-fiscal` exists on SSD, wrappers call infra automatically when:
-
-```bash
-export IMMIGRATION_FISCAL_INFRA="$HOME/Projects/research/infra/immigration-fiscal"
+./reproduce.sh smoke   # minimal download + context build + DuckDB probe
 ```
