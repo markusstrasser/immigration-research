@@ -7,10 +7,11 @@
 #   ./reproduce.sh verify [tier]      # required | optional | all | derived
 #   ./reproduce.sh build [target]     # context | mvp | lifetime | all
 #   ./reproduce.sh all [tier]         # download + verify required + build all
-#   ./reproduce.sh smoke             # minimal download + context build + probe
+#   ./reproduce.sh query [filter]    # headline SQL (all | context | union)
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$ROOT/../.." && pwd)"
 # shellcheck source=acquire/lib.sh
 source "$ROOT/acquire/lib.sh"
 
@@ -24,6 +25,7 @@ Commands:
   download [tier]      minimal (~2GB) | standard (~50GB attempts) | full (+tier-a, causal)
   verify [tier]        required (default) | optional | all | derived
   build [target]       context | mvp | lifetime | all (default)
+  query [filter]         Run headline SQL (all | context | union)
   all [tier]           download + verify required + build all
   smoke                minimal pipeline smoke test
 
@@ -134,6 +136,11 @@ assert n > 0
 PY
 }
 
+_cmd_query() {
+    local filter="${1:-all}"
+    bash "$REPO_ROOT/queries/immigration/run-queries.sh" "$filter"
+}
+
 _cmd_all() {
     local tier="${1:-standard}"
     _cmd_download "$tier"
@@ -151,6 +158,7 @@ main() {
         download) _cmd_download "${1:-standard}" ;;
         verify) _cmd_verify "${1:-required}" ;;
         build) _cmd_build "${1:-all}" ;;
+        query) _cmd_query "${1:-all}" ;;
         all) _cmd_all "${1:-standard}" ;;
         smoke) _cmd_smoke ;;
         ""|-h|--help) _usage ;;

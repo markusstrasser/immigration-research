@@ -77,4 +77,12 @@ Local end-to-end:
 
 ```bash
 ./reproduce.sh smoke   # minimal download + context build + DuckDB probe
+./reproduce.sh query   # rerun headline SQL after full build
 ```
+
+## Share reasoning with someone else
+
+1. Send them `research/immigration-friend-reproduce-guide.md` (reading order + supersession rules).
+2. They clone the repo and run `./scripts/reproduce-immigration-data.sh all standard`.
+3. They rerun checks: `./scripts/reproduce-immigration-data.sh query`.
+4. Query pack: `queries/immigration/` (each file cites the backing memo).

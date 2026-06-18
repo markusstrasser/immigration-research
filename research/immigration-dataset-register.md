@@ -192,7 +192,7 @@ If the question is:
 | SNAP state panel FY2023 | `derived/stage5/snap_state_2023.csv` | Built | Avg households/persons/benefits by state | From NDB public xlsx in USDA zip |
 | SIPP scenario ledger 2024 | `derived/stage3_proto/sipp_scenario_ledger_2024.csv` | Built | 98-cell federal+health scenario inputs |
 | Origin fiscal scenario 2023 | `derived/stage3_proto/origin_fiscal_scenario_2023.csv` | Built | Per-origin integrated scenario row |
-| Manual acquire list | `external/stage5_net_negative/kff_refs/MANUAL_ACQUIRE.md` | Reference | KFF, CHAS, SNAP, TRAC, NAS |
+| Manual acquire list | `external/stage5_net_negative/kff_refs/MANUAL_ACQUIRE.md` | Reference | KFF, TRAC, NAS, EDFacts EL |
 
 See `research/immigration-net-negative-dataset-frontier-2026-06-15.md` for full tier list and disconfirmation requirements.
 
