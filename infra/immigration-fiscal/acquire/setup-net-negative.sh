@@ -12,6 +12,7 @@ else
 fi
 
 S5="$PNY_DATA_ROOT/external/stage5_net_negative"
+SCRIPTS="$(cd "$HERE/../scripts" && pwd)"
 LOG="$HERE/setup.log"
 _log()  { printf '[%(%H:%M:%S)T] %s\n' -1 "$*" | tee -a "$LOG"; }
 _ok()   { _log "  ok   $*"; }
@@ -55,6 +56,24 @@ _fetch "https://nces.ed.gov/ccd/Data/zip/ccd_lea_141_1718_l_1a_083118.zip" \
 _fetch "https://www2.census.gov/programs-surveys/gov-finances/tables/2022/2022_Individual_Unit_File.zip" \
        "$S5/census/gov_finances_2022_individual_unit.zip" 100000
 
+_fetch_hud_safmr() {
+    local url="$1" dest="$2"
+    mkdir -p "$(dirname "$dest")"
+    [[ -s "$dest" ]] && _validate_file "$dest" 100000 && { _ok "exists $dest"; return 0; }
+    _log "fetch(SAFMR) $url"
+    if command -v uv >/dev/null 2>&1 && [[ -f "$SCRIPTS/fetch_browser.py" ]]; then
+        if uv run --with playwright python "$SCRIPTS/fetch_browser.py" "$url" "$dest" \
+            "https://www.huduser.gov/portal/datasets/fmr.html"; then
+            _ok "$dest"
+            return 0
+        fi
+    fi
+    _warn "skip $dest (install playwright: uv run --with playwright python -m playwright install chromium)"
+}
+mkdir -p "$S5/hud"
+_fetch_hud_safmr "https://www.huduser.gov/portal/datasets/fmr/fmr2025/fy2025_safmrs_revised.xlsx" \
+                 "$S5/hud/fy2025_safmrs_revised.xlsx"
+
 CAUSAL="${IMMIGRATION_CAUSAL_DATA:-$HOME/Projects/research/sources/immigration-causal/data}"
 CAUSAL_RC="$CAUSAL/bused_cities/receiver_city_costs.csv"
 if [[ -s "$CAUSAL_RC" ]]; then
@@ -73,7 +92,7 @@ cat > "$S5/kff_refs/MANUAL_ACQUIRE.md" <<'EOF'
 | KFF immigrant health coverage facts | Disconfirms naive Medicaid drain | https://www.kff.org/racial-equity-and-health-policy/key-facts-on-health-coverage-of-immigrants/ |
 | CBO Emergency Medicaid FY17-23 | Emergency spend on noncitizens | https://www.cbo.gov/ |
 | HUD CHAS Table 11 | County housing stress | Automated via `setup.sh` + Playwright (`2018thru2022-050-csv.zip`) |
-| HUD SAFMR 2025 | Zip-level rent caps | https://www.huduser.gov/portal/datasets/fmr/smallarea/safmr.html |
+| HUD SAFMR 2025 | Zip-level rent caps | Automated via `setup-net-negative.sh` + Playwright (`fy2025_safmrs_revised.xlsx`) |
 | USDA SNAP state summaries | Transfer program scale | https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap |
 | TRAC immigration court backlog | Court-system cost proxy | https://trac.syr.edu/immigration/ (no stable CSV; EOIR PDFs scripted) |
 | NAS 2017 fiscal tables | Benchmark NPV by education | https://nap.nationalacademies.org/catalog/23550 |

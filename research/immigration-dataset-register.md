@@ -97,6 +97,7 @@ Key builders: `build_immigration_warehouse.py`, `build_stage5_local_cost_context
 | BLS QCEW 2023 annual | `sources/immigration-fiscal/data/bls/qcew_2023_annual_by_industry.zip` | Local | Sector employment/wage context | Industry totals, not immigrant composition |
 | Extracted QCEW sector files | `sources/immigration-fiscal/data/bls/extracted/2023.annual.by_industry/` | Local | Focus sectors such as construction and hospitality | Same |
 | FHFA state HPI | `sources/immigration-fiscal/data/external/fhfa_hpi_po_state.txt` | Local | Owner-side housing context | State-level only |
+| HUD SAFMR FY2025 (zip-level) | `sources/immigration-fiscal/data/external/stage5_net_negative/hud/fy2025_safmrs_revised.xlsx` | Local, acquired 2026-06-18 | Zip-code rent caps for voucher/local burden | Playwright fetch; parse to panel TBD |
 | HUD CHAS 2018–2022 county CSV | `sources/immigration-fiscal/data/external/stage2/hud/chas/2018thru2022-050-csv.zip` | Local, acquired 2026-06-18 | County share with 1+ of 4 housing problems (Table 11) | Needs Playwright session fetch; not welfare scalar |
 | ACS state rent JSON | `sources/immigration-fiscal/data/external/origin/census_acs1_2023_state_median_gross_rent.json` | Local | Renter-side housing context | State-level only |
 | Local burden examples | `research/state-local-cost-examples-ny-ca-tx.md` | Memo, not raw data | Concrete burden illustrations | Not a reusable database |
@@ -138,6 +139,8 @@ Key builders: `build_immigration_warehouse.py`, `build_stage5_local_cost_context
 | SAIPE 2023 district raw files | `sources/immigration-fiscal/data/external/stage4/saipe/` | Local, staged | District child-count and poverty overlays for school-burden sizing | Public district estimates only; not immigrant-status-specific |
 | NCES CCD LEA 2023-24 file-tool artifacts | `sources/immigration-fiscal/data/external/stage4/nces/` | Local, staged | Reproducible path to current district directory and companion documentation | Current public district `EL` route still unresolved |
 | Court and language-access PDFs | `sources/immigration-fiscal/data/external/stage4/courts/` | Local, staged | Interpreter scheduling, reimbursement, and language-access operating-cost context | Operational documents, not microdata |
+| EOIR workload PDFs (curated) | `sources/immigration-fiscal/data/external/stage4/courts/eoir/*.pdf` | Local, acquired 2026-06-18 | Court backlog, UAC, amnesty-by-state screens | PDF tables — parse separately |
+| EOIR parsed CSV panels | `sources/immigration-fiscal/data/derived/stage4/eoir/*.csv` | Local, built 2026-06-18 | FY workload (44y), pending FY2016+, amnesty-by-state (56) | Text extraction from chart PDFs |
 | Parsed SAIPE district table 2023 | `sources/immigration-fiscal/data/derived/stage4/saipe_school_district_2023.csv` | Local, built | Clean district child-count and child-poverty table keyed by `LEAID` | Still not immigrant-specific |
 | School-service district layer 2023 | `sources/immigration-fiscal/data/derived/stage4/school_service_complexity_district_2023.csv` | Local, built | Joined district child intensity, poverty, finance, and current LEA context | No validated current district `EL` counts yet |
 | School-service state layer 2023 | `sources/immigration-fiscal/data/derived/stage4/school_service_complexity_state_2023.csv` | Local, built | State rollup of the district school-service layer | Still descriptive, not causal |
@@ -209,7 +212,7 @@ Re-staged after lost SSD. **`infra/immigration-fiscal/acquire/setup.sh`** (canon
 | B | CBP SBO encounters CSV | `immigration-causal/data/cbp/raw/` | Replaces retired xlsx tables |
 | B | FRED macro CSV exports | `external/fred/` | UNRATE, CPI, HOUST, Case-Shiller |
 | C | ORR arrivals by state | `external/origin/orr/` | ACF WAF — may need browser |
-| C | EOIR stats zip | `external/stage4/courts/eoir/` | Scrape link from DOJ page |
+| A | EOIR workload PDFs | `external/stage4/courts/eoir/` | Scripted from justice.gov stats page |
 | C | NYC Local Law 6 PDF | `external/stage4/courts/` | 403 without session |
 | Blocked | PSID | — | Cloudflare / registration |
 | Blocked | LEHD worker histories | — | FSRDC |
