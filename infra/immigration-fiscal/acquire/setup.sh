@@ -116,7 +116,7 @@ _fetch_hud_chas() {
             rm -f "$dest"
         fi
     fi
-    _warn "skip $dest (HUD WAF — download manually from https://www.huduser.gov/portal/datasets/chas.html)"
+    _warn "skip $dest (HUD — download manually from https://www.huduser.gov/portal/datasets/cp.html or install playwright)"
     return 0
 }
 
@@ -208,13 +208,13 @@ _fetch "https://www.irs.gov/pub/irs-soi/stateinflow2223.csv" \
        "$DATA/external/stage2/irs/stateinflow2223.csv" --optional
 _fetch "https://www.irs.gov/pub/irs-soi/stateoutflow2223.csv" \
        "$DATA/external/stage2/irs/stateoutflow2223.csv" --optional
-_fetch_hud_chas "https://www.huduser.gov/portal/datasets/chas/files/2018thru2022-050-csv.zip" \
+_fetch_hud_chas "https://www.huduser.gov/portal/datasets/cp/2018thru2022-050-csv.zip" \
        "$DATA/external/stage2/hud/chas/2018thru2022-050-csv.zip"
-_fetch_hud_chas "https://www.huduser.gov/portal/datasets/chas/files/2018thru2022-040-csv.zip" \
+_fetch_hud_chas "https://www.huduser.gov/portal/datasets/cp/2018thru2022-040-csv.zip" \
        "$DATA/external/stage2/hud/chas/2018thru2022-040-csv.zip"
-_fetch_hud_chas "https://www.huduser.gov/portal/datasets/chas/files/2018thru2022-140-csv.zip" \
+_fetch_hud_chas "https://www.huduser.gov/portal/datasets/cp/2018thru2022-140-csv.zip" \
        "$DATA/external/stage2/hud/chas/2018thru2022-140-csv.zip"
-_fetch_hud_chas "https://www.huduser.gov/portal/datasets/chas/files/CHAS-data-dictionary-18-22.xlsx" \
+_fetch_hud_chas "https://www.huduser.gov/portal/datasets/cp/CHAS-data-dictionary-18-22.xlsx" \
        "$DATA/external/stage2/hud/chas/CHAS-data-dictionary-18-22.xlsx"
 _fetch_get "https://nces.ed.gov/ccd/Data/zip/ccd_lea_029_2324_w_1a_073124.zip" \
        "$DATA/external/stage2/nces/ccd_lea_029_2324_w_1a_073124.zip" --optional

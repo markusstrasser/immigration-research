@@ -84,8 +84,10 @@ _cmd_download() {
     if [[ "$tier" == "full" ]]; then
         bash "$ROOT/acquire/setup-tier-a-labor-demography.sh" || true
         bash "$ROOT/acquire/setup-restrictionist-panels.sh" || true
-        if [[ -f "$REPO_ROOT/sources/immigration-causal/setup.sh" ]]; then
-            bash "$REPO_ROOT/sources/immigration-causal/setup.sh" || true
+        local causal_setup="$REPO_ROOT/sources/immigration-causal/setup.sh"
+        [[ -f "$causal_setup" ]] || causal_setup="$(dirname "$IMMIGRATION_CAUSAL_DATA")/setup.sh"
+        if [[ -f "$causal_setup" ]]; then
+            bash "$causal_setup" || true
         else
             echo "WARN immigration-causal/setup.sh not found — skip causal downloads"
         fi

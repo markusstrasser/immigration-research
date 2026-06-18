@@ -56,7 +56,7 @@ Manifest: `DOWNLOAD_MANIFEST.tsv`
 
 ## Manual / blocked
 
-Scripts **skip** (not fail) when WAF/403 blocks: HUD CHAS, ORR, some SSA/CBO PDFs.
+Scripts **skip** (not fail) when Playwright is unavailable: HUD CHAS (needs `uv run --with playwright`), ORR, some SSA/CBO PDFs. HUD moved bulk CSV zips to `portal/datasets/cp/` (Dec 2025); county Table 11 is `2018thru2022-050-csv.zip`.
 
 After `download`, see:
 
