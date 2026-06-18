@@ -21,7 +21,7 @@ STAGE2 = DERIVED / "stage2"
 
 SCHOOL_FINANCE = DATA / "external" / "census_school_finance_2023_summary.txt"
 PUMA_REL = DATA / "external" / "stage2" / "census" / "geo" / "tab20_puma520_cousub20_natl.txt"
-CHAS_ZIP = DATA / "external" / "stage2" / "hud" / "chas" / "2018thru2022-140-csv.zip"
+CHAS_ZIP = DATA / "external" / "stage2" / "hud" / "chas" / "2018thru2022-050-csv.zip"
 IRS_IN = DATA / "external" / "stage2" / "irs" / "countyinflow2223.csv"
 IRS_OUT = DATA / "external" / "stage2" / "irs" / "countyoutflow2223.csv"
 HH_ZIP = DATA / "census" / "acs_pums_2023_household.zip"
@@ -105,43 +105,37 @@ def build_irs_migration_county() -> pd.DataFrame:
     return mig
 
 
+def _num_chas(series: pd.Series) -> pd.Series:
+    return pd.to_numeric(series.replace({"*": None, "-": None, "N": None, "NA": None}), errors="coerce")
+
+
 def _parse_chas_table11(zip_path: Path) -> pd.DataFrame | None:
+    """County share with 1+ of 4 CHAS housing problems (Table 11)."""
     if not zip_path.exists() or zip_path.stat().st_size < 10_240:
         return None
     with zipfile.ZipFile(zip_path) as zf:
         names = [n for n in zf.namelist() if "table11" in n.lower() and n.lower().endswith(".csv")]
         if not names:
-            names = [n for n in zf.namelist() if n.lower().endswith(".csv")]
-        if not names:
             return None
         raw = zf.read(names[0])
-    df = pd.read_csv(BytesIO(raw), dtype=str, low_memory=False)
-    cols = {c.lower(): c for c in df.columns}
-    fips_col = next((cols[k] for k in cols if "fips" in k and "county" in k), None)
-    if fips_col is None:
-        fips_col = next((cols[k] for k in cols if k in ("geoid", "geoid10", "geoid20")), None)
-    prob_col = next(
-        (
-            cols[k]
-            for k in cols
-            if "prob" in k or "problem" in k or "four" in k or "oneplus" in k.replace("_", "")
-        ),
-        None,
-    )
-    if fips_col is None or prob_col is None:
-        numeric = [c for c in df.columns if pd.to_numeric(df[c], errors="coerce").notna().any()]
-        if len(numeric) >= 2:
-            prob_col = numeric[-1]
-            fips_col = df.columns[0]
-        else:
-            return None
+    for enc in ("utf-8", "latin-1", "cp1252"):
+        try:
+            df = pd.read_csv(BytesIO(raw), dtype=str, low_memory=False, encoding=enc)
+            break
+        except UnicodeDecodeError:
+            df = None
+    if df is None or not {"st", "cnty", "T11_est1", "T11_est3", "T11_est46"}.issubset(df.columns):
+        return None
+    total = _num_chas(df["T11_est1"])
+    with_probs = _num_chas(df["T11_est3"]) + _num_chas(df["T11_est46"])
     out = pd.DataFrame(
         {
-            "county_fips": df[fips_col].astype(str).str.replace(r"\D", "", regex=True).str.zfill(5),
-            "share_one_plus_housing_problems_pct": pd.to_numeric(df[prob_col], errors="coerce"),
+            "county_fips": df["st"].astype(str).str.zfill(2) + df["cnty"].astype(str).str.zfill(3),
+            "share_one_plus_housing_problems_pct": 100.0 * with_probs / total.where(total > 0),
             "source": "chas_table11",
         }
     )
+    out = out.dropna(subset=["share_one_plus_housing_problems_pct"])
     return out.groupby("county_fips", as_index=False)["share_one_plus_housing_problems_pct"].mean()
 
 

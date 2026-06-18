@@ -7,7 +7,7 @@ base	optional	external/census_school_finance_2023_summary.txt	10000	setup.sh	F-3
 stage2	optional	external/stage2/irs/countyinflow2223.csv	100000	setup.sh	IRS SOI migration inflow
 stage2	optional	external/stage2/irs/countyoutflow2223.csv	100000	setup.sh	IRS SOI migration outflow
 stage2	optional	external/stage2/census/geo/tab20_puma520_cousub20_natl.txt	100000	setup.sh	PUMA-county crosswalk
-stage2	blocked	external/stage2/hud/chas/2018thru2022-140-csv.zip	10240	setup.sh	HUD CHAS Table 11 (old direct URLs 404; portal WAF; ACS proxy in build)
+stage2	optional	external/stage2/hud/chas/2018thru2022-050-csv.zip	10000000	setup.sh	HUD CHAS county CSV (Table 11; cp/ portal + Playwright)
 stage3	optional	external/stage3/census/sipp/pu2024_csv.zip	100000000	setup.sh	SIPP 2024 (~3.4GB)
 stage3	optional	external/stage3/census/sipp/pu2024_schema.json	100000	setup.sh	SIPP column schema JSON
 stage3	optional	external/stage3/ahrq/meps/h251dat.zip	1000000	setup.sh	MEPS HC-251 fixed-width
