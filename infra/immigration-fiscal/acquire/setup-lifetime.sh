@@ -255,6 +255,10 @@ _fetch "https://docs.iza.org/dp10234.pdf" \
        "$LT/iza/iza_dp10234_economics_politics_refugee_migration.pdf" 500000
 _fetch "https://www.cdc.gov/nchs/data/nvsr/nvsr72/nvsr72-12.pdf" \
        "$LT/cdc/nvsr72_12_us_life_tables_2021_all_races.pdf" 500000
+
+if [[ -x "$IMMIGRATION_FISCAL_ROOT/scripts/fetch_cdc_life_tables.sh" ]]; then
+    bash "$IMMIGRATION_FISCAL_ROOT/scripts/fetch_cdc_life_tables.sh" || _warn "CDC life table xlsx fetch/parse skipped"
+fi
 _fetch "https://www2.census.gov/programs-surveys/popproj/tables/2023/2023-summary-tables/np2023-t1.xlsx" \
        "$LT/census/np2023_t1_population_projections_summary.xlsx" 5000
 
@@ -368,11 +372,10 @@ cat > "$LT/applications/MANUAL_ACQUIRE.md" <<'EOF'
 | PSID | Descendant / intergenerational params | [psidonline.isr.umich.edu](https://psidonline.isr.umich.edu/) — registration |
 | FSRDC SIPP-SSA-IRS | Gold-standard earnings + tax linkage | Census restricted; see `census/sehsd_wp2024_01_sipp_research_files.pdf` |
 | FSRDC LEHD | Employer-employee earnings panel | Census restricted |
-| SSA period life tables | Mortality for NPV | [ssa.gov/oact/STATS](https://www.ssa.gov/oact/STATS/life_tables.html) — bot-blocked on curl; browser |
-| SSA Trustees Report | Discount-rate anchor (NAS uses 2–3%) | [ssa.gov/oact/tr](https://www.ssa.gov/oact/tr/) — browser |
+| SSA period life tables | Mortality for NPV | **Substitute:** CDC NVSR 72-12 xlsx via `scripts/fetch_cdc_life_tables.sh` → `derived/lifetime/cdc_period_life_table_2021.csv` |
+| SSA Trustees Report | Discount-rate anchor (NAS uses 2–3%) | [ssa.gov/oact/tr](https://www.ssa.gov/oact/tr/) — browser if needed |
 | Urban TRIM immigration module | Transfer microsim benchmark | [urban.org TRIM](https://www.urban.org/research/data-methods/data-analysis/quantitative-data-analysis/microsimulation/transfer-income-model-trim) |
-| EDFacts FS141 | Current district EL | [eddataexpress.ed.gov](https://eddataexpress.ed.gov/) — interactive export |
-| SSA period life tables | Mortality (curl 403) | Browser: [ssa.gov/oact/STATS/table4c6.xlsx](https://www.ssa.gov/oact/STATS/table4c6.xlsx) |
+| EDFacts FS141 | Current district EL | NCES CCD 2023-24 has no EL file yet — `ccd_lea_141_1718` (2017-18) until published |
 | CBO immigration PDFs | Macro offset / state-local split | Browser if curl 403; some copies in `external/` via main `setup.sh` |
 | Urban TRIM paper | Transfer microsim benchmark | Browser (403 on direct PDF) |
 | Tax Policy Center Who Pays | Tax incidence calibration | Browser (403) |

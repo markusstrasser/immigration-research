@@ -1,0 +1,16 @@
+city,fiscal_year,total_spending_usd_M,peak_shelter_census,baseline_shelter_census,scope_notes,source
+NYC,FY2023,1410,55000,45000,Citywide asylum seeker spending,NYC Comptroller report 2024
+NYC,FY2024,3700,70000,45000,Peak migrant population in shelter; ~$190/diem,NYC Comptroller / IBO Jan 2025
+NYC,FY2025,3020,55000,45000,Decline as enforcement tightens,NYC Comptroller
+NYC,FY2026_YTD,947,40000,45000,Through Jan 2026; trajectory implies ~$2.5B FY26,NYC Comptroller
+Chicago,2023,138,15000,8000,Below $361M projection due to shelter limits,WTTW / City Council
+Chicago,2024,228,11000,8000,$150M budgeted + $70M supplemental + more,WTTW / Sun-Times
+Chicago,2025,90,5000,8000,Significant downscaling (estimate),City reports
+Denver,2022,0,0,3000,Pre-surge baseline,Denver Mayor's Office
+Denver,2023,79,2700,3000,Includes $35M Dec22-Apr23,Denver Asylum Seekers Program
+Denver,2024,89.9,2200,3000,$90M budgeted; lower than initial $180M projection,Denver budget docs
+Boston_MA,FY2023,300,7500,3500,Right-to-shelter law obligates state,MA EOHHS
+Boston_MA,FY2024,1000,7500,3500,RTS cap hit Aug 2023; emergency law passed,MA Healey administration
+Boston_MA,FY2025,800,5500,3500,Cap maintained,MA budget
+DC,2023,15,1500,500,Limited spending (smaller scale),DC Office of Migrant Services
+DC,2024,40,1200,500,Estimate,DC budget

@@ -139,4 +139,7 @@ lifetime	optional	external/lifetime/derived/stage3_proto/acs_foreign_born_educat
 lifetime	optional	external/lifetime/derived/stage3_proto/sipp_public_mvp_cells_2024.csv	100	setup-lifetime.sh	SIPP public MVP cells (copy)
 lifetime	optional	external/lifetime/admin/cbp_fy25_budget_justification.pdf	50000	setup-lifetime.sh	CBP FY25 admin cost (copy)
 lifetime	optional	external/lifetime/admin/ice_fy25_budget_justification.pdf	50000	setup-lifetime.sh	ICE FY25 admin cost (copy)
-lifetime	optional	external/lifetime/dhs/plcy_lpr_by_country_of_birth_fy2005_2022.xlsx	5000	setup-lifetime.sh	DHS LPR by country pathway mix (copy)
+lifetime	optional	external/lifetime/cdc/nvsr72_12/Table01.xlsx	1000	fetch_cdc_life_tables.sh	CDC NVSR 72-12 period life tables (SSA table4c6 substitute)
+lifetime	optional	derived/lifetime/cdc_period_life_table_2021.csv	1000	build	Unified CDC mortality panel vintage 2021
+stage5	optional	derived/stage5/cms_medicaid_state_panel.csv	1000	build	CMS Medicaid state-year panel (KFF chart substitute)
+stage5	optional	derived/stage5/receiver_city_migrant_costs.csv	100	build	Receiver-city migrant cost overlay (fixture or immigration-causal)
