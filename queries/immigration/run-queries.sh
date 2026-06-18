@@ -85,6 +85,16 @@ _run_union() {
   _run_sql_file "$UNION" "$sql" union "$CTX" "$LIFE"
 }
 
+_run_life() {
+  local sql="$1"
+  local name
+  name="$(basename "$sql")"
+  [[ -f "$LIFE" ]] || { echo "MISSING $LIFE — run: ./scripts/reproduce-immigration-data.sh build lifetime"; return 1; }
+  echo ""
+  echo "=== $name (lifetime) ==="
+  _run_sql_file "$LIFE" "$sql" context
+}
+
 for sql in "$HERE"/context_*.sql; do
   [[ -f "$sql" ]] || continue
   [[ "$FILTER" == all || "$FILTER" == context ]] || continue
@@ -95,6 +105,12 @@ for sql in "$HERE"/union_*.sql; do
   [[ -f "$sql" ]] || continue
   [[ "$FILTER" == all || "$FILTER" == union ]] || continue
   _run_union "$sql"
+done
+
+for sql in "$HERE"/life_*.sql; do
+  [[ -f "$sql" ]] || continue
+  [[ "$FILTER" == all || "$FILTER" == life ]] || continue
+  _run_life "$sql"
 done
 
 echo ""

@@ -78,11 +78,15 @@ _fetch_hud_safmr "https://www.huduser.gov/portal/datasets/fmr/fmr2025/fy2025_saf
 
 CAUSAL="${IMMIGRATION_CAUSAL_DATA:-$HOME/Projects/research/sources/immigration-causal/data}"
 CAUSAL_RC="$CAUSAL/bused_cities/receiver_city_costs.csv"
+FIXTURE_RC="$IMMIGRATION_FISCAL_ROOT/fixtures/receiver_city_migrant_costs.csv"
 if [[ -s "$CAUSAL_RC" ]]; then
     cp "$CAUSAL_RC" "$S5/receiver/receiver_city_migrant_costs.csv"
-    _ok "copied receiver_city_migrant_costs.csv"
+    _ok "copied receiver_city_migrant_costs.csv from immigration-causal"
+elif [[ -s "$FIXTURE_RC" ]]; then
+    cp "$FIXTURE_RC" "$S5/receiver/receiver_city_migrant_costs.csv"
+    _ok "copied receiver_city_migrant_costs.csv from fixtures/"
 else
-    _warn "receiver_city_costs.csv missing at $CAUSAL_RC"
+    _warn "receiver_city_costs.csv missing at $CAUSAL_RC and $FIXTURE_RC"
 fi
 
 cat > "$S5/kff_refs/MANUAL_ACQUIRE.md" <<'EOF'
@@ -90,15 +94,15 @@ cat > "$S5/kff_refs/MANUAL_ACQUIRE.md" <<'EOF'
 
 | Dataset | Why | URL |
 |---------|-----|-----|
-| KFF total Medicaid by state | State cost denominator | https://www.kff.org/medicaid/state-indicator/total-medicaid-spending/ |
-| KFF immigrant health coverage facts | Disconfirms naive Medicaid drain | https://www.kff.org/racial-equity-and-health-policy/key-facts-on-health-coverage-of-immigrants/ |
+| KFF total Medicaid by state | State cost denominator | Automated substitute: `derived/stage5/cms_medicaid_state_panel.csv` (CMS data.medicaid.gov) |
+| KFF immigrant health coverage facts | Disconfirms naive Medicaid drain | Manual chart export — https://www.kff.org/racial-equity-and-health-policy/key-facts-on-health-coverage-of-immigrants/ |
 | CBO Emergency Medicaid FY17-23 | Emergency spend on noncitizens | https://www.cbo.gov/ |
 | HUD CHAS Table 11 | County housing stress | Automated via `setup.sh` + Playwright (`2018thru2022-050-csv.zip`) |
 | HUD SAFMR 2025 | Zip-level rent caps | Automated via `setup-net-negative.sh` + Playwright (`fy2025_safmrs_revised.xlsx`) |
 | USDA SNAP state summaries | Transfer program scale | Automated via `setup-net-negative.sh` (`snap-zip-fy69tocurrent-6.zip` → FY23 panel) |
 | TRAC immigration court backlog | Court-system cost proxy | https://trac.syr.edu/immigration/ (no stable CSV; EOIR PDFs scripted) |
 | NAS 2017 fiscal tables | Benchmark NPV by education | https://nap.nationalacademies.org/catalog/23550 |
-| EDFacts FS141 district EL 2022-23 | Current district EL counts | https://eddataexpress.ed.gov/ |
+| EDFacts FS141 district EL 2022-23 | Current district EL counts | NCES CCD 2023-24 file tool has no EL component yet — use `ccd_lea_141_1718` (2017-18) until published |
 EOF
 
 _log "=== stage5 done ==="

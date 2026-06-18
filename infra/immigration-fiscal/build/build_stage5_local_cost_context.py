@@ -12,6 +12,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from parse_cms_medicaid_state_panel import build_cms_medicaid_state_panel
 from parse_safmr_panel import build_safmr_panels
 from parse_snap_state_panel import build_snap_state_panel
 from paths import data_root, derived_root
@@ -201,6 +202,7 @@ def build_stage5(out_dir: Path | None = None) -> dict:
     out.mkdir(parents=True, exist_ok=True)
 
     safmr_meta = build_safmr_panels(out)
+    cms_meta = build_cms_medicaid_state_panel(out)
     snap_df = build_snap_state_panel(2023, out)
     safmr_state_path = out / "safmr_state_2025.csv"
     safmr_state = pd.read_csv(safmr_state_path) if safmr_state_path.exists() else pd.DataFrame()
@@ -227,6 +229,7 @@ def build_stage5(out_dir: Path | None = None) -> dict:
         "snap_state_rows": int(len(snap_df)),
         "receiver_city_rows": int(len(rcv)),
         **safmr_meta,
+        "cms_medicaid_state_rows": int(len(cms_meta)),
     }
     (out / "stage5_outputs.json").write_text(json.dumps(meta, indent=2))
     print(json.dumps(meta, indent=2))

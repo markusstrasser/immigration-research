@@ -61,6 +61,7 @@ Paths are in `infra/immigration-fiscal/acquire/config.local.env` (gitignored).
 ```bash
 ./scripts/reproduce-immigration-data.sh query        # all checked-in SQL
 ./scripts/reproduce-immigration-data.sh query union  # fiscal union queries only
+./scripts/reproduce-immigration-data.sh query life   # CDC mortality anchor (lifetime DB)
 ```
 
 Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-- backs:` memo pointer.
@@ -144,12 +145,12 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 
 | Gap | Impact |
 |-----|--------|
-| KFF Medicaid chart exports | Disconfirmation charts only |
-| EDFacts FS141 EL 2022–23 | Current district EL — warehouse has 2017–18 CCD |
-| SSA life tables (403) | CDC NVSR PDFs in lifetime stack substitute |
-| NAS 2017 paywalled full PDF | College+ NPV from partial extract |
-| `immigration-causal` receiver cities | 15-city overlay skips if causal repo missing |
-| PSID / Synthetic SIPP / FSRDC LEHD | Application-gated — documented, not scripted |
+| KFF immigrant health coverage charts | Disconfirmation charts only — Medicaid **spend** covered by `cms_medicaid_state_panel.csv` |
+| EDFacts FS141 EL 2022–23 | NCES CCD 2023–24 file tool has no EL component — warehouse uses 2017–18 CCD (`ccd_lea_141_1718`) |
+| SSA table4c6 (403) | **Automated substitute:** `scripts/fetch_cdc_life_tables.sh` → `cdc_period_life_table_2021.csv` |
+| PSID / Synthetic SIPP / FSRDC LEHD | Application-gated — documented in `applications/MANUAL_ACQUIRE.md` |
+
+**Now scripted (was manual):** NAS 2017 full PDF (cloudfront), USDA SNAP FY2023, HUD SAFMR FY2025, receiver-city costs (`fixtures/receiver_city_migrant_costs.csv` fallback).
 
 Lists after download: `$PNY_DATA_ROOT/external/stage5_net_negative/kff_refs/MANUAL_ACQUIRE.md`
 

@@ -7,7 +7,7 @@
 #   ./reproduce.sh verify [tier]      # required | optional | all | derived
 #   ./reproduce.sh build [target]     # context | mvp | lifetime | all
 #   ./reproduce.sh all [tier]         # download + verify required + build all
-#   ./reproduce.sh query [filter]    # headline SQL (all | context | union)
+#   ./reproduce.sh query [filter]    # headline SQL (all | context | union | life)
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -25,7 +25,7 @@ Commands:
   download [tier]      minimal (~2GB) | standard (~50GB attempts) | full (+tier-a, causal)
   verify [tier]        required (default) | optional | all | derived
   build [target]       context | mvp | lifetime | all (default)
-  query [filter]         Run headline SQL (all | context | union)
+  query [filter]         Run headline SQL (all | context | union | life)
   all [tier]           download + verify required + build all
   smoke                minimal pipeline smoke test
 
