@@ -45,11 +45,11 @@ Key builders: `build_immigration_warehouse.py`, `build_stage5_local_cost_context
 | Immigration context DuckDB | `warehouse/immigration_context.duckdb` (internal) + symlink at `sources/immigration-fiscal/data/derived/` | Local, rebuilt 2026-06-15 (stage1+2) | Main query surface for state/origin/county context joins | Not a lifetime causal model by itself |
 | Lifetime evidence DuckDB | `warehouse/immigration_lifetime_evidence.duckdb` | Local, rebuilt 2026-06-15 | 113-source catalog, 138 claims, 63 generators, 24 structured tables (Saiz/ITEP/stage2/5/MEPS) | No row-level join to papers; bridge via `education_bucket`, `state_fips`, `topic` |
 | Fiscal union DuckDB | `warehouse/immigration_fiscal_union.duckdb` | Local, rebuilt 2026-06-15 | ATTACH shell + cross-domain views (`v_education_stock_with_npv`, etc.) | Views only; rebuild after either parent DB changes |
-| DuckDB build script | `infra/immigration-fiscal/build/build_immigration_warehouse.py` | Git-tracked | Rebuild core + stage2 + federal microsim | Stage2 housing uses ACS proxy until CHAS lands |
+| DuckDB build script | `infra/immigration-fiscal/build/build_immigration_warehouse.py` | Git-tracked | Rebuild core + stage2 + federal microsim | Stage2 housing from CHAS Table 11 when zip present; ACS PUMA fallback |
 | ACS 2024 receiver exposure PUMA layer | `sources/immigration-causal/data/derived/acs_2024_receiver_exposure/acs_2024_receiver_exposure_puma.parquet` | Local, built | First post-surge PUMA exposure screen for receiver states | Public-use PUMA geography; no undocumented status |
 | Receiver-node kill-test outputs | `sources/immigration-causal/data/outcomes/analysis/receiver_node_kill_test/` | Local, built | Nine-node synchronized-pressure screen across ACS, EOIR, QWI, shelter/capacity, and politics | Screening table only; PUMA bridge is area-weighted and EOIR venue is not residence |
 | Origin extension assets | `sources/immigration-fiscal/data/derived/origin/` | Local | Origin ontology, stock, rent, OHSS derived tables | Mostly stock/admin layers, not unauthorized status |
-| Stage 2 derived assets | `sources/immigration-fiscal/data/derived/stage2/` | Local, rebuilt 2026-06-15 | County/PUMA bridge, housing stress, school finance, IRS migration | CHAS WAF-blocked → ACS PUMA proxy for housing stress |
+| Stage 2 derived assets | `sources/immigration-fiscal/data/derived/stage2/` | Local, rebuilt 2026-06-18 | County/PUMA bridge, housing stress, school finance, IRS migration | CHAS via Playwright + `cp/` portal; ACS proxy if zip missing |
 | MEPS health-cost module 2023 | `sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.csv` | Local, built | Public MVP payer-incidence table by age x nativity x insurance | Descriptive module only, not lifetime or legality-specific |
 | ACS education-bucket totals 2023 | `sources/immigration-fiscal/data/derived/stage3_proto/acs_foreign_born_education_bucket_totals_2023.csv` | Local, built | Weighted foreign-born `25-64` stock totals for `<HS`, `HS / GED`, and `some college / associate` | Foreign-born stock only, not undocumented or lifetime |
 | ACS education-bucket state shares 2023 | `sources/immigration-fiscal/data/derived/stage3_proto/acs_foreign_born_education_state_shares_2023.csv` | Local, built | State shares within each of the three education buckets | Same scope limits as above |
@@ -97,6 +97,7 @@ Key builders: `build_immigration_warehouse.py`, `build_stage5_local_cost_context
 | BLS QCEW 2023 annual | `sources/immigration-fiscal/data/bls/qcew_2023_annual_by_industry.zip` | Local | Sector employment/wage context | Industry totals, not immigrant composition |
 | Extracted QCEW sector files | `sources/immigration-fiscal/data/bls/extracted/2023.annual.by_industry/` | Local | Focus sectors such as construction and hospitality | Same |
 | FHFA state HPI | `sources/immigration-fiscal/data/external/fhfa_hpi_po_state.txt` | Local | Owner-side housing context | State-level only |
+| HUD CHAS 2018–2022 county CSV | `sources/immigration-fiscal/data/external/stage2/hud/chas/2018thru2022-050-csv.zip` | Local, acquired 2026-06-18 | County share with 1+ of 4 housing problems (Table 11) | Needs Playwright session fetch; not welfare scalar |
 | ACS state rent JSON | `sources/immigration-fiscal/data/external/origin/census_acs1_2023_state_median_gross_rent.json` | Local | Renter-side housing context | State-level only |
 | Local burden examples | `research/state-local-cost-examples-ny-ca-tx.md` | Memo, not raw data | Concrete burden illustrations | Not a reusable database |
 
@@ -201,7 +202,7 @@ Re-staged after lost SSD. **`infra/immigration-fiscal/acquire/setup.sh`** (canon
 | A | PUMA↔cousub crosswalk (input) | `external/stage2/census/geo/tab20_puma520_cousub20_natl.txt` | County-bridge input |
 | A | PUMA↔county area crosswalk (derived) | `derived/stage2/puma_county_area_xwalk_2023.csv` | 4,701 rows (cousub→county aggregate; memo had 14,856 cousub-level) |
 | A | Stage2 warehouse tables | `warehouse/immigration_context.duckdb` | 16 tables, 4.3 MB — school/housing/IRS/county joins live |
-| Blocked | HUD CHAS zips | `external/stage2/hud/chas/` | WAF — `setup.sh` rejects 0-byte traps; Playwright still blocked; ACS proxy in use |
+| A | HUD CHAS county zip (Table 11) | `external/stage2/hud/chas/2018thru2022-050-csv.zip` | Playwright + `portal/datasets/cp/`; ACS proxy fallback in build |
 | A | NCES CCD school universe | `external/stage2/nces/ccd_sch_*.zip` | Substitute for dead `ccd_2024_25_universe` URL |
 | B | BLS LAUS county monthly | `external/stage2/bls/laus/` | Threshold / labor panel seed |
 | B | CBP SBO encounters CSV | `immigration-causal/data/cbp/raw/` | Replaces retired xlsx tables |

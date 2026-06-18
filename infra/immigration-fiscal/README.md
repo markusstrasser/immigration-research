@@ -15,7 +15,7 @@ cd /path/to/research
 
 See `REPRODUCE.md` for tiers, verify modes, and manual-acquire list.
 
-**Requirements:** `bash`, `curl`, `unzip`, `uv` (for Python builders). Optional: `playwright` for HUD CHAS WAF bypass (`uv run --with playwright`).
+**Requirements:** `bash`, `curl`, `unzip`, `uv` (for Python builders). **HUD CHAS:** `playwright` required for automated county zip fetch (`uv run --with playwright python -m playwright install chromium`).
 
 ## Layout
 
@@ -57,7 +57,7 @@ export IMMIGRATION_FISCAL_INFRA="$HOME/Projects/research/infra/immigration-fisca
 
 ## Manual / WAF-blocked
 
-See `data/external/stage5_net_negative/kff_refs/MANUAL_ACQUIRE.md` after setup (HUD CHAS, KFF exports, SNAP, EDFacts EL, etc.).
+See `data/external/stage5_net_negative/kff_refs/MANUAL_ACQUIRE.md` after setup (KFF exports, SNAP, EDFacts EL, etc.). HUD CHAS is scripted when Playwright is installed.
 
 ## Specs
 
