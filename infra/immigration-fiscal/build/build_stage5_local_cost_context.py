@@ -12,6 +12,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from parse_safmr_panel import build_safmr_panels
 from paths import data_root, derived_root
 
 DATA = data_root()
@@ -97,12 +98,20 @@ def build_receiver_costs() -> pd.DataFrame:
     return pd.read_csv(path)
 
 
-def build_state_stage5_context() -> pd.DataFrame:
+def build_state_stage5_context(safmr_state: pd.DataFrame | None = None) -> pd.DataFrame:
     rpp = build_bea_state_rpp()
     med = build_cms_state_medicaid()
     el = build_state_el_2018()
     state = rpp.merge(med.drop(columns=["state_name"], errors="ignore"), on="state_fips", how="outer")
     state = state.merge(el, on="state_fips", how="outer")
+    if safmr_state is not None and len(safmr_state):
+        safmr_state = safmr_state.copy()
+        safmr_state["state_fips"] = safmr_state["state_fips"].astype(str).str.zfill(2)
+        state = state.merge(
+            safmr_state.drop(columns=["fy", "source"], errors="ignore"),
+            on="state_fips",
+            how="left",
+        )
     return state.sort_values("state_fips")
 
 
@@ -111,43 +120,62 @@ def load_stage5_into_duckdb(con, stage5_dir: Path) -> None:
         "state_stage5_context_2023": stage5_dir / "state_stage5_context_2023.csv",
         "receiver_city_migrant_costs": stage5_dir / "receiver_city_migrant_costs.csv",
         "state_el_lep_2018": stage5_dir / "state_el_lep_2018.csv",
+        "safmr_zip_2025": stage5_dir / "safmr_zip_2025.csv",
+        "safmr_county_2025": stage5_dir / "safmr_county_2025.csv",
+        "safmr_puma_2025": stage5_dir / "safmr_puma_2025.csv",
+        "safmr_state_2025": stage5_dir / "safmr_state_2025.csv",
     }
     for table, path in paths.items():
         if path.exists():
             con.execute(f"CREATE OR REPLACE TABLE {table} AS SELECT * FROM read_csv_auto('{path}', header=true)")
 
-    if con.execute(
-        "SELECT COUNT(*) FROM information_schema.tables WHERE table_name='origin_puma_household_stage2_context_2023'"
-    ).fetchone()[0]:
-        con.execute("""
-            CREATE OR REPLACE TABLE origin_puma_household_stage5_context_2023 AS
-            SELECT
-              s.*,
+    has_puma_safmr = bool(
+        con.execute(
+            "SELECT COUNT(*) FROM information_schema.tables WHERE table_name='safmr_puma_2025'"
+        ).fetchone()[0]
+    )
+    puma_col = "p.safmr_2br_wtd AS safmr_2br_puma_2025," if has_puma_safmr else ""
+    puma_join = (
+        "LEFT JOIN safmr_puma_2025 p ON s.state_fips = p.state_fips AND s.puma_code = p.puma_code"
+        if has_puma_safmr
+        else ""
+    )
+    stage5_cols = f"""
               st.rpp_all_items_2023,
               st.medicaid_total_computable,
               st.medicaid_year,
               st.lep_count_reported,
               st.districts_with_el,
-              st.el_school_year
+              st.el_school_year,
+              st.safmr_2br_median_2025,
+              st.safmr_2br_mean_2025,
+              st.county_count,
+              {puma_col.rstrip(",")}
+    """.rstrip()
+    if con.execute(
+        "SELECT COUNT(*) FROM information_schema.tables WHERE table_name='origin_puma_household_stage2_context_2023'"
+    ).fetchone()[0]:
+        con.execute(f"""
+            CREATE OR REPLACE TABLE origin_puma_household_stage5_context_2023 AS
+            SELECT
+              s.*,
+              {stage5_cols}
             FROM origin_puma_household_stage2_context_2023 s
             LEFT JOIN state_stage5_context_2023 st ON s.state_fips = st.state_fips
+            {puma_join}
         """)
 
     if con.execute(
         "SELECT COUNT(*) FROM information_schema.tables WHERE table_name='origin_puma_household_fullstock_stage2_context_2023'"
     ).fetchone()[0]:
-        con.execute("""
+        con.execute(f"""
             CREATE OR REPLACE TABLE origin_puma_household_fullstock_stage5_context_2023 AS
             SELECT
               s.*,
-              st.rpp_all_items_2023,
-              st.medicaid_total_computable,
-              st.medicaid_year,
-              st.lep_count_reported,
-              st.districts_with_el,
-              st.el_school_year
+              {stage5_cols}
             FROM origin_puma_household_fullstock_stage2_context_2023 s
             LEFT JOIN state_stage5_context_2023 st ON s.state_fips = st.state_fips
+            {puma_join}
         """)
 
 
@@ -155,7 +183,11 @@ def build_stage5(out_dir: Path | None = None) -> dict:
     out = out_dir or OUT
     out.mkdir(parents=True, exist_ok=True)
 
-    state = build_state_stage5_context()
+    safmr_meta = build_safmr_panels(out)
+    safmr_state_path = out / "safmr_state_2025.csv"
+    safmr_state = pd.read_csv(safmr_state_path) if safmr_state_path.exists() else pd.DataFrame()
+
+    state = build_state_stage5_context(safmr_state if len(safmr_state) else None)
     el = build_state_el_2018()
     rcv = build_receiver_costs()
 
@@ -169,7 +201,9 @@ def build_stage5(out_dir: Path | None = None) -> dict:
         "states_with_rpp": int(state["rpp_all_items_2023"].notna().sum()),
         "states_with_medicaid": int(state["medicaid_total_computable"].notna().sum()),
         "states_with_el": int(state["lep_count_reported"].notna().sum()),
+        "states_with_safmr": int(state.get("safmr_2br_median_2025", pd.Series(dtype=float)).notna().sum()),
         "receiver_city_rows": int(len(rcv)),
+        **safmr_meta,
     }
     (out / "stage5_outputs.json").write_text(json.dumps(meta, indent=2))
     print(json.dumps(meta, indent=2))

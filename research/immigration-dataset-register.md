@@ -97,7 +97,8 @@ Key builders: `build_immigration_warehouse.py`, `build_stage5_local_cost_context
 | BLS QCEW 2023 annual | `sources/immigration-fiscal/data/bls/qcew_2023_annual_by_industry.zip` | Local | Sector employment/wage context | Industry totals, not immigrant composition |
 | Extracted QCEW sector files | `sources/immigration-fiscal/data/bls/extracted/2023.annual.by_industry/` | Local | Focus sectors such as construction and hospitality | Same |
 | FHFA state HPI | `sources/immigration-fiscal/data/external/fhfa_hpi_po_state.txt` | Local | Owner-side housing context | State-level only |
-| HUD SAFMR FY2025 (zip-level) | `sources/immigration-fiscal/data/external/stage5_net_negative/hud/fy2025_safmrs_revised.xlsx` | Local, acquired 2026-06-18 | Zip-code rent caps for voucher/local burden | Playwright fetch; parse to panel TBD |
+| HUD SAFMR FY2025 (zip-level) | `sources/immigration-fiscal/data/external/stage5_net_negative/hud/fy2025_safmrs_revised.xlsx` | Local, acquired 2026-06-18 | Zip-code rent caps for voucher/local burden | Playwright fetch |
+| SAFMR panels (zip/county/PUMA/state) | `derived/stage5/safmr_{zip,county,puma,state}_2025.csv` | Built | PUMA/state rent context for stage5 warehouse | ZCTA→county→PUMA via Census crosswalks |
 | HUD CHAS 2018–2022 county CSV | `sources/immigration-fiscal/data/external/stage2/hud/chas/2018thru2022-050-csv.zip` | Local, acquired 2026-06-18 | County share with 1+ of 4 housing problems (Table 11) | Needs Playwright session fetch; not welfare scalar |
 | ACS state rent JSON | `sources/immigration-fiscal/data/external/origin/census_acs1_2023_state_median_gross_rent.json` | Local | Renter-side housing context | State-level only |
 | Local burden examples | `research/state-local-cost-examples-ny-ca-tx.md` | Memo, not raw data | Concrete burden illustrations | Not a reusable database |

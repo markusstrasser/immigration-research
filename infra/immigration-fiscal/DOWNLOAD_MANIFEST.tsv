@@ -26,6 +26,11 @@ stage5	optional	derived/stage5/state_stage5_context_2023.csv	1000	build	Built by
 stage5	optional	derived/stage3_proto/sipp_scenario_ledger_2024.csv	50	compose	98-cell SIPP scenario ledger
 stage5	optional	derived/stage3_proto/origin_fiscal_scenario_2023.csv	50	compose	Per-origin fiscal scenario
 stage5	optional	external/stage5_net_negative/hud/fy2025_safmrs_revised.xlsx	1000000	setup-net-negative.sh	HUD SAFMR FY2025 zip-level rents (Playwright)
+stage5	optional	external/stage2/census/geo/tab20_zcta520_county20_natl.txt	5000000	setup.sh	Census ZCTA520↔county crosswalk (SAFMR rollup)
+stage5	optional	derived/stage5/safmr_zip_2025.csv	1000000	build	SAFMR zip-level rent panel FY2025
+stage5	optional	derived/stage5/safmr_county_2025.csv	100000	build	SAFMR county-weighted 2BR rents
+stage5	optional	derived/stage5/safmr_puma_2025.csv	50000	build	SAFMR PUMA-weighted 2BR rents
+stage5	optional	derived/stage5/safmr_state_2025.csv	5000	build	SAFMR state median/mean 2BR rents
 stage5	optional	derived/stage4/eoir/eoir_court_workload_historical_fy.csv	500	build	EOIR historical workload FY1983+
 stage5	optional	derived/stage4/eoir/eoir_pending_cases_fy.csv	100	build	EOIR pending/receipts/completions FY2016+
 stage5	optional	derived/stage4/eoir/eoir_amnesty_cases_by_state.csv	500	build	EOIR amnesty cases by state

@@ -223,6 +223,8 @@ _fetch_get "https://nces.ed.gov/ccd/Data/zip/ccd_sch_029_2324_w_1a_073124.zip" \
 # PUMA ↔ county-subdivision crosswalk (stage2 county bridge)
 _fetch_get "https://www2.census.gov/geo/docs/maps-data/data/rel2020/puma520/tab20_puma520_cousub20_natl.txt" \
        "$DATA/external/stage2/census/geo/tab20_puma520_cousub20_natl.txt" --optional
+_fetch_get "https://www2.census.gov/geo/docs/maps-data/data/rel2020/zcta520/tab20_zcta520_county20_natl.txt" \
+       "$DATA/external/stage2/census/geo/tab20_zcta520_county20_natl.txt" --optional
 
 # --- Stage 3 public MVP (SIPP + MEPS) ---
 _fetch "https://www2.census.gov/programs-surveys/sipp/data/datasets/2024/pu2024_csv.zip" \
