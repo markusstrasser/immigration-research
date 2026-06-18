@@ -25,7 +25,10 @@ stage5	optional	external/stage5_net_negative/census/gov_finances_2022_individual
 stage5	optional	derived/stage5/state_stage5_context_2023.csv	1000	build	Built by rebuild.sh
 stage5	optional	derived/stage3_proto/sipp_scenario_ledger_2024.csv	50	compose	98-cell SIPP scenario ledger
 stage5	optional	derived/stage3_proto/origin_fiscal_scenario_2023.csv	50	compose	Per-origin fiscal scenario
-stage5	optional	external/stage5_net_negative/receiver/receiver_city_migrant_costs.csv	100	setup-net-negative.sh	Copied from immigration-causal
+stage5	optional	external/stage5_net_negative/hud/fy2025_safmrs_revised.xlsx	1000000	setup-net-negative.sh	HUD SAFMR FY2025 zip-level rents (Playwright)
+stage5	optional	derived/stage4/eoir/eoir_court_workload_historical_fy.csv	500	build	EOIR historical workload FY1983+
+stage5	optional	derived/stage4/eoir/eoir_pending_cases_fy.csv	100	build	EOIR pending/receipts/completions FY2016+
+stage5	optional	derived/stage4/eoir/eoir_amnesty_cases_by_state.csv	500	build	EOIR amnesty cases by state
 lifetime	optional	external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf	1000000	setup-lifetime.sh	NAS 2017 full report (education NPV tables)
 lifetime	optional	external/lifetime/nrc/nrc_1997_new_americans.pdf	500000	setup-lifetime.sh	NRC 1997 New Americans benchmark
 lifetime	optional	external/lifetime/dallasfed/orrenius_nas_fiscal_sensitivity_wp1704.pdf	50000	setup-lifetime.sh	Orrenius NAS sensitivity synthesis

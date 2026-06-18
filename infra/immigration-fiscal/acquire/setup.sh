@@ -371,6 +371,10 @@ for _eoir in \
     "1344956:unaccompanied_alien_child_statistics"; do
     _fetch_eoir_pdf "${_eoir%%:*}" "${_eoir##*:}"
 done
+if command -v uv >/dev/null 2>&1 && [[ -f "$IMMIGRATION_FISCAL_ROOT/build/parse_eoir_court_pdfs.py" ]]; then
+    PNY_DATA_ROOT="$DATA" DERIVED_ROOT="${DERIVED_ROOT:-$DATA/derived}" \
+        uv run --with pdfplumber,pandas python "$IMMIGRATION_FISCAL_ROOT/build/parse_eoir_court_pdfs.py" || true
+fi
 
 # --- FRED macro anchors (CSV graph export) ---
 mkdir -p "$DATA/external/fred"
