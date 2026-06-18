@@ -439,6 +439,10 @@ def build() -> None:
         "state_stage5_context_2023",
         "state_el_lep_2018",
         "receiver_city_migrant_costs",
+        "safmr_zip_2025",
+        "safmr_county_2025",
+        "safmr_puma_2025",
+        "safmr_state_2025",
         "origin_puma_household_stage5_context_2023",
         "origin_puma_household_fullstock_stage5_context_2023",
     ]
@@ -553,6 +557,8 @@ def _validate(con) -> None:
     print("\n--- stage5 ---")
     for tbl, target in [
         ("state_stage5_context_2023", 50),
+        ("safmr_zip_2025", 50000),
+        ("safmr_puma_2025", 2000),
         ("origin_puma_household_stage5_context_2023", 5000),
         ("origin_puma_household_fullstock_stage5_context_2023", 5000),
     ]:
