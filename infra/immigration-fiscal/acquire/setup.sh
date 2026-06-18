@@ -314,7 +314,10 @@ for f in la.series la.measure la.area la.data.64.County; do
     _laus_fetch "$f"
 done
 
-# --- ORR refugee arrivals (ACF WAF — may need browser/manual) ---
+# --- State immigration / refugee arrivals (OHSS; replaces dead ACF ORR CSV) ---
+_fetch "https://ohss.dhs.gov/sites/default/files/2025-05/state_data_2013-2023_20250514_3.csv" \
+       "$DATA/external/origin/ohss/state_immigration_data_2013_2023.csv" --optional
+# Legacy ORR path (404 as of 2026-06); kept for manifest compat — OHSS file is canonical.
 _fetch_get "https://acf.gov/sites/default/files/orr/ry2023_arrivals_by_state.csv" \
        "$DATA/external/origin/orr/ry2023_arrivals_by_state.csv" --optional
 
@@ -338,15 +341,36 @@ _cbp_fetch "https://www.cbp.gov/sites/default/files/2025-11/sbo-encounters-fy22-
 _cbp_fetch "https://www.cbp.gov/sites/default/files/2026-05/sbo-encounters-fy23-fy26-apr.csv" \
            "$CAUSAL/cbp/raw/sbo_encounters_fy23_fy26_apr.csv"
 
-# --- EOIR workload stats (scrape latest package link) ---
+# --- EOIR workload stats (PDFs; scrape media IDs from stats page) ---
 mkdir -p "$DATA/external/stage4/courts/eoir"
+_fetch_eoir_pdf() {
+    local id="$1" slug="$2"
+    local dest="$DATA/external/stage4/courts/eoir/${slug}.pdf"
+    local url="https://www.justice.gov/eoir/media/${id}/dl"
+    [[ -s "$dest" ]] && _validate_file "$dest" 5000 && { _ok "exists $dest"; return 0; }
+    _log "fetch(EOIR) $slug"
+    if curl -sSL --fail --max-time 120 -A "Mozilla/5.0" -o "$dest.part" "$url" \
+        && _validate_file "$dest.part" 5000; then
+        mv "$dest.part" "$dest"
+        _ok "$dest"
+        return 0
+    fi
+    rm -f "$dest.part" "$dest"
+    _warn "skip $dest"
+    return 0
+}
 EOIR_PAGE=$(curl -sSL -A "Mozilla/5.0" "https://www.justice.gov/eoir/workload-and-adjudication-statistics" 2>/dev/null || true)
-EOIR_URL=$(printf '%s' "$EOIR_PAGE" | grep -oE 'https://www\.justice\.gov/eoir/media/[0-9]+/dl' | head -1)
-if [[ -n "$EOIR_URL" ]]; then
-    _fetch_get "$EOIR_URL" "$DATA/external/stage4/courts/eoir/eoir_statistics_package.zip" --optional
-else
-    _warn "EOIR package URL not found on stats page"
+if [[ -n "$EOIR_PAGE" ]]; then
+    printf '%s' "$EOIR_PAGE" | grep -oE '/eoir/media/[0-9]+/dl' | sort -u > "$DATA/external/stage4/courts/eoir/eoir_media_urls.txt" || true
+    _ok "indexed $(wc -l < "$DATA/external/stage4/courts/eoir/eoir_media_urls.txt" | tr -d ' ') EOIR media URLs"
 fi
+for _eoir in \
+    "1344791:pending_cases_new_completions" \
+    "1344801:new_cases_completions_historical" \
+    "1419886:amnesty_cases_by_state" \
+    "1344956:unaccompanied_alien_child_statistics"; do
+    _fetch_eoir_pdf "${_eoir%%:*}" "${_eoir##*:}"
+done
 
 # --- FRED macro anchors (CSV graph export) ---
 mkdir -p "$DATA/external/fred"

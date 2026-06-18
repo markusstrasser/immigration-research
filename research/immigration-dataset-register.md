@@ -124,6 +124,7 @@ Key builders: `build_immigration_warehouse.py`, `build_stage5_local_cost_context
 | ACS B05006 metadata and state-origin data | `sources/immigration-fiscal/data/external/origin/census_acs1_2023_B05006_*.json` | Local | Official origin stock validation | Aggregate only |
 | World Bank country metadata | `sources/immigration-fiscal/data/external/origin/worldbank_country_metadata.json` | Local | Region and income-group ontology | Not immigration-specific |
 | OHSS LPR workbooks | `sources/immigration-fiscal/data/external/origin/ohss/` and sibling OHSS files | Local | Legal permanent resident admissions by country/county/class | Legal channels only |
+| OHSS state immigration flat file 2013–2023 | `sources/immigration-fiscal/data/external/origin/ohss/state_immigration_data_2013_2023.csv` | Local, acquired 2026-06-18 | State-year refugee/LPR/naturalization/nonimmigrant panel | Replaces dead ACF ORR CSV |
 | Derived origin tables | `sources/immigration-fiscal/data/derived/origin/*.csv` | Local | Joined origin-destination context | Derived from the above, not independent evidence |
 
 ## Education and local-capacity overlays

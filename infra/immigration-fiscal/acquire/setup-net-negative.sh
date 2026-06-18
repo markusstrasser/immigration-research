@@ -72,10 +72,10 @@ cat > "$S5/kff_refs/MANUAL_ACQUIRE.md" <<'EOF'
 | KFF total Medicaid by state | State cost denominator | https://www.kff.org/medicaid/state-indicator/total-medicaid-spending/ |
 | KFF immigrant health coverage facts | Disconfirms naive Medicaid drain | https://www.kff.org/racial-equity-and-health-policy/key-facts-on-health-coverage-of-immigrants/ |
 | CBO Emergency Medicaid FY17-23 | Emergency spend on noncitizens | https://www.cbo.gov/ |
-| HUD CHAS Table 11 | County housing stress | https://www.huduser.gov/portal/datasets/chas.html |
+| HUD CHAS Table 11 | County housing stress | Automated via `setup.sh` + Playwright (`2018thru2022-050-csv.zip`) |
 | HUD SAFMR 2025 | Zip-level rent caps | https://www.huduser.gov/portal/datasets/fmr/smallarea/safmr.html |
 | USDA SNAP state summaries | Transfer program scale | https://www.fns.usda.gov/pd/supplemental-nutrition-assistance-program-snap |
-| TRAC immigration court backlog | Court-system cost proxy | https://trac.syr.edu/immigration/ |
+| TRAC immigration court backlog | Court-system cost proxy | https://trac.syr.edu/immigration/ (no stable CSV; EOIR PDFs scripted) |
 | NAS 2017 fiscal tables | Benchmark NPV by education | https://nap.nationalacademies.org/catalog/23550 |
 | EDFacts FS141 district EL 2022-23 | Current district EL counts | https://eddataexpress.ed.gov/ |
 EOF

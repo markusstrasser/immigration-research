@@ -30,7 +30,8 @@ See `REPRODUCE.md` for tiers, verify modes, and manual-acquire list.
 | `acquire/config.env.example` | Portable default paths |
 | `acquire/config.local.env` | Your machine (gitignored) |
 | `DOWNLOAD_MANIFEST.tsv` | Machine-readable catalog + verify script input |
-| `scripts/fetch_hud_chas.py` | Playwright fallback for HUD CHAS |
+| `scripts/fetch_hud_chas.py` | Playwright fetch for HUD CHAS (`cp/` portal) |
+| `scripts/fetch_browser.py` | Generic Playwright fetch with optional referer warm-up |
 | `scripts/verify-downloads.sh` | Check manifest paths exist |
 | `build/*.py` | Warehouse + MVP builders (env-driven paths) |
 | `rebuild.sh` | `immigration_context.duckdb` |
