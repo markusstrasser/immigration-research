@@ -375,7 +375,7 @@ cat > "$LT/applications/MANUAL_ACQUIRE.md" <<'EOF'
 | SSA period life tables | Mortality for NPV | **Substitute:** CDC NVSR 72-12 xlsx via `scripts/fetch_cdc_life_tables.sh` → `derived/lifetime/cdc_period_life_table_2021.csv` |
 | SSA Trustees Report | Discount-rate anchor (NAS uses 2–3%) | [ssa.gov/oact/tr](https://www.ssa.gov/oact/tr/) — browser if needed |
 | Urban TRIM immigration module | Transfer microsim benchmark | [urban.org TRIM](https://www.urban.org/research/data-methods/data-analysis/quantitative-data-analysis/microsimulation/transfer-income-model-trim) |
-| EDFacts FS141 | Current district EL | NCES CCD 2023-24 has no EL file yet — `ccd_lea_141_1718` (2017-18) until published |
+| EDFacts FS141 | Current district EL | ACS school-age + CCD 2018-19; Ed Data Express bot-blocked |
 | CBO immigration PDFs | Macro offset / state-local split | Browser if curl 403; some copies in `external/` via main `setup.sh` |
 | Urban TRIM paper | Transfer microsim benchmark | Browser (403 on direct PDF) |
 | Tax Policy Center Who Pays | Tax incidence calibration | Browser (403) |
