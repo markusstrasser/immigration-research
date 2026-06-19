@@ -145,11 +145,11 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 
 | Gap | Impact |
 |-----|--------|
-| EDFacts FS141 EL 2022–23 | NCES CCD EL newest zip is **2018–19**; Ed Data Express export is JS-gated |
+| EDFacts FS141 EL 2022–23 | ACS school-age foreign-born + CCD 2018–19 substitute; Ed Data Express bot-blocked |
 | TRAC court backlog CSV | EOIR PDFs scripted; no stable TRAC bulk download |
 | PSID / Synthetic SIPP / FSRDC LEHD | Application-gated — `applications/MANUAL_ACQUIRE.md` |
 
-**Now scripted:** SSA→CDC mortality, KFF Medicaid→CMS, KFF health charts→ACS PUMS, EL 2018–19 CCD, NAS PDF, SAFMR, SNAP, receiver cities.
+**Now scripted:** SSA→CDC mortality, KFF→CMS+ACS, EL 2018–19 CCD, SAIPE poverty, ACS school-age proxy, NAS PDF, SAFMR, SNAP, receiver cities.
 
 Lists after download: `$PNY_DATA_ROOT/external/stage5_net_negative/kff_refs/MANUAL_ACQUIRE.md`
 
