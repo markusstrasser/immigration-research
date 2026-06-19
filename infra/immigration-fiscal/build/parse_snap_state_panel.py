@@ -14,6 +14,8 @@ STAGE5_EXT = data_root() / "external" / "stage5_net_negative"
 OUT = derived_root() / "stage5"
 SNAP_ZIP = STAGE5_EXT / "usda" / "snap-zip-fy69tocurrent-6.zip"
 
+SKIP_REGIONS = frozenset({"NERO", "MARO", "SERO", "MWRO", "SWRO", "MPRO", "WRO", "US Summary"})
+
 STATE_NAME_TO_FIPS = {
     "Alabama": "01", "Alaska": "02", "Arizona": "04", "Arkansas": "05", "California": "06",
     "Colorado": "08", "Connecticut": "09", "Delaware": "10", "District of Columbia": "11",
@@ -44,10 +46,13 @@ def _parse_fy_workbook(xlsx: bytes | Path, fy: int) -> pd.DataFrame:
             if not label or label == "nan":
                 continue
             if pd.isna(row.iloc[1]) and pd.isna(row.iloc[2]) and pd.isna(row.iloc[3]):
-                if label not in {"Fiscal Year and Month", "Participation 1/", "Household"}:
+                if label not in {"Fiscal Year and Month", "Participation 1/", "Household"} and label not in SKIP_REGIONS:
                     state = label
                 continue
             if state and label == "Total":
+                if state in SKIP_REGIONS:
+                    state = None
+                    continue
                 rows.append(
                     {
                         "state_name": state,
@@ -63,6 +68,8 @@ def _parse_fy_workbook(xlsx: bytes | Path, fy: int) -> pd.DataFrame:
                 state = None
     out = pd.DataFrame(rows)
     out["state_fips"] = out["state_name"].map(STATE_NAME_TO_FIPS)
+    out = out.dropna(subset=["state_fips"]).drop_duplicates("state_fips", keep="first")
+    out["state_fips"] = out["state_fips"].astype(str).str.zfill(2)
     return out
 
 

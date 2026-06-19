@@ -12,6 +12,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from parse_acs_immigrant_health_coverage import build_acs_immigrant_health_state_panel
 from parse_cms_medicaid_state_panel import build_cms_medicaid_state_panel
 from parse_safmr_panel import build_safmr_panels
 from parse_snap_state_panel import build_snap_state_panel
@@ -35,6 +36,14 @@ STATE_NAME_TO_FIPS = {
     "Washington": "53", "West Virginia": "54", "Wisconsin": "55", "Wyoming": "56",
     "Puerto Rico": "72",
 }
+
+
+def _norm_fips(df: pd.DataFrame, col: str = "state_fips") -> pd.DataFrame:
+    out = df.copy()
+    out[col] = pd.to_numeric(out[col], errors="coerce")
+    out = out.dropna(subset=[col])
+    out[col] = out[col].astype(int).astype(str).str.zfill(2)
+    return out
 
 
 def build_bea_state_rpp() -> pd.DataFrame:
@@ -72,25 +81,34 @@ def build_cms_state_medicaid() -> pd.DataFrame:
         .assign(medicaid_year=latest)
     )
     agg["state_fips"] = agg["state_name"].map(STATE_NAME_TO_FIPS)
-    return agg
+    return _norm_fips(agg)
+
+
+def build_state_el_panel() -> pd.DataFrame:
+    for zname, year, source in (
+        ("ccd_lea_141_1819_english_learners.zip", "2018-2019", "nces_ccd_lea_141_1819"),
+        ("ccd_lea_141_1718_english_learners.zip", "2017-2018", "nces_ccd_lea_141_1718"),
+    ):
+        zpath = STAGE5 / "nces" / zname
+        if not zpath.exists():
+            continue
+        with zipfile.ZipFile(zpath) as zf:
+            name = next(n for n in zf.namelist() if n.endswith(".csv"))
+            df = pd.read_csv(BytesIO(zf.read(name)), dtype=str, low_memory=False)
+        df["LEP_COUNT"] = pd.to_numeric(df["LEP_COUNT"], errors="coerce")
+        reported = df[df["DMS_FLAG"].astype(str).str.lower().eq("reported")].copy()
+        reported["state_fips"] = reported["FIPST"].astype(str).str.zfill(2)
+        state = (
+            reported.groupby("state_fips", as_index=False)
+            .agg(lep_count_reported=("LEP_COUNT", "sum"), districts_with_el=("LEAID", "nunique"))
+            .assign(el_school_year=year, el_source=source)
+        )
+        return state
+    return pd.DataFrame(columns=["state_fips", "lep_count_reported", "districts_with_el"])
 
 
 def build_state_el_2018() -> pd.DataFrame:
-    zpath = STAGE5 / "nces" / "ccd_lea_141_1718_english_learners.zip"
-    if not zpath.exists():
-        return pd.DataFrame(columns=["state_fips", "lep_count_reported", "districts_with_el"])
-    with zipfile.ZipFile(zpath) as zf:
-        name = next(n for n in zf.namelist() if n.endswith(".csv"))
-        df = pd.read_csv(BytesIO(zf.read(name)), dtype=str, low_memory=False)
-    df["LEP_COUNT"] = pd.to_numeric(df["LEP_COUNT"], errors="coerce")
-    reported = df[df["DMS_FLAG"].astype(str).str.lower().eq("reported")].copy()
-    reported["state_fips"] = reported["FIPST"].astype(str).str.zfill(2)
-    state = (
-        reported.groupby("state_fips", as_index=False)
-        .agg(lep_count_reported=("LEP_COUNT", "sum"), districts_with_el=("LEAID", "nunique"))
-        .assign(el_school_year="2017-2018", el_source="nces_ccd_lea_141_1718")
-    )
-    return state
+    return build_state_el_panel()
 
 
 def build_receiver_costs() -> pd.DataFrame:
@@ -104,28 +122,26 @@ def build_state_stage5_context(
     safmr_state: pd.DataFrame | None = None,
     snap_state: pd.DataFrame | None = None,
 ) -> pd.DataFrame:
-    rpp = build_bea_state_rpp()
-    med = build_cms_state_medicaid()
-    el = build_state_el_2018()
+    rpp = _norm_fips(build_bea_state_rpp())
+    med = _norm_fips(build_cms_state_medicaid())
+    el = _norm_fips(build_state_el_panel())
     state = rpp.merge(med.drop(columns=["state_name"], errors="ignore"), on="state_fips", how="outer")
     state = state.merge(el, on="state_fips", how="outer")
     if safmr_state is not None and len(safmr_state):
-        safmr_state = safmr_state.copy()
-        safmr_state["state_fips"] = safmr_state["state_fips"].astype(str).str.zfill(2)
+        safmr_state = _norm_fips(safmr_state.copy())
         state = state.merge(
             safmr_state.drop(columns=["fy", "source"], errors="ignore"),
             on="state_fips",
             how="left",
         )
     if snap_state is not None and len(snap_state):
-        snap_state = snap_state.copy()
-        snap_state["state_fips"] = snap_state["state_fips"].astype(str).str.zfill(2)
+        snap_state = _norm_fips(snap_state.copy())
         state = state.merge(
             snap_state.drop(columns=["state_name", "fy", "source"], errors="ignore"),
             on="state_fips",
             how="left",
         )
-    return state.sort_values("state_fips")
+    return state.drop_duplicates("state_fips", keep="first").sort_values("state_fips")
 
 
 def load_stage5_into_duckdb(con, stage5_dir: Path) -> None:
@@ -138,6 +154,8 @@ def load_stage5_into_duckdb(con, stage5_dir: Path) -> None:
         "safmr_puma_2025": stage5_dir / "safmr_puma_2025.csv",
         "safmr_state_2025": stage5_dir / "safmr_state_2025.csv",
         "snap_state_2023": stage5_dir / "snap_state_2023.csv",
+        "acs_immigrant_health_state_summary_2023": stage5_dir / "acs_immigrant_health_state_summary_2023.csv",
+        "cms_medicaid_state_panel": stage5_dir / "cms_medicaid_state_panel.csv",
     }
     for table, path in paths.items():
         if path.exists():
@@ -203,6 +221,7 @@ def build_stage5(out_dir: Path | None = None) -> dict:
 
     safmr_meta = build_safmr_panels(out)
     cms_meta = build_cms_medicaid_state_panel(out)
+    health_rows = build_acs_immigrant_health_state_panel(out)
     snap_df = build_snap_state_panel(2023, out)
     safmr_state_path = out / "safmr_state_2025.csv"
     safmr_state = pd.read_csv(safmr_state_path) if safmr_state_path.exists() else pd.DataFrame()
@@ -211,7 +230,8 @@ def build_stage5(out_dir: Path | None = None) -> dict:
         safmr_state if len(safmr_state) else None,
         snap_df if len(snap_df) else None,
     )
-    el = build_state_el_2018()
+    state["state_fips"] = state["state_fips"].astype(str).str.zfill(2)
+    el = build_state_el_panel()
     rcv = build_receiver_costs()
 
     state.to_csv(out / "state_stage5_context_2023.csv", index=False)
@@ -230,6 +250,7 @@ def build_stage5(out_dir: Path | None = None) -> dict:
         "receiver_city_rows": int(len(rcv)),
         **safmr_meta,
         "cms_medicaid_state_rows": int(len(cms_meta)),
+        "acs_health_state_rows": int(health_rows),
     }
     (out / "stage5_outputs.json").write_text(json.dumps(meta, indent=2))
     print(json.dumps(meta, indent=2))

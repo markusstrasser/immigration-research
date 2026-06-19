@@ -387,6 +387,11 @@ def build() -> None:
 
     stage5_dir = DERIVED / "stage5"
     build_stage5(stage5_dir)
+    health_csv = stage5_dir / "acs_immigrant_health_state_summary_2023.csv"
+    if not health_csv.exists():
+        from parse_acs_immigrant_health_coverage import build_acs_immigrant_health_state_panel
+
+        build_acs_immigrant_health_state_panel(stage5_dir)
     load_stage5_into_duckdb(con, stage5_dir)
 
     # SIPP federal donor cells (replaces broken CPS HHINC prototype)
