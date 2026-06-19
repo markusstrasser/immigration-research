@@ -389,9 +389,9 @@ def build() -> None:
     build_stage5(stage5_dir)
     health_csv = stage5_dir / "acs_immigrant_health_state_summary_2023.csv"
     if not health_csv.exists():
-        from parse_acs_immigrant_health_coverage import build_acs_immigrant_health_state_panel
+        from parse_acs_stage5_panels import build_acs_stage5_panels
 
-        build_acs_immigrant_health_state_panel(stage5_dir)
+        build_acs_stage5_panels(stage5_dir)
     load_stage5_into_duckdb(con, stage5_dir)
 
     # SIPP federal donor cells (replaces broken CPS HHINC prototype)
@@ -449,6 +449,15 @@ def build() -> None:
         "safmr_puma_2025",
         "safmr_state_2025",
         "snap_state_2023",
+        "acs_immigrant_health_state_summary_2023",
+        "acs_foreign_born_school_age_state_2023",
+        "saipe_state_school_poverty_2023",
+        "census_state_per_pupil_2023",
+        "ohss_state_immigration_2023",
+        "cms_medicaid_state_panel",
+        "eoir_pending_cases_fy",
+        "eoir_court_workload_historical_fy",
+        "eoir_amnesty_cases_by_state",
         "origin_puma_household_stage5_context_2023",
         "origin_puma_household_fullstock_stage5_context_2023",
     ]

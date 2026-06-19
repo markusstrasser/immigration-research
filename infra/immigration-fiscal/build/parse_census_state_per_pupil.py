@@ -15,8 +15,9 @@ OUT = derived_root() / "stage5"
 
 def build_census_state_per_pupil_panel(out_dir: Path | None = None) -> pd.DataFrame:
     if COUNTY.exists():
-        county = pd.read_csv(COUNTY)
-        county["state_fips"] = county["county_fips"].astype(str).str[:2]
+        county = pd.read_csv(COUNTY, dtype={"county_fips": str})
+        county["county_fips"] = county["county_fips"].astype(str).str.zfill(5)
+        county["state_fips"] = county["county_fips"].str[:2]
         panel = (
             county.groupby("state_fips", as_index=False)
             .agg(enrollment=("enrollment", "sum"), current_spend=("current_spend", "sum"))
@@ -30,7 +31,8 @@ def build_census_state_per_pupil_panel(out_dir: Path | None = None) -> pd.DataFr
         )
     elif SUMMARY.exists():
         df = pd.read_csv(SUMMARY, dtype=str, low_memory=False)
-        df["state_fips"] = df["CONUM"].str.zfill(5).str[:2]
+        df["county_fips"] = df["CONUM"].astype(str).str.zfill(5)
+        df["state_fips"] = df["county_fips"].str[:2]
         spend_cols = ["TCURSSTA", "TCURSGEN", "TCURSSCH", "TCURSOTH", "TCURINST", "TCURSSVC", "TCURONON"]
         for c in ["ENROLL", *spend_cols]:
             df[c] = pd.to_numeric(df[c], errors="coerce").fillna(0)

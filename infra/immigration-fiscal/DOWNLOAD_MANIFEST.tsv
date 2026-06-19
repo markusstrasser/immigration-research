@@ -146,4 +146,5 @@ lifetime	optional	derived/lifetime/cdc_period_life_table_2021.csv	1000	build	Uni
 stage5	optional	derived/stage5/cms_medicaid_state_panel.csv	1000	build	CMS Medicaid state-year panel (KFF chart substitute)
 stage5	optional	derived/stage5/saipe_state_school_poverty_2023.csv	1000	build	SAIPE school-age poverty by state
 stage5	optional	derived/stage5/acs_foreign_born_school_age_state_2023.csv	1000	build	ACS foreign-born ages 5-17 (EDFacts EL proxy)
-stage5	optional	derived/stage5/census_state_per_pupil_2023.csv	1000	build	Census F-33 state per-pupil spend
+stage5	optional	derived/stage5/ohss_state_immigration_2023.csv	500	build	OHSS refugee/asylee/LPR flows by state FY2023
+stage5	optional	derived/stage4/eoir/eoir_pending_cases_fy.csv	100	build	EOIR pending cases (TRAC substitute)

@@ -12,10 +12,10 @@ from pathlib import Path
 
 import pandas as pd
 
-from parse_acs_foreign_born_school_age import build_acs_foreign_born_school_age_panel
-from parse_acs_immigrant_health_coverage import build_acs_immigrant_health_state_panel
+from parse_acs_stage5_panels import build_acs_stage5_panels
 from parse_cms_medicaid_state_panel import build_cms_medicaid_state_panel
 from parse_census_state_per_pupil import build_census_state_per_pupil_panel
+from parse_ohss_state_immigration_panel import build_ohss_state_immigration_panel
 from parse_safmr_panel import build_safmr_panels
 from parse_saipe_state_school_poverty import build_saipe_state_school_poverty_panel
 from parse_snap_state_panel import build_snap_state_panel
@@ -161,9 +161,20 @@ def load_stage5_into_duckdb(con, stage5_dir: Path) -> None:
         "acs_foreign_born_school_age_state_2023": stage5_dir / "acs_foreign_born_school_age_state_2023.csv",
         "saipe_state_school_poverty_2023": stage5_dir / "saipe_state_school_poverty_2023.csv",
         "census_state_per_pupil_2023": stage5_dir / "census_state_per_pupil_2023.csv",
+        "ohss_state_immigration_2023": stage5_dir / "ohss_state_immigration_2023.csv",
         "cms_medicaid_state_panel": stage5_dir / "cms_medicaid_state_panel.csv",
     }
     for table, path in paths.items():
+        if path.exists():
+            con.execute(f"CREATE OR REPLACE TABLE {table} AS SELECT * FROM read_csv_auto('{path}', header=true)")
+
+    eoir_dir = stage5_dir.parent / "stage4" / "eoir"
+    for table, fname in (
+        ("eoir_pending_cases_fy", "eoir_pending_cases_fy.csv"),
+        ("eoir_court_workload_historical_fy", "eoir_court_workload_historical_fy.csv"),
+        ("eoir_amnesty_cases_by_state", "eoir_amnesty_cases_by_state.csv"),
+    ):
+        path = eoir_dir / fname
         if path.exists():
             con.execute(f"CREATE OR REPLACE TABLE {table} AS SELECT * FROM read_csv_auto('{path}', header=true)")
 
@@ -227,10 +238,10 @@ def build_stage5(out_dir: Path | None = None) -> dict:
 
     safmr_meta = build_safmr_panels(out)
     cms_meta = build_cms_medicaid_state_panel(out)
-    health_rows = build_acs_immigrant_health_state_panel(out)
-    school_age_rows = build_acs_foreign_born_school_age_panel(out)
+    health_rows, school_age_rows = build_acs_stage5_panels(out)
     saipe_df = build_saipe_state_school_poverty_panel(out)
     nces_pp = build_census_state_per_pupil_panel(out)
+    ohss_df = build_ohss_state_immigration_panel(2023, out)
     snap_df = build_snap_state_panel(2023, out)
     safmr_state_path = out / "safmr_state_2025.csv"
     safmr_state = pd.read_csv(safmr_state_path) if safmr_state_path.exists() else pd.DataFrame()
@@ -272,6 +283,7 @@ def build_stage5(out_dir: Path | None = None) -> dict:
         "acs_fb_school_age_state_rows": int(school_age_rows),
         "saipe_state_rows": int(len(saipe_df)),
         "census_state_per_pupil_rows": int(len(nces_pp)),
+        "ohss_state_rows": int(len(ohss_df)),
     }
     (out / "stage5_outputs.json").write_text(json.dumps(meta, indent=2))
     print(json.dumps(meta, indent=2))

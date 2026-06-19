@@ -146,7 +146,7 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 | Gap | Impact |
 |-----|--------|
 | EDFacts FS141 EL 2022–23 | ACS school-age foreign-born + CCD 2018–19 substitute; Ed Data Express bot-blocked |
-| TRAC court backlog CSV | EOIR PDFs scripted; no stable TRAC bulk download |
+| TRAC court backlog CSV | EOIR pending/receipts/completions (`context_09`) |
 | PSID / Synthetic SIPP / FSRDC LEHD | Application-gated — `applications/MANUAL_ACQUIRE.md` |
 
 **Now scripted:** SSA→CDC mortality, KFF→CMS+ACS, EL 2018–19 CCD, SAIPE poverty, ACS school-age proxy, NAS PDF, SAFMR, SNAP, receiver cities.

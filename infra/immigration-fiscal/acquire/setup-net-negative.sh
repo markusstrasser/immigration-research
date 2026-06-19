@@ -102,7 +102,7 @@ cat > "$S5/kff_refs/MANUAL_ACQUIRE.md" <<'EOF'
 | HUD CHAS Table 11 | County housing stress | Automated via `setup.sh` + Playwright (`2018thru2022-050-csv.zip`) |
 | HUD SAFMR 2025 | Zip-level rent caps | Automated via `setup-net-negative.sh` + Playwright (`fy2025_safmrs_revised.xlsx`) |
 | USDA SNAP state summaries | Transfer program scale | Automated via `setup-net-negative.sh` (`snap-zip-fy69tocurrent-6.zip` → FY23 panel) |
-| TRAC immigration court backlog | Court-system cost proxy | https://trac.syr.edu/immigration/ (no stable CSV; EOIR PDFs scripted) |
+| TRAC immigration court backlog | Court-system cost proxy | EOIR PDFs → `eoir_pending_cases_fy.csv` (`context_09`) |
 | NAS 2017 fiscal tables | Benchmark NPV by education | Automated: cloudfront PDF in `setup-lifetime.sh` |
 | EDFacts FS141 district EL 2022-23 | Current district EL counts | ACS foreign-born school-age proxy + CCD 2018-19; Ed Data Express 403 from bots |
 EOF
