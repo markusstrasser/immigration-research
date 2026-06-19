@@ -104,7 +104,7 @@ cat > "$S5/kff_refs/MANUAL_ACQUIRE.md" <<'EOF'
 | USDA SNAP state summaries | Transfer program scale | Automated via `setup-net-negative.sh` (`snap-zip-fy69tocurrent-6.zip` → FY23 panel) |
 | TRAC immigration court backlog | Court-system cost proxy | https://trac.syr.edu/immigration/ (no stable CSV; EOIR PDFs scripted) |
 | NAS 2017 fiscal tables | Benchmark NPV by education | Automated: cloudfront PDF in `setup-lifetime.sh` |
-| EDFacts FS141 district EL 2022-23 | Current district EL counts | NCES CCD EL newest zip is 2018-19; EDFacts via Ed Data Express is JS-gated |
+| EDFacts FS141 district EL 2022-23 | Current district EL counts | ACS foreign-born school-age proxy + CCD 2018-19; Ed Data Express 403 from bots |
 EOF
 
 _log "=== stage5 done ==="

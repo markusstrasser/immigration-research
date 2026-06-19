@@ -5,7 +5,7 @@ SELECT
   state_fips,
   ROUND(rpp_all_items_2023, 2) AS rpp_2023,
   ROUND(medicaid_total_computable / 1e9, 2) AS medicaid_billions,
-  ROUND(lep_count_reported) AS lep_district_count_2018
+  ROUND(lep_count_reported) AS lep_count_2019
 FROM state_stage5_context_2023
 WHERE rpp_all_items_2023 IS NOT NULL
 ORDER BY medicaid_total_computable DESC NULLS LAST

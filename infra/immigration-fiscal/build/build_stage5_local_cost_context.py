@@ -12,9 +12,12 @@ from pathlib import Path
 
 import pandas as pd
 
+from parse_acs_foreign_born_school_age import build_acs_foreign_born_school_age_panel
 from parse_acs_immigrant_health_coverage import build_acs_immigrant_health_state_panel
 from parse_cms_medicaid_state_panel import build_cms_medicaid_state_panel
+from parse_census_state_per_pupil import build_census_state_per_pupil_panel
 from parse_safmr_panel import build_safmr_panels
+from parse_saipe_state_school_poverty import build_saipe_state_school_poverty_panel
 from parse_snap_state_panel import build_snap_state_panel
 from paths import data_root, derived_root
 
@@ -155,6 +158,9 @@ def load_stage5_into_duckdb(con, stage5_dir: Path) -> None:
         "safmr_state_2025": stage5_dir / "safmr_state_2025.csv",
         "snap_state_2023": stage5_dir / "snap_state_2023.csv",
         "acs_immigrant_health_state_summary_2023": stage5_dir / "acs_immigrant_health_state_summary_2023.csv",
+        "acs_foreign_born_school_age_state_2023": stage5_dir / "acs_foreign_born_school_age_state_2023.csv",
+        "saipe_state_school_poverty_2023": stage5_dir / "saipe_state_school_poverty_2023.csv",
+        "census_state_per_pupil_2023": stage5_dir / "census_state_per_pupil_2023.csv",
         "cms_medicaid_state_panel": stage5_dir / "cms_medicaid_state_panel.csv",
     }
     for table, path in paths.items():
@@ -222,6 +228,9 @@ def build_stage5(out_dir: Path | None = None) -> dict:
     safmr_meta = build_safmr_panels(out)
     cms_meta = build_cms_medicaid_state_panel(out)
     health_rows = build_acs_immigrant_health_state_panel(out)
+    school_age_rows = build_acs_foreign_born_school_age_panel(out)
+    saipe_df = build_saipe_state_school_poverty_panel(out)
+    nces_pp = build_census_state_per_pupil_panel(out)
     snap_df = build_snap_state_panel(2023, out)
     safmr_state_path = out / "safmr_state_2025.csv"
     safmr_state = pd.read_csv(safmr_state_path) if safmr_state_path.exists() else pd.DataFrame()
@@ -231,6 +240,15 @@ def build_stage5(out_dir: Path | None = None) -> dict:
         snap_df if len(snap_df) else None,
     )
     state["state_fips"] = state["state_fips"].astype(str).str.zfill(2)
+    for extra in (saipe_df, nces_pp):
+        if extra is not None and len(extra):
+            extra = _norm_fips(extra.copy())
+            state = state.merge(
+                extra.drop(columns=["state_name", "source", "vintage_year", "school_year"], errors="ignore"),
+                on="state_fips",
+                how="left",
+            )
+    state = state.drop_duplicates("state_fips", keep="first")
     el = build_state_el_panel()
     rcv = build_receiver_costs()
 
@@ -251,6 +269,9 @@ def build_stage5(out_dir: Path | None = None) -> dict:
         **safmr_meta,
         "cms_medicaid_state_rows": int(len(cms_meta)),
         "acs_health_state_rows": int(health_rows),
+        "acs_fb_school_age_state_rows": int(school_age_rows),
+        "saipe_state_rows": int(len(saipe_df)),
+        "census_state_per_pupil_rows": int(len(nces_pp)),
     }
     (out / "stage5_outputs.json").write_text(json.dumps(meta, indent=2))
     print(json.dumps(meta, indent=2))

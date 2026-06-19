@@ -2,9 +2,9 @@
 """ACS 2023 PUMS state health coverage by nativity/citizenship (KFF chart substitute)."""
 from __future__ import annotations
 
-import zipfile
 from pathlib import Path
 
+from acs_pums_io import person_csv_sql_glob
 from paths import data_root, derived_root
 
 PERSON_ZIP = data_root() / "census" / "acs_pums_2023_person.zip"
@@ -16,16 +16,7 @@ def build_acs_immigrant_health_state_panel(out_dir: Path | None = None) -> int:
         return 0
     import duckdb
 
-    tmp = derived_root() / "_tmp" / "health_person"
-    tmp.mkdir(parents=True, exist_ok=True)
-    csvs: list[str] = []
-    with zipfile.ZipFile(PERSON_ZIP) as zf:
-        for name in sorted(n for n in zf.namelist() if n.lower().endswith(".csv")):
-            out = tmp / name.split("/")[-1]
-            if not out.exists():
-                out.write_bytes(zf.read(name))
-            csvs.append(str(out))
-    glob = ",".join(f"'{p}'" for p in csvs)
+    glob = person_csv_sql_glob()
     con = duckdb.connect()
     con.execute(f"""
         CREATE TABLE person AS
