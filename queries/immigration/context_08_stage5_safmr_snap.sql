@@ -7,6 +7,7 @@ SELECT
   ROUND(snap_persons_avg, 0) AS snap_persons_avg_fy2023,
   ROUND(snap_benefits_usd / 1e9, 2) AS snap_benefits_billions_fy2023
 FROM state_stage5_context_2023
-WHERE snap_persons_avg IS NOT NULL
+WHERE state_fips IS NOT NULL
+  AND snap_persons_avg IS NOT NULL
 ORDER BY snap_benefits_usd DESC NULLS LAST
 LIMIT 12;

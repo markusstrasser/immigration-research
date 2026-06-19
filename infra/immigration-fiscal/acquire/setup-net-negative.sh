@@ -51,6 +51,8 @@ _fetch "https://www.bea.gov/sites/default/files/2024-12/rpp1224.xlsx" \
        "$S5/bea/rpp_state_metro_2024.xlsx" 10000
 _fetch "https://apps.bea.gov/regional/zip/rpp_2023.zip" \
        "$S5/bea/rpp_2023.zip" 10000
+_fetch "https://nces.ed.gov/ccd/Data/zip/ccd_lea_141_1819_l_1a_091019.zip" \
+       "$S5/nces/ccd_lea_141_1819_english_learners.zip" 100000
 _fetch "https://nces.ed.gov/ccd/Data/zip/ccd_lea_141_1718_l_1a_083118.zip" \
        "$S5/nces/ccd_lea_141_1718_english_learners.zip" 100000
 _fetch "https://www2.census.gov/programs-surveys/gov-finances/tables/2022/2022_Individual_Unit_File.zip" \
@@ -95,14 +97,14 @@ cat > "$S5/kff_refs/MANUAL_ACQUIRE.md" <<'EOF'
 | Dataset | Why | URL |
 |---------|-----|-----|
 | KFF total Medicaid by state | State cost denominator | Automated substitute: `derived/stage5/cms_medicaid_state_panel.csv` (CMS data.medicaid.gov) |
-| KFF immigrant health coverage facts | Disconfirms naive Medicaid drain | Manual chart export — https://www.kff.org/racial-equity-and-health-policy/key-facts-on-health-coverage-of-immigrants/ |
+| KFF immigrant health coverage facts | Disconfirms naive Medicaid drain | Automated substitute: `derived/stage5/acs_immigrant_health_state_summary_2023.csv` (ACS PUMS 2023) |
 | CBO Emergency Medicaid FY17-23 | Emergency spend on noncitizens | https://www.cbo.gov/ |
 | HUD CHAS Table 11 | County housing stress | Automated via `setup.sh` + Playwright (`2018thru2022-050-csv.zip`) |
 | HUD SAFMR 2025 | Zip-level rent caps | Automated via `setup-net-negative.sh` + Playwright (`fy2025_safmrs_revised.xlsx`) |
 | USDA SNAP state summaries | Transfer program scale | Automated via `setup-net-negative.sh` (`snap-zip-fy69tocurrent-6.zip` → FY23 panel) |
 | TRAC immigration court backlog | Court-system cost proxy | https://trac.syr.edu/immigration/ (no stable CSV; EOIR PDFs scripted) |
-| NAS 2017 fiscal tables | Benchmark NPV by education | https://nap.nationalacademies.org/catalog/23550 |
-| EDFacts FS141 district EL 2022-23 | Current district EL counts | NCES CCD 2023-24 file tool has no EL component yet — use `ccd_lea_141_1718` (2017-18) until published |
+| NAS 2017 fiscal tables | Benchmark NPV by education | Automated: cloudfront PDF in `setup-lifetime.sh` |
+| EDFacts FS141 district EL 2022-23 | Current district EL counts | NCES CCD EL newest zip is 2018-19; EDFacts via Ed Data Express is JS-gated |
 EOF
 
 _log "=== stage5 done ==="
