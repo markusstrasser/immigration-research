@@ -78,7 +78,7 @@ mkdir -p "$S5/hud"
 _fetch_hud_safmr "https://www.huduser.gov/portal/datasets/fmr/fmr2025/fy2025_safmrs_revised.xlsx" \
                  "$S5/hud/fy2025_safmrs_revised.xlsx"
 
-CAUSAL="${IMMIGRATION_CAUSAL_DATA:-$HOME/Projects/research/sources/immigration-causal/data}"
+CAUSAL="${IMMIGRATION_CAUSAL_DATA:-$(cd "$HERE/../../.." && pwd)/sources/immigration-causal/data}"
 CAUSAL_RC="$CAUSAL/bused_cities/receiver_city_costs.csv"
 FIXTURE_RC="$IMMIGRATION_FISCAL_ROOT/fixtures/receiver_city_migrant_costs.csv"
 if [[ -s "$CAUSAL_RC" ]]; then

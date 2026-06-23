@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[3]
 RESEARCH = ROOT / "research"
 MINING = RESEARCH / ".mining"
 INFRA = Path(__file__).resolve().parents[1]
-from paths import data_root
+from paths import data_root, duckdb_path, fiscal_union_duckdb_path, lifetime_duckdb_path
 
 DATA = data_root()
 MEMO = RESEARCH / "immigration-sweep-cycles-23-32-2026-06-15.md"
@@ -41,10 +41,9 @@ def _run(cmd: list[str], cwd: Path | None = None) -> str:
 def _query(sql: str) -> list[dict]:
     import duckdb
 
-    u = Path.home() / "Projects/research/warehouse/immigration_fiscal_union.duckdb"
-    con = duckdb.connect(str(u), read_only=True)
-    con.execute(f"ATTACH '{Path.home() / 'Projects/research/warehouse/immigration_context.duckdb'}' AS ctx (READ_ONLY)")
-    con.execute(f"ATTACH '{Path.home() / 'Projects/research/warehouse/immigration_lifetime_evidence.duckdb'}' AS life (READ_ONLY)")
+    con = duckdb.connect(str(fiscal_union_duckdb_path()), read_only=True)
+    con.execute(f"ATTACH '{duckdb_path()}' AS ctx (READ_ONLY)")
+    con.execute(f"ATTACH '{lifetime_duckdb_path()}' AS life (READ_ONLY)")
     cols = [d[0] for d in con.execute(sql).description]
     return [dict(zip(cols, r)) for r in con.execute(sql).fetchall()]
 

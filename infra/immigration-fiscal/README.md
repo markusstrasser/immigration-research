@@ -55,7 +55,7 @@ See `REPRODUCE.md` for tiers, verify modes, and manual-acquire list.
 ` sources/immigration-fiscal` on PNY delegates to these scripts via wrappers. Set:
 
 ```bash
-export IMMIGRATION_FISCAL_INFRA="$HOME/Projects/research/infra/immigration-fiscal"
+export IMMIGRATION_FISCAL_INFRA="$HOME/Projects/immigration-research/infra/immigration-fiscal"
 ```
 
 ## Manual / WAF-blocked
