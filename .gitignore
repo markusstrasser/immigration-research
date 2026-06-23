@@ -1,8 +1,12 @@
 # Claude Code
 .claude/plans/
 .claude/current-session-id
+.claude/checkout-claim.json
 .mcp.json
 .scratch/
+
+# Derived/regenerable agent artifacts (generators live in agent-infra)
+artifacts/
 
 # Python
 __pycache__/
