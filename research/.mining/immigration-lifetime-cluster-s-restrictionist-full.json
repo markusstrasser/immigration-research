@@ -18,25 +18,25 @@
       "unit": "log wage change per 10% cell supply",
       "population": "native men in same education-experience cell",
       "page_ref": "abstract, Table III",
-      "notes": "National cell; weekly \u22124%, annual \u22126.4%"
+      "notes": "National cell; weekly −4%, annual −6.4%"
     },
     {
       "claim_id": "S-001b",
       "source_rel_path": "external/lifetime/nber/borjas_2003_labor_demand_curve_immigration_w9755.pdf",
       "corpus_sha": "sha_ebb48fc02c714bfe",
       "parameter_name": "spatial_attenuation_national_vs_state",
-      "value_text": "state elasticity \u22120.13 vs national \u22120.40; ~\u2154 hidden locally",
+      "value_text": "state elasticity −0.13 vs national −0.40; ~⅔ hidden locally",
       "population": "weekly earnings, education-experience cells",
-      "page_ref": "\u00a7V Table V vs III"
+      "page_ref": "§V Table V vs III"
     },
     {
       "claim_id": "S-001c",
       "source_rel_path": "external/lifetime/nber/borjas_2003_labor_demand_curve_immigration_w9755.pdf",
       "corpus_sha": "sha_ebb48fc02c714bfe",
       "parameter_name": "cumulative_wage_impact_1980_2000",
-      "value_text": "avg native \u22123.2%; HS dropout \u22128.9%",
+      "value_text": "avg native −3.2%; HS dropout −8.9%",
       "population": "native male workers",
-      "page_ref": "\u00a7VIII Conclusion"
+      "page_ref": "§VIII Conclusion"
     },
     {
       "claim_id": "S-002",
@@ -49,7 +49,7 @@
       ],
       "unit": "fraction of national-local wage gap explained by migration",
       "population": "state vs MSA labor markets 1960-2000",
-      "page_ref": "abstract, \u00a7VI"
+      "page_ref": "abstract, §VI"
     },
     {
       "claim_id": "S-002b",
@@ -57,15 +57,15 @@
       "corpus_sha": "sha_d18f2c501794dccc",
       "parameter_name": "native_outflow_per_10_immigrants",
       "value_text": "state: 2 fewer natives; MSA: 3-6 fewer natives",
-      "population": "skill group \u00d7 geography",
-      "page_ref": "\u00a7VI Summary"
+      "population": "skill group × geography",
+      "page_ref": "§VI Summary"
     },
     {
       "claim_id": "S-003",
       "source_rel_path": "external/lifetime/nber/borjas_grogger_hanson_2006_immigration_african_american_employment_w12518.pdf",
       "corpus_sha": "sha_841c0a577e4ffa05",
       "parameter_name": "black_wage_employment_incarceration_per_10pct_supply",
-      "value_text": "wage \u22124.0%; employment \u22123.5pp; incarceration +0.8pp",
+      "value_text": "wage −4.0%; employment −3.5pp; incarceration +0.8pp",
       "unit": "per 10% immigrant supply shock",
       "population": "African-American men, skill cell",
       "page_ref": "abstract"
@@ -75,9 +75,9 @@
       "source_rel_path": "external/lifetime/nber/borjas_grogger_hanson_2006_immigration_african_american_employment_w12518.pdf",
       "corpus_sha": "sha_841c0a577e4ffa05",
       "parameter_name": "white_employment_incarceration_per_10pct_supply",
-      "value_text": "employment \u22121.6pp; incarceration +0.1pp (wage similar)",
+      "value_text": "employment −1.6pp; incarceration +0.1pp (wage similar)",
       "population": "white men, skill cell",
-      "page_ref": "\u00a7I"
+      "page_ref": "§I"
     },
     {
       "claim_id": "S-003c",
@@ -86,7 +86,7 @@
       "parameter_name": "black_employment_decline_attribution_1980_2000",
       "value_text": "immigration explains ~40% of 17.9pp decline",
       "population": "low-skill black men",
-      "page_ref": "\u00a7VII Summary"
+      "page_ref": "§VII Summary"
     },
     {
       "claim_id": "S-004",
@@ -96,7 +96,7 @@
       "unit": "2012 USD NPV",
       "population": "immigrant individual <HS at 25",
       "page_ref": "Table 8-13",
-      "notes": "Academic restrictionist anchor \u2014 not full government ledger"
+      "notes": "Academic restrictionist anchor — not full government ledger"
     },
     {
       "claim_id": "S-005",
@@ -107,7 +107,7 @@
       "unit": "USD per capita cross-section 2013",
       "population": "1st generation immigrants with dependents",
       "page_ref": "Table 1 scenario 2 federal",
-      "notes": "vs \u22122650 under avg public goods"
+      "notes": "vs −2650 under avg public goods"
     },
     {
       "claim_id": "S-005b",
@@ -135,7 +135,7 @@
       "unit": "USD per year",
       "population": "15.5M unauthorized + 5.4M US-born children",
       "unnamed_assumption": true,
-      "notes": "ADVOCACY \u2014 not marker-parsed"
+      "notes": "ADVOCACY — not marker-parsed"
     },
     {
       "claim_id": "S-007",
@@ -148,7 +148,7 @@
       ],
       "unit": "fraction of +43% sheltered rise",
       "population": "HUD PIT sheltered",
-      "page_ref": "\u00a76 Conclusions"
+      "page_ref": "§6 Conclusions"
     },
     {
       "claim_id": "S-007b",
@@ -167,7 +167,7 @@
       "parameter_name": "nyc_asylum_shelter_cost_per_family_year",
       "value_numeric": 137600,
       "unit": "USD",
-      "page_ref": "\u00a76"
+      "page_ref": "§6"
     },
     {
       "claim_id": "S-008",
@@ -311,7 +311,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2003_labor_demand_curve_immigration_w9755.pdf",
       "corpus_sha": "sha_ebb48fc02c714bfe",
       "parameter_name": "iv_basic_results_71",
-      "value_text": "Equation (4) implies that the wage elasticity\u2014evaluated at the mean value of the immigrant supply increase\u2014can be obtained by multiplying $\\theta$ by approximately 0.7.",
+      "value_text": "Equation (4) implies that the wage elasticity—evaluated at the mean value of the immigrant supply increase—can be obtained by multiplying $\\theta$ by approximately 0.7.",
       "population": null,
       "page_ref": "IV. Basic Results",
       "claim_type": "empirical",
@@ -322,7 +322,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2003_labor_demand_curve_immigration_w9755.pdf",
       "corpus_sha": "sha_ebb48fc02c714bfe",
       "parameter_name": "iv_basic_results_72",
-      "value_text": "The wage elasticity for weekly earnings is then -0.40 (or -0.572 \u00d7 0.7).",
+      "value_text": "The wage elasticity for weekly earnings is then -0.40 (or -0.572 × 0.7).",
       "population": null,
       "page_ref": "IV. Basic Results",
       "claim_type": "empirical",
@@ -377,7 +377,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2003_labor_demand_curve_immigration_w9755.pdf",
       "corpus_sha": "sha_ebb48fc02c714bfe",
       "parameter_name": "iv_basic_results_81",
-      "value_text": "The IV estimates of \u03b8 (and standard errors) are -0.803 (0.586) for log annual earnings, -0.541 (0.153) for log weekly earnings, and -0.493 (0.125) for the fraction of time worked.",
+      "value_text": "The IV estimates of θ (and standard errors) are -0.803 (0.586) for log annual earnings, -0.541 (0.153) for log weekly earnings, and -0.493 (0.125) for the fraction of time worked.",
       "population": null,
       "page_ref": "IV. Basic Results",
       "claim_type": "empirical",
@@ -388,7 +388,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2003_labor_demand_curve_immigration_w9755.pdf",
       "corpus_sha": "sha_ebb48fc02c714bfe",
       "parameter_name": "iv_basic_results_82",
-      "value_text": "In short, the parameter \u03b8 in equation (3) is indeed capturing the impact of an increase in the size of the immigrant population on native labor market outcomes.9 I also estimated the regression model within schooling groups to determine if the results are being driven by particular groups, such as the large influx of foreign-born high school dropouts.",
+      "value_text": "In short, the parameter θ in equation (3) is indeed capturing the impact of an increase in the size of the immigrant population on native labor market outcomes.9 I also estimated the regression model within schooling groups to determine if the results are being driven by particular groups, such as the large influx of foreign-born high school dropouts.",
       "population": null,
       "page_ref": "IV. Basic Results",
       "claim_type": "empirical",
@@ -410,7 +410,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2003_labor_demand_curve_immigration_w9755.pdf",
       "corpus_sha": "sha_ebb48fc02c714bfe",
       "parameter_name": "iv_basic_results_89",
-      "value_text": "Although these regressions only have 20 observations, the point estimate of \u03b8 is negative and significant for many groups.",
+      "value_text": "Although these regressions only have 20 observations, the point estimate of θ is negative and significant for many groups.",
       "population": null,
       "page_ref": "IV. Basic Results",
       "claim_type": "empirical",
@@ -740,7 +740,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2003_labor_demand_curve_immigration_w9755.pdf",
       "corpus_sha": "sha_ebb48fc02c714bfe",
       "parameter_name": "b_simulating_the_wage_effects_of_immigration_181",
-      "value_text": "This reduced form effect is \u03b5/(1 \u2212 \u03b5\u03c3), where \u03b5 is the factor price elasticity and \u03c3 is the labor supply elasticity.",
+      "value_text": "This reduced form effect is ε/(1 − εσ), where ε is the factor price elasticity and σ is the labor supply elasticity.",
       "population": null,
       "page_ref": "B. Simulating the Wage Effects of Immigration",
       "claim_type": "empirical",
@@ -817,7 +817,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2005_native_internal_migration_immigration_w11610.pdf",
       "corpus_sha": "sha_d18f2c501794dccc",
       "parameter_name": "ii_theory_49",
-      "value_text": "To illustrate, suppose that the coefficient \u03b3*Nt* is \u20130.5, indicating that 5 fewer natives choose to reside in the local labor market for every 10 immigrants entering that market.",
+      "value_text": "To illustrate, suppose that the coefficient γ*Nt* is –0.5, indicating that 5 fewer natives choose to reside in the local labor market for every 10 immigrants entering that market.",
       "population": null,
       "page_ref": "II. Theory",
       "claim_type": "empirical",
@@ -828,7 +828,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2005_native_internal_migration_immigration_w11610.pdf",
       "corpus_sha": "sha_d18f2c501794dccc",
       "parameter_name": "ii_theory_50",
-      "value_text": "Equation (10) then implies that the spatial correlation that can be estimated by comparing native wages across local labor markets is only half the size of the true factor price elasticity.15 <sup>14</sup> In particular, note that log / \u03b3 =\u2202 \u2202 *Nt ijt ijt <sup>N</sup> <sup>m</sup>* and that / , *mMN ijt ijt* <sup>=</sup> where *N* is a (fixed) native baseline.",
+      "value_text": "Equation (10) then implies that the spatial correlation that can be estimated by comparing native wages across local labor markets is only half the size of the true factor price elasticity.15 <sup>14</sup> In particular, note that log / γ =∂ ∂ *Nt ijt ijt <sup>N</sup> <sup>m</sup>* and that / , *mMN ijt ijt* <sup>=</sup> where *N* is a (fixed) native baseline.",
       "population": null,
       "page_ref": "II. Theory",
       "claim_type": "empirical",
@@ -861,7 +861,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2005_native_internal_migration_immigration_w11610.pdf",
       "corpus_sha": "sha_d18f2c501794dccc",
       "parameter_name": "iv_immigration_and_wages_108",
-      "value_text": "In fact, the wage effects (appropriately calculated) are similar when including either log*m* or a second-order polynomial in *m* as the measure of the immigrant supply shift.25 Consider initially the first three columns of Table 2, which present the basic estimates of the adjustment coefficient \u03b8*W* obtained from the sample of working men.",
+      "value_text": "In fact, the wage effects (appropriately calculated) are similar when including either log*m* or a second-order polynomial in *m* as the measure of the immigrant supply shift.25 Consider initially the first three columns of Table 2, which present the basic estimates of the adjustment coefficient θ*W* obtained from the sample of working men.",
       "population": null,
       "page_ref": "IV. Immigration and Wages",
       "claim_type": "empirical",
@@ -960,7 +960,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2005_native_internal_migration_immigration_w11610.pdf",
       "corpus_sha": "sha_d18f2c501794dccc",
       "parameter_name": "iv_immigration_and_wages_118",
-      "value_text": "Equation (15) implies that the wage elasticity\u2014evaluated at the mean value of the relative number of immigrants\u2014can be obtained by multiplying $\\theta_W$ by 0.73.",
+      "value_text": "Equation (15) implies that the wage elasticity—evaluated at the mean value of the relative number of immigrants—can be obtained by multiplying $\\theta_W$ by 0.73.",
       "population": null,
       "page_ref": "IV. Immigration and Wages",
       "claim_type": "empirical",
@@ -1015,7 +1015,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2005_native_internal_migration_immigration_w11610.pdf",
       "corpus_sha": "sha_d18f2c501794dccc",
       "parameter_name": "iv_immigration_and_wages_129",
-      "value_text": "The remaining panels in Table 2 document the behavior of the coefficient \u03b8*W* as the geographic boundary of the labor market is either expanded (to the Census division level) or narrowed (to the metropolitan area level).",
+      "value_text": "The remaining panels in Table 2 document the behavior of the coefficient θ*W* as the geographic boundary of the labor market is either expanded (to the Census division level) or narrowed (to the metropolitan area level).",
       "population": null,
       "page_ref": "IV. Immigration and Wages",
       "claim_type": "empirical",
@@ -1114,7 +1114,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2005_native_internal_migration_immigration_w11610.pdf",
       "corpus_sha": "sha_d18f2c501794dccc",
       "parameter_name": "a_the_size_of_the_native_workforce_145",
-      "value_text": "The coefficient of the immigrant share variable falls to around \u22120.27 in the most general specification.31 This estimate implies that around 2 fewer native workers choose to reside in a particular state for every 10 additional immigrants who enter that state.",
+      "value_text": "The coefficient of the immigrant share variable falls to around −0.27 in the most general specification.31 This estimate implies that around 2 fewer native workers choose to reside in a particular state for every 10 additional immigrants who enter that state.",
       "population": null,
       "page_ref": "A. The Size of the Native Workforce",
       "claim_type": "empirical",
@@ -1169,7 +1169,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2005_native_internal_migration_immigration_w11610.pdf",
       "corpus_sha": "sha_d18f2c501794dccc",
       "parameter_name": "a_the_size_of_the_native_workforce_155",
-      "value_text": "In particular, note that the adjustment coefficient \u03b8*N* estimated by equation (16) may suffer from division bias.",
+      "value_text": "In particular, note that the adjustment coefficient θ*N* estimated by equation (16) may suffer from division bias.",
       "population": null,
       "page_ref": "A. The Size of the Native Workforce",
       "claim_type": "empirical",
@@ -1202,7 +1202,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2005_native_internal_migration_immigration_w11610.pdf",
       "corpus_sha": "sha_d18f2c501794dccc",
       "parameter_name": "b_migration_rates_165",
-      "value_text": "It is worth noting that the estimated product of elasticities \u03b7\u03c3 is very similar to the corresponding estimate reported in Table 3, when the dependent variable was the log of the size of the native workforce.",
+      "value_text": "It is worth noting that the estimated product of elasticities ησ is very similar to the corresponding estimate reported in Table 3, when the dependent variable was the log of the size of the native workforce.",
       "population": null,
       "page_ref": "B.** Migration Rates",
       "claim_type": "empirical",
@@ -1246,7 +1246,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2005_native_internal_migration_immigration_w11610.pdf",
       "corpus_sha": "sha_d18f2c501794dccc",
       "parameter_name": "b_migration_rates_173",
-      "value_text": "It seems plausible to argue that this bias would be most severe at the metropolitan area level\u2014where the adjustment coefficient (although not as negative as the respective coefficient in Table 3) is still negative and numerically large.",
+      "value_text": "It seems plausible to argue that this bias would be most severe at the metropolitan area level—where the adjustment coefficient (although not as negative as the respective coefficient in Table 3) is still negative and numerically large.",
       "population": null,
       "page_ref": "B.** Migration Rates",
       "claim_type": "empirical",
@@ -1323,7 +1323,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2005_native_internal_migration_immigration_w11610.pdf",
       "corpus_sha": "sha_d18f2c501794dccc",
       "parameter_name": "d_synthesis_196",
-      "value_text": "The first row of the table reports that the wage effect at the national level was estimated to be -0.389 (or the coefficient of \u22120.533 in Table 2 times 0.73).",
+      "value_text": "The first row of the table reports that the wage effect at the national level was estimated to be -0.389 (or the coefficient of −0.533 in Table 2 times 0.73).",
       "population": null,
       "page_ref": "D. Synthesis",
       "claim_type": "empirical",
@@ -1345,7 +1345,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2005_native_internal_migration_immigration_w11610.pdf",
       "corpus_sha": "sha_d18f2c501794dccc",
       "parameter_name": "d_synthesis_198",
-      "value_text": "<sup>37</sup> Put differently, I assume that the supply elasticity \u03c3 = 0 at the national level.",
+      "value_text": "<sup>37</sup> Put differently, I assume that the supply elasticity σ = 0 at the national level.",
       "population": null,
       "page_ref": "D. Synthesis",
       "claim_type": "empirical",
@@ -1356,7 +1356,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2005_native_internal_migration_immigration_w11610.pdf",
       "corpus_sha": "sha_d18f2c501794dccc",
       "parameter_name": "d_synthesis_201",
-      "value_text": "The theory then predicts that the spatial correlation between wages and immigration, \u02c6 , *<sup>W</sup>*\u03b3 is given by: $$\\hat{\\gamma}_W = \\eta (1 + \\gamma_N).$$ Row 3 of Table 6 uses this equation to mechanically predict the spatial correlations that *should* be observed if the *only* adjustment mechanism contaminating the estimation procedure was the internal migration of native workers.",
+      "value_text": "The theory then predicts that the spatial correlation between wages and immigration, ˆ , *<sup>W</sup>*γ is given by: $$\\hat{\\gamma}_W = \\eta (1 + \\gamma_N).$$ Row 3 of Table 6 uses this equation to mechanically predict the spatial correlations that *should* be observed if the *only* adjustment mechanism contaminating the estimation procedure was the internal migration of native workers.",
       "population": null,
       "page_ref": "D. Synthesis",
       "claim_type": "empirical",
@@ -1367,7 +1367,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_2005_native_internal_migration_immigration_w11610.pdf",
       "corpus_sha": "sha_d18f2c501794dccc",
       "parameter_name": "d_synthesis_203",
-      "value_text": "The theory then implies that the wage elasticity estimated by relating native wages across states and immigration should be \u22120.28 (or \u22120.389 \u00d7 (1 \u2212 0.278)), roughly a cut of one-quarter in the estimated national wage effect.",
+      "value_text": "The theory then implies that the wage elasticity estimated by relating native wages across states and immigration should be −0.28 (or −0.389 × (1 − 0.278)), roughly a cut of one-quarter in the estimated national wage effect.",
       "population": null,
       "page_ref": "D. Synthesis",
       "claim_type": "empirical",
@@ -1400,7 +1400,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_grogger_hanson_2006_immigration_african_american_employment_w12518.pdf",
       "corpus_sha": "sha_841c0a577e4ffa05",
       "parameter_name": "george_j_borjas_jeffrey_grogger_and_gordon_h_han_11",
-      "value_text": "An advertisement in the weekly Forest-Blade newspaper blared \"Increased Wages\" at Crider, starting at \\$7 to \\$9 an hour\u2014more than a dollar above what the company had paid many immigrant workers.",
+      "value_text": "An advertisement in the weekly Forest-Blade newspaper blared \"Increased Wages\" at Crider, starting at \\$7 to \\$9 an hour—more than a dollar above what the company had paid many immigrant workers.",
       "population": null,
       "page_ref": "George J. Borjas, Jeffrey Grogger, and Gordon H. Hanson\\*",
       "claim_type": "empirical",
@@ -1411,7 +1411,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_grogger_hanson_2006_immigration_african_american_employment_w12518.pdf",
       "corpus_sha": "sha_841c0a577e4ffa05",
       "parameter_name": "iii_theory_76",
-      "value_text": "In particular, we use a nested CES framework to derive estimable relative labor demand functions that relate the relative price of a labor group to the relative quantity of that group.11 It is well known that the coefficient of the relative quantity variable in this type of regression model estimates the parameter \u22121/\u03c3, where \u03c3 is the elasticity of substitution between the groups.",
+      "value_text": "In particular, we use a nested CES framework to derive estimable relative labor demand functions that relate the relative price of a labor group to the relative quantity of that group.11 It is well known that the coefficient of the relative quantity variable in this type of regression model estimates the parameter −1/σ, where σ is the elasticity of substitution between the groups.",
       "population": null,
       "page_ref": "III. Theory",
       "claim_type": "empirical",
@@ -1433,7 +1433,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_grogger_hanson_2006_immigration_african_american_employment_w12518.pdf",
       "corpus_sha": "sha_841c0a577e4ffa05",
       "parameter_name": "iii_theory_79",
-      "value_text": "The null hypothesis of perfect substitution states that the coefficient \u22121/\u03c3 equals zero.",
+      "value_text": "The null hypothesis of perfect substitution states that the coefficient −1/σ equals zero.",
       "population": null,
       "page_ref": "III. Theory",
       "claim_type": "empirical",
@@ -1444,7 +1444,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_grogger_hanson_2006_immigration_african_american_employment_w12518.pdf",
       "corpus_sha": "sha_841c0a577e4ffa05",
       "parameter_name": "iii_theory_92",
-      "value_text": "The marginal product of labor in the crime sector for workers in racial group *i* with skill *s* is: $$(3) w_{is} = X_{ics} \\left( N_{ics} \\right)^{\\eta_{ic}},$$ where *Xics* is a demand shifter for criminal activity, *Nics* gives employment of native workers of race *i* and skill group *s* in crime, and \u03b7*ic* < 0 is the inverse of the labor demand elasticity in the crime sector.",
+      "value_text": "The marginal product of labor in the crime sector for workers in racial group *i* with skill *s* is: $$(3) w_{is} = X_{ics} \\left( N_{ics} \\right)^{\\eta_{ic}},$$ where *Xics* is a demand shifter for criminal activity, *Nics* gives employment of native workers of race *i* and skill group *s* in crime, and η*ic* < 0 is the inverse of the labor demand elasticity in the crime sector.",
       "population": null,
       "page_ref": "III. Theory",
       "claim_type": "empirical",
@@ -1455,7 +1455,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_grogger_hanson_2006_immigration_african_american_employment_w12518.pdf",
       "corpus_sha": "sha_841c0a577e4ffa05",
       "parameter_name": "iii_theory_95",
-      "value_text": "The supply of labor to paid employment (i.e., employment in either the market or crime sectors) is elastic, with the inverse demand for leisure given by: $$(4) w_{is} = X_{ihs} \\left( N_{ihs} \\right)^{\\eta_{ih}}$$ where *Xihs* is a leisure demand shift parameter, *Nihs* gives the number of natives consuming leisure, and \u03b7*ih* < 0 is the inverse of the demand elasticity for leisure.",
+      "value_text": "The supply of labor to paid employment (i.e., employment in either the market or crime sectors) is elastic, with the inverse demand for leisure given by: $$(4) w_{is} = X_{ihs} \\left( N_{ihs} \\right)^{\\eta_{ih}}$$ where *Xihs* is a leisure demand shift parameter, *Nihs* gives the number of natives consuming leisure, and η*ih* < 0 is the inverse of the demand elasticity for leisure.",
       "population": null,
       "page_ref": "III. Theory",
       "claim_type": "empirical",
@@ -1521,7 +1521,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_grogger_hanson_2006_immigration_african_american_employment_w12518.pdf",
       "corpus_sha": "sha_841c0a577e4ffa05",
       "parameter_name": "iii_theory_109",
-      "value_text": "First, as noted above, the wage impact is predicted to be the same for black and white workers.18 Second, the reduced-form regression of the log wage on the immigrant supply shock *m* does *not* identify the factor price elasticity, \u03b7*f*.",
+      "value_text": "First, as noted above, the wage impact is predicted to be the same for black and white workers.18 Second, the reduced-form regression of the log wage on the immigrant supply shock *m* does *not* identify the factor price elasticity, η*f*.",
       "population": null,
       "page_ref": "III. Theory",
       "claim_type": "empirical",
@@ -1532,7 +1532,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_grogger_hanson_2006_immigration_african_american_employment_w12518.pdf",
       "corpus_sha": "sha_841c0a577e4ffa05",
       "parameter_name": "iii_theory_111",
-      "value_text": "We will refer to the product \u03b7*<sup>f</sup>* \u03c1 as the \"reduced-form wage elasticity.\" Equation (6b) shows that a larger immigrant supply shock increases the number of natives participating in the crime sector (\u03b7*f*\u03c1/\u03b7*ic* > 0), with the impact of immigration being larger the more elastic is the demand for crime labor relative to the demand for formal labor.",
+      "value_text": "We will refer to the product η*<sup>f</sup>* ρ as the \"reduced-form wage elasticity.\" Equation (6b) shows that a larger immigrant supply shock increases the number of natives participating in the crime sector (η*f*ρ/η*ic* > 0), with the impact of immigration being larger the more elastic is the demand for crime labor relative to the demand for formal labor.",
       "population": null,
       "page_ref": "III. Theory",
       "claim_type": "empirical",
@@ -1620,7 +1620,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_grogger_hanson_2006_immigration_african_american_employment_w12518.pdf",
       "corpus_sha": "sha_841c0a577e4ffa05",
       "parameter_name": "iv_national_level_evidence_130",
-      "value_text": "Equation (9) implies that the reduced-form wage elasticity\u2014evaluated at the mean value of the immigrant supply shift as of 2000\u2014can be obtained by multiplying $\\theta$ by approximately 0.73.",
+      "value_text": "Equation (9) implies that the reduced-form wage elasticity—evaluated at the mean value of the immigrant supply shift as of 2000—can be obtained by multiplying $\\theta$ by approximately 0.73.",
       "population": null,
       "page_ref": "IV. National Level Evidence",
       "claim_type": "empirical",
@@ -1631,7 +1631,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_grogger_hanson_2006_immigration_african_american_employment_w12518.pdf",
       "corpus_sha": "sha_841c0a577e4ffa05",
       "parameter_name": "iv_national_level_evidence_131",
-      "value_text": "The reduced-form wage elasticity for weekly earnings is then -0.41 (or -0.561 \u00d7 0.73) for blacks, and -0.49 for whites.",
+      "value_text": "The reduced-form wage elasticity for weekly earnings is then -0.41 (or -0.561 × 0.73) for blacks, and -0.49 for whites.",
       "population": null,
       "page_ref": "IV. National Level Evidence",
       "claim_type": "empirical",
@@ -1686,7 +1686,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_grogger_hanson_2006_immigration_african_american_employment_w12518.pdf",
       "corpus_sha": "sha_841c0a577e4ffa05",
       "parameter_name": "iv_national_level_evidence_146",
-      "value_text": "The estimated adjustment coefficients \u03b8 (and corresponding marginal impacts in the grouped logit regressions) are reported in panel C of Table 2.",
+      "value_text": "The estimated adjustment coefficients θ (and corresponding marginal impacts in the grouped logit regressions) are reported in panel C of Table 2.",
       "population": null,
       "page_ref": "IV. National Level Evidence",
       "claim_type": "empirical",
@@ -1708,7 +1708,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_grogger_hanson_2006_immigration_african_american_employment_w12518.pdf",
       "corpus_sha": "sha_841c0a577e4ffa05",
       "parameter_name": "v_state_level_evidence_174",
-      "value_text": "Indeed, equation (13a) shows that the *sum* of the coefficients on *mrst* and *mst* equals \u03b7*<sup>f</sup>* \u03c1, the reduced-form wage elasticity that we introduced in the national wage equation (6a).",
+      "value_text": "Indeed, equation (13a) shows that the *sum* of the coefficients on *mrst* and *mst* equals η*<sup>f</sup>* ρ, the reduced-form wage elasticity that we introduced in the national wage equation (6a).",
       "population": null,
       "page_ref": "V. State Level Evidence",
       "claim_type": "empirical",
@@ -2126,7 +2126,7 @@
       "source_rel_path": "external/lifetime/nber/razin_sadka_swagel_2011_migration_welfare_state_w15597.pdf",
       "corpus_sha": "sha_e761985b0f6b84d8",
       "parameter_name": "2_background_literature_and_fiscal_burden_35",
-      "value_text": "The findings suggest that migrants with less than high school education are typically a net fiscal burden that can reach as high as approximately US-\\$100,000 in present value, when the migrants' age on arrival is between 20\u201330 years.",
+      "value_text": "The findings suggest that migrants with less than high school education are typically a net fiscal burden that can reach as high as approximately US-\\$100,000 in present value, when the migrants' age on arrival is between 20–30 years.",
       "population": null,
       "page_ref": "2 Background Literature and Fiscal Burden",
       "claim_type": "empirical",
@@ -2170,7 +2170,7 @@
       "source_rel_path": "external/lifetime/nber/razin_sadka_swagel_2011_migration_welfare_state_w15597.pdf",
       "corpus_sha": "sha_e761985b0f6b84d8",
       "parameter_name": "3_1_preferences_and_technology_57",
-      "value_text": "Here, y and o denote to young and old, l i is labor, \u03b5 is the elasticity of the labor supply, and \u03b2 \u2208 (0, 1) is the discount factor.",
+      "value_text": "Here, y and o denote to young and old, l i is labor, ε is the elasticity of the labor supply, and β ∈ (0, 1) is the discount factor.",
       "population": null,
       "page_ref": "3.1 Preferences and Technology",
       "claim_type": "empirical",
@@ -2214,7 +2214,7 @@
       "source_rel_path": "external/lifetime/nber/razin_sadka_swagel_2011_migration_welfare_state_w15597.pdf",
       "corpus_sha": "sha_e761985b0f6b84d8",
       "parameter_name": "3_1_preferences_and_technology_69",
-      "value_text": "The model yields the following indirect utility function (recall that saving is zero): $$V^{y,i} = \\frac{\\left((1-\\tau_t)w^i\\right)^{1+\\varepsilon}}{1+\\varepsilon} + b_t + \\beta b_{t+1}$$ $$V^o = b_t,$$ for i \u2208 {s, u}.",
+      "value_text": "The model yields the following indirect utility function (recall that saving is zero): $$V^{y,i} = \\frac{\\left((1-\\tau_t)w^i\\right)^{1+\\varepsilon}}{1+\\varepsilon} + b_t + \\beta b_{t+1}$$ $$V^o = b_t,$$ for i ∈ {s, u}.",
       "population": null,
       "page_ref": "3.1 Preferences and Technology",
       "claim_type": "empirical",
@@ -2269,7 +2269,7 @@
       "source_rel_path": "external/lifetime/nber/razin_sadka_swagel_2011_migration_welfare_state_w15597.pdf",
       "corpus_sha": "sha_e761985b0f6b84d8",
       "parameter_name": "4_1_equilibrium_84",
-      "value_text": "Thus, we are looking for a triplet policy function (\u03c4<sup>t</sup> , \u03c3<sup>t</sup> , \u00b5t) = \u03a6(s<sup>t</sup> , \u03c4t\u22121, \u03c3t\u22121, \u00b5t\u22121), which is a solution to the following functional equation $$\\begin{aligned} \\Phi(s_t) = \\mathop{\\arg\\max}_{\\tau_t, \\sigma_t, \\mu_t} V^d \\{ s_t, \\tau_t, \\sigma_t, \\mu_t, \\Phi(s_{t+1}) \\} & \\quad (15) \\\\ \\text{s.t.",
+      "value_text": "Thus, we are looking for a triplet policy function (τ<sup>t</sup> , σ<sup>t</sup> , µt) = Φ(s<sup>t</sup> , τt−1, σt−1, µt−1), which is a solution to the following functional equation $$\\begin{aligned} \\Phi(s_t) = \\mathop{\\arg\\max}_{\\tau_t, \\sigma_t, \\mu_t} V^d \\{ s_t, \\tau_t, \\sigma_t, \\mu_t, \\Phi(s_{t+1}) \\} & \\quad (15) \\\\ \\text{s.t.",
       "population": null,
       "page_ref": "4.1 Equilibrium",
       "claim_type": "empirical",
@@ -2280,7 +2280,7 @@
       "source_rel_path": "external/lifetime/nber/razin_sadka_swagel_2011_migration_welfare_state_w15597.pdf",
       "corpus_sha": "sha_e761985b0f6b84d8",
       "parameter_name": "4_1_equilibrium_85",
-      "value_text": "} s_{t+1} = \\frac{(1+n)s_t + (1+m)\\sigma_t \\mu_t}{1+n+(1+m)\\mu_t}, & \\end{aligned}$$ where V d is the indirect utility function of the decisive voter d, and d \u2208 {s, u, o} is the identity of the largest voting group in the economy.",
+      "value_text": "} s_{t+1} = \\frac{(1+n)s_t + (1+m)\\sigma_t \\mu_t}{1+n+(1+m)\\mu_t}, & \\end{aligned}$$ where V d is the indirect utility function of the decisive voter d, and d ∈ {s, u, o} is the identity of the largest voting group in the economy.",
       "population": null,
       "page_ref": "4.1 Equilibrium",
       "claim_type": "empirical",
@@ -2511,7 +2511,7 @@
       "source_rel_path": "external/lifetime/nber/razin_wahba_2012_welfare_magnet_immigration_w17515.pdf",
       "corpus_sha": "sha_15b1f196f1207bc6",
       "parameter_name": "welfare_magnet_hypothesis_fiscal_burden_and_immi_2",
-      "value_text": "\u00a9 2011 by Assaf Razin and Jackline Wahba.",
+      "value_text": "© 2011 by Assaf Razin and Jackline Wahba.",
       "population": null,
       "page_ref": "WELFARE MAGNET HYPOTHESIS, FISCAL BURDEN AND IMMIGRATION SKILL SELECTIVITY",
       "claim_type": "empirical",
@@ -2808,7 +2808,7 @@
       "source_rel_path": "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
       "corpus_sha": "sha_c0bc44bdd41dad19",
       "parameter_name": "the_rise_and_fall_of_u_s_low_skilled_immigration_1",
-      "value_text": "\u00a9 2017 by Gordon Hanson, Chen Liu, and Craig McIntosh.",
+      "value_text": "© 2017 by Gordon Hanson, Chen Liu, and Craig McIntosh.",
       "population": null,
       "page_ref": "THE RISE AND FALL OF U.S. LOW-SKILLED IMMIGRATION",
       "claim_type": "empirical",
@@ -2885,7 +2885,7 @@
       "source_rel_path": "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
       "corpus_sha": "sha_c0bc44bdd41dad19",
       "parameter_name": "introduction_8",
-      "value_text": "During the 1990\u20132007 period, the number of working-age immigrants with 12 or fewer years of schooling more than doubled, rising from 8.5 million to 17.8 million.",
+      "value_text": "During the 1990–2007 period, the number of working-age immigrants with 12 or fewer years of schooling more than doubled, rising from 8.5 million to 17.8 million.",
       "population": null,
       "page_ref": "Introduction",
       "claim_type": "empirical",
@@ -2929,7 +2929,7 @@
       "source_rel_path": "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
       "corpus_sha": "sha_c0bc44bdd41dad19",
       "parameter_name": "introduction_32",
-      "value_text": "We estimate the model using earnings and employment data for the period 1976\u20132007 and then project relative earnings through 2015, using either actual labor supplies or labor supplies under counterfactual assumptions about low-skilled immigration.",
+      "value_text": "We estimate the model using earnings and employment data for the period 1976–2007 and then project relative earnings through 2015, using either actual labor supplies or labor supplies under counterfactual assumptions about low-skilled immigration.",
       "population": null,
       "page_ref": "Introduction",
       "claim_type": "empirical",
@@ -2951,7 +2951,7 @@
       "source_rel_path": "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
       "corpus_sha": "sha_c0bc44bdd41dad19",
       "parameter_name": "c_who_chooses_to_migrate_to_the_united_states_108",
-      "value_text": "We estimate the logit regressions used to predict whether an individual born in Mexico resides in the United States separately for men and women as a function of education (seven categories, based on years of schooling: 0\u20134, 5\u20138, 9, 10\u201311, 12, 13\u201315, 16+) and age (46 categories, one for each year in the range 18\u201364).",
+      "value_text": "We estimate the logit regressions used to predict whether an individual born in Mexico resides in the United States separately for men and women as a function of education (seven categories, based on years of schooling: 0–4, 5–8, 9, 10–11, 12, 13–15, 16+) and age (46 categories, one for each year in the range 18–64).",
       "population": null,
       "page_ref": "C. Who Chooses to Migrate to the United States?",
       "claim_type": "empirical",
@@ -3028,7 +3028,7 @@
       "source_rel_path": "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
       "corpus_sha": "sha_c0bc44bdd41dad19",
       "parameter_name": "a_income_differences_between_countries_153",
-      "value_text": "Given an estimate of the Gini coefficient , the standard deviation of log income is = \u221a2\u03a6\u22121([ + 1]\u20442).",
+      "value_text": "Given an estimate of the Gini coefficient , the standard deviation of log income is = √2Φ−1([ + 1]⁄2).",
       "population": null,
       "page_ref": "A. Income Differences between Countries",
       "claim_type": "empirical",
@@ -3094,7 +3094,7 @@
       "source_rel_path": "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
       "corpus_sha": "sha_c0bc44bdd41dad19",
       "parameter_name": "b_u_s_immigration_policy_227",
-      "value_text": "Using this elasticity, the increase in Border Patrol manpower on the U.S.\u2013 Mexico border from 2007 to 2015 of 27.6 percent would have increased smuggler prices by 13.6 percent.",
+      "value_text": "Using this elasticity, the increase in Border Patrol manpower on the U.S.– Mexico border from 2007 to 2015 of 27.6 percent would have increased smuggler prices by 13.6 percent.",
       "population": null,
       "page_ref": "B. U.S. Immigration Policy",
       "claim_type": "empirical",
@@ -3182,7 +3182,7 @@
       "source_rel_path": "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
       "corpus_sha": "sha_c0bc44bdd41dad19",
       "parameter_name": "a_a_predictive_analysis_of_future_migration_from_282",
-      "value_text": "First, we interact the country fixed effect with a dummy variable indicating the year 2000 and later $(\\delta_{2t})$ , then we interact the fixed effect with a 1980\u201390 trend $(t_1)$ , and finally with a second trend term picking up the high-enforcement 2000\u201315 time trend $(t_2)$ .",
+      "value_text": "First, we interact the country fixed effect with a dummy variable indicating the year 2000 and later $(\\delta_{2t})$ , then we interact the fixed effect with a 1980–90 trend $(t_1)$ , and finally with a second trend term picking up the high-enforcement 2000–15 time trend $(t_2)$ .",
       "population": null,
       "page_ref": "A. A Predictive Analysis of Future Migration from Latin America to the United St",
       "claim_type": "empirical",
@@ -3193,7 +3193,7 @@
       "source_rel_path": "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
       "corpus_sha": "sha_c0bc44bdd41dad19",
       "parameter_name": "a_a_predictive_analysis_of_future_migration_from_285",
-      "value_text": "In using a broad set of age cohorts (age 2\u201367), we partition the regression to estimate separate coefficients for the young (age 2\u201337) and the old (age 42\u201367), given the divergent migration trajectories of these two groups.",
+      "value_text": "In using a broad set of age cohorts (age 2–67), we partition the regression to estimate separate coefficients for the young (age 2–37) and the old (age 42–67), given the divergent migration trajectories of these two groups.",
       "population": null,
       "page_ref": "A. A Predictive Analysis of Future Migration from Latin America to the United St",
       "claim_type": "empirical",
@@ -3215,7 +3215,7 @@
       "source_rel_path": "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
       "corpus_sha": "sha_c0bc44bdd41dad19",
       "parameter_name": "b_changes_in_low_skilled_immigration_and_u_s_lab_304",
-      "value_text": "We estimate equation 6 with annual data from the CPS for the period 1963\u20132007, and we use the results to predict relative earnings for the period 1963\u20132015, which includes the out-of-sample range 2008\u201315.",
+      "value_text": "We estimate equation 6 with annual data from the CPS for the period 1963–2007, and we use the results to predict relative earnings for the period 1963–2015, which includes the out-of-sample range 2008–15.",
       "population": null,
       "page_ref": "B. Changes in Low-Skilled Immigration and U.S. Labor Market Tightness",
       "claim_type": "empirical",
@@ -3226,7 +3226,7 @@
       "source_rel_path": "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
       "corpus_sha": "sha_c0bc44bdd41dad19",
       "parameter_name": "b_changes_in_low_skilled_immigration_and_u_s_lab_305",
-      "value_text": "In our baseline specification for equation 8, which includes a time trend as the only additional covariate, the coefficient estimate for 1 is \u20130.42 (with a *t* value of 9.9) when we define the low-skilled group to be workers with a high school education or less; and it is \u20130.18 (with a *t* value of 8.0) when we define the low-skilled group to be workers with strictly less than a high school educat",
+      "value_text": "In our baseline specification for equation 8, which includes a time trend as the only additional covariate, the coefficient estimate for 1 is –0.42 (with a *t* value of 9.9) when we define the low-skilled group to be workers with a high school education or less; and it is –0.18 (with a *t* value of 8.0) when we define the low-skilled group to be workers with strictly less than a high school educat",
       "population": null,
       "page_ref": "B. Changes in Low-Skilled Immigration and U.S. Labor Market Tightness",
       "claim_type": "empirical",
@@ -3468,7 +3468,7 @@
       "source_rel_path": "external/lifetime/nber/borjas_1997_ethnicity_intergenerational_welfare_w6175.pdf",
       "corpus_sha": "sha_c3910a894c59e230",
       "parameter_name": "iv_ethnicity_and_the_incidence_of_welfare_receip_70",
-      "value_text": "For instance, the probit estimation of (7) omitting the ethnic variable yields: <sup>&</sup>lt;sup>16</sup> To convert the probit coefficients into units that estimate $\\partial p/\\partial x$ , the probit coefficient \u03b2 must be multiplied by $\\phi(x'\\beta)$ , where $\\phi$ is the density function for the standard normal.",
+      "value_text": "For instance, the probit estimation of (7) omitting the ethnic variable yields: <sup>&</sup>lt;sup>16</sup> To convert the probit coefficients into units that estimate $\\partial p/\\partial x$ , the probit coefficient β must be multiplied by $\\phi(x'\\beta)$ , where $\\phi$ is the density function for the standard normal.",
       "population": null,
       "page_ref": "IV. Ethnicity and the Incidence of Welfare Receipt",
       "claim_type": "empirical",
@@ -4099,7 +4099,7 @@
       "source_rel_path": "external/lifetime/nber/gould_2024_asylum_seekers_homelessness_w33655.pdf",
       "corpus_sha": "sha_73e2279cb366d94b",
       "parameter_name": "1_introduction_13",
-      "value_text": "This rise was concentrated in just four localities \u2013 New York City, Chicago, metropolitan Denver, and Massachusetts (primarily suburban Boston) \u2013 which together accounted for 75 percent of the national increase.",
+      "value_text": "This rise was concentrated in just four localities – New York City, Chicago, metropolitan Denver, and Massachusetts (primarily suburban Boston) – which together accounted for 75 percent of the national increase.",
       "population": null,
       "page_ref": "1. Introduction",
       "claim_type": "empirical",
@@ -4153,71 +4153,85 @@
   "generators": [
     {
       "id": "G-LIF-S01",
+      "name": "Restrictionist claim {ledger,cell,cohort,layer} extractor",
       "prompt": "Extract {ledger, cell, cohort, layer} from each restrictionist claim before verdict",
       "negative_space": "Restrictionist scalar applied to all immigrants"
     },
     {
       "id": "G-LIF-S02",
+      "name": "BGH subgroup-row requirement for distributional-harm claims",
       "prompt": "Require BGH-style subgroup rows before accepting distributional harm claims from NAS education averages",
       "negative_space": "Black/low-skill native harm inferred from <HS immigrant NPV only"
     },
     {
       "id": "G-LIF-S03",
-      "prompt": "FAIR vs ITEP vs Pew stock table \u2014 block advocacy ledger without reconciliation",
+      "name": "FAIR / ITEP / Pew advocacy-ledger reconciler",
+      "prompt": "FAIR vs ITEP vs Pew stock table — block advocacy ledger without reconciliation",
       "negative_space": "FAIR $150B as peer-reviewed fact"
     },
     {
       "id": "G-LIF-S04",
-      "prompt": "Gould episodic shelter $ vs NAS lifetime for same surge year \u2014 which \u2113 dominates local politics?",
+      "name": "Episodic shelter vs lifetime NPV dominance (Gould)",
+      "prompt": "Gould episodic shelter $ vs NAS lifetime for same surge year — which ℓ dominates local politics?",
       "negative_space": "Lifetime NAS settles NYC shelter debate"
     },
     {
       "id": "G-LIF-S05",
+      "name": "Razin benefit-eligibility fiscal-sign simulator",
       "prompt": "Razin: simulate benefit eligibility change on fiscal sign of same ACS cell",
       "negative_space": "Immigrant fiscal type invariant to welfare policy"
     },
     {
       "id": "G-LIF-S06",
-      "prompt": "National education\u00d7experience cell required before Card citation",
+      "name": "Education×experience cell gate before Card citation",
+      "prompt": "National education×experience cell required before Card citation",
       "negative_space": "Spatial null as sufficient statistic"
     },
     {
       "id": "G-LIF-S07",
+      "name": "Wage-impact weekly / annual / weeks-worked decomposition",
       "prompt": "Decompose wage impact into weekly / annual / weeks worked",
       "negative_space": "Wage-only labor harm"
     },
     {
       "id": "G-LIF-S08",
+      "name": "Native-migration offset for local wage studies",
       "prompt": "Estimate native migration offset for local wage studies",
       "negative_space": "MSA coefficient = structural elasticity"
     },
     {
       "id": "G-LIF-S09",
+      "name": "Triple-margin {wage, employment, incarceration} subgroup check",
       "prompt": "Triple margin {wage, employment, incarceration} for subgroup claims",
       "negative_space": "NAS education average as distributional harm"
     },
     {
       "id": "G-LIF-S10",
+      "name": "HUD PIT sheltered-asylum decomposition",
       "prompt": "HUD PIT decomposition sheltered-asylum vs other vs unsheltered",
       "negative_space": "Homelessness = affordability only"
     },
     {
       "id": "G-LIF-S11",
+      "name": "Orrenius dual-scenario + federal/state split",
       "prompt": "Orrenius dual-scenario + federal/state split mandatory",
       "negative_space": "Single NAS table cell as politics"
     },
     {
       "id": "G-LIF-S12",
-      "prompt": "Razin {\u03c4, \u03bc, \u03c3} shock on fixed ACS fiscal cell",
+      "name": "Razin {τ, μ, σ} shock on fixed ACS cell",
+      "prompt": "Razin {τ, μ, σ} shock on fixed ACS fiscal cell",
       "negative_space": "Static NAS invariant to policy"
     },
     {
       "id": "G-LIF-S13",
+      "name": "Welfare-magnet mobility-regime tag",
       "prompt": "Welfare-magnet claims require mobility-regime tag",
-      "negative_space": "EUR free-movement evidence \u2192 US policy"
+      "negative_space": "EUR free-movement evidence → US policy"
     },
     {
       "id": "G-LIF-S14",
+      "name": "Hanson secular-supply + Pew stock before influx rhetoric",
       "prompt": "Hanson secular supply + Pew stock before influx rhetoric",
       "negative_space": "Encounters = permanent residents"
     }
@@ -4287,7 +4301,7 @@
     },
     {
       "id": "N-S03",
-      "arc": "Shelter spike \u2260 affordability only",
+      "arc": "Shelter spike ≠ affordability only",
       "papers": [
         "w33655"
       ]
@@ -4309,7 +4323,7 @@
     },
     {
       "id": "N-S06",
-      "arc": "Low-skill wave peaked \u2014 prepare for decline",
+      "arc": "Low-skill wave peaked — prepare for decline",
       "papers": [
         "w23753"
       ]

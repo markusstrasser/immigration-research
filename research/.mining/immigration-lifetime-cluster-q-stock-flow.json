@@ -130,7 +130,10 @@
       "claim_id": "Q-012",
       "source_rel_path": "Passel methodology / Warren CMS",
       "parameter_name": "unauthorized_survey_omission_band",
-      "value_range": [0.05, 0.13],
+      "value_range": [
+        0.05,
+        0.13
+      ],
       "unit": "fraction undercount",
       "population": "unauthorized immigrants in ACS/CPS",
       "unnamed_assumption": true,
@@ -152,30 +155,35 @@
   "generators": [
     {
       "id": "G-LIF-Q01",
+      "name": "Encounter-event vs unique-person stock separator",
       "prompt": "Before any fiscal per-capita from border data: separate CBP encounter events, IDENT unique subjects, gotaways, and Pew/CIS unauthorized stock. Flag when flow denominators hit stock numerators.",
       "retrodiction": "Would have blocked '10M illegals since Biden' → lifetime NPV without dedupe and outflow ledger.",
       "negative_space": "Encounter count treated as net new US residents"
     },
     {
       "id": "G-LIF-Q02",
+      "name": "Gotaway net-stock sensitivity",
       "prompt": "Gotaway sensitivity: add detected gotaways to stock only after subtracting (a) repeat crossers, (b) later apprehensions, (c) voluntary departure/deportation. Never sum gotaways + encounters + Pew stock.",
       "retrodiction": "Would have prevented double-counting ~2M gotaways on top of 14M Pew stock.",
       "negative_space": "Gotaways as permanent additive residents"
     },
     {
       "id": "G-LIF-Q03",
+      "name": "POBP → legal-status subcount mapper",
       "prompt": "For origin-specific fiscal cells: map ACS birthplace (POBP) → legal-status subcounts (Pew residual by origin) before labeling 'illegal Mexican' fiscal impact.",
       "retrodiction": "Would have separated 8.5M Mexico-born adults from 4.3M Mexico-unauthorized stock.",
       "negative_space": "Birthplace origin_label equals unauthorized pool"
     },
     {
       "id": "G-LIF-Q04",
+      "name": "NAS scalar → education-bucket share gate",
       "prompt": "Any population-weighted NAS NPV scalar must ship with education-bucket share table and bucket-level NPV; report median-proxy cell (<HS) alongside mean.",
       "retrodiction": "Would have blocked '+$46k per Mexican' headline without 47% <HS at -$109k disclosure.",
       "negative_space": "Single lifetime scalar for heterogeneous education mix"
     },
     {
       "id": "G-LIF-Q05",
+      "name": "Unauthorized stock band (Pew 14M vs CIS 15.8M)",
       "prompt": "Stock band sensitivity: run Mexico fiscal objects under Pew 14M vs CIS 15.8M unauthorized national totals; apply origin-specific Mexico share (~30%) only to unauthorized-layer lines, not NAS education-mix rows.",
       "retrodiction": "Would have bounded undercount debate to ~1-2M national band instead of +10M.",
       "negative_space": "One unauthorized count from advocacy source applied to all layers"
