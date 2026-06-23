@@ -5,7 +5,7 @@
 #   ./reproduce.sh doctor            # deps + resolved paths
 #   ./reproduce.sh download [tier]    # minimal | standard (default) | full
 #   ./reproduce.sh verify [tier]      # required | optional | all | derived
-#   ./reproduce.sh build [target]     # context | mvp | lifetime | all
+#   ./reproduce.sh build [target]     # context | mvp | lifetime | unified | all
 #   ./reproduce.sh all [tier]         # download + verify required + build all
 #   ./reproduce.sh query [filter]    # headline SQL (all | context | union | life)
 set -euo pipefail
@@ -24,7 +24,7 @@ Commands:
   doctor               Check tools and print resolved paths
   download [tier]      minimal (~2GB) | standard (~50GB attempts) | full (+tier-a, causal)
   verify [tier]        required (default) | optional | all | derived
-  build [target]       context | mvp | lifetime | all (default)
+  build [target]       context | mvp | lifetime | unified | all (default)
   query [filter]         Run headline SQL (all | context | union | life)
   all [tier]           download + verify required + build all
   smoke                minimal pipeline smoke test
@@ -106,15 +106,17 @@ _cmd_build() {
     local target="${1:-all}"
     immigration_fiscal_load_config
     export PNY_DATA_ROOT DERIVED_ROOT DUCKDB_PATH CORPUS_ROOT
-    export LIFETIME_DUCKDB_PATH FISCAL_UNION_DUCKDB_PATH IMMIGRATION_CAUSAL_DATA
+    export LIFETIME_DUCKDB_PATH FISCAL_UNION_DUCKDB_PATH IMMIGRATION_CAUSAL_DATA UNIFIED_DUCKDB_PATH
     case "$target" in
         context) bash "$ROOT/rebuild.sh" ;;
         mvp) bash "$ROOT/rebuild_mvp.sh" ;;
         lifetime) bash "$ROOT/rebuild_lifetime_warehouse.sh" ;;
+        unified) uv run --with duckdb python "$ROOT/build/build_unified_warehouse.py" ;;
         all)
             bash "$ROOT/rebuild.sh"
             bash "$ROOT/rebuild_mvp.sh"
             bash "$ROOT/rebuild_lifetime_warehouse.sh"
+            uv run --with duckdb python "$ROOT/build/build_unified_warehouse.py"
             ;;
         *) echo "unknown build target: $target" >&2; exit 2 ;;
     esac
