@@ -47,3 +47,12 @@ def unified_duckdb_path() -> Path:
     if v := os.environ.get("UNIFIED_DUCKDB_PATH"):
         return Path(v)
     return _WAREHOUSE / "immigration.duckdb"
+
+
+def microdata_duckdb_path() -> Path:
+    """Local-only raw microdata (IPUMS PUMS etc.). NOT redistributable — never part of the
+    unified release; isolated from the aggregate warehouses for size + licensing.
+    Defaults to the (large, SSD-backed) derived root, not the repo warehouse/ on the main disk."""
+    if v := os.environ.get("MICRODATA_DUCKDB_PATH"):
+        return Path(v)
+    return derived_root() / "immigration_microdata.duckdb"

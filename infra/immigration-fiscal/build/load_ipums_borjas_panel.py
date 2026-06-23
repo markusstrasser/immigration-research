@@ -3,14 +3,20 @@
 
 Source extract (built manually at usa.ipums.org, logged-in session, 2026-06-23):
   Samples : 1980 5% + 1990 5% + 2000 5% census + 2010 ACS + 2023 ACS
-  Vars    : YEAR SAMPLE SERIAL PERWT GQ STATEFIP AGE EDUC(+EDUCD) RACE(+RACED)
-            EMPSTAT(+EMPSTATD) WKSWORK1 INCTOT  (+ IPUMS technical preselected)
+  Vars    : YEAR SAMPLE SERIAL PERWT GQ STATEFIP AGE NATIVITY BPL(+BPLD)
+            CITIZEN YRIMMIG EDUC(+EDUCD) RACE(+RACED) EMPSTAT(+EMPSTATD)
+            WKSWORK1 INCTOT  (+ IPUMS technical preselected)
+            NATIVITY is required by build_tier_a_context_panels.py (foreign-born flag
+            for immigrant_share); BPL/CITIZEN/YRIMMIG add origin/status/arrival-cohort.
   Format  : CSV (.csv.gz), rectangular person
 
 Lands the raw person-level panel as `ipums_usa_borjas_panel` in
-immigration_context.duckdb. The education x experience x year cell aggregation
-(refreshing borjas_supply_shock_cell / bgh_outcomes_cell off real decennial data
-instead of the ACS-2023 proxy) is a downstream analytic step, not this loader.
+immigration_microdata.duckdb — a LOCAL-ONLY warehouse. IPUMS microdata is
+license-restricted and MUST NOT be redistributed, so it is kept out of the
+aggregate warehouses and the unified release; the education x experience x year
+cell aggregation (refreshing borjas_supply_shock_cell / bgh_outcomes_cell off
+real decennial data instead of the ACS-2023 proxy) reads from here and writes
+the (redistributable) aggregate cells into the context warehouse.
 
 Skips gracefully if the extract has not been downloaded yet.
 
@@ -20,7 +26,7 @@ from __future__ import annotations
 
 import sys
 
-from paths import data_root, duckdb_path
+from paths import data_root, microdata_duckdb_path
 
 TABLE = "ipums_usa_borjas_panel"
 # IPUMS writes usa_NNNNN.csv.gz; accept either the gz or expanded csv, any extract number.
@@ -51,10 +57,8 @@ def build() -> None:
               "(download usa_*.csv.gz from usa.ipums.org first)")
         return
 
-    db = duckdb_path()
-    if not db.exists():
-        sys.exit(f"missing context warehouse {db} — run reproduce.sh build context first")
-
+    db = microdata_duckdb_path()
+    db.parent.mkdir(parents=True, exist_ok=True)
     con = duckdb.connect(str(db))
     con.execute(
         f'CREATE OR REPLACE TABLE {TABLE} AS '
