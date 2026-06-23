@@ -110,8 +110,10 @@ Derived aggregates over **public US-government sources** — Census ACS/CPS PUMS
 CDC, HUD (CHAS/SAFMR/PIT), IRS SOI migration, CMS Medicaid, USDA SNAP, OMB, BEA,
 SAIPE, EOIR, OHSS — plus published NPV benchmarks (NAS/NRC, Storesletten,
 Orrenius). Inputs are public-domain or public-use; this compilation is shareable.
-No application-gated microdata (PSID, IRS SOI PUF, Synthetic SIPP, FSRDC LEHD) is
-included. Full catalog + quirks: `research/immigration-dataset-register.md`.
+No license-restricted or application-gated microdata is included — IPUMS PUMS
+(not redistributable; held local-only in `immigration_microdata.duckdb`), PSID,
+IRS SOI PUF, Synthetic SIPP, FSRDC LEHD. Only derived aggregates ship here.
+Full catalog + quirks: `research/immigration-dataset-register.md`.
 
 ## Reproduce from scratch
 
