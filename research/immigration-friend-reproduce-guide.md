@@ -10,11 +10,27 @@
 
 This is **not** one scalar answer (“immigration is good/bad”). It is:
 
-1. A **warehouse** of ACS/CPS/SIPP-linked panels (`immigration_context.duckdb`)
-2. A **fiscal union** with education-matched federal proxy + lifetime NPV bridges (`immigration_fiscal_union.duckdb`)
+1. A **single warehouse** `immigration.duckdb` — all the cleaned/joined panels in one file, schema-namespaced (`context` / `lifetime` / `fiscal`), with a self-describing `_catalog`. (Built by merging the three per-domain warehouses below.)
+2. The per-domain inputs: `immigration_context.duckdb` (ACS/CPS/SIPP panels), `immigration_lifetime_evidence.duckdb` (NPV/lifetime), `immigration_fiscal_union.duckdb` (tensor + cross-domain views)
 3. A **memo stack** in `research/immigration-*` with explicit confidence tiers and supersession notes
 
 Read `notes/llm-bias-caveat.md` before treating any synthesis as neutral.
+
+## 1a. Fastest path — download the data (no 50 GB rebuild)
+
+If you just want to query the data, grab the packaged release instead of running the
+acquisition pipeline:
+
+```bash
+# from a GitHub Release (if published): immigration-data-v<date>.tar.gz (~15 MB)
+tar xzf immigration-data-v*.tar.gz && cd immigration-data-v*
+shasum -a 256 -c SHA256SUMS                                  # verify integrity
+duckdb immigration.duckdb "SELECT * FROM _catalog ORDER BY n_rows DESC"
+```
+
+The tarball carries `immigration.duckdb`, per-table Parquet, `DATA_DICTIONARY.md`, the
+query pack, and checksums. Maintainer stages it with `reproduce.sh package`. Rebuild from
+source only if you need to re-derive or extend the panels (§2).
 
 ---
 
@@ -23,8 +39,8 @@ Read `notes/llm-bias-caveat.md` before treating any synthesis as neutral.
 **Requirements:** macOS/Linux, `bash`, `curl`, `unzip`, [uv](https://docs.astral.sh/uv/), ~50 GB disk for full stack (~2 GB for minimal).
 
 ```bash
-git clone git@github.com:markusstrasser/research.git
-cd research
+git clone git@github.com:markusstrasser/immigration-research.git
+cd immigration-research
 
 ./scripts/reproduce-immigration-data.sh init
 ./scripts/reproduce-immigration-data.sh doctor
@@ -41,10 +57,14 @@ uv run --with playwright python -m playwright install chromium
 
 | Artifact | Path |
 |----------|------|
+| **Unified warehouse (query this)** | `warehouse/immigration.duckdb` |
 | Core warehouse | `warehouse/immigration_context.duckdb` |
 | Lifetime evidence | `warehouse/immigration_lifetime_evidence.duckdb` |
 | Fiscal union (tensor + views) | `warehouse/immigration_fiscal_union.duckdb` |
 | Raw data | `$PNY_DATA_ROOT` (default `~/research-data/immigration-fiscal/data`) |
+
+`build all` ends by producing `immigration.duckdb`; rebuild just that with
+`./scripts/reproduce-immigration-data.sh build unified` (or `infra/.../reproduce.sh build unified`).
 
 Paths are in `infra/immigration-fiscal/acquire/config.local.env` (gitignored).
 
