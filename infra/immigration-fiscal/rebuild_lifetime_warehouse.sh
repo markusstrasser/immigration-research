@@ -21,6 +21,7 @@ uv run --with duckdb,pandas,openpyxl python "$ROOT/build/mine_restrictionist_ful
 bash "$ROOT/acquire/setup-restrictionist-panels.sh"
 bash "$ROOT/acquire/setup-tier-a-labor-demography.sh"
 uv run --with duckdb,pandas,openpyxl python "$ROOT/build/build_lifetime_evidence_warehouse.py"
+uv run --with duckdb,pandas python "$ROOT/build/build_source_incentive_grades.py"
 uv run --with duckdb,pandas python "$ROOT/build/load_tier_a_context_panels.py"
 if [[ -f "$DUCKDB_PATH" ]]; then
     uv run --with duckdb,pandas,openpyxl python "$ROOT/build/build_country_fiscal_tensor.py"

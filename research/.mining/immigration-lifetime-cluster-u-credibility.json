@@ -1,0 +1,28 @@
+{
+  "cluster": "U_source_incentive_meta",
+  "note": "Meta-epistemic lenses correcting for the source-incentive + media-selection bias the operator flagged 2026-06-23 (economists left-lean + single-channel overreach → journalist selection → LLM pretraining). SYMMETRIC by construction: down-weights advocacy confirming its own prior on BOTH sides, up-weights against-interest findings on both sides. A version that only validated one prior would be the bias it audits. Applied pass: build_source_incentive_grades.py → source_incentive_grades; memo immigration-source-incentive-regrade-2026-06-23.md.",
+  "generators": [
+    {
+      "id": "G-LIF-U01",
+      "name": "Source-incentive / against-interest credibility audit",
+      "prompt": "For every source backing a claim, tag {outlet_type, prior_lean, finding_direction}. Set against_interest = the finding cuts OPPOSITE to the source's own prior (restrictionist source → benefit finding; expansionist source → cost finding). Re-weight: govt-nonpartisan (CBO/Census/NAS/SSA) = high baseline; academic = mid; advocacy = low, and ×1.5 if against-interest, ×0.7 if advocacy confirming its own prior. Re-rank claims by incentive-adjusted credibility, NEVER by citation count or media prominence (which inherit the selection bias). The rule MUST down-weight your own side's advocacy too, or it is not the audit — it is the bias.",
+      "retrodiction": "Would have shown the 'immigrants are net contributors' headline leans on with-interest expansionist advocacy (ITEP/CAP/Cato) that this rule deflates — AND symmetrically that FAIR/CIS high-cost numbers are with-interest restrictionist advocacy it also deflates; while the claims that SURVIVE are the against-interest ones (Borjas deriving a positive aggregate surplus; NAS, the establishment panel, publishing the <HS lifetime cost) plus the nonpartisan baselines (CBO federal, Census stock).",
+      "negative_space": "Claims are weighted by citation count / media prominence, which directly inherit the left-skewed selection of which findings get written up; the source's incentive structure is unmodeled.",
+      "unnamed_assumptions_surfaced": ["Citation count / prominence ≈ credibility", "A finding's credibility is independent of whether it flatters its author's prior", "My own side's advocacy is exempt from down-weighting"],
+      "topics": ["source_incentive", "against_interest", "media_selection", "meta_epistemic"],
+      "source_rel_paths": [],
+      "theory_tested": "source_incentive_grades.adj_weight should NOT correlate with finding_direction (a symmetric rule deflates advocacy on both sides equally); if cost-side sources score systematically higher, the rule was mis-tuned toward a prior."
+    },
+    {
+      "id": "G-LIF-U02",
+      "name": "Media-selection vs primary-table gap",
+      "prompt": "For any claim sourced to a news/secondary write-up, locate the PRIMARY table (NAS panel page, CBO appendix, the regression table) and check whether the headline preserved the sign, the cell, and the caveats. Tag the gap. Prefer the primary number; treat the journalist framing as a selection signal, not evidence.",
+      "retrodiction": "Would have caught that the NAS <HS lifetime-cost table and the CBO state-local cost rows exist in the primary documents but are systematically under-reported in secondary coverage relative to the 'immigrants grow GDP' framing — the gap is selection, not the absence of the finding.",
+      "negative_space": "Secondary coverage is treated as a faithful summary of the primary source; the selection/flattening step is invisible.",
+      "unnamed_assumptions_surfaced": ["The write-up preserves the primary finding's sign and caveats", "Absence in coverage = absence in evidence"],
+      "topics": ["media_selection", "primary_source", "meta_epistemic"],
+      "source_rel_paths": ["external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf"],
+      "theory_tested": "Primary NAS/CBO cost cells exist in the corpus PDFs even where secondary framing emphasizes aggregate benefit."
+    }
+  ]
+}
