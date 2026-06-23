@@ -3,11 +3,14 @@
 
 Source extract (built manually at usa.ipums.org, logged-in session, 2026-06-23):
   Samples : 1980 5% + 1990 5% + 2000 5% census + 2010 ACS + 2023 ACS
-  Vars    : YEAR SAMPLE SERIAL PERWT GQ STATEFIP AGE NATIVITY BPL(+BPLD)
-            CITIZEN YRIMMIG EDUC(+EDUCD) RACE(+RACED) EMPSTAT(+EMPSTATD)
-            WKSWORK1 INCTOT  (+ IPUMS technical preselected)
-            NATIVITY is required by build_tier_a_context_panels.py (foreign-born flag
-            for immigrant_share); BPL/CITIZEN/YRIMMIG add origin/status/arrival-cohort.
+  Vars    : YEAR SAMPLE SERIAL PERWT GQ STATEFIP AGE BPL(+BPLD) CITIZEN YRIMMIG
+            EDUC(+EDUCD) RACE(+RACED) EMPSTAT(+EMPSTATD) WKSWORK1 INCTOT
+            (+ IPUMS technical preselected)
+            FOREIGN-BORN = BPL >= 150 (foreign country). NATIVITY was requested but did
+            not materialize in the extract; BPL is the canonical source anyway (NATIVITY
+            derives from it). Validated: FB share 6.7%(1980)->15.4%(2023), low-educ cells
+            50-80% FB — matches the Census series. The cell rebuild
+            (borjas_supply_shock_cell off real decennial data) should use BPL>=150.
   Format  : CSV (.csv.gz), rectangular person
 
 Lands the raw person-level panel as `ipums_usa_borjas_panel` in
