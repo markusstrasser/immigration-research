@@ -8,6 +8,9 @@
 # Derived/regenerable agent artifacts (generators live in agent-infra)
 artifacts/
 
+# Staged data releases (regenerate: reproduce.sh package — generator is tracked)
+dist/
+
 # Python
 __pycache__/
 *.pyc

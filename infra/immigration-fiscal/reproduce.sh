@@ -27,6 +27,7 @@ Commands:
   build [target]       context | mvp | lifetime | unified | all (default)
   query [filter]         Run headline SQL (all | context | union | life)
   all [tier]           download + verify required + build all
+  package [version]    Stage downloadable release from unified DB (dist/, default version=today)
   smoke                minimal pipeline smoke test
 
 Tiers:
@@ -150,6 +151,13 @@ _cmd_all() {
     _cmd_build all
 }
 
+_cmd_package() {
+    # Stage a downloadable release (duckdb + parquet + dict + queries + checksums) from the unified DB.
+    immigration_fiscal_load_config
+    export UNIFIED_DUCKDB_PATH
+    uv run --with duckdb python "$ROOT/build/package_data_release.py" "${1:-}"
+}
+
 main() {
     immigration_fiscal_load_config
     local cmd="${1:-}"
@@ -162,6 +170,7 @@ main() {
         build) _cmd_build "${1:-all}" ;;
         query) _cmd_query "${1:-all}" ;;
         all) _cmd_all "${1:-standard}" ;;
+        package) _cmd_package "${1:-}" ;;
         smoke) _cmd_smoke ;;
         ""|-h|--help) _usage ;;
         *) echo "unknown command: $cmd" >&2; _usage; exit 2 ;;
