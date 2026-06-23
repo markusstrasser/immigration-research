@@ -108,7 +108,10 @@
       "claim_id": "R-010",
       "source_rel_path": "immigration-mexico-npv-population-synthesis-2026-06-15.md",
       "parameter_name": "mexico_stacked_npv_band_after_missing_layers",
-      "value_range": [-37000, 28000],
+      "value_range": [
+        -37000,
+        28000
+      ],
       "unit": "USD per adult NPV equiv",
       "population": "mexico_origin illustrative stack",
       "unnamed_assumption": true,
@@ -119,30 +122,35 @@
   "generators": [
     {
       "id": "G-LIF-R01",
+      "name": "Full ledger enumeration before NAS scalar",
       "prompt": "Before citing any NAS NPV scalar: list {in: federal, state/local in cell, descendants, public goods, enforcement, courts, episodic shelter}. Block net-contributor language until missing ℓ tagged.",
       "retrodiction": "Would have blocked +$46k Mexico headline without descendants excluded and ICE/EOIR absent.",
       "negative_space": "NAS individual NPV treated as all-government lifetime net"
     },
     {
       "id": "G-LIF-R02",
+      "name": "NAS cell × school-burden double-count check",
       "prompt": "Cross-check NAS individual cell vs school_burden_per_adult for double-count. Individual=no descendants → add current-HH school layer separately.",
       "retrodiction": "Would have separated NAS path from $771/yr school before merging.",
       "negative_space": "Subtract school on NAS without descendant booking check"
     },
     {
       "id": "G-LIF-R03",
+      "name": "Enforcement allocation-rule tagger (marginal vs fixed)",
       "prompt": "Allocate CBP+ICE via explicit rule: per encounter, per bed-day, per unauthorized stock, or fixed national. Tag fixed vs marginal.",
       "retrodiction": "Would have flagged ~$2.1k/yr enforcement missing from lifetime NPV.",
       "negative_space": "Full agency budget per average immigrant"
     },
     {
       "id": "G-LIF-R04",
+      "name": "EOIR case-load × nationality cost join",
       "prompt": "Join EOIR case load × nationality to origin cells; $/case for asylum backlog cohorts. Separate from NAS criminal justice.",
       "retrodiction": "Would have surfaced staged EOIR with no Mexico rollup.",
       "negative_space": "Court costs zero or inside NAS cell"
     },
     {
       "id": "G-LIF-R05",
+      "name": "Full fiscal-stack vector export (never scalar)",
       "prompt": "Export v_full_fiscal_stack: columns per ℓ + overlap matrix. Headline = vector never scalar.",
       "retrodiction": "Would have required three-layer + lifetime + admin before Mexico net thesis.",
       "negative_space": "Single number politics"
