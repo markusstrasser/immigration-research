@@ -5,7 +5,7 @@
 #   ./reproduce.sh doctor            # deps + resolved paths
 #   ./reproduce.sh download [tier]    # minimal | standard (default) | full
 #   ./reproduce.sh verify [tier]      # required | optional | all | derived
-#   ./reproduce.sh build [target]     # context | mvp | lifetime | unified | all
+#   ./reproduce.sh build [target]     # context | mvp | lifetime | ipums | unified | all
 #   ./reproduce.sh all [tier]         # download + verify required + build all
 #   ./reproduce.sh query [filter]    # headline SQL (all | context | union | life)
 set -euo pipefail
@@ -24,7 +24,7 @@ Commands:
   doctor               Check tools and print resolved paths
   download [tier]      minimal (~2GB) | standard (~50GB attempts) | full (+tier-a, causal)
   verify [tier]        required (default) | optional | all | derived
-  build [target]       context | mvp | lifetime | unified | all (default)
+  build [target]       context | mvp | lifetime | ipums | unified | all (default)
   query [filter]         Run headline SQL (all | context | union | life)
   all [tier]           download + verify required + build all
   package [version]    Stage downloadable release from unified DB (dist/, default version=today)
@@ -112,9 +112,16 @@ _cmd_build() {
         context) bash "$ROOT/rebuild.sh" ;;
         mvp) bash "$ROOT/rebuild_mvp.sh" ;;
         lifetime) bash "$ROOT/rebuild_lifetime_warehouse.sh" ;;
+        ipums)
+            # IPUMS Borjas supply-shock panel (skips gracefully without the manual extract)
+            uv run --with duckdb python "$ROOT/build/load_ipums_borjas_panel.py"
+            uv run --with duckdb python "$ROOT/build/build_borjas_supply_shock_panel.py"
+            ;;
         unified) uv run --with duckdb python "$ROOT/build/build_unified_warehouse.py" ;;
         all)
             bash "$ROOT/rebuild.sh"
+            uv run --with duckdb python "$ROOT/build/load_ipums_borjas_panel.py"
+            uv run --with duckdb python "$ROOT/build/build_borjas_supply_shock_panel.py"
             bash "$ROOT/rebuild_mvp.sh"
             bash "$ROOT/rebuild_lifetime_warehouse.sh"
             uv run --with duckdb python "$ROOT/build/build_unified_warehouse.py"
