@@ -23,7 +23,10 @@ See `REPRODUCE.md` for tiers, verify modes, and manual-acquire list.
 
 | Path | Role |
 |------|------|
-| `reproduce.sh` | **One-command** init / download / verify / build |
+| `reproduce.sh` | **One-command** init / download / verify / build / **package** |
+| `build/build_unified_warehouse.py` | **Single portable `immigration.duckdb`** — merges context+lifetime+fiscal, schema-namespaced, self-describing `_catalog` (`reproduce.sh build unified`) |
+| `build/package_data_release.py` | **Downloadable release** — duckdb + parquet + dict + checksums → `dist/` (`reproduce.sh package`) |
+| `build/emit_data_dictionary.py` | Markdown data dictionary from the unified DB |
 | `acquire/setup.sh` | Main acquisition (~80 URLs) |
 | `acquire/setup-net-negative.sh` | Stage-5 fiscal/local-cost datasets |
 | `acquire/setup-lifetime.sh` | Lifetime benchmarks + linkage docs (NAS/NRC/Orrenius/Storesletten) |

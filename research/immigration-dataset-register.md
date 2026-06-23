@@ -172,7 +172,7 @@ These categories are high-risk for bad inference:
 If the question is:
 
 1. `What do we have locally?` Start with `sources/immigration-fiscal/data/MANIFEST.md`, then this file.
-2. `Can we run a state/origin query now?` Start with `warehouse/immigration_context.duckdb` (or `sources/immigration-fiscal/data/derived/` symlink).
+2. `Can we run a state/origin query now?` Start with the unified **`warehouse/immigration.duckdb`** (one file: all context+lifetime+fiscal tables; `SELECT * FROM _catalog` for the inventory). The per-domain warehouses (`immigration_context.duckdb` etc.) still build as inputs. Rebuild the unified file with `reproduce.sh build unified`.
 3. `Can we build our own lifetime model?` Start with `research/immigration-lifetime-fiscal-data-stack-2026-04-10.md`.
 4. `What was actually acquired?` Start with `research/immigration-public-data-acquisition-2026-04-11.md` and `research/immigration-frontier-data-acquisition-2026-04-11.md`.
 5. `What school-side district layer now exists?` Start with `research/immigration-school-service-complexity-2026-04-11.md`.

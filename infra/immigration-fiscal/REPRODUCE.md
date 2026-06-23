@@ -15,8 +15,15 @@ Or from `infra/immigration-fiscal/`:
 ./reproduce.sh doctor
 ./reproduce.sh download standard
 ./reproduce.sh verify required
-./reproduce.sh build all
+./reproduce.sh build all          # context + mvp + lifetime + unified
+./reproduce.sh package            # stage downloadable release in dist/
 ```
+
+`build all` ends by merging the three warehouses into a single portable
+`warehouse/immigration.duckdb` (schema-namespaced `context`/`lifetime`/`fiscal`,
+self-describing `_catalog`). `build unified` rebuilds just that file.
+`package` bundles it (duckdb + parquet + data dictionary + query pack +
+checksums) into `dist/immigration-data-v<date>/`.
 
 ## Why scripts live in `infra/`
 
