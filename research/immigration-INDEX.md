@@ -40,6 +40,7 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 |------|-------|----------------|
 | `immigration-lifetime-fiscal-data-stack-2026-04-10.md` | Minimum viable and gold-standard lifetime model stack | Saying ACS alone is enough |
 | `immigration-country-fiscal-tensor-2026-06-15.md` | **Built** country fiscal tensor + rollup anchors (union DuckDB) | Querying population × layer × order |
+| `immigration-borjas-supply-shock-panel-2026-06-23.md` | **Built** real 1980–2023 immigrant-share-by-skill panel from IPUMS census/ACS (`borjas_supply_shock_panel`); <HS share 9.8%→40.8% | Citing the supply-shock *quantity*; do NOT read it as a wage verdict (that's the Card-vs-Borjas debate) |
 | `immigration-federal-distribution-findings-2026-06-15.md` | Distribution pass — school units, federal proxy white vs Mexico | “Do whites pay multiples?” |
 | `immigration-europe-caucasian-fiscal-findings-2026-06-15.md` | **EU27 / UK / Caucasian natives / low-skill corridors** — federal proxy + matched-education | “European immigrants vs white Americans”; corridor A vs B |
 | `immigration-school-burden-per-adult-2026-06-15.md` | **per_pupil × kids/adult** — three-layer annual (`v_three_layer_annual`) | “Did you multiply child burden?” |
