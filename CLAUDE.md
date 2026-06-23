@@ -1,7 +1,7 @@
 # Research — Getting to the Truth
 
 ## Purpose
-This repo pursues empirical questions with the rigor of investigative scholarship. Topics vary (currently IQ sex differences) but the methodology is constant: primary sources, competing interpretations, falsifiable claims, honest uncertainty.
+This repo pursues empirical questions with the rigor of investigative scholarship. The current topic is the **fiscal and crime impact of immigration**; the methodology is constant: primary sources, competing interpretations, falsifiable claims, honest uncertainty. (Split 2026-06-23 from the former combined `research` repo — IQ sex differences moved to `~/Projects/iq-sex-differences`, one-off notes to `~/Projects/research-misc`.)
 
 ## Constitution
 
@@ -116,12 +116,11 @@ Each topic has a file prefix and its own index. Read the relevant topic index wh
 
 | Topic | Prefix | Index | Files |
 |-------|--------|-------|-------|
-| IQ sex differences | `iq-sex-differences-*` | `research/iq-sex-differences-INDEX.md` | 118 |
 | Immigration (fiscal/crime) | `immigration-*` | `research/immigration-INDEX.md` | 88 |
 
 New topics: create `research/<topic>-INDEX.md`, add a row here, use `<topic>-*` prefix for all files.
 
-**Unprefixed files:** Some older files (`jre-2460-*`, `review-1*`, `fiscal-impact-*`, `full-spectrum-costs-*`, `zion/`) predate the prefix rule. When touching them, migrate to the right topic prefix; don't create new unprefixed files.
+**Unprefixed files:** Some older immigration files (`jre-2460-*`, `fiscal-impact-*`, `full-spectrum-costs-*`, `path-to-minus-200k-scenario-audit.md`, `state-local-cost-examples-ny-ca-tx.md`) predate the prefix rule. When touching them, migrate to the `immigration-*` prefix; don't create new unprefixed files.
 
 ## Cross-Topic Notes
 
