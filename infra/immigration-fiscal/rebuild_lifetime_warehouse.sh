@@ -2,6 +2,7 @@
 # Build lifetime evidence catalog DuckDB + union query views.
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$ROOT/../.." && pwd)"
 ACQUIRE="$ROOT/acquire"
 if [[ -f "$ACQUIRE/config.local.env" ]]; then
     # shellcheck source=config.local.env
@@ -12,8 +13,8 @@ else
     source "$ACQUIRE/config.env.example"
 fi
 export PNY_DATA_ROOT DERIVED_ROOT DUCKDB_PATH
-export LIFETIME_DUCKDB_PATH="${LIFETIME_DUCKDB_PATH:-$HOME/Projects/research/warehouse/immigration_lifetime_evidence.duckdb}"
-export FISCAL_UNION_DUCKDB_PATH="${FISCAL_UNION_DUCKDB_PATH:-$HOME/Projects/research/warehouse/immigration_fiscal_union.duckdb}"
+export LIFETIME_DUCKDB_PATH="${LIFETIME_DUCKDB_PATH:-$REPO_ROOT/warehouse/immigration_lifetime_evidence.duckdb}"
+export FISCAL_UNION_DUCKDB_PATH="${FISCAL_UNION_DUCKDB_PATH:-$REPO_ROOT/warehouse/immigration_fiscal_union.duckdb}"
 echo "Lifetime DuckDB: $LIFETIME_DUCKDB_PATH"
 echo "Union DuckDB:    $FISCAL_UNION_DUCKDB_PATH"
 uv run --with duckdb,pandas,openpyxl python "$ROOT/build/mine_restrictionist_full_claims.py"

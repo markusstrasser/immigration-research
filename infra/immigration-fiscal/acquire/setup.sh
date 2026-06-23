@@ -324,7 +324,7 @@ _fetch_get "https://acf.gov/sites/default/files/orr/ry2023_arrivals_by_state.csv
        "$DATA/external/origin/orr/ry2023_arrivals_by_state.csv" --optional
 
 # --- CBP southwest encounters CSV (needs browser UA) ---
-CAUSAL="${IMMIGRATION_CAUSAL_DATA:-$HOME/Projects/research/sources/immigration-causal/data}"
+CAUSAL="${IMMIGRATION_CAUSAL_DATA:-$(cd "$HERE/../../.." && pwd)/sources/immigration-causal/data}"
 mkdir -p "$CAUSAL/cbp/raw"
 _cbp_fetch() {
     local url="$1" dest="$2"
