@@ -1,9 +1,9 @@
 # Immigration lifetime fiscal — idea generators
 
-**Date:** 2026-06-15 (rounds A–S); 2026-06-23 (round T, benefit-side)
+**Date:** 2026-06-15 (rounds A–S); 2026-06-23 (round T benefit-side, round U source-incentive meta)
 **DuckDB:** `warehouse/immigration_lifetime_evidence.duckdb`
 
-**Totals:** 563 DuckDB `parameter_claims`, 114 Markdown `G-LIF-*` headings / 112 DuckDB `lifetime_generators` rows across **20 clusters (A–T)**. Round T (`T_immigrationist_steelman`, 8 benefit-side lenses) added 2026-06-23 to mirror the 14-lens restrictionist cluster S and fix the bank's cost-side asymmetry — see `immigration-fiscal-welfare-ledger-map.md`. Q/R/S names backfilled 2026-06-23 (were null). Count reconciliation: MD-only IDs remain `G-LIF-Q06` and `G-LIF-S15` (2 MD headings without DB rows). See `immigration-thesis-generator-audit-2026-06-16.md`.
+**Totals:** 563 DuckDB `parameter_claims`, 116 Markdown `G-LIF-*` headings / 114 DuckDB `lifetime_generators` rows across **21 clusters (A–U)**. Round T (`T_immigrationist_steelman`, 8 benefit-side lenses) mirrors the 14-lens restrictionist cluster S — see `immigration-fiscal-welfare-ledger-map.md`. Round U (`U_source_incentive_meta`, 2 lenses) operationalizes against-interest source weighting — applied pass in `immigration-source-incentive-regrade-2026-06-23.md` (`source_incentive_grades` table). Q/R/S names backfilled 2026-06-23 (were null). Count reconciliation: MD-only IDs remain `G-LIF-Q06` and `G-LIF-S15` (2 MD headings without DB rows). See `immigration-thesis-generator-audit-2026-06-16.md`.
 
 ## A_npv_generational
 
@@ -996,3 +996,23 @@
 **Retrodiction:** Would have reframed the −$150k <HS lifetime NPV: if the migrant adds aggregate surplus (the immigration surplus is positive even in Borjas) AND a fiscal cost, the cost is a financing/redistribution problem, not a net loss — exclusion forgoes the surplus to avoid the transfer. The sign of the surplus and the sign of the fiscal balance are separable.
 
 **Negative space:** Cost ledgers treat the fiscal deficit as terminal harm; the welfare-economics distinction between a transfer-to-be-financed and a deadweight loss is absent.
+
+## U_source_incentive_meta
+
+*Meta-epistemic lenses (source incentive / against-interest / media-selection). Symmetric by construction. Added 2026-06-23. Applied pass: immigration-source-incentive-regrade-2026-06-23.md.*
+
+### G-LIF-U01 — Source-incentive / against-interest credibility audit
+
+**Prompt:** For every source backing a claim, tag {outlet_type, prior_lean, finding_direction}. Set against_interest = the finding cuts OPPOSITE to the source's own prior (restrictionist source → benefit finding; expansionist source → cost finding). Re-weight: govt-nonpartisan (CBO/Census/NAS/SSA) = high baseline; academic = mid; advocacy = low, and ×1.5 if against-interest, ×0.7 if advocacy confirming its own prior. Re-rank claims by incentive-adjusted credibility, NEVER by citation count or media prominence (which inherit the selection bias). The rule MUST down-weight your own side's advocacy too, or it is not the audit — it is the bias.
+
+**Retrodiction:** Would have shown the 'immigrants are net contributors' headline leans on with-interest expansionist advocacy (ITEP/CAP/Cato) that this rule deflates — AND symmetrically that FAIR/CIS high-cost numbers are with-interest restrictionist advocacy it also deflates; while the claims that SURVIVE are the against-interest ones (Borjas deriving a positive aggregate surplus; NAS, the establishment panel, publishing the <HS lifetime cost) plus the nonpartisan baselines (CBO federal, Census stock).
+
+**Negative space:** Claims are weighted by citation count / media prominence, which directly inherit the left-skewed selection of which findings get written up; the source's incentive structure is unmodeled.
+
+### G-LIF-U02 — Media-selection vs primary-table gap
+
+**Prompt:** For any claim sourced to a news/secondary write-up, locate the PRIMARY table (NAS panel page, CBO appendix, the regression table) and check whether the headline preserved the sign, the cell, and the caveats. Tag the gap. Prefer the primary number; treat the journalist framing as a selection signal, not evidence.
+
+**Retrodiction:** Would have caught that the NAS <HS lifetime-cost table and the CBO state-local cost rows exist in the primary documents but are systematically under-reported in secondary coverage relative to the 'immigrants grow GDP' framing — the gap is selection, not the absence of the finding.
+
+**Negative space:** Secondary coverage is treated as a faithful summary of the primary source; the selection/flattening step is invisible.
