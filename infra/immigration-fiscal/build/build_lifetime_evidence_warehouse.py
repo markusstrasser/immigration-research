@@ -250,6 +250,7 @@ def _load_structured_layers(con) -> None:
         ("state_stage5_context_2023", "derived/stage5/state_stage5_context_2023.csv"),
         ("receiver_city_migrant_costs", "derived/stage5/receiver_city_migrant_costs.csv"),
         ("cdc_period_life_table_2021", "derived/lifetime/cdc_period_life_table_2021.csv"),
+        ("ssa_period_life_table_2023", "ssa/ssa_period_life_table_2023.csv"),
         ("hud_pit_coc_annual", "derived/stage5/hud_pit_coc_annual.csv"),
         ("gould_asylum_shelter_attribution_2022_2024", "derived/stage5/gould_asylum_shelter_attribution_2022_2024.csv"),
         ("meps_health_cost_module_2023", "derived/stage3_proto/meps_health_cost_module_2023.csv"),
