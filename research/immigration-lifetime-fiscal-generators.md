@@ -1,9 +1,9 @@
 # Immigration lifetime fiscal — idea generators
 
-**Date:** 2026-06-15 (rounds A–S)
+**Date:** 2026-06-15 (rounds A–S); 2026-06-23 (round T, benefit-side)
 **DuckDB:** `warehouse/immigration_lifetime_evidence.duckdb`
 
-**Totals:** 563 DuckDB `parameter_claims`, 106 Markdown `G-LIF-*` headings / 104 DuckDB `lifetime_generators` rows across 19 clusters (Q,R,S added 2026-06-15; S06–S15 from marker-modal parse 2026-06-15). Count reconciliation pending: MD-only IDs are `G-LIF-Q06` and `G-LIF-S15`. See `immigration-thesis-generator-audit-2026-06-16.md`.
+**Totals:** 563 DuckDB `parameter_claims`, 114 Markdown `G-LIF-*` headings / 112 DuckDB `lifetime_generators` rows across **20 clusters (A–T)**. Round T (`T_immigrationist_steelman`, 8 benefit-side lenses) added 2026-06-23 to mirror the 14-lens restrictionist cluster S and fix the bank's cost-side asymmetry — see `immigration-fiscal-welfare-ledger-map.md`. Q/R/S names backfilled 2026-06-23 (were null). Count reconciliation: MD-only IDs remain `G-LIF-Q06` and `G-LIF-S15` (2 MD headings without DB rows). See `immigration-thesis-generator-audit-2026-06-16.md`.
 
 ## A_npv_generational
 
@@ -928,3 +928,71 @@
 **Negative space:** Immigrant lifetime NPV = ethnic externality.
 
 ---
+
+## T_immigrationist_steelman
+
+*Benefit-side lenses — the mirror of S. Added 2026-06-23. source_rel_paths are acquisition targets (papers not yet in corpus). See immigration-fiscal-welfare-ledger-map.md.*
+
+### G-LIF-T01 — Level-not-mean / additive-output gate
+
+**Prompt:** Whenever a claim infers harm from 'immigrants lower the average education / wage / GDP-per-capita', block it until restated in LEVELS: did total output rise, and is any specific incumbent mechanically poorer, by what channel? A falling mean with rising total and no named incumbent loss is a composition artifact, not a welfare loss.
+
+**Retrodiction:** Would have caught that 'the average American is more educated than the average LATAM entrant, therefore harm' confuses the mean with welfare. Output is additive; adding a $35k worker to a $70k-mean economy lowers the mean while raising total output and making no incumbent mechanically poorer. Reconciles rising aggregate GDP with falling GDP-per-capita-of-the-average.
+
+**Negative space:** Standing frame treats national average human capital as a welfare target that below-average entrants 'dilute'.
+
+### G-LIF-T02 — Place premium / migrant-welfare ledger (whose welfare counts)
+
+**Prompt:** For any 'is immigration good' verdict, name the welfare boundary explicitly: incumbent-natives-only, all-residents-incl-immigrants, or global. Then add the migrant's own gain — the place premium, the multiple a observably-identical worker earns in the US vs origin — as a labelled ledger row. A verdict that zeroes it must say so.
+
+**Retrodiction:** Would have surfaced that every NAS / Borjas fiscal ledger is incumbent-only and silently sets the LARGEST welfare term to zero: the 2–15× place premium on the migrant's own earnings (Clemens-Montenegro-Pritchett). 'Net negative' on the incumbent-fiscal ledger is consistent with hugely net-positive on the resident or global ledger.
+
+**Negative space:** Cost ledgers count only the incumbent taxpayer's balance; the immigrant's own welfare gain is structurally invisible.
+
+### G-LIF-T03 — Consumer-surplus / non-traded price channel
+
+**Prompt:** For low-skill labor inflows, add the native real-income gain from lower prices of immigrant-intensive non-traded services (childcare, food prep, construction, housekeeping, gardening). Quantify via the immigrant-share elasticity of local service prices. This benefit sits outside BOTH the fiscal ledger and the wage-competition ledger.
+
+**Retrodiction:** Would have flagged that low-skill immigration's downward effect on non-traded service prices (Cortes 2008 JPE) is a real-wage gain to native consumers, absent from the fiscal NPV and from the Borjas wage ledger — natives who don't compete with immigrants gain as consumers.
+
+**Negative space:** Cost ledgers count fiscal + wage competition; the consumer-price benefit channel is unrepresented entirely.
+
+### G-LIF-T04 — Entrepreneurship / labor-demand offset to the supply shock
+
+**Prompt:** Before treating immigrants as pure labor SUPPLY (substitutes in a fixed job pool), net out the labor DEMAND they create: firm-formation and job-creation rates. Add immigrant founding share as a demand row that partly offsets the substitution in any supply-shock claim (e.g. G-LIF-B02).
+
+**Retrodiction:** Would have caught that the supply-shock framing is one-sided: immigrants found firms at above-population rates and are net job CREATORS, not just takers (Azoulay-Jones-Kim-Miranda 2022) — the lump-of-labor assumption behind 'they take jobs' is the unnamed premise.
+
+**Negative space:** Supply-shock lenses count immigrants as competitors in the labor pool; their firm-formation / labor-demand contribution is uncounted.
+
+### G-LIF-T05 — PAYG demographic dividend / SS–Medicare solvency
+
+**Prompt:** For payroll-funded PAYG programs (OASDI, Medicare HI), credit immigrants' younger age structure: they pay in for decades before claiming, improving the dependency ratio and the trust-fund actuarial balance. Add the SSA actuary's immigration sensitivity (higher net immigration narrows the OASDI deficit) as a federal benefit row; for unauthorized workers add the SSN-mismatch contributions they fund but cannot claim.
+
+**Retrodiction:** Would have surfaced that the static fiscal 'cost' of low-skill immigrants understates federal payroll contributions: the SS Trustees explicitly model higher immigration as IMPROVING OASDI solvency, and the Earnings Suspense File holds large unauthorized contributions never claimed back.
+
+**Negative space:** Static annual-balance ledgers net taxes vs services in a year; the PAYG dynamic — young contributors subsidizing the existing old — is a cross-cohort benefit they miss.
+
+### G-LIF-T06 — GE capital-adjustment wage restoration
+
+**Prompt:** For any short-run native-wage-loss claim, require the long-run general-equilibrium counterpart: immigration raises the return to capital → induces investment → capital stock adjusts → the aggregate native wage effect returns toward zero (one-sector neoclassical). Tag every wage number SR (capital fixed) or LR (capital adjusted); never compare across the tag.
+
+**Retrodiction:** Would have reconciled Borjas's short-run low-skill wage hit with the near-zero-to-positive long-run aggregate effect once capital adjusts (Ottaviano-Peri) — structurally the same omitted-capital-response mechanism as the capital-tax flip (G-LIF-A01), applied to wages instead of taxes.
+
+**Negative space:** Wage-shock lenses (B02–B06) mostly hold capital fixed; the capital-deepening response that restores wages is the missing GE step.
+
+### G-LIF-T07 — Positive selection on unobservables
+
+**Prompt:** Within an education×origin cell, do not treat the immigrant as the cell-average native: migrants are positively selected on unobservables (health, drive, risk-tolerance) — the migration decision is itself a filter. Apply a selection wedge before importing native cell-average welfare-use / earnings onto immigrants.
+
+**Retrodiction:** Would have explained immigrant earnings catch-up and below-predicted welfare take-up: within-cell positive selection (the 'healthy migrant effect' + ambition filter) means the average same-education native overstates immigrant transfer use and understates immigrant earnings growth.
+
+**Negative space:** Fiscal ledgers apply native cell-average behavior to immigrants; the selection wedge (immigrant ≠ average same-education native) is unmodeled.
+
+### G-LIF-T08 — Fiscal externality ≠ exclusion (welfare-economics framing)
+
+**Prompt:** A negative net fiscal transfer is a TRANSFER (a financed externality), not a deadweight loss. Before treating −$X NPV as a reason to exclude, ask the first-best welfare-economics question: is the right response to TAX the surplus the migrant generates (Pareto-improving) rather than EXCLUDE the person (which forgoes the surplus)? Separate 'who pays' from 'is there a net gain to allocate'.
+
+**Retrodiction:** Would have reframed the −$150k <HS lifetime NPV: if the migrant adds aggregate surplus (the immigration surplus is positive even in Borjas) AND a fiscal cost, the cost is a financing/redistribution problem, not a net loss — exclusion forgoes the surplus to avoid the transfer. The sign of the surplus and the sign of the fiscal balance are separable.
+
+**Negative space:** Cost ledgers treat the fiscal deficit as terminal harm; the welfare-economics distinction between a transfer-to-be-financed and a deadweight loss is absent.

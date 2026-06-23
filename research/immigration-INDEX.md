@@ -16,6 +16,7 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 | `immigration-glossary.md` | Definitions and term discipline | Using terms like `unauthorized`, `low-skill`, `surge`, `fiscal` |
 | `immigration-epistemic-check.md` | Framing-sensitive guardrails | Politically charged synthesis |
 | `immigration-economist-effects-matrix.md` | What economists are actually pricing vs omitting | Comparing Smith, Decker, Borjas, Clark poll economists |
+| `immigration-fiscal-welfare-ledger-map.md` | **Unifying map** — "positive vs negative?" decomposed into 4 coordinates × the full fiscal+benefit ledger set; maps generator clusters A–T | **Answering "is low-skill immigration good/bad?"**; before quoting any single sign |
 | `immigration-dataset-register.md` | Use-case-oriented data register | Asking "what data do we have?" |
 | `immigration-verification-handoff.md` | Verification map: repo files, datasets, paper families, disciplines | Handing the topic to another agent |
 | `immigration-friend-reproduce-guide.md` | **Clone → build → read → query** for a human collaborator | Sharing reasoning + reproduction steps |

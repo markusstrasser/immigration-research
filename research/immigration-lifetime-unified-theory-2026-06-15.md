@@ -254,3 +254,9 @@ Full text: `research/immigration-lifetime-fiscal-generators.md`
 | 2026-06-15 | session | **Stock vs flow:** Mexico multiply-out +$387.7B / +$46k/adult on **8.5M Mexico-born FB 25–64** is an **age-25 NAS benchmark applied to current stock education weights**, not actual current-stock lifetime NPV. BA+ **10.2%**. Biden: **~10.8M encounters ≠ +10M stock**; Pew **+3.5M** (2021–23), CIS **+5.6M** (2021–25). Mexico unauthorized **flat ~4.3M**. Cluster **Q** generators + memo `immigration-mexico-npv-population-synthesis-2026-06-15.md`. |
 | 2026-06-15 | session | **Full ledger (cluster R):** +$46k synthetic NAS age-25 benchmark **not** net of same-universe school, state/local surge ($657/yr), CBP/ICE (~$2.1k/yr), courts, shelter. The old annual crude **+$748** is superseded; origin `federal - school` sign is unresolved. Generators G-LIF-R01–R05; mining `cluster-r-full-ledger.json`. **Kill:** scalar Mexico net without ℓ vector. |
 | 2026-06-16 | conclusion audit | **Synthesis confidence bound:** replaced "survives all datasets" / "data cannot kill" language with a current-warehouse-compatible working synthesis. New evidence can still kill channel magnitudes, cell signs, and annual-to-lifetime bridges; the robust correction is against exporting one scalar across layers. See `immigration-conclusion-audit-running-fixes.md`. |
+
+---
+
+## Revisions
+
+- **2026-06-23** — Ledger dimension ℓ extended beyond fiscal-only to the **benefit/welfare ledgers** (economic surplus, consumer surplus, PAYG, migrant place premium, welfare-economics framing). Generator bank grown 80→112 (clusters A–P → A–T) with the new `T_immigrationist_steelman` cluster mirroring restrictionist S. The full cross-ledger synthesis now lives in `immigration-fiscal-welfare-ledger-map.md`; this doc remains the fiscal-tensor core it feeds into.
