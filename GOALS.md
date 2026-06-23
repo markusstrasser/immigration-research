@@ -13,7 +13,7 @@ Motivated by: online discourse on contested topics (gender, race, intelligence) 
 
 ## Domain
 
-General-purpose empirical research. Current active topic: IQ sex differences. Future topics will branch out; each may develop domain-specific ontologies and epistemologies (as genomics/biomedicine already have in other projects).
+General-purpose empirical research. Current active topic: the fiscal and crime impact of immigration. (Split 2026-06-23 from the former combined `research` repo; IQ sex differences now lives in `~/Projects/iq-sex-differences`.) Each topic may develop domain-specific ontologies and epistemologies (as genomics/biomedicine already have in other projects).
 
 ## Strategy
 
@@ -73,6 +73,6 @@ Everything else — running analyses, writing memos, downloading data, committin
 
 ## Cross-Project Notes
 
-- This repo is general-purpose research; IQ sex differences is the current thread.
+- This repo is the immigration (fiscal/crime) research thread, split 2026-06-23 from the combined `research` repo.
 - Personal understanding and self-knowledge live in the self project, not here. Results may be consulted as knowledge but the research process is the product of this repo.
 - Epistemic skills developed here should propagate to all projects that do research.
