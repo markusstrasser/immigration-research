@@ -108,8 +108,21 @@ table name exists in two source warehouses, `main` points at the canonical copy:
 
 Derived aggregates over **public US-government sources** — Census ACS/CPS PUMS,
 CDC, HUD (CHAS/SAFMR/PIT), IRS SOI migration, CMS Medicaid, USDA SNAP, OMB, BEA,
-SAIPE, EOIR, OHSS — plus published NPV benchmarks (NAS/NRC, Storesletten,
-Orrenius). Inputs are public-domain or public-use; this compilation is shareable.
+SAIPE, EOIR, OHSS, and BJA SCAAP (criminal-alien custody reimbursements) — plus
+published NPV benchmarks (NAS/NRC, Storesletten, Orrenius). Inputs are
+public-domain or public-use; this compilation is shareable.
+
+The **crime-by-status tables** (`crime_tx_arrests_by_status`,
+`crime_spi_inmates_by_citizenship`, `crime_spi_incarceration_rate`) are derived
+**aggregates** computed from two registration-gated archives — Light/He/Robey's
+Texas DPS replication (openICPSR 124923) and BJS's Survey of Prison Inmates 2016
+(ICPSR 37692). The archives' gating restricts redistribution of the underlying
+microdata, not aggregate statistics; only counts/rates ship here. The SPI rate's
+denominator is an IPUMS-derived population aggregate (the microdata itself stays
+local-only). To rebuild these tables from scratch you must register for and
+download the two archives yourself — see the MANUAL_ACQUIRE notes referenced in
+`research/immigration-dataset-register.md`.
+
 No license-restricted or application-gated microdata is included — IPUMS PUMS
 (not redistributable; held local-only in `immigration_microdata.duckdb`), PSID,
 IRS SOI PUF, Synthetic SIPP, FSRDC LEHD. Only derived aggregates ship here.
