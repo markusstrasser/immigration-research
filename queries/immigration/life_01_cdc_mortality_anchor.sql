@@ -1,5 +1,5 @@
 -- requires: lifetime
--- optional: needs fetch_cdc_life_tables.sh + rebuild_lifetime_warehouse.sh
+-- optional: needs fetch_cdc_life_tables.sh + build-lifetime.sh
 -- backs: SSA table4c6 substitute for NPV mortality anchor
 SELECT
   population_group,

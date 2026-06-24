@@ -25,9 +25,9 @@ def build() -> None:
     import duckdb
 
     if not CTX_PATH.exists():
-        sys.exit(f"missing {CTX_PATH} — run rebuild.sh first")
+        sys.exit(f"missing {CTX_PATH} — run build-context.sh first")
     if not LIFE_PATH.exists():
-        sys.exit(f"missing {LIFE_PATH} — run rebuild_lifetime_warehouse.sh first")
+        sys.exit(f"missing {LIFE_PATH} — run build-lifetime.sh first")
 
     if UNION_PATH.exists():
         UNION_PATH.unlink()

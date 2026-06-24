@@ -73,7 +73,7 @@ These **test** net-negative mechanisms rather than assume it:
 
 ```bash
 bash sources/immigration-fiscal/setup.sh          # includes stage5 via setup-net-negative.sh
-bash sources/immigration-fiscal/rebuild.sh      # warehouse stage1+2
+bash sources/immigration-fiscal/build-context.sh      # warehouse stage1+2
 ```
 
 Manual list: `sources/immigration-fiscal/data/external/stage5_net_negative/kff_refs/MANUAL_ACQUIRE.md`

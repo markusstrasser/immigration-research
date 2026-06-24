@@ -83,7 +83,7 @@ Add winners to `infra/immigration-fiscal/acquire/setup-lifetime.sh` + `DOWNLOAD_
 
 ```bash
 cd infra/immigration-fiscal && bash acquire/setup-lifetime.sh
-bash rebuild_lifetime_warehouse.sh   # loads .mining/*.json into DuckDB
+bash build-lifetime.sh   # loads .mining/*.json into DuckDB
 ```
 
 ### A4. Parallel mine (subagent prompt template)
@@ -293,7 +293,7 @@ Paste at top of `## V. Thesis burst` every sweep:
 | Staged files | `infra/immigration-fiscal/external/lifetime/` (from acquisition cwd) | ☐ |
 | Mining JSON | `research/.mining/immigration-lifetime-cluster-*.json` | ☐ |
 | Generators registry | `research/immigration-lifetime-fiscal-generators.md` | ☐ |
-| DuckDB rebuild | `bash rebuild_lifetime_warehouse.sh` | ☐ |
+| DuckDB rebuild | `bash build-lifetime.sh` | ☐ |
 | **Unified theory** | `research/immigration-lifetime-unified-theory-*.md` | ☐ |
 | Cross-disciplinary audit | `research/immigration-thesis-generator-audit-2026-06-16.md` | ☐ |
 | Running fixes | `research/immigration-conclusion-audit-running-fixes.md` | ☐ |

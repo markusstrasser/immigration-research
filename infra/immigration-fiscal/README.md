@@ -30,7 +30,7 @@ See `REPRODUCE.md` for tiers, verify modes, and manual-acquire list.
 | `acquire/setup.sh` | Main acquisition (~80 URLs) |
 | `acquire/setup-net-negative.sh` | Stage-5 fiscal/local-cost datasets |
 | `acquire/setup-lifetime.sh` | Lifetime benchmarks + linkage docs (NAS/NRC/Orrenius/Storesletten) |
-| `rebuild_lifetime_warehouse.sh` | `immigration_lifetime_evidence.duckdb` + `immigration_fiscal_union.duckdb` (country tensor) |
+| `build-lifetime.sh` | `immigration_lifetime_evidence.duckdb` + `immigration_fiscal_union.duckdb` (country tensor) |
 | `build/build_country_fiscal_tensor.py` | Population × ledger × order tensor + bridge grid |
 | `acquire/config.env.example` | Portable default paths |
 | `acquire/config.local.env` | Your machine (gitignored) |
@@ -39,8 +39,8 @@ See `REPRODUCE.md` for tiers, verify modes, and manual-acquire list.
 | `scripts/fetch_browser.py` | Generic Playwright fetch with optional referer warm-up |
 | `scripts/verify-downloads.sh` | Check manifest paths exist |
 | `build/*.py` | Warehouse + MVP builders (env-driven paths) |
-| `rebuild.sh` | `immigration_context.duckdb` |
-| `rebuild_mvp.sh` | SIPP/MEPS/federal microsim CSVs |
+| `build-context.sh` | `immigration_context.duckdb` |
+| `build-mvp.sh` | SIPP/MEPS/federal microsim CSVs |
 
 ## Environment variables
 

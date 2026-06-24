@@ -62,9 +62,9 @@ Example — Mexico: `weighted_adults` ≈ 436,819 for the origin scenario subset
 ```bash
 cd infra/immigration-fiscal
 bash acquire/setup.sh
-bash rebuild.sh          # stage1+2+5 + federal microsim
-bash rebuild_mvp.sh      # SIPP/MEPS cells (if not already built)
-# compose runs at end of rebuild.sh
+bash build-context.sh          # stage1+2+5 + federal microsim
+bash build-mvp.sh      # SIPP/MEPS cells (if not already built)
+# compose runs at end of build-context.sh
 ```
 
 ## Next integration targets

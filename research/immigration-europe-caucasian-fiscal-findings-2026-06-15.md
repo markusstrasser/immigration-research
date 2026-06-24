@@ -170,8 +170,8 @@ Politically, debates that contrast “immigrants” vs “natives” without nam
 
 ```bash
 cd infra/immigration-fiscal
-bash rebuild.sh
-bash rebuild_lifetime_warehouse.sh
+bash build-context.sh
+bash build-lifetime.sh
 # Query:
 # SELECT * FROM v_country_fiscal_rollup WHERE fiscal_layer='federal_annual';
 # SELECT * FROM education_matched_federal;

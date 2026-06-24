@@ -26,5 +26,5 @@ uv run --with duckdb,pandas python "$ROOT/build/load_tier_a_context_panels.py"
 if [[ -f "$DUCKDB_PATH" ]]; then
     uv run --with duckdb,pandas,openpyxl python "$ROOT/build/build_country_fiscal_tensor.py"
 else
-    echo "WARN: skip country fiscal tensor — $DUCKDB_PATH missing (run rebuild.sh)"
+    echo "WARN: skip country fiscal tensor — $DUCKDB_PATH missing (run build-context.sh)"
 fi

@@ -24,7 +24,7 @@ stage5	optional	external/stage5_net_negative/nces/ccd_lea_141_1819_english_learn
 stage5	optional	external/stage5_net_negative/nces/ccd_lea_141_1718_english_learners.zip	100000	setup-net-negative.sh	District EL counts 2017-18 fallback
 stage5	optional	derived/stage5/acs_immigrant_health_state_summary_2023.csv	1000	build	ACS immigrant health coverage by state (KFF substitute)
 stage5	optional	external/stage5_net_negative/census/gov_finances_2022_individual_unit.zip	100000	setup-net-negative.sh	Census gov finances individual units
-stage5	optional	derived/stage5/state_stage5_context_2023.csv	1000	build	Built by rebuild.sh
+stage5	optional	derived/stage5/state_stage5_context_2023.csv	1000	build	Built by build-context.sh
 stage5	optional	derived/stage3_proto/sipp_scenario_ledger_2024.csv	50	compose	98-cell SIPP scenario ledger
 stage5	optional	derived/stage3_proto/origin_fiscal_scenario_2023.csv	50	compose	Per-origin fiscal scenario
 stage5	optional	external/stage5_net_negative/hud/fy2025_safmrs_revised.xlsx	1000000	setup-net-negative.sh	HUD SAFMR FY2025 zip-level rents (Playwright)
