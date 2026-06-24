@@ -19,6 +19,7 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 | `immigration-fiscal-welfare-ledger-map.md` | **Unifying map** — "positive vs negative?" decomposed into 4 coordinates × the full fiscal+benefit ledger set; maps generator clusters A–U | **Answering "is low-skill immigration good/bad?"**; before quoting any single sign |
 | `immigration-source-incentive-regrade-2026-06-23.md` | **Against-interest re-grade** — discounts advocacy (FAIR/ITEP/Cato/CIS) both sides, rewards against-interest (Borjas surplus, NAS cost); `source_incentive_grades` | Weighting a source by prominence/citation; trusting media framing over primary tables |
 | `immigration-dataset-register.md` | Use-case-oriented data register | Asking "what data do we have?" |
+| `immigration-dataset-roadmap.md` | **Acquisition roadmap** — 12 verified datasets we *don't* have yet, chosen to fill the crime + benefit-side gaps | Asking "what data should we get next?"; planning acquisition |
 | `immigration-verification-handoff.md` | Verification map: repo files, datasets, paper families, disciplines | Handing the topic to another agent |
 | `immigration-friend-reproduce-guide.md` | **Clone → build → read → query** for a human collaborator | Sharing reasoning + reproduction steps |
 | `immigration-conclusion-audit-running-fixes.md` | Live overclaim/denominator/layer fix ledger | Auditing conclusions, applying XDISC-DS-02, checking what changed on 2026-06-16 |
