@@ -160,6 +160,12 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 - Foreign-born = `BPL >= 150` (IPUMS birthplace coding) — **not** ACS `NATIVITY = 2`; the two come from different microdata, don't conflate
 - The 44 M-row source microdata is **license-restricted and excluded from the release** — only these aggregated cells ship
 
+**Crime domain** (new 2026-06-24; the project is "fiscal *and* crime"):
+
+- `status_class_def` + `status_class_crosswalk` — the **INT-06 spine**: one canonical citizenship/legal-status enum (`native_born`/`naturalized`/`lpr_legal_noncitizen`/`unauthorized`/`other_noncitizen`) that 6 sources crosswalk into. **Load this for any status-keyed join** — don't re-map citizenship. `lossy_flag` marks where a source can't split LPR from unauthorized; `verified=false` marks UNVERIFIED codebook categories.
+- `crime_scaap_awards` / `crime_scaap_state_2023` — DOJ SCAAP FY23 criminal-alien inmate-days + reimbursement $ by jurisdiction/state. **Read first:** "criminal alien" (DHS-confirmed) ≠ unauthorized (includes LPRs); inmate-days are a *stock*, not a crime *rate* (no denominator).
+- `v_crime_scaap_x_state_fiscal` — the crime↔fiscal $ bridge (INT-03), SCAAP burden × state immigrant-cost context by `state_fips`.
+
 ---
 
 ## 7. What is still manual / not reproducible
