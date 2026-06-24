@@ -53,7 +53,7 @@ The clean verdict is:
 | `Immigration restrictions are not necessary to protect American taxpayers.` | `Fails as a blanket claim` | Federal gains can coexist with state/local costs in education, shelter, and related services. [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] |
 | `Immigrants commit much less crime than natives.` | `Mostly survives for observed U.S. first-generation / unauthorized justice-system rates` | The U.S. evidence is strong for lower observed arrest, conviction, and incarceration rates, though some headline gaps are overstated by compositional comparisons and the international generalization is weaker. True offending is less directly identified. [SOURCE: research/immigration-crime-rates-unauthorized-vs-native-born.md] |
 | `Immigration restrictions are not necessary to protect American culture.` | `Partly survives, but culture is not the best-developed bottleneck in this evidence surface` | Apocalyptic culture-collapse arguments are weak; assimilation is real. But the repo's current U.S. stress evidence is better developed for housing, services, and politics than for a clean culture mechanism. [SOURCE: https://www.econlib.org/archives/2015/12/krikorian_again.html] [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] |
-| `Political externalities are limited because immigrants vote less, accept the status quo, and may restrain redistribution.` | `Partly survives in a narrow median-voter sense, fails as a full political-incidence answer` | National voting mechanics are only one channel; local overload, legitimacy effects, and possible citizen political response remain live. [SOURCE: https://www.econlib.org/archives/2010/04/the_social_and.html] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md] |
+| `Political externalities are limited because immigrants vote less, accept the status quo, and may restrain redistribution.` | `Partly survives in a narrow median-voter sense, fails as a full political-incidence answer` | National voting mechanics are only one channel; local overload, legitimacy effects, and possible citizen political response remain live. [SOURCE: https://www.econlib.org/archives/2010/04/the_social_and.html] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: research/immigration-full-spectrum-costs-unauthorized-memo.md] |
 | `Cheaper and more humane alternatives exist for each complaint.` | `Partly survives as institutional design logic, not as practical closure` | Keyhole solutions mitigate some objections, but do not dissolve housing, school, shelter, and credibility problems. [SOURCE: https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2012/1/cj32n1-2.pdf] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] |
 
 ## Claim 1: `There is a moral presumption in favor of free migration`
@@ -130,7 +130,7 @@ What fails:
 
 1. The `state/local` ledger for the recent surge is clearly negative in the official CBO accounting. [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf]
 2. The large cost buckets are `education`, `shelter and related services`, and `border security`, not just cash welfare. [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf]
-3. The repo's current position already treats local school, shelter, housing, and service load as first-order channels rather than rhetorical appendices. [SOURCE: research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md] [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md]
+3. The repo's current position already treats local school, shelter, housing, and service load as first-order channels rather than rhetorical appendices. [SOURCE: research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md] [SOURCE: research/immigration-full-spectrum-costs-unauthorized-memo.md]
 
 Verdict:
 
@@ -167,7 +167,7 @@ What survives:
 
 What remains open:
 
-1. Trust, solidarity, and political-response channels are not zero merely because assimilation exists. [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md]
+1. Trust, solidarity, and political-response channels are not zero merely because assimilation exists. [SOURCE: research/immigration-full-spectrum-costs-unauthorized-memo.md]
 2. Caplan's welfare-state and trust optimism is partly a political-economy claim, not just a culture claim. [SOURCE: https://www.econlib.org/archives/2011/06/immigration_and_2.html] [SOURCE: https://www.econlib.org/does-immigration-shrink-the-welfare-state/]
 
 Verdict:
@@ -191,7 +191,7 @@ What survives:
 
 What fails:
 
-1. The relevant political channel is not only immigrant voting. It also includes possible citizen response, local overload, policy churn, and perceived unfairness. [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md]
+1. The relevant political channel is not only immigrant voting. It also includes possible citizen response, local overload, policy churn, and perceived unfairness. [SOURCE: research/immigration-full-spectrum-costs-unauthorized-memo.md]
 2. The repo's threshold and county-outcome analyses report stronger political-response association signals in high-immigration constrained places, especially where permit capacity is weak and rent burden high. The mechanism is not yet cleanly separated into persuasion, turnout, sorting, Hispanic realignment, or busing-target endogeneity. [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] [SOURCE: research/immigration-county-outcome-panel-2026-04-21.md]
 3. The surge memo already treats the `2021–2024` period as a different regime from the older low-intensity local-labor literature. [SOURCE: research/immigration-causal-surge-2021-2024.md]
 

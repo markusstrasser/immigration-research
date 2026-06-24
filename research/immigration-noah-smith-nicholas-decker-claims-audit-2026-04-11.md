@@ -68,7 +68,7 @@ Verdict:
 | Noah Smith | `Mass deportation would make little difference to costs.` | `Overstated` | Mass deportation is unlikely to produce a clean broad consumer-price windfall, but removing workers from labor-intensive and housing-constrained sectors is not cost-neutral. [SOURCE: https://www.imf.org/-/media/files/publications/wp/2025/english/wpiea2025005-print-pdf.pdf] [SOURCE: https://www.cbo.gov/system/files/2024-02/59710-Outlook-2024.pdf] [INFERENCE] |
 | Nicholas Decker | `Immigrants must make us richer.` | `Fails as stated` | Some increasing-returns channels are real, but neither official nor repo evidence supports a universal overall-gain claim on the relevant citizen-welfare ledger. [SOURCE: https://nicholasdecker.substack.com/p/yes-immigrants-must-make-us-richer] [SOURCE: research/immigration-verified-findings-report-2026-04-10.md] |
 | Nicholas Decker | `Constant-returns assumptions bake in anti-immigration results.` | `Partly right, partly overclaimed` | Model assumptions matter, especially public-goods and incidence assumptions, but recent official projections do not reduce to one simple constant-returns story. [SOURCE: research/immigration-nas-scope-and-bias-update-2026-04-10.md] [SOURCE: https://www.cbo.gov/system/files/2024-02/59710-Outlook-2024.pdf] |
-| Nicholas Decker | `The only coherent anti-immigration view is political voting / institutions, not economics.` | `False` | There are coherent economic objections on local schooling, shelter, congestion, renter incidence, and distributional conflict even without nativist politics. [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md] |
+| Nicholas Decker | `The only coherent anti-immigration view is political voting / institutions, not economics.` | `False` | There are coherent economic objections on local schooling, shelter, congestion, renter incidence, and distributional conflict even without nativist politics. [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] [SOURCE: research/immigration-full-spectrum-costs-unauthorized-memo.md] |
 
 ## Repo data checks that matter
 
@@ -233,7 +233,7 @@ What fails:
 
 1. Even official pro-growth projections do **not** imply that more immigration must raise `GDP per person` or average citizen welfare in the near-to-medium run. CBO's 2024 outlook explicitly says real GDP would be higher but real GDP per person lower under the immigration increase it modeled. [SOURCE: https://www.cbo.gov/system/files/2024-02/59710-Outlook-2024.pdf]
 2. The repo's strongest verified result remains an `incidence split`, which directly contradicts Decker's must-be-positive rhetoric. [SOURCE: research/immigration-verified-findings-report-2026-04-10.md]
-3. Local burden, schooling, shelter, congestion, renter incidence, and political backlash are real economic channels, not merely political afterthoughts. [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf]
+3. Local burden, schooling, shelter, congestion, renter incidence, and political backlash are real economic channels, not merely political afterthoughts. [SOURCE: research/immigration-full-spectrum-costs-unauthorized-memo.md] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf]
 
 Verdict:
 
@@ -268,7 +268,7 @@ Why it fails:
 1. Coherent economic objections exist even if you set aside identity politics.
 2. CBO 2025 directly finds net state/local costs from the recent surge, with education, shelter, and border-security pressures carrying much of the burden. [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf]
 3. The repo's verified findings support real local burden heterogeneity through school-age child intensity and rent exposure. [SOURCE: research/immigration-verified-findings-report-2026-04-10.md]
-4. The repo's full-spectrum memo identifies local congestion, language-access overhead, court friction, and informal-labor distortion as real cost channels, even without any appeal to voting behavior. [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md]
+4. The repo's full-spectrum memo identifies local congestion, language-access overhead, court friction, and informal-labor distortion as real cost channels, even without any appeal to voting behavior. [SOURCE: research/immigration-full-spectrum-costs-unauthorized-memo.md]
 
 Verdict:
 

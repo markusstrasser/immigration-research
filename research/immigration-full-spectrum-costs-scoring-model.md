@@ -2,7 +2,7 @@
 
 **Question:** How should we score long-run cost channels without presupposing a conclusion or laundering weak claims into a single giant number?
 **Date:** 2026-03-13
-**Inputs:** [full-spectrum-costs-unauthorized-immigration-research-memo.md](/Users/alien/Projects/research/research/full-spectrum-costs-unauthorized-immigration-research-memo.md), [fiscal-impact-unauthorized-immigration-research-memo.md](/Users/alien/Projects/research/research/fiscal-impact-unauthorized-immigration-research-memo.md), CBO, ITEP, language-access reports, labor-enforcement reports, and political-economy literature.
+**Inputs:** [immigration-full-spectrum-costs-unauthorized-memo.md](/Users/alien/Projects/research/research/immigration-full-spectrum-costs-unauthorized-memo.md), [immigration-fiscal-impact-unauthorized-memo.md](/Users/alien/Projects/research/research/immigration-fiscal-impact-unauthorized-memo.md), CBO, ITEP, language-access reports, labor-enforcement reports, and political-economy literature.
 
 ---
 
@@ -58,10 +58,10 @@ This is deliberately conservative. A channel can be real and still stay out of t
 | Health-system distortion via delayed care / ED substitution | Mixed-negative | 2 | 1 | 1 | 2 | 2 | 4 | Sensitivity band | Real channel, but overall immigrant health spending is lower than natives; do not price as a giant burden by default. [SOURCE: https://hia.berkeley.edu/wp-content/uploads/2014/03/2005_healthcare_exp.pdf] [SOURCE: https://scholars.duke.edu/publication/1476491] |
 | Housing overcrowding, code enforcement, shelter spillover | Negative | 1 | 1 | 1 | 2 | 2 | 3 | Narrative only / local sensitivity | Likely real locally; weak status-specific attribution nationally. [SOURCE: https://www.cbo.gov/publication/61256] [SOURCE: https://www.montgomerycountymd.gov/OLO/Resources/Files/2025_reports/OLOReport2025-6.pdf] |
 | Informal labor, wage theft, misclassification, payroll tax erosion | Negative | 2 | 1 | 2 | 3 | 2 | 6 | Sensitivity band | Strong mechanism, weak per-person attribution. Best handled as a separate employer-side distortion module. [SOURCE: https://www.umass.edu/labor/research/working-paper-series/social-and-economic-costs-illegal-misclassification-wage-theft-and-tax-fraud-residential/4-path-citizenship-immigrant-workers] [SOURCE: https://clje.law.harvard.edu/app/uploads/2019/06/misclassification_and_payroll_fraud.pdf] |
-| Native wage displacement / tax-base effects | Mixed | 1 | 1 | 1 | 2 | 2 | 3 | Narrative only | Empirically unresolved; sign depends on methodology. [SOURCE: `research/fiscal-impact-unauthorized-immigration-research-memo.md`] |
+| Native wage displacement / tax-base effects | Mixed | 1 | 1 | 1 | 2 | 2 | 3 | Narrative only | Empirically unresolved; sign depends on methodology. [SOURCE: `research/immigration-fiscal-impact-unauthorized-memo.md`] |
 | Redistribution backlash / policy churn | Negative | 2 | 0 | 0 | 3 | 2 | 3 | Narrative only | Real aggregate effect, but not credibly dollarized per immigrant. [SOURCE: https://www.hbs.edu/ris/download.aspx?name=Alesina+and+Tabellini_May2022.pdf] [SOURCE: https://economics.uci.edu/files/docs/micro/s11/Edmark.pdf] |
 | Generalized trust / cohesion | Mixed / contested | 1 | 0 | 0 | 3 | 3 | 1 | Narrative only | Most vulnerable to framing bias and overclaiming. [SOURCE: https://www.ias.edu/sites/default/files/sss/BordersPortes-Diversity-Social-Capital.pdf] |
-| Child costs without child lifetime contributions | Negative in short run, positive/mixed in long run | 2 | 2 | 2 | 3 | 2 | 7 | Core bound only if both sides are modeled | One-sided treatment of children is the single biggest distortion risk in fiscal accounting. [SOURCE: `research/fiscal-impact-unauthorized-immigration-research-memo.md`] |
+| Child costs without child lifetime contributions | Negative in short run, positive/mixed in long run | 2 | 2 | 2 | 3 | 2 | 7 | Core bound only if both sides are modeled | One-sided treatment of children is the single biggest distortion risk in fiscal accounting. [SOURCE: `research/immigration-fiscal-impact-unauthorized-memo.md`] |
 
 ---
 

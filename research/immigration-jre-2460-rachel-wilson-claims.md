@@ -127,7 +127,7 @@ Wilson's pattern of numerical inflation (always favoring her thesis) is document
 
 *Audit trail:*
 - *Bias audit: 5 verdicts adjusted (4→MIXED, 18→MOSTLY TRUE, 14→MIXED, 20→MIXED, 21→MIXED, 33→MOSTLY TRUE).*
-- *Exa cross-check: 3 more adjusted (4 MIXED→MOSTLY TRUE, 21 MIXED→MOSTLY TRUE, 50 MIXED→MOSTLY FALSE). See `research/jre-2460-exa-crosscheck.md` for full comparison.*
+- *Exa cross-check: 3 more adjusted (4 MIXED→MOSTLY TRUE, 21 MIXED→MOSTLY TRUE, 50 MIXED→MOSTLY FALSE). See `research/immigration-jre-2460-exa-crosscheck.md` for full comparison.*
 - *Net movement from initial agent verdicts: +3 MOSTLY TRUE, −2 MIXED, −1 MOSTLY FALSE. The biggest correction was Claim 21 where our agent flatly contradicted primary source texts.*
 
 ## Recurring Patterns

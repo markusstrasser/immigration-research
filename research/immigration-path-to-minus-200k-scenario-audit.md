@@ -35,7 +35,7 @@ CBO's 2025 report on the post-2021 surge gives:
 
 ITEP's all-unauthorized estimate gives:
 
-- taxes paid per person: about `$8,889` per year, [SOURCE: `research/fiscal-impact-unauthorized-immigration-research-memo.md`] [SOURCE: https://itep.org/undocumented-immigrants-taxes-2024/]
+- taxes paid per person: about `$8,889` per year, [SOURCE: `research/immigration-fiscal-impact-unauthorized-memo.md`] [SOURCE: https://itep.org/undocumented-immigrants-taxes-2024/]
 - pessimistic case: about `$7,927` per year. [SOURCE: https://itep.org/undocumented-immigrants-taxes-2024/]
 
 ### Federal
@@ -97,7 +97,7 @@ Arithmetically viable, but only because it confuses spending with net cost.
 
 ### Path B: Heritage-style household path
 
-Heritage is summarized in the repo memo as roughly `$20,000/year` net cost **per illegal-immigrant household**. [SOURCE: `research/fiscal-impact-unauthorized-immigration-research-memo.md`]
+Heritage is summarized in the repo memo as roughly `$20,000/year` net cost **per illegal-immigrant household**. [SOURCE: `research/immigration-fiscal-impact-unauthorized-memo.md`]
 
 At 25 years and 3%, `$20,000/year` implies about `-$348k` NPV **per household**.
 
@@ -128,7 +128,7 @@ This is the classic restrictionist route:
 4. use a short or medium horizon,
 5. do not credit macro federal offsets.
 
-The repo's fiscal memo identifies this as the combination that most strongly drives negative results. [SOURCE: `research/fiscal-impact-unauthorized-immigration-research-memo.md`]
+The repo's fiscal memo identifies this as the combination that most strongly drives negative results. [SOURCE: `research/immigration-fiscal-impact-unauthorized-memo.md`]
 
 **Audit**
 
