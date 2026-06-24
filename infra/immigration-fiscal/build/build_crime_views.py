@@ -60,6 +60,25 @@ def build() -> None:
         """)
         made.append("v_crime_scaap_x_state_fiscal")
 
+    # INT-01 — Light TX crime rate by status, expressed as a ratio to the native-born rate
+    if "crime_tx_arrests_by_status" in have:
+        con.execute("""
+            CREATE OR REPLACE VIEW v_crime_tx_status_ratio AS
+            WITH nat AS (
+                SELECT year, crime_category, denom_source, crime_rate_per_100k AS citizen_rate_per_100k
+                FROM crime_tx_arrests_by_status WHERE status_class = 'native_born'
+            )
+            SELECT b.year, b.crime_category, b.denom_source,
+                   b.light_status, b.status_class,
+                   b.crime_rate_per_100k, n.citizen_rate_per_100k,
+                   round(b.crime_rate_per_100k / nullif(n.citizen_rate_per_100k, 0), 3) AS rate_vs_citizen
+            FROM crime_tx_arrests_by_status b
+            JOIN nat n USING (year, crime_category, denom_source)
+            WHERE b.status_class <> 'native_born'
+            ORDER BY b.year DESC, b.crime_category, b.status_class
+        """)
+        made.append("v_crime_tx_status_ratio")
+
     # INT-06 — status harmonization spine, query-ready (canonical class joined to source mappings)
     if {"status_class_crosswalk", "status_class_def"} <= have:
         con.execute("""
