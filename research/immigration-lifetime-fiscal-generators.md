@@ -3,7 +3,7 @@
 **Date:** 2026-06-15 (rounds A–S); 2026-06-23 (round T benefit-side, round U source-incentive meta)
 **DuckDB:** `warehouse/immigration_lifetime_evidence.duckdb`
 
-**Totals:** 563 DuckDB `parameter_claims`, 116 Markdown `G-LIF-*` headings / 114 DuckDB `lifetime_generators` rows across **21 clusters (A–U)**. Round T (`T_immigrationist_steelman`, 8 benefit-side lenses) mirrors the 14-lens restrictionist cluster S — see `immigration-fiscal-welfare-ledger-map.md`. Round U (`U_source_incentive_meta`, 2 lenses) operationalizes against-interest source weighting — applied pass in `immigration-source-incentive-regrade-2026-06-23.md` (`source_incentive_grades` table). Q/R/S names backfilled 2026-06-23 (were null). Count reconciliation: MD-only IDs remain `G-LIF-Q06` and `G-LIF-S15` (2 MD headings without DB rows). See `immigration-thesis-generator-audit-2026-06-16.md`.
+**Totals:** 563 DuckDB `parameter_claims`, 124 Markdown `G-LIF-*` headings / 122 DuckDB `lifetime_generators` rows across **22 clusters (A–V)**. Round T (`T_immigrationist_steelman`, 8 benefit-side lenses) mirrors the 14-lens restrictionist cluster S; its 6 external papers were acquired to corpus 2026-06-24. Round U (`U_source_incentive_meta`, 2 lenses) operationalizes against-interest source weighting — applied pass in `immigration-source-incentive-regrade-2026-06-23.md` (`source_incentive_grades` table). Round V (`V_deep_roots_long_run_skeptic`, 8 lenses, added 2026-06-24) is the LONG-RUN cultural/institutional skeptical complement to S — all 6 external papers acquired to corpus, V08 crime-null verified in-warehouse. Q/R/S names backfilled 2026-06-23 (were null). Count reconciliation: MD-only IDs remain `G-LIF-Q06` and `G-LIF-S15` (2 MD headings without DB rows). See `immigration-thesis-generator-audit-2026-06-16.md`.
 
 ## A_npv_generational
 
@@ -931,7 +931,7 @@
 
 ## T_immigrationist_steelman
 
-*Benefit-side lenses — the mirror of S. Added 2026-06-23. source_rel_paths are acquisition targets (papers not yet in corpus). See immigration-fiscal-welfare-ledger-map.md.*
+*Benefit-side lenses — the mirror of S. Added 2026-06-23. The 6 external papers were acquired to the corpus 2026-06-24 (no longer placeholders) — see immigration-acquisition-gaps-2026-06-24.md. See also immigration-fiscal-welfare-ledger-map.md.*
 
 ### G-LIF-T01 — Level-not-mean / additive-output gate
 
@@ -1016,3 +1016,71 @@
 **Retrodiction:** Would have caught that the NAS <HS lifetime-cost table and the CBO state-local cost rows exist in the primary documents but are systematically under-reported in secondary coverage relative to the 'immigrants grow GDP' framing — the gap is selection, not the absence of the finding.
 
 **Negative space:** Secondary coverage is treated as a faithful summary of the primary source; the selection/flattening step is invisible.
+
+## V_deep_roots_long_run_skeptic
+
+*Long-run cultural/institutional-transmission skeptical lenses — the LONG-RUN complement to S's short/medium-run fiscal cost (and the opposite pole to T's benefit side). Added 2026-06-24. All 6 external papers acquired to corpus (corpus:// URIs in the cluster JSON). Carries its own disconfirmation by construction: V08 is an explicit assimilation null (verified in-warehouse), V06 is flagged CONTESTED (stress-test only). [FRAMING-SENSITIVE] throughout; national-IQ data-quality fights route to the iq-sex-differences sister repo. See immigration-acquisition-gaps-2026-06-24.md + immigration-fiscal-welfare-ledger-map.md.*
+
+### G-LIF-V01 — Deep-roots / ancestry-adjusted development
+
+**Prompt:** Before treating an origin group's economic outcomes as set by current host institutions, ask what the deep-roots literature predicts: long-run development correlates with the ANCESTRY-weighted history of a population (early state experience, agricultural transition, technology adoption) more than with the geography it currently occupies. Separate traits that travel WITH people across borders from traits that stay with PLACES. *(Spolaore-Wacziarg; Putterman-Weil)*
+
+**Retrodiction:** Would have flagged that cross-country development gaps shrink but do not vanish when you ancestry-adjust via the Putterman-Weil post-1500 migration matrix — a measurable component of what looks like 'bad geography' travels with populations. That is the long-run channel a first-gen fiscal/crime ledger is blind to.
+
+**Negative space:** Fiscal and crime ledgers are proximate and first-generation; the deep, ancestry-linked component of long-run development sits outside their window.
+
+### G-LIF-V02 — Cultural transmission / epidemiological approach
+
+**Prompt:** Identify cultural traits (work norms, female labor supply, fertility, saving) by the EPIDEMIOLOGICAL method: compare 2nd-generation immigrants from different origins under the SAME US institutions. Origin differences that persist under fixed institutions are transmitted CULTURE, not environment. *(Fernández-Fogli)*
+
+**Retrodiction:** Would have shown that 2nd-gen female labor supply and fertility still track the origin country's values even holding US institutions constant — 'the children are just Americans' overstates assimilation for the traits that drive labor supply and dependency.
+
+**Negative space:** Cost and benefit ledgers alike attribute 2nd-gen behavior to host institutions; the transmitted-culture component is uncounted.
+
+### G-LIF-V03 — Inherited trust as a slow social-capital channel
+
+**Prompt:** For outcomes that depend on social capital (contract enforcement, public goods, low corruption), credit or debit the INHERITED TRUST the inflow carries. Use the trust of descendants-of-immigrants as a time-varying, origin-linked measure. *(Algan-Cahuc; DISCONFIRM: Eder replication, Muller-Torgler comment)*
+
+**Retrodiction:** Would have surfaced that inherited trust of US immigrant descendants is shaped by origin country and arrival timing, and predicts cross-country growth — a slow social-capital effect the static ledger omits. Must survive the replication critiques before it is load-bearing.
+
+**Negative space:** Annual net-fiscal and first-gen crime measures cannot see a social-capital stock that shifts over generations with the origin-mix.
+
+### G-LIF-V04 — Ethnic capital / slow assimilation brake
+
+**Prompt:** Do not assume the 2nd generation regresses to the host mean in one step. Skills transmit via BOTH parental inputs AND the average skills of the parents' ethnic group (ethnic capital); this slows convergence beyond the simple intergenerational model. *(Borjas 1992/1995)*
+
+**Retrodiction:** Would have caught that 'the kids catch up' overstates convergence speed: ethnic capital keeps low-skill origin groups below the host average for two to three generations rather than one — the missing debit on the dynasty-optimism ledger (T, ledger-map).
+
+**Negative space:** The positive dynasty/2nd-gen ledger prices in fast convergence; ethnic-capital persistence is the brake it omits.
+
+### G-LIF-V05 — The new economic case for restrictions (institutional-quality externality)
+
+**Prompt:** State the strongest LONG-RUN restrictionist argument in its own terms, then ASSESS it: large inflows from low-productivity-institution origins could transmit those institutions and lower host TFP — a dynamic externality that, if real, swamps any static fiscal gain. How strong is transmission, how fast does it decay, how elastic are host institutions to immigrant share? *(Clemens-Pritchett pose AND assess it)*
+
+**Retrodiction:** Would have named the one argument that, if true, dominates the ledger — and applied Clemens-Pritchett's own verdict: the channel is theoretically coherent but the institutional elasticities needed to make restriction welfare-optimal are not in the data at observed margins. A coherent worry, not a quantified cost.
+
+**Negative space:** Both S (fiscal) and T (benefit) work in the first-gen window; the institutional-transmission externality is the missing long-run term the restriction case rests on.
+
+### G-LIF-V06 — National cognitive/human capital of origin (CONTESTED — stress-test, do not assume)
+
+**Prompt:** The hardest-edged composition argument: national average cognitive-skill indices predict productivity across countries, so the origin-mix of an inflow could shift host human capital. STEELMAN TO STRESS-TEST, NOT A PREMISE. Three caveats fire automatically: (1) the underlying national-IQ data (Lynn-Vanhanen) is low quality; (2) the cross-country correlation is heavily confounded (institutions, health, schooling, colonial history); (3) a national-average correlation licenses NO individual or first-gen inference (ecological fallacy). *(Jones-Schneider BACE; Jones 'Culture Transplant' book)*
+
+**Retrodiction:** Would have both surfaced the Jones-Schneider result AND immediately attached the data-quality, confounding, and ecological-inference caveats that make it unusable for any individual, first-gen, or short-run immigration claim — preventing the over-extension this channel invites.
+
+**Negative space:** The composition-of-human-capital channel is real in the growth literature but the most frequently misused; absent from the ledgers, and when invoked, almost always over-stretched. Routes to `~/Projects/iq-sex-differences` for the data-quality verdict.
+
+### G-LIF-V07 — Ancestral/cultural/linguistic distance as a diffusion barrier
+
+**Prompt:** Add ancestral, cultural, and linguistic DISTANCE between origin and host as an integration-cost channel: greater distance slows diffusion of technology/norms/institutions and historically raises friction. A COMPOSITION effect — closer-ancestry inflows integrate more cheaply than distant ones of the same size. *(Spolaore-Wacziarg 'Ancestry, Language and Culture')*
+
+**Retrodiction:** Would have predicted integration costs and inter-group frictions scaling with ancestral/cultural distance, not immigrant numbers alone — reframing 'how many' debates as partly 'from where', a composition question the headcount ledger cannot pose.
+
+**Negative space:** Fiscal/crime ledgers price the LEVEL of inflows; the distance-dependent integration cost (a composition effect) is unrepresented.
+
+### G-LIF-V08 — Self-rebuttal: assimilation refutes STRONG persistence (constructive null)
+
+**Prompt:** Before reading V01–V07 as transmission-is-destiny, apply the assimilation NULL. US immigrants and descendants assimilate fast historically (Abramitzky-Boustan), immigrant crime converges DOWN not up (the 1870–2020 incarceration gap; the Texas DPS rates this repo built), and origin persistence DECAYS each generation. V01–V07 bound a LONG-RUN, AVERAGE, COMPOSITION concern — they do NOT license first-gen, individual, or fixed-trait claims. *(Verified in-warehouse: undocumented violent-crime rate 0.41–0.48× true native-born, 2012–2018, no trend to parity.)*
+
+**Retrodiction:** Would have stopped every deep-roots lens above from being misread as a first-gen or individual claim: the same micro-data showing some origin persistence ALSO shows rapid regression toward the host mean and a 150-year immigrant CRIME ADVANTAGE. Partial, decaying transmission — not destiny.
+
+**Negative space:** A steelman without its null is a polemic. This lens is the built-in disconfirmation that keeps cluster-V honest and prevents long-run average claims from being laundered into first-gen or individual ones.
