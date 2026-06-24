@@ -1,13 +1,13 @@
 # immigration-fiscal — reproducible acquisition
 
-**Canonical location (git-tracked):** `infra/immigration-fiscal/` in the research repo.
+**Canonical location (git-tracked):** `infra/immigration-fiscal/` in the immigration-research repo.
 
 The `sources/` symlink points at an external SSD and is **not** in git. All download logic lives here so anyone can reproduce on their machine.
 
 ## New machine quickstart
 
 ```bash
-cd /path/to/research
+cd /path/to/immigration-research
 ./scripts/reproduce-immigration-data.sh init
 ./scripts/reproduce-immigration-data.sh doctor
 ./scripts/reproduce-immigration-data.sh all minimal   # or: standard | full
