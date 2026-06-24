@@ -45,6 +45,25 @@ No new discovery gap (claim 1). Two non-discovery items: (a) the T03 consumer-su
 ## Acquired this session (done)
 6 papers fetched to the shared corpus with full text, all `quality.vetoed=false`, none retracted: T02 Place Premium, T03 Cortés, T04 AJKM, T06 Ottaviano-Peri, T07 Chiswick, + Abramitzky-Boustan (mobility anchor). The cluster-T benefit-side citation gap is now closed for the 5 lenses that have an external paper (T01/T08 are framing-only; T05 is a govt report). The Ottaviano-Peri DOI, flagged `[UNVERIFIED]` pre-fetch, resolved correctly to the real 2012 JEEA paper — now verified.
 
+## Recent (last 2 years) + the heterodox-credible roster (added 2026-06-24)
+
+**Strongest recent papers (2024–26):**
+| Paper | Year | Why it matters | Status |
+|-------|------|----------------|--------|
+| Abramitzky, Boustan, Jácome, Pérez, Torres — **Law-Abiding Immigrants: The Incarceration Gap 1870–2020** | 2024 (→QJE) | First nationally-representative 150-yr series; immigrants lower-incarceration throughout, gap *widened* post-1960. Benchmarks vs **US-born white men** → directly answers the "native group is race-heterogeneous" critique. | SAVED (SSRN 4878020); full-text paywalled, fetch pending |
+| Ibáñez, Rozo, Bahar, Urbina — **Protecting the Vulnerable: How Migrant Regularization Reduces Crime and Empowers Women** | 2026 J Dev Econ | Causal (Colombia/Venezuelan reg.): regularization *cut* migrant crime AND *raised* reporting of crimes against migrant women → both the detection-bias and enforcement narratives. Caveat: Colombia, not US. | abstract-verified [SOURCE: 10.1016/j.jdeveco.2025.103667] |
+| **Female immigration & the US childcare market: prices and earnings** | 2026 | Recent US update of the Cortés (T03) consumer-surplus / non-traded-price channel. | [SOURCE: Exa, 2026-04-07] — not yet acquired |
+| Demographic & Economic Implications of Alternative US Immigration Policies | 2025 | Projections to 2060: higher immigration → higher GDP + lower SS deficits (T05 PAYG). | [SOURCE: Pop Res Policy Rev, OA] |
+
+**On "are they all woke?" — the honest read.** The concern is partly real and worth stating: academic economics leans left (~4:1+ Democrat:Republican among economists); **sociology and criminology are far more skewed (often >20:1)** — so soft interpretive/attitudinal work in those fields carries heavy instrument bias, and immigration is a flagship politicized topic. But tilt ≠ invalidity, and the bias runs a *specific* direction (under-emphasis/burial of inconvenient findings, not fabrication of data). The discipline that follows: **weight the hard data + design, discount the framing/interpretation, and actively seat the credible heterodox skeptics.** The roster worth reading *because* they cut against consensus with rigor:
+- **George Borjas** (Harvard) — the establishment's *own* skeptic; negative (Roy-model) selection, wage depression. Most-cited immigration economist; the steelman's backbone (already cluster-S).
+- **Garett Jones** (George Mason) — *The Culture Transplant* (Stanford UP, 2023) [TRAINING-DATA, book — not in paper corpus] — the strongest credentialed case that migrants transmit origin institutions/culture (the "deep-roots" channel). The single best answer to "a strong economist who pushes back."
+- **Deep-roots economic history** — Spolaore & Wacziarg, Putterman & Weil — the rigorous, non-activist long-run institutional-transmission literature underpinning Jones.
+- **Alex Nowrasteh** (Cato) — pro-immigration *libertarian*, but the most data-honest on crime: he published the **race-composition correction that halved his own side's** crime-gap number. Heterodox-by-method, not by conclusion.
+- **Robert Putnam** (Harvard) — "E Pluribus Unum" (2007): a liberal who published (reluctantly) that diversity lowers short-run social trust. The honest-sociology exemplar; the canonical result-against-author's-priors.
+
+Net: the corpus is *not* one-sided — cluster-S already holds Borjas; adding Jones (book) + Nowrasteh's corrections + Putnam covers the credible skeptical spectrum across econ **and** sociology. The gap was never "more conservative takes"; it was **benefit-side citations** (now closed) and **the long-run cultural/institutional channel** (Jones/deep-roots — the real open frontier, and it bridges to the sister IQ repo).
+
 ## What's uncertain / next steps (NOT done — separate efforts)
 - **Wire T-papers into the warehouse** the way the S-cluster papers are mined (`mine_*` reads corpus-by-SHA). The 6 PDFs are in the corpus but the cluster-T generators' `source_rel_paths` still point at un-mined placeholder paths. This is a *build*, not research — greenlight separately.
 - **T05 SSA Trustees** immigration-sensitivity tables — web-archive (`save_source`), not the paper pipeline.
