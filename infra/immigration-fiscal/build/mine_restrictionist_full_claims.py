@@ -255,7 +255,8 @@ def main() -> None:
         "perspectives": base.get("perspectives", []),
         "narratives": base.get("narratives", []),
     }
-    OUT.write_text(json.dumps(blob, indent=2) + "\n")
+    # ensure_ascii=False: keep literal UTF-8 (−, §, ⅔) so re-runs don't churn the tracked file
+    OUT.write_text(json.dumps(blob, indent=2, ensure_ascii=False) + "\n")
     print(f"Wrote {OUT} ({len(deduped)} claims)")
 
 

@@ -14,7 +14,10 @@
       "source_rel_path": "external/lifetime/nber/borjas_2003_labor_demand_curve_immigration_w9755.pdf",
       "corpus_sha": "sha_ebb48fc02c714bfe",
       "parameter_name": "wage_elasticity_per_10pct_supply",
-      "value_range": [-0.04, -0.03],
+      "value_range": [
+        -0.04,
+        -0.03
+      ],
       "unit": "log wage change per 10% cell supply",
       "population": "native men in same education-experience cell",
       "page_ref": "abstract, Table III",
@@ -43,7 +46,10 @@
       "source_rel_path": "external/lifetime/nber/borjas_2005_native_internal_migration_immigration_w11610.pdf",
       "corpus_sha": "sha_d18f2c501794dccc",
       "parameter_name": "native_migration_attenuation_local_wage",
-      "value_range": [0.40, 0.60],
+      "value_range": [
+        0.4,
+        0.6
+      ],
       "unit": "fraction of national-local wage gap explained by migration",
       "population": "state vs MSA labor markets 1960-2000",
       "page_ref": "abstract, §VI"
@@ -139,7 +145,10 @@
       "source_rel_path": "external/lifetime/nber/gould_2024_asylum_seekers_homelessness_w33655.pdf",
       "corpus_sha": "sha_73e2279cb366d94b",
       "parameter_name": "asylum_share_sheltered_homelessness_rise_2022_2024",
-      "value_range": [0.59, 0.62],
+      "value_range": [
+        0.59,
+        0.62
+      ],
       "unit": "fraction of +43% sheltered rise",
       "population": "HUD PIT sheltered",
       "page_ref": "§6 Conclusions"
@@ -185,7 +194,10 @@
       "source_rel_path": "external/lifetime/nber/hanson_liu_mcgee_2018_rise_fall_us_low_skilled_immigration_w23753.pdf",
       "corpus_sha": "sha_c0bc44bdd41dad19",
       "parameter_name": "counterfactual_skill_premium_2015",
-      "value_range": [0.06, 0.09],
+      "value_range": [
+        0.06,
+        0.09
+      ],
       "unit": "pp higher wage gap if inflows continued 2008-15 pace",
       "page_ref": "Introduction"
     },
@@ -200,35 +212,182 @@
     }
   ],
   "perspectives": [
-    {"id": "P-S01", "label": "National cell econometrician", "papers": ["w9755", "w11610", "w12518"]},
-    {"id": "P-S02", "label": "Subgroup distributional", "papers": ["w12518"]},
-    {"id": "P-S03", "label": "Local episodic fiscal", "papers": ["w33655"]},
-    {"id": "P-S04", "label": "NAS fiscal interpreter", "papers": ["wp1704"]},
-    {"id": "P-S05", "label": "Political-economy dynamic", "papers": ["w15597", "w17515"]},
-    {"id": "P-S06", "label": "Secular supply demographer", "papers": ["w23753"]}
+    {
+      "id": "P-S01",
+      "label": "National cell econometrician",
+      "papers": [
+        "w9755",
+        "w11610",
+        "w12518"
+      ]
+    },
+    {
+      "id": "P-S02",
+      "label": "Subgroup distributional",
+      "papers": [
+        "w12518"
+      ]
+    },
+    {
+      "id": "P-S03",
+      "label": "Local episodic fiscal",
+      "papers": [
+        "w33655"
+      ]
+    },
+    {
+      "id": "P-S04",
+      "label": "NAS fiscal interpreter",
+      "papers": [
+        "wp1704"
+      ]
+    },
+    {
+      "id": "P-S05",
+      "label": "Political-economy dynamic",
+      "papers": [
+        "w15597",
+        "w17515"
+      ]
+    },
+    {
+      "id": "P-S06",
+      "label": "Secular supply demographer",
+      "papers": [
+        "w23753"
+      ]
+    }
   ],
   "narratives": [
-    {"id": "N-S01", "arc": "Samuelson textbook vs Card spatial null", "papers": ["w9755", "w11610"]},
-    {"id": "N-S02", "arc": "Black triple margin (wage/employment/incarceration)", "papers": ["w12518"]},
-    {"id": "N-S03", "arc": "Shelter spike ≠ affordability only", "papers": ["w33655"]},
-    {"id": "N-S04", "arc": "Public goods allocation flips fiscal sign", "papers": ["wp1704"]},
-    {"id": "N-S05", "arc": "Friedman: welfare + open borders incompatible", "papers": ["w15597", "w17515"]},
-    {"id": "N-S06", "arc": "Low-skill wave peaked — prepare for decline", "papers": ["w23753"]}
+    {
+      "id": "N-S01",
+      "arc": "Samuelson textbook vs Card spatial null",
+      "papers": [
+        "w9755",
+        "w11610"
+      ]
+    },
+    {
+      "id": "N-S02",
+      "arc": "Black triple margin (wage/employment/incarceration)",
+      "papers": [
+        "w12518"
+      ]
+    },
+    {
+      "id": "N-S03",
+      "arc": "Shelter spike ≠ affordability only",
+      "papers": [
+        "w33655"
+      ]
+    },
+    {
+      "id": "N-S04",
+      "arc": "Public goods allocation flips fiscal sign",
+      "papers": [
+        "wp1704"
+      ]
+    },
+    {
+      "id": "N-S05",
+      "arc": "Friedman: welfare + open borders incompatible",
+      "papers": [
+        "w15597",
+        "w17515"
+      ]
+    },
+    {
+      "id": "N-S06",
+      "arc": "Low-skill wave peaked — prepare for decline",
+      "papers": [
+        "w23753"
+      ]
+    }
   ],
   "generators": [
-    {"id": "G-LIF-S01", "prompt": "Extract {ledger, cell, cohort, layer} from each restrictionist claim before verdict", "negative_space": "Restrictionist scalar applied to all immigrants"},
-    {"id": "G-LIF-S02", "prompt": "Require BGH-style subgroup rows before accepting distributional harm claims from NAS education averages", "negative_space": "Black/low-skill native harm inferred from <HS immigrant NPV only"},
-    {"id": "G-LIF-S03", "prompt": "FAIR vs ITEP vs Pew stock table — block advocacy ledger without reconciliation", "negative_space": "FAIR $150B as peer-reviewed fact"},
-    {"id": "G-LIF-S04", "prompt": "Gould episodic shelter $ vs NAS lifetime for same surge year — which ℓ dominates local politics?", "negative_space": "Lifetime NAS settles NYC shelter debate"},
-    {"id": "G-LIF-S05", "prompt": "Razin: simulate benefit eligibility change on fiscal sign of same ACS cell", "negative_space": "Immigrant fiscal type invariant to welfare policy"},
-    {"id": "G-LIF-S06", "prompt": "National education×experience cell required before Card citation", "negative_space": "Spatial null as sufficient statistic"},
-    {"id": "G-LIF-S07", "prompt": "Decompose wage impact into weekly / annual / weeks worked", "negative_space": "Wage-only labor harm"},
-    {"id": "G-LIF-S08", "prompt": "Estimate native migration offset for local wage studies", "negative_space": "MSA coefficient = structural elasticity"},
-    {"id": "G-LIF-S09", "prompt": "Triple margin {wage, employment, incarceration} for subgroup claims", "negative_space": "NAS education average as distributional harm"},
-    {"id": "G-LIF-S10", "prompt": "HUD PIT decomposition sheltered-asylum vs other vs unsheltered", "negative_space": "Homelessness = affordability only"},
-    {"id": "G-LIF-S11", "prompt": "Orrenius dual-scenario + federal/state split mandatory", "negative_space": "Single NAS table cell as politics"},
-    {"id": "G-LIF-S12", "prompt": "Razin {τ, μ, σ} shock on fixed ACS fiscal cell", "negative_space": "Static NAS invariant to policy"},
-    {"id": "G-LIF-S13", "prompt": "Welfare-magnet claims require mobility-regime tag", "negative_space": "EUR free-movement evidence → US policy"},
-    {"id": "G-LIF-S14", "prompt": "Hanson secular supply + Pew stock before influx rhetoric", "negative_space": "Encounters = permanent residents"}
+    {
+      "id": "G-LIF-S01",
+      "name": "Restrictionist claim {ledger,cell,cohort,layer} extractor",
+      "prompt": "Extract {ledger, cell, cohort, layer} from each restrictionist claim before verdict",
+      "negative_space": "Restrictionist scalar applied to all immigrants"
+    },
+    {
+      "id": "G-LIF-S02",
+      "name": "BGH subgroup-row requirement for distributional-harm claims",
+      "prompt": "Require BGH-style subgroup rows before accepting distributional harm claims from NAS education averages",
+      "negative_space": "Black/low-skill native harm inferred from <HS immigrant NPV only"
+    },
+    {
+      "id": "G-LIF-S03",
+      "name": "FAIR / ITEP / Pew advocacy-ledger reconciler",
+      "prompt": "FAIR vs ITEP vs Pew stock table — block advocacy ledger without reconciliation",
+      "negative_space": "FAIR $150B as peer-reviewed fact"
+    },
+    {
+      "id": "G-LIF-S04",
+      "name": "Episodic shelter vs lifetime NPV dominance (Gould)",
+      "prompt": "Gould episodic shelter $ vs NAS lifetime for same surge year — which ℓ dominates local politics?",
+      "negative_space": "Lifetime NAS settles NYC shelter debate"
+    },
+    {
+      "id": "G-LIF-S05",
+      "name": "Razin benefit-eligibility fiscal-sign simulator",
+      "prompt": "Razin: simulate benefit eligibility change on fiscal sign of same ACS cell",
+      "negative_space": "Immigrant fiscal type invariant to welfare policy"
+    },
+    {
+      "id": "G-LIF-S06",
+      "name": "Education×experience cell gate before Card citation",
+      "prompt": "National education×experience cell required before Card citation",
+      "negative_space": "Spatial null as sufficient statistic"
+    },
+    {
+      "id": "G-LIF-S07",
+      "name": "Wage-impact weekly / annual / weeks-worked decomposition",
+      "prompt": "Decompose wage impact into weekly / annual / weeks worked",
+      "negative_space": "Wage-only labor harm"
+    },
+    {
+      "id": "G-LIF-S08",
+      "name": "Native-migration offset for local wage studies",
+      "prompt": "Estimate native migration offset for local wage studies",
+      "negative_space": "MSA coefficient = structural elasticity"
+    },
+    {
+      "id": "G-LIF-S09",
+      "name": "Triple-margin {wage, employment, incarceration} subgroup check",
+      "prompt": "Triple margin {wage, employment, incarceration} for subgroup claims",
+      "negative_space": "NAS education average as distributional harm"
+    },
+    {
+      "id": "G-LIF-S10",
+      "name": "HUD PIT sheltered-asylum decomposition",
+      "prompt": "HUD PIT decomposition sheltered-asylum vs other vs unsheltered",
+      "negative_space": "Homelessness = affordability only"
+    },
+    {
+      "id": "G-LIF-S11",
+      "name": "Orrenius dual-scenario + federal/state split",
+      "prompt": "Orrenius dual-scenario + federal/state split mandatory",
+      "negative_space": "Single NAS table cell as politics"
+    },
+    {
+      "id": "G-LIF-S12",
+      "name": "Razin {τ, μ, σ} shock on fixed ACS cell",
+      "prompt": "Razin {τ, μ, σ} shock on fixed ACS fiscal cell",
+      "negative_space": "Static NAS invariant to policy"
+    },
+    {
+      "id": "G-LIF-S13",
+      "name": "Welfare-magnet mobility-regime tag",
+      "prompt": "Welfare-magnet claims require mobility-regime tag",
+      "negative_space": "EUR free-movement evidence → US policy"
+    },
+    {
+      "id": "G-LIF-S14",
+      "name": "Hanson secular-supply + Pew stock before influx rhetoric",
+      "prompt": "Hanson secular supply + Pew stock before influx rhetoric",
+      "negative_space": "Encounters = permanent residents"
+    }
   ]
 }
