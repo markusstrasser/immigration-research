@@ -9,6 +9,14 @@ the context warehouse (flow into the unified release):
 This is the ONLY admin series tying criminal-alien incarceration burden to dollars — the
 single line connecting the crime and fiscal halves of the project.
 
+UNIVERSE CAVEAT (read before using): SCAAP covers PARTICIPATING jurisdictions only (those
+that applied for FY23 reimbursement) — ~45 states+territories, with several states + DC
+ABSENT. So the totals are a FLOOR, not a census; "DHS confirmed days" undercount (large
+"unknown days" remain). Inmate-days are a custody STOCK, not a crime RATE (no population
+denominator). "Criminal alien" = DHS-confirmed noncitizen with a conviction — includes LPRs,
+NOT a synonym for unauthorized. Reimbursement $ != actual incarceration cost (SCAAP pays a
+fraction). Treat as a state-concentration/floor signal, never as offending or total cost.
+
 Run: uv run --with duckdb,pandas,pdfplumber python parse_scaap_awards.py
 Skips gracefully if the PDF isn't present (run setup-crime-frontier.sh first).
 """
