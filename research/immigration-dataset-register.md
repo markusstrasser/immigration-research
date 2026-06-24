@@ -196,6 +196,20 @@ If the question is:
 
 See `research/immigration-net-negative-dataset-frontier-2026-06-15.md` for full tier list and disconfirmation requirements.
 
+## Crime domain (built 2026-06-24)
+
+First crime data wired into the warehouse (the project is "fiscal AND crime"; this is the first crime layer). Acquisition: `acquire/setup-crime-frontier.sh`. Roadmap for the rest: `research/immigration-dataset-roadmap.md`.
+
+| Table / view | Status | What it answers | Build |
+|---|---|---|---|
+| `status_class_def` + `status_class_crosswalk` | Built | INT-06 spine: canonical citizenship/legal-status enum + 6-source crosswalk (lossy/verified flagged) — the keystone every crime↔fiscal status join loads | `build_status_crosswalk.py` |
+| `crime_scaap_awards` (501 jurisdictions) | Built | DOJ SCAAP FY23 per-jurisdiction criminal-alien inmate-days + reimbursement $ | `parse_scaap_awards.py` (from auto-fetched PDF) |
+| `crime_scaap_state_2023` (45 states) | Built | State rollup by `state_fips`; FY23 = 7.8M criminal-alien inmate-days, $210M reimbursed | same |
+| `v_crime_scaap_x_state_fiscal` | Built | INT-03 join: criminal-alien incarceration burden × state immigrant-cost context (Medicaid/SNAP/EL) | `build_crime_views.py` |
+| ICE ERO removals-by-criminality panel | Roadmap (gated) | FY removals by conviction/charge × origin — PDF gives headline only; panel needs the dashboard Excel export (MANUAL_ACQUIRE) | INT-05 |
+
+All flow into the unified `immigration.duckdb` (aggregate; license-clean — no IPUMS microdata).
+
 ## Acquisition frontier (2026-06-15)
 
 Re-staged after lost SSD. **`infra/immigration-fiscal/acquire/setup.sh`** (canonical; `sources/.../setup.sh` is a wrapper) pulls:
