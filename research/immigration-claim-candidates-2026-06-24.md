@@ -58,7 +58,7 @@ Tests the incapacitation premise behind mass-removal-as-public-safety. [SOURCE: 
 ## B. SECOND-GENERATION fiscal & mobility (corpus under-weights this; cluster C/D)
 
 ### S1. US-born children of immigrants (second generation) are the HIGHEST net fiscal contributors of any generational group, exceeding third-generation-plus natives
-**Coordinate:** Fiscal — dynasty (incl. 2nd gen); ledger sign ~0/+. **Verify pass:** `supported` (0.9) — NAS 2016 (NBER w26408) finds 2nd-gen are top net contributors; Census CB16-203 on earnings. [SOURCE: nber.org/w26408; census.gov CB16-203]
+**Coordinate:** Fiscal — dynasty (incl. 2nd gen); ledger sign ~0/+. **Verify pass:** `supported` (0.9) — NAS 2016 (NAP.edu/23550) finds 2nd-gen are top net contributors; Census CB16-203 on earnings. (NBER w26408 = Abramitzky-Boustan *mobility*, NOT the NAS net-contributor finding — don't conflate.) [SOURCE: nap.edu/23550; census.gov CB16-203]
 **Disconfirmation value:** directly attacks the "low-skill parent ⇒ permanent fiscal drag" frame named in the ledger map. Killable: a same-universe lifetime micro-sim showing 2nd-gen net contribution below 3rd-gen+.
 **Tests with:** NAS 2016 fiscal tables + ABJP-MOBILITY (openICPSR 120490) for the mobility mechanism. [SOURCE: nber.org/system/files/working_papers/w26408]
 
