@@ -19,3 +19,5 @@ uv run --with duckdb,pandas,pdfplumber python "$ROOT/build/parse_scaap_awards.py
 uv run --with duckdb,pandas python "$ROOT/build/load_light_tx_crime.py"
 uv run --with duckdb,pandas,pyreadstat python "$ROOT/build/load_spi_citizenship.py"
 uv run --with duckdb python "$ROOT/build/build_crime_views.py"
+echo "=== first-gen assimilation profile by origin x years-in-US (synthetic cohorts; skips if IPUMS microdata absent) ==="
+uv run --with duckdb python "$ROOT/build/build_immigrant_assimilation_profile.py"
