@@ -2,8 +2,13 @@
 .claude/plans/
 .claude/current-session-id
 .claude/checkout-claim.json
+.claude/checkpoint.md
+.claude/checkpoint-autogen.md
 .mcp.json
 .scratch/
+
+# Node — vestigial; playwright runs via `uv run --with playwright`, not npm
+node_modules/
 
 # Derived/regenerable agent artifacts (generators live in agent-infra)
 artifacts/
