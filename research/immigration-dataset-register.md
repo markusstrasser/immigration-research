@@ -208,7 +208,7 @@ First crime data wired into the warehouse (the project is "fiscal AND crime"; th
 | `v_crime_scaap_x_state_fiscal` | Built | INT-03 join: criminal-alien incarceration burden × state immigrant-cost context (Medicaid/SNAP/EL) | `build_crime_views.py` |
 | `crime_tx_arrests_by_status` (156 rows) + `v_crime_tx_status_ratio` | **Built (INT-01)** | Light/He/Robey TX DPS crime RATE per 100k by {undocumented, legal, citizen} × {violent,property,drug,traffic} × {CMS,Pew} denom, 2012–18. Headline: undocumented 0.21–0.52× the citizen rate. **The load-bearing crime claim, SHOWN not gated.** | `load_light_tx_crime.py` (data = openICPSR 124923, gated, staged at `crime_frontier/light_texas/`) |
 | ICE ERO removals-by-criminality panel | Roadmap (gated) | FY removals by conviction/charge × origin — PDF gives headline only; panel needs the dashboard Excel export (MANUAL_ACQUIRE) | INT-05 |
-| BJS SPI 2016 incarceration-by-citizenship | Roadmap (gated) | ICPSR 37692 DS1 — needs browser/manual download (Claude-in-Chrome extension not connected this session) | INT-02 |
+| `crime_spi_inmates_by_citizenship` | **Built (INT-02)** | BJS Survey of Prison Inmates 2016 (ICPSR 37692 DS0001): weighted 2016 US prison pop 1.42M, noncitizens = **6.9%** (V0950) vs ~7–9% of US adults ⇒ not over-represented. Verified the spine's BJS_SPI mapping. | `load_spi_citizenship.py` (data gated, staged at `crime_frontier/spi/`) |
 
 All flow into the unified `immigration.duckdb` (aggregate; license-clean — no IPUMS microdata).
 
