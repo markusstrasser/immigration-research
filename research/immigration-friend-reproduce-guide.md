@@ -169,10 +169,12 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 | EDFacts FS141 EL 2022–23 | ACS school-age foreign-born + CCD 2018–19 substitute; Ed Data Express bot-blocked |
 | TRAC court backlog CSV | EOIR pending/receipts/completions (`context_09`) |
 | PSID / Synthetic SIPP / FSRDC LEHD | Application-gated — `applications/MANUAL_ACQUIRE.md` |
+| Crime/frontier — CBO Emergency Medicaid, OECD IMO | hard-403 WAF — `crime_frontier/MANUAL_ACQUIRE.md` |
+| Crime/frontier — ICPSR/openICPSR (Light TX, Abramitzky, BJS SPI/NCRP, AZ, NIS) | free login + DUA click-through; exact study IDs in `crime_frontier/MANUAL_ACQUIRE.md` |
 
-**Now scripted:** SSA→CDC mortality, KFF→CMS+ACS, EL 2018–19 CCD, SAIPE poverty, ACS school-age proxy, NAS PDF, SAFMR, SNAP, receiver cities.
+**Now scripted:** SSA→CDC mortality, KFF→CMS+ACS, EL 2018–19 CCD, SAIPE poverty, ACS school-age proxy, NAS PDF, SAFMR, SNAP, receiver cities; **crime/frontier (2026-06-24): DOJ SCAAP, ICE ERO FY23/24, ORR ARC** (`setup-crime-frontier.sh`, folded into `all`); Census ABS owner-nativity via API key.
 
-Lists after download: `$PNY_DATA_ROOT/external/stage5_net_negative/kff_refs/MANUAL_ACQUIRE.md`
+Lists after download: `$PNY_DATA_ROOT/external/stage5_net_negative/kff_refs/MANUAL_ACQUIRE.md` · `$PNY_DATA_ROOT/external/crime_frontier/MANUAL_ACQUIRE.md`
 
 ---
 
