@@ -104,7 +104,7 @@ But the real channels also include:
 4. emergency procurement
 5. right-to-shelter obligations
 
-[SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md]
+[SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] [SOURCE: research/immigration-full-spectrum-costs-unauthorized-memo.md]
 
 ### 7) Aggregate-output trump card
 

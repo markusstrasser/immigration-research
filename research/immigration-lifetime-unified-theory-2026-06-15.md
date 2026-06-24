@@ -60,7 +60,7 @@ There is **no** legitimate reduction to one number. Debate collapse happens when
 | Mexico federal net proxy × full microsim adults | ~$12.9B/yr | `v_country_fiscal_rollup` federal_annual [DATA] |
 | Mexico federal net proxy × scenario subset | ~$664M/yr | 436,819 × $1,519; recent-low-skill/PUMA-linked subset only [INFERENCE] |
 | ITEP undocumented taxes (national, 2022) | $96.7B | `life.itep_undocumented_tax_summary` |
-| CBO surge federal deficit effect (2024–34) | ~−$897B | [SOURCE: CBO 60569 via `fiscal-impact-unauthorized-immigration-research-memo.md`] |
+| CBO surge federal deficit effect (2024–34) | ~−$897B | [SOURCE: CBO 60569 via `immigration-fiscal-impact-unauthorized-memo.md`] |
 | CBO surge state/local direct cost (2023) | ~$9.2B | [SOURCE: CBO 61256 via claims evolution ledger] |
 | NYC asylum/shelter spend FY2024 | ~$3.7B | `receiver_city_migrant_costs` |
 | Saiz elasticity median (MSA) | 2.54 (269 MSAs) | `life.saiz_msa_elasticity` — sweep 31 |

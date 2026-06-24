@@ -225,7 +225,7 @@ That is **not** a headline causal estimate for the total effect of shelter law. 
 1. The measurable long-tail channel here is **real but highly heterogeneous** across states. [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf]
 2. The observed 2023 spending concentration is **better explained by institutional response and category-specific state policy** than by immigrant counts alone. [SOURCE: `sources/immigration-fiscal/data/derived/state_response_cost_dataset.csv`] [SOURCE: `sources/immigration-fiscal/data/derived/state_response_cost_models.json`] [INFERENCE]
 3. That does **not** imply the broader full-spectrum cost question is small. It implies the costs are **conditional and locally state-dependent**, which is different from saying there is one nationally stable per-person number. [INFERENCE]
-4. The present data do **not** justify a clean causal estimate of "the real long-tail total cost" and do **not** rescue a `-$200k` claim by identification alone. To get there, you still need a stack of partially measured or unmeasured channels. [SOURCE: `research/path-to-minus-200k-scenario-audit.md`] [INFERENCE]
+4. The present data do **not** justify a clean causal estimate of "the real long-tail total cost" and do **not** rescue a `-$200k` claim by identification alone. To get there, you still need a stack of partially measured or unmeasured channels. [SOURCE: `research/immigration-path-to-minus-200k-scenario-audit.md`] [INFERENCE]
 
 ## What Would Actually Improve This
 

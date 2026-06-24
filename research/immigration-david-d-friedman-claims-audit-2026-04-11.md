@@ -47,7 +47,7 @@ The clean verdict is:
 | `Immigration restrictions block voluntary transactions in a way private owners in a free society would not.` | `Broadly right` | This is one of Friedman's strongest points. Even with public property, entry restrictions do more than mimic private exclusion. [SOURCE: http://www.daviddfriedman.com/Ideas%20I/Libertarianism/Immigration%20Arguments.pdf] |
 | `Welfare-state objections should be solved by excluding immigrants from welfare, voting, or public schools, not by excluding them from entry.` | `Partly survives, but incomplete` | That would reduce part of the transfer problem, but it leaves local public goods, emergency systems, housing markets, and nonbudgetary crowding. [SOURCE: http://www.daviddfriedman.com/Libertarian/Welfare_and_Immigration.html] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] [SOURCE: research/immigration-unified-scenarios-memo.md] |
 | `Free migration disciplines redistribution by making transfer-heavy jurisdictions less viable.` | `Plausible in theory, mixed in practice` | Mobility can constrain subnational redistribution, but it can also induce re-centralization instead of shrinkage; evidence on welfare magnets exists but does not yield Friedman's broad confidence. [SOURCE: http://www.daviddfriedman.com/Libertarian/Welfare_and_Immigration.html] [SOURCE: https://www.nber.org/papers/w17515] [SOURCE: https://www.nber.org/papers/w26454] |
-| `Critics of free immigration offer no strong reason to expect immigrants to make the country more socialist, crime-ridden, or otherwise worse.` | `Too broad` | Some alarmist versions fail, but the political-economy literature does find real backlash, redistribution effects, and institutional stress under some conditions. [SOURCE: http://www.daviddfriedman.com/Machinery_3d_Edition/The%20Conservative%20Mistake.htm] [SOURCE: https://www.aeaweb.org/articles?id=10.1257/jel.20221643] [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md] |
+| `Critics of free immigration offer no strong reason to expect immigrants to make the country more socialist, crime-ridden, or otherwise worse.` | `Too broad` | Some alarmist versions fail, but the political-economy literature does find real backlash, redistribution effects, and institutional stress under some conditions. [SOURCE: http://www.daviddfriedman.com/Machinery_3d_Edition/The%20Conservative%20Mistake.htm] [SOURCE: https://www.aeaweb.org/articles?id=10.1257/jel.20221643] [SOURCE: research/immigration-full-spectrum-costs-unauthorized-memo.md] |
 
 ## Claim 1: `Open borders are the default libertarian position`
 
@@ -124,7 +124,7 @@ What survives:
 What fails:
 
 1. The political-effects literature does find that immigration often triggers backlash, changes redistribution preferences, and can strengthen anti-immigrant politics. [SOURCE: https://www.aeaweb.org/articles?id=10.1257/jel.20221643]
-2. The repo's full-spectrum memo also treats backlash and governance costs as real channels, even when they are hard to monetize. [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md]
+2. The repo's full-spectrum memo also treats backlash and governance costs as real channels, even when they are hard to monetize. [SOURCE: research/immigration-full-spectrum-costs-unauthorized-memo.md]
 3. So the right reply to alarmism is not `there is no strong reason`. It is `some fears are exaggerated, but the sign and magnitude depend on scale, destination, institutional design, and local capacity`. [INFERENCE]
 
 Verdict:

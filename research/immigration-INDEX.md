@@ -27,11 +27,11 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 
 | File | Topic | Consult before |
 |------|-------|----------------|
-| `fiscal-impact-unauthorized-immigration-research-memo.md` | Main fiscal memo: federal/state-local split, wage debate, child-attribution dispute | Any fiscal bottom line |
-| `full-spectrum-costs-unauthorized-immigration-research-memo.md` | Non-ledger costs: congestion, courts, labor-law erosion, backlash | Claiming "hidden" costs beyond taxes/transfers |
+| `immigration-fiscal-impact-unauthorized-memo.md` | Main fiscal memo: federal/state-local split, wage debate, child-attribution dispute | Any fiscal bottom line |
+| `immigration-full-spectrum-costs-unauthorized-memo.md` | Non-ledger costs: congestion, courts, labor-law erosion, backlash | Claiming "hidden" costs beyond taxes/transfers |
 | `immigration-unified-scenarios-memo.md` | Scenario comparison across methods | Converting arguments into a bounded range |
 | `immigration-costs-causal-analysis.md` | DAG and causal-path discipline | Proposing controls, mediators, or attribution rules |
-| `state-local-cost-examples-ny-ca-tx.md` | Concrete state/local examples | Generalizing from national ledgers to local burden |
+| `immigration-state-local-cost-examples-ny-ca-tx.md` | Concrete state/local examples | Generalizing from national ledgers to local burden |
 | `immigration-household-weighted-correction.md` | Household vs person correction issues | Reusing external figures without checking unit of analysis |
 | `immigration-nas-scope-and-bias-update-2026-04-10.md` | What NAS does and does not cover | Treating NAS as final or complete |
 | `immigration-adversarial-review.md` | Strongest case against our own position | Closing out a conclusion or writing a public-facing memo |
@@ -140,7 +140,7 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 If the question is:
 
 1. `What do we currently think?` Start with `immigration-knowledge-delta-agent-loop-2026-06-16.md`, then `immigration-conclusion-audit-running-fixes.md`, then `immigration-confidence-ladder.md`; use `immigration-verified-findings-report-2026-04-10.md` only with its June scoping notes.
-2. `Is low-skill immigration good or bad for natives?` Start with `immigration-economist-effects-matrix.md`, then `fiscal-impact-unauthorized-immigration-research-memo.md`, then `full-spectrum-costs-unauthorized-immigration-research-memo.md`.
+2. `Is low-skill immigration good or bad for natives?` Start with `immigration-economist-effects-matrix.md`, then `immigration-fiscal-impact-unauthorized-memo.md`, then `immigration-full-spectrum-costs-unauthorized-memo.md`.
 3. `What data do we have locally?` Start with `immigration-dataset-register.md`, then `../sources/immigration-fiscal/data/MANIFEST.md`.
 4. `Can we model this ourselves?` Start with `immigration-lifetime-fiscal-data-stack-2026-04-10.md`, then `immigration-public-data-acquisition-2026-04-11.md`, then `immigration-frontier-data-acquisition-2026-04-11.md`, then the DuckDB build files.
 5. `What is the current `<HS` / `HS` / `some college` stock split?` Start with `immigration-education-bucket-stock-and-lifetime-status-2026-04-11.md`.

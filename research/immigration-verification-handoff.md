@@ -21,7 +21,7 @@ If a writer slides between those categories, flag `CATEGORY SLIP`.
 
 Use first:
 
-1. `research/fiscal-impact-unauthorized-immigration-research-memo.md`
+1. `research/immigration-fiscal-impact-unauthorized-memo.md`
 2. `research/immigration-economist-effects-matrix.md`
 3. `research/immigration-evidence-base-audit.md`
 
@@ -40,8 +40,8 @@ What they cannot settle cleanly:
 
 Use first:
 
-1. `research/fiscal-impact-unauthorized-immigration-research-memo.md`
-2. `research/full-spectrum-costs-unauthorized-immigration-research-memo.md`
+1. `research/immigration-fiscal-impact-unauthorized-memo.md`
+2. `research/immigration-full-spectrum-costs-unauthorized-memo.md`
 3. `research/immigration-unified-scenarios-memo.md`
 4. `sources/immigration-fiscal/fiscal_impact_synthesis_gpt54.md`
 
@@ -65,7 +65,7 @@ Use first:
 
 1. `research/immigration-local-burden-puma-layer.md`
 2. `research/immigration-household-weighted-correction.md`
-3. `research/state-local-cost-examples-ny-ca-tx.md`
+3. `research/immigration-state-local-cost-examples-ny-ca-tx.md`
 4. `research/immigration-verified-findings-report-2026-04-10.md`
 
 What these can support:
@@ -196,7 +196,7 @@ Local assets:
 1. `sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.csv`
 2. `sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.meta.json`
 3. `sources/immigration-fiscal/data/external/stage3/ahrq/meps/`
-4. `research/full-spectrum-costs-unauthorized-immigration-research-memo.md`
+4. `research/immigration-full-spectrum-costs-unauthorized-memo.md`
 
 Best for:
 

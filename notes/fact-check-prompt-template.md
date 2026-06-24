@@ -1,6 +1,6 @@
 # Fact-Check Agent Prompt Template
 
-Reusable prompt for dispatching claim verification agents. Derived from JRE #2460 session — see `research/jre-2460-rachel-wilson-claims.md` for the output that informed these improvements.
+Reusable prompt for dispatching claim verification agents. Derived from JRE #2460 session — see `research/immigration-jre-2460-rachel-wilson-claims.md` for the output that informed these improvements.
 
 ## Dispatch strategy
 

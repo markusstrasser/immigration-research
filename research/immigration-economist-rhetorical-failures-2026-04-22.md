@@ -41,7 +41,7 @@ So the economist case is weakest exactly where it acts as if one efficiency argu
 | 2 | `Large migrant gains imply large gains for destination-country incumbents` | `Rejected` | Migrant/global gains survive, but destination per-capita and local-incidence claims do not follow automatically. [SOURCE: research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md] |
 | 3 | `Open-borders papers justify near-doubling as a realistic forecast` | `Rejected` | The strong papers are stylized upper-bound models, not policy-realist central forecasts. [SOURCE: research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md] |
 | 4 | `Capacity is a second-order friction that does not change the sign` | `Too broad` | Housing, shelter, and local service capacity are first-order stress systems in the repo's current descriptive evidence, even where causal identification is incomplete. [SOURCE: research/immigration-capacity-frontier-2026-04-21.md] [SOURCE: research/immigration-receiver-failure-atlas-2026-04-22.md] |
-| 5 | `Political effects are mostly about immigrant voting` | `Too narrow` | Citizen political response, legitimacy, assignment regimes, and local overload remain live channels; the current receiver-election evidence is correlational, not a clean backlash mechanism estimate. [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md] |
+| 5 | `Political effects are mostly about immigrant voting` | `Too narrow` | Citizen political response, legitimacy, assignment regimes, and local overload remain live channels; the current receiver-election evidence is correlational, not a clean backlash mechanism estimate. [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md] [SOURCE: research/immigration-full-spectrum-costs-unauthorized-memo.md] |
 | 6 | `If overall GDP rises, restrictionist objections are mostly answered` | `Rejected` | Aggregate GDP, GDP per capita, and local incumbent welfare are distinct ledgers. [SOURCE: research/immigration-claims-matrix-2026-04-11.md] |
 
 ## The strongest fair steel-man
@@ -172,7 +172,7 @@ That is too narrow.
 The repo's current work points to:
 
 1. citizen political-response associations in high-immigration constrained places [SOURCE: research/immigration-threshold-causal-levers-2026-04-21.md]
-2. local burden channels in shelter, schools, and services [SOURCE: research/full-spectrum-costs-unauthorized-immigration-research-memo.md]
+2. local burden channels in shelter, schools, and services [SOURCE: research/immigration-full-spectrum-costs-unauthorized-memo.md]
 3. assignment rules, right-to-shelter, and emergency procurement as separate causal levers [SOURCE: research/immigration-frontier-rethink-2026-04-22.md]
 
 So if the rhetoric acts as if `lower immigrant turnout` answers the political objection, that is not analysis. It is a drastic underspecification of the system. [INFERENCE]
