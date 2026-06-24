@@ -55,9 +55,9 @@ CROSSWALK = [
     ("USSC_NEWCIT", "1", "Resident/Legal Alien",  "lpr_legal_noncitizen", False, False, "[UNVERIFIED] confirm USSC codebook"),
     ("USSC_NEWCIT", "2", "Illegal Alien",         "unauthorized",         False, False, "[UNVERIFIED] confirm USSC codebook"),
     ("USSC_NEWCIT", "3", "Non-US Citizen/Unknown","other_noncitizen",     True,  False, "[UNVERIFIED] confirm USSC codebook"),
-    # --- BJS Survey of Prison Inmates citizenship item (UNVERIFIED) ---
-    ("BJS_SPI", "CIT",    "US citizen",  "native_born",      True,  False, "[UNVERIFIED] SPI citizen item not split native/naturalized; confirm DS1 codebook"),
-    ("BJS_SPI", "NONCIT", "Non-citizen", "other_noncitizen", True,  False, "[UNVERIFIED] SPI cannot split LPR/unauthorized; confirm DS1 codebook"),
+    # --- BJS Survey of Prison Inmates citizenship (VERIFIED via DS0001 codebook: SES5A V0950) ---
+    ("BJS_SPI", "V0950_skip_or_1", "US citizen (V0950 SES5A skipped, or =1 dual)", "native_born", True, True, "SES5A: US-only (said 'United States' to SES5 -> skipped) + dual citizens; can't split native/naturalized"),
+    ("BJS_SPI", "V0950_2", "Noncitizen (V0950 SES5A=No: foreign citizen, not also US)", "other_noncitizen", True, True, "SES5A V0950=2; country-of-citizenship suppressed in PUF so LPR/unauthorized not splittable"),
 ]
 
 
