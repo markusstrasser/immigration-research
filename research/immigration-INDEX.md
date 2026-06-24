@@ -32,6 +32,8 @@ Candidate outputs from a parallel scout pass to extend the graph — **feed the 
 |------|------|
 | `immigration-dataset-roadmap-additions-2026-06-24.md` | More datasets beyond the roadmap (AZ crime-by-status ICPSR 39107, BJS NCRP corrections flow, SSA EPUF earnings, LEHD PSEO, OECD fiscal) |
 | `immigration-dataset-roadmap-batch3-2026-06-24.md` | Batch 3 — 14 datasets across 8 axes (labor-status, health, tax, housing, innovation, international, enforcement, flows): NAWS, DOL OFLC, NHIS, AHRQ HCUP, IRS ITIN, SSA Earnings Suspense File, AHS, PatentsView + immigrant-inventor linkage, StatCan IMDB, TRAC, MMP, DHS Yearbook, UK Dustmann-Frattini |
+| `immigration-dataset-roadmap-batch4-us-2026-06-24.md` | Batch 4 US-micro (7) — crime victimization (NCVS), 2nd-gen longitudinal (CILS, Add Health, NLSY97), health (NHANES, NLMS mortality), food security (CPS-FSS) |
+| `immigration-dataset-roadmap-batch4-intl-2026-06-24.md` | Batch 4 international/flows (6) — OECD-DIOC, World Bank KNOMAD remittance-outflow leakage, USCIS admin flows, Census of Governments fiscal capacity, ORR refugee survey, German IAB-SOEP |
 | `immigration-paper-gaps-2026-06-24.md` | Missing/under-weighted papers (Ousey-Kubrin meta-analysis, Light 2020, Abramitzky 2024 incarceration series, sanctuary/enforcement nulls) |
 | `immigration-claim-candidates-2026-06-24.md` | 17 falsifiable claims (crime C1–C7, 2nd-gen S1–S4, sharp tests Q1–Q6) each paired to a settling dataset |
 | `immigration-integration-opportunities-2026-06-24.md` | 12 graph-wiring fixes; spine = INT-06 canonical status/citizenship harmonization table |
