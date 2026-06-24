@@ -109,9 +109,9 @@ _cmd_build() {
     export PNY_DATA_ROOT DERIVED_ROOT DUCKDB_PATH CORPUS_ROOT
     export LIFETIME_DUCKDB_PATH FISCAL_UNION_DUCKDB_PATH IMMIGRATION_CAUSAL_DATA UNIFIED_DUCKDB_PATH
     case "$target" in
-        context) bash "$ROOT/rebuild.sh" ;;
-        mvp) bash "$ROOT/rebuild_mvp.sh" ;;
-        lifetime) bash "$ROOT/rebuild_lifetime_warehouse.sh" ;;
+        context) bash "$ROOT/build-context.sh" ;;
+        mvp) bash "$ROOT/build-mvp.sh" ;;
+        lifetime) bash "$ROOT/build-lifetime.sh" ;;
         ipums)
             # IPUMS Borjas supply-shock panel (skips gracefully without the manual extract)
             uv run --with duckdb python "$ROOT/build/load_ipums_borjas_panel.py"
@@ -119,11 +119,11 @@ _cmd_build() {
             ;;
         unified) uv run --with duckdb python "$ROOT/build/build_unified_warehouse.py" ;;
         all)
-            bash "$ROOT/rebuild.sh"
+            bash "$ROOT/build-context.sh"
             uv run --with duckdb python "$ROOT/build/load_ipums_borjas_panel.py"
             uv run --with duckdb python "$ROOT/build/build_borjas_supply_shock_panel.py"
-            bash "$ROOT/rebuild_mvp.sh"
-            bash "$ROOT/rebuild_lifetime_warehouse.sh"
+            bash "$ROOT/build-mvp.sh"
+            bash "$ROOT/build-lifetime.sh"
             uv run --with duckdb python "$ROOT/build/build_unified_warehouse.py"
             ;;
         *) echo "unknown build target: $target" >&2; exit 2 ;;

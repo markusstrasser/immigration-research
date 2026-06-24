@@ -23,8 +23,8 @@
 **Reproduce:**
 ```bash
 cd infra/immigration-fiscal
-bash rebuild.sh                    # context + native microsim (HISP='01' fix)
-bash rebuild_lifetime_warehouse.sh # lifetime + tensor union DB
+bash build-context.sh                    # context + native microsim (HISP='01' fix)
+bash build-lifetime.sh # lifetime + tensor union DB
 ```
 
 ---

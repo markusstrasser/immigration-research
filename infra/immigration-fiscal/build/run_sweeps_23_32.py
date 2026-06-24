@@ -230,7 +230,7 @@ def main() -> None:
             _write_mining(n, sw["cluster"], sw["claims"])
         for rb in sw.get("rebuild") or []:
             if rb == "lifetime":
-                _run(["bash", "rebuild_lifetime_warehouse.sh"])
+                _run(["bash", "build-lifetime.sh"])
             elif rb == "tensor":
                 _run(["uv", "run", "--with", "duckdb,pandas", "python", "build/build_country_fiscal_tensor.py"])
         data = _query(sw["sql"]) if sw.get("sql") else []

@@ -292,7 +292,7 @@ if [[ -d "$DERIVED_STAGE3" ]]; then
         [[ -f "$DERIVED_STAGE3/$_f" ]] && cp -f "$DERIVED_STAGE3/$_f" "$LT/derived/stage3_proto/$_f" && _ok "copy $LT/derived/stage3_proto/$_f"
     done
 else
-    _warn "skip scenario ledger copy — $DERIVED_STAGE3 missing (run rebuild.sh + compose)"
+    _warn "skip scenario ledger copy — $DERIVED_STAGE3 missing (run build-context.sh + compose)"
 fi
 
 # --- Round 10: return-migration/assimilation, OECD flows, derived incidence bridge, admin costs ---

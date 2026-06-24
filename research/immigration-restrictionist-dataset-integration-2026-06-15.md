@@ -144,7 +144,7 @@ immigration_fiscal_union.duckdb     ← v_full_fiscal_stack = lifetime + episodi
 cd infra/immigration-fiscal
 bash acquire/setup-lifetime.sh          # papers already staged
 # + new: bash acquire/setup-restrictionist-panels.sh  (proposed)
-bash rebuild_lifetime_warehouse.sh
+bash build-lifetime.sh
 uv run --with duckdb,pandas python build/build_country_fiscal_tensor.py
 ```
 
