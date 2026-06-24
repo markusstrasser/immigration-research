@@ -22,7 +22,7 @@
       "unnamed_assumptions_surfaced": ["2nd-generation behavior is set by host institutions alone", "Culture is fully assimilated by birth in the host country", "Female labor supply and fertility are origin-invariant by the 2nd generation"],
       "topics": ["cultural_transmission", "epidemiological_approach", "second_generation"],
       "source_rel_paths": ["Fernandez-Fogli 'Culture: An Empirical Investigation of Beliefs, Work, and Fertility' AEJ:Macro 2009 (DOI 10.1257/mac.1.1.146; S2 CorpusId 15277229) — saved, fetch pending"],
-      "theory_tested": "Within-US 2nd-generation outcomes by origin (IPUMS, parental BPL) should retain an origin-culture component (female LFP, fertility) after controlling for education and current location."
+      "theory_tested": "Within-US 2nd-generation outcomes by origin should retain an origin-culture component (female LFP, fertility) after controlling for education and location — BUT this needs PARENTAL birthplace, which IPUMS-USA dropped after 1970 and the current 44M-row extract lacks (BPL/CITIZEN/YRIMMIG only). Requires an IPUMS-CPS extract (father's/mother's birthplace) — a separate gated acquisition, NOT yet buildable here."
     },
     {
       "id": "G-LIF-V03",
@@ -43,8 +43,8 @@
       "negative_space": "The positive dynasty/2nd-gen ledger (cluster-T, ledger-map) prices in fast convergence; the ethnic-capital persistence that slows it is the missing debit.",
       "unnamed_assumptions_surfaced": ["The 2nd generation converges to the host mean in one generation", "Only parental skills, not the ethnic environment, transmit human capital", "Convergence speed is origin-invariant"],
       "topics": ["ethnic_capital", "assimilation_speed", "intergenerational_mobility"],
-      "source_rel_paths": ["corpus://doi_10_2307_2118325/paper.pdf", "Borjas 1995 'Ethnicity, Neighborhoods, and Human-Capital Externalities' AER (NBER w4912) — the neighborhood-externality companion"],
-      "theory_tested": "2nd-gen US skill/earnings by origin should regress toward the host mean SLOWER than a one-generation model predicts — directly opposed by V08's fast-assimilation evidence; the truth is the decay RATE, measurable in the IPUMS panel."
+      "source_rel_paths": ["corpus://doi_10_2307_2118325/paper.pdf", "Borjas 1995 'Ethnicity, Neighborhoods, and Human-Capital Externalities' AER (NBER w4912) — the neighborhood-externality companion", "in-repo: immigrant_assimilation_profile (first-gen synthetic-cohort convergence by origin — the buildable analog)"],
+      "theory_tested": "The FIRST-GENERATION assimilation analog is now BUILT (immigrant_assimilation_profile, synthetic cohorts): Mexican arrival cohorts' income gap to natives closes from -0.70 to -0.24 log pts over ~30 yrs in the US and the employment gap closes to ~0 by 15-25 yrs — convergence, not a slow brake, WITHIN the first generation. The true cross-GENERATIONAL ethnic-capital persistence (2nd-gen vs 1st) still needs IPUMS-CPS parental birthplace."
     },
     {
       "id": "G-LIF-V05",
@@ -87,8 +87,8 @@
       "negative_space": "A steelman without its null is a polemic. This lens is the built-in disconfirmation that keeps cluster-V honest and prevents its long-run, average claims from being laundered into first-gen or individual ones.",
       "unnamed_assumptions_surfaced": ["Transmission is fixed rather than decaying", "Long-run or average persistence implies individual or first-gen outcomes", "European low-assimilation evidence transfers to the US melting pot"],
       "topics": ["assimilation", "constructive_null", "decay_of_persistence"],
-      "source_rel_paths": ["corpus://doi_10_1257_jel_20151189/paper.pdf", "Abramitzky-Boustan-Jacome-Perez 'Law-Abiding Immigrants: The Incarceration Gap 1870-2020' (SSRN 4878020) — saved", "in-repo: crime_tx_arrests_by_status, crime_spi_inmates_by_citizenship (the assimilation/advantage evidence this repo built)"],
-      "theory_tested": "2nd-gen US outcomes by origin should show SIGNIFICANT regression toward the host mean within 1-2 generations (IPUMS panel) — this regression rate is the empirical bound on any persistence found under V02/V04, and the incarceration evidence already shows the crime channel runs PRO-immigrant."
+      "source_rel_paths": ["corpus://doi_10_1257_jel_20151189/paper.pdf", "Abramitzky-Boustan-Jacome-Perez 'Law-Abiding Immigrants: The Incarceration Gap 1870-2020' (SSRN 4878020) — saved", "in-repo: crime_tx_arrests_by_status, crime_spi_inmates_by_citizenship, immigrant_assimilation_profile (the assimilation/advantage evidence this repo built)"],
+      "theory_tested": "FIRST-GEN convergence is now measured in-warehouse (immigrant_assimilation_profile): employment gap to natives closes to ~0 by 15-25 years in the US, income gap roughly halves over 30 years (Mexican synthetic cohorts) — strong evidence against fixed-trait persistence, alongside the 150-year immigrant crime ADVANTAGE. The cross-GENERATIONAL 2nd-gen regression rate (the V02/V04 bound) still needs an IPUMS-CPS extract."
     }
   ],
   "theories_tested": [

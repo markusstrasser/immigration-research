@@ -209,8 +209,9 @@ First crime data wired into the warehouse (the project is "fiscal AND crime"; th
 | `crime_tx_arrests_by_status` (268 rows) + `v_crime_tx_status_ratio` | **Built (INT-01)** | Light/He/Robey TX DPS crime RATE per 100k by {undocumented, legal, naturalized, native-born} × {violent,property,drug,traffic} × {CMS, CMS_nat, Pew} denom, 2012–18. The CMS_nat denom adds the true-native-born split (vs "all citizens"). Headline: undocumented 0.21–0.67× the citizen rate (lowest on property, highest on traffic; violent ≈0.46× in 2018). **The load-bearing crime claim, SHOWN not gated.** | `load_light_tx_crime.py` (data = openICPSR 124923, gated, staged at `crime_frontier/light_texas/`) |
 | ICE ERO removals-by-criminality panel | Roadmap (gated) | FY removals by conviction/charge × origin — PDF gives headline only; panel needs the dashboard Excel export (MANUAL_ACQUIRE) | INT-05 |
 | `crime_spi_inmates_by_citizenship` | **Built (INT-02)** | BJS Survey of Prison Inmates 2016 (ICPSR 37692 DS0001): weighted 2016 US prison pop 1.42M, noncitizens = **6.9%** (V0950) vs ~7–9% of US adults ⇒ not over-represented. Verified the spine's BJS_SPI mapping. | `load_spi_citizenship.py` (data gated, staged at `crime_frontier/spi/`) |
+| `immigrant_assimilation_profile` (204 cells) | **Built (cluster-V)** | First-generation immigrant↔native gap (employment, log-income) by origin region × arrival-cohort × census year (1980–2023), **synthetic cohorts** (Borjas cohort-quality confound removed). Mexican income gap halves (−0.70→−0.24 log pts) over ~30 yrs in-US; employment gap closes by 15–25 yrs. The buildable FIRST-GEN decay measure for V04/V08; the true 2nd-gen needs CPS (below). | `build_immigrant_assimilation_profile.py` (IPUMS-USA microdata → aggregate; skips if SSD absent) |
 
-All flow into the unified `immigration.duckdb` (aggregate; license-clean — no IPUMS microdata).
+All flow into the unified `immigration.duckdb` (aggregate; license-clean — IPUMS microdata stays local, only cell means ship).
 
 ## Acquisition frontier (2026-06-15)
 
@@ -241,7 +242,7 @@ Re-staged after lost SSD. **`infra/immigration-fiscal/acquire/setup.sh`** (canon
 | Next | NCES district English-learner counts | — | Not in current CCD file-tool |
 | Next | Receiver-city admin costs | causal `bused_cities/` | Fragmented city FOIA |
 | Next | SSA actuarial unauthorized estimates | — | Report PDFs, not microdata |
-| Next | IPUMS CPS historical | — | Registration; corpus `census_cps` empty |
+| Next | IPUMS CPS historical (parental birthplace) | — | Registration-gated. **Needed for cluster-V V02:** the true cross-generational 2nd-gen-by-origin test — IPUMS-USA lacks parental birthplace (dropped post-1970), CPS has FBPL/MBPL. corpus `census_cps` empty |
 
 ## Best next steps
 
