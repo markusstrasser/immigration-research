@@ -195,6 +195,16 @@ Reason: E-Verify observed mandate variation is a marginal enforcement design wit
 Rating: `medium-strong descriptive for the named ledger; weak for all-in federal`
 Reason: the current built proxy estimates annual payroll/FICA minus SNAP, TANF, and SSI by origin/education cells. It is materially stronger than the old ACS income/benefit shortcut for that ledger, but it omits income tax, Medicare/Medicaid, EITC mechanics, capital/corporate tax, household filing, and lifetime NPV. Mexico-origin adults are about `$1,519` per adult per year and NH white US-born adults about `$2,746` on this narrow proxy; those figures must not be laundered into all-federal or all-government net claims. [SOURCE: research/immigration-federal-distribution-findings-2026-06-15.md] [SOURCE: research/immigration-country-fiscal-tensor-2026-06-15.md]
 
+## Crime layer added 2026-06-24 (data now in-warehouse, no longer literature-only)
+
+42. `Undocumented and noncitizen immigrants have LOWER crime/arrest rates than native-born citizens`
+Rating: `strong (admin micro + national survey, now SHOWN in our data — not just cited)`
+Reason: Light/He/Robey Texas DPS arrest rates per 100k 2012–18 (`crime_tx_arrests_by_status`): undocumented are `0.21–0.52×` the citizen rate across all four categories (violent 0.46×, drug 0.35×, property 0.21×, traffic 0.52×), legal immigrants in between — robust to both CMS and Pew undocumented-population denominators. BJS Survey of Prison Inmates 2016 (`crime_spi_incarceration_rate`): noncitizen incarceration rate ≈`0.86×` the citizen rate (noncitizens 6.9% of prisoners vs ~7.9% of adults). Caveats: "criminal alien"/"noncitizen" ≠ unauthorized (includes LPRs); the SPI rate pairs a 2016 prison count with a 2023 adult denominator. [SOURCE: `crime_tx_arrests_by_status`, openICPSR 124923] [SOURCE: `crime_spi_incarceration_rate`, ICPSR 37692]
+
+43. `SCAAP measures criminal-alien custody/reimbursement, NOT offending or cost`
+Rating: `strong as a custody-stock signal; must NOT be read as a crime rate or a cost`
+Reason: `crime_scaap_state_2023` is a participating-jurisdictions-only floor — DHS-confirmed criminal-alien inmate-days (7.8M FY23; CA+TX dominate) and DOJ reimbursement ($210M). Inmate-days are a custody STOCK with no population denominator (not a rate); reimbursement $ is a fraction of actual cost. State-concentration signal only. [SOURCE: `crime_scaap_state_2023`; `v_crime_scaap_x_state_fiscal`]
+
 ## Two weakest assumptions
 
 1. `Federal-side proxy ledger`
