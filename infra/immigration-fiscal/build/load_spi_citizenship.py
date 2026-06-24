@@ -22,7 +22,7 @@ from __future__ import annotations
 
 import sys
 
-from paths import data_root, derived_root, duckdb_path
+from paths import data_root, derived_root, duckdb_path, microdata_duckdb_path
 
 
 def build() -> None:
@@ -76,12 +76,37 @@ def build() -> None:
     out = derived_root() / "crime"
     out.mkdir(parents=True, exist_ok=True)
     con.execute(f"COPY crime_spi_inmates_by_citizenship TO '{out / 'spi_inmates_by_citizenship_2016.csv'}' (HEADER)")
-    con.close()
 
     print(f"  ✓ crime_spi_inmates_by_citizenship: weighted 2016 US prison pop = {total:,.0f}")
     print(f"    noncitizen: {noncit:,.0f} ({noncit/total:.1%})  |  us_citizen: {uscit:,.0f} ({uscit/total:.1%})")
-    print(f"    → noncitizens are {noncit/total:.1%} of prisoners; vs ~7-9% of the US ADULT population "
-          f"(ACS) ⇒ NOT over-represented (needs the ACS noncitizen-adult denominator for the exact rate).")
+
+    # INT-02 incarceration RATE: SPI numerator / ACS noncitizen-adult denominator (from the licensed
+    # microdata panel — AGGREGATE output only, no microdata redistributed). Skips if panel absent.
+    md = microdata_duckdb_path()
+    if md.exists():
+        mcon = duckdb.connect(str(md), read_only=True)
+        yr, noncit_adults, all_adults = mcon.execute(
+            "SELECT YEAR, sum(CASE WHEN CITIZEN=3 THEN PERWT ELSE 0 END), sum(PERWT) "
+            "FROM ipums_usa_borjas_panel WHERE AGE>=18 GROUP BY YEAR ORDER BY YEAR DESC LIMIT 1").fetchone()
+        mcon.close()
+        cit_adults = all_adults - noncit_adults
+        nr = noncit / noncit_adults * 1e5
+        cr = uscit / cit_adults * 1e5
+        rate_df = pd.DataFrame([
+            {"citizenship_status": "noncitizen", "prison_year": 2016, "acs_adult_year": int(yr),
+             "prisoners": float(noncit), "adults_18plus": float(noncit_adults), "per_100k_adults": round(nr, 1)},
+            {"citizenship_status": "us_citizen", "prison_year": 2016, "acs_adult_year": int(yr),
+             "prisoners": float(uscit), "adults_18plus": float(cit_adults), "per_100k_adults": round(cr, 1)},
+        ])
+        con.register("_r", rate_df)
+        con.execute("CREATE OR REPLACE TABLE crime_spi_incarceration_rate AS SELECT * FROM _r")
+        con.execute(f"COPY crime_spi_incarceration_rate TO '{out / 'spi_incarceration_rate.csv'}' (HEADER)")
+        print(f"    INT-02 RATE (ACS {yr} adult denom, prison 2016): noncitizen {nr:.0f}/100k vs citizen {cr:.0f}/100k "
+              f"→ ratio {nr/cr:.2f} (noncitizens {'UNDER' if nr < cr else 'OVER'}-represented). "
+              f"Caveat: prison year 2016 vs adult-denominator {yr}.")
+    else:
+        print("    ! incarceration RATE skipped (licensed microdata panel absent) — SPI share only")
+    con.close()
 
 
 if __name__ == "__main__":
