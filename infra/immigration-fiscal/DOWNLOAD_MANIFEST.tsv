@@ -150,3 +150,8 @@ stage5	optional	derived/stage5/saipe_state_school_poverty_2023.csv	1000	build	SA
 stage5	optional	derived/stage5/acs_foreign_born_school_age_state_2023.csv	1000	build	ACS foreign-born ages 5-17 (EDFacts EL proxy)
 stage5	optional	derived/stage5/ohss_state_immigration_2023.csv	500	build	OHSS refugee/asylee/LPR flows by state FY2023
 stage5	optional	derived/stage4/eoir/eoir_pending_cases_fy.csv	100	build	EOIR pending cases (TRAC substitute)
+crime_frontier	optional	external/crime_frontier/scaap/scaap_fy23_awards.pdf	100000	setup-crime-frontier.sh	DOJ SCAAP FY23 per-jurisdiction criminal-alien inmate-days + $
+crime_frontier	optional	external/crime_frontier/scaap/scaap_fy25_solicitation.pdf	100000	setup-crime-frontier.sh	SCAAP data elements + ICE country codes
+crime_frontier	optional	external/crime_frontier/ice/ice_ero_annual_fy2024.pdf	500000	setup-crime-frontier.sh	ICE ERO FY2024 removals by criminality
+crime_frontier	optional	external/crime_frontier/ice/ice_ero_annual_fy2023.pdf	500000	setup-crime-frontier.sh	ICE ERO FY2023 removals by criminality
+crime_frontier	optional	external/crime_frontier/orr/orr_annual_report_to_congress_fy2021.pdf	500000	setup-crime-frontier.sh	ORR ARC FY2021 (govinfo; Playwright fallback)

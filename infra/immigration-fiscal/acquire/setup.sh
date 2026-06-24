@@ -416,6 +416,11 @@ if [[ "${REPRODUCE_TIER:-standard}" != "minimal" && -f "$HERE/setup-lifetime.sh"
     IMMIGRATION_FISCAL_ROOT="$IMMIGRATION_FISCAL_ROOT" bash "$HERE/setup-lifetime.sh" || true
 fi
 
+# Crime + frontier datasets (roadmap 2026-06-24; optional pass; skipped on minimal tier)
+if [[ "${REPRODUCE_TIER:-standard}" != "minimal" && -f "$HERE/setup-crime-frontier.sh" ]]; then
+    IMMIGRATION_FISCAL_ROOT="$IMMIGRATION_FISCAL_ROOT" bash "$HERE/setup-crime-frontier.sh" || true
+fi
+
 if (( ERRORS == 0 )); then
     exit 0
 else
