@@ -101,11 +101,13 @@ Each model is a **ledger grammar** + **prediction map**. Critique = compare gram
 
 ---
 
-### M2 — General-equilibrium offset (Clemens / Colas-Sachs / Peri stack)
+### M2 — Capital-tax + GE offset (Clemens PE correction; Colas-Sachs / Peri GE)
 
 **Grammar.** Immigrant labor raises capital returns, payroll, indirect tax bases; task complementarity raises native wages in communication tasks.
 
-**Core prediction.** Same `<HS` NAS cell flips positive (+$128k) with capital-tax credit; +~$750/yr indirect federal (Colas-Sachs).
+> **Correction (2026-06-24):** Clemens's `<HS` capital-tax flip is **NOT general-equilibrium** — it is a **fixed-price partial-equilibrium capital-income-tax accounting correction** (Clemens, verbatim: *"not a … general-equilibrium effect. It is an instantaneous static effect at partial equilibrium"*). PE needs *weaker* assumptions than GE, so the prior "GE" label *understated* the flip's robustness. Colas-Sachs / Peri here ARE genuine GE (wage-structure channel) — don't fuse them with Clemens. Published-but-contested (AEI Orrenius-Viard 2025). Detail: `immigration-clemens-method-check-2026-06-24.md`. [SOURCE: CGD WP 632]
+
+**Core prediction.** Same `<HS` NAS cell flips positive (+$128k) with Clemens's capital-tax credit (partial-equilibrium); +~$750/yr indirect federal (Colas-Sachs, GE).
 
 **Falsifiers.** Weak capital complementarity in US `<HS` cells; Borjas-large wage effects.
 

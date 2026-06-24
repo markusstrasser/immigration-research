@@ -23,7 +23,7 @@ The recurring debate error is **silently switching one coordinate mid-argument**
 |----------|:---:|------|----------------|
 | **Fiscal — first-gen, static, state-local** | **−** | Low earnings → low tax; K-12 + Medicaid concentrated locally | C, N, O, R |
 | Fiscal — federal annual cash-flow | ~0 / **+** | Payroll incl. unclaimed unauthorized contributions | C01, G, T05 |
-| Fiscal — lifetime NPV, <HS cell | **−** (assumption-dependent; can flip **+**) | NAS −$109k; flips to +$128k under capital-tax GE (Clemens) | A01, A02 |
+| Fiscal — lifetime NPV, <HS cell | **−** (assumption-dependent; can flip **+**) | NAS −$109k; flips to +$128k under Clemens's capital-tax correction (**partial-equilibrium, NOT GE** — see clemens-method-check; contested, AEI 2025) | A01, A02 |
 | Fiscal — **dynasty** (incl. 2nd gen) | ~0 / **+** | US-born children are top net contributors | A06, D, C06 |
 | Economic — aggregate native surplus | **+** (small) | Immigration surplus positive even in Borjas; complementarity | B02, B04, F02, T06 |
 | Economic — **distributional** (low-skill natives) | **−** | The wage hit lands on competing natives (concentrated) | B06, S07–S09 |
