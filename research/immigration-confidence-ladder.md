@@ -15,11 +15,11 @@ A metric can be statistically clean and still be only `contextual-only` for the 
 
 1. `ACS origin / education / recency composition counts`
 Rating: `strong`
-Reason: these are direct weighted ACS summaries, not inferred fiscal objects. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/derived/extend_immigration_context_with_origins.sql]
+Reason: these are direct weighted ACS summaries, not inferred fiscal objects. [SOURCE: sources/immigration-fiscal/data/derived/extend_immigration_context_with_origins.sql]
 
 2. `PUMA-level median gross rent as destination cost exposure`
 Rating: `strong`
-Reason: official ACS geography, directly observed, useful as exposure context. It is not a welfare scalar. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/derived/extend_immigration_context_with_pumas.sql]
+Reason: official ACS geography, directly observed, useful as exposure context. It is not a welfare scalar. [SOURCE: sources/immigration-fiscal/data/derived/extend_immigration_context_with_pumas.sql]
 
 3. `Household-normalized school-age child metrics after WGTP correction`
 Rating: `strong`
@@ -37,11 +37,11 @@ Reason: official sources strongly support the split, but our own warehouse only 
 
 6. `County CHAS housing-stress shares`
 Rating: `medium`
-Reason: good background stress metric, but not immigrant-attributable marginal burden. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_stage2_incidence_context.py]
+Reason: good background stress metric, but not immigrant-attributable marginal burden. [SOURCE: sources/immigration-fiscal/data/derived/build_stage2_incidence_context.py]
 
 7. `State school-spending per pupil as school-pressure context`
 Rating: `medium`
-Reason: official and clean, but too coarse for marginal burden or district-specific claims. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_immigration_context_duckdb.sql]
+Reason: official and clean, but too coarse for marginal burden or district-specific claims. [SOURCE: sources/immigration-fiscal/data/derived/build_immigration_context_duckdb.sql]
 
 8. `Housing-heavy versus school-heavy origin-group typology`
 Rating: `medium`
@@ -55,7 +55,7 @@ Reason: the long-run literature supports it, but sign and magnitude are heteroge
 
 10. `Area-weighted PUMA-to-county bridge`
 Rating: `weak`
-Reason: land area is not people, renters, students, or immigrant households. This is a convenience bridge, not a precise exposure model. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_puma_county_crosswalk.py]
+Reason: land area is not people, renters, students, or immigrant households. This is a convenience bridge, not a precise exposure model. [SOURCE: sources/immigration-fiscal/data/derived/build_puma_county_crosswalk.py]
 
 11. `IRS county migration balance as burden evidence`
 Rating: `weak`

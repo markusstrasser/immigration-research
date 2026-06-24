@@ -19,10 +19,10 @@
 
 | # | Claim | Evidence | Confidence | Source | Status |
 |---|---|---|---|---|---|
-| 1 | In high recent-immigration counties, low permit throughput is a stronger backlash moderator than rent burden | HC3 OLS with state FE + log population; `high_recent_fb × low_permit ≈ +0.62 pp` in permit-only model and `≈ +0.67 pp` in joint model; rent-burden interaction is near zero | HIGH | [county_lever_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/county_lever_comparison.csv) | VERIFIED |
-| 2 | Within the highest recent-immigration counties, permit bins show a cleaner threshold shape than rent-burden bins | Top-quintile counties show `5.12 -> 5.05 -> 4.25 -> 3.79 pp` across permit quartiles, while rent-burden bins are non-monotone `4.01 -> 3.12 -> 3.91 -> 5.54 pp` | HIGH | [county_lever_bins.csv](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/county_lever_bins.csv) | VERIFIED |
-| 3 | Saturated receiver nodes are generally the low permit-to-capacity nodes, but not all low-capacity stress is physical saturation | `Denver`, `NYC`, and `Bexar` cross `sheltered / HIC > 1` in `2024`; saturated nodes have lower `permit_to_hic` than the unsaturated group on average, but `Boston` and `Chicago` still show high fiscal stress below `1.0` | MEDIUM | [receiver_normalized_2024.csv](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/receiver_normalized_2024.csv) | VERIFIED |
-| 4 | Institutional regime is needed to explain the exceptions | `Boston` and `Chicago` spend heavily without crossing the same shelter-saturation ratio as `Denver` or `NYC`, and Denver’s baseline/peak shelter denominator is itself regime-dependent in the local cost file | MEDIUM | [receiver_normalized_2024.csv](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/receiver_normalized_2024.csv), [receiver_city_costs.csv](/Users/alien/Projects/research/sources/immigration-causal/data/bused_cities/receiver_city_costs.csv) | INFERENCE |
+| 1 | In high recent-immigration counties, low permit throughput is a stronger backlash moderator than rent burden | HC3 OLS with state FE + log population; `high_recent_fb × low_permit ≈ +0.62 pp` in permit-only model and `≈ +0.67 pp` in joint model; rent-burden interaction is near zero | HIGH | [county_lever_comparison.csv](sources/immigration-causal/data/threshold/analysis/county_lever_comparison.csv) | VERIFIED |
+| 2 | Within the highest recent-immigration counties, permit bins show a cleaner threshold shape than rent-burden bins | Top-quintile counties show `5.12 -> 5.05 -> 4.25 -> 3.79 pp` across permit quartiles, while rent-burden bins are non-monotone `4.01 -> 3.12 -> 3.91 -> 5.54 pp` | HIGH | [county_lever_bins.csv](sources/immigration-causal/data/threshold/analysis/county_lever_bins.csv) | VERIFIED |
+| 3 | Saturated receiver nodes are generally the low permit-to-capacity nodes, but not all low-capacity stress is physical saturation | `Denver`, `NYC`, and `Bexar` cross `sheltered / HIC > 1` in `2024`; saturated nodes have lower `permit_to_hic` than the unsaturated group on average, but `Boston` and `Chicago` still show high fiscal stress below `1.0` | MEDIUM | [receiver_normalized_2024.csv](sources/immigration-causal/data/threshold/analysis/receiver_normalized_2024.csv) | VERIFIED |
+| 4 | Institutional regime is needed to explain the exceptions | `Boston` and `Chicago` spend heavily without crossing the same shelter-saturation ratio as `Denver` or `NYC`, and Denver’s baseline/peak shelter denominator is itself regime-dependent in the local cost file | MEDIUM | [receiver_normalized_2024.csv](sources/immigration-causal/data/threshold/analysis/receiver_normalized_2024.csv), [receiver_city_costs.csv](sources/immigration-causal/data/bused_cities/receiver_city_costs.csv) | INFERENCE |
 
 ## Key findings
 
@@ -116,8 +116,8 @@ The best current public-data formulation is:
 
 ## Files produced or updated by this pass
 
-1. [analyze_threshold_effects.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/analyze_threshold_effects.py)
-2. [county_lever_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/county_lever_comparison.csv)
-3. [county_lever_bins.csv](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/county_lever_bins.csv)
-4. [receiver_normalized_2024.csv](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/receiver_normalized_2024.csv)
-5. [threshold_results_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/threshold_results_summary.json)
+1. [analyze_threshold_effects.py](sources/immigration-causal/scripts/analyze_threshold_effects.py)
+2. [county_lever_comparison.csv](sources/immigration-causal/data/threshold/analysis/county_lever_comparison.csv)
+3. [county_lever_bins.csv](sources/immigration-causal/data/threshold/analysis/county_lever_bins.csv)
+4. [receiver_normalized_2024.csv](sources/immigration-causal/data/threshold/analysis/receiver_normalized_2024.csv)
+5. [threshold_results_summary.json](sources/immigration-causal/data/threshold/analysis/threshold_results_summary.json)

@@ -22,12 +22,12 @@
 
 ## New artifacts
 
-1. [analyze_capacity_frontier.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/analyze_capacity_frontier.py)
-2. [county_capacity_frontier_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_frontier_summary.json)
-3. [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv)
-4. [county_capacity_threshold_grid.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_grid.csv)
-5. [county_load_capacity_deciles.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_load_capacity_deciles.csv)
-6. [receiver_capacity_descriptives_2024.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_capacity_descriptives_2024.csv)
+1. [analyze_capacity_frontier.py](sources/immigration-causal/scripts/analyze_capacity_frontier.py)
+2. [county_capacity_frontier_summary.json](sources/immigration-causal/data/outcomes/analysis/county_capacity_frontier_summary.json)
+3. [county_capacity_model_comparison.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv)
+4. [county_capacity_threshold_grid.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_grid.csv)
+5. [county_load_capacity_deciles.csv](sources/immigration-causal/data/outcomes/analysis/county_load_capacity_deciles.csv)
+6. [receiver_capacity_descriptives_2024.csv](sources/immigration-causal/data/outcomes/analysis/receiver_capacity_descriptives_2024.csv)
 
 ## Measurement frame
 
@@ -51,13 +51,13 @@ That is the more relevant descriptive object if the threshold story is about abs
 
 | # | Claim | Evidence | Confidence | Source | Status |
 |---|---|---|---|---|---|
-| 1 | Stock share has the highest adjusted `R²` among one-predictor county margin models | In separate one-predictor county models, standardized `fb_share` has larger `t` and higher adjusted `R²` than flow or load | HIGH | [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED DESCRIPTIVE MODEL OUTPUT |
-| 2 | Load-capacity still adds residual political-response signal beyond stock and flow | In the combined margin model, standardized load remains positive and significant (`t≈2.74`, `p≈0.006`) | HIGH | [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
+| 1 | Stock share has the highest adjusted `R²` among one-predictor county margin models | In separate one-predictor county models, standardized `fb_share` has larger `t` and higher adjusted `R²` than flow or load | HIGH | [county_capacity_model_comparison.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED DESCRIPTIVE MODEL OUTPUT |
+| 2 | Load-capacity still adds residual political-response signal beyond stock and flow | In the combined margin model, standardized load remains positive and significant (`t≈2.74`, `p≈0.006`) | HIGH | [county_capacity_model_comparison.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
 | 3 | Wage-growth models are marginally best-fitting under load-capacity in this one-predictor pass | Load-only wage model has the strongest negative `t` and best adjusted `R²`, but the adjusted-`R²` spread versus stock/flow is only about 0.007-0.010 | MEDIUM | same | VERIFIED DESCRIPTIVE MODEL OUTPUT — RANKING THIN |
 | 4 | A negative employment signal appears under direct load-capacity formulations even though the earlier coarse threshold did not show broad job loss | Load-only and combined employment models are negative and highly significant; stock and flow alone are weak or null | HIGH | same | VERIFIED |
-| 5 | The threshold screen appears in the broad high-flow tail (`70th-80th percentile`) interacted with low permit capacity | Interaction grid shows stronger wage and some politics/employment effects at `q70-q80` than at `q90`, but q90 power and multiple-testing concerns remain | MEDIUM | [county_capacity_threshold_grid.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_grid.csv) | VERIFIED DESCRIPTIVE SCREEN |
-| 6 | Native net migration is more negative in higher load-capacity deciles | Load deciles show about `-1.07 pp` gap from `D1` to `D10`; load-based models outperform stock-only on adjusted `R²` | HIGH | [county_load_capacity_deciles.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_load_capacity_deciles.csv), [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
-| 7 | Receiver-city spending is more tightly tied to absolute shelter shortfall than to saturation ratio alone | In 2024 receiver descriptives, `corr(shelter_gap_vs_hic, spending) ≈ 0.93`, much larger than `corr(sheltered_to_hic_ratio, spending)` | MEDIUM | [receiver_capacity_descriptives_2024.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_capacity_descriptives_2024.csv) | VERIFIED |
+| 5 | The threshold screen appears in the broad high-flow tail (`70th-80th percentile`) interacted with low permit capacity | Interaction grid shows stronger wage and some politics/employment effects at `q70-q80` than at `q90`, but q90 power and multiple-testing concerns remain | MEDIUM | [county_capacity_threshold_grid.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_grid.csv) | VERIFIED DESCRIPTIVE SCREEN |
+| 6 | Native net migration is more negative in higher load-capacity deciles | Load deciles show about `-1.07 pp` gap from `D1` to `D10`; load-based models outperform stock-only on adjusted `R²` | HIGH | [county_load_capacity_deciles.csv](sources/immigration-causal/data/outcomes/analysis/county_load_capacity_deciles.csv), [county_capacity_model_comparison.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
+| 7 | Receiver-city spending is more tightly tied to absolute shelter shortfall than to saturation ratio alone | In 2024 receiver descriptives, `corr(shelter_gap_vs_hic, spending) ≈ 0.93`, much larger than `corr(sheltered_to_hic_ratio, spending)` | MEDIUM | [receiver_capacity_descriptives_2024.csv](sources/immigration-causal/data/outcomes/analysis/receiver_capacity_descriptives_2024.csv) | VERIFIED |
 
 **Scope note:** In this table, `HIGH` and `VERIFIED` mean the reported model-output pattern is file-backed and reproducible from the listed artifacts. They do not mean the county associations are clean causal effects; the causal caveats below still apply. [INFERENCE]
 

@@ -1,6 +1,6 @@
 # Domestic migration vs moved-from-abroad counts
 
-Supersession note: for the corrected `typical resident / renter / child` exposure framing, read [immigration-resident-weighted-exposure-2026-04-22.md](/Users/alien/Projects/research/research/immigration-resident-weighted-exposure-2026-04-22.md). This file remains useful for the county-level descriptive geography, but not as the best population-exposure summary. [SOURCE: research/immigration-resident-weighted-exposure-2026-04-22.md]
+Supersession note: for the corrected `typical resident / renter / child` exposure framing, read [immigration-resident-weighted-exposure-2026-04-22.md](research/immigration-resident-weighted-exposure-2026-04-22.md). This file remains useful for the county-level descriptive geography, but not as the best population-exposure summary. [SOURCE: research/immigration-resident-weighted-exposure-2026-04-22.md]
 
 **Date:** 2026-04-22  
 **Question:** For county-level newcomer pressure, is the relevant object immigration specifically or newcomer flow more generally?  
@@ -8,7 +8,7 @@ Supersession note: for the corrected `typical resident / renter / child` exposur
 
 ## Status
 
-This memo supersedes the older `33x` claim that used an annualized `B05005` stock proxy. The current artifact is [county_newcomer_comparison.parquet](/Users/alien/Projects/research/sources/immigration-causal/data/analysis/county_newcomer_comparison.parquet), built by [analyze_internal_vs_immigrant_newcomers.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/analyze_internal_vs_immigrant_newcomers.py). Treat older citations to `33x` as outdated. [SOURCE: sources/immigration-causal/scripts/analyze_internal_vs_immigrant_newcomers.py]
+This memo supersedes the older `33x` claim that used an annualized `B05005` stock proxy. The current artifact is [county_newcomer_comparison.parquet](sources/immigration-causal/data/analysis/county_newcomer_comparison.parquet), built by [analyze_internal_vs_immigrant_newcomers.py](sources/immigration-causal/scripts/analyze_internal_vs_immigrant_newcomers.py). Treat older citations to `33x` as outdated. [SOURCE: sources/immigration-causal/scripts/analyze_internal_vs_immigrant_newcomers.py]
 
 ## What The Data Actually Compare
 

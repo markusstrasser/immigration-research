@@ -14,22 +14,22 @@
 
 ## New artifacts
 
-1. [analyze_receiver_synthetic_controls.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/analyze_receiver_synthetic_controls.py)
-2. [national_coc_shelter_panel_2018_2024.parquet](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/national_coc_shelter_panel_2018_2024.parquet)
-3. [receiver_synth_yearly.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_synth_yearly.csv)
-4. [receiver_synth_weights.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_synth_weights.csv)
-5. [receiver_synth_placebos.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_synth_placebos.csv)
-6. [receiver_synth_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_synth_summary.json)
+1. [analyze_receiver_synthetic_controls.py](sources/immigration-causal/scripts/analyze_receiver_synthetic_controls.py)
+2. [national_coc_shelter_panel_2018_2024.parquet](sources/immigration-causal/data/outcomes/analysis/national_coc_shelter_panel_2018_2024.parquet)
+3. [receiver_synth_yearly.csv](sources/immigration-causal/data/outcomes/analysis/receiver_synth_yearly.csv)
+4. [receiver_synth_weights.csv](sources/immigration-causal/data/outcomes/analysis/receiver_synth_weights.csv)
+5. [receiver_synth_placebos.csv](sources/immigration-causal/data/outcomes/analysis/receiver_synth_placebos.csv)
+6. [receiver_synth_summary.json](sources/immigration-causal/data/outcomes/analysis/receiver_synth_summary.json)
 
 ## Claims table
 
 | # | Claim | Evidence | Confidence | Source | Status |
 |---|---|---|---|---|---|
-| 1 | Denver is the clearest positive post-2022 shelter divergence case | Positive gaps on both shelter outcomes, largest among treated nodes | HIGH | [receiver_synth_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_synth_summary.json) | VERIFIED |
-| 2 | Chicago is an absolute-load divergence case even though its ratio outcomes are muted | Large positive log-count gaps with negative ratio gaps | HIGH | [receiver_synth_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_synth_summary.json) | VERIFIED |
-| 3 | Boston's stress is not well described as abnormal physical overload in the public shelter panel | Negative ratio gaps and near-flat sheltered-count gap despite high local spending | HIGH | [receiver_synth_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_synth_summary.json) [receiver_failure_atlas_2024.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_2024.csv) | VERIFIED |
-| 4 | NYC's synthetic-control result is directionally real but match-fragile | Large positive log-count gaps, but weight concentration collapses onto `WA-500` or near-equivalent two-donor fits | MEDIUM | [receiver_synth_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_synth_summary.json) [receiver_synth_weights.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_synth_weights.csv) | VERIFIED |
-| 5 | The placebo universe does not make the ratio divergences look inferentially rare | Filtered placebo p-values remain high across treated nodes | HIGH | [receiver_synth_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_synth_summary.json) | VERIFIED |
+| 1 | Denver is the clearest positive post-2022 shelter divergence case | Positive gaps on both shelter outcomes, largest among treated nodes | HIGH | [receiver_synth_summary.json](sources/immigration-causal/data/outcomes/analysis/receiver_synth_summary.json) | VERIFIED |
+| 2 | Chicago is an absolute-load divergence case even though its ratio outcomes are muted | Large positive log-count gaps with negative ratio gaps | HIGH | [receiver_synth_summary.json](sources/immigration-causal/data/outcomes/analysis/receiver_synth_summary.json) | VERIFIED |
+| 3 | Boston's stress is not well described as abnormal physical overload in the public shelter panel | Negative ratio gaps and near-flat sheltered-count gap despite high local spending | HIGH | [receiver_synth_summary.json](sources/immigration-causal/data/outcomes/analysis/receiver_synth_summary.json) [receiver_failure_atlas_2024.csv](sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_2024.csv) | VERIFIED |
+| 4 | NYC's synthetic-control result is directionally real but match-fragile | Large positive log-count gaps, but weight concentration collapses onto `WA-500` or near-equivalent two-donor fits | MEDIUM | [receiver_synth_summary.json](sources/immigration-causal/data/outcomes/analysis/receiver_synth_summary.json) [receiver_synth_weights.csv](sources/immigration-causal/data/outcomes/analysis/receiver_synth_weights.csv) | VERIFIED |
+| 5 | The placebo universe does not make the ratio divergences look inferentially rare | Filtered placebo p-values remain high across treated nodes | HIGH | [receiver_synth_summary.json](sources/immigration-causal/data/outcomes/analysis/receiver_synth_summary.json) | VERIFIED |
 
 ## 1) Design
 

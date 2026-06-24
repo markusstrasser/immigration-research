@@ -8,9 +8,9 @@
 
 The repo already had three separate named audits:
 
-1. [immigration-noah-smith-nicholas-decker-claims-audit-2026-04-11.md](/Users/alien/Projects/research/research/immigration-noah-smith-nicholas-decker-claims-audit-2026-04-11.md)
-2. [immigration-david-d-friedman-claims-audit-2026-04-11.md](/Users/alien/Projects/research/research/immigration-david-d-friedman-claims-audit-2026-04-11.md)
-3. [immigration-verified-findings-report-2026-04-10.md](/Users/alien/Projects/research/research/immigration-verified-findings-report-2026-04-10.md)
+1. [immigration-noah-smith-nicholas-decker-claims-audit-2026-04-11.md](research/immigration-noah-smith-nicholas-decker-claims-audit-2026-04-11.md)
+2. [immigration-david-d-friedman-claims-audit-2026-04-11.md](research/immigration-david-d-friedman-claims-audit-2026-04-11.md)
+3. [immigration-verified-findings-report-2026-04-10.md](research/immigration-verified-findings-report-2026-04-10.md)
 
 Those memos already converged on one core result:
 

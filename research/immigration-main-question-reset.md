@@ -10,7 +10,7 @@ Reason:
 1. It collapses `federal`, `state/local`, `native-low-skill`, `renters`, `employers`, and `future descendants` into one ledger. [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf]
 2. It hides horizon. A `1-5 year` local-capacity question is not the same as a `30-75 year` descendant-fiscal question. [SOURCE: https://d279m997dpfwgl.cloudfront.net/wp/2016/09/0922_immigrant-economics-full-report.pdf]
 3. It hides counterfactuals. If `AGI soon` is live, the relevant comparison is not just against status quo demographics but also against automation, pronatalism, offshoring, internal mobility, and tighter enforcement. [SOURCE: https://www.imf.org/-/media/files/research/imf-and-g20/2025/g20-background-note-on-aging-and-migration.pdf]
-4. It hides geography. Our own warehouse is strongest on `origin x destination x household-type` heterogeneity, not on one national scalar. [SOURCE: /Users/alien/Projects/research/research/immigration-epistemic-check.md]
+4. It hides geography. Our own warehouse is strongest on `origin x destination x household-type` heterogeneity, not on one national scalar. [SOURCE: research/immigration-epistemic-check.md]
 
 ## Canonical question
 
@@ -28,19 +28,19 @@ AGI-soon version:
 
 ## What the existing memo set now means
 
-1. [immigration-low-skill-origin-incidence-memo.md](/Users/alien/Projects/research/research/immigration-low-skill-origin-incidence-memo.md)
+1. [immigration-low-skill-origin-incidence-memo.md](research/immigration-low-skill-origin-incidence-memo.md)
 Reason: treat as a `state-level proxy memo`, not a fiscal ledger.
 
-2. [immigration-local-burden-puma-layer.md](/Users/alien/Projects/research/research/immigration-local-burden-puma-layer.md)
+2. [immigration-local-burden-puma-layer.md](research/immigration-local-burden-puma-layer.md)
 Reason: useful for heterogeneity in destination cost exposure, not a causal burden estimate.
 
-3. [immigration-household-weighted-correction.md](/Users/alien/Projects/research/research/immigration-household-weighted-correction.md)
+3. [immigration-household-weighted-correction.md](research/immigration-household-weighted-correction.md)
 Reason: this fixes a real unit error and materially strengthens the household child-burden side.
 
-4. [immigration-stage2-county-bridge-batch.md](/Users/alien/Projects/research/research/immigration-stage2-county-bridge-batch.md)
+4. [immigration-stage2-county-bridge-batch.md](research/immigration-stage2-county-bridge-batch.md)
 Reason: this adds county context, but the bridge is still approximate because it is area-weighted.
 
-5. [immigration-economist-effects-matrix.md](/Users/alien/Projects/research/research/immigration-economist-effects-matrix.md)
+5. [immigration-economist-effects-matrix.md](research/immigration-economist-effects-matrix.md)
 Reason: this is mainly a `scope audit` of economist claims, not a replacement for a full ledger.
 
 ## Working rules for future claims
@@ -53,4 +53,4 @@ Reason: this is mainly a `scope audit` of economist claims, not a replacement fo
 
 ## Immediate consequence
 
-The project should now be read as an `incidence-and-capacity mapping project` with partial fiscal evidence, not as a completed proof that low-skill immigration is nationally net good or nationally net bad. [SOURCE: /Users/alien/Projects/research/research/immigration-epistemic-check.md]
+The project should now be read as an `incidence-and-capacity mapping project` with partial fiscal evidence, not as a completed proof that low-skill immigration is nationally net good or nationally net bad. [SOURCE: research/immigration-epistemic-check.md]

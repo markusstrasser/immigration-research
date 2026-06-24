@@ -16,9 +16,9 @@ It is narrower than the earlier public-MVP acquisition memo. The goal here was t
 ### 1. Census `SAIPE` 2023 school-district files
 
 Downloaded to:
-1. [ussd23.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/saipe/ussd23.txt)
-2. [ussd23.xls](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/saipe/ussd23.xls)
-3. [2023-district-layout.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/saipe/2023-district-layout.txt)
+1. [ussd23.txt](sources/immigration-fiscal/data/external/stage4/saipe/ussd23.txt)
+2. [ussd23.xls](sources/immigration-fiscal/data/external/stage4/saipe/ussd23.xls)
+3. [2023-district-layout.txt](sources/immigration-fiscal/data/external/stage4/saipe/2023-district-layout.txt)
 
 Official sources:
 1. [SOURCE: https://www.census.gov/data/datasets/2023/demo/saipe/2023-school-districts.html]
@@ -33,9 +33,9 @@ Why this matters:
 ### 2. Court and language-access documents
 
 Downloaded to:
-1. [ca_language_need_interpreter_use_2025.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/courts/ca_language_need_interpreter_use_2025.pdf)
-2. [wa_interpreter_reimbursement_2025_2027.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/courts/wa_interpreter_reimbursement_2025_2027.pdf)
-3. [nyc_local_law_6_report_2024.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/courts/nyc_local_law_6_report_2024.pdf)
+1. [ca_language_need_interpreter_use_2025.pdf](sources/immigration-fiscal/data/external/stage4/courts/ca_language_need_interpreter_use_2025.pdf)
+2. [wa_interpreter_reimbursement_2025_2027.pdf](sources/immigration-fiscal/data/external/stage4/courts/wa_interpreter_reimbursement_2025_2027.pdf)
+3. [nyc_local_law_6_report_2024.pdf](sources/immigration-fiscal/data/external/stage4/courts/nyc_local_law_6_report_2024.pdf)
 
 Official sources:
 1. [SOURCE: https://languageaccess.courts.ca.gov/system/files/2025-07/2025%20Language%20Need%20and%20Interpreter%20Use%20Study.pdf]
@@ -49,11 +49,11 @@ Why this matters:
 ### 3. NCES CCD file-tool artifacts for current `LEA` releases
 
 Downloaded to:
-1. [nces_ccd_file_tool_lea_2023_2024_v1a.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/nces/nces_ccd_file_tool_lea_2023_2024_v1a.json)
-2. [ccd_lea_029_2324_w_1a_073124.zip](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/nces/ccd_lea_029_2324_w_1a_073124.zip)
-3. [SY_2023-24_Universe_1a_CCD_Nonfiscal_Release_Notes.docx](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/nces/SY_2023-24_Universe_1a_CCD_Nonfiscal_Release_Notes.docx)
-4. [SY_2023-24_Final_1a_Data_Notes.xlsx](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/nces/SY_2023-24_Final_1a_Data_Notes.xlsx)
-5. [SY_2023-24_LEA_Membership_Companion_2024-252.xlsx](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/nces/SY_2023-24_LEA_Membership_Companion_2024-252.xlsx)
+1. [nces_ccd_file_tool_lea_2023_2024_v1a.json](sources/immigration-fiscal/data/external/stage4/nces/nces_ccd_file_tool_lea_2023_2024_v1a.json)
+2. [ccd_lea_029_2324_w_1a_073124.zip](sources/immigration-fiscal/data/external/stage4/nces/ccd_lea_029_2324_w_1a_073124.zip)
+3. [SY_2023-24_Universe_1a_CCD_Nonfiscal_Release_Notes.docx](sources/immigration-fiscal/data/external/stage4/nces/SY_2023-24_Universe_1a_CCD_Nonfiscal_Release_Notes.docx)
+4. [SY_2023-24_Final_1a_Data_Notes.xlsx](sources/immigration-fiscal/data/external/stage4/nces/SY_2023-24_Final_1a_Data_Notes.xlsx)
+5. [SY_2023-24_LEA_Membership_Companion_2024-252.xlsx](sources/immigration-fiscal/data/external/stage4/nces/SY_2023-24_LEA_Membership_Companion_2024-252.xlsx)
 
 Official sources:
 1. [SOURCE: https://nces.ed.gov/ccd/files.asp]
@@ -65,8 +65,8 @@ Official sources:
 
 Important finding:
 1. The file tool exposes an authoritative JSON endpoint for current `LEA` files, so acquisition does not need brittle filename guessing. [SOURCE: https://nces.ed.gov/ccd/datatables/api/File/2/5/38/7/10/38]
-2. In the saved `2023-24` `LEA` `v1a` response, the surfaced district data-file components were `Directory`, `Membership`, and `Staff`. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/nces/nces_ccd_file_tool_lea_2023_2024_v1a.json]
-3. The small companion workbook confirms the district membership file is a `15`-variable grade/race/sex membership table, not an English-learner table. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/nces/SY_2023-24_LEA_Membership_Companion_2024-252.xlsx]
+2. In the saved `2023-24` `LEA` `v1a` response, the surfaced district data-file components were `Directory`, `Membership`, and `Staff`. [SOURCE: sources/immigration-fiscal/data/external/stage4/nces/nces_ccd_file_tool_lea_2023_2024_v1a.json]
+3. The small companion workbook confirms the district membership file is a `15`-variable grade/race/sex membership table, not an English-learner table. [SOURCE: sources/immigration-fiscal/data/external/stage4/nces/SY_2023-24_LEA_Membership_Companion_2024-252.xlsx]
 
 ## What was probed but not cleanly acquired
 
@@ -75,7 +75,7 @@ Important finding:
 What is true:
 1. NCES public documentation still says nonfiscal CCD includes `Counts of Children with disabilities and English learners (LEA)`. [SOURCE: https://nces.ed.gov/ccd/files.asp]
 2. The older `pubagency.asp` pages show explicit historical `English Learners` LEA files such as `ccd_lea_141_1718_l_1a_083118.zip`. [SOURCE: https://nces.ed.gov/ccd/pubagency.asp]
-3. In this pass, the current `2023-24` file-tool response did not surface a separate district `English Learners` component. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/nces/nces_ccd_file_tool_lea_2023_2024_v1a.json]
+3. In this pass, the current `2023-24` file-tool response did not surface a separate district `English Learners` component. [SOURCE: sources/immigration-fiscal/data/external/stage4/nces/nces_ccd_file_tool_lea_2023_2024_v1a.json]
 
 Inference:
 1. [INFERENCE] There is a documentation-to-distribution mismatch for current public district `EL` counts, or the relevant file path is exposed through a different route than the `LEA` `v1a` file-tool query used here.

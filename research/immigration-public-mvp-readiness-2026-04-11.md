@@ -17,7 +17,7 @@ The correct interpretation is:
 ### `SIPP 2024`
 
 Local path:
-- `/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/pu2024_csv.zip`
+- `sources/immigration-fiscal/data/external/stage3/census/sipp/pu2024_csv.zip`
 
 Verified local facts:
 - Zip contains one file: `pu2024.csv`
@@ -34,10 +34,10 @@ What is now built:
 ### `MEPS HC-251`
 
 Local paths include:
-- `/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dat.zip`
-- `/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dta.zip`
-- `/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt`
-- `/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251doc.pdf`
+- `sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dat.zip`
+- `sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dta.zip`
+- `sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt`
+- `sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251doc.pdf`
 
 Verified local facts:
 - `h251dat.zip` contains one file: `h251.dat`, length `73,878,695` bytes `[SOURCE: local unzip listing, 2026-04-11]`
@@ -51,9 +51,9 @@ Implication:
 ### `SIPP -> MEPS bridge`
 
 Artifacts:
-- [sipp_meps_bridge_cells_2024.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.csv)
-- [sipp_meps_expected_health_cost_cells_2024.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv)
-- [sipp_meps_bridge_cells_2024.meta.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.meta.json)
+- [sipp_meps_bridge_cells_2024.csv](sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.csv)
+- [sipp_meps_expected_health_cost_cells_2024.csv](sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv)
+- [sipp_meps_bridge_cells_2024.meta.json](sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.meta.json)
 
 Verification:
 - `sipp_rows_input`: `98`
@@ -276,17 +276,17 @@ The strongest path from here is:
 ### `Synthetic SIPP` local support files
 
 Downloaded:
-- `/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/SSB_Application_clean_07.02.24.docx`
-- `/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/GSF_v7_Codebook.pdf`
-- `/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/SSB_Request_Guidelines_May_2024.docx`
-- `/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/CLEARANCE_REQUEST_MEMO_SSBupdate_5.24.24.docx`
+- `sources/immigration-fiscal/data/external/stage3/census/sipp/SSB_Application_clean_07.02.24.docx`
+- `sources/immigration-fiscal/data/external/stage3/census/sipp/GSF_v7_Codebook.pdf`
+- `sources/immigration-fiscal/data/external/stage3/census/sipp/SSB_Request_Guidelines_May_2024.docx`
+- `sources/immigration-fiscal/data/external/stage3/census/sipp/CLEARANCE_REQUEST_MEMO_SSBupdate_5.24.24.docx`
 
 These matter because they convert `Synthetic SIPP` from a vague future idea into a concrete application path.
 
 ### `IRS SOI` page snapshot
 
 Downloaded:
-- `/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/irs/irs_soi_individual_puf_page.html`
+- `sources/immigration-fiscal/data/external/stage3/irs/irs_soi_individual_puf_page.html`
 
 This is useful as a local record of the current official IRS framing that the individual PUF exists for tax years `2012-2015`, but is not exposed on-page as an obvious static file link in the fetched markup.
 

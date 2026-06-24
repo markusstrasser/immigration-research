@@ -11,21 +11,21 @@ It does not estimate immigrant-specific school costs. It builds the public distr
 ## Built assets
 
 Derived outputs:
-1. [saipe_school_district_2023.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage4/saipe_school_district_2023.csv)
-2. [school_service_complexity_district_2023.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage4/school_service_complexity_district_2023.csv)
-3. [school_service_complexity_state_2023.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage4/school_service_complexity_state_2023.csv)
-4. [school_service_complexity_2023.meta.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage4/school_service_complexity_2023.meta.json)
-5. [nces_elsi_district_english_columns_probe_2026-04-11.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage4/nces_elsi_district_english_columns_probe_2026-04-11.json)
+1. [saipe_school_district_2023.csv](sources/immigration-fiscal/data/derived/stage4/saipe_school_district_2023.csv)
+2. [school_service_complexity_district_2023.csv](sources/immigration-fiscal/data/derived/stage4/school_service_complexity_district_2023.csv)
+3. [school_service_complexity_state_2023.csv](sources/immigration-fiscal/data/derived/stage4/school_service_complexity_state_2023.csv)
+4. [school_service_complexity_2023.meta.json](sources/immigration-fiscal/data/derived/stage4/school_service_complexity_2023.meta.json)
+5. [nces_elsi_district_english_columns_probe_2026-04-11.json](sources/immigration-fiscal/data/derived/stage4/nces_elsi_district_english_columns_probe_2026-04-11.json)
 
 Build scripts:
-1. [build_stage4_school_service_context.py](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_stage4_school_service_context.py)
-2. [probe_nces_elsi_district_english_columns.py](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/probe_nces_elsi_district_english_columns.py)
-3. [extend_immigration_context_stage4.sql](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/extend_immigration_context_stage4.sql)
+1. [build_stage4_school_service_context.py](sources/immigration-fiscal/data/derived/build_stage4_school_service_context.py)
+2. [probe_nces_elsi_district_english_columns.py](sources/immigration-fiscal/data/derived/probe_nces_elsi_district_english_columns.py)
+3. [extend_immigration_context_stage4.sql](sources/immigration-fiscal/data/derived/extend_immigration_context_stage4.sql)
 
 Raw inputs:
-1. [ussd23.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/saipe/ussd23.txt) [SOURCE: https://www2.census.gov/programs-surveys/saipe/datasets/2023/2023-school-districts/ussd23.txt]
-2. [census_school_finance_2023.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/census_school_finance_2023.txt)
-3. [ccd_lea_029_2324_w_1a_073124.zip](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage4/nces/ccd_lea_029_2324_w_1a_073124.zip) [SOURCE: https://nces.ed.gov/ccd/Data/zip/ccd_lea_029_2324_w_1a_073124.zip]
+1. [ussd23.txt](sources/immigration-fiscal/data/external/stage4/saipe/ussd23.txt) [SOURCE: https://www2.census.gov/programs-surveys/saipe/datasets/2023/2023-school-districts/ussd23.txt]
+2. [census_school_finance_2023.txt](sources/immigration-fiscal/data/external/census_school_finance_2023.txt)
+3. [ccd_lea_029_2324_w_1a_073124.zip](sources/immigration-fiscal/data/external/stage4/nces/ccd_lea_029_2324_w_1a_073124.zip) [SOURCE: https://nces.ed.gov/ccd/Data/zip/ccd_lea_029_2324_w_1a_073124.zip]
 
 ## Method
 
@@ -51,7 +51,7 @@ Observed join coverage:
 3. `13,106` current-directory matches, or `99.72%`
 
 Source:
-1. [school_service_complexity_2023.meta.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage4/school_service_complexity_2023.meta.json)
+1. [school_service_complexity_2023.meta.json](sources/immigration-fiscal/data/derived/stage4/school_service_complexity_2023.meta.json)
 
 Interpretation:
 1. the public district surface is good enough to use for state/district burden structure
@@ -81,8 +81,8 @@ Illustrative large districts with high child-poverty rates in this layer:
 5. `ALIEF ISD` `51,124` relevant children, `31.72%` child poverty
 
 Sources:
-1. [school_service_complexity_state_2023.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage4/school_service_complexity_state_2023.csv)
-2. [school_service_complexity_district_2023.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage4/school_service_complexity_district_2023.csv)
+1. [school_service_complexity_state_2023.csv](sources/immigration-fiscal/data/derived/stage4/school_service_complexity_state_2023.csv)
+2. [school_service_complexity_district_2023.csv](sources/immigration-fiscal/data/derived/stage4/school_service_complexity_district_2023.csv)
 
 ## Bounded `ELSi` result
 
@@ -93,7 +93,7 @@ What survived:
 2. the only term hit was a false positive in `Teacher & Staff`, from `intellectual development` text rather than an `EL` measure
 
 Source:
-1. [nces_elsi_district_english_columns_probe_2026-04-11.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage4/nces_elsi_district_english_columns_probe_2026-04-11.json)
+1. [nces_elsi_district_english_columns_probe_2026-04-11.json](sources/immigration-fiscal/data/derived/stage4/nces_elsi_district_english_columns_probe_2026-04-11.json)
 
 Interpretation:
 1. the current public route to district `EL` counts remains unresolved

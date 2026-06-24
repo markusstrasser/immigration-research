@@ -12,8 +12,8 @@ The cleanest current answer is not a scalar.
 
 What the evidence supports now:
 1. `Federal versus state/local split` is real. Recent immigration can improve aggregate output and some federal fiscal channels while still imposing local schooling, shelter, and housing-capacity costs. [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf]
-2. `Local burden heterogeneity` is real. Our warehouse consistently shows that some origin groups are more school-heavy, some are more housing-heavy, and some are mixed. [SOURCE: /Users/alien/Projects/research/research/immigration-household-weighted-correction.md] [SOURCE: /Users/alien/Projects/research/research/immigration-local-burden-puma-layer.md]
-3. `Economist-agree papers` are mostly not false, but many are narrow papers being used as if they were full welfare ledgers. [SOURCE: /Users/alien/Projects/research/research/immigration-economist-effects-matrix.md]
+2. `Local burden heterogeneity` is real. Our warehouse consistently shows that some origin groups are more school-heavy, some are more housing-heavy, and some are mixed. [SOURCE: research/immigration-household-weighted-correction.md] [SOURCE: research/immigration-local-burden-puma-layer.md]
+3. `Economist-agree papers` are mostly not false, but many are narrow papers being used as if they were full welfare ledgers. [SOURCE: research/immigration-economist-effects-matrix.md]
 4. `Political backlash` is not a side issue. Immigration often triggers backlash under some conditions, and that can change welfare through institutions, redistribution, and legitimacy. [SOURCE: https://www.aeaweb.org/articles?id=10.1257/jel.20221643]
 5. `[FRAMING-SENSITIVE]` If AGI soon is live, lifetime-NPV debates matter less than short-run transition management, local capacity, and option value under uncertainty. [SOURCE: https://www.imf.org/-/media/files/research/imf-and-g20/2025/g20-background-note-on-aging-and-migration.pdf] [SOURCE: https://docs.iza.org/dp18218.pdf]
 
@@ -57,7 +57,7 @@ What cuts against it:
 Current read:
 1. The local-capacity-negative side is real.
 2. Magnitude is sensitive to location and accounting choices.
-3. Our local warehouse is aligned with the direction of this story, but not yet strong enough to estimate local magnitudes cleanly. [SOURCE: /Users/alien/Projects/research/research/immigration-stage2-county-bridge-batch.md]
+3. Our local warehouse is aligned with the direction of this story, but not yet strong enough to estimate local magnitudes cleanly. [SOURCE: research/immigration-stage2-county-bridge-batch.md]
 
 ## Scenario 3: Housing and local-capacity incidence view
 
@@ -66,8 +66,8 @@ Is housing a net welfare loss, a transfer, or both depending on who you are?
 
 What supports a negative renter/local-capacity read:
 1. Immigration can raise local rents and utilities inflation even if overall inflation falls. [SOURCE: https://www.imf.org/en/Publications/WP/Issues/2025/01/10/Immigration-and-Local-Inflation-560285]
-2. Our own PUMA work shows that some origin groups sort into materially higher-rent local submarkets than state averages imply. [SOURCE: /Users/alien/Projects/research/research/immigration-local-burden-puma-layer.md]
-3. County CHAS stress and PUMA rent layers suggest local capacity is binding in some destinations. [SOURCE: /Users/alien/Projects/research/research/immigration-stage2-county-bridge-batch.md]
+2. Our own PUMA work shows that some origin groups sort into materially higher-rent local submarkets than state averages imply. [SOURCE: research/immigration-local-burden-puma-layer.md]
+3. County CHAS stress and PUMA rent layers suggest local capacity is binding in some destinations. [SOURCE: research/immigration-stage2-county-bridge-batch.md]
 
 What supports a positive owner/local-government read:
 1. Cato/Vigdor/Bier/Howard argue immigration raises or preserves housing wealth and property-tax revenue. [SOURCE: https://www.cato.org/briefing-paper/immigrants-housing-wealth-local-government-finances]
@@ -155,7 +155,7 @@ Current read:
 ## Unified verdict by ledger
 
 1. `National output / macro`: probably positive in most mainstream recent estimates. [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf]
-2. `Federal budget`: plausibly positive or less negative than local ledgers for many flows, but our own warehouse still uses proxies rather than a federal microsim. [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf] [SOURCE: /Users/alien/Projects/research/research/immigration-low-skill-origin-incidence-memo.md]
+2. `Federal budget`: plausibly positive or less negative than local ledgers for many flows, but our own warehouse still uses proxies rather than a federal microsim. [SOURCE: https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf] [SOURCE: research/immigration-low-skill-origin-incidence-memo.md]
 3. `State/local budgets and capacity`: negative or capacity-straining for important recent and low-skill-heavy cases. [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf]
 4. `Renters and high-cost service users`: often negative in constrained markets. [SOURCE: https://www.imf.org/en/Publications/WP/Issues/2025/01/10/Immigration-and-Local-Inflation-560285]
 5. `Employers and some consumers`: positive.

@@ -1,6 +1,6 @@
 # Immigration county outcome panel: labor, domestic migration, and backlash
 
-Supersession note: this memo is an earlier county-outcome pass. For the current stance, read [immigration-capacity-falsification-2026-04-21.md](/Users/alien/Projects/research/research/immigration-capacity-falsification-2026-04-21.md), which extends QCEW back to `2017`, adds explicit window metadata, and downgrades the causal confidence of the wage/employment story.
+Supersession note: this memo is an earlier county-outcome pass. For the current stance, read [immigration-capacity-falsification-2026-04-21.md](research/immigration-capacity-falsification-2026-04-21.md), which extends QCEW back to `2017`, adds explicit window metadata, and downgrades the causal confidence of the wage/employment story.
 
 **Question:** After joining official county QCEW annual outcomes to the threshold panel, what actually moves in high-immigration, low-capacity counties: employment, wages, IRS domestic migration, politics, or some narrower combination?  
 **Tier:** Deep | **Date:** 2026-04-21  
@@ -20,29 +20,29 @@ Supersession note: this memo is an earlier county-outcome pass. For the current 
 
 | # | Claim | Evidence | Confidence | Source | Status |
 |---|---|---|---|---|---|
-| 1 | High recent-immigration counties with low permit throughput show slower county wage growth | HC3 OLS: `high_recent_fb × low_permit ≈ -1.49 pp` on `2021–2024` QCEW weekly wage log growth, `t≈-3.15`, `p≈0.0017`; result survives with rent burden added | HIGH | [county_outcome_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_summary.json), [county_outcome_lever_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_lever_comparison.csv) | VERIFIED |
-| 2 | The same interaction does not produce a clear county employment-growth penalty | HC3 OLS: `high_recent_fb × low_permit ≈ -0.33 pp`, `t≈-0.67`, `p≈0.50` on QCEW employment log growth | HIGH | [county_outcome_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_summary.json) | VERIFIED |
-| 3 | In top recent-immigration counties, wage and employment medians improve as permit capacity rises | Q5 surge counties: median employment growth `2.72 -> 5.04 -> 6.15 -> 8.55 pp`; median weekly wage growth `11.00 -> 10.75 -> 11.45 -> 13.13 pp` across permit quartiles | HIGH | [county_outcome_bins.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_bins.csv) | VERIFIED |
-| 4 | IRS domestic net migration responds more to rent burden than to low permit throughput in high-immigration counties | HC3 OLS: `high_recent_fb × high_rent_burden ≈ -0.21 pp`, `t≈-2.85`, `p≈0.0044`; `high_recent_fb × low_permit` is near zero | MEDIUM | [county_outcome_lever_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_lever_comparison.csv), [county_inflow_2022_23.csv](/Users/alien/Projects/research/sources/immigration-causal/data/internal_migration/county_inflow_2022_23.csv), [county_outflow_2022_23.csv](/Users/alien/Projects/research/sources/immigration-causal/data/internal_migration/county_outflow_2022_23.csv) | VERIFIED |
-| 5 | County political backlash in the high-immigration tail responds to both permit scarcity and rent burden | In this outcome-panel sample, `high_recent_fb × low_permit ≈ +0.75 pp`, `p≈0.064`; `high_recent_fb × high_rent_burden ≈ +0.75 pp`, `p≈0.038` | MEDIUM | [county_outcome_lever_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_lever_comparison.csv) | VERIFIED |
+| 1 | High recent-immigration counties with low permit throughput show slower county wage growth | HC3 OLS: `high_recent_fb × low_permit ≈ -1.49 pp` on `2021–2024` QCEW weekly wage log growth, `t≈-3.15`, `p≈0.0017`; result survives with rent burden added | HIGH | [county_outcome_summary.json](sources/immigration-causal/data/outcomes/analysis/county_outcome_summary.json), [county_outcome_lever_comparison.csv](sources/immigration-causal/data/outcomes/analysis/county_outcome_lever_comparison.csv) | VERIFIED |
+| 2 | The same interaction does not produce a clear county employment-growth penalty | HC3 OLS: `high_recent_fb × low_permit ≈ -0.33 pp`, `t≈-0.67`, `p≈0.50` on QCEW employment log growth | HIGH | [county_outcome_summary.json](sources/immigration-causal/data/outcomes/analysis/county_outcome_summary.json) | VERIFIED |
+| 3 | In top recent-immigration counties, wage and employment medians improve as permit capacity rises | Q5 surge counties: median employment growth `2.72 -> 5.04 -> 6.15 -> 8.55 pp`; median weekly wage growth `11.00 -> 10.75 -> 11.45 -> 13.13 pp` across permit quartiles | HIGH | [county_outcome_bins.csv](sources/immigration-causal/data/outcomes/analysis/county_outcome_bins.csv) | VERIFIED |
+| 4 | IRS domestic net migration responds more to rent burden than to low permit throughput in high-immigration counties | HC3 OLS: `high_recent_fb × high_rent_burden ≈ -0.21 pp`, `t≈-2.85`, `p≈0.0044`; `high_recent_fb × low_permit` is near zero | MEDIUM | [county_outcome_lever_comparison.csv](sources/immigration-causal/data/outcomes/analysis/county_outcome_lever_comparison.csv), [county_inflow_2022_23.csv](sources/immigration-causal/data/internal_migration/county_inflow_2022_23.csv), [county_outflow_2022_23.csv](sources/immigration-causal/data/internal_migration/county_outflow_2022_23.csv) | VERIFIED |
+| 5 | County political backlash in the high-immigration tail responds to both permit scarcity and rent burden | In this outcome-panel sample, `high_recent_fb × low_permit ≈ +0.75 pp`, `p≈0.064`; `high_recent_fb × high_rent_burden ≈ +0.75 pp`, `p≈0.038` | MEDIUM | [county_outcome_lever_comparison.csv](sources/immigration-causal/data/outcomes/analysis/county_outcome_lever_comparison.csv) | VERIFIED |
 
 ## What was joined
 
 This pass built a common county panel from:
 
-1. the existing threshold county spine with elections, permits, recent foreign-born share, and newcomer controls [SOURCE: [county_threshold_election_panel.parquet](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/county_threshold_election_panel.parquet)]
-2. official BLS QCEW annual county totals for `2021–2024` [SOURCE: https://www.bls.gov/cew/downloadable-data-files.htm] [SOURCE: [ACQUIRED.md](/Users/alien/Projects/research/sources/immigration-causal/data/qcew/ACQUIRED.md)]
-3. cleaned IRS SOI county inflow and outflow aggregates for domestic migration (`97/000` total-US rows) [SOURCE: [county_inflow_2022_23.csv](/Users/alien/Projects/research/sources/immigration-causal/data/internal_migration/county_inflow_2022_23.csv)] [SOURCE: [county_outflow_2022_23.csv](/Users/alien/Projects/research/sources/immigration-causal/data/internal_migration/county_outflow_2022_23.csv)]
+1. the existing threshold county spine with elections, permits, recent foreign-born share, and newcomer controls [SOURCE: [county_threshold_election_panel.parquet](sources/immigration-causal/data/threshold/analysis/county_threshold_election_panel.parquet)]
+2. official BLS QCEW annual county totals for `2021–2024` [SOURCE: https://www.bls.gov/cew/downloadable-data-files.htm] [SOURCE: [ACQUIRED.md](sources/immigration-causal/data/qcew/ACQUIRED.md)]
+3. cleaned IRS SOI county inflow and outflow aggregates for domestic migration (`97/000` total-US rows) [SOURCE: [county_inflow_2022_23.csv](sources/immigration-causal/data/internal_migration/county_inflow_2022_23.csv)] [SOURCE: [county_outflow_2022_23.csv](sources/immigration-causal/data/internal_migration/county_outflow_2022_23.csv)]
 
 Produced artifacts:
 
-1. [build_county_outcome_panel.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/build_county_outcome_panel.py)
-2. [analyze_county_outcome_panel.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/analyze_county_outcome_panel.py)
-3. [county_qcew_2017_2024.parquet](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/county_qcew_2017_2024.parquet)
-4. [county_outcome_panel.parquet](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/county_outcome_panel.parquet)
-5. [county_outcome_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_summary.json)
-6. [county_outcome_bins.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_bins.csv)
-7. [county_outcome_lever_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_lever_comparison.csv)
+1. [build_county_outcome_panel.py](sources/immigration-causal/scripts/build_county_outcome_panel.py)
+2. [analyze_county_outcome_panel.py](sources/immigration-causal/scripts/analyze_county_outcome_panel.py)
+3. [county_qcew_2017_2024.parquet](sources/immigration-causal/data/outcomes/county_qcew_2017_2024.parquet)
+4. [county_outcome_panel.parquet](sources/immigration-causal/data/outcomes/county_outcome_panel.parquet)
+5. [county_outcome_summary.json](sources/immigration-causal/data/outcomes/analysis/county_outcome_summary.json)
+6. [county_outcome_bins.csv](sources/immigration-causal/data/outcomes/analysis/county_outcome_bins.csv)
+7. [county_outcome_lever_comparison.csv](sources/immigration-causal/data/outcomes/analysis/county_outcome_lever_comparison.csv)
 
 ## Key findings
 

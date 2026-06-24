@@ -15,21 +15,21 @@ It is **not** a final fiscal estimate.
 ## Artifacts produced
 
 Profiler script:
-- [profile_public_mvp_inputs.py](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/profile_public_mvp_inputs.py)
+- [profile_public_mvp_inputs.py](sources/immigration-fiscal/data/derived/profile_public_mvp_inputs.py)
 
 Profiler output:
-- [public_mvp_input_profile_2026-04-11.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/public_mvp_input_profile_2026-04-11.json)
+- [public_mvp_input_profile_2026-04-11.json](sources/immigration-fiscal/data/derived/public_mvp_input_profile_2026-04-11.json)
 
 Supporting readiness memo:
-- [immigration-public-mvp-readiness-2026-04-11.md](/Users/alien/Projects/research/research/immigration-public-mvp-readiness-2026-04-11.md)
+- [immigration-public-mvp-readiness-2026-04-11.md](research/immigration-public-mvp-readiness-2026-04-11.md)
 
 ## Verified findings
 
 ### 1. `SIPP 2024` is the correct public-use transition spine
 
 Verified facts:
-1. The downloaded archive contains a single `pu2024.csv` payload of about `3.43GB`. [SOURCE: local unzip listing of [pu2024_csv.zip](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/pu2024_csv.zip)]
-2. The header contains `5203` fields. [SOURCE: local profiler output in [public_mvp_input_profile_2026-04-11.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/public_mvp_input_profile_2026-04-11.json)]
+1. The downloaded archive contains a single `pu2024.csv` payload of about `3.43GB`. [SOURCE: local unzip listing of [pu2024_csv.zip](sources/immigration-fiscal/data/external/stage3/census/sipp/pu2024_csv.zip)]
+2. The header contains `5203` fields. [SOURCE: local profiler output in [public_mvp_input_profile_2026-04-11.json](sources/immigration-fiscal/data/derived/public_mvp_input_profile_2026-04-11.json)]
 3. The public file contains the key immigration/fiscal bridge fields we needed to verify exist: `EBORNUS`, `ECITIZEN`, `TYRENTRY`, `EORIGIN`, `EHISPAN`, `ERACE`, `WPFINWGT`, `TPEARN`, `TSNAP_AMT`, `TTANF_AMT`, `TSSI_AMT`. [SOURCE: same JSON artifact]
 
 Interpretation:
@@ -42,12 +42,12 @@ Official guidance from the `2024 SIPP Users Guide`:
 1. variables starting with `A` are status flags
 2. variables starting with `E` are edited variables
 3. variables starting with `R` are recoded variables
-4. variables starting with `T` are public-use topcoded, bottom-coded, or collapsed variables [SOURCE: [2024_SIPP_Users_Guide.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/2024_SIPP_Users_Guide.pdf), local `pdftotext` extract from section `6.1`]
+4. variables starting with `T` are public-use topcoded, bottom-coded, or collapsed variables [SOURCE: [2024_SIPP_Users_Guide.pdf](sources/immigration-fiscal/data/external/stage3/census/sipp/2024_SIPP_Users_Guide.pdf), local `pdftotext` extract from section `6.1`]
 
 Real consequence:
 1. The first pass incorrectly treated some `A*` fields as substantive values.
 2. That was wrong.
-3. The profiler was corrected to use `TAGE`, `TYRENTRY`, and `TPEARN` instead of `AAGE`, `AYRENTRY`, and `APEARN`. [SOURCE: local script revision in [profile_public_mvp_inputs.py](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/profile_public_mvp_inputs.py)]
+3. The profiler was corrected to use `TAGE`, `TYRENTRY`, and `TPEARN` instead of `AAGE`, `AYRENTRY`, and `APEARN`. [SOURCE: local script revision in [profile_public_mvp_inputs.py](sources/immigration-fiscal/data/derived/profile_public_mvp_inputs.py)]
 
 Interpretation:
 1. `SIPP` can support the public MVP, but only with codebook-level discipline. [INFERENCE]
@@ -55,7 +55,7 @@ Interpretation:
 
 ### 3. `TPEARN` is monthly, not annual
 
-The `2024 SIPP Users Guide` states that `TPEARN` / `TPEARN_ALT` are `monthly total earnings from all jobs`. [SOURCE: [2024_SIPP_Users_Guide.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/2024_SIPP_Users_Guide.pdf), local `pdftotext` extract around page `73`]
+The `2024 SIPP Users Guide` states that `TPEARN` / `TPEARN_ALT` are `monthly total earnings from all jobs`. [SOURCE: [2024_SIPP_Users_Guide.pdf](sources/immigration-fiscal/data/external/stage3/census/sipp/2024_SIPP_Users_Guide.pdf), local `pdftotext` extract around page `73`]
 
 Interpretation:
 1. Any annual-income interpretation of `TPEARN` would be wrong. [INFERENCE]
@@ -81,7 +81,7 @@ Interpretation:
 
 Verified facts:
 1. The public files are on disk in `.dat`, `.dta`, and documentation form. [SOURCE: local files under `sources/immigration-fiscal/data/external/stage3/ahrq/meps/`]
-2. The SAS setup file shows the health spending variables we need: `TOTEXP23`, `TOTSLF23`, `TOTMCR23`, `TOTMCD23`, `TOTPRV23`, `TOTSTL23`. [SOURCE: [h251su.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)]
+2. The SAS setup file shows the health spending variables we need: `TOTEXP23`, `TOTSLF23`, `TOTMCR23`, `TOTMCD23`, `TOTPRV23`, `TOTSTL23`. [SOURCE: [h251su.txt](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)]
 3. The setup file also shows `BORNUSA`, `YRSINUS`, `RACETHX`, `HISPANX`, `PERWT23F`, and `INSURC23`. [SOURCE: same setup file]
 
 Interpretation:
@@ -90,7 +90,7 @@ Interpretation:
 ### 6. `MEPS` suggests foreign-born age 25-64 adults are cheaper on observed annual medical spending than U.S.-born adults
 
 Using the full `h251.dat` file, parsing only selected fields through the official SAS layout:
-1. `BORNUSA == 1` (`Yes`, born in the U.S.) has weighted mean total 2023 health expenditures of about `$7,973`. [SOURCE: profiler JSON + `BORNUSAF` label in [h251su.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)]
+1. `BORNUSA == 1` (`Yes`, born in the U.S.) has weighted mean total 2023 health expenditures of about `$7,973`. [SOURCE: profiler JSON + `BORNUSAF` label in [h251su.txt](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)]
 2. `BORNUSA == 2` (`No`, not born in the U.S.) has weighted mean total 2023 health expenditures of about `$4,626`. [SOURCE: same]
 3. Medicaid-paid mean spending is about `$1,065` for U.S.-born vs about `$623` for foreign-born in the age `25-64` slice. [SOURCE: same]
 4. Positive Medicaid-paid share is very similar: about `16.41%` U.S.-born vs `16.16%` foreign-born. [SOURCE: same]
@@ -104,7 +104,7 @@ Interpretation:
 The `INSURC23` value labels are:
 1. `1` = `<65 any private`
 2. `2` = `<65 public only`
-3. `3` = `<65 uninsured` [SOURCE: `INSURC23F` labels in [h251su.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)]
+3. `3` = `<65 uninsured` [SOURCE: `INSURC23F` labels in [h251su.txt](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)]
 
 Within the age `25-64` slice:
 1. U.S.-born adults are mostly code `1` (`<65 any private`). [SOURCE: profiler JSON]
@@ -124,7 +124,7 @@ Official `MEPS` labels for `YRSINUS` are categories:
 2. `2` = `1` to `<5 years`
 3. `3` = `5` to `<10 years`
 4. `4` = `10` to `<15 years`
-5. `5` = `15 years or more` [SOURCE: `YRSINUSF` labels in [h251su.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)]
+5. `5` = `15 years or more` [SOURCE: `YRSINUSF` labels in [h251su.txt](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)]
 
 Interpretation:
 1. The initial arithmetic mean of `YRSINUS` should not be read as literal years in the U.S.
@@ -157,7 +157,7 @@ The SSD `IRS SOI` mirror is still the wrong object for household tax microsimula
 Why this matters:
 1. County aggregates are useful context.
 2. They do not solve the federal-tax layer.
-3. We still need the actual individual `IRS SOI` public-use file or an equivalent calibration object. [SOURCE: [immigration-public-mvp-readiness-2026-04-11.md](/Users/alien/Projects/research/research/immigration-public-mvp-readiness-2026-04-11.md)]
+3. We still need the actual individual `IRS SOI` public-use file or an equivalent calibration object. [SOURCE: [immigration-public-mvp-readiness-2026-04-11.md](research/immigration-public-mvp-readiness-2026-04-11.md)]
 
 ### Realization 4
 
