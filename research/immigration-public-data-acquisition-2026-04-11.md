@@ -11,10 +11,10 @@ This note records which public-use datasets for a replacement lifetime-fiscal mo
 ### Census SIPP
 
 Downloaded to:
-1. [pu2024_csv.zip](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/pu2024_csv.zip)
-2. [2024_SIPP_Release_Notes.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/2024_SIPP_Release_Notes.pdf)
-3. [2024_SIPP_Users_Guide.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/2024_SIPP_Users_Guide.pdf)
-4. [SIPP_Data_Primer_MAY24.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/SIPP_Data_Primer_MAY24.pdf)
+1. [pu2024_csv.zip](sources/immigration-fiscal/data/external/stage3/census/sipp/pu2024_csv.zip)
+2. [2024_SIPP_Release_Notes.pdf](sources/immigration-fiscal/data/external/stage3/census/sipp/2024_SIPP_Release_Notes.pdf)
+3. [2024_SIPP_Users_Guide.pdf](sources/immigration-fiscal/data/external/stage3/census/sipp/2024_SIPP_Users_Guide.pdf)
+4. [SIPP_Data_Primer_MAY24.pdf](sources/immigration-fiscal/data/external/stage3/census/sipp/SIPP_Data_Primer_MAY24.pdf)
 
 Official sources:
 1. https://www2.census.gov/programs-surveys/sipp/data/datasets/2024/pu2024_csv.zip
@@ -25,17 +25,17 @@ Official sources:
 ### AHRQ MEPS 2023 Full Year Consolidated File (`HC-251`)
 
 Downloaded to:
-1. [h251doc.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251doc.pdf)
-2. [h251cb.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251cb.pdf)
-3. [h251su.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)
-4. [h251spu.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251spu.txt)
-5. [h251stu.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251stu.txt)
-6. [h251ru.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251ru.txt)
-7. [h251dat.zip](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dat.zip)
-8. [h251ssp.zip](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251ssp.zip)
-9. [h251v9.zip](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251v9.zip)
-10. [h251dta.zip](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dta.zip)
-11. [h251xlsx.zip](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251xlsx.zip)
+1. [h251doc.pdf](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251doc.pdf)
+2. [h251cb.pdf](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251cb.pdf)
+3. [h251su.txt](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)
+4. [h251spu.txt](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251spu.txt)
+5. [h251stu.txt](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251stu.txt)
+6. [h251ru.txt](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251ru.txt)
+7. [h251dat.zip](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dat.zip)
+8. [h251ssp.zip](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251ssp.zip)
+9. [h251v9.zip](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251v9.zip)
+10. [h251dta.zip](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dta.zip)
+11. [h251xlsx.zip](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251xlsx.zip)
 
 Official source page:
 1. https://meps.ahrq.gov/mepsweb/data_stats/download_data_files_detail.jsp?cboPufNumber=HC-251
@@ -55,7 +55,7 @@ The SSD copy includes county and other SOI extracts, so re-downloading generic I
 ### Synthetic SIPP underlying data
 
 What we have:
-1. [synthetic_sipp_landing.html](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/synthetic_sipp_landing.html)
+1. [synthetic_sipp_landing.html](sources/immigration-fiscal/data/external/stage3/census/sipp/synthetic_sipp_landing.html)
 
 Status:
 1. the product definitely exists

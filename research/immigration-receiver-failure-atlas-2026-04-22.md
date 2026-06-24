@@ -13,19 +13,19 @@
 
 ## New artifacts
 
-1. [analyze_receiver_failure_atlas.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/analyze_receiver_failure_atlas.py)
-2. [receiver_failure_atlas_2018_2024.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_2018_2024.csv)
-3. [receiver_failure_atlas_2024.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_2024.csv)
-4. [receiver_failure_atlas_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_summary.json)
+1. [analyze_receiver_failure_atlas.py](sources/immigration-causal/scripts/analyze_receiver_failure_atlas.py)
+2. [receiver_failure_atlas_2018_2024.csv](sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_2018_2024.csv)
+3. [receiver_failure_atlas_2024.csv](sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_2024.csv)
+4. [receiver_failure_atlas_summary.json](sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_summary.json)
 
 ## Claims table
 
 | # | Claim | Evidence | Confidence | Source | Status |
 |---|---|---|---|---|---|
-| 1 | Denver is the clearest multi-year physical saturation node | Highest `2024` sheltered/HIC and only node with multi-year shelter saturation since `2021` | HIGH | [receiver_failure_atlas_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_summary.json) | VERIFIED |
-| 2 | NYC is the heaviest all-around stress node in `2024` | Saturated, low permit-to-capacity, highest spending per resident, highest heuristic stress flags | HIGH | [receiver_failure_atlas_2024.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_2024.csv) | VERIFIED |
-| 3 | Boston is a regime-cost case, not a simple shelter-saturation case | High spending with no shelter/HIC saturation | HIGH | [receiver_failure_atlas_2024.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_2024.csv) | VERIFIED |
-| 4 | Several border / transit nodes show chronic overall-over-capacity pressure without the same sheltered signature | `Bexar`, `Miami-Dade`, and `Harris` are above `overall/HIC > 1` in `2024`, with multi-year persistence for some | HIGH | [receiver_failure_atlas_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_summary.json) | VERIFIED |
+| 1 | Denver is the clearest multi-year physical saturation node | Highest `2024` sheltered/HIC and only node with multi-year shelter saturation since `2021` | HIGH | [receiver_failure_atlas_summary.json](sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_summary.json) | VERIFIED |
+| 2 | NYC is the heaviest all-around stress node in `2024` | Saturated, low permit-to-capacity, highest spending per resident, highest heuristic stress flags | HIGH | [receiver_failure_atlas_2024.csv](sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_2024.csv) | VERIFIED |
+| 3 | Boston is a regime-cost case, not a simple shelter-saturation case | High spending with no shelter/HIC saturation | HIGH | [receiver_failure_atlas_2024.csv](sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_2024.csv) | VERIFIED |
+| 4 | Several border / transit nodes show chronic overall-over-capacity pressure without the same sheltered signature | `Bexar`, `Miami-Dade`, and `Harris` are above `overall/HIC > 1` in `2024`, with multi-year persistence for some | HIGH | [receiver_failure_atlas_summary.json](sources/immigration-causal/data/outcomes/analysis/receiver_failure_atlas_summary.json) | VERIFIED |
 
 ## What changed
 

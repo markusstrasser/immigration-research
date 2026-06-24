@@ -136,5 +136,5 @@ Do **not** use this memo to claim:
 
 ## Artifacts
 
-1. [acs_foreign_born_education_bucket_totals_2023.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage3_proto/acs_foreign_born_education_bucket_totals_2023.csv)
-2. [acs_foreign_born_education_state_shares_2023.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage3_proto/acs_foreign_born_education_state_shares_2023.csv)
+1. [acs_foreign_born_education_bucket_totals_2023.csv](sources/immigration-fiscal/data/derived/stage3_proto/acs_foreign_born_education_bucket_totals_2023.csv)
+2. [acs_foreign_born_education_state_shares_2023.csv](sources/immigration-fiscal/data/derived/stage3_proto/acs_foreign_born_education_state_shares_2023.csv)

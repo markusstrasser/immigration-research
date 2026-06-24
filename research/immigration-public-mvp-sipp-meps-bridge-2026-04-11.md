@@ -9,20 +9,20 @@ This memo records the completed bridge between the new `SIPP 2024` transition ce
 The public MVP needs one consistent health-cost input per SIPP profile cell.
 Before this pass, the repo had:
 
-1. [sipp_public_mvp_cells_2024.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage3_proto/sipp_public_mvp_cells_2024.csv) (`SIPP` transition / transfer / earnings cells)
-2. [meps_health_cost_module_2023.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.csv) (age × nativity × insurance payer-incidence cells)
+1. [sipp_public_mvp_cells_2024.csv](sources/immigration-fiscal/data/derived/stage3_proto/sipp_public_mvp_cells_2024.csv) (`SIPP` transition / transfer / earnings cells)
+2. [meps_health_cost_module_2023.csv](sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.csv) (age × nativity × insurance payer-incidence cells)
 
 What was missing was the explicit join layer mapping those two profiles before scenario assembly.
 
 ## What was built
 
 Builder:
-- [build_public_mvp_sipp_meps_bridge_2024.py](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_public_mvp_sipp_meps_bridge_2024.py)
+- [build_public_mvp_sipp_meps_bridge_2024.py](sources/immigration-fiscal/data/derived/build_public_mvp_sipp_meps_bridge_2024.py)
 
 Primary outputs:
-- [sipp_meps_bridge_cells_2024.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.csv)
-- [sipp_meps_expected_health_cost_cells_2024.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv)
-- [sipp_meps_bridge_cells_2024.meta.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.meta.json)
+- [sipp_meps_bridge_cells_2024.csv](sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.csv)
+- [sipp_meps_expected_health_cost_cells_2024.csv](sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv)
+- [sipp_meps_bridge_cells_2024.meta.json](sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.meta.json)
 
 ## Quantitative status
 

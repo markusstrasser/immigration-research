@@ -57,7 +57,7 @@ The county-level threshold election panel joins:
 3. existing county newcomer/ACS panel
 
 Output:
-1. [county_threshold_election_panel.parquet](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/county_threshold_election_panel.parquet)
+1. [county_threshold_election_panel.parquet](sources/immigration-causal/data/threshold/analysis/county_threshold_election_panel.parquet)
 
 ### Receiver-node panel
 
@@ -69,8 +69,8 @@ The receiver-node panel joins:
 4. existing local receiver-city spending / shelter files
 
 Output:
-1. [receiver_threshold_panel.parquet](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/receiver_threshold_panel.parquet)
-2. [receiver_threshold_summary.csv](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/receiver_threshold_summary.csv)
+1. [receiver_threshold_panel.parquet](sources/immigration-causal/data/threshold/analysis/receiver_threshold_panel.parquet)
+2. [receiver_threshold_summary.csv](sources/immigration-causal/data/threshold/analysis/receiver_threshold_summary.csv)
 
 ## County-level findings
 
@@ -194,11 +194,11 @@ The best current repo formulation is:
 
 ## Files produced by this pass
 
-1. [build_threshold_panel.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/build_threshold_panel.py)
-2. [analyze_threshold_effects.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/analyze_threshold_effects.py)
-3. [county_bps_permits_2021_2024.parquet](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/county_bps_permits_2021_2024.parquet)
-4. [county_threshold_election_panel.parquet](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/county_threshold_election_panel.parquet)
-5. [receiver_threshold_panel.parquet](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/receiver_threshold_panel.parquet)
-6. [threshold_results_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/threshold_results_summary.json)
-7. [receiver_threshold_summary.csv](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/receiver_threshold_summary.csv)
-8. [county_threshold_bins.csv](/Users/alien/Projects/research/sources/immigration-causal/data/threshold/analysis/county_threshold_bins.csv)
+1. [build_threshold_panel.py](sources/immigration-causal/scripts/build_threshold_panel.py)
+2. [analyze_threshold_effects.py](sources/immigration-causal/scripts/analyze_threshold_effects.py)
+3. [county_bps_permits_2021_2024.parquet](sources/immigration-causal/data/threshold/analysis/county_bps_permits_2021_2024.parquet)
+4. [county_threshold_election_panel.parquet](sources/immigration-causal/data/threshold/analysis/county_threshold_election_panel.parquet)
+5. [receiver_threshold_panel.parquet](sources/immigration-causal/data/threshold/analysis/receiver_threshold_panel.parquet)
+6. [threshold_results_summary.json](sources/immigration-causal/data/threshold/analysis/threshold_results_summary.json)
+7. [receiver_threshold_summary.csv](sources/immigration-causal/data/threshold/analysis/receiver_threshold_summary.csv)
+8. [county_threshold_bins.csv](sources/immigration-causal/data/threshold/analysis/county_threshold_bins.csv)

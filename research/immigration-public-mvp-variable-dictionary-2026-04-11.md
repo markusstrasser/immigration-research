@@ -10,18 +10,18 @@ The point is to prevent semantic mistakes while wiring the first modules.
 ## `SIPP 2024`
 
 Core file:
-- [pu2024_csv.zip](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/pu2024_csv.zip)
+- [pu2024_csv.zip](sources/immigration-fiscal/data/external/stage3/census/sipp/pu2024_csv.zip)
 
 Naming rules from the official guide:
 1. `A*` = status flags
 2. `E*` = edited variables
 3. `R*` = recoded variables
-4. `T*` = public-use topcoded / bottom-coded / collapsed variables [SOURCE: [2024_SIPP_Users_Guide.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/2024_SIPP_Users_Guide.pdf), local `pdftotext` extract around section `6.1`]
+4. `T*` = public-use topcoded / bottom-coded / collapsed variables [SOURCE: [2024_SIPP_Users_Guide.pdf](sources/immigration-fiscal/data/external/stage3/census/sipp/2024_SIPP_Users_Guide.pdf), local `pdftotext` extract around section `6.1`]
 
 ### High-confidence `SIPP` variables
 
 1. `SSUID`
-   - person/household longitudinal identifier family [SOURCE: local header inspection in [public_mvp_input_profile_2026-04-11.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/public_mvp_input_profile_2026-04-11.json)]
+   - person/household longitudinal identifier family [SOURCE: local header inspection in [public_mvp_input_profile_2026-04-11.json](sources/immigration-fiscal/data/derived/public_mvp_input_profile_2026-04-11.json)]
    - use: longitudinal linking base
    - confidence: `Medium`
 
@@ -31,7 +31,7 @@ Naming rules from the official guide:
    - confidence: `Medium`
 
 3. `WPFINWGT`
-   - final person weight [SOURCE: [SIPP_Data_Primer_MAY24.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/SIPP_Data_Primer_MAY24.pdf), local `pdftotext` extract]
+   - final person weight [SOURCE: [SIPP_Data_Primer_MAY24.pdf](sources/immigration-fiscal/data/external/stage3/census/sipp/SIPP_Data_Primer_MAY24.pdf), local `pdftotext` extract]
    - use: descriptive weighting
    - confidence: `High`
 
@@ -74,7 +74,7 @@ Naming rules from the official guide:
    - confidence: `Medium`
 
 11. `TPEARN`
-   - monthly total earnings from all jobs [SOURCE: [2024_SIPP_Users_Guide.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/2024_SIPP_Users_Guide.pdf), local `pdftotext` extract around page `73`]
+   - monthly total earnings from all jobs [SOURCE: [2024_SIPP_Users_Guide.pdf](sources/immigration-fiscal/data/external/stage3/census/sipp/2024_SIPP_Users_Guide.pdf), local `pdftotext` extract around page `73`]
    - use: labor-income transition model
    - confidence: `High`
 
@@ -102,14 +102,14 @@ Naming rules from the official guide:
    - it is monthly total earnings [SOURCE: official guide]
 
 3. `ECITIZEN` or `EBORNUS` code values without explicit codebook decode
-   - current profiler uses raw-code frequencies only [SOURCE: [public_mvp_input_profile_2026-04-11.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/public_mvp_input_profile_2026-04-11.json)]
+   - current profiler uses raw-code frequencies only [SOURCE: [public_mvp_input_profile_2026-04-11.json](sources/immigration-fiscal/data/derived/public_mvp_input_profile_2026-04-11.json)]
 
 ## `MEPS HC-251`
 
 Core files:
-- [h251dat.zip](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dat.zip)
-- [h251dta.zip](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dta.zip)
-- [h251su.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)
+- [h251dat.zip](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dat.zip)
+- [h251dta.zip](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dta.zip)
+- [h251su.txt](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)
 
 ### High-confidence `MEPS` variables
 

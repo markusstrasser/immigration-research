@@ -15,17 +15,17 @@ The housing comparison is a `U.S. benchmark`, not a literal estimate of total ri
 
 ## New artifacts
 
-1. [analyze_open_borders_break_even.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/analyze_open_borders_break_even.py)
-2. [open_borders_break_even_bounds.csv](/Users/alien/Projects/research/sources/immigration-causal/data/clemens/open_borders_break_even_bounds.csv)
-3. [open_borders_break_even_bounds.json](/Users/alien/Projects/research/sources/immigration-causal/data/clemens/open_borders_break_even_bounds.json)
+1. [analyze_open_borders_break_even.py](sources/immigration-causal/scripts/analyze_open_borders_break_even.py)
+2. [open_borders_break_even_bounds.csv](sources/immigration-causal/data/clemens/open_borders_break_even_bounds.csv)
+3. [open_borders_break_even_bounds.json](sources/immigration-causal/data/clemens/open_borders_break_even_bounds.json)
 
 ## Claims table
 
 | # | Claim | Evidence | Confidence | Source | Status |
 |---|---|---|---|---|---|
-| 1 | The conservative `+200M` scenario still yields very large annual gains | `$1.5T`, about `1.36%` of world GDP | HIGH | [open_borders_break_even_bounds.csv](/Users/alien/Projects/research/sources/immigration-causal/data/clemens/open_borders_break_even_bounds.csv) | VERIFIED |
-| 2 | The gain can be wiped out by moderate-to-large incumbent losses, not by only catastrophic ones | About `$1,071` per existing rich-country resident per year is enough in the `+200M` scenario | HIGH | [open_borders_break_even_bounds.csv](/Users/alien/Projects/research/sources/immigration-causal/data/clemens/open_borders_break_even_bounds.csv) | VERIFIED |
-| 3 | The physical absorption burden becomes huge quickly | `80M` housing units for `+200M`; `200M` housing units for `+500M` | HIGH | [open_borders_break_even_bounds.csv](/Users/alien/Projects/research/sources/immigration-causal/data/clemens/open_borders_break_even_bounds.csv) | VERIFIED |
+| 1 | The conservative `+200M` scenario still yields very large annual gains | `$1.5T`, about `1.36%` of world GDP | HIGH | [open_borders_break_even_bounds.csv](sources/immigration-causal/data/clemens/open_borders_break_even_bounds.csv) | VERIFIED |
+| 2 | The gain can be wiped out by moderate-to-large incumbent losses, not by only catastrophic ones | About `$1,071` per existing rich-country resident per year is enough in the `+200M` scenario | HIGH | [open_borders_break_even_bounds.csv](sources/immigration-causal/data/clemens/open_borders_break_even_bounds.csv) | VERIFIED |
+| 3 | The physical absorption burden becomes huge quickly | `80M` housing units for `+200M`; `200M` housing units for `+500M` | HIGH | [open_borders_break_even_bounds.csv](sources/immigration-causal/data/clemens/open_borders_break_even_bounds.csv) | VERIFIED |
 
 ## 1) The break-even inequality is now explicit
 

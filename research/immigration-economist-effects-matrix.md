@@ -21,7 +21,7 @@ Yes, the ACS work used DuckDB. But the distinction matters:
 
 1. We used DuckDB as the query engine over flat files such as `/Volumes/SSK1TB/corpus/census_acs/csv_pus.csv`. [DATA: /Volumes/SSK1TB/corpus/census_acs/csv_pus.csv]
 2. At the start of this pass, I did not find a preexisting immigration-focused `.duckdb` database file in this repo or in the immigration/census corpus paths I checked. [DATA: local filesystem search on 2026-04-10]
-3. This pass adds a derived warehouse at [immigration_context.duckdb](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/immigration_context.duckdb), built by [build_immigration_context_duckdb.sql](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_immigration_context_duckdb.sql). [DATA]
+3. This pass adds a derived warehouse at [immigration_context.duckdb](sources/immigration-fiscal/data/derived/immigration_context.duckdb), built by [build_immigration_context_duckdb.sql](sources/immigration-fiscal/data/derived/build_immigration_context_duckdb.sql). [DATA]
 4. The preexisting `.duckdb` files I did find on the SSD were FERC energy/regulatory datasets, not immigration datasets. [DATA: /Volumes/SSK1TB/corpus/ferc_eqr/ferc1_raw/ferc1_xbrl.duckdb; /Volumes/SSK1TB/corpus/ferc_regulatory/pudl_release/ferc1_xbrl.duckdb]
 
 So the precise statement is:

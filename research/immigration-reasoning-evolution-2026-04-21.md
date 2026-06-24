@@ -6,22 +6,22 @@
 
 ## Artifact basis
 
-1. [immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md](/Users/alien/Projects/research/research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md)
-2. [immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md](/Users/alien/Projects/research/research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md)
-3. [immigration-threshold-first-panel-2026-04-21.md](/Users/alien/Projects/research/research/immigration-threshold-first-panel-2026-04-21.md)
-4. [immigration-threshold-causal-levers-2026-04-21.md](/Users/alien/Projects/research/research/immigration-threshold-causal-levers-2026-04-21.md)
-5. [immigration-county-outcome-panel-2026-04-21.md](/Users/alien/Projects/research/research/immigration-county-outcome-panel-2026-04-21.md)
-6. [immigration-capacity-frontier-2026-04-21.md](/Users/alien/Projects/research/research/immigration-capacity-frontier-2026-04-21.md)
-7. [.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md](/Users/alien/Projects/research/.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md)
-8. [immigration-capacity-falsification-2026-04-21.md](/Users/alien/Projects/research/research/immigration-capacity-falsification-2026-04-21.md)
-9. [.model-review/2026-04-22-immigration-capacity-falsification-final-36f586/verified-disposition.md](/Users/alien/Projects/research/.model-review/2026-04-22-immigration-capacity-falsification-final-36f586/verified-disposition.md)
+1. [immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md](research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md)
+2. [immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md](research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md)
+3. [immigration-threshold-first-panel-2026-04-21.md](research/immigration-threshold-first-panel-2026-04-21.md)
+4. [immigration-threshold-causal-levers-2026-04-21.md](research/immigration-threshold-causal-levers-2026-04-21.md)
+5. [immigration-county-outcome-panel-2026-04-21.md](research/immigration-county-outcome-panel-2026-04-21.md)
+6. [immigration-capacity-frontier-2026-04-21.md](research/immigration-capacity-frontier-2026-04-21.md)
+7. [.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md](.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md)
+8. [immigration-capacity-falsification-2026-04-21.md](research/immigration-capacity-falsification-2026-04-21.md)
+9. [.model-review/2026-04-22-immigration-capacity-falsification-final-36f586/verified-disposition.md](.model-review/2026-04-22-immigration-capacity-falsification-final-36f586/verified-disposition.md)
 10. commit `2cdd801` (`[analysis] Measure capacity frontier — compare stock flow and load`) [SOURCE: git history]
 11. commit `1097c77` (`[research] Audit Bryan Caplan claims — score open-borders arguments`) [SOURCE: git history]
-12. [immigration-frontier-rethink-2026-04-22.md](/Users/alien/Projects/research/research/immigration-frontier-rethink-2026-04-22.md)
-13. [immigration-receiver-failure-atlas-2026-04-22.md](/Users/alien/Projects/research/research/immigration-receiver-failure-atlas-2026-04-22.md)
-14. [immigration-resident-weighted-exposure-2026-04-22.md](/Users/alien/Projects/research/research/immigration-resident-weighted-exposure-2026-04-22.md)
-15. [immigration-open-borders-break-even-bounds-2026-04-22.md](/Users/alien/Projects/research/research/immigration-open-borders-break-even-bounds-2026-04-22.md)
-16. [immigration-receiver-counterfactuals-2026-04-22.md](/Users/alien/Projects/research/research/immigration-receiver-counterfactuals-2026-04-22.md)
+12. [immigration-frontier-rethink-2026-04-22.md](research/immigration-frontier-rethink-2026-04-22.md)
+13. [immigration-receiver-failure-atlas-2026-04-22.md](research/immigration-receiver-failure-atlas-2026-04-22.md)
+14. [immigration-resident-weighted-exposure-2026-04-22.md](research/immigration-resident-weighted-exposure-2026-04-22.md)
+15. [immigration-open-borders-break-even-bounds-2026-04-22.md](research/immigration-open-borders-break-even-bounds-2026-04-22.md)
+16. [immigration-receiver-counterfactuals-2026-04-22.md](research/immigration-receiver-counterfactuals-2026-04-22.md)
 
 ## Starting point: stop answering the scalar question
 

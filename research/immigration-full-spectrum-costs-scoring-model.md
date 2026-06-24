@@ -2,7 +2,7 @@
 
 **Question:** How should we score long-run cost channels without presupposing a conclusion or laundering weak claims into a single giant number?
 **Date:** 2026-03-13
-**Inputs:** [immigration-full-spectrum-costs-unauthorized-memo.md](/Users/alien/Projects/research/research/immigration-full-spectrum-costs-unauthorized-memo.md), [immigration-fiscal-impact-unauthorized-memo.md](/Users/alien/Projects/research/research/immigration-fiscal-impact-unauthorized-memo.md), CBO, ITEP, language-access reports, labor-enforcement reports, and political-economy literature.
+**Inputs:** [immigration-full-spectrum-costs-unauthorized-memo.md](research/immigration-full-spectrum-costs-unauthorized-memo.md), [immigration-fiscal-impact-unauthorized-memo.md](research/immigration-fiscal-impact-unauthorized-memo.md), CBO, ITEP, language-access reports, labor-enforcement reports, and political-economy literature.
 
 ---
 

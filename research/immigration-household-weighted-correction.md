@@ -34,10 +34,10 @@ Official sources:
 
 ## New assets
 
-1. [extend_immigration_context_with_households.sql](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/extend_immigration_context_with_households.sql)
+1. [extend_immigration_context_with_households.sql](sources/immigration-fiscal/data/derived/extend_immigration_context_with_households.sql)
 2. [psam_husa.csv](/Volumes/SSK1TB/corpus/census_acs/psam_husa.csv)
 3. [psam_husb.csv](/Volumes/SSK1TB/corpus/census_acs/psam_husb.csv)
-4. `acs_origin_puma_household_2023` in [immigration_context.duckdb](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/immigration_context.duckdb)
+4. `acs_origin_puma_household_2023` in [immigration_context.duckdb](sources/immigration-fiscal/data/derived/immigration_context.duckdb)
 5. `acs_origin_household_national_2023` in the same warehouse
 6. `origin_puma_household_context_2023` in the same warehouse
 

@@ -14,11 +14,11 @@ So this upgrade uses:
 
 ## New assets
 
-1. [build_puma_context_assets.py](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_puma_context_assets.py)
-2. [extend_immigration_context_with_pumas.sql](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/extend_immigration_context_with_pumas.sql)
-3. [puma_median_gross_rent_2023.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/origin/puma_median_gross_rent_2023.csv)
-4. [census_acs1_2023_puma_median_gross_rent.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/origin/census_acs1_2023_puma_median_gross_rent.json)
-5. `puma_median_gross_rent_2023` in [immigration_context.duckdb](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/immigration_context.duckdb)
+1. [build_puma_context_assets.py](sources/immigration-fiscal/data/derived/build_puma_context_assets.py)
+2. [extend_immigration_context_with_pumas.sql](sources/immigration-fiscal/data/derived/extend_immigration_context_with_pumas.sql)
+3. [puma_median_gross_rent_2023.csv](sources/immigration-fiscal/data/derived/origin/puma_median_gross_rent_2023.csv)
+4. [census_acs1_2023_puma_median_gross_rent.json](sources/immigration-fiscal/data/external/origin/census_acs1_2023_puma_median_gross_rent.json)
+5. `puma_median_gross_rent_2023` in [immigration_context.duckdb](sources/immigration-fiscal/data/derived/immigration_context.duckdb)
 6. `acs_origin_puma_2023` in the same warehouse
 7. `origin_puma_context_2023` in the same warehouse
 

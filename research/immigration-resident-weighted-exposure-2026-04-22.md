@@ -13,18 +13,18 @@
 
 ## New artifacts
 
-1. [analyze_resident_weighted_exposure.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/analyze_resident_weighted_exposure.py)
-2. [county_resident_weighted_metric_summary.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_resident_weighted_metric_summary.csv)
-3. [county_resident_weighted_stress_shares.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_resident_weighted_stress_shares.csv)
-4. [county_resident_weighted_exposure_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_resident_weighted_exposure_summary.json)
+1. [analyze_resident_weighted_exposure.py](sources/immigration-causal/scripts/analyze_resident_weighted_exposure.py)
+2. [county_resident_weighted_metric_summary.csv](sources/immigration-causal/data/outcomes/analysis/county_resident_weighted_metric_summary.csv)
+3. [county_resident_weighted_stress_shares.csv](sources/immigration-causal/data/outcomes/analysis/county_resident_weighted_stress_shares.csv)
+4. [county_resident_weighted_exposure_summary.json](sources/immigration-causal/data/outcomes/analysis/county_resident_weighted_exposure_summary.json)
 
 ## Claims table
 
 | # | Claim | Evidence | Confidence | Source | Status |
 |---|---|---|---|---|---|
-| 1 | County medians overstated domestic-vs-abroad newcomer dominance for the typical resident | `20.4x` median-county ratio falls to `8.1x` population-weighted and `7.1x` renter-weighted | HIGH | [county_resident_weighted_exposure_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_resident_weighted_exposure_summary.json) | VERIFIED |
-| 2 | County medians understated immigrant-specific flow exposure | `moved_from_abroad_share` and `recent_fb_annual_share` both rise materially under resident weighting | HIGH | [county_resident_weighted_metric_summary.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_resident_weighted_metric_summary.csv) | VERIFIED |
-| 3 | High-flow counties contain a disproportionate share of renters and children | Top `20%` recent-flow counties contain about `71.4%` of renter households and `65.5%` of children | HIGH | [county_resident_weighted_stress_shares.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_resident_weighted_stress_shares.csv) | VERIFIED |
+| 1 | County medians overstated domestic-vs-abroad newcomer dominance for the typical resident | `20.4x` median-county ratio falls to `8.1x` population-weighted and `7.1x` renter-weighted | HIGH | [county_resident_weighted_exposure_summary.json](sources/immigration-causal/data/outcomes/analysis/county_resident_weighted_exposure_summary.json) | VERIFIED |
+| 2 | County medians understated immigrant-specific flow exposure | `moved_from_abroad_share` and `recent_fb_annual_share` both rise materially under resident weighting | HIGH | [county_resident_weighted_metric_summary.csv](sources/immigration-causal/data/outcomes/analysis/county_resident_weighted_metric_summary.csv) | VERIFIED |
+| 3 | High-flow counties contain a disproportionate share of renters and children | Top `20%` recent-flow counties contain about `71.4%` of renter households and `65.5%` of children | HIGH | [county_resident_weighted_stress_shares.csv](sources/immigration-causal/data/outcomes/analysis/county_resident_weighted_stress_shares.csv) | VERIFIED |
 
 ## 1) The newcomer ratio changes once you weight by actual people
 

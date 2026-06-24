@@ -23,28 +23,28 @@
 
 ## New artifacts
 
-1. [analyze_capacity_falsification.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/analyze_capacity_falsification.py)
-2. [county_capacity_falsification_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_falsification_summary.json)
-3. [county_capacity_sample_accounting.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_sample_accounting.json)
-4. [county_capacity_permutation_results.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_permutation_results.csv)
-5. [county_capacity_pretrend_results.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_pretrend_results.csv)
-6. [county_capacity_overlap_results.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_overlap_results.csv)
-7. [county_capacity_geographic_leaveout.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_geographic_leaveout.csv)
-8. [county_capacity_threshold_search_holdout.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_search_holdout.csv)
-9. [county_capacity_threshold_search_null.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_search_null.csv)
-10. [county_capacity_threshold_surface.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_surface.csv)
-11. [county_capacity_monotonicity.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_monotonicity.csv)
-12. [county_outcome_panel_audit.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/county_outcome_panel_audit.json)
+1. [analyze_capacity_falsification.py](sources/immigration-causal/scripts/analyze_capacity_falsification.py)
+2. [county_capacity_falsification_summary.json](sources/immigration-causal/data/outcomes/analysis/county_capacity_falsification_summary.json)
+3. [county_capacity_sample_accounting.json](sources/immigration-causal/data/outcomes/analysis/county_capacity_sample_accounting.json)
+4. [county_capacity_permutation_results.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_permutation_results.csv)
+5. [county_capacity_pretrend_results.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_pretrend_results.csv)
+6. [county_capacity_overlap_results.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_overlap_results.csv)
+7. [county_capacity_geographic_leaveout.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_geographic_leaveout.csv)
+8. [county_capacity_threshold_search_holdout.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_search_holdout.csv)
+9. [county_capacity_threshold_search_null.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_search_null.csv)
+10. [county_capacity_threshold_surface.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_surface.csv)
+11. [county_capacity_monotonicity.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_monotonicity.csv)
+12. [county_outcome_panel_audit.json](sources/immigration-causal/data/outcomes/county_outcome_panel_audit.json)
 
 ## Claims table
 
 | # | Claim | Evidence | Confidence | Source | Status |
 |---|---|---|---|---|---|
-| 1 | The county `load/capacity` signal is much stronger than a random within-state reassignment | All four predeclared outcomes beat `1,000` within-state permutations with zero exceedances, so the empirical p-value is at the floor `p<=0.001` rather than a more precise tail estimate | HIGH | [county_capacity_permutation_results.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_permutation_results.csv) | VERIFIED |
-| 2 | The descriptive sign is not just Texas or one regional corridor | Leave-one-division-out and leave-one-state-out preserve the sign for margin, wages, and employment | HIGH | [county_capacity_geographic_leaveout.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_geographic_leaveout.csv) | VERIFIED |
-| 3 | Decile monotonicity is real at the main outcomes | Spearman trends remain strong and correctly signed across the load deciles for margin, wages, and employment | HIGH | [county_capacity_monotonicity.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_monotonicity.csv) | VERIFIED |
-| 4 | The clean presurge windows do not give a clean causal wage reading, while employment remains suspicious | `2017–2018` wage is positive and `2018–2019` wage is weak negative, while both clean employment windows are already negative under the same `2017–2019` permit baseline | HIGH | [county_capacity_pretrend_results.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_pretrend_results.csv) | VERIFIED |
-| 5 | A wage-tuned threshold search beats the null on performance, but not on stable cutoff location | Under state-group holdouts, wage holdout sign stability is `96.0%` versus `43.0%` in the null search, but the joint-mode actual cutoff cell appears in only `22%` of splits and the top-three actual cells sum to `47.0%` | MEDIUM | [county_capacity_threshold_search_holdout.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_search_holdout.csv) [county_capacity_threshold_search_null.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_search_null.csv) [county_capacity_threshold_surface.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_surface.csv) | VERIFIED |
+| 1 | The county `load/capacity` signal is much stronger than a random within-state reassignment | All four predeclared outcomes beat `1,000` within-state permutations with zero exceedances, so the empirical p-value is at the floor `p<=0.001` rather than a more precise tail estimate | HIGH | [county_capacity_permutation_results.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_permutation_results.csv) | VERIFIED |
+| 2 | The descriptive sign is not just Texas or one regional corridor | Leave-one-division-out and leave-one-state-out preserve the sign for margin, wages, and employment | HIGH | [county_capacity_geographic_leaveout.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_geographic_leaveout.csv) | VERIFIED |
+| 3 | Decile monotonicity is real at the main outcomes | Spearman trends remain strong and correctly signed across the load deciles for margin, wages, and employment | HIGH | [county_capacity_monotonicity.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_monotonicity.csv) | VERIFIED |
+| 4 | The clean presurge windows do not give a clean causal wage reading, while employment remains suspicious | `2017–2018` wage is positive and `2018–2019` wage is weak negative, while both clean employment windows are already negative under the same `2017–2019` permit baseline | HIGH | [county_capacity_pretrend_results.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_pretrend_results.csv) | VERIFIED |
+| 5 | A wage-tuned threshold search beats the null on performance, but not on stable cutoff location | Under state-group holdouts, wage holdout sign stability is `96.0%` versus `43.0%` in the null search, but the joint-mode actual cutoff cell appears in only `22%` of splits and the top-three actual cells sum to `47.0%` | MEDIUM | [county_capacity_threshold_search_holdout.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_search_holdout.csv) [county_capacity_threshold_search_null.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_search_null.csv) [county_capacity_threshold_surface.csv](sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_surface.csv) | VERIFIED |
 
 ## 1) Sample definition and measurement limits
 

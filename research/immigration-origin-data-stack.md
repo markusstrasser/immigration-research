@@ -15,64 +15,64 @@ This note defines the minimum public-data stack needed to make serious statement
 
 ### Local context data already ingested
 
-1. FHFA state purchase-only HPI: [fhfa_hpi_po_state.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/fhfa_hpi_po_state.txt)
-2. Census 2023 school-finance summary rows: [census_school_finance_2023_summary.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/census_school_finance_2023_summary.txt)
-3. Derived DuckDB warehouse: [immigration_context.duckdb](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/immigration_context.duckdb)
-4. DuckDB build script: [build_immigration_context_duckdb.sql](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_immigration_context_duckdb.sql)
+1. FHFA state purchase-only HPI: [fhfa_hpi_po_state.txt](sources/immigration-fiscal/data/external/fhfa_hpi_po_state.txt)
+2. Census 2023 school-finance summary rows: [census_school_finance_2023_summary.txt](sources/immigration-fiscal/data/external/census_school_finance_2023_summary.txt)
+3. Derived DuckDB warehouse: [immigration_context.duckdb](sources/immigration-fiscal/data/derived/immigration_context.duckdb)
+4. DuckDB build script: [build_immigration_context_duckdb.sql](sources/immigration-fiscal/data/derived/build_immigration_context_duckdb.sql)
 
 ## New origin-layer datasets acquired in this pass
 
 ### Official and machine-readable
 
-1. World Bank country metadata API dump: [worldbank_country_metadata.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/origin/worldbank_country_metadata.json)
+1. World Bank country metadata API dump: [worldbank_country_metadata.json](sources/immigration-fiscal/data/external/origin/worldbank_country_metadata.json)
    What it gives:
    country name, ISO2/ISO3, World Bank region, income group, lending type, capital city.
    Source: `https://api.worldbank.org/v2/country?format=json&per_page=400`
 
-2. ACS 2023 table `B05006` metadata: [census_acs1_2023_B05006_metadata.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/origin/census_acs1_2023_B05006_metadata.json)
+2. ACS 2023 table `B05006` metadata: [census_acs1_2023_B05006_metadata.json](sources/immigration-fiscal/data/external/origin/census_acs1_2023_B05006_metadata.json)
    What it gives:
    labeled place-of-birth categories for the foreign-born population.
    Source: `https://api.census.gov/data/2023/acs/acs1/groups/B05006.json`
 
-3. ACS 2023 table `B05006` state-level data: [census_acs1_2023_B05006_state_origin.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/origin/census_acs1_2023_B05006_state_origin.json)
+3. ACS 2023 table `B05006` state-level data: [census_acs1_2023_B05006_state_origin.json](sources/immigration-fiscal/data/external/origin/census_acs1_2023_B05006_state_origin.json)
    What it gives:
    state-by-origin counts for the foreign-born population, with Census labels available through the metadata file.
    Source: `https://api.census.gov/data/2023/acs/acs1?get=NAME,group(B05006)&for=state:*`
 
-4. ACS 2023 subject definitions PDF: [census_2023_subject_definitions.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/origin/census_2023_subject_definitions.pdf)
+4. ACS 2023 subject definitions PDF: [census_2023_subject_definitions.pdf](sources/immigration-fiscal/data/external/origin/census_2023_subject_definitions.pdf)
    What it gives:
    official ACS variable definitions and coding guidance.
    Source: `https://www2.census.gov/programs-surveys/acs/tech_docs/subject_definitions/2023_ACSSubjectDefinitions.pdf`
 
-5. OHSS LPR recent-arrivals CBSA workbook: [ohss_lpr_recent_arrivals_cbsa_2024.xlsx](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/origin/ohss_lpr_recent_arrivals_cbsa_2024.xlsx)
+5. OHSS LPR recent-arrivals CBSA workbook: [ohss_lpr_recent_arrivals_cbsa_2024.xlsx](sources/immigration-fiscal/data/external/origin/ohss_lpr_recent_arrivals_cbsa_2024.xlsx)
    What it gives:
    lawful permanent resident estimates for recent arrivals among top 50 CBSAs by county.
    Source page: `https://ohss.dhs.gov/topics/immigration/population-estimates/lawful-permanent-residents`
    Direct file path used: `https://ohss.dhs.gov/sites/default/files/2024-12/2024_1206_ohss_lpr-and-eligible-to-naturalize-jan-01-2024.xlsx`
 
-6. ACS PUMS code-list workbook: [ACSPUMS2019_2023CodeLists.xlsx](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/origin/ACSPUMS2019_2023CodeLists.xlsx)
+6. ACS PUMS code-list workbook: [ACSPUMS2019_2023CodeLists.xlsx](sources/immigration-fiscal/data/external/origin/ACSPUMS2019_2023CodeLists.xlsx)
    What it gives:
    official `POBP` birthplace codes and descriptions needed to decode the ACS person file.
    Source: `https://www2.census.gov/programs-surveys/acs/tech_docs/pums/code_lists/ACSPUMS2019_2023CodeLists.xlsx`
 
-7. OHSS country-by-major-class workbook: [lpr_country_birth_major_class_2005_2022.xlsx](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/origin/ohss/lpr_country_birth_major_class_2005_2022.xlsx)
+7. OHSS country-by-major-class workbook: [lpr_country_birth_major_class_2005_2022.xlsx](sources/immigration-fiscal/data/external/origin/ohss/lpr_country_birth_major_class_2005_2022.xlsx)
    What it gives:
    administrative lawful-permanent-resident admissions by country of birth, major class, and fiscal year.
    Source: `https://ohss.dhs.gov/sites/default/files/2023-12/plcy_lpr_by_country_of_birth_by_major_class_fy2005-2022_d.xlsx`
 
-8. OHSS top-200 counties workbook: [lpr_counties_top_200_fy2022.xlsx](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/origin/ohss/lpr_counties_top_200_fy2022.xlsx)
+8. OHSS top-200 counties workbook: [lpr_counties_top_200_fy2022.xlsx](sources/immigration-fiscal/data/external/origin/ohss/lpr_counties_top_200_fy2022.xlsx)
    What it gives:
    county-level administrative admissions by country and major class for the top 200 counties in FY2022.
    Source: `https://ohss.dhs.gov/sites/default/files/2023-12/plcy_lpr_counties_top_200_fy2022_d.xlsx`
 
-9. ACS 2023 state median gross rent JSON: [census_acs1_2023_state_median_gross_rent.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/origin/census_acs1_2023_state_median_gross_rent.json)
+9. ACS 2023 state median gross rent JSON: [census_acs1_2023_state_median_gross_rent.json](sources/immigration-fiscal/data/external/origin/census_acs1_2023_state_median_gross_rent.json)
    What it gives:
    official renter-side housing cost by state.
    Source: `https://api.census.gov/data/2023/acs/acs1?get=NAME,B25064_001E&for=state:*`
 
 ### Acquired paper layer
 
-1. Colas and Sachs paper PDF: [colas_sachs_indirect_fiscal_benefits.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/origin/colas_sachs_indirect_fiscal_benefits.pdf)
+1. Colas and Sachs paper PDF: [colas_sachs_indirect_fiscal_benefits.pdf](sources/immigration-fiscal/data/external/origin/colas_sachs_indirect_fiscal_benefits.pdf)
    Source: `https://www.econstor.eu/bitstream/10419/282044/1/352.pdf`
 
 ## Official sources identified but not cleanly downloaded yet
@@ -101,19 +101,19 @@ The plan has now been executed into both flat derived assets and the existing Du
 
 ### Derived flat assets
 
-Created by [build_origin_assets.py](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_origin_assets.py):
+Created by [build_origin_assets.py](sources/immigration-fiscal/data/derived/build_origin_assets.py):
 
-1. [country_origin_dim.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/origin/country_origin_dim.csv)
-2. [worldbank_country_dim.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/origin/worldbank_country_dim.csv)
-3. [un_m49_country_dim.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/origin/un_m49_country_dim.csv)
-4. [state_origin_stock_2023.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/origin/state_origin_stock_2023.csv)
-5. [state_median_gross_rent_2023.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/origin/state_median_gross_rent_2023.csv)
-6. [ohss_lpr_country_birth_major_class_2005_2022.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/origin/ohss_lpr_country_birth_major_class_2005_2022.csv)
-7. [ohss_lpr_counties_top_200_fy2022.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/origin/ohss_lpr_counties_top_200_fy2022.csv)
+1. [country_origin_dim.csv](sources/immigration-fiscal/data/derived/origin/country_origin_dim.csv)
+2. [worldbank_country_dim.csv](sources/immigration-fiscal/data/derived/origin/worldbank_country_dim.csv)
+3. [un_m49_country_dim.csv](sources/immigration-fiscal/data/derived/origin/un_m49_country_dim.csv)
+4. [state_origin_stock_2023.csv](sources/immigration-fiscal/data/derived/origin/state_origin_stock_2023.csv)
+5. [state_median_gross_rent_2023.csv](sources/immigration-fiscal/data/derived/origin/state_median_gross_rent_2023.csv)
+6. [ohss_lpr_country_birth_major_class_2005_2022.csv](sources/immigration-fiscal/data/derived/origin/ohss_lpr_country_birth_major_class_2005_2022.csv)
+7. [ohss_lpr_counties_top_200_fy2022.csv](sources/immigration-fiscal/data/derived/origin/ohss_lpr_counties_top_200_fy2022.csv)
 
 ### DuckDB extension
 
-Created by [extend_immigration_context_with_origins.sql](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/extend_immigration_context_with_origins.sql) inside [immigration_context.duckdb](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/immigration_context.duckdb):
+Created by [extend_immigration_context_with_origins.sql](sources/immigration-fiscal/data/derived/extend_immigration_context_with_origins.sql) inside [immigration_context.duckdb](sources/immigration-fiscal/data/derived/immigration_context.duckdb):
 
 1. `country_origin_dim`
 2. `worldbank_country_dim`

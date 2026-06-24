@@ -23,7 +23,7 @@ Build a household federal tax-and-transfer layer keyed to the same ACS origin-ho
 ### Datasets
 
 1. `SIPP 2023 PUF`
-Path: `/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage2/census/sipp/pu2023_csv.zip`
+Path: `sources/immigration-fiscal/data/external/stage2/census/sipp/pu2023_csv.zip`
 2. `ACS PUMS person + housing`
 Already in use.
 3. `OHSS` admission-channel files

@@ -13,7 +13,7 @@ This memo answers two narrower questions than the general political debate:
 
 ## Data used
 
-1. `acs_origin_national_2023` in [immigration_context.duckdb](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/immigration_context.duckdb)
+1. `acs_origin_national_2023` in [immigration_context.duckdb](sources/immigration-fiscal/data/derived/immigration_context.duckdb)
 2. `origin_destination_context_2023` in the same warehouse
 3. ACS PUMS 2023 local extract from [csv_pus.csv](/Volumes/SSK1TB/corpus/census_acs/csv_pus.csv)
 4. ACS state median gross rent series already joined into the warehouse

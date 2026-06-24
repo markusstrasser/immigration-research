@@ -13,7 +13,7 @@ The project is no longer blocked on basic public-data acquisition.
 What is now true:
 1. `SIPP 2024` is on disk and verified to contain the key nativity / citizenship / year-of-entry / earnings / transfer fields.
 2. `MEPS HC-251` is on disk and verified to contain the key health-cost and payer-incidence fields.
-3. The `MEPS` health-cost module has been built as a compact derived table at [meps_health_cost_module_2023.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.csv).
+3. The `MEPS` health-cost module has been built as a compact derived table at [meps_health_cost_module_2023.csv](sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.csv).
 4. `IRS SOI` county aggregates are on the SSD, but they are not the individual tax microdata needed for federal microsimulation.
 5. `Synthetic SIPP` is worth pursuing and the application-side documents are staged locally.
 6. `PSID` exists and is public-use, but direct scripted download was brittle in this pass.
@@ -27,31 +27,31 @@ What is now true:
 
 ## Files to read first
 
-1. [immigration-public-mvp-readiness-2026-04-11.md](/Users/alien/Projects/research/research/immigration-public-mvp-readiness-2026-04-11.md)
-2. [immigration-public-mvp-meps-module-2026-04-11.md](/Users/alien/Projects/research/research/immigration-public-mvp-meps-module-2026-04-11.md)
-3. [immigration-public-mvp-profiling-findings-2026-04-11.md](/Users/alien/Projects/research/research/immigration-public-mvp-profiling-findings-2026-04-11.md)
-4. [immigration-public-mvp-sipp-meps-bridge-2026-04-11.md](/Users/alien/Projects/research/research/immigration-public-mvp-sipp-meps-bridge-2026-04-11.md)
-5. [immigration-public-mvp-variable-dictionary-2026-04-11.md](/Users/alien/Projects/research/research/immigration-public-mvp-variable-dictionary-2026-04-11.md)
-6. [build_public_mvp_sipp_module_2024.py](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_public_mvp_sipp_module_2024.py)
-7. [sipp_public_mvp_cells_2024.meta.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage3_proto/sipp_public_mvp_cells_2024.meta.json)
-8. [build_public_mvp_sipp_meps_bridge_2024.py](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_public_mvp_sipp_meps_bridge_2024.py)
-9. [sipp_meps_bridge_cells_2024.meta.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.meta.json)
-10. [meps_health_cost_module_2023.meta.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.meta.json)
-11. [build_public_mvp_meps_module.py](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_public_mvp_meps_module.py)
-12. [public_mvp_input_profile_2026-04-11.json](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/public_mvp_input_profile_2026-04-11.json)
-13. [profile_public_mvp_inputs.py](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/profile_public_mvp_inputs.py)
-14. [immigration-education-bucket-stock-and-lifetime-status-2026-04-11.md](/Users/alien/Projects/research/research/immigration-education-bucket-stock-and-lifetime-status-2026-04-11.md)
-15. [immigration-frontier-data-acquisition-2026-04-11.md](/Users/alien/Projects/research/research/immigration-frontier-data-acquisition-2026-04-11.md)
-16. [immigration-school-service-complexity-2026-04-11.md](/Users/alien/Projects/research/research/immigration-school-service-complexity-2026-04-11.md)
+1. [immigration-public-mvp-readiness-2026-04-11.md](research/immigration-public-mvp-readiness-2026-04-11.md)
+2. [immigration-public-mvp-meps-module-2026-04-11.md](research/immigration-public-mvp-meps-module-2026-04-11.md)
+3. [immigration-public-mvp-profiling-findings-2026-04-11.md](research/immigration-public-mvp-profiling-findings-2026-04-11.md)
+4. [immigration-public-mvp-sipp-meps-bridge-2026-04-11.md](research/immigration-public-mvp-sipp-meps-bridge-2026-04-11.md)
+5. [immigration-public-mvp-variable-dictionary-2026-04-11.md](research/immigration-public-mvp-variable-dictionary-2026-04-11.md)
+6. [build_public_mvp_sipp_module_2024.py](sources/immigration-fiscal/data/derived/build_public_mvp_sipp_module_2024.py)
+7. [sipp_public_mvp_cells_2024.meta.json](sources/immigration-fiscal/data/derived/stage3_proto/sipp_public_mvp_cells_2024.meta.json)
+8. [build_public_mvp_sipp_meps_bridge_2024.py](sources/immigration-fiscal/data/derived/build_public_mvp_sipp_meps_bridge_2024.py)
+9. [sipp_meps_bridge_cells_2024.meta.json](sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.meta.json)
+10. [meps_health_cost_module_2023.meta.json](sources/immigration-fiscal/data/derived/stage3_proto/meps_health_cost_module_2023.meta.json)
+11. [build_public_mvp_meps_module.py](sources/immigration-fiscal/data/derived/build_public_mvp_meps_module.py)
+12. [public_mvp_input_profile_2026-04-11.json](sources/immigration-fiscal/data/derived/public_mvp_input_profile_2026-04-11.json)
+13. [profile_public_mvp_inputs.py](sources/immigration-fiscal/data/derived/profile_public_mvp_inputs.py)
+14. [immigration-education-bucket-stock-and-lifetime-status-2026-04-11.md](research/immigration-education-bucket-stock-and-lifetime-status-2026-04-11.md)
+15. [immigration-frontier-data-acquisition-2026-04-11.md](research/immigration-frontier-data-acquisition-2026-04-11.md)
+16. [immigration-school-service-complexity-2026-04-11.md](research/immigration-school-service-complexity-2026-04-11.md)
 
 ## Verified local assets
 
 ### `SIPP`
 
 Core files:
-1. [pu2024_csv.zip](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/pu2024_csv.zip)
-2. [2024_SIPP_Users_Guide.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/2024_SIPP_Users_Guide.pdf)
-3. [SIPP_Data_Primer_MAY24.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/SIPP_Data_Primer_MAY24.pdf)
+1. [pu2024_csv.zip](sources/immigration-fiscal/data/external/stage3/census/sipp/pu2024_csv.zip)
+2. [2024_SIPP_Users_Guide.pdf](sources/immigration-fiscal/data/external/stage3/census/sipp/2024_SIPP_Users_Guide.pdf)
+3. [SIPP_Data_Primer_MAY24.pdf](sources/immigration-fiscal/data/external/stage3/census/sipp/SIPP_Data_Primer_MAY24.pdf)
 
 What is verified:
 1. Header contains `5203` fields.
@@ -71,9 +71,9 @@ What is not yet verified enough for publication:
 ### `MEPS`
 
 Core files:
-1. [h251dta.zip](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dta.zip)
-2. [h251dat.zip](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dat.zip)
-3. [h251su.txt](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)
+1. [h251dta.zip](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dta.zip)
+2. [h251dat.zip](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251dat.zip)
+3. [h251su.txt](sources/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt)
 
 What is verified:
 1. `MEPS` has `BORNUSA`, `YRSINUS`, `PERWT23F`, `INSURC23`, `TOTEXP23`, `TOTSLF23`, `TOTMCR23`, `TOTMCD23`, `TOTPRV23`, `TOTSTL23`.
@@ -113,10 +113,10 @@ Implication:
 ### `Synthetic SIPP`
 
 Staged application-side files:
-1. [SSB_Application_clean_07.02.24.docx](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/SSB_Application_clean_07.02.24.docx)
-2. [GSF_v7_Codebook.pdf](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/GSF_v7_Codebook.pdf)
-3. [SSB_Request_Guidelines_May_2024.docx](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/SSB_Request_Guidelines_May_2024.docx)
-4. [CLEARANCE_REQUEST_MEMO_SSBupdate_5.24.24.docx](/Users/alien/Projects/research/sources/immigration-fiscal/data/external/stage3/census/sipp/CLEARANCE_REQUEST_MEMO_SSBupdate_5.24.24.docx)
+1. [SSB_Application_clean_07.02.24.docx](sources/immigration-fiscal/data/external/stage3/census/sipp/SSB_Application_clean_07.02.24.docx)
+2. [GSF_v7_Codebook.pdf](sources/immigration-fiscal/data/external/stage3/census/sipp/GSF_v7_Codebook.pdf)
+3. [SSB_Request_Guidelines_May_2024.docx](sources/immigration-fiscal/data/external/stage3/census/sipp/SSB_Request_Guidelines_May_2024.docx)
+4. [CLEARANCE_REQUEST_MEMO_SSBupdate_5.24.24.docx](sources/immigration-fiscal/data/external/stage3/census/sipp/CLEARANCE_REQUEST_MEMO_SSBupdate_5.24.24.docx)
 
 What is verified:
 1. official process is application -> approval -> SecureFTP
@@ -172,8 +172,8 @@ Goal:
 ### Task 3: `SIPP` -> `MEPS` bridge note
 
 Goal:
-1. **DONE** documented: mapping is now implemented in [build_public_mvp_sipp_meps_bridge_2024.py](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_public_mvp_sipp_meps_bridge_2024.py) and recorded in [immigration-public-mvp-sipp-meps-bridge-2026-04-11.md](/Users/alien/Projects/research/research/immigration-public-mvp-sipp-meps-bridge-2026-04-11.md).
-2. next: consume [sipp_meps_expected_health_cost_cells_2024.csv](/Users/alien/Projects/research/sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv) inside your scenario engine
+1. **DONE** documented: mapping is now implemented in [build_public_mvp_sipp_meps_bridge_2024.py](sources/immigration-fiscal/data/derived/build_public_mvp_sipp_meps_bridge_2024.py) and recorded in [immigration-public-mvp-sipp-meps-bridge-2026-04-11.md](research/immigration-public-mvp-sipp-meps-bridge-2026-04-11.md).
+2. next: consume [sipp_meps_expected_health_cost_cells_2024.csv](sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv) inside your scenario engine
 
 ## Practical engineering notes
 

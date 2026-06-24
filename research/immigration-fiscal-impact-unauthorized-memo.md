@@ -103,7 +103,7 @@ Senate Budget Committee testimony, September 2023.
 - The welfare and population estimates depend on inferred unauthorized status in survey data, exactly the kind of fragile residual/imputation problem highlighted in recent methods work. [SOURCE: https://www.ssa.gov/policy/docs/ssb/v85n2/v85n2p1.html] [SOURCE: https://pmc.ncbi.nlm.nih.gov/articles/PMC9107075/] [SOURCE: https://pmc.ncbi.nlm.nih.gov/articles/PMC12439705/]
 - The school-cost estimate is fair only within a **current local-budget incidence** frame that assigns U.S.-born children's K-12 costs to immigration; it is incomplete as a total lifetime fiscal estimate unless those children's later tax contributions are also counted. [SOURCE: https://www.urban.org/sites/default/files/publication/90796/state_and_local_fiscal_effects_of_immigration.pdf] [SOURCE: https://doi.org/10.24149/wp1704]
 
-**Repo classification:** Use Camarota as an adversarial source and a generator of categories/claims to verify, not as the repo's baseline estimator. See [immigration-fiscal-camarota-cis-testimony-audit.md](/Users/alien/Projects/research/research/immigration-fiscal-camarota-cis-testimony-audit.md).
+**Repo classification:** Use Camarota as an adversarial source and a generator of categories/claims to verify, not as the repo's baseline estimator. See [immigration-fiscal-camarota-cis-testimony-audit.md](research/immigration-fiscal-camarota-cis-testimony-audit.md).
 
 ### Cato Institute (Bier, Feb 2026) [CONTESTED]
 *Immigrants' Recent Effects on Government Budgets: 1994–2023*
@@ -293,4 +293,4 @@ Heritage counts the costs but uses a short horizon that excludes the contributio
 
 ## Revisions
 
-- **2026-03-13:** Added a source audit for the January 2024 Camarota/CIS testimony and downgraded it from "another estimate" to "adversarial briefing with reusable subclaims only". Trigger: [2026-03-13-treat-cis-camarota-as-advocacy-not-baseline](/Users/alien/Projects/research/decisions/2026-03-13-treat-cis-camarota-as-advocacy-not-baseline.md).
+- **2026-03-13:** Added a source audit for the January 2024 Camarota/CIS testimony and downgraded it from "another estimate" to "adversarial briefing with reusable subclaims only". Trigger: [2026-03-13-treat-cis-camarota-as-advocacy-not-baseline](decisions/2026-03-13-treat-cis-camarota-as-advocacy-not-baseline.md).

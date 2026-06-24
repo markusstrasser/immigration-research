@@ -148,4 +148,4 @@ That is the stack the current debate keeps collapsing into one fake-clean scalar
 
 ## Revisions
 
-- **2026-03-13:** Added Steven Camarota / CIS 2024 testimony as an adversarial source and clarified that its `$68,390` figure is not a National Academies estimate for unauthorized immigrants. Trigger: [2026-03-13-treat-cis-camarota-as-advocacy-not-baseline](/Users/alien/Projects/research/decisions/2026-03-13-treat-cis-camarota-as-advocacy-not-baseline.md).
+- **2026-03-13:** Added Steven Camarota / CIS 2024 testimony as an adversarial source and clarified that its `$68,390` figure is not a National Academies estimate for unauthorized immigrants. Trigger: [2026-03-13-treat-cis-camarota-as-advocacy-not-baseline](decisions/2026-03-13-treat-cis-camarota-as-advocacy-not-baseline.md).
