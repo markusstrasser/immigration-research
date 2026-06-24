@@ -24,6 +24,17 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 | `immigration-friend-reproduce-guide.md` | **Clone → build → read → query** for a human collaborator | Sharing reasoning + reproduction steps |
 | `immigration-conclusion-audit-running-fixes.md` | Live overclaim/denominator/layer fix ledger | Auditing conclusions, applying XDISC-DS-02, checking what changed on 2026-06-16 |
 
+## Scouting frontier (2026-06-24)
+
+Candidate outputs from a parallel scout pass to extend the graph — **feed the graph, not yet canonical; review before citing.**
+
+| File | What |
+|------|------|
+| `immigration-dataset-roadmap-additions-2026-06-24.md` | More datasets beyond the roadmap (AZ crime-by-status ICPSR 39107, BJS NCRP corrections flow, SSA EPUF earnings, LEHD PSEO, OECD fiscal) |
+| `immigration-paper-gaps-2026-06-24.md` | Missing/under-weighted papers (Ousey-Kubrin meta-analysis, Light 2020, Abramitzky 2024 incarceration series, sanctuary/enforcement nulls) |
+| `immigration-claim-candidates-2026-06-24.md` | 17 falsifiable claims (crime C1–C7, 2nd-gen S1–S4, sharp tests Q1–Q6) each paired to a settling dataset |
+| `immigration-integration-opportunities-2026-06-24.md` | 12 graph-wiring fixes; spine = INT-06 canonical status/citizenship harmonization table |
+
 ## Fiscal Ledger
 
 | File | Topic | Consult before |
