@@ -155,3 +155,5 @@ crime_frontier	optional	external/crime_frontier/scaap/scaap_fy25_solicitation.pd
 crime_frontier	optional	external/crime_frontier/ice/ice_ero_annual_fy2024.pdf	500000	setup-crime-frontier.sh	ICE ERO FY2024 removals by criminality
 crime_frontier	optional	external/crime_frontier/ice/ice_ero_annual_fy2023.pdf	500000	setup-crime-frontier.sh	ICE ERO FY2023 removals by criminality
 crime_frontier	optional	external/crime_frontier/orr/orr_annual_report_to_congress_fy2021.pdf	500000	setup-crime-frontier.sh	ORR ARC FY2021 (govinfo; Playwright fallback)
+crime_frontier	optional	external/crime_frontier/nhis/nhis_2024_sample_adult.zip	1000000	setup-crime-frontier.sh	NHIS 2024 sample adult (nativity x insurance x utilization)
+crime_frontier	optional	external/crime_frontier/nhis/nhis_2023_sample_adult.zip	1000000	setup-crime-frontier.sh	NHIS 2023 sample adult
