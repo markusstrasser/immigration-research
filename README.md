@@ -23,7 +23,7 @@ single well-sourced falsification beats ten plausible syntheses.
 
 | Path | What |
 |------|------|
-| `research/immigration-*.md` | The memo stack — ~95 sourced memos with confidence tiers and supersession notes. Start at the [topic index](research/immigration-INDEX.md). |
+| `research/immigration-*.md` | The memo stack — ~100 sourced memos with confidence tiers and supersession notes. Start at the [topic index](research/immigration-INDEX.md). |
 | `warehouse/immigration.duckdb` | **The unified data warehouse** — all cleaned/joined panels in one schema-namespaced file (`context` / `lifetime` / `fiscal`) with a self-describing `_catalog` table. *(Built locally; gitignored.)* |
 | `infra/immigration-fiscal/` | The acquisition + build pipeline (acquire → parse → warehouse). See its [`REPRODUCE.md`](infra/immigration-fiscal/REPRODUCE.md). |
 | `queries/immigration/` | Checked-in SQL that reproduces the headline numbers (each file has `-- requires:` and `-- backs:` headers). |
