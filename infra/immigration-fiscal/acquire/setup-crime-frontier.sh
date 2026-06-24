@@ -84,7 +84,14 @@ else
     _warn "ABS owner-nativity skipped — set DATA_GOV_API_KEY (see acquire/config.env.example)"
 fi
 
-# --- Registration / DUA-gated sources: precise pointers (cannot be auto-fetched) ---
+# --- Health: NHIS sample-adult (nativity + insurance + utilization) — small, public, verified ---
+mkdir -p "$CF/nhis"
+_fetch "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/NHIS/2024/adult24csv.zip" \
+       "$CF/nhis/nhis_2024_sample_adult.zip" 1000000
+_fetch "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/NHIS/2023/adult23csv.zip" \
+       "$CF/nhis/nhis_2023_sample_adult.zip" 1000000
+
+# --- Registration / DUA-gated + large sources: precise pointers (not auto-fetched) ---
 cat > "$CF/MANUAL_ACQUIRE.md" <<'EOF'
 # Crime + frontier — manual / gated acquisition
 
@@ -113,6 +120,10 @@ click-through (no stable direct URL). Download the listed file, drop it under th
 | FBI NIBRS / Crime Data Explorer bulk (county + incident) | https://cde.ucr.cjis.gov | `crime_frontier/fbi_nibrs/` |
 | SSA Earnings Public-Use File (1% CWHS earnings 1951–2006) | https://www.ssa.gov/policy/docs/data/index.html | `crime_frontier/ssa_epuf/` |
 | Opportunity Atlas — 2nd-gen immigrant income ranks by origin | https://opportunityinsights.org/data | `crime_frontier/opp_atlas/` |
+| AHS 2023 National PUF (housing burden/crowding; nativity sparse) — 129 MB, verified direct | https://www2.census.gov/programs-surveys/ahs/2023/AHS%202023%20National%20PUF%20v1.1%20CSV.zip | `crime_frontier/ahs/` |
+| StatCan IMDB econ-outcomes table 43-10-0026 (admission-category × source-country fiscal) — 698 MB, verified direct | https://www150.statcan.gc.ca/n1/tbl/csv/43100026-eng.zip | `crime_frontier/statcan_imdb/` |
+| NAWS Public Access Data (farmworker work-authorization status) | https://www.dol.gov/agencies/eta/national-agricultural-workers-survey/data/files-excel-csv | `crime_frontier/naws/` |
+| DOL OFLC disclosure (H-1B/PERM/H-2A wages by occupation/state) | https://www.dol.gov/agencies/eta/foreign-labor/performance | `crime_frontier/oflc/` |
 
 If a `_fetch_browser` PDF above still failed (CBO / OECD / ORR), grab it from the URL in
 `setup-crime-frontier.sh` in a normal browser and drop it into the matching `crime_frontier/<dir>/`.
