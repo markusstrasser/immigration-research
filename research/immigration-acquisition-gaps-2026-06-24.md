@@ -64,6 +64,8 @@ No new discovery gap (claim 1). Two non-discovery items: (a) the T03 consumer-su
 
 Net: the corpus is *not* one-sided — cluster-S already holds Borjas; adding Jones (book) + Nowrasteh's corrections + Putnam covers the credible skeptical spectrum across econ **and** sociology. The gap was never "more conservative takes"; it was **benefit-side citations** (now closed) and **the long-run cultural/institutional channel** (Jones/deep-roots — the real open frontier, and it bridges to the sister IQ repo).
 
+**Built 2026-06-24:** that long-run channel is now a represented cluster — `V_deep_roots_long_run_skeptic` (8 lenses, in `lifetime_generators` + the unified release), with all 6 external papers acquired to corpus (Spolaore-Wacziarg, Putterman-Weil, Algan-Cahuc, Borjas ethnic-capital, Fernández-Fogli, Clemens-Pritchett) + Jones-Schneider. It carries its own disconfirmation (V08 assimilation null, verified in-warehouse; V06 national-IQ flagged contested → routes to the IQ repo). See `immigration-fiscal-welfare-ledger-map.md` and `research/.mining/immigration-lifetime-cluster-v-deeproots.json`.
+
 ## What's uncertain / next steps (NOT done — separate efforts)
 - **Wire T-papers into the warehouse** the way the S-cluster papers are mined (`mine_*` reads corpus-by-SHA). The 6 PDFs are in the corpus but the cluster-T generators' `source_rel_paths` still point at un-mined placeholder paths. This is a *build*, not research — greenlight separately.
 - **T05 SSA Trustees** immigration-sensitivity tables — web-archive (`save_source`), not the paper pipeline.
