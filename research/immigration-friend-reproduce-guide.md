@@ -1,8 +1,8 @@
 # Immigration research — friend reproduce guide
 
-**Purpose:** Clone the repo, rebuild the data stack, read the reasoning in order, rerun the headline SQL checks.
+**Purpose:** Read the reasoning in order, know which claims are canonical vs superseded, and rerun the headline SQL. **Setup/quickstart now lives in the root [`README.md`](../README.md)** — this is the deep companion (reading order, claim status, warehouse query definitions).
 
-**Date:** 2026-06-18
+**Date:** 2026-06-24
 
 ---
 
@@ -36,22 +36,9 @@ source only if you need to re-derive or extend the panels (§2).
 
 ## 2. Machine setup (30 min + download time)
 
-**Requirements:** macOS/Linux, `bash`, `curl`, `unzip`, [uv](https://docs.astral.sh/uv/), ~50 GB disk for full stack (~2 GB for minimal).
-
-```bash
-git clone git@github.com:markusstrasser/immigration-research.git
-cd immigration-research
-
-./scripts/reproduce-immigration-data.sh init
-./scripts/reproduce-immigration-data.sh doctor
-
-# Playwright — needed for HUD CHAS + SAFMR (WAF-blocked on plain curl)
-uv run --with playwright python -m playwright install chromium
-
-# Pick one:
-./scripts/reproduce-immigration-data.sh all minimal    # ~2 GB, core warehouse only
-./scripts/reproduce-immigration-data.sh all standard  # ~50 GB, full public stack (recommended)
-```
+**Setup is in the root [`README.md`](../README.md) → "Rebuild from source":** `init` → `doctor` →
+playwright install (only for HUD CHAS + SAFMR, which are WAF-blocked on plain curl) →
+`all minimal` (~2 GB, core warehouse) or `all standard` (~50 GB, full public stack).
 
 **Outputs:**
 
@@ -138,6 +125,14 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 | NAS 2017 full PDF | Partial excerpt mined | `life.npv_education_benchmarks` — treat as benchmark not verdict |
 | Clark poll “economists agree” | Scope-limited | `immigration-economist-effects-matrix.md` |
 
+### Added since June 2026 (canonical)
+
+| Surface | What | Memo · table |
+|---------|------|--------------|
+| Borjas supply-shock cells | <HS immigrant share 9.8% (1980) → 40.8% (2023), education×experience | `immigration-borjas-supply-shock-panel-2026-06-23.md` · `borjas_supply_shock_panel` |
+| Source-incentive re-grade | advocacy discounted on **both** sides; against-interest up-weighted | `immigration-source-incentive-regrade-2026-06-23.md` · `source_incentive_grades` |
+| Fiscal+welfare ledger map | "positive vs negative?" decomposed into 4 coordinates × the full ledger | `immigration-fiscal-welfare-ledger-map.md` |
+
 ---
 
 ## 6. Warehouse definitions (for SQL)
@@ -158,6 +153,12 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 
 - `federal_per_adult`, `school_per_adult`, `net_crude_per_adult`
 - Origin school/net may be `NULL` — check audit memo before exporting
+
+**Borjas supply-shock panel** (`borjas_supply_shock_panel`, in `context` + the unified release):
+
+- IPUMS USA 5% samples 1980–2023, education × work-experience cells
+- Foreign-born = `BPL >= 150` (IPUMS birthplace coding) — **not** ACS `NATIVITY = 2`; the two come from different microdata, don't conflate
+- The 44 M-row source microdata is **license-restricted and excluded from the release** — only these aggregated cells ship
 
 ---
 
