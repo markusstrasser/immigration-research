@@ -33,10 +33,19 @@ Already held — agents must NOT recount these as "new acquisitions":
 | `econ-disc` | Econ disconfirmers | `immigration-economics-disconfirmers-2026-06-25.md` | Clemens-Hunt+Borjas-2017 Mariel; Dustmann-Frattini UK; US dynamic NPV + CBO 2024; Cato TX convictions |
 
 ## Integration log (parent fills as agents return)
-- [ ] socio — returned? findings + new datasets + new corpus papers
-- [ ] urban — returned? dataset map verdict (buildable now vs gated)
-- [ ] policy — returned? fetch results table + new evals
-- [ ] econ-disc — returned? confidence-ladder deltas
+
+### ✅ socio — returned 2026-06-25 (`immigration-sociology-frontier-2026-06-25.md`)
+Intern-rule spot-check: all 4 load-bearing DOIs `resolve_doi`-verified to exact title/journal/year/author (citations real). Full-text fetch of the 2 Annual-Review meta-analyses failed (not on Sci-Hub; OA-repo URLs not downloadable by the tool) — citations verified, full text not corpused; OA links live in the memo.
+- **Caveat — low *net-new* corpus yield:** most of socio's "8 saved" were ALREADY in corpus from prior cluster-V work (Drouhot 2024, Kasinitz 2025, Lancee-Dronkers 2011, Martén 2019, Duncan-Trejo 2025). The sociology *papers* frontier is closer to harvested than the brief assumed.
+- **Genuine new value (3 things):**
+  1. **Trust/cohesion meta-analyses** (Dinesen 2020; van der Meer-Tolsma 2014) — a settled, quantified, two-sided verdict the repo entirely lacked: diversity→trust effect is **real but modest (r ≈ −0.0256, s.e. .0044), local (neighbor-trust), US-stronger than EU, NO spillover to generalized trust**. Kills both the alarmist and the "Putnam debunked" poles. `[FRAMING-SENSITIVE]`: is −0.026 trivial or material? values call.
+  2. **Ethnic-attrition method warning** (Duncan-Trejo 2025) — self-ID-coded later-generation tests **understate assimilation** for high-intermarriage groups (Mexicans esp.) because assimilated descendants stop self-IDing. **Directly threatens the repo's pending CPS 2nd-gen-by-origin test (pre-reg P1)** → must use *parental* birthplace, not self-ID. Highest-value item: it's a correction to our own method.
+  3. **GSS trust-by-nativity = cheapest buildable-now test** (BORN/PARBORN × TRUST/FAIR/HELPFUL, fully public) — tests immigrant trust *convergence* with zero gating.
+- **Dataset cards (→ roadmap, batched):** CILS (ICPSR 20520, public), NIS (38031/38061, tiered), Add Health (tiered; networks restricted), GSS-by-nativity (public, build now), ACS segregation indices (public, additive compute).
+
+### ⏳ urban — running (memo 8.7 KB on disk, near return) — dataset map is the key deliverable
+### ⏳ policy — running — fetch results table + new evals
+### ⏳ econ-disc — running — confidence-ladder deltas
 
 ## Synthesis verdict (filled at close)
 *(per-domain: did the frontier yield new load-bearing evidence, or confirm saturation? what's the single highest-value next acquisition? what stays gated/HUMAN.md?)*
