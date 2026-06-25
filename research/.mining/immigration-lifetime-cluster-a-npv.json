@@ -341,7 +341,7 @@
     {
       "theory": "Recent-arrival pool NPV exceeds stock-average NPV conditional on education mix",
       "prediction": "Weighted mean of npv by recent-arrival education shares > stock shares, controlling for adjustment",
-      "duckdb_test": "WITH tot AS (SELECT SUM(weighted_adults) s FROM context.acs_foreign_born_education_bucket_totals_2023) SELECT b.study, SUM((e.weighted_adults / (SELECT s FROM tot)) * b.individual_npv_2012_usd) AS weighted_npv FROM context.acs_foreign_born_education_bucket_totals_2023 e JOIN lifetime.npv_education_benchmarks b ON e.education_bucket=b.acs_education_bucket WHERE b.study='NAS 2017' GROUP BY b.study",
+      "duckdb_test": "-- PENDING-DATA: no recent-arrival-by-education aggregate exists in the warehouse, so this computes STOCK-weighted NPV only and cannot adjudicate 'recent > stock'. Needs a recent-arrival (e.g. YRIMMIG within ~5yr) education-share table (derivable from IPUMS microdata or ACS recent-mover) to weight npv_education_benchmarks by recent vs stock shares and compare.",
       "falsifier": "Stock and recent weights produce same weighted NPV within 5% — contradicts NAS $259k vs $58k narrative"
     },
     {
