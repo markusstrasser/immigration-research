@@ -80,5 +80,20 @@ Intern-rule: 3 load-bearing new DOIs (Marie-Pinotti JEP, Gonçalves-Jácome-Weis
 - **Disconfirmation (model section):** steel-manned then FALSIFIED the one reversing study (Lott AZ "+142%") — rests on a status-variable coding error AZ DOC itself confirms. Net verdict: prior survives on highest-quality measures (homicide CONVICTIONS detection-resistant, 150-yr incarceration), with 3 defensible weakenings (first-gen-only, ecological-undocumented-null, origin/offense heterogeneity).
 - **Dataset cards (→ roadmap):** AZ ICPSR 39107 (self-report offending/victimization/gang by fine status incl. DACA — the only US person-level non-TX status data), NCVS-by-citizenship (38962/38963 + BJS API; 2017+ only, can't isolate undocumented). NIBRS re-confirmed ecological-only.
 
-## Synthesis verdict (filled at close)
-*(per-domain: did the frontier yield new load-bearing evidence, or confirm saturation? what's the single highest-value next acquisition? what stays gated/HUMAN.md?)*
+## Synthesis verdict (close — 2026-06-25)
+
+**Did "every possible research" across the 5 domains yield new load-bearing evidence, or confirm saturation?** Both, by domain — and the honest bound is that the literature SEARCH is now largely exhausted; what remains is BUILD and gated ACQUIRE, not more scouting.
+
+| Domain | Verdict | What the pass added |
+|--------|---------|---------------------|
+| **Economics** | **Disconfirmer gap CLOSED → now genuinely saturated** | The 4 never-fetched disconfirmers were the real gap, not the domain. Mariel-as-artifact (Clemens-Hunt), Colas-Sachs GE ~$750, CBO −$0.9T federal surge, Dustmann-Frattini UK → ladder 44-47. These materially downgrade the Borjas-wage-spine and NAS-net-drain priors. |
+| **Crime** | **Strengthened + properly bounded → saturated** | Conviction margin (Cato TX, detection-resistant) UPGRADES the finding; the honest caveats now bound it (undocumented≈null *ecologically*, first-gen-only, origin/offense heterogeneity); Marie-Pinotti reconciliation + the victimization axis + the Lott-AZ falsification → ladder 48. No 2023-26 work overturns the consensus. |
+| **Policy** | **Substantially advanced** | The legalization→crime CAUSAL cluster (jobs channel) + enforcement≈null were a genuine gap — now a coherent ladder-49 layer. DACA + refugee evals fetched. |
+| **Sociology** | **Closer to harvested than expected** | Most papers were already in corpus (cluster-V). Net-new = the trust/cohesion meta-analyses (the real gap — modest/local/no-spillover) + the ethnic-attrition method warning (corrects the pending CPS test) + GSS-by-nativity as a buildable test. |
+| **Urbanism** | **Opened from ~zero to a buildable frontier (highest ceiling)** | Was the biggest gap; now has Wilson-Zhou causal magnitudes (ladder 50) + a complete MSA-rent-panel dataset map. **Zillow ZORI/ZHVI acquired this session.** The panel BUILD remains — the single highest-value next step. |
+
+**Single highest-value next step:** the **1/10 MSA rent panel** — Zillow ZORI (acquired) × ACS foreign-born-share by CBSA (Census API) × Saiz elasticity (in lifetime warehouse), regress Δrent on Δfb-share. Replicates Wilson-Zhou's sign at ~zero cost and delivers the housing-incidence ledger both red-team models flagged as missing. This is a BUILD, not a search.
+
+**What stays gated / in HUMAN.md (acquire, can't autonomously pull):** WRLURI2018 + Geocorr crosswalk (one-time DL / on-demand generator, documented in `setup-urban-housing.sh` MANUAL); IPUMS-CPS 2nd-gen extract + openICPSR 120490 mobility (login-gated); NIS-restricted / Add-Health-restricted tiers.
+
+**Honest bound on "every possible research":** it is NOT infinite and is now largely done at the LITERATURE level. Economics and crime are saturated (the disconfirmer gap is closed); sociology papers are near-harvested; policy's causal gap is filled. The genuine remaining frontier is **urbanism — and there the bottleneck is a BUILD (the rent panel), not more search** — plus a handful of gated microdata pulls. Continued literature scouting would now mostly return overlap; the return has shifted from "find papers" to "build the panel + pull the gated extracts."

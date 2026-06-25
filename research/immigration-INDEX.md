@@ -40,6 +40,19 @@ Candidate outputs from a parallel scout pass to extend the graph — **feed the 
 | `immigration-claim-candidates-2026-06-24.md` | 17 falsifiable claims (crime C1–C7, 2nd-gen S1–S4, sharp tests Q1–Q6) each paired to a settling dataset |
 | `immigration-integration-opportunities-2026-06-24.md` | 12 graph-wiring fixes; spine = INT-06 canonical status/citizenship harmonization table |
 
+## Frontier expansion (2026-06-25)
+
+Parallel 5-domain research+acquisition pass (sociology / urbanism / policy / economics-disconfirmers / crime). All load-bearing citations primary-verified (`resolve_doi`). Confidence-ladder entries 44-50 carry the graded deltas; **read the coverage matrix first** — it bounds "every possible research" honestly (economics + crime saturated; the live frontier is urbanism > sociology > the econ disconfirmers).
+
+| File | What | Consult before |
+|------|------|----------------|
+| `immigration-research-coverage-matrix-2026-06-25.md` | **The map** — per-domain saturation-vs-frontier + the 5-agent integration log + synthesis verdict | Asking "what research is left?"; planning the next acquisition |
+| `immigration-urbanism-frontier-2026-06-25.md` | **Biggest yield** — Wilson-Zhou (2026) causal housing magnitudes (+2.2% prices/+1.4% rents) + the MSA rent×fb-share panel dataset map (Zillow acquired; WRLURI/Geocorr/LODES spec'd) | Any housing-incidence claim; building the rent panel |
+| `immigration-economics-disconfirmers-2026-06-25.md` | Mariel artifact (Clemens-Hunt), Colas-Sachs GE ~$750, CBO −$0.9T federal surge, Dustmann-Frattini UK | Quoting the Borjas wage spine or NAS net-cost as settled |
+| `immigration-policy-frontier-2026-06-25.md` | Legalization→crime CAUSAL cluster (jobs channel); enforcement≈null; DACA + refugee evals | Crime/policy causal claims; "does enforcement reduce crime?" |
+| `immigration-crime-frontier-2026-06-25.md` | Marie-Pinotti reconciliation; undocumented≈null ecologically; first-gen-only; Lott-AZ rebuttal; victimization axis | Any crime-rate generalization beyond first-gen TX |
+| `immigration-sociology-frontier-2026-06-25.md` | Trust meta-analyses (modest/local/no-spillover); ethnic-attrition method warning; GSS-by-nativity build | Cohesion/trust claims; the pending CPS 2nd-gen test |
+
 ## Fiscal Ledger
 
 | File | Topic | Consult before |
