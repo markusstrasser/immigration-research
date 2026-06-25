@@ -1,6 +1,6 @@
 # Model Review Context Packet
 
-- Project: `/Users/alien/Projects/research`
+- Project: `.`
 - Axes: `arch,formal`
 
 ## Preamble
@@ -134,7 +134,7 @@ All code, plans, and features in this project are developed by AI agents, not hu
 ```text
 # Plan-Close Review Packet
 
-- Repo: `/Users/alien/Projects/research`
+- Repo: `.`
 - Mode: `worktree`
 - Ref: `HEAD vs current worktree`
 - Profile: `formal_review`
@@ -859,10 +859,10 @@ Date acquired: 2026-04-21
 
 ## New artifacts
 
-1. [analyze_capacity_falsification.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/analyze_capacity_falsification.py)
-2. [county_capacity_falsification_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_falsification_summary.json)
-3. [county_capacity_sample_accounting.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_sample_accounting.json)
-4. [county_capacity_permutation_results.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_
+1. [analyze_capacity_falsification.py](./sources/immigration-causal/scripts/analyze_capacity_falsification.py)
+2. [county_capacity_falsification_summary.json](./sources/immigration-causal/data/outcomes/analysis/county_capacity_falsification_summary.json)
+3. [county_capacity_sample_accounting.json](./sources/immigration-causal/data/outcomes/analysis/county_capacity_sample_accounting.json)
+4. [county_capacity_permutation_results.csv](./sources/immigration-causal/data/outcomes/analysis/county_capacity_
 
 ... [truncated for review packet] ...
 
@@ -952,14 +952,14 @@ The first draft of this memo treated `2021–2022` overlap windows as placebo/pr
 
 ## Artifact basis
 
-1. [immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md](/Users/alien/Projects/research/research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md)
-2. [immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md](/Users/alien/Projects/research/research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md)
-3. [immigration-threshold-first-panel-2026-04-21.md](/Users/alien/Projects/research/research/immigration-threshold-first-panel-2026-04-21.md)
-4. [immigration-threshold-causal-levers-2026-04-21.md](/Users/alien/Projects/research/research/immigration-threshold-causal-levers-2026-04-21.md)
-5. [immigration-county-outcome-panel-2026-04-21.md](/Users/alien/Projects/research/research/immigration-county-outcome-panel-2026-04-21.md)
-6. [immigration-capacity-frontier-2026-04-21.md](/Users/alien/Projects/research/research/immigration-capacity-frontier-2026-04-21.md)
-7. [.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md](/Users/alien/Projects/research/.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md)
-8. [immigration-capacity-falsification-2026-04-21.md](/Users/alien/Projects/research/research/immigration-capacity-falsification-2026-04-21.md)
+1. [immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md](./research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md)
+2. [immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md](./research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md)
+3. [immigration-threshold-first-panel-2026-04-21.md](./research/immigration-threshold-first-panel-2026-04-21.md)
+4. [immigration-threshold-causal-levers-2026-04-21.md](./research/immigration-threshold-causal-levers-2026-04-21.md)
+5. [immigration-county-outcome-panel-2026-04-21.md](./research/immigration-county-outcome-panel-2026-04-21.md)
+6. [immigration-capacity-frontier-2026-04-21.md](./research/immigration-capacity-frontier-2026-04-21.md)
+7. [.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md](./.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md)
+8. [immigration-capacity-falsification-2026-04-21.md](./research/immigration-capacity-falsification-2026-04-21.md)
 9. commit `2cdd801` (`[analysis] Measure capacity frontier — compare stock flow and load`) [SOURCE: git history]
 10. commit `1097c77` (`[research] Audit Bryan Caplan claims — score open-borders arguments`) [SOURCE: git history]
 

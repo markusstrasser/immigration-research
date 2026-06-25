@@ -8,7 +8,7 @@
   "normalization_version": "v1",
   "packet_metadata": {
     "Axes": "arch,formal",
-    "Project": "/Users/alien/Projects/research",
+    "Project": ".",
     "budget_enforcement": {
       "dropped_blocks": [],
       "estimate_method": "heuristic:chars_div_4",

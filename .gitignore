@@ -1,13 +1,11 @@
-# Claude Code
-.claude/plans/
-.claude/current-session-id
-.claude/checkout-claim.json
-.claude/checkpoint.md
-.claude/checkpoint-autogen.md
-.claude/reviews/
+# Claude Code — internal agent state, not for the public mirror
+.claude/
 .brainstorm/
 .mcp.json
 .scratch/
+
+# Generator banks / mining scaffolding — internal workshop, not published
+research/.mining/
 
 # Node — vestigial; playwright runs via `uv run --with playwright`, not npm
 node_modules/

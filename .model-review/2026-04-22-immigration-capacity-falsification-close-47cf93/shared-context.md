@@ -1,6 +1,6 @@
 # Model Review Context Packet
 
-- Project: `/Users/alien/Projects/research`
+- Project: `.`
 - Axes: `arch,formal`
 
 ## Preamble
@@ -134,7 +134,7 @@ All code, plans, and features in this project are developed by AI agents, not hu
 ```text
 # Plan-Close Review Packet
 
-- Repo: `/Users/alien/Projects/research`
+- Repo: `.`
 - Mode: `worktree`
 - Ref: `HEAD vs current worktree`
 - Profile: `formal_review`
@@ -1468,15 +1468,15 @@ The first draft of this memo treated `2021–2022` overlap windows as placebo/pr
 
 ## Artifact basis
 
-1. [immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md](/Users/alien/Projects/research/research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md)
-2. [immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md](/Users/alien/Projects/research/research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md)
-3. [immigration-threshold-first-panel-2026-04-21.md](/Users/alien/Projects/research/research/immigration-threshold-first-panel-2026-04-21.md)
-4. [immigration-threshold-causal-levers-2026-04-21.md](/Users/alien/Projects/research/research/immigration-threshold-causal-levers-2026-04-21.md)
-5. [immigration-county-outcome-panel-2026-04-21.md](/Users/alien/Projects/research/research/immigration-county-outcome-panel-2026-04-21.md)
-6. [immigration-capacity-frontier-2026-04-21.md](/Users/alien/Projects/research/research/immigration-capacity-frontier-2026-04-21.md)
-7. [.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md](/Users/alien/Projects/research/.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md)
-8. [immigration-capacity-falsification-2026-04-21.md](/Users/alien/Projects/research/research/immigration-capacity-falsification-2026-04-21.md)
-9. [.model-review/2026-04-22-immigration-capacity-falsification-final-36f586/verified-disposition.md](/Users/alien/Projects/research/.model-review/2026-04-22-immigration-capacity-falsification-final-36f586/verified-disposition.md)
+1. [immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md](./research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md)
+2. [immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md](./research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md)
+3. [immigration-threshold-first-panel-2026-04-21.md](./research/immigration-threshold-first-panel-2026-04-21.md)
+4. [immigration-threshold-causal-levers-2026-04-21.md](./research/immigration-threshold-causal-levers-2026-04-21.md)
+5. [immigration-county-outcome-panel-2026-04-21.md](./research/immigration-county-outcome-panel-2026-04-21.md)
+6. [immigration-capacity-frontier-2026-04-21.md](./research/immigration-capacity-frontier-2026-04-21.md)
+7. [.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md](./.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md)
+8. [immigration-capacity-falsification-2026-04-21.md](./research/immigration-capacity-falsification-2026-04-21.md)
+9. [.model-review/2026-04-22-immigration-capacity-falsification-final-36f586/verified-disposition.md](./.model-review/2026-04-22-immigration-capacity-falsification-final-36f586/verified-disposition.md)
 10. commit `2cdd801` (`[analysis] Measure capacity frontier — compare stock flow and load`) [SOURCE: git history]
 11. commit `1097c77` (`[research] Audit Bryan Caplan claims — score open-borders arguments`) [SOURCE: git history]
 
@@ -1606,10 +1606,10 @@ The first draft of this file narrated the earlier falsification pass as if its �
 
 | # | Claim | Evidence | Confidence | Source | Status |
 |---|---|---|---|---|---|
-| 1 | High recent-immigration counties with low permit throughput show slower county wage growth | HC3 OLS: `high_recent_fb × low_permit ≈ -1.49 pp` on `2021–2024` QCEW weekly wage log growth, `t≈-3.15`, `p≈0.0017`; result survives with rent burden added | HIGH | [county_outcome_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_summary.json), [county_outcome_lever_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_lever_comparison.csv) | VERIFIED |
-| 2 | The same interaction does not produce a clear county employment-growth penalty | HC3 OLS: `high_recent_fb × low_permit ≈ -0.33 pp`, `t≈-0.67`, `p≈0.50` on QCEW employment log growth | HIGH | [county_outcome_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_summary.json) | VERIFIED |
-| 3 | In top recent-immigration counties, wage and employment medians improve as permit capacity rises | Q5 surge counties: median employment growth `2.72 -> 5.04 -> 6.15 -> 8.55 pp`; median weekly wage growth `11.00 -> 10.75 -> 11.45 -> 13.13 pp` across permit quartiles | HIGH | [county_outcome_bins.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_bins.csv) | VERIFIED |
-| 4 | IRS domestic net migration responds more to rent burden than to low permit throughput in high-immigration counties | HC3 OLS: `high_recent_fb × high_rent_burden ≈ -0.21 pp`, `t≈-2.85`, `p≈0.0044`; `high_recent_fb × low_permit` is near zero | MEDIUM | [county_outcome_lever_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_lever_comparison.csv), [county_inflow_2022_23.csv](/Users/alien/Projects/research/sources/immigration-causal/data/internal_migration/county_inflow_2022_23.csv), [county_outflow_2022_23.csv](/Users/alien/Projects/
+| 1 | High recent-immigration counties with low permit throughput show slower county wage growth | HC3 OLS: `high_recent_fb × low_permit ≈ -1.49 pp` on `2021–2024` QCEW weekly wage log growth, `t≈-3.15`, `p≈0.0017`; result survives with rent burden added | HIGH | [county_outcome_summary.json](./sources/immigration-causal/data/outcomes/analysis/county_outcome_summary.json), [county_outcome_lever_comparison.csv](./sources/immigration-causal/data/outcomes/analysis/county_outcome_lever_comparison.csv) | VERIFIED |
+| 2 | The same interaction does not produce a clear county employment-growth penalty | HC3 OLS: `high_recent_fb × low_permit ≈ -0.33 pp`, `t≈-0.67`, `p≈0.50` on QCEW employment log growth | HIGH | [county_outcome_summary.json](./sources/immigration-causal/data/outcomes/analysis/county_outcome_summary.json) | VERIFIED |
+| 3 | In top recent-immigration counties, wage and employment medians improve as permit capacity rises | Q5 surge counties: median employment growth `2.72 -> 5.04 -> 6.15 -> 8.55 pp`; median weekly wage growth `11.00 -> 10.75 -> 11.45 -> 13.13 pp` across permit quartiles | HIGH | [county_outcome_bins.csv](./sources/immigration-causal/data/outcomes/analysis/county_outcome_bins.csv) | VERIFIED |
+| 4 | IRS domestic net migration responds more to rent burden than to low permit throughput in high-immigration counties | HC3 OLS: `high_recent_fb × high_rent_burden ≈ -0.21 pp`, `t≈-2.85`, `p≈0.0044`; `high_recent_fb × low_permit` is near zero | MEDIUM | [county_outcome_lever_comparison.csv](./sources/immigration-causal/data/outcomes/analysis/county_outcome_lever_comparison.csv), [county_inflow_2022_23.csv](./sources/immigration-causal/data/internal_migration/county_inflow_2022_23.csv), [county_outflow_2022_23.csv](~/Projects/
 
 ... [truncated for review packet] ...
 

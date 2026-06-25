@@ -1,6 +1,6 @@
 # Model Review Context Packet
 
-- Project: `/Users/alien/Projects/research`
+- Project: `.`
 - Axes: `arch,formal`
 
 ## Preamble
