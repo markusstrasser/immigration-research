@@ -79,6 +79,31 @@ def build() -> None:
         """)
         made.append("v_crime_tx_status_ratio")
 
+        # SPECIFICATION CURVE / multiverse — the undocumented-vs-comparator rate ratio across
+        # EVERY defensible analytic choice (denom_source × comparator class × offense × year).
+        # Makes the red-team's "the headline depends on which construction" a measured DISTRIBUTION,
+        # not a caveat: how often, and by how much, is undocumented crime below the comparator —
+        # and in exactly which specifications is it NOT (the robustness-breakers)?
+        con.execute("""
+            CREATE OR REPLACE VIEW v_crime_spec_curve AS
+            WITH undoc AS (
+                SELECT year, crime_category, denom_source, crime_rate_per_100k AS undoc_rate
+                FROM crime_tx_arrests_by_status WHERE status_class = 'unauthorized'
+            ), comp AS (
+                SELECT year, crime_category, denom_source,
+                       status_class AS comparator_class, crime_rate_per_100k AS comp_rate
+                FROM crime_tx_arrests_by_status WHERE status_class <> 'unauthorized'
+            )
+            SELECT u.denom_source, c.comparator_class, u.crime_category, u.year,
+                   round(u.undoc_rate, 1) AS undoc_rate,
+                   round(c.comp_rate, 1)  AS comparator_rate,
+                   round(u.undoc_rate / nullif(c.comp_rate, 0), 3) AS undoc_vs_comparator,
+                   (u.undoc_rate < c.comp_rate) AS undoc_lower
+            FROM undoc u JOIN comp c USING (year, crime_category, denom_source)
+            ORDER BY undoc_vs_comparator DESC
+        """)
+        made.append("v_crime_spec_curve")
+
     # INT-06 — status harmonization spine, query-ready (canonical class joined to source mappings)
     if {"status_class_crosswalk", "status_class_def"} <= have:
         con.execute("""
@@ -109,6 +134,23 @@ def build() -> None:
             print(f"      {sn}: {sh:.1%} of inmate-days criminal-alien, ${aw:,.0f} SCAAP")
     if "v_status_class_sources" in made:
         print(f"  ✓ v_status_class_sources: status spine query-ready")
+    if "v_crime_spec_curve" in made:
+        n, lower, med, mx = con.execute("""
+            SELECT count(*), sum(CASE WHEN undoc_lower THEN 1 ELSE 0 END),
+                   round(median(undoc_vs_comparator), 3), round(max(undoc_vs_comparator), 3)
+            FROM v_crime_spec_curve""").fetchone()
+        print(f"  ✓ v_crime_spec_curve: {n} specifications (denom × comparator × offense × year)")
+        print(f"      undocumented BELOW comparator in {lower}/{n} ({lower/n:.0%}); "
+              f"median ratio {med}, worst-case {mx}")
+        breakers = con.execute(
+            "SELECT denom_source, comparator_class, crime_category, year, undoc_vs_comparator "
+            "FROM v_crime_spec_curve WHERE NOT undoc_lower ORDER BY undoc_vs_comparator DESC LIMIT 6").fetchall()
+        if breakers:
+            print(f"      robustness-breakers (undoc ≥ comparator):")
+            for d, cc, cat, y, r in breakers:
+                print(f"        {r:>5} — {cat}/{y} vs {cc} ({d})")
+        else:
+            print("      no robustness-breakers — undocumented below EVERY comparator in EVERY spec")
     con.close()
 
 
