@@ -71,7 +71,14 @@ Intern-rule: all 4 priority DOIs verified at primary; econ-disc **corrected two 
 - **Cato/Nowrasteh TX convictions (4 vintages 2015-22):** illegal homicide-conviction 2.2 vs 3.0/100k native (−26%), all-crime −37-50% — closes "arrests≠guilt." → ladder: UPGRADE crime finding on conviction margin. [FRAMING-SENSITIVE: cite TX DPS counts, attribute Cato framing.]
 - [GAP] bodies not fetched: Peri-Yasenov JHR, Borjas-2019 rebuttal, Clemens-2021 bias-correction magnitude — flagged.
 
-### ⏳ crime — running (19 KB on disk, finishing) — recent crime-rate frontier + datasets + disconfirmation
+### ✅ crime — returned 2026-06-25 (`immigration-crime-frontier-2026-06-25.md`) — model disconfirmation
+Intern-rule: 3 load-bearing new DOIs (Marie-Pinotti JEP, Gonçalves-Jácome-Weisburst w32109, Xie-Baumer Criminology) verified exact; the strongest counter-study was independently rebutted by the agent via verify_claim (conf 1.0).
+- **New synthesis the repo lacked — Marie & Pinotti 2024 (JEP):** reconciles the paradox — immigrants ARE overrepresented among offenders in Europe (young/male/less-educated composition) YET null CAUSAL rate effect AND legalization reduces offending. Raw-vs-adjusted + US-vs-Europe is the honest frame.
+- **NIJ/RTI 2024 synthetic-population (the strongest honest caveat):** UNAUTHORIZED share = NULL ecological predictor of arrests once controlled — the protective signal is carried by **AUTHORIZED** immigrants; undocumented ≈ null (not negative) at the ecological level. Plus 2nd-gen convergence toward native rates.
+- **NIJ 308552 (Light/Anadon CA+TX):** CA replication (gap LARGER than TX); recidivism is **not identified** (can't separate desistance from deportation/removal-from-risk-set) — honest non-result.
+- **Victimization axis (new):** Xie-Baumer 2021, Cato 2025, Gonçalves-Jácome-Weisburst w32109 — foreign-born LESS victimized; Secure Communities cut Hispanic reporting ~30% and raised victimization (the chilling mechanism). Pooled "immigrants report MORE" (Cato) ≠ undocumented-chilled (Gonçalves) — different populations.
+- **Disconfirmation (model section):** steel-manned then FALSIFIED the one reversing study (Lott AZ "+142%") — rests on a status-variable coding error AZ DOC itself confirms. Net verdict: prior survives on highest-quality measures (homicide CONVICTIONS detection-resistant, 150-yr incarceration), with 3 defensible weakenings (first-gen-only, ecological-undocumented-null, origin/offense heterogeneity).
+- **Dataset cards (→ roadmap):** AZ ICPSR 39107 (self-report offending/victimization/gang by fine status incl. DACA — the only US person-level non-TX status data), NCVS-by-citizenship (38962/38963 + BJS API; 2017+ only, can't isolate undocumented). NIBRS re-confirmed ecological-only.
 
 ## Synthesis verdict (filled at close)
 *(per-domain: did the frontier yield new load-bearing evidence, or confirm saturation? what's the single highest-value next acquisition? what stays gated/HUMAN.md?)*
