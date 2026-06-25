@@ -11,6 +11,32 @@ All URLs/DOIs verified live 2026-06-24 (Exa) unless tagged `[UNVERIFIED]`.
 
 ---
 
+## Frontier additions (2026-06-25 pass) — full cards in the linked memos
+
+The 5-domain frontier pass surfaced these new targets. **Urban is the priority** (the missing
+housing-incidence panel). Full dataset cards (vars/quirks/what-it-settles) live in each memo; this
+is the grep-able index. Status: ✅ acquired · 🚧 gated/tiered · ⬜ wanted.
+
+**Urbanism** → `immigration-urbanism-frontier-2026-06-25.md` (+ acquire `setup-urban-housing.sh`)
+- **Zillow ZORI/ZHVI metro** ✅ acquired (739 metros, monthly 2015-2026 — the Wilson-Zhou outcome var)
+- **WRLURI2018** (Wharton regulation index, 2006→2018 change panel) ⬜ — one-time DL, MANUAL_ACQUIRE
+- **Geocorr2022 PUMA↔CBSA crosswalk** ⬜ — on-demand generator (query spec in MANUAL); resolves the unit-mismatch
+- **LODES/LEHD** workplace×residence flows ⬜ — spatial-mismatch axis
+
+**Sociology** → `immigration-sociology-frontier-2026-06-25.md`
+- **GSS trust-by-nativity** (BORN/PARBORN × TRUST/FAIR/HELPFUL) ⬜ — **public, buildable NOW** (cheapest test)
+- **CILS** (ICPSR 20520) ⬜ public · **NIS** (38031/38061) 🚧 tiered · **Add Health** 🚧 tiered (networks restricted)
+
+**Policy / enforcement instruments** → `immigration-policy-frontier-2026-06-25.md`
+- **Secure-Communities activation dates** (county×month) ⬜ — the staggered-rollout instrument
+- **State E-Verify mandate dates** (NCSL) ⬜ · **DHS Yearbook enforcement tables** ⬜ · **TRAC** 🚧 · **ORR/ASR** 🚧 (microdata restricted)
+
+**Crime** → `immigration-crime-frontier-2026-06-25.md`
+- **AZ ICPSR 39107** (self-report offending/victimization/gang by fine status incl. DACA) 🚧 — only US person-level non-TX status data
+- **NCVS-by-citizenship** (38962/38963 + BJS API) ⬜ — victimization axis; 2017+ only, can't isolate undocumented
+
+---
+
 ## Cluster A — Crime (the biggest gap; repo name promises it, stack omits it)
 
 ### TX-DPS-LIGHT-2020 — Texas arrest rates by immigration status ⬜ **(highest priority)**
