@@ -43,9 +43,20 @@ Intern-rule spot-check: all 4 load-bearing DOIs `resolve_doi`-verified to exact 
   3. **GSS trust-by-nativity = cheapest buildable-now test** (BORN/PARBORN × TRUST/FAIR/HELPFUL, fully public) — tests immigrant trust *convergence* with zero gating.
 - **Dataset cards (→ roadmap, batched):** CILS (ICPSR 20520, public), NIS (38031/38061, tiered), Add Health (tiered; networks restricted), GSS-by-nativity (public, build now), ACS segregation indices (public, additive compute).
 
-### ⏳ urban — running (memo 8.7 KB on disk, near return) — dataset map is the key deliverable
-### ⏳ policy — running — fetch results table + new evals
-### ⏳ econ-disc — running — confidence-ladder deltas
+### ✅ urban — returned 2026-06-25 (`immigration-urbanism-frontier-2026-06-25.md`) — STRONGEST yield
+Intern-rule spot-check: load-bearing new paper **Wilson & Zhou (2026), Dallas Fed WP2607** verified at **primary** (read the PDF byline directly — 1.2 MB/65pp in scratchpad). Note: CrossRef mis-listed the first author as "Lewis"; the PDF title page says **Daniel J. Wilson** — primary beats the proxy, agent's citation correct. Other 3 key DOIs (Saiz-Wachter, Hsieh-Moretti, Jaeger-Ruist-Stuhler) all resolve exact.
+- **Single highest-value find — Wilson-Zhou 2026:** first CAUSAL post-2020 housing estimate. UIWF = 1% of initial employment → **+2.2% house prices, +1.4% rents**, permit/supply response **null**, labor-income-per-capita and transfers FELL. Explains ~30% house-price / ~20% rent growth in avg MSA. Outcome var = Zillow ZORI (validates the dataset map). Directly resolves E-cluster E-001/E-003/E-004 with real magnitudes; also feeds the FISCAL ledger (fell income/transfers).
+- **THE dataset map (answers "get the datasets") — MSA rent × fb-share × elasticity panel, 7 components, all URLs live:**
+  - NEW to acquire: **Zillow ZORI/ZHVI** (public CSV, the primary rent panel), **WRLURI2018** (one-time DL), **Geocorr2022 PUMA↔CBSA crosswalk** (resolves the Saiz-memo unit-mismatch), **LODES/LEHD** (new spatial-mismatch axis).
+  - Already in repo: Saiz-2010 elasticity, HUD FMR/SAFMR, BPS permits, ACS housing-by-nativity.
+  - **1/10 build (highest-ROI):** Zillow ZORI + ACS B05002/B25064 by CBSA 2015-24, regress Δrent on Δfb-share × Saiz elasticity. Replicates Wilson-Zhou sign at ~zero cost. **This is the concrete answer to HUMAN.md #2 ("build the housing panel?") — now fully spec'd.**
+- **New frames:** native-flight *scale-dependence* (Card MSA-null → Saiz-Wachter neighborhood-flight → Boje-Kovacs 2024 building-level) resolves the Card-Borjas tension by scale; Hsieh-Moretti supply-misallocation *bridge* (same elasticity lever governs both rent cost AND foregone agglomeration benefit).
+- **Benefit-side anchor:** Burchardi et al. w27075 — causal +innovation AND +native (incl. non-mover) wages, rules out the flight confound. A housing-only urban frame is a one-sided ledger.
+- **6-point disconfirmation** (proper, weighted higher): timing/geography don't line up (Harvard JCHS, Yale Budget Lab — rents surged 2021 when inflows were modest); aggregate small (Cabral-Steingress ~1.3% of a 17% rise); sign can flip negative (Sá UK, high-income native out-migration); native flight overstated by conventional methods (Moraga); rent-to-income equalizes (Greulich); benefit ledger is causal. Net frame: **bounded, real-but-secondary cost concentrated in inelastic/high-regulation metros; binding variable is supply elasticity, not immigration per se.**
+- Corpus: Saiz (W3121954821), Hsieh-Moretti (W2614214791), Jaeger-Ruist-Stuhler (W2785732282), Hunt-Gauthier-Loiselle (W3023146776) + Wilson-Zhou WP2607 (parent-fetched to corpus).
+
+### ⏳ policy — running (2.9 KB on disk) — fetch results table + new evals
+### ⏳ econ-disc — running (stub 762 B, slow — many fetches before writing; watching) — confidence-ladder deltas
 
 ## Synthesis verdict (filled at close)
 *(per-domain: did the frontier yield new load-bearing evidence, or confirm saturation? what's the single highest-value next acquisition? what stays gated/HUMAN.md?)*
