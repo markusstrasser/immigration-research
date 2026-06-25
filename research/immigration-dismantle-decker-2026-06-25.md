@@ -4,7 +4,7 @@
 **Tier:** Deep | **Date:** 2026-06-25
 **Section of:** consolidated commentator-dismantling memo (parent synthesizes)
 
-**Framing discipline (constitution + instrument-bias):** Decker is a pro-immigration optimist, and this repo's OWN verified evidence agrees with him on several empirics (immigrant crime lower; the realized federal surge fiscally positive; small average native-wage effects; Mariel-as-artifact). A one-sided hit job would be both dishonest and self-contradictory against the repo's findings. The devastating dismantling is the FAIR one: GRANT what is solid, then surgically kill the OVERCLAIMS. Every kill is tagged to a primary source or a repo artifact. The instrument's known tilt is toward Decker's side, so the granted points are held loosely and the kills are held to a primary-source bar. [SOURCE: notes/llm-bias-caveat.md]
+**Framing discipline (constitution + instrument-bias):** Decker is a pro-immigration optimist, and this repo's OWN verified evidence agrees with him on several empirics (immigrant crime lower; the realized federal surge fiscally positive; small average native-wage effects; Mariel-as-artifact). A one-sided hit job would be both dishonest and self-contradictory against the repo's findings. The fair dismantling grants what is solid, then kills the OVERCLAIMS. Every kill is tagged to a primary source or a repo artifact. The instrument's known tilt is toward Decker's side, so the granted points are held loosely and the kills are held to a primary-source bar. [SOURCE: notes/llm-bias-caveat.md]
 
 **Corpus actually read (verbatim, not from memory):**
 - "Yes, Immigrants Must Make Us Richer" (2026-02-25) — full text [SOURCE: https://nicholasdecker.substack.com/p/yes-immigrants-must-make-us-richer]
@@ -29,7 +29,7 @@
 
 Decker is sharper and more interesting than Noah Smith on this topic, and he deserves to be engaged at his strongest. His core move is **methodological, not empirical**: he argues that the entire anti-immigration economics rests on an unexamined modeling convenience — **constant returns to scale (CRS)** — and that CRS is "obvious nonsense" because trade itself logically implies increasing returns (IRS). From IRS via three channels (specialization, ideas, fixed costs), he concludes immigrants "must" make us richer. He layers on: high-skill immigration is unambiguously good (immigrant inventors → 23% of inventive output, ~36% with spillovers, Bernstein et al.); brain drain is "probably just totally wrong" (emigration options *raise* origin human capital — Abarcar-Theoharides Filipino nurses); the gains from open borders "would approximately double world GDP"; and the only *coherent* objection left is political (immigrants voting for bad policy). The steelman is real: he is correctly attacking a genuine weak point (naive CRS reasoning *does* bake in null long-run effects), and several of his empirics are repo-confirmed. **His failure is not the premises — it is the universal-quantifier conclusion ("must") and the ledger he silently swaps in to reach it.**
 
-This is the crucial asymmetry that makes the dismantling fair AND devastating: **Decker is largely right about the MECHANISMS and largely wrong about the WELFARE CONCLUSION he draws from them.** The gap between "increasing returns are real" and "immigrants must make *us* richer" is exactly where all six rhetorical moves live.
+The asymmetry: **Decker is largely right about the MECHANISMS and largely wrong about the WELFARE CONCLUSION he draws from them.** The gap between "increasing returns are real" and "immigrants must make *us* richer" is exactly where all six rhetorical moves live.
 
 ---
 
@@ -41,7 +41,7 @@ This is the crucial asymmetry that makes the dismantling fair AND devastating: *
 
 **(a) Steelman:** Anti-immigration fiscal models (DiMartino/Manhattan, Borjas, CBO) assume CRS, which mechanically forces the result "poorer short-run, no change long-run"; CRS is theoretically wrong because specialization + non-rival ideas + amortizable fixed costs are genuine IRS channels, so a model assuming them away has assumed its anti-immigration conclusion.
 
-**(b) Verdict: PARTLY SOLID (the critique of CRS) wrapped around a fatal OVERCLAIM (the word "must").** GRANT the first half; kill the second.
+**(b) Verdict: PARTLY SOLID (the critique of CRS) wrapped around an OVERCLAIM (the word "must").** GRANT the first half; kill the second.
 
 **What is GRANTED (the repo agrees):**
 - IRS channels are real and routinely undercounted. The repo's own effects-matrix lists task complementarity, idea/innovation spillovers, and scale as real positive channels that anti-immigration ledgers omit. [SOURCE: research/immigration-economist-effects-matrix.md]
@@ -64,7 +64,7 @@ This is the crucial asymmetry that makes the dismantling fair AND devastating: *
 
 **(a) Steelman:** The structural migration literature (place-premium + GE models) implies that removing global labor barriers would unlock gains on the order of ~100% of world GDP — making migration restriction one of the largest remaining global inefficiencies, dwarfing the 1-8% gains from removing all trade barriers.
 
-**(b) Verdict: OVERCLAIM — textbook upper-bound laundering.** This is the cleanest, most documentable kill in his corpus, because the repo already audited this exact slogan against the primary papers.
+**(b) Verdict: OVERCLAIM — textbook upper-bound laundering.** The repo already audited this exact slogan against the primary papers.
 
 **The EXACT move: Move 2 (upper-bound laundering), with a self-inflicted wound.** Decker presents "double world GDP" as a settled magnitude ("would approximately double") — a realistic baseline. The repo's full-paper audit found this is a **stylized upper-bound** that requires assumptions Decker *himself elsewhere rejects*.
 
@@ -76,7 +76,7 @@ This is the crucial asymmetry that makes the dismantling fair AND devastating: *
 5. **Repo's own conservative calibration:** at $7,500/migrant, you need **+3 BILLION** additional migrants to reach Clemens-style ~20% of world GDP territory; a policy-sized +200M-to-+1B yields 1.4-6.8% of world GDP. Doubling is off the realistic map. [DATA: sources/immigration-causal/data/clemens/open_borders_calibration_baseline.json]
 6. **The break-even/absorption stress test:** +200M migrants implies ~80M housing units (~55% of current US stock), requiring ~1.9× current US housing starts for 30 straight years; housing/construction **binds in year 1** of every large-flow scenario. [SOURCE: research/immigration-open-borders-break-even-bounds-2026-04-22.md]
 
-**The devastating internal contradiction:** In the *same essay*, several paragraphs later, Decker writes: **"the structural estimates of immigration are likely high estimates. They generally assume that labor is identical… Obviously, if labor is not identical, this breaks down! And especially since we would expect the most skilled people to move first…"** [SOURCE: the-gains-from-trade-are-large]. He correctly identifies that the doubling models assume homogeneous labor and ignore selection — and then **uses the doubling figure anyway as his headline comparison against trade.** He cites the upper bound as fact in one breath and debunks its key assumption in the next. This is not me imputing the laundering; **he documents it himself and proceeds regardless.** That is the strongest possible version of the upper-bound-laundering charge — caught in his own text.
+**The internal contradiction:** In the *same essay*, several paragraphs later, Decker writes: **"the structural estimates of immigration are likely high estimates. They generally assume that labor is identical… Obviously, if labor is not identical, this breaks down! And especially since we would expect the most skilled people to move first…"** [SOURCE: the-gains-from-trade-are-large]. He correctly identifies that the doubling models assume homogeneous labor and ignore selection — and then **uses the doubling figure anyway as his headline comparison against trade.** He cites the upper bound as fact in one breath and debunks its key assumption in the next; **he documents it himself and proceeds regardless** — the laundering is in his own text.
 
 ---
 
@@ -86,7 +86,7 @@ This is the crucial asymmetry that makes the dismantling fair AND devastating: *
 
 **(a) Steelman:** Once you accept IRS, every *economic* objection (wage loss, fiscal burden) dissolves in the long run, leaving only the political-economy channel (immigrant voting → worse institutions/policy) as a logically coherent reason to restrict.
 
-**(b) Verdict: FALSE — this is the weakest sentence in his corpus, and the repo refutes it with its own data.**
+**(b) Verdict: FALSE — the repo refutes it with its own data.**
 
 **The EXACT move: Move 4 (capacity erasure) + Move 6 (aggregate-output trump card).** By collapsing all economic objections into "incoherent," Decker erases the destination as a capacity system (schools, shelter, housing) and treats the aggregate-output gain as if it answers the local-incidence question.
 
@@ -176,7 +176,7 @@ This is not a single quote — it is the **load-bearing equivocation running und
 
 ## What survives (honestly)
 
-Decker is the **most intellectually aggressive and the most overstated** of the commentators audited, but he is *not* a fool and the fair dismantling concedes a great deal:
+Decker is the **most intellectually aggressive and the most overstated** of the commentators here, but not a fool — a great deal survives:
 
 **Survives (grant these without hedging):**
 1. **The CRS critique is legitimately sharp.** Naive constant-returns modeling *does* mechanically bias toward null long-run immigration effects, and the IRS channels (specialization, ideas, fixed costs) are real and undercounted — the repo's own Colas-Sachs vindication ($750/yr indirect benefit via complementarity) proves there is a real hole in the static ledger exactly where Decker points. [SOURCE: 10.1257/pol.20220176]

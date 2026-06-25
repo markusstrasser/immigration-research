@@ -52,10 +52,10 @@ same as 100 years ago; immigrants catch up to natives in earnings in ~2 generati
 
 ## Findings
 
-### Finding A — The generational ledger: he ADDRESSES it, then frame-switches at the seam (the key kill)
+### Finding A — The generational ledger: he ADDRESSES it, then frame-switches at the seam
 
-**This is the most important finding, and it cuts BOTH ways — it makes me MORE generous on one axis and
-delivers the cleanest kill on another.** The single richest primary source is the *Never Close the Inquiry*
+**This finding cuts both ways — the same primary source that makes the generous grant unavoidable also
+exposes the frame-switch.** The single richest primary source is the *Never Close the Inquiry*
 interview (2024-11-05), where Hernandez lays out the generational fiscal ledger explicitly [SOURCE:
 neverclosetheinquiry.substack.com/p/31-the-truth-about-immigration-an]:
 
@@ -72,7 +72,7 @@ most popular pro-immigration rhetoric, and the repo's own ladder entry 45 (Colas
 and entry 51 (2nd-gen dynastic upside is real) AGREE with the substance of his two-generation ROI. So the
 generational-classification charge in its naive form ("he treats 1st-gen as permanent") **fails — do not run it.**
 
-**THE KILL — frame-switch at the generational seam (move 1: ledger switching / equivocation; sharpened by
+**The kill — frame-switch at the generational seam (move 1: ledger switching / equivocation; sharpened by
 ladder entry 51).** What Hernandez does is exactly the **coordinate-switch entry 51 names as the pro-immigration
 case's signature move**: he runs the **dynastic (multi-generation) frame for the fiscal pillar** — counting the
 US-born 2nd/3rd-gen tax payments to flip the ledger to "2-to-1 ROI" — while running the **first-generation frame
@@ -107,7 +107,7 @@ ledger-switch + move 6 aggregate-trump:**
 
 ### Finding C — Housing / local cost-of-living incidence: the load-bearing OMISSION (move 4: capacity erasure)
 
-**This is the cleanest "omission" kill, and it is now backed by the repo's freshest causal evidence.** Across
+**Housing-cost incidence is the load-bearing omission, and the repo's 2026 causal evidence is what makes it bite.** Across
 his book TOC, his five-pillar talks, the Wharton/Marketplace/NPR/Knowledge@Wharton interviews, and the
 Worth/Kustov reviews, **housing-cost incidence does not appear as a pillar or a conceded catch.** His
 chapter "What's the Catch?" (Final Thoughts on the Economy) and his stated downsides are about *wages* and
@@ -148,10 +148,10 @@ on that composition is negative, and the positive depends on a GE channel that i
 holding under scale. [FRAMING-SENSITIVE: the repo does NOT endorse "low-skill immigration is bad" — ladder 45
 grants the indirect-fiscal offset. The kill is the *universalization*, not the direction for the US average.]
 
-### Finding E — The title-level charge: "The TRUTH" sells a coordinate-restricted answer as the whole truth (the meta-kill)
+### Finding E — The title-level charge: "The TRUTH" sells a coordinate-restricted answer as the whole truth
 
-This is the charge the whole memo builds to, and it has an **independent, ideologically-aligned corroborator**
-that immunizes it against the instrument-bias objection. The book is titled *The **Truth** About Immigration*;
+This is the title-level charge, and it has an **independent, ideologically-aligned corroborator** —
+which is what answers the instrument-bias objection. The book is titled *The **Truth** About Immigration*;
 the marketing copy says "the data **clearly debunks both narratives**," immigration has an "**overwhelmingly**
 positive impact on **everything** that makes a society successful"; he urges readers to "**Be Factually
 Optimistic.**" That is a claim that a genuinely **coordinate-dependent** question — whose answer changes with
@@ -161,7 +161,7 @@ the same structural fault: the book answers the **aggregate / average / federal 
 selected** coordinate and presents it as settling the **local / marginal / state-local / renter / composition-
 specific / first-gen** coordinate.
 
-**The corroborator (the fairness keystone).** Alexander Kustov — a self-described "left-of-center, strongly
+**The corroborator.** Alexander Kustov — a self-described "left-of-center, strongly
 cosmopolitan" political scientist who *just published his own pro-immigration book* — applies to pro-immigration
 discourse the concept of **"highbrow misinformation"** (a term he takes from Dan Williams and endorses):
 communication that rarely states outright falsehoods but **misleads by how it selects, omits, and frames facts**
@@ -217,10 +217,10 @@ generously and specifically, what survives intact:
 Hernandez is right about **four of his five pillars at the coordinate he measures** (aggregate, federal,
 average, US-historically-selected, first-gen-for-crime / dynastic-for-fiscal). The book is **not** dishonest in
 the "all economists are liars" sense — that charge fails, and the repo's own evidence agrees with his core. The
-**defensible** charge, available from *inside* the pro-immigration camp (Kustov), is narrower and sharper: a
+**defensible** charge, available from *inside* the pro-immigration camp (Kustov), is narrower: a
 book titled ***The Truth*** that (a) **frame-switches generations** between its fiscal and crime chapters
 (dynastic for taxes, first-gen for safety — ladder 51's signature move), (b) titles its fiscal chapter "Fill
 Public Coffers" while **omitting the state-local / renter incidence** its own −$1,600 number and the 2023 CBO
 surge data establish, and (c) **universalizes a composition-specific sign** (Dustmann-Frattini, ladder 47),
-is **selling a coordinate-restricted answer as the whole truth.** The single most precise verdict: *the science
+is **selling a coordinate-restricted answer as the whole truth.** Put precisely: *the science
 is clear on his coordinate; the title claims it is clear on all of them, and it is not.*
