@@ -128,7 +128,7 @@ def compose_origin_ledger() -> list[dict]:
               s.area_wtd_current_spend_per_pupil,
               s.area_wtd_housing_stress_pct,
               s.avg_rpp_all_items_2023,
-              s.avg_medicaid_total_computable,
+              s.mean_state_medicaid_total_usd,
               s.avg_lep_count_reported,
               fm.avg_federal_net,
               fm.avg_payroll,
@@ -140,7 +140,11 @@ def compose_origin_ledger() -> list[dict]:
                      AVG(area_wtd_current_spend_per_pupil) AS area_wtd_current_spend_per_pupil,
                      AVG(area_wtd_housing_stress_pct) AS area_wtd_housing_stress_pct,
                      AVG(rpp_all_items_2023) AS avg_rpp_all_items_2023,
-                     AVG(medicaid_total_computable) AS avg_medicaid_total_computable,
+                     -- mean of STATE Medicaid totals across the origin's PUMAs (a "which states do
+                     -- they live in" context signal, $billions) — NOT a per-adult cost. Honestly
+                     -- named after the 2026-06-25 forensic-gate review; a per-capita version needs a
+                     -- state-population denominator (ACS pull) — see HUMAN.md + pre-reg P3.
+                     AVG(medicaid_total_computable) AS mean_state_medicaid_total_usd,
                      AVG(lep_count_reported) AS avg_lep_count_reported
               FROM origin_puma_household_stage5_context_2023
               GROUP BY 1
@@ -169,7 +173,7 @@ def compose_origin_ledger() -> list[dict]:
               s.area_wtd_current_spend_per_pupil,
               s.area_wtd_housing_stress_pct,
               NULL::DOUBLE AS avg_rpp_all_items_2023,
-              NULL::DOUBLE AS avg_medicaid_total_computable,
+              NULL::DOUBLE AS mean_state_medicaid_total_usd,
               NULL::DOUBLE AS avg_lep_count_reported,
               fm.avg_federal_net,
               fm.avg_payroll,

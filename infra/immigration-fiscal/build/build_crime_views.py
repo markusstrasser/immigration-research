@@ -95,8 +95,8 @@ def build() -> None:
                 FROM crime_tx_arrests_by_status WHERE status_class <> 'unauthorized'
             )
             SELECT u.denom_source, c.comparator_class, u.crime_category, u.year,
-                   round(u.undoc_rate, 1) AS undoc_rate,
-                   round(c.comp_rate, 1)  AS comparator_rate,
+                   round(u.undoc_rate, 1) AS undoc_rate_per_100k,
+                   round(c.comp_rate, 1)  AS comparator_rate_per_100k,
                    round(u.undoc_rate / nullif(c.comp_rate, 0), 3) AS undoc_vs_comparator,
                    (u.undoc_rate < c.comp_rate) AS undoc_lower
             FROM undoc u JOIN comp c USING (year, crime_category, denom_source)
