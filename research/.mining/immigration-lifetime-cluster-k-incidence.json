@@ -13,7 +13,7 @@
       "population": "NYC",
       "unnamed_assumption": true,
       "page_ref": "derived CSV row",
-      "notes": "Episodic receiver-node shock \u2014 not in NAS lifetime NPV"
+      "notes": "Episodic receiver-node shock — not in NAS lifetime NPV"
     },
     {
       "claim_id": "K-R-NYC",
@@ -25,7 +25,7 @@
       "population": "NYC",
       "unnamed_assumption": true,
       "page_ref": "derived CSV row",
-      "notes": "Episodic receiver-node shock \u2014 not in NAS lifetime NPV"
+      "notes": "Episodic receiver-node shock — not in NAS lifetime NPV"
     },
     {
       "claim_id": "K-R-NYC",
@@ -37,7 +37,7 @@
       "population": "NYC",
       "unnamed_assumption": true,
       "page_ref": "derived CSV row",
-      "notes": "Episodic receiver-node shock \u2014 not in NAS lifetime NPV"
+      "notes": "Episodic receiver-node shock — not in NAS lifetime NPV"
     },
     {
       "claim_id": "K-R-NYC",
@@ -49,7 +49,7 @@
       "population": "NYC",
       "unnamed_assumption": true,
       "page_ref": "derived CSV row",
-      "notes": "Episodic receiver-node shock \u2014 not in NAS lifetime NPV"
+      "notes": "Episodic receiver-node shock — not in NAS lifetime NPV"
     },
     {
       "claim_id": "K-R-Chi",
@@ -61,7 +61,7 @@
       "population": "Chicago",
       "unnamed_assumption": true,
       "page_ref": "derived CSV row",
-      "notes": "Episodic receiver-node shock \u2014 not in NAS lifetime NPV"
+      "notes": "Episodic receiver-node shock — not in NAS lifetime NPV"
     },
     {
       "claim_id": "K-SCHOOL-01",
@@ -72,7 +72,7 @@
       "population": "3119 counties",
       "unnamed_assumption": true,
       "page_ref": "derived median",
-      "notes": "County school spend for K-12 lifetime cost assignment \u2014 NCES digest units may differ"
+      "notes": "County school spend for K-12 lifetime cost assignment — NCES digest units may differ"
     },
     {
       "claim_id": "K-ST5-01",
@@ -90,7 +90,7 @@
     {
       "id": "G-LIF-K01",
       "name": "County incidence join audit",
-      "prompt": "For each origin in origin_fiscal_scenario_2023, trace PUMA\u2192county via puma_county_area_xwalk_2023 and join school_finance_county_2023 + chas_county_housing_stress. Where does area_wtd_current_spend_per_pupil (~$21 in scenario table) disagree with county F-33 per-pupil by >10x? Flag unit bugs before lifetime K-12 assignment.",
+      "prompt": "For each origin in origin_fiscal_scenario_2023, trace PUMA→county via puma_county_area_xwalk_2023 and join school_finance_county_2023 + chas_county_housing_stress. Where does area_wtd_current_spend_per_pupil (~$21 in scenario table) disagree with county F-33 per-pupil by >10x? Flag unit bugs before lifetime K-12 assignment.",
       "retrodiction": "Would have caught school spend ~$21 unit anomaly noted in brainstorm memos before using in NPV.",
       "negative_space": "National NAS education cost vs county-weighted ACS incidence",
       "unnamed_assumptions_surfaced": [
@@ -124,7 +124,7 @@
     },
     {
       "id": "G-LIF-K03",
-      "name": "IRS migration \u00d7 immigrant stock falsifier",
+      "name": "IRS migration × immigrant stock falsifier",
       "prompt": "Join irs_migration_county_2022_2023 net inflow to ACS origin_puma stock changes. Does tax-base mobility co-move with immigrant share increases? If not, IRS migration is a weak falsifier for fiscal attribution.",
       "retrodiction": "Would have flagged IRS county migration as income mobility not immigrant-specific fiscal shock.",
       "negative_space": "Tax return address change = immigrant fiscal burden",
@@ -141,7 +141,7 @@
     {
       "id": "G-LIF-K04",
       "name": "State stage5 heterogeneity band",
-      "prompt": "From state_stage5_context_2023, build state_fips \u00d7 education_bucket fiscal capacity quartiles (RPP, Medicaid, EL). Mexico composition weights \u00d7 state shares should produce state-level lifetime bands, not one national scalar.",
+      "prompt": "From state_stage5_context_2023, build state_fips × education_bucket fiscal capacity quartiles (RPP, Medicaid, EL). Mexico composition weights × state shares should produce state-level lifetime bands, not one national scalar.",
       "retrodiction": "Would have blocked national Mexico NPV scalar before stage5 context existed.",
       "negative_space": "National average fiscal incidence",
       "unnamed_assumptions_surfaced": [
@@ -160,20 +160,20 @@
     {
       "theory": "County school spend join explains origin scenario per-pupil field",
       "prediction": "area_wtd_current_spend_per_pupil correlates with county F-33 median at r>0.5 after unit fix",
-      "duckdb_test": "SELECT CORR(s.current_spend_per_pupil, o.area_wtd_current_spend_per_pupil) FROM school_finance_county_2023 s JOIN origin_fiscal_scenario_2023 o ON ...",
-      "falsifier": "Correlation near zero or 10x scale mismatch \u2192 unit bug"
+      "duckdb_test": "SELECT CORR(s.current_spend_per_pupil, p.current_spend_per_pupil) AS corr_county_perpupil, COUNT(*) AS n_counties FROM lifetime.school_finance_county_2023 s JOIN context.puma_county_context_2023 p ON s.county_fips = p.county_fips",
+      "falsifier": "Correlation near zero or 10x scale mismatch → unit bug"
     },
     {
       "theory": "Receiver cities carry episodic costs larger than annual federal offset for surge cohort",
       "prediction": "sum(receiver_city_migrant_costs) > 437819 * 1519 for NYC+Chicago nodes",
-      "duckdb_test": "SELECT SUM(cost) FROM receiver_city_migrant_costs",
+      "duckdb_test": "SELECT SUM(total_spending_usd_M) AS total_spending_usd_M FROM lifetime.receiver_city_migrant_costs",
       "falsifier": "Receiver costs negligible vs federal microsim annual net"
     },
     {
       "theory": "State RPP scales federal net proxy differently for border vs gateway states",
       "prediction": "state_stage5 avg_rpp spread > 15% across top Mexico-destination states",
-      "duckdb_test": "SELECT state_fips, avg_rpp_all_items_2023 FROM state_stage5_context_2023 ORDER BY 2 DESC LIMIT 10",
-      "falsifier": "RPP flat \u2192 state dimension collapses"
+      "duckdb_test": "SELECT state_fips, rpp_all_items_2023 FROM lifetime.state_stage5_context_2023 ORDER BY 2 DESC LIMIT 10",
+      "falsifier": "RPP flat → state dimension collapses"
     }
   ]
 }

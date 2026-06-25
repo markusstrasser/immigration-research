@@ -24,7 +24,10 @@
       "source_rel_path": "external/lifetime/saiz/saiz_2010_msa_elasticity.dta",
       "parameter_name": "msa_housing_supply_elasticity_distribution",
       "value_numeric": 2.537,
-      "value_range": [0.595, 12.148],
+      "value_range": [
+        0.595,
+        12.148
+      ],
       "unit": "elasticity_index",
       "population": "269 US MSAs (Saiz 2010, 1999 OMB)",
       "unnamed_assumption": false,
@@ -36,7 +39,10 @@
       "source_rel_path": "external/lifetime/saiz/saiz_2010_msa_elasticity.dta",
       "parameter_name": "wharton_land_use_regulatory_index_WRLURI",
       "value_numeric": -0.103,
-      "value_range": [-1.765, 4.312],
+      "value_range": [
+        -1.765,
+        4.312
+      ],
       "unit": "index",
       "population": "269 MSAs",
       "unnamed_assumption": true,
@@ -80,7 +86,7 @@
       "claim_id": "E-006",
       "source_rel_path": "external/lifetime/frbsf/econ_letter_2023_immigration_urban_phenomenon.html",
       "parameter_name": "foreign_born_population_share_stabilized",
-      "value_numeric": 0.20,
+      "value_numeric": 0.2,
       "unit": "share",
       "population": "US total population",
       "unnamed_assumption": false,
@@ -122,7 +128,12 @@
         "Owner capital gains net out renter losses in all MSAs equally",
         "Cross-sectional FB×rent correlation identifies immigrant-caused rent shock"
       ],
-      "topics": ["saiz_elasticity", "rent_incidence", "welfare_loss", "puma_rent"],
+      "topics": [
+        "saiz_elasticity",
+        "rent_incidence",
+        "welfare_loss",
+        "puma_rent"
+      ],
       "source_rel_paths": [
         "external/lifetime/saiz/saiz_2010_msa_elasticity.dta",
         "research/immigration-causal-saiz-elasticity-rent.md"
@@ -140,7 +151,12 @@
         "Immigrant inflow causes inelasticity rather than selecting into it",
         "Elastic MSAs with meatpacking FB share (Sioux City, Fargo) generalize to coastal gateways"
       ],
-      "topics": ["WRLURI", "topography", "zoning", "destination_selection"],
+      "topics": [
+        "WRLURI",
+        "topography",
+        "zoning",
+        "destination_selection"
+      ],
       "source_rel_paths": [
         "external/lifetime/saiz/saiz_2010_msa_elasticity.dta"
       ],
@@ -157,7 +173,12 @@
         "Remittance outflow is fiscally neutral to US local budgets",
         "Family vs solo migration policy (China Hukou analog) irrelevant to US fiscal cells"
       ],
-      "topics": ["remittances", "urban_concentration", "housing_demand", "family_migration"],
+      "topics": [
+        "remittances",
+        "urban_concentration",
+        "housing_demand",
+        "family_migration"
+      ],
       "source_rel_paths": [
         "external/lifetime/frbsf/econ_letter_2023_immigration_urban_phenomenon.html"
       ],
@@ -174,7 +195,12 @@
         "Gasoline tax incidence equals immigrant local externality",
         "Highway trust fund transfers fully insure destination cities"
       ],
-      "topics": ["vmt", "congestion", "urban", "local_externality"],
+      "topics": [
+        "vmt",
+        "congestion",
+        "urban",
+        "local_externality"
+      ],
       "source_rel_paths": [
         "external/lifetime/brookings/vmt_external_cost_congestion_jpube_2017.pdf",
         "external/lifetime/frbsf/econ_letter_2023_immigration_urban_phenomenon.html"
@@ -192,7 +218,12 @@
         "State average rent in warehouse equals MSA elasticity-weighted burden",
         "Descendant housing consumption inherits parent origin remittance behavior"
       ],
-      "topics": ["education_bucket", "state", "descendants", "scenario_composition"],
+      "topics": [
+        "education_bucket",
+        "state",
+        "descendants",
+        "scenario_composition"
+      ],
       "source_rel_paths": [
         "research/immigration-causal-saiz-elasticity-rent.md",
         "external/lifetime/saiz/saiz_2010_msa_elasticity.dta"
@@ -204,25 +235,25 @@
     {
       "theory": "Immigrant-heavy PUMAs map to Saiz inelastic quartile — rent burden ≈ renter welfare loss",
       "prediction": "Weighted avg elasticity for origin_puma rows with highest rent_burden < 2.0 and FB-heavy MSAs in bottom quartile",
-      "duckdb_test": "SELECT o.origin_label, o.education_bucket, o.state_fips, AVG(s.elasticity) AS avg_elasticity, AVG(o.rent_to_income_or_burden) AS avg_rent_burden FROM origin_puma_household_context_2023 o JOIN saiz_msa_elasticity s ON o.msa_match_key = s.msaname GROUP BY 1,2,3 HAVING avg_elasticity < 2.0 ORDER BY avg_rent_burden DESC",
+      "duckdb_test": "-- PENDING-DATA: needs an MSA-joined rent+immigrant panel (PUMA->CBSA/MSA crosswalk + rent_burden/rent_to_income + foreign_born_share + the saiz_msa_rent_immigrant_2022 elasticity*WRLURI*FB-share panel). None exist in the warehouse (exhaustive schema check 2026-06-25). Not yet runnable.",
       "falsifier": "High rent-burden PUMAs have median elasticity > 3.0 after MSA-PUMA crosswalk"
     },
     {
       "theory": "Regulatory index WRLURI explains elasticity variance beyond topography in immigrant gateway MSAs",
       "prediction": "Within top FB-share quintile, corr(elasticity, WRLURI) < corr(elasticity, S_LAND_50)",
-      "duckdb_test": "WITH q AS (SELECT *, NTILE(5) OVER (ORDER BY fb_share DESC) AS fb_q FROM saiz_msa_rent_immigrant_2022) SELECT CORR(elasticity, WRLURI) AS reg_corr, CORR(elasticity, S_LAND_50) AS topo_corr FROM q JOIN saiz_msa_elasticity s USING(msaname) WHERE fb_q = 5",
+      "duckdb_test": "-- PENDING-DATA: needs an MSA-joined rent+immigrant panel (PUMA->CBSA/MSA crosswalk + rent_burden/rent_to_income + foreign_born_share + the saiz_msa_rent_immigrant_2022 elasticity*WRLURI*FB-share panel). None exist in the warehouse (exhaustive schema check 2026-06-25). Not yet runnable.",
       "falsifier": "Topography alone explains >90% of R² in elasticity regression without WRLURI"
     },
     {
       "theory": "NAS lifetime NPV omits elasticity-conditional housing wedge — <HS benchmark understates local renter incidence",
       "prediction": "For npv_education_benchmarks WHERE acs_education_bucket = '<HS', attaching Q1 rent wedge (e.g. +3pp rent/income × renter share) shifts state-local ledger negative while federal row unchanged",
-      "duckdb_test": "SELECT b.study, b.acs_education_bucket, b.individual_npv_2012_usd, s.avg_elasticity, o.avg_rent_burden FROM npv_education_benchmarks b CROSS JOIN (SELECT AVG(elasticity) AS avg_elasticity FROM saiz_msa_elasticity WHERE elasticity <= 1.5) s LEFT JOIN (SELECT education_bucket, state_fips, AVG(rent_burden) AS avg_rent_burden FROM origin_puma_household_context_2023 GROUP BY 1,2) o ON o.education_bucket = b.acs_education_bucket WHERE b.acs_education_bucket = '<HS'",
+      "duckdb_test": "-- PENDING-DATA: needs an MSA-joined rent+immigrant panel (PUMA->CBSA/MSA crosswalk + rent_burden/rent_to_income + foreign_born_share + the saiz_msa_rent_immigrant_2022 elasticity*WRLURI*FB-share panel). None exist in the warehouse (exhaustive schema check 2026-06-25). Not yet runnable.",
       "falsifier": "Elasticity-weighted rent wedge < 5% of |individual_npv| for all <HS benchmark rows"
     },
     {
       "theory": "FRBSF remittance attenuation does not eliminate inelastic-market rent gradient",
       "prediction": "Even after origin remittance proxy, FB share still rises monotonically as elasticity falls across quartiles",
-      "duckdb_test": "SELECT NTILE(4) OVER (ORDER BY s.elasticity) AS eq, AVG(s.elasticity), AVG(o.foreign_born_share), AVG(o.rent_burden) FROM saiz_msa_elasticity s JOIN origin_puma_household_context_2023 o ON o.msa_match_key = s.msaname GROUP BY 1 ORDER BY 1",
+      "duckdb_test": "-- PENDING-DATA: needs an MSA-joined rent+immigrant panel (PUMA->CBSA/MSA crosswalk + rent_burden/rent_to_income + foreign_born_share + the saiz_msa_rent_immigrant_2022 elasticity*WRLURI*FB-share panel). None exist in the warehouse (exhaustive schema check 2026-06-25). Not yet runnable.",
       "falsifier": "Q4 elastic quartile has higher FB share than Q1 after remittance-weighting"
     }
   ]

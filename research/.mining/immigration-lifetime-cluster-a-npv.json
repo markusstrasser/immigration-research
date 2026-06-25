@@ -194,7 +194,11 @@
         "Fixed capital stock in short run ⇒ zero capital tax response",
         "Partial equilibrium fiscal accounting = total fiscal effect"
       ],
-      "topics": ["npv", "capital_tax", "sign_sensitivity"],
+      "topics": [
+        "npv",
+        "capital_tax",
+        "sign_sensitivity"
+      ],
       "source_rel_paths": [
         "external/lifetime/cgdev/clemens_2023_fiscal_effect_capital_tax_adjustment.pdf",
         "external/lifetime/econstor/colas_sachs_2024_indirect_fiscal_benefits_low_skill.pdf"
@@ -211,7 +215,11 @@
         "Marginal cost of public goods = 0",
         "Defense spending invariant to population"
       ],
-      "topics": ["npv", "public_goods", "allocation"],
+      "topics": [
+        "npv",
+        "public_goods",
+        "allocation"
+      ],
       "source_rel_paths": [
         "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf",
         "external/lifetime/dallasfed/orrenius_nas_fiscal_sensitivity_wp1704.pdf",
@@ -229,7 +237,11 @@
         "Representative immigrant = stock average",
         "Immigrant count policy is separable from skill selectivity"
       ],
-      "topics": ["npv", "generational_accounting", "education_gradient"],
+      "topics": [
+        "npv",
+        "generational_accounting",
+        "education_gradient"
+      ],
       "source_rel_paths": [
         "external/lifetime/nber/auerbach_oreopoulos_2000_generational_accounting_immigration.pdf",
         "external/lifetime/nber/lee_miller_1998_generational_accounting_immigration_w7041.pdf",
@@ -247,7 +259,11 @@
         "Annual wage-incidence externality commensurate with lifetime NPV",
         "Cross-section annual shortfall ≈ lifetime immigrant cost"
       ],
-      "topics": ["npv", "incidence", "units"],
+      "topics": [
+        "npv",
+        "incidence",
+        "units"
+      ],
       "source_rel_paths": [
         "external/lifetime/econstor/colas_sachs_2024_indirect_fiscal_benefits_low_skill.pdf",
         "external/lifetime/cgdev/clemens_2023_fiscal_effect_capital_tax_adjustment.pdf",
@@ -265,7 +281,10 @@
         "Immigrants attributed to native generational accounts",
         "Equal percentage tax hikes on natives and immigrants is realistic closure rule"
       ],
-      "topics": ["generational_accounting", "methodology"],
+      "topics": [
+        "generational_accounting",
+        "methodology"
+      ],
       "source_rel_paths": [
         "external/lifetime/nber/lee_miller_1998_generational_accounting_immigration_w7041.pdf",
         "external/lifetime/methodology/green_kotlikoff_2006_relativity_fiscal_language_w12344.pdf"
@@ -282,7 +301,11 @@
         "Descendant education upgrade is causal fiscal credit to arrival cohort",
         "Intermarriage and emigration ignored in descendant projection"
       ],
-      "topics": ["npv", "intergenerational", "education_transmission"],
+      "topics": [
+        "npv",
+        "intergenerational",
+        "education_transmission"
+      ],
       "source_rel_paths": [
         "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf",
         "external/lifetime/cgdev/clemens_2023_fiscal_effect_capital_tax_adjustment.pdf"
@@ -294,37 +317,37 @@
     {
       "theory": "Education bucket is sufficient statistic for lifetime NPV rank order",
       "prediction": "Within NAS/Clemens benchmarks, <HS < HS < some college < BA < postgrad monotonic in individual_npv_2012_usd at age 25",
-      "duckdb_test": "SELECT acs_education_bucket, individual_npv_2012_usd, study, adjustment FROM life.npv_education_benchmarks WHERE age_at_arrival=25 AND includes_descendants=false ORDER BY individual_npv_2012_usd;",
+      "duckdb_test": "SELECT acs_education_bucket, individual_npv_2012_usd, study, adjustment FROM lifetime.npv_education_benchmarks WHERE age_at_arrival=25 AND includes_descendants=false ORDER BY individual_npv_2012_usd;",
       "falsifier": "Any pair inverted after holding adjustment constant (e.g., HS worse than <HS under same public_goods_scenario)"
     },
     {
       "theory": "Capital-tax adjustment flips sign only for lowest education buckets",
       "prediction": "Clemens capital_tax_adjustment rows positive for <HS; NAS baseline rows negative for <HS; ratio post/pre ≈ 3.2 for average bucket",
-      "duckdb_test": "SELECT study, acs_education_bucket, individual_npv_2012_usd FROM life.npv_education_benchmarks WHERE acs_education_bucket='<HS' AND study IN ('NAS 2017','Clemens 2023');",
+      "duckdb_test": "SELECT study, acs_education_bucket, individual_npv_2012_usd FROM lifetime.npv_education_benchmarks WHERE acs_education_bucket='<HS' AND study IN ('NAS 2017','Clemens 2023');",
       "falsifier": "Clemens-adjusted NPV still negative for <HS in warehouse after re-seed from Table 3"
     },
     {
       "theory": "Annual federal proxy correlates with lifetime NPV rank across education buckets",
       "prediction": "ctx federal microsim annual net contribution by education_bucket should rank-order match life.npv_education_benchmarks individual NPV",
-      "duckdb_test": "SELECT e.education_bucket, e.weighted_total AS acs_stock, f.annual_federal_net_proxy, b.individual_npv_2012_usd, b.study FROM ctx.acs_foreign_born_education_bucket_totals_2023 e JOIN ctx.public_mvp_federal_by_education f ON e.education_bucket=f.education_bucket LEFT JOIN life.npv_education_benchmarks b ON e.education_bucket=b.acs_education_bucket WHERE b.study='NAS 2017';",
+      "duckdb_test": "SELECT f.education_bucket, e.weighted_adults AS acs_stock, AVG(f.federal_net_proxy_annual) AS annual_federal_net_proxy, b.individual_npv_2012_usd, b.study FROM context.acs_foreign_born_education_bucket_totals_2023 e JOIN fiscal.v_origin_federal_with_education_npv f ON e.education_bucket=f.education_bucket LEFT JOIN lifetime.npv_education_benchmarks b ON e.education_bucket=b.acs_education_bucket WHERE b.study='NAS 2017' GROUP BY f.education_bucket, e.weighted_adults, b.individual_npv_2012_usd, b.study ORDER BY f.education_bucket",
       "falsifier": "Annual proxy positive for <HS while NAS NPV negative — indicates unit/scope mismatch (supports G-LIF-A04)"
     },
     {
       "theory": "Indirect annual incidence does not rescue HS dropouts in Colas-Sachs framework",
       "prediction": "Colas-Sachs indirect_annual_usd (~750) + direct annuitized NPV still net negative for HS dropouts under MC=AC public goods",
-      "duckdb_test": "SELECT * FROM life.npv_education_benchmarks WHERE study='Colas-Sachs 2024' AND acs_education_bucket='<HS'; -- compare magnitude to NAS -109k; annual 750×40yr ≠ 109k without discount harmonization",
+      "duckdb_test": "SELECT * FROM lifetime.npv_education_benchmarks WHERE study='Colas-Sachs 2024' AND acs_education_bucket='<HS'; -- compare magnitude to NAS -109k; annual 750×40yr ≠ 109k without discount harmonization",
       "falsifier": "Harmonized NPV of indirect+$753/yr exceeds |direct| for dropouts under stated 1% discount"
     },
     {
       "theory": "Recent-arrival pool NPV exceeds stock-average NPV conditional on education mix",
       "prediction": "Weighted mean of npv by recent-arrival education shares > stock shares, controlling for adjustment",
-      "duckdb_test": "SELECT b.study, SUM(e.share * b.individual_npv_2012_usd) AS weighted_npv FROM ctx.acs_foreign_born_education_bucket_totals_2023 e JOIN life.npv_education_benchmarks b ON e.education_bucket=b.acs_education_bucket WHERE b.study='NAS 2017' GROUP BY b.study;",
+      "duckdb_test": "WITH tot AS (SELECT SUM(weighted_adults) s FROM context.acs_foreign_born_education_bucket_totals_2023) SELECT b.study, SUM((e.weighted_adults / (SELECT s FROM tot)) * b.individual_npv_2012_usd) AS weighted_npv FROM context.acs_foreign_born_education_bucket_totals_2023 e JOIN lifetime.npv_education_benchmarks b ON e.education_bucket=b.acs_education_bucket WHERE b.study='NAS 2017' GROUP BY b.study",
       "falsifier": "Stock and recent weights produce same weighted NPV within 5% — contradicts NAS $259k vs $58k narrative"
     },
     {
       "theory": "No single origin_label scalar maps to lifetime NPV",
       "prediction": "Mexican or any origin share vector produces wide NPV range when joined to education_bucket benchmarks — variance dominates mean",
-      "duckdb_test": "SELECT m.origin_label, m.education_bucket, m.share, b.individual_npv_2012_usd FROM ctx.origin_education_composition m JOIN life.npv_education_benchmarks b ON m.education_bucket=b.acs_education_bucket WHERE b.study='NAS 2017' ORDER BY origin_label, education_bucket; -- reject collapse to one number per origin",
+      "duckdb_test": "WITH comp AS (SELECT origin_label, education_bucket, SUM(weighted_adults) AS wa FROM context.acs_origin_household_federal_microsim_2023 GROUP BY origin_label, education_bucket) SELECT m.origin_label, m.education_bucket, m.wa / SUM(m.wa) OVER (PARTITION BY m.origin_label) AS share, b.individual_npv_2012_usd FROM comp m JOIN lifetime.npv_education_benchmarks b ON m.education_bucket=b.acs_education_bucket WHERE b.study='NAS 2017' ORDER BY m.origin_label, m.education_bucket",
       "falsifier": "One origin's education mix maps to a stable scalar cited in advocacy without bucket decomposition"
     }
   ]
