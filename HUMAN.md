@@ -12,18 +12,12 @@ gained entries 44-50. **Honest bound: the literature search is now largely exhau
 crime saturated, sociology near-harvested, policy gap filled. The live frontier is urbanism, where
 the bottleneck is a BUILD, not more search.** Three things for you:
 
-### A. MSA rent panel — supply-leg BUILT; one gated input (a free Census key) unblocks the causal result
-**Done this session:** built the Zillow ZORI/ZHVI × Saiz-elasticity panel (`build_msa_rent_elasticity_panel.py`,
-table `msa_rent_elasticity_panel`, 168 metros matched, wired into `reproduce.sh build all`; memo
-`research/immigration-msa-rent-elasticity-panel-2026-06-25.md`). **Honest result: the bivariate
-elasticity↔rent-growth is NULL (corr −0.034).** That's not a dead end — it's the empirical proof that the
-demand treatment is load-bearing: supply elasticity *moderates* a demand shock, it doesn't drive rent growth
-on its own (2016-25 growth was a broad rate/COVID shock, not metro-differentiated by supply).
-**The one input blocking the causal result** (`Δrent ~ Δfb-share × elasticity`, replicating Wilson-Zhou
-+2.2%/+1.4%): **metro foreign-born share over time.** Needs **a free Census API key**
-(https://api.census.gov/data/key_signup.html — 2-min signup; the keyless route closed in 2026) OR the
-Geocorr PUMA↔CBSA crosswalk. **Drop `CENSUS_API_KEY=...` (or `DATA_GOV_API_KEY`) into
-`infra/immigration-fiscal/acquire/config.local.env` and I run the regression.**
+### A. MSA rent panel — BOTH legs BUILT, no API key needed. ~~Census key~~ resolved.
+**Done this session (no operator action needed):** the full panel, reproducibly, with **zero API key**.
+- **Supply leg** (`build_msa_rent_elasticity_panel.py`, `msa_rent_elasticity_panel`): Zillow×Saiz, 168 metros. Bivariate elasticity↔rent-growth is NULL (−0.034) — supply elasticity moderates a demand shock, doesn't drive growth alone.
+- **Demand treatment** (`build_msa_fb_rent_panel.py`, `msa_fb_rent_panel`): the Census API key turned out **unnecessary** — the bulk **ACS 2023 summary-file tables are key-free** (B05002 fb-share + B25064 rent by CBSA, joined via the no-key Census gazetteer). Pointed there by the operator ("use the corpus data"). Reproducible: `setup-urban-housing.sh` auto-fetches Zillow + ACS + gazetteer (verified by a remove-and-re-fetch test).
+- **Result:** corr(fb-share, rent LEVEL) = **+0.69** (immigrants concentrate in high-rent metros; **+0.74 in inelastic metros** — the Wilson-Zhou incidence mechanism), but corr(fb-share, rent GROWTH) = **−0.17** (didn't drive recent growth). **Honest bound:** the level corr is **sorting-confounded** (immigrants choose expensive/inelastic metros — Borjas critique), NOT causal.
+- **Remaining (autonomous, no key — flag if you want it):** the causal `Δrent ~ Δfb-share × elasticity` (Wilson-Zhou +2.2%/+1.4%) needs a **2nd ACS year** (another no-key `acsdt1yYYYY-b05002.dat`) + a shift-share IV. I can build this without you; say the word.
 
 ### B. Gated pulls that unblock the deepest tests (login-gated, you pull; loaders/specs ready)
 - **IPUMS-CPS** 2nd-gen extract → cluster-V V02 (loader `load_cps_second_gen.py` ready; uses PARENTAL

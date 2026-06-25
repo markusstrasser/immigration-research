@@ -42,7 +42,7 @@ _fetch() {  # curl with validation; idempotent + non-fatal
 }
 
 _log "=== urban housing-panel datasets (frontier 2026-06-25) ==="
-mkdir -p "$UH"/{zillow,wrluri,geocorr,lodes}
+mkdir -p "$UH"/{zillow,acs,geo,wrluri,geocorr,lodes}
 
 # --- Tier A: rent / price outcome (the dependent variable) — Zillow, verified live 2026-06-25 ---
 # ZORI = Observed Rent Index (repeat-rent, ACS-stock-weighted, $); the Wilson-Zhou (2026) outcome var.
@@ -51,6 +51,17 @@ _fetch "https://files.zillowstatic.com/research/public_csvs/zori/Metro_zori_uc_s
 # ZHVI = Home Value Index (middle-tier, smoothed, seasonally-adjusted) — owner-side incidence.
 _fetch "https://files.zillowstatic.com/research/public_csvs/zhvi/Metro_zhvi_uc_sfrcondo_tier_0.33_0.67_sm_sa_month.csv" \
        "$UH/zillow/metro_zhvi_sfrcondo_tier_sm_sa_month.csv" 100000
+
+# --- Tier C: immigrant exposure (the DEMAND treatment) — ACS 2023 fb-share + rent by CBSA, NO KEY ---
+# The Census Data API now requires a key (keyless route closed 2026), but the bulk ACS summary-file
+# table .dat files are key-free. B05002 = nativity (E013 = foreign-born), B25064 = median gross rent.
+ACSB="https://www2.census.gov/programs-surveys/acs/summary_file/2023/table-based-SF/data/1YRData"
+_fetch "$ACSB/acsdt1y2023-b05002.dat" "$UH/acs/acsdt1y2023-b05002.dat" 500000   # foreign-born by geography
+_fetch "$ACSB/acsdt1y2023-b25064.dat" "$UH/acs/acsdt1y2023-b25064.dat" 50000    # median gross rent
+# CBSA code→name lookup (no-key gazetteer) — joins ACS CBSA codes to the Zillow/Saiz metro names.
+_fetch "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_cbsa_national.zip" \
+       "$UH/geo/2023_Gaz_cbsa.zip" 10000
+[[ -f "$UH/geo/2023_Gaz_cbsa_national.txt" ]] || { unzip -o "$UH/geo/2023_Gaz_cbsa.zip" -d "$UH/geo" >/dev/null 2>&1 && _ok "gazetteer extracted"; }
 
 # --- Supply-side moderators + geography spine: one-time DL / on-demand generator → MANUAL ---
 cat > "$UH/MANUAL_ACQUIRE.md" <<'EOF'
@@ -77,9 +88,12 @@ on-demand generator (no stable direct CSV URL); pull each and drop into the show
 - https://lehd.ces.census.gov/data/  (Origin-Destination Employment Statistics; WAC/RAC). Block-level → aggregate
   to CBSA/PUMA. Heavy; pull per-state OD files for the metros of interest. Drop into `urban_housing/lodes/`.
 
-## ACS housing-by-nativity (the treatment + outcome levels) — pulled by the build, not here
-- Census API, no file stage needed: B05002 (foreign-born), B25064 (median gross rent), B25003 (tenure),
-  B25070 (rent-as-%-income), B19013 (income), at CBSA + PUMA, 2010→2023. B25127 is the file Zillow weights to.
+## ACS housing-by-nativity (the DEMAND treatment) — NOW AUTO-FETCHED above (no key needed)
+- B05002 (foreign-born) + B25064 (median rent) by CBSA come from the no-key ACS summary-file `.dat`
+  (auto-fetched to `acs/`) + the gazetteer CBSA code→name (`geo/`). `build_msa_fb_rent_panel.py` joins them.
+- The Census Data **API** now requires a key (keyless route closed 2026); the bulk summary-file route
+  above avoids it entirely. For more tables/years (B25003 tenure, B25070 rent-burden, a 2nd year for a
+  Δ panel), add the matching `acsdt1yYYYY-<table>.dat` URLs to the Tier-C block in `setup-urban-housing.sh`.
 EOF
 _ok "wrote $UH/MANUAL_ACQUIRE.md"
 
