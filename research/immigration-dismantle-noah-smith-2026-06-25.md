@@ -114,7 +114,7 @@ Two further bounds that tighten the grant (both cut toward Smith, stated for hon
 
 ### Claim 6 — "Mass deportation would accomplish nothing / its economic benefits would be negative"
 
-**(a) Steelman.** Removing ~1M people wouldn't lower the cost of living (the cancel-out logic), would worsen the federal fiscal position, and would inflict large unrest/fear costs — so the economic benefits are negative or nil and the policy is "largely pointless." [SOURCE: noahpinion.blog/p/mass-deportation-would-accomplish]
+**(a) Steelman.** Removing ~1M people wouldn't lower the cost of living (the cancel-out logic), would worsen the federal fiscal position, and would inflict large unrest/fear costs — so the economic benefits are negative or nil and the policy is largely pointless (the essay's own phrasing: the economic benefits "would likely be negative overall"). [SOURCE: noahpinion.blog/p/mass-deportation-would-accomplish]
 
 **(b) MOSTLY SOLID — grant the core.** The repo does not support a story where removing immigrants makes the average citizen better off; mass deportation of 7M unauthorized is modeled at ~$1.45T first-order output loss / ~5% GDP (ladder entry 24). Smith's "it won't be the clean windfall the GOP platform promises" is correct, and his federal-fiscal-worsening point is the CBO-backed flip-side of Claim 4. The lump-of-labor error in "deport them and wages/housing improve" is real.
 
