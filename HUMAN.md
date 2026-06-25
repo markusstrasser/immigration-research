@@ -12,15 +12,18 @@ gained entries 44-50. **Honest bound: the literature search is now largely exhau
 crime saturated, sociology near-harvested, policy gap filled. The live frontier is urbanism, where
 the bottleneck is a BUILD, not more search.** Three things for you:
 
-### A. The 1/10 MSA rent panel is READY to build (Zillow acquired) — green-light the analysis phase
-This is the single highest-value next step and supersedes the old item 2 below. **Zillow ZORI/ZHVI
-metro panels are acquired** (`setup-urban-housing.sh`, 739 metros monthly 2015-2026). The 1/10 build =
-Zillow/ACS rent × ACS foreign-born-share by CBSA × Saiz elasticity, regress Δrent on Δfb-share —
-replicates Wilson-Zhou (2026) +2.2%/+1.4% at ~zero cost; delivers the housing-incidence ledger both
-red-team models flagged as missing. **Honest friction:** the joins have vintage-mismatch crosswalks
-(Zillow-RegionID↔CBSA; Saiz-1999-MSA↔2020-CBSA) — the existing `saiz_decomposition.py` / Saiz×ACS
-merge already solved the Saiz side, so the build reuses it. It's a real analysis phase (~1hr), so I
-checkpointed here rather than compound it onto the research pass. **Say "build the panel" and I run it.**
+### A. MSA rent panel — supply-leg BUILT; one gated input (a free Census key) unblocks the causal result
+**Done this session:** built the Zillow ZORI/ZHVI × Saiz-elasticity panel (`build_msa_rent_elasticity_panel.py`,
+table `msa_rent_elasticity_panel`, 168 metros matched, wired into `reproduce.sh build all`; memo
+`research/immigration-msa-rent-elasticity-panel-2026-06-25.md`). **Honest result: the bivariate
+elasticity↔rent-growth is NULL (corr −0.034).** That's not a dead end — it's the empirical proof that the
+demand treatment is load-bearing: supply elasticity *moderates* a demand shock, it doesn't drive rent growth
+on its own (2016-25 growth was a broad rate/COVID shock, not metro-differentiated by supply).
+**The one input blocking the causal result** (`Δrent ~ Δfb-share × elasticity`, replicating Wilson-Zhou
++2.2%/+1.4%): **metro foreign-born share over time.** Needs **a free Census API key**
+(https://api.census.gov/data/key_signup.html — 2-min signup; the keyless route closed in 2026) OR the
+Geocorr PUMA↔CBSA crosswalk. **Drop `CENSUS_API_KEY=...` (or `DATA_GOV_API_KEY`) into
+`infra/immigration-fiscal/acquire/config.local.env` and I run the regression.**
 
 ### B. Gated pulls that unblock the deepest tests (login-gated, you pull; loaders/specs ready)
 - **IPUMS-CPS** 2nd-gen extract → cluster-V V02 (loader `load_cps_second_gen.py` ready; uses PARENTAL
