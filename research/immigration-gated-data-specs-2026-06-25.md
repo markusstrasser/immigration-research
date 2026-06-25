@@ -14,11 +14,12 @@ landing + AER article). Items I could not confirm at the primary source are tagg
    full country detail, and — importantly — are available in **every monthly CPS and the ASEC from
    1994 onward**, not just ASEC. `NATIVITY` directly codes 1st/2nd-generation from BPL+FBPL+MBPL. The
    2nd-generation-by-origin test (cluster-V V02) is fully buildable. Extract recipe below.
-2. **NIBRS — RED for INT-04 as scoped.** NIBRS offender records contain **only age, sex, race, and
-   ethnicity**. There is **no citizenship, nativity, country-of-birth, or immigration-status field**
-   anywhere in the offender record. INT-04 ("crime-by-status detail from NIBRS") is **infeasible** as
-   written. Redirect spelled out below (NIBRS supports offense detail + victim-offender relationship,
-   not status; status-by-crime must come from a different source).
+2. **NIBRS — no individual citizenship/nativity, but INT-04 (ecological) is fine.** NIBRS offender
+   records contain **only age, sex, race, and ethnicity** — **no citizenship/nativity/country-of-birth
+   field** anywhere. So *incident-level* crime-by-citizenship is infeasible. **But the repo's INT-04 is
+   the ecological county-level design** (county crime ↔ county foreign-born %), which doesn't need
+   individual status and IS feasible with NIBRS — it stands as written, nothing to close. Only
+   *individual* crime-by-status must come from elsewhere (Texas DPS / USSC / BJS-SPI).
 3. **openICPSR 120490 — GREEN, public access.** Abramitzky–Boustan–Jácome–Pérez replication package
    for the AER 2021 two-centuries immigrant-mobility paper. Lets us measure father→child rank-rank
    income/occupation mobility **by origin country**, the headline benefit-side finding the corpus
@@ -135,7 +136,15 @@ cultural-transmission test, either (a) restrict to June-supplement years for `FR
 
 ---
 
-## 2. NIBRS — crime-by-status detail (INT-04) — **INFEASIBLE AS SCOPED**
+## 2. NIBRS — no individual citizenship/nativity (INT-04 correctly stays ecological)
+
+> **Framing correction (operator review, 2026-06-25):** the determination below — NIBRS carries
+> no individual citizenship/nativity — is verified and valuable. But the original "INT-04 infeasible"
+> conclusion was a strawman: the repo's INT-04 (`immigration-integration-opportunities-2026-06-24.md`
+> §INT-04) is scoped as an **ecological** design (county crime rate ↔ county foreign-born share),
+> which explicitly does NOT need incident-level status and IS feasible with NIBRS. INT-04 never had an
+> individual-status ambition. So INT-04 **stands as written**; what's confirmed infeasible is only the
+> hypothetical *incident-level crime-by-citizenship* design the repo correctly never planned.
 
 ### The critical determination (verified, stated plainly)
 **NIBRS offender records do NOT contain citizenship, nativity, country of birth, or immigration
@@ -154,10 +163,11 @@ nonresident of the reporting jurisdiction), **not citizenship or immigration sta
 whether the arrestee lived locally, not whether they are foreign-born or undocumented.
 [SOURCE: https://ucrbook.com/offender-segment-1.html] [SOURCE: https://www.fbi.gov/file-repository/ucr/a-guide-to-understanding-nibrs.pdf]
 
-**Conclusion: INT-04 as scoped ("crime-by-status detail from NIBRS") cannot be built.** There is no
-status field to join crime to. Do not request a NIBRS extract expecting a citizenship/nativity column
-— it does not exist, and "ethnicity" (Hispanic/Latino vs not) is **not** nativity and must not be
-substituted for it.
+**Conclusion: NIBRS cannot support an *incident-level* crime-by-citizenship design** — there is no
+status field to join crime to at the individual level. Do not request a NIBRS extract expecting a
+citizenship/nativity column — it does not exist, and "ethnicity" (Hispanic/Latino vs not) is **not**
+nativity and must not be substituted for it. This does **not** kill INT-04: INT-04 is the *ecological*
+county-level design, which NIBRS supports (next section).
 
 ### What NIBRS CAN support (the valid redirect)
 NIBRS is incident-level and rich on everything *except* status. Keep it for what it does well:
@@ -170,8 +180,8 @@ NIBRS is incident-level and rich on everything *except* status. Keep it for what
 - **Ecological designs:** county/agency-level offense and arrest counts (joinable to county
   foreign-born share by FIPS) — the Ousey–Kubrin / Wadsworth immigration↔crime correlation design.
   This is the repo's existing `FBI-NIBRS-CDE` roadmap line, which already correctly flags "no nativity
-  at incident level — ecological only." That line stands; **INT-04's individual-status ambition does
-  not.**
+  at incident level — ecological only." **That line IS INT-04, and it stands** — the repo scoped INT-04
+  as ecological from the start, so it is feasible exactly as written; nothing to close.
 
 Access for the ecological/offense use: FBI Crime Data Explorer bulk download (https://cde.ucr.cjis.gov)
 or the ICPSR/NACJD NIBRS series (annual public-use studies). [SOURCE: https://www.icpsr.umich.edu/web/NACJD/studies/38690]
