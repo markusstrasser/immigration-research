@@ -174,6 +174,7 @@ main() {
         doctor) _cmd_doctor ;;
         download) _cmd_download "${1:-standard}" ;;
         verify) _cmd_verify "${1:-required}" ;;
+        audit) uv run --with duckdb python "$ROOT/build/audit_data_integrity.py" "$@" ;;
         build) _cmd_build "${1:-all}" ;;
         query) _cmd_query "${1:-all}" ;;
         all) _cmd_all "${1:-standard}" ;;
