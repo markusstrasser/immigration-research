@@ -40,6 +40,28 @@ The honest reading, and the reason it matters:
 optional.** "Get the elasticity data and rents will line up" is false; you need the demand shock. This
 converts the case for pulling metro fb-share from "nice to have" into "the result is unidentified without it."
 
+## Update (2026-06-25, later) — the demand treatment is BUILT, with NO API key (ACS summary file)
+
+The fb-share treatment did NOT need the gated Census API: the bulk **ACS 2023 summary-file tables are
+key-free.** `build_msa_fb_rent_panel.py` joins **B05002 (foreign-born) + B25064 (rent) by CBSA** (no-key
+`.dat` from census.gov) via the **no-key Census gazetteer** (CBSA code→name) onto the Zillow×Saiz panel →
+table `msa_fb_rent_panel`, **168 metros, zero API key**. Fully reproducible — `setup-urban-housing.sh`
+auto-fetches all three (verified by a remove-and-re-fetch test). 0 LLM tokens (local DuckDB).
+
+**Result (cross-sectional, ACS 2023 LEVEL):**
+- **corr(fb-share, rent LEVEL) = +0.687** — strong: immigrants concentrate in high-rent metros (Miami 43% fb/$1914, San Jose 41%/$2773, LA 33%/$1993, SF 33%/$2397, NYC 30%/$1764).
+- **Amplified where supply is inelastic:** the fb-share↔rent-level corr is **0.74 in the inelastic tercile** vs 0.35 (mid) / 0.47 (elastic) — consistent with the Wilson-Zhou incidence mechanism (inelastic metros can't absorb demand, so the immigrant-rent link is tighter).
+- **BUT corr(fb-share, rent GROWTH 2016-25) = −0.174** — null-to-negative: immigrant share did NOT drive recent rent growth (matches the JCHS / Yale-Budget-Lab disconfirmation that the 2021-25 run-up wasn't immigration-timed).
+
+**Honest bound — this is NOT the causal estimate. [FRAMING-SENSITIVE]** The +0.69 level correlation is
+**sorting-confounded**: immigrants *choose* high-amenity, high-cost, supply-constrained metros (the classic
+Borjas area-studies critique, ladder entry 50 / urbanism §2b). So it shows immigrants *live where rents are
+high and supply is tight*, NOT that they *caused* it. The causal magnitude (Wilson-Zhou +1.4% rents per
+1%-of-employment inflow) still needs the **IV/Δ** design — a shift-share instrument + a 2nd ACS year (only
+2023 is staged; add another `acsdt1yYYYY-b05002.dat` to close it). The growth-margin null is the more
+causal-relevant signal and it is weak. Net: the cross-section is consistent with the incidence story but
+cannot separate sorting from causation; the panel now holds the demand variable for the IV once a 2nd year lands.
+
 ## What's built vs gated
 - **Built (acquired data):** Zillow ZORI/ZHVI × Saiz elasticity, 168 metros, rent/home-value trajectory by
   elasticity quartile. Crosswalk proven (62%). Table flows into the unified warehouse.
