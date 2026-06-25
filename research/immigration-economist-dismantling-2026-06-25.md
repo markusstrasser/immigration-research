@@ -307,17 +307,27 @@ frame-switch, and *Streets of Gold*'s relative-rank retreat are the **same move 
 dismantling is devastating precisely because it grants their valid empirics — and shows the reassurance is an
 artifact of which question got answered. **We dismantle the canon by quoting its own primary texts.**
 
-**Pre-publication caveat (mandatory before any external use):** every *direct quote* in the seven sub-memos
-was fetched by a teammate and tagged verbatim — quotes are the weapon, so **re-verify each at primary before
-publishing.** Verification done this pass (intern-rule spot-checks on the four Tier-2/3 targets, all
-load-bearing): **(i)** Card-Peri's −19%/−24%/−1.1% distributional figures — re-checked against the actual
-w12497 PDF (an Exa proxy had false-flagged them as not-in-paper); **(ii)** *Streets of Gold*'s "do not
-converge" sentence — verified verbatim at primary (SemScholar mirror of PNAS Nexus pgae344), attribution
-corrected (A&B *citing* Villarreal-Tamborini); **(iii)** Hernandez's Kustov keystone — verified on-page,
-attribution corrected (Williams' term, Kustov applies it) and one unverified verbatim quote downgraded to
-paraphrase. The one load-bearing external *fact* checked in Tier 1 (CBO GDP-per-person −0.8%) verified at
-0.95; the inventor-share figures (Decker §2; Hernandez pillar 2) are flagged direction-granted, not
-primary-verified.
+**Pre-publication quote verification — COMPLETE (2026-06-25).** Quotes are the weapon, so before any external
+use every direct quote and load-bearing number across the seven sub-memos was re-verified against its **actual
+primary source** — live essays crawled in full + papers downloaded and grepped verbatim; **`verify_claim` was
+NOT trusted** (it produced false-negatives on these exact memos this session). A seven-target parallel sweep
+checked ~90 items; the large majority were EXACT. **Two real citation errors were caught and fixed** — both
+"right claim, wrong paper/number," exactly what a hostile reader hunts for:
+1. **CATO** — the fiscal sign-flip was stated as "+$25B → −$16B, NAS 2016 ch. 12." Corrected to **+$27B
+   (Passel-Clark 1994, zero-marginal) → −$16B (Borjas 1994, average-cost), from Borjas 1995 JEP** (NAS 2016 has
+   no ch. 12). The argument is unchanged; the citation now matches primary.
+2. **Card-Peri** — the Borjas-Grogger-Hanson "complementarity evaporates by removing high school students" quote
+   was cited to the 2012 *JEEA Comment*; the verbatim text is actually the abstract of **NBER w13887 (2008),
+   "A Reappraisal."** Re-attributed (the JEEA Comment argues the equivalent point but not in those words).
+
+Plus a handful of paraphrase-precision touches (scare-quoted glosses de-quoted in Smith/CATO; a silently
+corrected author typo bracketed in Decker; one verb restored in Streets). **Every load-bearing datum verified
+EXACT at primary** — the −26% homicide-conviction rate, $14.5T / +$6.6T, OP's +0.7% / −19% / −1.1%,
+Clemens-Pritchett 2019's interior-optimum conclusion, the CMP selection numbers, the *Streets* rank magnitudes
+(40/60/45/65), Hernandez's two-generation ROI block, Smith's Register-B concession. **Residual (flagged, not
+blocking):** the immigrant-inventor figures (Decker 23%/36%; Hernandez 16%/36%) are verbatim-from-the-author but
+the underlying empirical claims are direction-granted, not independently re-derived; and CATO's Bier-testimony
+items (the ~1%-of-population inflow target, "97% found jobs") were the one cited source not re-crawled this pass.
 
 ## Integration log
 - [x] dismantle-smith — integrated (two-registers / ledger-switching at corpus scale)
