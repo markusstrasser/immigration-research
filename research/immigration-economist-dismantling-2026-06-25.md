@@ -67,22 +67,102 @@ as if it settled the hard one."**
 
 ---
 
-## 1. Noah Smith
-*(parent fills from `immigration-dismantle-noah-smith-2026-06-25.md`)*
+## 1. Noah Smith — *ledger-switching at corpus scale (self-sourced)*
+Full: `immigration-dismantle-noah-smith-2026-06-25.md`.
 
-## 2. Nicholas Decker
-*(parent fills from `immigration-dismantle-decker-2026-06-25.md`)*
+**The master key: Smith has TWO registers and never reconciles them.** *Register A* (the reassuring
+"evidence" essays — *Why immigration doesn't reduce wages*, *Mass deportation would accomplish nothing*)
+deploys steady-state / average / national-aggregate machinery: "the total effect on wages is…not much,"
+cost-of-living "relatively small." *Register B* (*America, please be reasonable*, 2024-01) concedes the
+exact opposite in his own words: the surge is **"a massive problem… a long-term fiscal problem, because
+these people will require heavy government support for their health care, housing, and education; this
+will end up coming from city and state governments,"** and low-skill mass inflow is "an altruistic luxury."
+He has the federalism split *exactly right in Register B* — then writes Register A as if he didn't. The
+dismantling is not "Smith is wrong" (mostly he isn't); it's **"his reassuring essays answer the
+national-average question and let the reader believe they answered the local-incidence question — which
+his own honest essay concedes they don't."**
 
-## 3. CATO Institute
-*(parent fills from `immigration-dismantle-cato-2026-06-25.md`)*
+| # | Claim | Empirics | Move that kills the overclaim |
+|---|---|---|---|
+| 1 | No native-wage cut | **SOLID on average** | (3) marginal→mass + (5) avg masks distribution |
+| 2 | Cost-of-living small | **OVERCLAIM** | (4)+(5) netting masks regressive renter-incidence — *now measured* (+1.4% rents; fb-share↔rent +0.74 in inelastic tercile) |
+| 3 | Unrelated to inflation | **SOLID (claim he defends)** | (1) minor headline→shelter-CPI switch |
+| 4 | Net fiscal positive | **SOLID federally** | (1) federal→state/local switch he makes correctly in Register B then drops |
+| 5 | Lower crime | **SOLID, repo-confirmed** | quotes inflated non-race-matched magnitude; omits first-gen-decay (weak hit) |
+| 6 | Deportation accomplishes nothing | **MOSTLY SOLID** | (3) "nothing" is an absolute his own Register B + the BEA sim contradict |
+
+## 2. Nicholas Decker — *right about the mechanisms, wrong about the welfare conclusion*
+Full: `immigration-dismantle-decker-2026-06-25.md`.
+
+Decker's move is methodological: the anti-immigration ledgers assume constant returns to scale (CRS),
+which is "obvious nonsense" given increasing returns (specialization/ideas/fixed costs); therefore
+immigrants "**must** make us richer." **Grant the CRS critique** — the repo's Colas-Sachs vindication
+(+$750/yr indirect benefit via complementarity, ladder 45) is exactly the hole in the static ledger he
+points at. **Kill the word "must":** it silently swaps *aggregate output* (where IRS operates) for
+*incumbent per-capita welfare*. The counterexample he says can't exist is the official scorekeeper's
+own projection — **CBO 2024: real GDP per person ~0.8% LOWER by 2034 even as aggregate GDP rises**
+([VERIFIED at primary, conf 0.95]). His "double world GDP" headline is upper-bound laundering **caught
+in his own text** — two paragraphs later he writes the structural estimates "are likely high… if labor
+is not identical, this breaks down… the most skilled people [move] first" — and uses the doubling figure
+anyway (the honest number is single-digit-% of world GDP at policy-plausible volumes — Docquier ~4%).
+And "the only coherent objection is voting" is flatly false: CBO 2025 scored the coherent *economic*
+(state/local fiscal-incidence) objection at −$9.2B. **Granted hard:** high-skill immigration is strongly
+net-positive (Claim 4 — conceded, not quibbled). Self-flagged GAP: the 23%/36% immigrant-inventor figures
+are direction-granted but not primary-verified.
+
+## 3. CATO Institute — *solid empirical floor (partly against-interest), overreaching macro ceiling*
+Full: `immigration-dismantle-cato-2026-06-25.md`.
+
+The honest split a one-sided memo can't make: **GRANT CATO's floor** — the TX homicide-conviction series
+(Nowrasteh PA977: illegal −26% vs native; primary admin data, detection-resistant margin, *against the
+libertarian's own interest*, **adopted at our ladder entry 48**); the federal fiscal positive (CBO); the
+"21% less welfare/capita" datum (Nowrasteh's own scope caveat: "not a net-fiscal analysis"); the
+legal-backlog facts (Bier: 9-decade Indian EB waits — near-pure deadweight). **Kill the ceiling** — the
+flagship **"$14.5T net positive, +$6.6T at state/local"** dies on two allocation choices: (a) assigning
+immigrants **zero** public-goods cost — a NAS scenario NAS *itself* flags as "less tenable" for sustained
+mass inflow, and the swing is a documented sign-flip (NAS: average-cost drops the 1st-gen deficit share to
+"<4%"; +$25B→−$16B in the canonical replication); (b) **counting US-born children as "natives" and
+assigning their K-12 cost to the child, not the immigrant** — moving the largest state/local
+immigrant-origin cost off the ledger. **(b) is the operator's 2nd-gen-as-native confound, fiscal
+direction — independently re-derived here:** you cannot bank the descendants' future taxes as the
+benefit while billing their education cost to "a native." Strip either assumption → state/local moves to
+the NAS/CBO net-cost-in-education finding (ladder 46). "Wall around the welfare state" (keyhole) can't
+touch the binding costs (education/*Plyler*, shelter) and is circular with the low-welfare-use claim.
 
 ---
 
-## What survives (the honest close)
-*(parent fills — the parts of each author's case that are CORRECT per our own evidence; the memo's
-credibility depends on this section being generous and specific, not a token.)*
+## What survives — the honest close (be specific; the memo's credibility lives here)
+
+All three are pro-immigration optimists, and a large fraction of what they say is **correct and
+repo-confirmed**. State it plainly:
+1. **Immigrants (1st-gen) have lower crime than natives** — direction robust (Light, SPI, the 188-spec curve, CATO's own convictions). Ladder 42/48. *Granted by all three; it's our finding too.*
+2. **The realized federal surge is fiscally positive** — CBO −$0.9T, +$8.9T GDP, + Colas-Sachs's +$750/yr indirect channel. Ladder 45-46.
+3. **Average native-wage effects of observed inflows are small** — the Mariel "10-30% harm" is a ~17-obs/yr artifact (Clemens-Hunt). The lump-of-labor fallacy is real. Ladder 44.
+4. **High-skill immigration is strongly net-positive**; the global/origin gains are directionally large; brain-drain doom is overstated.
+5. **Immigration did NOT drive the recent rent spike or the 2023 disinflation** — our growth-margin rent null (−0.17) + JCHS/Yale-Budget-Lab back Smith and Decker on the *national-aggregate-causation* question.
+
+**What does NOT survive is the impression their corpora leave:** that the **local-incidence,
+distributional, state/local-fiscal, capacity, and composition** questions are settled-small. They are
+real, measured (rent incidence +1.4% and concentrated in the inelastic metros where immigrants actually
+live; school-age-children intensity; state/local education cost), and they fall on renters, competing
+low-skill workers, and receiving cities.
+
+**The one error under all three (the central thesis, now evidenced):** they win on the coordinates they
+pick — *aggregate* GDP, *average* native, *federal* ledger, *national-average* crime, *steady-state
+selected* inflow — and present that win as settling the coordinates where the cost concentrates —
+*marginal low-skill*, *distributional*, *state/local*, *surge-absorption*, *composition*. It is
+**coordinate-switching**, and — per the operator's instrument critique — it runs down to the **generational
+accounting**: first-gen framing where it flatters crime, dynastic framing where it flatters fiscal. CATO's
+$14.5T claim and Smith's two registers are the same move at different scales. The dismantling is devastating
+precisely because it grants their valid empirics and then shows the reassurance is an artifact of which
+question got answered.
+
+**Pre-publication caveat (mandatory before any external use):** every *direct quote* in the three sub-memos
+was fetched by a teammate and tagged verbatim, but quotes are the weapon — **re-verify each at primary
+before publishing.** The one load-bearing external *fact* checked here (CBO GDP-per-person −0.8%) verified
+at 0.95; the inventor-share figures (Decker §4) are flagged unverified.
 
 ## Integration log
-- [ ] dismantle-smith — returned?
-- [ ] dismantle-decker — returned?
-- [ ] dismantle-cato — returned?
+- [x] dismantle-smith — integrated (two-registers / ledger-switching at corpus scale)
+- [x] dismantle-decker — integrated ("must" quantifier error; double-world-GDP self-refutation; CBO per-person verified)
+- [x] dismantle-cato — integrated (floor granted incl. crime; $14.5T ceiling killed on public-goods + 2nd-gen-as-native)
