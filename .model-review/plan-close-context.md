@@ -1,6 +1,6 @@
 # Plan-Close Review Packet
 
-- Repo: `/Users/alien/Projects/research`
+- Repo: `.`
 - Mode: `worktree`
 - Ref: `HEAD vs current worktree`
 - Profile: `formal_review`
@@ -507,7 +507,7 @@ research/immigration-causal-internal-vs-immigrant-newcomers.md --- Text
   . in-incidence-memo.md` and the local   . ` claim that used an annualized `B0
   . -burden findings have implicitly tr   . 5005` stock proxy. The current arti
   . eated "immigrant inflow" as the dom   . fact is [county_newcomer_comparison
-  . inant source of newcomer pressure o   . .parquet](/Users/alien/Projects/res
+  . inant source of newcomer pressure o   . .parquet](~/Projects/res
   . n counties' schools and housing. Th   . earch/sources/immigration-causal/da
   . e IRS SOI county-to-county tax-file   . ta/analysis/county_newcomer_compari
   . r migration data (2022-2023) merged   . son.parquet), built by [analyze_int
@@ -1883,15 +1883,15 @@ The first draft of this memo treated `2021–2022` overlap windows as placebo/pr
 
 ## Artifact basis
 
-1. [immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md](/Users/alien/Projects/research/research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md)
-2. [immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md](/Users/alien/Projects/research/research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md)
-3. [immigration-threshold-first-panel-2026-04-21.md](/Users/alien/Projects/research/research/immigration-threshold-first-panel-2026-04-21.md)
-4. [immigration-threshold-causal-levers-2026-04-21.md](/Users/alien/Projects/research/research/immigration-threshold-causal-levers-2026-04-21.md)
-5. [immigration-county-outcome-panel-2026-04-21.md](/Users/alien/Projects/research/research/immigration-county-outcome-panel-2026-04-21.md)
-6. [immigration-capacity-frontier-2026-04-21.md](/Users/alien/Projects/research/research/immigration-capacity-frontier-2026-04-21.md)
-7. [.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md](/Users/alien/Projects/research/.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md)
-8. [immigration-capacity-falsification-2026-04-21.md](/Users/alien/Projects/research/research/immigration-capacity-falsification-2026-04-21.md)
-9. [.model-review/2026-04-22-immigration-capacity-falsification-final-36f586/verified-disposition.md](/Users/alien/Projects/research/.model-review/2026-04-22-immigration-capacity-falsification-final-36f586/verified-disposition.md)
+1. [immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md](./research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md)
+2. [immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md](./research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md)
+3. [immigration-threshold-first-panel-2026-04-21.md](./research/immigration-threshold-first-panel-2026-04-21.md)
+4. [immigration-threshold-causal-levers-2026-04-21.md](./research/immigration-threshold-causal-levers-2026-04-21.md)
+5. [immigration-county-outcome-panel-2026-04-21.md](./research/immigration-county-outcome-panel-2026-04-21.md)
+6. [immigration-capacity-frontier-2026-04-21.md](./research/immigration-capacity-frontier-2026-04-21.md)
+7. [.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md](./.model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md)
+8. [immigration-capacity-falsification-2026-04-21.md](./research/immigration-capacity-falsification-2026-04-21.md)
+9. [.model-review/2026-04-22-immigration-capacity-falsification-final-36f586/verified-disposition.md](./.model-review/2026-04-22-immigration-capacity-falsification-final-36f586/verified-disposition.md)
 10. commit `2cdd801` (`[analysis] Measure capacity frontier — compare stock flow and load`) [SOURCE: git history]
 11. commit `1097c77` (`[research] Audit Bryan Caplan claims — score open-borders arguments`) [SOURCE: git history]
 
@@ -2001,7 +2001,7 @@ The first draft of this file narrated the earlier falsification pass as if its �
 ```text
 # Immigration county outcome panel: labor, domestic migration, and backlash
 
-Supersession note: this memo is an earlier county-outcome pass. For the current stance, read [immigration-capacity-falsification-2026-04-21.md](/Users/alien/Projects/research/research/immigration-capacity-falsification-2026-04-21.md), which extends QCEW back to `2017`, adds explicit window metadata, and downgrades the causal confidence of the wage/employment story.
+Supersession note: this memo is an earlier county-outcome pass. For the current stance, read [immigration-capacity-falsification-2026-04-21.md](./research/immigration-capacity-falsification-2026-04-21.md), which extends QCEW back to `2017`, adds explicit window metadata, and downgrades the causal confidence of the wage/employment story.
 
 **Question:** After joining official county QCEW annual outcomes to the threshold panel, what actually moves in high-immigration, low-capacity counties: employment, wages, IRS domestic migration, politics, or some narrower combination?  
 **Tier:** Deep | **Date:** 2026-04-21  
@@ -2021,9 +2021,9 @@ Supersession note: this memo is an earlier county-outcome pass. For the current 
 
 | # | Claim | Evidence | Confidence | Source | Status |
 |---|---|---|---|---|---|
-| 1 | High recent-immigration counties with low permit throughput show slower county wage growth | HC3 OLS: `high_recent_fb × low_permit ≈ -1.49 pp` on `2021–2024` QCEW weekly wage log growth, `t≈-3.15`, `p≈0.0017`; result survives with rent burden added | HIGH | [county_outcome_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_summary.json), [county_outcome_lever_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_lever_comparison.csv) | VERIFIED |
-| 2 | The same interaction does not produce a clear county employment-growth penalty | HC3 OLS: `high_recent_fb × low_permit ≈ -0.33 pp`, `t≈-0.67`, `p≈0.50` on QCEW employment log growth | HIGH | [county_outcome_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_outcome_summary.json) | VERIFIED |
-| 3 | In top recent-immigration counties, wage and employment medians improve as permit capacity rises | Q5 surge counties: median employment growth `2.72 -> 5.04 -> 6.15 -> 8.55 pp`; median weekly wage growth `11.00 -> 10.75 -> 11.45 -> 13.13 pp` across permit quartiles | HIGH | [county_outcome_bins.csv](/Users/alien/Project
+| 1 | High recent-immigration counties with low permit throughput show slower county wage growth | HC3 OLS: `high_recent_fb × low_permit ≈ -1.49 pp` on `2021–2024` QCEW weekly wage log growth, `t≈-3.15`, `p≈0.0017`; result survives with rent burden added | HIGH | [county_outcome_summary.json](./sources/immigration-causal/data/outcomes/analysis/county_outcome_summary.json), [county_outcome_lever_comparison.csv](./sources/immigration-causal/data/outcomes/analysis/county_outcome_lever_comparison.csv) | VERIFIED |
+| 2 | The same interaction does not produce a clear county employment-growth penalty | HC3 OLS: `high_recent_fb × low_permit ≈ -0.33 pp`, `t≈-0.67`, `p≈0.50` on QCEW employment log growth | HIGH | [county_outcome_summary.json](./sources/immigration-causal/data/outcomes/analysis/county_outcome_summary.json) | VERIFIED |
+| 3 | In top recent-immigration counties, wage and employment medians improve as permit capacity rises | Q5 surge counties: median employment growth `2.72 -> 5.04 -> 6.15 -> 8.55 pp`; median weekly wage growth `11.00 -> 10.75 -> 11.45 -> 13.13 pp` across permit quartiles | HIGH | [county_outcome_bins.csv](~/Project
 
 ... [truncated for review packet] ...
 
@@ -2180,7 +2180,7 @@ end-knowledge-index -->
 
 ## Status
 
-This memo supersedes the older `33x` claim that used an annualized `B05005` stock proxy. The current artifact is [county_newcomer_comparison.parquet](/Users/alien/Projects/research/sources/immigration-causal/data/analysis/county_newcomer_comparison.parquet), built by [analyze_internal_vs_immigrant_newcomers.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/analyze_internal_vs_immigrant_newcomers.py). Treat older citations to `33x` as outdated. [SOURCE: sources/immigration-causal/scripts/analyze_internal_vs_immigrant_newcomers.py]
+This memo supersedes the older `33x` claim that used an annualized `B05005` stock proxy. The current artifact is [county_newcomer_comparison.parquet](./sources/immigration-causal/data/analysis/county_newcomer_comparison.parquet), built by [analyze_internal_vs_immigrant_newcomers.py](./sources/immigration-causal/scripts/analyze_internal_vs_immigrant_newcomers.py). Treat older citations to `33x` as outdated. [SOURCE: sources/immigration-causal/scripts/analyze_internal_vs_immigrant_newcomers.py]
 
 ## What The Data Actually Compare
 
@@ -2256,19 +2256,19 @@ A metric can be statistically clean and still be only `contextual-only` for the 
 
 1. `ACS origin / education / recency composition counts`
 Rating: `strong`
-Reason: these are direct weighted ACS summaries, not inferred fiscal objects. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/derived/extend_immigration_context_with_origins.sql]
+Reason: these are direct weighted ACS summaries, not inferred fiscal objects. [SOURCE: ./sources/immigration-fiscal/data/derived/extend_immigration_context_with_origins.sql]
 
 2. `PUMA-level median gross rent as destination cost exposure`
 Rating: `strong`
-Reason: official ACS geography, directly observed, useful as exposure context. It is not a welfare scalar. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/derived/extend_immigration_context_with_pumas.sql]
+Reason: official ACS geography, directly observed, useful as exposure context. It is not a welfare scalar. [SOURCE: ./sources/immigration-fiscal/data/derived/extend_immigration_context_with_pumas.sql]
 
 3. `Household-normalized school-age child metrics after WGTP correction`
 Rating: `strong`
-Reason: the prior proxy was wrong; the corrected household join is materially better and uses the right unit. [SOURCE: /Users/alien/Projects/research/research/immigration-household-weighted-correction.md]
+Reason: the prior proxy was wrong; the corrected household join is materially better and uses the right unit. [SOURCE: ./research/immigration-household-weighted-correction.md]
 
 4. `Claim that the Clark “agree” papers are scope-limited rather than obviously false`
 Rating: `strong`
-Reason: that conclusion survives repeated paper review and is consistent with the actual paper scopes. [SOURCE: /Users/alien/Projects/research/research/immigration-economist-effects-matrix.md]
+Reason: that conclusion survives repeated paper review and is consistent with the actual paper scopes. [SOURCE: ./research/immigration-economist-effects-matrix.md]
 
 ## Medium
 
@@ -2278,15 +2278,15 @@ Reason: official sources strongly support the split, but our own warehouse only 
 
 6. `County CHAS housing-stress shares`
 Rating: `medium`
-Reason: good background stress metric, but not immigrant-attributable marginal burden. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_stage2_incidence_context.py]
+Reason: good background stress metric, but not immigrant-attributable marginal burden. [SOURCE: ./sources/immigration-fiscal/data/derived/build_stage2_incidence_context.py]
 
 7. `State school-spending per pupil as school-pressure context`
 Rating: `medium`
-Reason: official and clean, but too coarse for marginal burden or district-specific claims. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_immigration_context_duckdb.sql]
+Reason: official and clean, but too coarse for marginal burden or district-specific claims. [SOURCE: ./sources/immigration-fiscal/data/derived/build_immigration_context_duckdb.sql]
 
 8. `Housing-heavy versus school-heavy origin-group typology`
 Rating: `medium`
-Reason: useful descriptive shorthand for destination exposure, but still proxy-based and sensitive to geography choice. [SOURCE: /Users/alien/Projects/research/research/immigration-local-burden-puma-layer.md]
+Reason: useful descriptive shorthand for destination exposure, but still proxy-based and sensitive to geography choice. [SOURCE: ./research/immigration-local-burden-puma-layer.md]
 
 9. `Descendant upside as a real channel`
 Rating: `medium`
@@ -2296,15 +2296,15 @@ Reason: the long-run literature supports it, but sign and magnitude are heteroge
 
 10. `Area-weighted PUMA-to-county bridge`
 Rating: `weak`
-Reason: land area is not people, renters, students, or immigrant households. This is a convenience bridge, not a precise exposure model. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_puma_county_crosswalk.py]
+Reason: land area is not people, renters, students, or immigrant households. This is a convenience bridge, not a precise exposure model. [SOURCE: ./sources/immigration-fiscal/data/derived/build_puma_county_crosswalk.py]
 
 11. `IRS county migration balance as burden evidence`
 Rating: `weak`
-Reason: at best it is contextual mobility climate. It is not immigrant-specific and not causal. [SOURCE: /Users/alien/Projects/research/research/immigration-stage2-county-bridge-batch.md]
+Reason: at best it is contextual mobility climate. It is not immigrant-specific and not causal. [SOURCE: ./research/immigration-stage2-county-bridge-batch.md]
 
 12. `Federal-positive versus federal-negative origin ranking from ACS income and benefit proxies`
 Rating: `weak`
-Reason: this is not a tax-transfer microsimulation. It is a partial proxy stack. [SOURCE: /Users/alien/Projects/research/research/immigration-low-skill-origin-incidence-memo.md]
+Reason: this is not a tax-transfer microsimulation. It is a partial proxy stack. [SOURCE: ./research/immigration-low-skill-origin-incidence-memo.md]
 
 13. `Magnitude claims for local school burden from current warehouse`
 Rating: `weak`

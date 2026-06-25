@@ -1,7 +1,7 @@
 # Immigration Conclusion Audit Review Context
 
 Date: 2026-06-16
-Repo: /Users/alien/Projects/research
+Repo: .
 
 ## Task
 
@@ -3161,12 +3161,12 @@ The repo has unrelated dirty/untracked immigration files. Do not assume untracke
     22	
     23	## New artifacts
     24	
-    25	1. [analyze_capacity_frontier.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/analyze_capacity_frontier.py)
-    26	2. [county_capacity_frontier_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_frontier_summary.json)
-    27	3. [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv)
-    28	4. [county_capacity_threshold_grid.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_grid.csv)
-    29	5. [county_load_capacity_deciles.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_load_capacity_deciles.csv)
-    30	6. [receiver_capacity_descriptives_2024.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_capacity_descriptives_2024.csv)
+    25	1. [analyze_capacity_frontier.py](./sources/immigration-causal/scripts/analyze_capacity_frontier.py)
+    26	2. [county_capacity_frontier_summary.json](./sources/immigration-causal/data/outcomes/analysis/county_capacity_frontier_summary.json)
+    27	3. [county_capacity_model_comparison.csv](./sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv)
+    28	4. [county_capacity_threshold_grid.csv](./sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_grid.csv)
+    29	5. [county_load_capacity_deciles.csv](./sources/immigration-causal/data/outcomes/analysis/county_load_capacity_deciles.csv)
+    30	6. [receiver_capacity_descriptives_2024.csv](./sources/immigration-causal/data/outcomes/analysis/receiver_capacity_descriptives_2024.csv)
     31	
     32	## Measurement frame
     33	
@@ -3190,13 +3190,13 @@ The repo has unrelated dirty/untracked immigration files. Do not assume untracke
     51	
     52	| # | Claim | Evidence | Confidence | Source | Status |
     53	|---|---|---|---|---|---|
-    54	| 1 | Stock share remains the strongest simple county predictor of GOP margin shift | In separate one-predictor county models, standardized `fb_share` has larger `t` and higher adjusted `R²` than flow or load | HIGH | [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
-    55	| 2 | Load-capacity still adds residual political-response signal beyond stock and flow | In the combined margin model, standardized load remains positive and significant (`t≈2.74`, `p≈0.006`) | HIGH | [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
+    54	| 1 | Stock share remains the strongest simple county predictor of GOP margin shift | In separate one-predictor county models, standardized `fb_share` has larger `t` and higher adjusted `R²` than flow or load | HIGH | [county_capacity_model_comparison.csv](./sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
+    55	| 2 | Load-capacity still adds residual political-response signal beyond stock and flow | In the combined margin model, standardized load remains positive and significant (`t≈2.74`, `p≈0.006`) | HIGH | [county_capacity_model_comparison.csv](./sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
     56	| 3 | Wage-growth models load more cleanly on load-capacity than on stock or flow alone | Load-only wage model has the strongest negative `t` and best adjusted `R²` among single-predictor formulations | HIGH | same | VERIFIED |
     57	| 4 | A negative employment signal appears under direct load-capacity formulations even though the earlier coarse threshold did not show broad job loss | Load-only and combined employment models are negative and highly significant; stock and flow alone are weak or null | HIGH | same | VERIFIED |
-    58	| 5 | The threshold is clearest in the broad high-flow tail (`70th-80th percentile`) interacted with low permit capacity, not at one single extreme cutoff | Interaction grid shows stronger wage and some politics/employment effects at `q70-q80` than at `q90` | HIGH | [county_capacity_threshold_grid.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_grid.csv) | VERIFIED |
-    59	| 6 | Native net migration is more negative in higher load-capacity deciles | Load deciles show about `-1.07 pp` gap from `D1` to `D10`; load-based models outperform stock-only on adjusted `R²` | HIGH | [county_load_capacity_deciles.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_load_capacity_deciles.csv), [county_capacity_model_comparison.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
-    60	| 7 | Receiver-city spending is more tightly tied to absolute shelter shortfall than to saturation ratio alone | In 2024 receiver descriptives, `corr(shelter_gap_vs_hic, spending) ≈ 0.93`, much larger than `corr(sheltered_to_hic_ratio, spending)` | MEDIUM | [receiver_capacity_descriptives_2024.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/receiver_capacity_descriptives_2024.csv) | VERIFIED |
+    58	| 5 | The threshold is clearest in the broad high-flow tail (`70th-80th percentile`) interacted with low permit capacity, not at one single extreme cutoff | Interaction grid shows stronger wage and some politics/employment effects at `q70-q80` than at `q90` | HIGH | [county_capacity_threshold_grid.csv](./sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_grid.csv) | VERIFIED |
+    59	| 6 | Native net migration is more negative in higher load-capacity deciles | Load deciles show about `-1.07 pp` gap from `D1` to `D10`; load-based models outperform stock-only on adjusted `R²` | HIGH | [county_load_capacity_deciles.csv](./sources/immigration-causal/data/outcomes/analysis/county_load_capacity_deciles.csv), [county_capacity_model_comparison.csv](./sources/immigration-causal/data/outcomes/analysis/county_capacity_model_comparison.csv) | VERIFIED |
+    60	| 7 | Receiver-city spending is more tightly tied to absolute shelter shortfall than to saturation ratio alone | In 2024 receiver descriptives, `corr(shelter_gap_vs_hic, spending) ≈ 0.93`, much larger than `corr(sheltered_to_hic_ratio, spending)` | MEDIUM | [receiver_capacity_descriptives_2024.csv](./sources/immigration-causal/data/outcomes/analysis/receiver_capacity_descriptives_2024.csv) | VERIFIED |
     61	
     62	**Scope note:** In this table, `HIGH` and `VERIFIED` mean the reported model-output pattern is file-backed and reproducible from the listed artifacts. They do not mean the county associations are clean causal effects; the causal caveats below still apply. [INFERENCE]
     63	
@@ -3450,19 +3450,19 @@ The repo has unrelated dirty/untracked immigration files. Do not assume untracke
     15	
     16	1. `ACS origin / education / recency composition counts`
     17	Rating: `strong`
-    18	Reason: these are direct weighted ACS summaries, not inferred fiscal objects. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/derived/extend_immigration_context_with_origins.sql]
+    18	Reason: these are direct weighted ACS summaries, not inferred fiscal objects. [SOURCE: ./sources/immigration-fiscal/data/derived/extend_immigration_context_with_origins.sql]
     19	
     20	2. `PUMA-level median gross rent as destination cost exposure`
     21	Rating: `strong`
-    22	Reason: official ACS geography, directly observed, useful as exposure context. It is not a welfare scalar. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/derived/extend_immigration_context_with_pumas.sql]
+    22	Reason: official ACS geography, directly observed, useful as exposure context. It is not a welfare scalar. [SOURCE: ./sources/immigration-fiscal/data/derived/extend_immigration_context_with_pumas.sql]
     23	
     24	3. `Household-normalized school-age child metrics after WGTP correction`
     25	Rating: `strong`
-    26	Reason: the prior proxy was wrong; the corrected household join is materially better and uses the right unit. [SOURCE: /Users/alien/Projects/research/research/immigration-household-weighted-correction.md]
+    26	Reason: the prior proxy was wrong; the corrected household join is materially better and uses the right unit. [SOURCE: ./research/immigration-household-weighted-correction.md]
     27	
     28	4. `Claim that the Clark “agree” papers are scope-limited rather than obviously false`
     29	Rating: `strong`
-    30	Reason: that conclusion survives repeated paper review and is consistent with the actual paper scopes. [SOURCE: /Users/alien/Projects/research/research/immigration-economist-effects-matrix.md]
+    30	Reason: that conclusion survives repeated paper review and is consistent with the actual paper scopes. [SOURCE: ./research/immigration-economist-effects-matrix.md]
     31	
     32	## Medium
     33	
@@ -3472,15 +3472,15 @@ The repo has unrelated dirty/untracked immigration files. Do not assume untracke
     37	
     38	6. `County CHAS housing-stress shares`
     39	Rating: `medium`
-    40	Reason: good background stress metric, but not immigrant-attributable marginal burden. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_stage2_incidence_context.py]
+    40	Reason: good background stress metric, but not immigrant-attributable marginal burden. [SOURCE: ./sources/immigration-fiscal/data/derived/build_stage2_incidence_context.py]
     41	
     42	7. `State school-spending per pupil as school-pressure context`
     43	Rating: `medium`
-    44	Reason: official and clean, but too coarse for marginal burden or district-specific claims. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_immigration_context_duckdb.sql]
+    44	Reason: official and clean, but too coarse for marginal burden or district-specific claims. [SOURCE: ./sources/immigration-fiscal/data/derived/build_immigration_context_duckdb.sql]
     45	
     46	8. `Housing-heavy versus school-heavy origin-group typology`
     47	Rating: `medium`
-    48	Reason: useful descriptive shorthand for destination exposure, but still proxy-based and sensitive to geography choice. [SOURCE: /Users/alien/Projects/research/research/immigration-local-burden-puma-layer.md]
+    48	Reason: useful descriptive shorthand for destination exposure, but still proxy-based and sensitive to geography choice. [SOURCE: ./research/immigration-local-burden-puma-layer.md]
     49	
     50	9. `Descendant upside as a real channel`
     51	Rating: `medium`
@@ -3490,19 +3490,19 @@ The repo has unrelated dirty/untracked immigration files. Do not assume untracke
     55	
     56	10. `Area-weighted PUMA-to-county bridge`
     57	Rating: `weak`
-    58	Reason: land area is not people, renters, students, or immigrant households. This is a convenience bridge, not a precise exposure model. [SOURCE: /Users/alien/Projects/research/sources/immigration-fiscal/data/derived/build_puma_county_crosswalk.py]
+    58	Reason: land area is not people, renters, students, or immigrant households. This is a convenience bridge, not a precise exposure model. [SOURCE: ./sources/immigration-fiscal/data/derived/build_puma_county_crosswalk.py]
     59	
     60	11. `IRS county migration balance as burden evidence`
     61	Rating: `weak`
-    62	Reason: at best it is contextual mobility climate. It is not immigrant-specific and not causal. [SOURCE: /Users/alien/Projects/research/research/immigration-stage2-county-bridge-batch.md]
+    62	Reason: at best it is contextual mobility climate. It is not immigrant-specific and not causal. [SOURCE: ./research/immigration-stage2-county-bridge-batch.md]
     63	
     64	12. `Federal-positive versus federal-negative origin ranking from ACS income and benefit proxies`
     65	Rating: `weak`
-    66	Reason: this is not a tax-transfer microsimulation. It is a partial proxy stack. [SOURCE: /Users/alien/Projects/research/research/immigration-low-skill-origin-incidence-memo.md]
+    66	Reason: this is not a tax-transfer microsimulation. It is a partial proxy stack. [SOURCE: ./research/immigration-low-skill-origin-incidence-memo.md]
     67	
     68	13. `Magnitude claims for local school burden from current warehouse`
     69	Rating: `weak`
-    70	Reason: district assignment, ELL intensity, migrant composition, and marginal cost are not modeled well enough yet. [SOURCE: /Users/alien/Projects/research/research/immigration-adversarial-review.md]
+    70	Reason: district assignment, ELL intensity, migrant composition, and marginal cost are not modeled well enough yet. [SOURCE: ./research/immigration-adversarial-review.md]
     71	
     72	## Contextual-only
     73	

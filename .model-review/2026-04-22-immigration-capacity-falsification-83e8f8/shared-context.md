@@ -1,6 +1,6 @@
 # Model Review Context Packet
 
-- Project: `/Users/alien/Projects/research`
+- Project: `.`
 - Axes: `arch,formal`
 
 ## Preamble
@@ -134,7 +134,7 @@ All code, plans, and features in this project are developed by AI agents, not hu
 ```text
 # Plan-Close Review Packet
 
-- Repo: `/Users/alien/Projects/research`
+- Repo: `.`
 - Mode: `worktree`
 - Ref: `HEAD vs current worktree`
 - Profile: `formal_review`
@@ -616,21 +616,21 @@ if __name__ == "__main__":
 
 ## New artifacts
 
-1. [analyze_capacity_falsification.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/analyze_capacity_falsification.py)
-2. [county_capacity_falsification_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_falsification_summary.json)
-3. [county_capacity_permutation_results.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_permutation_results.csv)
-4. [county_capacity_placebo_results.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_placebo_results.csv)
-5. [county_capacity_leave_one_state_out.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_leave_one_state_out.csv)
-6. [county_capacity_threshold_validation.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_validation.csv)
-7. [county_capacity_monotonicity.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_monotonicity.csv)
+1. [analyze_capacity_falsification.py](./sources/immigration-causal/scripts/analyze_capacity_falsification.py)
+2. [county_capacity_falsification_summary.json](./sources/immigration-causal/data/outcomes/analysis/county_capacity_falsification_summary.json)
+3. [county_capacity_permutation_results.csv](./sources/immigration-causal/data/outcomes/analysis/county_capacity_permutation_results.csv)
+4. [county_capacity_placebo_results.csv](./sources/immigration-causal/data/outcomes/analysis/county_capacity_placebo_results.csv)
+5. [county_capacity_leave_one_state_out.csv](./sources/immigration-causal/data/outcomes/analysis/county_capacity_leave_one_state_out.csv)
+6. [county_capacity_threshold_validation.csv](./sources/immigration-causal/data/outcomes/analysis/county_capacity_threshold_validation.csv)
+7. [county_capacity_monotonicity.csv](./sources/immigration-causal/data/outcomes/analysis/county_capacity_monotonicity.csv)
 
 ## Claims table
 
 | # | Claim | Evidence | Confidence | Source | Status |
 |---|---|---|---|---|---|
-| 1 | The county `load-capacity` signal is much stronger than a random within-state reassignment | All four key outcomes beat 300 within-state permutations with empirical `p≈0.0033` | HIGH | [county_capacity_permutation_results.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_permutation_results.csv) | VERIFIED |
-| 2 | The sign is not driven by a single state | Leave-one-state-out keeps the sign for margin, wages, employment, and net migration; worst-case `|t|` remains material | HIGH | [county_capacity_leave_one_state_out.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_leave_one_state_out.csv) | VERIFIED |
-| 3 | Decile monotonicity is real, not a binning accident | Spearman trends are strong and correctly signed across the deciles for all four outcomes | HIGH | [county_capacity_monotonicity.csv](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_monotonicity.csv) | VERIFIED |
+| 1 | The county `load-capacity` signal is much stronger than a random within-state reassignment | All four key outcomes beat 300 within-state permutations with empirical `p≈0.0033` | HIGH | [county_capacity_permutation_results.csv](./sources/immigration-causal/data/outcomes/analysis/county_capacity_permutation_results.csv) | VERIFIED |
+| 2 | The sign is not driven by a single state | Leave-one-state-out keeps the sign for margin, wages, employment, and net migration; worst-case `|t|` remains material | HIGH | [county_capacity_leave_one_state_out.csv](./sources/immigration-causal/data/outcomes/analysis/county_capacity_leave_one_state_out.csv) | VERIFIED |
+| 3 | Decile monotonicity is real, not a binning accident | Spearman trends are strong and correctly signed across the deciles for all four outcomes | HIGH | [county_capacity_monotonicity.csv](./sources/immigration-causal/data/outcomes/analysis/county_capacity_monotonicity.csv) | VERIFIED |
 | 4 | The broad `q80 flow x q50 permit` threshold family generalizes better than a single exact cutoff | Repeated split-sample threshold search
 
 ... [truncated for review packet] ...
@@ -790,8 +790,8 @@ The first durable correction was the `incidence split`:
 
 Artifacts:
 
-1. [immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md](/Users/alien/Projects/research/research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md)
-2. [immigration-claims-matrix-2026-04-11.md](/Users/alien/Projects/research/research/immigration-claims-matrix-2026-04-11.md)
+1. [immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md](./research/immigration-smith-decker-friedman-comparative-quantitative-audit-2026-04-11.md)
+2. [immigration-claims-matrix-2026-04-11.md](./research/immigration-claims-matrix-2026-04-11.md)
 
 ### Reasoning update
 
@@ -824,7 +824,7 @@ Reading the actual papers and cross-checking against local capacity work showed:
 
 Artifact:
 
-1. [immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md](/Users/alien/Projects/research/research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md)
+1. [immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md](./research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md)
 
 ### Reasoning update
 
@@ -857,7 +857,7 @@ The `2021–2024` surge showed that the relevant regime can shift:
 
 Artifact:
 
-1. [immigration-causal-surge-2021-2024.md](/Users/alien/Projects/research/research/immigration-causal-surge-2021-2024.md)
+1. [immigration-causal-surge-2021-2024.md](./research/immigration-causal-surge-2021-2024.md)
 
 ### Reasoning update
 
@@ -888,8 +888,8 @@ The first joined threshold pass and lever pass showed:
 
 Artifacts:
 
-1. [immigration-threshold-first-panel-2026-04-21.md](/Users/alien/Projects/research/research/immigration-threshold-first-panel-2026-04-21.md)
-2. [immigration-threshold-causal-levers-2026-04-21.md](/Users/alien/Projects/research/research/immigrati
+1. [immigration-threshold-first-panel-2026-04-21.md](./research/immigration-threshold-first-panel-2026-04-21.md)
+2. [immigration-threshold-causal-levers-2026-04-21.md](./research/immigrati
 
 ... [truncated for review packet] ...
 
@@ -925,8 +925,8 @@ The falsification pass did five things:
 
 Derived artifacts:
 
-1. [analyze_capacity_falsification.py](/Users/alien/Projects/research/sources/immigration-causal/scripts/analyze_capacity_falsification.py)
-2. [county_capacity_falsification_summary.json](/Users/alien/Projects/research/sources/immigration-causal/data/outcomes/analysis/county_capacity_falsification_summary.json)
+1. [analyze_capacity_falsification.py](./sources/immigration-causal/scripts/analyze_capacity_falsification.py)
+2. [county_capacity_falsification_summary.json](./sources/immigration-causal/data/outcomes/analysis/county_capacity_falsification_summary.json)
 
 ### Reasoning update
 

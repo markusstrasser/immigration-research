@@ -10,7 +10,7 @@
     "Mode": "worktree",
     "Profile": "formal_review",
     "Ref": "HEAD vs current worktree",
-    "Repo": "/Users/alien/Projects/research",
+    "Repo": ".",
     "budget_enforcement": {
       "dropped_blocks": [],
       "estimate_method": "heuristic:chars_div_4",
