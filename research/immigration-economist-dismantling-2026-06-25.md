@@ -274,7 +274,7 @@ from the authors' OWN against-interest admissions (PNAS Nexus 2024 review, re-ve
   SemScholar mirror of pgae344.]*
 - **Selection-not-treatment (Move 3):** the advantage runs partly through *selection of who emigrates* +
   *geographic sorting* (the AER 2021 mechanism) — their own boundary condition on the universal claim; they
-  concede they "lack household-level data to evaluate geography in the modern period."
+  concede they lack household-level data to evaluate geography in the modern period (verbatim: "we do not yet have access to household-level data to evaluate the role of geography in the modern period").
 
 ---
 
