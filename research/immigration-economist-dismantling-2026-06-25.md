@@ -10,9 +10,8 @@ this document is the synthesis and entry point.
 **The frame — and why the FAIR version is the strongest one. [FRAMING-SENSITIVE]**
 These authors are pro-immigration optimists. This repo's *own* evidence agrees with them on a great deal —
 so a one-sided hit job would be both dishonest and self-contradictory (it would have to deny our own
-confidence ladder, which is *built on* the academic foundations dismantled in Tier 2). The dismantling that
-actually lands grants what is empirically solid and then surgically kills the **overclaims and rhetorical
-moves**. Instrument-bias note (`notes/llm-bias-caveat.md`): the LLM tilt runs *toward* these authors'
+confidence ladder, which is *built on* the academic foundations dismantled in Tier 2). The approach is to
+grant what is empirically solid and then target the **overclaims and rhetorical moves**. Instrument-bias note (`notes/llm-bias-caveat.md`): the LLM tilt runs *toward* these authors'
 conclusions, so where this memo grants them, that grant is load-bearing (verified at primary, ladder 44-51);
 where it challenges them, the challenge rests on a *specific analytical error identified at the line*. The
 fairness keystone is external and ideologically aligned: **Alexander Kustov**, a self-described cosmopolitan
@@ -101,7 +100,7 @@ canon — we quote them.**
 ## 1. Noah Smith — *ledger-switching at corpus scale (self-sourced)*
 Full: `immigration-dismantle-noah-smith-2026-06-25.md`.
 
-**The master key: Smith has TWO registers and never reconciles them.** *Register A* (the reassuring
+**Smith has two registers and never reconciles them.** *Register A* (the reassuring
 "evidence" essays — *Why immigration doesn't reduce wages*, *Mass deportation would accomplish nothing*)
 deploys steady-state / average / national-aggregate machinery: "the total effect on wages is…not much,"
 cost-of-living "relatively small." *Register B* (*America, please be reasonable*, 2024-01) concedes the
@@ -144,7 +143,7 @@ are direction-granted but not primary-verified.
 ## 3. CATO Institute — *solid empirical floor (partly against-interest), overreaching macro ceiling*
 Full: `immigration-dismantle-cato-2026-06-25.md`.
 
-The honest split a one-sided memo can't make: **GRANT CATO's floor** — the TX homicide-conviction series
+The split a wholesale dismissal would miss: **GRANT CATO's floor** — the TX homicide-conviction series
 (Nowrasteh PA977: illegal −26% vs native; primary admin data, detection-resistant margin, *against the
 libertarian's own interest*, **adopted at our ladder entry 48**); the federal fiscal positive (CBO); the
 "21% less welfare/capita" datum (Nowrasteh's own scope caveat: "not a net-fiscal analysis"); the
@@ -172,7 +171,7 @@ job here would contradict our own evidence. Card (1990) showed the Mariel 7% lab
 effect on less-skilled wages; Ottaviano-Peri supplied the mechanism (imperfect substitution / task
 complementarity) and the magnitude (average US-born wage **+0.7%**). The repo confirms every load-bearing
 piece (Mariel-as-artifact ladder 44; E-Verify null ladder 17; Foged-Peri ladder 19). **GRANT the average
-and the mechanism in full.** The canon fails only at three surgical scope-stretches:
+and the mechanism in full.** The canon fails only at three scope-stretches:
 
 - **KILL A (Move 3, on method).** The area-study *design* is read as a clean *general* proof. It isn't:
   native out-migration + capital mobility wash out **40-60%** of the local-vs-national wage gap (Borjas
@@ -190,8 +189,8 @@ and the mechanism in full.** The canon fails only at three surgical scope-stretc
   there is no comparison city and no 40-60% local escape valve. **Ladder 29 already forbids this
   extrapolation; surge wage estimates remain unrun.**
 
-**Net:** Card-Peri are right that wage-doom is overstated. The kill is three scope-stretches on an
-otherwise-granted, repo-confirmed canon — and the central one is quoted from Peri's own paper.
+**Net:** Card-Peri are right that wage-doom is overstated; the three scope-stretches are where an
+otherwise-granted, repo-confirmed canon gets over-deployed.
 
 ## 5. Michael Clemens — *Place Premium real, mobility high-leverage; "double world GDP" is an upper-bound slogan*
 Full: `immigration-dismantle-clemens-2026-06-25.md`.
@@ -203,7 +202,7 @@ gap for identical workers; selection modest 1.0-1.3 — kills the "ambitious sel
 **GRANT** that migration gains are plausibly among the largest remaining global efficiency gains (World Bank:
 100M movers → $1.4T/yr); **GRANT** that mobility is unusually high-leverage.
 
-**The sharpest point is that Clemens's OWN later model bounds the open-borders inference.** Clemens-Pritchett
+**Clemens's own later model bounds the open-borders inference.** Clemens-Pritchett
 (2019, *JDE* 138:153-164) formalizes an **interior optimum** migration rate (origin-TFP transmission ×
 assimilation × congestion) and concludes, verbatim, that "dynamically efficient policy would **NOT** imply
 open borders but would imply **relaxations on current restrictions**." So the *open-borders inference* — that
@@ -241,9 +240,9 @@ clean; entrepreneurship; crime-direction with his own honest caveats; federal-fi
 demographic argument). The danger here is *excess agreement* (the instrument's prior aligns with him), so
 every grant is repo-tied and every kill is a coordinate/incidence charge on data:
 
-- **The generational frame-switch (Move 1, sharpened by ladder 51) — the key kill.** Hernandez *does*
+- **The generational frame-switch (Move 1, sharpened by ladder 51).** Hernandez *does*
   address the generational fiscal ledger honestly (names the −$1,600 1st-gen state cost, the 2-to-1
-  descendant ROI), so the naive "treats 1st-gen as permanent" charge *fails*. The real kill: he runs the
+  descendant ROI), so the naive "treats 1st-gen as permanent" charge *fails*. The sharper charge: he runs the
   **dynastic frame for fiscal** (count descendants → ledger flips positive) and the **first-gen frame for
   crime** (advantage that decays by 2nd gen) — opposite generational conventions on adjacent chapters, each
   chosen to come out positive.
@@ -292,10 +291,10 @@ from the authors' OWN against-interest admissions (PNAS Nexus 2024 review, re-ve
 
 ---
 
-## What survives — the honest close (be specific; the memo's credibility lives here)
+## What survives — the honest close
 
 All seven are pro-immigration optimists, and a large fraction of what they say is **correct and
-repo-confirmed**. State it plainly:
+repo-confirmed**:
 1. **Immigrants (1st-gen) have lower crime than natives** — direction robust (Light, SPI, the 188-spec curve, CATO's own convictions). Ladder 42/48. *Granted by all; it's our finding too.*
 2. **The realized federal surge is fiscally positive** — CBO −$0.9T, +$8.9T GDP, + Colas-Sachs's +$750/yr indirect channel. Ladder 45-46.
 3. **Average native-wage effects of observed inflows are small** — Card-Peri's +0.7% average; the Mariel "10-30% harm" is a ~17-obs/yr artifact (Clemens-Hunt). The lump-of-labor fallacy is real. Ladder 44.
@@ -318,10 +317,10 @@ concentrates — *marginal low-skill*, *distributional*, *state/local*, *surge-a
 Hernandez's adjacent chapters, and *Streets of Gold*'s relative-rank retreat are the **same move at different
 scales**. In the crime-and-fiscal targets it extends to the **generational unit** — first-generation *status*
 for crime, dynastic *descent* for fiscal/mobility, two different estimands that mislead only when an author
-runs both on adjacent claims without labeling the scope-switch. The critique lands precisely because it grants
-their valid empirics and shows the reassurance is an artifact of which question got answered — and **its
-strongest form is built from the canon's own primary texts** (Peri's model names the losers; Clemens's 2019
-model bounds the doubling; Abramitzky-Boustan concede the non-convergence tail).
+runs both on adjacent claims without labeling the scope-switch. The critique grants their valid empirics and
+shows the reassurance is an artifact of which question got answered. The kills come from the canon's own
+primary texts: Peri's model names the losers, Clemens's 2019 model bounds the doubling, Abramitzky-Boustan
+concede the non-convergence tail.
 
 **Pre-publication quote verification — COMPLETE (2026-06-25).** Quotes are the weapon, so before any external
 use every direct quote and load-bearing number across the seven sub-memos was re-verified against its **actual
