@@ -23,7 +23,7 @@ single well-sourced falsification beats ten plausible syntheses.
 
 | Path | What |
 |------|------|
-| `research/immigration-*.md` | The memo stack — ~100 sourced memos with confidence tiers and supersession notes. Start at the [topic index](research/immigration-INDEX.md). |
+| `research/immigration-*.md` | The memo stack — 130+ sourced memos with confidence tiers and supersession notes. Start at the [topic index](research/immigration-INDEX.md). |
 | `warehouse/immigration.duckdb` | **The unified data warehouse** — all cleaned/joined panels in one schema-namespaced file (`context` / `lifetime` / `fiscal`) with a self-describing `_catalog` table. *(Built locally; gitignored.)* |
 | `infra/immigration-fiscal/` | The acquisition + build pipeline (acquire → parse → warehouse). See its [`REPRODUCE.md`](infra/immigration-fiscal/REPRODUCE.md). |
 | `queries/immigration/` | Checked-in SQL that reproduces the headline numbers (each file has `-- requires:` and `-- backs:` headers). |
@@ -91,9 +91,10 @@ Shortest path into the reasoning:
 4. [`immigration-fiscal-welfare-ledger-map.md`](research/immigration-fiscal-welfare-ledger-map.md) — the unifying "positive vs negative?" decomposition
 5. [`immigration-conclusion-audit-running-fixes.md`](research/immigration-conclusion-audit-running-fixes.md) — what changed (read before citing any number)
 
-## Sharing & license
+## Status & how to cite
 
-Findings are **not** published or shared externally without the repo owner's sign-off (see
-`CLAUDE.md` → Autonomy Boundaries). This is working research, not a finished publication — memos
-carry explicit confidence tiers and many are marked superseded. Cite the dated artifact, not the
-headline.
+This repo is public for transparency and scrutiny, but it is **working research, not a finished
+publication**: memos carry explicit confidence tiers, many are marked superseded, and the analysis is
+LLM-conducted (see the instrument-bias caveat above). Cite the dated artifact, not the headline, and
+treat any conclusion as provisional. The agent operating this repo does not publish or promote findings
+externally on its own — that stays a human decision (`CLAUDE.md` → Autonomy Boundaries).

@@ -116,7 +116,7 @@ Each topic has a file prefix and its own index. Read the relevant topic index wh
 
 | Topic | Prefix | Index | Files |
 |-------|--------|-------|-------|
-| Immigration (fiscal/crime) | `immigration-*` | `research/immigration-INDEX.md` | 100 |
+| Immigration (fiscal/crime) | `immigration-*` | `research/immigration-INDEX.md` | 130+ |
 
 New topics: create `research/<topic>-INDEX.md`, add a row here, use `<topic>-*` prefix for all files. Every top-level `research/*.md` file carries the `immigration-*` prefix — the pre-prefix legacy files were migrated 2026-06-24.
 
