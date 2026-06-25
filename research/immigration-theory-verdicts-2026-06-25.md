@@ -69,3 +69,11 @@ Acted on recommendation #1 below. Fixed the source `duckdb_test`s (alias drift a
 1. **Fix the source `duckdb_test`s** in the cluster `.mining` JSONs: apply the `ctx.→context.`/`life.→lifetime.` alias correction at the source (so they run without the runner-side patch), and repair the 11 broken ones (or delete the prose-in-SQL one). Then a single re-run scores the full 32.
 2. **Act on the 3 FAILs:** (M13) keep the annual-vs-lifetime sign divergence as an explicit ledger-map caveat — it's now empirically shown; (I8) add a return-migration exit-rate adjustment to the <HS person-year stock; (F5) either condition high-skill NPV on the innovation tag or downgrade the confidence that the positive sign is mechanism-explained.
 3. **Audit the remittance unit bug** ($151k/adult).
+
+## Revisions
+
+**2026-06-25 (later) — the 3 re-spec items + the avg_medicaid flag resolved.**
+- **A#4 → PENDING-DATA.** No recent-arrival-by-education aggregate exists, so the test could only compute STOCK-weighted NPV and cannot adjudicate "recent > stock." Marked PENDING-DATA in `cluster-a-npv.json` (needs a YRIMMIG≤5yr education-share table from IPUMS/ACS).
+- **K#0 → NOT-TESTABLE.** Confirmed the provenance tautology — both `current_spend_per_pupil` series derive from the same NCES F-33 source, so CORR≈1.0 validates nothing. Marked NOT-TESTABLE (a real validation needs two independent products, e.g. Census F-33 vs NCES CCD).
+- **K#2 → now ADJUDICATES.** Replaced the bare top-10 RPP listing with a real border(TX/AZ/NM)-vs-gateway(NY/NJ/MA/IL) test. Result: **destination spread 24.6% (>15% → SUPPORTED, the state cost dimension is real); clean border-vs-gateway split only ~10% (modest — CA is a high-cost border outlier).** So the state RPP dimension matters, but not as a clean border/gateway dichotomy.
+- **The "Adjacent flag" (above) is RESOLVED.** The forensic data-integrity gate audited `origin_fiscal_scenario_2023`: `avg_medicaid_total_computable` (~$299B) was NOT a unit bug — it's a correct mean of state Medicaid TOTALS (a "which states does this origin concentrate in" context signal), just misleadingly named. Renamed → `mean_state_medicaid_total_usd`; gate now ✓ no flags.

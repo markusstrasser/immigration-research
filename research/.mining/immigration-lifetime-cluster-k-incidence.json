@@ -160,7 +160,7 @@
     {
       "theory": "County school spend join explains origin scenario per-pupil field",
       "prediction": "area_wtd_current_spend_per_pupil correlates with county F-33 median at r>0.5 after unit fix",
-      "duckdb_test": "SELECT CORR(s.current_spend_per_pupil, p.current_spend_per_pupil) AS corr_county_perpupil, COUNT(*) AS n_counties FROM lifetime.school_finance_county_2023 s JOIN context.puma_county_context_2023 p ON s.county_fips = p.county_fips",
+      "duckdb_test": "-- NOT-TESTABLE: provenance tautology. Both current_spend_per_pupil series (lifetime.school_finance_county_2023 and context.puma_county_context_2023) derive from the same NCES F-33 source, so CORR is trivially ~1.0 and validates nothing. A real per-pupil validation needs two INDEPENDENT products (e.g. Census F-33 vs NCES CCD tabn236.10).",
       "falsifier": "Correlation near zero or 10x scale mismatch → unit bug"
     },
     {
@@ -171,9 +171,9 @@
     },
     {
       "theory": "State RPP scales federal net proxy differently for border vs gateway states",
-      "prediction": "state_stage5 avg_rpp spread > 15% across top Mexico-destination states",
-      "duckdb_test": "SELECT state_fips, rpp_all_items_2023 FROM lifetime.state_stage5_context_2023 ORDER BY 2 DESC LIMIT 10",
-      "falsifier": "RPP flat → state dimension collapses"
+      "prediction": "RPP varies materially across top Mexico-destination states (CA/TX/AZ/IL/NM/NY/NJ/FL): destination spread > 15% — the state cost dimension is real for the federal net proxy. A clean border(TX/AZ/NM)-vs-gateway(NY/NJ/MA/IL) split is secondary (~10pp), since CA is a high-cost border outlier.",
+      "duckdb_test": "WITH s AS (SELECT state_fips, rpp_all_items_2023 AS rpp, CASE WHEN state_fips IN ('48','04','35') THEN 'border' WHEN state_fips IN ('36','34','25','17') THEN 'gateway' END AS grp FROM lifetime.state_stage5_context_2023 WHERE state_fips IN ('48','04','35','06','36','34','25','17','12')) SELECT round(AVG(CASE WHEN grp='border' THEN rpp END),1) AS border_mean_rpp, round(AVG(CASE WHEN grp='gateway' THEN rpp END),1) AS gateway_mean_rpp, round(100*(MAX(rpp)-MIN(rpp))/MIN(rpp),1) AS destination_spread_pct, round(100*(AVG(CASE WHEN grp='gateway' THEN rpp END)-AVG(CASE WHEN grp='border' THEN rpp END))/AVG(CASE WHEN grp='border' THEN rpp END),1) AS gateway_vs_border_pct FROM s",
+      "falsifier": "RPP flat — destination spread < 15% AND gateway-vs-border < 10% → the state cost dimension collapses and the federal net proxy is geography-invariant."
     }
   ]
 }

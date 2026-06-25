@@ -56,5 +56,11 @@ the only code consumer), allowlisted in the audit gate with justification, propa
 the frozen pre-reg P3 anticipated):* a true Medicaid-per-resident figure needs a **state-population denominator**
 (no state-pop column in the warehouse → an ACS pull). Low-value (it's a context column); flag if you want it.
 
-### 4. Re-specify 3 theories (CHEAP, your judgment on intent)
-Three repaired tests now *run* but don't *adjudicate* their stated claim: **A#4** (no recent-arrival table exists — tests stock-weighted NPV instead), **K#0** (CORR = 1.0 is a provenance tautology — same NCES source on both sides), **K#2** (lists RPP, doesn't test the border-vs-gateway differential). They need the intended comparison clarified. Details: `research/immigration-theory-verdicts-2026-06-25.md`.
+### 4. ~~Re-specify 3 theories~~ — RESOLVED 2026-06-25
+All three re-spec'd honestly in the cluster `.mining` JSONs (re-run verified): **A#4 → PENDING-DATA**
+(no recent-arrival-by-education aggregate; stock-only can't adjudicate "recent > stock"); **K#0 →
+NOT-TESTABLE** (provenance tautology — both per-pupil series from the same NCES F-33 source; needs two
+independent products); **K#2 → now ADJUDICATES** — replaced the bare RPP listing with a real
+border(TX/AZ/NM)-vs-gateway(NY/NJ/MA/IL) test: **destination spread 24.6% (SUPPORTED, >15%); clean
+border-gateway split only ~10% (modest — CA is a high-cost border outlier).** Details + Revisions:
+`research/immigration-theory-verdicts-2026-06-25.md`.
