@@ -172,7 +172,7 @@ the best available evidence."* Kustov's own argued thesis on that page is that i
 creates winners and losers, and that pretending it is costless and universally beneficial erodes public trust —
 the same select/omit/frame charge this memo levels at "The Truth." [SOURCE:
 popularbydesign.org/p/the-uncomfortable-truths-about-immigration, 2026-01-22] **That a committed pro-immigration
-scholar levels this charge is the proof it is not the LLM instrument's restrictionist tilt — it is a
+scholar levels this charge is corroboration that it is not merely the LLM instrument's restrictionist tilt — it is a
 structural-honesty charge available from inside the pro-immigration camp.** [PARENT-VERIFIED, with one
 correction: the select/omit/frame "highbrow misinformation" definition is confirmed verbatim on the page (Kustov
 quoting Williams, then applying it to immigration); an earlier draft rendered Kustov's winners-and-losers thesis
