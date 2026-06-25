@@ -7,17 +7,18 @@ Hernandez's *The Truth About Immigration*; Abramitzky-Boustan's *Streets of Gold
 teammates (one per target, two dispatch waves), synthesized here. Each target has a full standalone sub-memo;
 this document is the synthesis and entry point.
 
-**The frame — and why the FAIR version is the devastating one. [FRAMING-SENSITIVE]**
+**The frame — and why the FAIR version is the strongest one. [FRAMING-SENSITIVE]**
 These authors are pro-immigration optimists. This repo's *own* evidence agrees with them on a great deal —
 so a one-sided hit job would be both dishonest and self-contradictory (it would have to deny our own
 confidence ladder, which is *built on* the academic foundations dismantled in Tier 2). The dismantling that
 actually lands grants what is empirically solid and then surgically kills the **overclaims and rhetorical
 moves**. Instrument-bias note (`notes/llm-bias-caveat.md`): the LLM tilt runs *toward* these authors'
 conclusions, so where this memo grants them, that grant is load-bearing (verified at primary, ladder 44-51);
-where it kills them, the kill is a *specific analytical error*, not a vibe. The fairness keystone is external
-and ideologically aligned: **Alexander Kustov**, a self-described cosmopolitan pro-immigration scholar,
-independently levels the same select/omit/frame charge against pro-immigration "highbrow misinformation" —
-proof the critique is not the instrument's tilt (see Tier 3, Hernandez).
+where it challenges them, the challenge rests on a *specific analytical error identified at the line*. The
+fairness keystone is external and ideologically aligned: **Alexander Kustov**, a self-described cosmopolitan
+pro-immigration scholar, independently levels the same select/omit/frame charge against pro-immigration
+"highbrow misinformation" — external corroboration that the critique is not merely the instrument's tilt
+(see Tier 3, Hernandez).
 
 **What we GRANT up front (their valid core — do not relitigate):**
 - Immigrant crime is *lower* than native-born — robust across our Light-TX arrests, BJS-SPI incarceration, the 188-spec curve, and (CATO's own) TX convictions. Ladder 42/48.
@@ -33,43 +34,51 @@ Every overclaim below reduces to one of these. The memo's force is in naming the
 1. **Coordinate-switching / ledger-switching** — answering "average/aggregate GDP" when the question is "marginal, low-skill, distributional, local, or fiscal-at-which-level." *The central error.*
 2. **Upper-bound laundering** — citing the most-optimistic estimate as if it were the consensus.
 3. **Marginal-to-mass extrapolation** — projecting effects of a small *selected* inflow onto a mass/surge/open-borders inflow.
-4. **Capacity erasure** — assuming infinite absorption (housing, schools, institutions) — now *measured*: immigrants concentrate in high-rent, inelastic metros (`msa_fb_rent_panel`, corr +0.74 in inelastic tercile).
+4. **Capacity erasure** — assuming infinite absorption (housing, schools, institutions). The repo's panel shows immigrants concentrate in high-rent, inelastic metros (`msa_fb_rent_panel`, corr +0.74 in the inelastic tercile) — *correlational, consistent with capacity-incidence, not by itself causal*; the causal magnitude comes from Wilson-Zhou (ladder 50).
 5. **Denominator masking** — per-capita vs total, federal vs all-government, gross vs net, relative-rank vs absolute-level.
 6. **Political-economy underspecification** — "keyhole solutions" that are politically infeasible; ignoring distribution/backlash/institutional erosion.
 
-## Cross-cutting: the data-capture is itself biased (the classification confound) [FRAMING-SENSITIVE]
+## Cross-cutting: a classification confound in the data itself [FRAMING-SENSITIVE]
 
-Operator-raised, 2026-06-25 — an instrument-level critique (the *coding*, not the analysis) that cuts
-the pro-immigration crime claim harder than any analytic point. It applies to ALL seven targets, who
-cite "immigrants don't raise crime" without it. Ladder entry 51.
+Operator-raised, 2026-06-25 — an instrument-level point about how the crime/fiscal data are *coded*, not
+about the analysis. It is most relevant to the targets that lean on "immigrants don't raise crime" or the
+dynastic fiscal ledger — **Smith, CATO, and Hernandez** — and is largely orthogonal to the wage
+foundations (Card-Peri) and the mobility foundations (Abramitzky-Boustan). It is a **bounded qualifier,
+stated at the strength the evidence supports — not a master kill.** Ladder entry 51.
 
 **(a) Hispanic→"white" miscoding.** UCR + many state systems fold Hispanics into "white," inflating the
 native/white comparator. Bites our *race-matched* comparison (already deflated — ladder 42, matching to
 NH-white natives ~halves the gap), less the *status* comparison (Light-TX keys on status, not race).
 
-**(b) 2nd-generation coded as "native" — structural (birthright citizenship), and DIRECTION-DEPENDENT:**
-- **Crime:** 2nd-gen converge toward / exceed 3rd+-gen rates (generational decay — RTI 2024, El Paso
-  acculturation). Filing them under "native" **inflates the native baseline → overstates the 1st-gen
-  advantage**, which is **first-generation-specific and does not persist** to the US-born children.
-- **Fiscal/mobility:** the 2nd-gen are the upside (out-earn/out-pay — Abramitzky-Boustan mobility).
-  Crediting that to "native" **understates** the immigrant *dynastic* contribution.
-- **THE KILL:** the pro-immigration case uses **inconsistent generational accounting** — first-gen-only
-  for crime (foreign-born look best), dynastic for fiscal/mobility (descendants look best). They pick the
-  classification that flatters each claim. Coordinate-switching at the *generational* level. Hernandez does
-  this *between adjacent chapters of one book*; *Streets of Gold* sits on the dynastic side; CATO does it
-  in the fiscal ledger (counting descendants' future taxes as benefit while billing their K-12 to "a native").
+**(b) 2nd-generation coded as "native" — structural (birthright citizenship), and direction-dependent:**
+- **Crime:** the *available* evidence suggests the first-generation advantage attenuates by the second
+  generation (generational decay — RTI 2024, El Paso acculturation), though the magnitude is data-limited
+  and varies by group and outcome. To the extent it holds, filing the US-born second generation under
+  "native" raises the native baseline and so *overstates* a first-generation-specific advantage that
+  should not be automatically generalized to the descendants.
+- **Fiscal/mobility:** the second generation are the upside (out-earn/out-pay — Abramitzky-Boustan
+  mobility). Crediting that to "native" *understates* the immigrant *dynastic* contribution.
+- **The point (methodological, not an imputation of intent):** crime, fiscal, and mobility studies
+  routinely use *different generational units* — first-generation *status* for crime, dynastic *descent*
+  for fiscal/mobility. Different estimands are not automatically inconsistent. The critique bites only
+  where a *single* author runs both frames on adjacent claims **without labeling the scope-switch** — which
+  is what Hernandez does between adjacent chapters (first-gen for "Immigration Makes You Safer," dynastic
+  for "Fill Public Coffers"), what *Streets of Gold*'s rhetoric does by resting on the dynastic side, and
+  what CATO does in the fiscal ledger (banking descendants' future taxes as benefit while billing their
+  K-12 to "a native"). The charge is the unlabeled scope-switch in the *presentation*, not a claim about
+  anyone's motive.
 
-**Honest bound:** these deflate MAGNITUDE and restrict the advantage to the 1st generation; they likely
-do NOT reverse direction (selection + deportation-deterrence; homicide *convictions* are detection-
-resistant and still show foreign-born below native). Light-TX has no generation variable → the confound
-is real and largely **unaddressable in current crime data**; the pending CPS 2nd-gen-by-origin test
-(`load_cps_second_gen.py`, keyed on *parental* birthplace) is what would settle it. → also belongs in the
-crime ladder (sharpens entry 48; recorded as entry 51).
+**Honest bound:** this deflates MAGNITUDE and confines the crime advantage to the first generation; it does
+*not* reverse direction (selection + deportation-deterrence; homicide *convictions* are detection-resistant
+and still show foreign-born below native). Light-TX has no generation variable → the confound is real but
+largely **unaddressable in the current crime data**; the pending CPS 2nd-gen-by-origin test
+(`load_cps_second_gen.py`, keyed on *parental* birthplace) is what would resolve the magnitude. Recorded as
+ladder entry 51 (sharpening crime entry 48).
 
 ## The central thesis (the one error under all seven)
 There is **no single "effect of immigration."** The pro-immigration case wins on the coordinates it
 chooses (aggregate GDP, average, federal, national-average crime, steady-state selected inflow,
-relative-rank mobility) and goes quiet on the coordinates where the cost concentrates (marginal low-skill,
+relative-rank mobility) and does not foreground the coordinates where the cost concentrates (marginal low-skill,
 distributional, state/local education, housing incidence, surge/absorption, composition, political economy,
 absolute-level convergence). The dismantling is not "they're wrong" — it's **"they answered a different,
 easier question than the one that matters, and presented the answer as if it settled the hard one."**
@@ -79,7 +88,7 @@ and largely granted* — Card-Peri are right about the average native-wage effec
 Place Premium is real and mobility is high-leverage; Abramitzky-Boustan are right about rank-mobility. They
 are the *rigorous source* of the valid empirics. The **Commentators (Tier 1)** and the **popularizer
 (Hernandez, Tier 3)** then **over-deploy** those foundations past the coordinates on which they were
-estimated. And the most devastating evidence is *against-interest, from the canon's own primary texts*:
+estimated. And the strongest evidence is *against-interest, from the canon's own primary texts*:
 Peri's own model names the losers (previous immigrants −19%); Clemens's own prose concedes the doubling
 needs "epic movements"; Abramitzky-Boustan's own review concedes the racialized non-convergence tail and
 that their modern data omit the undocumented. **We do not have to refute the foundations to dismantle the
@@ -100,9 +109,9 @@ exact opposite in his own words: the surge is **"a massive problem… a long-ter
 these people will require heavy government support for their health care, housing, and education; this
 will end up coming from city and state governments,"** and low-skill mass inflow is "an altruistic luxury."
 He has the federalism split *exactly right in Register B* — then writes Register A as if he didn't. The
-dismantling is not "Smith is wrong" (mostly he isn't); it's **"his reassuring essays answer the
-national-average question and let the reader believe they answered the local-incidence question — which
-his own honest essay concedes they don't."**
+critique is not "Smith is wrong" (mostly he isn't); it's **"his reassuring essays answer the
+national-average question and can leave readers with the impression they answered the local-incidence
+question — which his own honest essay concedes they don't."**
 
 | # | Claim | Empirics | Move that kills the overclaim |
 |---|---|---|---|
@@ -194,12 +203,14 @@ gap for identical workers; selection modest 1.0-1.3 — kills the "ambitious sel
 **GRANT** that migration gains are plausibly among the largest remaining global efficiency gains (World Bank:
 100M movers → $1.4T/yr); **GRANT** that mobility is unusually high-leverage.
 
-**The single most decisive kill is Clemens's OWN later model.** Clemens-Pritchett (2019, *JDE* 138:153-164)
-formalizes an **interior optimum** migration rate (origin-TFP transmission × assimilation × congestion) and
-concludes, verbatim, that "dynamically efficient policy would **NOT** imply open borders but would imply
-**relaxations on current restrictions**." So the doubling slogan fails not merely against the friction-heavy
-rival literature — **it fails against Clemens's own model**, and the repo's stance (direction yes,
-mass-absorption no, optimum = relaxation) *is* Clemens's published 2019 position. The overclaim is the
+**The sharpest point is that Clemens's OWN later model bounds the open-borders inference.** Clemens-Pritchett
+(2019, *JDE* 138:153-164) formalizes an **interior optimum** migration rate (origin-TFP transmission ×
+assimilation × congestion) and concludes, verbatim, that "dynamically efficient policy would **NOT** imply
+open borders but would imply **relaxations on current restrictions**." So the *open-borders inference* — that
+the large-gain estimates license opening the borders — is undercut not merely by the friction-heavy rival
+literature but by **Clemens's own model** (it limits the policy inference, not every static large-gain
+calculation), and the repo's stance (direction yes, mass-absorption no, optimum = relaxation) *is* Clemens's
+published 2019 position. The overclaim is the
 *popularizers'* (Caplan, openborders.info), not Clemens's. [verified at primary, conf 1.0] Then **KILL** the
 "open borders ≈ doubles world GDP" slogan as a central forecast on four further moves:
 
@@ -245,7 +256,7 @@ every grant is repo-tied and every kill is a coordinate/incidence charge on data
 - **The title meta-kill + fairness keystone:** "The TRUTH … overwhelmingly positive on EVERYTHING" sells a
   coordinate-dependent question as settled. **Kustov** (cosmopolitan pro-immigration scholar) independently
   calls this "highbrow [pro-immigration] misinformation" — *"misleads by how it selects, omits, and frames
-  facts … technically defensible … yet a significant distortion"* — **proof the charge is not the
+  facts … technically defensible … yet a significant distortion"* — **corroboration (from inside the pro-immigration camp) that the charge is not merely the
   instrument's tilt.** *[parent corrected the attribution: "highbrow misinformation" is Dan Williams' term
   that Kustov endorses and applies to immigration; the load-bearing keystone — a pro-immigration scholar
   leveling the select/omit/frame charge — is verified on-page and unaffected.]*
@@ -265,9 +276,12 @@ from the authors' OWN against-interest admissions (PNAS Nexus 2024 review, re-ve
   environment* — no 1900 welfare state, open frontier, or pre-civil-rights racial order. Authors concede the
   modern tax data **"do not contain undocumented immigrant parents"** — the present inflow most relevant to
   the fiscal/housing debate is invisible to their modern half.
-- **Classification confound (ladder 51):** the success story rests on the 2nd-gen being coded "native"; the
-  most-assimilated descendants *attrit out* (ethnic attrition, Duncan-Trejo) or get *recoded native*
-  (birthright citizenship). Authors *acknowledge* (citing Villarreal-Tamborini) a Hispanic/Black 2nd-gen
+- **Classification confound (ladder 51), bounded:** A-B's object of study *is* the second generation, so
+  this is not a coding trick in their design — the point is narrower. Birthright citizenship files the
+  US-born 2nd generation under "native" in *cross-sectional* datasets, and the most-assimilated descendants
+  *attrit out* (ethnic attrition, Duncan-Trejo) or are *recoded native*, so cross-sectional
+  native-vs-foreign comparisons understate the immigrant dynastic contribution. Authors *acknowledge*
+  (citing Villarreal-Tamborini) a Hispanic/Black 2nd-gen
   non-convergence tail and reframe it as "racial inequality" while pivoting to the relative-rank coordinate;
   their *own* AER data carries persistent-gap cases (Jamaican/Haitian/Mexican 2nd-gen). *[parent corrected:
   the non-convergence sentence is A&B citing V-T, not their own estimate; both verified at primary,
@@ -296,16 +310,18 @@ immigrants actually live; school-age-children intensity; state/local education c
 downward-mobility tail), and they fall on renters, competing low-skill workers, prior immigrants, and
 receiving cities.
 
-**The one error under all seven (the central thesis, now evidenced):** they win on the coordinates they
+**The one error under all seven (the central thesis):** they win on the coordinates they
 pick — *aggregate* GDP, *average* native, *federal* ledger, *national-average* crime, *steady-state
 selected* inflow, *relative-rank* mobility — and present that win as settling the coordinates where the cost
 concentrates — *marginal low-skill*, *distributional*, *state/local*, *surge-absorption*, *composition*,
-*absolute-level*. It is **coordinate-switching**, and — per the operator's instrument critique — it runs down
-to the **generational accounting**: first-gen framing where it flatters crime, dynastic framing where it
-flatters fiscal/mobility. CATO's $14.5T claim, Smith's two registers, Hernandez's adjacent-chapter
-frame-switch, and *Streets of Gold*'s relative-rank retreat are the **same move at different scales**. The
-dismantling is devastating precisely because it grants their valid empirics — and shows the reassurance is an
-artifact of which question got answered. **We dismantle the canon by quoting its own primary texts.**
+*absolute-level*. It is **coordinate-switching**, and Smith's two registers, CATO's $14.5T ledger,
+Hernandez's adjacent chapters, and *Streets of Gold*'s relative-rank retreat are the **same move at different
+scales**. In the crime-and-fiscal targets it extends to the **generational unit** — first-generation *status*
+for crime, dynastic *descent* for fiscal/mobility, two different estimands that mislead only when an author
+runs both on adjacent claims without labeling the scope-switch. The critique lands precisely because it grants
+their valid empirics and shows the reassurance is an artifact of which question got answered — and **its
+strongest form is built from the canon's own primary texts** (Peri's model names the losers; Clemens's 2019
+model bounds the doubling; Abramitzky-Boustan concede the non-convergence tail).
 
 **Pre-publication quote verification — COMPLETE (2026-06-25).** Quotes are the weapon, so before any external
 use every direct quote and load-bearing number across the seven sub-memos was re-verified against its **actual
