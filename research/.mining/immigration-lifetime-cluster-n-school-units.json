@@ -82,7 +82,10 @@
         "Census finance fields are nominal dollars",
         "County aggregation preserves units"
       ],
-      "topics": ["school_finance", "unit_harmonization"],
+      "topics": [
+        "school_finance",
+        "unit_harmonization"
+      ],
       "source_rel_paths": [
         "external/census_school_finance_2023_summary.txt",
         "external/lifetime/derived/stage2/school_finance_county_2023.csv"
@@ -98,7 +101,10 @@
         "PUMA area weights represent immigrant school placement",
         "Current spend = marginal cost of immigrant pupil"
       ],
-      "topics": ["incidence_bridge", "school_finance"],
+      "topics": [
+        "incidence_bridge",
+        "school_finance"
+      ],
       "source_rel_paths": [
         "external/lifetime/derived/stage2/school_finance_county_2023.csv",
         "external/lifetime/derived/stage3_proto/origin_fiscal_scenario_2023.csv"
@@ -114,7 +120,10 @@
         "Immigrant children use average county spend",
         "13-year public school horizon"
       ],
-      "topics": ["lifetime_npv", "local_episodic"],
+      "topics": [
+        "lifetime_npv",
+        "local_episodic"
+      ],
       "source_rel_paths": [
         "external/lifetime/derived/stage3_proto/origin_fiscal_scenario_2023.csv",
         "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf"
@@ -130,7 +139,10 @@
         "National average equals immigrant destination average",
         "No state RPP adjustment needed"
       ],
-      "topics": ["school_finance", "validation"],
+      "topics": [
+        "school_finance",
+        "validation"
+      ],
       "source_rel_paths": [
         "external/lifetime/nces/digest_dt23_236_20_per_pupil_expenditure.html",
         "external/lifetime/derived/stage2/school_finance_county_2023.csv"
@@ -141,19 +153,19 @@
     {
       "theory": "Per-pupil unit bug explained local layer null result",
       "prediction": "post-fix mexico per_pupil > 15000",
-      "duckdb_test": "SELECT origin_label, area_wtd_current_spend_per_pupil FROM life.origin_fiscal_scenario_2023 WHERE origin_label='Mexico'",
+      "duckdb_test": "SELECT origin_label, area_wtd_current_spend_per_pupil FROM lifetime.origin_fiscal_scenario_2023 WHERE origin_label='Mexico'",
       "falsifier": "Still ~$21 after rebuild — fix did not propagate"
     },
     {
       "theory": "County median aligns with NCES band",
       "prediction": "median county per_pupil between 12000 and 25000",
-      "duckdb_test": "SELECT MEDIAN(current_spend_per_pupil) FROM life.school_finance_county_2023",
+      "duckdb_test": "SELECT MEDIAN(current_spend_per_pupil) FROM lifetime.school_finance_county_2023",
       "falsifier": "Median outside band — remaining unit or aggregation error"
     },
     {
       "theory": "K-12 local cost material vs federal annual for Mexico",
       "prediction": "per_pupil × school_age_share rivals avg_federal_net",
-      "duckdb_test": "SELECT area_wtd_current_spend_per_pupil, linked_mean_hh_school_age_children, avg_federal_net FROM life.origin_fiscal_scenario_2023 WHERE origin_label='Mexico'",
+      "duckdb_test": "SELECT area_wtd_current_spend_per_pupil, linked_mean_hh_school_age_children, avg_federal_net FROM lifetime.origin_fiscal_scenario_2023 WHERE origin_label='Mexico'",
       "falsifier": "Federal annual still dominates even with correct units — local layer secondary at annual frequency"
     }
   ]

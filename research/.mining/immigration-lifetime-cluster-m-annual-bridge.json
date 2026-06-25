@@ -107,7 +107,11 @@
         "75-year horizon applies to surge cohort",
         "No GE indirect taxes in annual layer"
       ],
-      "topics": ["annual_npv_bridge", "federal_annual", "lifetime_npv"],
+      "topics": [
+        "annual_npv_bridge",
+        "federal_annual",
+        "lifetime_npv"
+      ],
       "source_rel_paths": [
         "external/lifetime/derived/stage3_proto/origin_fiscal_scenario_2023.csv",
         "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf",
@@ -124,7 +128,10 @@
         "All remittances from US immigrants from that origin",
         "Remittances should net against public costs"
       ],
-      "topics": ["private_transfer", "remittances"],
+      "topics": [
+        "private_transfer",
+        "remittances"
+      ],
       "source_rel_paths": [
         "external/lifetime/worldbank/mexico_worker_remittances_bx_trf_pwkr_cd_dt.json",
         "external/lifetime/derived/stage3_proto/origin_fiscal_scenario_2023.csv"
@@ -140,7 +147,10 @@
         "Immigrant remains for full benefit receipt",
         "Social Security trust fund accounting = consolidated government"
       ],
-      "topics": ["pension", "lifecycle"],
+      "topics": [
+        "pension",
+        "lifecycle"
+      ],
       "source_rel_paths": [
         "external/lifetime/nber/abel_1997_immigrants_children_pension_transition_w6229.pdf",
         "external/lifetime/nber/lee_miller_1998_generational_accounting_immigration_w7041.pdf"
@@ -156,7 +166,10 @@
         "Government will raise taxes to stabilize debt",
         "Immigrants bear same future tax hike as natives"
       ],
-      "topics": ["generational_accounting", "methodology"],
+      "topics": [
+        "generational_accounting",
+        "methodology"
+      ],
       "source_rel_paths": [
         "external/lifetime/nber/lee_miller_1998_generational_accounting_immigration_w7041.pdf"
       ]
@@ -171,7 +184,10 @@
         "2021+ surge composition equals Mexico FB education mix",
         "Federal surge revenue amortizes into per-capita lifetime NPV"
       ],
-      "topics": ["cohort", "federal_annual"],
+      "topics": [
+        "cohort",
+        "federal_annual"
+      ],
       "source_rel_paths": [
         "external/lifetime/cbo/cbo_60569_immigration_federal_macro_alt.pdf",
         "external/lifetime/derived/stage3_proto/origin_fiscal_scenario_2023.csv"
@@ -182,19 +198,19 @@
     {
       "theory": "Annual federal proxy confirms lifetime NAS sign",
       "prediction": "sign(avg_federal_net) = sign(NPV) for same education cell",
-      "duckdb_test": "SELECT o.origin_label, o.avg_federal_net, n.individual_npv_2012_usd FROM life.origin_fiscal_scenario_2023 o CROSS JOIN life.npv_education_benchmarks n WHERE n.acs_education_bucket='<HS' AND o.origin_label='Mexico'",
+      "duckdb_test": "SELECT o.origin_label, o.avg_federal_net, n.individual_npv_2012_usd FROM lifetime.origin_fiscal_scenario_2023 o CROSS JOIN lifetime.npv_education_benchmarks n WHERE n.acs_education_bucket='<HS' AND o.origin_label='Mexico'",
       "falsifier": "Opposite signs with documented scope difference — bridge incomparable by construction"
     },
     {
       "theory": "Remittance outflow dominates federal net for Mexico cell",
       "prediction": "mexico_remittance_per_adult > avg_federal_net",
-      "duckdb_test": "SELECT 66237847600/436819 AS remit_per_adult, avg_federal_net FROM life.origin_fiscal_scenario_2023 WHERE origin_label='Mexico'",
+      "duckdb_test": "SELECT 66237847600/(SELECT SUM(weighted_adults) FROM context.acs_origin_household_federal_microsim_2023 WHERE origin_label='Mexico') AS remit_per_adult, avg_federal_net FROM lifetime.origin_fiscal_scenario_2023 WHERE origin_label='Mexico'",
       "falsifier": "Federal net larger — private layer secondary at annual scale"
     },
     {
       "theory": "3% annuitized NAS <HS NPV near SIPP annual magnitude",
       "prediction": "109000/annuity_factor(3%,75) within 2x of 1519",
-      "duckdb_test": "SELECT 109000/29.0 AS approx_annualized_npv, avg_federal_net FROM life.origin_fiscal_scenario_2023 WHERE origin_label='Mexico'",
+      "duckdb_test": "SELECT 109000/29.0 AS approx_annualized_npv, avg_federal_net FROM lifetime.origin_fiscal_scenario_2023 WHERE origin_label='Mexico'",
       "falsifier": "Orders-of-magnitude gap after unit harmonization — scopes differ"
     }
   ]
