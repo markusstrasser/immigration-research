@@ -192,8 +192,16 @@ Clemens is the **most empirically careful** figure in this memo, and the **fairn
 Mariel harm as a compositional artifact). **GRANT** the Place Premium (location explains most of the wage
 gap for identical workers; selection modest 1.0-1.3 — kills the "ambitious self-select" objection, VERIFIED);
 **GRANT** that migration gains are plausibly among the largest remaining global efficiency gains (World Bank:
-100M movers → $1.4T/yr); **GRANT** that mobility is unusually high-leverage. **KILL** only the
-"open borders ≈ doubles world GDP" slogan as a central forecast:
+100M movers → $1.4T/yr); **GRANT** that mobility is unusually high-leverage.
+
+**The single most decisive kill is Clemens's OWN later model.** Clemens-Pritchett (2019, *JDE* 138:153-164)
+formalizes an **interior optimum** migration rate (origin-TFP transmission × assimilation × congestion) and
+concludes, verbatim, that "dynamically efficient policy would **NOT** imply open borders but would imply
+**relaxations on current restrictions**." So the doubling slogan fails not merely against the friction-heavy
+rival literature — **it fails against Clemens's own model**, and the repo's stance (direction yes,
+mass-absorption no, optimum = relaxation) *is* Clemens's published 2019 position. The overclaim is the
+*popularizers'* (Caplan, openborders.info), not Clemens's. [verified at primary, conf 1.0] Then **KILL** the
+"open borders ≈ doubles world GDP" slogan as a central forecast on four further moves:
 
 - **Move 2 (upper-bound laundering):** the 50-150% range is the *upper-bound model literature*; the omitted
   counterweight — Docquier-Machado-Sekkat — prices the frictions (moving costs, congestion, imperfect
@@ -277,7 +285,7 @@ repo-confirmed**. State it plainly:
 1. **Immigrants (1st-gen) have lower crime than natives** — direction robust (Light, SPI, the 188-spec curve, CATO's own convictions). Ladder 42/48. *Granted by all; it's our finding too.*
 2. **The realized federal surge is fiscally positive** — CBO −$0.9T, +$8.9T GDP, + Colas-Sachs's +$750/yr indirect channel. Ladder 45-46.
 3. **Average native-wage effects of observed inflows are small** — Card-Peri's +0.7% average; the Mariel "10-30% harm" is a ~17-obs/yr artifact (Clemens-Hunt). The lump-of-labor fallacy is real. Ladder 44.
-4. **High-skill immigration is strongly net-positive**; the **Place Premium** is real (Clemens, selection modest); the global/origin gains are directionally large; brain-drain doom is overstated.
+4. **High-skill immigration is strongly net-positive**; the **Place Premium** is real (Clemens, selection modest); the global/origin gains are directionally large; brain-drain doom is overstated. *And the open-borders optimum is a substantial relaxation, not open borders — which is Clemens's OWN 2019 model (Clemens-Pritchett), not a critique imposed on him.*
 5. **Intergenerational mobility of immigrants' children is real and large** (Abramitzky-Boustan rank-mobility, repo-adopted); the "old good / new bad" nostalgia is empirically wrong.
 6. **Immigration did NOT drive the recent rent spike or the 2023 disinflation** — our growth-margin rent null (−0.17) + JCHS/Yale-Budget-Lab back Smith and Decker on the *national-aggregate-causation* question.
 
@@ -316,6 +324,6 @@ primary-verified.
 - [x] dismantle-decker — integrated ("must" quantifier error; double-world-GDP self-refutation; CBO per-person verified)
 - [x] dismantle-cato — integrated (floor granted incl. crime; $14.5T ceiling killed on public-goods + 2nd-gen-as-native)
 - [x] dismantle-card-peri — integrated (average + mechanism granted; 3 scope-stretches killed; −19%/−24%/−1.1% re-verified at primary)
-- [x] dismantle-clemens — integrated (Place Premium granted, Mariel rigor adopted; "double world GDP" killed; parent-completed from repo audit after agent stalled)
+- [x] dismantle-clemens — integrated (Place Premium granted, Mariel rigor adopted; "double world GDP" killed by Clemens's OWN 2019 interior-optimum model; parent built the base from repo audit, then integrated 3 primary-verified teammate upgrades — the teammate raced-and-deferred, did not stall)
 - [x] dismantle-hernandez — integrated (4 pillars granted; generational frame-switch + housing omission + title meta-kill; Kustov keystone verified+corrected)
 - [x] dismantle-streets-of-gold — integrated (rank-mobility granted; metric/external-validity/classification/selection kills from authors' own admissions; pgae344 verified+corrected)
