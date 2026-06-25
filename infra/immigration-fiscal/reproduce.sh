@@ -124,6 +124,8 @@ _cmd_build() {
             uv run --with duckdb python "$ROOT/build/build_borjas_supply_shock_panel.py"
             bash "$ROOT/build-mvp.sh"
             bash "$ROOT/build-lifetime.sh"
+            # urban housing: Zillow rent × Saiz elasticity (needs lifetime Saiz; skips if Zillow absent)
+            uv run --with duckdb python "$ROOT/build/build_msa_rent_elasticity_panel.py"
             uv run --with duckdb python "$ROOT/build/build_unified_warehouse.py"
             ;;
         *) echo "unknown build target: $target" >&2; exit 2 ;;

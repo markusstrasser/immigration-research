@@ -421,6 +421,11 @@ if [[ "${REPRODUCE_TIER:-standard}" != "minimal" && -f "$HERE/setup-crime-fronti
     IMMIGRATION_FISCAL_ROOT="$IMMIGRATION_FISCAL_ROOT" bash "$HERE/setup-crime-frontier.sh" || true
 fi
 
+# Urban housing panel (frontier 2026-06-25; Zillow ZORI/ZHVI; optional; skipped on minimal tier)
+if [[ "${REPRODUCE_TIER:-standard}" != "minimal" && -f "$HERE/setup-urban-housing.sh" ]]; then
+    bash "$HERE/setup-urban-housing.sh" || true
+fi
+
 if (( ERRORS == 0 )); then
     exit 0
 else
