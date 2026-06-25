@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Forensic data-integrity gate for the unified warehouse — catches the unit-bug class.
 
-Motivated by two real bugs found by accident 2026-06-25: a remittance figure of
-$151,636/adult (total-worldwide / a 437K subsample) and `avg_medicaid_total_computable`
-≈ $109B labelled as an *average*. Both are "intensive column carrying an extensive
-value" — a per-unit/average field holding a total-scale number. This gate scans every
-numeric column and flags the smell deterministically, so the class can't recur silently.
+Motivated by a real remittance unit bug found 2026-06-25 ($151,636/adult = total-worldwide /
+a 437K subsample). On its first run the gate also flagged `avg_medicaid_total_computable` (~$299B
+in an "avg_" column); forensic review found the VALUE correct (a mean of state Medicaid TOTALS, a
+context signal) but the NAME misleading — resolved by renaming to `mean_state_medicaid_total_usd`
+(now allowlisted). Both outcomes are wins: the gate catches "intensive column carrying an extensive
+value" (per-unit/average field holding a total-scale number) AND surfaces misleadingly-named totals
+for review, so the class can't recur silently.
 
 Checks (HIGH severity = blocking):
   1. INTENSIVE-MAGNITUDE — a column named like a per-unit/average dollar figure
@@ -42,9 +44,18 @@ RATIO_RE = ("_share", "_pct", "_fraction", "_frac", "share_", "pct_", "_rate")
 EXCLUDE_RATE = ("_per_100k", "_per_1000", "_per_100000", "rate_per", "_per_100k")
 DOLLAR_PER_PERSON_CEIL = 1_000_000.0
 
+# Reviewed-legitimate large means — explicitly CLEARED after forensic review, never silently skipped.
+# Keep this list tiny + justified; it documents exceptions so the gate stays strict for real bugs.
+#   mean_state_medicaid_total_usd — mean of STATE Medicaid TOTALS across an origin's PUMAs (a
+#   "which states do they live in" context signal, $billions). Correct value, honestly named
+#   (2026-06-25); a per-CAPITA version needs a state-population denominator (pre-reg P3 / HUMAN.md).
+INTENSIVE_ALLOW = frozenset({"mean_state_medicaid_total_usd"})
+
 
 def _classify(col: str) -> str:
     c = col.lower()
+    if c in INTENSIVE_ALLOW:
+        return "allowlisted"
     if any(k in c for k in EXCLUDE_RATE) or DIGIT_PCT.search(c):
         return "rate_per_n"
     if any(p in c for p in INTENSIVE_RE) and any(d in c for d in DOLLARISH):

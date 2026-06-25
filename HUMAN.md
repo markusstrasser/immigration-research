@@ -45,8 +45,16 @@ Both are spec'd and the analysis code is already built + wired (skips until the 
 ### 2. Decide: build the housing/rent panel? — **SUPERSEDED by item A above (2026-06-25): now spec'd, Zillow acquired, ready to build.**
 4 E-cluster theories are PENDING-DATA: they need an **MSA-joined rent + immigrant panel** (PUMA→CBSA crosswalk + rent-burden + foreign-born-share + the Saiz elasticity×WRLURI panel). The urban frontier pass fully spec'd this and acquired the Zillow rent panel — see item A.
 
-### 3. CONFIRMED unit bug — needs a denominator-modeling decision (your call)
-The new data-integrity gate (`reproduce.sh audit`) **confirmed** it: `lifetime.origin_fiscal_scenario_2023.avg_medicaid_total_computable` reaches **$299B** in a column named "avg." Trace: it's `AVG(medicaid_total_computable)` — a plain mean of per-PUMA *totals*, sitting next to siblings (`avg_federal_net`, …) that are properly *weighted per-adult* (`SUM(x·adults)/SUM(adults)`). So it's genuinely inconsistent. **Blast radius is low** — it's carried as a context column, not fed into a headline fiscal calc (only `compose_scenario_ledger` + the verdict memo read it). The fix isn't a clean rename: it needs the right per-capita **denominator** for a Medicaid-per-adult figure consistent with its siblings — a modeling decision I didn't want to rush. Say go and I'll make it weighted-per-adult.
+### 3. ~~CONFIRMED unit bug~~ — RESOLVED 2026-06-25 (it was a misnaming, not a computation bug)
+**Done.** Investigation revised the diagnosis: `medicaid_total_computable` is a state-level Medicaid
+TOTAL (CA $299B etc.) broadcast to every PUMA, so `AVG()` over an origin's PUMAs = the mean *state-total*
+Medicaid — a correct "which states does this origin concentrate in" context signal (Ireland/Denmark →
+$299B = California). The **value was right; the `avg_` prefix was misleading** (implied a per-adult figure).
+Fix: renamed `avg_medicaid_total_computable` → **`mean_state_medicaid_total_usd`** (compose_scenario_ledger.py,
+the only code consumer), allowlisted in the audit gate with justification, propagated through lifetime→unified.
+**`reproduce.sh audit` now: ✓ no integrity flags.** *Optional enhancement still open (= the per-CAPITA version
+the frozen pre-reg P3 anticipated):* a true Medicaid-per-resident figure needs a **state-population denominator**
+(no state-pop column in the warehouse → an ACS pull). Low-value (it's a context column); flag if you want it.
 
 ### 4. Re-specify 3 theories (CHEAP, your judgment on intent)
 Three repaired tests now *run* but don't *adjudicate* their stated claim: **A#4** (no recent-arrival table exists — tests stock-weighted NPV instead), **K#0** (CORR = 1.0 is a provenance tautology — same NCES source on both sides), **K#2** (lists RPP, doesn't test the border-vs-gateway differential). They need the intended comparison clarified. Details: `research/immigration-theory-verdicts-2026-06-25.md`.
