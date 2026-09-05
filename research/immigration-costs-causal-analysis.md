@@ -1,3 +1,47 @@
+# State response spending: a descriptive eight-state comparison
+
+**Current assessment — 2026-09-05.** The recovered data confirm that the selected response-spending entries differ sharply across states. They do **not** distinguish an institutional explanation from a volume explanation, establish a causal effect of shelter law, or estimate immigration's total net fiscal burden. The former numerical ACH “posteriors” and strong sensitivity verdict are withdrawn. [INFERENCE]
+
+## Recovered data and reproduced calculation
+
+This audit recovered `state_response_cost_dataset.csv`, the model JSON, and both sensitivity JSONs in `/Volumes/2TBPNY/research-data/immigration-fiscal/data/derived.bak.20260618/`, and read the [tracked builder](../infra/immigration-fiscal/build/build_state_response_cost_dataset.py) and [analysis script](../infra/immigration-fiscal/build/analyze_state_response_cost_dataset.py). The eight observations are AZ, CA, CO, FL, IL, MA, NY, and TX. These are selected states with identified spending fragments, not a representative fiscal panel. The exposure is ACS 2023 foreign-born noncitizens reporting arrival in 2021–2023; it is not a direct count of unauthorized residents or exactly CBO's surge population. [SOURCE: recovered CSV and builder; [CBO report](https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf)]
+
+The builder divides spending **in millions of dollars** by population and multiplies by 100,000. Thus its `response_spending_per_100k_residents` columns are **millions of dollars per 100,000 residents**, despite the incomplete column name. Independent OLS recomputation from the saved CSV reproduced the coefficients below. A fresh **2026-09-05 raw-ACS rebuild** with the repaired scripts reproduced the saved point estimates, conventional p-values, and intervals; its new model JSON was also inspected in this audit. [SOURCE: builder, CSV, model JSON; CALCULATION]
+
+| Additive model term | Coefficient | Reported p-value | Reported 95% interval |
+|---|---:|---:|---:|
+| Recent noncitizens per 100,000 | −0.000493 | 0.889 | −0.009735 to +0.008750 |
+| Border-state indicator | +2.281 | 0.569 | −7.935 to +12.496 |
+| Right-to-shelter indicator | +7.691 | 0.143 | −4.033 to +19.416 |
+
+There are **8 observations, 4 fitted coefficients including the intercept, and 4 residual degrees of freedom**. Adjusted R² is **0.0592**, versus unadjusted R² 0.4624. After accounting for the shared per-population scaling, the exposure interval corresponds to approximately **−$9,735 to +$8,750 per additional recent noncitizen**, conditional on this descriptive linear model. This is far too imprecise to establish a small cost or no volume relationship. The shelter-law coefficient itself is not conventionally statistically significant. The fresh **HC3/t** intervals remain wide: exposure approximately **−$10,280 to +$9,294 per person**, and shelter law **−11.819 to +27.202 million dollars per 100,000 residents**. These are descriptive uncertainty diagnostics, not a repair of causal identification. [SOURCE: fresh validation output, `.scratch/repair-validation/derived/state_response_cost_models.json`] [SOURCE: model JSON; CALCULATION]
+
+Deleting one state at a time produces shelter-law coefficients from **2.807** million dollars per 100,000 residents when NY is omitted to **12.005** when MA is omitted. This illustrates dependence on two shelter-law states; it is not a causal robustness test. [CALCULATION: OLS recomputation from the recovered eight rows]
+
+## Why the former causal verdict does not follow
+
+The outcome combines unlike spending channels: shelter/support spending in some states and border-security/transport spending in others. Small recorded fragments in CA or FL do not establish small total costs there. NY and TX's large share of these selected dollars compared with their share of CBO's national surge population mixes different coverage and denominators. Revenue, other expenditures, federal reimbursement, timing, and the counterfactual baseline are required for net fiscal incidence. This does not invalidate CBO's separate aggregate analysis. [SOURCE: builder and CBO; INFERENCE]
+
+Institutions and volume are not mutually exclusive explanations. An institutional rule can change the marginal spending response to arrivals. The fitted model is additive and contains **no exposure × regime interaction**; a small additive exposure slope cannot rule out that mechanism. A low R² in the unadjusted regression likewise cannot distinguish weak causation from noisy exposure, incomplete costs, heterogeneous marginal effects, or a selected sample. [SOURCE: analysis formulas; INFERENCE]
+
+A DAG's adjustment set is valid only under the causal assumptions encoded in that graph. Here, state selection, exposure measurement, correlated policy choices, housing conditions, and timing remain unresolved. These eight contemporaneous comparisons are not natural experiments merely because the states have different institutions. The previous ACH percentages had no explicit likelihood or calibrated updating rule, and assigned exclusive probabilities to overlapping mechanisms; they are not quantitative posterior evidence. [INFERENCE]
+
+## Sensitivity failure and remaining limits
+
+Both recovered sensitivity JSONs record **`rv_alpha = 0`**, consistent with coefficients already nonsignificant at the chosen threshold. Both also warn that a pandas compatibility problem forced fallback benchmark bounds; their benchmark rows contain literal zero adjusted estimates and standard errors. Those rows cannot support the earlier benchmark-based “robust” verdict without a validated computation. A robustness value for reducing a point estimate to zero is also different from robustness of statistical significance. [SOURCE: the two recovered `state_response_cost_sensemakr_*.json` files]
+
+The initially broken relative data paths and ambiguous outcome column names have been repaired in the tracked scripts. The fresh raw-ACS rebuild and analysis now complete; the outcome columns explicitly use `response_spending_millions_per_100k_residents`, and the output adds HC3/t intervals and leave-one-out diagnostics. The old sensitivity fallback remains unusable and is not needed for the descriptive OLS conclusion. The defensible result is concentrated **recorded gross response spending**, with the causal and net-fiscal questions open. [GAP; INFERENCE]
+
+## Revisions
+
+- **2026-09-05:** Recovered the original eight-state artifacts, reproduced coefficients and deletion sensitivity, corrected units, withdrew unsupported model-selection/posterior claims, and identified the failed sensitivity benchmark. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Immigration Costs — Causal Check, DAG, and Robustness on a Measurable Long-Tail Channel
 
 **Question:** If we stop presupposing a headline NPV and instead run the named causal skills honestly, what can we actually identify about the long-tail costs of unauthorized immigration from the local source set?  
@@ -241,3 +285,6 @@ Running the named causal skills honestly narrows the claim rather than inflating
 > explicit 2023 state/local response costs are concentrated where exposure interacted with specific institutions and discretionary policy responses; they do not scale cleanly with recent immigrant headcount alone. [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] [SOURCE: `sources/immigration-fiscal/data/derived/state_response_cost_dataset.csv`] [SOURCE: `sources/immigration-fiscal/data/derived/state_response_cost_models.json`] [INFERENCE]
 
 That makes the full-spectrum cost story **more local and more nonlinear** than either side's clean national talking number. [INFERENCE]
+
+</details>
+<!-- historical-snapshot:end -->

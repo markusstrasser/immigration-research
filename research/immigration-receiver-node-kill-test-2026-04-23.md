@@ -1,3 +1,33 @@
+# Receiver-node screen: correlated indicators without calibrated confirmation
+
+**Current assessment — 2026-09-05.** The nine-node table screens selected areas for coincident administrative and household indicators. It does not establish Miami-Dade or NYC as causal “survivors” of a receiver-overload theory. The assigned probabilities 0.55, 0.30, and 0.15 are withdrawn: no likelihood, calibrated updating rule, or mutually exclusive hypothesis partition was supplied. [INFERENCE]
+
+## Population and geography
+
+ACS recent-entry and moved-from-abroad measures identify different populations and periods; neither identifies unauthorized status. The stated PUMA-to-node bridge allocates by **land-area overlap**, not population. This assumes population and outcomes are uniformly distributed within the source geography. It cannot be treated as a validated county estimate, and its error need not attenuate coefficients or rankings toward zero. Population weighting would improve the geographic allocation assumption but would not reveal legal status or eliminate all within-PUMA selection. [SOURCE: historical design/limits; INFERENCE]
+
+EOIR base-city counts measure court venue workload, not the number or residence of local immigrants. Proceedings or filings are also not automatically unique people or a backlog stock: changes depend on new filings, transfers, completions, reporting, and court catchments. The broad/strict differences already reported for Harris (1.99× versus 0.81×) and DC (1.74× versus 0.17×) must remain measurement warnings, not be averaged into confirmation. [SOURCE: historical table; INFERENCE]
+
+QWI does not identify immigrant or native workers; its stable-employment earnings outcome is monthly earnings, not native hourly wages. HIC/PIT and spending-per-resident inputs additionally inherit the program and geographic limitations of the [receiver atlas](immigration-receiver-failure-atlas-2026-04-22.md). [SOURCE: [Census QWI variables](https://api.census.gov/data/timeseries/qwi/se/variables.html); INFERENCE]
+
+## What the score tests
+
+The score counts whether a location exceeds the **nine selected nodes' medians** on correlated inputs, including exposure, housing, court and political outcomes. Changing the node set changes those thresholds and ranks. A high count is not a calibrated probability, a national rarity measure, a measure of loss magnitude, or independent multi-channel evidence. Using the same outcomes to define “synchronization” and then calling high-scoring places confirmation of synchronization does not independently test the proposed causal chain. [SOURCE: historical scoring definition; INFERENCE]
+
+Concurrent housing scarcity, court policy, exposure, and measurement error can coexist; they are not exclusive hypotheses that can receive probabilities summing to one without a model. The screen can motivate matched comparisons with predetermined definitions, direct local intake data, and mapped residence outcomes. It cannot establish that immigration rather than shared trends produced the pattern. [INFERENCE]
+
+The original joins, code, and raw node outputs were not recovered for replication. The recorded values and broad/strict sensitivity remain historical evidence to inspect, not freshly verified full-spectrum overload findings. [GAP]
+
+## Revisions
+
+- **2026-09-05:** Withdrew arbitrary posteriors and causal-survivor labels, retained mapping disconfirmation, and clarified correlated-score and outcome-universe limits. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Immigration Receiver-Node Kill Test — 2026-04-23
 
 ## Bottom Line
@@ -91,3 +121,6 @@
 [LIMIT] QWI is labor-market outcome data by county and education; it does not identify immigrant workers.
 
 [LIMIT] There are only nine receiver nodes in this screening table. The score is a triage device, not a publishable regression result.
+
+</details>
+<!-- historical-snapshot:end -->

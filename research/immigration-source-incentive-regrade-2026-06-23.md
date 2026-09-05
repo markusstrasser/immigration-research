@@ -1,12 +1,10 @@
-# Source-Incentive Re-Grade — what survives when you discount advocacy and reward against-interest findings
+# Source-incentive regrade — an uncalibrated review heuristic
 
-**Date:** 2026-06-23
-**Trigger:** operator critique — economists left-lean + single-channel overreach → journalist selection → LLM pretraining inherits the tilt. This pass turns that critique into a scoring rule the corpus runs.
-**Lens:** `G-LIF-U01` (source-incentive / against-interest audit). **Table:** `source_incentive_grades` (in the unified release). **Builder:** `build_source_incentive_grades.py`.
+**Date:** 2026-06-23; interpretation corrected 2026-09-05.
 
-## The rule (symmetric by construction)
+**Verdict:** The source-incentive formula is a reproducible prioritization heuristic, not a calibrated truth probability, information weight, bias correction or validation of the immigration conclusions. An official source can accurately report a limited estimand; an advocacy source can report valid data. Claims still require source/method/population review. [SOURCE: local `build_source_incentive_grades.py`; INFERENCE]
 
-A finding is more credible when it cuts **against** its source's own prior, and less credible when it's advocacy **confirming** that prior — *on both sides*. A version that only deflated the other team's advocacy would be the bias it audits.
+## Historical rule, preserved exactly
 
 ```
 base_weight  : govt_nonpartisan 1.0 | academic 0.8 | think_tank 0.6 | advocacy 0.4
@@ -15,7 +13,11 @@ with_interest_advocacy: advocacy outlet whose finding confirms its own prior
 adj_weight = min(1.0, base × (1.5 if against_interest else 0.7 if with_interest_advocacy else 1.0))
 ```
 
-## Result (20 load-bearing sources)
+The weights and 1.5/0.7 multipliers have not been calibrated against held-out true/false claims or measured source error rates. Whether a finding is against a source’s interest is itself an interpretation. Contrary-to-prior publication may be informative under a specified selection model, but its evidential value is not supplied by these multipliers. [INFERENCE]
+
+The implementation consults source stance and finding direction to classify against-interest results; calling it literally direction-blind was inaccurate. Symmetric treatment of political labels is a design choice, not proof of unbiased source selection or reliable conclusions. Equal mean weights would not prove unbiasedness, and the historical 0.63 cost versus 0.76 benefit means do not measure the literature’s true evidence balance. [SOURCE: local builder; INFERENCE]
+
+## Historical table output (not probabilities or current claim verification)
 
 | adj | source | finding | why |
 |----:|--------|---------|-----|
@@ -32,21 +34,20 @@ adj_weight = min(1.0, base × (1.5 if against_interest else 0.7 if with_interest
 | **0.28** | **FAIR** — high fiscal cost | cost | restrictionist advocacy confirming its prior |
 | **0.28** | **CIS/Camarota** — welfare-use cost | cost | restrictionist advocacy |
 
-## What shifts (this is the point)
+## What can and cannot be concluded
 
-- **The benefit headline weakens where it leans on advocacy.** "Immigrants are net contributors" rests heavily on ITEP/Cato/CAP — deflated to 0.28. Your media-critique is *correct here*: that specific meme is advocacy-inflated.
-- **…but the aggregate-positive does NOT collapse**, because it doesn't depend on advocacy. It rests on **Borjas's own surplus identity** (up-weighted to 1.0 *because* it's against his prior) and the **nonpartisan CBO federal** number. The most pro-immigration-sounding result survives precisely because its source had every incentive to find the opposite.
-- **The restrictionist headline also weakens.** The scary "huge fiscal cost / −$200k" numbers lean on FAIR/CIS — also deflated to 0.28. The rule does not flatter your prior; that's the integrity test, and it passes.
-- **The real cost finding survives.** The <HS lifetime fiscal negative is NAS (1.0) and the state-local cost is CBO (1.0) — nonpartisan, not advocacy. The cost is real; it just isn't FAIR's number.
+The displayed 0.28 for an advocacy source is the arithmetic `0.4×0.7`; it does not mean 28% credibility or 72% probability of falsehood. A score of1.0 is not certainty. The arithmetic remains unchanged so the previous output is inspectable; its interpretation is corrected. [RECALCULATION; INFERENCE]
 
-**Net:** discounting advocacy on both ends and rewarding against-interest findings leaves the **multi-ledger picture** standing — NAS <HS cost (real), CBO federal-positive (real), CBO state-local cost (real), Borjas aggregate surplus (real, against-interest), Borjas distributional wage hit (real). The advocacy noise on both sides — the part most amplified by journalists into pretraining — is exactly what drops out.
+The table cannot establish that media claims are advocacy-inflated, that an aggregate benefit survives empirical disconfirmation, or that a wage-loss estimate is real. Borjas’s positive immigration-surplus result is a model result under its assumptions, not a welfare theorem over every omitted channel. NAS age/education fiscal cells, CBO projections and academic wage estimates concern different populations and outcomes. [INFERENCE]
 
-## Honest residual
+CBO60165 projects approximately $897B lower federal deficits over2024–2034 for its surge counterfactual, covering revenues, mandatory spending and net interest. Discretionary appropriations and state/local budgets are excluded; the approximately $0.2T discretionary illustration is a scenario. This is not realized all-government or incumbent-welfare evidence. [SOURCE: https://www.cbo.gov/publication/60165]
 
-The symmetry check: mean `adj_weight` is **0.63 (cost) vs 0.76 (benefit)** — close, and the *rubric* is direction-blind (the multipliers never see cost/benefit). The 0.13 gap comes from **source-set composition**: more mid-credibility *academic* benefit papers (Card, Clemens, Colas-Sachs, Cortes, AJKM, Ottaviano-Peri) than academic cost papers (Borjas-wage, Razin) entered the list. That is itself partly your point — the academy *produces* more benefit-framed papers — but it's a composition fact, not a tilted rule, and it may also reflect my source selection. Flagged as a thing to check: is the academic benefit:cost paper ratio real, or did I under-list the rigorous cost-side work (e.g., more Borjas, Camarota's peer-reviewed pieces, Huddle)? The grade table is append-only — add sources and re-run.
+Use the heuristic to select claims for closer review and expose judgments about incentives. Do not use it to average incompatible estimates, aggregate “truth scores,” certify coverage or stop disconfirmation. The parent is correcting builder/output labels while retaining the formula. [INFERENCE]
 
-## Reproduce
+## Reproduction scope
 
-```bash
-duckdb warehouse/immigration.duckdb "SELECT label, finding_direction, adj_weight FROM source_incentive_grades ORDER BY adj_weight DESC"
-```
+The historical table was `source_incentive_grades`. Check the current warehouse path/schema before running the old SQL; an unchanged numeric formula does not validate the source labels or conclusions. No warehouse rebuild or formula change was performed in this memo repair.
+
+## Revisions
+
+- **2026-09-05 — Separated reproducible heuristic scores from evidential validity.** See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md). Earlier dated revision entries describe the historical state, including superseded conclusions.

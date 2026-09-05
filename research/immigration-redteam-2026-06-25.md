@@ -1,3 +1,11 @@
+# Immigration red-team — current status (2026-09-05)
+
+**Verdict:** The June review below is retained verbatim as a historical record. Its agreement and numerical scores are not independent primary verification. The September audit supersedes its certification: projection exclusions do not prove a CBO “ceiling”; multiple analyses sharing Texas data are not wholly independent; lower first-generation rates do not prove that the native comparator is inflated by the second generation; fiscal signs do not determine total incumbent welfare. [SOURCE: the September decision; INFERENCE]
+
+The CBO July 2024 $897B is a projection over 2024–2034 covering revenue, mandatory spending and net interest, excluding discretionary appropriations and state/local budgets. CBO’s illustrative proportional discretionary funding is about $0.2T. The earlier source-depth and conviction scores cannot repair those substantive scope errors. [SOURCE: https://www.cbo.gov/publication/60165]
+
+## Historical review record — 2026-06-25 (superseded where noted above)
+
 # Red-Team of Our Own Synthesis — cross-model adversarial review
 
 **Date:** 2026-06-25
@@ -28,3 +36,8 @@ Housing/rent incidence on low-skill natives (under-integrated); **ESL + emergenc
 ## Net
 
 The red-team did **not** overturn the headline — it tightened it. The honest synthesis after this pass: *best current evidence shows first-generation immigrants (incl. unauthorized) do not have higher detected crime than natives, and CBO projects the recent surge improves federal finances while imposing concentrated state-local and low-skill-native costs; net welfare depends on horizon and welfare weights, and no single same-population model has been built.* The most valuable catch was the **asymmetric-skepticism tilt** — confirming the instrument bias is real and lands in our own confidence scores, not just in the sources.
+
+
+## Revisions
+
+- **2026-09-05 — Marked historical cross-model adjudication as superseded rather than independent validation** See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md). Historical revision entries above describe the earlier state, including conclusions superseded here.

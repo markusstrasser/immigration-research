@@ -1,5 +1,7 @@
 # Immigration economists keep answering the wrong question — 2026-04-22
 
+**2026-09-05 interpretation correction:** Average resident income, incumbent welfare, fiscal balance and subgroup outcomes are different estimands. A subgroup loss does not refute a positive average; a local cost does not prove net loss or that restriction is necessary. Descriptive county/PUMA screens do not identify causal native-wage or capacity effects. See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md).
+
 **Purpose:** Short public-facing one-pager.  
 **Use:** Forwardable summary of the strongest fair critique of the mainstream pro-immigration economics line after the repo's current evidence.
 
@@ -7,7 +9,7 @@
 
 ## The core problem
 
-The slick economist case for immigration usually works by answering a **different question** than the one ordinary people are asking.
+The valid criticism applies when a speaker uses evidence for one outcome to claim a different outcome. This memo does not estimate how often economists do that, and a stated average-incumbent-welfare claim already names a relevant objective. [INFERENCE]
 
 When people ask:
 
@@ -25,7 +27,7 @@ Those are real effects.
 
 They are also **not the same ledger**.
 
-That is the central bait-and-switch. [SOURCE: research/immigration-claims-matrix-2026-04-11.md] [SOURCE: research/immigration-reasoning-evolution-2026-04-21.md]
+That inference would be invalid; it should be attributed to a specific statement rather than presumed from an economist’s positive conclusion. [SOURCE: research/immigration-claims-matrix-2026-04-11.md] [SOURCE: research/immigration-reasoning-evolution-2026-04-21.md]
 
 ## The seven standard moves
 
@@ -52,7 +54,7 @@ It is not.
 The strongest repo reading is:
 
 1. large gains are plausible in principle
-2. the near-doubling rhetoric is an upper-bound extrapolation
+2. the near-doubling rhetoric is a conditional model extrapolation
 3. it depends on destination-country capacity staying largely intact
 
 [SOURCE: research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md]
@@ -110,11 +112,11 @@ But the real channels also include:
 
 If aggregate GDP rises, they act as if the argument is basically over.
 
-But the official U.S. evidence already blocks that move:
+The relevant accounting distinctions are:
 
 1. aggregate GDP can rise
-2. GDP per person can fall
-3. CBO or narrow federal-proxy channels can be positive
+2. GDP per person can fall as the population changes, even if every incumbent gains
+3. CBO60165 projects positive covered federal effects over2024–2034, including revenue, mandatory spending and net interest but excluding discretionary appropriations and state/local; its approximately$0.2T discretionary illustration is a scenario. The earlier local SIPP/ACS federal proxy is withdrawn pending rebuild
 4. state/local and receiver gross-load channels can be negative or unresolved on the all-in net
 
 [SOURCE: research/immigration-claims-matrix-2026-04-11.md]
@@ -133,9 +135,9 @@ The honest current position is:
 
 ## The shortest fair summary
 
-The economist case is not wrong because immigration has no gains.
+The evidence does not support treating every positive average-welfare conclusion as an error merely because some costs or losers exist.
 
-It is wrong because it repeatedly uses a bounded efficiency argument to answer a different question:
+The criticism is valid if a bounded efficiency argument is used without a bridge to answer:
 
 `Is this good for incumbent residents once housing, local capacity, and political-response channels are priced in?`
 
@@ -149,8 +151,12 @@ That question is not answered by:
 
 **The economist case does not fail on first-order gains. It fails where it pretends those gains settle every ledger at once.**
 
+**GDP and welfare correction [INFERENCE]:** A lower population-wide GDP-per-person average after entry can coexist with gains for every incumbent, because new entrants change the population being averaged. Conversely aggregate growth does not guarantee every incumbent gains. Neither comparison alone determines total incumbent welfare. Rent payments transfer resources between tenants and owners; count real congestion/building costs separately and avoid counting a transfer as a whole-economy loss. A modeled large global gain is conditional, not a proved mathematical ceiling or a guaranteed feasible policy forecast.
+
 ## Revisions
 
 | Date | Change | Trigger |
 |---|---|---|
 | 2026-06-16 | Scoped capacity, denominator, and political-response wording to descriptive/gross/correlational evidence rather than causal mechanism. | `research/immigration-conclusion-audit-running-fixes.md` capacity/surge corrections. |
+
+- **2026-09-05 — Corrected welfare, comparator and model-scope reasoning.** See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md). Earlier dated revision entries describe the historical state, including superseded conclusions.

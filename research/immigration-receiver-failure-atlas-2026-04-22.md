@@ -1,3 +1,33 @@
+# Receiver atlas: measured programs, selected places, and attribution
+
+**Current assessment — 2026-09-05.** The historical atlas records different shelter, spending, and election patterns in selected receiver locations. Its data do not establish a ranking of physical “failures,” identify institutional cost amplification, or show that overload caused voting changes. [INFERENCE]
+
+## Capacity and fiscal comparisons
+
+A sheltered-PIT/HIC ratio above one requires matching program categories, date, geography, and overflow/seasonal inventory before it is interpreted as physical saturation. Total PIT also includes unsheltered people, so total-PIT/shelter-beds is not occupancy. Repeating an unmatched ratio across years does not validate it. The reported Denver 1.34, NYC 1.21, and Bexar 1.02 ratios remain historical screen values pending reconciliation, not proven bed-capacity breaches. [SOURCE: historical atlas; [HUD definitions](https://www.huduser.gov/portal/sites/default/files/pdf/2024-AHAR-Part-1.pdf); INFERENCE]
+
+HIC and shelter counts can themselves respond to the influx and policy; ratios can decline because capacity expanded even while demand or spending rose. Permits per HIC bed mix a housing-unit authorization flow and a service-bed stock. These measures cannot establish a universal immigration threshold or be interpreted as migrant-specific demand without separate population data. [INFERENCE]
+
+The quoted Boston/MA-core spending per resident combines a state-level expenditure with a narrower local population. The **$415 comparison with NYC's $429 is withdrawn as a matched fiscal comparison** until the payer, beneficiaries, geographic denominator, and fiscal period are aligned. City, county, CoC, and state ledgers cannot be interchanged. Gross program outlays also differ from incremental net fiscal effects. [SOURCE: historical cost/scope labels and [surge correction](immigration-causal-surge-2021-2024.md); INFERENCE]
+
+## Causal claims and the score
+
+High spending beside a low shelter ratio does not isolate shelter law, assignment, or procurement as the cause. It can also reflect program scope, added beds, covered populations, prices, or inconsistent geography. A count of heuristic stress flags is a researcher-chosen index; correlated flags are not independent confirmations, and the score does not estimate the magnitude of welfare loss. [INFERENCE]
+
+Election changes in these selected locations are descriptive. A mismatch between shelter ratios and vote swings shows that one scalar does not describe all outcomes; it does not establish which omitted mechanism caused the votes. The later [synthetic comparisons](immigration-receiver-counterfactuals-2026-04-22.md) did not provide decisive ratio-placebo evidence and should not be bypassed by calling the original atlas a causal object. [INFERENCE]
+
+The original atlas joins and yearly files were not recovered for a rerun. Administrative records can support specific gross local pressures after source reconciliation, but this audit does not freshly verify the numeric rankings or infer a national/general receiver failure rate. [GAP]
+
+## Revisions
+
+- **2026-09-05:** Withdrew unmatched saturation/cost rankings and causal regime/voting claims while preserving all historical numbers and case distinctions. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Immigration receiver failure atlas — 2026-04-22
 
 **Question:** If the county annual panel is only a screening surface, what do the actual receiver nodes look like when we track shelter load, permits, spending, and political shift directly?  
@@ -112,3 +142,6 @@ The receiver frontier is now:
 4. `political response`
 
 That is already a cleaner causal object than the annual county wage panel. [INFERENCE]
+
+</details>
+<!-- historical-snapshot:end -->
