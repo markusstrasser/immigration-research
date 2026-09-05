@@ -8,6 +8,7 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 
 | File | Topic | Consult before |
 |------|-------|----------------|
+| `immigration-conceptual-audit-2026-09-05.md` | Material audit: SIPP household/person and education errors; GDP/incumbent and CRS mistakes; Cato mischaracterization; global-gains arithmetic; conditional crime-bias sign | Reusing June fiscal-proxy figures or the dismantling synthesis; these corrections supersede the specified claims |
 | `immigration-main-question-reset.md` | What the repo is actually trying to answer | Reframing the project or proposing new scope |
 | `immigration-evidence-base-audit.md` | Which claims are well-supported vs thin | Repeating literature claims or writing summaries |
 | `immigration-verified-findings-report-2026-04-10.md` | Verified findings snapshot, June-scoped by running fixes | Answering "what do we know?" after checking the June delta/fixes |
