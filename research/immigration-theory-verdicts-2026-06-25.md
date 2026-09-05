@@ -1,3 +1,37 @@
+# Generator-bank checks — corrected evidentiary status
+
+**Current adjudication: 2026-09-05.** The earlier PASS/FAIL count is withdrawn as a count of empirically verified or falsified theories. Executable SQL, a true arithmetic identity and a successful empirical falsifier are different things. Later repairs that made 27 queries execute did not establish that they tested their stated scientific claims. [SOURCE: historical scorecard below] [SOURCE: [repair decision](../decisions/2026-09-05-material-inference-repair.md)]
+
+| Historical result | Correct adjudication | Reason |
+|---|---|---|
+| M13: positive annual proxy versus negative NAS lifetime NPV | **Invalid input; scope warning survives analytically** | The +$1,519 proxy is invalidated by person/household and education errors. Even valid opposite signs for different populations, budgets and horizons would not empirically falsify a common-estimand theory. |
+| I8: 25% assumed early exit produces 25% fewer person-years | **Scenario identity, not empirical rejection** | The output is imposed by the assumed multiplier. Exit can change fiscal NPV in either direction through timing and selection; taxes and benefits do not accrue uniformly. Check the source model's emigration assumptions before applying another exit discount. |
+| F5: positive NPV without an innovation tag | **Mechanism unidentified** | A missing metadata field is not an intervention that removes innovation. The model must actually switch the mechanism off to test whether it is necessary. The historical row also mislabels HS/some-college benchmarks as college+. |
+| I: India and Mexico net values halved at year 10+ | **Assumed persistence, not measured assimilation** | A common decay multiplier preserves proportional differences by construction. The entry-level fiscal inputs are also invalidated. |
+| M: annuity ratio 2.47 against a predeclared factor-of-two band | **Outside the stated arithmetic band; no scientific equivalence verdict** | “Same order of magnitude” cannot retroactively change the threshold. Price years, populations and fiscal scope differ before any ratio is meaningful. |
+| M: remittances exceed the fiscal proxy | **Not a common-ledger test** | The first denominator was wrong; the later repair still compares a private flow with a selected public balance and uses an invalid fiscal input. Gross remittances are not a net global resource loss. |
+| O / P: national ITEP taxes or city spending exceed a Mexico subset's proxy | **Incomparable totals** | Population, geography, ledger and time coverage differ. A larger number does not test the proposed fiscal effect. |
+| N: per-pupil spending falls within a band / exceeds $15k | **Unit or plausibility check only** | Neither test validates the population numerator, immigrant attribution or marginal school cost. A source-derived series correlated with its source is not independent validation. |
+| T: nominal earnings rise from 1980 to 2010 | **Not a test of the composition mechanism** | Inflation, population growth, capital and productivity can all raise that total. “Holding incumbents' outcomes fixed, adding positive output raises the sum” is an identity, not this time-series estimate. |
+| V: Texas status-rate ordering over 2012–2018 | **Descriptive persistence for the measured outcome** | It does not track people across generations or identify cultural persistence/decay, latent offending or the causal effect of immigration. |
+| A: education ordering / scenario sign differences | **Model-output comparisons** | They describe the stored benchmark assumptions. They are not independent validation of those models or a measured universal education effect. |
+| L: foreign-born health expenditure below native expenditure | **Descriptive comparison, conditional on source population and adjustment** | Differences in age, insurance, access and selection prevent reading spending alone as a causal health advantage. Missing elderly cells or ambiguous bridge queries remain unadjudicated. |
+| Repaired K border/gateway RPP comparison | **Descriptive price-context contrast** | State RPP differences do not identify immigration's causal local cost or a border/gateway mechanism. |
+
+[SOURCE: the original query descriptions and reported calculations preserved below] [INFERENCE: estimand, dimensional and identification checks]
+
+No replacement numerical “theories verified” tally is reported. Original predictions and thresholds remain historical; redefining a test after seeing its output would be exploratory re-specification requiring new evidence. Any later empirical score must identify the source population, counterfactual, outcome, testable prediction, uncertainty and predeclared decision rule, and must not use invalidated fiscal inputs. Missing data is an unresolved test, not evidence for or against a theory. [INFERENCE]
+
+The original generator JSONs are present under `research/.mining/`, which is the path declared by `build_lifetime_evidence_warehouse.py`; they are historical inputs, not fresh empirical verification. NAS's demographic projection explicitly already incorporates emigration as well as mortality and fertility (local source, chapter 8 demographic-method appendix, printed p.380). An extra blanket exit multiplier must therefore be labeled a sensitivity relative to that baseline, not a correction for omitted emigration. This correction does not claim a review of the original agent run. [SOURCE: builder declaration, mining inputs, and NAS demographic-method appendix]
+
+## Revisions
+
+- **2026-09-05:** Re-adjudicated the full historical scorecard by what each calculation can establish; withdrew unsupported empirical PASS/FAIL claims following the [material inference repair](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # Generator-Bank Theory Verdicts — running the falsifiers
 
 **Date:** 2026-06-25
@@ -77,3 +111,5 @@ Acted on recommendation #1 below. Fixed the source `duckdb_test`s (alias drift a
 - **K#0 → NOT-TESTABLE.** Confirmed the provenance tautology — both `current_spend_per_pupil` series derive from the same NCES F-33 source, so CORR≈1.0 validates nothing. Marked NOT-TESTABLE (a real validation needs two independent products, e.g. Census F-33 vs NCES CCD).
 - **K#2 → now ADJUDICATES.** Replaced the bare top-10 RPP listing with a real border(TX/AZ/NM)-vs-gateway(NY/NJ/MA/IL) test. Result: **destination spread 24.6% (>15% → SUPPORTED, the state cost dimension is real); clean border-vs-gateway split only ~10% (modest — CA is a high-cost border outlier).** So the state RPP dimension matters, but not as a clean border/gateway dichotomy.
 - **The "Adjacent flag" (above) is RESOLVED.** The forensic data-integrity gate audited `origin_fiscal_scenario_2023`: `avg_medicaid_total_computable` (~$299B) was NOT a unit bug — it's a correct mean of state Medicaid TOTALS (a "which states does this origin concentrate in" context signal), just misleadingly named. Renamed → `mean_state_medicaid_total_usd`; gate now ✓ no flags.
+
+</details>

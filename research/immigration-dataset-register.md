@@ -109,8 +109,8 @@ Key builders: `build_immigration_warehouse.py`, `build_stage5_local_cost_context
 
 | Dataset / source | Local path | Status | Primary use | Main limit |
 |---|---|---|---|---|
-| SIPP 2024 public-use | `sources/immigration-fiscal/data/external/stage3/census/sipp/pu2024_csv.zip` | Local | Monthly program participation and household transitions | Short panel, weak status identification |
-| SIPP documentation | `sources/immigration-fiscal/data/external/stage3/census/sipp/` | Local | Field and methodology reference | Documentation only |
+| SIPP 2024 public-use | `$PNY_DATA_ROOT/external/stage3/census/sipp/pu2024_csv.zip`; verified local staging `.scratch/data/external/stage3/census/sipp/` | Reacquired from Census 2026-09-05; SSD copy also present | Person-month earnings and explicitly linked benefit units, reference year **2023** | Not a household-total donor for each adult; no clean legal-status panel; see provenance below |
+| SIPP documentation | Same staging: `pu2024_schema.json`, `2024_SIPP_Data_Dictionary.pdf`; SSD also contains user guide | Verified 2026-09-05 | EEDUC, monthly age, benefit owner/member links, annual weighting | Codebook defines units; file label 2024 is not the income/tax reference year |
 | SIPP 2023 public-use | `sources/immigration-fiscal/data/external/stage2/census/sipp/pu2023_csv.zip` | Local | Earlier staging/calibration | Same |
 | SIPP calibration extract | `sources/immigration-fiscal/data/derived/stage2/sipp_foreign_low_skill_calibration_2023.csv` | Local | Calibration input for stage 2 | Derived, not source-of-record |
 | MEPS HC-251 | `sources/immigration-fiscal/data/external/stage3/ahrq/meps/` | Local | Medical spending and payer incidence | Not immigrant-status rich by itself |
@@ -119,6 +119,16 @@ Key builders: `build_immigration_warehouse.py`, `build_stage5_local_cost_context
 | SIPP→MEPS bridge cells 2024 | `sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_bridge_cells_2024.csv` | Local, built | Join layer mapping SIPP cells to MEPS age/nativity/insurance health-cost cells | No undocumented-specific inference introduced |
 | SIPP→MEPS expected health-cost cells 2024 | `sources/immigration-fiscal/data/derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv` | Local, built | Collapsed per-SIPP-cell expected payer-spend profile used by public MVP | Not itself a final lifetime estimate |
 | IRS SOI mirror | `/Volumes/2TBPNY/corpus/irs_soi` | Local SSD mirror | Federal tax microsim backbone | External path, confidentiality edits; re-stage if missing |
+
+### SIPP 2024 acquisition and interpretation revision — 2026-09-05
+
+**Source / access:** Census public-use files, reacquired 2026-09-05. **Primary data:** [pu2024_csv.zip](https://www2.census.gov/programs-surveys/sipp/data/datasets/2024/pu2024_csv.zip), 102,122,301 bytes, SHA256 `3a78b26988c76c02b9e206f72507390fb6ec9dac7974ec31aa90abc9d9809764`. **Schema:** [pu2024_schema.json](https://www2.census.gov/programs-surveys/sipp/data/datasets/2024/pu2024_schema.json), 757,529 bytes, SHA256 `601042d6f32e4c8ccd98952e91d0e25dc02d22d2dcb8babd4a2c269046d87b3d`. **Dictionary:** [2024_SIPP_Data_Dictionary.pdf](https://www2.census.gov/programs-surveys/sipp/tech-documentation/data-dictionaries/2024/2024_SIPP_Data_Dictionary.pdf), 4,015,396 bytes, SHA256 `f7af93a5b75fc6c3b67ca9c8aad7de78c32d071aa829b682f01312a3f46c7289`. The three source files total 106,895,226 bytes. [SOURCE: Census downloads and local SHA256]
+
+**Paths verified:** `.scratch/data/external/stage3/census/sipp/` is the local repair staging directory. The connected drive has the original ZIP/schema under `/Volumes/2TBPNY/research-data/immigration-fiscal/data/external/stage3/census/sipp/`. The old repository `sources` symlink points to an absent offload directory; that path is not evidence a dataset is absent. Use the configured data root. [SOURCE: filesystem inspection 2026-09-05]
+
+**Key definitions:** `EEDUC` 31–38 = less than high school; 39 = HS/GED; 40–42 = some college/associate; 43–46 = BA+. `TAGE_EHC` is reference-month age. `TPEARN` may include negative business income. SNAP/TANF amounts are held on the named benefit owner, with covered members identified by the owner/member fields; SSI is individual. Household and benefit-unit totals must not be copied to every ACS adult. Annual donors use reference-year earnings and the appropriate annual weight. [SOURCE: Census dictionary and user guide]
+
+**Used in:** `infra/immigration-fiscal/build/build_federal_microsim_sipp_2024.py` and `build_public_mvp_sipp_module_2024.py`. This acquisition supports the [material inference repair](../decisions/2026-09-05-material-inference-repair.md); it replaces the earlier donor interpretation, not the original raw observations. Derived April/June SIPP rows in this register are historical until rebuilt with the corrected definitions.
 
 ## Origin and legal-channel layers
 

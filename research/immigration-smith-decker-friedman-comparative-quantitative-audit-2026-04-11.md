@@ -1,3 +1,26 @@
+# Immigration commentators — corrected welfare and accounting framework
+
+**Current correction: 2026-09-05.** This section supersedes the April framework and verdicts where they rely on adding overlapping benefits or treating a population-average decline as incumbent harm. The original is preserved below. [SOURCE: [repair decision](../decisions/2026-09-05-material-inference-repair.md)]
+
+The April national equation adds productivity, employer profits, consumer surplus and federal receipts without defining disjoint components. Productivity changes generate some of the profits and wages; taxes are paid out of private income. Adding all of them double-counts unless a complete incidence decomposition offsets the overlaps. The local equation also treats gross rent payments as a net loss without counting landlord receipts or stating which owners fall outside the chosen population. Those equations are withdrawn as quantitative welfare identities. [INFERENCE: accounting]
+
+A coherent approach is to define a fixed set of people S and evaluate `Delta W(S) = sum_i weight_i × Delta equivalent_variation_i` over an explicit horizon and counterfactual, including public services and external effects once. Equivalent variation requires a price/utility model; it is not observed GDP. Alternatively, construct a complete, non-overlapping income/resource ledger with consistent owners and transfers. Government's `tax receipts − spending` remains a separate budget outcome; it is not an extra welfare benefit to add to already after-tax household gains. In a global ledger, remittances and rents are transfers before transaction costs, real resource use and externalities. A native or local ledger can exclude recipients elsewhere, but must say so. [INFERENCE: definitions] [FRAMING-SENSITIVE: population and welfare weights]
+
+There is no necessary condition that every renter, worker, taxpayer and locality gain for the weighted total to be positive. Conversely, a positive aggregate does not establish that the losers are compensated. Local fiscal costs are evidence about that ledger, not sufficient evidence that immigration is nationally or globally harmful. [INFERENCE]
+
+CBO's $897B federal deficit reduction and $8.9T cumulative nominal GDP gain in 2024–2034 are projections under its July 2024 scenario, not realized observations and not addable. The $103k ratio from $897B/8.7M is a scenario aggregate divided by an added-person count, not an individual lifetime NPV. CBO's separately estimated 2023 local costs have a different horizon and coverage. [SOURCE: [July 2024 report](https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf)] [SOURCE: [2025 state/local report](https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf)]
+
+The February projection of lower GDP per resident includes newcomers. It does not show incumbents lose: 100 incumbents moving from income 100 to 101 plus 20 newcomers at 50 produces mean income 92.5 while every incumbent gains. Therefore that statistic cannot decide the Smith/Decker incumbent-welfare dispute. CBO's direct existing-worker projections, distributional effects and the authors' exact stated scopes are the appropriate objects. [INFERENCE: exact counterexample] [SOURCE: [February 2024 Box 2-1](https://www.cbo.gov/system/files/2024-02/59710-Outlook-2024.pdf)]
+
+The warehouse's school/rent profiles measure exposure under specific weights and geography; they do not identify immigrant-attributable marginal costs. The old household-to-person SIPP fiscal outputs are invalidated. Any comparative score depending on those outputs or the withdrawn welfare equations is unsupported. The [current seven-author synthesis](immigration-economist-dismantling-2026-06-25.md) and linked source-specific memos replace the earlier scorecard. [SOURCE: [material audit](immigration-conceptual-audit-2026-09-05.md)]
+
+## Revisions
+
+- **2026-09-05:** Withdrew overlapping welfare equations and repaired population, horizon and evidence-status inferences under the [repair decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # Immigration commentators — comparative quantitative audit of Noah Smith, Nicholas Decker, and David D. Friedman
 
 **Question:** Can we evaluate the main immigration claims of `Noah Smith`, `Nicholas Decker`, and `David D. Friedman` with a more rigorous, more decisive, and more quantitative first-principles framework?  
@@ -380,3 +403,5 @@ Useful hits:
 2. CBO 2025 gave the cleanest state/local and nonbudgetary crowding anchors
 3. IMF 2025 gave the cleanest housing-versus-overall inflation split
 4. the local DuckDB warehouse gave the best evidence that school and rent heterogeneity is operational, not decorative
+
+</details>

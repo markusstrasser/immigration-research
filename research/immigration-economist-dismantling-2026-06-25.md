@@ -1,3 +1,48 @@
+# Immigration arguments: corrected assessment of the seven authors
+
+**Current assessment: 2026-09-05.** The June synthesis contained material mathematical errors, source-version mistakes and unsupported rebuttals. The corrected assessment below supersedes it. The original remains in the historical section for an exact record of the change. [SOURCE: [audit](immigration-conceptual-audit-2026-09-05.md)] [SOURCE: [decision](../decisions/2026-09-05-material-inference-repair.md)]
+
+The defensible conclusion is that effects vary across populations, horizons and budgets. That does not establish that every author answered an easier question, that average gains require every subgroup to gain, or that local costs outweigh national or global gains. Each claim needs its own estimand and evidence. [INFERENCE] This LLM review is fallible on a politically charged topic; the explicit source and accounting checks, rather than an asserted ideological correction, support the conclusions. [SOURCE: [instrument note](../notes/llm-bias-caveat.md)]
+
+| Author / foundation | What survives | Material correction to our rebuttal |
+|---|---|---|
+| [Noah Smith](immigration-dismantle-noah-smith-2026-06-25.md) | Small average wage effects and national gains can coexist with local service and housing costs. | Discussing different populations or margins in different essays is not itself a contradiction. A local cost does not refute a net-benefit claim without the rest of that ledger. |
+| [Nicholas Decker](immigration-dismantle-decker-2026-06-25.md) | Complementarity, specialization and innovation are relevant channels; a universal welfare guarantee still needs assumptions. | Complementarity can occur under constant returns. Lower GDP per resident after immigration does not prove that incumbents lose. CBO explicitly models productivity channels, so “omitted all dynamic gains” is also incorrect. |
+| [Cato](immigration-dismantle-cato-2026-06-25.md) | Historical fiscal balances depend materially on population and public-goods allocation. | The separate descendant-inclusive calculation counts both their costs and taxes. The first-generation $14.5T result does not secretly include descendants' future taxes. We have not recalculated an alternative allocation that reverses this study's state/local sign. |
+| [Card / Peri](immigration-dismantle-card-peri-2026-06-25.md) | Several designs find modest average native wage effects; heterogeneity and generalization remain important. | The published Ottaviano–Peri 2012 result is about +0.6% for natives and −6.7% for previous immigrants, 1990–2006. The −19% quotation comes from an earlier draft. Local adjustment is a limitation to evaluate, not proof every city estimate misses a fixed 40–60%. Our QWI exercise cannot measure native-specific wages. |
+| [Michael Clemens](immigration-dismantle-clemens-2026-06-25.md) | Migration can create large gains; complete liberalization estimates are model-dependent. | Our fixed-gain calibration gives 20.45%, not doubling, with 3B movers. The final Docquier–Machado–Sekkat paper gives 11.5–12.5% in its medium-term central scenarios, not the older ~4% estimate as a universal ceiling. An optimal annual migration rate is not an upper bound on cumulative migration. |
+| [Zeke Hernandez](immigration-dismantle-hernandez-2026-06-25.md) | Innovation, investment and descendant fiscal contributions are supported channels. | NAS's −$1,600 / +$1,700 / +$1,300 figures are cross-sectional annual state/local balances per independent adult including dependents, not successive generations' lifetime investment returns. Inventor authorship and spillover attribution are different objects. |
+| [Abramitzky / Boustan](immigration-dismantle-streets-of-gold-2026-06-25.md) | Their conditional intergenerational mobility finding survives. | Comparing children at the same parental income rank already handles “more room to rise” on that dimension. Incomplete unconditional convergence is not downward mobility and does not negate conditional upward mobility. |
+
+The linked sub-memos give primary sources and the limits of each correction. Their current sections govern; old quoted passages are not current findings.
+
+## Checks that change the conclusions
+
+**Population arithmetic.** Suppose 100 incumbents earn 100 each. After immigration all earn 101, and 20 newcomers earn 50 each. Output rises from 10,000 to 11,100; every incumbent gains 1%; the population mean falls to 92.5. Thus CBO's projected lower GDP per person is compatible with incumbent gains. It is neither proof of those gains nor a counterexample to them. [INFERENCE: exact arithmetic] CBO's February result is a population-average projection; its July report separately examines existing workers and their education groups. [SOURCE: [CBO February 2024, Box 2-1](https://www.cbo.gov/system/files/2024-02/59710-Outlook-2024.pdf)] [SOURCE: [CBO July 2024](https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf)]
+
+**Returns to scale.** For the constant-returns function `Y = sqrt(KL)`, holding K=100 and increasing L from 100 to 121 raises Y from 100 to 110 and lowers Y/L from 1 to 0.9091. Constant returns concerns scaling all inputs together; it does not hold capital per worker constant when only labor changes, nor exclude complementarity. [INFERENCE: exact counterexample]
+
+**Migration calibration.** With a fixed $7,500 annual gain per additional mover and a $110T baseline, 200M, 1B and 3B movers imply 1.36%, 6.82% and 20.45%. Doubling would require 14.67B movers under that illustrative formula. This falsifies our earlier arithmetic, not the different mechanisms and calibration of every structural model. U.S. annual housing starts cannot be used as a global, immutable multi-decade capacity limit. [INFERENCE: 100 × movers × 7,500 / 110T] [SOURCE: [final DMS paper](https://doi.org/10.1111/sjoe.12097)]
+
+**Generational crime comparison.** Write the native-born rate as `rN = a*r2 + (1-a)*r3+`. Including the second generation raises that comparator relative to third-plus-generation natives only if `r2 > r3+`. Evidence that `r2 > r1` is insufficient. A nativity definition is not a coding error; a race-restricted comparison changes the population. Texas arrest/conviction findings are specific to those outcomes and denominators and do not identify every group's latent offending or descendants' outcomes. The CPS second-generation income/education loader has no crime outcome and cannot resolve this question. [INFERENCE: mixture identity] [SOURCE: [crime assessment](immigration-crime-rates-unauthorized-vs-native-born.md)]
+
+**Fiscal units.** The old SIPP donor model copied household payroll and selected transfers to individual ACS adults and misclassified education. Its origin rankings, Mexico +$1,519/adult, +$12.9B aggregate, native comparison and any school-net combination are invalidated. The replacement must use person-level earnings, correct reference-year taxes and explicit benefit allocation. Even a repaired payroll-minus-selected-benefits quantity is not a full fiscal balance or a causal welfare effect. [SOURCE: [audit](immigration-conceptual-audit-2026-09-05.md)]
+
+**Observed versus projected.** CBO's approximately $897B reduction in federal deficits and $8.9T increase in cumulative nominal GDP over 2024–2034 are model projections, not realized gains. They are different quantities and must not be added. Neither is directly comparable to one year's local costs or a discounted lifetime benchmark. A separate general-equilibrium fiscal estimate can overlap CBO's macro channel. [SOURCE: [CBO July 2024](https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf)]
+
+## Economic assumptions that remain explicit
+
+For welfare, specify the affected people, counterfactual, time horizon, prices and distributional weights. Count each person's income/consumption change and real resource or external costs once. Rent paid is a tenant cost and landlord receipt; taxes similarly transfer purchasing power. These can matter greatly for distribution, external ownership and distortions, but gross payments are not automatically net global losses. National output, profits, wage income and tax receipts overlap and are not independent benefits. A positive weighted total does not require each subgroup to gain; hypothetical compensation is not evidence compensation occurred. [INFERENCE: accounting identities and welfare definition]
+
+Research can leave a sign unresolved without containing a reasoning error. Unidentified institutional effects, large-flow behavioral responses and missing all-government fiscal components remain empirical questions; the current evidence does not license either a universal pro-immigration conclusion or a universal rebuttal. [INFERENCE]
+
+## Revisions
+
+- **2026-09-05:** Replaced the current synthesis following the [material inference repair decision](../decisions/2026-09-05-material-inference-repair.md). The historical text below preserves the original claims exactly and is superseded by this assessment.
+
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # Dismantling the Pro-Immigration Canon — Commentators, Academic Foundations, Popular Books (2026-06-25)
 
 **Commission.** A step-by-step, fundamental dismantling of the major pro-immigration canon, across three
@@ -352,3 +397,5 @@ items (the ~1%-of-population inflow target, "97% found jobs") were the one cited
 - [x] dismantle-clemens — integrated (Place Premium granted, Mariel rigor adopted; "double world GDP" killed by Clemens's OWN 2019 interior-optimum model; parent built the base from repo audit, then integrated 3 primary-verified teammate upgrades — the teammate raced-and-deferred, did not stall)
 - [x] dismantle-hernandez — integrated (4 pillars granted; generational frame-switch + housing omission + title meta-kill; Kustov keystone verified+corrected)
 - [x] dismantle-streets-of-gold — integrated (rank-mobility granted; metric/external-validity/classification/selection kills from authors' own admissions; pgae344 verified+corrected)
+
+</details>
