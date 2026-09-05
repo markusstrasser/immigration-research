@@ -6,12 +6,12 @@ different ways (ACS CIT/NATIVITY, IPUMS CITIZEN, USSC, BJS SPI, Light TX-DPS). T
 SHARED INVARIANT: define the canonical enum ONCE here, every node loads it (never re-maps).
 
 Builds two tables into the context warehouse (flow into the unified release):
-  status_class_def        — the 5 canonical classes + nativity rollup + is_citizen
+  status_class_def        — source-resolvable classes + nativity rollup + is_citizen
   status_class_crosswalk  — each source's native codes -> canonical class, with lossy_flag
                             (source can't resolve finer) and verified (codebook-confirmed).
 
-Honest discipline: ACS/IPUMS cannot split LPR from unauthorized -> fold to other_noncitizen,
-lossy_flag=True. USSC/SPI category specifics are UNVERIFIED (verified=False) pending codebook.
+Unresolved citizenship or nativity stays unresolved. Broad source categories must not
+be mapped to a narrower class even when lossy_flag is set. USSC codes remain unverified.
 
 Run: uv run --with duckdb,pandas python build_status_crosswalk.py
 """
@@ -27,7 +27,10 @@ CLASSES = [
     ("naturalized",          2, "foreign", True,  "Foreign-born, naturalized US citizen"),
     ("lpr_legal_noncitizen", 3, "foreign", False, "Lawful permanent resident / other lawfully-present noncitizen"),
     ("unauthorized",         4, "foreign", False, "Unauthorized / undocumented noncitizen"),
-    ("other_noncitizen",     5, "foreign", False, "Noncitizen, legal status unresolved (catch-all for lossy sources)"),
+    ("other_noncitizen",     5, "unknown", False, "Noncitizen; birthplace and legal status unresolved"),
+    ("citizen_unknown_nativity", 6, "unknown", True, "US citizen; native/naturalized split unresolved"),
+    ("foreign_born_unknown_citizenship", 7, "foreign", None, "Foreign-born; citizenship and legal status unresolved"),
+    ("legal_immigrant_mixed_citizenship", 8, "foreign", None, "Study-classified legal immigrants, including naturalized citizens"),
 ]
 
 # (source, native_code, native_label, status_class, lossy_flag, verified, note)
@@ -40,7 +43,7 @@ CROSSWALK = [
     ("ACS_CIT", "5", "Not a US citizen",                     "other_noncitizen", True,  True,  "ACS cannot split LPR/unauthorized/other; folds to other_noncitizen"),
     # --- ACS NATIVITY (2-level; rollup axis only) ---
     ("ACS_NATIVITY", "1", "Native",       "native_born",      False, True, ""),
-    ("ACS_NATIVITY", "2", "Foreign born", "other_noncitizen", True,  True, "ROLLUP ONLY: foreign-born spans naturalized+LPR+unauthorized; do NOT use for fine status (use CIT). Joins at nativity_rollup='foreign'"),
+    ("ACS_NATIVITY", "2", "Foreign born", "foreign_born_unknown_citizenship", True, True, "Nativity alone does not establish citizenship; use CIT for finer status"),
     # --- IPUMS CITIZEN (the local 44M-row panel) ---
     ("IPUMS_CITIZEN", "0", "N/A (born in US)",                "native_born",      False, True, ""),
     ("IPUMS_CITIZEN", "1", "Born abroad of American parents", "native_born",      False, True, ""),
@@ -48,17 +51,27 @@ CROSSWALK = [
     ("IPUMS_CITIZEN", "3", "Not a citizen",                   "other_noncitizen", True,  True, "IPUMS cannot split LPR/unauthorized; folds to other_noncitizen"),
     # --- Light/He/Robey TX-DPS (the unit-level crime source) ---
     ("LIGHT_TXDPS", "USB",   "US-born",         "native_born",          False, True, ""),
-    ("LIGHT_TXDPS", "LEGAL", "Legal immigrant", "lpr_legal_noncitizen", True,  True, "Paper's 'legal immigrant' = LPR + other lawful; carry denom_source (CMS/Pew) separately, never collapse"),
+    ("LIGHT_TXDPS", "LEGAL", "Legal immigrant including naturalized", "legal_immigrant_mixed_citizenship", True, True, "PNAS methods and replication.do: baseline legal group includes naturalized citizens; CMS/Pew are denominator variants"),
+    ("LIGHT_TXDPS", "LEGAL_NONCIT", "Legal immigrant excluding naturalized", "lpr_legal_noncitizen", True, True, "CMS_nat splits naturalized from the legal-immigrant group, not from the native-born group; study classification, not an LPR-only measure"),
+    ("LIGHT_TXDPS", "NATURALIZED", "Naturalized citizen", "naturalized", False, True, "Separate group in big_category_nat.dta"),
     ("LIGHT_TXDPS", "UNDOC", "Undocumented",    "unauthorized",         False, True, "DPS immigration-status flag at arrest"),
     # --- USSC individual offender citizenship field (categories UNVERIFIED) ---
-    ("USSC_NEWCIT", "0", "US Citizen",            "native_born",          True,  False, "[UNVERIFIED] US-citizen offenders not split native/naturalized; confirm USSC codebook"),
+    ("USSC_NEWCIT", "0", "US Citizen",            "citizen_unknown_nativity", True, False, "[UNVERIFIED] US-citizen offenders not split native/naturalized; confirm USSC codebook"),
     ("USSC_NEWCIT", "1", "Resident/Legal Alien",  "lpr_legal_noncitizen", False, False, "[UNVERIFIED] confirm USSC codebook"),
     ("USSC_NEWCIT", "2", "Illegal Alien",         "unauthorized",         False, False, "[UNVERIFIED] confirm USSC codebook"),
     ("USSC_NEWCIT", "3", "Non-US Citizen/Unknown","other_noncitizen",     True,  False, "[UNVERIFIED] confirm USSC codebook"),
-    # --- BJS Survey of Prison Inmates citizenship (VERIFIED via DS0001 codebook: SES5A V0950) ---
-    ("BJS_SPI", "V0950_skip_or_1", "US citizen (V0950 SES5A skipped, or =1 dual)", "native_born", True, True, "SES5A: US-only (said 'United States' to SES5 -> skipped) + dual citizens; can't split native/naturalized"),
-    ("BJS_SPI", "V0950_2", "Noncitizen (V0950 SES5A=No: foreign citizen, not also US)", "other_noncitizen", True, True, "SES5A V0950=2; country-of-citizenship suppressed in PUF so LPR/unauthorized not splittable"),
+    # Official analysis recode; V0950 skip logic is not an equivalent classifier.
+    ("BJS_SPI", "RV0004_1", "US citizen", "citizen_unknown_nativity", True, True, "ICPSR37692 codebook RV0004=1; V0945 separately records birthplace"),
+    ("BJS_SPI", "RV0004_2", "Noncitizen", "other_noncitizen", True, True, "ICPSR37692 codebook RV0004=2; no exact LPR/unauthorized split"),
 ]
+
+
+def status_class_for(source: str, native_code: str) -> str:
+    """Use the canonical crosswalk without inferring finer information."""
+    matches = [r[3] for r in CROSSWALK if r[0] == source and r[1] == native_code]
+    if len(matches) != 1:
+        raise ValueError(f"Expected one status mapping for {source}/{native_code}: {matches}")
+    return matches[0]
 
 
 def build() -> None:
