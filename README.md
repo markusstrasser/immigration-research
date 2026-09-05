@@ -13,6 +13,8 @@ interpretations, falsifiable claims, and honest uncertainty.
 
 **September 2026 correction:** material fiscal-unit, source-version and inference errors were found in earlier analyses. Start with the [repair report](research/immigration-material-repair-report-2026-09-05.md) and [current assessment](research/immigration-economist-dismantling-2026-06-25.md). Historical dollar figures and causal verdicts must be checked against their supersession notes.
 
+The [recent evidence synthesis](research/immigration-framing-refresh-2026-09-05.md) integrates June–September papers, essays and X claims with newly staged labor, housing and enforcement data. The repaired fiscal outputs remain partial accounting estimates; the report states their units, assumptions and validation.
+
 This research is conducted *through an LLM*, which carries systematic post-training dispositions
 on politically charged topics. **Before treating any synthesis as neutral, read
 [`notes/llm-bias-caveat.md`](notes/llm-bias-caveat.md).** The generative principle (from

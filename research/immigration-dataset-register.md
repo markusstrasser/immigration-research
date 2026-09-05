@@ -2,6 +2,8 @@
 
 This is the working register for the immigration project. It is not the byte-level storage manifest. For raw-file inventory and trap-file warnings, see `sources/immigration-fiscal/data/MANIFEST.md`. For datasets we **don't have yet** (acquisition targets, crime + benefit-side gaps), see `research/immigration-dataset-roadmap.md`.
 
+**Verified storage update, 2026-09-05:** `sources` currently points to a missing SSD offload directory. Historical paths below describe the older layout and are not proof of current availability. Verified fiscal raw root: `/Volumes/2TBPNY/research-data/immigration-fiscal/data`; corrected derived root: `/Volumes/2TBPNY/research-data/immigration-fiscal/derived`. Local warehouses remain in `warehouse/`. The [repair report](immigration-material-repair-report-2026-09-05.md) governs corrected outputs; the [recent acquisition memo](immigration-dataset-proxy-refresh-2026-09-05.md) binds new files to hashes and source definitions.
+
 ## What exists already
 
 Yes, there is a raw data manifest:
@@ -42,9 +44,10 @@ Key builders: `build_immigration_warehouse.py`, `build_stage5_local_cost_context
 
 | Dataset / asset | Local path | Status | Primary use | Main limit |
 |---|---|---|---|---|
-| Immigration context DuckDB | `warehouse/immigration_context.duckdb` (internal) + symlink at `sources/immigration-fiscal/data/derived/` | Local, rebuilt 2026-06-15 (stage1+2) | Main query surface for state/origin/county context joins | Not a lifetime causal model by itself |
-| Lifetime evidence DuckDB | `warehouse/immigration_lifetime_evidence.duckdb` | Local, rebuilt 2026-06-15 | 113-source catalog, 138 claims, 63 generators, 24 structured tables (Saiz/ITEP/stage2/5/MEPS) | No row-level join to papers; bridge via `education_bucket`, `state_fips`, `topic` |
-| Fiscal union DuckDB | `warehouse/immigration_fiscal_union.duckdb` | Local, rebuilt 2026-06-15 | ATTACH shell + cross-domain views (`v_education_stock_with_npv`, etc.) | Views only; rebuild after either parent DB changes |
+| Immigration context DuckDB | `warehouse/immigration_context.duckdb` | Fiscal/housing repairs rebuilt 2026-09-05; unrelated inputs preserved | State/origin/county context and consistent person-level donor projections | Partial descriptive accounting; not a lifetime causal model |
+| Lifetime evidence DuckDB | `warehouse/immigration_lifetime_evidence.duckdb` | Relevant definitions, mined labels and shared-source imports repaired 2026-09-05 | Source catalog, unverified extracted claims, unadjudicated proposals, annual and lifetime benchmark tables | No row-level join to papers; units, assumptions and source confidence stay explicit |
+| Fiscal union DuckDB | `warehouse/immigration_fiscal_union.duckdb` | Rebuilt 2026-09-05 | Materialized tensor/scenario tables plus cross-domain views | Rebuild after either parent changes; keep scenario and unit keys |
+| Unified DuckDB | `warehouse/immigration.duckdb` | Rebuilt from the three repaired domain warehouses | Schema-qualified `context`, `lifetime`, `fiscal` tables and `_catalog` | Copies preserve source scope; query success does not establish causal validity |
 | DuckDB build script | `infra/immigration-fiscal/build/build_immigration_warehouse.py` | Git-tracked | Rebuild core + stage2 + federal microsim | Stage2 housing from CHAS Table 11 when zip present; ACS PUMA fallback |
 | ACS 2024 receiver exposure PUMA layer | `sources/immigration-causal/data/derived/acs_2024_receiver_exposure/acs_2024_receiver_exposure_puma.parquet` | Local, built | First post-surge PUMA exposure screen for receiver states | Public-use PUMA geography; no undocumented status |
 | Receiver-node kill-test outputs | `sources/immigration-causal/data/outcomes/analysis/receiver_node_kill_test/` | Local, built | Nine-node synchronized-pressure screen across ACS, EOIR, QWI, shelter/capacity, and politics | Screening table only; PUMA bridge is area-weighted and EOIR venue is not residence |
@@ -78,7 +81,7 @@ Key builders: `build_immigration_warehouse.py`, `build_stage5_local_cost_context
 | SSA actuarial note | `sources/immigration-fiscal/data/ssa/actuarial_note_151.pdf` | Local | Unauthorized-worker contribution context | Aggregate only |
 | NCES per-pupil spending | `sources/immigration-fiscal/data/nces/tabn236.10.xlsx` | Local | Education cost anchors | Not immigrant-specific |
 | Pew 2025 unauthorized report | `sources/immigration-fiscal/data/pew/pew-unauthorized-immigrants-2025.pdf` | Local | Population-size and composition anchor | Report PDF, not clean machine tables |
-| NAS 2017 catalog page | `sources/immigration-fiscal/data/nap/nas_2017_immigration_economic_fiscal.html` | Local HTML only | Canonical benchmark reference | Full report not locally archived as PDF |
+| NAS 2017 full report | `$PNY_DATA_ROOT/external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf` | Local PDF verified and read 2026-09-05; separate catalog HTML also present | Individual/descendant lifetime scenarios and annual fiscal definitions | Price year, age, public-goods allocation, generations and baseline emigration must remain explicit |
 
 ## Enforcement and budget sources
 
@@ -102,7 +105,7 @@ Key builders: `build_immigration_warehouse.py`, `build_stage5_local_cost_context
 | HUD CHAS 2018–2022 county CSV | `sources/immigration-fiscal/data/external/stage2/hud/chas/2018thru2022-050-csv.zip` | Local, acquired 2026-06-18 | County share with 1+ of 4 housing problems (Table 11) | Needs Playwright session fetch; not welfare scalar |
 | ACS state rent JSON | `sources/immigration-fiscal/data/external/origin/census_acs1_2023_state_median_gross_rent.json` | Local | Renter-side housing context | State-level only |
 | Zillow ZORI + ZHVI metro panels 2015–2026 | `external/urban_housing/zillow/metro_{zori,zhvi}_*.csv` | **Local, acquired 2026-06-25** (`setup-urban-housing.sh`) | 739-metro MONTHLY rent (ZORI, repeat-rent ACS-weighted) + home-value (ZHVI) panel — the Wilson-Zhou (2026) housing outcome var; join to ACS foreign-born-share by CBSA → the rent-incidence panel (E-001…E-008) | Asking-rent index (new leases) ≠ contract rent; CBSA-level → needs Geocorr PUMA↔CBSA for the warehouse PUMA bridge |
-| `msa_rent_elasticity_panel` (derived table) | context warehouse | **Built 2026-06-25** (`build_msa_rent_elasticity_panel.py`) | Zillow rent/home-value trajectory × Saiz elasticity, 168 metros (first-city/state join, 62%) — the supply-leg of Wilson-Zhou. Result: bivariate elasticity↔rent-growth NULL (corr −0.034) → demand treatment is load-bearing | Δrent~Δfb-share×elasticity causal regression gated on metro fb-share (Census key / Geocorr); see `immigration-msa-rent-elasticity-panel-2026-06-25.md` |
+| `msa_rent_elasticity_panel` (derived table) | context warehouse | Rebuilt 2026-09-05 (`build_msa_rent_elasticity_panel.py`) | Zillow rent/home-value trajectory × Saiz elasticity with a fixed January 2016–December 2025 window | Approximate first-city/state join is not a validated CBSA crosswalk; a bivariate null does not identify demand or immigration effects; see `immigration-msa-rent-elasticity-panel-2026-06-25.md` |
 | Local burden examples | `research/immigration-state-local-cost-examples-ny-ca-tx.md` | Memo, not raw data | Concrete burden illustrations | Not a reusable database |
 
 ## Program and household-transition data
@@ -128,7 +131,20 @@ Key builders: `build_immigration_warehouse.py`, `build_stage5_local_cost_context
 
 **Key definitions:** `EEDUC` 31–38 = less than high school; 39 = HS/GED; 40–42 = some college/associate; 43–46 = BA+. `TAGE_EHC` is reference-month age. `TPEARN` may include negative business income. SNAP/TANF amounts are held on the named benefit owner, with covered members identified by the owner/member fields; SSI is individual. Household and benefit-unit totals must not be copied to every ACS adult. Annual donors use reference-year earnings and the appropriate annual weight. [SOURCE: Census dictionary and user guide]
 
-**Used in:** `infra/immigration-fiscal/build/build_federal_microsim_sipp_2024.py` and `build_public_mvp_sipp_module_2024.py`. This acquisition supports the [material inference repair](../decisions/2026-09-05-material-inference-repair.md); it replaces the earlier donor interpretation, not the original raw observations. Derived April/June SIPP rows in this register are historical until rebuilt with the corrected definitions.
+**Used in:** `infra/immigration-fiscal/build/build_federal_microsim_sipp_2024.py` and `build_public_mvp_sipp_module_2024.py`. This acquisition supports the [material inference repair](../decisions/2026-09-05-material-inference-repair.md); it replaces the earlier donor interpretation, not the original raw observations. September person donors, monthly profiles, health bridge and scenario exports have been rebuilt. Donor grids now contain 64 cells each; [nativity/support decision](../decisions/2026-09-05-person-donor-support.md). Historical `_usborn` keys mean the ACS native definition, including citizenship at birth abroad. Raw MEPS was not re-estimated; retained aggregate means have corrected source labels and an explicitly approximate birthplace bridge.
+
+## September 2026 datasets and proxy checks
+
+All new source snapshots live in `.scratch/frontier-20260905/datasets/`, are gitignored, and have URLs, acquisition/verification times, units, license notes and SHA-256 hashes in `manifest.json`. The [acquisition script](../infra/immigration-fiscal/acquire/refresh-frontier-20260905.py) reuses verified files and refuses altered cached sources. Eighteen source/documentation/provenance files were staged across three dataset families; BEA was already present. [DATA: manifest and inspection]
+
+| Dataset | Verified local asset and vintage | Variables / keys | Principal check and limitation |
+|---|---|---|---|
+| BLS CPS nativity monthly | `bls/`; January 2021–August 2026 | Eight 16+ national series: population, employed, employment/population and unemployment; nativity × month | 544 rows, eight missing October 2025 values preserved; matched calendar-month comparisons. Not legal status; NSA and 2026 population-control break prevent a causal displacement inference. [BLS Table A-7](https://www.bls.gov/webapps/legacy/cpsatab7.htm) |
+| Census county BPS | `bps/`; 2025 annual and May–July 2026 monthly | Authorized residential units, reported versus estimated; state/county FIPS × period | Four actual data files inspected. Permits are not completions; reported units are a subset, not an extra quantity to add. [Census files](https://www2.census.gov/econ/bps/County/) |
+| ICE detention via Vera archive | `ice/`; July 20 workbook with July 11 observation cutoff and matched processed series | Stocks, book-ins, book-outs and removal exits; fiscal year/month | June 34,551 total exits / 27,679 removal exits reconciled to raw workbook. July partial; detention exits are not all national removals. Pinned tree `a6bf48e2627323f01827d52776f0d08023c410ba`; retain license restrictions on dissemination. [Archive](https://github.com/vera-institute/ice-fytd-stats) |
+| BEA SAINC35, existing | `/Volumes/2TBPNY/corpus/bea_data/SAINC/SAINC35__ALL_AREAS_1929_2024.csv` | Gross transfer receipts; GeoFIPS × LineCode × year, thousands of dollars | 780 hierarchy checks across 60 geographies in 2024 balance; nested and memorandum lines overlap. Neither recipient nativity nor tax side is observed. [BEA regional data](https://www.bea.gov/data/economic-accounts/regional) |
+
+Source details, exact file names, bootstrap/failure tests and `principal_checks.json` are in the [dataset refresh](immigration-dataset-proxy-refresh-2026-09-05.md). New paper PDFs and X evidence are registered separately in the [paper](immigration-recent-papers-2026-09-05.md) and [narrative](immigration-recent-narratives-2026-09-05.md) memos; retrieval counts are not counts of independent causal studies.
 
 ## Origin and legal-channel layers
 
