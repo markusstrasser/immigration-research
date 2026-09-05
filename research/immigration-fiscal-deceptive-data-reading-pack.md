@@ -16,7 +16,7 @@ The main reasons the headline numbers mislead are:
 2. fiscal results move a lot depending on whether you assign immigrants the average cost of public goods or the marginal cost. [SOURCE: https://doi.org/10.24149/wp1704] [SOURCE: https://www.nap.edu/catalog/23550/the-economic-and-fiscal-consequences-of-immigration]
 3. federal and state/local ledgers point in different directions, so a single national average conceals who actually bears the burden. [SOURCE: https://www.cbo.gov/publication/60165] [SOURCE: https://www.cbo.gov/publication/61256] [SOURCE: https://www.urban.org/sites/default/files/publication/90796/state_and_local_fiscal_effects_of_immigration.pdf]
 4. national averages wash out local shock-load effects in shelters, schools, and county public services. [SOURCE: https://www.nber.org/papers/w33655] [SOURCE: https://www.banqueducanada.ca/wp-content/uploads/2023/11/swp2023-57.pdf]
-5. static one-year or point-in-time estimates overstate current child-related costs if they do not also count future tax contributions from the children being educated. [SOURCE: https://www.urban.org/sites/default/files/publication/90796/state_and_local_fiscal_effects_of_immigration.pdf] [SOURCE: https://doi.org/10.24149/wp1704]
+5. a one-year account does not measure a child's lifetime net contribution. Omitting future taxes does not overstate the cost incurred this year; a lifetime comparison must count future taxes and future costs on the same discounted horizon. [SOURCE: https://www.urban.org/sites/default/files/publication/90796/state_and_local_fiscal_effects_of_immigration.pdf] [SOURCE: https://doi.org/10.24149/wp1704] [INFERENCE: horizon consistency]
 
 ## Best Reading Pack
 
@@ -34,7 +34,7 @@ Use it for: average-cost versus marginal-cost reasoning, and the federal-positiv
 
 ### 3. Kim Rueben and Sarah Gault (2017), *State and Local Fiscal Effects of Immigration*
 
-Best explainer for why local ledgers look worse than national ones. The authors emphasize that state/local results depend heavily on cost attribution, tax structure, and the number of dependent children. They also note that their static state/local estimates do not capture future tax contributions from educated children and are therefore conservative in the sense of overstating current costs and understating later benefits. [SOURCE: https://www.urban.org/sites/default/files/publication/90796/state_and_local_fiscal_effects_of_immigration.pdf]
+The authors explain how state/local results depend on cost attribution, tax structure, and dependent children. Their static estimates omit future contributions from educated children. That limits a lifetime interpretation; it does not invalidate the current-year education expenditure or establish a lifetime surplus. [SOURCE: https://www.urban.org/sites/default/files/publication/90796/state_and_local_fiscal_effects_of_immigration.pdf] [INFERENCE: annual versus lifetime estimand]
 
 Use it for: fiscal federalism, cross-state heterogeneity, and why local snapshots are incomplete.
 
@@ -148,4 +148,5 @@ That is the stack the current debate keeps collapsing into one fake-clean scalar
 
 ## Revisions
 
-- **2026-03-13:** Added Steven Camarota / CIS 2024 testimony as an adversarial source and clarified that its `$68,390` figure is not a National Academies estimate for unauthorized immigrants. Trigger: [2026-03-13-treat-cis-camarota-as-advocacy-not-baseline](decisions/2026-03-13-treat-cis-camarota-as-advocacy-not-baseline.md).
+- **2026-03-13:** Added Steven Camarota / CIS 2024 testimony as an adversarial source and clarified that its `$68,390` figure is not a National Academies estimate for unauthorized immigrants. Trigger: [2026-03-13-treat-cis-camarota-as-advocacy-not-baseline](../decisions/2026-03-13-treat-cis-camarota-as-advocacy-not-baseline.md).
+- **2026-09-05:** Corrected the claim that omitting future taxes overstates current education costs. The error confused an annual budget with lifetime net incidence; see [measurement and ledger boundaries](../decisions/2026-09-05-measurement-and-ledger-boundaries.md).

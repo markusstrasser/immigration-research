@@ -1,5 +1,7 @@
 # Immigration material repair report — 2026-09-05
 
+**Subsequent same-day work:** The [integrated update](immigration-clarity-update-2026-09-05.md) adds calendar2024 accounting, separate Black wage/crime groups, admission and recording uncertainty, and a further corrected crime-warehouse promotion. The 2023 fiscal tables below retain their original scope. The new school comparison uses actual public attendance with symmetric allocation and has a native comparator; the older child-exposure scenario below is not that estimate.
+
 **Assessment:** The audit found material errors in both the local fiscal calculations and the arguments drawn from published research. The person-level fiscal model has been rebuilt, the invalid conclusions have been corrected or withdrawn, and a separate recent-evidence pass has added data and competing mechanisms. Final warehouse validation is recorded below. Unidentified effects remain uncertain; successful repairs do not certify an entire literature error-free. [SOURCE: code, primary-source checks and validation artifacts linked below]
 
 The [initial audit](immigration-conceptual-audit-2026-09-05.md) and [decision](../decisions/2026-09-05-material-inference-repair.md) define the starting findings. The [current synthesis](immigration-economist-dismantling-2026-06-25.md), [confidence ladder](immigration-confidence-ladder.md) and [theory re-adjudication](immigration-theory-verdicts-2026-06-25.md) supersede the affected historical conclusions.
@@ -90,3 +92,4 @@ The acquisition replay verifies cached source hashes and requires the declared B
 
 - **2026-09-05:** Opened this repair record under the [material inference decision](../decisions/2026-09-05-material-inference-repair.md). No public publishing or sharing action is part of this repair.
 - **2026-09-05, closeout:** Replaced the invalid fiscal estimates with validated person-level outputs, corrected the final stale-source regression, promoted the rebuilt warehouses, and integrated the recent evidence. The documented empirical limits remain outside the conclusions supported by these data.
+- **2026-09-05, expanded audit:** Added the current-update link after the [measurement/ledger decision](../decisions/2026-09-05-measurement-and-ledger-boundaries.md). The new work extends the fiscal horizon to2024 outcomes, separates requested race groups and repairs further crime classifications; prior2023 estimates and source-vintage history remain distinct.

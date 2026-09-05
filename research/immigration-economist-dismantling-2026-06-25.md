@@ -38,6 +38,7 @@ Research can leave a sign unresolved without containing a reasoning error. Unide
 
 ## Revisions
 
+- **2026-09-05, expanded audit:** The [conduct audit](immigration-conduct-denominators-2026-09-05.md) further withdraws the historical SPI0.86 incarceration ratio because it mixed years, and repairs the Light native denominator to226.45 per100,000 rather than231.20. The corrected unauthorized/native charge ratio is0.4571. The [broader2024 account and separate race groups](immigration-clarity-update-2026-09-05.md) extend the current findings under the [measurement decision](../decisions/2026-09-05-measurement-and-ledger-boundaries.md); neither supplies a universal causal verdict.
 - **2026-09-05:** Replaced the current synthesis following the [material inference repair decision](../decisions/2026-09-05-material-inference-repair.md). The historical text below preserves the original claims exactly and is superseded by this assessment.
 
 <details>

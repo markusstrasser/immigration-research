@@ -4,6 +4,8 @@ Date anchor: **September 5, 2026**. Mode: data-availability and construct-validi
 
 ## What is actually released
 
+**Acquisition update later on September5:** CPS2025 and SIPP2025 have now been acquired and analyzed for calendar2024, and admission tables extend the earlier RPC extraction. See the [dataset register](immigration-dataset-register.md), [admission reconciliation](immigration-admission-work-access-2026-09-05.md) and [current findings](immigration-clarity-update-2026-09-05.md). Earlier “not yet acquired” descriptions below record the initial inventory, not the final status.
+
 | Source | Observation/reference period | Verified release/access status as of September 5 | What it can answer / decisive limitation |
 |---|---|---|---|
 | ACS 2022 1-year | Residents surveyed during 2022; income questions cover the preceding 12 months | Summary estimates September 14, 2023; PUMS October 19, 2023 | Entry-year × birthplace × age/education/employment cross-sections. A 2022 snapshot cannot describe the completed 2021–2024 cohort. [Census schedule](https://www.census.gov/programs-surveys/acs/news/data-releases/2022/release-schedule.html) |
