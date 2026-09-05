@@ -18,7 +18,9 @@ Run: uv run --with duckdb python package_data_release.py [VERSION]
 """
 from __future__ import annotations
 
+import argparse
 import hashlib
+import re
 import shutil
 import sys
 from datetime import date
@@ -113,13 +115,15 @@ published NPV benchmarks (NAS/NRC, Storesletten, Orrenius). Inputs are
 public-domain or public-use; this compilation is shareable.
 
 The **crime-by-status tables** (`crime_tx_arrests_by_status`,
-`crime_spi_inmates_by_citizenship`, `crime_spi_incarceration_rate`) are derived
+`crime_spi_inmates_by_citizenship`, and the optional `crime_spi_incarceration_rate`) are derived
 **aggregates** computed from two registration-gated archives — Light/He/Robey's
 Texas DPS replication (openICPSR 124923) and BJS's Survey of Prison Inmates 2016
 (ICPSR 37692). The archives' gating restricts redistribution of the underlying
-microdata, not aggregate statistics; only counts/rates ship here. The SPI rate's
-denominator is an IPUMS-derived population aggregate (the microdata itself stays
-local-only). To rebuild these tables from scratch you must register for and
+microdata, not aggregate statistics; only available aggregate counts/rates ship here.
+An SPI rate is included only with a source-labeled, matched 2016 national adult
+population denominator including institutional residents. Counts-only builds omit
+that rate; a later population cannot substitute for the matched denominator.
+To rebuild these tables from scratch you must register for and
 download the two archives yourself — see the MANUAL_ACQUIRE notes referenced in
 `research/immigration-dataset-register.md`.
 
@@ -212,6 +216,19 @@ def build(version: str) -> None:
     print(f"    gh release create data-v{version} {tarball} -t 'Immigration data v{version}'")
 
 
+def _release_version(value: str) -> str:
+    if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]*", value):
+        raise argparse.ArgumentTypeError("version must be a single alphanumeric filename label")
+    return value
+
+
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("version", nargs="?", type=_release_version,
+                        default=date.today().isoformat(), help="release label (default: today's date)")
+    args = parser.parse_args(argv)
+    build(args.version)
+
+
 if __name__ == "__main__":
-    v = sys.argv[1] if len(sys.argv) > 1 and sys.argv[1].strip() else date.today().isoformat()
-    build(v)
+    main()
