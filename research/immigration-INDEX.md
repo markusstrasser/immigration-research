@@ -8,6 +8,7 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 
 | File | Topic | Consult before |
 |------|-------|----------------|
+| `immigration-material-repair-report-2026-09-05.md` | Current material repair status, source corrections and validation evidence | Reusing numerical or causal conclusions from older memos |
 | `immigration-conceptual-audit-2026-09-05.md` | Material audit: SIPP household/person and education errors; GDP/incumbent and CRS mistakes; Cato mischaracterization; global-gains arithmetic; conditional crime-bias sign | Reusing June fiscal-proxy figures or the dismantling synthesis; these corrections supersede the specified claims |
 | `immigration-main-question-reset.md` | What the repo is actually trying to answer | Reframing the project or proposing new scope |
 | `immigration-evidence-base-audit.md` | Which claims are well-supported vs thin | Repeating literature claims or writing summaries |
@@ -43,7 +44,7 @@ Candidate outputs from a parallel scout pass to extend the graph — **feed the 
 
 ## Frontier expansion (2026-06-25)
 
-Parallel 5-domain research+acquisition pass (sociology / urbanism / policy / economics-disconfirmers / crime). All load-bearing citations primary-verified (`resolve_doi`). Confidence-ladder entries 44-50 carry the graded deltas; **read the coverage matrix first** — it bounds "every possible research" honestly (economics + crime saturated; the live frontier is urbanism > sociology > the econ disconfirmers).
+Historical five-domain research/acquisition pass. DOI resolution checks bibliographic identity; it does not verify an effect size or inference. September corrections in confidence-ladder entries 52–60 and the linked memos supersede affected June claims. The coverage matrix records a search episode, not proof that economics or crime research is exhausted.
 
 | File | What | Consult before |
 |------|------|----------------|
@@ -51,8 +52,8 @@ Parallel 5-domain research+acquisition pass (sociology / urbanism / policy / eco
 | `immigration-urbanism-frontier-2026-06-25.md` | **Biggest yield** — Wilson-Zhou (2026) causal housing magnitudes (+2.2% prices/+1.4% rents) + the MSA rent×fb-share panel dataset map (Zillow acquired; WRLURI/Geocorr/LODES spec'd) | Any housing-incidence claim; building the rent panel |
 | `immigration-economics-disconfirmers-2026-06-25.md` | Mariel artifact (Clemens-Hunt), Colas-Sachs GE ~$750, CBO −$0.9T federal surge, Dustmann-Frattini UK | Quoting the Borjas wage spine or NAS net-cost as settled |
 | `immigration-policy-frontier-2026-06-25.md` | Legalization→crime CAUSAL cluster (jobs channel); enforcement≈null; DACA + refugee evals | Crime/policy causal claims; "does enforcement reduce crime?" |
-| `immigration-crime-frontier-2026-06-25.md` | Marie-Pinotti reconciliation; undocumented≈null ecologically; first-gen-only; Lott-AZ rebuttal; victimization axis | Any crime-rate generalization beyond first-gen TX |
-| `immigration-sociology-frontier-2026-06-25.md` | Trust meta-analyses (modest/local/no-spillover); ethnic-attrition method warning; GSS-by-nativity build | Cohesion/trust claims; the pending CPS 2nd-gen test |
+| `immigration-crime-frontier-2026-06-25.md` | Crime outcomes, generational evidence, ecological versus individual estimates and source limits | Generalizing beyond the measured justice outcome and population |
+| `immigration-sociology-frontier-2026-06-25.md` | Trust meta-analysis, selection and generational measurement limits | Inferring social or institutional mechanisms |
 
 ## Fiscal Ledger
 
@@ -122,16 +123,16 @@ Parallel 5-domain research+acquisition pass (sociology / urbanism / policy / eco
 | `immigration-economist-rhetorical-failures-2026-04-22.md` | Bounded memo on the strongest fair critique of mainstream pro-immigration economics rhetoric: ledger switching, upper-bound laundering, marginal-to-mass extrapolation, capacity erasure, denominator masking, and political-economy underspecification | Asking how to kill the strongest economist arguments without overclaiming beyond the repo's current evidence |
 | `immigration-noah-smith-nicholas-decker-claims-audit-2026-04-11.md` | Named audit of Noah Smith and Nicholas Decker claims | Checking pundit or commentator claims against the repo and official sources |
 | **`immigration-economist-dismantling-2026-06-25.md`** | **ENTRY POINT** — fundamental fair-is-the-weapon dismantling of the pro-immigration canon across 3 tiers (Commentators: Smith/Decker/CATO; Academic Foundations: Card-Peri/Clemens; Popular Books: Hernandez/*Streets of Gold*); grants the repo-confirmed core, kills only the coordinate-switches, quotes the canon's own primary texts | Building any step-by-step takedown of pro-immigration arguments; wanting the synthesis across all 7 targets |
-| `immigration-dismantle-noah-smith-2026-06-25.md` | Smith's two unreconciled registers (national-average reassurance vs his own "long-term fiscal problem… city and state governments" concession) | Engaging Smith specifically on wages/fiscal/deportation |
-| `immigration-dismantle-decker-2026-06-25.md` | Decker right about IRS mechanisms, wrong about the "must" welfare conclusion; CBO GDP-per-person −0.8% as the counterexample he says can't exist | Engaging Decker's "immigrants must make us richer" |
-| `immigration-dismantle-cato-2026-06-25.md` | CATO's floor granted (incl. against-interest TX crime convictions); $14.5T ceiling killed on zero-public-goods-cost + 2nd-gen-as-native | Using CATO's fiscal/crime numbers as settled |
-| `immigration-dismantle-card-peri-2026-06-25.md` | Wage canon: average + task-complementarity mechanism granted (repo's own ladder); killed only at area-study→general-proof, average→"no one hurt" (prior immigrants −19%), marginal→surge | Quoting Card-Peri for "immigration doesn't hurt anyone" |
-| `immigration-dismantle-clemens-2026-06-25.md` | Place Premium granted + Mariel rigor adopted (ladder 44); "double world GDP" killed as upper-bound slogan (Docquier ~4%, housing binds year 1) | Evaluating open-borders macro magnitude claims |
-| `immigration-dismantle-hernandez-2026-06-25.md` | *The Truth About Immigration*: 4 pillars granted; generational frame-switch + housing omission + title meta-kill; Kustov keystone (pro-immigration scholar's own select/omit/frame charge) | Treating "The Truth" as settling the question |
-| `immigration-dismantle-streets-of-gold-2026-06-25.md` | Abramitzky-Boustan rank-mobility granted (repo-adopted); killed at metric-masking/external-validity/classification/selection — from the authors' OWN PNAS Nexus admissions | Citing *Streets of Gold* for "immigrants always succeed" |
+| `immigration-dismantle-noah-smith-2026-06-25.md` | Corrected claim-by-claim assessment: average gains, local costs, projections and welfare incidence | Comparing Smith's exact populations and claims |
+| `immigration-dismantle-decker-2026-06-25.md` | Corrected returns-to-scale, incumbent welfare and global-gains arithmetic | Using GDP/person or complementarity to infer welfare |
+| `immigration-dismantle-cato-2026-06-25.md` | Corrected descendant accounting and allocation sensitivity; no uncomputed sign reversal | Citing the historical $14.5T or descendant-inclusive estimates |
+| `immigration-dismantle-card-peri-2026-06-25.md` | Published +0.6% native / −6.7% prior-immigrant model result; corrected local-design and QWI limits | Using a wage estimate or draft quotation |
+| `immigration-dismantle-clemens-2026-06-25.md` | Corrected global model versions, fixed-gain arithmetic, rate/stock and housing scope | Evaluating open-borders macro magnitudes |
+| `immigration-dismantle-hernandez-2026-06-25.md` | Corrected annual-versus-lifetime NAS figures, inventor attribution and crime scope | Evaluating book claims using primary evidence |
+| `immigration-dismantle-streets-of-gold-2026-06-25.md` | Conditional mobility survives; corrected rank, convergence, sample and book-coverage objections | Citing mobility or an alleged omitted analysis |
 | `immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md` | Audit of the Open Borders “double world GDP” slogan, cited papers, repo capacity constraints, and apartheid framing | Evaluating classic open-borders macro claims or apartheid analogies |
 | `immigration-threshold-first-panel-2026-04-21.md` | First joined-data threshold pass using BPS permits, HUD PIT/HIC, election shift, and receiver-city costs | Asking whether threshold effects are measurable in current public data |
-| `immigration-threshold-causal-levers-2026-04-21.md` | Deeper normalized pass identifying which levers actually move political response and receiver stress | Asking what the real causal levers are after joining threshold datasets |
+| `immigration-threshold-causal-levers-2026-04-21.md` | Normalized threshold associations and limits of causal lever identification | Interpreting cross-sectional controls, interactions and policy responses |
 | `immigration-low-skill-origin-incidence-memo.md` | Why origin mix and household structure matter | Treating low-skill immigration as one undifferentiated object |
 | `immigration-fiscal-deceptive-data-reading-pack.md` | Common bad-faith or sloppy readings of the data | Debunking a chart, thread, or pundit claim |
 | `immigration-fiscal-camarota-cis-testimony-audit.md` | Restrictionist benchmark audit | Using CIS/Camarota as baseline evidence |

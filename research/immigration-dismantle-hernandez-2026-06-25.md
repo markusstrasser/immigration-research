@@ -1,226 +1,86 @@
-# Dismantling Zeke Hernandez, *The Truth About Immigration* (2024)
+# Zeke Hernandez, *The Truth About Immigration* — corrected assessment
 
-**What this is.** A step-by-step, fair-is-the-weapon dismantling of Zeke Hernandez's *The Truth About
-Immigration: Why Successful Societies Welcome Newcomers* (2024) — the current prominent popular
-pro-immigration canon book (Wharton professor, immigrant from Uruguay). A section of the consolidated
-dismantling memo. The repo's OWN evidence agrees with most of Hernandez's empirical core; the dismantling
-is surgical — GRANT the confirmed parts, KILL the overclaims, name the EXACT rhetorical move per overclaim.
+**Date:** 2026-06-25; materially revised 2026-09-05. **Section of:** consolidated dismantling memo.
 
-**Instrument-bias flag (mandatory, leads).** Hernandez is a pro-immigration optimist. The documented tilt
-of this LLM instrument runs *toward* his conclusions [SOURCE: notes/llm-bias-caveat.md]. So the danger here
-is NOT excess hostility — it is **excess agreement**: rubber-stamping his frame because it is the model's
-own prior. Mitigation: every "granted" below is tied to a repo-built artifact or primary source, not to the
-model's agreement; every "kill" is a *coordinate/composition/incidence* charge the repo can defend on data,
-not a vibe. The fair charge is structural, not partisan: a book titled **"The Truth"** that omits the
-local-incidence / distributional / composition ledger is selling a coordinate-restricted answer as the whole truth.
+**Verdict:** Hernandez discusses state/local costs and descendants explicitly, so the June accusations of simply omitting them fail. However, the quoted two-to-one fiscal ROI conflates cross-sectional annual balances with a lifetime calculation, and this memo wrongly endorsed it. The innovation figures also needed their correct units, population and source version. [SOURCE / INFERENCE below]
 
-**The 6-move spine** (from `research/immigration-economist-rhetorical-failures-2026-04-22.md`): (1) ledger
-switching / equivocation; (2) upper-bound laundering; (3) marginal-to-mass extrapolation; (4) capacity
-erasure; (5) denominator masking / political-economy erasure; (6) aggregate-output trump card. Each kill
-below names which move(s) it is.
+**Scope and frame:** The June pass used the book's introduction/contents and interviews, including [Never Close the Inquiry](https://neverclosetheinquiry.substack.com/p/31-the-truth-about-immigration-an), Wharton, Marketplace and NPR. That is not a page-by-page search of the full book. A topic missing from sampled interviews or the contents is not proof it is absent from the book. The LLM instrument's dispositions can bias agreement or criticism; ideological agreement by another commentator does not validate an inference. See [instrument caveat](../notes/llm-bias-caveat.md).
 
-**Grounding:** confidence-ladder entries 44-51; `immigration-economist-rhetorical-failures-2026-04-22.md`;
-`immigration-economist-effects-matrix.md`; `immigration-msa-rent-elasticity-panel-2026-06-25.md`.
+## A. The fiscal ROI needs a genuine longitudinal calculation
 
----
-
-## The book's structure and the 5 economic pillars (primary-verified)
-
-Book TOC (from the publisher's introduction PDF on his own site) [SOURCE:
-zekehernandez.net/.../The-Truth-About-Immigration-introduction.pdf]: Part 1 Economic (ch. 2 Investment=Jobs,
-ch. 3 Innovation, ch. 4 "Newcomers Fill Public Coffers", ch. 5 "Do Immigrants Steal Jobs?", ch. 6 Talent);
-Part 2 Social (ch. 7 Integration, ch. 8 "Immigration Makes You Safer", ch. 10 "But What About Illegal
-Immigrants?"). Subtitle thesis: *Why Successful Societies Welcome Newcomers*.
-
-**The 5 economic pillars, in his own words and numbers** (Wharton "Five Truths" interview + Marketplace 2025 +
-NPR Indicator) [SOURCE: executiveeducation.wharton.upenn.edu/.../2024/07/the-truth-about-immigration/]
-[SOURCE: marketplace.org/story/2025/06/16/...]:
-
-| # | Pillar | His headline claim + number |
-|---|---|---|
-| 1 | **Investment** | "investment-immigration-jobs triangle"; immigrants 80% more likely to start businesses than natives; immigrant firms are magnets for home-country FDI |
-| 2 | **Innovation** | immigrants = 16% of inventors but 36% of patents; >½ of US AI PhDs foreign-born; 1924 National Origins Act → native scientists patented ~68-70% less, *permanently* |
-| 3 | **Taxes / public coffers** | "average immigrant contributes **$260,000 NPV in taxes**" → ">$10 trillion" total; undocumented pay ~$100B/yr; needed to fund Social Security / Medicare given low birth rates |
-| 4 | **Jobs** | immigrants are *net job creators*, not just shortage-fillers; they bring demand (consumption) not only labor supply; do not compete for the same jobs as natives |
-| 5 | **Talent** | immigrants = >⅓ of science/engineering BA workforce, ~½ of graduate-degree workforce |
-
-Plus two **social** claims central to the title: (6) **safety** — "immigration makes you safer", immigrants
-(legal AND illegal) commit crime at lower rates than natives; (7) **integration** — assimilation rate is the
-same as 100 years ago; immigrants catch up to natives in earnings in ~2 generations.
-
----
-
-## Findings
-
-### Finding A — The generational ledger: he ADDRESSES it, then frame-switches at the seam
-
-**This finding cuts both ways — the same primary source that makes the generous grant unavoidable also
-exposes the frame-switch.** The single richest primary source is the *Never Close the Inquiry*
-interview (2024-11-05), where Hernandez lays out the generational fiscal ledger explicitly [SOURCE:
-neverclosetheinquiry.substack.com/p/31-the-truth-about-immigration-an]:
+The retained interview excerpt is unchanged:
 
 > "a first generation immigrant costs the state, in net present value terms, **$1,600**. The primary driver
 > of that cost is **educating the children of immigrants**. But then when you add up the tax contributions at
 > the state level from the second and third generation … they contribute together $3,000 — $1,700 second
 > generation, $1,300 third generation … if you account for the descendants … the **ROI is two to one**."
 
-**GENEROUS GRANT (resist over-killing here):** Hernandez does NOT naively treat 1st-gen success as permanent,
-and he does NOT hide the state-local cost. He *names* the −$1,600 first-gen state cost, *names* education of
-children as the driver, and *explicitly concedes the mayor/governor timing objection*: "in the short term, the
-mayor and the governor have to balance the budget, so they have a legitimate point." That is more honest than
-most popular pro-immigration rhetoric, and the repo's own ladder entry 45 (Colas-Sachs indirect-fiscal +$750/yr)
-and entry 51 (2nd-gen dynastic upside is real) AGREE with the substance of his two-generation ROI. So the
-generational-classification charge in its naive form ("he treats 1st-gen as permanent") **fails — do not run it.**
+**The primary-source correction:** NAS's **−$1,600, +$1,700 and +$1,300** are average annual 2011–2013 state/local net balances per independent person unit, including allocated dependents, for three different generational populations. They are not lifetime NPVs for one immigrant and that immigrant's descendants. [SOURCE: NAS [chapter 9, Table 9-6](https://www.nationalacademies.org/read/23550/chapter/14) and [Summary](https://www.nationalacademies.org/read/23550/chapter/2)]
 
-**The kill — frame-switch at the generational seam (move 1: ledger switching / equivocation; sharpened by
-ladder entry 51).** What Hernandez does is exactly the **coordinate-switch entry 51 names as the pro-immigration
-case's signature move**: he runs the **dynastic (multi-generation) frame for the fiscal pillar** — counting the
-US-born 2nd/3rd-gen tax payments to flip the ledger to "2-to-1 ROI" — while running the **first-generation frame
-for the safety pillar** ("immigrants commit crime at lower rates"). These are *opposite* generational accounting
-conventions applied to adjacent chapters of the same book to make each come out positive:
-- **Fiscal:** widen the boundary to descendants → the 1st-gen −$1,600 becomes +$1,400 net. Boundary INCLUSIVE.
-- **Crime:** keep the boundary at the foreign-born 1st gen → the advantage is real but, per RTI/NIJ 2024 (ladder
-  48/51), **converges to/exceeds the native rate by the 2nd generation**. Boundary EXCLUSIVE.
-The same dynastic accounting that earns the fiscal ROI, applied to crime, would *erase* the safety headline
-(2nd-gen US-born descendants are filed as "native" and carry native-or-higher crime rates — ladder 51 (b)). He
-never runs it that way. **This is not a fabrication — both numbers are individually defensible — it is
-coordinate-dependence sold as a single coherent "Truth."** Named move: **#1 equivocation across ledgers**,
-operating at the *generational* coordinate. [FRAMING-SENSITIVE — but the asymmetry is structural, not partisan;
-it is the exact move the repo flagged in ladder entry 51.]
+The arithmetic `(1,700+1,300)/1,600 = 1.875` approximates two, but the operands do not form a return-on-investment calculation. Adding one average from each generational population assumes a descendant count and timing, ignores discounting and different age structures, and treats third-plus-generation residents as the identified grandchildren of the first-generation population. The derived +$1,400 is likewise not a demonstrated dynastic net benefit. This is a material error in the quotation's interpretation and in the June memo's endorsement; preserving the quotation does not endorse its units. [RECALC / INFERENCE]
 
-### Finding B — Pillar 3 "Newcomers Fill Public Coffers": the federal/state-local ledger-switch (move 1 + move 6)
+Hernandez also says "in the short term, the mayor and the governor have to balance the budget, so they have a legitimate point." That acknowledges a genuine timing/incidence issue. Descendants can generate important future revenues, but a supported lifetime NPV requires linked demographic projections and consistent costs and taxes. The quoted cross section does not supply it. [SOURCE: interview; NAS chapter 8 methodology]
 
-His "$260,000 NPV per immigrant / >$10T" headline and chapter title "Newcomers Fill Public Coffers" present the
-fiscal question as **settled positive**. The repo GRANTS the federal positive at magnitude (ladder 46: CBO 2024,
-the realized surge lowers federal deficits ≈$0.9T/decade) and GRANTS that the static cost is an upper bound
-(ladder 45: Colas-Sachs +$750/yr indirect). **But the chapter TITLE and the headline number do the move 1
-ledger-switch + move 6 aggregate-trump:**
-- **The $260k NPV is a NAS *federal-inclusive, descendant-inclusive, 75-year* projection** — exactly the frame
-  that nets positive. CBO 2024 itself (ladder 46) carries the disconfirming caveat the chapter title erases:
-  "FEDERAL only — CBO explicitly excludes state/local budgets, where NAS finds the cost concentrates
-  (education)." Hernandez's *own* −$1,600 state first-gen number (Finding A) is the state-local cost his
-  chapter title "Fill Public Coffers" papers over.
-- The **2021-2026 surge** — the actual current-events referent — was **state-local net-NEGATIVE in 2023** even
-  after broader economic effects (CBO June 2025, pub 61256; effects-matrix). A book published 2024 titled "The
-  Truth," whose fiscal chapter is "Newcomers Fill Public Coffers," omits that the *contemporaneous realized
-  surge* was draining the coffers that have to balance every year. Named move: **#1 + #6.** [SOURCE: CBO 61256]
+## B. Fiscal projections, historical balances and chapter titles
 
-### Finding C — Housing / local cost-of-living incidence: the load-bearing OMISSION (move 4: capacity erasure)
+The interview/headline "$260,000 NPV" figure must be traced to its precise NAS scenario, arrival age, education mix, descendant convention and government coverage before multiplying it by a contemporary immigrant stock. A per-arrival lifetime estimate is not automatically the remaining-life value of already resident people. This pass does not endorse the derived >$10T total or describe the $260,000 as gross taxes paid. [INFERENCE / UNVERIFIED scenario mapping]
 
-**Housing-cost incidence is the load-bearing omission, and the repo's 2026 causal evidence is what makes it bite.** Across
-his book TOC, his five-pillar talks, the Wharton/Marketplace/NPR/Knowledge@Wharton interviews, and the
-Worth/Kustov reviews, **housing-cost incidence does not appear as a pillar or a conceded catch.** His
-chapter "What's the Catch?" (Final Thoughts on the Economy) and his stated downsides are about *wages* and
-*assimilation pace* — not rents. Yet:
-- The repo's 2026 causal estimate: **Wilson & Zhou 2026 (Dallas Fed WP2607)** — unauthorized inflow = 1% of
-  initial employment → **+2.2% house prices, +1.4% rents**, supply/permit response statistically null;
-  explains ~30% of house-price / ~20% of rent growth in the average MSA over the boom (ladder 50). [SOURCE:
-  10.24149/wp2607]
-- The repo's own built panel: **corr(fb-share, rent LEVEL) = +0.687**, rising to **0.74 in the inelastic
-  supply tercile** — the immigrant-rent link is *tighter exactly where supply can't respond*
-  [SOURCE: research/immigration-msa-rent-elasticity-panel-2026-06-25.md].
-**The incidence is asymmetric in a way that bears directly on Hernandez's audience:** the same rent increase
-is a *cost to renters* and a *gain to homeowners and the local property-tax base* (effects-matrix, "split
-renters from homeowners"). A book whose thesis is "immigration benefits YOU" — addressed to incumbent
-residents — that prices in the homeowner/coffer upside (he cites Vigdor-Cato-style housing-wealth capitalization
-implicitly via "fill public coffers") but is **silent on the renter-incidence downside** is loading one side
-of the housing ledger. Named move: **#4 capacity erasure** (housing as a side-issue, not a first-order stress
-system in inelastic metros). [FRAMING-SENSITIVE on magnitude — repo weights the disconfirmers (JCHS/Yale: timing
-doesn't line up at aggregate; Cabral-Steingress ~1.3% of a 17% rise) so this is "real but minority-share," NOT a
-"housing crisis caused by immigrants" claim. The kill is the *omission of the renter side*, not an overstated magnitude.]
+CBO's [July 2024 report](https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf) projects approximately $0.9T lower covered federal deficits and $8.9T additional nominal GDP over 2024–2034 from the incremental 2021–2026 surge. The headline deficit estimate excludes discretionary appropriations and state/local budgets. These are projections, not realized outcomes or additive measures of welfare. Colas–Sachs's indirect channel cannot simply be added again to a model already including indirect effects. [SOURCE: CBO summary; conceptual audit §§7–8]
 
-### Finding D — Composition / selection: "successful societies welcome newcomers" treats the SIGN as a constant (move 3)
+CBO's [June 2025 state/local analysis](https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf) estimates a negative balance for the surge population in 2023. It does not refute a positive national lifetime balance, nor could a 2024 book omit knowledge of a report first published in 2025. Hernandez's state-cost discussion also defeats the June claim of simple omission. The useful question is whether a given claim's costs, benefits, cohort and horizon match, not whether every government ledger is positive. [INFERENCE]
 
-Hernandez's subtitle and recurring move is to argue about **"immigrants" and "immigration" as a single abstract
-good** — "every type of immigrant makes a positive contribution, including the least skilled." The repo's
-evidence says the **sign is composition-, skill-, and welfare-regime-dependent — not a constant:**
-- **Ladder 47** (Dustmann-Frattini 2014, *Economic Journal*): recent UK *EEA* immigrants paid **+34%** more than
-  they took out (+£22.1bn) — but **non-EEA ≈ native ≈ negative**, *in the same country, same years*. "Composition
-  is doing the work; transfer to a differently-composed US inflow is conditional." [SOURCE: 10.1111/ecoj.12181]
-- **Ladder 47** also brackets Hansen et al. (Denmark): **generous welfare + non-Western low-skill → net-negative
-  even with descendants.** The Scandinavian counter-case is exactly a "successful society" where welcoming a
-  *particular composition* of newcomers is fiscally negative.
-This is **move 3 (marginal-to-mass / external-validity)** at the composition margin: Hernandez's US-averaged,
-historically-selected evidence is presented as a *general law about newcomers*, when the cleanest comparative
-evidence shows the sign flips with who is admitted and into what welfare regime. His own concession that
-low-skill only nets positive *via corporate-tax indirect channels* (Finding A) is the tell — the direct ledger
-on that composition is negative, and the positive depends on a GE channel that itself depends on complementarity
-holding under scale. [FRAMING-SENSITIVE: the repo does NOT endorse "low-skill immigration is bad" — ladder 45
-grants the indirect-fiscal offset. The kill is the *universalization*, not the direction for the US average.]
+## C. Crime generations do not yield the claimed reversal
 
-### Finding E — The title-level charge: "The TRUTH" sells a coordinate-restricted answer as the whole truth
+A first-generation crime-rate comparison and a descendant-inclusive fiscal projection may legitimately answer different questions when their populations are labeled. Applying different boundaries is not by itself deception. The policy-wide consequences require coherent scope, but no evidence here shows that counting descendants would erase the safety comparison. [INFERENCE]
 
-This is the title-level charge, and it has an **independent, ideologically-aligned corroborator** —
-which is what answers the instrument-bias objection. The book is titled *The **Truth** About Immigration*;
-the marketing copy says "the data **clearly debunks both narratives**," immigration has an "**overwhelmingly**
-positive impact on **everything** that makes a society successful"; he urges readers to "**Be Factually
-Optimistic.**" That is a claim that a genuinely **coordinate-dependent** question — whose answer changes with
-*ledger* (federal vs state-local), *incidence* (homeowner vs renter), *composition* (EEA vs non-EEA, skill,
-welfare regime), and *generation* (1st-gen vs dynastic) — is **settled.** Every Finding above is an instance of
-the same structural fault: the book answers the **aggregate / average / federal / dynastic / US-historically-
-selected** coordinate and presents it as settling the **local / marginal / state-local / renter / composition-
-specific / first-gen** coordinate.
+Let the second-generation share of the native-born population be `a`, and its and the third-plus-generation rates be `r2` and `r3`. Then `r_native-r3=a*(r2-r3)`. An increase from first- to second-generation offending establishes neither `r2>r3` nor the sign of the comparator change. Even convergence to `r3` can leave a first-plus-second-generation population below `r3` if the first generation has a lower rate. [FORMAL CHECK]
 
-**The corroborator.** Alexander Kustov — a self-described "left-of-center, strongly
-cosmopolitan" political scientist who *just published his own pro-immigration book* — applies to pro-immigration
-discourse the concept of **"highbrow misinformation"** (a term he takes from Dan Williams and endorses):
-communication that rarely states outright falsehoods but **misleads by how it selects, omits, and frames facts**
-— verbatim on the page (parent-verified): *"people rarely lie outright. They choose which convenient numbers to
+The cited individual Texas results support lower recorded first-generation rates for the studied populations and periods. County-level immigration-share regressions, arrest rates, convictions and incarceration are different estimands. None should silently replace the other or establish that immigration status itself causes protection. Hernandez's caveats that rates "aren't zero" and that criminal syndicates differ from ordinary migrants remain relevant. [SOURCE: [Light, He and Robey](https://doi.org/10.1073/pnas.2014704117); conceptual audit §6]
+
+## D. Innovation: correct the outcome and source version
+
+The June memo confused authored patents with a modeled contribution including spillovers. The [February 2025 Bernstein et al. manuscript](https://web.stanford.edu/~diamondr/BDMP.pdf) finds immigrants constitute **16% of inventors and author 23% of patents**. Its model attributes **32% of aggregate innovation** to immigrants including collaborator spillovers. The **36%** headline appears in the earlier working-paper version; it is not a count of patents directly authored. These figures are neither interchangeable nor additive. [SOURCE: paper abstract/introduction; [NBER version record](https://www.nber.org/papers/w30797)]
+
+The quoted 1920s-quota result also needs scope: Moser and San's [2019 manuscript](https://www.aeaweb.org/conference/2020/preliminary/paper/NydKa4TK) estimates a roughly **68% decline in invention in fields previously associated with Eastern and Southern European scientists**, relative to its comparison, with effects persisting into the 1960s. It is not a finding that every native scientist patented 68% less permanently. The research is valuable evidence of spillovers; the design's comparison and historical setting must travel with its magnitude. [SOURCE: abstract and introduction]
+
+The book's other entrepreneurship, FDI, STEM and AI-workforce figures are retained as topics, not recertified point estimates. A firm-founding rate is not net job creation by itself; jobs, output and wages also involve displacement and general-equilibrium responses. The September repair does not identify a material contrary result for these channels, but absence of a contrary result is not universal verification. [SCOPE LIMIT / INFERENCE]
+
+## E. Housing, wages and policy scope
+
+The repo's metro rent-level correlations are descriptive and sorting-confounded; they do not establish immigration's causal rent contribution or a permanently inelastic supply. The [Dallas Fed study](https://www.dallasfed.org/research/papers/2026/wp2607) supplies separate econometric evidence in a specific setting. A statistically insignificant permit response does not prove that supply cannot respond. [SOURCE: [metro panel](immigration-msa-rent-elasticity-panel-2026-06-25.md); Dallas Fed; INFERENCE]
+
+Rent increases harm tenants and benefit landlords before secondary effects. A larger property-tax base does not guarantee a matching rise in revenues under every assessment/tax rule. Net household incidence requires income and other price changes as well. These are important distributional questions, but a local cost cannot alone overturn a positive aggregate result; a positive aggregate result does not automatically compensate the losing tenant. [ACCOUNTING / INFERENCE]
+
+Fiscal balances also vary by cohort, skill, age and institutions. Such variation does not by itself identify the causal effect of ethnicity or skill, nor show that a fiscal negative means negative total welfare. A claim that everyone gains would require much more than favorable US averages, but a claim of net average benefit does not require every subgroup to gain. [FRAMING-SENSITIVE / INFERENCE]
+
+The book title and chapter titles do not by themselves constitute testable universal quantifiers. The interview sample cannot establish that a full book lacks a qualification, and an omitted channel is not evidence that its magnitude dominates. The June title-level refutation is therefore withdrawn. [INFERENCE]
+
+## Historical quotation-correction record
+
+The June memo retained this Kustov/Williams passage about selective presentation:
+
+*"people rarely lie outright. They choose which convenient numbers to
 highlight, which friendly experts to quote, and which uncomfortable questions to never ask … this produces a
 public narrative that is technically defensible and emotionally satisfying, yet still a significant distortion of
-the best available evidence."* Kustov's own argued thesis on that page is that immigration, like any policy,
-creates winners and losers, and that pretending it is costless and universally beneficial erodes public trust —
-the same select/omit/frame charge this memo levels at "The Truth." [SOURCE:
-popularbydesign.org/p/the-uncomfortable-truths-about-immigration, 2026-01-22] **That a committed pro-immigration
-scholar levels this charge is corroboration that it is not merely the LLM instrument's restrictionist tilt — it is a
-structural-honesty charge available from inside the pro-immigration camp.** [PARENT-VERIFIED, with one
+the best available evidence."*
+
+[SOURCE: https://popularbydesign.org/p/the-uncomfortable-truths-about-immigration, 2026-01-22]
+
+Its general warning is useful, but a commentator's ideology or agreement does not independently establish that Hernandez commits the alleged error. The earlier quotation correction is retained verbatim:
+
+[PARENT-VERIFIED, with one
 correction: the select/omit/frame "highbrow misinformation" definition is confirmed verbatim on the page (Kustov
 quoting Williams, then applying it to immigration); an earlier draft rendered Kustov's winners-and-losers thesis
 as a verbatim quote ("it is a lie to pretend it does not") that is **not** on this page — downgraded here to a
 paraphrase of his argued position, which the page does support. The keystone is unaffected: the charge is real
-and comes from inside the pro-immigration camp.] Named move: **the title itself is the master-instance of #1
-(equivocation) + #6 (aggregate-trump)** — "The Truth" = "the aggregate-positive ledger," presented as "the whole truth."
+and comes from inside the pro-immigration camp.]
 
----
+## Assessment and empirical limits
 
-## What survives (generous and specific — the steelman that the data BACKS)
+The two-to-one ROI endorsement, the authored-patent label, the unrestricted historical invention claim and the generational-crime reversal are corrected above. Exact welfare-optimal inflows, the NAS scenario behind the $260,000 headline, household net price incidence and the book's complete treatment of housing remain unresolved. They are scoped as empirical questions, not asserted refutations or verified favorable magnitudes. The strongest supported point is that innovation, fiscal flows and local incidence must each be measured with the appropriate population and horizon.
 
-The dismantling is surgical precisely because **most of Hernandez's empirical core is repo-confirmed.** Stated
-generously and specifically, what survives intact:
+## Revisions
 
-1. **Innovation / talent (pillars 2, 5) — survives fully.** Immigrant inventors (16% of inventors → 36% of
-   patents), the foreign-born share of STEM/AI PhDs, and the **1924 National Origins Act natural experiment**
-   (native scientists patented ~68% less, permanently — a clean historical identification) are strong,
-   well-identified, and the repo has no quarrel. This is his best material and it is genuinely undersold in
-   public debate.
-2. **Investment / entrepreneurship (pillar 1) — survives.** The 80%-higher firm-founding rate and the
-   home-country FDI "triangle" are real and under-discussed. The repo grants the innovation/entrepreneurship/
-   investment empirics without reservation.
-3. **Crime-lower DIRECTION (pillar 6) — survives, with his own honest caveats.** First-gen immigrants
-   (legal and illegal) have lower crime/conviction rates; the repo confirms the direction even on the
-   detection-resistant homicide-conviction margin (ladder 48, Cato TX −26%). Hernandez is *more* careful than
-   most — he explicitly says rates "aren't zero" and distinguishes economic migrants from criminal syndicates.
-4. **Federal fiscal positive (part of pillar 3) — survives at magnitude.** The realized 2021-26 surge lowers
-   federal deficits ≈$0.9T/decade (CBO 2024, ladder 46); the static NAS cost is an upper bound that GE
-   complementarity shrinks/flips (Colas-Sachs +$750/yr, ladder 45). His "$260k NPV" is a real NAS-derived
-   federal-inclusive figure.
-5. **The demographic / aging argument — survives directionally.** Low native birth rates + Social
-   Security/Medicare funding is a genuine structural argument; immigration is a real (if not sole) lever.
-6. **The wage nuance is more honest than the rhetoric.** In interview he *concedes* a market wage ceiling and
-   the Bracero→automation substitution — i.e., he does not claim zero labor-market friction. That nuance
-   should be granted to him.
-7. **His policy proposals are reasonable and bipartisan** (move immigration out of DHS; expand legal pathways
-   to reduce illegal crossings) and he explicitly disclaims open borders.
+### 2026-09-05 — Material inference repair
 
-## The honest bottom line
-
-Hernandez is right about **four of his five pillars at the coordinate he measures** (aggregate, federal,
-average, US-historically-selected, first-gen-for-crime / dynastic-for-fiscal). The book is **not** dishonest in
-the "all economists are liars" sense — that charge fails, and the repo's own evidence agrees with his core. The
-**defensible** charge, available from *inside* the pro-immigration camp (Kustov), is narrower: a
-book titled ***The Truth*** that (a) **frame-switches generations** between its fiscal and crime chapters
-(dynastic for taxes, first-gen for safety — ladder 51's signature move), (b) titles its fiscal chapter "Fill
-Public Coffers" while **omitting the state-local / renter incidence** its own −$1,600 number and the 2023 CBO
-surge data establish, and (c) **universalizes a composition-specific sign** (Dustmann-Frattini, ladder 47),
-is **selling a coordinate-restricted answer as the whole truth.** Put precisely: *the science
-is clear on his coordinate; the title claims it is clear on all of them, and it is not.*
+This revision supersedes the June verdicts where identified above. It follows the [conceptual audit](immigration-conceptual-audit-2026-09-05.md) and [repair decision](../decisions/2026-09-05-material-inference-repair.md). Source quotations are retained as quotations; their accuracy does not validate the inference drawn from them. The earlier text remains in git history. This pass repairs the covered reasoning and source definitions; it does not certify every underlying study or reproduce its microdata.

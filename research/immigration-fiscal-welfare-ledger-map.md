@@ -1,3 +1,38 @@
+# Immigration fiscal and welfare ledgers — corrected map
+
+**Current assessment: 2026-09-05.** The coordinates below remain useful. The former sign table, claim that fixing coordinates usually determines the sign, and “three empirically falsified theories” conclusion are superseded. A well-defined question can still lack sufficient evidence; leaving it vague does not make every answer defensible. [SOURCE: [repair decision](../decisions/2026-09-05-material-inference-repair.md)] [INFERENCE]
+
+A scalar estimate is legitimate when it specifies the population, budget or welfare concept, cohort, counterfactual, horizon, discounting and aggregation weights. Its applicability is limited by those choices. A multidimensional table is useful for exposing heterogeneity, but does not itself make the entries measured or causally identified. [INFERENCE]
+
+| Object | Defensible current interpretation |
+|---|---|
+| Federal budget | CBO projects a roughly $897B deficit reduction in 2024–2034 for its specified surge scenario, covering receipts, mandatory spending and interest. Discretionary appropriations are excluded; the report illustrates about $0.2T additional funding under population-proportional scaling. It is not a realized or lifetime balance. |
+| State/local budget | CBO's 2023 estimate and the NAS literature support costs in the populations and accounting scenarios studied. Gross services, fiscal net, marginal costs and household-attribution choices are distinct. |
+| Local payroll-minus-selected-benefits model | The old +$1,519 Mexico adult proxy and dependent totals are invalidated. The corrected person-level model remains a partial 2023 cash-flow proxy, not the federal budget. |
+| Lifetime / dynasty | NAS education/arrival-age scenarios and descendant-inclusive scenarios are conditional projections. Cross-sectional generational annual balances cannot be added as a lifetime ROI. |
+| Native wages | Published evidence includes small average effects and heterogeneous subgroup effects. A negative effect for every low-skill native is not established. QWI policy regressions cannot measure native-specific hourly wages. |
+| Aggregate and migrant welfare | Several mechanisms and models support gains, especially for movers. Their magnitudes and transfer to different policies are conditional; there is no universal sign theorem for the full real-world ledger. |
+| Consumer prices, profits, entrepreneurship, productivity | Potential mechanisms with overlapping incidence. They are not four separate quantities to sum on top of GDP. |
+| PAYG pensions | Additional young contributors can improve near-term financing; future eligibility and contributions must be included to infer long-run solvency. |
+| Remittances, rents and taxes | Transfers inside a specified welfare population, before real transaction, resource and distortion costs. Transfers across its boundary affect that population's income. Neither gross payment nor a fiscal deficit alone equals net global welfare loss. |
+| Assimilation / crime | Repeated cohort cross-sections and repeated Texas justice outcomes describe their observed populations; they are not by themselves within-person, across-generation or causal institutional tests. |
+
+[SOURCE: [CBO July 2024](https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf)] [SOURCE: [CBO state/local 2025](https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf)] [SOURCE: [current author synthesis](immigration-economist-dismantling-2026-06-25.md)] [SOURCE: [theory-check re-adjudication](immigration-theory-verdicts-2026-06-25.md)] [INFERENCE: accounting and identification boundaries]
+
+Adding a lower-income newcomer can raise total output and lower the mean without making any incumbent poorer. That arithmetic does not hold other people's outcomes fixed in reality; identifying wage, capital, housing and fiscal responses is the empirical task. “Output is additive” therefore rejects a mechanical mean-to-incumbent inference, not every possible adverse externality. [INFERENCE]
+
+The return-migration result formerly called a falsification simply assumed 25% fewer person-years. The innovation result inferred a counterfactual from a missing tag. Neither is empirical mechanism evidence. Do not impose an additional emigration discount or remove an innovation channel from NAS benchmarks on that basis. [SOURCE: [corrected checks](immigration-theory-verdicts-2026-06-25.md)]
+
+The research question remains the fiscal and crime impact of immigration. Welfare weights and the choice of whose outcomes matter are explicit framing decisions; the signs and sizes of those outcomes remain empirical questions. [FRAMING-SENSITIVE]
+
+## Revisions
+
+- **2026-09-05:** Removed unconditional sign assignments, double-counting implications and unsupported falsification/assimilation conclusions under the [material inference repair](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # The Ledger Map — unifying "is low-skill immigration positive or negative?"
 
 **Date:** 2026-06-23
@@ -58,3 +93,5 @@ Running the generator banks' own `duckdb_test`s (`immigration-theory-verdicts-20
 ## Honest residual
 
 The *reasoning* now spans three poles — **S (short-run fiscal cost) ↔ T (benefit) ↔ V (long-run cultural/institutional skeptic)** — and the *evidence base* for T and V is acquired (12 papers, 2026-06-24), closing the asymmetry that previously made the bank cost-heavy. What remains is **build-out, not acquisition** — and the first slice is now built: **V04/V08's first-generation decay is measured** (`immigrant_assimilation_profile`, synthetic cohorts — the Mexican income gap to natives halves over ~30 years in the US, employment gap closes by 15–25 years; strong convergence, evidence against fixed-trait persistence). Still open: V02's true **cross-generational** 2nd-gen test needs an IPUMS-**CPS** extract (parental birthplace — IPUMS-USA dropped it after 1970, the current 44M-row extract lacks it; gated); V01 wants an ancestry-index merge; V05 wants a state institutional-quality panel; V06 routes through `~/Projects/iq-sex-differences`. The benefit-side T03 still wants a local service-price index. See `immigration-acquisition-gaps-2026-06-24.md` for the full acquisition state and `immigration-net-negative-dataset-frontier-2026-06-15.md` (the cost frontier) for the original shape.
+
+</details>
