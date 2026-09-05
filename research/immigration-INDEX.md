@@ -9,6 +9,7 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 | File | Topic | Consult before |
 |------|-------|----------------|
 | `immigration-clarity-update-2026-09-05.md` | Current integrated findings: fiscal account, Black wage/crime groups, missing residents and recording failures | Answering what the completed audit and data expansion established |
+| `immigration-second-order-effects-2026-09-05.md` | GDP versus incumbent welfare; capacity, administration, trust, political effects and conditional restriction model | Deducing an overall low-skill immigration verdict from additional costs |
 | `immigration-fiscal-account-2024-2026-09-05.md` | CPS2025 taxes/credits/transfers, MEPS2024 health and actual public-pupil exposure | Comparing annual fiscal components beyond the older payroll proxy |
 | `immigration-measurement-uncertainty-2026-09-05.md` | Missing status versus missing people; two-sided selection and crime recording thresholds | Treating untracked residents or selective enforcement as a settled correction factor |
 | `immigration-wage-race-strata-2026-09-05.md` | ACS2019/2024 race × nativity wages, earnings, employment and worker-only estimates | Pooling Black, White and Hispanic native/foreign-born wage populations |
