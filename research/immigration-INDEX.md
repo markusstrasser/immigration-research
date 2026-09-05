@@ -9,17 +9,21 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 | File | Topic | Consult before |
 |------|-------|----------------|
 | `immigration-material-repair-report-2026-09-05.md` | Current material repair status, source corrections and validation evidence | Reusing numerical or causal conclusions from older memos |
+| `immigration-framing-refresh-2026-09-05.md` | Recent evidence integrated: work rights, adjustment, housing, victimization and policy mechanisms | Choosing the next empirical comparison or interpreting current narratives |
+| `immigration-recent-papers-2026-09-05.md` | June–September primary papers/revisions with designs, dates and access limits | Quoting recent labor, housing, fiscal or enforcement research |
+| `immigration-recent-narratives-2026-09-05.md` | Current essays/news and selective official X sample; counterexamples and claim checks | Repeating current public arguments |
+| `immigration-dataset-proxy-refresh-2026-09-05.md` | BLS/BPS/ICE acquisitions and BEA audit, provenance and principal checks | Using recent outcomes, capacity proxies or enforcement counts |
 | `immigration-conceptual-audit-2026-09-05.md` | Material audit: SIPP household/person and education errors; GDP/incumbent and CRS mistakes; Cato mischaracterization; global-gains arithmetic; conditional crime-bias sign | Reusing June fiscal-proxy figures or the dismantling synthesis; these corrections supersede the specified claims |
 | `immigration-main-question-reset.md` | What the repo is actually trying to answer | Reframing the project or proposing new scope |
 | `immigration-evidence-base-audit.md` | Which claims are well-supported vs thin | Repeating literature claims or writing summaries |
-| `immigration-verified-findings-report-2026-04-10.md` | Verified findings snapshot, June-scoped by running fixes | Answering "what do we know?" after checking the June delta/fixes |
+| `immigration-verified-findings-report-2026-04-10.md` | Historical findings with September corrections and current-report link | Answering "what do we know?" after checking current corrections |
 | `immigration-confidence-ladder.md` | Claim confidence by tier | Making strong claims or publishing conclusions |
 | `immigration-claims-evolution-ledger-2026-04-23.md` | Claim-by-claim evolution ledger with takeaways and recurring misunderstandings | Asking how the immigration claims changed or how they relate |
 | `immigration-glossary.md` | Definitions and term discipline | Using terms like `unauthorized`, `low-skill`, `surge`, `fiscal` |
 | `immigration-epistemic-check.md` | Framing-sensitive guardrails | Politically charged synthesis |
 | `immigration-economist-effects-matrix.md` | What economists are actually pricing vs omitting | Comparing Smith, Decker, Borjas, Clark poll economists |
 | `immigration-fiscal-welfare-ledger-map.md` | **Unifying map** — "positive vs negative?" decomposed into 4 coordinates × the full fiscal+benefit ledger set; maps generator clusters A–U | **Answering "is low-skill immigration good/bad?"**; before quoting any single sign |
-| `immigration-source-incentive-regrade-2026-06-23.md` | **Against-interest re-grade** — discounts advocacy (FAIR/ITEP/Cato/CIS) both sides, rewards against-interest (Borjas surplus, NAS cost); `source_incentive_grades` | Weighting a source by prominence/citation; trusting media framing over primary tables |
+| `immigration-source-incentive-regrade-2026-06-23.md` | Source-incentive heuristics for prioritizing checks; grades are not truth probabilities or evidence weights | Assessing source incentives while verifying methods and primary tables |
 | `immigration-dataset-register.md` | Use-case-oriented data register | Asking "what data do we have?" |
 | `immigration-dataset-roadmap.md` | **Acquisition roadmap** — 12 verified datasets we *don't* have yet, chosen to fill the crime + benefit-side gaps | Asking "what data should we get next?"; planning acquisition |
 | `immigration-verification-handoff.md` | Verification map: repo files, datasets, paper families, disciplines | Handing the topic to another agent |
