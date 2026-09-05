@@ -85,7 +85,9 @@ def build() -> Path:
                 yrs = slice_field(line, "YRSINUS").strip()
                 age_band = meps_age_band(age_i)
                 nativity_code = born.lstrip("0") or born
-                nativity_label = "1 YES" if nativity_code == "1" else "2 NO"
+                nativity_label = {"1": "1 YES", "2": "2 NO"}.get(
+                    nativity_code, f"{nativity_code} UNKNOWN BIRTHPLACE"
+                )
                 ins_group = meps_insurance_group(ins_i, age_i)
                 ins_label = {
                     1: "1 <65 ANY PRIVATE",

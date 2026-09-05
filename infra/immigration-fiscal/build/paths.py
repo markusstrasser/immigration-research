@@ -15,7 +15,7 @@ def data_root() -> Path:
     if v := os.environ.get("PNY_DATA_ROOT"):
         return Path(v)
     # Legacy: sources/immigration-fiscal/data on symlinked SSD layout
-    return _INFRA_ROOT.parent / "sources" / "immigration-fiscal" / "data"
+    return _REPO_ROOT / "sources" / "immigration-fiscal" / "data"
 
 
 def derived_root() -> Path:

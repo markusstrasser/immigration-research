@@ -396,8 +396,11 @@ def build() -> None:
 
     # SIPP federal donor cells (replaces broken CPS HHINC prototype)
     try:
-        from build_federal_microsim_sipp_2024 import build_all_donor_cells, load_federal_microsim_into_duckdb
+        from build_federal_microsim_sipp_2024 import (
+            build_acs_recipient_cells, build_all_donor_cells, load_federal_microsim_into_duckdb,
+        )
 
+        build_acs_recipient_cells(con)
         fb_rows, usb_rows = build_all_donor_cells()
         load_federal_microsim_into_duckdb(con, fb_rows, ebornus="2")
         load_federal_microsim_into_duckdb(con, usb_rows, ebornus="1")
@@ -405,8 +408,8 @@ def build() -> None:
         import csv as _csv
 
         for path, rows in (
-            (proto / "sipp_household_donor_cells_2024.csv", fb_rows),
-            (proto / "sipp_household_donor_cells_usborn_2024.csv", usb_rows),
+            (proto / "sipp_person_donor_cells_2024.csv", fb_rows),
+            (proto / "sipp_person_donor_cells_usborn_2024.csv", usb_rows),
         ):
             with path.open("w", newline="") as f:
                 w = _csv.DictWriter(f, fieldnames=list(rows[0].keys()))
@@ -414,7 +417,7 @@ def build() -> None:
                 w.writerows(rows)
             print(f"Wrote {path} ({len(rows)} donor cells)")
     except Exception as exc:
-        print(f"WARN: federal microsim skipped: {exc}", file=sys.stderr)
+        raise RuntimeError("Person payroll/transfer microsim failed; refusing an incomplete warehouse") from exc
 
     keep = [
         "pobp_dim",
@@ -437,10 +440,12 @@ def build() -> None:
         "puma_county_context_2023",
         "origin_puma_household_stage2_context_2023",
         "origin_puma_household_fullstock_stage2_context_2023",
-        "sipp_household_donor_cells_2024",
-        "sipp_household_donor_cells_usborn_2024",
-        "acs_origin_household_federal_microsim_2023",
-        "acs_nh_white_federal_microsim_2023",
+        "sipp_person_donor_cells_2024",
+        "sipp_person_donor_cells_usborn_2024",
+        "acs_origin_person_recipient_cells_2023",
+        "acs_nh_white_person_recipient_cells_2023",
+        "acs_origin_person_payroll_transfer_microsim_2023",
+        "acs_nh_white_person_payroll_transfer_microsim_2023",
         "state_stage5_context_2023",
         "state_el_lep_2018",
         "receiver_city_migrant_costs",

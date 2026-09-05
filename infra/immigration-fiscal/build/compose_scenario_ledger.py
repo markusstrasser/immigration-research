@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 
 from paths import derived_root, duckdb_path
+from public_mvp_io import SIPP_EDUCATION_TO_ACS
 
 PROTO = derived_root() / "stage3_proto"
 STAGE5 = derived_root() / "stage5"
@@ -19,48 +20,34 @@ OUT_SIPP = PROTO / "sipp_scenario_ledger_2024.csv"
 OUT_ORIGIN = PROTO / "origin_fiscal_scenario_2023.csv"
 META = PROTO / "scenario_ledger_2024.meta.json"
 
-SIPP_EDUC_TO_ACS = {
-    "1_lt_hs": "<HS",
-    "2_hs_ged": "HS / GED",
-    "3_some_college": "some college / associate",
-    "4_associate": "some college / associate",
-    "5_bachelors": "other",
-    "6_masters": "other",
-    "7_professional_plus": "other",
-}
-
-
 def _read_csv(path: Path) -> list[dict]:
     with path.open(newline="") as f:
         return list(csv.DictReader(f))
 
 
-def _federal_by_education() -> dict[str, dict]:
+def _payroll_transfer_by_nativity_education() -> dict[tuple, dict]:
     import duckdb
 
     db = duckdb_path()
     if not db.exists():
-        return {}
+        raise FileNotFoundError(f"Missing donor warehouse: {db}")
     con = duckdb.connect(str(db), read_only=True)
-    if not con.execute(
-        "SELECT COUNT(*) FROM information_schema.tables WHERE table_name='acs_origin_household_federal_microsim_2023'"
-    ).fetchone()[0]:
+    try:
+        rows = con.execute("""
+            WITH donors AS (
+              SELECT * FROM sipp_person_donor_cells_2024
+              UNION ALL SELECT * FROM sipp_person_donor_cells_usborn_2024
+            )
+            SELECT nativity_code, education_bucket, SUM(person_weight_sum) AS w,
+              SUM(payroll_less_allocated_benefits_proxy_annual * person_weight_sum) / SUM(person_weight_sum),
+              SUM(employee_oasdi_hi_proxy_annual * person_weight_sum) / SUM(person_weight_sum),
+              SUM(allocated_snap_tanf_ssi_annual * person_weight_sum) / SUM(person_weight_sum)
+            FROM donors GROUP BY 1, 2
+        """).fetchall()
+    finally:
         con.close()
-        return {}
-    rows = con.execute("""
-        SELECT
-          education_bucket,
-          SUM(weighted_adults) AS w,
-          SUM(federal_net_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS avg_federal_net,
-          SUM(payroll_tax_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS avg_payroll,
-          SUM(transfer_outflow_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS avg_transfers
-        FROM acs_origin_household_federal_microsim_2023
-        WHERE donor_household_weight IS NOT NULL
-        GROUP BY 1
-    """).fetchall()
-    con.close()
     return {
-        r[0]: {"avg_federal_net": r[2], "avg_payroll": r[3], "avg_transfers": r[4], "weight": r[1]}
+        (r[0], r[1]): {"avg_payroll_less_benefits": r[3], "avg_payroll": r[4], "avg_transfers": r[5], "weight": r[2]}
         for r in rows
     }
 
@@ -71,30 +58,30 @@ def compose_sipp_ledger() -> list[dict]:
         (r["sipp_age_band"], r["sipp_nativity_code"], r["sipp_education_bucket"]): r
         for r in _read_csv(PROTO / "sipp_meps_expected_health_cost_cells_2024.csv")
     }
-    fed = _federal_by_education()
+    fed = _payroll_transfer_by_nativity_education()
     rows = []
     for s in sipp:
         key = (s["age_band"], s["nativity_code"], s["education_bucket"])
-        h = health.get(key, {})
-        acs_edu = SIPP_EDUC_TO_ACS.get(s["education_bucket"], "other")
-        f = fed.get(acs_edu, {})
-        annual_earn = float(s.get("mean_monthly_tpearn") or 0) * 12
+        h = health[key]
+        acs_edu = SIPP_EDUCATION_TO_ACS[s["education_bucket"]]
+        f = fed[(s["nativity_code"], acs_edu)]
+        annual_earn = float(s.get("mean_monthly_person_tpearn") or 0) * 12
         annual_transfers = (
-            float(s.get("mean_monthly_tsnap_amt") or 0)
-            + float(s.get("mean_monthly_ttanf_amt") or 0)
-            + float(s.get("mean_monthly_tssi_amt") or 0)
+            float(s.get("mean_monthly_allocated_snap") or 0)
+            + float(s.get("mean_monthly_allocated_tanf") or 0)
+            + float(s.get("mean_monthly_person_ssi") or 0)
         ) * 12
         rows.append(
             {
-                **{k: s[k] for k in ("age_band", "nativity_code", "nativity_label", "education_bucket", "citizenship_code")},
-                "sipp_person_weight_sum": s["sipp_person_weight_sum"],
-                "mean_annual_tpearn": annual_earn,
-                "mean_annual_transfers_snap_tanf_ssi": annual_transfers,
+                **{k: s[k] for k in ("age_band", "nativity_code", "nativity_label", "education_bucket")},
+                "sipp_person_month_weight_sum": s["sipp_person_month_weight_sum"],
+                "annualized_monthly_tpearn": annual_earn,
+                "annualized_monthly_allocated_snap_tanf_ssi": annual_transfers,
                 "expected_mean_totexp23": h.get("expected_mean_totexp23"),
                 "expected_mean_totmcd23": h.get("expected_mean_totmcd23"),
-                "federal_net_proxy_annual_edu_bucket": f.get("avg_federal_net"),
-                "payroll_tax_proxy_annual_edu_bucket": f.get("avg_payroll"),
-                "transfer_outflow_proxy_annual_edu_bucket": f.get("avg_transfers"),
+                "payroll_less_allocated_benefits_proxy_annual_edu_bucket": f.get("avg_payroll_less_benefits"),
+                "employee_oasdi_hi_proxy_annual_edu_bucket": f.get("avg_payroll"),
+                "allocated_snap_tanf_ssi_annual_edu_bucket": f.get("avg_transfers"),
                 "acs_education_bucket_mapped": acs_edu,
             }
         )
@@ -106,13 +93,13 @@ def compose_origin_ledger() -> list[dict]:
 
     db = duckdb_path()
     if not db.exists():
-        return []
+        raise FileNotFoundError(f"Missing recipient warehouse: {db}")
     con = duckdb.connect(str(db), read_only=True)
     if not con.execute(
         "SELECT COUNT(*) FROM information_schema.tables WHERE table_name='acs_origin_national_2023'"
     ).fetchone()[0]:
         con.close()
-        return []
+        raise ValueError("Missing acs_origin_national_2023 recipient population")
 
     has_stage5 = con.execute(
         "SELECT COUNT(*) FROM information_schema.tables WHERE table_name='origin_puma_household_stage5_context_2023'"
@@ -130,7 +117,7 @@ def compose_origin_ledger() -> list[dict]:
               s.avg_rpp_all_items_2023,
               s.mean_state_medicaid_total_usd,
               s.avg_lep_count_reported,
-              fm.avg_federal_net,
+              fm.avg_payroll_less_benefits,
               fm.avg_payroll,
               fm.avg_transfers
             FROM acs_origin_national_2023 n
@@ -151,14 +138,14 @@ def compose_origin_ledger() -> list[dict]:
             ) s ON n.origin_label = s.origin_label
             LEFT JOIN (
               SELECT origin_label,
-                     SUM(federal_net_proxy_annual * weighted_adults)
-                       / NULLIF(SUM(weighted_adults), 0) AS avg_federal_net,
-                     SUM(payroll_tax_proxy_annual * weighted_adults)
+                     SUM(payroll_less_allocated_benefits_proxy_annual * weighted_adults)
+                       / NULLIF(SUM(weighted_adults), 0) AS avg_payroll_less_benefits,
+                     SUM(employee_oasdi_hi_proxy_annual * weighted_adults)
                        / NULLIF(SUM(weighted_adults), 0) AS avg_payroll,
-                     SUM(transfer_outflow_proxy_annual * weighted_adults)
+                     SUM(allocated_snap_tanf_ssi_annual * weighted_adults)
                        / NULLIF(SUM(weighted_adults), 0) AS avg_transfers
-              FROM acs_origin_household_federal_microsim_2023
-              WHERE donor_household_weight IS NOT NULL
+              FROM acs_origin_person_payroll_transfer_microsim_2023
+              WHERE donor_person_weight IS NOT NULL
               GROUP BY 1
             ) fm ON n.origin_label = fm.origin_label
             ORDER BY n.weighted_adults DESC
@@ -175,7 +162,7 @@ def compose_origin_ledger() -> list[dict]:
               NULL::DOUBLE AS avg_rpp_all_items_2023,
               NULL::DOUBLE AS mean_state_medicaid_total_usd,
               NULL::DOUBLE AS avg_lep_count_reported,
-              fm.avg_federal_net,
+              fm.avg_payroll_less_benefits,
               fm.avg_payroll,
               fm.avg_transfers
             FROM acs_origin_national_2023 n
@@ -189,14 +176,14 @@ def compose_origin_ledger() -> list[dict]:
             ) s ON n.origin_label = s.origin_label
             LEFT JOIN (
               SELECT origin_label,
-                     SUM(federal_net_proxy_annual * weighted_adults)
-                       / NULLIF(SUM(weighted_adults), 0) AS avg_federal_net,
-                     SUM(payroll_tax_proxy_annual * weighted_adults)
+                     SUM(payroll_less_allocated_benefits_proxy_annual * weighted_adults)
+                       / NULLIF(SUM(weighted_adults), 0) AS avg_payroll_less_benefits,
+                     SUM(employee_oasdi_hi_proxy_annual * weighted_adults)
                        / NULLIF(SUM(weighted_adults), 0) AS avg_payroll,
-                     SUM(transfer_outflow_proxy_annual * weighted_adults)
+                     SUM(allocated_snap_tanf_ssi_annual * weighted_adults)
                        / NULLIF(SUM(weighted_adults), 0) AS avg_transfers
-              FROM acs_origin_household_federal_microsim_2023
-              WHERE donor_household_weight IS NOT NULL
+              FROM acs_origin_person_payroll_transfer_microsim_2023
+              WHERE donor_person_weight IS NOT NULL
               GROUP BY 1
             ) fm ON n.origin_label = fm.origin_label
             ORDER BY n.weighted_adults DESC
@@ -229,7 +216,7 @@ def compose() -> tuple[Path, Path]:
         "sipp_scenario_rows": len(sipp_rows),
         "origin_scenario_rows": len(origin_rows),
         "outputs": [str(OUT_SIPP), str(OUT_ORIGIN)],
-        "notes": "Descriptive scenario inputs; not net-fiscal verdict. Federal column is SIPP-donor proxy.",
+        "notes": "Descriptive inputs, not a fiscal verdict. SIPP annual donor columns are nativity/education context for the full 25-64 annual donor population; monthly x12 columns are annualized monthly means, not observed person-year totals.",
     }
     META.write_text(json.dumps(meta, indent=2) + "\n")
     print(f"Wrote {OUT_SIPP} ({len(sipp_rows)} rows)")

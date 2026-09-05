@@ -16,21 +16,26 @@ UNION_PATH = fiscal_union_duckdb_path()
 CTX_PATH = duckdb_path()
 LIFE_PATH = lifetime_duckdb_path()
 
-# Published anchors [SOURCE: research memos citing CBO 60569/61256]
+# Published budget changes; a negative deficit change is a budget improvement.
+# https://www.cbo.gov/publication/60165 (July 2024), report 61256 (June 2025).
 CBO_OBJECTS = [
-    ("cbo_surge_federal", "federal_annual", 3, "surge_2024_2034", -897_000_000_000, "CBO 60569 deficit reduction vs no-surge"),
+    ("cbo_surge_federal", "federal_cumulative_2024_2034", 3, "surge_2024_2034", -897_000_000_000, "CBO 60165 cumulative 2024-2034 federal deficit change; negative means deficit reduction"),
     ("cbo_surge_state_local_direct", "state_local", 3, "surge_2023", 9_200_000_000, "CBO 61256 direct state/local"),
     ("cbo_surge_state_local_potential", "state_local", 3, "surge_2023", 9_800_000_000, "CBO 61256 potential net"),
 ]
 
-GE_FAN = [
-    ("borjas_pessimist", "<HS", 2, 0.96, -0.04, "10% supply → ~4% wage ↓ on competing cells"),
-    ("card_peri_baseline", "<HS", 2, 1.02, 0.02, "Complementarity band 2000-2019"),
-    ("clemens_capital_tax", "<HS", 2, None, None, "NPV sign flip via capital-tax adj — use NAS Clemens row"),
-]
-
 ANNUITY_YEARS = 75
 DISCOUNT_RATES = (0.02, 0.03, 0.04)
+
+# Czechoslovakia maps wholly to EU members; Yugoslavia spans EU/non-EU successors.
+# Share the same observed birthplace coverage between payroll and school scenarios.
+EU27_ACS_ORIGINS = (
+    'Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus', 'Czech Republic', 'Denmark',
+    'Estonia', 'Finland', 'France', 'Germany', 'Greece', 'Hungary', 'Ireland', 'Italy',
+    'Latvia', 'Lithuania', 'Luxembourg', 'Malta', 'Netherlands', 'Poland', 'Portugal',
+    'Romania', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Czechoslovakia',
+)
+EU27_ORIGINS_SQL = ", ".join(f"'{origin}'" for origin in EU27_ACS_ORIGINS)
 
 
 def _require_duckdb():
@@ -92,27 +97,23 @@ def build() -> None:
     # --- CBO objects ---
     con.execute(
         """
-        CREATE TABLE cbo_fiscal_objects AS
-        SELECT * FROM (VALUES
-          ('cbo_surge_federal', 'federal_annual', 3, 'surge_2024_2034', -897000000000.0,
-           'CBO 60569 cumulative federal deficit vs no-surge [SOURCE: fiscal-impact memo]'),
-          ('cbo_surge_state_local_direct', 'state_local', 3, 'surge_2023', 9200000000.0,
-           'CBO 61256 direct state/local [SOURCE: claims evolution ledger]'),
-          ('cbo_surge_state_local_potential', 'state_local', 3, 'surge_2023', 9800000000.0,
-           'CBO 61256 potential net state/local')
-        ) AS t(object_id, fiscal_layer, effect_order, cohort_tag, value_usd_total, notes)
+        CREATE TABLE cbo_fiscal_objects (
+          object_id VARCHAR, fiscal_layer VARCHAR, effect_order INTEGER,
+          cohort_tag VARCHAR, value_usd_total DOUBLE, notes VARCHAR
+        )
         """
     )
+    con.executemany("INSERT INTO cbo_fiscal_objects VALUES (?, ?, ?, ?, ?, ?)", CBO_OBJECTS)
 
-    # --- GE wage fan (earnings multipliers on 1st-order payroll path) ---
+    # Illustrative payroll multipliers, not estimates of equilibrium wage effects.
     con.execute(
         """
-        CREATE TABLE ge_wage_fan_scenarios AS
+        CREATE TABLE mechanical_payroll_multiplier_scenarios AS
         SELECT * FROM (VALUES
-          ('borjas_pessimist', '<HS', 2, 0.96, 'wage_multiplier'),
-          ('card_peri_baseline', '<HS', 2, 1.02, 'wage_multiplier'),
-          ('peri_complementarity_hs', 'HS / GED', 2, 1.02, 'wage_multiplier')
-        ) AS t(scenario_id, education_bucket, effect_order, earnings_multiplier, multiplier_type)
+          ('illustrative_payroll_minus4pct', '<HS', 2, 0.96, 'payroll_multiplier'),
+          ('illustrative_payroll_plus2pct', '<HS', 2, 1.02, 'payroll_multiplier'),
+          ('illustrative_hs_payroll_plus2pct', 'HS / GED', 2, 1.02, 'payroll_multiplier')
+        ) AS t(scenario_id, education_bucket, effect_order, payroll_multiplier, multiplier_type)
         """
     )
 
@@ -127,10 +128,10 @@ def build() -> None:
         ),
         annual AS (
           SELECT education_bucket,
-                 SUM(federal_net_proxy_annual * weighted_adults)
-                   / NULLIF(SUM(weighted_adults), 0) AS avg_federal_annual
-          FROM ctx.acs_origin_household_federal_microsim_2023
-          WHERE donor_household_weight IS NOT NULL
+                 SUM(payroll_less_allocated_benefits_proxy_annual * weighted_adults)
+                   / NULLIF(SUM(weighted_adults), 0) AS avg_payroll_transfer_annual
+          FROM ctx.acs_origin_person_payroll_transfer_microsim_2023
+          WHERE donor_person_weight IS NOT NULL
           GROUP BY 1
         ),
         rates AS (
@@ -138,17 +139,17 @@ def build() -> None:
         )
         SELECT
           n.education_bucket,
-          n.npv_usd,
-          a.avg_federal_annual,
+          n.npv_usd AS nas_age25_lifetime_npv_2012_usd,
+          2012 AS nas_price_year,
+          'USD_2012_per_age25_arrival_lifetime' AS nas_unit,
+          a.avg_payroll_transfer_annual AS current_stock_payroll_transfer_2023_usd,
+          2023 AS payroll_transfer_price_year,
+          'USD_2023_per_current_adult_year' AS payroll_transfer_unit,
           rt.discount_rate,
-          n.npv_usd / {_annuity_factor(0.03)} AS npv_annuitized_3pct_only,
-          n.npv_usd / ((1 - pow(1 + rt.discount_rate, -{ANNUITY_YEARS})) / rt.discount_rate) AS npv_annuitized,
-          a.avg_federal_annual - n.npv_usd / ((1 - pow(1 + rt.discount_rate, -{ANNUITY_YEARS})) / rt.discount_rate) AS annual_gap,
-          CASE
-            WHEN abs(a.avg_federal_annual - n.npv_usd / ((1 - pow(1 + rt.discount_rate, -{ANNUITY_YEARS})) / rt.discount_rate)) < 500
-            THEN 'near_match'
-            ELSE 'scope_mismatch'
-          END AS bridge_verdict
+          {ANNUITY_YEARS} AS illustrative_annuity_years,
+          n.npv_usd / ((1 - pow(1 + rt.discount_rate, -{ANNUITY_YEARS})) / rt.discount_rate) AS nas_constant_annuity_2012_usd,
+          'not_comparable_without_scope_and_price_alignment' AS comparison_status,
+          'NAS arrival-cohort lifetime all-government ledger versus current-stock employee payroll and selected transfers; annuity is a level-payment illustration, not an observed annual flow' AS scope_notes
         FROM npv n
         LEFT JOIN annual a ON n.education_bucket = a.education_bucket
         CROSS JOIN rates rt
@@ -157,28 +158,28 @@ def build() -> None:
     # --- Population federal cells: FB stock, Mexico, NH white (if native table exists) ---
     has_native = con.execute("""
         SELECT COUNT(*) FROM duckdb_tables()
-        WHERE database_name = 'ctx' AND table_name = 'acs_nh_white_federal_microsim_2023'
+        WHERE database_name = 'ctx' AND table_name = 'acs_nh_white_person_payroll_transfer_microsim_2023'
     """).fetchone()[0]
 
     pop_sql_parts = [
         """
         SELECT 'us_foreign_born_stock' AS population_group, education_bucket,
                SUM(weighted_adults) AS weight_adults,
-               SUM(federal_net_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS fed_net_per_adult,
-               SUM(payroll_tax_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS payroll_per_adult,
-               SUM(transfer_outflow_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS transfers_per_adult
-        FROM ctx.acs_origin_household_federal_microsim_2023
-        WHERE donor_household_weight IS NOT NULL
+               SUM(payroll_less_allocated_benefits_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS fed_net_per_adult,
+               SUM(employee_oasdi_hi_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS payroll_per_adult,
+               SUM(allocated_snap_tanf_ssi_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS transfers_per_adult
+        FROM ctx.acs_origin_person_payroll_transfer_microsim_2023
+        WHERE donor_person_weight IS NOT NULL
         GROUP BY 1, 2
         """,
         """
         SELECT 'mexico_origin' AS population_group, education_bucket,
                SUM(weighted_adults) AS weight_adults,
-               SUM(federal_net_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
-               SUM(payroll_tax_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
-               SUM(transfer_outflow_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0)
-        FROM ctx.acs_origin_household_federal_microsim_2023
-        WHERE donor_household_weight IS NOT NULL AND origin_label = 'Mexico'
+               SUM(payroll_less_allocated_benefits_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
+               SUM(employee_oasdi_hi_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
+               SUM(allocated_snap_tanf_ssi_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0)
+        FROM ctx.acs_origin_person_payroll_transfer_microsim_2023
+        WHERE donor_person_weight IS NOT NULL AND origin_label = 'Mexico'
         GROUP BY 1, 2
         """,
     ]
@@ -186,11 +187,11 @@ def build() -> None:
         pop_sql_parts.append("""
         SELECT 'nh_white_usborn' AS population_group, education_bucket,
                SUM(weighted_adults) AS weight_adults,
-               SUM(federal_net_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
-               SUM(payroll_tax_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
-               SUM(transfer_outflow_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0)
-        FROM ctx.acs_nh_white_federal_microsim_2023
-        WHERE donor_household_weight IS NOT NULL
+               SUM(payroll_less_allocated_benefits_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
+               SUM(employee_oasdi_hi_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
+               SUM(allocated_snap_tanf_ssi_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0)
+        FROM ctx.acs_nh_white_person_payroll_transfer_microsim_2023
+        WHERE donor_person_weight IS NOT NULL
         GROUP BY 1, 2
         """)
 
@@ -200,48 +201,43 @@ def build() -> None:
             """
         SELECT 'fb_lt_hs' AS population_group, education_bucket,
                SUM(weighted_adults) AS weight_adults,
-               SUM(federal_net_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
-               SUM(payroll_tax_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
-               SUM(transfer_outflow_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0)
-        FROM ctx.acs_origin_household_federal_microsim_2023
-        WHERE donor_household_weight IS NOT NULL AND education_bucket = '<HS'
+               SUM(payroll_less_allocated_benefits_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
+               SUM(employee_oasdi_hi_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
+               SUM(allocated_snap_tanf_ssi_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0)
+        FROM ctx.acs_origin_person_payroll_transfer_microsim_2023
+        WHERE donor_person_weight IS NOT NULL AND education_bucket = '<HS'
         GROUP BY 1, 2
         """,
             """
         SELECT 'mx_ca_cluster' AS population_group, education_bucket,
                SUM(weighted_adults) AS weight_adults,
-               SUM(federal_net_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
-               SUM(payroll_tax_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
-               SUM(transfer_outflow_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0)
-        FROM ctx.acs_origin_household_federal_microsim_2023
-        WHERE donor_household_weight IS NOT NULL
+               SUM(payroll_less_allocated_benefits_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
+               SUM(employee_oasdi_hi_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
+               SUM(allocated_snap_tanf_ssi_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0)
+        FROM ctx.acs_origin_person_payroll_transfer_microsim_2023
+        WHERE donor_person_weight IS NOT NULL
           AND origin_label IN ('Mexico', 'El Salvador', 'Guatemala', 'Honduras')
         GROUP BY 1, 2
         """,
-            """
+            f"""
         SELECT 'eu27_origin' AS population_group, education_bucket,
                SUM(weighted_adults) AS weight_adults,
-               SUM(federal_net_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
-               SUM(payroll_tax_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
-               SUM(transfer_outflow_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0)
-        FROM ctx.acs_origin_household_federal_microsim_2023
-        WHERE donor_household_weight IS NOT NULL
-          AND origin_label IN (
-            'Austria','Belgium','Bulgaria','Croatia','Cyprus','Czech Republic','Denmark',
-            'Estonia','Finland','France','Germany','Greece','Hungary','Ireland','Italy',
-            'Latvia','Lithuania','Luxembourg','Malta','Netherlands','Poland','Portugal',
-            'Romania','Slovakia','Slovenia','Spain','Sweden','Czechoslovakia','Yugoslavia'
-          )
+               SUM(payroll_less_allocated_benefits_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
+               SUM(employee_oasdi_hi_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
+               SUM(allocated_snap_tanf_ssi_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0)
+        FROM ctx.acs_origin_person_payroll_transfer_microsim_2023
+        WHERE donor_person_weight IS NOT NULL
+          AND origin_label IN ({EU27_ORIGINS_SQL})
         GROUP BY 1, 2
         """,
             """
         SELECT 'uk_origin' AS population_group, education_bucket,
                SUM(weighted_adults) AS weight_adults,
-               SUM(federal_net_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
-               SUM(payroll_tax_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
-               SUM(transfer_outflow_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0)
-        FROM ctx.acs_origin_household_federal_microsim_2023
-        WHERE donor_household_weight IS NOT NULL
+               SUM(payroll_less_allocated_benefits_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
+               SUM(employee_oasdi_hi_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0),
+               SUM(allocated_snap_tanf_ssi_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0)
+        FROM ctx.acs_origin_person_payroll_transfer_microsim_2023
+        WHERE donor_person_weight IS NOT NULL
           AND origin_label IN (
             'United Kingdom, not specified','England','Scotland','Northern Ireland','Wales'
           )
@@ -266,11 +262,11 @@ def build() -> None:
         FROM ctx.acs_nh_white_education_by_nativity_2023 e
         JOIN (
           SELECT education_bucket,
-                 SUM(federal_net_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS fed_net_per_adult,
-                 SUM(payroll_tax_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS payroll_per_adult,
-                 SUM(transfer_outflow_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS transfers_per_adult
-          FROM ctx.acs_origin_household_federal_microsim_2023
-          WHERE donor_household_weight IS NOT NULL
+                 SUM(payroll_less_allocated_benefits_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS fed_net_per_adult,
+                 SUM(employee_oasdi_hi_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS payroll_per_adult,
+                 SUM(allocated_snap_tanf_ssi_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS transfers_per_adult
+          FROM ctx.acs_origin_person_payroll_transfer_microsim_2023
+          WHERE donor_person_weight IS NOT NULL
           GROUP BY 1
         ) f ON e.education_bucket = f.education_bucket
         WHERE e.nativity = 2
@@ -284,11 +280,11 @@ def build() -> None:
                SUM(transfers_per_adult * weight_adults) / NULLIF(SUM(weight_adults), 0)
         FROM (
           SELECT education_bucket, SUM(weighted_adults) AS weight_adults,
-                 SUM(federal_net_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS fed_net_per_adult,
-                 SUM(payroll_tax_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS payroll_per_adult,
-                 SUM(transfer_outflow_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS transfers_per_adult
-          FROM ctx.acs_nh_white_federal_microsim_2023
-          WHERE donor_household_weight IS NOT NULL
+                 SUM(payroll_less_allocated_benefits_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS fed_net_per_adult,
+                 SUM(employee_oasdi_hi_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS payroll_per_adult,
+                 SUM(allocated_snap_tanf_ssi_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS transfers_per_adult
+          FROM ctx.acs_nh_white_person_payroll_transfer_microsim_2023
+          WHERE donor_person_weight IS NOT NULL
           GROUP BY 1
           UNION ALL
           SELECT e.education_bucket, SUM(e.weighted_adults),
@@ -296,11 +292,11 @@ def build() -> None:
           FROM ctx.acs_nh_white_education_by_nativity_2023 e
           JOIN (
             SELECT education_bucket,
-                   SUM(federal_net_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS fed_net_per_adult,
-                   SUM(payroll_tax_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS payroll_per_adult,
-                   SUM(transfer_outflow_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS transfers_per_adult
-            FROM ctx.acs_origin_household_federal_microsim_2023
-            WHERE donor_household_weight IS NOT NULL
+                   SUM(payroll_less_allocated_benefits_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS fed_net_per_adult,
+                   SUM(employee_oasdi_hi_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS payroll_per_adult,
+                   SUM(allocated_snap_tanf_ssi_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS transfers_per_adult
+            FROM ctx.acs_origin_person_payroll_transfer_microsim_2023
+            WHERE donor_person_weight IS NOT NULL
             GROUP BY 1
           ) f ON e.education_bucket = f.education_bucket
           WHERE e.nativity = 2
@@ -351,28 +347,28 @@ def build() -> None:
         SELECT 'mexico_origin', m.education_bucket,
                SUM(m.weighted_adults),
                MAX(b.individual_npv_2012_usd), MAX(b.study), MAX(b.adjustment)
-        FROM ctx.acs_origin_household_federal_microsim_2023 m
+        FROM ctx.acs_origin_person_payroll_transfer_microsim_2023 m
         JOIN life.npv_education_benchmarks b ON m.education_bucket = b.acs_education_bucket
-        WHERE m.origin_label = 'Mexico' AND m.donor_household_weight IS NOT NULL
+        WHERE m.origin_label = 'Mexico' AND m.donor_person_weight IS NOT NULL
           AND b.study = 'NAS 2017' AND b.adjustment = 'baseline_public_goods'
           AND b.age_at_arrival = 25 AND NOT b.includes_descendants
         GROUP BY 1, 2
         UNION ALL
         SELECT 'fb_lt_hs', m.education_bucket, SUM(m.weighted_adults),
                MAX(b.individual_npv_2012_usd), MAX(b.study), MAX(b.adjustment)
-        FROM ctx.acs_origin_household_federal_microsim_2023 m
+        FROM ctx.acs_origin_person_payroll_transfer_microsim_2023 m
         JOIN life.npv_education_benchmarks b ON m.education_bucket = b.acs_education_bucket
-        WHERE m.education_bucket = '<HS' AND m.donor_household_weight IS NOT NULL
+        WHERE m.education_bucket = '<HS' AND m.donor_person_weight IS NOT NULL
           AND b.study = 'NAS 2017' AND b.adjustment = 'baseline_public_goods'
           AND b.age_at_arrival = 25 AND NOT b.includes_descendants
         GROUP BY 1, 2
         UNION ALL
         SELECT 'mx_ca_cluster', m.education_bucket, SUM(m.weighted_adults),
                MAX(b.individual_npv_2012_usd), MAX(b.study), MAX(b.adjustment)
-        FROM ctx.acs_origin_household_federal_microsim_2023 m
+        FROM ctx.acs_origin_person_payroll_transfer_microsim_2023 m
         JOIN life.npv_education_benchmarks b ON m.education_bucket = b.acs_education_bucket
         WHERE m.origin_label IN ('Mexico', 'El Salvador', 'Guatemala', 'Honduras')
-          AND m.donor_household_weight IS NOT NULL
+          AND m.donor_person_weight IS NOT NULL
           AND b.study = 'NAS 2017' AND b.adjustment = 'baseline_public_goods'
           AND b.age_at_arrival = 25 AND NOT b.includes_descendants
         GROUP BY 1, 2
@@ -416,8 +412,8 @@ def build() -> None:
             ),
             micro AS (
               SELECT origin_label, SUM(weighted_adults) AS micro_adults
-              FROM ctx.acs_origin_household_federal_microsim_2023
-              WHERE donor_household_weight IS NOT NULL
+              FROM ctx.acs_origin_person_payroll_transfer_microsim_2023
+              WHERE donor_person_weight IS NOT NULL
               GROUP BY 1
             )
             SELECT
@@ -450,7 +446,7 @@ def build() -> None:
             )
         """)
 
-    con.execute("""
+    con.execute(f"""
         CREATE TEMP TABLE _pop_school AS
         SELECT 'mexico_origin' AS population_group,
                SUM(weight_adults) AS weight_adults,
@@ -467,12 +463,7 @@ def build() -> None:
                     ELSE NULL
                END
         FROM _origin_school
-        WHERE origin_label IN (
-          'Austria','Belgium','Bulgaria','Croatia','Cyprus','Czech Republic','Denmark',
-          'Estonia','Finland','France','Germany','Greece','Hungary','Ireland','Italy',
-          'Latvia','Lithuania','Luxembourg','Malta','Netherlands','Poland','Portugal',
-          'Romania','Slovakia','Slovenia','Spain','Sweden','Czechoslovakia','Yugoslavia'
-        )
+        WHERE origin_label IN ({EU27_ORIGINS_SQL})
         UNION ALL
         SELECT 'uk_origin', SUM(weight_adults),
                CASE WHEN COUNT(*) = COUNT(school_burden_per_adult)
@@ -493,29 +484,27 @@ def build() -> None:
         WHERE origin_label IN ('Mexico', 'El Salvador', 'Guatemala', 'Honduras')
     """)
 
-    # --- Local flow: per-pupil from scenario (Mexico + FB weighted via origins) ---
-    con.execute("""
-        CREATE TEMP TABLE _local_flow AS
-        SELECT 'mexico_origin' AS population_group,
-               weighted_adults AS weight_adults,
-               area_wtd_current_spend_per_pupil AS local_per_pupil_annual,
-               linked_mean_hh_school_age_children AS school_age_children_per_hh
-        FROM life.origin_fiscal_scenario_2023
-        WHERE origin_label = 'Mexico'
-    """)
-
     # --- Assemble country_fiscal_tensor ---
     con.execute("""
         CREATE TABLE country_fiscal_tensor AS
         SELECT population_group, education_bucket, fiscal_layer, effect_order,
                weight_adults, value_per_adult, value_total_usd, unit, source_ref, notes
         FROM (
-          SELECT population_group, education_bucket, 'federal_annual' AS fiscal_layer, 1 AS effect_order,
+          SELECT population_group, education_bucket, 'payroll_transfer_annual' AS fiscal_layer, 1 AS effect_order,
                  weight_adults, fed_net_per_adult AS value_per_adult,
                  weight_adults * fed_net_per_adult AS value_total_usd,
                  'USD_per_adult_per_year' AS unit,
-                 'acs_origin_household_federal_microsim_2023' AS source_ref,
-                 'SIPP donor payroll − SNAP/TANF/SSI' AS notes
+                 CASE WHEN population_group = 'nh_white_usborn'
+                      THEN 'acs_nh_white_person_payroll_transfer_microsim_2023'
+                      ELSE 'acs_origin_person_payroll_transfer_microsim_2023'
+                 END AS source_ref,
+                 'Person-year employee OASDI/HI proxy minus allocated SNAP/TANF and individual SSI; adult-only selected ledger, not federal net revenue' ||
+                 CASE WHEN population_group IN ('nh_white_fborn', 'nh_white_all')
+                      THEN '; Foreign-born-white component assumes the all-FB ACS mean within education, without matching its age/income distribution; compositional scenario only'
+                      WHEN population_group = 'nh_white_usborn'
+                      THEN '; Assumes all-US-born SIPP donor means transport to native-white recipients conditional on age, income and education'
+                      ELSE '; Assumes all-FB SIPP donor means transport to each origin conditional on age, income and education'
+                 END AS notes
           FROM _pop_fed
           UNION ALL
           SELECT population_group, education_bucket, 'lifetime_npv', 1, weight_adults, npv_per_adult,
@@ -525,18 +514,12 @@ def build() -> None:
           UNION ALL
           SELECT population_group, education_bucket, 'lifetime_npv', 2, weight_adults, npv_per_adult,
                  weight_adults * npv_per_adult, 'USD_npv_per_adult', study,
-                 'GE capital-tax overlay on synthetic age-at-arrival-25 NPV benchmark'
+                 'Partial-equilibrium capital-tax adjustment on synthetic age-at-arrival-25 NPV benchmark; not an estimated GE effect'
           FROM _pop_npv WHERE adjustment = 'capital_tax_adjustment'
-          UNION ALL
-          SELECT population_group, NULL, 'local_flow', 1, weight_adults,
-                 local_per_pupil_annual, weight_adults * local_per_pupil_annual,
-                 'USD_per_pupil_current', 'origin_fiscal_scenario_2023',
-                 'Area-weighted F-33; not marginal immigrant pupil'
-          FROM _local_flow
         ) u
     """)
 
-    # --- School burden per adult + crude net (federal − school); NOT lifetime NPV ---
+    # --- Household school exposure and explicit crude scenario arithmetic ---
     con.execute("""
         INSERT INTO country_fiscal_tensor
         SELECT population_group, NULL AS education_bucket,
@@ -545,35 +528,35 @@ def build() -> None:
                weight_adults * school_per_adult AS value_total_usd,
                'USD_per_adult_per_year' AS unit,
                'origin_puma_household_fullstock_context_2023' AS source_ref,
-               'full-stock FB adults 25-64 household linkage; average school spend, not marginal; citizen children in HH' AS notes
+               'Exposure scenario: every household child age 5-17 treated as a public pupil; entire household exposure allocated across FB adults 25-64 by origin, including mixed-nativity households. Average pupil cost can be above or below marginal cost.' AS notes
         FROM _pop_school
         UNION ALL
         SELECT population_group, NULL,
-               'net_crude_federal_minus_school', 1,
+               'crude_payroll_transfer_minus_school', 1,
                ps.weight_adults, pf.fed_per_adult - ps.school_per_adult,
                ps.weight_adults * (pf.fed_per_adult - ps.school_per_adult),
                'USD_per_adult_per_year', 'derived_crude',
-               'CRUDE static: federal proxy minus average school burden; no descendant taxes; not NAS lifetime'
+               'Scenario arithmetic: adult employee payroll/selected-benefit proxy minus allocated household child school exposure; not actual spending, full fiscal impact or NAS lifetime; no descendant taxes'
         FROM _pop_school ps
         JOIN _pop_fed_rollup pf USING (population_group)
     """)
 
-    # --- GE fan applied to Mexico <HS federal annual (2nd order) ---
+    # Mechanical payroll scenarios with fixed transfers; no causal GE claim.
     con.execute("""
         INSERT INTO country_fiscal_tensor
         SELECT
           'mexico_origin' AS population_group,
           g.education_bucket,
-          'federal_annual' AS fiscal_layer,
+          'payroll_transfer_annual' AS fiscal_layer,
           2 AS effect_order,
           p.weight_adults,
-          p.fed_net_per_adult * g.earnings_multiplier AS value_per_adult,
-          p.weight_adults * p.fed_net_per_adult * g.earnings_multiplier AS value_total_usd,
+          p.payroll_per_adult * g.payroll_multiplier - p.transfers_per_adult AS value_per_adult,
+          p.weight_adults * (p.payroll_per_adult * g.payroll_multiplier - p.transfers_per_adult) AS value_total_usd,
           'USD_per_adult_per_year' AS unit,
           g.scenario_id AS source_ref,
-          'Payroll path scaled by GE wage fan' AS notes
+          'Mechanical payroll multiplier with fixed transfers; not estimated GE or exact wage-response tax liability under payroll caps' AS notes
         FROM _pop_fed p
-        JOIN ge_wage_fan_scenarios g ON p.education_bucket = g.education_bucket
+        JOIN mechanical_payroll_multiplier_scenarios g ON p.education_bucket = g.education_bucket
         WHERE p.population_group = 'mexico_origin'
     """)
 
@@ -587,128 +570,42 @@ def build() -> None:
         FROM cbo_fiscal_objects
     """)
 
-    # --- Episodic local (3rd order): receiver cities FY2024 ---
+    # --- Selected city/state episodic costs (3rd order), mixed FY2024 records ---
     con.execute("""
         INSERT INTO country_fiscal_tensor
         SELECT 'receiver_cities_episodic', NULL, 'local_episodic', 3, NULL, NULL,
                SUM(TRY_CAST(total_spending_usd_M AS DOUBLE)) * 1e6,
-               'USD_total', 'receiver_city_migrant_costs', 'Gross city shelter/asylum FY rows'
+               'USD_total', 'receiver_city_migrant_costs',
+               'Selected city/state gross shelter/asylum amounts; mixed budgets and actuals, not a national total or net attributable fiscal cost'
         FROM life.receiver_city_migrant_costs
         WHERE fiscal_year IN ('FY2024', '2024')
     """)
-
-    # --- NH white school burden (ACS household linkage if person CSVs staged) ---
-    acs_a = Path("/tmp/acs_person_psam_pusa.csv")
-    acs_b = Path("/tmp/acs_person_psam_pusb.csv")
-    if acs_a.exists() and acs_b.exists():
-        county_pupil = con.execute("""
-            SELECT MEDIAN(current_spend_per_pupil) FROM life.school_finance_county_2023
-            WHERE current_spend_per_pupil IS NOT NULL AND current_spend_per_pupil > 1000
-        """).fetchone()[0]
-        nh = con.execute(f"""
-            WITH persons AS (
-              SELECT SERIALNO, CAST(PWGTP AS DOUBLE) w, CAST(AGEP AS INT) age,
-                (LPAD(CAST(HISP AS VARCHAR),2,'0')='01' AND CAST(RAC1P AS INT)=1) nh,
-                CAST(NATIVITY AS INT) nativity
-              FROM read_csv_auto('{acs_a}', header=true)
-              UNION ALL
-              SELECT SERIALNO, CAST(PWGTP AS DOUBLE), CAST(AGEP AS INT),
-                (LPAD(CAST(HISP AS VARCHAR),2,'0')='01' AND CAST(RAC1P AS INT)=1),
-                CAST(NATIVITY AS INT)
-              FROM read_csv_auto('{acs_b}', header=true)
-            ),
-            hh AS (
-              SELECT SERIALNO,
-                MAX(CASE WHEN nh AND age BETWEEN 25 AND 64 THEN w ELSE 0 END) adult_w,
-                SUM(CASE WHEN nh AND age BETWEEN 25 AND 64 THEN w ELSE 0 END) adult_w_sum,
-                SUM(CASE WHEN age BETWEEN 5 AND 17 THEN w ELSE 0 END) kid_w
-              FROM persons GROUP BY 1
-              HAVING adult_w_sum > 0
-            ),
-            nat AS (
-              SELECT p.SERIALNO, MAX(p.nativity) AS nativity, SUM(CASE WHEN p.nh AND p.age BETWEEN 25 AND 64 THEN p.w ELSE 0 END) w
-              FROM persons p WHERE p.nh AND p.age BETWEEN 25 AND 64 GROUP BY 1
-            ),
-            roll AS (
-              SELECT n.nativity,
-                SUM(n.w) adults,
-                SUM(h.kid_w * n.w / NULLIF(h.adult_w_sum, 0)) kids_adj
-              FROM nat n JOIN hh h ON n.SERIALNO = h.SERIALNO
-              GROUP BY 1
-            )
-            SELECT nativity, adults, kids_adj / NULLIF(adults, 0) AS kids_per_adult FROM roll
-        """).fetchall()
-        fed_usb = con.execute("""
-            SELECT SUM(federal_net_proxy_annual*weighted_adults)/SUM(weighted_adults)
-            FROM ctx.acs_nh_white_federal_microsim_2023 WHERE donor_household_weight IS NOT NULL
-        """).fetchone()[0]
-        fed_fb = con.execute("""
-            SELECT SUM(federal_net_proxy_annual*weighted_adults)/SUM(weighted_adults)
-            FROM ctx.acs_origin_household_federal_microsim_2023 WHERE donor_household_weight IS NOT NULL
-        """).fetchone()[0]
-        for nativity, adults, kids_per_adult in nh:
-            if not kids_per_adult or not adults:
-                continue
-            school = county_pupil * kids_per_adult
-            fed = fed_usb if nativity == 1 else fed_fb
-            grp = "nh_white_usborn" if nativity == 1 else "nh_white_fborn"
-            con.execute(
-                """
-                INSERT INTO country_fiscal_tensor VALUES
-                (?, NULL, 'school_burden_per_adult', 1, ?, ?, ?, 'USD_per_adult_per_year',
-                 'acs_hh_linkage_county_median_pupil', ?),
-                (?, NULL, 'net_crude_federal_minus_school', 1, ?, ?, ?, 'USD_per_adult_per_year',
-                 'derived_crude', ?)
-                """,
-                [
-                    grp, adults, school, adults * school,
-                    f"median county per_pupil ${county_pupil:,.0f} × {kids_per_adult:.3f} kids/adult",
-                    grp, adults, fed - school, adults * (fed - school),
-                    "CRUDE NH white: federal minus school; FB white uses FB donor cells",
-                ],
-            )
-        all_adults = sum(r[1] for r in nh)
-        all_kids = sum(r[1] * r[2] for r in nh)
-        if all_adults:
-            kpa = all_kids / all_adults
-            school_all = county_pupil * kpa
-            fed_w = sum((fed_usb if r[0] == 1 else fed_fb) * r[1] for r in nh) / all_adults
-            con.execute(
-                """
-                INSERT INTO country_fiscal_tensor VALUES
-                ('nh_white_all', NULL, 'school_burden_per_adult', 1, ?, ?, ?, 'USD_per_adult_per_year',
-                 'acs_hh_linkage_county_median_pupil', ?),
-                ('nh_white_all', NULL, 'net_crude_federal_minus_school', 1, ?, ?, ?, 'USD_per_adult_per_year',
-                 'derived_crude', ?)
-                """,
-                [
-                    all_adults, school_all, all_adults * school_all,
-                    f"all NH white kids/adult={kpa:.3f}",
-                    all_adults, fed_w - school_all, all_adults * (fed_w - school_all),
-                    "CRUDE NH white all nativity",
-                ],
-            )
-            print(f"NH white school burden: kids/adult={kpa:.3f}, school/adult=${school_all:,.0f}")
-    else:
-        print("WARN: ACS person CSVs not in /tmp — nh_white school_burden skipped", file=sys.stderr)
+    print("Native school/net withheld: no validated population-comparable exposure construction")
 
     # --- Rollup view ---
     con.execute("""
         CREATE VIEW v_country_fiscal_rollup AS
-        SELECT population_group, fiscal_layer, effect_order,
+        WITH scoped AS (
+          SELECT *, CASE
+            WHEN population_group = 'cbo_surge_cohort'
+              OR (fiscal_layer = 'payroll_transfer_annual' AND effect_order = 2)
+              THEN source_ref ELSE 'baseline' END AS scenario_id
+          FROM country_fiscal_tensor
+        )
+        SELECT population_group, fiscal_layer, effect_order, scenario_id, unit,
                SUM(weight_adults) AS weight_adults,
                SUM(value_total_usd) / NULLIF(SUM(weight_adults), 0) AS value_per_adult_weighted,
                SUM(value_total_usd) AS value_total_usd,
                COUNT(*) AS n_cells
-        FROM country_fiscal_tensor
+        FROM scoped
         WHERE weight_adults IS NOT NULL AND value_per_adult IS NOT NULL
-        GROUP BY 1, 2, 3
+        GROUP BY 1, 2, 3, 4, 5
         UNION ALL
-        SELECT population_group, fiscal_layer, effect_order,
+        SELECT population_group, fiscal_layer, effect_order, scenario_id, unit,
                NULL, NULL, SUM(value_total_usd), COUNT(*)
-        FROM country_fiscal_tensor
+        FROM scoped
         WHERE value_per_adult IS NULL AND value_total_usd IS NOT NULL
-        GROUP BY 1, 2, 3
+        GROUP BY 1, 2, 3, 4, 5
     """)
 
     con.execute("""
@@ -718,6 +615,8 @@ def build() -> None:
           b.population_group AS group_b,
           a.fiscal_layer,
           a.effect_order,
+          a.scenario_id,
+          a.unit,
           a.value_per_adult_weighted AS per_adult_a,
           b.value_per_adult_weighted AS per_adult_b,
           a.value_per_adult_weighted / NULLIF(b.value_per_adult_weighted, 0) AS ratio_a_to_b,
@@ -726,6 +625,7 @@ def build() -> None:
         FROM v_country_fiscal_rollup a
         JOIN v_country_fiscal_rollup b
           ON a.fiscal_layer = b.fiscal_layer AND a.effect_order = b.effect_order
+          AND a.scenario_id = b.scenario_id AND a.unit = b.unit
         WHERE (a.population_group, b.population_group) IN (
           ('nh_white_usborn', 'mexico_origin'),
           ('nh_white_all', 'fb_lt_hs'),
@@ -738,94 +638,62 @@ def build() -> None:
     """)
 
     con.execute("""
-        CREATE TABLE education_matched_federal AS
+        CREATE TABLE education_matched_payroll_transfer AS
         WITH white AS (
           SELECT education_bucket,
-                 SUM(federal_net_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS fed_white,
+                 SUM(payroll_less_allocated_benefits_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS payroll_transfer_white,
                  SUM(weighted_adults) AS n_white
-          FROM ctx.acs_nh_white_federal_microsim_2023
-          WHERE donor_household_weight IS NOT NULL
+          FROM ctx.acs_nh_white_person_payroll_transfer_microsim_2023
+          WHERE donor_person_weight IS NOT NULL
           GROUP BY 1
         ),
         mex AS (
           SELECT education_bucket,
-                 SUM(federal_net_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS fed_mex,
+                 SUM(payroll_less_allocated_benefits_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS payroll_transfer_mex,
                  SUM(weighted_adults) AS n_mex
-          FROM ctx.acs_origin_household_federal_microsim_2023
-          WHERE donor_household_weight IS NOT NULL AND origin_label = 'Mexico'
+          FROM ctx.acs_origin_person_payroll_transfer_microsim_2023
+          WHERE donor_person_weight IS NOT NULL AND origin_label = 'Mexico'
           GROUP BY 1
-        ),
-        fb_lt AS (
-          SELECT SUM(federal_net_proxy_annual * weighted_adults) / NULLIF(SUM(weighted_adults), 0) AS fed
-          FROM ctx.acs_origin_household_federal_microsim_2023
-          WHERE donor_household_weight IS NOT NULL AND education_bucket = '<HS'
         )
         SELECT
           w.education_bucket,
           w.n_white,
           m.n_mex,
-          w.fed_white,
-          m.fed_mex,
-          CASE WHEN w.education_bucket = '<HS' THEN (SELECT fed FROM fb_lt) ELSE w.fed_white END AS fed_white_adj,
-          m.fed_mex / NULLIF(
-            CASE WHEN w.education_bucket = '<HS' THEN (SELECT fed FROM fb_lt) ELSE w.fed_white END, 0
-          ) AS ratio_mex_to_white_adj,
-          CASE
-            WHEN w.education_bucket = '<HS' THEN 'white_lt_hs_sipp_noise_use_fb_donor'
-            WHEN m.fed_mex > w.fed_white THEN 'mex_higher'
-            ELSE 'white_higher'
-          END AS cell_verdict
+          w.payroll_transfer_white,
+          m.payroll_transfer_mex,
+          'Descriptive conditional transport: all-US-born and all-FB SIPP donor pools respectively; not ethnicity-specific observations or a causal comparison; no survey uncertainty estimated' AS comparison_notes
         FROM white w
         JOIN mex m USING (education_bucket)
-        WHERE m.n_mex > 100000
     """)
     con.execute("""
-        CREATE VIEW v_education_matched_federal AS SELECT * FROM education_matched_federal
+        CREATE VIEW v_education_matched_payroll_transfer AS SELECT * FROM education_matched_payroll_transfer
+    """)
+
+    con.execute("""
+        UPDATE country_fiscal_tensor
+        SET notes = notes || '; EU coverage excludes ambiguous Yugoslavia birthplace; includes Czechoslovakia, whose successors are both EU members'
+        WHERE population_group = 'eu27_origin'
     """)
 
     con.execute("""
         CREATE VIEW v_three_layer_annual AS
         SELECT
           population_group,
-          MAX(CASE WHEN fiscal_layer = 'federal_annual' THEN value_per_adult_weighted END) AS federal_per_adult,
+          MAX(CASE WHEN fiscal_layer = 'payroll_transfer_annual' THEN value_per_adult_weighted END) AS payroll_transfer_per_adult,
           MAX(CASE WHEN fiscal_layer = 'school_burden_per_adult' THEN value_per_adult_weighted END) AS school_per_adult,
-          MAX(CASE WHEN fiscal_layer = 'net_crude_federal_minus_school' THEN value_per_adult_weighted END) AS net_crude_per_adult,
-          MAX(CASE WHEN fiscal_layer = 'federal_annual' THEN weight_adults END) AS weight_adults
+          MAX(CASE WHEN fiscal_layer = 'crude_payroll_transfer_minus_school' THEN value_per_adult_weighted END) AS net_crude_per_adult,
+          MAX(CASE WHEN fiscal_layer = 'payroll_transfer_annual' THEN weight_adults END) AS weight_adults
         FROM v_country_fiscal_rollup
         WHERE effect_order = 1
-          AND fiscal_layer IN ('federal_annual', 'school_burden_per_adult', 'net_crude_federal_minus_school')
+          AND fiscal_layer IN ('payroll_transfer_annual', 'school_burden_per_adult', 'crude_payroll_transfer_minus_school')
         GROUP BY 1
-        HAVING MAX(CASE WHEN fiscal_layer = 'federal_annual' THEN value_per_adult_weighted END) IS NOT NULL
+        HAVING MAX(CASE WHEN fiscal_layer = 'payroll_transfer_annual' THEN value_per_adult_weighted END) IS NOT NULL
     """)
 
     lpr_n = _load_lpr_mexico_weights(con)
 
-    # Legacy cross-domain views
-    con.execute("""
-        CREATE VIEW v_education_stock_with_npv AS
-        SELECT e.education_bucket, e.weighted_adults, b.study, b.individual_npv_2012_usd,
-               b.adjustment, b.notes AS npv_notes
-        FROM ctx.acs_foreign_born_education_bucket_totals_2023 e
-        LEFT JOIN life.npv_education_benchmarks b ON e.education_bucket = b.acs_education_bucket
-    """)
-    con.execute("""
-        CREATE VIEW v_origin_federal_with_education_npv AS
-        SELECT m.origin_label, m.education_bucket, m.weighted_adults, m.federal_net_proxy_annual,
-               b.study AS npv_study, b.individual_npv_2012_usd, b.adjustment AS npv_adjustment
-        FROM ctx.acs_origin_household_federal_microsim_2023 m
-        LEFT JOIN life.npv_education_benchmarks b
-          ON m.education_bucket = b.acs_education_bucket AND b.age_at_arrival = 25
-          AND b.adjustment IN ('baseline_public_goods', 'capital_tax_adjustment')
-    """)
-    con.execute("""
-        CREATE VIEW v_mexico_scenario_npv_band AS
-        SELECT s.origin_label, s.weighted_adults, s.avg_federal_net, s.area_wtd_current_spend_per_pupil,
-               b.study, b.acs_education_bucket, b.individual_npv_2012_usd, b.adjustment
-        FROM life.origin_fiscal_scenario_2023 s
-        CROSS JOIN life.npv_education_benchmarks b
-        WHERE s.origin_label = 'Mexico' AND b.acs_education_bucket = '<HS'
-          AND b.adjustment IN ('baseline_public_goods', 'capital_tax_adjustment')
-    """)
+    from build_fiscal_union_views import create_common_views
+    create_common_views(con)
     try:
         con.execute("CREATE VIEW v_gould_episodic_ledger AS SELECT * FROM life.v_gould_episodic_ledger")
     except Exception as exc:

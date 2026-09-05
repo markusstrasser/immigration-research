@@ -3,10 +3,9 @@
 SELECT
   education_bucket,
   ROUND(n_mex) AS mexico_adults,
-  ROUND(fed_mex) AS mexico_fed_per_adult,
-  ROUND(fed_white) AS white_fed_per_adult,
-  ROUND(ratio_mex_to_white_adj, 2) AS ratio_mex_to_white,
-  cell_verdict
-FROM v_education_matched_federal
-WHERE n_mex > 100000
+  ROUND(n_white) AS native_white_adults,
+  ROUND(payroll_transfer_mex) AS mexico_payroll_transfer_per_adult,
+  ROUND(payroll_transfer_white) AS native_white_payroll_transfer_per_adult,
+  comparison_notes
+FROM v_education_matched_payroll_transfer
 ORDER BY education_bucket;
