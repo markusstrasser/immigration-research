@@ -9,6 +9,9 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 | File | Topic | Consult before |
 |------|-------|----------------|
 | `immigration-material-repair-report-2026-09-05.md` | Current material repair status, source corrections and validation evidence | Reusing numerical or causal conclusions from older memos |
+| `immigration-cohort-clarity-2026-09-05.md` | All-native versus Mexico-born partial fiscal comparison; actual 2019/2024 recent-entry profiles and discriminating next checks | Asking whether the newer intake differs, what Somali-origin data establish, or which fiscal ranking is supported |
+| `immigration-recent-cohort-data-availability-2026-09-05.md` | Verified ACS/SIPP/CPS release periods, actual SSD paths and administrative counting limits | Assuming 2025/2026 microdata are already available or equating admissions with residents |
+| `immigration-cohort-narratives-2026-09-05.md` | Targeted official X sample on recent cohorts, refugee/fraud and Somali claims with primary checks | Reusing current cohort or group-generalization narratives |
 | `immigration-framing-refresh-2026-09-05.md` | Recent evidence integrated: work rights, adjustment, housing, victimization and policy mechanisms | Choosing the next empirical comparison or interpreting current narratives |
 | `immigration-recent-papers-2026-09-05.md` | June–September primary papers/revisions with designs, dates and access limits | Quoting recent labor, housing, fiscal or enforcement research |
 | `immigration-recent-narratives-2026-09-05.md` | Current essays/news and selective official X sample; counterexamples and claim checks | Repeating current public arguments |

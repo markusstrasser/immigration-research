@@ -64,7 +64,7 @@ Key builders: `build_immigration_warehouse.py`, `build_stage5_local_cost_context
 |---|---|---|---|---|
 | ACS 2023 PUMS person | `sources/immigration-fiscal/data/census/acs_pums_2023_person.zip` | Local | Composition, education, geography, commute, household structure, income proxies | Lifetime trajectories, undocumented status |
 | ACS 2023 PUMS household | `sources/immigration-fiscal/data/census/acs_pums_2023_household.zip` | Local | Household and housing context | Same as above |
-| ACS 2024 1-Year PUMS person/household | `sources/immigration-causal/data/external/census_acs_2024_1yr/` | Local, staged | Post-surge receiver exposure: nativity, recent movers, housing stress, children, education, PUMA geography | No undocumented status; PUMA geography needs crosswalk/approximation |
+| ACS 2024 1-Year PUMS person/household | `/Volumes/2TBPNY/corpus/census_acs_2024_1yr/` | Actual raw ZIPs verified 2026-09-05; national person analysis complete | Recent-entry resident profiles, birthplace, education, employment, earnings and 80 replicate weights | Earlier causal-staging pointer is unavailable; no legal status, religion or ideology; see new acquisition cards below |
 | CPS ASEC 2024 March | `sources/immigration-fiscal/data/census/cps_asec_2024_march.zip` | Local | Cross-checks on income, insurance, benefits | Weak for recent immigration-flow levels |
 | Local ACS mirror | `/Volumes/2TBPNY/corpus/census_acs/csv_pus.zip` | Local SSD mirror | Faster direct ACS work outside repo zip flow | External path, not repo-contained |
 | Local CPS mirror | `/Volumes/2TBPNY/corpus/census_cps/` | Local SSD mirror | CPS cross-checks | Same CPS limitations |
@@ -237,7 +237,7 @@ First crime data wired into the warehouse (the project is "fiscal AND crime"; th
 | `crime_tx_arrests_by_status` (268 rows) + `v_crime_tx_status_ratio` | **Built (INT-01)** | Light/He/Robey TX DPS crime RATE per 100k by {undocumented, legal, naturalized, native-born} × {violent,property,drug,traffic} × {CMS, CMS_nat, Pew} denom, 2012–18. The CMS_nat denom adds the true-native-born split (vs "all citizens"). Headline: undocumented 0.21–0.67× the citizen rate (lowest on property, highest on traffic; violent ≈0.46× in 2018). **The load-bearing crime claim, SHOWN not gated.** | `load_light_tx_crime.py` (data = openICPSR 124923, gated, staged at `crime_frontier/light_texas/`) |
 | ICE ERO removals-by-criminality panel | Roadmap (gated) | FY removals by conviction/charge × origin — PDF gives headline only; panel needs the dashboard Excel export (MANUAL_ACQUIRE) | INT-05 |
 | `crime_spi_inmates_by_citizenship` | **Built (INT-02)** | BJS Survey of Prison Inmates 2016 (ICPSR 37692 DS0001): weighted 2016 US prison pop 1.42M, noncitizens = **6.9%** (V0950) vs ~7–9% of US adults ⇒ not over-represented. Verified the spine's BJS_SPI mapping. | `load_spi_citizenship.py` (data gated, staged at `crime_frontier/spi/`) |
-| `immigrant_assimilation_profile` (204 cells) | **Built (cluster-V)** | First-generation immigrant↔native gap (employment, log-income) by origin region × arrival-cohort × census year (1980–2023), **synthetic cohorts** (Borjas cohort-quality confound removed). Mexican income gap halves (−0.70→−0.24 log pts) over ~30 yrs in-US; employment gap closes by 15–25 yrs. The buildable FIRST-GEN decay measure for V04/V08; the true 2nd-gen needs CPS (below). | `build_immigrant_assimilation_profile.py` (IPUMS-USA microdata → aggregate; skips if SSD absent) |
+| `immigrant_assimilation_profile` (204 cells) | **Built (cluster-V), descriptive** | First-generation immigrant↔native employment and conditional log-income profiles by origin region × arrival cohort × census year (1980–2023). **September correction:** synthetic cohorts do not by themselves remove cohort selection, period effects or selective emigration. Earlier gap-closing claims cannot identify individual assimilation; see the [new duration-matched comparison](immigration-cohort-clarity-2026-09-05.md). | `build_immigrant_assimilation_profile.py` (IPUMS-USA microdata → aggregate; skips if SSD absent) |
 
 All flow into the unified `immigration.duckdb` (aggregate; license-clean — IPUMS microdata stays local, only cell means ship).
 
@@ -265,12 +265,12 @@ Re-staged after lost SSD. **`infra/immigration-fiscal/acquire/setup.sh`** (canon
 | Blocked | LEHD worker histories | — | FSRDC |
 | Blocked | Synthetic SIPP artifact | landing HTML only | No direct zip |
 | Next | QWI county/metro panel | extend causal `pull_qwi_state_panel.py` | API pull, not bulk mirror |
-| Next | ACS 2024 PUMS | causal `external/census_acs_2024_1yr/` | Already on PNY (~575MB) |
+| Acquired / analyzed | ACS 2024 PUMS | `/Volumes/2TBPNY/corpus/census_acs_2024_1yr/` | Person ZIP 602,847,146 bytes; full national recent-entry analysis 2026-09-05 |
 | Next | BPS + HUD HIC/PIT | causal `data/threshold/` | Already acquired |
 | Next | NCES district English-learner counts | — | Not in current CCD file-tool |
 | Next | Receiver-city admin costs | causal `bused_cities/` | Fragmented city FOIA |
 | Next | SSA actuarial unauthorized estimates | — | Report PDFs, not microdata |
-| Next | IPUMS CPS historical (parental birthplace) | — | Registration-gated. **Needed for cluster-V V02:** the true cross-generational 2nd-gen-by-origin test — IPUMS-USA lacks parental birthplace (dropped post-1970), CPS has FBPL/MBPL. corpus `census_cps` empty |
+| Next | IPUMS CPS historical (parental birthplace) | — | Registration-gated historical extract; CPS parental birthplace can support second-generation comparisons. **September correction:** corpus `census_cps` contains `jan24pub.csv` (121,914,518 bytes); a historical parental-birthplace panel has not been verified. |
 
 ## Best next steps
 
@@ -278,3 +278,44 @@ Re-staged after lost SSD. **`infra/immigration-fiscal/acquire/setup.sh`** (canon
 2. Integrate `sipp_meps_expected_health_cost_cells_2024.csv` and wire the bridge into the public MVP scenario engine.
 3. Lock down access to the individual `IRS SOI PUF`.
 4. Get `PSID` for descendant dynamics.
+
+### ACS2019_PUMS_NATIONAL_PERSON — recent-entry baseline
+
+**Source:** US Census Bureau. **Acquired:**2026-09-05. **License:** public-use government microdata; disclosure protections and survey limitations apply.
+**Local:** `/Volumes/2TBPNY/corpus/census_acs_2019_1yr/csv_pus.zip`.
+**Official:** [2019 one-year PUMS directory](https://www2.census.gov/programs-surveys/acs/data/pums/2019/1-Year/); [person ZIP](https://www2.census.gov/programs-surveys/acs/data/pums/2019/1-Year/csv_pus.zip).
+**Codebook/accuracy:** [2019 documentation](https://www.census.gov/programs-surveys/acs/microdata/documentation.2019.html), [accuracy PDF](https://www2.census.gov/programs-surveys/acs/tech_docs/pums/accuracy/2019AccuracyPUMS.pdf).
+**Size/hash:**567,851,237 bytes; SHA256 `18e4ece4cc24781c01e8046c2d5afbabeb1f15452ddec43f60fdf3b1f6e67b92`. Both national CSV members read completely;3,239,553 rows and weighted328,239,523 people reproduce official PUMS checks. The ZIP also includes the official README.
+
+**Key variables:** `NATIVITY`, `POBP`, `YOEP`, `AGEP`, `SEX`, `RELSHIPP`, `ESR`, `SCHL`, `PERNP`, `PINCP`, `ENG`, `ADJINC`, `PWGTP1–80`. Recent `YOEP` values are individual years; most recent entry is not necessarily first immigration. Income is rolling prior12months, including zeros/losses; `ADJINC` alone does not put different survey years into common dollars. All80 replicate weights, including negative and zero values, are retained.
+
+**Used in:** [2019/2024 cohort comparison](immigration-cohort-clarity-2026-09-05.md); `infra/immigration-fiscal/build/analyze_arrival_cohorts.py`, `standardize_arrival_profiles.py`, `summarize_arrival_cohorts.py`. Generated evidence and input hashes: `.scratch/cohort-clarity-20260905/analysis/` and `standardization/`.
+
+### ACS2024_PUMS_VERIFIED_LOCATION — current resident-cohort source
+
+**Source:** US Census Bureau. **Existing acquisition relocated and reverified:**2026-09-05; no duplicate download.
+**Local:** `/Volumes/2TBPNY/corpus/census_acs_2024_1yr/`: person ZIP602,847,146 bytes; household ZIP251,500,587; official dictionary395,086. [Official files](https://www2.census.gov/programs-surveys/acs/data/pums/2024/1-Year/), [dictionary](https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2024.pdf).
+
+The person ZIP was fully analyzed:3,422,888 rows, weighted340,110,990 people. Full and SDR-SE calibration checks also reproduce male and age25–34 populations. Person source SHA256 and exact raw member information are in `analysis/manifest_2024.json` and `standardization/results.json`. Actual geography header is `STATE`; `POBP448` is Somalia. The old `sources/immigration-causal/...` pointer is unavailable. This is2024-only, not the2020–2024 pooled file or an admission ledger. Same variables/limits and generators as the preceding card. Household bytes were inventoried, not used in the new person analysis. [DATA]
+
+### ACS_PRICE_AND_CALIBRATION_2019_2024 — verified comparison inputs
+
+**Source/access:** [Census ACS comparison guidance](https://www.census.gov/programs-surveys/acs/guidance/comparing-acs-data/2024.html), retrieved2026-09-05; public statistical documentation. **Local:** `.scratch/cohort-clarity-20260905/availability/inflation.json` and `inflation-source-*`.
+
+R-CPI-U-RS annual indices2019=375.8,2023=449.3,2024=462.5;2019→2024 factor462.5/375.8,2023→2024 factor462.5/449.3. The manifest pins the Census-guidance vintage; the later corrected BLS workbook was not retrieved. Four official CSVs provide2019/2024 person counts and PUMS full/SE calibration anchors. Source URLs, byte counts and hashes are in the JSON. These are documentation/calibration data, not an additional household survey. Used by both comparison generators; processed-income values receive the cross-year factor only once.
+
+### RPC_REFUGEE_FY2022_FY2023_FY2025 — staged admission reports
+
+**Source:** State Department Refugee Processing Center. **Acquired:**2026-09-05; public reports. **Official:** [RPC archive](https://www.rpc.state.gov/archives/). **Local:** `.scratch/cohort-clarity-20260905/availability/rpc_fy{2022,2023,2025}.pdf`; exact URLs/hashes in `manifest.json` and the [availability memo](immigration-recent-cohort-data-availability-2026-09-05.md).
+
+**Size:**three files,3,236,929 bytes. **Keys:** destination state × principal applicant nationality × admission month. These are refugee-channel arrivals, not all foreign-born residents, ancestry, religion or a deduplicated union with court/border/LPR records. FY2025 monthly total38,102 reconciles; Somali national totals remain **unvalidated** because text extraction fragments rows. FY2024 download was deferred by the bounded lane's size cap; the current page's latest inspected cutoff wasJuly31,2026. No unvalidated origin totals enter the new analysis.
+
+### COHORT_X_NARRATIVES_20260905 — selective official API evidence
+
+**Source:** official X API; existing `x-api` skill. **Acquired:**2026-09-05. **Local:** `.scratch/cohort-clarity-20260905/x/`; four returned archives plus query specification, source-check results, cost record and hash manifest. Exact90-day query window:June7 10:50:43UTC–September5 10:50:43UTC.111 distinct returned posts,103 new beyond the earlier207-post sample; total310 unique across both. Local tally$0.555, vendor invoice unverified. Platform terms apply; collection remains local.
+
+This is purposive claim discovery, not representative opinion or independent confirmations for duplicated wording. [Narrative audit](immigration-cohort-narratives-2026-09-05.md) grades five specific claims and records unresolved primary-source gaps. No X webpage scraping, messages or publication occurred.
+
+## Revisions
+
+- **2026-09-05:** Registered the new2019 baseline, actual2024 path, price/calibration inputs, bounded RPC reports and targeted X sample. Corrected the empty-CPS-mirror statement and qualified the older synthetic-cohort identification claim under the [cohort decision](../decisions/2026-09-05-arrival-cohort-comparison.md). SIPP2025 is officially available for reference2024 but has not yet been acquired or incorporated.
