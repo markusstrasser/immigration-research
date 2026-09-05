@@ -1,5 +1,7 @@
 # Full-Spectrum Costs of Unauthorized Immigration — Research Memo
 
+**2026-09-05 assessment:** This is a cost inventory, not a complete welfare estimate. CBO fiscal figures below are estimates/projections, and several administrative costs already enter its broader accounting. The [second-order audit](immigration-second-order-effects-2026-09-05.md) adds source-verified limits, countervailing mechanisms and the conditional economic case for restrictions. An omitted or hard-to-price institutional effect is not thereby zero; its sign and magnitude still require evidence. [INFERENCE]
+
 **Question:** What are the real long-tail, long-term costs of unauthorized immigration if we stop pretending the problem is only a tax-and-transfer ledger?
 **Tier:** Deep | **Date:** 2026-03-13
 **Scope:** This memo broadens the prior fiscal ledger into a full-spectrum cost map: direct public budgets, congestion and adaptation costs, informal-economy distortions, and political-economy / social-capital externalities.
@@ -16,7 +18,7 @@ The strongest additional long-tail costs beyond the standard fiscal ledger are n
 2. **Informal-economy distortions**: wage theft, worker misclassification, off-books labor, and tax erosion in sectors that rely heavily on precarious labor. These are real but are usually measured through employer behavior rather than immigrant status directly. [SOURCE: https://www.umass.edu/labor/research/working-paper-series/social-and-economic-costs-illegal-misclassification-wage-theft-and-tax-fraud-residential/4-path-citizenship-immigrant-workers] [SOURCE: https://clje.law.harvard.edu/app/uploads/2019/06/misclassification_and_payroll_fraud.pdf]
 3. **Political-economy backlash**: lower support for redistribution, stronger anti-immigration politics, policy churn, and litigation / compliance overhead. These effects are real in the literature, but they are weak candidates for a clean per-person dollar estimate. [SOURCE: https://www.hbs.edu/ris/download.aspx?name=Alesina+and+Tabellini_May2022.pdf] [SOURCE: https://economics.uci.edu/files/docs/micro/s11/Edmark.pdf]
 
-The weakest part of the "full-spectrum cost" discourse is vague talk about "loss of cohesion" without a mechanism. If the mechanism cannot be decomposed into courts, schools, policing, housing, public-goods support, or institutional compliance, it is not yet a research variable. [INFERENCE]
+Claims about loss of cohesion need a defined outcome and mechanism. Trust, cooperation and perceived safety can be measured directly, even when their value is not a budget line. Courts, schools, policing, housing and institutional compliance supply additional observable outcomes; difficulty monetizing an effect does not establish that it is zero. [INFERENCE]
 
 The evidence currently supports **widening the negative tail** relative to a narrow fiscal ledger, mainly through local congestion and adaptation costs. It does **not** support inventing a single precise giant number for "true total cost." [SOURCE: https://www.cbo.gov/publication/61256] [SOURCE: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2959985]
 
@@ -31,7 +33,7 @@ There are at least four different ledgers:
 3. **Market-distortion costs**: informal labor, wage theft, tax evasion, misallocation of labor and housing.
 4. **Political-economy costs**: lower willingness to redistribute, backlash, administrative and litigation churn.
 
-If these are collapsed into one scalar without separating mechanisms, double counting becomes unavoidable. For example, school crowding can appear in education budgets, teacher time, test outcomes, parental flight, and later politics. That does not make them five independent costs. [INFERENCE]
+Adding these without consistent boundaries risks double counting. For example, school crowding can appear in education budgets, teacher time, test outcomes, parental flight, and later politics. That does not make them five independent costs. A scalar welfare estimate is legitimate when its components, counterfactual and weights are defined. [INFERENCE]
 
 ---
 
@@ -39,16 +41,16 @@ If these are collapsed into one scalar without separating mechanisms, double cou
 
 | Channel | Best current judgment | Evidence status | Why it matters |
 |---|---|---|---|
-| State/local education, shelter, border response, incarceration, general services | Real, first-order, already large | **Measured** | CBO directly estimates both direct and potential broader costs for the post-2021 surge. [SOURCE: https://www.cbo.gov/publication/61256] |
-| Public-service crowding and nonbudgetary strain | Real, omitted from narrow ledgers | **Measured / partial** | CBO explicitly includes "potential broader or longer-term effects and costs that were borne without adding to spending," including crowding in schools and transportation. [SOURCE: https://www.cbo.gov/publication/61256] |
+| State/local education, shelter, border response, incarceration, general services | Estimated costs for the specified surge | **Budget-based estimates with allocation/counterfactual assumptions** | CBO estimates direct and potential broader costs for the post-2021 surge; these are alternative constructions. [SOURCE: https://www.cbo.gov/publication/61256] |
+| Public-service crowding and nonbudgetary strain | Included in CBO's broader alternative | **Modeled / partial** | CBO considers costs borne without additional spending, including school and transportation crowding. Do not add that alternative to the direct estimate. [SOURCE: https://www.cbo.gov/publication/61256] |
 | Language access and interpreter systems | Real local overhead | **Measured, not status-specific** | Courts and local agencies maintain language-access systems with staffing, training, scheduling, and reimbursement costs. [SOURCE: https://languageaccess.courts.ca.gov/system/files/2025-07/2025%20Language%20Need%20and%20Interpreter%20Use%20Study.pdf] [SOURCE: https://www.courts.wa.gov/content/Financial%20Services/documents/2025_2027/Biennial/BD%20Stabilize%20Interpreter%20Reimbursement%20Program.pdf] [SOURCE: https://www.nyc.gov/assets/immigrants/downloads/pdf/Local-Law-6-Report_MOIA_2024.pdf] |
 | Immigration court backlog and due-process friction | Real system strain | **Measured / partial** | Backlogs, access-to-counsel gaps, and language barriers impose delay and adjudication costs. [SOURCE: https://trac.syr.edu/immigration/reports/637/] [SOURCE: https://trac.syr.edu/immigration/reports/558/] [SOURCE: https://journals.law.harvard.edu/lalr/wp-content/uploads/sites/85/2026/01/HLALR-Vol.-28-Hidden-Barriers-to-Entry-4.pdf] |
 | Health-care access distortion and emergency reliance | Real but often overstated as a net burden | **Mixed** | Immigrants have lower total health expenditures than natives on average, but immigrant children can use ED care more intensively; enforcement and fear can shift care into worse channels. [SOURCE: https://hia.berkeley.edu/wp-content/uploads/2014/03/2005_healthcare_exp.pdf] [SOURCE: https://scholars.duke.edu/publication/1476491] |
 | Housing crowding, code enforcement, shelter overflow | Real, local, nonlinear | **Partial** | CBO counts shelter and related services. Local code enforcement and fair-housing systems show real overhead, but attribution to unauthorized status is weak without local microdata. [SOURCE: https://www.cbo.gov/publication/61256] [SOURCE: https://www.montgomerycountymd.gov/OLO/Resources/Files/2025_reports/OLOReport2025-6.pdf] |
 | Informal labor, wage theft, misclassification, payroll tax erosion | Real and probably understated | **Partial / indirect** | Precarious undocumented labor can facilitate off-books labor models that erode taxes and labor standards. The strongest evidence is employer-side, not immigrant-side. [SOURCE: https://www.umass.edu/labor/research/working-paper-series/social-and-economic-costs-illegal-misclassification-wage-theft-and-tax-fraud-residential/4-path-citizenship-immigrant-workers] [SOURCE: https://clje.law.harvard.edu/app/uploads/2019/06/misclassification_and_payroll_fraud.pdf] |
-| Native redistribution preferences and political backlash | Real in aggregate | **Measured, hard to monetize** | Immigration often increases support for anti-immigrant parties and can lower support for redistribution; effects vary by context and exposure. [SOURCE: https://www.hbs.edu/ris/download.aspx?name=Alesina+and+Tabellini_May2022.pdf] [SOURCE: https://economics.uci.edu/files/docs/micro/s11/Edmark.pdf] |
-| Generalized trust / social cohesion | Context-dependent, often exaggerated | **Weak / contested** | Review literature does not support simplistic claims that immigration mechanically destroys cohesion; institutional context matters. [SOURCE: https://www.ias.edu/sites/default/files/sss/BordersPortes-Diversity-Social-Capital.pdf] |
-| Macro federal budget effects | Positive offset, not a cost | **Measured** | Any "full-spectrum cost" account that omits federal revenue and GDP effects is one-sided. [SOURCE: https://www.cbo.gov/publication/60569] [SOURCE: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2959985] |
+| Native redistribution preferences and political backlash | Supported in particular settings | **Design-dependent political effects; welfare sign separate** | Historical US evidence finds political responses alongside native employment gains. Voting, redistribution, institutional performance and welfare must not be equated. [SOURCE: https://igier.unibocconi.eu/sites/default/files/media/attach/Gifts_of_the_Immigrants,_Woes_of_the_Natives_Tabellini.pdf] |
+| Generalized trust / social cohesion | Modest negative diversity/trust association, including generalized trust | **Predominantly observational; causal magnitude unresolved** | The 2020 effect-size meta-analysis supports an association, stronger locally, without identifying national institutional damage from a low-skill admission policy. [SOURCE: https://pure.au.dk/ws/files/230771020/Ethnic_Diversity_and_Social_Trust_Final_version_2020.pdf] |
+| Macro federal budget effects | Projected offset in a specified scenario | **Conditional forecast** | CBO's July 2024 projection excludes discretionary spending and is not a realized or current fiscal surplus. Federal revenue, GDP and private incomes are overlapping accounts, not additive benefits. [SOURCE: https://www.cbo.gov/publication/60569] |
 
 ---
 
@@ -146,7 +148,7 @@ Relative to a narrow federal-plus-state/local budget ledger, the likely omitted 
 3. **Informal-labor tax erosion** and employer-side fraud enabled by precarious status. [SOURCE: https://www.umass.edu/labor/research/working-paper-series/social-and-economic-costs-illegal-misclassification-wage-theft-and-tax-fraud-residential/4-path-citizenship-immigrant-workers] [SOURCE: https://clje.law.harvard.edu/app/uploads/2019/06/misclassification_and_payroll_fraud.pdf]
 4. **Political backlash effects** that can reduce support for redistribution and raise governance costs. [SOURCE: https://www.hbs.edu/ris/download.aspx?name=Alesina+and+Tabellini_May2022.pdf]
 
-The narrow memo probably **did not** miss a well-established giant hidden number for "civilizational decline." That part of the discourse is mostly a failure to specify mechanism and a temptation to convert mood into arithmetic. [INFERENCE]
+This review has not established a scalar cost for institutional or cultural deterioration. That absence neither validates an assumed large cost nor proves no cost exists; the needed evidence concerns specified outcomes, their counterfactual changes and their valuation. [INFERENCE]
 
 ---
 
@@ -165,7 +167,7 @@ The narrow memo probably **did not** miss a well-established giant hidden number
 If the question is "what are the real long-tail costs that narrow fiscal ledgers understate?", the answer is:
 
 - **Yes**: local congestion, language-access overhead, court backlog, shelter pressure, housing/code-enforcement burden, and informal-labor tax erosion are real and belong in the picture.
-- **Yes**: immigration can generate political backlash and lower support for redistribution; that is a real long-run social cost in some settings.
+- **Yes**: immigration can generate political backlash and lower support for redistribution. These are political effects; judging their welfare sign requires outcomes and explicit weights rather than treating an ideological shift itself as damage. [INFERENCE]
 - **No**: the current literature does not justify converting all of that into a clean per-person lifetime NPV with high confidence.
 - **No**: the strongest evidence does not support replacing one narrow advocacy number with a bigger and more rhetorically satisfying advocacy number.
 
@@ -176,4 +178,8 @@ The honest upgrade is not "find the true giant number." It is to move from a nar
 3. informal-economy distortion costs,
 4. political-economy and trust costs, clearly marked as weakly identified.
 
-That framework is more negative than a narrow tax-transfer ledger, but still does not license fake precision. [INFERENCE]
+This cost inventory identifies potential adverse channels beyond a narrow tax-transfer ledger. A complete comparison must also include countervailing supply and productivity effects and remove overlap; adding the inventory does not establish the net sign. [INFERENCE]
+
+## Revisions
+
+- **2026-09-05:** Corrected fiscal measurement/projection labels, the trust summary, overlap claims and the automatic welfare sign assigned to political change. The [second-order audit](immigration-second-order-effects-2026-09-05.md) supplies the triggering primary checks; accounting boundaries follow the [measurement and ledger decision](../decisions/2026-09-05-measurement-and-ledger-boundaries.md).
