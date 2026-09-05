@@ -1,5 +1,7 @@
 # Native comparisons and the recent immigration cohorts
 
+**Later same-day extension:** The [current integrated findings](immigration-clarity-update-2026-09-05.md) complete the broader2024 fiscal, admission and conduct checks proposed below and add separate Black wage/crime groups and recording/undercount sensitivities. This memo's2019/2024 arrival-cohort results and narrower2023 fiscal account retain their stated scope.
+
 **Verdict:** The repaired partial fiscal model gives all US-native adults a higher mean than Mexico-born adults. The newer arrival cohort also differs materially from its pre-2021 counterpart, but the differences run in several directions: employment is higher, real earnings lower and the graduate share lower. Recent Mexican arrivals improve on education and earnings. Somalia-born residents are a very small share of the measured recent cohort. None of those descriptive findings identifies a policy effect, a complete fiscal balance, religion or extremist conduct. [DATA; INFERENCE: computations and sources below]
 
 Date: **September 5, 2026**. Frame: resident characteristics, public-budget components and policy effects are separate outcomes. Birthplace is the grouping variable; US-born Mexican Americans belong in the native group. This is an LLM-assisted analysis, with adverse and favorable findings retained and uncertainty reported. It supplements the [material repair report](immigration-material-repair-report-2026-09-05.md), rather than changing the central research question.

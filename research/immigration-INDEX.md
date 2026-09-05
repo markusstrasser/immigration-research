@@ -8,6 +8,15 @@ Instrument note: this topic is politically charged and much of the synthesis is 
 
 | File | Topic | Consult before |
 |------|-------|----------------|
+| `immigration-clarity-update-2026-09-05.md` | Current integrated findings: fiscal account, Black wage/crime groups, missing residents and recording failures | Answering what the completed audit and data expansion established |
+| `immigration-fiscal-account-2024-2026-09-05.md` | CPS2025 taxes/credits/transfers, MEPS2024 health and actual public-pupil exposure | Comparing annual fiscal components beyond the older payroll proxy |
+| `immigration-measurement-uncertainty-2026-09-05.md` | Missing status versus missing people; two-sided selection and crime recording thresholds | Treating untracked residents or selective enforcement as a settled correction factor |
+| `immigration-wage-race-strata-2026-09-05.md` | ACS2019/2024 race × nativity wages, earnings, employment and worker-only estimates | Pooling Black, White and Hispanic native/foreign-born wage populations |
+| `immigration-crime-race-ethnicity-2026-09-05.md` | BJS2022/2023 imprisonment rates and SPI2016 joint prisoner composition | Separating Black people in crime statistics or treating White as non-Hispanic/native |
+| `immigration-conduct-denominators-2026-09-05.md` | Corrected Texas native denominator, official SPI recode, recent custody/fraud and audits | Reusing old SPI rates or cumulative convictions as a current rate |
+| `immigration-admission-work-access-2026-09-05.md` | Reconciled admission distributions, 2026 EAD/refugee data and undercount assumptions | Equating new entries, adjustments, application queues and resident cohorts |
+| `immigration-sipp-2024-benefits-2026-09-05.md` | Actual calendar2024 selected benefits with 240 replicate weights | Comparing benefit receipt or interpreting coarsened arrival bins |
+| `immigration-local-cost-incidence-2026-09-05.md` | NYC financing, household-nights, enrollment and school-spending definitions | Converting gross services into per-person or net welfare costs |
 | `immigration-material-repair-report-2026-09-05.md` | Current material repair status, source corrections and validation evidence | Reusing numerical or causal conclusions from older memos |
 | `immigration-cohort-clarity-2026-09-05.md` | All-native versus Mexico-born partial fiscal comparison; actual 2019/2024 recent-entry profiles and discriminating next checks | Asking whether the newer intake differs, what Somali-origin data establish, or which fiscal ranking is supported |
 | `immigration-recent-cohort-data-availability-2026-09-05.md` | Verified ACS/SIPP/CPS release periods, actual SSD paths and administrative counting limits | Assuming 2025/2026 microdata are already available or equating admissions with residents |
