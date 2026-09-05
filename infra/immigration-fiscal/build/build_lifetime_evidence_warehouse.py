@@ -13,7 +13,7 @@ import re
 import sys
 from pathlib import Path
 
-from paths import data_root, derived_root, lifetime_duckdb_path
+from paths import data_root, derived_root, duckdb_path, lifetime_duckdb_path
 
 REPO = Path(__file__).resolve().parents[3]
 MANIFEST = Path(__file__).resolve().parents[1] / "DOWNLOAD_MANIFEST.tsv"
@@ -21,6 +21,18 @@ MINING_DIR = REPO / "research" / ".mining"
 LT = data_root() / "external" / "lifetime"
 DERIVED = derived_root()
 DUCKDB_PATH = lifetime_duckdb_path()
+
+# Context owns these tables: build_immigration_warehouse calls the stage-2 and
+# stage-5 loaders and builds the ACS education aggregate directly from PUMS.
+CONTEXT_OWNED_TABLES = (
+    "school_finance_county_2023",
+    "chas_county_housing_stress_2018_2022",
+    "irs_migration_county_2022_2023",
+    "puma_county_area_xwalk_2023",
+    "state_stage5_context_2023",
+    "receiver_city_migrant_costs",
+    "acs_foreign_born_education_bucket_totals_2023",
+)
 
 NBER_RE = re.compile(r"w(\d{4,5})", re.I)
 TOPIC_RULES: list[tuple[str, str]] = [
@@ -121,27 +133,34 @@ def _scan_orphans(manifest_rows: list[dict]) -> list[dict]:
 def _load_remittances(con) -> None:
     import pandas as pd
 
+    rows = []
     for country, fname in (("Mexico", "mexico_worker_remittances_bx_trf_pwkr_cd_dt.json"), ("USA", "usa_worker_remittances_bx_trf_pwkr_cd_dt.json")):
         p = LT / "worldbank" / fname
         if not p.exists():
             continue
         raw = json.loads(p.read_text())
         obs = raw[1] if isinstance(raw, list) and len(raw) > 1 else raw
-        rows = []
         for o in obs:
             if not isinstance(o, dict):
                 continue
+            indicator = o.get("indicator", {}).get("id")
+            if indicator != "BX.TRF.PWKR.CD.DT":
+                raise ValueError(f"Unexpected remittance indicator in {p}: {indicator}")
             rows.append(
                 {
                     "country": country,
                     "year": int(o["date"]) if o.get("date") else None,
-                    "indicator_id": o.get("indicator", {}).get("id"),
+                    "indicator_id": indicator,
+                    "flow_direction": "received",
                     "value_usd": o.get("value"),
                 }
             )
-        if rows:
-            con.register("_remit", pd.DataFrame(rows))
-            con.execute("CREATE OR REPLACE TABLE remittance_series AS SELECT * FROM _remit")
+    if rows:
+        frame = pd.DataFrame(rows)
+        if frame.duplicated(["country", "year", "indicator_id"]).any():
+            raise ValueError("Duplicate country/year/indicator in remittance sources")
+        con.register("_remit", frame)
+        con.execute("CREATE OR REPLACE TABLE remittance_series AS SELECT * FROM _remit")
 
 
 def _load_omb(con) -> None:
@@ -175,18 +194,18 @@ def _seed_npv_benchmarks(con) -> None:
          "Table 8-13 SomCol Individual Immigrant +$205k"),
         ("NAS 2017", "other", 25, 514_000, False, "baseline_public_goods",
          "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf",
-         "Table 8-13 BA Individual Immigrant +$514k; >BA +$972k not separate ACS bucket"),
+         "Table 8-13 BA Individual Immigrant +$514k; this four-bucket approximation assigns BA to all BA+. ACS does distinguish advanced degrees; their NAS anchor is +$972k and is not used here"),
         ("NAS 2017", "<HS", 25, -186_000, True, "baseline_public_goods_descendants",
          "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf",
          "Table 8-13 <HS Total Immigrant -$186k incl descendants (value was erroneously -109k = the first-gen-only figure; corrected to match its own source note 2026-06-24)"),
-        ("NRC 1997", "<HS", 25, -13_000, False, "baseline",
-         "external/lifetime/nrc/nrc_1997_new_americans.pdf", "older benchmark relay"),
+        ("NRC 1997", "<HS", 25, None, False, "unverified_relay",
+         "external/lifetime/nrc/nrc_1997_new_americans.pdf", "Historical relay -$13000 withheld: price-year conversion unverified; local .pdf is HTML, not source paper"),
         ("Clemens 2023", "<HS", 25, 128_000, False, "capital_tax_adjustment",
          "external/lifetime/cgdev/clemens_2023_fiscal_effect_capital_tax_adjustment.pdf",
          "NAS <HS flip with capital-tax channel"),
-        ("Colas-Sachs 2024", "<HS", None, 750, False, "indirect_annual_usd",
+        ("Colas-Sachs 2024", "<HS", None, None, False, "annual_not_npv",
          "external/lifetime/econstor/colas_sachs_2024_indirect_fiscal_benefits_low_skill.pdf",
-         "~$750/yr indirect federal benefit"),
+         "Annual effect is in annual_effect_benchmarks, in 2017 dollars; not an NPV"),
         ("Storesletten 2003", "<HS", None, None, False, "range",
          "external/lifetime/nber/storesletten_2003_fiscal_heterogeneity_w9489.pdf",
          "sign sensitive; -36k to +96k in framework"),
@@ -195,18 +214,28 @@ def _seed_npv_benchmarks(con) -> None:
                 + ",".join(["(?,?,?,?,?,?,?,?)"] * len(rows)) + ") AS t(study, acs_education_bucket, "
                 "age_at_arrival, individual_npv_2012_usd, includes_descendants, adjustment, "
                 "source_rel_path, notes)", [x for row in rows for x in row])
+    con.execute("""
+        CREATE OR REPLACE TABLE annual_effect_benchmarks AS
+        SELECT 'Colas-Sachs 2024' AS study, '<HS' AS population,
+               750.0 AS annual_effect_usd, 2017 AS price_year,
+               'Indirect annual public-finance model effect per average low-skilled immigrant; not direct plus indirect net fiscal impact or NPV' AS notes,
+               'external/lifetime/econstor/colas_sachs_2024_indirect_fiscal_benefits_low_skill.pdf' AS source_rel_path
+    """)
 
 
 def _seed_return_migration_haircut(con) -> None:
-    """Sweep 25 — Duleep-Regets sensitivity bands on effective NPV horizon. [SOURCE: iza_dp631]"""
+    """Illustrative multipliers only; NAS already models emigration (Ch.8 appendix).
+
+    An earnings-growth coefficient is not an exit probability or an NPV haircut.
+    These numbers are assumptions, not estimated origin-specific attrition rates.
+    """
     con.execute("""
         CREATE OR REPLACE TABLE return_migration_haircut_scenarios AS
         SELECT * FROM (VALUES
-          ('baseline_no_haircut', 1.0, 'Full 75yr NAS horizon'),
-          ('ldc_selective_emigration', 0.75, 'Duleep-Regets: LDC inverse growth; shorten effective years 25% [INFERENCE]'),
-          ('mexico_central_america', 0.70, 'IZA dp631 Central/South Am +19.9pp growth per $1k entry — exit bias [SOURCE: cluster I]'),
-          ('high_skill_low_exit', 1.0, 'EU/India corridor — low return probability [INFERENCE]')
-        ) AS t(scenario_id, npv_horizon_multiplier, notes)
+          ('unchanged_baseline', 1.0, 'assumed_sensitivity', 'NAS baseline already incorporates mortality and emigration'),
+          ('illustrative_25pct_reduction', 0.75, 'assumed_sensitivity', 'Not an estimated exit rate or an automatic correction to NAS NPV'),
+          ('illustrative_30pct_reduction', 0.70, 'assumed_sensitivity', 'Not origin-specific; no fiscal timing or selective exit model')
+        ) AS t(scenario_id, assumed_multiplier, evidence_status, notes)
     """)
 
 
@@ -224,7 +253,47 @@ def _seed_bridge_dimensions(con) -> None:
 
 
 def _load_structured_layers(con) -> None:
+    """Copy shared context authority; load other layers from declared paths only.
+
+    Archived external/lifetime/derived CSVs are not alternative sources for
+    current generated tables. An absent optional source is reported and leaves
+    any previously loaded table unchanged, never replacing it with an archive.
+    """
     import pandas as pd
+    from build_stage5_local_cost_context import STATE_NAME_TO_FIPS
+
+    context_path = duckdb_path()
+    if not context_path.is_file():
+        raise FileNotFoundError(f"Required canonical context warehouse missing: {context_path}")
+    escaped_path = str(context_path).replace("'", "''")
+    con.execute(f"ATTACH '{escaped_path}' AS _lifetime_context (READ_ONLY)")
+    try:
+        available = {row[0] for row in con.execute("""
+            SELECT table_name FROM information_schema.tables
+            WHERE table_catalog = '_lifetime_context' AND table_schema = 'main'
+        """).fetchall()}
+        missing = set(CONTEXT_OWNED_TABLES) - available
+        if missing:
+            raise ValueError(f"Canonical context is missing shared tables: {sorted(missing)}")
+        for table in CONTEXT_OWNED_TABLES:
+            if con.execute(f'SELECT COUNT(*) FROM _lifetime_context.main."{table}"').fetchone()[0] == 0:
+                raise ValueError(f"Canonical context shared table is empty: {table}")
+        state_keys = [row[0] for row in con.execute(
+            'SELECT state_fips FROM _lifetime_context.main.state_stage5_context_2023'
+        ).fetchall()]
+        # The actual national context has 55 rows: 50 states, DC and four
+        # territories. Names can be NULL for territories; geographic keys cannot.
+        required_states = set(STATE_NAME_TO_FIPS.values()) - {"72"}
+        allowed_states = required_states | {"60", "66", "69", "72", "78"}
+        if (len(state_keys) != len(set(state_keys))
+                or not required_states.issubset(state_keys)
+                or not set(state_keys).issubset(allowed_states)):
+            raise ValueError("Canonical state context requires unique nonnull two-digit state FIPS, all 50 states and DC, and only valid territory extensions")
+        # Validate every shared source before replacing any lifetime copy.
+        for table in CONTEXT_OWNED_TABLES:
+            con.execute(f'CREATE OR REPLACE TABLE "{table}" AS SELECT * FROM _lifetime_context.main."{table}"')
+    finally:
+        con.execute("DETACH _lifetime_context")
 
     saiz = LT / "saiz" / "saiz_2010_msa_elasticity.dta"
     if saiz.exists():
@@ -241,28 +310,21 @@ def _load_structured_layers(con) -> None:
             con.execute("CREATE OR REPLACE TABLE itep_undocumented_tax_summary AS SELECT * FROM _itep")
 
     csv_tables = [
-        ("origin_fiscal_scenario_2023", "derived/stage3_proto/origin_fiscal_scenario_2023.csv"),
-        ("sipp_scenario_ledger_2024", "derived/stage3_proto/sipp_scenario_ledger_2024.csv"),
-        ("school_finance_county_2023", "derived/stage2/school_finance_county_2023.csv"),
-        ("chas_county_housing_stress_2018_2022", "derived/stage2/chas_county_housing_stress_2018_2022.csv"),
-        ("irs_migration_county_2022_2023", "derived/stage2/irs_migration_county_2022_2023.csv"),
-        ("puma_county_area_xwalk_2023", "derived/stage2/puma_county_area_xwalk_2023.csv"),
-        ("state_stage5_context_2023", "derived/stage5/state_stage5_context_2023.csv"),
-        ("receiver_city_migrant_costs", "derived/stage5/receiver_city_migrant_costs.csv"),
-        ("cdc_period_life_table_2021", "derived/lifetime/cdc_period_life_table_2021.csv"),
-        ("ssa_period_life_table_2023", "ssa/ssa_period_life_table_2023.csv"),
-        ("hud_pit_coc_annual", "derived/stage5/hud_pit_coc_annual.csv"),
-        ("gould_asylum_shelter_attribution_2022_2024", "derived/stage5/gould_asylum_shelter_attribution_2022_2024.csv"),
-        ("meps_health_cost_module_2023", "derived/stage3_proto/meps_health_cost_module_2023.csv"),
-        ("sipp_meps_expected_health_cost_cells_2024", "derived/stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv"),
-        ("acs_foreign_born_education_bucket_totals_2023", "derived/stage3_proto/acs_foreign_born_education_bucket_totals_2023.csv"),
-        ("sipp_public_mvp_cells_2024", "derived/stage3_proto/sipp_public_mvp_cells_2024.csv"),
+        ("origin_fiscal_scenario_2023", DERIVED / "stage3_proto/origin_fiscal_scenario_2023.csv"),
+        ("sipp_scenario_ledger_2024", DERIVED / "stage3_proto/sipp_scenario_ledger_2024.csv"),
+        ("cdc_period_life_table_2021", DERIVED / "lifetime/cdc_period_life_table_2021.csv"),
+        ("ssa_period_life_table_2023", LT / "ssa/ssa_period_life_table_2023.csv"),
+        ("hud_pit_coc_annual", DERIVED / "stage5/hud_pit_coc_annual.csv"),
+        ("gould_asylum_shelter_attribution_2022_2024", DERIVED / "stage5/gould_asylum_shelter_attribution_2022_2024.csv"),
+        ("meps_health_cost_module_2023", DERIVED / "stage3_proto/meps_health_cost_module_2023.csv"),
+        ("sipp_meps_expected_health_cost_cells_2024", DERIVED / "stage3_proto/sipp_meps_expected_health_cost_cells_2024.csv"),
+        ("sipp_public_mvp_cells_2024", DERIVED / "stage3_proto/sipp_public_mvp_cells_2024.csv"),
     ]
-    for table, rel in csv_tables:
-        sub = rel.removeprefix("derived/")
-        p = DERIVED / sub if (DERIVED / sub).exists() else LT / rel
-        if p.exists():
-            con.execute(f"CREATE OR REPLACE TABLE {table} AS SELECT * FROM read_csv_auto('{p}')")
+    for table, path in csv_tables:
+        if path.exists():
+            con.execute(f"CREATE OR REPLACE TABLE {table} AS SELECT * FROM read_csv_auto(?)", [str(path)])
+        else:
+            print(f"Optional source unavailable; {table} unchanged: {path}", file=sys.stderr)
 
 
 def _claim_values(c: dict) -> tuple[float | None, str | None]:
@@ -294,8 +356,8 @@ def _load_mining_artifacts(con) -> tuple[int, int, int]:
     for p in paths:
         try:
             blob = json.loads(p.read_text())
-        except json.JSONDecodeError:
-            continue
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"Invalid mining source JSON: {p}") from exc
         for c in blob.get("parameter_claims", []):
             rel = c.get("source_rel_path", "")
             vn, vt = _claim_values(c)
@@ -316,6 +378,7 @@ def _load_mining_artifacts(con) -> tuple[int, int, int]:
                     "unnamed_assumption": c.get("unnamed_assumption", False),
                     "cluster": blob.get("cluster"),
                     "notes": c.get("notes"),
+                    "verification_status": "unverified_extraction",
                 }
         for g in blob.get("generators", []):
             gid = g.get("id") or g.get("generator_id")
@@ -338,8 +401,9 @@ def _load_mining_artifacts(con) -> tuple[int, int, int]:
                     "cluster": blob.get("cluster"),
                     "theory": t.get("theory"),
                     "prediction": t.get("prediction"),
-                    "duckdb_test": t.get("duckdb_test"),
+                    "historical_query": t.get("duckdb_test"),
                     "falsifier": t.get("falsifier"),
+                    "evidence_status": "unadjudicated_proposal",
                 }
             )
     claim_rows = list(claim_by_id.values())
@@ -354,7 +418,8 @@ def _load_mining_artifacts(con) -> tuple[int, int, int]:
         gens_n = len(gen_rows)
     if theory_rows:
         con.register("_theories", pd.DataFrame(theory_rows))
-        con.execute("CREATE OR REPLACE TABLE theories_tested AS SELECT * FROM _theories")
+        con.execute("DROP TABLE IF EXISTS theories_tested")
+        con.execute("CREATE OR REPLACE TABLE theory_proposals AS SELECT * FROM _theories")
         theories_n = len(theory_rows)
     return claims_n, gens_n, theories_n
 
@@ -467,10 +532,7 @@ def build() -> None:
         _load_omb(con)
     except Exception as exc:
         print(f"WARN: OMB xlsx skipped: {exc}", file=sys.stderr)
-    try:
-        _load_structured_layers(con)
-    except Exception as exc:
-        print(f"WARN: structured layers skipped: {exc}", file=sys.stderr)
+    _load_structured_layers(con)
 
     claims_n, gens_n, theories_n = _load_mining_artifacts(con)
     try:
@@ -484,7 +546,8 @@ def build() -> None:
               claim_type VARCHAR, parameter_name VARCHAR,
               value_numeric DOUBLE, value_text VARCHAR, unit VARCHAR,
               population VARCHAR, direction VARCHAR, confidence VARCHAR,
-              page_ref VARCHAR, unnamed_assumption BOOLEAN, cluster VARCHAR, notes VARCHAR
+              page_ref VARCHAR, unnamed_assumption BOOLEAN, cluster VARCHAR, notes VARCHAR,
+              verification_status VARCHAR
             )
         """)
     if gens_n == 0:
@@ -498,9 +561,10 @@ def build() -> None:
         """)
     if theories_n == 0:
         con.execute("""
-            CREATE TABLE theories_tested (
+            CREATE TABLE theory_proposals (
               theory_id VARCHAR, cluster VARCHAR, theory VARCHAR,
-              prediction VARCHAR, duckdb_test VARCHAR, falsifier VARCHAR
+              prediction VARCHAR, historical_query VARCHAR, falsifier VARCHAR,
+              evidence_status VARCHAR
             )
         """)
 

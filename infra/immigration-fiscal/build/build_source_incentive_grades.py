@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
-"""Re-grade load-bearing immigration sources by source-incentive / against-interest credibility.
+"""Record uncalibrated source-incentive screening scores.
 
-Operationalizes generator G-LIF-U01. SYMMETRIC by construction: down-weights advocacy
+Operationalizes generator G-LIF-U01 as a declared heuristic: down-weights advocacy
 that confirms its own prior on BOTH sides; up-weights findings that cut AGAINST the
 source's prior on both sides. Builds `source_incentive_grades` in the lifetime warehouse
 (redistributable aggregate → flows into the unified release) + a derived CSV.
+
+These scores are not probabilities of truth, validated reliability estimates or
+statistical evidence weights. Author/outlet labels require judgment; neither a
+symmetric formula nor equal group-average scores demonstrates unbiased inference.
 
 Rubric:
   base_weight by outlet  : govt_nonpartisan 1.0 | academic 0.8 | think_tank 0.6 | advocacy 0.4
@@ -28,10 +32,10 @@ BASE = {"govt_nonpartisan": 1.0, "academic": 0.8, "think_tank": 0.6,
 SOURCES = [
     ("nas_2017", "NAS 2016/17 fiscal panel", "govt_nonpartisan", "neutral", "mixed",
      "<HS lifetime fiscal NEGATIVE; 2nd-gen strongly POSITIVE — establishment panel publishing both"),
-    ("cbo_60569", "CBO federal (surge cut deficit)", "govt_nonpartisan", "neutral", "benefit",
-     "federal side positive over 2024-34"),
+    ("cbo_60165", "CBO federal (projected surge deficit reduction)", "govt_nonpartisan", "neutral", "benefit",
+     "2024-34 projection: revenues, mandatory spending and interest; excludes discretionary appropriations"),
     ("cbo_61256", "CBO state-local cost", "govt_nonpartisan", "neutral", "cost",
-     "direct net state/local cost ~-$2,140/person"),
+     "direct net state/local cost in CBO's 2023 surge estimate"),
     ("census_pew_stock", "Census/Pew unauthorized stock", "think_tank", "neutral", "neutral",
      "denominator; descriptive"),
     ("borjas_surplus", "Borjas — immigration surplus +", "academic", "restrictionist", "benefit",
@@ -43,7 +47,7 @@ SOURCES = [
     ("card_peri", "Card/Peri — small wage effect", "academic", "expansionist", "benefit",
      "local + capital + native-migration washout (with-interest)"),
     ("clemens_2023", "Clemens — capital-tax flip", "academic", "expansionist", "benefit",
-     "<HS NPV -$109k→+$128k under capital-tax GE (with-interest; methodological)"),
+     "<HS NPV -$109k→+$128k under fixed-price partial-equilibrium capital-tax correction; conditional model"),
     ("colas_sachs", "Colas-Sachs — indirect benefits", "academic", "expansionist", "benefit",
      "indirect fiscal benefits of low-skill (with-interest)"),
     ("cortes_2008", "Cortes — consumer price benefit", "academic", "expansionist", "benefit",
@@ -96,6 +100,7 @@ def build() -> None:
             "against_interest": against, "with_interest_advocacy": with_adv,
             "base_weight": base, "multiplier": mult, "adj_weight": adj,
             "headline_role": role,
+            "score_status": "uncalibrated_screening_heuristic",
         })
     df = pd.DataFrame(rows).sort_values("adj_weight", ascending=False).reset_index(drop=True)
 
@@ -110,21 +115,21 @@ def build() -> None:
     out.parent.mkdir(parents=True, exist_ok=True)
     con.execute(f"COPY source_incentive_grades TO '{out}' (HEADER)")
 
-    # symmetry check (G-LIF-U01 theory): adj_weight should not correlate with cost/benefit direction
+    # Descriptive diagnostic only: group averages depend on the chosen source mix.
     cost = con.execute("SELECT avg(adj_weight) FROM source_incentive_grades WHERE finding_direction='cost'").fetchone()[0]
     ben = con.execute("SELECT avg(adj_weight) FROM source_incentive_grades WHERE finding_direction='benefit'").fetchone()[0]
     con.close()
 
     print(f"  ✓ source_incentive_grades: {len(df)} sources graded → {out}")
-    print("  most credible (up-weighted, against-interest + nonpartisan):")
+    print("  largest heuristic scores (not calibrated credibility):")
     for _, r in df.head(7).iterrows():
         flag = "↑against-interest" if r.against_interest else ""
         print(f"    {r.adj_weight:>4}  {r.label:<34} [{r.finding_direction}] {flag}")
     print("  deflated (with-interest advocacy, BOTH sides):")
     for _, r in df[df.with_interest_advocacy].iterrows():
         print(f"    {r.adj_weight:>4}  {r.label:<34} [{r.finding_direction}]")
-    print(f"  symmetry check — mean adj_weight: cost={cost:.2f}  benefit={ben:.2f}  "
-          f"(close ⇒ rule is not tilted toward a prior)")
+    print(f"  selected-source mean scores: cost={cost:.2f}  benefit={ben:.2f}; "
+          "this comparison does not establish unbiasedness or truth probabilities")
 
 
 if __name__ == "__main__":
