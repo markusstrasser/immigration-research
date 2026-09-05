@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import sys
-from pathlib import Path
 
 from paths import duckdb_path, fiscal_union_duckdb_path, lifetime_duckdb_path
 
@@ -35,6 +34,18 @@ def build() -> None:
     con = duckdb.connect(str(UNION_PATH))
     con.execute(f"ATTACH '{CTX_PATH}' AS ctx (READ_ONLY)")
     con.execute(f"ATTACH '{LIFE_PATH}' AS life (READ_ONLY)")
+    create_common_views(con)
+    views = con.execute(
+        "SELECT table_name FROM information_schema.tables WHERE table_schema='main' AND table_type='VIEW'"
+    ).fetchall()
+    con.close()
+    print(f"Wrote {UNION_PATH} ({UNION_PATH.stat().st_size} bytes, {len(views)} views)")
+    for v in views:
+        print(f"  view {v[0]}")
+
+
+def create_common_views(con) -> None:
+    """One definition for standalone and tensor-backed cross-domain queries."""
 
     con.execute("""
         CREATE VIEW v_education_stock_with_npv AS
@@ -56,11 +67,11 @@ def build() -> None:
           m.origin_label,
           m.education_bucket,
           m.weighted_adults,
-          m.federal_net_proxy_annual,
+          m.payroll_less_allocated_benefits_proxy_annual,
           b.study AS npv_study,
           b.individual_npv_2012_usd,
           b.adjustment AS npv_adjustment
-        FROM ctx.acs_origin_household_federal_microsim_2023 m
+        FROM ctx.acs_origin_person_payroll_transfer_microsim_2023 m
         LEFT JOIN life.npv_education_benchmarks b
           ON m.education_bucket = b.acs_education_bucket
           AND b.age_at_arrival = 25
@@ -88,7 +99,7 @@ def build() -> None:
         SELECT
           s.origin_label,
           s.weighted_adults,
-          s.avg_federal_net,
+          s.avg_payroll_less_benefits,
           s.area_wtd_current_spend_per_pupil,
           s.area_wtd_housing_stress_pct,
           b.study,
@@ -101,15 +112,6 @@ def build() -> None:
           AND b.acs_education_bucket = '<HS'
           AND b.adjustment IN ('baseline_public_goods', 'capital_tax_adjustment')
     """)
-
-    views = con.execute(
-        "SELECT table_name FROM information_schema.tables WHERE table_schema='main' AND table_type='VIEW'"
-    ).fetchall()
-    con.close()
-    print(f"Wrote {UNION_PATH} ({UNION_PATH.stat().st_size} bytes, {len(views)} views)")
-    for v in views:
-        print(f"  view {v[0]}")
-
 
 if __name__ == "__main__":
     build()

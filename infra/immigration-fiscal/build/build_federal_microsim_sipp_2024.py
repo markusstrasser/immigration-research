@@ -1,354 +1,294 @@
 #!/usr/bin/env python3
-"""SIPP 2024 federal donor cells + ACS origin-household microsim join.
+"""SIPP person-year payroll/allocated-benefit donors matched to ACS adults.
 
-Replaces broken CPS HHINC donor (research/immigration-verified-findings-report-2026-04-10.md).
-Uses monthly TPEARN / TPTOTINC and transfer amounts — not income recodes as dollars.
+The ledger is employee-rate OASDI/HI on annual TPEARN minus allocated SNAP/TANF
+and individual SSI. It is not net federal revenue: employer taxes, income taxes,
+health spending, pensions and other public costs are absent; TANF/SSI amounts can
+include state funding. 2024 SIPP measures calendar 2023.
 """
 from __future__ import annotations
 
 import csv
-import io
-import json
-import zipfile
+from collections import defaultdict
 from pathlib import Path
 
 from public_mvp_io import (
-    PROTO,
-    SIPP_SCHEMA,
-    SIPP_ZIP,
-    earnings_band_annual,
-    sipp_eeduc_bucket,
-    weighted_mean,
-    write_meta,
+    PROTO, SIPP_BENEFIT_ALLOCATION, SIPP_NATIVITY_BASIS, SIPP_DICTIONARY_URL, SIPP_EDUCATION_TO_ACS,
+    SIPP_GUIDE_URL, SIPP_REFERENCE_YEAR, SIPP_SCHEMA, SIPP_ZIP,
+    income_band_annual, income_band_sql, iter_sipp_allocated_sample_units, sipp_eeduc_bucket, write_meta,
 )
 
-DONOR_OUT_FB = PROTO / "sipp_household_donor_cells_2024.csv"
-DONOR_OUT_USB = PROTO / "sipp_household_donor_cells_usborn_2024.csv"
-DONOR_OUT = DONOR_OUT_FB  # backward compat
-DONOR_META = PROTO / "sipp_household_donor_cells_2024.meta.json"
-
-COLS = (
-    "SSUID",
-    "ERESIDENCEID",
-    "MONTHCODE",
-    "WPFINWGT",
-    "TAGE",
-    "EBORNUS",
-    "EEDUC",
-    "TPEARN",
-    "TPTOTINC",
-    "TSNAP_AMT",
-    "TTANF_AMT",
-    "TSSI_AMT",
-)
+DONOR_OUT_FB = PROTO / "sipp_person_donor_cells_2024.csv"
+DONOR_OUT_USB = PROTO / "sipp_person_donor_cells_usborn_2024.csv"
+OASDI_CAP_2023 = 160_200.0
+PAYROLL_SOURCE = "https://www.ssa.gov/policy/docs/statcomps/eedata_sc/2023/intro.html"
 
 
-def _load_indices() -> dict[str, int]:
-    schema = json.loads(SIPP_SCHEMA.read_text())
-    names = [r["name"] for r in schema]
-    return {c: names.index(c) for c in COLS}
+def employee_oasdi_hi_proxy(annual_earnings: float) -> float:
+    """2023 employee base rates; cap OASDI per person, never Medicare HI.
+
+    TPEARN includes net business income: wage rates are a proxy, not simulated
+    liability. Self-employment rules, exempt jobs, Additional Medicare Tax and
+    the employer share are excluded.
+    """
+    positive_earnings = max(0.0, annual_earnings)
+    return 0.062 * min(positive_earnings, OASDI_CAP_2023) + 0.0145 * positive_earnings
 
 
-def _num(raw: str) -> float | None:
-    raw = (raw or "").strip()
-    if not raw:
+def _acs_age_band(age: int | None) -> str | None:
+    if age is None or not 25 <= age <= 64:
         return None
-    try:
-        v = float(raw)
-    except ValueError:
-        return None
-    return v if v >= 0 else None
+    lower = 25 + 10 * ((age - 25) // 10)
+    return f"{lower}-{lower + 9}"
 
 
-def _acs_age_band(age: int) -> str | None:
-    if 25 <= age <= 34:
-        return "25-34"
-    if 35 <= age <= 44:
-        return "35-44"
-    if 45 <= age <= 54:
-        return "45-54"
-    if 55 <= age <= 64:
-        return "55-64"
-    return None
+def build_all_donor_cells(
+    *, schema_path: Path = SIPP_SCHEMA, zip_path: Path = SIPP_ZIP,
+    output_dir: Path = PROTO,
+) -> tuple[list[dict], list[dict]]:
+    """Allocate once, then form individually weighted annual donor cells.
 
-
-def _sipp_to_acs_education(code: int) -> str:
-    bucket = sipp_eeduc_bucket(code)
-    if bucket == "1_lt_hs":
-        return "<HS"
-    if bucket == "2_hs_ged":
-        return "HS / GED"
-    if bucket in ("3_some_college", "4_associate"):
-        return "some college / associate"
-    return "other"
-
-
-def build_donor_cells(ebornus: str = "2") -> list[dict]:
-    """Build SIPP household donor cells. ebornus: '1' US-born, '2' foreign-born."""
-    idx = _load_indices()
-    hh: dict[tuple, dict] = {}
-    n_rows = 0
-    label = "US-born" if ebornus == "1" else "foreign-born"
-
-    with zipfile.ZipFile(SIPP_ZIP) as zf:
-        with zf.open("pu2024.csv") as fh:
-            rdr = csv.reader(io.TextIOWrapper(fh, encoding="latin-1", newline=""), delimiter="|")
-            for row in rdr:
-                n_rows += 1
-                if len(row) < max(idx.values()) + 1:
-                    continue
-                if row[idx["EBORNUS"]].strip() != ebornus:
-                    continue
-                age = _num(row[idx["TAGE"]])
-                wt = _num(row[idx["WPFINWGT"]])
-                if age is None or wt is None or wt <= 0:
-                    continue
-                age_i = int(age)
-                ab = _acs_age_band(age_i)
-                if ab is None:
-                    continue
-                ed = row[idx["EEDUC"]].strip()
-                try:
-                    edu = _sipp_to_acs_education(int(float(ed)))
-                except ValueError:
-                    continue
-                ssuid = row[idx["SSUID"]].strip()
-                eres = row[idx["ERESIDENCEID"]].strip()
-                month = row[idx["MONTHCODE"]].strip()
-                key = (ssuid, eres, month)
-                h = hh.setdefault(
-                    key,
-                    {
-                        "household_weight": 0.0,
-                        "education_bucket": edu,
-                        "age_band": ab,
-                        "sum_tpearn": 0.0,
-                        "sum_tptotinc": 0.0,
-                        "sum_tsnap": 0.0,
-                        "sum_ttanf": 0.0,
-                        "sum_tssi": 0.0,
-                        "members": 0,
-                    },
-                )
-                h["household_weight"] = max(h["household_weight"], wt)
-                h["members"] += 1
-                for field, slot in (
-                    ("TPEARN", "sum_tpearn"),
-                    ("TPTOTINC", "sum_tptotinc"),
-                    ("TSNAP_AMT", "sum_tsnap"),
-                    ("TTANF_AMT", "sum_ttanf"),
-                    ("TSSI_AMT", "sum_tssi"),
-                ):
-                    v = _num(row[idx[field]])
-                    if v is not None:
-                        h[slot] += v
-
+    SIPP Guide Table 7-1/section 7.3.4 specify December WPFINWGT for annual
+    estimates. Age is December TAGE_EHC; EEDUC is December attainment. Sum
+    observed monthly amounts within person before matching or capping. Do not
+    multiply partial-year or volatile monthly earnings into invented annual pay.
+    """
     cells: dict[tuple, dict] = {}
-    for h in hh.values():
-        annual_inc = h["sum_tptotinc"] * 12
-        eb = earnings_band_annual(annual_inc)
-        key = (h["education_bucket"], h["age_band"], eb)
-        c = cells.setdefault(
-            key,
-            {
-                "education_bucket": h["education_bucket"],
-                "age_band": h["age_band"],
-                "earnings_band": eb,
-                "household_weight_sum": 0.0,
-                "household_month_count": 0,
-                "sum_monthly_tpearn": 0.0,
-                "sum_monthly_tptotinc": 0.0,
-                "sum_monthly_tsnap": 0.0,
-                "sum_monthly_ttanf": 0.0,
-                "sum_monthly_tssi": 0.0,
+    scanned_rows = scanned_units = selected_people = 0
+    all_benefits = {"snap": 0.0, "tanf": 0.0, "ssi": 0.0}
+    adult_benefits = {"snap": 0.0, "tanf": 0.0, "ssi": 0.0}
+    for sample in iter_sipp_allocated_sample_units(schema_path, zip_path):
+        scanned_units += 1
+        scanned_rows += len(sample)
+        persons = defaultdict(list)
+        for month in sample:
+            persons[month.person_number].append(month)
+            all_benefits["snap"] += month.allocated_snap
+            all_benefits["tanf"] += month.allocated_tanf
+            all_benefits["ssi"] += month.ssi
+        for months in persons.values():
+            december = next((month for month in months if month.month == 12), None)
+            if december is None or not december.in_universe or december.weight <= 0:
+                continue
+            age_band = _acs_age_band(december.age)
+            if age_band is None:
+                continue
+            if december.nativity not in (1, 2):
+                raise ValueError(f"Invalid SIPP adult nativity: {december.nativity!r}")
+            education = SIPP_EDUCATION_TO_ACS[sipp_eeduc_bucket(december.education_code)]
+            income = sum(month.income for month in months)
+            earnings = sum(month.earnings for month in months)
+            snap = sum(month.allocated_snap for month in months)
+            tanf = sum(month.allocated_tanf for month in months)
+            ssi = sum(month.ssi for month in months)
+            payroll = employee_oasdi_hi_proxy(earnings)
+            key = (december.nativity, education, age_band, income_band_annual(income))
+            cell = cells.setdefault(key, {
+                "nativity_code": str(december.nativity), "education_bucket": education,
+                "age_band": age_band, "income_band": key[-1],
+                "person_weight_sum": 0.0, "person_year_count": 0, "person_month_count": 0,
+                "sum_annual_tpearn": 0.0, "sum_annual_tptotinc": 0.0,
+                "sum_annual_allocated_snap": 0.0, "sum_annual_allocated_tanf": 0.0,
+                "sum_annual_tssi": 0.0, "sum_employee_oasdi_hi_proxy_annual": 0.0,
+            })
+            weight = december.weight
+            cell["person_weight_sum"] += weight
+            cell["person_year_count"] += 1
+            cell["person_month_count"] += len(months)
+            for field, amount in (
+                ("sum_annual_tpearn", earnings), ("sum_annual_tptotinc", income),
+                ("sum_annual_allocated_snap", snap), ("sum_annual_allocated_tanf", tanf),
+                ("sum_annual_tssi", ssi), ("sum_employee_oasdi_hi_proxy_annual", payroll),
+            ):
+                cell[field] += weight * amount
+            selected_people += 1
+            for program, amount in (("snap", snap), ("tanf", tanf), ("ssi", ssi)):
+                adult_benefits[program] += amount
+
+    by_nativity = {"1": [], "2": []}
+    for _, cell in sorted(cells.items()):
+        weight = cell["person_weight_sum"]
+        payroll = cell["sum_employee_oasdi_hi_proxy_annual"] / weight
+        transfers = sum(cell[f"sum_annual_{field}"] for field in
+                        ("allocated_snap", "allocated_tanf", "tssi")) / weight
+        by_nativity[cell["nativity_code"]].append({
+            **cell, "reference_year": SIPP_REFERENCE_YEAR,
+            "mean_annual_person_tpearn": cell["sum_annual_tpearn"] / weight,
+            "mean_annual_person_tptotinc": cell["sum_annual_tptotinc"] / weight,
+            "mean_annual_allocated_snap": cell["sum_annual_allocated_snap"] / weight,
+            "mean_annual_allocated_tanf": cell["sum_annual_allocated_tanf"] / weight,
+            "mean_annual_person_tssi": cell["sum_annual_tssi"] / weight,
+            "employee_oasdi_hi_proxy_annual": payroll,
+            "allocated_snap_tanf_ssi_annual": transfers,
+            "payroll_less_allocated_benefits_proxy_annual": payroll - transfers,
+        })
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    for nativity, suffix in (("2", ""), ("1", "_usborn")):
+        rows = by_nativity[nativity]
+        if rows:
+            with (output_dir / f"sipp_person_donor_cells{suffix}_2024.csv").open("w", newline="") as stream:
+                writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+                writer.writeheader()
+                writer.writerows(rows)
+        write_meta(output_dir / f"sipp_person_donor_cells{suffix}_2024.meta.json", {
+            "builder": "build_federal_microsim_sipp_2024.py", "reference_year": SIPP_REFERENCE_YEAR,
+            "source_zip": str(zip_path), "source_schema": str(schema_path),
+            "dictionary": SIPP_DICTIONARY_URL, "weights_source": SIPP_GUIDE_URL,
+            "payroll_source": PAYROLL_SOURCE, "nativity_code": nativity,
+            "nativity_basis": SIPP_NATIVITY_BASIS,
+            "person_month_rows_scanned": scanned_rows, "sample_units_scanned": scanned_units,
+            "selected_adults_both_nativities": selected_people, "donor_cells": len(rows),
+            "person_years": sum(row["person_year_count"] for row in rows),
+            "weight_basis": "December WPFINWGT once per person-year; ages 25-64 in December",
+            "income_basis": "Sum of personal monthly TPTOTINC in 2023, including losses",
+            "payroll_basis": "Per-person max(annual TPEARN,0): 6.2% up to $160200 plus uncapped 1.45%; then weighted mean",
+            "benefit_allocation": SIPP_BENEFIT_ALLOCATION,
+            "unweighted_source_benefits_all_people": all_benefits,
+            "unweighted_source_benefits_selected_adults_both_nativities": adult_benefits,
+            "unweighted_benefits_outside_adult_donor_universe": {
+                program: all_benefits[program] - adult_benefits[program] for program in all_benefits
             },
-        )
-        w = h["household_weight"]
-        c["household_weight_sum"] += w
-        c["household_month_count"] += 1
-        c["sum_monthly_tpearn"] += h["sum_tpearn"] * w
-        c["sum_monthly_tptotinc"] += h["sum_tptotinc"] * w
-        c["sum_monthly_tsnap"] += h["sum_tsnap"] * w
-        c["sum_monthly_ttanf"] += h["sum_ttanf"] * w
-        c["sum_monthly_tssi"] += h["sum_tssi"] * w
-
-    rows = []
-    for _, c in sorted(cells.items()):
-        w = c["household_weight_sum"]
-        mean_earn = weighted_mean(c["sum_monthly_tpearn"], w) or 0.0
-        annual_earn = mean_earn * 12
-        payroll = min(annual_earn, 168_600) * 0.0765
-        transfers = (
-            (weighted_mean(c["sum_monthly_tsnap"], w) or 0)
-            + (weighted_mean(c["sum_monthly_ttanf"], w) or 0)
-            + (weighted_mean(c["sum_monthly_tssi"], w) or 0)
-        ) * 12
-        rows.append(
-            {
-                **c,
-                "ebornus": ebornus,
-                "nativity_code": "1" if ebornus == "1" else "2",
-                "mean_monthly_hh_tpearn": mean_earn,
-                "mean_monthly_hh_tptotinc": weighted_mean(c["sum_monthly_tptotinc"], w),
-                "mean_monthly_hh_tsnap": weighted_mean(c["sum_monthly_tsnap"], w),
-                "mean_monthly_hh_ttanf": weighted_mean(c["sum_monthly_ttanf"], w),
-                "mean_monthly_hh_tssi": weighted_mean(c["sum_monthly_tssi"], w),
-                "payroll_tax_proxy_annual": payroll,
-                "transfer_outflow_proxy_annual": transfers,
-                "federal_net_proxy_annual": payroll - transfers,
-            }
-        )
-
-    write_meta(
-        DONOR_META,
-        {
-            "builder": "build_federal_microsim_sipp_2024.py",
-            "ebornus": ebornus,
-            "nativity_label": label,
-            "person_month_rows_scanned": n_rows,
-            "household_months": len(hh),
-            "donor_cells": len(rows),
-            "income_basis": "monthly TPTOTINC summed within household-month, annualized ×12 for bands",
-            "notes": "Proxy only — SIPP lacks verified federal tax liability fields in this build.",
-        },
-    )
-    print(f"Donor cells ({label}): {len(rows)} from {len(hh):,} household-months")
-    return rows
+            "limitations": [
+                "Named payroll/benefit ledger only; not net federal or total fiscal impact.",
+                "Net business income uses employee wage rates as a proxy, not liability.",
+                "No employer share, Additional Medicare Tax, income tax, health or pension spending.",
+                "TANF/SSI amounts do not isolate federal funding.",
+                "ACS trailing-year and SIPP calendar-year income are distinct survey measures.",
+                "Transport assumes comparability within nativity/education/age/personal-income cells.",
+                "Native donors pool races; the NH-white target is a transported proxy.",
+                "Point estimates only; no survey replicate-weight uncertainty is estimated.",
+                "Income matching pools all personal income >=$75000 to avoid an unsupported fine cell; finer income heterogeneity remains unmodeled.",
+            ],
+        })
+        print(f"Person donor cells (nativity {nativity}): {len(rows)}")
+    return by_nativity["2"], by_nativity["1"]
 
 
-def build_all_donor_cells() -> tuple[list[dict], list[dict]]:
-    return build_donor_cells("2"), build_donor_cells("1")
+def build_acs_recipient_cells(con, *, from_source_zip: bool = False) -> None:
+    """Persist donor-independent ACS person-cell counts from acs_person_raw.
+
+    Missing/invalid ACS education or income stays unmatched, never in the top
+    bucket. Without raw ACS, recipient counts must be imported explicitly with
+    provenance; there is no fallback to previously imputed fiscal values.
+    """
+    if from_source_zip:
+        from acs_pums_io import person_csv_paths
+
+        paths = person_csv_paths()
+        if len(paths) != 2 or not all(any(part in Path(path).name for path in paths)
+                                      for part in ("psam_pusa", "psam_pusb")):
+            raise ValueError("National ACS recipients require both official pusa and pusb files")
+        con.execute("CREATE OR REPLACE TEMP TABLE acs_person_raw AS SELECT "
+                    "POBP, NATIVITY, HISP, RAC1P, SCHL, AGEP, PINCP, ADJINC, PWGTP "
+                    "FROM read_csv(?, header=true, union_by_name=true, all_varchar=true)", [paths])
+    # ACS 2023 PUMS User Guide: PINCP * ADJINC / 1e6 gives 2023 dollars.
+    income_case = income_band_sql("TRY_CAST(p.PINCP AS DOUBLE) * TRY_CAST(p.ADJINC AS DOUBLE) / 1000000")
+    cells = f"""
+        SELECT COALESCE(d.origin_label, CAST(p.POBP AS VARCHAR)) AS origin_label,
+          TRY_CAST(p.NATIVITY AS INTEGER) AS nativity,
+          LPAD(CAST(p.HISP AS VARCHAR), 2, '0') = '01'
+            AND TRY_CAST(p.RAC1P AS INTEGER) = 1 AS nh_white,
+          CASE
+            WHEN TRY_CAST(p.SCHL AS INTEGER) BETWEEN 1 AND 15 THEN '<HS'
+            WHEN TRY_CAST(p.SCHL AS INTEGER) IN (16, 17) THEN 'HS / GED'
+            WHEN TRY_CAST(p.SCHL AS INTEGER) IN (18, 19, 20) THEN 'some college / associate'
+            WHEN TRY_CAST(p.SCHL AS INTEGER) BETWEEN 21 AND 24 THEN 'other'
+          END AS education_bucket,
+          CASE
+            WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 25 AND 34 THEN '25-34'
+            WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 35 AND 44 THEN '35-44'
+            WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 45 AND 54 THEN '45-54'
+            WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 55 AND 64 THEN '55-64'
+          END AS age_band,
+          {income_case} AS income_band,
+          TRY_CAST(p.PWGTP AS DOUBLE) AS person_weight
+        FROM acs_person_raw p
+        LEFT JOIN pobp_dim d ON LPAD(CAST(p.POBP AS VARCHAR), 4, '0') = d.pobp
+        WHERE TRY_CAST(p.AGEP AS INTEGER) BETWEEN 25 AND 64
+          AND TRY_CAST(p.PWGTP AS DOUBLE) > 0
+    """
+    con.execute(f"""
+        CREATE OR REPLACE TABLE acs_origin_person_recipient_cells_2023 AS
+        WITH persons AS ({cells})
+        SELECT origin_label, education_bucket, age_band, income_band,
+               SUM(person_weight) AS weighted_adults
+        FROM persons WHERE nativity = 2 GROUP BY 1, 2, 3, 4
+    """)
+    con.execute(f"""
+        CREATE OR REPLACE TABLE acs_nh_white_person_recipient_cells_2023 AS
+        WITH persons AS ({cells})
+        SELECT 'nh_white_usborn' AS population_group, education_bucket, age_band,
+               income_band, SUM(person_weight) AS weighted_adults
+        FROM persons WHERE nativity = 1 AND nh_white GROUP BY 1, 2, 3, 4
+    """)
+    if from_source_zip:
+        con.execute("DROP TABLE acs_person_raw")
 
 
 def load_federal_microsim_into_duckdb(con, donor_rows: list[dict], ebornus: str = "2") -> None:
-    """Requires acs_person_raw in an open warehouse build connection."""
+    """Join person donors to explicit donor-independent ACS recipient cells."""
     import pandas as pd
 
-    table = "sipp_household_donor_cells_2024" if ebornus == "2" else "sipp_household_donor_cells_usborn_2024"
-    con.register("_donor_rows", pd.DataFrame(donor_rows))
-    con.execute(f"CREATE OR REPLACE TABLE {table} AS SELECT * FROM _donor_rows")
-
-    if ebornus == "2":
-        con.execute(f"""
-        CREATE OR REPLACE TABLE acs_origin_household_federal_microsim_2023 AS
-        WITH person_cells AS (
-          SELECT
-            COALESCE(d.origin_label, CAST(p.POBP AS VARCHAR)) AS origin_label,
-            CASE
-              WHEN TRY_CAST(p.SCHL AS INTEGER) < 16 THEN '<HS'
-              WHEN TRY_CAST(p.SCHL AS INTEGER) IN (16, 17) THEN 'HS / GED'
-              WHEN TRY_CAST(p.SCHL AS INTEGER) IN (18, 19, 20) THEN 'some college / associate'
-              ELSE 'other'
-            END AS education_bucket,
-            CASE
-              WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 25 AND 34 THEN '25-34'
-              WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 35 AND 44 THEN '35-44'
-              WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 45 AND 54 THEN '45-54'
-              WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 55 AND 64 THEN '55-64'
-            END AS age_band,
-            CASE
-              WHEN TRY_CAST(p.PINCP AS DOUBLE) < 20000 THEN 'lt20k'
-              WHEN TRY_CAST(p.PINCP AS DOUBLE) < 40000 THEN '20-40k'
-              WHEN TRY_CAST(p.PINCP AS DOUBLE) < 75000 THEN '40-75k'
-              WHEN TRY_CAST(p.PINCP AS DOUBLE) < 150000 THEN '75-150k'
-              ELSE '150k+'
-            END AS earnings_band,
-            SUM(TRY_CAST(p.PWGTP AS DOUBLE)) AS weighted_adults
-          FROM acs_person_raw p
-          LEFT JOIN pobp_dim d
-            ON LPAD(CAST(p.POBP AS VARCHAR), 4, '0') = d.pobp
-            OR CAST(p.POBP AS VARCHAR) = TRIM(LEADING '0' FROM d.pobp)
-          WHERE TRY_CAST(p.AGEP AS INTEGER) BETWEEN 25 AND 64
-            AND CAST(p.NATIVITY AS VARCHAR) = '2'
-          GROUP BY 1, 2, 3, 4
-        )
-        SELECT
-          c.origin_label,
-          c.education_bucket,
-          c.age_band,
-          c.earnings_band,
-          c.weighted_adults,
-          s.mean_monthly_hh_tpearn,
-          s.payroll_tax_proxy_annual,
-          s.transfer_outflow_proxy_annual,
-          s.federal_net_proxy_annual,
-          s.household_weight_sum AS donor_household_weight
-        FROM person_cells c
-        LEFT JOIN {table} s
-          ON c.education_bucket = s.education_bucket
-         AND c.age_band = s.age_band
-         AND c.earnings_band = s.earnings_band
-    """)
-        n = con.execute("SELECT COUNT(*) FROM acs_origin_household_federal_microsim_2023").fetchone()[0]
-        matched = con.execute(
-            "SELECT COUNT(*) FROM acs_origin_household_federal_microsim_2023 WHERE donor_household_weight IS NOT NULL"
-        ).fetchone()[0]
-        print(f"federal microsim (FB origins): {n:,} cells, {matched:,} with SIPP donor match")
-        return
-
+    if ebornus not in ("1", "2"):
+        raise ValueError(f"Invalid donor nativity: {ebornus!r}")
+    if not donor_rows:
+        raise ValueError("Cannot load empty SIPP donor cells")
+    keys = [(row["education_bucket"], row["age_band"], row["income_band"]) for row in donor_rows]
+    if len(set(keys)) != len(keys) or any(row["nativity_code"] != ebornus for row in donor_rows):
+        raise ValueError("Duplicate or wrong-nativity SIPP donor cells")
+    if any(row["person_weight_sum"] <= 0 for row in donor_rows):
+        raise ValueError("Nonpositive SIPP donor weight")
+    donor_table = "sipp_person_donor_cells_2024" if ebornus == "2" else "sipp_person_donor_cells_usborn_2024"
+    population = "origin" if ebornus == "2" else "nh_white"
+    recipient_table = f"acs_{population}_person_recipient_cells_2023"
+    output_table = f"acs_{population}_person_payroll_transfer_microsim_2023"
+    population_column = "origin_label" if ebornus == "2" else "population_group"
+    if not con.execute("SELECT COUNT(*) FROM information_schema.tables WHERE table_name = ?", [recipient_table]).fetchone()[0]:
+        raise ValueError(f"Missing {recipient_table}; build or explicitly import ACS recipient counts first")
+    con.register("_sipp_person_donors", pd.DataFrame(donor_rows))
+    try:
+        unmatched = con.execute(f"""
+            SELECT COUNT(*), SUM(c.weighted_adults)
+            FROM {recipient_table} c LEFT JOIN _sipp_person_donors s
+              ON c.education_bucket = s.education_bucket
+             AND c.age_band = s.age_band AND c.income_band = s.income_band
+            WHERE s.person_weight_sum IS NULL
+        """).fetchone()
+        if unmatched[0]:
+            raise ValueError(f"Unmatched ACS recipients: {unmatched[0]} cells, {unmatched[1]} adults; refusing a partial population estimate")
+        con.execute(f"CREATE OR REPLACE TABLE {donor_table} AS SELECT * FROM _sipp_person_donors")
+    finally:
+        con.unregister("_sipp_person_donors")
     con.execute(f"""
-        CREATE OR REPLACE TABLE acs_nh_white_federal_microsim_2023 AS
-        WITH person_cells AS (
-          SELECT
-            CASE
-              WHEN TRY_CAST(p.SCHL AS INTEGER) < 16 THEN '<HS'
-              WHEN TRY_CAST(p.SCHL AS INTEGER) IN (16, 17) THEN 'HS / GED'
-              WHEN TRY_CAST(p.SCHL AS INTEGER) IN (18, 19, 20) THEN 'some college / associate'
-              ELSE 'other'
-            END AS education_bucket,
-            CASE
-              WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 25 AND 34 THEN '25-34'
-              WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 35 AND 44 THEN '35-44'
-              WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 45 AND 54 THEN '45-54'
-              WHEN TRY_CAST(p.AGEP AS INTEGER) BETWEEN 55 AND 64 THEN '55-64'
-            END AS age_band,
-            CASE
-              WHEN TRY_CAST(p.PINCP AS DOUBLE) < 20000 THEN 'lt20k'
-              WHEN TRY_CAST(p.PINCP AS DOUBLE) < 40000 THEN '20-40k'
-              WHEN TRY_CAST(p.PINCP AS DOUBLE) < 75000 THEN '40-75k'
-              WHEN TRY_CAST(p.PINCP AS DOUBLE) < 150000 THEN '75-150k'
-              ELSE '150k+'
-            END AS earnings_band,
-            SUM(TRY_CAST(p.PWGTP AS DOUBLE)) AS weighted_adults
-          FROM acs_person_raw p
-          WHERE TRY_CAST(p.AGEP AS INTEGER) BETWEEN 25 AND 64
-            AND TRY_CAST(p.NATIVITY AS INTEGER) = 1
-            AND LPAD(CAST(p.HISP AS VARCHAR), 2, '0') = '01'
-            AND TRY_CAST(p.RAC1P AS INTEGER) = 1
-          GROUP BY 1, 2, 3
-        )
-        SELECT
-          'nh_white_usborn' AS population_group,
-          c.education_bucket,
-          c.age_band,
-          c.earnings_band,
-          c.weighted_adults,
-          s.mean_monthly_hh_tpearn,
-          s.payroll_tax_proxy_annual,
-          s.transfer_outflow_proxy_annual,
-          s.federal_net_proxy_annual,
-          s.household_weight_sum AS donor_household_weight
-        FROM person_cells c
-        LEFT JOIN {table} s
+        CREATE OR REPLACE TABLE {output_table} AS
+        SELECT c.{population_column}, c.education_bucket, c.age_band, c.income_band,
+               c.weighted_adults, s.mean_annual_person_tpearn,
+               s.employee_oasdi_hi_proxy_annual, s.allocated_snap_tanf_ssi_annual,
+               s.payroll_less_allocated_benefits_proxy_annual,
+               s.person_weight_sum AS donor_person_weight,
+               s.person_year_count AS donor_person_count
+        FROM {recipient_table} c LEFT JOIN {donor_table} s
           ON c.education_bucket = s.education_bucket
-         AND c.age_band = s.age_band
-         AND c.earnings_band = s.earnings_band
+         AND c.age_band = s.age_band AND c.income_band = s.income_band
     """)
-    n = con.execute("SELECT COUNT(*) FROM acs_nh_white_federal_microsim_2023").fetchone()[0]
-    matched = con.execute(
-        "SELECT COUNT(*) FROM acs_nh_white_federal_microsim_2023 WHERE donor_household_weight IS NOT NULL"
-    ).fetchone()[0]
-    print(f"federal microsim (NH white US-born): {n:,} cells, {matched:,} with SIPP donor match")
+    rows, matched = con.execute(f"SELECT COUNT(*), COUNT(donor_person_weight) FROM {output_table}").fetchone()
+    # Retire invalid generated tables only after the replacement join succeeds.
+    retired = (
+        ("acs_origin_household_federal_microsim_2023", "sipp_household_donor_cells_2024")
+        if ebornus == "2" else
+        ("acs_nh_white_federal_microsim_2023", "sipp_household_donor_cells_usborn_2024")
+    )
+    for table in retired:
+        con.execute(f"DROP TABLE IF EXISTS {table}")
+    print(f"Person payroll/transfer microsim ({population}): {rows:,} cells, {matched:,} matched")
 
 
 def build() -> Path:
-    PROTO.mkdir(parents=True, exist_ok=True)
     fb_rows, usb_rows = build_all_donor_cells()
     for path, rows in ((DONOR_OUT_FB, fb_rows), (DONOR_OUT_USB, usb_rows)):
-        with path.open("w", newline="") as f:
-            w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
-            w.writeheader()
-            w.writerows(rows)
+        if not rows:
+            raise ValueError(f"No donor cells for {path.name}")
         print(f"Wrote {path}")
     return DONOR_OUT_FB
 

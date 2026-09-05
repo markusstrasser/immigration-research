@@ -3,7 +3,7 @@
 SELECT
   population_group,
   ROUND(MAX(CASE WHEN fiscal_layer = 'lifetime_npv' THEN value_per_adult_weighted END)) AS npv_per_adult,
-  ROUND(MAX(CASE WHEN fiscal_layer = 'federal_annual' THEN value_per_adult_weighted END)) AS federal_per_adult
+  ROUND(MAX(CASE WHEN fiscal_layer = 'payroll_transfer_annual' THEN value_per_adult_weighted END)) AS payroll_transfer_per_adult
 FROM v_country_fiscal_rollup
 WHERE effect_order = 1
 GROUP BY 1
