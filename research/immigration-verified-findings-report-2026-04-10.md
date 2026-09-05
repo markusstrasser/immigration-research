@@ -1,5 +1,17 @@
 # Verified findings report: low-skill immigration, ledgers, datasets, and economist claims
 
+## Current correction — 2026-09-05
+
+The September [repair report](immigration-material-repair-report-2026-09-05.md) is the authority for rebuilt results and their scopes. The old household-based SIPP amounts, including Mexico $1,519 and NH-white $2,746 per adult, are withdrawn. The replacement measures employee-rate payroll less allocated SNAP/TANF/SSI, not full federal, all-government, or lifetime fiscal impact. [SOURCE: ../infra/immigration-fiscal/build/build_federal_microsim_sipp_2024.py]
+
+The earlier verification label is dated evidence, not blanket certification of later artifacts. Matching and arithmetic checks do not identify causal immigration effects or survey uncertainty. QWI/IRS outcomes do not isolate native incumbents; school averages, gross local expenditure, and lifetime model benchmarks retain separate denominators and counterfactuals. [INFERENCE]
+
+<details>
+<summary>Earlier record, superseded where corrected above</summary>
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+# Verified findings report: low-skill immigration, ledgers, datasets, and economist claims
+
 Date: 2026-04-10
 
 ## Scope
@@ -351,3 +363,10 @@ That is the actual verified picture.
 | Date | Change | Trigger |
 |---|---|---|
 | 2026-06-16 | Scoped April household-normalized school language to linked-household child exposure; updated the federal section for the June SIPP-style narrow annual proxy and same-universe school/net guard. | `research/immigration-federal-distribution-findings-2026-06-15.md`, `research/immigration-country-fiscal-tensor-2026-06-15.md`, and `research/immigration-school-burden-per-adult-2026-06-15.md` superseded parts of the April prototype surface. |
+
+<!-- historical-snapshot:end -->
+</details>
+
+## Revisions
+
+- **2026-09-05:** Corrected material measurement and inference errors under the [repair decision](../decisions/2026-09-05-material-inference-repair.md); preserved the earlier record.

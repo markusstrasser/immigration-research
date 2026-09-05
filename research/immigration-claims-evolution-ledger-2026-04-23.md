@@ -1,5 +1,17 @@
 # Immigration Claims Evolution Ledger
 
+## Current correction — 2026-09-05
+
+The September [repair report](immigration-material-repair-report-2026-09-05.md) is the authority for rebuilt results and their scopes. The old household-based SIPP amounts, including Mexico $1,519 and NH-white $2,746 per adult, are withdrawn. The replacement measures employee-rate payroll less allocated SNAP/TANF/SSI, not full federal, all-government, or lifetime fiscal impact. [SOURCE: ../infra/immigration-fiscal/build/build_federal_microsim_sipp_2024.py]
+
+Past belief changes remain below. The June proxy was narrower than a full fiscal model but still had invalid person units and education coding; a scope caveat did not make its arithmetic valid. [INFERENCE]
+
+<details>
+<summary>Earlier record, superseded where corrected above</summary>
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+# Immigration Claims Evolution Ledger
+
 Date: 2026-04-23
 
 Purpose: collapse the repo's immigration claims into a claim-by-claim evolution map: what the claim now says, how it changed, what it connects to, the takeaway, and the common misunderstanding. This is a synthesis over existing repo artifacts, not a fresh external verification pass. Source tags point to the repo documents that carry the underlying citations, data pulls, or prior audits.
@@ -103,3 +115,10 @@ The verified-findings memo explicitly notes that an AGI-soon frame makes very lo
 ## Current Synthesis
 
 The repo's current position is best stated as: immigration creates large real gains for migrants and often favorable national/federal channels, while also creating concentrated local burdens through housing, schools, shelters, courts, and political legitimacy when flow, composition, destination, and capacity line up badly. The strongest next analysis is not another abstract pro/con literature review; it is receiver-node causal work with cleaner residence mapping, service-load measures, and resident-weighted exposure. [SOURCE: research/immigration-reasoning-evolution-2026-04-21.md] [SOURCE: research/immigration-receiver-node-kill-test-2026-04-23.md] [SOURCE: research/immigration-frontier-rethink-2026-04-22.md] [INFERENCE]
+
+<!-- historical-snapshot:end -->
+</details>
+
+## Revisions
+
+- **2026-09-05:** Corrected material measurement and inference errors under the [repair decision](../decisions/2026-09-05-material-inference-repair.md); preserved the earlier record.

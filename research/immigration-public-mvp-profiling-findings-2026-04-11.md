@@ -1,5 +1,17 @@
 # Immigration public MVP profiling findings — 2026-04-11
 
+## Current correction — 2026-09-05
+
+The September [repair report](immigration-material-repair-report-2026-09-05.md) is the authority for rebuilt results and their scopes. The old household-based SIPP amounts, including Mexico $1,519 and NH-white $2,746 per adult, are withdrawn. The replacement measures employee-rate payroll less allocated SNAP/TANF/SSI, not full federal, all-government, or lifetime fiscal impact. [SOURCE: ../infra/immigration-fiscal/build/build_federal_microsim_sipp_2024.py]
+
+The first 200,000 streamed SIPP rows are a file-order convenience sample, not a national probability subsample. The completed rebuild scans the full file. Monthly profile levels do not estimate transition probabilities. Overall foreign-born MEPS spending cannot be transported to low-skill or unauthorized groups without extra assumptions; lower observed spending is not proof of lower medical need, better access, or welfare. [INFERENCE]
+
+<details>
+<summary>Earlier record, superseded where corrected above</summary>
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+# Immigration public MVP profiling findings — 2026-04-11
+
 ## Scope
 
 This memo records the first lightweight profiling pass over the newly staged public-use datasets for the immigration lifetime-fiscal project.
@@ -197,3 +209,10 @@ These claims would still be too strong right now:
 4. "The first `SIPP` sample pass is a national point estimate."
 
 Those are not true yet. [INFERENCE]
+
+<!-- historical-snapshot:end -->
+</details>
+
+## Revisions
+
+- **2026-09-05:** Corrected material measurement and inference errors under the [repair decision](../decisions/2026-09-05-material-inference-repair.md); preserved the earlier record.

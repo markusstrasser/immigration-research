@@ -1,3 +1,19 @@
+# Fiscal tensor — corrected units and interpretation
+
+**Current correction: 2026-09-05.** The old federal_annual layer, its ratios and school-net descendants are invalidated. The replacement cash-flow layer is explicitly employee payroll minus selected allocated benefits, with 2023 reference-year inputs. Per-pupil costs do not belong in per-adult columns and cannot be multiplied by adult counts; that unsupported tensor row is removed while the original per-pupil context remains in its named source field. The wage sensitivity changes payroll while holding transfers fixed and is an illustrative mechanical scenario, not an estimated general-equilibrium effect. Annuitized NAS 2012-dollar benchmarks cannot be subtracted from 2023-dollar current-stock cash flows to classify a numerical 'near match'; populations and budgets also differ. CBO 2024–2034 objects are cumulative projections with their own budget coverage. Clemens's capital-tax adjustment is partial equilibrium, not GE.
+
+[SOURCE: [material audit](immigration-conceptual-audit-2026-09-05.md), source-code and table checks recorded in the [repair report](immigration-material-repair-report-2026-09-05.md)] [INFERENCE: accounting and identification limits]
+
+The [repair report](immigration-material-repair-report-2026-09-05.md) is the current result and verification entry point. The original below is retained as explicitly superseded history, including original quotations and earlier revisions.
+
+## Revisions
+
+- **2026-09-05:** Corrected these units, assumptions and current-status claims under the [material inference repair decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # Country fiscal tensor — built stack (2026-06-15)
 
 **DuckDB:** `warehouse/immigration_fiscal_union.duckdb`
@@ -102,3 +118,5 @@ All education rows: **`scope_mismatch`** — annuitized NAS `<HS` (−$109k) vs 
 - Add `nh_white_usborn` lifetime_npv rows to tensor (ACS education weights × NAS).
 - Cap NH `<HS` transfer donor or winsorize before rollup.
 - MEPS health + remittance layers as separate ℓ rows.
+
+</details>

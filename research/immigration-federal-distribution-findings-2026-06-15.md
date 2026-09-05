@@ -1,3 +1,19 @@
+# Fiscal distribution — corrected scope
+
+**Current correction: 2026-09-05.** The old $1,519 Mexico, $2,746 NH-white-native, 1.8× per-adult and related aggregate/decomposition results are withdrawn. They depended on household donor totals assigned to people and incorrect SIPP education codes. The replacement is a synthetic employee-payroll-minus-allocated-SNAP/TANF/SSI model using person-year donors and ACS adult recipients, not observed net taxes by ethnicity. Same-education PINCP comparisons measure total personal income, not hourly wages; similar point estimates do not establish statistical parity. Reweighting education shares is an accounting exercise, not proof education causally explains the observed group difference. No winsorization or benefit cap should be chosen merely to eliminate an inconvenient subgroup result.
+
+[SOURCE: [material audit](immigration-conceptual-audit-2026-09-05.md), source-code and table checks recorded in the [repair report](immigration-material-repair-report-2026-09-05.md)] [INFERENCE: accounting and identification limits]
+
+The [repair report](immigration-material-repair-report-2026-09-05.md) records the completed rebuild: **$2,371 per Mexico-born adult and $4,033 per native NH-white adult**, ratio **1.70**, for the partial 2023 payroll-minus-selected-benefits model. Its coarsened matching, sparse-cell sensitivity and cross-population transport assumptions govern these figures. The original below is retained as explicitly superseded history, including original quotations and earlier revisions.
+
+## Revisions
+
+- **2026-09-05:** Corrected these units, assumptions and current-status claims under the [material inference repair decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # Immigration fiscal — distribution findings (federal proxy + school units)
 
 **Date:** 2026-06-15
@@ -133,3 +149,5 @@ The older wage-imputation sensitivity of **~2.8–3.1×** is superseded as the a
 | [SOURCE] | `warehouse/immigration_lifetime_evidence.duckdb` — scenario, school finance |
 | [SOURCE] | `infra/immigration-fiscal/build/build_federal_microsim_sipp_2024.py` — payroll 7.65%, transfer definition |
 | [INFERENCE] | Decomposition and sensitivity calculations (this session) |
+
+</details>

@@ -1,3 +1,19 @@
+# Mexico population and NPV — corrected interpretation
+
+**Current correction: 2026-09-05.** The earlier +$1,519 annual proxy and its comparisons are invalidated. The $45,631 age-25 benchmark was a correct multiply-out of the stated four-bucket inputs; it does not describe today's residents' remaining lifetimes, actual age-at-arrival composition, a surge cohort or undocumented people specifically. It also applies the bachelor's NAS value to the pooled BA-plus bucket. A stock count is not unique border arrivals, net migration or an annual flow. A complete all-government lifetime result cannot be obtained by adding one year's city costs or payroll proxy to that benchmark. NAS already includes emigration in its demographic projections, so new exit scenarios must be explicit deviations from the baseline.
+
+[SOURCE: [material audit](immigration-conceptual-audit-2026-09-05.md), source-code and table checks recorded in the [repair report](immigration-material-repair-report-2026-09-05.md)] [INFERENCE: accounting and identification limits]
+
+The [repair report](immigration-material-repair-report-2026-09-05.md) is the current result and verification entry point. The original below is retained as explicitly superseded history, including original quotations and earlier revisions.
+
+## Revisions
+
+- **2026-09-05:** Corrected these units, assumptions and current-status claims under the [material inference repair decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # Mexico NPV, population denominator, and full ledger — synthesis (2026-06-15)
 
 **Trigger:** Post-sweeps 23–32 session + full-ledger critique (local, justice, legal costs not in NAS headline).
@@ -163,3 +179,5 @@ Missing from warehouse rollup: EOIR $/case, ICE bed-days allocated, shelter epis
 | 2026-06-16 | Scoped "Mexico drove surge" to post-2021 unauthorized-stock growth; the flat Mexico stock result does not adjudicate encounter events or receiver-load composition. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced the stale `$771/+748` warehouse-layer rows with withheld status after the same-universe school guard. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Removed the illustrative `-$37k to +$28k` lifetime band because it mixed withheld school, surge, enforcement, discount, and population-universe assumptions. |
+
+</details>

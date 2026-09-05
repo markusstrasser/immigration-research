@@ -1,5 +1,17 @@
 # Immigration public MVP SIPP–MEPS bridge — 2026-04-11
 
+## Current correction — 2026-09-05
+
+The bridge now uses the correct MEPS boundaries: SIPP 30–34 maps to 25–34, 40–44 to 35–44, and 50–54 to 45–54. Old outputs used the wrong decade for these ages. Weights are pooled person-month weights, not counts of unique people. [SOURCE: ../infra/immigration-fiscal/build/build_public_mvp_sipp_meps_bridge_2024.py]
+
+SIPP nativity is harmonized to ACS using citizenship at birth. MEPS BORNUSA measures birthplace; its groups are an explicit approximation to the SIPP populations. The fields now say code-mapped/birthplace proxy, rather than implying exact population identity. MEPS insurance shares and spending are assigned by age and birthplace without conditioning on SIPP education/income, and unmatched cells fail instead of disappearing. Current counts and validation are in the [repair report](immigration-material-repair-report-2026-09-05.md). [SOURCE: ../infra/immigration-fiscal/build/public_mvp_io.py] [INFERENCE]
+
+<details>
+<summary>Earlier record, superseded where corrected above</summary>
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+# Immigration public MVP SIPP–MEPS bridge — 2026-04-11
+
 ## Purpose
 
 This memo records the completed bridge between the new `SIPP 2024` transition cell module and the existing `MEPS HC-251` health-cost module.
@@ -63,3 +75,10 @@ The public MVP has:
 3. explicit `SIPP`-`MEPS` join layer with expected health-cost profiles (`sipp_meps_*_2024.csv`)
 
 Next step is model-level consumption, not additional join construction.
+
+<!-- historical-snapshot:end -->
+</details>
+
+## Revisions
+
+- **2026-09-05:** Corrected material measurement and inference errors under the [repair decision](../decisions/2026-09-05-material-inference-repair.md); preserved the earlier record.

@@ -1,3 +1,19 @@
+# Historical fiscal sweeps 13–22 — superseded numerical outputs
+
+**Current correction: 2026-09-05.** These are historical exploratory sweeps, not current model results. The old household-to-person SIPP amounts and their school-net combinations are invalidated in addition to the previously corrected school denominator error. Execution of the old SQL did not validate donor units, education codes, public enrollment assumptions or causal interpretation. Use the current repair report for rebuilt quantities and the current theory adjudication for what an executed check establishes.
+
+[SOURCE: [material audit](immigration-conceptual-audit-2026-09-05.md), source-code and table checks recorded in the [repair report](immigration-material-repair-report-2026-09-05.md)] [INFERENCE: accounting and identification limits]
+
+The [repair report](immigration-material-repair-report-2026-09-05.md) is the current result and verification entry point. The original below is retained as explicitly superseded history, including original quotations and earlier revisions.
+
+## Revisions
+
+- **2026-09-05:** Corrected these units, assumptions and current-status claims under the [material inference repair decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # Sweep cycles 13–22 — school burden divergence/synthesis (2026-06-15)
 
 **Protocol:** `notes/immigration-lifetime-sweep-protocol.md`, cookbook diverge→converge loop
@@ -149,3 +165,5 @@ Mexico: crude annual `federal - school` **withheld** vs synthetic age-25 NAS ben
 |------|--------|
 | 2026-06-15 | Cycles 13–22 after school burden tensor build |
 | 2026-06-16 | Reopened origin school layer: the $771/adult and +$748/adult Mexico correction paired a scenario-household numerator with the full microsim denominator; old ~−$13.5k and +$748 signs are both not live. |
+
+</details>

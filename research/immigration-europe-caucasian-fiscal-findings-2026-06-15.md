@@ -1,3 +1,19 @@
+# Origin and native comparison — corrected scope
+
+**Current correction: 2026-09-05.** All old SIPP-derived group values, ratios, corridor rankings and education decompositions are withdrawn. The repaired comparison must identify the adult recipient population and donor model: matching nativity, education, age and income is not an estimate of an ethnic causal effect. The non-Hispanic white group is a specified ACS category, not interchangeable with European birthplace or a biological category. Former Yugoslavia cannot be assigned wholesale to EU27 because several successor countries are outside the EU; ambiguous birthplace is excluded from that aggregate and retained separately. Older white-foreign-born estimates using pooled foreign-born education profiles are not full within-group microsimulations. The assumption that a particular visa, language or selection mechanism explains a descriptive gap remains untested.
+
+[SOURCE: [material audit](immigration-conceptual-audit-2026-09-05.md), source-code and table checks recorded in the [repair report](immigration-material-repair-report-2026-09-05.md)] [INFERENCE: accounting and identification limits]
+
+The [repair report](immigration-material-repair-report-2026-09-05.md) is the current result and verification entry point. The original below is retained as explicitly superseded history, including original quotations and earlier revisions.
+
+## Revisions
+
+- **2026-09-05:** Corrected these units, assumptions and current-status claims under the [material inference repair decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # Immigration fiscal — Europe, Caucasian natives, and low-skill corridors (2026-06-15)
 
 **Date:** 2026-06-15
@@ -186,3 +202,5 @@ bash build-lifetime.sh
 | 2026-06-15 | Initial write-up — EU vs Caucasian vs low-skill corridors after sweep 12 distribution pass |
 | 2026-06-16 | Replaced stale NH-white-all federal range `$2,803–3,005` with the current tensor anchor `$2,803`. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "beat"/"raise average"/mechanism language with narrow federal-proxy comparison and positive-selection-as-interpretation wording. See `immigration-conclusion-audit-running-fixes.md`. |
+
+</details>

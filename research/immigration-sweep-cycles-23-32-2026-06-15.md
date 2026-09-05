@@ -1,3 +1,19 @@
+# Historical fiscal sweeps 23–32 — superseded numerical outputs
+
+**Current correction: 2026-09-05.** These exploratory calculations contain invalidated SIPP amounts and school-net descendants; their later date did not repair the donor/recipient or education mistakes. The NAS four-bucket age-25 multiply-out is conditional arithmetic, not a current-stock lifetime estimate. A uniform earnings-decay or person-year haircut generates its result by assumption. Annuitization requires common prices and scope before any comparison; arithmetic execution and a plausible order of magnitude are not scientific validation.
+
+[SOURCE: [material audit](immigration-conceptual-audit-2026-09-05.md), source-code and table checks recorded in the [repair report](immigration-material-repair-report-2026-09-05.md)] [INFERENCE: accounting and identification limits]
+
+The [repair report](immigration-material-repair-report-2026-09-05.md) is the current result and verification entry point. The repaired generator writes scoped diagnostics to `DERIVED_ROOT/sweeps/sweep-cycles-23-32.md`; it no longer appends configured scientific conclusions to this historical memo. Its nine query statements pass against the corrected canonical warehouses. The original below is retained as explicitly superseded history, including original quotations and earlier revisions.
+
+## Revisions
+
+- **2026-09-05:** Corrected these units, assumptions and current-status claims under the [material inference repair decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # Sweep cycles 23–32 — full protocol (2026-06-15)
 
 **Protocol:** `notes/immigration-lifetime-sweep-protocol.md`
@@ -344,3 +360,5 @@ Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.
 | Date | Change | Trigger |
 |---|---|---|
 | 2026-06-16 | Marked cycles 24, 26, 30, and 32 school/net rows as historical superseded outputs; current origin school/net rows are withheld by `v_three_layer_annual`. | DuckDB query on `warehouse/immigration_fiscal_union.duckdb` and `research/immigration-school-burden-per-adult-2026-06-15.md`. |
+
+</details>

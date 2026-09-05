@@ -1,3 +1,19 @@
+# Fiscal synthesis — corrected accounting and model scope
+
+**Current correction: 2026-09-05.** A multidimensional fiscal table helps expose assumptions, but a scalar is legitimate once population, budget, counterfactual, horizon and weights are explicit. The earlier annual SIPP values, $12.9B Mexico total and dependent comparisons are invalidated. The 7,686,859 less-than-HS adult count was all foreign-born, not Mexico: the earlier Mexico count was 3,958,855. The old four-bucket synthetic calculation itself is arithmetically $387,697,847,000 / 8,496,334 = $45,631.19 per adult, conditional on assigning NAS's age-25 no-public-goods CBO-outlook anchors to current-stock education weights and assigning the bachelor's anchor to everyone with BA or above. It is not remaining-lifetime NPV of current residents. NAS has a separate advanced-degree benchmark and already models emigration; an additional blanket exit haircut is not a correction for an omitted channel. Clemens's capital-tax accounting and Colas–Sachs's price-adjusting mechanism are different models, not one GE offset. A city's gross annual spending and a national origin group's modeled fiscal balance are not competing like-for-like totals.
+
+[SOURCE: [material audit](immigration-conceptual-audit-2026-09-05.md), source-code and table checks recorded in the [repair report](immigration-material-repair-report-2026-09-05.md)] [INFERENCE: accounting and identification limits]
+
+The [repair report](immigration-material-repair-report-2026-09-05.md) is the current result and verification entry point. The original below is retained as explicitly superseded history, including original quotations and earlier revisions.
+
+## Revisions
+
+- **2026-09-05:** Corrected these units, assumptions and current-status claims under the [material inference repair decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # Immigration lifetime fiscal — unified theory (sweep 11)
 
 **Date:** 2026-06-15
@@ -262,3 +278,5 @@ Full text: `research/immigration-lifetime-fiscal-generators.md`
 ## Revisions
 
 - **2026-06-23** — Ledger dimension ℓ extended beyond fiscal-only to the **benefit/welfare ledgers** (economic surplus, consumer surplus, PAYG, migrant place premium, welfare-economics framing). Generator bank grown 80→112 (clusters A–P → A–T) with the new `T_immigrationist_steelman` cluster mirroring restrictionist S. The full cross-ledger synthesis now lives in `immigration-fiscal-welfare-ledger-map.md`; this doc remains the fiscal-tensor core it feeds into.
+
+</details>
