@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
-"""Cluster-V V02 — 2nd-generation-by-origin cultural-transmission test (IPUMS-CPS).
+"""Cluster-V V02 — descriptive second-generation profiles by origin (IPUMS-CPS).
 
-THE test the IPUMS-USA panel cannot do: true CROSS-GENERATIONAL decay. IPUMS-USA dropped
-parental birthplace after 1970; IPUMS-CPS keeps it (FBPL/MBPL) and a constructed NATIVITY
-generation code — so we can compare 2nd-generation immigrants (US-born, foreign-born parents)
-to the 3rd+ native baseline, BY parental origin, holding US institutions constant. That is the
-epidemiological identification of transmitted culture (V02) and the cross-generational bound on
-ethnic-capital persistence (V04) — both of which the first-gen `immigrant_assimilation_profile`
-can only approximate.
+Parental birthplace and NATIVITY distinguish US-born people with foreign-born
+parents from those with native-born parents. These cross-sectional origin means
+do not identify transmitted culture, individual assimilation, or a causal effect
+of ancestry: family selection, location, age, institutions and period can differ.
+The extract contains no crime outcome and cannot settle crime by generation.
 
 GATED INPUT (not in the repo). Stage an IPUMS-CPS ASEC extract as CSV at:
     <data_root>/external/cps/cps_2ndgen.csv[.gz]
