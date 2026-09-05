@@ -1,3 +1,41 @@
+# Saiz elasticity and current rents: descriptive comparison and corrected calculation
+
+**Current assessment — 2026-09-05.** The reported MSA cross-section is compatible with higher rents and foreign-born shares in less elastic housing markets. It does not identify immigration's causal rent effect or establish that renters are unharmed. The earlier conversion from a 10% population shock to a 6.5% price rise omitted necessary demand assumptions. [INFERENCE]
+
+## Cross-section and measurement
+
+The analysis reports matching 237 of 269 historical Saiz metro observations to modern outcomes using names. A first-city/state name match is not a geographic boundary crosswalk, and the 32 unmatched observations need not be random. Historical elasticity estimates, current rents, incomes, and population composition also refer to different periods. The author's data remain useful, but merging them does not transfer the identification of the original paper to this new cross-section. [SOURCE: historical matching account; [Saiz author publication/data page](https://urbaneconomics.mit.edu/research/publications); INFERENCE]
+
+The reported least- versus most-elastic quartiles have median rents of $1,343 versus $929: the arithmetic rent premium is **44.6%**. Reported foreign-born shares of 11.6% versus 4.4% give a ratio of **2.64**. These are group descriptions, not effects of elasticity or migration. The original joined panel and scripts were not recovered, so matching, weighting, quartiles, and household-burden construction were not independently reproduced. [SOURCE: historical table; CALCULATION; GAP]
+
+An MSA's median rent divided by its all-household median income is not a household rent-burden measure: tenants and all households are different populations, and a ratio of medians is not the median of household ratios. Even a valid average burden comparison can conceal renters who lose when rents rise. Neither the observed income differences nor a metro-level ratio establishes that migration's rent effect is offset for affected households. Claims about the fraction of immigrants in a metro group also require person weights; an unweighted metro count is not enough. [INFERENCE]
+
+## Corrected elasticity calculation
+
+The earlier calculation effectively divided a 10% population change by supply elasticity 1.51 to obtain about 6.6%. A supply elasticity is a quantity response to a price change; using it for a population-driven equilibrium price forecast requires a demand relationship and a housing-market definition. It is not automatically a rent elasticity. [SOURCE: [Saiz (2010)](https://academic.oup.com/qje/article-abstract/125/3/1253/1903664); DERIVATION]
+
+For an illustrative log-linear market, let supply change be `εs × Δlog P` and demand change be `d − εd × Δlog P`, where `d` is an exogenous housing-demand shift and `εd ≥ 0` the magnitude of demand elasticity. Market clearing gives:
+
+`Δlog P = d / (εs + εd)`.
+
+If `d = 0.10` and `εs = 1.51`, an assumed `εd = 1` gives **0.0398 log points**, approximately 4.0%, rather than 6.6%. Dividing by 1.51 alone corresponds to assuming zero demand elasticity, or to imposing a quantity increase and moving along the supply curve. Neither assumption was stated or estimated. A 10% population change also need not equal a 0.10 log-point housing-demand shift: occupancy, household formation, income, and location choice matter. These numbers illustrate the missing assumptions, not a replacement empirical forecast. [DERIVATION]
+
+## Causal and welfare interpretation
+
+Observed immigrants can select growing or high-wage cities, and supply constraints and regulation can correlate with amenities and prior demand. Cross-sectional signs or t-statistics cannot isolate migration's contribution or rank causal mechanisms. A proposed shift-share instrument needs justified shocks/shares and an exclusion restriction; naming an instrument does not resolve those issues. [INFERENCE]
+
+Rent increases may redistribute income to owners and impose losses on particular renters, while construction and congestion involve real resource costs. Measuring one channel cannot settle net welfare without the relevant counterfactual and incidence. This memo supports examining heterogeneous local effects; it does not establish a national absorption threshold or refute long-run gains. [INFERENCE]
+
+## Revisions
+
+- **2026-09-05:** Corrected the supply-only price calculation, clarified metro versus household estimands and matching limits, and withdrew unsupported causal and welfare conclusions. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Saiz housing supply elasticity × MSA rent and immigrant share — finding
 
 **Date:** 2026-04-18
@@ -130,3 +168,6 @@ hash: 029eef46ab33
 cross_refs: research/immigration-adversarial-review.md, research/immigration-verified-findings-report-2026-04-10.md
 
 end-knowledge-index -->
+
+</details>
+<!-- historical-snapshot:end -->

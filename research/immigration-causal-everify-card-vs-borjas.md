@@ -1,3 +1,35 @@
+# E-Verify: what the existing estimates actually measure
+
+**Current assessment — 2026-09-05.** The repository's E-Verify estimates do not establish a null effect on native low-skill hourly wages and cannot adjudicate Card versus Borjas. The underlying QWI outcome measures a different population and quantity, and the staggered-policy design has unresolved identification limits. This corrects the earlier strong verdict without overturning independently identified results in the published immigration literature. [INFERENCE]
+
+## Outcome and estimand
+
+Census defines QWI `EarnS` as average **monthly earnings for stable full-quarter employment**. The `se` endpoint has no nativity/citizenship variable. Filtering education or industry does not isolate native-born workers; monthly earnings also reflect hours and worker/job composition. [SOURCE: [Census QWI variable definitions](https://api.census.gov/data/timeseries/qwi/se/variables.html)]
+
+Consequently, the reported exposed-industry estimate, log coefficient **0.0051**, SE **0.0081**, concerns covered stable-employment earnings pooled across nativity. It is not a native hourly-wage estimate. Using the stated SE and a normal approximation gives a conditional 95% interval of **−1.07% to +2.12%**, via `100 × (exp(0.0051 ± 1.96 × 0.0081) − 1)`. This reproduces the arithmetic; it does not validate the SE, design, or target population. A minimum detectable effect calculated from that SE has the same limitation. [SOURCE: historical result table below; CALCULATION]
+
+A mandate is an intention-to-treat exposure. Its wage implication depends on whether it changes unauthorized labor supply, and by how much. The reported stable-employment coefficient of −0.063, t≈−1.40, measures neither unauthorized employment nor a precisely estimated first stage. Assuming 50% compliance or treating that point estimate as the labor-supply shock cannot convert the earnings coefficient into a test of a theoretical wage elasticity. Migration between states and shifts into uncovered employment also change what this policy comparison measures. [INFERENCE]
+
+## Identification
+
+Static two-way fixed effects with staggered adoption can mix comparisons between already-treated and newly-treated states when effects differ by cohort or time. Small coefficients or apparently flat pretrends from the same conventional event-study specification do not establish that this problem is absent; nonsignificant pretrends are not evidence of equivalence or proof of parallel counterfactual trends. [SOURCE: [Sun and Abraham, working paper underlying the 2021 publication](https://arxiv.org/abs/1804.05785); INFERENCE]
+
+The stated design therefore needs a recoverable implementation, cohort-appropriate treatment comparisons, a defensible labor-supply first stage, and inference appropriate to the state-level treatment. The underlying causal scripts and panel were not recovered in this audit, so cell effects, clustering, policy timing, and sample construction were not independently verified. These are limits of this repository's estimate, not a finding that all difference-in-differences designs fail. [GAP]
+
+## What survives
+
+The stored results do not show a precisely estimated large increase in their **measured pooled earnings outcome under the fitted specification**. They do not show that native wages are unaffected, that enforcement does not change unauthorized labor supply, or that mass deportation would have the same effect. Native-specific claims require data identifying nativity and an outcome matching the wage question. The original Card (1990) Mariel comparison-city study was not a synthetic-control study; its evidence must be assessed on its own design, as must national skill-cell and other published estimates. See the [repaired Card–Peri review](immigration-dismantle-card-peri-2026-06-25.md). [INFERENCE]
+
+## Revisions
+
+- **2026-09-05:** Corrected the QWI population and earnings definition, withdrew the native-wage null and Card-versus-Borjas adjudication, and separated conditional confidence-interval arithmetic from identification. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # E-Verify staggered DiD on QWI — observed wage-channel test
 
 **Date:** 2026-04-18
@@ -210,3 +242,6 @@ hash: 224b29836cf0
 cross_refs: research/immigration-verified-findings-report-2026-04-10.md
 
 end-knowledge-index -->
+
+</details>
+<!-- historical-snapshot:end -->

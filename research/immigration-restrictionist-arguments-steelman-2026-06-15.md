@@ -1,5 +1,7 @@
 # Restrictionist immigration arguments — steel-man map (2026-06-15)
 
+**2026-09-05 scope correction:** The chains below distinguish attributed arguments from evidence for their premises. Fiscal costs are not total welfare losses, and an omitted cost does not determine the sign of a complete ledger. See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md).
+
 **Question:** What do papers arguing against immigration actually claim, step by step?
 
 **Method:** Read primary sources in staged corpus (Borjas, BGH, Razin, Hanson, Gould, Orrenius/NAS, FAIR); follow argument chains; tag evidence level.
@@ -19,7 +21,7 @@ Restrictionists win politically when they **switch ledgers** the same way expans
 | **L1 Labor** | More immigrants → lower wages / employment for competing natives | Borjas w9755, w11610 | Partial (earnings proxy, no wage panel) |
 | **L2 Subgroup** | Black low-skill men hit on wages, employment, incarceration | BGH w12518 | Not built |
 | **F1 Lifetime fiscal** | Low-education immigrants net fiscal drain over life | NAS 2017 Table 8-13; Orrenius wp1704 | Built (`lifetime_npv`) — **partial ℓ** |
-| **F2 Annual advocacy ledger** | Unauthorized = $150B+ net cost all levels | FAIR 2023 [advocacy] | ITEP floor only; no reconciled FAIR/ITEP/Pew ledger |
+| **F2 Annual advocacy ledger** | Unauthorized = $150B+ net cost all levels | FAIR 2023 [advocacy] | ITEP estimate only; no reconciled FAIR/ITEP/Pew ledger |
 | **C1 Local capacity** | School/shelter loads and homelessness rise in receiver settings | Gould w33655; receiver cities | School layer + episodic CSV |
 | **P1 Political economy** | Low-skill immigration + welfare state → worse policy mix | Razin w15597, w17515 | Not modeled |
 | **A1 Admin** | Border/courts/detention = real taxpayer cost | CBP/ICE budgets; EOIR staged | Cluster J, not allocated |
@@ -35,7 +37,7 @@ Restrictionists win politically when they **switch ledgers** the same way expans
 1. **Premise:** Immigrants and natives with same education are **not perfect substitutes** across experience cells; supply shocks are national, not just local. [SOURCE: Borjas w9755]
 2. **Mechanism:** Immigration shifts supply within education×experience cells → **downward-sloping labor demand** → lower wages for competing workers.
 3. **Evidence:** 10% increase in cell supply → **3–4% wage decline** (1960–2000 censuses + CPS). [SOURCE: Borjas w9755, abstract]
-4. **Local-market critique:** City-level studies (Card) miss effect because **natives and capital leave** — wage hit is diluted geographically. [SOURCE: Borjas w11610]
+4. **Local-market critique:** City-level studies (Card) miss effect if native labor relocates or capital and product demand adjust — wage hit is diluted geographically. [SOURCE: Borjas w11610]
 5. **Migration attenuation:** Native in-migration falls, out-migration rises; local wage effect is **40–60% smaller** than national cell effect because natives flee high-immigrant markets. [SOURCE: Borjas w11610, abstract]
 6. **Policy implication [THEIR WORDS]:** Large low-skill inflows harm competing native workers; restriction / lower inflows protect native wages.
 
@@ -43,11 +45,11 @@ Restrictionists win politically when they **switch ledgers** the same way expans
 
 - **Mariel / area studies:** Card null in Miami; Borjas w21850, w23504 dispute with race/experience composition — **contested**, not settled. [CONTESTED EVIDENCE]
 - **GE offsets:** Peri-Ottaviano complementarity, Clemens capital-tax — partial fiscal/labor offsets. [SOURCE: unified theory M2]
-- **Our E-Verify TWFE:** No statistically significant positive QWI wage effect, cutting against large native wage gains in the observed mandate margin — see `immigration-causal-everify-card-vs-borjas.md`.
+- **Our E-Verify TWFE:** The QWI outcome used is stable/full-quarter average monthly earnings, not native-born hourly wages: the QWI sex-by-education API has no nativity field. A nonsignificant estimate on this outcome does not test a native-wage null. See [the E-Verify memo](immigration-causal-everify-card-vs-borjas.md) and [Census variable definitions](https://api.census.gov/data/timeseries/qwi/se/variables.html).
 
 ### Supported restrictionist insight
 
-National **education×experience** framing is more coherent than “city has immigrants → city wages” for **incumbent workers in competing cells**.
+National education×experience and local-market designs identify different margins under different assumptions. Neither aggregation alone establishes which causal estimate is correct; substitution, migration, capital adjustment and instrument validity need examination. [INFERENCE]
 
 ---
 
@@ -72,7 +74,7 @@ National **education×experience** framing is more coherent than “city has imm
 
 ### Argument structure (academic restrictionists)
 
-1. **Premise:** Immigrants pay taxes and use services over life cycle; education at arrival pins earnings path. [SOURCE: NAS 2017]
+1. **Premise:** Immigrants pay taxes and use services over life cycle; education at arrival predicts earnings paths under the projection’s assumptions. [SOURCE: NAS 2017]
 2. **Mechanism:** Low-education arrivals → low lifetime taxes, high transfer use, **K-12 cost of children** at state/local level.
 3. **Evidence:** `<HS` individual at age 25 → **−$109k** NPV (2012$, CBO outlook, public goods excluded). [SOURCE: NAS Table 8-13; warehouse]
 4. **Orrenius nuance (still negative for low-skill):** If **average** public goods assigned → negative federal+local; costs **concentrated state/local, largely schooling**; marginal public goods → long-run less negative. [SOURCE: Orrenius Dallas Fed wp1704, abstract]
@@ -82,7 +84,7 @@ National **education×experience** framing is more coherent than “city has imm
 
 - Collapse to **one scalar** per origin (Mexico +$46k age-25 education-mix benchmark blocks `<HS`-only "Mexican drain" exports, but is not an all-in origin scalar — see synthesis memo).
 - Ignore **descendants booked separately** — child costs partly in descendant column, not individual.
-- Ignore **ITEP tax floor** ($97B taxes paid by unauthorized) — restrictionists undercount taxes; expansionists undercount costs.
+- ITEP’s $96.7B unauthorized tax estimate is a model-based estimate, not a mathematical floor or a same-universe rebuttal of FAIR. Reconcile year, population, incidence and tax categories before comparing totals. [SOURCE: https://itep.org/undocumented-immigrants-taxes-2024/; INFERENCE]
 
 ### Our warehouse alignment
 
@@ -95,15 +97,15 @@ National **education×experience** framing is more coherent than “city has imm
 ### Argument structure
 
 1. **Premise:** Count all federal, state, local spend on unauthorized + US-born children of unauthorized. [SOURCE: FAIR 2023]
-2. **Numbers:** **$182B** gross cost − **$32B** taxes = **$150.7B net**/yr; **$8,776**/illegal or US-born child of illegal; **15.5M** + **5.4M** citizen children. [SOURCE: FAIR 2023; Congress testimony Kirchner 2024]
+2. **Numbers:** approximately **$182B** gross cost and **$32B** taxes, with a reported **$150.7B net**/yr from the underlying unrounded ledger; **$8,776**/illegal or US-born child of illegal; **15.5M** + **5.4M** citizen children. [SOURCE: FAIR 2023; Congress testimony Kirchner 2024]
 3. **Mechanism:** Education, Medicaid, law enforcement, justice, general public services — **full budget**, not NAS cell.
 4. **Policy implication [FAIR claim, conditional on its contested ledger]:** Massive net drain; every taxpayer **~$956–1,156**/yr.
 
 ### Critical limits [DISCONFIRMATION]
 
-- **Advocacy org**, not peer-reviewed; stock **15.5M** > Pew **14M** [FRAMING-SENSITIVE]
-- **Citizen children** counted as cost of immigration — normative accounting choice
-- Benefit use often at **household** level; tax at **individual** level — asymmetric
+- FAIR is an advocacy estimate. A comparison with Pew must align reference dates and definitions; different-year population figures alone do not establish an error. [INFERENCE]
+- Attributing citizen children to immigrant parents is a cohort/counterfactual and accounting-unit choice. Apply a consistent rule to their costs and taxes over the same horizon. A first-generation-only and a descendant-inclusive ledger answer different questions. [INFERENCE]
+- Household-level benefit data and individual tax records can be reconciled consistently. Asymmetry must be demonstrated in the actual allocation, not inferred from the labels alone; this memo has not completed a matched FAIR/ITEP reconstruction. [UNVERIFIED comparison; INFERENCE]
 - **Compare:** ITEP **$96.7B** taxes (2022, 10.9M stock) — different stock year/method [SOURCE: cluster G]
 - **Our stance:** Use FAIR as an **advocacy high-cost ledger**, not empirical fact and not a proven mathematical upper bound — but **don't ignore** that a full-budget line exists and NAS individual NPV doesn't include it all.
 
@@ -151,11 +153,11 @@ Not in DuckDB — political ℓ layer. Explains why **fiscal sign co-evolves** w
 
 ### Argument structure (political + think-tank, partial academic)
 
-1. **Premise:** Immigration creates **administrative state** costs not in NAS education NPV.
+1. **Premise:** Border, court and detention budgets contain immigration-related spending. A selected NAS education/age cell is not a tailored estimate of every surge-specific administrative response. NAS fiscal accounting itself is broader than education. [SOURCE: NAS 2017; INFERENCE]
 2. **Items:** CBP/ICE **~$29.5B** FY25; detention **~$187/bed-day**; EOIR court backlog; asylum processing. [SOURCE: cluster J]
-3. **Mechanism:** More unauthorized / more asylum → more apprehensions, bed-days, court cases → **marginal taxpayer cost per entrant**.
+3. **Mechanism:** Caseload changes may change incremental spending, but total agency budgets also include fixed costs, other activities and policy-chosen enforcement intensity. Dividing a total budget by entrants does not identify marginal cost. [INFERENCE]
 4. **FAIR line items:** Law enforcement, justice, general expenditures in **$182B** gross. [SOURCE: FAIR 2023]
-5. **Policy implication:** Even immigrants who pay some taxes **impose enforcement externalities**.
+5. **Policy implication:** Enforcement may impose fiscal costs alongside taxes and other effects. Their size depends on the policy counterfactual; gross budgets do not establish an immigrant’s net fiscal or welfare effect. [INFERENCE]
 
 ### Our gap
 
@@ -166,7 +168,7 @@ Cluster J mined budgets; **not allocated** to `mexico_origin` or unauthorized pa
 ## Borjas welfare assimilation (w4872) — older fiscal thread
 
 1. **Claim:** Immigrant welfare use **rises with assimilation** (time in US) — opposite of naive “they don't use benefits.” [SOURCE: Borjas w4872 — corpus; not re-read full text this session]
-2. **Use in restrictionist rhetoric:** Amnesty / long residence → **higher fiscal cost** over life.
+2. **Use in restrictionist rhetoric:** Longer residence or legalization can increase benefit eligibility. Neither a duration profile nor higher benefit use alone identifies a causal increase in lifetime net fiscal cost; taxes, selection and cohort composition also change. [INFERENCE]
 3. **Pairs with:** Razin magnets, Bitler-Hoynes PRWORA participation patterns [SOURCE: cluster C generators]
 
 ---
@@ -180,7 +182,7 @@ From `immigration-economist-rhetorical-failures.md` — **mirror image**:
 | Ledger switch | NAS `<HS` lifetime → “all immigration” |
 | Flow → stock | CBP encounters → “millions living here” |
 | Advocacy high-cost ledger | FAIR $150B; Gould 60% homelessness as episodic-city evidence |
-| Erase offsets | Ignore ITEP taxes, Clemens capital tax, CBO GDP |
+| Erase offsets | Ignore ITEP taxes, Clemens capital-tax channel; CBO fiscal effects (GDP is a separate output measure) |
 | Capacity as proof | NYC shelter = entire national story |
 | Subgroup → average | BGH black effects → all natives harmed |
 
@@ -188,7 +190,7 @@ From `immigration-economist-rhetorical-failures.md` — **mirror image**:
 
 > Low-skill, surge-era, unauthorized-heavy inflows can be **federal-positive on thin annual cash-flow** while **lifetime-negative on education cells**, **locally severe in shelter/school-capacity ledgers**, and **administratively expensive** — and these are **compatible**.
 
-That is essentially our unified theory sentence 1 — the restrictionist case is best supported on **layer multiplication**, and weakest when it collapses those layers into **single-scalar panic**.
+The quoted June formulation is an illustration of compatible signs, not evidence that one measured cohort has all of those signs. The concrete claim requires matching cohort, counterfactual, horizon and fiscal coverage. Cost concentration can coexist with aggregate gains; fiscal balance is not incumbent welfare. [INFERENCE]
 
 ---
 
@@ -208,12 +210,12 @@ That is essentially our unified theory sentence 1 — the restrictionist case is
 
 | Restrictionist claim | Status |
 |---------------------|--------|
-| All immigrants fiscal negative | **False** — NAS BA/+ cells strongly positive |
+| All immigrants fiscal negative | Contradicted within NAS scenarios by positive BA/+ cells; not a claim about every real-world policy or cohort |
 | All immigration hurts average native wages | **Contested** — Card/null areas; small average effects |
-| 10M encounters = 10M new illegals | **False** — stock +3.5–5.6M |
+| 10M encounters = 10M new illegals | Invalid inference — encounters are events and include repeat encounters; unique entrants and resident-stock change require separate accounting |
 | Crime wave from unauthorized | **Unsupported by observed U.S. justice-system-rate evidence** — true-offending and current-surge subgroup scope remain narrower |
 | Local shelter/school shock in surge cities | **Supported as gross episodic receiver-stress layer** — Gould 60%, NYC $B; not net/system-collapse proof |
-| Low-skill lifetime fiscal negative (individual NAS) | **True under NAS assumptions** for `<HS` cell |
+| Low-skill lifetime fiscal negative (individual NAS) | Negative in the specified age/education/horizon NAS cell and assumptions; not a universal low-skill fiscal or welfare theorem |
 | +$46k Mexico = net contributor all-in | **Unsupported / invalid scalar export** — missing admin, courts, full local |
 
 ---
@@ -259,3 +261,5 @@ That is essentially our unified theory sentence 1 — the restrictionist case is
 | 2026-06-16 | Marked the FAIR taxpayer-drain policy implication as FAIR's conditional claim, not the repo's unqualified conclusion. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Scoped the crime-wave disconfirmation row to observed U.S. justice-system-rate evidence rather than true offending or all current-surge subgroups. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Marked the welfare-magnet policy implication as a Razin-style model claim rather than an unqualified repo finding of fiscal unsustainability. See `immigration-conclusion-audit-running-fixes.md`. |
+
+- **2026-09-05 — Scoped native-wage, fiscal, administrative-cost and cohort comparisons** See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md). Historical revision entries above describe the earlier state, including conclusions superseded here.

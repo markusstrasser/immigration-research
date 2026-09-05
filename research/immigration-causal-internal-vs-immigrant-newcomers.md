@@ -1,3 +1,33 @@
+# Domestic-origin moves versus moves from abroad
+
+**Current assessment — 2026-09-05.** The corrected comparison is useful as a description of the typical sampled county's gross inflows. It does not compare native people with immigrants or identify which group causes more housing or fiscal pressure. [INFERENCE]
+
+## Corrected quantities and remaining comparability limits
+
+The prior flow reconstruction reports a **21.7× ratio of county medians** and a **20.5× median of county-level ratios** among counties with nonzero moved-from-abroad share. The earlier 33× figure used an invalid stock-to-flow conversion and remains superseded. The two corrected statistics answer different aggregation questions and need not be equal. Ratios of rounded displayed medians need not exactly reproduce ratios computed from full-precision inputs. [SOURCE: historical correction retained below]
+
+The domestic measure uses IRS migration records for 2022–2023; the abroad measure uses an ACS 2022 five-year residence-one-year-ago estimate. The latter pools survey years, so these are not perfectly aligned calendar-year flows. IRS filing/exemption coverage and the ACS survey universe also differ. The ACS “from abroad” population includes returning U.S. citizens; IRS movers can be foreign-born. Neither geographic-origin category is a nativity label. [SOURCE: [IRS migration data description](https://www.irs.gov/statistics/soi-tax-stats-migration-data), [ACS B07001 table definitions](https://api.census.gov/data/2022/acs/acs5/groups/B07001.html); INFERENCE]
+
+These figures were not recomputed here because the joined causal-flow artifacts were not recovered. They remain reported outputs of the earlier correction, with no fresh verification of county inclusion, weighting, or exact source columns. [GAP]
+
+## What the ratio can and cannot explain
+
+A median across counties gives each sampled county equal influence. It is not the experience of the median resident, a national ratio of total movers, or an estimate for high-arrival receiver cities. Gross inflows also differ from net population change: domestic inter-county migration redistributes population inside the United States, while total international net migration must account for both arrivals and departures. [INFERENCE]
+
+Local newcomers can generate housing demand regardless of nativity, which is a reasonable mechanism to investigate. The relative counts alone do not hold constant household size, income, existing housing vacancies, out-migration, service eligibility, age, or arrival concentration. They therefore cannot establish equal per-person effects or show that immigration-specific costs are small. Nor does a higher rate of domestic churn refute localized pressure from international arrivals. [INFERENCE]
+
+See the [current causal synthesis](immigration-causal-paradigm-escape-synthesis-2026-04-18.md) for the implications, with the old calculation and correction preserved below.
+
+## Revisions
+
+- **2026-09-05:** Retained the prior stock-to-flow correction while clarifying survey windows, geographic origin versus nativity, county aggregation, and gross versus net population change. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Domestic migration vs moved-from-abroad counts
 
 Supersession note: for the corrected `typical resident / renter / child` exposure framing, read [immigration-resident-weighted-exposure-2026-04-22.md](research/immigration-resident-weighted-exposure-2026-04-22.md). This file remains useful for the county-level descriptive geography, but not as the best population-exposure summary. [SOURCE: research/immigration-resident-weighted-exposure-2026-04-22.md]
@@ -63,3 +93,6 @@ hash: current
 cross_refs: research/immigration-confidence-ladder.md, sources/immigration-causal/scripts/analyze_internal_vs_immigrant_newcomers.py
 
 end-knowledge-index -->
+
+</details>
+<!-- historical-snapshot:end -->

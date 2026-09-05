@@ -1,3 +1,37 @@
+# Full-spectrum fiscal and welfare channels: inclusion requires compatible evidence
+
+**Current assessment — 2026-09-05.** The old score can organize attention, but it cannot determine which channels belong in a monetary “core bound.” Its additive rubric allows persistence and monetizability to compensate for missing evidence, and its selected adverse sensitivity additions do not constitute a calibrated bound. [INFERENCE]
+
+## Why the numerical gate fails
+
+The old rule is `E + A + M + P − D ≥ 7`. A channel with **zero evidence**, but E=0, A=3, M=3, P=3, D=0, scores **9** and passes. A channel with **no credible monetization**, E=3, A=3, M=0, P=3, D=0, also scores **9**. The “no fatal attribution problem” exception does not cure these examples. Ordinal scores have no validated common unit, and neither a high score nor long persistence creates a defensible dollar amount. [DERIVATION]
+
+The historical channel scores therefore remain judgmental research-priority labels only. They do not establish confidence levels, authorize automatic numerical inclusion, or turn an estimated central value into an upper/lower bound. [INFERENCE]
+
+## Conditions for any monetary calculation
+
+Each included term needs an explicit population/status definition, counterfactual, payer/beneficiary, time horizon, monetary measure, and uncertainty basis. Evidence must identify or transparently assume the incremental quantity; costs, offsets, and transfers must use compatible scopes and avoid overlap. A missing necessary input is not repaired by high scores elsewhere. [INFERENCE]
+
+CBO's post-2021 surge population and ITEP's unauthorized-resident population are not automatically the same group, year, or accounting exercise. CBO's budget estimates include modeling; “directly measured” is not a description of every component. A court backlog count is not a dollar cost, nor is the cost of administering an existing system automatically the marginal cost of an additional migrant. [SOURCE: [CBO state/local report](https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf), historical source definitions; INFERENCE]
+
+Federal and state/local effects can be combined only after resolving intergovernmental transfers, overlapping program expenditure, timing, and the population of interest. For a lifetime/cohort objective, children's later costs and contributions matter; a clearly labeled short-run budget snapshot need not pretend to be a lifetime calculation. Estimated budget changes, production changes, and global welfare changes are separate accounting objects. [INFERENCE]
+
+## Sensitivity and welfare
+
+Adding one or two adverse channels is a scenario, not a statistically defensible negative tail. A bound needs restrictions supporting its extremes; correlated channels and joint feasibility matter. Positive channels and offsets should be represented on the same stated basis, without treating every plausible benefit as a measured dollar either. Political changes are not inherently welfare losses independent of the chosen objective. [FRAMING-SENSITIVE; INFERENCE]
+
+Rent payments and many public transfers redistribute income rather than automatically destroy global resources. Service congestion can be a real nonbudgetary loss, but it must not be counted again if an expenditure estimate already captures its compensating resource cost. Native wage associations, tax-base effects, and employer noncompliance cannot be independently summed without examining their overlap. [INFERENCE]
+
+## Revisions
+
+- **2026-09-05:** Removed the score as a numerical-inclusion gate using explicit counterexamples, and distinguished priority labels, scenarios, identified incremental costs, and actual bounds. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Full-Spectrum Costs of Unauthorized Immigration — Bounded Scoring Model
 
 **Question:** How should we score long-run cost channels without presupposing a conclusion or laundering weak claims into a single giant number?
@@ -131,3 +165,6 @@ You can stack narrative channels too, but then it is a **scenario**, not an esti
 This model is best used as a gatekeeper before anyone tries to produce a headline NPV.
 
 It does not tell you the answer. It tells you which channels deserve numeric inclusion, which belong in sensitivity analysis, and which should remain narrative unless better evidence arrives.
+
+</details>
+<!-- historical-snapshot:end -->

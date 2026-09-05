@@ -1,3 +1,35 @@
+# Receiver synthetic comparisons: divergence without identified overload
+
+**Current assessment — 2026-09-05.** The reported synthetic comparisons are useful diagnostics of how selected shelter outcomes differ across places. They do not establish Denver as a causally identified physical-overload “survivor,” Chicago as a proven capacity failure, or Boston as an institution-caused high-cost case. The weak ratio-placebo results and unresolved denominator/support problems remain binding. [INFERENCE]
+
+## What was compared
+
+The historical design fits 2018–2021 CoC outcome paths, treats 2022 as the common intervention start, excludes selected recipient/border hubs, and compares ratios and log counts through 2024. Actual arrival timing can differ by city; treatment, donor spillovers, COVID-era reporting, and CoC boundary/program consistency need checking. A common calendar cutoff is not random assignment. The original panel, donor weights, and fitting code were not recovered here. [SOURCE: historical design; GAP; INFERENCE]
+
+The reported Chicago log gaps of 1.380 for sheltered counts and 1.062 for total homelessness exponentiate to **3.97× and 2.89×**, respectively. That arithmetic is correct **relative to the fitted log-scale comparator**. If weights are applied to donor log counts, exponentiation gives a weighted geometric comparator, not the arithmetic weighted count. Neither ratio is automatically a causal increase from immigration. [SOURCE: historical results; DERIVATION]
+
+A post-period level gap must be assessed against pre-period fit and common support. NYC's reported 2.957 log-point gap is roughly 19.24× the fitted level, making size and pre-fit diagnostics essential before calling it new divergence. A concentrated Seattle donor weight is a sensitivity issue, not by itself proof of invalidity; equally, its sign cannot validate a counterfactual that fails to match the prior level/path. [SOURCE: historical NYC weights/gaps; DERIVATION; INFERENCE]
+
+## Ratios, counts, and inference
+
+Shelter use and inventory can both respond to arrivals and policy. More sheltered people with a muted ratio can reflect added capacity, changes in who is counted, or other forces; it does not show that capacity “failed to keep absolute load down.” Absolute homelessness is an outcome, not a direct excess-demand measure. HUD's sheltered/unsheltered populations and shelter versus permanent-housing program inventories must be aligned. [SOURCE: [HUD 2024 AHAR](https://www.huduser.gov/portal/sites/default/files/pdf/2024-AHAR-Part-1.pdf); INFERENCE]
+
+The reported filtered ratio-placebo p-values are high (for example Denver about 0.71 and 0.89). They do not show unusually large treatment statistics under that comparison scheme. They also do not prove no effect or equivalence. The absolute-count outcomes did not receive the same placebo procedure; their visible gaps cannot borrow inferential support from a different outcome. [SOURCE: historical placebo section; INFERENCE]
+
+## What remains
+
+The original comparisons challenge a universal shelter-saturation story: the cases differ across ratios, counts, and costs. That is a useful descriptive warning. Boston's low ratio does not isolate procurement or legal regime as the cause of statewide spending, and a high ratio elsewhere does not itself establish physical overflow or migration attribution. The fiscal, housing, and election questions need matched populations and distinct causal evidence. No previously qualified case is promoted back to a confirmed receiver-overload finding by this audit. [INFERENCE]
+
+## Revisions
+
+- **2026-09-05:** Retained the earlier weak placebo result and case heterogeneity; clarified log/count arithmetic, pre-fit support, endogenous inventory, and the absence of identified causal overload. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Immigration receiver counterfactuals — 2026-04-22
 
 **Question:** What happens if we stop using counties as the donor pool and instead build synthetic-control style shelter counterfactuals for the main receiver nodes using the national CoC panel?  
@@ -180,3 +212,6 @@ The best current counterfactual statement is:
 6. `NYC` still needs a more stable counterfactual design than the current highly concentrated donor match
 
 That is a narrower, better claim than either “county thresholds prove it” or “the receiver cases disappear under counterfactuals.” [INFERENCE]
+
+</details>
+<!-- historical-snapshot:end -->

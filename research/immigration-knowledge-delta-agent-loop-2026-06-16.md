@@ -1,5 +1,7 @@
 # Immigration knowledge delta and autonomous research loop (2026-06-16)
 
+**2026-09-05 scope correction:** This is a June knowledge/loop record, not a current causal or data-validity certificate. The old Mexico annual fiscal numbers are withdrawn; raw data are now available at the canonical drive path. QWI monthly earnings cannot identify native-born wage effects, and synthetic arrival cohorts are repeated cross-sections, not a person panel. See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md).
+
 **Question:** What do we know now that we did not know two days ago, and what loop should an agent run to reduce constant human steering of search space and narrative?
 
 **Comparison baseline:** state before the 2026-06-15 fiscal sweeps and the 2026-06-16 conclusion audit. At that point, the repo already had the April wage/housing/capacity/crime/surge analyses and the 2026-06-11 CHNV/receiver-election correction, but not the June 15-16 fiscal tensor, denominator audit, or model-review cleanup pass.
@@ -8,7 +10,7 @@
 
 ---
 
-## 1. Net Change Since Two Days Ago
+## 1. Historical June knowledge change, with current corrections
 
 ### A. The fiscal story moved from scalar debate to ledger tensor
 
@@ -32,7 +34,7 @@ The June 16 Opus review then caught the mirror-image bug: the school numerator s
 - full microsim adults: `8,496,334`
 - current guarded `v_three_layer_annual` now withholds origin `school_per_adult` and `net_crude_per_adult`.
 
-**New knowledge:** both the negative and positive Mexico `federal - school` signs were artifacts. The current live scalar is only the narrow federal annual proxy (`~$1,519/adult/yr`); full-stock origin school sign is unresolved until same-universe rebuilt.
+**Current correction (2026-09-05):** The earlier school sign changes exposed a universe mismatch. The remaining ~$1,519/adult federal annual proxy was subsequently found invalid too: household/person allocation and education coding require rebuilding. No old Mexico fiscal scalar remains validated by that June exercise. [SOURCE: ../decisions/2026-09-05-material-inference-repair.md]
 
 ### C. The NAS Mexico headline was relabeled
 
@@ -44,14 +46,14 @@ The June 16 Opus review then caught the mirror-image bug: the school numerator s
 
 Two days ago, short forms still overread E-Verify as a broad Card-side or Borjas-rejection result. Current wording:
 
-- no statistically significant positive QWI wage effect in the observed mandate margin;
-- the source memo's E1 exposed-industry wage CI excludes gains above about `+2.1%`, with MDE roughly `2-3%` before compliance sensitivity;
-- large native wage gains are not observed in that static-TWFE mandate margin, while heterogeneity-robust staggered-DiD remains an unresolved check;
+- the June model reported no statistically significant positive QWI monthly-earnings estimate; the outcome contains all covered stable employees, with no nativity split;
+- the June exposed-industry confidence interval/MDE concern that monthly-earnings outcome and the fitted design, not native-born hourly pay;
+- native-born wage gains are not identified by this QWI outcome; heterogeneous-treatment and other design checks cannot create a missing nativity dimension;
 - small effects and scaled-shock Borjas benchmarks are not ruled out;
 - the E1 employment point estimate is negative but nonsignificant (`t=-1.40`, `p≈0.16`);
 - adjustment channels remain hypotheses, not measured mechanisms.
 
-**New knowledge:** E-Verify is a useful marginal enforcement wage-channel test, not a direct surge, mass-deportation, or open-borders test.
+**Current interpretation:** This is a policy-margin analysis of the recorded QWI earnings/employment outcomes, with remaining design limits. It does not identify native-born wages or transfer automatically to a surge, mass deportation or open-borders counterfactual. [INFERENCE]
 
 ### E. The surge/capacity evidence became descriptive rather than causal
 
@@ -69,7 +71,7 @@ Receiver-city gross loads are real and large. The 2024 receiver election associa
 The observed-rate conclusion survives, but it is now explicitly:
 
 - observed arrest/conviction/incarceration rates, not true offending;
-- aggregate Texas ratios with race-composition caveats;
+- aggregate Texas ratios, with demographic standardization a distinct question;
 - Lott classification critique as serious unresolved critique, not independently verified flaw.
 
 **New knowledge:** the pro-immigration crime conclusion remains strong directionally, but the estimand is narrower.
@@ -86,15 +88,15 @@ The llmx Opus/GPT and Cursor passes were most valuable at finding internal contr
 
 ---
 
-## 2. Current Truth State
+## 2. Updated interpretation of the June claims
 
-The narrative is now:
+The interpretation after the September measurement corrections is:
 
 1. **No scalar verdict.** Immigration fiscal effects are layer-specific and universe-specific.
-2. **Federal annual proxy:** Mexico-origin full microsim row remains about `+$1,519/adult/yr`.
+2. **Withdrawn numerical result (2026-09-05):** The earlier +$1,519/adult, +$12.9B annual Mexico result and derived native comparison are invalid pending correction of household-to-person allocation and education codes. They must not be consumed as a current fiscal estimate. See the September decision. [SOURCE: ../decisions/2026-09-05-material-inference-repair.md]
 3. **School/full-stock origin row:** unresolved after same-universe guard.
 4. **NAS benchmark:** Mexico education mix looks positive under age-25 NAS cells, but that is not current-stock lifetime NPV.
-5. **Wages:** observed E-Verify/sanctuary-style policy margins cut against large native wage gains where the source CI/MDE supports that read, not all wage effects; static-TWFE estimates remain design-dependent until heterogeneity-robust checks run.
+5. **Earnings:** the QWI E-Verify analysis does not identify native-born wages; its monthly-earnings estimate and confidence interval apply only to its measured population and fitted policy design.
 6. **Capacity/surge:** receiver gross load and county load/capacity screens are real descriptive signals; mechanisms and welfare signs remain open.
 7. **Crime:** lower observed justice-system rates remain supported; true-offending and subgroup generalization remain lower confidence.
 
@@ -236,3 +238,18 @@ The key is not "more agents." It is parent-controlled epochs: dispatch, read, ve
    Preserve observed-rate conclusion while testing whether recent-surge origin mix or second-generation patterns change any local claims.
 
 The next loop should start with frontier 1, because it gates several fiscal narratives and has a concrete denominator invariant.
+
+## Current interpretation and acquisition status (2026-09-05)
+
+The canonical data root is `/Volumes/2TBPNY/research-data/immigration-fiscal/data`; current raw-data access supersedes June statements that the old `sources` symlink proves the data absent. A completed build or populated table is not scientific validation. The fiscal allocation/education rebuild must precede using its derived Mexico annual estimate or native ratio. [SOURCE: current filesystem inspection and September decision]
+
+The QWI sex-by-education API has no nativity/citizenship dimension. `EarnS` is average monthly earnings of stable/full-quarter employees, not an hourly wage. Consequently the June loop’s E-Verify result cannot establish a native-born wage null. Non-significance on its actual outcome also does not prove zero or exclude an economically important effect without an interval and design assessment. [SOURCE: https://api.census.gov/data/timeseries/qwi/se/variables.html; INFERENCE]
+
+`build_immigrant_assimilation_profile.py` follows origin×arrival-decade cells across independent census/ACS samples with a changing age-25–64 composition and positive-income conditioning. This reduces one cross-cohort mixing problem but does not remove all cohort-quality, age, period or selective-migration differences; it does not observe within-person assimilation. CPS parental birthplace supports a distinct second-generation comparison and should not be confused with ACS ancestry self-identification. [SOURCE: local builders; INFERENCE]
+
+CBO 60165 projects a roughly $897B reduction in covered federal deficits over 2024–2034; it includes mandatory spending/net interest and excludes discretionary appropriations and state/local budgets. Its roughly $0.2T discretionary illustration is a scenario, not a verified bound. The projection, NAS fiscal NPVs and an annual local ledger cannot be combined without matching population, horizon and counterfactual. [SOURCE: https://www.cbo.gov/publication/60165; INFERENCE]
+
+
+## Revisions
+
+- **2026-09-05 — Separated historical loop results from corrected measurement and current data status** See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md). Historical revision entries above describe the earlier state, including conclusions superseded here.

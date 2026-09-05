@@ -1,3 +1,33 @@
+# Resident-weighted exposure: a change of estimand, not measured harm
+
+**Current assessment — 2026-09-05.** Weighting county measures by residents or renter households answers a more relevant aggregation question than an unweighted county median for some purposes. It does not measure a typical individual's actual immigrant contact, a native incumbent's exposure, or the causal cost of immigration. The underlying weighted panel was not recovered for replication. [INFERENCE; GAP]
+
+## What the numbers mean
+
+The historical outputs report domestic-origin inflow and moved-from-abroad shares of approximately 4.51% and 0.56% under population weighting. Their ratio is **about 8.05**, consistent with the reported 8.1 after rounding. The renter-household-weighted ratio is reported as 7.1. These are **ratios of weighted means**, not weighted mean ratios or the exposure ratio of a median resident. The earlier approximately 20.4 county-median ratio concerns a different aggregation and may also reflect a different joined sample than the 20.5/21.7 summaries elsewhere. No exact equality across samples is asserted. [SOURCE: historical summaries; CALCULATION]
+
+For county shares `x_i` and weights `w_i`, the weighted mean is `Σw_i x_i / Σw_i`. Population weighting describes the **mean county-level measure assigned to a randomly selected sampled resident**. Renter-household weighting describes the mean county-level measure assigned to a sampled renter household; it does not weight renter persons equally. A weighted mean is not the median or a statement about how most individuals experience an outcome. [DERIVATION]
+
+## Universe and exposure
+
+Moved-from-abroad is geographic origin and includes returning U.S. citizens. Domestic movers can be foreign-born. The “recent foreign-born annual” measure is an arrival-period resident stock divided by 12, not observed annual arrivals. Reweighting cannot repair those definitions or align the IRS and ACS observation windows. [SOURCE: [domestic/abroad correction](immigration-causal-internal-vs-immigrant-newcomers.md), [capacity exposure correction](immigration-capacity-falsification-2026-04-21.md); INFERENCE]
+
+The reported top-exposure fifth of counties contains 65.0% of residents and 71.4% of renter households; the reported hotspot contains 22.2% and 24.9%, respectively. These are shares **within the retained analytical sample**, not automatically national totals. They establish the geography of the chosen county proxy if the underlying joins are valid, not the fraction of residents harmed or housed in an overloaded program. The hotspot itself depends on selected exposure/permit cutpoints. [SOURCE: historical table; INFERENCE]
+
+Current resident and household weights include immigrants and can change because of migration and sorting. They are not pre-treatment native-incumbent weights. County averaging also masks neighborhood, tenure, age, and program differences. More renter households in high-proxy counties does not prove higher causal rent losses there. [INFERENCE]
+
+The useful correction is to name the target and denominator explicitly. Retain unweighted geography summaries when that is the question, and use appropriately defined resident or subgroup summaries when that is the question; neither alone is a welfare or causal estimate. [INFERENCE]
+
+## Revisions
+
+- **2026-09-05:** Retained the weighting correction while distinguishing weighted means, medians, populations, geographic-origin measures, stock-derived proxies, and causal incidence. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Immigration resident-weighted exposure correction — 2026-04-22
 
 **Question:** How much did the county-median newcomer framing distort the typical resident, renter, and child exposure story?  
@@ -110,3 +140,6 @@ The corrected newcomer framing is:
 3. `renter-weighted` and `child-weighted` views are better for housing and school-incidence questions
 
 That is a real measurement upgrade, not a cosmetic rewrite. [INFERENCE]
+
+</details>
+<!-- historical-snapshot:end -->

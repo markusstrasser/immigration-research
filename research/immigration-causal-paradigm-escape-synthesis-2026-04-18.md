@@ -1,3 +1,43 @@
+# Synthesis: data, causal estimates, and welfare assumptions
+
+**Current assessment — 2026-09-05.** The earlier synthesis combined measured associations with causal claims and assumed welfare calculations. Those layers need to be separated. The evidence does not establish a native-wage null, an empirically dominant housing-regulation mechanism, or a welfare verdict independent of assumptions. [INFERENCE]
+
+## What the enforcement and housing exercises establish
+
+QWI `EarnS` measures stable-employment monthly earnings; the `se` endpoint has no nativity variable. The repository's pooled-earnings policy regressions therefore do not measure native hourly-wage effects. Running several variants of that panel does not create independent native-wage evidence. See the [E-Verify correction](immigration-causal-everify-card-vs-borjas.md), including the unresolved labor-supply first stage and staggered-treatment comparison problem. [SOURCE: [Census QWI variables](https://api.census.gov/data/timeseries/qwi/se/variables.html); INFERENCE]
+
+The reported MSA regression's nonsignificant foreign-born-share coefficient and significant regulation-index coefficient do not prove that regulation causes the observed rent pattern while immigration does not. The variables have different units, and regulation, migration, incomes, and prices can be jointly determined. Comparing t-statistics or whether p crosses 0.05 is not a test of causal explanatory dominance. A well-identified primary housing study can provide separate evidence; this cross-section does not inherit that identification by using its covariates. [INFERENCE]
+
+Likewise, the corrected median-county domestic/abroad flow ratios, about 21.7 for the ratio of medians and 20.5 for the median of nonzero county ratios, are reported descriptive statistics. They do not classify natives, measure net national population growth, or show the fiscal cost of one kind of mover relative to another. Gross arrivals over several years are not the fraction of a population “replaced,” because departures, repeat moves, and the denominator must be accounted for. [SOURCE: [flow review](immigration-causal-internal-vs-immigrant-newcomers.md); INFERENCE]
+
+## Production and deportation simulations
+
+The earlier simulation reports a first-order output change around $1.45 trillion and a Type-II multiplier sensitivity around $2.32 trillion. These are model outputs, not measured deportation effects. Before either is expressed as a percentage of GDP, the underlying quantity must be verified as **value added**, rather than gross industry output; input-output totals and GDP are not interchangeable. The underlying calculation was not recovered in this pass, so this synthesis does not validate the 5.3% or 8.5% GDP labels. [SOURCE: historical simulation claims below; GAP]
+
+A calculation removing 7 million workers also needs a consistent worker denominator distinct from the headline count of unauthorized people. Capital, wages, substitution, vacancies, prices, enforcement costs, and the time path govern the adjustment. Total production lost is not automatically an equal welfare loss to remaining residents. The multiplier endpoint is a sensitivity scenario, not an independently identified effect. These requirements qualify the simulation; they do not establish that its mechanism or sign is false. [INFERENCE]
+
+## Welfare weights are assumptions, not estimated findings
+
+Let `N` be the net welfare change for the existing population and `M > 0` the migrant gain, both in comparable units and after avoiding transfer double counting. With migrant weight `w`, the stipulated objective is `W = N + wM`. If `N < 0`, break-even is `w* = −N/M`; if instead `N ≥ 0`, zero migrant weight does not itself imply a negative result. [DERIVATION]
+
+Assuming native losses equal 25% of migrant gains makes `w* = 0.25` by construction. It does not estimate that threshold from the data, and exactly 0.25 is break-even rather than a strictly positive outcome. Observing that a memo omits migrant gains also does not identify the author's or reader's welfare weight. The former weight table was a preference-and-parameter illustration, not an empirical policy verdict. [DERIVATION; FRAMING-SENSITIVE]
+
+Higher rents can hurt renters and benefit property owners; gross rent transfers cannot be subtracted again as global resource loss. U.S. housing starts divided into hypothetical multi-country arrivals do not identify a global construction limit, and short-run capacity cannot by itself refute eventual long-run gains. See the repaired [global-GDP review](immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md) and [break-even bounds](immigration-open-borders-break-even-bounds-2026-04-22.md). [INFERENCE]
+
+## Evidence status
+
+The cross-sectional and enforcement artifacts were not recovered for independent replication. Historical tool-performance verdicts, interrupted jobs, and earlier disk constraints are retained below as session history, not economic evidence or current infrastructure state. The defensible synthesis keeps published causal evidence, exploratory repository associations, unvalidated simulations, and explicit welfare choices separate. [GAP; INFERENCE]
+
+## Revisions
+
+- **2026-09-05:** Corrected outcome and causal-identification claims, marked the output/GDP conversion unverified, and derived the welfare-weight threshold with its actual assumptions. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Paradigm-escape cycle synthesis (2026-04-18, evening)
 
 **Cycle goal:** Run Paths A + B + C from the brainstorm — sharpen the prior cycle's findings (Saiz decomposition, Foged-Peri lag, mass-deportation simulation) AND escape the prior frame (open-borders calibration, domestic-vs-abroad mover comparison, sanctuary city DiD).
@@ -158,3 +198,6 @@ hash: cb845f425587
 cross_refs: research/immigration-causal-everify-card-vs-borjas.md, research/immigration-causal-internal-vs-immigrant-newcomers.md, research/immigration-causal-saiz-elasticity-rent.md, research/immigration-causal-synthesis-2026-04-18.md
 
 end-knowledge-index -->
+
+</details>
+<!-- historical-snapshot:end -->

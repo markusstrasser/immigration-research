@@ -1,3 +1,27 @@
+# Research frontier: measuring incidence without presuming failure
+
+**Current assessment — 2026-09-05.** The earlier decision to demote the county annual panel from causal proof to exploratory screening remains sound. Moving to receivers, resident weights, or algebraic bounds can clarify the question; none of those moves by itself identifies causality or supplies missing welfare quantities. [INFERENCE]
+
+Receiver locations can be useful units when administrative outcomes match those places. Selecting mainly places already described as failures, however, cannot establish how often arrivals cause failure or compare causal mechanisms fairly. Comparison places, timing, comparable service definitions, and exposure measurement still matter. Bus routing, procurement, and shelter rules are candidate mechanisms, not exogenous “shocks” merely because they differ across places. [INFERENCE]
+
+Population weights change the estimand from a county distribution toward the county-level exposure of a randomly selected resident. Renter-household or child weights answer other aggregation questions. They do not establish individual exposure, native-incumbent incidence, or causal harm, and current resident weights may change after migration. The [weighted-exposure repair](immigration-resident-weighted-exposure-2026-04-22.md) preserves that distinction. [INFERENCE]
+
+The earlier necessary condition that local harm must survive resident reweighting and replacement of stock with institution-specific measures is too strong. Harm to a subgroup can coexist with a small average, and a poorly measured replacement proxy can attenuate a real effect. Failure on such a screen challenges that operationalized prediction, not every local-harm hypothesis. Conversely, surviving the screen does not establish harm. [INFERENCE]
+
+The inequality “gains exceed destination losses plus origin losses” is an accounting identity only if its terms are complete, measured on a common welfare basis and time horizon, and not double-counted. Rent transfers, gross fiscal outlays, production, and welfare are not interchangeable terms. A calibrated break-even equation is conditional on its inputs, not an empirical bound merely because it is algebraic. [SOURCE: [repaired break-even analysis](immigration-open-borders-break-even-bounds-2026-04-22.md); INFERENCE]
+
+The subsequent receiver atlas and synthetic comparisons remain informative descriptions with weak ratio-placebo evidence, endogenous inventory, and geography/support limits. This rethink does not restore any previously weakened overload or generic county-threshold claim. The original research priorities are retained below as history; they are not completed causal results or a mandate for further unconstrained threshold search. [SOURCE: [receiver correction](immigration-receiver-counterfactuals-2026-04-22.md); INFERENCE]
+
+## Revisions
+
+- **2026-09-05:** Retained the county causal downgrade and corrected selection, weighting, and purported necessary-condition logic in the proposed replacement designs. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Immigration frontier rethink — 2026-04-22
 
 **Question:** After the county `flow/capacity` falsification pass weakened the annual wage/employment causal reading, what is the right next frontier?  
@@ -170,3 +194,6 @@ This memo records the first explicit rethink after the corrected falsification p
 Later the same day, the first execution pass on that frontier landed. It built a receiver-node failure atlas, repaired the newcomer framing with resident-weighted exposure summaries, and converted the open-borders baseline into explicit break-even bounds. [SOURCE: research/immigration-receiver-failure-atlas-2026-04-22.md] [SOURCE: research/immigration-resident-weighted-exposure-2026-04-22.md] [SOURCE: research/immigration-open-borders-break-even-bounds-2026-04-22.md]
 
 The next execution pass then tried the obvious causal upgrade: national-CoC synthetic controls for the receiver nodes. That split the cases more cleanly: `Denver` stayed the clearest physical-overload survivor, `Chicago` reappeared once absolute counts were checked against denominator endogeneity, `Boston` stayed outside the physical-overload bucket, and `NYC` remained directionally real but too match-fragile for strong causal rhetoric. The inferential restraint survived: the ratio-placebo rankings were still too weak to count as decisive proof. [SOURCE: research/immigration-receiver-counterfactuals-2026-04-22.md]
+
+</details>
+<!-- historical-snapshot:end -->

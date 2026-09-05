@@ -1,3 +1,39 @@
+# Capacity frontier: descriptive ratios and unresolved mechanisms
+
+**Current assessment — 2026-09-05.** The earlier county models compare alternative descriptions of migration concentration and building activity. They do not establish that flow divided by permits is the causal source of wage, employment, residential, and political changes. The later [falsification downgrade](immigration-capacity-falsification-2026-04-21.md) supersedes the broader threshold language here. [INFERENCE]
+
+## The ratio is not a physical capacity measure
+
+The “annual recent immigrant” numerator is an ACS arrival-period **resident stock divided by 12**, not observed annual migration. The permit denominator measures authorizations during 2021–2024, not completions, vacancies, the existing stock available for turnover, or a predetermined construction limit. Weak local growth can lower permits and outcomes together; migration can also change permits. A high ratio can therefore arise through an endogenous small denominator, even without unusually high arrivals. [SOURCE: historical variable definitions and later falsification memo; INFERENCE]
+
+The assumed 2.5 people per permitted unit is a conditional conversion, not an estimated capacity law. It needs household formation, occupancy, construction lag, demolition, native moves, and time horizon to become a housing-demand/supply calculation. An unchanged number of permits would not mean no absorption through existing units or within-home occupancy. [INFERENCE]
+
+## Model comparisons
+
+Reported adjusted R² values—such as 0.154 for the wage load model versus 0.147 for stock and 0.144 for flow—compare in-sample fits. They do not identify causal mechanisms or establish predictive superiority on an independent sample. The combined model's residual ratio coefficient does not solve omitted-variable or denominator endogeneity. Comparing significance across the coarse interaction and continuous ratio is also not evidence that one discovers a real employment effect that the other “missed.” [SOURCE: historical model table; INFERENCE]
+
+The IRS outcome is **domestic geographic migration**, not native-only migration. Its negative association cannot be labeled native flight or incumbent displacement. QCEW average wages and total employment likewise do not isolate incumbent or native outcomes; changes in workforce composition can move averages. [SOURCE: [IRS migration description](https://www.irs.gov/statistics/soi-tax-stats-migration-data), [BLS QCEW overview](https://www.bls.gov/cew/overview.htm); INFERENCE]
+
+Selected q70/q80 interactions and same-data deciles are exploratory. The later falsification pass found diffuse threshold locations, poor cross-outcome political transfer, and unresolved earlier outcome associations. A generic high-flow/low-capacity causal threshold or synchronized four-channel harm claim is not supported. [SOURCE: [falsification correction](immigration-capacity-falsification-2026-04-21.md); INFERENCE]
+
+## Receiver and welfare implications
+
+A reported correlation near 0.93 between **absolute** shelter shortfall and spending can be driven by city size, common measurement, or a large observation. It does not show that the shortfall causes spending or dominates legal rules. HIC/PIT categories and geography require reconciliation before “shortfall” or “saturation” is physical; Massachusetts spending cannot be assigned to a Boston-only denominator. [SOURCE: historical receiver table; INFERENCE]
+
+Local budgets and service demand remain relevant questions. Gross outlays, rents, domestic moves, and election results are distinct outcomes, however; their signs cannot simply be added to a welfare total. Global gain possibilities are not restricted to “bounded margins” by this county exercise. [INFERENCE]
+
+The original county and receiver outputs were not recovered for replication. Historical numerical fit summaries remain reported results, not freshly verified causal findings. [GAP]
+
+## Revisions
+
+- **2026-09-05:** Corrected flow/capacity and nativity labels, preserved subsequent falsification, and withdrew causal ranking and static-capacity extrapolation. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Immigration capacity frontier: stock, flow, load, and what still remains
 
 **Question:** After extending the county panel again, what is the cleanest current answer on thresholds, counterfactual levers, subgroup needs, voting, and welfare?  
@@ -291,3 +327,6 @@ and in the current public-data stack, `flow + capacity` is where the new descrip
 | 2026-06-16 | Added a claims-table scope note: `HIGH`/`VERIFIED` refer to reproducible model-output patterns, not causal identification. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Reframed the native-sorting sentence as a descriptive association rather than a causal incumbent-exit claim. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Removed residual causal verbs from the claims table and wage section: the load-capacity rows are verified descriptive model-output patterns, not causal response estimates. See `immigration-conclusion-audit-running-fixes.md`. |
+
+</details>
+<!-- historical-snapshot:end -->

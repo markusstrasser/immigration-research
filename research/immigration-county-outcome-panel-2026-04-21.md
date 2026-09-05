@@ -1,3 +1,37 @@
+# County outcomes: descriptive labor and migration associations
+
+**Current assessment — 2026-09-05.** This earlier panel does not establish that immigration harmed wage growth through permitting constraints while leaving employment unaffected. The later [capacity falsification correction](immigration-capacity-falsification-2026-04-21.md) remains the relevant limitation, including unresolved exposure timing and pre-existing outcome associations. [INFERENCE]
+
+## Outcomes and scale
+
+QCEW reports establishment-based employment and aggregate pay measures. County average weekly wages cover the changing local workforce; they are neither native-only hourly wages nor the wage path of a fixed incumbent population. Hiring lower-paid workers can reduce the average without reducing any incumbent's pay, and changes in sectors, hours, or job composition can also move it. [SOURCE: [BLS QCEW overview](https://www.bls.gov/cew/overview.htm); INFERENCE]
+
+The reported wage interaction of approximately **−0.0149 in log growth** is −1.49 log-percentage points, or approximately **−1.48% relative to the fitted counterfactual wage-growth factor**. It is not exactly a −1.49-percentage-point difference in an ordinary growth rate; that difference depends on baseline growth. It remains a reported regression association, not a causal counterfactual validated by this audit. [SOURCE: historical coefficient; DERIVATION]
+
+Nominal versus real wages need a matched local consumption-price measure and population. The prior statement that the nominal penalty “likely understates” real harm assumed greater relevant inflation without estimating it. Higher housing prices alone do not determine each group's real wage or welfare change. [INFERENCE]
+
+## Identification and comparison
+
+The “recent flow” variable is an ACS arrival-period resident stock divided by 12, and 2021–2024 permits can respond during the exposure/outcome window. HC3 errors and state fixed effects do not solve selection, spatial dependence, or conditioning on an endogenous supply response. [SOURCE: [exposure correction](immigration-capacity-falsification-2026-04-21.md); INFERENCE]
+
+The employment coefficient is reported as −0.0033 with t≈−0.67, p≈0.50. That is imprecise evidence under one specification, not equivalence or proof that job adjustment is absent. Nor does significance for the permit interaction and nonsignificance for the rent-burden interaction establish a difference between their effects. The later continuous-ratio estimates do not turn this into an identified causal decomposition. [SOURCE: historical results; INFERENCE]
+
+The IRS outcome measures domestic geographic moves among tax-record-covered populations, not native-only exit. A conditional rent-burden association cannot establish that affordability caused relocation. County election changes likewise do not identify individual backlash, turnout, or the mechanism linking service pressures to votes. [SOURCE: [IRS migration data](https://www.irs.gov/statistics/soi-tax-stats-migration-data); INFERENCE]
+
+## Current use
+
+The reported models and same-sample bin summaries suggest relationships to investigate, with broader employment and wage identification unresolved. Their original joined artifacts were not recovered for a rerun. They do not price native losses, establish a county capacity breakpoint, or rank permitting and rent burden as causal levers. [GAP; INFERENCE]
+
+## Revisions
+
+- **2026-09-05:** Preserved the later causal downgrade, corrected log-growth and outcome-population interpretations, and withdrew significance-based mechanism and nominal-to-real harm claims. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Immigration county outcome panel: labor, domestic migration, and backlash
 
 Supersession note: this memo is an earlier county-outcome pass. For the current stance, read [immigration-capacity-falsification-2026-04-21.md](research/immigration-capacity-falsification-2026-04-21.md), which extends QCEW back to `2017`, adds explicit window metadata, and downgrades the causal confidence of the wage/employment story.
@@ -138,3 +172,6 @@ The best public-data formulation is now:
 3. IRS SOI migration is filer-based, not a full resident microflow. [INFERENCE]
 4. This is still reduced-form county evidence, not a structural model with endogenous housing supply, relocation, and sector composition. [INFERENCE]
 5. The shelter/legal-regime story still needs the receiver-node panel and ideally `HMIS/LSA` for a fuller local-capacity account. [SOURCE: research/immigration-surge-threshold-dataset-frontier-2026-04-21.md]
+
+</details>
+<!-- historical-snapshot:end -->

@@ -1,3 +1,39 @@
+# First threshold panel: exploratory associations
+
+**Current assessment — 2026-09-05.** The panel supplies candidate relationships between recent foreign-born exposure, housing measures, receiver status, and election change. It does not demonstrate a causal immigration threshold, a national capacity limit, or a welfare break-even point. The underlying joined panel and estimation scripts were not recovered for replication. [INFERENCE; GAP]
+
+## The county results
+
+The historical specifications report positive election-change interactions for high recent-foreign-born exposure and low permits, including a +0.62-percentage-point estimate with t=2.58. Those are observational conditional associations. They depend on exposure measurement, chosen cutpoints, covariates, and inference. “Recent foreign-born” residence/arrival measures also need their source definition verified before being labeled annual inflows or unauthorized arrivals. [SOURCE: historical panel results; INFERENCE]
+
+A threshold indicator imposes a break in the fitted model; its coefficient does not demonstrate that a physical process has a discontinuity there. The high-exposure permit-bin medians, 5.12, 5.05, 4.25, and 3.79 percentage points of GOP shift, show a reported gradient with a **1.33-point** end-bin contrast. Binning the same observations is not independent validation of the regression and does not control for other differences between bins. Smooth heterogeneity, selected cutpoints, and a causal threshold are distinct hypotheses. [SOURCE: historical table; CALCULATION; INFERENCE]
+
+The comparison of a significant permit interaction with an insignificant rent-burden interaction does not demonstrate that the mechanisms differ. A meaningful coefficient contrast and its uncertainty are required; multiple cutpoints and specifications also affect the interpretation of a selected p-value. Permits over 2021–2024 can respond during the exposure/outcome window and are not automatically a pre-existing supply constraint. HC3 errors and state fixed effects do not remove spatial dependence, endogenous migration, or post-treatment conditioning. [INFERENCE]
+
+## What a receiver snapshot measures
+
+PIT covers sheltered and unsheltered homelessness on one night, while HIC inventories different housing-program categories. Occupancy needs matching program categories, place, and date. [SOURCE: [HUD 2024 AHAR](https://www.huduser.gov/portal/sites/default/files/pdf/2024-AHAR-Part-1.pdf)]
+
+A sheltered-PIT/HIC ratio above one should first trigger reconciliation of beds, program eligibility, overflow/seasonal inventory, and geography; it is not automatically a measured physical capacity threshold. Total PIT divided by shelter beds includes people outside shelter and is not shelter occupancy. Neither measure isolates migrant demand. Housing permits per HIC bed mixes annual construction flow and a service-capacity stock, and ratios sharing HIC can be statistically coupled through that denominator. [INFERENCE]
+
+The memo also mixes some state spending with city/CoC populations. Massachusetts statewide emergency spending cannot be allocated to Boston's shelter population by simple division. A cross-place table can still record different pressures, but comparisons need matched fiscal scope, dates, household/person units, and populations before supporting cost-per-person or capacity calculations. [INFERENCE]
+
+## What remains usable
+
+Reported budget pressures, explicit program caps, and documented shelter use can establish local gross demand on a particular service. They do not alone identify how much migration caused it, whether extra revenue or other benefits offset it, or how capacity evolves. The panel is a hypothesis-generating screen for whether **pre-existing** capacity modifies arrival effects. Its election association does not identify individual voter motives or a causal fiscal-load-to-vote chain. [INFERENCE]
+
+See the [causal-levers correction](immigration-threshold-causal-levers-2026-04-21.md) for the same estimand boundaries. Reusing these rows in another memo does not create another independent test.
+
+## Revisions
+
+- **2026-09-05:** Reclassified the panel as exploratory, corrected significance-versus-difference and threshold reasoning, and required aligned capacity denominators and pre-exposure moderators. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Immigration threshold first panel: permits, shelter capacity, and backlash
 
 **Question:** After downloading and joining new official datasets, what do the first direct threshold tests show about surge immigration, capacity constraints, and backlash?  
@@ -202,3 +238,6 @@ The best current repo formulation is:
 6. [threshold_results_summary.json](sources/immigration-causal/data/threshold/analysis/threshold_results_summary.json)
 7. [receiver_threshold_summary.csv](sources/immigration-causal/data/threshold/analysis/receiver_threshold_summary.csv)
 8. [county_threshold_bins.csv](sources/immigration-causal/data/threshold/analysis/county_threshold_bins.csv)
+
+</details>
+<!-- historical-snapshot:end -->

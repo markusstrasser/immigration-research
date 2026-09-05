@@ -1,5 +1,7 @@
 # Noah Smith and Nicholas Decker immigration claims audit — 2026-04-11
 
+**2026-09-05 interpretation correction:** Average resident income, incumbent welfare, fiscal balance and subgroup outcomes are different estimands. A subgroup loss does not refute a positive average; a local cost does not prove net loss or that restriction is necessary. Descriptive county/PUMA screens do not identify causal native-wage or capacity effects. See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md).
+
 ## Scope
 
 This memo audits concrete immigration claims from:
@@ -44,13 +46,13 @@ Best summary:
 Verdict:
 
 1. many of his economic claims survive in a **narrowed** form
-2. they usually fail when stretched into `average citizen better off overall`
+2. the cited narrow evidence does not itself establish `average citizen better off overall`; failure to establish is not a negative average-welfare finding
 
 ### Nicholas Decker
 
 Best summary:
 
-1. useful as a critique of simplistic constant-returns reasoning
+1. raises a production-model question, but constant returns alone says nothing decisive about immigration gains
 2. overreaches hard from `some increasing-returns channels are real` to `immigrants must make us richer`
 
 Verdict:
@@ -62,12 +64,12 @@ Verdict:
 
 | Author | Claim | Verdict | Why |
 |---|---|---|---|
-| Noah Smith | `The U.S. needs large-scale immigration to support its economy.` | `Mostly survives, but scope-limited` | National population and output support this; it does not settle per-capita welfare or local burden. [SOURCE: https://www.cbo.gov/system/files/2022-07/57975-demographic-outlook.pdf] [SOURCE: https://www.cbo.gov/system/files/2024-02/59710-Outlook-2024.pdf] |
+| Noah Smith | `The U.S. needs large-scale immigration to support its economy.` | `Supports population/labor-force growth under the projection; necessity is not established` | A demographic projection does not prove that immigration is the only way to increase output or incumbent welfare; productivity, capital and the chosen policy objective matter. [SOURCE: https://www.cbo.gov/system/files/2024-02/59710-Outlook-2024.pdf; INFERENCE] |
 | Noah Smith | `Immigration doesn't reduce wages for native-born people, except maybe a little in special cases.` | `Broadly directionally right, rhetorically too absolute` | Literature usually finds small average native effects, but some competing groups can lose and the repo does not treat this as a full welfare verdict. [SOURCE: research/immigration-economist-effects-matrix.md] [SOURCE: research/immigration-evidence-base-audit.md] |
 | Noah Smith | `Immigrants are mostly unrelated to the inflation issue.` | `Too broad` | Better for headline inflation than many partisans claim, but recent evidence shows local housing and utilities inflation can rise with immigration. [SOURCE: https://www.imf.org/-/media/files/publications/wp/2025/english/wpiea2025005-print-pdf.pdf] [SOURCE: research/immigration-unified-scenarios-memo.md] |
 | Noah Smith | `Mass deportation would make little difference to costs.` | `Overstated` | Mass deportation is unlikely to produce a clean broad consumer-price windfall, but removing workers from labor-intensive and housing-constrained sectors is not cost-neutral. [SOURCE: https://www.imf.org/-/media/files/publications/wp/2025/english/wpiea2025005-print-pdf.pdf] [SOURCE: https://www.cbo.gov/system/files/2024-02/59710-Outlook-2024.pdf] [INFERENCE] |
 | Nicholas Decker | `Immigrants must make us richer.` | `Fails as stated` | Some increasing-returns channels are real, but neither official nor repo evidence supports a universal overall-gain claim on the relevant citizen-welfare ledger. [SOURCE: https://nicholasdecker.substack.com/p/yes-immigrants-must-make-us-richer] [SOURCE: research/immigration-verified-findings-report-2026-04-10.md] |
-| Nicholas Decker | `Constant-returns assumptions bake in anti-immigration results.` | `Partly right, partly overclaimed` | Model assumptions matter, especially public-goods and incidence assumptions, but recent official projections do not reduce to one simple constant-returns story. [SOURCE: research/immigration-nas-scope-and-bias-update-2026-04-10.md] [SOURCE: https://www.cbo.gov/system/files/2024-02/59710-Outlook-2024.pdf] |
+| Nicholas Decker | `Constant-returns assumptions bake in anti-immigration results.` | `Does not follow from constant returns` | Returns to scale concerns scaling all inputs; immigration can change one input and factor ratios. Public-goods allocation is a separate fiscal choice. See the explicit production-function calculation below. [RECALCULATION; INFERENCE] |
 | Nicholas Decker | `The only coherent anti-immigration view is political voting / institutions, not economics.` | `False` | There are coherent economic objections on local schooling, shelter, congestion, renter incidence, and distributional conflict even without nativist politics. [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf] [SOURCE: research/immigration-full-spectrum-costs-unauthorized-memo.md] |
 
 ## Repo data checks that matter
@@ -85,7 +87,7 @@ Among origin groups with at least `10,000` recent low-skill adults in the correc
 5. `Mexico`: `1.0114`; `53.49%`
 6. `Guatemala`: `0.9960`; `59.07%`
 
-This directly cuts against Decker's suggestion that coherent anti-immigration arguments reduce to voting or institutions. The local school-capacity channel is real in the repo's own warehouse. [SOURCE: research/immigration-household-weighted-correction.md] [SOURCE: `sources/immigration-fiscal/data/derived/immigration_context.duckdb`, query on `origin_puma_household_context_2023` run 2026-04-11]
+These historical linked-household/context summaries motivate a school-capacity question. They do not measure incremental spending, crowding, causal native losses or an all-in negative welfare effect. Their April extraction has not been re-certified after the September allocation/code audit. [SOURCE: research/immigration-household-weighted-correction.md] [SOURCE: `sources/immigration-fiscal/data/derived/immigration_context.duckdb`, query on `origin_puma_household_context_2023` run 2026-04-11]
 
 ### 2. State averages hide real housing-incidence differences
 
@@ -99,7 +101,7 @@ Examples:
 4. `Venezuela`: about `+$135.59`
 5. `Mexico`: about `-$111.09`
 
-This matters for Smith's inflation and housing rhetoric. A national or state-average story can easily miss the actual renter-incidence faced in destination neighborhoods. [SOURCE: research/immigration-local-burden-puma-layer.md] [SOURCE: `sources/immigration-fiscal/data/derived/immigration_context.duckdb`, query on `origin_puma_context_2023` and `state_median_gross_rent_2023` run 2026-04-11]
+These weighted PUMA rent levels describe location exposure and sorting, not the causal rent change induced by an origin group or each household’s actual payment. A level comparison cannot rebut an inflation claim without a time/counterfactual bridge. [SOURCE: research/immigration-local-burden-puma-layer.md] [SOURCE: `sources/immigration-fiscal/data/derived/immigration_context.duckdb`, query on `origin_puma_context_2023` and `state_median_gross_rent_2023` run 2026-04-11]
 
 ### 3. The new `MEPS` module weakens crude health-burden rhetoric, but does not rescue the broad economist verdict
 
@@ -131,13 +133,13 @@ What survives:
 
 What does not survive cleanly:
 
-1. CBO also says `real GDP per person` would be lower in 2034 under the immigration increase it modeled. [SOURCE: https://www.cbo.gov/system/files/2024-02/59710-Outlook-2024.pdf]
+1. CBO also projects lower `real GDP per person` in the expanded population in2034. This does not imply lower incumbent income or welfare, and it does not alone refute an aggregate-output claim. [SOURCE: https://www.cbo.gov/system/files/2024-02/59710-Outlook-2024.pdf]
 2. The repo's verified position is that the strongest result is an `incidence split`, not a scalar positive verdict. [SOURCE: research/immigration-verified-findings-report-2026-04-10.md]
 3. National macro support does not erase local schooling, shelter, or housing-capacity costs. [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf]
 
 Verdict:
 
-1. `Mostly survives` for aggregate output / demographic support
+1. `Supports a conditional demographic/output channel, not a theorem that large-scale immigration is economically necessary`
 2. `Does not prove` that the average citizen is better off overall
 
 ### Claim 2: `Immigration doesn't reduce wages for native-born people`
@@ -231,8 +233,8 @@ What survives:
 
 What fails:
 
-1. Even official pro-growth projections do **not** imply that more immigration must raise `GDP per person` or average citizen welfare in the near-to-medium run. CBO's 2024 outlook explicitly says real GDP would be higher but real GDP per person lower under the immigration increase it modeled. [SOURCE: https://www.cbo.gov/system/files/2024-02/59710-Outlook-2024.pdf]
-2. The repo's strongest verified result remains an `incidence split`, which directly contradicts Decker's must-be-positive rhetoric. [SOURCE: research/immigration-verified-findings-report-2026-04-10.md]
+1. CBO’s projected increase in aggregate GDP and decrease in GDP per person concern an expanded population. Neither identifies the change in pre-existing citizens’ average welfare; even gains for every incumbent can coexist with a lower new population average. This is a scope limit, not a CBO refutation of incumbent gains. [SOURCE: https://www.cbo.gov/system/files/2024-02/59710-Outlook-2024.pdf]
+2. The repo's strongest verified result remains an `incidence split`, which requires specifying the welfare objective but does not alone contradict a positive average-incumbent claim. [SOURCE: research/immigration-verified-findings-report-2026-04-10.md]
 3. Local burden, schooling, shelter, congestion, renter incidence, and political backlash are real economic channels, not merely political afterthoughts. [SOURCE: research/immigration-full-spectrum-costs-unauthorized-memo.md] [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf]
 
 Verdict:
@@ -246,7 +248,7 @@ Verdict:
 What survives:
 
 1. The repo already treats assumption choice as one of the biggest reasons immigration fiscal estimates swing. [SOURCE: research/immigration-nas-scope-and-bias-update-2026-04-10.md]
-2. Public-goods allocation, time horizon, descendant treatment, and indirect fiscal channels are all major drivers. [SOURCE: research/immigration-fiscal-deceptive-data-reading-pack.md]
+2. Fiscal allocations, horizons and indirect tax channels can change estimates, but these choices are distinct from returns to scale in a production function. [SOURCE: research/immigration-fiscal-deceptive-data-reading-pack.md]
 
 What fails:
 
@@ -256,8 +258,8 @@ What fails:
 
 Verdict:
 
-1. `Partly right` that assumptions matter enormously
-2. `Wrong` that this single modeling move explains the whole disagreement
+1. `The constant-returns argument is invalid as a theorem; fiscal assumptions require a separate analysis`
+2. `A corrected production model still does not settle the full welfare question`
 
 ### Claim 3: `The only coherent anti-immigration view is that immigrants vote for bad things`
 
@@ -287,7 +289,7 @@ Best classification:
 
 Best classification:
 
-1. `useful on one methodological criticism`
+1. `not a valid constant-returns theorem; useful channels require separate evidence`
 2. `then leaps past the evidence`
 
 ## Final verdict
@@ -315,3 +317,12 @@ If this memo is continued, the next names to audit should be:
 4. one Clark-center economist with a strong `agree` vote
 
 That would produce a tighter `commentator stack` across pro, skeptical, and restrictionist sides.
+
+**GDP and welfare correction [INFERENCE]:** A lower population-wide GDP-per-person average after entry can coexist with gains for every incumbent, because new entrants change the population being averaged. Conversely aggregate growth does not guarantee every incumbent gains. Neither comparison alone determines total incumbent welfare. Rent payments transfer resources between tenants and owners; count real congestion/building costs separately and avoid counting a transfer as a whole-economy loss. A modeled large global gain is conditional, not a proved mathematical ceiling or a guaranteed feasible policy forecast.
+
+
+## Revisions
+
+- **2026-09-05 — Corrected welfare, comparator and model-scope reasoning.** See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md). Earlier dated revision entries describe the historical state, including superseded conclusions.
+
+**Constant-returns correction [RECALCULATION]:** `F(K,L)=sqrt(KL)` has constant returns when both inputs scale. At `K=L=100`, output is100. Holding capital100 and increasing labor to121 raises output to110 but lowers output per worker from1 to110/121≈0.909. Constant returns does not mean output per worker is invariant when only labor changes; public-goods allocation is a separate fiscal question. This corrects the earlier partial endorsement of Decker’s production-function argument.

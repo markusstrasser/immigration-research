@@ -1,5 +1,7 @@
 # David D. Friedman immigration claims audit — 2026-04-11
 
+**2026-09-05 interpretation correction:** Average resident income, incumbent welfare, fiscal balance and subgroup outcomes are different estimands. A subgroup loss does not refute a positive average; a local cost does not prove net loss or that restriction is necessary. Descriptive county/PUMA screens do not identify causal native-wage or capacity effects. See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md).
+
 ## Scope
 
 This memo audits David D. Friedman's main immigration claims against:
@@ -30,7 +32,7 @@ What survives:
 What does not survive cleanly:
 
 1. excluding immigrants from cash welfare does **not** eliminate local school, housing, shelter, congestion, and backlash costs
-2. the claim that fears of political or social deterioration lack strong reason is too broad
+2. the sign and magnitude of political/social spillovers remain empirical questions; possible channels alone do not establish net harm
 3. his argument tends to slide between `world welfare`, `libertarian rights`, and `current citizen welfare`
 
 The clean verdict is:
@@ -79,11 +81,11 @@ What survives:
 2. Restricting access to some transfers would reduce one important class of fiscal objection. [SOURCE: http://www.daviddfriedman.com/Libertarian/Welfare_and_Immigration.html]
 3. The repo's new `MEPS` module weakens a crude version of the medical-burden objection for working-age foreign-born adults. For ages `25-64`, foreign-born cells show lower observed annual spending than U.S.-born cells within comparable insurance buckets. [SOURCE: research/immigration-public-mvp-meps-module-2026-04-11.md]
 
-What fails:
+Costs that a complete alternative-policy comparison must address:
 
 1. CBO 2025 shows that recent immigration surge costs at state/local level were concentrated in `education`, `shelter`, and `border security`, not just cash welfare. [SOURCE: https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf]
-2. The repo's local warehouse shows that some large recent low-skill origin groups are meaningfully school-heavy even after the household-weight correction: `Mexico` about `1.0114` school-age children per linked household, `Honduras` about `1.2855`, `El Salvador` about `1.0600`, and `Guatemala` about `0.9960`. [SOURCE: `sources/immigration-fiscal/data/derived/immigration_context.duckdb`, query on `origin_puma_household_context_2023` run 2026-04-11]
-3. The same warehouse shows high rent exposure for several large origin groups: `China` about `$1,869`, `Colombia` about `$1,861`, `Brazil` about `$1,806`, `Venezuela` about `$1,765`, and `Mexico` about `$1,593` in weighted `PUMA` rent. [SOURCE: same query family]
+2. The April warehouse transcription reported the following linked-household context means (historical, not re-certified in September and not incremental costs): `Mexico` about `1.0114` school-age children per linked household, `Honduras` about `1.2855`, `El Salvador` about `1.0600`, and `Guatemala` about `0.9960`. [SOURCE: `sources/immigration-fiscal/data/derived/immigration_context.duckdb`, query on `origin_puma_household_context_2023` run 2026-04-11]
+3. The April warehouse transcription reported these origin-weighted local rent levels (location exposure, not causal rent effects or necessarily those households’ actual rents): `China` about `$1,869`, `Colombia` about `$1,861`, `Brazil` about `$1,806`, `Venezuela` about `$1,765`, and `Mexico` about `$1,593` in weighted `PUMA` rent. [SOURCE: same query family]
 4. Recent IMF work finds immigration can lower local goods inflation while raising `housing and utilities` inflation. So even with welfare exclusion, housing-capacity pressure remains. [SOURCE: https://www.imf.org/-/media/files/publications/wp/2025/english/wpiea2025005-print-pdf.pdf]
 
 Verdict:
@@ -114,7 +116,7 @@ Verdict:
 
 ## Claim 4: `Critics offer no strong reason to expect immigrants to make the country worse`
 
-This is Friedman's weakest major claim.
+The proposed political/social mechanisms need outcome-specific evidence; a possible cost is not a measured negative net effect.
 
 What survives:
 
@@ -139,17 +141,21 @@ Friedman's argument becomes much clearer if the objective function is written ex
 
 For a migrant who moves from a low-productivity country to a high-productivity one:
 
-`Delta W_global ~= migrant earnings gain + employer/consumer surplus in destination - congestion and public-cost spillovers - origin-country losses`
+`Delta W_global = sum of the chosen welfare changes across migrants, destination incumbents and origin residents`
 
-The first term is often very large. That is why the global or migrant-welfare case for freer migration is strong. [SOURCE: https://www.aeaweb.org/articles?id=10.1257/jep.25.3.83]
+This is a boundary definition, not an estimated numerical identity. Specify a common welfare metric and count real resource/amenity effects once. Taxes, benefits, rents and remittances are transfers within the global boundary; counting their payer losses without recipient gains would be an error. Earnings changes alone need not capture leisure, prices or nonmarket effects. [INFERENCE]
+
+Migrant gains can be large; their magnitude and aggregation require a matched counterfactual. That is why the global or migrant-welfare case for freer migration is strong. [SOURCE: https://www.aeaweb.org/articles?id=10.1257/jep.25.3.83]
 
 ### 2. Native-local ledger
 
 For current residents of a destination locality:
 
-`Delta W_native_local ~= market surplus + tax revenue - school/shelter/public-service cost - housing incidence - backlash/institutional cost`
+`Delta W_native_local = sum of welfare changes for the specified pre-existing local residents`
 
-The repo's current verified stack implies:
+Separate workers, firms, renters, owners and taxpayers and use a consistent after-tax/price measure. Do not add gross tax receipts to an already net-of-tax welfare total or count rent transfers wholly as destruction. Out-of-locality recipients change which transfers remain internal to this boundary. The fiscal subledger is not the entire welfare measure. [INFERENCE]
+
+The evidence suggests several possible channels, without determining their combined sign:
 
 1. `market surplus` is often positive
 2. `federal effects` can be positive
@@ -161,7 +167,7 @@ The repo's current verified stack implies:
 
 ### 3. What welfare exclusion changes
 
-Friedman's proposed fix removes only part of the negative side.
+Cash-transfer exclusion directly changes selected eligibility rules; broader economic responses and alternatives require comparison. Friedman also discusses other institutional conditions, so his proposal must not be reduced to cash welfare alone.
 
 If non-citizens are excluded from cash welfare and voting:
 
@@ -183,7 +189,7 @@ He is not entitled to assume:
 3. school and shelter systems remain below convex-capacity thresholds
 4. backlash is small enough to ignore
 
-This is exactly where the repo's local warehouse matters. It already shows large differences in school-age burden and rent exposure across origin groups and destination mixes. [SOURCE: `sources/immigration-fiscal/data/derived/immigration_context.duckdb`] [SOURCE: research/immigration-household-weighted-correction.md] [SOURCE: research/immigration-local-burden-puma-layer.md]
+The historical warehouse describes heterogeneity in household/context measures. It does not by itself identify marginal causal costs, capacity thresholds or whether restriction outperforms alternative policies. [SOURCE: `sources/immigration-fiscal/data/derived/immigration_context.duckdb`] [SOURCE: research/immigration-household-weighted-correction.md] [SOURCE: research/immigration-local-burden-puma-layer.md]
 
 ## Net verdict
 
@@ -199,8 +205,15 @@ If the question is `does his best argument survive after quantitative tightening
 
 1. `Partially`
 2. The strongest surviving version is `freer migration likely creates large global gains and can be made less fiscally dangerous by limiting transfers and political rights`.
-3. The strongest failing version is `there is therefore no strong economic reason for restriction`.
+3. Neither omission of a cost nor its existence alone establishes whether restriction outperforms a credible alternative. That policy comparison remains unresolved.
 
 The repo's current answer remains:
 
 1. `incidence split, not scalar verdict`
+
+**GDP and welfare correction [INFERENCE]:** A lower population-wide GDP-per-person average after entry can coexist with gains for every incumbent, because new entrants change the population being averaged. Conversely aggregate growth does not guarantee every incumbent gains. Neither comparison alone determines total incumbent welfare. Rent payments transfer resources between tenants and owners; count real congestion/building costs separately and avoid counting a transfer as a whole-economy loss. A modeled large global gain is conditional, not a proved mathematical ceiling or a guaranteed feasible policy forecast.
+
+
+## Revisions
+
+- **2026-09-05 — Corrected welfare, comparator and model-scope reasoning.** See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md). Earlier dated revision entries describe the historical state, including superseded conclusions.

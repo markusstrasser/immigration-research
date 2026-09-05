@@ -1,3 +1,39 @@
+# Causal synthesis: what the repository's analyses identify
+
+**Current assessment — 2026-09-05.** Several earlier conclusions exceeded the outcomes and designs actually used. The repository's enforcement regressions do not identify native wage effects; descriptive housing and receiver comparisons do not identify a causal mechanism or net welfare loss. Independently published causal studies remain evidence on their own populations and treatment margins. [INFERENCE]
+
+## Enforcement and wages
+
+The QWI `EarnS` outcome is stable-employment average monthly earnings, and the `se` data do not distinguish nativity. An education or industry restriction does not change that fact. [SOURCE: [Census QWI variables](https://api.census.gov/data/timeseries/qwi/se/variables.html)]
+
+Therefore the E-Verify and sanctuary-policy results cannot establish a native hourly-wage null or a Card-versus-Borjas victory. Repeated specifications of the same panel are not independent corroboration. Policy adoption also needs a demonstrated effect on the relevant immigrant labor supply before its reduced-form earnings coefficient can be compared with a structural labor-supply elasticity. Staggered two-way fixed-effects estimates require treatment-effect heterogeneity and appropriate comparison groups to be addressed; nonsignificant pretrends do not settle identification. See the [repaired E-Verify assessment](immigration-causal-everify-card-vs-borjas.md). [INFERENCE]
+
+This correction does not discredit the original Card, Foged–Peri, or other primary studies merely by analogy. Their designs and native-specific outcomes must be evaluated directly. The [Card–Peri source review](immigration-dismantle-card-peri-2026-06-25.md) separately distinguishes local estimates, national models, earlier immigrants, native workers, and final versus working-paper results. A null estimate also needs an interval and a substantively chosen equivalence margin before it supports a small-effect conclusion. [INFERENCE]
+
+## Housing, mobility, and fiscal pressure
+
+The MSA cross-section relates current housing outcomes to historical supply measures and foreign-born shares. It does not identify immigration's causal effect on rents or welfare. Differences between metro-level median rents and all-household median income are not household rent burdens. Nor does a supply elasticity alone convert a population shock into a price forecast; a demand model is required. See the [repaired Saiz analysis](immigration-causal-saiz-elasticity-rent.md). [INFERENCE]
+
+The corrected domestic-versus-abroad comparison concerns geographic origins of moves, not native versus immigrant identities. Its median county is not a population-weighted national comparison, a receiver-city burden estimate, or an immigration counterfactual. Domestic inter-county moves redistribute population inside the country; they do not mechanically imply an equivalent national population increase. See the [matched-flow review](immigration-causal-internal-vs-immigrant-newcomers.md). [INFERENCE]
+
+Housing scarcity and local service costs can produce important distributional losses. Higher rent payments also transfer income to owners; proving rent pressure does not make the same dollar amount a global resource loss. Fiscal outlays, taxes, production, and welfare require separate accounting with explicit beneficiaries, losers, time horizons, and population weights. The earlier suggestion that a housing correlation narrowed away this welfare distinction is withdrawn. [INFERENCE]
+
+## Causal proposals and evidence status
+
+A shift-share instrument is a proposal, not automatic removal of endogeneity: its shares/shocks and exclusion restrictions need justification for the actual setting. A lottery, judge assignment, or policy eligibility cutoff likewise requires checking assignment, selection, compliance, spillovers, and the outcome being estimated. These design candidates should not be counted as completed causal findings. [INFERENCE]
+
+The underlying causal panel and scripts were not recovered during this audit. Historical statements about failed runs, missing drives, model-tool performance, or deferred downloads describe the earlier session; they are not current operational diagnoses. The fiscal backup data were recovered separately, with its eight-state inference corrected in the [costs review](immigration-costs-causal-analysis.md). [GAP]
+
+## Revisions
+
+- **2026-09-05:** Replaced the pooled-earnings/native-wage conflation and causal/welfare overreach while retaining the historical account and independent published evidence. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Immigration causal analysis — synthesis (2026-04-18)
 
 **Inputs from this autonomous cycle:**
@@ -159,3 +195,6 @@ cross_refs: research/immigration-adversarial-review.md, research/immigration-cau
 table_claims: 5
 
 end-knowledge-index -->
+
+</details>
+<!-- historical-snapshot:end -->

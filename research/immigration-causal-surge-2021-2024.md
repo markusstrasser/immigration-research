@@ -1,3 +1,43 @@
+# The 2021–2024 surge: recorded pressures and limits of causal attribution
+
+**Current assessment — 2026-09-05.** The historical data describe substantial border-processing activity, recorded local spending, and an election association in selected receiver counties. They do not establish a native-wage null, a causal fiscal-pressure-to-vote effect, or a null effect of CHNV on total arrivals. The June 2026 parser/universe corrections remain important; further inference errors are corrected here. [INFERENCE]
+
+## Encounters, policy timing, and CHNV
+
+Border encounters are administrative events, not unique migrants, admissions, or net immigration. Repeat encounters vary over time and with processing rules; DHS reports unique subjects and repeat attempts separately. A series of encounter counts therefore cannot be read directly as a population inflow. [SOURCE: [DHS FY2024 performance report](https://www.dhs.gov/sites/default/files/2025-01/2025_0117_dhs_annual_performance_report_fy2024.pdf)]
+
+The corrected series reportedly has an anticipation-period spike around April–May 2023 and a six-month post-Title-42 mean 14.5% below the preceding six months. That descriptive timing challenges a simple claim that lifting Title 42 initiated the already-existing surge. It does not estimate the policy's effect against a counterfactual: anticipation, seasonality, other policies, and changing repeat-encounter rates remain relevant. The underlying corrected series was not recovered for a fresh replication. [SOURCE: historical June correction below and [decision](../decisions/2026-06-11-ohss-date-universe-bugs-chnv-reversal.md); INFERENCE; GAP]
+
+The reported post-CHNV USBP declines for Cuba, Nicaragua, and Venezuela are compatible with a shift away from irregular border encounters. They do not alone identify the causal effect of the program or its effect on total arrivals. **OFO encounter counts are not interchangeable with lawful CHNV admissions or parole counts**: a port-of-entry enforcement/processing encounter is a different event measure, and CHNV program arrivals require their own series. The earlier equation of OFO with lawful port throughput is withdrawn. [SOURCE: [CBP encounter-series definitions](https://www.cbp.gov/newsroom/stats/nationwide-encounters), definition retrieved from Exa's indexed copy after the live page returned 403; INFERENCE]
+
+The reported total-CBP difference-in-differences estimate, β=+0.45 with t=1.29, is imprecise. Nonsignificance does not establish zero effect, equivalence, or no reduction in total arrivals; the outcome is encounters in any event. Co-occurring changes in expulsion eligibility, enforcement, and routes also need a defensible comparison group and trend assumptions. “Rerouting is plausible” is weaker than a measured causal decomposition into lawful substitution and unchanged total migration. [SOURCE: historical CHNV result; INFERENCE]
+
+## Local budgets and capacity
+
+Administrative spending can establish real **gross budgetary pressure** for the program, government, and period recorded. The historical city/state numbers mix fiscal years, program scopes, and jurisdictions and should not be treated as standardized net costs. State spending for Massachusetts is not Boston city spending, and Chicago city spending is not automatically Cook County spending. A cost-per-sheltered-person denominator must match the payer's geographic and program coverage. Annualizing a partial fiscal year also assumes a spending path, not an observed annual total. [SOURCE: historical source table and scope labels; INFERENCE]
+
+The stated city totals, peaks, and shelter counts were not independently refreshed in this pass. A migrant-care peak and a pre-surge total-homelessness baseline cannot establish the incremental number of beds required without matching populations and dates. Documented caps or emergency spending support local pressure; they do not validate the earlier national 10-million-arrivals-per-year capacity calibration or measure net fiscal or welfare loss. [GAP; INFERENCE]
+
+## Election association
+
+The recorded Hispanic-share check changes the receiver coefficient from +0.0256 to +0.0238, about **+2.4 percentage points**. Conditional on the unrecovered model, this says that adding that particular covariate does not erase the association. It does not rule out Hispanic realignment, inflation, turnout changes, pre-existing trends, or other confounding, and does not reveal individual voters' motives. [SOURCE: historical result; INFERENCE]
+
+Calling the coefficient a **correlational upper bound** was unjustified: without a justified sign and magnitude for omitted-variable bias, an association can exceed or understate the causal effect. Receiver designation was informal, and the small selected set combines different border and busing destinations. Many county observations do not remove the need to account for exposure selection, correlated shocks, and the number of independently treated places. The raw +4.41-point gap and the adjusted +2.4-point coefficient are descriptive model summaries, not causal headlines or bounds. [INFERENCE]
+
+## Connections to earlier analyses
+
+The QWI enforcement estimates do not establish native-specific wage effects even for the earlier period; this is an outcome-definition defect, not merely a surge extrapolation caveat. See the [E-Verify repair](immigration-causal-everify-card-vs-borjas.md). The corrected domestic/abroad median-county ratio measures geographic movement, not receiver burdens. A deportation simulation remains a conditional scenario; this memo does not validate its first-order output or multiplier values as percentages of GDP. See the [synthesis repair](immigration-causal-paradigm-escape-synthesis-2026-04-18.md). [INFERENCE]
+
+## Revisions
+
+- **2026-09-05:** Preserved the earlier parser corrections while withdrawing encounter-to-arrival equivalence, the CHNV null/substitution verdict, the election “upper bound,” and the native-wage claim; clarified program/geography and simulation limits. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # The 2021-2024 surge: what the data show
 
 **Date:** 2026-04-18 (evening)
@@ -265,3 +305,6 @@ hash: 9631c1d1846f
 cross_refs: research/immigration-causal-paradigm-escape-synthesis-2026-04-18.md, research/immigration-causal-surge-2021-2024.md
 
 end-knowledge-index -->
+
+</details>
+<!-- historical-snapshot:end -->

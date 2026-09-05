@@ -1,3 +1,26 @@
+# Research coverage matrix — current interpretation (2026-09-05)
+
+**Verdict:** The June pass below is a historical search and integration record. It did not demonstrate literature saturation, exhaustiveness, causal validity or complete dataset access. Its proposed analyses and verdicts are superseded by the corrections below and the linked source memos. A fetched paper, populated table or many specifications are coverage facts, not confirmation of a claim. [INFERENCE]
+
+| Axis | Correct current interpretation | Next analysis must establish |
+|---|---|---|
+| Economics | NAS/model fiscal scenarios and CBO projected federal effects are conditional, not universal cost bounds | Matched population, horizon, budget coverage and behavioral assumptions |
+| Crime | Status-linked observed outcomes and area-level shares answer different questions | Numerator/denominator, justice-system selection and policy identification |
+| Sociology | Dinesen2020 finds a modest negative generalized-trust association too; GSS cross-sections do not identify individual convergence | Trust type, causal design, age/cohort/selection and generation classification |
+| Policy | Specific legalization/enforcement estimates vary in treatment, population and outcome; a nonsignificant coefficient does not prove no effect | Policy counterfactual, interval, timing assumptions and reporting/removal channels |
+| Urbanism | A rent/share regression is a descriptive screen unless a credible identification design is added | Migration endogeneity, pre-trends, instruments/exposure construction and valid uncertainty |
+
+Corrections propagated from [economics](immigration-economics-disconfirmers-2026-06-25.md), [crime](immigration-crime-frontier-2026-06-25.md), [sociology](immigration-sociology-frontier-2026-06-25.md), [policy](immigration-policy-frontier-2026-06-25.md) and [urbanism](immigration-urbanism-frontier-2026-06-25.md):
+
+- The trust review’s generalized-trust null was wrong; its Figure2 reports a significant negative association, while out-group trust is inconclusive. Adjustment does not prove causality. [SOURCE: https://pure.au.dk/ws/files/230771020/Ethnic_Diversity_and_Social_Trust_Final_version_2020.pdf]
+- Race restriction is not matching; NIJ310356’s tract associations identify neither individual perpetrators nor a causal zero. Its generational passage reviews earlier studies. Cato vintages share underlying Texas data. The Lott critique was not independently reconstructed by this pass. [SOURCE: https://www.ojp.gov/pdffiles1/nij/grants/310356.pdf; linked crime memo]
+- CBO60165 projects roughly $897B lower covered federal deficits over2024–2034, including revenues/mandatory/netinterest, excluding discretionary appropriations and state/local. Its roughly $0.2T discretionary illustration is not a proven bound. GDP is not fiscal revenue. A static NAS estimate is not made a mathematical cost ceiling by one modeled positive omitted channel. Recent non-EEA UK arrivals are positive in D&F’s cited recent-cohort account; that account is not a lifetime NPV. [SOURCE: https://www.cbo.gov/publication/60165; https://www.cream-migration.org/files/FiscalEJ.pdf; linked economics memo]
+- The old QWI analysis measures monthly earnings of stable/full-quarter employees and has no nativity field; it cannot establish a native-wage null. The old Mexico SIPP/ACS fiscal scalar is withdrawn pending allocation/education rebuild. [SOURCE: https://api.census.gov/data/timeseries/qwi/se/variables.html; September decision]
+- A `Δrent ~ Δforeign-born-share × elasticity` regression does not replicate Wilson–Zhou’s causal design merely by sharing its sign. Its house-price/rent, labor-income and transfer outcomes are not a fiscal net-balance estimate. [INFERENCE]
+- Data-access and holdings claims below are dated June records. Raw data now exist at `/Volumes/2TBPNY/research-data/immigration-fiscal/data`; a dead historical symlink is not evidence of absence. Current access tiers and extract availability require checking. [SOURCE: current filesystem inspection]
+
+## Historical dispatch and integration record — June2026 (verbatim, superseded above)
+
 # Research Coverage Matrix — "every possible research" bounded honestly (2026-06-25)
 
 **Trigger.** Operator goal: *get every possible research on this topic across sociology, urbanism, economics, policy, crime — and get the datasets.* This doc is the **frame** (constitution principle #5, "name the frame"): it states per-domain what is **saturated** vs a **genuine frontier**, so "every possible" is a bounded, falsifiable claim, not a vibe. Filled by a 4-agent parallel research+acquisition pass; the parent integrates.
@@ -97,3 +120,8 @@ Intern-rule: 3 load-bearing new DOIs (Marie-Pinotti JEP, Gonçalves-Jácome-Weis
 **What stays gated / in HUMAN.md (acquire, can't autonomously pull):** WRLURI2018 + Geocorr crosswalk (one-time DL / on-demand generator, documented in `setup-urban-housing.sh` MANUAL); IPUMS-CPS 2nd-gen extract + openICPSR 120490 mobility (login-gated); NIS-restricted / Add-Health-restricted tiers.
 
 **Honest bound on "every possible research":** it is NOT infinite and is now largely done at the LITERATURE level. Economics and crime are saturated (the disconfirmer gap is closed); sociology papers are near-harvested; policy's causal gap is filled. The genuine remaining frontier is **urbanism — and there the bottleneck is a BUILD (the rent panel), not more search** — plus a handful of gated microdata pulls. Continued literature scouting would now mostly return overlap; the return has shifted from "find papers" to "build the panel + pull the gated extracts."
+
+
+## Revisions
+
+- **2026-09-05 — Withdrew saturation, causal-replication and proxy-certification claims.** See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md). Earlier dated revision entries describe the historical state, including superseded conclusions.

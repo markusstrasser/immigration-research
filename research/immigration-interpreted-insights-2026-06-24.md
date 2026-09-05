@@ -1,196 +1,85 @@
-# Immigration — Interpreted Insights (adversarially verified)
+# Immigration — Interpreted Insights (2026-06-24; repaired 2026-09-05)
 
-**Date:** 2026-06-24
-**Source findings:** 18 adversarially-verified claims across 5 lenses (scaap-crime-fiscal, claim-conviction-map, crime-evidence-synthesis, net-ledger-conviction). Each claim below carries a post-refutation `conviction_final` (not its prelim grade). Where a refutation dented or corrected the claim, the correction is stated, not hidden.
+**Verdict:** The defensible conclusions concern specific populations, observed outcomes and fiscal ledgers. Several June exports exceeded those boundaries: race restriction was called matching, CBO projections were treated as realized gains or a proven ceiling, fiscal balances were treated as incumbent welfare, and administrative coverage was treated as a national bound. This version replaces those inferences. Numerical conviction scores in the historical record are judgment labels, not calibrated probabilities. [INFERENCE]
 
-> **Instrument-bias caveat** (`notes/llm-bias-caveat.md`): this analysis is produced through a frontier LLM whose post-training carries a soft progressive prior, strongest exactly on immigration/crime/justice framings. Mitigation here is structural, not stylistic — every load-bearing magnitude below is anchored to a **nonpartisan or against-interest** primary source (CBO, NAS, BJA, PNAS/AER; Cato corrections that *shrink* Cato's own headline). Direction claims that rest on advocacy sources are deflated or flagged. Read the framing-sensitive section as the place the instrument's thumb is most likely on the scale.
+## Crime comparisons and generations
 
-**Posture:** this is the opposite of a hype memo. A single well-verified falsification outranks ten plausible syntheses. Several headline claims below were *corrected* under refutation; those corrections are the most valuable lines in the document.
+Light, He & Robey’s Texas study and Cato’s Texas conviction series report lower unauthorized than native rates for their observed outcomes/populations. They share important underlying administrative data; multiple analyses are not wholly independent replications. Arrest, conviction and incarceration differ from latent offending and from a policy’s causal crime effect. [SOURCE: https://doi.org/10.1073/pnas.2014704117; https://www.cato.org/policy-analysis/illegal-immigrant-murderers-texas-2013-2022]
 
----
+Cato’s 2023 incarceration rates yield `1−613/1,221 = 49.8%` lower for unauthorized versus all natives and `1−626/891 = 29.7%` after excluding Black respondents from both groups. These are different descriptive populations. The restriction does not standardize the remaining race distribution or other covariates, so the 20.1-point difference is not an estimated correction to a biased rate. Nor can this national incarceration comparison adjust a Texas arrest estimate. [SOURCE: https://www.cato.org/sites/cato.org/files/2025-03/Policy-Analysis-994.pdf; RECALCULATION; INFERENCE]
 
-## 1. HIGH CONVICTION — survived refutation (conviction_final ≥ 0.70)
+If `a` is the second-generation share among natives, `r_native = a·r_2 + (1−a)·r_3+`. Evidence that the second generation exceeds the first (`r_2>r_1`) does not establish that it exceeds third-and-higher generations. Area-level immigrant-share studies do not identify individual generational offending; selected jail interviews do not give population rates. [SOURCE: studies reviewed in https://www.ojp.gov/pdffiles1/nij/grants/310356.pdf, pp. 11–12; INFERENCE]
 
-### 1.1 Foreign-born / unauthorized crime runs BELOW native-born — the single best-supported crime node
-**[SOURCE]** · **conviction_final = 0.88** · lens: crime-evidence-synthesis
+Enforcement has possible removal/incapacitation, deterrence and reporting channels. A lower observed immigrant rate does not determine the net effect of a particular enforcement policy. Underreporting can affect recorded offending as well as police-recorded victimization; an insignificant policy estimate is not evidence of exact zero. [SOURCE: https://www.nber.org/papers/w32109; INFERENCE]
 
-On the strongest U.S. administrative data, unauthorized/foreign-born offending and incarceration run **below** native-born across violent, property, and drug categories. Carried by convergence across independent methods/eras:
-- Light, He & Robey 2020 (PNAS 117(51)) — TX DPS 2012–2018, ~700K arrests, the only state recording immigration status at arrest; undocumented ≈ half the native homicide/assault arrest rate, 3–5× lower for property crime, robust to denominator and classification swaps.
-- Gunadi 2019 (Oxford Econ Papers) — ACS institutionalization + Altonji-Card IV, undocumented 33% **less** likely institutionalized.
-- Abramitzky, Boustan, Jácome, Pérez & Torres 2024 (AER:Insights) — immigrants below US-born for 150 yrs (1870–2020), gap **widening** since 1960.
-- Cato/Nowrasteh TX convictions — ~26% lower homicide conviction rate.
+## Fiscal accounting, GDP and welfare
 
-**Correction applied under refutation (do not drop these):**
-- The headline "half / 2×" **aggregate** ratio is **race-confounded** (predominantly-Hispanic unauthorized vs all-native incl. higher-incarceration Black Americans). The honest within-race gap is ~**30%**, not ~50% (see §1.2).
-- The **violent / homicide sub-cell was genuinely contested.** CIS (Kennedy/Richwine/Camarota 2022) documented a real DPS identification-lag undercount: in immature data, recently-convicted illegal immigrants sit in "unknown" and get miscoded native-born. On a 2012-snapshot this flipped Cato's homicide figure to "above average." **Resolution:** Cato PA 977 (2024) rebuilt the data via FOIAs removing the double-count and on **mature** 2013–2022 data found illegal homicide conviction 26% below native, all-crime conviction 48% below — the undercount CIS named, applied to mature data, *predicts and confirms* the direction. CIS itself concedes lower illegal rates for robbery/drugs/lesser offenses.
-- "Highest-conviction node in the entire crime picture" should soften to **"among the highest"** (no documented node-ranking supports a strict superlative). Mechanism (selection vs deterrence vs underreporting) is unidentified.
+CBO’s July 2024 report **projects** about $897B lower covered federal deficits from its 2021–2026 surge over 2024–2034. It includes revenue, mandatory spending and net interest, excluding discretionary appropriations and state/local budgets. Its illustrative proportional discretionary-spending case adds about $0.2T. The exclusion requires a coverage caveat; it does not prove the headline is a ceiling. The $8.9T nominal-GDP gain is a separate output projection and must not be added to fiscal revenue or treated as incumbent income. [SOURCE: https://www.cbo.gov/publication/60165]
 
-Direction is over-determined; magnitude/scope/framing are where the dents live.
+A NAS age-25 less-than-high-school figure of −$109k is a fiscal NPV for a specified scenario, not an estimate of incumbent natives’ total welfare. The published Clemens correction can change the sign under its capital-tax assumptions, but this repository has not reproduced both sides in one matched microsimulation. Do not splice an annual cash-flow estimate, a different cohort’s NPV and a dynamic model result into one accounting identity. [SOURCE: https://www.nationalacademies.org/read/23550/chapter/13; https://doi.org/10.2139/ssrn.3982027; INFERENCE]
 
-### 1.2 The protective gap is real but its commonly-cited MAGNITUDE is overstated (~30%, not ~50%)
-**[SOURCE]** · **conviction_final = 0.90** · lens: crime-evidence-synthesis
+The project’s earlier Mexico SIPP/ACS annual estimate of +$1,519 per adult (+$12.9B aggregate) is withdrawn pending the household/person allocation and education-code rebuild documented in the September decision. It is not valid support for a net fiscal, assimilation or native-comparison conclusion. [SOURCE: ../decisions/2026-09-05-material-inference-repair.md]
 
-Landgrave & Nowrasteh, Cato PA 994 (Apr 2025), race-stratified 2023 incarceration per 100k: Native-born all = 1,221; native-born excl. Black = 891; illegal-immigrant all = 613; illegal excl. Black = 626. The aggregate "~50% lower" (613 vs 1,221) collapses to **~30% lower** (626 vs 891 → 29.7%) once Black Americans — higher-incarceration, absent from the predominantly-Hispanic unauthorized group — are removed from both sides. All four numbers verify **verbatim** against the primary PDF.
+NAS Table 9-6’s approximate first/second/third-plus-generation state/local balances (−$1,600, +$1,700, +$1,300) are **annual 2011–2013 averages per independent person including allocated dependents**, not lifetime NPVs. Adding later-generation averages and dividing by the first-generation deficit does not yield a dynasty return: they are not linked descendants, and horizon, population weights and allocation must match. [SOURCE: https://www.nationalacademies.org/read/23550/chapter/14; INFERENCE]
 
-- **Direction is robust across independent datasets; magnitude is right to one sig-fig (~25–30%).** Independent newer year (Cato BP198, 2024 ACS) shows illegal < native within **every** racial group (Hispanic 957<1,278; Black 976<3,349; White 374<720; Asian 110<321). The cleanest like-for-like (Hispanic within-race) is ~25% lower — so the honest band is **~25–30%**.
-- **The correction is credibility-enhancing, not advocacy:** it *shrinks* the gap Cato touts (and the 613→626 anomaly — removing Black natives *raises* the illegal rate — is the source's own against-interest disclosure). Direction independently corroborated by Abramitzky et al. (NBER w31440, Stanford, non-Cato).
-- Caveat: the precise race-decomposition remains a single shop's (Cato/Nowrasteh) internal work; only the *direction* is replicated outside it. Removing race isolates one confound; age/sex/geography/detection/ICE-detention inclusion remain (removing 37,684 ICE detainees drops the illegal rate 674→356).
+Cato’s historical first-generation balance does not secretly bank future descendant taxes. Its combined-generation alternative includes child/second-generation costs and taxes; no matched state/local sensitivity here shows that removing either public-goods or child-allocation assumption necessarily reverses the sign. See [the repaired Cato memo](immigration-dismantle-cato-2026-06-25.md). [SOURCE: https://www.cato.org/white-paper/immigrants-recent-effects-government-budgets-1994-2023; INFERENCE]
 
-### 1.3 Federal annual cash-flow: CBO *projects* the 2021–2026 surge raises revenues and cuts the federal deficit
-**[SOURCE]** · **conviction_final = 0.95** · lens: net-ledger-conviction
+Cost concentration and aggregate gains can coexist, but a positive aggregate need not make every group better off and no compensation is automatic. Conversely, one local cost or negative fiscal balance is not proof of net national welfare loss. Higher rent payments transfer resources between tenants and owners and can accompany real crowding or construction effects; the whole rent increase is not lost national output. Migrant income gains, incumbent income, fiscal balances and global welfare must be measured separately before assigning welfare weights. [INFERENCE]
 
-CBO (pub 60569, 2024): federal revenues **+$1.2T** over 2024–2034, net deficit **reduction ~$0.9T** over 2024–2034 (~$296B over 2024–2028), GDP +$8.9T nominal. Every figure verified verbatim against CBO's own text/tables. A disconfirmation search for *any* source claiming the surge raised the federal deficit returned empty. **Two caveats (2026-06-25 cross-model red-team):** (i) this is a CBO *projection* under model assumptions, not a realized outcome; (ii) CBO's 10-year baseline holds discretionary spending near-fixed (caps/inflation) while counting the surge's payroll taxes immediately — so part of the projected "reduction" is a baseline-accounting artifact that later appropriations may erode. The *direction* (revenue-positive, near-term federal-deficit-reducing) is well-supported; read the magnitude as a projection ceiling, not a measured result.
+## What SCAAP counts can establish
 
-- **Coordinate-locked:** FEDERAL + ANNUAL/10-yr + AGGREGATE + SURGE-cohort. NOT lifetime-NPV, NOT state-local, NOT steady-state stock. The contrarian cost figures (Heritage $5T, FAIR) live at a *different* coordinate and are advocacy (deflated to 0.28).
-- The finding's own "internal-consistency flag" (a "−$897B" line allegedly contradicting the deficit-reduction headline) was **disproven**: −$897B is CBO's own *signed* delta-to-deficit (negative = reduction), in the same table as the −$296B figure. Resolving it strengthens the case.
-- The Borjas "against-interest" corroborating leg is **mildly miscalibrated** — a positive aggregate surplus is near-mechanical from downward-sloping labor demand, which Borjas always conceded; his skepticism is *distributional/fiscal*, not about the aggregate triangle's sign. CBO carries the direction independently, so this dents one leg, not the conclusion.
-- This does **not** rest on the advocacy-inflated "immigrants are net contributors" meme (ITEP/Cato, deflated to 0.28) — correctly disclaimed.
+BJA’s FY2023 SCAAP solicitation covers qualifying incarceration during **July 1, 2021–June 30, 2022**, not calendar-year 2023 offending. The program reimburses part of qualifying correctional costs for people meeting its criminal-conviction, custody-duration and immigration-status definitions. “Criminal alien” in this program must be interpreted through those definitions, not equated casually with either all foreign-born people or every noncitizen. [SOURCE: https://bja.ojp.gov/news/now-available-fy-2023-state-criminal-alien-assistance-program; https://bja.ojp.gov/program/state-criminal-alien-assistance-program-scaap/overview]
 
-### 1.4 At the <HS, first-gen, lifetime-NPV coordinate the sign is NEGATIVE for incumbent natives — but flips positive under one defensible accounting rule
-**[SOURCE]** · **conviction_final = 0.90** · lens: net-ledger-conviction
+The June parse reported approximately 7.8M confirmed-status inmate-days, 6.5M unresolved-status days and $210.4M in awards. These are historical program-extract totals retained as approximate descriptive counts, not a fresh September database verification. The unresolved category is prefiltered by applicants’ reasonable belief, not proof that every unresolved person has a particular citizenship or immigration status. [SOURCE: local parser `infra/immigration-fiscal/build/parse_scaap_awards.py` and BJA award/solicitation files; current aggregate checksum UNVERIFIED]
 
-NAS 2016/17 panel (Ch.8): an age-25 <HS individual immigrant has lifetime fiscal NPV ≈ **−$109,000** (2012$). The same cell flips to **+$128,000** under Clemens's capital-tax adjustment, *without changing the earnings path*.
+Adding all unresolved submitted days to confirmed submitted days gives a sensitivity scenario for that submitted record set. It is **not a national upper bound**: nonparticipating jurisdictions, ineligible custody and classification error remain outside it. Inmate-days are cumulative custody person-time, not a point-in-time prisoner stock, unique offenders or offense incidence. Dividing by a matched total-inmate-day denominator can produce a custody share; it still does not give a population offending rate. [INFERENCE]
 
-- Both numbers verified **verbatim** from the real CGD PDF (cgdev.org): *"the adjustment changes the sign of lifetime net fiscal impact: from –$109,000 to at least +$128,000 without including children and grandchildren."* Paper is real (CESifo WP 9464 / IZA DP 15592, 2022). The −$109k traces to the NAS panel (Blau et al. 2017, NAS 2017 Table 8-12/8-13).
-- **Mechanism MISLABEL — correct the prose:** the finding (and ledger-map M2) call Clemens's adjustment "general-equilibrium / capital-tax GE." Clemens **explicitly rejects** this: *"this is not a general equilibrium effect… an instantaneous, static effect… at partial equilibrium (fixed factor prices)."* It is a **fixed-price partial-equilibrium accounting correction** (firms add capital → that capital is taxed → NAS omitted it). The error cuts *in the finding's favor* — a PE correction needs fewer assumptions than a GE estimate — but the label must be fixed everywhere it appears.
-- **Direction NEGATIVE is over-determined:** all 8 NAS <HS scenarios are negative (the NAS <HS average ~−$117k to −$173k is *more* negative than the −$109k point chosen); restrictionist estimates run far more negative. The *only* thing producing a positive sign is Clemens's one rule — exactly "assumption-dependent, flips under a defensible rule."
-- **Caps below 0.95:** Clemens is pro-immigration producing a pro-immigration result (with-interest, 0.8); the +$128k is a working paper with **no peer-reviewed rebuttal surfaced** and AEI (Orrenius 2025) applies the model and still finds ≤HS net negative. So "the flip is settled-direction" is too strong — "published but contested" is accurate. The −$109k itself is one scenario in NAS's 8-scenario fan.
-- **Provenance gap:** the cited local PDFs (Clemens, NAS) are **not on disk** (`sources/` and `external/` trees empty/absent) — externally verified, not locally re-checkable. Re-archive needed.
+Awards are formula-based partial reimbursements and differ from full costs. A reimbursement-per-day ratio cannot by itself recover a jurisdiction’s marginal or total cost; it also need not be unrelated to costs, since salary and custody measures enter the formula. Award concentration describes the program, not the national crime distribution. [SOURCE: https://bja.ojp.gov/program/state-criminal-alien-assistance-program-scaap/funding; INFERENCE]
 
-### 1.5 Costs are CONCENTRATED, benefits are DIFFUSE — the structural reason it "feels" net-negative without being so
-**[SOURCE / INFERENCE]** · **conviction_final = 0.82** · lens: net-ledger-conviction
+State totals such as SCAAP days, foreign-born population, LEP enrollment and Medicaid enrollment may co-scale with population. A raw correlation does not identify an immigration effect, but co-scaling alone does not prove every adjusted relationship spurious. Require aligned years, coverage, denominators and a defensible causal design. ACS foreign-born aggregate counts are publicly available; restricted microdata are not necessary for every denominator. [INFERENCE]
 
-Two genuinely negative, narrow cells (first-gen **state-local** fiscal; distributional **wage** hit to competing low-skill natives) sit against positive aggregate-native and migrant-welfare books. State-local: CBO 2025 (pub 61256) direct net cost ~$9.2B (2023 surge), nonpartisan (1.0). Wage hit: Borjas, academic weight 0.8. Against these: positive aggregate native surplus (against-interest in Borjas) and a large migrant place premium (2–15×, Clemens-Pritchett). Standard incidence geometry: concentrated costs, diffuse benefits.
+## Assimilation and local outcome proxies
 
-- **Real caveats that cap conviction:** (a) the "exactly two negative cells" framing **undercounts** — lifetime-NPV-<HS (§1.4) is also negative, surviving the "two" framing *only* because it's assumption-dependent (not high-conviction); housing/rent incidence is a third concentrated negative folded into the local story. (b) The wage-hit **magnitude** is pulled toward the small end by the repo's *own* E-Verify/QWI test (closer to a Card-style null than large Borjas gains) — the **sign** survives (imperfect-substitutes prediction), the **strength** is weaker than implied.
-- **FRAMING-SENSITIVE via the welfare boundary:** the sign of the *whole picture* depends on whose welfare you weight (incumbent-natives-only vs all-residents vs global). The single most refutation-resistant element is the Borjas aggregate surplus up-weighted *because* it's against his prior.
+The synthetic-arrival-cohort builder observes different people in repeated cross-sections, aged 25–64, relative to all natives in that age range. Changing ages, period effects, selective exit and arrival-decade composition remain. Its positive-income mean does not describe people with zero/negative income. Thus convergence in those cells is descriptive, not a within-person causal assimilation rate or a test that rules out fixed-trait explanations. Recent ACS also lacks parental birthplace for a direct second-generation-by-origin classification; the CPS parental-birthplace design answers a separate cross-generational comparison. [SOURCE: `infra/immigration-fiscal/build/build_immigrant_assimilation_profile.py`; `infra/immigration-fiscal/build/load_cps_second_gen.py`; INFERENCE]
 
-### 1.6 SCAAP captures a real, measurable, highly state-concentrated criminal-alien incarceration footprint — among participating jurisdictions only
-**[SOURCE]** · **conviction_final = 0.88** · lens: scaap-crime-fiscal
+The QWI outcome used for E-Verify is **average monthly earnings of stable/full-quarter employees**, with no nativity variable in the sex-by-education API. It is not hourly pay or native-born earnings, and a nonsignificant estimate cannot establish a native-wage null. [SOURCE: https://api.census.gov/data/timeseries/qwi/se/variables.html]
 
-FY23 SCAAP (BJA): ~**7.83M** DHS-confirmed criminal-alien inmate-days, **$210.4M** reimbursed, ~500 jurisdictions, 43 states + PR + VI. Highly concentrated: **CA (27.9%) + TX (27.3%) = 55%** of confirmed days; top-5 = **73.7%**.
+## Provenance and unresolved empirical questions
 
-- **Correction:** the jurisdiction count should read **~500/501** (not "482"); the universe is **43 states + PR + VI** with **8 of 51 states+DC entirely absent (incl. DC itself)** — SCAAP is **opt-in**, so 7.83M / $210M are **lower bounds on the participating subset**, not a national census.
-- "Criminal alien" = a DHS immigration-status flag spanning LPRs, visa-holders, and unauthorized — **NOT** a synonym for "unauthorized."
-- Concentration partly tracks state population/jail size, **not** per-capita propensity (no denominator). Per-foreign-born-capita ratios differ sharply (TX ~2.4×, AZ ~3.1×, NY ~0.5×) — "concentration" must not be read as "where unauthorized immigrants commit crime."
+The June inventory, local reproduction status and corpus weights are historical workflow metadata; they are not current holdings or evidence that a claim is true. Raw data now exist under `/Volumes/2TBPNY/research-data/immigration-fiscal/data`; the former `sources` symlink does not establish absence. Corpus-weight averages and uncalibrated conviction scores do not measure evidential bias or calibrated probabilities. [SOURCE: current path inspection; INFERENCE]
 
-### 1.7 The SCAAP undercount is large and unresolvable from this data — confirmed days are a FLOOR
-**[SOURCE]** · **conviction_final = 0.78** · lens: scaap-crime-fiscal
-
-Nationally **6.48M "unknown-status" inmate-days** (83% as many as the 7.83M confirmed); in several states unknown ≈ or > confirmed (FL 0.99, CO 1.83, NV 1.44, OK 1.68). True criminal-alien days plausibly range from ~7.8M (floor) to a ~14.3M ceiling (all-unknown thought experiment, honestly flagged as a bookend, not an estimate). GAO-11-187 confirms SCAAP days "represent only a portion of the criminal alien population."
-
-- **Factual correction (the finding's own hedge was backwards):** the "unknown" pool is **NOT** a mix of citizens and the general inmate population. Primary SCAAP docs show jurisdictions submit only inmates they "know or reasonably believe are undocumented criminal aliens" — the unknown pool is **pre-filtered to suspected non-citizens** and is heavily DHS-verification lag / whole-jurisdiction reporting failure (e.g. PA DOC: 0 confirmed, 181,422 unknown). Unknowns are *more* alien-skewed than the finding stated.
-- **Over-hedged agnosticism, corrected:** for the **count**, both structural forces (voluntary undercount + suspected-non-citizen unknowns) push the true number **UP** — the "direction is genuinely ambiguous" hedge is legitimate only for the *severity/welfare* signal. Note the 0.83 ratio partly reflects that confirmed days are only ~1.9% of all inmate-days, so it measures DHS-verification incompleteness as much as hidden criminal aliens.
-
-### 1.8 SCAAP inmate-days are a custody STOCK, not a crime rate — the headline flips with the denominator
-**[SOURCE]** · **conviction_final = 0.90** · lens: scaap-crime-fiscal
-
-Within-state criminal-alien share of jail-days is **tiny** (national 1.9%; CA 4.4%, AZ 3.2%, FL 1.3%, GA 1.0%, NY 7.1%). Inmate-days (felony or 2+ misdemeanor conviction AND ≥4 consecutive days) are a person-days-in-custody **stock**, confounding offense frequency with sentence length, bail policy, ICE-detainer holds, and time-to-disposition.
-
-- **The CA-vs-NY divergence is the proof:** CA is #1 in *absolute* national days (27.9%) but mid-pack in *local* share; NY is #1 in *local* share (7.1%) but only ~5% of national days. The headline flips entirely with the choice of denominator. NY's local share is 89% one long-sentence state-prison jurisdiction (DOCCS) — affirmatively custody-duration/policy, **not** offending frequency.
-- No immigrant-population denominator exists in these tables, so **no rate of any kind** is computable from this warehouse. Source incentive is against-interest (SCAAP *reimburses* states, biasing toward inflating alien-days) — and the share is still 1.9%.
-
-### 1.9 SCAAP reimbursement dollars are NOT a cost measure; the join's fiscal correlations are spurious-by-construction
-**[SOURCE]** · **conviction_final = 0.95** · lens: scaap-crime-fiscal
-
-Award per confirmed inmate-day ranges **67-fold** ($7.28 GA to $488.65; median $27.34) with no relation to actual incarceration cost — SCAAP is a fixed federal appropriation distributed by a salary-weighted, prorated formula (claims exceed funds; every state is prorated). The view's correlations between criminal-alien days and Medicaid/SNAP/LEP (days-vs-LEP r=0.97) are **state-size co-scaling**, not a causal fiscal link.
-
-- The Medicaid/SNAP/LEP columns come from a separate state-context table LEFT-JOINed on state_fips; they describe the **whole state population** (all incomes, all nativities), **not** the incarcerated cohort. Treating any of these as causal is a textbook ecological/population-scaling fallacy — **[FRAMING-SENSITIVE]**.
-- Residual nuance: the LEP signal specifically may be immigrant-composition co-scaling rather than pure population; the decisive test (partial correlation controlling for *foreign-born* population) needs the license-restricted IPUMS microdata, not the public warehouse. Even if it survived, it would not make the columns a cost measure.
-
-### 1.10 Q5 state-local cost (≈ −$2.1k/yr per 2023-surge resident) reproduces to the dollar
-**[SOURCE]** · **conviction_final = 0.82** · lens: claim-conviction-map
-
-Held CBO 2025 state-local PDF (pub 61256): −$9.2B direct net on 4.4M added 2023 residents → **−$2,091/yr** (−$2,227 "potential"). Reproduces exactly; both inputs are verbatim in the held primary source and independently logged in the claims matrix (VERIFIED/HIGH).
-
-- The point estimate is **shown**; its "fragility under a broader horizon" half is **gated** on a same-universe lifetime micro-sim not built.
-- **Fragility DIRECTION partially contradicted:** the finding (via ledger-map L27, ~0/+ dynasty) implies −$2.1k flips toward neutral/positive under a dynasty horizon. But the surge is ~44% <HS, and the only held cell-matched descendant decomposition (NAS 2017 <HS) makes lifetime NPV **worse** (−$109k → −$186k), not better. The aggregate "2nd-gen are top contributors" is an all-education average that does **not** transfer to the low-education surge cell. CBO itself says the longer-term cost "could either rise or fall." Honest reading: **coordinate-bound, dynasty-horizon sign indeterminate** — calling −$2.1k "the" cost is itself the coordinate-switch the claim warns against. (Data-hygiene bug noted: a stale −109000 in `npv_education_benchmarks` includes-descendants <HS row.)
-
-### 1.11 Q6 splits: SCAAP concentration is settleable today (top-5 incl. FL, not the named top-4); the trend is gated
-**[SOURCE]** · **conviction_final = 0.86** · lens: claim-conviction-map
-
-Concentration reproduces exactly (CA 27.9% + TX 27.3% + FL 7.1% + AZ 6.5% + NY 5.0% = 73.7%; HHI 1684 "highly concentrated"). **Correction:** the original Q6's named top-4 "CA/TX/AZ/NY" **omits Florida**, which is rank #3 on inmate-days (557,135 days). FL is #3 on days but #4 on dollars, so the safe phrasing is "top-5 incl. FL, not the named top-4."
-
-- The **FY2015–23 trend** sub-claim is **fully gated** — only FY2023 is held. Multi-year SCAAP PDFs are public (testable in principle), and a raw inmate-day trend would be confounded by participation/confirmation drift, so the principal check must be a participation-adjusted per-capita rate.
-- Composite Q6 joins concentration AND trend with "and," so as a unit it is correctly ungradeable; the split-decision is the right epistemic move.
-
----
-
-## 2. CONTESTED / FRAMING-SENSITIVE
-
-### 2.1 Second-generation crime convergence — genuine but deliberately downgraded (the weakest crime node)
-**[INFERENCE]** · **conviction_final = 0.65** (downgraded from 0.88 on 2026-06-25 cross-model red-team — both GPT-5.5 and Gemini independently flagged 0.88 as inconsistent with this node's own evidence: null-to-weakly-protective *broad-generational* literature, not unauthorized-specific or current-cohort, and not generalizable from the TX-Mexican-heavy base to the 2021–26 surge cohort) · lens: crime-evidence-synthesis
-
-Later generations drift **toward** (not above) native crime levels — but the supporting evidence is **broad generational literature, not unauthorized-specific or current-cohort**. Anchors: Ousey & Kubrin 2018 (Annual Review, meta of 51 studies / 543 effects) and Rumbaut 2008.
-
-- The macro immigration-crime association is **null-to-weakly-protective**, not strongly so: Ousey-Kubrin mean **r = −0.031** (95% CI −0.055 to −0.003), with heavy design-heterogeneity (longitudinal r=−0.147 vs cross-sectional r=0.000; new-destination r=+0.028). So 2nd-gen convergence is a **caveat ON the first-gen finding (§1.1), not an independent high-certainty claim**.
-- The exact r-value is memo-reported, not independently re-confirmed (it lives in a results table snippet retrieval couldn't surface; the qualitative "negative but very weak" is verified). The node does not depend on the third decimal.
-- "Convergence toward native rates" ≠ "above native rates" — even converged 2nd-gen is **not shown to be a net crime cost**. The robustly-surviving statement is only the directional "first-gen protective effect attenuates across generations."
-- The warehouse holds **no** 2nd-gen crime cell (only binary is_foreign_born; incarceration column 100% NULL) — confirming the scope limit from the repo's own ledger.
-
-### 2.2 Sanctuary/enforcement → crime: protection does NOT raise crime, but the "symmetric null" framing is wrong
-**[SOURCE / partial UNVERIFIED]** · **conviction_final = 0.72** · lens: crime-evidence-synthesis
-
-The **load-bearing direction survives**: protecting unauthorized immigrants from deportation does **not** raise crime (Hausman 2020 PNAS matched-county; Kubrin-Bartos post-SB54; corroborated by the low individual base rate in §1.1 + reporting-suppression mechanism).
-
-- **Pillar mischaracterized:** Kang & Song 2021 (JLEO) is **not** "largely null" — `verify_claim` returned CONTRADICTED; it is a geographical-externality finding (crime *reduction* in activated counties when neighbors also activate). One of three named pillars was misread.
-- **The "symmetric two-sided null" framing is wrong — but so was the "null-to-HARMFUL" replacement** — **[FRAMING-SENSITIVE]**. Enforcement is a genuine **trade-off** with two opposing channels: a **removal/incapacitation** channel (deportation takes active offenders out of the local pool — the intended mechanism, and the channel the prior version omitted) set against a **reporting-suppression** channel (frontier work — NBER w32109; Census/AEA community-safety papers — finds intensive enforcement raises violent *victimization* by deterring immigrant victims/witnesses from reporting; the project's own claim-candidate C5 codes "enforcement reduces crime" as CONTRADICTED). Honest statement: **protection → null/no-harm; enforcement → net sign genuinely contested.** The original "symmetric zero" laundered the victimization-harm finding; the "null-to-HARMFUL" correction over-corrected by omitting incapacitation (caught on 2026-06-25 cross-model red-team — both GPT-5.5 and Gemini).
-- Evidence is **scout-verified metadata, not full-text-read** — treat as strong-prior-pending-read. No NCVS-based direct immigrant-victimization measure is held. The warehouse holds only SCAAP, which cannot adjudicate.
-
----
-
-## 3. GATED — direction expected from literature, NOT shown by this stack
-
-> **Honest framing:** most roadmap crime/mobility datasets are **not downloaded**. For these nodes, conviction is "what the existing peer-reviewed corpus expects," not what this stack has computed. The SHARP/killable versions require micro-data the warehouse lacks.
-
-### 3.1 The entire crime cluster's settling datasets have ZERO downloads
-**[UNVERIFIED — gated]** · **conviction_final = 0.85** (on the *negative* claim + direction) · lens: claim-conviction-map
-
-C1 (TX-DPS felony-rate, openICPSR-124923), C2 (BJS-SPI-2016, NACJD-37692), C3 (USSC federal-offender net-of-immigration-offense), S3 (Opportunity-Atlas/NCRP 2nd-gen) are **all ⬜ in the roadmap, triple-confirmed absent** from register and data tree.
-
-- **Precision correction:** the literal "ZERO crime datasets downloaded" is false — SCAAP (`crime_scaap_*`) IS a downloaded crime-adjacent dataset. But SCAAP **structurally cannot** settle any of C1/C2/C3/S3 (no native comparison cell, no arrest numerator, no population denominator, no race stratification), so the **count of settling datasets is genuinely zero**.
-- Expected directions (predictions, not shown): C1/C2 confirm-lower-but-narrower (race-stratified gap ~30%, §1.2); C3 likely **overbroad** (federal non-citizen over-representation collapses net of 8 U.S.C. immigration offenses); S3 likely **falsifies** any clean "immigrants-and-descendants are low-crime lineage" narrative (advantage is first-generation, not lineage). The ~30% magnitude is against-interest (Cato conceding its own ~50% overstates).
-
-### 3.2 The <HS NPV sign-flip is documented but not same-universe-reproduced
-**[SOURCE published / reproduction UNVERIFIED]** · **conviction_final = 0.82** · lens: claim-conviction-map
-
-(Same flip as §1.4, from the conviction-map lens.) The −$109k → +$128k flip is a real, exactly-transcribed, published result (verified verbatim) — but **no built artifact re-runs both NAS current-law and the capital-tax-corrected side under one micro-sim**. The warehouse's own annual flows annuitize to ~−$2.8k to −$4.6k/yr and carry `bridge_verdict='scope_mismatch'` for the <HS cell — they do **not** tie to NAS −$109k.
-
-- Same corrections as §1.4: **drop "GE," say "fixed-price partial-equilibrium capital-tax accounting correction"**; flip is **published-but-contested** (AEI 2025 rejects the adjustment), not settled-direction. Provenance gap: cited PDFs not on disk.
-
-### 3.3 Second-generation fiscal/mobility (S1, S2) — strongest-anchored gated claims
-**[SOURCE external / local UNVERIFIED]** · **conviction_final = 0.93** · lens: claim-conviction-map
-
-S1 (2nd-gen are top net contributors) and S2 (children-of-immigrants out-rise children-of-natives from nearly every origin) are the best-anchored gated claims — NAS 2016 + Abramitzky-Boustan-Jácome-Pérez AER 2021 (millions of admin father-son pairs). The settling micro-data (ABJP openICPSR-120490, Opportunity Atlas 2nd-gen) is **not downloaded** (verified absent: 103 warehouse tables, no rank-rank/mobility/Atlas data).
-
-- **Direction robustly anchored, but "what the literature expects, not locally computed."** The strongest counter-literature (Duncan-Trejo) does **not** realize the killable inverse — it measures the 2nd→3rd transition (S2 is 1st→2nd) and finds the apparent Hispanic stall is largely a selective-ethnic-attrition *artifact*, reinforcing the direction.
-- **Citation bug to fix:** claim-candidates line 61 mislabels S1's fiscal anchor as "NBER w26408" — w26408 is the Abramitzky-Boustan **mobility** paper (underpins S2). S1's correct anchor is NAS 2016 (NAP.edu/23550). Both real, distinct.
-- Caveat: the verify-pass confidences (0.9–1.0) are Exa /answer web-triage, **not** adversarial cross-model grades.
-
-### 3.4 Dynasty net sign (~0/+) — gross 2nd-gen-positive robust, NET reversal assumption-contingent
-**[SOURCE external / local UNVERIFIED]** · **conviction_final = 0.62** · lens: net-ledger-conviction
-
-NAS finds the 2nd generation contributes **more in taxes** than their parents or the rest of the native-born — verified verbatim (1.0). The finding upgrades this to a **NET** claim ("reverses the first-gen state-local deficit"), and **that upgrade is the weak link**:
-
-- The NAS statement is **GROSS taxes-paid**. The NAS Table 8-12 **NET** (immigrant + descendant combined 75-yr NPV) ranges from substantially **negative** to positive across the eight scenarios — negative under average-cost public-goods + CBO-budget assumptions. The finding's own generator A06 carries a disconfirming case (descendants −$15k while immigrant +$92k).
-- So **"dynasty NET ~0/+" is assumption-flipped, not robust.** Gross 2nd-gen-positive survives; the net reversal does not, cleanly. Same w26408→NAS-2016 mis-source as §3.3. Honest downgrade: "sign indeterminate, gross-2nd-gen-positive but net-dynasty assumption-dependent."
-
----
-
-## Cross-cutting cautions (read before quoting any number above)
-
-1. **Coordinate-switching is the central debate error.** Federal-annual (+, §1.3), state-local-first-gen (−, §1.5/1.10), <HS-lifetime-NPV (− or +, §1.4), dynasty (~0/+ gross, indeterminate net, §3.4) are **different books**. Quoting one to rebut another is the named fallacy. There is no single "the cost of immigration" number.
-2. **Welfare boundary sets the sign of the whole picture** (§1.5): incumbent-natives-only vs all-residents vs global. Under a global/all-resident boundary the migrant place premium dominates; under an incumbent-low-skill-native-only boundary the two negative cells dominate. **[FRAMING-SENSITIVE]**
-3. **SCAAP measures custody/reimbursement, not offending or cost** (§1.6–1.9). It cannot answer "do immigrants commit more crime" or "what do criminal aliens cost."
-4. **Provenance gap:** the `external/` PDF tree is absent; the Clemens/NAS figures are externally verified but not locally re-checkable. Re-archive before treating as "primary evidence held."
-5. **Evidence base is mildly cost-tilted by composition, not by rule** (mean adj_weight 0.63 cost vs 0.76 benefit) — the corpus is built richer on cost-measurement than benefit-measurement.
-
-## Concrete fixes surfaced (cheap, no-downside)
-- SCAAP: correct "482"→~500 jurisdictions and the universe to "43 states + PR + VI; 8 of 51 states+DC absent incl. DC" (§1.6); add a checksum assertion against BJA's $210,386,343 / 500 in `parse_scaap_awards.py`.
-- Everywhere: replace "GE / general-equilibrium" → "fixed-price partial-equilibrium capital-tax accounting correction" for the Clemens adjustment; note the flip is published-but-contested (AEI 2025) (§1.4/3.2).
-- `immigration-claim-candidates-2026-06-24.md` line 61: fix S1's anchor w26408→NAS-2016 (NAP.edu/23550) (§3.3/3.4).
-- `npv_education_benchmarks`: fix the stale −109000 in the includes_descendants <HS row (§1.10).
+Open questions include matched national unauthorized offending, policy-specific enforcement effects, the rebuilt full fiscal ledger, linked-descendant fiscal effects and causally identified assimilation. Those are genuine empirical limits, not proof that the effects are zero or of a favored sign.
 
 ## Revisions
 
 - **2026-06-25 — cross-model red-team (GPT-5.5 + Gemini, two non-Claude labs).** Five confirmed corrections applied; full adjudication in `immigration-redteam-2026-06-25.md`. (1) §2.1 second-generation crime convictionscore **0.88 → 0.65** — both labs flagged it as inconsistent with the node's own null-to-weakly-protective, non-unauthorized-specific evidence. (2) §1.3 federal heading reframed "RAISED/CUT" → "**CBO *projects***" + added the discretionary-baseline accounting-artifact caveat (direction supported, magnitude is a projection ceiling). (3) §1.1 "Direction is **bulletproof**" → "robust across independent datasets." (4) §2.2 enforcement "**null-to-HARMFUL**" reframed as a genuine trade-off (removal/incapacitation vs reporting-suppression; net sign contested) — the prior version omitted incapacitation. (5) Heritage-vs-Clemens skepticism asymmetry noted (the instrument-tilt the operator flagged, caught in our own scores). The red-team tightened the headline; it did not overturn it.
+
+- **2026-09-05 — Replaced proxy, accounting and generational exports with matched estimands** See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md). Historical revision entries above describe the earlier state, including conclusions superseded here.
+
+## Historical quoted text retained verbatim
+
+These are quotations retained from the June memo, not a renewed endorsement of their surrounding inference.
+
+> **Instrument-bias caveat** (`notes/llm-bias-caveat.md`): this analysis is produced through a frontier LLM whose post-training carries a soft progressive prior, strongest exactly on immigration/crime/justice framings. Mitigation here is structural, not stylistic — every load-bearing magnitude below is anchored to a **nonpartisan or against-interest** primary source (CBO, NAS, BJA, PNAS/AER; Cato corrections that *shrink* Cato's own headline). Direction claims that rest on advocacy sources are deflated or flagged. Read the framing-sensitive section as the place the instrument's thumb is most likely on the scale.
+
+> **Honest framing:** most roadmap crime/mobility datasets are **not downloaded**. For these nodes, conviction is "what the existing peer-reviewed corpus expects," not what this stack has computed. The SHARP/killable versions require micro-data the warehouse lacks.
+
+## Historical quoted strings retained verbatim
+
+These quotations, hypotheses and labels appeared in the June working memo. They are retained for provenance; they are not a renewed endorsement or certification as primary-source quotations. Current conclusions and source scope are above.
+
+"Highest-conviction node in the entire crime picture"
+
+"the adjustment changes the sign of lifetime net fiscal impact: from –$109,000 to at least +$128,000 without including children and grandchildren."
+
+"this is not a general equilibrium effect… an instantaneous, static effect… at partial equilibrium (fixed factor prices)."
+
+"represent only a portion of the criminal alien population."
+
+"know or reasonably believe are undocumented criminal aliens"
+
+"top-5 incl. FL, not the named top-4."
+
+"what the literature expects, not locally computed."
+
+"43 states + PR + VI; 8 of 51 states+DC absent incl. DC"

@@ -1,3 +1,39 @@
+# Receiver capacity: candidate mechanisms, not identified causal levers
+
+**Current assessment — 2026-09-05.** The reported county regressions and receiver snapshots are useful exploratory descriptions. They do not establish that permitting restrictions caused the election response, that permits “beat” rent burden as a causal explanation, or that a specific immigration threshold was crossed. [INFERENCE]
+
+## County interaction results
+
+The prior panel reports a high-recent-foreign-born × low-permit interaction of **+0.62 percentage points**, t=2.58, p≈0.0098; a combined specification gives +0.67 points, t=2.80. The corresponding high-rent-burden interaction is near zero and imprecise. These are conditional associations in an observational county comparison. Statistical significance for one coefficient and nonsignificance for another do **not** show that their effects differ: that requires a defined contrast, its covariance, and comparable scales and specifications. [SOURCE: historical result tables below; INFERENCE]
+
+Permits measured over **2021–2024** overlap the migration exposure and the **2020–2024** election outcome. They can respond to migration, prices, local demand, or policy during the same period. Treating them as a predetermined supply moderator can therefore condition on a mediator or collider. A causal capacity test should distinguish pre-exposure constraints from construction responses. HC3 errors handle heteroskedasticity, not arbitrary spatial dependence or endogenous exposure; state fixed effects alone do not solve those problems. [INFERENCE]
+
+Within the selected high-exposure group, the reported permit-bin medians are 5.12, 5.05, 4.25, and 3.79 percentage points of GOP shift. The end-bin difference is **1.33 points**. That is a descriptive gradient. A chosen high/low interaction or monotonic bin pattern does not identify a discontinuity, a binding physical threshold, or a nonlinear causal response. No independent replication is supplied by regrouping the same observations. [SOURCE: historical panel; CALCULATION; INFERENCE]
+
+## Receiver capacity and denominator alignment
+
+HUD's PIT is a one-night count; HIC includes several program types. A shelter utilization comparison must align geography, date, and eligible bed/program categories with the sheltered population. [SOURCE: [HUD 2024 AHAR, definitions and inventory chapter](https://www.huduser.gov/portal/sites/default/files/pdf/2024-AHAR-Part-1.pdf)]
+
+Accordingly, the reported Denver, NYC, and Bexar sheltered-PIT/HIC ratios above one flag a denominator or inventory reconciliation requirement as well as possible stress. They are not self-validating evidence that physical beds were exceeded. Total PIT divided by shelter beds is not an occupancy rate because total PIT also includes unsheltered people. The numerator is not a migrant-only population. [INFERENCE]
+
+Massachusetts spending cannot be divided by a Boston CoC population to obtain a matched cost per person. Similarly, annual housing permits per HIC bed mix a flow and a stock; their correlation with PIT/HIC can partly reflect the common denominator. A temporary migrant-care peak and a different baseline shelter population need reconciliation before subtraction or a “capacity exceeded” conclusion. The old tables remain as records of the screen, not validated capacity thresholds. [INFERENCE]
+
+## What survives and what remains unverified
+
+Place-specific budgets and reported shelter limits can substantiate local gross pressure when tied to the same program, place, and date. That does not by itself measure net fiscal loss, identify migration's marginal effect, or determine a national or global absorption limit. The current evidence supports **testing** whether pre-existing housing and service capacity modifies arrival effects; it does not select that explanation over competing causes. [INFERENCE]
+
+The causal panel, joins, cutpoints, and scripts behind this memo were not recovered in this pass. Reported coefficients and bins were therefore audited conceptually and arithmetically where possible, not independently replicated. [GAP]
+
+## Revisions
+
+- **2026-09-05:** Withdrew causal-lever and threshold identification, separated significance from coefficient comparison, and corrected exposure-period permit and capacity-denominator assumptions. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Immigration threshold causal levers: what actually binds in the joined panel
 
 **Question:** After normalizing the joined threshold panel more aggressively, what look like the real levers and causal channels behind surge-era local stress and backlash?  
@@ -121,3 +157,6 @@ The best current public-data formulation is:
 3. [county_lever_bins.csv](sources/immigration-causal/data/threshold/analysis/county_lever_bins.csv)
 4. [receiver_normalized_2024.csv](sources/immigration-causal/data/threshold/analysis/receiver_normalized_2024.csv)
 5. [threshold_results_summary.json](sources/immigration-causal/data/threshold/analysis/threshold_results_summary.json)
+
+</details>
+<!-- historical-snapshot:end -->

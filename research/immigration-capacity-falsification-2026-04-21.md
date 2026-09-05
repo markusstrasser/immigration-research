@@ -1,3 +1,37 @@
+# Capacity falsification: what the checks do and do not establish
+
+**Current assessment — 2026-09-05.** The earlier pass reported structured county associations and weakened its own causal interpretation. That downgrade stands. The remaining claim of a validated immigration “stress marker” is also too strong without correcting the exposure definition and denominator and inspecting the original inference. This audit did not recover the causal panel or falsification outputs for a rerun. [INFERENCE; GAP]
+
+## Exposure and timing
+
+The stated numerator is **ACS 2022 five-year B05005 residents who entered in 2010 or later, divided by 12**. It is a surviving resident stock averaged across survey years, not observed annual arrivals and not a 2021–2024 surge measure. Dividing by 12 assumes a time path and ignores departures, mortality, and changing observation windows. It can be used as an explicitly labeled stock-derived proxy, not a measured arrival flow. [SOURCE: historical sample definition below; INFERENCE]
+
+Dividing that proxy by permits also imports local demand, construction cycles, and the treatment's potential supply response into the exposure. A 2017–2019 permit “baseline” overlaps the 2017–2018 and 2018–2019 outcome windows; it is not predetermined relative to those outcomes. Moreover, many migrants in the numerator arrived before those windows. These are pre-2021 associations, not clean pretreatment tests for the entire measured immigrant exposure. The COVID-overlap correction remains valid, but does not resolve these additional issues. [INFERENCE]
+
+Dropping 77 zero-permit counties from the earlier 2,390-county frame yields the stated 2,313 observations. Excluding no-build places can alter the target population precisely where the capacity hypothesis matters. Permit authorizations are also not completed dwellings or total usable housing capacity. [SOURCE: historical sample counts; CALCULATION; INFERENCE]
+
+## Falsification and uncertainty
+
+Zero exceedances in 1,000 permutations give a conventional plus-one Monte Carlo estimate of **1/1,001 ≈ 0.001**, not proof that the underlying tail probability is at most 0.001. Even under independent permutation draws, a one-sided 95% binomial upper limit is about **0.003**. More fundamentally, causal or conditional-null inference needs exchangeability: shuffling a nonrandom exposure within states does not automatically preserve relevant spatial dependence and exposure–covariate relationships. The result is a reported comparison with the chosen randomization scheme, not a causal test. [DERIVATION; INFERENCE]
+
+Geographic leave-outs can show that an observed sign is not carried by one omitted region; they do not remove common confounders. Decile monotonicity is a summary of the same observations, not independent confirmation. Repeated state-group train/test splits reuse states and counties, so the reported 96% versus 43% sign-match frequencies are not independent replications of population evidence. If split draws are independent, a binomial interval can describe Monte Carlo precision for the split frequency **conditional on this fixed dataset**. It does not by itself describe uncertainty about performance in new populations; that requires an appropriate sampling/generalization design. [INFERENCE]
+
+The historical text also contains different cutoff-concentration summaries: 22%/47% in the claims table and 25%/56.7% in the body. Their source-version relationship was not recoverable. No precise cutoff probability is endorsed here. The shared qualitative conclusion—that the selected threshold location was diffuse and transfer to politics poor—must not be reversed into a universal threshold claim. [SOURCE: historical threshold sections; GAP]
+
+## Current conclusion
+
+The earlier wage and employment coefficients are reported observational associations in county-average outcomes. They do not identify native wage losses, a physical capacity threshold, or migration's causal contribution. The unstable earlier wage associations and negative earlier employment associations remain reasons for caution; controlling for them does not by itself repair exposure timing or selection. See the [county outcome correction](immigration-county-outcome-panel-2026-04-21.md). [INFERENCE]
+
+## Revisions
+
+- **2026-09-05:** Preserved prior placebo/threshold downgrades, corrected the stock-derived exposure and timing, and narrowed permutation and repeated-split inference. [Decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical analysis — retained verbatim for source and correction provenance</summary>
+
+**Historical text, not the current assessment.** Its earlier verdicts, confidence labels, and source-version claims are superseded by the corrections above. It is retained to preserve quotations and the reasoning that was corrected.
+
 # Immigration capacity falsification pass — 2026-04-21
 
 **Question:** After correcting the earlier placebo bug, what survives real falsification pressure in the county `flow/capacity` result, and what has to be narrowed?  
@@ -225,3 +259,6 @@ The repo's current best position should now be:
 ### 2026-04-22
 
 The first draft of this memo treated `2021–2022` overlap windows as placebo/pretrend evidence. After `/critique close` flagged that as a real semantics bug, the county panel was rebuilt with earlier QCEW windows, the falsification script was rewritten around a true presurge permit baseline, and the threshold section was downgraded again once the exported threshold surface showed diffuse cutoff selection. The next close review still objected that one clean pre-COVID window was not enough, so the county panel was extended to `2017` and the annual controls were rerun. That extension weakened the stronger wage-side causal reading further: the clean presurge wage windows are unstable, while employment stays negative in both clean windows. [SOURCE: .model-review/2026-04-22-immigration-capacity-falsification-83e8f8/verified-disposition.md] [SOURCE: .model-review/2026-04-22-immigration-capacity-falsification-final-36f586/verified-disposition.md] [SOURCE: .model-review/2026-04-22-immigration-capacity-falsification-close-47cf93/verified-disposition.md]
+
+</details>
+<!-- historical-snapshot:end -->

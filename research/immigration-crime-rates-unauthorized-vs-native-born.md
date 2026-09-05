@@ -1,5 +1,7 @@
 # Crime Rates of Unauthorized Immigrants vs. Native-Born US Citizens — Research Memo
 
+**2026-09-05 scope correction:** Arrest, conviction, incarceration and self-reported offending are different outcomes. Aggregate population comparisons are valid descriptive estimands; neither race restriction nor repeated cohort cross-sections alone identify a causal effect. See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md).
+
 **Question:** What does the empirical evidence say about observed arrest, conviction, and incarceration rates of unauthorized (illegal) immigrants compared to native-born US citizens?
 **Tier:** Deep | **Date:** 2026-03-14
 **Ground truth:** Multiple papers already in corpus (Light & Miller 2020, Gunadi 2019, Ousey & Kubrin 2018, Nowrasteh/Cato analyses). No prior synthesis memo on this specific topic existed.
@@ -19,7 +21,7 @@ However, this evidence base has real limitations that an honest assessment must 
 3. **Heterogeneity:** "Unauthorized immigrants" is not a monolithic group. Crime rates likely vary by country of origin, age at entry, length of residence, and local context. Aggregate comparisons obscure this variation.
 4. **The ICE docket numbers** (large absolute counts of noncitizens with criminal records) are real administrative data but measure something different from per-capita crime rates. They are stock figures accumulated over decades, not rates.
 
-**Confidence:** HIGH that the directional finding for observed U.S. criminal-justice outcomes is supported across the strongest current datasets. MODERATE on the precise magnitude — the headline "2x lower" overstates the gap because it compares predominantly Hispanic unauthorized immigrants to all native-born citizens including Black Americans; the race-corrected incarceration gap is ~30% lower, not ~50% lower. LOW on whether this generalizes to true offending uniformly across all subpopulations and time periods.
+The reported unauthorized-versus-all-native arrest and incarceration gaps are descriptive comparisons of different populations. Cato’s separate 2023 incarceration tabulation changes from about 50% lower overall to about 30% lower after excluding Black respondents from both groups; that changes the population being compared and does not correct the Texas arrest result. [SOURCE: https://www.cato.org/sites/cato.org/files/2025-03/Policy-Analysis-994.pdf] [INFERENCE]
 
 ---
 
@@ -44,11 +46,11 @@ However, this evidence base has real limitations that an honest assessment must 
 **"On the association between undocumented immigration and crime in the United States"**
 - **Data:** ACS institutionalization rates + state-panel crime data with IV approaches.
 - **Key findings:**
-  - Undocumented immigrants are **33% less likely** to be institutionalized (in correctional facilities) compared to US natives, despite possessing demographic characteristics usually associated with higher crime (young, male, low-education). [SOURCE: doi, S2 ID 0ab1f84bc263912171bb1b43ac8f3fca05c387f6]
+  - Undocumented immigrants are **33% less likely** to be institutionalized (the study’s incarceration proxy) compared to US natives, despite possessing demographic characteristics usually associated with higher crime (young, male, low-education). [SOURCE: doi, S2 ID 0ab1f84bc263912171bb1b43ac8f3fca05c387f6]
   - No evidence that longer US residence increases institutionalization risk. [SOURCE: same]
   - Arriving at younger age is associated with higher institutionalization rate (consistent with assimilation/acculturation hypothesis). [SOURCE: same]
   - State-panel analysis: property and violent crime rates are **not statistically significantly increased** by undocumented immigration. [SOURCE: same]
-  - Uses two IV approaches to address endogeneity: (1) historical settlement patterns (Altonji-Card), (2) alternative instrument. [SOURCE: same]
+Instrumental-variable estimation does not automatically correct differential reporting, outcome mismeasurement or status imputation. Those require separate assumptions or validation. [INFERENCE]
 - **Limitations:** ACS institutionalization proxy conflates prisons/jails/mental health facilities (though most are correctional). IV exclusion restriction debatable. State-level panel may be too coarse.
 - **Citation count:** 22 (S2).
 
@@ -123,9 +125,9 @@ In September 2024, ICE ERO data released to Congress showed large absolute numbe
 
 1. **Stock vs. rate:** These are cumulative docket counts, not annual crime rates. They also describe **noncitizens on ICE's national docket**, not an unauthorized-only population. Dividing this numerator by the ~11 million unauthorized immigrant stock is therefore a denominator error; the valid conclusion is narrower: the ICE counts do not by themselves provide a per-capita native comparison or overturn the rate-based studies above. [SOURCE: same document] [INFERENCE]
 
-2. **"Convictions or pending charges":** The numbers conflate convictions with pending (unresolved) charges, inflating the apparent count. [SOURCE: same document]
+2. **"Convictions or pending charges":** Convictions and pending charges are distinct outcomes. A clearly labeled sum can be an administrative count, but it cannot be described as a count of convicted offenders. [SOURCE: same ICE letter]
 
-3. **"Non-detained docket" includes people already deported or deceased:** The docket is an administrative tracking list, not a count of people currently in the US committing crimes. [INFERENCE from ICE operational definitions]
+3. **ICE non-detained is an agency custody classification:** It does not by itself establish that everyone counted is currently free in the United States. This memo has not verified the earlier claim that this table includes deceased or already-deported people; that claim is withdrawn. The essential denominator mismatch does not depend on it. [UNVERIFIED specific composition; INFERENCE about the estimand]
 
 4. **CNN investigation (2025):** Found that less than 10% of individuals taken into ICE custody in recent months had serious criminal convictions. [SOURCE: https://us.cnn.com/2025/06/16/us/la-ice-raids-violent-criminals-records-invs, verified via Exa]
 
@@ -145,19 +147,19 @@ Unauthorized immigrants may avoid police contact, leading to:
 - **Lower arrest rates** (fewer crimes detected, not fewer crimes committed)
 - **Lower victimization reporting** (fear of deportation suppresses calls to police)
 
-Gunadi (2019) uses IV approaches partly to address this. The direction of bias is ambiguous — it could deflate both numerator (arrests) and denominator effects. [SOURCE: Gunadi 2019]
+Instrumental-variable estimation does not automatically correct differential reporting, outcome mismeasurement or status imputation. Those require separate assumptions or validation. [INFERENCE]
 
 ### 3. Selection effects
 People who undertake the costs and risks of unauthorized migration may be systematically different from both the sending-country population and native-born Americans. The "immigrant selectivity" hypothesis suggests migrants are positively selected on motivation, risk-aversion regarding criminal justice contact, and work orientation. This is a plausible mechanism but hard to test directly. [INFERENCE from theory in Ousey & Kubrin 2018]
 
 ### 4. Deportation as censoring
-Unauthorized immigrants who commit crimes may be deported, removing them from the population before they accumulate long criminal records. This would mechanically lower observed crime rates without meaning the underlying propensity is lower. However, Light & Miller (2020) note that this should show up as declining rates over time, which they do not observe. [SOURCE: PNAS 117(51)]
+Deportation can change the observed risk set and later recorded events. Removal, re-entry, new arrivals and denominator timing determine its influence; a flat or rising series does not rule out censoring. [INFERENCE]
 
-### 5. Composition of the "native-born" comparison group (race confound)
+### 5. Population composition and the comparison being estimated
 
-**This is the most important methodological caveat.** The "native-born citizens" category is not homogeneous. Black Americans have substantially higher incarceration rates than white or Hispanic Americans. Since unauthorized immigrants are predominantly Hispanic, comparing them to ALL native-born citizens (which includes Black Americans) inflates the apparent gap.
+The all-native comparison describes the actual native-born population. It need not equal a comparison standardized to a common race, age, sex or geographic distribution. Choosing one of those estimands requires stating the question; a different population composition does not make the aggregate descriptive rate mathematically inflated. [INFERENCE]
 
-**What happens when you correct for this:**
+**What happens when the comparison population is restricted:**
 
 Landgrave & Nowrasteh (Cato Policy Analysis 994, April 2025) provide the race-stratified data:
 
@@ -171,16 +173,16 @@ Landgrave & Nowrasteh (Cato Policy Analysis 994, April 2025) provide the race-st
 
 [SOURCE: https://www.cato.org/sites/cato.org/files/2025-03/Policy-Analysis-994.pdf]
 
-- **Without race correction:** illegal immigrants ~50% less likely to be incarcerated than native-born
+- **All-population comparison:** illegal immigrants ~50% less likely to be incarcerated than native-born
 - **Excluding Black Americans from both groups:** gap narrows to ~30% less likely [SOURCE: https://www.alexnowrasteh.com/p/immigrants-have-a-lower-incarceration — Nowrasteh Apr 2025]
 - **Within each racial/ethnic group:** immigrants have lower incarceration rates than their native-born counterparts. Hispanic immigrants < native-born Hispanics. Black immigrants < native-born Blacks. White immigrants < native-born whites. [SOURCE: same]
 
-**Assessment:** The user critique is valid — the aggregate comparison overstates the incarceration gap by ~20 percentage points. The corrected comparison still shows unauthorized immigrants with lower incarceration rates, but the margin is ~30% lower rather than ~50% lower. The strongest version of this specific incarceration comparison is the within-race comparison, which removes the racial-composition confound; it does not remove age, sex, geography, detection/reporting, or legal-status-classification uncertainty. [INFERENCE]
+**Assessment:** Using the displayed rates, `1 − 613/1,221 = 49.8%` and `1 − 626/891 = 29.7%`. The 20.1 percentage-point change is a difference between two descriptive estimands, not a measured 20-point bias. Excluding Black respondents from both populations does not make their remaining race distributions identical, and it does not adjust age, sex, geography, detection or status classification. Within-race comparisons address that dimension only. The earlier endorsement of a “corrected” native comparator was unjustified. [SOURCE: Cato PA 994; INFERENCE; recalculated]
 
-**What Light et al. (2020) did NOT do:** Their PNAS study does not stratify the native-born comparison group by race. This is a real limitation of that paper's headline numbers.
+**Scope of Light, He & Robey (2020):** Their aggregate Texas status-group arrest comparison is not a demographic-standardized estimate or a causal effect of immigration status. The Cato national incarceration restriction above cannot supply such an adjustment to this different dataset/outcome. [SOURCE: https://doi.org/10.1073/pnas.2014704117] [INFERENCE]
 
 ### 6. Generational assimilation
-The cited immigration-crime literature reports a broad generational-assimilation pattern: second-generation outcomes often move toward native-born rates rather than preserving first-generation lows. Treat this as a scope-limited caveat, not as an unauthorized-only estimate or a post-2020-surge claim. [SOURCE: Ousey & Kubrin 2018; Rumbaut 2008] [INFERENCE]
+The cited immigration-crime literature reports a broad generational-assimilation pattern: second-generation outcomes often move toward native-born rates rather than preserving first-generation lows. Treat this as a scope-limited caveat, not as an unauthorized-only estimate or a post-2020-surge claim. [SOURCE: Bersani, https://doi.org/10.1080/07418825.2012.659200; review context in NIJ 310356] [INFERENCE]
 
 ---
 
@@ -190,7 +192,7 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 
 **European evidence is more mixed:**
 - Saved but not fully analyzed: Skardhamar et al. (2014) on immigrant crime in Norway and Finland finds higher crime rates among some immigrant groups. [SOURCE: S2 ID 54b2f4ed7f408d6bb823617ec9c2d7cb82e11f6e]
-- Bell, Fasani, & Machin (2013, JEP 2024 update) — "Immigration and Crime: An International Perspective" documents that the relationship varies substantially by country, immigration policy regime, and immigrant composition. [SOURCE: S2 ID 1f48d32d03bf156d871a2632e516e9064b28b750]
+- Olivier Marie & Paolo Pinotti (2024, JEP) — "Immigration and Crime: An International Perspective" documents that the relationship varies substantially by country, immigration policy regime, and immigrant composition. [SOURCE: S2 ID 1f48d32d03bf156d871a2632e516e9064b28b750]
 - Key difference: European immigration includes large refugee/asylum populations with different selection mechanisms than US labor migration. The positive selection hypothesis that explains low US immigrant crime may not apply to populations selected by conflict displacement rather than labor market opportunity. [INFERENCE]
 
 ---
@@ -200,14 +202,14 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 | # | Claim | Evidence | Confidence | Source | Status |
 |---|-------|----------|------------|--------|--------|
 | 1 | Undocumented immigrants in Texas had substantially lower felony arrest rates than native-born citizens (2012-2018) | Administrative arrest data, PNAS peer review | HIGH | Light et al. 2020, PNAS 117(51) | VERIFIED |
-| 2 | US-born citizens >2x more likely to be arrested for violent crimes than undocumented immigrants in Texas | Same dataset; aggregate native-born denominator, race-composition confound remains | HIGH | Light et al. 2020 | VERIFIED WITH DENOMINATOR CAVEAT |
+| 2 | US-born citizens >2x more likely to be arrested for violent crimes than undocumented immigrants in Texas | Same dataset; aggregate native-born denominator, not standardized to a common demographic distribution | HIGH | Light et al. 2020 | DESCRIPTIVE AGGREGATE COMPARISON |
 | 3 | Undocumented immigrants 33% less likely to be institutionalized than US natives nationally | ACS data + IV | MODERATE | Gunadi 2019 | VERIFIED |
-| 4 | Meta-analytic average effect of immigration on crime: r = -0.031 (negative, very weak) | 51 studies, 543 effect sizes | HIGH | Ousey & Kubrin 2018 | VERIFIED |
-| 5 | Longitudinal studies show stronger negative effect (r = -0.147) than cross-sectional (r = 0.000) | Moderator analysis within meta-analysis | HIGH | Ousey & Kubrin 2018 | VERIFIED |
+| 4 | Meta-analytic average association of immigration with crime: r = -0.031 (negative, very weak) | 51 studies, 543 effect sizes | HIGH | Ousey & Kubrin 2018 | VERIFIED |
+| 5 | Longitudinal studies show stronger negative association (r = -0.147) than cross-sectional (r = 0.000) | Moderator analysis within meta-analysis | HIGH | Ousey & Kubrin 2018 | VERIFIED |
 | 6 | Lott's Arizona study claiming higher rates faces a serious unresolved immigration-status classification critique | Multiple independent critiques (Cato, WaPo, Latino Decisions); no independent reanalysis in this memo | MODERATE-HIGH | Nowrasteh 2022; WaPo 2018 | SUPPORTED CRITIQUE — not independent reanalysis |
 | 7 | ICE national docket shows ~15K noncitizens with homicide convictions/charges | Official ICE data released to Congress | HIGH (as administrative count) | ICE ERO letter, Sept 2024 | VERIFIED — but measures stock, not rate |
 | 8 | European evidence is more mixed; some immigrant groups show higher crime | Scandinavian studies | LOW-MODERATE | Skardhamar et al. 2014 | PRELIMINARY — fetched but not fully analyzed |
-| 9 | Second-generation assimilation evidence points toward higher observed crime/incarceration than first generation, often converging toward native-born levels | Broad generational literature; not unauthorized-only or post-2020-surge evidence | MODERATE | Ousey & Kubrin 2018; Rumbaut 2008 | SUPPORTED LITERATURE PATTERN — scope-limited |
+| 9 | Second-generation assimilation evidence points toward higher observed crime/incarceration than first generation, often converging toward native-born levels | Broad generational literature; not unauthorized-only or post-2020-surge evidence | MODERATE | Bersani (2014), DOI 10.1080/07418825.2012.659200; NIJ 310356 literature review | SUPPORTED LITERATURE PATTERN — scope-limited |
 | 10 | Reporting bias (fear of deportation suppressing police contact) could partially explain lower observed rates | Theoretical + indirect evidence | MODERATE | Gunadi 2019; general literature | INFERENCE |
 
 ---
@@ -250,13 +252,15 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 - Gunadi (2019) — `0ab1f84bc263912171bb1b43ac8f3fca05c387f6` [previously saved]
 - Ousey & Kubrin (2018) — `33034e4c0080fa686d177bb0e4f52afe7914c852` [previously saved]
 - Skardhamar et al. (2014) — `54b2f4ed7f408d6bb823617ec9c2d7cb82e11f6e` [fetched this session]
-- Bell, Fasani, & Machin (2024) — `1f48d32d03bf156d871a2632e516e9064b28b750` [previously saved]
+- Marie & Pinotti (2024; earlier corpus author attribution corrected) — `1f48d32d03bf156d871a2632e516e9064b28b750` [previously saved]
 
 ## Sources Not in Corpus (web-sourced)
 
 - Landgrave & Nowrasteh (2025) "Illegal Immigrant Incarceration Rates, 2010–2023" — Cato Policy Analysis 994. [SOURCE: https://www.cato.org/sites/cato.org/files/2025-03/Policy-Analysis-994.pdf] **Race-stratified incarceration data.**
-- Nowrasteh (Apr 2025) blog post with race-corrected comparison tables. [SOURCE: https://www.alexnowrasteh.com/p/immigrants-have-a-lower-incarceration]
-- Nowrasteh & Chanwong (Sep 2025) "Immigrants Have Lower Lifetime Incarceration Rates" — 1990 cohort tracked through ACS 2006-2023 by race/ethnicity/immigration status. [SOURCE: https://www.cato.org/blog/immigrants-have-lower-lifetime-incarceration-rates-native-born-americans]
+- Nowrasteh (Apr 2025) blog post with population-restricted comparison tables. [SOURCE: https://www.alexnowrasteh.com/p/immigrants-have-a-lower-incarceration]
+- Nowrasteh & Chanwong (Sep 2025), "Immigrants Have Lower Lifetime Incarceration Rates": compares a 1990 arrival cohort across subsequent ACS cross-sections, not the same individuals followed through life. Age, selective exit and changing cohort composition remain relevant; these are incarceration-prevalence snapshots, not cumulative lifetime offending probabilities. [SOURCE: https://www.cato.org/blog/immigrants-have-lower-lifetime-incarceration-rates-native-born-americans] [INFERENCE]
+
+**Generational comparator identity [INFERENCE]:** If `a` is the second-generation share of the native-born population, `r_native = a·r_2 + (1−a)·r_3+`. Evidence that `r_2 > r_1` does not imply `r_2 > r_3+`. Thus second-generation convergence toward other natives does not establish that including the second generation inflates the native benchmark. The Ousey–Kubrin area-level meta-analysis does not itself identify an individual generational effect.
 
 ## Revisions
 
@@ -268,3 +272,5 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 | 2026-06-16 | Reframed the Lott Arizona critique row from `HIGH/VERIFIED` fundamental flaw to a supported unresolved classification critique, because the memo cites critiques rather than running an independent data reanalysis. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Downgraded the second-generation crime row from `HIGH/VERIFIED` to a scope-limited supported literature pattern; the cited evidence is broad generational literature, not unauthorized-only or current-surge evidence. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Aligned the bottom-line and contrarian-case Lott wording with the claims table: serious unresolved classification critique, not independently verified fundamental error. Added a race-composition caveat to the aggregate Texas `>2x` violent-arrest row. |
+
+- **2026-09-05 — Corrected comparator, observation and generational inference** See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md). Historical revision entries above describe the earlier state, including conclusions superseded here.
