@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
-"""MSA foreign-born-share × rent × supply-elasticity panel — the DEMAND treatment.
+"""MSA foreign-born stock share × rent × supply elasticity: descriptive context.
 
-The supply-leg panel (build_msa_rent_elasticity_panel.py) found elasticity alone is a null
-predictor of rent growth, because elasticity MODERATES a demand shock. This adds the demand shock:
-metro foreign-born share from the ACS 2023 1-year summary file (B05002), joined by CBSA. NO Census
-API key — the API key route is closed; this reads the bulk ACS summary-file `.dat` (corpus) + the
-no-key Census gazetteer for CBSA code→name. Tests the Wilson-Zhou (2026) mechanism cross-sectionally:
-do high-immigrant metros have higher rents / faster rent growth, amplified where supply is inelastic?
+Metro foreign-born share comes from ACS 2023 B05002, joined through a CBSA
+gazetteer and approximate name key. A stock share is not an exogenous demand shock;
+these cross-sectional correlations do not test the Wilson-Zhou causal mechanism.
 
 Cross-section caveat: only ACS 2023 is staged, so fb-share is a 2023 LEVEL (not a Δ); rent is both
-the ACS 2023 level (B25064) and the Zillow 2016-25 growth. A true Δrent~Δfb-share needs a 2nd ACS year.
+the ACS 2023 level (B25064) and Zillow 2016-25 growth. A second ACS year permits
+changes; causal identification additionally requires a credible counterfactual.
 
 Inputs (staged in <data_root>/external/urban_housing/):
   acs/acsdt1y2023-b05002.dat  acs/acsdt1y2023-b25064.dat  geo/2023_Gaz_cbsa_national.txt
@@ -21,20 +19,11 @@ from __future__ import annotations
 import sys
 
 from paths import data_root, duckdb_path
+from build_msa_rent_elasticity_panel import _keysql
 
 
 def _ok(m): print(f"  ✓ {m}")
 def _warn(m): print(f"  ! {m}")
-
-
-def _keysql(col: str) -> str:
-    """(first principal city, first state) key — must match build_msa_rent_elasticity_panel.py."""
-    stripped = f"regexp_replace({col}, '\\s*\\([^)]*\\)\\s*$', '')"
-    cities = f"regexp_replace({stripped}, ',\\s*[^,]*$', '')"
-    state = f"regexp_extract({stripped}, ',\\s*([^,]*)$', 1)"
-    fcity = f"lower(trim(regexp_extract({cities}, '^([^-/]*)', 1)))"
-    fstate = f"lower(trim(regexp_extract({state}, '^([^-/]*)', 1)))"
-    return f"({fcity} || '|' || {fstate})"
 
 
 def build() -> int:
@@ -50,12 +39,12 @@ def build() -> int:
     for f in (b05002, b25064, gaz):
         if not f.exists():
             _warn(f"missing {f} — stage ACS summary-file tables + gazetteer (see setup-urban-housing MANUAL); skipping")
-            return 0
+            return 1
 
     con = duckdb.connect(str(duckdb_path()))
     if "msa_rent_elasticity_panel" not in {r[0] for r in con.execute("SELECT table_name FROM duckdb_tables()").fetchall()}:
         _warn("msa_rent_elasticity_panel absent — run build_msa_rent_elasticity_panel.py first; skipping")
-        con.close(); return 0
+        con.close(); return 1
 
     # gazetteer NAME has a " Metro Area"/" Micro Area" suffix that must be stripped BEFORE the key
     gaz_name_clean = "regexp_replace(NAME, '\\s+(Metro|Micro) Area$', '')"
@@ -92,27 +81,27 @@ def build() -> int:
     n = con.execute("SELECT count(*) FROM msa_fb_rent_panel").fetchone()[0]
     _ok(f"joined {n} metros with fb-share + rent + elasticity (ACS 2023 × Zillow × Saiz, no API key)")
     if n < 20:
-        _warn("too few matched — inspect the name join"); con.close(); return 0
+        _warn("too few matched — inspect the name join"); con.close(); return 1
 
-    # the demand result: does immigrant share predict rents / rent growth?
+    # Descriptive correlation: stock composition, not a demand treatment.
     cr_lvl, cr_grw = con.execute(
         "SELECT round(corr(fb_share, acs_median_rent),3), round(corr(fb_share, zori_log_growth),3) "
         "FROM msa_fb_rent_panel").fetchone()
     print(f"\n  corr(fb_share, rent LEVEL) = {cr_lvl}   corr(fb_share, rent GROWTH 2016-25) = {cr_grw}")
-    print("\n  fb-share → rent, split by supply elasticity (Wilson-Zhou: effect amplified where inelastic):")
+    print("\n  Stock-share/rent associations by elasticity; no causal effect identified:")
     print(f"    {'tercile':<10}{'n':>4}{'elast':>8}{'fb_share':>10}{'rent$':>8}{'corr(fb,rent_lvl)':>20}")
     for t, n_, el, fb, rt, cc in con.execute("""
         SELECT elasticity_tercile, count(*), round(avg(elasticity),2), round(avg(fb_share),3),
                round(avg(acs_median_rent),0), round(corr(fb_share, acs_median_rent),3)
         FROM msa_fb_rent_panel GROUP BY 1 ORDER BY 1""").fetchall():
         lab = {1: 'inelastic', 2: 'mid', 3: 'elastic'}[t]
-        print(f"    {lab:<10}{n_:>4}{el:>8}{fb:>10}{rt:>8}{(cc if cc is not None else 0):>20}")
+        print(f"    {lab:<10}{n_:>4}{el:>8}{fb:>10}{rt:>8}{str(cc) if cc is not None else 'NA':>20}")
     # top + bottom fb-share metros (sanity)
     print("\n  highest-immigrant metros (fb_share, rent, elasticity):")
     for m, fb, rt, el in con.execute(
         "SELECT zillow_metro, fb_share, acs_median_rent, elasticity FROM msa_fb_rent_panel LIMIT 5").fetchall():
         print(f"    {m:<28} fb={fb:.0%}  rent=${rt:.0f}  elasticity={el:.2f}")
-    print("\n  NOTE: cross-sectional fb-share LEVEL (ACS 2023 only). A causal Δrent~Δfb-share needs a 2nd ACS year.")
+    print("\n  NOTE: cross-sectional stock share only. A second year permits changes, not causal identification by itself.")
     con.close()
     return 0
 

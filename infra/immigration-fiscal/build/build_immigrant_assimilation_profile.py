@@ -1,26 +1,18 @@
 #!/usr/bin/env python3
-"""First-generation immigrant assimilation profile by origin × years-in-US (synthetic cohorts).
+"""Descriptive employment/income gaps by birthplace and synthetic arrival cohort.
 
-THE EMPIRICAL CONTENT for cluster-V's persistence/decay question that this warehouse CAN
-test — and a precise statement of the one it CANNOT.
+  Repeated cross-sections follow origin × arrival-decade cells, not the same people.
+  Holding arrival decade fixed reduces between-cohort mixing; changing membership,
+  selective emigration, mortality, aging into/out of ages 25–64, and period effects
+  remain. These cells do not identify an assimilation rate or fixed-trait persistence.
+  Income means condition on positive reported income; they are not all-person welfare
+  or wage means. Employment and income comparisons use a changing birthplace-defined
+  comparison population, without age/education standardization.
 
-WHAT THIS MEASURES (and the honest bound):
-  How the FIRST-GENERATION immigrant<->native gap (employment, income) closes with
-  YEARS-SINCE-ARRIVAL, by origin region, using SYNTHETIC COHORTS: each (origin x
-  arrival-decade) cell is tracked across the 1980/1990/2000/2010/2023 census years, so a
-  cohort's outcomes are followed as it ages in the US. Tracking within a fixed arrival
-  cohort removes Borjas's cohort-quality confound (a cross-section years-in-US profile
-  conflates assimilation with secular decline in arrival-cohort quality).
-
-  This bears on cluster-V's V04 (assimilation speed) and V08 (the convergence null): fast
-  first-gen convergence is evidence AGAINST strong fixed-trait persistence.
-
-WHAT THIS IS NOT:
-  This is WITHIN-first-generation assimilation, NOT cross-generational cultural transmission.
-  The true 2nd-generation-by-origin decay (V02) needs PARENTAL birthplace, which IPUMS-USA
-  dropped after 1970 and this extract lacks (BPL/CITIZEN/YRIMMIG only, no FBPL/MBPL). That
-  test requires an IPUMS-CPS extract (father's/mother's birthplace) — a separate gated
-  acquisition. Do NOT read first-gen convergence here as the 2nd-gen transmission rate.
+  Birthplace codes define the two groups operationally; they do not identify legal
+  status or parental nativity. This extract lacks parental birthplace, so it cannot
+  estimate second-generation transmission. A separate suitably documented CPS extract
+  would be needed for that descriptive comparison, plus an identification design.
 
   Output is a REDISTRIBUTABLE AGGREGATE (cell means, no microdata) → flows to the unified
   release like the other IPUMS-derived tables. The raw microdata stays local-only.
