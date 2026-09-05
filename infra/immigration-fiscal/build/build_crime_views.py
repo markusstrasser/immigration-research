@@ -65,13 +65,13 @@ def build() -> None:
         con.execute("""
             CREATE OR REPLACE VIEW v_crime_tx_status_ratio AS
             WITH nat AS (
-                SELECT year, crime_category, denom_source, crime_rate_per_100k AS citizen_rate_per_100k
+                SELECT year, crime_category, denom_source, crime_rate_per_100k AS native_born_rate_per_100k
                 FROM crime_tx_arrests_by_status WHERE status_class = 'native_born'
             )
             SELECT b.year, b.crime_category, b.denom_source,
                    b.light_status, b.status_class,
-                   b.crime_rate_per_100k, n.citizen_rate_per_100k,
-                   round(b.crime_rate_per_100k / nullif(n.citizen_rate_per_100k, 0), 3) AS rate_vs_citizen
+                   b.crime_rate_per_100k, n.native_born_rate_per_100k,
+                   round(b.crime_rate_per_100k / nullif(n.native_born_rate_per_100k, 0), 3) AS rate_vs_native_born
             FROM crime_tx_arrests_by_status b
             JOIN nat n USING (year, crime_category, denom_source)
             WHERE b.status_class <> 'native_born'
@@ -79,11 +79,9 @@ def build() -> None:
         """)
         made.append("v_crime_tx_status_ratio")
 
-        # SPECIFICATION CURVE / multiverse — the undocumented-vs-comparator rate ratio across
-        # EVERY defensible analytic choice (denom_source × comparator class × offense × year).
-        # Makes the red-team's "the headline depends on which construction" a measured DISTRIBUTION,
-        # not a caveat: how often, and by how much, is undocumented crime below the comparator —
-        # and in exactly which specifications is it NOT (the robustness-breakers)?
+        # Descriptive grid of source-supported group/offense/year comparisons.
+        # Repeated variants are dependent and represent different estimands;
+        # the fraction below one is not a probability or a universal robustness test.
         con.execute("""
             CREATE OR REPLACE VIEW v_crime_spec_curve AS
             WITH undoc AS (

@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """INT-01 — represent the Light/He/Robey (PNAS 2020) Texas crime-by-status data.
 
-THE gold-standard micro-comparison of criminality by legal status: Texas DPS records the
-immigration status of all arrestees. Reads the openICPSR 124923 replication tables (staged
+Reads the Light/He/Robey openICPSR 124923 aggregate replication tables (staged
 at crime_frontier/light_texas/, registration-gated — see MANUAL_ACQUIRE) into the context
 warehouse, harmonized to the INT-06 status spine.
 
@@ -12,25 +11,12 @@ warehouse, harmonized to the INT-06 status spine.
 Carries BOTH undocumented-population denominators (CMS and Pew) as denom_source — never
 collapse them (the result's robustness rests on the rate surviving either denominator).
 
-WHAT THIS DOES AND DOESN'T SHOW (the DIRECTION is robust; the MAGNITUDE and GENERALIZATION are NOT):
-  1. Comparison-group heterogeneity. The CMS/Pew "citizen" group = ALL citizens (native-born +
-     naturalized). denom_source='CMS_nat' splits out true native_born (US-born). But even
-     native-born is RACIALLY heterogeneous — it includes higher-base-rate subgroups (e.g. Black
-     Americans), so a chunk of the apparent immigrant 'protective effect' is the native group's
-     racial composition. A race-matched comparison (vs non-Hispanic-white native) roughly HALVES
-     the violent gap (~50%→~25-30%; Cato PA994, against its own touted number). Light has no
-     race-by-citizenship, so this can't be removed here — only flagged.
-  2. Origin composition. The undocumented group is majority MEXICAN (esp. in Texas). If Mexicans
-     are a favorably-selected low-skill subgroup, the low rate may NOT generalize to all LATAM or
-     to all low-skill immigrants. The arrests can't be disaggregated by origin within status.
-  3. Detection/reporting bias. Arrest data measures DETECTED crime; unreported/unsolved crime is
-     missing, and reporting/detection can differ by status (direction contested — deportation-fear
-     underreporting cuts both ways; over-policing can raise immigrant detection). It is a
-     measured-crime comparison, not a true-offending one. (Light's convictions-vs-arrests
-     robustness check partly addresses this; it does not eliminate it.)
-  Bottom line: use the DIRECTION (undocumented/noncitizen NOT higher-crime than natives — robust
-  across Light arrests+convictions, both denominators, and SPI incarceration). Do NOT quote the
-  precise multiplier as the true protective magnitude, and do NOT generalize beyond TX-Mexican-heavy.
+PNAS methods and replication.do establish that citizen_charge is native-born and
+baseline immigrants_charge includes naturalized citizens. CMS_nat separates naturalized
+from the legal-immigrant group; it does not change native-born counts or denominators.
+These are charge-based felony arrest rates, not unique-person offending probabilities
+or causal effects. Detection, classification and population-estimation uncertainty remain.
+Source: https://doi.org/10.1073/pnas.2014704117 (methods and SI section VII).
 
 Run: uv run --with duckdb,pandas python load_light_tx_crime.py  (skips if not staged)
 """
@@ -41,14 +27,15 @@ import sys
 import zipfile
 
 from paths import data_root, derived_root, duckdb_path
+from build_status_crosswalk import status_class_for
 
 CAT = {1: "violent", 2: "property", 3: "drug", 4: "traffic"}
 
-# (light_status_label, canonical status_class, charge_col, rate_col, pop_col)
+# (light_status_label, canonical crosswalk code, charge_col, rate_col, pop_col)
 GROUPS = [
-    ("undocumented",    "unauthorized",         "undocumented_immigrants_charge", "illegal2_immigrants_crime_rate", "pop_undoc"),
-    ("legal_immigrant", "lpr_legal_noncitizen", "immigrants_charge",              "immigrant_crime_rate",           "tot_legal2_immi"),
-    ("citizen",         "native_born",          "citizen_charge",                 "citizen_crime_rate",             "tot_citizen"),
+    ("undocumented", "UNDOC", "undocumented_immigrants_charge", "illegal2_immigrants_crime_rate", "pop_undoc"),
+    ("legal_immigrant", "LEGAL", "immigrants_charge", "immigrant_crime_rate", "tot_legal2_immi"),
+    ("citizen", "USB", "citizen_charge", "citizen_crime_rate", "tot_citizen"),
 ]
 
 
@@ -71,10 +58,10 @@ def _melt(df, denom):
         cat = CAT.get(int(r["category"])) if r.get("category") == r.get("category") else None
         if cat is None:
             continue
-        for lbl, sc, cc, rc, pc in GROUPS:
+        for lbl, code, cc, rc, pc in GROUPS:
             rows.append({
                 "year": int(r["year"]), "crime_category": cat,
-                "light_status": lbl, "status_class": sc, "denom_source": denom,
+                "light_status": lbl, "status_class": status_class_for("LIGHT_TXDPS", code), "denom_source": denom,
                 "charge_count": float(r[cc]) if cc in r and r[cc] == r[cc] else None,
                 "crime_rate_per_100k": float(r[rc]) if rc in r and r[rc] == r[rc] else None,
                 "population": float(r[pc]) if pc in r and r[pc] == r[pc] else None,
@@ -83,30 +70,23 @@ def _melt(df, denom):
 
 
 def _melt_nat(df):
-    """big_category_nat splits citizens into naturalized (foreign-born) vs NATIVE-BORN
-    (= all-citizen minus naturalized). Lets the comparison group be true native-born, not
-    'all citizens incl. naturalized'. denom_source='CMS_nat'."""
+    """Split naturalized from legal immigrants; preserve the native-born group."""
     rows = []
     direct = [
-        ("undocumented",    "unauthorized",         "undocumented_immigrants_charge", "illegal2_immigrants_crime_rate", "pop_undoc"),
-        ("legal_immigrant", "lpr_legal_noncitizen", "immigrants_charge",              "immigrant_crime_rate",           "tot_legal2_immi"),
-        ("naturalized",     "naturalized",          "naturalized_charge",             "naturalized_citizen_rate",       "naturalized_citizen"),
+        ("undocumented", "UNDOC", "undocumented_immigrants_charge", "illegal2_immigrants_crime_rate", "pop_undoc"),
+        ("legal_immigrant", "LEGAL_NONCIT", "immigrants_charge", "immigrant_crime_rate", "tot_legal2_immi"),
+        ("naturalized", "NATURALIZED", "naturalized_charge", "naturalized_citizen_rate", "naturalized_citizen"),
+        ("native_born", "USB", "citizen_charge", "citizen_crime_rate", "tot_citizen"),
     ]
     for _, r in df.iterrows():
         cat = CAT.get(int(r["category"])) if r.get("category") == r.get("category") else None
         if cat is None:
             continue
-        for lbl, sc, cc, rc, pc in direct:
+        for lbl, code, cc, rc, pc in direct:
             rows.append({"year": int(r["year"]), "crime_category": cat, "light_status": lbl,
-                         "status_class": sc, "denom_source": "CMS_nat",
+                         "status_class": status_class_for("LIGHT_TXDPS", code), "denom_source": "CMS_nat",
                          "charge_count": float(r[cc]), "crime_rate_per_100k": float(r[rc]),
                          "population": float(r[pc])})
-        nb_charge = r["citizen_charge"] - r["naturalized_charge"]
-        nb_pop = r["tot_citizen"] - r["naturalized_citizen"]
-        rows.append({"year": int(r["year"]), "crime_category": cat, "light_status": "native_born",
-                     "status_class": "native_born", "denom_source": "CMS_nat",
-                     "charge_count": float(nb_charge), "crime_rate_per_100k": float(nb_charge / nb_pop * 1e5) if nb_pop else None,
-                     "population": float(nb_pop)})
     return rows
 
 
@@ -129,7 +109,7 @@ def build() -> None:
     if pew is not None:
         rows += _melt(pew, "Pew")
     if nat is not None:
-        rows += _melt_nat(nat)  # adds true native_born (US-born) + naturalized split, denom CMS_nat
+        rows += _melt_nat(nat)  # separates naturalized from legal immigrants, denom CMS_nat
     df = pd.DataFrame(rows).dropna(subset=["crime_rate_per_100k"])
 
     db = duckdb_path()
@@ -144,7 +124,7 @@ def build() -> None:
 
     n = con.execute("SELECT count(*) FROM crime_tx_arrests_by_status").fetchone()[0]
     yrs = con.execute("SELECT min(year), max(year) FROM crime_tx_arrests_by_status").fetchone()
-    # headline ratio: undocumented vs native-born (citizen) violent-crime rate, CMS denom, latest year
+    # Headline: undocumented vs the paper's native-born group, CMS denominator.
     head = con.execute("""
         SELECT year,
                max(CASE WHEN status_class='unauthorized' THEN crime_rate_per_100k END) AS undoc_rate,
