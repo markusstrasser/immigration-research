@@ -16,11 +16,12 @@ import csv
 import json
 import zipfile
 from collections import defaultdict
-from pathlib import Path
+
+from paths import data_root, derived_root
 
 
-ROOT = Path(__file__).resolve().parent
-DATA_ROOT = ROOT.parent
+ROOT = derived_root()
+DATA_ROOT = data_root()
 PERSON_ZIP = DATA_ROOT / "census" / "acs_pums_2023_person.zip"
 ITEP_TAXES = DATA_ROOT / "itep" / "itep_table_2.tsv"
 OUT_CSV = ROOT / "state_response_cost_dataset.csv"
@@ -174,9 +175,9 @@ def build_dataset() -> list[dict[str, float | str | int]]:
             "response_spending_millions_low": low,
             "response_spending_millions_mid": round(mid, 3),
             "response_spending_millions_high": high,
-            "response_spending_per_100k_residents_low": round(100000.0 * low / population, 4),
-            "response_spending_per_100k_residents_mid": round(100000.0 * mid / population, 4),
-            "response_spending_per_100k_residents_high": round(100000.0 * high / population, 4),
+            "response_spending_millions_per_100k_residents_low": round(100000.0 * low / population, 4),
+            "response_spending_millions_per_100k_residents_mid": round(100000.0 * mid / population, 4),
+            "response_spending_millions_per_100k_residents_high": round(100000.0 * high / population, 4),
             "itep_total_state_local_taxes_2022": round(taxes, 1),
             "response_mid_as_share_of_itep_taxes_pct": round(100.0 * mid * 1_000_000.0 / taxes, 2),
             "border_state": info["border_state"],
@@ -188,6 +189,7 @@ def build_dataset() -> list[dict[str, float | str | int]]:
 
 
 def write_outputs(rows: list[dict[str, float | str | int]]) -> None:
+    ROOT.mkdir(parents=True, exist_ok=True)
     fieldnames = list(rows[0].keys())
     with OUT_CSV.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
@@ -200,6 +202,8 @@ def write_outputs(rows: list[dict[str, float | str | int]]) -> None:
             "Colorado is interval-censored in the source ('less than $50 million'); low=0, high=50, mid=25 is an inference for modeling convenience.",
             "ACS exposure proxy is weighted count/share of foreign-born noncitizens with year of entry 2021-2023 in ACS 2023 PUMS.",
             "ITEP taxes are descriptive context only; they are not a surge-specific offset and should not be used as a control.",
+            "Response spending per 100k is measured in MILLIONS of dollars, not dollars.",
+            "Eight selected states and incomplete, differently scoped response spending do not identify causal effects or national net costs.",
         ],
         "rows": rows,
     }

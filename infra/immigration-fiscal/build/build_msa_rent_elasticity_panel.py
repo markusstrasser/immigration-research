@@ -8,19 +8,17 @@ This panel joins the acquired Zillow ZORI/ZHVI panels to the in-warehouse Saiz (
 (first-city, state) key (the vintage-mismatch crosswalk: Zillow's modern multi-city CBSA names
 "Miami-Fort Lauderdale, FL" ↔ Saiz's 1999 "Miami, FL (PMSA)" → both "miami|fl").
 
-HONEST SCOPE: this is a SUPPLY-MODERATOR validation + crosswalk proof, NOT the causal result.
-The bivariate elasticity↔rent-growth relationship is expected to be weak precisely because elasticity
-MODERATES a demand shock rather than driving rent growth on its own — which is the empirical reason the
-immigrant TREATMENT (Δ foreign-born share by CBSA) is the load-bearing input. That treatment is GATED:
-Census API (key-gated; keyless route closed 2026) or the Geocorr PUMA↔CBSA crosswalk. The
-Δrent~Δfb-share×elasticity regression is staged for when that input lands (HUMAN.md).
+SCOPE: descriptive associations in a subset linked by an approximate name key.
+The join does not validate geographic equivalence across metro vintages. Neither
+a weak nor a strong bivariate correlation identifies the supply mechanism or the
+immigration effect. A second exposure year enables changes, not causal inference
+without a credible counterfactual and assumptions about confounding.
 
 Run: uv run --with duckdb python build_msa_rent_elasticity_panel.py
-Writes table `msa_rent_elasticity_panel` to the context warehouse; skips if Zillow/Saiz absent.
+Writes table `msa_rent_elasticity_panel`; missing required inputs fail explicitly.
 """
 from __future__ import annotations
 
-import re
 import sys
 
 from paths import data_root, duckdb_path, lifetime_duckdb_path
@@ -31,8 +29,7 @@ def _warn(m): print(f"  ! {m}")
 
 
 def _keysql(col: str) -> str:
-    """SQL expression → (first principal city, first state) join key. Robust across Zillow
-    multi-city CBSA names and Saiz 1999 single-city PMSA names. Pure SQL (no UDF)."""
+    """Approximate city/state locator; does not establish identical metro boundaries."""
     stripped = f"regexp_replace({col}, '\\s*\\([^)]*\\)\\s*$', '')"          # drop "(PMSA)/(MSA)"
     cities = f"regexp_replace({stripped}, ',\\s*[^,]*$', '')"                # before last comma
     state = f"regexp_extract({stripped}, ',\\s*([^,]*)$', 1)"                # after last comma
@@ -51,10 +48,10 @@ def build() -> int:
     zori = zdir / "metro_zori_sfrcondomfr_sm_month.csv"
     zhvi = zdir / "metro_zhvi_sfrcondo_tier_sm_sa_month.csv"
     life = lifetime_duckdb_path()
-    if not zori.exists():
-        _warn(f"missing {zori} — run acquire/setup-urban-housing.sh first; skipping"); return 0
+    if not zori.exists() or not zhvi.exists():
+        _warn(f"missing required Zillow input: {zori} / {zhvi}"); return 1
     if not life.exists():
-        _warn(f"missing {life} — build lifetime warehouse first; skipping"); return 0
+        _warn(f"missing {life} — build lifetime warehouse first"); return 1
 
     con = duckdb.connect(str(duckdb_path()))
     con.execute(f"ATTACH '{life}' AS life (READ_ONLY)")
@@ -62,13 +59,13 @@ def build() -> int:
     have = {r[0] for r in con.execute(
         "SELECT table_name FROM duckdb_tables() WHERE database_name='life'").fetchall()}
     if "saiz_msa_elasticity" not in have:
-        _warn("life.saiz_msa_elasticity absent; skipping"); con.close(); return 0
+        _warn("life.saiz_msa_elasticity absent"); con.close(); return 1
 
     zcols = {r[0] for r in con.execute(f"DESCRIBE SELECT * FROM read_csv_auto('{zori}')").fetchall()}
     c0, c1 = "2016-01-31", "2025-12-31"
-    if c0 not in zcols or c1 not in zcols:
-        date_cols = sorted(c for c in zcols if re.fullmatch(r"\d{4}-\d{2}-\d{2}", c))
-        c0, c1 = date_cols[0], date_cols[-1]
+    hcols = {r[0] for r in con.execute(f"DESCRIBE SELECT * FROM read_csv_auto('{zhvi}')").fetchall()}
+    if not {c0, c1}.issubset(zcols & hcols):
+        raise ValueError(f"Both Zillow inputs must contain the specified window {c0} to {c1}")
     years = (int(c1[:4]) + int(c1[5:7]) / 12) - (int(c0[:4]) + int(c0[5:7]) / 12)
     _ok(f"rent window {c0} → {c1} ({years:.1f} yr)")
 
@@ -107,6 +104,8 @@ def build() -> int:
     n_saiz = con.execute(
         f"SELECT count(DISTINCT {km}) FROM life.saiz_msa_elasticity WHERE elasticity IS NOT NULL").fetchone()[0]
     n_match = con.execute("SELECT count(*) FROM msa_rent_elasticity_panel").fetchone()[0]
+    if not n_saiz or not n_match:
+        raise ValueError("No usable Saiz/Zillow matches; cannot summarize an empty panel")
     _ok(f"matched {n_match}/{n_saiz} Saiz metros to Zillow on (first-city, state) ({100*n_match//n_saiz}%)")
 
     print("\n  rent growth (ZORI) by supply-elasticity quartile (Q1 = most inelastic):")
@@ -117,7 +116,7 @@ def build() -> int:
     """).fetchall()
     print(f"    {'Q':<3}{'n':>5}{'elasticity':>12}{'rent %/yr':>12}{'zhvi Δlog':>12}")
     for q, n, el, rp, zh in rows:
-        print(f"    {q:<3}{n:>5}{el:>12}{rp:>12}{(zh if zh is not None else 0):>12}")
+        print(f"    {q:<3}{n:>5}{el:>12}{rp:>12}{str(zh) if zh is not None else 'NA':>12}")
 
     corr_r, corr_h = con.execute(
         "SELECT round(corr(zori_log_growth, elasticity), 3), round(corr(zhvi_log_growth, elasticity), 3) "
@@ -128,16 +127,8 @@ def build() -> int:
 
     if corr_r is None:
         _warn("corr undefined")
-    elif corr_r <= -0.20:
-        _ok(f"corr {corr_r}: supports the Wilson-Zhou supply leg (rents grew faster where supply is inelastic)")
-    elif abs(corr_r) < 0.20:
-        _warn(f"corr {corr_r}: ~NULL bivariate — elasticity ALONE does not predict 2016-25 rent growth. "
-              "Expected: elasticity MODERATES a demand shock; the 2021-22 run-up was a broad rate/COVID shock, "
-              "not metro-differentiated by supply. This is WHY the Δfb-share demand treatment is load-bearing.")
-    else:
-        _warn(f"corr {corr_r}: POSITIVE — opposite of the supply mechanism; inspect (name-match noise / composition)")
-    print("\n  [GATED] the causal result (Δrent ~ Δfb-share × elasticity) needs metro foreign-born share over\n"
-          "          time — Census API key OR Geocorr PUMA↔CBSA crosswalk. Staged; see HUMAN.md.")
+    print("\n  Descriptive correlations only: no coefficient threshold here tests a causal mechanism.\n"
+          "  Changes in foreign-born share would add an exposure measure, not identification by themselves.")
     con.close()
     return 0
 

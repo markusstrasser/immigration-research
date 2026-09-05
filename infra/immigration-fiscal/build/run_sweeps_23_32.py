@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Execute sweeps 23–32: mine PDF → rebuild → query → append memo section."""
+"""Reproduce historical sweep queries as explicitly scoped derived diagnostics."""
 from __future__ import annotations
 
 import json
@@ -13,24 +13,22 @@ ROOT = Path(__file__).resolve().parents[3]
 RESEARCH = ROOT / "research"
 MINING = RESEARCH / ".mining"
 INFRA = Path(__file__).resolve().parents[1]
-from paths import data_root, duckdb_path, fiscal_union_duckdb_path, lifetime_duckdb_path
+from paths import data_root, derived_root, duckdb_path, fiscal_union_duckdb_path, lifetime_duckdb_path
 
 DATA = data_root()
-MEMO = RESEARCH / "immigration-sweep-cycles-23-32-2026-06-15.md"
+MEMO = derived_root() / "sweeps" / "sweep-cycles-23-32.md"
 
 
 def _pdftext(rel: str, pages: str | None = None) -> str:
     pdf = DATA / rel
-    if not pdf.exists():
-        return ""
     cmd = ["pdftotext"]
     if pages:
         cmd.extend(pages.split())
     cmd.extend([str(pdf), "-"])
-    try:
-        return subprocess.check_output(cmd, stderr=subprocess.DEVNULL, text=True, errors="replace")[:12000]
-    except Exception:
-        return ""
+    text = subprocess.check_output(cmd, text=True, errors="replace")
+    if not text.strip():
+        raise ValueError(f"No readable primary text: {pdf}")
+    return text[:12000]
 
 
 def _run(cmd: list[str], cwd: Path | None = None) -> str:
@@ -41,20 +39,22 @@ def _run(cmd: list[str], cwd: Path | None = None) -> str:
 def _query(sql: str) -> list[dict]:
     import duckdb
 
-    con = duckdb.connect(str(fiscal_union_duckdb_path()), read_only=True)
-    con.execute(f"ATTACH '{duckdb_path()}' AS ctx (READ_ONLY)")
-    con.execute(f"ATTACH '{lifetime_duckdb_path()}' AS life (READ_ONLY)")
-    cols = [d[0] for d in con.execute(sql).description]
-    return [dict(zip(cols, r)) for r in con.execute(sql).fetchall()]
+    with duckdb.connect(str(fiscal_union_duckdb_path()), read_only=True) as con:
+        con.execute(f"ATTACH '{duckdb_path()}' AS ctx (READ_ONLY)")
+        con.execute(f"ATTACH '{lifetime_duckdb_path()}' AS life (READ_ONLY)")
+        result = con.execute(sql)
+        cols = [d[0] for d in result.description]
+        return [dict(zip(cols, r)) for r in result.fetchall()]
 
 
 def _append_memo(section: str) -> None:
     MEMO.parent.mkdir(parents=True, exist_ok=True)
     if not MEMO.exists():
         MEMO.write_text(
-            "# Sweep cycles 23–32 — full protocol (2026-06-15)\n\n"
-            "**Protocol:** `notes/immigration-lifetime-sweep-protocol.md`\n\n"
-            "Each cycle: diverge → acquire/mine → rebuild → analyze → synthesize.\n\n---\n\n"
+            "# Sweep queries — derived diagnostics\n\n"
+            "These are accounting/scenario readouts, not empirical theory tests. "
+            "School exposure is not measured marginal cost; annual and lifetime "
+            "values have different populations, ledgers and price years.\n\n---\n\n"
         )
     with MEMO.open("a") as f:
         f.write(section)
@@ -65,7 +65,9 @@ def _append_memo(section: str) -> None:
 def _write_mining(sweep: int, cluster: str, claims: list[dict]) -> None:
     MINING.mkdir(parents=True, exist_ok=True)
     path = MINING / f"immigration-lifetime-sweep-{sweep}-{cluster}.json"
-    path.write_text(json.dumps({"sweep": sweep, "mined_at": datetime.now(timezone.utc).isoformat(), "claims": claims}, indent=2))
+    path.write_text(json.dumps({"sweep": sweep, "recorded_at": datetime.now(timezone.utc).isoformat(),
+        "verification_status": "configured_candidates_not_automatically_extracted_or_verified",
+        "claims": claims}, indent=2))
 
 
 SWEEPS = [
@@ -86,7 +88,7 @@ SWEEPS = [
         "sql": """
             SELECT population_group,
               ROUND(MAX(CASE WHEN fiscal_layer='lifetime_npv' THEN value_per_adult_weighted END)) npv,
-              ROUND(MAX(CASE WHEN fiscal_layer='federal_annual' THEN value_per_adult_weighted END)) fed
+              ROUND(MAX(CASE WHEN fiscal_layer='payroll_transfer_annual' THEN value_per_adult_weighted END)) fed
             FROM v_country_fiscal_rollup WHERE effect_order=1
             GROUP BY 1 HAVING npv IS NOT NULL ORDER BY npv
         """,
@@ -94,7 +96,7 @@ SWEEPS = [
     {
         "n": 24,
         "title": "Orrenius static school cost critique",
-        "diverge": "Static school burden overstates cost if descendant taxes omitted.",
+        "diverge": "Compare annual schooling and descendant taxes only within an aligned lifetime ledger; an annual exposure measure does not claim to include future taxes.",
         "pdf": "external/lifetime/dallasfed/orrenius_nas_fiscal_sensitivity_wp1704.pdf",
         "pages": None,
         "rebuild": [],
@@ -108,12 +110,12 @@ SWEEPS = [
     {
         "n": 25,
         "title": "Return-migration horizon haircut",
-        "diverge": "Duleep-Regets selective exit shortens effective NAS horizon for LDC cells.",
+        "diverge": "Inspect assumed exit multipliers; Duleep-Regets does not estimate these multipliers and the NAS baseline already includes emigration.",
         "pdf": "external/lifetime/iza/iza_dp631_duleep_regets_immigrant_quality_human_capital.pdf",
         "pages": None,
         "rebuild": ["lifetime"],
         "cluster": "return-haircut",
-        "claims": [{"id": "S25-01", "param": "mexico_growth_sensitivity_pp_per_1k_entry", "value": 0.199, "ref": "IZA dp631"}],
+        "claims": [],
         "sql": "SELECT * FROM life.return_migration_haircut_scenarios",
     },
     {
@@ -125,7 +127,7 @@ SWEEPS = [
         "cluster": "school-microsim-weights",
         "claims": [],
         "sql": """
-            SELECT population_group, ROUND(school_per_adult) school, ROUND(federal_per_adult) fed,
+            SELECT population_group, ROUND(school_per_adult) school, ROUND(payroll_transfer_per_adult) fed,
               ROUND(net_crude_per_adult) net FROM v_three_layer_annual
             WHERE school_per_adult IS NOT NULL ORDER BY net_crude_per_adult
         """,
@@ -133,7 +135,7 @@ SWEEPS = [
     {
         "n": 27,
         "title": "FB <HS school burden row",
-        "diverge": "Low-skill pool school burden was NULL — fill from origin-weighted per_pupil×kids.",
+        "diverge": "Keep low-skill school exposure unavailable without a comparable child/adult and spending construction.",
         "pdf": None,
         "rebuild": ["tensor"],
         "cluster": "fb-lt-hs-school",
@@ -166,7 +168,7 @@ SWEEPS = [
     {
         "n": 30,
         "title": "Marginal vs average pupil (NAS congestible)",
-        "diverge": "NAS treats K-12 as congestible not pure public good — average cost upper bound.",
+        "diverge": "Half of average pupil spending is an assumed sensitivity, not an estimated marginal cost or a proven bound.",
         "pdf": "external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf",
         "pages": "-f 320 -l 325",
         "rebuild": [],
@@ -174,7 +176,7 @@ SWEEPS = [
         "claims": [],
         "sql": """
             SELECT population_group, ROUND(net_crude_per_adult) base,
-              ROUND(federal_per_adult - 0.5*school_per_adult) half_marg
+              ROUND(payroll_transfer_per_adult - 0.5*school_per_adult) half_marg
             FROM v_three_layer_annual WHERE population_group IN ('mexico_origin','nh_white_usborn','eu27_origin')
         """,
     },
@@ -187,7 +189,7 @@ SWEEPS = [
         "cluster": "saiz-school-puma",
         "claims": [],
         "sql": """
-            SELECT ROUND(AVG(elasticity),2) med_eps, COUNT(*) n FROM life.saiz_msa_elasticity
+            SELECT ROUND(AVG(elasticity),2) mean_elasticity, COUNT(*) n FROM life.saiz_msa_elasticity
             WHERE elasticity IS NOT NULL
         """,
     },
@@ -200,7 +202,7 @@ SWEEPS = [
         "cluster": "converge",
         "claims": [],
         "sql": """
-            SELECT t.population_group, ROUND(t.federal_per_adult) fed, ROUND(t.school_per_adult) school,
+            SELECT t.population_group, ROUND(t.payroll_transfer_per_adult) fed, ROUND(t.school_per_adult) school,
               ROUND(t.net_crude_per_adult) crude,
               ROUND(MAX(CASE WHEN r.fiscal_layer='lifetime_npv' THEN r.value_per_adult_weighted END)) npv
             FROM v_three_layer_annual t
@@ -225,7 +227,7 @@ def main() -> None:
         if sw.get("pdf"):
             excerpt = _pdftext(sw["pdf"], sw.get("pages"))
             if excerpt:
-                print(f"  mined {len(excerpt)} chars from {sw['pdf']}")
+                print(f"  read {len(excerpt)} chars from {sw['pdf']}")
         if sw.get("claims"):
             _write_mining(n, sw["cluster"], sw["claims"])
         for rb in sw.get("rebuild") or []:
@@ -236,12 +238,14 @@ def main() -> None:
         data = _query(sw["sql"]) if sw.get("sql") else []
         synth_lines = []
         if n == 23 and data:
-            synth_lines.append("Lifetime NPV now spans all education buckets; Mexico sign may flip positive on full mix [check data].")
+            synth_lines.append("Education-weighted NAS benchmark transport is an accounting scenario, not a remaining-life estimate for today's stock; preserve price year and arrival-age assumptions.")
         elif n == 26 and data:
             mex = next((r for r in data if r.get("population_group") == "mexico_origin"), {})
-            synth_lines.append(f"Mexico school/adult revised to ${mex.get('school', '?'):,.0f} with microsim weights.")
+            school = mex.get('school')
+            synth_lines.append("Mexico school exposure unavailable." if school is None else
+                               f"Mexico household school-exposure scenario: ${school:,.0f} per adult; not measured marginal cost.")
         elif n == 32:
-            synth_lines.append("Final object: federal_annual | school_burden_per_adult | net_crude | lifetime_npv — never one scalar.")
+            synth_lines.append("Final object: payroll_transfer_annual | school_burden_per_adult | net_crude | lifetime_npv — never one scalar.")
         else:
             synth_lines.append(f"Query returned {len(data)} rows; see data block.")
         section = f"## Cycle {n} — {sw['title']}\n\n"
@@ -254,7 +258,7 @@ def main() -> None:
             else:
                 section += " — [UNVERIFIED: pdftotext empty]\n\n"
         if sw.get("claims"):
-            section += f"**Mined claims:** `{MINING.name}/immigration-lifetime-sweep-{n}-{sw['cluster']}.json`\n\n"
+            section += f"**Configured claim candidates (not automatically verified):** `{MINING.name}/immigration-lifetime-sweep-{n}-{sw['cluster']}.json`\n\n"
         if sw.get("rebuild"):
             section += f"**Rebuild:** {', '.join(sw['rebuild'])}\n\n"
         section += "**Data:**\n```json\n" + json.dumps(data[:12], indent=2, default=str) + "\n```\n\n"
