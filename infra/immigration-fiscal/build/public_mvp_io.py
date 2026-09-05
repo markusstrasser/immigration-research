@@ -5,6 +5,7 @@ import csv
 import io
 import json
 import math
+import re
 import zipfile
 from collections import defaultdict
 from dataclasses import dataclass
@@ -175,6 +176,13 @@ def allocate_sipp_benefits(rows: list[SippPersonMonth]) -> None:
                 raise ValueError(f"SIPP {program} allocation does not conserve amount: {key}")
 
 
+def _sipp_person_csv_member(archive: zipfile.ZipFile) -> str:
+    members = [name for name in archive.namelist() if re.fullmatch(r"pu[0-9]{4}\.csv", name)]
+    if len(members) != 1:
+        raise ValueError(f"Expected one puYYYY.csv SIPP member, found {members}")
+    return members[0]
+
+
 def iter_sipp_allocated_sample_units(
     schema_path: Path, zip_path: Path,
 ) -> Iterator[list[SippPersonMonth]]:
@@ -191,7 +199,7 @@ def iter_sipp_allocated_sample_units(
     current_id = None
     closed_ids: set[str] = set()
     sample_rows: list[SippPersonMonth] = []
-    with zipfile.ZipFile(zip_path) as archive, archive.open("pu2024.csv") as stream:
+    with zipfile.ZipFile(zip_path) as archive, archive.open(_sipp_person_csv_member(archive)) as stream:
         reader = csv.reader(io.TextIOWrapper(stream, encoding="latin-1", newline=""), delimiter="|")
         for line, values in enumerate(reader, 1):
             if line == 1 and values == names:
