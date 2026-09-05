@@ -1,5 +1,17 @@
 # Immigration conclusion audit — running fixes
 
+## Current correction — 2026-09-05
+
+The September [repair report](immigration-material-repair-report-2026-09-05.md) is the authority for rebuilt results and their scopes. The old household-based SIPP amounts, including Mexico $1,519 and NH-white $2,746 per adult, are withdrawn. The replacement measures employee-rate payroll less allocated SNAP/TANF/SSI, not full federal, all-government, or lifetime fiscal impact. [SOURCE: ../infra/immigration-fiscal/build/build_federal_microsim_sipp_2024.py]
+
+The old 1.8× ranking and education-explains-the-gap wording are withdrawn. Current education reweightings are compositional scenarios, not causal explanations. The corrected source, crime, capacity and welfare conclusions are in the report and linked memos. Historical fix entries remain a record of what was believed then, including earlier mistaken corrections. [INFERENCE]
+
+<details>
+<summary>Earlier record, superseded where corrected above</summary>
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+# Immigration conclusion audit — running fixes
+
 **Purpose:** running ledger of statistical, mathematical, logical, and data-science issues fixed while auditing immigration conclusions.
 
 **Rule:** each entry names the broken conclusion, the evidence that changed it, what was edited, and what remains unresolved. This is not a final immigration position memo.
@@ -2670,3 +2682,10 @@ Verified a compact source-anchor set with `mcp__research.resolve_doi`, including
 ### Updated conclusion
 
 The XDISC generator packet remains useful, but it is now explicitly a prompt/source-anchor layer rather than a loaded citation registry. Rows with verified DOIs can be promoted more safely; book/framework and inference-only rows still need bibliographic cleanup or local-source paths before machine loading. [INFERENCE]
+
+<!-- historical-snapshot:end -->
+</details>
+
+## Revisions
+
+- **2026-09-05:** Corrected material measurement and inference errors under the [repair decision](../decisions/2026-09-05-material-inference-repair.md); preserved the earlier record.

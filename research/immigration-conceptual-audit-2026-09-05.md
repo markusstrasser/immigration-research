@@ -1,5 +1,7 @@
 # Material conceptual and mathematical audit — 2026-09-05
 
+**Subsequent resolution, 2026-09-05:** This is the initial pre-repair audit. Its identified errors led to corrected code, a raw-data fiscal rebuild, revised interpretations and new evidence acquisition. Use the [completed repair record](immigration-material-repair-report-2026-09-05.md) for current results and limits; the initial findings and access conditions below are preserved as the record that triggered the [repair decision](../decisions/2026-09-05-material-inference-repair.md).
+
 **Verdict:** Several consequential errors survive in the June dismantling synthesis and in the local fiscal pipeline. The distributional questions remain legitimate, but some claimed refutations fail, and the SIPP-derived fiscal estimates require rebuilding. A correctly transcribed quotation or successfully reproduced number does not validate the inference made from it. [INFERENCE, supported by the checks below]
 
 **Scope:** Review requested for major assumptions, logic and calculations, without copy-editing or minor objections. Read the current consolidated synthesis and its supporting Decker, Cato and Clemens arguments; inspect the current fiscal pipeline and selected live warehouse outputs. This is a bounded audit, not certification of every research file. Sources and prior conclusions remain intact as historical records; the corrections below supersede the specified claims. No canonical data rebuild or source-code repair was performed during this review.

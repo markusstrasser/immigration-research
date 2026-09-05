@@ -2,7 +2,7 @@
 
 **Purpose:** Read the reasoning in order, know which claims are canonical vs superseded, and rerun the headline SQL. **Setup/quickstart now lives in the root [`README.md`](../README.md)** — this is the deep companion (reading order, claim status, warehouse query definitions).
 
-**Date:** 2026-06-24
+**Updated:** 2026-09-05. Start with the [material repair report](immigration-material-repair-report-2026-09-05.md) and [recent evidence synthesis](immigration-framing-refresh-2026-09-05.md). The earlier household-donor fiscal schema and its figures are invalid; September replacements use person-year donors and explicitly partial accounting. Historical claim tables below are subject to the current corrections.
 
 ---
 
@@ -55,6 +55,8 @@ playwright install (only for HUD CHAS + SAFMR, which are WAF-blocked on plain cu
 
 Paths are in `infra/immigration-fiscal/acquire/config.local.env` (gitignored).
 
+On the inspected machine, raw inputs are at `/Volumes/2TBPNY/research-data/immigration-fiscal/data` and corrected generated files at `/Volumes/2TBPNY/research-data/immigration-fiscal/derived`. The old `sources` and `data/derived` symlinks point to missing offload locations; use the explicit configuration. A local warehouse has been repaired; no new public release is implied.
+
 **Smoke test:**
 
 ```bash
@@ -84,16 +86,16 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 | 1 | `immigration-main-question-reset.md` | What question the repo actually asks |
 | 2 | `immigration-glossary.md` | Terms: `low-skill`, `incidence`, `PUMA`, etc. |
 | 3 | `immigration-confidence-ladder.md` | Strong vs weak vs contextual-only metrics |
-| 4 | `immigration-verified-findings-report-2026-04-10.md` | Best single “what we know” snapshot |
-| 5 | `immigration-conclusion-audit-running-fixes.md` | What changed in June 2026 (read before citing numbers) |
+| 4 | `immigration-material-repair-report-2026-09-05.md` | Recalculated results, material corrections and validation |
+| 5 | `immigration-framing-refresh-2026-09-05.md` | New evidence, competing mechanisms and remaining limits |
 
 ### Fiscal / distribution layer (if that’s the hook)
 
 | File | Topic |
 |------|-------|
-| `immigration-federal-distribution-findings-2026-06-15.md` | Mexico vs NH-white federal proxy decomposition |
+| `immigration-federal-distribution-findings-2026-06-15.md` | Mexico vs NH-white partial payroll/benefit projection; see current correction |
 | `immigration-country-fiscal-tensor-2026-06-15.md` | Tensor architecture + rollup views |
-| `immigration-school-burden-per-adult-2026-06-15.md` | School $/adult — **origin rows now withheld** |
+| `immigration-school-burden-per-adult-2026-06-15.md` | Household school exposure scenario; native comparison and failed-coverage rows withheld |
 | `immigration-mexico-npv-population-synthesis-2026-06-15.md` | Mexico NPV × population (full ledger stack) |
 
 ### Local burden / housing
@@ -144,26 +146,26 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 - `SCHL < 16` (less than HS diploma in ACS coding)
 - `YOEP >= 2014` (entered 2014 or later)
 
-**Federal annual proxy** (narrow ledger):
+**Partial annual payroll/benefit proxy** (calendar 2023):
 
-- FICA 7.65% on wages (capped) minus SNAP + TANF + SSI
-- **Not** income tax, Medicare, Medicaid, EITC, or lifetime NPV
+- Employee OASDI proxy: 6.2% of each person's nonnegative annual earnings up to $160,200; employee HI proxy: 1.45% without that cap. Calculate before averaging donors.
+- Subtract allocated SNAP/TANF and individual SSI. This is a synthetic projection with age/education/income matching, excluding income taxes, employer taxes, Medicare/Medicaid spending, most other services and lifetime incidence.
 
 **Three-layer view** (`v_three_layer_annual` in fiscal union):
 
-- `federal_per_adult`, `school_per_adult`, `net_crude_per_adult`
-- Origin school/net may be `NULL` — check audit memo before exporting
+- `payroll_transfer_per_adult`, `school_per_adult`, `net_crude_per_adult`
+- School values are household exposure scenarios, not measured marginal costs. Native comparison and failed-coverage origin school/net cells are `NULL`; the crude difference is not a complete fiscal balance.
 
 **Borjas supply-shock panel** (`borjas_supply_shock_panel`, in `context` + the unified release):
 
 - IPUMS USA 5% samples 1980–2023, education × work-experience cells
-- Foreign-born = `BPL >= 150` (IPUMS birthplace coding) — **not** ACS `NATIVITY = 2`; the two come from different microdata, don't conflate
+- The current panel uses the birthplace rule `BPL >= 150` (IPUMS). This is not automatically equivalent to ACS nativity, which includes citizenship-at-birth rules; harmonize definitions before comparing populations.
 - The 44 M-row source microdata is **license-restricted and excluded from the release** — only these aggregated cells ship
 
 **Crime domain** (new 2026-06-24; the project is "fiscal *and* crime"):
 
 - `status_class_def` + `status_class_crosswalk` — the **INT-06 spine**: one canonical citizenship/legal-status enum (`native_born`/`naturalized`/`lpr_legal_noncitizen`/`unauthorized`/`other_noncitizen`) that 6 sources crosswalk into. **Load this for any status-keyed join** — don't re-map citizenship. `lossy_flag` marks where a source can't split LPR from unauthorized; `verified=false` marks UNVERIFIED codebook categories.
-- `crime_scaap_awards` / `crime_scaap_state_2023` — DOJ SCAAP FY23 criminal-alien inmate-days + reimbursement $ by jurisdiction/state. **Read first:** "criminal alien" (DHS-confirmed) ≠ unauthorized (includes LPRs); inmate-days are a *stock*, not a crime *rate* (no denominator).
+- `crime_scaap_awards` / `crime_scaap_state_2023` — DOJ SCAAP FY23 inmate-days and reimbursements by jurisdiction/state; reference custody period July 2021–June 2022. DHS-confirmed eligible noncitizens are not identical to unauthorized immigrants. Inmate-days are person-time in custody, not unique people, offenses, or a population crime rate; reimbursements are not total costs.
 - `v_crime_scaap_x_state_fiscal` — the crime↔fiscal $ bridge (INT-03), SCAAP burden × state immigrant-cost context by `state_fips`.
 
 ---

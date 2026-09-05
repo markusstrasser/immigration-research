@@ -1,3 +1,19 @@
+# School exposure per adult — corrected interpretation
+
+**Current correction: 2026-09-05.** The historical federal, school and crude-net table is not current. Its native rows cannot be reactivated using arbitrary temporary files or an unsymmetrical national-median cost. The origin construction allocates all household children aged 5–17 across foreign-born adults aged 25–64 in the household, including mixed-nativity households. Multiplying by average per-pupil spending assumes those children are public pupils and assigns the entire modeled household exposure to those foreign-born adults. This is a declared school-exposure scenario, not observed public enrollment, attributable spending or marginal cost. Average spending can lie above or below marginal cost depending on spare capacity and expansion costs. Numerator and denominator must share a traced universe; merely close totals do not prove that. Subtracting this scenario from a partial payroll proxy does not yield an actual government budget balance or a lifetime fiscal result.
+
+[SOURCE: [material audit](immigration-conceptual-audit-2026-09-05.md), source-code and table checks recorded in the [repair report](immigration-material-repair-report-2026-09-05.md)] [INFERENCE: accounting and identification limits]
+
+The [repair report](immigration-material-repair-report-2026-09-05.md) is the current result and verification entry point. The original below is retained as explicitly superseded history, including original quotations and earlier revisions.
+
+## Revisions
+
+- **2026-09-05:** Corrected these units, assumptions and current-status claims under the [material inference repair decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # School burden per adult — built layer (2026-06-15)
 
 **Date:** 2026-06-15
@@ -122,3 +138,5 @@ SELECT * FROM v_three_layer_annual ORDER BY net_crude_per_adult;
 | 2026-06-16 | Added symmetric table-scope warning: negative NH-white crude rows are static school-cost assignment, not evidence that native whites are fiscally negative. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Replaced "kills the stale claim" with invalidates-the-narrow-export wording; the corrected denominator only blocks the built annual school-layer export, not the all-government fiscal question. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Marked origin school/net rows withheld after confirming scenario-household numerator vs full-microsim denominator mismatch; rebuilt tensor with guard. |
+
+</details>

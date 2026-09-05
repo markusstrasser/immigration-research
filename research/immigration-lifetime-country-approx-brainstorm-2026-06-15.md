@@ -1,3 +1,19 @@
+# Country lifetime approximations — corrected proposal basis
+
+**Current correction: 2026-09-05.** The old 1.8× native/Mexico trigger and annual fiscal table are withdrawn because the donor model was invalid. This is a historical idea inventory, not evidence that its proposed methods or signs were established. Any new lifetime approximation must use an explicitly defined arrival cohort, current age, emigration, mortality, fiscal budget and education mapping. NAS age-25 cells applied to present stock are a synthetic composition benchmark only; a matched donor subset is not the entire native population. Do not treat a plan, a modeled adjustment or a missing channel tag as an empirically resolved mechanism.
+
+[SOURCE: [material audit](immigration-conceptual-audit-2026-09-05.md), source-code and table checks recorded in the [repair report](immigration-material-repair-report-2026-09-05.md)] [INFERENCE: accounting and identification limits]
+
+The [repair report](immigration-material-repair-report-2026-09-05.md) is the current result and verification entry point. The original below is retained as explicitly superseded history, including original quotations and earlier revisions.
+
+## Revisions
+
+- **2026-09-05:** Corrected these units, assumptions and current-status claims under the [material inference repair decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # Brainstorm — approximating lifetime fiscal +/- to the country (1st–3rd order)
 
 **Date:** 2026-06-15
@@ -308,3 +324,5 @@ Output:                Table of (cell, ℓ, order) → $ ; NO single scalar
 | 2026-06-15 | Iteration 3 — two-corridor surge; EU tensor groups; write-up memo |
 | 2026-06-16 | Trigger line aligned to the corrected distribution memo: current built NH-white/Mexico federal proxy ratio is ~1.8×, not the older ~2–3× wage-imputation headline. See `immigration-conclusion-audit-running-fixes.md`. |
 | 2026-06-16 | Aligned headline federal ratios to current `country_fiscal_rollup_2023.csv` values: `nh_white_all/fb_lt_hs` ~4.1x, `nh_white_all/mexico_origin` ~1.8x, and `nh_white_fborn/nh_white_usborn` ~1.4x. See `immigration-conclusion-audit-running-fixes.md`. |
+
+</details>

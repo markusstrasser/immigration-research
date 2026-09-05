@@ -1,3 +1,19 @@
+# Scenario composition — corrected model status
+
+**Current correction: 2026-09-05.** The SIPP, payroll and health-bridge scenario exports have been rebuilt; see the [repair report](immigration-material-repair-report-2026-09-05.md). Person-month averages annualized by twelve are steady-state illustrations, not person-year tax liabilities; the repaired donor model uses annual person earnings before caps. Household SNAP/TANF ownership and benefit membership are reconciled before assigning an adult share. The MEPS bridge is a statistical match by its supported cells, not observed joint SIPP–MEPS microdata. Coarse matching imposes conditional exchangeability and cannot establish origin-specific or education-specific health spending it does not observe. The old bridge also shifted some five-year age bands into the next ten-year MEPS band; those boundaries are repaired. The origin scenario subset and full adult recipient stock remain different universes.
+
+[SOURCE: [material audit](immigration-conceptual-audit-2026-09-05.md), source-code and table checks recorded in the [repair report](immigration-material-repair-report-2026-09-05.md)] [INFERENCE: accounting and identification limits]
+
+The [repair report](immigration-material-repair-report-2026-09-05.md) is the current result and verification entry point. The original below is retained as explicitly superseded history, including original quotations and earlier revisions.
+
+## Revisions
+
+- **2026-09-05:** Corrected these units, assumptions and current-status claims under the [material inference repair decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # Immigration scenario composition — 2026-06-15
 
 ## Purpose
@@ -73,3 +89,5 @@ bash build-mvp.sh      # SIPP/MEPS cells (if not already built)
 2. EDFacts / current EL when acquirable
 3. Receiver-city flags joined to PUMA/county nodes (not just standalone table)
 4. Explicit offset column from CBO PDF tables (manual extract)
+
+</details>

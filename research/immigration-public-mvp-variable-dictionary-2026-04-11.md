@@ -1,5 +1,23 @@
 # Immigration public MVP variable dictionary — 2026-04-11
 
+## Current correction — 2026-09-05
+
+Use the official [2024 SIPP dictionary](https://www2.census.gov/programs-surveys/sipp/tech-documentation/data-dictionaries/2024/2024_SIPP_Data_Dictionary.pdf), not field names or the earlier inferred labels below. The reference year is 2023. [SOURCE]
+
+- Person-month key: SSUID + PNUM + MONTHCODE. Monthly age is TAGE_EHC. Annual donors use December WPFINWGT once per person and sum observed monthly amounts without scaling partial years to twelve months.
+- EEDUC: 31–38 below HS; 39 HS/GED; 40–42 some college/associate; 43–46 BA or higher.
+- EBORNUS is birth in the US, not by itself ACS nativity. ENATCIT 4 (US/island-area birth) and 5 (US-citizen parents abroad) belong in the ACS native group; naturalized citizens remain foreign born.
+- SNAP/TANF amounts are on named owners and allocated once across linked covered members, including children, before adult/nativity selection. SSI is individual. These recorded amounts do not isolate federal funding.
+- Personal TPEARN and TPTOTINC are monthly measures; genuine negative earnings are preserved. ACS PINCP is adjusted with ADJINC/1,000,000 before income-band matching.
+
+The [shared parser](../infra/immigration-fiscal/build/public_mvp_io.py) and [donor builder](../infra/immigration-fiscal/build/build_federal_microsim_sipp_2024.py) implement these source-based definitions. The earlier dictionary is retained for provenance. [SOURCE]
+
+<details>
+<summary>Earlier record, superseded where corrected above</summary>
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+# Immigration public MVP variable dictionary — 2026-04-11
+
 ## Purpose
 
 This is the minimum variable dictionary for the public-use lifetime-fiscal MVP.
@@ -204,3 +222,10 @@ For the next build:
 2. `MEPS` is the health-cost module.
 3. `IRS SOI county` is context only, not microsim tax truth.
 4. `Synthetic SIPP` and `PSID` remain pending upgrades.
+
+<!-- historical-snapshot:end -->
+</details>
+
+## Revisions
+
+- **2026-09-05:** Corrected material measurement and inference errors under the [repair decision](../decisions/2026-09-05-material-inference-repair.md); preserved the earlier record.

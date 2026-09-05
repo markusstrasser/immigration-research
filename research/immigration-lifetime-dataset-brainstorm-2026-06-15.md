@@ -1,3 +1,19 @@
+# Lifetime data ideas — corrected quantitative anchors
+
+**Current correction: 2026-09-05.** The old SIPP annual anchors and aggregate remittance-versus-fiscal comparisons are superseded. Remittances are private transfers, not a fiscal offset or automatically a global loss. The stored World Bank BX.TRF.PWKR.CD.DT series measures receipts for both Mexico and the United States; the U.S. series is not outflow. Comparing an annuity in 1994 or 2012 dollars with current dollars requires price conversion as well as compatible populations, horizons and budgets. This historical acquisition/idea list does not establish the causal validity of the proposed bridges.
+
+[SOURCE: [material audit](immigration-conceptual-audit-2026-09-05.md), source-code and table checks recorded in the [repair report](immigration-material-repair-report-2026-09-05.md)] [INFERENCE: accounting and identification limits]
+
+The [repair report](immigration-material-repair-report-2026-09-05.md) is the current result and verification entry point. The original below is retained as explicitly superseded history, including original quotations and earlier revisions.
+
+## Revisions
+
+- **2026-09-05:** Corrected these units, assumptions and current-status claims under the [material inference repair decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # Lifetime fiscal datasets — brainstorm + acquisition pass
 
 **Date:** 2026-06-15
@@ -326,3 +342,5 @@ Wired from `acquire/setup.sh` after stage5 pass.
 **Round 11 acquired:** derived CSV refresh only (school_finance + origin_fiscal_scenario post unit fix). No new PDFs.
 
 **Blocked:** CBO 59752 deportation PDF (curl 403); SSA life tables (403); Storesletten correct WP (Cleveland/Minneapolis 403); Fed FEDS note (404).
+
+</details>

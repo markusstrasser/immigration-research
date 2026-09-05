@@ -1,3 +1,19 @@
+# Fiscal dataset frontier — corrected readiness
+
+**Current correction: 2026-09-05.** The earlier 'SIPP donor rebuilt/done' status is superseded: the model had person/household and education-code defects and did not replace a full federal tax-transfer model. The repaired model covers employee payroll less allocated SNAP/TANF/SSI only, including some benefits with state funding. Income taxes, employer payroll, health spending, pensions, refundable credits and wider public services require separate coherent modeling. Adding more context datasets cannot by itself produce an identified marginal fiscal balance.
+
+[SOURCE: [material audit](immigration-conceptual-audit-2026-09-05.md), source-code and table checks recorded in the [repair report](immigration-material-repair-report-2026-09-05.md)] [INFERENCE: accounting and identification limits]
+
+The [repair report](immigration-material-repair-report-2026-09-05.md) is the current result and verification entry point. The original below is retained as explicitly superseded history, including original quotations and earlier revisions.
+
+## Revisions
+
+- **2026-09-05:** Corrected these units, assumptions and current-status claims under the [material inference repair decision](../decisions/2026-09-05-material-inference-repair.md).
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+<details>
+<summary>Superseded historical version — retained for provenance</summary>
+
 # Net-negative immigration: dataset frontier
 
 **Date:** 2026-06-15  
@@ -77,3 +93,5 @@ bash sources/immigration-fiscal/build-context.sh      # warehouse stage1+2
 ```
 
 Manual list: `sources/immigration-fiscal/data/external/stage5_net_negative/kff_refs/MANUAL_ACQUIRE.md`
+
+</details>

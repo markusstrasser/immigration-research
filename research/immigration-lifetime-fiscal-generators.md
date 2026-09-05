@@ -1,5 +1,17 @@
 # Immigration lifetime fiscal — idea generators
 
+## Current correction — 2026-09-05
+
+The September [repair report](immigration-material-repair-report-2026-09-05.md) is the authority for rebuilt results and their scopes. The old household-based SIPP amounts, including Mexico $1,519 and NH-white $2,746 per adult, are withdrawn. The replacement measures employee-rate payroll less allocated SNAP/TANF/SSI, not full federal, all-government, or lifetime fiscal impact. [SOURCE: ../infra/immigration-fiscal/build/build_federal_microsim_sipp_2024.py]
+
+These generators and their retrodictions are proposals and historical examples, not verified findings. The warehouse labels mined claims unverified and theory rows unadjudicated. NAS already models emigration; multiplying its NPV by an emigration fraction is only an explicit sensitivity assumption. Evans–Fitzgerald reports an annual fiscal crossover after year eight, not cumulative payback then. A fiscal transfer is not automatically deadweight loss, but extracting and compensating a surplus is not automatically feasible or Pareto improving. [SOURCE: https://leo.nd.edu/assets/240441/44914_w23498.pdf] [SOURCE: ../infra/immigration-fiscal/build/build_lifetime_evidence_warehouse.py] [INFERENCE]
+
+<details>
+<summary>Earlier record, superseded where corrected above</summary>
+
+<!-- historical-snapshot:start superseded=2026-09-05 -->
+# Immigration lifetime fiscal — idea generators
+
 **Date:** 2026-06-15 (rounds A–S); 2026-06-23 (round T benefit-side, round U source-incentive meta)
 **DuckDB:** `warehouse/immigration_lifetime_evidence.duckdb`
 
@@ -1084,3 +1096,10 @@
 **Retrodiction:** Would have stopped every deep-roots lens above from being misread as a first-gen or individual claim: the same micro-data showing some origin persistence ALSO shows rapid regression toward the host mean and a 150-year immigrant CRIME ADVANTAGE. Partial, decaying transmission — not destiny.
 
 **Negative space:** A steelman without its null is a polemic. This lens is the built-in disconfirmation that keeps cluster-V honest and prevents long-run average claims from being laundered into first-gen or individual ones.
+
+<!-- historical-snapshot:end -->
+</details>
+
+## Revisions
+
+- **2026-09-05:** Corrected material measurement and inference errors under the [repair decision](../decisions/2026-09-05-material-inference-repair.md); preserved the earlier record.
