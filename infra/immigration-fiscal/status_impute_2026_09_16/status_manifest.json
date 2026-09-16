@@ -1,0 +1,6 @@
+{
+  "cps_source": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+  "imputation": "Borjas 2017 NBER w22102 residual rules a-i",
+  "off_books_share": 0.5571428571428572,
+  "corrected_arm": "EITC zeroed for imputed-unauthorized persons; federal/state/payroll tax and ACTC scaled by the 44% on-books share; TANF, UI, SSI, SS and veterans' receipts of the imputed-unauthorized zeroed; SNAP and LIHEAP prorated to the non-unauthorized member share of the SPM unit; WIC, school lunch, broadband, sales and property tax left whole"
+}
