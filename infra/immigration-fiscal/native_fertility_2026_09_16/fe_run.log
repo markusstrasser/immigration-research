@@ -1,0 +1,26 @@
+  fetched acs_acs1_2016_B05012_cbsa.json (0.1 MB)
+  fetched acs_acs1_2016_B25064_cbsa.json (0.1 MB)
+  fetched acs_acs1_2016_B19013_cbsa.json (0.1 MB)
+  fetched acs_acs1_2016_B01001_cbsa.json (0.6 MB)
+  fetched acs_acs1_2017_B13008_cbsa.json (0.2 MB)
+  fetched acs_acs1_2017_B05012_cbsa.json (0.1 MB)
+  fetched acs_acs1_2017_B25064_cbsa.json (0.1 MB)
+  fetched acs_acs1_2017_B19013_cbsa.json (0.1 MB)
+  fetched acs_acs1_2017_B01001_cbsa.json (0.7 MB)
+Traceback (most recent call last):
+  File "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/native_fertility_2026_09_16/panel_fe.py", line 31, in <module>
+    F.fetch(str(y), "acs/acs1", g)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/native_fertility_2026_09_16/fetch_acs.py", line 26, in fetch
+    return json.loads(out.read_text())
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/alien/.local/share/uv/python/cpython-3.13-macos-aarch64-none/lib/python3.13/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/Users/alien/.local/share/uv/python/cpython-3.13-macos-aarch64-none/lib/python3.13/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alien/.local/share/uv/python/cpython-3.13-macos-aarch64-none/lib/python3.13/json/decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 268 column 1149 (char 335861)

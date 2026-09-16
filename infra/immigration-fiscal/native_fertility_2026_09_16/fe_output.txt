@@ -1,0 +1,19 @@
+====================================================================================================
+7. WITHIN-METRO FIXED-EFFECTS PANEL, ACS 1-year 2010-2023 (2020/2021 ACS1 not published)
+====================================================================================================
+  metros with >=10 years: 432   metro-year observations: 5108
+  [metro FE + year FE, SEs clustered by metro]
+  no time-varying controls                       b= -0.1033  se=0.2526  t= -0.41  p=0.6827  n= 5108
+  + age structure                                b= -0.1044  se=0.2529  t= -0.41  p=0.6798  n= 5108
+  + rent, income, age structure                  b= -0.0426  se=0.2598  t= -0.16  p=0.8699  n= 5108
+  + controls, weighted by native women           b= +0.1818  se=0.2010  t= +0.90  p=0.3659  n= 5108
+  50 largest metros only                         b= +0.0233  se=0.4291  t= +0.05  p=0.9567  n=  598
+  channel check inside the FE panel:
+  log rent on fb_share (metro+year FE)           b= +0.0063  se=0.0014  t= +4.42  p=0.0000  n= 5108
+
+  POOLED CROSS-SECTION for contrast (no metro FE, year FE only):
+  pooled, year FE only                           b= +0.1272  se=0.0877  t= +1.45  p=0.1469
+
+  ARITHMETIC AT THE FE COEFFICIENT [INFERENCE]: b=-0.0426, 95% CI [-0.552, +0.467]
+    point                     : births forgone at fb_share=15.6% = +43,291/yr (+5.5% of the 792,725 births to foreign-born women)
+    CI lower (most negative)  : births forgone at fb_share=15.6% = +561,198/yr (+70.8% of the 792,725 births to foreign-born women)
