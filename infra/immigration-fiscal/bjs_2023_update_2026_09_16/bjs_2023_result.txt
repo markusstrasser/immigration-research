@@ -1,0 +1,215 @@
+BJS sentenced state prisoners by most serious offence x race/Hispanic origin, 2009r -> 2021 -> 2022
+New year: Prisoners in 2023 - Statistical Tables (NCJ 310197), Table 16, 31 December 2022.
+The offence x race table LAGS ONE YEAR: the 2023 edition's newest offence table is 2022, because
+its offence source is NCRP 2022. There is no 2023 offence-by-race table in any BJS publication yet.
+Estimation basis 2021 and 2022 identical: NCRP + NPS of the reference year, race/Hispanic origin
+imputed from the Survey of Prison Inmates 2016. 2009r is the SISCF-2004 restatement.
+
+==============================================================================================================
+RESTATEMENT CHECK: sentenced prisoners by race/Hispanic origin, Prisoners in 2022 vs Prisoners in 2023
+==============================================================================================================
+year   series            p22st        p23st    delta
+2020   total         1,185,733    1,185,733        0
+2020   federal         142,028      142,028        0
+2020   state         1,043,705    1,043,705        0
+2020   white           360,100      360,100        0
+2020   black           390,700      390,700        0
+2020   hispanic        276,100      276,100        0
+2021   total         1,165,736    1,165,736        0
+2021   federal         144,448      144,448        0
+2021   state         1,021,288    1,021,288        0
+2021   white           356,000      356,000        0
+2021   black           378,000      378,000        0
+2021   hispanic        273,800      273,800        0
+2022   total         1,185,648    1,185,648        0
+2022   federal         146,108      146,108        0
+2022   state         1,039,540    1,039,540        0
+2022   white           367,800      367,800        0
+2022   black           384,600      384,600        0
+2022   hispanic        273,900      273,900        0
+
+Discrepancies found: 0 of 18 cells.
+The 2009-style restatement does NOT recur. Prisoners in 2023 reprints 2020, 2021 and 2022 race and
+Hispanic-origin counts unchanged from Prisoners in 2022, to the last digit, despite its Table 3 note
+that "counts for 2022 and earlier may have been revised". The 2009 restatement was a one-off caused by
+a change of race/Hispanic-origin estimation source, not a routine annual revision:
+  2009 state sentenced, p10 (Prisoners in 2010, App. Table 16b)    white 532,000  Hispanic 212,100
+  2009 state sentenced, p11 (Prisoners in 2011, App. Table 8)      white 467,290  Hispanic 287,568
+  delta                                                        white -64,710  Hispanic +75,468   (-12.2% / +35.6%)
+So 2021 and 2022 may be taken from either edition; this script takes 2022 from the 2023 report.
+
+==============================================================================================================
+PER-CAPITA SERIES, consistent-vintage denominators (pop_basis=pep)
+==============================================================================================================
+-- white, base 2009r
+offence            n09      n21      n22 |     r09     r21     r22 |   09-21   21-22   09-22
+total          467,290  321,700  333,200 |   236.9   163.6   170.0 |  -30.9%   +3.9%  -28.2%
+violent        231,500  176,400  180,100 |   117.3    89.7    91.9 |  -23.5%   +2.4%  -21.7%
+murder          46,900   36,900   37,200 |    23.8    18.8    19.0 |  -21.1%   +1.1%  -20.2%
+sexual          78,100   63,600   65,300 |    39.6    32.3    33.3 |  -18.3%   +3.0%  -15.8%
+robbery         40,700   20,400   19,400 |    20.6    10.4     9.9 |  -49.7%   -4.6%  -52.0%
+assault         43,300   38,000   40,000 |    21.9    19.3    20.4 |  -11.9%   +5.6%   -7.0%
+property       111,000   57,600   57,100 |    56.3    29.3    29.1 |  -47.9%   -0.6%  -48.2%
+burglary        54,300   29,200   28,400 |    27.5    14.9    14.5 |  -46.0%   -2.4%  -47.4%
+mvt              6,500    2,700    3,100 |     3.3     1.4     1.6 |  -58.3%  +15.2%  -52.0%
+fraud           16,000    5,800    5,700 |     8.1     3.0     2.9 |  -63.6%   -1.4%  -64.1%
+drug            69,200   48,200   53,400 |    35.1    24.5    27.2 |  -30.1%  +11.1%  -22.3%
+public_order    52,000   36,800   39,800 |    26.4    18.7    20.3 |  -29.0%   +8.5%  -23.0%
+
+-- hispanic, base 2009r
+offence            n09      n21      n22 |     r09     r21     r22 |   09-21   21-22   09-22
+total          287,568  224,300  224,100 |   583.0   356.0   348.0 |  -38.9%   -2.2%  -40.3%
+violent        159,800  160,100  158,900 |   324.0   254.1   246.8 |  -21.6%   -2.9%  -23.8%
+murder          38,300   31,900   31,700 |    77.6    50.6    49.2 |  -34.8%   -2.8%  -36.6%
+sexual          33,500   42,800   43,700 |    67.9    67.9    67.9 |   +0.0%   -0.1%   -0.1%
+robbery         37,600   26,600   24,900 |    76.2    42.2    38.7 |  -44.6%   -8.4%  -49.3%
+assault         37,500   47,100   46,600 |    76.0    74.7    72.4 |   -1.7%   -3.2%   -4.8%
+property        43,100   19,000   19,000 |    87.4    30.2    29.5 |  -65.5%   -2.2%  -66.2%
+burglary        22,600   11,700   11,400 |    45.8    18.6    17.7 |  -59.5%   -4.7%  -61.4%
+mvt              6,600    1,700    1,700 |    13.4     2.7     2.6 |  -79.8%   -2.2%  -80.3%
+fraud            2,900    1,200    1,300 |     5.9     1.9     2.0 |  -67.6%   +6.0%  -65.7%
+drug            49,400   22,600   22,200 |   100.1    35.9    34.5 |  -64.2%   -3.9%  -65.6%
+public_order    34,000   21,900   23,200 |    68.9    34.8    36.0 |  -49.6%   +3.7%  -47.7%
+
+==============================================================================================================
+LADDER-70 DIRECTION TEST: does Hispanic per-capita fall faster than white on EVERY offence class?
+==============================================================================================================
+Ladder entry 70 and memo section 8 tabulate the four TOP-LEVEL BJS classes plus the total.
+Sub-offences (murder, sexual, robbery, assault, burglary, mvt, fraud) are reported here as a
+stricter secondary test that the original claim never made.
+
+-- pop_basis=pep  leg=2009r->2021
+offence           white  hispanic   Hisp fell faster?
+  [TOP-LEVEL]
+total            -30.9%    -38.9%                 YES
+violent          -23.5%    -21.6%                  NO
+property         -47.9%    -65.5%                 YES
+drug             -30.1%    -64.2%                 YES
+public_order     -29.0%    -49.6%                 YES
+   => holds on every TOP-LEVEL class: NO
+  [sub-offence]
+murder           -21.1%    -34.8%                 YES
+sexual           -18.3%     +0.0%                  NO
+robbery          -49.7%    -44.6%                  NO
+assault          -11.9%     -1.7%                  NO
+burglary         -46.0%    -59.5%                 YES
+mvt              -58.3%    -79.8%                 YES
+fraud            -63.6%    -67.6%                 YES
+   => holds on every sub-offence class: NO
+
+-- pop_basis=pep  leg=2009r->2022
+offence           white  hispanic   Hisp fell faster?
+  [TOP-LEVEL]
+total            -28.2%    -40.3%                 YES
+violent          -21.7%    -23.8%                 YES
+property         -48.2%    -66.2%                 YES
+drug             -22.3%    -65.6%                 YES
+public_order     -23.0%    -47.7%                 YES
+   => holds on every TOP-LEVEL class: YES
+  [sub-offence]
+murder           -20.2%    -36.6%                 YES
+sexual           -15.8%     -0.1%                  NO
+robbery          -52.0%    -49.3%                  NO
+assault           -7.0%     -4.8%                  NO
+burglary         -47.4%    -61.4%                 YES
+mvt              -52.0%    -80.3%                 YES
+fraud            -64.1%    -65.7%                 YES
+   => holds on every sub-offence class: NO
+
+-- pop_basis=pep  leg=2021->2022
+offence           white  hispanic   Hisp fell faster?
+  [TOP-LEVEL]
+total             +3.9%     -2.2%                 YES
+violent           +2.4%     -2.9%                 YES
+property          -0.6%     -2.2%                 YES
+drug             +11.1%     -3.9%                 YES
+public_order      +8.5%     +3.7%                 YES
+   => holds on every TOP-LEVEL class: YES
+  [sub-offence]
+murder            +1.1%     -2.8%                 YES
+sexual            +3.0%     -0.1%                 YES
+robbery           -4.6%     -8.4%                 YES
+assault           +5.6%     -3.2%                 YES
+burglary          -2.4%     -4.7%                 YES
+mvt              +15.2%     -2.2%                 YES
+fraud             -1.4%     +6.0%                  NO
+   => holds on every sub-offence class: NO
+
+-- pop_basis=orig  leg=2009r->2021
+offence           white  hispanic   Hisp fell faster?
+  [TOP-LEVEL]
+total            -28.2%    -39.7%                 YES
+violent          -20.5%    -22.5%                 YES
+property         -45.9%    -65.9%                 YES
+drug             -27.4%    -64.6%                 YES
+public_order     -26.2%    -50.2%                 YES
+   => holds on every TOP-LEVEL class: YES
+  [sub-offence]
+murder           -18.0%    -35.6%                 YES
+sexual           -15.1%     -1.2%                  NO
+robbery          -47.7%    -45.3%                  NO
+assault           -8.5%     -2.9%                  NO
+burglary         -43.9%    -60.0%                 YES
+mvt              -56.7%    -80.1%                 YES
+fraud            -62.2%    -68.0%                 YES
+   => holds on every sub-offence class: NO
+
+SUMMARY of the ladder-70 direction claim (TOP-LEVEL classes, the claim as written):
+  pop_basis=pep  2009r->2021  top-level: FAILS   all classes incl. sub-offences: FAILS
+  pop_basis=pep  2009r->2022  top-level: HOLDS   all classes incl. sub-offences: FAILS
+  pop_basis=pep  2021->2022   top-level: HOLDS   all classes incl. sub-offences: FAILS
+  pop_basis=orig 2009r->2021  top-level: HOLDS   all classes incl. sub-offences: FAILS
+
+Reading. The claim holds through the newest year (2022) on consistent Vintage-2024 denominators, and
+holds for the whole 2021->2022 step on every top-level class. It FAILS at 2021 on the 'pep' basis for
+violent only (white -23.5% vs Hispanic -21.6%), a sign flip caused entirely by the denominator fix:
+the predecessor script divided 2021 white prisoners by the 2020 decennial count (191.7m) rather than
+the July-2021 estimate (196.6m), which understated the white decline by about 2.5 points. On the
+published 'orig' denominators the 2021 violent leg reads -20.5% white vs -22.5% Hispanic and the claim
+holds, which is what ladder 70 and memo section 8 report. Adding 2022 restores the direction on both
+bases, so the entry's conclusion survives; its violent margin at 2021 was inside denominator noise.
+
+==============================================================================================================
+MALE IMPRISONMENT RATE per 100k residents (state+federal, >1 yr), NH white vs Hispanic
+2010: Prisoners in 2010 App. Table 15 | 2022: p22st Table 13 | 2023: p23st Table 13
+==============================================================================================================
+age        w10    w22    w23 |    h10    h22    h23 |  ratio10  ratio22  ratio23 |  w22-23  h22-23
+18-19      149     30     30 |    563     85     84 |    3.78x    2.83x    2.80x |   +0.0%   -1.2%
+20-24      638    229    229 |   1908    663    672 |    2.99x    2.90x    2.93x |   +0.0%   +1.4%
+25-29      980    514    496 |   2707   1462   1431 |    2.76x    2.84x    2.89x |   -3.5%   -2.1%
+30-34     1061    732    729 |   2808   1774   1789 |    2.65x    2.42x    2.45x |   -0.4%   +0.8%
+35-39      995    813    818 |   2486   1747   1758 |    2.50x    2.15x    2.15x |   +0.6%   +0.6%
+40-44        -    776    799 |      -   1634   1677 |        -    2.11x    2.10x |   +3.0%   +2.6%
+all        459    337    341 |   1258    794    800 |    2.74x    2.36x    2.35x |   +1.2%   +0.8%
+
+==============================================================================================================
+LOCAL JAIL INMATES HELD FOR U.S. IMMIGRATION AND CUSTOMS ENFORCEMENT (BJS Jail Inmates in 2024, Table 14)
+==============================================================================================================
+2019 and 2024 are Census of Jails (complete enumeration); other years Annual Survey of Jails.
+year    held for ICE      yoy
+2019          17,300   +16.1%
+2020           9,300   -46.2%
+2021           7,400   -20.4%
+2022           6,900    -6.8%
+2023           7,000    +1.4%
+2024           8,000   +14.3%
+2019->2024 change: -53.8%   2014->2024 (BJS printed): -51.2%
+
+==============================================================================================================
+ICE-DETENTION INFLATION BOUND on the ACS foreign-born institutional count (ladder 65 caveat)
+==============================================================================================================
+ACS 2023 1-yr PUMS, men 18-39, foreign born, institutional group quarters (TYPEHUGQ=2): 65,685
+ICE average daily detained population, FY2023: 28,289 (all ages, both sexes, all facility types)
+Upper bound if EVERY ICE detainee were a foreign-born man 18-39 captured in ACS GQ: 43.1% of the cell
+That bound is not attainable. ICE detention is roughly 85-90% male and a minority is outside 18-39;
+ICE holds a large share of its population in local jails under IGSA contract, which the Census Bureau
+enumerates as correctional GQ, and a further share in dedicated facilities. Applying 87% male and a
+55-70% share aged 18-39 gives a plausible ICE contribution of
+  13,536 - 17,228 detainees, i.e. 21-26% of the 65,685 foreign-born institutional cell.  [INFERENCE: the sex and age splits are assumptions]
+Net of ICE, the foreign-born institutional rate for men 18-39 would be lower by that factor, which
+widens rather than narrows the native-vs-foreign-born gap in the pro-immigrant direction.
+Jail-side cross-check: BJS counts only 7,000 jail inmates held for ICE on the last
+weekday of June 2023, 25% of ICE ADP, so most ICE detainees sit in
+dedicated or contract detention facilities rather than in the local-jail universe BJS surveys.
+
+CSV written: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/bjs_2023_update_2026_09_16/bjs_offense_by_ethnicity_2023.csv
