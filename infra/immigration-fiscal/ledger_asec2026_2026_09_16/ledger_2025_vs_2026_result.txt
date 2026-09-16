@@ -1,0 +1,221 @@
+==============================================================================================================
+CPS ASEC 2026 (income year 2025) re-run of the origin-generation fiscal ledger
+==============================================================================================================
+ASEC 2025 file : /Volumes/2TBPNY/research-data/immigration-fiscal/data/external/stage3/census/cps_asec_2025/asecpub25csv.zip
+  sha256       : 318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b
+  members      : ['asec_csv_repwgt_2025.csv', 'ffpub25.csv', 'hhpub25.csv', 'pppub25.csv']
+ASEC 2026 file : /Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_asec2026_2026_09_16/_cache/asecpub26csv.zip
+  sha256       : fe819d0d2fc4470c282e76c247b8aa8b6054811619730307e9f2fe6186707d93
+  members      : ['asec_csv_repwgt_2026.csv', 'ffpub26.csv', 'hhpub26.csv', 'pppub26.csv']
+  source URL   : https://www2.census.gov/programs-surveys/cps/datasets/2026/march/asecpub26csv.zip
+
+Person-file columns dropped 2025 -> 2026 (13): ['I_M5G1', 'I_M5G2', 'I_M5G3', 'M5GSAME', 'M5G_CBST', 'M5G_DIV', 'M5G_DSCP', 'M5G_MTR1', 'M5G_MTR3', 'M5G_MTR4', 'M5G_REG', 'M5G_ST', 'SPM_BBSUBVAL']
+Person-file columns added   2025 -> 2026 (0): []
+Ledger fields absent from the 2026 person file: ['SPM_BBSUBVAL']
+
+--------------------------------------------------------------------------------------------------------------
+STEP 1 GATE --- reproduce the published 2025-file numbers
+--------------------------------------------------------------------------------------------------------------
+  Mexican 2nd gen minus 3rd+ NH white, taxes minus selected transfers: -6,066 (se 353)
+    published: -6,066   deviation: +0.17
+  Mexican 2nd gen minus 3rd+ NH white, extended balance: -8,286 (se 443)
+    published: -8,286   deviation: -0.23
+  GATE PASS --- both headline numbers within $50 of the published values.
+
+--------------------------------------------------------------------------------------------------------------
+STEP 2 --- like-for-like basis: SPM_BBSUBVAL dropped from BOTH years
+--------------------------------------------------------------------------------------------------------------
+  SPM_BBSUBVAL (Affordable Connectivity Program broadband subsidy) is not on
+  the ASEC 2026 public-use file. The program lapsed 2024-06-01. Both years are
+  therefore re-run on a four-item non-cash set (SNAP, energy, WIC, school lunch)
+  so the year-over-year contrast is not contaminated by the dropped item.
+
+
+  broadband share of 2025-file non-cash, third_plus_nh_white       :      145 ->      144  (broadband      1)
+  broadband share of 2025-file non-cash, all_native                :      188 ->      186  (broadband      1)
+  broadband share of 2025-file non-cash, all_second_gen            :      167 ->      166  (broadband      1)
+  broadband share of 2025-file non-cash, mexican_second_gen        :      240 ->      239  (broadband      1)
+  broadband share of 2025-file non-cash, mexican_third_plus_selfid :      232 ->      230  (broadband      1)
+  broadband share of 2025-file non-cash, mexico_born               :      246 ->      245  (broadband      1)
+
+====================================================================================================================================
+SIDE BY SIDE --- annual $ per adult 25-64, equal_all_members allocation, person
+weights, 160-replicate SDR se. 2025 file = income year 2024; 2026 file = income
+year 2025. Both on the 4-item non-cash basis, both at 2024 tax/spending parameters.
+====================================================================================================================================
+
+### third_plus_nh_white   n(2025)=36,287  n(2026)=33,857
+metric                                       ASEC2025 (IY2024)       ASEC2026 (IY2025)              change   nominal %
+Modeled taxes (payroll+fed+state)                 14,383 (238)            14,864 (233)                 481        3.3%
+Selected cash transfers                             2,453 (48)              2,367 (52)                 -86       -3.5%
+Selected non-cash transfers                            144 (4)                 136 (4)                  -8       -5.5%
+Taxes minus selected transfers                    11,786 (250)            12,361 (252)                 575        4.9%
+Employer payroll tax                                3,489 (28)              3,657 (32)                 168        4.8%
+Sales/excise tax (0.35 share)                       1,050 (10)              1,088 (11)                  38        3.6%
+Property tax (owner-occupied)                       1,313 (16)              1,398 (19)                  85        6.5%
+K-12 charged (ACS native ratio)                     1,652 (23)              1,688 (22)                  36        2.2%
+EXTENDED BALANCE                                  15,986 (292)            16,816 (305)                 831        5.2%
+
+### all_native   n(2025)=55,652  n(2026)=52,661
+metric                                       ASEC2025 (IY2024)       ASEC2026 (IY2025)              change   nominal %
+Modeled taxes (payroll+fed+state)                 13,110 (184)            13,487 (176)                 377        2.9%
+Selected cash transfers                             2,451 (38)              2,437 (39)                 -14       -0.6%
+Selected non-cash transfers                            186 (4)                 175 (4)                 -11       -5.9%
+Taxes minus selected transfers                    10,473 (195)            10,875 (191)                 402        3.8%
+Employer payroll tax                                3,307 (22)              3,445 (24)                 138        4.2%
+Sales/excise tax (0.35 share)                          997 (8)               1,034 (8)                  37        3.7%
+Property tax (owner-occupied)                       1,180 (12)              1,247 (15)                  67        5.7%
+K-12 charged (ACS native ratio)                     1,690 (19)              1,704 (18)                  14        0.8%
+EXTENDED BALANCE                                  14,267 (232)            14,898 (230)                 630        4.4%
+
+### all_second_gen   n(2025)=6,871  n(2026)=6,767
+metric                                       ASEC2025 (IY2024)       ASEC2026 (IY2025)              change   nominal %
+Modeled taxes (payroll+fed+state)                 13,653 (351)            14,250 (382)                 596        4.4%
+Selected cash transfers                             1,823 (73)              1,875 (79)                  51        2.8%
+Selected non-cash transfers                            166 (7)                 150 (7)                 -16       -9.4%
+Taxes minus selected transfers                    11,664 (361)            12,225 (399)                 561        4.8%
+Employer payroll tax                                3,494 (49)              3,633 (47)                 139        4.0%
+Sales/excise tax (0.35 share)                       1,043 (16)              1,102 (18)                  59        5.7%
+Property tax (owner-occupied)                       1,313 (32)              1,379 (51)                  66        5.0%
+K-12 charged (ACS native ratio)                     1,855 (47)              1,707 (41)                -149       -8.0%
+EXTENDED BALANCE                                  15,659 (439)            16,632 (475)                 973        6.2%
+
+### mexican_second_gen   n(2025)=2,452  n(2026)=2,461
+metric                                       ASEC2025 (IY2024)       ASEC2026 (IY2025)              change   nominal %
+Modeled taxes (payroll+fed+state)                  7,419 (268)             7,738 (385)                 319        4.3%
+Selected cash transfers                            1,460 (102)             1,648 (120)                 189       12.9%
+Selected non-cash transfers                           239 (14)                228 (14)                 -11       -4.6%
+Taxes minus selected transfers                     5,720 (278)             5,862 (407)                 141        2.5%
+Employer payroll tax                                2,542 (52)              2,598 (62)                  56        2.2%
+Sales/excise tax (0.35 share)                         784 (16)                818 (21)                  34        4.3%
+Property tax (owner-occupied)                         765 (29)                793 (31)                  28        3.6%
+K-12 charged (ACS native ratio)                     2,112 (86)              1,981 (74)                -131       -6.2%
+EXTENDED BALANCE                                   7,700 (375)             8,089 (502)                 389        5.1%
+
+### mexican_third_plus_selfid   n(2025)=2,477  n(2026)=2,572
+metric                                       ASEC2025 (IY2024)       ASEC2026 (IY2025)              change   nominal %
+Modeled taxes (payroll+fed+state)                  9,149 (440)             8,899 (471)                -249       -2.7%
+Selected cash transfers                            2,049 (134)             2,130 (139)                  81        4.0%
+Selected non-cash transfers                           230 (16)                231 (16)                   1        0.4%
+Taxes minus selected transfers                     6,870 (468)             6,538 (497)                -332       -4.8%
+Employer payroll tax                                2,852 (62)              2,805 (63)                 -47       -1.6%
+Sales/excise tax (0.35 share)                         893 (22)                892 (23)                  -1       -0.1%
+Property tax (owner-occupied)                         808 (28)                855 (36)                  46        5.8%
+K-12 charged (ACS native ratio)                     1,715 (69)              1,816 (72)                 100        5.9%
+EXTENDED BALANCE                                   9,707 (561)             9,273 (582)                -433       -4.5%
+
+### mexico_born   n(2025)=4,318  n(2026)=3,792
+metric                                       ASEC2025 (IY2024)       ASEC2026 (IY2025)              change   nominal %
+Modeled taxes (payroll+fed+state)                  4,874 (221)             5,514 (276)                 640       13.1%
+Selected cash transfers                               860 (63)                949 (63)                  89       10.3%
+Selected non-cash transfers                           245 (13)                213 (11)                 -32      -13.2%
+Taxes minus selected transfers                     3,770 (230)             4,353 (288)                 583       15.5%
+Employer payroll tax                                1,895 (37)              2,057 (47)                 162        8.5%
+Sales/excise tax (0.35 share)                         592 (12)                655 (17)                  62       10.5%
+Property tax (owner-occupied)                         518 (25)                594 (27)                  77       14.8%
+K-12 charged (ACS native ratio)                     2,311 (62)              2,141 (63)                -170       -7.4%
+EXTENDED BALANCE                                   4,463 (290)             5,518 (370)               1,055       23.6%
+
+====================================================================================================================================
+DIFFERENCE FROM 3rd+ NH WHITE, with SDR standard errors, and the pooled two-year
+estimate (simple average; se = sqrt(se25^2+se26^2)/2, INDEPENDENCE ASSUMED).
+====================================================================================================================================
+
+-- Modeled taxes (payroll+fed+state)
+group                                ASEC2025 diff         ASEC2026 diff     year change   |change|/se           pooled diff
+all_native                            -1,273 (104)          -1,377 (113)            -104          0.68           -1,325 (77)
+all_second_gen                          -730 (399)            -615 (431)             115          0.20            -672 (294)
+mexican_second_gen                    -6,965 (330)          -7,127 (457)            -162          0.29          -7,046 (282)
+mexican_third_plus_selfid             -5,234 (438)          -5,965 (528)            -730          1.06          -5,600 (343)
+mexico_born                           -9,509 (325)          -9,350 (370)             159          0.32          -9,430 (246)
+
+-- Selected cash transfers
+group                                ASEC2025 diff         ASEC2026 diff     year change   |change|/se           pooled diff
+all_native                                 -2 (26)               70 (29)              73          1.87               34 (19)
+all_second_gen                           -630 (86)             -492 (97)             137          1.06             -561 (65)
+mexican_second_gen                      -994 (119)            -719 (134)             275          1.54             -856 (89)
+mexican_third_plus_selfid               -404 (146)            -237 (149)             167          0.80            -321 (104)
+mexico_born                            -1,593 (84)           -1,419 (78)             175          1.52           -1,506 (58)
+
+-- Selected non-cash transfers
+group                                ASEC2025 diff         ASEC2026 diff     year change   |change|/se           pooled diff
+all_native                                  42 (3)                39 (3)              -3          0.80                40 (2)
+all_second_gen                              22 (8)                14 (8)              -8          0.67                18 (6)
+mexican_second_gen                         95 (15)               92 (15)              -3          0.14               93 (11)
+mexican_third_plus_selfid                  86 (17)               95 (16)               9          0.38               91 (12)
+mexico_born                               101 (14)               76 (12)             -24          1.33                89 (9)
+
+-- Taxes minus selected transfers
+group                                ASEC2025 diff         ASEC2026 diff     year change   |change|/se           pooled diff
+all_native                            -1,313 (106)          -1,486 (120)            -173          1.09           -1,399 (80)
+all_second_gen                          -122 (413)            -136 (455)             -14          0.02            -129 (307)
+mexican_second_gen                    -6,066 (353)          -6,499 (489)            -434          0.72          -6,282 (301)
+mexican_third_plus_selfid             -4,916 (456)          -5,823 (563)            -907          1.25          -5,370 (362)
+mexico_born                           -8,016 (338)          -8,008 (393)               8          0.02          -8,012 (259)
+
+-- Employer payroll tax
+group                                ASEC2025 diff         ASEC2026 diff     year change   |change|/se           pooled diff
+all_native                               -182 (13)             -212 (15)             -30          1.52             -197 (10)
+all_second_gen                              5 (52)              -23 (53)             -29          0.39               -9 (37)
+mexican_second_gen                       -946 (55)           -1,059 (68)            -112          1.28           -1,002 (44)
+mexican_third_plus_selfid                -637 (63)             -852 (70)            -214          2.27             -745 (47)
+mexico_born                            -1,594 (44)           -1,600 (57)              -6          0.09           -1,597 (36)
+
+-- Sales/excise tax (0.35 share)
+group                                ASEC2025 diff         ASEC2026 diff     year change   |change|/se           pooled diff
+all_native                                 -53 (5)               -54 (5)              -1          0.13               -54 (4)
+all_second_gen                             -7 (18)               14 (20)              21          0.76                3 (14)
+mexican_second_gen                       -266 (18)             -270 (23)              -5          0.16             -268 (15)
+mexican_third_plus_selfid                -157 (22)             -196 (26)             -39          1.16             -176 (17)
+mexico_born                              -457 (15)             -433 (21)              24          0.93             -445 (13)
+
+-- Property tax (owner-occupied)
+group                                ASEC2025 diff         ASEC2026 diff     year change   |change|/se           pooled diff
+all_native                                -133 (8)             -151 (11)             -18          1.34              -142 (7)
+all_second_gen                              0 (35)              -19 (54)             -20          0.31               -9 (32)
+mexican_second_gen                       -548 (33)             -606 (39)             -58          1.14             -577 (25)
+mexican_third_plus_selfid                -505 (31)             -544 (40)             -39          0.77             -524 (25)
+mexico_born                              -795 (29)             -804 (32)              -8          0.20             -799 (22)
+
+-- K-12 charged (ACS native ratio)
+group                                ASEC2025 diff         ASEC2026 diff     year change   |change|/se           pooled diff
+all_native                                 38 (13)               16 (13)             -22          1.22                27 (9)
+all_second_gen                            204 (51)               19 (47)            -185          2.64              112 (35)
+mexican_second_gen                        460 (90)              294 (77)            -167          1.40              377 (59)
+mexican_third_plus_selfid                  64 (68)              128 (74)              65          0.64               96 (50)
+mexico_born                               660 (69)              453 (67)            -206          2.15              557 (48)
+
+-- EXTENDED BALANCE
+group                                ASEC2025 diff         ASEC2026 diff     year change   |change|/se           pooled diff
+all_native                            -1,718 (124)          -1,919 (142)            -200          1.06           -1,819 (94)
+all_second_gen                          -327 (488)            -184 (540)             142          0.20            -255 (364)
+mexican_second_gen                    -8,286 (443)          -8,727 (594)            -441          0.60          -8,507 (371)
+mexican_third_plus_selfid             -6,279 (546)          -7,543 (661)          -1,264          1.47          -6,911 (429)
+mexico_born                          -11,522 (402)         -11,298 (489)             224          0.35         -11,410 (317)
+
+====================================================================================================================================
+HEADLINE STABILITY CHECK --- Mexican 2nd gen vs 3rd+ NH white
+====================================================================================================================================
+  taxes minus selected transfers
+    ASEC 2025 (IY2024): -6,066 (se 353)
+    ASEC 2026 (IY2025): -6,499 (se 489)
+    change: -434   se of change (independent): 603   |change|/se = 0.72   -> WITHIN 1 se
+    pooled two-year: -6,282 (se 301)
+  extended balance
+    ASEC 2025 (IY2024): -8,286 (se 443)
+    ASEC 2026 (IY2025): -8,727 (se 594)
+    change: -441   se of change (independent): 741   |change|/se = 0.60   -> WITHIN 1 se
+    pooled two-year: -8,507 (se 371)
+
+  CAVEAT: consecutive March ASEC samples share roughly half their households
+  through the CPS 4-8-4 rotation, so the independence assumption understates the
+  pooled se and overstates the se of the year-to-year change. The 'within 1 se'
+  test above is therefore the conservative (easier to pass) direction.
+
+PARAMETER NOTE: the 2026 run keeps the 2024 parameter set --- state sales tax rates,
+effective property tax rates, ACS 2023 median gross rent, FY2024 per-pupil current
+spending, ITEP quintile rates and the ACS 2024 pupil ratio --- exactly as the 2025
+run uses them. Only the OASDI wage-base sensitivity updates ($168,600 -> $176,100,
+IRS Publication 15 2024 and 2025). Nominal income grew between the two income years
+while per-pupil cost and rent are held fixed, so the K-12 and renter items are
+understated in real terms on the 2026 file; the columns are labelled accordingly.
