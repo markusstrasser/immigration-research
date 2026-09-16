@@ -125,6 +125,34 @@ Per adult of working age the groups are within about 15% of each other, and the 
 
 **What measured spending by ethnicity looks like, for calibration.** Dieleman et al. 2021 (JAMA 326(7):649–659, MEPS and MCBS, all payers, 2016 dollars) put per-person health care spending by age at $5,425 White vs $3,522 Hispanic (20–44), $10,419 vs $7,000 (45–64), and $18,532 vs $14,403 (65+); age-standardised $8,141 vs $6,025, with Hispanics at 18% of the population receiving 11% of spending and Whites at 61% receiving 72%. The differences are utilisation, not price, and persist after adjusting for disease burden; Hispanic ambulatory spending is 33% below the all-population mean. [SOURCE: https://jamanetwork.com/journals/jama/fullarticle/2783068, Table and Results] These are total-payer figures; the public share of Hispanic spending is higher (more Medicaid, less private insurance), so the public-paid gap is smaller than the total gap and its sign at working ages is not established here. What the comparison does establish is the direction of the transport's error: assigning Mexican-origin people the US-born mean for their age and coverage overstates their care relative to a direct measurement by ethnicity. Whites do not take more out of the public health system per person at a given age in this ledger; they take more per person today because they are older, and they receive more care per person at every age in the measured all-payer data.
 
+### 5.3 The full benefit side: means-tested versus contributory, and the benefit-to-tax ratio
+
+Operator question (2026-09-16, evening): do they take more from social benefits, and what is the total? Every benefit the ledger can see, per adult 25–64 per year, same allocation (`full_benefit_totals_result.txt`):
+
+| $ per adult 25–64 per year | 3rd+ NH white | All natives | Mexican 2nd gen | Mexican 3rd+ | Mexico-born |
+|---|---|---|---|---|---|
+| Means-tested cash (SSI, TANF/GA) | 219 | 266 | 208 | 286 | 75 |
+| Refundable credits (EITC, ACTC) | 96 | 125 | 252 | 175 | 403 |
+| Food, WIC, school meals, energy | 145 | 188 | 240 | 232 | 246 |
+| Housing subsidy | 41 | 86 | 70 | 122 | 62 |
+| Public medical (MEPS transport, insurance-aware) | 2,132 | 2,310 | 2,382 | 2,293 | 2,081 |
+| **Means-tested total** | **2,633** | **2,974** | **3,152** | **3,108** | **2,868** |
+| Social Security | 1,700 | 1,636 | 852 | 1,327 | 638 |
+| Unemployment insurance | 100 | 99 | 125 | 71 | 69 |
+| Veterans' benefits | 434 | 449 | 275 | 364 | 78 |
+| **Contributory total** | **2,234** | **2,185** | **1,252** | **1,763** | **785** |
+| All benefits, excluding schools | 4,867 | 5,159 | 4,403 | 4,870 | 3,652 |
+| K-12 scenario ($17,619 × children 5–17 per adult) | 2,102 | 2,127 | 2,626 | 2,336 | 2,933 |
+| **All benefits, including schools** | **6,969** | **7,286** | **7,030** | **7,206** | **6,586** |
+| Gross modeled taxes (payroll, federal before credits, state) | 14,479 | 13,235 | 7,670 | 9,324 | 5,278 |
+| Benefits ÷ taxes, excluding schools | 0.34 | 0.39 | 0.57 | 0.52 | 0.69 |
+| **Benefits ÷ taxes, including schools** | **0.48** | **0.55** | **0.92** | **0.77** | **1.25** |
+| Net, taxes minus all benefits incl. schools | +7,511 | +5,949 | +641 | +2,117 | −1,308 |
+
+Three readings. (1) On means-tested programs the Mexican second generation does take more: $3,152 against $2,633 per working-age adult, a fifth more, and the excess is Medicaid ($250), refundable credits ($156), food and school meals ($95) and housing ($29); SSI and TANF are level. (2) On all public benefits it takes less during working age, because white natives collect $980 more per adult in Social Security and veterans' benefits, which are contribution- and service-linked; with children's schooling added the two groups are level at about $7,000. (3) The benefit-to-tax ratio is where the difference lives: 0.92 against 0.48 with schools, because the denominator is half. The Mexico-born adult is the only group whose working-age benefits exceed its modeled taxes, and only once schooling is counted at average cost.
+
+Lifetime (adult years, survival-weighted, §5.1): benefits ÷ taxes 0.89 for white natives, 0.97 all natives, 1.42 Mexican second generation, 1.31 Mexican third-plus, 1.55 Mexico-born; adding the person's own K-12 (13 years, 90% public, $17,619) gives 1.18, 1.29, 1.93, 1.76 and 2.34. In dollars, white natives draw *more* public benefits over an adult lifetime ($636,000 against $583,000 for the Mexican second generation) because Social Security is earnings-linked and Medicare years are the same; the ratio differs because taxes are $712,000 against $409,000. [SOURCE: `full_benefit_totals_result.txt`, `lifecycle_ledger_result.txt`] [FRAMING-SENSITIVE: both sides partial. Missing on the tax side: employer payroll, sales, excise, property and corporate taxes, all of which scale with earnings or consumption and would raise every group's denominator. Missing on the benefit side: public goods, higher-education subsidies, institutional long-term care, Medicare Part D premiums subsidies. Ratios above 1 do not mean a group is a net cost in a complete accounting; the ratios are meaningful relative to each other.]
+
 ## 6. Crime by generation
 
 From today's crime memos and the September 5 corrections, all verified against sources there:
@@ -196,5 +224,6 @@ What "cause more crime" would then mean. A raw contrast answers "do they offend 
 
 ## Revisions
 
+- **2026-09-16 (evening, later).** Added §5.3, the full benefit side by category with benefit-to-tax ratios. Claim added: means-tested benefits per working-age adult are a fifth higher for the Mexican second generation than for white natives, total benefits are level or lower, and the ratio gap (0.92 vs 0.48 with schools) is the tax denominator.
 - **2026-09-16 (evening).** Added §5.1 (age profile, synthetic-cohort lifetime, longevity swap) and §5.2 (public health spending by generation). Claim change: the annual −$6,000 gap is a lifetime gap of about −$250,000 per adult; longevity accounts for about 5% of it; health spending per adult is level across generations.
 - **2026-09-16 (later same day).** Added §5's annual partial ledger by generation (generator extended with parents'-birthplace groups and re-run), §8 on offence composition and the victim-report wedge, and §9 on what would settle the second-generation contrast. Claim change: "second and third generation not measured" on the fiscal side became "measured on the annual partial ledger: −$6,000 to −$7,600 per adult vs white natives, taxes not transfers".
