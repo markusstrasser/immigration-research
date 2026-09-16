@@ -418,3 +418,90 @@ from remittances, tenure, homeownership and the income level itself.
 
 Also stale: the Table 2200 column labelled "NH-white" above is BLS's "Not Hispanic or Latino: White,
 Asian, and all other races" column, not non-Hispanic white alone.
+
+## Epoch 3 (researcher lane) — retraction of a dependent inference, corridor costs, status
+
+**Status: the three gaps are already closed and are in this file above.** Remittances, SIPP wealth by
+nativity, and generational convergence were written in epoch 2 and are in commit a668bc6 as the
+sections "## Remittances", "## SIPP wealth by nativity" and "## Generational convergence". No
+re-dispatch is needed for them. This section adds only what was genuinely missing.
+
+**I reverted my own in-place rewrite.** Between epoch 2 and this note I had corrected the verdict,
+method note and main table *in place*. That was the wrong shape: it overwrote the record instead of
+marking it stale, and it duplicated the parent's correction. I restored the committed version with
+`git checkout` and put everything below here instead. The backup of the discarded rewrite is at
+`/private/tmp/claude-501/-Users-alien-Projects-immigration-research/2bff6d1f-e4ac-4381-9226-f706110015c8/scratchpad/RESULT_my_rewrite_backup.md`
+if anyone wants to compare wordings; it contains no number the parent's correction does not.
+
+### Retraction the correction above does not name
+
+The parent's correction retracts the 22 percent total-spending gap. One paragraph in the
+"## Remittances" section was built *on top of* that gap and is therefore also dead:
+
+> **This closes the loop on the CE result.** Hispanic consumer units spend 22 percent less than
+> income-matched households. Mexican immigrant workers remit 16.7 percent of labor income. […] a
+> large slice of the income leaves the country before it can be either spent or banked in the US.
+
+**RETRACTED.** At the correct income-matched bracket Hispanic consumer units spend 0.975× the
+matched total, not 0.78×. There is no consumption shortfall for remittances to explain. The
+remittance measurements themselves are unaffected and stand: $62,529mn sent from the US to Mexico in
+2024, 16.7 percent of the $373,726mn Mexican-immigrant US wage bill.
+
+What survives is weaker and should be stated as a hypothesis with a named test:
+
+At equal pretax income, Hispanic consumer units spend about the same as the matched bracket, yet the
+SCF puts their median net worth at 1.3 years of income against 3.5 for white families. Pretax income
+resolves into consumption, taxes, saving and transfers abroad. If consumption is equal and saving is
+far lower, taxes plus transfers must absorb the residual — and Hispanic consumer units are younger
+with more children, so their effective tax rate is likely *lower*, which widens the residual rather
+than closing it and points at transfers. I have not closed this identity: CE does not publish taxes
+paid alongside these shares, the 16.7 percent rate is measured on Mexican immigrant workers rather
+than on all Hispanic consumer units, and the SCF wealth figures are a different survey and year.
+[INFERENCE — unclosed accounting identity] [GAP — closing it needs CE PUMD with the tax variables,
+or an SCF cut restricted to Hispanic households with a remittance question]
+
+The other epoch-2 remittance findings do **not** depend on the retracted gap and stand unchanged: CE
+cash contributions ($911 per Hispanic consumer unit) cannot be carrying a flow of order $6,200 per
+sender per year, so treat CE cash contributions as silent on remittances; and BBVA's "13.7 million
+transactions" is monthly, not annual.
+
+### New — World Bank corridor cost, the slice that never reaches either country's household
+
+[SOURCE: World Bank, *Remittance Prices Worldwide*, US→Mexico corridor,
+https://remittanceprices.worldbank.org/corridor/United-States/Mexico, data collected 4–28 Aug 2025]
+
+| US → Mexico corridor, Q3 2025, sending $200 | |
+|---|---|
+| Fee | $6.51 |
+| Exchange-rate margin | 1.28% |
+| **Total cost** | **4.54%** ($9.07) |
+
+Mexico as a receiving market, total cost percent by quarter: 4.89 (Q2 2024), 4.94 (Q3 2024), 4.80
+(Q4 2024). Mexico was repeatedly the cheapest receiving market in the G20 and is consistently below
+the global average of 6.36 percent.
+[SOURCE: RPW quarterly reports, https://remittanceprices.worldbank.org/sites/default/files/rpw_main_report_and_annex_q424_13.pdf
+and .../rpw_main_report_and_annex_q324.pdf; global average from https://remittanceprices.worldbank.org/]
+
+Applied to the 2024 US→Mexico flow of $62,529mn, a 4.8 percent corridor cost implies roughly $3.0bn
+per year in fees and FX margin — money that leaves Hispanic households in the US and never arrives in
+Mexican ones. It is invisible in CE (not an expenditure category) and invisible in Banxico (which
+measures the amount received). [INFERENCE — arithmetic on the two published figures; the true figure
+depends on the mix of amounts sent, and the corridor cost is measured on a $200 send while the
+average principal is $393–487, so larger sends carry a lower percentage and $3.0bn is an upper bound]
+
+### Provenance note on the Banxico series
+
+The brief asked for SIE series SE27803. I used Banxico's monthly remittance press release
+(*Ingresos y Egresos por Remesas, diciembre de 2024*) as the primary, not the SIE series directly,
+and I did **not** verify that SE27803 is the correct series identifier. Anyone rebuilding this as a
+time series should resolve the identifier from Banxico's own directory before relying on it:
+https://www.banxico.org.mx/SieInternet/consultarDirectorioInternetAction.do?sector=1&accion=consultarDirectorioCuadros&locale=es
+[UNVERIFIED — series ID not checked]
+
+### Label correction, applies file-wide
+
+The parent's note is right and the defect is repeated throughout the sections above: Table 2200's
+comparison column is BLS's "Not Hispanic or Latino: White, Asian, and all other races, not including
+Black or African-American". It is not non-Hispanic white alone. Because it pools in Asian households,
+whose income and wealth are higher, every ratio computed against it *overstates* the Hispanic-versus-
+white contrast. Read those columns as Hispanic versus all non-Black non-Hispanic households.
