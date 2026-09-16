@@ -1,0 +1,6 @@
+# Large intermediates (>2 MB) stay out of git
+*.zip
+*.parquet
+replicate_estimates.json
+*.npy
+_cache/

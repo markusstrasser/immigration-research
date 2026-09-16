@@ -221,6 +221,23 @@ Weighted least squares of second-gen BA+ share on the selectivity index across t
 
 **Reading.** The origin ranking is mostly parents' education, transmitted at about 0.8 points of BA share per point. Mexico sits on that line. The Mexican-specific residual mechanisms with evidence are parental legal status and, for the third generation, measurement. The Vietnamese over-performance is the one real anomaly in the table and has no identified explanation; ethnic-institution accounts of it are narrative. The highest-value next pull is Chetty et al.'s online mobility tables by parental country of birth, which no memo has used. [INFERENCE]
 
+## 12. Closing the "partial ledger" objection: employer payroll, sales, property and K-12 by generation
+
+The annual ledger in the [by-generation memo](immigration-mexican-origin-by-generation-2026-09-16.md) §5 counts modeled personal payroll, federal and state income tax after refundable credits, cash transfers and SPM non-cash resources. It omits employer-side payroll, sales and excise, property tax and the K-12 cost of the unit's children. A lane re-ran the same generator (`build/analyze_cps_fiscal_2025.py`, imported, not re-implemented; baseline reproduced to $0.17) on CPS ASEC 2025 and added the four items with published rates: 6.2% OASDI to the $168,600 cap plus 1.45% HI on wage and salary income; Tax Foundation 2024 combined state and local sales rates on a 0.35 taxable share of SPM resources (ITEP effective-rate arm as sensitivity); ACS 2023 state effective property rates on owners' house value (renters zero, pass-through arm as sensitivity); Census FY2024 per-pupil current spending ($17,619 national, by state) on children 5–17 times the ACS public-pupil ratio 0.80.
+
+Difference from third-plus non-Hispanic whites, adults 25–64, dollars per adult per year, equal-all-members allocation, SDR se in parentheses:
+
+| | All natives | All 2nd gen | Mexican 2nd gen | Mexican 3rd+ | Mexico-born |
+|---|---|---|---|---|---|
+| Taxes minus selected transfers (baseline) | −1,313 (106) | −122 (413) | −6,066 (353) | −4,916 (456) | −8,016 (338) |
+| + employer payroll | −182 | 5 | −946 | −637 | −1,594 |
+| + sales/excise | −53 | −7 | −266 | −157 | −457 |
+| + property | −133 | 0 | −548 | −505 | −795 |
+| − K-12 | −38 | −204 | −460 | −64 | −660 |
+| **Extended balance** | −1,719 (124) | −327 (488) | **−8,286 (443)** | −6,279 (546) | −11,522 (402) |
+
+Every addition widens the Mexican second-generation gap, to 137% of baseline; the eight sensitivity arms span −8,123 (renter pass-through) to −8,555 (differential pupil ratio); the adults-only allocation gives −10,633 (se 587). The all-origin second generation stays level with whites on every row. The reason is structural: the baseline gap is already a tax gap (−$6,965 in modeled taxes, with cash transfers $994 *lower*), and the three added taxes are functions of the same earnings and house values, while K-12 scales with children (0.27 pupils per Mexican-second-generation adult against 0.20). What still lies outside the ledger and could in principle move it: institutional care, corporate tax incidence, accrued rather than received Social Security and Medicare, pure public goods (the largest discretionary choice in any such accounting), and general-equilibrium wage effects. None of these is a candidate to flip the sign, because the sign follows from 25% BA attainment against 44% and earnings 71% of whites'. Sales and property rows are modeled from aggregate rates, not observed. [SOURCE: `../infra/immigration-fiscal/gen_ledger_extension_2026_09_16/RESULT.md`, `extended_ledger_result.txt`; IRS Pub. 15 (2024); Tax Foundation 2024 sales-tax table; ITEP *Who Pays?* 7th ed.; Census ASSF FY2024 Summary Table 8; ACS 2023 B25103/B25077] [FRAMING-SENSITIVE: children of the Mexican second generation are third generation, and their schooling is charged to the parents' unit exactly as SNAP and school lunch already are]
+
 ## Revisions
 
 - 2026-09-16 — Created. Concept: generational comparator for the Mexican-origin population; supersedes nothing, refines the confidence-ladder coding-bias entry.
@@ -231,3 +248,4 @@ Weighted least squares of second-gen BA+ share on the selectivity index across t
 - 2026-09-16 — §8 corrected to the consistent BJS estimation basis (Prisoners in 2011 restatement of 2009). The Hispanic violent count is flat, per capita −22%; the earlier +36% was a coding-basis artefact. Withdrawn: "the violent stock did not fall for Hispanics". Lane: `hisp_violent_stock_2026_09_16/`.
 - 2026-09-16 — Added §11: CPS selectivity test (R² 0.91, Mexico on the line) and ranked mechanism evidence for second-generation origin divergence.
 - 2026-09-16 — §9 gains the linked-data audit: no published second-generation incarceration by parental origin exists; the Opportunity Insights 1978–83 file has both ingredients and publishes income rank only. Lane: `secgen_linkage_2026_09_16/`.
+- 2026-09-16 — Added §12: the annual ledger extended with employer payroll, sales, property and K-12; the Mexican second-generation gap widens from −$6,066 to −$8,286 per adult. Lane: `gen_ledger_extension_2026_09_16/`.
