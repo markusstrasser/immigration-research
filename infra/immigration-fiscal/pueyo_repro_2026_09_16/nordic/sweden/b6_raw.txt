@@ -1,0 +1,144 @@
+                                                                                         Andel
+                                                  Antal inte Antal miss-               misstänkta
+                                                  misstänkta  tänkta för    Antal i     för brott
+                                                   för brott    brott      gruppen        (%)       Överrisk
+Inrikesfödda med två inrikesfödda föräldrar        5 636 937 184 857       5 821 794      3,18        1,00
+Utrikesfödda i ett land i:
+Norden utom Sverige
+därav Danmark                                        37 996      1 481       39 477       3,75        1,18
+       Finland                                      152 296      4 942      157 238       3,14        0,99
+       Norge                                         37 537      1 416       38 953       3,64        1,14
+       Island                                         4 408        203        4 611       4,40        1,38
+EU15 och Västeuropa utom Norden
+därav Grekland                                       13 409        554       13 963       3,97        1,25
+       Storbritannien och Nordirland                 20 442        747       21 189       3,53        1,11
+       Tyskland                                      44 646      1 349       45 995       2,93        0,92
+       Övriga EU15 och Västeuropa utom Norden        48 995      1 842       50 837       3,62        1,14
+Nya EU-länder
+därav Polen                                          70 207      5 749       75 956       7,57        2,38
+       Rumänien                                      21 660      1 609       23 269       6,91        2,17
+       Ungern                                        14 632        748       15 380       4,86        1,53
+       Övriga Nya EU-länder                          46 718      3 032       49 750       6,09        1,92
+Övriga Europa
+därav Bosnien-Hercegovina                            53 449      3 340       56 789       5,88        1,85
+       Jugoslavien                                   62 255      5 515       67 770       8,14        2,56
+       Ryssland                                      15 797      1 404       17 201       8,16        2,57
+       Turkiet                                       40 936      3 825       44 761       8,55        2,69
+       Övriga länder i Europa                        43 493      5 558       49 051      11,33        3,56
+USA, Kanada, Australien och Nya Zeeland
+därav USA                                            15 886        633       16 519       3,83        1,20
+       Övriga (Kanada, Australien, Nya Zeeland)       7 358        235        7 593       3,09        0,97
+Centralamerika och Karibiska öarna                   10 683      1 203       11 886      10,12        3,18
+Sydamerika
+därav Chile                                          25 381      2 482       27 863       8,91        2,80
+       Colombia                                       9 280      1 174       10 454      11,23        3,53
+       Övriga Sydamerika                             24 144      2 302       26 446       8,70        2,74
+Västasien
+därav Irak                                          105 178    15 007       120 185      12,49        3,93
+       Iran                                          59 906     6 397        66 303       9,65        3,03
+       Libanon                                       21 953     3 049        25 002      12,20        3,84
+       Syrien                                        48 074     6 693        54 767      12,22        3,84
+       Övriga Västasien                              13 824     2 522        16 346      15,43        4,85
+Centralasien
+därav Afghanistan                                    21 269      4 153       25 422      16,34        5,14
+       Övriga Centralasien                            6 840      1133         7 973      14,21        4,47
+Sydasien
+därav Indien                                         19 158        897       20 055       4,47        1,41
+       Pakistan                                       9 609        736       10 345       7,11        2,24
+       Övriga Sydasien                               13 402      1 132       14 534       7,79        2,45
+Sydostasien och Övriga Oceanien
+därav Filippinerna                                   10 402        564       10 966       5,14        1,62
+       Thailand                                      32 135      1 956       34 091       5,74        1,81
+       Vietnam                                       11 608        904       12 512       7,23        2,27
+       Övriga Sydostasien och Övriga Oceanien         9 360        404        9 764       4,14        1,30
+Östasien
+därav Kina                                           23 210        753       23 963       3,14        0,99
+       Övriga Östasien                               13 469        497       13 966       3,56        1,12
+Nordafrika                                           22 126      3 838       25 964      14,78        4,65
+Östafrika
+därav Eritrea                                        17 165      2 532       19 697      12,85        4,04
+       Etiopien                                      13 582      1 320       14 902       8,86        2,79
+       Somalia                                       38 778      6 440       45 218      14,24        4,48
+       Övriga Östafrika                              11 226      1 657       12 883      12,86        4,04
+Övriga Afrika                                        18 825      4 338       23 163      18,73        5,89
+Oklassificerad                                          606         85          691      12,30        3,87
+
+
+
+
+                                                     10
+                                                                              Standardiserat med avseende på:
+
+                                                                                       Ålder, kön,    Ålder, kön,
+                                                                                       disponibel     disponibel
+                                          Ostandardiserat:               Ålder, kön     inkomst      inkomst, ut-
+                                          Andel misstänkta     Ålder    och disponi-   och utbild-   bildning och   Förändring
+                                                (%)           och kön   bel inkomst       ning       kommuntyp       i procent
+Inrikesfödda med två inrikesfödda
+föräldrar                                        3,18           3,18         3,18         3,18           3,18
+Inrikesfödda med en inrikes- och
+en utrikesfödd förälder                          5,93           4,64         4,38         4,26           4,25           -28
+Inrikesfödda med två utrikesfödda
+föräldrar                                       10,22           6,23         5,71         5,45           5,33           -48
+Utrikesfödda                                     7,99           7,14         5,91         5,62           5,61           -30
+Utrikesfödda i ett land i:
+Norden utom Sverige                              3,35           4,57         3,97         3,74           3,85            15
+EU15 och Västeuropa utom Norden                  3,40           3,40         3,03         2,94           3,01           -11
+Nya EU-länder                                    6,78           6,49         5,66         5,46           5,31           -22
+Övriga Europa                                    8,34           7,54         6,51         6,19           6,21           -26
+USA, Kanada, Australien och Nya Zee-
+land                                             3,60           3,10         2,80         2,79           2,99           -17
+Centralamerika och Karibiska öarna              10,12           8,16         6,67         6,42              —
+Sydamerika                                       9,20           7,89         6,99         6,72           6,75           -27
+Västasien                                       11,91           9,17         8,03         7,72           7,79           -35
+Centralasien                                    15,83         10,17          9,27         9,20           8,43           -47
+Sydasien                                         6,15           5,50         4,78         4,66           4,95           -20
+Sydostasien och Övriga Oceanien                  5,69           5,07         4,33         4,04           4,10           -28
+Östasien                                         3,30           3,02         2,63         2,57           2,60           -21
+Nordafrika                                      14,78         11,57          9,79         9,60          10,18           -31
+Östafrika                                       12,89           8,56         7,30         7,06           7,34           -43
+Övriga Afrika                                   18,73         12,57         10,54        10,10           9,94           -47
+ Oklassificerad                                12,30            9,12         6,28           —              —
+(—) Standardisering ej genomförd beroende för små tal i vissa delgrupper.
+
+
+
+
+                                                             11
+                                                                                Standardiserat med avseende på:
+
+                                                                                            Ålder,        Ålder,
+                                                                                          disponibel disponibel
+                                                Ostandardiserat:             Ålder och     inkomst    inkomst, ut-
+                                                Andel misstänkta             disponibel   och utbild- bildning och   Förändring
+                                                      (%)            Ålder    inkomst        ning     kommuntyp       i procent
+
+Inrikesfödda med två inrikesfödda föräldrar            4,85          4,85        4,85         4,85        4,85
+Inrikesfödda med en inrikes- och en utrikes-
+född förälder                                          8,63          6,95        6,60         6,44        6,42           -26
+Inrikesfödda med två utrikesfödda föräldrar          15,31           9,62        8,85         8,42        8,21           -46
+Utrikesfödda                                         12,22          10,94        9,10         8,66        8,67           -29
+Utrikesfödda i ett land i:
+Norden utom Sverige                                    5,68          6,93        6,07         5,70        5,87             3
+EU15 och Västeuropa utom Norden                        4,77          5,11        4,61         4,48        4,59            -4
+Nya EU-länder                                        10,17           9,31        8,26         8,01        7,80           -23
+Övriga Europa                                        12,85          11,54       10,03         9,50        9,55           -26
+USA, Kanada, Australien och Nya Zeeland                4,94          4,55        4,11         4,13        4,51            -9
+Centralamerika och Karibiska öarna                   14,81          12,11       10,06         9,74          —
+Sydamerika                                           13,73          11,78       10,61        10,21       10,35           -25
+Västasien                                            17,19          14,21       12,55        11,97       12,17           -29
+Centralasien                                         22,50          15,42       13,65        13,21       12,37           -45
+Sydasien                                               8,21          8,19        7,12         6,97        7,43           -10
+Sydostasien och Övriga Oceanien                        9,96          7,13        6,01         5,57        5,71           -43
+Östasien                                               4,89          4,22        3,64         3,59        3,63           -26
+Nordafrika                                           19,71          17,98       14,89        14,53       15,08           -23
+Östafrika                                            19,73          13,44       11,28        10,86       11,10           -44
+Övriga Afrika                                        24,00          18,29       15,35        14,84       14,50           -40
+ Oklassificerad                                     15,99            12,79       9,30           —           —
+(—) Standardisering ej genomförd beroende för små tal i vissa delgrupper.
+
+
+
+
+                                                              12
+

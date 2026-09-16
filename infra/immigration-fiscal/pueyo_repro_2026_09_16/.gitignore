@@ -1,0 +1,15 @@
+denmark/raw/folk1c_pop_origin_sex_age_2008_2024.csv
+denmark/raw/strafna4_offence_origin_2008_2024.csv
+germany/raw/d0003_staag.json
+germany/raw/d0003.json
+nordic/sweden/bra_2021_9_rapport.pdf
+nordic/sweden/bra_tabellbilaga1.pdf
+south_uk/italy/dataflows.json
+south_uk/italy/dsd_DCCV_AUTVITTPS.json
+south_uk/italy/dsd_DCIS_POPSTRCIT1.json
+south_uk/italy/offenders_by_country_2022_2024.csv
+south_uk/italy/popstr_raw.csv
+south_uk/spain/ine_56936_last.json
+south_uk/spain/ine_56936_series.json
+south_uk/spain/padron_03005.csv
+# files above are >2 MB raw pulls; re-fetch with the pull scripts in each lane directory

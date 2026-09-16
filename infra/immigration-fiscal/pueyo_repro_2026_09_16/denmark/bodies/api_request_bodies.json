@@ -1,0 +1,1599 @@
+{
+ "strafna4_2008": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2008"
+    ]
+   }
+  ]
+ },
+ "strafna4_2009": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2009"
+    ]
+   }
+  ]
+ },
+ "strafna4_2010": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2010"
+    ]
+   }
+  ]
+ },
+ "strafna4_2011": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2011"
+    ]
+   }
+  ]
+ },
+ "strafna4_2012": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2012"
+    ]
+   }
+  ]
+ },
+ "strafna4_2013": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2013"
+    ]
+   }
+  ]
+ },
+ "strafna4_2014": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2014"
+    ]
+   }
+  ]
+ },
+ "strafna4_2015": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2015"
+    ]
+   }
+  ]
+ },
+ "strafna4_2016": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2016"
+    ]
+   }
+  ]
+ },
+ "strafna4_2017": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2017"
+    ]
+   }
+  ]
+ },
+ "strafna4_2018": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2018"
+    ]
+   }
+  ]
+ },
+ "strafna4_2019": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2019"
+    ]
+   }
+  ]
+ },
+ "strafna4_2020": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2020"
+    ]
+   }
+  ]
+ },
+ "strafna4_2021": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2021"
+    ]
+   }
+  ]
+ },
+ "strafna4_2022": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2022"
+    ]
+   }
+  ]
+ },
+ "strafna4_2023": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2023"
+    ]
+   }
+  ]
+ },
+ "strafna4_2024": {
+  "table": "STRAFNA4",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OVERTRÆD",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2024"
+    ]
+   }
+  ]
+ },
+ "strafna3": {
+  "table": "STRAFNA3",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "KOEN",
+    "values": [
+     "M",
+     "K"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "TOT",
+     "15-29",
+     "30-49",
+     "50-79"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2008",
+     "2009",
+     "2010",
+     "2011",
+     "2012",
+     "2013",
+     "2014",
+     "2015",
+     "2016",
+     "2017",
+     "2018",
+     "2019",
+     "2020",
+     "2021",
+     "2022",
+     "2023",
+     "2024"
+    ]
+   }
+  ]
+ },
+ "strafna9": {
+  "table": "STRAFNA9",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "KOEN",
+    "values": [
+     "M",
+     "K"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "TOT",
+     "15-29",
+     "30-49",
+     "50-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2008",
+     "2009",
+     "2010",
+     "2011",
+     "2012",
+     "2013",
+     "2014",
+     "2015",
+     "2016",
+     "2017",
+     "2018",
+     "2019",
+     "2020",
+     "2021",
+     "2022",
+     "2023",
+     "2024"
+    ]
+   }
+  ]
+ },
+ "folk1c_2008": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2008K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2009": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2009K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2010": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2010K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2011": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2011K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2012": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2012K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2013": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2013K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2014": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2014K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2015": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2015K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2016": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2016K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2017": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2017K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2018": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2018K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2019": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2019K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2020": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2020K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2021": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2021K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2022": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2022K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2023": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2023K1"
+    ]
+   }
+  ]
+ },
+ "folk1c_2024": {
+  "table": "FOLK1C",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT",
+     "1",
+     "2"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15-19",
+     "20-24",
+     "25-29",
+     "30-34",
+     "35-39",
+     "40-44",
+     "45-49",
+     "50-54",
+     "55-59",
+     "60-64",
+     "65-69",
+     "70-74",
+     "75-79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "IELAND",
+    "values": [
+     "*"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2024K1"
+    ]
+   }
+  ]
+ },
+ "folk1e_2024": {
+  "table": "FOLK1E",
+  "format": "CSV",
+  "lang": "en",
+  "variables": [
+   {
+    "code": "OMRÅDE",
+    "values": [
+     "000"
+    ]
+   },
+   {
+    "code": "KØN",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "ALDER",
+    "values": [
+     "15",
+     "16",
+     "17",
+     "18",
+     "19",
+     "20",
+     "21",
+     "22",
+     "23",
+     "24",
+     "25",
+     "26",
+     "27",
+     "28",
+     "29",
+     "30",
+     "31",
+     "32",
+     "33",
+     "34",
+     "35",
+     "36",
+     "37",
+     "38",
+     "39",
+     "40",
+     "41",
+     "42",
+     "43",
+     "44",
+     "45",
+     "46",
+     "47",
+     "48",
+     "49",
+     "50",
+     "51",
+     "52",
+     "53",
+     "54",
+     "55",
+     "56",
+     "57",
+     "58",
+     "59",
+     "60",
+     "61",
+     "62",
+     "63",
+     "64",
+     "65",
+     "66",
+     "67",
+     "68",
+     "69",
+     "70",
+     "71",
+     "72",
+     "73",
+     "74",
+     "75",
+     "76",
+     "77",
+     "78",
+     "79"
+    ]
+   },
+   {
+    "code": "HERKOMST",
+    "values": [
+     "TOT"
+    ]
+   },
+   {
+    "code": "Tid",
+    "values": [
+     "2024K1"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,9 @@
+key,offence,label,tv_insg,nd_anzahl,nd_anteil,kein_aufenthalt,unerlaubt,erlaubt,asylbewerber,schutz_asylber,duldung,sonstiger_erlaubt,zuwanderer
+------,total_all,Straftaten insgesamt,2054855,823609,40.08112494555577,6586,154347,662676,67377,52267,23410,519622,297401
+010000,murder,Mord § 211 StGB ,838,358,42.720763723150355,6,17,335,53,18,17,247,105
+020000,manslaughter,"Totschlag und Tötung auf Verlangen §§ 212, 213, 216 StGB",2068,1006,48.646034816247585,10,42,954,155,76,68,655,341
+100000,sexual,Straftaten gegen die sexuelle Selbstbestimmung insgesamt,97912,27208,27.788217991665984,147,578,26483,3285,2389,1048,19761,7300
+725000,imm_offences,"Straftaten gegen das Aufenthalts-, das Asyl- und das Freizügigkeitsgesetz/EU",177397,176282,99.37146625929412,371,152484,23427,12256,1615,1364,8192,167719
+890000,total_excl_imm,"Straftaten insgesamt, jedoch ohne Verstöße gegen das Aufenthalts-, das Asyl- und das Freizügigkeitsgesetz/EU (Schlüssel 725000)",1908383,677951,35.52489201591085,6390,23923,647638,58160,51154,23098,515226,156335
+892000,violent,Gewaltkriminalität,192239,82565,42.94914143331998,246,2100,80219,10500,8527,4016,57176,25143
+892500,homicide_all,"Mord, Totschlag und Tötung auf Verlangen",2893,1358,46.94089180781196,14,59,1285,208,94,85,898,446

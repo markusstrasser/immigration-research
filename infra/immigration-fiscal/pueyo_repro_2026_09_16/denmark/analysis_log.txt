@@ -1,0 +1,232 @@
+======================================================================
+VERIFICATION
+(a) STRAFNA9 2024 persons guilty, M+K, age TOT, HERKOMST TOT = 159,320
+    STRAFNA4 2024 'Criminal decisions total', IELAND Total     = 159,320
+    diff = +0 (+0.000%)  -> PASS
+(b) FOLK1C 2024Q1 ages 15-79 IELAND=Total, KØN=Total = 4,703,107
+    FOLK1E 2024Q1 ages 15-79 HERKOMST=Total          = 4,703,107
+    diff = +0 (+0.0000%)  -> PASS
+(b2) FOLK1C sum over 241 country rows = 4,703,107 vs Total row 4,703,107 (+0.0000%)
+
+STRAFNA4 origins: 71; not matched in FOLK1C: []
+
+======================================================================
+CHART 1: violent crime 2010-2022, rate relative to Danish origin (top 20)
+                      origin  persons  population rate_per_100k ratio
+                      Kuwait    226.0     19019.0        1188.3 10.11
+                     Somalia   1910.0    166086.0        1150.0  9.78
+                     Lebanon   2594.0    253367.0        1023.8  8.71
+                     Tunisia    144.0     14608.0         985.8  8.38
+                      Jordan    179.0     23279.0         768.9  6.54
+                      Uganda    125.0     18756.0         666.5  5.67
+                        Iraq   1774.0    306074.0         579.6  4.93
+                     Morocco    632.0    110282.0         573.1  4.87
+       Serbia and Montenegro     52.0      9360.0         555.6  4.73
+                     Algeria     83.0     14993.0         553.6  4.71
+Yugoslavia, Federal Republic     96.0     18275.0         525.3  4.47
+                    Ethiopia     87.0     17647.0         493.0  4.19
+                       Syria   1012.0    207323.0         488.1  4.15
+                 Afghanistan    765.0    160073.0         477.9  4.07
+                       Egypt    115.0     26043.0         441.6  3.76
+                        Iran    876.0    213056.0         411.2  3.50
+                      Turkey   2647.0    665706.0         397.6  3.38
+                       Kenya     60.0     15336.0         391.2  3.33
+                  Yugoslavia    662.0    172345.0         384.1  3.27
+                       Ghana     99.0     26452.0         374.3  3.18
+                     Myanmar     67.0     19997.0         335.1  2.85
+                    Pakistan    758.0    251508.0         301.4  2.56
+
+Denmark reference rate/100k: 117.6
+
+======================================================================
+CHART 3 (Pallesen) 2008-2024 ratios, top 6 per offence
+-- rape: Somalia 20x(n=49), Syria 16x(n=51), Lebanon 11x(n=43), Afghanistan 11x(n=26), Iraq 9x(n=43), Iran 7x(n=23)
+-- assault_public_servant: Kuwait 12x(n=82), Somalia 11x(n=673), Lebanon 9x(n=831), Jordan 8x(n=71), Tunisia 8x(n=44), Uganda 7x(n=47)
+-- attempted_homicide: Somalia 27x(n=24), Lebanon 21x(n=28), Morocco 20x(n=12), Iraq 13x(n=22), Pakistan 10x(n=13), Turkey 9x(n=33)
+-- blackmail: Lebanon 28x(n=83), Somalia 14x(n=27), Iraq 12x(n=43), Yugoslavia 12x(n=23), Afghanistan 9x(n=17), Morocco 9x(n=11)
+-- burglary_all: Kuwait 13x(n=68), Lebanon 11x(n=736), Somalia 8x(n=376), Tunisia 8x(n=31), Morocco 7x(n=211), Jordan 7x(n=43)
+-- forgery: Somalia 13x(n=141), Syria 10x(n=146), Uganda 10x(n=13), Lebanon 9x(n=159), Iraq 8x(n=171), Kuwait 8x(n=10)
+-- fraud: Kuwait 12x(n=69), Somalia 8x(n=421), Lebanon 8x(n=615), Jordan 7x(n=53), Nigeria 6x(n=28), Serbia and Montenegro 5x(n=15)
+-- grievous_assault: Somalia 17x(n=487), Kuwait 14x(n=46), Lebanon 13x(n=561), Tunisia 12x(n=30), Jordan 9x(n=38), Algeria 8x(n=22)
+-- groping: Syria 12x(n=58), Afghanistan 10x(n=40), Somalia 9x(n=38), Iraq 6x(n=47), Iran 5x(n=27), Pakistan 5x(n=31)
+-- robbery: Somalia 33x(n=572), Kuwait 28x(n=56), Tunisia 21x(n=31), Lebanon 16x(n=422), Algeria 13x(n=20), Uganda 12x(n=23)
+-- shoplifting: Kuwait 16x(n=565), Tunisia 9x(n=229), Yugoslavia 7x(n=2280), Serbia and Montenegro 7x(n=120), Somalia 7x(n=2062), Yugoslavia, Federal Republic 7x(n=217)
+-- theft_all: Kuwait 10x(n=149), Lebanon 8x(n=1501), Serbia and Montenegro 8x(n=55), Tunisia 7x(n=76), Somalia 7x(n=819), Yugoslavia 5x(n=643)
+
+======================================================================
+AGE-SEX STANDARDIZATION (STRAFNA3 = all persons guilty, any offence)
+Direct standardization to Danish-origin sex x 3-age-band structure, 2010-2021, all offences
+                      origin  persons crude_per100k std_per100k crude_ratio std_ratio pct_of_gap_removed
+                      Kuwait   2618.0         15276       11869        4.69      3.64                 28
+                     Lebanon  31074.0         13517       10212        4.15      3.13                 32
+                      Jordan   2504.0         11807        9797        3.62      3.01                 24
+                     Tunisia   1389.0         10470        8740        3.21      2.68                 24
+                     Somalia  15449.0         10283        7511        3.16      2.31                 39
+                      Turkey  54035.0          8874        7342        2.72      2.25                 27
+                     Morocco   8663.0          8629        7270        2.65      2.23                 25
+                        Iraq  24032.0          8625        6814        2.65      2.09                 34
+                  Yugoslavia  13654.0          8542        7881        2.62      2.42                 13
+                    Pakistan  19294.0          8396        7156        2.58      2.20                 24
+                       Syria  14376.0          8066        5968        2.48      1.83                 44
+       Serbia and Montenegro    678.0          7785        6637        2.39      2.04                 25
+Yugoslavia, Federal Republic   1236.0          7295        6213        2.24      1.91                 27
+                     Algeria    995.0          7286        6513        2.24      2.00                 19
+                 Afghanistan  10436.0          7200        5449        2.21      1.67                 44
+                        Iran  13453.0          6963        6298        2.14      1.93                 18
+                       Egypt   1637.0          6903        5841        2.12      1.79                 29
+ Republic of North Macedonia   2991.0          6791        5798        2.08      1.78                 28
+                      Uganda   1109.0          6493        6166        1.99      1.89                 10
+                    Ethiopia    921.0          5714        4589        1.75      1.41                 46
+                      Israel    912.0          5664        5195        1.74      1.59                 19
+                     Romania  11603.0          5254        4392        1.61      1.35                 43
+                     Nigeria    742.0          5124        4711        1.57      1.45                 22
+                   Lithuania   5365.0          4790        4417        1.47      1.36                 24
+                       Ghana   1118.0          4681        4084        1.44      1.25                 42
+
+STRAFNA9 non-western immigrants, same method (aggregate sanity):
+========================================================================
+LABEL TEST: which STRAFNA4 origin(s) reproduce Pallesen's 'Palestine' bar?
+offence                   chart       Lebanon        Kuwait       Leb+Kuw   Leb+Kuw+Jor Ex-Yugoslavia
+rape                         12     11.4(n43)      17.4(n5)     11.8(n48)     12.0(n53)      2.1(n16)
+assault_public_servant        9      8.9(n831     11.6(n82)      9.1(n913      9.1(n984      1.9(n364
+attempted_homicide           20     20.7(n28)       9.7(n1)     19.9(n29)     20.2(n32)      4.4(n12)
+blackmail                    27     28.5(n83)      18.1(n4)     27.7(n87)     26.7(n91)      7.1(n42)
+burglary                     10     10.6(n736     12.9(n68)     10.8(n804     10.5(n847      3.5(n495
+forgery                       9      9.3(n159      7.7(n10)      9.2(n169      9.1(n181      3.6(n124
+fraud                         8      7.9(n615     11.6(n69)      8.1(n684      8.1(n737      3.5(n561
+grievous_assault             12     12.6(n561     13.6(n46)     12.6(n607     12.4(n645      2.8(n256
+robbery                      16     16.2(n422     28.3(n56)     17.0(n478     16.2(n494      4.5(n240
+theft                         8      8.0(n150     10.5(n149      8.2(n165      7.9(n172      3.5(n132
+mean |rel err| vs chart 'Palestine': Lebanon=3%, Kuwait=37%, Leb+Kuw=3%, Leb+Kuw+Jor=2%, Ex-Yugoslavia=70%
+
+========================================================================
+FULL CHART-3 COMPARISON (2008-2024, n>=10, 'Palestine'->Lebanon, 'Ex-Yugoslavia'->6 ex-YU codes)
+               offence   chart_label  chart_ratio  my_ratio  my_persons  abs_diff
+                  rape       Somalia           20      19.6          49       0.4
+                  rape         Syria           16      16.4          51       0.4
+                  rape     Palestine           12      11.4          43       0.6
+                  rape   Afghanistan           11      10.9          26       0.1
+                  rape          Iraq            9       9.4          43       0.4
+assault_public_servant       Somalia           11      11.0         673       0.0
+assault_public_servant     Palestine            9       8.9         831       0.1
+assault_public_servant       Tunisia            8       8.2          44       0.2
+assault_public_servant        Uganda            7       6.7          47       0.3
+assault_public_servant      Ethiopia            5       5.4          35       0.4
+    attempted_homicide       Somalia           27      26.9          24       0.1
+    attempted_homicide       Morocco           20      20.3          12       0.3
+    attempted_homicide     Palestine           20      20.7          28       0.7
+    attempted_homicide          Iraq           13      13.4          22       0.4
+    attempted_homicide      Pakistan           10       9.7          13       0.3
+             blackmail     Palestine           27      28.5          83       1.5
+             blackmail       Somalia           14      14.1          27       0.1
+             blackmail Ex-Yugoslavia           13       7.1          42       5.9
+             blackmail          Iraq           12      12.2          43       0.2
+             blackmail   Afghanistan            9       9.3          17       0.3
+              burglary     Palestine           10      10.6         736       0.6
+              burglary       Somalia            8       8.2         376       0.2
+              burglary       Tunisia            8       7.7          31       0.3
+              burglary       Morocco            7       7.0         211       0.0
+              burglary Ex-Yugoslavia            5       3.5         495       1.5
+               forgery       Somalia           13      12.6         141       0.4
+               forgery         Syria           10      10.4         146       0.4
+               forgery        Uganda           10      10.1          13       0.1
+               forgery     Palestine            9       9.3         159       0.3
+               forgery      Tanzania            9       8.8           6       0.2
+                 fraud       Somalia            8       8.2         421       0.2
+                 fraud     Palestine            8       7.9         615       0.1
+                 fraud       Nigeria            6       5.6          28       0.4
+                 fraud       Morocco            5       5.0         172       0.0
+                 fraud Ex-Yugoslavia            5       3.5         561       1.5
+      grievous_assault       Somalia           17      16.6         487       0.4
+      grievous_assault     Palestine           12      12.6         561       0.6
+      grievous_assault       Tunisia           12      11.6          30       0.4
+      grievous_assault       Algeria            8       8.3          22       0.3
+      grievous_assault          Iraq            7       7.0         381       0.0
+               groping         Syria           12      11.6          58       0.4
+               groping       Myanmar           11      10.6           5       0.4
+               groping   Afghanistan           10      10.4          40       0.4
+               groping       Somalia            9       9.5          38       0.5
+               groping          Iraq            6       6.4          47       0.4
+               robbery       Somalia           33      33.3         572       0.3
+               robbery       Tunisia           21      20.5          31       0.5
+               robbery     Palestine           16      16.2         422       0.2
+               robbery       Algeria           13      12.9          20       0.1
+               robbery        Uganda           12      11.7          23       0.3
+           shoplifting       Tunisia            9       8.7         229       0.3
+           shoplifting Ex-Yugoslavia            7       4.8        4395       2.2
+           shoplifting       Somalia            7       6.9        2062       0.1
+           shoplifting        Uganda            7       6.5         224       0.5
+           shoplifting       Algeria            6       5.9         161       0.1
+                 theft     Palestine            8       8.0        1501       0.0
+                 theft       Tunisia            7       7.0          76       0.0
+                 theft       Somalia            7       6.6         819       0.4
+                 theft Ex-Yugoslavia            5       3.5        1321       1.5
+                 theft       Morocco            4       4.5         367       0.5
+
+median |chart - mine| = 0.3x ; within 1x: 54/60 ; within 2x: 58/60
+
+========================================================================
+CHART 2: age/sex-adjusted violent crime 2010-2021
+     origin  raw_ratio_2010_2021  approx_adj_ratio  chart_adj_ratio  persons  agesex_factor_rel_DK  implied_chart_gap_removed_pct  my_gap_removed_pct
+     Kuwait                10.51              8.16              6.5      213                 0.777                           42.0                25.0
+    Tunisia                 8.60              7.18              6.4      135                 0.835                           29.0                19.0
+    Somalia                 9.78              7.15              6.2     1739                 0.730                           41.0                30.0
+    Lebanon                 8.84              6.68              5.7     2405                 0.755                           40.0                28.0
+     Jordan                 6.54              5.42              4.8      164                 0.830                           31.0                20.0
+     Uganda                 5.74              5.45              4.8      116                 0.950                           20.0                 6.0
+    Algeria                 4.46              3.98              4.0       72                 0.894                           13.0                14.0
+    Morocco                 4.93              4.16              3.8      586                 0.843                           29.0                20.0
+       Iraq                 4.94              3.91              3.3     1630                 0.790                           42.0                26.0
+   Ethiopia                 4.30              3.45              3.0       82                 0.803                           39.0                26.0
+      Egypt                 3.71              3.14              3.0      104                 0.846                           26.0                21.0
+       Iran                 3.61              3.26              2.9      825                 0.905                           27.0                13.0
+      Syria                 4.22              3.12              2.5      889                 0.740                           53.0                34.0
+     Turkey                 3.44              2.84              2.4     2476                 0.827                           43.0                25.0
+Afghanistan                 4.12              3.12              2.3      707                 0.757                           58.0                32.0
+   Pakistan                 2.59              2.21              1.9      704                 0.852                           43.0                24.0
+    Denmark                 1.00              1.00              1.0    55541                 1.000                            NaN                 NaN
+
+========================================================================
+STRAFNA9 aggregate (ancestry groups), age-sex standardized to Danish-origin structure
+  Immigrants from western countries          crude  0.92x  age-sex std  0.86x  gap removed   -75%
+  Immigrants from non-western countries      crude  1.69x  age-sex std  1.60x  gap removed    13%
+  Descendants from western countries         crude  1.41x  age-sex std  1.21x  gap removed    48%
+  Descendants from non-western countries     crude  3.67x  age-sex std  2.53x  gap removed    43%
+CHART 1 comparison (violent crime, 2010-2022, ratio to Danish origin)
+     origin  chart_ratio  my_ratio  persons  diff
+     Kuwait        10.10     10.11      226  0.01
+    Somalia         9.80      9.78     1910 -0.02
+    Lebanon         8.70      8.71     2594  0.01
+    Tunisia         8.40      8.38      144 -0.02
+     Jordan         6.50      6.54      179  0.04
+     Uganda         5.65      5.67      125  0.02
+       Iraq         4.90      4.93     1774  0.03
+    Morocco         4.85      4.87      632  0.02
+    Algeria         4.70      4.71       83  0.01
+   Ethiopia         4.20      4.19       87 -0.01
+      Syria         4.15      4.15     1012  0.00
+Afghanistan         4.05      4.07      765  0.02
+      Egypt         3.75      3.76      115  0.01
+       Iran         3.50      3.50      876  0.00
+     Turkey         3.35      3.38     2647  0.03
+      Kenya         3.30      3.33       60  0.03
+      Ghana         3.20      3.18       99 -0.02
+    Myanmar         2.85      2.85       67  0.00
+   Pakistan         2.55      2.56      758  0.01
+   Tanzania         2.40      2.40       28  0.00
+    Denmark         1.00      1.00    59818  0.00
+     Poland         1.20      1.24      660  0.04
+     Sweden         0.60      0.57      124 -0.03
+    Germany         0.45      0.47      204  0.02
+        USA         0.35      0.22       27 -0.13
+      Japan         0.20      0.00        0 -0.20
+max |diff| = 0.20; mean |rel err| = 6.0%
+
+EX-YUGOSLAVIA variant test (2008-2024 ratios)
+offence        chart          YU+YUFR+SerMon    +Bosnia,Croatia,NMac         Yugoslavia only
+blackmail         13               13.5(n31)                7.1(n42)               11.6(n23)
+burglary           5               5.2(n284)               3.5(n495)               5.6(n261)
+fraud              5               4.9(n299)               3.5(n561)               5.0(n263)
+shoplifting        7               7.3(n2617               4.8(n4395               7.4(n2280
+theft              5               5.0(n740)               3.5(n1321               5.1(n643)
+mean |rel err|: YU+YUFR+SerMon=3%, +Bosnia,Croatia,NMac=33%, Yugoslavia only=6%

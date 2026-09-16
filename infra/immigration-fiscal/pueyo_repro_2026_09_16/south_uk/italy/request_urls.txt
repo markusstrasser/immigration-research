@@ -1,0 +1,5 @@
+https://esploradati.istat.it/SDMXWS/rest/data/IT1,DCCV_AUTVITTPS,1.0/A.IT.OFFEND..9.TOTAL..?format=csv&startPeriod=2022&endPeriod=2024
+https://esploradati.istat.it/SDMXWS/rest/data/IT1,73_230_DF_DCCV_AUTVITTPS_2,1.0/?format=csv&startPeriod=2022&endPeriod=2024
+https://esploradati.istat.it/SDMXWS/rest/data/IT1,29_317_DF_DCIS_POPSTRCIT1_1,1.0/?format=csv&startPeriod=2023&endPeriod=2025
+https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/migr_pop1ctz?format=JSON&lang=EN&geo=IT&sex=T&age=TOTAL&time=2023&time=2024&time=2025
+https://esploradati.istat.it/SDMXWS/rest/data/IT1,73_230_DF_DCCV_AUTVITTPS_1,1.0/?format=csv&startPeriod=2022&endPeriod=2024

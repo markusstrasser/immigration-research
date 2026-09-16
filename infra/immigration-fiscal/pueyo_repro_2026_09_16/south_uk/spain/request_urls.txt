@@ -1,0 +1,1 @@
+https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/migr_pop1ctz?format=JSON&lang=EN&geo=ES&sex=T&age=TOTAL&time=2024&time=2025
