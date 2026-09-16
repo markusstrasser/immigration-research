@@ -1,0 +1,23 @@
+block,group,nativity,institutional,population,pct,ratio_to_nh_white_native
+nh_race,NH White,native,301487,25385961,1.188,1.0
+nh_race,NH White,foreign_born,4157,943622,0.441,0.371
+nh_race,NH Black,native,370943,5658843,6.555,5.518
+nh_race,NH Black,foreign_born,7079,689090,1.027,0.864
+hispanic_origin,Mexican,native,98509,4945341,1.992,1.677
+hispanic_origin,Mexican,foreign_born,25096,1829893,1.371,1.154
+hispanic_origin,Puerto Rican,native,17092,940733,1.817,1.529
+hispanic_origin,Puerto Rican,foreign_born,109,21607,0.504,0.424
+hispanic_origin,Cuban,native,2622,213247,1.23,1.035
+hispanic_origin,Cuban,foreign_born,1297,188365,0.689,0.58
+hispanic_origin,Dominican,native,2288,220609,1.037,0.873
+hispanic_origin,Dominican,foreign_born,1763,181120,0.973,0.819
+hispanic_origin,Guatemalan,native,1353,136579,0.991,0.834
+hispanic_origin,Guatemalan,foreign_born,2716,302785,0.897,0.755
+hispanic_origin,Honduran,native,945,69031,1.369,1.152
+hispanic_origin,Honduran,foreign_born,3181,181480,1.753,1.476
+hispanic_origin,Salvadoran,native,1766,222014,0.795,0.669
+hispanic_origin,Salvadoran,foreign_born,2294,231097,0.993,0.836
+hispanic_origin,Colombian,native,381,119616,0.319,0.269
+hispanic_origin,Colombian,foreign_born,685,130759,0.524,0.441
+hispanic_origin,Other Hispanic (generic),native,40116,463882,8.648,7.279
+hispanic_origin,Other Hispanic (generic),foreign_born,10363,101026,10.258,8.635

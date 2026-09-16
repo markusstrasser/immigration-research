@@ -78,6 +78,24 @@ Second generation here is CPS parental birthplace (either parent Mexican-born); 
 
 Reading. On incarceration the Central American second generation (nearly all second generation, because the wave is recent) ran at half the Mexican US-born rate in 2000 and, for Salvadorans and Guatemalans, at or below native whites by 2023 (Hondurans 1.65%, above), with parents less educated than Mexican parents. Vietnamese and Chinese are the clear "aspirational" low-skill cases: refugee and Fuzhounese parents with little schooling, second generations that out-attain native whites. Cambodian, Laotian and Hmong second generations started worst (7.26% in 2000) and now sit near Mexican-Americans on incarceration and above Hispanics on income. Dominicans track Mexicans. Haitian and Jamaican children are the one documented case of no mobility advantage at the bottom. Feliciano's selectivity result is the organizing fact: second-generation attainment follows how positively selected the parents were relative to their origin country, and Mexican migrants are the least selected large stream ("hyposelected", Lee & Zhou), which also makes Mexican-origin the group whose third-plus generation is largest, oldest and most exposed to ethnic attrition. Which unauthorized streams are the more selected ones (Indian, Chinese, recent Venezuelan and Colombian arrivals) is a composition question this memo does not settle. [INFERENCE]
 
+**Five-year pooled cells (ACS 2020–2024 PUMS, added 2026-09-16 late).** The 1-year origin cells in the table above carry a few hundred to a few thousand institutionalised men each; the 2020–2024 5-year file pools five samples and settles the ordering. Native men 18–39, institutional group quarters:
+
+| US-born men 18–39, ACS 2020–2024 pooled | Institutional % | Ratio to NH white | Institutional n |
+|---|---|---|---|
+| Mexican | 1.99 | 1.68 | 98,509 |
+| Puerto Rican | 1.82 | 1.53 | 17,092 |
+| Cuban | 1.23 | 1.03 | 2,622 |
+| Dominican | 1.04 | 0.87 | 2,288 |
+| Guatemalan | 0.99 | 0.83 | 1,353 |
+| Honduran | 1.37 | 1.15 | 945 |
+| Salvadoran | 0.80 | 0.67 | 1,766 |
+| Colombian | 0.32 | 0.27 | 381 |
+| Other Hispanic (generic) | 8.65 | 7.28 | 40,116 |
+| NH Black | 6.55 | 5.52 | 370,943 |
+| NH White | 1.19 | 1.00 | 301,487 |
+
+Mexican-origin at 1.68× whites over the pooled window sits inside the 1-year band (1.72× in 2023, 1.94× in 2024). Salvadorans (0.67×), Guatemalans (0.83×) and Dominicans (0.87×) are below whites on 1,800–2,300 institutionalised men each, so the §5 reading that the Central American second generation institutionalises at or below native whites is no longer a small-cell result; Hondurans (1.15×) and Puerto Ricans (1.53×) are above. Colombians at 0.27× are the most positively selected Latin American stream. The generic "other Hispanic" cell runs 1.94× because prison records coded only "Hispanic" land there (§2). Asian detail is not on the 5-year API (RAC2P is not a tabulate variable there), so the Vietnamese and Cambodian cells stay 1-year. [SOURCE: `../infra/immigration-fiscal/acs_institutional_2026_09_16/acs5_2020_2024_origins.py` → `acs5_2020_2024_origins.csv`; Census API tabulate, 2024 ACS 5-year PUMS]
+
 ## 6. What this changes in the repo
 
 - [Confidence ladder](immigration-confidence-ladder.md) entry on second-generation coding ("Light-TX has no generation variable → unaddressable in current crime data"): the pooled US-born-by-origin comparator IS addressable in ACS GQ counts, and the 2019–2023 numbers show the native-benchmark inflation is gone even though the white-comparator gap remains. The pending CPS second-generation loader still cannot settle crime (no outcome variable).
@@ -288,3 +306,4 @@ The ledger is a head count times an average operating cost. Three channels sit o
 - 2026-09-16 — §12 gains the cost-weighted crime line (McCollister unit costs × ACS level × BJS offence mix; FBI flow cross-check): US-born Mexican-origin +$1,421 per adult over whites with intangibles, +$447 tangible; 17% of the fiscal gap. Lane: `crime_cost_2026_09_16/`.
 - 2026-09-16 — §2 gains ACS 2024: ratio 1.94× (Mexican-origin 2.04%, white 1.05%); 2023's 1.72× was the low point, the 2019→2024 leg is flat near 1.9×. Ladder 65 band widened.
 - 2026-09-16 — Added §13: housing price channel (Saiz, Cabral–Steingress, Howard–Wang–Zhang; the Doral deportation-rent story overstated) and capacity/congestion conventions (NAS ch. 7–8; prison capital $270k/bed; BJS Table 21 capacity split). Lanes: `housing_deport_2026_09_16/`, `capacity_sweep_2026_09_16/`.
+- 2026-09-16 — §5 gains the ACS 2020–2024 5-year origin cells: Mexican 1.68×, Salvadoran 0.67×, Guatemalan 0.83×, Dominican 0.87×, Honduran 1.15× whites; the Central American ordering is no longer a small-cell result. Dataset audit lane: `dataset_delta_2026_09_16/`.
