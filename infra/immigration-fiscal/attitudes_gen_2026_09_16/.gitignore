@@ -1,0 +1,5 @@
+*.zip
+*.dta
+*.sav
+raw/
+__pycache__/
