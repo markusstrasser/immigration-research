@@ -1,0 +1,64 @@
+=== Pueyo replication: rate EXCLUDING immigration-law offences ===
+--- >=10k residents  y=log(rate_total_excl_imm)  n=88  R2=0.121
+    const                    8.9547  (se 0.5063, t  17.69)
+    log_gdp_pc              -0.0839  (se 0.0514, t  -1.63)
+    muslim_majority          0.3922  (se 0.1920, t   2.04)   => +48.0%
+--- all nationalities  y=log(rate_total_excl_imm)  n=175  R2=0.066
+    const                    9.6712  (se 0.3859, t  25.06)
+    log_gdp_pc              -0.1421  (se 0.0406, t  -3.50)
+    muslim_majority          0.1511  (se 0.1396, t   1.08)   => +16.3%
+
+=== Same but INCLUDING immigration-law offences (his chart axis) ===
+--- >=10k residents  y=log(rate_total_all)  n=88  R2=0.299
+    const                   10.4837  (se 0.4150, t  25.26)
+    log_gdp_pc              -0.2149  (se 0.0431, t  -4.98)
+    muslim_majority          0.3273  (se 0.1566, t   2.09)   => +38.7%
+--- all nationalities  y=log(rate_total_all)  n=176  R2=0.146
+    const                   10.8790  (se 0.3821, t  28.47)
+    log_gdp_pc              -0.2245  (se 0.0410, t  -5.48)
+    muslim_majority          0.1779  (se 0.1274, t   1.40)   => +19.5%
+
+=== Add age-sex control: share of residents who are men 18-39 ===
+--- >=10k residents  y=log(rate_total_excl_imm)  n=88  R2=0.121
+    const                    8.8607  (se 0.6587, t  13.45)
+    log_gdp_pc              -0.0783  (se 0.0549, t  -1.42)
+    muslim_majority          0.3791  (se 0.1966, t   1.93)   => +46.1%
+    share_m1839              0.1978  (se 1.0757, t   0.18)
+--- all nationalities  y=log(rate_total_excl_imm)  n=175  R2=0.068
+    const                    9.5040  (se 0.6839, t  13.90)
+    log_gdp_pc              -0.1328  (se 0.0507, t  -2.62)
+    muslim_majority          0.1249  (se 0.1829, t   0.68)   => +13.3%
+    share_m1839              0.3712  (se 1.3753, t   0.27)
+--- >=10k, incl. imm. offences  y=log(rate_total_all)  n=88  R2=0.302
+    const                   10.2461  (se 0.5303, t  19.32)
+    log_gdp_pc              -0.2008  (se 0.0458, t  -4.39)
+    muslim_majority          0.2943  (se 0.1548, t   1.90)   => +34.2%
+    share_m1839              0.4996  (se 0.7997, t   0.62)
+
+=== Violent crime ===
+--- >=10k residents  y=log(rate_violent)  n=88  R2=0.276
+    const                    7.9110  (se 0.5488, t  14.41)
+    log_gdp_pc              -0.2347  (se 0.0560, t  -4.19)
+    muslim_majority          0.6102  (se 0.2515, t   2.43)   => +84.1%
+--- >=10k + age-sex  y=log(rate_violent)  n=88  R2=0.276
+    const                    7.7824  (se 0.7690, t  10.12)
+    log_gdp_pc              -0.2270  (se 0.0631, t  -3.60)
+    muslim_majority          0.5924  (se 0.2564, t   2.31)   => +80.8%
+    share_m1839              0.2705  (se 1.2651, t   0.21)
+
+=== Population-weighted (WLS, weight = residents) and correlation diagnostics ===
+--- WLS >=10k y=log(rate_total_excl_imm) n=88
+    const                    8.5732 (se 0.6184, t  13.86)
+    log_gdp_pc              -0.0360 (se 0.0623, t  -0.58)
+    muslim_majority          0.2419 (se 0.1579, t   1.53)  => +27.4%
+--- WLS all y=log(rate_total_excl_imm) n=175
+    const                    8.5826 (se 0.5800, t  14.80)
+    log_gdp_pc              -0.0373 (se 0.0587, t  -0.64)
+    muslim_majority          0.2431 (se 0.1515, t   1.60)  => +27.5%
+--- WLS >=10k + age-sex y=log(rate_total_excl_imm) n=88
+    const                    8.0524 (se 0.7044, t  11.43)
+    log_gdp_pc               0.0000 (se 0.0595, t   0.00)
+    muslim_majority          0.2320 (se 0.1628, t   1.43)  => +26.1%
+    share_m1839              0.9085 (se 1.6213, t   0.56)
+corr(muslim, share_m1839) = 0.549
+mean share_m1839: muslim=0.317 non-muslim=0.206 German baseline=0.121

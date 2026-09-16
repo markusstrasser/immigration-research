@@ -1,0 +1,1220 @@
+{
+ "TOTAL": {
+  "SSS": {
+   "ep_lkm": 3792,
+   "ep_lkm_tork": 2219
+  },
+  "246": {
+   "ep_lkm": 3703,
+   "ep_lkm_tork": 2194
+  },
+  "ULK": {
+   "ep_lkm": 89,
+   "ep_lkm_tork": 25
+  }
+ },
+ "Finland": {
+  "SSS": {
+   "ep_lkm": 2925,
+   "ep_lkm_tork": 1783
+  },
+  "246": {
+   "ep_lkm": 2911,
+   "ep_lkm_tork": 1778
+  },
+  "ULK": {
+   "ep_lkm": 14,
+   "ep_lkm_tork": 5
+  }
+ },
+ "FOREIGN COUNTRIES, TOTAL": {
+  "SSS": {
+   "ep_lkm": 867,
+   "ep_lkm_tork": 436
+  },
+  "246": {
+   "ep_lkm": 792,
+   "ep_lkm_tork": 416
+  },
+  "ULK": {
+   "ep_lkm": 75,
+   "ep_lkm_tork": 20
+  }
+ },
+ "EUROPE": {
+  "SSS": {
+   "ep_lkm": 263,
+   "ep_lkm_tork": 117
+  },
+  "246": {
+   "ep_lkm": 233,
+   "ep_lkm_tork": 103
+  },
+  "ULK": {
+   "ep_lkm": 30,
+   "ep_lkm_tork": 14
+  }
+ },
+ "Netherlands": {
+  "SSS": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 2
+  },
+  "246": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  }
+ },
+ "Albania": {
+  "SSS": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Belgium": {
+  "SSS": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Bosnia and Herzegovina": {
+  "SSS": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Bulgaria": {
+  "SSS": {
+   "ep_lkm": 41,
+   "ep_lkm_tork": 13
+  },
+  "246": {
+   "ep_lkm": 41,
+   "ep_lkm_tork": 13
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Former Serbia and Montenegro": {
+  "SSS": {
+   "ep_lkm": 11,
+   "ep_lkm_tork": 11
+  },
+  "246": {
+   "ep_lkm": 11,
+   "ep_lkm_tork": 11
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Spain": {
+  "SSS": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 2
+  },
+  "246": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 2
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Ireland": {
+  "SSS": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Italy": {
+  "SSS": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 2
+  },
+  "246": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 2
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Austria": {
+  "SSS": {
+   "ep_lkm": 4,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 4,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Greece": {
+  "SSS": {
+   "ep_lkm": 5,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 5,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Croatia": {
+  "SSS": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Latvia": {
+  "SSS": {
+   "ep_lkm": 5,
+   "ep_lkm_tork": 3
+  },
+  "246": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 2
+  },
+  "ULK": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 1
+  }
+ },
+ "Lithuania": {
+  "SSS": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  }
+ },
+ "Moldova": {
+  "SSS": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Norway": {
+  "SSS": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "North Macedonia": {
+  "SSS": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Portugal": {
+  "SSS": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Poland": {
+  "SSS": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 3
+  },
+  "246": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 2
+  }
+ },
+ "France": {
+  "SSS": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Romania": {
+  "SSS": {
+   "ep_lkm": 13,
+   "ep_lkm_tork": 4
+  },
+  "246": {
+   "ep_lkm": 7,
+   "ep_lkm_tork": 3
+  },
+  "ULK": {
+   "ep_lkm": 6,
+   "ep_lkm_tork": 1
+  }
+ },
+ "Sweden": {
+  "SSS": {
+   "ep_lkm": 11,
+   "ep_lkm_tork": 8
+  },
+  "246": {
+   "ep_lkm": 10,
+   "ep_lkm_tork": 8
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Germany": {
+  "SSS": {
+   "ep_lkm": 16,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 15,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Serbia": {
+  "SSS": {
+   "ep_lkm": 4,
+   "ep_lkm_tork": 3
+  },
+  "246": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 2
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  }
+ },
+ "Slovakia": {
+  "SSS": {
+   "ep_lkm": 5,
+   "ep_lkm_tork": 2
+  },
+  "246": {
+   "ep_lkm": 5,
+   "ep_lkm_tork": 2
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Switzerland": {
+  "SSS": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Denmark": {
+  "SSS": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Czechia": {
+  "SSS": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Turkey": {
+  "SSS": {
+   "ep_lkm": 15,
+   "ep_lkm_tork": 10
+  },
+  "246": {
+   "ep_lkm": 15,
+   "ep_lkm_tork": 10
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Ukraine": {
+  "SSS": {
+   "ep_lkm": 13,
+   "ep_lkm_tork": 6
+  },
+  "246": {
+   "ep_lkm": 10,
+   "ep_lkm_tork": 3
+  },
+  "ULK": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 3
+  }
+ },
+ "Hungary": {
+  "SSS": {
+   "ep_lkm": 7,
+   "ep_lkm_tork": 2
+  },
+  "246": {
+   "ep_lkm": 6,
+   "ep_lkm_tork": 2
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Belarus": {
+  "SSS": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 3
+  },
+  "246": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 3
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Russia": {
+  "SSS": {
+   "ep_lkm": 24,
+   "ep_lkm_tork": 10
+  },
+  "246": {
+   "ep_lkm": 23,
+   "ep_lkm_tork": 9
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  }
+ },
+ "Estonia": {
+  "SSS": {
+   "ep_lkm": 68,
+   "ep_lkm_tork": 25
+  },
+  "246": {
+   "ep_lkm": 62,
+   "ep_lkm_tork": 22
+  },
+  "ULK": {
+   "ep_lkm": 6,
+   "ep_lkm_tork": 3
+  }
+ },
+ "United Kingdom": {
+  "SSS": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 0
+  }
+ },
+ "AFRICA": {
+  "SSS": {
+   "ep_lkm": 151,
+   "ep_lkm_tork": 84
+  },
+  "246": {
+   "ep_lkm": 141,
+   "ep_lkm_tork": 83
+  },
+  "ULK": {
+   "ep_lkm": 10,
+   "ep_lkm_tork": 1
+  }
+ },
+ "Algeria": {
+  "SSS": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Angola": {
+  "SSS": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Egypt": {
+  "SSS": {
+   "ep_lkm": 5,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 5,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Former Sudan": {
+  "SSS": {
+   "ep_lkm": 5,
+   "ep_lkm_tork": 3
+  },
+  "246": {
+   "ep_lkm": 5,
+   "ep_lkm_tork": 3
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Eritrea": {
+  "SSS": {
+   "ep_lkm": 24,
+   "ep_lkm_tork": 10
+  },
+  "246": {
+   "ep_lkm": 24,
+   "ep_lkm_tork": 10
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Ethiopia": {
+  "SSS": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Gambia": {
+  "SSS": {
+   "ep_lkm": 8,
+   "ep_lkm_tork": 8
+  },
+  "246": {
+   "ep_lkm": 8,
+   "ep_lkm_tork": 8
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Ghana": {
+  "SSS": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 3
+  },
+  "246": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 3
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Cameroon": {
+  "SSS": {
+   "ep_lkm": 4,
+   "ep_lkm_tork": 2
+  },
+  "246": {
+   "ep_lkm": 4,
+   "ep_lkm_tork": 2
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Kenya": {
+  "SSS": {
+   "ep_lkm": 5,
+   "ep_lkm_tork": 2
+  },
+  "246": {
+   "ep_lkm": 5,
+   "ep_lkm_tork": 2
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Democratic Republic of the Congo": {
+  "SSS": {
+   "ep_lkm": 9,
+   "ep_lkm_tork": 3
+  },
+  "246": {
+   "ep_lkm": 9,
+   "ep_lkm_tork": 3
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Morocco": {
+  "SSS": {
+   "ep_lkm": 11,
+   "ep_lkm_tork": 6
+  },
+  "246": {
+   "ep_lkm": 9,
+   "ep_lkm_tork": 6
+  },
+  "ULK": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Nigeria": {
+  "SSS": {
+   "ep_lkm": 14,
+   "ep_lkm_tork": 9
+  },
+  "246": {
+   "ep_lkm": 10,
+   "ep_lkm_tork": 8
+  },
+  "ULK": {
+   "ep_lkm": 4,
+   "ep_lkm_tork": 1
+  }
+ },
+ "Senegal": {
+  "SSS": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Somalia": {
+  "SSS": {
+   "ep_lkm": 38,
+   "ep_lkm_tork": 23
+  },
+  "246": {
+   "ep_lkm": 37,
+   "ep_lkm_tork": 23
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Sudan": {
+  "SSS": {
+   "ep_lkm": 4,
+   "ep_lkm_tork": 2
+  },
+  "246": {
+   "ep_lkm": 4,
+   "ep_lkm_tork": 2
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Tanzania": {
+  "SSS": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Tunisia": {
+  "SSS": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 3
+  },
+  "246": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 3
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "AMERICA": {
+  "SSS": {
+   "ep_lkm": 26,
+   "ep_lkm_tork": 11
+  },
+  "246": {
+   "ep_lkm": 23,
+   "ep_lkm_tork": 11
+  },
+  "ULK": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Brazil": {
+  "SSS": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Canada": {
+  "SSS": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Cuba": {
+  "SSS": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 2
+  },
+  "246": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 2
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Mexico": {
+  "SSS": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 2
+  },
+  "246": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 2
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "United States": {
+  "SSS": {
+   "ep_lkm": 9,
+   "ep_lkm_tork": 2
+  },
+  "246": {
+   "ep_lkm": 6,
+   "ep_lkm_tork": 2
+  },
+  "ULK": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 0
+  }
+ },
+ "ASIA": {
+  "SSS": {
+   "ep_lkm": 414,
+   "ep_lkm_tork": 218
+  },
+  "246": {
+   "ep_lkm": 388,
+   "ep_lkm_tork": 213
+  },
+  "ULK": {
+   "ep_lkm": 26,
+   "ep_lkm_tork": 5
+  }
+ },
+ "Afghanistan": {
+  "SSS": {
+   "ep_lkm": 105,
+   "ep_lkm_tork": 49
+  },
+  "246": {
+   "ep_lkm": 102,
+   "ep_lkm_tork": 46
+  },
+  "ULK": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 3
+  }
+ },
+ "Bangladesh": {
+  "SSS": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Philippines": {
+  "SSS": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 2
+  },
+  "246": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 2
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Georgia": {
+  "SSS": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "India": {
+  "SSS": {
+   "ep_lkm": 5,
+   "ep_lkm_tork": 2
+  },
+  "246": {
+   "ep_lkm": 4,
+   "ep_lkm_tork": 2
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Iraq": {
+  "SSS": {
+   "ep_lkm": 161,
+   "ep_lkm_tork": 94
+  },
+  "246": {
+   "ep_lkm": 146,
+   "ep_lkm_tork": 92
+  },
+  "ULK": {
+   "ep_lkm": 15,
+   "ep_lkm_tork": 2
+  }
+ },
+ "Iran": {
+  "SSS": {
+   "ep_lkm": 26,
+   "ep_lkm_tork": 14
+  },
+  "246": {
+   "ep_lkm": 24,
+   "ep_lkm_tork": 14
+  },
+  "ULK": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Israel": {
+  "SSS": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Japan": {
+  "SSS": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Kazakstan": {
+  "SSS": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "China": {
+  "SSS": {
+   "ep_lkm": 8,
+   "ep_lkm_tork": 6
+  },
+  "246": {
+   "ep_lkm": 7,
+   "ep_lkm_tork": 6
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Myanmar": {
+  "SSS": {
+   "ep_lkm": 8,
+   "ep_lkm_tork": 4
+  },
+  "246": {
+   "ep_lkm": 8,
+   "ep_lkm_tork": 4
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Nepal": {
+  "SSS": {
+   "ep_lkm": 4,
+   "ep_lkm_tork": 3
+  },
+  "246": {
+   "ep_lkm": 4,
+   "ep_lkm_tork": 3
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Pakistan": {
+  "SSS": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 3
+  },
+  "246": {
+   "ep_lkm": 3,
+   "ep_lkm_tork": 3
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Sri Lanka": {
+  "SSS": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Syria": {
+  "SSS": {
+   "ep_lkm": 63,
+   "ep_lkm_tork": 23
+  },
+  "246": {
+   "ep_lkm": 62,
+   "ep_lkm_tork": 23
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Thailand": {
+  "SSS": {
+   "ep_lkm": 8,
+   "ep_lkm_tork": 8
+  },
+  "246": {
+   "ep_lkm": 8,
+   "ep_lkm_tork": 8
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Uzbekistan": {
+  "SSS": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 0
+  },
+  "246": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Vietnam": {
+  "SSS": {
+   "ep_lkm": 4,
+   "ep_lkm_tork": 3
+  },
+  "246": {
+   "ep_lkm": 4,
+   "ep_lkm_tork": 3
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "OCEANIA": {
+  "SSS": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 1,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Without citizenship": {
+  "SSS": {
+   "ep_lkm": 4,
+   "ep_lkm_tork": 4
+  },
+  "246": {
+   "ep_lkm": 4,
+   "ep_lkm_tork": 4
+  },
+  "ULK": {
+   "ep_lkm": 0,
+   "ep_lkm_tork": 0
+  }
+ },
+ "Unknown": {
+  "SSS": {
+   "ep_lkm": 7,
+   "ep_lkm_tork": 1
+  },
+  "246": {
+   "ep_lkm": 2,
+   "ep_lkm_tork": 1
+  },
+  "ULK": {
+   "ep_lkm": 5,
+   "ep_lkm_tork": 0
+  }
+ }
+}
