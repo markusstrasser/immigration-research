@@ -1,0 +1,10 @@
+2010 California        US-born Mexican  3.91% (N  1,191,145)  native white  1.79%  ratio 2.19x   FB Mexican  1.54%
+2010 Texas             US-born Mexican  4.69% (N    906,002)  native white  2.14%  ratio 2.19x   FB Mexican  2.98%
+2010 all other states  US-born Mexican  4.61% (N  1,086,628)  native white  1.67%  ratio 2.76x   FB Mexican  2.62%
+2010 US                US-born Mexican  4.37% (N  3,183,775)  native white  1.71%  ratio 2.56x   FB Mexican  2.34%
+
+2023 California        US-born Mexican  1.73% (N  1,712,375)  native white  0.75%  ratio 2.30x   FB Mexican  0.64%
+2023 Texas             US-born Mexican  2.58% (N  1,276,472)  native white  1.53%  ratio 1.69x   FB Mexican  1.52%
+2023 all other states  US-born Mexican  1.66% (N  2,009,994)  native white  1.11%  ratio 1.50x   FB Mexican  1.25%
+2023 US                US-born Mexican  1.92% (N  4,998,841)  native white  1.12%  ratio 1.72x   FB Mexican  1.13%
+
