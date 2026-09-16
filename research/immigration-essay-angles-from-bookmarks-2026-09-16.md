@@ -71,3 +71,34 @@ The account is political theory (Marcuse, Rothbard, Hess, "left theory as sublat
 Not research, or already contradicted: the Kissinger quote; "100 million deportations"; the Ceuta rape quote (a single interview); MI5 recruitment; the Marcuse "reservoir of discontent" frame (a claim about intent, not a measurable). "AI predicts race from X-rays, so race is not a social construct" (Boghossian) is true and irrelevant to any ledger line.
 
 What the account gets right that the economists' essays miss: coercion cost is a fiscal line (police, corrections, private security) and the ledger books only corrections; if guard labor rises with diversity after controls, that is a per-capita cost the NAS framework never allocates. What it gets wrong by construction: every mechanism is asserted at the level of "the West" with no comparison group, so the disconfirming tests (Cuban and Vietnamese second-generation convergence, ladder 74; AfD support highest where immigration is lowest) never appear.
+
+## Zoom-out: the channel map after the 16 September pass (Exa sweep, six queries, 23:20)
+
+The question was "what else haven't we thought about". Grading every channel the pro and con literatures use against what the repo has measured. Built = a lane and a ladder entry exist; known = audited in an earlier memo; new = no memo mentions it before today.
+
+| Channel | Side | Status | Where |
+|---|---|---|---|
+| Wage and employment effects on natives near zero | pro | known, audited | canon dismantling 2026-06-25 |
+| Aggregate fiscal positive (NAS 2016, CBO 2024 surge +$8.9T GDP, 2025 AEI update by education) | pro | known; AEI 2025 numbers being pulled | `newpapers_sept_2026_09_16/` |
+| Social Security 75-year balance sensitivity to net immigration | pro | known | political-economy notes; claims ledger |
+| Prices of immigrant-intensive services (Cortés 2008) and high-skill native women's labour supply and fertility (Furtado & Hock) | pro | known | 9 memos |
+| Innovation, patents, founders | pro | known (mostly high-skill; irrelevant to the Mexican second generation) | 25 memos |
+| Aging offset | pro | known and now weakened: US-born Mexican-origin fertility at or below white (ladder 88); Poston 2012 "small effect" | memo §4 |
+| Immigration raises mobility of poor natives' children, lowers affluent natives' (Borgschulte et al. NBER w33961, 2025) | mixed | known in the scenario memo, never integrated; being pulled | `newpapers_sept_2026_09_16/` |
+| 1910–30 immigration raised native marriage and fertility (JEH 2025) | pro | new; historical only | this pass |
+| Second-generation fiscal gap and its residuals | con | built (−$8.3k to −$8.9k per adult-year) | memo §12, ladder 65–83 |
+| Cost-weighted crime | con | built, band | ladder 78 |
+| Housing rents, capacity, schools, coercion | con | built: rents +1%/1%; capacity binds in 8 states; schools $0; coercion null public / fragile private | ladder 79–81, 89 |
+| Trust, attitudes, party, in-group affect by generation | con | built for GSS; ANES thermometer open (operator-gated) | memo §15, ladder 87 |
+| Wealth, consumption, remittances | con | built; remittance leakage into sales tax being modelled | memo §14, `remit_leak_2026_09_16/` |
+| Legal status inside the ledger | con | built: status is not the driver | ladder 85 |
+| Regression to an origin mean (deep roots at the family level) | con | built | ladder 86 |
+| **Low-skill immigration delays automation and capital deepening** (Lewis 2011; Clemens–Lewis–Postel 2018; San 2023: +3.3% patents per bracero point after exclusion; Danzer et al. 2024: +10% low-skill labour → −3.3 pp automation-patent share). Arctotherium's "mortmain migration" (Aporia, 16 Sep 2026) is this channel stated as rent-seeking by declining incumbents. | con | **new**; lane running | `automation_channel_2026_09_16/` |
+| **Immigration lowers native fertility through housing** (Seah 2018 Mariel: renters only, short-run; CIS 2021: −0.27 births per 1,000 native women per point of immigrant share in the top-50 metros, correlational) — the aging argument partly cancels itself | con | **new**; lane running | `native_fertility_2026_09_16/` |
+| **Return-migrant selection in earnings assimilation** (Akee, Chin & Crown NBER w35582, Aug 2026: 41 years of administrative earnings, stayers vs leavers) — tells whether the CPS Mexico-born cell is the positively or negatively selected remainder | either | **new**; lane running | `newpapers_sept_2026_09_16/` |
+| Native prime-age male labour-force withdrawal and disability as displacement (CIS 2016 vs BPC 2019; FRBSF 2025 push/pull; NBER w32389 2024 finds no national crowd-out) | con | HAD-PARTS (3 memos mention, none measures); testable on the 44M-row IPUMS supply-shock panel | queue |
+| Political externalities: populist backlash as a cost (Jones 2017), diaspora bloc votes blocking fiscal reform (Aporia on Brussels) | con | HAD-PARTS: §15 measures preferences by generation, nothing prices the backlash | queue |
+| Deep roots / culture transplant at the national level (Jones 2022; Jones June 2026 "Will immigration save America": needs +3–6 IQ points, ~100M high-skill migrants) | con | known; the family-level version is ladder 86 | 3 memos |
+| Chain-migration multiplier, ethnic attrition, age at arrival (Duncan & Trejo 2025) | con | known | ladder 67 |
+
+What the map says. The economists' side is fully audited and nothing new appeared in it except the distributional mobility paper. The con side had three unbuilt channels with real identification behind them (automation, native fertility, return-migrant selection), and two measurable ones still in the queue (native labour-force withdrawal, the political-externality price). The automation channel is the one that can change the essay's shape: it is a productivity cost outside every fiscal ledger, it explains why wage effects are near zero (technique adjusts) and why that is not reassuring, and it is the mechanism behind the Central Valley, Belgian coal and Lancashire mill stories the restrictionist side tells anecdotally.
