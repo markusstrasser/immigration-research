@@ -1,0 +1,204 @@
+Person-level fiscal-ledger residuals by origin-generation
+CPS ASEC 2025 (income year 2024) + ACS 1-year PUMS 2023, SPM resource units,
+person weights, adults 25-64, 160-replicate SDR standard errors.
+CPS source: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip
+CPS validation: {"person_rows": 142125, "replicate_rows": 142125, "spm_units": 58147, "max_full_weight_difference": 0.005049970000015946, "negative_replicate_weights": 132, "federal_credit_identity": true, "unit_fields_constant": true, "source_tax_sums_match_unit_fields": true}
+microdata diagnostics: {"ed_recipients_unweighted": 2948, "ed_gov_source_unweighted": 536, "ed_private_only_unweighted": 1740, "college_enrolled_18_24_unweighted": 3961, "marketplace_any_unweighted": 5924, "marketplace_subsidised_unweighted": 4089, "marketplace_unsubsidised_unweighted": 1851, "uninsured_full_year_unweighted": 11062, "uninsured_part_year_unweighted": 4271, "state_workers_comp_recipients_unweighted": 110, "public_disability_recipients_unweighted": 31}
+
+Baseline and extended rows reproduce gen_ledger_extension_2026_09_16/extend_ledger.py
+exactly (same prepare(), same allocate(), same group masks, same composite).
+
+============================================================================================================================================
+== allocation=equal_all_members  weighting=person  $ per adult 25-64, 2024 income year (SDR se in parentheses) ==
+============================================================================================================================================
+row                                                         third_plus_nh_white        all_native    all_second_genmexican_second_genmexican_third_plus_s       mexico_born
+EXTENDED BALANCE (peer lane)                                      15,984 (292)      14,266 (232)      15,658 (439)       7,698 (375)       9,705 (561)       4,462 (290)
+Government educational assistance (ED_VAL)                              56 (8)            69 (6)          100 (18)           81 (21)           64 (18)           68 (14)
+Public higher-ed operating subsidy (18-24 FTE)                         138 (5)           142 (4)           166 (9)          188 (17)          172 (20)          275 (18)
+ACA advance premium tax credits                                        208 (9)           216 (7)          235 (16)          197 (27)          197 (25)          195 (22)
+Uncompensated hospital care (uninsured)                                114 (3)           132 (2)           153 (6)          234 (13)          179 (12)          497 (14)
+Other public transfers (state WC, RR/black-lung/sickness)               13 (3)            18 (4)            20 (9)            13 (5)           72 (48)            10 (4)
+= RESIDUAL BALANCE (CPS items only)                               15,455 (292)      13,688 (232)      14,983 (443)       6,985 (378)       9,021 (569)       3,418 (291)
+  alt: educational assistance, proportional source split                49 (6)            61 (5)           92 (18)           68 (16)           64 (18)           67 (14)
+  alt: higher-ed subsidy at the brief's 0.74 public share              133 (5)           136 (4)           159 (9)          180 (17)          165 (19)          263 (17)
+  alt: APTC from marketplace coverage x national subsidised share          304 (10)           300 (8)          326 (17)          239 (26)          247 (28)          262 (25)
+  alt: uncompensated care at 2024 hospital prices                      137 (3)           159 (3)           184 (8)          281 (15)          215 (14)          596 (17)
+  alt: uncompensated care, any uninsured spell at full cost             88 (3)           105 (2)           126 (6)          206 (13)          150 (11)          468 (14)
+  memo: SPM capped housing subsidy resource (NOT in the balance)            41 (4)            86 (5)            85 (9)           70 (13)          122 (21)           62 (10)
+  diagnostic: college FTE 18-24 per adult (x1000)                       15 (1)            16 (0)            18 (1)            21 (2)            19 (2)            30 (2)
+
+difference from 3rd+ NH white                               third_plus_nh_white        all_native    all_second_genmexican_second_genmexican_third_plus_s       mexico_born
+EXTENDED BALANCE (peer lane)                                                 —      -1,719 (124)        -327 (488)      -8,286 (443)      -6,279 (546)     -11,522 (402)
+Government educational assistance (ED_VAL)                                   —            13 (5)           45 (19)           25 (23)            8 (19)           12 (16)
+Public higher-ed operating subsidy (18-24 FTE)                               —             4 (3)           28 (11)           50 (18)           34 (19)          136 (19)
+ACA advance premium tax credits                                              —             8 (4)           27 (18)          -11 (28)          -11 (26)          -13 (23)
+Uncompensated hospital care (uninsured)                                      —            18 (2)            39 (7)          120 (13)           65 (12)          383 (14)
+Other public transfers (state WC, RR/black-lung/sickness)                    —             5 (3)            7 (10)            -0 (6)           59 (48)            -3 (5)
+= RESIDUAL BALANCE (CPS items only)                                          —      -1,767 (125)        -472 (490)      -8,470 (446)      -6,433 (555)     -12,037 (401)
+  alt: educational assistance, proportional source split                     —            12 (4)           43 (19)           19 (18)           15 (19)           18 (15)
+  alt: higher-ed subsidy at the brief's 0.74 public share                    —             4 (3)           27 (10)           48 (17)           32 (18)          131 (18)
+  alt: APTC from marketplace coverage x national subsidised share                 —            -4 (5)           22 (19)          -65 (27)          -56 (30)          -42 (25)
+  alt: uncompensated care at 2024 hospital prices                            —            22 (2)            47 (8)          144 (15)           78 (15)          459 (17)
+  alt: uncompensated care, any uninsured spell at full cost                  —            17 (2)            38 (7)          118 (13)           62 (11)          380 (15)
+  memo: SPM capped housing subsidy resource (NOT in the balance)                 —            45 (3)           44 (10)           29 (13)           81 (20)           21 (11)
+  diagnostic: college FTE 18-24 per adult (x1000)                            —             0 (0)             3 (1)             6 (2)             4 (2)            15 (2)
+
+-- §12 layout: each item as a difference from 3rd+ NH white, with the running balance --
+item                                                              all_native    all_second_genmexican_second_genmexican_third_plus_s       mexico_born
+Extended balance (baseline for this lane)                       -1,719 (124)        -327 (488)      -8,286 (443)      -6,279 (546)     -11,522 (402)
+- Government educational assistance (ED_VAL)                             -13               -45               -25                -8               -12
+    running balance                                             -1,732 (125)        -371 (489)      -8,312 (447)      -6,287 (547)     -11,535 (401)
+- Public higher-ed operating subsidy (18-24 FTE)                          -4               -28               -50               -34              -136
+    running balance                                             -1,736 (124)        -399 (489)      -8,362 (446)      -6,320 (548)     -11,671 (401)
+- ACA advance premium tax credits                                         -8               -27                11                11                13
+    running balance                                             -1,744 (125)        -426 (490)      -8,350 (446)      -6,309 (550)     -11,658 (402)
+- Uncompensated hospital care (uninsured)                                -18               -39              -120               -65              -383
+    running balance                                             -1,762 (125)        -465 (490)      -8,470 (447)      -6,374 (551)     -12,040 (402)
+- Other public transfers (state WC, RR/black-lung/sickness)                -5                -7                 0               -59                 3
+    running balance                                             -1,767 (125)        -472 (490)      -8,470 (446)      -6,433 (555)     -12,037 (401)
+
+-- institutional care (ACS PUMS proxy, no SDR se available) --
+arm                               third_plus_nh_white        all_native    all_second_genmexican_second_genmexican_third_plus_s       mexico_born
+base                                           1,105             1,334             1,334             1,057             1,057               386
+generic_hispanic_adjusted                      1,105             1,334             1,334             1,293             1,293               386
+prison_45k                                       993             1,151             1,151               848               848               320
+prison_70k                                     1,210             1,505             1,505             1,253             1,253               448
+nursing_medicaid_share_062                       876             1,139             1,139             1,012             1,012               353
+nursing_062_and_hispanic_adj                     876             1,139             1,139             1,238             1,238               353
+
+institutional, diff from white            all_native    all_second_genmexican_second_genmexican_third_plus_s       mexico_born
+base                                            -229              -229                48                48               719
+generic_hispanic_adjusted                       -229              -229              -188              -188               719
+prison_45k                                      -157              -157               145               145               674
+prison_70k                                      -296              -296               -44               -44               762
+nursing_medicaid_share_062                      -264              -264              -137              -137               523
+nursing_062_and_hispanic_adj                    -264              -264              -363              -363               523
+
+FULL RESIDUAL BALANCE (CPS + ACS)             14,350            12,354            13,649             5,928             7,964             3,032
+  diff from 3rd+ NH white                     -1,996              -701            -8,422            -6,386           -11,318
+
+============================================================================================================================================
+== allocation=equal_adults_18plus  weighting=person  $ per adult 25-64, 2024 income year (SDR se in parentheses) ==
+============================================================================================================================================
+row                                                         third_plus_nh_white        all_native    all_second_genmexican_second_genmexican_third_plus_s       mexico_born
+EXTENDED BALANCE (peer lane)                                      18,099 (333)      15,776 (267)      17,629 (544)       7,466 (515)      10,086 (652)       3,154 (354)
+Government educational assistance (ED_VAL)                              66 (8)            82 (6)          117 (21)          106 (26)           74 (20)           84 (16)
+Public higher-ed operating subsidy (18-24 FTE)                         157 (6)           162 (5)          187 (10)          216 (19)          195 (22)          326 (21)
+ACA advance premium tax credits                                       258 (11)           267 (8)          285 (21)          252 (35)          249 (34)          250 (29)
+Uncompensated hospital care (uninsured)                                146 (3)           170 (3)           200 (8)          317 (17)          233 (16)          668 (19)
+Other public transfers (state WC, RR/black-lung/sickness)               15 (3)            21 (4)           24 (10)            16 (7)           79 (49)            13 (6)
+= RESIDUAL BALANCE (CPS items only)                               17,457 (334)      15,074 (268)      16,817 (548)       6,560 (521)       9,255 (664)       1,814 (358)
+  alt: educational assistance, proportional source split                59 (6)            73 (5)          108 (20)           92 (23)           74 (20)           82 (16)
+  alt: higher-ed subsidy at the brief's 0.74 public share              151 (5)           156 (5)          179 (10)          207 (18)          187 (21)          312 (20)
+  alt: APTC from marketplace coverage x national subsidised share          374 (12)          371 (10)          403 (22)          311 (35)          330 (40)          338 (32)
+  alt: uncompensated care at 2024 hospital prices                      175 (4)           204 (4)          239 (10)          380 (21)          280 (19)          802 (23)
+  alt: uncompensated care, any uninsured spell at full cost            112 (3)           134 (3)           162 (8)          275 (18)          191 (15)          629 (20)
+  memo: SPM capped housing subsidy resource (NOT in the balance)            53 (5)           127 (7)          133 (15)          120 (23)          196 (41)          112 (17)
+  diagnostic: college FTE 18-24 per adult (x1000)                       17 (1)            18 (1)            21 (1)            24 (2)            22 (2)            36 (2)
+
+difference from 3rd+ NH white                               third_plus_nh_white        all_native    all_second_genmexican_second_genmexican_third_plus_s       mexico_born
+EXTENDED BALANCE (peer lane)                                                 —      -2,323 (144)        -470 (609)     -10,633 (587)      -8,013 (634)     -14,945 (475)
+Government educational assistance (ED_VAL)                                   —            15 (5)           50 (22)           39 (28)            8 (21)           17 (18)
+Public higher-ed operating subsidy (18-24 FTE)                               —             5 (3)           29 (11)           58 (20)           38 (22)          168 (21)
+ACA advance premium tax credits                                              —            10 (6)           28 (22)           -6 (36)           -8 (34)           -8 (31)
+Uncompensated hospital care (uninsured)                                      —            24 (2)            53 (9)          170 (18)           87 (17)          522 (20)
+Other public transfers (state WC, RR/black-lung/sickness)                    —             6 (3)            9 (11)             1 (7)           64 (49)            -2 (6)
+= RESIDUAL BALANCE (CPS items only)                                          —      -2,383 (145)        -640 (611)     -10,897 (592)      -8,202 (645)     -15,643 (476)
+  alt: educational assistance, proportional source split                     —            14 (4)           49 (21)           33 (24)           15 (21)           23 (17)
+  alt: higher-ed subsidy at the brief's 0.74 public share                    —             5 (3)           28 (11)           56 (19)           36 (21)          161 (20)
+  alt: APTC from marketplace coverage x national subsidised share                 —            -3 (6)           29 (25)          -63 (36)          -43 (43)          -36 (34)
+  alt: uncompensated care at 2024 hospital prices                            —            29 (3)           64 (10)          205 (21)          104 (20)          627 (24)
+  alt: uncompensated care, any uninsured spell at full cost                  —            22 (2)            50 (9)          163 (18)           79 (15)          517 (20)
+  memo: SPM capped housing subsidy resource (NOT in the balance)                 —            74 (5)           81 (15)           67 (23)          143 (41)           59 (18)
+  diagnostic: college FTE 18-24 per adult (x1000)                            —             1 (0)             3 (1)             6 (2)             4 (2)            19 (2)
+
+-- §12 layout: each item as a difference from 3rd+ NH white, with the running balance --
+item                                                              all_native    all_second_genmexican_second_genmexican_third_plus_s       mexico_born
+Extended balance (baseline for this lane)                       -2,323 (144)        -470 (609)     -10,633 (587)      -8,013 (634)     -14,945 (475)
+- Government educational assistance (ED_VAL)                             -15               -50               -39                -8               -17
+    running balance                                             -2,339 (145)        -521 (610)     -10,673 (591)      -8,021 (636)     -14,962 (473)
+- Public higher-ed operating subsidy (18-24 FTE)                          -5               -29               -58               -38              -168
+    running balance                                             -2,344 (144)        -550 (609)     -10,731 (591)      -8,059 (637)     -15,130 (472)
+- ACA advance premium tax credits                                        -10               -28                 6                 8                 8
+    running balance                                             -2,353 (145)        -578 (610)     -10,725 (591)      -8,051 (640)     -15,122 (474)
+- Uncompensated hospital care (uninsured)                                -24               -53              -170               -87              -522
+    running balance                                             -2,377 (145)        -631 (611)     -10,896 (593)      -8,138 (643)     -15,645 (476)
+- Other public transfers (state WC, RR/black-lung/sickness)                -6                -9                -1               -64                 2
+    running balance                                             -2,383 (145)        -640 (611)     -10,897 (592)      -8,202 (645)     -15,643 (476)
+
+-- institutional care (ACS PUMS proxy, no SDR se available) --
+arm                               third_plus_nh_white        all_native    all_second_genmexican_second_genmexican_third_plus_s       mexico_born
+base                                           1,105             1,334             1,334             1,057             1,057               386
+generic_hispanic_adjusted                      1,105             1,334             1,334             1,293             1,293               386
+prison_45k                                       993             1,151             1,151               848               848               320
+prison_70k                                     1,210             1,505             1,505             1,253             1,253               448
+nursing_medicaid_share_062                       876             1,139             1,139             1,012             1,012               353
+nursing_062_and_hispanic_adj                     876             1,139             1,139             1,238             1,238               353
+
+institutional, diff from white            all_native    all_second_genmexican_second_genmexican_third_plus_s       mexico_born
+base                                            -229              -229                48                48               719
+generic_hispanic_adjusted                       -229              -229              -188              -188               719
+prison_45k                                      -157              -157               145               145               674
+prison_70k                                      -296              -296               -44               -44               762
+nursing_medicaid_share_062                      -264              -264              -137              -137               523
+nursing_062_and_hispanic_adj                    -264              -264              -363              -363               523
+
+FULL RESIDUAL BALANCE (CPS + ACS)             16,352            13,740            15,483             5,503             8,198             1,428
+  diff from 3rd+ NH white                     -2,611              -869           -10,849            -8,154           -14,924
+
+-- ACS institutional group-quarters rates, 2023, by proxy and age band (percent) --
+   band           proxy  institutional  institutional_adj  population      pct  pct_adj
+  18_39      native_all       995012.0       9.950120e+05  84129088.0 1.182721 1.182721
+  18_39 native_nh_white       341095.0       3.410950e+05  49470504.0 0.689492 0.689492
+  18_39  native_mexican       107251.0       1.319587e+05   9935811.0 1.079439 1.328112
+  18_39 foreign_mexican        20981.0       2.098100e+04   3234215.0 0.648720 0.648720
+  40_64      native_all       976564.0       9.765640e+05  82514651.0 1.183504 1.183504
+  40_64 native_nh_white       468504.0       4.685040e+05  59170549.0 0.791786 0.791786
+  40_64  native_mexican        60041.0       7.278194e+04   4470696.0 1.342990 1.627978
+  40_64 foreign_mexican        22683.0       2.268300e+04   5782092.0 0.392297 0.392297
+65_plus      native_all      1320450.0       1.320450e+06  50737963.0 2.602489 2.602489
+65_plus native_nh_white      1048356.0       1.048356e+06  41342552.0 2.535780 2.535780
+65_plus  native_mexican        22649.0       2.752697e+04   1410694.0 1.605522 1.951307
+65_plus foreign_mexican        13805.0       1.380500e+04   1426526.0 0.967736 0.967736
+  25_64      native_all      1794143.0       1.794143e+06 138957087.0 1.291149 1.291149
+  25_64 native_nh_white       761450.0       7.614500e+05  93555066.0 0.813906 0.813906
+  25_64  native_mexican       145567.0       1.766219e+05  10316459.0 1.411017 1.712040
+  25_64 foreign_mexican        40771.0       4.077100e+04   8478703.0 0.480864 0.480864
+
+-- applied rates --
+   SHEEO SHEF FY2024 education appropriations per FTE : $11,683
+   NCES public undergraduate share, fall 2023         : 0.7726
+   CMS full-year-2024 APTC per subsidised enrollee    : $6,331.68
+   AHA/Census uncompensated care per uninsured        : $1,524
+   State prison cost per person-year                  : $57,911
+   Medicaid nursing-facility cost per resident-year   : $53,900
+
+-- sources --
+   CPS ASEC 2025 public-use microdata (income year 2024)
+     https://www2.census.gov/programs-surveys/cps/datasets/2025/march/asecpub25csv.zip
+   CPS ASEC 2025 data dictionary (ED_VAL, OED_TYP1-3, A_ENRLW, A_HSCOL, A_FTPT, MRK/MRKS/MRKUN, COV, NOCOV_CYR, WC_TYPE, DIS_SC1/2)
+     https://www2.census.gov/programs-surveys/cps/datasets/2025/march/asec2025_ddl_pub_full.pdf
+   SHEEO, State Higher Education Finance FY2024: education appropriations $11,683 per FTE
+     https://shef.sheeo.org/wp-content/uploads/2025/05/SHEEO_SHEF_FY24_Report.pdf
+   NCES Digest 2024 Table 303.70: fall 2023 undergraduate enrollment, public 12,227,529 of 15,825,762
+     https://nces.ed.gov/programs/digest/d24/tables/dt24_303.70.asp
+   CMS, Effectuated Enrollment: Early 2025 Snapshot and Full Year 2024 Average, Table 4: full-year 2024 average APTC $527.64/month, 19,531,827 APTC enrollees of 20,968,847
+     https://www.cms.gov/files/document/effectuated-enrollment-early-snapshot-2025-and-full-year-2024-average.pdf
+   AHA, Uncompensated Hospital Care Cost Fact Sheet: $42.67bn in 2020 (latest edition)
+     https://www.aha.org/system/files/media/file/2020/01/2020-Uncompensated-Care-Fact-Sheet.pdf
+   Census P60-274, Health Insurance Coverage in the United States: 2020 — 28.0 million uninsured (8.6%)
+     https://www.census.gov/content/dam/Census/library/publications/2021/demo/p60-274.pdf
+   USAFacts, How much do states spend on housing prisoners? — $63.6bn state corrections spending 2023, median $60,989 per prisoner (Census ASSLGF + BJS)
+     https://usafacts.org/articles/how-much-do-states-spend-on-prisons/
+   BJS, Prisoners in 2023 – Statistical Tables — 1,254,200 total, 155,972 federal at yearend 2023
+     https://bjs.ojp.gov/document/p23st.pdf
+   KFF, 5 Key Facts About Nursing Facilities and Medicaid — Medicaid paid 44% of $147bn institutional long-term care in 2023; 1.2 million nursing facility residents
+     https://www.kff.org/medicaid/5-key-facts-about-nursing-facilities-and-medicaid/
+   ACS 1-year PUMS 2023 institutional group quarters (TYPEHUGQ=2) via the Census Data API tabulate endpoint
+     https://api.census.gov/data/2023/acs/acs1/pums
+
+-- STEP A gate: peer-lane extended balance --
+Mexican 2nd gen minus 3rd+ NH white, EXTENDED balance, equal_all_members,
+person weights, adults 25-64: -8,286 (se 443)
+Published in gen_ledger_extension_2026_09_16/RESULT.md and memo §12: -8,286 (se 443)
+Deviation from the published -8,286: -0.23
