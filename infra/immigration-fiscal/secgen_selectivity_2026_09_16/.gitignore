@@ -1,0 +1,14 @@
+cps_asec_2564_2019.csv
+cps_asec_2564_2020.csv
+cps_asec_2564_2021.csv
+cps_asec_2564_2022.csv
+cps_asec_2564_2023.csv
+cps_asec_2564_2024.csv
+cps_asec_allages_2019.csv
+cps_asec_allages_2020.csv
+cps_asec_allages_2021.csv
+cps_asec_allages_2022.csv
+cps_asec_allages_2023.csv
+cps_asec_allages_2024.csv
+wb_ter_ba.json
+# raw CPS ASEC pulls >2 MB; re-pull via urls.log

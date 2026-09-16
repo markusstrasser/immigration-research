@@ -1,0 +1,163 @@
+cps_code,cps_name,iso3,display_name,wb_ba_pct,wb_year,bl_ter_2010,bl_ter_1990,bl_ter_1980,origin_ba_pref,origin_ba_source,refugee_origin,mex_centam
+057,United States,USA,United States,37.66,2022,30.94,25.07,18.12,37.66,WB 2022,0,0
+060,American Samoa,ASM,American Samoa,,,,,,,,0,0
+066,Guam,GUM,Guam,,,,,,,,0,0
+069,Northern Marianas,MNP,Northern Marianas,,,,,,,,0,0
+073,Puerto Rico,PRI,Puerto Rico,29.84,2022,,,,29.84,WB 2022,0,0
+078,U. S. Virgin Islands,VIR,U. S. Virgin Islands,,,,,,,,0,0
+100,Albania,ALB,Albania,19.83,2022,0.99,4.05,2.99,19.83,WB 2022,0,0
+102,Austria,AUT,Austria,14.88,2021,11.53,3.92,2.15,14.88,WB 2021,0,0
+103,Belgium,BEL,Belgium,36.31,2022,20.27,12.57,7.87,36.31,WB 2022,0,0
+104,Bulgaria,BGR,Bulgaria,26.01,2022,16.1,10.65,8.29,26.01,WB 2022,0,0
+105,Czechoslovakia,CZE,Czech Republic,22.29,2022,8.61,7.86,3.55,22.29,WB 2022,0,0
+106,Denmark,DNK,Denmark,33.08,2022,18.97,11.05,8.45,33.08,WB 2022,0,0
+108,Finland,FIN,Finland,28.86,2022,15.06,7.53,6.72,28.86,WB 2022,0,0
+109,France,FRA,France,23.59,2022,12.12,6.18,4.57,23.59,WB 2022,0,0
+110,Germany,DEU,Germany,29.58,2022,16.08,8.48,4.51,29.58,WB 2022,0,0
+116,Greece,GRC,Greece,28.93,2022,24.85,9.77,7.17,28.93,WB 2022,0,0
+117,Hungary,HUN,Hungary,24.66,2022,17.65,9.71,6.91,24.66,WB 2022,0,0
+118,Iceland,ISL,Iceland,34.24,2022,18.32,7.88,5.04,34.24,WB 2022,0,0
+119,Ireland,IRL,Ireland,38.43,2022,30.27,9.8,5.18,38.43,WB 2022,0,0
+120,Italy,ITA,Italy,16.49,2022,8.04,3.89,2.68,16.49,WB 2022,0,0
+126,Netherlands,NLD,Netherlands,36.39,2022,19.12,11.05,7.04,36.39,WB 2022,0,0
+127,Norway,NOR,Norway,31.67,2022,15.26,9.15,5.28,31.67,WB 2022,0,0
+128,Poland,POL,Poland,27.72,2021,13.98,4.54,3.71,27.72,WB 2021,0,0
+129,Portugal,PRT,Portugal,23.12,2022,3.67,3.41,1.62,23.12,WB 2022,0,0
+130,Azores,PRT,Portugal,23.12,2022,3.67,3.41,1.62,23.12,WB 2022,0,0
+132,Romania,ROU,Romania,15.28,2022,8.05,4.67,3.05,15.28,WB 2022,0,0
+134,Spain,ESP,Spain,24.15,2022,17.01,5.45,4.64,24.15,WB 2022,0,0
+136,Sweden,SWE,Sweden,33.66,2022,18.64,12.28,9.41,33.66,WB 2022,0,0
+137,Switzerland,CHE,Switzerland,39.95,2022,22.01,9.83,7.18,39.95,WB 2022,0,0
+138,United Kingdom,GBR,United Kingdom,39.59,2021,18.78,9.85,6.47,39.59,WB 2021,0,0
+139,England,GBR,United Kingdom,39.59,2021,18.78,9.85,6.47,39.59,WB 2021,0,0
+140,Scotland,GBR,United Kingdom,39.59,2021,18.78,9.85,6.47,39.59,WB 2021,0,0
+142,Northern Ireland,GBR,United Kingdom,39.59,2021,18.78,9.85,6.47,39.59,WB 2021,0,0
+147,Yugoslavia,SRB,Serbia,24.85,2022,,,,24.85,WB 2022,1,0
+148,Czech Republic,CZE,Czech Republic,22.29,2022,8.61,7.86,3.55,22.29,WB 2022,0,0
+149,Slovakia,SVK,Slovakia,25.77,2022,9.13,5.43,3.54,25.77,WB 2022,0,0
+150,Bosnia & Herzegovina,BIH,Bosnia & Herzegovina,12.29,2022,,,,12.29,WB 2022,1,0
+151,Croatia,HRV,Croatia,19.69,2022,12.46,4.3,3.33,19.69,WB 2022,1,0
+152,Macedonia,MKD,Macedonia,19.82,2022,,,,19.82,WB 2022,1,0
+154,Serbia,SRB,Serbia,24.85,2022,,,,24.85,WB 2022,1,0
+155,Estonia,EST,Estonia,32.66,2022,23.67,9.26,7.03,32.66,WB 2022,0,0
+156,Latvia,LVA,Latvia,32.57,2022,12.23,9.06,7.0,32.57,WB 2022,0,0
+157,Lithuania,LTU,Lithuania,41.41,2022,19.93,8.5,6.06,41.41,WB 2022,0,0
+158,Armenia,ARM,Armenia,27.83,2022,14.48,12.6,10.75,27.83,WB 2022,1,0
+159,Azerbaijan,AZE,Azerbaijan,15.72,2019,,,,15.72,WB 2019,1,0
+160,Belarus,BLR,Belarus,28.3,2019,,,,28.3,WB 2019,1,0
+161,Georgia,GEO,Georgia,34.02,2022,,,,34.02,WB 2022,1,0
+162,Moldova,MDA,Moldova,20.39,2022,,,,20.39,WB 2022,1,0
+163,Russia,RUS,Russia,41.22,2021,25.87,14.26,6.57,41.22,WB 2021,1,0
+164,Ukraine,UKR,Ukraine,34.75,2019,27.14,14.13,6.64,34.75,WB 2019,1,0
+165,USSR,RUS,Russia,41.22,2021,25.87,14.26,6.57,41.22,WB 2021,1,0
+166,"Europe, not specified",,"Europe, not specified",,,,,,,,0,0
+168,Montenegro,MNE,Montenegro,19.58,2020,,,,19.58,WB 2020,1,0
+200,Afghanistan,AFG,Afghanistan,3.98,2022,5.51,3.7,1.9,3.98,WB 2022,1,0
+202,Bangladesh,BGD,Bangladesh,7.57,2022,3.06,1.6,0.82,7.57,WB 2022,0,0
+203,Bhutan,BTN,Bhutan,8.48,2022,,,,8.48,WB 2022,0,0
+205,Myanmar (Burma),MMR,Myanmar (Burma),9.35,2019,4.88,2.75,0.53,9.35,WB 2019,1,0
+206,Cambodia,KHM,Cambodia,4.56,2021,1.36,0.22,0.16,4.56,WB 2021,1,0
+207,China,CHN,China,7.68,2020,2.43,1.34,0.63,7.68,WB 2020,0,0
+209,Hong Kong,HKG,Hong Kong,,,14.77,7.33,4.09,14.77,Barro-Lee 2010,0,0
+210,India,IND,India,12.14,2022,6.1,2.95,1.58,12.14,WB 2022,0,0
+211,Indonesia,IDN,Indonesia,9.48,2022,5.04,1.53,0.35,9.48,WB 2022,0,0
+212,Iran,IRN,Iran,17.69,2022,15.77,3.92,2.14,17.69,WB 2022,1,0
+213,Iraq,IRQ,Iraq,10.94,2021,9.52,4.21,2.21,10.94,WB 2021,1,0
+214,Israel,ISR,Israel,32.51,2022,28.62,18.6,15.03,32.51,WB 2022,0,0
+215,Japan,JPN,Japan,25.54,2020,19.94,13.77,8.99,25.54,WB 2020,0,0
+216,Jordan,JOR,Jordan,18.74,2022,5.63,6.11,4.08,18.74,WB 2022,0,0
+217,Korea,KOR,Korea,34.54,2022,34.79,11.52,6.58,34.54,WB 2022,0,0
+218,Kazakhstan,KAZ,Kazakhstan,34.08,2018,15.43,8.29,6.69,34.08,WB 2018,1,0
+220,South Korea,KOR,Korea,34.54,2022,34.79,11.52,6.58,34.54,WB 2022,0,0
+222,Kuwait,KWT,Kuwait,11.12,2018,5.54,8.39,6.31,11.12,WB 2018,0,0
+223,Laos,LAO,Laos,5.19,2022,3.39,2.31,1.3,5.19,WB 2022,1,0
+224,Lebanon,LBN,Lebanon,22.14,2019,,,,22.14,WB 2019,0,0
+226,Malaysia,MYS,Malaysia,14.56,2022,5.91,2.76,0.57,14.56,WB 2022,0,0
+228,Mongolia,MNG,Mongolia,31.64,2022,22.5,12.47,11.1,31.64,WB 2022,0,0
+229,Nepal,NPL,Nepal,5.82,2017,2.28,2.69,0.69,5.82,WB 2017,0,0
+231,Pakistan,PAK,Pakistan,9.93,2021,5.47,2.16,1.69,9.93,WB 2021,0,0
+233,Philippines,PHL,Philippines,18.08,2022,7.17,8.69,9.83,18.08,WB 2022,0,0
+235,Saudi Arabia,SAU,Saudi Arabia,31.33,2022,9.17,7.36,4.86,31.33,WB 2022,0,0
+236,Singapore,SGP,Singapore,36.19,2022,30.55,2.51,2.75,36.19,WB 2022,0,0
+238,Sri Lanka,LKA,Sri Lanka,0.91,2022,9.52,3.1,0.59,0.91,WB 2022,0,0
+239,Syria,SYR,Syria,,,4.14,3.21,1.44,4.14,Barro-Lee 2010,0,0
+240,Taiwan,TWN,Taiwan,,,8.61,5.94,4.68,8.61,Barro-Lee 2010,0,0
+242,Thailand,THA,Thailand,17.35,2022,9.97,4.35,2.86,17.35,WB 2022,0,0
+243,Turkey,TUR,Turkey,20.94,2022,7.09,7.07,2.35,20.94,WB 2022,0,0
+245,United Arab Emirates,ARE,United Arab Emirates,51.07,2022,10.65,7.17,3.94,51.07,WB 2022,0,0
+246,Uzbekistan,UZB,Uzbekistan,16.85,2022,,,,16.85,WB 2022,1,0
+247,Vietnam,VNM,Vietnam,11.52,2022,4.59,1.76,0.76,11.52,WB 2022,1,0
+248,Yemen,YEM,Yemen,4.99,2014,1.68,0.31,0.03,4.99,WB 2014,0,0
+249,"Asia, not specified",,"Asia, not specified",,,,,,,,0,0
+300,Bermuda,BMU,Bermuda,31.11,2016,,,,31.11,WB 2016,0,0
+301,Canada,CAN,Canada,32.35,2022,27.72,11.17,15.68,32.35,WB 2022,0,0
+303,Mexico,MEX,Mexico,16.99,2022,13.08,5.59,3.93,16.99,WB 2022,0,1
+310,Belize,BLZ,Belize,7.01,2022,3.82,4.44,1.46,7.01,WB 2022,0,1
+311,Costa Rica,CRI,Costa Rica,21.61,2020,17.54,10.08,5.76,21.61,WB 2020,0,1
+312,El Salvador,SLV,El Salvador,8.43,2020,4.97,4.55,2.39,8.43,WB 2020,0,1
+313,Guatemala,GTM,Guatemala,5.69,2022,0.01,2.26,1.82,5.69,WB 2022,0,1
+314,Honduras,HND,Honduras,9.63,2019,3.41,2.48,1.21,9.63,WB 2019,0,1
+315,Nicaragua,NIC,Nicaragua,,,10.96,9.25,6.62,10.96,Barro-Lee 2010,0,1
+316,Panama,PAN,Panama,16.21,2022,17.02,8.02,4.85,16.21,WB 2022,0,1
+321,Antigua and Barbuda,ATG,Antigua and Barbuda,11.89,2021,,,,11.89,WB 2021,0,0
+323,Bahamas,BHS,Bahamas,16.91,2022,,,,16.91,WB 2022,0,0
+324,Barbados,BRB,Barbados,1.06,2000,1.38,2.43,2.13,1.06,WB 2000,0,0
+327,Cuba,CUB,Cuba,15.33,2019,9.23,5.43,3.46,15.33,WB 2019,1,0
+328,Dominica,DMA,Dominica,6.84,2021,,,,6.84,WB 2021,0,0
+329,Dominican Republic,DOM,Dominican Republic,14.36,2019,3.83,1.98,0.96,14.36,WB 2019,0,0
+330,Grenada,GRD,Grenada,6.6,2021,,,,6.6,WB 2021,0,0
+332,Haiti,HTI,Haiti,4.53,2017,0.82,0.56,0.54,4.53,WB 2017,0,0
+333,Jamaica,JAM,Jamaica,10.95,2022,9.95,2.2,1.27,10.95,WB 2022,0,0
+338,St. Kitts--Nevis,KNA,St. Kitts--Nevis,,,,,,,,0,0
+339,St. Lucia,LCA,St. Lucia,11.06,2020,,,,11.06,WB 2020,0,0
+340,St. Vincent and the Grenadines,VCT,St. Vincent and the Grenadines,,,,,,,,0,0
+341,Trinidad and Tobago,TTO,Trinidad and Tobago,10.14,2022,7.57,2.74,2.31,10.14,WB 2022,0,0
+343,"West Indies, not specified",,"West Indies, not specified",,,,,,,,0,0
+360,Argentina,ARG,Argentina,10.86,2022,3.38,6.59,3.68,10.86,WB 2022,0,0
+361,Bolivia,BOL,Bolivia,16.89,2022,12.44,6.14,3.84,16.89,WB 2022,0,0
+362,Brazil,BRA,Brazil,16.54,2018,8.01,4.28,3.69,16.54,WB 2018,0,0
+363,Chile,CHL,Chile,20.28,2022,8.22,7.13,3.17,20.28,WB 2022,0,0
+364,Columbia,COL,Columbia,16.2,2022,17.85,7.3,3.56,16.2,WB 2022,0,0
+365,Ecuador,ECU,Ecuador,12.4,2021,6.87,7.77,4.66,12.4,WB 2021,0,0
+368,Guyana,GUY,Guyana,4.47,2019,0.2,0.91,1.14,4.47,WB 2019,0,0
+369,Paraguay,PRY,Paraguay,14.19,2020,6.71,4.43,2.5,14.19,WB 2020,0,0
+370,Peru,PER,Peru,,,16.27,12.41,8.23,16.27,Barro-Lee 2010,0,0
+372,Uruguay,URY,Uruguay,11.84,2019,5.03,5.29,3.26,11.84,WB 2019,0,0
+373,Venezuela,VEN,Venezuela,22.26,2017,4.24,3.21,3.39,22.26,WB 2017,0,0
+374,"South America, not specified",,"South America, not specified",,,,,,,,0,0
+399,"Americas, not specified",,"Americas, not specified",,,,,,,,0,0
+400,Algeria,DZA,Algeria,11.44,2019,6.77,2.12,0.56,11.44,WB 2019,0,0
+407,Cameroon,CMR,Cameroon,6.42,2018,1.64,0.36,0.19,6.42,WB 2018,0,0
+408,Cape Verde,CPV,Cape Verde,6.93,2015,,,,6.93,WB 2015,0,0
+412,Congo,COG,Congo,7.82,2015,1.11,1.47,1.09,7.82,WB 2015,0,0
+414,Egypt,EGY,Egypt,17.77,2021,6.75,3.05,2.22,17.77,WB 2021,0,0
+416,Ethiopia,ETH,Ethiopia,3.79,2022,,,,3.79,WB 2022,1,0
+417,Eritrea,ERI,Eritrea,,,,,,,,1,0
+421,Ghana,GHA,Ghana,6.29,2022,2.09,1.66,0.71,6.29,WB 2022,0,0
+423,Guinea,GIN,Guinea,6.21,2018,,,,6.21,WB 2018,0,0
+425,Ivory Coast,CIV,Ivory Coast,4.98,2021,3.35,1.43,1.09,4.98,WB 2021,0,0
+427,Kenya,KEN,Kenya,5.48,2022,5.25,1.53,0.82,5.48,WB 2022,0,0
+429,Liberia,LBR,Liberia,5.06,2019,3.14,1.79,1.18,5.06,WB 2019,0,0
+430,Libya,LBY,Libya,,,11.26,1.88,1.09,11.26,Barro-Lee 2010,0,0
+436,Morocco,MAR,Morocco,,,6.27,2.97,0.39,6.27,Barro-Lee 2010,0,0
+440,Nigeria,NGA,Nigeria,3.48,2022,,,,3.48,WB 2022,0,0
+444,Senegal,SEN,Senegal,4.9,2022,1.98,0.93,0.62,4.9,WB 2022,0,0
+447,Sierra Leone,SLE,Sierra Leone,1.96,2019,0.94,0.43,0.23,1.96,WB 2019,0,0
+448,Somalia,SOM,Somalia,4.27,2022,,,,4.27,WB 2022,1,0
+449,South Africa,ZAF,South Africa,6.09,2022,0.46,0.48,0.18,6.09,WB 2022,0,0
+451,Sudan,SDN,Sudan,8.08,2022,1.84,0.47,0.49,8.08,WB 2022,1,0
+453,Tanzania,TZA,Tanzania,2.32,2022,0.53,0.47,0.28,2.32,WB 2022,0,0
+454,Togo,TGO,Togo,4.44,2022,1.75,1.19,0.82,4.44,WB 2022,0,0
+457,Uganda,UGA,Uganda,4.44,2021,1.92,0.34,0.19,4.44,WB 2021,0,0
+459,Zaire,COD,Zaire,7.41,2018,0.78,0.5,0.24,7.41,WB 2018,0,0
+460,Zambia,ZMB,Zambia,1.81,2018,1.0,0.24,0.25,1.81,WB 2018,0,0
+461,Zimbabwe,ZWE,Zimbabwe,0.91,2022,0.71,3.25,2.06,0.91,WB 2022,0,0
+462,"Africa, Not Specified",,"Africa, Not Specified",,,,,,,,0,0
+501,Australia,AUS,Australia,36.84,2022,25.18,16.0,13.5,36.84,WB 2022,0,0
+508,Fiji,FJI,Fiji,10.02,2021,8.82,4.07,2.34,10.02,WB 2021,0,0
+511,Marshall Islands,MHL,Marshall Islands,4.19,2021,,,,4.19,WB 2021,0,0
+512,Micronesia,FSM,Micronesia,6.97,2014,,,,6.97,WB 2014,0,0
+515,New Zealand,NZL,New Zealand,32.28,2020,18.33,19.22,12.91,32.28,WB 2020,0,0
+523,Tonga,TON,Tonga,5.46,2021,4.18,3.35,1.66,5.46,WB 2021,0,0
+527,Samoa,WSM,Samoa,16.48,2022,,,,16.48,WB 2022,0,0
+555,Elsewhere,,Elsewhere,,,,,,,,0,0

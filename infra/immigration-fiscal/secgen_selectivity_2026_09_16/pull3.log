@@ -1,0 +1,106 @@
+skip /Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/cps_asec_2564_2019.csv
+  2020 2564 25-29: 9079 recs
+  2020 2564 30-34: 10391 recs
+  2020 2564 35-39: 11221 recs
+  2020 2564 40-44: 10330 recs
+  2020 2564 45-49: 9929 recs
+  2020 2564 50-54: 9753 recs
+  2020 2564 55-59: 9885 recs
+  2020 2564 60-64: 9642 recs
+WROTE /Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/cps_asec_2564_2020.csv rows=80230
+  2021 2564 25-29: 9643 recs
+  2021 2564 30-34: 11050 recs
+  2021 2564 35-39: 11656 recs
+  2021 2564 40-44: 11155 recs
+  2021 2564 45-49: 10042 recs
+  2021 2564 50-54: 10040 recs
+  2021 2564 55-59: 9742 recs
+  2021 2564 60-64: 9771 recs
+WROTE /Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/cps_asec_2564_2021.csv rows=83099
+  2022 2564 25-29: 8774 recs
+  2022 2564 30-34: 10246 recs
+  2022 2564 35-39: 10704 recs
+  2022 2564 40-44: 10591 recs
+  2022 2564 45-49: 9359 recs
+  2022 2564 50-54: 9255 recs
+  2022 2564 55-59: 9009 recs
+  2022 2564 60-64: 9069 recs
+WROTE /Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/cps_asec_2564_2022.csv rows=77007
+  2023 2564 25-29: 8282 recs
+  2023 2564 30-34: 9758 recs
+  2023 2564 35-39: 10171 recs
+  2023 2564 40-44: 10076 recs
+  2023 2564 45-49: 8989 recs
+  2023 2564 50-54: 8988 recs
+  2023 2564 55-59: 8413 recs
+  2023 2564 60-64: 8646 recs
+WROTE /Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/cps_asec_2564_2023.csv rows=73323
+  2024 2564 25-29: 8186 recs
+  2024 2564 30-34: 9714 recs
+  2024 2564 35-39: 10211 recs
+  2024 2564 40-44: 9897 recs
+  2024 2564 45-49: 9149 recs
+  2024 2564 50-54: 8697 recs
+  2024 2564 55-59: 8147 recs
+  2024 2564 60-64: 8484 recs
+WROTE /Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/cps_asec_2564_2024.csv rows=72485
+  2019 allages 0-9: 24794 recs
+  2019 allages 10-19: 27108 recs
+  2019 allages 20-29: 20829 recs
+  2019 allages 30-39: 25056 recs
+  2019 allages 40-49: 23614 recs
+  2019 allages 50-59: 21867 recs
+  2019 allages 60-69: 19389 recs
+  2019 allages 70-79: 11655 recs
+  2019 allages 80-85: 5789 recs
+WROTE /Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/cps_asec_allages_2019.csv rows=180101
+  2020 allages 0-9: 21051 recs
+  2020 allages 10-19: 23188 recs
+  2020 allages 20-29: 17424 recs
+  2020 allages 30-39: 21612 recs
+  2020 allages 40-49: 20259 recs
+  2020 allages 50-59: 19638 recs
+  2020 allages 60-69: 17932 recs
+  2020 allages 70-79: 11309 recs
+  2020 allages 80-85: 5546 recs
+WROTE /Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/cps_asec_allages_2020.csv rows=157959
+  2021 allages 0-9: 21979 recs
+  2021 allages 10-19: 23885 recs
+  2021 allages 20-29: 18324 recs
+  2021 allages 30-39: 22706 recs
+  2021 allages 40-49: 21197 recs
+  2021 allages 50-59: 19782 recs
+  2021 allages 60-69: 18168 recs
+  2021 allages 70-79: 11805 recs
+  2021 allages 80-85: 5697 recs
+WROTE /Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/cps_asec_allages_2021.csv rows=163543
+  2022 allages 0-9: 20141 recs
+  2022 allages 10-19: 22255 recs
+  2022 allages 20-29: 16944 recs
+  2022 allages 30-39: 20950 recs
+  2022 allages 40-49: 19950 recs
+  2022 allages 50-59: 18264 recs
+  2022 allages 60-69: 17218 recs
+  2022 allages 70-79: 11555 recs
+  2022 allages 80-85: 5455 recs
+WROTE /Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/cps_asec_allages_2022.csv rows=152732
+  2023 allages 0-9: 18674 recs
+  2023 allages 10-19: 21136 recs
+  2023 allages 20-29: 16083 recs
+  2023 allages 30-39: 19929 recs
+  2023 allages 40-49: 19065 recs
+  2023 allages 50-59: 17401 recs
+  2023 allages 60-69: 16665 recs
+  2023 allages 70-79: 11612 recs
+  2023 allages 80-85: 5568 recs
+WROTE /Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/cps_asec_allages_2023.csv rows=146133
+  2024 allages 0-9: 18013 recs
+  2024 allages 10-19: 20517 recs
+  2024 allages 20-29: 16094 recs
+  2024 allages 30-39: 19925 recs
+  2024 allages 40-49: 19046 recs
+  2024 allages 50-59: 16844 recs
+  2024 allages 60-69: 16515 recs
+  2024 allages 70-79: 11725 recs
+  2024 allages 80-85: 5586 recs
+WROTE /Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/cps_asec_allages_2024.csv rows=144265

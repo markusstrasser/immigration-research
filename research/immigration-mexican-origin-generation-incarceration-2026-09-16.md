@@ -182,6 +182,43 @@ Operator ask: can the thread https://x.com/tomaspueyo/status/2099900501680701530
 
 **Repo consequence.** The registry pull folder now has Danish country-of-origin rates by 94 offence types 2008–2024 (`denmark/dk_origin_rates.csv`), German PKS-by-nationality with and without immigration offences (`germany/de_nationality_rates.csv`), the Brå B6 standardised and unstandardised columns, the SSB Oslo/national charge tables, Spanish prison-by-nationality, ISTAT offender rates by citizenship and the Eurostat series, all re-pullable. These supersede the thread as the citation for any European origin comparison.
 
+## 11. Why low-skill origins diverge in the second generation: a measured test and the mechanism evidence
+
+Operator ask: explain claim 74 (§5) or research it. Two lanes: a CPS build (`infra/immigration-fiscal/secgen_selectivity_2026_09_16/`) and a literature memo ([second-generation divergence mechanisms](immigration-secgen-origin-divergence-mechanisms-2026-09-16.md)).
+
+**The measured test.** Census CPS ASEC microdata API, 2019–2024 pooled, US-born adults 25–44 with a foreign-born parent, parental origin = father's birth country (mother's if father US-born), 29 origins with ≥150 respondents. Verified against Census generation tables within 0.74% (all ages), 0.64% (18–64) and 0.58% (Mexican second generation). Parent spot check: 2023 single-year, father-Mexico-born cell gives 23.3% BA+ against the pooled 22.0%.
+
+| Parental origin | 2nd-gen BA+ % | 2nd-gen <HS % | 1st-gen BA % | Origin-country BA % | Selectivity (1st-gen − origin) |
+|---|---|---|---|---|---|
+| India | 84.9 | 1.0 | 87.4 | 12.1 | +75 |
+| China | 78.4 | 3.2 | 64.6 | 7.7 | +57 |
+| Vietnam | 63.1 | 2.2 | 31.7 | 11.5 | +20 |
+| Philippines | 55.4 | 1.1 | 57.5 | 18.1 | +39 |
+| Jamaica | 50.6 | 4.0 | 35.2 | 11.0 | +24 |
+| Cuba | 48.2 | 3.5 | 32.2 | 15.3 | +17 |
+| Haiti | 44.8 | 2.4 | 24.8 | 4.5 | +20 |
+| Cambodia | 39.0 | 7.1 | 18.1 | 4.6 | +14 |
+| Dominican Rep. | 37.0 | 5.7 | 23.3 | 14.4 | +9 |
+| Laos | 34.3 | 4.9 | 17.7 | 5.2 | +13 |
+| El Salvador | 30.9 | 5.6 | 10.5 | 8.4 | +2 |
+| Guatemala | 28.2 | 8.2 | 9.1 | 5.7 | +3 |
+| Mexico | 22.0 | 10.3 | 9.9 | 17.0 | **−7** |
+| 3rd+ gen NH white | 47.0 | 3.6 | | | |
+| 3rd+ gen Hispanic | 26.9 | 8.0 | | | |
+
+Weighted least squares of second-gen BA+ share on the selectivity index across the 29 origins: R² = 0.91, slope 0.81 (HC1 SE 0.05), robust across ten specifications including a cohort-matched one (pre-2000 adult arrivals vs Barro-Lee 1990 origin attainment). Mexico's residual is −1.7 points (−0.4 with dummies): Mexican-American second-generation attainment is exactly what the only large negatively selected stream predicts, not an anomaly. Refugee origins do not deviate as a class in the main spec (+5, p = 0.34); Vietnam alone over-performs its prediction by 17–26 points, Laos and Cambodia sit at or below it. The honest limit, stated by the lane: origin-country attainment on its own has no predictive power (R² = 0.008), so the index is only narrowly separable from parents' own education level (R² 0.91 vs 0.86). What the data establish is that second-generation attainment tracks first-generation attainment nearly one for one at the group level; whether "relative to origin" adds anything is not cleanly identified in 29 points. [SOURCE: `secgen_by_origin.csv`, `regressions.json`] [INFERENCE on the identification limit]
+
+**The mechanism evidence** (memo, ranked by identification × plausible share):
+
+1. **Parental unauthorized status** (Bean et al. 2011, IIMMLA, IRCA-eligibility instrument): 1.24 years of child schooling (2SLS), 1.5 (OLS), 2.0 raw. Mexican and Central American by construction; near zero for refugee-origin and East Asian samples. The best-identified Mexican-specific factor, but "largest" is not established because nothing comparable exists for other origins.
+2. **Parental English** (Bleakley & Chin 2008, critical-period IV, N = 164,559): cuts child dropout by about 80% of its mean. A-grade identification, origin-blind, so it explains levels, not why Vietnamese children beat Mexican ones.
+3. **Measurement**: ethnic attrition is positively selected for Hispanics (+0.76 years) and negatively for Asians (−0.6), inflating the measured gap from both ends; but the only explicit correction ever computed is about 0.1 years, and the "third-generation stagnation" is partly a third-versus-fourth-plus pooling artefact. Do not cite it as "the stagnation is an artefact".
+4. **Selectivity relative to origin** at the individual level (Feliciano & Lanuza 2017): 0.3–0.5 child-years for a 40-percentile gap. Small once absolute parental education is held, consistent with the CPS result above.
+5. Age at arrival before 14 gives native-equal outcomes (Evans & Fitzgerald 2017), which is the 1.5-generation refugee story; phenotype effects for Mexican-Americans of about 1.5 years light-vs-dark (Murguía & Telles 1996, Texas strong, California about zero); Chetty et al. 2020 Hispanic child rank 43 vs white 45 at parent rank 25, no origin breakdown.
+6. **No identified estimate exists** for ethnic capital or co-ethnic institutions, or for refugee resettlement support on the second generation. Family structure runs the wrong way: second-generation Mexican-American women bear children later, not earlier. No paper decomposes the Asian–Latino second-generation gap on one dataset.
+
+**Reading.** The origin ranking is mostly parents' education, transmitted at about 0.8 points of BA share per point. Mexico sits on that line. The Mexican-specific residual mechanisms with evidence are parental legal status and, for the third generation, measurement. The Vietnamese over-performance is the one real anomaly in the table and has no identified explanation; ethnic-institution accounts of it are narrative. The highest-value next pull is Chetty et al.'s online mobility tables by parental country of birth, which no memo has used. [INFERENCE]
+
 ## Revisions
 
 - 2026-09-16 — Created. Concept: generational comparator for the Mexican-origin population; supersedes nothing, refines the confidence-ladder coding-bias entry.
@@ -190,3 +227,4 @@ Operator ask: can the thread https://x.com/tomaspueyo/status/2099900501680701530
 - 2026-09-16 — Added §9: EU vs US data regimes from an X discourse sample plus primary checks (Rockwool 2026 five-country decomposition; UK MoJ FOI appeal).
 - 2026-09-16 — Added §10: four-lane reproduction of the Pueyo European compilation; origin ordering reproduces, several headline magnitudes are construction artefacts.
 - 2026-09-16 — §8 corrected to the consistent BJS estimation basis (Prisoners in 2011 restatement of 2009). The Hispanic violent count is flat, per capita −22%; the earlier +36% was a coding-basis artefact. Withdrawn: "the violent stock did not fall for Hispanics". Lane: `hisp_violent_stock_2026_09_16/`.
+- 2026-09-16 — Added §11: CPS selectivity test (R² 0.91, Mexico on the line) and ranked mechanism evidence for second-generation origin divergence.
