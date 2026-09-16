@@ -1,0 +1,25 @@
+item,contrast,coef,se,n
+redist,Hisp G1,0.6297,0.0848,17313
+redist,Hisp G2,0.6231,0.0893,17313
+redist,Hisp G3+,0.5008,0.0848,17313
+helppoor_r,Hisp G1,0.4518,0.0532,17110
+helppoor_r,Hisp G2,0.301,0.0609,17110
+helppoor_r,Hisp G3+,0.3084,0.0517,17110
+welfare_toolittle,Hisp G1,0.05,0.02,13762
+welfare_toolittle,Hisp G2,0.0884,0.0254,13762
+welfare_toolittle,Hisp G3+,0.0717,0.0236,13762
+immig_reduce,Hisp G1,-0.272,0.0437,2903
+immig_reduce,Hisp G2,-0.1771,0.0618,2903
+immig_reduce,Hisp G3+,-0.0918,0.0504,2903
+pid_dem,Hisp G1,0.1393,0.0158,28593
+pid_dem,Hisp G2,0.1822,0.0203,28593
+pid_dem,Hisp G3+,0.1395,0.0187,28593
+pid_strong,Hisp G1,-0.0648,0.012,28593
+pid_strong,Hisp G2,-0.0628,0.0148,28593
+pid_strong,Hisp G3+,-0.0489,0.014,28593
+trust_yes,Hisp G1,-0.1113,0.0165,13150
+trust_yes,Hisp G2,-0.1173,0.0206,13150
+trust_yes,Hisp G3+,-0.1051,0.0203,13150
+immcrime_agree,Hisp G1,-0.1403,0.0264,5305
+immcrime_agree,Hisp G2,-0.0845,0.0361,5305
+immcrime_agree,Hisp G3+,-0.0212,0.038,5305
