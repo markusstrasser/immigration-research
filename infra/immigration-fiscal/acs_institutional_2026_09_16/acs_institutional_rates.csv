@@ -1,0 +1,127 @@
+year,block,group,nativity,institutional,population,pct,pct_adj_generic_hispanic
+2010,hispanic_origin,Not Hispanic,native,1030361,33294787,3.095,3.095
+2010,hispanic_origin,Not Hispanic,foreign_born,23217,3392232,0.684,0.684
+2010,hispanic_origin,Mexican,native,139246,3183775,4.374,4.434
+2010,hispanic_origin,Mexican,foreign_born,74868,3199209,2.34,2.34
+2010,hispanic_origin,Puerto Rican,native,42628,776592,5.489,5.55
+2010,hispanic_origin,Puerto Rican,foreign_born,1188,10839,10.96,10.96
+2010,hispanic_origin,Cuban,native,4255,145261,2.929,2.99
+2010,hispanic_origin,Cuban,foreign_born,2716,127220,2.135,2.135
+2010,hispanic_origin,Dominican,native,4276,116435,3.672,3.733
+2010,hispanic_origin,Dominican,foreign_born,2549,144783,1.761,1.761
+2010,hispanic_origin,Guatemalan,native,1151,50561,2.276,2.337
+2010,hispanic_origin,Guatemalan,foreign_born,4221,277343,1.522,1.522
+2010,hispanic_origin,Honduran,native,934,26349,3.545,3.605
+2010,hispanic_origin,Honduran,foreign_born,3999,169215,2.363,2.363
+2010,hispanic_origin,Salvadoran,native,2212,92958,2.38,2.44
+2010,hispanic_origin,Salvadoran,foreign_born,4360,312477,1.395,1.395
+2010,hispanic_origin,Colombian,native,606,54715,1.108,1.168
+2010,hispanic_origin,Colombian,foreign_born,1353,96185,1.407,1.407
+2010,hispanic_origin,All other Hispanic,native,9684,210624,4.598,4.598
+2010,hispanic_origin,All other Hispanic,foreign_born,2345,48113,4.874,4.874
+2010,nh_race,NH White,native,442800,25944263,1.707,1.707
+2010,nh_race,NH White,foreign_born,5105,984194,0.519,0.519
+2010,nh_race,NH Black,native,522471,5313367,9.833,9.833
+2010,nh_race,NH Black,foreign_born,8861,551149,1.608,1.608
+2010,nh_race,NH AIAN,native,16866,265403,6.355,6.355
+2010,nh_race,NH AIAN,foreign_born,66,1264,5.222,5.222
+2010,nh_race,NH Asian,native,6836,813164,0.841,0.841
+2010,nh_race,NH Asian,foreign_born,7308,1686542,0.433,0.433
+2010,total,All,native,1239499,38224045,3.243,3.243
+2010,total,All,foreign_born,123694,8139462,1.52,
+2019,hispanic_origin,Not Hispanic,native,899932,35000640,2.571,2.571
+2019,hispanic_origin,Not Hispanic,foreign_born,19582,3740654,0.523,0.523
+2019,hispanic_origin,Mexican,native,133898,4744001,2.822,3.106
+2019,hispanic_origin,Mexican,foreign_born,37670,2011181,1.873,1.873
+2019,hispanic_origin,Puerto Rican,native,32586,977566,3.333,3.617
+2019,hispanic_origin,Puerto Rican,foreign_born,1153,15951,7.228,7.228
+2019,hispanic_origin,Cuban,native,3869,206904,1.87,2.153
+2019,hispanic_origin,Cuban,foreign_born,2805,160137,1.752,1.752
+2019,hispanic_origin,Dominican,native,4667,175358,2.661,2.945
+2019,hispanic_origin,Dominican,foreign_born,2123,177135,1.199,1.199
+2019,hispanic_origin,Guatemalan,native,1693,93409,1.812,2.096
+2019,hispanic_origin,Guatemalan,foreign_born,3845,296626,1.296,1.296
+2019,hispanic_origin,Honduran,native,1426,57179,2.494,2.777
+2019,hispanic_origin,Honduran,foreign_born,4388,154929,2.832,2.832
+2019,hispanic_origin,Salvadoran,native,3169,180444,1.756,2.039
+2019,hispanic_origin,Salvadoran,foreign_born,5171,248743,2.079,2.079
+2019,hispanic_origin,Colombian,native,1132,93114,1.216,1.499
+2019,hispanic_origin,Colombian,foreign_born,576,108018,0.533,0.533
+2019,hispanic_origin,All other Hispanic,native,28686,347199,8.262,8.262
+2019,hispanic_origin,All other Hispanic,foreign_born,4480,68945,6.498,6.498
+2019,nh_race,NH White,native,386961,26124509,1.481,1.481
+2019,nh_race,NH White,foreign_born,4238,1013006,0.418,0.418
+2019,nh_race,NH Black,native,443018,5876917,7.538,7.538
+2019,nh_race,NH Black,foreign_born,8468,666439,1.271,1.271
+2019,nh_race,NH AIAN,native,16663,290481,5.736,5.736
+2019,nh_race,NH AIAN,foreign_born,75,2694,2.784,2.784
+2019,nh_race,NH Asian,native,5595,1230565,0.455,0.455
+2019,nh_race,NH Asian,foreign_born,4891,1862916,0.263,0.263
+2019,nh_asian_detail,Cambodian,native,300,33011,0.909,0.909
+2019,nh_asian_detail,Cambodian,foreign_born,72,16919,0.426,0.426
+2019,nh_asian_detail,Vietnamese,native,772,149489,0.516,0.516
+2019,nh_asian_detail,Vietnamese,foreign_born,491,123398,0.398,0.398
+2019,nh_asian_detail,Korean,native,720,108038,0.666,0.666
+2019,nh_asian_detail,Korean,foreign_born,91,129094,0.07,0.07
+2019,nh_asian_detail,Hmong,native,648,50160,1.292,1.292
+2019,nh_asian_detail,Hmong,foreign_born,261,20824,1.253,1.253
+2019,nh_asian_detail,"Chinese,",native,600,262798,0.228,0.228
+2019,nh_asian_detail,"Chinese,",foreign_born,669,437228,0.153,0.153
+2019,nh_asian_detail,Asian Indian,native,426,174725,0.244,0.244
+2019,nh_asian_detail,Asian Indian,foreign_born,603,654030,0.092,0.092
+2019,nh_asian_detail,Thai,native,36,13123,0.274,0.274
+2019,nh_asian_detail,Thai,foreign_born,457,15129,3.021,3.021
+2019,nh_asian_detail,Laotian,native,342,24292,1.408,1.408
+2019,nh_asian_detail,Laotian,foreign_born,168,6545,2.567,2.567
+2019,nh_asian_detail,Filipino,native,751,232609,0.323,0.323
+2019,nh_asian_detail,Filipino,foreign_born,583,185907,0.314,0.314
+2019,total,All,native,1115176,42238739,2.64,2.64
+2019,total,All,foreign_born,84152,7311082,1.151,
+2023,hispanic_origin,Not Hispanic,native,704234,34799330,2.024,2.024
+2023,hispanic_origin,Not Hispanic,foreign_born,16373,3728730,0.439,0.439
+2023,hispanic_origin,Mexican,native,95986,4998841,1.92,2.361
+2023,hispanic_origin,Mexican,foreign_born,19934,1767851,1.128,1.128
+2023,hispanic_origin,Puerto Rican,native,16948,924508,1.833,2.274
+2023,hispanic_origin,Puerto Rican,foreign_born,169,18909,0.894,0.894
+2023,hispanic_origin,Cuban,native,2947,209519,1.407,1.847
+2023,hispanic_origin,Cuban,foreign_born,1414,198900,0.711,0.711
+2023,hispanic_origin,Dominican,native,2924,204900,1.427,1.868
+2023,hispanic_origin,Dominican,foreign_born,1335,179011,0.746,0.746
+2023,hispanic_origin,Guatemalan,native,1406,139787,1.006,1.447
+2023,hispanic_origin,Guatemalan,foreign_born,3534,320109,1.104,1.104
+2023,hispanic_origin,Honduran,native,1206,72936,1.654,2.094
+2023,hispanic_origin,Honduran,foreign_born,3361,193075,1.741,1.741
+2023,hispanic_origin,Salvadoran,native,2003,225925,0.887,1.328
+2023,hispanic_origin,Salvadoran,foreign_born,1757,226745,0.775,0.775
+2023,hispanic_origin,Colombian,native,520,130143,0.4,0.84
+2023,hispanic_origin,Colombian,foreign_born,728,138178,0.527,0.527
+2023,hispanic_origin,All other Hispanic,native,42087,468401,8.985,8.985
+2023,hispanic_origin,All other Hispanic,foreign_born,15343,96187,15.951,15.951
+2023,nh_race,NH White,native,281780,25230610,1.117,1.117
+2023,nh_race,NH White,foreign_born,4293,913804,0.47,0.47
+2023,nh_race,NH Black,native,355822,5533132,6.431,6.431
+2023,nh_race,NH Black,foreign_born,6490,673007,0.964,0.964
+2023,nh_race,NH AIAN,native,8968,213858,4.193,4.193
+2023,nh_race,NH AIAN,foreign_born,121,1980,6.111,6.111
+2023,nh_race,NH Asian,native,4939,1340620,0.368,0.368
+2023,nh_race,NH Asian,foreign_born,3449,1838854,0.188,0.188
+2023,nh_asian_detail,Cambodian,native,333,24706,1.348,1.348
+2023,nh_asian_detail,Cambodian,foreign_born,0,12017,0.0,0.0
+2023,nh_asian_detail,Laotian,native,340,21308,1.596,1.596
+2023,nh_asian_detail,Laotian,foreign_born,0,4226,0.0,0.0
+2023,nh_asian_detail,Thai,native,154,13962,1.103,1.103
+2023,nh_asian_detail,Thai,foreign_born,0,12039,0.0,0.0
+2023,nh_asian_detail,Vietnamese,native,462,152884,0.302,0.302
+2023,nh_asian_detail,Vietnamese,foreign_born,853,123846,0.689,0.689
+2023,nh_asian_detail,Korean,native,153,104638,0.146,0.146
+2023,nh_asian_detail,Korean,foreign_born,151,107201,0.141,0.141
+2023,nh_asian_detail,Asian Indian,native,173,234357,0.074,0.074
+2023,nh_asian_detail,Asian Indian,foreign_born,375,646507,0.058,0.058
+2023,nh_asian_detail,Filipino,native,162,226869,0.071,0.071
+2023,nh_asian_detail,Filipino,foreign_born,289,185338,0.156,0.156
+2023,nh_asian_detail,Chinese,native,326,262066,0.124,0.124
+2023,nh_asian_detail,Chinese,foreign_born,187,400480,0.047,0.047
+2023,nh_asian_detail,Hmong,native,485,58079,0.835,0.835
+2023,nh_asian_detail,Hmong,foreign_born,113,11893,0.95,0.95
+2023,total,All,native,874408,42634022,2.051,2.051
+2023,total,All,foreign_born,65685,7308539,0.899,
