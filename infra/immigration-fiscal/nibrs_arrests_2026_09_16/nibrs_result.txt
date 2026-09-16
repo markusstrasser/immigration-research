@@ -1,0 +1,152 @@
+====================================================================================================
+FBI 2023 / 2024 ARRESTS BY OFFENCE x ETHNICITY -> CRIME-COST ROUTE B
+Model self-report: claude-opus-5[1m] (Opus 5, 1M context)
+====================================================================================================
+
+Loading peer model crime_cost_2026_09_16/crime_cost.py (unit costs, CPI, route_b) ...
+[peer model imported] PASS — 17 costed offence keys, route_b present
+[peer 2019 route B reproduces RESULT.md] PASS — 2019 diff $1,316 (RESULT.md +$1,316), ratio 2.58x (2.58x)
+[CIUS 2023 Table 43C parsed] PASS — 13 costed offences + TOTAL; murder Hispanic adult arrests 1,698
+[CIUS 2024 Table 43C parsed] PASS — TOTAL adult ethnicity-panel arrests 5,152,383
+[2023 ethnicity panel Hispanic + non-Hispanic = ethnicity total] PASS — ethnicity-panel adult arrests 5,064,955, Hispanic 1,105,409 (21.8%)
+[2024 ethnicity panel Hispanic + non-Hispanic = ethnicity total] PASS — ethnicity-panel adult arrests 5,152,383, Hispanic 1,140,056 (22.1%)
+[NC-EST2024 July 2020 single-year ages sum to the 999 total row] PASS — NH white alone 18+ 155,684,757, Hispanic 18+ 42,286,457 (68.9% of all ages)
+[NC-EST2024 July 2023 single-year ages sum to the 999 total row] PASS — NH white alone 18+ 155,327,952, Hispanic 18+ 45,826,303 (70.2% of all ages)
+[NC-EST2024 July 2024 single-year ages sum to the 999 total row] PASS — NH white alone 18+ 155,550,233, Hispanic 18+ 47,541,960 (70.8% of all ages)
+[peer globals restored after the year swap] PASS — crime_cost.T43C back to its 2019 values
+
+====================================================================================================
+1. REPORTING COVERAGE — the FBI ethnicity panel
+====================================================================================================
+  year    agencies    panel population    % of US population    eth panel / race panel
+  2019      10,831         229,735,355                 70.0%                     86.6%
+  2020      10,466         228,864,358                 69.0%                     85.9%
+  2023      12,815         291,365,847                 87.0%                     86.3%
+  2024      13,980         300,768,839                 88.4%                     85.5%
+
+UCR has been NIBRS-only since 2021.  The 2021 transition cost the programme the
+agencies that never converted (notably NYPD and LAPD for 2021), and coverage has
+been rebuilt since: the 2023 ethnicity panel covers MORE people than the 2019 one
+in both absolute and percentage terms. The share of the RACE panel that also reports
+ethnicity is essentially flat across the transition: 86.6% (2019), 86.3% (2023), 85.5% (2024).
+
+====================================================================================================
+2. ADULT (18+) ARRESTS BY OFFENCE x ETHNICITY, 2023 — FBI CIUS Table 43C
+====================================================================================================
+offence            race panel   race white    eth panel   Hispanic    NH white*  Hisp share
+murder                  9,100        3,713        7,830      1,698        1,497       21.7%
+sexual                 13,543        9,032       11,799      3,644        4,225       30.9%
+robbery                45,000       18,532       42,347     11,269        6,170       26.6%
+assault               270,568      152,736      244,564     65,113       72,944       26.6%
+burglary               93,294       60,432       82,999     17,849       35,914       21.5%
+larceny               515,404      323,648      449,906     84,535      197,984       18.8%
+mvt                    51,545       33,345       46,030     12,826       16,951       27.9%
+arson                   6,563        4,712        5,636      1,315        2,731       23.3%
+forgery                27,188       15,467       27,706      7,813        7,949       28.2%
+fraud                  64,657       40,925       55,894      9,557       25,821       17.1%
+embezzle                8,126        4,774        6,920      1,042        3,023       15.1%
+stolen_prop            59,908       35,755       52,301     11,754       19,461       22.5%
+vandalism             122,088       77,253      110,114     24,239       45,437       22.0%
+simple_assault        749,812      465,989      658,341    150,237      258,905       22.8%
+drug                  687,055      470,251      607,484    122,568      293,221       20.2%
+weapons               131,703       61,421      113,201     26,816       25,976       23.7%
+dui                   644,445      511,004      542,648    171,834      258,451       31.7%
+ALL OFFENCES        5,853,877    3,909,404    5,064,955  1,105,409    2,277,128       21.8%
+* NH white is CONSTRUCTED: the race panel is rescaled to the ethnicity panel's
+  coverage offence by offence and Hispanic arrests are subtracted from White
+  arrests.  [INFERENCE] — the FBI publishes no race x ethnicity cross-tab.
+
+====================================================================================================
+3. DENOMINATORS — Census vintage-2024 population estimates, July 1, adults 18+
+====================================================================================================
+NC-EST2024-ALLDATA-H (national, age/sex/race/Hispanic origin), columns NHWA_* and H_*.
+  July 1 2020: NH white alone 18+   155,684,757   Hispanic 18+    42,286,457
+  July 1 2023: NH white alone 18+   155,327,952   Hispanic 18+    45,826,303
+  July 1 2024: NH white alone 18+   155,550,233   Hispanic 18+    47,541,960
+  ACS 2023 1-year arm (B01001H / B01001I, same tables the 2019 lane used):
+             NH white alone 18+   157,221,841   Hispanic 18+    46,045,083
+  2019 (ACS, unchanged from the peer lane):
+             NH white alone 18+   160,282,147   Hispanic 18+    41,856,869
+
+====================================================================================================
+4. ROUTE B RECOMPUTED — cost per adult 18+ per year, 2024 dollars
+====================================================================================================
+arm                                              NH white   Hispanic   difference    ratio
+tangible+CJS  2019 ACS denom (peer lane, unchanged)        239        480         +241    2.01x
+tangible+CJS  2020 NC-EST2024 denom                   257        570         +313    2.22x
+tangible+CJS  2023 NC-EST2024 denom                   200        510         +311    2.56x
+tangible+CJS  2023 ACS 2023 denom (like-for-like vs 2019)        197        508         +311    2.58x
+tangible+CJS  2024 NC-EST2024 denom                   186        437         +251    2.35x
+
++ intangible  2019 ACS denom (peer lane, unchanged)        834      2,150       +1,316    2.58x
++ intangible  2020 NC-EST2024 denom                   960      2,710       +1,750    2.82x
++ intangible  2023 NC-EST2024 denom                   718      2,281       +1,563    3.18x
++ intangible  2023 ACS 2023 denom (like-for-like vs 2019)        710      2,271       +1,561    3.20x
++ intangible  2024 NC-EST2024 denom                   690      1,891       +1,201    2.74x
+
++ NCVS uplift 2019 ACS denom (peer lane, unchanged)      2,039      5,256       +3,217    2.58x
++ NCVS uplift 2020 NC-EST2024 denom                 2,348      6,627       +4,279    2.82x
++ NCVS uplift 2023 NC-EST2024 denom                 1,757      5,578       +3,822    3.18x
++ NCVS uplift 2023 ACS 2023 denom (like-for-like vs 2019)      1,736      5,552       +3,816    3.20x
++ NCVS uplift 2024 NC-EST2024 denom                 1,687      4,623       +2,936    2.74x
+
+CHANGE vs the 2019-based headline (+$1,316, 2.58x):
+  2023, NC-EST denominator :   +1,563  (+18.8% on the difference), ratio 3.18x (+0.60)
+  2023, ACS denominator    :   +1,561  (+18.6%), ratio 3.20x (+0.62)
+  2024, NC-EST denominator :   +1,201  (-8.7%), ratio 2.74x (+0.16)
+
+Against the extended fiscal gap of $-8,286 per adult per year:
+  2019 ACS denom (peer lane, unchanged)         15.9%
+  2020 NC-EST2024 denom                         21.1%
+  2023 NC-EST2024 denom                         18.9%
+  2023 ACS 2023 denom (like-for-like vs 2019)   18.8%
+  2024 NC-EST2024 denom                         14.5%
+
+====================================================================================================
+5. OFFENCE COMPOSITION OF THE 2023 DIFFERENCE
+====================================================================================================
+offence          NHW arrests  Hisp arrests   NHW $bn   Hisp $bn  Hisp share $
+murder                 1,995         2,263      42.3       48.0         53.1%
+assault               95,458        85,211      37.3       33.3         47.2%
+sexual                 5,855         5,050      13.3       11.5         46.3%
+larceny              272,068       116,167       8.9        3.8         29.9%
+mvt                   22,237        16,826       4.5        3.4         43.1%
+robbery                7,729        14,116       1.4        2.6         64.6%
+burglary              47,655        23,684       2.8        1.4         33.2%
+vandalism             60,235        32,133       0.4        0.2         34.8%
+stolen_prop           26,326        15,900       0.3        0.2         37.7%
+fraud                 35,659        13,198       0.2        0.1         27.0%
+forgery               10,185        10,011       0.1        0.1         49.6%
+arson                  3,735         1,798       0.1        0.1         32.5%
+embezzle               4,182         1,441       0.0        0.0         25.6%
+
+====================================================================================================
+6. HISPANIC / NON-HISPANIC-WHITE ARREST RATIO PER ADULT 18+, 2019 vs 2023 vs 2024
+====================================================================================================
+class                       2019      2020      2023      2024   2019->2023
+violent index (4)          2.77x     2.87x     3.27x     2.95x       +0.50
+  murder                   2.92x     3.28x     3.85x     2.99x       +0.93
+  rape                     2.76x     2.82x     2.92x     2.91x       +0.16
+  robbery                  3.68x     3.92x     6.19x     6.07x       +2.51
+  aggravated assault       2.66x     2.76x     3.03x     2.69x       +0.37
+simple assault             1.49x     1.60x     1.97x     2.02x       +0.48
+property index (4)         1.17x     1.22x     1.56x     1.63x       +0.39
+  burglary                 1.57x     1.60x     1.68x     1.54x       +0.11
+  larceny                  1.01x     1.01x     1.45x     1.60x       +0.43
+  motor vehicle theft      2.08x     2.38x     2.56x     2.36x       +0.48
+  fraud                    1.07x     1.04x     1.25x     1.36x       +0.19
+drug abuse violations        n/a     1.57x     1.42x     1.32x          n/a
+
+Drug arrests carry no McCollister unit cost and are excluded from every dollar
+figure above; the ratio is reported because the brief asks for it.
+
+====================================================================================================
+7. VERDICT INPUTS
+====================================================================================================
+Route B total, 2019 :   +1,316 per adult 18+, ratio 2.58x
+Route B total, 2023 :   +1,563 per adult 18+, ratio 3.18x
+Route B total, 2024 :   +1,201 per adult 18+, ratio 2.74x
+Route A2 total (unchanged, the lane's preferred level): +1,421
+
+wrote /Users/alien/Projects/immigration-research/infra/immigration-fiscal/nibrs_arrests_2026_09_16/arrests_by_ethnicity_2023.csv
+wrote /Users/alien/Projects/immigration-research/infra/immigration-fiscal/nibrs_arrests_2026_09_16/nibrs_result.txt
