@@ -103,7 +103,45 @@ Three readings. (1) California's decarceration (realignment 2011, Prop 47 2014, 
 
 **Where this leaves the hypothesis.** Rejected in the "better cameras and algorithms → more detection → less crime" form: detection fell. Supported in the "technology removed the opportunity and profit from street crime types" form for the 1990s, with published causal evidence that the effect was concentrated among young Hispanic and Black men. Untested for 2010–2023, where the within-state pattern (flat ratio in California, convergence elsewhere) points to differential drug-epidemic exposure and to compositional change in where the second generation grows up. The decisive next test is offence composition: if the Mexican-American decline is disproportionately drug and property offences while the white decline is not, the opportunity story survives into the 2010s; BJS National Prisoner Statistics by Hispanic origin × offence can show it. [INFERENCE]
 
+## 8. Offence composition: what the decline was made of (BJS, non-Hispanic white vs Hispanic)
+
+BJS publishes sentenced state prisoners by most serious offence × race/Hispanic origin (Prisoners in 2010, App. Table 16b for 2009; Prisoners in 2022 Statistical Tables, Tables 16–17 for 2021). Categories: violent (murder, manslaughter, rape/sexual assault, robbery, assault, other), property (burglary, larceny, motor-vehicle theft, fraud, other), drug (possession vs trafficking/other), public order (weapons, DUI, other). No Mexican-origin or nativity split exists; jails (short stays, pretrial) have no national offence × ethnicity table. Transcription and per-capita script: `bjs_offense_by_ethnicity.py`, output in `bjs_offense_by_ethnicity_result.txt`.
+
+| State prisoners, 2009 → 2021 | NH white count | per 100k | Hispanic count | per 100k |
+|---|---|---|---|---|
+| Total | 532,000 → 321,700 (−40%) | −37% | 212,100 → 224,300 (+6%) | −18% |
+| Violent | −34% | −31% | +36% | +5% |
+| … murder | −34% | −31% | −1% | −24% |
+| … robbery | −55% | −53% | 0% | −23% |
+| … assault | −19% | −15% | +68% | +30% |
+| … sexual assault | −33% | −30% | +95% | +50% |
+| Property | −56% | −55% | −45% | −57% |
+| … motor-vehicle theft | −68% | −67% | −72% | −79% |
+| Drug | −35% | −32% | −45% | −58% |
+| Public order | −32% | −30% | +37% | +6% |
+| Violent share of prisoners | 50% → 55% | | 56% → 71% | |
+| Drug-possession share, 2021 | 4.9% | | 2.7% | |
+
+[SOURCE: BJS p10 App. Table 16b; BJS p22st Tables 16–17; resident populations Census Vintage 2009/2021, rounded]
+
+Male imprisonment rate per 100,000 (state + federal, sentence > 1 year), 2010 → 2022 [SOURCE: p10 App. Table 15; p22st Table 13]:
+
+| Age | NH white | Hispanic | ratio |
+|---|---|---|---|
+| 20–24 | 638 → 229 (−64%) | 1,908 → 663 (−65%) | 2.99× → 2.90× |
+| 25–29 | 980 → 514 (−48%) | 2,707 → 1,462 (−46%) | 2.76× → 2.84× |
+| 30–34 | 1,061 → 732 (−31%) | 2,808 → 1,774 (−37%) | 2.65× → 2.42× |
+| 35–39 | 995 → 813 (−18%) | 2,486 → 1,747 (−30%) | 2.50× → 2.15× |
+
+Readings.
+- **"Just using" is not what prisons hold.** Drug possession is 2.7% of Hispanic and 4.9% of white state prisoners; drug offences of any kind are 10% and 15%. Simple possession is a jail and probation phenomenon and after 2014 mostly a misdemeanour in the largest Hispanic states. [INFERENCE on the jail point]
+- **The decline for both groups is property and drug.** Motor-vehicle theft stock fell by two-thirds to three-quarters for both, burglary by half, drug by a third to a half. This is the offence mix the opportunity and policy stories predict (immobilizers, phones, drug-sentencing reform), and it is where the Hispanic decline exceeded the white decline per capita.
+- **The violent stock did not fall for Hispanics** (+36% in count, +5% per capita) while it fell a third for whites, and the Hispanic prison population is now 71% violent, the most violent-heavy of any group. Three non-behavioural contributors are known and none is quantified here: long sentences make violent stock lag flows by decades; the Hispanic population aged into prime imprisonment ages (median age 27 → 30); and state prison records increasingly code Hispanic origin separately instead of folding it into white, which moves people from the white to the Hispanic column (BJS itself flags a 2010 source change). The +95% in sexual-assault stock is not credible as behaviour. [INFERENCE]
+- **Age-specific male rates fell in parallel.** At 20–29 both groups fell 46–65% and the Hispanic/white ratio is unchanged at about 2.8–3.0×; at 30–39 the Hispanic rate fell faster. So the sentenced-prison series for all Hispanics (foreign-born included, all origins) shows less convergence than the ACS institutional series for US-born Mexican-origin men (§2, 2.56× → 1.72×). The difference is what the ACS adds (jails, federal, ICE) and who it isolates (US-born, Mexican). The jail component is exactly the short-stay drug and property churn that reforms emptied. [INFERENCE]
+- **For the technology hypothesis**: the offence mix of the decline (vehicle theft, burglary, drugs) fits the opportunity form. The violent residual, which is most of what remains, is where technology has had the least documented effect and where the Hispanic/white ratio is stable.
+
 ## Revisions
 
 - 2026-09-16 — Created. Concept: generational comparator for the Mexican-origin population; supersedes nothing, refines the confidence-ladder coding-bias entry.
 - 2026-09-16 — Added §7: state decomposition (California ratio flat 2.19→2.30×; convergence is Texas and other states) and the detection-technology hypothesis assessed against clearance rates and the phone/security/DNA literature.
+- 2026-09-16 — Added §8: BJS offence composition 2009→2021 and age-specific imprisonment rates 2010→2022, white vs Hispanic.

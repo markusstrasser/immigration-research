@@ -1,0 +1,32 @@
+white    total         n 532,000 -> 321,700 ( -39.5%)  per100k  266.1 ->  167.8 ( -36.9%)  share 100.0 -> 100.0
+white    violent       n 265,600 -> 176,400 ( -33.6%)  per100k  132.9 ->   92.0 ( -30.7%)  share  49.9 ->  54.8
+white    murder        n  55,700 ->  36,900 ( -33.8%)  per100k   27.9 ->   19.2 ( -30.9%)  share  10.5 ->  11.5
+white    sexual        n  94,900 ->  63,600 ( -33.0%)  per100k   47.5 ->   33.2 ( -30.1%)  share  17.8 ->  19.8
+white    robbery       n  45,300 ->  20,400 ( -55.0%)  per100k   22.7 ->   10.6 ( -53.0%)  share   8.5 ->   6.3
+white    assault       n  46,600 ->  38,000 ( -18.5%)  per100k   23.3 ->   19.8 ( -15.0%)  share   8.8 ->  11.8
+white    property      n 132,000 ->  57,600 ( -56.4%)  per100k   66.0 ->   30.0 ( -54.5%)  share  24.8 ->  17.9
+white    burglary      n  63,400 ->  29,200 ( -53.9%)  per100k   31.7 ->   15.2 ( -52.0%)  share  11.9 ->   9.1
+white    mvt           n   8,500 ->   2,700 ( -68.2%)  per100k    4.3 ->    1.4 ( -66.9%)  share   1.6 ->   0.8
+white    fraud         n  19,600 ->   5,800 ( -70.4%)  per100k    9.8 ->    3.0 ( -69.1%)  share   3.7 ->   1.8
+white    drug          n  73,900 ->  48,200 ( -34.8%)  per100k   37.0 ->   25.1 ( -32.0%)  share  13.9 ->  15.0
+white    public_order  n  54,400 ->  36,800 ( -32.4%)  per100k   27.2 ->   19.2 ( -29.5%)  share  10.2 ->  11.4
+hispanic total         n 212,100 -> 224,300 (  +5.8%)  per100k  438.2 ->  358.3 ( -18.2%)  share 100.0 -> 100.0
+hispanic violent       n 117,800 -> 160,100 ( +35.9%)  per100k  243.4 ->  255.8 (  +5.1%)  share  55.5 ->  71.4
+hispanic murder        n  32,300 ->  31,900 (  -1.2%)  per100k   66.7 ->   51.0 ( -23.6%)  share  15.2 ->  14.2
+hispanic sexual        n  22,000 ->  42,800 ( +94.5%)  per100k   45.5 ->   68.4 ( +50.4%)  share  10.4 ->  19.1
+hispanic robbery       n  26,600 ->  26,600 (  +0.0%)  per100k   55.0 ->   42.5 ( -22.7%)  share  12.5 ->  11.9
+hispanic assault       n  28,000 ->  47,100 ( +68.2%)  per100k   57.9 ->   75.2 ( +30.1%)  share  13.2 ->  21.0
+hispanic property      n  34,400 ->  19,000 ( -44.8%)  per100k   71.1 ->   30.4 ( -57.3%)  share  16.2 ->   8.5
+hispanic burglary      n  16,400 ->  11,700 ( -28.7%)  per100k   33.9 ->   18.7 ( -44.8%)  share   7.7 ->   5.2
+hispanic mvt           n   6,100 ->   1,700 ( -72.1%)  per100k   12.6 ->    2.7 ( -78.5%)  share   2.9 ->   0.8
+hispanic fraud         n   2,400 ->   1,200 ( -50.0%)  per100k    5.0 ->    1.9 ( -61.3%)  share   1.1 ->   0.5
+hispanic drug          n  41,400 ->  22,600 ( -45.4%)  per100k   85.5 ->   36.1 ( -57.8%)  share  19.5 ->  10.1
+hispanic public_order  n  16,000 ->  21,900 ( +36.9%)  per100k   33.1 ->   35.0 (  +5.8%)  share   7.5 ->   9.8
+
+Male imprisonment rate per 100k (state+federal), 2010 -> 2022, white / Hispanic / ratio
+18-19  white   149->  30 (  -80%)  Hispanic   563->   85 (  -85%)  ratio 3.78x -> 2.83x
+20-24  white   638-> 229 (  -64%)  Hispanic  1908->  663 (  -65%)  ratio 2.99x -> 2.90x
+25-29  white   980-> 514 (  -48%)  Hispanic  2707-> 1462 (  -46%)  ratio 2.76x -> 2.84x
+30-34  white  1061-> 732 (  -31%)  Hispanic  2808-> 1774 (  -37%)  ratio 2.65x -> 2.42x
+35-39  white   995-> 813 (  -18%)  Hispanic  2486-> 1747 (  -30%)  ratio 2.50x -> 2.15x
+all    white   459-> 337 (  -27%)  Hispanic  1258->  794 (  -37%)  ratio 2.74x -> 2.36x
