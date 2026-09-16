@@ -23,6 +23,7 @@ import pandas as pd
 
 PERSON = [
     "PH_SEQ", "PPPOS", "A_AGE", "PRPERTYP", "PRCITSHP", "PENATVTY",
+    "PEFNTVTY", "PEMNTVTY", "PEHSPNON", "PRDTRACE", "PRDTHSP",
     "PEINUSYR", "MARSUPWT", "SPM_ID", "SPM_HEAD", "SPM_NUMPER",
     "SPM_NUMADULTS", "SPM_WEIGHT", "FEDTAX_AC", "FEDTAX_BC", "ACTC_CRD",
     "CTC_CRD", "EIT_CRED", "STATETAX_A", "STATETAX_B", "FICA", "PEARNVAL",
@@ -148,12 +149,24 @@ def run(args):
     noncit = d.PRCITSHP.eq(5)
     totals["noncitizen_modeled_payroll"] = (d.FICA * noncit).groupby(d.SPM_ID).sum().to_numpy(dtype=float)
     totals["federal_refundable_credits"] = totals["federal_eitc"] + totals["federal_actc"]
+    # Generation groups (added 2026-09-16 for the Mexican-origin-by-generation memo): parents' birthplace
+    # codes 57/60/66/69/73/78 are the US and its territories; "third-plus" pools every native-born
+    # person with two US-born parents; Mexican third-plus is self-identified (PRDTHSP 1).
+    native = d.PRCITSHP.isin([1, 2, 3])
+    us_area = [57, 60, 66, 69, 73, 78]
+    parents_us = d.PEFNTVTY.isin(us_area) & d.PEMNTVTY.isin(us_area)
+    parent_mexico = d.PEFNTVTY.eq(303) | d.PEMNTVTY.eq(303)
     group = {
-        "all_native": d.PRCITSHP.isin([1, 2, 3]).to_numpy(),
+        "all_native": native.to_numpy(),
         "mexico_born": (d.PRCITSHP.isin([4, 5]) & d.PENATVTY.eq(303)).to_numpy(),
         "all_foreign_born": d.PRCITSHP.isin([4, 5]).to_numpy(),
         "noncitizens": noncit.to_numpy(),
         "foreign_born_entry_2022_2024": (d.PRCITSHP.isin([4, 5]) & d.PEINUSYR.eq(28)).to_numpy(),
+        "all_second_gen": (native & ~parents_us).to_numpy(),
+        "all_third_plus": (native & parents_us).to_numpy(),
+        "mexican_second_gen": (native & parent_mexico).to_numpy(),
+        "mexican_third_plus_selfid": (native & parents_us & d.PRDTHSP.eq(1)).to_numpy(),
+        "third_plus_nh_white": (native & parents_us & d.PEHSPNON.eq(2) & d.PRDTRACE.eq(1)).to_numpy(),
     }
     base = (d.A_AGE.between(25, 64) & d.PRPERTYP.eq(2)).to_numpy()
     health = {}

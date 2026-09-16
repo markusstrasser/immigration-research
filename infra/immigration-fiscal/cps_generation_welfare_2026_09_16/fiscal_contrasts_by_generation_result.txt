@@ -1,0 +1,120 @@
+
+== allocation=equal_all_members weighting=person; annual $ per adult 25-64 (SDR se) ==
+metric                                    all_native     third_plus_nh_white          all_third_plus          all_second_gen      mexican_second_gen  mexican_third_plus_sel             mexico_born
+payroll                                   3,593 (25)              3,816 (30)              3,569 (26)              3,760 (52)              2,712 (54)              3,052 (66)              2,147 (41)
+federal_after_refundable                 7,603 (139)             8,463 (180)             7,574 (150)             7,808 (253)             3,754 (191)             5,119 (363)             2,134 (160)
+state_after_credits                       1,914 (30)              2,105 (39)              1,889 (31)              2,085 (66)                953 (50)                977 (52)                593 (37)
+modeled_tax_total                       13,110 (184)            14,383 (238)            13,032 (197)            13,653 (351)             7,419 (268)             9,149 (440)             4,874 (221)
+selected_cash_total                       2,451 (38)              2,453 (48)              2,541 (41)              1,823 (73)             1,460 (102)             2,049 (134)                860 (63)
+selected_noncash_total                       188 (4)                 145 (4)                 191 (4)                 167 (7)                240 (14)                232 (16)                246 (13)
+cash_tax_balance                        10,659 (194)            11,930 (249)            10,492 (210)            11,830 (358)             5,959 (274)             7,100 (466)             4,014 (228)
+cash_noncash_tax_balance                10,472 (195)            11,785 (250)            10,301 (211)            11,663 (361)             5,719 (278)             6,868 (468)             3,768 (230)
+-- contrasts (group minus third_plus_nh_white; group minus all_native), cash_noncash_tax_balance and modeled_tax_total --
+  mexican_second_gen         modeled_tax_total            vs third_plus_n:    -6,965 (330)   vs all_native:    -5,692 (284)
+  mexican_second_gen         selected_cash_total          vs third_plus_n:      -994 (119)   vs all_native:      -991 (110)
+  mexican_second_gen         selected_noncash_total       vs third_plus_n:        95 (15)   vs all_native:        52 (14)
+  mexican_second_gen         cash_noncash_tax_balance     vs third_plus_n:    -6,066 (353)   vs all_native:    -4,753 (306)
+  mexican_third_plus_selfid  modeled_tax_total            vs third_plus_n:    -5,234 (438)   vs all_native:    -3,961 (415)
+  mexican_third_plus_selfid  selected_cash_total          vs third_plus_n:      -404 (146)   vs all_native:      -402 (136)
+  mexican_third_plus_selfid  selected_noncash_total       vs third_plus_n:        86 (17)   vs all_native:        44 (16)
+  mexican_third_plus_selfid  cash_noncash_tax_balance     vs third_plus_n:    -4,916 (456)   vs all_native:    -3,603 (434)
+  all_second_gen             modeled_tax_total            vs third_plus_n:      -730 (399)   vs all_native:       543 (329)
+  all_second_gen             selected_cash_total          vs third_plus_n:      -630 (86)   vs all_native:      -627 (72)
+  all_second_gen             selected_noncash_total       vs third_plus_n:        21 (8)   vs all_native:       -21 (7)
+  all_second_gen             cash_noncash_tax_balance     vs third_plus_n:      -122 (413)   vs all_native:     1,191 (344)
+  all_third_plus             modeled_tax_total            vs third_plus_n:    -1,351 (86)   vs all_native:       -78 (47)
+  all_third_plus             selected_cash_total          vs third_plus_n:        87 (23)   vs all_native:        90 (10)
+  all_third_plus             selected_noncash_total       vs third_plus_n:        45 (3)   vs all_native:         3 (1)
+  all_third_plus             cash_noncash_tax_balance     vs third_plus_n:    -1,484 (88)   vs all_native:      -171 (49)
+  mexico_born                modeled_tax_total            vs third_plus_n:    -9,509 (325)   vs all_native:    -8,236 (283)
+  mexico_born                selected_cash_total          vs third_plus_n:    -1,593 (84)   vs all_native:    -1,591 (77)
+  mexico_born                selected_noncash_total       vs third_plus_n:       101 (14)   vs all_native:        59 (14)
+  mexico_born                cash_noncash_tax_balance     vs third_plus_n:    -8,016 (338)   vs all_native:    -6,703 (294)
+
+== allocation=equal_all_members weighting=resource_unit_head; annual $ per adult 25-64 (SDR se) ==
+metric                                    all_native     third_plus_nh_white          all_third_plus          all_second_gen      mexican_second_gen  mexican_third_plus_sel             mexico_born
+payroll                                   3,637 (24)              3,846 (29)              3,610 (25)              3,827 (53)              2,761 (55)              3,109 (67)              2,149 (41)
+federal_after_refundable                 7,712 (140)             8,530 (180)             7,673 (151)             7,984 (261)             3,833 (200)             5,219 (367)             2,139 (163)
+state_after_credits                       1,942 (30)              2,124 (39)              1,915 (31)              2,133 (68)                976 (52)              1,006 (55)                592 (38)
+modeled_tax_total                       13,291 (185)            14,500 (236)            13,199 (197)            13,943 (360)             7,570 (279)             9,333 (449)             4,880 (225)
+selected_cash_total                       2,331 (33)              2,351 (42)              2,423 (36)              1,684 (68)              1,334 (92)             1,857 (124)                820 (60)
+selected_noncash_total                       187 (4)                 145 (4)                 190 (4)                 167 (7)                239 (13)                232 (17)                249 (14)
+cash_tax_balance                        10,960 (190)            12,149 (242)            10,776 (205)            12,260 (368)             6,236 (280)             7,476 (468)             4,060 (231)
+cash_noncash_tax_balance                10,772 (192)            12,004 (244)            10,586 (206)            12,092 (370)             5,997 (285)             7,244 (470)             3,811 (233)
+-- contrasts (group minus third_plus_nh_white; group minus all_native), cash_noncash_tax_balance and modeled_tax_total --
+  mexican_second_gen         modeled_tax_total            vs third_plus_n:    -6,930 (338)   vs all_native:    -5,721 (293)
+  mexican_second_gen         selected_cash_total          vs third_plus_n:    -1,017 (105)   vs all_native:      -997 (97)
+  mexican_second_gen         selected_noncash_total       vs third_plus_n:        94 (14)   vs all_native:        51 (14)
+  mexican_second_gen         cash_noncash_tax_balance     vs third_plus_n:    -6,007 (350)   vs all_native:    -4,775 (305)
+  mexican_third_plus_selfid  modeled_tax_total            vs third_plus_n:    -5,166 (444)   vs all_native:    -3,958 (423)
+  mexican_third_plus_selfid  selected_cash_total          vs third_plus_n:      -494 (134)   vs all_native:      -474 (125)
+  mexican_third_plus_selfid  selected_noncash_total       vs third_plus_n:        87 (17)   vs all_native:        45 (16)
+  mexican_third_plus_selfid  cash_noncash_tax_balance     vs third_plus_n:    -4,759 (455)   vs all_native:    -3,528 (435)
+  all_second_gen             modeled_tax_total            vs third_plus_n:      -556 (408)   vs all_native:       652 (337)
+  all_second_gen             selected_cash_total          vs third_plus_n:      -667 (80)   vs all_native:      -647 (67)
+  all_second_gen             selected_noncash_total       vs third_plus_n:        22 (8)   vs all_native:       -20 (7)
+  all_second_gen             cash_noncash_tax_balance     vs third_plus_n:        88 (420)   vs all_native:     1,320 (350)
+  all_third_plus             modeled_tax_total            vs third_plus_n:    -1,301 (87)   vs all_native:       -92 (48)
+  all_third_plus             selected_cash_total          vs third_plus_n:        72 (21)   vs all_native:        92 (10)
+  all_third_plus             selected_noncash_total       vs third_plus_n:        45 (3)   vs all_native:         3 (1)
+  all_third_plus             cash_noncash_tax_balance     vs third_plus_n:    -1,418 (88)   vs all_native:      -187 (50)
+  mexico_born                modeled_tax_total            vs third_plus_n:    -9,620 (324)   vs all_native:    -8,411 (286)
+  mexico_born                selected_cash_total          vs third_plus_n:    -1,531 (77)   vs all_native:    -1,511 (72)
+  mexico_born                selected_noncash_total       vs third_plus_n:       104 (14)   vs all_native:        62 (15)
+  mexico_born                cash_noncash_tax_balance     vs third_plus_n:    -8,193 (331)   vs all_native:    -6,962 (291)
+
+== allocation=equal_adults_18plus weighting=person; annual $ per adult 25-64 (SDR se) ==
+metric                                    all_native     third_plus_nh_white          all_third_plus          all_second_gen      mexican_second_gen  mexican_third_plus_sel             mexico_born
+payroll                                   4,413 (27)              4,701 (34)              4,384 (29)              4,616 (59)              3,451 (65)              3,794 (75)              2,681 (44)
+federal_after_refundable                 8,978 (160)            10,070 (207)             8,911 (174)             9,444 (308)             4,391 (274)             5,899 (409)             2,148 (169)
+state_after_credits                       2,321 (34)              2,566 (44)              2,285 (35)              2,567 (83)              1,156 (67)              1,171 (58)                690 (41)
+modeled_tax_total                       15,711 (211)            17,337 (272)            15,580 (228)            16,627 (425)             8,997 (367)            10,864 (497)             5,519 (235)
+selected_cash_total                       2,713 (41)              2,685 (51)              2,810 (45)              2,037 (80)             1,733 (116)             2,341 (152)              1,046 (74)
+selected_noncash_total                       328 (7)                 243 (6)                 331 (7)                309 (15)                480 (31)                430 (34)                451 (22)
+cash_tax_balance                        12,998 (221)            14,652 (284)            12,770 (241)            14,591 (438)             7,264 (375)             8,523 (523)             4,474 (246)
+cash_noncash_tax_balance                12,669 (224)            14,409 (286)            12,439 (243)            14,282 (442)             6,784 (382)             8,093 (528)             4,023 (251)
+-- contrasts (group minus third_plus_nh_white; group minus all_native), cash_noncash_tax_balance and modeled_tax_total --
+  mexican_second_gen         modeled_tax_total            vs third_plus_n:    -8,340 (437)   vs all_native:    -6,714 (390)
+  mexican_second_gen         selected_cash_total          vs third_plus_n:      -952 (132)   vs all_native:      -980 (122)
+  mexican_second_gen         selected_noncash_total       vs third_plus_n:       237 (33)   vs all_native:       152 (32)
+  mexican_second_gen         cash_noncash_tax_balance     vs third_plus_n:    -7,625 (462)   vs all_native:    -5,885 (413)
+  mexican_third_plus_selfid  modeled_tax_total            vs third_plus_n:    -6,473 (499)   vs all_native:    -4,847 (474)
+  mexican_third_plus_selfid  selected_cash_total          vs third_plus_n:      -343 (165)   vs all_native:      -372 (153)
+  mexican_third_plus_selfid  selected_noncash_total       vs third_plus_n:       187 (34)   vs all_native:       102 (32)
+  mexican_third_plus_selfid  cash_noncash_tax_balance     vs third_plus_n:    -6,316 (522)   vs all_native:    -4,577 (496)
+  all_second_gen             modeled_tax_total            vs third_plus_n:      -710 (487)   vs all_native:       916 (405)
+  all_second_gen             selected_cash_total          vs third_plus_n:      -648 (93)   vs all_native:      -677 (79)
+  all_second_gen             selected_noncash_total       vs third_plus_n:        66 (16)   vs all_native:       -20 (14)
+  all_second_gen             cash_noncash_tax_balance     vs third_plus_n:      -127 (510)   vs all_native:     1,612 (427)
+  all_third_plus             modeled_tax_total            vs third_plus_n:    -1,757 (92)   vs all_native:      -131 (58)
+  all_third_plus             selected_cash_total          vs third_plus_n:       125 (25)   vs all_native:        97 (11)
+  all_third_plus             selected_noncash_total       vs third_plus_n:        88 (6)   vs all_native:         3 (2)
+  all_third_plus             cash_noncash_tax_balance     vs third_plus_n:    -1,970 (96)   vs all_native:      -231 (61)
+  mexico_born                modeled_tax_total            vs third_plus_n:   -11,817 (367)   vs all_native:   -10,191 (317)
+  mexico_born                selected_cash_total          vs third_plus_n:    -1,639 (95)   vs all_native:    -1,668 (88)
+  mexico_born                selected_noncash_total       vs third_plus_n:       208 (23)   vs all_native:       123 (24)
+  mexico_born                cash_noncash_tax_balance     vs third_plus_n:   -10,386 (384)   vs all_native:    -8,647 (330)
+
+-- sample sizes (adults 25-64) --
+                       group     n  weighted_adults
+                  all_native 55652     1.346865e+08
+                 mexico_born  4318     9.446563e+06
+            all_foreign_born 15203     3.707870e+07
+                 noncitizens  8174     1.975946e+07
+foreign_born_entry_2022_2024  1624     4.146964e+06
+              all_second_gen  6871     1.686939e+07
+              all_third_plus 48781     1.178171e+08
+          mexican_second_gen  2452     5.614636e+06
+   mexican_third_plus_selfid  2477     5.526182e+06
+         third_plus_nh_white 36287     8.764785e+07
+
+-- own-person means: earnings, own payroll, Medicaid/means-tested coverage share, Medicare share --
+metric                     earnings  medicaid_or_means_tested_coverage  medicare_coverage  own_modeled_payroll
+group                                                                                                         
+all_native                   65,480                              0.137              0.040                4,676
+third_plus_nh_white          70,327                              0.112              0.038                4,989
+all_third_plus               64,969                              0.136              0.042                4,643
+all_second_gen               69,046                              0.148              0.027                4,908
+mexican_second_gen           49,782                              0.199              0.026                3,742
+mexican_third_plus_selfid    52,256                              0.166              0.031                3,939
+mexico_born                  36,759                              0.210              0.014                2,891

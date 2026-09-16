@@ -68,3 +68,7 @@ uv run --script infra/immigration-fiscal/build/measure_acs_school_exposure_2024.
 Outputs contain replicate vectors and input hashes. CPS uses all160 SDR replicates, including negative weights; ACS uses80. MEPS population anchors reproduce within one person; 10/26 donor-cell covariance matrices retain shared strata/PSUs. The independent review verified raw tax identities, unit conservation, covariance and combined first-order variances and found the two corrected insurance/lunch defects. The smallest insurance donor cell has27 people. Systematic uncertainty is treated separately in the [missingness analysis](immigration-measurement-uncertainty-2026-09-05.md), not hidden inside a sampling interval. [CALCULATION; review: `.scratch/clarity-next-20260905/fiscal/independent_review.md`]
 
 The calculations are descriptive and produced through a fallible LLM workflow; the source comparisons and independent arithmetic checks, rather than an asserted ideological position, support the claims. [FRAMING; [instrument note](../notes/llm-bias-caveat.md)]
+
+## Revisions
+
+- **2026-09-16 — pointer, no change to the September 5 results.** `analyze_cps_fiscal_2025.py` now also emits generation groups (all second generation, all third-plus, Mexican second generation, self-identified Mexican third-plus, third-plus non-Hispanic white); the original five groups and their estimates are unchanged. Results and contrasts: [Mexican-origin by generation](immigration-mexican-origin-by-generation-2026-09-16.md) §5.
