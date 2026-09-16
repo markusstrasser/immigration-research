@@ -1,0 +1,111 @@
+Transfer under-reporting sensitivity of the origin-generation fiscal ledger
+CPS ASEC 2025 (income year 2024), SPM resource units, person weights,
+160-replicate SDR standard errors, adults 25-64, civilian household members.
+CPS source: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip
+
+[DATA] CPS ASEC 2025 public-use microdata.
+[SOURCE: https://www.nber.org/papers/w35680] Meyer, Mittag, Wu, Tatarka & Langetieg,
+        The Anatomy and Evolution of Survey Error, NBER w35680, August 2026.
+[SOURCE: https://www.nber.org/papers/w32860] Meyer, Mittag & Wu, Race, Ethnicity, and
+        Measurement Error, NBER w32860, August 2024.
+[SOURCE: https://www.nber.org/papers/w21399] Meyer, Mok & Sullivan, Household Surveys
+        in Crisis, NBER w21399, 2015 (JEP 29(4):199-226).
+[INFERENCE] every arm below is an accounting scenario, not a measurement.
+
+-- GATE A: reproduce the peer lane's extended ledger before touching anything --
+   extended balance gap, equal_all_members : -8,286 (se 443)   expected -8,286 (se 443)   deviation -0.23
+   taxes-minus-transfers gap, same          : -6,066 (se 353)   expected -6,066 (se 353)   deviation +0.17
+   [gate A] PASS (within $50 of -8,286)
+
+-- under-reporting ratios applied (reported survey dollars / administrative target) --
+ledger program      CPS field             base  noncash-ext   w21399   source of the base ratio
+social_security     SS_VAL               0.919        0.919    0.914   w35680 Table 4 col (2) OASDI, p.48: -8.1%
+ssi                 SSI_VAL              1.019        1.019    0.838   w35680 Table 4 col (5) SSI, p.48: +1.9%
+cash_assistance     PAW_VAL              0.500        0.500    0.500   w21399 Table 1 Panel A CPS AFDC/TANF, p.34: -0.500
+unemployment        UC_VAL               0.577        0.577    0.675   w35680 Table 4 col (6) UI, p.48: -42.3%
+veterans            VET_VAL              0.620        0.620    0.620   w35680 Table 4 col (7) VA Disability, p.48: -38.0%
+snap                SPM_SNAPSUB          0.531        0.531    0.583   w35680 Table 4 col (8) SNAP, p.48: -46.9%
+energy              SPM_ENGVAL           1.000        0.531    1.000   no linked-administrative estimate published
+wic                 SPM_WICVAL           1.000        0.659    1.000   no dollar estimate; months only (w21399 T1 Panel B)
+school_lunch        SPM_SCHLUNCH         1.000        0.497    1.000   no dollar estimate; months only (w21399 T1 Panel B)
+broadband           SPM_BBSUBVAL         1.000        0.531    1.000   program began 2021; no estimate published
+
+-- arm (b) false-negative allocation plan (eligible non-reporting units only) --
+   social_security    ratio 0.919  shortfall $   108.2B  mean unit benefit $  27,565  eligible non-reporting units   21.6M  p=0.1821
+   ssi                ratio 1.019  no false-negative assignment (survey overstates)
+   cash_assistance    ratio 0.500  shortfall $     7.5B  mean unit benefit $   4,852  eligible non-reporting units   20.7M  p=0.0743
+   unemployment       ratio 0.577  shortfall $    17.8B  mean unit benefit $   7,137  eligible non-reporting units   24.5M  p=0.1017
+   veterans           ratio 0.620  shortfall $    80.8B  mean unit benefit $  24,684  eligible non-reporting units   11.7M  p=0.2807
+   snap               ratio 0.531  shortfall $    39.2B  mean unit benefit $   3,145  eligible non-reporting units   47.5M  p=0.2624
+   energy             ratio 1.000  no false-negative assignment (survey overstates)
+   wic                ratio 1.000  no false-negative assignment (survey overstates)
+   school_lunch       ratio 1.000  no false-negative assignment (survey overstates)
+   broadband          ratio 1.000  no false-negative assignment (survey overstates)
+
+======================================================================================================================
+== TAXES MINUS SELECTED TRANSFERS: Mexican 2nd gen minus 3rd+ NH white, annual $ per adult 25-64 ==
+======================================================================================================================
+arm                                                  equal_all_members      move       equal_adults_18plus      move
+baseline_reported                                         -6,066 (353)         —              -7,625 (462)         —
+a_proportional_base                                       -5,973 (365)       +93              -7,630 (478)        -5
+a_proportional_noncash_extended                           -6,020 (366)       +46              -7,734 (479)      -109
+a_proportional_w21399_vintage                             -5,947 (365)      +119              -7,589 (477)       +36
+b_false_negative_mc                                       -5,797 (354)      +269              -7,385 (464)      +241
+                                            (Monte Carlo sd of the gap across 50 draws: equal_all_members 50  equal_adults_18plus 52)
+c_differential_receipt_rates                              -6,103 (367)       -37              -7,776 (480)      -151
+c_differential_dollar_ratios                              -6,076 (367)       -10              -7,725 (479)      -100
+a_bound_uniform_half_NOT_A_LITERATURE_VALUE               -5,167 (409)      +899              -6,911 (520)      +715
+
+======================================================================================================================
+== EXTENDED BALANCE: Mexican 2nd gen minus 3rd+ NH white, annual $ per adult 25-64 ==
+======================================================================================================================
+arm                                                  equal_all_members      move       equal_adults_18plus      move
+baseline_reported                                         -8,286 (443)         —             -10,633 (587)         —
+a_proportional_base                                       -8,193 (452)       +93             -10,638 (600)        -5
+a_proportional_noncash_extended                           -8,240 (453)       +46             -10,742 (604)      -109
+a_proportional_w21399_vintage                             -8,167 (452)      +119             -10,598 (599)       +36
+b_false_negative_mc                                       -8,017 (444)      +269             -10,393 (589)      +241
+                                            (Monte Carlo sd of the gap across 50 draws: equal_all_members 50  equal_adults_18plus 52)
+c_differential_receipt_rates                              -8,323 (453)       -37             -10,784 (601)      -151
+c_differential_dollar_ratios                              -8,297 (453)       -10             -10,733 (600)      -100
+a_bound_uniform_half_NOT_A_LITERATURE_VALUE               -7,387 (487)      +899              -9,919 (634)      +715
+
+-- group levels under the base proportional arm, equal_all_members --
+group                            transfers, reported   transfers, scaled    extended balance   vs reported
+third_plus_nh_white                            2,599               3,181              15,402          -582
+all_native                                     2,639               3,254              13,650          -616
+all_second_gen                                 1,990               2,478              15,171          -487
+mexican_second_gen                             1,700               2,189               7,209          -489
+mexican_third_plus_selfid                      2,281               2,825               9,161          -545
+mexico_born                                    1,106               1,381               4,187          -275
+
+-- arm (c) renormalised per-group ratios actually applied --
+   c_differential_receipt_rates
+      social_security   white=0.933  black=0.861  hispanic=0.854
+      cash_assistance   white=0.533  black=0.461  hispanic=0.474
+      unemployment      white=0.628  black=0.510  hispanic=0.484
+      snap              white=0.530  black=0.512  hispanic=0.553
+   c_differential_dollar_ratios
+      social_security   white=0.933  black=0.861  hispanic=0.854
+      cash_assistance   white=0.456  black=0.437  hispanic=0.716
+      unemployment      white=0.644  black=0.494  hispanic=0.465
+      snap              white=0.531  black=0.497  hispanic=0.569
+
+-- what is NOT corrected, and which way each omission cuts --
+   1. The tax side is untouched. CPS ASEC FEDTAX_AC, STATETAX_A and FICA are Census
+      MODEL output computed from reported income, not reported tax payments, so the
+      survey-error literature on reported receipt does not apply to them. EITC and
+      ACTC sit inside FEDTAX_AC and are likewise modeled, not reported.
+   2. Because the arms add transfer dollars without re-running the tax model, they
+      omit the tax that the added receipt would generate. UI is fully taxable and up
+      to 85% of Social Security is taxable. Adding those dollars back would raise
+      modeled tax more for the group receiving more of them, which is the white
+      reference group. Correcting this would push the gap further NEGATIVE, i.e. the
+      arms as run are biased toward the gap-narrowing direction.
+   3. Earnings under-reporting is not addressed. w35680 covers transfer and pension
+      receipt, not wage and salary income.
+   4. Medicaid and housing assistance carry no dollar value in this ledger at all,
+      so their (large) under-reporting cannot move it.
+   5. Sampling error only. The SDR standard errors cover CPS sampling. They do not
+      cover error in the published ratios, nor the transport of national ratios onto
+      individual resource units.
