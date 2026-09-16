@@ -1,0 +1,14 @@
+  retry 1 2020 25-34: [Errno 54] Connection reset by peer
+  retry 2 2020 25-34: [Errno 54] Connection reset by peer
+  retry 3 2020 25-34: The read operation timed out
+  retry 4 2020 25-34: [Errno 54] Connection reset by peer
+skip /Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/cps_asec_2564_2019.csv
+Traceback (most recent call last):
+  File "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/pull_cps.py", line 65, in <module>
+    pull("2564", VARS_A, 25, 64, 10)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/pull_cps.py", line 47, in pull
+    d = fetch(year, getvars, a, b)
+  File "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/secgen_selectivity_2026_09_16/pull_cps.py", line 36, in fetch
+    raise RuntimeError(f"failed {year} {agelo}-{agehi}")
+RuntimeError: failed 2020 25-34
