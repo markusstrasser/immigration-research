@@ -127,7 +127,9 @@ Per adult of working age the groups are within about 15% of each other, and the 
 
 ### 5.3 The full benefit side: means-tested versus contributory, and the benefit-to-tax ratio
 
-Operator question (2026-09-16, evening): do they take more from social benefits, and what is the total? Every benefit the ledger can see, per adult 25–64 per year, same allocation (`full_benefit_totals_result.txt`):
+Operator question (2026-09-16, evening): do they take more from social benefits, and what is the total? Two allocations matter. The first table below (retained, `full_benefit_totals_result.txt`) shares each SPM unit's taxes, transfers and children equally among *all* members, children included, which halves a family's per-adult figures and does so more for groups with more children; the operator caught that it understated the schooling line. The second table (`full_benefit_totals_adults_result.txt`) carries the unit's taxes, transfers and children on its adults, which is the per-adult view the question needs, and adds a need-weighted schooling scenario. Read the second as primary.
+
+**All-members allocation (diluted; retained for the record):**
 
 | $ per adult 25–64 per year | 3rd+ NH white | All natives | Mexican 2nd gen | Mexican 3rd+ | Mexico-born |
 |---|---|---|---|---|---|
@@ -149,9 +151,31 @@ Operator question (2026-09-16, evening): do they take more from social benefits,
 | **Benefits ÷ taxes, including schools** | **0.48** | **0.55** | **0.92** | **0.77** | **1.25** |
 | Net, taxes minus all benefits incl. schools | +7,511 | +5,949 | +641 | +2,117 | −1,308 |
 
-Three readings. (1) On means-tested programs the Mexican second generation does take more: $3,152 against $2,633 per working-age adult, a fifth more, and the excess is Medicaid ($250), refundable credits ($156), food and school meals ($95) and housing ($29); SSI and TANF are level. (2) On all public benefits it takes less during working age, because white natives collect $980 more per adult in Social Security and veterans' benefits, which are contribution- and service-linked; with children's schooling added the two groups are level at about $7,000. (3) The benefit-to-tax ratio is where the difference lives: 0.92 against 0.48 with schools, because the denominator is half. The Mexico-born adult is the only group whose working-age benefits exceed its modeled taxes, and only once schooling is counted at average cost.
+**Adults-only allocation (primary), adults 25–64, $ per adult per year:**
 
-Lifetime (adult years, survival-weighted, §5.1): benefits ÷ taxes 0.89 for white natives, 0.97 all natives, 1.42 Mexican second generation, 1.31 Mexican third-plus, 1.55 Mexico-born; adding the person's own K-12 (13 years, 90% public, $17,619) gives 1.18, 1.29, 1.93, 1.76 and 2.34. In dollars, white natives draw *more* public benefits over an adult lifetime ($636,000 against $583,000 for the Mexican second generation) because Social Security is earnings-linked and Medicare years are the same; the ratio differs because taxes are $712,000 against $409,000. [SOURCE: `full_benefit_totals_result.txt`, `lifecycle_ledger_result.txt`] [FRAMING-SENSITIVE: both sides partial. Missing on the tax side: employer payroll, sales, excise, property and corporate taxes, all of which scale with earnings or consumption and would raise every group's denominator. Missing on the benefit side: public goods, higher-education subsidies, institutional long-term care, Medicare Part D premiums subsidies. Ratios above 1 do not mean a group is a net cost in a complete accounting; the ratios are meaningful relative to each other.]
+| | 3rd+ NH white | All natives | Mexican 2nd gen | Mexican 3rd+ | Mexico-born |
+|---|---|---|---|---|---|
+| Means-tested cash (SSI, TANF/GA) | 245 | 308 | 261 | 327 | 108 |
+| Refundable credits (EITC, ACTC) | 200 | 265 | 525 | 358 | 755 |
+| Food, WIC, school meals, energy | 243 | 328 | 480 | 430 | 451 |
+| Housing subsidy | 53 | 127 | 120 | 196 | 112 |
+| Public medical (MEPS transport, insurance-aware) | 2,567 | 2,840 | 3,219 | 2,945 | 2,863 |
+| **Means-tested total** | **3,308** | **3,867** | **4,604** | **4,254** | **4,289** |
+| Social Security, UI, veterans | 2,439 | 2,405 | 1,472 | 2,015 | 937 |
+| Children 5–17 per adult | 0.25 | 0.26 | 0.32 | 0.28 | 0.33 |
+| K-12 at US average $17,619 per pupil | 4,452 | 4,562 | 5,639 | 5,011 | 5,886 |
+| K-12 need-weighted scenario | 4,452 | 4,790 | 7,049 | 6,014 | 8,830 |
+| **All benefits, average-cost K-12** | **10,200** | **10,834** | **11,716** | **11,280** | **11,113** |
+| **All benefits, need-weighted K-12** | **10,200** | **11,063** | **13,126** | **12,283** | **14,056** |
+| Gross modeled taxes | 17,537 | 15,975 | 9,522 | 11,222 | 6,274 |
+| Benefits ÷ taxes (average / need-weighted) | 0.58 / 0.58 | 0.68 / 0.69 | 1.23 / 1.38 | 1.01 / 1.09 | 1.77 / 2.24 |
+| Net, taxes minus benefits (average / need-weighted) | +7,337 / +7,337 | +5,141 / +4,913 | −2,194 / −3,604 | −58 / −1,061 | −4,839 / −7,782 |
+
+The need weights are a scenario, not a measurement: +25% on the Mexican second generation's children (low-income concentration; their children are third generation and English-dominant), +20% on the Mexican third-plus, +50% on the Mexico-born's children (English learners plus low income), +5–10% on the native aggregates. Cost-study English-learner weights run from 0.08 to 2.0 and most state formulas 0.1–0.5 (Jiménez-Castellanos & Topper 2012; Sugarman/MPI 2016), so the band is wide. Per-pupil current spending FY2024 is $17,619 nationally, $20,791 in California and $12,895 in Texas, the two states holding most Mexican-origin children, so the state-weighted average is near the national figure; a state-weighted version needs the children's state mix from the raw pull (SSD unmounted at the time of writing). [SOURCE: Census, *Public Education Finances: FY2024*, Table 8; https://www.migrationpolicy.org/sites/default/files/publications/US-Funding-FINAL.pdf; https://doi.org/10.3102/0034654312449872]
+
+Three readings, corrected. (1) On means-tested programs the Mexican second generation takes about 40% more per working-age adult: $4,604 against $3,308, the excess being Medicaid ($650, of which part is the transport assumption), refundable credits ($325), food and school meals ($237) and housing ($67); SSI and TANF are level. (2) On all public benefits it takes 15% more at average school cost and about 30% more with need weights; white natives' extra $967 in Social Security and veterans' benefits offsets part of the means-tested gap, and the schooling line, not welfare, is the largest single item on the Mexican side. (3) The tax side is still the larger term: white natives pay 1.84 times the modeled taxes. Net per working-age adult: white natives +$7,300, all natives +$4,900, the Mexican second generation −$2,200 to −$3,600, the Mexico-born −$4,800 to −$7,800. The all-members table above understated the Mexican groups' benefit side and should not be quoted on its own.
+
+Lifetime (adult years, survival-weighted, §5.1; computed under the all-members allocation, so the working-age terms are diluted the same way and the between-group gap is understated): benefits ÷ taxes 0.89 for white natives, 0.97 all natives, 1.42 Mexican second generation, 1.31 Mexican third-plus, 1.55 Mexico-born; adding the person's own K-12 (13 years, 90% public, $17,619) gives 1.18, 1.29, 1.93, 1.76 and 2.34. In dollars, white natives draw *more* public benefits over an adult lifetime ($636,000 against $583,000 for the Mexican second generation) because Social Security is earnings-linked and Medicare years are the same; the ratio differs because taxes are $712,000 against $409,000. [SOURCE: `full_benefit_totals_result.txt`, `lifecycle_ledger_result.txt`] [FRAMING-SENSITIVE: both sides partial. Missing on the tax side: employer payroll, sales, excise, property and corporate taxes, all of which scale with earnings or consumption and would raise every group's denominator. Missing on the benefit side: public goods, higher-education subsidies, institutional long-term care, Medicare Part D premiums subsidies. Ratios above 1 do not mean a group is a net cost in a complete accounting; the ratios are meaningful relative to each other.]
 
 ## 6. Crime by generation
 
@@ -224,6 +248,7 @@ What "cause more crime" would then mean. A raw contrast answers "do they offend 
 
 ## Revisions
 
+- **2026-09-16 (evening, correction).** §5.3 re-based on the adults-only allocation after the operator flagged the diluted children count and the average-cost schooling line. Claim change: the Mexican second generation's total benefits are 15–30% *above* white natives' (not level), means-tested 40% above; the tax ratio (1.84×) remains the larger term; net per working-age adult −$2,200 to −$3,600 against +$7,300.
 - **2026-09-16 (evening, later).** Added §5.3, the full benefit side by category with benefit-to-tax ratios. Claim added: means-tested benefits per working-age adult are a fifth higher for the Mexican second generation than for white natives, total benefits are level or lower, and the ratio gap (0.92 vs 0.48 with schools) is the tax denominator.
 - **2026-09-16 (evening).** Added §5.1 (age profile, synthetic-cohort lifetime, longevity swap) and §5.2 (public health spending by generation). Claim change: the annual −$6,000 gap is a lifetime gap of about −$250,000 per adult; longevity accounts for about 5% of it; health spending per adult is level across generations.
 - **2026-09-16 (later same day).** Added §5's annual partial ledger by generation (generator extended with parents'-birthplace groups and re-run), §8 on offence composition and the victim-report wedge, and §9 on what would settle the second-generation contrast. Claim change: "second and third generation not measured" on the fiscal side became "measured on the annual partial ledger: −$6,000 to −$7,600 per adult vs white natives, taxes not transfers".
