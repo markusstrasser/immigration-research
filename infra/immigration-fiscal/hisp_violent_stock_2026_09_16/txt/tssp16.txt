@@ -1,0 +1,414 @@
+U.S. Department of Justice
+Office of Justice Programs
+Bureau of Justice Statistics
+
+
+                                                                                                       November 2018, NCJ 252205
+
+
+Time Served in State Prison, 2016
+                                                                                                                            Bul l etin
+Danielle Kaeble, BJS Statistician
+
+
+
+M
+            ost violent ofenders (57%) released
+            from state prison in 2016 served less       FIGURE 1
+            than three years in prison before their     Median time served in state prison before initial
+                                                        release, by most serious ofense, 2016
+initial release. About 1 in 25 violent ofenders
+(3.6%) served 20 years or more before their             Most serious o˜ense
+initial release. Tese fndings are based on                        Murder
+prisoner records from the Bureau of Justice              Violent o˜enses,
+Statistics’ National Corrections Reporting                   non-murder
+Program (NCRP), which collects records on               Property o˜enses
+prison admissions and releases.                           Drug tra°cking
+                                                          Drug possession
+All statistics in this report are based on state
+prisoners’ frst release afer serving time for a         Public order/other
+given ofense. Tey exclude persons who had                     All o˜enses
+been released afer serving time for an ofense,                               0   2    4      6      8     10     12    14
+returned to prison for violating community                                                Number of years
+supervision, and then were released again.              Note: Initial release does not refer to frst-time ofenders but to
+                                                        ofenders’ frst release from a given sentence (whether they are
+Te average time served by state prisoners               frst-time ofenders or not), as opposed to a re-release after a
+                                                        subsequent parole violation. Statistics are based on 44 states,
+released in 2016, from their date of initial            and data exclude state prisoners with sentences of one year
+admission to their date of initial release,             or less; those with missing values for most serious ofense or
+was 2.6 years. Te median amount of time                 calculated time served; those released by transfer, appeal, or
+                                                        detainer; and those who escaped. Data include 2,755 deaths in
+served (the middle value in the range of time           2016. See table 1 for detail and description of ofenses.
+served, with 50% of ofenders serving more               Source: Bureau of Justice Statistics, National Corrections
+                                                        Reporting Program, 2016.
+and 50% serving less) was 1.3 years (fgure 1).
+
+
+
+HIGHLIGHTS
+ The average time served by state prisoners             Ninety-six percent of violent ofenders released in
+  released in 2016, from initial admission to initial       2016, including 70% of those sentenced for murder
+  release, was 2.6 years, and the median time served        or non-negligent manslaughter, served less than
+  was 1.3 years.                                            20 years before initial release from state prison.
+ Persons released from state prison in 2016 served      About three-quarters of violent ofenders released
+  an average of 46% of their maximum sentence               from state prison in 2016 served at least one year
+  length before their initial release.                      before initial release.
+ State prisoners initially released in 2016 served      Roughly 1 in 5 state prisoners released in 2016
+  an average of 62% of their sentence if they were          after being sentenced for rape or sexual assault
+  serving time for rape or sexual assault, and 38% if       served 10 or more years before initial release.
+  serving time for drug possession.                      On average, state prisoners serving time for
+ Persons serving less than one year in state prison        property, drug, or public-order ofenses served
+  represented 40% of frst releases in 2016.                 less than two years before initial release.
+ Persons sentenced for murder or non-negligent          Most ofenders (59%) released from state prison in
+  manslaughter served an average of 15 years in             2016 after serving time for drug possession served
+  state prison before their initial release.                less than one year before their initial release.
+By ofense type, the median time served was 13.4 years                                             Eight percent of initial releases from state prison in
+for murder, 2.2 years for violent crimes excluding                                                2016 were persons sentenced to more than one year for
+murder, 17 months for drug trafcking, and 10 months                                               possession of drugs. On average, these ofenders spent
+for drug possession.                                                                              15 months in state prison, and their median time served
+                                                                                                  was 10 months.
+Tis report is based on NCRP data from 44 states.
+In 2016, these states were responsible for 97% of all
+persons released from state prisons nationwide (map 1).                                           TABLE 1
+                                                                                                  Time served in state prison before frst release, by most
+Annually administered by the Bureau of Justice Statistics,
+                                                                                                  serious ofense, 2016
+the NCRP obtains individual-level records from state
+                                                                                                                                Percent of        Time served in prisona
+departments of corrections on prisoners entering and
+                                                                                                  Most serious ofense           total releases    Medianb         Mean
+leaving prison custody or community supervision.
+                                                                                                     All ofenses                     100%           1.3 yrs.      2.6 yrs.
+                                                                                                  Violent                           28.7%           2.4 yrs.      4.7 yrs.
+Violent ofenders served 4.7 years in state prison                                                    Murderc                          1.9          13.4          15.0
+on average, compared to less than 2 years for                                                        Negligent manslaughter           0.7           4.0           5.2
+other ofenders                                                                                       Rape/sexual assault              5.0           4.2           6.2
+                                                                                                     Robbery                          7.4           3.2           4.7
+State prisoners released in 2016 afer serving time for a                                             Assaultd                       11.0            1.4           2.5
+violent ofense spent an average of 4.7 years in prison                                               Other violente                   2.6           1.6           3.1
+before their initial release. Violent ofenders made up                                            Property                          27.4%            13 mos.       21 mos.
+29% of all initial releases that year (table 1). Among                                               Burglary                       11.4             17            26
+non-violent ofenses, persons released from state                                                     Larceny-theft                    7.2            11            17
+prison in 2016 afer serving time for weapons ofenses                                                 Motor vehicle theft              1.3            12            17
+(24 months) served fve months longer on average                                                      Fraudf                           4.0            11            17
+                                                                                                     Other propertyg                  3.5            12            19
+than those released for other public-order ofenses
+                                                                                                  Drug                              24.4%            14 mos.       22 mos.
+(19 months). Persons sentenced for drug trafcking                                                    Possession                       7.6            10            15
+spent an average of 26 months in state prison before                                                 Trafcking                        9.3            17            26
+initial release, which was fve months longer than the                                                Other drugh                      7.4            14            23
+average time served for property ofenses (21 months).                                             Public order                      18.7%            13 mos.       20 mos.
+                                                                                                     Weapons                          5.5            16            24
+MAP 1                                                                                                Other public orderi            13.3             12            19
+                                                                                                  Other/unspecifed                    0.8%           13 mos.       27 mos.
+States included in analysis of time served, 2016
+                                                                                                    Number of releases             377,839            ~            ~
+                        WA                                                                        Note: Details may not sum to totals due to rounding. First release does
+                                   MT                                                NH ME        not refer to frst-time ofenders but to ofenders’ frst release from a given
+                                                   MN                                             sentence (whether they are frst-time ofenders or not), as opposed to a
+                                             SD              WI                     NY      MA    re-release after a subsequent parole violation. Statistics are based on 44
+                                   WY                               MI                       RI
+                                                       IA                      PA
+                                                                                                  states, and data exclude state prisoners with sentences of one year or
+                                             NE                                             CT    less; those with missing values for most serious ofense or calculated time
+                        NV    UT                                 IL IN OH                NJ
+                   CA                   CO                                   WV VA        DE      served; those released by transfer, appeal, or detainer; and those who
+                                              KS       MO               KY               MD
+                                                                                NC                escaped. Data include 2,755 deaths in 2016. Excluding deaths, the average
+                             AZ                   OK               TN                             time served for murder or non-negligent manslaughter would be 11.2 years.
+                                                        AR                    SC
+                                                                 MS AL GA                         ~Not applicable.
+                                             TX             LA                                    aExcludes time served in jail.
+                                                                                                  bThe statistical median represents the value at which 50% of the values
+                                                                               FL
+                                                                                                  are larger and 50% are smaller in a sequence of numbers.
+                                   HI                                                             cIncludes non-negligent manslaughter.
+                                                                                                  dIncludes 72.2% aggravated assault, 21.4% simple assault, and
+                                                                                                  6.4% assault on a public safety ofcer.
+                                                                                                  eIncludes kidnapping, blackmail, extortion, hit and run with injury, and
+Source: Bureau of Justice Statistics, National Corrections Reporting                              other unknown violent ofenses.
+Program, 2016.                                                                                    fIncludes forgery and embezzlement.
+                                                                                                  gIncludes arson, receiving and trafcking of stolen property, destruction
+                                                                                                  of property, trespassing, and other unknown property ofenses.
+                                                                                                  hIncludes forging prescriptions, possession of drug paraphernalia, and
+                                                                                                  other unspecifed ofenses.
+                                                                                                  iIncludes DUIs/DWIs; court ofenses; commercialized vice, morals, and
+                                                                                                  decency ofenses; liquor law violations; and other public-order ofenses.
+                                                                                                  Source: Bureau of Justice Statistics, National Corrections Reporting
+                                                                                                  Program, 2016.
+
+
+T I M E S E R V E D I N S TAT E P R I S O N , 2016 | N O V E M B E R 2018                                                                                                 2
+More than 7 in 10 violent ofenders released in 2016                              Less than 7% of persons released in 2016 afer serving
+served less than fve years in state prison                                       time for property, drug, or public-order ofenses served
+                                                                                 fve years or longer in state prison before their initial
+Persons serving less than one year in state prison                               release. Tree percent of those sentenced for drug
+represented 40% of frst releases in 2016 (table 2).                              possession served fve years or more. About four-ffhs
+Almost a ffh (18%) of persons served less than six                               (81%) of persons released in 2016 who served 10 years
+months. More than 7 in 10 of violent ofenders (72%)                              or longer before their initial release were in prison for a
+served less than fve years in state prison before their                          violent ofense (not shown in table). Ninety-nine percent
+initial release, and nearly 9 in 10 violent ofenders                             of ofenders served less than 20 years before initial
+(88%) served less than 10 years. About a quarter (24%)                           release, including 70% of those sentenced for murder or
+of ofenders released afer being sentenced for rape or                            non-negligent manslaughter.
+sexual assault served between 5 and 10 years before
+initial release; most (57%) served shorter terms than that.
+
+TABLE 2
+Percent of prisoners who served a given length of time before frst release, by most serious ofense, 2016
+                                                                                                                                               20 years
+Most serious ofense       <6 monthsa           <1 yearb        <2 years        <3 years        <5 years        <10 years       <20 years       or longer
+   All ofenses               18.1%              39.5%           64.5%           76.8%           87.4%            95.5%           98.8%           1.2%
+Violent                      10.8%              24.3%           44.3%           56.7%           71.8%            87.7%           96.4%           3.6%
+   Murderc                    2.4                3.8             7.7            11.8            20.0             39.6            69.6           30.4
+   Negligent manslaughter     6.6               13.2            26.9            39.0            60.2             87.1            99.1            0.9
+   Rape/sexual assault        5.8               12.8            27.0            39.1            57.2             81.3            96.0            4.0
+   Robbery                    6.9               15.7            33.7            48.0            68.0             89.4            98.2            1.8
+   Assault                   16.0               37.1            63.4            75.8            88.0             96.5            99.4            0.6
+   Other violent d           16.9               34.9            59.1            71.8            83.3             94.0            98.2            1.8
+Property                     20.7%              45.6%           72.9%           84.9%           94.3%            98.8%           99.8%           0.2%
+   Burglary                  15.8               35.9            63.4            78.3            91.5             98.1            99.7            0.3
+   Larceny-theft             24.7               54.1            80.8            90.3            96.6             99.4            99.8            0.2
+   Motor vehicle theft       21.6               51.4            80.7            91.2            97.3             99.4            99.8            0.2
+   Fraude                    23.6               51.8            79.8            90.1            96.7             99.5            99.9            0.1
+   Other propertyf           25.4               50.8            76.8            87.2            94.9             99.0            99.8            0.2
+Drug                         21.1%              45.0%           72.0%           84.4%           93.4%            98.8%           99.9%           0.1%
+   Possession                28.5               58.6            84.2            92.6            97.4             99.5            99.9            0.1
+   Trafcking                 15.3               35.3            63.5            79.0            91.1             98.4            99.8            0.2
+   Other drugg               20.7               43.3            70.1            82.6            92.3             98.6            99.9            0.1
+Public order                 21.6%              46.7%           74.0%           85.7%           94.3%            99.0%           99.9%           0.1%
+   Weapons                   17.1               38.5            66.6            81.6            93.1             98.6            99.9            0.1
+   Other public orderh       23.6               49.9            76.6            86.9            94.5             99.0            99.9            0.1
+Other/unspecifed             25.1%              45.9%           68.2%           78.6%           88.2%            96.7%           99.6%           0.4%
+Note: Categories overlap (e.g., <1 year includes <6 months). First release does not refer to frst-time ofenders but to ofenders’ frst release from a given
+sentence (whether they are frst-time ofenders or not), as opposed to a re-release after a subsequent parole violation. Statistics are based on 44 states, and
+data exclude state prisoners with sentences of one year or less; those with missing values for most serious ofense or calculated time served; those released
+by transfer, appeal, or detainer; and those who escaped. Data include 2,755 deaths in 2016.
+aDeaths accounted for 6.9% of murder “releases,” 1.8% of manslaughter “releases,” and 2.1% of rape/sexual assault “releases” in under 6 months in 2016.
+Deaths made up under 0.5% of all other ofense categories.
+bDeaths accounted for 7.9% of murder “releases,” 0.9% of manslaughter “releases,” and 2.0% of rape/sexual assault “releases” in under 1 year in 2016.
+Deaths made up under 0.4% of all other ofense categories.
+cIncludes non-negligent manslaughter.
+dIncludes kidnapping, blackmail, extortion, hit and run with injury, and other unknown violent ofenses.
+eIncludes forgery and embezzlement.
+fIncludes arson, receiving and trafcking of stolen property, destruction of property, trespassing, and other unknown property ofenses.
+gIncludes forging prescriptions, possession of drug paraphernalia, and other unspecifed ofenses.
+hIncludes DUIs/DWIs; court ofenses; commercialized vice, morals, and decency ofenses; liquor law violations; and other public-order ofenses.
+Source: Bureau of Justice Statistics, National Corrections Reporting Program, 2016.
+
+
+
+
+T I M E S E R V E D I N S TAT E P R I S O N , 2016 | N O V E M B E R 2018                                                                                   3
+Persons released after serving time for rape or
+                                                                   TABLE 3
+sexual assault (62%) served the highest percentage                 Average sentence length and percent of sentence served
+of their sentence                                                  before frst release, by most serious ofense, 2016
+Persons released from state prisons in 2016 served                                                Average sentence        Percent of
+                                                                   Most serious ofense            lengtha                 sentence served
+an average of 46% of their maximum sentence length                   All ofenses                       6.4 yrs.               45.5%
+before their frst release (table 3). Te average sentence           Violent                            10.2 yrs.               53.7%
+length for persons released for murder or non-negligent              Murderb                          40.6                    57.2
+manslaughter in 2016 was more than three times the                   Negligent manslaughter           10.1                    58.4
+average sentence length of other violent ofenses and                 Rape/sexual assault              12.2                    61.9
+more than fve times the average sentence length of any               Robbery                           9.0                    57.7
+non-violent ofenses. Among broader categories, the                   Assault                           5.6                    47.9
+percentage of maximum sentence that prisoners served                 Other violentc                    7.2                    47.0
+                                                                   Property                            4.8 yrs.               42.4%
+was highest for violent ofenses (54%) and lowest for
+                                                                     Burglary                          5.8                    43.1
+drug (41%) and other unspecifed (36%) ofenses. For                   Larceny-theft                     3.7                    43.7
+ofenders frst released from state prison in 2016, the                Motor vehicle theft               4.0                    41.5
+average sentence length for drug ofenses was 4.0 years               Fraudd                            4.4                    39.9
+for possession and 6.7 years for trafcking, and the                  Other propertye                   4.5                    40.5
+average time served was 15 months for possession and               Drug                                5.3 yrs.               40.6%
+26 months for trafcking.                                             Possession                        4.0                    37.5
+                                                                     Trafcking                         6.7                    40.9
+Persons released for the frst time afer being imprisoned             Other drugf                       4.9                    43.2
+for rape or sexual assault served the highest percentage           Public order                        4.2 yrs.               44.5%
+of their maximum sentence length (62%), while those                  Weapons                           4.6                    46.6
+released afer serving time for drug possession served                Other public orderg               4.0                    43.6
+an average of 38% of their sentence—lowest aside                   Other/unspecifed                    7.7 yrs.               35.5%
+from other/unspecifed ofenses. Ofenders sentenced                    Number of releases                375,739                   ~
+for murder or non-negligent manslaughter served an                 Note: First release does not refer to frst-time ofenders but to ofenders’
+                                                                   frst release from a given sentence (whether they are frst-time ofenders
+average of 57% of their maximum sentence length                    or not), as opposed to a re-release after a subsequent parole violation.
+before being released, and those imprisoned for                    Statistics are based on 44 states, and data exclude state prisoners with
+                                                                   sentences of one year or less; those with missing values for most serious
+negligent manslaughter or robbery served an average of             ofense or calculated time served; those released by transfer, appeal, or
+58% of their sentences.                                            detainer; and those who escaped. Data include 2,755 deaths in 2016.
+                                                                   ~Not applicable.
+                                                                   aAverage sentence length excludes time in jail and refects the total
+                                                                   maximum sentence that prisoners received. Sentences of more than
+                                                                   100 years, and life or death sentences, are set to 100 years. Average
+                                                                   percentage of sentence served is the percentage of the maximum sentence
+                                                                   served before frst release. In cases of death, percentage of sentence served
+                                                                   equals 100%. Including life sentences, death sentences, and deaths has
+                                                                   little efect on ofenses apart from murder. If these were excluded, the
+                                                                   average sentence for murder would be 20.2 years and the percentage of
+                                                                   time served for murder would be 64.6%.
+                                                                   bIncludes non-negligent manslaughter.
+                                                                   cIncludes kidnapping, blackmail, extortion, hit and run with injury, and
+                                                                   other unknown violent ofenses.
+                                                                   dIncludes forgery and embezzlement.
+                                                                   eIncludes arson, receiving and trafcking of stolen property, destruction of
+                                                                   property, trespassing, and other unknown property ofenses.
+                                                                   fIncludes forging prescriptions, possession of drug paraphernalia, and
+                                                                   other unspecifed ofenses.
+                                                                   gIncludes DUIs/DWIs; court ofenses; commercialized vice, morals, and
+                                                                   decency ofenses; liquor law violations; and other public-order ofenses.
+                                                                   Source: Bureau of Justice Statistics, National Corrections Reporting
+                                                                   Program, 2016.
+
+
+
+
+T I M E S E R V E D I N S TAT E P R I S O N , 2016 | N O V E M B E R 2018                                                                    4
+Persons sentenced for murder or rape/sexual assault                               resulting in death. Violent ofenders serving time in state
+made up about half (49%) of all deaths in state                                   prison made up 68% of the total deaths in 2016 among
+prisons in 2016                                                                   prisoners awaiting their frst release. Persons sentenced
+                                                                                  for murder or rape/sexual assault ofenses made up about
+In 2016, 2,755 prisoners died while awaiting their initial                        half (49%) of all deaths in state prisons in 2016 among
+release, and they were counted among “frst releases”                              those awaiting their frst release. Almost a tenth (9.4%) of
+in 2016 (table 4). Tis statistic is based on data from                            persons sentenced for murder whose time-served ended
+38 states where type of release was available for 2016                            in 2016 died while serving their sentence (not shown
+(map 2). Causes of death included natural causes,                                 in table).
+suicide, homicide, legally imposed execution, and injury
+
+TABLE 4                                                                           MAP 2
+Deaths among state prisoners awaiting their frst release,                         States with prisoner deaths included in current
+by most serious ofense, 2016                                                      analysis, 2016
+Most serious ofense                             Percent           Number
+   All ofenses                                    100%             2,755                                     WA
+                                                                                                                        MT                                                   ME
+Violent                                          68.3%             1,883                                                                MN
+   Murdera                                       25.0                689                                                 WY       SD              WI                    NY      MA
+                                                                                                                                                       MI                        RI
+   Negligent manslaughter                          1.4                39                                                          NE
+                                                                                                                                         IA                        PA           CT
+                                                                                                             NV                                        IN                    NJ
+   Rape/sexual assault                           24.0                660                                           UT        CO                                  WV VA        DE
+                                                                                                        CA                         KS        MO                              MD
+   Robbery                                         7.4               205                                                                                    KY
+                                                                                                                                                                    NC
+                                                                                                                                                       TN
+   Assault                                         7.4               205                                          AZ
+                                                                                                                                             AR                   SC
+   Other violentb                                  3.1                85                                                                           MS AL GA
+                                                                                                                                  TX          LA
+Property                                         12.0%               330
+   Burglary                                        5.7               157                                                                                           FL
+   Larceny-theft                                   2.7                74                                                HI
+   Motor vehicle theft                             0.2                 6
+   Fraudc                                          1.6                44
+   Other propertyd                                 1.8                49          Note: Excludes the District of Columbia. Number of states included difers
+Drug                                               9.0%              247          from other tables in the report due to availability of type of prison release
+   Possession                                      1.3                35          in release records.
+   Trafcking                                       4.3               119          Source: Bureau of Justice Statistics, National Corrections Reporting
+   Other druge                                     3.4                93          Program, 2016.
+Public order                                       9.8%              271
+   Weapons                                         2.2                60
+   Other public orderf                             7.7               211
+Other/unspecifed                                   0.9%               24
+Note: Details may not sum to totals due to rounding. Counts may difer
+from those published elsewhere due to non-reporting states. First release
+does not refer to frst-time ofenders but to ofenders’ frst release after a
+given sentence (whether they are frst-time ofenders or not), as opposed
+to a re-release after a subsequent parole violation. Statistics are based on
+state prisoners who were released for the frst time from their sentence in
+38 states, and data exclude state prisoners with sentences of one year or less.
+aIncludes non-negligent manslaughter.
+bIncludes kidnapping, blackmail, extortion, hit and run with injury,
+and other unknown violent ofenses.
+cIncludes forgery and embezzlement.
+dIncludes arson, receiving and trafcking of stolen property, destruction of
+property, trespassing, and other unknown property ofenses.
+eIncludes forging prescriptions, possession of drug paraphernalia, and
+other unspecifed ofenses.
+fIncludes DUIs/DWIs; court ofenses; commercialized vice, morals, and
+decency ofenses; liquor law violations; and other public-order ofenses.
+Source: Bureau of Justice Statistics, National Corrections Reporting
+Program, 2016.
+
+
+
+
+T I M E S E R V E D I N S TAT E P R I S O N , 2016 | N O V E M B E R 2018                                                                                                    5
+Methodology
+Te National Corrections Reporting Program (NCRP),                  Vermont did not submit prison release records. Alaska
+administered by the Bureau of Justice Statistics (BJS), is         and Idaho could not distinguish between admission
+an annual voluntary data collection of administrative              types. In addition, admission types were not reported
+records on individual prisoners submitted by state                 in Virginia’s 2016 NCRP release fle. Based on data
+departments of corrections. Since its inception in                 reported to the 2016 National Prisoners Statistics (NPS)
+1983, the NCRP has collected records for each prison               program; however, BJS estimated that all of Virginia’s
+admission, prison release, and exit from post-custody              ofenders entered on new court commitments.
+community supervision programs. Starting in 1999,
+BJS requested that states submit an additional fle that            All analyses were limited to prisoners sentenced to
+included the administrative records of all prisoners               more than one year who were admitted to state prison
+under the custody of state prisons on December 31 of               on new court commitments. New court commitments
+each year. In 2013, BJS began requesting that states               made up 416,735 of the releases reported to the NCRP
+provide entries to post-custody community supervision              from the 44 states included in the analysis. All analyses
+in addition to exits. Te U.S. Census Bureau served                 excluded (1) records that indicated the ofender had
+as the data collection agent for the NCRP from 1983                previously been released from the current sentence and
+to 2009, at which point BJS opened a competitive                   (2) release records where the type of admission was a
+solicitation and awarded data collection responsibilities          transfer within the state prison system or was the return
+to Abt Associates, Inc. For calendar year 2016, a total            of a prisoner who escaped or was absent without leave.
+of 47 states had submitted at least one type of record:            Tere are 377,839 releases included in tables 1 and 2.
+prison admissions (44 states), prison releases (46),               Tis number excludes reported releases with missing
+year-end population (46), entries to post-custody                  values for most serious ofense or calculated time
+community supervision (31), and exits from                         served. Tere are 375,739 releases included in table 3.
+post-custody community supervision (28).                           In addition to excluding releases with missing values
+                                                                   for most serious ofense or calculated time served, this
+Te current analysis includes data from the NCRP                    number also excludes releases with a missing value for
+prison-release records, which include one record for               maximum sentence.
+each release of a sentenced ofender from a state’s
+prison system. Data elements collected include ofender             Maximum sentence length refers to the greatest amount
+demographic, ofense, and sentencing characteristics,               of time a person can spend in prison based on the
+and the dates and types of admission to, and release               sentence imposed by a court. It includes consecutive
+from, state prison. Data include prisoners under the               sentences imposed by a court for multiple ofenses but
+immediate control of state authorities, regardless of the          does not measure the time actually served in prison.
+jurisdiction in which they were originally sentenced.              Te analyses in this report include prisoners who were
+                                                                   released in 2016 afer being sentenced to life, life without
+Reporting on time served and percentage of                         parole, life plus additional years, or death. For purposes
+sentenced served                                                   of calculating percentage of time served, BJS assigned
+                                                                   a 100-year maximum value to sentences of more than
+First release of an ofender is defned by the type of               100 years, life, or death. Average percentage of sentence
+admission to prison for that period of imprisonment.               served is the percentage of the maximum sentence
+If the admission was coded by the state as a court                 served before frst release. In cases of deaths in prison,
+commitment—either through a new sentence,                          percentage of sentence served equals 100%. In statistical
+imposition of a suspended sentence, or revocation                  tables previously published by BJS, ofenders with life
+of probation—the release of that ofender was considered            or death sentences, and “releases” due to death, were
+to be the frst release. Admissions to prison due to                excluded from calculations. Including life sentences,
+community supervision violations were considered to be             death sentences, and deaths—as in this report—has
+subsequent releases.                                               little efect on ofenses apart from murder. If these were
+                                                                   excluded, the average sentence for murder would be
+Data in this report included NCRP release records                  20.2 years and the percentage of time served for murder
+for 2016 from 44 states. New Mexico, North Dakota,                 would be 64.6%.
+and Oregon did not submit any NCRP data for 2016.
+
+
+
+
+T I M E S E R V E D I N S TAT E P R I S O N , 2016 | N O V E M B E R 2018                                                      6
+  Te Bureau of Justice Statistics of the U.S. Department of Justice is the
+  principal federal agency responsible for measuring crime, criminal
+  victimization, criminal ofenders, victims of crime, correlates of crime,
+  and the operation of criminal and civil justice systems at the federal,
+  state, tribal, and local levels. BJS collects, analyzes, and disseminates
+  reliable statistics on crime and justice systems in the United States,
+  supports improvements to state and local criminal justice information
+  systems, and participates with national and international organizations
+  to develop and recommend national standards for justice statistics.
+  Jefrey H. Anderson is the director.
+  Tis report was written by Danielle Kaeble. Mary Cowhig and Stephanie
+  Mueller verifed the report.
+  Caitlin Scoville and Jill Tomas edited the report. Tina Dorsey produced
+  the report.
+  November 2018, NCJ 252205
+
+
+
+
+                    Ofce of Justice Programs
+Building Solutions • Supporting Communities • Advancing Justice
+                         www.ojp.gov
+

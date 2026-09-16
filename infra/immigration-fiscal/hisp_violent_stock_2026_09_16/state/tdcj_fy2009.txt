@@ -1,0 +1,2346 @@
+Texas Department of
+  Criminal Justice
+
+ Statistical Report
+ Fiscal Year 2009
+      Texas Board of Criminal Justice
+
+
+
+                       Oliver J. Bell
+                        Chairman
+ Tom Mechler               Austin
+                                          Leopoldo Vasquez, III
+Vice Chairman                                  Secretary
+    Claude                                      Houston
+
+  Eric Gambrell      Janice Harris Lord      J. David Nelson
+      Dallas              Arlington              Lubbock
+
+
+    Pastor           Terrell McCombs              Carmen
+ C.L. Jackson          San Antonio           Villanueva-Hiles
+   Houston                                        Mission
+
+
+
+
+  Texas Department of Criminal Justice
+
+
+
+Brad Livingston
+Executive Director
+
+
+                                              Bryan Collier
+                                             Deputy Executive
+                                                 Director
+Texas Department of Criminal Justice                                          Fiscal Year 2009 Statistical Report
+
+
+
+
+                                                      Table of Contents
+
+
+Introduction
+Introduction Statement.......................................................................................................... i-ii
+Glossary of Terms...............................................................................................................iii-vi
+
+
+Demographic Highlights
+On Hand.................................................................................................................................. 1
+Receives ................................................................................................................................. 2
+Releases ................................................................................................................................. 3
+Parole Supervision .................................................................................................................. 4
+Community Supervision ..........................................................................................................6
+
+
+On Hand (Population on August 31, 2009)
+
+TDCJ On Hand
+Age by Gender and Race by Gender...................................................................................... 8
+Offense of Record ................................................................................................................... 9
+TDCJ On Hand by County of Conviction ..............................................................................13
+3G Offense vs. Non 3G offense and Receive Type..............................................................14
+Sentence Length, Approval Status and Eligibility .................................................................15
+
+
+Receives and Admissions
+
+Total Receives and Admissions
+Type of Receives and Admissions........................................................................................16
+Monthly Receives and Admissions .......................................................................................17
+Age by Gender and Race by Gender....................................................................................18
+Total Receives of Offense or Record....................................................................................19
+Total Receives by County of Conviction ...............................................................................20
+Total Prison and State Jail Receives by Sentence Length ...................................................21
+
+
+New Receives
+Offense of Record ............................................................................................................22-24
+County of Conviction .............................................................................................................25
+Sentence Length ...................................................................................................................26
+Texas Department of Criminal Justice                                       Fiscal Year 2009 Statistical Report
+
+
+Parole Revocations (Includes Mandatory Supervision [MS] and
+Discretionary Mandatory Supervision [DMS])
+Offense of Record .................................................................................................................27
+County of Conviction .............................................................................................................28
+Sentence Length ...................................................................................................................29
+
+
+Releases and Departures
+
+Total Releases and Departures
+Type of Releases and Departures ........................................................................................30
+Monthly Releases..................................................................................................................31
+Age by Gender and Race by Gender....................................................................................32
+Total Releases by Offense of Record ...................................................................................33
+Total Releases by County of Conviction ...............................................................................34
+Total Prison and State Jail Releases by Sentence Length...................................................35
+Time Served..........................................................................................................................36
+Percent of Sentence Served .................................................................................................37
+
+
+Discharges
+Offense of Record .................................................................................................................38
+County of Conviction .............................................................................................................39
+Sentence Length ...................................................................................................................40
+
+
+Releases to Community Supervision
+Offense of Record .................................................................................................................41
+County of Conviction .............................................................................................................42
+Sentence Length ...................................................................................................................43
+
+
+Releases to parole Supervision (Includes MS & DMS)
+Offense of Record .................................................................................................................44
+County of Conviction .............................................................................................................45
+Sentence Length ...................................................................................................................46
+Texas Department of Criminal Justice              Fiscal Year 2009 Statistical Report
+
+
+
+                                       Introduction
+
+  The Texas Department of Criminal Justice (TDCJ) Fiscal Year 2009 Statistical Report
+  provides demographic information for a total of 690,231 cases under supervision on
+  August 31, 2009, as well as those received and released throughout the fiscal year.
+  An offender may have multiple types of supervision and be counted in more than one
+  of the categories provided. The report includes information for both the incarcerated
+  offender population and the adult offender population that is supervised in the
+  community.
+
+  The Demographic Highlights section offers a summary of the characteristics of the
+  incarcerated population that was on hand as of August 31, 2009 and offenders who
+  were received and released during the fiscal year. The characteristics include gender,
+  average age, race, offense, custody, sentence length and educational achievement
+  measures. This section also includes characteristics of offenders who were supervised
+  by the Parole and Community Justice Assistance Divisions. In addition to
+  demographics, information offered for the community-supervised population includes
+  supervision status, employment, and primary needs level.
+
+
+  The On Hand section of the report provides an in-depth look at the incarcerated
+  population on August 31, 2009. In addition to comprehensive demographics, this
+  section focuses on the offense, sentence length and release eligibility of the
+  offenders. Detailed information is provided for the prison, and state jail, and SAFP
+  populations.
+
+  The Receives and Admissions section includes demographics of offenders that
+  were received by TDCJ during the fiscal year. Offenders who are received are
+  categorized as New Receives, Parole and Mandatory Supervision Revocations and
+  Community Supervision Direct Sentences/Modifications. New receives are offenders
+  who are admitted to TDCJ who are not under the supervision of the Parole Division.
+  This category also includes offenders who are under the supervision of local
+  Community Supervision and Corrections Departments who have not served in TDCJ
+  for that offense. Parole revocations include offenders who were revoked from parole,
+  mandatory supervision and discretionary mandatory supervision.             Community
+  Supervision modifications include those offenders under the supervision of local
+  Community Supervision and Corrections Departments who are being incarcerated due
+  to unsuccessfully completing the terms of their supervision after being released from
+  TDCJ on that offense. In addition to demographics, this section also includes offense
+  of record, county of conviction, and sentence information. As a separate category,
+  admissions to TDCJ include offenders who returned from bench warrant from prior
+  fiscal years and transfers from other TDCJ divisions.
+
+
+
+
+Prepared by Executive Services                                                Page i
+Texas Department of Criminal Justice               Fiscal Year 2009 Statistical Report
+
+
+  The Releases and Departures section provides demographics of offenders who were
+  released from TDCJ custody during the fiscal year. Offenders who were released are
+  categorized as Discharges, Releases to Community Supervision and Releases to
+  Parole Supervision. Discharges are offenders who are released from TDCJ either by
+  full expiration of their sentence or by court order. Releases to Community Supervision
+  are offenders who are released to be supervised by local Community Supervisions
+  and Corrections Departments. Releases to Parole Supervision include releases to
+  parole, mandatory supervision and discretionary mandatory supervision. These types
+  of releases are under the jurisdiction of the Parole Division. As a separate category,
+  departures from TDCJ include deaths, executions, transfers between TDCJ divisions,
+  and bench warrant releases that did not return during the fiscal year.
+
+
+  Statistical tables listing categories by county of conviction (i.e., total releases by
+  county) show the 20 counties with the highest population in the State. All other
+  counties are grouped together.
+
+
+  Additional statistical information can be obtained by contacting Executive Services at
+  936-437-6144 or by e-mail at exec.services@tdcj.state.tx.us.
+
+
+
+
+Prepared by Executive Services                                                Page ii
+Texas Department of Criminal Justice                Fiscal Year 2009 Statistical Report
+
+
+                                 Glossary of Terms
+
+  "3G” Offense – The offenses listed in Article 42.12, Section 3G of the Texas Code of
+  Criminal Procedure. Examples of “3G” offenses are murder, capital murder,
+  indecency with a child, aggravated kidnapping, aggravated sexual assault, aggravated
+  robbery, use of a child in the commission of certain drug offenses under the Health &
+  Safety Code, committing certain drug offenses within a drug-free zone (if it is shown
+  that the defendant has been previously convicted of certain drug offenses for which
+  punishment was enhanced pursuant to the Health & Safety Code), sexual assault, use
+  of a deadly weapon, and any offense with an affirmative weapon finding.
+
+  Administrative Segregation – A non-punitive, maximum custody status involving
+  separation of an offender from the general population within the prison institution for the
+  purpose of maintaining safety, security and order among general population offenders,
+  correctional personnel, and the public.
+
+  Admissions – Bench Warrant returns from prior fiscal years and transfers among the
+  agency.
+
+
+  Community Supervision – Placement of an offender under supervision for a
+  specified length of time, as ordered by a court, with court-imposed rules and
+  conditions. Community supervision (formerly called adult probation) may be ordered
+  for misdemeanor or felony offenses and is generally imposed in lieu of a jail or prison
+  sentence.
+
+  County of Conviction – The county that correlates with the offense of record.
+
+
+  Departures – Deaths, transfers among the agency, and bench warrant releases that
+  did not return during the fiscal year.
+
+  Direct Supervision – Offenders who are legally on community supervision and who
+  work and/or reside in the jurisdiction in which they are being supervised and receive a
+  minimum of one face-to-face contact with a Community Supervision Officer (CSO)
+  every three months. Direct supervision begins at the time of initial face-to-face contact
+  with an eligible CSO.
+
+
+  Discharge Releases – Prison offenders who are released from TDCJ either by full
+  expiration of their sentence or by court order.
+
+  Discretionary Mandatory Supervision (DMS) – A type of release from prison
+  provided by law for restricted categories of offenders. Offenders with offenses
+  committed on or after September 1, 1996 who are released from prison under
+  Mandatory Supervision contingent upon approval by a Board of Pardons and Paroles
+  panel vote (see Mandatory Supervision).
+
+Prepared by Executive Services                                                 Page iii
+Texas Department of Criminal Justice                  Fiscal Year 2009 Statistical Report
+
+
+  G/J1 – 3 and OT – Offenders in these custodies have a good disciplinary history;
+  have served a specified portion of their sentence (varies by custody level); and do not
+  have any security precaution designators. Some levels within these custodies
+  (G1/J1/OT) do not allow current or prior convictions of any type where the offender
+  intentionally caused the death of another person or sexual offense and do not have
+  any pattern of freeworld offenses of violence.
+
+  G/J4 – Offenders in this custody have two (2) or more non-assaultive disciplinary
+  convictions resulting in major penalties within the past six (6) month; one (1)
+  disciplinary conviction resulting in a major penalty for offender or staff assault without
+  a weapon within the past 12 months; Line Class II or III time-earning status (prison
+  offenders only) if the offender is not assaultive or aggressive in nature; or placement
+  of a security precaution designator for escape (ES), staff assault (SA), or hostage
+  (HS).
+
+  G/J5 – Offenders in this custody have one (1) or more disciplinary convictions for an
+  assault with a weapon on staff or offenders within the past 24 months; two (2) or more
+  disciplinary convictions resulting in a major penalty for offender or staff assault without
+  a weapon within the past 12 months; one (1) ore more disciplinary convictions
+  resulting in major penalties for extortion or sexual abuse with the past 24 months;
+  primarily Line Class I, II or III time-earning status (prison offenders only) if the offender
+  is assaultive or aggressive in nature; or escape from a TDCJ secure adult correctional
+  facility within the past five (5) years.
+
+  Halfway House – A residential facility with focus on reintegration of offenders back
+  into the community after a period of incarceration.
+
+  Indirect Supervision – Level of community supervision that requires the offender to
+  report in person but does not require face-to-face contact.
+
+  Intelligence Quotient Score (IQ) – The individual’s score obtained from a group-
+  administered IQ test. For treatment purposes, additional tests are used to identify
+  mentally impaired offenders.
+
+  Intermediate Sanction Facilities (ISF) – A fully-secured facility used for short-term
+  incarceration of offenders who violate the conditions of their community supervision,
+  parole, or mandatory supervision. ISFs are utilized by CSCDs for community
+  supervision offenders and by the Parole Division (PD) for parolees and mandatory
+  supervision offenders.
+
+
+  Mandatory Supervision (MS) – A type of release from prison provided by law for
+  restricted categories of offenders. Eligible offenders are released on MS when their
+  calendar time served added to their good time credit equals the length of their prison
+  sentence. Under the law in effect until August 31, 1996, release to mandatory
+  supervision was automatic for most offenders, with no requirement of release
+  approval from the Board of Pardons and Paroles.
+
+
+Prepared by Executive Services                                                    Page iv
+Texas Department of Criminal Justice                 Fiscal Year 2009 Statistical Report
+
+  New Offense – Violation of supervision by the conviction of or pending charges of
+  felony or misdemeanor offenses and possible technical violations.
+
+
+  New Receives – Offenders admitted to a TDCJ facility for the first time on an offense,
+  or are repeat offenders who were not under parole or mandatory supervision at the
+  time of their new conviction.
+
+  Offense of Record – The offense for which an offender is incarcerated. If an
+  offender is incarcerated for multiple offenses, the offense of record is that offense that
+  requires the offender to be incarcerated the longest period of time.
+
+  Parole – The conditional release of an offender from prison, by a Board of Pardons
+  and Paroles decision, to serve the remainder of his/her sentence under supervision in
+  the community.
+
+  Parole-in-Absentia (PIA) – Offenders released to parole or mandatory supervision
+  from either county jails, out of state facilities, or in federal penal institutions.
+
+  Parole Revocations – Offenders returned to TDCJ after their parole has been
+  revoked due to conviction of a new offense or for technical reasons.
+
+  Prison Offenders – Offenders with capital, first, second or third degree felony
+  convictions.
+
+  Receives – Offenders arriving at TDCJ during the fiscal year as a new offender or
+  due to a revocation.
+
+  Releases – Offenders leaving TDCJ due to the discharge of their sentence or to
+  another form of supervision.
+
+  Releases to Parole Supervision – Includes releases via parole, discretionary
+  mandatory supervision, and mandatory supervision.
+
+  Safekeeping – Offenders who require separate housing in the general population
+  because of threats to their safety due to offender enemies, a history of deviant sexual
+  behavior, a potential for victimization or other similar reasons. These offenders may
+  still work and go to school with other general population offenders.
+
+
+
+
+Prepared by Executive Services                                                   Page v
+Texas Department of Criminal Justice                   Fiscal Year 2009 Statistical Report
+
+
+
+
+  State Jail Offenders – Offenders convicted of state jail felony offenses. An individual
+  adjudged guilty of a state jail felony offense may be confined in a state jail facility for a
+  term of no more than two years or less than 30 days. There is no parole or mandatory
+  supervision release from state jail.
+
+  Substance Abuse Felony Punishment Facility (SAFPF or SAFP) Offenders –
+  Offenders who are sentenced by a judge as a condition of community supervision or
+  sent by the Board of Pardons and Paroles as a modification of parole supervision to
+  an intensive six-month therapeutic community program (nine-month program for
+  offenders with special needs).
+
+  Technical Only – a violation of one or more conditions of release, not including
+  commission of a new offense.
+
+
+
+
+Prepared by Executive Services                                                     Page vi
+Texas Department of Criminal Justice                                                      Fiscal Year 2009 Statistical Report
+
+
+
+                     Demographic Highlights – August 31, 2009 TDCJ On Hand
+
+                                                            Prison      State Jail    SAFP1        Total On Hand
+
+                               Total                        139,226        12,537         3,313            155,076
+
+                       Male                                 130,785         9,829         2,508            143,122
+             Gender
+                       Female                                  8,441        2,708           805              11,954
+
+                       Black                                  51,770        4,581           776              57,127
+
+                       White                                  42,071        4,271         1,629              47,971
+              Race
+                       Hispanic                               44,681        3,620           896              49,197
+
+                       Other Race                                704           65             12                   781
+
+                      Average Age (Years)                        37.6        33.7           34.1                   37.2
+
+                       Violent Offense                        77,912          182           689              78,783
+
+                       Property Offense                       19,098        5,853           743              25,694
+            Offense
+                       Drug Offense                           22,970        4,764         1,282              29,016
+
+                       Other Offense                          19,246        1,738           599              21,583
+
+                          Average IQ                           90.53        90.83         92.99               90.57
+
+            Average Educational Achievement Score                8.01        7.15           7.93                   7.94
+
+           % With Verified High School Diploma / GED         56.91%       40.86%        51.37%              55.49%
+
+                       Ad Seg2 (1A – 6A/SR)                    8,492          147           N/A               8,639
+
+                       Safekeeping (P1 – 5)                    2,514             1          N/A               2,515
+
+                       G/J4                                   10,207          433           N/A              10,640
+            Custody
+                       G/J1 – 3 and OT                      105,957        11,031           N/A            116,988
+
+                       G/J5                                    2,778           77           N/A               2,855
+
+                       Other Custody                           9,278          848         3,313              13,439
+
+               Average Sentence Length (Years)3                  19.3          1.0          N/A                    17.6
+
+       1
+        Average sentence length for SAFP offenders is based on program length. The current program is six
+       months for regular needs and nine months for special needs.
+       2
+         Administrative Segregation
+       3
+         Only Prison and State Jail are included in calculation of average sentence length. Sentences > 60 years
+       including Life sentences are calculated as 60 years for the purpose of calculating an average sentence
+       length.
+       Death row and Life Without Parole offenders are not included.
+
+
+
+
+Prepared by Executive Services                                                                                            Page 1
+Texas Department of Criminal Justice                                                      Fiscal Year 2009 Statistical Report
+
+
+
+                           Demographic Highlights – FY2009 TDCJ Receives
+
+                                                            Prison      State Jail    SAFP4        Total Receives5
+
+                                 Total                        42,087       24,491         6,160              72,738
+
+                         Male                                 37,999       19,283         4,801              62,083
+             Gender
+                         Female                                4,088        5,208         1,359              10,655
+
+                         Black                                14,287        9,309         1,446              25,042
+
+                         White                                12,782        7,822         2,941              23,545
+              Race
+                         Hispanic                             14,838        7,239         1,746              23,823
+
+                         Other Race                              180          121             27                   328
+
+                       Average Age (Years)                       33.7        33.4           33.3                   33.5
+
+                         Violent Offense                      12,610          347         1,235              14,192
+
+                         Property Offense                      8,232       10,840         1,408              20,480
+             Offense
+                         Drug Offense                         12,170        9,885         2,390              24,445
+
+                         Other Offense                         9,075        3,419         1,127              13,621
+
+                            Average IQ                         90.48        90.48         92.69               90.54
+
+            Average Educational Achievement Score                7.60        7.04           8.12                   7.45
+
+           % With Verified High School Diploma / GED         47.43%       39.98%        55.50%              45.60%
+
+                         Ad Seg7 (1A – 6A/SR)                    589           49           N/A                    638
+
+                         Safekeeping (P1 – 5)                    166             3          N/A                    169
+
+                         G/J4                                  1,086          192           N/A               1,278
+            Custody6
+                         G/J1 – 3 and OT                      32,030       18,745           N/A              50,775
+
+                         G/J5                                    169          105           N/A                    274
+
+                         Other Custody                         8,047        5,397          6160              19,604
+
+               Average Sentence Length (Years)8                   7.9          0.8          N/A                     5.3
+       4
+        Average sentence length for SAFP offenders is based on program length. The current program is six
+       months for regular needs and nine months for special needs.
+       5
+         Certain admissions are not included in the above table. Admissions are bench warrant returns from prior
+       fiscal years and transfers among the agency.
+       6
+           Custody is as of August 31, 2009.
+       7
+           Administrative Segregation
+       8
+         Only Prison and State Jail are included in calculation of average sentence length. Sentences > 60 years
+       including Life sentences are calculated as 60 years for the purpose of calculating an average sentence
+       length.
+
+
+
+
+Prepared by Executive Services                                                                                            Page 2
+Texas Department of Criminal Justice                                                                 Fiscal Year 2009 Statistical Report
+
+
+
+
+                                Demographic Highlights – FY2009 TDCJ Releases
+
+                                                                   Prison     State Jail   SAFP9        Total Releases
+                                                                                                                       10
+
+
+
+                                       Total                        41,328       24,200         6,690            72,218
+
+                               Male                                 37,097       18,791         5,335            61,223
+                   Gender
+                               Female                                 4,231       5,409         1,355            10,995
+
+                               Black                                14,642        9,274         1,628            25,544
+
+                               White                                12,798        7,747         3,104            23,649
+                    Race
+                               Hispanic                             13,699        7,068         1,923            22,690
+
+                               Other Race                               189         111            35                335
+
+                             Average Age (Years)                       36.2        33.9          33.9                35.2
+
+                               Violent Offense                      11,606          305         1,190            13,101
+
+                               Property Offense                       8,154      10,558         1,666            20,378
+                   Offense
+                               Drug Offense                         12,667        9,995         2,652            25,314
+
+                               Other Offense                          8,901       3,342         1,182            13,425
+
+                                  Average IQ                          90.50       90.29         92.28              90.48
+
+                  Average Educational Achievement Score                7.97        7.03          8.31                7.69
+
+              % With Verified High School Diploma / GED             55.80%      40.59%       58.98%             51.00%
+
+                     Earned HS Diploma / GED in TDCJ                  8,462       2,714         1,198            12,374
+
+                               Ad Seg11 (1A – 6A/SR)                  1,221         N/A           N/A              1,221
+
+                               Safekeeping (P1 – 5)                     322            6          N/A                328
+
+                               G/J4                                   1,898       1,117           N/A              3,015
+                  Custody
+                               G/J1 – 3 and OT                      32,680       22,161           N/A            54,841
+
+                               G/J5                                     603         464           N/A              1,067
+
+                               Other Custody                          4,604         452         6,690            11,746
+
+                     Average Sentence Length (Years)13                  8.0          0.8          N/A                 5.4
+
+                       Average Time Served (Years)13                   4.40        0.80           N/A                2.80
+                                                   12,13
+                     Percent of Sentence Served                      59.8%       99.1%            N/A             74.4%
+             9
+              Average sentence length for SAFP offenders is based on program length. The current program is six
+             months for regular needs and nine months for special needs.
+             10
+              Certain departures are not included in the above table. Departures are deaths, executions, transfers
+             among the agency, and bench warrant releases that did not return during the fiscal year.
+             11
+                  Administrative Segregation
+             12
+                  Beginning in Fiscal Year 2003, percent of sentence served is calculated using a case based methodology.
+             13
+                Only Prison and State Jail are included in calculation of average sentence length and time served and
+             percent of sentence served. Sentences > 60 years including Life sentences are calculated as 60 years for
+             the purpose of calculating an average sentence length. Death row and Life Without Parole offenders are not
+             included.
+
+
+Prepared by Executive Services                                                                                                  Page 3
+  Texas Department of Criminal Justice                                              Fiscal Year 2009 Statistical Report
+
+
+
+                       Demographic Highlights – August 31, 2009 Parole
+                                                                                                    Total Parolees
+                                                            Parole       DMS            MS
+                                                                                                   Under Supervision
+ Active & Inactive Population under Supervision              77,900       17,557         10,363                 105,820
+
+Supervision Type Active                                      58,890       13,684           7,463                  80,037
+
+                     Male                                    52,121       11,971           7,139                  71,231
+  Active Gender
+                     Female                                    6,769       1,713             324                   8,806
+                     Black                                   24,700        4,507           3,284                  32,491
+                     White                                   20,041        5,113           2,490                  27,644
+   Active Race
+                     Hispanic                                13,836        4,000           1,675                  19,511
+                     Other Race                                  313           64             14                     391
+                     Violent Offense                         11,462        1,662           2,540                  15,664
+                     Property Offense                        12,445        3,637           2,541                  18,623
+  Active Offense
+                     Drug Offense                            24,977        4,704           1,495                  31,176
+                     Other Offense*                          10,006        3,681             887                  14,574
+                     17 to 20                                    411         227               0                     638
+                     21 to 25                                  4,165       1,904               2                   6,071
+                     26 to 30                                  7,317       2,888              15                  10,220
+Active Age Group 31 to 40                                    15,011        4,006           1,096                  20,113
+                     41 to 50                                17,923        3,187           3,314                  24,424
+                     51 to 60                                10,793        1,234           2,282                  14,309
+                     61 and Older                              3,270         238             754                   4,262
+                     < 1 Years                               17,464        7,789           1,427                  26,680
+                     1 Year                                  12,727        3,607           1,176                  17,510
+                     2 Years                                   7,919       1,389             888                  10,196
+                     3 Years                                   5,156         540             770                   6,466
+     Active
+    Years on         4 Years                                   2,802         217             621                   3,640
+   Supervision
+                     5 Years                                   2,500         119             536                   3,155
+                     6 to 10 Years                             7,553           22          1,604                   9,179
+                     11 to 15 Years                            1,135            1            377                   1,513
+                     > 15 Years                                1,634            0             64                   1,698
+*Other Offense includes 2,101 out of state parolees supervised in Texas whose information is not available.
+
+  Prepared by Executive Services                                                                               Page 4
+   Texas Department of Criminal Justice                                     Fiscal Year 2009 Statistical Report
+
+
+
+                                    Demographic Highlights – Parole
+                                                              Parole        DMS            MS             Total
+
+                     Pre-Revocation – Not in Custody             7,364         2,004          1,697         11,065
+
+                               Annual Report                        523             0              6              529
+
+                     Early Release From Supervision                 886           24              65              975
+ Inactive Status             Detainer/Deported                   6,891         1,429            633           8,953
+                          Supervised Out of State                2,811            301           417           3,529
+
+                              Death Reported                           53          5              11               69
+
+                     In Custody (Not in TDCJ custody)               482           110             71              663
+                                                    Halfway House                                             1,360
+    Parole
+  Residential                                           ISF                                                   2,124
+   Facility
+                                                        SAFP                                                      396
+                                                              Parole        DMS            MS             Total
+                                From Prison                     20,477         9,493          1,747         31,717
+
+Placed on Parole                    From PIA                        309        1,271            147           1,727
+   Supervision                   From TYC                           109           N/A           N/A               109
+                             From Out of State                   1,165            N/A           N/A           1,165
+                                 Discharge                      11,985         8,814          2,182         22,981
+                                    Revoke                       4,776         1,692            992           7,460
+   Removals
+  from Parole          Return ICC to Sending State                  595           N/A           N/A               595
+  Supervision
+                     Sentence Reversed or Pardoned                     2            1              0                3
+                                     Death                          877           119           172           1,168
+
+
+
+
+   Prepared by Executive Services                                                                      Page 5
+        Texas Department of Criminal Justice                                            Fiscal Year 2009 Statistical Report
+
+
+
+                                                               14
+                          Demographic Highlights                    – Community Supervision
+                                                                                                           Total Community
+                                                                       Felony           Misdemeanor          Supervision
+                                                                                                              Population
+
+       Total Supervision Population August 31, 200915                       249,082            177,177                 426,259
+
+                                Direct                                      173,968            102,234                 276,202
+
+                                Indirect                                     67,446              64,629                132,075
+       Supervision Type
+                                Pre-trial Supervision                           6,222             3,469                      9,691
+
+                                Pre-Trial Diversion                             1,446             6,845                      8,291
+
+       Direct Supervision       Male                                        126,997              75,653                202,650
+            Gender              Female                                       46,971              26,581                     73,552
+
+                                Black                                        39,317              16,358                     55,675
+                                White                                        72,545              46,005                118,550
+ Direct Supervision Race
+                                Hispanic                                     60,715              38,849                     99,564
+
+                                Other Race                                      1,391             1,022                      2,413
+            Direct Supervision Median Age (Years)                                 34                  32                       33
+                               Violent Offense                               34,794              12,480                     47,274
+                               Property Offense                              45,232              18,107                     63,339
+       Direct Supervision
+                               Drug Offense                                  57,409              14,531                     71,940
+            Offense
+                               DWI/DUI                                       19,136              38,071                     57,207
+                               Other                                         17,397              19,045                     36,442
+                               1st - 8th Grade                               15,657               8,179                     23,836
+
+       Direct Supervision      9th - 11th Grade                              67,848              31,692                     99,540
+           Education           Diploma/GED                                   69,587              43,961                113,548
+                               Some College                                  20,876              18,402                     39,278
+                               Full Time                                    102,641              66,452                169,093
+
+       Direct Supervision      Part Time                                     13,917               8,179                     22,096
+          Employment           Seasonal/Student                                 1,740             1,022                      2,762
+                               Unemployed                                    55,670              26,581                     82,251
+14
+ Certain offender demographics (gender, race, education and employment) are extrapolated from the FY 2009 Community
+Supervision Tracking System.
+15
+     There are an additional 3,076 offenders on civil probation for a grand total of 429,335 under Community Supervision.
+
+        Prepared by Executive Services                                                                              Page 6
+   Texas Department of Criminal Justice                                Fiscal Year 2009 Statistical Report
+
+
+
+                      Demographic Highlights – Community Supervision
+                                                                                          Total Community
+                                                         Felony        Misdemeanor          Supervision
+                                                                                             Population
+
+                    Level 1                                  3,051                 428                  3,479
+
+                    Level 2                                 40,108             15,299                  55,407
+     Direct
+                  Level 3                                   85,457             54,940                140,397
+Supervision Level
+                  Level 4                                   42,050             31,332                  73,382
+
+                    Residential                              3,302                 235                  3,537
+                    Transfers Out of State                   7,566                 608                  8,174
+
+                    Absconders                              26,604             37,682                  64,286
+
+                    Report by Mail                           1,126               3,899                  5,025
+
+    Indirect      Incarcerated: County Jail                  3,074               1,002                  4,076
+Supervision Level Incarcerated: Prison                       2,017                 350                  2,367
+                    Incarcerated: State Jail                  283                   80                       363
+
+                    Incarcerated: SAFP                       1,791                    9                 1,800
+
+                    Other                                   24,985             20,999                  45,984
+
+
+
+
+      Demographic Highlights – FY 2009 Community Supervision Placements
+                                                         Felony        Misdemeanor        Total Placements
+                    Adjudicated Community Supervision      19,283              58,552                  77,835
+
+                    Deferred Adjudicated                   40,794              54,061                  94,855
+  Community
+  Supervision       Returned from Shock Probation             214                     7                      221
+  Placements
+                    Returned from State Boot Camp                 41                  0                      41
+                              Total Placements FY 2009     60,332             112,620                172,952
+             Subsequent Placements in CSCD                    291                  217                       508
+                Transferred in for Supervision             19,865              19,355                  39,220
+              Deferred to Adjudicated Status                 1,350                 497                  1,847
+
+Pre-trial Services Pre-trial Supervision                   10,461                6,874                 17,335
+  Placements       Pre-trial Diversion                       1,227               8,297                  9,524
+
+   Prepared by Executive Services                                                                 Page 7
+  Texas Department of Criminal Justice                                           Fiscal Year 2009 Statistical Report
+
+
+
+                                 TDCJ On Hand by Age and Gender
+                            Male          % Male          Female        % Female            Total         % Total
+14 to 16 Years                      16         94.1%                1            5.9%               17      0.0%
+17 Years                           146         98.0%                3            2.0%               149     0.1%
+18 to 19 Years                  2,465          95.6%             114             4.4%           2,579       1.7%
+20 to 29 Years                 41,296          92.2%           3,516             7.8%          44,812      28.9%
+30 to 39 Years                 41,025          91.7%           3,734             8.3%          44,759      28.9%
+40 to 49 Years                 35,408          91.5%           3,270             8.5%          38,678      24.9%
+50 to 59 Years                 17,600          94.1%           1,112             5.9%          18,712      12.1%
+60 Years and Older              5,166          96.2%             204             3.8%           5,370       3.5%
+Total                         143,122          92.3%          11,954             7.7%        155,076      100.0%
+Youngest                            15                             16
+Oldest                              90                             80
+Average                            37.2                         36.5                        37.2
+
+
+
+                                TDCJ On Hand by Race and Gender
+                            Male          % Male          Female        % Female            Total         % Total
+Black                          52,979      92.7%               4,148      7.3%                 57,127      36.8%
+White                          42,728      89.1%               5,243      10.9%                47,971      30.9%
+Hispanic                       46,701      94.9%               2,496      5.1%                 49,197      31.7%
+Other                              714     91.4%                   67     8.6%                      781     0.5%
+Total                         143,122      92.3%              11,954      7.7%               155,076      100.0%
+
+The On Hand Total does not include offenders temporarily out on Bench Warrant.
+
+
+
+
+  Prepared by Executive Services                                                                            Page 8
+      Texas Department of Criminal Justice                                                      Fiscal Year 2009 Statistical Report
+
+
+
+                                       TDCJ On Hand by Offense of Record
+                                                                 Prison        State Jail        SAFP          Total       Total %
+               Homicide16                                           16,137             24               17       16,178
+               Kidnapping                                            1,308             14                7        1,329
+               Sexual Assault                                        7,324                  0            0        7,324
+     Violent   Sexual Assault Against Child                         12,057                  0            0       12,057
+               Robbery                                              22,700                  0         200        22,900
+               Assault/Terroristic Threat                           18,386            144             465        18,995
+                               Violent Total                        77,912            182             689        78,783     50.8%
+               Arson                                                   734                  1           10          745
+               Burglary                                             13,867          1,058             411        15,336
+               Larceny                                               2,345          2,517             135         4,997
+               Stolen Vehicle                                          806            662               50        1,518
+ Property
+               Forgery                                                 709            843               79        1,631
+               Fraud                                                   559            623               44        1,226
+               Stolen/Damaged Property                                    78          149               14          241
+                               Property Total                       19,098          5,853             743        25,694     16.6%
+               Drug Delivery                                         9,887            618             170        10,675
+               Drug Possession                                      12,583          4,133           1,064        17,780
+      Drug
+               Drug Offense-Other                                      500             13               48          561
+                                 Drug Total                         22,970          4,764           1,282        29,016     18.7%
+               Commercialized/Sex Offense                                 99          301               31          431
+               DWI                                                   5,651            205             377         6,233
+               Escape/Evading Arrest                                 1,116            694               58        1,868
+               Failure to Register as a Sex Offender                 1,808             99                1        1,908
+               Family Offense                                          272            162               29          463
+     Other
+               Sex Offense Against a Child                           5,049                  6            1        5,056
+               Obstruction/Public Order                              1,813            153               54        2,020
+               Weapons Offense                                       2,681             89               25        2,795
+               Other                                                   757             29               23          809
+                                Other Total                         19,246          1,738             599        21,583     13.9%
+                             Total                                 139,226         12,537           3,313       155,076     100.0%
+16
+     State Jail offenders incarcerated for homicide are convicted of criminally negligent homicide.
+
+      Prepared by Executive Services                                                                                       Page 9
+Texas Department of Criminal Justice                         Fiscal Year 2009 Statistical Report
+
+
+
+                             Prison On Hand by Offense of Record
+                                                         Number            Percentage
+
+                Homicide                                          16,137      20.7%
+                Kidnapping                                         1,308       1.7%
+                Sexual Assault                                     7,324       9.4%
+     Violent    Sexual Assault Against Child                      12,057      15.5%
+                Robbery                                           22,700      29.1%
+                Assault/Terroristic Threat                        18,386      23.6%
+                                   Violent Total                  77,912              56.0%
+                Arson                                               734        3.8%
+                Burglary                                          13,867      72.6%
+                Larceny                                            2,345      12.3%
+                Stolen Vehicle                                      806        4.2%
+    Property
+                Forgery                                             709        3.7%
+                Fraud                                               559        2.9%
+                Stolen/Damaged Property                              78        0.4%
+                                  Property Total                  19,098              13.7%
+                Drug Delivery                                      9,887      43.0%
+                Drug Possession                                   12,583      54.8%
+      Drug
+                Drug Offense-Other                                  500        2.2%
+                                    Drug Total                    22,970              16.5%
+                Commercialized/Sex Offense                           99        0.5%
+                DWI                                                5,651      29.4%
+                Escape/Evading Arrest                              1,116       5.8%
+                Failure to Register as a Sex Offender              1,808       9.4%
+                Family Offense                                      272        1.4%
+      Other
+                Sex Offense Against a Child                        5,049      26.2%
+                Obstruction/Public Order                           1,813       9.4%
+                Weapons Offense                                    2,681      13.9%
+                Other                                               757        3.9%
+                                    Other Total                   19,246              13.8%
+                                 Total                        139,226               100.0%
+
+
+Prepared by Executive Services                                                         Page 10
+Texas Department of Criminal Justice                           Fiscal Year 2009 Statistical Report
+
+
+
+                            State Jail On Hand by Offense of Record
+                                                      Number                   Percentage
+
+           Homicide                                                24             13.2%
+           Kidnapping                                              14              7.7%
+           Sexual Assault                                           0              0.0%
+Violent    Sexual Assault Against Child                             0              0.0%
+           Robbery                                                  0              0.0%
+           Assault/Terroristic Threat                             144             79.1%
+                           Violent Total                          182                          1.5%
+           Arson                                                    1              0.0%
+           Burglary                                             1,058             18.1%
+           Larceny                                              2,517             43.0%
+           Stolen Vehicle                                         662             11.3%
+Property
+           Forgery                                                843             14.4%
+           Fraud                                                  623             10.6%
+           Stolen/Damaged Property                                149              2.5%
+                         Property Total                         5,853                        46.7%
+           Drug Delivery                                          618             13.0%
+           Drug Possession                                      4,133             86.8%
+ Drug
+           Drug Offense-Other                                      13              0.3%
+                            Drug Total                          4,764                        38.0%
+           Commercialized/Sex Offense                             301             17.3%
+           DWI                                                    205             11.8%
+           Escape/Evading Arrest                                  694             39.9%
+           Failure to Register as a Sex Offender                   99              5.7%
+           Family Offense                                         162              9.3%
+ Other
+           Sex Offense Against a Child                               6             0.3%
+           Obstruction/Public Order                               153              8.8%
+           Weapons Offense                                         89              5.1%
+           Other                                                   29              1.7%
+                            Other Total                         1,738                        13.9%
+                        Total                                  12,537                       100.0%
+
+Prepared by Executive Services                                                            Page 11
+Texas Department of Criminal Justice                         Fiscal Year 2009 Statistical Report
+
+
+
+                              SAFP On Hand by Offense of Record
+                                                    Number                   Percentage
+
+           Homicide                                             17              2.5%
+           Kidnapping                                             7             1.0%
+           Sexual Assault                                         0             0.0%
+Violent    Sexual Assault Against Child                           0             0.0%
+           Robbery                                             200             29.0%
+           Assault/Terroristic Threat                          465             67.5%
+                           Violent Total                       689                         20.8%
+           Arson                                                10              1.3%
+           Burglary                                            411             55.3%
+           Larceny                                             135             18.2%
+           Stolen Vehicle                                       50              6.7%
+Property
+           Forgery                                              79             10.6%
+           Fraud                                                44              5.9%
+           Stolen/Damaged Property                              14              1.9%
+                        Property Total                         743                         22.4%
+           Drug Delivery                                       170             13.3%
+           Drug Possession                                   1,064             83.0%
+ Drug
+           Drug Offense-Other                                   48              3.7%
+                            Drug Total                       1,282                         38.7%
+           Commercialized/Sex Offense                           31              5.2%
+           DWI                                                 377             62.9%
+           Escape/Evading Arrest                                58              9.7%
+           Failure to Register as a Sex Offender                  1             0.2%
+           Family Offense                                       29              4.8%
+ Other
+           Sex Offense Against a Child                            1             0.2%
+           Obstruction/Public Order                             54              9.0%
+           Weapons Offense                                      25              4.2%
+           Other                                                23              3.8%
+                           Other Total                         599                         18.1%
+                      Total                                  3,313                        100.0%
+
+Prepared by Executive Services                                                         Page 12
+Texas Department of Criminal Justice                                  Fiscal Year 2009 Statistical Report
+
+
+
+                          TDCJ On Hand by County of Conviction
+                                  Prison           State Jail         SAFP                 Total
+
+Harris                                  26,765              2,778             206                  29,749
+Dallas                                  17,275                  934           462                  18,671
+Tarrant                                 10,292                  855           123                  11,270
+Bexar                                      9,046                814             99                  9,959
+Travis                                     4,500                533             84                  5,117
+Collin                                     1,416                 95             44                  1,555
+Hidalgo                                    2,692                257             72                  3,021
+El Paso                                    2,377                140             27                  2,544
+Denton                                     1,678                112             17                  1,807
+Fort Bend                                  1,099                 41             36                  1,176
+Montgomery                                 1,423                 33             32                  1,488
+Williamson                                 1,400                214             30                  1,644
+Cameron                                    1,473                106             55                  1,634
+Nueces                                     2,766                353           184                   3,303
+Brazoria                                   1,101                 73             34                  1,208
+Galveston                                  1,512                105              5                  1,622
+Bell                                       1,818                143             48                  2,009
+Lubbock                                    2,232                143             44                  2,419
+Webb                                        527                 11               3                   541
+Jefferson                                  2,282                241             98                  2,621
+All Others                              45,552              4,556            1,610                 51,718
+             Total                     139,226            12,537             3,313              155,076
+
+
+
+
+Prepared by Executive Services                                                                  Page 13
+      Texas Department of Criminal Justice                                            Fiscal Year 2009 Statistical Report
+
+
+
+                                           Prison On Hand by 3G Offense
+                                                            Total                   % Total
+
+                                          Violent                    57,399
+                                         Property                      607
+                                            Drug                      1,696
+      3G
+                      Indecency with a Child                          3,830
+                                           Other                       591
+                              Total 3G                    64,123                     46.1%
+                    Not 3G                                75,103                     53.9%
+                      Total                               139,226                   100.0%
+
+
+
+
+                                                                                      17
+                                         TDCJ On Hand by Receive Type
+                                                           Prison                  State Jail                  SAFP
+       New Receives                                                 107,324                     12,497                       N/A
+       New TDCJ Commitment18                                         18,827                         0                        N/A
+                                                19
+       Community Supervision Revocation                                681                         40                        N/A
+       Parole Revocation                                              9,378                         0                        N/A
+       DMS Revocation                                                  911                          0                        N/A
+       MS Revocation                                                  2,105                         0                        N/A
+       Condition of Parole                                             N/A                          0                        339
+       Condition of Probation                                          N/A                          0                       2,974
+                      Total                                         139,226                     12,537                      3,313
+17
+  Prison and State Jail On Hand by Receive Type are offenders incarcerated on August 31, 2009 categorized by how they were
+received by the Agency. These offenders were last received during a variety of fiscal years, not just FY 2009.
+18
+  New commitments to TDCJ are offenders who have been convicted of additional offenses, one of which is longer than their
+existing sentence. These offenders would have come into TDCJ as a new receive or as a revocation.
+19
+   For the purposes of this chart, community supervision revocations are only those offenders who were previously incarcerated
+in TDCJ for an offense, released to community supervision and subsequently revoked for that same offense. Revocations from
+community supervision where the offender was not previously incarcerated in TDCJ for the same offense are included in the
+new receives category.
+
+
+
+
+      Prepared by Executive Services                                                                            Page 14
+     Texas Department of Criminal Justice                                            Fiscal Year 2009 Statistical Report
+
+
+
+                                      TDCJ On Hand by Sentence Length
+                                            Violent        Property           Drug            Other                  Total
+      SAFP        6 Month Program                  689              743           1,282               599            3,313
+                  6 Months and Less                   26          1,079           1,310               427            2,842
+                  7 to 12 Months                      74          2,487           1,989               708            5,258
+     State Jail   13 to 18 Months                     43          1,376              950              333            2,702
+                  19 to 24 Months                     39            911              515              270            1,735
+                  Total                            182            5,853           4,764             1,738           12,537
+                  2 Years and Less               2,753            1,410           2,061             2,271            8,495
+                  3 to 5 Years                  10,431            4,849           5,979             6,523           27,782
+                  6 to 10 Years                 15,080            4,574           6,253             5,829           31,736
+                  11 to 20 Years                17,404            3,296           4,717             3,058           28,475
+                  21 to 30 Years                 9,388            2,498           2,253               758           14,897
+                  31 to 40 Years                 5,608              902              708              286            7,504
+      Prison      41 to 59 Years                 4,331              563              386              147            5,427
+                  60 Years and More              4,580              513              403              167            5,663
+                  Life                           5,841              493              210              207            6,751
+                  Capital Life                   1,969                 0               0                 0           1,969
+                  Life Without Parole              203                 0               0                 0             203
+                  Death                            324                 0               0                 0             324
+                  Total                         77,912           19,098          22,970           19,246          139,226
+                   Total                        78,783           25,694          29,016           21,583          155,076
+
+
+
+                    Prison On Hand by Release Eligibility Status And Offense
+                                            Violent        Property           Drug            Other                   Total
+
+Not Eligible for Release20                       1,373                31             574              207            2,185
+
+Currently Parole Eligible                       38,765          14,077           15,812           12,207            80,861
+
+Currently DMS Eligible                           2,109            2,340           1,779             1,927            8,155
+Not Yet Eligible for Release
+                                                35,665            2,650           4,805             4,905           48,025
+Consideration
+                   Total                        77,912          19,098           22,970           19,246          139,226
+20
+ This category includes Life Without Parole offenders and Death Row offenders. Death Row offenders do not include those
+who are on bench warrant.
+     Prepared by Executive Services                                                                            Page 15
+       Texas Department of Criminal Justice                                                         Fiscal Year 2009 Statistical Report
+
+
+
+
+                                         TDCJ Receives and Admissions by Type
+                                                                                                                Percent of Receives by
+                     Category                              Total Receives by Incarceration Type
+                                                                                                                  Incarceration Type
+                                                                   Prison
+New Receives                                                                                         34,938             83.01%
+Parole/DMS/MS Revocations                                                                              7,149            16.99%
+     Parole                                                                        4,731
+       New Offense                                            3,938
+       Technical                                                793
+     DMS                                                                           1,483
+       New Offense                                            1,280
+       Technical                                                203
+     MS                                                                              935
+       New Offense                                              612
+       Technical                                                323
+                       Total                                                                         42,087             100.00%
+                                                                 State Jail
+New Receives                                                                                         24,491             100.00%
+New Sentence                                                 24,377
+Upfront Time                                                      95
+Community Supervision Modification                                19
+                       Total                                                                         24,491             100.00%
+                                                                   SAFP
+Parole                                                                                                   592             9.61%
+     New Offense                                                163
+     Technical                                                  429
+Community Supervision                                                                                  5,568            90.39%
+     Direct Sentences                                             16
+     Modification                                             4,094
+     Original Condition                                       1,458
+                       Total                                                                           6,160            100.00%
+                                                                    Total
+              Total TDCJ Receives                                                          72,738
+                    Admissions21                                                           1,130
+          Total Receives & Admissions                                                      73,868
+21
+     Admissions are bench warrant returns from prior fiscal years and transfers among the agency.
+
+
+       Prepared by Executive Services                                                                                         Page 16
+Texas Department of Criminal Justice                                                                                                                                          Fiscal Year 2009 Statistical Report
+
+
+
+
+                                              TDCJ FY 2009 Monthly Receives and Admissions by Type
+                     Category                  Sep-08        Oct-08       Nov-08       Dec-08        Jan-09       Feb-09       Mar-09       Apr-09       May-09       Jun-09        Jul-09       Aug-09       Total
+                                                                                                    Prison
+New Receives                                      2,169        3,346        2,752        2,959          2,362       2,614        3,284        3,057         2,938         3,076        3,280       3,101       34,938
+Parole/DMS/MS Revocations                              454          674          532          673           520          485          664          702          588           638          605          614     7,149
+                                                 242          340          268          356           304          291          349          416          320            361         339          352         3,938
+Parole – New Offense
+                                                  53           84           84           68            45           44           77           69           64            68           71           66          793
+Parole – Technical
+                                                  81          122           87          118            73           78          128          133          115            115         109          121         1,280
+DMS – New Offense
+                                                  15           24           15           25            8            15           19           12           15            18           15           22          203
+DMS – Technical
+                                                  40           68           53           75            55           35           63           52           45            50           44           32          612
+MS – New Offense
+                                                  23           36           25           31            35           22           28           20           29            26           27           21          323
+MS – Technical
+                      Total                       2,623        4,020        3,284        3,632          2,882     3,099        3,948        3,759           3,526         3,714        3,885       3,715       42,087
+                                                                                                State Jail
+New Receives                                      1,970        2,549        1,999        1,986          1,834     2,024        2,036        2,252           1,850         1,908        2,151       1,932       24,491
+                                                1,957        2,537        1,989        1,981          1,824       2,009        2,032        2,240         1,841       1,901          2,137       1,929        24,377
+New Sentence
+                                                  10           8            5            1             10           14           4            11           8              7           14           3            95
+Upfront Time
+                                                  3            4            5            4             0            1            0            1            1              0            0           0            19
+Community Supervision Modification
+                   Total                          1,970        2,549        1,999        1,986          1,834     2,024        2,036        2,252           1,850         1,908        2,151       1,932       24,491
+                                                                                                    SAFP
+Parole – New Receives                                  36           57           23           39            56      65           50           53                46             62           75           30          592
+                                                  11           14           5            10            22           22           10           15           15            15           18           6           163
+New Offense
+                                                  25           43           18           29            34           43           40           38           31            47           57           24          429
+Technical
+Community Supervision – New Receives                   397          621          430          457           448    484          378          531                459           426          472          465     5,568
+                                                  0            1            0            2             0            0            0            0            0             7             3           3            16
+Direct Sentences
+                                                 275          468          320          342           343          354          286          398          313            301         344          350         4,094
+Modification
+                                                 122          152          110          113           105          130           92          133          146            118         125          112         1,458
+Original Condition
+Total                                                  433          678          453          496           504    549          428          584                505           488          547          495     6,160
+
+
+Total TDCJ Receives                               5,026        7,247        5,736        6,114          5,220     5,672        6,412        6,595           5,881         6,110        6,583       6,142       72,738
+
+
+Admissions22                                           281          308          132          100           60      55           45           30                36             38           29           16     1,130
+
+
+                                Total TDCJ Receives and Admissions                                                                                              73,868
+22
+     Admissions are bench warrant returns from prior fiscal years and transfers among the agency.
+
+
+Prepared by Executive Services                                                                                                                                                                                Page 17
+   Texas Department of Criminal Justice                                  Fiscal Year 2009 Statistical Report
+
+
+
+                             TDCJ Total Receives by Age and Gender
+                           Male           % Male     Female         % Female        Total           % Total
+14 to 16 Years                       28     90.32%             3        9.68%                31      0.04%
+17 Years                            401     97.33%            11        2.67%               412      0.57%
+18 to 19 Years                   3,348      93.99%           214        6.01%            3,562       4.90%
+20 to 29 Years                24,301        87.16%          3,580      12.84%          27,881       38.33%
+30 to 39 Years                15,883        82.42%          3,388      17.58%          19,271       26.49%
+40 to 49 Years                12,308        82.02%          2,699      17.98%          15,007       20.63%
+50 to 59 Years                   4,961      87.70%           696       12.30%            5,657       7.78%
+60 Years and More                   853     93.02%            64        6.98%               917      1.26%
+Total                         62,083        85.35%      10,655         14.65%          72,738       100.00%
+Youngest                    15                         15
+Oldest                      82                         79
+Average                    33.3                       34.7                                   33.5
+
+
+
+                            TDCJ Total Receives by Race and Gender
+                           Male           % Male     Female         % Female        Total           % Total
+Black                         21,527        85.96%          3,515      14.04%          25,042       34.43%
+White                         18,592        78.96%          4,953      21.04%          23,545       32.37%
+Hispanic                      21,690        91.05%          2,133       8.95%          23,823       32.75%
+Other                               274     83.54%            54       16.46%               328      0.45%
+Total                         62,083        85.35%      10,655         14.65%          72,738       100.00%
+
+
+
+
+   Prepared by Executive Services                                                                   Page 18
+ Texas Department of Criminal Justice                                         Fiscal Year 2009 Statistical Report
+
+
+
+                           TDCJ Total Receives by Offense of Record
+                                                   Prison        State Jail   SAFP           Total          Total %
+           Homicide                                   1,019              32          31           1,082
+           Kidnapping                                   160              20          19              199
+           Sexual Assault                               565               0           1              566
+Violent    Sexual Assault Against Child               1,269               0           0           1,269
+           Robbery                                    3,790               0       355             4,145
+           Assault/Terroristic Threat                 5,807             295       829             6,931
+                       Violent Total                12,610             347      1,235           14,192       19.51%
+           Arson                                        225               4          26              255
+           Burglary                                   5,784           1,957       780             8,521
+           Larceny                                    1,205           4,755       243             6,203
+           Stolen Vehicle                               306           1,281          88           1,675
+Property
+           Forgery                                      351           1,481       155             1,987
+           Fraud                                        308           1,084          88           1,480
+           Stolen/Damaged Property                          53          278          28              359
+                      Property Total                  8,232         10,840      1,408           20,480       28.16%
+           Drug Delivery                              4,101           1,134       287             5,522
+           Drug Possession                            7,705           8,730     2,022           18,457
+ Drug
+           Drug Offense-Other                           364              21          81              466
+                         Drug Total                  12,170          9,885      2,390           24,445       33.61%
+           Commercialized/Sex Offense                       64          686          44              794
+           DWI                                        4,057             356       715             5,128
+           Escape/Evading Arrest                        435           1,355       111             1,901
+           Failure to Register as a Sex Offender        677             205           3              885
+           Family Offense                               139             274          44              457
+ Other
+           Sex Offense Against a Child                1,009              10           2           1,021
+           Obstruction/Public Order                   1,068             317       115             1,500
+           Weapons Offense                            1,232             162          55           1,449
+           Other                                        394              54          38              486
+                        Other Total                   9,075          3,419      1,127           13,621       18.73%
+                   Total                             42,087         24,491      6,160           72,738 100.00%
+
+ Prepared by Executive Services                                                                            Page 19
+Texas Department of Criminal Justice                                  Fiscal Year 2009 Statistical Report
+
+
+
+                      TDCJ Total Receives by County of Conviction
+                                  Prison           State Jail         SAFP                 Total
+Harris                                     7,930            6,622             391                  14,943
+Dallas                                     4,245            2,365             773                   7,383
+Tarrant                                    3,177            1,789             217                   5,183
+Bexar                                      2,988            1,657             164                   4,809
+Travis                                     1,418            1,116             145                   2,679
+Collin                                      424                 274             99                   797
+Hidalgo                                    1,213                583           131                   1,927
+El Paso                                     843                 307             56                  1,206
+Denton                                      616                 237             30                   883
+Fort Bend                                   381                  86             61                   528
+Montgomery                                  640                 105             58                   803
+Williamson                                  381                 338             45                   764
+Cameron                                     438                 173           110                    721
+Nueces                                      911                 497           362                   1,770
+Brazoria                                    378                 185             53                   616
+Galveston                                   538                 298             12                   848
+Bell                                        487                 268             89                   844
+Lubbock                                     627                 270             75                   972
+Webb                                        125                  23             11                   159
+Jefferson                                   641                 333           164                   1,138
+All Others                             13,686               6,965            3,114                 23,765
+             Total                     42,087             24,491             6,160                 72,738
+
+
+
+
+Prepared by Executive Services                                                                  Page 20
+Texas Department of Criminal Justice                                            Fiscal Year 2009 Statistical Report
+
+
+
+               Prison and State Jail Total Receives by Sentence Length
+                                                                                                 23
+                                                Prison             State Jail               Total
+        6 Months and Less                                 N/A               9,295                     9,295
+        7 to 12 Months                                    N/A              10,554                   10,554
+        13 to 18 Months                                   N/A               3,149                     3,149
+        19 to 24 Months                                   N/A               1,493                     1,493
+        2 Years and Less                                 9,829                  N/A                   9,829
+        3 to 5 Years                                  15,684                    N/A                 15,684
+        6 to 10 Years                                    9,227                  N/A                   9,227
+        11 to 20 Years                                   4,355                  N/A                   4,355
+        21 to 30 Years                                   1,584                  N/A                   1,584
+        31 to 40 Years                                    521                   N/A                    521
+        41 to 59 Years                                    268                   N/A                    268
+        60 Years and More                                 293                   N/A                    293
+        Life                                              227                   N/A                    227
+        Capital Life                                       12                   N/A                     12
+        Life Without Parole                                77                   N/A                     77
+        Death24                                            10                   N/A                     10
+                       Total                          42,087               24,491                   66,578
+        23
+           These totals do not include 6,160 SAFP offenders. Average sentence length for SAFP
+        offenders is based on program length. The current program is six months for regular needs
+        and nine months for special needs.
+        24
+           One Death Row offender was received as a parole violator for a non-capital offense and
+        received a new commitment with a death sentence.
+
+
+
+
+Prepared by Executive Services                                                                                Page 21
+  Texas Department of Criminal Justice                                  Fiscal Year 2009 Statistical Report
+
+
+
+                 Prison and State Jail New Receives by Offense of Record
+                                                   Prison         State Jail          Total          Total %
+           Homicide                                         861                32             893
+           Kidnapping                                       144                20             164
+           Sexual Assault                                   482                 0             482
+Violent    Sexual Assault Against Child                 1,228                  0           1,228
+           Robbery                                      3,290                  0           3,290
+           Assault/Terroristic Threat                   5,411              295             5,706
+                        Violent Total                  11,416              347            11,763     19.79%
+           Arson                                            193                 4             197
+           Burglary                                     4,264            1,957             6,221
+           Larceny                                          914          4,755             5,669
+           Stolen Vehicle                                   123          1,281             1,404
+Property
+           Forgery                                          227          1,481             1,708
+           Fraud                                            268          1,084             1,352
+           Stolen/Damaged Property                           46            278                324
+                        Property Total                  6,035           10,840            16,875     28.40%
+           Drug Delivery                                3,198            1,134             4,332
+           Drug Possession                              6,058            8,730            14,788
+ Drug
+           Drug Offense-Other                               308                21             329
+                         Drug Total                     9,564            9,885            19,449     32.73%
+           Commercialized/Sex Offense                       52             686                738
+           DWI                                          3,472              356             3,828
+           Escape/Evading Arrest                            331          1,355             1,686
+           Failure to Register as a Sex Offender            660            205                865
+           Family Offense                                   126            274                400
+ Other
+           Sex Offense Against a Child                      930                10             940
+           Obstruction/Public Order                         930            317             1,247
+           Weapons Offense                              1,053              162             1,215
+           Other                                            369                54             423
+                         Other Total                    7,923            3,419            11,342     19.08%
+                      Total                            34,938           24,491            59,429     100.0%
+
+  Prepared by Executive Services                                                                    Page 22
+Texas Department of Criminal Justice                              Fiscal Year 2009 Statistical Report
+
+
+
+                          Prison New Receives by Offense of Record
+                                                       Number                   Percentage
+               Homicide                                         861      7.5%
+               Kidnapping                                       144      1.3%
+               Sexual Assault                                   482      4.2%
+ Violent       Sexual Assault Against Child                1,228         10.8%
+               Robbery                                     3,290         28.8%
+               Assault/Terroristic Threat                  5,411         47.4%
+                                 Violent Total            11,416                                 32.7%
+               Arson                                            193      3.2%
+               Burglary                                    4,264         70.7%
+               Larceny                                          914      15.1%
+               Stolen Vehicle                                   123      2.0%
+ Property
+               Forgery                                          227      3.8%
+               Fraud                                            268      4.4%
+               Stolen/Damaged Property                          46       0.8%
+                               Property Total              6,035                                 17.3%
+               Drug Delivery                               3,198         33.4%
+               Drug Possession                             6,058         63.3%
+  Drug
+               Drug Offense-Other                               308      3.2%
+                                  Drug Total               9,564                                 27.4%
+               Commercialized/Sex Offense                        52      0.7%
+               DWI                                         3,472         43.8%
+               Escape/Evading Arrest                            331      4.2%
+               Failure to Register as a Sex Offender            660      8.3%
+               Family Offense                                   126      1.6%
+  Other
+               Sex Offense Against a Child                      930      11.7%
+               Obstruction/Public Order                         930      11.7%
+               Weapons Offense                             1,053         13.3%
+               Other                                            369      4.7%
+                                  Other Total              7,923                                 22.7%
+                          Total                                         34,938
+
+Prepared by Executive Services                                                               Page 23
+Texas Department of Criminal Justice                             Fiscal Year 2009 Statistical Report
+
+
+
+                      State Jail New Receives by Offense of Record
+                             `                          Number                Percentage
+                Homicide                                          32      9.2%
+                Kidnapping                                        20      5.8%
+                Sexual Assault                                     0      0.0%
+   Violent      Sexual Assault Against Child                       0      0.0%
+                Robbery                                            0      0.0%
+                Assault/Terroristic Threat                       295      85.0%
+                                   Violent Total                 347                            1.4%
+                Arson                                              4      0.0%
+                Burglary                                    1,957         18.1%
+                Larceny                                     4,755         43.9%
+                Stolen Vehicle                              1,281         11.8%
+  Property
+                Forgery                                     1,481         13.7%
+                Fraud                                       1,084         10.0%
+                Stolen/Damaged Property                          278      2.6%
+                                 Property Total            10,840                             44.3%
+                Drug Delivery                               1,134         11.5%
+                Drug Possession                             8,730         88.3%
+    Drug
+                Drug Offense-Other                                21      0.2%
+                                    Drug Total              9,885                             40.4%
+                Commercialized/Sex Offense                       686      20.1%
+                DWI                                              356      10.4%
+                Escape/Evading Arrest                       1,355         39.6%
+                Failure to Register as a Sex Offender            205      6.0%
+                Family Offense                                   274      8.0%
+    Other
+                Sex Offense Against a Child                       10      0.3%
+                Obstruction/Public Order                         317      9.3%
+                Weapons Offense                                  162      4.7%
+                Other                                             54      1.6%
+                                   Other Total              3,419                             14.0%
+                           Total                                       24,491
+
+Prepared by Executive Services                                                             Page 24
+Texas Department of Criminal Justice                                  Fiscal Year 2009 Statistical Report
+
+
+
+          Prison and State Jail New Receives by County of Conviction
+                                       Prison           State Jail              Total
+          Harris                                6,403            6,622                  13,025
+          Dallas                                3,447            2,365                   5,812
+          Tarrant                               2,751            1,789                   4,540
+          Bexar                                 2,535            1,657                   4,192
+          Travis                                1,243            1,116                   2,359
+          Collin                                 368                 274                  642
+          Hidalgo                               1,088                583                 1,671
+          El Paso                                734                 307                 1,041
+          Denton                                 538                 237                  775
+          Fort Bend                              344                 86                   430
+          Montgomery                             552                 105                  657
+          Williamson                             315                 338                  653
+          Cameron                                342                 173                  515
+          Nueces                                 797                 497                 1,294
+          Brazoria                               317                 185                  502
+          Galveston                              454                 298                  752
+          Bell                                   393                 268                  661
+          Lubbock                                499                 270                  769
+          Webb                                   115                  23                  138
+          Jefferson                              467                 333                  800
+          All Others                        11,236               6,965                  18,201
+                       Total                34,938             24,491                   59,429
+
+
+
+
+Prepared by Executive Services                                                                   Page 25
+Texas Department of Criminal Justice                                             Fiscal Year 2009 Statistical Report
+
+
+
+
+                Prison and State Jail New Receives by Sentence Length
+
+                                                  Prison           State Jail            Total 25
+        6 Months and Less                                   N/A              9,295                9,295
+        7 to 12 Months                                      N/A             10,554               10,554
+        13 to 18 Months                                     N/A              3,149                3,149
+        19 to 24 Months                                     N/A              1,493                1,493
+        2 Years and Less                                   9,293                N/A               9,293
+        3 to 5 Years                                      13,914                N/A              13,914
+        6 to 10 Years                                      7,445                N/A               7,445
+        11 to 20 Years                                     2,668                N/A               2,668
+        21 to 30 Years                                      670                 N/A                 670
+        31 to 40 Years                                      310                 N/A                 310
+        41 to 59 Years                                      170                 N/A                 170
+        60 Years and More                                   201                 N/A                 201
+        Life                                                168                 N/A                 168
+        Capital Life                                         12                 N/A                  12
+        Life Without Parole                                  77                 N/A                 77
+        Death                                                10                 N/A                 10
+        Total                                             34,938            24,491               59,429
+
+        25
+          The above does not include 173 new commitments to TDCJ for offenders already incarcerated
+        in TDCJ. Also, 2,399 offenders released from TDCJ on parole were revoked and received a new
+        commitment.
+
+
+
+
+             Prison and State Jail New Receives by Average Sentence Length
+                                        (in Years)
+                                 Violent         Property            Drug                 Other               Total
+      Prison                      9.9               5.3               5.6                  5.0                 6.8
+     State Jail                   0.9               0.9               0.8                  0.8                 0.8
+
+
+
+
+Prepared by Executive Services                                                                             Page 26
+Texas Department of Criminal Justice                           Fiscal Year 2009 Statistical Report
+
+
+
+               Prison Parole/DMS/MS Revocations by Offense of Record
+                                                               Number               Percentage
+                       Homicide                                           158          13.2%
+                       Kidnapping                                           16          1.3%
+                       Sexual Assault                                       83          7.0%
+     Violent           Sexual Assault Against Child                         41          3.4%
+                       Robbery                                            500          41.9%
+                       Assault/Terroristic Threat                         396          33.2%
+                                        Violent Total                   1,194                  16.7%
+                       Arson                                                32          1.5%
+                       Burglary                                         1,520          69.2%
+                       Larceny                                            291          13.2%
+                       Stolen Vehicle                                     183           8.3%
+    Property
+                       Forgery                                            124           5.6%
+                       Fraud                                                40          1.8%
+                       Stolen/Damaged Property                               7          0.3%
+                                        Property Total                  2,197                  30.7%
+                       Drug Delivery                                      903          34.7%
+                       Drug Possession                                  1,647          63.2%
+      Drug
+                       Drug Offense-Other                                   56          2.1%
+                                         Drug Total                     2,606                  36.5%
+                       Commercialized/Sex Offense                           12          1.0%
+                       DWI                                                585          50.8%
+                       Escape/Evading Arrest                              104           9.0%
+                       Failure to Register as a Sex Offender                17          1.5%
+                       Family Offense                                       13          1.1%
+      Other
+                       Sex Offense Against a Child                          79          6.9%
+                       Obstruction/Public Order                           138          12.0%
+                       Weapons Offense                                    179          15.5%
+                       Other                                                25          2.2%
+                                         Other Total                    1,152                  16.1%
+                               Total                                    7,149                  100.0%
+
+Prepared by Executive Services                                                           Page 27
+Texas Department of Criminal Justice               Fiscal Year 2009 Statistical Report
+
+
+
+          Prison Parole/DMS/MS Revocations by County of Conviction
+                                                   Prison
+               Harris                              1,527
+               Dallas                               798
+               Tarrant                              426
+               Bexar                                453
+               Travis                               175
+               Collin                                56
+               Hidalgo                              125
+               El Paso                              109
+               Denton                                78
+               Fort Bend                             37
+               Montgomery                            88
+               Williamson                            66
+               Cameron                               96
+               Nueces                               114
+               Brazoria                              61
+               Galveston                             84
+               Bell                                  94
+               Lubbock                              128
+               Webb                                  10
+               Jefferson                            174
+               All Others                          2,450
+                            Total                  7,149
+
+
+
+
+Prepared by Executive Services                                               Page 28
+Texas Department of Criminal Justice                              Fiscal Year 2009 Statistical Report
+
+
+
+                              Prison Parole/DMS/MS Revocations
+                                      by Sentence Length
+                                                         Prison
+                   6 Months and Less                      N/A
+                   7 to 12 Months                         N/A
+                   13 to 18 Months                        N/A
+                   19 to 24 Months                        N/A
+                   2 Years and Less                       536
+                   3 to 5 Years                          1,770
+                   6 to 10 Years                         1,782
+                   11 to 20 Years                        1,687
+                   21 to 30 Years                         914
+                   31 to 40 Years                         211
+                   41 to 59 Years                         98
+                   60 Years and More                      92
+                   Life                                   59
+                   Capital Life                            0
+                   Total                                 7,149
+
+
+
+
+       Prison Parole/DMS/MS Revocations by Average Sentence Length
+                                (in Years)
+                          Violent      Property   Drug              Other              Total
+       Prison              18.0         15.2      12.5               8.0               13.5
+
+
+
+
+Prepared by Executive Services                                                                Page 29
+         Texas Department of Criminal Justice                                         Fiscal Year 2009 Statistical Report
+
+
+
+                                     TDCJ Releases and Departures by Type
+                                                                                                  Percent of Releases by
+                     Category                       Total Releases by Incarceration Type
+                                                                                                    Incarceration Type
+                                                             Prison
+Discharges                                                                               8,699             21.0%
+Releases to Community Supervision                                                          608              1.5%
+Releases to Parole/DMS/MS                                                              32,021              77.5%
+     Releases to Parole                                         20,693
+     Releases to DMS                                              9,649
+     Releases to MS                                               1,679
+                       Total                                                           41,328              100.0%
+                                                           State Jail
+Discharges                                                                             24,006              99.2%
+Releases to Community Supervision                                                          194              0.8%
+                       Total                                                           24,200              100.0%
+                                                             SAFP
+Releases to Community Supervision                                                        5,847             87.4%
+Releases to Parole Supervision                                                             843             12.6%
+                       Total                                                             6,690             100.0%
+
+
+              Total TDCJ Releases                                                   72,218
+
+
+                                26
+                   Departures                                                        2,695
+
+
+         Total Releases and Departures                                              74,913
+26
+     Departures are transfers among the agency, bench warrants that did not return in FY 2009, deaths, and executions.
+
+
+
+
+         Prepared by Executive Services                                                                         Page 30
+Texas Department of Criminal Justice                                                                                                                            Fiscal Year 2009 Statistical Report
+
+
+
+
+                                                TDCJ FY 2009 Monthly Releases and Departures by Type
+                  Category                 Sep-08       Oct-08      Nov-08 Dec-08          Jan-09      Feb-09       Mar-09      Apr-09      May-09 Jun-09          Jul-09      Aug-09      Total
+                                                                                            Prison
+  Releases to Community Supervision                62          72          45         60          63          45           53          52          47         46          36          27      608
+
+  Releases to Parole/DMS/MS                   2,272       3,018       2,267      2,873       2,634       2,431        2,452       2,841       2,489      3,065       2,980       2,699      32,021
+
+                                            1,476       1,848       1,511       1,784       1,625       1,567       1,514       1,913       1,558       2,065      1,949       1,883       20,693
+   Parole
+                                             659         976         629        912         851         731          796         787         813        876         905         714        9,649
+   DMS
+                                             137         194         127        177         158         133          142         141         118        124         126         102        1,679
+  MS
+  Discharges                                    710        775         647         699         729         653         738         741         747         728         840        692        8,699
+
+                     Total                    3,044       3,865       2,959      3,632       3,426       3,129        3,243       3,634       3,283      3,839       3,856       3,418      41,328
+
+
+
+                                                                                           State Jail
+  Releases to Community Supervision                17          20          15         29          18            9          20          13          16         13          15           9      194
+
+  Discharges                                  1,952       2,393       1,895      2,104       2,020       1,902        2,054       1,956       1,938      1,791       2,074       1,927      24,006
+
+                     Total                    1,969       2,413       1,910      2,133       2,038       1,911        2,074       1,969       1,954      1,804       2,089       1,936      24,200
+
+
+
+                                                                                            SAFP
+  Releases to Parole Supervision                   61          99      101            60          92       115             49          52          58         43          66          47      843
+
+  Releases to Community Supervision             384        502         378         415         413         547         481         648         554         547         540        438        5,847
+
+                     Total                      445        601         479         475         505         662         530         700         612         590         606        485        6,690
+
+
+
+             Total TDCJ Releases              5,458       6,879       5,348      6,240       5,969       5,702        5,847       6,303       5,849      6,233       6,551       5,839      72,218
+
+
+                             27
+                 Departures                     122        178         119         127         157         164         174         232         223         228         393        578        2,695
+
+
+
+                         Total TDCJ Releases and Departures                                                                                 74,913
+  27
+       Departures are transfers among the agency, bench warrants that did not return in FY 2009, deaths, and executions.
+Prepared by Executive Services                                                                                                                                                               Page 31
+ Texas Department of Criminal Justice                                       Fiscal Year 2009 Statistical Report
+
+
+
+                            TDCJ Total Releases by Age and Gender
+                           Male           % Male     Female        % Female          Total           % Total
+14 to 16 Years                       1       33.3%            2        66.7%                  3            0.0%
+17 Years                            51       96.2%            2         3.8%                 53            0.1%
+18 to 19 Years                    1,549      93.4%        110           6.6%             1,659             2.3%
+20 to 29 Years                21,950         86.7%       3,380         13.3%            25,330           35.1%
+30 to 39 Years                16,710         82.3%       3,606         17.7%            20,316           28.1%
+40 to 49 Years                13,852         82.0%       3,040         18.0%            16,892           23.4%
+50 to 59 Years                    5,989      88.3%        796          11.7%             6,785             9.4%
+60 Years and More                 1,121      95.0%            59        5.0%             1,180             1.6%
+Total                         61,223         84.8%      10,995         15.2%            72,218          100.0%
+Youngest                            16                        16
+Oldest                              83                        79
+Average                            35.1                   35.6                                35.2
+
+
+
+                            TDCJ Total Releases by Race and Gender
+                           Male           % Male     Female        % Female          Total           % Total
+Black                         21,831      85.5%          3,713      14.5%               25,544           35.4%
+White                         18,619      78.7%          5,030      21.3%               23,649           32.7%
+Hispanic                      20,500      90.3%          2,190      9.7%                22,690           31.4%
+Other                              273    81.5%               62    18.5%                    335           0.5%
+Total                         61,223      84.8%         10,995      15.2%               72,218          100.0%
+
+
+
+
+ Prepared by Executive Services                                                                       Page 32
+   Texas Department of Criminal Justice                                           Fiscal Year 2009 Statistical Report
+
+
+
+                                 TDCJ Total Releases by Offense of Record
+                                                   Prison        State Jail       SAFP            Total           Total %
+           Homicide                                     805               24              27              856
+           Kidnapping                                   144               13              23              180
+           Sexual Assault                               678                   0            1              679
+Violent    Sexual Assault Against Child                 968                   0            0              968
+           Robbery                                    3,721                   0          360          4,081
+           Assault/Terroristic Threat                 5,290              268             779          6,337
+                           Violent Total             11,606              305          1,190         13,101           18.1%
+           Arson                                        211                   3           34              248
+           Burglary                                   5,732            1,834             944          8,510
+           Larceny                                    1,182            4,523             267          5,972
+           Stolen Vehicle                               328            1,294              95          1,717
+Property
+           Forgery                                      384            1,579             190          2,153
+           Fraud                                        270            1,056             103          1,429
+           Stolen/Damaged Property                          47           269              33              349
+                          Property Total              8,154          10,558           1,666         20,378           28.2%
+           Drug Delivery                              4,015            1,143             355          5,513
+           Drug Possession                            8,276            8,843          2,217         19,336
+ Drug
+           Drug Offense-Other                           376                   9           80              465
+                            Drug Total               12,667           9,995           2,652         25,314           35.1%
+           Commercialized/Sex Offense                       92           696              37              825
+           DWI                                        4,082              324            753           5,159
+           Escape/Evading Arrest                        431            1,366            118           1,915
+           Failure to Register as a Sex Offender        567              190               6              763
+           Family Offense                               120              286              47              453
+ Other
+           Sex Offense Against a Child                  951               14               1              966
+           Obstruction/Public Order                     976              318            117           1,411
+           Weapons Offense                            1,345              105              66          1,516
+           Other                                        337               43              37              417
+                            Other Total               8,901           3,342           1,182         13,425           18.6%
+                       Total                         41,328          24,200           6,690         72,218          100.0%
+
+
+
+
+   Prepared by Executive Services                                                                               Page 33
+ Texas Department of Criminal Justice                                    Fiscal Year 2009 Statistical Report
+
+
+
+                      TDCJ Total Releases by County of Conviction
+                                        Prison         State Jail             SAFP               Total
+Harris                                      8,323             6,526                   438            15,287
+Dallas                                      4,371             2,316                   745             7,432
+Tarrant                                     3,175             1,733                   224             5,132
+Bexar                                       2,754             1,736                   191             4,681
+Travis                                      1,532             1,187                   153             2,872
+Collin                                           378            314                   142                834
+Hidalgo                                     1,109               585                   165             1,859
+El Paso                                          808            283                     54            1,145
+Denton                                           586            209                     36               831
+Fort Bend                                        333                84                  70               487
+Montgomery                                       509            144                     63               716
+Williamson                                       409            309                     45               763
+Cameron                                          432            148                   121                701
+Nueces                                           644            454                   423             1,521
+Brazoria                                         359            194                     50               603
+Galveston                                        608            303                     25               936
+Bell                                             517            282                     99               898
+Lubbock                                          673            255                     79            1,007
+Webb                                             133                34                  25               192
+Jefferson                                        662            274                   151             1,087
+All Others                                 13,013             6,830                 3,391            23,234
+                  Total                    41,328           24,200                  6,690            72,218
+
+
+
+
+ Prepared by Executive Services                                                                    Page 34
+ Texas Department of Criminal Justice                                       Fiscal Year 2009 Statistical Report
+
+
+
+                Prison and State Jail Total Releases by Sentence Length
+                                                                                                       28
+                                               Prison                State Jail                Total
+6 Months and Less                                         N/A                     9,070                      9,070
+7 to 12 Months                                            N/A                  10,501                       10,501
+13 to 18 Months                                           N/A                     3,088                      3,088
+19 to 24 Months                                           N/A                     1,541                      1,541
+2 Years and Less                                         9,804                     N/A                       9,804
+3 to 5 Years                                            15,242                     N/A                      15,242
+6 to 10 Years                                            8,771                     N/A                       8,771
+11 to 20 Years                                           4,441                     N/A                       4,441
+21 to 30 Years                                           1,848                     N/A                       1,848
+31 to 40 Years                                            468                      N/A                        468
+41 to 59 Years                                            259                      N/A                        259
+60 Years and More                                         295                      N/A                        295
+Life                                                      199                      N/A                        199
+Capital Life                                                 1                     N/A                          1
+                 Total                                  41,328                 24,200                       65,528
+28
+  These totals do not include 6,690 SAFP offenders. Average sentence length for SAFP offenders is based on
+program length. The current program is six months for regular needs and nine months for special needs.
+
+
+
+
+ Prepared by Executive Services                                                                         Page 35
+  Texas Department of Criminal Justice                                                       Fiscal Year 2009 Statistical Report
+
+
+
+                       Prison and State Jail Total Releases by Time Served
+                                                        Community
+                                Discharge                                       Parole          DMS           MS
+                                                        Supervision
+                                                                                                                            Total
+                            Prison       State Jail   Prison       State Jail   Prison          Prison       Prison
+
+6 Months & Less                    156       8,951        289            170        380               81            65      10,092
+
+6 to 9 Months                        7       5,419        194              11     1,302               12              0      6,945
+
+10 to 12 Months                      2       5,053         82               7     2,547            2,574            25      10,290
+
+13 to 18 Months                      3       3,093         34               4     3,214            1,460            11       7,819
+
+18 months to 2 Years           2,446         1,490             6            2     2,829            1,390            11       8,174
+
+3 - 5 Years                    3,214           N/A             3         N/A      5,110            3,253            69      11,649
+
+6 - 10 Years                   2,229           N/A             0         N/A      2,338              747           246       5,560
+
+11 to 20 Years                     577         N/A             0         N/A      2,631              132        1,059        4,399
+
+21 to 30 Years                      59         N/A             0         N/A        309                  0         193         561
+
+31 to 40 Years                       5         N/A             0         N/A         31                  0            0         36
+
+41 to 59 Years                       1         N/A             0         N/A             2               0            0             3
+
+Total                          8,699        24,006        608            194     20,693            9,649        1,679       65,528
+
+
+
+
+  Prepared by Executive Services                                                                                          Page 36
+Texas Department of Criminal Justice                                                                                      Fiscal Year 2009 Statistical Report
+
+
+
+
+                                Prison and State Jail Total Releases by Percent
+                                     of Sentence Served and Release Type
+
+                                                                                 Prison                      State Jail
+                                   Community
+                                                                                 12.0%                             76.2%
+                                  Supervision29
+                                      Parole                                     45.0%                              N/A
+
+                                         DMS                                     57.0%                              N/A
+
+                                         MS                                      74.0%                              N/A
+
+                                    Discharge                                    100.0%                        100.0%
+
+                                         Total                                   59.8%                             99.1%
+
+
+                       Prison and State Jail Total Releases by Percent of Sentence
+                                Served, Release Type and Offense Type
+                                                            Prison                                                             State Jail
+                               Violent        Property               Drug                 Other    Violent            Property          Drug        Other
+         Community
+                               18.7%             9.0%                9.1%                 9.4%     59.5%                  77.2%        78.3%        68.0%
+        Supervision29
+            Parole             63.9%             43.0%           36.9%                39.3%          N/A                    N/A             N/A      N/A
+
+            DMS                61.1%             57.8%           54.8%                57.4%          N/A                    N/A             N/A      N/A
+
+             MS                70.0%             76.8%           76.4%                71.0%          N/A                    N/A             N/A       M
+
+          Discharge           100.0%          100.0%             100.0%               100.0%       100.0%                 100.0%       100.0%       100.0%
+
+            Total              78.9%             56.6%           46.1%                57.0%        99.0%                  99.1%        99.0%        99.0%
+
+
+                Prison Total Releases by Percent of Sentence Served for 3G
+                                Offenses by Release Type30
+
+                                                                                                    Indecency
+                                                  Violent             Property             Drug                              Other          Total
+                                                                                                    with a Child
+
+
+                    Parole                        69.7%                72.5%               64.2%        77.3%                71.2%     69.7%
+                Discharge                         100.0%             100.0%               100.0%     100.0%                 100.0%      100.0%
+                     Total                        86.2%                82.0%               84.7%        97.1%                84.2%     87.1%
+29
+   Upfront and probation modification serve 100% of sentence before being released to community supervision. Boot camp
+offenders and offenders released on shock probation serve approximately six months before release regardless of their
+sentence length.
+30
+     3G offenders are not currently eligible to be released from prison on DMS or MS.
+
+
+Prepared by Executive Services                                                                                                                       Page 37
+Texas Department of Criminal Justice                                         Fiscal Year 2009 Statistical Report
+
+
+
+                     Prison and State Jail Discharges by Offense of Record
+                                                     Prison         State Jail        Total         Total %
+             Homicide                                         199                23           222
+             Kidnapping                                        71                13            84
+             Sexual Assault                                   440                0            440
+  Violent    Sexual Assault Against Child                     712                0            712
+             Robbery                                     1,340                   0        1,340
+             Assault/Terroristic Threat                  2,309              265           2,574
+                              Violent Total              5,071              301           5,372         16.4%
+             Arson                                             50                3             53
+             Burglary                                         733         1,817           2,550
+             Larceny                                          114         4,503           4,617
+             Stolen Vehicle                                    41         1,285           1,326
+  Property
+             Forgery                                           45         1,571           1,616
+             Fraud                                             22         1,051           1,073
+             Stolen/Damaged Property                            8           266               274
+                             Property Total              1,013           10,496          11,509         35.2%
+             Drug Delivery                                    210         1,131           1,341
+             Drug Possession                                  618         8,752           9,370
+   Drug
+             Drug Offense-Other                                24                9            33
+                               Drug Total                     852         9,892          10,744        32.9%
+             Commercialized/Sex Offense                         9           694               703
+             DWI                                              143           320               463
+             Escape/Evading Arrest                             79         1,355           1,434
+             Failure to Register as a Sex Offender            386           190               576
+             Family Offense                                    37           283               320
+   Other
+             Sex Offense Against a Child                      607                14           621
+             Obstruction/Public Order                          92           313               405
+             Weapons Offense                                  325           105               430
+             Other                                             85                43           128
+                              Other Total                1,763            3,317           5,080         15.5%
+                          Total                          8,699           24,006          32,705       100.0%
+
+
+
+
+Prepared by Executive Services                                                                         Page 38
+ Texas Department of Criminal Justice                            Fiscal Year 2009 Statistical Report
+
+
+
+             Prison and State Jail Discharges by County of Conviction
+                                        Prison           State Jail                  Total
+Harris                                           1,734                 6,523                    8,257
+Dallas                                           1,196                 2,309                    3,505
+Tarrant                                           674                  1,733                    2,407
+Bexar                                             474                  1,731                    2,205
+Travis                                            498                  1,184                    1,682
+Collin                                             80                   314                      394
+Hidalgo                                           299                   585                      884
+El Paso                                           249                   282                      531
+Denton                                            106                   208                      314
+Fort Bend                                         103                    84                      187
+Montgomery                                         90                   143                      233
+Williamson                                         56                   308                      364
+Cameron                                            99                   146                      245
+Nueces                                            147                   452                      599
+Brazoria                                           85                   193                      278
+Galveston                                         171                   303                      474
+Bell                                               84                   273                      357
+Lubbock                                           136                   255                      391
+Webb                                               46                    34                        80
+Jefferson                                         105                   209                      314
+All Others                                       2,267                 6,737                    9,004
+              Total                              8,699                24,006                   32,705
+
+
+
+
+ Prepared by Executive Services                                                              Page 39
+        Texas Department of Criminal Justice                                       Fiscal Year 2009 Statistical Report
+
+
+
+                        Prison and State Jail Discharges by Sentence Length
+                                                          Prison               State Jail                  Total
+6 Months and Less                                                       N/A                 8,935                   8,935
+7 to 12 Months                                                          N/A             10,488                     10,488
+13 to 18 Months                                                         N/A                 3,082                   3,082
+19 to 24 Months                                                         N/A                 1,501                   1,501
+2 Years and Less                                                       2,716                 N/A                    2,716
+3 to 5 Years                                                           3,620                 N/A                    3,620
+6 to 10 Years                                                          1,769                 N/A                    1,769
+11 to 20 Years                                                          575                  N/A                         575
+21 to 30 Years                                                            5                  N/A                          5
+31 to 40 Years                                                            1                  N/A                          1
+41 to 59 Years                                                            4                  N/A                          4
+60 Years and More                                                         9                  N/A                          9
+Death                                                                     0                  N/A                          0
+Capital Life 31                                                           0                  N/A                          0
+Total                                                                  8,699            24,006                     32,705
+31
+     There were no Capital Life offenders discharged by court order.
+
+
+
+
+        Prepared by Executive Services                                                                       Page 40
+  Texas Department of Criminal Justice                                              Fiscal Year 2009 Statistical Report
+
+
+
+
+                 TDCJ Releases to Community Supervision by Offense of Record
+                                                   Prison         State Jail        SAFP            Total         Total %
+           Homicide                                          14                 1           19               34
+           Kidnapping                                         0                 0           23               23
+           Sexual Assault                                     6                 0            1                7
+Violent    Sexual Assault Against Child                       5                 0            0                5
+           Robbery                                           69                 0          280              349
+           Assault/Terroristic Threat                        69                 3          760              832
+                         Violent Total                      163                4       1,083            1,250        18.8%
+           Arson                                             11                 0           30               41
+           Burglary                                         129                17          735              881
+           Larceny                                           14                20          239              273
+           Stolen Vehicle                                     0                 9           80               89
+Property
+           Forgery                                            2                 8          174              184
+           Fraud                                              1                 5           99              105
+           Stolen/Damaged Property                            1                 3           33               37
+                        Property Total                      158            62          1,390            1,610        24.2%
+           Drug Delivery                                    101                12          206              319
+           Drug Possession                                  110                91      1,993            2,194
+ Drug
+           Drug Offense-Other                                 1                 0           68               69
+                           Drug Total                       212           103          2,267            2,582        38.8%
+           Commercialized/Sex Offense                         0                 2           36               38
+           DWI                                               30                 4          707              741
+           Escape/Evading Arrest                              3                11          112              126
+           Failure to Register as a Sex Offender              0                 0            6                6
+           Family Offense                                     0                 3           47               50
+ Other
+           Sex Offense Against a Child                        5                 0            1                6
+           Obstruction/Public Order                          20                 5          101              126
+           Weapons Offense                                   10                 0           63               73
+           Other                                              7                 0           34               41
+                         Other Total                        75             25          1,107            1,207        18.2%
+                      Total                                 608           194          5,847            6,649       100.0%
+
+
+
+
+  Prepared by Executive Services                                                                              Page 41
+Texas Department of Criminal Justice                                        Fiscal Year 2009 Statistical Report
+
+
+
+              TDCJ Releases to Community Supervision by County of Conviction
+                                   Prison         State Jail         SAFP                  Total
+     Harris                                  21                  3           288                    312
+     Dallas                                  73                  7           696                    776
+     Tarrant                                 13                  0           204                    217
+     Bexar                                   63                  5           150                    218
+     Travis                                  47                  3           136                    186
+     Collin                                   3                  0           138                    141
+     Hidalgo                                 16                  0           163                    179
+     El Paso                                  3                  1             40                     44
+     Denton                                  12                  1             25                     38
+     Fort Bend                                0                  0             66                     66
+     Montgomery                               4                  1             57                     62
+     Williamson                              4                  1              33                     38
+     Cameron                                 4                  2            118                    124
+     Nueces                                  5                  2            394                    401
+     Brazoria                                2                  1              37                     40
+     Galveston                               2                  0              15                     17
+     Bell                                   33                  9              84                   126
+     Lubbock                                 6                  0              49                     55
+     Webb                                    4                  0              21                     25
+     Jefferson                               2                 65            122                    189
+     All Others                             291                93           3,011                  3,395
+     Total                                  608                194          5,847                  6,649
+
+
+
+
+Prepared by Executive Services                                                                        Page 42
+Texas Department of Criminal Justice                                             Fiscal Year 2009 Statistical Report
+
+
+
+                Prison and State Jail Releases to Community Supervision
+                                  by Sentence Length
+                                             Prison               State Jail               Total
+         6 Months and Less                              N/A                    135                   135
+         7 to 12 Months                                 N/A                     13                     13
+         13 to 18 Months                                N/A                      6                      6
+         19 to 24 Months                                N/A                     40                     40
+         2 Years and Less                                39                    N/A                     39
+         3 to 5 Years                                   126                    N/A                   126
+         6 to 10 Years                                  440                    N/A                   440
+         11 to 20 Years                                   2                    N/A                      2
+         21 to 30 Years                                   0                    N/A                      0
+         31 to 40 Years                                   1                    N/A                      1
+         41 to 59 Years                                   0                    N/A                      0
+         60 Years and More                                0                    N/A                      0
+         Life                                          N/A                     N/A                      0
+         Capital Life                                  N/A                     N/A                      0
+                    Total32                             608                    194                   802
+         32
+            These totals do not include 5,847 SAFP offenders. Average sentence length for SAFP offenders
+         is based on program length. The current program is six months for regular needs and nine months
+         for special needs.
+
+
+
+
+Prepared by Executive Services                                                                              Page 43
+Texas Department of Criminal Justice                                                    Fiscal Year 2009 Statistical Report
+
+
+
+         Prison and SAFP Releases to Parole Supervision33 by Offense of Record
+                                                            Prison              SAFP             Total         Total %
+                Homicide                                             592                 8               600
+                Kidnapping                                           73                  0               73
+                Sexual Assault                                       232                 0               232
+     Violent    Sexual Assault Against Child                         251                 0               251
+                Robbery                                           2,312                80            2,392
+                Assault/Terroristic Threat                        2,912                19            2,931
+                             Violent Total                        6,372                107           6,479         19.7%
+                Arson                                                150                 4               154
+                Burglary                                          4,870                209           5,079
+                Larceny                                           1,054                28            1,082
+                Stolen Vehicle                                       287               15                302
+     Property
+                Forgery                                              337               16                353
+                Fraud                                                247                 4               251
+                Stolen/Damaged Property                              38                  0               38
+                             Property Total                       6,983                276           7,259         22.1%
+                Drug Delivery                                     3,704                149           3,853
+                Drug Possession                                   7,548                224           7,772
+      Drug
+                Drug Offense-Other                                   351               12                363
+                              Drug Total                         11,603                385          11,988         36.5%
+                Commercialized/Sex Offense                           83                  1               84
+                DWI                                               3,909                46            3,955
+                Escape/Evading Arrest                                349                 6               355
+                Failure to Register as a Sex Offender                181                 0               181
+                Family Offense                                       83                  0               83
+      Other
+                Sex Offense Against a Child                          339                 0               339
+                Obstruction/Public Order                             864               16                880
+                Weapons Offense                                   1,010                  3           1,013
+                Other                                                245                 3               248
+                              Other Total                         7,063                75            7,138         21.7%
+                           Total                                 32,021                843          32,864        100.0%
+33
+     Releases to Parole Supervision include releases via parole, DMS, and MS.
+
+
+
+Prepared by Executive Services                                                                                    Page 44
+      Texas Department of Criminal Justice                                        Fiscal Year 2009 Statistical Report
+
+
+
+                         Prison and SAFP Releases to Parole Supervision34
+                                     by County of Conviction
+                                               Prison                      SAFP                        Total
+Harris                                                    6,568                        150                       6,718
+Dallas                                                    3,102                         49                       3,151
+Tarrant                                                   2,488                         20                       2,508
+Bexar                                                     2,217                         41                       2,258
+Travis                                                      987                         17                       1,004
+Collin                                                      295                           4                        299
+Hidalgo                                                     794                           2                        796
+El Paso                                                     556                         14                         570
+Denton                                                      468                         11                         479
+Fort Bend                                                   230                           4                        234
+Montgomery                                                  415                           6                        421
+Williamson                                                  349                         12                         361
+Cameron                                                     329                           3                        332
+Nueces                                                      492                         29                         521
+Brazoria                                                    272                         13                         285
+Galveston                                                   435                         10                         445
+Bell                                                        400                         15                         415
+Lubbock                                                     531                         30                         561
+Webb                                                         83                           4                             87
+Jefferson                                                   555                         29                         584
+All Others                                              10,455                         380                      10,835
+                 Total                                  32,021                         843                      32,864
+34
+     Releases to Parole Supervision include releases via parole, DMS, and MS.
+
+
+
+
+      Prepared by Executive Services                                                                        Page 45
+Texas Department of Criminal Justice                                           Fiscal Year 2009 Statistical Report
+
+
+
+                           Prison Releases to Parole Supervision35
+                                    by Sentence Length
+                                                                        Prison
+                2 Years and Less                                        7,049
+                3 to 5 Years                                            11,496
+                6 to 10 Years                                           6,562
+                11 to 20 Years                                          3,864
+                21 to 30 Years                                          1,843
+                31 to 40 Years                                           466
+                41 to 59 Years                                           255
+                60 Years and More                                        286
+                Life                                                     199
+                Capital Life                                               1
+                                          36
+                                  Total                                 32,021
+
+
+                35
+                     Releases to Parole Supervision include releases via parole, DMS, and MS.
+                36
+                  These totals do not include 843 SAFP offenders. Average sentence length
+                for SAFP offenders is based on program length. The current program is six
+                months for regular needs and nine months for special needs.
+
+
+
+
+Prepared by Executive Services                                                                           Page 46
+Texas Department
+of Criminal Justice
+Executive Services
+
+www.tdcj.state.tx.us
+
+   936.437.6144
+
