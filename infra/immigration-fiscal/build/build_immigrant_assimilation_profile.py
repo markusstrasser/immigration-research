@@ -17,8 +17,10 @@
   Output is a REDISTRIBUTABLE AGGREGATE (cell means, no microdata) → flows to the unified
   release like the other IPUMS-derived tables. The raw microdata stays local-only.
 
-Run: PNY_DATA_ROOT=/Volumes/2TBPNY/projects-offload/research-sources/immigration-fiscal/data \\
-     uv run --with duckdb python build_immigrant_assimilation_profile.py   (skips if microdata absent)
+Run: PNY_DATA_ROOT=/Volumes/2TBPNY/research-data/immigration-fiscal/data \\
+     DERIVED_ROOT=/Volumes/2TBPNY/research-data/immigration-fiscal/derived \\
+     uv run --with duckdb python build_immigrant_assimilation_profile.py   (skips if microdata absent;
+     the roots come from acquire/config.local.env when run via reproduce.sh)
 """
 from __future__ import annotations
 

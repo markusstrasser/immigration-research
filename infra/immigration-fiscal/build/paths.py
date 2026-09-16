@@ -11,17 +11,33 @@ _REPO_ROOT = _INFRA_ROOT.parents[1]
 _WAREHOUSE = _REPO_ROOT / "warehouse"
 
 
+def _existing_fallback(path: Path, what: str, env_var: str) -> Path:
+    """Legacy fallbacks must exist; a dangling symlink or unmounted SSD is an error, not a target.
+
+    The 2026-09-16 recovery probe found that with DERIVED_ROOT unset this module silently
+    resolved to a dead symlink, which is how a lost data tree went unnoticed.
+    """
+    if not path.exists():
+        raise FileNotFoundError(
+            f"{what} {path} does not exist (dangling symlink or SSD not mounted); "
+            f"set {env_var} (see acquire/config.env.example) or run via reproduce.sh"
+        )
+    return path
+
+
 def data_root() -> Path:
     if v := os.environ.get("PNY_DATA_ROOT"):
         return Path(v)
     # Legacy: sources/immigration-fiscal/data on symlinked SSD layout
-    return _REPO_ROOT / "sources" / "immigration-fiscal" / "data"
+    return _existing_fallback(
+        _REPO_ROOT / "sources" / "immigration-fiscal" / "data", "legacy data root", "PNY_DATA_ROOT"
+    )
 
 
 def derived_root() -> Path:
     if v := os.environ.get("DERIVED_ROOT"):
         return Path(v)
-    return data_root() / "derived"
+    return _existing_fallback(data_root() / "derived", "legacy derived root", "DERIVED_ROOT")
 
 
 def duckdb_path() -> Path:
