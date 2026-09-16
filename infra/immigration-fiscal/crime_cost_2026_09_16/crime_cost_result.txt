@@ -1,0 +1,260 @@
+====================================================================================================
+OFFENCE-WEIGHTED COST OF CRIME PER ADULT 25-64, BY GROUP
+Model self-report: claude-opus-5[1m] (Opus 5, 1M context)
+====================================================================================================
+
+-- Integrity gates --
+[McCollister components reconstruct Table 5 total] PASS — 13/13 offences; max residual 0 by construction; removed-slice range 0..737,517 (2008$)
+[CPI-U pulled from BLS] PASS — 2008 = 215.303, 2017 = 245.12, 2023 = 304.702, 2024 = 313.689; 2008->2024 = 1.45697, 2017->2024 = 1.27974
+[BJS 2021 white offence classes sum to published total] PASS — sum 167.8 vs published total 167.8 per 100k (other/unspecified residual 1.5)
+[BJS 2021 hispanic offence classes sum to published total] PASS — sum 358.3 vs published total 358.3 per 100k (other/unspecified residual 1.0)
+[ACS 25-64 institutional shares match ledger_residual_micro] PASS — US-born NH white 0.8139%, US-born Mexican-origin 1.4110% (adj 1.7120%)
+
+-- Unit costs per offence, McCollister/French/Fang 2010, inflated 2008$ -> 2024$ (CPI-U) --
+offence          victim tang    intangible          CJS     career    total 2024$   2008$ total
+murder             1,074,537    12,299,701      571,643    216,439     13,087,784     8,982,907
+sexual                 8,095       290,871       38,579     13,422        350,802       240,776
+robbery                4,807        32,891       20,145      6,224         61,644        42,310
+assault               12,676       138,445       12,590      3,098        155,924       107,020
+arson                 16,685         7,479        6,399        851         30,746        21,103
+mvt                    8,908           382        5,634        806         15,694        10,772
+stolen_prop                0             0        9,969      1,649         11,618         7,974
+burglary               1,984           468        6,013        992          9,415         6,462
+embezzle                   0             0        7,023        962          7,984         5,480
+forgery                    0             0        6,709        962          7,671         5,265
+fraud                      0             0        6,370        962          7,331         5,032
+vandalism                  0             0        6,061      1,021          7,081         4,860
+larceny                  699            15        4,195        237          5,146         3,532
+
+Alternative unit-cost source NOT obtained: Miller, Cohen, Swedler, Ali & Hendrie (2021),
+J Benefit-Cost Analysis 12(1):24-54 — per-offence tables are behind the Cambridge paywall.
+Verified from the open abstract only: 120 million crimes in the USA in 2017 cost $2.6 trillion
+($620bn monetary + $1.95tn quality-of-life; 95% UI $2.2-3.0tn), violent crime ~85% of the total.
+$2.6tn in 2017$ = $3.33tn in 2024$.  [UNVERIFIED at offence level]
+
+-- Annual social cost per prisoner-year, by offence class (2024$) --
+class           time served  victim tang/yr  victim tot/yr  +corrections     = total/yr (tang / tot)
+murder                 15.0          71,636        819,980        59,619         131,255     879,599
+sexual                  6.2           1,306         48,194        59,619          60,925     107,813
+robbery                 4.7           1,023          7,505        59,619          60,642      67,124
+assault                 2.5           5,070         56,095        59,619          64,689     115,714
+violent_other           4.7           2,697         29,838        59,619          62,316      89,457
+burglary                1.8           1,102          1,339        59,619          60,721      60,958
+mvt                     1.8           4,949          5,141        59,619          64,568      64,761
+fraud                   1.8               0              0        59,619          59,619      59,619
+larceny                 1.8             389            397        59,619          60,008      60,016
+drug                    1.8               0              0        59,619          59,619      59,619
+public_order            1.7               0              0        59,619          59,619      59,619
+unspecified             1.8               0              0        59,619          59,619      59,619
+
+====================================================================================================
+ROUTE A1 (stock) — BJS 2021 sentenced STATE prisoners, Hispanic (any race) vs NH white
+====================================================================================================
+ACS 2021 populations: NH white total 192,753,887, 25-64 100,472,791 (ratio 1.918)
+                     Hispanic total 62,529,064, 25-64 31,552,916 (ratio 1.982)
+
+arm                                               NH white    Hispanic        diff    ratio
+corrections only (what the ledger already prices)         192         423         231     2.21
++ victim tangible, amortised                           222         508         285     2.28
++ victim tangible + intangible                         553       1,419         866     2.56
++ victim total, corrections $45k                       506       1,315         809     2.60
++ victim total, corrections $70k                       587       1,493         906     2.54
++ victim total + full CJS (double counts prison)         576       1,480         904     2.57
+
+Offence composition of the Hispanic-minus-white difference (base arm, with intangibles):
+offence             white $   Hispanic $      diff $  % of diff
+murder                  324          889         565      65.3%
+assault                  44          172         128      14.8%
+sexual                   69          146          77       8.9%
+robbery                  14           57          43       5.0%
+public_order             22           41          19       2.2%
+violent_other            16           33          17       2.0%
+drug                     29           43          14       1.6%
+burglary                 18           23           5       0.6%
+mvt                       2            3           2       0.2%
+unspecified               2            1          -1      -0.1%
+fraud                     3            2          -1      -0.1%
+larceny                  12            8          -4      -0.4%
+
+====================================================================================================
+ROUTE A2 (stock) — ACS 2023 institutional level x BJS 2021 offence mix
+US-born Mexican-origin (ACS self-ID, 2nd AND 3rd+ pooled) vs US-born non-Hispanic white
+====================================================================================================
+arm                                                   US-b white   US-b Mex       diff   ratio
+corrections only, all institutional GQ counted               485        841        356    1.73
+tangible only                                                562      1,009        447    1.79
+BASE: tangible + intangible                                1,399      2,820      1,421    2.02
+  + generic-Hispanic prison-coding adjustment              1,399      3,422      2,023    2.45
+  correctional share of institutional GQ = 0.85            1,189      2,397      1,208    2.02
+  corrections $45k/yr                                      1,280      2,614      1,334    2.04
+  corrections $70k/yr                                      1,484      2,967      1,483    2.00
+  adj coding + 0.85 correctional share                     1,189      2,909      1,719    2.45
+
+Why this differs in SIGN from the institutional-care line in the ledger residual lane:
+that line charges the group's WHOLE adult (18+) institutional population, including 65+
+nursing-home residents, to its 25-64 adults.  Whites' institutional bill is 55% nursing
+home; the Mexican-origin group's is 11%.  A cost-of-CRIME line must drop the 65+ nursing
+leg, and at ages 25-64 alone the Mexican-origin institutional rate is 1.73x the white rate
+(1.411% vs 0.814%), so the sign reverses.  Both are right for their own question.
+
+====================================================================================================
+ROUTE B (flow) — FBI 2019 arrests by ethnicity (Table 43C, adults 18+) x offences per
+arrest x unit cost.  Hispanic vs constructed non-Hispanic white.
+====================================================================================================
+Ethnicity panel: 10,831 agencies, 2019 estimated population 229,735,355 (70.0% of the USA).  Agencies reporting ethnicity skew
+toward high-Hispanic states, so the Hispanic arrest SHARE is biased up. [FRAMING-SENSITIVE]
+Adult ethnicity coverage vs race panel: 86.6% of adult arrests
+ACS 2019 adults 18+: NH white 160,282,147, Hispanic 41,856,869
+
+Reported offences per arrest (FBI 2019 Table 1 / Table 29):
+  murder=1.49  sexual=5.60  robbery=3.59  assault=2.13  burglary=6.51  larceny=6.26  mvt=8.95
+  all other offences: 1.00 (no offences-known series published)
+
+arm                                                     NH white    Hispanic        diff    ratio
+tangible victim + CJS, reported offences only                239         480         241     2.01
++ intangible, reported offences only                         834       2,150       1,316     2.58
++ intangible, NCVS reporting uplift 1/0.409                2,039       5,256       3,217     2.58
+
+The ratio is invariant to every multiplier applied equally to both groups
+(offences per arrest, reporting uplift, national scale-up), so it is the robust output.
+
+Arrests below are scaled to national adult totals (Table 29 x adult share from 43C/43A).
+offence         NHW arrests  Hisp arrests   NHW $bn   Hisp $bn  Hisp share
+murder                2,641         2,014      50.5       38.5       43.3%
+assault             131,510        91,276      42.8       29.7       41.0%
+sexual                8,390         6,057      15.8       11.4       41.9%
+larceny             390,029       103,324      12.0        3.2       20.9%
+robbery              14,011        13,465       2.8        2.7       49.0%
+mvt                  31,173        16,969       4.2        2.3       35.2%
+burglary             74,743        30,687       4.1        1.7       29.1%
+vandalism            73,328        28,168       0.4        0.2       27.8%
+stolen_prop          36,337        14,846       0.4        0.1       29.0%
+fraud                56,678        15,770       0.4        0.1       21.8%
+forgery              22,340         7,449       0.1        0.0       25.0%
+arson                 3,813         1,363       0.1        0.0       26.3%
+embezzle              6,234         1,684       0.0        0.0       21.3%
+
+Excluded from route B for want of a McCollister unit cost: 'other assaults' (534,255 adult arrests, Hispanic share 18.4%),
+drug (20.0%), DUI (26.4%), weapons (22.6%), and all other public-order offences.
+Overall adult Hispanic arrest share is 18.8%, so the
+excluded block is close to neutral for the RATIO but lowers both LEVELS.
+
+====================================================================================================
+RECONCILIATION with victim-reported offending (NCVS)
+====================================================================================================
+NCVS 2012-15 victim-reported offender index, Hispanic/white per capita     1.37x
+  (14.4% of violent-victimisation offenders vs 15.6% of the age-12+ population,
+   against 43.8% and 65.0% for whites; BJS, Race and Hispanic Origin of Victims
+   and Offenders 2012-15, Tables 2 and 11)
+Route B, violent offences only, cost-weighted, Hispanic/NH white              2.82x
+Route B, violent arrests unweighted by cost                                   2.76x
+Route A1, violent classes only, cost-weighted, Hispanic/NH white              2.69x
+Route A1, imprisonment rate all offences, Hispanic/NH white                   2.14x
+Male age-specific imprisonment 25-39, 2022 (memo §8)                        2.15-2.84x
+
+The NCVS 1.37x and the arrest 2.8x are NOT the same quantity, and the single largest
+reason is simple assault.  NCVS violent victimisation is dominated by simple assault,
+which the UCR index excludes.  Adding 'other assaults' (the UCR simple-assault line) to
+the route-B violent arrest count, on an unweighted per-adult basis:
+  UCR index violent only (murder, rape, robbery, aggravated assault)           2.77x
+  + 'other assaults' (simple assault), the NCVS-comparable basis               1.85x
+
+On the NCVS-comparable basis the arrest ratio falls from about 2.8x to about 1.9x, which
+brackets the 1.37x victim-report ratio far more closely.  The residual gap, and the
+larger gap to the 2.1-2.9x prison ratio, is the enforcement, charging and sentencing
+wedge PLUS the offence-severity mix.  Nothing here separates the two, and the cost
+weighting used in this lane deliberately AMPLIFIES severity: the Hispanic arrest share
+is highest for the most expensive offences (murder 43%, robbery 49%, rape 42%) and
+lowest for larceny (21%) and fraud (22%).  [FRAMING-SENSITIVE]
+
+====================================================================================================
+OFFENDER'S OWN LOST LEGAL EARNINGS (separate line; NOT in the totals above)
+====================================================================================================
+arm                                               US-b white   US-b Mex       diff
+group mean earnings, all adults 25-64 (upper bound)         573        703        129
+federal minimum wage, full time (McCollister basis)         123        213         90
+half group mean (negative selection into prison)         287        351         65
+
+Direction on the ledger's tax gap: incarcerated adults live in institutional group
+quarters and are therefore OUTSIDE the CPS ASEC civilian noninstitutional universe.
+The -$8,286 gap never sees them at all — neither their zero taxes nor their zero
+transfers.  Because the Mexican-origin institutional rate (1.41%) is 1.73x the white
+rate (0.81%), including prisoners as zero-earning adults would WIDEN the measured tax
+gap, by roughly the lines above.  Adding this to the ledger and also counting the
+McCollister 'crime career' component would double count; the ledger line is the one to
+use.  [INFERENCE]
+
+====================================================================================================
+CROSS-CHECK against a lifetime career-criminal valuation
+====================================================================================================
+Cohen & Piquero (2009), J Quant Criminol 25:25-49, abstract (publisher page read this
+session): 'We estimate the present value of saving a 14-year-old high risk juvenile from
+a life of crime to range from $2.6 to $5.3 million.  Similarly, saving a high risk youth
+at birth would save society between $2.6 and $4.4 million.'
+The often-quoted $4.2-7.2m 'career criminal' figure is NOT in the abstract and was not
+verified here. [UNVERIFIED]
+
+Implied scale check.  Route A2's difference is a FLOW per adult-year; over the 40 years
+from 25 to 64, undiscounted:
+  base arm        $  1,421/yr x 40 = $    56,846 per adult 25-64
+  adjusted-coding arm $2,023/yr x 40 = $    80,912 per adult 25-64
+Against the by-generation memo's synthetic-cohort lifetime fiscal gap of about $250,000
+per adult (undiscounted), crime cost is a 23-32% addition on the base arm.  Cohen &
+Piquero's $2.6-5.3m is the lifetime cost of ONE high-risk offender, not a population
+average, so it is not comparable to these per-adult figures and is quoted only to show
+the order of magnitude that a single career offender carries. [INFERENCE]
+
+====================================================================================================
+FRAGMENTATION / SOCIAL COHESION — NO DEFENSIBLE DOLLAR ESTIMATE
+====================================================================================================
+Asked for, and refused on the evidence.  There is no per-adult dollar figure for lost
+social cohesion that survives the standards this repo applies to the lines above.  What
+exists, and why none of it converts:
+
+1. Putnam (2007), 'E Pluribus Unum', Scandinavian Political Studies 30(2):137-174.  The
+   canonical finding: in the short run, ethnic diversity is associated with lower trust,
+   less altruism and fewer friendships, including within one's own group ('hunkering
+   down').  It reports no dollar value and proposes none.  It is also a CROSS-SECTIONAL
+   association on US localities, with a long replication dispute about whether the effect
+   survives controls for deprivation and residential sorting. [SOURCE: doi 10.1111/
+   j.1467-9477.2007.00176.x] [UNVERIFIED: the replication literature was not read here]
+
+2. Algan & Cahuc (2010), 'Inherited Trust and Growth', AER 100(5):2060-2092, and Algan &
+   Cahuc (2013, Handbook of Economic Growth ch. 2): about a fifth of the cross-country
+   variance in income per head 1980-2009 co-varies with generalised trust, and a one
+   standard deviation rise in trust is associated with income per head about 6.8% higher.
+   [UNVERIFIED: read from secondary summaries this session, not the papers]
+
+3. Wellbeing-valuation attempts, e.g. 'Valuation of Trust in Government: The Wellbeing
+   Valuation Approach', Sustainability 13(19):11000 (2021), doi 10.3390/su131911000, price
+   trust by the income equivalent of its life-satisfaction effect. [UNVERIFIED: not read]
+
+Why none of these becomes a line in this ledger, in order of severity:
+  (a) None is identified as a CAUSAL effect of any specific group's presence.  Putnam is
+      a diversity-index correlation; Algan-Cahuc is a cross-country growth regression
+      instrumented by ancestors' inherited trust.  Neither licenses attributing a dollar
+      cost to US-born Mexican-origin adults, who are the group in question.
+  (b) Any trust->income elasticity applied to a US subgroup would double count the wage
+      and tax effects the ledger already measures directly.
+  (c) The sign is contested even in principle: the same literature finds diversity raising
+      innovation and variety.  A one-sided cost line would be a framing choice, not a
+      measurement. [FRAMING-SENSITIVE]
+  (d) Any number produced would have an uncertainty band wider than the entire -$8,286
+      fiscal gap, so it could not change a decision.
+Verdict on this item: [UNVERIFIED]/speculative.  Stated as a qualitative consideration,
+never as a dollar figure.
+
+====================================================================================================
+HEADLINE — US-born Mexican-origin minus US-born NH white, $ per adult 25-64 per year
+====================================================================================================
+measure                                                          value   % of -$8,286
+Route A2 corrections only (already in the ledger)                  356           4.3%
+Route A2 tangible (corrections + victim tangible)                  447           5.4%
+Route A2 total (corrections + victim + intangible)               1,421          17.2%
+Route A2 span across all arms                                 447..2,023               
+Route B tangible (Hispanic vs NH white, all ages 18+)              241           2.9%
+Route B total (Hispanic vs NH white, all ages 18+)               1,316          15.9%
+Lost legal earnings, group-mean arm                                129           1.6%
+
+wrote /Users/alien/Projects/immigration-research/infra/immigration-fiscal/crime_cost_2026_09_16/crime_cost_by_group.csv
+wrote /Users/alien/Projects/immigration-research/infra/immigration-fiscal/crime_cost_2026_09_16/crime_cost_result.txt

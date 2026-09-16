@@ -1,0 +1,35 @@
+route,arm,group_a,group_b,cost_a_per_adult2564,cost_b_per_adult2564,difference,ratio,unit
+A1_bjs_stock,corrections only (what the ledger already prices),usborn+foreign NH white,Hispanic any race,191.9,423.3,231.4,2.2057,2024 USD per adult 25-64 per year
+A1_bjs_stock,"+ victim tangible, amortised",usborn+foreign NH white,Hispanic any race,222.3,507.6,285.4,2.2837,2024 USD per adult 25-64 per year
+A1_bjs_stock,+ victim tangible + intangible,usborn+foreign NH white,Hispanic any race,553.4,1419.2,865.8,2.5646,2024 USD per adult 25-64 per year
+A1_bjs_stock,"+ victim total, corrections $45k",usborn+foreign NH white,Hispanic any race,506.3,1315.4,809.1,2.598,2024 USD per adult 25-64 per year
+A1_bjs_stock,"+ victim total, corrections $70k",usborn+foreign NH white,Hispanic any race,586.8,1492.9,906.1,2.5442,2024 USD per adult 25-64 per year
+A1_bjs_stock,+ victim total + full CJS (double counts prison),usborn+foreign NH white,Hispanic any race,576.4,1480.1,903.8,2.5681,2024 USD per adult 25-64 per year
+A2_acs_stock,"corrections only, all institutional GQ counted",US-born NH white,US-born Mexican-origin selfID,485.2,841.2,356.0,1.7336,2024 USD per adult 25-64 per year
+A2_acs_stock,tangible only,US-born NH white,US-born Mexican-origin selfID,562.0,1008.8,446.8,1.795,2024 USD per adult 25-64 per year
+A2_acs_stock,BASE: tangible + intangible,US-born NH white,US-born Mexican-origin selfID,1399.1,2820.2,1421.1,2.0158,2024 USD per adult 25-64 per year
+A2_acs_stock,  + generic-Hispanic prison-coding adjustment,US-born NH white,US-born Mexican-origin selfID,1399.1,3421.9,2022.8,2.4458,2024 USD per adult 25-64 per year
+A2_acs_stock,  correctional share of institutional GQ = 0.85,US-born NH white,US-born Mexican-origin selfID,1189.2,2397.2,1208.0,2.0158,2024 USD per adult 25-64 per year
+A2_acs_stock,  corrections $45k/yr,US-born NH white,US-born Mexican-origin selfID,1280.1,2613.9,1333.9,2.042,2024 USD per adult 25-64 per year
+A2_acs_stock,  corrections $70k/yr,US-born NH white,US-born Mexican-origin selfID,1483.6,2966.7,1483.1,1.9997,2024 USD per adult 25-64 per year
+A2_acs_stock,  adj coding + 0.85 correctional share,US-born NH white,US-born Mexican-origin selfID,1189.2,2908.6,1719.4,2.4458,2024 USD per adult 25-64 per year
+B_fbi_flow,tangible victim + CJS,NH white (constructed),Hispanic,239.1,480.5,241.3,2.0093,2024 USD per adult 18+ per year
+B_fbi_flow,+ intangible,NH white (constructed),Hispanic,833.9,2149.8,1315.9,2.5779,2024 USD per adult 18+ per year
+B_fbi_flow,"+ intangible, NCVS uplift",NH white (constructed),Hispanic,2038.9,5256.2,3217.3,2.5779,2024 USD per adult 18+ per year
+unit_cost,arson,,,16685.0,23496.0,30746.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,assault,,,12676.0,140237.0,155924.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,burglary,,,1984.0,2410.0,9415.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,drug,,,0.0,0.0,0.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,embezzle,,,0.0,0.0,7984.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,forgery,,,0.0,0.0,7671.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,fraud,,,0.0,0.0,7331.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,larceny,,,699.0,714.0,5146.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,murder,,,1074537.0,12299701.0,13087784.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,mvt,,,8908.0,9255.0,15694.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,public_order,,,0.0,0.0,0.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,robbery,,,4807.0,35275.0,61644.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,sexual,,,8095.0,298802.0,350802.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,stolen_prop,,,0.0,0.0,11618.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,unspecified,,,0.0,0.0,0.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,vandalism,,,0.0,-1.0,7081.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
+unit_cost,violent_other,,,12676.0,140237.0,155924.0,,"2024 USD per offence (McCollister 2010, CPI-U inflated)"
