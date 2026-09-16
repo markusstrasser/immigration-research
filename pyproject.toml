@@ -1,0 +1,25 @@
+[project]
+name = "immigration-research"
+version = "0"
+description = "Analysis environment for the immigration fiscal/crime research repo: `uv run python3 <script>` gets every package the tracked scripts import, at locked versions."
+requires-python = ">=3.13"
+dependencies = [
+    "pandas>=3.0.5",
+    "numpy",
+    "duckdb>=1.5.5",
+    "pyarrow>=25.0.1",
+    "openpyxl>=3.1.5",
+    "pyxlsb",
+    "requests>=2.34.2",
+    "pypdf>=6.19.0",
+    "pdfplumber>=0.11.10",
+    "pyreadstat>=1.3.6",
+    "beautifulsoup4",
+    "playwright",
+]
+
+[dependency-groups]
+dev = ["pytest>=9.1.1"]
+
+[tool.uv]
+package = false
