@@ -1,0 +1,6 @@
+# Keep large fetched artifacts out of git; source URLs are cited in RESULT.md
+*.zip
+*.csv.gz
+*.dta
+*.sas7bdat
+# anything over 2 MB should be re-fetched from its cited URL rather than committed
