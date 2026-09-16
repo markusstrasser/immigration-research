@@ -158,3 +158,7 @@ crime_frontier	optional	external/crime_frontier/orr/orr_annual_report_to_congres
 crime_frontier	optional	external/crime_frontier/nhis/nhis_2024_sample_adult.zip	1000000	setup-crime-frontier.sh	NHIS 2024 sample adult (nativity x insurance x utilization)
 crime_frontier	optional	external/crime_frontier/nhis/nhis_2023_sample_adult.zip	1000000	setup-crime-frontier.sh	NHIS 2023 sample adult
 tier_a	optional	external/tier_a/worldbank_gdp_pcap_kd.json	1000	setup-tier-a-labor-demography.sh	World Bank NY.GDP.PCAP.KD per-country responses, pinned vintage (delete the file to refresh)
+cps	optional	external/cps/asec/asec_2025_persons.json	20000000	cps_generation_welfare_2026_09_16/pull_cps_asec.sh	CPS ASEC 2025 person microdata via Census API (needs CENSUS_API_KEY); welfare-by-generation memo 2026-09-16
+cps	optional	external/cps/asec/asec_2025_supp.json	8000000	cps_generation_welfare_2026_09_16/pull_cps_asec.sh	CPS ASEC 2025 supplement (HFLUNCH etc.), joined on H_SEQ+PPPOS
+cps	optional	external/cps/asec/asec_2024_persons.json	20000000	cps_generation_welfare_2026_09_16/pull_cps_asec.sh	CPS ASEC 2024 person microdata, stability check
+cps	optional	external/cps/asec/asec_2024_supp.json	8000000	cps_generation_welfare_2026_09_16/pull_cps_asec.sh	CPS ASEC 2024 supplement

@@ -1,0 +1,101 @@
+[2025 ASEC, income year 2024] persons 142,125  households 55,762  raw dir /Volumes/2TBPNY/research-data/immigration-fiscal/data/external/cps/asec
+
+== Households by generation of reference person; % with any member using (weighted, HSUP_WGT) ==
+            n  any_cis  any_noeitc  caid  snap  cash  eitc  lunch  housing   wic   ssi   paw
+gen                                                                                         
+gen1   9471.0     44.9        39.6  25.6  12.1   4.3  20.7   19.3      5.4   3.2   3.1   1.3
+gen2   4939.0     34.6        31.4  20.3   9.5   3.8  13.3   13.8      4.2   2.8   2.7   1.3
+gen3+ 41352.0     29.4        26.7  16.8   9.9   4.8   9.5    9.7      4.9   1.9   3.9   1.1
+
+-- weighted share of households by generation (%) --
+gen
+gen1     17.0
+gen2      8.9
+gen3+    74.1
+
+-- gen1 by citizenship --
+                 n  any_cis  any_noeitc  caid  snap  cash  eitc  lunch  housing   wic   ssi   paw
+cit                                                                                              
+naturalized 5180.0     39.9        36.0  22.8  11.8   5.1  14.5   15.1      5.4   1.6   4.1   1.1
+noncitizen  4291.0     51.2        44.1  29.2  12.6   3.4  28.5   24.7      5.4   5.3   1.8   1.6
+
+-- gen2 and gen3+ by ethnicity of the reference person --
+                     n  any_cis  any_noeitc  caid  snap  cash  eitc
+gen   eth                                                          
+gen2  NH asian   690.0     29.4        25.4  14.6   4.7   2.7   8.3
+      NH black   235.0     41.6        37.1  23.6  13.6   2.9  16.5
+      NH white  1637.0     20.9        19.4  11.2   6.7   3.2   5.4
+      hispanic  2154.0     48.4        44.2  30.3  13.0   5.0  22.4
+      other      223.0     30.6        26.8  18.8  10.6   3.0   8.3
+gen3+ NH asian   329.0     29.6        26.5  16.5   5.2   4.4   8.6
+      NH black  5833.0     46.9        43.5  27.6  20.2   9.5  16.7
+      NH white 30567.0     24.3        21.9  13.6   7.3   3.6   7.4
+      hispanic  3156.0     43.5        39.9  25.6  14.9   6.9  15.0
+      other     1467.0     47.1        44.5  30.8  20.1   8.7  16.4
+
+-- ethnic composition of reference persons within generation (%) --
+eth    NH asian  NH black  NH white  hispanic  other
+gen                                                 
+gen1       26.4      10.9      17.9      43.7    1.1
+gen2       13.2       5.8      37.0      39.6    4.3
+gen3+       0.5      14.2      76.2       6.4    2.7
+
+-- by reference-person age group --
+                    n  any_cis  any_noeitc  caid  snap  cash
+age_grp gen                                                 
+<35     gen1   1705.0     43.7        35.4  24.7  10.5   2.9
+        gen2   1598.0     43.0        38.5  27.0  10.4   2.7
+        gen3+  7007.0     34.8        31.1  21.1  11.9   3.6
+35-64   gen1   5846.0     48.6        43.3  27.8  10.9   3.9
+        gen2   2349.0     35.9        32.9  20.3   8.9   4.9
+        gen3+ 21098.0     34.4        31.1  19.5  10.0   5.7
+65+     gen1   1920.0     34.7        32.7  19.8  17.5   6.9
+        gen2    992.0     17.4        16.2   9.0   9.3   3.4
+        gen3+ 13247.0     18.5        17.6  10.3   8.6   4.1
+
+-- households with children under 18 --
+            n  any_cis  any_noeitc  caid  snap  cash  lunch
+gen                                                        
+gen1   3828.0     67.7        62.4  38.1  15.4   3.9   48.6
+gen2   1701.0     59.9        56.3  33.4  14.1   4.7   42.0
+gen3+ 12846.0     56.3        52.0  29.3  14.8   5.2   37.7
+
+-- reference person with high school or less --
+            n  any_cis  any_noeitc  caid  snap  cash
+gen                                                 
+gen1   4145.0     61.2        54.3  36.7  18.4   6.2
+gen2   1370.0     52.6        47.6  32.6  17.2   6.7
+gen3+ 13445.0     41.8        38.2  26.0  18.2   8.9
+
+-- composition: share with children, mean head age, share high-school-or-less --
+       kids_pct  age_mean  lowed_pct
+gen                                 
+gen1       38.5      49.7       41.6
+gen2       31.6      46.1       27.4
+gen3+      24.7      53.6       31.7
+
+-- directly age-standardised to the gen3+ reference-person age distribution (5 bands) --
+gen1 any_cis=43.0 any_noeitc=38.1 cash=4.7 caid=24.5
+gen2 any_cis=30.9 any_noeitc=28.1 cash=4.3 caid=17.9
+gen3+ any_cis=29.4 any_noeitc=26.7 cash=4.8 caid=16.8
+
+== Persons aged 25-64, own receipt (weighted, MARSUPWT); hh_snap = lives in a SNAP household ==
+            n   ssi   paw  caid  eitc  hh_snap
+gen                                           
+gen1  15230.0   0.9   0.6  16.3  13.3     10.3
+gen2   6918.0   1.9   0.6  14.6   9.9      9.3
+gen3+ 49108.0   2.6   0.8  13.3   8.2      9.9
+
+-- by ethnicity --
+                     n   ssi   paw  caid  eitc  hh_snap
+gen   eth                                              
+gen2  NH asian  1131.0   0.6   0.2   8.9   5.7      4.6
+      NH black   360.0   1.7   0.0  18.1  11.9     10.2
+      NH white  1687.0   2.5   0.3  10.5   5.2      6.4
+      hispanic  3406.0   2.0   1.0  18.1  14.1     12.2
+      other      334.0   2.3   0.4  15.8   6.4     11.7
+gen3+ NH asian   414.0   0.7   0.2   9.2   6.2      4.3
+      NH black  5998.0   5.2   1.4  20.5  14.8     18.8
+      NH white 36541.0   2.0   0.6  11.0   6.5      7.5
+      hispanic  4300.0   3.4   1.1  17.7  11.1     13.6
+      other     1855.0   4.0   2.0  24.0  13.4     20.0
