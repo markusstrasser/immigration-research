@@ -1,0 +1,6 @@
+group,n_unweighted,pop_millions,own_kids_u5_per_woman_15_44,approx_se,implied_TFR_crude
+Mexico-born women,1039,2.21,0.2606,0.0166,1.56
+"Mexican 2nd gen (US-born, >=1 MX parent)",1818,4.15,0.1682,0.0111,1.01
+"Mexican 3rd+ gen (US-born, US-born parents, Mexican self-ID)",1386,3.15,0.1845,0.0131,1.11
+All Hispanic (any gen),6898,15.45,0.1977,0.0059,1.19
+NH white 3rd+ gen,13506,31.34,0.2275,0.0047,1.36
