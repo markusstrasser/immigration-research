@@ -94,6 +94,13 @@ _cmd_download() {
         else
             echo "WARN immigration-causal/setup.sh not found — skip causal downloads"
         fi
+        # LEHD QWI state panel (causal lane; puller tracked here since the untracked original
+        # was lost with the SSD tree in Aug 2026). Fails loud inside the script.
+        if [[ -n "${CENSUS_API_KEY:-}" ]]; then
+            uv run --with pandas --with pyarrow --with requests python "$ROOT/acquire/pull_qwi_state_panel.py" || true
+        else
+            echo "WARN QWI state panel skipped — set CENSUS_API_KEY (see acquire/config.env.example)"
+        fi
     fi
 }
 
