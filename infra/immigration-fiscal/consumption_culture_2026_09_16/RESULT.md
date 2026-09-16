@@ -1,86 +1,115 @@
 # Consumption, saving, remittances by Hispanic origin / nativity
 
-**Verdict:** NO. At equal income, Hispanic-origin households spend a *smaller* dollar total and a
-*lower* share on almost every category that reads as "frivolous" — alcohol (0.62× the income-matched
-share), tobacco (0.50×), entertainment (0.80×), education (0.81×), reading (1.00×). Their budget
-tilts toward food at home (1.13×), housing (1.12×), apparel (1.39×) and transportation (1.07×) —
-household-size and renter-status categories, not indulgence. Total outlay at the same income is
-about 22 percent lower ($69,600 vs $89,727), the gap that remittances, saving and expenditure
-under-reporting have to split between them. Wealth is the one unambiguous deficit: median Hispanic
-net worth is $61,600 against $285,000 for non-Hispanic white families. The "frivolous spending"
-frame is not supported by the expenditure data; the real finding is low *asset accumulation* despite
-low consumption — and the missing money is now sourced: Mexican immigrant workers sent 16.7 percent
-of their entire US labor income to Mexico as remittances in 2024, $62.5bn out of a $373.7bn wage
-bill. The 22 percent spending gap and the remittance rate are the same phenomenon seen from two
-sides. Conditional on age, children and education, Mexican-American households do not accumulate
-wealth differently from white households; they simply start younger, with more dependents, less
-schooling, and they export a sixth of their earnings.
+**Verdict:** NO on the premise, with one real exception. At genuinely equal income, Hispanic-origin
+households spend *less* on every category the "frivolous goods" frame predicts: tobacco 0.33× the
+matched share, cash contributions 0.43×, alcohol 0.71×, entertainment 0.80×. The exception the brief
+anticipated is real — vehicle purchases run 1.25× the matched share, alongside apparel 1.45× and food
+away from home 1.13×. Total spending at equal income is essentially identical (0.975×), not lower.
+Yet median Hispanic net worth is $61,600 against $285,000 for non-Hispanic white families, 1.3 years
+of income against 3.5. Equal consumption and one-quarter the wealth. The best-sourced candidate for
+where the money goes is remittances: Mexican immigrant workers sent 16.7 percent of their entire US
+labor income to Mexico in 2024, $62.5bn out of a $373.7bn wage bill. The decomposition literature
+independently rejects a behavioral explanation — conditional on age, children, education and income,
+Mexican-American households accumulate wealth the way comparable white households do.
+
+**CORRECTION, same session.** An earlier version of this file claimed total spending was "22 percent
+lower" at equal income and read that gap as the remittance outflow. That was wrong. A peer script in
+this lane (`ce_income_matched.py`, not written by me) caught an off-by-one column index: I labelled
+the comparison column $70,000–$99,999 and quoted its mean income ($83,888), but read every share and
+expenditure figure from the next column over, $100,000–$149,999 (mean income $121,852). Households
+earning $122k naturally outspend Hispanic households earning $86k, so the "22 percent gap" was an
+income gap I had introduced myself. I re-derived the column headers independently and confirm the
+peer is correct. All ratios below are now shown against *both* brackets. The alcohol/tobacco/
+entertainment finding survives and tobacco strengthens; the vehicle-purchase, food-away, education
+and pension readings all change sign or magnitude. Do not cite the earlier numbers.
+
+The parent session independently reached the same correction and appended its own note at the foot of
+this file; both re-derivations agree line for line. That note also catches a labelling defect I had
+repeated throughout: Table 2200's comparison column is "White, Asian, and all other races, not
+including Black or African-American", not non-Hispanic white alone. Column headers here now say so.
 
 Model self-report: claude-opus-5[1m] (Opus 5, 1M context), `researcher` teammate, 2026-09-16.
 
 ## Method note on "at equal income"
 
-BLS publishes no Hispanic-origin × income cross-tab. I built the income control from two CE 2024
-tables that happen to align almost exactly:
+BLS publishes no Hispanic-origin × income cross-tab, so the control has to be built. No single
+bracket of Table 1203 matches Hispanic consumer units on both income and household size, so I report
+two and let the reader see the spread:
 
-| | Hispanic CUs (Table 2200) | All CUs, $70,000–$99,999 bracket (Table 1203) |
-|---|---|---|
-| Mean income before taxes | $85,710 | $83,888 |
-| People per consumer unit | 3.0 | 2.9 |
-| Earners | 1.7 | 1.8 |
-| Age of reference person | 45.4 | 48.2 |
-| Homeowner % | 46 | 74 |
-| College % | 52 | 77 |
+| | Hispanic CUs (Tbl 2200) | $70,000–$99,999 (Tbl 1203) | $100,000–$149,999 (Tbl 1203) |
+|---|---|---|---|
+| Mean income before taxes | $85,710 | **$83,888** | $121,852 |
+| People per consumer unit | 3.0 | 2.5 | **2.9** |
+| Earners | 1.7 | 1.5 | 1.8 |
+| Homeowner % | 46 | 64 | 74 |
+| Total annual expenditure | $69,600 | **$71,369** | $89,727 |
 
-Income and household size match within 2–3 percent, so the bracket is a defensible income-and-size
-matched benchmark. It does **not** match on tenure, age or education — homeownership especially
-(46 vs 74 percent) drags Hispanic housing share up mechanically. [INFERENCE — my construction, not
-a BLS-published control]
+The $70–100k bracket is the **income match** (within 2.2 percent) and is the primary comparison. The
+$100–150k bracket is the **size match** (2.9 vs 3.0 people) but carries 42 percent more income, so it
+flatters Hispanic households on every discretionary share and must not be read as an income control.
+Neither bracket matches on homeownership, which is the largest uncontrolled confound (46 percent vs
+64–74) and mechanically inflates the Hispanic housing share.
+[INFERENCE — my construction from two published tables, not a BLS-published control]
 
-## Table — CE 2024 expenditure shares, Hispanic vs non-Hispanic white vs income-matched
+Against the income-matched bracket, Hispanic households spend 97.5 percent as much in total while
+containing 3.0 people against 2.5. Per capita they spend materially less; per household, the same.
+
+## Table — CE 2024 expenditure shares
 
 [SOURCE: BLS Consumer Expenditure Survey 2024, Table 2200 "Hispanic or Latino origin of reference
 person", https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error/reference-person-latino-2024.xlsx
-and Table 1203 "Income before taxes", .../cu-income-before-taxes-2024.xlsx — both downloaded and
-parsed locally, copies in this directory]
+and Table 1203 "Income before taxes", .../cu-income-before-taxes-2024.xlsx — both downloaded, parsed
+locally, copies and the parsing script in this directory]
 
-| Category | Hisp share % | NH-white share % | H/W ratio | Income-matched share % | H / matched |
-|---|---|---|---|---|---|
-| Food at home | 8.9 | 7.8 | 1.14 | 7.9 | 1.13 |
-| Food away from home | 5.4 | 5.1 | 1.06 | 5.3 | 1.02 |
-| Alcoholic beverages | 0.5 | 0.9 | 0.56 | 0.8 | **0.62** |
-| Housing | 36.6 | 32.2 | 1.14 | 32.8 | 1.12 |
-| Apparel and services | 3.2 | 2.4 | 1.33 | 2.3 | **1.39** |
-| Transportation | 19.1 | 16.5 | 1.16 | 17.9 | 1.07 |
-| Vehicle purchases (net outlay) | 7.4 | 6.9 | 1.07 | 6.7 | 1.10 |
-| Healthcare | 5.8 | 8.3 | 0.70 | 8.0 | 0.72 |
-| Entertainment | 3.5 | 5.0 | 0.70 | 4.4 | **0.80** |
-| Personal care products and services | 1.4 | 1.2 | 1.17 | 1.3 | 1.08 |
-| Reading | 0.1 | 0.2 | 0.50 | 0.1 | 1.00 |
-| Education | 1.3 | 2.2 | 0.59 | 1.6 | 0.81 |
-| Tobacco products and smoking supplies | 0.2 | 0.5 | 0.40 | 0.4 | **0.50** |
-| Miscellaneous | 1.4 | 1.5 | 0.93 | 1.5 | 0.93 |
-| Cash contributions | 1.3 | 3.3 | 0.39 | 2.3 | **0.57** |
-| Personal insurance and pensions | 11.1 | 12.9 | 0.86 | 13.4 | 0.83 |
-| Life and other personal insurance | 0.4 | 0.8 | 0.50 | 0.7 | 0.57 |
-| **Total expenditure ($)** | **69,600** | **84,260** | 0.83 | **89,727** | **0.78** |
+Read the **H/70k** column as the answer. H/100k is shown only so the size-matched view is visible.
+The second column is BLS's "Not Hispanic or Latino: White, Asian, and all other races, not including
+Black or African-American" — it is **not** non-Hispanic white alone, and it includes Asian households,
+whose higher income and wealth pull that column up. Ratios against it overstate the Hispanic/white
+contrast.
 
-Levels behind the shares (mean $, Hispanic vs NH-white): alcohol 377 vs 770; tobacco 173 vs 405;
+| Category | Hisp % | NH wh/As/oth % | $70-100k % | $100-150k % | H/ref | **H/70k** | H/100k |
+|---|---|---|---|---|---|---|---|
+| Food at home | 8.9 | 7.8 | 8.6 | 7.9 | 1.14 | 1.03 | 1.13 |
+| Food away from home | 5.4 | 5.1 | 4.8 | 5.3 | 1.06 | **1.13** | 1.02 |
+| Alcoholic beverages | 0.5 | 0.9 | 0.7 | 0.8 | 0.56 | **0.71** | 0.62 |
+| Housing | 36.6 | 32.2 | 35.3 | 32.8 | 1.14 | 1.04 | 1.12 |
+| Apparel and services | 3.2 | 2.4 | 2.2 | 2.3 | 1.33 | **1.45** | 1.39 |
+| Transportation | 19.1 | 16.5 | 17.2 | 17.9 | 1.16 | 1.11 | 1.07 |
+| Vehicle purchases (net outlay) | 7.4 | 6.9 | 5.9 | 6.7 | 1.07 | **1.25** | 1.10 |
+| Healthcare | 5.8 | 8.3 | 8.6 | 8.0 | 0.70 | 0.67 | 0.72 |
+| Entertainment | 3.5 | 5.0 | 4.4 | 4.4 | 0.70 | **0.80** | 0.80 |
+| Personal care products and services | 1.4 | 1.2 | 1.3 | 1.3 | 1.17 | 1.08 | 1.08 |
+| Reading | 0.1 | 0.2 | 0.1 | 0.1 | 0.50 | 1.00 | 1.00 |
+| Education | 1.3 | 2.2 | 1.2 | 1.6 | 0.59 | 1.08 | 0.81 |
+| Tobacco products and smoking supplies | 0.2 | 0.5 | 0.6 | 0.4 | 0.40 | **0.33** | 0.50 |
+| Miscellaneous | 1.4 | 1.5 | 1.8 | 1.5 | 0.93 | 0.78 | 0.93 |
+| Cash contributions | 1.3 | 3.3 | 3.0 | 2.3 | 0.39 | **0.43** | 0.57 |
+| Personal insurance and pensions | 11.1 | 12.9 | 10.1 | 13.4 | 0.86 | 1.10 | 0.83 |
+| Life and other personal insurance | 0.4 | 0.8 | 0.6 | 0.7 | 0.50 | 0.67 | 0.57 |
+| **Total expenditure ($)** | **69,600** | 84,260 | **71,369** | 89,727 | 0.83 | **0.975** | 0.78 |
+
+Levels behind the shares (mean $, Hispanic vs that reference column): alcohol 377 vs 770; tobacco 173 vs 405;
 entertainment 2,407 vs 4,234; cash contributions 911 vs 2,741; apparel 2,217 vs 1,995; food at home
 6,220 vs 6,586 on a 3.0-person vs 2.3-person household.
 
-Reading the categories:
-- **Higher:** apparel (the largest single deviation, 1.39×), food at home, housing, personal care,
-  vehicle purchases. Apparel and food-at-home track children and household size; housing tracks
-  renting; the vehicle-purchase edge is small (1.10×) and sits alongside *fewer* vehicles owned
-  (1.7 vs 2.0 for NH-white, 2.3 in the matched bracket). Hispanic households are not buying more
-  cars, they are replacing a smaller fleet.
-- **Lower:** alcohol, tobacco, entertainment, education, healthcare, insurance and pensions, cash
-  contributions. The two categories the "frivolous" frame predicts — alcohol and tobacco — are the
-  two lowest ratios in the table.
-- **Anomaly to chase:** cash contributions at 0.57× the matched share. Remittances abroad should
-  land in this line. Either CE captures them badly or the flow is routed outside CE's instrument.
-  [GAP]
+At the income-matched bracket:
+- **Lower:** tobacco 0.33, cash contributions 0.43, healthcare 0.67, life insurance 0.67, alcohol
+  0.71, miscellaneous 0.78, entertainment 0.80. Every category the "frivolous" frame names is here,
+  and tobacco is the single largest deviation in the table in either direction.
+- **Higher:** apparel 1.45, vehicle purchases 1.25, food away from home 1.13, transportation 1.11,
+  pensions and insurance 1.10, personal care 1.08, education 1.08.
+- **Vehicle purchases at 1.25 is the brief's predicted exception and it holds.** The caveat is that
+  Hispanic households own *fewer* vehicles (1.7 against 2.0 in the reference column), so a higher purchase share
+  on a smaller fleet reads as replacing older vehicles or buying on worse credit terms rather than
+  accumulating cars. Distinguishing those needs vehicle age and finance-charge data CE does not
+  publish in this table. [GAP]
+- **Education at 1.08 and pensions at 1.10 flip sign** relative to the withdrawn version. Against
+  the pooled non-Hispanic reference column they look far lower (0.59, 0.86); against equal income they are
+  slightly higher. The apparent education deficit is an income effect, not an ethnic one.
+- **Apparel at 1.45 is the largest positive deviation** and tracks children: 0.8 children under 18
+  per Hispanic consumer unit against 0.5 in the reference column.
+- **Cash contributions at 0.43 remains anomalous** given that remittances should land in this line.
+  See the remittance section: CE is not capturing that flow.
 
 ## Saving and wealth
 
@@ -162,9 +191,10 @@ Hispanic pool, consistent with suburban/exurban settlement. No post-2003 BLS upd
    earnings), the matched bracket is set too low and the true Hispanic shares should be compared to
    a *higher* bracket, which would widen the "spends less on discretionary goods" conclusion, not
    narrow it. The direction of this bias favors the verdict.
-4. **Expenditure under-reporting is the live threat to the 22 percent total-spending gap.** CE
-   under-reports spending generally; if that under-report is worse for Spanish-language or
-   lower-education respondents, part of the gap is measurement, not saving or remittances.
+4. **Expenditure under-reporting.** CE under-reports spending generally. If that under-report is
+   worse for Spanish-language or lower-education respondents, the true Hispanic total is above the
+   measured 0.975× and the "equal spending at equal income" reading would become "slightly more".
+   This bias runs *against* the verdict and is the main reason not to treat 0.975 as precisely one.
 5. **Household size and age are not fully controlled.** Per-capita rather than per-household shares
    would lower Hispanic food and apparel further.
 6. **Homeownership is the biggest uncontrolled confound** (46 vs 74 percent), and it inflates
@@ -178,7 +208,7 @@ Hispanic pool, consistent with suburban/exurban settlement. No post-2003 BLS upd
 - [DONE] Paulin MLR 2003 origin-group heterogeneity.
 - [DONE 2nd epoch] Remittances, SIPP wealth by nativity, generational convergence — below.
 
-## Remittances — the missing 22 percent
+## Remittances
 
 [SOURCE: Banco de México, *Ingresos y Egresos por Remesas, diciembre de 2024*,
 https://www.banxico.org.mx/publicaciones-y-prensa/remesas/%7BD08E80AC-6031-C7CF-D792-28CBEF70658F%7D.pdf]
@@ -208,13 +238,23 @@ The decisive number is the remittance rate out of US earnings:
 — combines Banxico remittance data with CPS extracts for the wage bill; remittances were 3.38 percent
 of Mexican GDP in 2024]
 
-**This closes the loop on the CE result.** Hispanic consumer units spend 22 percent less than
-income-matched households. Mexican immigrant workers remit 16.7 percent of labor income. The two
-figures are measured on different populations — all Hispanic consumer units versus Mexican immigrant
-workers — so they cannot be netted directly, but they are the same order of magnitude and the same
-sign. Low consumption at a given income is not thrift misread as deprivation; a large slice of the
-income leaves the country before it can be either spent or banked in the US. [INFERENCE — the two
-series are not linkable at household level without CE PUMD]
+**What this does and does not explain.** An earlier version of this file claimed the remittance rate
+explained a 22 percent CE spending shortfall. That shortfall does not exist — at equal income
+Hispanic households spend 97.5 percent as much as the matched bracket. The remittance figure is
+still large and well sourced, but it can no longer be cashed out against a measured consumption gap.
+
+What remains is an accounting puzzle worth stating precisely. At equal pretax income, Hispanic
+households spend about the same, yet hold roughly a quarter the net worth relative to income (1.3
+years against 3.5). Pretax income must go to consumption, taxes, saving, or transfers abroad. If
+consumption is equal and saving is far lower, then taxes plus remittances must absorb the difference.
+Hispanic consumer units are younger with more children, so their effective tax rate is likely
+*lower*, not higher, which widens rather than closes the residual and points at transfers. That is
+consistent with the 16.7 percent remittance rate, but I have not closed the identity: CE does not
+publish taxes paid alongside these shares, the remittance rate is measured on Mexican immigrant
+workers rather than all Hispanic consumer units, and the SCF wealth figures come from a different
+survey and year. Treat this as a well-motivated hypothesis with a clear test, not a finding.
+[INFERENCE — unclosed accounting identity] [GAP — closing it needs CE PUMD with the tax variables,
+or SCF restricted to Hispanic households with a remittance question]
 
 **CE does not capture this flow.** Hispanic cash contributions average $911 per consumer unit per
 year. Against that: 2024 saw roughly 165 million remittance transactions (Banxico reports 13.9
