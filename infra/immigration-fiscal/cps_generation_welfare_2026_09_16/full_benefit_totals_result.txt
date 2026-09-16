@@ -1,0 +1,28 @@
+== Adults 25-64, $ per adult per year (equal shares among all SPM-unit members, person weights), CPS ASEC 2025 + MEPS 2024 ==
+group                                                           third_plus_nh_white  all_native  all_second_gen  mexican_second_gen  mexican_third_plus_selfid  mexico_born
+means-tested cash (SSI, TANF/GA)                                                219         266             192                 208                        286           75
+refundable credits (EITC, ACTC)                                                  96         125             146                 252                        175          403
+food, WIC, school meals, energy, broadband                                      145         188             167                 240                        232          246
+housing subsidy (SPM capped)                                                     41          86              85                  70                        122           62
+public medical (MEPS transport, age x nativity x insurance)                   2,132       2,310           2,147               2,382                      2,293        2,081
+= means-tested total                                                          2,633       2,974           2,737               3,152                      3,108        2,868
+Social Security                                                               1,700       1,636           1,205                 852                      1,327          638
+unemployment insurance                                                          100          99             109                 125                         71           69
+veterans' benefits                                                              434         449             318                 275                        364           78
+= contributory / service total                                                2,234       2,185           1,631               1,252                      1,763          785
+children 5-17 per adult (count)                                                0.12        0.12            0.12                0.15                       0.13         0.17
+K-12 average-cost scenario ($17,619 x children 5-17)                          2,102       2,127           2,135               2,626                      2,336        2,933
+= ALL BENEFITS ex school                                                      4,867       5,159           4,368               4,403                      4,870        3,652
+= ALL BENEFITS incl. school scenario                                          6,969       7,286           6,503               7,030                      7,206        6,586
+gross modeled taxes (payroll + federal before credits + state)               14,479      13,235          13,799               7,670                      9,324        5,278
+benefits/taxes ex school                                                       0.34        0.39            0.32                0.57                       0.52         0.69
+benefits/taxes incl. school                                                    0.48        0.55            0.47                0.92                       0.77         1.25
+net (taxes - all benefits incl. school)                                       7,511       5,949           7,296                 641                      2,117       -1,308
+
+Lifetime (adult 18+, survival-weighted, own mortality table, from lifecycle run): taxes / cash+noncash / health / ratio
+  third_plus_nh_white        taxes   712,265  transfers   378,134  health   257,692  benefits/taxes 0.89   with own K-12 (13 yrs x 90% public x $17,619 = 206,142): 1.18
+  all_native                 taxes   647,735  transfers   374,275  health   255,542  benefits/taxes 0.97   with own K-12 (13 yrs x 90% public x $17,619 = 206,142): 1.29
+  all_second_gen             taxes   688,106  transfers   351,634  health   252,990  benefits/taxes 0.88   with own K-12 (13 yrs x 90% public x $17,619 = 206,142): 1.18
+  mexican_second_gen         taxes   409,251  transfers   316,657  health   265,630  benefits/taxes 1.42   with own K-12 (13 yrs x 90% public x $17,619 = 206,142): 1.93
+  mexican_third_plus_selfid  taxes   458,224  transfers   330,524  health   268,578  benefits/taxes 1.31   with own K-12 (13 yrs x 90% public x $17,619 = 206,142): 1.76
+  mexico_born                taxes   259,232  transfers   170,765  health   230,435  benefits/taxes 1.55   with own K-12 (13 yrs x 90% public x $17,619 = 206,142): 2.34
