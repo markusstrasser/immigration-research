@@ -55,3 +55,19 @@ Three angles the Claude lanes did not rank. (1) The crime cost sits in the sexua
 ## Acquisition queue from this pass
 
 PISA 2025 microdata (home-language splits); Suomen Perusta and van de Beek et al. register fiscal reports; StatCan 36-10-0222; NCHS natality by maternal nativity; DOL LCA disclosure files; Dinesen–Schaeffer–Sønderskov 2020; Opportunity Insights race × parental-income incarceration tables; PaymentAccuracy.gov improper-payment rates.
+
+## @Ne_pas_couvrir (73.8k followers), 83 original posts 17 Aug–16 Sep 2026, pulled 2026-09-16
+
+The account is political theory (Marcuse, Rothbard, Hess, "left theory as sublation of the West") with immigration as the applied case. Almost nothing in it is a number. Five claims are testable and were graded against the repo before dispatch (hindsight rule: NOVEL, HAD-PARTS, HAD-LEVER). Archive: `infra/immigration-fiscal/acs_institutional_2026_09_16/x_pull_2026_09_16/x_ne_pas_couvrir*.jsonl` and the quoted Cremieux thread.
+
+| Claim (≤15 words) | Post | Grade | Test |
+|---|---|---|---|
+| "High-trust societies needed little coercive infrastructure; trust decline replaces norms with police" | 23 Aug, 21k likes | NOVEL | Guard-labor share (security guards, police, corrections) and police+corrections $/capita by state vs foreign-born share, fractionalization, with Black-share and crime controls; Bowles & Jayadev 2006. Lane `guard_labor_2026_09_16/`. |
+| "Non-white groups keep positive in-group preference; institutions do not make them individualists" | 16 Sep, quoting Cremieux's ANES thread (every race warm to its own except white liberals; timed to 2012) | NOVEL by generation | ANES 2020/2024 thermometers (Hispanic minus white) and redistribution/immigration items by Hispanic generation 1/2/3+; GSS trust by BORN × PARBORN. Lane `attitudes_gen_2026_09_16/`. |
+| "Children of high-scoring immigrant parents regress toward their origin population's mean" | 16 Sep | HAD-PARTS (mechanisms memo names ethnic capital, untested) | Done: OI Table 6b, every origin's parent–child slope flatter than US-born; top-quintile Mexican-parent sons −4.2 points, Indian +8.1 (ladder 86). |
+| "Texas under-30 population increasingly ethno-collectivist; individualist whites shrinking" | 13 Sep | HAD-LEVER (demographic momentum queued, not built) | Fertility by generation and Hispanic share of under-30s by state from ACS; obligation: dispatch, not re-queue. |
+| "Jugaad: a low-trust operating system exploits the system; not seen as dishonourable" | 21 Aug | HAD-PARTS (informal channel §12; inherited-trust literature named in §13) | GSS trust by ancestry × generation (Algan–Cahuc inherited trust); folded into the attitudes lane. |
+
+Not research, or already contradicted: the Kissinger quote; "100 million deportations"; the Ceuta rape quote (a single interview); MI5 recruitment; the Marcuse "reservoir of discontent" frame (a claim about intent, not a measurable). "AI predicts race from X-rays, so race is not a social construct" (Boghossian) is true and irrelevant to any ledger line.
+
+What the account gets right that the economists' essays miss: coercion cost is a fiscal line (police, corrections, private security) and the ledger books only corrections; if guard labor rises with diversity after controls, that is a per-capita cost the NAS framework never allocates. What it gets wrong by construction: every mechanism is asserted at the level of "the West" with no comparison group, so the disconfirming tests (Cuban and Vietnamese second-generation convergence, ladder 74; AfD support highest where immigration is lowest) never appear.
