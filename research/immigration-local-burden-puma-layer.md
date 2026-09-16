@@ -104,3 +104,7 @@ The revised read is:
 ## Bottom line
 
 This is the right next layer. It is more precise than the earlier state-only model and avoids pretending that public-use microdata cleanly identify metro areas when they do not.
+
+## Revisions
+
+- **2026-09-16 — pointer, no content change.** This memo predates the 2026-09-05 material inference repair and was not re-audited then; treat its figures and framing as pre-repair. Current state: [immigration-local-cost-incidence-2026-09-05.md](immigration-local-cost-incidence-2026-09-05.md). [Decision](../decisions/2026-09-05-material-inference-repair.md).

@@ -215,3 +215,7 @@ For a serious low-skill immigration calculation, the clean stack is:
 5. Keep positive channels in view: task complementarity, consumer-price effects, shortage-job filling, and descendant mobility.
 
 That is the first version of a model that is broad enough to criticize both cheap pro-immigration slogans and cheap anti-immigration slogans.
+
+## Revisions
+
+- **2026-09-16 — pointer, no content change.** This memo predates the 2026-09-05 material inference repair and was not re-audited then; treat its figures and framing as pre-repair. Current state: [immigration-clarity-update-2026-09-05.md](immigration-clarity-update-2026-09-05.md), [immigration-second-order-effects-2026-09-05.md](immigration-second-order-effects-2026-09-05.md). [Decision](../decisions/2026-09-05-material-inference-repair.md).

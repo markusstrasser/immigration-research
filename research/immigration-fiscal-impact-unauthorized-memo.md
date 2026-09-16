@@ -294,3 +294,5 @@ Heritage counts the costs but uses a short horizon that excludes the contributio
 ## Revisions
 
 - **2026-03-13:** Added a source audit for the January 2024 Camarota/CIS testimony and downgraded it from "another estimate" to "adversarial briefing with reusable subclaims only". Trigger: [2026-03-13-treat-cis-camarota-as-advocacy-not-baseline](decisions/2026-03-13-treat-cis-camarota-as-advocacy-not-baseline.md).
+
+- **2026-09-16 — pointer, no content change.** This memo predates the 2026-09-05 material inference repair and was not re-audited then; treat its figures and framing as pre-repair. Current state: [immigration-fiscal-account-2024-2026-09-05.md](immigration-fiscal-account-2024-2026-09-05.md), [immigration-clarity-update-2026-09-05.md](immigration-clarity-update-2026-09-05.md). [Decision](../decisions/2026-09-05-material-inference-repair.md).

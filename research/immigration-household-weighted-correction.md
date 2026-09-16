@@ -132,3 +132,7 @@ Using corrected school-age burden plus `PUMA` rent:
 The right correction was to move from adult-linked child counts to housing-weighted household estimates.
 
 That correction improves the analysis materially, but it does not rescue the optimistic reading. The local-burden story remains real. The stronger conclusion now is simply cleaner: some groups are school-heavy, some are housing-heavy, and some are both.
+
+## Revisions
+
+- **2026-09-16 — pointer, no content change.** This memo predates the 2026-09-05 material inference repair and was not re-audited then; treat its figures and framing as pre-repair. Current state: [immigration-conceptual-audit-2026-09-05.md](immigration-conceptual-audit-2026-09-05.md), [immigration-fiscal-account-2024-2026-09-05.md](immigration-fiscal-account-2024-2026-09-05.md). [Decision](../decisions/2026-09-05-material-inference-repair.md).

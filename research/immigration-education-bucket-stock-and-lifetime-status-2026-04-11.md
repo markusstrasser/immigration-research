@@ -138,3 +138,7 @@ Do **not** use this memo to claim:
 
 1. [acs_foreign_born_education_bucket_totals_2023.csv](sources/immigration-fiscal/data/derived/stage3_proto/acs_foreign_born_education_bucket_totals_2023.csv)
 2. [acs_foreign_born_education_state_shares_2023.csv](sources/immigration-fiscal/data/derived/stage3_proto/acs_foreign_born_education_state_shares_2023.csv)
+
+## Revisions
+
+- **2026-09-16 — pointer, no content change.** This memo predates the 2026-09-05 material inference repair and was not re-audited then; treat its figures and framing as pre-repair. Current state: [immigration-fiscal-account-2024-2026-09-05.md](immigration-fiscal-account-2024-2026-09-05.md). [Decision](../decisions/2026-09-05-material-inference-repair.md).
