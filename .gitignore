@@ -43,3 +43,6 @@ infra/immigration-fiscal/acquire/config.local.env
 infra/immigration-fiscal/acquire/setup.log
 warehouse/*.duckdb
 
+
+# in-progress warehouse builds (paths.staged_output); replaced atomically on success
+*.duckdb.building*

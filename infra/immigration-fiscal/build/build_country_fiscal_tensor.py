@@ -8,7 +8,15 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from paths import data_root, derived_root, duckdb_path, fiscal_union_duckdb_path, lifetime_duckdb_path
+from paths import (
+    commit_output,
+    data_root,
+    derived_root,
+    duckdb_path,
+    fiscal_union_duckdb_path,
+    lifetime_duckdb_path,
+    staged_output,
+)
 
 LT = data_root() / "external" / "lifetime"
 PROTO = derived_root() / "stage3_proto"
@@ -86,11 +94,9 @@ def build() -> None:
         sys.exit(f"missing {LIFE_PATH}")
 
     PROTO.mkdir(parents=True, exist_ok=True)
-    if UNION_PATH.exists():
-        UNION_PATH.unlink()
-    UNION_PATH.parent.mkdir(parents=True, exist_ok=True)
+    tmp = staged_output(UNION_PATH)
 
-    con = duckdb.connect(str(UNION_PATH))
+    con = duckdb.connect(str(tmp))
     con.execute(f"ATTACH '{CTX_PATH}' AS ctx (READ_ONLY)")
     con.execute(f"ATTACH '{LIFE_PATH}' AS life (READ_ONLY)")
 
@@ -719,6 +725,7 @@ def build() -> None:
         "SELECT table_name FROM information_schema.tables WHERE table_schema='main'"
     ).fetchall()
     con.close()
+    commit_output(tmp, UNION_PATH)
 
     print(f"Wrote {UNION_PATH} ({UNION_PATH.stat().st_size} bytes)")
     print(f"  country_fiscal_tensor rows: {tensor_n}")
