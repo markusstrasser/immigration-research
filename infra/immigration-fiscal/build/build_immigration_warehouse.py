@@ -13,7 +13,7 @@ import sys
 import zipfile
 from pathlib import Path
 
-from paths import data_root, derived_root, duckdb_path
+from paths import commit_output, data_root, derived_root, duckdb_path, staged_output
 
 DATA = data_root()
 DERIVED = derived_root()
@@ -97,10 +97,11 @@ def build() -> None:
     person_csvs = _extract_zip_csvs(PERSON_ZIP, "person")
     hh_csvs = _extract_zip_csvs(HH_ZIP, "hh") if HH_ZIP.exists() else []
 
-    if DUCKDB_PATH.exists():
-        DUCKDB_PATH.unlink()
+    # Build the full (raw + derived) database beside the warehouse. The existing warehouse is
+    # replaced only by the validated slim copy at the end, so a failed build leaves it intact.
+    full = staged_output(DUCKDB_PATH.with_suffix(".full.duckdb"))
 
-    con = duckdb.connect(str(DUCKDB_PATH))
+    con = duckdb.connect(str(full))
     person_glob = ",".join(f"'{p}'" for p in person_csvs)
     con.execute(f"""
         CREATE TABLE acs_person_raw AS
@@ -466,10 +467,7 @@ def build() -> None:
         "origin_puma_household_stage5_context_2023",
         "origin_puma_household_fullstock_stage5_context_2023",
     ]
-    slim = DUCKDB_PATH.with_suffix(".build.duckdb")
-    if slim.exists():
-        slim.unlink()
-    DUCKDB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    slim = staged_output(DUCKDB_PATH)
     con.execute(f"ATTACH '{slim}' AS slimdb")
     for t in keep:
         n = con.execute(
@@ -480,9 +478,12 @@ def build() -> None:
             con.execute(f"CREATE TABLE slimdb.{t} AS SELECT * FROM main.{t}")
     con.execute("DETACH slimdb")
     con.close()
-    if DUCKDB_PATH.exists():
-        DUCKDB_PATH.unlink()
-    slim.rename(DUCKDB_PATH)
+    full.unlink(missing_ok=True)
+    # Validate the slim build before it replaces the existing warehouse.
+    vcon = duckdb.connect(str(slim), read_only=False)
+    _validate(vcon)
+    vcon.close()
+    commit_output(slim, DUCKDB_PATH)
     # symlink for repo-relative paths in memos
     link = DERIVED / "immigration_context.duckdb"
     if link.is_symlink() or link.exists():
@@ -490,9 +491,6 @@ def build() -> None:
     link.symlink_to(DUCKDB_PATH)
     size_mb = DUCKDB_PATH.stat().st_size / (1024 * 1024)
     print(f"Wrote {DUCKDB_PATH} ({size_mb:.1f} MB)")
-    vcon = duckdb.connect(str(DUCKDB_PATH), read_only=False)
-    _validate(vcon)
-    vcon.close()
 
 
 def _validate(con) -> None:

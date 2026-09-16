@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import sys
 
-from paths import duckdb_path, fiscal_union_duckdb_path, lifetime_duckdb_path
+from paths import commit_output, duckdb_path, fiscal_union_duckdb_path, lifetime_duckdb_path, staged_output
 
 UNION_PATH = fiscal_union_duckdb_path()
 CTX_PATH = duckdb_path()
@@ -28,10 +28,8 @@ def build() -> None:
     if not LIFE_PATH.exists():
         sys.exit(f"missing {LIFE_PATH} — run build-lifetime.sh first")
 
-    if UNION_PATH.exists():
-        UNION_PATH.unlink()
-    UNION_PATH.parent.mkdir(parents=True, exist_ok=True)
-    con = duckdb.connect(str(UNION_PATH))
+    tmp = staged_output(UNION_PATH)
+    con = duckdb.connect(str(tmp))
     con.execute(f"ATTACH '{CTX_PATH}' AS ctx (READ_ONLY)")
     con.execute(f"ATTACH '{LIFE_PATH}' AS life (READ_ONLY)")
     create_common_views(con)
@@ -39,6 +37,7 @@ def build() -> None:
         "SELECT table_name FROM information_schema.tables WHERE table_schema='main' AND table_type='VIEW'"
     ).fetchall()
     con.close()
+    commit_output(tmp, UNION_PATH)
     print(f"Wrote {UNION_PATH} ({UNION_PATH.stat().st_size} bytes, {len(views)} views)")
     for v in views:
         print(f"  view {v[0]}")

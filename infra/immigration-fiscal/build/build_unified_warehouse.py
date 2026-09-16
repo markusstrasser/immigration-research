@@ -28,9 +28,11 @@ from __future__ import annotations
 import sys
 
 from paths import (
+    commit_output,
     duckdb_path,
     fiscal_union_duckdb_path,
     lifetime_duckdb_path,
+    staged_output,
     unified_duckdb_path,
 )
 
@@ -75,11 +77,9 @@ def build() -> None:
         if not fn().exists():
             sys.exit(f"missing source warehouse {fn()} — build it first (reproduce.sh build all)")
 
-    if out.exists():
-        out.unlink()
-    out.parent.mkdir(parents=True, exist_ok=True)
+    tmp = staged_output(out)
 
-    con = duckdb.connect(str(out))
+    con = duckdb.connect(str(tmp))
     for alias, _, fn in SOURCES:
         con.execute(f"ATTACH '{fn()}' AS {alias} (READ_ONLY)")
 
@@ -171,13 +171,14 @@ def build() -> None:
             ok = False
 
     con.close()
+    if not ok:
+        sys.exit(f"VERIFICATION FAILED — row mismatch above; staged build left at {tmp}, {out} untouched")
+    commit_output(tmp, out)
     size_mb = out.stat().st_size / 1e6
     total_rows = sum(c[4] for c in catalog)
     _header("Done")
     _ok(f"wrote {out}  ({size_mb:.1f} MB, {len(catalog)} objects, {total_rows:,} rows)")
     print(f"  query it: duckdb {out} \"SELECT * FROM _catalog ORDER BY n_rows DESC LIMIT 20\"")
-    if not ok:
-        sys.exit("VERIFICATION FAILED — row mismatch above")
 
 
 def _set_catalog(catalog, schema, name, in_main, note=None):

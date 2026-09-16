@@ -13,7 +13,7 @@ import re
 import sys
 from pathlib import Path
 
-from paths import data_root, derived_root, duckdb_path, lifetime_duckdb_path
+from paths import commit_output, data_root, derived_root, duckdb_path, lifetime_duckdb_path, staged_output
 
 REPO = Path(__file__).resolve().parents[3]
 MANIFEST = Path(__file__).resolve().parents[1] / "DOWNLOAD_MANIFEST.tsv"
@@ -502,10 +502,9 @@ def build() -> None:
     manifest_rows = _manifest_lifetime_rows()
     catalog = manifest_rows + _scan_orphans(manifest_rows)
 
-    if DUCKDB_PATH.exists():
-        DUCKDB_PATH.unlink()
-    DUCKDB_PATH.parent.mkdir(parents=True, exist_ok=True)
-    con = duckdb.connect(str(DUCKDB_PATH))
+    # Build beside the warehouse; the existing file is replaced only on success.
+    tmp = staged_output(DUCKDB_PATH)
+    con = duckdb.connect(str(tmp))
 
     con.register("_catalog", pd.DataFrame(catalog))
     con.execute("""
@@ -568,15 +567,17 @@ def build() -> None:
             )
         """)
 
+    n_src = con.execute("SELECT COUNT(*) FROM source_catalog").fetchone()[0]
+    n_tag = con.execute("SELECT COUNT(*) FROM source_topic_tags").fetchone()[0]
+    con.close()
+    commit_output(tmp, DUCKDB_PATH)
+
     link = DERIVED / "immigration_lifetime_evidence.duckdb"
     if link.is_symlink() or link.exists():
         link.unlink()
     link.symlink_to(DUCKDB_PATH)
 
-    n_src = con.execute("SELECT COUNT(*) FROM source_catalog").fetchone()[0]
-    n_tag = con.execute("SELECT COUNT(*) FROM source_topic_tags").fetchone()[0]
     size_mb = DUCKDB_PATH.stat().st_size / (1024 * 1024)
-    con.close()
     print(f"Wrote {DUCKDB_PATH} ({size_mb:.2f} MB)")
     print(f"  source_catalog: {n_src}  topic_tags: {n_tag}  claims: {claims_n}  generators: {gens_n}  theories: {theories_n}")
 
