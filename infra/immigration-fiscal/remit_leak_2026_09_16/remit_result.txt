@@ -1,0 +1,101 @@
+-- VALIDATION (a): baseline sales/excise line, third_plus_nh_white --
+0.35 taxable-share arm: 1,049.7  (gen-ledger lane published 1,050)  deviation -0.3
+ITEP arm:               1,812.5  (gen-ledger lane published 1,812)  deviation +0.5
+[validation a] PASS (both within $5)
+
+-- Remittance outflow modelled, $ per adult 25-64 per year (2024$) --
+group                           remittance/adult        se
+third_plus_nh_white                           17         2
+all_native                                    84         3
+all_second_gen                               454        19
+mexican_second_gen                         1,290        44
+mexican_third_plus_selfid                    312        20
+mexico_born                                3,457        96
+
+-- Change in the sales/excise line from the remittance haircut, $/adult --
+arm         group                                 d 0.25        d 0.35        d 0.45        d ITEP
+r2_zero     third_plus_nh_white                     -0.2          -0.3          -0.4          -0.5
+r2_zero     all_native                              -0.9          -1.2          -1.6          -1.9
+r2_zero     all_second_gen                          -4.9          -6.9          -8.9         -10.8
+r2_zero     mexican_second_gen                     -13.9         -19.4         -25.0         -30.3
+r2_zero     mexican_third_plus_selfid               -1.3          -1.8          -2.4          -2.9
+r2_zero     mexico_born                            -68.2         -95.4        -122.7        -179.1
+r2_low      third_plus_nh_white                     -0.3          -0.4          -0.5          -0.6
+r2_low      all_native                              -1.4          -2.0          -2.6          -3.2
+r2_low      all_second_gen                          -7.9         -11.0         -14.1         -17.5
+r2_low      mexican_second_gen                     -22.3         -31.2         -40.1         -49.7
+r2_low      mexican_third_plus_selfid               -4.6          -6.4          -8.2         -10.3
+r2_low      mexico_born                            -69.4         -97.2        -124.9        -181.9
+r2_central  third_plus_nh_white                     -0.3          -0.5          -0.6          -0.7
+r2_central  all_native                              -1.8          -2.5          -3.2          -3.9
+r2_central  all_second_gen                          -9.5         -13.3         -17.1         -21.2
+r2_central  mexican_second_gen                     -27.0         -37.8         -48.6         -60.6
+r2_central  mexican_third_plus_selfid               -6.4          -9.0         -11.5         -14.4
+r2_central  mexico_born                            -70.1         -98.1        -126.2        -183.4
+r2_high     third_plus_nh_white                     -0.5          -0.6          -0.8          -0.9
+r2_high     all_native                              -2.7          -3.8          -4.8          -6.0
+r2_high     all_second_gen                         -14.4         -20.2         -25.9         -32.5
+r2_high     mexican_second_gen                     -41.2         -57.6         -74.1         -93.4
+r2_high     mexican_third_plus_selfid              -11.9         -16.6         -21.4         -26.8
+r2_high     mexico_born                            -72.2        -101.1        -130.0        -188.2
+
+-- Extended balance with the remittance haircut, 0.35 arm and ITEP arm --
+(extended balance = taxes - selected transfers + employer payroll
+ + sales/excise + owner property - K-12; only the sales line moves)
+arm         group                             ext base   ext remit     delta    gap base   gap remit     d gap
+r2_zero/0.35third_plus_nh_white                 15,984      15,984      -0.3           0           0       0.0
+r2_zero/0.35all_native                          14,266      14,264      -1.2      -1,719      -1,720      -0.9
+r2_zero/0.35all_second_gen                      15,658      15,651      -6.9        -327        -333      -6.6
+r2_zero/0.35mexican_second_gen                   7,698       7,679     -19.4      -8,286      -8,305     -19.1
+r2_zero/0.35mexican_third_plus_selfid            9,705       9,704      -1.8      -6,279      -6,281      -1.5
+r2_zero/0.35mexico_born                          4,462       4,367     -95.4     -11,522     -11,618     -95.1
+r2_zero/ITEPthird_plus_nh_white                 16,747      16,747      -0.5           0           0       0.0
+r2_zero/ITEPall_native                          15,002      15,000      -1.9      -1,746      -1,747      -1.4
+r2_zero/ITEPall_second_gen                      16,318      16,308     -10.8        -429        -439     -10.3
+r2_zero/ITEPmexican_second_gen                   8,201       8,171     -30.3      -8,546      -8,576     -29.8
+r2_zero/ITEPmexican_third_plus_selfid           10,291      10,288      -2.9      -6,456      -6,459      -2.4
+r2_zero/ITEPmexico_born                          4,953       4,774    -179.1     -11,794     -11,972    -178.6
+r2_low/0.35 third_plus_nh_white                 15,984      15,984      -0.4           0           0       0.0
+r2_low/0.35 all_native                          14,266      14,264      -2.0      -1,719      -1,720      -1.6
+r2_low/0.35 all_second_gen                      15,658      15,647     -11.0        -327        -337     -10.6
+r2_low/0.35 mexican_second_gen                   7,698       7,667     -31.2      -8,286      -8,317     -30.8
+r2_low/0.35 mexican_third_plus_selfid            9,705       9,699      -6.4      -6,279      -6,285      -6.0
+r2_low/0.35 mexico_born                          4,462       4,365     -97.2     -11,522     -11,619     -96.7
+r2_low/ITEP third_plus_nh_white                 16,747      16,747      -0.6           0           0       0.0
+r2_low/ITEP all_native                          15,002      14,998      -3.2      -1,746      -1,748      -2.5
+r2_low/ITEP all_second_gen                      16,318      16,301     -17.5        -429        -446     -16.8
+r2_low/ITEP mexican_second_gen                   8,201       8,151     -49.7      -8,546      -8,595     -49.1
+r2_low/ITEP mexican_third_plus_selfid           10,291      10,280     -10.3      -6,456      -6,466      -9.6
+r2_low/ITEP mexico_born                          4,953       4,772    -181.9     -11,794     -11,975    -181.2
+r2_central/0.35third_plus_nh_white                 15,984      15,984      -0.5           0           0       0.0
+r2_central/0.35all_native                          14,266      14,263      -2.5      -1,719      -1,721      -2.0
+r2_central/0.35all_second_gen                      15,658      15,645     -13.3        -327        -339     -12.8
+r2_central/0.35mexican_second_gen                   7,698       7,660     -37.8      -8,286      -8,324     -37.3
+r2_central/0.35mexican_third_plus_selfid            9,705       9,696      -9.0      -6,279      -6,287      -8.5
+r2_central/0.35mexico_born                          4,462       4,364     -98.1     -11,522     -11,620     -97.7
+r2_central/ITEPthird_plus_nh_white                 16,747      16,746      -0.7           0           0       0.0
+r2_central/ITEPall_native                          15,002      14,998      -3.9      -1,746      -1,749      -3.2
+r2_central/ITEPall_second_gen                      16,318      16,297     -21.2        -429        -449     -20.5
+r2_central/ITEPmexican_second_gen                   8,201       8,140     -60.6      -8,546      -8,606     -59.9
+r2_central/ITEPmexican_third_plus_selfid           10,291      10,276     -14.4      -6,456      -6,470     -13.7
+r2_central/ITEPmexico_born                          4,953       4,770    -183.4     -11,794     -11,976    -182.7
+r2_high/0.35third_plus_nh_white                 15,984      15,984      -0.6           0           0       0.0
+r2_high/0.35all_native                          14,266      14,262      -3.8      -1,719      -1,722      -3.1
+r2_high/0.35all_second_gen                      15,658      15,638     -20.2        -327        -346     -19.5
+r2_high/0.35mexican_second_gen                   7,698       7,641     -57.6      -8,286      -8,343     -57.0
+r2_high/0.35mexican_third_plus_selfid            9,705       9,689     -16.6      -6,279      -6,295     -16.0
+r2_high/0.35mexico_born                          4,462       4,361    -101.1     -11,522     -11,623    -100.5
+r2_high/ITEPthird_plus_nh_white                 16,747      16,746      -0.9           0           0       0.0
+r2_high/ITEPall_native                          15,002      14,996      -6.0      -1,746      -1,751      -5.0
+r2_high/ITEPall_second_gen                      16,318      16,286     -32.5        -429        -460     -31.6
+r2_high/ITEPmexican_second_gen                   8,201       8,107     -93.4      -8,546      -8,639     -92.5
+r2_high/ITEPmexican_third_plus_selfid           10,291      10,264     -26.8      -6,456      -6,482     -25.9
+r2_high/ITEPmexico_born                          4,953       4,765    -188.2     -11,794     -11,981    -187.2
+
+-- National forgone state+local sales tax on remitted dollars --
+population-weighted combined state+local sales rate (all persons): 7.4793%
+same, weighted by the Mexico-born population:                     8.1695%
+  taxable share 0.25: national-weighted $1,169mn   Mexico-born-weighted $1,277mn
+  taxable share 0.35: national-weighted $1,637mn   Mexico-born-weighted $1,788mn
+  taxable share 0.45: national-weighted $2,105mn   Mexico-born-weighted $2,299mn
+
