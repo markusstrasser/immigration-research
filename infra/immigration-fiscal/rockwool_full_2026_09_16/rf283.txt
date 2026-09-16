@@ -1,0 +1,3042 @@
+                                                                      RESEARCH REPORT
+                                                                      STUDY PAPER 283
+                                                                      MARCH 2026
+
+
+
+
+A Statistical Decomposition
+of Nativity Gaps in Criminal
+Convictions Using Full
+Population Data from Five
+Developed Democracies
+
+
+Lars H. Andersen, Synøve N. Andersen, Olof Bäckman, Therese B.
+Christensen, Babette C. M. van Hazebroek, Olivia M. Mitchell,
+Paul Nieuwbeerta, Anders Nilsson, Torbjørn Skardhamar, Peer E. Skov
+and Daniel J. Vigild,
+STUDY PAPER 283                         MARCH 2026
+
+A Statistical Decomposition of Nativity
+Gaps in Criminal Convictions Using Full
+Population Data from Five Developed
+Democracies
+
+
+
+Published by:
+© The ROCKWOOL Foundation Research Unit
+
+Address:
+The ROCKWOOL Foundation Research Unit
+Ny Kongensgade 6
+1472 Copenhagen, Denmark
+
+Telephone +45 33 34 48 00
+E-mail: kontakt@rff.dk
+en.rockwoolfonden.dk/research/
+
+March 2026
+ A Statistical Decomposition of Nativity Gaps in Criminal Convictions
+      Using Full Population Data from Five Developed Democracies
+
+
+Lars H. Andersen* ROCKWOOL Foundation, Research Unit, Copenhagen, Denmark
+Synøve N. Andersen, Department of Sociology and Human Geography, Oslo University, Norway
+Olof Bäckman, Department of Criminology, Stockholm University, Sweden
+Therese B. Christensen, ROCKWOOL Foundation, Research Unit, Copenhagen, Denmark
+Babette C. M. van Hazebroek, Institute of Criminal Law and Criminology, Leiden University, the
+Netherlands
+Olivia M. Mitchell, ROCKWOOL Foundation, Research Unit, Copenhagen, Denmark
+Paul Nieuwbeerta, Institute of Criminal Law and Criminology, Leiden University, the Netherlands
+Anders Nilsson, Department of Criminology, Stockholm University, Sweden
+Torbjørn Skardhamar, Department of Sociology and Human Geography, Oslo University, Norway
+Peer E. Skov, Department of Economics, Auckland University of Technology, Auckland, New
+Zealand and ROCKWOOL Foundation, Research Unit, Copenhagen, Denmark
+Daniel J. Vigild, ROCKWOOL Foundation, Research Unit, Copenhagen, Denmark and Department
+of Economics, University of Copenhagen, Denmark
+
+
+
+* Direct correspondences to Lars H. Andersen, the ROCKWOOL Foundation, Ny Kongensgade 6, DK-1472
+Copenhagen K, Denmark: lha@rff.dk. ORCID: http://orcid.org/0000-0003-2357-1896.
+
+
+
+Word count: 6,954 (7,651 incl. footnotes) (+ 683 in Materials and Methods)
+
+Tables and figures: 0 tables, 4 figures
+
+Keywords: Immigration; Crime; Comparative; Administrative data
+
+Online supplements: Country profiles; 2 tables
+Abstract
+
+Migration and its consequences are among the most prominent campaign issues for politicians in both the US
+
+and the EU, as well as other developed democracies, with the perceived consequences of migration for crime
+
+and public safety being particularly contested. We use population-wide administrative data from five
+
+developed democracies (Denmark, the Netherlands, New Zealand, Norway, and Sweden) to statistically
+
+decompose the correlation between nonwestern immigrant background status (both migrants and their
+
+children separately) and criminal conviction across as many as 30 years. The results show that differences in
+
+conviction rates between immigrants and their children and the majority populations of these countries are
+
+mostly attributable to gaps between the groups in education, labor market status, and income, and in the
+
+intergenerational consequences of these gaps. Country differences in the results reflect differences in
+
+immigration histories. The conclusions imply that correlations between immigrant status and criminal
+
+convictions reflect both the type of migration and the host country’s response to it, thereby highlighting
+
+promising points of intervention in case countries wish to close the gaps in convictions.
+
+
+
+
+Significance
+
+
+Electoral campaigns often focus on crimes committed by immigrants. We used data from five countries—
+
+Denmark, the Netherlands, New Zealand, Norway, and Sweden—covering almost 20 years to show that
+
+crime rates differ across the majority populations, immigrants, and their children. The results highlight
+
+promising areas for intervention to decrease the conviction gaps, emphasizing investments in labor-market
+
+status and education, as well as the circumstances under which children grow. The results for New Zealand
+
+consistently opposed those for Europe, with lower crime rates among immigrants and their children in New
+
+Zealand, which we attribute to selectivity in the types of people likely to migrate to New Zealand relative to
+
+Europe.
+Introduction
+
+
+Politicians and citizens in both the US and Europe heatedly debate migration and its consequences, and this
+
+debate has thus made it to the forefront of almost all political electoral campaigns and discussions. This was
+
+particularly the case during the immigration crisis at the US/Mexican border, which peaked at around
+
+250,000 apprehensions and migrant encounters in the month of December 2023, as well as the surge in
+
+Syrian refugees seeking protection in and around the EU in 2015–2016. The debate has only increased in
+
+significance since and the political rhetoric has become increasingly harsh. For example, in his 2015
+
+presidential campaign announcement, President Trump claimed that “when Mexico sends its people, they’re
+
+not sending their best. […] They’re sending people that have lots of problems, and they’re bringing those
+
+problems with them. They’re bringing drugs. They’re bringing crime. They’re rapists. And some, I assume,
+
+are good people” (1). The debates intensified as the US pandemic-era public health restriction on
+
+immigration, Title 42, expired in late spring of 2023, effectively reopening US borders, and continued to
+
+predominate throughout the 2024 presidential campaigns, during which Haitian immigrants in Springfield,
+
+Ohio, were rumored to steal and eat pets, highlighting the intense anti-migration rhetoric (2).
+
+
+     Similar debates have been raised by right-wing politicians in Europe1 (3–5) as well as Australia.2 In the
+
+French 2017 presidential election, for example, Marine Le Pen suggested suspending all legal immigration to
+
+France “[…] to stop this frenzy, this uncontrolled situation that is dragging us down” (7). The recent general
+
+election in Germany also revolved around the theme of migration and its consequences, although Germany
+
+has long been considered immigration friendly. Concerns generally center around the social and economic
+
+
+1
+  Denmark, Pernille Vermund, Nye Borgerlige: “Our disastrous immigration policy […] has demolished feelings of
+safety. Women are being raped, Jewish people are being harassed, artists and politicians endure threats to their lives,
+men are being stabbed in the streets, homosexuals are being harassed, and our general welfare deteriorates, and feelings
+of unsafety increase.” (authors’ translation of (3) from Danish).
+The Netherlands, Geert Wilders, Partij voor de Vrijheid: “The Moroccan scum in Holland . . . once again not all are
+scum … but there is a lot of Moroccan scum in Holland who make the streets unsafe, mostly young people . . . and that
+should change.” (4).
+Sweden, Ulf Kristersson Moderaterna: “A very large proportion of the most serious crimes right now are linked to very,
+very poor integration into Sweden.” (authors’ translation of (5) from Swedish)
+2
+  Pauline Hanson, One Nation Party: “Muslims are imprisoned at almost three times the average rate. The rate of
+unemployed and public dependency is two to three times greater than the national average. Muslims are prominent in
+organized crime with associated violence and drug dealing. […] Anti-social behavior is rampant, fueled by hyper-
+masculine and misogynist culture. Multiple social surveys find that neighbors of Muslim settlements are suffering from
+collapsing social cohesion and fear of crime” (6).
+integration of immigrants into the host countries, and crime and public safety are particularly contested
+
+correlates of immigration (8–10).
+
+
+     Despite political rhetoric, studies focusing on aggregate-level and spatial data from the US have
+
+typically found null or (weak) negative associations between immigration and crime (10,11). That is,
+
+immigration does not affect crime, and if it were to do so, it would lower crime rates. Three theoretical
+
+explanations expound this finding. First, according to the healthy migrant hypothesis, those who succeed in
+
+migrating to another country tend to be healthy and industrious, features that are negatively correlated with
+
+crime rates. Second, because immigrants possess skills developed in another context, they may introduce
+
+new skills and entrepreneurship to the host country, whereby immigration diversifies and strengthens the
+
+local labor market and community. Third, immigration may revitalize communities and norms by, for
+
+example, introducing more social control carried forth by, for example, a higher share of two-parent
+
+households.
+
+
+     However, in Europe, the immigration-crime association reverses, whereby immigrants to the EU have
+
+higher conviction rates than natives, at least immigrants of nonwestern descent (e.g., 12), although broader
+
+reviews also document likely null effects (e.g., 8).3 There are four theoretical explanations for this. First,
+
+immigrants and their children tend to be younger than majority populations, and these differences in age
+
+structure imply that overall crime rates can differ substantially because young people make up a larger share
+
+of the group, even if immigrants and their children are not, on average, more criminally active than the same-
+
+age people in the majority population. Second, immigration may increase crime rates due to immigration’s
+
+economic consequences. This is because immigrants are new to the local labor market and thus increase job
+
+competition. Furthermore, immigrants often do not possess wealth to help them through resettlement and the
+
+
+
+3
+  The few studies that use European data and research designs suitable for measuring the causal effect of immigration
+on crime tend to find no (or little) causal relationship between immigration and crime (e.g., Bianchi, Bounanno, and
+Pinotti (13) in Italy), as was indicated by Kubrin and Ousey’s review (10) of the US literature. One recent exception is
+the results presented in Couttenier et al. (14), which showed that exposure to conflict in the origin country, such as civil
+war or mass killings in childhood, could be significant in the immigration/crime link. Such exposure leads to up to 35%
+higher rates of violent crimes among immigrants in Switzerland, per their study. They further relied on variation in
+policies across provinces in Switzerland to document that promoting immigrants’ labor market access is most effective
+in reducing this violence.
+process of integrating into the new community. Third, immigration may disrupt local life circumstances by
+
+challenging the normative foundation of communities, as immigrants often come from various backgrounds
+
+that may not be directly integrated into the local commune. Finally, immigrants may introduce new criminal
+
+network ties into a community, by having, for example, criminal associates in the country of origin or other
+
+countries. Immigrants may thus establish new criminal “trade routes” via the geographic dispersion of their
+
+associates, as is the case in drug trafficking, which requires presence in multiple contexts.
+
+
+     The difference between the results for the US and the EU could be attributable to at least two things.
+
+First, the “treatment” of immigration to an area is often low dosage: The number of immigrants that arrive to
+
+a spatial unit at any given point is low relative to the population size in that area. Immigrants would therefore
+
+have to be extraordinarily active in the criminal market to drive up aggregate crime rates.4 Second, the modal
+
+type of immigrant who attracts research attention in the US and the EU differs. In contrast to the US,
+
+European focus is rarely on migrants who arrive actively searching for employment and who possess skills
+
+that are transferable to the new labor market. Instead, the focus tends to be given to migrants of nonwestern
+
+backgrounds, typically refugees.5 This type of migrant constitutes a special group who were, for example,
+
+unwilfully displaced (i.e., they are not migrating in active search for employment but to flee war,
+
+persecution, and terror) and may have experienced horrible events, such as war or the drowning of family
+
+members. Once in the host country, these migrants typically do not possess documentable skills, including
+
+language skills, to obtain employment (15). Further, demand for the type of skills they possess is often
+
+limited, so their dependence on social welfare is high (16). Refugees and similar migrants of nonwestern
+
+backgrounds thus face strong structural barriers that may promote crime risks (17, 18). Add to these barriers
+
+the tendency that these immigrants are young—and more often male, at least for the first migrant in a family
+
+
+
+
+4
+  For illustration, let 10 respective 90% of the population be immigrants and majority. Then let immigrants have far
+higher conviction rates than majority: .2 and .1, respectively. The total conviction rate is then [.2 x .1] + [.1 x .9] = .11.
+To increase the total conviction rate by just 1 percentage point, to .12, the share of immigrants (assuming constant
+conviction rates within groups) would have to increase by 10 percentage points (i.e., double): [.2 x .2] + [.1 x .8] = .12.
+5
+  People from nonwestern countries are not necessarily refugees and could also apply for work or study permits in all
+comparison countries, which is common for immigrants of Chinese backgrounds, for example. It was not, however,
+possible to obtain information on legal ground for residence in all comparison countries, whereby we were forced to
+focus on the cruder western/nonwestern categorization.
+(other family members will often apply for family reunification after the successful reallocation of the male
+
+migrant). Being young (male) is one of the most important risk factors for crime (19).
+
+
+       Common to both the US and the EU is the observation that children of immigrants, often born in the
+
+host country, tend to have higher crime rates when they reach late adolescence and young adulthood than
+
+their peers (10). This observation counters anticipation, as children of immigrants have grown up in the host
+
+country and have been shaped by the country’s institutions, whereby they in theory should be better
+
+assimilated or integrated (in the sense that they should, on average, resemble the majority population more
+
+also in terms of criminal behavior). However, the difference in crime rates likely reflects the strength of the
+
+structural barriers faced by children of immigrants, including experiences of discriminatory treatment in, for
+
+example, schools and the labor market (20, 21). Barriers such as the clustering of ethnic groups in
+
+neighborhoods also shape these “enclaves” and homes in which the second generation grows up, which have
+
+been shown to directly impact life risks, including (gang) crime risks for boys (22–24). Moreover, having
+
+grown up in the host country, many children of immigrants have not yet aged out of the high crime-risk ages,
+
+which again may cause higher crime rates in this group.
+
+
+       Differences in sociodemographic features and age distributions between immigrants of nonwestern
+
+backgrounds, their children, and the majority populations nearly inevitably lead to higher crime conviction
+
+rates among immigrants and their children in European countries. How important these different features are,
+
+and how much their importance varies by country must yet be explored. This exploration should specifically
+
+include a context with more immigrants from nonwestern backgrounds immigrating in active search of
+
+employment. We aim to answer these questions in this study.
+
+
+       To address these questions, we accessed full population data from five developed democracies:
+
+Denmark (DNK), the Netherlands (NLD), New Zealand (NZL), Norway (NOR), and Sweden (SWE). These
+
+countries are all in the OECD top 20 for gross domestic product (GDP) per capita (25),6 the majority
+
+populations are predominantly Caucasian, life expectancy at birth is high and similar across the countries
+
+
+
+6
+    NOR nr. 3, DNK nr. 6, NLD nr. 7, SWE nr. 10, and NZL nr. 18, all in 2021
+(80+ years in 2021), as is the age compositions in these countries (26). These similarities imply that we
+
+focused on rich and ethnically homogenous countries with high levels of population health.7
+
+
+     We also focused on these five countries because they provided us with access to administrative
+
+microdata on the entire population that can be linked accurately to criminal convictions and comparable
+
+indicators of sociodemographic backgrounds—a requirement for conducting this type of study. Applying
+
+statistical decomposition models to these data allowed us to explain (a) how much conviction rates differ
+
+between majority populations, immigrants, and the children of immigrants in these five countries over the
+
+past 20 years (up to 30 years for some countries); (b) what the implications would be for the conviction rate
+
+differences between majority populations, immigrants, and the children of immigrants in these five countries
+
+in the counterfactual situation in which there is no difference between the groups in terms of the included
+
+sociodemographic variables and their respective protective role for criminal conviction risks; and (c) how
+
+strong the bivariate correlations between the various sociodemographic characteristics and conviction risks
+
+are. We explored these factors to determine which of these characteristics would likely yield better results in
+
+terms of closing the immigrant/majority gap in conviction risks if subject to intervention. We focused on
+
+people of nonwestern backgrounds because of the discussions outlined above.
+
+
+     Since we centered our study on ages 15–30, we refer to “children of immigrants” as “second
+
+generation” to avoid semantically conflating childhood with young adulthood. We refer to “majority
+
+population” as people born in the country who also have at least one parent born in the country, in
+
+compliance with the Scandinavian tradition (e.g., 27). This definition of majority population thus covers
+
+great diversity within the countries but effectively excludes immigrants from other Western countries, as
+
+well as their children, from analysis.
+
+
+
+
+7
+  Obviously, NZL is geographically distant from the European countries in this study and is colonized land, which could
+imply low comparability. However, because of its colonial history and despite its geographic distance to Europe, NZL
+has a commonwealth heritage, and the majority population is of European descent. The NZL welfare state is thus
+fundamentally forged on European principles.
+Comparison Countries
+
+
+The comparison countries in our study represent different institutional types (see the detailed country profiles
+
+available in the online supplementary material). The Scandinavian cluster represents social democratic
+
+welfare states with universal access to state-guaranteed assistance of a generally high standard that is covered
+
+through taxation. NZL represents the liberal welfare state regime, the regime that is more comparable to the
+
+US, emphasizing market efficiency and therefore providing only modest universal social assistance and only
+
+to uphold a subsistence minimum. Instead, social insurance plans prevail; there is a stronger focus on
+
+individual initiatives and private institutions. The NLD can be best described as a hybrid welfare state that
+
+combines elements of both liberal and social-democratic welfare regimes to strike a balance between market-
+
+oriented principles and social protection. Despite these fundamental differences in how welfare is
+
+approached in the comparison countries, one study documented that in both NZL and DNK a small segment
+
+of the population accounts for a high share of service use across various welfare sectors, such as healthcare,
+
+social assistance, and the criminal justice system (28).
+
+
+     Immigration history also differs across the comparison countries, although many similarities exist
+
+(again, for detailed country profiles, see the online supplementary material). Guest workers from Southern
+
+Europe, Asia, and especially from Turkey migrated to DNK, NLD, NOR, and SWE in the 1960s because of
+
+excess demand for unskilled workers. This trend halted with the economic downturn in the 1970s, most
+
+notably in NOR, which simply banned this type of immigration in 1975 (the ban itself was lifted in 1976, but
+
+due to new legislation remained effectively in place until the 1990s) (29). For people originating in
+
+nonwestern countries, up until the late 1990s, DNK and SWE had similar liberal immigration laws and were
+
+among the European countries that accepted the highest number of immigrants per capita (30). However,
+
+these countries diverged in the late 1990s for people outside of the EU/EEA, and access to DNK is now
+
+much more restricted than to SWE (although SWE has recently taken steps in the Danish direction and is
+
+tightening immigration laws). NOR has received refugees from the same regions and countries as DNK and
+
+SWE, yet its intake was comparatively low throughout the data period. The NLD’s immigration history was
+
+long characterized by immigration from former colonies, such as Surinam in the late 1970s, but during the
+1990s, this type of immigration (now especially driven by family migration) was supplemented by asylum
+
+seekers from the same regions and for similar reasons as the other European countries in the study.8 NZL
+
+differs in the sense that immigrants of nonwestern backgrounds in NZL are mainly of Asian (especially
+
+Southeast Asian) and Pacific descent, whereby they differ from immigrants of nonwestern backgrounds in
+
+Europe who are mostly from the MENAPT countries.
+
+
+     The comparison countries aim to integrate immigrants of nonwestern backgrounds similarly.9 Available
+
+services cover language training and active labor market training, and mandatory courses in the host
+
+country’s history and cultural traditions are common. Immigrants are entitled to social welfare benefits like
+
+the majority population, although in some cases at lower rates (e.g., in DNK, where refugees arriving during
+
+2002–2011 and again after 2015 are entitled to only about 40% of standard social assistance (see 31, 16, and
+
+18 for analyses of some of the consequences hereof for refugees in DNK), and in all instances only under
+
+adherence to active job searches and participation in available services.
+
+
+
+
+Research Design
+
+
+The national statistical agencies of DNK, NLD, NZL, NOR, and SWE separately provided access to de-
+
+identified full population administrative data suitable for our analyses (see details under “Data Sources”). All
+
+data were based on official records, such as information from official population records and official court
+
+rulings. We strove for high comparability across countries in all variable content to minimize the risk that the
+
+results would be driven by measurement differences across the countries (see “Data Sources” and data
+
+comparability matrix in the online supplementary material, which describes the variable content and any
+
+deviations herein across comparison countries). To minimize the skewness that could arise from comparing
+
+
+8
+  DNK, SWE, NOR, and NLD all experienced growth in labor migrants from within the EU/EEA over the period,
+especially following the expansion of the EU in 2005 to include more Eastern European countries. This type of
+immigration is irrelevant to our study, though, as our focus is on immigrants of nonwestern backgrounds.
+9
+  For people immigrating to seek employment, typically from western countries (such as from other EU countries not
+included in our study), residence permit is typically given for the duration of the employment and an additional 3
+months, or for a maximum of 3 months if the migrant does not hold employment, as per EU regulations. These types of
+immigrants are not entitled to welfare benefits or integration programs unless via unemployment insurance funds
+entertained through employment.
+immigrants and their children to the full age range of majority populations, we focused on ages 15–30. As
+
+women in general have much lower crime rates than men, we focused only on men.
+
+
+    As the outcome variable, we used criminal conviction, which indicated whether a person had been
+
+convicted of a violation of the penal code within a given year (1 = “Yes,” 0 = “No”). There is, of course,
+
+variability across the countries in which acts fall under the penal code and therefore enter the dependent
+
+variable. For example, no drug-related crimes are included in the penal code in SWE, whereas sales and
+
+trafficking of drugs are included in DNK. NZL does not even have a penal code, so we sought comparability
+
+through offense categories. Such country differences in the definition of a criminal conviction will likely
+
+matter for cross country differences in the level of convictions. But they will not matter for the comparison of
+
+population groups within countries, which is our main comparison objective.
+
+
+    To provide descriptive overview of the comparison countries, we first plotted, per comparison country,
+
+the annual share scoring 1 on the dependent variable in the majority population, in the population of
+
+immigrants from nonwestern countries, and among the second generation with a nonwestern background. To
+
+focus specifically on gaps in criminal conviction rates across the majority populations, immigrants from
+
+nonwestern countries, and the second generation with a nonwestern background, we then plotted the relative
+
+difference between the groups’ conviction rates within each country, which we defined as the gap in criminal
+
+convictions. For immigrants from nonwestern countries, we calculated the gap as
+
+!""∗Pr&conviction'immigrant( * Pr&conviction'majority(
+                                                          , where a score of 0 implied identical conviction
+                Pr&conviction'majority(
+
+
+rates among the comparison groups, a score of 100 implied a two-fold conviction rate among immigrants
+
+than among the majority population. For the second generation with a nonwestern background, simply
+
+replace “immigrant” with “second generation”.
+
+
+    We then proceeded to focus on compositional differences across the population groups on
+
+sociodemographic features known to affect crime conviction risks. We first compared means of these
+
+features across the groups in the first and last data years within comparison countries to document trends in
+
+compositional differences between the comparison groups. Due to the large dimensionality of this
+comparison (almost 1,200 table cells), we present the results in the online supplementary material and simply
+
+summarize the findings under the Results section.
+
+
+     Because the sociodemographic features are strongly correlated and correlated with conviction risks, we
+
+then formally decomposed the differences in conviction rates among immigrants of nonwestern backgrounds,
+
+their children (second generation), and the majority populations in DNK, NLD, NOR, NZL, and SWE using
+
+the demographic method of Blinder-Oaxaca decomposition (32, see details under “Materials and Methods”).
+
+The logic behind this method is that differences in outcomes across comparison groups may arise from two
+
+sources. The first is differences in the groups’ levels on variables known to affect the outcome (i.e.,
+
+compositional differences). The second source is differences across comparison groups in terms of the
+
+strength of the correlation between variables and the outcome, such as if education reduces crime conviction
+
+risks more for some groups than others.
+
+
+     In the Results section, we report two sets of findings from decomposition analyses. We first show the
+
+implication for nativity gaps in convictions in the counterfactual situation if all groups were identically
+
+composed (within country) on the variables included in the model and all groups experienced the same
+
+correlation between the variables and the outcome. That is, results represent the counterfactual situation in
+
+which the only average difference between the groups is on ethnic minority background status. Any changes
+
+to the uncontrolled nativity gaps from the first analytical steps imply the consequences of differential
+
+immigration (in terms of the included sociodemographic features) for group differences in conviction rates.
+
+A remaining nativity gap in convictions after the decomposition implies excess conviction gaps that cannot
+
+be attributed to compositional differences in the included variables alone, such as “discriminatory”
+
+differences in the protective benefits of the included variables and features that remain unobserved in our
+
+data (we speculate what such differences might be in the Discussion section).
+
+
+     We then show the effects of each of the compositional features in the model on nativity gaps in
+
+convictions in the comparison countries. To do so, we repeated the decomposition analysis while only
+
+including one group of sociodemographic features at a time. We designed the statistical analysis in this way
+
+to show how much the nativity gaps in conviction would change if governments were to intervene in just one
+group of sociodemographic features, given that group’s correlation with other features. To maximize stability
+
+in estimates, the data were pooled across all available years (per country), and the estimates were generated
+
+from one decomposition model per sociodemographic feature by country (a total of 18 decompositions for
+
+immigrants and 28 for the second generation).
+
+
+    We grouped the explanatory variables for ease of interpretation: age (because age, as explained, is
+
+important for crime risks), basic composition (whether a person has children and is married/cohabiting),
+
+education (level of completed education and an indicator for missing educational credentials), and labor
+
+market status and income (employed, self‐employed, unemployed, or outside labor force; an indicator for
+
+missing primary labor market status; log composition adjusted household disposable [i.e., post-tax] income).
+
+For the second generation, we also added two sets of proxies for the home environment in which the children
+
+grew up: parents’ education and labor market status (father and mother’s level of education; dummy for
+
+missing parental education; father’s and mother’s labor market status; and an indicator for missing parental
+
+labor market status), and parents’ social influence (parents were married; parents convicted within the
+
+previous 5 years; and parents deceased). For country-specific availability of the variables mentioned in
+
+parentheses, please see the data comparability matrix in the online supplementary material; all clusters of
+
+variables were represented in each country, and most variables were available in all countries, except NZL,
+
+for which fewer variables could be included.
+
+
+    For data security reasons, we were not allowed to pool data for comparison countries. We therefore
+
+defined and ran identical decomposition models separately on the data for each country, whereby we get
+
+formal comparisons between population groups within countries but are forced to infer comparisons of these
+
+results across countries from the country profiles rather than formally testing the cross-country differences.
+
+
+
+
+Results
+
+
+Trends in Conviction Rates
+Figure 1 shows the conviction rates of the comparison groups for each of the five countries. We observed
+
+declining conviction rates over the data period, mirroring the international crime decline seen across many
+
+developed democracies (33). There are stark differences in the conviction rates across countries, with rates
+
+generally being higher in NZL and DNK than elsewhere. As already discussed, this may have arisen from
+
+differences across countries in terms of which offenses are included in the penal code. NLD and SWE had
+
+the lowest conviction rates (generally below 5% convicted per year). In 2018, the last available data year,
+
+conviction rates were below 3% for all groups in the European countries, except for second-generation men
+
+of nonwestern backgrounds in DNK (5%). For men of majority backgrounds, criminal conviction became
+
+rare toward the end of the period. In NZL, rates remained somewhat higher (but declined steeply after 2009),
+
+and conviction rates of immigrants and the second generation were consistently lower than for the majority
+
+population.
+
+
+                                         [Insert Figure 1 about here]
+
+
+    To compare groups while accounting for the level differences across countries (and considering that the
+
+reference group, i.e., the majority population, also experienced declining conviction rates), Figure 2 shows
+
+the nativity gaps in convictions as defined in the section Study Design.
+
+
+                                         [Insert Figure 2 about here]
+
+
+    Panel A of Figure 2 shows the results for immigrants. The findings regarding the Scandinavian
+
+countries (DNK, NOR, and SWE) were similar in structure, showing an increasing nativity gap up until
+
+around 2000, then decreasing up until 2007. Then, the gap stabilized at a level of about 70 for NOR and 130
+
+for DNK. For SWE, however, there was an increasing trend in the post-2010 period. NLD had a higher gap
+
+in conviction rates between immigrants and the majority population throughout the data period. The gap
+
+exceeded 200, almost reaching 300 in 2015, implying that the conviction rate of nonwestern immigrants to
+
+NLD was nearly four times higher than among natives— which may, of course, have been exaggerated by
+
+very low conviction rates for the majority population, as observed in Figure 1 above. In NZL, the gap was
+
+consistently below zero, implying that the conviction rate of nonwestern immigrants was lower than that of
+the majority population. The gap in NZL, which was around –50, was stable across the data period,
+
+indicating that nonwestern immigrants had about half as high conviction rates as the majority population.
+
+
+    Panel B of Figure 2 shows the results for the second generation. The findings generally resembled those
+
+for immigrants, yet with more volatility and a few key exceptions. First, the results for NOR and SWE were
+
+very similar to the results for the immigrants, with the exception that the increasing conviction gap found for
+
+immigrants in SWE post-2010 was not mirrored for the second generation. The trend in results for the
+
+second generation in DNK was generally similar to those for immigrants in Panel A, but the size of the gap
+
+was much larger for the second generation in Panel B. The gap neared 400 in the mid-1990s, then decreased
+
+to 200 in 2006, and then—in contrast to the stability observed for immigrants—rose to around 300 more
+
+recently. For NLD, the gap for the second generation was between 300 and 400 over all years of the period,
+
+but the trend was similar to that of immigrants. Even for NZL, the second generation seemed to have higher
+
+conviction rates than first-generation immigrants—albeit still lower than the majority population, at between
+
+–41 and –18.
+
+
+
+
+Nativity Gaps in Sociodemographic Backgrounds
+
+
+We then examined how much of the gaps depicted in Figure 2 were attributable to compositional differences
+
+between immigrants, their children (second generation), and the majority populations. To do so, we
+
+compared the means of sociodemographic background variables across the groups in the first and last
+
+available data years in each of the countries (see the online supplementary material). The results (Table A1)
+
+showed large differences between the comparison groups within all countries, although the results for the
+
+European countries and NZL differed substantially.
+
+
+    In Europe, immigrants of nonwestern backgrounds tend to be older than the majority population,
+
+whereas those in the second generation tend to be younger. This pattern was generally more pronounced in
+
+the early than late data years. Considering other basic compositional features, immigrants to Europe are more
+
+likely to have children and be married than the majority; the opposite is true for the second generation,
+although this gap has decreased somewhat across the data windows. These results likely reflect both
+
+differences in age structure and the fact that immigrants of nonwestern backgrounds often originate from
+
+countries where modal marriage and child-rearing ages have not increased to the same degree as in most
+
+western countries (34). The nativity gaps in education levels, labor market status, and income were stark,
+
+suggesting that these features could be important for the observed differences in conviction rates. Last, our
+
+proxies for home environment (parental education and labor market status and parents’ social influence, such
+
+as whether the parents are alive) were also unequally distributed across the groups, with the second
+
+generation of nonwestern backgrounds consistently being disadvantaged. For these proxies, there are no
+
+systematic developments toward closing the gap between the majority population and the nonwestern second
+
+generation across the data windows.
+
+
+    As was expected, most of these correlations reversed for NZL, and immigrants of nonwestern
+
+backgrounds and their children in NZL generally scored higher on the background variables than their
+
+majority population counterparts. In terms of age distribution, the same pattern was observed for NZL as for
+
+the European countries, suggesting that the reversal of sociodemographic backgrounds across nativity
+
+relative to the European countries was likely driven not by the age-timing of immigration and the second
+
+generation “aging through” the age window under observation, but rather because NZL received a very
+
+different type of immigrants than the other countries.
+
+
+
+
+Counterfactually removing compositional differences
+
+Figure 3 shows the results from the Blinder-Oaxaca decomposition models fitted to the data by country.
+
+Solid lines represent what the nativity gap in convictions would be in the counterfactual situation in which
+
+the comparison groups (within country) were composed identically on the variables included in the
+
+decomposition, and the comparison groups (within country) experienced identical returns to the included
+
+variables. Dashed lines represent the uncontrolled gaps (corresponding to results shown in Figure 2) to
+
+indicate how much these gaps change with the decomposition.
+                                         [Insert Figure 3 about here]
+
+
+     Panel A shows the results for the immigrants. In all European countries, the nativity gaps in convictions
+
+would have been more than halved if the comparison groups were identically composed. For NOR, the gap
+
+would have disappeared. For DNK, the gap would be greatly reduced and even closed in the early and later
+
+periods of the data window, despite a still-substantial gap around 2000. During the past 10 years, the
+
+counterfactual gap has been relatively stable at an average of +20. Although DNK and SWE had similar
+
+“raw” conviction gaps for immigrants of nonwestern backgrounds during the first half of the data period
+
+(dashed lines), controlling for compositional features reduced the gap more in DNK than in SWE pre 2007
+
+(solid lines). After 2007, results for DNK and SWE align. The NLD represents the strongest reduction in
+
+conviction gap in the counterfactual scenario with identical compositions: The gap would close by as much
+
+as 150 percentage points, from about 250 in the uncontrolled results to about 100 in the counterfactual
+
+situation. The overrepresentation in NLD would still exceed results from the other countries, but in the
+
+counterfactual scenario, NLD is no longer an outlier. Concerning NZL, the gap, which is still reversed in
+
+sign, would close slightly in the counterfactual scenario, showing that immigrants to NZL are positively
+
+selected.
+
+
+     Panel B shows results for the second generation and presents two main patterns. First, the results for the
+
+second generation in NOR, SWE, and NZL were similar to those found for the first generation: In the
+
+counterfactual scenario, the conviction gap would narrow substantively in NOR and would also be greatly
+
+reduced in SWE and, to a lesser extent (and in the other direction), in NZL. Second, even in the scenario
+
+with identical composition and identical returns to the included variables, the second generation in DNK and
+
+NLD would show large conviction gaps, implying that compositional features explain far less of the raw
+
+nativity gaps here than in the other comparison countries. In both DNK and NLD, the conviction gaps for the
+
+second generation were substantial in the raw results (dashed lines), but only about one-third of these gaps in
+
+Figure 3 seems attributable to differences in composition (in the situation when these groups had returns
+
+equal to the majority populations).
+The importance of each compositional feature
+
+
+Figure 4 shows point estimates of the change to the nativity gap in convictions within countries that would
+
+arise from comparison groups being identically composed (and having identical returns) on each
+
+sociodemographic feature individually.
+
+
+                                         [Insert Figure 4 about here]
+
+
+    Panel A shows results for immigrants and Panel B for the second generation, and horizontal clusters
+
+show the results by country within sociodemographic features. The top cluster concerns age and alludes to
+
+two points that have already been discussed: People tend to migrate in their late twenties, and the second
+
+generation is still, as a group, aging through the most conviction-prone ages during our analysis window.
+
+These points imply that counterfactually enforcing identical age structures and identical correlations between
+
+age and conviction risk between immigrants and majority populations would, in most comparison countries,
+
+increase conviction gaps (younger and hence more conviction prone immigrants than observed; red dots for
+
+immigrants). However, for the second generation, they would reduce the conviction gap (older and hence
+
+less conviction-prone second generation than observed, blue dots).
+
+
+    The second cluster concerns “basic composition,” which refers to marital status and having children.
+
+The results for NLD and DNK were virtually null, implying that counterfactually switching the composition
+
+of both immigrants and their children to resemble the majority populations of the countries on these two
+
+factors would not affect the nativity gap in convictions to any discernable degree. In NOR and SWE,
+
+however, doing so would increase the gaps substantively, which—assuming a negative correlation between
+
+family formation and crime as documented in extensive research and that such correlation was identical
+
+across groups (35, 36)—suggests that the majority population have fewer family ties than immigrants and the
+
+second generation, although the latter groups have higher conviction rates. For NZL, the results suggested
+
+that enforcing the same composition on and returns to basic features would reduce the size of the nativity gap
+
+in convictions considerably for both immigrants and the second generation. Because the direction of the
+nativity gap is reversed in NZL relative to the European countries, a reduction for NZL implies a higher
+
+conviction rate for immigrants and the second generation.
+
+
+     For education in the third cluster, we only had data for the Scandinavian countries. Here, as we would
+
+expect from the earlier comparison of sociodemographic features across the groups, we found that education
+
+can serve as an effective pathway to close nativity gaps in convictions for immigrants and, although to a
+
+much lesser degree, for the second generation. Of course, this requires the returns to education to be identical
+
+across comparison groups.
+
+
+     A key finding from our decomposition analysis arose from the cluster on labor market outcomes and
+
+income. For immigrants, this cluster had by far the largest potential for closing nativity gaps in convictions in
+
+the European countries, exceeding -50 in all cases. For the second generation, the estimates were also large,
+
+but not consistently the largest. For NZL, the results were the opposite; identical situation on labor market
+
+status and income would imply a small increase to the nativity gap in convictions for immigrants and a larger
+
+increase for the second generation.
+
+
+     Regarding the second generation, Figure 4 also shows estimates for our proxies of the home
+
+environment. The results indicated that differences between the majority populations and the second
+
+generation on parental education and labor market status were significant for understanding gaps in
+
+convictions, with this cluster generally representing the largest estimates for the second generation. Thus,
+
+closing the gaps in this cluster across comparison groups in the European countries would greatly reduce
+
+conviction gaps. For NZL, it would increase the gap by 14.3, reflecting that immigrants of nonwestern
+
+backgrounds and their children in NZL fare better on labor market status and education than the majority
+
+population (contrary to the European countries where immigrants of nonwestern backgrounds consistently
+
+fare worse on these features). Last, the bottom row of Figure 4 presents results for the parents’ social
+
+influence, including parental marital status, recent parental criminal conviction, and parental death. The
+
+results for this cluster were less pronounced.
+Discussion
+
+
+Our study of nativity gaps in criminal conviction risks in five developed democracies supports two
+
+overarching conclusions. First, concerning differences in conviction risks across majority populations,
+
+immigrants of nonwestern descent, and their children, the differential selection of specific types of
+
+immigrants a country receives must be considered. Second, compositional differences between the majority
+
+population and the immigrant population must be extricated, especially in terms of labor market status and
+
+income. We show that between-group differences in these outcomes drive a substantial part of the observed
+
+conviction gaps—not only for people who have migrated, but also for the children of immigrants whose
+
+home environments are shaped by their parents’ socioeconomic integration.
+
+
+     To arrive at these conclusions, we used full population register data covering a long period in DNK,
+
+NLD, NZL, NOR, and SWE to employ statistical decomposition models. Advantages of using full
+
+population register data include statistical power, accurate nativity information, accurate links between
+
+people (also across generations) and the universe of criminal convictions, and high comparability in control
+
+variables across countries. Advantages of comparing results across five countries include cross-validation
+
+and the ability to focus on the importance of selective migration.
+
+
+     The results for the European countries were remarkably consistent, reflecting that Europe has received a
+
+specific type of immigration from nonwestern countries, namely refugees and their family members. As most
+
+refugees possess limited transferable skills, such as language or vocational skills that are directly transferable
+
+to the receiving county, nonwestern immigrants to Europe are generally disadvantaged, with low
+
+employment and high conviction rates. While migration and its consequences are among the most debated
+
+issues for politicians and citizens in these countries, and likely in other developed democracies, concerns
+
+seem justified. However, per our results for the European countries, closing nativity gaps in labor market
+
+status and income would indeed yield the most significant narrowing of the conviction gap between
+
+immigrants of nonwestern backgrounds and the majority populations, which suggests that successful
+
+integration policy might enable countries to receive refugees without seeing crime rates skyrocket.
+     The results for New Zealand contrasted those of the European countries. Here, immigration from
+
+countries listed as “nonwestern” predominantly constitutes labor migrants, especially from the Southeast
+
+Asian region and the Pacific Islands. These migrants travel to New Zealand in active search for employment,
+
+so their baseline crime propensities are lower than among the majority population. Again, differences in
+
+employment rates explain most of the lower conviction rates among immigrants of nonwestern backgrounds
+
+in NZL. However, the reasons why nonwestern immigrants come to NZL are fundamentally similar to the
+
+reason behind immigration to the European cluster in the 1960s and 1970s: search for employment. The
+
+difference in results across Europe and NZL might thus be found in the compatibility of origin and
+
+destination in terms of culture, skills, and acceptance of migrants (17).
+
+
+     Turning to the results for the second generation, our results consistently implied that differences in
+
+parental labor market status and income significantly explain conviction gaps between children of
+
+nonwestern immigrants and children of the majority populations in all comparison countries. This means that
+
+in Europe, the selective migration of low-skilled parents with poor labor market prospects results in social
+
+disadvantage that transmits intergenerationally to manifest in conviction gaps between their children and the
+
+children of the majority populations. In NZL, these results again were the opposite, and the positive selection
+
+of labor migration implies that immigrant children in the country benefit from the intergenerational
+
+transmission of advantage that follows parental labor market attachment. In all, these results imply that the
+
+home environment is particularly important for understanding differences in conviction risks for children of
+
+nonwestern immigrants and their majority population counterparts, and that the successful integration of
+
+immigrants might trickle down through generations and close some of the recent increase in conviction gaps
+
+for the second generations in some countries.
+
+
+     In sum, comparison of conviction rates across nativity status showed that immigrants of nonwestern
+
+backgrounds and their children had higher conviction rates than the majority populations in the respective
+
+comparison countries, except for in NZL, where they have consistently lower rates. In a statistical sense, the
+
+null hypothesis of this study was that, once controlled for compositional features, we would observe no
+
+conviction gaps between groups in the data; that is, that conviction gaps would be driven by differences in
+sociodemographic features that are conducive to crime and that they may differ in how conducive to crime
+
+across comparison groups. Such a finding would imply that the conviction gaps could be closed by closing
+
+the gaps on sociodemographic parameters (and their returns) between immigrants of nonwestern background,
+
+their children, and the majority population. This hypothesis was rejected by the data in all comparison
+
+countries but Norway. Even in the fully controlled statistical decomposition models, we still observed
+
+substantially sized residual conviction gaps between majority populations and immigrants of nonwestern
+
+backgrounds and the majority and children of nonwestern backgrounds (“second generation”). This finding
+
+implies that despite our flexible statistical decomposition strategy that considered composition and
+
+potentially differential returns to the observed variables across the comparison groups, residual conviction
+
+gaps exist. The residual gaps in conviction rates may arise from differential correlation between the included
+
+control variables and crime conviction risk across groups (such as if education is less of a protective factor
+
+for some groups). But residual gaps may also arise from challenges experienced by the immigrant groups
+
+that are not correlated with the included control variables, such as discriminatory factors. Last, the residual
+
+gaps may also arise from features that are inherent to immigrants and their children, are correlated with
+
+criminal conviction risks, and are unobserved in the data, such as specific culturally patterned ways of life.
+
+Distinguishing empirically between these potential explanations with our data is not possible, and future
+
+research into this topic is welcome.
+
+
+     The results of our study have broad implications for potential interventions if countries want to close
+
+nativity gaps in criminal convictions. The differences between groups in labor market attachment, income,
+
+and education were particularly impactful on the size of the conviction gaps, implying that investment in
+
+these indicators of human capital could be effective. The intergenerational correlation of this human capital
+
+and the second generation’s conviction risk emphasize this point, as improvement to the human capital level
+
+(what we here call the ‘home environment’) among the parental immigrant generation of nonwestern
+
+backgrounds is among the most significant factors for closing the conviction gap between their children and
+
+their majority population peers. This finding corroborates a recent systematic review of meta-analyses of
+developmental predictors of offending and persistence in crime, which also found family dimensions to be
+
+most important for the risk of developing criminal propensities (37).
+
+
+     We arrived at our conclusions by comparing results for five developed countries. This examination was
+
+not without limitations, as securing comparability is difficult. We strove for comparability in the included
+
+variables and largely succeeded, as illustrated in the low level of discrepancies in variable availability and
+
+content across time and comparison countries. Nevertheless, the many institutional differences between
+
+European countries and NZL, for example, challenged our ability to firmly conclude that differences in
+
+results for these countries were driven by selective migration only. It is difficult to think of institutional
+
+features that would directly reverse the results for NZL relative to the European countries were it not for
+
+selective migration, but we nonetheless encourage future research to focus on this and related questions.
+
+
+     Comparability challenges also exist across countries within our global regions, as was especially visible
+
+in differences in the levels of the outcome variable across countries. We argue that such differences reflect
+
+variations in what is included in the penal code of each country, and that they will consequently matter for
+
+the within-country level of criminal conviction rates, not for relative differences across the majority
+
+populations, immigrants of nonwestern backgrounds, and their children within countries. With the available
+
+data, this assumption could not be formally tested, however.
+
+
+     A final limitation concerns the observation that criminal convictions reflect only one measure of crime,
+
+namely crimes that are reported, solved, and have led to formal conviction. In a sense, conviction is as much
+
+the product of a judicial process as of actual behavior, and other measures of crime might more closely
+
+correspond with actual crime behavior than what our administrative data can do. Analyses of self-reported
+
+crime or crime reports, for example, would likely give better behavioral cues (10). It was not possible to link
+
+crime reports to perpetrators in the data behind this study, and self-reported crime is not a flawless measure,
+
+either (38). Obtaining self-reported crime from the entire populations in the five comparison countries would
+
+also be impractical. Our main contribution to the literature is, therefore, to present systematic analyses on
+
+individual-level data on the universe of criminal convictions in all comparison countries.
+         In closing, migration and its consequences are among the most prominent campaign issues for
+
+politicians in both the US and EU and in other developed democracies, and the topic is often discussed using
+
+direct and sometimes harsh rhetoric. The results from our study highlight two important margins of the issue.
+
+First, we show that the type of migrants a country receives—what we call selective migration—is indeed
+
+important for how immigrant-majority gaps in criminal convictions materialize, such as when low-skilled
+
+refugees and their children end up with comparatively high conviction rates in one host country, or when
+
+migrants in active search of employment have comparatively low conviction rates in another. Second, we
+
+show that the correlation between immigration and crime is one of differences in human capital—features
+
+that welfare states can invest in if they strive to close these gaps. In other words, correlations between
+
+immigrant status and criminal convictions reflect both the type of migration and the host country’s response
+
+to it.
+
+
+
+
+Materials and Methods
+
+
+Our data sources were the national statistical agencies of our comparison countries: Danmarks Statistik
+
+(DNK), Centraal Bureau voor de Statistiek (NLD), Statistisk Sentralbyrå (NOR), Statistiska Centralbyrån
+
+(SWE), and the Integrated Data Infrastructure available through Statistics New Zealand (NZL). The data
+
+represent full population records that are accurately linkable across administrative registers, using unique
+
+individual identifiers. These data are pseudo-anonymized, and access is restricted and only allowed
+
+following approval by the national data protection agencies and only via approved research institutions (for
+
+the relevant legislation and data access in the comparison countries, see links in notes to the data
+
+comparability matrix presented in the online supplementary material, Table A2).
+
+
+         We strove to maximize comparability in variable content across the comparison countries by a priori
+
+defining variables, including their level of measurement. A data comparability matrix in the online
+
+supplementary material summarizes the resulting variable content, including the few differences across
+
+countries that we were unable to weed out. Out of 48 variables measured in five countries (240 variables in
+total), we only encountered 30 issues in comparability, most of which were minor. Eight of the issues were
+
+because information was simply not available in some countries for specific variables.
+
+
+     For our study, we focused on the 1991–2017 period subject to country-specific data availability. Data
+
+for DNK and SWE covered the entire window on all variables. Data from NOR were available during 1995–
+
+2017. For NLD and NZL, coverage was less complete, and although some variables were observed in earlier
+
+years, most were observed only since 2006, wherefore we restricted analyses for these countries to the 2006–
+
+2017 window. Note also that we weighed the individuals in our data by how much of the year under analysis
+
+they were recorded as being in the country and not having deceased.
+
+
+     To statistically decompose how much of differences in conviction rates between groups is attributable to
+
+the observed explanatory variables, we estimated the following Blinder-Oaxaca decomposition model (32)
+
+on the data for each country separately:
+
+
+                𝐸(𝑦|𝑚) − 𝐸(𝑦|𝑖) = {𝐸(𝑋|𝑚) −
+                67777877779                 𝐸(𝑋|𝑖)}𝛽5 + 𝐸(𝑋|𝑖)(𝛽
+                                  677777787777779               5 − 𝛽8 )
+                                                        67777877779                                 (1)
+                 Difference in outcome   Differences in composition   Differences in correlations
+
+
+
+Where E(.) is the expectation operator, y = 1 is criminal conviction, i is immigrants/second generation, m is
+
+majority population, X is the control variables, and 𝛽 is regression coefficients from a standard regression
+
+model estimated using ordinary least squares estimation.
+
+
+     The model states that there can be two sources of difference in the average conviction rates of
+
+immigrants/second generation and the majority population. The first source arises from differences in the
+
+groups’ composition on background characteristics that are included in X. Assuming that the correlations
+
+between the elements of X and y are identical for i and m (i.e., 𝛽8 = 𝛽5 ), level differences in the background
+
+characteristics can then explain some of the difference in their conviction rates. The rationale here is that a
+
+group with a higher share of more at-risk individuals will have higher conviction rates; the “differences in
+
+composition” part of Equation 1 quantifies how much this rationale matters. The second source of difference
+
+in the average conviction rates arises if the correlations between the elements of X and the outcome y differs
+
+for i and m (i.e., 𝛽8 ≠ 𝛽5 ). This can be considered differences across the groups in the returns to background
+characteristics, such as if education were less/more protective for crime risks for immigrants/second
+
+generation than for the majority population. The “differences in correlations” part of Equation 1 quantifies
+
+how much this rationale matters.
+
+
+     In this study, we report the results from the differences in composition part of Equation 1. This is
+
+because the analytical exercise we perform is to observe how much convictions gaps would close if the
+
+groups were composed identically on the included background variables and if the groups experience
+
+identical returns to these variables (i.e., only difference between the groups on included variables is in terms
+
+of ethnic background). One may think of this as the counterfactual scenario in which we have intervened in
+
+society to align the composition of the groups on the included variables and to ensure that there are no
+
+discriminatory practices in place (the groups experience identical returns to education, for example). If
+
+conviction gaps between the groups do not close under this counterfactual scenario, it signals that part of the
+
+gaps arise from differences in correlations (“discrimination”) and from differences in composition on
+
+variables that are not included in the model (i.e., unobserved variables, which could be PTSD-diagnoses,
+
+culturally patterns way of life, etc.).
+
+
+     Conveniently, the results from the Blinder-Oaxaca decomposition models can be expressed as shares of
+
+the difference in outcome that are attributable to differences in composition of groups of variables in X under
+
+the assumption of identical returns to these variables (we focused, as mentioned, on age, basic composition,
+
+education, labor market status and income; for the second generation, we also focused on proxies for home
+
+environment, namely parents’ education and labor market status and parents’ social influence). These shares
+
+were directly comparable across countries.
+
+
+
+
+Data Availability
+
+
+Partial restrictions to the data and/or materials apply. Full population administrative data are confidential and
+
+may only be accessed following strict approval. Access to the data may be obtained following application to
+
+and approval from each of the 5 national statistical agencies that provided data for this study. Information on
+how to apply for data access is available in the notes to Table A1 (which describes the data content). Code
+
+used for generating the results presented in this study is available as a supplementary file (3 text files).
+
+
+
+
+References
+1.   D. Jackson, Video: Trump planned to describe some Mexican migrants as ‘rapists’, USA Today.
+     Available at: https://eu.usatoday.com/story/news/politics/elections/2016/2016/09/30/donald-trump-
+     mexico-restaurant-deposition-washington-dc/91331486/ (2016) (Accessed: 22 June 2023).
+
+2.   M. Wendling, Springfield grapples with false cat-eating rumours - and real problems, BBC News.
+     Available at: https://www.bbc.com/news/articles/c1l4g6g5d97o (2024) (Accessed: 06 May 2025).
+
+3.   P. Vermund, Kriminelle, dovne og illoyale indvandrere skal stoppes, Ekstra Bladet. Available at:
+     https://ekstrabladet.dk/opinionen/pernillevermund/Kriminelle-dovne-og-illoyale-indvandrere-skal-
+     stoppes/6288606 (2016) (Accessed: 22 June 2023).
+
+4.   R. McKie, Far-right leader Geert Wilders calls Moroccan migrants ‘scum’, The Guardian. Available at:
+     https://www.theguardian.com/world/2017/feb/18/geert-wilders-netherlands-describes-immigrants-scum-
+     holland (2017) (Accessed: 07 October 2025).
+
+5.   U. Kristersson, Ulf Kristersson i partiledarutfrågning - P1 Morgon, Sveriges Radio. Available at:
+     https://sverigesradio.se/artikel/ulf-kristersson-i-partiledarutfragning (2021) (Accessed: 07 October
+     2025).
+
+6.   K. Murphy, Pauline Hanson calls for immigration ban: ‘go back to where you came from’, The
+     Guardian. Available at: https://www.theguardian.com/australia-news/2016/sep/14/pauline-hanson-first-
+     speech-senate-calls-for-immigration-ban (2016) (Accessed: 22 June 2023).
+
+7.   BBC, French election: Le Pen pledges to suspend immigration, BBC News. Available at
+     https://www.bbc.com/news/world-europe-39625509 (2017) (Accessed: 22 June 2023).
+
+8.   F. Fasani, M. Giovanni, E.G. Owens, P. Pinotti, Does Immigration Increase Crime? Migration Policy
+     and the Creation of the Criminal Immigrant. Cambridge University Press (2019).
+
+9.   M. Galbreath, The Populist Appeal. An Analysis of Donald Trump and Marine Le Pen. Harvard
+     International Review 38(3): 7-9. https://www.jstor.org/stable/26528673 (2017).
+
+10. C.E. Kubrin, G.C. Ousey, Immigration and Crime. Taking Stock. Springer, Springer Briefs in
+    Criminology (2018).
+
+11. C.E. Kubrin, E.J. Alvarado, Immigration and crime around the globe: key findings across a diverse
+    range of contexts. CrimRxiv: https://doi.org/10.21428/cb6ab371.4f71de76 (2025).
+
+12. C. Alonso-Borrego, N. Garoupa, P. Vázquez, Does Immigration Cause Crime? Evidence from Spain.
+    American Law and Economics Review 14(1): 165-191. https://www.jstor.org/stable/42705611 (2012).
+
+13. M. Bianchi, P. Bounanno, and P. Pinotti, Do immigrants cause crime? Journal of the European
+    Economic Association 10(6): 1318-1347. https://doi.org/10.1111/j.1542-4774.2012.01085.x (2012).
+14. M. Couttenier, V. Petrencu, D. Rohner, M. Thoenig, The Violent Legacy of Conflict: Evidence on
+    Asylum Seekers, Crime, and Public Policy in Switzerland. American Economic Review 109(12): 4378-
+    4425. https://doi.org/10.1257/aer.20170263 (2019).
+
+15. J.N. Arendt, C. Dustmann, H. Ku, Refugee migration and the labor market: lessons from 40 years of
+    post-arrival policies in Denmark. Oxford Review of Economic Policy 38(3): 531–556.
+    https://doi.org/10.1093/oxrep/grac021 (2022).
+
+16. C. Dustmann, R. Landersø, L.H. Andersen, Refugee Benefit Cuts. American Economic Journal:
+    Economic Policy 16 (2): 406–41. https://doi.org/10.1257/pol.20220062 (2024).
+
+17. S.N. Andersen, J. Savolainen, S.F. Messner, Exploring sources of heterogeneity in immigrant crime:
+    Evidence from Norway. Acta Sociologica, 65(4), 439-458. https://doi.org/10.1177/00016993221109704
+    (2022).
+
+18. C. Dustmann, R. Landersø, L.H. Andersen, Unintended Consequences of Welfare Cuts on Children and
+    Adolescents. American Economic Journal: Applied Economics 16 (4): 161–85.
+    https://doi.org/10.1257/app.20230519 (2024).
+
+19. T.E. Moffitt, A. Caspi, M. Rutter, P.A. Silva, Sex Differences in Antisocial Behaviour. Conduct
+    Disorder, Delinquency, and Violence in the Dunedin Longitudinal Study. Cambridge University Press.
+    (2001).
+
+20. S. Hassan, C. Hvidtfeldt, L.H. Andersen, R.O. Udsen, Do refugee children impair the academic
+    performance of native children in the school? Informative null results from Danish Register Data.
+    European Sociological Review 39(3): 352–365. https://doi.org/10.1093/esr/jcac059 (2023).
+
+21. M. Hedegaard, M. Størling, J.-R. Tyran. The Price of Prejudice. American Economic Journal: Applied
+    Economics 10 (1): 40–63. https://doi.org/10.1257/app.20150241 (2018).
+
+22. A.P. Damm, C. Dustmann, Does Growing Up in a High Crime Neighborhood Affect Youth Criminal
+    Behavior? American Economic Review 104(6): 1806-1832. https://doi.org/10.1257/aer.104.6.1806
+    (2014).
+
+23. C. Dustmann, R. Landersø, Child’s Gender, Young Fathers’ Crime, and Spillover Effects in Criminal
+    Behavior. Journal of Political Economy 129(12): 3261-3555. https://doi.org/10.1086/716562 (2021).
+
+24. C. Dustmann, M. Mertz, A. Okatenko, Neighbourhood Gangs, Crime Spillovers, and Teenage
+    Motherhood. The Economic Journal 133(653): 1901–1936, https://doi.org/10.1093/ej/uead009 (2023).
+
+25. World Bank Group, “GDP per capita, PPP (current international $) - OECD members”, Available at:
+    https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.CD?end=2024&locations=OE&most_recent_y
+    ear_desc=false&start=1990&type=shaded&view=map&year=2021 (Accessed: 22 June 2023).
+
+26. Our World in Data, “Population, 1950 to 2023”, Available at:
+    https://ourworldindata.org/explorers/population-and-
+    demography?facet=none&country=DNK~NOR~SWE~NLD~NZL&Metric=Life+expectancy&Sex=Bot
+    h+sexes&Age+group=At+birth&Projection+Scenario=None (Accessed: 22 June 2023).
+
+27. Statistics Denmark, Indvandrere i Danmark. Copenhagen: Statistics Denmark (2024).
+28. L.S. Richmond-Rakerd et al., Clustering of health, crime, and social-welfare inequality in 4 million
+    citizens from two nations. Nature Human Behavior 4(3): 255-264. https://doi.org/10.1038/s41562-019-
+    0810-4 (2020).
+
+29. Justis- og beredskapsdepartementet, Forskrifter om Forlenget innvandringsstopp, Lovdata. Available at:
+    https://lovdata.no/dokument/SFO/forskrift/1975-12-12-9 (1975) (Accessed: 01 September 2025).
+
+30. P.C. Matthiessen, Immigration to Denmark. An Overview of Research Carried Out from 1999 to 2006
+    by the ROCKWOOL Foundation Research Unit. Copenhagen: The ROCKWOOL Foundation Research
+    Unit and University Press of Southern Denmark (2009).
+
+31. J.N. Arendt, Welfare benefit generosity and social integration of refugees. International Migration
+    Review 58(2): 706-733. https://doi.org/10.1177/01979183231160713 (2023).
+
+32. B. Jann, The Blinder-Oaxaca decomposition for linear regression models. The STATA Journal 8(4):
+    453-479. https://doi.org/10.1177/1536867X0800800401 (2008).
+
+33. G. Farrell, N. Tilley, A. Tseloni, Why the Crime Drop? Crime and Justice 43: 421-490. (2014).
+
+34. World Population Review, Average Age of Having First Child by Country 2025. Available at
+    https://worldpopulationreview.com/country-rankings/average-age-of-having-first-child-by-country
+    (2025) (Accessed: June 19 2025).
+
+35. R.J. Sampson, J.H. Laub, C. Wimer, Does Marriage Reduce Crime? A Counterfactual Approach to
+    Within-Individual Causal Effects. Criminology 44(3): 465-508 (2006).
+
+36. J. Savolainen, Work, family and criminal desistance: Adult social bonds in a Nordic welfare state.
+    British Journal of Criminology 49(3): 285–304. https://doi.org/10.1093/bjc/azn084 (2009).
+
+37. M. Basto-Pereira, D.P. Farrington, Developmental predictors of offending and persistence in crime: A
+    systematic review of meta-analyses. Aggression and Violent Behavior 65(101761): 101761.
+    https://doi.org/10.1016/j.avb.2022.101761 (2022).
+
+38. J.L. Payne, A.R. Piquero, The Concordance of Self-Reported and Officially Recorded Criminal Onset:
+    Results From a Sample of Australian Prisoners. Crime & Delinquency, 64(4), 448-471.
+    https://doi.org/10.1177/0011128716682440 (2017).
+
+
+
+
+Fig. 1 Conviction rates for majority populations, immigrants, and second generations of nonwestern
+backgrounds in the five comparison countries. Men, ages 15–30 years.
+Note: The figure shows the share of 15–30-year-old men who were convicted for violating the penal code
+each year, by comparison groups and comparison country. Repeated cross-sectional data for each country.
+Fig. 2 Conviction gaps in percent deviation between majority populations and immigrants and second generations of nonwestern backgrounds in the
+five comparison countries. Men, ages 15–30 years.
+
+
+                         (A) Immigrants                                               (B) Second Generation
+
+
+
+
+Note: Figure shows the share of 15–30-year-old men who were convicted for violating the penal code each year relative to the same share among the
+                                                                                         !""∗Pr&conviction'immigrant( * Pr&conviction'majority(
+majority population, by comparison country. We calculated the gap/overrepresentation as                                                         ,
+                                                                                                         Pr&conviction'majority(
+whereby a score of 0 implies identical conviction rates among the comparison groups, a score of 100 implies a two-fold conviction rate among
+immigrants than among the majority population, and so forth.
+Fig. 3 Conviction gaps in percent deviation between majority populations, immigrants, and second generations of nonwestern backgrounds in the five
+comparison countries net of compositional differences. Men, ages 15–30 years.
+
+
+                          (A) Immigrants                                                   (B) Second Generation
+
+
+
+
+Note: The figure shows the share of 15–30-year-old men who were convicted for violating the penal code each year relative to the same share among
+the majority population, by comparison country, and in the counterfactual situation with no compositional differences between the comparison groups
+within countries (i.e., residual differences in the fully specified decomposition models). A score of 0 implies that the residual differences in conditional
+conviction rates among the comparison groups would be identical, a score of 100 implies a two-fold conditional conviction rate among immigrants
+compared to the majority population with the same composition, and so forth. Dashed lines show uncontrolled results similar to those presented in
+Figure 2, for reference.
+Fig. 4 Conviction gaps in percent deviation between majority populations, immigrants, and second
+generations of nonwestern backgrounds in the five comparison countries net of compositional differences.
+Men, ages 15–30 years, data pooled across all years within the country.
+
+
+
+
+Note: The figure shows the results from separate Blinder-Oaxaca decomposition models per variable group
+and country, and by nonwestern immigrants (left) and their children (right) relative to the majority
+population. Blue (red) dots imply reduced (increased) counterfactual conviction gaps.
+
+
+
+                                                                                                           32
+                Online supplementary material for to
+
+A Statistical Decomposition of Nativity Gaps in Criminal Convictions
+
+   Using Full Population Data from Five Developed Democracies
+
+
+
+
+                         Country Profiles
+
+                           Denmark, p. 2
+
+                        The Netherlands, p. 6
+
+                         New Zealand, p. 9
+
+                           Norway, p. 15
+
+                           Sweden, p. 20
+
+                          References, p. 24
+
+
+
+
+                                                                   33
+                                                   Denmark
+
+Welfare state
+
+
+Denmark has had a universal social security net for decades, rooting back to a large social reform in 1933
+
+(although welfare policies existed further back in time; the 1933 reform is broadly recognized as the most
+
+important one). All citizens over the age of 18 are entitled to a tax funded income subsidy in case of a social
+
+event, such as unemployment. Members of UI funds receive higher subsidies, yet social assistance, which is
+
+the subsidy for uninsured people, suffices to uphold a certain standard of living while searching for
+
+employment. And even though the level of this social assistance and the additional requirements for
+
+receiving it have been debated (and changed) over the years, the Danish social assistance system is one of the
+
+world’s most generous welfare systems (Hansen and Schultz-Nielsen 2015).
+
+
+     Beginning in 1999, Denmark has broken away from its universalism in social assistance to immigrants
+
+of non-Western backgrounds. Not in coverage (anyone adhering to requirements for receiving social
+
+assistance are eligible) but in eligible amount of social assistance. In a brief period following reform in 1999,
+
+basic social assistance to newly arrived refugees was reduced by about 50 percent during their first three
+
+years in Denmark (see Foged et al. 2022 for details). That policy was soon repealed, only to be reinstated in
+
+the 2002-2012 period (see Dustmann, Landersø, and Andersen 2024a for details). In 2015, the policy was
+
+again reinstated, but now also extents to all immigrants of non-Western backgrounds who at the point of
+
+receiving social assistance have not resided legally in Denmark for 7 out of the last 8 years, not only those
+
+receiving residency after the reform (as was the case in both 1999 and 2002; for details see Arendt 2023).
+
+
+
+
+Immigration policy
+
+
+Denmark’s first immigration policy was formulated in 1983 (prior laws were written under other areas),
+
+which by international comparison was very liberal and stated that anyone in need of protection was
+
+welcome to seek asylum in Denmark. From the 1970s to 2001, the number of resident foreign citizens of
+
+
+
+                                                                                                                34
+non-Western backgrounds increased from 40,000 to around 180,000, many of whom arrived via family
+
+reunification (Matthiessen, 2009). Reform to the immigration law in 1998 therefore restricted access to
+
+family reunification by requiring refugees in Denmark to cover all costs associated with having their family
+
+reunified to Denmark and by setting new standards for when a marriage was to be considered pro forma and
+
+thus invalid for family reunification. The first set of integration laws were introduced in 1999 (which
+
+introduced mandatory language courses, a mandatory course in Danish society and culture, and a
+
+requirement to accept suitable employment if offered such). In 2002, again to restrict the number of family
+
+reunifications to Denmark (and to battle pre-arranged marriages), family reunification only became possible
+
+if both spouses were at least 24 years of age.
+
+
+    Denmark is a signatory of the United Nations High Commissioner for Refugees’ (UNHCR) resettlement
+
+program. Denmark accepts 500 refugees annually through the resettlement program and refugees under this
+
+program need not formally apply for residency. Most other asylum seekers in Denmark apply for asylum at a
+
+police station after having crossed a Danish border. As Denmark is a signatory of the Dublin Convention,
+
+eligibility to apply for asylum in Denmark follows the convention’s rules (for an overview of Denmark’s
+
+immigration policies for refugees since the 1950s, see Arendt, Dustmann, and Ku 2022).
+
+
+    When a refugee is granted residency, he or she is assigned to a municipality which is required to offer
+
+an “introduction program” (language courses, labor market training, etc.) to the refugee. The refugee is
+
+mandated to follow the introduction program to receive social assistance (whereby the program pauses
+
+during employment periods). The municipality is also charged with finding suitable (i.e., affordable)
+
+housing.
+
+
+
+
+Criminal Justice
+
+
+Denmark is known for its short prison sentences and strong focus on rehabilitative measures and non-
+
+custodial alternatives to imprisonment; features which have been widely studied (e.g., Andersen 2018,
+
+Goldman et al. 2019; almost 60% of prison sentences in Denmark in 2024 were 4 months or shorter; about
+
+
+
+                                                                                                              35
+11% exceeded 2 years; the shortest prison sentences in Denmark are just 7 days, cf. Danish Prison and
+
+Probation Service 2025). Denmark’s incarceration rate was between 60 and 72 incarcerated persons per
+
+100,000 inhabitants throughout the 2000-2020 period (World Prison Brief10 ). Non-custodial alternatives to
+
+imprisonment include probation, home confinement under electronic monitoring, and community service,
+
+and reforms have expanded the use of these alternatives especially for short prison sentences (< 1 year) and
+
+especially over the last two decades (Andersen 2025). The official rate of criminal recidivism in Denmark as
+
+of 2024 (persons convicted or released in 2022) was 20 percent reconvicted within two years. The rate
+
+ranges 12 percent among persons released from community service to 30 percent among persons released
+
+after having served a prison sentence shorter than two years (Danish Prison and Probation Service 2025).
+
+
+       Offenses are governed by the Penal Code and several “special” laws. In general, offenses against the
+
+Penal Code are the more serious ones, including any offense against the person. Offenses against the special
+
+laws may also invoke sanctions, typically fines. For example, serious drug offenses, such as illicit drug sales
+
+typically sanctioned by imprisonment, are governed by the Penal Code, whereas minor drug offenses, such
+
+as the possession of illicit drugs for own use typically sanctioned by a fine, fall under the Special Law on
+
+Illicit Drugs. In 2023, offenses (not including traffic law violations) were 25 percent property crimes, 11
+
+percent violent crimes, 58 percent various special laws, and a residual 6 percent “Other Penal Code”
+
+(Statistics Denmark 2024).
+
+
+
+
+Prior studies of the immigration / crime link
+
+Since 2005, Statistics Denmark has published annual statistics of conviction rates across immigrant status in
+
+both raw rates and adjusted for age composition and socioeconomic composition (e.g., Statistics Denmark
+
+2007). Here, both immigrants of non-Western backgrounds and their children born in Denmark have higher
+
+conviction rates than the majority population. In the most recent statistic (Statistics Denmark 2024), for
+
+example, immigrants of non-Western backgrounds have a conviction index of 124 (majority = 93), and their
+
+
+10
+     https://www.prisonstudies.org/country/denmark, retrieved on July 7, 2023
+
+
+                                                                                                               36
+children born in Denmark have index 214; both numbers adjusted for age structure and family income.
+
+Indexes that do not consider socioeconomic backgrounds are higher. Statistics Denmark applies the method
+
+of age-standardization, but their results are generally confirmed by studies that rely on regression techniques
+
+(e.g., Andersen and Jensen 2023).
+
+
+    Focusing on welfare policies, immigration, and crime, studies have shown that the 2002 and 2015
+
+reforms lowering social assistance levels to newly arrived refugees led to short term employment benefits but
+
+also to increasing deprivation and increases in crime (Arendt forthcoming, Dustmann, Landersø, and
+
+Andersen forthcoming). Dustmann, Landersø, and Andersen (forthcoming) also found the opposite results
+
+when looking at the repeal of the 2002 reform in 2012. And focusing on housing policies, studies that exploit
+
+the quasi-random dispersal of refugees across Danish municipalities find that when refugee boys grow up in
+
+high-crime neighborhoods, their own crime risks increase (Damm and Dustmann 2014), which is largely
+
+driven by group crimes (Dustmann, Mertz, and Okatenko 2023). Girls do not respond criminally to growing
+
+up in a high crime neighborhood, yet their risk of teenage pregnancy – most often with men who engage in
+
+group crime – increases (Dustmann, Mertz, and Okatenko 2023).
+
+
+
+
+                                                                                                             37
+                                             The Netherlands
+
+Welfare state
+
+
+The Netherlands can be best described as a hybrid welfare state that combines elements of both liberal and
+
+social-democratic welfare regimes. This unique approach seeks to strike a balance between market-oriented
+
+principles and social protection. On the one hand, the Dutch welfare state encourages active labor force
+
+participation, by reducing unemployment benefits and introducing more stringent activation requirements for
+
+welfare recipients. On the other hand, the Netherlands invests in social services like healthcare and
+
+education, promoting equal access and quality (Wildeboer Schut et al. 2000).
+
+
+     Social assistance for immigrants in the Netherlands is linked to their lawful residence. Immigrants can
+
+apply for social assistance after an uninterrupted and valid residence of five years. Other benefits are
+
+accessible earlier in case of a lawful residence. For example, public healthcare is directly accessible to lawful
+
+immigrants. For unemployment benefits, like Dutch citizens without a migration background, one must have
+
+worked in the Netherlands before being eligible (Lubbers et al. 2019).
+
+
+
+
+Immigration policy
+
+
+Since 1970, the Netherlands has undergone a series of shifts in its immigration policy (Jennissen et al. 2023).
+
+Until the late 1970s, immigrant integration policy was largely absent due to the belief that the ‘guest
+
+workers’ arriving in the Netherlands would only stay for a limited period. As it became apparent in the early
+
+1980s that many ‘guest workers’ were settling permanently, the first official immigrant integration policy in
+
+the Netherlands was developed. This Ethnic Minorities Policy stressed the ‘integration with retention of
+
+identify’, to accomplish multicultural richness (Scholten 2013). By the 1990s, due to disadvantages and poor
+
+outcomes for migrant groups, government initiatives started targeting education, housing, and employment
+
+among immigrants (Entzinger 2006), to encourage active citizenship (Scholten 2013).
+
+
+
+
+                                                                                                               38
+       The 2000s marked a shift in integration policy in the Netherlands, with attention being focused on the
+
+social and cultural distance between immigrants and Dutch society. Immigrants were now obligated to
+
+follow civic integration programs after their arrival in the Netherlands (Scholten 2013). During the 2010s,
+
+the Netherlands continued to refine its integration policies, by requiring most non-EU immigrants to pass a
+
+civic integration exam under the Integration Act (Peters et al. 2023).
+
+
+
+
+Criminal Justice
+
+
+In the Netherlands, the criminal justice system places a strong emphasis on rehabilitation and reintegration.
+
+As a result, the Netherlands often employs short sentences (with an average imprisonment length of 3.8
+
+months, Aebi & Tiago 2020) or alternatives to imprisonment. The Dutch incarceration rate gradually
+
+decreased from 2010 to 2016, dropping from its peak of 70.8 incarcerated persons per 100,00 inhabitants in
+
+2010 to its lowest point of 51.4 in 2016. Throughout the 2018-2020 period, between 53.8 and 58.5
+
+individuals per 100,000 inhabitants have experienced spells of incarceration per year (Aebi & Tiago 2020;
+
+Statista11). Alternatives to imprisonment include electronic monitoring, community service, fines, probation,
+
+and suspended sentences. For adult offenders in 2017, most cases resulted in a monetary fine as the most
+
+severe imposed penalty (40%). Community service (22%), dismissals (16%), and imprisonment (10%) were
+
+the next most frequently imposed sentences. Recidivism prevalence is particularly high among individuals
+
+subjected to short-term imprisonment (60% in a three-year period for those convicted in 2015) compared to
+
+other types of sentences (40% after community service, and just over 20% for those who paid a fine, Verweij
+
+et al. 2021; Wermink et al. 2022).
+
+
+       Although the general Criminal Code contains many definitions of core crimes and infractions, it does
+
+not define all criminal offences. Numerous separate acts, statutes and by-laws were created throughout the
+
+years. The main examples are the 1950 Economic Offences Act; the 1994 Road Traffic Act; the 1928
+
+Narcotic Drug Offences Act and the 1989 Arms and Munitions Act (Tak 2008). In 2017, property offenses
+
+
+11
+     https://www.statista.com/statistics/1277694/incarceration-rate-netherlands/, retrieved on December 19th, 2023
+
+
+                                                                                                                     39
+without violence (30%), traffic offenses (23%), and violent crimes (17%) were the most common types of
+
+crime (Verweij et al. 2021).
+
+
+
+
+Prior studies of the immigration / crime link
+
+
+Prior work has consistently revealed that immigrants of non-Western backgrounds have higher arrest and
+
+conviction rates than the native Dutch population (Gijsberts & Dagevos 2009; Statistics Netherlands 2018,
+
+2020). For example, in 2017 4.2% of non-Western males was a crime suspect, compared to 1.1% of the male
+
+Dutch population. Arrest rates among immigrants are lower than those of their children born in the
+
+Netherlands. This difference is however partially due to the lower average age of children with two foreign-
+
+born parents (Statistics Netherlands 2018).
+
+
+    Research in the Netherlands has also focused on the relationship between crime rates across migrant
+
+groups and their socioeconomic characteristics. For example, native Dutch individuals as well as immigrants
+
+of non-Western origin are at increased risk of being registered as a crime suspect if they reside in urban areas
+
+in the Netherlands. This association between area of residence and crime was less pronounced among
+
+immigrants of Western origin (Statistics Netherlands 2020). Furthermore, it has been shown that a
+
+substantial share (50-70%) of differences in arrest risk between non-Western immigrants and native Dutch
+
+citizens can be explained by differences in their socioeconomic characteristics (Blom & Jennissen 2014;
+
+Statistics Netherlands 2020) The overrepresentation of persons of foreign heritage becomes increasingly
+
+smaller, as more socioeconomic characteristics are added to the models (Blom & Jennissen 2014). For
+
+example, differences in age and relationship status have been found to contribute to differences in crime
+
+suspect rates between children of foreign-born parents and the native Dutch population (Huijnk & Kessels
+
+2016).
+
+
+
+
+                                                                                                             40
+                                               New Zealand
+
+Welfare state
+
+
+New Zealand’s benefit system takes on a social welfare assistance approach that provides a safety net to
+
+those in need while also reducing benefit dependency and encouraging work and self-reliance (Welfare
+
+Working Group 2011; Kia Piki Ake n.d.; Ministry of Social Development n.d.). There are 61 different types
+
+of welfare benefits available to New Zealanders. Main benefits include income support for job seekers, sole
+
+parents, youth and young parents, and retirees; supplementary benefits include assistance with housing,
+
+childcare and child benefits, winter energy payments, disabilities, and hardship (Kia Piki Ake 2022). All the
+
+working-age main benefits are income-tested (Community Law n.d.). Welfare benefits are usually only
+
+available to New Zealand citizens or residents, although a new emergency benefit has been created for
+
+temporary visa holders who cannot return home and who are in financial hardship (New Zealand Beehive
+
+2020).
+
+
+    New Zealand’s welfare system hasn’t always been centred around reduced long-term benefit
+
+dependency. In the wake of the Great Depression, New Zealand’s modern welfare state was formalised in
+
+1938 with the Social Security Act in which the government aimed to ensure every New Zealand family had
+
+“at least a minimum standard of living” (Maxim Institute 2010). Over the next decade, the government
+
+expanded its provision of wellbeing through wider use of benefit payments and new income support
+
+programs, including universal superannuation and sickness and invalid’s benefits (New Zealand Treasury
+
+2012). Across the 1940s and 1950s, the government continued to expand the welfare state provisions. By
+
+1960, New Zealand had the highest rate of welfare spending (36% of government expenditure) in the world
+
+(Maxim Institute 2010).
+
+
+    In the late 1960s, New Zealand hit a recession which, in combination with changing family structures
+
+and social and cultural norms, led to a radical change of the social welfare system in the early 1970s where
+
+individuals’ rights were put above the collective community (Maxim Institute 2010). Two major welfare
+
+initiatives were introduced: the Dependent Purposes Benefit in 1973 provided income support for sole
+
+
+
+                                                                                                               41
+parents, and the Accident Compensation Commission (ACC) in 1974 introduced a no-fault principle for
+
+providing insurance for all personal injury (New Zealand History 1974).
+
+
+     High government expenditure and unemployment caused concern in the 1980s. Efforts were made
+
+throughout the 1980s and 1990s to encourage self-sufficiency and privatise welfare, recognising that
+
+beneficiaries need stronger incentives to get off welfare and return to work (Maxim Institute 2010; Kia Piki
+
+Ake n.d.). These themes continued in welfare reforms in the 2000s and 2010s, including a 2006 Social
+
+Security Amendment Act which created three programme streams for integrating beneficiaries into the
+
+community, and the large-scale Welfare Reform Package of 2012/13.
+
+
+
+
+Immigration policy
+
+
+After the signing of the Treaty of Waitangi in 1840, New Zealand’s immigration policy officially allowed
+
+anyone to freely enter New Zealand, although this had a strong ‘white-only’ sentiment as non-British people
+
+were seen as ‘aliens’ (Te Ara 2004). Immigration policies in the 1880s made it difficult for Asians,
+
+particularly the Chinese, to immigrate as the New Zealand government was concerned Asiatic immigration
+
+would take jobs away from New Zealanders (Te Ara 2004). The Immigration Restriction Amendment Act
+
+1920 reaffirmed the principle of free entry for the British and Irish, and people of other nationalities were
+
+only allowed entry to New Zealand at the discretion of the Minister of Customs (New Zealand Parliament,
+
+2008), resulting in country-specific discrimination, particularly against Asians.
+
+
+     Up until the 1980s, a large majority of immigrants to New Zealand were British or Irish (Ministry for
+
+Culture and Heritage, 2014). It was not until the late twentieth century that New Zealand’s immigration
+
+policy shifted away from selection based on nationality12 and instead toward a skills-based criteria (New
+
+Zealand Parliament 2008; Te Ara 2004). Immigrants could now apply to enter New Zealand as part of a
+
+business group, family residence group, or a skilled residence group. The skills-based criterion for the latter
+
+
+
+12
+   Although people born in Australia, Cook Islands, Niue, Tokelau, and Western Samoa retain special, if not free, access
+to New Zealand (Te Ara 2004).
+
+
+                                                                                                                     42
+category was initially based on an occupational priority list, before being replaced by a skills points system
+
+in 1991 (New Zealand Parliament 2008; Te Ara 2004).
+
+
+       The skills- and points-based system led to increased and diverse immigration in New Zealand (New
+
+Zealand Productivity Commission 2022; New Zealand Parliament 2008). The number of foreign-born
+
+residents increased substantially in the last decades of the twentieth century and into the twenty-first century
+
+(Te Ara 2015). In 1990, 15% (518,047 people) of New Zealand’s population were immigrants, over half of
+
+which came from the United Kingdom or Australia. By 2015, 23% (1,039,763 people) of New Zealand’s
+
+population were immigrants, with 25% being from the United Kingdom or Australia, and another 25% being
+
+from China, India, South Africa, or the Philippines (New Zealand Productivity Commission 2022;
+
+MacroTrends n.d.). Looking at long-term migrants from Asian countries, the number of immigrants arriving
+
+in New Zealand from Asia in 1980 was about 5,000, which grew substantially to about 45,000 by 2015 (New
+
+Zealand Productivity Commission 2021).
+
+
+       New Zealand is part of the UNHCR refugee settlement programme. In 1987, the New Zealand
+
+government established an official annual refugee quota of 800 people, which has both increased and
+
+decreased over time, currently sitting at 1,500. Refugees who arrived in New Zealand under the quota
+
+programme are granted permanent residency in New Zealand (New Zealand Immigration n.d.).
+
+
+
+
+Criminal Justice
+
+
+New Zealand is known for having a very high prison population rate compared to other OECD countries
+
+(Crown Law, 2022). From 2000 to 2018, the number of prisoners per 100,000 population increased
+
+significantly from 148 to 214 (World Prison Brief, n.d.), resulting in New Zealand having the 8th highest prison
+
+rate out of 34 OECD countries (Crown Law, 2022).13
+
+
+
+
+13
+     New Zealand’s prison rate has since declined to 186 per 100,000 population in 2020 (Crown Law, 2022).
+
+
+                                                                                                                 43
+     New Zealand’s prisons are mostly comprised of serious violent and sexual offenders (Crown Law, 2022,
+
+Corrections NZ, 2018). In 2021, 54% of prisoners were serving time for violent or sexual offences, while less
+
+than 10% were serving time for drug offending (Crown Law, 2022). Across the period 2017-2022, for
+
+offenders sentenced to short terms of imprisonment (two years or less), the average sentence length is about
+
+300 days (Crown Law, 2022). As of 2023, 56.5% of convicted offenders in New Zealand are reconvicted
+
+within two years following release from prison and 35.8% are re-imprisoned after two years following release
+
+from prison (Ministry of Justice, 2023).
+
+
+     In 2007, New Zealand underwent a sentencing reform with the goal of combatting the rising prison
+
+population rates. This reform enacted three new non-custodial sentences: home detention (electronic
+
+monitoring), community detention, and intensive supervision. However, evidence suggests these sentences led
+
+to a net-widening, whereby the use of non-custodial sentences increased alongside continued growth in the
+
+prison population (Crown Law, 2022).
+
+
+     Victims’ rights are at the centre of New Zealand’s criminal justice system. This can be seen right from
+
+the early 2000s when New Zealand became a global leader in restorative justice (Mansil, 2013; Pfander, 2020),
+
+a practice where victims can face their offender, as part of the offender’s rehabilitation requirements, in the
+
+hope the offender can repair some of the harm caused. Victims’ rights were further emphasised in New
+
+Zealand’s jurisdiction after a 2014 victims of crime reform, which widened the rights of victims of serious
+
+crime, provided more opportunities for victims to be involved in criminal justice processes, and ensured
+
+victims were better informed of their rights (Ministry of Justice, 2021).
+
+
+     New Zealand’s offences are classified by the Australia and New Zealand Standard Offense Classification
+
+codes (ANZSOC codes14). There are 14 1-digit offence categories, which can be disaggregated, in order of
+
+seriousness, down to a 4-digit offence code. The Sentencing Act 200215 outlines the legislation that governs
+
+what types of offences qualify for each sentencing outcome. New Zealand does not have an explicit penal code
+
+
+
+14
+   https://www.abs.gov.au/statistics/classifications/australian-and-new-zealand-standard-offence-classification-
+anzsoc/latest-release
+15
+   https://www.legislation.govt.nz/act/public/2002/0009/latest/whole.html
+
+
+                                                                                                                   44
+or misdemeanour/felony classification for the consequences of committing certain offences. In fact, New
+
+Zealand is one of a few countries that recognises cultural influences and circumstances as mitigating factors
+
+when sentencing offenders (Crown Law, 2022).
+
+
+
+
+Prior studies of the immigration / crime link
+
+
+There is scarce readily available information on the relationship between immigration and crime in New
+
+Zealand. Statistics New Zealand publishes key facts about annual migration over time in New Zealand,
+
+however these tend to be at the aggregate level and no disaggregation by country of origin.16 Statistics New
+
+Zealand also publishes adult conviction rates by sentence type across five ethnic groups (European, Māori,
+
+Pacific Peoples, Asian and Other)17, but not by immigration status.
+
+
+     To the best of our knowledge, there are no published academic journal articles that explore crime and
+
+immigration in New Zealand. There are a few published papers that explore crime and immigration issues
+
+separately. For example, Dasgupta et al. (2022) use Statistics New Zealand’s population-wide linked register
+
+data to explore the effect of sons on fathers’ criminal behaviour and labour market activities; Gibson and
+
+McKenzie (2011) assesses the extend of emigration and return migration among academically talented
+
+individuals in New Zealand; and Majavu (2015) investigates the social and institutional roles available to
+
+black Africans living in Australia and New Zealand and how they affect the lived experiences black Africans
+
+from a refugee background.
+
+
+
+
+16
+   Seem, for example: https://www.stats.govt.nz/information-releases/international-migration-july-2022/
+17
+   See here:
+https://nzdotstat.stats.govt.nz/wbos/Index.aspx?DataSetCode=TABLECODE7373&_ga=2.159715579.755723442.1693
+184924-255602765.1685628060#
+
+
+                                                                                                               45
+Disclaimer: Statistics New Zealand
+
+
+     Access to the data for New Zealand used in this study was provided by Stats NZ under conditions
+
+designed to give effect to the security and confidentiality provisions of the Data and Statistics Act 2022. The
+
+results presented in this study are the work of the author, not Stats NZ or individual data suppliers.
+
+
+     The results within this research are not official statistics. They have been created for research purposes
+
+from the Integrated Data Infrastructure (IDI) which is carefully managed by Stats NZ.
+
+
+     For more information about the IDI please visit https://www.stats.govt.nz/integrated-data/integrated-
+
+data-infrastructure/.
+
+
+     The results are based in part on tax data supplied by Inland Revenue to Stats NZ under the Tax
+
+Administration Act 1994 for statistical purposes. Any discussion of data limitations or weaknesses is in the
+
+context of using the IDI for statistical purposes and is not related to the data’s ability to support Inland
+
+Revenues core operational requirements.
+
+
+
+
+                                                                                                               46
+                                                     Norway
+
+Welfare State
+
+
+Norway is a social democratic welfare state that, starting with a comprehensive social welfare reform in
+
+1964, has been characterized by generous and universal policies aimed at limiting income differences,
+
+gender inequality and income insecurity (Esping-Andersen 1990; Kjølsrød 2022). More specific reforms
+
+have increased both the level and quality of mandatory, free education (1969, 1994 and 1997), increased the
+
+length and flexibility of the paid parental leave system (1993, 2006), implemented a national coverage of
+
+publicly subsidized daycare for kids between ages 1 and 6 (2009), and expanded the health care system
+
+(Kjølsrød 2022). These and other reforms and investments are covered through relatively high levels of
+
+(primarily direct) taxation and the surplus revenues of the Norwegian petroleum sector, which has been
+
+managed by the Government Pension Fund of Norway (or ”the Oil Fund”) since 1990 and currently
+
+contributes sizably to the annual national budget (The Norwegian Government 2024).
+
+
+     Access to the Norwegian welfare system is typically granted to residents, i.e. people who are either born
+
+in Norway or have been granted a residence permit and live in the country for a certain number of days each
+
+year (The Population Register Act, 202518). This means that there is always a group of people who are
+
+physically present in the country without falling within the eligibility criteria for these policies, including
+
+(but not limited to) tourists, newly arrived immigrants and incarcerated people from other nationalities.
+
+Questions about welfare (in)eligibility remain high on the political agenda, especially with regards to
+
+immigration flows, the perceived attractiveness of Norway as a destination country, and the sustainability of
+
+the existing welfare system (see, e.g., Magnus 202519; Sivam 202520).
+
+
+
+
+18
+   https://lovdata.no/dokument/NL/lov/2016-12-09-88/KAPITTEL_4#%C2%A74-4 , Retrieved on September 1, 2025
+19
+   https://www.aftenposten.no/meninger/debatt/i/kwkomj/er-norsk-velferd-truet-av-innvandring-fra-muslimske-
+klansamfunn, Retrieved on September 1, 2025
+20
+    https://www.aftenposten.no/meninger/debatt/i/nydRQo/samfunnsoekonom-nei-det-er-ikke-innvandring-som-truer-
+velferden, Retrieved on September 1, 2025
+
+
+                                                                                                                  47
+Immigration policy
+
+
+Norway has a relatively recent immigration history, but since the turn of the millennium, immigration has
+
+increased markedly – especially from non-OECD countries. As of January 1, 2025, more than 950,000
+
+immigrants and 230,000 Norwegian-born individuals with two immigrant parents lived in Norway,
+
+constituting roughly 17 and 4 percent of the population, respectively (Statistics Norway 2025a21).
+
+Immigration trends typically follow global patterns of social and political change and unrest; for instance,
+
+after the European Union enlargement in 2004, a substantial number of labor migrants from the new eastern
+
+member states arrived in the country (Statistics Norway 2025a). Residence in Norway is granted based on
+
+four main reasons: work, education, family (including family formation and family reunification) and refuge
+
+(incl. asylum).
+
+
+       Norwegian immigration policy has primarily been driven by goals of integration and multiculturalism,
+
+and the state has taken an active role to prevent social and economic marginalization of immigrant groups
+
+(Brochmann 2022). One illustrative example is the Norwegian settlement policy for refugees, whereby newly
+
+arrived refugees get assigned to one of Norway’s more than 400 municipalities to enroll in an introductory
+
+program set up to give people fundamental skills in Norwegian language, culture and relevant job
+
+qualifications. Take up is encouraged though an economic stipend of around EUR 22,000 per year, and the
+
+policy has, since its introduction in the 1990’s, aimed to limit the concentration of refugees in metropolitan
+
+areas, spread the fiscal burden of integration between municipalities, and accelerate integration (Tønnessen
+
+and Andersen 2019; Hernes et al. 2020; Søholt et al. 2020).
+
+
+       While generally focused on integration, questions around immigration and the potential downsides of
+
+having a well-known generous welfare state continues to be high on the political agenda, and recent
+
+governments have taken several steps to reduce the inflow of immigrants. For instance, after a record high
+
+number of asylum seekers in 2015 (Statistics Norway 2025a), Norway increased the level of security at the
+
+overland borders to Finland, Russia, Sweden and Denmark and used social media to discourage people from
+
+
+
+21
+     https://www.ssb.no/innvandring-og-innvandrere/faktaside/innvandring, Retrieved on September 1, 2025
+
+
+                                                                                                                 48
+coming to the country – effectively reaching more than 11 million people worldwide (Beyer, Brekke &
+
+Thorbjørnsrud 201722). More recently, the subsistence rules for family reunification became stricter, making
+
+it harder for immigrants to bring family members to Norway (The Ministry of Justice and Public Security
+
+202523). The current headline for the Government’s website on immigration and integration is that they work
+
+to ”reduce the number of asylum seekers without the need for protection, faster settlements of persons who
+
+receive residence, and faster return of persons without legal residence in Norway”. Questions about the
+
+future of immigration in Norway divide the political parties in the ongoing election (NRK 202524).
+
+
+
+
+Criminal Justice
+
+
+The Norwegian criminal justice system forms part of the public sector, and the Norwegian police and other
+
+criminal justice actors enjoy a strong foundation of legitimacy and trust among the Norwegian public (OECD
+
+202425). Crime rates are comparatively low, especially for violent crimes (Pratt 2008; Lappi-Seppälä and
+
+Tonry 2011), although the overall downwards trend seems to have stabilized or even reversed somewhat for
+
+the younger age groups in the capital of Oslo (The Norwegian Police 202426). International scholars typically
+
+describe the system as lenient, with short custodial sentences, relatively humane conditions of confinement
+
+and widespread use of non-custodial sentencing options (cf. Lappi-Seppälä and Tonry 2011; Pratt 2008; but
+
+see Ugelvik and Dullum 2011). In 2024 the prison population was just over 3,000 people, equaling a prison
+
+population rate of 54 per 100,000. About 30 percent of this population are pre-trial detainees, about 5 percent
+
+are women, and about 0.4 percent are minors (i.e. under the age of 18) (World Prison Brief, 202527).
+
+
+
+
+22
+   https://samfunnsforskning.brage.unit.no/samfunnsforskning-
+xmlui/bitstream/handle/11250/2452544/Rapport_4_17_Communicating%2bBorders_web.pdf?sequence=1&isAllowed=
+y
+23
+   https://www.regjeringen.no/en/aktuelt/stricter-subsistence-rules-for-family-immigration/id3082542/
+24
+   https://www.nrk.no/valg/2025/partiguide/nb/politikken/innvandring Retrieved on September 11, 2025
+25
+   https://www.oecd.org/en/publications/oecd-survey-on-drivers-of-trust-in-public-institutions-2024-results-country-
+notes_a8004759-en/norway_d9a67b9b-en.html Retrieved on September 1, 2025
+26
+   https://www.politiet.no/globalassets/dokumenter-strategier-og-horinger/oslo/rapporter/barne--og-
+ungdomskriminalitet/barne--og-ungdomskriminaliteten-i-oslo-2024.pdf Retrieved on September 11, 2025
+27
+   https://www.prisonstudies.org/country/denmark Retrieved on August 29, 2025
+
+
+                                                                                                                 49
+     In contrast to the other Nordic countries, there is more limited evidence of a recent ”punitive turn” in
+
+Norway (but see Shammas, 2016). The prison population has remained relatively stable in recent years, and
+
+the use of non-custodial sentences, and especially the use of electronic monitoring, continues to increase
+
+(The Directorate of The Norwegian Correctional Service 202228). At the same time, high staff turnover and a
+
+series of political reforms have led to noticeable budget cuts, and many therefore speak loudly of a prison
+
+system ”in crisis” (see, e.g., Estenstad and Hansen 202529; Kristiansen et al. 202530; Skulstad 202531). Except
+
+for young offenders, who have become the focal point of several ”tough on crime” debates and policies (see,
+
+e.g., The Courts of Norway 202532), there are few signs that the Norwegian criminal justice system responds
+
+to this crises with increased punitiveness.
+
+
+
+
+Prior studies of the immigration / crime link
+
+
+Statistics Norway publish annual statistics on individuals involved in the criminal justice system split by
+
+citizenship (see e.g. Statistics Norway, 2025b33), but not by immigrant background. However, a standalone
+
+statistical report from 2024 (Statistics Norway, 202434) shows patterns similar to those described in several
+
+previous reports using register data: people with an immigrant background are overrepresented in official
+
+crime statistics. This pattern applies to both first- and second-generation immigrants, and holds for both
+
+police recorded charges, convictions and imprisonments (cf. Andersen, Holtsmark and Mohn 2017;
+
+Skardhamar, Thorsen & Henriksen, 2011). Two studies have shown that there are large differences by
+
+
+28
+  https://kommunikasjon.ntb.no/pressemelding/17929601/flere-enn-noen-gang-tar-straffen-med-
+fotlenke?publisherId=17847130 Retrieved September 1, 2025
+29
+
+https://www.realclearworld.com/articles/2025/03/01/americans_should_learn_from_norways_model_prisons__and_wh
+y_they_are_failing_1094778.html Retrieved on September 1, 2025
+30
+   https://www.budstikka.no/fengselsbetjenter-slutter-i-rekordfart/o/5-55-1930379 Retrieved on September 1, 2025
+31
+   https://frifagbevegelse.no/debatt/fengselsbetjenter-rommer-yrket--og-fa-vil-tilbake-6.490.1144883.3e1bb2984e
+Retrieved on September 1, 2025
+32
+   https://www.domstol.no/contentassets/0182638b29734da6869dbc82b34ef494/hurtigsporet---fullstendig-
+beskrivelse.pdf
+33
+   09421: Persons charged, by group of principal offence and citizenship (and category of principal offence -2014).
+Absolute figures 2002 - 2024. Statbank Norway
+34
+   https://www.ssb.no/sosiale-forhold-og-kriminalitet/kriminalitet-og-rettsvesen/statistikk/etterforskede-
+lovbrudd/artikler/siktelser-og-siktede-personer-etter-innvandringsbakgrunn
+
+
+
+                                                                                                                 50
+country of origin, and that while people from some countries have substantially higher rates of recorded
+
+offending than the majority population, there are also some who with lower rates (Andersen, Holtsmark and
+
+Mohn 2017; Skardhamar, Thorsen and Henriksen 2011). The same applies to the reason for migrating; while
+
+some groups are overrepresented (e.g. refugees and family migrants), others (e.g. education and work
+
+migrants) have registered offending rates that are similar to, or lower than, the majority population
+
+(Andersen, Holtsmark and Mohn 2017).
+
+
+    Since large scale immigration from nonwestern countries mainly started in the 70’s, and peaked in the
+
+early 2000’s, the immigrant population has a different demographic composition than the majority
+
+population in that it is generally younger and comprised of more males. Age differences are even more
+
+pronounced for the second generation, in that the group of people who are born in Norway to foreign-born
+
+parents are generally too young to be charged with criminal offending – and the group that is, is both young,
+
+small and from a select few countries. When adjusting for demographic differences the rates of
+
+overrepresentation are substantially reduced, especially for second generation immigrants and immigrant
+
+groups with a relatively short time in the country. Adjusting for economic conditions and the place of
+
+residence reduce the difference only a bit more (Andersen, Holtsmark and Mohn 2017; Skardhamar, Thorsen
+
+and Henriksen 2011).
+
+
+    The immigrant population is changing more over time than the majority population in terms of both
+
+ageing and other background characteristics as new groups of immigrant groups settle in the country over
+
+time. These compositional trends account for some of the baseline differences between immigrant groups,
+
+but it also affects over-representation over time. Andersen, Holtsmark and Mohn (2017) have shown that the
+
+rates of over- and underrepresentation in the crime statistics have changed over time, and that the rate of
+
+overrepresentation of immigrant groups have been substantially reduced since around year 2000 – especially
+
+among the groups that initially had the highest crime rates.
+
+
+
+
+                                                                                                              51
+                                                     Sweden
+
+Welfare State
+
+
+Sweden was for long perceived as the archetype of the universal or social-democratic welfare state (Esping-
+
+Andersen 1990), characterized by universal income-protecting social insurances, high levels of public
+
+service provision, low levels of inequality, and high tax rates (Fritzell et al. 2014). The income protection
+
+schemes consist of a basic level and an earnings-related part on top of that and cover income losses due to
+
+sickness, parenthood, unemployment and old age. The earnings-related parts are by definition dependent on
+
+previous earnings, and eligibility in the unemployment insurance is based on previous employment also for
+
+the basic part.
+
+
+     When households are unable to support themselves, they are entitled to means-tested social assistance
+
+benefits. However, as opposed to the social insurance schemes, eligibility to this last-tier safety net is
+
+conditioned on having exhausted all other assets and means. The benefit follows a national minimum
+
+standard of living (Kahlmeter et al. 2017). The social assistance benefit follows the principle of universalism.
+
+However, the benefit can be reduced if job search activities are deemed too moderate. Contrary to research
+
+showing that generous earnings-related schemes tend to promote generous levels also in means-tested
+
+schemes (Nelson 2003), the Swedish means-tested benefits levels have been described as low in a
+
+comparative perspective (Hansen and Schultz-Nielsen 2015).
+
+
+
+
+Immigration policy
+
+
+The nature of immigration to Sweden has shifted over the past five decades. Stated briefly, until the 1970s
+
+migration to Sweden was dominated by labour and family-reunification migration from the other Nordic
+
+countries and southern Europe. In the 1990s refugees from the civil war in former Yugoslavia came to
+
+dominate immigrant flows. From the 1990s, there has been a clear increase in refugee migration from non-
+
+
+
+
+                                                                                                                52
+European countries. After the turn of the century important countries of origin among asylum seekers have
+
+been Afghanistan, Iraq, Somalia and Syria. (Statistics Sweden 2016).
+
+
+     The Swedish Asylum Act was established as a result of signing the Geneva Convention in 1954. Over
+
+the subsequent decades its implementation came to include rights to permanent residence on several grounds
+
+beyond those stated in the Convention. However, these measures were merely well-established practice until
+
+they were included and formalized in the Aliens Act of 1989 (Vilhelmsson 2002). Swedish immigration
+
+policies remained very liberal compared to most other countries until the fall of 2015. At that time the influx
+
+of refugees from Syria put Swedish receiving authorities under severe pressure. During the year Sweden
+
+received 163,000 asylum seekers, most of them from Syria. This led to decisions on stricter regulation of
+
+refugee immigration, as well as a reorientation of the political discourse on the issue. The government
+
+curtailed the residence rights of refugees, shifting from permanent to temporary residence for protection
+
+beneficiaries. Furthermore, stricter self-sufficiency and maintenance requirements were introduced for those
+
+seeking permanent residence or family reunification (Hagelund 2020).
+
+
+     During the whole second immigration phase, people of foreign origin have had a lower labor market
+
+participation rates than the majority population. Nevertheless, in 2019 Sweden received the highest score of
+
+all countries included in the Migrant Integration Policy Index (MIPEX35).
+
+
+     In 2022, 20.4 per cent of the Swedish population were born abroad.36
+
+
+
+
+Criminal Justice
+
+
+Sweden, as the other Nordic countries, is known for its short prison sentences, relatively humane prison
+
+conditions, focus on rehabilitative measures and non-custodial alternatives to imprisonment.
+
+
+
+
+35
+  https://www.mipex.eu/key-findings, retrieved 16-8-2023
+36
+  https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning/befolkningens-
+sammansattning/befolkningsstatistik/pong/tabell-och-diagram/utrikes-fodda--medborgarskap-och-utlandsksvensk-
+bakgrund/sveriges-befolkning-efter-fodelseland-region-medborgarskap-och-bakgrund-31-december-2022/
+
+
+
+                                                                                                               53
+        Sweden’s incarceration rate was between 60 and 79 incarcerated persons per 100,000 inhabitants
+
+throughout the 2000-2020 period (World Prison Brief37).
+
+
+        The official rate of criminal recidivism in Sweden (persons convicted or released in 2016, convictions
+
+for offenses that only include fines in the penalty scale excluded) was 34 percent reconvicted within two
+
+years. The rate ranges depending on type of sentence, the number of previous convictions and sex. The
+
+reconviction rate within three years for those released from prison was 63 percent, and among persons who
+
+received parole 22 percent (Brå 2023).
+
+
+        The Swedish Penal Code contains provisions on many of the acts that are criminal offences in Sweden.
+
+Provisions on other offences are found in specific acts and laws. In Sweden, all drug offenses are governed
+
+by a specific law, the Narcotics Penalty Act. Sweden has witnessed a steady increase in the control measures
+
+focused on drug offences. An important factor behind this trend has been the criminalization of personal drug
+
+use in 1988. This is also reflected in Swedish crime statistics. While general offending has followed the
+
+international trend of declining crime levels since the early 1990s, the so-called crime-drop, registered drug
+
+offences, and minor offences in particular, have instead increased (Estrada, Bäckman, and Nilsson, 2022).
+
+
+        In 2017, 39 percent of convictions referred to penal code offenses, the main categories being property
+
+crimes and violent crimes. Narcotics crime accounted for 23 percent, and traffic law violations (mainly
+
+driving without a license and drunk driving) 22 percent (National Council for Crime Prevention38).
+
+
+
+
+Prior studies of the immigration / crime link
+
+
+In Sweden there are no official annual statistics of conviction rates across immigrant status. However, since
+
+the mid-1970s, there are several studies that have shown that individuals of foreign background, as a rule
+
+including both foreign-born individuals and those with foreign-born parents, are over-represented among those
+
+registered for crime (Beckley, Kardell, and Sarnecki 2017). Adjusted for differences in age structure, the risk
+
+
+37
+     Sweden | World Prison Brief (prisonstudies.org), retrieved on August 8, 2023
+38
+     https://bra.se/statistik/kriminalstatistik/personer-lagforda-for-brott.html, retrieved on August 8, 2023
+
+
+                                                                                                                 54
+for conviction among persons of foreign background tend to be approximately twice that of individuals born
+
+in Sweden to Swedish-born parents. This level of excess risk has remained relatively stable over time, even
+
+though the composition of the group of foreign-born individuals has shifted both with regard to country of
+
+origin and reason for migration (Bäckman, Estrada, Nilsson, and Sivertsson 2021).
+
+
+    In studies that have also been able to capture between-group differences in levels of resources, the over-
+
+representation tends to be significantly lower. A study by Hällsten, Szulkin, and Sarnecki (2013) shows that
+
+even though the overrepresentation of those of immigrant origin in recorded crime is substantial, most of this
+
+can be explained by reference to parental resources and neighborhood segregation (see also Hällsten and
+
+Szulkin 2022).
+
+
+    The overrepresentation in crime is significantly smaller in research focused on self-reported offending,
+
+which primarily describes involvement in less serious offences among teenagers. In Swedish self-report
+
+studies from more recent years, for example, youths of foreign background do not generally appear to be
+
+more involved in offending (Vasiljevic, Svensson, and Shannon 2020).
+
+
+
+
+                                                                                                            55
+                                                   References
+
+Aebi, M. F., & Tiago, M. M. (2020). SPACE I - Council of Europe Annual Penal Statistics: Prison
+    populations. Strasbourg: Council of Europe.
+
+Andersen, L. H. (2018). Danish register data: flexible administrative data and their relevance for studies of
+   intergenerational transmission. In: Eichelsheim, V. I. and van den Weijer, S. G. A. (eds.):
+   Intergenerational continuity of criminal and antisocial behavior: an international overview of studies.
+   Routledge.
+
+Andersen, L. H. (2025). Thirty years of prison alternatives in Denmark: Policy efficiency and inequality
+   before the law. Nordic Journal of Criminology 26(1): 1-21. https://doi.org/10.18261/njc.26.1.6.
+
+Andersen, L. H., & Jensen, B. (2023). Hvad vi ved om de dømte og deres kriminalitet. Copenhagen:
+   Gyldendal and the ROCKWOOL Foundation Research Unit.
+
+Andersen, S. N., B. Holtsmark, & S. B. Mohn (2017). Crime amongst immigrants, children of immigrants
+   and the remaining population. An Analysis of register data 1992-2015 [Kriminalitet blant innvandrere,
+   norskfødte med innvandrerforeldre og øvrig befolkning. En analyse av registerdata for perioden 1992-
+   2015]. Reports 2017/36. Oslo Statistics Norway.
+
+Arendt, J. N. (2023). Welfare benefit generosity and social integration of refugees. International Migration
+    Review 58(2): 706-733. https://doi.org/10.1177/01979183231160713.
+
+Arendt, J. N., Dustmann, C., & Ku, H. (2022). Refugee migration and the labour market: lessons from 40
+    years of post-arrival policies in Denmark. Oxford Review of Economic Policy 38(3): 531–556,
+    https://doi.org/10.1093/oxrep/grac021
+
+Bäckman, O., Estrada, F., Nilsson, A., & Sivertsson, F. (2021). Criminal convictions and immigrant
+    background 1973–2017 in Sweden – have differences increased or declined? Nordic Journal of
+    Criminology, 22(2), 149-168.
+
+Beckley, A. L., Kardell, J., & Sarnecki, J. (2017). “Immigration and crime in Sweden”. I The Routledge
+    Handbook on Crime and International Migration (pp. 71–84). Routledge.
+
+Blom, M., & Jennissen, R. (2014). The involvement of different ethnic groups in various types of crime in
+    the Netherlands. European Journal on Criminal Policy and Research, 20(1), 51-72.
+
+Blom, M., Oudhof, J., Bijl, R. V., & Bakker, B. F. M. (2005). Verdacht van criminaliteit. Allochtonen en
+    autochtonen nader bekeken. Den Haag: WODC en CBS.
+
+Brå (2023). 2016. Återfall i brott. Slutlig statistik. Brottsförebyggande rådet.
+
+Corrections NZ (2018). Where New Zealand standards internationally: A comparison of offence profiles and
+    recidivism rates. Retrieved from
+    https://www.corrections.govt.nz/resources/research/journal/volume_6_issue_1_july_2018/where_new_z
+    ealand_stands_internationally_a_comparison_of_offence_profiles_and_recidivism_rates
+
+Crown Law (2022). Justice sector: Focus on imprisonment in New Zealand. Retrieved from
+    https://www.crownlaw.govt.nz/assets/Uploads/Publications/LTIB_Report_extended_Web.pdf
+
+
+
+                                                                                                                56
+Damm, A. P., & Dustmann, C. (2014). Does Growing Up in a High Crime Neighborhood Affect Youth
+   Criminal Behavior?. American Economic Review 104(6): 1806-1832. doi: 10.1257/aer.104.6.1806
+
+Danish Prison and Probation Service (2015). Statistik 2024. Danish Ministry of Justice.
+
+Dasgupta, K., Diegmann, A., Kirchmaier, T., & Plum, A. (2022). The gender reveal: The effect of sons on
+    young fathers’ criminal behaviour and labor market activities. Labour Economics, 78.
+    https://doi.org/10.1016/j.labeco.2022.102224
+
+Dustmann, C., Landersø, R., & Andersen, L. H. (2024). Refugee Benefit Cuts. American Economic Journal:
+    Economic Policy 16(2): 406-41. DOI: 10.1257/pol.20220062.
+
+Dustmann, C., Mertz, M., & Okatenko, A, (2023). Neighbourhood Gangs, Crime Spillovers and Teenage
+    Motherhood. The Economic Journal 133(653): 1901–1936. doi: 10.1093/ej/uead009
+
+Entzinger, H. (2006). Changing the rules while the game is on: From multiculturalism to assimilation in the
+    Netherlands. In M. Bodemann & G. Yurdakul (Eds), Migration, citizenship, ethnos: Incorporation
+    regimes in Germany, Western Europe and North America (pp. 121-144). New York: Palgrave
+    MacMillan.
+
+Esping-Andersen, G. (1990). Three Worlds of Welfare Capitalism, Princeton: Princeton University Press.
+
+Estrada, F., Bäckman, O., & Nilsson, A. (2022). Biased enforcement expansion? Sociodemographic
+     differences in police drug testing for suspected narcotics use 1993–2015. The British Journal of
+     Criminology, 62(5), 1213-1232.
+
+Falcke, P. F., Falcke, S., & Vink, M. (2023). Becoming Dutch at what cost? Increasing application fees and
+    naturalization rates of EU immigrants in the Netherlands. In R. Barbulescu, S. W. Goodman, & L.
+    Pedroza (Eds.), Revising the integration-citizenship nexus in Europe: Sites, Policies, and Bureaucracies
+    of belonging (pp. 37-53). Springer.
+
+Foged, M., Hasager, L., Peri, G., Arendt, J. N., & Bolvig, I. (2022). Language Training and Refugees'
+    Integration. The Review of Economics and Statistics. doi: https://doi.org/10.1162/rest_a_01216
+
+Fritzell, J., Bacchus Hertzman, J., Bäckman, O., Borg, I., Ferrarini, T., & Nelson, K. (2014). ‘Sweden:
+     Increasing Income Inequalities and Changing Social Relations’, in Nolan, B., Salverda, W., Checchi, D.,
+     Marx, I., McKnight, A., Tóth, I. G., & van de Werfhorst, H. G. (Eds.). (2014). Changing inequalities
+     and societal impacts in rich countries: thirty countries' experiences. Oxford: Oxford University Press.
+
+Gibson, J., & McKenzie, D. (2011). The microeconomic determinants of emigration and return migration of
+    the best and brightest: Evidence from the Pacific. Journal of Development Economics, 95, 18-29.
+
+Gijsberts, M., & Dagevos, J. (2009). Jaarrapport integratie 2009. Den Haag: Sociaal en Cultureel
+     Planbureau.
+
+Goldman, A. Andersen, L. H., Andersen, S. H., & Wildeman, C. (2019). Can Alternatives to Incarceration
+    Enhance Child Well-Being?. In: Eddy, J. M. and Poehlmann-Tynan, J. (eds.): Handbook on Children
+    with Incarcerated Parents: Research, Policy, and Practice. Springer.
+
+Hagelund, A. (2020). After the refugee crisis: public discourse and policy change in Denmark, Norway and
+    Sweden. Comparative Migration Studies, 8(1), 1-17.
+
+
+
+
+                                                                                                          57
+Hansen, H., & Schultz-Nielsen, M. L. (2015). Kontanthjælpen gennem 25 år. Modtagere, regler,
+    incitamenter og levevilkår fra 1987 til 2012. Gyldendal and the ROCKWOOL Foundation Research
+    Unit.
+
+Hansen, H., & Schultz-Nielsen, M. L. (2015). Social Assistance in Five Countries in North-Western Europe,
+    IZA Discussion Paper No. 9547, Bonn: IZA.
+
+Hällsten, M., Szulkin, R., & Sarnecki, J. (2013). Crime as a price of inequality? The gap in registered crime
+     between childhood immigrants, children of immigrants and children of native Swedes. British Journal
+     of Criminology, 53(3), 456–481.
+
+Hällsten, M., & Szulkin, R. (2022). Is the “SES hypothesis” plausible to explain the over-representation of
+     immigrants in crime statistics?” In Andersson, Robert, and Paula Wahlgren (eds.) A Life in
+     Criminology. Festschrift to Jerzy Sarnecki. Iustus.
+
+Hernes, V., Arendt, J., Joona, P. A., & Tronstad, K. (2020). Rapid or long-term employment? A
+    Scandinavian comparative study of refugee integration policies and employment outcomes. Journal of
+    European Public Policy, 29(2), 238–258.
+
+Huijnk, W., & Kessels, R. (2016). Criminaliteit. In W. Huijnk & I. Andriessen (Eds.), Integratie in zicht? De
+    integratie van migranten in Nederland op acht terreinen nader bekeken (pp. 146–184). Den Haag:
+    Sociaal en Cultureel Planbureau.
+
+Jennissen, R., Bovens, M., Engbersen, G., & Bokhorst, M. (2023). Migration diversity and social cohesion:
+    Reassessing the Dutch policy agenda. The Hague: Springer.
+
+Kahlmeter, A., Bäckman, O., & Brännström, L. (2018). ’Housing evictions and economic hardship. A
+    prospective study’, European Sociological Review, 34(1): 106-119.
+
+Kia Piki Ake (n.d.). History of the New Zealand Welfare System. Retrieved from
+    https://www.weag.govt.nz/background/history-welfare-system/, on 28 August 2023.
+
+Kia Piki Ake (2022). Welfare system: statistics. Retrieved from
+    https://www.weag.govt.nz/background/welfare-system-statistics/, on 28 August 2023.
+
+Kjølsrød, L. (2022). Velferdsstaten – et system av delegert og kontrollert autonomi. I Frønes, I. & Kjølsrød,
+    L. (Red.). Det norske samfunn 3 (8.utg., s. 15-35). Gyldendal Akademisk.
+
+Lappi-Seppälä, T., & Tonry, M. (2011). Crime, Criminal Justice and Criminology in the Nordic Countries.
+    Crime and Justice, 40: 1–32.
+
+Lubbers, M., & Renema, J. (2019). Immigranten en hun kennis van de Nederlandse verzorgingsstaat. Demos:
+    Bulletin over bevolking en samenleving, 35(2), 4-7.
+
+MacroTrends (n.d.). New Zealand immigration statistics 1960-2023. Retrieved from
+   https://www.macrotrends.net/countries/NZL/new-zealand/immigration-statistics, on 28 August 2023.
+
+Majavu, M. (2015). The fact of the ‘uncommodified blackness’ image: The lived experience of black
+    Africans from a refugee background in Australia and New Zealand (Doctoral dissertation, University of
+    Auckland, Auckland, New Zealand). Retrieved from
+    https://researchspace.auckland.ac.nz/bitstream/handle/2292/29104/whole.pdf?sequence=2
+
+
+
+
+                                                                                                              58
+Mansil, D. B. (2013). Community empowerment or institutional capture and control? The development of
+   restorative justice in New Zealand’s adult systems of social regulation, control and punishment
+   [Doctoral Thesis, Auckland University of Technology].
+   https://openrepository.aut.ac.nz/handle/10292/7373
+
+Matthiessen, P. C. (2009). Immigration to Denmark. An Overview of Research Carried Out from 1999 to
+    2006 by the ROCKWOOL Foundation Research Unit. Copenhagen: The ROCKWOOL Foundation
+    Research Unit and University Press of Southern Denmark.
+
+Maxim Institute (2010). Looking back to look forward: A history of how welfare in New Zealand has
+   evolved. Retrieved from https://www.maxim.org.nz/article/history-welfare-new-zealand/, on 28 August
+   2023.
+
+Ministry for Culture and Heritage (2014). British and Irish immigration 1840-1941. Retrieved from
+    https://nzhistory.govt.nz/culture/home-away-from-home, on 2 July 2025.
+
+Ministry of Justice (2023). Hāpaitia te Oranga Tangata. Retrieved from https://www.justice.govt.nz/justice-
+    sector-policy/key-initiatives/key-initiatives-archive/hapaitia-te-oranga-tangata/ , on 16 August 2023.
+
+Ministry of Justice (2021). History of victim’s rights in Aotearoa. Retrieved from
+    https://chiefvictimsadvisor.justice.govt.nz/rights-and-system/history/, on 16 August 2023.
+
+Ministry of Social Development (n.d.). More people into work and out of welfare dependency. Retrieved
+    from https://www.msd.govt.nz/about-msd-and-our-work/publications-resources/corporate/annual-
+    report/2012-2013/more-people-into-work-and-out-of-welfare-dependency.html, on 28 August 2023.
+
+Nelson, K. (2003), Fighting Poverty. Comparative Studies on Social Insurance, Means-Tested Benefits and
+    Income Redistribution, Swedish Institute for Social Research Dissertation Series no. 60. Stockholm:
+    Stockholm University.
+
+New Zealand Beehive (2020). Emergency benefit to help temporary visa holders. Retrieved from
+   https://www.beehive.govt.nz/release/emergency-benefit-help-temporary-visa-holders, on 28 August
+   2023.
+
+New Zealand History (1974). ACC comes into operation. Retrieved from
+   https://nzhistory.govt.nz/page/accident-compensation-corporation-comes-existence, on 28 August 2023.
+
+New Zealand Immigration (n.d.). New Zealand Refugee Quota Programme. Retrieved from
+   https://www.immigration.govt.nz/about-us/what-we-do/our-strategies-and-projects/supporting-refugees-
+   and-asylum-seekers/refugee-and-protection-unit/new-zealand-refugee-quota-programme, on 28 August
+   2023.
+
+New Zealand Parliament (2008). Immigration chronology: Selected events 1840-2008. Retrieved from
+   https://www.parliament.nz/en/pb/research-papers/document/00PLSocRP08011/immigration-
+   chronology-selected-events-1840-2008, on 28 August 2023.
+
+New Zealand Productivity Commission (2022). Immigration by the numbers. Retrieved from
+   https://www.productivity.govt.nz/assets/Inquiries/immigration-settings/Immigration-by-the-
+   numbers.pdf, on 28 August2023.
+
+New Zealand Productivity Commission (2021). International migration to New Zealand: Historical themes
+   and trends (Working Paper 2021/04). Retrieved from
+
+
+                                                                                                          59
+    https://www.productivity.govt.nz/assets/Documents/International-migration-to-NZ_historical-themes-
+    and-trends.pdf, on 28 August 2023.
+
+New Zealand Treasury (2012). Summary: history of the welfare state in New Zealand. Retrieved from
+   https://www.treasury.govt.nz/sites/default/files/2012-10/ltfep-s2-03.pdf, on 28 August 2023.
+
+Norwegian Government (2024). The State Budget 2025 [Statsbudsjettet 2025: Statens inntekter og utgifter].
+    Retrieved from: https://www.regjeringen.no/no/statsbudsjett/2025/statsbudsjettet-2025-statens-
+    inntekter-og-utgifter/id3055676/ Retrieved on September 1, 2025.
+
+Pfander, S. M. (2020). Evaluating New Zealand’s restorative promise: The impact of legislative design on
+    the practice of restorative justice. Kōtuitui: New Zealand Journal of Social Sciences, 15(1), 175–185.
+
+Pratt, J. (2008). Scandinavian Exceptionalism in an Era of Penal Excess. Part I: The Nature and Roots of
+     Scandinavian Exceptionalism. British Journal of Criminology, 48: 119–37.
+
+Scholten, P. (2013). The Dutch multicultural myth. In R. Taras (Eds.), Challenging multiculturalism:
+    European models of diversity (pp. 97-119). Edinburgh: Edinburgh University Press.
+
+Shammas, V. (2016). The rise of a more punitive state: On the attenuation of Norwegian penal
+    exceptionalism in an era of welfare state transformation. Critical Criminology, 24(1), pp. 57- 74
+
+Skarðhamar, T., Thorsen, L. R., & Henriksen, K. (2011). Crime and Punishment among Immigrants and the
+    General Population [Kriminalitet og straff blant innvandrere og øvrig befolkning : korrigert versjon
+    12.09.11.]. Reports 2011/21. Oslo: Statistics Norway
+
+Statistics Denmark (2007). Indvandrere i Danmark 2007.
+
+Statistics Denmark (2024). Kriminalitet 2023.
+
+Statistics Denmark (2024). Indvandrere i Danmark 2024.
+
+Statistics Netherlands (2018). Jaarrapport integratie 2018. Den Haag: Centraal Bureau voor de Statistiek.
+
+Statistics Netherlands (2020). Jaarrapport integratie 2020. Den Haag: Centraal Bureau voor de Statistiek.
+
+Statistics Sweden (2016). Från Finland till Afghanistan – invandring och utvandring för födda i olika länder
+     sedan 1970, Demografiska rapporter 2016:1, Stockholm: Statistics Sweden.
+
+Søholt, S., Astrup, K., Holm, A., & Skrede, J. (2020). Settlement of refugees in five larger Norwegian cities.
+    NIBR Rapport 2020:2.
+
+Tak, P. J. (2008). The Dutch criminal justice system. Nijmegen: Wolf Legal Publishers.
+
+Te Ara (2004). Story: Immigration regulation. Retrieved from https://teara.govt.nz/en/immigration-
+    regulation, on 28 August 2023.
+
+Te Ara (2015). Story: History of immigration. Retrieved from https://teara.govt.nz/en/history-of-
+    immigration, on 28 August 2023.
+
+Tønnessen, M., & Andersen, S. N. (2019). Municipality of settlement and integration of adult refugees
+    [Bosettingskommune og integrering blant voksne flyktninger]. Reports 2019/13. Oslo: Statistics
+    Norway.
+
+
+
+
+                                                                                                             60
+Ugelvik, T., & Dullum, J. (2011). Penal Exceptionalism? Nordic Prison Policy and Practice. Routledge.
+
+Vasiljevic, Z., Svensson, R., & Shannon, D. (2020). Immigration and crime: a time-trend analysis of self-
+    reported crime in Sweden, 1999–2017. Nordic Journal of Criminology, 21(1), 1-10.
+
+Verweij, S., Tollenaar, N., Teerlink, M., & Weijters, G. (2021). Recidive onder justitiabelen in Nederland.
+    Verslag over de periode 2008-2020. Den Haag: WODC.
+
+Vilhelmsson, R. (2002). Wages and Unemployment of Immigrants and Natives in Sweden, Swedish Institute
+    for Social Research, Dissertation series no. 56, Stockholm: Stockholm University.
+
+Wermink, H., Blokland, A., Tollenaar, N., Been, J., Schuyt, P., & Apel, R. (2022). Een oude vraag opnieuw
+   onderzocht: Effecten van korte gevangenisstraffen ten opzichte van niet-vrijheidsbenemende straffen op
+   recidive op basis van een instrumentele variabele benadering. Tijdschrift voor Criminologie, 64(2), 147-
+   169.
+
+Welfare Working Group (2011). Reducing long-term benefit dependency: Recommendations. Retrieved
+    from
+    https://media.nzherald.co.nz/webcontent/document/pdf/20119/Bluestar%20WWG%20Recommendation
+    s%20Report%20180211.pdf, on 28 August 2023.
+
+Wildeboer Schut, J. M., Vrooman, J. C., & de Beer, P. T. (2000). De maat van de verzorgingsstaat:
+    Inrichting en werking van het sociaal-economisch bestel in elf westerse landen. Den Haag: Sociaal en
+    Cultureel Planbureau.
+
+World Prison Brief (n.d.). New Zealand. Retrieved from https://www.prisonstudies.org/country/new-zealand,
+    on 16 August 2023.
+
+
+
+
+                                                                                                              61
+
