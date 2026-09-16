@@ -152,6 +152,8 @@ def run(args):
     # Generation groups (added 2026-09-16 for the Mexican-origin-by-generation memo): parents' birthplace
     # codes 57/60/66/69/73/78 are the US and its territories; "third-plus" pools every native-born
     # person with two US-born parents; Mexican third-plus is self-identified (PRDTHSP 1).
+    if d.PEINUSYR.max() > 28:
+        raise ValueError("PEINUSYR code 29 present: this is a 2026+ ASEC layout; recode the entry-cohort group before use")
     native = d.PRCITSHP.isin([1, 2, 3])
     us_area = [57, 60, 66, 69, 73, 78]
     parents_us = d.PEFNTVTY.isin(us_area) & d.PEMNTVTY.isin(us_area)
@@ -161,6 +163,8 @@ def run(args):
         "mexico_born": (d.PRCITSHP.isin([4, 5]) & d.PENATVTY.eq(303)).to_numpy(),
         "all_foreign_born": d.PRCITSHP.isin([4, 5]).to_numpy(),
         "noncitizens": noncit.to_numpy(),
+        # PEINUSYR 28 = "2022-2024" on the 2025 file; the 2026 file recodes 28 = "2022-2023" and adds 29 =
+        # "2024-2026" (ledger_asec2026 lane, 2026-09-16). Fail loud rather than silently undercount.
         "foreign_born_entry_2022_2024": (d.PRCITSHP.isin([4, 5]) & d.PEINUSYR.eq(28)).to_numpy(),
         "all_second_gen": (native & ~parents_us).to_numpy(),
         "all_third_plus": (native & parents_us).to_numpy(),
