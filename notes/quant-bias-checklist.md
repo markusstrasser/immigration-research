@@ -29,6 +29,8 @@ Counter-evidence (moves NOT committed): welfare-weight sensitivity run honestly 
 
 Remaining open work: receiver-cost netting against SSP reimbursements; USBP-universe long-run (post-June-2024) substitution picture.
 
+**Self-audit 2026-09-16 (evening, `immigration-mexican-origin-by-generation-2026-09-16.md` §5.3):** item 3 (per-what mismatch) tripped and the operator caught it, not the gate. The fiscal generator's `equal_all_members` allocation spreads a family's children and transfers over every member, so a "per adult 25–64" table built on it carried 0.12 children per adult for white natives against a true 0.25, and the Mexican second generation's schooling line was understated by a fifth; the corrected adults-only table (commit 3e828c7) moved total benefits from "level" to +15–30%. Lesson for the gate: every per-unit table from `analyze_cps_fiscal_2025.py` must name the allocation mode in its caption, and a per-adult claim must come from `equal_adults_18plus`. Item 17 (average vs marginal cost) was handled by showing average-cost and need-weighted schooling side by side.
+
 ## Relationship to repo machinery
 
 - Constitution principles 1-7 = values; the canonical checklist = per-claim mechanics.
