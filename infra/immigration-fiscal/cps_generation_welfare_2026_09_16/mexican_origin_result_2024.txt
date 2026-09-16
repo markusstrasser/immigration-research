@@ -1,0 +1,42 @@
+[2024 ASEC] persons 144,265
+
+== Population (all ages, millions, MARSUPWT) ==
+  1 Mexico-born               12.38M   (n 6,054)
+  2 Mexican 2nd gen           14.16M   (n 6,605)
+  3 Mexican 3rd+ (self-ID)    13.13M   (n 6,311)
+  R gen3+ NH white           174.24M   (n 75,885)
+  gen3+ all natives          239.33M
+  all natives                281.11M
+
+== Adults 25-64 by origin-generation (person-weighted) ==
+group                 1 Mexico-born  2 Mexican 2nd gen  3 Mexican 3rd+ (self-ID)  R gen3+ NH white  R gen3+ all  R all natives
+n                           4,744.0            2,424.0                   2,492.0          37,667.0     50,398.0       57,156.0
+age_mean                       45.1               37.7                      41.5              45.1         44.5           44.0
+lt_hs%                         43.2               10.4                       9.5               3.9          4.7            4.8
+hs_only%                       34.7               33.8                      34.3              25.4         27.5           27.0
+ba_plus%                       10.3               25.5                      26.1              44.2         40.3           41.0
+employed%                      71.5               78.3                      74.7              77.4         76.1           76.5
+earn_mean$                 34,125.5           48,746.7                  51,398.1          66,486.9     62,008.2       62,551.8
+earn_median_workers$       35,000.0           47,500.0                  50,000.0          60,000.0     59,520.0       59,200.0
+earn_mean_workers$         44,941.4           59,309.1                  64,730.6          81,804.7     77,351.3       77,658.8
+poor_off%                      15.8                9.8                      10.3               7.1          8.8            8.7
+poor_spm%                      23.4               13.2                      11.7               7.8          9.4            9.5
+medicaid%                      20.9               20.0                      18.3              11.9         14.2           14.4
+ssi%                            1.0                1.5                       2.7               2.2          2.8            2.7
+tanf_ga%                        0.9                1.2                       1.0               0.4          0.7            0.7
+eitc%                          20.0               15.0                      11.4               6.2          7.8            8.1
+hh_snap%                       13.9               13.4                      14.1               7.7         10.3           10.3
+
+== Men 25-54 (prime age): employment and earnings ==
+  1 Mexico-born              n  1868  employed  89.3%  median earnings (workers) $40,000  mean $50,065
+  2 Mexican 2nd gen          n  1056  employed  84.1%  median earnings (workers) $50,000  mean $62,996
+  3 Mexican 3rd+ (self-ID)   n   961  employed  81.9%  median earnings (workers) $55,000  mean $73,409
+  R gen3+ NH white           n 13974  employed  85.5%  median earnings (workers) $70,000  mean $93,011
+  R gen3+ all                n 18443  employed  83.5%  median earnings (workers) $65,000  mean $87,074
+
+== Households by origin-generation of the reference person: any member on any program (CIS list) ==
+  1 Mexico-born              n  2599  any  62.0%  excl. EITC  55.0%  Medicaid  39.1%  SNAP  15.3%  cash  4.7%  head age 47.9
+  2 Mexican 2nd gen          n  1537  any  51.9%  excl. EITC  48.5%  Medicaid  32.8%  SNAP  14.6%  cash  4.2%  head age 39.2
+  3 Mexican 3rd+ (self-ID)   n  1654  any  41.6%  excl. EITC  38.0%  Medicaid  25.7%  SNAP  13.2%  cash  6.0%  head age 45.4
+  R gen3+ NH white           n 31223  any  24.5%  excl. EITC  22.1%  Medicaid  14.3%  SNAP   7.1%  cash  3.6%  head age 54.4
+  R gen3+ all                n 41874  any  29.3%  excl. EITC  26.7%  Medicaid  17.5%  SNAP   9.8%  cash  4.9%  head age 53.4
