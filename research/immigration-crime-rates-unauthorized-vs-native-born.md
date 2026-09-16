@@ -195,6 +195,39 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 - Olivier Marie & Paolo Pinotti (2024, JEP) — "Immigration and Crime: An International Perspective" documents that the relationship varies substantially by country, immigration policy regime, and immigrant composition. [SOURCE: S2 ID 1f48d32d03bf156d871a2632e516e9064b28b750]
 - Key difference: European immigration includes large refugee/asylum populations with different selection mechanisms than US labor migration. The positive selection hypothesis that explains low US immigrant crime may not apply to populations selected by conflict displacement rather than labor market opportunity. [INFERENCE]
 
+### European registry rates, pulled from the official APIs 2026-09-16
+
+Reproducible pull (scripts, tidy CSV, validations): `infra/immigration-fiscal/registry_crime_2026_09_16/`. Raw API responses remain in the session scratch until `sources/` (SSD) is mounted. Norway publishes no open table crossing charged persons with immigration category (search of the SSB API, HTTP 200 throughout); Sweden's figures are report-only (Brå 2021:9).
+
+**Denmark 2025, ages 15–79, persons found guilty of any offence (penal code, traffic act and special legislation together), per 100,000 of the same group.** Numerator STRAFNA9, denominator FOLK1E, both Statistics Denmark. Index is direct age standardization on the three published bands (15–29, 30–49, 50–79) with all persons of the same sex = 100; it is not DST's indirect index and the coarse bands leave within-band age differences unadjusted, which pushes the descendant index up. [SOURCE: api.statbank.dk, tables STRAFNA9 and FOLK1E; CALCULATION]
+
+| Group | Men per 100k | Men index | Both sexes per 100k | Both index |
+|---|---:|---:|---:|---:|
+| Persons of Danish origin | 4,522 | 90 | 3,018 | 91 |
+| Immigrants, Western | 4,767 | 88 | 3,295 | 92 |
+| Immigrants, non-Western | 7,671 | 145 | 4,688 | 134 |
+| Descendants, Western | 6,412 | 113 | 4,489 | 121 |
+| Descendants, non-Western | 16,722 | 321 | 10,866 | 315 |
+| All persons | 5,092 | 100 | 3,364 | 100 |
+
+Men 2025 counts over population: Danish origin 88,304 / 1,952,683; non-Western immigrants 14,999 / 195,521; non-Western descendants 9,308 / 55,663. The published age total (120,166) equals the sum of the three bands. For penal-code offences only, the Danish Justice Ministry's 2023 fact sheet gives age-standardized indices of 262 for non-Western descendants and 88 for Danish origin (men), so the ordering is the same under the narrower scope. [SOURCE: as above; [Justice Ministry 2023](https://www.justitsministeriet.dk/wp-content/uploads/2025/05/Kriminalitet-og-herkomst-2023-WT.pdf)]
+
+**Netherlands 2025 (provisional; CBS states provisional years understate the final count by a few percent), registered suspects per 10,000 residents of the group, not age-standardized.** Table 85658NED, CBS StatLine. Rates are published as integers; population is back-derived from count and rate. [SOURCE: opendata.cbs.nl/ODataApi/odata/85658NED]
+
+| Group | Men | Both sexes |
+|---|---:|---:|
+| Born in NL, both parents born in NL | 83 | 50 |
+| Born in NL, one parent born abroad | 178 | 108 |
+| Born in NL, both parents born abroad | 453 | 265 |
+| Born outside the Netherlands | 184 | 104 |
+| Origin Morocco (all generations) | 473 | 265 |
+| Origin Dutch Caribbean | 519 | 306 |
+| Origin Türkiye | 241 | 140 |
+| Origin Indonesia | 58 | 35 |
+| All | 124 | 73 |
+
+The second generation is much younger than the Dutch-origin population, so the 5.5× male ratio here is not age-adjusted; CBS's own age-restricted comparison (12–25) gives 3.4% versus 1.2%. These are descriptive registry rates: exact for their definitions, not causal, and not evidence about the United States. [INFERENCE: age caveat]
+
 ---
 
 ## Claims Table
@@ -276,3 +309,5 @@ The US finding (lower observed criminal-justice rates for first-generation / una
 - **2026-09-05 — Corrected comparator, observation and generational inference** See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md). Historical revision entries above describe the earlier state, including conclusions superseded here.
 
 - **2026-09-16 — European row upgraded from PRELIMINARY to VERIFIED on primary registry tables; measurement mechanisms catalogued.** Claim 8 now cites Brå 2021:9, the Danish Justice Ministry 2023 fact sheet and CBS 2024 read this session. The methodological-challenges section is extended by [crime-statistics bias mechanisms](immigration-crime-statistics-bias-mechanisms-2026-09-16.md): Texas status-identification timing deflates, European exposure denominators and federal immigration offences inflate. No causal claim changes.
+
+- **2026-09-16 — Added Danish and Dutch registry rates pulled from the official APIs.** Exact 2025 conviction (DK, all offences) and suspect (NL, provisional) rates by origin and generation, with scope and standardization caveats; scripts and CSV under `infra/immigration-fiscal/registry_crime_2026_09_16/`. Confidence for claim 8 is unchanged (HIGH, descriptive).
