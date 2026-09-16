@@ -77,6 +77,52 @@ The other two constructions (resource-unit-head weights; equal shares among adul
 
 - What the CPS tables add on the input side: adult earnings 71–81% of white natives' and 76–87% of the all-native mean, employment at the native level, Medicaid and EITC use about twice white natives', cash use equal. On the all-origin NAS 2017 accounting the second generation is the strongest net-contributing group and the first generation the weakest at the state and local level (annual 2011–13 per independent person: −$1,600 first, +$1,700 second, +$1,300 third-plus; [Hernández dismantling](immigration-dismantle-hernandez-2026-06-25.md)). Whether the Mexican second generation is net positive on a complete ledger is not established here; its earnings are below the all-native mean and its dependants' program use above it. The June Mexico lifetime-NPV synthesis was withdrawn on 2026-09-05 ([Mexico NPV](immigration-mexico-npv-population-synthesis-2026-06-15.md)). Level: **first generation measured on partial ledgers; second and third generation not measured.**
 
+### 5.1 Life cycle: the working-age gap becomes a lifetime gap, and longevity is second-order
+
+Operator question (2026-09-16, evening): how does the ratio change over a lifetime, and do whites live longer? Same ledger and allocation as above, now by age band for everyone including children and the retired, with MEPS public medical spending transported by age, nativity and insurance (`../infra/immigration-fiscal/cps_generation_welfare_2026_09_16/lifecycle_ledger_by_generation.py`, output `lifecycle_ledger_result.txt`). Balance after health, dollars per person per year:
+
+| Age | 3rd+ NH white | All 2nd gen | Mexican 2nd gen | Mexican 3rd+ | Mexico-born |
+|---|---|---|---|---|---|
+| 0–17 | 6,244 | 4,371 | −748 | 1,564 | 249 |
+| 18–24 | 7,000 | 4,161 | 1,594 | 3,026 | 2,084 |
+| 25–34 | 10,447 | 9,254 | 4,210 | 6,590 | 4,768 |
+| 35–44 | 9,275 | 10,423 | 4,660 | 5,302 | 2,194 |
+| 45–54 | 9,601 | 10,737 | 2,755 | 4,400 | 2,007 |
+| 55–64 | 8,725 | 8,848 | 2,730 | 712 | 479 |
+| 65–74 | −18,246 | −17,043 | −18,845 | −18,355 | −13,892 |
+| 75+ | −24,754 | −23,912 | −20,664 | −21,674 | −16,580 |
+
+The retirement deficit is nearly flat across groups because Medicare is flat (about $11,000 per person over 65 in the MEPS transport for every US-born group, $10,450 for the foreign-born) and Social Security is only partly earnings-scaled (65–74: $15,700 white, $11,600 Mexican second generation, $6,600 Mexico-born, the last reflecting eligibility as well as earnings). The working-age surplus scales with earnings. So the annual gap of $6,000 in the working years does not shrink after 65; it stops growing, while the deficit years are the same size for everyone.
+
+Synthetic-cohort lifetime (each band mean applied at every single age, weighted by survival from the CDC 2021 period life table of the group's population, Hispanic tables for the Mexican-origin groups; the CSV the repo already holds):
+
+| Undiscounted $ per person | Ages 18–64 | Ages 65+ | Adult lifetime (18+) | From birth | From birth, PV at 3% |
+|---|---|---|---|---|---|
+| 3rd+ NH white | +402,999 | −326,580 | +76,439 | +188,212 | +183,879 |
+| All natives | +342,568 | −324,668 | +17,918 | +94,856 | +136,146 |
+| All 2nd gen | +392,694 | −309,203 | +83,481 | +161,647 | +149,515 |
+| Mexican 2nd gen | +146,266 | −319,299 | −173,036 | −186,415 | +2,773 |
+| Mexican 3rd+ (self-ID) | +183,379 | −324,250 | −140,877 | −112,882 | +52,612 |
+| Mexico-born | +104,956 | −246,920 | −141,967 | −137,510 | +16,446 |
+
+The Mexican second generation's working-age surplus is 36% of white natives'; its retirement deficit is 98% of theirs. The adult-lifetime gap to whites is about $250,000 undiscounted, $180,000 at a 3% discount rate from birth. The childhood band carries the parents' ledger under the equal-shares allocation (a white child's row shows the parents' taxes), so the "from birth" column for the Mexican second generation is partly the Mexico-born parents' balance; the 18+ columns are the person's own adult life.
+
+**Longevity.** The premise runs the other way at the population level: 2023 life expectancy at birth is 81.3 for Hispanics and 78.4 for non-Hispanic whites (2021, the tables used here: 77.8 vs 76.7; at 65: 19.3 vs 18.4). [SOURCE: NCHS, *United States Life Tables, 2023*, NVSR 74-6, Table A; CDC NVSR 72-12 CSV in the derived root] Swapping mortality tables moves the Mexican second generation's lifetime sum from −186,415 (Hispanic table) to −166,963 (white table), and white natives from +188,212 to +166,613 with the Hispanic table: about **$20,000 undiscounted, $1,600 at 3%**, roughly 5% of the $375,000 white-versus-Mexican-second-generation gap from birth. With the 2023 gap of 2.9 years instead of 2021's 1.1, the term is roughly 2.5 times larger, still under 15%. For the US-born generations it is smaller than that: linked-mortality studies put US-born Hispanic life expectancy at 50 at parity with whites (men 28.8 vs 28.9 years, women 33.6 vs 33.1; US-born Mexican women 34.7 vs white 34.1), with the advantage concentrated in the foreign-born (+2.8 years at 50). [SOURCE: Cantu et al., NHIS-LMF, PMC4029590 Table 2; García et al. 2018, *Innovation in Aging* 2(2), doi:10.1093/geroni/igy014] Longer life raises the lifetime cost of a low earner and a high earner by about the same dollar amount, because the extra years are Medicare years.
+
+### 5.2 Public health spending by generation
+
+MEPS 2024 public-paid medical spending per person (Medicare, Medicaid, VA, TRICARE, other federal and state payers; non-institutional population), donor means by age: US-born $1,544 (0–17), $1,079 (18–34), $1,981 (35–49), $3,362 (50–64), $11,055 (65+); foreign-born $337, $804, $562, $3,039, $10,451. [SOURCE: `meps_age_birth_cells.csv` from the generator run] The transport assigns each CPS person the donor mean for their age, nativity and, in the second model, insurance category, so ethnic differences in spending at a given age and coverage are not measured.
+
+| Public medical spending, $ per person per year | 3rd+ NH white | All 2nd gen | Mexican 2nd gen | Mexican 3rd+ | Mexico-born |
+|---|---|---|---|---|---|
+| Adults 25–64, age × nativity model | 2,553 | 2,343 | 2,190 | 2,352 | 1,825 |
+| Adults 25–64, age × nativity × insurance model | 2,132 | 2,147 | 2,382 | 2,293 | 2,081 |
+| Medicaid coverage, adults 25–64 (measured, CPS) | 11% | 15% | 20% | 17% | 21% |
+| Lifetime, survival-weighted, age × nativity model | 285,048 | 279,956 | 292,672 | 295,871 | 236,466 |
+| … of which ages 65+ | 167,266 | 165,238 | 176,559 | 178,028 | 168,429 |
+
+Per adult of working age the groups are within about 15% of each other, and the insurance-aware model puts the Mexican second generation 12% above white natives because twice as many are on Medicaid. Over a lifetime the public health bill is about $280,000–$300,000 for every US-born group and about $240,000 for the Mexico-born (lower working-age spending, fewer covered), with 60% of it after 65. The Mexican-origin population's *current* per-capita public health spending is lower than whites' only because it is younger. Institutional long-term care (Medicaid nursing-home spending, outside MEPS-HC) is not in any of these figures. [FRAMING-SENSITIVE: modeled transport, not measured claims by ethnicity]
+
 ## 6. Crime by generation
 
 From today's crime memos and the September 5 corrections, all verified against sources there:
@@ -99,6 +145,9 @@ From today's crime memos and the September 5 corrections, all verified against s
 | The third-plus generation shows little further progress | Measured on a self-identified, attrition-selected group; the true third generation is unobserved | §1, §2 |
 | Mexican immigration lowered native dropouts' wages | Contested: −8 points (Borjas–Katz) to about zero (Card, Peri) | §4 |
 | Mexican second-generation adults contribute less than white natives on the annual partial ledger | Measured: −$6,000 to −$7,600 per adult per year, se about $400; the gap is taxes, cash transfers are lower | §5 |
+| Over a lifetime the gap widens to about $250,000 per adult (undiscounted) because retirement costs are flat across groups while the working-age surplus scales with earnings | Synthetic cohort from the 2024 cross-section; no standard errors; K-12, employer and indirect taxes, institutional care outside the ledger | §5.1 |
+| Longevity is a second-order term: Hispanics outlive whites at the population level (81.3 vs 78.4 in 2023), US-born Hispanics roughly match whites, and the swap is worth about $20,000 undiscounted | Measured life tables; linked-mortality studies for the nativity split | §5.1 |
+| Public health spending per adult is within 15% across generations and about $280,000–300,000 per US-born lifetime, 60% after 65 | Modeled MEPS transport by age, nativity and insurance; not measured by ethnicity | §5.2 |
 | Mexican immigration is a net fiscal cost or gain over generations | Not established: no complete or Mexican-specific lifetime ledger survives the repair | §5 |
 | Any of the above as the *effect of admitting* a Mexican immigrant | Not identified: these are resident characteristics; admission-policy effects need the designs in the September 5 syntheses | [clarity update](immigration-clarity-update-2026-09-05.md) |
 
@@ -145,4 +194,5 @@ What "cause more crime" would then mean. A raw contrast answers "do they offend 
 
 ## Revisions
 
+- **2026-09-16 (evening).** Added §5.1 (age profile, synthetic-cohort lifetime, longevity swap) and §5.2 (public health spending by generation). Claim change: the annual −$6,000 gap is a lifetime gap of about −$250,000 per adult; longevity accounts for about 5% of it; health spending per adult is level across generations.
 - **2026-09-16 (later same day).** Added §5's annual partial ledger by generation (generator extended with parents'-birthplace groups and re-run), §8 on offence composition and the victim-report wedge, and §9 on what would settle the second-generation contrast. Claim change: "second and third generation not measured" on the fiscal side became "measured on the annual partial ledger: −$6,000 to −$7,600 per adult vs white natives, taxes not transfers".
