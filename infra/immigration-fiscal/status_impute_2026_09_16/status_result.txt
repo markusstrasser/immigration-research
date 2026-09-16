@@ -1,0 +1,153 @@
+==============================================================================================================
+STEP 1 — Borjas (2017, NBER w22102 / Labour Economics 46) residual imputation, CPS ASEC 2025
+==============================================================================================================
+               arm  unauth_all_ages_millions  unauth_18plus_millions  unauth_25_64_millions  unauth_mexico_all_ages_millions  unauth_mexico_18plus_millions  unauth_mexico_25_64_millions  n_unweighted  n_unweighted_mexico
+borjas_paper_rules                    14.896                  13.255                 11.312                            4.567                          4.327                         3.917          5973                 1995
+no_occupation_rule                    15.130                  13.488                 11.542                            4.590                          4.350                         3.940          6078                 2006
+ wide_refugee_list                    14.316                  12.767                 10.899                            4.564                          4.325                         3.914          5762                 1994
+  no_medicaid_rule                    18.581                  15.983                 13.620                            5.710                          5.286                         4.778          7516                 2515
+
+-- rule hit rates among foreign-born NONCITIZENS (headline arm; rules overlap) --
+   a_arrived_pre_1980               n=   347  weighted=  0.787M
+   c_benefits                       n= 3,186  weighted=  7.568M
+   d_veteran_or_armed_forces        n=    45  weighted=  0.114M
+   e_government_sector              n=   388  weighted=  0.833M
+   f_subsidised_housing             n=   459  weighted=  1.128M
+   g_refugee_origin                 n=   366  weighted=  0.913M
+   h_licensed_occupation            n=   137  weighted=  0.326M
+   i_spouse_legal_or_citizen        n= 1,168  weighted=  2.647M
+   -> imputed UNAUTHORIZED          n= 5,973  weighted= 14.896M
+   -> imputed LEGAL noncitizen      n= 5,310  weighted= 12.457M
+   all foreign-born noncitizens      n=11,283  weighted= 27.353M
+   all foreign-born                  n=21,743  weighted= 53.118M
+
+==============================================================================================================
+STEP A — reproduction of the published gen-ledger numbers
+==============================================================================================================
+   Mexican 2nd gen minus 3rd+ NH white, taxes minus selected transfers: -6,066 (se 353)   published -6,066 (se 353)   deviation +0.17
+   same, EXTENDED balance:                                             -8,286 (se 443)   published -8,286 (se 443)   deviation -0.23
+   [reproduction check] PASS (both within $50)
+
+==========================================================================================================================================================================
+== arm=raw  allocation=equal_all_members  weighting=person  adults 25-64, annual $ per adult, income year 2024 (SDR se) ==
+==========================================================================================================================================================================
+row                                      third_plus_nh_white           mexico_bornmexico_born_imputed_unaumexico_born_imputed_legaall_imputed_unauthorized    mexican_second_gen
+Modeled taxes (payroll+fed+state)               14,383 (238)           4,874 (221)           4,472 (407)           5,160 (258)           9,895 (423)           7,419 (268)
+Selected cash transfers                           2,453 (48)              860 (63)              240 (48)            1,299 (98)              248 (32)           1,460 (102)
+Selected non-cash transfers                          145 (4)              246 (13)              253 (28)              241 (12)              166 (12)              240 (14)
+= Taxes minus selected transfers                11,785 (250)           3,768 (230)           3,979 (406)           3,619 (281)           9,480 (424)           5,719 (278)
++ Employer payroll tax                            3,489 (28)            1,895 (37)            1,855 (53)            1,923 (49)            2,841 (63)            2,542 (52)
++ Sales/excise tax (0.35 share)                   1,050 (10)              592 (12)              541 (17)              629 (15)              821 (21)              784 (16)
++ Property tax (owner-occupied)                   1,313 (16)              518 (25)              347 (29)              639 (30)              552 (33)              765 (29)
+- K-12 (ACS native pupil ratio)                   1,652 (23)            2,311 (62)           2,110 (100)            2,454 (86)            1,969 (59)            2,112 (86)
+= EXTENDED BALANCE                              15,984 (292)           4,462 (290)           4,611 (491)           4,356 (371)          11,725 (506)           7,698 (375)
+= EXTENDED BAL (diff pupil ratio)               15,984 (292)           4,168 (293)           4,343 (496)           4,044 (376)          11,474 (507)           7,430 (380)
+
+difference from 3rd+ NH white            third_plus_nh_white           mexico_bornmexico_born_imputed_unaumexico_born_imputed_legaall_imputed_unauthorized    mexican_second_gen
+Modeled taxes (payroll+fed+state)                          —          -9,509 (325)          -9,912 (467)          -9,224 (355)          -4,489 (469)          -6,965 (330)
+Selected cash transfers                                    —           -1,593 (84)           -2,213 (67)          -1,154 (115)           -2,205 (57)            -994 (119)
+Selected non-cash transfers                                —              101 (14)              107 (29)               96 (13)               21 (13)               95 (15)
+= Taxes minus selected transfers                           —          -8,016 (338)          -7,806 (472)          -8,166 (378)          -2,304 (476)          -6,066 (353)
++ Employer payroll tax                                     —           -1,594 (44)           -1,634 (59)           -1,565 (54)             -648 (65)             -946 (55)
++ Sales/excise tax (0.35 share)                            —             -457 (15)             -509 (20)             -421 (19)             -229 (23)             -266 (18)
++ Property tax (owner-occupied)                            —             -795 (29)             -966 (32)             -674 (34)             -761 (36)             -548 (33)
+- K-12 (ACS native pupil ratio)                            —              660 (69)             459 (105)              803 (91)              317 (65)              460 (90)
+= EXTENDED BALANCE                                         —         -11,522 (402)         -11,373 (563)         -11,628 (465)          -4,260 (556)          -8,286 (443)
+= EXTENDED BAL (diff pupil ratio)                          —         -11,816 (404)         -11,641 (567)         -11,940 (469)          -4,510 (556)          -8,555 (447)
+
+adults 25-64 (unweighted n / weighted M)               36,287/87.65M           4,318/9.45M           1,696/3.92M           2,622/5.53M          4,555/11.31M           2,452/5.61M
+
+==========================================================================================================================================================================
+== arm=raw  allocation=equal_adults_18plus  weighting=person  adults 25-64, annual $ per adult, income year 2024 (SDR se) ==
+==========================================================================================================================================================================
+row                                      third_plus_nh_white           mexico_bornmexico_born_imputed_unaumexico_born_imputed_legaall_imputed_unauthorized    mexican_second_gen
+Modeled taxes (payroll+fed+state)               17,337 (272)           5,519 (235)           4,864 (413)           5,983 (290)          12,113 (515)           8,997 (367)
+Selected cash transfers                           2,685 (51)            1,046 (74)              284 (54)           1,585 (117)              293 (35)           1,733 (116)
+Selected non-cash transfers                          243 (6)              451 (22)              440 (38)              459 (25)              294 (18)              480 (31)
+= Taxes minus selected transfers                14,409 (286)           4,023 (251)           4,140 (415)           3,939 (322)          11,526 (519)           6,784 (382)
++ Employer payroll tax                            4,291 (30)            2,362 (41)            2,255 (57)            2,438 (55)            3,542 (75)            3,215 (61)
++ Sales/excise tax (0.35 share)                   1,283 (12)              749 (13)              669 (18)              807 (17)            1,035 (26)            1,005 (21)
++ Property tax (owner-occupied)                   1,617 (18)              648 (27)              430 (33)              802 (32)              754 (47)              964 (36)
+- K-12 (ACS native pupil ratio)                   3,501 (56)           4,628 (156)           4,175 (235)           4,948 (205)           3,882 (135)           4,501 (213)
+= EXTENDED BALANCE                              18,099 (333)           3,154 (354)           3,319 (555)           3,038 (472)          12,975 (616)           7,466 (515)
+= EXTENDED BAL (diff pupil ratio)               18,099 (333)           2,566 (365)           2,788 (571)           2,409 (488)          12,481 (616)           6,894 (528)
+
+difference from 3rd+ NH white            third_plus_nh_white           mexico_bornmexico_born_imputed_unaumexico_born_imputed_legaall_imputed_unauthorized    mexican_second_gen
+Modeled taxes (payroll+fed+state)                          —         -11,817 (367)         -12,473 (494)         -11,353 (408)          -5,224 (589)          -8,340 (437)
+Selected cash transfers                                    —           -1,639 (95)           -2,401 (73)          -1,099 (134)           -2,392 (60)            -952 (132)
+Selected non-cash transfers                                —              208 (23)              197 (38)              216 (26)               51 (19)              237 (33)
+= Taxes minus selected transfers                           —         -10,386 (384)         -10,269 (503)         -10,470 (437)          -2,883 (599)          -7,625 (462)
++ Employer payroll tax                                     —           -1,929 (50)           -2,036 (64)           -1,853 (62)             -749 (79)           -1,077 (64)
++ Sales/excise tax (0.35 share)                            —             -534 (18)             -615 (21)             -477 (21)             -248 (29)             -278 (23)
++ Property tax (owner-occupied)                            —             -969 (31)           -1,187 (36)             -814 (36)             -863 (51)             -653 (40)
+- K-12 (ACS native pupil ratio)                            —           1,127 (169)             674 (246)           1,448 (214)             381 (150)           1,001 (222)
+= EXTENDED BALANCE                                         —         -14,945 (475)         -14,781 (632)         -15,061 (573)          -5,124 (691)         -10,633 (587)
+= EXTENDED BAL (diff pupil ratio)                          —         -15,533 (481)         -15,311 (644)         -15,691 (585)          -5,618 (690)         -11,206 (598)
+
+adults 25-64 (unweighted n / weighted M)               36,287/87.65M           4,318/9.45M           1,696/3.92M           2,622/5.53M          4,555/11.31M           2,452/5.61M
+
+==========================================================================================================================================================================
+== arm=corrected_eligibility_and_off_books  allocation=equal_all_members  weighting=person  adults 25-64, annual $ per adult, income year 2024 (SDR se) ==
+==========================================================================================================================================================================
+row                                      third_plus_nh_white           mexico_bornmexico_born_imputed_unaumexico_born_imputed_legaall_imputed_unauthorized    mexican_second_gen
+Modeled taxes (payroll+fed+state)               14,377 (237)           3,985 (170)           2,436 (189)           5,083 (258)           4,831 (189)           7,338 (267)
+Selected cash transfers                           2,453 (48)              848 (63)              212 (45)            1,298 (98)              190 (23)           1,459 (102)
+Selected non-cash transfers                          145 (4)               209 (9)              165 (10)              239 (12)               113 (5)              239 (14)
+= Taxes minus selected transfers                11,779 (250)           2,929 (180)           2,059 (188)           3,545 (281)           4,527 (190)           5,640 (277)
++ Employer payroll tax                            3,488 (28)            1,519 (34)              990 (31)            1,894 (48)            1,488 (35)            2,513 (52)
++ Sales/excise tax (0.35 share)                   1,050 (10)              592 (12)              541 (17)              629 (15)              821 (21)              784 (16)
++ Property tax (owner-occupied)                   1,313 (16)              518 (25)              347 (29)              639 (30)              552 (33)              765 (29)
+- K-12 (ACS native pupil ratio)                   1,652 (23)            2,311 (62)           2,110 (100)            2,454 (86)            1,969 (59)            2,112 (86)
+= EXTENDED BALANCE                              15,977 (292)           3,246 (240)           1,827 (270)           4,252 (370)           5,419 (256)           7,590 (373)
+= EXTENDED BAL (diff pupil ratio)               15,977 (292)           2,952 (244)           1,558 (276)           3,940 (375)           5,169 (258)           7,321 (378)
+
+difference from 3rd+ NH white            third_plus_nh_white           mexico_bornmexico_born_imputed_unaumexico_born_imputed_legaall_imputed_unauthorized    mexican_second_gen
+Modeled taxes (payroll+fed+state)                          —         -10,392 (295)         -11,941 (302)          -9,295 (354)          -9,546 (291)          -7,040 (329)
+Selected cash transfers                                    —           -1,605 (85)           -2,241 (66)          -1,155 (115)           -2,263 (55)            -995 (119)
+Selected non-cash transfers                                —                63 (9)               20 (11)               94 (12)               -32 (6)               94 (15)
+= Taxes minus selected transfers                           —          -8,850 (310)          -9,720 (312)          -8,234 (378)          -7,251 (302)          -6,139 (352)
++ Employer payroll tax                                     —           -1,969 (43)           -2,497 (41)           -1,594 (54)           -2,000 (42)             -975 (55)
++ Sales/excise tax (0.35 share)                            —             -457 (15)             -509 (20)             -421 (19)             -229 (23)             -266 (18)
++ Property tax (owner-occupied)                            —             -795 (29)             -966 (32)             -674 (34)             -761 (36)             -548 (33)
+- K-12 (ACS native pupil ratio)                            —              660 (69)             459 (105)              803 (91)              317 (65)              460 (90)
+= EXTENDED BALANCE                                         —         -12,731 (372)         -14,151 (392)         -11,725 (465)         -10,558 (361)          -8,388 (442)
+= EXTENDED BAL (diff pupil ratio)                          —         -13,025 (373)         -14,419 (397)         -12,037 (468)         -10,809 (360)          -8,656 (445)
+
+adults 25-64 (unweighted n / weighted M)               36,287/87.65M           4,318/9.45M           1,696/3.92M           2,622/5.53M          4,555/11.31M           2,452/5.61M
+
+==========================================================================================================================================================================
+== arm=corrected_eligibility_and_off_books  allocation=equal_adults_18plus  weighting=person  adults 25-64, annual $ per adult, income year 2024 (SDR se) ==
+==========================================================================================================================================================================
+row                                      third_plus_nh_white           mexico_bornmexico_born_imputed_unaumexico_born_imputed_legaall_imputed_unauthorized    mexican_second_gen
+Modeled taxes (payroll+fed+state)               17,330 (272)           4,591 (186)           2,758 (194)           5,890 (290)           5,935 (229)           8,908 (366)
+Selected cash transfers                           2,685 (51)            1,030 (74)              248 (52)           1,584 (117)              218 (26)           1,732 (116)
+Selected non-cash transfers                          243 (6)              400 (18)              322 (21)              455 (25)              221 (11)              479 (31)
+= Taxes minus selected transfers                14,403 (286)           3,161 (202)           2,188 (195)           3,850 (322)           5,496 (232)           6,698 (381)
++ Employer payroll tax                            4,290 (30)            1,904 (38)            1,202 (35)            2,402 (54)            1,853 (42)            3,180 (61)
++ Sales/excise tax (0.35 share)                   1,283 (12)              749 (13)              669 (18)              807 (17)            1,035 (26)            1,005 (21)
++ Property tax (owner-occupied)                   1,617 (18)              648 (27)              430 (33)              802 (32)              754 (47)              964 (36)
+- K-12 (ACS native pupil ratio)                   3,501 (56)           4,628 (156)           4,175 (235)           4,948 (205)           3,882 (135)           4,501 (213)
+= EXTENDED BALANCE                              18,092 (333)           1,835 (307)             314 (353)           2,912 (471)           5,256 (319)           7,345 (513)
+= EXTENDED BAL (diff pupil ratio)               18,092 (333)           1,246 (320)            -217 (376)           2,283 (487)           4,763 (324)           6,772 (526)
+
+difference from 3rd+ NH white            third_plus_nh_white           mexico_bornmexico_born_imputed_unaumexico_born_imputed_legaall_imputed_unauthorized    mexican_second_gen
+Modeled taxes (payroll+fed+state)                          —         -12,739 (339)         -14,572 (334)         -11,441 (408)         -11,395 (359)          -8,422 (437)
+Selected cash transfers                                    —           -1,654 (96)           -2,436 (72)          -1,100 (135)           -2,466 (58)            -953 (132)
+Selected non-cash transfers                                —              157 (19)               79 (22)              212 (25)              -22 (12)              236 (33)
+= Taxes minus selected transfers                           —         -11,242 (356)         -12,215 (347)         -10,553 (437)          -8,907 (372)          -7,705 (462)
++ Employer payroll tax                                     —           -2,386 (49)           -3,088 (45)           -1,888 (62)           -2,437 (51)           -1,110 (65)
++ Sales/excise tax (0.35 share)                            —             -534 (18)             -615 (21)             -477 (21)             -248 (29)             -278 (23)
++ Property tax (owner-occupied)                            —             -969 (31)           -1,187 (36)             -814 (36)             -863 (51)             -653 (40)
+- K-12 (ACS native pupil ratio)                            —           1,127 (169)             674 (246)           1,448 (214)             381 (150)           1,001 (222)
+= EXTENDED BALANCE                                         —         -16,257 (444)         -17,778 (468)         -15,180 (573)         -12,836 (440)         -10,747 (586)
+= EXTENDED BAL (diff pupil ratio)                          —         -16,846 (450)         -18,309 (483)         -15,809 (585)         -13,329 (441)         -11,319 (596)
+
+adults 25-64 (unweighted n / weighted M)               36,287/87.65M           4,318/9.45M           1,696/3.92M           2,622/5.53M          4,555/11.31M           2,452/5.61M
+
+==============================================================================================================
+STEP 4 — how much of the Mexico-born gap the imputed-unauthorized carry
+==============================================================================================================
+   raw                                  cash_noncash_tax_balance     all Mexico-born   -8,016 (338)   unauth   -7,806 (472)   legal   -8,166 (378)   unauth share of adults 41.5%   unauth contribution 40.4%
+   raw                                  extended_balance_base        all Mexico-born  -11,522 (402)   unauth  -11,373 (563)   legal  -11,628 (465)   unauth share of adults 41.5%   unauth contribution 40.9%
+   corrected_eligibility_and_off_books  cash_noncash_tax_balance     all Mexico-born   -8,850 (310)   unauth   -9,720 (312)   legal   -8,234 (378)   unauth share of adults 41.5%   unauth contribution 45.5%
+   corrected_eligibility_and_off_books  extended_balance_base        all Mexico-born  -12,731 (372)   unauth  -14,151 (392)   legal  -11,725 (465)   unauth share of adults 41.5%   unauth contribution 46.1%

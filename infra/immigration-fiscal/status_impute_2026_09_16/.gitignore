@@ -1,0 +1,6 @@
+*.zip
+_cache/
+*.npy
+replicate_estimates.json
+__pycache__/
+run.log
