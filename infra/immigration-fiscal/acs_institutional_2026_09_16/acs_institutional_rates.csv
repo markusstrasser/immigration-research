@@ -125,3 +125,51 @@ year,block,group,nativity,institutional,population,pct,pct_adj_generic_hispanic
 2023,nh_asian_detail,Hmong,foreign_born,113,11893,0.95,0.95
 2023,total,All,native,874408,42634022,2.051,2.051
 2023,total,All,foreign_born,65685,7308539,0.899,
+2024,hispanic_origin,Not Hispanic,native,687331,35110067,1.958,1.958
+2024,hispanic_origin,Not Hispanic,foreign_born,16394,3945181,0.416,0.416
+2024,hispanic_origin,Mexican,native,107917,5297333,2.037,2.34
+2024,hispanic_origin,Mexican,foreign_born,30764,1767548,1.74,1.74
+2024,hispanic_origin,Puerto Rican,native,18287,984791,1.857,2.159
+2024,hispanic_origin,Puerto Rican,foreign_born,0,21172,0.0,0.0
+2024,hispanic_origin,Cuban,native,2303,225102,1.023,1.326
+2024,hispanic_origin,Cuban,foreign_born,1622,239120,0.678,0.678
+2024,hispanic_origin,Dominican,native,2743,231544,1.185,1.487
+2024,hispanic_origin,Dominican,foreign_born,3156,176735,1.786,1.786
+2024,hispanic_origin,Guatemalan,native,1368,158083,0.865,1.168
+2024,hispanic_origin,Guatemalan,foreign_born,3367,371359,0.907,0.907
+2024,hispanic_origin,Honduran,native,1278,82326,1.552,1.855
+2024,hispanic_origin,Honduran,foreign_born,5112,211421,2.418,2.418
+2024,hispanic_origin,Salvadoran,native,2541,239777,1.06,1.362
+2024,hispanic_origin,Salvadoran,foreign_born,3741,241166,1.551,1.551
+2024,hispanic_origin,Colombian,native,249,125868,0.198,0.5
+2024,hispanic_origin,Colombian,foreign_born,1225,168960,0.725,0.725
+2024,hispanic_origin,All other Hispanic,native,32654,453801,7.196,7.196
+2024,hispanic_origin,All other Hispanic,foreign_born,4839,71159,6.8,6.8
+2024,nh_race,NH White,native,264799,25213324,1.05,1.05
+2024,nh_race,NH White,foreign_born,4075,944690,0.431,0.431
+2024,nh_race,NH Black,native,348840,5564173,6.269,6.269
+2024,nh_race,NH Black,foreign_born,8562,745153,1.149,1.149
+2024,nh_race,NH AIAN,native,11941,229863,5.195,5.195
+2024,nh_race,NH AIAN,foreign_born,0,2172,0.0,0.0
+2024,nh_race,NH Asian,native,4534,1504486,0.301,0.301
+2024,nh_race,NH Asian,foreign_born,2387,1980428,0.121,0.121
+2024,nh_asian_detail,Cambodian,native,195,38741,0.503,0.503
+2024,nh_asian_detail,Cambodian,foreign_born,83,10600,0.783,0.783
+2024,nh_asian_detail,Laotian,native,237,22624,1.048,1.048
+2024,nh_asian_detail,Laotian,foreign_born,41,2093,1.959,1.959
+2024,nh_asian_detail,Thai,native,0,9338,0.0,0.0
+2024,nh_asian_detail,Thai,foreign_born,68,16617,0.409,0.409
+2024,nh_asian_detail,Vietnamese,native,402,176431,0.228,0.228
+2024,nh_asian_detail,Vietnamese,foreign_born,273,117575,0.232,0.232
+2024,nh_asian_detail,Korean,native,162,107101,0.151,0.151
+2024,nh_asian_detail,Korean,foreign_born,54,122737,0.044,0.044
+2024,nh_asian_detail,Asian Indian,native,648,277369,0.234,0.234
+2024,nh_asian_detail,Asian Indian,foreign_born,446,701468,0.064,0.064
+2024,nh_asian_detail,Chinese,native,311,299314,0.104,0.104
+2024,nh_asian_detail,Chinese,foreign_born,490,415866,0.118,0.118
+2024,nh_asian_detail,Filipino,native,680,245459,0.277,0.277
+2024,nh_asian_detail,Filipino,foreign_born,92,199680,0.046,0.046
+2024,nh_asian_detail,Hmong,native,275,66242,0.415,0.415
+2024,nh_asian_detail,Hmong,foreign_born,56,16021,0.35,0.35
+2024,total,All,native,859494,43387114,1.981,1.981
+2024,total,All,foreign_born,73189,7749485,0.944,

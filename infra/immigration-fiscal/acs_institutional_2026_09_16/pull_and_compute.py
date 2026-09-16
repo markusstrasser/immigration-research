@@ -14,7 +14,7 @@ Out:  acs_institutional_rates.csv
 """
 import csv, json, os, pathlib, re, urllib.request
 HERE = pathlib.Path(__file__).parent
-YEARS = {"2010": "TYPE", "2019": "TYPE", "2023": "TYPEHUGQ"}
+YEARS = {"2010": "TYPE", "2019": "TYPE", "2023": "TYPEHUGQ", "2024": "TYPEHUGQ"}
 HISP = {"01": "Not Hispanic", "02": "Mexican", "03": "Puerto Rican", "04": "Cuban", "05": "Dominican",
         "07": "Guatemalan", "08": "Honduran", "11": "Salvadoran", "16": "Colombian", "24": "All other Hispanic"}
 RAC1 = {"1": "NH White", "2": "NH Black", "3": "NH AIAN", "6": "NH Asian"}
