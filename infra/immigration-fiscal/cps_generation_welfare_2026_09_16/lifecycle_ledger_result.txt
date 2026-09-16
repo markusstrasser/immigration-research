@@ -1,0 +1,92 @@
+== Annual partial ledger by age band and origin-generation, $ per person per year (person-weighted), CPS ASEC 2025 / MEPS 2024 ==
+
+-- third_plus_nh_white --
+band          n                 taxes        cash_transfers       social_security               noncash      health_age_birth  health_age_birth_ins  balance_after_health  balance_after_health
+  0-17    17075                 8,871                   828                   458                   270                 1,528                 1,022                 6,244                 6,750
+ 18-24     4987                 9,352                 1,135                   760                   139                 1,077                   802                 7,000                 7,275
+ 25-34     8075                12,944                 1,275                   755                   144                 1,077                   759                10,447                10,766
+ 35-44    10359                13,091                 1,652                 1,060                   190                 1,974                 1,648                 9,275                 9,601
+ 45-54     8937                14,671                 2,250                 1,401                   141                 2,679                 2,087                 9,601                10,193
+ 55-64     8916                16,601                 4,408                 3,378                   108                 3,360                 2,945                 8,725                 9,140
+ 65-74     8810                 9,470                16,558                15,736                   106                11,052                11,052               -18,246               -18,246
+ 75-120    6714                 6,166                19,788                18,738                    78                11,053                11,053               -24,754               -24,754
+
+-- all_native --
+band          n                 taxes        cash_transfers       social_security               noncash      health_age_birth  health_age_birth_ins  balance_after_health  balance_after_health
+  0-17    32592                 7,086                   855                   454                   407                 1,520                 1,356                 4,304                 4,468
+ 18-24    10013                 7,727                 1,203                   767                   195                 1,076                 1,000                 5,253                 5,329
+ 25-34    14236                11,600                 1,341                   787                   193                 1,074                   863                 8,991                 9,203
+ 35-44    15536                12,249                 1,733                 1,090                   231                 1,955                 1,799                 8,329                 8,486
+ 45-54    13018                13,648                 2,405                 1,459                   175                 2,652                 2,338                 8,415                 8,729
+ 55-64    12862                15,262                 4,530                 3,356                   147                 3,355                 3,406                 7,230                 7,180
+ 65-74    12391                 8,740                16,096                15,133                   139                11,043                11,043               -18,538               -18,538
+ 75-120    9290                 5,793                19,145                17,990                   105                11,042                11,042               -24,499               -24,499
+
+-- all_second_gen --
+band          n                 taxes        cash_transfers       social_security               noncash      health_age_birth  health_age_birth_ins  balance_after_health  balance_after_health
+  0-17     7084                 6,905                   630                   297                   397                 1,508                 1,572                 4,371                 4,306
+ 18-24     2482                 6,340                   885                   560                   220                 1,074                 1,209                 4,161                 4,026
+ 25-34     2704                11,803                 1,318                   808                   161                 1,070                   887                 9,254                 9,437
+ 35-44     1968                14,038                 1,524                 1,066                   180                 1,911                 1,712                10,423                10,622
+ 45-54     1235                15,506                 2,077                 1,266                   155                 2,537                 2,218                10,737                11,056
+ 55-64      964                15,921                 3,578                 2,569                   172                 3,323                 3,488                 8,848                 8,683
+ 65-74      756                 9,390                15,307                14,263                   140                10,987                10,987               -17,043               -17,043
+ 75-120     727                 6,241                19,005                17,739                   150                10,998                10,998               -23,912               -23,912
+
+-- mexican_second_gen --
+band          n                 taxes        cash_transfers       social_security               noncash      health_age_birth  health_age_birth_ins  balance_after_health  balance_after_health
+  0-17     2430                 1,816                   535                   284                   517                 1,511                 2,107                  -748                -1,343
+ 18-24     1206                 3,693                   736                   500                   286                 1,077                 1,408                 1,594                 1,262
+ 25-34     1185                 6,441                   913                   488                   243                 1,075                   973                 4,210                 4,311
+ 35-44      664                 8,138                 1,255                   734                   257                 1,966                 2,231                 4,660                 4,395
+ 45-54      366                 7,723                 2,211                 1,167                   246                 2,511                 3,149                 2,755                 2,117
+ 55-64      237                 9,783                 3,560                 2,509                   165                 3,328                 3,935                 2,730                 2,124
+ 65-74      156                 4,996                12,677                11,567                   198                10,965                10,965               -18,845               -18,845
+ 75-120     105                 5,618                15,123                13,333                   213                10,947                10,947               -20,664               -20,664
+
+-- mexican_third_plus_selfid --
+band          n                 taxes        cash_transfers       social_security               noncash      health_age_birth  health_age_birth_ins  balance_after_health  balance_after_health
+  0-17     2595                 4,425                   836                   399                   501                 1,525                 1,579                 1,564                 1,510
+ 18-24      720                 5,501                 1,197                   700                   200                 1,079                   973                 3,026                 3,131
+ 25-34      855                 8,748                   830                   513                   251                 1,078                   957                 6,590                 6,711
+ 35-44      697                 9,320                 1,779                   922                   259                 1,980                 1,737                 5,302                 5,545
+ 45-54      514                 9,764                 2,575                 1,720                   165                 2,624                 2,286                 4,400                 4,738
+ 55-64      411                 8,895                 4,598                 3,393                   228                 3,357                 4,214                   712                  -146
+ 65-74      349                 5,975                12,963                11,862                   321                11,045                11,045               -18,355               -18,355
+ 75-120     210                 3,739                14,266                12,681                    99                11,048                11,048               -21,674               -21,674
+
+-- mexico_born --
+band          n                 taxes        cash_transfers       social_security               noncash      health_age_birth  health_age_birth_ins  balance_after_health  balance_after_health
+  0-17      247                 1,475                   470                   390                   419                   337                   404                   249                   182
+ 18-24      235                 3,403                   282                   254                   233                   804                   990                 2,084                 1,897
+ 25-34      750                 6,303                   504                   318                   227                   804                   811                 4,768                 4,761
+ 35-44     1212                 3,670                   552                   355                   362                   562                   826                 2,194                 1,930
+ 45-54     1290                 4,766                   738                   548                   214                 1,807                 1,884                 2,007                 1,930
+ 55-64     1066                 5,312                 1,623                 1,306                   170                 3,039                 3,958                   479                  -440
+ 65-74      561                 3,743                 6,986                 6,588                   198                10,451                10,451               -13,892               -13,892
+ 75-120     270                 2,347                 8,133                 7,530                   344                10,451                10,451               -16,580               -16,580
+
+== Synthetic lifetime from birth: sum over ages of the band mean x survival probability (CDC 2021 period life tables) ==
+   group                        mortality table              undiscounted$   PV3%$   | after-health(ins) undiscounted   PV3%  | expected years lived
+   third_plus_nh_white        the Hispanic population                 166,613   182,212   |      192,924   194,556  |  78.3
+ * third_plus_nh_white        the White, non-Hispanic population      188,212   183,879   |      214,437   196,208  |  77.1
+   all_native                 the Hispanic population                  72,442   134,635   |       81,958   139,175  |  78.3
+   all_native                 the White, non-Hispanic population       94,116   136,326   |      103,619   140,864  |  77.1
+ * all_native                 the total population                     94,856   136,146   |      104,334   140,674  |  76.8
+   all_second_gen             the Hispanic population                 140,671   148,215   |      143,817   148,596  |  78.3
+   all_second_gen             the White, non-Hispanic population      161,249   149,761   |      164,391   150,139  |  77.1
+ * all_second_gen             the total population                    161,647   149,515   |      164,776   149,890  |  76.8
+ * mexican_second_gen         the Hispanic population                -186,415     2,773   |     -212,111    -9,518  |  78.3
+   mexican_second_gen         the White, non-Hispanic population     -166,963     4,373   |     -192,549    -7,899  |  77.1
+ * mexican_third_plus_selfid  the Hispanic population                -112,882    52,612   |     -113,898    52,915  |  78.3
+   mexican_third_plus_selfid  the White, non-Hispanic population      -92,528    54,299   |      -93,469    54,613  |  77.1
+ * mexico_born                the Hispanic population                -137,510    16,446   |     -151,302    12,434  |  78.3
+   mexico_born                the White, non-Hispanic population     -121,847    17,759   |     -135,523    13,767  |  77.1
+
+   (* = the group's own table. Working-age-only and retirement-only splits:)
+   third_plus_nh_white        ages 0-17    111,792   ages 18-64     402,999   ages 65+    -326,580   total     188,212
+   all_native                 ages 0-17     76,957   ages 18-64     342,568   ages 65+    -324,668   total      94,856
+   all_second_gen             ages 0-17     78,155   ages 18-64     392,694   ages 65+    -309,203   total     161,647
+   mexican_second_gen         ages 0-17    -13,381   ages 18-64     146,266   ages 65+    -319,299   total    -186,415
+   mexican_third_plus_selfid  ages 0-17     27,989   ages 18-64     183,379   ages 65+    -324,250   total    -112,882
+   mexico_born                ages 0-17      4,454   ages 18-64     104,956   ages 65+    -246,920   total    -137,510
