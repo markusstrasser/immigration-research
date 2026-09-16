@@ -88,3 +88,7 @@ This comparison **does not identify a Biden-policy effect**. Entry cohorts diffe
 - Search record: official Census ACS annual schedules and August2026 update; SIPP2025 release/datasets; BLS calendar/foreign-born annual release; RPC archives/current reports; EOIR FOIA library; OHSS/CBP official routes. Local discovery inspected the relevant fiscal Census/SIPP/IPUMS/origin directories and corpus ACS/CPS/EOIR entries. No advocacy-origin summary was used to establish an official count.
 
 Quantitative self-check: units and reference years explicit; resident stock separated from admissions/events; denominator and selection failures named; unavailable rows are not zero; neither ethnic labels nor origin counts proxy for beliefs; no causal/welfare inference is promoted from this availability screen. LLM-assisted selection may still miss relevant sources. No commits were created.
+
+## Revisions
+
+- **2026-09-16 — `sources` repointed; the causal raw layer is confirmed lost.** The `/Volumes/2TBPNY/projects-offload/research-sources` tree vanished from the SSD (same signature as the documented mid-August loss of `projects-offload/intel-datasets`; not in the orphans archive). `sources` now points to `/Volumes/2TBPNY/research-data`, so `sources/immigration-fiscal/data` resolves to the surviving fiscal tree and `sources/immigration-causal/data` exists but is empty. The 2024 raw ACS files remain at the corpus path above. Recovery record: `.scratch/ssd-recovery-2026-09-16.md` (session a73215f4).
