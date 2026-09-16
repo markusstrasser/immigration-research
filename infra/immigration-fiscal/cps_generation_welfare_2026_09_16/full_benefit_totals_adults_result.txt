@@ -1,0 +1,23 @@
+== Adults 25-64, $ per adult per year, ADULTS-ONLY allocation (unit taxes, transfers and children carried by the unit's adults 18+), person weights, CPS ASEC 2025 + MEPS 2024 ==
+group                                                                                            third_plus_nh_white  all_native  all_second_gen  mexican_second_gen  mexican_third_plus_selfid  mexico_born
+means-tested cash (SSI, TANF/GA)                                                                                 245         308             225                 261                        327          108
+refundable credits (EITC, ACTC)                                                                                  200         265             299                 525                        358          755
+food, WIC, school meals, energy, broadband                                                                       243         328             309                 480                        430          451
+housing subsidy (SPM capped)                                                                                      53         127             133                 120                        196          112
+public medical, MEPS transport (insurance-aware)                                                               2,567       2,840           2,696               3,219                      2,945        2,863
+= means-tested total                                                                                           3,308       3,867           3,663               4,604                      4,254        4,289
+Social Security                                                                                                1,804       1,755           1,300                 964                      1,456          729
+unemployment insurance                                                                                           118         117             131                 153                         89          103
+veterans' benefits                                                                                               516         533             380                 355                        470          105
+= contributory total                                                                                           2,439       2,405           1,811               1,472                      2,015          937
+children 5-17 per adult (adults-only allocation)                                                                0.25        0.26            0.25                0.32                       0.28         0.33
+K-12 at US average cost $17,619                                                                                4,452       4,562           4,462               5,639                      5,011        5,886
+K-12 with need weights (scenario: +25% Mex 2nd/3rd low-income, +50% Mexico-born ELL+low-income)                4,452       4,790           4,908               7,049                      6,014        8,830
+= ALL BENEFITS, K-12 at average cost                                                                          10,200      10,834           9,936              11,716                     11,280       11,113
+= ALL BENEFITS, K-12 need-weighted                                                                            10,200      11,063          10,382              13,126                     12,283       14,056
+gross modeled taxes (payroll + federal before credits + state)                                                17,537      15,975          16,926               9,522                     11,222        6,274
+benefits/taxes, average-cost K-12                                                                               0.58        0.68            0.59                1.23                       1.01         1.77
+benefits/taxes, need-weighted K-12                                                                              0.58        0.69            0.61                1.38                       1.09         2.24
+net, taxes minus benefits (need-weighted)                                                                      7,337       4,913           6,544              -3,604                     -1,061       -7,782
+
+Per-pupil current spending FY2024 (Census Table 8): US 17,619; California 20,791; Texas 12,895. Need weights are a scenario, not a measurement (cost-study EL weights range 0.08-2.0; most state formulas 0.1-0.5).
