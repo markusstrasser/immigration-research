@@ -1,0 +1,44 @@
+[DATA] Empirical positive control on ASEC 2026 variable codings
+Run 2026-09-16. Weighted counts use MARSUPWT/100, all persons.
+
+                                      pppub25.csv      pppub26.csv
+total weighted population              337,689,642      338,554,894
+foreign born (PRCITSHP in 4,5)          53,118,195       52,324,891
+born in PENATVTY == 303 (Mexico)        12,605,225       11,540,241
+both parents in US-area birth codes    240,240,978      240,118,415
+  (PEFNTVTY/PEMNTVTY in 57,60,66,69,73,78)
+either parent PENATVTY-code 303         26,634,209       25,359,556
+PEINUSYR == 28                           7,043,655        4,897,178
+PEINUSYR == 29                                   0        3,193,135
+PEINUSYR maximum observed code                  28               29
+
+Reading:
+- Country and US-area birthplace codes are UNCHANGED between the two files.
+  Mexico-born and both-parents-US-born totals move by plausible demographic
+  amounts, not by the order of magnitude a recode would produce.
+- PEINUSYR WAS RECODED. ASEC 2025 top code 28 = "2022-2024". ASEC 2026 splits
+  it: 28 = "2022-2023", 29 = "2024-2026" (new code; dictionary range 0:29).
+  analyze_cps_fiscal_2025.py defines its "foreign_born_entry_2022_2024" group
+  as PEINUSYR.eq(28). On the 2026 file that expression silently means
+  2022-2023 only and drops 3.19M recent arrivals. It must become
+  PEINUSYR.isin([28, 29]) before base.run() is pointed at ASEC 2026.
+  This group is NOT one of the six extended-ledger groups, so no number in
+  ledger_2025_vs_2026.csv is affected.
+
+Dictionary checks (asec2026_ddl_pub_full.pdf):
+  PRCITSHP  unchanged, 1-5, same labels
+  PRDTHSP   unchanged, 0:8, 1 = Mexican
+  PEHSPNON  unchanged, 1 = Yes, 2 = No
+  PRPERTYP  unchanged, -4:3, 2 = Adult civilian household member
+  PRDTRACE  present, unchanged range
+  Tax-model fields FEDTAX_AC / FEDTAX_BC / EIT_CRED / ACTC_CRD / CTC_CRD /
+  STATETAX_A / STATETAX_B / FICA all present; the refundable-credit identity
+  FEDTAX_AC = FEDTAX_BC - ACTC_CRD - EIT_CRED holds on the 2026 file (the
+  generator's gate passed).
+
+Person-file column set, pppub25.csv -> pppub26.csv:
+  added   (0): none
+  dropped (13): SPM_BBSUBVAL, M5GSAME, M5G_CBST, M5G_DIV, M5G_DSCP, M5G_MTR1,
+                M5G_MTR3, M5G_MTR4, M5G_REG, M5G_ST, I_M5G1, I_M5G2, I_M5G3
+  Only SPM_BBSUBVAL is a ledger input. The twelve M5G* fields are the
+  one-year-ago migration block and are unused here.

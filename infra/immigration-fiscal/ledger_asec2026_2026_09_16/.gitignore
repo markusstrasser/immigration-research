@@ -1,0 +1,5 @@
+*.zip
+*.parquet
+_cache/
+*.npy
+replicate_estimates.json
