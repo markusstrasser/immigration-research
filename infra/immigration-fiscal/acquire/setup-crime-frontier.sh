@@ -76,12 +76,14 @@ _fetch_browser "https://www.govinfo.gov/content/pkg/CMR-HE25-00191253/pdf/CMR-HE
 _fetch_browser "https://www.oecd.org/en/publications/international-migration-outlook-2021_29f23e9d-en/full-report/component-8.html" \
                "$CF/oecd/oecd_imo2021_ch4_fiscal_impact.html" "https://www.oecd.org/"
 
-# --- Census Annual Business Survey: owner nativity (USBORN) — API, needs DATA_GOV_API_KEY ---
-if [[ -n "${DATA_GOV_API_KEY:-}" ]]; then
-    _fetch "https://api.census.gov/data/2023/abscbo?get=NAME,NAICS2022_LABEL,OWNCHAR_LABEL,OWNPDEMP&QDESC_LABEL=USBORN&for=state:*&key=${DATA_GOV_API_KEY}" \
+# --- Census Annual Business Survey: owner nativity (USBORN) — API, needs CENSUS_API_KEY ---
+# api.census.gov runs its own key system: a data.gov key is answered with invalid_key.html
+# (checked 2026-09-16), so DATA_GOV_API_KEY never worked here.
+if [[ -n "${CENSUS_API_KEY:-}" ]]; then
+    _fetch "https://api.census.gov/data/2023/abscbo?get=NAME,NAICS2022_LABEL,OWNCHAR_LABEL,OWNPDEMP&QDESC_LABEL=USBORN&for=state:*&key=${CENSUS_API_KEY}" \
            "$CF/abs/abs_2023_owner_usborn_by_state.json" 1000
 else
-    _warn "ABS owner-nativity skipped — set DATA_GOV_API_KEY (see acquire/config.env.example)"
+    _warn "ABS owner-nativity skipped — set CENSUS_API_KEY (see acquire/config.env.example)"
 fi
 
 # --- Health: NHIS sample-adult (nativity + insurance + utilization) — small, public, verified ---
