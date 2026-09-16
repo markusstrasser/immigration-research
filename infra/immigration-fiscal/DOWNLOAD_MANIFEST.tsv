@@ -162,3 +162,5 @@ cps	optional	external/cps/asec/asec_2025_persons.json	20000000	cps_generation_we
 cps	optional	external/cps/asec/asec_2025_supp.json	8000000	cps_generation_welfare_2026_09_16/pull_cps_asec.sh	CPS ASEC 2025 supplement (HFLUNCH etc.), joined on H_SEQ+PPPOS
 cps	optional	external/cps/asec/asec_2024_persons.json	20000000	cps_generation_welfare_2026_09_16/pull_cps_asec.sh	CPS ASEC 2024 person microdata, stability check
 cps	optional	external/cps/asec/asec_2024_supp.json	8000000	cps_generation_welfare_2026_09_16/pull_cps_asec.sh	CPS ASEC 2024 supplement
+cps	optional	external/cps/asec/asec_2025_supp2.json	6000000	cps_generation_welfare_2026_09_16/pull_cps_asec_supp2.sh	CPS ASEC 2025 supplement 2 (PRDTHSP, earnings, PEMLR, poverty) for the Mexican-origin cut
+cps	optional	external/cps/asec/asec_2024_supp2.json	6000000	cps_generation_welfare_2026_09_16/pull_cps_asec_supp2.sh	CPS ASEC 2024 supplement 2
