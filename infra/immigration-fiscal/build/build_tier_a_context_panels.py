@@ -282,30 +282,64 @@ def _fetch_un_wpp() -> None:
         print(f"Wrote un_wpp_dataportal_overlay.csv ({len(rows)} rows)")
 
 
-def _fetch_wb_gdp() -> None:
-    import pandas as pd
-    import requests
+# Pinned copy of the World Bank NY.GDP.PCAP.KD responses. Delete the file to take a new vintage.
+WB_CACHE = DATA / "external" / "tier_a" / "worldbank_gdp_pcap_kd.json"
 
-    rows: list[dict] = []
-    for iso3 in ("MEX", "USA") + HANSON_ORIGINS:
-        url = (
-            f"https://api.worldbank.org/v2/country/{iso3}/indicator/NY.GDP.PCAP.KD"
-            f"?format=json&per_page=70"
-        )
-        try:
-            data = requests.get(url, timeout=30).json()
-            if not isinstance(data, list) or len(data) < 2:
+
+def _fetch_wb_gdp() -> None:
+    """World Bank GDP per capita (constant 2015 USD) per origin country.
+
+    Reads ``WB_CACHE`` when it exists and never touches the network; otherwise pulls live and
+    writes the cache, so the vintage stays fixed until the file is deleted. Before 2026-09-16
+    the pull was live-only and a warehouse rebuild silently moved ``imf_gdp_per_capita_panel``
+    from 1,409 to 1,430 rows with no input on disk to diff against.
+    """
+    import pandas as pd
+
+    countries = ("MEX", "USA") + HANSON_ORIGINS
+    raw: dict[str, list] = {}
+    if WB_CACHE.exists():
+        raw = json.loads(WB_CACHE.read_text())
+        print(f"WB GDP: pinned cache {WB_CACHE} ({len(raw)} countries)")
+    else:
+        import requests
+
+        failed: list[str] = []
+        for iso3 in countries:
+            url = (
+                f"https://api.worldbank.org/v2/country/{iso3}/indicator/NY.GDP.PCAP.KD"
+                f"?format=json&per_page=70"
+            )
+            try:
+                data = requests.get(url, timeout=30).json()
+            except Exception as exc:
+                print(f"WARN: WB GDP {iso3}: {exc}", file=sys.stderr)
+                failed.append(iso3)
                 continue
-            for item in data[1]:
-                rows.append(
-                    {
-                        "iso3": iso3,
-                        "year": int(item["date"]),
-                        "gdp_per_capita_constant_2015_usd": item["value"],
-                    }
-                )
-        except Exception as exc:
-            print(f"WARN: WB GDP {iso3}: {exc}", file=sys.stderr)
+            if not isinstance(data, list) or len(data) < 2:
+                print(f"WARN: WB GDP {iso3}: unexpected payload", file=sys.stderr)
+                failed.append(iso3)
+                continue
+            raw[iso3] = data[1]
+        if raw and not failed:
+            WB_CACHE.parent.mkdir(parents=True, exist_ok=True)
+            WB_CACHE.write_text(json.dumps(raw, sort_keys=True))
+            print(f"WB GDP: live pull cached to {WB_CACHE} ({len(raw)} countries)")
+        elif failed:
+            print(
+                f"WARN: WB GDP cache NOT written — {len(failed)} countries failed: {failed}",
+                file=sys.stderr,
+            )
+
+    rows: list[dict] = [
+        {
+            "iso3": iso3,
+            "year": int(item["date"]),
+            "gdp_per_capita_constant_2015_usd": item["value"],
+        }
+        for iso3 in countries
+        for item in raw.get(iso3, [])
+    ]
     if rows:
         df = pd.DataFrame(rows).dropna(subset=["gdp_per_capita_constant_2015_usd"])
         df = df.drop_duplicates(subset=["iso3", "year"], keep="first")
