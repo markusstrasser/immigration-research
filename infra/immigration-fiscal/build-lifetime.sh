@@ -20,6 +20,11 @@ echo "Union DuckDB:    $FISCAL_UNION_DUCKDB_PATH"
 uv run --with duckdb,pandas,openpyxl python "$ROOT/build/mine_restrictionist_full_claims.py"
 bash "$ROOT/acquire/setup-restrictionist-panels.sh"
 bash "$ROOT/acquire/setup-tier-a-labor-demography.sh"
+# CDC NVSR 72-12 life tables -> derived/lifetime/cdc_period_life_table_2021.csv (mortality anchor for
+# the lifetime NPVs; queries/life_01). Parsed here as well as in acquire/setup-lifetime.sh: the
+# 2026-09-16 rebuild on a derived root without that CSV left the table out of the warehouse.
+bash "$ROOT/scripts/fetch_cdc_life_tables.sh" \
+  || echo "WARN CDC life-table fetch/parse failed — cdc_period_life_table_2021 will be missing"
 uv run --with duckdb,pandas,openpyxl python "$ROOT/build/build_lifetime_evidence_warehouse.py"
 uv run --with duckdb,pandas python "$ROOT/build/build_source_incentive_grades.py"
 uv run --with duckdb,pandas python "$ROOT/build/load_tier_a_context_panels.py"

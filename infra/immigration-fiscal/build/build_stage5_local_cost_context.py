@@ -167,6 +167,8 @@ def load_stage5_into_duckdb(con, stage5_dir: Path) -> None:
     for table, path in paths.items():
         if path.exists():
             con.execute(f"CREATE OR REPLACE TABLE {table} AS SELECT * FROM read_csv_auto('{path}', header=true)")
+        else:
+            print(f"  ! DEGRADED: {table} not loaded — missing {path}")
 
     eoir_dir = stage5_dir.parent / "stage4" / "eoir"
     for table, fname in (
@@ -177,6 +179,10 @@ def load_stage5_into_duckdb(con, stage5_dir: Path) -> None:
         path = eoir_dir / fname
         if path.exists():
             con.execute(f"CREATE OR REPLACE TABLE {table} AS SELECT * FROM read_csv_auto('{path}', header=true)")
+        else:
+            # 2026-09-16: a rebuild on a derived root without stage4/eoir silently dropped
+            # three context tables (queries/context_09 reads eoir_pending_cases_fy).
+            print(f"  ! DEGRADED: {table} not loaded — missing {path} (run build/parse_eoir_court_pdfs.py)")
 
     has_puma_safmr = bool(
         con.execute(

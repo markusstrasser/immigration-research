@@ -9,6 +9,11 @@ export PNY_DATA_ROOT DERIVED_ROOT DUCKDB_PATH CORPUS_ROOT
 echo "DuckDB target: $DUCKDB_PATH"
 echo "Data root:     $PNY_DATA_ROOT"
 echo "Derived:       $DERIVED_ROOT"
+# EOIR court-statistics CSVs (derived/stage4/eoir) feed three context tables. Parse them here,
+# not only in acquire/setup.sh: a 2026-09-16 rebuild on a derived root without stage4/ silently
+# dropped eoir_pending_cases_fy, eoir_court_workload_historical_fy and eoir_amnesty_cases_by_state.
+uv run --with pdfplumber,pandas python "$ROOT/build/parse_eoir_court_pdfs.py" \
+  || echo "WARN EOIR PDF parse failed — the three eoir_* context tables will be missing"
 uv run --with duckdb,pandas,openpyxl python "$ROOT/build/build_immigration_warehouse.py"
 echo "=== scenario compose ==="
 uv run --with duckdb python "$ROOT/build/compose_scenario_ledger.py"
