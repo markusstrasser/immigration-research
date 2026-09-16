@@ -1,0 +1,61 @@
+
+=== MALE: jail rate (share institutionalized, 2010) by parental income percentile ===
+par_pctile     10     25     50     75     90  pooled              N
+race                                                                
+white      0.0449 0.0282 0.0161 0.0081 0.0046  0.0155 5,928,000.0000
+black      0.1481 0.1107 0.0725 0.0406 0.0335  0.1033 1,008,600.0000
+hisp       0.0431 0.0302 0.0190 0.0111 0.0072  0.0290 1,069,500.0000
+asian      0.0049 0.0093 0.0087    NaN    NaN  0.0061   190,400.0000
+natam      0.0810 0.0536 0.0430 0.0267    NaN  0.0576    55,050.0000
+
+--- ratio to white (male) ---
+par_pctile    10    25    50    75    90  pooled
+race                                            
+white      1.000 1.000 1.000 1.000 1.000   1.000
+black      3.298 3.921 4.502 4.994 7.271   6.650
+hisp       0.961 1.068 1.180 1.360 1.564   1.865
+asian      0.108 0.331 0.539   NaN   NaN   0.395
+natam      1.803 1.898 2.671 3.287   NaN   3.704
+
+=== FEMALE: jail rate (share institutionalized, 2010) by parental income percentile ===
+par_pctile     10     25     50     75     90  pooled              N
+race                                                                
+white      0.0068 0.0038 0.0024 0.0010 0.0006  0.0024 5,918,500.0000
+black      0.0073 0.0053 0.0054 0.0023    NaN  0.0061 1,107,500.0000
+hisp       0.0036 0.0026 0.0024    NaN    NaN  0.0027   966,700.0000
+asian         NaN    NaN    NaN    NaN    NaN     NaN         0.0000
+natam      0.0186    NaN    NaN    NaN    NaN  0.0148    19,800.0000
+
+--- ratio to white (female) ---
+par_pctile    10    25    50    75    90  pooled
+race                                            
+white      1.000 1.000 1.000 1.000 1.000   1.000
+black      1.081 1.390 2.290 2.339   NaN   2.528
+hisp       0.532 0.681 1.008   NaN   NaN   1.138
+asian        NaN   NaN   NaN   NaN   NaN     NaN
+natam      2.752   NaN   NaN   NaN   NaN   6.189
+
+=== Decomposition: how much of the raw Hispanic-white male gap is parental income? ===
+[male] common-support percentiles: 97/100
+[male] white=0.0161  hisp_raw=0.0290 (ratio 1.80x)  hisp_reweighted_to_white_parinc=0.0196 (ratio 1.22x)
+[male] raw gap=1.29pp  income-adjusted gap=0.35pp  share of gap explained by parental income = 72.6%
+[male] black: raw 0.1033 (6.65x) -> reweighted 0.0659 (4.24x); 42.7% of gap explained  [white ref 0.0155, 100 cells]
+[male] asian: raw 0.0061 (0.26x) -> reweighted 0.0059 (0.25x); -1.5% of gap explained  [white ref 0.0233, 64 cells]
+[male] natam: raw 0.0576 (2.60x) -> reweighted 0.0466 (2.10x); 31.0% of gap explained  [white ref 0.0221, 69 cells]
+[female] common-support percentiles: 68/100
+[female] white=0.0035  hisp_raw=0.0027 (ratio 0.79x)  hisp_reweighted_to_white_parinc=0.0024 (ratio 0.68x)
+[female] raw gap=-0.07pp  income-adjusted gap=-0.11pp  share of gap explained by parental income = -50.2%
+[female] black: raw 0.0061 (2.02x) -> reweighted 0.0045 (1.49x); 52.2% of gap explained  [white ref 0.0030, 80 cells]
+[female] asian: SUPPRESSED (only 0 usable percentile cells) — skipped
+[female] natam: raw 0.0148 (2.15x) -> reweighted 0.0144 (2.08x); 5.9% of gap explained  [white ref 0.0069, 19 cells]
+
+=== Hispanic/white male ratio gradient (flat or shrinking?) ===
+  p10: white=0.0449 hisp=0.0431 ratio=0.96x  gap=-0.18pp
+  p25: white=0.0282 hisp=0.0302 ratio=1.07x  gap=0.19pp
+  p50: white=0.0161 hisp=0.0190 ratio=1.18x  gap=0.29pp
+  p75: white=0.0081 hisp=0.0111 ratio=1.36x  gap=0.29pp
+  p90: white=0.0046 hisp=0.0072 ratio=1.56x  gap=0.26pp
+
+=== Comparison with ACS 2023/2024 US-born Mexican-origin vs white men 18-39 ===
+  ACS memo ratios: 1.72x (2023) and 1.94x (2024) institutionalised.
+  OI 2010 Census, cohort b.1978-83 (ages 27-32), Hispanic/white male pooled: 1.87x; at equal parental income: see reweighted ratio above.
