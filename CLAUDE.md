@@ -55,16 +55,12 @@ Research & evidence:
 - **bio-verify** — bio/medical/scientific claim verification with evidence hierarchy
 - **analyze** — causal/DAG/hypotheses/forensic analysis modes
 - **observe** — session retrospectives, architectural patterns, supervision audits
-- **review** — adversarial review (model-review, verify, close)
+- **critique** — adversarial review of plans, findings and closeouts (model, verify, close)
+- **code-review** — review of a diff, PR or change against the code
 - **brainstorm** — divergent ideation via systematic perturbation
-- **negative-space-sweep** — discover what's MISSING from an optimized system
 - **de-slop** — adversarial editor for AI-generated prose patterns
 
 Workflow & project:
-- **upgrade** — full codebase audit and improvement
-- **improve** — harvest findings, suggest skills, maintain quality
-- **goals** — project goals and constitutional principles elicitation
-- **constitution** — constitution authoring for projects
 - **entity-management** — versioned knowledge management for entities
 - **trending-scout** — scan for new AI/agent developments
 
