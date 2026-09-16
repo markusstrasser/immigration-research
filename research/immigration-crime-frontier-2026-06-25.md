@@ -46,6 +46,8 @@ The checked studies do not establish a general US immigrant crime wave. They als
 
 - **2026-09-05 — Rebuilt the frontier around sampling units and observable outcomes** See [material-inference repair](../decisions/2026-09-05-material-inference-repair.md). Historical revision entries above describe the earlier state, including conclusions superseded here.
 
+- **2026-09-16 — Generations section positively supported; NIJ 310356 paraphrase flagged.** Inkpen 2024 (NLSY97) finds no significant difference in time to first arrest between the Mexican-origin second generation and third/fourth-plus non-Hispanic whites, and Bersani & Pittman 2019 find children statistically similar across generations within NLSY79 families, so "second-generation excess over third-plus is not established" is now a supported finding for US survey data, not only a caution. NIJ 310356's summary of Bersani et al. 2018 (undocumented youth: longer time to first arrest, less re-offending) reports the self-report half of that paper; its official-record half shows higher re-arrest for the undocumented. See [generational crime mechanisms](immigration-generational-crime-mechanisms-2026-09-16.md).
+
 ## Historical quoted strings retained verbatim
 
 These quotations, hypotheses and labels appeared in the June working memo. They are retained for provenance; they are not a renewed endorsement or certification as primary-source quotations. Current conclusions and source scope are above.
