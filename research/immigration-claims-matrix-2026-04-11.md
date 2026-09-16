@@ -65,3 +65,5 @@ This is a quick **defensible claim set** after the Smith/Decker/Friedman audit a
 | Date | Change | Trigger |
 |---|---|---|
 | 2026-06-16 | Scoped row 5 from school burden to linked-household child exposure; replaced broad `FALSE` labels with `OVERBROAD` / incomplete verdicts; updated the verdict envelope for the June SIPP-style federal proxy and withheld origin school/net rows. | `research/immigration-conclusion-audit-running-fixes.md`, `research/immigration-school-burden-per-adult-2026-06-15.md`, and named Smith/Decker/Friedman audits. |
+
+- **2026-09-16 — pointer, no content change.** This memo predates the 2026-09-05 material inference repair and was not re-audited then; treat its figures and framing as pre-repair. Current state: [immigration-clarity-update-2026-09-05.md](immigration-clarity-update-2026-09-05.md), [immigration-material-repair-report-2026-09-05.md](immigration-material-repair-report-2026-09-05.md). [Decision](../decisions/2026-09-05-material-inference-repair.md).

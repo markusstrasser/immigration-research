@@ -196,3 +196,7 @@ If we want a real incidence estimate rather than a proxy ranking, the next build
 The clean statement is:
 
 Low-skill immigration is not one object. In the current warehouse, the strongest candidates for a `federal better / state-local worse` split are smaller low-skill cells from origins like Cuba, Brazil, Dominican Republic, Venezuela, and some East/South Asian streams, while the largest low-skill streams from Mexico and northern Central America look more mixed or outright locally negative because child intensity and destination-cost exposure are materially higher.
+
+## Revisions
+
+- **2026-09-16 — pointer, no content change.** This memo predates the 2026-09-05 material inference repair and was not re-audited then; treat its figures and framing as pre-repair. Current state: [immigration-cohort-clarity-2026-09-05.md](immigration-cohort-clarity-2026-09-05.md), [immigration-fiscal-account-2024-2026-09-05.md](immigration-fiscal-account-2024-2026-09-05.md). [Decision](../decisions/2026-09-05-material-inference-repair.md).

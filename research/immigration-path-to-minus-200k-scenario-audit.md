@@ -225,3 +225,7 @@ If you want to argue for `-$200k`, the intellectually honest way is:
 4. admit that the number depends more on accounting choices and weakly measured long-tail channels than on direct observation.
 
 That does not make the scenario useless. It makes it what it is: a high-negative stress test, not an unbiased estimate.
+
+## Revisions
+
+- **2026-09-16 — pointer, no content change.** This memo predates the 2026-09-05 material inference repair and was not re-audited then; treat its figures and framing as pre-repair. Current state: [immigration-fiscal-account-2024-2026-09-05.md](immigration-fiscal-account-2024-2026-09-05.md), [immigration-conceptual-audit-2026-09-05.md](immigration-conceptual-audit-2026-09-05.md). [Decision](../decisions/2026-09-05-material-inference-repair.md).

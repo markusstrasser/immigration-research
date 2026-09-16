@@ -168,3 +168,7 @@ Current read:
 2. The strongest current result is an incidence split, not a scalar verdict.
 3. The economist-survey consensus style claim `average citizen better off` is too coarse.
 4. The project is currently strongest on `which cells look locally burden-heavy` and weakest on `a fully specified federal ledger` and `precise local school-cost magnitude`.
+
+## Revisions
+
+- **2026-09-16 — pointer, no content change.** This memo predates the 2026-09-05 material inference repair and was not re-audited then; treat its figures and framing as pre-repair. Current state: [immigration-fiscal-account-2024-2026-09-05.md](immigration-fiscal-account-2024-2026-09-05.md), [immigration-conceptual-audit-2026-09-05.md](immigration-conceptual-audit-2026-09-05.md). [Decision](../decisions/2026-09-05-material-inference-repair.md).

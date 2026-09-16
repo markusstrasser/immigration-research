@@ -208,3 +208,7 @@ If you want a thorough but honest state/local answer from the current evidence s
 - `CA` looks materially lower in the current direct-budget evidence, around **`$1.5B` gross** and **`$0.35B` net** in the illustrative ledger. [SOURCE: `sources/immigration-fiscal/data/derived/state_local_example_ledgers.csv`]
 
 That is the main factual result: **local costs are real, but they are not evenly distributed and they are strongly shaped by state policy and institutional response.** [INFERENCE]
+
+## Revisions
+
+- **2026-09-16 — pointer, no content change.** This memo predates the 2026-09-05 material inference repair and was not re-audited then; treat its figures and framing as pre-repair. Current state: [immigration-local-cost-incidence-2026-09-05.md](immigration-local-cost-incidence-2026-09-05.md). [Decision](../decisions/2026-09-05-material-inference-repair.md).

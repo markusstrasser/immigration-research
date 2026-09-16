@@ -189,3 +189,7 @@ The right adversarial conclusion is:
 3. EDFacts initiative and CCD handbook. [SOURCE: https://www.ed.gov/data/edfacts-initiative] [SOURCE: https://nces.ed.gov/StatProg/handbook/ccd.asp]
 4. HUD CHAS and SAFMR pages. [SOURCE: https://www.huduser.gov/portal/datasets/cp.html] [SOURCE: https://www.huduser.gov/portal/datasets/fmr/smallarea/index.html]
 5. AHS, LEHD LODES, BEA RPP, FHFA HPI, IRS SOI migration, SIPP, ORR. [SOURCE: https://www.census.gov/programs-surveys/ahs.html] [SOURCE: https://lehd.ces.census.gov/data/#lodes] [SOURCE: https://www.bea.gov/data/prices-inflation/regional-price-parities-state-and-metro-area] [SOURCE: https://www.fhfa.gov/house-price-index] [SOURCE: https://www.irs.gov/statistics/soi-tax-stats-migration-data] [SOURCE: https://www.census.gov/programs-surveys/sipp.html] [SOURCE: https://acf.gov/archive/orr/data/refugee-arrival-data]
+
+## Revisions
+
+- **2026-09-16 — pointer, no content change.** This memo predates the 2026-09-05 material inference repair and was not re-audited then; treat its figures and framing as pre-repair. Current state: [immigration-redteam-2026-06-25.md](immigration-redteam-2026-06-25.md), [immigration-material-repair-report-2026-09-05.md](immigration-material-repair-report-2026-09-05.md). [Decision](../decisions/2026-09-05-material-inference-repair.md).
