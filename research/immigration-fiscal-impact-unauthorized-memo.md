@@ -149,7 +149,7 @@ Senate Budget Committee testimony, September 2023.
 ### Taxes paid (revenue side)
 | Category | Estimate | Source |
 |----------|----------|--------|
-| Payroll taxes (FICA) | 50-75% of unauthorized workers pay via ITIN or mismatched SSN | [TRAINING-DATA — widely cited, needs verification] |
+| Payroll taxes (FICA) | 44% of unauthorized workers (3.1M of 7.0M, 2010) paid payroll tax, 1.8M of them on a mismatched SSN; 56% worked underground. The earlier "50-75% pay" line was wrong against SSA's own accounting (corrected 2026-09-16) | [SOURCE: SSA OCACT Actuarial Note 151 (2013) as restated in CRS IF10820 (2018)] |
 | SSA Earnings Suspense File | ~$13B/year in wages with no-match SSNs | [TRAINING-DATA — SSA actuary reports] |
 | Effective state/local tax rate | ~8% for unauthorized immigrants | [TRAINING-DATA — ITEP estimates] |
 | ITIN filing (income tax) | ~4.4M individual tax returns filed with ITINs (2015) | [TRAINING-DATA — IRS data] |
