@@ -35,3 +35,10 @@ Source G3/G4+ counts212/189 reproduce; explicit own/parent/grandparent consisten
 `rates.csv` preserves endpoint-specific and common-sample rates. `contrasts.csv` records contrasts with the asymmetric Mexican-grandparent comparison explicitly named. `source_to_strict_counts.csv`, `composition.csv`, `subgroup_rates.csv` expose exclusions and age/sex heterogeneity. `audit.json` includes source/script hashes, counts, definitions and endpoint comparisons. No design-based national confidence intervals are claimed for these unweighted quota-sample contrasts.
 
 Independent read-only review checked the raw questions against the held questionnaire/codebook, independently reconstructed the rows and events, verified the juvenile-inclusive outcome and structural skips, and reproduced the source hash. No consequential coding defect was found. [Review disposition](../../../notes/immigration-construct-review-2026-09-17.md).
+# Joint age/sex follow-up, September 17, 2026
+
+`joint_standard.py` uses the same strict histories, valid education and ages 25–40. It holds one pooled six-cell age-by-sex distribution fixed for both generation groups and both sample modes (education endpoint alone, or common valid crime endpoints). It checks all source credential frequencies against the codebook, nonempty cells, prior history counts, and an independent respondent-weight implementation. Outputs live in ignored `derived/joint_standard/`.
+
+Run: `uv run --no-project python3 infra/immigration-fiscal/iimmla_sensitivity_2026_09_17/joint_standard.py`.
+
+Education-only standardized BA rates are G3 24.684% and G4+ 15.164% (n=152/129); the −9.520pp contrast remains local, unweighted and cross-sectional. No national confidence interval is claimed.
