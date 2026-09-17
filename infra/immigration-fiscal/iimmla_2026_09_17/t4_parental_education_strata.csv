@@ -1,0 +1,10 @@
+group,parent_educ,n,arrested_n,arrested_pct,incarcerated_n,incarcerated_pct,ba_plus_n,ba_plus_pct,no_hs_n,no_hs_pct,any_welfare_n,any_welfare_pct,employed_n,employed_pct
+Mexican 2nd,<HS,182,182,15.9,182,12.1,182,10.4,182,25.8,182,36.8,174,65.5
+Mexican 2nd,HS/voc,193,193,16.1,193,8.3,193,20.7,193,16.1,193,28.5,185,78.4
+Mexican 2nd,SomeColl+,130,130,15.4,130,10.0,130,25.4,130,8.5,130,19.2,130,74.6
+Mexican 3rd+,<HS,45,45,35.6,45,20.0,45,6.7,45,33.3,45,31.1,41,68.3
+Mexican 3rd+,HS/voc,177,177,23.7,177,13.6,177,11.3,177,22.0,177,21.5,175,73.7
+Mexican 3rd+,SomeColl+,160,160,22.5,160,12.5,160,27.5,160,4.4,159,16.4,159,76.1
+White NH 3rd+,<HS,7,7,57.1,7,28.6,7,0.0,7,71.4,7,14.3,7,57.1
+White NH 3rd+,HS/voc,109,109,23.9,109,17.4,109,33.0,109,14.7,109,19.3,108,70.4
+White NH 3rd+,SomeColl+,282,282,17.4,282,7.1,282,50.0,282,4.6,282,7.1,279,75.6

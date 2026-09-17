@@ -1,0 +1,5 @@
+group,n_total,arrested_n,arrested_pct,incarcerated_n,incarcerated_pct,no_hs_n,no_hs_pct,ba_plus_n,ba_plus_pct,medicaid_full_n,medicaid_full_pct,tanf_full_n,tanf_full_pct,any_welfare_n,any_welfare_pct,any_welfare_asked_n,any_welfare_asked_pct,employed_n,employed_pct,owns_home_n,owns_home_pct,inc_ge30k_n,inc_ge30k_pct,intermarried_n,intermarried_pct,inc_median_mid$,intermar_mex_n,intermar_mex_pct
+Mexican 2nd,553,553,17.4,553,11.2,553,19.0,553,16.8,545,25.7,551,14.2,552,29.7,349,47.0,534,71.5,552,25.4,524,29.8,260,17.7,16000.0,260,28.5
+"Mexican 3rd+ (self-ID, all)",401,401,25.4,401,15.0,401,18.5,401,16.7,397,18.6,400,13.0,400,21.8,218,39.9,394,73.4,401,29.4,386,34.5,208,38.9,25000.0,208,46.6
+Mexican 3rd (>=1 FB grandparent),212,212,30.2,212,15.6,212,16.0,212,19.3,209,15.3,212,10.4,212,19.3,102,40.2,209,77.5,212,31.1,204,38.2,110,45.5,25000.0,110,50.9
+Mexican 4th+ (no FB grandparent),189,189,20.1,189,14.3,189,21.2,189,13.8,188,22.3,188,16.0,188,24.5,116,39.7,185,68.6,189,27.5,182,30.2,98,31.6,16000.0,98,41.8
