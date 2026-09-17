@@ -8,6 +8,8 @@ Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [m
 
 ## Core State
 
+Latest completed collection analysis: [organized surveys and conclusions](immigration-organized-surveys-analysis-2026-09-17.md), with [NLS parent reconstruction](immigration-nlsy97-parent-linkage-2026-09-17.md), [Pew generations and denominators](immigration-pew-generation-denominators-2026-09-17.md), and [public LNS author replications](immigration-lns-public-replications-2026-09-17.md). These update the earlier audit below (ladder112–114). [Named local library](../infra/immigration-fiscal/new_datasets_2026_09_17/library/README.md) accounts for the downloads and their duplicates.
+
 Latest supplied-data audit: [immigration-new-datasets-and-conclusions-2026-09-17.md](immigration-new-datasets-and-conclusions-2026-09-17.md) covers all13 files, valid joins, Pew ancestry selection, NLS export gaps and recovered outcomes, GSS coding repairs, and corrections to CILS/IIMMLA floor/parity interpretations (ladder107–111).
 
 | File | Topic | Consult before |

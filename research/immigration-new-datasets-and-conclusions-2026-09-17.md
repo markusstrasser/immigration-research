@@ -161,4 +161,6 @@ No new net-fiscal balance, crime-cost total, genetic explanation or national cau
 
 ## Revisions
 
+- 2026-09-17, completed analysis — [New decision](../decisions/2026-09-17-separate-family-history-and-attitude-estimands.md) and [collection synthesis](immigration-organized-surveys-analysis-2026-09-17.md): main-interview parent links reduce NLS detailed unresolved history7,759→3,266; the original supplemental-only missingness is not general public-data unavailability. Seven Pew surveys are now substantively analyzed; the earlier58.67% partisan estimate uses valid composite responses, while all respondents gives55.86%. Same-base partisan denominators reverse the G1/G2 ordering. The ICPSR account restriction is now known from the browser report; three separately registered public author projections add limited LNS microdata but do not complete the original release. Earlier paragraphs remain the dated initial audit.
+
 - 2026-09-17 — [Decision](../decisions/2026-09-17-family-history-data-and-inference-audit.md): qualify ladder83/87/104–106, preserve unknown parent branches, and separate ancestry-inclusive comparisons from self-ID samples and cross-study estimands.

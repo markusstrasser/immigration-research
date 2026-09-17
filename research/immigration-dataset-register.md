@@ -349,7 +349,30 @@ Current organized collection: [named library and original-name map](../infra/imm
 
 Common acquisition record: [ACQUIRED.md](../infra/immigration-fiscal/new_datasets_2026_09_17/ACQUIRED.md) and [SHA-256/member manifest](../infra/immigration-fiscal/new_datasets_2026_09_17/manifest.json). **Raw root** below means `infra/immigration-fiscal/new_datasets_2026_09_17/raw/`. Originals remain untouched in `/Users/alien/Downloads`. Every archive retains its codebooks/questionnaires alongside data where supplied; derived text, dictionaries and tables are under the lane's ignored `derived/`. Sizes below are compressed decimal MB. No raw-file redistribution license is inferred: retain the packaged Pew/ICPSR terms; BLS provides public-use NLS files. Used in the [new-data audit](immigration-new-datasets-and-conclusions-2026-09-17.md), with commands in the [lane README](../infra/immigration-fiscal/new_datasets_2026_09_17/README.md).
 
+### LNS_BRANTON_2015_V2_1 — author policy/protest derivative
+
+- Source/acquired: [Harvard Dataverse DOI10.7910/DVN/27113](https://doi.org/10.7910/DVN/27113), version2.1, retrieved September17 through the unrestricted public API. Repository metadata declares CC0 1.0; embedded notices still apply.
+- Local/size: raw root `lns_replications/branton_2015_social_protest/analysis.dta`, 1,089,708 bytes,49 variables; accompanying author do-file and source metadata. [Exact URLs, license metadata, hashes and staging map](../infra/immigration-fiscal/new_datasets_2026_09_17/lns_replications/source_manifest.json).
+- Units/variables/weight: LNS2006 respondent derivative;8,561 physical rows,349 entirely blank,8,212 nonblank,8,169 with generation. `generation`, `immpolinew`, `wt_nation_rev` revised national weight. No respondent ID; no cross-package merge.
+- Use/quirks: descriptive legalization-option table under source-defined groups. Raw parent/grandparent reconstruction absent; generation mixes citizenship with migration generation. An unexplained422-record nonblank shortfall relative to original8,634 and a published benchmark mismatch prevent calling this a reproduction of the original full study. [Analysis and primary coding evidence](immigration-lns-public-replications-2026-09-17.md).
+
+### LNS_WALLACE_2014_V3_1 — author attitudes/protest projection
+
+- Source/acquired: [Harvard Dataverse DOI10.7910/DVN/SZK4NF](https://doi.org/10.7910/DVN/SZK4NF), version3.1, September17, unrestricted API; metadata declares CC0 1.0. Same exact source manifest as above.
+- Local/size: raw root `lns_replications/wallace_2014_spatial_temporal/analysis.dta`,1,381,043 bytes; author do-file, replication codebook, original LNS questionnaire/codebook, repository metadata.
+- Units/variables/weight:8,634 rows,30 variables,8,634 unique nonmissing `respid`; first-generation indicator, several origin indicators, government-attitude items, derived party scale. **No weight**. Same N as original does not independently establish ID-set equality.
+- Use/quirks: variable availability and ID-validation target if originals later acquired. `partyid7` drops3,144 original “don't care” / “don't know/other party” cases; not a whole-sample party balance. No second-versus-third distinction. No weighted national table or fabricated matching to other derivatives. [Audit](immigration-lns-public-replications-2026-09-17.md).
+
+### LNS_PEREZ_2011_V1_0 — author language-effects derivative
+
+- Source/acquired: [Harvard Dataverse DOI10.7910/DVN/1KWH3E](https://doi.org/10.7910/DVN/1KWH3E), version1.0, September17, unrestricted API; metadata declares CC0 1.0. Author article retained for source definitions, under its own copyright.
+- Local/size: raw root `lns_replications/perez_2011_language_effects/analysis.dta`,696,494 bytes; README, variable notes, metadata and article. Exact bytes and SHA-256 governed by the source manifest.
+- Units/variables/weight:7,688 respondents from the five largest origin groups,22 variables; `second`, `third` (actually third-plus), party dummies and constructed identity/knowledge scales. Positive national `weight` exists but revised-weight status is unverified; no respondent ID.
+- Use/quirks: the all-zero party-dummy group is a documented residual, not ignorable nonresponse. The README's `noparty` label conflicts with paper/original questionnaire; paper identifies “don't care.” Mexican origin as the all-zero origin baseline is supported by the paper's five-origin restriction, unlike the Branton residual. No new weighted party finding promoted while weight vintage remains unresolved. [Audit](immigration-lns-public-replications-2026-09-17.md).
+
 ### NLSY97_GEN_CRIME_20260917 — supplied extract and separate selection basket
+
+**Later analysis status, September17:** The supplied collection is now analyzed in the [completed synthesis](immigration-organized-surveys-analysis-2026-09-17.md), including seven Pew cross-sections. The supplemental-only NLS classification is superseded by [corrected parent linkage](immigration-nlsy97-parent-linkage-2026-09-17.md): 104 extra selected source fields already held in the full archive, joined on validated PUBID. Exact provenance and request: `derived/nlsy_family/extraction.json` and `nlsy/parent_linkage_fields.NLSY97` in the intake lane. Unknown detailed family history falls7,759→3,266 without assigning unknown branches as US-born. Parent-country detail remains unavailable. No further NLS export is required. Historical source descriptions follow.
 
 - Source/acquired: user-supplied NLS Investigator export, September 17, 2026; [official access](https://www.nlsinfo.org/content/access-data-investigator).
 - Local/codebook/size: raw root `nlsy97_gen_crime_1 (9).zip`, 25.330 MB, nine members including `.csv`, `.cdb`, SAS/SPSS/Stata setup; `nlsy97_gen_crime_1.zip` is byte-identical and shares that canonical staged copy. Separate `gen_crime_2026.NLSY97`, 160,060 bytes, is a variable-selection basket, not respondent data.
