@@ -22,7 +22,7 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project --with "numpy>=2" --with "pandas>=2" 
 and reads the held CPS ASEC 2025 ZIP; nothing outside this directory is written.
 `acs_gaps.py` reads
 `/Users/alien/research-data/immigration-fiscal/data/external/acs_pums_2024_1yr/csv_pus.zip`
-(ACS 2024 1-year person PUMS, all four parts). Gate 3 needs `CENSUS_API_KEY` in
+(ACS 2024 1-year person PUMS, two parts). Gate 3 needs `CENSUS_API_KEY` in
 `../acquire/config.local.env`.
 
 ## Outputs (`derived/`, ignored)

@@ -2,8 +2,8 @@
 """ACS 2024 1-year PUMS earnings/income gaps for the ledger's comparison groups.
 
 Independent-survey replication of the CPS-based common-age wage and income gaps.
-Reads only the needed columns from the four person-file parts, applies ADJINC,
-restricts to the household population (TYPEHUGQ==1), and computes group x age-band
+Reads only the needed columns from the person-file parts, applies ADJINC,
+restricts to the household population, and computes group x age-band
 means plus common-age per-person and age-matched aggregate gaps with the 80
 replicate weights (variance 4/80 * sum((rep - full)^2)).
 
@@ -32,8 +32,12 @@ SRC_URL = "https://www2.census.gov/programs-surveys/acs/data/pums/2024/1-Year/cs
 OUT = HERE / "derived"
 
 REPS = [f"PWGTP{i}" for i in range(1, 81)]
-COLS = (["SERIALNO", "SPORDER", "PWGTP", "ST", "AGEP", "SEX", "NATIVITY", "POBP",
-         "HISP", "RAC1P", "TYPEHUGQ", "WAGP", "PINCP", "PERNP", "ADJINC", "ESR"] + REPS)
+# The 2024 1-year person PUMS names the state field STATE (not ST) and carries no
+# TYPEHUGQ column; the housing-unit/group-quarters distinction is encoded in
+# SERIALNO as the characters at positions 4:6 ("HU" or "GQ"). RELSHIPP 37/38
+# (institutionalized / noninstitutionalized group quarters) is used as a cross-check.
+COLS = (["SERIALNO", "SPORDER", "PWGTP", "STATE", "AGEP", "SEX", "NATIVITY", "POBP",
+         "HISP", "RAC1P", "RELSHIPP", "WAGP", "PINCP", "PERNP", "ADJINC", "ESR"] + REPS)
 
 CA, TX = 6, 48
 GROUPS = {
@@ -64,7 +68,12 @@ def load(zip_path: Path) -> pd.DataFrame:
             print(f"[read] {name}", flush=True)
             with z.open(name) as fh:
                 part = pd.read_csv(fh, usecols=COLS, dtype={"SERIALNO": str})
-            part = part[part.TYPEHUGQ.eq(1)]
+            part = part.rename(columns={"STATE": "ST"})
+            hu = part.SERIALNO.str.slice(4, 6).eq("HU")
+            gq_rel = part.RELSHIPP.isin([37, 38])
+            if (hu & gq_rel).any() or (~hu & ~gq_rel).any():
+                raise SystemExit("[BLOCKED] SERIALNO housing-unit flag disagrees with RELSHIPP 37/38")
+            part = part[hu]
             frames.append(part)
     d = pd.concat(frames, ignore_index=True)
     print(f"[read] household-population person records: {len(d):,}", flush=True)
@@ -140,8 +149,11 @@ def gate3(national_household_pop: float) -> dict:
     cfg = HERE.parent / "acquire/config.local.env"
     if cfg.exists():
         for line in cfg.read_text().splitlines():
-            if line.strip().startswith("CENSUS_API_KEY="):
-                key = line.split("=", 1)[1].strip().strip('"').strip("'")
+            t = line.strip()
+            if t.startswith("export "):
+                t = t[len("export "):]
+            if t.startswith("CENSUS_API_KEY="):
+                key = t.split("=", 1)[1].strip().strip('"').strip("'")
     url = "https://api.census.gov/data/2024/acs/acs1?get=NAME,B25008_001E&for=us:1"
     if key:
         url += f"&key={key}"
@@ -191,7 +203,10 @@ def main():
         "replicate_weights": 80,
         "variance": "4/80 * sum((rep - full)^2)",
         "adjinc_applied": "WAGP, PINCP, PERNP multiplied by ADJINC/1e6",
-        "domain": "TYPEHUGQ == 1 (housing unit; group quarters excluded)",
+        "domain": "SERIALNO[4:6] == 'HU' (housing unit; group quarters excluded). "
+                  "The 2024 1-year person PUMS has no TYPEHUGQ column; this flag was "
+                  "verified to agree exactly with RELSHIPP not in {37,38}.",
+        "state_field": "STATE (the 2024 file does not use ST)",
         "group_definitions": {
             "mexico_born": "POBP == 303",
             "usborn_mexican_selfid": "NATIVITY == 1 & HISP == 2",
