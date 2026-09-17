@@ -1,0 +1,26 @@
+[
+  {
+    "file": "dataverse_search.json",
+    "url": "https://dataverse.harvard.edu/api/search?q=Naturalization&type=dataset&per_page=100",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "file": "author_publications.html",
+    "url": "https://j-hai.github.io/publications/",
+    "final_url": "https://j-hai.github.io/publications/",
+    "bytes": 261743,
+    "sha256": "b27f855c51a02e3056955d23c6a0e5e0442c421b1f1e99924b9cdcc94229f99a"
+  },
+  {
+    "file": "pnas_main.html",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4611668/",
+    "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4611668/",
+    "bytes": 152537,
+    "sha256": "995dd7a2cd4b0ad234a5ef9743430f8b00273ca170b7fa57cdf71adbcbdcab99"
+  },
+  {
+    "file": "pnas_supplement.pdf",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/instance/4611668/bin/pnas.1418794112.sapp.pdf",
+    "error": "Expected PDF magic; saved unexpected response as pnas_supplement.pdf.unexpected-response.html"
+  }
+]
