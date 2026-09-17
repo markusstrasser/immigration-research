@@ -28,10 +28,27 @@ The NLS extractor streams an 8GB uncompressed CSV from the already-held sibling 
 
 Outputs:
 
+- `derived/pew_harmonized/`: seven-survey language, perceived-American-similarity and party comparisons, both Puerto Rico conventions, explicit outcome denominators and descriptive composition sensitivities. [Findings](../../../research/immigration-pew-generation-denominators-2026-09-17.md).
+- `derived/nlsy_family/`: 104 additional selected fields from the already-held full archive, corrected biological-parent links, source/conflict rows, generation assignments and descriptive outcome tables. [Findings and exact source rules](../../../research/immigration-nlsy97-parent-linkage-2026-09-17.md).
+- `raw/lns_replications/` and `derived/lns_replications/`: three freely posted author derivatives, their documentation, exact source manifest and limited weighted policy analysis. These are additional data sources, not the full ICPSR release. [Source limits](../../../research/immigration-lns-public-replications-2026-09-17.md).
 - `derived/pew/`: survey metadata/weights, direct-item generation diagnostics, weighted tables and missingness. Independent cross-sections are appended only for the documented 2015/2015–16 complementary population calculation. Both rounded 89/11 and published-count 37.8m/4.9m calibrations are retained.
 - `derived/icpsr/`: extracted documentation, parsed marginal tables and arithmetic bounds. No synthetic respondent data are created. Missing actual LNS data are DS0001 or DS0003; NYC's catalog requires a restricted-use agreement.
 - `derived/nlsy/`: selected columns, codebooks, tagset coverage, baseline archive hash, same-person join diagnostics, six descriptive tables. All participant-level derivatives remain ignored.
 - `derived/other_audit/`: independent CILS contrasts/missing-record completion bounds and IIMMLA sex-by-parental-education contrasts. Illustrative independent-binomial intervals are not survey-design population intervals.
+
+Completed substantive analysis: [collection synthesis](../../../research/immigration-organized-surveys-analysis-2026-09-17.md). Reproduce after the initial extraction above:
+
+```bash
+uv run python3 infra/immigration-fiscal/new_datasets_2026_09_17/pew/harmonize.py --lane-dir infra/immigration-fiscal/new_datasets_2026_09_17 --output-dir infra/immigration-fiscal/new_datasets_2026_09_17/derived/pew_harmonized
+uv run python3 infra/immigration-fiscal/new_datasets_2026_09_17/pew/verify_harmonized.py --output-dir infra/immigration-fiscal/new_datasets_2026_09_17/derived/pew_harmonized
+uv run python3 infra/immigration-fiscal/new_datasets_2026_09_17/nlsy/extract_family.py
+uv run python3 infra/immigration-fiscal/new_datasets_2026_09_17/nlsy/analyze_family.py
+uv run python3 infra/immigration-fiscal/new_datasets_2026_09_17/nlsy/verify_family.py
+uv run python3 infra/immigration-fiscal/new_datasets_2026_09_17/lns_replications/analyze_replications.py --input-dir infra/immigration-fiscal/new_datasets_2026_09_17/raw/lns_replications --output-dir infra/immigration-fiscal/new_datasets_2026_09_17/derived/lns_replications
+uv run python3 infra/immigration-fiscal/new_datasets_2026_09_17/organize.py
+```
+
+The LNS [source manifest](lns_replications/source_manifest.json) records all15 acquisition artifacts with public URLs, original filenames, descriptive destinations, versions, license metadata and SHA-256. To rebuild from verified downloads, use `lns_replications/stage_lns_replications.py --source-dir DOWNLOAD_ROOT --destination infra/immigration-fiscal/new_datasets_2026_09_17/raw/lns_replications`. The stager is copy-only; the manifest describes the source tree. Current staged files are already present. No NLS re-download or ICPSR account retry is needed for the completed analyses.
 
 The existing GSS/ANES lane was also repaired: GSS parental-birthplace codes 3/5/7 do not establish second generation, and unknown-generation whites must not enter either auxiliary G1–2 group. Reproduction from that lane's directory:
 

@@ -99,10 +99,24 @@ def organize(destination, downloads):
     if not request_target.exists():
         shutil.copy2(request_source, request_target)
     assert sha256(request_target) == sha256(request_source)
+    # Public author projections are separate acquisitions, not ICPSR raw releases.
+    replication_manifest = json.loads((ROOT / 'lns_replications/source_manifest.json').read_text())
+    replication_files = []
+    for item in replication_manifest['files']:
+        relative = item['destination_relative_path']
+        source = ROOT / 'raw/lns_replications' / relative
+        assert sha256(source) == item['sha256'], f'Replication source drift: {source}'
+        target = destination / 'lns-author-replications' / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if not target.exists():
+            shutil.copy2(source, target)
+        assert sha256(target) == item['sha256'], f'Library source drift: {target}'
+        replication_files.append(dict(item, library_path=str(target.relative_to(destination))))
     catalog = {"organized": "2026-09-17", "files": rows, "extracted_folder": folder_check,
                "equivalent_redownloads": equivalent,
+               "additional_public_replications": replication_files,
                "analysis_request": str(request_target.relative_to(destination)),
-               "join_rule": "NLS files join by validated respondent ID. Pew years do not join people. ICPSR held files contain no respondent data."}
+               "join_rule": "NLS files join by validated respondent ID. Pew years do not join people. Supplied ICPSR ZIPs contain no respondent data. Public LNS author derivatives remain separate; only one exposes respondent IDs."}
     (destination / "catalog.json").write_text(json.dumps(catalog, indent=2) + "\n")
     lines = ["# Immigration survey library", "", "Organized September 17, 2026. Every renamed copy is SHA-256 verified against the staged original. Originals and prior analysis paths remain intact.", "",
              "Use the NLS core export for the audited family-history/crime fields. NLS parts add columns for the same people. Pew years are independent cross-sections. Both ICPSR studies currently contain documentation only.", "",
@@ -115,6 +129,13 @@ def organize(destination, downloads):
     lines += ["", "## Equivalent later downloads", ""]
     for item in equivalent:
         lines.append(f"- `{Path(item['input']).name}` → `{item['equivalent_to']}`: {item['comparison']}. Original and staged archive retained.")
+    lines += ['', '## Additional public LNS author replications', '',
+              'These are transformed research files, not the complete ICPSR release. Only Wallace exposes respondent IDs, and it lacks a weight. Do not join the files by row order.', '',
+              '| Study | Named data | Version |', '|---|---|---|']
+    for dataset in replication_manifest['datasets']:
+        lines.append(f"| [{dataset['title']}]({dataset['landing_url']}) | [analysis.dta](lns-author-replications/{dataset['analysis_data_path']}) | {dataset['version']} |")
+    lines += ['', '[Analysis and limitations](../../../../research/immigration-lns-public-replications-2026-09-17.md).',
+              'The additional NLS parental-linkage fields are already extracted from the held full archive into `../derived/nlsy_family/`; the core ZIP alone does not contain every additional linkage field.']
     (destination / "README.md").write_text("\n".join(lines) + "\n")
     print(f"Organized {len(rows)} unique supplied file variants plus audited request in {destination}")
     print(f"Original file paths accounted for: {sum(len(r['original_inputs']) for r in rows) + len(equivalent)}; extracted folder: {folder_check['status']}")

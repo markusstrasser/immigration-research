@@ -18,6 +18,8 @@ Local ZIPs `(2)` and `(3)` contain the same ten member names and byte-identical 
 
 **Action:** stop unchanged-account download retries. Acquisition would require legitimate member-account access, separately authorized purchase, or a verified openly authorized copy from the investigators/institution. No purchase, account modification, external contact or restricted-data application is authorized or performed by this analysis. Alternative public-source checks, if any, are recorded in the analysis memo.
 
+**Additional authorized sources found:** three unrestricted Harvard Dataverse author replication packages supply actual LNS-derived records. They are now staged, hash-verified and separately analyzed: [Branton](https://doi.org/10.7910/DVN/27113), [Wallace](https://doi.org/10.7910/DVN/SZK4NF), [Perez](https://doi.org/10.7910/DVN/1KWH3E). These are transformed research projections, with consequential ID, weight and variable limits; none completes the original DS1/DS3 release. See the [replication audit](../../../research/immigration-lns-public-replications-2026-09-17.md). No unchanged-account browser retry is needed for these files, which were retrieved through their normal public APIs.
+
 ## ICPSR30302: documentation only
 
 The already-held New York second-generation study remains documentation only; its catalog specifies a restricted-data agreement. No application or additional acquisition is undertaken. [SOURCE: packaged study catalog; existing dataset register.]

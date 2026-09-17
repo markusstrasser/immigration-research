@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "created_date": "2026-09-17",
+  "purpose": "Verified local staging of three openly authorized LNS replication packages; no original DS1/DS3 acquisition and no respondent linkage.",
+  "access_method": "Ordinary public Harvard Dataverse API; unrestricted files; original Stata format requested where Dataverse ingested tabular files.",
+  "license_note": "CC0 1.0 is the repository-declared dataset license, not independent legal adjudication. It does not override separate copyright notices in embedded publications; Perez author article remains copyrighted.",
+  "reproduction_note": "Copy mode only. Saved metadata JSON was pretty-printed after parsing the public API response; its hash fixes the local verified snapshot, not wire-format bytes or a future live API response.",
+  "datasets": [
+    {
+      "study_key": "27113",
+      "directory": "branton_2015_social_protest",
+      "doi": "10.7910/DVN/27113",
+      "version": "2.1",
+      "title": "Social Protest and Policy Attitudes: The Case of the 2006 Immigrant Rallies",
+      "landing_url": "https://doi.org/10.7910/DVN/27113",
+      "repository_license": {
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "original_study": {
+        "doi": "10.3886/ICPSR20862.v6",
+        "note": "Derived from LNS 2006; not the complete original public-use release."
+      },
+      "analysis_data_path": "branton_2015_social_protest/analysis.dta"
+    },
+    {
+      "study_key": "SZK4NF",
+      "directory": "wallace_2014_spatial_temporal",
+      "doi": "10.7910/DVN/SZK4NF",
+      "version": "3.1",
+      "title": "Spatial and Temporal Proximity: Examining the Effects of Protests on Political Attitudes",
+      "landing_url": "https://doi.org/10.7910/DVN/SZK4NF",
+      "repository_license": {
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "original_study": {
+        "doi": "10.3886/ICPSR20862.v6",
+        "note": "Derived from LNS 2006; not the complete original public-use release."
+      },
+      "analysis_data_path": "wallace_2014_spatial_temporal/analysis.dta"
+    },
+    {
+      "study_key": "1KWH3E",
+      "directory": "perez_2011_language_effects",
+      "doi": "10.7910/DVN/1KWH3E",
+      "version": "1.0",
+      "title": "The Origins and Implications of Language Effects in Multilingual Surveys",
+      "landing_url": "https://doi.org/10.7910/DVN/1KWH3E",
+      "repository_license": {
+        "name": "CC0 1.0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "original_study": {
+        "doi": "10.3886/ICPSR20862.v6",
+        "note": "Derived from LNS 2006; not the complete original public-use release."
+      },
+      "analysis_data_path": "perez_2011_language_effects/analysis.dta"
+    }
+  ],
+  "files": [
+    {
+      "study_key": "27113",
+      "source_relative_path": "27113/ajps2_replication.dta",
+      "destination_relative_path": "branton_2015_social_protest/analysis.dta",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/2497904?format=original",
+      "dataset_doi": "10.7910/DVN/27113",
+      "dataset_version": "2.1",
+      "role": "participant_data",
+      "participant_level_data": true,
+      "repository_restriction": false,
+      "license": "Dataset repository declares CC0 1.0; embedded copyright notices remain applicable",
+      "bytes": 1089708,
+      "sha256": "6b8bf8a8765cc0826be778d5787878aa78a207504e0bcc74054d8440f33f25e1"
+    },
+    {
+      "study_key": "27113",
+      "source_relative_path": "27113/ajps_replication.do",
+      "destination_relative_path": "branton_2015_social_protest/analysis.do",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/2497902",
+      "dataset_doi": "10.7910/DVN/27113",
+      "dataset_version": "2.1",
+      "role": "analysis_code",
+      "participant_level_data": false,
+      "repository_restriction": false,
+      "license": "Dataset repository declares CC0 1.0; embedded copyright notices remain applicable",
+      "bytes": 4667,
+      "sha256": "4edc92f37c0ada5ffd44373d01a1d20c8be382dda3560a3a03936800cce2871d"
+    },
+    {
+      "study_key": "27113",
+      "source_relative_path": "27113-metadata.json",
+      "destination_relative_path": "branton_2015_social_protest/repository_metadata.json",
+      "source_url": "https://dataverse.harvard.edu/api/datasets/:persistentId?persistentId=doi%3A10.7910%2FDVN%2F27113",
+      "dataset_doi": "10.7910/DVN/27113",
+      "dataset_version": "2.1",
+      "role": "repository_metadata",
+      "participant_level_data": false,
+      "repository_restriction": false,
+      "license": "Public repository metadata; dataset license CC0 1.0",
+      "bytes": 16707,
+      "sha256": "01e5a458ede6394f20d404227fd6798065f054f51cb46f569869ce71f074a938"
+    },
+    {
+      "study_key": "SZK4NF",
+      "source_relative_path": "SZK4NF/LNS_Marches_AJPS_Replication_dataverse.dta",
+      "destination_relative_path": "wallace_2014_spatial_temporal/analysis.dta",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/2440401?format=original",
+      "dataset_doi": "10.7910/DVN/SZK4NF",
+      "dataset_version": "3.1",
+      "role": "participant_data",
+      "participant_level_data": true,
+      "repository_restriction": false,
+      "license": "Dataset repository declares CC0 1.0; embedded copyright notices remain applicable",
+      "bytes": 1381043,
+      "sha256": "6382200d184f8934f61bfbfbae9e3d160b8af7768963d6960fb288d918a97aad"
+    },
+    {
+      "study_key": "SZK4NF",
+      "source_relative_path": "SZK4NF/LNS_Marches_AJPS_Replication_do.do",
+      "destination_relative_path": "wallace_2014_spatial_temporal/analysis.do",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/2443569",
+      "dataset_doi": "10.7910/DVN/SZK4NF",
+      "dataset_version": "3.1",
+      "role": "analysis_code",
+      "participant_level_data": false,
+      "repository_restriction": false,
+      "license": "Dataset repository declares CC0 1.0; embedded copyright notices remain applicable",
+      "bytes": 22451,
+      "sha256": "0292696f8c55a50ba88b7a8f3c3fa515044e9ad7831c4a01515d087ce6fb654f"
+    },
+    {
+      "study_key": "SZK4NF",
+      "source_relative_path": "SZK4NF/Codebook_AJPS_Protests.pdf",
+      "destination_relative_path": "wallace_2014_spatial_temporal/replication_codebook.pdf",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/2440403",
+      "dataset_doi": "10.7910/DVN/SZK4NF",
+      "dataset_version": "3.1",
+      "role": "documentation",
+      "participant_level_data": false,
+      "repository_restriction": false,
+      "license": "Dataset repository declares CC0 1.0; embedded copyright notices remain applicable",
+      "bytes": 69319,
+      "sha256": "cdc9c571467e792493e2c6bdcfa5402f139f7827cf2918a7c2e4ffab063a795b"
+    },
+    {
+      "study_key": "SZK4NF",
+      "source_relative_path": "SZK4NF/LNS_2006_Codebook.pdf",
+      "destination_relative_path": "wallace_2014_spatial_temporal/lns_2006_codebook.pdf",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/2440404",
+      "dataset_doi": "10.7910/DVN/SZK4NF",
+      "dataset_version": "3.1",
+      "role": "documentation",
+      "participant_level_data": false,
+      "repository_restriction": false,
+      "license": "Dataset repository declares CC0 1.0; embedded copyright notices remain applicable",
+      "bytes": 2086987,
+      "sha256": "ec8c709453d3eb18394a9e88106b972ab52b862bb8f30bc388e029d4f1298316"
+    },
+    {
+      "study_key": "SZK4NF",
+      "source_relative_path": "SZK4NF/LNS_2006_Questionnaire.pdf",
+      "destination_relative_path": "wallace_2014_spatial_temporal/lns_2006_questionnaire.pdf",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/2440405",
+      "dataset_doi": "10.7910/DVN/SZK4NF",
+      "dataset_version": "3.1",
+      "role": "documentation",
+      "participant_level_data": false,
+      "repository_restriction": false,
+      "license": "Dataset repository declares CC0 1.0; embedded copyright notices remain applicable",
+      "bytes": 382536,
+      "sha256": "dd736ef75f0d69aebf8176c08da328eb75f255ba66ee99e91071737e52cb122f"
+    },
+    {
+      "study_key": "SZK4NF",
+      "source_relative_path": "SZK4NF-metadata.json",
+      "destination_relative_path": "wallace_2014_spatial_temporal/repository_metadata.json",
+      "source_url": "https://dataverse.harvard.edu/api/datasets/:persistentId?persistentId=doi%3A10.7910%2FDVN%2FSZK4NF",
+      "dataset_doi": "10.7910/DVN/SZK4NF",
+      "dataset_version": "3.1",
+      "role": "repository_metadata",
+      "participant_level_data": false,
+      "repository_restriction": false,
+      "license": "Public repository metadata; dataset license CC0 1.0",
+      "bytes": 20534,
+      "sha256": "ef051ecda193b79b00987ebb42cac21a74876c1bb0f018bb373cf32f8d2388c4"
+    },
+    {
+      "study_key": "1KWH3E",
+      "source_relative_path": "1KWH3E/replicates.dta",
+      "destination_relative_path": "perez_2011_language_effects/analysis.dta",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/2299102",
+      "dataset_doi": "10.7910/DVN/1KWH3E",
+      "dataset_version": "1.0",
+      "role": "participant_data",
+      "participant_level_data": true,
+      "repository_restriction": false,
+      "license": "Dataset repository declares CC0 1.0; embedded copyright notices remain applicable",
+      "bytes": 696494,
+      "sha256": "26f3dae30413a997eaed899beebd7faad800ceea0a2a14dcd31f90964cf0823b"
+    },
+    {
+      "study_key": "1KWH3E",
+      "source_relative_path": "1KWH3E/README.txt",
+      "destination_relative_path": "perez_2011_language_effects/README.txt",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/2299091",
+      "dataset_doi": "10.7910/DVN/1KWH3E",
+      "dataset_version": "1.0",
+      "role": "documentation",
+      "participant_level_data": false,
+      "repository_restriction": false,
+      "license": "Dataset repository declares CC0 1.0; embedded copyright notices remain applicable",
+      "bytes": 1622,
+      "sha256": "786fbed6b933c05e4ddc24a5cf79e34a9c6847c800e293a50d3bcc1fafb97821"
+    },
+    {
+      "study_key": "1KWH3E",
+      "source_relative_path": "1KWH3E/Variable codes_stata.txt",
+      "destination_relative_path": "perez_2011_language_effects/variable_codes_stata.txt",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/2299092",
+      "dataset_doi": "10.7910/DVN/1KWH3E",
+      "dataset_version": "1.0",
+      "role": "documentation",
+      "participant_level_data": false,
+      "repository_restriction": false,
+      "license": "Dataset repository declares CC0 1.0; embedded copyright notices remain applicable",
+      "bytes": 857,
+      "sha256": "a790ed5dc7be07f35c0d9e307c5288cef6af2c339f1fad57c43c530a8bc8cd8c"
+    },
+    {
+      "study_key": "1KWH3E",
+      "source_relative_path": "1KWH3E/Variable codes_mplus.txt",
+      "destination_relative_path": "perez_2011_language_effects/variable_codes_mplus.txt",
+      "source_url": "https://dataverse.harvard.edu/api/access/datafile/2299096",
+      "dataset_doi": "10.7910/DVN/1KWH3E",
+      "dataset_version": "1.0",
+      "role": "documentation",
+      "participant_level_data": false,
+      "repository_restriction": false,
+      "license": "Dataset repository declares CC0 1.0; embedded copyright notices remain applicable",
+      "bytes": 1608,
+      "sha256": "1c39985c6505a4ab551ade51c071b5d74fd29f8f4b2f468a22d98a7027c87acd"
+    },
+    {
+      "study_key": "1KWH3E",
+      "source_relative_path": "1KWH3E/article.pdf",
+      "destination_relative_path": "perez_2011_language_effects/author_article.pdf",
+      "source_url": "https://eoperez.com/wp-content/uploads/2021/12/perez_origins-and-implications-of-language-effects.pdf",
+      "dataset_doi": "10.7910/DVN/1KWH3E",
+      "dataset_version": "1.0",
+      "role": "author_article",
+      "participant_level_data": false,
+      "repository_restriction": null,
+      "license": "Copyright The Author 2011; openly posted author copy; no CC0 assertion",
+      "bytes": 602677,
+      "sha256": "2253cea2cb25f30d6b0ee63ff6152639ae6ad3887cf1f59d28234fe7c1c27cf5"
+    },
+    {
+      "study_key": "1KWH3E",
+      "source_relative_path": "1KWH3E-metadata.json",
+      "destination_relative_path": "perez_2011_language_effects/repository_metadata.json",
+      "source_url": "https://dataverse.harvard.edu/api/datasets/:persistentId?persistentId=doi%3A10.7910%2FDVN%2F1KWH3E",
+      "dataset_doi": "10.7910/DVN/1KWH3E",
+      "dataset_version": "1.0",
+      "role": "repository_metadata",
+      "participant_level_data": false,
+      "repository_restriction": false,
+      "license": "Public repository metadata; dataset license CC0 1.0",
+      "bytes": 23048,
+      "sha256": "3d61230c930b88840c8cec420f25a0c7726aad3683f3cdf7cb781e359529c502"
+    }
+  ]
+}
