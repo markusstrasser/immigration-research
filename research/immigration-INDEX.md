@@ -8,6 +8,8 @@ Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [m
 
 ## Core State
 
+Consistent accounting and raw histories: [all-age fiscal and later-generation findings](immigration-all-age-and-lineage-findings-2026-09-17.md) rebuilds the expanded account on one population with CPS/MEPS uncertainty, tests fixed-budget attribution and common ages, and reconstructs IIMMLA generations/outcomes. Large benchmark shortfalls persist; absolute partial balances, allocation effects and outcome-specific generation differences are reported separately (ladder 123–124).
+
 All-age claim audit: [fiscal benchmark gaps, remittances and later generations](immigration-aggregate-and-generation-audit-2026-09-17.md) reproduces the $212bn/$153bn partial-account differences, exposes their positive absolute balance, and corrects the remittance ceiling and incompatible ancestry definitions.
 
 Country comparisons: [five-year LATAM economic comparison and dataset expansion](immigration-latam-benchmark-comparison-2026-09-17.md) uses explicit birthplace benchmarks, first/second generations, common age/sex standards and survey uncertainty; distinguishes measured economic gaps from crime, trust, fiscal and genetic claims.
