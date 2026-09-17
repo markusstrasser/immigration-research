@@ -156,3 +156,24 @@ The claim "importing ethno-collectivist groups does not turn them into individua
 Two limits stand. First, the thermometer gap is a *level* difference with no generational slope, but the whites' baseline is itself unusual: white non-Hispanic net in-group warmth of −1.2 is historically anomalous, having fallen from clearly positive values before the mid-1990s [SOURCE: https://emilkirkegaard.dk/en/2025/05/american-race-relations-1964-2024/, which computes the 1964-2024 ANES series and shows whites reaching zero in 2020]. So the gap can be described either as Hispanics staying ethnocentric or as whites having stopped, and the data alone do not adjudicate which side moved. That is the [FRAMING-SENSITIVE] fork in the whole question. Second, the ethnic-attrition caveat from the GSS section applies identically here and biases the third generation toward looking less converged than the true lineage. [INFERENCE]
 
 [GAP] I did not fit the adjusted models (age, education, year) on ANES, so the thermometer result is unadjusted while the GSS trust result is adjusted. A re-dispatch should run the ANES net-warmth regression with the same covariates before the affect and trust findings are compared directly.
+
+## Adjusted models (added 2026-09-17)
+
+Closes the [GAP] left above, so the ANES affect result is now comparable to the adjusted GSS trust result. Weighted least squares of each outcome on group dummies (reference non-Hispanic white third-plus generation) plus age, age-squared, a harmonized five-band education variable and a 2024 dummy; cluster-robust SEs on year by stratum by variance unit. Script `anes_adj.py`, output `anes_gen_adjusted.csv`.
+
+Education needed harmonizing because the two waves use different scales: 2020 `V201510` is an 8-level scale and 2024 `V241463` is a 16-level scale running from "less than 1st grade". Both are collapsed to less-than-high-school, high-school graduate, some college or associate, bachelor's, and graduate or professional. Age is `V201507x` in 2020 and `V241458x` in 2024, both top-coded at 80. [SOURCE: `cb_2020.txt`, `cb_2024.txt`, extracted from the shipped codebook PDFs]
+
+**Gate passes.** Every unadjusted coefficient reproduces the corresponding difference of pooled means in `anes_gen_results.csv`; the largest deviation is 0.0007, against a 0.1 tolerance [SOURCE: `anes_adj.py` gate output].
+
+Net in-group warmth, coefficients versus non-Hispanic white third-plus generation:
+
+| Group | Unadjusted | Adjusted |
+|---|---|---|
+| Hispanic G1 | +12.88 (2.18) | +13.40 (2.24) |
+| Hispanic G2 | +16.49 (1.78) | +14.09 (1.83) |
+| Hispanic G3+ | +13.52 (1.53) | +12.39 (1.60) |
+| NH white G1-2 | +0.44 (0.84) | +1.30 (0.91) |
+
+n = 9,386 unadjusted and 8,836 adjusted.
+
+**The generational pattern does not change.** Adjustment shaves the second-generation peak by about two points but leaves all three Hispanic generations between +12 and +14 with no downward slope, so the absence of convergence in group affect is not an artifact of age or education composition. The same holds for the two policy items in `anes_gen_adjusted.csv`: immigration restriction still converges monotonically (−.195, −.140, −.017) while support for guaranteed jobs becomes *flatter* under adjustment (+0.82, +0.84, +0.83), which strengthens rather than weakens the GSS redistribution finding.
