@@ -89,3 +89,70 @@ n = 970 / 499 / 594 / 9,886. The raw series looks like convergence, closing roug
 1. Berkeley SDA (https://sda.berkeley.edu/) hosts ANES and GSS with a web tabulation backend; check whether the ANES 2020/2024 time series can be tabulated there without a login. That would deliver item 1.
 2. ANES account registration is operator-gated. If the operator creates one, the 2020 variables to pull are the thermometers plus `V201549x` (Hispanic origin) and the birthplace/parental-nativity block near `V201553`-`V201555`, confirmed against the codebook before use.
 3. Add a Mexican-origin-only cut (`hispanic==2`) to match the repo's central question, and a period interaction to test whether the generational gradient itself moved after 2016.
+
+---
+
+# ANES section (added 2026-09-17): item 1 delivered
+
+**Verdict on item 1: the X claim SURVIVES on the thermometer measure.** The Hispanic in-group premium does not shrink across generations. Net warmth toward Hispanics minus whites is +11.7 in the first generation, +15.3 in the second and +12.3 in the third-plus, against −1.2 for non-Hispanic whites. No generational trend, and every Hispanic cell is more than ten points above the white baseline. Meanwhile the same respondents' *immigration policy* views converge toward the white baseline, exactly as in the GSS. Affect and policy move apart, which is the central finding of this lane.
+
+## Variable names, read from the codebooks
+
+Extracted with `pypdf` from the shipped user-guide codebooks (`cb_scan.py`, output in `cb_2020.txt` / `cb_2024.txt`). Not guessed.
+
+| Concept | ANES 2020 | ANES 2024 |
+|---|---|---|
+| Hispanic origin summary | `V201558x` (1 Mexican, 2 Puerto Rican, 3 other Hispanic, 4 type undetermined, 7 not Hispanic) | `V241512x` |
+| Race/ethnicity summary | `V201549x` (1 = white non-Hispanic) | `V241501x` |
+| Respondent birthplace | `V201554` "RS: BORN US, PUERTO RICO, OR SOME OTHER COUNTRY" (1 US state/DC, 2 Puerto Rico, 3 other US territory, 4 another country) | `V241507` |
+| Parents' nativity | `V201553` "NATIVE STATUS OF PARENTS" (1 both born in US, 2 one born in US, 3 both born in another country) | `V241506` |
+| Thermometer: Hispanics | `V202479` | `V242515` |
+| Thermometer: whites | `V202482` | `V242518` |
+| Immigration levels | `V202232` (1 increased a lot to 5 decreased a lot) | `V242227` |
+| Guaranteed jobs/income 7-point | `V201255` (1 govt should see to jobs, 7 each person on own) | `V241252` |
+| Post-election full-sample weight | `V200010b` | `V240107b` |
+| Variance unit / stratum | `V200010c` / `V200010d` | `V240107c` / `V240107d` |
+
+[SOURCE: `raw/anes_timeseries_2020_csv_20220210/anes_timeseries_2020_userguidecodebook_20220210.pdf` and the 2024 equivalent dated 2026-05-19]
+
+Generation coding: G1 = born in another country (`born==4`); G2 = US-born or US territory with at least one foreign-born parent (`par` in {2,3}); G3+ = US-born with both parents US-born (`par==1`). Note that Puerto Rico-born respondents are US-born here, which is the correct citizenship treatment but means Puerto Rican migrants land in G1's conceptual slot only if their parents were also foreign-born. [INFERENCE] Thermometers kept only on 0-100; negative codes are refusals and missing-interview flags. Weighted means with cluster-robust SEs on stratum and variance unit. Script `anes_gen.py`, output `anes_gen_results.csv` (per-item, per-year and pooled).
+
+## Gate: white-to-white thermometer
+
+My computed weighted mean among non-Hispanic white respondents, ANES 2020, is **70.9** (SE 0.39, n = 5,152). The published replication figure is **71.03** (SE 0.40, n = 5,157 in the subpopulation) from Zigerell's ANES 2020 Stata run, which uses the identical variables and `svyset [pw=V200010b]` [SOURCE: https://www.ljzigerell.com/wp-content/uploads/2021/03/ANES-2020-TS-How-racial-groups-rate-each-other.pdf]. Difference 0.13 points. **Gate passes** (threshold 2 points). The same source gives Hispanic respondents rating whites at 65.17 and Hispanics at 80.55, both within a point of my pooled Hispanic cells, a second consistency check.
+
+The ANES Guide's own published marginal page is still behind Cloudflare, so the benchmark here is an independent replication that uses the same weight and variables, not ANES's own table. [SOURCE: verified unreachable 2026-09-16]
+
+## Results, pooled 2020 and 2024
+
+Weighted, SEs in parentheses [SOURCE: `anes_gen_results.csv`].
+
+| Item | Hisp G1 | Hisp G2 | Hisp G3+ | NH white G3+ |
+|---|---|---|---|---|
+| Thermometer toward Hispanics | 80.0 (1.7) | 78.3 (1.6) | 78.4 (1.5) | 69.4 (0.4) |
+| Thermometer toward whites | 68.2 (1.9) | 63.2 (1.7) | 65.5 (1.4) | 70.6 (0.3) |
+| **Net in-group warmth** | **+11.7 (2.2)** | **+15.3 (1.7)** | **+12.3 (1.5)** | **−1.2 (0.4)** |
+| Immigration should be decreased | .219 (.030) | .224 (.027) | .350 (.033) | .380 (.009) |
+| Govt should guarantee jobs/income (1-7) | 4.39 (.14) | 4.65 (.14) | 4.49 (.14) | 3.57 (.03) |
+
+Unweighted n per cell, by year: 2020 gives 209 / 230 / 299 Hispanic G1 / G2 / G3+ and 5,391 white G3+; 2024 gives 147 / 195 / 212 and 3,428. Item-level n is somewhat lower because the thermometers are post-election. **The 2024 Hispanic G1 cell on some items falls near n=130**, so per-year Hispanic splits are thin; the pooled row is the one to read, and all pooled cells exceed n=250. Per-year results are in the CSV.
+
+Weighted generation shares among Hispanic ANES respondents: 2020 gives G1 .276, G2 .334, G3+ .389; 2024 gives .282 / .399 / .319. These differ sharply from GSS 2000-2024 (G1 .517), because ANES weights to the citizen-eligible adult population and the GSS window spans a much higher-immigration period. [INFERENCE] This is a composition difference, not a contradiction, but it means the two surveys' G1 cells are not the same people.
+
+## Cross-check against the GSS section above
+
+| | GSS finding | ANES finding | Agree? |
+|---|---|---|---|
+| Immigration restriction rises across generations | G1 .31 to G3+ .45 | G1 .219 to G3+ .350 | Yes, same direction and similar magnitude |
+| Redistribution support does not converge | third-gen gap as large as first-gen | G3+ 4.49 vs white 3.57, no generational trend | Yes |
+| In-group affect | not measured in GSS | no convergence at all | ANES only |
+
+The two independent surveys agree on both of the items they share. That is the strongest thing in this memo.
+
+## What this does and does not settle
+
+The claim "importing ethno-collectivist groups does not turn them into individualists" is **supported on group affect** and **refuted on immigration policy preference**. Those are usually assumed to move together, and here they do not: the third generation is nearly as restrictionist as whites while feeling just as warmly toward its own group. A single "collectivism" trait cannot produce that pattern. [INFERENCE]
+
+Two limits stand. First, the thermometer gap is a *level* difference with no generational slope, but the whites' baseline is itself unusual: white non-Hispanic net in-group warmth of −1.2 is historically anomalous, having fallen from clearly positive values before the mid-1990s [SOURCE: https://emilkirkegaard.dk/en/2025/05/american-race-relations-1964-2024/, which computes the 1964-2024 ANES series and shows whites reaching zero in 2020]. So the gap can be described either as Hispanics staying ethnocentric or as whites having stopped, and the data alone do not adjudicate which side moved. That is the [FRAMING-SENSITIVE] fork in the whole question. Second, the ethnic-attrition caveat from the GSS section applies identically here and biases the third generation toward looking less converged than the true lineage. [INFERENCE]
+
+[GAP] I did not fit the adjusted models (age, education, year) on ANES, so the thermometer result is unadjusted while the GSS trust result is adjusted. A re-dispatch should run the ANES net-warmth regression with the same covariates before the affect and trust findings are compared directly.
