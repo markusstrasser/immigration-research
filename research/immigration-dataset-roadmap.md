@@ -117,6 +117,8 @@ is the grep-able index. Status: ✅ acquired · 🚧 gated/tiered · ⬜ wanted.
 **Why it fits:** dual-purpose — second-gen earnings (benefit) **and** tract-level incarceration outcomes (crime), both by origin. Bridges Clusters A and C. [SOURCE: opportunityinsights.org/data]
 **Graph fit:** tract/county × origin; joins county context + the new crime domain.
 
+**Correction, 2026-09-17:** The preceding “both by origin” and tract/county × origin descriptions overstate the released dimensions. Public country Tables 6a/6b contain income ranks, counts and (6a) standard errors. Public incarceration/employment tables use race/geography, without a compatible country-origin key. Joining those aggregates cannot create country-specific crime observations. The paper also describes an authorized-family sample frame; the country codebooks do not establish an own-US-birth-only restriction. Additional national/native-mother tables and codebooks are now held in the [LATAM comparison lane](../infra/immigration-fiscal/latam_comparison_2026_09_17/README.md). [SOURCE: [official OI data library](https://opportunityinsights.org/data/), [6a codebook](https://opportunityinsights.org/wp-content/uploads/2019/08/Table6a.pdf), [paper §III.A](https://opportunityinsights.org/wp-content/uploads/2018/04/race_paper.pdf).]
+
 ### CENSUS-ABS-CBO — Annual Business Survey, Characteristics of Business Owners ⬜
 **Source:** US Census Bureau
 **Access:** Public API · **Official:** https://www.census.gov/data/developers/data-sets/abs.html · api.census.gov/data/2023/abscbo

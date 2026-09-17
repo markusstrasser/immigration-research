@@ -8,6 +8,8 @@ Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [m
 
 ## Core State
 
+Country comparisons: [five-year LATAM economic comparison and dataset expansion](immigration-latam-benchmark-comparison-2026-09-17.md) uses explicit birthplace benchmarks, first/second generations, common age/sex standards and survey uncertainty; distinguishes measured economic gaps from crime, trust, fiscal and genetic claims.
+
 Expanded transfer check: [other LATAM countries, distance selection and the Somali counterexample](immigration-latam-selection-transfer-2026-09-17.md) compares origin/cohort outcomes and narrows the earlier BA-share selection interpretation; distinguishes evidence for individual genetic effects from unsupported genetic attribution of migrant-group differences.
 
 Origin scope and trust: [LATAM, Southeast Asia and social trust](immigration-latam-southeast-asia-trust-2026-09-17.md) checks the latest located unauthorized-origin stock estimates, limits Mexican-to-LATAM extrapolation, separates Southeast Asian economic outcomes, and weighs local cooperation costs against claims of inevitable or centuries-long trust decline.
