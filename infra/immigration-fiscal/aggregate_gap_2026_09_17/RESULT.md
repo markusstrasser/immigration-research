@@ -1,0 +1,14 @@
+# Aggregate annual fiscal gap by Mexican generation, all ages, with public health
+
+**Verdict:** Summing the life-cycle ledger's per-band gaps over the whole CPS ASEC 2025 population (not only adults 25–64) gives −$65.6bn (Mexico-born, 12.2M people), −$85.2bn (Mexican second generation, 14.3M) and −$61.0bn (Mexican third-plus self-ID, 14.3M) per year against the third-plus non-Hispanic white benchmark, $212bn in total; against the all-native average, $153bn. Adding the extension items (employer payroll, sales, property, K-12) that exist only for adults 25–64 adds about $53bn (white benchmark) or $45bn (all-native), so the ledger-based total is roughly $265bn a year against whites and $200bn against all natives. The crime-cost band (+$13–19bn) and remittance sales-tax leakage (+$3–4bn) are outside the ledger. All of this is a benchmark gap inside a partial account, not a net fiscal cost: public goods, corporate tax and institutional care are absent, and the over-65 Mexico-born run a *positive* gap (+$4.4k to +$8.2k per person) because they draw less Social Security.
+
+Script `aggregate_gap.py` reuses `cps_generation_welfare_2026_09_16/lifecycle_ledger_by_generation.py` (same group masks, equal-shares allocation, MEPS 2024 public medical transport by age × nativity). `MARSUPWT` carries two implied decimals; the first run forgot the /100 and printed populations of 1.2bn. Output `aggregate_gap_result.txt`. Per-band gaps reproduce the peer's life-cycle table (e.g. Mexican 2nd gen 0–17: −$6,992 = −748 − 6,244).
+
+| Group | People, all ages | Gap vs 3rd+ NH white, $bn/yr | Gap vs all natives, $bn/yr | + extension items (25–64 only), $bn/yr |
+|---|---:|---:|---:|---:|
+| Mexico-born | 12.2M | −65.6 | −51.5 | −33.1 / −29.3 |
+| Mexican second generation | 14.3M | −85.2 | −62.6 | −12.5 / −10.2 |
+| Mexican third-plus (self-ID) | 14.3M | −61.0 | −39.1 | −7.5 / −5.3 |
+| Total | 40.9M | −211.8 | −153.2 | −53.1 / −44.8 |
+
+Why the second generation is the largest aggregate despite the smaller per-adult gap: 5.4M of its 14.3M are children under 18 (the children of Mexican immigrants), each carrying −$7.0k of household-allocated gap, and there are only 0.5M over 65 to offset it. The Mexico-born aggregate is held down by 1.6M people over 65 with positive gaps. [SOURCE: `aggregate_gap_result.txt`; peer life-cycle ledger] [INFERENCE: partial account; benchmark, not net cost]
