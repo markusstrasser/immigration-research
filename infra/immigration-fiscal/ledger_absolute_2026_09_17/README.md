@@ -65,16 +65,16 @@ survey's own `4/160 Σ(replicate − full)²`.
 | G | state and local general services | per capita by state of residence, 2022 Census of Governments direct general expenditure less education, welfare, health, hospitals and corrections, inflated to 2024 by the BEA state-local price index | FY2022 price level |
 | K | K-12 capital outlay and interest on school debt | state per-pupil capital plus interest on the ledger's public pupils aged 5–17 | none |
 | D | district cost-to-serve differential | enrolment-weighted per-pupil spending faced by Hispanic pupils less that faced by all pupils, by state | dropped without the district files |
-| U | transfer under-reporting | each reported program's dollars scaled by its administrative/survey coverage ratio | none |
+| U | transfer under-reporting | each reported program's dollars scaled by its administrative/survey ratio. Housing is excluded because function 604 carries federal housing assistance whole; Social Security is excluded because the brief applies it only when its ratio is below 1 | none |
 | I | refundable-credit improper payments | EITC and ACTC improper dollars by each record's share of modeled credits | zero |
 | M | MEPS-to-NHEA coverage | transported Medicaid and Medicare costs scaled by the NHEA non-institutional to MEPS ratio per payer | zero |
 | N | institutional care | external add from [`institutional_bound_2026_09_17`](../institutional_bound_2026_09_17/RESULT.md), midpoint of its adverse and moderate arms | none |
-| E | immigration enforcement | interior stock: ICE ERO, EOIR and appropriated USCIS times the Mexico share of the OHSS unauthorized stock, per head over Mexico-born noncitizens | plus Border Patrol times the Mexico share of southwest border encounters; zero |
+| E | immigration enforcement | interior stock: ICE ERO total, EOIR and appropriated USCIS times the Mexico share of the OHSS January 2022 unauthorized stock, per head over Mexico-born noncitizens. ERO total already contains custody, so the custody line is never added on top | plus Border Patrol times the Mexico share of FY2024 southwest border encounters; the Pew mid-2023 secondary stock; zero |
 | C | corporate income tax, federal and state | 25% by share of national wages, 75% by share of national property income | per capita; 100% capital |
 | X | excise and selective sales taxes | per capita | proportional to the ledger's consumption proxy |
 | R | rest of the federal budget by function | see below | all per capita; all zero |
 | F | federal defense, net interest and general government | zero, as pure public goods | per capita; proportional to modeled federal income and payroll taxes paid |
-| S | state-funded coverage for undocumented residents | state general-fund cost per Mexico-born noncitizen times the Mexico share of the state's unauthorized stock, half assumed already inside MEPS | none or all inside MEPS |
+| S | state-funded coverage for undocumented residents | assembled from individual verified state budget lines, per Mexico-born noncitizen in that state, times the Mexico share of the unauthorized stock, half assumed already inside MEPS. Biennial figures are halved to an annual rate | none or all inside MEPS |
 
 ### What the rest of the federal budget nets out
 
@@ -83,17 +83,26 @@ does. Each part keeps the same national dollar amount under both arms, so
 switching arms changes who is charged and never how much.
 
 - **700 veterans** less subfunction **703** VA hospital and medical care, which
-  the MEPS public-payer transport already charges, spread per veteran.
-- **602** federal civilian retirement by reported federal government retirement
-  income.
+  the MEPS public-payer transport already charges, spread per veteran. Veteran
+  status is `PEAFEVER`, ever served on active duty, not `VET_YN`, which only
+  flags receipt of veterans' payments.
+- **602** federal civilian retirement by total pension income among people
+  reporting a federal government pension source, `PEN_SC1` or `PEN_SC2` equal to
+  3. CPS ASEC carries no separately valued federal pension amount, so this is a
+  proxy; `audit.json` records the share of allocated dollars held by people who
+  also hold a non-federal pension.
 - **750** administration of justice: the BOP Mexican-national share of
   subfunction **753** to Mexico-born noncitizens per head, the remainder per capita.
 - **500** education and training less subfunction **501**, the federal
   elementary and secondary aid already inside the state per-pupil current
   spending the account charges. Pell is *not* netted, because nothing in this
   account prices it.
-- **550** health less subfunction **551** health care services.
-- **600** income security: subfunctions **601** and **604** only. Unemployment
+- **550** health less NHEA federal Medicaid, which the MEPS transport already
+  charges. OMB has no Medicaid subfunction and subfunction 551 is health care
+  services, far broader, so 551 is not the netting quantity.
+- **600** income security: subfunctions **601** and **604** only, with housing
+  assistance (604) isolated so its allocation rule can be switched between per
+  capita and the reported SPM capped housing subsidy. Unemployment
   (603), food and nutrition (605) and other income security (609) are already in
   the account through the CPS transfer fields, and 602 is charged separately.
 - **400** transportation per capita.
@@ -113,10 +122,26 @@ All under `derived/`; `*.npz` is ignored.
   non-Hispanic white reference.
 - `waterfall.csv` — cumulative absolute balance per group, starting at the gated
   upstream absolute and adding items in the order G, K, D, U, I, M, N, E, C, X,
-  R, F under the central arms, with a flag naming any step that is an external
-  add or a dropped item.
+  R, F, S under the central arms, with a flag naming any step that is an external
+  add or a dropped item. The brief's order ends at F; item S is appended as step
+  13 so the endpoint includes state-funded coverage, and `audit.json` records
+  step 12 as the brief's final step so both endpoints stay visible.
+- `complete_gaps.csv` and `complete_gaps_by_item.csv` — the age-standardized
+  answer: the common-age gap per standardized person and the age-matched total in
+  dollars, for each target and the union against both references, carried from the
+  upstream partial gap to the complete account, with each item's contribution
+  broken out. The partial values are gated against the upstream `estimates.csv`.
+- `national_reconciliation.csv` — the account summed over every civilian-household
+  resident against the consolidated FY2024 federal and state-local position built
+  from the same parameters, with the residual labelled "unpriced or coverage" and
+  the share of consolidated outlays and receipts the account covers. The residual
+  is reported, never forced; a gate fails if it comes back near zero.
 - `arms_matrix.csv` — the union absolute under every combination of the F, E, C
-  and R arms, everything else central.
+  and R arms, everything else central. The grid is 3 x 4 x 3 x 4 = 144 rather
+  than the brief's 3 x 3 x 3 x 3: the enforcement item gained the Pew secondary
+  stock as a fourth arm, and the federal-function item gained an arm that
+  allocates subfunction 604 housing assistance by each record's share of the
+  reported SPM capped housing subsidy instead of per capita.
 - `marginality_curve.csv` — the union absolute as the marginality dial m runs
   from 0 to 1, with the break-even m\*.
 - `audit.json` — gates, the parameter file's hash and every parameter consumed,
@@ -139,6 +164,10 @@ Run `check_gates.py` for the live result. The builder itself fails loud on:
   common-age gap per standardized person at zero to within 1e-6 relative.
 - **OMB cross-check**: every function of the cached Table 3.1 must equal the
   independently fetched parameter for that function.
+- **Ratio inversion**: every administrative/survey ratio must be the reciprocal
+  of its published survey/administrative coverage ratio, re-derived here.
+- **Sibling-lane cross-check**: the two reused per-capita constructions must
+  still reproduce the figures the lane they came from published.
 - **Unit conservation** on every base component, inherited from the upstream
   allocator.
 

@@ -1,0 +1,36 @@
+block,line,amount_bn,note
+account,base component tax,3360.4611987407707,charged over the civilian household population
+account,base component cash,-1480.6932688891966,charged over the civilian household population
+account,base component noncash,-77.00335119956455,charged over the civilian household population
+account,base component employer,835.2399059599023,charged over the civilian household population
+account,base component sales,289.98679597790886,charged over the civilian household population
+account,base component owner_property,394.86247794870127,charged over the civilian household population
+account,base component school,-762.3950407971129,charged over the civilian household population
+account,base component lunch,24.08257037350689,charged over the civilian household population
+account,base component public medical,-1164.5096822347798,MEPS public-payer transport
+account,item G (deflated2024),-1347.95971462022,state-local general services
+account,item K (central),-125.87722878466619,K-12 capital outlay and interest on school debt
+account,item D,0.0,dropped for want of a verified parameter
+account,item U (central),-65.75521609898993,transfer under-reporting
+account,item I (central),-19.35143533153756,refundable-credit improper payments
+account,item M (central),-389.4256652376674,MEPS-to-NHEA coverage scaling
+account,item N institutional care,-246.9947824785,"external ACS-based add covering natives plus the Mexico-born only, not every resident; not a CPS charge"
+account,item E (stock),-2.716778160145587,immigration enforcement
+account,item C (wage25_capital75),693.4207664778478,"corporate income tax, federal and state"
+account,item X (per_capita),310.5882256036217,excise and selective sales taxes
+account,item R (central),-1191.1416856574585,rest of the federal budget by function
+account,item F (zero),0.0,"federal defense, net interest, general government"
+account,item S (half_inside_meps),-1.4851805050045488,state-funded coverage for undocumented residents
+consolidated,federal outlays FY2024,-6735.261,OMB Table 2.1/3.1 total outlays
+consolidated,federal receipts FY2024,4919.884,OMB Table 2.1 total receipts
+consolidated,state and local direct general expenditure,-4185.299873762032,"2022 Census of Governments, inflated by 1.039312"
+consolidated,state and local general revenue from own sources,3409.8730432916163,"2022 Census of Governments, inflated by 1.039312"
+consolidated,consolidated position,-2590.803830470415,receipts less outlays
+known part of the residual,item F charged at zero in the central arm,-1788.718,"defense, net interest and general government, priced as pure public goods"
+known part of the residual,OMB function 950 undistributed offsetting receipts,-146.736,never priced
+known part of the residual,OMB function 920 allowances,-0.0,never priced
+known part of the residual,state and local capital outlay,-385.85119522088,"only the K-12 share is priced, as item K"
+residual,unpriced or coverage,-1624.136741557831,consolidated position less the account's national sum; NOT forced to zero and NOT an error estimate
+coverage,account outlays as a share of consolidated outlays,0.6295747177705501,"share, not dollars"
+coverage,account receipts as a share of consolidated receipts,0.7093414502216238,"share, not dollars"
+coverage,civilian household population over resident population,0.9900527030312051,"share, not dollars"
