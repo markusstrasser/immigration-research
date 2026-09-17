@@ -29,8 +29,11 @@ import extend_ledger as ext  # noqa: E402
 # locales".
 R_MEXICO_BORN = 0.167
 
-# US-born second generation: no published Mexican-origin second-generation
-# remittance RATE exists. Bounded (see RESULT.md):
+# Correction 2026-09-17: the quotient above does not identify the first-gen
+# sender share. Keeping it fixed is a scenario, not a measured propensity.
+# It cannot establish the former $3.7bn US-born / 0.9% G2 ceiling.
+# US-born second generation: this lane has not established a measured
+# Mexican-origin second-generation remittance rate. Scenario assumptions:
 #   participation ratio 2nd/1st ~0.31 (Hispanic, derived from Pew 51% FB vs
 #   35% all-Latino 2006) to 0.47 (Asian, Pew 2024 published 15% vs 32%);
 #   amount-per-sender ratio unmeasured, assumed 0.3-1.0.
@@ -38,6 +41,7 @@ R_SECOND_GEN_ARMS = {"r2_zero": 0.000, "r2_low": 0.016, "r2_central": 0.025,
                      "r2_high": 0.052}
 # Third-plus self-ID Mexican: Pew 2024 Asian third+ 4% vs second-gen 15%
 # => 0.27x the second-generation rate.
+# That cross-origin participation transport is also an assumption, not a bound.
 R_THIRD_SCALE = 0.267
 
 TAXABLE_SHARES = ext.TAXABLE_SHARES
