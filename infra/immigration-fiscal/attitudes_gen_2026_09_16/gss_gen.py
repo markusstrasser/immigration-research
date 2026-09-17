@@ -1,4 +1,5 @@
 import pyreadstat, numpy as np, pandas as pd
+from generation import gss_generation
 P="raw/GSS_stata/gss7224_r3a.dta"
 cols=["year","wtssps","wtssall","vpsu","vstrat","born","parborn","hispanic","race",
  "trust","eqwlth","helppoor","natfare","letin1","partyid","immcrime","age","educ"]
@@ -11,10 +12,7 @@ df["w"]=w
 print("weight coverage 2000+:", df.w.notna().mean().round(3), "| years:", int(df.year.min()), int(df.year.max()))
 
 # generation
-gen=pd.Series(np.nan,index=df.index)
-gen[df.born==2]=1
-gen[(df.born==1)&(df.parborn.isin([1,2,3,4,5,6,7,8]))]=2
-gen[(df.born==1)&(df.parborn==0)]=3
+gen=gss_generation(df.born, df.parborn)
 df["gen"]=gen
 df["hisp"]=df.hispanic>=2
 df["nhwhite"]=(df.race==1)&(df.hispanic==1)
@@ -24,7 +22,7 @@ def grp(r):
     if r.hisp and r.gen==2: return "Hisp G2"
     if r.hisp and r.gen==3: return "Hisp G3+"
     if r.nhwhite and r.gen==3: return "NHWhite G3+"
-    if r.nhwhite: return "NHWhite G1-2"
+    if r.nhwhite and r.gen in (1, 2): return "NHWhite G1-2"
     return None
 df["grp"]=df.apply(grp,axis=1)
 d=df[df.grp.notna()&df.w.notna()].copy()
