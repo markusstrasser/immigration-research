@@ -86,3 +86,7 @@ A useful statement should therefore answer: **What is observed? For whom and whe
 - **S8:** [crime measurement mechanisms](immigration-crime-statistics-bias-mechanisms-2026-09-16.md), [generation mechanisms](immigration-generational-crime-mechanisms-2026-09-16.md).
 
 Coverage: current research question and goals; current survey analyses; economic and social frontier audits using cited memos and selected raw-derived source tables; methodological primary sources. Not performed: an exhaustive review of all civilizational domains, new causal estimation, verification of every inherited paper, or restricted-data acquisition. No model consensus is counted as independent evidence. LLM framing can affect what is selected and emphasized; opposing signs and normative disagreements remain explicit.
+
+## Revisions
+
+**2026-09-17, execution:** The user authorized all six workstreams. The [executed findings](immigration-frontier-execution-2026-09-17.md) and [coverage/reproduction record](../infra/immigration-fiscal/frontier_execution_2026_09_17/README.md) now supersede the prospective next-action status above. Source-scale and survey-design checks, adult outcomes, CPS/GSS, NYC exposure, fiscal reconciliation and policy/automation checks ran. Policy replication and complete local incidence remain partial at recorded access/identification limits. The [decision](../decisions/2026-09-17-bind-frontier-claims-to-measured-outcomes.md) records changed interpretation and reopening conditions; the original proposal remains preserved.

@@ -1,5 +1,7 @@
 # Disability & disability income by generation — CPS ASEC 2025
 
+**September 17 multiyear extension:** [ASEC 2024–26 execution](../frontier_execution_2026_09_17/social/RESULT.md) gives standardized disability prevalence 5.07%/8.42%/11.15% for Mexico-born/G2/G3+ self-ID. G2−Mexico-born is +3.35 pp [1.47, 5.23] with conservative cross-year covariance treatment. Neither descendant group establishes excess over the white reference. G2 Social Security with disability reason plus SSI averages $701 versus $767 for whites; private payments remain separate. No causal or administrative-expenditure claim is made.
+
 **Superseded interpretation, 2026-09-17:** [audit §4](../../../research/immigration-new-conclusions-audit-2026-09-17.md) reproduces the rates and direct first-to-second contrast but withdraws “first-generation only,” established parity/reversal, and a CPS-derived upper bound on the true advantage. Second-generation disability-income dollars are $942 versus $1,030 for whites; the aggregate includes private payments. Original text below is preserved; consult the audit's intervals and narrower current claim.
 
 **Verdict:** The first-generation disability advantage is a **first-generation** phenomenon
