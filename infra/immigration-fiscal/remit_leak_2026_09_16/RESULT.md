@@ -1,5 +1,7 @@
 # Remittance leakage in the generation ledger
 
+**Correction, 2026-09-17 — supersedes the ceiling and causal-loss claims below:** the $3.7bn US-born / 0.9%-of-G2-earnings bound is circular. CEMLA's 16.7% divides all US-to-Mexico remittances by first-generation earnings; treating that quotient as the actual first-generation sending rate assumes its unknown share. No independent first-generation lower bound is established. The per-adult tax changes remain model scenarios, not measured losses or empirically bounded generation rates; higher-rate arms are not ruled out by the asserted ceiling. National tax scenarios are $1.277–2.299bn with Mexico-born geographic weights, not an established $3–4bn loss. BEA's historical $69.94bn personal-transfer series covers foreign-born senders, with US-born transfers in another category. See the [source and algebra audit](../../../research/immigration-aggregate-and-generation-audit-2026-09-17.md) and [decision](../../../decisions/2026-09-17-separate-benchmark-gaps-and-lineage-claims.md). Original claims remain below for provenance.
+
 **Verdict:** Remittance leakage is real, well sourced at the first generation, and fiscally
 trivial in this ledger. Cutting each cell's imputed domestic consumption base by its modelled
 remittance outflow moves the Mexico-born extended balance by **−$95 to −$188 per adult per year**

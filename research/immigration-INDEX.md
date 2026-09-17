@@ -8,6 +8,8 @@ Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [m
 
 ## Core State
 
+All-age claim audit: [fiscal benchmark gaps, remittances and later generations](immigration-aggregate-and-generation-audit-2026-09-17.md) reproduces the $212bn/$153bn partial-account differences, exposes their positive absolute balance, and corrects the remittance ceiling and incompatible ancestry definitions.
+
 Country comparisons: [five-year LATAM economic comparison and dataset expansion](immigration-latam-benchmark-comparison-2026-09-17.md) uses explicit birthplace benchmarks, first/second generations, common age/sex standards and survey uncertainty; distinguishes measured economic gaps from crime, trust, fiscal and genetic claims.
 
 Expanded transfer check: [other LATAM countries, distance selection and the Somali counterexample](immigration-latam-selection-transfer-2026-09-17.md) compares origin/cohort outcomes and narrows the earlier BA-share selection interpretation; distinguishes evidence for individual genetic effects from unsupported genetic attribution of migrant-group differences.
