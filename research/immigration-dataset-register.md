@@ -338,5 +338,90 @@ Corrected context/unified warehouses now use official SPI citizenship and source
 
 ## Revisions
 
+- **2026-09-17, supplied survey batch:** Registered all 13 supplied files in the cards below; two NLS ZIPs are exact duplicates, and both new ICPSR ZIPs contain documentation only. `sources` now resolves to `/Users/alien/research-data`, superseding the September 5 symlink-status observation above. This batch is physically staged inside the repository's analysis directory; no old warehouse availability claim is inferred from that symlink repair.
+
 - **2026-09-05:** Registered the new2019 baseline, actual2024 path, price/calibration inputs, bounded RPC reports and targeted X sample. Corrected the empty-CPS-mirror statement and qualified the older synthetic-cohort identification claim under the [cohort decision](../decisions/2026-09-05-arrival-cohort-comparison.md). SIPP2025 is officially available for reference2024 but has not yet been acquired or incorporated.
 - **2026-09-05, later expansion:** Acquired and analyzed SIPP2025/CPS2025/MEPS2024, completed national admission distributions and race-stratified products, and promoted corrected crime categories/counts with the invalid rate withdrawn. This supersedes the earlier same-day acquisition limits above; see the [measurement/ledger decision](../decisions/2026-09-05-measurement-and-ledger-boundaries.md).
+
+## Supplied family-history and attitude surveys — 2026-09-17
+
+Common acquisition record: [ACQUIRED.md](../infra/immigration-fiscal/new_datasets_2026_09_17/ACQUIRED.md) and [SHA-256/member manifest](../infra/immigration-fiscal/new_datasets_2026_09_17/manifest.json). **Raw root** below means `infra/immigration-fiscal/new_datasets_2026_09_17/raw/`. Originals remain untouched in `/Users/alien/Downloads`. Every archive retains its codebooks/questionnaires alongside data where supplied; derived text, dictionaries and tables are under the lane's ignored `derived/`. Sizes below are compressed decimal MB. No raw-file redistribution license is inferred: retain the packaged Pew/ICPSR terms; BLS provides public-use NLS files. Used in the [new-data audit](immigration-new-datasets-and-conclusions-2026-09-17.md), with commands in the [lane README](../infra/immigration-fiscal/new_datasets_2026_09_17/README.md).
+
+### NLSY97_GEN_CRIME_20260917 — supplied extract and separate selection basket
+
+- Source/acquired: user-supplied NLS Investigator export, September 17, 2026; [official access](https://www.nlsinfo.org/content/access-data-investigator).
+- Local/codebook/size: raw root `nlsy97_gen_crime_1 (9).zip`, 25.330 MB, nine members including `.csv`, `.cdb`, SAS/SPSS/Stata setup; `nlsy97_gen_crime_1.zip` is byte-identical and shares that canonical staged copy. Separate `gen_crime_2026.NLSY97`, 160,060 bytes, is a variable-selection basket, not respondent data.
+- Variables/use: persistent respondent identifier `R0000100`, selected longitudinal variables and selected justice-charge items; supplied extract coverage must be checked against the requested basket before claiming cumulative arrest/incarceration coverage. Same-cohort existing files can add columns after ID/field validation.
+- Quirks/license: raw public grandparent birthplace indicators distinguish US/territories from outside, not exact Mexican birthplace. No genetic interpretation or ancestry-complete Mexican group. Public NLS documentation and exact linkage findings are recorded in the audit.
+
+  The existing sibling `iq-sex-differences/data/nlsy/nlsy97_all_1997-2023.zip` supplied the missing cumulative outcomes for this audit (hash in acquisition ledger). All8,984 IDs and47 checked overlapping non-ID fields agree;7,059 ability IDs and seven outcome-cache fields also validate. This is a verified same-person join, not an independent replication. The [98-field request](../infra/immigration-fiscal/new_datasets_2026_09_17/nlsy/required_analyzed_fields.NLSY97) is ready for a fresh export; its current cumulative-history drift remains unverified.
+
+### PEW_NSL_2011 — earlier identity and immigration attitudes
+
+- Source/acquired: Pew Research Center public-use release, user supplied September 17, 2026. [Pew datasets](https://www.pewresearch.org/datasets/); packaged DOCX contains source questionnaire and methodology.
+- Local/codebook/size: raw root `PHCNSL2011PubRelease.zip`, 0.469 MB, two members, updated SAV and DOCX; 1,220 records. Weight `weight`.
+- Key variables: `qn4/qn7/qn8` own/parents' nativity; `qn54` typical American; `combo81_82` leaned party; immigration-policy items.
+- Quirks/use/license: self-identified Hispanic adult cross-section, November–December 2011; no nonidentifier complement or validated panel link. Question dictionary inventoried by `pew/probe.py`; not included in the 2015 paired analysis. Packaged Pew usage conditions apply.
+
+### PEW_NSL_2012 — identity, immigration policy and religion oversample
+
+- Source/acquired: Pew Research Center, user supplied September 17, 2026; [dataset portal](https://www.pewresearch.org/datasets/).
+- Local/codebook/size: raw root `PHCNSL2012PublicRelease.zip`, 6.050 MB, two members; updated SAV and DOCX, 1,765 records. Weight `weight`.
+- Key variables: `qn4/qn7/qn8` nativity, `qn31` DACA approval, `Combo61_62` leaned party.
+- Quirks/use/license: September–October 2012 self-ID Hispanic cross-section, including 438 non-Catholic oversample; unweighted pooling misrepresents composition. Inventoried, not a repeated-person panel or paired attrition sample. Packaged Pew conditions apply.
+
+### PEW_LATINO_RELIGION_2013 — religion, identity and nativity
+
+- Source/acquired: Pew Research Center, user supplied September 17, 2026; [dataset portal](https://www.pewresearch.org/datasets/).
+- Local/codebook/size: raw root `Pew-Research-Center-2013-U.S.-Latino-Religion-Survey.zip`, 1.125 MB; SAV plus separate codebook/background and questionnaire PDFs; 5,103 records.
+- Key variables: `Q4/Q410/Q411` own/parent nativity; `Q130` typical American; `Q105` undocumented-immigration effects. Weights `totalwt`, `form06wt`, `form12ncowt`.
+- Quirks/use/license: full weight is not interchangeable with FORM-specific weights; questionnaire routing changes item denominators. Self-ID sample cannot estimate nonidentifiers. Inventoried for later religion/attitude comparisons; packaged Pew conditions apply.
+
+### PEW_NSL_2014 — mixed reported family origin
+
+- Source/acquired: Pew Research Center, user supplied September 17, 2026; [dataset portal](https://www.pewresearch.org/datasets/).
+- Local/codebook/size: raw root `Pew-Research-Center_2014-National-Survey-of-Latinos-Dataset.zip`, 1.062 MB; SAV, PDF, readmes plus macOS metadata; 1,520 records. Weight `weight`.
+- Key variables: `q52a/q52b` parents' Hispanic/Latino/Spanish origin; `q53` grandparents' origin; `q4/q7/q8` nativity.
+- Quirks/use/license: wording differs from 2015; self-ID recruitment excludes nonidentifiers. ReadStat auto-decoding failed; explicit Latin-1 succeeded and is recorded. Inventoried as a mixed-heritage sensitivity source; packaged Pew conditions apply.
+
+### PEW_NSL_2015 — identifying half of the ancestry comparison
+
+- Source/acquired: Pew Research Center, user supplied September 17, 2026; [primary report/methodology](https://www.pewresearch.org/race-and-ethnicity/2017/12/20/methodology-hispanic-identity/).
+- Local/codebook/size: raw root `Pew-Research-Center_2015-National-Survey-of-Latinos-Dataset.zip`, 1.295 MB; SAV, questionnaire/methodology PDF, readmes; 1,500 records. Weight `weights`.
+- Key variables: `q10a/q10b` parent origin, `q11a/q11b` grandparent-origin pair counts, `q4/q7/q8` nativity and `q8aa/q8ab/q8ba/q8bb` grandparent nativity; `party_combo`, `q14`, `q16c`.
+- Quirks/use/license: fielded October–November 2015; partner is the 2015–2016 omnibus. Append with externally calibrated weights, never join numeric IDs. Grandparent Hispanic origin is not Mexican birthplace. Analyzed by `pew/analyze.py`; packaged Pew conditions apply.
+
+### PEW_NONHISPANIC_2015_2016 — nonidentifiers with reported ancestry
+
+- Source/acquired: Pew Research Center, user supplied September 17, 2026; [methodology](https://www.pewresearch.org/race-and-ethnicity/2017/12/20/methodology-hispanic-identity/).
+- Local/codebook/size: raw root `Pew-Research-Center_2016-Survey-of-Self-Identified-non-Hispanics-Dataset.zip`, 0.577 MB; internal `NSL2015 Omnibus_FOR RELEASE.sav`, PDF and readmes; 401 records. Weight `OMNIWeight`.
+- Key variables: `ha2a/ha2b/ha4/ha6` family-origin eligibility, `ha_combo`, nativity/grandparent fields, `party_combo`, `q16cx` Hispanic ancestry salience, `q22` ever personally identified Hispanic.
+- Quirks/use/license: all supplied `immgen` values are unknown; reconstruct from direct items and retain unresolved cases. ZIP's 2016 label is not its paired NSL year. Earlier-ancestor-only cases are included; 89/11 or published-count 37.8m/4.9m mixture is external, not recoverable prevalence from these 401 records. Analyzed by `pew/analyze.py`; packaged Pew conditions apply.
+
+### PEW_NSL_2016 — election and American-dream attitudes
+
+- Source/acquired: Pew Research Center, user supplied September 17, 2026; [dataset portal](https://www.pewresearch.org/datasets/).
+- Local/codebook/size: raw root `Pew-Research-Center_2016-National-Survey-of-Latinos-Dataset.zip`, 1.095 MB; SAV, PDF and readmes; 1,507 records. Weight `weights`.
+- Key variables: `qn4/qn7/qn8` own/parent nativity, `generations`, `party_combo`, election/American-dream questions.
+- Quirks/use/license: August–September 2016 self-ID cross-section, not the omnibus's matched field period. No equivalent direct grandparent-origin battery located. Inventoried, not included in paired analysis; packaged Pew conditions apply.
+
+### PEW_NSL_2018 — later attitude and identity cross-section
+
+- Source/acquired: Pew Research Center, user supplied September 17, 2026; [dataset portal](https://www.pewresearch.org/datasets/).
+- Local/codebook/size: raw root `Pew-Research-Center_2018-National-Survey-of-Latinos-Dataset.zip`, 5.084 MB, updated SAV/DOCX; 1,501 records. Weight `weight`.
+- Key variables: `qn4/qn7/qn8`, `immgen`, identity and political items.
+- Quirks/use/license: July–September 2018 self-ID Hispanic adults. No repeated-person linkage or matched grandparent-origin battery established. Inventoried for question-level harmonization; packaged Pew conditions apply.
+
+### ICPSR_30302_V1 — New York second generation, DOCUMENTATION ONLY
+
+- Source/acquired: supplied September 17, 2026; [official catalog](https://www.icpsr.umich.edu/web/ICPSR/studies/30302). Raw root `ICPSR_30302-V1.zip`, 2.737 MB, six members: codebook/questionnaire, catalog, manifest, bibliography, terms.
+- Expected data: 3,415 cases × 428 variables; `30302-0001-Data.dta` absent. Catalog requires restricted-data agreement; filenames in a study manifest do not establish access or local possession.
+- Key variables: `ID`, `COB/AGEUS/MCOB/FCOB`, `MEDUC/FEDUC`, `ARRESTED/INCARCER`, `INGRPWT/WEIGHT/SAMEWT`.
+- Quirks/use/license: selected local origins, ages 18–32, no Mexican analytic group; general four-grandparent birthplace battery absent. Retrospective cross-section, not parent-child panel. `icpsr/analyze_codebooks.py` verifies published marginal counts only. ICPSR conditions and restricted-use requirements apply.
+
+### ICPSR_20862_V6 — Latino National Survey2006, DOCUMENTATION ONLY
+
+- Source/acquired: supplied September 17, 2026; [official catalog](https://www.icpsr.umich.edu/web/ICPSR/studies/20862). Raw root `ICPSR_20862-V6.zip`, 7.191 MB, ten members including four codebooks and two questionnaires.
+- Expected data: 8,634 cases; public DS0001 275 columns, public contextual DS0003 427. Missing `20862-0001-Data.dta` or `20862-0003-Data.dta`; DS0002/4 are restricted variants, not waves. Official access attempt returned HTTP403.
+- Key variables: `CASEID/RESPID`, `BORNUS/BIRTHPLC`, `PARBORN/GRANBORN`, `PAREDUC`, `INCSUPP/HEALTH/GOVTRUST/PARTYID`, revised `WT_NATION_REV/WT_STATE_REV/WT_METRO_REV`.
+- Quirks/use/license: self-ID Latino frame misses nonidentifiers and non-Latino controls; foreign-born grandparent count does not prove Mexican birthplace. DK codes can remain nominally valid in software metadata. No respondent arrest/incarceration outcome established. Only marginal-frequency bounds analyzed; ICPSR packaged conditions apply.
