@@ -1,5 +1,7 @@
 # Immigration confidence ladder — current corrections
 
+**2026-09-17 score-scale clarification:** entry83's AFQT SD values are unvalidated common-factor conversions of percentile coefficients, not directly reproduced SD estimates. Entry111 already qualifies its SAT/ACT availability claim. Do not reuse precise AFQT SD magnitudes until the original scale/reference distribution is checked; this does not by itself reverse source-scale coefficients. [Source-lane clarification](../infra/immigration-fiscal/testscores_gen_2026_09_16/RESULT.md), [prioritized research frontier](immigration-research-question-frontier-2026-09-17.md).
+
 **2026-09-17 supplied-data audit:** entries107–111 qualify83/87/104–106. Pew measures nonidentifying descendants; CILS/IIMMLA floor and parity interpretations are narrowed; NLS joins and public-variable limits are checked. Read the [new-data audit](immigration-new-datasets-and-conclusions-2026-09-17.md).
 
 **2026-09-17 adversarial correction:** entries 93–97 below are retained as historical assertions and superseded by 98–102. The national-origin interpretation attached to the Villarreal–Tamborini portion of 92 is qualified in 103. Read the [audit](immigration-new-conclusions-audit-2026-09-17.md) before reusing those claims.
