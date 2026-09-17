@@ -31,7 +31,7 @@ def grp(r):
     if r.hispanic and r.gen==2: return "Hisp G2"
     if r.hispanic and r.gen==3: return "Hisp G3+"
     if r.nhwhite and r.gen==3: return "NHWhite G3+"
-    if r.nhwhite: return "NHWhite G1-2"
+    if r.nhwhite and r.gen in (1, 2): return "NHWhite G1-2"
     return None
 D["grp"]=D.apply(grp,axis=1)
 def wstat(s,col):
