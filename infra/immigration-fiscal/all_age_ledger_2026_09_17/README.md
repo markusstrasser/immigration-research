@@ -42,7 +42,7 @@ For group `g`, age band `a`, reference `r`, account totals `Y` and populations `
 
 The third quantity uses the same fixed white-reference full-weight age shares `s` for all groups. The second divided by the group's population uses that group's own age shares and is not interchangeable with the third. Crude gaps are also emitted. Main bands:0–17,18–24,25–34,35–44,45–54,55–64,65–74,75+. A sensitivity splits children0–4/5–11/12–17.
 
-Every CPS replicate recomputes populations, denominators, reference schedules and composite balances. CPS variance is `4/160 × sum((replicate−full)^2)`. The MEPS donor gradient is computed for the exact contrast; its full stratified-PSU covariance contributes `q'Vq`. The two independent-survey variances are added as a first-order approximation. Shared donor cells, reference overlap, components and combined generations are not treated as independent. Intervals are pointwise normal95% intervals, conditional on fixed age-standard shares and model parameters; they omit model/transport error, coverage bias and higher-order CPS–MEPS interactions. They are not simultaneous bands over all scenarios or origin definitions.
+Every CPS replicate recomputes populations, denominators, reference schedules and composite balances. CPS variance is `4/160 × sum((replicate−full)^2)`. The MEPS donor gradient is computed for the exact contrast; its full stratified-PSU covariance contributes `q'Vq`. The source variances are added as a first-order approximation assuming zero cross-survey covariance; CPS-based MEPS calibration makes this an assumption, not an established independence result (see follow-up below). Shared donor cells, reference overlap, components and combined generations are not treated as independent. Intervals are pointwise normal95% intervals, conditional on fixed age-standard shares and model parameters; they omit model/transport error, coverage bias and higher-order CPS–MEPS interactions. They are not simultaneous bands over all scenarios or origin definitions.
 
 ## Sensitivity coverage
 
@@ -82,3 +82,23 @@ Executed guards cover joins, credit identities, raw unit conservation, each matc
 The independent in-task design review proposed three consequential tests, all implemented: fixed national dollars when changing attribution; one common age distribution when comparing generations; and narrower child bands. A separate code review tested the estimator rather than adjudicating the design. The IIMMLA lane had its own source/code review. [Review disposition](../../../notes/immigration-construct-review-2026-09-17.md).
 
 External cross-model review was prepared and preflighted but automatic approval review blocked transmission of the private packet to GPT/Claude subscription services pending explicit permission. No cross-model verdict is claimed; the local review and validation above were completed independently of that pending step.
+
+## Subsequent authorized critique and targeted probes
+
+The user subsequently authorized external critiques, explicitly including Gemini 3.8. A new packet describes the completed work rather than the earlier proposal. The historical review status above describes the earlier run; current dispositions are recorded in the linked review note.
+
+`mean_weight_probe.py` repeats the paired attribution test with each SPM unit's mean person weight, calculated separately in all 161 weight vectors. It preserves the original shared person-weighted national component budgets and compares its reassignment effect with the head-weight version. Population weights and direct medical exposure remain unchanged, so medical cost cancels from the paired change. It independently reproduces 12 stored head-weight contrasts and saves results under `derived/mean_weight/`. Source-unit identities remain exact algebraically; the national matrix check records floating-point residuals and uses relative tolerance 1e-12 plus two cents on trillion-dollar totals.
+
+`donor_dependence_probe.py` computes a sensitivity for unknown cross-source correlation, conditional on the two supplied marginal standard errors: maximum first-order SE = `SE_CPS + SE_MEPS`. It saves normal bands under `derived/donor_dependence/`. These are **not** complete design-based confidence bounds: extra marginal uncertainty from estimated calibration controls, transport and other modeling remains omitted.
+
+The underlying qualification is source-grounded. MEPS HC-256 §§C.3.3.2–6, pp.C-156–158, documents calibration to **March 2025 CPS estimates**; §§C.3.11.2, pp.C-168–169, explains limits of weighting-adjustment uncertainty in Taylor/shortcut-BRR methods. Thus the original additive variance is a source-variance approximation omitting possible dependence through CPS-derived controls, not proof that the final estimators are independent. Fixed common constants alone would not create dependence; sampled control estimates provide a possible pathway, with unknown sign/magnitude. [Official documentation](https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h256/h256doc.pdf).
+
+Age alignment is also approximate: ASEC income refers to 2024 but demographics to the February–April 2025 interview, whereas MEPS `AGE24X` is December 31, 2024 age. The held fields do not permit an exact birthday-based repair. Subtracting one year from everyone would be incorrect. [CPS technical documentation](https://www2.census.gov/programs-surveys/cps/techdocs/cpsmar25.pdf), glossary7-3; HC-256 §C.2.5.3.
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/all_age_ledger_2026_09_17/mean_weight_probe.py
+uv run --no-project python3 infra/immigration-fiscal/all_age_ledger_2026_09_17/donor_dependence_probe.py
+uv run --no-project python3 infra/immigration-fiscal/all_age_ledger_2026_09_17/generation_envelope.py
+```
+
+`generation_envelope.py` reports all three common-age generation point contrasts across the 11 expanded-account scenarios (baseline and no-health diagnostic excluded). These are named-scenario extrema, not uncertainty bounds. The first-to-third-plus contrast ranges from +$1,718 to +$2,317 per standardized person; neither this ordering nor the sampling intervals establish a longitudinal assimilation process.

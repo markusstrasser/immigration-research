@@ -7,6 +7,7 @@
 # Local critique packets, generated dispatch and authentication diagnostics.
 .model-review/allage-construct*
 .model-review/preflight-latest.json
+.model-review/2026-09-17-all-age-fiscal-and-generation-constructs-*/
 
 # Generator banks / mining scaffolding — internal workshop, not published
 research/.mining/
