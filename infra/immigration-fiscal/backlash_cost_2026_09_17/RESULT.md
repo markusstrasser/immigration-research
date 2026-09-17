@@ -1,5 +1,7 @@
 # Political backlash externality — can it be priced?
 
+**Superseded verdict, 2026-09-17:** [audit §6](../../../research/immigration-new-conclusions-audit-2026-09-17.md) withdraws $1,300–$43,000 as a defensible bound. Both endpoints depend on unsupported policy attribution, exposure and transport assumptions; dividing discounted lifetime cost by forty is not a comparable annual equivalent. The mechanism remains unpriced, with no identified positive lower bound. Original scenario and reasoning remain below for provenance.
+
 **Verdict:** The chain can be *bounded* but not *priced*. Links 1 and 3 have strong primary
 estimates; the middle link (vote share -> populist government) is estimated by nobody, and the
 local-to-national aggregation step breaks the arithmetic. Defensible range: **~$1,300 to

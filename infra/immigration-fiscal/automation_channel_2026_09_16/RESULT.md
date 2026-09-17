@@ -1,5 +1,7 @@
 # Automation & Capital-Deepening Channel — Does Low-Skill Immigration Delay Mechanisation?
 
+**Superseded interpretation, 2026-09-17:** [audit §3](../../../research/immigration-new-conclusions-audit-2026-09-17.md) retains technique-change evidence but withdraws the aggregate-welfare refutation and Central Valley “two thirds compositional” result. Published Danzer includes patent counts; San explicitly excludes aggregate welfare; H-2B total investment is a different endpoint. Original text below is retained for provenance.
+
 **Verdict:** The automation-delay mechanism is **real as technique choice and unproven as a
 welfare cost.** Lewis 2011, Danzer et al. 2020 and San 2023 all find low-skill labour supply
 shifts technique away from automation, and Peri 2012 concedes it with a skill-bias elasticity near

@@ -2,6 +2,8 @@
 
 # Mexican-origin population by generation and the incarceration comparator, 2000–2023
 
+**Current correction, 2026-09-17:** the new fertility, disability, agglomeration, automation and political-cost interpretations in §§4, 12, 13, 16 and 17 are superseded where specified by the [adversarial audit](immigration-new-conclusions-audit-2026-09-17.md) and ladder 98–103. In particular, the political range and Central Valley composition percentage are withdrawn, disability parity is unresolved, and unpriced effects are not measured zeros. Original passages remain below as historical evidence. This correction does not independently re-audit the earlier incarceration calculations.
+
 ## 1. Where the 3.5× comes from, and what it pools
 
 Rumbaut, Gonzales, Komaie, Morgan & Tafoya-Estrada 2006, Table 1 (2000 census 5% PUMS, men 18–39 in correctional institutions): foreign-born Mexican 0.70%, US-born Mexican 5.90%, native non-Hispanic white 1.71%, all US-born 3.51%, all foreign-born 0.86%, native Black 11.61%. 5.90/1.71 = 3.45. [SOURCE: https://escholarship.org/uc/item/8798n03x, Table 1, verified this session]
@@ -349,6 +351,8 @@ The chain the restrictionist side asserts and the economists ignore is immigrati
 
 
 ## Revisions
+
+- 2026-09-17 — [Adversarial audit decision](../decisions/2026-09-17-new-conclusions-inference-audit.md) narrows the five new channel interpretations; original text retained with explicit supersession. The audit also proposes a birthplace-based family-history classification without changing this memo's existing data definitions.
 
 - 2026-09-16 — Created. Concept: generational comparator for the Mexican-origin population; supersedes nothing, refines the confidence-ladder coding-bias entry.
 - 2026-09-16 — Added §7: state decomposition (California ratio flat 2.19→2.30×; convergence is Texas and other states) and the detection-technology hypothesis assessed against clearance rates and the phone/security/DNA literature.

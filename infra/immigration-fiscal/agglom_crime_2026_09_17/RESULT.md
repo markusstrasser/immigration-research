@@ -1,5 +1,7 @@
 # Crime → de-agglomeration channel: audit of Cremieux "America's Bad Cities Are Costing You" + scaling to Mexican-origin
 
+**Superseded interpretation, 2026-09-17:** [audit §5](../../../research/immigration-new-conclusions-audit-2026-09-17.md) agrees the Mexican-origin dollar transfer is unsupported but rejects the “precise-ish zero,” necessary land-price fall, residential-to-job-density transfer, and automatic double-counting rebuttals. The imputed loss lies inside the direct-outcome interval. No dollar sensitivity here is an identified bound; exclusion from a sum is not a measured zero. Original text remains below.
+
 **Verdict:** **Do not book it.** The $888 and $392 are Cremieux's own arithmetic on two self-estimated parameters, and his package's own direct outcome measure (metro earnings per job) is zero with the wrong sign. The transfer to the Mexican-origin case fails on the flight leg: per immigrant arrival, natives fall only 0.134 (Saiz & Wachter IV) and total population rises, against a net city-emptying in the Great Migration. Book $0 with a named sensitivity of $0 to −$1,700 per US-born Mexican-origin adult-year (0–21% of the −$8,286 gap). Full reasoning in section G.
 
 Model self-report: claude-opus-5[1m] (Opus 5, 1M context), researcher subagent, lane `infra/immigration-fiscal/agglom_crime_2026_09_17/`.
