@@ -8,6 +8,8 @@ Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [m
 
 ## Core State
 
+Origin scope and trust: [LATAM, Southeast Asia and social trust](immigration-latam-southeast-asia-trust-2026-09-17.md) checks the latest located unauthorized-origin stock estimates, limits Mexican-to-LATAM extrapolation, separates Southeast Asian economic outcomes, and weighs local cooperation costs against claims of inevitable or centuries-long trust decline.
+
 Latest executed frontier: [stronger findings and remaining limits](immigration-frontier-execution-2026-09-17.md), with [reproduction and coverage](../infra/immigration-fiscal/frontier_execution_2026_09_17/README.md). Adds official NLS variance validation and adult outcomes, three-year disability and full-denominator trust, NYC exposure accounting, fiscal reconciliation, raw-mirror Bracero wage reconstruction, and bounded H-2B/automation/institutions checks (ladder 115–120). These qualifications govern earlier score, trust, disability and fiscal headlines.
 
 Research priorities: [stronger questions across domains](immigration-research-question-frontier-2026-09-17.md) separates verified descriptions, policy identification, transfer and value judgments; ranks remaining score, selection, incidence and causal-design work; and marks cultural/institutional/environmental questions needing their own outcomes.
