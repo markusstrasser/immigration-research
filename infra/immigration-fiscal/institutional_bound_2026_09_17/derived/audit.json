@@ -1,0 +1,60 @@
+{
+ "acs_year": 2024,
+ "acs_source": "Census API ACS 1-year PUMS tabulate endpoint",
+ "gate1_stored_acs_institutional_2026_09_16": 107917.0,
+ "gate1_fresh_pull": 107917,
+ "gate1_pass": true,
+ "gate2_mexican_total_equals_sum_of_parts": true,
+ "gate3_self_reference_delta_zero": 0.0,
+ "parameters": {
+  "prison_annual_per_person": 60989.0,
+  "jail_alt_not_used_in_headline": 47057.0,
+  "nf_total_per_resident_year": 122500.0,
+  "nf_public_share_residents": 0.77,
+  "nf_public_per_resident_year": 94325.0,
+  "nf_public_medicaid_only_per_resident_year": 53900.0
+ },
+ "white_age_shares": {
+  "0_17": 0.18135,
+  "18_24": 0.08249,
+  "25_34": 0.12329,
+  "35_44": 0.1265,
+  "45_54": 0.11747,
+  "55_64": 0.13847,
+  "65_74": 0.13115,
+  "75_99": 0.09929
+ },
+ "stored_cps_gaps_all_age_shared_mexican_observed_total": {
+  "absolute_total_bn": 50.238,
+  "std_gap_pp_vs_third_plus_nh_white": -5795.3,
+  "gap_total_vs_third_plus_nh_white_bn": -290.59,
+  "std_gap_pp_vs_all_native": -4289.3,
+  "gap_total_vs_all_native_bn": -214.996,
+  "std_gap_pp_vs_native_two_us_parents": -4177.6,
+  "gap_total_vs_native_two_us_parents_bn": -212.312,
+  "std_gap_pp_vs_other_natives": -4753.1,
+  "gap_total_vs_other_natives_bn": -240.485
+ },
+ "signflip_cost_multiplier_needed_for_age_matched_gap": {
+  "adverse|mexico_born|vs_native_nh_white": 150.7,
+  "moderate|mexico_born|vs_native_nh_white": 230.3,
+  "adverse|mexico_born|vs_all_natives": 44.7,
+  "moderate|mexico_born|vs_all_natives": 54.0,
+  "adverse|usborn_mexican|vs_native_nh_white": -72.0,
+  "moderate|usborn_mexican|vs_native_nh_white": -70.1,
+  "adverse|usborn_mexican|vs_all_natives": 487.3,
+  "moderate|usborn_mexican|vs_all_natives": 1921.5,
+  "adverse|mexican_total|vs_native_nh_white": -137.9,
+  "moderate|mexican_total|vs_native_nh_white": -100.9,
+  "adverse|mexican_total|vs_all_natives": 40.9,
+  "moderate|mexican_total|vs_all_natives": 52.6
+ },
+ "signflip_cost_multiplier_needed_for_absolute_50_2bn": {
+  "adverse": 2.54,
+  "moderate": 2.74
+ },
+ "implied_cost_per_institutionalized_person_year_to_flip_absolute": {
+  "adverse": 154912.0,
+  "moderate": 167110.0
+ }
+}
