@@ -1,0 +1,227 @@
+{
+  "acquired": "2026-09-17",
+  "files": [
+    {
+      "input": "/Users/alien/Downloads/default.zip",
+      "sha256": "92dae5f0222644264b7fbdfb128a69a9cf241cfef5554be69722921fe69422a8",
+      "bytes": 1209449,
+      "staged": "raw/default.zip",
+      "members": [
+        {
+          "name": "default.cdb",
+          "bytes": 88009,
+          "sha256": "f0b5decb83ade989ccf3d5d9847f28d839e621bbf44c0cb8802b3014c04891ab"
+        },
+        {
+          "name": "default.sas",
+          "bytes": 31980,
+          "sha256": "e2dacdbbeec8fc92c4a3766949738a3f27f732a2035c06ba3e6684cdbffe49e7"
+        },
+        {
+          "name": "default.NLSY97",
+          "bytes": 891,
+          "sha256": "95cac4418c8f7d6711ab9ed1124f0b5bd6e725e3d94fed5a0ee1cdac065cbd98"
+        },
+        {
+          "name": "default-value-labels.do",
+          "bytes": 20531,
+          "sha256": "96741ea93ea5bcfd9077c3c20e0938a548f7bd8aef3c0921906db82bcbfadb9a"
+        },
+        {
+          "name": "default.sps",
+          "bytes": 36673,
+          "sha256": "afb8d23dd2647cc1c4956dffb63c6a51ea82c5aac3a6048b8a15ad2582f2a9a3"
+        },
+        {
+          "name": "extract.log",
+          "bytes": 174,
+          "sha256": "53eace44ff290124901fce23f5caeb5bd2f2f80b74e035d176c72929e703f87f"
+        },
+        {
+          "name": "default.csv",
+          "bytes": 2547040,
+          "sha256": "922215f67df69fbfa1568d7983f50b3004b5c5b418c4052778657e577c4420d9"
+        },
+        {
+          "name": "default.dct",
+          "bytes": 2550535,
+          "sha256": "6f91b28113ece3cb75cc7bf308a5ae095e19d42e74c9a2ee0bc295ef79c054d2"
+        },
+        {
+          "name": "default.dat",
+          "bytes": 2545950,
+          "sha256": "b333b247ca6e8308d66446bc3fd3976c5357b4ff80390b824d2a16f9c654302a"
+        }
+      ]
+    },
+    {
+      "input": "/Users/alien/Downloads/ICPSR_20862-V6 (1).zip",
+      "sha256": "1d397a1d33b9611c91d1d4b9a4a6fd4aed0bd5fdb8b5517680973aaa8a94a053",
+      "bytes": 2385704,
+      "staged": "raw/ICPSR_20862-V6 (1).zip",
+      "members": [
+        {
+          "name": "ICPSR_20862/DS0003/20862-0003-Codebook.pdf",
+          "bytes": 1987738,
+          "sha256": "3e08a253cacc7ca8595137bd93380b461519cc0822d729d5b13877e66433ae23"
+        },
+        {
+          "name": "ICPSR_20862/20862-Questionnaire-Spanish.pdf",
+          "bytes": 336733,
+          "sha256": "00cbbaa57297e7dac6624de3a7371015d22a0e4e59e87f86205291564b57bed3"
+        },
+        {
+          "name": "ICPSR_20862/20862-Questionnaire-English.pdf",
+          "bytes": 382698,
+          "sha256": "146f8e02cb30b2a26c9c8b68038c20bb29112e31c0e060d5c821a9f9bd23e36a"
+        },
+        {
+          "name": "ICPSR_20862/20862-related_literature.txt",
+          "bytes": 85003,
+          "sha256": "192d5d4f0940cc753bb3150f8399efc8eecb6af73a2cad0cce449d706a98b97f"
+        },
+        {
+          "name": "ICPSR_20862/20862-manifest.txt",
+          "bytes": 5791,
+          "sha256": "50e798ef838a8c52d642776c3a0dbbcbcaed0697d3e1f767f171c56e6e6f26c6"
+        },
+        {
+          "name": "ICPSR_20862/20862-descriptioncitation.html",
+          "bytes": 11713,
+          "sha256": "38a0168af206b43225f6674d93831fd10eacf1cf4d4ef2a5e89dc68251ccfba0"
+        },
+        {
+          "name": "ICPSR_20862/TermsOfUse.html",
+          "bytes": 7145,
+          "sha256": "613034423e83b69146e6575169c80eee51c0f3f5bd69af58525d804b4cc645fa"
+        }
+      ]
+    }
+  ],
+  "nls": {
+    "rows": 8984,
+    "columns": 99,
+    "required_fields": 98,
+    "required_missing": [],
+    "extra_fields": [
+      "R1235800"
+    ],
+    "required_codebooks_present": true,
+    "same_unique_ids": true,
+    "baseline_selected_sha256": "8e684c96d86bc97af92d65b9ea8c58438f5a54a535ed97988dc582b66b8d59d6",
+    "non_id_value_mismatches": {
+      "E8033100": 0,
+      "E8043100": 0,
+      "E8043601": 0,
+      "R0448000": 0,
+      "R0448100": 0,
+      "R0536300": 0,
+      "R0536401": 0,
+      "R0536402": 0,
+      "R0538600": 0,
+      "R0538700": 0,
+      "R0551500": 0,
+      "R0555000": 0,
+      "R0559500": 0,
+      "R0559600": 0,
+      "R1193000": 0,
+      "R1201300": 0,
+      "R1236100": 0,
+      "R1482600": 0,
+      "R1488500": 0,
+      "R1488600": 0,
+      "R1488700": 0,
+      "R1488800": 0,
+      "R1488900": 0,
+      "R1489000": 0,
+      "R1489100": 0,
+      "R1489200": 0,
+      "R5821400": 0,
+      "R6523500": 0,
+      "R6526000": 0,
+      "R6527500": 0,
+      "R9702200": 0,
+      "R9702300": 0,
+      "R9702400": 0,
+      "R9702500": 0,
+      "R9711400": 0,
+      "R9711500": 0,
+      "S0191300": 0,
+      "S1194600": 0,
+      "S1202700": 0,
+      "S1205800": 0,
+      "S1207200": 0,
+      "S1223800": 0,
+      "S1224800": 0,
+      "S1604500": 0,
+      "S2067700": 0,
+      "S2175900": 0,
+      "S3277000": 0,
+      "S3285500": 0,
+      "S3288600": 0,
+      "S3290000": 0,
+      "S3862300": 0,
+      "S3952000": 0,
+      "S4899800": 0,
+      "S4908400": 0,
+      "S4911500": 0,
+      "S7546200": 0,
+      "S7639500": 0,
+      "S7639800": 0,
+      "S7640100": 0,
+      "S7640400": 0,
+      "S7640800": 0,
+      "S7641100": 0,
+      "S7641500": 0,
+      "S7641800": 0,
+      "S7642200": 0,
+      "S8631100": 0,
+      "S8634200": 0,
+      "T0042800": 0,
+      "T0133500": 0,
+      "T0133800": 0,
+      "T0134100": 0,
+      "T0134400": 0,
+      "T0134800": 0,
+      "T0135000": 0,
+      "T0135300": 0,
+      "T0135500": 0,
+      "T0135800": 0,
+      "T1016400": 0,
+      "T1019500": 0,
+      "T8122000": 0,
+      "T8123600": 0,
+      "T8129600": 0,
+      "T8135900": 0,
+      "T8976500": 0,
+      "T8976700": 0,
+      "U6365400": 0,
+      "Z0382300": 0,
+      "Z0382400": 0,
+      "Z0382500": 0,
+      "Z0382600": 0,
+      "Z0382700": 0,
+      "Z0382701": 0,
+      "Z0382702": 0,
+      "Z0382703": 0,
+      "Z0382704": 0,
+      "Z0501800": 0,
+      "Z0502000": 0
+    },
+    "all_requested_values_match": true
+  },
+  "icpsr": {
+    "members": 7,
+    "identical_to_previous": [
+      "ICPSR_20862/DS0003/20862-0003-Codebook.pdf",
+      "ICPSR_20862/20862-Questionnaire-Spanish.pdf",
+      "ICPSR_20862/20862-Questionnaire-English.pdf",
+      "ICPSR_20862/20862-related_literature.txt",
+      "ICPSR_20862/20862-manifest.txt",
+      "ICPSR_20862/20862-descriptioncitation.html",
+      "ICPSR_20862/TermsOfUse.html"
+    ],
+    "respondent_data_files": [],
+    "status": "DOCUMENTATION_ONLY"
+  }
+}
