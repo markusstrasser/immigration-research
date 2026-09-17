@@ -4,6 +4,10 @@
 .mcp.json
 .scratch/
 
+# Local critique packets, generated dispatch and authentication diagnostics.
+.model-review/allage-construct*
+.model-review/preflight-latest.json
+
 # Generator banks / mining scaffolding — internal workshop, not published
 research/.mining/
 
