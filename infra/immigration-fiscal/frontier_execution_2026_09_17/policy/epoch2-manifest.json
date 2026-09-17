@@ -1,0 +1,141 @@
+{
+  "date": "2026-09-17",
+  "python": "3.13.6",
+  "numpy": "2.5.3",
+  "pandas": "3.0.5",
+  "statsmodels": "0.15.0",
+  "mirror_tree_sha": "268ba5b189a348712859d94f468ef3bbb955bb52",
+  "provenance": "DEGRADED: third-party public CSV mirror, original ICPSR byte identity not verified",
+  "inputs": [
+    {
+      "path": "raw/aea.html",
+      "bytes": 30732,
+      "sha256": "43b9d0c9d57866e6d89b86e3137638ad73df9867519d584a5a6d3ddfce893346"
+    },
+    {
+      "path": "raw/appendix.pdf",
+      "bytes": 1649862,
+      "sha256": "f12594d4a5c915230806341a05e73ce0da10a66b6a9b2c17d0c0cf6b44e86709"
+    },
+    {
+      "path": "raw/appendix.txt",
+      "bytes": 126505,
+      "sha256": "090dc1ef3f394cb26147e99bf8134412fbf3351ab9237c34b9af0d066b59daaa"
+    },
+    {
+      "path": "raw/article-piie-july2026.pdf",
+      "bytes": 1592443,
+      "sha256": "0f971af15f4147f177f64b65e430e4a70bfbaa8a941441c37eaca0058e3d6eb9"
+    },
+    {
+      "path": "raw/article-piie-july2026.txt",
+      "bytes": 290967,
+      "sha256": "48e7d6bb3a068985faa162c7a9ec2fd00b4d50d8d821cdaa20a2b493a0a43b16"
+    },
+    {
+      "path": "raw/bracero-aea.html",
+      "bytes": 30935,
+      "sha256": "21e85faa925155b5245959c36b48795c3b69707cbeb899826adffa3d930b4131"
+    },
+    {
+      "path": "raw/bracero-appendix.txt",
+      "bytes": 183601,
+      "sha256": "13d06f1d1719f2ff46f1c7f9d88b4cbef85559f1ab62bb57e363b4466ce33875"
+    },
+    {
+      "path": "raw/bracero-github-repositories.json",
+      "bytes": 190871,
+      "sha256": "210860016f362b114245a279860b7ee7668f3d339272d0ac81b79bd65d357798"
+    },
+    {
+      "path": "raw/bracero-julia-tree.json",
+      "bytes": 13123,
+      "sha256": "ad72d906737760d871fe01ffa330f52e3001a46811f7eafb975c9475280a8bc1"
+    },
+    {
+      "path": "raw/bracero-material-9090",
+      "bytes": 1430273,
+      "sha256": "84637b9568c2ef823c7606fbe4bf0af98dd1542016c6c448777f858fb8746e0b"
+    },
+    {
+      "path": "raw/bracero-mirror/README.md",
+      "bytes": 3529,
+      "sha256": "a28836918f5dcff3d3c976c0d52b363141a44125ca92a2b53baa1cca2deac7fe"
+    },
+    {
+      "path": "raw/bracero-mirror/cleaning.jl",
+      "bytes": 9175,
+      "sha256": "c6d1506ac6ceafd5549d0ea4c325c412f0f02333f39052a644d04026fac77aa9"
+    },
+    {
+      "path": "raw/bracero-mirror/cpi.csv",
+      "bytes": 284908,
+      "sha256": "6319c724525ca52f61a6035d4bb47853e25bcd1acc23367e691ed6264ff60200"
+    },
+    {
+      "path": "raw/bracero-mirror/data.csv",
+      "bytes": 2738659,
+      "sha256": "86ffd9e1c776aa693bfd0b5e889b7a7a9c0657d41cc44a6eba1a82e3ea776bcc"
+    },
+    {
+      "path": "raw/bracero-mirror/table1.jl",
+      "bytes": 3194,
+      "sha256": "529669f96e8bedd9f0f5654a61b3c9bdaaaffb711c44255ed8463e1da727b58b"
+    },
+    {
+      "path": "raw/bracero-mirror/table2.jl",
+      "bytes": 2036,
+      "sha256": "5a1705b103298a5c5b44aabf6f921035a4a3ecc765d9c6a4b46a0a42081bc806"
+    },
+    {
+      "path": "raw/bracero-mirror-meta.json",
+      "bytes": 5323,
+      "sha256": "682ffdbb20b5e8d5d1c07649805775a3dd1ba762ac99cb4eb3a4ca3fd290cb09"
+    },
+    {
+      "path": "raw/bracero-mirror-tree.json",
+      "bytes": 6294,
+      "sha256": "41f4237aba028fbcabd71c41a9d68f13314168f92f1bdf934dabef6c5d7a91cd"
+    },
+    {
+      "path": "raw/bracero-other-tree.json",
+      "bytes": 529,
+      "sha256": "e5403db2f816405771c237d0cbeba88b00d7255fbf7d5caf97c2b68300be2bb5"
+    },
+    {
+      "path": "raw/bracero-working-paper.pdf",
+      "bytes": 1243564,
+      "sha256": "dd1fba6aa2e1097fcbe7c25a6e2a82da3aebc9da8d92af35352b32c8add5d2c8"
+    },
+    {
+      "path": "raw/bracero-working-paper.txt",
+      "bytes": 254749,
+      "sha256": "0209217dd1fae70826cee4c87e611eb0364378d600020d1bdc5b64da90a30350"
+    },
+    {
+      "path": "raw/danzer-2024.pdf",
+      "bytes": 917786,
+      "sha256": "fdfe87c3d12f68a6adce0886a6f9f6f0104e42de2abb4baa8c4cd08beaa25a9a"
+    },
+    {
+      "path": "raw/danzer-2024.txt",
+      "bytes": 153153,
+      "sha256": "0b3cc9255a698d8a1acd84b33ced544eb86011205f8cbc36648ee1b311483da5"
+    },
+    {
+      "path": "raw/danzer-repository.html",
+      "bytes": 27261,
+      "sha256": "469ffb900d2bd9e9d860b8c94caefd85b3b2bdeec2382dac38e9dfc080bfac6c"
+    },
+    {
+      "path": "raw/danzer-supplement.pdf",
+      "bytes": 1747595,
+      "sha256": "dbca40f4a12211a220bb2185c5f6499b1a0b932f6680b5b77bd19dc70a56545a"
+    },
+    {
+      "path": "raw/danzer-supplement.txt",
+      "bytes": 213960,
+      "sha256": "1a30720f221ce339a47614c873998d0e28a4fc3d1b9b45912e2e84f501bafb77"
+    }
+  ]
+}

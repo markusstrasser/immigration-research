@@ -1,0 +1,58 @@
+[
+  {
+    "local": "raw/bracero-mirror/data.csv",
+    "url": "https://raw.githubusercontent.com/glpousse/bracero_pkg.jl/268ba5b189a348712859d94f468ef3bbb955bb52/data/raw/data_bracero_aer.csv",
+    "git_blob_sha1": "07a35c6e4622659523e7891cb9fac142edaeb972",
+    "sha256": "86ffd9e1c776aa693bfd0b5e889b7a7a9c0657d41cc44a6eba1a82e3ea776bcc"
+  },
+  {
+    "local": "raw/bracero-mirror/cpi.csv",
+    "url": "https://raw.githubusercontent.com/glpousse/bracero_pkg.jl/268ba5b189a348712859d94f468ef3bbb955bb52/data/raw/data_cpi.csv",
+    "git_blob_sha1": "2f5383e1bd69e8194022a9efdb0f0f05ba88f950",
+    "sha256": "6319c724525ca52f61a6035d4bb47853e25bcd1acc23367e691ed6264ff60200"
+  },
+  {
+    "local": "raw/bracero-mirror/cleaning.jl",
+    "url": "https://raw.githubusercontent.com/glpousse/bracero_pkg.jl/268ba5b189a348712859d94f468ef3bbb955bb52/src/Data_cleaning.jl",
+    "git_blob_sha1": "3871c52d14b3cfe13f3e06997ca0237c8cdd161d",
+    "sha256": "c6d1506ac6ceafd5549d0ea4c325c412f0f02333f39052a644d04026fac77aa9"
+  },
+  {
+    "local": "raw/bracero-mirror/table1.jl",
+    "url": "https://raw.githubusercontent.com/glpousse/bracero_pkg.jl/268ba5b189a348712859d94f468ef3bbb955bb52/src/Table1.jl",
+    "git_blob_sha1": "87817ff6807db6297b4f284587147d90d3ba8e09",
+    "sha256": "529669f96e8bedd9f0f5654a61b3c9bdaaaffb711c44255ed8463e1da727b58b"
+  },
+  {
+    "local": "raw/bracero-mirror/table2.jl",
+    "url": "https://raw.githubusercontent.com/glpousse/bracero_pkg.jl/268ba5b189a348712859d94f468ef3bbb955bb52/src/Table2.jl",
+    "git_blob_sha1": "e1bac1b76e83228ee05c804b2977f25d1e700598",
+    "sha256": "5a1705b103298a5c5b44aabf6f921035a4a3ecc765d9c6a4b46a0a42081bc806"
+  },
+  {
+    "local": "raw/bracero-mirror/README.md",
+    "url": "https://raw.githubusercontent.com/glpousse/bracero_pkg.jl/268ba5b189a348712859d94f468ef3bbb955bb52/README.md",
+    "git_blob_sha1": "c4ba6f2214a4b979e171f8f42f90e4c87ce63f56",
+    "sha256": "a28836918f5dcff3d3c976c0d52b363141a44125ca92a2b53baa1cca2deac7fe"
+  },
+  {
+    "local": "raw/bracero-working-paper.pdf",
+    "url": "https://www.nber.org/system/files/working_papers/w23125/w23125.pdf",
+    "sha256": "dd1fba6aa2e1097fcbe7c25a6e2a82da3aebc9da8d92af35352b32c8add5d2c8"
+  },
+  {
+    "local": "raw/bracero-material-9090",
+    "url": "https://www.aeaweb.org/articles/materials/9090",
+    "sha256": "84637b9568c2ef823c7606fbe4bf0af98dd1542016c6c448777f858fb8746e0b"
+  },
+  {
+    "local": "raw/danzer-2024.pdf",
+    "url": "https://edoc.ku.de/id/eprint/33404/1/1-s2.0-S0047272724000720-main.pdf",
+    "sha256": "fdfe87c3d12f68a6adce0886a6f9f6f0104e42de2abb4baa8c4cd08beaa25a9a"
+  },
+  {
+    "local": "raw/danzer-supplement.pdf",
+    "url": "https://ars.els-cdn.com/content/image/1-s2.0-S0047272724000720-mmc1.pdf",
+    "sha256": "dbca40f4a12211a220bb2185c5f6499b1a0b932f6680b5b77bd19dc70a56545a"
+  }
+]

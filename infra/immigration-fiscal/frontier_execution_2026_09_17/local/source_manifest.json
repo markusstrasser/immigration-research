@@ -1,0 +1,119 @@
+[
+  {
+    "filename": "census.html",
+    "url": "https://comptroller.nyc.gov/services/for-the-public/accounting-for-asylum-seeker-services/asylum-seeker-census/",
+    "final_url": "https://comptroller.nyc.gov/services/for-the-public/accounting-for-asylum-seeker-services/asylum-seeker-census/",
+    "retrieved_utc": "2026-09-17T13:57:30.060558+00:00",
+    "bytes": 120437,
+    "sha256": "4448f458fa9e1bb8d444e89968482eceeb7429febc5cdac32e6c60345ba7966b",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  {
+    "filename": "fiscal.html",
+    "url": "https://comptroller.nyc.gov/services/for-the-public/accounting-for-asylum-seeker-services/fiscal-impacts/",
+    "final_url": "https://comptroller.nyc.gov/services/for-the-public/accounting-for-asylum-seeker-services/fiscal-impacts/",
+    "retrieved_utc": "2026-09-17T13:57:31.791576+00:00",
+    "bytes": 115226,
+    "sha256": "e50063a1f52cc04fafbd2fc508c186ac4556fbb29e564a05f9f5e7f09c4bd969",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  {
+    "filename": "shelter_rule.html",
+    "url": "https://comptroller.nyc.gov/reports/report-on-the-investigation-of-the-implementation-of-the-60-day-rule-for-asylum-seeker-families/",
+    "final_url": "https://comptroller.nyc.gov/reports/report-on-the-investigation-of-the-implementation-of-the-60-day-rule-for-asylum-seeker-families/",
+    "retrieved_utc": "2026-09-17T13:57:33.362033+00:00",
+    "bytes": 154256,
+    "sha256": "774dcfd48c713279dfb81f7721734b7406aa2f6dec42ca581d38897224e13b38",
+    "content_type": "text/html; charset=UTF-8"
+  },
+  {
+    "filename": "meyer_wyse_williams_2026.pdf",
+    "url": "https://bpb-us-w2.wpmucdn.com/voices.uchicago.edu/dist/a/3122/files/2026/02/Meyer-Wyse-Williams-JPubE-2026.pdf",
+    "final_url": "https://bpb-us-w2.wpmucdn.com/voices.uchicago.edu/dist/a/3122/files/2026/02/Meyer-Wyse-Williams-JPubE-2026.pdf",
+    "retrieved_utc": "2026-09-17T13:57:39.020236+00:00",
+    "bytes": 5767444,
+    "sha256": "211d9171cd3702d48b2115888a836e5db6738f7d1057d912b3e538d240da0e90",
+    "content_type": "application/pdf"
+  },
+  {
+    "filename": "AsylumSeekersbyShelterTypeStackedBar.csv",
+    "url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=AsylumSeekersbyShelterTypeStackedBar&headers=1&tqx=out:csv",
+    "final_url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=AsylumSeekersbyShelterTypeStackedBar&headers=1&tqx=out:csv",
+    "retrieved_utc": "2026-09-17T13:57:39.649212+00:00",
+    "bytes": 1024,
+    "sha256": "0ab8c36e6b3f905bb92811e7853ee114f411ccbf1899d77184599390461ab6f9",
+    "content_type": "text/csv; charset=utf-8"
+  },
+  {
+    "filename": "AsylumSeekersbyShelterType.csv",
+    "url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=AsylumSeekersbyShelterType&headers=1&tqx=out:csv",
+    "final_url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=AsylumSeekersbyShelterType&headers=1&tqx=out:csv",
+    "retrieved_utc": "2026-09-17T13:57:40.151285+00:00",
+    "bytes": 113,
+    "sha256": "e31c89ad9fb35e8ad118b8acf934d90c7518f620d2c9b4cf62cb2760aac0cdc8",
+    "content_type": "text/csv; charset=utf-8"
+  },
+  {
+    "filename": "InCityCare.csv",
+    "url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=InCityCare&headers=1&tqx=out:csv",
+    "final_url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=InCityCare&headers=1&tqx=out:csv",
+    "retrieved_utc": "2026-09-17T13:57:40.702242+00:00",
+    "bytes": 1675,
+    "sha256": "ebd541fe8ba2acaa9c1a2953580c7cc4059553680bf3893c8239d4878163f9e5",
+    "content_type": "text/csv; charset=utf-8"
+  },
+  {
+    "filename": "OutsideNYC.csv",
+    "url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=OutsideNYC&headers=1&tqx=out:csv",
+    "final_url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=OutsideNYC&headers=1&tqx=out:csv",
+    "retrieved_utc": "2026-09-17T13:57:41.239051+00:00",
+    "bytes": 481,
+    "sha256": "ff6f3ebd5c2d25b187fc62914fed4dbf6e5d12ec5c8da8e0a5aacf64215013ab",
+    "content_type": "text/csv; charset=utf-8"
+  },
+  {
+    "filename": "WeeklyExit.csv",
+    "url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=WeeklyExit&headers=1&tqx=out:csv",
+    "final_url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=WeeklyExit&headers=1&tqx=out:csv",
+    "retrieved_utc": "2026-09-17T13:57:41.966141+00:00",
+    "bytes": 2509,
+    "sha256": "565fd9d7de40f86aaaa57a56c192048e2a2dda5dc3842fbc4cea087ea13cebe8",
+    "content_type": "text/csv; charset=utf-8"
+  },
+  {
+    "filename": "totalStudentsNumber.csv",
+    "url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=totalStudentsNumber&headers=1&tqx=out:csv",
+    "final_url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=totalStudentsNumber&headers=1&tqx=out:csv",
+    "retrieved_utc": "2026-09-17T13:57:42.480286+00:00",
+    "bytes": 1536,
+    "sha256": "b824b459b2f7059ef3fd9170f7d3c318491b361f8de2883efdb5b89a8b2e8782",
+    "content_type": "text/csv; charset=utf-8"
+  },
+  {
+    "filename": "newStudentsbyDistrict.csv",
+    "url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=newStudentsbyDistrict&headers=1&tqx=out:csv",
+    "final_url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=newStudentsbyDistrict&headers=1&tqx=out:csv",
+    "retrieved_utc": "2026-09-17T13:57:43.040099+00:00",
+    "bytes": 16531,
+    "sha256": "723003461c5700d3110d56e2fa7fedb9b9be003a988e45dc6973592bd2579e9e",
+    "content_type": "text/csv; charset=utf-8"
+  },
+  {
+    "filename": "byDistMostRecent.csv",
+    "url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=byDistMostRecent&headers=1&tqx=out:csv",
+    "final_url": "https://docs.google.com/spreadsheets/d/1e2bmhqWGl2XYyFCqb7OHDNv5tD9jtiqAW4PRpzys4gM/gviz/tq?sheet=byDistMostRecent&headers=1&tqx=out:csv",
+    "retrieved_utc": "2026-09-17T13:57:43.548870+00:00",
+    "bytes": 409,
+    "sha256": "79f45cdc33b836376c04bff9593e0b6af4e7851c1e91ebdd09101f8714444e12",
+    "content_type": "text/csv; charset=utf-8"
+  },
+  {
+    "filename": "executive_fy2027.html",
+    "url": "https://comptroller.nyc.gov/reports/comments-on-new-york-citys-executive-budget-for-fiscal-year-2027-and-financial-plan-for-fiscal-years-2026-2030/",
+    "final_url": "https://comptroller.nyc.gov/reports/comments-on-new-york-citys-executive-budget-for-fiscal-year-2027-and-financial-plan-for-fiscal-years-2026-2030/",
+    "retrieved_utc": "2026-09-17T14:00:46.444097+00:00",
+    "bytes": 883666,
+    "sha256": "24ed449f841b1113f4d83493f60e63ec0e5189c2915d064b222076cb05c0aa25",
+    "content_type": "text/html; charset=UTF-8"
+  }
+]
