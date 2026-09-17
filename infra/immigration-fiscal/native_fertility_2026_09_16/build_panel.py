@@ -36,6 +36,12 @@ def merge(dataset, year, groups):
     return out
 
 
+def women_age_windows(df):
+    """B01001 female ages 20–34 and 15–50; age 50 is approximated within 50–54."""
+    f = {i: df[f"B01001_{i:03d}E"] for i in range(30, 41)}
+    return sum(f[i] for i in range(32, 37)), sum(f[i] for i in range(30, 40)) + 0.2 * f[40]
+
+
 def derive(df, educ_group):
     d = pd.DataFrame({"cbsa": df["cbsa"], "name": df["NAME"]})
     nat_births = df["B13008_004E"] + df["B13008_007E"]
@@ -64,9 +70,7 @@ def derive(df, educ_group):
         ba = df[[f"B15002_{i:03d}E" for i in (15, 16, 17, 18, 32, 33, 34, 35)]].sum(axis=1)
         d["ba_plus_share"] = ba / df["B15002_001E"] * 100
     # women 20-34 as a share of women 15-50 (age structure of the fertility window)
-    f = {i: df[f"B01001_{i:03d}E"] for i in range(30, 40)}
-    w20_34 = f[31] + f[32] + f[33] + f[34] + f[35]          # 20,21,22-24,25-29,30-34
-    w15_50 = f[30] + w20_34 + f[36] + f[37] + f[38] + 0.2 * f[39]  # 15-19,...,45-49,+1/5 of 50-54
+    w20_34, w15_50 = women_age_windows(df)
     d["share_women_20_34"] = w20_34 / w15_50 * 100
     d["women_15_50_all"] = w15_50
     return d

@@ -1,13 +1,13 @@
-"""Within-metro fixed-effects panel, ACS 1-year 2010-2023. The cross-section cannot separate
-'immigrants suppress native fertility' from 'immigrants live in low-fertility metros'.
-Metro FE + year FE does."""
+"""Descriptive within-CBSA panel. Fixed effects remove fixed area differences and common
+year shocks, but do not identify causality; changing boundaries remain unharmonized."""
 import json, pathlib, warnings
 import numpy as np, pandas as pd, statsmodels.api as sm
 import fetch_acs as F
+from build_panel import women_age_windows
 warnings.filterwarnings("ignore")
 HERE = pathlib.Path(__file__).resolve().parent
 CACHE = HERE / "_cache"
-YEARS = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2022, 2023]  # 2020 ACS1 not published
+YEARS = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2022, 2023]  # Standard 2020 ACS1 unavailable; published 2021 omitted here.
 G = ["B13008", "B05012", "B25064", "B19013", "B01001"]
 OUT = []
 def say(s=""):
@@ -36,9 +36,7 @@ for y in YEARS:
         d = d.merge(load(y, g), on="cbsa", how="outer")
     nb = d.B13008_004E + d.B13008_007E
     nw = nb + d.B13008_011E + d.B13008_014E
-    f = {i: d[f"B01001_{i:03d}E"] for i in range(30, 40)}
-    w2034 = f[31] + f[32] + f[33] + f[34] + f[35]
-    w1550 = f[30] + w2034 + f[36] + f[37] + f[38] + 0.2 * f[39]
+    w2034, w1550 = women_age_windows(d)
     rows.append(pd.DataFrame({
         "cbsa": d.cbsa, "year": y, "native_birth_rate": nb / nw * 1000, "native_women": nw,
         "fb_share": d.B05012_003E / d.B05012_001E * 100,
@@ -50,7 +48,8 @@ n_y = p.groupby("cbsa").year.nunique()
 bal = n_y[n_y >= 10].index                      # metros observed in >=10 of the 12 years
 p = p[p.cbsa.isin(bal)].copy()
 say("=" * 100)
-say("7. WITHIN-METRO FIXED-EFFECTS PANEL, ACS 1-year 2010-2023 (2020/2021 ACS1 not published)")
+say("7. DESCRIPTIVE CBSA FE, 2010-2023 (standard 2020 ACS1 unavailable; published 2021 omitted)")
+say("  [DEGRADED] CBSA boundaries are not harmonized; fixed effects do not identify causality.")
 say("=" * 100)
 say(f"  metros with >=10 years: {p.cbsa.nunique()}   metro-year observations: {len(p)}")
 
@@ -86,12 +85,12 @@ mp = sm.OLS(p.native_birth_rate, sm.add_constant(Xp)).fit(
 say(f"  {'pooled, year FE only':<46} b={mp.params['fb_share']:+8.4f}  "
     f"se={mp.bse['fb_share']:6.4f}  t={mp.tvalues['fb_share']:+6.2f}  p={mp.pvalues['fb_share']:.4f}")
 say("")
-say(f"  ARITHMETIC AT THE FE COEFFICIENT [INFERENCE]: b={m_fe2.params['fb_share']:+.4f}, "
+say(f"  HYPOTHETICAL LINEAR EXTRAPOLATION, NOT A NATIONAL EFFECT ESTIMATE: b={m_fe2.params['fb_share']:+.4f}, "
     f"95% CI [{m_fe2.params['fb_share']-1.96*m_fe2.bse['fb_share']:+.3f}, "
     f"{m_fe2.params['fb_share']+1.96*m_fe2.bse['fb_share']:+.3f}]")
 for b, nm in ((m_fe2.params["fb_share"], "point"),
               (m_fe2.params["fb_share"] - 1.96 * m_fe2.bse["fb_share"], "CI lower (most negative)")):
-    say(f"    {nm:<26}: births forgone at fb_share=15.6% = {-b*15.6/1000*65192113:+,.0f}/yr "
-        f"({-b*15.6/1000*65192113/792725*100:+.1f}% of the 792,725 births to foreign-born women)")
+    say(f"    {nm:<26}: fewer native women reporting a birth at fb_share=15.6% = {-b*15.6/1000*65192113:+,.0f} "
+        f"({-b*15.6/1000*65192113/792725*100:+.1f}% of 792,725 foreign-born women reporting a birth)")
 p.to_csv(HERE / "fe_panel.csv", index=False)
 (HERE / "fe_output.txt").write_text("\n".join(OUT) + "\n")
