@@ -2,6 +2,8 @@
 
 # Mexican-origin population by generation: economic position, welfare, crime, and what is conclusive
 
+**2026-09-17 current accounting/generation qualification:** use the [consistent all-age rebuild and strict IIMMLA analysis](immigration-all-age-and-lineage-findings-2026-09-17.md) for the expanded fiscal total and new generation comparisons. Large reference shortfalls survive; their size changes with assignment rules, and a positive partial absolute balance is a separate quantity. Common-age profiles show partial first-to-third-plus convergence, while IIMMLA schooling, arrest and broad incarceration have different local patterns. Neither analysis identifies genetic causes or complete country ancestry. The later appended adult/all-age hybrid and inherited generation headlines below remain historical constructions; see the [decision](../decisions/2026-09-17-fix-accounting-and-generation-comparisons.md).
+
 ## 1. Population and definitions
 
 CPS ASEC 2025, all ages, person-weighted: Mexico-born 12.2M; native-born with a Mexico-born parent 14.4M; native-born with two US-born parents self-identifying as Mexican origin 14.4M. The Census Bureau's own generation table for 2024 gives 12.1M / 13.8M / 13.1M with a slightly different second-generation construction (Mexican self-identification plus any foreign-born parent) ([Mexican-origin incarceration memo](immigration-mexican-origin-generation-incarceration-2026-09-16.md) §4). [SOURCE: `../infra/immigration-fiscal/cps_generation_welfare_2026_09_16/mexican_origin_result_2025.txt`]
@@ -247,6 +249,8 @@ What "cause more crime" would then mean. A raw contrast answers "do they offend 
 **Instrument note.** Tabulations are mechanical; the synthesis in §7 is this model's reading and could carry the dispositions described in `notes/llm-bias-caveat.md`. The cheapest falsifiers are a regression-adjusted second-generation welfare comparison and any post-2000 Mexican-specific wage-effect estimate.
 
 ## Revisions
+
+- **2026-09-17 (consistent all-age and raw-history execution).** The [accounting/generation decision](../decisions/2026-09-17-fix-accounting-and-generation-comparisons.md) links the new all-age extension with joint sampling uncertainty, fixed-budget attribution and common-age comparisons. It qualifies the mixed adult/all-age aggregate and broad generation interpretations; the local IIMMLA outcomes move in different directions. Earlier source tables remain preserved.
 
 - **2026-09-16 (evening, correction).** §5.3 re-based on the adults-only allocation after the operator flagged the diluted children count and the average-cost schooling line. Claim change: the Mexican second generation's total benefits are 15–30% *above* white natives' (not level), means-tested 40% above; the tax ratio (1.84×) remains the larger term; net per working-age adult −$2,200 to −$3,600 against +$7,300.
 - **2026-09-16 (evening, later).** Added §5.3, the full benefit side by category with benefit-to-tax ratios. Claim added: means-tested benefits per working-age adult are a fifth higher for the Mexican second generation than for white natives, total benefits are level or lower, and the ratio gap (0.92 vs 0.48 with schools) is the tax denominator.
