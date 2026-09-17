@@ -1,5 +1,9 @@
 # September 17 survey intake and conclusion audit
 
+**Start with the [named dataset library](library/README.md).** It groups NLSY97, Pew and ICPSR files under descriptive names, maps original filenames and equivalent downloads, and marks documentation-only packages. Rebuild it with `uv run python3 infra/immigration-fiscal/new_datasets_2026_09_17/organize.py`. Copies and catalog are ignored; the generator and source records are tracked. The library stays inside this project because the repository's `sources/` path is a symlink to a separate data directory.
+
+**Current access:** the complete NLS core export is verified; ICPSR20862 respondent data are blocked by the account's non-member status according to the operator's browser report. Stop repeated documentation downloads. [Access evidence and remaining options](access-status.md). Historical intake notes below retain the earlier state.
+
 Thirteen supplied files are recorded in `manifest.json` and `ACQUIRED.md`. Originals are preserved; duplicate NLS ZIPs share one canonical staged copy. `raw/` and `derived/` stay local and are ignored. Research synthesis and source definitions: [audit](../../../research/immigration-new-datasets-and-conclusions-2026-09-17.md), [dataset cards](../../../research/immigration-dataset-register.md).
 
 Run commands from the repository root. Python dependencies already declared in this project cover these acquisition/analysis scripts; PDF text extraction also uses `pdftotext`. Set `UV_CACHE_DIR` to a writable temporary directory if the normal cache is sandboxed.
