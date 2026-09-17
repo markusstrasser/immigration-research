@@ -1,0 +1,356 @@
+{
+  "_meta": {
+    "note": "DEVELOPMENT PLACEHOLDER written by the builder lane. Every entry carries status=placeholder and is refused unless --allow-placeholder is passed. Values are order-of-magnitude stand-ins used only to exercise the machinery; none is sourced and none may appear in a reported number.",
+    "written_by": "ledger_absolute_2026_09_17 builder lane",
+    "fetched": "2026-09-17T23:00:00Z"
+  },
+  "deflator": {
+    "sl_deflator_2022_to_2024_ratio": {
+      "value": 1.039312,
+      "unit": "ratio",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    }
+  },
+  "population": {
+    "us_resident_population_2024_07_01": {
+      "value": 340110988,
+      "unit": "persons",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    }
+  },
+  "omb": {
+    "receipts_corporation_income": {
+      "value": 529867,
+      "unit": "USD millions",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "receipts_excise": {
+      "value": 101426,
+      "unit": "USD millions",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "subf_501_elementary_secondary_vocational": {
+      "value": 105373,
+      "unit": "USD millions",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "subf_551_health_care_services": {
+      "value": 854342,
+      "unit": "USD millions",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "subf_601_general_retirement_disability": {
+      "value": 22325,
+      "unit": "USD millions",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "subf_602_federal_employee_retirement_disability": {
+      "value": 179924,
+      "unit": "USD millions",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "subf_604_housing_assistance": {
+      "value": 70008,
+      "unit": "USD millions",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "subf_703_hospital_medical_veterans": {
+      "value": 138543,
+      "unit": "USD millions",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "subf_753_federal_correctional": {
+      "value": 9057,
+      "unit": "USD millions",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    }
+  },
+  "enforcement": {
+    "ice_ero_total": {
+      "value": 5082218,
+      "unit": "USD thousands",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "ice_ero_custody_operations": {
+      "value": 3434952,
+      "unit": "USD thousands",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "doj_eoir_appropriation": {
+      "value": 844000,
+      "unit": "USD thousands",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "uscis_net_discretionary_appropriated": {
+      "value": 281140,
+      "unit": "USD thousands",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "cbp_us_border_patrol": {
+      "value": 8308847,
+      "unit": "USD thousands",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "bop_inmates_mexican_share_pct": {
+      "value": 8.0,
+      "unit": "percent",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    }
+  },
+  "unauthorized": {
+    "ohss_unauthorized_total_jan2022": {
+      "value": 10990000,
+      "unit": "persons",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "ohss_unauthorized_mexico_jan2022": {
+      "value": 4810000,
+      "unit": "persons",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    }
+  },
+  "city_migrant": {
+    "mexico_share_sw_encounters_fy2024": {
+      "value": 0.3,
+      "unit": "share",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    }
+  },
+  "corporate": {
+    "state_corporate_net_income_tax_2024": {
+      "value": 110000,
+      "unit": "USD millions",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "state_selective_sales_taxes_2024": {
+      "value": 160000,
+      "unit": "USD millions",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    }
+  },
+  "underreporting": {
+    "ratio_snap": {
+      "value": 1.45,
+      "unit": "admin/survey ratio",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "ratio_tanf": {
+      "value": 2.5,
+      "unit": "admin/survey ratio",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "ratio_ssi": {
+      "value": 1.3,
+      "unit": "admin/survey ratio",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "ratio_ui": {
+      "value": 1.4,
+      "unit": "admin/survey ratio",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "ratio_housing": {
+      "value": 1.6,
+      "unit": "admin/survey ratio",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "ratio_social_security": {
+      "value": 0.97,
+      "unit": "admin/survey ratio",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    }
+  },
+  "improper_payments": {
+    "eitc_improper_payments_fy2024": {
+      "value": 21900,
+      "unit": "USD millions",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "actc_improper_payments_fy2024": {
+      "value": 5200,
+      "unit": "USD millions",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    }
+  },
+  "meps_coverage": {
+    "nhea_to_meps_ratio_medicaid": {
+      "value": 1.35,
+      "unit": "ratio",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "nhea_to_meps_ratio_medicare": {
+      "value": 1.25,
+      "unit": "ratio",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    }
+  },
+  "k12": {
+    "district_hispanic_differential_by_state": {
+      "value": null,
+      "unit": "dollars per pupil by state FIPS",
+      "fiscal_year": 2023,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "district_white_differential_by_state": {
+      "value": null,
+      "unit": "dollars per pupil by state FIPS",
+      "fiscal_year": 2023,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    }
+  },
+  "state_medicaid_undocumented": {
+    "general_fund_cost_by_state_fy2024": {
+      "value": null,
+      "unit": "dollars by state FIPS",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    },
+    "share_already_inside_meps": {
+      "value": 0.5,
+      "unit": "share",
+      "fiscal_year": 2024,
+      "source_url": null,
+      "quote": null,
+      "fetched": null,
+      "status": "placeholder"
+    }
+  },
+  "staged_files": []
+}

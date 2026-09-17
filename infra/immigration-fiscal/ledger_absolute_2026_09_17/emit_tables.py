@@ -42,13 +42,30 @@ def main() -> None:
         cells.append(row.flag)
         print("| " + " | ".join(cells) + " |")
 
-    print("\n### Per standardized person, union and the white reference\n")
+    print("\n### Complete absolute balance, crude per person at each group's own age mix\n")
     ends = water.sort_values("step").groupby("group").tail(1).set_index("group")
-    print("| group | complete absolute $bn | per person $ |")
-    print("|---|---|---|")
+    brief = int(audit.get("brief_final_step", 12))
+    step12 = water[water.step == brief].set_index("group")
+    print("| group | at step 12 $bn | complete (step 13) $bn | crude per person $ |")
+    print("|---|---|---|---|")
     for g in GROUPS:
-        print(f"| {SHORT[g]} | {ends.loc[g, 'cumulative_bn']:+,.1f} | "
+        print(f"| {SHORT[g]} | {step12.loc[g, 'cumulative_bn']:+,.1f} | "
+              f"{ends.loc[g, 'cumulative_bn']:+,.1f} | "
               f"{ends.loc[g, 'cumulative_per_person']:+,.0f} |")
+
+    print("\n### Age-standardized: the complete-account gap against each reference\n")
+    gaps = pd.read_csv(DER / "complete_gaps.csv")
+    print("| group | reference | partial common-age gap $/person | complete common-age gap "
+          "$/person | partial age-matched $bn | complete age-matched $bn |")
+    print("|---|---|---|---|---|---|")
+    for _, r in gaps.iterrows():
+        print(f"| {SHORT.get(r.group, r.group)} | {SHORT.get(r.reference, r.reference)} | "
+              f"{r.base_common_age_gap_per_person:+,.0f} "
+              f"({r.base_common_age_se:,.0f}) | "
+              f"{r.complete_common_age_gap_per_person:+,.0f} "
+              f"({r.complete_common_age_se:,.0f}) | "
+              f"{r.base_age_matched_gap_bn:+,.1f} ({r.base_age_matched_se_bn:,.1f}) | "
+              f"{r.complete_age_matched_gap_bn:+,.1f} ({r.complete_age_matched_se_bn:,.1f}) |")
 
     print("\n### Items, union\n")
     print("| item | arm | central | union $bn | per person $ | se $bn | "
@@ -70,6 +87,15 @@ def main() -> None:
     for label, row in [("most negative", lo), ("least negative", hi)]:
         print(f"| {label} | {row.F_arm} | {row.E_arm} | {row.C_arm} | {row.R_arm} | "
               f"{row.union_absolute_bn:+,.1f} |")
+
+    print("\n### National reconciliation against the consolidated FY2024 position\n")
+    nat = pd.read_csv(DER / "national_reconciliation.csv")
+    print("| block | line | $bn |")
+    print("|---|---|---|")
+    for _, r in nat[nat.block != "account"].iterrows():
+        unit = "" if r.block == "coverage" else ""
+        value = f"{r.amount_bn:,.3f}" if r.block == "coverage" else f"{r.amount_bn:+,.1f}"
+        print(f"| {r.block} | {r.line} | {value} |")
 
     print("\n### Marginality curve\n")
     print("| m | union absolute $bn | per person $ |")

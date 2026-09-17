@@ -1,0 +1,1960 @@
+{
+  "params_file": "infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json",
+  "params_sha256": "c8812244fecd2ad5e41a1af104f1d1a3e0251b79f0109ba3008b3dfcb08794b7",
+  "params_allow_placeholder": false,
+  "params_used": {
+    "population.us_resident_population_2024_07_01": {
+      "value": 340110988.0,
+      "raw_value": 340110988,
+      "unit": "persons",
+      "status": "verified",
+      "source_url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/state/totals/NST-EST2024-ALLDATA.csv",
+      "note": null
+    },
+    "deflator.sl_deflator_2022_to_2024_ratio": {
+      "value": 1.039312,
+      "raw_value": 1.039312,
+      "unit": "ratio",
+      "status": "verified",
+      "source_url": "https://apps.bea.gov/national/Release/XLS/Survey/Section3All_xls.xlsx",
+      "note": null
+    },
+    "k12.f33_capital_outlay_by_state": {
+      "value": {
+        "1": 1475391000.0,
+        "2": 250204000.0,
+        "4": 1854564000.0,
+        "5": 953854000.0,
+        "6": 14548384000.0,
+        "8": 2142522000.0,
+        "9": 1021593000.0,
+        "10": 223487000.0,
+        "11": 313731000.0,
+        "12": 5698459000.0,
+        "13": 3741068000.0,
+        "15": 342755000.0,
+        "16": 216587000.0,
+        "17": 4380080000.0,
+        "18": 2830498000.0,
+        "19": 1532257000.0,
+        "20": 507887000.0,
+        "21": 1656033000.0,
+        "22": 1132578000.0,
+        "23": 152829000.0,
+        "24": 1921368000.0,
+        "25": 1314610000.0,
+        "26": 3720695000.0,
+        "27": 2256033000.0,
+        "28": 951187000.0,
+        "29": 2022454000.0,
+        "30": 206786000.0,
+        "31": 658013000.0,
+        "32": 873073000.0,
+        "33": 282256000.0,
+        "34": 2226117000.0,
+        "35": 974661000.0,
+        "36": 8146973000.0,
+        "37": 2425895000.0,
+        "38": 400402000.0,
+        "39": 3161374000.0,
+        "40": 1082925000.0,
+        "41": 1473376000.0,
+        "42": 3430398000.0,
+        "44": 197008000.0,
+        "45": 1994022000.0,
+        "46": 572881000.0,
+        "47": 1549100000.0,
+        "48": 17294076000.0,
+        "49": 1419533000.0,
+        "50": 170471000.0,
+        "51": 2269337000.0,
+        "53": 2388834000.0,
+        "54": 544329000.0,
+        "55": 1964518000.0,
+        "56": 220240000.0
+      },
+      "raw_value": {
+        "United States": 113087706,
+        "Alabama": 1475391,
+        "Alaska": 250204,
+        "Arizona": 1854564,
+        "Arkansas": 953854,
+        "California": 14548384,
+        "Colorado": 2142522,
+        "Connecticut": 1021593,
+        "Delaware": 223487,
+        "District of Columbia": 313731,
+        "Florida": 5698459,
+        "Georgia": 3741068,
+        "Hawaii": 342755,
+        "Idaho": 216587,
+        "Illinois": 4380080,
+        "Indiana": 2830498,
+        "Iowa": 1532257,
+        "Kansas": 507887,
+        "Kentucky": 1656033,
+        "Louisiana": 1132578,
+        "Maine": 152829,
+        "Maryland": 1921368,
+        "Massachusetts": 1314610,
+        "Michigan": 3720695,
+        "Minnesota": 2256033,
+        "Mississippi": 951187,
+        "Missouri": 2022454,
+        "Montana": 206786,
+        "Nebraska": 658013,
+        "Nevada": 873073,
+        "New Hampshire": 282256,
+        "New Jersey": 2226117,
+        "New Mexico": 974661,
+        "New York": 8146973,
+        "North Carolina": 2425895,
+        "North Dakota": 400402,
+        "Ohio": 3161374,
+        "Oklahoma": 1082925,
+        "Oregon": 1473376,
+        "Pennsylvania": 3430398,
+        "Rhode Island": 197008,
+        "South Carolina": 1994022,
+        "South Dakota": 572881,
+        "Tennessee": 1549100,
+        "Texas": 17294076,
+        "Utah": 1419533,
+        "Vermont": 170471,
+        "Virginia": 2269337,
+        "Washington": 2388834,
+        "West Virginia": 544329,
+        "Wisconsin": 1964518,
+        "Wyoming": 220240
+      },
+      "unit": "USD thousands",
+      "status": "verified",
+      "source_url": "https://www.census.gov/data/tables/2024/econ/school-finances/secondary-education-finance.html",
+      "note": "unit 'USD thousands' -> x1000"
+    },
+    "k12.f33_interest_on_school_debt_by_state": {
+      "value": {
+        "1": 188094000.0,
+        "2": 21183000.0,
+        "4": 293816000.0,
+        "5": 151177000.0,
+        "6": 4031593000.0,
+        "8": 657363000.0,
+        "9": 136408000.0,
+        "10": 16454000.0,
+        "11": 0.0,
+        "12": 852975000.0,
+        "13": 252344000.0,
+        "15": 0.0,
+        "16": 50536000.0,
+        "17": 1179199000.0,
+        "18": 452689000.0,
+        "19": 167117000.0,
+        "20": 240044000.0,
+        "21": 224779000.0,
+        "22": 145290000.0,
+        "23": 52584000.0,
+        "24": 199751000.0,
+        "25": 364280000.0,
+        "26": 883940000.0,
+        "27": 522589000.0,
+        "28": 68937000.0,
+        "29": 359084000.0,
+        "30": 53216000.0,
+        "31": 141398000.0,
+        "32": 199053000.0,
+        "33": 43016000.0,
+        "34": 262801000.0,
+        "35": 65967000.0,
+        "36": 1031808000.0,
+        "37": 256931000.0,
+        "38": 39102000.0,
+        "39": 576086000.0,
+        "40": 168546000.0,
+        "41": 488720000.0,
+        "42": 981743000.0,
+        "44": 49275000.0,
+        "45": 325707000.0,
+        "46": 54605000.0,
+        "47": 254993000.0,
+        "48": 5082904000.0,
+        "49": 183389000.0,
+        "50": 14614000.0,
+        "51": 334405000.0,
+        "53": 639625000.0,
+        "54": 16820000.0,
+        "55": 310662000.0,
+        "56": 668000.0
+      },
+      "raw_value": {
+        "United States": 23088280,
+        "Alabama": 188094,
+        "Alaska": 21183,
+        "Arizona": 293816,
+        "Arkansas": 151177,
+        "California": 4031593,
+        "Colorado": 657363,
+        "Connecticut": 136408,
+        "Delaware": 16454,
+        "District of Columbia": 0,
+        "Florida": 852975,
+        "Georgia": 252344,
+        "Hawaii": 0,
+        "Idaho": 50536,
+        "Illinois": 1179199,
+        "Indiana": 452689,
+        "Iowa": 167117,
+        "Kansas": 240044,
+        "Kentucky": 224779,
+        "Louisiana": 145290,
+        "Maine": 52584,
+        "Maryland": 199751,
+        "Massachusetts": 364280,
+        "Michigan": 883940,
+        "Minnesota": 522589,
+        "Mississippi": 68937,
+        "Missouri": 359084,
+        "Montana": 53216,
+        "Nebraska": 141398,
+        "Nevada": 199053,
+        "New Hampshire": 43016,
+        "New Jersey": 262801,
+        "New Mexico": 65967,
+        "New York": 1031808,
+        "North Carolina": 256931,
+        "North Dakota": 39102,
+        "Ohio": 576086,
+        "Oklahoma": 168546,
+        "Oregon": 488720,
+        "Pennsylvania": 981743,
+        "Rhode Island": 49275,
+        "South Carolina": 325707,
+        "South Dakota": 54605,
+        "Tennessee": 254993,
+        "Texas": 5082904,
+        "Utah": 183389,
+        "Vermont": 14614,
+        "Virginia": 334405,
+        "Washington": 639625,
+        "West Virginia": 16820,
+        "Wisconsin": 310662,
+        "Wyoming": 668
+      },
+      "unit": "USD thousands",
+      "status": "verified",
+      "source_url": "https://www.census.gov/data/tables/2024/econ/school-finances/secondary-education-finance.html",
+      "note": "unit 'USD thousands' -> x1000"
+    },
+    "k12.f33_fall_membership_by_state": {
+      "value": {
+        "1": 741082.0,
+        "2": 131243.0,
+        "4": 884915.0,
+        "5": 458186.0,
+        "6": 5274265.0,
+        "8": 841065.0,
+        "9": 472293.0,
+        "10": 123393.0,
+        "11": 50839.0,
+        "12": 2841039.0,
+        "13": 1705143.0,
+        "15": 169308.0,
+        "16": 285690.0,
+        "17": 1831215.0,
+        "18": 978458.0,
+        "19": 507866.0,
+        "20": 482136.0,
+        "21": 656427.0,
+        "22": 628335.0,
+        "23": 169316.0,
+        "24": 889728.0,
+        "25": 862765.0,
+        "26": 1224595.0,
+        "27": 794003.0,
+        "28": 432375.0,
+        "29": 865208.0,
+        "30": 154013.0,
+        "31": 328848.0,
+        "32": 417474.0,
+        "33": 156325.0,
+        "34": 1323927.0,
+        "35": 289851.0,
+        "36": 2350583.0,
+        "37": 1396880.0,
+        "38": 119016.0,
+        "39": 1550261.0,
+        "40": 647207.0,
+        "41": 545641.0,
+        "42": 1506485.0,
+        "44": 122128.0,
+        "45": 738314.0,
+        "46": 140930.0,
+        "47": 997720.0,
+        "48": 5111073.0,
+        "49": 609785.0,
+        "50": 81266.0,
+        "51": 1258795.0,
+        "53": 1086202.0,
+        "54": 244054.0,
+        "55": 802501.0,
+        "56": 90761.0
+      },
+      "raw_value": {
+        "United States": 46370928,
+        "Alabama": 741082,
+        "Alaska": 131243,
+        "Arizona": 884915,
+        "Arkansas": 458186,
+        "California": 5274265,
+        "Colorado": 841065,
+        "Connecticut": 472293,
+        "Delaware": 123393,
+        "District of Columbia": 50839,
+        "Florida": 2841039,
+        "Georgia": 1705143,
+        "Hawaii": 169308,
+        "Idaho": 285690,
+        "Illinois": 1831215,
+        "Indiana": 978458,
+        "Iowa": 507866,
+        "Kansas": 482136,
+        "Kentucky": 656427,
+        "Louisiana": 628335,
+        "Maine": 169316,
+        "Maryland": 889728,
+        "Massachusetts": 862765,
+        "Michigan": 1224595,
+        "Minnesota": 794003,
+        "Mississippi": 432375,
+        "Missouri": 865208,
+        "Montana": 154013,
+        "Nebraska": 328848,
+        "Nevada": 417474,
+        "New Hampshire": 156325,
+        "New Jersey": 1323927,
+        "New Mexico": 289851,
+        "New York": 2350583,
+        "North Carolina": 1396880,
+        "North Dakota": 119016,
+        "Ohio": 1550261,
+        "Oklahoma": 647207,
+        "Oregon": 545641,
+        "Pennsylvania": 1506485,
+        "Rhode Island": 122128,
+        "South Carolina": 738314,
+        "South Dakota": 140930,
+        "Tennessee": 997720,
+        "Texas": 5111073,
+        "Utah": 609785,
+        "Vermont": 81266,
+        "Virginia": 1258795,
+        "Washington": 1086202,
+        "West Virginia": 244054,
+        "Wisconsin": 802501,
+        "Wyoming": 90761
+      },
+      "unit": "pupils",
+      "status": "verified",
+      "source_url": "https://www.census.gov/data/tables/2024/econ/school-finances/secondary-education-finance.html",
+      "note": null
+    },
+    "underreporting.ratio_snap": {
+      "value": 1.8832,
+      "raw_value": 1.8832,
+      "unit": "admin/survey ratio",
+      "status": "verified",
+      "source_url": "https://www.nber.org/system/files/working_papers/w35680/w35680.pdf",
+      "note": null
+    },
+    "underreporting.ratio_tanf": {
+      "value": 2.0,
+      "raw_value": 2.0,
+      "unit": "admin/survey ratio",
+      "status": "verified",
+      "source_url": "https://www.nber.org/system/files/working_papers/w21399/w21399.pdf",
+      "note": null
+    },
+    "underreporting.ratio_ssi": {
+      "value": 0.9814,
+      "raw_value": 0.9814,
+      "unit": "admin/survey ratio",
+      "status": "verified",
+      "source_url": "https://www.nber.org/system/files/working_papers/w35680/w35680.pdf",
+      "note": null
+    },
+    "underreporting.ratio_ui": {
+      "value": 1.7331,
+      "raw_value": 1.7331,
+      "unit": "admin/survey ratio",
+      "status": "verified",
+      "source_url": "https://www.nber.org/system/files/working_papers/w35680/w35680.pdf",
+      "note": null
+    },
+    "underreporting.ratio_social_security": {
+      "value": 1.0881,
+      "raw_value": 1.0881,
+      "unit": "admin/survey ratio",
+      "status": "verified",
+      "source_url": "https://www.nber.org/system/files/working_papers/w35680/w35680.pdf",
+      "note": null
+    },
+    "underreporting.repo_lane_ratio_base": {
+      "value": {
+        "social_security": 0.919,
+        "ssi": 1.019,
+        "cash_assistance": 0.5,
+        "unemployment": 0.577,
+        "veterans": 0.62,
+        "snap": 0.531
+      },
+      "raw_value": {
+        "social_security": 0.919,
+        "ssi": 1.019,
+        "cash_assistance": 0.5,
+        "unemployment": 0.577,
+        "veterans": 0.62,
+        "snap": 0.531
+      },
+      "unit": "ratio of survey dollars to administrative aggregate",
+      "status": "verified",
+      "source_url": "file:///Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_underreport_2026_09_16/underreport.py",
+      "note": null
+    },
+    "improper_payments.eitc_improper_payments_fy2024": {
+      "value": 15941610000.0,
+      "raw_value": 15941.61,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www.paymentaccuracy.gov/program/treasury-internal-revenue-service-earned-income-tax-credit",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "improper_payments.actc_improper_payments_fy2024": {
+      "value": 3446560000.0,
+      "raw_value": 3446.56,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www.paymentaccuracy.gov/program/treasury-internal-revenue-service-additional-child-tax-credi-6179b194",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "meps_coverage.nhea_to_meps_ratio_medicaid": {
+      "value": 1.5432,
+      "raw_value": 1.5432,
+      "unit": "ratio (adjusted NHEA / MEPS)",
+      "status": "verified",
+      "source_url": "https://meps.ahrq.gov/data_files/publications/workingpapers/wp_17003.pdf",
+      "note": null
+    },
+    "meps_coverage.nhea_to_meps_ratio_medicare": {
+      "value": 1.2804,
+      "raw_value": 1.2804,
+      "unit": "ratio (adjusted NHEA / MEPS)",
+      "status": "verified",
+      "source_url": "https://meps.ahrq.gov/data_files/publications/workingpapers/wp_17003.pdf",
+      "note": null
+    },
+    "unauthorized.ohss_unauthorized_total_jan2022": {
+      "value": 10990000.0,
+      "raw_value": 10990000,
+      "unit": "persons",
+      "status": "verified",
+      "source_url": "https://ohss.dhs.gov/sites/default/files/2024-06/2024_0418_ohss_estimates-of-the-unauthorized-immigrant-population-residing-in-the-united-states-january-2018%25E2%2580%2593january-2022.pdf",
+      "note": null
+    },
+    "unauthorized.ohss_unauthorized_mexico_jan2022": {
+      "value": 4810000.0,
+      "raw_value": 4810000,
+      "unit": "persons",
+      "status": "verified",
+      "source_url": "https://ohss.dhs.gov/sites/default/files/2024-06/2024_0418_ohss_estimates-of-the-unauthorized-immigrant-population-residing-in-the-united-states-january-2018%25E2%2580%2593january-2022.pdf",
+      "note": null
+    },
+    "enforcement.ice_ero_total": {
+      "value": 5082218000.0,
+      "raw_value": 5082218,
+      "unit": "USD thousands",
+      "status": "verified",
+      "source_url": "https://www.dhs.gov/sites/default/files/2025-06/25_0613_ice_fy26-congressional-budget-justificatin.pdf",
+      "note": "unit 'USD thousands' -> x1000"
+    },
+    "enforcement.doj_eoir_appropriation": {
+      "value": 844000000.0,
+      "raw_value": 844000,
+      "unit": "USD thousands",
+      "status": "verified",
+      "source_url": "https://www.justice.gov/media/1403736/dl",
+      "note": "unit 'USD thousands' -> x1000"
+    },
+    "enforcement.uscis_net_discretionary_appropriated": {
+      "value": 281140000.0,
+      "raw_value": 281140,
+      "unit": "USD thousands",
+      "status": "verified",
+      "source_url": "https://www.dhs.gov/sites/default/files/2025-07/2025_07_03_ocfo_fy-2026-budget-in-brief.pdf",
+      "note": "unit 'USD thousands' -> x1000"
+    },
+    "enforcement.ice_ero_custody_operations": {
+      "value": 3434952000.0,
+      "raw_value": 3434952,
+      "unit": "USD thousands",
+      "status": "verified",
+      "source_url": "https://www.dhs.gov/sites/default/files/2025-06/25_0613_ice_fy26-congressional-budget-justificatin.pdf",
+      "note": "unit 'USD thousands' -> x1000"
+    },
+    "enforcement.cbp_us_border_patrol": {
+      "value": 8308847000.0,
+      "raw_value": 8308847,
+      "unit": "USD thousands",
+      "status": "verified",
+      "source_url": "https://www.dhs.gov/sites/default/files/2025-06/25_0613_cbp_fy26-congressional-budget-justificatin.pdf",
+      "note": "unit 'USD thousands' -> x1000"
+    },
+    "city_migrant.mexico_share_sw_encounters_fy2024": {
+      "value": 0.3062,
+      "raw_value": 0.3062,
+      "unit": "share",
+      "status": "verified",
+      "source_url": "https://www.cbp.gov/sites/default/files/2025-11/nationwide-encounters-fy22-fy25-aor.csv",
+      "note": null
+    },
+    "unauthorized.pew_unauthorized_total_2023_secondary": {
+      "value": 14000000.0,
+      "raw_value": 14000000,
+      "unit": "persons",
+      "status": "verified",
+      "source_url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/08/RE_2025.08.21_Unauthorized-Immigrants_REPORT.pdf",
+      "note": null
+    },
+    "unauthorized.pew_unauthorized_mexico_2023_secondary": {
+      "value": 4300000.0,
+      "raw_value": 4300000,
+      "unit": "persons",
+      "status": "verified",
+      "source_url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/08/RE_2025.08.21_Unauthorized-Immigrants_REPORT.pdf",
+      "note": null
+    },
+    "omb.receipts_corporation_income": {
+      "value": 529867000000.0,
+      "raw_value": 529867.0,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist02z1_fy2027.xlsx",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "corporate.state_corporate_net_income_tax_2024": {
+      "value": 165294651000.0,
+      "raw_value": 165294.651,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www2.census.gov/programs-surveys/stc/tables/2024/FY2024-STC-Detailed-Table-Transposed.xlsx",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "omb.receipts_excise": {
+      "value": 101426000000.0,
+      "raw_value": 101426.0,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist02z1_fy2027.xlsx",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "corporate.state_selective_sales_taxes_2024": {
+      "value": 212282780000.0,
+      "raw_value": 212282.78,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www2.census.gov/programs-surveys/stc/tables/2024/FY2024-STC-Detailed-Table-Transposed.xlsx",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "omb.subf_703_hospital_medical_veterans": {
+      "value": 138543000000.0,
+      "raw_value": 138543.0,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z2_fy2027.xlsx",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "omb.subf_602_federal_employee_retirement_disability": {
+      "value": 179924000000.0,
+      "raw_value": 179924.0,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z2_fy2027.xlsx",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "omb.subf_753_federal_correctional": {
+      "value": 9057000000.0,
+      "raw_value": 9057.0,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z2_fy2027.xlsx",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "enforcement.bop_inmates_mexican_share_pct": {
+      "value": 0.08,
+      "raw_value": 8.0,
+      "unit": "percent",
+      "status": "verified",
+      "source_url": "https://www.bop.gov/PublicInfo/execute/quickfacts?todo=query&output=json",
+      "note": "unit 'percent' -> /100"
+    },
+    "omb.subf_501_elementary_secondary_vocational": {
+      "value": 105373000000.0,
+      "raw_value": 105373.0,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z2_fy2027.xlsx",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "omb.subf_551_health_care_services": {
+      "value": 854342000000.0,
+      "raw_value": 854342.0,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z2_fy2027.xlsx",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "meps_coverage.nhea_2023_medicaid_federal": {
+      "value": 592600000000.0,
+      "raw_value": 592.6,
+      "unit": "USD billions",
+      "status": "verified",
+      "source_url": "https://www.cms.gov/files/zip/nhe-tables.zip",
+      "note": "unit 'USD billions' -> x1e+09"
+    },
+    "omb.subf_601_general_retirement_disability": {
+      "value": 22325000000.0,
+      "raw_value": 22325.0,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z2_fy2027.xlsx",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "omb.subf_604_housing_assistance": {
+      "value": 70008000000.0,
+      "raw_value": 70008.0,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z2_fy2027.xlsx",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "state_medicaid_undocumented.il_hbia_hbis_total_state_cost": {
+      "value": 538000000.0,
+      "raw_value": 538000000,
+      "unit": "USD",
+      "status": "verified",
+      "source_url": "https://hfs.illinois.gov/content/dam/soi/en/web/hfs/sitecollectiondocuments/hbias032025trackingreport.pdf",
+      "note": "unit 'USD' -> x1"
+    },
+    "state_medicaid_undocumented.ny_ep_to_medicaid_state_cost_annual": {
+      "value": 3000000000.0,
+      "raw_value": 3000000000,
+      "unit": "USD",
+      "status": "verified",
+      "source_url": "https://www.budget.ny.gov/pubs/archive/fy27/ex/book/healthcare.pdf",
+      "note": "unit 'USD' -> x1"
+    },
+    "state_medicaid_undocumented.co_omnisalud_subsidy_spend_py2026": {
+      "value": 50000000.0,
+      "raw_value": 50000000,
+      "unit": "USD",
+      "status": "verified",
+      "source_url": "https://content.leg.colorado.gov/sites/default/files/FY2026-27_hcpfig1_0.pdf",
+      "note": "unit 'USD' -> x1"
+    },
+    "state_medicaid_undocumented.or_healthier_oregon_gf_2023_25": {
+      "value": 725500000.0,
+      "raw_value": 725500000,
+      "unit": "USD",
+      "status": "verified",
+      "source_url": "https://olis.oregonlegislature.gov/liz/2025R1/Downloads/CommitteeMeetingDocument/288990",
+      "note": "unit 'USD' -> x1"
+    },
+    "state_medicaid_undocumented.wa_apple_health_expansion_service_dollars_2023_25": {
+      "value": 72000000.0,
+      "raw_value": 72000000,
+      "unit": "USD",
+      "status": "verified",
+      "source_url": "https://abr.ofm.wa.gov/api/public/decision-package/summary/77936",
+      "note": "unit 'USD' -> x1"
+    },
+    "state_medicaid_undocumented.ca_full_scope_medical_adults_26_49_general_fund": {
+      "value": 2800000000.0,
+      "raw_value": 2800000000,
+      "unit": "USD",
+      "status": "verified",
+      "source_url": "https://ebudget.ca.gov/2024-25/pdf/Enacted/BudgetSummary/HealthandHumanServices.pdf",
+      "note": "unit 'USD' -> x1"
+    },
+    "omb.total_outlays": {
+      "value": 6735261000000.0,
+      "raw_value": 6735261.0,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z2_fy2027.xlsx",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "omb.receipts_total": {
+      "value": 4919884000000.0,
+      "raw_value": 4919884.0,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist02z1_fy2027.xlsx",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "omb.func_950_undistributed_offsetting_receipts": {
+      "value": -146736000000.0,
+      "raw_value": -146736.0,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z2_fy2027.xlsx",
+      "note": "unit 'USD millions' -> x1e+06"
+    },
+    "omb.func_920_allowances": {
+      "value": 0.0,
+      "raw_value": 0.0,
+      "unit": "USD millions",
+      "status": "verified",
+      "source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z2_fy2027.xlsx",
+      "note": "unit 'USD millions' -> x1e+06"
+    }
+  },
+  "params_refused": [
+    {
+      "group": "k12",
+      "tokens": [
+        "hispanic",
+        "differential"
+      ],
+      "preferred": null,
+      "kind": "state_money",
+      "reasons": [
+        "k12.district_hispanic_differential_by_state: status='unverified'"
+      ]
+    },
+    {
+      "group": "k12",
+      "tokens": [
+        "white",
+        "differential"
+      ],
+      "preferred": null,
+      "kind": "state_money",
+      "reasons": [
+        "k12.district_white_differential_by_state: status='unverified'"
+      ]
+    },
+    {
+      "group": "state_medicaid_undocumented",
+      "tokens": [
+        "mn_minnesotacare_undocumented_state_cost"
+      ],
+      "preferred": "mn_minnesotacare_undocumented_state_cost",
+      "kind": "money",
+      "reasons": [
+        "state_medicaid_undocumented.mn_minnesotacare_undocumented_state_cost: status='unverified'"
+      ]
+    },
+    {
+      "group": "state_medicaid_undocumented",
+      "tokens": [
+        "ma_health_safety_net_state_cost"
+      ],
+      "preferred": "ma_health_safety_net_state_cost",
+      "kind": "money",
+      "reasons": [
+        "state_medicaid_undocumented.ma_health_safety_net_state_cost: status='unverified'"
+      ]
+    },
+    {
+      "group": "state_medicaid_undocumented",
+      "tokens": [
+        "co_cover_all_coloradans_children_state_cost"
+      ],
+      "preferred": "co_cover_all_coloradans_children_state_cost",
+      "kind": "money",
+      "reasons": [
+        "state_medicaid_undocumented.co_cover_all_coloradans_children_state_cost: status='unverified'"
+      ]
+    },
+    {
+      "group": "state_medicaid_undocumented",
+      "tokens": [
+        "ca_undocumented_total_general_fund_2024_25"
+      ],
+      "preferred": "ca_undocumented_total_general_fund_2024_25",
+      "kind": "money",
+      "reasons": [
+        "state_medicaid_undocumented.ca_undocumented_total_general_fund_2024_25: status='unverified'"
+      ]
+    },
+    {
+      "group": "state_medicaid_undocumented",
+      "tokens": [
+        "inside",
+        "meps"
+      ],
+      "preferred": "share_already_inside_meps",
+      "kind": "share",
+      "reasons": [
+        "state_medicaid_undocumented.share_already_inside_meps: status='unverified'"
+      ]
+    }
+  ],
+  "params_interpretations": {
+    "snap": {
+      "key": "ratio_snap",
+      "unit": "admin/survey ratio",
+      "published": 1.8832,
+      "inverted": false,
+      "admin_over_survey": 1.8832
+    },
+    "tanf": {
+      "key": "ratio_tanf",
+      "unit": "admin/survey ratio",
+      "published": 2.0,
+      "inverted": false,
+      "admin_over_survey": 2.0
+    },
+    "ssi": {
+      "key": "ratio_ssi",
+      "unit": "admin/survey ratio",
+      "published": 0.9814,
+      "inverted": false,
+      "admin_over_survey": 0.9814
+    },
+    "ui": {
+      "key": "ratio_ui",
+      "unit": "admin/survey ratio",
+      "published": 1.7331,
+      "inverted": false,
+      "admin_over_survey": 1.7331
+    },
+    "social_security": {
+      "key": "ratio_social_security",
+      "unit": "admin/survey ratio",
+      "published": 1.0881,
+      "inverted": false,
+      "admin_over_survey": 1.0881
+    },
+    "medicaid": {
+      "key": "nhea_to_meps_ratio_medicaid",
+      "unit": "ratio (adjusted NHEA / MEPS)",
+      "published": 1.5432,
+      "inverted": false,
+      "nhea_over_meps": 1.5432
+    },
+    "medicare": {
+      "key": "nhea_to_meps_ratio_medicare",
+      "unit": "ratio (adjusted NHEA / MEPS)",
+      "published": 1.2804,
+      "inverted": false,
+      "nhea_over_meps": 1.2804
+    }
+  },
+  "omb_cache_vs_params": [
+    {
+      "code": "050",
+      "key": "func_050_national_defense",
+      "cached": 873523000000.0,
+      "params": 873523000000.0,
+      "relative": 0.0,
+      "agree": true
+    },
+    {
+      "code": "150",
+      "key": "func_150_international_affairs",
+      "cached": 56396000000.0,
+      "params": 56396000000.0,
+      "relative": 0.0,
+      "agree": true
+    },
+    {
+      "code": "250",
+      "key": "func_250_general_science",
+      "cached": 41476000000.0,
+      "params": 41476000000.0,
+      "relative": 0.0,
+      "agree": true
+    },
+    {
+      "code": "270",
+      "key": "func_270_energy",
+      "cached": 13571000000.0,
+      "params": 13571000000.0,
+      "relative": 0.0,
+      "agree": true
+    },
+    {
+      "code": "300",
+      "key": "func_300_natural_resources_environment",
+      "cached": 58469000000.0,
+      "params": 58469000000.0,
+      "relative": 0.0,
+      "agree": true
+    },
+    {
+      "code": "350",
+      "key": "func_350_agriculture",
+      "cached": 32841000000.0,
+      "params": 32841000000.0,
+      "relative": 0.0,
+      "agree": true
+    },
+    {
+      "code": "370",
+      "key": "func_370_commerce_housing_credit",
+      "cached": 36032000000.0,
+      "params": 36032000000.0,
+      "relative": 0.0,
+      "agree": true
+    },
+    {
+      "code": "400",
+      "key": "func_400_transportation",
+      "cached": 136582000000.0,
+      "params": 136582000000.0,
+      "relative": 0.0,
+      "agree": true
+    },
+    {
+      "code": "450",
+      "key": "func_450_community_regional_development",
+      "cached": 85215000000.0,
+      "params": 85215000000.0,
+      "relative": 0.0,
+      "agree": true
+    },
+    {
+      "code": "500",
+      "key": "func_500_education_training_employment_social_services",
+      "cached": 306370000000.0,
+      "params": 306370000000.0,
+      "relative": 0.0,
+      "agree": true
+    },
+    {
+      "code": "550",
+      "key": "func_550_health",
+      "cached": 911290000000.0,
+      "params": 911290000000.0,
+      "relative": 0.0,
+      "agree": true
+    },
+    {
+      "code": "600",
+      "key": "func_600_income_security",
+      "cached": 670548000000.0,
+      "params": 670548000000.0,
+      "relative": 0.0,
+      "agree": true
+    },
+    {
+      "code": "700",
+      "key": "func_700_veterans",
+      "cached": 325645000000.0,
+      "params": 325645000000.0,
+      "relative": 0.0,
+      "agree": true
+    },
+    {
+      "code": "750",
+      "key": "func_750_administration_of_justice",
+      "cached": 83793000000.0,
+      "params": 83793000000.0,
+      "relative": 0.0,
+      "agree": true
+    },
+    {
+      "code": "800",
+      "key": "func_800_general_government",
+      "cached": 35316000000.0,
+      "params": 35316000000.0,
+      "relative": 0.0,
+      "agree": true
+    },
+    {
+      "code": "900",
+      "key": "func_900_net_interest",
+      "cached": 879879000000.0,
+      "params": 879879000000.0,
+      "relative": 0.0,
+      "agree": true
+    }
+  ],
+  "gate0": {
+    "reproduced": 50238214248.618195,
+    "stored": 50238214248.618195,
+    "residual": 0.0,
+    "passed": true
+  },
+  "civilian_household_population": 336727803.00001377,
+  "us_resident_population": 340110988.0,
+  "resident_population_vintage": "NST-EST2024 (params)",
+  "population_ratio": 0.9900527030312051,
+  "national_reconciliation": [
+    {
+      "charge": "G|nominal2022",
+      "kind": "state_per_capita",
+      "target_dollars": 1284851613000.0,
+      "charged_dollars": 1296973107806.1448,
+      "ratio": 1.009434159309527,
+      "expected_population_ratio": null,
+      "residual": null,
+      "ok": true
+    },
+    {
+      "charge": "G|deflated2024",
+      "kind": "state_per_capita",
+      "target_dollars": 1335361699610.256,
+      "charged_dollars": 1347959714620.2197,
+      "ratio": 1.0094341593095268,
+      "expected_population_ratio": null,
+      "residual": null,
+      "ok": true
+    },
+    {
+      "charge": "K|central",
+      "kind": "pupil_based",
+      "target_dollars": 136175986000.0,
+      "charged_dollars": 125877228784.66615,
+      "ratio": 0.924371708126763,
+      "expected_population_ratio": null,
+      "residual": null,
+      "ok": true
+    },
+    {
+      "charge": "E|stock",
+      "kind": "head_based",
+      "target_dollars": 2716778160.145587,
+      "charged_dollars": 2716778160.145587,
+      "ratio": 1.0,
+      "expected_population_ratio": null,
+      "residual": null,
+      "ok": true
+    },
+    {
+      "charge": "C|wage25_capital75",
+      "kind": "income_share",
+      "target_dollars": 695161651000.0,
+      "charged_dollars": 693420766477.8478,
+      "ratio": 0.9974957126595693,
+      "expected_population_ratio": null,
+      "residual": null,
+      "ok": true
+    },
+    {
+      "charge": "X|per_capita",
+      "kind": "flat_per_capita",
+      "target_dollars": 313708780000.0,
+      "charged_dollars": 310588225603.6217,
+      "ratio": 0.9900527030312053,
+      "expected_population_ratio": 0.9900527030312051,
+      "residual": 2.220446049250313e-16,
+      "ok": true
+    },
+    {
+      "charge": "F|per_capita",
+      "kind": "flat_per_capita",
+      "target_dollars": 1788718000000.0,
+      "charged_dollars": 1770925090860.5718,
+      "ratio": 0.9900527030312055,
+      "expected_population_ratio": 0.9900527030312051,
+      "residual": 4.440892098500626e-16,
+      "ok": true
+    }
+  ],
+  "common_charge_cancellation": {
+    "X|per_capita": {
+      "gap_per_standardized_person": 4.5865841678403e-13,
+      "relative": 4.972598066491228e-16,
+      "passed": true
+    },
+    "F|per_capita": {
+      "gap_per_standardized_person": -3.0168081049268594e-12,
+      "relative": -5.736228881092947e-16,
+      "passed": true
+    }
+  },
+  "replicate_se_finite": true,
+  "sibling_lane_crosschecks": [
+    {
+      "check": "general_services_per_person_vs_residual_agg_published_range",
+      "value": 3904.7803970328164,
+      "low": 3738.0,
+      "high": 4240.0,
+      "passed": true,
+      "note": "ledger_residual_agg_2026_09_16 RESULT.md, $3,738 to $4,240 per adult across groups under equal_all_members"
+    },
+    {
+      "check": "federal_public_goods_per_person_rebased_to_the_2023_denominator",
+      "value": 5340.8135221934535,
+      "low": 5336.0,
+      "high": 5346.0,
+      "passed": true,
+      "note": "ledger_residual_agg_2026_09_16 RESULT.md, $5,341 per adult flat under equal_all_members on the 2023 resident population"
+    }
+  ],
+  "admin_over_survey_inversion_check": [
+    {
+      "program": "snap",
+      "published_coverage_ratio": 0.531,
+      "parameter_admin_over_survey": 1.8832,
+      "recomputed_admin_over_survey": 1.8832391713747645,
+      "agree": true
+    },
+    {
+      "program": "tanf",
+      "published_coverage_ratio": 0.5,
+      "parameter_admin_over_survey": 2.0,
+      "recomputed_admin_over_survey": 2.0,
+      "agree": true
+    },
+    {
+      "program": "ssi",
+      "published_coverage_ratio": 1.019,
+      "parameter_admin_over_survey": 0.9814,
+      "recomputed_admin_over_survey": 0.9813542688910698,
+      "agree": true
+    },
+    {
+      "program": "ui",
+      "published_coverage_ratio": 0.577,
+      "parameter_admin_over_survey": 1.7331,
+      "recomputed_admin_over_survey": 1.733102253032929,
+      "agree": true
+    },
+    {
+      "program": "social_security",
+      "published_coverage_ratio": 0.919,
+      "parameter_admin_over_survey": 1.0881,
+      "recomputed_admin_over_survey": 1.088139281828074,
+      "agree": true
+    }
+  ],
+  "items_dropped": [
+    {
+      "item": "D",
+      "label": "district cost-to-serve differential",
+      "reason": "district F-33 x CCD Hispanic/white per-pupil differentials not verified"
+    },
+    {
+      "item": "S(states without a verified line)",
+      "label": "S(states without a verified line)",
+      "reason": "priced for 6, 8, 17, 36, 41, 53 only; not priced: mn_minnesotacare_undocumented_state_cost: not verified; ma_health_safety_net_state_cost: not verified; co_cover_all_coloradans_children_state_cost: not verified; ca_undocumented_total_general_fund_2024_25: not verified"
+    }
+  ],
+  "central_arms": {
+    "G": "deflated2024",
+    "K": "central",
+    "D": null,
+    "U": "central",
+    "I": "central",
+    "M": "central",
+    "E": "stock",
+    "C": "wage25_capital75",
+    "X": "per_capita",
+    "R": "central",
+    "F": "zero",
+    "S": "half_inside_meps"
+  },
+  "upstream_partial_gap_anchor": [
+    {
+      "group": "mexico_born",
+      "reference": "third_plus_nh_white",
+      "metric": "standardized_gap_per_person",
+      "upstream": -6561.7116203683245,
+      "rebuilt": -6561.711620368309,
+      "agree": true
+    },
+    {
+      "group": "mexico_born",
+      "reference": "all_native",
+      "metric": "standardized_gap_per_person",
+      "upstream": -5055.682826801573,
+      "rebuilt": -5055.6828268015515,
+      "agree": true
+    },
+    {
+      "group": "mexican_second_gen",
+      "reference": "third_plus_nh_white",
+      "metric": "standardized_gap_per_person",
+      "upstream": -5943.399390763311,
+      "rebuilt": -5943.399390763294,
+      "agree": true
+    },
+    {
+      "group": "mexican_second_gen",
+      "reference": "all_native",
+      "metric": "standardized_gap_per_person",
+      "upstream": -4437.370597196558,
+      "rebuilt": -4437.370597196537,
+      "agree": true
+    },
+    {
+      "group": "mexican_third_plus_selfid",
+      "reference": "third_plus_nh_white",
+      "metric": "standardized_gap_per_person",
+      "upstream": -4622.4498393987,
+      "rebuilt": -4622.449839398683,
+      "agree": true
+    },
+    {
+      "group": "mexican_third_plus_selfid",
+      "reference": "all_native",
+      "metric": "standardized_gap_per_person",
+      "upstream": -3116.4210458319476,
+      "rebuilt": -3116.421045831926,
+      "agree": true
+    },
+    {
+      "group": "mexican_observed_total",
+      "reference": "third_plus_nh_white",
+      "metric": "standardized_gap_per_person",
+      "upstream": -5795.340382266635,
+      "rebuilt": -5795.340382266619,
+      "agree": true
+    },
+    {
+      "group": "mexican_observed_total",
+      "reference": "all_native",
+      "metric": "standardized_gap_per_person",
+      "upstream": -4289.311588699882,
+      "rebuilt": -4289.31158869986,
+      "agree": true
+    }
+  ],
+  "national_reconciliation_vs_consolidated_budget": {
+    "account_position": -966667088912.5841,
+    "consolidated_position": -2590803830470.415,
+    "residual_unpriced_or_coverage": -1624136741557.831,
+    "consolidated_outlays": 10920560873762.031,
+    "consolidated_receipts": 8329757043291.616,
+    "account_outlays": 6875309029994.843,
+    "account_receipts": 5908641941082.26,
+    "outlay_coverage": 0.6295747177705501,
+    "receipt_coverage": 0.7093414502216238,
+    "state_local_price_adjustment": 1.039312,
+    "note": "the residual is reported, never forced; it is not an error estimate"
+  },
+  "complete_gaps": [
+    {
+      "group": "mexico_born",
+      "reference": "third_plus_nh_white",
+      "base_common_age_gap_per_person": -6561.711620368309,
+      "complete_common_age_gap_per_person": -7650.7141204849495,
+      "base_common_age_se": 320.9966375516852,
+      "complete_common_age_se": 384.26448091268327,
+      "base_age_matched_gap_bn": -103.10087003258417,
+      "complete_age_matched_gap_bn": -120.80312910715894,
+      "base_age_matched_se_bn": 4.90525078988575,
+      "complete_age_matched_se_bn": 5.745486350746874
+    },
+    {
+      "group": "mexico_born",
+      "reference": "all_native",
+      "base_common_age_gap_per_person": -5055.6828268015515,
+      "complete_common_age_gap_per_person": -5484.303393841651,
+      "base_common_age_se": 294.0468686088278,
+      "complete_common_age_se": 350.7642887793482,
+      "base_age_matched_gap_bn": -85.15752531182201,
+      "complete_age_matched_gap_bn": -94.66931898342047,
+      "base_age_matched_se_bn": 4.285784219461249,
+      "complete_age_matched_se_bn": 5.025114552265742
+    },
+    {
+      "group": "mexican_second_gen",
+      "reference": "third_plus_nh_white",
+      "base_common_age_gap_per_person": -5943.399390763294,
+      "complete_common_age_gap_per_person": -7435.405022878166,
+      "base_common_age_se": 469.0053612568862,
+      "complete_common_age_se": 616.7367782624256,
+      "base_age_matched_gap_bn": -113.72329480855052,
+      "complete_age_matched_gap_bn": -139.26307779963972,
+      "base_age_matched_se_bn": 5.050134871509685,
+      "complete_age_matched_se_bn": 5.851705317568837
+    },
+    {
+      "group": "mexican_second_gen",
+      "reference": "all_native",
+      "base_common_age_gap_per_person": -4437.370597196537,
+      "complete_common_age_gap_per_person": -5268.994296234869,
+      "base_common_age_se": 444.7121856205837,
+      "complete_common_age_se": 588.7244734990414,
+      "base_age_matched_gap_bn": -84.27855309418668,
+      "complete_age_matched_gap_bn": -99.96422030706347,
+      "base_age_matched_se_bn": 4.060206523181386,
+      "complete_age_matched_se_bn": 4.699616881143903
+    },
+    {
+      "group": "mexican_third_plus_selfid",
+      "reference": "third_plus_nh_white",
+      "base_common_age_gap_per_person": -4622.449839398683,
+      "complete_common_age_gap_per_person": -6148.801345086427,
+      "base_common_age_se": 370.7461756823512,
+      "complete_common_age_se": 460.37245859768575,
+      "base_age_matched_gap_bn": -73.76550875782262,
+      "complete_age_matched_gap_bn": -94.21342478686094,
+      "base_age_matched_se_bn": 4.930973403606858,
+      "complete_age_matched_se_bn": 5.592438616175658
+    },
+    {
+      "group": "mexican_third_plus_selfid",
+      "reference": "all_native",
+      "base_common_age_gap_per_person": -3116.421045831926,
+      "complete_common_age_gap_per_person": -3982.390618443127,
+      "base_common_age_se": 356.9336275219065,
+      "complete_common_age_se": 444.65747919931414,
+      "base_age_matched_gap_bn": -45.55972248294334,
+      "complete_age_matched_gap_bn": -56.388724462537425,
+      "base_age_matched_se_bn": 4.361733588326319,
+      "complete_age_matched_se_bn": 4.899089206850234
+    },
+    {
+      "group": "mexican_observed_total",
+      "reference": "third_plus_nh_white",
+      "base_common_age_gap_per_person": -5795.340382266619,
+      "complete_common_age_gap_per_person": -7094.870827153586,
+      "base_common_age_se": 245.093906680334,
+      "complete_common_age_se": 301.63267439874136,
+      "base_age_matched_gap_bn": -290.58967359895735,
+      "complete_age_matched_gap_bn": -354.27963169365967,
+      "base_age_matched_se_bn": 10.645222035388553,
+      "complete_age_matched_se_bn": 11.975264124339605
+    },
+    {
+      "group": "mexican_observed_total",
+      "reference": "all_native",
+      "base_common_age_gap_per_person": -4289.31158869986,
+      "complete_common_age_gap_per_person": -4928.460100510286,
+      "base_common_age_se": 206.60573747480774,
+      "complete_common_age_se": 257.0961208776097,
+      "base_age_matched_gap_bn": -214.995800888952,
+      "complete_age_matched_gap_bn": -251.02226375302135,
+      "base_age_matched_se_bn": 8.347166359669167,
+      "complete_age_matched_se_bn": 9.32808378120806
+    }
+  ],
+  "brief_final_step": 12,
+  "item_metadata": {
+    "G|nominal2022": {
+      "item": "G",
+      "arm": "nominal2022",
+      "source": "cache:22slsstab1.xlsx",
+      "marginal": true,
+      "price_level": "FY2022"
+    },
+    "G|deflated2024": {
+      "item": "G",
+      "arm": "deflated2024",
+      "source": "cache:22slsstab1.xlsx + params:deflator",
+      "marginal": true,
+      "price_level": "2024",
+      "deflator": 1.039312
+    },
+    "K|central": {
+      "item": "K",
+      "arm": "central",
+      "source": "params:k12 F-33 capital, interest and fall membership by state",
+      "marginal": true
+    },
+    "U|central": {
+      "item": "U",
+      "arm": "central",
+      "source": "params:underreporting",
+      "marginal": false,
+      "programs": {
+        "snap": {
+          "ratio": 1.8832,
+          "applied": true,
+          "national_increment": 40736580688.2021
+        },
+        "tanf": {
+          "ratio": 2.0,
+          "applied": true,
+          "national_increment": 7758774879.50931
+        },
+        "ssi": {
+          "ratio": 0.9814,
+          "applied": true,
+          "national_increment": -1091416411.8195746
+        },
+        "ui": {
+          "ratio": 1.7331,
+          "applied": true,
+          "national_increment": 18376790818.462975
+        },
+        "social_security": {
+          "ratio": 1.0881,
+          "applied": false,
+          "note": "the brief applies Social Security only when its admin/survey ratio is below 1; this one is above 1, so the item omits it",
+          "national_cost_not_charged": 108039012163.2871
+        }
+      },
+      "missing": []
+    },
+    "I|central": {
+      "item": "I",
+      "arm": "central",
+      "source": "params:improper_payments",
+      "marginal": false,
+      "pieces": {
+        "eitc": 15941610000.0,
+        "actc": 3446560000.0
+      }
+    },
+    "I|zero": {
+      "item": "I",
+      "arm": "zero",
+      "source": "convention",
+      "marginal": false
+    },
+    "M|central": {
+      "item": "M",
+      "arm": "central",
+      "source": "params:meps_coverage",
+      "marginal": false,
+      "ratio_medicaid": 1.5432,
+      "ratio_medicare": 1.2804
+    },
+    "M|zero": {
+      "item": "M",
+      "arm": "zero",
+      "source": "convention",
+      "marginal": false
+    },
+    "E|zero": {
+      "item": "E",
+      "arm": "zero",
+      "source": "convention",
+      "marginal": false
+    },
+    "E|stock": {
+      "item": "E",
+      "arm": "stock",
+      "source": "params:enforcement,unauthorized",
+      "marginal": false,
+      "mexico_share_of_unauthorized": 0.43767060964513194,
+      "national_dollars": 2716778160.145587,
+      "per_head": 334.1734951867933,
+      "parts": {
+        "ice_ero_total": 5082218000.0,
+        "eoir": 844000000.0,
+        "uscis_appropriated": 281140000.0
+      },
+      "custody_inside_ero_total": 3434952000.0
+    },
+    "E|stock_plus_flow": {
+      "item": "E",
+      "arm": "stock_plus_flow",
+      "source": "params:enforcement,unauthorized,city_migrant",
+      "marginal": false,
+      "national_dollars": 5260947111.545588,
+      "per_head": 647.1154362356335
+    },
+    "E|stock_pew_secondary": {
+      "item": "E",
+      "arm": "stock_pew_secondary",
+      "source": "params:enforcement,unauthorized (Pew, secondary)",
+      "marginal": false,
+      "mexico_share_of_unauthorized": 0.30714285714285716,
+      "note": "Pew mid-2023 is a secondary estimate; OHSS January 2022 is the central arm"
+    },
+    "C|wage25_capital75": {
+      "item": "C",
+      "arm": "wage25_capital75",
+      "source": "params:omb,corporate",
+      "marginal": false,
+      "national_dollars": 695161651000.0,
+      "coverage": "federal and state"
+    },
+    "C|per_capita": {
+      "item": "C",
+      "arm": "per_capita",
+      "source": "params:omb,corporate",
+      "marginal": false,
+      "national_dollars": 695161651000.0
+    },
+    "C|all_capital": {
+      "item": "C",
+      "arm": "all_capital",
+      "source": "params:omb,corporate",
+      "marginal": false,
+      "national_dollars": 695161651000.0
+    },
+    "X|per_capita": {
+      "item": "X",
+      "arm": "per_capita",
+      "source": "params:omb,corporate",
+      "marginal": false,
+      "national_dollars": 313708780000.0,
+      "coverage": "federal and state"
+    },
+    "X|consumption_proxy": {
+      "item": "X",
+      "arm": "consumption_proxy",
+      "source": "params:omb,corporate",
+      "marginal": false,
+      "national_dollars": 313708780000.0
+    },
+    "R|central": {
+      "item": "R",
+      "arm": "central",
+      "source": "cache:omb_hist03z1_fy2027.xlsx + params:omb",
+      "marginal": false,
+      "detail": {
+        "700_veterans_net_of_medical": {
+          "dollars": 187102000000.0,
+          "gross": 325645000000.0,
+          "va_medical_already_priced": 138543000000.0,
+          "rule": "function 700 less subfunction 703 VA hospital and medical care, which the MEPS public-payer transport already charges, spread per veteran (PEAFEVER = 1, ever served on active duty)"
+        },
+        "602_federal_retirement": {
+          "dollars": 179924000000.0,
+          "rule": "share of total pension income (PNSN_VAL) among people reporting a federal government pension source (PEN_SC1 or PEN_SC2 = 3)",
+          "caveat": "CPS ASEC carries no separately valued federal pension amount, so this is a proxy that over-attributes for holders of a second non-federal pension",
+          "share_of_the_allocated_dollars_held_by_mixed_source_people": 0.1681905266693487,
+          "weighted_people_with_a_federal_pension_source": 1526560.5604553302
+        },
+        "750_administration_of_justice": {
+          "dollars": 83793000000.0,
+          "correctional_subfunction": 9057000000.0,
+          "bop_mexican_national_share": 0.08,
+          "correctional_to_mexico_born": 724560000.0,
+          "rule": "the BOP Mexican-national share of subfunction 753 to Mexico-born noncitizens per head; the remainder of function 750 per capita"
+        },
+        "500_education_net": {
+          "dollars": 200997000000.0,
+          "gross": 306370000000.0,
+          "elementary_secondary_subfunction": 105373000000.0,
+          "assf_federal_school_revenue_crosscheck": 115084579000.0,
+          "rule": "function 500 less subfunction 501, the federal elementary and secondary aid already inside the state per-pupil current spending the account charges; Pell is NOT netted because nothing in this account prices it",
+          "pell_not_netted": true
+        },
+        "550_health_net": {
+          "dollars": 318690000000.0,
+          "gross": 911290000000.0,
+          "federal_medicaid_netted": 592600000000.0,
+          "health_care_services_subfunction_not_used": 854342000000.0,
+          "rule": "function 550 less federal Medicaid (NHEA 2023), which the MEPS public-payer transport already charges, per capita. OMB subfunction 551 is health care services, much broader than Medicaid, so it is not the netting quantity",
+          "year_mismatch": "federal Medicaid is NHEA calendar 2023 against FY2024 outlays"
+        },
+        "600_income_security_net": {
+          "dollars": 92333000000.0,
+          "gross": 670548000000.0,
+          "general_retirement_601": 22325000000.0,
+          "housing_assistance_604": 70008000000.0,
+          "already_priced": [
+            "603 unemployment (CPS UC_VAL)",
+            "605 food and nutrition (SPM SNAP, WIC, school lunch)",
+            "609 other income security (CPS SSI and the refundable credits inside FEDTAX_AC)",
+            "602, charged separately above"
+          ],
+          "rule": "subfunctions 601 and 604 only, per capita; every other income-security subfunction is already inside the account"
+        },
+        "400_transportation": {
+          "dollars": 136582000000.0,
+          "rule": "per capita"
+        },
+        "zero_in_central": {
+          "codes": [
+            "150",
+            "250",
+            "270",
+            "300",
+            "350",
+            "370",
+            "450"
+          ],
+          "dollars": {
+            "150": 56396000000.0,
+            "250": 41476000000.0,
+            "270": 13571000000.0,
+            "300": 58469000000.0,
+            "350": 32841000000.0,
+            "370": 36032000000.0,
+            "450": 85215000000.0
+          },
+          "rule": "zero in the central arm, per capita in the alternative"
+        }
+      },
+      "missing": [],
+      "national_dollars": 1191141685657.4592
+    },
+    "R|all_per_capita": {
+      "item": "R",
+      "arm": "all_per_capita",
+      "source": "cache:omb_hist03z1_fy2027.xlsx + params:omb",
+      "marginal": true,
+      "note": "the same netted function amounts, every one of them per capita, plus the seven functions the central arm prices at zero"
+    },
+    "R|central_housing_by_reported_subsidy": {
+      "item": "R",
+      "arm": "central_housing_by_reported_subsidy",
+      "source": "cache:omb_hist03z1_fy2027.xlsx + params:omb",
+      "marginal": false,
+      "note": "the central arm with subfunction 604 housing assistance allocated by each record's share of the reported SPM capped housing subsidy instead of per capita; every other part is unchanged",
+      "housing_dollars": 70008000000.0
+    },
+    "R|all_zero": {
+      "item": "R",
+      "arm": "all_zero",
+      "source": "convention",
+      "marginal": false
+    },
+    "F|zero": {
+      "item": "F",
+      "arm": "zero",
+      "source": "convention",
+      "marginal": true
+    },
+    "F|per_capita": {
+      "item": "F",
+      "arm": "per_capita",
+      "source": "cache:omb_hist03z1_fy2027.xlsx",
+      "marginal": true,
+      "national_dollars": 1788718000000.0
+    },
+    "F|proportional_to_federal_tax": {
+      "item": "F",
+      "arm": "proportional_to_federal_tax",
+      "source": "cache:omb_hist03z1_fy2027.xlsx",
+      "marginal": true,
+      "national_dollars": 1788718000000.0
+    },
+    "S|half_inside_meps": {
+      "item": "S",
+      "arm": "half_inside_meps",
+      "source": "params:state_medicaid_undocumented, assembled from individual verified state lines",
+      "marginal": false,
+      "share_already_inside_meps": 0.5,
+      "mexico_share_of_the_unauthorized": 0.43767060964513194,
+      "mexico_share_is_national_not_state_specific": true,
+      "states": [
+        {
+          "fips": 17,
+          "key": "il_hbia_hbis_total_state_cost",
+          "published": 538000000.0,
+          "annualization_factor": 1.0,
+          "annual_dollars": 538000000.0,
+          "note": "Illinois, Health Benefits for Immigrant Adults plus Seniors, annual state cost"
+        },
+        {
+          "fips": 36,
+          "key": "ny_ep_to_medicaid_state_cost_annual",
+          "published": 3000000000.0,
+          "annualization_factor": 1.0,
+          "annual_dollars": 3000000000.0,
+          "note": "New York, Essential Plan population moved to state-funded Medicaid, annual state cost"
+        },
+        {
+          "fips": 8,
+          "key": "co_omnisalud_subsidy_spend_py2026",
+          "published": 50000000.0,
+          "annualization_factor": 1.0,
+          "annual_dollars": 50000000.0,
+          "note": "Colorado, OmniSalud subsidy spending, plan year 2026"
+        },
+        {
+          "fips": 41,
+          "key": "or_healthier_oregon_gf_2023_25",
+          "published": 725500000.0,
+          "annualization_factor": 0.5,
+          "annual_dollars": 362750000.0,
+          "note": "Oregon, Healthier Oregon general fund, 2023-25 biennium halved to an annual rate"
+        },
+        {
+          "fips": 53,
+          "key": "wa_apple_health_expansion_service_dollars_2023_25",
+          "published": 72000000.0,
+          "annualization_factor": 0.5,
+          "annual_dollars": 36000000.0,
+          "note": "Washington, Apple Health Expansion service dollars, 2023-25 biennium halved"
+        },
+        {
+          "fips": 6,
+          "key": "ca_full_scope_medical_adults_26_49_general_fund",
+          "published": 2800000000.0,
+          "annualization_factor": 1.0,
+          "annual_dollars": 2800000000.0,
+          "note": "California, full-scope Medi-Cal general fund for adults 26-49 ONLY; a partial-population floor, not California's all-ages total, which is not verified"
+        }
+      ],
+      "states_dropped": [
+        "mn_minnesotacare_undocumented_state_cost: not verified",
+        "ma_health_safety_net_state_cost: not verified",
+        "co_cover_all_coloradans_children_state_cost: not verified",
+        "ca_undocumented_total_general_fund_2024_25: not verified"
+      ]
+    },
+    "S|none_inside_meps": {
+      "item": "S",
+      "arm": "none_inside_meps",
+      "source": "params:state_medicaid_undocumented, assembled from individual verified state lines",
+      "marginal": false,
+      "share_already_inside_meps": 0.0,
+      "mexico_share_of_the_unauthorized": 0.43767060964513194,
+      "mexico_share_is_national_not_state_specific": true,
+      "states": [
+        {
+          "fips": 17,
+          "key": "il_hbia_hbis_total_state_cost",
+          "published": 538000000.0,
+          "annualization_factor": 1.0,
+          "annual_dollars": 538000000.0,
+          "note": "Illinois, Health Benefits for Immigrant Adults plus Seniors, annual state cost"
+        },
+        {
+          "fips": 36,
+          "key": "ny_ep_to_medicaid_state_cost_annual",
+          "published": 3000000000.0,
+          "annualization_factor": 1.0,
+          "annual_dollars": 3000000000.0,
+          "note": "New York, Essential Plan population moved to state-funded Medicaid, annual state cost"
+        },
+        {
+          "fips": 8,
+          "key": "co_omnisalud_subsidy_spend_py2026",
+          "published": 50000000.0,
+          "annualization_factor": 1.0,
+          "annual_dollars": 50000000.0,
+          "note": "Colorado, OmniSalud subsidy spending, plan year 2026"
+        },
+        {
+          "fips": 41,
+          "key": "or_healthier_oregon_gf_2023_25",
+          "published": 725500000.0,
+          "annualization_factor": 0.5,
+          "annual_dollars": 362750000.0,
+          "note": "Oregon, Healthier Oregon general fund, 2023-25 biennium halved to an annual rate"
+        },
+        {
+          "fips": 53,
+          "key": "wa_apple_health_expansion_service_dollars_2023_25",
+          "published": 72000000.0,
+          "annualization_factor": 0.5,
+          "annual_dollars": 36000000.0,
+          "note": "Washington, Apple Health Expansion service dollars, 2023-25 biennium halved"
+        },
+        {
+          "fips": 6,
+          "key": "ca_full_scope_medical_adults_26_49_general_fund",
+          "published": 2800000000.0,
+          "annualization_factor": 1.0,
+          "annual_dollars": 2800000000.0,
+          "note": "California, full-scope Medi-Cal general fund for adults 26-49 ONLY; a partial-population floor, not California's all-ages total, which is not verified"
+        }
+      ],
+      "states_dropped": [
+        "mn_minnesotacare_undocumented_state_cost: not verified",
+        "ma_health_safety_net_state_cost: not verified",
+        "co_cover_all_coloradans_children_state_cost: not verified",
+        "ca_undocumented_total_general_fund_2024_25: not verified"
+      ]
+    },
+    "S|all_inside_meps": {
+      "item": "S",
+      "arm": "all_inside_meps",
+      "source": "params:state_medicaid_undocumented, assembled from individual verified state lines",
+      "marginal": false,
+      "share_already_inside_meps": 1.0,
+      "mexico_share_of_the_unauthorized": 0.43767060964513194,
+      "mexico_share_is_national_not_state_specific": true,
+      "states": [
+        {
+          "fips": 17,
+          "key": "il_hbia_hbis_total_state_cost",
+          "published": 538000000.0,
+          "annualization_factor": 1.0,
+          "annual_dollars": 538000000.0,
+          "note": "Illinois, Health Benefits for Immigrant Adults plus Seniors, annual state cost"
+        },
+        {
+          "fips": 36,
+          "key": "ny_ep_to_medicaid_state_cost_annual",
+          "published": 3000000000.0,
+          "annualization_factor": 1.0,
+          "annual_dollars": 3000000000.0,
+          "note": "New York, Essential Plan population moved to state-funded Medicaid, annual state cost"
+        },
+        {
+          "fips": 8,
+          "key": "co_omnisalud_subsidy_spend_py2026",
+          "published": 50000000.0,
+          "annualization_factor": 1.0,
+          "annual_dollars": 50000000.0,
+          "note": "Colorado, OmniSalud subsidy spending, plan year 2026"
+        },
+        {
+          "fips": 41,
+          "key": "or_healthier_oregon_gf_2023_25",
+          "published": 725500000.0,
+          "annualization_factor": 0.5,
+          "annual_dollars": 362750000.0,
+          "note": "Oregon, Healthier Oregon general fund, 2023-25 biennium halved to an annual rate"
+        },
+        {
+          "fips": 53,
+          "key": "wa_apple_health_expansion_service_dollars_2023_25",
+          "published": 72000000.0,
+          "annualization_factor": 0.5,
+          "annual_dollars": 36000000.0,
+          "note": "Washington, Apple Health Expansion service dollars, 2023-25 biennium halved"
+        },
+        {
+          "fips": 6,
+          "key": "ca_full_scope_medical_adults_26_49_general_fund",
+          "published": 2800000000.0,
+          "annualization_factor": 1.0,
+          "annual_dollars": 2800000000.0,
+          "note": "California, full-scope Medi-Cal general fund for adults 26-49 ONLY; a partial-population floor, not California's all-ages total, which is not verified"
+        }
+      ],
+      "states_dropped": [
+        "mn_minnesotacare_undocumented_state_cost: not verified",
+        "ma_health_safety_net_state_cost: not verified",
+        "co_cover_all_coloradans_children_state_cost: not verified",
+        "ca_undocumented_total_general_fund_2024_25: not verified"
+      ]
+    }
+  },
+  "marginality_dial": [
+    {
+      "item": "G",
+      "dialled": true
+    },
+    {
+      "item": "K",
+      "dialled": true
+    },
+    {
+      "item": "D",
+      "dialled": false,
+      "dropped": true
+    },
+    {
+      "item": "U",
+      "dialled": false
+    },
+    {
+      "item": "I",
+      "dialled": false
+    },
+    {
+      "item": "M",
+      "dialled": false
+    },
+    {
+      "item": "N",
+      "dialled": false
+    },
+    {
+      "item": "E",
+      "dialled": false
+    },
+    {
+      "item": "C",
+      "dialled": false
+    },
+    {
+      "item": "X",
+      "dialled": false
+    },
+    {
+      "item": "R",
+      "dialled": "per-capita functions only"
+    },
+    {
+      "item": "F",
+      "dialled": true
+    },
+    {
+      "item": "S",
+      "dialled": false
+    }
+  ],
+  "break_even_m_star": 0.12044407952168636,
+  "inputs": [
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+      "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256dat.zip",
+      "sha256": "d0779e49de4f5ff0b0fff6774167023382366a0ef0905e6a3c40126114f988c9"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256su.txt",
+      "sha256": "a7bd4eca49833f40df45b53aad803dfca15b1a3a9b1de03aa6e79f508c5e24be"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/state_parameters.csv",
+      "sha256": "00b0bb778861cc8406a04c8159938368146494965348d477e0514c4b0efccff2"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/census_assf_fy2024_summary_tables.xlsx",
+      "sha256": "848133174f299957653bbc7070633cf3ff23e4242695ccb628893fb8f6571154"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_residual_agg_2026_09_16/_cache/omb_hist03z1_fy2027.xlsx",
+      "sha256": "47864b5078698919c3237038ad7296fb7aeb62f6942c3d8acccf98ad0a7122f7"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_residual_agg_2026_09_16/_cache/22slsstab1.xlsx",
+      "sha256": "4dd123c5ad520e33d9692f622d389a020e2d3a7e6e782763663854dd84643b9b"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_residual_agg_2026_09_16/_cache/nst_est2023.csv",
+      "sha256": "8f0733f32bb01e8c60c22e1eb88ed300e54dcd85306debb13521a81e0c53332a"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/institutional_bound_2026_09_17/derived/acs_cells.csv",
+      "sha256": "d14e1d1c98c7f8138c8d5d58822dcdf4779b033705b761781eafc52d25217fe7"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/all_age_ledger_2026_09_17/derived/estimates.csv",
+      "sha256": "41b47bc237bfcf5b09319b8e1668df5af16d299c01ee078e3fcbc225f81fa53c"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/absolute_ledger.py",
+      "sha256": "6ac76256f0454bae589f095119d12fe5a78090669b7f283d261143f5513b0beb"
+    }
+  ],
+  "medical_anchors": {
+    "all": 339797629.595972,
+    "born_us": 285498518.670341,
+    "born_elsewhere": 52835316.116307
+  },
+  "cps_validation": {
+    "person_rows": 142125,
+    "replicate_rows": 142125,
+    "spm_units": 58147,
+    "max_full_weight_difference": 0.005049970000015946,
+    "negative_replicate_weights": 132,
+    "federal_credit_identity": true,
+    "unit_fields_constant": true,
+    "source_tax_sums_match_unit_fields": true
+  },
+  "institutional_external_add": {
+    "source": "institutional_bound_2026_09_17/derived/acs_cells.csv",
+    "arm": "midpoint of that lane's adverse and moderate arms",
+    "group_definitions_differ": [
+      "the ACS white reference is NATIVITY=1 & HISP=01 & RAC1P=1, native non-Hispanic white, not the CPS third-plus non-Hispanic white reference used everywhere else",
+      "the ACS US-born Mexican group is NATIVITY=1 & HISP=02, which does not condition on parents' birthplace, so it is not exactly the union of the CPS second generation and third-plus self-identified groups",
+      "the ACS cost is split between the two CPS US-born target groups in proportion to their CPS full-weight band populations, which assumes the same institutionalization rate in both"
+    ],
+    "no_replicate_standard_error": true,
+    "cps_populations_vs_acs": {
+      "cps_union": 40896574.152351856,
+      "acs_union": 39380312.0
+    }
+  },
+  "unpriced": [
+    "OMB function 920 allowances and 950 undistributed offsetting receipts",
+    "federal and state capital stock other than school capital",
+    "the reported housing-subsidy base in the CPS (SPM_CAPHOUSESUB sits outside the account's selected non-cash transfers); federal housing assistance is instead carried whole as OMB subfunction 604 inside item R",
+    "Social Security under-reporting: its admin/survey ratio is 1.0881, above 1, and the brief applies Social Security only when that ratio is below 1",
+    "item S outside the waterfall: the brief's waterfall order does not include it, so the state coverage charge is reported per item but not accumulated",
+    "state and local capital outlay outside K-12",
+    "deficit finance: the account charges outlays, not the tax burden that would fund them",
+    "emigration, mortality and any lifetime or dynamic margin"
+  ]
+}
