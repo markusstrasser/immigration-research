@@ -1,0 +1,517 @@
+{
+  "acquired": "2026-09-17",
+  "source": "Operator-supplied local downloads",
+  "files": [
+    {
+      "input": "/Users/alien/Downloads/nlsy97_gen_crime_1 (9).zip",
+      "bytes": 25330040,
+      "sha256": "a8a67bc253e5438662cd6e718ea1704270f527d6ce3911233f0fbaca02d4a1ec",
+      "staged": "raw/nlsy97_gen_crime_1 (9).zip",
+      "exact_duplicate_of": null,
+      "members": [
+        {
+          "name": "nlsy97_gen_crime_1.cdb",
+          "bytes": 7229820,
+          "sha256": "c5c6f6c9293cc928f510c99a456a4006c1b61d20c29786db40dc6a3d70c0aec2"
+        },
+        {
+          "name": "nlsy97_gen_crime_1.sas",
+          "bytes": 2120891,
+          "sha256": "e70473fcb5b1c128ab77bec0c7e45573bc759267a7f5f195b0a73fec29964edb"
+        },
+        {
+          "name": "nlsy97_gen_crime_1.sps",
+          "bytes": 2524598,
+          "sha256": "3ca5a86473dbb3f55820b777ff4c407f498bdea8403afc5d05c9b394f4db5a42"
+        },
+        {
+          "name": "nlsy97_gen_crime_1-value-labels.do",
+          "bytes": 1538008,
+          "sha256": "6d31948717946bb3fd2ce34e9b4befc8c0e5f25799d956fd6e2b0e329c877b92"
+        },
+        {
+          "name": "nlsy97_gen_crime_1.NLSY97",
+          "bytes": 61155,
+          "sha256": "2c3286169b7901532a2b301022460bae0a338991b059c710014767aaa5958978"
+        },
+        {
+          "name": "extract.log",
+          "bytes": 176,
+          "sha256": "6699e6c962963fc01ffd9c1c07be714c04e122a8a50e4b6045832e5feb62dc0d"
+        },
+        {
+          "name": "nlsy97_gen_crime_1.csv",
+          "bytes": 178669640,
+          "sha256": "b26c206d86aa552206ce7d4767c026dc88bd734e67680d274b94d0db8c6ad105"
+        },
+        {
+          "name": "nlsy97_gen_crime_1.dct",
+          "bytes": 178902337,
+          "sha256": "4b6132794297182fcd57791b24a8e3bfa37e9399c0923ef586f31a627869f9f2"
+        },
+        {
+          "name": "nlsy97_gen_crime_1.dat",
+          "bytes": 178594894,
+          "sha256": "90eb1685f42678487a439d7ea17f4d4b9712fe4b36216aeb21bacb2a0792058f"
+        }
+      ]
+    },
+    {
+      "input": "/Users/alien/Downloads/nlsy97_gen_crime_1.zip",
+      "bytes": 25330040,
+      "sha256": "a8a67bc253e5438662cd6e718ea1704270f527d6ce3911233f0fbaca02d4a1ec",
+      "staged": "raw/nlsy97_gen_crime_1 (9).zip",
+      "exact_duplicate_of": "nlsy97_gen_crime_1 (9).zip",
+      "members": [
+        {
+          "name": "nlsy97_gen_crime_1.cdb",
+          "bytes": 7229820,
+          "sha256": "c5c6f6c9293cc928f510c99a456a4006c1b61d20c29786db40dc6a3d70c0aec2"
+        },
+        {
+          "name": "nlsy97_gen_crime_1.sas",
+          "bytes": 2120891,
+          "sha256": "e70473fcb5b1c128ab77bec0c7e45573bc759267a7f5f195b0a73fec29964edb"
+        },
+        {
+          "name": "nlsy97_gen_crime_1.sps",
+          "bytes": 2524598,
+          "sha256": "3ca5a86473dbb3f55820b777ff4c407f498bdea8403afc5d05c9b394f4db5a42"
+        },
+        {
+          "name": "nlsy97_gen_crime_1-value-labels.do",
+          "bytes": 1538008,
+          "sha256": "6d31948717946bb3fd2ce34e9b4befc8c0e5f25799d956fd6e2b0e329c877b92"
+        },
+        {
+          "name": "nlsy97_gen_crime_1.NLSY97",
+          "bytes": 61155,
+          "sha256": "2c3286169b7901532a2b301022460bae0a338991b059c710014767aaa5958978"
+        },
+        {
+          "name": "extract.log",
+          "bytes": 176,
+          "sha256": "6699e6c962963fc01ffd9c1c07be714c04e122a8a50e4b6045832e5feb62dc0d"
+        },
+        {
+          "name": "nlsy97_gen_crime_1.csv",
+          "bytes": 178669640,
+          "sha256": "b26c206d86aa552206ce7d4767c026dc88bd734e67680d274b94d0db8c6ad105"
+        },
+        {
+          "name": "nlsy97_gen_crime_1.dct",
+          "bytes": 178902337,
+          "sha256": "4b6132794297182fcd57791b24a8e3bfa37e9399c0923ef586f31a627869f9f2"
+        },
+        {
+          "name": "nlsy97_gen_crime_1.dat",
+          "bytes": 178594894,
+          "sha256": "90eb1685f42678487a439d7ea17f4d4b9712fe4b36216aeb21bacb2a0792058f"
+        }
+      ]
+    },
+    {
+      "input": "/Users/alien/Downloads/gen_crime_2026.NLSY97",
+      "bytes": 160060,
+      "sha256": "af2db3a5325036002704745e1c4d000475759ed2d2f55e9b03884e7b1e66c008",
+      "staged": "raw/gen_crime_2026.NLSY97",
+      "exact_duplicate_of": null,
+      "members": []
+    },
+    {
+      "input": "/Users/alien/Downloads/Pew-Research-Center_2016-Survey-of-Self-Identified-non-Hispanics-Dataset.zip",
+      "bytes": 577225,
+      "sha256": "c955e0e98daa565cd5a0e9b3a0ba6e7b1cc2a49bf7a56d30ccd7c7f0a1520c8c",
+      "staged": "raw/Pew-Research-Center_2016-Survey-of-Self-Identified-non-Hispanics-Dataset.zip",
+      "exact_duplicate_of": null,
+      "members": [
+        {
+          "name": "Pew-Research-Center_2016-Survey-of-Self-Identified-non-Hispanics-Dataset/2015 Omnibus Readme.txt",
+          "bytes": 1008,
+          "sha256": "c2784c7d40abb3564aba224f79b0e8e5afb3e9fde2072d29cd782715a860472b"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2016-Survey-of-Self-Identified-non-Hispanics-Dataset/._2015 Omnibus Readme.txt",
+          "bytes": 396,
+          "sha256": "933a050772487c86b8edd3ce102ce6dad8fef2c9581ca1d16e2d7850f0ae7e4e"
+        },
+        {
+          "name": "Pew-Research-Center_2016-Survey-of-Self-Identified-non-Hispanics-Dataset/NSL2015 Omnibus_FOR RELEASE.sav",
+          "bytes": 132958,
+          "sha256": "74e0d106b94ced44123fcdec9fb7b11d953cec791e2bf8d61d7a65df7f16f293"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2016-Survey-of-Self-Identified-non-Hispanics-Dataset/._NSL2015 Omnibus_FOR RELEASE.sav",
+          "bytes": 177,
+          "sha256": "cd719d9bb7ab9354c9b71bebfd4e48091e664015a861d8ea841e70c1e0d530c2"
+        },
+        {
+          "name": "Pew-Research-Center_2016-Survey-of-Self-Identified-non-Hispanics-Dataset/2015 Omnibus Public Release_FINAL.pdf",
+          "bytes": 693865,
+          "sha256": "ccc3c7079a8b8c2ec25d8103199881f58da693481da93c6e52c2d62fcf5b4d99"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2016-Survey-of-Self-Identified-non-Hispanics-Dataset/._2015 Omnibus Public Release_FINAL.pdf",
+          "bytes": 177,
+          "sha256": "cd719d9bb7ab9354c9b71bebfd4e48091e664015a861d8ea841e70c1e0d530c2"
+        },
+        {
+          "name": "Pew-Research-Center_2016-Survey-of-Self-Identified-non-Hispanics-Dataset/2015 Omnibus Web blurb.txt",
+          "bytes": 837,
+          "sha256": "ed5a0de209e29a76aa305b55a4270a5729b263f2a4343224e6f0e4276bb74388"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2016-Survey-of-Self-Identified-non-Hispanics-Dataset/._2015 Omnibus Web blurb.txt",
+          "bytes": 396,
+          "sha256": "3f6355776a7dff1978955246a7d8a0f4e78aa2e0df412e403c4b5584a77458c7"
+        },
+        {
+          "name": "__MACOSX/._Pew-Research-Center_2016-Survey-of-Self-Identified-non-Hispanics-Dataset",
+          "bytes": 177,
+          "sha256": "cd719d9bb7ab9354c9b71bebfd4e48091e664015a861d8ea841e70c1e0d530c2"
+        }
+      ]
+    },
+    {
+      "input": "/Users/alien/Downloads/Pew-Research-Center_2018-National-Survey-of-Latinos-Dataset.zip",
+      "bytes": 5083866,
+      "sha256": "d6bb10a019ed31f51f708052b3f81c22efae892686518da9ae7bf2de9681d8ee",
+      "staged": "raw/Pew-Research-Center_2018-National-Survey-of-Latinos-Dataset.zip",
+      "exact_duplicate_of": null,
+      "members": [
+        {
+          "name": "Pew-Research-Center_2018-National-Survey-of-Latinos-Dataset/NSL2018 Public Release_FINAL_UPDATED 3.7.22.docx",
+          "bytes": 5142917,
+          "sha256": "091cefb9d67363cea812ecba079c407ee4046cb5d57653a2a0432aef5009fca2"
+        },
+        {
+          "name": "Pew-Research-Center_2018-National-Survey-of-Latinos-Dataset/NSL 2018_FOR RELEASE_UPDATED 3.7.22.sav",
+          "bytes": 350943,
+          "sha256": "eebcd699b03c113f7c0ad85532351909060bce0379ab4fcc7bb79dbe1b8c108a"
+        }
+      ]
+    },
+    {
+      "input": "/Users/alien/Downloads/Pew-Research-Center_2016-National-Survey-of-Latinos-Dataset.zip",
+      "bytes": 1094807,
+      "sha256": "00e9b5ecf52902232b0f961a0a8528e08d3f352373f91ae4f11e3a1ac306360e",
+      "staged": "raw/Pew-Research-Center_2016-National-Survey-of-Latinos-Dataset.zip",
+      "exact_duplicate_of": null,
+      "members": [
+        {
+          "name": "Pew-Research-Center_2016-National-Survey-of-Latinos-Dataset/NSL 2016 Readme.txt",
+          "bytes": 1046,
+          "sha256": "b9dcc65a22fece9414bc39394424882454f8c3c96e9648b2c6ed40ef9b3240d9"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2016-National-Survey-of-Latinos-Dataset/._NSL 2016 Readme.txt",
+          "bytes": 396,
+          "sha256": "3356556bc0a63551d1971b02ec2fa823a3116fd9c4bdac777da461ba7633f85d"
+        },
+        {
+          "name": "Pew-Research-Center_2016-National-Survey-of-Latinos-Dataset/NSL 2016 Web blurb.txt",
+          "bytes": 675,
+          "sha256": "c83670e46bcc44e6c42ebc88388032c031232eb988c0bb89fb7c5f2563322a1a"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2016-National-Survey-of-Latinos-Dataset/._NSL 2016 Web blurb.txt",
+          "bytes": 396,
+          "sha256": "ef83cba9d372f10c5a0c19267834e503a4684b154f7270f10416f537334df8ea"
+        },
+        {
+          "name": "Pew-Research-Center_2016-National-Survey-of-Latinos-Dataset/NSL 2016_FOR RELEASE.sav",
+          "bytes": 505039,
+          "sha256": "d97e34106707789955613b5aeeec50e6072c64fa239a1b17a0c9277678e3a8a8"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2016-National-Survey-of-Latinos-Dataset/._NSL 2016_FOR RELEASE.sav",
+          "bytes": 177,
+          "sha256": "cd719d9bb7ab9354c9b71bebfd4e48091e664015a861d8ea841e70c1e0d530c2"
+        },
+        {
+          "name": "Pew-Research-Center_2016-National-Survey-of-Latinos-Dataset/NSL 2016 Public Release_FINAL.pdf",
+          "bytes": 1361788,
+          "sha256": "842491cb9eac16c0bd5f16b146c83279299820ce388f9a535adfadbca20d3aa5"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2016-National-Survey-of-Latinos-Dataset/._NSL 2016 Public Release_FINAL.pdf",
+          "bytes": 177,
+          "sha256": "cd719d9bb7ab9354c9b71bebfd4e48091e664015a861d8ea841e70c1e0d530c2"
+        },
+        {
+          "name": "__MACOSX/._Pew-Research-Center_2016-National-Survey-of-Latinos-Dataset",
+          "bytes": 177,
+          "sha256": "cd719d9bb7ab9354c9b71bebfd4e48091e664015a861d8ea841e70c1e0d530c2"
+        }
+      ]
+    },
+    {
+      "input": "/Users/alien/Downloads/Pew-Research-Center_2014-National-Survey-of-Latinos-Dataset.zip",
+      "bytes": 1061613,
+      "sha256": "db4c5be8470f834707371b3951d506fd126474603be0cc72ef64afe3999211fd",
+      "staged": "raw/Pew-Research-Center_2014-National-Survey-of-Latinos-Dataset.zip",
+      "exact_duplicate_of": null,
+      "members": [
+        {
+          "name": "Pew-Research-Center_2014-National-Survey-of-Latinos-Dataset/NSL2014 Readme.txt",
+          "bytes": 1048,
+          "sha256": "6305dd7856162e1b58fbadea3b8114bb10a381d47e5ca64ad934fcc664bce338"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2014-National-Survey-of-Latinos-Dataset/._NSL2014 Readme.txt",
+          "bytes": 177,
+          "sha256": "cd719d9bb7ab9354c9b71bebfd4e48091e664015a861d8ea841e70c1e0d530c2"
+        },
+        {
+          "name": "Pew-Research-Center_2014-National-Survey-of-Latinos-Dataset/NSL 2014 Public Release_FINAL.pdf",
+          "bytes": 1322599,
+          "sha256": "efcd1e73ce4330f041f7d9a0b6aaedb2a46a4ae4d62b33906044287e511c190d"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2014-National-Survey-of-Latinos-Dataset/._NSL 2014 Public Release_FINAL.pdf",
+          "bytes": 177,
+          "sha256": "cd719d9bb7ab9354c9b71bebfd4e48091e664015a861d8ea841e70c1e0d530c2"
+        },
+        {
+          "name": "Pew-Research-Center_2014-National-Survey-of-Latinos-Dataset/NSL2014_FOR RELEASE.sav",
+          "bytes": 320999,
+          "sha256": "3054b04e72914f6fd6af1a192a4fcb122454c3d4ad2cccdc1022ed88723465c8"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2014-National-Survey-of-Latinos-Dataset/._NSL2014_FOR RELEASE.sav",
+          "bytes": 177,
+          "sha256": "cd719d9bb7ab9354c9b71bebfd4e48091e664015a861d8ea841e70c1e0d530c2"
+        },
+        {
+          "name": "Pew-Research-Center_2014-National-Survey-of-Latinos-Dataset/NSL2014 Web blurb.txt",
+          "bytes": 679,
+          "sha256": "50b164158997f720160c5a25a34d80fd89307b7d4ea7a520714e753b4bea96b5"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2014-National-Survey-of-Latinos-Dataset/._NSL2014 Web blurb.txt",
+          "bytes": 396,
+          "sha256": "24386b92e99d34dc57302fa338dd6c53b9a09790a7e2d772b27de7b694b62d8e"
+        },
+        {
+          "name": "__MACOSX/._Pew-Research-Center_2014-National-Survey-of-Latinos-Dataset",
+          "bytes": 177,
+          "sha256": "cd719d9bb7ab9354c9b71bebfd4e48091e664015a861d8ea841e70c1e0d530c2"
+        }
+      ]
+    },
+    {
+      "input": "/Users/alien/Downloads/Pew-Research-Center-2013-U.S.-Latino-Religion-Survey.zip",
+      "bytes": 1124555,
+      "sha256": "b872a295ecda1fc042ba2ee2bb1befe373050a4164ab5ef2f13b218282b001ec",
+      "staged": "raw/Pew-Research-Center-2013-U.S.-Latino-Religion-Survey.zip",
+      "exact_duplicate_of": null,
+      "members": [
+        {
+          "name": "Background and Codebook - Pew Research Center 2013 U.S. Latino Religion Survey.pdf",
+          "bytes": 516322,
+          "sha256": "9aa9442dbf50a6294246e070ef966fe98a2d3d66712bb475fe4c5cbfeb750e6a"
+        },
+        {
+          "name": "Dataset - Pew Research Center 2013 U.S. Latino Religion Survey.sav",
+          "bytes": 951264,
+          "sha256": "f2e67c139eb21958044f86eb14a5ab700018f613286382c821f7fd24a06c5e93"
+        },
+        {
+          "name": "Questionnaire - Pew Research Center 2013 U.S. Latino Religion Survey.pdf",
+          "bytes": 366027,
+          "sha256": "2fd5502b698ffef78d8d54681e2bd4b50572515affcc984260f4e22f18ca8658"
+        }
+      ]
+    },
+    {
+      "input": "/Users/alien/Downloads/PHCNSL2012PublicRelease.zip",
+      "bytes": 6049802,
+      "sha256": "9b25666771df4a17b430c246e6178d726688ea20f26339e3a5515685841cc225",
+      "staged": "raw/PHCNSL2012PublicRelease.zip",
+      "exact_duplicate_of": null,
+      "members": [
+        {
+          "name": "PHCNSL2012PublicRelease/PHCNSL2012PublicRelease_UPDATED 3.7.22.sav",
+          "bytes": 806719,
+          "sha256": "2cb73a8ed7dc49b8e751641a613c7102d2969922ac7682314fc97bf441c480d1"
+        },
+        {
+          "name": "PHCNSL2012PublicRelease/PHCNSL2012PublicRelease_UPDATED 3.7.22.docx",
+          "bytes": 6111478,
+          "sha256": "120d23a681d92bd5e5ccf1cc83623934cf032d342c8e962d3678badcea5a6039"
+        }
+      ]
+    },
+    {
+      "input": "/Users/alien/Downloads/Pew-Research-Center_2015-National-Survey-of-Latinos-Dataset.zip",
+      "bytes": 1295120,
+      "sha256": "3344942386564310c7d3f8e029fa41b9d6121c40889a0e5ba94ab97da0432956",
+      "staged": "raw/Pew-Research-Center_2015-National-Survey-of-Latinos-Dataset.zip",
+      "exact_duplicate_of": null,
+      "members": [
+        {
+          "name": "Pew-Research-Center_2015-National-Survey-of-Latinos-Dataset/2015 NSL Web blurb.txt",
+          "bytes": 1054,
+          "sha256": "6bfbe4790ac139e6a79cec4b467c2dd40a7d4acf014ae2c1ea3149748a99dd3b"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2015-National-Survey-of-Latinos-Dataset/._2015 NSL Web blurb.txt",
+          "bytes": 396,
+          "sha256": "bf95830cd958b54050b891298b5b414e905aea13af43548700d93ad0859448f4"
+        },
+        {
+          "name": "Pew-Research-Center_2015-National-Survey-of-Latinos-Dataset/NSL2015_FOR RELEASE.sav",
+          "bytes": 414647,
+          "sha256": "5d4ef87d19dd93b1b1fd7f9661fa96dd526d62de1e0b933c0cd28df2ea808136"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2015-National-Survey-of-Latinos-Dataset/._NSL2015_FOR RELEASE.sav",
+          "bytes": 177,
+          "sha256": "cd719d9bb7ab9354c9b71bebfd4e48091e664015a861d8ea841e70c1e0d530c2"
+        },
+        {
+          "name": "Pew-Research-Center_2015-National-Survey-of-Latinos-Dataset/NSL 2015 Public Release_FINAL.pdf",
+          "bytes": 1663132,
+          "sha256": "2043160b4c1e022f7d1c8a4db3b638ff6e588a0b75e621285f0a69753d9692ba"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2015-National-Survey-of-Latinos-Dataset/._NSL 2015 Public Release_FINAL.pdf",
+          "bytes": 233,
+          "sha256": "725c82b6fc2634ebf691e1435ee2950314de36acb70b89f3211004380adbc792"
+        },
+        {
+          "name": "Pew-Research-Center_2015-National-Survey-of-Latinos-Dataset/2015 NSL Readme.txt",
+          "bytes": 1043,
+          "sha256": "bc24d4d676fe7356451351a3bd462160aff3cbb1c2bc6d818a9cd2c05bb60179"
+        },
+        {
+          "name": "__MACOSX/Pew-Research-Center_2015-National-Survey-of-Latinos-Dataset/._2015 NSL Readme.txt",
+          "bytes": 223,
+          "sha256": "76f92be296f287cd1c651b9a384dda50103903fcf56b0a03e170366bd588a7ca"
+        },
+        {
+          "name": "__MACOSX/._Pew-Research-Center_2015-National-Survey-of-Latinos-Dataset",
+          "bytes": 177,
+          "sha256": "cd719d9bb7ab9354c9b71bebfd4e48091e664015a861d8ea841e70c1e0d530c2"
+        }
+      ]
+    },
+    {
+      "input": "/Users/alien/Downloads/PHCNSL2011PubRelease.zip",
+      "bytes": 469298,
+      "sha256": "73d083d203bc46511c1a28210d768d7866b5fbc6c5c39317168fc7076e3fe1c2",
+      "staged": "raw/PHCNSL2011PubRelease.zip",
+      "exact_duplicate_of": null,
+      "members": [
+        {
+          "name": "PHCNSL2011PubRelease/PHCNSL2011PubRelease_UPDATED 3.7.22.sav",
+          "bytes": 275369,
+          "sha256": "a80408698a92333417d1e837bd3b6735fb849cc3c5bc0d41073bcdda7980bbb6"
+        },
+        {
+          "name": "PHCNSL2011PubRelease/PHCNSL2011PublicRelease_UPDATED 3.7.22.docx",
+          "bytes": 445203,
+          "sha256": "ffb431ac16cc634f9b327f48c8bda8e271577e22612690001c9c4a819948566f"
+        }
+      ]
+    },
+    {
+      "input": "/Users/alien/Downloads/ICPSR_30302-V1.zip",
+      "bytes": 2736943,
+      "sha256": "55018bcbf4edd22b5ca6f87f5dc1d896571c66674b78f7b02b4a693eedc44be4",
+      "staged": "raw/ICPSR_30302-V1.zip",
+      "exact_duplicate_of": null,
+      "members": [
+        {
+          "name": "ICPSR_30302/DS0001/30302-0001-Codebook.pdf",
+          "bytes": 2722383,
+          "sha256": "efef0df1835399e18e0644dcb597a71491ba693371eb2639cb72838edceac907"
+        },
+        {
+          "name": "ICPSR_30302/DS0001/30302-0001-Questionnaire.pdf",
+          "bytes": 546790,
+          "sha256": "acef083d1e2a09686b616269a80ca8ca49c11da3a810cc3cd4ddd5a9a6439139"
+        },
+        {
+          "name": "ICPSR_30302/30302-related_literature.txt",
+          "bytes": 19436,
+          "sha256": "db7cbad88231d6e0b06ea43a183b8ab4a7cedf6d36cf956b60f34583a648a432"
+        },
+        {
+          "name": "ICPSR_30302/30302-manifest.txt",
+          "bytes": 2424,
+          "sha256": "1f8ae98b94b03b2e47da56a557fa2bf4c1e1bf79edff4fa84d4ae21a6f712084"
+        },
+        {
+          "name": "ICPSR_30302/30302-descriptioncitation.html",
+          "bytes": 10314,
+          "sha256": "f112d92d1e1aba0d968cf45ed8607cd87900f84571c907c0bc897bd96fadeb5f"
+        },
+        {
+          "name": "ICPSR_30302/TermsOfUse.html",
+          "bytes": 7145,
+          "sha256": "f45ef7f49f56cbcf12ebda95a575880865614a55dfdc3bbf5501fdfd8bb1be8c"
+        }
+      ]
+    },
+    {
+      "input": "/Users/alien/Downloads/ICPSR_20862-V6.zip",
+      "bytes": 7190915,
+      "sha256": "ffad637a254646a41c70dd405c8fbb502073cb7793ea4e5583ec9a30b79fbf11",
+      "staged": "raw/ICPSR_20862-V6.zip",
+      "exact_duplicate_of": null,
+      "members": [
+        {
+          "name": "ICPSR_20862/20862-Questionnaire-Spanish.pdf",
+          "bytes": 336733,
+          "sha256": "00cbbaa57297e7dac6624de3a7371015d22a0e4e59e87f86205291564b57bed3"
+        },
+        {
+          "name": "ICPSR_20862/20862-Questionnaire-English.pdf",
+          "bytes": 382698,
+          "sha256": "146f8e02cb30b2a26c9c8b68038c20bb29112e31c0e060d5c821a9f9bd23e36a"
+        },
+        {
+          "name": "ICPSR_20862/DS0001/20862-0001-Codebook.pdf",
+          "bytes": 1737505,
+          "sha256": "a14cd40a255538ced8507ade437ac78b163cd87d84bb175a6ac24887c406235a"
+        },
+        {
+          "name": "ICPSR_20862/DS0002/20862-0002-Codebook.pdf",
+          "bytes": 1718323,
+          "sha256": "013a49e0c855d944ad94d73d4393af795a1a49abe824d466d08c164a6a5605e0"
+        },
+        {
+          "name": "ICPSR_20862/DS0003/20862-0003-Codebook.pdf",
+          "bytes": 1987738,
+          "sha256": "3e08a253cacc7ca8595137bd93380b461519cc0822d729d5b13877e66433ae23"
+        },
+        {
+          "name": "ICPSR_20862/DS0004/20862-0004-Codebook.pdf",
+          "bytes": 1969167,
+          "sha256": "71c83ab11184c4c0ed04469722d6b79510fc31ce6372ab8f59d2292bdfcb35c8"
+        },
+        {
+          "name": "ICPSR_20862/20862-related_literature.txt",
+          "bytes": 85003,
+          "sha256": "192d5d4f0940cc753bb3150f8399efc8eecb6af73a2cad0cce449d706a98b97f"
+        },
+        {
+          "name": "ICPSR_20862/20862-manifest.txt",
+          "bytes": 5791,
+          "sha256": "50e798ef838a8c52d642776c3a0dbbcbcaed0697d3e1f767f171c56e6e6f26c6"
+        },
+        {
+          "name": "ICPSR_20862/20862-descriptioncitation.html",
+          "bytes": 11713,
+          "sha256": "38a0168af206b43225f6674d93831fd10eacf1cf4d4ef2a5e89dc68251ccfba0"
+        },
+        {
+          "name": "ICPSR_20862/TermsOfUse.html",
+          "bytes": 7145,
+          "sha256": "613034423e83b69146e6575169c80eee51c0f3f5bd69af58525d804b4cc645fa"
+        }
+      ]
+    }
+  ]
+}
