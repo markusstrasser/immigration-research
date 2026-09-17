@@ -4,6 +4,24 @@ This is the working register for the immigration project. It is not the byte-lev
 
 **Verified storage update, 2026-09-05:** `sources` currently points to a missing SSD offload directory. Historical paths below describe the older layout and are not proof of current availability. Verified fiscal raw root: `/Volumes/2TBPNY/research-data/immigration-fiscal/data`; corrected derived root: `/Volumes/2TBPNY/research-data/immigration-fiscal/derived`. Local warehouses remain in `warehouse/`. The [repair report](immigration-material-repair-report-2026-09-05.md) governs corrected outputs; the [recent acquisition memo](immigration-dataset-proxy-refresh-2026-09-05.md) binds new files to hashes and source definitions.
 
+**Verified storage update, 2026-09-17, supersedes the current-path claim above:** `sources` now resolves to `/Users/alien/research-data` and the 2024 CPS archive was read successfully there. This verifies the paths actually consumed below, not every historical manifest entry. New source snapshots and derived data remain ignored; tracked source records and scripts live in the [frontier execution lane](../infra/immigration-fiscal/frontier_execution_2026_09_17/README.md).
+
+## September 17 frontier additions
+
+| Dataset/source | Local input and provenance | Use and permitted join | Important limit |
+|---|---|---|---|
+| NLSY97 full archive, 806-field extraction | Sibling `iq-sex-differences/data/nlsy/nlsy97_all_1997-2023.zip`; archive/CSV SHA256 in lane README | Design, AFQT, monthly crime history; exact IDs join earlier family/adult rows with overlap checks | Public self-ID/generic birthplace does not recover restricted Mexico lineage. |
+| CPS ASEC 2024/25/26 | Held census/cache archives; SHA256/weight joins in `derived/social/cps_audit.json` | Disability and payment sources; one-to-one within-year replicate joins | Overlapping cross-sections, no longitudinal-weight or independent-years claim. |
+| GSS cumulative R3a, 2000–24 analysis | Held source cache, hash in `derived/social/gss_provenance.json` | Trust denominator, nonresponse weights, design, corrected parental birthplace | Conditional attitudes, no inclusive country lineage or institutional causal estimate. |
+| NYC service census/budget/school tabs | `frontier_execution_2026_09_17/raw/local/`; 13 snapshots, [URLs/hashes](../infra/immigration-fiscal/frontier_execution_2026_09_17/local/source_manifest.json) | Calendar join of monthly census and fiscal-year spending | Two official census charts differ; school tabs cannot establish attendance or capacity effects. |
+| Meyer/Wyse/Williams 2026 homelessness article | Primary PDF in the same raw directory; hash recorded | Published direct/indirect Table 1 arithmetic | No raw respondents or incumbent displacement estimate; estimators are not confidence limits. |
+| H-2B final July 2026 paper/appendix | `policy/raw/`, [manifest](../infra/immigration-fiscal/frontier_execution_2026_09_17/policy/manifest.json) | First-stage, reduced-form and IV source-table arithmetic | Raw package not retrieved; response/survival and spillover limits. |
+| Bracero raw mirror and primary paper/appendix | `policy/raw/bracero-mirror/`; [Git tree/blob and SHA256 record](../infra/immigration-fiscal/frontier_execution_2026_09_17/policy/epoch2-sources.json) | State/month exposure and wage re-estimation, independent solver | [DEGRADED] Original Stata identity unverified; employment sample/coefficients fail to reproduce. |
+| Danzer 2024 main/supplement | Primary PDFs/text in `policy/raw/`, source hashes | Annual count coefficients and covariance-conservative geometric ratio | No raw rows, fitted counterfactual counts or joint covariance; no cumulative-count estimate. |
+| Swiss citizenship discovery | Author/PMC snapshots in `raw/swiss/`, [access record](../infra/immigration-fiscal/frontier_execution_2026_09_17/social/swiss/acquisition.json) | Documents exact public routes inspected | [DEGRADED] No usable author data; supplement returned HTML, Dataverse 403. No regression reproduced. |
+
+These sources are compared across studies, not joined as if they contain the same people. The supplied Pew/ICPSR/NLS archive inventory remains in the [named library](../infra/immigration-fiscal/new_datasets_2026_09_17/library/README.md); document-only ICPSR packages remain document-only.
+
 ## What exists already
 
 Yes, there is a raw data manifest:
