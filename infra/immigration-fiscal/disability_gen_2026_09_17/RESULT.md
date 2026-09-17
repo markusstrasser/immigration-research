@@ -1,5 +1,7 @@
 # Disability & disability income by generation — CPS ASEC 2025
 
+**Superseded interpretation, 2026-09-17:** [audit §4](../../../research/immigration-new-conclusions-audit-2026-09-17.md) reproduces the rates and direct first-to-second contrast but withdraws “first-generation only,” established parity/reversal, and a CPS-derived upper bound on the true advantage. Second-generation disability-income dollars are $942 versus $1,030 for whites; the aggregate includes private payments. Original text below is preserved; consult the audit's intervals and narrower current claim.
+
 **Verdict:** The first-generation disability advantage is a **first-generation** phenomenon
 only. Age-standardised to the third-plus non-Hispanic white age distribution, disability
 prevalence for adults 25–64 runs **4.5% (Mexico-born) → 8.6% (Mexican 2nd gen) → 11.3%

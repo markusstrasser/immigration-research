@@ -1,5 +1,9 @@
 # Native Fertility Crowd-Out — Does Immigration Suppress Native Births?
 
+**Superseded interpretation, 2026-09-17:** the [adversarial audit](../../../research/immigration-new-conclusions-audit-2026-09-17.md) §2 reproduces the stored coefficient but withdraws causal/no-crowd-out and housing-channel-refutation claims. It finds age-control and IV construction defects, a false 2021-availability statement, and unresolved geographic comparability. Original text/output below is retained as the pre-audit record; it is not a current causal estimate.
+
+**Corrected source-cache rerun:** age-bin repair changes the weighted top-50 cross-section from −0.270 to −0.1683 (SE 0.0950), so the claimed exact numerical replication does not survive. Corrected FE is −0.0930 (SE 0.2578), interval [−0.598, +0.412]. Origin code/denominator/missingness repairs leave 26 complete exposures, F≈2; causal 2SLS is disabled. Geography and 2021 inclusion remain open. Tracked CSV/text outputs are historical snapshots; current scripts reconstruct inputs from the cached source data.
+
 **Verdict:** The CIS cross-sectional coefficient **reproduces almost exactly** (pop-weighted
 −0.270 vs their −0.269), but it **does not survive within-metro identification**. A 432-metro,
 12-year fixed-effects panel (5,108 metro-year observations) gives **−0.043, SE 0.26** — six times
