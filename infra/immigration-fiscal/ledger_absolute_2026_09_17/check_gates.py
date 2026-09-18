@@ -186,6 +186,89 @@ def main() -> int:
          "the residual is reported, never solved for; a residual near zero would mean it "
          "had been forced")
 
+    # --- item D: the district cost-to-serve differential ---------------------
+    dg = audit.get("district_coverage_gate", {})
+    gate("item_D_district_differential_was_built", bool(dg.get("built")),
+         f"{dg.get('states', 0)} jurisdictions, coverage ratios "
+         f"{dg.get('min_ratio', float('nan')):.4f} to {dg.get('max_ratio', float('nan')):.4f}"
+         if dg.get("built") else "item D is not in this run")
+    if dg.get("built"):
+        gate("item_D_every_state_clears_the_coverage_gate_or_carries_a_zero_differential",
+             bool(dg["every_state_clears_or_is_zeroed"]),
+             f"{len(dg['states_failing_the_coverage_gate'])} failed the "
+             f"{float(dg['tolerance']):.0%} gate and are zeroed: "
+             f"{dg['states_failing_the_coverage_gate'] or 'none'}")
+        gate("item_D_covers_all_51_jurisdictions", bool(dg["all_51_jurisdictions"]),
+             f"{dg['states']} jurisdictions")
+        csv_path = DER / "district_differential_by_state.csv"
+        if not csv_path.exists():
+            gate("item_D_parameters_match_the_written_district_table", False,
+                 "district_differential_by_state.csv is missing")
+        else:
+            dd = pd.read_csv(csv_path)
+            per_state = dg["per_state"]
+            bad = []
+            for _, r in dd.iterrows():
+                got = per_state.get(r.state)
+                if got is None:
+                    bad.append(f"{r.state}: absent from the parameters")
+                    continue
+                for col, key in [("hispanic_minus_all_charged", "hispanic_minus_all"),
+                                 ("white_minus_all_charged", "white_minus_all"),
+                                 ("coverage_ratio", "coverage_ratio")]:
+                    if abs(float(r[col]) - float(got[key])) > 1e-3:
+                        bad.append(f"{r.state}/{key}")
+            gate("item_D_parameters_match_the_written_district_table", not bad,
+                 "; ".join(bad) or f"{len(dd)} states agree to a tenth of a cent")
+            gate("item_D_differential_signs_are_reported",
+                 bool(np.isfinite(dd.hispanic_minus_all.to_numpy()).all()
+                      and np.isfinite(dd.white_minus_all.to_numpy()).all()),
+                 f"Hispanic-minus-all positive in {int((dd.hispanic_minus_all > 0).sum())} of "
+                 f"{len(dd)} states, white-minus-all positive in "
+                 f"{int((dd.white_minus_all > 0).sum())}")
+        d_rows = items[(items.item == "D") & (items.group == UNION)]
+        gate("item_D_is_in_the_items_table", len(d_rows) == 1,
+             f"union {float(d_rows.total_bn.iloc[0]):+.3f}bn" if len(d_rows) == 1
+             else f"{len(d_rows)} rows")
+
+    # --- item P: non-school state and local capital --------------------------
+    cg = audit.get("capital_reconciliation_gate", {})
+    gate("item_P_capital_charge_was_built", bool(cg.get("built")),
+         f"arm {cg.get('arm')}" if cg.get("built") else "item P is not in this run")
+    if cg.get("built"):
+        gate("item_P_reconciles_to_the_national_non_school_capital_total",
+             bool(cg["within_population_ratio"]),
+             f"charged {float(cg['charged_dollars'])/1e9:,.2f}bn of "
+             f"{float(cg['national_target_2024'])/1e9:,.2f}bn, ratio {float(cg['ratio']):.5f} "
+             f"vs population ratio {float(cg['population_ratio']):.5f}")
+        gate("item_P_shares_item_G_per_capita_convention", bool(cg["matches_item_G"]),
+             f"P {float(cg['ratio']):.5f} vs G {float(cg['item_G_ratio']):.5f}, "
+             f"difference {float(cg['item_G_ratio_difference']):+.5f}")
+        comp = cg["components"]
+        split = (float(comp["elsec_capital"]) + float(comp["capital_inside_item_G"])
+                 + float(cg["national_target_2022"]))
+        gate("item_P_capital_split_is_exhaustive",
+             abs(split - float(comp["capital_total"])) < 1.0,
+             f"elementary and secondary {float(comp['elsec_capital'])/1e9:,.1f}bn + inside "
+             f"item G {float(comp['capital_inside_item_G'])/1e9:,.1f}bn + item P "
+             f"{float(cg['national_target_2022'])/1e9:,.1f}bn = "
+             f"{split/1e9:,.1f}bn vs Census line 67 "
+             f"{float(comp['capital_total'])/1e9:,.1f}bn")
+        gate("item_P_parsed_capital_total_matches_census_line_67",
+             bool(cg["cog_line_67_matches_the_parsed_total"]))
+        order = water[water.group == UNION].sort_values("step").item.tolist()
+        gate("item_P_follows_item_K_in_the_waterfall",
+             "K" in order and "P" in order and order.index("P") == order.index("K") + 1,
+             " ".join(order))
+        dial = {r["item"]: r for r in audit.get("marginality_dial", [])}
+        gate("items_D_and_P_are_on_the_marginality_dial",
+             bool(dial.get("P", {}).get("dialled")) and bool(dial.get("D", {}).get("dialled")),
+             f"P {dial.get('P', {}).get('dialled')}, D {dial.get('D', {}).get('dialled')}")
+
+    gate("no_item_was_switched_off_at_the_command_line",
+         not audit.get("items_switched_off"),
+         str(audit.get("items_switched_off") or "none"))
+
     # --- the brief's step-12 endpoint stays visible --------------------------
     brief_step = int(audit.get("brief_final_step", 12))
     step12 = water[(water.group == UNION) & (water.step == brief_step)]

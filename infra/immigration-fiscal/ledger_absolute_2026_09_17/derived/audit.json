@@ -1,6 +1,6 @@
 {
   "params_file": "infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json",
-  "params_sha256": "c8812244fecd2ad5e41a1af104f1d1a3e0251b79f0109ba3008b3dfcb08794b7",
+  "params_sha256": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922",
   "params_allow_placeholder": false,
   "params_used": {
     "population.us_resident_population_2024_07_01": {
@@ -357,6 +357,230 @@
       "status": "verified",
       "source_url": "https://www.census.gov/data/tables/2024/econ/school-finances/secondary-education-finance.html",
       "note": null
+    },
+    "district.hispanic_minus_all_by_state": {
+      "value": {
+        "1": -178.0153,
+        "2": -3272.7611,
+        "4": 30.4437,
+        "5": -37.8742,
+        "6": 582.3984,
+        "8": 254.9922,
+        "9": -704.9171,
+        "10": 543.7923,
+        "11": 0.0,
+        "12": 233.4395,
+        "13": -81.1133,
+        "15": 0.0,
+        "16": 106.0943,
+        "17": 1218.405,
+        "18": 842.1439,
+        "19": 402.0729,
+        "20": 521.4792,
+        "21": 987.87,
+        "22": -354.8278,
+        "23": 554.4422,
+        "24": 188.0725,
+        "25": 2317.343,
+        "26": 512.2493,
+        "27": 761.7148,
+        "28": -294.8348,
+        "29": 468.083,
+        "30": -633.0773,
+        "31": -73.3829,
+        "32": -64.0094,
+        "33": -1948.2419,
+        "34": 958.2397,
+        "35": -191.0561,
+        "36": 2316.157,
+        "37": -30.7836,
+        "38": -533.6684,
+        "39": 940.9376,
+        "40": 148.4523,
+        "41": 167.6071,
+        "42": 764.6058,
+        "44": 2009.7817,
+        "45": -154.6985,
+        "46": -381.5891,
+        "47": 670.0249,
+        "48": 342.7076,
+        "49": 329.8132,
+        "50": 0.0,
+        "51": 672.2698,
+        "53": -24.4808,
+        "54": -539.1857,
+        "55": 881.2928,
+        "56": -268.2442
+      },
+      "raw_value": {
+        "Alabama": -178.0153,
+        "Alaska": -3272.7611,
+        "Arizona": 30.4437,
+        "Arkansas": -37.8742,
+        "California": 582.3984,
+        "Colorado": 254.9922,
+        "Connecticut": -704.9171,
+        "Delaware": 543.7923,
+        "District of Columbia": 0.0,
+        "Florida": 233.4395,
+        "Georgia": -81.1133,
+        "Hawaii": 0.0,
+        "Idaho": 106.0943,
+        "Illinois": 1218.405,
+        "Indiana": 842.1439,
+        "Iowa": 402.0729,
+        "Kansas": 521.4792,
+        "Kentucky": 987.87,
+        "Louisiana": -354.8278,
+        "Maine": 554.4422,
+        "Maryland": 188.0725,
+        "Massachusetts": 2317.343,
+        "Michigan": 512.2493,
+        "Minnesota": 761.7148,
+        "Mississippi": -294.8348,
+        "Missouri": 468.083,
+        "Montana": -633.0773,
+        "Nebraska": -73.3829,
+        "Nevada": -64.0094,
+        "New Hampshire": -1948.2419,
+        "New Jersey": 958.2397,
+        "New Mexico": -191.0561,
+        "New York": 2316.157,
+        "North Carolina": -30.7836,
+        "North Dakota": -533.6684,
+        "Ohio": 940.9376,
+        "Oklahoma": 148.4523,
+        "Oregon": 167.6071,
+        "Pennsylvania": 764.6058,
+        "Rhode Island": 2009.7817,
+        "South Carolina": -154.6985,
+        "South Dakota": -381.5891,
+        "Tennessee": 670.0249,
+        "Texas": 342.7076,
+        "Utah": 329.8132,
+        "Vermont": 0.0,
+        "Virginia": 672.2698,
+        "Washington": -24.4808,
+        "West Virginia": -539.1857,
+        "Wisconsin": 881.2928,
+        "Wyoming": -268.2442
+      },
+      "unit": "dollars per pupil",
+      "status": "verified",
+      "source_url": "https://www2.census.gov/programs-surveys/school-finances/tables/2024/secondary-education-finance/elsec24t.txt",
+      "note": "unit 'dollars per pupil' -> x1"
+    },
+    "district.white_minus_all_by_state": {
+      "value": {
+        "1": -428.3684,
+        "2": -3669.2491,
+        "4": -489.5187,
+        "5": -398.0311,
+        "6": -1123.595,
+        "8": -311.6116,
+        "9": 491.6372,
+        "10": -936.8454,
+        "11": 0.0,
+        "12": -274.5742,
+        "13": -630.0115,
+        "15": 0.0,
+        "16": -91.6812,
+        "17": -1581.6423,
+        "18": -520.948,
+        "19": -188.6386,
+        "20": -249.5317,
+        "21": -528.2511,
+        "22": -354.571,
+        "23": -179.7966,
+        "24": -612.8188,
+        "25": -1669.5836,
+        "26": -638.8418,
+        "27": -718.1925,
+        "28": -711.9043,
+        "29": -544.7456,
+        "30": -420.9337,
+        "31": -155.5029,
+        "32": 141.3134,
+        "33": 415.2311,
+        "34": -983.7648,
+        "35": -502.0227,
+        "36": -1404.7242,
+        "37": -97.3334,
+        "38": -478.2709,
+        "39": -782.3281,
+        "40": -137.1406,
+        "41": -234.8359,
+        "42": -1130.7093,
+        "44": -1130.8447,
+        "45": -357.1123,
+        "46": -442.9461,
+        "47": -581.824,
+        "48": -391.7055,
+        "49": -144.1268,
+        "50": 0.0,
+        "51": -526.221,
+        "53": -273.7349,
+        "54": 57.0218,
+        "55": -589.5899,
+        "56": -421.8173
+      },
+      "raw_value": {
+        "Alabama": -428.3684,
+        "Alaska": -3669.2491,
+        "Arizona": -489.5187,
+        "Arkansas": -398.0311,
+        "California": -1123.595,
+        "Colorado": -311.6116,
+        "Connecticut": 491.6372,
+        "Delaware": -936.8454,
+        "District of Columbia": 0.0,
+        "Florida": -274.5742,
+        "Georgia": -630.0115,
+        "Hawaii": 0.0,
+        "Idaho": -91.6812,
+        "Illinois": -1581.6423,
+        "Indiana": -520.948,
+        "Iowa": -188.6386,
+        "Kansas": -249.5317,
+        "Kentucky": -528.2511,
+        "Louisiana": -354.571,
+        "Maine": -179.7966,
+        "Maryland": -612.8188,
+        "Massachusetts": -1669.5836,
+        "Michigan": -638.8418,
+        "Minnesota": -718.1925,
+        "Mississippi": -711.9043,
+        "Missouri": -544.7456,
+        "Montana": -420.9337,
+        "Nebraska": -155.5029,
+        "Nevada": 141.3134,
+        "New Hampshire": 415.2311,
+        "New Jersey": -983.7648,
+        "New Mexico": -502.0227,
+        "New York": -1404.7242,
+        "North Carolina": -97.3334,
+        "North Dakota": -478.2709,
+        "Ohio": -782.3281,
+        "Oklahoma": -137.1406,
+        "Oregon": -234.8359,
+        "Pennsylvania": -1130.7093,
+        "Rhode Island": -1130.8447,
+        "South Carolina": -357.1123,
+        "South Dakota": -442.9461,
+        "Tennessee": -581.824,
+        "Texas": -391.7055,
+        "Utah": -144.1268,
+        "Vermont": 0.0,
+        "Virginia": -526.221,
+        "Washington": -273.7349,
+        "West Virginia": 57.0218,
+        "Wisconsin": -589.5899,
+        "Wyoming": -421.8173
+      },
+      "unit": "dollars per pupil",
+      "status": "verified",
+      "source_url": "https://www2.census.gov/programs-surveys/school-finances/tables/2024/secondary-education-finance/elsec24t.txt",
+      "note": "unit 'dollars per pupil' -> x1"
     },
     "underreporting.ratio_snap": {
       "value": 1.8832,
@@ -719,30 +943,6 @@
   },
   "params_refused": [
     {
-      "group": "k12",
-      "tokens": [
-        "hispanic",
-        "differential"
-      ],
-      "preferred": null,
-      "kind": "state_money",
-      "reasons": [
-        "k12.district_hispanic_differential_by_state: status='unverified'"
-      ]
-    },
-    {
-      "group": "k12",
-      "tokens": [
-        "white",
-        "differential"
-      ],
-      "preferred": null,
-      "kind": "state_money",
-      "reasons": [
-        "k12.district_white_differential_by_state: status='unverified'"
-      ]
-    },
-    {
       "group": "state_medicaid_undocumented",
       "tokens": [
         "mn_minnesotacare_undocumented_state_cost"
@@ -1022,6 +1222,26 @@
       "ok": true
     },
     {
+      "charge": "P|net_of_item_G",
+      "kind": "state_per_capita",
+      "target_dollars": 48849108643.68,
+      "charged_dollars": 49249446803.809074,
+      "ratio": 1.0081954035855447,
+      "expected_population_ratio": null,
+      "residual": null,
+      "ok": true
+    },
+    {
+      "charge": "P|briefed_gross",
+      "kind": "state_per_capita",
+      "target_dollars": 297761278105.712,
+      "charged_dollars": 300774559704.6745,
+      "ratio": 1.0101197899811967,
+      "expected_population_ratio": null,
+      "residual": null,
+      "ok": true
+    },
+    {
       "charge": "E|stock",
       "kind": "head_based",
       "target_dollars": 2716778160.145587,
@@ -1132,11 +1352,6 @@
   ],
   "items_dropped": [
     {
-      "item": "D",
-      "label": "district cost-to-serve differential",
-      "reason": "district F-33 x CCD Hispanic/white per-pupil differentials not verified"
-    },
-    {
       "item": "S(states without a verified line)",
       "label": "S(states without a verified line)",
       "reason": "priced for 6, 8, 17, 36, 41, 53 only; not priced: mn_minnesotacare_undocumented_state_cost: not verified; ma_health_safety_net_state_cost: not verified; co_cover_all_coloradans_children_state_cost: not verified; ca_undocumented_total_general_fund_2024_25: not verified"
@@ -1145,7 +1360,8 @@
   "central_arms": {
     "G": "deflated2024",
     "K": "central",
-    "D": null,
+    "P": "net_of_item_G",
+    "D": "central",
     "U": "central",
     "I": "central",
     "M": "central",
@@ -1156,6 +1372,335 @@
     "F": "zero",
     "S": "half_inside_meps"
   },
+  "district_coverage_gate": {
+    "built": true,
+    "tolerance": 0.1,
+    "states": 51,
+    "min_ratio": 0.871516,
+    "max_ratio": 1.086017,
+    "states_failing_the_coverage_gate": [
+      "Vermont"
+    ],
+    "failing_states_charged_zero": [
+      "Vermont"
+    ],
+    "every_state_clears_or_is_zeroed": true,
+    "all_51_jurisdictions": true,
+    "per_state": {
+      "Alabama": {
+        "coverage_ratio": 1.021961,
+        "hispanic_minus_all": -178.0153,
+        "white_minus_all": -428.3684
+      },
+      "Alaska": {
+        "coverage_ratio": 1.002761,
+        "hispanic_minus_all": -3272.7611,
+        "white_minus_all": -3669.2491
+      },
+      "Arizona": {
+        "coverage_ratio": 1.01827,
+        "hispanic_minus_all": 30.4437,
+        "white_minus_all": -489.5187
+      },
+      "Arkansas": {
+        "coverage_ratio": 0.979242,
+        "hispanic_minus_all": -37.8742,
+        "white_minus_all": -398.0311
+      },
+      "California": {
+        "coverage_ratio": 0.972287,
+        "hispanic_minus_all": 582.3984,
+        "white_minus_all": -1123.595
+      },
+      "Colorado": {
+        "coverage_ratio": 0.996774,
+        "hispanic_minus_all": 254.9922,
+        "white_minus_all": -311.6116
+      },
+      "Connecticut": {
+        "coverage_ratio": 0.98392,
+        "hispanic_minus_all": -704.9171,
+        "white_minus_all": 491.6372
+      },
+      "Delaware": {
+        "coverage_ratio": 1.004976,
+        "hispanic_minus_all": 543.7923,
+        "white_minus_all": -936.8454
+      },
+      "District of Columbia": {
+        "coverage_ratio": 1.047357,
+        "hispanic_minus_all": 0.0,
+        "white_minus_all": 0.0
+      },
+      "Florida": {
+        "coverage_ratio": 1.02473,
+        "hispanic_minus_all": 233.4395,
+        "white_minus_all": -274.5742
+      },
+      "Georgia": {
+        "coverage_ratio": 0.997971,
+        "hispanic_minus_all": -81.1133,
+        "white_minus_all": -630.0115
+      },
+      "Hawaii": {
+        "coverage_ratio": 1.006299,
+        "hispanic_minus_all": 0.0,
+        "white_minus_all": 0.0
+      },
+      "Idaho": {
+        "coverage_ratio": 1.008871,
+        "hispanic_minus_all": 106.0943,
+        "white_minus_all": -91.6812
+      },
+      "Illinois": {
+        "coverage_ratio": 0.990039,
+        "hispanic_minus_all": 1218.405,
+        "white_minus_all": -1581.6423
+      },
+      "Indiana": {
+        "coverage_ratio": 1.004816,
+        "hispanic_minus_all": 842.1439,
+        "white_minus_all": -520.948
+      },
+      "Iowa": {
+        "coverage_ratio": 0.954365,
+        "hispanic_minus_all": 402.0729,
+        "white_minus_all": -188.6386
+      },
+      "Kansas": {
+        "coverage_ratio": 0.96193,
+        "hispanic_minus_all": 521.4792,
+        "white_minus_all": -249.5317
+      },
+      "Kentucky": {
+        "coverage_ratio": 1.010716,
+        "hispanic_minus_all": 987.87,
+        "white_minus_all": -528.2511
+      },
+      "Louisiana": {
+        "coverage_ratio": 1.002732,
+        "hispanic_minus_all": -354.8278,
+        "white_minus_all": -354.571
+      },
+      "Maine": {
+        "coverage_ratio": 1.03341,
+        "hispanic_minus_all": 554.4422,
+        "white_minus_all": -179.7966
+      },
+      "Maryland": {
+        "coverage_ratio": 1.002474,
+        "hispanic_minus_all": 188.0725,
+        "white_minus_all": -612.8188
+      },
+      "Massachusetts": {
+        "coverage_ratio": 1.086017,
+        "hispanic_minus_all": 2317.343,
+        "white_minus_all": -1669.5836
+      },
+      "Michigan": {
+        "coverage_ratio": 0.902056,
+        "hispanic_minus_all": 512.2493,
+        "white_minus_all": -638.8418
+      },
+      "Minnesota": {
+        "coverage_ratio": 0.999587,
+        "hispanic_minus_all": 761.7148,
+        "white_minus_all": -718.1925
+      },
+      "Mississippi": {
+        "coverage_ratio": 1.005505,
+        "hispanic_minus_all": -294.8348,
+        "white_minus_all": -711.9043
+      },
+      "Missouri": {
+        "coverage_ratio": 0.9811,
+        "hispanic_minus_all": 468.083,
+        "white_minus_all": -544.7456
+      },
+      "Montana": {
+        "coverage_ratio": 1.025177,
+        "hispanic_minus_all": -633.0773,
+        "white_minus_all": -420.9337
+      },
+      "Nebraska": {
+        "coverage_ratio": 0.966233,
+        "hispanic_minus_all": -73.3829,
+        "white_minus_all": -155.5029
+      },
+      "Nevada": {
+        "coverage_ratio": 1.003837,
+        "hispanic_minus_all": -64.0094,
+        "white_minus_all": 141.3134
+      },
+      "New Hampshire": {
+        "coverage_ratio": 1.013821,
+        "hispanic_minus_all": -1948.2419,
+        "white_minus_all": 415.2311
+      },
+      "New Jersey": {
+        "coverage_ratio": 1.037493,
+        "hispanic_minus_all": 958.2397,
+        "white_minus_all": -983.7648
+      },
+      "New Mexico": {
+        "coverage_ratio": 1.000977,
+        "hispanic_minus_all": -191.0561,
+        "white_minus_all": -502.0227
+      },
+      "New York": {
+        "coverage_ratio": 0.963727,
+        "hispanic_minus_all": 2316.157,
+        "white_minus_all": -1404.7242
+      },
+      "North Carolina": {
+        "coverage_ratio": 1.003851,
+        "hispanic_minus_all": -30.7836,
+        "white_minus_all": -97.3334
+      },
+      "North Dakota": {
+        "coverage_ratio": 0.973082,
+        "hispanic_minus_all": -533.6684,
+        "white_minus_all": -478.2709
+      },
+      "Ohio": {
+        "coverage_ratio": 0.96248,
+        "hispanic_minus_all": 940.9376,
+        "white_minus_all": -782.3281
+      },
+      "Oklahoma": {
+        "coverage_ratio": 1.003632,
+        "hispanic_minus_all": 148.4523,
+        "white_minus_all": -137.1406
+      },
+      "Oregon": {
+        "coverage_ratio": 0.981246,
+        "hispanic_minus_all": 167.6071,
+        "white_minus_all": -234.8359
+      },
+      "Pennsylvania": {
+        "coverage_ratio": 1.031624,
+        "hispanic_minus_all": 764.6058,
+        "white_minus_all": -1130.7093
+      },
+      "Rhode Island": {
+        "coverage_ratio": 1.082951,
+        "hispanic_minus_all": 2009.7817,
+        "white_minus_all": -1130.8447
+      },
+      "South Carolina": {
+        "coverage_ratio": 1.001957,
+        "hispanic_minus_all": -154.6985,
+        "white_minus_all": -357.1123
+      },
+      "South Dakota": {
+        "coverage_ratio": 1.016526,
+        "hispanic_minus_all": -381.5891,
+        "white_minus_all": -442.9461
+      },
+      "Tennessee": {
+        "coverage_ratio": 1.013525,
+        "hispanic_minus_all": 670.0249,
+        "white_minus_all": -581.824
+      },
+      "Texas": {
+        "coverage_ratio": 0.993823,
+        "hispanic_minus_all": 342.7076,
+        "white_minus_all": -391.7055
+      },
+      "Utah": {
+        "coverage_ratio": 1.010535,
+        "hispanic_minus_all": 329.8132,
+        "white_minus_all": -144.1268
+      },
+      "Vermont": {
+        "coverage_ratio": 0.871516,
+        "hispanic_minus_all": 0.0,
+        "white_minus_all": 0.0
+      },
+      "Virginia": {
+        "coverage_ratio": 1.003773,
+        "hispanic_minus_all": 672.2698,
+        "white_minus_all": -526.221
+      },
+      "Washington": {
+        "coverage_ratio": 0.993382,
+        "hispanic_minus_all": -24.4808,
+        "white_minus_all": -273.7349
+      },
+      "West Virginia": {
+        "coverage_ratio": 0.999832,
+        "hispanic_minus_all": -539.1857,
+        "white_minus_all": 57.0218
+      },
+      "Wisconsin": {
+        "coverage_ratio": 1.031779,
+        "hispanic_minus_all": 881.2928,
+        "white_minus_all": -589.5899
+      },
+      "Wyoming": {
+        "coverage_ratio": 1.006056,
+        "hispanic_minus_all": -268.2442,
+        "white_minus_all": -421.8173
+      }
+    },
+    "counts": {
+      "joined": 13639,
+      "dropped_missing": 395,
+      "dropped_implausible": 97,
+      "dropped_implausible_low": 5,
+      "dropped_implausible_high": 92,
+      "f33_rows": 14077,
+      "ccd_districts": 18546,
+      "f33_not_in_ccd": 438,
+      "kept": 13147
+    },
+    "sources": [
+      {
+        "path": "/Users/alien/research-data/immigration-fiscal/data/external/census_f33_district/elsec24t.txt",
+        "sha256": "5cc1ef4df714fa5ff85b95cfec28931ee0829c8e6036e592c2470bd6e6d9c65a",
+        "source_url": "https://www2.census.gov/programs-surveys/school-finances/tables/2024/secondary-education-finance/elsec24t.txt"
+      },
+      {
+        "path": "/Users/alien/research-data/immigration-fiscal/data/external/nces_ccd/ccd_lea_052_2324_l_1a_073124.csv",
+        "sha256": "b488e173764ea27a46dda2ff8e407d28058fd2e3c5c3ed56c32e0e4074ea1184",
+        "source_url": "https://nces.ed.gov/ccd/Data/zip/ccd_lea_052_2324_l_1a_073124.zip"
+      }
+    ]
+  },
+  "capital_reconciliation_gate": {
+    "built": true,
+    "arm": "net_of_item_G",
+    "charge_key": "P|net_of_item_G",
+    "national_target_2022": 47001390000.0,
+    "national_target_2024": 48849108643.68,
+    "charged_dollars": 49249446803.809074,
+    "ratio": 1.0081954035855447,
+    "item_G_ratio": 1.0094341593095268,
+    "population_ratio": 0.9900527030312051,
+    "item_G_ratio_difference": -0.0012387557239821323,
+    "matches_item_G": true,
+    "within_population_ratio": true,
+    "components": {
+      "capital_total": 371256365000.0,
+      "education_capital": 118019665000.0,
+      "elsec_capital": 84757914000.0,
+      "hospitals_capital": 11246055000.0,
+      "correction_capital": 2493584000.0,
+      "capital_inside_item_G": 239497061000.0
+    },
+    "cog_line_67_matches_the_parsed_total": true,
+    "alternative_arm_national_2022": 286498451000.0,
+    "note": "the briefed gross arm charges total capital outlay less elementary and secondary capital outlay; the central arm removes, in addition, the capital outlay already inside the item G general-services residual"
+  },
+  "public_pupils_5_17_by_group": {
+    "mexico_born": 379748.6647631272,
+    "mexican_second_gen": 3444703.523877009,
+    "mexican_third_plus_selfid": 3356446.0841485946,
+    "third_plus_nh_white": 19044769.20969366,
+    "all_native": 41163750.52924642,
+    "mexican_observed_total": 7180898.27278873
+  },
+  "items_switched_off": [],
   "upstream_partial_gap_anchor": [
     {
       "group": "mexico_born",
@@ -1223,15 +1768,15 @@
     }
   ],
   "national_reconciliation_vs_consolidated_budget": {
-    "account_position": -966667088912.5841,
+    "account_position": -1007371257780.1857,
     "consolidated_position": -2590803830470.415,
-    "residual_unpriced_or_coverage": -1624136741557.831,
+    "residual_unpriced_or_coverage": -1583432572690.2295,
     "consolidated_outlays": 10920560873762.031,
     "consolidated_receipts": 8329757043291.616,
-    "account_outlays": 6875309029994.843,
-    "account_receipts": 5908641941082.26,
-    "outlay_coverage": 0.6295747177705501,
-    "receipt_coverage": 0.7093414502216238,
+    "account_outlays": 6924558476798.653,
+    "account_receipts": 5917187219018.467,
+    "outlay_coverage": 0.6340845087394498,
+    "receipt_coverage": 0.7103673238325581,
     "state_local_price_adjustment": 1.039312,
     "note": "the residual is reported, never forced; it is not an error estimate"
   },
@@ -1240,100 +1785,100 @@
       "group": "mexico_born",
       "reference": "third_plus_nh_white",
       "base_common_age_gap_per_person": -6561.711620368309,
-      "complete_common_age_gap_per_person": -7650.7141204849495,
+      "complete_common_age_gap_per_person": -7782.724760181735,
       "base_common_age_se": 320.9966375516852,
-      "complete_common_age_se": 384.26448091268327,
+      "complete_common_age_se": 385.1632702603119,
       "base_age_matched_gap_bn": -103.10087003258417,
-      "complete_age_matched_gap_bn": -120.80312910715894,
+      "complete_age_matched_gap_bn": -122.2336228262268,
       "base_age_matched_se_bn": 4.90525078988575,
-      "complete_age_matched_se_bn": 5.745486350746874
+      "complete_age_matched_se_bn": 5.761989690326464
     },
     {
       "group": "mexico_born",
       "reference": "all_native",
       "base_common_age_gap_per_person": -5055.6828268015515,
-      "complete_common_age_gap_per_person": -5484.303393841651,
+      "complete_common_age_gap_per_person": -5581.874341860899,
       "base_common_age_se": 294.0468686088278,
-      "complete_common_age_se": 350.7642887793482,
+      "complete_common_age_se": 351.8536595108277,
       "base_age_matched_gap_bn": -85.15752531182201,
-      "complete_age_matched_gap_bn": -94.66931898342047,
+      "complete_age_matched_gap_bn": -95.81778075620345,
       "base_age_matched_se_bn": 4.285784219461249,
-      "complete_age_matched_se_bn": 5.025114552265742
+      "complete_age_matched_se_bn": 5.039106396790017
     },
     {
       "group": "mexican_second_gen",
       "reference": "third_plus_nh_white",
       "base_common_age_gap_per_person": -5943.399390763294,
-      "complete_common_age_gap_per_person": -7435.405022878166,
+      "complete_common_age_gap_per_person": -7565.007162204891,
       "base_common_age_se": 469.0053612568862,
-      "complete_common_age_se": 616.7367782624256,
+      "complete_common_age_se": 616.834014217725,
       "base_age_matched_gap_bn": -113.72329480855052,
-      "complete_age_matched_gap_bn": -139.26307779963972,
+      "complete_age_matched_gap_bn": -142.00235483926633,
       "base_age_matched_se_bn": 5.050134871509685,
-      "complete_age_matched_se_bn": 5.851705317568837
+      "complete_age_matched_se_bn": 5.887572057344771
     },
     {
       "group": "mexican_second_gen",
       "reference": "all_native",
       "base_common_age_gap_per_person": -4437.370597196537,
-      "complete_common_age_gap_per_person": -5268.994296234869,
+      "complete_common_age_gap_per_person": -5364.1567438840575,
       "base_common_age_se": 444.7121856205837,
-      "complete_common_age_se": 588.7244734990414,
+      "complete_common_age_se": 588.8327122858698,
       "base_age_matched_gap_bn": -84.27855309418668,
-      "complete_age_matched_gap_bn": -99.96422030706347,
+      "complete_age_matched_gap_bn": -101.8410183898111,
       "base_age_matched_se_bn": 4.060206523181386,
-      "complete_age_matched_se_bn": 4.699616881143903
+      "complete_age_matched_se_bn": 4.722521064324444
     },
     {
       "group": "mexican_third_plus_selfid",
       "reference": "third_plus_nh_white",
       "base_common_age_gap_per_person": -4622.449839398683,
-      "complete_common_age_gap_per_person": -6148.801345086427,
+      "complete_common_age_gap_per_person": -6270.46616183965,
       "base_common_age_se": 370.7461756823512,
-      "complete_common_age_se": 460.37245859768575,
+      "complete_common_age_se": 460.7503979851884,
       "base_age_matched_gap_bn": -73.76550875782262,
-      "complete_age_matched_gap_bn": -94.21342478686094,
+      "complete_age_matched_gap_bn": -96.89709830683046,
       "base_age_matched_se_bn": 4.930973403606858,
-      "complete_age_matched_se_bn": 5.592438616175658
+      "complete_age_matched_se_bn": 5.624813497818926
     },
     {
       "group": "mexican_third_plus_selfid",
       "reference": "all_native",
       "base_common_age_gap_per_person": -3116.421045831926,
-      "complete_common_age_gap_per_person": -3982.390618443127,
+      "complete_common_age_gap_per_person": -4069.6157435188134,
       "base_common_age_se": 356.9336275219065,
-      "complete_common_age_se": 444.65747919931414,
+      "complete_common_age_se": 445.0572983097439,
       "base_age_matched_gap_bn": -45.55972248294334,
-      "complete_age_matched_gap_bn": -56.388724462537425,
+      "complete_age_matched_gap_bn": -58.147443683488454,
       "base_age_matched_se_bn": 4.361733588326319,
-      "complete_age_matched_se_bn": 4.899089206850234
+      "complete_age_matched_se_bn": 4.919234610328416
     },
     {
       "group": "mexican_observed_total",
       "reference": "third_plus_nh_white",
       "base_common_age_gap_per_person": -5795.340382266619,
-      "complete_common_age_gap_per_person": -7094.870827153586,
+      "complete_common_age_gap_per_person": -7224.219110123849,
       "base_common_age_se": 245.093906680334,
-      "complete_common_age_se": 301.63267439874136,
+      "complete_common_age_se": 301.5661435474292,
       "base_age_matched_gap_bn": -290.58967359895735,
-      "complete_age_matched_gap_bn": -354.27963169365967,
+      "complete_age_matched_gap_bn": -361.1330759723237,
       "base_age_matched_se_bn": 10.645222035388553,
-      "complete_age_matched_se_bn": 11.975264124339605
+      "complete_age_matched_se_bn": 11.992126007119106
     },
     {
       "group": "mexican_observed_total",
       "reference": "all_native",
       "base_common_age_gap_per_person": -4289.31158869986,
-      "complete_common_age_gap_per_person": -4928.460100510286,
+      "complete_common_age_gap_per_person": -5023.368691803013,
       "base_common_age_se": 206.60573747480774,
-      "complete_common_age_se": 257.0961208776097,
+      "complete_common_age_se": 257.0994078762685,
       "base_age_matched_gap_bn": -214.995800888952,
-      "complete_age_matched_gap_bn": -251.02226375302135,
+      "complete_age_matched_gap_bn": -255.806242829503,
       "base_age_matched_se_bn": 8.347166359669167,
-      "complete_age_matched_se_bn": 9.32808378120806
+      "complete_age_matched_se_bn": 9.339518094816516
     }
   ],
-  "brief_final_step": 12,
+  "brief_final_step": 13,
   "item_metadata": {
     "G|nominal2022": {
       "item": "G",
@@ -1355,6 +1900,31 @@
       "arm": "central",
       "source": "params:k12 F-33 capital, interest and fall membership by state",
       "marginal": true
+    },
+    "P|net_of_item_G": {
+      "item": "P",
+      "arm": "net_of_item_G",
+      "source": "cache:22slsstab1.xlsx + params:deflator",
+      "marginal": true,
+      "price_level": "2024",
+      "deflator": 1.039312,
+      "national_2022": 47001390000.0
+    },
+    "P|briefed_gross": {
+      "item": "P",
+      "arm": "briefed_gross",
+      "source": "cache:22slsstab1.xlsx + params:deflator",
+      "marginal": true,
+      "price_level": "2024",
+      "deflator": 1.039312,
+      "national_2022": 286498451000.0
+    },
+    "D|central": {
+      "item": "D",
+      "arm": "central",
+      "source": "params:district F-33 x CCD per-pupil differentials",
+      "marginal": true,
+      "rule": "Mexican-origin public pupils aged 5-17 are charged their state's Hispanic-minus-all differential, the third-plus non-Hispanic white reference its white-minus-all differential, and every other record zero; there is no separate all-native rate, so the all-native reference carries only the charges of its own members"
     },
     "U|central": {
       "item": "U",
@@ -1826,9 +2396,12 @@
       "dialled": true
     },
     {
+      "item": "P",
+      "dialled": true
+    },
+    {
       "item": "D",
-      "dialled": false,
-      "dropped": true
+      "dialled": true
     },
     {
       "item": "U",
@@ -1871,7 +2444,7 @@
       "dialled": false
     }
   ],
-  "break_even_m_star": 0.12044407952168636,
+  "break_even_m_star": 0.11668838327241572,
   "inputs": [
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
@@ -1915,7 +2488,7 @@
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/absolute_ledger.py",
-      "sha256": "6ac76256f0454bae589f095119d12fe5a78090669b7f283d261143f5513b0beb"
+      "sha256": "2ee6157643bf8bae930f0a82ae539bd301e3fd83453768af48119121c4b7fae7"
     }
   ],
   "medical_anchors": {
@@ -1953,7 +2526,7 @@
     "the reported housing-subsidy base in the CPS (SPM_CAPHOUSESUB sits outside the account's selected non-cash transfers); federal housing assistance is instead carried whole as OMB subfunction 604 inside item R",
     "Social Security under-reporting: its admin/survey ratio is 1.0881, above 1, and the brief applies Social Security only when that ratio is below 1",
     "item S outside the waterfall: the brief's waterfall order does not include it, so the state coverage charge is reported per item but not accumulated",
-    "state and local capital outlay outside K-12",
+    "state and local capital outlay outside K-12 beyond what items G and P carry: the Census of Governments gives no capital sub-line for public welfare, health, airports, ports, housing and community development, general public buildings or the unallocable residual, so the split between what item G already charges and what item P adds is exact only for the functions that publish one",
     "deficit finance: the account charges outlays, not the tax burden that would fund them",
     "emigration, mortality and any lifetime or dynamic margin"
   ]

@@ -64,7 +64,8 @@ survey's own `4/160 Σ(replicate − full)²`.
 |---|---|---|---|
 | G | state and local general services | per capita by state of residence, 2022 Census of Governments direct general expenditure less education, welfare, health, hospitals and corrections, inflated to 2024 by the BEA state-local price index | FY2022 price level |
 | K | K-12 capital outlay and interest on school debt | state per-pupil capital plus interest on the ledger's public pupils aged 5–17 | none |
-| D | district cost-to-serve differential | enrolment-weighted per-pupil spending faced by Hispanic pupils less that faced by all pupils, by state | dropped without the district files |
+| P | non-school state and local capital outlay | 2022 Census of Governments direct general capital outlay less elementary-and-secondary capital outlay less the capital already inside item G, per capita by state of residence, inflated to 2024 | `briefed_gross`, which subtracts only the elementary-and-secondary share |
+| D | district cost-to-serve differential | enrolment-weighted per-pupil spending faced by Hispanic pupils less that faced by all pupils, by state, from the Census F-33 district file joined to the NCES CCD | dropped without the district files |
 | U | transfer under-reporting | each reported program's dollars scaled by its administrative/survey ratio. Housing is excluded because function 604 carries federal housing assistance whole; Social Security is excluded because the brief applies it only when its ratio is below 1 | none |
 | I | refundable-credit improper payments | EITC and ACTC improper dollars by each record's share of modeled credits | zero |
 | M | MEPS-to-NHEA coverage | transported Medicaid and Medicare costs scaled by the NHEA non-institutional to MEPS ratio per payer | zero |
@@ -121,11 +122,12 @@ All under `derived/`; `*.npz` is ignored.
   error, and the common-age gap per standardized person against the third-plus
   non-Hispanic white reference.
 - `waterfall.csv` — cumulative absolute balance per group, starting at the gated
-  upstream absolute and adding items in the order G, K, D, U, I, M, N, E, C, X,
-  R, F, S under the central arms, with a flag naming any step that is an external
-  add or a dropped item. The brief's order ends at F; item S is appended as step
-  13 so the endpoint includes state-funded coverage, and `audit.json` records
-  step 12 as the brief's final step so both endpoints stay visible.
+  upstream absolute and adding items in the order G, K, P, D, U, I, M, N, E, C,
+  X, R, F, S under the central arms, with a flag naming any step that is an
+  external add or a dropped item. The brief's order ends at F; item S is appended
+  as the last step so the endpoint includes state-funded coverage, and
+  `audit.json` records F's step number as the brief's final step so both
+  endpoints stay visible.
 - `complete_gaps.csv` and `complete_gaps_by_item.csv` — the age-standardized
   answer: the common-age gap per standardized person and the age-matched total in
   dollars, for each target and the union against both references, carried from the
@@ -185,3 +187,84 @@ a finding. A charge that is common per person cancels from relative gaps while
 moving every absolute balance, which is why the per-item common-age gap column
 sits next to the totals. The marginality dial is a sensitivity over one
 parameter, not an estimated marginal cost.
+
+## Extension, September 18, 2026: items D and P
+
+The two items the first build left open are now priced. Full result in
+[`RESULT_extension.md`](RESULT_extension.md); the brief that asked for them is in
+[`BRIEF_extension.md`](BRIEF_extension.md).
+
+### Item D, district cost-to-serve differential
+
+`district_differential.py` joins the Census F-33 FY2024 district finance file to
+the NCES CCD LEA membership-by-race file for school year 2023-24 and asks, per
+state, what per-pupil current spending the average Hispanic pupil faces against
+what the average pupil faces. Run it before the ledger:
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 \
+  infra/immigration-fiscal/ledger_absolute_2026_09_17/district_differential.py \
+  --params infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json
+```
+
+It writes `derived/district_differential_by_state.csv` and a `district` group of
+four verified keys into the parameter file. The ledger then charges Mexican-origin
+public pupils aged 5-17 their state's Hispanic-minus-all differential and the
+third-plus non-Hispanic white reference its white-minus-all differential. No
+separate all-native rate exists; every other record is charged zero.
+
+**Coverage gate.** The all-pupil enrolment-weighted mean per state must sit
+within 10% of the F-33 state summary per-pupil figure in
+`k12.f33_per_pupil_current_spending_by_state`. Fifty of 51 jurisdictions clear
+it. Vermont does not, because its supervisory unions report current spending
+against zero enrolment, and it carries a differential of zero. Districts with a
+missing or implausible per-pupil value, below $3,000 or above $80,000, are
+dropped and counted.
+
+### Item P, non-school state and local capital outlay
+
+The 2022 Census of Governments functional lines each carry their own capital
+outlay **inside** the function total; line 67 is the same dollars cut by
+character, not an addition. Item G, built as line 66 less education, public
+welfare, hospitals, health and correction, therefore already charges the capital
+of every function it retains, $239.5bn of the $371.3bn national total. Item P
+charges only what nothing else charges: education capital beyond elementary and
+secondary, plus hospitals and correction capital, $47.0bn in 2022, inflated by
+the same state-local price index and divided by the same 2022 state populations
+item G uses.
+
+The literal quantity the extension brief named, total capital outlay less the
+elementary-and-secondary share, is built as the `briefed_gross` arm and reported
+beside the central one. It is not the central arm because it double-counts the
+$239.5bn item G already carries.
+
+Item K prices school capital from the F-33 FY2024 district file at $136.2bn of
+capital plus interest on school debt, against $84.8bn of 2022 elementary and
+secondary capital outlay in the Census of Governments. Different year, different
+universe, and interest on school debt is not in line 67 at all; the national
+reconciliation now carries the pieces separately.
+
+### New switches
+
+`--off ITEM`, repeatable, carries an item through the waterfall as a dropped
+step, so the pre-extension endpoint can be reproduced. `--out-dir DIR` writes the
+artefacts somewhere other than `derived/`, so such a run cannot clobber the
+published output.
+
+```sh
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 \
+  infra/immigration-fiscal/ledger_absolute_2026_09_17/absolute_ledger.py \
+  --params infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json \
+  --off D --off P --out-dir /tmp/absolute_off
+```
+
+### New gates
+
+`check_gates.py` re-tests 50 gates, up from 36. The fourteen new ones cover the
+district coverage ratio and its zeroing rule, the differential's coverage of all
+51 jurisdictions, agreement between the written district table and the
+parameters, item P's reconciliation to the national non-school capital total,
+item P sharing item G's per-capita convention, the exhaustiveness of the capital
+split against Census line 67, item P's position after item K in the waterfall,
+both items sitting on the marginality dial, and the absence of any
+command-line-disabled item in a published run.
