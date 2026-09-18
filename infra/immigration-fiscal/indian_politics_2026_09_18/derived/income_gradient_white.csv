@@ -1,0 +1,9 @@
+education,income_quartile,n,median_coninc,biden_two_party_pct
+BA or higher,Q1 lowest,339,28485,58.2
+BA or higher,Q2,343,52222,55.3
+BA or higher,Q3,444,90080,67.7
+BA or higher,Q4 highest,162,158425,63.8
+postgraduate,Q1 lowest,150,34815,62.7
+postgraduate,Q2,111,63300,70.5
+postgraduate,Q3,183,101280,75.7
+postgraduate,Q4 highest,76,158425,64.3

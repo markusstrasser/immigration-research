@@ -1,0 +1,9 @@
+cell,n,n_eff,biden_two_party_pct,se_pp,iaas_2020_indian_two_party_biden_pct,gap_pp
+US-born NH white — all,2967,1324.3,46.8,1.4,75.6,28.8
++ BA or higher,1380,625.3,61.6,1.9,75.6,14.0
++ postgraduate degree,553,255.8,69.7,2.9,75.6,5.9
++ BA+ and top income quintile,451,236.3,66.1,3.1,75.6,9.5
++ postgrad and top income quintile,212,106.0,70.5,4.4,75.6,5.1
+"+ BA+, top quintile, top-100 metro",170,91.6,63.3,5.0,75.6,12.3
+"+ postgrad, top quintile, top-100 metro  [MATCHED CELL]",86,44.6,64.7,7.2,75.6,10.9
+"+ postgrad, top income DECILE, top-100 metro  [STRICT]",63,33.3,66.3,8.2,75.6,9.3

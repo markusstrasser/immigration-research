@@ -1,0 +1,3175 @@
+Guide to the Cumulative Common Content
+of the Cooperative (Congressional) Election Study
+Shiro Kuriwaki*
+2026-07-14
+Cite this dataset as:
+Kuriwaki, Shiro, 2026, “Cumulative CES Common Content’ ’, doi:10.7910/DVN/II2DB6, Harvard
+Dataverse, V12.
+This dataset combines 20 years (2006 – 2025) of the Cooperative Congressional Election Study
+(CCES), renamed the Cooperative Congressional Election Study (CES) from 2020. The CCES/CES
+is an online survey conducted around November of each year, asking a range of questions on political behavior and public opinion. Its current principal investigators are Brian Schaffner, Jeremy
+Pope, and Marissa Shih.
+Each year’s CCES/CES asks hundreds of questions, many of which change from year to year.
+This cumulative ﬁle only includes a subset of those questions that are standard and important. It
+standardizes its values across years and creates a few new variables too. Users can still merge
+in their year-speciﬁc questions of interest easily into this cumulative ﬁle and take advantage of its
+standardized variables.
+I constructed this dataset from each year’s full CCES/CES, all of them publicly available as separate
+datasets on Dataverse. The ﬁnal product is a tibble-style data frame built in R that is also available
+as a Stata dta ﬁle and a feather ﬁle.
+Please note that this cumulative dataset makes some modiﬁcations to the original CCES/CES
+datasets to maintain comparability across years. These modiﬁcations are only made when differences are deemed sufﬁciently minor. Still, for details on the survey methodology and a list of all
+questions, readers should consult the guides for each year.
+
+• Source code. Report a bug or ask a question in the source code repository. Alternatively,
+please contact me by email.
+• Individual CCES/CES datasets. Search the CES dataverse or access the CES homepage.
+Sign-up to the Crunch dataset from the homepage as well.
+• Survey methodology. Consult the Frequently Asked Questions page of the CES homepage
+or the methodology section of a recent Common Content’s codebook.
+
+* Department of Political Science, Yale University. Website: https://www.shirokuriwaki.com. ORCID: https:
+//orcid.org/0000-0002-5687-2647. My thanks to Alexander Agadjanian, Jeremiah Cha, Steve Ansolabehere, Valerie
+
+Bradley, Stephen DiMauro, Bernard Fraga, Nathan Kaplan, Silvia Kim, Mayya Komisarchik, Stephen Pettigrew, Boris Shor,
+Brian Schaffner, Caroline Soler, and Gerald Wright for ﬁnding errors and providing suggestions. Adam Chapnik and Zoya
+Ahmer assisted and contributed signiﬁcantly to V12. Thanks to Joe Williams at YouGov, and Jon Keane, Mike Malecki, and
+Gordon Shotwell at Crunch for their help.
+
+1
+
+Contents
+Getting Started . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Data Read-in . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Data Download . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Unique identiﬁers and how to add more variables . . . . . . . . . . . . . . . . . . .
+Labelled variables (for analysis in R) . . . . . . . . . . . . . . . . . . . . . . . . . .
+Features of the Cumulative Dataset . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Uniﬁed Variable Names . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Chosen Candidate Names and Identiﬁers . . . . . . . . . . . . . . . . . . . . . . .
+Variables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Administration . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+year: CCES year . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+starttime: Start time . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+tookpost: Took post-election wave . . . . . . . . . . . . . . . . . . . . . .
+Weights . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+weight: Survey weight (Year-Speciﬁc) . . . . . . . . . . . . . . . . . . . .
+weight_cumulative: Survey weight (Cumulative) . . . . . . . . . . . . .
+weight_post: Survey weight for post-election wave . . . . . . . . . . . . .
+vvweight: Survey weights to validated registered voters . . . . . . . . . .
+vvweight_post: Survey weights to validated registered voters, post-election
+wave . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Geography . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Demographics . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+gender: Sex (standardized) . . . . . . . . . . . . . . . . . . . . . . . . . .
+gender4: Gender . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+sex: Sex . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+sexuality: Sexual Orientation . . . . . . . . . . . . . . . . . . . . . . . .
+birthyr: Year of birth . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+age: Age . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+educ: Education . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+race: Race . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+hispanic: Hispanic . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+race_h: Race (any-part Hispanic) . . . . . . . . . . . . . . . . . . . . . . .
+hisp_origin: Hispanic origin . . . . . . . . . . . . . . . . . . . . . . . . .
+citizen: Citizenship . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+religion: Religion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+relig_imp: Importance of religion . . . . . . . . . . . . . . . . . . . . . .
+relig_bornagain: Evangelical Christian . . . . . . . . . . . . . . . . . .
+relig_protestant: Branch of Protestantism . . . . . . . . . . . . . . . .
+relig_church: Church Attendance . . . . . . . . . . . . . . . . . . . . .
+Family Status . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+marstat: Marital Status . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+ownhome: Home Ownership . . . . . . . . . . . . . . . . . . . . . . . . . .
+has_child: Parent of Young Children . . . . . . . . . . . . . . . . . . . .
+no_milstat: Military Status (None) . . . . . . . . . . . . . . . . . . . . .
+Validated Turnout and Registration . . . . . . . . . . . . . . . . . . . . . . . . . . .
+vv_regstatus: Validated registration status . . . . . . . . . . . . . . . . .
+vv_party_gen: Validated registered party . . . . . . . . . . . . . . . . . .
+vv_party_prm: Validated registered Primary party . . . . . . . . . . . . .
+vv_state: Validated state of registration . . . . . . . . . . . . . . . . . . .
+Turnout . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2
+
+5
+5
+5
+6
+7
+9
+9
+9
+9
+10
+10
+10
+10
+11
+11
+12
+12
+13
+13
+13
+14
+14
+15
+15
+15
+16
+16
+16
+16
+17
+17
+17
+18
+18
+19
+19
+19
+20
+20
+20
+21
+21
+21
+22
+22
+22
+23
+23
+25
+
+Contents
+
+3
+vv_turnout_gvm: Validated turnout General Election . . . . . . . . . . . .
+vv_turnout_pvm: Validated turnout Primary Election (Congressional) . . .
+intent_turnout_self: Self-reported turnout (pre-election wave) . . . . .
+voted_turnout_self: Self-reported turnout (post-election wave) . . . . .
+
+Partisan Identity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+pid3: Partisan identity (3 point) . . . . . . . . . . . . . . . . . . . . . . . .
+pid7: Partisan identity (7 point) . . . . . . . . . . . . . . . . . . . . . . . .
+pid3_leaner: Partisan identity (including leaners) . . . . . . . . . . . . .
+ideo5: Ideology (5 point) . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Economics and Income . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+faminc: Family Income . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+employ: Employment Status . . . . . . . . . . . . . . . . . . . . . . . . . .
+no_healthins: Uninsured . . . . . . . . . . . . . . . . . . . . . . . . . .
+union: Union membership . . . . . . . . . . . . . . . . . . . . . . . . . . .
+union_hh: Union membership in household . . . . . . . . . . . . . . . . .
+investor: Investor . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+economy_retro: Retrospective economy . . . . . . . . . . . . . . . . . .
+News Interest . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+newsint: News Interest . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Approval . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+approval_pres: President approval . . . . . . . . . . . . . . . . . . . . .
+approval_rep: House Representative approval . . . . . . . . . . . . . . .
+approval_sen1: Senator 1 approval . . . . . . . . . . . . . . . . . . . . .
+approval_sen2: Senator 2 approval . . . . . . . . . . . . . . . . . . . . .
+approval_gov: Governor approval . . . . . . . . . . . . . . . . . . . . . .
+Vote Choice Variables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Presidential Vote . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+intent_pres_party: President preference party . . . . . . . . . . . . . .
+voted_pres_party: President vote in last election . . . . . . . . . . . . .
+intent_pres_08: 2008 President preference (before voting) . . . . . . . .
+intent_pres_12: 2012 President preference (before voting) . . . . . . . .
+intent_pres_16: 2016 President preference (before voting) . . . . . . . .
+intent_pres_20: 2020 President preference (before voting) . . . . . . . .
+intent_pres_24: 2024 President preference (before voting) . . . . . . . .
+voted_pres_08: 2008 President vote choice (after voting) . . . . . . . . .
+voted_pres_12: 2012 President vote choice (after voting) . . . . . . . . .
+voted_pres_16: 2016 President vote choice (after voting) . . . . . . . . .
+voted_pres_20: 2020 President vote choice (after voting) . . . . . . . . .
+voted_pres_24: 2024 President vote choice (after voting) . . . . . . . . .
+House, Senate and Governor Vote . . . . . . . . . . . . . . . . . . . . . . . . . . .
+intent_rep: House preference (before voting) . . . . . . . . . . . . . . .
+intent_sen: Senate preference (before voting) . . . . . . . . . . . . . . .
+intent_gov: Governor preference (before voting) . . . . . . . . . . . . . .
+voted_rep: House vote choice (after voting) . . . . . . . . . . . . . . . . .
+voted_sen: Senate vote choice (after voting) . . . . . . . . . . . . . . . .
+voted_gov: Governor vote choice (after voting) . . . . . . . . . . . . . . .
+voted_rep_party: House vote choice party . . . . . . . . . . . . . . . . .
+voted_sen_party: Senate vote choice party . . . . . . . . . . . . . . . .
+voted_gov_party: Governor vote choice party . . . . . . . . . . . . . . .
+Metadata and Identiﬁers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Identiﬁers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+25
+25
+25
+26
+26
+26
+26
+27
+27
+27
+27
+28
+28
+29
+29
+30
+30
+30
+30
+31
+31
+31
+31
+32
+32
+33
+33
+33
+33
+34
+34
+35
+35
+35
+36
+36
+37
+37
+37
+38
+38
+39
+39
+39
+40
+40
+41
+42
+43
+44
+44
+
+Contents
+Current Representatives’ Name and Party . . . . . . . . . . . . . . . . . . . . . .
+ICPSR Identiﬁers . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Name of Chosen Candidate . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Version History of Dataverse Releases . . . . . . . . . . . . . . . . . . . . . . . . . . .
+Version 12.0 (released 2026-07-14) . . . . . . . . . . . . . . . . . . . . .
+Version 11.0 (released 2025-10-08) . . . . . . . . . . . . . . . . . . . . .
+Version 10.0 (released 2025-05-21) . . . . . . . . . . . . . . . . . . . . .
+Version 9.0 (released 2024-06-17) . . . . . . . . . . . . . . . . . . . . . .
+Version 8.0 (released 2023-05-12) . . . . . . . . . . . . . . . . . . . . . .
+Version 7.0 (released 2022-03-24) . . . . . . . . . . . . . . . . . . . . . .
+Version 6.0 (released 2021-04-06) . . . . . . . . . . . . . . . . . . . . . .
+Version 5.0 (released 2020-10-04) . . . . . . . . . . . . . . . . . . . . . .
+Version 4.0 (released 2019-09-09) . . . . . . . . . . . . . . . . . . . . . .
+Version 3.0 (released 2019-04-29) . . . . . . . . . . . . . . . . . . . . . .
+Version 2.0 (released 2018-04-16) . . . . . . . . . . . . . . . . . . . . . .
+Version 1.0 (released 2018-01-24) . . . . . . . . . . . . . . . . . . . . . .
+
+4
+44
+44
+45
+46
+46
+46
+46
+47
+47
+47
+47
+47
+47
+48
+48
+48
+
+GETTING STARTED
+
+5
+
+Getting Started
+Data Read-in
+The dataset in R is best viewed with the tidyverse suite of packages, as well as the package for
+converting and reading Stata ﬁles, haven. Although we provide three ﬁle formats of the same
+content, we recommend using the Stata (.dta) ﬁle along with the haven package’s read_dta
+function most of the time, and using the .feather ﬁle when speed is a priority.
+library(tidyverse)
+library(haven)
+cc <- read_dta("cumulative_2006-2025.dta")
+
+Loading the haven package allows using labelled variables in versatile ways (see the section
+“Labelled variables”). Plain-text formats are less useful because they do not preserve value labels.
+We also provide a .rds format that is speciﬁc to R:
+cc <- read_rds("cumulative_2006-2025.rds")
+
+This format preserves dataset properties such as the distinction between integers and doubles,
+as well as the labelled variables. Between the .rds and .dta versions, there is some difference
+in whether variables are saved as characters (rds) or labelled variables (dta), but the content is the
+same.
+From version 8.0 and onwards, we also include a .feather format. This is a format that is
+optimized for speed: it reads and writes faster than the others. Its content is identical to the .rds
+version. For example, in R, use the function read_feather from the arrow package.
+library(arrow)
+cc <- read_feather("cumulative_2006-2025.feather")
+
+In one example, I found that R read the .feather ﬁle in 0.3 seconds, and it took the .rds
+format more than 10 times slower (3.5 seconds) and the .dta format to be an additional 5 times
+slower than the .rds fomrat (16 seconds).
+
+Data Download
+Downloading the data via the dataverse package. In some cases, it may be convenient to download
+the dataset directly into an R environment without downloading the ﬁle to one’s computer. The
+recent version of dataverse (version 0.3.0 or later) allows this by the function:
+library(dataverse)
+cc <- get_dataframe_by_name(
+filename = "cumulative_2006-2025.dta",
+dataset = "10.7910/DVN/II2DB6",
+original = TRUE,
+.f = haven::read_dta,
+server = "dataverse.harvard.edu"
+)
+
+To download the arrow dataset, replace the filename argument with cumulative_2006-2025.feather
+and the .f argument with arrow::read_feather.
+
+Unique identiﬁers and how to add more variables
+
+6
+
+Downloading datasets that are hundreds of megabytes large can take multiple minutes each
+time. The total time it takes to download is a combination of the (1) download time, and (2) time for
+reading the downloaded ﬁle into R. As of 2025, R users can skip the step 1 after the ﬁrst time by
+asking the dataverse package to save a cache of the data to the computer.
+To do this:
+– Make sure you are using the dataverse package that is version 0.3.15 or above (releasd on
+CRAN in May 2025)
+– Specify the version of the dataset you want to download using the version argument of
+get_dataframe_by_name.
+For example, to download version 12 of the feather version of the dataset, the R code is the
+following:
+library(dataverse)
+cc <- get_dataframe_by_name(
+filename = "cumulative_2006-2025.feather",
+version = "12",
+dataset = "10.7910/DVN/II2DB6",
+original = TRUE,
+.f = arrow::read_feather,
+server = "dataverse.harvard.edu"
+)
+
+Unique identiﬁers and how to add more variables
+The cumulative dataset only uses key variables from each year’s common content. But users can
+still merge in other common content variables, or variables from other CCES datasets like the policy
+preferences dataset1 .
+In R, we recommend using the left_join or inner_join functions (or the base-R merge
+function). In Stata, use merge 1:1. In all cases, the combination of year and case_id uniquely
+identiﬁes each row in the cumulative common content, so any merges should merge on year
+and the case identiﬁer. For example, suppose we have separately downloaded the 2016 Common
+Content and read it in as follows:
+cc16 <- read_dta("CCES16_Common_OUTPUT_Feb2018_VV.dta")
+
+Suppose we want to merge in the 2016-speciﬁc issue questions that ask respondent’s views
+about key votes in Congress. This variable all start with "CC16_351" and the case-identiﬁer is
+called V101, so we can merge this into the cumulative ﬁle as follows:
+# subset
+cc16_rc <- select(cc16, V101, matches("CC16_351"))
+# join on case ID
+cc_rc <- cc |>
+filter(year == 2016) |>
+left_join(cc16_rc, by = c("case_id" = "V101"))
+1 Dagonel, Angelo, 2021, “Cumulative CCES Policy Preferences”, doi:10.7910/DVN/OSXDQO, Harvard Dataverse.
+
+Labelled variables (for analysis in R)
+
+7
+
+Labelled variables (for analysis in R)
+A note on variable types. The R dataset stores variables in numeric, character, factor, or
+labelled class.2 The ﬁrst three classes are commonly used, but the lablelled format is more
+novel. labelled classes are numeric integers where each integer is associated with a label (See
+vignette here). This makes it equivalent to a factor but referenceable by its numeric value. It is
+essentially the labels in Stata and SPSS.
+A labelled variable’s labels are usually not shown. But recent versions of the haven package
+(version 2.1.0 or above) will display the associated labels in the Console if selected within tidyverse.
+This makes it immediately obvious which value is associated with which label:
+select(cc, year, case_id, pid3)
+# A tibble: 718,955 x 3
+year case_id pid3
+<int>
+<dbl> <int+lbl>
+1 2006 439219 1 [Democrat]
+2 2006 439224 4 [Other]
+3 2006 439228 1 [Democrat]
+4 2006 439237 1 [Democrat]
+5 2006 439238 1 [Democrat]
+6 2006 439242 3 [Independent]
+7 2006 439251 2 [Republican]
+8 2006 439254 1 [Democrat]
+9 2006 439255 1 [Democrat]
+10 2006 439263 1 [Democrat]
+# i 718,945 more rows
+
+Labels can be made explicit by coercing the labelled vector into a factor. However, this removes the
+numerical value codes of the labelled class.
+library(haven)
+select(cc, year, case_id, pid3) |>
+mutate(pid3_fct = as_factor(pid3))
+# A tibble: 718,955 x 4
+year case_id pid3
+pid3_fct
+<int>
+<dbl> <int+lbl>
+<fct>
+1 2006 439219 1 [Democrat] Democrat
+2 2006 439224 4 [Other]
+Other
+3 2006 439228 1 [Democrat] Democrat
+4 2006 439237 1 [Democrat] Democrat
+5 2006 439238 1 [Democrat] Democrat
+# i 718,950 more rows
+
+Unlike factors, labelled variables can be referenced by their underlying numeric value. It is sometimes useful to treat survey values as numbers rather than as raw text, and the labelled class allows
+you to do that.
+2 Technically, this is now called a labelled_haven class, to disambiguate from an unrelated but older use of labelled
+in the Hmisc package.
+
+Labelled variables (for analysis in R)
+
+8
+
+select(cc, year, case_id, pid3) |>
+filter(pid3 == 1)
+# A tibble: 263,151 x 3
+year case_id pid3
+<int>
+<dbl> <int+lbl>
+1 2006 439219 1 [Democrat]
+2 2006 439228 1 [Democrat]
+3 2006 439237 1 [Democrat]
+4 2006 439238 1 [Democrat]
+5 2006 439254 1 [Democrat]
+# i 263,146 more rows
+
+In this cumulative R dataset, some variables are of class “labelled”, and some are of class
+“factor”. This is because the latter were different enough in their value codings across years that
+summarizing them into a single numeric value was difﬁcult.
+
+FEATURES OF THE CUMULATIVE DATASET
+
+9
+
+Features of the Cumulative Dataset
+Beyond stacking together each year’s common content, the cumulative dataset provides several
+additional features to facilitate analysis.
+
+Uniﬁed Variable Names
+Most variables in this dataset come straight from each year’s CCES/CES. However, it renames and
+standardizes variable names, making them accessible in one place. Please see the rest of this
+guide or the Crunch dataset for a full list and description of variables.
+
+Chosen Candidate Names and Identiﬁers
+One addition to this cumulative dataset are variables of candidate names and identiﬁers that a
+respondent chose. In the individual year’s CCES/CES datasets, typically the response values for
+a vote choice question is a generic label, e.g., Candidate1 and Candidate2. Then, separate
+variables of names and parties correspond to each Candidate1 and Candidate2.
+Instead, the cumulative dataset shows both the generic label and the chosen candidate’s name
+and party, which will vary across individuals.
+select(cc, year, case_id, st, matches("voted_sen"))
+# A tibble: 718,955 x 6
+year case_id st
+voted_sen
+voted_sen_party voted_sen_chosen
+<int>
+<dbl> <chr> <fct>
+<fct>
+<chr>
+1 2006 439219 NC
+<NA>
+<NA>
+<NA>
+2 2006 439224 OH
+[Democrat / Candidate 1] Democratic
+Sherrod C. Brow~
+3 2006 439228 NJ
+[Democrat / Candidate 1] Democratic
+Robert Menendez~
+4 2006 439237 IL
+<NA>
+<NA>
+<NA>
+5 2006 439238 NY
+[Democrat / Candidate 1] Democratic
+Hillary Rodham ~
+6 2006 439242 TX
+I Did Not Vote In This ~ <NA>
+<NA>
+7 2006 439251 MN
+[Republican / Candidate~ Republican
+Mark Kennedy (R)
+8 2006 439254 NV
+[Democrat / Candidate 1] Democratic
+Jack Carter (D)
+9 2006 439255 TX
+[Democrat / Candidate 1] Democratic
+Barbara Ann Rad~
+10 2006 439263 MD
+I Did Not Vote In This ~ <NA>
+<NA>
+# i 718,945 more rows
+
+Variables
+The sections below provide summary statistics and more information on each variable.
+– The title shows the name of the variable as it appears in the dataset (“alias” in Crunch terminology), followed by a more descriptive name suitable for presentation (“name” in Crunch
+terminology).
+– Question wordings, where applicable, immediately follow. Otherwise a description is provided
+in square brackets ([ ]). All square brackets, both in the description and the response
+options, indicate descriptions that are summaries rather than the question verbatim.
+– A tabulation of response options (or summary statistics for numeric variables) follows. Numbers are unweighted counts.
+
+Administration
+
+10
+
+– The “Years” bullet lists the years of the CCES in which data on the variable is available at all.
+If a year is not listed, either the question was not asked in the year or was not incorporated in
+the creation of this dataset.
+– Finally, the “Limitations” bullet notes some of the caveats required when interpreting this
+variable. As this dataset is a combination of different surveys, some year-speciﬁc details
+on implementation are inevitably lost. For example, for all 2016 responses “Not Asked” and
+“Skipped” are both coded as a NA (missing) to stay consistent with past years that did not
+make that ﬁner distinction.
+
+Administration
+year: CCES year
+
+[Year of CCES Common Content]
+n
+2006
+2007
+2008
+2009
+2010
+2011
+2012
+2013
+2014
+2015
+2016
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+2024
+2025
+
+36,421
+9,999
+32,800
+13,800
+55,400
+20,150
+54,535
+16,400
+56,200
+14,250
+64,600
+18,200
+60,000
+18,000
+61,000
+25,700
+60,000
+24,500
+60,000
+17,000
+
+starttime: Start time
+
+[Pre-election wave start time (up to second)]
+– Years: All of 2006-2025
+– Times are recorded in UTC (Greenwich mean time) for all respondents regardless of the
+location of the interview, at least for 2021.
+tookpost: Took post-election wave
+
+[Whether or not the respondent took the post-election wave of the survey (in even years)]
+
+Weights
+
+11
+
+2006
+2007
+2008
+2009
+2010
+2011
+2012
+2013
+2014
+2015
+2016
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+2024
+2025
+
+Earliest Date
+
+Latest Date
+
+2006-10-07
+2007-11-09
+2008-10-08
+2009-11-05
+2010-10-01
+2011-11-09
+2012-10-01
+2013-11-06
+2014-10-01
+2015-11-06
+2016-09-28
+2017-11-08
+2018-09-27
+2019-11-06
+2020-09-29
+2021-11-03
+2022-09-29
+2023-11-08
+2024-10-01
+2025-11-05
+
+2006-11-08
+2007-12-10
+2008-11-03
+2009-12-14
+2010-11-01
+2012-01-07
+2012-11-05
+2013-12-03
+2014-11-03
+2015-12-03
+2016-11-07
+2017-12-12
+2018-11-05
+2019-12-05
+2020-11-02
+2021-12-07
+2022-11-08
+2023-12-11
+2024-11-04
+2025-12-12
+
+n
+Did Not Take Post-Election Survey
+Took Post-Election Survey
+(Missing)
+
+88,135
+452,821
+177,999
+
+– Years: 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024 (Post-election wave
+only exists for even years)
+
+Weights
+weight: Survey weight (Year-Speciﬁc)
+
+[weights for pre-election survey of each year]
+Min. 1st Qu.
+0.0000 0.4337
+
+Median
+0.7310
+
+Mean 3rd Qu.
+Max.
+1.0000 1.1644 15.0614
+
+– Years: All of 2006-2025
+– In even years, they are re-computed after vote validation has been computed and those
+re-computed weights are taken here when available. The weights applied to the sample
+(which is originally drawn from a matched sample) are constructed to make each year’s
+data representative of the national adult population. See the methodology section of the
+2016 Guide and the FAQ on the CCES website for details.
+– Limitations: Only speciﬁc to each year. Built off of the entire pre-election wave sample, but
+not necessarily to adjust post-election wave respondents. See weight_post
+
+Weights
+
+12
+
+weight_cumulative: Survey weight (Cumulative)
+
+[weight variable with simple adjustment: multiplied a constant within year to make years comparable]
+Min. 1st Qu.
+0.0000 0.2662
+
+Median
+0.4918
+
+Mean 3rd Qu.
+Max.
+0.8137 0.9494 24.3029
+
+– Years: All of 2006-2025
+– Limitations: Only a simple transformation of weight. Speciﬁcally, weight_cumulative is
+weight divided by the year-speciﬁc factors shown in the following table. For example, all
+weights in the 2016 common content are divided by about 2.21, because it has about twice
+as many observations as the other datasets.
+– Therefore, this cumulative weight simply re-weights all years to have the same sample size.
+This means that, if both odd years and even years are included in the weighted average,
+every even-year observation is down-weighted by a factor of about 2. For analyses that are
+done year by year, using weight and weight_cumulative are equivalent.
+
+Year
+
+Observations
+
+Factor
+
+2006
+2007
+2008
+2009
+2010
+2011
+2012
+2013
+2014
+2015
+2016
+2017
+2018
+2019
+2020
+2021
+2022
+2023
+2024
+2025
+
+36,421
+9,999
+32,800
+13,800
+55,400
+20,150
+54,535
+16,400
+56,200
+14,250
+64,600
+18,200
+60,000
+18,000
+61,000
+25,700
+60,000
+24,500
+60,000
+17,000
+
+1.25
+0.34
+1.12
+0.47
+1.89
+0.69
+1.86
+0.56
+1.92
+0.49
+2.21
+0.62
+2.05
+0.62
+2.09
+0.88
+2.05
+0.84
+2.05
+0.58
+
+weight_post: Survey weight for post-election wave
+
+[weight for post-election wave respondents. Only available for some of the even years.]
+Min. 1st Qu.
+0.00
+0.45
+
+Median
+0.69
+
+Mean 3rd Qu.
+1.00
+1.07
+
+– Years: 2012, 2016, 2018, 2020, 2022
+– Limitations: Only available for some even years.
+
+Max.
+15.50
+
+NA’s
+466839
+
+Geography
+
+13
+
+– To analyze the post-election wave responses for years that do not have a post-speciﬁc weight,
+the second-best option is to use the normal weight variable. These weights will not be
+designed for the post-wave subset but they tend to correlate.
+vvweight: Survey weights to validated registered voters
+
+[weights to validated registered voter population]
+Min. 1st Qu.
+0.00
+0.53
+
+Median
+0.79
+
+Mean 3rd Qu.
+1.00
+1.16
+
+Max.
+16.31
+
+NA’s
+554396
+
+– Years: 2018, 2020, 2022, 2024
+– Note these weight are missing for anyone not validated as a actively registered voters (vv_regstatus).
+Not all actively registered voters turn out (vv_turnout_gvm). Starting in 2018, YouGov computed weights after vote validation and weighted to the target population of validated registered voters. See the methodology section of the 2018 Guide or the 2020, 2022, 2024 guide
+for details. Until Dataverse V10 of this dataset, the cumulative called this variable rvweight,
+but from V11 onwards, we switched to calling it vvweight.
+– Limitations: Only speciﬁc to each year. Built off of the entire pre-election wave sample, but
+not necessarily to adjust post-election wave respondents. See vvweight_post
+vvweight_post: Survey weights to validated registered voters, post-election wave
+
+[weights to validated registered voter population, post-election wave]
+Min. 1st Qu.
+0.00
+0.50
+
+Median
+0.75
+
+Mean 3rd Qu.
+1.00
+1.14
+
+Max.
+15.18
+
+NA’s
+568380
+
+– Years: 2018, 2020, 2022, 2024
+– Limitations: Only available for some even years.
+
+Geography
+A series of variables for the respondent’s location:
+– state: State (FIPS): [State]
+– state_post: State (FIPS), post-election: [State, post-election]
+– st: State abbreviation (FIPS): [State Abbreviation]
+– st_post: State abbreviation (FIPS), post-election: [State, post-election]
+– dist: Congressional district number in current Congress: [Current Congressional District
+Number]
+– dist_post: Congressional district number in current Congress, post-election: [Current Congressional District Number, post-election]
+– dist_up: Congressional district number for upcoming Congress: [Upcoming Congressional
+District Number]
+– dist_up_post: Congressional district number for upcoming Congress, post-election: [Upcoming Congressional District Number, post-election]
+– cd: Congressional district in current Congress: [Current Congressional District]
+– cd_post: Congressional district in current Congress, post-election: [Current Congressional
+District, post-election]
+– cd_up: Congressional district in upcoming Congress: [Upcoming Congressional District]
+– cd_up_post: Congressional district in upcoming Congress, post-election: [Upcoming Congressional District, post-election]
+
+Demographics
+
+14
+
+– zipcode: Zipcode (lookupzip): [lookupzip in most years.] So that we can ask you about the
+news and events in your area, in what zip code do you currently reside?
+– county_fips: County of residence: [County (Imputed from input zipcode)]
+Rows: 718,955
+Columns: 15
+$ state
+<chr> "California", "Pennsylvania", "Texas", "Texas", "Texas", ~
+$ st
+<chr> "CA", "PA", "TX", "TX", "TX", "NY", "NC", "NC", "MA", "CA~
+$ state_post
+<chr> NA, "Pennsylvania", NA, "Texas", "Texas", "New York", NA,~
+$ st_post
+<chr> NA, "PA", NA, "TX", "TX", "NY", NA, NA, "MA", NA, "MI", "~
+$ dist
+<int> 2, 5, 16, 19, 6, 28, 11, 7, 1, 17, 15, 1, 2, 6, 1, 1, 16,~
+$ dist_up
+<int> 1, 3, 16, 19, 6, 27, 11, 7, 2, 20, 12, 1, 2, 8, 1, 1, 15,~
+$ cd
+<chr> "CA-02", "PA-05", "TX-16", "TX-19", "TX-06", "NY-28", "NC~
+$ cd_up
+<chr> "CA-01", "PA-03", "TX-16", "TX-19", "TX-06", "NY-27", "NC~
+<int> NA, 5, NA, 19, 6, 28, NA, NA, 1, NA, 15, 1, 2, NA, NA, NA~
+$ dist_post
+$ dist_up_post <int> NA, 3, NA, 19, 6, 27, NA, NA, 2, NA, 12, 1, 2, NA, NA, NA~
+<chr> NA, "PA-05", NA, "TX-19", "TX-06", "NY-28", NA, NA, "MA-0~
+$ cd_post
+$ cd_up_post
+<chr> NA, "PA-03", NA, "TX-19", "TX-06", "NY-27", NA, NA, "MA-0~
+$ zipcode
+<chr> "95969", "16255", "79924", "79423", "76123", "14131", "28~
+$ county_fips <chr> "06007", "42031", "48141", "48303", "48439", "36063", "37~
+$ vv_state
+<chr> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+
+– Years: All of 2006-2025
+– Note the distinction between dist and dist_up, especially in 2012. The former should
+generally be used for linking respondents to their representatives at the time of the survey,
+whereas the latter can be used for the district in which they will vote for. New districts were
+drawn in 2010-2012 and candidates ran in new district maps in the 2012 CCES. Because
+respondents would not be represented in the new district lines until January 2013, in the
+2012 CCES dist is the old district line and dist_up is the new district line for the General
+Election.
+– zipcode mostly relies on the variable often called lookupzip in each year’s CCES. This is
+the zipcode of voter registration, or if not available, the residential zipcode, of the respondent. It is called lookup because it is used to look up the congressional district and other
+geographies of the respondent. For more information on zipcodes, see the CCES question.
+– Limitations: Some years do not provide the variable relevant to dist_up, in which case
+the current district (dist) is assigned automatically. Thus, dist_up may not reﬂect district changes in off-cycle redistricting. Only residence (not registration) geographies included
+here; see individual years’ for registration geographies.
+
+Demographics
+gender: Sex (standardized)
+
+“Are you. . . ? <1> Male <2> Female [2018-2020] Are you male or female? [2006-2016]”
+n
+Male
+Female
+(Missing)
+– Years: All of 2006-2025
+
+328,401
+388,722
+1,832
+
+Demographics
+
+15
+
+– Although named gender historically, this question’s wording is such that it asks people’s sex.
+Until 2020, only two choices were allowed. From 2021, the question was discontinued in favor
+of the question now called gender4 (see below).
+– The cumulative ﬁle has, as of V8, kept the gender variable and relabelled it as a “standardized” binary variable for all years by making the following custom recodes for 2021 onwards:
+Man in gender4 is recoded to Male, Woman in gender4 is recoded to Female, and other
+categories are coded as missing.
+– The cumulative ﬁle has created a variable sex to more accurately capture what the gender
+question has asked 2006–2020 (see below).
+– Some years ask respondents if they identify as transsexual. These are currently not included
+in the cumulative common content.
+gender4: Gender
+
+“What is your gender?”
+n
+Man
+Woman
+Non-Binary
+Other
+(Missing)
+
+84,661
+100,707
+1,464
+368
+531,755
+
+– Years: 2021, 2022, 2023, 2024, 2025
+– See the explanation under gender
+sex: Sex
+
+“Are you male or female? [2006-2016]”
+n
+Male
+Female
+(Missing)
+
+243,740
+288,015
+187,200
+
+– Years: All of 2006-2020
+– See the explanation under gender
+sexuality: Sexual Orientation
+
+“Which of the following describes your sexuality?”
+n
+Heterosexual / Straight
+Lesbian / Gay Woman
+Gay Man
+Bisexual
+Other
+Prefer not to Say
+(Missing)
+
+346,676
+5,641
+11,507
+19,187
+5,545
+9,203
+321,196
+
+Demographics
+
+16
+
+– Years: 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025
+birthyr: Year of birth
+
+“In what year were you born?”
+Min. 1st Qu.
+1900
+1953
+
+Median
+1964
+
+Mean 3rd Qu.
+1966
+1981
+
+Max.
+2007
+
+– Years: All of 2006-2025
+age: Age
+
+[Approximate age computed from the year of survey minus Year of Birth]
+Min. 1st Qu.
+18.0
+36.0
+
+Median
+52.0
+
+Mean 3rd Qu.
+49.8
+63.0
+
+Max.
+109.0
+
+– Years: All of 2006-2025
+educ: Education
+
+“What is the highest level of education you have completed?”
+n
+No HS
+High School Graduate
+Some College
+2-Year
+4-Year
+Post-Grad
+(Missing)
+
+24,510
+198,203
+171,557
+72,815
+162,609
+89,194
+67
+
+– Years: All of 2006-2025
+race: Race
+
+“What racial or ethnic group best describes you?”
+n
+White
+Black
+Hispanic
+Asian
+Native American
+Mixed
+Other
+Middle Eastern
+
+520,531
+82,637
+62,677
+18,091
+5,960
+15,823
+11,949
+1,287
+
+– Years: All of 2006-2025
+– Limitations: The “Hispanic” value may undercount self-identiﬁed Hispanics. See hispanic
+and race_h.
+
+Demographics
+
+17
+
+hispanic: Hispanic
+
+“Are you of Spanish, Latino, or Hispanic origin or descent? [Asked if response to race is not
+Hispanic]”
+n
+Yes
+No
+(Missing)
+
+33,234
+551,841
+133,880
+
+– Years: 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022,
+2023, 2024, 2025
+– Different years have treated this question differently. Until 2017, this question was not asked
+to those who responded “Hispanic” in the race question. From 2018-2022, this question was
+asked to all respondents. From 2024, the value of these questions for all those who said
+they were Hispanic appear to have been set to Yes. For a combined version of race and
+hispanic, see race_h (any-part Hispanic), which is more stable version.
+– See hisp_origin for more details on hispanic origin
+race_h: Race (any-part Hispanic)
+
+[race (What racial or ethnic group best describes you?) combined with hispanic ethnicity]
+n
+White
+Black
+Hispanic
+Asian
+Native American
+Mixed
+Other
+Middle Eastern
+
+508,758
+80,791
+83,212
+17,641
+5,378
+11,075
+10,881
+1,219
+
+– Years: All of 2006-2025
+– This variable combines the race and hispanic variables in a single variable by coding “anypart Hispanic” as Hispanic. For example, White Hispanics and Black Hispanics are coded
+as “Hispanic” in this deﬁnition and “White” voters consist of non-Hispanic Whites only. If a
+respondent identiﬁed as Hispanic in either the race or hispanic question, they get coded
+as “Hispanic” in race_h.
+– For years that do not have a hispanic question, this variable falls back to the race values.
+hisp_origin: Hispanic origin
+
+“From which country or region do you trace your heritage or ancestry? (Check all that apply) [asked
+if any-part Hispanic]”
+
+Demographics
+
+18
+
+n (choose all that apply)
+Mexico
+United States
+Spain
+Puerto Rico
+South America
+Cuba
+Central America
+Dominican Republic
+Caribbean
+
+22,179
+21,296
+9,767
+8,589
+4,378
+3,238
+2,806
+1,576
+852
+
+– Years: 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025
+– This is a multichoice question that is then concatenated into a single character. The sequence
+"!!" is used as a delimiter. For example, "United States!!Cuba" indicates that the respondent chose both “United States” and “Cuba” as responses in this multi-choice question.
+– In the above table, we separately count the occurrence of each of the options. For example,
+the respondent in the above example will be counted twice in the table.
+– This question is asked only to those who identify as any-part Hispanic in the race and
+hispanic questions, with a few exceptions in 2016 and 2018 for multi-racial respondents.
+– To make the text manageable, the following response options are not considered and extracted from each year’s common content when making this variable: "Other", "Not Hispanic
+or Latino", "No country in particular". Open-text responses in the "Other" responses are not used either. See each year’s common content for these data.
+citizen: Citizenship
+
+[Based on self-report for immigration status]
+n
+Citizen
+Non-Citizen
+(Missing)
+
+681,876
+10,844
+26,235
+
+– Years: 2006, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2016, 2017, 2018, 2019, 2020,
+2021, 2022, 2023, 2024, 2025
+– These come from the immigration status questions (often called immstat), which ask respondents between ﬁrst, second, and third generation citizens, and other foreign-born citizens.
+Here we mark anyone who does not answer the last category to be a citizen.
+– Limitation: Most of the missingness comes from 2007 and 2015, when the immigration status
+question does not appear to have been asked.
+religion: Religion
+
+“What is your present religion, if any?”
+
+Demographics
+
+19
+
+n
+Protestant
+Roman Catholic
+Mormon
+Eastern or Greek Orthodox
+Jewish
+Muslim
+Buddhist
+Hindu
+Atheist
+Agnostic
+Nothing in Particular
+Something Else
+(Missing)
+
+246,102
+137,629
+9,493
+3,672
+17,018
+4,156
+5,938
+2,112
+38,351
+41,167
+128,941
+46,766
+37,610
+
+– Years: All of 2007-2025
+– The response options have stayed largely consistent and follow that of Pew.
+relig_imp: Importance of religion
+
+“How important is religion in your life?”
+n
+Very Important
+Somewhat Important
+Not Too Important
+Not at All Important
+(Missing)
+
+255,435
+171,379
+99,199
+139,671
+53,271
+
+– Years: All of 2008-2025
+– In common content, often named pew_religimp
+relig_bornagain: Evangelical Christian
+
+“Would you describe yourself as a born-again or evangelical Christian, or not?”
+n
+Yes
+No
+8
+(Missing)
+
+204,489
+494,540
+39
+19,887
+
+– Years: All of 2006-2025 except 2007
+– In common content, often named pew_bornagain
+relig_protestant: Branch of Protestantism
+
+“To which Protestant church or group do you belong?”
+
+Family Status
+
+20
+
+n
+Baptist
+Methodist
+Nondenominational or Independent Church
+Lutheran
+Presbyterian
+Pentecostal
+Episcopalian
+Church of Christ or Disciples of Christ
+Congregational or United Church of Christ
+Holiness
+Reformed
+Adventist
+Jehovah’s Witness
+Something Else
+(Missing)
+
+78,254
+34,321
+55,431
+26,734
+16,669
+17,043
+11,638
+9,985
+5,992
+2,494
+2,263
+2,496
+2,959
+22,444
+430,232
+
+– Years: All of 2007-2025
+– In common content, often named religpew_protestant
+relig_church: Church Attendance
+
+“Aside from weddings and funerals, how often do you attend religious services?”
+n
+More Than Once a Week
+Once a Week
+Once or Twice a Month
+A Few Times a Year
+Seldom
+Never
+Don’t Know
+8
+(Missing)
+– Years: All of 2008-2025
+– In common content, often named pew_churatd
+
+Family Status
+marstat: Marital Status
+
+“What is your marital status?”
+
+55,428
+118,281
+51,561
+92,132
+153,673
+190,731
+9,948
+28
+47,173
+
+Family Status
+
+21
+
+n
+Married
+Separated
+Divorced
+Widowed
+Single / Never Married
+Domestic Partnership
+(Missing)
+
+372,936
+12,647
+80,205
+36,593
+178,683
+36,245
+1,646
+
+– Years: All of 2006-2025
+– The option “Single” was used till 2016, which was then replaced by “Never Married” in 2017
+and 2018.
+– The option “Domestic Partnership” was used till 2016, which was then replaced by “Domestic
+/ Civil Partnership” in 2017 and 2018.
+ownhome: Home Ownership
+
+“Do you own your home or pay rent?”
+n
+Own
+Rent
+Other
+(Missing)
+
+426,126
+215,838
+31,793
+45,198
+
+– Years: 2006, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020,
+2021, 2022, 2023, 2024, 2025
+has_child: Parent of Young Children
+
+“Are you the parent or guardian of any children under the age of 18?”
+n
+Yes
+No
+(Missing)
+
+162,808
+508,646
+47,501
+
+– Years: All of 2008-2025
+no_milstat: Military Status (None)
+
+[Based on military household question; neither respondent nor immediate family has served]
+n
+Yes
+No
+(Missing)
+
+314,061
+394,800
+10,094
+
+Validated Turnout and Registration
+
+22
+
+– Years: All of 2006-2025 except 2007
+– The original question is of the form “We’d like to know whether you or someone in your
+immediate family is currently serving or has ever served in the U.S. military. Immediate family
+is deﬁned as your parents, siblings, spouse, and children. Please check all boxes that apply.”,
+where respondents can pick more than one of the options including the following: “I served
+personally”, “Family served previously”. The entry in the cumulative response only selects
+the “None” option. A value of no_milstat == "Yes" means that a respondent indicated
+they had neither served nor had an immediate family member who has served. To see the
+other responses, see the individual year’s CCES.
+
+Validated Turnout and Registration
+Observations in even years include indicators for validated voting, which means that YouGov has
+matched survey respondents’ personal identiﬁable information to public voter ﬁles, which in turn
+ofﬁcially record whether a person has voted or not. Validation is often completed in the summer
+following the election. For more information, see Ansolabehere and Hersh (2012).
+vv_regstatus: Validated registration status
+
+[Validation results. Missing if validation was not conducted in the year. Categories are aggregated.
+Both Matched-not registered and unmatched are labeled as a no record.]
+n
+Active
+No Record of Registration
+Unregistered
+Dropped
+Inactive
+Multiple Appearances
+(Missing)
+
+342,915
+128,866
+18,070
+8,433
+4,086
+2,165
+214,420
+
+– Years: 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024
+– Limitations: Collapses some response options
+– Note that the response categories changed from 2022, when CES started using TargetSmart
+instead of Catalist for their voter match. The TargetSmart matches do not distinguish between
+unregistered, dropped, vs. inactive registrants.
+vv_party_gen: Validated registered party
+
+[Validation results. Only available for some states and years]
+
+Validated Turnout and Registration
+
+23
+
+n
+No Record of Party Registration
+Unknown
+Democratic Party
+Republican Party
+No Party Afﬁliation
+Declined to State
+Independent Party
+Other
+No Party, Independent, Declined to State
+Libertarian Party
+Not Sure
+Green Party
+Conservative Party
+Working Family Party
+Constitution Party
+Reform Party
+Socialist Party
+(Missing)
+
+185,752
+87,810
+74,083
+53,494
+18,380
+3,093
+2,829
+2,783
+2,737
+1,061
+605
+479
+114
+48
+47
+13
+7
+285,620
+
+– Years: 2012, 2014, 2016, 2018, 2020, 2022, 2024, 2025
+– Limitations: Note that the response categories changed from 2022, when CES started using
+TargetSmart instead of Catalist for their voter match. As of V11 of this dataverse replication, for example, TS did not report NPAs as a separate category in Florida. To identify NPA
+registrants, a good substitute may be to identify those in party registration states who are
+vv_party_gen = "No Record of Party Registration" but are active in vv_regstatus.
+vv_party_prm: Validated registered Primary party
+
+[Validation results. Only available for some states and years]
+n
+No Record of Party Registration
+Democratic Party
+Republican Party
+Libertarian Party
+Other
+No Party Afﬁliation
+Green Party
+Independent Party
+(Missing)
+– Years: 2012, 2014, 2016, 2018, 2020, 2022, 2024
+– Limitations: Not available for some even years
+vv_state: Validated state of registration
+
+[Validation results.]
+
+358,949
+30,329
+26,932
+40
+44
+27
+7
+7
+302,620
+
+Validated Turnout and Registration
+
+24
+
+n
+MD
+CA
+IN
+NY
+OH
+NJ
+TX
+FL
+KS
+GA
+MO
+PA
+CO
+IL
+OK
+AZ
+MN
+MA
+NE
+TN
+NV
+OR
+CT
+UT
+VA
+WI
+NH
+HI
+AK
+AL
+SC
+WA
+NC
+NM
+MS
+VT
+LA
+MI
+IA
+WV
+AR
+KY
+ME
+SD
+RI
+MT
+ID
+DE
+DC
+ND
+WY
+(Missing)
+
+110,960
+4,505
+21,083
+5,852
+14,060
+10,880
+6,752
+17,423
+18,483
+2,157
+7,890
+6,024
+13,463
+4,523
+10,053
+2,435
+6,313
+4,573
+5,132
+1,567
+5,361
+2,812
+4,514
+2,610
+1,776
+7,367
+5,373
+1,364
+761
+528
+3,523
+3,912
+6,072
+7,871
+1,710
+1,770
+588
+2,659
+8,843
+2,776
+1,813
+2,044
+3,818
+1,383
+704
+845
+1,038
+1,301
+958
+603
+566
+409
+357,155
+
+Turnout
+
+25
+
+– Years: 2014, 2016, 2018, 2020, 2022, 2024
+– Limitations: Not available for some even years
+
+Turnout
+vv_turnout_gvm: Validated turnout General Election
+
+[Validation results. All vote methods (polling, mail, early, unknown, etc..) are aggregated as a vote.]
+n
+Voted
+No Record of Voting
+No Voter File
+(Missing)
+
+312,185
+227,038
+1,733
+177,999
+
+– Years: 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024.
+– Limitations: Collapses most response options. For example, the particular voting method
+is collapsed into one category, even though gvm stands for General Election voting method.
+Also, the result of not matching to a voter ﬁle is collapsed with the result of matching to a
+voter ﬁle and having no indication of turning out to vote. The distinction is unclear in earlier
+years, and is thus collapsed for all years here. For ﬁner distinctions, see the individual year’s
+CCES.
+vv_turnout_pvm: Validated turnout Primary Election (Congressional)
+
+[Validation results. Congressional primaries.]
+n
+No Record of Voting
+Voted
+No Voter File
+(Missing)
+
+340,690
+162,482
+1,363
+214,420
+
+– Years: 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024
+– Limitations: See vv_turnout_gvm
+intent_turnout_self: Self-reported turnout (pre-election wave)
+
+“2020: Do you intend to vote in the 2020 general election on November 3rd?”
+n
+Yes, deﬁnitely
+Probably
+I already voted (early or absentee)
+I plan to vote before Election Day
+No
+Undecided
+(Missing)
+– Years: 2012, 2014, 2016, 2018, 2020, 2022, 2024
+
+282,042
+32,331
+36,668
+10,809
+30,905
+22,407
+303,793
+
+Partisan Identity
+
+26
+
+– Limitations: Collapses and simpliﬁes response categories to standardize across years. See
+individual year’s datasets for details. Some response categories are still not standardized. For
+example, “I plan to vote before Election Day” is unavailable in 2016. Additionally, the question
+is available in years 2010 and earlier but not included in this version of the cumulative dataset
+because those years rely on a 2006–2012 cumulative release.
+voted_turnout_self: Self-reported turnout (post-election wave)
+
+“2020: Which of the following statements best describes you?”
+n
+Yes
+No
+(Missing)
+
+387,470
+51,116
+280,369
+
+– Years: 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024
+– Limitations: Collapses reasons for not voting into a single “No”. Actual responses distinguish
+between “Did not vote” and “Tried to vote but could not” in some years, for example. To
+standardize across years, the cumulative dataset lumps these levels and others together.
+See the individual year’s datasets for details. The cumulative dataset also does not include
+responses for odd years even though in some odd years this question is asked.
+
+Partisan Identity
+pid3: Partisan identity (3 point)
+
+“Generally speaking, do you think of yourself as a . . . ?”
+n
+Democrat
+Republican
+Independent
+Other
+Not Sure
+(Missing)
+
+263,151
+188,913
+202,151
+29,059
+35,440
+241
+
+– Years: All of 2006-2025
+– Limitations: Response options offer slightly by year. For example, the Not Sure option is not
+a response option in years 2006 and 2010. Open-text responses not included. 2010 values
+are from the post-election wave. 2020 values do not include the Not Sure option (option 5).
+pid7: Partisan identity (7 point)
+
+[Based on branching from Partisan Identity question]
+
+Economics and Income
+
+27
+
+n
+Strong Democrat
+Not Very Strong Democrat
+Lean Democrat
+Independent
+Lean Republican
+Not Very Strong Republican
+Strong Republican
+Not Sure
+Don’t Know
+(Missing)
+
+177,639
+84,868
+72,445
+100,803
+70,497
+66,693
+121,581
+21,394
+3
+3,032
+
+– Years: All of 2006-2025
+– Limitations: See pid3
+pid3_leaner: Partisan identity (including leaners)
+
+[Codes self-identiﬁed Independents in pid3 who expressed leaning towards a party in pid7 (Lean
+Democrats / Republicans) as partisans.]
+n
+Democrat (Including Leaners)
+Republican (Including Leaners)
+Independent (Excluding Leaners)
+Not Sure
+(Missing)
+
+334,952
+258,771
+100,803
+21,394
+3,035
+
+– Years: All of 2006-2025
+– Limitations: See pid3
+ideo5: Ideology (5 point)
+
+“In general, how would you describe your own political viewpoint?”
+n
+Very Liberal
+Liberal
+Moderate
+Conservative
+Very Conservative
+Not Sure
+(Missing)
+
+74,541
+127,826
+226,665
+154,203
+82,120
+51,698
+1,902
+
+– Years: All of 2006-2025
+
+Economics and Income
+faminc: Family Income
+
+“Thinking back over the last year, what was your family’s annual income? [Brackets coarsened]”
+
+Economics and Income
+
+28
+
+n
+Less than 10k
+10k - 20k
+20k - 30k
+30k - 40k
+40k - 50k
+50k - 60k
+60k - 70k
+70k - 80k
+80k - 100k
+100k - 120k
+120k - 150k
+150k+
+Prefer not to say
+Skipped
+(Missing)
+
+34,886
+52,998
+72,441
+71,335
+63,333
+62,493
+46,438
+51,271
+59,169
+43,919
+38,438
+47,454
+73,115
+12
+1,653
+
+– Years: All of 2006-2025
+– Limitations: The income brackets provided changed slightly over time. The brackets in this
+cumulative dataset coarsen certain original brackets, losing some granularity. In particular,
+from 2011-2016, respondents answering “over 150k” were asked a follow-up question to select one of several brackets above 150k. Here, these are top-coded and only labelled as “over
+150k.”
+– The 2009 CCES did not have an option for 60-70k.
+employ: Employment Status
+
+“Which of the following best describes your current employment status?”
+n
+Full-Time
+Part-Time
+Temporarily Laid Off
+Unemployed
+Retired
+Permanently Disabled
+Homemaker
+Student
+Other
+(Missing)
+
+278,711
+75,424
+6,046
+48,341
+159,521
+43,739
+49,286
+30,556
+16,763
+10,568
+
+– Years: All of 2006-2025 except 2007
+no_healthins: Uninsured
+
+[Based on health insurance question; respondent has none of the insurance options given]
+
+Economics and Income
+
+29
+
+n
+Yes
+No
+(Missing)
+
+65,507
+574,164
+79,284
+
+– Years: All of 2009-2025
+– The original question is of the form “Do you currently have health insurance? (check all that
+apply)”, where respondents can pick more than one of the options including the following:
+“Yes, through my job or a family member’s employer”, “Yes, through a government program,
+such as Medicare or Medicaid”. The entry in the cumulative response only selects the “None”
+option. A value of no_healthins == "Yes" means that a respondent indicated they were
+not insured. To see the other responses, see the individual year’s CCES.
+union: Union membership
+
+“Are you a member of a union?”
+n
+Yes, Currently
+Yes, Formerly
+No, Never
+(Missing)
+
+48,930
+128,804
+505,197
+36,024
+
+– Years: 2006, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019,
+2020, 2021, 2022, 2024, 2025
+– Question wording and response options have been reworded to be harmonized across years.
+Please see each individual CCES for exact wording.
+– The 2008 CCES in its common content has a union question that roughly combines both the
+union and union_hh question.
+union_hh: Union membership in household
+
+“Other than yourself, is any member of your household a union member?”
+n
+Yes, Currently
+Yes, Formerly
+No, Never
+Not Sure
+(Missing)
+
+55,563
+90,241
+486,652
+15,031
+71,468
+
+– Years: 2006, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020,
+2021, 2022, 2024, 2025
+– Question wording and response options have been reworded to be harmonized across years.
+Please see each individual CCES for exact wording.
+– The 2008 CCES in its common content has a union question that roughly combines both the
+union and union_hh question.
+
+News Interest
+
+30
+
+investor: Investor
+
+“Do you personally (or jointly with a spouse), have any money invested in the stock market right
+now, either in an individual stock or in a mutual fund?”
+n
+Yes
+No
+(Missing)
+
+215,180
+283,957
+219,818
+
+– Years: 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024
+economy_retro: Retrospective economy
+
+“OVER THE PAST YEAR the nation’s economy has . . . ?”
+n
+Gotten much better
+Gotten better / somewhat better
+Stayed about the same
+Gotten worse / somewhat worse
+Gotten much worse
+Not sure
+(Missing)
+
+48,690
+142,663
+157,934
+179,494
+169,714
+19,232
+1,228
+
+– Years: All of 2006-2025
+– Limitations: Response options vary by year. Some are collapsed into one category (e.g.,
+Gotten Better, presented in some years, and Gotten Somewhat Better, presented in
+other years, are collapsed into Gotten Better / Somewhat Better). Some are left as is.
+For example, Not Sure was not an option in 2009.
+
+News Interest
+newsint: News Interest
+
+“Some people seem to follow what’s going on in government and public affairs most of the time,
+whether there’s an election going on or not. Others aren’t that interested. Would you say you follow
+what’s going on in government and public affairs ..”
+n
+Most of the time
+Some of the time
+Only now and then
+Hardly at all
+Don’t Know
+(Missing)
+
+356,238
+177,088
+84,910
+45,032
+18,497
+37,190
+
+– Years: All of 2007-2025
+– Limitations: Not asked in 2006. Similar questions about watching TV news was asked in
+2006, but not included in this cumulative ﬁle.
+
+Approval
+
+31
+
+Approval
+approval_pres: President approval
+
+“Do you approve of the way each is doing their job. . . [Pipe Incumbent President]”
+n
+Strongly Approve
+Approve / Somewhat Approve
+Disapprove / Somewhat Disapprove
+Strongly Disapprove
+Never Heard / Not Sure
+Neither Approve nor Disapprove
+(Missing)
+
+148,046
+164,754
+73,716
+310,395
+20,723
+443
+878
+
+– Years: All of 2006-2025
+– Limitations: Neither approve nor disapprove only included in 2007.
+– This question is asked in a grid format, along with Governors, Congress, and Courts.
+approval_rep: House Representative approval
+
+“Do you approve of the way each is doing their job. . . [Pipe Incumbent Representative’s Name]”
+n
+Strongly Approve
+Approve / Somewhat Approve
+Disapprove / Somewhat Disapprove
+Strongly Disapprove
+Never Heard / Not Sure
+Neither Approve nor Disapprove
+(Missing)
+
+107,889
+203,678
+109,700
+122,353
+164,311
+1,798
+9,226
+
+– Years: All of 2006-2025
+– Limitations: Neither approve nor disapprove only included in 2007.
+– This question is asked in a grid format, along with Senators (approval_sen1, approval_sen2).
+– To see who [Representative] refers to for a particular respondent, see rep_inc (incumbent
+identiﬁer in rep_icpsr)
+approval_sen1: Senator 1 approval
+
+“Do you approve of the way each is doing their job. . . [Pipe Incumbent Senator 1’s Name]”
+n
+Strongly Approve
+Approve / Somewhat Approve
+Disapprove / Somewhat Disapprove
+Strongly Disapprove
+Never Heard / Not Sure
+Neither Approve nor Disapprove
+(Missing)
+
+100,198
+204,378
+126,694
+157,591
+123,274
+1,413
+5,407
+
+Approval
+
+32
+
+– Years: All of 2006-2025
+– Limitations: Response options varies by year. Some are collapsed into one category (e.g.,
+Approve, presented in some years, and Somewhat Approve, presented in other years, are
+collapsed into Approve / Somewhat Approve). Neither approve nor disapprove only
+included in 2007.
+– To see who [Senator 1] refers to for a particular respondent, see sen1_inc (incumbent identiﬁer in sen1_icpsr)
+approval_sen2: Senator 2 approval
+
+“Do you approve of the way each is doing their job. . . [Pipe Incumbent Senator 2’s Name]”
+n
+Strongly Approve
+Approve / Somewhat Approve
+Disapprove / Somewhat Disapprove
+Strongly Disapprove
+Never Heard / Not Sure
+Neither Approve nor Disapprove
+(Missing)
+
+109,341
+195,444
+118,168
+160,161
+128,510
+1,158
+6,173
+
+– See approval_sen2
+approval_gov: Governor approval
+
+“Do you approve of the way each is doing their job. . . Governor of [Pipe State]”
+n
+Strongly Approve
+Approve / Somewhat Approve
+Disapprove / Somewhat Disapprove
+Strongly Disapprove
+Never Heard / Not Sure
+Neither Approve nor Disapprove
+(Missing)
+
+124,382
+217,257
+123,254
+187,857
+61,714
+1,414
+3,077
+
+– Years: All of 2006-2025
+– Limitations: See approval_pres
+– To see who the Governor refers to for a particular respondent, see gov_inc.
+
+Vote Choice Variables
+
+33
+
+Vote Choice Variables
+A note on the terms "intent" and "voted": In this dataset we make the distinction between “intent” / “preference” vs. “voted” / “vote choice”. “Intent” (or “preference”) refers to the response to the
+prospective question of the sort “who would you vote for?” in the pre-election wave. “Vote choice”
+refers to the response to the retrospective question of the sort “in the election this November, who
+did you vote for?”
+Response to the vote choice questions (in contrast to the intent questions) come from the postelection wave only. As of V5, I do not coalesce pre-election respondents who reported having
+already voted early.3
+A note on missingness, undervotes, and not voting: As of V10 (2025) onwards, people who
+self-report not turning out or not voting in a year’s election at all have a missing (NA) value
+for the variables starting with voted_pres_. In prior versions, these cases were given the value
+“Did not Vote”, but it became too confusing to maintain this distinction because coding between
+years are inconsistent. Also as of V10, we provide the value Undervoted to indicate “I turned out
+to vote in the election but I skipped the ofﬁce of President.” However, a missing value can also
+mean that the respondent did not take the post-election wave, where this data comes from.
+In short, respondents who have missing values for intent or vote choice can also be non-voters
+for a variety of reasons. When estimating voteshares, users should also look at the year-speciﬁc
+variables, turnout variables, and possibly the individual CES datasets. For turnout in the election,
+see the section on turnout.
+
+Presidential Vote
+intent_pres_party: President preference party
+
+[Party of presidential candidate chosen in intent_pres]
+n
+Democratic
+Republican
+Third Party
+Other
+(Missing)
+
+111,184
+92,029
+5,621
+25,937
+484,184
+
+– Years: 2008, 2012, 2016, 2020, 2024
+voted_pres_party: President vote in last election
+
+[Party of presidential candidate chosen in last election]
+3 In 2018, it also coalesces the responses to the straight ticket party option (CC18_409), so that those who selected the
+Republican straight party ticket in the applicable states will appear to have voted for the Republican candidate in all ofﬁces.
+The straight ticket party option was not asked in other years.
+
+Presidential Vote
+
+34
+
+n
+Democratic
+Republican
+Third Party
+Other
+Undervote
+(Missing)
+
+257,634
+215,236
+6,926
+20,083
+6,201
+212,875
+
+– Years: All of 2008-2025
+– See the variables for separate years (e.g. voted_pres_16, voted_pres_20, etc..) for more
+detailed breakdowns between third-party candidates.
+– Note that NA values can be a result of not answering the post-election wave, OR self-reporting
+that they did not turn out in the election (as of V10). See note above.
+– If a respondent reports that they did not turn out to vote (voted_turnout_self) but gives
+a candidate in voted_pres_**, then we set voted_pres_party to NA, while leaving the
+voted_pres_** as is. This only happens, e.g. in about 20-30 cases in 2024.
+– Note: In a presidential election year, this asks the vote of that year. The vote choice of the
+presidential election 4 years prior might be recorded separately. For example, for respondents in 2012, voted_pres_party corresponds to their 2012 vote, while voted_pres_08
+corresponds to their 2008 vote (which was asked in the same 2012 survey). For respondents
+in odd years, this represents their recollection of their vote in the last presidential election.
+For example, voted_pres_party for a respondent in 2023 indicates how they reported (in
+2023) voting in the 2020 election.
+intent_pres_08: 2008 President preference (before voting)
+
+“For which candidate for President of the United States would you vote?”
+n
+John McCain
+Barack Obama
+Ron Paul
+Ralph Nader
+Bob Barr
+Cynthia Mckinney
+Other
+I Won’t Vote in this Election
+Not Sure
+(Missing)
+
+13,322
+12,897
+535
+209
+258
+74
+352
+851
+1,697
+688,760
+
+– Years: 2008
+– Also see: intent_pres_party for vote choice in the most recent preceding presidential
+election into one party column.
+intent_pres_12: 2012 President preference (before voting)
+
+“In the race for President of the United States, who do you prefer?”
+
+Presidential Vote
+
+35
+
+n
+Mitt Romney (Republican)
+Barack Obama (Democratic)
+Other
+I Will not Vote in this Election
+Not Sure
+(Missing)
+
+20,738
+24,401
+1,781
+1,467
+3,856
+666,712
+
+– Years: 2012
+– Also see: intent_pres_party for vote choice in the most recent preceding presidential
+election into one party column.
+intent_pres_16: 2016 President preference (before voting)
+
+“Which candidate did you prefer for President of the United States?”
+n
+Donald Trump (Republican)
+Hillary Clinton (Democrat)
+Gary Johnson (Libertarian)
+Jill Stein (Green)
+Other
+I Won’t Vote in this Election
+Not Sure
+(Missing)
+
+19,227
+27,502
+3,145
+1,400
+1,880
+3,312
+6,536
+655,953
+
+– Years: 2016
+– Also see: intent_pres_party for vote choice in the most recent preceding presidential
+election into one party column.
+intent_pres_20: 2020 President preference (before voting)
+
+“Which candidate for President of the United States do you prefer?”
+n
+Donald Trump (Republican)
+Joe Biden (Democrat)
+Other
+I Won’t Vote in this Election
+Not Sure
+(Missing)
+
+18,977
+22,400
+1,389
+2,390
+3,791
+670,008
+
+– Years: 2020
+– Also see: intent_pres_party for vote choice in the most recent preceding presidential
+election into one party column.
+intent_pres_24: 2024 President preference (before voting)
+
+“Which candidate for President of the United States do you prefer?”
+
+Presidential Vote
+
+36
+
+n
+Kamala Harris (Democrat)
+Donald Trump (Republican)
+Other
+I Won’t Vote in this Election
+Not Sure
+(Missing)
+
+23,984
+19,765
+1,656
+1,992
+2,999
+668,559
+
+– Years: 2024
+– Also see: intent_pres_party for vote choice in the most recent preceding presidential
+election into one party column.
+voted_pres_08: 2008 President vote choice (after voting)
+
+“2008: For which candidate for President of the United States did you vote? [see guide for wording
+in all years]”
+n
+Barack Obama
+John McCain
+Other
+Not Sure
+(Missing)
+
+73,986
+68,398
+4,204
+1,787
+570,580
+
+– Years: 2008, 2009, 2010, 2011, 2012
+– Limitations: Response options offer slightly by year; some are collapsed into one. In most
+years (2008-2010) this question is asked only to those who respondent saying they voted
+(those who said they did not vote are given a missing value). In 2011, there was no such
+branching.
+– See voted_pres_party for vote choice in the most recent preceding presidential election
+into one party column.
+voted_pres_12: 2012 President vote choice (after voting)
+
+“2012: For whom did you vote for President of the United States? 2016: In 2012, who did you vote
+for in the election for President? [see guide for wording in all years]”
+n
+Barack Obama
+Mitt Romney
+Other
+Undervote
+Not Sure
+(Missing)
+
+82,543
+64,740
+5,872
+704
+1,990
+563,106
+
+– Years: 2012, 2013, 2014, 2015, 2016
+– Limitations: Response options offer slightly by year; some are collapsed into one.
+– Note that NA values can be a result of not answering the post-election wave, OR self-reporting
+that they did not turn out in the election (as of V10). See note on Presidential vote.
+
+Presidential Vote
+
+37
+
+– See voted_pres_party for vote choice in the most recent preceding presidential election
+into one party column.
+voted_pres_16: 2016 President vote choice (after voting)
+
+“2017: In the election for U.S. President, who did you vote for? [If reported voting] 2016: For whom
+did you vote for President of the United States? [Post-election]”
+n
+Hilary Clinton
+Donald Trump
+Gary Johnson
+Evan McMullin
+Jill Stein
+Other
+Undervote
+Not Sure
+(Missing)
+
+131,931
+110,839
+8,370
+1,282
+4,589
+10,892
+617
+516
+449,919
+
+– Years: 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024
+– Note that NA values can be a result of not answering the post-election wave, OR self-reporting
+that they did not turn out in the election (as of V10). See note on Presidential vote.
+– See voted_pres_party for vote choice in the most recent preceding presidential election
+into one party column.
+voted_pres_20: 2020 President vote choice (after voting)
+
+[If reported voting] 2024: For whom did you vote for President of the United States? [Post-election]
+n
+Joe Biden
+Donald Trump
+Jo Jorgensen
+Howie Hawkins
+Other
+Undervote
+Not Sure
+(Missing)
+
+110,068
+78,974
+2,314
+846
+3,223
+113
+190
+523,227
+
+– Years: 2020, 2021, 2022, 2023, 2024, 2025
+voted_pres_24: 2024 President vote choice (after voting)
+
+[If reported voting] 2024: For whom did you vote for President of the United States? [Post-election]
+
+House, Senate and Governor Vote
+
+38
+
+n
+Kamala Harris
+Donald Trump
+Jill Stein
+Robert F. Kennedy, Jr.
+Cornel West
+Chase Oliver
+Other
+Undervote
+(Missing)
+
+29,766
+24,108
+480
+277
+129
+332
+705
+4,916
+658,242
+
+– Years: 2024, 2025
+– Note that NA values can be a result of not answering the post-election wave, OR self-reporting
+that they did not turn out in the election (as of V10). See note on Presidential vote.
+– Also see: voted_pres_party for vote choice in the most recent preceding presidential election into one party column.
+
+House, Senate and Governor Vote
+intent_rep: House preference (before voting)
+
+“In the general election for U.S. House of Representatives in your area, who do you prefer?”
+n
+[Democrat / Candidate 1]
+[Republican / Candidate 2]
+[Other / Candidate 3]
+[Other / Candidate 4]
+Other
+[Other / Candidate 5]
+I Won’t Vote in this Election
+[Other / Candidate 6]
+[Other / Candidate 9]
+[Other / Candidate 7]
+[Other / Candidate 8]
+[Other / Candidate 10]
+[Other / Candidate 11]
+No One
+Not Sure
+(Missing)
+
+190,605
+165,769
+5,488
+126
+3,568
+40
+2,269
+74
+2
+37
+24
+1
+3
+30,443
+97,076
+223,430
+
+– Years: 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024
+– Limitations: Only available for even years. The third party candidate is not speciﬁed for early
+years. The fourth candidate and below are not shown for most years. Response options differ
+by year.
+– Note that it is not always the case that 1 is a Democrat and 2 is a Republican. When two
+Democrats are on the general ballot (e.g., in top-two primary states like California), both
+candidates are Democrats. Use intent_rep_party to see the party afﬁliation of the chosen
+candidate.
+
+House, Senate and Governor Vote
+
+39
+
+– Note that for each respondent, a name (and party afﬁliation) is shown in place of the square
+bracket values. To see the name of the candidate chosen, see intent_rep_chosen.
+– [Other / Candidate 3] refers to the third option presented, whereas Other refers to the
+unnamed choice after all numbered candidates.
+intent_sen: Senate preference (before voting)
+
+“In the race for U.S. Senator in your state, who do you prefer?”
+n
+[Democrat / Candidate 1]
+[Republican / Candidate 2]
+[Other / Candidate 3]
+[Other / Candidate 4]
+Other
+Not Sure
+No One
+I Won’t Vote in this Election
+(Missing)
+
+142,855
+117,389
+4,880
+89
+2,526
+52,247
+18,837
+1,145
+378,987
+
+– Years: 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024
+– Limitations: See intent_rep. When both Senate seats are up for re-election in the same
+year, only responses to the ﬁrst senate seat is incorporated. For the second Senate seat, see
+individual year’s CCES.
+– See intent_sen_party for the party afﬁliation of the chosen candidate.
+intent_gov: Governor preference (before voting)
+
+“In the race for Governor in your state, who do you prefer?”
+n
+[Democrat / Candidate 1]
+[Republican / Candidate 2]
+[Other / Candidate 3]
+Other
+Not Sure
+No One
+I Won’t Vote in this Election
+(Missing)
+
+99,966
+85,707
+4,385
+1,992
+30,548
+11,287
+466
+484,604
+
+– Years: 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024
+– Limitations: See intent_rep. Here we only record even-year races. For governor elections
+in odd years, see individual year’s CCES.
+– See intent_gov_party for the party afﬁliation of the chosen candidate.
+voted_rep: House vote choice (after voting)
+
+“For whom did you vote for U.S. House?”
+
+House, Senate and Governor Vote
+
+40
+
+n
+[Democrat / Candidate 1]
+[Republican / Candidate 2]
+[Other / Candidate 3]
+[Other / Candidate 4]
+[Other / Candidate 7]
+Other
+I Did Not Vote In This Race
+[Other / Candidate 5]
+Not Sure
+[Other / Candidate 6]
+I Did not Vote in this Race
+I Did not Vote
+[Other / Candidate 8]
+[Other / Candidate 9]
+[Other / Candidate 10]
+[Other / Candidate 11]
+(Missing)
+
+186,065
+162,980
+3,502
+91
+37
+4,773
+12,362
+42
+6,394
+66
+3,651
+345
+16
+2
+2
+3
+338,624
+
+– Years: 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024
+– Note that it is not always the case that 1 is a Democrat and 2 is a Republican. When two
+Democrats are on the general ballot (e.g., in top-two primary states like California), both
+candidates are Democrats. Use voted_rep_party for party afﬁliation
+– See voted_rep_party for party afﬁliation.
+voted_sen: Senate vote choice (after voting)
+
+“For whom did you vote for U.S. Senator?”
+n
+[Democrat / Candidate 1]
+[Republican / Candidate 2]
+[Other / Candidate 3]
+[Other / Candidate 4]
+Other
+I Did not Vote
+Not Sure
+I Did Not Vote In This Race
+(Missing)
+
+134,774
+112,422
+3,361
+64
+2,316
+28
+2,733
+6,299
+456,958
+
+– Years: 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024
+– See voted_sen_party for party afﬁliation.
+– Senate Special elections where both Senate seats are up for election is often recorded as
+different columns in the year-speciﬁc CCES, but these are not collected in the cumulative.
+voted_gov: Governor vote choice (after voting)
+
+“For whom did you vote for Governor?”
+
+House, Senate and Governor Vote
+
+41
+
+n
+[Democrat / Candidate 1]
+[Republican / Candidate 2]
+[Other / Candidate 3]
+[Other / Candidate 4]
+[Other / Candidate 5]
+I Did not Vote in this Race
+I Did not Vote
+Other
+I Did Not Vote In This Race
+Not Sure
+(Missing)
+
+90,215
+79,031
+2,893
+8
+10
+327
+62
+2,479
+4,328
+1,344
+538,258
+
+– Years: 2006, 2008, 2010, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021,
+2022, 2023, 2024, 2025. Odd-year Governor elections in NJ, VA, KY, MS, and LA start to
+appear in 2013.
+– See voted_gov_party for party afﬁliation.
+voted_rep_party: House vote choice party
+
+[Party of candidate chosen by respondent in voted_rep]
+
+House, Senate and Governor Vote
+
+42
+
+n
+Democratic
+Republican
+Libertarian
+Independent
+Green
+Conservative
+Reform
+Constitution
+Independence
+No Party Preference
+United Utah
+Independent (Democratic)
+Tea
+Liberty Union
+Socialist Workers
+Working Class
+Working Families
+American
+Green Independent
+Independent American
+Democratic-Republican
+No Party Afﬁliation
+D.C. Statehood Green
+Unafﬁliated
+Liberty
+Moderate
+Unity
+For Americans
+Statehood Green
+Alliance
+Libertarian/Green
+No Party Afﬁliation; (Democratic)
+Wake Up USA
+(Missing)
+
+185,779
+161,762
+1,518
+1,373
+262
+82
+61
+37
+32
+33
+22
+19
+16
+11
+11
+10
+7
+6
+5
+6
+5
+5
+3
+4
+3
+3
+3
+2
+2
+1
+1
+1
+1
+367,869
+
+– Years: 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024
+– Similar to voted_pres_party. See voted_rep_chosen for the name of the candidate, and
+intent_rep_party for the pre-election version of this variable.
+voted_sen_party: Senate vote choice party
+
+[Party of candidate chosen by respondent in voted_sen]
+
+House, Senate and Governor Vote
+
+43
+
+n
+Democratic
+Republican
+Independent
+Libertarian
+Green
+Constitution
+Write-In ONLY
+Tea
+Independence
+Reform
+Independent American Party of Utah
+(Missing)
+
+135,914
+109,580
+2,387
+988
+203
+46
+16
+12
+11
+7
+3
+469,788
+
+– Years: 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024
+– Similar to voted_pres_party. See voted_sen_chosen for the name of the candidate, and
+intent_sen_party for the pre-election version of this variable.
+voted_gov_party: Governor vote choice party
+
+[Party of candidate chosen by respondent in voted_gov]
+n
+Democratic
+Republican
+Libertarian
+Independent
+American Constitution
+Conservative
+Other
+Independence
+Green
+Independent Party of Oregon
+Alaska Independence
+(Missing)
+
+89,758
+78,510
+440
+447
+351
+163
+76
+47
+39
+34
+2
+549,088
+
+– Years: 2006, 2008, 2010, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021,
+2022, 2023, 2024, 2025
+– Similar to voted_pres_party. See voted_gov_chosen for the name of the candidate, and
+intent_gov_party for the pre-election version of this variable.
+
+METADATA AND IDENTIFIERS
+
+44
+
+Metadata and Identiﬁers
+Identiﬁers
+The case identiﬁer case_id is unique within the year and is identical to the case identiﬁers in the
+individual year’s CCES. It should be used in conjunction with year for a unique identiﬁer for the
+whole dataset. Some individuals across years may be the same YouGov panel respondent with
+different identiﬁers; for example the 2007 CCES draws from the 2006 CCES respondents.
+Rows: 718,955
+Columns: 2
+$ year
+<int> 2006, 2006, 2006, 2006, 2006, 2006, 2006, 2006, 2006, 2006, 20~
+$ case_id <dbl> 439219, 439224, 439228, 439237, 439238, 439242, 439251, 439254~
+
+Current Representatives’ Name and Party
+The four names in the three ofﬁces are representatives of the respondent at the time of the survey.
+Names are printed as shown, and similarly parties are shown if the particular year’s CCES did not
+show party. For example, Senator Shelby is presented as Richard Craig Shelby, Richard C.
+Shelby (R), Richard Shelby (R), Richard C. Shelby (R), depending on the year. Party
+names are abbreviated down to initials (D for Democrat, R for Republican, I for Independent) in this
+dataset.
+Because of the changes in naming by year, users should not assume that rep_current and
+voted_rep_chosen of a given respondent should be named the same way.
+Rows: 718,955
+Columns: 4
+$ rep_current <chr> "Patrick T. McHenry (R)", "Michael R. Turner (R)", "Rober~
+$ sen1_current <chr> "Elizabeth Dole (R)", "Mike DeWine (R)", "Robert Menendez~
+$ sen2_current <chr> "Richard Burr (R)", "George V. Voinovich (R)", "Frank R. ~
+$ gov_current <chr> "Michael Easley (D)", "Bob Taft (R)", "Jon Corzine (D)", ~
+
+ICPSR Identiﬁers
+Unique identiﬁers (ICPSR / Nominate for Congress) for the current representatives. Identiﬁers are
+not part of the individual year’s CCES. Instead, I attempt to merge in these identiﬁers through a
+series of name and district merges.
+The matching of identiﬁers to respondent occurs through matching by district, by district and
+last name, or both:
+– For House representatives, we join on cong, st, and dist to a NOMINATE database that
+only consists of unique observations according to the key. For duplicates with regards to
+these three variables (e.g., in the rare case where a new representative comes into ofﬁce
+mid-session), we match on cong, st, dist and last name.
+– For Senators, we join entirely on cong, st, and last name
+– Missing for DC residents.
+Rows: 718,955
+Columns: 3
+$ rep_icpsr <dbl> 20522, 20342, 29132, 29911, 29380, 20531, 29126, 29739, 205~
+$ sen1_icpsr <dbl> 40303, 15020, 29373, 15021, 14858, 49306, 40101, 15054, 493~
+$ sen2_icpsr <dbl> 29548, 49903, 14914, 40502, 40105, 40305, 40302, 29537, 403~
+
+Name of Chosen Candidate
+
+45
+
+– Years: All of 2006-2025
+– Limitations: Please note there may be some incorrect merges, especially for nontraditional
+names and representatives who were elected in special elections and may not be in some
+datasets.
+The unique identiﬁers can be used to join with other databases to append additional information
+such as committee membership and ideology scores, such as
+Lewis, Jeffrey B., Keith Poole, Howard Rosenthal, Adam Boche, Aaron Rudkin, and
+Luke Sonnet (2017). Voteview: Congressional Roll-Call Votes Database. https://
+voteview.com/
+
+The text responses that the respondent chose in each of the intent_ / voted_ questions, if the
+respondent was a candidate. For example, respondent with case_id = 163051575 in the 2012
+CCES chose the ﬁrst option in the House representative preference question. intent_rep_chosen
+shows that this particular respondent preferred voting for Maxine Waters, one of the two Democrats
+in the race.
+cc |>
+filter(year == 2012, as_factor(st) == "CA", dist_up == 43) |>
+select(matches("intent_rep"))
+# A tibble: 91 x 3
+intent_rep
+intent_rep_party intent_rep_chosen
+<fct>
+<fct>
+<chr>
+1 [Democrat / Candidate 1]
+Democratic
+Maxine Waters (D)
+2 Not Sure
+<NA>
+<NA>
+3 No One
+<NA>
+<NA>
+4 [Democrat / Candidate 1]
+Democratic
+Maxine Waters (D)
+5 [Republican / Candidate 2] Democratic
+Bob Flores (D)
+6 Not Sure
+<NA>
+<NA>
+7 Other
+<NA>
+<NA>
+8 [Republican / Candidate 2] Democratic
+Bob Flores (D)
+9 [Republican / Candidate 2] Democratic
+Bob Flores (D)
+10 [Democrat / Candidate 1]
+Democratic
+Maxine Waters (D)
+# i 81 more rows
+
+The name and party are those as provided in the CCES datasets (e.g., in the form HouseCand1Name).
+
+Name of Chosen Candidate
+Rows: 718,955
+Columns: 6
+$ intent_rep_chosen <chr> "Richard C. Carsner (D)", "Stephanie Studebaker (D)"~
+$ intent_sen_chosen <chr> NA, "Sherrod C. Brown (D)", "Robert Menendez (D)", N~
+$ intent_gov_chosen <chr> NA, "Ted Strickland (D)", NA, "Rod Blagojevich (D)",~
+$ voted_rep_chosen <chr> "Richard C. Carsner (D)", "Stephanie Studebaker (D)"~
+$ voted_sen_chosen <chr> NA, "Sherrod C. Brown (D)", "Robert Menendez (D)", N~
+$ voted_gov_chosen <chr> NA, "Ted Strickland (D)", NA, "Rod Blagojevich (D)",~
+
+– Years: 2006, 2008, 2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024
+– Early years may mislabel the candidate’s party, especially when the two candidates are of the
+same party (as in top-two primary states)
+– See the variables that replace _chosen with _party for the party of the candidate.
+
+VERSION HISTORY OF DATAVERSE RELEASES
+
+46
+
+Version History of Dataverse Releases
+Routine edits add new rows, add new variables, and change the customization of existing variables.
+The version history is explained below and old versions can be downloaded from Dataverse. Dataverse assigns version numbers by incrementing by a full number if any of the datasets change, and
+by incrementing by a decimal when only the description/metadata changes.
+Version 12.0 (released 2026-07-14)
+– Adds 2025 common content
+– Adds odd-year governor vote choice for the states that have them (NJ, VA, KY, MS, LA),
+starting in 2013. (#61)
+– Adds 2008 values for individual union membership (#73, thanks to Brian Schaffner)
+– For 2014 data, now uses an updated V6 of the 2014 CCES, which was updated in 2024 to
+ﬁx some CD variables. This changes 41 rows (< 1 % of 2014 data) in the following variables:
+tookpost, state_post, st_post, (dist|cd|dist_up|cd_post)_post, voted_turnout_self,
+and voted_(pres|rep|sen|gov)_(party|chosen|).
+– For 2022 data, now uses an updated V4 of the 2022 CCES, which was updated in April 2024
+to ﬁll missing county codes. This adds county_fips for 131 rows (< 1 % of 2022 data).
+– Standardizes the early-vote label in intent_turnout_self (#79)
+– Fixes candidate-slot matching for down-ballot vote-choice variables when raw CCES labels
+refer to Candidate 4 or higher. Among non-missing values, this changes less than 0.1%
+of rows in (intent|vote)_rep(|chosen|party) variables, less than 0.05% of rows in
+(intent|vote)_sen(|chosen|party) and 0.01% of rows in voted_gov (#70)
+– Adds 2025 vv_party_gen values, including the new categories No Party, Independent,
+Declined to State and Not Sure. Because validated-vote party variables are ordered by
+frequency, these new categories shift the order of rarer vv_party_gen levels after Other.
+– Media, knowledge, and attention variables are being assembled in a separate cumulative
+database at kuriwaki/cumulative_knowledge.
+Version 11.0 (released 2025-10-08)
+– Includes vote validation variables for 2024 (vv_regstatus, vv_turnout_gvm, etc..). Value
+label numbering has changed as a result.
+– Adds vote validated registered state as variable (vv_state)
+– Renames what was previously rvweight to vvweight so that it is consistent with the Common content
+– Fix: for approval_*, Standardize “Never Heard of this Person” in 2013-2014, 2018 to “Never
+Heard” like other years (issue 71)
+Version 10.0 (released 2025-05-21)
+– Adds 2024 Common Content (before vote validation), up to n = 701,955
+– Fixes a bug in voted_pres_party where past election vote was being ﬁlled in for some
+respondents who did not take the post-election wave in that year. Created a new value, “undervote”, to distinguish between not turning out at all, and changed self-reported no turnout
+to NA
+– Added self-reported registration (reg_self)
+– Added sexual orientation (sexuality) and investor status (investor)
+
+VERSION HISTORY OF DATAVERSE RELEASES
+
+47
+
+Version 9.0 (released 2024-06-17)
+– Adds 2023 Common Content, up to n = 641,955
+– Adds 2022 vote validation
+– Fixes and modiﬁes issues in 2008 presidential vote “did not vote” (issue 63 on Github)
+– Missing values in Stata are no longer large negative numbers (Thanks to Peter Wielhouwer)
+Version 8.0 (released 2023-05-12)
+– Adds 2022 Common Content (before vote validation), up to n = 617,455
+– Adds gender4 (a variable for gender identiﬁcation introduced in 2021), add back gender for
+2021-2022, and add sex for 2006-2020.
+– Adds a “any-part Hispanic” variable, race_h, that combines race and hispanic.
+– Adds a “Hispanic origin” variable, hisp_origin, which concatenates the responses to the
+hispanic question.
+– Added more religion variables (relig_imp, relig_bornagain, relig_protestant, relig_church).
+– Added feather version of the data
+Version 7.0 (released 2022-03-24)
+– Enter 2021 Common Content (up to n = 557,455)
+– Enter 2020 validated vote variables
+– Corrects error in 2010 3 point Party ID which had used the post-election wave rather than the
+pre-election wave used in the other years (Thanks to Gerald Wright).
+– Adds variables for: self reported turnout
+Version 6.0 (released 2021-04-06)
+– Enter 2020 common content (preliminary, before voter ﬁle match), pre-election (up to n =
+531,755).
+– Distinguished between third party Presidential vote (thanks to Valerie Bradley)
+– Added further explanation to usage of weights where post-election weights are not available
+(thanks to Alexander Agadjanian)
+– Added usage example of the R dataverse package
+Version 5.0 (released 2020-10-04)
+– Enter 2019 common content (up to n = 470,755)
+– Adds variables for: employment, union membership, religion, citizenship, children, homeownership, lack of insurance, and lack of military members in immediate family. (thanks
+to Brian Schaffner)
+– Add a separate variable for the post-election wave values of state, st, dist, cd, and cd_up.
+Between the pre-post waves, about 0.9 percent of respondents appear to move CDs and 0.4
+percent move states.
+– Undo coalescing pre-election wave already-voted vote choice, keeping voted_* variables
+with just post-election wave responses.
+– Adds a separate variable for intent/voted party choice in presidential race
+– Add leading zeros to congressional districts in the ﬁrst digits (e.g., "MA-1" is now "MA-01"),
+and create a variable cd_up similar to dist_up.
+– Modify prepositions of value labels to lower case (e.g., Not At All to Not at All)
+Version 4.0 (released 2019-09-09)
+– Enter 2018 vote validation
+
+VERSION HISTORY OF DATAVERSE RELEASES
+
+48
+
+– Coalesce straight party ticket vote into vote choice entries
+– Remove FEC identiﬁers
+Version 3.0 (released 2019-04-29)
+– Add 2018 Common Content before vote validation (up to n = 452,755)
+Version 2.0 (released 2018-04-16)
+– Add 2017 Common Content (up to n = 392,755)
+– Corrects 2016 validated vote entries inherited from Common Content.
+– Consolidates weights to a single column, using post-vote validation weights for even years.
+– Adds hispanic and faminc variables (thanks to Bernard Fraga)
+Version 1.0 (released 2018-01-24)
+– First upload, covering 2006 - 2016 (n = 374,556)
+
+
