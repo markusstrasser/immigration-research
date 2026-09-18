@@ -1,0 +1,38 @@
+India's share of US admission channels — DHS/OHSS Yearbook of Immigration Statistics
+
+class of admission                                    2020        2021        2022        2023        2024
+Diversity                                             0.1%        0.1%        0.1%        0.1%        0.1%
+Employment-based preferences                         16.7%       39.0%       35.6%       14.5%       11.0%
+Family-sponsored preferences                          5.8%        2.9%        4.9%        7.4%        5.1%
+Immediate relatives of U.S. citizens                  4.0%        3.9%        4.8%        5.8%        5.1%
+Other                                                 0.0%        1.0%        1.2%        1.5%        0.8%
+Refugees and asylees                                  1.8%        1.8%        2.2%        1.8%        1.7%
+Total                                                 6.6%       12.6%       12.5%        6.7%        4.9%
+
+India persons, same cells:
+Diversity                                               13          22          56          60          30
+Employment-based preferences                        24,883      75,332      96,335      28,570      18,800
+Family-sponsored preferences                         7,077       1,896       8,055      15,140       9,660
+Immediate relatives of U.S. citizens                12,945      14,949      20,396      31,790      34,090
+Other                                                    6         242         341         790         520
+Refugees and asylees                                 1,146       1,009       1,829       1,740       3,710
+Total                                               46,363      93,450     127,012      78,070      66,800
+
+I-94 nonimmigrant admissions, FY2024, India share of each category:
+  All other classes                                       6.0%  (48,810 of 818,150)
+  Diplomats and other representatives6                    1.9%  (8,830 of 464,970)
+  Students and exchange visitors3                        13.4%  (331,970 of 2,479,300)
+  Temporary workers and families4                        16.3%  (840,320 of 5,156,080)
+  Total                                                   3.8%  (2,944,840 of 77,646,290)
+  Tourists and business travelers - other2                3.6%  (1,713,410 of 48,224,100)
+  Treaty Traders5                                         0.1%  (650 of 603,160)
+  Unknown                                                 0.6%  (850 of 132,580)
+  Athletes, artists, and entertainers (P1 to P3)          2.3%  (3,590 of 157,580)
+  Intracompany transferees (L1)                          10.8%  (64,910 of 598,330)
+  Other2                                                  0.2%  (3,030 of 1,598,990)
+  Seasonal agricultural workers (H2A)                     0.0%  (0 of 724,900)
+  Seasonal non-agricultural workers (H2B, H2R)            0.0%  (10 of 186,600)
+  Spouses and children3                                  32.6%  (265,400 of 814,530)
+  Total temporary workers and families1                  16.3%  (840,320 of 5,156,080)
+  Workers in specialty occupations (H1B)                 55.9%  (497,460 of 890,310)
+  Workers with extraordinary ability/ achievement (O1,    3.2%  (5,930 of 184,850)

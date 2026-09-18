@@ -1,0 +1,331 @@
+group,metric,value,n_unweighted,universe
+all_foreign_born,accommodation_7211_share_of_employed,0.000516,219176,employed 25-64
+all_foreign_born,accommodation_7211_share_of_self_employed,0.003915,28392,self-employed 25-64
+all_foreign_born,ba_plus_share,0.368315,287286,adults 25-64
+all_foreign_born,computer_math_occ_share_of_employed,0.060470,219176,employed 25-64
+all_foreign_born,doctorate_share,0.026918,287286,adults 25-64
+all_foreign_born,employment_rate_25_64,0.772904,287286,adults 25-64
+all_foreign_born,english_not_well_or_not_at_all_share,0.259990,423012,foreign-born 5+
+all_foreign_born,english_very_well_or_only_share,0.532180,423012,foreign-born 5+
+all_foreign_born,graduate_degree_share,0.167727,287286,adults 25-64
+all_foreign_born,group_share_of_all_employed,0.195087,219176,"national denominator, 25-64"
+all_foreign_born,group_share_of_all_self_employed,0.256728,28392,"national denominator, 25-64"
+all_foreign_born,group_share_of_computer_math_occupations,0.272884,14809,"national denominator, 25-64"
+all_foreign_born,group_share_of_physicians_surgeons,0.268507,2451,"national denominator, 25-64"
+all_foreign_born,group_share_of_self_employed_traveler_accommodation,0.406580,109,"national denominator, 25-64"
+all_foreign_born,hs_or_less_share,0.449448,287286,adults 25-64
+all_foreign_born,mean_household_size,3.031160,178717,"households, householder's group, WGTP"
+all_foreign_born,median_age,46.000000,425320,all ages
+all_foreign_born,median_household_income_householder_group,78910.693200,178717,"households, householder's group, WGTP"
+all_foreign_born,median_years_in_us,21.000000,425320,foreign-born
+all_foreign_born,naturalised_share,0.522728,425320,foreign-born
+all_foreign_born,naturalised_share_years_in_us_0_4,0.040007,53434,foreign-born in that entry window
+all_foreign_born,naturalised_share_years_in_us_10_14,0.514723,38213,foreign-born in that entry window
+all_foreign_born,naturalised_share_years_in_us_15_19,0.522949,40293,foreign-born in that entry window
+all_foreign_born,naturalised_share_years_in_us_20_plus,0.710850,244038,foreign-born in that entry window
+all_foreign_born,naturalised_share_years_in_us_5_9,0.263015,49342,foreign-born in that entry window
+all_foreign_born,physician_surgeon_share_of_employed,0.009372,219176,employed 25-64
+all_foreign_born,population_25_64,33587103.000000,287286,adults 25-64
+all_foreign_born,population_all_ages,47805505.000000,425320,all ages
+all_foreign_born,self_employed_incorporated_share,0.049622,219176,employed 25-64
+all_foreign_born,self_employed_share_of_employed,0.131822,219176,employed 25-64
+all_foreign_born,top10_occupation_share_of_employed,0.231879,219176,employed 25-64
+all_foreign_born,top10_puma_share,0.020894,425320,all ages
+all_foreign_born,top50_puma_share,0.080999,425320,all ages
+all_foreign_born,top5_state_share,0.582382,425320,all ages
+all_foreign_born,top_occupation_01,0.029954,219176,1021 CMM-Software Developers
+all_foreign_born,top_occupation_02,0.029259,219176,9130 TRN-Driver/Sales Workers And Truck Drivers
+all_foreign_born,top_occupation_03,0.028469,219176,440 MGR-Other Managers
+all_foreign_born,top_occupation_04,0.028004,219176,6260 CON-Construction Laborers
+all_foreign_born,top_occupation_05,0.023099,219176,4230 CLN-Maids And Housekeeping Cleaners
+all_foreign_born,top_occupation_06,0.022313,219176,4220 CLN-Janitors And Building Cleaners
+all_foreign_born,top_occupation_07,0.021350,219176,3255 MED-Registered Nurses
+all_foreign_born,top_occupation_08,0.020106,219176,4020 EAT-Cooks
+all_foreign_born,top_occupation_09,0.014831,219176,"9620 TRN-Laborers And Freight, Stock, And Material Movers, Hand"
+all_foreign_born,top_occupation_10,0.014496,219176,4251 CLN-Landscaping And Groundskeeping Workers
+all_foreign_born,top_selfemployed_industry_01,0.194108,28392,770 CON-Construction (The Cleaning Of Buildings And Dwellings Is Incidental During Construction And Immediately After Construction)
+all_foreign_born,top_selfemployed_industry_02,0.054928,28392,"7690 PRF-Services To Buildings And Dwellings, Except Landscaping Services"
+all_foreign_born,top_selfemployed_industry_03,0.051406,28392,"8680 ENT-Food Services And Drinking Places, except Alcoholic Beverages"
+all_foreign_born,top_selfemployed_industry_04,0.045470,28392,9290 SRV-Private Households
+all_foreign_born,top_selfemployed_industry_05,0.044070,28392,6170 TRN-Truck Transportation
+china_born,accommodation_7211_share_of_employed,0.000221,12622,employed 25-64
+china_born,accommodation_7211_share_of_self_employed,0.001908,1413,self-employed 25-64
+china_born,ba_plus_share,0.589981,16128,adults 25-64
+china_born,computer_math_occ_share_of_employed,0.145732,12622,employed 25-64
+china_born,doctorate_share,0.109671,16128,adults 25-64
+china_born,employment_rate_25_64,0.785106,16128,adults 25-64
+china_born,english_not_well_or_not_at_all_share,0.328809,24258,foreign-born 5+
+china_born,english_very_well_or_only_share,0.420955,24258,foreign-born 5+
+china_born,graduate_degree_share,0.376955,16128,adults 25-64
+china_born,group_share_of_all_employed,0.008838,12622,"national denominator, 25-64"
+china_born,group_share_of_all_self_employed,0.010224,1413,"national denominator, 25-64"
+china_born,group_share_of_computer_math_occupations,0.029792,1875,"national denominator, 25-64"
+china_born,group_share_of_physicians_surgeons,0.018771,172,"national denominator, 25-64"
+china_born,group_share_of_self_employed_traveler_accommodation,0.007891,4,"national denominator, 25-64"
+china_born,hs_or_less_share,0.301715,16128,adults 25-64
+china_born,mean_household_size,2.624275,10036,"households, householder's group, WGTP"
+china_born,median_age,46.000000,25017,all ages
+china_born,median_household_income_householder_group,91756.620000,10036,"households, householder's group, WGTP"
+china_born,median_years_in_us,17.000000,24307,foreign-born
+china_born,naturalised_share,0.522722,24307,foreign-born
+china_born,naturalised_share_years_in_us_0_4,0.032430,3233,foreign-born in that entry window
+china_born,naturalised_share_years_in_us_10_14,0.382603,3627,foreign-born in that entry window
+china_born,naturalised_share_years_in_us_15_19,0.604667,2752,foreign-born in that entry window
+china_born,naturalised_share_years_in_us_20_plus,0.836106,10998,foreign-born in that entry window
+china_born,naturalised_share_years_in_us_5_9,0.155355,3697,foreign-born in that entry window
+china_born,physician_surgeon_share_of_employed,0.014462,12622,employed 25-64
+china_born,population_25_64,1497895.000000,16128,adults 25-64
+china_born,population_all_ages,2280969.000000,25017,all ages
+china_born,self_employed_incorporated_share,0.055569,12622,employed 25-64
+china_born,self_employed_share_of_employed,0.115880,12622,employed 25-64
+china_born,spouse_china_born_share,0.775498,12781,married spouse-present couples
+china_born,top10_occupation_share_of_employed,0.324486,12622,employed 25-64
+china_born,top10_puma_share,0.123103,25017,all ages
+china_born,top50_puma_share,0.308740,25017,all ages
+china_born,top5_state_share,0.638006,25017,all ages
+china_born,top_occupation_01,0.086794,12622,1021 CMM-Software Developers
+china_born,top_occupation_02,0.035598,12622,2205 EDU-Postsecondary Teachers
+china_born,top_occupation_03,0.029967,12622,4000 EAT-Chefs And Head Cooks
+china_born,top_occupation_04,0.029211,12622,800 FIN-Accountants And Auditors
+china_born,top_occupation_05,0.028819,12622,440 MGR-Other Managers
+china_born,top_occupation_06,0.028224,12622,"1760 SCI-Physical Scientists, All Other"
+china_born,top_occupation_07,0.023337,12622,1240 CMM-Other Mathematical Science Occupations
+china_born,top_occupation_08,0.022773,12622,4110 EAT-Waiters And Waitresses
+china_born,top_occupation_09,0.020883,12622,1530 ENG-Other Engineers
+china_born,top_occupation_10,0.018880,12622,4720 SAL-Cashiers
+china_born,top_selfemployed_industry_01,0.190129,1413,"8680 ENT-Food Services And Drinking Places, except Alcoholic Beverages"
+china_born,top_selfemployed_industry_02,0.062858,1413,770 CON-Construction (The Cleaning Of Buildings And Dwellings Is Incidental During Construction And Immediately After Construction)
+china_born,top_selfemployed_industry_03,0.061559,1413,8990 SRV-Nail Salons And Other Personal Care Services
+china_born,top_selfemployed_industry_04,0.052687,1413,"7071 FIN-Lessors Of Real Estate, And Offices Of Real Estate Agents And Brokers"
+china_born,top_selfemployed_industry_05,0.042084,1413,6190 TRN-Taxi And Limousine Service
+china_born_broad,accommodation_7211_share_of_employed,0.000246,16600,employed 25-64
+china_born_broad,accommodation_7211_share_of_self_employed,0.002162,1843,self-employed 25-64
+china_born_broad,ba_plus_share,0.628306,21327,adults 25-64
+china_born_broad,computer_math_occ_share_of_employed,0.140752,16600,employed 25-64
+china_born_broad,doctorate_share,0.101613,21327,adults 25-64
+china_born_broad,employment_rate_25_64,0.783508,21327,adults 25-64
+china_born_broad,english_not_well_or_not_at_all_share,0.285398,31841,foreign-born 5+
+china_born_broad,english_very_well_or_only_share,0.451530,31841,foreign-born 5+
+china_born_broad,graduate_degree_share,0.380421,21327,adults 25-64
+china_born_broad,group_share_of_all_employed,0.011416,16600,"national denominator, 25-64"
+china_born_broad,group_share_of_all_self_employed,0.012978,1843,"national denominator, 25-64"
+china_born_broad,group_share_of_computer_math_occupations,0.037169,2386,"national denominator, 25-64"
+china_born_broad,group_share_of_physicians_surgeons,0.026304,255,"national denominator, 25-64"
+china_born_broad,group_share_of_self_employed_traveler_accommodation,0.011351,5,"national denominator, 25-64"
+china_born_broad,hs_or_less_share,0.258473,21327,adults 25-64
+china_born_broad,mean_household_size,2.571192,13924,"households, householder's group, WGTP"
+china_born_broad,median_age,48.000000,33099,all ages
+china_born_broad,median_household_income_householder_group,100218.619400,13924,"households, householder's group, WGTP"
+china_born_broad,median_years_in_us,19.000000,31907,foreign-born
+china_born_broad,naturalised_share,0.584373,31907,foreign-born
+china_born_broad,naturalised_share_years_in_us_0_4,0.037597,3772,foreign-born in that entry window
+china_born_broad,naturalised_share_years_in_us_10_14,0.409651,4073,foreign-born in that entry window
+china_born_broad,naturalised_share_years_in_us_15_19,0.625450,3265,foreign-born in that entry window
+china_born_broad,naturalised_share_years_in_us_20_plus,0.871317,16598,foreign-born in that entry window
+china_born_broad,naturalised_share_years_in_us_5_9,0.172046,4199,foreign-born in that entry window
+china_born_broad,physician_surgeon_share_of_employed,0.015689,16600,employed 25-64
+china_born_broad,population_25_64,1938834.000000,21327,adults 25-64
+china_born_broad,population_all_ages,2948190.000000,33099,all ages
+china_born_broad,self_employed_incorporated_share,0.056495,16600,employed 25-64
+china_born_broad,self_employed_share_of_employed,0.113880,16600,employed 25-64
+china_born_broad,top10_occupation_share_of_employed,0.307983,16600,employed 25-64
+china_born_broad,top10_puma_share,0.117195,33099,all ages
+china_born_broad,top50_puma_share,0.303841,33099,all ages
+china_born_broad,top5_state_share,0.649767,33099,all ages
+china_born_broad,top_occupation_01,0.079984,16600,1021 CMM-Software Developers
+china_born_broad,top_occupation_02,0.034216,16600,2205 EDU-Postsecondary Teachers
+china_born_broad,top_occupation_03,0.034089,16600,440 MGR-Other Managers
+china_born_broad,top_occupation_04,0.030028,16600,800 FIN-Accountants And Auditors
+china_born_broad,top_occupation_05,0.025634,16600,"1760 SCI-Physical Scientists, All Other"
+china_born_broad,top_occupation_06,0.024492,16600,4000 EAT-Chefs And Head Cooks
+china_born_broad,top_occupation_07,0.022589,16600,1530 ENG-Other Engineers
+china_born_broad,top_occupation_08,0.021172,16600,1240 CMM-Other Mathematical Science Occupations
+china_born_broad,top_occupation_09,0.019695,16600,4110 EAT-Waiters And Waitresses
+china_born_broad,top_occupation_10,0.016083,16600,4720 SAL-Cashiers
+china_born_broad,top_selfemployed_industry_01,0.160133,1843,"8680 ENT-Food Services And Drinking Places, except Alcoholic Beverages"
+china_born_broad,top_selfemployed_industry_02,0.065673,1843,"7071 FIN-Lessors Of Real Estate, And Offices Of Real Estate Agents And Brokers"
+china_born_broad,top_selfemployed_industry_03,0.058777,1843,770 CON-Construction (The Cleaning Of Buildings And Dwellings Is Incidental During Construction And Immediately After Construction)
+china_born_broad,top_selfemployed_industry_04,0.055210,1843,8990 SRV-Nail Salons And Other Personal Care Services
+china_born_broad,top_selfemployed_industry_05,0.036787,1843,6190 TRN-Taxi And Limousine Service
+india_born,accommodation_7211_share_of_employed,0.001468,17232,employed 25-64
+india_born,accommodation_7211_share_of_self_employed,0.020142,1302,self-employed 25-64
+india_born,ba_plus_share,0.844323,20976,adults 25-64
+india_born,computer_math_occ_share_of_employed,0.310888,17232,employed 25-64
+india_born,doctorate_share,0.050175,20976,adults 25-64
+india_born,employment_rate_25_64,0.818785,20976,adults 25-64
+india_born,english_not_well_or_not_at_all_share,0.061510,27789,foreign-born 5+
+india_born,english_very_well_or_only_share,0.792962,27789,foreign-born 5+
+india_born,graduate_degree_share,0.523913,20976,adults 25-64
+india_born,group_share_of_all_employed,0.013723,17232,"national denominator, 25-64"
+india_born,group_share_of_all_self_employed,0.009985,1302,"national denominator, 25-64"
+india_born,group_share_of_computer_math_occupations,0.098686,5083,"national denominator, 25-64"
+india_born,group_share_of_physicians_surgeons,0.050328,481,"national denominator, 25-64"
+india_born,group_share_of_self_employed_traveler_accommodation,0.081371,31,"national denominator, 25-64"
+india_born,hs_or_less_share,0.092213,20976,adults 25-64
+india_born,mean_household_size,2.947584,12027,"households, householder's group, WGTP"
+india_born,median_age,41.000000,28395,all ages
+india_born,median_household_income_householder_group,165192.501540,12027,"households, householder's group, WGTP"
+india_born,median_years_in_us,13.000000,27970,foreign-born
+india_born,naturalised_share,0.478090,27970,foreign-born
+india_born,naturalised_share_years_in_us_0_4,0.022554,4891,foreign-born in that entry window
+india_born,naturalised_share_years_in_us_10_14,0.361154,3521,foreign-born in that entry window
+india_born,naturalised_share_years_in_us_15_19,0.556197,3288,foreign-born in that entry window
+india_born,naturalised_share_years_in_us_20_plus,0.906928,11422,foreign-born in that entry window
+india_born,naturalised_share_years_in_us_5_9,0.159481,4848,foreign-born in that entry window
+india_born,physician_surgeon_share_of_employed,0.024972,17232,employed 25-64
+india_born,population_25_64,2230209.000000,20976,adults 25-64
+india_born,population_all_ages,2944689.000000,28395,all ages
+india_born,self_employed_incorporated_share,0.045858,17232,employed 25-64
+india_born,self_employed_share_of_employed,0.072890,17232,employed 25-64
+india_born,spouse_india_born_or_indian_ancestry_share,0.912928,18718,married spouse-present couples
+india_born,spouse_india_born_share,0.884349,18718,married spouse-present couples
+india_born,top10_occupation_share_of_employed,0.426154,17232,employed 25-64
+india_born,top10_puma_share,0.080336,28395,all ages
+india_born,top50_puma_share,0.257904,28395,all ages
+india_born,top5_state_share,0.528471,28395,all ages
+india_born,top_occupation_01,0.193136,17232,1021 CMM-Software Developers
+india_born,top_occupation_02,0.052851,17232,440 MGR-Other Managers
+india_born,top_occupation_03,0.030138,17232,"1108 CMM-Computer Occupations, All Other"
+india_born,top_occupation_04,0.026330,17232,110 MGR-Computer And Information Systems Managers
+india_born,top_occupation_05,0.024122,17232,3090 MED-Physicians
+india_born,top_occupation_06,0.022366,17232,710 BUS-Management Analysts
+india_born,top_occupation_07,0.022241,17232,1530 ENG-Other Engineers
+india_born,top_occupation_08,0.019218,17232,3255 MED-Registered Nurses
+india_born,top_occupation_09,0.018193,17232,1006 CMM-Computer Systems Analysts
+india_born,top_occupation_10,0.017559,17232,2205 EDU-Postsecondary Teachers
+india_born,top_selfemployed_industry_01,0.128000,1302,7380 PRF-Computer Systems Design And Related Services
+india_born,top_selfemployed_industry_02,0.082561,1302,6170 TRN-Truck Transportation
+india_born,top_selfemployed_industry_03,0.058962,1302,"8680 ENT-Food Services And Drinking Places, except Alcoholic Beverages"
+india_born,top_selfemployed_industry_04,0.054109,1302,"7390 PRF-Management, Scientific, And Technical Consulting Services"
+india_born,top_selfemployed_industry_05,0.047475,1302,7970 MED-Offices Of Physicians
+mexico_born,accommodation_7211_share_of_employed,0.000483,49646,employed 25-64
+mexico_born,accommodation_7211_share_of_self_employed,0.003403,7069,self-employed 25-64
+mexico_born,ba_plus_share,0.103851,69152,adults 25-64
+mexico_born,computer_math_occ_share_of_employed,0.010466,49646,employed 25-64
+mexico_born,doctorate_share,0.002849,69152,adults 25-64
+mexico_born,employment_rate_25_64,0.736424,69152,adults 25-64
+mexico_born,english_not_well_or_not_at_all_share,0.415901,88292,foreign-born 5+
+mexico_born,english_very_well_or_only_share,0.348811,88292,foreign-born 5+
+mexico_born,graduate_degree_share,0.029785,69152,adults 25-64
+mexico_born,group_share_of_all_employed,0.048244,49646,"national denominator, 25-64"
+mexico_born,group_share_of_all_self_employed,0.068346,7069,"national denominator, 25-64"
+mexico_born,group_share_of_computer_math_occupations,0.011680,574,"national denominator, 25-64"
+mexico_born,group_share_of_physicians_surgeons,0.005788,47,"national denominator, 25-64"
+mexico_born,group_share_of_self_employed_traveler_accommodation,0.094088,22,"national denominator, 25-64"
+mexico_born,hs_or_less_share,0.748702,69152,adults 25-64
+mexico_born,mean_household_size,3.615127,37109,"households, householder's group, WGTP"
+mexico_born,median_age,46.000000,92321,all ages
+mexico_born,median_household_income_householder_group,65147.200200,37109,"households, householder's group, WGTP"
+mexico_born,median_years_in_us,24.000000,88675,foreign-born
+mexico_born,naturalised_share,0.346604,88675,foreign-born
+mexico_born,naturalised_share_years_in_us_0_4,0.043882,7028,foreign-born in that entry window
+mexico_born,naturalised_share_years_in_us_10_14,0.274944,5226,foreign-born in that entry window
+mexico_born,naturalised_share_years_in_us_15_19,0.185691,8812,foreign-born in that entry window
+mexico_born,naturalised_share_years_in_us_20_plus,0.438618,61638,foreign-born in that entry window
+mexico_born,naturalised_share_years_in_us_5_9,0.144309,5971,foreign-born in that entry window
+mexico_born,physician_surgeon_share_of_employed,0.000817,49646,employed 25-64
+mexico_born,population_25_64,8717406.000000,69152,adults 25-64
+mexico_born,population_all_ages,11297850.000000,92321,all ages
+mexico_born,self_employed_incorporated_share,0.036027,49646,employed 25-64
+mexico_born,self_employed_share_of_employed,0.141909,49646,employed 25-64
+mexico_born,spouse_mexico_born_share,0.726706,46247,married spouse-present couples
+mexico_born,top10_occupation_share_of_employed,0.348358,49646,employed 25-64
+mexico_born,top10_puma_share,0.042037,92321,all ages
+mexico_born,top50_puma_share,0.162422,92321,all ages
+mexico_born,top5_state_share,0.704871,92321,all ages
+mexico_born,top_occupation_01,0.059049,49646,6260 CON-Construction Laborers
+mexico_born,top_occupation_02,0.039944,49646,4020 EAT-Cooks
+mexico_born,top_occupation_03,0.036813,49646,4230 CLN-Maids And Housekeeping Cleaners
+mexico_born,top_occupation_04,0.036663,49646,4220 CLN-Janitors And Building Cleaners
+mexico_born,top_occupation_05,0.036543,49646,4251 CLN-Landscaping And Groundskeeping Workers
+mexico_born,top_occupation_06,0.036430,49646,6050 FFF-Other Agricultural Workers
+mexico_born,top_occupation_07,0.035565,49646,9130 TRN-Driver/Sales Workers And Truck Drivers
+mexico_born,top_occupation_08,0.026501,49646,6230 CON-Carpenters
+mexico_born,top_occupation_09,0.021773,49646,"9620 TRN-Laborers And Freight, Stock, And Material Movers, Hand"
+mexico_born,top_occupation_10,0.019078,49646,"8990 PRD-Miscellaneous Production Workers, Including Equipment Operators And Tenders"
+mexico_born,top_selfemployed_industry_01,0.320011,7069,770 CON-Construction (The Cleaning Of Buildings And Dwellings Is Incidental During Construction And Immediately After Construction)
+mexico_born,top_selfemployed_industry_02,0.095933,7069,7770 PRF-Landscaping Services
+mexico_born,top_selfemployed_industry_03,0.084472,7069,"7690 PRF-Services To Buildings And Dwellings, Except Landscaping Services"
+mexico_born,top_selfemployed_industry_04,0.066980,7069,9290 SRV-Private Households
+mexico_born,top_selfemployed_industry_05,0.045318,7069,"8680 ENT-Food Services And Drinking Places, except Alcoholic Beverages"
+us_born,accommodation_7211_share_of_employed,0.000183,1046163,employed 25-64
+us_born,accommodation_7211_share_of_self_employed,0.001973,101448,self-employed 25-64
+us_born,ba_plus_share,0.382804,1403154,adults 25-64
+us_born,computer_math_occ_share_of_employed,0.039052,1046163,employed 25-64
+us_born,doctorate_share,0.014497,1403154,adults 25-64
+us_born,employment_rate_25_64,0.770792,1403154,adults 25-64
+us_born,graduate_degree_share,0.140250,1403154,adults 25-64
+us_born,group_share_of_all_employed,0.804913,1046163,"national denominator, 25-64"
+us_born,group_share_of_all_self_employed,0.743272,101448,"national denominator, 25-64"
+us_born,group_share_of_computer_math_occupations,0.727116,41110,"national denominator, 25-64"
+us_born,group_share_of_physicians_surgeons,0.731493,7022,"national denominator, 25-64"
+us_born,group_share_of_self_employed_traveler_accommodation,0.593420,215,"national denominator, 25-64"
+us_born,hs_or_less_share,0.317094,1403154,adults 25-64
+us_born,mean_household_size,2.351224,1164328,"households, householder's group, WGTP"
+us_born,median_age,37.000000,2980489,all ages
+us_born,median_household_income_householder_group,77483.368000,1164328,"households, householder's group, WGTP"
+us_born,physician_surgeon_share_of_employed,0.006188,1046163,employed 25-64
+us_born,population_25_64,138957087.000000,1403154,adults 25-64
+us_born,population_all_ages,287109391.000000,2980489,all ages
+us_born,self_employed_incorporated_share,0.038349,1046163,employed 25-64
+us_born,self_employed_share_of_employed,0.092501,1046163,employed 25-64
+us_born,top10_occupation_share_of_employed,0.198422,1046163,employed 25-64
+us_born,top10_puma_share,0.007261,2980489,all ages
+us_born,top50_puma_share,0.033797,2980489,all ages
+us_born,top5_state_share,0.341322,2980489,all ages
+us_born,top_occupation_01,0.034196,1046163,440 MGR-Other Managers
+us_born,top_occupation_02,0.025406,1046163,3255 MED-Registered Nurses
+us_born,top_occupation_03,0.024535,1046163,2310 EDU-Elementary And Middle School Teachers
+us_born,top_occupation_04,0.022920,1046163,9130 TRN-Driver/Sales Workers And Truck Drivers
+us_born,top_occupation_05,0.019495,1046163,4700 SAL-First-Line Supervisors Of Retail Sales Workers
+us_born,top_occupation_06,0.018364,1046163,5240 OFF-Customer Service Representatives
+us_born,top_occupation_07,0.014275,1046163,4760 SAL-Retail Salespersons
+us_born,top_occupation_08,0.013998,1046163,"5740 OFF-Secretaries And Administrative Assistants, Except Legal, Medical, And Executive"
+us_born,top_occupation_09,0.013478,1046163,"9620 TRN-Laborers And Freight, Stock, And Material Movers, Hand"
+us_born,top_occupation_10,0.011755,1046163,4220 CLN-Janitors And Building Cleaners
+us_born,top_selfemployed_industry_01,0.155593,101448,770 CON-Construction (The Cleaning Of Buildings And Dwellings Is Incidental During Construction And Immediately After Construction)
+us_born,top_selfemployed_industry_02,0.047247,101448,"7071 FIN-Lessors Of Real Estate, And Offices Of Real Estate Agents And Brokers"
+us_born,top_selfemployed_industry_03,0.035102,101448,8980 SRV-Beauty Salons
+us_born,top_selfemployed_industry_04,0.034685,101448,"7390 PRF-Management, Scientific, And Technical Consulting Services"
+us_born,top_selfemployed_industry_05,0.026664,101448,"7690 PRF-Services To Buildings And Dwellings, Except Landscaping Services"
+us_born_asian_indian_anc,accommodation_7211_share_of_employed,0.003422,2495,employed 25-64
+us_born_asian_indian_anc,accommodation_7211_share_of_self_employed,0.037799,197,self-employed 25-64
+us_born_asian_indian_anc,ba_plus_share,0.835522,2937,adults 25-64
+us_born_asian_indian_anc,computer_math_occ_share_of_employed,0.115551,2495,employed 25-64
+us_born_asian_indian_anc,doctorate_share,0.062463,2937,adults 25-64
+us_born_asian_indian_anc,employment_rate_25_64,0.847688,2937,adults 25-64
+us_born_asian_indian_anc,graduate_degree_share,0.475968,2937,adults 25-64
+us_born_asian_indian_anc,group_share_of_all_employed,0.001880,2495,"national denominator, 25-64"
+us_born_asian_indian_anc,group_share_of_all_self_employed,0.001699,197,"national denominator, 25-64"
+us_born_asian_indian_anc,group_share_of_computer_math_occupations,0.005025,280,"national denominator, 25-64"
+us_born_asian_indian_anc,group_share_of_physicians_surgeons,0.033493,316,"national denominator, 25-64"
+us_born_asian_indian_anc,group_share_of_self_employed_traveler_accommodation,0.025980,7,"national denominator, 25-64"
+us_born_asian_indian_anc,hs_or_less_share,0.054408,2937,adults 25-64
+us_born_asian_indian_anc,mean_household_size,2.386886,1673,"households, householder's group, WGTP"
+us_born_asian_indian_anc,median_age,15.000000,11347,all ages
+us_born_asian_indian_anc,median_household_income_householder_group,142732.520000,1673,"households, householder's group, WGTP"
+us_born_asian_indian_anc,physician_surgeon_share_of_employed,0.121320,2495,employed 25-64
+us_born_asian_indian_anc,population_25_64,295085.000000,2937,adults 25-64
+us_born_asian_indian_anc,population_all_ages,1117764.000000,11347,all ages
+us_born_asian_indian_anc,self_employed_incorporated_share,0.053390,2495,employed 25-64
+us_born_asian_indian_anc,self_employed_share_of_employed,0.090533,2495,employed 25-64
+us_born_asian_indian_anc,spouse_indian_origin_share,0.523835,1527,married spouse-present couples
+us_born_asian_indian_anc,top10_occupation_share_of_employed,0.377177,2495,employed 25-64
+us_born_asian_indian_anc,top10_puma_share,0.064538,11347,all ages
+us_born_asian_indian_anc,top50_puma_share,0.219290,11347,all ages
+us_born_asian_indian_anc,top5_state_share,0.526187,11347,all ages
+us_born_asian_indian_anc,top_occupation_01,0.114680,2495,3090 MED-Physicians
+us_born_asian_indian_anc,top_occupation_02,0.056812,2495,1021 CMM-Software Developers
+us_born_asian_indian_anc,top_occupation_03,0.039374,2495,440 MGR-Other Managers
+us_born_asian_indian_anc,top_occupation_04,0.033685,2495,3255 MED-Registered Nurses
+us_born_asian_indian_anc,top_occupation_05,0.030327,2495,710 BUS-Management Analysts
+us_born_asian_indian_anc,top_occupation_06,0.029599,2495,"2100 LGL-Lawyers, And Judges, Magistrates, And Other Judicial Workers"
+us_born_asian_indian_anc,top_occupation_07,0.022284,2495,10 MGR-Chief Executives And Legislators
+us_born_asian_indian_anc,top_occupation_08,0.019221,2495,800 FIN-Accountants And Auditors
+us_born_asian_indian_anc,top_occupation_09,0.016423,2495,3050 MED-Pharmacists
+us_born_asian_indian_anc,top_occupation_10,0.014772,2495,705 BUS-Project Management Specialists
+us_born_asian_indian_anc,top_selfemployed_industry_01,0.125541,197,7970 MED-Offices Of Physicians
+us_born_asian_indian_anc,top_selfemployed_industry_02,0.065530,197,"7390 PRF-Management, Scientific, And Technical Consulting Services"
+us_born_asian_indian_anc,top_selfemployed_industry_03,0.058156,197,8180 MED-Other Health Care Services
+us_born_asian_indian_anc,top_selfemployed_industry_04,0.050384,197,6170 TRN-Truck Transportation
+us_born_asian_indian_anc,top_selfemployed_industry_05,0.048618,197,8080 MED-Offices Of Other Health Practitioners

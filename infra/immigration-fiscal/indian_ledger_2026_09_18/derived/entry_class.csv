@@ -1,0 +1,124 @@
+fiscal_year,series,country,class_of_admission,persons,all_countries,share_of_class
+2020,LPR_table10,China,Diversity,4.000000,25028.000000,0.000160
+2020,LPR_table10,China,Employment-based preferences,14018.000000,148959.000000,0.094106
+2020,LPR_table10,China,Family-sponsored preferences,7738.000000,121560.000000,0.063656
+2020,LPR_table10,China,Immediate relatives of U.S. citizens,14660.000000,321148.000000,0.045649
+2020,LPR_table10,China,Other,100.000000,26792.000000,0.003732
+2020,LPR_table10,China,Refugees and asylees,4956.000000,63875.000000,0.077589
+2020,LPR_table10,China,Total,41483.000000,707362.000000,0.058645
+2020,LPR_table10,India,Diversity,13.000000,25028.000000,0.000519
+2020,LPR_table10,India,Employment-based preferences,24883.000000,148959.000000,0.167046
+2020,LPR_table10,India,Family-sponsored preferences,7077.000000,121560.000000,0.058218
+2020,LPR_table10,India,Immediate relatives of U.S. citizens,12945.000000,321148.000000,0.040309
+2020,LPR_table10,India,Other,6.000000,26792.000000,0.000224
+2020,LPR_table10,India,Refugees and asylees,1146.000000,63875.000000,0.017941
+2020,LPR_table10,India,Total,46363.000000,707362.000000,0.065544
+2020,LPR_table10,Mexico,Diversity,,25028.000000,
+2020,LPR_table10,Mexico,Employment-based preferences,7933.000000,148959.000000,0.053256
+2020,LPR_table10,Mexico,Family-sponsored preferences,14064.000000,121560.000000,0.115696
+2020,LPR_table10,Mexico,Immediate relatives of U.S. citizens,66579.000000,321148.000000,0.207316
+2020,LPR_table10,Mexico,Other,10699.000000,26792.000000,0.399336
+2020,LPR_table10,Mexico,Refugees and asylees,,63875.000000,
+2020,LPR_table10,Mexico,Total,100325.000000,707362.000000,0.141830
+2021,LPR_table10,China,Diversity,9.000000,15145.000000,0.000594
+2021,LPR_table10,China,Employment-based preferences,22119.000000,193338.000000,0.114406
+2021,LPR_table10,China,Family-sponsored preferences,6397.000000,65690.000000,0.097382
+2021,LPR_table10,China,Immediate relatives of U.S. citizens,16041.000000,385396.000000,0.041622
+2021,LPR_table10,China,Other,83.000000,24036.000000,0.003453
+2021,LPR_table10,China,Refugees and asylees,5187.000000,56397.000000,0.091973
+2021,LPR_table10,China,Total,49847.000000,740002.000000,0.067361
+2021,LPR_table10,India,Diversity,22.000000,15145.000000,0.001453
+2021,LPR_table10,India,Employment-based preferences,75332.000000,193338.000000,0.389639
+2021,LPR_table10,India,Family-sponsored preferences,1896.000000,65690.000000,0.028863
+2021,LPR_table10,India,Immediate relatives of U.S. citizens,14949.000000,385396.000000,0.038789
+2021,LPR_table10,India,Other,242.000000,24036.000000,0.010068
+2021,LPR_table10,India,Refugees and asylees,1009.000000,56397.000000,0.017891
+2021,LPR_table10,India,Total,93450.000000,740002.000000,0.126283
+2021,LPR_table10,Mexico,Diversity,8.000000,15145.000000,0.000528
+2021,LPR_table10,Mexico,Employment-based preferences,6457.000000,193338.000000,0.033397
+2021,LPR_table10,Mexico,Family-sponsored preferences,14610.000000,65690.000000,0.222408
+2021,LPR_table10,Mexico,Immediate relatives of U.S. citizens,75293.000000,385396.000000,0.195365
+2021,LPR_table10,Mexico,Other,9903.000000,24036.000000,0.412007
+2021,LPR_table10,Mexico,Refugees and asylees,959.000000,56397.000000,0.017004
+2021,LPR_table10,Mexico,Total,107230.000000,740002.000000,0.144905
+2022,LPR_table10,China,Diversity,33.000000,43233.000000,0.000763
+2022,LPR_table10,China,Employment-based preferences,30514.000000,270284.000000,0.112896
+2022,LPR_table10,China,Family-sponsored preferences,11738.000000,166041.000000,0.070693
+2022,LPR_table10,China,Immediate relatives of U.S. citizens,16698.000000,428268.000000,0.038990
+2022,LPR_table10,China,Other,106.000000,27441.000000,0.003863
+2022,LPR_table10,China,Refugees and asylees,8861.000000,83082.000000,0.106654
+2022,LPR_table10,China,Total,67950.000000,1018349.000000,0.066726
+2022,LPR_table10,India,Diversity,56.000000,43233.000000,0.001295
+2022,LPR_table10,India,Employment-based preferences,96335.000000,270284.000000,0.356421
+2022,LPR_table10,India,Family-sponsored preferences,8055.000000,166041.000000,0.048512
+2022,LPR_table10,India,Immediate relatives of U.S. citizens,20396.000000,428268.000000,0.047624
+2022,LPR_table10,India,Other,341.000000,27441.000000,0.012427
+2022,LPR_table10,India,Refugees and asylees,1829.000000,83082.000000,0.022014
+2022,LPR_table10,India,Total,127012.000000,1018349.000000,0.124723
+2022,LPR_table10,Mexico,Diversity,15.000000,43233.000000,0.000347
+2022,LPR_table10,Mexico,Employment-based preferences,8356.000000,270284.000000,0.030916
+2022,LPR_table10,Mexico,Family-sponsored preferences,25148.000000,166041.000000,0.151457
+2022,LPR_table10,Mexico,Immediate relatives of U.S. citizens,94101.000000,428268.000000,0.219725
+2022,LPR_table10,Mexico,Other,9760.000000,27441.000000,0.355672
+2022,LPR_table10,Mexico,Refugees and asylees,1392.000000,83082.000000,0.016755
+2022,LPR_table10,Mexico,Total,138772.000000,1018349.000000,0.136272
+2023,LPR_table10,China,Diversity,30.000000,67350.000000,0.000445
+2023,LPR_table10,China,Employment-based preferences,26270.000000,196760.000000,0.133513
+2023,LPR_table10,China,Family-sponsored preferences,4630.000000,204240.000000,0.022669
+2023,LPR_table10,China,Immediate relatives of U.S. citizens,22100.000000,551590.000000,0.040066
+2023,LPR_table10,China,Other,280.000000,53610.000000,0.005223
+2023,LPR_table10,China,Refugees and asylees,5940.000000,99360.000000,0.059783
+2023,LPR_table10,China,Total,59260.000000,1172910.000000,0.050524
+2023,LPR_table10,India,Diversity,60.000000,67350.000000,0.000891
+2023,LPR_table10,India,Employment-based preferences,28570.000000,196760.000000,0.145202
+2023,LPR_table10,India,Family-sponsored preferences,15140.000000,204240.000000,0.074128
+2023,LPR_table10,India,Immediate relatives of U.S. citizens,31790.000000,551590.000000,0.057633
+2023,LPR_table10,India,Other,790.000000,53610.000000,0.014736
+2023,LPR_table10,India,Refugees and asylees,1740.000000,99360.000000,0.017512
+2023,LPR_table10,India,Total,78070.000000,1172910.000000,0.066561
+2023,LPR_table10,Mexico,Diversity,10.000000,67350.000000,0.000148
+2023,LPR_table10,Mexico,Employment-based preferences,8800.000000,196760.000000,0.044725
+2023,LPR_table10,Mexico,Family-sponsored preferences,29860.000000,204240.000000,0.146201
+2023,LPR_table10,Mexico,Immediate relatives of U.S. citizens,123280.000000,551590.000000,0.223499
+2023,LPR_table10,Mexico,Other,17000.000000,53610.000000,0.317105
+2023,LPR_table10,Mexico,Refugees and asylees,1580.000000,99360.000000,0.015902
+2023,LPR_table10,Mexico,Total,180530.000000,1172910.000000,0.153916
+2024,LPR_table10,China,Diversity,20.000000,49890.000000,0.000401
+2024,LPR_table10,China,Employment-based preferences,29140.000000,171120.000000,0.170290
+2024,LPR_table10,China,Family-sponsored preferences,5260.000000,188190.000000,0.027950
+2024,LPR_table10,China,Immediate relatives of U.S. citizens,29240.000000,672240.000000,0.043496
+2024,LPR_table10,China,Other,320.000000,62810.000000,0.005095
+2024,LPR_table10,China,Refugees and asylees,7500.000000,219850.000000,0.034114
+2024,LPR_table10,China,Total,71470.000000,1364090.000000,0.052394
+2024,LPR_table10,India,Diversity,30.000000,49890.000000,0.000601
+2024,LPR_table10,India,Employment-based preferences,18800.000000,171120.000000,0.109864
+2024,LPR_table10,India,Family-sponsored preferences,9660.000000,188190.000000,0.051331
+2024,LPR_table10,India,Immediate relatives of U.S. citizens,34090.000000,672240.000000,0.050711
+2024,LPR_table10,India,Other,520.000000,62810.000000,0.008279
+2024,LPR_table10,India,Refugees and asylees,3710.000000,219850.000000,0.016875
+2024,LPR_table10,India,Total,66800.000000,1364090.000000,0.048970
+2024,LPR_table10,Mexico,Diversity,0.000000,49890.000000,0.000000
+2024,LPR_table10,Mexico,Employment-based preferences,7900.000000,171120.000000,0.046166
+2024,LPR_table10,Mexico,Family-sponsored preferences,32570.000000,188190.000000,0.173070
+2024,LPR_table10,Mexico,Immediate relatives of U.S. citizens,149260.000000,672240.000000,0.222034
+2024,LPR_table10,Mexico,Other,11670.000000,62810.000000,0.185798
+2024,LPR_table10,Mexico,Refugees and asylees,1210.000000,219850.000000,0.005504
+2024,LPR_table10,Mexico,Total,202600.000000,1364090.000000,0.148524
+2024,NI_Table29,India,All other classes,48810.000000,818150.000000,0.059659
+2024,NI_Table29,India,Diplomats and other representatives6,8830.000000,464970.000000,0.018990
+2024,NI_Table29,India,Students and exchange visitors3,331970.000000,2479300.000000,0.133897
+2024,NI_Table29,India,Temporary workers and families4,840320.000000,5156080.000000,0.162977
+2024,NI_Table29,India,Total,2944840.000000,77646290.000000,0.037926
+2024,NI_Table29,India,Tourists and business travelers - other2,1713410.000000,48224100.000000,0.035530
+2024,NI_Table29,India,Tourists and business travelers - visa waiver1,,19767950.000000,
+2024,NI_Table29,India,Treaty Traders5,650.000000,603160.000000,0.001078
+2024,NI_Table29,India,Unknown,850.000000,132580.000000,0.006411
+2024,NI_Table33,India,"Athletes, artists, and entertainers (P1 to P3)",3590.000000,157580.000000,0.022782
+2024,NI_Table33,India,Intracompany transferees (L1),64910.000000,598330.000000,0.108485
+2024,NI_Table33,India,Other2,3030.000000,1598990.000000,0.001895
+2024,NI_Table33,India,Seasonal agricultural workers (H2A),0.000000,724900.000000,0.000000
+2024,NI_Table33,India,"Seasonal non-agricultural workers (H2B, H2R)",10.000000,186600.000000,0.000054
+2024,NI_Table33,India,Spouses and children3,265400.000000,814530.000000,0.325832
+2024,NI_Table33,India,Total temporary workers and families1,840320.000000,5156080.000000,0.162977
+2024,NI_Table33,India,Workers in specialty occupations (H1B),497460.000000,890310.000000,0.558749
+2024,NI_Table33,India,"Workers with extraordinary ability/ achievement (O1, O2)",5930.000000,184850.000000,0.032080
