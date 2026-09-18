@@ -23,6 +23,7 @@ Stated survey attitudes, not behaviour. Comparisons are made against whites over
 | Nine ANES pooled means vs `attitudes_gen_2026_09_16` (`gate_anes.py`) | all within tolerance, including net in-group thermometer by generation |
 | Weighted Hispanic generation shares, ANES | 2020 .276/.334/.389 and 2024 .282/.399/.319, exact match to prior lane |
 | 70 numbers quoted in the memo re-checked against the CSVs (`verify_memo.py`) | 70/70 |
+| WVS7 anchors recomputed from microdata without reading the fetching agent's script (`wvs_recheck.py`) | all 10 figures, both n and both country-years reproduce |
 | Synthesis table and language-check numbers re-checked (`verify_tail.py`) | PASS |
 
 A rank-deficiency bug was found and fixed mid-run: survey-year dummies built over the full 2000+ frame made every short-module item (the Muslim tolerance items from 2008, the ISSP identity modules) collinear with the intercept, silently dropping 26 outcomes from all adjusted models. Year fixed effects are now built inside each estimation sample. The trust gate is unaffected and still reproduces exactly.
@@ -46,7 +47,13 @@ Generational convergence is precise in the GSS (15-item tolerance G3+ − G1 = +
 
 ## Part C
 
-Mostly **[GAP]**. The WVS7 and Pew percentages, and LAPOP's Mexico democracy-support and coup-tolerance bars, were not obtained (the LAPOP country charts are images with no text layer); `ANCHORS.md` records every URL tried and the exact failure mode, plus the verified frame facts (WVS7 country-years Mexico 2018 / USA 2017; LAPOP's most recent round is 2026; Pew's 2025 National Survey of Latinos design). This does not affect the verdict: emigrants are not a random draw from the sending population, so an origin-country average was only ever a prior about the source distribution, never a prediction for migrants or their descendants, and the direct measurement supersedes it.
+**World Values Survey wave 7 delivered from microdata**, computed with `W_WEIGHT` on valid responses and then recomputed independently by this lane (`wvs_recheck.py`, written without reading the fetching agent's script); all ten figures, both sample sizes and both country-years reproduce exactly. Mexico 2018 versus United States 2017: strong leader who need not bother with parliament and elections rated good 71.6 vs 38.1 percent; army rule 45.5 vs 20.9; experts decide 76.2 vs 52.6; democratic political system 75.8 vs 85.0; importance of living in a democracy essentially identical at 8.30 vs 8.28 on a 1-10 scale; confidence in the police 21.3 vs 68.8, courts 22.5 vs 57.8, government 17.4 vs 33.7, parliament 14.6 vs 15.1. n = 1,741 and 2,596.
+
+**A Pew Spring-2017 battery contradicts the levels**, giving 27 percent Mexico and 22 percent United States on a near-parallel strong-leader item where WVS gives 71.6 and 38.1. The ordering survives on all four regime items across both instruments; the magnitudes do not, and the Mexico-US gap is 33 points on one and 5 on the other. The memo quotes WVS throughout and labels Pew as a separate instrument; the two are never mixed and no numerical gap from either is carried into the synthesis.
+
+**The confidence rows cannot be differenced against Parts A and B at all**: a respondent in Mexico rates Mexican institutions and a GSS respondent rates American ones, so Mexico's 21.3 percent confidence in its police and the finding that Mexican-origin G1 is more confident in American institutions than native whites are answers to different questions, not a tension. The regime-preference rows are more comparable, and there the origin-country prior is real while the ANES measurement shows the third generation inside the white range and indistinguishable from white conservatives — selection, US socialisation and question meaning are not separated here.
+
+**Still [GAP]:** LAPOP's Mexico bars for Churchillian democracy support, coup tolerance and institutional trust (the 21.4 MB report was retrieved in full via chunked range requests, but the country charts are images with no text layer; its narrative numbers for Mexico are recorded), and any Pew breakout of US Hispanics on democracy or institutions.
 
 ## Covered and skipped
 
@@ -56,8 +63,8 @@ Skipped: `AMIMP`, `AMPROUD` and `ETHSPKOK` (absent from release R3a); `WIRTAP` (
 
 ## Files
 
-Scripts: `norms_lib.py`, `outcomes.py`, `estimate.py`, `run_gss.py`, `cb_index.py`, `anes_spec.py`, `anes_norms.py`, `lang_check.py`, `lang_anes.py`, `mode_check.py`, `ratio.py`, `mex_synth.py`, `make_tables.py`, `gate_var.py`, `gate_prior.py`, `gate_anes.py`, `verify_memo.py`, `verify_tail.py`, `probe_cov.py`.
+Scripts: `norms_lib.py`, `outcomes.py`, `estimate.py`, `run_gss.py`, `cb_index.py`, `anes_spec.py`, `anes_norms.py`, `lang_check.py`, `lang_anes.py`, `mode_check.py`, `ratio.py`, `mex_synth.py`, `wvs_recheck.py`, `make_tables.py`, `gate_var.py`, `gate_prior.py`, `gate_anes.py`, `verify_memo.py`, `verify_tail.py`, `probe_cov.py`.
 
 Outputs: `derived/gss_raw_means.csv` (1,410 rows), `derived/gss_adjusted.csv` (5,358), `derived/anes_raw_means.csv` (238), `derived/anes_adjusted.csv` (680), `derived/gss_language_check.csv`, `derived/anes_language_check.csv`, `derived/gss_mode_check.csv`, `derived/gss_mode_difference.csv`, `derived/gap_vs_white_spread.csv`, `derived/item_coverage.csv`, `derived/tables.md`, `derived/mex_synth_table.md`, `derived/gss_audit.json`, `derived/anes_audit.json`, `derived/cb_index.json`.
 
-Raw data is a symlink to the `attitudes_gen_2026_09_16` lane's `raw/`; nothing under `raw/` was modified. Not committed.
+Raw data is a symlink to the `attitudes_gen_2026_09_16` lane's `raw/`; nothing under `raw/` was modified. The WVS7 microdata and the LAPOP PDF live in the session scratchpad at `/private/tmp/claude-501/-Users-alien-Projects-immigration-research/45fdf7bc-6c76-4a97-953b-e9d9ea0bf7a5/scratchpad/`, not in the repo; `wvs_recheck.py` takes the CSV path as its only argument, so it re-runs against any WVS-issued copy. Not committed.
