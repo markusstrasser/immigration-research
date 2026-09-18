@@ -18,11 +18,23 @@ second headline is on the offender side: **violent incidents per 1,000 residents
 older run 36.7 where the perceived offender is Black, 14.9 where white and 13.9 where
 Hispanic** — the Hispanic rate is *below* the white rate, and age-standardising widens
 rather than closes that gap, because Hispanic residents are younger and their age structure
-alone predicts a rate **18% above** white. On McCollister unit costs the inter-group cost a
-Hispanic offender population imposes is **$195 to $385 per Hispanic resident-year** in
-criminal-justice dollars, against **$563 to $1,119** for Black and **$88 to $169** for
-white. [FRAMING-SENSITIVE] on every line: offender ethnicity here is the *victim's
+alone predicts a rate **18% above** white. Pricing simple assault at the central figure
+this lane derives, **$25,526** in 2024 dollars, the inter-group cost a Hispanic offender
+population imposes is **$91 per Hispanic resident-year** in criminal-justice dollars,
+against **$263** for Black and **$40** for white. [FRAMING-SENSITIVE] on every line: offender ethnicity here is the *victim's
 perception*, and 18.3% of incidents carry no offender ethnicity at all.
+
+**Correction, 2026-09-19.** Every per-resident-year cost transfer in the first version of
+this file was **three times too high**. The pooled incident matrix was divided by pooled
+person-years, which already yields a per-resident-year figure, and then multiplied by the
+number of pooled years a second time. The figures below are the corrected ones; the
+published Hispanic inter-group criminal-justice transfer of $195 to $385 per resident-year
+should have read $65 to $128, Black $563 to $1,119 should have read $188 to $373, and white
+$88 to $169 should have read $29 to $56. Ratios between groups are unaffected, and no other
+quantity in the lane used that path: the victimisation rates and the cost-per-1,000 tables
+divide the same pooled counts by the same pooled person-years and were always annual.
+`analysis.py` now reassembles the transfer one year at a time and gates the pooled figure
+against it exactly, so the same slip cannot recur silently.
 
 **Route 1 — ICPSR microdata — was blocked by a login wall, so the lane is built entirely on
 published tables**, with BJS's own generalized-variance standard errors rather than any this
@@ -307,55 +319,188 @@ Offence mix from N-DASH victimisations pooled 2022–2024:
 
 Unit costs, McCollister, French & Fang (2010) tables 3–5, 2008 dollars inflated by CPI-U
 annual averages (215.303 → 313.689, factor 1.45697), the same table and the same
-reconstruction gate `crime_cost_2026_09_16` uses:
+reconstruction gate `crime_cost_2026_09_16` uses, plus a central price for simple assault
+derived in section 3 below:
 
 | offence | social cost 2024$ | criminal-justice component 2024$ |
 |---|---|---|
 | rape/sexual assault | 350,802 | 38,579 |
 | robbery | 61,644 | 20,145 |
 | aggravated assault | 155,924 | 12,590 |
-| simple assault | **not published** | **not published** |
+| **simple assault (central, derived)** | **25,526** | **5,120** |
 
-**Simple assault is 55–64% of every group's violent victimisations and McCollister prices no
-such offence.** That is not a detail to bury: it is the dominant uncertainty in this
-section, worth a factor of 2.4 on the totals. Everything below is therefore given twice,
-once with simple assault at zero (a lower bound) and once priced at aggravated assault (a
-generous upper bound). The truth is much closer to the lower bound.
+Simple assault is 55–64% of every group's violent victimisations, and the first version of
+this lane carried it at $0 and at the aggravated-assault price because McCollister publishes
+no such offence. That was a factor of 2.4 on the majority of the volume and it is now
+replaced by the central figure above. The derivation is section 3; the old two arms are kept
+below so the reader can see where the central figure sits.
 
 Cost of violent victimisation per 1,000 residents per year, 2024 dollars:
 
 | arm | White | Black | Hispanic | Other |
 |---|---|---|---|---|
-| social, simple at zero | 1,402,926 | 1,624,825 | **1,331,038** | 1,644,008 |
-| social, simple at aggravated | 3,417,481 | 3,564,091 | 3,273,783 | 3,891,962 |
-| criminal-justice, simple at zero | 158,952 | 195,501 | 166,598 | 190,649 |
-| criminal-justice, simple at aggravated | 321,611 | 352,081 | 323,459 | 372,153 |
+| **social, simple central** | **1,732,724** | **1,942,298** | **1,649,080** | **2,012,016** |
+| social, simple low (Miller 1996) | 1,538,496 | 1,755,328 | 1,461,775 | 1,795,285 |
+| social, simple high (Miller 2021 reweighted) | 1,850,880 | 2,056,038 | 1,763,024 | 2,143,860 |
+| social, simple at zero (legacy arm) | 1,402,926 | 1,624,825 | 1,331,038 | 1,644,008 |
+| social, simple at aggravated (legacy arm) | 3,417,481 | 3,564,091 | 3,273,783 | 3,891,962 |
+| **criminal-justice, simple central** | **225,104** | **259,180** | **230,392** | **264,464** |
+| criminal-justice, simple at zero (legacy arm) | 158,952 | 195,501 | 166,598 | 190,649 |
+| criminal-justice, simple at aggravated (legacy arm) | 321,611 | 352,081 | 323,459 | 372,153 |
 
 **Inter-group cost transfer: what each offender group's violence costs victims outside the
 group, per resident-year of the offender group**, 2024 dollars:
 
 | arm | White | Black | Hispanic | Other |
 |---|---|---|---|---|
-| social, simple at zero | 725 | **4,823** | 1,701 | 2,628 |
-| social, simple at aggravated | 1,729 | 11,720 | 4,053 | 6,343 |
-| criminal-justice, simple at zero | 88 | **563** | 195 | 305 |
-| criminal-justice, simple at aggravated | 169 | 1,119 | 385 | 605 |
+| **social, simple central** | **296** | **1,984** | **695** | **1,079** |
+| social, simple low | 264 | 1,762 | 620 | 959 |
+| social, simple high | 316 | 2,119 | 741 | 1,151 |
+| social, simple at zero (legacy) | 242 | 1,608 | 567 | 876 |
+| social, simple at aggravated (legacy) | 576 | 3,907 | 1,351 | 2,114 |
+| **criminal-justice, simple central** | **40** | **263** | **91** | **142** |
+| criminal-justice, simple low | 40 | 263 | 91 | 142 |
+| criminal-justice, simple high | 56 | 373 | 128 | 202 |
+| criminal-justice, simple at zero (legacy) | 29 | 188 | 65 | 102 |
+| criminal-justice, simple at aggravated (legacy) | 56 | 373 | 128 | 202 |
 
-Totals including the intra-group cost are in
-`derived/inter_group_cost_transfer.csv`: $343 / $891 / $330 / $378 per resident-year at
-criminal-justice pricing with simple assault at zero.
+Totals including the intra-group cost, central arm: $161 / $408 / $153 / $176 per
+resident-year at criminal-justice pricing and $1,225 / $3,072 / $1,139 / $1,335 at social
+pricing, for white, Black, Hispanic and Other offenders respectively. The full grid over
+five arms and two pricings is `derived/inter_group_cost_transfer.csv`.
+
+**Two pairs of rows in that table are identical, by construction and not by mistake.** The
+five arms carry five distinct social prices for a simple assault but only three distinct
+criminal-justice prices, because the criminal-justice component of a simple assault has its
+own bracket and does not depend on which quality-of-life valuation an arm picks. The central
+and low arms share a criminal-justice component of **$5,120**, so their criminal-justice rows
+coincide; the high arm's criminal-justice ceiling of **$12,590** is McCollister's
+aggravated-assault figure, which is exactly what the legacy aggravated arm uses, so those two
+coincide as well. Both cost CSVs now carry a `simple_assault_price_used` column naming the
+price behind every row, and `analysis.py` gates the pattern: five distinct social prices and
+three distinct criminal-justice prices. If the pricing ever stopped being switched per arm
+the social column would collapse too and the gate would fire.
+
+**The central price narrows the band that matters.** Across the three substantive
+simple-assault routes the Hispanic inter-group criminal-justice transfer moves only between
+$91 and $128 per resident-year, against $65 to $128 under the old zero-to-aggravated arms,
+and the ordering across groups is identical in every arm. The old range was never
+decision-relevant on ordering; it was decision-relevant on level, and the level is now
+pinned to within about ±20%.
 
 **Set beside the homicide lane, the picture inverts on volume and holds on ranking.** One
 cleared homicide costs the treasury $1.5–1.8m, 91–97% of it prison. Non-fatal violence never
-reaches those per-event numbers — $7,551 to $16,405 of criminal-justice cost per incident —
-but there are roughly six million violent incidents a year (6,075,830 in 2024) against
-roughly 23,000 homicide deaths a year (117,427 in 2019-2023 on the homicide lane's CDC
-WONDER count).
-The **per-capita** inter-group transfer from non-fatal violence, $88 to $1,119 per
-resident-year depending on group and arm, is a real quantity of the same order as several
-lines in the repo's fiscal ledger, and it is **larger for Black offenders than for Hispanic
-by a factor of about 2.9 at every pricing**, and larger for Hispanic than for white by
-2.2 to 2.4.
+reaches those per-event numbers — $10,693 to $11,658 of criminal-justice cost per incident on
+the central arm — but there are roughly six million violent incidents a year (6,075,830 in
+2024) against roughly 23,000 homicide deaths a year (117,427 in 2019-2023 on the homicide
+lane's CDC WONDER count). The **per-capita** inter-group transfer from non-fatal violence,
+$40 to $263 per resident-year across groups on the central arm, is small against most lines
+in the repo's fiscal ledger, and it is **larger for Black
+offenders than for Hispanic by a factor of about 2.9 at every pricing and every arm**, and
+larger for Hispanic than for white by 2.2 to 2.4.
+
+---
+
+## Phase 3: pricing a simple assault
+
+The team lead's brief named three routes to a simple-assault price. Running them turned up a
+fact that changes the shape of the answer, so it is stated first.
+
+### Miller et al. (2021) does not publish a simple-assault cost
+
+The paper is **paywalled**, not open access: the Cambridge page is an `/article/abs/` stub
+offering "Get access" and "Purchase", OpenAlex reports `oa_status: closed` with no repository
+full text, Semantic Scholar reports `isOpenAccess: false`, and the SSRN preprint
+(abstract 3514296) sits behind a Cloudflare challenge. The PDF used here was retrieved
+through the repo's research MCP by DOI and is pinned in `fetch.py` by sha256
+`cccb174d…86103` rather than re-downloaded. The three PMC identifiers in the brief are
+three different papers: PMC10421786 is a forensic genetic-genealogy cost-benefit analysis,
+PMC10460458 is a dementia study in South Carolina prisons, PMC10712089 is alcohol costs in
+Thailand.
+
+Having read it: **table 5 prices "Assault" as a single category, $29,326 per crime in 2017
+dollars** ($8,745 tangible, $20,581 quality of life; table 8 gives a 95% interval of
+$24,975–$33,681, coefficient of variation 0.076). There is no simple-assault row, with or
+without injury, in table 5, 6, 7, 8 or 9. A gate in `simple_assault_price.py` asserts this
+rather than trusting the reading: of the two lines in the extracted text that mention simple
+assault, neither carries a dollar figure. Table 4 does split the **incidence**: 7,492,068
+simple and 1,417,526 aggravated assaults, so the priced category is **84.1% simple assault by
+count** and its price is an arithmetic upper bound on simple assault. In 2024 dollars that
+bound is **$37,530**, already 4.2 times below the $155,924 the old upper arm used.
+
+### The other two routes
+
+**Route 2, Miller, Cohen & Wiersema (1996), NIJ NCJ 155282.** The two-page document at
+`ojp.gov/pdffiles/victcost.pdf` reports as 2 pages to `file` because of a damaged page tree,
+but `pdftotext` recovers all 1,689 lines of the full research report, table 2 included. That
+table gives "Other Assault or Attempt" split by injury, in 1993 dollars: **with injury
+$24,000** (tangible $4,800, quality of life $19,300) and **no injury $2,000** (tangible $200,
+quality of life $1,700).
+
+**Route 3, derivation.** NCVS gives the injury share directly, from the N-DASH injury file
+pooled 2022–2024: **12.88% of simple assaults and 24.26% of aggravated assaults** injure the
+victim. The tangible victim cost is Miller 2021's medical, mental-health and productivity
+columns scaled by that injury ratio, $3,481. The criminal-justice channel is Miller's own
+public-services and adjudication columns scaled by simple assault's own arrest probability
+(14.18% against 16.29% for the pooled category), $5,120, with McCollister's aggravated-assault
+criminal-justice cost of $12,590 as the ceiling. Tangible bracket, no quality of life:
+**$8,601 to $16,071**.
+
+### One parameter governs the answer
+
+Every route reduces to the same thing. If aggravated assault costs *k* times a simple assault,
+then simple assault costs Miller's pooled price divided by (0.841 + 0.159*k*). The two
+substantive routes are two values of *k* and they disagree because they import *k* from
+incompatible costing methods:
+
+| *k* | simple assault, 2024$ | where *k* comes from |
+|---|---|---|
+| 1.52 | 34,671 | the 1996 injured-to-uninjured relativity applied inside Miller's 2021 total |
+| **3.96** | **25,526** | **the geometric mean of the two anchors** |
+| 10.31 | 15,129 | Miller's pooled total minus McCollister's aggravated-assault price at Miller's own counts |
+
+Route 1's *k* of 1.52 is **below what the survey alone requires**: aggravated assault injures
+the victim 1.88 times as often as simple assault and leads to an arrest 1.93 times as often,
+and it is more severe conditional on each of those. Route 4's *k* of 10.3 carries a
+jury-award intangible cost into a QALY-based total, two methods that do not mix. The
+geometric mean is the transparent compromise, it clears both survey floors, and
+`derived/simple_assault_sensitivity_to_k.csv` gives the price at *k* from 1.5 to 13 so any
+reader can move it.
+
+### The central figure
+
+**A simple assault costs $25,526 in 2024 dollars**: tangible **$8,601**, of which the
+criminal-justice component is **$5,120**, plus **$16,925** of lost quality of life. The
+tangible side is built from Miller's own cost columns and falls inside the independent
+$8,601–$16,071 bracket of route 3; the quality-of-life figure is the residual under the
+*k*-anchored total. Every route is in `derived/simple_assault_unit_cost.csv`:
+
+| route | tangible | quality of life | criminal-justice | total |
+|---|---|---|---|---|
+| **central, *k*-anchored** | **8,601** | **16,925** | **5,120** | **25,526** |
+| Miller 2021 reweighted to the simple-assault injury mix | 10,127 | 24,379 | 5,120 | 34,671 |
+| Miller 1996 applied directly | 1,720 | 8,611 | — | 10,493 |
+| derived tangible bracket, low | 8,601 | 0 | 5,120 | 8,601 |
+| derived tangible bracket, high | 16,071 | 0 | 12,590 | 16,071 |
+| residual against McCollister | — | — | — | 15,129 |
+| Miller 2021 pooled assault (upper bound) | 11,191 | 26,338 | 5,882 | 37,530 |
+| McCollister aggravated assault (old upper arm) | 17,479 | 138,445 | 12,590 | 155,924 |
+| zero (old lower arm) | 0 | 0 | 0 | 0 |
+
+Miller 1996 comes out lowest for two reasons worth naming: its quality-of-life valuation
+predates the QALY methods Miller himself adopted later, and its cost columns contain no
+adjudication or sanctioning line at all, so it omits the entire $5,120 criminal-justice
+channel. Adding that channel back puts it at about $15,600, next to the McCollister residual
+of $15,129 and inside route 3's bracket.
+
+A complete Miller-2021 price set for all four NCVS offence categories is also written, to
+`derived/miller2021_price_set.csv`, for anyone who wants the cost model run inside one
+costing framework rather than McCollister's: rape/sexual assault $211,613, robbery $35,478,
+aggravated assault $100,972, simple assault $25,526, all 2024 dollars. The lane's headline
+tables keep McCollister for the three offences it prices, because the rest of the repo's
+crime-cost work is built on it.
+
+---
 
 ---
 
@@ -450,7 +595,11 @@ in violent crime victims and offenders are close in age, but not identical.
    groups, so the mix shares transfer, but the levels do not.
 6. **The pooled standard errors assume between-year independence** and therefore understate
    the true sampling error, as above.
-7. **Simple assault has no unit cost**, and it is most of the volume.
+7. **Simple assault has no published unit cost in either costing framework the repo
+   uses**, and it is most of the volume. Phase 3 derives one, but it rests on an
+   aggravated-to-simple cost ratio that no source publishes and that the two available
+   anchors put at 1.5 and 10.3. That ratio, not the survey, is now the largest single
+   uncertainty in the cost section.
 8. **These are resident groups, not admission categories.** The repo measures residents. The
    sign convention on the absolute account is a convention; the gap against same-age whites
    is not. No policy conclusion follows from any number here.
@@ -463,6 +612,7 @@ in violent crime victims and offenders are close in age, but not identical.
 cd /Users/alien/Projects/immigration-research/infra/immigration-fiscal/ncvs_victim_offender_2026_09_18
 UV='uv run --no-project --with "pandas>=2" --with "numpy>=2" python3'
 PYTHONUNBUFFERED=1 $UV fetch.py && PYTHONUNBUFFERED=1 $UV build.py \
+  && PYTHONUNBUFFERED=1 $UV simple_assault_price.py \
   && PYTHONUNBUFFERED=1 $UV analysis.py && PYTHONUNBUFFERED=1 $UV age_standardise.py
 ```
 
@@ -483,19 +633,48 @@ PYTHONUNBUFFERED=1 $UV fetch.py && PYTHONUNBUFFERED=1 $UV build.py \
   `crime_cost_2026_09_16` runs; the removed risk-of-homicide slice is $113 / $1,663 / $7,470
   (2008$) for the three priced offences.
 - **Simple assault by subtraction is non-negative** in every 2019 cell, minimum 7,600.
+- **Miller 2021 and Miller 1996 transcription gates.** All 33 transcribed values from Miller
+  et al. (2021) tables 4, 5 and 8 and all 9 from Miller, Cohen & Wiersema (1996) table 2
+  appear verbatim in the `pdftotext` extractions. Cambridge drops the thousands separator in
+  four-digit figures, so the gate accepts either rendering.
+- **Miller 2021's published components close.** Its seven tangible columns for assault sum
+  to $8,745, the published tangible subtotal; tangible plus quality of life equals the
+  published $29,326 total; and its simple and aggravated counts sum to the assault total.
+- **Miller 2021 carries no simple-assault price**, asserted by gate rather than by reading:
+  of the two lines in the extracted text mentioning simple assault, neither carries a dollar
+  figure.
+- **The central decomposition reconstructs the published pooled cost.** Splitting Miller's
+  assault category into simple and aggravated at the chosen ratio and reweighting by his own
+  counts returns $29,326, the published figure, to the dollar.
+- **The chosen aggravated-to-simple ratio clears both NCVS floors**, the 1.88 injury ratio
+  and the 1.93 arrest ratio, and the resulting quality-of-life residual is positive.
+- **The simple-assault arms are ordered** $10,493 < $25,526 < $34,671 < $155,924.
+- **The cost transfer is per resident-year, checked two ways.** The pooled figure is
+  reassembled one year at a time, each year's own matrix over its own population, and the
+  two agree to within a part in a billion for all four groups. Separately, the Hispanic
+  offender-side total of $110.02 per resident-year at criminal-justice pricing with simple
+  assault at zero matches the $110.90 implied by the Hispanic victim-side cost per person
+  and the ratio of the Hispanic offending rate to the Hispanic victimisation rate, a gap of
+  0.8%. The same approximation reads +2.1% for white, −6.3% for Black and −6.5% for Other,
+  and those gaps are the cost-weighted victim mix: a Black offender's victims are 38.2%
+  white, whose incidents are cheaper than a Black victim's, so the approximation is not
+  exact for that group and is reported as a diagnostic rather than a gate.
 - **Victimisations per incident** are 1.06–1.09 across all four victim groups, i.e. the
   N-DASH and *Criminal Victimization* series are mutually consistent.
-- **Reproducibility, warm:** re-running all four scripts with `_cache/` intact leaves
-  `derived/` byte-identical (`diff -rq` clean, 31 files).
+- **Reproducibility, warm:** re-running all five scripts with `_cache/` intact leaves
+  `derived/` byte-identical (`diff -rq` clean, 35 files).
 - **Reproducibility, cold:** with `_cache/` deleted and every source re-fetched from BJS,
   the Census API and BLS, all 26 files produced by `fetch.py`, `build.py` and `analysis.py`
-  are byte-identical (`diff -rq`, zero differing files), and the four `age_standardise.py`
-  outputs reproduce byte-identically against a fresh ACS API call.
+  were byte-identical (`diff -rq`, zero differing files), and the four `age_standardise.py`
+  outputs reproduced byte-identically against a fresh ACS API call. That cold run predates
+  phase 3; the Miller 2021 PDF cannot be re-fetched by URL, so `fetch.py` verifies the
+  cached copy by sha256 (`cccb174d…86103`) and fails loudly if it is missing.
 
 ## Files
 
-Scripts: `fetch.py`, `build.py`, `analysis.py`, `age_standardise.py`, `README.md`.
-`derived/` holds 31 CSVs plus `analysis_log.txt` (the full gated console transcript).
+Scripts: `fetch.py`, `build.py`, `analysis.py`, `age_standardise.py`,
+`simple_assault_price.py`, `README.md`. `derived/` holds the CSVs plus `analysis_log.txt`
+and `simple_assault_price_log.txt` (the full gated console transcripts).
 Everything downloaded is under `_cache/` with sha256 in `derived/source_manifest.csv`.
 
 ## Skipped, with reasons
@@ -509,9 +688,9 @@ Everything downloaded is under `_cache/` with sha256 in `derived/source_manifest
   would have produced from a public-use file.
 - **Single-offender, reported-to-police and injury arms on the 2022–2024 window.** BJS
   publishes those cross-tabs only for 2012–15. The arms run there and are labelled.
-- **A simple-assault unit cost.** Miller, Cohen & Wiersema is paywalled, as
-  `crime_cost_2026_09_16` already established; not re-attempted. The two bounding arms stand
-  in for it.
+- **A published simple-assault unit cost.** There is none. Miller et al. (2021) is
+  paywalled and prices assault as one category; Miller, Cohen & Wiersema (1996) is free and
+  splits assault by injury but not by degree. Phase 3 derives a central figure instead.
 - **Mexican-origin split.** Not in the NCVS at all.
 
 ## The one thing to carry forward
@@ -522,3 +701,9 @@ diagonals, and the 2019 severity gradient says at least part of that is real. An
 about assortative victimisation has to name the margin it is measured on. The quantity that
 travels across margins is the **concentration ratio** against population share, where the
 ordering (white least assortative) is the same on both.
+
+The second thing to carry forward is narrower and concerns the cost model the whole repo
+shares: **no crime-cost source in use prices a simple assault**, and simple assault is the
+majority of all violent victimisation. This lane's $25,526 is a derivation, not a citation,
+and it turns on an aggravated-to-simple ratio the literature does not report. Any repo figure
+that weights offences by cost inherits that gap.

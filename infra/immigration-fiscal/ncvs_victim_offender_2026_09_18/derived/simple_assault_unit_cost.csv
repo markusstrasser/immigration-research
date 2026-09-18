@@ -1,0 +1,10 @@
+route,source,source_year,tangible_2024,qol_2024,cjs_component_2024,total_2024
+0_CENTRAL_k_anchored,"Miller et al. 2021 pooled assault $37,530 (2024$) split at an aggravated-to-simple cost ratio of k=3.96, the geometric mean of the ratio implied by route 1 (k=1.52) and route 4 (k=10.31); tangible components from Miller's own columns, quality of life the residual",2017,8601.494425064044,16924.568726364803,5120.074334759009,25526.063151428847
+1_miller2021_reweighted,"Miller et al. 2021 JBCA table 5 + table 4; injury relativity from Miller, Cohen & Wiersema 1996 NCJ 155282 table 2; injury shares from NCVS N-DASH 2022-2024",2017,10126.579500877095,24379.04683819794,5120.074334759009,34671.16476160519
+2_miller1996_direct,"Miller, Cohen & Wiersema 1996 NCJ 155282 table 2, 'Other Assault or Attempt' injured and not-injured rows, weighted by the NCVS simple-assault injury share",1993,1720.3460566758138,8611.474035411358,,10492.985277828211
+3_derived_tangible_bracket_low,"Miller et al. 2021 table 5 victim columns scaled by the NCVS injury ratio, plus the simple-assault arrest-rate-scaled criminal-justice columns; no quality of life",2017,8601.494425064044,0.0,5120.074334759009,8601.494425064044
+3_derived_tangible_bracket_high,as above with McCollister 2010 aggravated-assault criminal-justice cost as the ceiling on that channel,2017,16071.057248170928,0.0,12589.637157865893,16071.057248170928
+4_residual_against_mccollister,"Miller et al. 2021 pooled assault total and table 4 counts, minus McCollister 2010 aggravated assault",2017,,,,15128.818449832741
+bound_zero_legacy_arm,the lane's old lower arm,2024,0.0,0.0,0.0,0.0
+bound_aggravated_legacy_arm,"McCollister 2010 aggravated assault, the lane's old upper arm",2008,17479.212704885675,138445.213708123,12589.637157865893,155924.42641300865
+bound_miller2021_pooled_assault,"Miller et al. 2021 pooled assault, an upper bound because 15.9% of the priced category is aggravated assault",2017,11191.295304340732,26338.25599298303,5881.66875,37529.551297323764

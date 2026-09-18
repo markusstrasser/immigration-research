@@ -12,6 +12,7 @@ UV='uv run --no-project --with "pandas>=2" --with "numpy>=2" python3'
 
 PYTHONUNBUFFERED=1 uv run --no-project --with "pandas>=2" --with "numpy>=2" python3 fetch.py
 PYTHONUNBUFFERED=1 uv run --no-project --with "pandas>=2" --with "numpy>=2" python3 build.py
+PYTHONUNBUFFERED=1 uv run --no-project --with "pandas>=2" --with "numpy>=2" python3 simple_assault_price.py
 PYTHONUNBUFFERED=1 uv run --no-project --with "pandas>=2" --with "numpy>=2" python3 analysis.py
 PYTHONUNBUFFERED=1 uv run --no-project --with "pandas>=2" --with "numpy>=2" python3 age_standardise.py
 ```
@@ -29,6 +30,9 @@ NCJ 250747 transcription gate.
 | BJS N-DASH static data | victimisation rate and count by victim race/Hispanic origin and crime type, 1993–2024 | `ncvs.bjs.ojp.gov/data/custom-graphics/person/racehispanicorigin_all.csv` |
 | BJS NCJ 250747, *Race and Hispanic Origin of Victims and Offenders, 2012-15* | the published 2012–15 matrix, the single- vs multiple-offender split, rates by crime type, reported-to-police and injury shares by pair | `rhovo1215.pdf` |
 | McCollister, French & Fang (2010) | unit costs per offence, 2008 dollars, inflated with BLS CPI-U | inline in `analysis.py` |
+| Miller, Cohen, Swedler, Ali & Hendrie (2021), JBCA 12(1):24-54 | cost per crime by category, 2017 dollars; prices assault as ONE category, not split by degree | `miller2021_jbca.pdf`, paywalled, retrieved via the research MCP and pinned by sha256 |
+| Miller, Cohen & Wiersema (1996), NIJ NCJ 155282 | assault cost split by injury, 1993 dollars | `victcost.pdf` |
+| BJS N-DASH injury file | injury share by crime type, for the simple-assault decomposition | `ncvs.bjs.ojp.gov/data/custom-graphics/person/injury_all.csv` |
 | ACS 2023 1-year B01001H/B/I | population by group and age, for the age arm | Census API |
 | ICPSR 38963 (NCVS concatenated microdata) | **not obtained** — every download path redirects to `rpxlogin` | `derived/icpsr_route_probe.csv` |
 
@@ -50,6 +54,10 @@ NCJ 250747 transcription gate.
 | `rates_by_victim_and_offender_2022_2024.csv` | incidents per 1,000 residents, both sides |
 | `cross_group_shares_2022_2024.csv`, `intra_group_concentration_2022_2024.csv` | (d) |
 | `offence_mix_by_victim_group.csv`, `cost_of_victimisation_by_group.csv`, `inter_group_cost_transfer.csv` | (e) |
+| `simple_assault_unit_cost.csv` | every route to a simple-assault price, 2024 dollars, with components |
+| `simple_assault_sensitivity_to_k.csv` | the price against the aggravated-to-simple cost ratio |
+| `miller2021_price_set.csv` | a complete Miller-2021 price set for the four NCVS offence categories |
+| `simple_assault_price_log.txt` | the gated console transcript of `simple_assault_price.py` |
 | `disconfirmation_arms.csv` | every arm's intra-group share |
 | `comparison_with_homicide.csv` | against the cleared-homicide matrix |
 | `age_structure_by_group_acs2023.csv`, `age_expected_offender_rate*.csv`, `age_arm_observed_vs_expected.csv` | the age arm |
@@ -58,5 +66,8 @@ NCJ 250747 transcription gate.
 
 ## Reproducibility
 
-Re-running the four scripts leaves `derived/` byte-identical, both warm (cache kept) and
-cold (cache deleted, everything re-fetched). Verified 2026-09-18; see `RESULT.md`.
+Re-running the five scripts leaves `derived/` byte-identical (35 files) with the cache kept.
+A cold run with `_cache/` deleted also reproduced byte-identically for the files that existed
+at the time; the Miller 2021 PDF is paywalled and cannot be re-fetched by URL, so `fetch.py`
+verifies the cached copy by sha256 and fails loudly if it is missing. If it has been lost,
+restore it with the research MCP: `fetch_paper(doi='10.1017/bca.2020.36')`. See `RESULT.md`.

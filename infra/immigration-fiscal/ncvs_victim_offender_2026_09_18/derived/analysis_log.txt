@@ -132,32 +132,80 @@ Black                     0.240                0.073    0.137           0.549
 Hispanic                  0.194                0.071    0.139           0.596
 Other                     0.157                0.122    0.086           0.636
 White                     0.218                0.077    0.091           0.614
+simple assault priced at $25,526 social / $5,120 criminal-justice (2024$), central arm; low arm $10,493, high arm $34,671
+  ✓ [simple_assault_arms_ordered] $10,493 < $25,526 < $34,671 < $155,924
+simple_central / social_total_2024: White $82,312/incident, $1,732,724 per 1,000 persons  Black $85,707/incident, $1,942,298 per 1,000 persons  Hispanic $78,904/incident, $1,649,080 per 1,000 persons  Other $88,691/incident, $2,012,016 per 1,000 persons
+simple_central / cjs_2024: White $10,693/incident, $225,104 per 1,000 persons  Black $11,437/incident, $259,180 per 1,000 persons  Hispanic $11,024/incident, $230,392 per 1,000 persons  Other $11,658/incident, $264,464 per 1,000 persons
+simple_low_miller1996 / social_total_2024: White $73,085/incident, $1,538,496 per 1,000 persons  Black $77,457/incident, $1,755,328 per 1,000 persons  Hispanic $69,942/incident, $1,461,775 per 1,000 persons  Other $79,137/incident, $1,795,285 per 1,000 persons
+simple_low_miller1996 / cjs_2024: White $10,693/incident, $225,104 per 1,000 persons  Black $11,437/incident, $259,180 per 1,000 persons  Hispanic $11,024/incident, $230,392 per 1,000 persons  Other $11,658/incident, $264,464 per 1,000 persons
+simple_high_miller2021_reweighted / social_total_2024: White $87,925/incident, $1,850,880 per 1,000 persons  Black $90,726/incident, $2,056,038 per 1,000 persons  Hispanic $84,356/incident, $1,763,024 per 1,000 persons  Other $94,503/incident, $2,143,860 per 1,000 persons
+simple_high_miller2021_reweighted / cjs_2024: White $15,278/incident, $321,611 per 1,000 persons  Black $15,536/incident, $352,081 per 1,000 persons  Hispanic $15,477/incident, $323,459 per 1,000 persons  Other $16,405/incident, $372,153 per 1,000 persons
 simple_at_zero / social_total_2024: White $66,645/incident, $1,402,926 per 1,000 persons  Black $71,698/incident, $1,624,825 per 1,000 persons  Hispanic $63,686/incident, $1,331,038 per 1,000 persons  Other $72,469/incident, $1,644,008 per 1,000 persons
 simple_at_zero / cjs_2024: White $7,551/incident, $158,952 per 1,000 persons  Black $8,627/incident, $195,501 per 1,000 persons  Hispanic $7,971/incident, $166,598 per 1,000 persons  Other $8,404/incident, $190,649 per 1,000 persons
 simple_at_aggravated / social_total_2024: White $162,345/incident, $3,417,481 per 1,000 persons  Black $157,272/incident, $3,564,091 per 1,000 persons  Hispanic $156,641/incident, $3,273,783 per 1,000 persons  Other $171,560/incident, $3,891,962 per 1,000 persons
 simple_at_aggravated / cjs_2024: White $15,278/incident, $321,611 per 1,000 persons  Black $15,536/incident, $352,081 per 1,000 persons  Hispanic $15,477/incident, $323,459 per 1,000 persons  Other $16,405/incident, $372,153 per 1,000 persons
+  ✓ [transfer_units_Hispanic] offender-side total $110.02 per resident-year against $110.90 from the victim-side cost and the rate ratio (-0.8%)
+    White: $114.50 against $112.14 on the same approximation (+2.1%); the gap is the cost-weighted victim mix, which for these groups is not their own victim cost
+    Black: $297.02 against $317.03 on the same approximation (-6.3%); the gap is the cost-weighted victim mix, which for these groups is not their own victim cost
+    Other: $125.93 against $134.74 on the same approximation (-6.5%); the gap is the cost-weighted victim mix, which for these groups is not their own victim cost
+  ✓ [transfer_pooled_matches_yearly_White] pooled $114.50 = year-by-year $114.50 per resident-year
+  ✓ [transfer_pooled_matches_yearly_Black] pooled $297.02 = year-by-year $297.02 per resident-year
+  ✓ [transfer_pooled_matches_yearly_Hispanic] pooled $110.02 = year-by-year $110.02 per resident-year
+  ✓ [transfer_pooled_matches_yearly_Other] pooled $125.93 = year-by-year $125.93 per resident-year
+  ✓ [arms_collapse_only_on_cjs_pricing] 5 distinct social prices across 5 arms and 3 distinct criminal-justice prices: the central and low arms share a criminal-justice component of $5,120, and the high arm's criminal-justice ceiling of $12,590 is McCollister's aggravated-assault figure, which is what the legacy aggravated arm uses
+  Arms sharing a criminal-justice price therefore produce identical criminal-justice rows by construction; `simple_assault_price_used` in both cost CSVs names the price behind every row.
 
-Cost imposed per resident-year of the offender group (pooled 2022-2024 / 3), inter-group and total:
+Cost imposed per resident-year of the offender group, pooled 2022-2024 incidents over pooled person-years, inter-group and total:
+  simple_central / social_total_2024
+    White     inter-group $     296   total $   1,225
+    Black     inter-group $   1,984   total $   3,072
+    Hispanic  inter-group $     695   total $   1,139
+    Other     inter-group $   1,079   total $   1,335
+  simple_central / cjs_2024
+    White     inter-group $      40   total $     161
+    Black     inter-group $     263   total $     408
+    Hispanic  inter-group $      91   total $     153
+    Other     inter-group $     142   total $     176
+  simple_low_miller1996 / social_total_2024
+    White     inter-group $     264   total $   1,089
+    Black     inter-group $   1,762   total $   2,745
+    Hispanic  inter-group $     620   total $   1,013
+    Other     inter-group $     959   total $   1,188
+  simple_low_miller1996 / cjs_2024
+    White     inter-group $      40   total $     161
+    Black     inter-group $     263   total $     408
+    Hispanic  inter-group $      91   total $     153
+    Other     inter-group $     142   total $     176
+  simple_high_miller2021_reweighted / social_total_2024
+    White     inter-group $     316   total $   1,308
+    Black     inter-group $   2,119   total $   3,270
+    Hispanic  inter-group $     741   total $   1,216
+    Other     inter-group $   1,151   total $   1,424
+  simple_high_miller2021_reweighted / cjs_2024
+    White     inter-group $      56   total $     229
+    Black     inter-group $     373   total $     570
+    Hispanic  inter-group $     128   total $     216
+    Other     inter-group $     202   total $     249
   simple_at_zero / social_total_2024
-    White     inter-group $     725   total $   2,981
-    Black     inter-group $   4,823   total $   7,553
-    Hispanic  inter-group $   1,701   total $   2,776
-    Other     inter-group $   2,628   total $   3,255
+    White     inter-group $     242   total $     994
+    Black     inter-group $   1,608   total $   2,518
+    Hispanic  inter-group $     567   total $     925
+    Other     inter-group $     876   total $   1,085
   simple_at_zero / cjs_2024
-    White     inter-group $      88   total $     343
-    Black     inter-group $     563   total $     891
-    Hispanic  inter-group $     195   total $     330
-    Other     inter-group $     305   total $     378
+    White     inter-group $      29   total $     114
+    Black     inter-group $     188   total $     297
+    Hispanic  inter-group $      65   total $     110
+    Other     inter-group $     102   total $     126
   simple_at_aggravated / social_total_2024
-    White     inter-group $   1,729   total $   7,226
-    Black     inter-group $  11,720   total $  17,707
-    Hispanic  inter-group $   4,053   total $   6,697
-    Other     inter-group $   6,343   total $   7,829
+    White     inter-group $     576   total $   2,409
+    Black     inter-group $   3,907   total $   5,902
+    Hispanic  inter-group $   1,351   total $   2,232
+    Other     inter-group $   2,114   total $   2,610
   simple_at_aggravated / cjs_2024
-    White     inter-group $     169   total $     686
-    Black     inter-group $   1,119   total $   1,711
-    Hispanic  inter-group $     385   total $     647
-    Other     inter-group $     605   total $     747
+    White     inter-group $      56   total $     229
+    Black     inter-group $     373   total $     570
+    Hispanic  inter-group $     128   total $     216
+    Other     inter-group $     202   total $     249
 
 [disconfirmation arms]
                                           arm  intra_White  intra_Black  intra_Hispanic  intra_Other
