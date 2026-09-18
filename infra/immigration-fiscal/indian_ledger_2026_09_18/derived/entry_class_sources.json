@@ -1,0 +1,32 @@
+{
+  "yearbook_lpr_fy2020": {
+    "bytes": 63021,
+    "sha256": "e87c3f684257e7b7cc2aeb47f7146b2cb50af21a3708d35ab276902b2e754567",
+    "url": "https://ohss.dhs.gov/sites/default/files/2023-12/2021_0920_plcy_tables8-11newadj_fy2020_d.xlsx"
+  },
+  "yearbook_lpr_fy2021": {
+    "bytes": 63247,
+    "sha256": "64a7c7683a1815ba0362377900bfe6ea37dba9a4a8b480046a5e5fd73ef11dab",
+    "url": "https://ohss.dhs.gov/sites/default/files/2023-12/2202_0405_plcy_tables8-11newadj_fy2021_d.xlsx"
+  },
+  "yearbook_lpr_fy2022": {
+    "bytes": 261108,
+    "sha256": "0302858eb2693cc2ac727c9bb6266ce399635cda93363e49cd13336fb2ac4a6b",
+    "url": "https://ohss.dhs.gov/sites/default/files/2023-12/2023_0818_plcy_yearbook_lawful_permanent_residents_fy2022_0.xlsx"
+  },
+  "yearbook_lpr_fy2023": {
+    "bytes": 239618,
+    "sha256": "bae6e570717b9c885249616bd1f657b6d77e9220e2309773bd504e50b76eb93a",
+    "url": "https://ohss.dhs.gov/sites/default/files/2024-09/2024_0906_ohss_yearbook_lawful_permanent_residents_fy2023_0.xlsx"
+  },
+  "yearbook_lpr_fy2024": {
+    "bytes": 258559,
+    "sha256": "19c500a6e6445e73c0a39c5bc382585e2a13fc8f52f6e4d9a3cf6a84bf9bab6a",
+    "url": "https://ohss.dhs.gov/system/files/2026-06/2026_0604_ohss_yearbook_lawful_permanent_residents_fy2024.xlsx"
+  },
+  "yearbook_nonimmigrants_fy2024": {
+    "bytes": 237491,
+    "sha256": "deab954e28cb107e8e0da12e555700aa6b596cf1f9cb9616c620e69b17371087",
+    "url": "https://ohss.dhs.gov/system/files/2026-06/20260604_ohss_yearbook_nonimmigrants_fy2024.xlsx"
+  }
+}

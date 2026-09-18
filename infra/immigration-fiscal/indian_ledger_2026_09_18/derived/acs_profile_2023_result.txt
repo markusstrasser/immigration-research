@@ -1,0 +1,168 @@
+ACS 2023 1-year PUMS profile — person file acs_pums_2023_person.zip, household file acs_pums_2023_household.zip
+Point estimates on PWGTP (households: WGTP). No replicate standard errors; see docstring.
+
+metric                                                 india_born         china_born   china_born_broad        mexico_born   all_foreign_born            us_born  us_born_asian_ind
+unweighted n, adults 25-64                                 20,976             16,128             21,327             69,152            287,286          1,403,154              2,937
+Population, all ages (millions)                              2.94               2.28               2.95              11.30              47.81             287.11               1.12
+Population 25-64 (millions)                                  2.23               1.50               1.94               8.72              33.59             138.96               0.30
+Median age                                                     41                 46                 48                 46                 46                 37                 15
+BA or higher, 25-64                                          84.4               59.0               62.8               10.4               36.8               38.3               83.6
+Graduate degree, 25-64                                       52.4               37.7               38.0                3.0               16.8               14.0               47.6
+Doctorate, 25-64                                              5.0               11.0               10.2                0.3                2.7                1.4                6.2
+High school or less, 25-64                                    9.2               30.2               25.8               74.9               44.9               31.7                5.4
+Employed, 25-64                                              81.9               78.5               78.4               73.6               77.3               77.1               84.8
+Median household income (householder)                     165,193             91,757            100,219             65,147             78,911             77,483            142,733
+Mean household size                                          2.95               2.62               2.57               3.62               3.03               2.35               2.39
+Computer/math occupations, employed                          31.1               14.6               14.1                1.0                6.0                3.9               11.6
+Physicians/surgeons, employed                                2.50               1.45               1.57               0.08               0.94               0.62              12.13
+Top-10 occupation concentration                              42.6               32.4               30.8               34.8               23.2               19.8               37.7
+Self-employed, employed                                       7.3               11.6               11.4               14.2               13.2                9.3                9.1
+  of which incorporated                                       4.6                5.6                5.6                3.6                5.0                3.8                5.3
+Traveler accommodation (7211), self-employed                 2.01               0.19               0.22               0.34               0.39               0.20               3.78
+Naturalised (foreign-born)                                   47.8               52.3               58.4               34.7               52.3                  —                  —
+  entered 0-4 years ago                                       2.3                3.2                3.8                4.4                4.0                  —                  —
+  entered 5-9 years ago                                      15.9               15.5               17.2               14.4               26.3                  —                  —
+  entered 10-14 years ago                                    36.1               38.3               41.0               27.5               51.5                  —                  —
+  entered 15-19 years ago                                    55.6               60.5               62.5               18.6               52.3                  —                  —
+  entered 20+ years ago                                      90.7               83.6               87.1               43.9               71.1                  —                  —
+Median years in the US                                         13                 17                 19                 24                 21                  —                  —
+English very well / only English                             79.3               42.1               45.2               34.9               53.2                  —                  —
+English not well / not at all                                 6.2               32.9               28.5               41.6               26.0                  —                  —
+Top-10 PUMA concentration                                     8.0               12.3               11.7                4.2                2.1                0.7                6.5
+Top-50 PUMA concentration                                    25.8               30.9               30.4               16.2                8.1                3.4               21.9
+Top-5 state concentration                                    52.8               63.8               65.0               70.5               58.2               34.1               52.6
+Group's share of all US employed 25-64                       1.37               0.88               1.14               4.82              19.51              80.49               0.19
+  of all self-employed                                       1.00               1.02               1.30               6.83              25.67              74.33               0.17
+  of self-employed in traveler accommodation                 8.14               0.79               1.14               9.41              40.66              59.34               2.60
+  of physicians and surgeons                                 5.03               1.88               2.63               0.58              26.85              73.15               3.35
+  of computer/math occupations                               9.87               2.98               3.72               1.17              27.29              72.71               0.50
+
+== spousal endogamy, married spouse-present couples ==
+  india_born                   spouse_india_born_share                            88.4%  (n=18,718)
+  india_born                   spouse_india_born_or_indian_ancestry_share         91.3%  (n=18,718)
+  china_born                   spouse_china_born_share                            77.5%  (n=12,781)
+  mexico_born                  spouse_mexico_born_share                           72.7%  (n=46,247)
+  us_born_asian_indian_anc     spouse_indian_origin_share                         52.4%  (n=1,527)
+
+== top occupations of the employed 25-64, by group ==
+-- india_born --
+    1. 1021 CMM-Software Developers                                            19.3%
+    2. 440 MGR-Other Managers                                                   5.3%
+    3. 1108 CMM-Computer Occupations, All Other                                 3.0%
+    4. 110 MGR-Computer And Information Systems Managers                        2.6%
+    5. 3090 MED-Physicians                                                      2.4%
+    6. 710 BUS-Management Analysts                                              2.2%
+    7. 1530 ENG-Other Engineers                                                 2.2%
+    8. 3255 MED-Registered Nurses                                               1.9%
+    9. 1006 CMM-Computer Systems Analysts                                       1.8%
+   10. 2205 EDU-Postsecondary Teachers                                          1.8%
+-- china_born --
+    1. 1021 CMM-Software Developers                                             8.7%
+    2. 2205 EDU-Postsecondary Teachers                                          3.6%
+    3. 4000 EAT-Chefs And Head Cooks                                            3.0%
+    4. 800 FIN-Accountants And Auditors                                         2.9%
+    5. 440 MGR-Other Managers                                                   2.9%
+    6. 1760 SCI-Physical Scientists, All Other                                  2.8%
+    7. 1240 CMM-Other Mathematical Science Occupations                          2.3%
+    8. 4110 EAT-Waiters And Waitresses                                          2.3%
+    9. 1530 ENG-Other Engineers                                                 2.1%
+   10. 4720 SAL-Cashiers                                                        1.9%
+-- china_born_broad --
+    1. 1021 CMM-Software Developers                                             8.0%
+    2. 2205 EDU-Postsecondary Teachers                                          3.4%
+    3. 440 MGR-Other Managers                                                   3.4%
+    4. 800 FIN-Accountants And Auditors                                         3.0%
+    5. 1760 SCI-Physical Scientists, All Other                                  2.6%
+    6. 4000 EAT-Chefs And Head Cooks                                            2.4%
+    7. 1530 ENG-Other Engineers                                                 2.3%
+    8. 1240 CMM-Other Mathematical Science Occupations                          2.1%
+    9. 4110 EAT-Waiters And Waitresses                                          2.0%
+   10. 4720 SAL-Cashiers                                                        1.6%
+-- mexico_born --
+    1. 6260 CON-Construction Laborers                                           5.9%
+    2. 4020 EAT-Cooks                                                           4.0%
+    3. 4230 CLN-Maids And Housekeeping Cleaners                                 3.7%
+    4. 4220 CLN-Janitors And Building Cleaners                                  3.7%
+    5. 4251 CLN-Landscaping And Groundskeeping Workers                          3.7%
+    6. 6050 FFF-Other Agricultural Workers                                      3.6%
+    7. 9130 TRN-Driver/Sales Workers And Truck Drivers                          3.6%
+    8. 6230 CON-Carpenters                                                      2.7%
+    9. 9620 TRN-Laborers And Freight, Stock, And Material Movers, Hand          2.2%
+   10. 8990 PRD-Miscellaneous Production Workers, Including Equipment Operato   1.9%
+-- all_foreign_born --
+    1. 1021 CMM-Software Developers                                             3.0%
+    2. 9130 TRN-Driver/Sales Workers And Truck Drivers                          2.9%
+    3. 440 MGR-Other Managers                                                   2.8%
+    4. 6260 CON-Construction Laborers                                           2.8%
+    5. 4230 CLN-Maids And Housekeeping Cleaners                                 2.3%
+    6. 4220 CLN-Janitors And Building Cleaners                                  2.2%
+    7. 3255 MED-Registered Nurses                                               2.1%
+    8. 4020 EAT-Cooks                                                           2.0%
+    9. 9620 TRN-Laborers And Freight, Stock, And Material Movers, Hand          1.5%
+   10. 4251 CLN-Landscaping And Groundskeeping Workers                          1.4%
+-- us_born --
+    1. 440 MGR-Other Managers                                                   3.4%
+    2. 3255 MED-Registered Nurses                                               2.5%
+    3. 2310 EDU-Elementary And Middle School Teachers                           2.5%
+    4. 9130 TRN-Driver/Sales Workers And Truck Drivers                          2.3%
+    5. 4700 SAL-First-Line Supervisors Of Retail Sales Workers                  1.9%
+    6. 5240 OFF-Customer Service Representatives                                1.8%
+    7. 4760 SAL-Retail Salespersons                                             1.4%
+    8. 5740 OFF-Secretaries And Administrative Assistants, Except Legal, Medi   1.4%
+    9. 9620 TRN-Laborers And Freight, Stock, And Material Movers, Hand          1.3%
+   10. 4220 CLN-Janitors And Building Cleaners                                  1.2%
+-- us_born_asian_indian_anc --
+    1. 3090 MED-Physicians                                                     11.5%
+    2. 1021 CMM-Software Developers                                             5.7%
+    3. 440 MGR-Other Managers                                                   3.9%
+    4. 3255 MED-Registered Nurses                                               3.4%
+    5. 710 BUS-Management Analysts                                              3.0%
+    6. 2100 LGL-Lawyers, And Judges, Magistrates, And Other Judicial Workers    3.0%
+    7. 10 MGR-Chief Executives And Legislators                                  2.2%
+    8. 800 FIN-Accountants And Auditors                                         1.9%
+    9. 3050 MED-Pharmacists                                                     1.6%
+   10. 705 BUS-Project Management Specialists                                   1.5%
+
+== top industries of the self-employed 25-64, by group ==
+-- india_born --
+    1. 7380 PRF-Computer Systems Design And Related Services                   12.8%
+    2. 6170 TRN-Truck Transportation                                            8.3%
+    3. 8680 ENT-Food Services And Drinking Places, except Alcoholic Beverages   5.9%
+    4. 7390 PRF-Management, Scientific, And Technical Consulting Services       5.4%
+    5. 7970 MED-Offices Of Physicians                                           4.7%
+-- china_born --
+    1. 8680 ENT-Food Services And Drinking Places, except Alcoholic Beverages  19.0%
+    2. 770 CON-Construction (The Cleaning Of Buildings And Dwellings Is Incid   6.3%
+    3. 8990 SRV-Nail Salons And Other Personal Care Services                    6.2%
+    4. 7071 FIN-Lessors Of Real Estate, And Offices Of Real Estate Agents And   5.3%
+    5. 6190 TRN-Taxi And Limousine Service                                      4.2%
+-- china_born_broad --
+    1. 8680 ENT-Food Services And Drinking Places, except Alcoholic Beverages  16.0%
+    2. 7071 FIN-Lessors Of Real Estate, And Offices Of Real Estate Agents And   6.6%
+    3. 770 CON-Construction (The Cleaning Of Buildings And Dwellings Is Incid   5.9%
+    4. 8990 SRV-Nail Salons And Other Personal Care Services                    5.5%
+    5. 6190 TRN-Taxi And Limousine Service                                      3.7%
+-- mexico_born --
+    1. 770 CON-Construction (The Cleaning Of Buildings And Dwellings Is Incid  32.0%
+    2. 7770 PRF-Landscaping Services                                            9.6%
+    3. 7690 PRF-Services To Buildings And Dwellings, Except Landscaping Servi   8.4%
+    4. 9290 SRV-Private Households                                              6.7%
+    5. 8680 ENT-Food Services And Drinking Places, except Alcoholic Beverages   4.5%
+-- all_foreign_born --
+    1. 770 CON-Construction (The Cleaning Of Buildings And Dwellings Is Incid  19.4%
+    2. 7690 PRF-Services To Buildings And Dwellings, Except Landscaping Servi   5.5%
+    3. 8680 ENT-Food Services And Drinking Places, except Alcoholic Beverages   5.1%
+    4. 9290 SRV-Private Households                                              4.5%
+    5. 6170 TRN-Truck Transportation                                            4.4%
+-- us_born --
+    1. 770 CON-Construction (The Cleaning Of Buildings And Dwellings Is Incid  15.6%
+    2. 7071 FIN-Lessors Of Real Estate, And Offices Of Real Estate Agents And   4.7%
+    3. 8980 SRV-Beauty Salons                                                   3.5%
+    4. 7390 PRF-Management, Scientific, And Technical Consulting Services       3.5%
+    5. 7690 PRF-Services To Buildings And Dwellings, Except Landscaping Servi   2.7%
+-- us_born_asian_indian_anc --
+    1. 7970 MED-Offices Of Physicians                                          12.6%
+    2. 7390 PRF-Management, Scientific, And Technical Consulting Services       6.6%
+    3. 8180 MED-Other Health Care Services                                      5.8%
+    4. 6170 TRN-Truck Transportation                                            5.0%
+    5. 8080 MED-Offices Of Other Health Practitioners                           4.9%
