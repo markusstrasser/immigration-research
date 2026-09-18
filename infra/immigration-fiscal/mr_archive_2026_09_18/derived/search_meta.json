@@ -1,0 +1,28 @@
+{
+  "candidates": 1860,
+  "search_credits_used": 81,
+  "found_counts": {
+    "immigration": 769,
+    "immigrants": 498,
+    "Mexican": 418,
+    "Mexico": 706,
+    "Hispanic": 151,
+    "Latino": 98,
+    "open borders": 176,
+    "border": 1153,
+    "deportation": 30,
+    "asylum": 58
+  },
+  "pages_done": {
+    "immigration": 10,
+    "immigrants": 10,
+    "Mexican": 10,
+    "Mexico": 10,
+    "Hispanic": 10,
+    "Latino": 8,
+    "open borders": 4,
+    "border": 10,
+    "deportation": 3,
+    "asylum": 5
+  }
+}
