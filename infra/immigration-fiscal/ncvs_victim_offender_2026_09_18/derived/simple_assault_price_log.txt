@@ -1,0 +1,96 @@
+
+[transcription gates]
+  ✓ [transcription_miller2021] 33 values checked against the PDF text, 0 missing
+  ✓ [transcription_miller1996] 9 values checked against the PDF text, 0 missing
+  ✓ [miller2021_has_no_simple_assault_price] 2 lines mention simple assault, 0 of them carry a dollar figure — the cost tables price 'Assault' as one category
+  ✓ [m21_components_sum] 8,745 + 20,581 = 29,326
+  ✓ [m21_tangible_sum] the seven tangible columns sum to 8,745 against the published 8,745
+  ✓ [m21_counts_sum] 7,492,068 + 1,417,526 = 8,909,594
+  CPI-U factors to 2024 dollars: 1993 x2.1709, 2008 x1.4570, 2017 x1.2797
+
+[NCVS injury share by assault type, pooled 2022-2024]
+levelDesc1          Injured  Not injured  share_injured
+crimeType                                              
+Aggravated assault  1007091      3143360         0.2426
+Simple assault      1535027     10383029         0.1288
+  ✓ [injury_share_ordering] aggravated 0.2426 > simple 0.1288, as the NCVS definitions require
+  Miller's priced category is 84.1% simple / 15.9% aggravated by count, so its own injury share is 0.1469.
+
+[route 1 — Miller 2021 pooled assault, reweighted to the simple-assault injury mix (CENTRAL)]
+  tangible  1996 injured:uninjured ratio 24.00 -> uninjured $1,997, injured $47,929; simple $7,913, aggravated $13,142 (2017$)
+  qol       1996 injured:uninjured ratio 11.35 -> uninjured $8,164, injured $92,685; simple $19,050, aggravated $28,673 (2017$)
+  total     1996 injured:uninjured ratio 12.00 -> uninjured $11,210, injured $134,521; simple $27,092, aggravated $41,131 (2017$)
+  ✓ [route1_reconstructs_pooled] count-weighted split returns $29,326 against the published $29,326
+  arrest probability: pooled assault 0.1629, simple assault 0.1418, ratio 0.871
+  CENTRAL simple assault: $34,671 in 2024 dollars (tangible $10,127, quality of life $24,379, criminal-justice component $5,120)
+  carrying Miller's own 95% interval on the pooled cost: $29,527 to $39,820
+
+[route 2 — Miller, Cohen & Wiersema 1996, applied directly]
+  $10,493 in 2024 dollars (tangible $1,720, quality of life $8,611)
+  Lower than route 1 because the 1996 study values lost quality of life far below the QALY-based 2021 method, and real incomes rose over the 24 years between them.
+
+[route 3 — derivation from NCVS-priced components (a bracket, not an estimate)]
+  victim tangible (medical, mental health, productivity), injury-scaled: $3,481
+  criminal-justice channel: $5,120 (simple-assault arrest rate on Miller's public-service and adjudication columns) to $12,590 (McCollister's aggravated-assault criminal-justice cost, a ceiling)
+  bracket, tangible only, no quality of life: $8,601 to $16,071
+
+[route 4 — residual against McCollister's aggravated-assault price]
+  McCollister aggravated assault in 2017 dollars: $121,841
+  residual simple-assault cost: $15,129 in 2024 dollars
+  This route is fragile and is reported as a lower bound only.  McCollister's
+  intangible cost for aggravated assault comes from jury awards and is five times
+  Miller's whole quality-of-life figure for the pooled category, so the residual
+  is a small difference between two large numbers from incompatible methods.
+
+[the central figure: anchoring on the aggravated-to-simple cost ratio]
+  k =  1.52  ->  simple assault $   34,671   (route 1, from the 1996 injury relativity)
+  k = 10.31  ->  simple assault $   15,129   (route 4, from McCollister's aggravated-assault price)
+  k =  3.96  ->  simple assault $   25,526   (central, the geometric mean of the two)
+
+  k has to clear two floors that come from the NCVS itself: aggravated assault injures
+  the victim 1.88 times as often as simple assault, and leads to an arrest
+  1.93 times as often, and it is more severe conditional on each.  So route 1's
+  k of 1.52 is below what the survey alone implies, while route 4's 10.3 carries a
+  jury-award intangible into a QALY-based total.  The geometric mean is the
+  transparent compromise and every downstream number is given against k.
+  ✓ [k_central_clears_the_ncvs_floors] k = 3.96 exceeds the injury ratio 1.88 and the arrest ratio 1.93
+  ✓ [central_qol_positive] tangible $8,601 from Miller's own columns leaves $16,925 of quality-of-life cost inside the central total
+
+  CENTRAL SIMPLE ASSAULT: $25,526 (2024 dollars) = tangible $8,601 (of which criminal-justice $5,120) + quality of life $16,925
+
+ k_aggravated_over_simple  simple_assault_2024
+                     1.50             34764.05
+                     2.00             32378.15
+                     3.00             28470.25
+                     3.96             25526.06
+                     5.00             22934.16
+                     7.00             19200.57
+                    10.00             15432.13
+                    13.00             12900.24
+
+[simple assault unit cost, every route, 2024 dollars]
+                          route  source_year  tangible_2024  qol_2024  cjs_component_2024  total_2024
+           0_CENTRAL_k_anchored         2017         8601.0   16925.0              5120.0     25526.0
+        1_miller2021_reweighted         2017        10127.0   24379.0              5120.0     34671.0
+            2_miller1996_direct         1993         1720.0    8611.0                 NaN     10493.0
+ 3_derived_tangible_bracket_low         2017         8601.0       0.0              5120.0      8601.0
+3_derived_tangible_bracket_high         2017        16071.0       0.0             12590.0     16071.0
+ 4_residual_against_mccollister         2017            NaN       NaN                 NaN     15129.0
+          bound_zero_legacy_arm         2024            0.0       0.0                 0.0         0.0
+    bound_aggravated_legacy_arm         2008        17479.0  138445.0             12590.0    155924.0
+bound_miller2021_pooled_assault         2017        11191.0   26338.0              5882.0     37530.0
+  ✓ [central_below_aggravated] the central simple-assault price $25,526 is 6.1x below the aggravated-assault price the old upper arm used
+  ✓ [central_below_miller_pooled] $25,526 is below Miller's pooled assault cost $37,530, which is the arithmetic upper bound on a category that is 84.1% simple assault
+
+  The three substantive routes span a factor of 3.3 ($10,493 to $34,671), against the factor the old zero-to-aggravated arms left open, which was unbounded below and $155,924 above.
+
+[a complete Miller 2021 price set for the four NCVS offence categories]
+       ncvs_offence  total_2024  cjs_2024
+Rape/sexual assault    211613.0     843.0
+            Robbery     35478.0    9471.0
+ Aggravated assault    100972.0    9907.0
+     Simple assault     25526.0    5120.0
+
+Miller's rape and other-sexual-assault rows are pooled at his own incidence weights (56.2% rape) to match the single NCVS category.
+
+[done] simple_assault_price.py

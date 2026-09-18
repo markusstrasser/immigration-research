@@ -54,6 +54,22 @@ SOURCES: dict[str, str] = {
     ),
     # N-DASH application bundle — the evidence that no offender characteristic exists
     "ndash_app.js": "https://ncvs.bjs.ojp.gov/js/app.c7ab787c.js",
+    # N-DASH static data: victim injury by crime type, for the simple-assault injury share
+    "nd_person_injury_all.csv": (
+        "https://ncvs.bjs.ojp.gov/data/custom-graphics/person/injury_all.csv"
+    ),
+    # Miller, Cohen & Wiersema (1996), NIJ NCJ 155282, full research report
+    "victcost.pdf": "https://www.ojp.gov/pdffiles/victcost.pdf",
+}
+
+# Miller et al. (2021), JBCA 12(1):24-54, doi:10.1017/bca.2020.36.  Paywalled at
+# Cambridge (the /article/abs/ page offers "Get access"/"Purchase"; OpenAlex reports
+# oa_status "closed"; SSRN sits behind a Cloudflare challenge).  The PDF in _cache/ was
+# retrieved through the repo's research MCP (fetch_paper by DOI) and is checked by
+# sha256 rather than re-downloaded here.
+MANUAL = {
+    "miller2021_jbca.pdf":
+        "cccb174d99a8102b3732cfa86f5d44a1c4ce2880e4c6e076acc66a0f49586103",
 }
 
 # Route 1 (ICPSR microdata) probes: recorded, not downloadable.  Each entry is
@@ -93,6 +109,25 @@ def curl(url: str, out: Path, follow: bool = True) -> tuple[int, str]:
     r = subprocess.run(cmd, capture_output=True, text=True, check=True)
     parts = r.stdout.strip().split(" ", 1)
     return int(parts[0]), (parts[1] if len(parts) > 1 else "")
+
+
+def check_manual() -> list[dict]:
+    """Files that cannot be fetched by URL; verify the cached copy by digest."""
+    rows = []
+    for name, want in MANUAL.items():
+        dest = CACHE / name
+        if not dest.exists():
+            raise SystemExit(
+                f"{name} is not in _cache/ and cannot be downloaded (paywalled). "
+                "Retrieve it with the research MCP: fetch_paper(doi='10.1017/bca.2020.36')."
+            )
+        got = sha256(dest)
+        if got != want:
+            raise SystemExit(f"{name} sha256 {got} != expected {want}")
+        print(f"[manual] {name} verified ({dest.stat().st_size:,} bytes)")
+        rows.append({"name": name, "url": "doi:10.1017/bca.2020.36 (paywalled; via research MCP)",
+                     "bytes": dest.stat().st_size, "sha256": got, "status": "manual"})
+    return rows
 
 
 def fetch_all() -> list[dict]:
@@ -137,7 +172,7 @@ def fetch_cpi() -> dict[int, float]:
     import urllib.request
 
     out: dict[int, float] = {}
-    for lo, hi in ((2008, 2015), (2016, 2025)):
+    for lo, hi in ((1992, 2001), (2002, 2007), (2008, 2015), (2016, 2025)):
         key = CACHE / f"cpi_{lo}_{hi}.json"
         if key.exists():
             payload = json.loads(key.read_text())
@@ -178,7 +213,7 @@ def unzip_cv() -> None:
 
 
 def main() -> None:
-    rows = fetch_all()
+    rows = fetch_all() + check_manual()
     unzip_cv()
     probes = probe_icpsr()
     cpi = fetch_cpi()

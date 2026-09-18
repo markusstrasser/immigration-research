@@ -345,16 +345,49 @@ def main() -> None:
     say(mix_sh.round(3).to_string())
     mix_sh.to_csv(DERIVED / "offence_mix_by_victim_group.csv")
 
+    # Simple assault now carries a central price from simple_assault_price.py, which
+    # decomposes Miller et al. (2021)'s pooled assault cost.  The old zero and
+    # aggravated-priced arms are kept so the reader sees where the central figure sits.
+    sa = pd.read_csv(DERIVED / "simple_assault_unit_cost.csv").set_index("route")
+    SA_CENTRAL = float(sa.loc["0_CENTRAL_k_anchored", "total_2024"])
+    SA_CENTRAL_CJS = float(sa.loc["0_CENTRAL_k_anchored", "cjs_component_2024"])
+    SA_LOW = float(sa.loc["2_miller1996_direct", "total_2024"])
+    SA_LOW_CJS = float(sa.loc["3_derived_tangible_bracket_low", "cjs_component_2024"])
+    SA_HIGH = float(sa.loc["1_miller2021_reweighted", "total_2024"])
+    # The criminal-justice channel is bracketed separately in route 3: its floor is
+    # Miller's own public-service and adjudication columns scaled by the simple-assault
+    # arrest rate, its ceiling McCollister's aggravated-assault criminal-justice cost.
+    SA_HIGH_CJS = float(sa.loc["3_derived_tangible_bracket_high", "cjs_component_2024"])
+    say(f"simple assault priced at ${SA_CENTRAL:,.0f} social / ${SA_CENTRAL_CJS:,.0f} "
+        f"criminal-justice (2024$), central arm; low arm ${SA_LOW:,.0f}, high arm "
+        f"${SA_HIGH:,.0f}")
+
+    # arm -> (social price, criminal-justice price) for one simple assault, 2024$
+    SIMPLE_ARMS = {
+        "simple_central": (SA_CENTRAL, SA_CENTRAL_CJS),
+        "simple_low_miller1996": (SA_LOW, SA_LOW_CJS),
+        "simple_high_miller2021_reweighted": (SA_HIGH, SA_HIGH_CJS),
+        "simple_at_zero": (0.0, 0.0),
+        "simple_at_aggravated": (uc.loc["assault", "social_total_2024"],
+                                 uc.loc["assault", "cjs_2024"]),
+    }
+    gate("simple_assault_arms_ordered",
+         SA_LOW < SA_CENTRAL < SA_HIGH < uc.loc["assault", "social_total_2024"],
+         f"${SA_LOW:,.0f} < ${SA_CENTRAL:,.0f} < ${SA_HIGH:,.0f} < "
+         f"${uc.loc['assault', 'social_total_2024']:,.0f}")
+
     cost_rows = []
-    for arm, simple_price in (("simple_at_zero", 0.0), ("simple_at_aggravated", 1.0)):
+    for arm, (sp_social, sp_cjs) in SIMPLE_ARMS.items():
         for pricing in ("social_total_2024", "cjs_2024"):
+            sp = sp_social if pricing == "social_total_2024" else sp_cjs
             for gname in GROUPS:
                 per = 0.0
                 for ct, key in NCVS_TO_MCC.items():
                     per += mix_sh.loc[gname, ct] * uc.loc[key, pricing]
-                per += mix_sh.loc[gname, "Simple assault"] * simple_price * uc.loc["assault", pricing]
+                per += mix_sh.loc[gname, "Simple assault"] * sp
                 r = rates[(rates.group == gname) & (rates.side == "victim")].rate_per_1000.iloc[0]
                 cost_rows.append({"arm": arm, "pricing": pricing, "group": gname,
+                                  "simple_assault_price_used": sp,
                                   "cost_per_incident": per,
                                   "rate_per_1000": r,
                                   "cost_per_1000_persons": per * r})
@@ -370,29 +403,108 @@ def main() -> None:
 
     # Inter-group cost transfer per capita of the OFFENDER group.
     transfer_rows = []
-    for arm, simple_price in (("simple_at_zero", 0.0), ("simple_at_aggravated", 1.0)):
+    for arm, (sp_social, sp_cjs) in SIMPLE_ARMS.items():
         for pricing in ("social_total_2024", "cjs_2024"):
+            sp = sp_social if pricing == "social_total_2024" else sp_cjs
             per_victim = {}
             for gname in GROUPS:
                 per = sum(mix_sh.loc[gname, ct] * uc.loc[key, pricing]
                           for ct, key in NCVS_TO_MCC.items())
-                per += mix_sh.loc[gname, "Simple assault"] * simple_price * uc.loc["assault", pricing]
+                per += mix_sh.loc[gname, "Simple assault"] * sp
                 per_victim[gname] = per
+            if arm == "simple_at_zero" and pricing == "cjs_2024":
+                per_victim_check = dict(per_victim)
             for o in KNOWN:
                 denom = P[o] if o != "Other" else P["Other"] + P["Asian"]
                 intra = W.loc[o, o] * per_victim[o]
                 inter = sum(W.loc[v, o] * per_victim[v] for v in GROUPS if v != o)
+                # denom is person-YEARS summed over the pooled years and W is the
+                # pooled count over the same years, so the quotient is already a
+                # per-resident-year figure.  An earlier version multiplied by the
+                # number of pooled years here and overstated every per-capita
+                # transfer threefold; see the correction note in RESULT.md.
                 transfer_rows.append({
                     "arm": arm, "pricing": pricing, "offender": o,
+                    "simple_assault_price_used": sp,
                     "intra_group_cost": intra, "inter_group_cost": inter,
-                    "inter_group_cost_per_capita": inter / denom * 3,  # 3 pooled years
-                    "total_cost_per_capita": (intra + inter) / denom * 3,
+                    "inter_group_cost_per_capita": inter / denom,
+                    "total_cost_per_capita": (intra + inter) / denom,
                 })
     tr = pd.DataFrame(transfer_rows)
+
+    # Independent check on the units.  The total cost an offender group imposes per
+    # one of its own resident-years is, to the accuracy of the cost-weighted victim
+    # mix, that group's victim-side cost per person scaled by the ratio of its
+    # offending rate to its victimisation rate.  Two different assemblies of the same
+    # quantity; they must agree.
+    def _rate_ratio_check(gname: str) -> tuple[float, float]:
+        vr = rates[(rates.group == gname) & (rates.side == "victim")].rate_per_1000.iloc[0]
+        orr = rates[(rates.group == gname) & (rates.side == "offender")].rate_per_1000.iloc[0]
+        vcost = costs[(costs.arm == "simple_at_zero") & (costs.pricing == "cjs_2024")
+                      & (costs.group == gname)].cost_per_1000_persons.iloc[0] / 1000.0
+        got = float(tr[(tr.arm == "simple_at_zero") & (tr.pricing == "cjs_2024")
+                       & (tr.offender == gname)].total_cost_per_capita.iloc[0])
+        return got, vcost * orr / vr
+
+    got_h, want_h = _rate_ratio_check("Hispanic")
+    gate("transfer_units_Hispanic", abs(got_h - want_h) / want_h < 0.05,
+         f"offender-side total ${got_h:,.2f} per resident-year against ${want_h:,.2f} "
+         f"from the victim-side cost and the rate ratio ({got_h / want_h - 1:+.1%})")
+    for gname in ("White", "Black", "Other"):
+        g_, w_ = _rate_ratio_check(gname)
+        say(f"    {gname}: ${g_:,.2f} against ${w_:,.2f} on the same approximation "
+            f"({g_ / w_ - 1:+.1%}); the gap is the cost-weighted victim mix, which for "
+            "these groups is not their own victim cost")
+
+    # The exact check on the units, with no approximation in it: assemble the same
+    # per-resident-year figure one year at a time, each year's own matrix over its own
+    # population, and take the person-year-weighted mean.  Nothing in that path knows
+    # how many years were pooled, so a stray factor of the pooled-year count fires here.
+    yearly = {}
+    for gname in KNOWN:
+        num = den = 0.0
+        for y in YRS:
+            wy = (m[(m.year == y) & (m.measure == "count")]
+                  .pivot(index="victim", columns="offender", values="value"))
+            py = pop[pop.year == y].set_index("group").population
+            d = py[gname] if gname != "Other" else py["Other"] + py["Asian"]
+            num += sum(wy.loc[v, gname] * per_victim_check[v] for v in GROUPS)
+            den += d
+        yearly[gname] = num / den
+    for gname in KNOWN:
+        got = float(tr[(tr.arm == "simple_at_zero") & (tr.pricing == "cjs_2024")
+                       & (tr.offender == gname)].total_cost_per_capita.iloc[0])
+        gate(f"transfer_pooled_matches_yearly_{gname}",
+             abs(got - yearly[gname]) / yearly[gname] < 1e-9,
+             f"pooled ${got:,.2f} = year-by-year ${yearly[gname]:,.2f} per resident-year")
+
+    # Two pairs of arms coincide on the criminal-justice pricing and only there.  The
+    # criminal-justice component of a simple assault has its own bracket, and it does
+    # not depend on which quality-of-life valuation an arm picks, so the five arms carry
+    # only two distinct criminal-justice prices.  Gate it, so that if the pricing
+    # dictionary ever stops being switched per arm the social column collapses too and
+    # this fires.
+    cjs_prices = {a: SIMPLE_ARMS[a][1] for a in SIMPLE_ARMS}
+    soc_prices = {a: SIMPLE_ARMS[a][0] for a in SIMPLE_ARMS}
+    gate("arms_collapse_only_on_cjs_pricing",
+         len(set(round(v, 6) for v in soc_prices.values())) == len(SIMPLE_ARMS)
+         and len(set(round(v, 6) for v in cjs_prices.values())) == 3,
+         f"{len(set(round(v, 6) for v in soc_prices.values()))} distinct social prices "
+         f"across {len(SIMPLE_ARMS)} arms and "
+         f"{len(set(round(v, 6) for v in cjs_prices.values()))} distinct criminal-justice "
+         "prices: the central and low arms share a criminal-justice component of "
+         f"${cjs_prices['simple_central']:,.0f}, and the high arm's criminal-justice "
+         f"ceiling of ${cjs_prices['simple_high_miller2021_reweighted']:,.0f} is "
+         "McCollister's aggravated-assault figure, which is what the legacy aggravated "
+         "arm uses")
+    say("  Arms sharing a criminal-justice price therefore produce identical "
+        "criminal-justice rows by construction; `simple_assault_price_used` in both cost "
+        "CSVs names the price behind every row.")
+
     tr.to_csv(DERIVED / "inter_group_cost_transfer.csv", index=False)
     say()
-    say("Cost imposed per resident-year of the offender group (pooled 2022-2024 / 3), "
-        "inter-group and total:")
+    say("Cost imposed per resident-year of the offender group, pooled 2022-2024 "
+        "incidents over pooled person-years, inter-group and total:")
     for arm in tr.arm.unique():
         for pricing in tr.pricing.unique():
             sub = tr[(tr.arm == arm) & (tr.pricing == pricing)]
