@@ -1,0 +1,113 @@
+{
+  "splits": {
+    "k12_federal_share": 0.12897118457075007,
+    "medicaid_federal_share": 0.6782648506352295,
+    "corporate_federal_share": 0.7622212750628271,
+    "excise_federal_share": 0.32331259584127675,
+    "tanf_federal_share": 0.55,
+    "unemployment_federal_share": 0.0,
+    "k12_current_spending_us": 817027465093.9199,
+    "nursing_federal_share": 0.7367621505197333
+  },
+  "federal_receipt_mix": {
+    "fed_individual_income": 0.5090057541658223,
+    "fed_social_insurance": 0.3585445774760474,
+    "fed_corporate": 0.11116978712565717,
+    "fed_excise": 0.021279881232473253
+  },
+  "state_local_own_source_mix_us": {
+    "st_property": 0.19782232236946304,
+    "st_general_sales": 0.16982442652245003,
+    "st_selective_sales": 0.07073281226409732,
+    "st_individual_income": 0.18306492778260056,
+    "st_corporate": 0.04866345538512678,
+    "st_other_taxes": 0.05155183900977826,
+    "st_charges": 0.2783402166664842
+  },
+  "institutional": {
+    "mexico_born": {
+      "corrections": -4168811611.5,
+      "nursing": -1601355525.0,
+      "total": -5770167136.5,
+      "federal": -1179818140.3456564,
+      "state_local": -4590348996.154344
+    },
+    "mexican_second_gen": {
+      "corrections": -5630027002.398445,
+      "nursing": -867996234.0508008,
+      "total": -6498023236.449245,
+      "federal": -639506772.0422977,
+      "state_local": -5858516464.406948
+    },
+    "mexican_third_plus_selfid": {
+      "corrections": -5171582315.101555,
+      "nursing": -1628786515.9491992,
+      "total": -6800368831.050755,
+      "federal": -1200028256.2282758,
+      "state_local": -5600340574.822478
+    },
+    "mexican_observed_total": {
+      "corrections": -14970420929.0,
+      "nursing": -4098138275.0,
+      "total": -19068559204.0,
+      "federal": -3019353168.61623,
+      "state_local": -16049206035.38377
+    },
+    "third_plus_nh_white": {
+      "corrections": -44992195190.0,
+      "nursing": -98207605650.0,
+      "total": -143199800840.0,
+      "federal": -72355646736.0879,
+      "state_local": -70844154103.9121
+    },
+    "all_native": {
+      "corrections": -114901934242.0,
+      "nursing": -126322681100.0,
+      "total": -241224615342.0,
+      "federal": -93069770186.65446,
+      "state_local": -148154845155.34552
+    }
+  },
+  "cex_income": [
+    16658.0,
+    42925.0,
+    74474.0,
+    121548.0,
+    264510.0
+  ],
+  "cex_expenditure": [
+    35046.0,
+    50054.0,
+    66900.0,
+    89972.0,
+    150342.0
+  ],
+  "rates": {
+    "fy2024_average": 0.03324,
+    "ten_year": 0.049400000000000006
+  },
+  "native_households_weighted": 117199840.75543512,
+  "native_households_unweighted": 48068,
+  "gate_union_absolute_bn": -263.22414070977715,
+  "central_arms": {
+    "G": "deflated2024",
+    "K": "central",
+    "P": "net_of_item_G",
+    "D": "central",
+    "U": "central",
+    "I": "central",
+    "M": "central",
+    "E": "stock",
+    "C": "wage25_capital75",
+    "X": "per_capita",
+    "R": "central",
+    "F": "zero",
+    "S": "half_inside_meps"
+  },
+  "item_F_arm": "zero",
+  "medical_anchors": {
+    "all": 339797629.595972,
+    "born_us": 285498518.670341,
+    "born_elsewhere": 52835316.116307
+  }
+}

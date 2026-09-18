@@ -35,7 +35,9 @@ DEBT_START, DEBT_END = 26330.142473, 28307.312291
 R_EFF = NET_INTEREST_BN / ((DEBT_START + DEBT_END) / 2)
 RATES = {"effective_fy2024": R_EFF, "r3": 0.03, "r4": 0.04, "r5": 0.05}
 HORIZONS = [10, 20, 30]
-FED_SHARES = {"all_deficit": 1.0, "half_deficit": 0.5}
+# 0.107 = federal share of the union complete absolute from gap_incidence_2026_09_18
+# (federal -28.12bn of -263.22bn under the central zero-F arm; 0.509 under F per capita)
+FED_SHARES = {"all_deficit": 1.0, "half_deficit": 0.5, "federal_share_incidence": 0.107, "federal_share_F_percapita": 0.509}
 
 
 def aggregate():
