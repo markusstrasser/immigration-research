@@ -1,6 +1,6 @@
 claude-opus-5[1m]
 
-**Verdict:** Both objections are real and both are small, and the one that is usually stated in the immigrant-favourable direction runs the other way. **Longevity costs the Mexican-origin groups, it does not help them**: giving them the Hispanic life table instead of the white one widens the complete-account lifetime gap against third-plus non-Hispanic whites by **$59.8k (Mexico-born), $66.2k (second generation) and $69.2k (third-plus)** undiscounted from birth, $5.1k to $5.9k at 3%. But almost all of that is undone by using *Mexican-specific* mortality rather than the pooled Hispanic table: Fenelon, Chinn and Anderson's hazard ratios put Mexican-origin mortality **above** the white reference at ages 25-64 and below it only at 65+, which cuts the effect to **$26.1k / $11.2k / $11.8k**, and leaves the union's whole lifetime gap **$1,283 from where the repo's terminal-83 convention already had it**. On Social Security timing the two halves of the correction point in opposite directions: charging workers the present value of the benefits this year's OASDI tax buys them **narrows** the −$7,224 common-age gap by **$1,041 to −$6,183** (whites pay more tax, so they accrue more liability), while the complete switch from a cash basis to an accrual basis — which also credits back the benefits the account charges to today's retirees — **widens** it by **$675 to −$7,899**. **No arm, in any combination, closes or reverses the gap**: across 576 Mexican-origin cells not one is non-negative, and the most favourable is −$3,198 per year for the third-plus self-identified group.
+**Verdict:** Both objections are real and both are small, and the one that is usually stated in the immigrant-favourable direction runs the other way. **Longevity costs the Mexican-origin groups, it does not help them**: giving them the Hispanic life table instead of the white one widens the complete-account lifetime gap against third-plus non-Hispanic whites by **$59.8k (Mexico-born), $66.2k (second generation) and $69.2k (third-plus)** undiscounted from birth, $5.1k to $5.9k at 3%. But almost all of that is undone by using *Mexican-specific* mortality rather than the pooled Hispanic table: Fenelon, Chinn and Anderson's hazard ratios put Mexican-origin mortality **above** the white reference at ages 25-64 and below it only at 65+, which cuts the effect to **$26.1k / $11.2k / $11.8k**, and leaves the union's whole lifetime gap **$1,283 from where the repo's terminal-83 convention already had it**. On Social Security timing the two halves of the correction point in opposite directions: charging workers the present value of the benefits this year's OASDI tax buys them **narrows** the −$7,224 common-age gap by **$1,041 to −$6,183** (whites pay more tax, so they accrue more liability), while the complete switch from a cash basis to an accrual basis — which also credits back the benefits the account charges to today's retirees — **widens** it by **$675 to −$7,899**. **No arm, in any combination, closes or reverses the gap**: across 576 Mexican-origin cells not one is non-negative, and the most favourable is −$3,198 per year for the third-plus self-identified group. Against the 2026-09-16 pass, which priced the same swap at **$20,000, about 5%** of a $375,000 partial-ledger gap on the COVID-depressed CDC 2021 tables, completing the account **raises** the share from 8.3% to **10.8%** for the second generation, confirming that pass's own prediction of a larger term still under 15%; the Mexican-specific arm then cuts it to **1.8%**.
 
 [DATA: NVSS United States Life Tables 2024 (NVSR Vol 75 No 5) and 2023 (Vol 74 No 6), complete tables by Hispanic origin, race and sex; SSA Actuarial Note 2025.7 Table 1; CPS ASEC 2025, 142,125 person records]
 [INFERENCE: a period life table applied to a period fiscal profile is a synthetic-cohort device twice over, not a projection of anyone's life]
@@ -26,6 +26,42 @@ claude-opus-5[1m]
 | re-run from scratch reproduces `derived/` | see **Reproducibility** below |
 
 **External check, not a gate.** The account's OASDI payroll tax on CPS civilian households is **$1,347.8bn**, against **$1,293.3bn** of published 2024 net payroll tax contributions [SOURCE: 2025 OASDI Trustees Report, short-range estimates, combined OASDI table, `_cache/ssa_tr2025_IVA.html`]. The ratio is **1.0422**: the CPS calculation applies statutory rates to all reported wage and salary income, including employment not covered by OASDI. A `coverage_scale = 0.9595` arm rescales to the published total and moves the headline gap change from $1,041 to $999.
+
+---
+
+# Relation to the 2026-09-16 pass
+
+Longevity was priced once before, and this lane does not redo it. [SOURCE: `research/immigration-mexican-origin-by-generation-2026-09-16.md` section 5.1, built by `infra/immigration-fiscal/cps_generation_welfare_2026_09_16/lifecycle_ledger_by_generation.py`, commit `1dc8b8e`] That pass ran the **CDC 2021** period life tables against the **partial** working-age ledger plus transported health, all-members allocation, undiscounted, and reported the swap as *"about $20,000 undiscounted, $1,600 at 3%, roughly 5% of the $375,000 white-versus-Mexican-second-generation gap from birth."*
+
+Reading its stored output confirms the figure: the Mexican second generation moves from −186,415 on the Hispanic table to −166,963 on the white one, a swap of **$19,452** inside a gap of **$374,627**, which is **5.2%** [SOURCE: `cps_generation_welfare_2026_09_16/lifecycle_ledger_result.txt` lines 69-84]. Expected years lived in that pass were **78.3 Hispanic against 77.1 White non-Hispanic, a 1.2-year gap** — the 2021 tables are COVID-depressed, which is why the gap has since widened to 2.88 years.
+
+**Life-table vintage.** The CSV in the derived root is the 2021 table (NVSR 72-12), so the brief's fallback applies. This lane goes past it: the central tables are **2024** (NVSR Vol 75 No 5, published 2026-08-25, the latest final year), with **2023** (NVSR Vol 74 No 6) carried as a stability arm. The 2023-versus-2024 choice moves the Mexico-born complete gap by 0.4%, so the vintage question is settled either way.
+
+**The prior pass made a prediction. It holds.** It wrote that with a 2.9-year gap instead of 2021's 1.1, *"the term is roughly 2.5 times larger, still under 15%."* Measured on the same share basis, second generation, undiscounted from birth:
+
+| | life tables | ledger | swap $ | gap $ | share |
+|---|---|---|---:|---:|---:|
+| 2026-09-16 pass | CDC 2021, 1.2-year gap | partial + health, all-members | 19,452 | 374,627 | **5.2%** |
+| this lane, partial | NVSS 2024, 2.88-year gap | partial, pronatal profiles | 43,982 | 528,489 | **8.3%** |
+| this lane, complete | NVSS 2024, 2.88-year gap | complete (ladder 130) | 66,152 | 610,857 | **10.8%** |
+
+The multiplier is 1.6x on the partial account and **2.1x on the complete one**, against the predicted 2.5x, and both sit under the predicted 15% ceiling. The prediction was slightly conservative and correct in direction.
+
+**Does completing the account move the share? Yes, upward, by about a third.** Undiscounted from birth, the longevity term as a share of the lifetime gap:
+
+| group | partial | complete |
+|---|---:|---:|
+| Mexico-born | 6.6% | **9.1%** |
+| 2nd generation | 8.3% | **10.8%** |
+| 3rd+ self-ID | 11.6% | **14.4%** |
+
+The mechanism is direct. The complete account adds a uniform charge of $6,926 to $7,762 per person-year on top of the partial profile, so every extra year of life carries that charge too. Extra years are pure cost on the complete account in a way they are not on the partial one. At 3% the shares collapse to 1.8-3.2%, because the disputed years are 50 to 100 years out.
+
+**The nativity split the prior pass left open.** It flagged the question and cited linked-mortality evidence that US-born Hispanic life expectancy at 50 is at parity with whites while the advantage concentrates in the foreign-born at about +2.8 years at 50 [SOURCE: as cited there, Cantu et al. NHIS-LMF; García et al. 2018, *Innovation in Aging* 2(2)]. This lane resolves it two ways and both agree with that direction.
+
+The crude version is the `paradox_fades` arm: Hispanic table for Mexico-born, white table for their descendants, which zeroes the longevity term for the second and third-plus generations by construction. The measured version is the `fenelon_mexican` arm below, built from Mexican-origin hazard ratios by nativity. Its rebuilt life expectancies are **79.76 at birth and 21.70 at 65 for the foreign-born, 79.20 and 20.32 for the US-born, against 78.93 and 19.47 for the white reference**, so the advantage roughly halves between the generations rather than vanishing.
+
+Under that arm the longevity term falls to **4.0%, 1.8% and 2.5%** of the complete-account gap — **below the 5.2% the 2026-09-16 pass measured on the COVID-depressed 2021 tables.** Two errors in the prior pass were cancelling: it used life tables that understated the Hispanic advantage, and it applied that advantage to a Mexican-origin population that does not have the pooled Hispanic one. Correcting both leaves the prior 5% conclusion standing, and for a better reason than it was originally given.
 
 ---
 
