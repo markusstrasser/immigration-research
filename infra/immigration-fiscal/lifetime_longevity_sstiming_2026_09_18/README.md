@@ -26,6 +26,18 @@ PYTHONUNBUFFERED=1 OPENBLAS_NUM_THREADS=1 $U $D/combine.py       # A and B on on
 frame at `derived/cps_ss_stage.parquet`; later runs reuse it. Delete that file to rebuild.
 `combine.py` reads `derived/ss_timing_by_band.csv`, so run `ss_timing.py` first.
 
+## Prior work this lane does not redo
+
+Longevity was priced once before on the **partial** ledger with the **CDC 2021** tables:
+`research/immigration-mexican-origin-by-generation-2026-09-16.md` section 5.1, built by
+`../cps_generation_welfare_2026_09_16/lifecycle_ledger_by_generation.py` (commit `1dc8b8e`,
+output `lifecycle_ledger_result.txt`). It found the mortality-table swap worth about $20,000
+undiscounted, roughly 5% of a $375,000 lifetime gap. This lane takes that as the prior result
+and adds what was missing: the same swap on the **complete** all-age account (ladder 130) with
+the pronatal-lane profiles at 3% and undiscounted from ages 0 and 25, the **nativity split**
+that pass flagged as unresolved, **2024 and 2023** life tables in place of 2021, and Part B,
+which had never been done. See "Relation to the 2026-09-16 pass" in `RESULT.md`.
+
 ## Inputs
 
 | input | where |
@@ -38,6 +50,7 @@ frame at `derived/cps_ss_stage.parquet`; later runs reuse it. Delete that file t
 | SSA money's worth ratios | `_cache/ssa_an2025-7.pdf` and its `.txt` text layer |
 | Trustees net-immigration sensitivity | `_cache/tr2025_vid.html`, `_cache/tr2026_vid.html` |
 | SSA Actuarial Note 151 | `_cache/note151.pdf` |
+| prior longevity pass, for comparison only | `../cps_generation_welfare_2026_09_16/lifecycle_ledger_result.txt` |
 | average wage index, payroll tax receipts | `_cache/ssa_awi.html`, `_cache/ssa_tr2025_IVA.html` |
 
 `ss_timing.py` extends `analyze_cps_fiscal_2025.PERSON` with `A_SEX`, `A_MARITL`, `A_SPOUSE`,
