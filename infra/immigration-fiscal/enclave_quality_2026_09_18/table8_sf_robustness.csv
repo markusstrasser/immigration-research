@@ -1,0 +1,31 @@
+outcome,spec,beta,t,p,per10pp_sd,homeless_t,inc_t,R2
+sidewalk_litter,A base (inc+landuse+period),0.0223,4.6182,0.0,0.2492,,-2.7435,0.1132
+sidewalk_litter,B + density,0.0214,4.9313,0.0,0.2391,,-3.7563,0.1193
+sidewalk_litter,C + street homelessness,0.0188,5.6915,0.0,0.2102,2.938,-3.7975,0.1249
+sidewalk_litter,"D + tenure, crowding, black",0.0169,4.5814,0.0,0.1892,1.7777,-1.6376,0.1283
+sidewalk_litter,E + poverty instead of inc,0.0213,4.5569,0.0,0.238,1.9277,,0.1148
+street_litter,A base (inc+landuse+period),0.0128,3.284,0.001,0.1724,,-3.5499,0.0742
+street_litter,B + density,0.0128,3.2571,0.0011,0.1727,,-3.531,0.0742
+street_litter,C + street homelessness,0.0103,4.3895,0.0,0.1398,4.3342,-3.4047,0.0814
+street_litter,"D + tenure, crowding, black",0.0113,4.2282,0.0,0.1529,2.4181,-2.6129,0.0824
+street_litter,E + poverty instead of inc,0.012,4.0177,0.0001,0.1615,2.934,,0.0753
+litter_bad,A base (inc+landuse+period),0.0084,4.9888,0.0,0.2228,,-2.6072,0.0762
+litter_bad,B + density,0.008,5.7539,0.0,0.2115,,-3.7921,0.0838
+litter_bad,C + street homelessness,0.0069,7.142,0.0,0.1834,3.7808,-4.0457,0.0891
+litter_bad,"D + tenure, crowding, black",0.0058,5.9068,0.0,0.154,2.3528,-0.8475,0.094
+litter_bad,E + poverty instead of inc,0.0077,5.8236,0.0,0.2044,2.5989,,0.0841
+dumping_any,A base (inc+landuse+period),0.0049,2.0699,0.0385,0.106,,-1.9935,0.0217
+dumping_any,B + density,0.0052,2.2776,0.0227,0.1129,,-1.5696,0.0245
+dumping_any,C + street homelessness,0.0042,2.9247,0.0034,0.0914,2.5974,-0.9596,0.0276
+dumping_any,"D + tenure, crowding, black",0.0055,3.1673,0.0015,0.1177,1.6693,-1.4867,0.0289
+dumping_any,E + poverty instead of inc,0.0045,3.1068,0.0019,0.0981,2.7302,,0.027
+graffiti_tot,A base (inc+landuse+period),1.0021,1.3965,0.1626,0.2816,,0.0172,0.1802
+graffiti_tot,B + density,1.1107,1.7002,0.0891,0.3121,,0.609,0.236
+graffiti_tot,C + street homelessness,0.8322,2.1289,0.0333,0.2338,3.0142,1.3932,0.2769
+graffiti_tot,"D + tenure, crowding, black",1.2093,3.2057,0.0013,0.3398,3.5942,-1.2125,0.3032
+graffiti_tot,E + poverty instead of inc,0.7658,2.1448,0.032,0.2152,2.7225,,0.2771
+feces,A base (inc+landuse+period),0.0155,1.3244,0.1854,0.0582,,-1.4892,0.0178
+feces,B + density,0.0175,1.5186,0.1289,0.0658,,-1.2448,0.0213
+feces,C + street homelessness,0.006,0.6049,0.5453,0.0227,4.5374,-0.4873,0.0337
+feces,"D + tenure, crowding, black",-0.0011,-0.1369,0.8911,-0.0042,3.9398,2.4662,0.0419
+feces,E + poverty instead of inc,0.0062,0.7051,0.4808,0.0233,3.1457,,0.0348
