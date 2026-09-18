@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "model_id": "claude-opus-5[1m]",
+    "status": "COMPLETE",
+    "fetch_date": "2026-09-18",
+    "note": "External parameters for the homicide treasury-cost lane. Every value below was retrieved from the listed URL during this session (2026-09-18). ssa.gov returns HTTP 403 to plain curl/WebFetch; all ssa.gov pages were retrieved via firecrawl scrape. Verified: ssa_child_survivor_avg_monthly, ssa_child_survivor_beneficiaries, ssa_widowed_mother_father_avg_monthly, ssa_widowed_mother_father_beneficiaries, ssa_lump_sum_death_payment, ssa_survivor_rules (value null by design, unit 'rules'), foster_care_cost_per_child_year (Texas state rate, no national per-child figure published), afcars_foster_care_caseload, bjs_life_sentence_share_murder (2006, series discontinued), life_sentenced_population_stock, vsl_dot_2024, vsl_dot_current_2025. Nothing was filled from memory."
+  },
+  "ssa_child_survivor_avg_monthly": {
+    "value": 1179.88,
+    "unit": "USD per month",
+    "as_of": "2026-07",
+    "source_url": "https://www.ssa.gov/policy/docs/quickfacts/stat_snapshot/",
+    "source_title": "SSA, Monthly Statistical Snapshot, July 2026 (released August 2026), Table 2. Social Security benefits",
+    "fetch_date": "2026-09-18",
+    "note": "Row 'Children of deceased workers' under Survivor benefits. As published: beneficiaries 1,979 thousand (1.979 million; 2.8% of all OASDI beneficiaries), total monthly benefits $2,336 million, average monthly benefit $1,179.88. Sibling rows for contrast: children of retired workers $960.35, children of disabled workers $529.47. Total survivor benefits: 5,763 thousand beneficiaries, $9,420 million/month, average $1,634.61. Page canonical id: https://www.ssa.gov/policy/docs/quickfacts/stat_snapshot/2026-07.html. Retrieved via firecrawl scrape (ssa.gov returns HTTP 403 to plain curl/WebFetch)."
+  },
+  "ssa_child_survivor_beneficiaries": {
+    "value": 1979000,
+    "unit": "beneficiaries (persons)",
+    "as_of": "2026-07",
+    "source_url": "https://www.ssa.gov/policy/docs/quickfacts/stat_snapshot/",
+    "source_title": "SSA, Monthly Statistical Snapshot, July 2026, Table 2",
+    "fetch_date": "2026-09-18",
+    "note": "Published as 1,979 (thousands) in the 'Children of deceased workers' row; table is in thousands so the count is 1.979 million."
+  },
+  "ssa_widowed_mother_father_avg_monthly": {
+    "value": 1384.94,
+    "unit": "USD per month",
+    "as_of": "2026-07",
+    "source_url": "https://www.ssa.gov/policy/docs/quickfacts/stat_snapshot/",
+    "source_title": "SSA, Monthly Statistical Snapshot, July 2026 (released August 2026), Table 2. Social Security benefits",
+    "fetch_date": "2026-09-18",
+    "note": "Row 'Widowed mothers and fathers' (nondisabled widow(er)s with a child in care) under Survivor benefits. As published: 94 thousand beneficiaries (0.1%), $130 million total monthly benefits, average monthly benefit $1,384.94. Distinct from 'Nondisabled widow(er)s' (3,502 thousand, $1,932.74) and 'Disabled widow(er)s' (186 thousand, $985.11)."
+  },
+  "ssa_widowed_mother_father_beneficiaries": {
+    "value": 94000,
+    "unit": "beneficiaries (persons)",
+    "as_of": "2026-07",
+    "source_url": "https://www.ssa.gov/policy/docs/quickfacts/stat_snapshot/",
+    "source_title": "SSA, Monthly Statistical Snapshot, July 2026, Table 2",
+    "fetch_date": "2026-09-18",
+    "note": "Published as 94 (thousands) in the 'Widowed mothers and fathers' row."
+  },
+  "vsl_dot_2024": {
+    "value": 13700000,
+    "unit": "USD (2024 dollars), value of a statistical life",
+    "as_of": "base year 2024",
+    "source_url": "https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis",
+    "source_title": "US DOT, Departmental Guidance on Valuation of a Statistical Life in Economic Analysis (Current and Prior Year VSL table; page effective date Friday, March 20, 2026)",
+    "fetch_date": "2026-09-18",
+    "note": "Published table row: 13.7 million $ for base year 2024. Full published series (million $, base year): 14.2/2025, 13.7/2024, 13.2/2023, 12.5/2022, 11.8/2021, 11.6/2020, 10.9/2019, 10.5/2018, 10.2/2017, 9.9/2016, 9.6/2015, 9.4/2014, 9.2/2013, 9.1/2012. DOT text: 'Based on the methodology adopted in the 2013 guidance, price and real income changes since 2012 yield a current VSL estimate of $14.2 million for analyses using a base year of 2025.' The guidance document itself is the 2021 update; annual values are updated on this page rather than by a new memo. NOTE the $13.2m figure sometimes quoted for '2024' is the 2023 base-year value \u2014 the 2024 base-year value is $13.7m."
+  },
+  "vsl_dot_current_2025": {
+    "value": 14200000,
+    "unit": "USD (2025 dollars), value of a statistical life",
+    "as_of": "base year 2025",
+    "source_url": "https://www.transportation.gov/office-policy/transportation-policy/revised-departmental-guidance-on-valuation-of-a-statistical-life-in-economic-analysis",
+    "source_title": "US DOT, Departmental Guidance on Valuation of a Statistical Life in Economic Analysis",
+    "fetch_date": "2026-09-18",
+    "note": "Current DOT VSL as of this fetch; included because it is the figure DOT tells analysts to use now (no 2026 base-year value published yet)."
+  },
+  "ssa_survivor_rules": {
+    "value": null,
+    "unit": "rules",
+    "as_of": "2026-09-18 (pages as currently published)",
+    "source_url": "https://www.ssa.gov/survivor/eligibility",
+    "source_title": "SSA, 'Who can get Survivor benefits' + 'What you could get from Survivor benefits' + POMS RS 00208.001 / RS 00208.005 + SSA Handbook 412 + SSA Bulletin Vol. 75 No. 3",
+    "fetch_date": "2026-09-18",
+    "note": "CHILD AGE LIMIT (https://www.ssa.gov/survivor/eligibility): 'Children of someone who died may be eligible if they're unmarried and are: Age 17 and younger, or Ages 18-19 and in school (K-12) full time, or Any age if they developed a disability at age 21 or younger.' (i.e. benefits end at 18 unless still a full-time elementary/secondary student, then up to 19.) CHILD BENEFIT RATE (SSA Handbook 412.1, https://www.ssa.gov/OP_Home/handbook/handbook.04/handbook-0412.html): 'The surviving child's insurance benefit rate is three-fourths (.75) of the deceased parent's primary insurance amount.' SSA consumer page agrees: 'Children generally get 75% of the parent's benefit.' SURVIVING SPOUSE WITH CHILD IN CARE (POMS RS 00208.001C, https://secure.ssa.gov/poms.nsf/lnx/0300208001): claimant must 'be the widow(er) of a NH who died fully or currently insured', 'not be married', have filed an application, not be entitled to widow(er)'s benefits, and 'have in-care a child of the deceased NH entitled to a child's insurance benefit.' POMS RS 00208.005A (https://secure.ssa.gov/poms.nsf/lnx/0300208005): the in-care child must 'be under age 16 (age 18 prior to 9/81) or, be disabled.' SSA consumer page adds a surviving spouse 'might be eligible regardless of age and how long you were married. One common example is if you're caring for a child of the person who died.' FAMILY MAXIMUM (SSA Bulletin v75n3, https://www.ssa.gov/policy/docs/ssb/v75n3/v75n3p1.html): 'Ultimately, this formula yields a maximum for each family that is between 150 percent and 188 percent of the worker's basic Social Security benefit, or PIA.' Footnote 23: 'Congress intended the maximum family benefit to range from 150 percent to 188 percent of the worker's PIA.' 2026 formula (https://www.ssa.gov/OACT/COLA/familymax.html), for a worker who becomes 62 or dies in 2026 before 62: 150% of the first $1,643 of PIA + 272% of PIA over $1,643 through $2,371 + 134% over $2,371 through $3,093 + 175% over $3,093; bend points $1,643 / $2,371 / $3,093; total rounded down to the next lower $0.10. SSA also notes ex-spouses do not count toward the family maximum."
+  },
+  "ssa_lump_sum_death_payment": {
+    "value": 255,
+    "unit": "USD, one-time payment",
+    "as_of": "2026-09-18 (statutory amount, unchanged since 1954 cap)",
+    "source_url": "https://www.ssa.gov/survivor/amount",
+    "source_title": "SSA, 'What you could get from Survivor benefits' (page last modified 2025-08-29)",
+    "fetch_date": "2026-09-18",
+    "note": "As published: 'Lump-sum death payment \u2014 Spouses or some minor children could get a one-time death benefit payment of $255 too.' Paid to a surviving spouse living with the worker (or eligible children) \u2014 not a per-person amount, one payment per deceased worker."
+  },
+  "afcars_foster_care_caseload": {
+    "value": 331747,
+    "unit": "children in foster care on September 30, 2025",
+    "as_of": "FFY 2025 (preliminary estimates as of February 27, 2026)",
+    "source_url": "https://acf.gov/sites/default/files/documents/cb/2025-afcars-dashboard-printable.pdf",
+    "source_title": "HHS/ACF Children's Bureau, The AFCARS Dashboard (Print Version), 'Preliminary FFY 2025 Estimates as of February 27, 2026 - No. 33'",
+    "fetch_date": "2026-09-18",
+    "note": "Report number 33, FFY 2025. Published 'Numbers at a Glance': in foster care on Sept 30 \u2014 2020: 407,332; 2021: 391,641; 2022: 368,530; 2023: 339,309; 2024: 327,364; 2025: 331,747. Number served by the foster care system during FFY 2025: 501,745. Entering during FFY 2025: 175,008. Exiting: 169,927. NOTE for this lane: among FFY 2025 entries, 'Death of caretaker' is listed as a circumstance at entry for 2,122 children (1%) \u2014 children can enter with multiple circumstances. The AFCARS Report series was replaced by this dashboard; counts from FY2023 on use AFCARS 2020 rule definitions and are not strictly comparable to pre-2023 counts (Washington first submitted AFCARS 2020 data in FY2025, Wyoming in FY2024)."
+  },
+  "foster_care_cost_per_child_year": {
+    "value": 21064.15,
+    "unit": "USD per child per year (365 x $57.71/day), Texas 'Basic' service level, Child Placing Agency",
+    "as_of": "rates effective September 1, 2025",
+    "source_url": "https://www.dfps.texas.gov/Doing_Business/Purchased_Client_Services/Residential_Child_Care_Contracts/Rates/default.asp",
+    "source_title": "Texas DFPS, 24-Hour Residential Child Care Reimbursement Rates (effective September 1, 2025)",
+    "fetch_date": "2026-09-18",
+    "note": "NO NATIONAL PER-CHILD-YEAR FIGURE FOUND FROM A PRIMARY SOURCE THIS SESSION: Child Trends' Child Welfare Financing Survey reports aggregate expenditures, not cost per child in foster care, and the SFY2024 national report is still forthcoming (https://www.childtrends.org/publications/child-welfare-financing-survey-sfy2024, 'The SFY 2024 report is forthcoming'; the SFY2022 URL now redirects there). So this entry uses the large-state rate as instructed. EXACT PUBLISHED RATES (Texas, effective 2025-09-01): 24-Hour Residential Child Care, service level Basic \u2014 Child Placing Agency $57.71/day; General Residential Operation (excluding Emergency Shelters) $52.65/day. Minimum Daily Reimbursement to a Foster Family, Basic $27.07/day. Annualised at 365 days: CPA Basic $21,064.15/yr; GRO Basic $19,217.25/yr; minimum foster-family reimbursement Basic $9,880.55/yr. Higher service levels (Moderate $101.77, Specialized $126.62, Intense $218.11 per day, CPA) are far more expensive. AGE: Texas rates are set by SERVICE LEVEL (Basic/Moderate/Specialized/Intense), not by the child's age \u2014 there is no age-graduated basic rate to pick, so 'Basic, any age' is the right reading. The $57.71 CPA rate is what the state pays the placing agency (includes agency administration); the $27.07 is the floor the agency must pass to the foster family. TEXAS AGGREGATE CONTEXT (Child Trends, Texas SFY2024 factsheet, https://media.childtrends.org/media/TexasSFY24StateFactsheet.pdf, June 2026): total child welfare agency spending $2,161,480,590 in SFY2024, of which an estimated $931 million on out-of-home placements; 23,823 children served in foster care in Texas. Dividing gives roughly $39,000 per child served, but that denominator is children served during the year (not average daily caseload) and the numerator includes congregate care, services and administration, so it is not the same quantity as a maintenance rate \u2014 treat it as an upper-bound order of magnitude, not a published per-child figure."
+  },
+  "bjs_life_sentence_share_murder": {
+    "value": 0.231,
+    "unit": "share of persons sentenced in state courts for murder/nonnegligent manslaughter who received a life sentence",
+    "as_of": "2006 (most recent year BJS published this statistic; series discontinued)",
+    "source_url": "https://bjs.ojp.gov/content/pub/pdf/fssc06st.pdf",
+    "source_title": "BJS, Felony Sentences in State Courts, 2006 - Statistical Tables (Rosenmerkel, Durose & Farole; published December 2009), Table 1.4 and Table 4.4",
+    "fetch_date": "2026-09-18",
+    "note": "DENOMINATOR MATTERS. Table 1.4 ('Estimated percent of felons sentenced to life in state prison, by offense, 2006'): Murder/Nonnegligent manslaughter = 23.1% of ALL SENTENCES (denominator = all felony sentences for that offense in state courts, including probation and jail; total across offenses 1,132,290 sentences) and 25.0% of ALL PRISON SENTENCES (denominator = felons sentenced to state prison for that offense; total across offenses 460,600). Report text: 'among the estimated 8,670 persons sentenced for murder or nonnegligent manslaughter that year, 23% received life in prison'; 'Life sentences accounted for less than 1% (0.3%) of the 1.1 million felony sentences in state courts during 2006'. Table 4.4 ('Types of sentences imposed on felons convicted of murder or nonnegligent manslaughter, by type of conviction, 2006'), percent of convictions: Total 23% life + 2% death + 75% other; Trial 41% life + 6% death; Jury 41 + 7; Bench 22 + 0; Guilty plea 12% life + 1% death. So life-or-death = ~25% of all murder/nonnegligent-manslaughter convictions, 47% of trial convictions, 13% of guilty pleas. Note: percentages are based on the MAXIMUM sentence imposed, and sentence length was reported for 95% of incarceration sentences. CAVEAT: BJS discontinued the Felony Sentences in State Courts series after the 2006 data year, so there is no current BJS publication of the life-sentence share for murder; BJS 'Prisoners' and 'Time Served in State Prison' report stocks and time served and explicitly exclude life/death sentences from mean sentence lengths. A 2026 share would have to be built from NCRP microdata.",
+    "checked_and_unavailable": "BJS Prisoners in 2023 - Statistical Tables (https://bjs.ojp.gov/library/publications/prisoners-2023-statistical-tables) does not publish a life-sentence share by offense."
+  },
+  "life_sentenced_population_stock": {
+    "value": 194803,
+    "unit": "persons serving life sentences (life with parole + LWOP + virtual life of 50+ years) in US prisons, 2024",
+    "as_of": "2024 data; report published 2025-01-08 (page last modified 2026-02-06)",
+    "source_url": "https://www.sentencingproject.org/reports/a-matter-of-life-the-scope-and-impact-of-life-and-long-term-imprisonment-in-the-united-states/",
+    "source_title": "Nellis, A. & Barry, C., 'A Matter of Life: The Scope and Impact of Life and Long Term Imprisonment in the United States', The Sentencing Project (sixth national census of people serving life sentences)",
+    "fetch_date": "2026-09-18",
+    "note": "This is the successor to 'No End in Sight' (2021), which reported 203,865 in 2020; the newer census is what is currently published. As published for 2024: 194,803 people serving life sentences = 16% of the prison population ('one in six'); 56,245 serving life without parole (an all-time high, +68% since 2003); 97,160 serving life with parole (the remainder, ~41,398, serving virtual life sentences of 50+ years). OFFENSE: 'Homicide convictions\u2014primarily for first-degree murder\u2014accounted for 59% of the life-sentenced population in 2024.' The report gives that as a percentage, not a count; 59% of 194,803 is about 115,000 people serving life/virtual-life for homicide (DERIVED, not published). The denominator here is a STOCK (people in prison on the census date), not a flow of sentences \u2014 do not mix it with the BJS 23.1% flow figure."
+  }
+}

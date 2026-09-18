@@ -1,0 +1,13 @@
+,off_eth,hispanic,nh_white,nh_black,nh_other
+drop,hispanic,0.7173,0.1563,0.1102,0.0162
+drop,nh_white,0.0811,0.8089,0.0924,0.0176
+drop,nh_black,0.0638,0.112,0.8127,0.0114
+drop,nh_other,0.0767,0.1653,0.0952,0.6627
+impute,hispanic,0.5545,0.2549,0.1687,0.0219
+impute,nh_white,0.1472,0.7433,0.0896,0.0199
+impute,nh_black,0.0755,0.1147,0.7984,0.0114
+impute,nh_other,0.1113,0.1729,0.0953,0.6205
+delta,hispanic,-0.1628,0.0986,0.0585,0.0057
+delta,nh_white,0.0661,-0.0656,-0.0028,0.0023
+delta,nh_black,0.0117,0.0027,-0.0143,0.0
+delta,nh_other,0.0346,0.0076,0.0,-0.0422
