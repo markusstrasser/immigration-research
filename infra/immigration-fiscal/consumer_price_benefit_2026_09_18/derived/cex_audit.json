@@ -1,0 +1,59 @@
+{
+  "detail_file": "/Users/alien/research-data/immigration-fiscal/data/external/cex_2024/cu-all-detail-2024.xlsx",
+  "detail_sha256": "6efdb40841f80cbda56b59039a5a0b1dafceccaaebb686443fb233246fb553ad",
+  "quintile_file": "/Users/alien/research-data/immigration-fiscal/data/external/cex_2024/cu-income-quintiles-before-taxes-2024.xlsx",
+  "quintile_sha256": "05640c17c51547efd7ee9fb4c4e22e5c9062f6988d2c4b75e7013e27ad7ff6b5",
+  "source_urls": [
+    "https://www.bls.gov/cex/tables/calendar-year/mean/cu-all-detail-2024.xlsx",
+    "https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error/cu-income-quintiles-before-taxes-2024.xlsx"
+  ],
+  "fetched": "2026-09-18",
+  "consumer_units_thousands": {
+    "all_cu": 135760.0,
+    "q1_lowest": 27139.0,
+    "q2_second": 27186.0,
+    "q3_third": 26959.0,
+    "q4_fourth": 27205.0,
+    "q5_highest": 27272.0
+  },
+  "major_component_gate": {
+    "all_cu": {
+      "sum_major": 78534.0,
+      "published_total": 78535.0,
+      "abs_diff": 1.0,
+      "rel_diff": 1.2733176290825747e-05
+    },
+    "q1_lowest": {
+      "sum_major": 35045.0,
+      "published_total": 35046.0,
+      "abs_diff": 1.0,
+      "rel_diff": 2.8533926839011585e-05
+    },
+    "q2_second": {
+      "sum_major": 50055.0,
+      "published_total": 50054.0,
+      "abs_diff": 1.0,
+      "rel_diff": 1.9978423302832942e-05
+    },
+    "q3_third": {
+      "sum_major": 66898.0,
+      "published_total": 66900.0,
+      "abs_diff": 2.0,
+      "rel_diff": 2.9895366218236174e-05
+    },
+    "q4_fourth": {
+      "sum_major": 89974.0,
+      "published_total": 89972.0,
+      "abs_diff": 2.0,
+      "rel_diff": 2.2229137954030144e-05
+    },
+    "q5_highest": {
+      "sum_major": 150341.0,
+      "published_total": 150342.0,
+      "abs_diff": 1.0,
+      "rel_diff": 6.651501243830733e-06
+    }
+  },
+  "n_detail_lines": 888,
+  "n_quintile_lines": 138
+}

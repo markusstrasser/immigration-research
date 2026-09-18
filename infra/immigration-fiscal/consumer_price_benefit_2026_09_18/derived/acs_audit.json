@@ -1,0 +1,16 @@
+{
+  "source_url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/1-Year/csv_pus.zip",
+  "zip_path": "/Users/alien/research-data/immigration-fiscal/data/external/acs_pums_2024_1yr/csv_pus.zip",
+  "zip_sha256": "afdc6d90c6e2f0bab365ed32d95ba4c4d8ac651162f46ac7861295b2dc469894",
+  "n_records_age16plus": 2872990,
+  "weighted_pop_16plus": 276273250.0,
+  "female_wage_p25": 14.974937500000001,
+  "female_wage_p50": 23.428846153846155,
+  "female_wage_p75": 38.071875,
+  "adjinc_unique": [
+    1.01525
+  ],
+  "civilian_lf_us": 175478713.0,
+  "employed_us": 167385115.0,
+  "mexborn_16plus": 11058559.0
+}

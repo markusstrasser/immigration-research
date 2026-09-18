@@ -1,0 +1,891 @@
+row,item,mean_all_cu
+3,Item,"All
+consumer
+units"
+4,Number of consumer units (in thousands) a/,135760.0
+9,Income before taxes [I],104207.0
+13,Age of reference person [I],52.2
+16,People [I],2.4
+17,Children under 18 [I],0.6
+18,Adults 65 and older [I],0.4
+19,Earners [I],1.3
+20,Vehicles [I],1.9
+21,Vehicles (owned) [I],1.8
+22,Vehicles (leased) [I],b/
+27,Men [I],48.0
+28,Women [I],52.0
+31,Homeowner [I],65.0
+32,With mortgage [I],37.0
+33,Without mortgage [I],28.0
+34,Renter [I],35.0
+37,Black or African-American [I],13.0
+38,"White, Asian, and all other races, not including Black or African-American [I]",87.0
+39,White [I],79.0
+40,Asian [I],5.0
+41,All other races not including Black or African-American [I],2.0
+44,Hispanic or Latino [I],16.0
+45,Not Hispanic or Latino [I],84.0
+48,Elementary (1-8) [I],3.0
+49,High school (9-12) [I],27.0
+50,College [I],70.0
+51,Never attended and other [I],b/
+53,At least one vehicle owned or leased [I],89.0
+54,At least one vehicle owned [I],87.0
+55,At least one vehicle leased [I],4.0
+58,Average annual expenditures,78535.21
+65,Food,10169.0
+72,Food at home,6224.06
+79,Cereals and bakery products [D],778.63
+86,Cereals and cereal products [D],239.81
+93,Flour and prepared flour mixes [D],30.9
+99,"Cereal, breakfast, and granola bars [D]",101.18
+105,Rice [D],46.79
+111,"Pasta, cornmeal, and other cereal products [D]",60.94
+118,Bakery products [D],538.82
+125,Bread [D],131.7
+131,Cookies and crackers [D],141.52
+138,Cookies [D],88.71
+144,Crackers [D],52.81
+151,Frozen and refrigerated bakery products [D],45.99
+157,Other bakery products [D],219.61
+164,Biscuits and rolls [D],88.41
+170,Cakes and cupcakes [D],64.14
+176,Bread and cracker products [D],7.64
+182,"Sweetrolls, coffee cakes, and doughnuts [D]",38.14
+188,"Pies, tarts, and turnovers [D]",21.29
+195,"Meats, poultry, fish, and eggs [D]",1414.32
+202,Beef [D],408.24
+209,Ground beef [D],153.38
+215,Roasts [D],56.26
+221,Steak [D],150.5
+227,Other beef [D],48.1
+234,Pork [D],259.64
+241,"Bacon, breakfast sausage, and related products [D]",100.79
+247,Pork chops [D],35.12
+253,Ham [D],51.67
+259,Other pork [D],72.06
+266,Other meats [D],149.83
+273,Frankfurters [D],24.84
+279,Lunchmeats [D],104.31
+285,"Lamb, organ meat, and game [D]",20.68
+292,Poultry [D],267.37
+299,Chicken [D],213.65
+305,Other poultry [D],53.72
+312,Fish and seafood [D],223.88
+319,Fresh fish and shellfish [D],117.94
+325,Processed fish and seafood [D],105.94
+332,Eggs [D],105.36
+339,Dairy products [D],631.36
+346,Fresh milk and cream [D],141.21
+353,"Fresh milk, all types [D]",141.21
+360,Other dairy products [D],490.15
+367,Butter and margarine [D],52.83
+373,Cheese [D],201.08
+379,Ice cream and related products [D],87.38
+385,Other dairy and related products [D],148.85
+392,Fruits and vegetables [D],952.59
+399,Fresh fruits [D],394.45
+406,Apples [D],52.81
+412,Bananas [D],42.88
+418,Citrus fruits [D],58.64
+424,Other fresh fruits [D],240.12
+431,Fresh vegetables [D],354.82
+438,Potatoes [D],51.63
+444,Lettuce [D],30.63
+450,Tomatoes [D],48.21
+456,Other fresh vegetables [D],224.34
+463,Processed fruits and vegetables [D],203.31
+470,Frozen fruits and vegetables [D],65.21
+476,Canned fruits and vegetables [D],73.43
+482,Dried fruits and vegetables [D],61.65
+488,Frozen noncarbonated juices and drinks [D],3.02
+495,Other food at home,2447.16
+502,Sugar and other sweets [D],229.84
+509,Candy and chewing gum [D],161.6
+515,Sugar and artificial sweeteners [D],25.29
+521,"Jams, preserves, and other sweets [D]",42.95
+528,Fats and oils [D],125.13
+535,Fats and oils [D],57.26
+541,Salad dressings [D],40.53
+547,Peanut butter [D],27.34
+554,Miscellaneous foods [D],1284.21
+561,Frozen prepared foods [D],230.33
+568,Frozen meals [D],67.14
+574,Other frozen prepared foods [D],163.19
+581,Canned and packaged soups [D],65.34
+587,"Potato chips, nuts, and other snacks [D]",280.97
+594,Potato chips and other snacks [D],213.76
+600,Nuts [D],67.21
+607,Condiments and seasonings [D],239.32
+614,"Salt, spices, and other seasonings [D]",74.56
+620,"Olives, pickles, and relishes [D]",22.24
+626,Sauces and gravies [D],98.13
+632,Baking needs and miscellaneous products [D],44.39
+639,Other canned and packaged prepared foods [D],468.26
+646,Prepared salads [D],74.7
+652,Prepared desserts [D],16.79
+658,Baby food [D],40.28
+664,Miscellaneous prepared foods [D],336.5
+671,Nonalcoholic beverages [D],713.91
+678,Cola [D],95.35
+684,Other carbonated drinks [D],152.08
+690,Tea [D],51.09
+696,Coffee [D],136.88
+702,Nonfrozen noncarbonated juices and drinks [D],257.02
+708,Other noncarbonated beverages and ice [D],21.49
+715,Food prepared by consumer unit on out of town trips [I],94.06
+722,Food away from home,3944.94
+729,Food and nonalcoholic beverages at fast food [D],1730.73
+735,Food and nonalcoholic beverages at full service restaurants [D],1521.71
+741,Food and nonalcoholic beverages at vending machines and mobile vendors [D],36.32
+747,Food and nonalcoholic beverages at employer [D],43.6
+753,School meals and board [I],40.16
+759,Catered affairs [I],47.95
+765,Food on out of town trips [I],478.99
+771,Meals as pay [I],45.48
+778,Alcoholic beverages,642.71
+785,At home [D],268.72
+792,"Beer, ale, and other malt beverage [D]",90.11
+798,Distilled spirits [D],61.2
+804,Wine [D],117.42
+811,Away from home,373.99
+818,Alcoholic beverages purchased on trips [I],95.16
+824,"Alcoholic beverages at restaurants, taverns [D]",278.83
+831,Housing,26265.71
+838,Shelter [I],16316.79
+845,Owned dwellings [I],9309.69
+852,Mortgage interest and charges [I],3645.53
+859,Mortgage interest [I],3470.28
+865,"Interest paid, home equity loan [I]",45.15
+871,"Interest paid, home equity line of credit [I]",129.94
+877,Late fee mortgage pay (owned home) (new UCC Q20242) [I],0.16
+884,Property taxes [I],2737.69
+890,"Maintenance, repairs, insurance, and other expenses [I]",2926.47
+897,Homeowners insurance [I],736.78
+903,Ground rent [I],76.0
+909,Maintenance and repair services [I],1742.55
+916,Painting and papering [I],125.94
+922,Plumbing and water heating [I],181.03
+928,"Heat, a/c, and electrical work [I]",448.69
+934,Roofing and gutters [I],374.53
+940,Other repair and maintenance services [I],462.16
+946,Repair of built-in appliances (through Q20241) [I],0.29
+952,"Home warranties, maintenance, repairs, or services contracts on household appliances (owner) (new UCC Q20242) [I]",20.82
+958,"Flooring installation, repair, and replacement [I]",129.09
+965,Maintenance and repair commodities [I],211.39
+972,"Paints, wallpaper, and supplies [I]",38.65
+978,Tools and equipment for painting and wallpapering [I],4.15
+984,Plumbing supplies and equipment [I],23.75
+990,"Electrical supplies, heating, and cooling equipment [I]",10.27
+996,Materials and equipment for roofs and gutters [I],25.34
+1002,"Materials for plaster, panel, siding, windows, doors, screens, and awnings [I]",48.87
+1008,"Materials for patio, walk, fence, driveway, masonry, brick, and stucco work [I]",3.98
+1014,Materials for landscaping maintenance [I],d/
+1020,Miscellaneous supplies and equipment [I],56.38
+1027,"Material for insulation, other maintenance, and repair [I]",56.38
+1033,"Materials to finish basements, remodel rooms, or build patios or walkways [I]",d/
+1040,Property management and security [I],143.13
+1047,Property management [I],130.29
+1053,Management and upkeep services for security [I],12.84
+1060,Parking [I],16.62
+1067,Rented dwellings [I],5660.45
+1074,Rent [I],5450.23
+1080,Rent as pay [I],75.74
+1086,"Maintenance, insurance, and other expenses [I]",134.49
+1093,Tenant's insurance [I],39.76
+1099,Maintenance and repair services [I],68.36
+1106,Repair or maintenance services [I],56.0
+1112,Repair of built-in appliances (through Q20241) [I],b/
+1118,"Home warranties, maintenance, repairs, or services contracts on household appliances (renter) (new UCC Q20242) [I]",1.08
+1124,"Flooring installation, repair, and replacement [I]",11.28
+1131,Maintenance and repair commodities [I],26.37
+1138,"Paint, wallpaper, and supplies [I]",4.72
+1144,Tools and equipment for painting and wallpapering [I],0.51
+1150,"Materials for plastering, panels, roofing, and gutters, etc. [I]",1.21
+1156,"Materials for patio, walk, fence, driveway, masonry, brick and stucco work [I]",0.1
+1162,Plumbing supplies and equipment [I],2.19
+1168,"Electrical supplies, heating, and cooling equipment [I]",0.41
+1174,Miscellaneous supplies and equipment [I],14.66
+1181,"Material for insulation, other maintenance, and repair [I]",9.94
+1187,"Materials for additions, finishing basements, and remodeling rooms [I]",1.88
+1193,Construction materials for jobs not started [I],2.84
+1200,Material for landscape maintenance [I],2.57
+1207,Other lodging [I],1346.64
+1214,Owned vacation homes [I],281.16
+1221,Mortgage interest and charges [I],72.03
+1228,Mortgage interest [I],70.88
+1234,"Interest paid, home equity loan [I]",0.03
+1240,"Interest paid, home equity line of credit [I]",1.12
+1246,Late fee mortgage pay (owned vacation) (new UCC Q20242) [I],d/
+1253,Property taxes [I],116.16
+1259,"Maintenance, insurance, and other expenses [I]",92.97
+1266,Homeowners insurance [I],14.26
+1272,Ground rent [I],5.17
+1278,Maintenance and repair services [I],53.81
+1285,Repair and remodeling services [I],52.67
+1291,"Flooring installation, repair, and replacement [I]",1.14
+1298,Maintenance and repair commodities [I],2.53
+1305,"Paints, wallpaper, and supplies [I]",0.64
+1311,Tools and equipment for painting and wallpapering [I],0.07
+1317,"Materials for plastering, paneling, roofing, gutters, downspouts, siding, windows, doors, screens, and awnings [I]",0.95
+1323,"Material for patio, walk, fence, drive, masonry, brick, and stucco [I]",0.07
+1329,Plumbing supplies and equipment [I],0.25
+1335,"Electrical supplies, heating, and cooling equipment [I]",0.05
+1341,Miscellaneous supplies and equipment [I],0.49
+1348,"Material for insulation, other maintenance, and repair [I]",0.49
+1354,Material for finishing basements and remodeling rooms [I],d/
+1361,Materials for landscaping maintenance [I],d/
+1368,Property management and security [I],14.19
+1375,Property management [I],12.26
+1381,Management and upkeep services for security [I],1.92
+1388,Parking [I],3.02
+1395,Housing while attending school [I],159.76
+1401,Lodging on out of town trips [I],905.72
+1408,"Utilities, fuels, and public services [I]",4736.5
+1415,Natural gas [I],492.57
+1422,Natural gas (renter) [I],87.32
+1428,Natural gas (owned home) [I],400.78
+1434,Natural gas (owned vacation) [I],3.42
+1440,Natural gas (rented vacation) [I],1.05
+1447,Electricity [I],1832.89
+1454,Electricity (renter) [I],458.79
+1460,Electricity (owned home) [I],1358.9
+1466,Electricity (owned vacation) [I],11.58
+1472,Electricity (rented vacation) [I],3.62
+1479,Fuel oil and other fuels [I],125.32
+1486,Fuel oil [I],62.39
+1493,Fuel oil (renter) [I],3.8
+1499,Fuel oil (owned home) [I],58.22
+1505,Fuel oil (owned vacation) [I],0.37
+1511,Fuel oil (rented vacation) [I],d/
+1518,"Coal, wood, and other fuels [I]",9.82
+1525,"Coal, wood, and other fuels (renter) [I]",0.28
+1531,"Coal, wood, and other fuels (owned home) [I]",9.54
+1537,"Coal, wood, and other fuels (owned vacation) [I]",d/
+1543,"Coal, wood, and other fuels (rented vacation) [I]",d/
+1550,Bottled gas [I],53.12
+1557,"Gas, bottled/tank (renter) [I]",3.04
+1563,"Gas, bottled/tank (owned home) [I]",45.5
+1569,"Gas, bottled/tank (owned vacation) [I]",4.58
+1575,"Gas, bottled/tank (rented vacation) [I]",d/
+1582,Telephone services [I],1459.68
+1589,"Residential phone service, VOIP, and phone cards [I]",100.29
+1596,Phone cards [I],d/
+1602,Residential telephone including VOIP [I],100.29
+1609,Cellular phone service [I],1359.39
+1616,Water and other public services [I],826.03
+1623,Water and sewerage maintenance [I],559.48
+1630,Water/sewer maintenance (renter) [I],93.55
+1636,Water/sewer maintenance (owned home) [I],461.52
+1642,Water/sewer maintenance (owned vacation) [I],3.56
+1648,Water/sewer maintenance (rented vacation) [I],0.85
+1655,Trash and garbage collection [I],257.87
+1662,Trash/garbage collection (renter) [I],25.29
+1668,Trash/garbage collection (owned home) [I],224.53
+1674,Trash/garbage collection (owned vacation) [I],7.57
+1680,Trash/garbage collection (rented vacation) [I],0.48
+1687,Septic tank cleaning [I],8.69
+1694,Septic tank cleaning (renter) (through Q20241) [I],d/
+1700,Septic tank cleaning (owned home) (through Q20241) [I],0.24
+1706,Septic tank cleaning (owned vacation) (through Q20241) [I],d/
+1712,Septic tank cleaning (rented vacation) (through Q20241) [I],d/
+1718,Septic tank cleaning (renter) (new UCC Q20242) [I],0.23
+1724,Septic tank cleaning (owner) (new UCC Q20242) [I],8.22
+1731,Household operations,1920.72
+1738,Personal services [I],547.12
+1745,"Care for elderly, invalids, handicapped, etc. [I]",75.71
+1751,Adult day care centers [I],0.95
+1757,"Babysitting, childcare, daycare, preschool [I]",470.46
+1764,Other household expenses,1373.59
+1771,Housekeeping services [I],186.25
+1777,Gardening and lawn care service [I],238.02
+1783,Water softening services (through Q20241) [I],0.67
+1789,Water softening services (owner) (new UCC Q20242) [I],4.19
+1795,Water softening services (renter) (new UCC Q20242) [I],0.53
+1801,"Household laundry and dry cleaning, sent out (nonclothing) not coin-operated [D]",d/
+1807,Coin-operated household laundry and dry cleaning (nonclothing) [D],d/
+1813,Services for termite/pest control [I],68.04
+1819,Home security system service fees [I],44.4
+1825,Other home services [I],25.6
+1831,Termite/pest control products [I],17.01
+1837,"Moving, storage, and freight [I]",59.85
+1843,"Appliance repair, including service center (through Q20241) [I]",1.82
+1849,"Reupholstering, furniture repair [I]",9.33
+1855,"Repairs/rentals of lawn and garden equipment, hand or power tools, and other household equipment [I]",7.06
+1861,Appliance rentals [I],1.8
+1867,Rental of office equipment for nonbusiness use [I],0.89
+1873,Repair of miscellaneous household equipment and furnishings [D],2.52
+1879,Repair of computer systems for nonbusiness use [I],7.53
+1885,Computer information services (internet) [I],697.9
+1891,Installation of computers [I],0.19
+1897,"Rental and installation of dishwashers, range hoods, and garbage disposals [I]",d/
+1904,Housekeeping supplies [D],877.3
+1911,Laundry and cleaning products [D],208.88
+1917,Other household products [D],537.09
+1924,"Paper towels, napkins, and toilet tissue [D]",131.24
+1930,Miscellaneous household products [D],277.18
+1936,Lawn and garden supplies [D],128.67
+1943,Postage and stationery [D],131.33
+1950,"Stationery, stationery supplies, and gift wrap [D]",85.57
+1956,Postage [D],43.29
+1962,Delivery services [D],2.48
+1969,Household furnishings and equipment,2414.41
+1976,Household textiles,106.59
+1983,Bathroom linens [D],24.72
+1989,Bedroom linens [D],60.17
+1995,Curtains and draperies [I],10.37
+2001,Slipcovers and decorative pillows [I],5.7
+2007,"Kitchen, dining room, and other linens [D]",5.63
+2014,Furniture [I],648.24
+2021,Mattresses and springs [I],113.83
+2027,Other bedroom furniture [I],119.19
+2033,Sofas [I],195.37
+2039,Living room chairs [I],58.75
+2045,Living room tables [I],17.58
+2051,Kitchen and dining room furniture [I],39.4
+2057,Infants' furniture [I],11.34
+2063,Outdoor furniture [I],46.91
+2069,"Wall units, cabinets, and other furniture [I]",45.86
+2076,Floor coverings [I],30.24
+2083,"Floor coverings, nonpermanent [I]",30.24
+2090,Major appliances,385.08
+2097,"Dishwashers (built-in), garbage disposals, and range hoods (renter) [I]",1.13
+2103,"Dishwashers (built-in), garbage disposals, and range hoods (owned home) [I]",32.87
+2109,Refrigerators and freezers (renter) [I],11.57
+2115,Refrigerators and freezers (owned home) [I],105.23
+2121,Clothes washers or dryers (renter) [I],13.1
+2127,Clothes washers or dryers (owned home) [I],85.52
+2133,Cooking stoves and ovens (renter) [I],2.99
+2139,Cooking stoves and ovens (owned home) [I],60.47
+2145,Microwave ovens (renter) [I],3.81
+2151,Microwave ovens (owned home) [I],16.98
+2157,Portable dishwashers (renter) [I],0.25
+2163,Portable dishwashers (owned home) [I],0.44
+2169,Window air conditioners (renter) [I],3.11
+2175,Window air conditioners (owned home) [I],5.08
+2181,Electric floor cleaning equipment [I],27.41
+2187,Sewing machines [I],4.94
+2193,Miscellaneous household appliances [D],10.18
+2200,Small appliances and miscellaneous housewares,154.95
+2207,Housewares [D],98.96
+2214,Flatware [D],9.74
+2220,"Dinnerware, glassware, and serving pieces [D]",28.49
+2226,Nonelectric cookware [D],32.37
+2232,Tableware and nonelectric kitchenware [D],28.35
+2239,Small appliances [I],55.99
+2246,Small electric kitchen appliances [I],44.11
+2252,Portable heating and cooling equipment [I],11.88
+2259,Miscellaneous household equipment,1089.32
+2266,Window coverings [I],25.45
+2272,Infants' equipment [D],28.24
+2278,Laundry and cleaning equipment [D],21.74
+2284,Outdoor equipment [D],22.97
+2290,"Lamps, lighting fixtures, and ceiling fans [D]",38.71
+2296,Clocks and other household decorative items [D],214.04
+2302,Telephones and accessories [I],113.12
+2308,Lawn and garden equipment [D],53.25
+2314,Power tools [I],35.44
+2320,Office furniture for home use [I],14.9
+2326,Hand tools [D],18.94
+2332,Indoor plants and fresh flowers [I],83.18
+2338,Closet and storage items [D],24.97
+2344,Rental of furniture [I],4.11
+2350,Luggage [D],30.76
+2356,Computers and computer hardware for nonbusiness use [I],178.07
+2362,Portable memory [I],3.75
+2368,Computer software [D],27.52
+2374,Computer accessories [D],28.23
+2380,Internet services away from home [I],3.64
+2386,Business equipment for home use [I],2.6
+2392,Other hardware [D],29.54
+2398,Other household appliances (owned home) [I],12.32
+2404,Other household appliances (renter) [I],3.1
+2410,Miscellaneous household equipment and parts [D],70.72
+2417,Apparel and services,2000.84
+2424,Men and boys,466.61
+2431,"Men, 16 and over",374.26
+2438,Men's suits [I],32.79
+2444,Men's sportcoats and tailored jackets [D],0.96
+2450,Men's coats and jackets [D],45.67
+2456,"Men's underwear, hosiery, nightwear, and swimwear [D]",53.01
+2462,Men's accessories [D],49.35
+2468,"Men's shirts, sweaters, and vests [D]",100.3
+2474,Men's pants and shorts [D],90.2
+2480,Men's uniforms [D],0.73
+2486,Men's costumes [D],1.25
+2493,"Boys, 2 to 15 [D]",92.35
+2500,Boys' coats and jackets [D],10.6
+2506,"Boy's underwear, hosiery, nightwear, and swimwear [D]",25.72
+2512,"Boy's suits, sportscoats, pants, and shorts [D]",22.8
+2518,Boys' shirts and sweaters [D],20.67
+2524,Boys' accessories [D],7.61
+2530,Boys' costumes [D],4.15
+2536,Boys' uniforms [D],0.79
+2543,Women and girls [D],743.67
+2550,"Women, 16 and over [D]",631.89
+2557,Women's coats and jackets [D],48.99
+2563,Women's dresses [D],92.47
+2569,Women's tops [D],173.16
+2575,"Women's skirts, pants, and shorts [D]",119.19
+2581,"Women's undergarments, nightwear, and swimwear [D]",69.06
+2587,Women's costumes and uniforms [D],11.1
+2593,Women's hosiery [D],19.78
+2599,Women's suits [D],1.28
+2605,Women's accessories [D],96.86
+2612,"Girls, 2 to 15 [D]",111.78
+2619,Girls' coats and jackets [D],6.52
+2625,Girls' dresses and suits [D],12.48
+2631,"Girls' shirts, blouses, sweaters, and vests [D]",33.47
+2637,"Girls' skirts, pants, and shorts [D]",20.93
+2643,Girls' accessories [D],12.65
+2649,"Girl's underwear, nightwear, hosiery, and swimwear [D]",19.4
+2655,Girls' uniforms [D],4.58
+2661,Girls' costumes [D],1.74
+2668,Children under 2 [D],77.32
+2675,"Infant's and toddler's outerwear, dresses, nightwear, and accessories [D]",26.82
+2681,Infant underwear [D],50.51
+2688,Footwear [D],461.15
+2695,Men's footwear [D],153.93
+2701,Boys' footwear [D],55.13
+2707,Women's footwear [D],209.69
+2713,Girls' footwear [D],42.39
+2720,Other apparel products and services,252.09
+2727,"Material and supplies for sewing, needlework, and quilting (includes household items) [D]",30.01
+2733,Jewelry [I],89.75
+2739,Shoe repair and other shoe services [I],2.0
+2745,Coin-operated apparel laundry and dry cleaning [I],48.7
+2751,"Alteration, repair, and tailoring of apparel and accessories [I]",6.29
+2757,Clothing rental [I],4.0
+2763,Watch and jewelry repair [I],6.84
+2769,Apparel laundry and dry cleaning not coin-operated [I],37.24
+2775,Clothing storage [I],1.43
+2781,Watches [I],25.84
+2788,Transportation [I],13318.23
+2795,Vehicle purchases (net outlay) [I],5336.92
+2802,"Cars and trucks, new [I]",2469.33
+2809,New cars [I],669.6
+2815,New trucks [I],1799.72
+2822,"Cars and trucks, used [I]",2817.71
+2829,Used cars [I],710.18
+2835,Used trucks [I],2107.53
+2842,Other vehicles [I],49.88
+2849,New motorcycles [I],29.44
+2855,New aircraft [I],d/
+2861,Used motorcycles [I],20.44
+2867,Used aircraft [I],d/
+2874,Gasoline and other fuels [I],2645.06
+2881,Gasoline [I],2410.75
+2887,Diesel fuel [I],75.41
+2893,Gasoline on out of town trips [I],148.94
+2899,Electric vehicle charging [I],9.96
+2906,Other vehicle expenses [I],4205.67
+2913,Vehicle finance charges [I],417.75
+2920,Automobile finance charges [I],94.71
+2926,Truck finance charges [I],296.96
+2932,Motorcycle and plane finance charges [I],3.47
+2938,Other vehicle finance charges [I],22.61
+2945,Maintenance and repairs [I],984.39
+2952,Vehicle maintenance/repair excluding tire purchase [I],669.45
+2958,"Tires - purchased, replaced, and installed [I]",217.43
+2964,Motor oil on out of town trips [I],1.5
+2970,"Vehicle parts, accessories, fluid excluding tires [I]",44.55
+2976,Auto repair service policy [I],51.45
+2983,"Vehicle rental, leases, licenses, and other charges [I]",810.56
+2990,Leased and rented vehicles [I],423.57
+2997,Rented vehicles [I],121.41
+3004,Auto/truck rental [I],112.57
+3010,Auto/truck rental on out of town trips (through Q20241) [I],5.34
+3016,Motorcycle rental [I],0.48
+3022,Motorcycle rental on out of town trips (through Q20241) [I],0.02
+3028,Aircraft rental [I],3.0
+3034,Aircraft rental on out of town trips (through Q20241) [I],d/
+3041,Leased vehicles [I],302.16
+3048,Car/truck lease payments [I],228.26
+3054,Cash down payment car/truck lease [I],39.07
+3060,Termination fee for car/truck lease [I],0.49
+3066,Extra fees for car/truck lease [I],1.48
+3072,Trade in allowance for car/truck lease [I],32.86
+3079,State and local vehicle registration [I],148.16
+3085,Vehicle personal property taxes [I],63.5
+3091,Drivers' licenses [I],12.25
+3097,Vehicle inspections [I],14.11
+3103,Parking fees [I],57.99
+3110,"Parking fees in home city, excluding residence [I]",44.77
+3116,Parking fees on out of town trips [I],13.23
+3123,Tolls or electronic toll passes [I],59.97
+3129,Tolls on out of town trips [I],5.57
+3135,Towing charges [I],6.0
+3141,Automobile service clubs and GPS services [I],19.44
+3148,Vehicle insurance [I],1992.97
+3155,Public and other transportation [I],1130.58
+3162,Airline fares [I],681.83
+3168,Intercity bus fares [I],11.77
+3174,Intracity mass transit fares [I],108.85
+3180,Local transportation on out of town trips (through Q20241) [I],1.68
+3186,Taxi fares and limousine services on trips (through Q20241) [I],0.99
+3192,Taxi fares and limousine services [I],135.26
+3198,Intercity train fares [I],25.98
+3204,Ship fares [I],161.72
+3210,School bus [I],2.51
+3217,Healthcare,6197.14
+3224,Health insurance [I],4054.75
+3231,Commercial health insurance [I],796.96
+3238,Fee for service health plan (not BCBS) [I],796.96
+3245,"Blue Cross, Blue Shield [I]",1095.56
+3252,Fee for service health plan (BCBS) [I],827.93
+3258,Health maintenance organization (BCBS) [I],224.47
+3264,Commercial medicare supplement (BCBS) [I],16.43
+3270,Dental care insurance (BCBS) [I],18.51
+3276,Vision care insurance (BCBS) [I],3.63
+3282,Other single service insurance (BCBS) [I],3.13
+3288,Prescription drug insurance (BCBS) [I],1.46
+3295,Health maintenance organization (not BCBS) [I],581.83
+3301,Medicare payments [I],946.77
+3307,Medicare prescription drug premiums [I],55.36
+3313,Medicaid premiums [I],12.24
+3319,Tricare/military premiums [I],11.77
+3325,Children's Health Insurance Program (CHIP) premiums [I],1.6
+3331,Commercial medicare supplements and other health insurance [I],501.5
+3338,Commercial medicare supplement (not BCBS) [I],289.16
+3344,Dental care insurance (not BCBS) [I],154.15
+3350,Vision care insurance (not BCBS) [I],36.1
+3356,Other single service insurance (not BCBS) [I],15.37
+3362,Prescription drug insurance (not BCBS) [I],6.72
+3369,Long term care insurance (not BCBS) [I],45.87
+3375,Long term care insurance (BCBS) [I],5.29
+3382,Medical services,1251.67
+3389,Physician's services [I],204.34
+3395,Dental services [I],401.7
+3401,Eyecare services [I],66.77
+3407,Non physician services inside the home [I],34.42
+3413,Non physician services outside the home [I],101.91
+3419,Lab tests and x-rays [I],55.89
+3425,Hospital room and services [I],317.74
+3431,Medical care in retirement community [I],d/
+3437,Care in convalescent or nursing home [I],67.45
+3443,Repair of medical equipment [D],0.3
+3449,Other medical care services (through Q20241) [I],1.15
+3456,Drugs,657.81
+3463,Nonprescription drugs [D],142.69
+3469,Vitamins and supplements [D],134.37
+3475,Prescription drugs [I],380.74
+3482,Medical supplies,232.92
+3489,Eyeglasses and contact lenses [I],110.2
+3495,Hearing aids [I],33.99
+3501,Topicals and dressings [D],40.09
+3507,Rental of medical equipment (through Q20241) [I],0.1
+3513,Rental of supportive and convalescent medical equipment (through Q20241) [I],0.12
+3519,Purchase/rental of supportive and convalescent medical equipment (new UCC Q20242) [I],48.42
+3526,Entertainment,3609.38
+3533,Fees and admissions,934.9
+3540,Recreation expenses on out of town trips [I],0.65
+3546,"Social, recreation, and health club memberships [I]",271.87
+3552,Fees for participant sports [D],141.18
+3558,Participant sports on out of town trips [I],36.9
+3564,"Plays, theater, operas, and concerts [I]",108.54
+3570,Tickets to movies [I],26.14
+3576,Tickets to parks or museums [I],30.16
+3582,Movie and other admissions on out of town trips [I],87.18
+3588,Admission to sporting events [I],92.4
+3594,Admission to sports events on out of town trips [I],29.03
+3600,Fees for recreational lessons [I],110.2
+3606,Other entertainment services on out of town trips [I],0.65
+3613,Audio and visual equipment and services,965.46
+3620,"Stereos, radios, speakers, and sound components including those in vehicles [I]",13.77
+3626,Phonographs [D],d/
+3632,Televisions [I],88.47
+3638,Cable and satellite television services [I],454.09
+3644,Miscellaneous sound equipment [D],6.81
+3650,Miscellaneous video equipment [D],20.04
+3656,Satellite radio services [I],19.81
+3662,Sound equipment accessories [D],31.09
+3668,Online gaming services [D],11.45
+3674,VCR's and video disc players [I],2.38
+3680,Digital video players and recorders [D],0.32
+3686,"Video cassettes, tapes, and discs [D]",2.08
+3692,Video game software [I],15.85
+3698,Video game hardware and accessories [I],28.04
+3704,"Rental, streaming, and downloading videos [I]",185.02
+3710,"Applications, games, and ringtones for handheld devices [I]",3.48
+3716,"Repair of televisions, radio, and sound equipment [I]",3.63
+3722,Rental of televisions [I],0.16
+3728,Personal digital audio players [I],0.34
+3734,Satellite dishes [I],0.22
+3740,"CDs, records, and audio tapes [I]",5.49
+3746,Streaming and downloading audio [I],34.59
+3752,"Rental of VCR, radio, and sound equipment [I]",0.13
+3758,Musical instruments and accessories [I],32.57
+3764,Rental and repair of musical instruments [I],3.01
+3770,Rental of video hardware/accessories [I],0.1
+3776,Rental of video software [I],1.06
+3782,Installation of televisions [I],1.24
+3788,Installation of satellite television equipment [I],d/
+3794,Installation of sound systems [I],0.22
+3800,Installation of other video equipment or sound systems [I],0.01
+3807,"Pets, toys, hobbies, and playground equipment",1068.7
+3814,Pets,880.11
+3821,Pet food [D],295.9
+3827,"Pet purchase, supplies, and medicine [I]",176.15
+3833,Pet services [I],100.55
+3839,Vet services [D],307.52
+3846,"Toys, hobbies, and playground equipment",188.59
+3853,"Toys, games, arts and crafts, and tricycles [D]",171.96
+3859,Stamp and coin collecting [I],5.28
+3865,Playground equipment [I],11.36
+3872,"Other entertainment supplies, equipment, and services",640.32
+3879,Non-motored recreational vehicles [I],116.21
+3886,Boats without motor and boat trailers (through Q20241) [I],0.06
+3892,Trailer and other attachable campers (through Q20241) [I],d/
+3898,Purchase of boats and trailers (new UCC Q20242) [I],116.15
+3905,Motorized recreational vehicles [I],126.16
+3912,Purchase of motorized campers (through Q20241) [I],d/
+3918,Purchase of motor homes and campers (new UCC Q20242) [I],89.28
+3924,Purchase of other vehicles [I],36.88
+3930,Purchase of boats with motor (through Q20241) [I],d/
+3937,Rental of recreational vehicles [I],25.29
+3944,Rental noncamper trailers (through Q20241) [I],b/
+3950,Boat and trailer rentals on out of town trips (through Q20241) [I],0.02
+3956,Rental of campers on out of town trips (through Q20241) [I],d/
+3962,Rental of other vehicles on out of town trips (through Q20241) [I],0.95
+3968,Rental of boats (through Q20241) [I],0.08
+3974,Rental of motorized campers (through Q20241) [I],d/
+3980,Rental of other recreational vehicles (through Q20241) [I],0.04
+3986,Rental of boats and trailers (new UCC Q20242) [I],5.8
+3992,"Rental of RVs, campers, and other vehicles (new UCC Q20242) [I]",18.41
+3999,Outboard motors [I],10.73
+4005,Docking and landing fees [I],16.61
+4011,"Sports, recreation, and exercise equipment",225.14
+4018,"Athletic gear, game tables, and exercise equipment [I]",79.43
+4024,Bicycles [I],41.33
+4030,Scooters and other single-rider transportation [D],d/
+4036,Bike and E-scooter sharing or rental [I],1.6
+4042,Camping equipment [D],29.65
+4048,Hunting and fishing equipment [D],51.23
+4054,Winter sports equipment [I],8.07
+4060,Water sports equipment [I],6.93
+4066,Other sports equipment [I],3.88
+4072,Global positioning system devices [D],0.54
+4078,Rental and repair of miscellaneous sports equipment [I],2.46
+4085,"Photographic equipment, supplies, and services",50.07
+4092,Film [I],0.61
+4098,Other photographic supplies [D],0.52
+4104,Photo processing [I],7.5
+4110,Repair and rental of photographic equipment [I],0.22
+4116,Photographic equipment [I],16.9
+4122,Photographer fees [I],24.31
+4129,Fireworks [D],6.73
+4135,Souvenirs [D],2.37
+4141,Visual goods [D],3.0
+4147,Pinball and electronic video games [D],6.12
+4153,Live entertainment for catered affairs [I],26.85
+4159,Rental of party supplies for catered affairs [I],25.03
+4166,Personal care products and services,977.71
+4173,Personal care products,499.2
+4180,Products for the hair [D],101.14
+4186,Wigs and hairpieces [I],7.43
+4192,Nonelectric dental and shaving products [D],61.47
+4198,"Cosmetics, perfume, and bath preparations [D]",257.03
+4204,"Deodorants, feminine hygiene, and miscellaneous personal care [D]",57.93
+4210,Electric personal care appliances [I],14.21
+4217,Personal care services,478.51
+4224,Personal care services [I],478.51
+4230,Repair of personal care appliances [D],d/
+4237,Reading,125.41
+4244,Newspapers [D],24.21
+4250,Magazines [D],28.24
+4256,Newsletters [D],d/
+4262,Books through book clubs [D],1.54
+4268,"Books, digital books, or book subscriptions [I]",44.71
+4274,Encyclopedias and other sets of reference books [D],d/
+4280,Digital book readers [I],26.71
+4287,Education,1569.4
+4294,College tuition [I],984.77
+4300,Elementary and high school tuition [I],281.26
+4306,Vocational and technical school tuition [I],37.32
+4312,"Finance, late, and interest charges for student loans [I]",67.88
+4318,Test preparation and tutoring services [I],31.85
+4324,"Educational books, supplies, and other expenditures [I]",40.3
+4330,Prepaid tuition [I],67.78
+4336,"School supplies, etc., unspecified [D]",58.24
+4343,Tobacco products and smoking supplies,352.38
+4350,Cigarettes [I],243.03
+4356,Other tobacco products [I],93.87
+4362,Smoking accessories [D],4.34
+4368,Marijuana [D],11.14
+4375,Miscellaneous,1218.33
+4382,Miscellaneous fees [D],4.26
+4388,Lotteries and pari-mutuel losses [D],31.18
+4394,Legal fees [I],175.53
+4400,Funeral expenses [I],109.42
+4406,Safe deposit box rental [I],5.04
+4412,"Checking accounts, other bank service charges [I]",29.43
+4418,"Cemetery lots, vaults, and maintenance fees [I]",17.01
+4424,Accounting fees [I],128.35
+4430,Miscellaneous personal services [D],73.67
+4436,Dating services [I],1.11
+4442,"Finance, late, and interest charges for credit cards [I]",385.69
+4448,"Finance, late, and interest charges for other loans [I]",40.33
+4454,Occupational expenses [I],61.24
+4460,Expenses for other properties [I],38.12
+4466,"Interest paid, home equity line of credit (other property) [I]",d/
+4472,Late fee mortgage pay (other) (new UCC Q20242) [I],d/
+4478,Credit card memberships [I],18.31
+4484,Shopping club membership fees [I],76.3
+4490,Vacation clubs [I],15.3
+4496,Other taxes [I],8.05
+4503,Cash contributions [I],2291.58
+4510,Support for college students [I],133.51
+4516,Alimony expenditures [I],72.8
+4522,Child support expenditures [I],145.41
+4528,"Gift to non-CU members of stocks, bonds, and mutual funds [I]",184.41
+4534,Cash contributions to charities and other organizations [I],322.24
+4540,Cash contributions to churches and other religious organizations [I],780.78
+4546,Cash contribution to educational institutions [I],70.47
+4552,Cash contribution to political organizations [I],35.08
+4558,Other cash gifts [I],546.88
+4565,Personal insurance and pensions [I],9797.41
+4572,Life and other personal insurance [I],575.2
+4579,"Life, endowment, annuity, and other personal insurance [I]",530.15
+4585,Other non-health insurance [I],45.04
+4592,"Retirement, pensions, and Social Security [I]",9222.21
+4599,Deductions for government retirement [I],196.28
+4605,Deductions for railroad retirement [I],6.66
+4611,Deductions for private pensions [I],343.62
+4617,Contributions to retirement plans [I],1991.18
+4623,Deductions for Social Security [I],6684.46
+4632,Income before taxes [I],104207.25
+4639,Wages and salaries [I],80864.43
+4645,Self-employment income [I],7084.0
+4652,Self-employment income [I],7084.0
+4659,"Social Security, private and government retirement [I]",11646.25
+4666,Social Security and railroad retirement income [I],8706.8
+4672,"Retirement, survivors, and disability income [I]",2939.44
+4679,"Interest, dividends, rental income, and other property income [I]",3066.09
+4686,Interest and dividends [I],1713.97
+4692,Net room/rental income [I],644.9
+4698,"Royalty, estate, and trust income [I]",707.22
+4705,"Public assistance, Supplemental Security Income, Supplementary Nutrition Assistance Program (SNAP) [I]",620.2
+4712,Supplemental Security Income [I],243.7
+4718,Public assistance [I],23.19
+4724,Supplementary Nutrition Assistance Program (SNAP) [I],353.31
+4731,"Unemployment and workers' compensation, veterans' benefits, and regular contributions for support [I]",635.15
+4738,Other regular income [I],635.15
+4745,Other income [I],291.12
+4752,Meals as pay [I],45.48
+4758,Rent as pay [I],75.74
+4764,Other income [I],169.91
+4773,Net change in total assets and liabilities,20436.06
+4780,Net change in total assets [I],31810.62
+4787,Change in accounts [I],6917.62
+4794,"Change in value of savings, checking, money market, and CDs [I]",1694.71
+4801,"Value of savings, checking, money market, and CDs [I]",22203.91
+4807,"Value of savings, checking, money market, and CDs one year ago [I]",-20509.2
+4814,Change in securities [I],5222.9
+4821,"Value of stocks, bonds, and mutual funds [I]",42844.59
+4827,"Value of stocks, bonds, and mutual funds one year ago [I]",-37621.69
+4834,Change in surrender of insurance policies [I],461.61
+4841,Surrender value of whole life insurance policies [I],4322.93
+4847,Surrender value of whole life insurance policies one year ago [I],-3861.31
+4854,Change in value of retirement plans [I],14585.92
+4861,Value of retirement plans [I],128374.14
+4867,Value of retirement plans one year ago [I],-113788.22
+4874,Change in value of other financial assets [I],719.79
+4881,Value of other financial assets [I],9484.75
+4887,Value of other financial assets one year ago [I],-8764.96
+4894,Change in net property holdings (owned home) [I],6686.84
+4901,Purchase price of property (owned home) [I],8647.28
+4907,Closing costs purchase of property (owned home) [I],184.69
+4913,Special assessments (owned home) [I],9.79
+4919,Sale price of property or trade-in amount (owned home) [I],-2011.98
+4925,Total expenses in sale of property (owned home) [I],-142.94
+4932,Change in capital improvements (owned home) [I],2487.93
+4939,Capital improvements: labor and materials (owned home) [I],2074.45
+4945,Capital improvement material (owned home) [I],413.48
+4952,"Materials and supplies purchased for insulation, dwellings under construction, additions, finishing, remodeling, landscaping, etc. [I]",406.12
+4958,"Dishwasher, disposal, or range hood [I]",4.85
+4964,Labor and materials for dwellings under construction and additions [I],2.5
+4971,Change in net property holdings (owned vacation) [I],546.93
+4978,Purchase price of property (owned vacation) [I],943.2
+4984,Closing costs on purchase of property (owned vacation) [I],16.15
+4990,Special assessments (owned vacation) [I],12.74
+4996,Sale price of property or trade-in amount (owned vacation) [I],-404.32
+5002,Mortgage principal held after sale of real estate (owned vacation) [I],d/
+5008,Total expenses in sale of property (owned vacation) [I],-20.85
+5015,Change in capital improvements (owned vacation) [I],114.42
+5022,Capital improvements: labor and materials (owned vacation) [I],102.44
+5028,"Supplies purchased for additions, maintenance, repairs, and new construction [I]",11.98
+5035,Change in net property holdings (other property) [I],-84.54
+5042,Purchase price of property (other property) [I],91.08
+5048,Closing costs purchase of property (other property) [I],1.61
+5054,Special assessments (other property) [I],0.03
+5060,Sale price of property or trade-in amount (other property) [I],-175.48
+5066,Total expenses in sale of property (other property) [I],-1.78
+5073,Change in capital improvements (other property) [I],0.56
+5080,"Property management, security, parking (other property) [I]",0.54
+5086,"Capital improvement services, labor, materials, and equipment (other property) [I]",0.02
+5093,"Contractors labor and materials, supplies CU obtained, appliances provided by contractor, and other property [I]",d/
+5099,Management services and improvements of other properties [I],0.02
+5105,"Dishwasher, disposal, and range hood capital improvement (other property) [I]",d/
+5112,Change in vehicle sales [I],-626.45
+5119,Sale of automobiles [I],-204.74
+5125,"Sale of trucks, including vans [I]",-350.53
+5131,Sale of motor camper (through Q20241) [I],d/
+5137,Sale of other vehicles [I],-3.27
+5143,Sale of trailer type and other attachable campers (through Q20241) [I],d/
+5149,Sale of campers and motor homes (new UCC Q20242) [I],-23.74
+5155,Sale of motorcycles [I],-12.23
+5161,"Sale of boats, with motors (through Q20241) [I]",d/
+5167,"Sale of boats, without motors and boat trailers (through Q20241) [I]",d/
+5173,Sale of trailers and boats (new UCC Q20242) [I],-31.94
+5179,Sale of aircraft [I],d/
+5186,Net change in total liabilities [I],11374.56
+5193,Change in amount owed to creditors [I],679.82
+5200,Amount owed on credit cards [I],2589.53
+5206,Amount owed on credit cards one year ago [I],-2344.94
+5212,Amount owed on student loans [I],5541.01
+5218,Amount owed on student loans one year ago [I],-5383.46
+5224,Amount owed on other loans [I],790.23
+5230,Amount owed on other loans one year ago [I],-512.55
+5237,Change in mortgage principal (owned home) [I],9899.75
+5244,Special lump sum mortgage payment (owned home) [I],-319.46
+5250,Reduction of mortgage principal (owned home) [I],-2462.69
+5256,"Reduction of mortgage principal, home equity loan (owned home) [I]",-55.39
+5262,Original loan amount (mortgage obtained during interview quarter) (owned home) [I],12608.43
+5268,"Original loan amount, home equity loan (loan obtained during interview quarter) (owned home) [I]",408.59
+5274,"Principal paid, home equity line of credit (owned home) [I]",-279.73
+5281,Change in mortgage principal (owned vacation) [I],21.03
+5288,Special lump sum mortgage payment (owned vacation) [I],-17.99
+5294,Reduction of mortgage principal (owned vacation) [I],-73.08
+5300,"Reduction mortgage principal, home equity loan (owned vacation) [I]",-0.23
+5306,Original loan amount (mortgage obtained during interview quarter) (owned vacation) [I],156.1
+5312,"Original loan amount, home equity loan (loan obtained during interview quarter) (owned vacation) [I]",d/
+5318,"Principal paid, home equity line of credit (owned vacation) [I]",-43.77
+5325,Change in mortgage principal (other property) [I],18.75
+5332,Special lump sum mortgage payments (other property) [I],d/
+5338,Reduction of mortgage principal (other property) [I],-8.95
+5344,"Reduction mortgage principal, home equity loan (other property) [I]",d/
+5350,Original loan amount (mortgage obtained during interview quarter) (other property) [I],27.7
+5356,"Original loan amount, home equity loan (loan obtained during interview quarter) (other property) [I]",d/
+5362,"Principal paid, home equity line of credit (other property) [I]",d/
+5369,Change in principal on vehicles [I],755.21
+5376,Reduction of vehicle loan principal [I],-2198.48
+5382,Vehicle principal balance (loan obtained during interview quarter) [I],2953.68
+5390,Other money receipts [I],941.62
+5397,Lump sum payment received [I],941.62
+5404,Mortgage principal paid on owned property [I],-2923.84
+5411,Reduction of mortgage principal (owned home) [I],-2462.69
+5417,Reduction of mortgage principal (owned vacation) [I],-73.08
+5423,Reduction of mortgage principal (other property) [I],-8.95
+5429,"Reduction of mortgage principal, home equity loan (owned home) [I]",-55.39
+5435,"Reduction mortgage principal, home equity loan (owned vacation) [I]",-0.23
+5441,"Reduction mortgage principal, home equity loan (other property) [I]",d/
+5447,"Principal paid, home equity line of credit (owned home) [I]",-279.73
+5453,"Principal paid, home equity line of credit (owned vacation) [I]",-43.77
+5459,"Principal paid, home equity line of credit (other property) [I]",d/
+5466,Estimated market value of owned home [I],310670.04
+5472,Estimated monthly rental value of owned home [I],1556.05
+5478,Estimated monthly rental value of vacation home not available for rent [I],63.28
+5484,Estimated monthly rental value of vacation home available for rent [I],18.44
+5490,Estimated annual rental value of timeshare [I],1220.04
+5496,All CU column weight interview,135760053.0
+5497,All CU column weight diary,135316106.0
