@@ -80,6 +80,22 @@ def main():
     j = alloc.merge(cbsa, on="cofips", how="inner")
     print("rows in metro counties:", len(j), "distinct cbsa:", j["cbsa"].nunique())
 
+    # A metro that spans several states is only valid in a year when EVERY state it spans was
+    # pulled for that year; otherwise its population and its immigrant share are computed over
+    # a different footprint in different years, which would show up as a spurious change.
+    cbsa_states = (cbsa.assign(st=cbsa["cofips"].str[:2])
+                        .groupby("cbsa")["st"].apply(frozenset))
+    pulled = cells.groupby("year")["state"].apply(frozenset)
+    keep = []
+    for (c, y), _ in j.groupby(["cbsa", "year"]):
+        if cbsa_states.get(c, frozenset()) <= pulled.get(y, frozenset()):
+            keep.append((c, y))
+    keep = set(keep)
+    before = len(j)
+    j = j[[(c, y) in keep for c, y in zip(j["cbsa"], j["year"])]]
+    print(f"coverage guard: kept {len(j)}/{before} rows, "
+          f"{j['cbsa'].nunique()} metros, {len(keep)} metro-years")
+
     # sex-specific outcomes: sex in {1,2}; the 30-64 treatment block is in sex=='T'
     out_by_sex = (j[j["sex"].isin(["1", "2"])]
                   .groupby(["cbsa", "cbsa_title", "year", "sex"], as_index=False)[MEASURES].sum())
