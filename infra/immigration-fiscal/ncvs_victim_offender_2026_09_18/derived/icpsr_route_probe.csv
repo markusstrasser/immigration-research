@@ -1,0 +1,4 @@
+probe,url,http_status,redirect_url
+icpsr_study_page,https://www.icpsr.umich.edu/web/NACJD/studies/38963,200,
+icpsr_download_zipcart,https://www.icpsr.umich.edu/cgi-bin/bob/zipcart2?path=NACJD&study=38963&bundle=all&ds=1&dups=yes,302,https://www.icpsr.umich.edu/rpxlogin
+icpsr_download_delimited,https://www.icpsr.umich.edu/web/NACJD/studies/38963/datasets/0001/download/delimited?path=NACJD,200,

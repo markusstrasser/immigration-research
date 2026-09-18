@@ -555,3 +555,7 @@ uncomfortable.
   (McCollister, French & Fang 2010, restated to 2024 dollars).
 - Period profiles: `infra/immigration-fiscal/pronatal_equivalence_2026_09_18/`.
   Complete-account shift: `infra/immigration-fiscal/gap_interest_2026_09_18/derived/audit.json`.
+
+## Revisions
+
+- **2026-09-18 (late evening).** The intra-group shares in §2.1 (Hispanic → Hispanic 0.717 / 0.667) are a cleared-homicide quantity. On non-fatal violence the NCVS gives 0.404 for Hispanic offenders and a Hispanic-offender → white-victim share of 0.402 against 0.156 here; part is a real severity gradient, part clearance selection. See [NCVS off the murder margin](immigration-ncvs-victim-offender-off-the-murder-margin-2026-09-18.md), ladder 148. Claim change: any assortative-victimization statement must name its margin.
