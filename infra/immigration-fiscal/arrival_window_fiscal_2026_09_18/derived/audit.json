@@ -1,0 +1,266 @@
+{
+  "inputs": [
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+      "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256dat.zip",
+      "sha256": "d0779e49de4f5ff0b0fff6774167023382366a0ef0905e6a3c40126114f988c9"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256su.txt",
+      "sha256": "a7bd4eca49833f40df45b53aad803dfca15b1a3a9b1de03aa6e79f508c5e24be"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/state_parameters.csv",
+      "sha256": "00b0bb778861cc8406a04c8159938368146494965348d477e0514c4b0efccff2"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/all_age_ledger_2026_09_17/analyze.py",
+      "sha256": "eadbad147c80012ca4bb76f76f5feae9517757ace007938d5d069c958ee979b4"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/extend_ledger.py",
+      "sha256": "460c17f349a8651946d2000c2f7ba968663038bca7938a83a804eef41737ebd7"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/absolute_ledger.py",
+      "sha256": "2ee6157643bf8bae930f0a82ae539bd301e3fd83453768af48119121c4b7fae7"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/arrival_window_ledger.py",
+      "sha256": "a721d9a3268968342bd7725152872d6bff3858402746a1b9126a4cd714192fa6"
+    }
+  ],
+  "peinusyr_codes": {
+    "1": "before 1950",
+    "2": "1950-1959",
+    "3": "1960-1964",
+    "4": "1965-1969",
+    "5": "1970-1974",
+    "6": "1975-1979",
+    "7": "1980-1981",
+    "8": "1982-1983",
+    "9": "1984-1985",
+    "10": "1986-1987",
+    "11": "1988-1989",
+    "12": "1990-1991",
+    "13": "1992-1993",
+    "14": "1994-1995",
+    "15": "1996-1997",
+    "16": "1998-1999",
+    "17": "2000-2001",
+    "18": "2002-2003",
+    "19": "2004-2005",
+    "20": "2006-2007",
+    "21": "2008-2009",
+    "22": "2010-2011",
+    "23": "2012-2013",
+    "24": "2014-2015",
+    "25": "2016-2017",
+    "26": "2018-2019",
+    "27": "2020-2021",
+    "28": "2022-2025"
+  },
+  "windows": {
+    "w1_pre1990": {
+      "codes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "span": "before 1950 through 1989"
+    },
+    "w2_1990_1999": {
+      "codes": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "span": "1990 through 1999"
+    },
+    "w3_2000_2009": {
+      "codes": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "span": "2000 through 2009"
+    },
+    "w4_2010_2015": {
+      "codes": [
+        22,
+        23,
+        24
+      ],
+      "span": "2010 through 2015"
+    },
+    "w5_2016_2025": {
+      "codes": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "span": "2016 through the March 2025 interview (top code 28 = 2022-2025)"
+    }
+  },
+  "validation": {
+    "person_rows": 142125,
+    "replicate_rows": 142125,
+    "spm_units": 58147,
+    "max_full_weight_difference": 0.005049970000015946,
+    "negative_replicate_weights": 132,
+    "federal_credit_identity": true,
+    "unit_fields_constant": true,
+    "source_tax_sums_match_unit_fields": true
+  },
+  "medical_anchors": {
+    "all": 339797629.595972,
+    "born_us": 285498518.670341,
+    "born_elsewhere": 52835316.116307
+  },
+  "gates": {
+    "window_population_residual_people": 1.30385160446167e-08,
+    "window_dollar_residual": 5.14984130859375e-05,
+    "union_absolute": 6629354990.890366,
+    "stored_absolute": 6629354990.890361,
+    "union_absolute_residual": 4.76837158203125e-06,
+    "union_common_age_gap": -6561.7116203683245,
+    "stored_common_age_gap": -6561.7116203683245,
+    "union_common_age_residual": 0.0,
+    "all_standard_errors_finite": true,
+    "charge_columns_vs_absolute_lane": {
+      "checked": true,
+      "mine_bn": -76.06936987230425,
+      "absolute_lane_bn": -76.06936987230425,
+      "mine_gap": 978.225715475277,
+      "absolute_lane_gap": 978.2257154752841,
+      "passed": true
+    }
+  },
+  "support": {
+    "common_support": [
+      "35-44",
+      "45-54",
+      "55-64",
+      "65-74",
+      "75+"
+    ],
+    "common_support_white_mass": 0.6174367810226045,
+    "per_window": {
+      "w1_pre1990": [
+        "35-44",
+        "45-54",
+        "55-64",
+        "65-74",
+        "75+"
+      ],
+      "w2_1990_1999": [
+        "25-34",
+        "35-44",
+        "45-54",
+        "55-64",
+        "65-74",
+        "75+"
+      ],
+      "w3_2000_2009": [
+        "0-17",
+        "18-24",
+        "25-34",
+        "35-44",
+        "45-54",
+        "55-64",
+        "65-74",
+        "75+"
+      ],
+      "w4_2010_2015": [
+        "0-17",
+        "18-24",
+        "25-34",
+        "35-44",
+        "45-54",
+        "55-64",
+        "65-74",
+        "75+"
+      ],
+      "w5_2016_2025": [
+        "0-17",
+        "18-24",
+        "25-34",
+        "35-44",
+        "45-54",
+        "55-64",
+        "65-74",
+        "75+"
+      ]
+    },
+    "white_age_shares": [
+      0.18007311662477604,
+      0.07993074121480369,
+      0.12255936113781603,
+      0.12739354592480773,
+      0.11806576524656007,
+      0.13845853906806366,
+      0.13300446227275203,
+      0.10051446851042085
+    ]
+  },
+  "complete_account": {
+    "built": true,
+    "keys": [
+      "G|deflated2024",
+      "K|central",
+      "X|per_capita",
+      "R|central"
+    ],
+    "missing_items": [],
+    "dropped": [
+      {
+        "item": "S(states without a verified line)",
+        "label": "S(states without a verified line)",
+        "reason": "priced for 6, 8, 17, 36, 41, 53 only; not priced: mn_minnesotacare_undocumented_state_cost: not verified; ma_health_safety_net_state_cost: not verified; co_cover_all_coloradans_children_state_cost: not verified; ca_undocumented_total_general_fund_2024_25: not verified"
+      }
+    ],
+    "us_resident": 340110988.0,
+    "population_vintage": "NST-EST2024 (params)",
+    "national": {
+      "G|deflated2024": {
+        "target_dollars": 1335361699610.256,
+        "charged_dollars": 1347959714620.2197,
+        "ratio": 1.0094341593095268,
+        "kind": "state_per_capita"
+      },
+      "K|central": {
+        "target_dollars": 136175986000.0,
+        "charged_dollars": 125877228784.66615,
+        "ratio": 0.924371708126763,
+        "kind": "pupil_based"
+      },
+      "X|per_capita": {
+        "target_dollars": 313708780000.0,
+        "charged_dollars": 310588225603.6217,
+        "ratio": 0.9900527030312053,
+        "kind": "flat_per_capita"
+      }
+    }
+  },
+  "asec_2026": {
+    "attempted": true,
+    "accepted": false,
+    "error": "KeyError: \"There is no item named 'pppub25.csv' in the archive\""
+  }
+}
