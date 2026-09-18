@@ -1,0 +1,40 @@
+arm,house_size,removed_total,removed_pct_of_us,seats_moved,gainers,losers
+2020_mexico_born,435,10920636,3.298,7,Florida +1; Massachusetts +1; Michigan +1; New York +1; Ohio +1; Pennsylvania +1; Virginia +1,California -4; Illinois -1; Texas -2
+2020_mexico_born_PLACEBOprop,435,10920636,3.298,0,,
+2020_mexico_born_REDISTRIBUTED,435,0,-0.0,7,Florida +1; Massachusetts +1; Michigan +1; New York +1; Ohio +1; Pennsylvania +1; Virginia +1,California -4; Illinois -1; Texas -2
+2020_mexican_origin,435,35837522,10.824,24,Florida +3; Georgia +1; Iowa +1; Kentucky +1; Louisiana +1; Maryland +1; Massachusetts +1; Michigan +1; Missouri +1; New Jersey +1; New York +3; North Carolina +1; Ohio +2; Pennsylvania +2; Tennessee +1; Virginia +2; West Virginia +1,Arizona -1; California -12; Colorado -1; Illinois -1; New Mexico -1; Texas -8
+2020_mexican_origin_PLACEBOprop,435,35837522,10.824,0,,
+2020_mexican_origin_REDISTRIBUTED,435,0,-0.0,24,Florida +3; Georgia +1; Iowa +1; Kentucky +1; Louisiana +1; Maryland +1; Massachusetts +1; Michigan +1; Missouri +1; New Jersey +1; New York +3; North Carolina +1; Ohio +2; Pennsylvania +2; Tennessee +1; Virginia +2; West Virginia +1,Arizona -1; California -12; Colorado -1; Illinois -1; New Mexico -1; Texas -8
+2020_mexican_origin_acs,435,36522946,11.031,25,Florida +3; Georgia +1; Indiana +1; Iowa +1; Kentucky +1; Louisiana +1; Maryland +1; Massachusetts +1; Michigan +1; Missouri +1; New Jersey +1; New York +3; North Carolina +1; Ohio +2; Pennsylvania +2; Tennessee +1; Virginia +2; West Virginia +1,Arizona -1; California -12; Colorado -1; Illinois -1; New Mexico -1; Texas -9
+2020_mexican_origin_acs_PLACEBOprop,435,36522946,11.031,0,,
+2020_mexican_origin_acs_REDISTRIBUTED,435,0,0.0,25,Florida +3; Georgia +1; Indiana +1; Iowa +1; Kentucky +1; Louisiana +1; Maryland +1; Massachusetts +1; Michigan +1; Missouri +1; New Jersey +1; New York +3; North Carolina +1; Ohio +2; Pennsylvania +2; Tennessee +1; Virginia +2; West Virginia +1,Arizona -1; California -12; Colorado -1; Illinois -1; New Mexico -1; Texas -9
+2020_unauth_pew2019,435,10132500,3.06,2,New York +1; Ohio +1,California -1; Texas -1
+2020_unauth_pew2019_PLACEBOprop,435,10132500,3.06,0,,
+2020_unauth_pew2019_REDISTRIBUTED,435,0,0.0,2,New York +1; Ohio +1,California -1; Texas -1
+2020_unauth_pew2021,435,10395000,3.139,2,New York +1; Ohio +1,California -1; Texas -1
+2020_unauth_pew2021_PLACEBOprop,435,10395000,3.139,0,,
+2020_unauth_pew2021_REDISTRIBUTED,435,0,0.0,2,New York +1; Ohio +1,California -1; Texas -1
+2020_unauth_cms2019,435,10337000,3.122,2,Idaho +1; Ohio +1,California -1; Texas -1
+2020_unauth_cms2019_PLACEBOprop,435,10337000,3.122,0,,
+2020_unauth_cms2019_REDISTRIBUTED,435,0,-0.0,2,Idaho +1; Ohio +1,California -1; Texas -1
+2020_all_foreign_born,435,44031435,13.298,14,Idaho +1; Indiana +1; Iowa +1; Kentucky +1; Louisiana +1; Michigan +1; Missouri +1; Ohio +2; Oklahoma +1; Pennsylvania +1; Tennessee +1; Utah +1; West Virginia +1,California -8; Florida -2; New Jersey -1; New York -2; Texas -1
+2020_all_foreign_born_PLACEBOprop,435,44031435,13.298,0,,
+2020_all_foreign_born_REDISTRIBUTED,435,0,0.0,14,Idaho +1; Indiana +1; Iowa +1; Kentucky +1; Louisiana +1; Michigan +1; Missouri +1; Ohio +2; Oklahoma +1; Pennsylvania +1; Tennessee +1; Utah +1; West Virginia +1,California -8; Florida -2; New Jersey -1; New York -2; Texas -1
+2020_mexborn_plus_uskids,435,17131915,5.174,10,Florida +1; Massachusetts +1; Michigan +1; New Jersey +1; New York +2; Ohio +1; Pennsylvania +1; Virginia +1; West Virginia +1,California -6; Illinois -1; Texas -3
+2020_mexborn_plus_uskids_PLACEBOprop,435,17131915,5.174,0,,
+2020_mexborn_plus_uskids_REDISTRIBUTED,435,0,-0.0,10,Florida +1; Massachusetts +1; Michigan +1; New Jersey +1; New York +2; Ohio +1; Pennsylvania +1; Virginia +1; West Virginia +1,California -6; Illinois -1; Texas -3
+2010_mexico_born,435,11563627,3.74,9,Louisiana +1; Massachusetts +1; Missouri +1; Montana +1; New Jersey +1; New York +1; North Carolina +1; Ohio +1; Virginia +1,California -5; Texas -3; Washington -1
+2010_mexico_born_PLACEBOprop,435,11563627,3.74,0,,
+2010_mexico_born_REDISTRIBUTED,435,0,-0.0,9,Louisiana +1; Massachusetts +1; Missouri +1; Montana +1; New Jersey +1; New York +1; North Carolina +1; Ohio +1; Virginia +1,California -5; Texas -3; Washington -1
+2010_mexican_origin,435,31789751,10.282,25,Connecticut +1; Florida +2; Indiana +1; Iowa +1; Kentucky +1; Louisiana +1; Maryland +1; Massachusetts +1; Michigan +1; Mississippi +1; Missouri +1; Montana +1; New Jersey +1; New York +3; North Carolina +1; Ohio +2; Pennsylvania +2; Tennessee +1; Virginia +1; Wisconsin +1,Arizona -2; California -12; Nevada -1; New Mexico -1; Texas -9
+2010_mexican_origin_PLACEBOprop,435,31789751,10.282,0,,
+2010_mexican_origin_REDISTRIBUTED,435,0,0.0,25,Connecticut +1; Florida +2; Indiana +1; Iowa +1; Kentucky +1; Louisiana +1; Maryland +1; Massachusetts +1; Michigan +1; Mississippi +1; Missouri +1; Montana +1; New Jersey +1; New York +3; North Carolina +1; Ohio +2; Pennsylvania +2; Tennessee +1; Virginia +1; Wisconsin +1,Arizona -2; California -12; Nevada -1; New Mexico -1; Texas -9
+2010_unauth_pew2010,435,11345000,3.669,4,Louisiana +1; Missouri +1; Montana +1; Ohio +1,California -2; Florida -1; Texas -1
+2010_unauth_pew2010_PLACEBOprop,435,11345000,3.669,0,,
+2010_unauth_pew2010_REDISTRIBUTED,435,0,0.0,4,Louisiana +1; Missouri +1; Montana +1; Ohio +1,California -2; Florida -1; Texas -1
+2010_unauth_cms2010,435,11710600,3.788,5,Louisiana +1; Missouri +1; Montana +1; North Carolina +1; Ohio +1,California -3; Texas -2
+2010_unauth_cms2010_PLACEBOprop,435,11710600,3.788,0,,
+2010_unauth_cms2010_REDISTRIBUTED,435,0,-0.0,5,Louisiana +1; Missouri +1; Montana +1; North Carolina +1; Ohio +1,California -3; Texas -2
+2010_all_foreign_born,435,38598954,12.484,18,Arkansas +1; Indiana +1; Iowa +1; Kentucky +1; Louisiana +1; Michigan +1; Mississippi +1; Missouri +1; Montana +1; North Carolina +1; Ohio +2; Oklahoma +1; Oregon +1; Pennsylvania +1; Tennessee +1; Virginia +1; Wisconsin +1,California -9; Florida -2; New Jersey -1; New York -3; Texas -2; Washington -1
+2010_all_foreign_born_PLACEBOprop,435,38598954,12.484,0,,
+2010_all_foreign_born_REDISTRIBUTED,435,0,-0.0,18,Arkansas +1; Indiana +1; Iowa +1; Kentucky +1; Louisiana +1; Michigan +1; Mississippi +1; Missouri +1; Montana +1; North Carolina +1; Ohio +2; Oklahoma +1; Oregon +1; Pennsylvania +1; Tennessee +1; Virginia +1; Wisconsin +1,California -9; Florida -2; New Jersey -1; New York -3; Texas -2; Washington -1

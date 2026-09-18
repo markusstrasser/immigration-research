@@ -1,0 +1,14 @@
+arm,apportionment_base,election,ev_D_base,ev_R_base,ev_D_cf,ev_R_cf,shift_to_R,winner_base,winner_cf,outcome_flips
+2020_mexico_born,2020,2024,226,312,224,314,2,R,R,False
+2020_mexican_origin,2020,2024,226,312,219,319,7,R,R,False
+2020_mexican_origin_acs,2020,2024,226,312,219,319,7,R,R,False
+2020_unauth_pew2019,2020,2024,226,312,226,312,0,R,R,False
+2020_unauth_pew2021,2020,2024,226,312,226,312,0,R,R,False
+2020_unauth_cms2019,2020,2024,226,312,225,313,1,R,R,False
+2020_all_foreign_born,2020,2024,226,312,215,323,11,R,R,False
+2020_mexborn_plus_uskids,2020,2024,226,312,224,314,2,R,R,False
+2010_mexico_born,2010,2020,306,232,304,234,2,D,D,False
+2010_mexican_origin,2010,2020,306,232,302,236,4,D,D,False
+2010_unauth_pew2010,2010,2020,306,232,304,234,2,D,D,False
+2010_unauth_cms2010,2010,2020,306,232,303,235,3,D,D,False
+2010_all_foreign_born,2010,2020,306,232,297,241,9,D,D,False
