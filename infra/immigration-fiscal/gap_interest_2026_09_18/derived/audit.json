@@ -1,0 +1,14 @@
+{
+  "effective_rate_fy2024": 0.03220790586972007,
+  "net_interest_bn": 879.879,
+  "debt_start_bn": 26330.142473,
+  "debt_end_bn": 28307.312291,
+  "complete_minus_partial_per_person_year": {
+    "mexico_born": -7762.46,
+    "mexican_second_gen": -7688.86,
+    "mexican_third_plus_selfid": -7557.42,
+    "mexican_observed_total": -7664.76,
+    "third_plus_nh_white": -6926.19,
+    "all_native": -7324.9
+  }
+}
