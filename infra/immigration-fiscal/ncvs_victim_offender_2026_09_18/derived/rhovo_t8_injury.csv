@@ -1,0 +1,10 @@
+victim,offender,avg_annual_number,pct_injured
+White,White,2081520,27.0
+White,Black,540360,20.9
+White,Hispanic,406450,30.7
+Black,White,92810,11.4
+Black,Black,537470,32.7
+Black,Hispanic,55790,23.4
+Hispanic,White,169040,26.2
+Hispanic,Black,173120,26.3
+Hispanic,Hispanic,341420,24.7

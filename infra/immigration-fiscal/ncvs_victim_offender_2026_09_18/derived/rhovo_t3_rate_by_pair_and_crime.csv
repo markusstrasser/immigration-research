@@ -1,0 +1,10 @@
+victim,offender,rate_total_violent,rate_serious_violent,rate_simple_assault
+White,White,12.0,3.7,8.4
+White,Black,3.1,1.2,1.9
+White,Hispanic,2.4,0.9,1.4
+Black,White,2.8,0.8,2.0
+Black,Black,16.5,6.7,9.8
+Black,Hispanic,1.7,0.5,1.2
+Hispanic,White,4.1,1.4,2.7
+Hispanic,Black,4.2,2.1,2.1
+Hispanic,Hispanic,8.3,3.2,5.1
