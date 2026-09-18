@@ -1,0 +1,967 @@
+age5,hispanic_origin,race,sex,deaths
+< 1 year,Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+< 1 year,Hispanic or Latino,American Indian or Alaska Native,Male,
+< 1 year,Hispanic or Latino,Asian,Female,
+< 1 year,Hispanic or Latino,Asian,Male,
+< 1 year,Hispanic or Latino,Black or African American,Female,15.0
+< 1 year,Hispanic or Latino,Black or African American,Male,13.0
+< 1 year,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+< 1 year,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+< 1 year,Hispanic or Latino,White,Female,86.0
+< 1 year,Hispanic or Latino,White,Male,95.0
+< 1 year,Hispanic or Latino,More than one race,Female,
+< 1 year,Hispanic or Latino,More than one race,Male,13.0
+< 1 year,Hispanic or Latino,Not Available,Female,0.0
+< 1 year,Hispanic or Latino,Not Available,Male,0.0
+< 1 year,Not Hispanic or Latino,American Indian or Alaska Native,Female,
+< 1 year,Not Hispanic or Latino,American Indian or Alaska Native,Male,
+< 1 year,Not Hispanic or Latino,Asian,Female,
+< 1 year,Not Hispanic or Latino,Asian,Male,10.0
+< 1 year,Not Hispanic or Latino,Black or African American,Female,173.0
+< 1 year,Not Hispanic or Latino,Black or African American,Male,284.0
+< 1 year,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+< 1 year,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+< 1 year,Not Hispanic or Latino,White,Female,189.0
+< 1 year,Not Hispanic or Latino,White,Male,281.0
+< 1 year,Not Hispanic or Latino,More than one race,Female,29.0
+< 1 year,Not Hispanic or Latino,More than one race,Male,51.0
+< 1 year,Not Hispanic or Latino,Not Available,Female,0.0
+< 1 year,Not Hispanic or Latino,Not Available,Male,0.0
+< 1 year,Not Stated,American Indian or Alaska Native,Female,0.0
+< 1 year,Not Stated,American Indian or Alaska Native,Male,0.0
+< 1 year,Not Stated,Asian,Female,0.0
+< 1 year,Not Stated,Asian,Male,0.0
+< 1 year,Not Stated,Black or African American,Female,
+< 1 year,Not Stated,Black or African American,Male,
+< 1 year,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+< 1 year,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+< 1 year,Not Stated,White,Female,0.0
+< 1 year,Not Stated,White,Male,
+< 1 year,Not Stated,More than one race,Female,0.0
+< 1 year,Not Stated,More than one race,Male,0.0
+< 1 year,Not Stated,Not Available,Female,0.0
+< 1 year,Not Stated,Not Available,Male,0.0
+1-4 years,Hispanic or Latino,American Indian or Alaska Native,Female,
+1-4 years,Hispanic or Latino,American Indian or Alaska Native,Male,
+1-4 years,Hispanic or Latino,Asian,Female,
+1-4 years,Hispanic or Latino,Asian,Male,0.0
+1-4 years,Hispanic or Latino,Black or African American,Female,10.0
+1-4 years,Hispanic or Latino,Black or African American,Male,16.0
+1-4 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+1-4 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+1-4 years,Hispanic or Latino,White,Female,73.0
+1-4 years,Hispanic or Latino,White,Male,124.0
+1-4 years,Hispanic or Latino,More than one race,Female,
+1-4 years,Hispanic or Latino,More than one race,Male,11.0
+1-4 years,Hispanic or Latino,Not Available,Female,0.0
+1-4 years,Hispanic or Latino,Not Available,Male,0.0
+1-4 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,13.0
+1-4 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,16.0
+1-4 years,Not Hispanic or Latino,Asian,Female,11.0
+1-4 years,Not Hispanic or Latino,Asian,Male,15.0
+1-4 years,Not Hispanic or Latino,Black or African American,Female,307.0
+1-4 years,Not Hispanic or Latino,Black or African American,Male,369.0
+1-4 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+1-4 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+1-4 years,Not Hispanic or Latino,White,Female,187.0
+1-4 years,Not Hispanic or Latino,White,Male,282.0
+1-4 years,Not Hispanic or Latino,More than one race,Female,27.0
+1-4 years,Not Hispanic or Latino,More than one race,Male,37.0
+1-4 years,Not Hispanic or Latino,Not Available,Female,0.0
+1-4 years,Not Hispanic or Latino,Not Available,Male,0.0
+1-4 years,Not Stated,American Indian or Alaska Native,Female,0.0
+1-4 years,Not Stated,American Indian or Alaska Native,Male,0.0
+1-4 years,Not Stated,Asian,Female,0.0
+1-4 years,Not Stated,Asian,Male,0.0
+1-4 years,Not Stated,Black or African American,Female,
+1-4 years,Not Stated,Black or African American,Male,
+1-4 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+1-4 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+1-4 years,Not Stated,White,Female,
+1-4 years,Not Stated,White,Male,
+1-4 years,Not Stated,More than one race,Female,0.0
+1-4 years,Not Stated,More than one race,Male,0.0
+1-4 years,Not Stated,Not Available,Female,0.0
+1-4 years,Not Stated,Not Available,Male,0.0
+5-9 years,Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+5-9 years,Hispanic or Latino,American Indian or Alaska Native,Male,
+5-9 years,Hispanic or Latino,Asian,Female,0.0
+5-9 years,Hispanic or Latino,Asian,Male,0.0
+5-9 years,Hispanic or Latino,Black or African American,Female,
+5-9 years,Hispanic or Latino,Black or African American,Male,
+5-9 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+5-9 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+5-9 years,Hispanic or Latino,White,Female,43.0
+5-9 years,Hispanic or Latino,White,Male,73.0
+5-9 years,Hispanic or Latino,More than one race,Female,
+5-9 years,Hispanic or Latino,More than one race,Male,
+5-9 years,Hispanic or Latino,Not Available,Female,0.0
+5-9 years,Hispanic or Latino,Not Available,Male,0.0
+5-9 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,
+5-9 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,11.0
+5-9 years,Not Hispanic or Latino,Asian,Female,12.0
+5-9 years,Not Hispanic or Latino,Asian,Male,15.0
+5-9 years,Not Hispanic or Latino,Black or African American,Female,198.0
+5-9 years,Not Hispanic or Latino,Black or African American,Male,220.0
+5-9 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+5-9 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+5-9 years,Not Hispanic or Latino,White,Female,103.0
+5-9 years,Not Hispanic or Latino,White,Male,153.0
+5-9 years,Not Hispanic or Latino,More than one race,Female,11.0
+5-9 years,Not Hispanic or Latino,More than one race,Male,14.0
+5-9 years,Not Hispanic or Latino,Not Available,Female,0.0
+5-9 years,Not Hispanic or Latino,Not Available,Male,0.0
+5-9 years,Not Stated,American Indian or Alaska Native,Female,0.0
+5-9 years,Not Stated,American Indian or Alaska Native,Male,0.0
+5-9 years,Not Stated,Asian,Female,0.0
+5-9 years,Not Stated,Asian,Male,0.0
+5-9 years,Not Stated,Black or African American,Female,0.0
+5-9 years,Not Stated,Black or African American,Male,0.0
+5-9 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+5-9 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+5-9 years,Not Stated,White,Female,0.0
+5-9 years,Not Stated,White,Male,
+5-9 years,Not Stated,More than one race,Female,0.0
+5-9 years,Not Stated,More than one race,Male,0.0
+5-9 years,Not Stated,Not Available,Female,0.0
+5-9 years,Not Stated,Not Available,Male,0.0
+10-14 years,Hispanic or Latino,American Indian or Alaska Native,Female,
+10-14 years,Hispanic or Latino,American Indian or Alaska Native,Male,
+10-14 years,Hispanic or Latino,Asian,Female,
+10-14 years,Hispanic or Latino,Asian,Male,0.0
+10-14 years,Hispanic or Latino,Black or African American,Female,
+10-14 years,Hispanic or Latino,Black or African American,Male,
+10-14 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+10-14 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+10-14 years,Hispanic or Latino,White,Female,95.0
+10-14 years,Hispanic or Latino,White,Male,171.0
+10-14 years,Hispanic or Latino,More than one race,Female,
+10-14 years,Hispanic or Latino,More than one race,Male,
+10-14 years,Hispanic or Latino,Not Available,Female,0.0
+10-14 years,Hispanic or Latino,Not Available,Male,0.0
+10-14 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,
+10-14 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,
+10-14 years,Not Hispanic or Latino,Asian,Female,
+10-14 years,Not Hispanic or Latino,Asian,Male,16.0
+10-14 years,Not Hispanic or Latino,Black or African American,Female,173.0
+10-14 years,Not Hispanic or Latino,Black or African American,Male,596.0
+10-14 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+10-14 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+10-14 years,Not Hispanic or Latino,White,Female,106.0
+10-14 years,Not Hispanic or Latino,White,Male,226.0
+10-14 years,Not Hispanic or Latino,More than one race,Female,15.0
+10-14 years,Not Hispanic or Latino,More than one race,Male,20.0
+10-14 years,Not Hispanic or Latino,Not Available,Female,0.0
+10-14 years,Not Hispanic or Latino,Not Available,Male,0.0
+10-14 years,Not Stated,American Indian or Alaska Native,Female,0.0
+10-14 years,Not Stated,American Indian or Alaska Native,Male,0.0
+10-14 years,Not Stated,Asian,Female,0.0
+10-14 years,Not Stated,Asian,Male,0.0
+10-14 years,Not Stated,Black or African American,Female,0.0
+10-14 years,Not Stated,Black or African American,Male,
+10-14 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+10-14 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+10-14 years,Not Stated,White,Female,0.0
+10-14 years,Not Stated,White,Male,
+10-14 years,Not Stated,More than one race,Female,0.0
+10-14 years,Not Stated,More than one race,Male,0.0
+10-14 years,Not Stated,Not Available,Female,0.0
+10-14 years,Not Stated,Not Available,Male,0.0
+15-19 years,Hispanic or Latino,American Indian or Alaska Native,Female,
+15-19 years,Hispanic or Latino,American Indian or Alaska Native,Male,25.0
+15-19 years,Hispanic or Latino,Asian,Female,
+15-19 years,Hispanic or Latino,Asian,Male,
+15-19 years,Hispanic or Latino,Black or African American,Female,13.0
+15-19 years,Hispanic or Latino,Black or African American,Male,124.0
+15-19 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+15-19 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+15-19 years,Hispanic or Latino,White,Female,331.0
+15-19 years,Hispanic or Latino,White,Male,2190.0
+15-19 years,Hispanic or Latino,More than one race,Female,
+15-19 years,Hispanic or Latino,More than one race,Male,48.0
+15-19 years,Hispanic or Latino,Not Available,Female,0.0
+15-19 years,Hispanic or Latino,Not Available,Male,0.0
+15-19 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,25.0
+15-19 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,90.0
+15-19 years,Not Hispanic or Latino,Asian,Female,13.0
+15-19 years,Not Hispanic or Latino,Asian,Male,65.0
+15-19 years,Not Hispanic or Latino,Black or African American,Female,880.0
+15-19 years,Not Hispanic or Latino,Black or African American,Male,7062.0
+15-19 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+15-19 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,22.0
+15-19 years,Not Hispanic or Latino,White,Female,355.0
+15-19 years,Not Hispanic or Latino,White,Male,1105.0
+15-19 years,Not Hispanic or Latino,More than one race,Female,54.0
+15-19 years,Not Hispanic or Latino,More than one race,Male,186.0
+15-19 years,Not Hispanic or Latino,Not Available,Female,0.0
+15-19 years,Not Hispanic or Latino,Not Available,Male,0.0
+15-19 years,Not Stated,American Indian or Alaska Native,Female,0.0
+15-19 years,Not Stated,American Indian or Alaska Native,Male,0.0
+15-19 years,Not Stated,Asian,Female,0.0
+15-19 years,Not Stated,Asian,Male,0.0
+15-19 years,Not Stated,Black or African American,Female,
+15-19 years,Not Stated,Black or African American,Male,12.0
+15-19 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+15-19 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+15-19 years,Not Stated,White,Female,
+15-19 years,Not Stated,White,Male,
+15-19 years,Not Stated,More than one race,Female,0.0
+15-19 years,Not Stated,More than one race,Male,0.0
+15-19 years,Not Stated,Not Available,Female,0.0
+15-19 years,Not Stated,Not Available,Male,0.0
+20-24 years,Hispanic or Latino,American Indian or Alaska Native,Female,
+20-24 years,Hispanic or Latino,American Indian or Alaska Native,Male,30.0
+20-24 years,Hispanic or Latino,Asian,Female,
+20-24 years,Hispanic or Latino,Asian,Male,
+20-24 years,Hispanic or Latino,Black or African American,Female,30.0
+20-24 years,Hispanic or Latino,Black or African American,Male,154.0
+20-24 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+20-24 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+20-24 years,Hispanic or Latino,White,Female,454.0
+20-24 years,Hispanic or Latino,White,Male,2472.0
+20-24 years,Hispanic or Latino,More than one race,Female,13.0
+20-24 years,Hispanic or Latino,More than one race,Male,50.0
+20-24 years,Hispanic or Latino,Not Available,Female,0.0
+20-24 years,Hispanic or Latino,Not Available,Male,0.0
+20-24 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,43.0
+20-24 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,136.0
+20-24 years,Not Hispanic or Latino,Asian,Female,30.0
+20-24 years,Not Hispanic or Latino,Asian,Male,105.0
+20-24 years,Not Hispanic or Latino,Black or African American,Female,1310.0
+20-24 years,Not Hispanic or Latino,Black or African American,Male,9912.0
+20-24 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+20-24 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,23.0
+20-24 years,Not Hispanic or Latino,White,Female,594.0
+20-24 years,Not Hispanic or Latino,White,Male,1574.0
+20-24 years,Not Hispanic or Latino,More than one race,Female,62.0
+20-24 years,Not Hispanic or Latino,More than one race,Male,207.0
+20-24 years,Not Hispanic or Latino,Not Available,Female,0.0
+20-24 years,Not Hispanic or Latino,Not Available,Male,0.0
+20-24 years,Not Stated,American Indian or Alaska Native,Female,0.0
+20-24 years,Not Stated,American Indian or Alaska Native,Male,0.0
+20-24 years,Not Stated,Asian,Female,0.0
+20-24 years,Not Stated,Asian,Male,0.0
+20-24 years,Not Stated,Black or African American,Female,0.0
+20-24 years,Not Stated,Black or African American,Male,
+20-24 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+20-24 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+20-24 years,Not Stated,White,Female,0.0
+20-24 years,Not Stated,White,Male,11.0
+20-24 years,Not Stated,More than one race,Female,0.0
+20-24 years,Not Stated,More than one race,Male,0.0
+20-24 years,Not Stated,Not Available,Female,0.0
+20-24 years,Not Stated,Not Available,Male,0.0
+25-29 years,Hispanic or Latino,American Indian or Alaska Native,Female,
+25-29 years,Hispanic or Latino,American Indian or Alaska Native,Male,24.0
+25-29 years,Hispanic or Latino,Asian,Female,
+25-29 years,Hispanic or Latino,Asian,Male,
+25-29 years,Hispanic or Latino,Black or African American,Female,24.0
+25-29 years,Hispanic or Latino,Black or African American,Male,143.0
+25-29 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+25-29 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+25-29 years,Hispanic or Latino,White,Female,370.0
+25-29 years,Hispanic or Latino,White,Male,2315.0
+25-29 years,Hispanic or Latino,More than one race,Female,11.0
+25-29 years,Hispanic or Latino,More than one race,Male,52.0
+25-29 years,Hispanic or Latino,Not Available,Female,0.0
+25-29 years,Hispanic or Latino,Not Available,Male,0.0
+25-29 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,43.0
+25-29 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,163.0
+25-29 years,Not Hispanic or Latino,Asian,Female,46.0
+25-29 years,Not Hispanic or Latino,Asian,Male,88.0
+25-29 years,Not Hispanic or Latino,Black or African American,Female,1257.0
+25-29 years,Not Hispanic or Latino,Black or African American,Male,9563.0
+25-29 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+25-29 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,31.0
+25-29 years,Not Hispanic or Latino,White,Female,715.0
+25-29 years,Not Hispanic or Latino,White,Male,1799.0
+25-29 years,Not Hispanic or Latino,More than one race,Female,45.0
+25-29 years,Not Hispanic or Latino,More than one race,Male,163.0
+25-29 years,Not Hispanic or Latino,Not Available,Female,0.0
+25-29 years,Not Hispanic or Latino,Not Available,Male,0.0
+25-29 years,Not Stated,American Indian or Alaska Native,Female,0.0
+25-29 years,Not Stated,American Indian or Alaska Native,Male,0.0
+25-29 years,Not Stated,Asian,Female,0.0
+25-29 years,Not Stated,Asian,Male,0.0
+25-29 years,Not Stated,Black or African American,Female,
+25-29 years,Not Stated,Black or African American,Male,15.0
+25-29 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+25-29 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+25-29 years,Not Stated,White,Female,
+25-29 years,Not Stated,White,Male,
+25-29 years,Not Stated,More than one race,Female,0.0
+25-29 years,Not Stated,More than one race,Male,
+25-29 years,Not Stated,Not Available,Female,0.0
+25-29 years,Not Stated,Not Available,Male,0.0
+30-34 years,Hispanic or Latino,American Indian or Alaska Native,Female,
+30-34 years,Hispanic or Latino,American Indian or Alaska Native,Male,17.0
+30-34 years,Hispanic or Latino,Asian,Female,
+30-34 years,Hispanic or Latino,Asian,Male,
+30-34 years,Hispanic or Latino,Black or African American,Female,21.0
+30-34 years,Hispanic or Latino,Black or African American,Male,112.0
+30-34 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+30-34 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+30-34 years,Hispanic or Latino,White,Female,403.0
+30-34 years,Hispanic or Latino,White,Male,2151.0
+30-34 years,Hispanic or Latino,More than one race,Female,
+30-34 years,Hispanic or Latino,More than one race,Male,45.0
+30-34 years,Hispanic or Latino,Not Available,Female,0.0
+30-34 years,Hispanic or Latino,Not Available,Male,0.0
+30-34 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,54.0
+30-34 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,213.0
+30-34 years,Not Hispanic or Latino,Asian,Female,52.0
+30-34 years,Not Hispanic or Latino,Asian,Male,111.0
+30-34 years,Not Hispanic or Latino,Black or African American,Female,1095.0
+30-34 years,Not Hispanic or Latino,Black or African American,Male,8083.0
+30-34 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,10.0
+30-34 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,32.0
+30-34 years,Not Hispanic or Latino,White,Female,856.0
+30-34 years,Not Hispanic or Latino,White,Male,2199.0
+30-34 years,Not Hispanic or Latino,More than one race,Female,42.0
+30-34 years,Not Hispanic or Latino,More than one race,Male,133.0
+30-34 years,Not Hispanic or Latino,Not Available,Female,0.0
+30-34 years,Not Hispanic or Latino,Not Available,Male,0.0
+30-34 years,Not Stated,American Indian or Alaska Native,Female,
+30-34 years,Not Stated,American Indian or Alaska Native,Male,0.0
+30-34 years,Not Stated,Asian,Female,0.0
+30-34 years,Not Stated,Asian,Male,
+30-34 years,Not Stated,Black or African American,Female,0.0
+30-34 years,Not Stated,Black or African American,Male,
+30-34 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+30-34 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+30-34 years,Not Stated,White,Female,0.0
+30-34 years,Not Stated,White,Male,
+30-34 years,Not Stated,More than one race,Female,0.0
+30-34 years,Not Stated,More than one race,Male,0.0
+30-34 years,Not Stated,Not Available,Female,0.0
+30-34 years,Not Stated,Not Available,Male,0.0
+35-39 years,Hispanic or Latino,American Indian or Alaska Native,Female,
+35-39 years,Hispanic or Latino,American Indian or Alaska Native,Male,30.0
+35-39 years,Hispanic or Latino,Asian,Female,0.0
+35-39 years,Hispanic or Latino,Asian,Male,0.0
+35-39 years,Hispanic or Latino,Black or African American,Female,16.0
+35-39 years,Hispanic or Latino,Black or African American,Male,75.0
+35-39 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+35-39 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+35-39 years,Hispanic or Latino,White,Female,353.0
+35-39 years,Hispanic or Latino,White,Male,1761.0
+35-39 years,Hispanic or Latino,More than one race,Female,
+35-39 years,Hispanic or Latino,More than one race,Male,17.0
+35-39 years,Hispanic or Latino,Not Available,Female,0.0
+35-39 years,Hispanic or Latino,Not Available,Male,0.0
+35-39 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,41.0
+35-39 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,186.0
+35-39 years,Not Hispanic or Latino,Asian,Female,53.0
+35-39 years,Not Hispanic or Latino,Asian,Male,98.0
+35-39 years,Not Hispanic or Latino,Black or African American,Female,829.0
+35-39 years,Not Hispanic or Latino,Black or African American,Male,5569.0
+35-39 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+35-39 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,29.0
+35-39 years,Not Hispanic or Latino,White,Female,894.0
+35-39 years,Not Hispanic or Latino,White,Male,2163.0
+35-39 years,Not Hispanic or Latino,More than one race,Female,31.0
+35-39 years,Not Hispanic or Latino,More than one race,Male,92.0
+35-39 years,Not Hispanic or Latino,Not Available,Female,0.0
+35-39 years,Not Hispanic or Latino,Not Available,Male,0.0
+35-39 years,Not Stated,American Indian or Alaska Native,Female,0.0
+35-39 years,Not Stated,American Indian or Alaska Native,Male,0.0
+35-39 years,Not Stated,Asian,Female,0.0
+35-39 years,Not Stated,Asian,Male,0.0
+35-39 years,Not Stated,Black or African American,Female,0.0
+35-39 years,Not Stated,Black or African American,Male,
+35-39 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+35-39 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+35-39 years,Not Stated,White,Female,
+35-39 years,Not Stated,White,Male,
+35-39 years,Not Stated,More than one race,Female,0.0
+35-39 years,Not Stated,More than one race,Male,0.0
+35-39 years,Not Stated,Not Available,Female,0.0
+35-39 years,Not Stated,Not Available,Male,0.0
+40-44 years,Hispanic or Latino,American Indian or Alaska Native,Female,
+40-44 years,Hispanic or Latino,American Indian or Alaska Native,Male,13.0
+40-44 years,Hispanic or Latino,Asian,Female,0.0
+40-44 years,Hispanic or Latino,Asian,Male,
+40-44 years,Hispanic or Latino,Black or African American,Female,
+40-44 years,Hispanic or Latino,Black or African American,Male,33.0
+40-44 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+40-44 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+40-44 years,Hispanic or Latino,White,Female,284.0
+40-44 years,Hispanic or Latino,White,Male,1343.0
+40-44 years,Hispanic or Latino,More than one race,Female,
+40-44 years,Hispanic or Latino,More than one race,Male,11.0
+40-44 years,Hispanic or Latino,Not Available,Female,0.0
+40-44 years,Hispanic or Latino,Not Available,Male,0.0
+40-44 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,41.0
+40-44 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,160.0
+40-44 years,Not Hispanic or Latino,Asian,Female,44.0
+40-44 years,Not Hispanic or Latino,Asian,Male,77.0
+40-44 years,Not Hispanic or Latino,Black or African American,Female,686.0
+40-44 years,Not Hispanic or Latino,Black or African American,Male,4121.0
+40-44 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+40-44 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+40-44 years,Not Hispanic or Latino,White,Female,808.0
+40-44 years,Not Hispanic or Latino,White,Male,1984.0
+40-44 years,Not Hispanic or Latino,More than one race,Female,24.0
+40-44 years,Not Hispanic or Latino,More than one race,Male,81.0
+40-44 years,Not Hispanic or Latino,Not Available,Female,0.0
+40-44 years,Not Hispanic or Latino,Not Available,Male,0.0
+40-44 years,Not Stated,American Indian or Alaska Native,Female,0.0
+40-44 years,Not Stated,American Indian or Alaska Native,Male,0.0
+40-44 years,Not Stated,Asian,Female,0.0
+40-44 years,Not Stated,Asian,Male,0.0
+40-44 years,Not Stated,Black or African American,Female,0.0
+40-44 years,Not Stated,Black or African American,Male,
+40-44 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+40-44 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+40-44 years,Not Stated,White,Female,0.0
+40-44 years,Not Stated,White,Male,14.0
+40-44 years,Not Stated,More than one race,Female,0.0
+40-44 years,Not Stated,More than one race,Male,0.0
+40-44 years,Not Stated,Not Available,Female,0.0
+40-44 years,Not Stated,Not Available,Male,0.0
+45-49 years,Hispanic or Latino,American Indian or Alaska Native,Female,
+45-49 years,Hispanic or Latino,American Indian or Alaska Native,Male,
+45-49 years,Hispanic or Latino,Asian,Female,
+45-49 years,Hispanic or Latino,Asian,Male,
+45-49 years,Hispanic or Latino,Black or African American,Female,
+45-49 years,Hispanic or Latino,Black or African American,Male,21.0
+45-49 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+45-49 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+45-49 years,Hispanic or Latino,White,Female,232.0
+45-49 years,Hispanic or Latino,White,Male,922.0
+45-49 years,Hispanic or Latino,More than one race,Female,
+45-49 years,Hispanic or Latino,More than one race,Male,14.0
+45-49 years,Hispanic or Latino,Not Available,Female,0.0
+45-49 years,Hispanic or Latino,Not Available,Male,0.0
+45-49 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,28.0
+45-49 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,79.0
+45-49 years,Not Hispanic or Latino,Asian,Female,45.0
+45-49 years,Not Hispanic or Latino,Asian,Male,84.0
+45-49 years,Not Hispanic or Latino,Black or African American,Female,476.0
+45-49 years,Not Hispanic or Latino,Black or African American,Male,2701.0
+45-49 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+45-49 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,13.0
+45-49 years,Not Hispanic or Latino,White,Female,673.0
+45-49 years,Not Hispanic or Latino,White,Male,1619.0
+45-49 years,Not Hispanic or Latino,More than one race,Female,17.0
+45-49 years,Not Hispanic or Latino,More than one race,Male,40.0
+45-49 years,Not Hispanic or Latino,Not Available,Female,0.0
+45-49 years,Not Hispanic or Latino,Not Available,Male,0.0
+45-49 years,Not Stated,American Indian or Alaska Native,Female,0.0
+45-49 years,Not Stated,American Indian or Alaska Native,Male,
+45-49 years,Not Stated,Asian,Female,0.0
+45-49 years,Not Stated,Asian,Male,0.0
+45-49 years,Not Stated,Black or African American,Female,0.0
+45-49 years,Not Stated,Black or African American,Male,
+45-49 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+45-49 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+45-49 years,Not Stated,White,Female,
+45-49 years,Not Stated,White,Male,
+45-49 years,Not Stated,More than one race,Female,0.0
+45-49 years,Not Stated,More than one race,Male,0.0
+45-49 years,Not Stated,Not Available,Female,0.0
+45-49 years,Not Stated,Not Available,Male,0.0
+50-54 years,Hispanic or Latino,American Indian or Alaska Native,Female,
+50-54 years,Hispanic or Latino,American Indian or Alaska Native,Male,
+50-54 years,Hispanic or Latino,Asian,Female,0.0
+50-54 years,Hispanic or Latino,Asian,Male,
+50-54 years,Hispanic or Latino,Black or African American,Female,
+50-54 years,Hispanic or Latino,Black or African American,Male,24.0
+50-54 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+50-54 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+50-54 years,Hispanic or Latino,White,Female,153.0
+50-54 years,Hispanic or Latino,White,Male,671.0
+50-54 years,Hispanic or Latino,More than one race,Female,
+50-54 years,Hispanic or Latino,More than one race,Male,
+50-54 years,Hispanic or Latino,Not Available,Female,0.0
+50-54 years,Hispanic or Latino,Not Available,Male,0.0
+50-54 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,18.0
+50-54 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,81.0
+50-54 years,Not Hispanic or Latino,Asian,Female,40.0
+50-54 years,Not Hispanic or Latino,Asian,Male,73.0
+50-54 years,Not Hispanic or Latino,Black or African American,Female,408.0
+50-54 years,Not Hispanic or Latino,Black or African American,Male,1891.0
+50-54 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+50-54 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+50-54 years,Not Hispanic or Latino,White,Female,635.0
+50-54 years,Not Hispanic or Latino,White,Male,1568.0
+50-54 years,Not Hispanic or Latino,More than one race,Female,13.0
+50-54 years,Not Hispanic or Latino,More than one race,Male,37.0
+50-54 years,Not Hispanic or Latino,Not Available,Female,0.0
+50-54 years,Not Hispanic or Latino,Not Available,Male,0.0
+50-54 years,Not Stated,American Indian or Alaska Native,Female,
+50-54 years,Not Stated,American Indian or Alaska Native,Male,
+50-54 years,Not Stated,Asian,Female,0.0
+50-54 years,Not Stated,Asian,Male,
+50-54 years,Not Stated,Black or African American,Female,0.0
+50-54 years,Not Stated,Black or African American,Male,
+50-54 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+50-54 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+50-54 years,Not Stated,White,Female,
+50-54 years,Not Stated,White,Male,11.0
+50-54 years,Not Stated,More than one race,Female,0.0
+50-54 years,Not Stated,More than one race,Male,0.0
+50-54 years,Not Stated,Not Available,Female,0.0
+50-54 years,Not Stated,Not Available,Male,0.0
+55-59 years,Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+55-59 years,Hispanic or Latino,American Indian or Alaska Native,Male,
+55-59 years,Hispanic or Latino,Asian,Female,0.0
+55-59 years,Hispanic or Latino,Asian,Male,
+55-59 years,Hispanic or Latino,Black or African American,Female,
+55-59 years,Hispanic or Latino,Black or African American,Male,
+55-59 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+55-59 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+55-59 years,Hispanic or Latino,White,Female,129.0
+55-59 years,Hispanic or Latino,White,Male,452.0
+55-59 years,Hispanic or Latino,More than one race,Female,
+55-59 years,Hispanic or Latino,More than one race,Male,
+55-59 years,Hispanic or Latino,Not Available,Female,0.0
+55-59 years,Hispanic or Latino,Not Available,Male,0.0
+55-59 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,15.0
+55-59 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,47.0
+55-59 years,Not Hispanic or Latino,Asian,Female,46.0
+55-59 years,Not Hispanic or Latino,Asian,Male,75.0
+55-59 years,Not Hispanic or Latino,Black or African American,Female,326.0
+55-59 years,Not Hispanic or Latino,Black or African American,Male,1610.0
+55-59 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+55-59 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+55-59 years,Not Hispanic or Latino,White,Female,659.0
+55-59 years,Not Hispanic or Latino,White,Male,1472.0
+55-59 years,Not Hispanic or Latino,More than one race,Female,
+55-59 years,Not Hispanic or Latino,More than one race,Male,20.0
+55-59 years,Not Hispanic or Latino,Not Available,Female,0.0
+55-59 years,Not Hispanic or Latino,Not Available,Male,0.0
+55-59 years,Not Stated,American Indian or Alaska Native,Female,0.0
+55-59 years,Not Stated,American Indian or Alaska Native,Male,0.0
+55-59 years,Not Stated,Asian,Female,0.0
+55-59 years,Not Stated,Asian,Male,
+55-59 years,Not Stated,Black or African American,Female,
+55-59 years,Not Stated,Black or African American,Male,
+55-59 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+55-59 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+55-59 years,Not Stated,White,Female,
+55-59 years,Not Stated,White,Male,15.0
+55-59 years,Not Stated,More than one race,Female,0.0
+55-59 years,Not Stated,More than one race,Male,
+55-59 years,Not Stated,Not Available,Female,0.0
+55-59 years,Not Stated,Not Available,Male,0.0
+60-64 years ,Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+60-64 years ,Hispanic or Latino,American Indian or Alaska Native,Male,
+60-64 years ,Hispanic or Latino,Asian,Female,
+60-64 years ,Hispanic or Latino,Asian,Male,0.0
+60-64 years ,Hispanic or Latino,Black or African American,Female,
+60-64 years ,Hispanic or Latino,Black or African American,Male,10.0
+60-64 years ,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+60-64 years ,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+60-64 years ,Hispanic or Latino,White,Female,81.0
+60-64 years ,Hispanic or Latino,White,Male,309.0
+60-64 years ,Hispanic or Latino,More than one race,Female,
+60-64 years ,Hispanic or Latino,More than one race,Male,
+60-64 years ,Hispanic or Latino,Not Available,Female,0.0
+60-64 years ,Hispanic or Latino,Not Available,Male,0.0
+60-64 years ,Not Hispanic or Latino,American Indian or Alaska Native,Female,13.0
+60-64 years ,Not Hispanic or Latino,American Indian or Alaska Native,Male,46.0
+60-64 years ,Not Hispanic or Latino,Asian,Female,35.0
+60-64 years ,Not Hispanic or Latino,Asian,Male,65.0
+60-64 years ,Not Hispanic or Latino,Black or African American,Female,259.0
+60-64 years ,Not Hispanic or Latino,Black or African American,Male,1120.0
+60-64 years ,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+60-64 years ,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+60-64 years ,Not Hispanic or Latino,White,Female,610.0
+60-64 years ,Not Hispanic or Latino,White,Male,1249.0
+60-64 years ,Not Hispanic or Latino,More than one race,Female,
+60-64 years ,Not Hispanic or Latino,More than one race,Male,19.0
+60-64 years ,Not Hispanic or Latino,Not Available,Female,0.0
+60-64 years ,Not Hispanic or Latino,Not Available,Male,0.0
+60-64 years ,Not Stated,American Indian or Alaska Native,Female,0.0
+60-64 years ,Not Stated,American Indian or Alaska Native,Male,0.0
+60-64 years ,Not Stated,Asian,Female,0.0
+60-64 years ,Not Stated,Asian,Male,0.0
+60-64 years ,Not Stated,Black or African American,Female,
+60-64 years ,Not Stated,Black or African American,Male,
+60-64 years ,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+60-64 years ,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+60-64 years ,Not Stated,White,Female,0.0
+60-64 years ,Not Stated,White,Male,12.0
+60-64 years ,Not Stated,More than one race,Female,0.0
+60-64 years ,Not Stated,More than one race,Male,0.0
+60-64 years ,Not Stated,Not Available,Female,0.0
+60-64 years ,Not Stated,Not Available,Male,0.0
+65-69 years,Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+65-69 years,Hispanic or Latino,American Indian or Alaska Native,Male,
+65-69 years,Hispanic or Latino,Asian,Female,0.0
+65-69 years,Hispanic or Latino,Asian,Male,0.0
+65-69 years,Hispanic or Latino,Black or African American,Female,0.0
+65-69 years,Hispanic or Latino,Black or African American,Male,
+65-69 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+65-69 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+65-69 years,Hispanic or Latino,White,Female,66.0
+65-69 years,Hispanic or Latino,White,Male,169.0
+65-69 years,Hispanic or Latino,More than one race,Female,0.0
+65-69 years,Hispanic or Latino,More than one race,Male,
+65-69 years,Hispanic or Latino,Not Available,Female,0.0
+65-69 years,Hispanic or Latino,Not Available,Male,0.0
+65-69 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,13.0
+65-69 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,15.0
+65-69 years,Not Hispanic or Latino,Asian,Female,35.0
+65-69 years,Not Hispanic or Latino,Asian,Male,45.0
+65-69 years,Not Hispanic or Latino,Black or African American,Female,171.0
+65-69 years,Not Hispanic or Latino,Black or African American,Male,609.0
+65-69 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+65-69 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+65-69 years,Not Hispanic or Latino,White,Female,448.0
+65-69 years,Not Hispanic or Latino,White,Male,857.0
+65-69 years,Not Hispanic or Latino,More than one race,Female,
+65-69 years,Not Hispanic or Latino,More than one race,Male,15.0
+65-69 years,Not Hispanic or Latino,Not Available,Female,0.0
+65-69 years,Not Hispanic or Latino,Not Available,Male,0.0
+65-69 years,Not Stated,American Indian or Alaska Native,Female,0.0
+65-69 years,Not Stated,American Indian or Alaska Native,Male,0.0
+65-69 years,Not Stated,Asian,Female,0.0
+65-69 years,Not Stated,Asian,Male,
+65-69 years,Not Stated,Black or African American,Female,
+65-69 years,Not Stated,Black or African American,Male,
+65-69 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+65-69 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+65-69 years,Not Stated,White,Female,
+65-69 years,Not Stated,White,Male,
+65-69 years,Not Stated,More than one race,Female,0.0
+65-69 years,Not Stated,More than one race,Male,0.0
+65-69 years,Not Stated,Not Available,Female,0.0
+65-69 years,Not Stated,Not Available,Male,0.0
+70-74 years,Hispanic or Latino,American Indian or Alaska Native,Female,
+70-74 years,Hispanic or Latino,American Indian or Alaska Native,Male,
+70-74 years,Hispanic or Latino,Asian,Female,0.0
+70-74 years,Hispanic or Latino,Asian,Male,0.0
+70-74 years,Hispanic or Latino,Black or African American,Female,
+70-74 years,Hispanic or Latino,Black or African American,Male,
+70-74 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+70-74 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+70-74 years,Hispanic or Latino,White,Female,43.0
+70-74 years,Hispanic or Latino,White,Male,92.0
+70-74 years,Hispanic or Latino,More than one race,Female,
+70-74 years,Hispanic or Latino,More than one race,Male,0.0
+70-74 years,Hispanic or Latino,Not Available,Female,0.0
+70-74 years,Hispanic or Latino,Not Available,Male,0.0
+70-74 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,
+70-74 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,
+70-74 years,Not Hispanic or Latino,Asian,Female,22.0
+70-74 years,Not Hispanic or Latino,Asian,Male,24.0
+70-74 years,Not Hispanic or Latino,Black or African American,Female,111.0
+70-74 years,Not Hispanic or Latino,Black or African American,Male,289.0
+70-74 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+70-74 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+70-74 years,Not Hispanic or Latino,White,Female,436.0
+70-74 years,Not Hispanic or Latino,White,Male,564.0
+70-74 years,Not Hispanic or Latino,More than one race,Female,
+70-74 years,Not Hispanic or Latino,More than one race,Male,
+70-74 years,Not Hispanic or Latino,Not Available,Female,0.0
+70-74 years,Not Hispanic or Latino,Not Available,Male,0.0
+70-74 years,Not Stated,American Indian or Alaska Native,Female,0.0
+70-74 years,Not Stated,American Indian or Alaska Native,Male,
+70-74 years,Not Stated,Asian,Female,0.0
+70-74 years,Not Stated,Asian,Male,
+70-74 years,Not Stated,Black or African American,Female,0.0
+70-74 years,Not Stated,Black or African American,Male,
+70-74 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+70-74 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+70-74 years,Not Stated,White,Female,
+70-74 years,Not Stated,White,Male,
+70-74 years,Not Stated,More than one race,Female,0.0
+70-74 years,Not Stated,More than one race,Male,0.0
+70-74 years,Not Stated,Not Available,Female,0.0
+70-74 years,Not Stated,Not Available,Male,0.0
+75-79 years,Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+75-79 years,Hispanic or Latino,American Indian or Alaska Native,Male,0.0
+75-79 years,Hispanic or Latino,Asian,Female,
+75-79 years,Hispanic or Latino,Asian,Male,0.0
+75-79 years,Hispanic or Latino,Black or African American,Female,0.0
+75-79 years,Hispanic or Latino,Black or African American,Male,0.0
+75-79 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+75-79 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+75-79 years,Hispanic or Latino,White,Female,26.0
+75-79 years,Hispanic or Latino,White,Male,61.0
+75-79 years,Hispanic or Latino,More than one race,Female,
+75-79 years,Hispanic or Latino,More than one race,Male,0.0
+75-79 years,Hispanic or Latino,Not Available,Female,0.0
+75-79 years,Hispanic or Latino,Not Available,Male,0.0
+75-79 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+75-79 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,
+75-79 years,Not Hispanic or Latino,Asian,Female,19.0
+75-79 years,Not Hispanic or Latino,Asian,Male,24.0
+75-79 years,Not Hispanic or Latino,Black or African American,Female,61.0
+75-79 years,Not Hispanic or Latino,Black or African American,Male,122.0
+75-79 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+75-79 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+75-79 years,Not Hispanic or Latino,White,Female,349.0
+75-79 years,Not Hispanic or Latino,White,Male,349.0
+75-79 years,Not Hispanic or Latino,More than one race,Female,
+75-79 years,Not Hispanic or Latino,More than one race,Male,
+75-79 years,Not Hispanic or Latino,Not Available,Female,0.0
+75-79 years,Not Hispanic or Latino,Not Available,Male,0.0
+75-79 years,Not Stated,American Indian or Alaska Native,Female,0.0
+75-79 years,Not Stated,American Indian or Alaska Native,Male,0.0
+75-79 years,Not Stated,Asian,Female,0.0
+75-79 years,Not Stated,Asian,Male,0.0
+75-79 years,Not Stated,Black or African American,Female,0.0
+75-79 years,Not Stated,Black or African American,Male,
+75-79 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+75-79 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+75-79 years,Not Stated,White,Female,0.0
+75-79 years,Not Stated,White,Male,
+75-79 years,Not Stated,More than one race,Female,0.0
+75-79 years,Not Stated,More than one race,Male,0.0
+75-79 years,Not Stated,Not Available,Female,0.0
+75-79 years,Not Stated,Not Available,Male,0.0
+80-84 years,Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+80-84 years,Hispanic or Latino,American Indian or Alaska Native,Male,0.0
+80-84 years,Hispanic or Latino,Asian,Female,0.0
+80-84 years,Hispanic or Latino,Asian,Male,0.0
+80-84 years,Hispanic or Latino,Black or African American,Female,0.0
+80-84 years,Hispanic or Latino,Black or African American,Male,0.0
+80-84 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+80-84 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+80-84 years,Hispanic or Latino,White,Female,16.0
+80-84 years,Hispanic or Latino,White,Male,34.0
+80-84 years,Hispanic or Latino,More than one race,Female,0.0
+80-84 years,Hispanic or Latino,More than one race,Male,0.0
+80-84 years,Hispanic or Latino,Not Available,Female,0.0
+80-84 years,Hispanic or Latino,Not Available,Male,0.0
+80-84 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+80-84 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,
+80-84 years,Not Hispanic or Latino,Asian,Female,
+80-84 years,Not Hispanic or Latino,Asian,Male,
+80-84 years,Not Hispanic or Latino,Black or African American,Female,36.0
+80-84 years,Not Hispanic or Latino,Black or African American,Male,47.0
+80-84 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+80-84 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,
+80-84 years,Not Hispanic or Latino,White,Female,245.0
+80-84 years,Not Hispanic or Latino,White,Male,234.0
+80-84 years,Not Hispanic or Latino,More than one race,Female,
+80-84 years,Not Hispanic or Latino,More than one race,Male,0.0
+80-84 years,Not Hispanic or Latino,Not Available,Female,0.0
+80-84 years,Not Hispanic or Latino,Not Available,Male,0.0
+80-84 years,Not Stated,American Indian or Alaska Native,Female,0.0
+80-84 years,Not Stated,American Indian or Alaska Native,Male,0.0
+80-84 years,Not Stated,Asian,Female,0.0
+80-84 years,Not Stated,Asian,Male,
+80-84 years,Not Stated,Black or African American,Female,0.0
+80-84 years,Not Stated,Black or African American,Male,0.0
+80-84 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+80-84 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+80-84 years,Not Stated,White,Female,
+80-84 years,Not Stated,White,Male,0.0
+80-84 years,Not Stated,More than one race,Female,0.0
+80-84 years,Not Stated,More than one race,Male,0.0
+80-84 years,Not Stated,Not Available,Female,0.0
+80-84 years,Not Stated,Not Available,Male,0.0
+85-89 years,Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+85-89 years,Hispanic or Latino,American Indian or Alaska Native,Male,0.0
+85-89 years,Hispanic or Latino,Asian,Female,0.0
+85-89 years,Hispanic or Latino,Asian,Male,0.0
+85-89 years,Hispanic or Latino,Black or African American,Female,0.0
+85-89 years,Hispanic or Latino,Black or African American,Male,0.0
+85-89 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+85-89 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+85-89 years,Hispanic or Latino,White,Female,13.0
+85-89 years,Hispanic or Latino,White,Male,
+85-89 years,Hispanic or Latino,More than one race,Female,0.0
+85-89 years,Hispanic or Latino,More than one race,Male,0.0
+85-89 years,Hispanic or Latino,Not Available,Female,0.0
+85-89 years,Hispanic or Latino,Not Available,Male,0.0
+85-89 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,
+85-89 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,
+85-89 years,Not Hispanic or Latino,Asian,Female,
+85-89 years,Not Hispanic or Latino,Asian,Male,
+85-89 years,Not Hispanic or Latino,Black or African American,Female,25.0
+85-89 years,Not Hispanic or Latino,Black or African American,Male,28.0
+85-89 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,
+85-89 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+85-89 years,Not Hispanic or Latino,White,Female,153.0
+85-89 years,Not Hispanic or Latino,White,Male,113.0
+85-89 years,Not Hispanic or Latino,More than one race,Female,
+85-89 years,Not Hispanic or Latino,More than one race,Male,
+85-89 years,Not Hispanic or Latino,Not Available,Female,0.0
+85-89 years,Not Hispanic or Latino,Not Available,Male,0.0
+85-89 years,Not Stated,American Indian or Alaska Native,Female,0.0
+85-89 years,Not Stated,American Indian or Alaska Native,Male,0.0
+85-89 years,Not Stated,Asian,Female,0.0
+85-89 years,Not Stated,Asian,Male,0.0
+85-89 years,Not Stated,Black or African American,Female,0.0
+85-89 years,Not Stated,Black or African American,Male,0.0
+85-89 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+85-89 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+85-89 years,Not Stated,White,Female,
+85-89 years,Not Stated,White,Male,0.0
+85-89 years,Not Stated,More than one race,Female,0.0
+85-89 years,Not Stated,More than one race,Male,0.0
+85-89 years,Not Stated,Not Available,Female,0.0
+85-89 years,Not Stated,Not Available,Male,0.0
+90-94 years,Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+90-94 years,Hispanic or Latino,American Indian or Alaska Native,Male,0.0
+90-94 years,Hispanic or Latino,Asian,Female,0.0
+90-94 years,Hispanic or Latino,Asian,Male,0.0
+90-94 years,Hispanic or Latino,Black or African American,Female,
+90-94 years,Hispanic or Latino,Black or African American,Male,0.0
+90-94 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+90-94 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+90-94 years,Hispanic or Latino,White,Female,
+90-94 years,Hispanic or Latino,White,Male,
+90-94 years,Hispanic or Latino,More than one race,Female,0.0
+90-94 years,Hispanic or Latino,More than one race,Male,0.0
+90-94 years,Hispanic or Latino,Not Available,Female,0.0
+90-94 years,Hispanic or Latino,Not Available,Male,0.0
+90-94 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+90-94 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,0.0
+90-94 years,Not Hispanic or Latino,Asian,Female,
+90-94 years,Not Hispanic or Latino,Asian,Male,
+90-94 years,Not Hispanic or Latino,Black or African American,Female,10.0
+90-94 years,Not Hispanic or Latino,Black or African American,Male,
+90-94 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+90-94 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+90-94 years,Not Hispanic or Latino,White,Female,77.0
+90-94 years,Not Hispanic or Latino,White,Male,38.0
+90-94 years,Not Hispanic or Latino,More than one race,Female,0.0
+90-94 years,Not Hispanic or Latino,More than one race,Male,0.0
+90-94 years,Not Hispanic or Latino,Not Available,Female,0.0
+90-94 years,Not Hispanic or Latino,Not Available,Male,0.0
+90-94 years,Not Stated,American Indian or Alaska Native,Female,0.0
+90-94 years,Not Stated,American Indian or Alaska Native,Male,0.0
+90-94 years,Not Stated,Asian,Female,0.0
+90-94 years,Not Stated,Asian,Male,0.0
+90-94 years,Not Stated,Black or African American,Female,0.0
+90-94 years,Not Stated,Black or African American,Male,0.0
+90-94 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+90-94 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+90-94 years,Not Stated,White,Female,
+90-94 years,Not Stated,White,Male,0.0
+90-94 years,Not Stated,More than one race,Female,0.0
+90-94 years,Not Stated,More than one race,Male,0.0
+90-94 years,Not Stated,Not Available,Female,0.0
+90-94 years,Not Stated,Not Available,Male,0.0
+95-99 years,Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+95-99 years,Hispanic or Latino,American Indian or Alaska Native,Male,0.0
+95-99 years,Hispanic or Latino,Asian,Female,0.0
+95-99 years,Hispanic or Latino,Asian,Male,0.0
+95-99 years,Hispanic or Latino,Black or African American,Female,0.0
+95-99 years,Hispanic or Latino,Black or African American,Male,0.0
+95-99 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+95-99 years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+95-99 years,Hispanic or Latino,White,Female,
+95-99 years,Hispanic or Latino,White,Male,0.0
+95-99 years,Hispanic or Latino,More than one race,Female,0.0
+95-99 years,Hispanic or Latino,More than one race,Male,0.0
+95-99 years,Hispanic or Latino,Not Available,Female,0.0
+95-99 years,Hispanic or Latino,Not Available,Male,0.0
+95-99 years,Not Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+95-99 years,Not Hispanic or Latino,American Indian or Alaska Native,Male,0.0
+95-99 years,Not Hispanic or Latino,Asian,Female,0.0
+95-99 years,Not Hispanic or Latino,Asian,Male,
+95-99 years,Not Hispanic or Latino,Black or African American,Female,
+95-99 years,Not Hispanic or Latino,Black or African American,Male,
+95-99 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+95-99 years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+95-99 years,Not Hispanic or Latino,White,Female,29.0
+95-99 years,Not Hispanic or Latino,White,Male,
+95-99 years,Not Hispanic or Latino,More than one race,Female,0.0
+95-99 years,Not Hispanic or Latino,More than one race,Male,0.0
+95-99 years,Not Hispanic or Latino,Not Available,Female,0.0
+95-99 years,Not Hispanic or Latino,Not Available,Male,0.0
+95-99 years,Not Stated,American Indian or Alaska Native,Female,0.0
+95-99 years,Not Stated,American Indian or Alaska Native,Male,0.0
+95-99 years,Not Stated,Asian,Female,0.0
+95-99 years,Not Stated,Asian,Male,0.0
+95-99 years,Not Stated,Black or African American,Female,0.0
+95-99 years,Not Stated,Black or African American,Male,0.0
+95-99 years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+95-99 years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+95-99 years,Not Stated,White,Female,0.0
+95-99 years,Not Stated,White,Male,0.0
+95-99 years,Not Stated,More than one race,Female,0.0
+95-99 years,Not Stated,More than one race,Male,0.0
+95-99 years,Not Stated,Not Available,Female,0.0
+95-99 years,Not Stated,Not Available,Male,0.0
+100+ years,Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+100+ years,Hispanic or Latino,American Indian or Alaska Native,Male,0.0
+100+ years,Hispanic or Latino,Asian,Female,0.0
+100+ years,Hispanic or Latino,Asian,Male,0.0
+100+ years,Hispanic or Latino,Black or African American,Female,0.0
+100+ years,Hispanic or Latino,Black or African American,Male,0.0
+100+ years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+100+ years,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+100+ years,Hispanic or Latino,White,Female,0.0
+100+ years,Hispanic or Latino,White,Male,0.0
+100+ years,Hispanic or Latino,More than one race,Female,0.0
+100+ years,Hispanic or Latino,More than one race,Male,0.0
+100+ years,Hispanic or Latino,Not Available,Female,0.0
+100+ years,Hispanic or Latino,Not Available,Male,0.0
+100+ years,Not Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+100+ years,Not Hispanic or Latino,American Indian or Alaska Native,Male,0.0
+100+ years,Not Hispanic or Latino,Asian,Female,0.0
+100+ years,Not Hispanic or Latino,Asian,Male,0.0
+100+ years,Not Hispanic or Latino,Black or African American,Female,
+100+ years,Not Hispanic or Latino,Black or African American,Male,0.0
+100+ years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+100+ years,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+100+ years,Not Hispanic or Latino,White,Female,0.0
+100+ years,Not Hispanic or Latino,White,Male,
+100+ years,Not Hispanic or Latino,More than one race,Female,0.0
+100+ years,Not Hispanic or Latino,More than one race,Male,0.0
+100+ years,Not Hispanic or Latino,Not Available,Female,0.0
+100+ years,Not Hispanic or Latino,Not Available,Male,0.0
+100+ years,Not Stated,American Indian or Alaska Native,Female,0.0
+100+ years,Not Stated,American Indian or Alaska Native,Male,0.0
+100+ years,Not Stated,Asian,Female,0.0
+100+ years,Not Stated,Asian,Male,0.0
+100+ years,Not Stated,Black or African American,Female,0.0
+100+ years,Not Stated,Black or African American,Male,0.0
+100+ years,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+100+ years,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+100+ years,Not Stated,White,Female,0.0
+100+ years,Not Stated,White,Male,0.0
+100+ years,Not Stated,More than one race,Female,0.0
+100+ years,Not Stated,More than one race,Male,0.0
+100+ years,Not Stated,Not Available,Female,0.0
+100+ years,Not Stated,Not Available,Male,0.0
+Not Stated,Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+Not Stated,Hispanic or Latino,American Indian or Alaska Native,Male,0.0
+Not Stated,Hispanic or Latino,Asian,Female,0.0
+Not Stated,Hispanic or Latino,Asian,Male,0.0
+Not Stated,Hispanic or Latino,Black or African American,Female,0.0
+Not Stated,Hispanic or Latino,Black or African American,Male,0.0
+Not Stated,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+Not Stated,Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+Not Stated,Hispanic or Latino,White,Female,0.0
+Not Stated,Hispanic or Latino,White,Male,
+Not Stated,Hispanic or Latino,More than one race,Female,0.0
+Not Stated,Hispanic or Latino,More than one race,Male,0.0
+Not Stated,Hispanic or Latino,Not Available,Female,0.0
+Not Stated,Hispanic or Latino,Not Available,Male,0.0
+Not Stated,Not Hispanic or Latino,American Indian or Alaska Native,Female,0.0
+Not Stated,Not Hispanic or Latino,American Indian or Alaska Native,Male,0.0
+Not Stated,Not Hispanic or Latino,Asian,Female,0.0
+Not Stated,Not Hispanic or Latino,Asian,Male,0.0
+Not Stated,Not Hispanic or Latino,Black or African American,Female,0.0
+Not Stated,Not Hispanic or Latino,Black or African American,Male,0.0
+Not Stated,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Female,0.0
+Not Stated,Not Hispanic or Latino,Native Hawaiian or Other Pacific Islander,Male,0.0
+Not Stated,Not Hispanic or Latino,White,Female,
+Not Stated,Not Hispanic or Latino,White,Male,0.0
+Not Stated,Not Hispanic or Latino,More than one race,Female,0.0
+Not Stated,Not Hispanic or Latino,More than one race,Male,0.0
+Not Stated,Not Hispanic or Latino,Not Available,Female,0.0
+Not Stated,Not Hispanic or Latino,Not Available,Male,0.0
+Not Stated,Not Stated,American Indian or Alaska Native,Female,0.0
+Not Stated,Not Stated,American Indian or Alaska Native,Male,0.0
+Not Stated,Not Stated,Asian,Female,0.0
+Not Stated,Not Stated,Asian,Male,0.0
+Not Stated,Not Stated,Black or African American,Female,
+Not Stated,Not Stated,Black or African American,Male,0.0
+Not Stated,Not Stated,Native Hawaiian or Other Pacific Islander,Female,0.0
+Not Stated,Not Stated,Native Hawaiian or Other Pacific Islander,Male,0.0
+Not Stated,Not Stated,White,Female,0.0
+Not Stated,Not Stated,White,Male,
+Not Stated,Not Stated,More than one race,Female,0.0
+Not Stated,Not Stated,More than one race,Male,0.0
+Not Stated,Not Stated,Not Available,Female,0.0
+Not Stated,Not Stated,Not Available,Male,0.0

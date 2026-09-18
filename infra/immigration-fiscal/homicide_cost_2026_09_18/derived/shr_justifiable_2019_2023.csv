@@ -1,0 +1,11 @@
+vic_eth,Circumstance,n
+hispanic,Felon killed by police,330
+hispanic,Felon killed by private citizen,309
+nh_black,Felon killed by police,310
+nh_black,Felon killed by private citizen,1047
+nh_other,Felon killed by police,43
+nh_other,Felon killed by private citizen,30
+nh_white,Felon killed by police,523
+nh_white,Felon killed by private citizen,382
+unknown,Felon killed by police,354
+unknown,Felon killed by private citizen,564

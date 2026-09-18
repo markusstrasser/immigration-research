@@ -1,0 +1,5 @@
+off_eth,drop,impute
+hispanic,0.1901,0.1998
+nh_white,0.2593,0.2657
+nh_black,0.5212,0.5049
+nh_other,0.0294,0.0296

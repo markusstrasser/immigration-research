@@ -1,0 +1,613 @@
+age,hispanic_origin,sex,deaths
+< 1 year,Hispanic or Latino,Female,111.0
+< 1 year,Hispanic or Latino,Male,125.0
+< 1 year,Not Hispanic or Latino,Female,402.0
+< 1 year,Not Hispanic or Latino,Male,633.0
+< 1 year,Not Stated,Female,
+< 1 year,Not Stated,Male,
+1 year,Hispanic or Latino,Female,40.0
+1 year,Hispanic or Latino,Male,52.0
+1 year,Not Hispanic or Latino,Female,203.0
+1 year,Not Hispanic or Latino,Male,264.0
+1 year,Not Stated,Female,
+1 year,Not Stated,Male,
+2 years,Hispanic or Latino,Female,20.0
+2 years,Hispanic or Latino,Male,47.0
+2 years,Not Hispanic or Latino,Female,138.0
+2 years,Not Hispanic or Latino,Male,186.0
+2 years,Not Stated,Female,
+2 years,Not Stated,Male,
+3 years,Hispanic or Latino,Female,18.0
+3 years,Hispanic or Latino,Male,37.0
+3 years,Not Hispanic or Latino,Female,109.0
+3 years,Not Hispanic or Latino,Male,147.0
+3 years,Not Stated,Female,0.0
+3 years,Not Stated,Male,
+4 years,Hispanic or Latino,Female,11.0
+4 years,Hispanic or Latino,Male,20.0
+4 years,Not Hispanic or Latino,Female,97.0
+4 years,Not Hispanic or Latino,Male,126.0
+4 years,Not Stated,Female,
+4 years,Not Stated,Male,0.0
+5 years,Hispanic or Latino,Female,11.0
+5 years,Hispanic or Latino,Male,28.0
+5 years,Not Hispanic or Latino,Female,100.0
+5 years,Not Hispanic or Latino,Male,102.0
+5 years,Not Stated,Female,0.0
+5 years,Not Stated,Male,
+6 years,Hispanic or Latino,Female,13.0
+6 years,Hispanic or Latino,Male,18.0
+6 years,Not Hispanic or Latino,Female,58.0
+6 years,Not Hispanic or Latino,Male,90.0
+6 years,Not Stated,Female,0.0
+6 years,Not Stated,Male,0.0
+7 years,Hispanic or Latino,Female,
+7 years,Hispanic or Latino,Male,11.0
+7 years,Not Hispanic or Latino,Female,55.0
+7 years,Not Hispanic or Latino,Male,80.0
+7 years,Not Stated,Female,0.0
+7 years,Not Stated,Male,0.0
+8 years,Hispanic or Latino,Female,
+8 years,Hispanic or Latino,Male,17.0
+8 years,Not Hispanic or Latino,Female,55.0
+8 years,Not Hispanic or Latino,Male,82.0
+8 years,Not Stated,Female,0.0
+8 years,Not Stated,Male,0.0
+9 years,Hispanic or Latino,Female,
+9 years,Hispanic or Latino,Male,12.0
+9 years,Not Hispanic or Latino,Female,65.0
+9 years,Not Hispanic or Latino,Male,59.0
+9 years,Not Stated,Female,0.0
+9 years,Not Stated,Male,0.0
+10 years,Hispanic or Latino,Female,23.0
+10 years,Hispanic or Latino,Male,17.0
+10 years,Not Hispanic or Latino,Female,48.0
+10 years,Not Hispanic or Latino,Male,86.0
+10 years,Not Stated,Female,0.0
+10 years,Not Stated,Male,0.0
+11 years,Hispanic or Latino,Female,20.0
+11 years,Hispanic or Latino,Male,17.0
+11 years,Not Hispanic or Latino,Female,43.0
+11 years,Not Hispanic or Latino,Male,90.0
+11 years,Not Stated,Female,0.0
+11 years,Not Stated,Male,
+12 years,Hispanic or Latino,Female,13.0
+12 years,Hispanic or Latino,Male,24.0
+12 years,Not Hispanic or Latino,Female,56.0
+12 years,Not Hispanic or Latino,Male,110.0
+12 years,Not Stated,Female,0.0
+12 years,Not Stated,Male,0.0
+13 years,Hispanic or Latino,Female,17.0
+13 years,Hispanic or Latino,Male,35.0
+13 years,Not Hispanic or Latino,Female,72.0
+13 years,Not Hispanic or Latino,Male,172.0
+13 years,Not Stated,Female,0.0
+13 years,Not Stated,Male,0.0
+14 years,Hispanic or Latino,Female,32.0
+14 years,Hispanic or Latino,Male,97.0
+14 years,Not Hispanic or Latino,Female,91.0
+14 years,Not Hispanic or Latino,Male,412.0
+14 years,Not Stated,Female,0.0
+14 years,Not Stated,Male,
+15 years,Hispanic or Latino,Female,27.0
+15 years,Hispanic or Latino,Male,239.0
+15 years,Not Hispanic or Latino,Female,144.0
+15 years,Not Hispanic or Latino,Male,741.0
+15 years,Not Stated,Female,0.0
+15 years,Not Stated,Male,0.0
+16 years,Hispanic or Latino,Female,49.0
+16 years,Hispanic or Latino,Male,364.0
+16 years,Not Hispanic or Latino,Female,176.0
+16 years,Not Hispanic or Latino,Male,1163.0
+16 years,Not Stated,Female,
+16 years,Not Stated,Male,
+17 years,Hispanic or Latino,Female,61.0
+17 years,Hispanic or Latino,Male,481.0
+17 years,Not Hispanic or Latino,Female,246.0
+17 years,Not Hispanic or Latino,Male,1717.0
+17 years,Not Stated,Female,0.0
+17 years,Not Stated,Male,
+18 years,Hispanic or Latino,Female,96.0
+18 years,Hispanic or Latino,Male,644.0
+18 years,Not Hispanic or Latino,Female,377.0
+18 years,Not Hispanic or Latino,Male,2364.0
+18 years,Not Stated,Female,0.0
+18 years,Not Stated,Male,
+19 years,Hispanic or Latino,Female,123.0
+19 years,Hispanic or Latino,Male,670.0
+19 years,Not Hispanic or Latino,Female,388.0
+19 years,Not Hispanic or Latino,Male,2545.0
+19 years,Not Stated,Female,
+19 years,Not Stated,Male,
+20 years,Hispanic or Latino,Female,90.0
+20 years,Hispanic or Latino,Male,548.0
+20 years,Not Hispanic or Latino,Female,402.0
+20 years,Not Hispanic or Latino,Male,2484.0
+20 years,Not Stated,Female,0.0
+20 years,Not Stated,Male,
+21 years,Hispanic or Latino,Female,100.0
+21 years,Hispanic or Latino,Male,547.0
+21 years,Not Hispanic or Latino,Female,434.0
+21 years,Not Hispanic or Latino,Male,2480.0
+21 years,Not Stated,Female,0.0
+21 years,Not Stated,Male,
+22 years,Hispanic or Latino,Female,114.0
+22 years,Hispanic or Latino,Male,560.0
+22 years,Not Hispanic or Latino,Female,367.0
+22 years,Not Hispanic or Latino,Male,2327.0
+22 years,Not Stated,Female,0.0
+22 years,Not Stated,Male,
+23 years,Hispanic or Latino,Female,96.0
+23 years,Hispanic or Latino,Male,519.0
+23 years,Not Hispanic or Latino,Female,423.0
+23 years,Not Hispanic or Latino,Male,2377.0
+23 years,Not Stated,Female,0.0
+23 years,Not Stated,Male,
+24 years,Hispanic or Latino,Female,110.0
+24 years,Hispanic or Latino,Male,543.0
+24 years,Not Hispanic or Latino,Female,417.0
+24 years,Not Hispanic or Latino,Male,2289.0
+24 years,Not Stated,Female,0.0
+24 years,Not Stated,Male,
+25 years,Hispanic or Latino,Female,62.0
+25 years,Hispanic or Latino,Male,496.0
+25 years,Not Hispanic or Latino,Female,455.0
+25 years,Not Hispanic or Latino,Male,2298.0
+25 years,Not Stated,Female,
+25 years,Not Stated,Male,
+26 years,Hispanic or Latino,Female,87.0
+26 years,Hispanic or Latino,Male,480.0
+26 years,Not Hispanic or Latino,Female,401.0
+26 years,Not Hispanic or Latino,Male,2341.0
+26 years,Not Stated,Female,
+26 years,Not Stated,Male,
+27 years,Hispanic or Latino,Female,81.0
+27 years,Hispanic or Latino,Male,540.0
+27 years,Not Hispanic or Latino,Female,442.0
+27 years,Not Hispanic or Latino,Male,2355.0
+27 years,Not Stated,Female,0.0
+27 years,Not Stated,Male,
+28 years,Hispanic or Latino,Female,92.0
+28 years,Hispanic or Latino,Male,514.0
+28 years,Not Hispanic or Latino,Female,395.0
+28 years,Not Hispanic or Latino,Male,2391.0
+28 years,Not Stated,Female,
+28 years,Not Stated,Male,
+29 years,Hispanic or Latino,Female,90.0
+29 years,Hispanic or Latino,Male,516.0
+29 years,Not Hispanic or Latino,Female,416.0
+29 years,Not Hispanic or Latino,Male,2422.0
+29 years,Not Stated,Female,
+29 years,Not Stated,Male,
+30 years,Hispanic or Latino,Female,95.0
+30 years,Hispanic or Latino,Male,550.0
+30 years,Not Hispanic or Latino,Female,470.0
+30 years,Not Hispanic or Latino,Male,2397.0
+30 years,Not Stated,Female,0.0
+30 years,Not Stated,Male,
+31 years,Hispanic or Latino,Female,81.0
+31 years,Hispanic or Latino,Male,466.0
+31 years,Not Hispanic or Latino,Female,425.0
+31 years,Not Hispanic or Latino,Male,2356.0
+31 years,Not Stated,Female,0.0
+31 years,Not Stated,Male,
+32 years,Hispanic or Latino,Female,85.0
+32 years,Hispanic or Latino,Male,451.0
+32 years,Not Hispanic or Latino,Female,366.0
+32 years,Not Hispanic or Latino,Male,2107.0
+32 years,Not Stated,Female,
+32 years,Not Stated,Male,
+33 years,Hispanic or Latino,Female,95.0
+33 years,Hispanic or Latino,Male,438.0
+33 years,Not Hispanic or Latino,Female,432.0
+33 years,Not Hispanic or Latino,Male,2010.0
+33 years,Not Stated,Female,0.0
+33 years,Not Stated,Male,
+34 years,Hispanic or Latino,Female,86.0
+34 years,Hispanic or Latino,Male,427.0
+34 years,Not Hispanic or Latino,Female,416.0
+34 years,Not Hispanic or Latino,Male,1901.0
+34 years,Not Stated,Female,0.0
+34 years,Not Stated,Male,
+35 years,Hispanic or Latino,Female,80.0
+35 years,Hispanic or Latino,Male,390.0
+35 years,Not Hispanic or Latino,Female,369.0
+35 years,Not Hispanic or Latino,Male,1718.0
+35 years,Not Stated,Female,0.0
+35 years,Not Stated,Male,
+36 years,Hispanic or Latino,Female,80.0
+36 years,Hispanic or Latino,Male,391.0
+36 years,Not Hispanic or Latino,Female,366.0
+36 years,Not Hispanic or Latino,Male,1698.0
+36 years,Not Stated,Female,0.0
+36 years,Not Stated,Male,
+37 years,Hispanic or Latino,Female,93.0
+37 years,Hispanic or Latino,Male,362.0
+37 years,Not Hispanic or Latino,Female,407.0
+37 years,Not Hispanic or Latino,Male,1621.0
+37 years,Not Stated,Female,
+37 years,Not Stated,Male,0.0
+38 years,Hispanic or Latino,Female,70.0
+38 years,Hispanic or Latino,Male,370.0
+38 years,Not Hispanic or Latino,Female,351.0
+38 years,Not Hispanic or Latino,Male,1562.0
+38 years,Not Stated,Female,0.0
+38 years,Not Stated,Male,
+39 years,Hispanic or Latino,Female,61.0
+39 years,Hispanic or Latino,Male,376.0
+39 years,Not Hispanic or Latino,Female,359.0
+39 years,Not Hispanic or Latino,Male,1538.0
+39 years,Not Stated,Female,
+39 years,Not Stated,Male,
+40 years,Hispanic or Latino,Female,63.0
+40 years,Hispanic or Latino,Male,322.0
+40 years,Not Hispanic or Latino,Female,360.0
+40 years,Not Hispanic or Latino,Male,1405.0
+40 years,Not Stated,Female,0.0
+40 years,Not Stated,Male,
+41 years,Hispanic or Latino,Female,64.0
+41 years,Hispanic or Latino,Male,311.0
+41 years,Not Hispanic or Latino,Female,347.0
+41 years,Not Hispanic or Latino,Male,1415.0
+41 years,Not Stated,Female,0.0
+41 years,Not Stated,Male,
+42 years,Hispanic or Latino,Female,46.0
+42 years,Hispanic or Latino,Male,272.0
+42 years,Not Hispanic or Latino,Female,324.0
+42 years,Not Hispanic or Latino,Male,1327.0
+42 years,Not Stated,Female,0.0
+42 years,Not Stated,Male,
+43 years,Hispanic or Latino,Female,67.0
+43 years,Hispanic or Latino,Male,276.0
+43 years,Not Hispanic or Latino,Female,302.0
+43 years,Not Hispanic or Latino,Male,1219.0
+43 years,Not Stated,Female,0.0
+43 years,Not Stated,Male,
+44 years,Hispanic or Latino,Female,58.0
+44 years,Hispanic or Latino,Male,229.0
+44 years,Not Hispanic or Latino,Female,273.0
+44 years,Not Hispanic or Latino,Male,1065.0
+44 years,Not Stated,Female,0.0
+44 years,Not Stated,Male,
+45 years,Hispanic or Latino,Female,61.0
+45 years,Hispanic or Latino,Male,219.0
+45 years,Not Hispanic or Latino,Female,269.0
+45 years,Not Hispanic or Latino,Male,939.0
+45 years,Not Stated,Female,0.0
+45 years,Not Stated,Male,
+46 years,Hispanic or Latino,Female,48.0
+46 years,Hispanic or Latino,Male,216.0
+46 years,Not Hispanic or Latino,Female,231.0
+46 years,Not Hispanic or Latino,Male,972.0
+46 years,Not Stated,Female,0.0
+46 years,Not Stated,Male,
+47 years,Hispanic or Latino,Female,46.0
+47 years,Hispanic or Latino,Male,187.0
+47 years,Not Hispanic or Latino,Female,251.0
+47 years,Not Hispanic or Latino,Male,865.0
+47 years,Not Stated,Female,
+47 years,Not Stated,Male,
+48 years,Hispanic or Latino,Female,48.0
+48 years,Hispanic or Latino,Male,183.0
+48 years,Not Hispanic or Latino,Female,247.0
+48 years,Not Hispanic or Latino,Male,906.0
+48 years,Not Stated,Female,
+48 years,Not Stated,Male,
+49 years,Hispanic or Latino,Female,46.0
+49 years,Hispanic or Latino,Male,165.0
+49 years,Not Hispanic or Latino,Female,244.0
+49 years,Not Hispanic or Latino,Male,854.0
+49 years,Not Stated,Female,0.0
+49 years,Not Stated,Male,0.0
+50 years,Hispanic or Latino,Female,46.0
+50 years,Hispanic or Latino,Male,150.0
+50 years,Not Hispanic or Latino,Female,229.0
+50 years,Not Hispanic or Latino,Male,769.0
+50 years,Not Stated,Female,
+50 years,Not Stated,Male,
+51 years,Hispanic or Latino,Female,38.0
+51 years,Hispanic or Latino,Male,163.0
+51 years,Not Hispanic or Latino,Female,226.0
+51 years,Not Hispanic or Latino,Male,762.0
+51 years,Not Stated,Female,0.0
+51 years,Not Stated,Male,
+52 years,Hispanic or Latino,Female,29.0
+52 years,Hispanic or Latino,Male,154.0
+52 years,Not Hispanic or Latino,Female,232.0
+52 years,Not Hispanic or Latino,Male,749.0
+52 years,Not Stated,Female,0.0
+52 years,Not Stated,Male,
+53 years,Hispanic or Latino,Female,26.0
+53 years,Hispanic or Latino,Male,112.0
+53 years,Not Hispanic or Latino,Female,203.0
+53 years,Not Hispanic or Latino,Male,728.0
+53 years,Not Stated,Female,
+53 years,Not Stated,Male,
+54 years,Hispanic or Latino,Female,20.0
+54 years,Hispanic or Latino,Male,130.0
+54 years,Not Hispanic or Latino,Female,227.0
+54 years,Not Hispanic or Latino,Male,650.0
+54 years,Not Stated,Female,0.0
+54 years,Not Stated,Male,
+55 years,Hispanic or Latino,Female,22.0
+55 years,Hispanic or Latino,Male,110.0
+55 years,Not Hispanic or Latino,Female,224.0
+55 years,Not Hispanic or Latino,Male,661.0
+55 years,Not Stated,Female,
+55 years,Not Stated,Male,
+56 years,Hispanic or Latino,Female,29.0
+56 years,Hispanic or Latino,Male,83.0
+56 years,Not Hispanic or Latino,Female,200.0
+56 years,Not Hispanic or Latino,Male,681.0
+56 years,Not Stated,Female,
+56 years,Not Stated,Male,
+57 years,Hispanic or Latino,Female,27.0
+57 years,Hispanic or Latino,Male,89.0
+57 years,Not Hispanic or Latino,Female,203.0
+57 years,Not Hispanic or Latino,Male,647.0
+57 years,Not Stated,Female,0.0
+57 years,Not Stated,Male,
+58 years,Hispanic or Latino,Female,30.0
+58 years,Hispanic or Latino,Male,97.0
+58 years,Not Hispanic or Latino,Female,222.0
+58 years,Not Hispanic or Latino,Male,660.0
+58 years,Not Stated,Female,
+58 years,Not Stated,Male,
+59 years,Hispanic or Latino,Female,26.0
+59 years,Hispanic or Latino,Male,89.0
+59 years,Not Hispanic or Latino,Female,206.0
+59 years,Not Hispanic or Latino,Male,581.0
+59 years,Not Stated,Female,0.0
+59 years,Not Stated,Male,
+60 years,Hispanic or Latino,Female,14.0
+60 years,Hispanic or Latino,Male,77.0
+60 years,Not Hispanic or Latino,Female,200.0
+60 years,Not Hispanic or Latino,Male,575.0
+60 years,Not Stated,Female,0.0
+60 years,Not Stated,Male,
+61 years,Hispanic or Latino,Female,24.0
+61 years,Hispanic or Latino,Male,62.0
+61 years,Not Hispanic or Latino,Female,186.0
+61 years,Not Hispanic or Latino,Male,545.0
+61 years,Not Stated,Female,0.0
+61 years,Not Stated,Male,
+62 years,Hispanic or Latino,Female,14.0
+62 years,Hispanic or Latino,Male,65.0
+62 years,Not Hispanic or Latino,Female,196.0
+62 years,Not Hispanic or Latino,Male,531.0
+62 years,Not Stated,Female,
+62 years,Not Stated,Male,
+63 years,Hispanic or Latino,Female,17.0
+63 years,Hispanic or Latino,Male,66.0
+63 years,Not Hispanic or Latino,Female,180.0
+63 years,Not Hispanic or Latino,Male,444.0
+63 years,Not Stated,Female,
+63 years,Not Stated,Male,
+64 years,Hispanic or Latino,Female,18.0
+64 years,Hispanic or Latino,Male,51.0
+64 years,Not Hispanic or Latino,Female,162.0
+64 years,Not Hispanic or Latino,Male,408.0
+64 years,Not Stated,Female,0.0
+64 years,Not Stated,Male,
+65 years,Hispanic or Latino,Female,14.0
+65 years,Hispanic or Latino,Male,38.0
+65 years,Not Hispanic or Latino,Female,173.0
+65 years,Not Hispanic or Latino,Male,407.0
+65 years,Not Stated,Female,0.0
+65 years,Not Stated,Male,
+66 years,Hispanic or Latino,Female,13.0
+66 years,Hispanic or Latino,Male,40.0
+66 years,Not Hispanic or Latino,Female,149.0
+66 years,Not Hispanic or Latino,Male,337.0
+66 years,Not Stated,Female,
+66 years,Not Stated,Male,
+67 years,Hispanic or Latino,Female,12.0
+67 years,Hispanic or Latino,Male,38.0
+67 years,Not Hispanic or Latino,Female,125.0
+67 years,Not Hispanic or Latino,Male,291.0
+67 years,Not Stated,Female,0.0
+67 years,Not Stated,Male,
+68 years,Hispanic or Latino,Female,13.0
+68 years,Hispanic or Latino,Male,28.0
+68 years,Not Hispanic or Latino,Female,124.0
+68 years,Not Hispanic or Latino,Male,244.0
+68 years,Not Stated,Female,0.0
+68 years,Not Stated,Male,
+69 years,Hispanic or Latino,Female,14.0
+69 years,Hispanic or Latino,Male,36.0
+69 years,Not Hispanic or Latino,Female,102.0
+69 years,Not Hispanic or Latino,Male,265.0
+69 years,Not Stated,Female,
+69 years,Not Stated,Male,
+70 years,Hispanic or Latino,Female,
+70 years,Hispanic or Latino,Male,22.0
+70 years,Not Hispanic or Latino,Female,110.0
+70 years,Not Hispanic or Latino,Male,207.0
+70 years,Not Stated,Female,0.0
+70 years,Not Stated,Male,
+71 years,Hispanic or Latino,Female,14.0
+71 years,Hispanic or Latino,Male,19.0
+71 years,Not Hispanic or Latino,Female,126.0
+71 years,Not Hispanic or Latino,Male,199.0
+71 years,Not Stated,Female,0.0
+71 years,Not Stated,Male,0.0
+72 years,Hispanic or Latino,Female,12.0
+72 years,Hispanic or Latino,Male,23.0
+72 years,Not Hispanic or Latino,Female,119.0
+72 years,Not Hispanic or Latino,Male,186.0
+72 years,Not Stated,Female,0.0
+72 years,Not Stated,Male,
+73 years,Hispanic or Latino,Female,
+73 years,Hispanic or Latino,Male,16.0
+73 years,Not Hispanic or Latino,Female,111.0
+73 years,Not Hispanic or Latino,Male,152.0
+73 years,Not Stated,Female,
+73 years,Not Stated,Male,
+74 years,Hispanic or Latino,Female,
+74 years,Hispanic or Latino,Male,15.0
+74 years,Not Hispanic or Latino,Female,114.0
+74 years,Not Hispanic or Latino,Male,144.0
+74 years,Not Stated,Female,
+74 years,Not Stated,Male,
+75 years,Hispanic or Latino,Female,
+75 years,Hispanic or Latino,Male,15.0
+75 years,Not Hispanic or Latino,Female,98.0
+75 years,Not Hispanic or Latino,Male,113.0
+75 years,Not Stated,Female,0.0
+75 years,Not Stated,Male,
+76 years,Hispanic or Latino,Female,
+76 years,Hispanic or Latino,Male,17.0
+76 years,Not Hispanic or Latino,Female,77.0
+76 years,Not Hispanic or Latino,Male,123.0
+76 years,Not Stated,Female,0.0
+76 years,Not Stated,Male,
+77 years,Hispanic or Latino,Female,
+77 years,Hispanic or Latino,Male,
+77 years,Not Hispanic or Latino,Female,85.0
+77 years,Not Hispanic or Latino,Male,95.0
+77 years,Not Stated,Female,0.0
+77 years,Not Stated,Male,0.0
+78 years,Hispanic or Latino,Female,14.0
+78 years,Hispanic or Latino,Male,14.0
+78 years,Not Hispanic or Latino,Female,85.0
+78 years,Not Hispanic or Latino,Male,92.0
+78 years,Not Stated,Female,0.0
+78 years,Not Stated,Male,0.0
+79 years,Hispanic or Latino,Female,
+79 years,Hispanic or Latino,Male,
+79 years,Not Hispanic or Latino,Female,87.0
+79 years,Not Hispanic or Latino,Male,79.0
+79 years,Not Stated,Female,0.0
+79 years,Not Stated,Male,0.0
+80 years,Hispanic or Latino,Female,0.0
+80 years,Hispanic or Latino,Male,
+80 years,Not Hispanic or Latino,Female,73.0
+80 years,Not Hispanic or Latino,Male,86.0
+80 years,Not Stated,Female,0.0
+80 years,Not Stated,Male,0.0
+81 years,Hispanic or Latino,Female,
+81 years,Hispanic or Latino,Male,
+81 years,Not Hispanic or Latino,Female,58.0
+81 years,Not Hispanic or Latino,Male,62.0
+81 years,Not Stated,Female,
+81 years,Not Stated,Male,
+82 years,Hispanic or Latino,Female,
+82 years,Hispanic or Latino,Male,
+82 years,Not Hispanic or Latino,Female,63.0
+82 years,Not Hispanic or Latino,Male,61.0
+82 years,Not Stated,Female,0.0
+82 years,Not Stated,Male,0.0
+83 years,Hispanic or Latino,Female,
+83 years,Hispanic or Latino,Male,
+83 years,Not Hispanic or Latino,Female,61.0
+83 years,Not Hispanic or Latino,Male,46.0
+83 years,Not Stated,Female,0.0
+83 years,Not Stated,Male,0.0
+84 years,Hispanic or Latino,Female,
+84 years,Hispanic or Latino,Male,
+84 years,Not Hispanic or Latino,Female,36.0
+84 years,Not Hispanic or Latino,Male,39.0
+84 years,Not Stated,Female,0.0
+84 years,Not Stated,Male,0.0
+85 years,Hispanic or Latino,Female,
+85 years,Hispanic or Latino,Male,
+85 years,Not Hispanic or Latino,Female,50.0
+85 years,Not Hispanic or Latino,Male,40.0
+85 years,Not Stated,Female,0.0
+85 years,Not Stated,Male,0.0
+86 years,Hispanic or Latino,Female,0.0
+86 years,Hispanic or Latino,Male,0.0
+86 years,Not Hispanic or Latino,Female,42.0
+86 years,Not Hispanic or Latino,Male,34.0
+86 years,Not Stated,Female,
+86 years,Not Stated,Male,0.0
+87 years,Hispanic or Latino,Female,
+87 years,Hispanic or Latino,Male,0.0
+87 years,Not Hispanic or Latino,Female,41.0
+87 years,Not Hispanic or Latino,Male,31.0
+87 years,Not Stated,Female,0.0
+87 years,Not Stated,Male,0.0
+88 years,Hispanic or Latino,Female,
+88 years,Hispanic or Latino,Male,
+88 years,Not Hispanic or Latino,Female,25.0
+88 years,Not Hispanic or Latino,Male,20.0
+88 years,Not Stated,Female,0.0
+88 years,Not Stated,Male,0.0
+89 years,Hispanic or Latino,Female,
+89 years,Hispanic or Latino,Male,
+89 years,Not Hispanic or Latino,Female,33.0
+89 years,Not Hispanic or Latino,Male,19.0
+89 years,Not Stated,Female,0.0
+89 years,Not Stated,Male,0.0
+90 years,Hispanic or Latino,Female,
+90 years,Hispanic or Latino,Male,
+90 years,Not Hispanic or Latino,Female,23.0
+90 years,Not Hispanic or Latino,Male,10.0
+90 years,Not Stated,Female,0.0
+90 years,Not Stated,Male,0.0
+91 years,Hispanic or Latino,Female,
+91 years,Hispanic or Latino,Male,
+91 years,Not Hispanic or Latino,Female,20.0
+91 years,Not Hispanic or Latino,Male,14.0
+91 years,Not Stated,Female,0.0
+91 years,Not Stated,Male,0.0
+92 years,Hispanic or Latino,Female,
+92 years,Hispanic or Latino,Male,0.0
+92 years,Not Hispanic or Latino,Female,18.0
+92 years,Not Hispanic or Latino,Male,12.0
+92 years,Not Stated,Female,0.0
+92 years,Not Stated,Male,0.0
+93 years,Hispanic or Latino,Female,
+93 years,Hispanic or Latino,Male,
+93 years,Not Hispanic or Latino,Female,21.0
+93 years,Not Hispanic or Latino,Male,
+93 years,Not Stated,Female,0.0
+93 years,Not Stated,Male,0.0
+94 years,Hispanic or Latino,Female,0.0
+94 years,Hispanic or Latino,Male,
+94 years,Not Hispanic or Latino,Female,
+94 years,Not Hispanic or Latino,Male,
+94 years,Not Stated,Female,
+94 years,Not Stated,Male,0.0
+95 years,Hispanic or Latino,Female,
+95 years,Hispanic or Latino,Male,0.0
+95 years,Not Hispanic or Latino,Female,
+95 years,Not Hispanic or Latino,Male,
+95 years,Not Stated,Female,0.0
+95 years,Not Stated,Male,0.0
+96 years,Hispanic or Latino,Female,0.0
+96 years,Hispanic or Latino,Male,0.0
+96 years,Not Hispanic or Latino,Female,18.0
+96 years,Not Hispanic or Latino,Male,
+96 years,Not Stated,Female,0.0
+96 years,Not Stated,Male,0.0
+97 years,Hispanic or Latino,Female,
+97 years,Hispanic or Latino,Male,0.0
+97 years,Not Hispanic or Latino,Female,
+97 years,Not Hispanic or Latino,Male,
+97 years,Not Stated,Female,0.0
+97 years,Not Stated,Male,0.0
+98 years,Hispanic or Latino,Female,
+98 years,Hispanic or Latino,Male,0.0
+98 years,Not Hispanic or Latino,Female,
+98 years,Not Hispanic or Latino,Male,
+98 years,Not Stated,Female,0.0
+98 years,Not Stated,Male,0.0
+99 years,Hispanic or Latino,Female,0.0
+99 years,Hispanic or Latino,Male,0.0
+99 years,Not Hispanic or Latino,Female,
+99 years,Not Hispanic or Latino,Male,
+99 years,Not Stated,Female,0.0
+99 years,Not Stated,Male,0.0
+100+ years,Hispanic or Latino,Female,0.0
+100+ years,Hispanic or Latino,Male,0.0
+100+ years,Not Hispanic or Latino,Female,
+100+ years,Not Hispanic or Latino,Male,
+100+ years,Not Stated,Female,0.0
+100+ years,Not Stated,Male,0.0
+Not Stated,Hispanic or Latino,Female,0.0
+Not Stated,Hispanic or Latino,Male,
+Not Stated,Not Hispanic or Latino,Female,
+Not Stated,Not Hispanic or Latino,Male,0.0
+Not Stated,Not Stated,Female,
+Not Stated,Not Stated,Male,
