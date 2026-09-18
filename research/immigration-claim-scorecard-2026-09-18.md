@@ -12,8 +12,10 @@ Date: 2026-09-18. Grades: **HARD** = the repo's own reproduced microdata contrad
 | Bryan Caplan | No. 24 August 2026: "virtually no immigrant nationality has worse crime rates than native-born blacks"; 27 August concedes low-skill immigrants "plausibly impose negative externalities on their local neighbourhoods" (Sá 2015, Saiz-Wachter 2011) and treats it as an airport-style externality to be priced, not a reason to restrict. | Every *Open Borders* claim. | archived posts [SOURCE: `x_econ_bryan_caplan.jsonl`] |
 | Nicholas Decker | No retraction; a practical concession. July 2026 proposes ranking visa applicants by pay, earnings and age. | "Immigrants must make us richer"; the double-world-GDP headline. | standing note table [SOURCE: archived post] |
 | Alex Nowrasteh | No. 15 September 2026, his highest-engagement post: Indian immigrant incarceration 49 per 100,000 against native-born 1,195. | The Texas conviction series (which the repo adopts, ladder 48) and the Cato fiscal ceiling. | standing note [SOURCE: archived post] |
+| Tyler Cowen (added 2026-09-18 evening) | Not a correction: the concessions were there from the start. 2004 "ease California's fiscal burdens"; 2019 "State and local governments are making immigration policy all the time"; 2024 "immigration flows and a welfare state are complements"; 2025 "native Germans have a net negative fiscal impact". | The CBO and Colas–Sachs fiscal citations (federal, model output); "assimilation will from now on proceed more rapidly" (2012). | [MR audit](immigration-marginal-revolution-claims-audit-2026-09-18.md) [SOURCE: full archive, 1,426 posts] |
+| Alex Tabarrok (added 2026-09-18 evening) | No. 2024 fiscal post names the NAS caveat (negative for high school and below) and then argues it away with indirect-effect models. | Open borders; "schooling... is really just a loan which they will have to pay back" (2015). | [MR audit](immigration-marginal-revolution-claims-audit-2026-09-18.md) [SOURCE: full archive, 283 posts] |
 
-The pattern is the same in all four: concessions arrive as new framing (selection, externality pricing, local costs) and the original headline claim is never marked as withdrawn. [INFERENCE from the archived texts]
+The pattern is the same in the first four: concessions arrive as new framing (selection, externality pricing, local costs) and the original headline claim is never marked as withdrawn. [INFERENCE from the archived texts]
 
 ## 2. Claim by claim
 
@@ -62,9 +64,13 @@ The pattern is the same in all four: concessions arrive as new framing (selectio
 | N4 | $14.5tn net positive, +$6.6tn at state and local (Cato fiscal ceiling) | Dies on two choices: zero public-goods cost (NAS itself calls it "less tenable" for sustained inflow; the swing is a documented sign flip) and counting US-born children as natives. The complete account is the average-cost version: −$254bn a year for one origin population | HARD |
 | N5 | Legal backlogs (nine-decade Indian EB waits) are deadweight | Adopted | AGREE |
 
+### Alex Tabarrok and Tyler Cowen (added 2026-09-18 evening)
+
+Graded from the full Marginal Revolution archive in the [MR audit](immigration-marginal-revolution-claims-audit-2026-09-18.md), 23 author-voice rows. Tabarrok: HARD 1 (2015, schooling as a loan repaid through later taxes: false on the Mexican-origin second generation, true on the all-origin average), COORDINATE 4 (NAS-plus-indirect-effects fiscal positive, jails convergence, open borders, Mexican cooks), AGREE 3. Cowen: HARD 0, COORDINATE 5 (CBO and Colas–Sachs fiscal citations, Florida-and-Texas-are-fine, 2012 assimilation forecast, 2026 "not a very large practical problem"), AGREE 10, including the California burden (2004), the state-local unit (2019), welfare complementarity (2024) and natives-negative-too (2025). Cowen's 2024 request for a cost-benefit study from critics is the sentence the resident account answers.
+
 ## 3. How big a dunk, honestly
 
-Count: HARD 9, COORDINATE 9, AGREE 10 across 27 rows. Three limits bound every HARD row.
+Count: HARD 9, COORDINATE 9, AGREE 10 across the 27 rows for the four targets; with Tabarrok and Cowen, HARD 10, COORDINATE 18, AGREE 23 across 50. Three limits bound every HARD row.
 
 1. **The repo measures resident groups, not admission.** Every fiscal figure is a benchmark gap or an absolute under a stated convention for a population already here, including descendants. None is the marginal effect of admitting one more person, which is what Caplan's and Decker's claims are nominally about (essay §9; ladder 119). A HARD grade means "the number they imply for this population is wrong," not "admission is a loss."
 2. **The absolute sign is a convention; the gap is not.** The −$254bn is the average-cost convention; under the pure-public-good convention for every non-transfer item it is +$35bn. What no convention changes is the −$291bn to −$354bn gap against same-age whites, and the fact that natives are negative too under the average-cost rule. The dunk on "net positive" is therefore that the claim is convention-dependent and the commentators never state the convention, not that the opposite sign is proven.
@@ -75,3 +81,7 @@ Where the dunk is largest and cleanest: the generational unit (S5, C4, N2), whic
 ## Sources
 
 Ladder entries 44, 45, 48, 65, 66, 76, 85, 100, 117, 119, 123, 125, 128, 130 in [the confidence ladder](immigration-confidence-ladder.md); lanes `all_age_ledger_2026_09_17`, `metro_match_2026_09_17`, `ledger_absolute_2026_09_17`; archived posts under `infra/immigration-fiscal/acs_institutional_2026_09_16/x_pull_2026_09_16/`; Smith's essays of 2024-01 and 2026-09-09 as quoted in the dismantle memo and standing note. All quotations of the targets are verbatim from those archives. [INSTRUMENT: LLM-conducted; the grading rubric is the author's and the AGREE rows are the check on its direction.]
+
+## Revisions
+
+- **2026-09-18 evening:** Added Tabarrok and Cowen from the full Marginal Revolution archive ([MR audit](immigration-marginal-revolution-claims-audit-2026-09-18.md)); the count line now carries both the four-target and six-commentator totals. Concept affected: scorecard coverage; no existing grade changed.
