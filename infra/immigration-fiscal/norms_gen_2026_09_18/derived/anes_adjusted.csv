@@ -1,0 +1,681 @@
+item,label,model,contrast,estimate,se,n
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",adj_hisp,Hisp G1 vs white G3+,0.0198864906245583,0.025391009577777634,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",adj_hisp,Hisp G2 vs white G3+,0.04262862397159975,0.029064584352922168,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",adj_hisp,Hisp G3+ vs white G3+,0.039823112712561254,0.02838889436666924,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",adj_hisp,Hisp G2 minus Hisp G1,0.02274213334704145,0.037125831987548555,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",adj_hisp,Hisp G3+ minus Hisp G1,0.019936622088002953,0.038820211511747,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",adj_hisp,Hisp G3+ minus Hisp G2,-0.0028055112590384956,0.041533274696631366,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_hisp,Hisp G1 vs white moderate,0.021226218333521674,0.026758503426081017,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_hisp,Hisp G2 vs white moderate,0.04212454375658903,0.03057283282787318,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_hisp,Hisp G3+ vs white moderate,0.039153764109743805,0.03029326833335393,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_hisp,Hisp G1 vs white conservative,0.0018417580479797024,0.026698867246034017,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_hisp,Hisp G2 vs white conservative,0.022740083471047057,0.0310144894263409,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_hisp,Hisp G3+ vs white conservative,0.019769303824201834,0.029700847237801926,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_hisp,Hisp G1 vs white liberal,0.0768628447782107,0.026745312752690764,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_hisp,Hisp G2 vs white liberal,0.09776117020127806,0.028741333213790504,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_hisp,Hisp G3+ vs white liberal,0.09479039055443284,0.02858870030412622,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_hisp,white conservative vs white liberal,0.075021086730231,0.012688086321414462,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",educ_hisp,Hisp G1 vs white no BA,-0.0020118221862674493,0.02570643861700585,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",educ_hisp,Hisp G2 vs white no BA,0.01765513940371788,0.030188875868367902,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",educ_hisp,Hisp G3+ vs white no BA,0.011272353177094371,0.028806527881101548,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",educ_hisp,white BA+ vs white no BA,-0.10241202639820934,0.009751034140757167,10024
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",adj_mex,Mex G1 vs white G3+,0.019253781078095444,0.041076960771274755,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",adj_mex,Mex G2 vs white G3+,0.05215095735882991,0.03798918893018363,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",adj_mex,Mex G3+ vs white G3+,0.0570383498025922,0.04555199549320335,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",adj_mex,Mex G2 minus Mex G1,0.032897176280734464,0.05316594085746355,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",adj_mex,Mex G3+ minus Mex G1,0.03778456872449676,0.06427789810055379,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",adj_mex,Mex G3+ minus Mex G2,0.004887392443762295,0.058988484587802925,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_mex,Mex G1 vs white moderate,0.023725302796817616,0.0410651418559556,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_mex,Mex G2 vs white moderate,0.05263693605238329,0.03865211435303699,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_mex,Mex G3+ vs white moderate,0.05598997623789226,0.046920677726560195,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_mex,Mex G1 vs white conservative,0.00443415878869613,0.04151619075467509,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_mex,Mex G2 vs white conservative,0.0333457920442618,0.039362712423635315,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_mex,Mex G3+ vs white conservative,0.03669883222977077,0.04635588235582257,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_mex,Mex G1 vs white liberal,0.07980770268756027,0.04209941073186827,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_mex,Mex G2 vs white liberal,0.10871933594312594,0.037912490097339886,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_mex,Mex G3+ vs white liberal,0.11207237612863491,0.045457733724653206,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",ideo_mex,white conservative vs white liberal,0.07537354389886414,0.012714851058465544,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",educ_mex,Mex G1 vs white no BA,0.012194021041177991,0.04022001095861902,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",educ_mex,Mex G2 vs white no BA,0.0328300697379168,0.038828720594394184,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",educ_mex,Mex G3+ vs white no BA,0.026940321553991897,0.04597253854377466,9320
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",educ_mex,white BA+ vs white no BA,-0.1036346832036291,0.009674312346937068,9320
+violence_justified,political violence is at least 'a little' justified,adj_hisp,Hisp G1 vs white G3+,0.16147980124335246,0.03143805615746909,10045
+violence_justified,political violence is at least 'a little' justified,adj_hisp,Hisp G2 vs white G3+,0.10418648469311295,0.030945825382322316,10045
+violence_justified,political violence is at least 'a little' justified,adj_hisp,Hisp G3+ vs white G3+,0.10102944062331992,0.026122332682349727,10045
+violence_justified,political violence is at least 'a little' justified,adj_hisp,Hisp G2 minus Hisp G1,-0.057293316550239504,0.04343174892527494,10045
+violence_justified,political violence is at least 'a little' justified,adj_hisp,Hisp G3+ minus Hisp G1,-0.060450360620032534,0.041171787739601264,10045
+violence_justified,political violence is at least 'a little' justified,adj_hisp,Hisp G3+ minus Hisp G2,-0.00315704406979303,0.040161601574398506,10045
+violence_justified,political violence is at least 'a little' justified,ideo_hisp,Hisp G1 vs white moderate,0.16366204275972773,0.033642400714989855,10045
+violence_justified,political violence is at least 'a little' justified,ideo_hisp,Hisp G2 vs white moderate,0.10861596607855994,0.03269076749316941,10045
+violence_justified,political violence is at least 'a little' justified,ideo_hisp,Hisp G3+ vs white moderate,0.10468369178802583,0.026897094529660884,10045
+violence_justified,political violence is at least 'a little' justified,ideo_hisp,Hisp G1 vs white conservative,0.200227349414678,0.03150234523231878,10045
+violence_justified,political violence is at least 'a little' justified,ideo_hisp,Hisp G2 vs white conservative,0.14518127273351022,0.032286038358704236,10045
+violence_justified,political violence is at least 'a little' justified,ideo_hisp,Hisp G3+ vs white conservative,0.14124899844297611,0.027566145731087423,10045
+violence_justified,political violence is at least 'a little' justified,ideo_hisp,Hisp G1 vs white liberal,0.11697660073666677,0.033614825351692676,10045
+violence_justified,political violence is at least 'a little' justified,ideo_hisp,Hisp G2 vs white liberal,0.06193052405549898,0.0309785963204064,10045
+violence_justified,political violence is at least 'a little' justified,ideo_hisp,Hisp G3+ vs white liberal,0.05799824976496487,0.028511260873444653,10045
+violence_justified,political violence is at least 'a little' justified,ideo_hisp,white conservative vs white liberal,-0.08325074867801124,0.01412560332265976,10045
+violence_justified,political violence is at least 'a little' justified,educ_hisp,Hisp G1 vs white no BA,0.1594320905849252,0.03211594584509737,10045
+violence_justified,political violence is at least 'a little' justified,educ_hisp,Hisp G2 vs white no BA,0.10076962957367891,0.031867201490747996,10045
+violence_justified,political violence is at least 'a little' justified,educ_hisp,Hisp G3+ vs white no BA,0.09639244962782306,0.0267124430317083,10045
+violence_justified,political violence is at least 'a little' justified,educ_hisp,white BA+ vs white no BA,-0.02484935756288502,0.008302558153122627,10045
+violence_justified,political violence is at least 'a little' justified,adj_mex,Mex G1 vs white G3+,0.20252392024408972,0.04717723133079266,9340
+violence_justified,political violence is at least 'a little' justified,adj_mex,Mex G2 vs white G3+,0.09501035748340142,0.0418424090622902,9340
+violence_justified,political violence is at least 'a little' justified,adj_mex,Mex G3+ vs white G3+,0.1369688180735999,0.04556502349226987,9340
+violence_justified,political violence is at least 'a little' justified,adj_mex,Mex G2 minus Mex G1,-0.1075135627606883,0.06559873679732152,9340
+violence_justified,political violence is at least 'a little' justified,adj_mex,Mex G3+ minus Mex G1,-0.06555510217048982,0.06872584670518357,9340
+violence_justified,political violence is at least 'a little' justified,adj_mex,Mex G3+ minus Mex G2,0.041958460590198476,0.05463202992176355,9340
+violence_justified,political violence is at least 'a little' justified,ideo_mex,Mex G1 vs white moderate,0.20399828631230799,0.048202979967734455,9340
+violence_justified,political violence is at least 'a little' justified,ideo_mex,Mex G2 vs white moderate,0.09945175291547159,0.04329058312363749,9340
+violence_justified,political violence is at least 'a little' justified,ideo_mex,Mex G3+ vs white moderate,0.1407752139497167,0.04678542120558148,9340
+violence_justified,political violence is at least 'a little' justified,ideo_mex,Mex G1 vs white conservative,0.2410674690523784,0.04743042127583495,9340
+violence_justified,political violence is at least 'a little' justified,ideo_mex,Mex G2 vs white conservative,0.13652093565554202,0.04302426866568666,9340
+violence_justified,political violence is at least 'a little' justified,ideo_mex,Mex G3+ vs white conservative,0.17784439668978713,0.046576253585577536,9340
+violence_justified,political violence is at least 'a little' justified,ideo_mex,Mex G1 vs white liberal,0.1601622096823848,0.049804863326334055,9340
+violence_justified,political violence is at least 'a little' justified,ideo_mex,Mex G2 vs white liberal,0.05561567628554839,0.0418871596067974,9340
+violence_justified,political violence is at least 'a little' justified,ideo_mex,Mex G3+ vs white liberal,0.0969391373197935,0.04779490462906432,9340
+violence_justified,political violence is at least 'a little' justified,ideo_mex,white conservative vs white liberal,-0.08090525936999363,0.01400580099412352,9340
+violence_justified,political violence is at least 'a little' justified,educ_mex,Mex G1 vs white no BA,0.20408748141929467,0.047260386896324884,9340
+violence_justified,political violence is at least 'a little' justified,educ_mex,Mex G2 vs white no BA,0.09176600849695676,0.042617725452978664,9340
+violence_justified,political violence is at least 'a little' justified,educ_mex,Mex G3+ vs white no BA,0.13044011949747655,0.045759697973444424,9340
+violence_justified,political violence is at least 'a little' justified,educ_mex,white BA+ vs white no BA,-0.02724584936267839,0.008160608897111435,9340
+trust_govt,trusts the federal government to do what is right always or most of the time,adj_hisp,Hisp G1 vs white G3+,0.09110731299515587,0.0274081012104481,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,adj_hisp,Hisp G2 vs white G3+,0.07860162882905081,0.027028369739188072,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,adj_hisp,Hisp G3+ vs white G3+,0.06525981653453228,0.023294019236227276,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,adj_hisp,Hisp G2 minus Hisp G1,-0.012505684166105063,0.039727828381323896,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,adj_hisp,Hisp G3+ minus Hisp G1,-0.025847496460623592,0.03748935968775041,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,adj_hisp,Hisp G3+ minus Hisp G2,-0.013341812294518529,0.03512881022447682,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_hisp,Hisp G1 vs white moderate,0.10740984980854196,0.028163846357696525,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_hisp,Hisp G2 vs white moderate,0.09596011637253765,0.027873784925036362,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_hisp,Hisp G3+ vs white moderate,0.08265352160018324,0.02429947918737485,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_hisp,Hisp G1 vs white conservative,0.09892085642372017,0.02805091031240365,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_hisp,Hisp G2 vs white conservative,0.08747112298771587,0.02825329820441304,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_hisp,Hisp G3+ vs white conservative,0.07416452821536146,0.024669057062119207,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_hisp,Hisp G1 vs white liberal,0.052617767395924775,0.02887943719350315,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_hisp,Hisp G2 vs white liberal,0.04116803395992047,0.028224904206766974,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_hisp,Hisp G3+ vs white liberal,0.02786143918756606,0.024744908132549787,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_hisp,white conservative vs white liberal,-0.0463030890277954,0.013496153695407177,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,educ_hisp,Hisp G1 vs white no BA,0.09229079251835944,0.027472669251157662,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,educ_hisp,Hisp G2 vs white no BA,0.07941898673581929,0.027609688756318657,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,educ_hisp,Hisp G3+ vs white no BA,0.06576427229702081,0.02398954958385064,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,educ_hisp,white BA+ vs white no BA,-0.0011749043497526201,0.009919529380084908,10080
+trust_govt,trusts the federal government to do what is right always or most of the time,adj_mex,Mex G1 vs white G3+,0.10201586421748912,0.04429863865364806,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,adj_mex,Mex G2 vs white G3+,0.0698059013641002,0.03836865472653631,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,adj_mex,Mex G3+ vs white G3+,-0.004404358911238249,0.03277864576851596,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,adj_mex,Mex G2 minus Mex G1,-0.032209962853388924,0.06017841725297912,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,adj_mex,Mex G3+ minus Mex G1,-0.10642022312872737,0.05776434299886804,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,adj_mex,Mex G3+ minus Mex G2,-0.07421026027533845,0.05083734509947308,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_mex,Mex G1 vs white moderate,0.11680744099192997,0.04404474797860439,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_mex,Mex G2 vs white moderate,0.08677859415404099,0.03923259741328876,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_mex,Mex G3+ vs white moderate,0.01321081077371744,0.03348412311406552,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_mex,Mex G1 vs white conservative,0.10816254251843671,0.04453438715144233,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_mex,Mex G2 vs white conservative,0.07813369568054773,0.038916577586097435,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_mex,Mex G3+ vs white conservative,0.004565912300224184,0.0336932015386091,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_mex,Mex G1 vs white liberal,0.062167639223247945,0.04518533267345833,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_mex,Mex G2 vs white liberal,0.032138792385358966,0.039049900503413656,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_mex,Mex G3+ vs white liberal,-0.04142899099496458,0.03347032221374214,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,ideo_mex,white conservative vs white liberal,-0.045994903295188766,0.013521247159697467,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,educ_mex,Mex G1 vs white no BA,0.10448396936609779,0.0442360020897319,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,educ_mex,Mex G2 vs white no BA,0.0707831367065056,0.03878729127795079,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,educ_mex,Mex G3+ vs white no BA,-0.004448314974825174,0.033334218677700755,9369
+trust_govt,trusts the federal government to do what is right always or most of the time,educ_mex,white BA+ vs white no BA,-0.002654855210891968,0.010308386084390563,9369
+trust_election_officials,trusts election officials a great deal or a lot,adj_hisp,Hisp G1 vs white G3+,-0.0035612466119400166,0.027857458902511872,10078
+trust_election_officials,trusts election officials a great deal or a lot,adj_hisp,Hisp G2 vs white G3+,0.04706881805504179,0.0298389153686157,10078
+trust_election_officials,trusts election officials a great deal or a lot,adj_hisp,Hisp G3+ vs white G3+,0.06282247960791415,0.02891454057219369,10078
+trust_election_officials,trusts election officials a great deal or a lot,adj_hisp,Hisp G2 minus Hisp G1,0.050630064666981806,0.04359367820818567,10078
+trust_election_officials,trusts election officials a great deal or a lot,adj_hisp,Hisp G3+ minus Hisp G1,0.06638372621985417,0.041185818314224694,10078
+trust_election_officials,trusts election officials a great deal or a lot,adj_hisp,Hisp G3+ minus Hisp G2,0.01575366155287236,0.041387626104986946,10078
+trust_election_officials,trusts election officials a great deal or a lot,ideo_hisp,Hisp G1 vs white moderate,0.038066253986181575,0.03043388962723811,10078
+trust_election_officials,trusts election officials a great deal or a lot,ideo_hisp,Hisp G2 vs white moderate,0.08388204333740568,0.031635606821925746,10078
+trust_election_officials,trusts election officials a great deal or a lot,ideo_hisp,Hisp G3+ vs white moderate,0.10021451348837673,0.031084043932230875,10078
+trust_election_officials,trusts election officials a great deal or a lot,ideo_hisp,Hisp G1 vs white conservative,-0.06704836136894698,0.029618140372066403,10078
+trust_election_officials,trusts election officials a great deal or a lot,ideo_hisp,Hisp G2 vs white conservative,-0.021232572017722884,0.03159820936506768,10078
+trust_election_officials,trusts election officials a great deal or a lot,ideo_hisp,Hisp G3+ vs white conservative,-0.004900101866751827,0.029961867183414675,10078
+trust_election_officials,trusts election officials a great deal or a lot,ideo_hisp,Hisp G1 vs white liberal,0.09790190698817547,0.02966667298764746,10078
+trust_election_officials,trusts election officials a great deal or a lot,ideo_hisp,Hisp G2 vs white liberal,0.14371769633939957,0.030491250938086606,10078
+trust_election_officials,trusts election officials a great deal or a lot,ideo_hisp,Hisp G3+ vs white liberal,0.16005016649037063,0.029367200546414552,10078
+trust_election_officials,trusts election officials a great deal or a lot,ideo_hisp,white conservative vs white liberal,0.16495026835712245,0.014063356039654513,10078
+trust_election_officials,trusts election officials a great deal or a lot,educ_hisp,Hisp G1 vs white no BA,-0.024723648567511664,0.028292643933619088,10078
+trust_election_officials,trusts election officials a great deal or a lot,educ_hisp,Hisp G2 vs white no BA,0.02306937032202161,0.03089146819570711,10078
+trust_election_officials,trusts election officials a great deal or a lot,educ_hisp,Hisp G3+ vs white no BA,0.0359695373147465,0.029588304082861578,10078
+trust_election_officials,trusts election officials a great deal or a lot,educ_hisp,white BA+ vs white no BA,-0.09298268711568855,0.011989060193977722,10078
+trust_election_officials,trusts election officials a great deal or a lot,adj_mex,Mex G1 vs white G3+,-0.006569935561802243,0.041536987551307206,9366
+trust_election_officials,trusts election officials a great deal or a lot,adj_mex,Mex G2 vs white G3+,0.08961593886767338,0.0443738566981471,9366
+trust_election_officials,trusts election officials a great deal or a lot,adj_mex,Mex G3+ vs white G3+,0.05424654451444061,0.042735466024349286,9366
+trust_election_officials,trusts election officials a great deal or a lot,adj_mex,Mex G2 minus Mex G1,0.09618587442947563,0.06458972863404087,9366
+trust_election_officials,trusts election officials a great deal or a lot,adj_mex,Mex G3+ minus Mex G1,0.06081648007624285,0.06061125176950448,9366
+trust_election_officials,trusts election officials a great deal or a lot,adj_mex,Mex G3+ minus Mex G2,-0.035369394353232775,0.06634114624112827,9366
+trust_election_officials,trusts election officials a great deal or a lot,ideo_mex,Mex G1 vs white moderate,0.039323601361594296,0.04189759186148309,9366
+trust_election_officials,trusts election officials a great deal or a lot,ideo_mex,Mex G2 vs white moderate,0.12731003268126173,0.04597216671546028,9366
+trust_election_officials,trusts election officials a great deal or a lot,ideo_mex,Mex G3+ vs white moderate,0.09056284296798167,0.04561902231153491,9366
+trust_election_officials,trusts election officials a great deal or a lot,ideo_mex,Mex G1 vs white conservative,-0.0657004247948576,0.04362223877252938,9366
+trust_election_officials,trusts election officials a great deal or a lot,ideo_mex,Mex G2 vs white conservative,0.02228600652480983,0.04570717538523365,9366
+trust_election_officials,trusts election officials a great deal or a lot,ideo_mex,Mex G3+ vs white conservative,-0.014461183188470228,0.04284305001863435,9366
+trust_election_officials,trusts election officials a great deal or a lot,ideo_mex,Mex G1 vs white liberal,0.09991039103352128,0.043790278298189635,9366
+trust_election_officials,trusts election officials a great deal or a lot,ideo_mex,Mex G2 vs white liberal,0.18789682235318872,0.04482182971339282,9366
+trust_election_officials,trusts election officials a great deal or a lot,ideo_mex,Mex G3+ vs white liberal,0.15114963263990866,0.04322254500333384,9366
+trust_election_officials,trusts election officials a great deal or a lot,ideo_mex,white conservative vs white liberal,0.1656108158283789,0.014044462339880104,9366
+trust_election_officials,trusts election officials a great deal or a lot,educ_mex,Mex G1 vs white no BA,-0.016046369471099282,0.042212551740404516,9366
+trust_election_officials,trusts election officials a great deal or a lot,educ_mex,Mex G2 vs white no BA,0.0701512347485993,0.04507585412561134,9366
+trust_election_officials,trusts election officials a great deal or a lot,educ_mex,Mex G3+ vs white no BA,0.026257688642181476,0.04248391651055181,9366
+trust_election_officials,trusts election officials a great deal or a lot,educ_mex,white BA+ vs white no BA,-0.09366415998246233,0.012008160324283352,9366
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,adj_hisp,Hisp G1 vs white G3+,-0.034301414025831756,0.04227091646051055,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,adj_hisp,Hisp G2 vs white G3+,-0.07553058455636347,0.03408838774978642,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,adj_hisp,Hisp G3+ vs white G3+,0.03582997305272709,0.03225098171249256,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,adj_hisp,Hisp G2 minus Hisp G1,-0.04122917053053171,0.054552408228856805,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,adj_hisp,Hisp G3+ minus Hisp G1,0.07013138707855884,0.05074820367793399,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,adj_hisp,Hisp G3+ minus Hisp G2,0.11136055760909055,0.04650601719572396,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_hisp,Hisp G1 vs white moderate,-0.02131282909319787,0.04472927351379101,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_hisp,Hisp G2 vs white moderate,-0.06923675633005177,0.039057284017383,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_hisp,Hisp G3+ vs white moderate,0.04232258941094402,0.03692456233240466,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_hisp,Hisp G1 vs white conservative,-0.14617562051352695,0.04163487977530315,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_hisp,Hisp G2 vs white conservative,-0.19409954775038085,0.03693564121667437,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_hisp,Hisp G3+ vs white conservative,-0.08254020200938506,0.03373464098305091,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_hisp,Hisp G1 vs white liberal,0.14338043615523643,0.042680853962159156,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_hisp,Hisp G2 vs white liberal,0.09545650891838253,0.03375997705383959,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_hisp,Hisp G3+ vs white liberal,0.20701585465937833,0.03316478536879491,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_hisp,white conservative vs white liberal,0.2895560566687634,0.017181831716930714,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,educ_hisp,Hisp G1 vs white no BA,-0.07016372657402034,0.04161928700432322,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,educ_hisp,Hisp G2 vs white no BA,-0.11412002797178639,0.03506445188026458,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,educ_hisp,Hisp G3+ vs white no BA,-0.008739293770489362,0.03201292452222934,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,educ_hisp,white BA+ vs white no BA,-0.15340554074947835,0.015466008597526797,9034
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,adj_mex,Mex G1 vs white G3+,-0.06362478797420879,0.06522985512228552,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,adj_mex,Mex G2 vs white G3+,-0.023977205358167497,0.04832381152757411,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,adj_mex,Mex G3+ vs white G3+,0.02670522059333924,0.046504880718146575,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,adj_mex,Mex G2 minus Mex G1,0.03964758261604129,0.08514741417847126,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,adj_mex,Mex G3+ minus Mex G1,0.09033000856754803,0.0785148750936704,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,adj_mex,Mex G3+ minus Mex G2,0.05068242595150674,0.06719520116240511,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_mex,Mex G1 vs white moderate,-0.044749636346756994,0.06604478371111853,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_mex,Mex G2 vs white moderate,-0.016670425941855527,0.05151156145730716,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_mex,Mex G3+ vs white moderate,0.032016658169677026,0.05200344576034302,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_mex,Mex G1 vs white conservative,-0.1692253201492555,0.06273043268170024,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_mex,Mex G2 vs white conservative,-0.14114610974435404,0.05183387591612529,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_mex,Mex G3+ vs white conservative,-0.09245902563282149,0.04592668902874687,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_mex,Mex G1 vs white liberal,0.1202669790465819,0.06464577637877855,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_mex,Mex G2 vs white liberal,0.14834618945148337,0.048368614565453744,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_mex,Mex G3+ vs white liberal,0.19703327356301592,0.046490664301717055,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,ideo_mex,white conservative vs white liberal,0.2894922991958374,0.017111730905000542,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,educ_mex,Mex G1 vs white no BA,-0.0799946361917655,0.06327268562283632,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,educ_mex,Mex G2 vs white no BA,-0.0554832060433903,0.049495071250308165,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,educ_mex,Mex G3+ vs white no BA,-0.015283905245560062,0.04718388336926114,8434
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,educ_mex,white BA+ vs white no BA,-0.15331264832206862,0.015445667505328357,8434
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",adj_hisp,Hisp G1 vs white G3+,-0.016975803906593923,0.05226229940646188,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",adj_hisp,Hisp G2 vs white G3+,-0.048623959654121696,0.05288044252628984,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",adj_hisp,Hisp G3+ vs white G3+,-0.030009773092104508,0.0494559801288025,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",adj_hisp,Hisp G2 minus Hisp G1,-0.03164815574752777,0.07413309095056671,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",adj_hisp,Hisp G3+ minus Hisp G1,-0.013033969185510585,0.06986798969850017,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",adj_hisp,Hisp G3+ minus Hisp G2,0.018614186562017188,0.0700758125377849,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_hisp,Hisp G1 vs white moderate,0.009177206342128041,0.05853403996889301,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_hisp,Hisp G2 vs white moderate,-0.02621782512574855,0.05743913355754293,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_hisp,Hisp G3+ vs white moderate,-0.004727753714284799,0.05479382755863642,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_hisp,Hisp G1 vs white conservative,-0.06295133623338467,0.05423560876042606,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_hisp,Hisp G2 vs white conservative,-0.09834636770126126,0.054186059802884226,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_hisp,Hisp G3+ vs white conservative,-0.07685629628979751,0.049631206708049116,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_hisp,Hisp G1 vs white liberal,-0.08963235144879711,0.05478986985421313,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_hisp,Hisp G2 vs white liberal,-0.1250273829166737,0.05470543440991574,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_hisp,Hisp G3+ vs white liberal,-0.10353731150520995,0.050423343796503005,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_hisp,white conservative vs white liberal,-0.02668101521541244,0.022283771345215128,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",educ_hisp,Hisp G1 vs white no BA,0.011374026358166756,0.055236021506983785,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",educ_hisp,Hisp G2 vs white no BA,-0.02634543721835436,0.054818978161577,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",educ_hisp,Hisp G3+ vs white no BA,-0.003539421989269931,0.05159155566563552,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",educ_hisp,white BA+ vs white no BA,0.08868788751511825,0.02397408652839953,3562
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",adj_mex,Mex G1 vs white G3+,-0.034413272137662876,0.08256062103622791,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",adj_mex,Mex G2 vs white G3+,-0.10899743893960823,0.06889778485447898,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",adj_mex,Mex G3+ vs white G3+,-0.0373464062786249,0.0782726257708003,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",adj_mex,Mex G2 minus Mex G1,-0.07458416680194535,0.11531632911742785,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",adj_mex,Mex G3+ minus Mex G1,-0.0029331341409620237,0.11014474426996146,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",adj_mex,Mex G3+ minus Mex G2,0.07165103266098333,0.09827540901100104,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_mex,Mex G1 vs white moderate,-0.013347044623373883,0.08916455331735752,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_mex,Mex G2 vs white moderate,-0.08793017723414742,0.07279483780877322,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_mex,Mex G3+ vs white moderate,-0.00999339577932945,0.07984183128150454,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_mex,Mex G1 vs white conservative,-0.08667418961698248,0.08538123903832072,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_mex,Mex G2 vs white conservative,-0.16125732222775602,0.06843887749714785,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_mex,Mex G3+ vs white conservative,-0.08332054077293805,0.07784649499652603,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_mex,Mex G1 vs white liberal,-0.11535657587935977,0.08569078349060383,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_mex,Mex G2 vs white liberal,-0.1899397084901333,0.0690990765463398,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_mex,Mex G3+ vs white liberal,-0.11200292703531534,0.07952868135194492,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",ideo_mex,white conservative vs white liberal,-0.02868238626237729,0.022485955931630927,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",educ_mex,Mex G1 vs white no BA,-0.020068107368428123,0.08541274134481282,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",educ_mex,Mex G2 vs white no BA,-0.0890072456331773,0.0698278419659514,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",educ_mex,Mex G3+ vs white no BA,-0.00961802030676251,0.07847584736821378,3314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",educ_mex,white BA+ vs white no BA,0.08968143698685727,0.024269871366826047,3314
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",adj_hisp,Hisp G1 vs white G3+,-0.040378210127706815,0.05068707750271546,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",adj_hisp,Hisp G2 vs white G3+,-0.0319089551755094,0.04591729518723639,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",adj_hisp,Hisp G3+ vs white G3+,0.08064545896311937,0.033709511635773674,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",adj_hisp,Hisp G2 minus Hisp G1,0.008469254952197414,0.06574921362417806,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",adj_hisp,Hisp G3+ minus Hisp G1,0.12102366909082618,0.057166426231855604,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",adj_hisp,Hisp G3+ minus Hisp G2,0.11255441413862877,0.05284717226088716,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_hisp,Hisp G1 vs white moderate,-0.009719352416292182,0.05457403633895568,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_hisp,Hisp G2 vs white moderate,-0.0036042936919788993,0.05211751453889029,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_hisp,Hisp G3+ vs white moderate,0.11095129271622117,0.04315620068762601,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_hisp,Hisp G1 vs white conservative,-0.05483495059002452,0.052898665370904756,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_hisp,Hisp G2 vs white conservative,-0.04871989186571124,0.04740739133885848,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_hisp,Hisp G3+ vs white conservative,0.06583569454248883,0.03748061024767986,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_hisp,Hisp G1 vs white liberal,-0.11529406050487045,0.05291627816888916,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_hisp,Hisp G2 vs white liberal,-0.10917900178055717,0.0472972285539469,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_hisp,Hisp G3+ vs white liberal,0.0053765846276429,0.035098125142123356,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_hisp,white conservative vs white liberal,-0.06045910991484593,0.020627422678071296,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",educ_hisp,Hisp G1 vs white no BA,-0.0016067709556015775,0.05259449672616418,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",educ_hisp,Hisp G2 vs white no BA,0.0003918688681292526,0.04765216689104118,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",educ_hisp,Hisp G3+ vs white no BA,0.11806702793782531,0.03654818599062709,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",educ_hisp,white BA+ vs white no BA,0.11934377479229719,0.019822838877874015,3570
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",adj_mex,Mex G1 vs white G3+,-0.04422894154115875,0.07975587072501165,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",adj_mex,Mex G2 vs white G3+,-0.09302752314300289,0.0670876523761104,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",adj_mex,Mex G3+ vs white G3+,0.12523995862707127,0.04317826800061347,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",adj_mex,Mex G2 minus Mex G1,-0.04879858160184414,0.10471979689572378,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",adj_mex,Mex G3+ minus Mex G1,0.16946890016823002,0.08939176670340547,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",adj_mex,Mex G3+ minus Mex G2,0.21826748177007416,0.07659374990527952,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_mex,Mex G1 vs white moderate,-0.017948084982261747,0.08193066217488587,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_mex,Mex G2 vs white moderate,-0.06593538406243216,0.07053221848711076,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_mex,Mex G3+ vs white moderate,0.1567968410129137,0.05032296288311055,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_mex,Mex G1 vs white conservative,-0.0638517983764384,0.08103439167810841,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_mex,Mex G2 vs white conservative,-0.1118390974566088,0.067891978721512,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_mex,Mex G3+ vs white conservative,0.11089312761873704,0.04530148075133016,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_mex,Mex G1 vs white liberal,-0.12669352235666986,0.08261138551121303,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_mex,Mex G2 vs white liberal,-0.17468082143684027,0.06775242268540246,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_mex,Mex G3+ vs white liberal,0.048051403638505574,0.043336471620969055,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",ideo_mex,white conservative vs white liberal,-0.06284172398023147,0.020919018841739953,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",educ_mex,Mex G1 vs white no BA,-0.01935828341880419,0.08050042487313212,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",educ_mex,Mex G2 vs white no BA,-0.06280865087129284,0.06772231802819123,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",educ_mex,Mex G3+ vs white no BA,0.16508842566373527,0.04481943849470082,3320
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",educ_mex,white BA+ vs white no BA,0.12266264453835829,0.019934505932799534,3320
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",adj_hisp,Hisp G1 vs white G3+,-0.1478611185469536,0.046254610851061924,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",adj_hisp,Hisp G2 vs white G3+,-0.09486855546262785,0.055982531188032425,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",adj_hisp,Hisp G3+ vs white G3+,-0.017339553120128026,0.03948253956589759,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",adj_hisp,Hisp G2 minus Hisp G1,0.05299256308432576,0.06641956194775742,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",adj_hisp,Hisp G3+ minus Hisp G1,0.13052156542682558,0.05062978115832727,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",adj_hisp,Hisp G3+ minus Hisp G2,0.07752900234249982,0.06442639037879436,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_hisp,Hisp G1 vs white moderate,-0.14038161641867908,0.0487686923742784,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_hisp,Hisp G2 vs white moderate,-0.08735137383693026,0.057381314578439986,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_hisp,Hisp G3+ vs white moderate,-0.009356542284941538,0.04300151146733697,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_hisp,Hisp G1 vs white conservative,-0.1566702959738675,0.045654992115699296,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_hisp,Hisp G2 vs white conservative,-0.10364005339211868,0.05920699543031836,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_hisp,Hisp G3+ vs white conservative,-0.02564522184012996,0.042853519640920816,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_hisp,Hisp G1 vs white liberal,-0.16186723792049484,0.05134982021871895,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_hisp,Hisp G2 vs white liberal,-0.10883699533874602,0.059259077095073096,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_hisp,Hisp G3+ vs white liberal,-0.030842163786757304,0.04350890435686082,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_hisp,white conservative vs white liberal,-0.0051969419466273425,0.02365441462709648,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",educ_hisp,Hisp G1 vs white no BA,-0.16479577010005794,0.04692559945595556,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",educ_hisp,Hisp G2 vs white no BA,-0.11125440301416623,0.05619279724533847,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",educ_hisp,Hisp G3+ vs white no BA,-0.034290668132271884,0.04050496784215775,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",educ_hisp,white BA+ vs white no BA,-0.046931059195659874,0.01908969114101283,5458
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",adj_mex,Mex G1 vs white G3+,-0.1933797991474704,0.06778647150125205,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",adj_mex,Mex G2 vs white G3+,-0.12895917814820756,0.0726362927152888,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",adj_mex,Mex G3+ vs white G3+,0.000347578093464751,0.06676256629548055,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",adj_mex,Mex G2 minus Mex G1,0.06442062099926282,0.09445574352078255,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",adj_mex,Mex G3+ minus Mex G1,0.19372737724093514,0.08527208757380635,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",adj_mex,Mex G3+ minus Mex G2,0.12930675624167232,0.0893655146674118,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_mex,Mex G1 vs white moderate,-0.18708811525641122,0.06763073223843666,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_mex,Mex G2 vs white moderate,-0.12154955908984144,0.0771597927188682,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_mex,Mex G3+ vs white moderate,0.00837002154745603,0.07035871773854979,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_mex,Mex G1 vs white conservative,-0.20473489310491044,0.06847909413278255,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_mex,Mex G2 vs white conservative,-0.13919633693834066,0.07413571277270085,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_mex,Mex G3+ vs white conservative,-0.009276756301043187,0.06909425030284383,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_mex,Mex G1 vs white liberal,-0.21170792262507265,0.07276589784968267,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_mex,Mex G2 vs white liberal,-0.14616936645850287,0.07343896751893242,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_mex,Mex G3+ vs white liberal,-0.016249785821205398,0.06910718560211139,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",ideo_mex,white conservative vs white liberal,-0.0069730295201622106,0.023877516044688088,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",educ_mex,Mex G1 vs white no BA,-0.20371568249543892,0.06717248102623836,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",educ_mex,Mex G2 vs white no BA,-0.14171223194568694,0.07298582498920696,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",educ_mex,Mex G3+ vs white no BA,-0.013558381647177153,0.06661155853189397,5109
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",educ_mex,white BA+ vs white no BA,-0.0449763009661559,0.01979958568741734,5109
+votes_counted_fairly,votes are counted fairly all or most of the time,adj_hisp,Hisp G1 vs white G3+,0.024241949254603212,0.03842883682026476,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,adj_hisp,Hisp G2 vs white G3+,0.012065859188706951,0.03441814840602811,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,adj_hisp,Hisp G3+ vs white G3+,-0.007957274215721566,0.030482558181042566,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,adj_hisp,Hisp G2 minus Hisp G1,-0.012176090065896261,0.04792970322584494,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,adj_hisp,Hisp G3+ minus Hisp G1,-0.03219922347032478,0.048113786375269724,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,adj_hisp,Hisp G3+ minus Hisp G2,-0.020023133404428517,0.04901812890771025,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_hisp,Hisp G1 vs white moderate,-0.04797290637073859,0.04127930543221106,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_hisp,Hisp G2 vs white moderate,-0.05230066007827894,0.03995605876585837,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_hisp,Hisp G3+ vs white moderate,-0.07203715062590677,0.03274206514200858,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_hisp,Hisp G1 vs white conservative,0.14064920007622428,0.03843033021484569,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_hisp,Hisp G2 vs white conservative,0.13632144636868393,0.03669263308115004,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_hisp,Hisp G3+ vs white conservative,0.1165849558210561,0.03207747574167679,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_hisp,Hisp G1 vs white liberal,-0.17760876139564408,0.039353451620385366,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_hisp,Hisp G2 vs white liberal,-0.18193651510318443,0.033533979531609345,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_hisp,Hisp G3+ vs white liberal,-0.20167300565081225,0.03181297789653001,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_hisp,white conservative vs white liberal,-0.31825796147186836,0.0138920438359044,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,educ_hisp,Hisp G1 vs white no BA,0.06413215519148374,0.03852158640907158,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,educ_hisp,Hisp G2 vs white no BA,0.05775311606506972,0.03686497757722951,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,educ_hisp,Hisp G3+ vs white no BA,0.04426028785543075,0.03135710384785362,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,educ_hisp,white BA+ vs white no BA,0.18922782684167777,0.013579712002754913,9081
+votes_counted_fairly,votes are counted fairly all or most of the time,adj_mex,Mex G1 vs white G3+,0.009455785453670096,0.05689982199253234,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,adj_mex,Mex G2 vs white G3+,-0.06193132167390125,0.050905126174219995,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,adj_mex,Mex G3+ vs white G3+,0.012665430753197648,0.04075607603093804,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,adj_mex,Mex G2 minus Mex G1,-0.07138710712757135,0.0710840841108782,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,adj_mex,Mex G3+ minus Mex G1,0.0032096452995275526,0.06726754809142489,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,adj_mex,Mex G3+ minus Mex G2,0.0745967524270989,0.07003627185821952,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_mex,Mex G1 vs white moderate,-0.0719902505793768,0.0575188059946185,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_mex,Mex G2 vs white moderate,-0.12837734719534133,0.05565829294920111,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_mex,Mex G3+ vs white moderate,-0.0508915696346266,0.04354469208604304,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_mex,Mex G1 vs white conservative,0.11689564075451164,0.05533395347455335,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_mex,Mex G2 vs white conservative,0.060508544138547116,0.05224515576765352,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_mex,Mex G3+ vs white conservative,0.13799432169926185,0.04006549756852326,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_mex,Mex G1 vs white liberal,-0.20285671005565864,0.05686222590256016,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_mex,Mex G2 vs white liberal,-0.25924380667162317,0.049590256242088016,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_mex,Mex G3+ vs white liberal,-0.18175802911090844,0.0428045041790583,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,ideo_mex,white conservative vs white liberal,-0.3197523508101703,0.013940236870433493,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,educ_mex,Mex G1 vs white no BA,0.024576300789692307,0.055109335092983644,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,educ_mex,Mex G2 vs white no BA,-0.0244681327871068,0.05268410954499322,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,educ_mex,Mex G3+ vs white no BA,0.06239007272982275,0.041555641171293276,8475
+votes_counted_fairly,votes are counted fairly all or most of the time,educ_mex,white BA+ vs white no BA,0.18952022575390215,0.013799992646087464,8475
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,adj_hisp,Hisp G1 vs white G3+,-0.03805042429540095,0.04367132403880671,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,adj_hisp,Hisp G2 vs white G3+,0.041613785429354455,0.041979084725505406,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,adj_hisp,Hisp G3+ vs white G3+,-0.026972229926135127,0.03271781232881095,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,adj_hisp,Hisp G2 minus Hisp G1,0.07966420972475541,0.05706285380800401,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,adj_hisp,Hisp G3+ minus Hisp G1,0.011078194369265826,0.05631961756011745,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,adj_hisp,Hisp G3+ minus Hisp G2,-0.06858601535548958,0.052399796147506165,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_hisp,Hisp G1 vs white moderate,-0.06505496562219548,0.04549976296345648,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_hisp,Hisp G2 vs white moderate,0.010973948627591046,0.04620681754374264,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_hisp,Hisp G3+ vs white moderate,-0.05704854370817403,0.03628488494912418,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_hisp,Hisp G1 vs white conservative,-0.10369366295646376,0.04572209058841338,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_hisp,Hisp G2 vs white conservative,-0.027664748706677234,0.042587987553622884,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_hisp,Hisp G3+ vs white conservative,-0.0956872410424423,0.034534062580083714,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_hisp,Hisp G1 vs white liberal,0.05504986947261914,0.04530001008990422,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_hisp,Hisp G2 vs white liberal,0.13107878372240567,0.04245080227026356,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_hisp,Hisp G3+ vs white liberal,0.0630562913866406,0.03269142589758524,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_hisp,white conservative vs white liberal,0.1587435324290829,0.018058543621733727,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,educ_hisp,Hisp G1 vs white no BA,-0.026941528089390612,0.044585497373908885,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,educ_hisp,Hisp G2 vs white no BA,0.052866956327098924,0.042524077176816014,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,educ_hisp,Hisp G3+ vs white no BA,-0.01504495838876856,0.034264833288092565,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,educ_hisp,white BA+ vs white no BA,0.03574800364729508,0.015799621455959284,9004
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,adj_mex,Mex G1 vs white G3+,-0.07026644533714577,0.05810751153285948,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,adj_mex,Mex G2 vs white G3+,0.038947081977438014,0.05229554333607182,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,adj_mex,Mex G3+ vs white G3+,-0.07560635432317925,0.045307371153495486,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,adj_mex,Mex G2 minus Mex G1,0.10921352731458378,0.07631551847810801,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,adj_mex,Mex G3+ minus Mex G1,-0.005339908986033481,0.07254289808127598,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,adj_mex,Mex G3+ minus Mex G2,-0.11455343630061726,0.06547795439837799,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_mex,Mex G1 vs white moderate,-0.09584015710781069,0.06049279788218974,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_mex,Mex G2 vs white moderate,0.008312853792848074,0.05555531736372088,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_mex,Mex G3+ vs white moderate,-0.10675119375574171,0.046866765486426876,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_mex,Mex G1 vs white conservative,-0.13391742255670325,0.060531342530772594,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_mex,Mex G2 vs white conservative,-0.029764411656044487,0.05289385851117567,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_mex,Mex G3+ vs white conservative,-0.14482845920463427,0.046685940736440994,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_mex,Mex G1 vs white liberal,0.02405400624201426,0.061038743265900856,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_mex,Mex G2 vs white liberal,0.12820701714267302,0.052829786370630516,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_mex,Mex G3+ vs white liberal,0.013142969594083231,0.04559861811584489,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,ideo_mex,white conservative vs white liberal,0.1579714287987175,0.018205880014305224,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,educ_mex,Mex G1 vs white no BA,-0.06085910145062112,0.05863569773133401,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,educ_mex,Mex G2 vs white no BA,0.04983669850385808,0.05231320748674133,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,educ_mex,Mex G3+ vs white no BA,-0.06390546031273106,0.04586095363102692,8406
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,educ_mex,white BA+ vs white no BA,0.03613585938913022,0.016191659078321267,8406
+auth_obedience,picks obedience over self-reliance as the more important child quality,adj_hisp,Hisp G1 vs white G3+,0.11454614057195212,0.04577590321885399,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,adj_hisp,Hisp G2 vs white G3+,0.021774103034941372,0.03537118276599596,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,adj_hisp,Hisp G3+ vs white G3+,0.05142932325822608,0.036314790565449735,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,adj_hisp,Hisp G2 minus Hisp G1,-0.09277203753701074,0.055035011630060894,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,adj_hisp,Hisp G3+ minus Hisp G1,-0.06311681731372604,0.058538735039924135,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,adj_hisp,Hisp G3+ minus Hisp G2,0.029655220223284706,0.04990344844441695,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_hisp,Hisp G1 vs white moderate,0.151953998419585,0.04716888546472034,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_hisp,Hisp G2 vs white moderate,0.0515459813428385,0.038359058073399156,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_hisp,Hisp G3+ vs white moderate,0.08067729231667653,0.039742831128430404,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_hisp,Hisp G1 vs white conservative,0.007448477867140646,0.047456068488542585,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_hisp,Hisp G2 vs white conservative,-0.09295953920960587,0.03766529396800727,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_hisp,Hisp G3+ vs white conservative,-0.06382822823576784,0.03620725911763859,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_hisp,Hisp G1 vs white liberal,0.3256474306691768,0.043995697131116986,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_hisp,Hisp G2 vs white liberal,0.22523941359243027,0.035409761028531446,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_hisp,Hisp G3+ vs white liberal,0.2543707245662683,0.037088897349692056,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_hisp,white conservative vs white liberal,0.31819895280203614,0.015784402054707818,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,educ_hisp,Hisp G1 vs white no BA,0.06716757570495585,0.04493711334936295,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,educ_hisp,Hisp G2 vs white no BA,-0.030854671889713803,0.03592507784291663,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,educ_hisp,Hisp G3+ vs white no BA,-0.008184700482888982,0.0379278792718536,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,educ_hisp,white BA+ vs white no BA,-0.20546617813203882,0.014450307109350989,9044
+auth_obedience,picks obedience over self-reliance as the more important child quality,adj_mex,Mex G1 vs white G3+,0.03986337297094744,0.06591068810512161,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,adj_mex,Mex G2 vs white G3+,-0.024527575752095854,0.04631462205789817,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,adj_mex,Mex G3+ vs white G3+,0.005460686523995978,0.05036417253080644,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,adj_mex,Mex G2 minus Mex G1,-0.0643909487230433,0.07572102570924225,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,adj_mex,Mex G3+ minus Mex G1,-0.034402686446951464,0.08614776014150367,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,adj_mex,Mex G3+ minus Mex G2,0.02998826227609183,0.06559499408616033,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_mex,Mex G1 vs white moderate,0.08667680039079695,0.06537019700930768,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_mex,Mex G2 vs white moderate,0.007211000330451078,0.048319347889643705,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_mex,Mex G3+ vs white moderate,0.034184284241016494,0.052823513367726706,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_mex,Mex G1 vs white conservative,-0.057934613604685214,0.06726930560679566,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_mex,Mex G2 vs white conservative,-0.13740041366503108,0.04752487860365819,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_mex,Mex G3+ vs white conservative,-0.11042712975446567,0.0499395818168998,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_mex,Mex G1 vs white liberal,0.2626597193942346,0.06379227367067046,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_mex,Mex G2 vs white liberal,0.18319391933388873,0.04626497703389501,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_mex,Mex G3+ vs white liberal,0.21016720324445415,0.05121659723516529,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,ideo_mex,white conservative vs white liberal,0.3205943329989198,0.015817976879345337,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,educ_mex,Mex G1 vs white no BA,0.015907765204194402,0.0647907142200298,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,educ_mex,Mex G2 vs white no BA,-0.06981163394138412,0.046383492122128354,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,educ_mex,Mex G3+ vs white no BA,-0.05188856002461251,0.052073126053804604,8440
+auth_obedience,picks obedience over self-reliance as the more important child quality,educ_mex,white BA+ vs white no BA,-0.2061305540461813,0.014445132901873475,8440
+auth_respect,picks respect for elders over independence,adj_hisp,Hisp G1 vs white G3+,0.009101563242914112,0.0348960140093045,9049
+auth_respect,picks respect for elders over independence,adj_hisp,Hisp G2 vs white G3+,0.039004191952708156,0.03233389985752122,9049
+auth_respect,picks respect for elders over independence,adj_hisp,Hisp G3+ vs white G3+,-0.004659658070814587,0.03002553036495004,9049
+auth_respect,picks respect for elders over independence,adj_hisp,Hisp G2 minus Hisp G1,0.029902628709794044,0.04509610419172063,9049
+auth_respect,picks respect for elders over independence,adj_hisp,Hisp G3+ minus Hisp G1,-0.0137612213137287,0.045836713368070936,9049
+auth_respect,picks respect for elders over independence,adj_hisp,Hisp G3+ minus Hisp G2,-0.04366385002352274,0.04579885324722398,9049
+auth_respect,picks respect for elders over independence,ideo_hisp,Hisp G1 vs white moderate,1.1972522091951987e-05,0.036966796604887574,9049
+auth_respect,picks respect for elders over independence,ideo_hisp,Hisp G2 vs white moderate,0.021447769392774152,0.03775643954789112,9049
+auth_respect,picks respect for elders over independence,ideo_hisp,Hisp G3+ vs white moderate,-0.022994964733913825,0.034086668911607464,9049
+auth_respect,picks respect for elders over independence,ideo_hisp,Hisp G1 vs white conservative,-0.1065971432107351,0.034128671359766286,9049
+auth_respect,picks respect for elders over independence,ideo_hisp,Hisp G2 vs white conservative,-0.0851613463400529,0.03375096155505874,9049
+auth_respect,picks respect for elders over independence,ideo_hisp,Hisp G3+ vs white conservative,-0.12960408046674088,0.03065370741649033,9049
+auth_respect,picks respect for elders over independence,ideo_hisp,Hisp G1 vs white liberal,0.26789940006915147,0.03384670384036594,9049
+auth_respect,picks respect for elders over independence,ideo_hisp,Hisp G2 vs white liberal,0.28933519693983367,0.03191604697859031,9049
+auth_respect,picks respect for elders over independence,ideo_hisp,Hisp G3+ vs white liberal,0.2448924628131457,0.030150370517980547,9049
+auth_respect,picks respect for elders over independence,ideo_hisp,white conservative vs white liberal,0.3744965432798866,0.017582607026063148,9049
+auth_respect,picks respect for elders over independence,educ_hisp,Hisp G1 vs white no BA,-0.039983921715974674,0.034885473367148735,9049
+auth_respect,picks respect for elders over independence,educ_hisp,Hisp G2 vs white no BA,-0.01466967210601533,0.03336567824196916,9049
+auth_respect,picks respect for elders over independence,educ_hisp,Hisp G3+ vs white no BA,-0.06510024561631353,0.032458039570214696,9049
+auth_respect,picks respect for elders over independence,educ_hisp,white BA+ vs white no BA,-0.20429674807848164,0.016288701043981446,9049
+auth_respect,picks respect for elders over independence,adj_mex,Mex G1 vs white G3+,-0.08752212489833866,0.04642433027045761,8444
+auth_respect,picks respect for elders over independence,adj_mex,Mex G2 vs white G3+,0.04903921122317323,0.04658796905886366,8444
+auth_respect,picks respect for elders over independence,adj_mex,Mex G3+ vs white G3+,-0.06297553789189986,0.047249316704667914,8444
+auth_respect,picks respect for elders over independence,adj_mex,Mex G2 minus Mex G1,0.1365613361215119,0.06682156839392508,8444
+auth_respect,picks respect for elders over independence,adj_mex,Mex G3+ minus Mex G1,0.024546587006438803,0.06651054376148481,8444
+auth_respect,picks respect for elders over independence,adj_mex,Mex G3+ minus Mex G2,-0.11201474911507309,0.06553821811253795,8444
+auth_respect,picks respect for elders over independence,ideo_mex,Mex G1 vs white moderate,-0.08576937453296418,0.0489575819646214,8444
+auth_respect,picks respect for elders over independence,ideo_mex,Mex G2 vs white moderate,0.03406551281103143,0.05041308225911547,8444
+auth_respect,picks respect for elders over independence,ideo_mex,Mex G3+ vs white moderate,-0.08166817589026598,0.04900884009758426,8444
+auth_respect,picks respect for elders over independence,ideo_mex,Mex G1 vs white conservative,-0.192449509753978,0.047493496401277605,8444
+auth_respect,picks respect for elders over independence,ideo_mex,Mex G2 vs white conservative,-0.0726146224099824,0.047245387777818726,8444
+auth_respect,picks respect for elders over independence,ideo_mex,Mex G3+ vs white conservative,-0.1883483111112798,0.04677380641281935,8444
+auth_respect,picks respect for elders over independence,ideo_mex,Mex G1 vs white liberal,0.1819197272981392,0.04885677107175161,8444
+auth_respect,picks respect for elders over independence,ideo_mex,Mex G2 vs white liberal,0.3017546146421348,0.04662657866049,8444
+auth_respect,picks respect for elders over independence,ideo_mex,Mex G3+ vs white liberal,0.1860209259408374,0.04694913221945399,8444
+auth_respect,picks respect for elders over independence,ideo_mex,white conservative vs white liberal,0.3743692370521172,0.01782873169676051,8444
+auth_respect,picks respect for elders over independence,educ_mex,Mex G1 vs white no BA,-0.11113117950165652,0.047602718610272085,8444
+auth_respect,picks respect for elders over independence,educ_mex,Mex G2 vs white no BA,0.0043410333653892685,0.046570979426388985,8444
+auth_respect,picks respect for elders over independence,educ_mex,Mex G3+ vs white no BA,-0.1201435281270171,0.04885057372378155,8444
+auth_respect,picks respect for elders over independence,educ_mex,white BA+ vs white no BA,-0.2049188562226053,0.01622727342555051,8444
+auth_manners,picks good manners over curiosity,adj_hisp,Hisp G1 vs white G3+,0.09011272478126398,0.03929249654353013,9053
+auth_manners,picks good manners over curiosity,adj_hisp,Hisp G2 vs white G3+,0.13141984533329681,0.03265067010718802,9053
+auth_manners,picks good manners over curiosity,adj_hisp,Hisp G3+ vs white G3+,0.06135567034860834,0.03341838608819198,9053
+auth_manners,picks good manners over curiosity,adj_hisp,Hisp G2 minus Hisp G1,0.04130712055203284,0.04569453699280726,9053
+auth_manners,picks good manners over curiosity,adj_hisp,Hisp G3+ minus Hisp G1,-0.028757054432655638,0.04508941033331,9053
+auth_manners,picks good manners over curiosity,adj_hisp,Hisp G3+ minus Hisp G2,-0.07006417498468848,0.0436096816865805,9053
+auth_manners,picks good manners over curiosity,ideo_hisp,Hisp G1 vs white moderate,0.07161338325421873,0.04059167244202606,9053
+auth_manners,picks good manners over curiosity,ideo_hisp,Hisp G2 vs white moderate,0.10416482562902019,0.03498525765218794,9053
+auth_manners,picks good manners over curiosity,ideo_hisp,Hisp G3+ vs white moderate,0.03271876200370105,0.034393181434923537,9053
+auth_manners,picks good manners over curiosity,ideo_hisp,Hisp G1 vs white conservative,-0.015231424092006396,0.039607743386632775,9053
+auth_manners,picks good manners over curiosity,ideo_hisp,Hisp G2 vs white conservative,0.017320018282795058,0.032518444520755786,9053
+auth_manners,picks good manners over curiosity,ideo_hisp,Hisp G3+ vs white conservative,-0.054126045342524076,0.03391999551282345,9053
+auth_manners,picks good manners over curiosity,ideo_hisp,Hisp G1 vs white liberal,0.3782056652603347,0.039486366697912605,9053
+auth_manners,picks good manners over curiosity,ideo_hisp,Hisp G2 vs white liberal,0.4107571076351362,0.03279540013168291,9053
+auth_manners,picks good manners over curiosity,ideo_hisp,Hisp G3+ vs white liberal,0.33931104400981704,0.03534818672640696,9053
+auth_manners,picks good manners over curiosity,ideo_hisp,white conservative vs white liberal,0.3934370893523411,0.017497094655141328,9053
+auth_manners,picks good manners over curiosity,educ_hisp,Hisp G1 vs white no BA,0.0272091326253842,0.04002755494950801,9053
+auth_manners,picks good manners over curiosity,educ_hisp,Hisp G2 vs white no BA,0.060774549733895844,0.034200575299490256,9053
+auth_manners,picks good manners over curiosity,educ_hisp,Hisp G3+ vs white no BA,-0.01965442133144242,0.036190317040776264,9053
+auth_manners,picks good manners over curiosity,educ_hisp,white BA+ vs white no BA,-0.2843254135341816,0.01676734711121333,9053
+auth_manners,picks good manners over curiosity,adj_mex,Mex G1 vs white G3+,0.05964048319014492,0.058773838566518015,8446
+auth_manners,picks good manners over curiosity,adj_mex,Mex G2 vs white G3+,0.17919849868648308,0.039239730255771266,8446
+auth_manners,picks good manners over curiosity,adj_mex,Mex G3+ vs white G3+,-0.009234191205612086,0.05251738970717114,8446
+auth_manners,picks good manners over curiosity,adj_mex,Mex G2 minus Mex G1,0.11955801549633815,0.06547588829661906,8446
+auth_manners,picks good manners over curiosity,adj_mex,Mex G3+ minus Mex G1,-0.06887467439575701,0.07334654539804772,8446
+auth_manners,picks good manners over curiosity,adj_mex,Mex G3+ minus Mex G2,-0.18843268989209516,0.059601369706239936,8446
+auth_manners,picks good manners over curiosity,ideo_mex,Mex G1 vs white moderate,0.05482210162071732,0.05910328997077803,8446
+auth_manners,picks good manners over curiosity,ideo_mex,Mex G2 vs white moderate,0.15523952990453616,0.039981179978001914,8446
+auth_manners,picks good manners over curiosity,ideo_mex,Mex G3+ vs white moderate,-0.037851488837602254,0.05380854909023565,8446
+auth_manners,picks good manners over curiosity,ideo_mex,Mex G1 vs white conservative,-0.031585634725580736,0.05826167306123366,8446
+auth_manners,picks good manners over curiosity,ideo_mex,Mex G2 vs white conservative,0.0688317935582381,0.039713404101506554,8446
+auth_manners,picks good manners over curiosity,ideo_mex,Mex G3+ vs white conservative,-0.12425922518390031,0.052753633431623946,8446
+auth_manners,picks good manners over curiosity,ideo_mex,Mex G1 vs white liberal,0.3635939379256903,0.05740483954837676,8446
+auth_manners,picks good manners over curiosity,ideo_mex,Mex G2 vs white liberal,0.4640113662095091,0.04004772224384011,8446
+auth_manners,picks good manners over curiosity,ideo_mex,Mex G3+ vs white liberal,0.2709203474673707,0.05501576547024733,8446
+auth_manners,picks good manners over curiosity,ideo_mex,white conservative vs white liberal,0.395179572651271,0.01749591128285725,8446
+auth_manners,picks good manners over curiosity,educ_mex,Mex G1 vs white no BA,0.03284858972281979,0.059426229613513085,8446
+auth_manners,picks good manners over curiosity,educ_mex,Mex G2 vs white no BA,0.12001373068311794,0.04100471054936488,8446
+auth_manners,picks good manners over curiosity,educ_mex,Mex G3+ vs white no BA,-0.08730088338834625,0.056128055858551795,8446
+auth_manners,picks good manners over curiosity,educ_mex,white BA+ vs white no BA,-0.28879680736698465,0.016731191267527,8446
+auth_behaved,picks well behaved over being considerate,adj_hisp,Hisp G1 vs white G3+,0.13915313262564633,0.0381614716941952,9058
+auth_behaved,picks well behaved over being considerate,adj_hisp,Hisp G2 vs white G3+,0.11167243232178314,0.032384843257053625,9058
+auth_behaved,picks well behaved over being considerate,adj_hisp,Hisp G3+ vs white G3+,0.053167831765672524,0.030302054354183577,9058
+auth_behaved,picks well behaved over being considerate,adj_hisp,Hisp G2 minus Hisp G1,-0.02748070030386318,0.05083509593881557,9058
+auth_behaved,picks well behaved over being considerate,adj_hisp,Hisp G3+ minus Hisp G1,-0.0859853008599738,0.04350268900959426,9058
+auth_behaved,picks well behaved over being considerate,adj_hisp,Hisp G3+ minus Hisp G2,-0.05850460055611062,0.04249253756703227,9058
+auth_behaved,picks well behaved over being considerate,ideo_hisp,Hisp G1 vs white moderate,0.1574526458168084,0.040784011334398504,9058
+auth_behaved,picks well behaved over being considerate,ideo_hisp,Hisp G2 vs white moderate,0.12613230093305017,0.03677252854600477,9058
+auth_behaved,picks well behaved over being considerate,ideo_hisp,Hisp G3+ vs white moderate,0.06687123972953501,0.03341181851068348,9058
+auth_behaved,picks well behaved over being considerate,ideo_hisp,Hisp G1 vs white conservative,0.09410751077017698,0.04123796124676134,9058
+auth_behaved,picks well behaved over being considerate,ideo_hisp,Hisp G2 vs white conservative,0.06278716588641875,0.03430392224165169,9058
+auth_behaved,picks well behaved over being considerate,ideo_hisp,Hisp G3+ vs white conservative,0.003526104682903597,0.03190228875710998,9058
+auth_behaved,picks well behaved over being considerate,ideo_hisp,Hisp G1 vs white liberal,0.2637979939333428,0.03773687102921132,9058
+auth_behaved,picks well behaved over being considerate,ideo_hisp,Hisp G2 vs white liberal,0.23247764904958457,0.03240534270509684,9058
+auth_behaved,picks well behaved over being considerate,ideo_hisp,Hisp G3+ vs white liberal,0.17321658784606941,0.03163526306575848,9058
+auth_behaved,picks well behaved over being considerate,ideo_hisp,white conservative vs white liberal,0.16969048316316582,0.015280818480196651,9058
+auth_behaved,picks well behaved over being considerate,educ_hisp,Hisp G1 vs white no BA,0.11964812910415017,0.039029185236816775,9058
+auth_behaved,picks well behaved over being considerate,educ_hisp,Hisp G2 vs white no BA,0.08772949894149684,0.03312372783746538,9058
+auth_behaved,picks well behaved over being considerate,educ_hisp,Hisp G3+ vs white no BA,0.023523864363962116,0.031127980398556573,9058
+auth_behaved,picks well behaved over being considerate,educ_hisp,white BA+ vs white no BA,-0.11636766218752703,0.011810572421310155,9058
+auth_behaved,picks well behaved over being considerate,adj_mex,Mex G1 vs white G3+,0.09944887911734257,0.05385357377542438,8452
+auth_behaved,picks well behaved over being considerate,adj_mex,Mex G2 vs white G3+,0.14092575344013575,0.04814464962772745,8452
+auth_behaved,picks well behaved over being considerate,adj_mex,Mex G3+ vs white G3+,0.039301166175754854,0.042261970820078494,8452
+auth_behaved,picks well behaved over being considerate,adj_mex,Mex G2 minus Mex G1,0.04147687432279318,0.07741038467011384,8452
+auth_behaved,picks well behaved over being considerate,adj_mex,Mex G3+ minus Mex G1,-0.060147712941587717,0.06936098933105202,8452
+auth_behaved,picks well behaved over being considerate,adj_mex,Mex G3+ minus Mex G2,-0.1016245872643809,0.06278297477266055,8452
+auth_behaved,picks well behaved over being considerate,ideo_mex,Mex G1 vs white moderate,0.12456753691086409,0.057731923182462376,8452
+auth_behaved,picks well behaved over being considerate,ideo_mex,Mex G2 vs white moderate,0.1569782395900401,0.05162909902318829,8452
+auth_behaved,picks well behaved over being considerate,ideo_mex,Mex G3+ vs white moderate,0.053126994953533124,0.04339180240725631,8452
+auth_behaved,picks well behaved over being considerate,ideo_mex,Mex G1 vs white conservative,0.061162959117642135,0.05609009250426352,8452
+auth_behaved,picks well behaved over being considerate,ideo_mex,Mex G2 vs white conservative,0.09357366179681814,0.04909560328367006,8452
+auth_behaved,picks well behaved over being considerate,ideo_mex,Mex G3+ vs white conservative,-0.010277582839688826,0.042808348622444335,8452
+auth_behaved,picks well behaved over being considerate,ideo_mex,Mex G1 vs white liberal,0.23397651039590484,0.052985078843742456,8452
+auth_behaved,picks well behaved over being considerate,ideo_mex,Mex G2 vs white liberal,0.26638721307508084,0.04840230128098621,8452
+auth_behaved,picks well behaved over being considerate,ideo_mex,Mex G3+ vs white liberal,0.16253596843857387,0.043715665430284496,8452
+auth_behaved,picks well behaved over being considerate,ideo_mex,white conservative vs white liberal,0.1728135512782627,0.015037563269671648,8452
+auth_behaved,picks well behaved over being considerate,educ_mex,Mex G1 vs white no BA,0.09695803701172351,0.05475756628089274,8452
+auth_behaved,picks well behaved over being considerate,educ_mex,Mex G2 vs white no BA,0.12191920113604127,0.048987153006801266,8452
+auth_behaved,picks well behaved over being considerate,educ_mex,Mex G3+ vs white no BA,0.010345502079484717,0.04378076325201075,8452
+auth_behaved,picks well behaved over being considerate,educ_mex,white BA+ vs white no BA,-0.11791228491521716,0.011853282585964615,8452
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",adj_hisp,Hisp G1 vs white G3+,-0.1405559123609747,0.06026645938117705,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",adj_hisp,Hisp G2 vs white G3+,-0.10646445818691352,0.03501547552277295,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",adj_hisp,Hisp G3+ vs white G3+,-0.1222967494540892,0.04573639009312714,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",adj_hisp,Hisp G2 minus Hisp G1,0.034091454174061175,0.06666429832253695,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",adj_hisp,Hisp G3+ minus Hisp G1,0.018259162906885507,0.08066125519610148,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",adj_hisp,Hisp G3+ minus Hisp G2,-0.01583229126717567,0.05417905312983677,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_hisp,Hisp G1 vs white moderate,-0.12808522558567903,0.06080888248975935,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_hisp,Hisp G2 vs white moderate,-0.10981928943658836,0.04176204534001504,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_hisp,Hisp G3+ vs white moderate,-0.12511598480310737,0.04859113915670594,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_hisp,Hisp G1 vs white conservative,-0.30025681945284877,0.0575256168174789,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_hisp,Hisp G2 vs white conservative,-0.2819908833037581,0.03615256769849523,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_hisp,Hisp G3+ vs white conservative,-0.2972875786702771,0.048848443084563486,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_hisp,Hisp G1 vs white liberal,0.11885346082302584,0.0597601794881966,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_hisp,Hisp G2 vs white liberal,0.1371193969721165,0.0350508048767375,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_hisp,Hisp G3+ vs white liberal,0.1218227016055975,0.044266328003390934,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_hisp,white conservative vs white liberal,0.4191102802758746,0.015362852532633335,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",educ_hisp,Hisp G1 vs white no BA,-0.17336086561363706,0.05983345103864502,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",educ_hisp,Hisp G2 vs white no BA,-0.14562797801803673,0.036390994824527734,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",educ_hisp,Hisp G3+ vs white no BA,-0.16591631766665138,0.04617942131333379,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",educ_hisp,white BA+ vs white no BA,-0.14791316304924462,0.018974666796909217,5467
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",adj_mex,Mex G1 vs white G3+,-0.2997167314188798,0.07268892009034997,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",adj_mex,Mex G2 vs white G3+,-0.1841371984197353,0.056761116216737635,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",adj_mex,Mex G3+ vs white G3+,-0.2116049002059044,0.05443095346229486,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",adj_mex,Mex G2 minus Mex G1,0.11557953299914447,0.09420167325970108,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",adj_mex,Mex G3+ minus Mex G1,0.08811183121297539,0.08709885921336999,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",adj_mex,Mex G3+ minus Mex G2,-0.027467701786169085,0.07374298146841943,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_mex,Mex G1 vs white moderate,-0.2792533826171397,0.06960975171321059,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_mex,Mex G2 vs white moderate,-0.184172550118737,0.05895277594540303,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_mex,Mex G3+ vs white moderate,-0.21602283816457768,0.05643083496404316,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_mex,Mex G1 vs white conservative,-0.45219058672909895,0.06740847746159082,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_mex,Mex G2 vs white conservative,-0.35710975423069624,0.05705616005581829,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_mex,Mex G3+ vs white conservative,-0.3889600422765369,0.054355754339756916,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_mex,Mex G1 vs white liberal,-0.036101861911495337,0.06789917122319566,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_mex,Mex G2 vs white liberal,0.058978970586907375,0.05820245561414309,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_mex,Mex G3+ vs white liberal,0.027128682541066707,0.05326197899370046,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",ideo_mex,white conservative vs white liberal,0.4160887248176036,0.015272414932200423,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",educ_mex,Mex G1 vs white no BA,-0.31058295092472527,0.07137905168163386,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",educ_mex,Mex G2 vs white no BA,-0.212248725639963,0.05818775001194522,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",educ_mex,Mex G3+ vs white no BA,-0.24842988299328417,0.05445705218901613,5118
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",educ_mex,white BA+ vs white no BA,-0.1466299973299443,0.018370079863365512,5118
+born_here_important,says being born in the US is very or fairly important to being American,adj_hisp,Hisp G1 vs white G3+,-0.09841920517898628,0.042902818592179336,9015
+born_here_important,says being born in the US is very or fairly important to being American,adj_hisp,Hisp G2 vs white G3+,0.04538668095284798,0.03778811521967132,9015
+born_here_important,says being born in the US is very or fairly important to being American,adj_hisp,Hisp G3+ vs white G3+,0.004293922341118306,0.031090668037635258,9015
+born_here_important,says being born in the US is very or fairly important to being American,adj_hisp,Hisp G2 minus Hisp G1,0.14380588613183426,0.051124023686238196,9015
+born_here_important,says being born in the US is very or fairly important to being American,adj_hisp,Hisp G3+ minus Hisp G1,0.10271312752010459,0.051103397607596544,9015
+born_here_important,says being born in the US is very or fairly important to being American,adj_hisp,Hisp G3+ minus Hisp G2,-0.041092758611729674,0.04374687779855532,9015
+born_here_important,says being born in the US is very or fairly important to being American,ideo_hisp,Hisp G1 vs white moderate,-0.11952960351877717,0.045024973569581454,9015
+born_here_important,says being born in the US is very or fairly important to being American,ideo_hisp,Hisp G2 vs white moderate,0.017130745812081738,0.04072806311187719,9015
+born_here_important,says being born in the US is very or fairly important to being American,ideo_hisp,Hisp G3+ vs white moderate,-0.0253898671807975,0.032796150687800285,9015
+born_here_important,says being born in the US is very or fairly important to being American,ideo_hisp,Hisp G1 vs white conservative,-0.18253793691902587,0.04198818932386889,9015
+born_here_important,says being born in the US is very or fairly important to being American,ideo_hisp,Hisp G2 vs white conservative,-0.04587758758816696,0.039376526131139,9015
+born_here_important,says being born in the US is very or fairly important to being American,ideo_hisp,Hisp G3+ vs white conservative,-0.0883982005810462,0.033322006559854164,9015
+born_here_important,says being born in the US is very or fairly important to being American,ideo_hisp,Hisp G1 vs white liberal,0.15335546104554854,0.04238652617248121,9015
+born_here_important,says being born in the US is very or fairly important to being American,ideo_hisp,Hisp G2 vs white liberal,0.29001581037640745,0.03806200220854963,9015
+born_here_important,says being born in the US is very or fairly important to being American,ideo_hisp,Hisp G3+ vs white liberal,0.2474951973835282,0.03540355715137152,9015
+born_here_important,says being born in the US is very or fairly important to being American,ideo_hisp,white conservative vs white liberal,0.3358933979645744,0.017154041926602484,9015
+born_here_important,says being born in the US is very or fairly important to being American,educ_hisp,Hisp G1 vs white no BA,-0.14164727098640234,0.04270567720949014,9015
+born_here_important,says being born in the US is very or fairly important to being American,educ_hisp,Hisp G2 vs white no BA,-0.0029000087417803133,0.03813502792766305,9015
+born_here_important,says being born in the US is very or fairly important to being American,educ_hisp,Hisp G3+ vs white no BA,-0.05169671167163334,0.03335742017893143,9015
+born_here_important,says being born in the US is very or fairly important to being American,educ_hisp,white BA+ vs white no BA,-0.203953723949162,0.014023571542237002,9015
+born_here_important,says being born in the US is very or fairly important to being American,adj_mex,Mex G1 vs white G3+,-0.06942494180550463,0.062129687220756236,8414
+born_here_important,says being born in the US is very or fairly important to being American,adj_mex,Mex G2 vs white G3+,0.08528065163103615,0.05171471777661662,8414
+born_here_important,says being born in the US is very or fairly important to being American,adj_mex,Mex G3+ vs white G3+,-0.020293558064974182,0.048408484984204365,8414
+born_here_important,says being born in the US is very or fairly important to being American,adj_mex,Mex G2 minus Mex G1,0.15470559343654078,0.07638177758653007,8414
+born_here_important,says being born in the US is very or fairly important to being American,adj_mex,Mex G3+ minus Mex G1,0.04913138374053044,0.07573934908375461,8414
+born_here_important,says being born in the US is very or fairly important to being American,adj_mex,Mex G3+ minus Mex G2,-0.10557420969601033,0.06682383064667773,8414
+born_here_important,says being born in the US is very or fairly important to being American,ideo_mex,Mex G1 vs white moderate,-0.0777952577955019,0.06088569076133813,8414
+born_here_important,says being born in the US is very or fairly important to being American,ideo_mex,Mex G2 vs white moderate,0.060240819069421025,0.05511631233294773,8414
+born_here_important,says being born in the US is very or fairly important to being American,ideo_mex,Mex G3+ vs white moderate,-0.04937368729352398,0.04980998905695516,8414
+born_here_important,says being born in the US is very or fairly important to being American,ideo_mex,Mex G1 vs white conservative,-0.14096026119260507,0.05921314503407335,8414
+born_here_important,says being born in the US is very or fairly important to being American,ideo_mex,Mex G2 vs white conservative,-0.0029241843276821555,0.05284137017596456,8414
+born_here_important,says being born in the US is very or fairly important to being American,ideo_mex,Mex G3+ vs white conservative,-0.11253869069062716,0.050225454675299125,8414
+born_here_important,says being born in the US is very or fairly important to being American,ideo_mex,Mex G1 vs white liberal,0.1976310320377559,0.06048717669362726,8414
+born_here_important,says being born in the US is very or fairly important to being American,ideo_mex,Mex G2 vs white liberal,0.3356671089026788,0.051864738644543856,8414
+born_here_important,says being born in the US is very or fairly important to being American,ideo_mex,Mex G3+ vs white liberal,0.2260526025397338,0.052670219592666975,8414
+born_here_important,says being born in the US is very or fairly important to being American,ideo_mex,white conservative vs white liberal,0.33859129323036097,0.016968940138134016,8414
+born_here_important,says being born in the US is very or fairly important to being American,educ_mex,Mex G1 vs white no BA,-0.08643186341107711,0.05949112407725945,8414
+born_here_important,says being born in the US is very or fairly important to being American,educ_mex,Mex G2 vs white no BA,0.04557115816093393,0.05207108893712198,8414
+born_here_important,says being born in the US is very or fairly important to being American,educ_mex,Mex G3+ vs white no BA,-0.07309046950598759,0.05000468695025834,8414
+born_here_important,says being born in the US is very or fairly important to being American,educ_mex,white BA+ vs white no BA,-0.20466509257802018,0.014108972341515988,8414
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",adj_hisp,Hisp G1 vs white G3+,0.3511923629151763,0.11734970971596287,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",adj_hisp,Hisp G2 vs white G3+,0.29741224165029245,0.07592908794196845,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",adj_hisp,Hisp G3+ vs white G3+,0.1597366872933217,0.08471633740213809,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",adj_hisp,Hisp G2 minus Hisp G1,-0.05378012126488385,0.130090351083769,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",adj_hisp,Hisp G3+ minus Hisp G1,-0.19145567562185462,0.13177946610610616,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",adj_hisp,Hisp G3+ minus Hisp G2,-0.13767555435697076,0.11222992322505675,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_hisp,Hisp G1 vs white moderate,0.37766658490953375,0.12306843012800231,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_hisp,Hisp G2 vs white moderate,0.29483043710836476,0.08442560979696541,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_hisp,Hisp G3+ vs white moderate,0.15390657275625585,0.09034295026179479,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_hisp,Hisp G1 vs white conservative,-0.020618773233547216,0.11923415224013802,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_hisp,Hisp G2 vs white conservative,-0.10345492103471621,0.08280581486022981,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_hisp,Hisp G3+ vs white conservative,-0.24437878538682511,0.08713399412335321,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_hisp,Hisp G1 vs white liberal,1.2332214274572042,0.1120028898046267,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_hisp,Hisp G2 vs white liberal,1.1503852796560352,0.0780569741147929,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_hisp,Hisp G3+ vs white liberal,1.0094614153039263,0.08941594216455638,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_hisp,white conservative vs white liberal,1.2538402006907514,0.04768057516300094,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",educ_hisp,Hisp G1 vs white no BA,0.17367851672259974,0.11645435076466826,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",educ_hisp,Hisp G2 vs white no BA,0.09638269330874039,0.07971559813004053,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",educ_hisp,Hisp G3+ vs white no BA,-0.07074151883513491,0.09183145881942135,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",educ_hisp,white BA+ vs white no BA,-0.8105206913025769,0.04072628891197062,9009
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",adj_mex,Mex G1 vs white G3+,0.10891260324980934,0.17350049272911178,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",adj_mex,Mex G2 vs white G3+,0.33644761274380164,0.1130946629481119,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",adj_mex,Mex G3+ vs white G3+,-0.028209132522011626,0.12915230323477703,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",adj_mex,Mex G2 minus Mex G1,0.2275350094939923,0.19991235452898964,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",adj_mex,Mex G3+ minus Mex G1,-0.13712173577182096,0.21795757059425575,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",adj_mex,Mex G3+ minus Mex G2,-0.36465674526581326,0.16920268095322918,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_mex,Mex G1 vs white moderate,0.1764102191920447,0.17857065127557156,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_mex,Mex G2 vs white moderate,0.3432348747913192,0.11967763716809121,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_mex,Mex G3+ vs white moderate,-0.03477373650664628,0.1312870489706796,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_mex,Mex G1 vs white conservative,-0.2215512853503352,0.17569145398891972,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_mex,Mex G2 vs white conservative,-0.054726629751060685,0.11804175645456524,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_mex,Mex G3+ vs white conservative,-0.43273524104902616,0.1300144875965405,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_mex,Mex G1 vs white liberal,1.0393129815282176,0.16801701988705686,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_mex,Mex G2 vs white liberal,1.2061376371274921,0.11466090379837655,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_mex,Mex G3+ vs white liberal,0.8281290258295266,0.13278088377923522,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",ideo_mex,white conservative vs white liberal,1.2608642668785528,0.047872394127087034,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",educ_mex,Mex G1 vs white no BA,0.03408443645624426,0.17512169897505214,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",educ_mex,Mex G2 vs white no BA,0.16800102226175895,0.11568126592438638,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",educ_mex,Mex G3+ vs white no BA,-0.24987873283535766,0.13783333696101108,8406
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices",educ_mex,white BA+ vs white no BA,-0.8179953039795842,0.040664887992892265,8406

@@ -1,0 +1,239 @@
+item,label,years,group,n,mean,se
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)","[2020, 2024]",Mex G1,158,0.20304931852215857,0.040569795221013324
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)","[2020, 2024]",Mex G2,225,0.23739895066569766,0.03832382874297217
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)","[2020, 2024]",Mex G3+,192,0.2238870767848322,0.045795525862497334
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)","[2020, 2024]",Hisp G1,353,0.1884957890416541,0.025187308863874536
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)","[2020, 2024]",Hisp G2,418,0.22024714474244741,0.02871524281224148
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)","[2020, 2024]",Hisp G3+,508,0.20741588126159322,0.027417914728361473
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)","[2020, 2024]",Hisp G3 (gp foreign),247,0.23399482507692057,0.03921261963152568
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)","[2020, 2024]",Hisp G4+ (no gp foreign),252,0.19188157150603696,0.03751853705550705
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)","[2020, 2024]",NHWhite G3+,8745,0.14509114291819036,0.005232777199389905
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)","[2020, 2024]",White G3+ liberal,2645,0.0762121731040908,0.007191631714861476
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)","[2020, 2024]",White G3+ moderate,1731,0.1507850133711649,0.011942993599558678
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)","[2020, 2024]",White G3+ conservative,3440,0.16345167290258797,0.009323240243042232
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)","[2020, 2024]",White G3+ no BA,4561,0.1887541750573406,0.00792635489122385
+strpres_helpful,"president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)","[2020, 2024]",White G3+ BA+,4097,0.07547260296630587,0.005011032510022076
+violence_justified,political violence is at least 'a little' justified,"[2020, 2024]",Mex G1,156,0.35180057581192664,0.05165068655527941
+violence_justified,political violence is at least 'a little' justified,"[2020, 2024]",Mex G2,224,0.2901989519768433,0.04184525367843733
+violence_justified,political violence is at least 'a little' justified,"[2020, 2024]",Mex G3+,193,0.30619786771421204,0.047129769768208624
+violence_justified,political violence is at least 'a little' justified,"[2020, 2024]",Hisp G1,351,0.3033378426547958,0.033257087844536556
+violence_justified,political violence is at least 'a little' justified,"[2020, 2024]",Hisp G2,420,0.28988955721558596,0.03138516731779217
+violence_justified,political violence is at least 'a little' justified,"[2020, 2024]",Hisp G3+,507,0.26403922680166436,0.02647998097704375
+violence_justified,political violence is at least 'a little' justified,"[2020, 2024]",Hisp G3 (gp foreign),246,0.30514594017795943,0.04303998170009256
+violence_justified,political violence is at least 'a little' justified,"[2020, 2024]",Hisp G4+ (no gp foreign),252,0.23836078249926523,0.03395242024831672
+violence_justified,political violence is at least 'a little' justified,"[2020, 2024]",NHWhite G3+,8767,0.12003452854576156,0.004552282616218058
+violence_justified,political violence is at least 'a little' justified,"[2020, 2024]",White G3+ liberal,2644,0.15783070017337297,0.011001564322033044
+violence_justified,political violence is at least 'a little' justified,"[2020, 2024]",White G3+ moderate,1734,0.12387971347281532,0.01175222012070219
+violence_justified,political violence is at least 'a little' justified,"[2020, 2024]",White G3+ conservative,3449,0.07233179260926778,0.006867824810434803
+violence_justified,political violence is at least 'a little' justified,"[2020, 2024]",White G3+ no BA,4579,0.13718122381491646,0.006276527877765095
+violence_justified,political violence is at least 'a little' justified,"[2020, 2024]",White G3+ BA+,4100,0.09493827267587268,0.00550091404333182
+trust_govt,trusts the federal government to do what is right always or most of the time,"[2020, 2024]",Mex G1,157,0.23072715215297623,0.04463105371045671
+trust_govt,trusts the federal government to do what is right always or most of the time,"[2020, 2024]",Mex G2,227,0.17233657605966154,0.03880440200298706
+trust_govt,trusts the federal government to do what is right always or most of the time,"[2020, 2024]",Mex G3+,193,0.10895794856881444,0.03187367878104823
+trust_govt,trusts the federal government to do what is right always or most of the time,"[2020, 2024]",Hisp G1,354,0.21829783670120192,0.027776630291948264
+trust_govt,trusts the federal government to do what is right always or most of the time,"[2020, 2024]",Hisp G2,425,0.18175748616590212,0.026839264011828068
+trust_govt,trusts the federal government to do what is right always or most of the time,"[2020, 2024]",Hisp G3+,509,0.17986521537515437,0.022582998180431118
+trust_govt,trusts the federal government to do what is right always or most of the time,"[2020, 2024]",Hisp G3 (gp foreign),247,0.1230301150981814,0.026758740557437016
+trust_govt,trusts the federal government to do what is right always or most of the time,"[2020, 2024]",Hisp G4+ (no gp foreign),253,0.2228603467380666,0.03564843559707496
+trust_govt,trusts the federal government to do what is right always or most of the time,"[2020, 2024]",NHWhite G3+,8792,0.12875477645298106,0.0044293986891552235
+trust_govt,trusts the federal government to do what is right always or most of the time,"[2020, 2024]",White G3+ liberal,2651,0.15590740571586623,0.009303379718676025
+trust_govt,trusts the federal government to do what is right always or most of the time,"[2020, 2024]",White G3+ moderate,1738,0.10936131705171388,0.008847921415820147
+trust_govt,trusts the federal government to do what is right always or most of the time,"[2020, 2024]",White G3+ conservative,3459,0.12404358551741343,0.008132355128094891
+trust_govt,trusts the federal government to do what is right always or most of the time,"[2020, 2024]",White G3+ no BA,4596,0.1317491026822902,0.006564138571339826
+trust_govt,trusts the federal government to do what is right always or most of the time,"[2020, 2024]",White G3+ BA+,4107,0.1247084766418518,0.006160949817489986
+trust_election_officials,trusts election officials a great deal or a lot,"[2020, 2024]",Mex G1,158,0.2469460955907213,0.04074511638044764
+trust_election_officials,trusts election officials a great deal or a lot,"[2020, 2024]",Mex G2,226,0.37022041311655723,0.04350106529090898
+trust_election_officials,trusts election officials a great deal or a lot,"[2020, 2024]",Mex G3+,190,0.3097188002117489,0.04338530869017128
+trust_election_officials,trusts election officials a great deal or a lot,"[2020, 2024]",Hisp G1,356,0.2343781296633217,0.027799504369188863
+trust_election_officials,trusts election officials a great deal or a lot,"[2020, 2024]",Hisp G2,423,0.3183468922759101,0.028238915363883534
+trust_election_officials,trusts election officials a great deal or a lot,"[2020, 2024]",Hisp G3+,507,0.3149730143347693,0.028411282253332736
+trust_election_officials,trusts election officials a great deal or a lot,"[2020, 2024]",Hisp G3 (gp foreign),246,0.3590004583020006,0.04201290472107505
+trust_election_officials,trusts election officials a great deal or a lot,"[2020, 2024]",Hisp G4+ (no gp foreign),252,0.28291158861828714,0.03765511764061453
+trust_election_officials,trusts election officials a great deal or a lot,"[2020, 2024]",NHWhite G3+,8792,0.2121678336633904,0.005961335010175596
+trust_election_officials,trusts election officials a great deal or a lot,"[2020, 2024]",White G3+ liberal,2658,0.10916375622167063,0.010650005909884698
+trust_election_officials,trusts election officials a great deal or a lot,"[2020, 2024]",White G3+ moderate,1742,0.18057859926114525,0.012973231053453087
+trust_election_officials,trusts election officials a great deal or a lot,"[2020, 2024]",White G3+ conservative,3455,0.27097880971233035,0.009957661909758274
+trust_election_officials,trusts election officials a great deal or a lot,"[2020, 2024]",White G3+ no BA,4587,0.25214811276085086,0.00867214088755921
+trust_election_officials,trusts election officials a great deal or a lot,"[2020, 2024]",White G3+ BA+,4116,0.14881887542563157,0.007589165576702067
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,"[2020, 2024]",Mex G1,137,0.3132761972077727,0.061611727389452496
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,"[2020, 2024]",Mex G2,195,0.31983417684247706,0.04632183782665851
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,"[2020, 2024]",Mex G3+,174,0.3662904086367819,0.04633652091563037
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,"[2020, 2024]",Hisp G1,298,0.3246938109896643,0.040399232074986746
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,"[2020, 2024]",Hisp G2,366,0.2673425980548909,0.03133533416258305
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,"[2020, 2024]",Hisp G3+,442,0.3776607638589105,0.03266558163230429
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,"[2020, 2024]",Hisp G3 (gp foreign),220,0.388772469625595,0.04119942487501279
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,"[2020, 2024]",Hisp G4+ (no gp foreign),213,0.3614443845154046,0.04828639801680478
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,"[2020, 2024]",NHWhite G3+,7928,0.3373757645063402,0.0077108162484053845
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,"[2020, 2024]",White G3+ liberal,2448,0.14605932207218114,0.009716952966657363
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,"[2020, 2024]",White G3+ moderate,1560,0.33174133509141834,0.02047385186900213
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,"[2020, 2024]",White G3+ conservative,3112,0.4559966258190733,0.013037768166910164
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,"[2020, 2024]",White G3+ no BA,4062,0.396028528519373,0.011211376846821946
+strleader_agree,agrees a strong leader is good for the US even if the leader bends the rules,"[2020, 2024]",White G3+ BA+,3789,0.24078582796952516,0.009498547731868015
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",[2024],Mex G1,59,0.664826485621911,0.08451299606038867
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",[2024],Mex G2,95,0.5609195862469113,0.06786180891914785
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",[2024],Mex G3+,71,0.6683529221723746,0.07797576184056541
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",[2024],Hisp G1,128,0.7022826063432609,0.055365670520883266
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",[2024],Hisp G2,166,0.6264341386305878,0.05552049808703793
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",[2024],Hisp G3+,179,0.676126835752271,0.046312556650747315
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",[2024],Hisp G3 (gp foreign),93,0.7228527844515291,0.07270016241961826
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",[2024],Hisp G4+ (no gp foreign),80,0.5835617162147997,0.07469523063458931
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",[2024],NHWhite G3+,3089,0.7484157726208037,0.012529547779416181
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",[2024],White G3+ liberal,942,0.8362187432804242,0.016301637789334314
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",[2024],White G3+ moderate,609,0.7162336913411619,0.028320557422189082
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",[2024],White G3+ conservative,1242,0.7994549008254306,0.015544493583535367
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",[2024],White G3+ no BA,1550,0.7015841724377007,0.018768278896681763
+prefer_democracy,"agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",[2024],White G3+ BA+,1522,0.8285506168045215,0.01261999760150699
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",[2024],Mex G1,59,0.7135176639423777,0.08132734844948268
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",[2024],Mex G2,96,0.6582373354588676,0.06345202076607935
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",[2024],Mex G3+,72,0.903320891696864,0.039629424535757914
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",[2024],Hisp G1,128,0.7371205789733715,0.05175642083473548
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",[2024],Hisp G2,168,0.7260340187137324,0.04365215667048604
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",[2024],Hisp G3+,181,0.8572733675531866,0.029663903470640143
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",[2024],Hisp G3 (gp foreign),94,0.8728166856730524,0.04551167072814071
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",[2024],Hisp G4+ (no gp foreign),80,0.8214423798915463,0.04486126094655048
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",[2024],NHWhite G3+,3093,0.793472673134373,0.010860333429713409
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",[2024],White G3+ liberal,942,0.8886518350418954,0.013600928796648534
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",[2024],White G3+ moderate,611,0.7596774776936931,0.02789069835614639
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",[2024],White G3+ conservative,1244,0.8069814614690639,0.016056503096623518
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",[2024],White G3+ no BA,1552,0.7399988775011325,0.015466936435953234
+courts_authority,"agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",[2024],White G3+ BA+,1523,0.8865033415335604,0.009423180378846416
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",[2020],Mex G1,76,0.33918661062812167,0.06506804661685038
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",[2020],Mex G2,99,0.40953060569292493,0.07402799214003657
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",[2020],Mex G3+,102,0.537772699831631,0.06584416398004753
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",[2020],Hisp G1,167,0.37950587874705427,0.042102522227255954
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",[2020],Hisp G2,198,0.4379602223233714,0.056918360539709285
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",[2020],Hisp G3+,261,0.5145364210147075,0.03895450974954731
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",[2020],Hisp G3 (gp foreign),126,0.5521836016658636,0.05236290944702836
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",[2020],Hisp G4+ (no gp foreign),133,0.4845614314470751,0.06129955397411824
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",[2020],NHWhite G3+,4832,0.528326332312677,0.011266391406844198
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",[2020],White G3+ liberal,1503,0.5407783005444774,0.016775863442868424
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",[2020],White G3+ moderate,949,0.5199681377107148,0.02305651755168402
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",[2020],White G3+ conservative,1870,0.5341850999413874,0.01695559183665434
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",[2020],White G3+ no BA,2507,0.5459525064257237,0.01518761159136268
+people_decide,"agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",[2020],White G3+ BA+,2266,0.5021524948576145,0.013665104381356189
+votes_counted_fairly,votes are counted fairly all or most of the time,"[2020, 2024]",Mex G1,138,0.6318243954827237,0.054739382059608196
+votes_counted_fairly,votes are counted fairly all or most of the time,"[2020, 2024]",Mex G2,198,0.5649660920593336,0.05107895859617007
+votes_counted_fairly,votes are counted fairly all or most of the time,"[2020, 2024]",Mex G3+,174,0.6513621907664554,0.04107668308574334
+votes_counted_fairly,votes are counted fairly all or most of the time,"[2020, 2024]",Hisp G1,300,0.6822576095154741,0.03795728266398601
+votes_counted_fairly,votes are counted fairly all or most of the time,"[2020, 2024]",Hisp G2,371,0.6470000760589263,0.035135830093568715
+votes_counted_fairly,votes are counted fairly all or most of the time,"[2020, 2024]",Hisp G3+,445,0.6404540250446796,0.03258461394743804
+votes_counted_fairly,votes are counted fairly all or most of the time,"[2020, 2024]",Hisp G3 (gp foreign),221,0.6644823211101593,0.04574180579276305
+votes_counted_fairly,votes are counted fairly all or most of the time,"[2020, 2024]",Hisp G4+ (no gp foreign),215,0.6144215208892297,0.044179385424154644
+votes_counted_fairly,votes are counted fairly all or most of the time,"[2020, 2024]",NHWhite G3+,7965,0.6988518979933811,0.0070610126798711014
+votes_counted_fairly,votes are counted fairly all or most of the time,"[2020, 2024]",White G3+ liberal,2459,0.9142993974090188,0.008778975720492063
+votes_counted_fairly,votes are counted fairly all or most of the time,"[2020, 2024]",White G3+ moderate,1567,0.7529667971243967,0.017288426140674305
+votes_counted_fairly,votes are counted fairly all or most of the time,"[2020, 2024]",White G3+ conservative,3125,0.5820511605432959,0.011387211869502556
+votes_counted_fairly,votes are counted fairly all or most of the time,"[2020, 2024]",White G3+ no BA,4076,0.6225644489679785,0.009939514009967355
+votes_counted_fairly,votes are counted fairly all or most of the time,"[2020, 2024]",White G3+ BA+,3809,0.8295518699701009,0.008432037668728336
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,"[2020, 2024]",Mex G1,137,0.5546977401360192,0.061756969563627744
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,"[2020, 2024]",Mex G2,194,0.6276540850205106,0.0520965307181793
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,"[2020, 2024]",Mex G3+,173,0.5156281811191481,0.045996594347893535
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,"[2020, 2024]",Hisp G1,297,0.5958588351752856,0.044512690075820094
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,"[2020, 2024]",Hisp G2,364,0.6349467108581134,0.03985894580297034
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,"[2020, 2024]",Hisp G3+,441,0.5757306194106891,0.03087856502906222
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,"[2020, 2024]",Hisp G3 (gp foreign),220,0.5413765736739939,0.04327974539941477
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,"[2020, 2024]",Hisp G4+ (no gp foreign),212,0.5936599649115953,0.046808262810867224
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,"[2020, 2024]",NHWhite G3+,7902,0.6450896323641626,0.008101574204647686
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,"[2020, 2024]",White G3+ liberal,2438,0.5514914303128322,0.014945473421339141
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,"[2020, 2024]",White G3+ moderate,1556,0.6669577989120435,0.018039019115519656
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,"[2020, 2024]",White G3+ conservative,3102,0.7211582395236451,0.010453965733322388
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,"[2020, 2024]",White G3+ no BA,4040,0.6292783771809021,0.011575421214053689
+satisfied_democracy,very or fairly satisfied with the way democracy works in the US,"[2020, 2024]",White G3+ BA+,3788,0.6702322871499574,0.010290711530327635
+auth_obedience,picks obedience over self-reliance as the more important child quality,"[2020, 2024]",Mex G1,139,0.4887201496475066,0.06305916896160799
+auth_obedience,picks obedience over self-reliance as the more important child quality,"[2020, 2024]",Mex G2,197,0.35205728250562357,0.04542780255946392
+auth_obedience,picks obedience over self-reliance as the more important child quality,"[2020, 2024]",Mex G3+,173,0.38824768651307023,0.04922979477658469
+auth_obedience,picks obedience over self-reliance as the more important child quality,"[2020, 2024]",Hisp G1,301,0.5358057315795046,0.04277552133772772
+auth_obedience,picks obedience over self-reliance as the more important child quality,"[2020, 2024]",Hisp G2,368,0.3981236532522655,0.036128117151393156
+auth_obedience,picks obedience over self-reliance as the more important child quality,"[2020, 2024]",Hisp G3+,444,0.43787798333048383,0.03586839955876358
+auth_obedience,picks obedience over self-reliance as the more important child quality,"[2020, 2024]",Hisp G3 (gp foreign),220,0.4129783574767431,0.051283397349840165
+auth_obedience,picks obedience over self-reliance as the more important child quality,"[2020, 2024]",Hisp G4+ (no gp foreign),215,0.4644169438605456,0.05245656014786512
+auth_obedience,picks obedience over self-reliance as the more important child quality,"[2020, 2024]",NHWhite G3+,7931,0.3903374786259344,0.007698392314133433
+auth_obedience,picks obedience over self-reliance as the more important child quality,"[2020, 2024]",White G3+ liberal,2446,0.1539527058174989,0.01069978181522796
+auth_obedience,picks obedience over self-reliance as the more important child quality,"[2020, 2024]",White G3+ moderate,1565,0.3636235171175687,0.016965667558049027
+auth_obedience,picks obedience over self-reliance as the more important child quality,"[2020, 2024]",White G3+ conservative,3105,0.5113818106567476,0.012135629546450843
+auth_obedience,picks obedience over self-reliance as the more important child quality,"[2020, 2024]",White G3+ no BA,4067,0.4758896848691601,0.010833390907696354
+auth_obedience,picks obedience over self-reliance as the more important child quality,"[2020, 2024]",White G3+ BA+,3785,0.24764913851518294,0.008607111194803342
+auth_respect,picks respect for elders over independence,"[2020, 2024]",Mex G1,139,0.6412208473579663,0.05246572892081128
+auth_respect,picks respect for elders over independence,"[2020, 2024]",Mex G2,198,0.6838571237204328,0.046361488512986423
+auth_respect,picks respect for elders over independence,"[2020, 2024]",Mex G3+,174,0.5857656755972598,0.047456559268923566
+auth_respect,picks respect for elders over independence,"[2020, 2024]",Hisp G1,302,0.7114743228412119,0.032467276714754655
+auth_respect,picks respect for elders over independence,"[2020, 2024]",Hisp G2,370,0.6776478616544382,0.03243001262186632
+auth_respect,picks respect for elders over independence,"[2020, 2024]",Hisp G3+,444,0.6521328323846101,0.030799577338388215
+auth_respect,picks respect for elders over independence,"[2020, 2024]",Hisp G3 (gp foreign),221,0.6382745884438578,0.043054976134487305
+auth_respect,picks respect for elders over independence,"[2020, 2024]",Hisp G4+ (no gp foreign),214,0.6547602357453564,0.045823599871682386
+auth_respect,picks respect for elders over independence,"[2020, 2024]",NHWhite G3+,7933,0.6797709659955544,0.008011982004648817
+auth_respect,picks respect for elders over independence,"[2020, 2024]",White G3+ liberal,2440,0.3997640526185641,0.01291125380704804
+auth_respect,picks respect for elders over independence,"[2020, 2024]",White G3+ moderate,1562,0.6981419168134505,0.017712194509433128
+auth_respect,picks respect for elders over independence,"[2020, 2024]",White G3+ conservative,3114,0.8152100756507382,0.010329733689423961
+auth_respect,picks respect for elders over independence,"[2020, 2024]",White G3+ no BA,4072,0.7611370590389857,0.010680103303180373
+auth_respect,picks respect for elders over independence,"[2020, 2024]",White G3+ BA+,3781,0.544834534517061,0.011174313689398436
+auth_manners,picks good manners over curiosity,"[2020, 2024]",Mex G1,139,0.6940711100894854,0.05630890350619727
+auth_manners,picks good manners over curiosity,"[2020, 2024]",Mex G2,198,0.7549723834255019,0.03807025542518926
+auth_manners,picks good manners over curiosity,"[2020, 2024]",Mex G3+,173,0.5648715838565043,0.05578475231030372
+auth_manners,picks good manners over curiosity,"[2020, 2024]",Hisp G1,302,0.688111087402025,0.03710914109647005
+auth_manners,picks good manners over curiosity,"[2020, 2024]",Hisp G2,370,0.7012598456650452,0.030063562231931077
+auth_manners,picks good manners over curiosity,"[2020, 2024]",Hisp G3+,445,0.6344526476121397,0.03452110101575282
+auth_manners,picks good manners over curiosity,"[2020, 2024]",Hisp G3 (gp foreign),220,0.5750938964201497,0.04824053251476169
+auth_manners,picks good manners over curiosity,"[2020, 2024]",Hisp G4+ (no gp foreign),216,0.6831059201054599,0.040107459321241004
+auth_manners,picks good manners over curiosity,"[2020, 2024]",NHWhite G3+,7936,0.5549737861200233,0.0075980546476782955
+auth_manners,picks good manners over curiosity,"[2020, 2024]",White G3+ liberal,2445,0.2442909617210295,0.012288869018216566
+auth_manners,picks good manners over curiosity,"[2020, 2024]",White G3+ moderate,1562,0.5913773586674679,0.015576862953186717
+auth_manners,picks good manners over curiosity,"[2020, 2024]",White G3+ conservative,3111,0.6759261245484411,0.010385543849746935
+auth_manners,picks good manners over curiosity,"[2020, 2024]",White G3+ no BA,4074,0.6654023031690649,0.011232730521624573
+auth_manners,picks good manners over curiosity,"[2020, 2024]",White G3+ BA+,3784,0.3696392814648073,0.00951020560224022
+auth_behaved,picks well behaved over being considerate,"[2020, 2024]",Mex G1,139,0.38764947168279745,0.055466846790091534
+auth_behaved,picks well behaved over being considerate,"[2020, 2024]",Mex G2,198,0.4177145522718454,0.04814454170352798
+auth_behaved,picks well behaved over being considerate,"[2020, 2024]",Mex G3+,173,0.30388461791395166,0.0413540954872463
+auth_behaved,picks well behaved over being considerate,"[2020, 2024]",Hisp G1,302,0.4069040992177128,0.03847831371853923
+auth_behaved,picks well behaved over being considerate,"[2020, 2024]",Hisp G2,370,0.3819196937939385,0.032422971118526635
+auth_behaved,picks well behaved over being considerate,"[2020, 2024]",Hisp G3+,444,0.3136161511461775,0.02865119360832529
+auth_behaved,picks well behaved over being considerate,"[2020, 2024]",Hisp G3 (gp foreign),220,0.2789004884110301,0.03594988204402098
+auth_behaved,picks well behaved over being considerate,"[2020, 2024]",Hisp G4+ (no gp foreign),215,0.33951008702702407,0.045510828149907444
+auth_behaved,picks well behaved over being considerate,"[2020, 2024]",NHWhite G3+,7942,0.2367177482179728,0.007416719913543183
+auth_behaved,picks well behaved over being considerate,"[2020, 2024]",White G3+ liberal,2448,0.09708778865681866,0.009490936914885579
+auth_behaved,picks well behaved over being considerate,"[2020, 2024]",White G3+ moderate,1564,0.22923754865601775,0.017067222771519494
+auth_behaved,picks well behaved over being considerate,"[2020, 2024]",White G3+ conservative,3113,0.28659348930807305,0.011897583777471379
+auth_behaved,picks well behaved over being considerate,"[2020, 2024]",White G3+ no BA,4074,0.28610175052346354,0.010114515457300792
+auth_behaved,picks well behaved over being considerate,"[2020, 2024]",White G3+ BA+,3788,0.15328000158527533,0.007376293149322815
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",[2020],Mex G1,78,0.27501275188559604,0.05432718724589221
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",[2020],Mex G2,100,0.29364362883742295,0.05901453280665595
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",[2020],Mex G3+,102,0.27024837482736824,0.05090088488865502
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",[2020],Hisp G1,169,0.41538458247657045,0.048931833473474726
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",[2020],Hisp G2,199,0.367922943461972,0.03489031614479589
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",[2020],Hisp G3+,261,0.36838482700909303,0.04517617797453774
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",[2020],Hisp G3 (gp foreign),126,0.382854172572932,0.06407681534290555
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",[2020],Hisp G4+ (no gp foreign),133,0.35101433364393675,0.06220433137210823
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",[2020],NHWhite G3+,4838,0.5421157664441224,0.010900284855240545
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",[2020],White G3+ liberal,1504,0.2771326739534474,0.015446341556717176
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",[2020],White G3+ moderate,951,0.5315422498555649,0.022605776584946665
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",[2020],White G3+ conservative,1871,0.7269155838811966,0.011926982430884426
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",[2020],White G3+ no BA,2509,0.5938166406679116,0.014488362615338946
+minorities_adapt,"agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",[2020],White G3+ BA+,2270,0.4562672986408234,0.013815665612746043
+born_here_important,says being born in the US is very or fairly important to being American,"[2020, 2024]",Mex G1,137,0.491459793800808,0.05881007812120865
+born_here_important,says being born in the US is very or fairly important to being American,"[2020, 2024]",Mex G2,194,0.608746763888269,0.05000834690424424
+born_here_important,says being born in the US is very or fairly important to being American,"[2020, 2024]",Mex G3+,172,0.4865545049859509,0.05081182907886532
+born_here_important,says being born in the US is very or fairly important to being American,"[2020, 2024]",Hisp G1,299,0.43300863008087664,0.04113315559167233
+born_here_important,says being born in the US is very or fairly important to being American,"[2020, 2024]",Hisp G2,365,0.5598709112639989,0.03578837120807542
+born_here_important,says being born in the US is very or fairly important to being American,"[2020, 2024]",Hisp G3+,440,0.5085837856828989,0.03261423523128592
+born_here_important,says being born in the US is very or fairly important to being American,"[2020, 2024]",Hisp G3 (gp foreign),220,0.509384969991083,0.04473698511728086
+born_here_important,says being born in the US is very or fairly important to being American,"[2020, 2024]",Hisp G4+ (no gp foreign),211,0.5111292225121092,0.04493854909849702
+born_here_important,says being born in the US is very or fairly important to being American,"[2020, 2024]",NHWhite G3+,7911,0.4919779234926563,0.007719436269039067
+born_here_important,says being born in the US is very or fairly important to being American,"[2020, 2024]",White G3+ liberal,2441,0.22332317634047105,0.012905475014153622
+born_here_important,says being born in the US is very or fairly important to being American,"[2020, 2024]",White G3+ moderate,1558,0.5280122581004076,0.018091844838491324
+born_here_important,says being born in the US is very or fairly important to being American,"[2020, 2024]",White G3+ conservative,3106,0.5895690047162907,0.010940033298369374
+born_here_important,says being born in the US is very or fairly important to being American,"[2020, 2024]",White G3+ no BA,4049,0.574678435224132,0.009706925209988995
+born_here_important,says being born in the US is very or fairly important to being American,"[2020, 2024]",White G3+ BA+,3786,0.35065413201421025,0.010678846103572295
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices","[2020, 2024]",Mex G1,139,2.2116615787777554,0.17344002919920845
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices","[2020, 2024]",Mex G2,197,2.199411808602266,0.11245838616732838
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices","[2020, 2024]",Mex G3+,173,1.842622446458832,0.1347379895756992
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices","[2020, 2024]",Hisp G1,301,2.3429668790039404,0.10825629333459766
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices","[2020, 2024]",Hisp G2,368,2.152378158750104,0.0771338530318991
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices","[2020, 2024]",Hisp G3+,443,2.0377380865965193,0.08831924026128415
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices","[2020, 2024]",Hisp G3 (gp foreign),220,1.9051445609149114,0.12724001987652442
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices","[2020, 2024]",Hisp G4+ (no gp foreign),214,2.1412889616004844,0.11647651352930716
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices","[2020, 2024]",NHWhite G3+,7897,1.8630886542117084,0.021547167503250104
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices","[2020, 2024]",White G3+ liberal,2436,0.8973919914107227,0.03261600774641562
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices","[2020, 2024]",White G3+ moderate,1555,1.8856331690881123,0.04747832360776436
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices","[2020, 2024]",White G3+ conservative,3094,2.288963912020329,0.027644717438341935
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices","[2020, 2024]",White G3+ no BA,4056,2.189751932226793,0.030635656797481384
+auth_scale4,"authoritarian child-rearing scale, 0-4 authoritarian choices","[2020, 2024]",White G3+ BA+,3764,1.3166515556727627,0.023379773530056595
