@@ -1,0 +1,591 @@
+==============================================================================
+GATE: November 2020 reported turnout vs the published P20-585 tables
+(Census convention: item non-response counted as not voting, kept in the denominator)
+
+  all citizens 18+
+    turnout    lane  66.77%   published  66.8%   delta -0.03   <- PRIMARY GATE, tolerance 0.5 -> PASS
+    registered lane  72.67%   published  72.7%   delta -0.03
+    weighted   lane   231,593k  published   231,593k  delta -0k   (n=81,898)
+    [SOURCE: P20-585 Table 1, both sexes 18+: 154,628 / 231,593 thousand]
+
+  native-born citizens
+    turnout    lane  67.38%   published  67.4%   delta -0.02
+    registered lane  73.32%   published  73.3%   delta +0.02
+    weighted   lane   210,083k  published   210,083k  delta +0k   (n=75,746)
+    [SOURCE: P20-585 Table 11, Native-born citizen, all races]
+
+  naturalized citizens
+    turnout    lane  60.82%   published  60.8%   delta +0.02
+    registered lane  66.36%   published  66.4%   delta -0.04
+    weighted   lane    21,509k  published    21,509k  delta +0k   (n=6,152)
+    [SOURCE: P20-585 Table 11, Naturalized citizen, all races]
+
+  native-born NH white
+    turnout    lane  71.16%   published  71.2%   delta -0.04
+    registered lane  76.65%   published  76.6%   delta +0.05
+    weighted   lane   150,195k  published   150,195k  delta -0k   (n=58,070)
+    [SOURCE: P20-585 Table 11, Native-born citizen, White non-Hispanic alone]
+
+==============================================================================
+TURNOUT, citizens 18+, pooled 2016-2024
+
+-- turnout_census_convention
+                     group      n  rate   se
+              1 India-born   1748  65.1 1.21
+              2 China-born   1364  42.5 1.43
+             3 Mexico-born   5242  42.9 0.73
+      4 Other foreign-born  23476  53.6 0.36
+          5 Indian 2nd gen    833  57.0 1.89
+        6 US-born NH white 290492  64.7 0.10
+             7 All US-born 378284  60.7 0.09
+8 Indian 2nd gen (self-ID)    960  48.0 1.74
+     9 US-born Asian (any)   8238  45.4 0.64
+
+-- turnout_reported_only
+                     group      n  rate   se
+              1 India-born   1497  75.7 1.18
+              2 China-born   1150  50.7 1.58
+             3 Mexico-born   4368  51.5 0.81
+      4 Other foreign-born  19574  64.3 0.38
+          5 Indian 2nd gen    661  72.5 1.92
+        6 US-born NH white 251220  75.1 0.10
+             7 All US-born 322177  71.9 0.09
+8 Indian 2nd gen (self-ID)    678  69.7 1.93
+     9 US-born Asian (any)   6026  64.0 0.73
+
+-- registered_census_convention
+                     group      n  rate   se
+              1 India-born   1748  75.2 1.10
+              2 China-born   1364  53.3 1.45
+             3 Mexico-born   5242  53.9 0.74
+      4 Other foreign-born  23476  64.7 0.34
+          5 Indian 2nd gen    833  66.3 1.81
+        6 US-born NH white 290492  74.7 0.09
+             7 All US-born 378284  71.4 0.08
+8 Indian 2nd gen (self-ID)    960  56.6 1.73
+     9 US-born Asian (any)   8238  54.1 0.64
+
+-- vote_item_nonresponse
+                     group      n  rate   se
+              1 India-born   1748  14.0 0.88
+              2 China-born   1364  16.1 1.06
+             3 Mexico-born   5242  16.8 0.55
+      4 Other foreign-born  23476  16.7 0.27
+          5 Indian 2nd gen    833  21.4 1.57
+        6 US-born NH white 290492  13.9 0.07
+             7 All US-born 378284  15.6 0.07
+8 Indian 2nd gen (self-ID)    960  31.2 1.62
+     9 US-born Asian (any)   8238  29.1 0.58
+
+-- turnout_census_convention by year (rate %, n)
+year                        2016  2018  2020  2022  2024
+group                                                   
+1 India-born                66.0  53.6  78.7  47.0  76.4
+2 China-born                35.0  36.3  58.1  33.1  50.4
+3 Mexico-born               49.9  38.0  49.7  33.7  44.5
+4 Other foreign-born        55.5  47.8  62.1  43.3  60.0
+5 Indian 2nd gen            57.8  51.4  63.8  48.1  60.1
+6 US-born NH white          65.6  57.8  71.2  58.0  70.8
+7 All US-born               62.1  54.2  67.4  53.4  66.2
+8 Indian 2nd gen (self-ID)  49.8  33.0  55.0  37.4  58.0
+9 US-born Asian (any)       44.7  37.5  53.7  38.4  51.7
+
+   unweighted n
+year                         2016   2018   2020   2022   2024
+group                                                        
+1 India-born                  378    336    382    317    335
+2 China-born                  264    312    257    274    257
+3 Mexico-born                1069   1220   1007    984    962
+4 Other foreign-born         4988   4956   4506   4554   4472
+5 Indian 2nd gen              156    132    195    157    193
+6 US-born NH white          67404  63192  58055  51066  50775
+7 All US-born               87095  81925  75746  66954  66564
+8 Indian 2nd gen (self-ID)    150    166    230    181    233
+9 US-born Asian (any)        1623   1764   1681   1507   1663
+==============================================================================
+TURNOUT ARMS (turnout_census_convention unless noted)
+
+-- all_adults_18plus_incl_noncitizens
+                     group      n  rate   se
+              1 India-born   3836  29.5 0.79
+              2 China-born   2755  21.5 0.84
+             3 Mexico-born  15910  14.1 0.30
+      4 Other foreign-born  40151  31.1 0.26
+          5 Indian 2nd gen    833  57.0 1.89
+        6 US-born NH white 290492  64.7 0.10
+             7 All US-born 378284  60.7 0.09
+8 Indian 2nd gen (self-ID)    960  48.0 1.74
+     9 US-born Asian (any)   8238  45.4 0.64
+
+-- citizens_BA_plus_only
+                     group      n  rate   se
+              1 India-born   1375  68.0 1.34
+              2 China-born    686  56.7 2.02
+             3 Mexico-born    673  60.5 2.01
+      4 Other foreign-born  10109  62.1 0.53
+          5 Indian 2nd gen    512  65.5 2.35
+        6 US-born NH white 106481  77.6 0.15
+             7 All US-born 127788  75.6 0.14
+8 Indian 2nd gen (self-ID)    590  56.1 2.24
+     9 US-born Asian (any)   4073  57.0 0.89
+
+-- citizens_age_25_54
+                     group      n  rate   se
+              1 India-born   1040  63.1 1.59
+              2 China-born    639  42.0 2.10
+             3 Mexico-born   2902  40.6 0.99
+      4 Other foreign-born  11362  50.2 0.52
+          5 Indian 2nd gen    471  61.8 2.50
+        6 US-born NH white 128880  61.3 0.16
+             7 All US-born 174673  57.8 0.14
+8 Indian 2nd gen (self-ID)    562  49.8 2.31
+     9 US-born Asian (any)   4439  48.4 0.85
+
+-- citizens_self_respondent_only
+                     group      n  rate   se
+              1 India-born    833  69.5 1.70
+              2 China-born    663  46.5 2.08
+             3 Mexico-born   2487  47.0 1.08
+      4 Other foreign-born  11865  56.6 0.50
+          5 Indian 2nd gen    336  64.8 2.95
+        6 US-born NH white 159214  68.0 0.13
+             7 All US-born 204201  64.8 0.12
+8 Indian 2nd gen (self-ID)    390  53.7 2.81
+     9 US-born Asian (any)   3590  52.0 0.98
+
+-- naturalized_citizens_only
+                     group     n  rate   se
+              1 India-born  1748  65.1 1.21
+              2 China-born  1364  42.5 1.43
+             3 Mexico-born  5242  42.9 0.73
+      4 Other foreign-born 23476  53.6 0.36
+          5 Indian 2nd gen     0   NaN  NaN
+        6 US-born NH white     0   NaN  NaN
+             7 All US-born     0   NaN  NaN
+8 Indian 2nd gen (self-ID)     0   NaN  NaN
+     9 US-born Asian (any)     0   NaN  NaN
+==============================================================================
+NATURALIZED SHARE OF THE FOREIGN-BORN 18+ (Nov supplements)
+year                  2016  2018  2020  2022  2024  pooled  pooled_age_18_34  pooled_age_35_49  pooled_age_50_64  pooled_age_65_99
+group                                                                                                                             
+1 India-born          46.4  44.7  47.7  46.0  42.1    45.3              18.6              42.5              76.6              75.3
+2 China-born          47.7  49.9  51.3  52.5  51.1    50.5              22.9              48.6              66.8              73.9
+3 Mexico-born         29.2  33.8  33.5  34.0  33.5    32.8              18.7              26.5              42.7              56.6
+4 Other foreign-born  56.6  59.4  58.7  59.5  56.2    58.1              36.3              53.7              67.4              78.5
+==============================================================================
+NATURALIZED SHARE BY YEARS SINCE ENTRY (CPS ASEC)
+
+-- ASEC 2024
+years_since_entry      0_4   5_9  10_19  20_29  30_99
+group                                                
+1 India-born           3.8   7.6   38.1   81.9   96.7
+2 China-born           4.2  14.3   31.8   69.0   89.0
+3 Mexico-born         10.4  15.2   21.7   23.9   60.6
+4 Other foreign-born   8.2  24.7   62.2   70.4   84.1
+
+-- ASEC 2025
+years_since_entry      0_4   5_9  10_19  20_29  30_99
+group                                                
+1 India-born           3.0   5.4   31.4   86.7   93.6
+2 China-born           3.0  12.2   34.2   68.6   90.4
+3 Mexico-born         10.5  12.1   27.2   26.8   54.3
+4 Other foreign-born   6.6  26.6   58.1   71.1   84.8
+==============================================================================
+CHECK: lane all-adult (18+) rates vs the published AmeriCorps/Census national
+rates for the same supplement (published universe is 16+, this lane's is 18+,
+so a gap of a point or so is expected).
+
+  contacted_official     2019  lane  10.1%   published   9.9%   delta +0.2
+  contacted_official     2021  lane   9.8%   published   9.5%   delta +0.3
+  contacted_official     2023  lane   8.9%   published   8.7%   delta +0.2
+
+  donated_nonpolitical   2019  lane  51.6%   published  50.5%   delta +1.1
+  donated_nonpolitical   2021  lane  49.2%   published  48.1%   delta +1.1
+  donated_nonpolitical   2023  lane  49.5%   published  48.5%   delta +1.0
+
+  group_membership       2019  lane  27.1%   published  27.1%   delta +0.0
+  group_membership       2021  lane  23.8%   published  23.8%   delta -0.0
+  group_membership       2023  lane  24.9%   published  24.9%   delta -0.0
+
+  volunteered_org        2019  lane  27.3%   published  30.0%   delta -2.7
+  volunteered_org        2021  lane  21.1%   published  23.2%   delta -2.1
+  volunteered_org        2023  lane  25.2%   published  28.3%   delta -3.1
+
+==============================================================================
+VOLUNTEERING / GIVING / CIVIC CONTACT, adults 18+, pooled 2019-2023
+
+-- contacted_official
+                     group      n  rate   se
+              1 India-born   1195   4.6 0.68
+              2 China-born    822   3.2 0.70
+             3 Mexico-born   4020   1.7 0.23
+      4 Other foreign-born  11217   3.8 0.21
+          5 Indian 2nd gen    243  10.4 2.47
+        6 US-born NH white  97902  12.5 0.13
+             7 All US-born 123734  10.8 0.11
+8 Indian 2nd gen (self-ID)    244   8.7 2.19
+     9 US-born Asian (any)   2180   7.0 0.71
+
+-- donated_nonpolitical
+                     group      n  rate   se
+              1 India-born   1191  51.1 1.63
+              2 China-born    818  37.0 1.92
+             3 Mexico-born   4007  30.2 0.82
+      4 Other foreign-born  11154  41.5 0.55
+          5 Indian 2nd gen    240  55.7 4.03
+        6 US-born NH white  97446  57.8 0.19
+             7 All US-born 123123  52.4 0.18
+8 Indian 2nd gen (self-ID)    241  52.5 3.93
+     9 US-born Asian (any)   2147  47.3 1.40
+
+-- donated_political
+                     group      n  rate   se
+              1 India-born   1192   6.1 0.78
+              2 China-born    820   4.3 0.80
+             3 Mexico-born   4015   2.1 0.26
+      4 Other foreign-born  11163   5.4 0.25
+          5 Indian 2nd gen    241  10.3 2.45
+        6 US-born NH white  97317  10.5 0.12
+             7 All US-born 123001   9.2 0.10
+8 Indian 2nd gen (self-ID)    244   9.6 2.30
+     9 US-born Asian (any)   2153   7.3 0.73
+
+-- group_membership
+                     group      n  rate   se
+              1 India-born   1191  16.2 1.20
+              2 China-born    818  14.3 1.39
+             3 Mexico-born   4017   7.4 0.47
+      4 Other foreign-born  11211  15.4 0.40
+          5 Indian 2nd gen    243  29.2 3.65
+        6 US-born NH white  97910  32.0 0.18
+             7 All US-born 123693  27.7 0.16
+8 Indian 2nd gen (self-ID)    242  25.7 3.41
+     9 US-born Asian (any)   2167  21.7 1.15
+
+-- improved_neighborhood
+                     group      n  rate   se
+              1 India-born   1193  31.0 1.50
+              2 China-born    822  18.0 1.52
+             3 Mexico-born   4026  11.2 0.57
+      4 Other foreign-born  11260  17.4 0.42
+          5 Indian 2nd gen    241  24.8 3.49
+        6 US-born NH white  98204  22.8 0.16
+             7 All US-born 124138  20.8 0.14
+8 Indian 2nd gen (self-ID)    244  25.8 3.41
+     9 US-born Asian (any)   2185  16.9 1.04
+
+-- neighbor_favors_monthly
+                     group      n  rate   se
+              1 India-born   1189  35.8 1.56
+              2 China-born    824  22.6 1.65
+             3 Mexico-born   4026  30.0 0.82
+      4 Other foreign-born  11242  26.1 0.49
+          5 Indian 2nd gen    241  30.5 3.72
+        6 US-born NH white  98109  40.4 0.19
+             7 All US-born 124027  36.4 0.17
+8 Indian 2nd gen (self-ID)    245  27.3 3.46
+     9 US-born Asian (any)   2188  24.0 1.19
+
+-- talks_neighbors_weekly
+                     group      n  rate   se
+              1 India-born   1195  28.7 1.47
+              2 China-born    826  18.2 1.52
+             3 Mexico-born   4045  23.4 0.76
+      4 Other foreign-born  11272  23.4 0.47
+          5 Indian 2nd gen    242  16.5 2.99
+        6 US-born NH white  98280  31.7 0.18
+             7 All US-born 124253  29.1 0.16
+8 Indian 2nd gen (self-ID)    246  13.8 2.68
+     9 US-born Asian (any)   2198  16.4 1.03
+
+-- volunteered_org
+                     group      n  rate   se
+              1 India-born   1198  21.5 1.33
+              2 China-born    823  16.1 1.45
+             3 Mexico-born   4023   8.8 0.51
+      4 Other foreign-born  11237  15.7 0.40
+          5 Indian 2nd gen    242  33.7 3.81
+        6 US-born NH white  98132  29.8 0.18
+             7 All US-born 123980  26.6 0.16
+8 Indian 2nd gen (self-ID)    245  28.7 3.51
+     9 US-born Asian (any)   2180  23.9 1.19
+==============================================================================
+CIVIC ARMS
+
+-- volunteered_org / BA_plus_only
+                     group     n  rate   se
+              1 India-born  1098  22.7 1.41
+              2 China-born   534  22.5 2.01
+             3 Mexico-born   358  19.3 2.40
+      4 Other foreign-born  4829  24.5 0.72
+          5 Indian 2nd gen   194  32.6 4.19
+        6 US-born NH white 38958  42.6 0.30
+             7 All US-born 46005  40.5 0.28
+8 Indian 2nd gen (self-ID)   186  27.4 3.88
+     9 US-born Asian (any)  1275  28.6 1.57
+
+-- volunteered_org / age_25_54
+                     group     n  rate   se
+              1 India-born   928  23.5 1.55
+              2 China-born   506  19.2 1.98
+             3 Mexico-born  2607   9.3 0.65
+      4 Other foreign-born  6211  17.0 0.56
+          5 Indian 2nd gen   173  32.8 4.25
+        6 US-born NH white 41004  30.9 0.27
+             7 All US-born 54461  27.2 0.23
+8 Indian 2nd gen (self-ID)   177  23.8 3.74
+     9 US-born Asian (any)  1213  25.1 1.53
+
+-- volunteered_org / citizens_only
+                     group      n  rate   se
+              1 India-born    519  28.1 2.22
+              2 China-born    392  17.1 2.14
+             3 Mexico-born   1550  10.0 0.86
+      4 Other foreign-born   6896  17.9 0.54
+          5 Indian 2nd gen    242  33.7 3.81
+        6 US-born NH white  98132  29.8 0.18
+             7 All US-born 123980  26.6 0.16
+8 Indian 2nd gen (self-ID)    245  28.7 3.51
+     9 US-born Asian (any)   2180  23.9 1.19
+
+-- volunteered_org / family_income_100k_plus
+                     group     n  rate   se
+              1 India-born   763  23.6 1.72
+              2 China-born   323  23.5 2.62
+             3 Mexico-born   505  11.5 1.61
+      4 Other foreign-born  3399  24.2 0.86
+          5 Indian 2nd gen   162  37.9 4.77
+        6 US-born NH white 32159  38.4 0.33
+             7 All US-born 38107  36.1 0.31
+8 Indian 2nd gen (self-ID)   161  32.9 4.45
+     9 US-born Asian (any)  1066  29.4 1.77
+
+-- volunteered_org / self_respondent_only
+                     group     n  rate   se
+              1 India-born   692  23.9 1.80
+              2 China-born   447  15.9 1.96
+             3 Mexico-born  2151  10.2 0.74
+      4 Other foreign-born  6565  17.3 0.55
+          5 Indian 2nd gen   137  36.6 4.91
+        6 US-born NH white 62530  31.6 0.22
+             7 All US-born 79039  28.4 0.20
+8 Indian 2nd gen (self-ID)   137  33.2 4.72
+     9 US-born Asian (any)  1277  27.2 1.57
+
+-- donated_nonpolitical / BA_plus_only
+                     group     n  rate   se
+              1 India-born  1090  53.4 1.69
+              2 China-born   531  48.4 2.42
+             3 Mexico-born   356  44.0 3.03
+      4 Other foreign-born  4802  54.7 0.84
+          5 Indian 2nd gen   194  64.0 4.29
+        6 US-born NH white 38658  73.3 0.27
+             7 All US-born 45658  70.0 0.26
+8 Indian 2nd gen (self-ID)   185  62.8 4.22
+     9 US-born Asian (any)  1258  58.8 1.72
+
+-- donated_nonpolitical / age_25_54
+                     group     n  rate   se
+              1 India-born   921  51.3 1.84
+              2 China-born   504  42.2 2.49
+             3 Mexico-born  2601  30.4 1.03
+      4 Other foreign-born  6175  40.7 0.73
+          5 Indian 2nd gen   172  66.7 4.28
+        6 US-born NH white 40739  57.7 0.29
+             7 All US-born 54120  52.0 0.26
+8 Indian 2nd gen (self-ID)   176  61.9 4.28
+     9 US-born Asian (any)  1202  52.1 1.77
+
+-- donated_nonpolitical / citizens_only
+                     group      n  rate   se
+              1 India-born    517  62.1 2.40
+              2 China-born    389  41.8 2.82
+             3 Mexico-born   1542  37.4 1.40
+      4 Other foreign-born   6841  48.2 0.71
+          5 Indian 2nd gen    240  55.7 4.03
+        6 US-born NH white  97446  57.8 0.19
+             7 All US-born 123123  52.4 0.18
+8 Indian 2nd gen (self-ID)    241  52.5 3.93
+     9 US-born Asian (any)   2147  47.3 1.40
+
+-- donated_nonpolitical / family_income_100k_plus
+                     group     n  rate   se
+              1 India-born   758  58.8 2.00
+              2 China-born   321  54.3 3.09
+             3 Mexico-born   497  38.6 2.48
+      4 Other foreign-born  3370  56.8 1.00
+          5 Indian 2nd gen   160  60.9 4.84
+        6 US-born NH white 31932  69.1 0.32
+             7 All US-born 37830  66.0 0.30
+8 Indian 2nd gen (self-ID)   159  58.6 4.72
+     9 US-born Asian (any)  1047  59.5 1.92
+
+-- donated_nonpolitical / self_respondent_only
+                     group     n  rate   se
+              1 India-born   688  54.6 2.11
+              2 China-born   446  36.6 2.58
+             3 Mexico-born  2142  32.6 1.15
+      4 Other foreign-born  6518  45.6 0.72
+          5 Indian 2nd gen   136  64.4 4.90
+        6 US-born NH white 62117  61.8 0.23
+             7 All US-born 78524  56.5 0.22
+8 Indian 2nd gen (self-ID)   136  62.0 4.91
+     9 US-born Asian (any)  1263  52.3 1.78
+==============================================================================
+VOLUNTEER HOURS
+               group  n_volunteers  n_adults  mean_hours_volunteers  median_hours_volunteers  mean_hours_all_adults
+        1 India-born           255      1198                   53.5                     20.0                   12.4
+        2 China-born           126       823                   50.0                     25.0                    7.8
+       3 Mexico-born           361      4023                   83.6                     30.0                    8.0
+4 Other foreign-born          1795     11237                   74.5                     25.0                   12.0
+    5 Indian 2nd gen            79       242                   80.2                     40.0                   26.5
+  6 US-born NH white         28905     98132                   80.8                     35.0                   24.2
+       7 All US-born         33665    123980                   79.7                     30.0                   21.4
+==============================================================================
+REGRESSION: TURNOUT  (LPM coefficient in points vs US-born NH white)
+
+-- turnout_census_convention / citizens_18plus  (n=323,155)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -10.27      0.02         1.17    1.18
+2 China-born                 -23.28    -21.94         1.36    1.42
+3 Mexico-born                 -9.99    -21.69         0.73    0.73
+4 Other foreign-born         -12.02    -11.02         0.36    0.37
+5 Indian 2nd gen              -4.79     -8.68         1.86    1.88
+
+-- turnout_census_convention / citizens_BA_plus  (n=119,836)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -12.49     -9.95         1.31    1.31
+2 China-born                 -22.62    -20.85         1.97    2.00
+3 Mexico-born                -15.01    -17.22         2.01    2.02
+4 Other foreign-born         -15.73    -15.38         0.54    0.54
+5 Indian 2nd gen              -8.10    -12.60         2.33    2.34
+
+-- turnout_census_convention / citizens_age_25_54  (n=145,294)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -12.23      1.45         1.53    1.55
+2 China-born                 -23.87    -19.67         1.96    2.06
+3 Mexico-born                 -8.01    -20.43         0.97    0.99
+4 Other foreign-born         -12.02    -10.94         0.52    0.53
+5 Indian 2nd gen              -8.09     -0.24         2.39    2.50
+
+-- turnout_reported_only / citizens_respondents_only  (n=278,470)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -10.68      0.01         1.14    1.14
+2 China-born                 -25.46    -24.14         1.47    1.55
+3 Mexico-born                -10.32    -23.44         0.79    0.81
+4 Other foreign-born         -11.77    -10.70         0.37    0.38
+5 Indian 2nd gen              -0.12     -3.80         1.88    1.91
+==============================================================================
+REGRESSION: CIVIC  (LPM coefficient in points vs US-born NH white)
+
+-- contacted_official / BA_plus_only  (n=45,824)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -13.95    -13.89         0.84    0.81
+2 China-born                 -13.95    -14.15         1.23    1.17
+3 Mexico-born                 -9.95    -11.55         1.58    1.52
+4 Other foreign-born         -12.65    -12.75         0.46    0.45
+5 Indian 2nd gen              -6.90     -9.39         2.39    2.41
+
+-- contacted_official / adults_18plus  (n=115,399)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -12.88     -7.84         0.73    0.71
+2 China-born                 -10.84     -9.24         0.77    0.73
+3 Mexico-born                 -5.63    -10.73         0.28    0.24
+4 Other foreign-born          -7.87     -8.62         0.24    0.23
+5 Indian 2nd gen              -2.71     -2.00         2.82    2.65
+
+-- contacted_official / self_respondent_only  (n=72,420)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -14.34     -8.19         1.18    1.15
+2 China-born                 -12.85    -10.94         1.26    1.16
+3 Mexico-born                 -5.89    -12.41         0.45    0.40
+4 Other foreign-born          -9.05    -10.11         0.35    0.34
+5 Indian 2nd gen              -9.22     -5.34         2.72    2.79
+
+-- donated_nonpolitical / BA_plus_only  (n=45,631)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -19.40    -19.87         1.65    1.71
+2 China-born                 -22.23    -24.99         2.37    2.44
+3 Mexico-born                -24.05    -29.26         2.96    3.04
+4 Other foreign-born         -17.49    -18.63         0.87    0.88
+5 Indian 2nd gen              -3.35     -9.24         4.26    4.42
+
+-- donated_nonpolitical / adults_18plus  (n=114,856)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -17.35     -6.69         1.57    1.64
+2 China-born                 -22.12    -20.83         1.82    1.92
+3 Mexico-born                -10.74    -27.62         0.90    0.85
+4 Other foreign-born         -13.00    -16.32         0.56    0.58
+5 Indian 2nd gen              -1.28     -2.07         3.93    4.09
+
+-- donated_nonpolitical / self_respondent_only  (n=72,047)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -17.41     -7.21         2.06    2.12
+2 China-born                 -24.82    -25.12         2.45    2.57
+3 Mexico-born                -10.31    -29.17         1.24    1.18
+4 Other foreign-born         -11.62    -16.23         0.73    0.76
+5 Indian 2nd gen              -1.98      2.59         4.79    4.93
+
+-- group_membership / BA_plus_only  (n=45,824)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -27.86    -27.76         1.37    1.34
+2 China-born                 -27.49    -27.23         1.91    1.86
+3 Mexico-born                -20.53    -24.97         2.54    2.48
+4 Other foreign-born         -21.38    -22.27         0.76    0.76
+5 Indian 2nd gen             -10.10    -12.75         3.99    4.06
+
+-- group_membership / adults_18plus  (n=115,390)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -26.18    -15.80         1.22    1.20
+2 China-born                 -21.13    -17.62         1.40    1.36
+3 Mexico-born                -11.93    -24.57         0.55    0.48
+4 Other foreign-born         -14.25    -16.59         0.43    0.42
+5 Indian 2nd gen              -6.85     -2.57         3.51    3.55
+
+-- group_membership / self_respondent_only  (n=72,359)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -26.93    -15.98         1.71    1.68
+2 China-born                 -23.09    -19.34         1.94    1.85
+3 Mexico-born                -11.06    -25.65         0.78    0.70
+4 Other foreign-born         -14.54    -17.49         0.57    0.56
+5 Indian 2nd gen              -9.24     -0.52         4.77    4.82
+
+-- volunteered_org / BA_plus_only  (n=45,971)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -21.24    -20.11         1.45    1.44
+2 China-born                 -20.62    -19.88         2.00    2.01
+3 Mexico-born                -21.26    -23.23         2.42    2.32
+4 Other foreign-born         -17.98    -18.17         0.78    0.77
+5 Indian 2nd gen              -8.08     -9.37         4.07    4.07
+
+-- volunteered_org / adults_18plus  (n=115,655)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -19.41     -8.35         1.39    1.35
+2 China-born                 -17.42    -13.65         1.35    1.40
+3 Mexico-born                -10.48    -21.02         0.59    0.53
+4 Other foreign-born         -12.47    -14.11         0.44    0.43
+5 Indian 2nd gen              -2.77      4.23         3.89    3.78
+
+-- volunteered_org / self_respondent_only  (n=72,522)
+model                 adjusted_coef  raw_coef  adjusted_se  raw_se
+group                                                             
+1 India-born                 -19.62     -7.88         1.83    1.84
+2 China-born                 -19.70    -15.56         1.89    1.88
+3 Mexico-born                 -9.46    -21.49         0.82    0.76
+4 Other foreign-born         -12.49    -14.42         0.59    0.58
+5 Indian 2nd gen              -4.76      4.97         5.14    4.95

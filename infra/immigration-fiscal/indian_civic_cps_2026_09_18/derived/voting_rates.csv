@@ -1,0 +1,217 @@
+arm,year,measure,group,n,wpop,rate,se,neff
+citizens_18plus,2016,registered_census_convention,1 India-born,378,1180956.578200,0.699795,0.024861,339.907529
+citizens_18plus,2016,registered_census_convention,2 China-born,264,865679.439200,0.424666,0.032761,227.636569
+citizens_18plus,2016,registered_census_convention,3 Mexico-born,1069,3323149.907300,0.557452,0.016177,942.686447
+citizens_18plus,2016,registered_census_convention,4 Other foreign-born,4988,14477106.263600,0.635359,0.007457,4166.595349
+citizens_18plus,2016,registered_census_convention,5 Indian 2nd gen,156,436280.449700,0.660315,0.042711,122.953232
+citizens_18plus,2016,registered_census_convention,6 US-born NH white,67404,149764081.097100,0.741558,0.001915,52243.955249
+citizens_18plus,2016,registered_census_convention,7 All US-born,87095,204212112.893000,0.711767,0.001753,66723.955167
+citizens_18plus,2016,registered_census_convention,8 Indian 2nd gen (self-ID),150,452889.344500,0.620046,0.043000,127.413465
+citizens_18plus,2016,registered_census_convention,9 US-born Asian (any),1623,3976386.555800,0.514611,0.014690,1157.455141
+citizens_18plus,2016,turnout_census_convention,1 India-born,378,1180956.578200,0.660124,0.025692,339.907529
+citizens_18plus,2016,turnout_census_convention,2 China-born,264,865679.439200,0.349838,0.031610,227.636569
+citizens_18plus,2016,turnout_census_convention,3 Mexico-born,1069,3323149.907300,0.498777,0.016285,942.686447
+citizens_18plus,2016,turnout_census_convention,4 Other foreign-born,4988,14477106.263600,0.554931,0.007699,4166.595349
+citizens_18plus,2016,turnout_census_convention,5 Indian 2nd gen,156,436280.449700,0.577525,0.044547,122.953232
+citizens_18plus,2016,turnout_census_convention,6 US-born NH white,67404,149764081.097100,0.655822,0.002079,52243.955249
+citizens_18plus,2016,turnout_census_convention,7 All US-born,87095,204212112.893000,0.620741,0.001878,66723.955167
+citizens_18plus,2016,turnout_census_convention,8 Indian 2nd gen (self-ID),150,452889.344500,0.497826,0.044295,127.413465
+citizens_18plus,2016,turnout_census_convention,9 US-born Asian (any),1623,3976386.555800,0.447241,0.014615,1157.455141
+citizens_18plus,2016,turnout_reported_only,1 India-born,321,1007170.878700,0.774027,0.024582,289.443942
+citizens_18plus,2016,turnout_reported_only,2 China-born,219,719618.282400,0.420845,0.036232,185.668837
+citizens_18plus,2016,turnout_reported_only,3 Mexico-born,904,2780636.171800,0.596090,0.017427,792.793974
+citizens_18plus,2016,turnout_reported_only,4 Other foreign-born,4250,12344962.169700,0.650775,0.007996,3554.830483
+citizens_18plus,2016,turnout_reported_only,5 Indian 2nd gen,124,355170.236900,0.709415,0.045523,99.473113
+citizens_18plus,2016,turnout_reported_only,6 US-born NH white,58875,130157127.411200,0.754615,0.002016,45550.028768
+citizens_18plus,2016,turnout_reported_only,7 All US-born,75077,174544357.265200,0.726250,0.001861,57380.818826
+citizens_18plus,2016,turnout_reported_only,8 Indian 2nd gen (self-ID),114,332665.260600,0.677739,0.048029,94.682206
+citizens_18plus,2016,turnout_reported_only,9 US-born Asian (any),1210,2937537.569000,0.605407,0.016665,860.196600
+citizens_18plus,2016,vote_item_nonresponse,1 India-born,378,1180956.578200,0.147157,0.019215,339.907529
+citizens_18plus,2016,vote_item_nonresponse,2 China-born,264,865679.439200,0.168724,0.024822,227.636569
+citizens_18plus,2016,vote_item_nonresponse,3 Mexico-born,1069,3323149.907300,0.163253,0.012038,942.686447
+citizens_18plus,2016,vote_item_nonresponse,4 Other foreign-born,4988,14477106.263600,0.147277,0.005490,4166.595349
+citizens_18plus,2016,vote_item_nonresponse,5 Indian 2nd gen,156,436280.449700,0.185913,0.035085,122.953232
+citizens_18plus,2016,vote_item_nonresponse,6 US-born NH white,67404,149764081.097100,0.130919,0.001476,52243.955249
+citizens_18plus,2016,vote_item_nonresponse,7 All US-born,87095,204212112.893000,0.145279,0.001364,66723.955167
+citizens_18plus,2016,vote_item_nonresponse,8 Indian 2nd gen (self-ID),150,452889.344500,0.265460,0.039120,127.413465
+citizens_18plus,2016,vote_item_nonresponse,9 US-born Asian (any),1623,3976386.555800,0.261255,0.012913,1157.455141
+citizens_18plus,2018,registered_census_convention,1 India-born,336,1084510.366200,0.641861,0.027823,296.954899
+citizens_18plus,2018,registered_census_convention,2 China-born,312,1035410.924000,0.519842,0.030051,276.394760
+citizens_18plus,2018,registered_census_convention,3 Mexico-born,1220,3988470.922400,0.497551,0.015305,1067.200922
+citizens_18plus,2018,registered_census_convention,4 Other foreign-born,4956,15701457.172500,0.603144,0.007574,4172.650830
+citizens_18plus,2018,registered_census_convention,5 Indian 2nd gen,132,433006.479600,0.582899,0.047176,109.241001
+citizens_18plus,2018,registered_census_convention,6 US-born NH white,63192,149837759.850900,0.713484,0.002041,49085.713651
+citizens_18plus,2018,registered_census_convention,7 All US-born,81925,207021861.427500,0.678077,0.001867,62635.168161
+citizens_18plus,2018,registered_census_convention,8 Indian 2nd gen (self-ID),166,589868.719300,0.385875,0.040626,143.577905
+citizens_18plus,2018,registered_census_convention,9 US-born Asian (any),1764,4794893.713700,0.475144,0.013863,1297.635947
+citizens_18plus,2018,turnout_census_convention,1 India-born,336,1084510.366200,0.535638,0.028941,296.954899
+citizens_18plus,2018,turnout_census_convention,2 China-born,312,1035410.924000,0.362749,0.028920,276.394760
+citizens_18plus,2018,turnout_census_convention,3 Mexico-born,1220,3988470.922400,0.379507,0.014854,1067.200922
+citizens_18plus,2018,turnout_census_convention,4 Other foreign-born,4956,15701457.172500,0.478150,0.007733,4172.650830
+citizens_18plus,2018,turnout_census_convention,5 Indian 2nd gen,132,433006.479600,0.513678,0.047821,109.241001
+citizens_18plus,2018,turnout_census_convention,6 US-born NH white,63192,149837759.850900,0.577681,0.002229,49085.713651
+citizens_18plus,2018,turnout_census_convention,7 All US-born,81925,207021861.427500,0.542468,0.001991,62635.168161
+citizens_18plus,2018,turnout_census_convention,8 Indian 2nd gen (self-ID),166,589868.719300,0.330356,0.039253,143.577905
+citizens_18plus,2018,turnout_census_convention,9 US-born Asian (any),1764,4794893.713700,0.375013,0.013439,1297.635947
+citizens_18plus,2018,turnout_reported_only,1 India-born,282,904197.728900,0.642454,0.030483,247.210121
+citizens_18plus,2018,turnout_reported_only,2 China-born,259,854045.097200,0.439783,0.032794,229.094225
+citizens_18plus,2018,turnout_reported_only,3 Mexico-born,990,3196549.598100,0.473527,0.016993,863.386972
+citizens_18plus,2018,turnout_reported_only,4 Other foreign-born,4024,12810435.997900,0.586058,0.008458,3391.502671
+citizens_18plus,2018,turnout_reported_only,5 Indian 2nd gen,98,315914.830000,0.704069,0.051361,78.983010
+citizens_18plus,2018,turnout_reported_only,6 US-born NH white,53769,126670830.950200,0.683334,0.002278,41693.557421
+citizens_18plus,2018,turnout_reported_only,7 All US-born,68388,170624055.722600,0.658189,0.002077,52150.752501
+citizens_18plus,2018,turnout_reported_only,8 Indian 2nd gen (self-ID),90,306163.597100,0.636479,0.055509,75.092086
+citizens_18plus,2018,turnout_reported_only,9 US-born Asian (any),1175,3020169.966400,0.595380,0.017041,829.573875
+citizens_18plus,2018,vote_item_nonresponse,1 India-born,336,1084510.366200,0.166262,0.021606,296.954899
+citizens_18plus,2018,vote_item_nonresponse,2 China-born,312,1035410.924000,0.175163,0.022863,276.394760
+citizens_18plus,2018,vote_item_nonresponse,3 Mexico-born,1220,3988470.922400,0.198553,0.012211,1067.200922
+citizens_18plus,2018,vote_item_nonresponse,4 Other foreign-born,4956,15701457.172500,0.184124,0.006000,4172.650830
+citizens_18plus,2018,vote_item_nonresponse,5 Indian 2nd gen,132,433006.479600,0.270415,0.042497,109.241001
+citizens_18plus,2018,vote_item_nonresponse,6 US-born NH white,63192,149837759.850900,0.154613,0.001632,49085.713651
+citizens_18plus,2018,vote_item_nonresponse,7 All US-born,81925,207021861.427500,0.175816,0.001521,62635.168161
+citizens_18plus,2018,vote_item_nonresponse,8 Indian 2nd gen (self-ID),166,589868.719300,0.480963,0.041698,143.577905
+citizens_18plus,2018,vote_item_nonresponse,9 US-born Asian (any),1764,4794893.713700,0.370128,0.013404,1297.635947
+citizens_18plus,2020,registered_census_convention,1 India-born,382,1359011.133200,0.815933,0.020974,341.415805
+citizens_18plus,2020,registered_census_convention,2 China-born,257,970063.559300,0.598985,0.032434,228.337469
+citizens_18plus,2020,registered_census_convention,3 Mexico-born,1007,3713649.024200,0.548982,0.016636,894.638440
+citizens_18plus,2020,registered_census_convention,4 Other foreign-born,4506,15466728.453200,0.681760,0.007542,3814.299597
+citizens_18plus,2020,registered_census_convention,5 Indian 2nd gen,195,712586.107500,0.690955,0.036334,161.754044
+citizens_18plus,2020,registered_census_convention,6 US-born NH white,58055,150153561.534400,0.766506,0.001999,44807.303169
+citizens_18plus,2020,registered_census_convention,7 All US-born,75746,210083240.689100,0.733208,0.001836,58007.762433
+citizens_18plus,2020,registered_census_convention,8 Indian 2nd gen (self-ID),230,825214.241400,0.584164,0.035287,195.089823
+citizens_18plus,2020,registered_census_convention,9 US-born Asian (any),1681,4928673.262100,0.567863,0.013934,1263.928754
+citizens_18plus,2020,turnout_census_convention,1 India-born,382,1359011.133200,0.787023,0.022157,341.415805
+citizens_18plus,2020,turnout_census_convention,2 China-born,257,970063.559300,0.581475,0.032647,228.337469
+citizens_18plus,2020,turnout_census_convention,3 Mexico-born,1007,3713649.024200,0.496929,0.016716,894.638440
+citizens_18plus,2020,turnout_census_convention,4 Other foreign-born,4506,15466728.453200,0.620908,0.007856,3814.299597
+citizens_18plus,2020,turnout_census_convention,5 Indian 2nd gen,195,712586.107500,0.637979,0.037787,161.754044
+citizens_18plus,2020,turnout_census_convention,6 US-born NH white,58055,150153561.534400,0.711617,0.002140,44807.303169
+citizens_18plus,2020,turnout_census_convention,7 All US-born,75746,210083240.689100,0.673758,0.001947,58007.762433
+citizens_18plus,2020,turnout_census_convention,8 Indian 2nd gen (self-ID),230,825214.241400,0.550301,0.035616,195.089823
+citizens_18plus,2020,turnout_census_convention,9 US-born Asian (any),1681,4928673.262100,0.536619,0.014026,1263.928754
+citizens_18plus,2020,turnout_reported_only,1 India-born,327,1178605.065000,0.907491,0.016870,294.985775
+citizens_18plus,2020,turnout_reported_only,2 China-born,216,795466.400500,0.709104,0.032890,190.681234
+citizens_18plus,2020,turnout_reported_only,3 Mexico-born,810,3011124.082600,0.612868,0.018126,722.130668
+citizens_18plus,2020,turnout_reported_only,4 Other foreign-born,3762,12921208.851400,0.743229,0.007733,3191.140629
+citizens_18plus,2020,turnout_reported_only,5 Indian 2nd gen,155,555471.634300,0.818431,0.034197,127.068877
+citizens_18plus,2020,turnout_reported_only,6 US-born NH white,49937,129349134.655900,0.826073,0.001931,38543.763579
+citizens_18plus,2020,turnout_reported_only,7 All US-born,64169,177282279.433200,0.798417,0.001812,49044.975679
+citizens_18plus,2020,turnout_reported_only,8 Indian 2nd gen (self-ID),165,575148.447800,0.789564,0.034997,135.659450
+citizens_18plus,2020,turnout_reported_only,9 US-born Asian (any),1215,3476115.299300,0.760855,0.014318,887.617211
+citizens_18plus,2020,vote_item_nonresponse,1 India-born,382,1359011.133200,0.132748,0.018363,341.415805
+citizens_18plus,2020,vote_item_nonresponse,2 China-born,257,970063.559300,0.179985,0.025424,228.337469
+citizens_18plus,2020,vote_item_nonresponse,3 Mexico-born,1007,3713649.024200,0.189174,0.013094,894.638440
+citizens_18plus,2020,vote_item_nonresponse,4 Other foreign-born,4506,15466728.453200,0.164580,0.006004,3814.299597
+citizens_18plus,2020,vote_item_nonresponse,5 Indian 2nd gen,195,712586.107500,0.220485,0.032597,161.754044
+citizens_18plus,2020,vote_item_nonresponse,6 US-born NH white,58055,150153561.534400,0.138554,0.001632,44807.303169
+citizens_18plus,2020,vote_item_nonresponse,7 All US-born,75746,210083240.689100,0.156133,0.001507,58007.762433
+citizens_18plus,2020,vote_item_nonresponse,8 Indian 2nd gen (self-ID),230,825214.241400,0.303031,0.032903,195.089823
+citizens_18plus,2020,vote_item_nonresponse,9 US-born Asian (any),1681,4928673.262100,0.294716,0.012824,1263.928754
+citizens_18plus,2022,registered_census_convention,1 India-born,317,1249656.476700,0.737987,0.025966,286.782525
+citizens_18plus,2022,registered_census_convention,2 China-born,274,1072920.136400,0.517781,0.032062,242.891192
+citizens_18plus,2022,registered_census_convention,3 Mexico-born,984,3877215.939700,0.538885,0.016970,862.867783
+citizens_18plus,2022,registered_census_convention,4 Other foreign-born,4554,17511178.193400,0.622766,0.007843,3819.292479
+citizens_18plus,2022,registered_census_convention,5 Indian 2nd gen,157,584765.417900,0.666843,0.040985,132.255946
+citizens_18plus,2022,registered_census_convention,6 US-born NH white,51066,149662644.051200,0.736097,0.002232,38996.928770
+citizens_18plus,2022,registered_census_convention,7 All US-born,66954,209834686.547300,0.700311,0.002036,50608.083674
+citizens_18plus,2022,registered_census_convention,8 Indian 2nd gen (self-ID),181,703249.932500,0.548892,0.039568,158.156217
+citizens_18plus,2022,registered_census_convention,9 US-born Asian (any),1507,4966806.629600,0.552324,0.014542,1169.265436
+citizens_18plus,2022,turnout_census_convention,1 India-born,317,1249656.476700,0.470119,0.029472,286.782525
+citizens_18plus,2022,turnout_census_convention,2 China-born,274,1072920.136400,0.330635,0.030186,242.891192
+citizens_18plus,2022,turnout_census_convention,3 Mexico-born,984,3877215.939700,0.337284,0.016095,862.867783
+citizens_18plus,2022,turnout_census_convention,4 Other foreign-born,4554,17511178.193400,0.432646,0.008017,3819.292479
+citizens_18plus,2022,turnout_census_convention,5 Indian 2nd gen,157,584765.417900,0.480910,0.043446,132.255946
+citizens_18plus,2022,turnout_census_convention,6 US-born NH white,51066,149662644.051200,0.580411,0.002499,38996.928770
+citizens_18plus,2022,turnout_census_convention,7 All US-born,66954,209834686.547300,0.534183,0.002217,50608.083674
+citizens_18plus,2022,turnout_census_convention,8 Indian 2nd gen (self-ID),181,703249.932500,0.373772,0.038470,158.156217
+citizens_18plus,2022,turnout_census_convention,9 US-born Asian (any),1507,4966806.629600,0.384474,0.014227,1169.265436
+citizens_18plus,2022,turnout_reported_only,1 India-born,261,1034738.822300,0.567764,0.032232,236.215055
+citizens_18plus,2022,turnout_reported_only,2 China-born,236,931364.607000,0.380887,0.033502,210.099878
+citizens_18plus,2022,turnout_reported_only,3 Mexico-born,823,3274716.448100,0.399339,0.018201,724.109260
+citizens_18plus,2022,turnout_reported_only,4 Other foreign-born,3753,14354082.023400,0.527803,0.008894,3150.769032
+citizens_18plus,2022,turnout_reported_only,5 Indian 2nd gen,122,446425.350300,0.629936,0.047837,101.868500
+citizens_18plus,2022,turnout_reported_only,6 US-born NH white,43847,127677239.448300,0.680355,0.002552,33380.749832
+citizens_18plus,2022,turnout_reported_only,7 All US-born,56600,175397440.245400,0.639064,0.002327,42595.561416
+citizens_18plus,2022,turnout_reported_only,8 Indian 2nd gen (self-ID),126,481780.214600,0.545591,0.048230,106.579152
+citizens_18plus,2022,turnout_reported_only,9 US-born Asian (any),1131,3630206.830600,0.526033,0.017064,856.210604
+citizens_18plus,2022,vote_item_nonresponse,1 India-born,317,1249656.476700,0.171981,0.022284,286.782525
+citizens_18plus,2022,vote_item_nonresponse,2 China-born,274,1072920.136400,0.131935,0.021715,242.891192
+citizens_18plus,2022,vote_item_nonresponse,3 Mexico-born,984,3877215.939700,0.155395,0.012333,862.867783
+citizens_18plus,2022,vote_item_nonresponse,4 Other foreign-born,4554,17511178.193400,0.180290,0.006220,3819.292479
+citizens_18plus,2022,vote_item_nonresponse,5 Indian 2nd gen,157,584765.417900,0.236574,0.036954,132.255946
+citizens_18plus,2022,vote_item_nonresponse,6 US-born NH white,51066,149662644.051200,0.146900,0.001793,38996.928770
+citizens_18plus,2022,vote_item_nonresponse,7 All US-born,66954,209834686.547300,0.164116,0.001646,50608.083674
+citizens_18plus,2022,vote_item_nonresponse,8 Indian 2nd gen (self-ID),181,703249.932500,0.314923,0.036934,158.156217
+citizens_18plus,2022,vote_item_nonresponse,9 US-born Asian (any),1507,4966806.629600,0.269106,0.012970,1169.265436
+citizens_18plus,2024,registered_census_convention,1 India-born,335,1381718.207700,0.831854,0.021582,300.291851
+citizens_18plus,2024,registered_census_convention,2 China-born,257,1008987.509300,0.593744,0.032986,221.682553
+citizens_18plus,2024,registered_census_convention,3 Mexico-born,962,3933473.029700,0.556139,0.017026,851.525303
+citizens_18plus,2024,registered_census_convention,4 Other foreign-born,4472,17414858.065400,0.688095,0.007608,3707.640561
+citizens_18plus,2024,registered_census_convention,5 Indian 2nd gen,193,774790.888900,0.679846,0.036309,165.096371
+citizens_18plus,2024,registered_census_convention,6 US-born NH white,50775,149414369.767100,0.779138,0.002115,38452.213845
+citizens_18plus,2024,registered_census_convention,7 All US-born,66564,212399182.313000,0.743575,0.001958,49715.937821
+citizens_18plus,2024,registered_census_convention,8 Indian 2nd gen (self-ID),233,964551.012700,0.648863,0.033438,203.769707
+citizens_18plus,2024,registered_census_convention,9 US-born Asian (any),1663,5438930.165400,0.584213,0.013948,1248.572121
+citizens_18plus,2024,turnout_census_convention,1 India-born,335,1381718.207700,0.763578,0.024519,300.291851
+citizens_18plus,2024,turnout_census_convention,2 China-born,257,1008987.509300,0.503986,0.033581,221.682553
+citizens_18plus,2024,turnout_census_convention,3 Mexico-born,962,3933473.029700,0.444724,0.017029,851.525303
+citizens_18plus,2024,turnout_census_convention,4 Other foreign-born,4472,17414858.065400,0.600027,0.008045,3707.640561
+citizens_18plus,2024,turnout_census_convention,5 Indian 2nd gen,193,774790.888900,0.600895,0.038113,165.096371
+citizens_18plus,2024,turnout_census_convention,6 US-born NH white,50775,149414369.767100,0.707950,0.002319,38452.213845
+citizens_18plus,2024,turnout_census_convention,7 All US-born,66564,212399182.313000,0.661704,0.002122,49715.937821
+citizens_18plus,2024,turnout_census_convention,8 Indian 2nd gen (self-ID),233,964551.012700,0.580120,0.034574,203.769707
+citizens_18plus,2024,turnout_census_convention,9 US-born Asian (any),1663,5438930.165400,0.516567,0.014142,1248.572121
+citizens_18plus,2024,turnout_reported_only,1 India-born,306,1256635.684700,0.839583,0.022233,272.476580
+citizens_18plus,2024,turnout_reported_only,2 China-born,220,856923.756100,0.593420,0.035832,187.917271
+citizens_18plus,2024,turnout_reported_only,3 Mexico-born,841,3399290.662100,0.514610,0.018346,742.143646
+citizens_18plus,2024,turnout_reported_only,4 Other foreign-born,3785,14658612.933200,0.712850,0.008087,3129.536048
+citizens_18plus,2024,turnout_reported_only,5 Indian 2nd gen,162,639426.740100,0.728102,0.038016,136.984057
+citizens_18plus,2024,turnout_reported_only,6 US-born NH white,44792,130801132.377700,0.808692,0.002139,33816.141862
+citizens_18plus,2024,turnout_reported_only,7 All US-born,57943,182615967.573900,0.769623,0.002029,43076.019609
+citizens_18plus,2024,turnout_reported_only,8 Indian 2nd gen (self-ID),183,737308.919400,0.758916,0.033908,159.130396
+citizens_18plus,2024,turnout_reported_only,9 US-born Asian (any),1295,4030455.270600,0.697086,0.014947,945.087813
+citizens_18plus,2024,vote_item_nonresponse,1 India-born,335,1381718.207700,0.090527,0.016558,300.291851
+citizens_18plus,2024,vote_item_nonresponse,2 China-born,257,1008987.509300,0.150709,0.024029,221.682553
+citizens_18plus,2024,vote_item_nonresponse,3 Mexico-born,962,3933473.029700,0.135804,0.011740,851.525303
+citizens_18plus,2024,vote_item_nonresponse,4 Other foreign-born,4472,17414858.065400,0.158270,0.005994,3707.640561
+citizens_18plus,2024,vote_item_nonresponse,5 Indian 2nd gen,193,774790.888900,0.174711,0.029552,165.096371
+citizens_18plus,2024,vote_item_nonresponse,6 US-born NH white,50775,149414369.767100,0.124575,0.001684,38452.213845
+citizens_18plus,2024,vote_item_nonresponse,7 All US-born,66564,212399182.313000,0.140223,0.001557,49715.937821
+citizens_18plus,2024,vote_item_nonresponse,8 Indian 2nd gen (self-ID),233,964551.012700,0.235594,0.029729,203.769707
+citizens_18plus,2024,vote_item_nonresponse,9 US-born Asian (any),1663,5438930.165400,0.258962,0.012397,1248.572121
+citizens_18plus_pooled,pooled,registered_census_convention,1 India-born,1748,6255852.762000,0.751778,0.010978,1548.310790
+citizens_18plus_pooled,pooled,registered_census_convention,2 China-born,1364,4953061.568200,0.533316,0.014465,1189.534962
+citizens_18plus_pooled,pooled,registered_census_convention,3 Mexico-born,5242,18835958.823300,0.539002,0.007373,4570.417741
+citizens_18plus_pooled,pooled,registered_census_convention,4 Other foreign-born,23476,80571328.148100,0.646650,0.003430,19425.449926
+citizens_18plus_pooled,pooled,registered_census_convention,5 Indian 2nd gen,833,2941429.343600,0.662784,0.018059,685.296490
+citizens_18plus_pooled,pooled,registered_census_convention,6 US-born NH white,290492,748832416.300700,0.747350,0.000926,220347.326489
+citizens_18plus_pooled,pooled,registered_census_convention,7 All US-born,378284,1043551083.869900,0.713570,0.000850,283036.885200
+citizens_18plus_pooled,pooled,registered_census_convention,8 Indian 2nd gen (self-ID),960,3535773.250400,0.566314,0.017290,821.585693
+citizens_18plus_pooled,pooled,registered_census_convention,9 US-born Asian (any),8238,24105690.326600,0.541123,0.006384,6091.781110
+citizens_18plus_pooled,pooled,turnout_census_convention,1 India-born,1748,6255852.762000,0.651005,0.012114,1548.310790
+citizens_18plus_pooled,pooled,turnout_census_convention,2 China-born,1364,4953061.568200,0.425145,0.014334,1189.534962
+citizens_18plus_pooled,pooled,turnout_census_convention,3 Mexico-born,5242,18835958.823300,0.428628,0.007320,4570.417741
+citizens_18plus_pooled,pooled,turnout_census_convention,4 Other foreign-born,23476,80571328.148100,0.535803,0.003578,19425.449926
+citizens_18plus_pooled,pooled,turnout_census_convention,5 Indian 2nd gen,833,2941429.343600,0.569720,0.018913,685.296490
+citizens_18plus_pooled,pooled,turnout_census_convention,6 US-born NH white,290492,748832416.300700,0.646703,0.001018,220347.326489
+citizens_18plus_pooled,pooled,turnout_census_convention,7 All US-born,378284,1043551083.869900,0.606819,0.000918,283036.885200
+citizens_18plus_pooled,pooled,turnout_census_convention,8 Indian 2nd gen (self-ID),960,3535773.250400,0.479910,0.017430,821.585693
+citizens_18plus_pooled,pooled,turnout_census_convention,9 US-born Asian (any),8238,24105690.326600,0.453858,0.006379,6091.781110
+citizens_18plus_pooled,pooled,turnout_reported_only,1 India-born,1497,5381348.179600,0.756798,0.011784,1325.407934
+citizens_18plus_pooled,pooled,turnout_reported_only,2 China-born,1150,4157418.143200,0.506509,0.015830,997.482672
+citizens_18plus_pooled,pooled,turnout_reported_only,3 Mexico-born,4368,15662316.962700,0.515480,0.008105,3801.884095
+citizens_18plus_pooled,pooled,turnout_reported_only,4 Other foreign-born,19574,67089301.975600,0.643476,0.003762,16212.053334
+citizens_18plus_pooled,pooled,turnout_reported_only,5 Indian 2nd gen,661,2312408.791600,0.724695,0.019220,540.064290
+citizens_18plus_pooled,pooled,turnout_reported_only,6 US-born NH white,251220,644655464.843300,0.751211,0.000991,190185.404174
+citizens_18plus_pooled,pooled,turnout_reported_only,7 All US-born,322177,880464100.240300,0.719219,0.000917,240271.645468
+citizens_18plus_pooled,pooled,turnout_reported_only,8 Indian 2nd gen (self-ID),678,2433066.439500,0.697414,0.019300,566.511676
+citizens_18plus_pooled,pooled,turnout_reported_only,9 US-born Asian (any),6026,17094484.935900,0.640005,0.007280,4347.230592
+citizens_18plus_pooled,pooled,vote_item_nonresponse,1 India-born,1748,6255852.762000,0.139790,0.008813,1548.310790
+citizens_18plus_pooled,pooled,vote_item_nonresponse,2 China-born,1364,4953061.568200,0.160637,0.010647,1189.534962
+citizens_18plus_pooled,pooled,vote_item_nonresponse,3 Mexico-born,5242,18835958.823300,0.168488,0.005537,4570.417741
+citizens_18plus_pooled,pooled,vote_item_nonresponse,4 Other foreign-born,23476,80571328.148100,0.167330,0.002678,19425.449926
+citizens_18plus_pooled,pooled,vote_item_nonresponse,5 Indian 2nd gen,833,2941429.343600,0.213849,0.015663,685.296490
+citizens_18plus_pooled,pooled,vote_item_nonresponse,6 US-born NH white,290492,748832416.300700,0.139119,0.000737,220347.326489
+citizens_18plus_pooled,pooled,vote_item_nonresponse,7 All US-born,378284,1043551083.869900,0.156281,0.000683,283036.885200
+citizens_18plus_pooled,pooled,vote_item_nonresponse,8 Indian 2nd gen (self-ID),960,3535773.250400,0.311871,0.016162,821.585693
+citizens_18plus_pooled,pooled,vote_item_nonresponse,9 US-born Asian (any),8238,24105690.326600,0.290853,0.005819,6091.781110

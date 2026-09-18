@@ -1,0 +1,19 @@
+CHECK: lane all-adult (18+) rates vs the published AmeriCorps/Census national
+rates for the same supplement (published universe is 16+, this lane's is 18+,
+so a gap of a point or so is expected).
+
+  contacted_official     2019  lane  10.1%   published   9.9%   delta +0.2
+  contacted_official     2021  lane   9.8%   published   9.5%   delta +0.3
+  contacted_official     2023  lane   8.9%   published   8.7%   delta +0.2
+
+  donated_nonpolitical   2019  lane  51.6%   published  50.5%   delta +1.1
+  donated_nonpolitical   2021  lane  49.2%   published  48.1%   delta +1.1
+  donated_nonpolitical   2023  lane  49.5%   published  48.5%   delta +1.0
+
+  group_membership       2019  lane  27.1%   published  27.1%   delta +0.0
+  group_membership       2021  lane  23.8%   published  23.8%   delta -0.0
+  group_membership       2023  lane  24.9%   published  24.9%   delta -0.0
+
+  volunteered_org        2019  lane  27.3%   published  30.0%   delta -2.7
+  volunteered_org        2021  lane  21.1%   published  23.2%   delta -2.1
+  volunteered_org        2023  lane  25.2%   published  28.3%   delta -3.1

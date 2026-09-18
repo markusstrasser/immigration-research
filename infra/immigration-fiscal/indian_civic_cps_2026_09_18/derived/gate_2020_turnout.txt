@@ -1,0 +1,26 @@
+GATE: November 2020 reported turnout vs the published P20-585 tables
+(Census convention: item non-response counted as not voting, kept in the denominator)
+
+  all citizens 18+
+    turnout    lane  66.77%   published  66.8%   delta -0.03   <- PRIMARY GATE, tolerance 0.5 -> PASS
+    registered lane  72.67%   published  72.7%   delta -0.03
+    weighted   lane   231,593k  published   231,593k  delta -0k   (n=81,898)
+    [SOURCE: P20-585 Table 1, both sexes 18+: 154,628 / 231,593 thousand]
+
+  native-born citizens
+    turnout    lane  67.38%   published  67.4%   delta -0.02
+    registered lane  73.32%   published  73.3%   delta +0.02
+    weighted   lane   210,083k  published   210,083k  delta +0k   (n=75,746)
+    [SOURCE: P20-585 Table 11, Native-born citizen, all races]
+
+  naturalized citizens
+    turnout    lane  60.82%   published  60.8%   delta +0.02
+    registered lane  66.36%   published  66.4%   delta -0.04
+    weighted   lane    21,509k  published    21,509k  delta +0k   (n=6,152)
+    [SOURCE: P20-585 Table 11, Naturalized citizen, all races]
+
+  native-born NH white
+    turnout    lane  71.16%   published  71.2%   delta -0.04
+    registered lane  76.65%   published  76.6%   delta +0.05
+    weighted   lane   150,195k  published   150,195k  delta -0k   (n=58,070)
+    [SOURCE: P20-585 Table 11, Native-born citizen, White non-Hispanic alone]

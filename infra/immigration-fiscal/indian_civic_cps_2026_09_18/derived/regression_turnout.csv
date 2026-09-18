@@ -1,0 +1,41 @@
+outcome,spec,model,group,coef_lpm,se_lpm,t,ame_logit,n,r2
+turnout_census_convention,citizens_18plus,adjusted,1 India-born,-0.102745,0.011747,-8.746682,-0.107481,323155,0.134253
+turnout_census_convention,citizens_18plus,adjusted,2 China-born,-0.232829,0.013550,-17.182652,-0.225518,323155,0.134253
+turnout_census_convention,citizens_18plus,adjusted,3 Mexico-born,-0.099919,0.007322,-13.646870,-0.090207,323155,0.134253
+turnout_census_convention,citizens_18plus,adjusted,4 Other foreign-born,-0.120216,0.003605,-33.346588,-0.116076,323155,0.134253
+turnout_census_convention,citizens_18plus,adjusted,5 Indian 2nd gen,-0.047947,0.018607,-2.576775,-0.051629,323155,0.134253
+turnout_census_convention,citizens_18plus,raw,1 India-born,0.000168,0.011797,0.014271,0.000218,323155,0.025128
+turnout_census_convention,citizens_18plus,raw,2 China-born,-0.219419,0.014154,-15.502506,-0.207356,323155,0.025128
+turnout_census_convention,citizens_18plus,raw,3 Mexico-born,-0.216943,0.007349,-29.521891,-0.205060,323155,0.025128
+turnout_census_convention,citizens_18plus,raw,4 Other foreign-born,-0.110215,0.003682,-29.934596,-0.105867,323155,0.025128
+turnout_census_convention,citizens_18plus,raw,5 Indian 2nd gen,-0.086813,0.018834,-4.609385,-0.084729,323155,0.025128
+turnout_census_convention,citizens_BA_plus,adjusted,1 India-born,-0.124929,0.013080,-9.551455,-0.117992,119836,0.059145
+turnout_census_convention,citizens_BA_plus,adjusted,2 China-born,-0.226215,0.019681,-11.494247,-0.195468,119836,0.059145
+turnout_census_convention,citizens_BA_plus,adjusted,3 Mexico-born,-0.150093,0.020080,-7.474679,-0.128906,119836,0.059145
+turnout_census_convention,citizens_BA_plus,adjusted,4 Other foreign-born,-0.157334,0.005385,-29.219167,-0.139436,119836,0.059145
+turnout_census_convention,citizens_BA_plus,adjusted,5 Indian 2nd gen,-0.081006,0.023349,-3.469400,-0.072668,119836,0.059145
+turnout_census_convention,citizens_BA_plus,raw,1 India-born,-0.099491,0.013096,-7.597233,-0.092628,119836,0.030557
+turnout_census_convention,citizens_BA_plus,raw,2 China-born,-0.208548,0.019998,-10.428500,-0.177143,119836,0.030557
+turnout_census_convention,citizens_BA_plus,raw,3 Mexico-born,-0.172161,0.020204,-8.521080,-0.150147,119836,0.030557
+turnout_census_convention,citizens_BA_plus,raw,4 Other foreign-born,-0.153793,0.005439,-28.278070,-0.135553,119836,0.030557
+turnout_census_convention,citizens_BA_plus,raw,5 Indian 2nd gen,-0.126025,0.023369,-5.392879,-0.114785,119836,0.030557
+turnout_census_convention,citizens_age_25_54,adjusted,1 India-born,-0.122291,0.015326,-7.979522,-0.125714,145294,0.139306
+turnout_census_convention,citizens_age_25_54,adjusted,2 China-born,-0.238656,0.019553,-12.205632,-0.236285,145294,0.139306
+turnout_census_convention,citizens_age_25_54,adjusted,3 Mexico-born,-0.080134,0.009700,-8.261589,-0.076727,145294,0.139306
+turnout_census_convention,citizens_age_25_54,adjusted,4 Other foreign-born,-0.120177,0.005223,-23.008948,-0.117449,145294,0.139306
+turnout_census_convention,citizens_age_25_54,adjusted,5 Indian 2nd gen,-0.080944,0.023930,-3.382530,-0.084149,145294,0.139306
+turnout_census_convention,citizens_age_25_54,raw,1 India-born,0.014531,0.015520,0.936270,0.014803,145294,0.030291
+turnout_census_convention,citizens_age_25_54,raw,2 China-born,-0.196715,0.020565,-9.565409,-0.190560,145294,0.030291
+turnout_census_convention,citizens_age_25_54,raw,3 Mexico-born,-0.204350,0.009901,-20.640271,-0.197941,145294,0.030291
+turnout_census_convention,citizens_age_25_54,raw,4 Other foreign-born,-0.109426,0.005340,-20.493005,-0.106302,145294,0.030291
+turnout_census_convention,citizens_age_25_54,raw,5 Indian 2nd gen,-0.002417,0.025010,-0.096653,-0.002391,145294,0.030291
+turnout_reported_only,citizens_respondents_only,adjusted,1 India-born,-0.106792,0.011449,-9.327526,-0.121497,278470,0.171667
+turnout_reported_only,citizens_respondents_only,adjusted,2 China-born,-0.254592,0.014724,-17.290599,-0.230623,278470,0.171667
+turnout_reported_only,citizens_respondents_only,adjusted,3 Mexico-born,-0.103177,0.007949,-12.979928,-0.082611,278470,0.171667
+turnout_reported_only,citizens_respondents_only,adjusted,4 Other foreign-born,-0.117652,0.003725,-31.581580,-0.111709,278470,0.171667
+turnout_reported_only,citizens_respondents_only,adjusted,5 Indian 2nd gen,-0.001240,0.018803,-0.065921,-0.018307,278470,0.171667
+turnout_reported_only,citizens_respondents_only,raw,1 India-born,0.000106,0.011396,0.009316,0.000289,278470,0.032348
+turnout_reported_only,citizens_respondents_only,raw,2 China-born,-0.241408,0.015532,-15.542731,-0.205276,278470,0.032348
+turnout_reported_only,citizens_respondents_only,raw,3 Mexico-born,-0.234404,0.008107,-28.914647,-0.200246,278470,0.032348
+turnout_reported_only,citizens_respondents_only,raw,4 Other foreign-born,-0.107048,0.003838,-27.890748,-0.098547,278470,0.032348
+turnout_reported_only,citizens_respondents_only,raw,5 Indian 2nd gen,-0.038010,0.019117,-1.988269,-0.038089,278470,0.032348

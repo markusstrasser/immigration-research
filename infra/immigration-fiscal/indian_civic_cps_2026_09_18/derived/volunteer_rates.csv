@@ -1,0 +1,289 @@
+arm,year,measure,group,n,wpop,rate,se,neff
+adults_18plus,2019,contacted_official,1 India-born,420,2655874.338100,0.041656,0.010664,351.017296
+adults_18plus,2019,contacted_official,2 China-born,293,1922770.460000,0.036227,0.012194,234.810722
+adults_18plus,2019,contacted_official,3 Mexico-born,1447,10283469.447700,0.021295,0.004282,1136.596803
+adults_18plus,2019,contacted_official,4 Other foreign-born,4022,24942123.834600,0.039381,0.003550,3002.447613
+adults_18plus,2019,contacted_official,5 Indian 2nd gen,81,474790.254900,0.093135,0.038232,57.784451
+adults_18plus,2019,contacted_official,6 US-born NH white,36498,142725240.213300,0.130918,0.002138,24892.371436
+adults_18plus,2019,contacted_official,7 All US-born,45845,197078674.686200,0.113984,0.001830,30162.307201
+adults_18plus,2019,contacted_official,8 Indian 2nd gen (self-ID),80,528409.298000,0.071700,0.034037,57.450484
+adults_18plus,2019,contacted_official,9 US-born Asian (any),698,3708543.232900,0.065989,0.011833,440.211406
+adults_18plus,2019,donated_nonpolitical,1 India-born,418,2638951.990500,0.473209,0.026749,348.410648
+adults_18plus,2019,donated_nonpolitical,2 China-born,290,1905988.445300,0.367576,0.031609,232.665430
+adults_18plus,2019,donated_nonpolitical,3 Mexico-born,1442,10226363.893900,0.319219,0.013860,1131.266400
+adults_18plus,2019,donated_nonpolitical,4 Other foreign-born,4007,24875323.964100,0.427033,0.009040,2993.876450
+adults_18plus,2019,donated_nonpolitical,5 Indian 2nd gen,81,476501.355700,0.546387,0.065609,57.578531
+adults_18plus,2019,donated_nonpolitical,6 US-born NH white,36380,142080565.912900,0.591952,0.003120,24810.316534
+adults_18plus,2019,donated_nonpolitical,7 All US-born,45685,196227270.586900,0.539494,0.002875,30048.040060
+adults_18plus,2019,donated_nonpolitical,8 Indian 2nd gen (self-ID),80,530120.398800,0.503042,0.066037,57.325151
+adults_18plus,2019,donated_nonpolitical,9 US-born Asian (any),691,3700605.283000,0.503585,0.023908,437.354149
+adults_18plus,2019,donated_political,1 India-born,419,2644243.158300,0.087962,0.015155,349.319917
+adults_18plus,2019,donated_political,2 China-born,292,1927003.652700,0.063897,0.015944,235.280418
+adults_18plus,2019,donated_political,3 Mexico-born,1446,10255518.513800,0.023657,0.004511,1134.836638
+adults_18plus,2019,donated_political,4 Other foreign-born,4011,24916486.518600,0.056021,0.004200,2997.308025
+adults_18plus,2019,donated_political,5 Indian 2nd gen,81,482070.945900,0.118268,0.042579,57.519270
+adults_18plus,2019,donated_political,6 US-born NH white,36326,141965489.590300,0.104741,0.001946,24768.067711
+adults_18plus,2019,donated_political,7 All US-born,45622,196052078.215600,0.089832,0.001651,30002.787641
+adults_18plus,2019,donated_political,8 Indian 2nd gen (self-ID),81,541602.536100,0.075614,0.034635,58.268293
+adults_18plus,2019,donated_political,9 US-born Asian (any),694,3715465.606000,0.052631,0.010658,438.951533
+adults_18plus,2019,group_membership,1 India-born,418,2643881.890900,0.165574,0.019905,348.694241
+adults_18plus,2019,group_membership,2 China-born,292,1919429.815800,0.190851,0.025666,234.427511
+adults_18plus,2019,group_membership,3 Mexico-born,1446,10263195.579900,0.086203,0.008330,1135.167122
+adults_18plus,2019,group_membership,4 Other foreign-born,4022,24954418.746000,0.167989,0.006822,3002.869630
+adults_18plus,2019,group_membership,5 Indian 2nd gen,82,487983.493000,0.386746,0.063709,58.433265
+adults_18plus,2019,group_membership,6 US-born NH white,36515,142647688.732900,0.341208,0.003005,24896.129188
+adults_18plus,2019,group_membership,7 All US-born,45856,196945140.985400,0.296167,0.002629,30162.390033
+adults_18plus,2019,group_membership,8 Indian 2nd gen (self-ID),79,507885.988200,0.309347,0.060678,58.029388
+adults_18plus,2019,group_membership,9 US-born Asian (any),696,3680062.446200,0.227180,0.019951,441.085521
+adults_18plus,2019,improved_neighborhood,1 India-born,418,2651799.045000,0.240041,0.022840,349.700860
+adults_18plus,2019,improved_neighborhood,2 China-born,295,1922687.481400,0.172258,0.024379,239.906223
+adults_18plus,2019,improved_neighborhood,3 Mexico-born,1453,10336633.022000,0.115882,0.009470,1142.516435
+adults_18plus,2019,improved_neighborhood,4 Other foreign-born,4044,25124476.384700,0.173561,0.006888,3022.990369
+adults_18plus,2019,improved_neighborhood,5 Indian 2nd gen,81,474790.254900,0.363707,0.063285,57.784451
+adults_18plus,2019,improved_neighborhood,6 US-born NH white,36632,143173716.178800,0.236264,0.002688,24974.490494
+adults_18plus,2019,improved_neighborhood,7 All US-born,46024,197742173.562600,0.214942,0.002361,30268.240061
+adults_18plus,2019,improved_neighborhood,8 Indian 2nd gen (self-ID),80,528409.298000,0.380633,0.064059,57.450484
+adults_18plus,2019,improved_neighborhood,9 US-born Asian (any),703,3748344.739400,0.181704,0.018309,443.546240
+adults_18plus,2019,neighbor_favors_monthly,1 India-born,414,2630821.290400,0.292646,0.024454,346.173290
+adults_18plus,2019,neighbor_favors_monthly,2 China-born,295,1921223.060600,0.216150,0.026586,239.715548
+adults_18plus,2019,neighbor_favors_monthly,3 Mexico-born,1452,10331865.928200,0.316161,0.013761,1141.787453
+adults_18plus,2019,neighbor_favors_monthly,4 Other foreign-born,4033,24993002.151100,0.255122,0.007940,3014.159266
+adults_18plus,2019,neighbor_favors_monthly,5 Indian 2nd gen,81,482070.945900,0.340021,0.062461,57.519270
+adults_18plus,2019,neighbor_favors_monthly,6 US-born NH white,36598,143018962.743200,0.394128,0.003093,24963.642233
+adults_18plus,2019,neighbor_favors_monthly,7 All US-born,45981,197560680.504600,0.356536,0.002754,30246.486036
+adults_18plus,2019,neighbor_favors_monthly,8 Indian 2nd gen (self-ID),81,541602.536100,0.328747,0.061540,58.268293
+adults_18plus,2019,neighbor_favors_monthly,9 US-born Asian (any),704,3763346.791900,0.249313,0.020521,444.454433
+adults_18plus,2019,talks_neighbors_weekly,1 India-born,419,2656701.640900,0.264289,0.023551,350.576062
+adults_18plus,2019,talks_neighbors_weekly,2 China-born,298,1942454.226400,0.163326,0.023743,242.408587
+adults_18plus,2019,talks_neighbors_weekly,3 Mexico-born,1459,10375442.163100,0.269192,0.013093,1147.566036
+adults_18plus,2019,talks_neighbors_weekly,4 Other foreign-born,4051,25114422.308400,0.251860,0.007893,3024.228614
+adults_18plus,2019,talks_neighbors_weekly,5 Indian 2nd gen,81,482070.945900,0.158780,0.048189,57.519270
+adults_18plus,2019,talks_neighbors_weekly,6 US-born NH white,36670,143315231.750100,0.327692,0.002967,25021.178816
+adults_18plus,2019,talks_neighbors_weekly,7 All US-born,46077,197934363.840800,0.301621,0.002636,30324.374512
+adults_18plus,2019,talks_neighbors_weekly,8 Indian 2nd gen (self-ID),81,541602.536100,0.123063,0.043036,58.268293
+adults_18plus,2019,talks_neighbors_weekly,9 US-born Asian (any),705,3765256.558900,0.154719,0.017134,445.475016
+adults_18plus,2019,volunteered_org,1 India-born,421,2660311.148100,0.189625,0.020912,351.385083
+adults_18plus,2019,volunteered_org,2 China-born,295,1942526.663800,0.206395,0.026325,236.361920
+adults_18plus,2019,volunteered_org,3 Mexico-born,1449,10286633.185000,0.102825,0.009003,1138.262104
+adults_18plus,2019,volunteered_org,4 Other foreign-born,4037,25037814.410200,0.172162,0.006877,3013.813958
+adults_18plus,2019,volunteered_org,5 Indian 2nd gen,81,481517.761800,0.411494,0.064905,57.484764
+adults_18plus,2019,volunteered_org,6 US-born NH white,36588,142984737.761900,0.329577,0.002976,24950.293773
+adults_18plus,2019,volunteered_org,7 All US-born,45958,197468262.768600,0.296102,0.002626,30226.547975
+adults_18plus,2019,volunteered_org,8 Indian 2nd gen (self-ID),80,535136.804900,0.351659,0.063045,57.361719
+adults_18plus,2019,volunteered_org,9 US-born Asian (any),699,3731943.195500,0.296309,0.021749,440.803343
+adults_18plus,2021,contacted_official,1 India-born,367,2544612.340600,0.035577,0.011037,281.680161
+adults_18plus,2021,contacted_official,2 China-born,275,1970051.625700,0.046205,0.014293,215.727095
+adults_18plus,2021,contacted_official,3 Mexico-born,1248,10206628.368300,0.009451,0.003087,982.538886
+adults_18plus,2021,contacted_official,4 Other foreign-born,3450,24729006.187400,0.042282,0.004061,2455.211612
+adults_18plus,2021,contacted_official,5 Indian 2nd gen,84,635957.982000,0.129149,0.044584,56.581306
+adults_18plus,2021,contacted_official,6 US-born NH white,30838,140785230.624900,0.125026,0.002305,20593.212889
+adults_18plus,2021,contacted_official,7 All US-born,38969,196711970.478700,0.110387,0.001973,25222.663871
+adults_18plus,2021,contacted_official,8 Indian 2nd gen (self-ID),84,644949.145800,0.096646,0.039335,56.426554
+adults_18plus,2021,contacted_official,9 US-born Asian (any),748,4478538.178600,0.072108,0.012699,414.866488
+adults_18plus,2021,donated_nonpolitical,1 India-born,366,2537518.533000,0.545779,0.029717,280.726375
+adults_18plus,2021,donated_nonpolitical,2 China-born,274,1972052.183300,0.370662,0.032904,215.459715
+adults_18plus,2021,donated_nonpolitical,3 Mexico-born,1243,10181917.645400,0.293462,0.014556,978.617664
+adults_18plus,2021,donated_nonpolitical,4 Other foreign-born,3415,24456134.990800,0.392075,0.009905,2429.522969
+adults_18plus,2021,donated_nonpolitical,5 Indian 2nd gen,83,631220.465800,0.571606,0.066176,55.917025
+adults_18plus,2021,donated_nonpolitical,6 US-born NH white,30688,140082434.665000,0.572030,0.003456,20492.656373
+adults_18plus,2021,donated_nonpolitical,7 All US-born,38765,195702484.342100,0.514991,0.003155,25085.820994
+adults_18plus,2021,donated_nonpolitical,8 Indian 2nd gen (self-ID),83,640211.629600,0.507481,0.066945,55.770429
+adults_18plus,2021,donated_nonpolitical,9 US-born Asian (any),732,4368430.960400,0.457239,0.024720,406.129423
+adults_18plus,2021,donated_political,1 India-born,366,2533633.171800,0.039288,0.011595,280.726784
+adults_18plus,2021,donated_political,2 China-born,274,1972052.183300,0.040712,0.013463,215.459715
+adults_18plus,2021,donated_political,3 Mexico-born,1248,10212626.246100,0.014634,0.003831,982.701502
+adults_18plus,2021,donated_political,4 Other foreign-born,3421,24530587.269900,0.060558,0.004833,2435.385463
+adults_18plus,2021,donated_political,5 Indian 2nd gen,83,631220.465800,0.093493,0.038932,55.917025
+adults_18plus,2021,donated_political,6 US-born NH white,30631,139845427.729000,0.121568,0.002285,20449.011643
+adults_18plus,2021,donated_political,7 All US-born,38714,195434657.271100,0.106733,0.001950,25061.215279
+adults_18plus,2021,donated_political,8 Indian 2nd gen (self-ID),83,640211.629600,0.107318,0.041446,55.770429
+adults_18plus,2021,donated_political,9 US-born Asian (any),732,4362852.700400,0.100795,0.014942,405.962131
+adults_18plus,2021,group_membership,1 India-born,365,2525893.485000,0.131099,0.020179,279.747127
+adults_18plus,2021,group_membership,2 China-born,274,1967246.296000,0.143205,0.023878,215.207287
+adults_18plus,2021,group_membership,3 Mexico-born,1247,10192515.695900,0.057391,0.007425,981.144164
+adults_18plus,2021,group_membership,4 Other foreign-born,3448,24706326.179200,0.134168,0.006880,2454.052211
+adults_18plus,2021,group_membership,5 Indian 2nd gen,84,635957.982000,0.220858,0.055148,56.581306
+adults_18plus,2021,group_membership,6 US-born NH white,30817,140681386.682600,0.302312,0.003202,20574.782606
+adults_18plus,2021,group_membership,7 All US-born,38928,196482017.372300,0.262477,0.002773,25182.892690
+adults_18plus,2021,group_membership,8 Indian 2nd gen (self-ID),84,650902.024500,0.196856,0.052599,57.146617
+adults_18plus,2021,group_membership,9 US-born Asian (any),745,4480810.931200,0.217831,0.020360,411.022438
+adults_18plus,2021,improved_neighborhood,1 India-born,367,2540740.887200,0.272286,0.026520,281.722997
+adults_18plus,2021,improved_neighborhood,2 China-born,275,1975096.090600,0.172629,0.025719,215.929810
+adults_18plus,2021,improved_neighborhood,3 Mexico-born,1247,10184185.705400,0.096538,0.009430,980.859659
+adults_18plus,2021,improved_neighborhood,4 Other foreign-born,3462,24789533.618500,0.159303,0.007372,2464.217199
+adults_18plus,2021,improved_neighborhood,5 Indian 2nd gen,83,628377.239000,0.116737,0.043030,55.688141
+adults_18plus,2021,improved_neighborhood,6 US-born NH white,30924,141148227.514700,0.205094,0.002809,20661.294356
+adults_18plus,2021,improved_neighborhood,7 All US-born,39073,197188943.733900,0.186129,0.002448,25284.391290
+adults_18plus,2021,improved_neighborhood,8 Indian 2nd gen (self-ID),83,637368.402800,0.122731,0.044029,55.540853
+adults_18plus,2021,improved_neighborhood,9 US-born Asian (any),747,4474447.035700,0.137979,0.016953,413.830098
+adults_18plus,2021,neighbor_favors_monthly,1 India-born,367,2539545.037100,0.348746,0.028399,281.607965
+adults_18plus,2021,neighbor_favors_monthly,2 China-born,276,1980035.024900,0.218996,0.028093,216.718454
+adults_18plus,2021,neighbor_favors_monthly,3 Mexico-born,1247,10226041.505200,0.269764,0.014173,980.607360
+adults_18plus,2021,neighbor_favors_monthly,4 Other foreign-born,3459,24758825.599100,0.251803,0.008747,2462.539922
+adults_18plus,2021,neighbor_favors_monthly,5 Indian 2nd gen,83,628377.239000,0.287765,0.060667,55.688141
+adults_18plus,2021,neighbor_favors_monthly,6 US-born NH white,30889,140961345.881200,0.398037,0.003408,20635.512969
+adults_18plus,2021,neighbor_favors_monthly,7 All US-born,39039,196977674.888400,0.358481,0.003017,25271.406519
+adults_18plus,2021,neighbor_favors_monthly,8 Indian 2nd gen (self-ID),83,637368.402800,0.268190,0.059445,55.540853
+adults_18plus,2021,neighbor_favors_monthly,9 US-born Asian (any),749,4480130.714900,0.229202,0.020641,414.651380
+adults_18plus,2021,talks_neighbors_weekly,1 India-born,368,2552199.010300,0.320506,0.027755,282.712227
+adults_18plus,2021,talks_neighbors_weekly,2 China-born,276,1980035.024900,0.163786,0.025139,216.718454
+adults_18plus,2021,talks_neighbors_weekly,3 Mexico-born,1251,10260294.013100,0.206250,0.012907,982.644485
+adults_18plus,2021,talks_neighbors_weekly,4 Other foreign-born,3458,24740966.692900,0.228633,0.008457,2465.625608
+adults_18plus,2021,talks_neighbors_weekly,5 Indian 2nd gen,84,638548.762700,0.199859,0.053117,56.678563
+adults_18plus,2021,talks_neighbors_weekly,6 US-born NH white,30953,141276981.954200,0.307377,0.003209,20670.007919
+adults_18plus,2021,talks_neighbors_weekly,7 All US-born,39116,197444216.843500,0.280890,0.002825,25312.417686
+adults_18plus,2021,talks_neighbors_weekly,8 Indian 2nd gen (self-ID),84,643593.840600,0.131630,0.045045,56.332642
+adults_18plus,2021,talks_neighbors_weekly,9 US-born Asian (any),754,4534264.111400,0.164550,0.018097,419.767728
+adults_18plus,2021,volunteered_org,1 India-born,366,2533633.171800,0.192543,0.023533,280.726784
+adults_18plus,2021,volunteered_org,2 China-born,275,1976598.909900,0.127707,0.022699,216.206754
+adults_18plus,2021,volunteered_org,3 Mexico-born,1249,10214694.910100,0.064606,0.007841,983.002537
+adults_18plus,2021,volunteered_org,4 Other foreign-born,3457,24724367.381500,0.126014,0.006688,2462.485189
+adults_18plus,2021,volunteered_org,5 Indian 2nd gen,84,635957.982000,0.243169,0.057032,56.581306
+adults_18plus,2021,volunteered_org,6 US-born NH white,30910,141137950.189500,0.259581,0.003051,20648.245878
+adults_18plus,2021,volunteered_org,7 All US-born,39050,197150982.765500,0.230162,0.002648,25272.551511
+adults_18plus,2021,volunteered_org,8 Indian 2nd gen (self-ID),85,658301.857200,0.193718,0.051883,58.024790
+adults_18plus,2021,volunteered_org,9 US-born Asian (any),751,4533482.952900,0.212938,0.020080,415.660965
+adults_18plus,2023,contacted_official,1 India-born,408,2969168.419400,0.058951,0.013127,321.952371
+adults_18plus,2023,contacted_official,2 China-born,254,1897664.147000,0.013974,0.008485,191.374754
+adults_18plus,2023,contacted_official,3 Mexico-born,1325,10655192.498700,0.021150,0.004527,1010.284679
+adults_18plus,2023,contacted_official,4 Other foreign-born,3745,27311434.418300,0.033759,0.003474,2703.159346
+adults_18plus,2023,contacted_official,5 Indian 2nd gen,78,587519.710200,0.086747,0.042322,44.229191
+adults_18plus,2023,contacted_official,6 US-born NH white,30566,142772455.730400,0.118147,0.002274,20141.688417
+adults_18plus,2023,contacted_official,7 All US-born,38920,201860490.370100,0.100785,0.001924,24471.234774
+adults_18plus,2023,contacted_official,8 Indian 2nd gen (self-ID),80,587969.038900,0.089352,0.039515,52.111595
+adults_18plus,2023,contacted_official,9 US-born Asian (any),734,4501655.519600,0.070686,0.012104,448.346433
+adults_18plus,2023,donated_nonpolitical,1 India-born,407,2964719.935800,0.516078,0.027883,321.220519
+adults_18plus,2023,donated_nonpolitical,2 China-born,254,1897664.147000,0.371805,0.034935,191.374754
+adults_18plus,2023,donated_nonpolitical,3 Mexico-born,1322,10635722.294500,0.294170,0.014358,1007.217738
+adults_18plus,2023,donated_nonpolitical,4 Other foreign-born,3732,27242607.495000,0.425073,0.009517,2698.411997
+adults_18plus,2023,donated_nonpolitical,5 Indian 2nd gen,76,549271.502700,0.548818,0.075586,43.340910
+adults_18plus,2023,donated_nonpolitical,6 US-born NH white,30378,141672401.803500,0.571354,0.003497,20027.781058
+adults_18plus,2023,donated_nonpolitical,7 All US-born,38673,200325221.639600,0.516502,0.003205,24303.861345
+adults_18plus,2023,donated_nonpolitical,8 Indian 2nd gen (self-ID),78,561825.921700,0.564942,0.069997,50.163709
+adults_18plus,2023,donated_nonpolitical,9 US-born Asian (any),724,4414995.628700,0.463310,0.023764,440.293748
+adults_18plus,2023,donated_political,1 India-born,407,2964719.935800,0.054792,0.012698,321.220519
+adults_18plus,2023,donated_political,2 China-born,254,1897664.147000,0.023688,0.010993,191.374754
+adults_18plus,2023,donated_political,3 Mexico-born,1321,10619442.261700,0.024138,0.004837,1006.942292
+adults_18plus,2023,donated_political,4 Other foreign-born,3731,27218095.841400,0.047059,0.004079,2695.538473
+adults_18plus,2023,donated_political,5 Indian 2nd gen,77,560918.962900,0.099606,0.044977,44.334484
+adults_18plus,2023,donated_political,6 US-born NH white,30360,141637328.381100,0.090269,0.002026,20008.934038
+adults_18plus,2023,donated_political,7 All US-born,38665,200435933.710800,0.079229,0.001733,24288.418332
+adults_18plus,2023,donated_political,8 Indian 2nd gen (self-ID),80,587555.964600,0.102498,0.042021,52.098387
+adults_18plus,2023,donated_political,9 US-born Asian (any),727,4472172.105800,0.061847,0.011471,440.954620
+adults_18plus,2023,group_membership,1 India-born,408,2969168.419400,0.184151,0.021602,321.952371
+adults_18plus,2023,group_membership,2 China-born,252,1881203.972900,0.094628,0.021263,189.504096
+adults_18plus,2023,group_membership,3 Mexico-born,1324,10644463.468900,0.077520,0.008417,1009.377444
+adults_18plus,2023,group_membership,4 Other foreign-born,3741,27295662.099400,0.157898,0.007014,2702.813985
+adults_18plus,2023,group_membership,5 Indian 2nd gen,77,560918.962900,0.290823,0.068206,44.334484
+adults_18plus,2023,group_membership,6 US-born NH white,30578,142816678.464400,0.315058,0.003274,20136.735989
+adults_18plus,2023,group_membership,7 All US-born,38909,201742756.674100,0.272604,0.002848,24452.709702
+adults_18plus,2023,group_membership,8 Indian 2nd gen (self-ID),79,578516.513100,0.277989,0.062649,51.138271
+adults_18plus,2023,group_membership,9 US-born Asian (any),726,4499261.551100,0.207882,0.019330,440.705106
+adults_18plus,2023,improved_neighborhood,1 India-born,408,2963702.053400,0.405799,0.027363,322.055840
+adults_18plus,2023,improved_neighborhood,2 China-born,252,1865606.699400,0.194300,0.028720,189.787006
+adults_18plus,2023,improved_neighborhood,3 Mexico-born,1326,10646114.561500,0.124323,0.010388,1008.946244
+adults_18plus,2023,improved_neighborhood,4 Other foreign-born,3754,27396043.500500,0.187132,0.007493,2709.154118
+adults_18plus,2023,improved_neighborhood,5 Indian 2nd gen,77,560918.962900,0.296879,0.068617,44.334484
+adults_18plus,2023,improved_neighborhood,6 US-born NH white,30648,143200259.534300,0.240902,0.003009,20191.234644
+adults_18plus,2023,improved_neighborhood,7 All US-born,39041,202600236.236700,0.221828,0.002653,24534.292117
+adults_18plus,2023,improved_neighborhood,8 Indian 2nd gen (self-ID),81,597008.490400,0.294664,0.062579,53.072540
+adults_18plus,2023,improved_neighborhood,9 US-born Asian (any),735,4525822.822300,0.188739,0.018495,447.621930
+adults_18plus,2023,neighbor_favors_monthly,1 India-born,408,2963702.053400,0.422967,0.027529,322.055840
+adults_18plus,2023,neighbor_favors_monthly,2 China-born,253,1887405.896100,0.244779,0.031153,190.484458
+adults_18plus,2023,neighbor_favors_monthly,3 Mexico-born,1327,10656481.345100,0.313244,0.014595,1009.945937
+adults_18plus,2023,neighbor_favors_monthly,4 Other foreign-born,3750,27357117.386600,0.273933,0.008574,2705.406906
+adults_18plus,2023,neighbor_favors_monthly,5 Indian 2nd gen,77,560918.962900,0.294305,0.068444,44.334484
+adults_18plus,2023,neighbor_favors_monthly,6 US-born NH white,30622,143094901.214000,0.418943,0.003474,20171.245911
+adults_18plus,2023,neighbor_favors_monthly,7 All US-born,39007,202440411.390800,0.376887,0.003095,24511.920155
+adults_18plus,2023,neighbor_favors_monthly,8 Indian 2nd gen (self-ID),81,597008.490400,0.226665,0.057470,53.072540
+adults_18plus,2023,neighbor_favors_monthly,9 US-born Asian (any),735,4535007.951700,0.244174,0.020342,445.997974
+adults_18plus,2023,talks_neighbors_weekly,1 India-born,408,2963702.053400,0.277826,0.024960,322.055840
+adults_18plus,2023,talks_neighbors_weekly,2 China-born,252,1880658.380300,0.219367,0.030061,189.502911
+adults_18plus,2023,talks_neighbors_weekly,3 Mexico-born,1335,10726628.471300,0.226948,0.013137,1016.603208
+adults_18plus,2023,talks_neighbors_weekly,4 Other foreign-born,3763,27419009.172000,0.223274,0.007996,2712.781040
+adults_18plus,2023,talks_neighbors_weekly,5 Indian 2nd gen,77,560918.962900,0.131538,0.050761,44.334484
+adults_18plus,2023,talks_neighbors_weekly,6 US-born NH white,30657,143272983.920000,0.316281,0.003272,20195.948717
+adults_18plus,2023,talks_neighbors_weekly,7 All US-born,39060,202772232.673000,0.290809,0.002899,24543.692060
+adults_18plus,2023,talks_neighbors_weekly,8 Indian 2nd gen (self-ID),81,597008.490400,0.159743,0.050290,53.072540
+adults_18plus,2023,talks_neighbors_weekly,9 US-born Asian (any),739,4570396.174500,0.171914,0.017793,449.672503
+adults_18plus,2023,volunteered_org,1 India-born,411,2990909.653500,0.256859,0.024243,324.776759
+adults_18plus,2023,volunteered_org,2 China-born,253,1887561.841400,0.148937,0.025803,190.375109
+adults_18plus,2023,volunteered_org,3 Mexico-born,1325,10658321.111800,0.095073,0.009231,1009.765443
+adults_18plus,2023,volunteered_org,4 Other foreign-born,3743,27277192.912600,0.170987,0.007241,2703.578781
+adults_18plus,2023,volunteered_org,5 Indian 2nd gen,77,560918.962900,0.379563,0.072882,44.334484
+adults_18plus,2023,volunteered_org,6 US-born NH white,30634,143155117.099300,0.303903,0.003237,20186.861070
+adults_18plus,2023,volunteered_org,7 All US-born,38972,202146284.542400,0.271688,0.002842,24499.520433
+adults_18plus,2023,volunteered_org,8 Indian 2nd gen (self-ID),80,587555.964600,0.332740,0.065281,52.098387
+adults_18plus,2023,volunteered_org,9 US-born Asian (any),730,4504466.950500,0.218230,0.019630,442.743585
+adults_18plus,pooled,contacted_official,1 India-born,1195,8169655.098100,0.046048,0.006810,947.183312
+adults_18plus,pooled,contacted_official,2 China-born,822,5790486.232700,0.032329,0.007002,638.020430
+adults_18plus,pooled,contacted_official,3 Mexico-born,4020,31145290.314700,0.017364,0.002341,3114.611552
+adults_18plus,pooled,contacted_official,4 Other foreign-born,11217,76982564.440300,0.038318,0.002134,8093.690336
+adults_18plus,pooled,contacted_official,5 Indian 2nd gen,243,1698267.947100,0.104411,0.024724,152.975209
+adults_18plus,pooled,contacted_official,6 US-born NH white,97902,426282926.568600,0.124695,0.001295,65065.164187
+adults_18plus,pooled,contacted_official,7 All US-born,123734,595651135.535000,0.108323,0.001105,79073.209361
+adults_18plus,pooled,contacted_official,8 Indian 2nd gen (self-ID),244,1761327.482700,0.086727,0.021947,164.439026
+adults_18plus,pooled,contacted_official,9 US-born Asian (any),2180,12688736.931100,0.069815,0.007095,1290.219690
+adults_18plus,pooled,donated_nonpolitical,1 India-born,1191,8141190.459300,0.511440,0.016278,942.962292
+adults_18plus,pooled,donated_nonpolitical,2 China-born,818,5775704.775600,0.370019,0.019150,635.638832
+adults_18plus,pooled,donated_nonpolitical,3 Mexico-born,4007,31044003.833800,0.302189,0.008245,3101.919176
+adults_18plus,pooled,donated_nonpolitical,4 Other foreign-born,11154,76574066.449900,0.415171,0.005490,8055.493705
+adults_18plus,pooled,donated_nonpolitical,5 Indian 2nd gen,240,1656993.324200,0.556800,0.040256,152.281124
+adults_18plus,pooled,donated_nonpolitical,6 US-born NH white,97446,423835402.381400,0.578482,0.001940,64771.733544
+adults_18plus,pooled,donated_nonpolitical,7 All US-born,123123,592254976.568600,0.523621,0.001781,78658.079103
+adults_18plus,pooled,donated_nonpolitical,8 Indian 2nd gen (self-ID),241,1732157.950100,0.524760,0.039260,161.797747
+adults_18plus,pooled,donated_nonpolitical,9 US-born Asian (any),2147,12484031.872100,0.473124,0.014002,1271.517311
+adults_18plus,pooled,donated_political,1 India-born,1192,8142596.265900,0.060739,0.007775,943.854973
+adults_18plus,pooled,donated_political,2 China-born,820,5796719.983000,0.042846,0.008016,638.219771
+adults_18plus,pooled,donated_political,3 Mexico-born,4015,31087587.021600,0.020857,0.002563,3109.438964
+adults_18plus,pooled,donated_political,4 Other foreign-born,11163,76665169.629900,0.054291,0.002524,8061.934923
+adults_18plus,pooled,donated_political,5 Indian 2nd gen,241,1674210.374600,0.102675,0.024501,153.482565
+adults_18plus,pooled,donated_political,6 US-born NH white,97317,423448245.700400,0.105458,0.001208,64669.430211
+adults_18plus,pooled,donated_political,7 All US-born,123001,591922669.197500,0.091822,0.001030,78572.694660
+adults_18plus,pooled,donated_political,8 Indian 2nd gen (self-ID),244,1769370.130300,0.096013,0.022957,164.687341
+adults_18plus,pooled,donated_political,9 US-born Asian (any),2153,12550490.412200,0.072658,0.007274,1273.429012
+adults_18plus,pooled,group_membership,1 India-born,1191,8138943.795300,0.161652,0.011987,943.138330
+adults_18plus,pooled,group_membership,2 China-born,818,5767880.084700,0.143217,0.013899,635.216478
+adults_18plus,pooled,group_membership,3 Mexico-born,4017,31100174.744700,0.073788,0.004687,3110.767371
+adults_18plus,pooled,group_membership,4 Other foreign-born,11211,76956407.024600,0.153552,0.004007,8093.136459
+adults_18plus,pooled,group_membership,5 Indian 2nd gen,243,1684860.437900,0.292197,0.036534,154.954408
+adults_18plus,pooled,group_membership,6 US-born NH white,97910,426145753.879900,0.319604,0.001829,65039.477290
+adults_18plus,pooled,group_membership,7 All US-born,123693,595169915.031800,0.277058,0.001592,79008.837293
+adults_18plus,pooled,group_membership,8 Indian 2nd gen (self-ID),242,1737304.525800,0.256759,0.034112,164.002316
+adults_18plus,pooled,group_membership,9 US-born Asian (any),2167,12660134.928500,0.217013,0.011534,1277.270237
+adults_18plus,pooled,improved_neighborhood,1 India-born,1193,8156241.985600,0.310316,0.015038,946.346453
+adults_18plus,pooled,improved_neighborhood,2 China-born,822,5763390.271400,0.179520,0.015158,641.074576
+adults_18plus,pooled,improved_neighborhood,3 Mexico-born,4026,31166933.288900,0.112444,0.005658,3117.442207
+adults_18plus,pooled,improved_neighborhood,4 Other foreign-born,11260,77310053.503700,0.173798,0.004203,8129.213627
+adults_18plus,pooled,improved_neighborhood,5 Indian 2nd gen,241,1664086.456800,0.247923,0.034899,153.091641
+adults_18plus,pooled,improved_neighborhood,6 US-born NH white,98204,427522203.227800,0.227526,0.001641,65261.742834
+adults_18plus,pooled,improved_neighborhood,7 All US-born,124138,597531353.533200,0.207768,0.001441,79294.883096
+adults_18plus,pooled,improved_neighborhood,8 Indian 2nd gen (self-ID),244,1762786.191200,0.258268,0.034125,164.500116
+adults_18plus,pooled,improved_neighborhood,9 US-born Asian (any),2185,12748614.597400,0.168855,0.010423,1291.790249
+adults_18plus,pooled,neighbor_favors_monthly,1 India-born,1189,8134068.380900,0.357644,0.015609,942.917161
+adults_18plus,pooled,neighbor_favors_monthly,2 China-born,824,5788663.981600,0.226458,0.016518,642.056157
+adults_18plus,pooled,neighbor_favors_monthly,3 Mexico-born,4026,31214388.778500,0.299965,0.008208,3117.146325
+adults_18plus,pooled,neighbor_favors_monthly,4 Other foreign-born,11242,77108945.136800,0.260730,0.004874,8113.751807
+adults_18plus,pooled,neighbor_favors_monthly,5 Indian 2nd gen,241,1671367.147800,0.305032,0.037192,153.255615
+adults_18plus,pooled,neighbor_favors_monthly,6 US-born NH white,98109,427075209.838400,0.403733,0.001921,65201.161804
+adults_18plus,pooled,neighbor_favors_monthly,7 All US-born,124027,596978766.783800,0.364079,0.001709,79237.367939
+adults_18plus,pooled,neighbor_favors_monthly,8 Indian 2nd gen (self-ID),245,1775979.429300,0.272699,0.034623,165.447165
+adults_18plus,pooled,neighbor_favors_monthly,9 US-born Asian (any),2188,12778485.458500,0.240438,0.011889,1292.008119
+adults_18plus,pooled,talks_neighbors_weekly,1 India-born,1195,8172602.704600,0.286754,0.014687,948.120046
+adults_18plus,pooled,talks_neighbors_weekly,2 China-born,826,5803147.631600,0.181644,0.015197,643.669386
+adults_18plus,pooled,talks_neighbors_weekly,3 Mexico-born,4045,31362364.647500,0.234152,0.007568,3131.266526
+adults_18plus,pooled,talks_neighbors_weekly,4 Other foreign-born,11272,77274398.173300,0.234281,0.004696,8135.847273
+adults_18plus,pooled,talks_neighbors_weekly,5 Indian 2nd gen,242,1681538.671500,0.165292,0.029907,154.251108
+adults_18plus,pooled,talks_neighbors_weekly,6 US-born NH white,98280,427865197.624300,0.317163,0.001821,65314.354530
+adults_18plus,pooled,talks_neighbors_weekly,7 All US-born,124253,598150813.357300,0.291113,0.001612,79378.400524
+adults_18plus,pooled,talks_neighbors_weekly,8 Indian 2nd gen (self-ID),246,1782204.867100,0.138444,0.026784,166.271081
+adults_18plus,pooled,talks_neighbors_weekly,9 US-born Asian (any),2198,12869916.844800,0.164289,0.010271,1301.587549
+adults_18plus,pooled,volunteered_org,1 India-born,1198,8184853.973400,0.215097,0.013334,949.546622
+adults_18plus,pooled,volunteered_org,2 China-born,823,5806687.415100,0.160932,0.014535,639.195980
+adults_18plus,pooled,volunteered_org,3 Mexico-born,4023,31159649.206900,0.087645,0.005066,3115.858888
+adults_18plus,pooled,volunteered_org,4 Other foreign-born,11237,77039374.704300,0.156936,0.004038,8114.035658
+adults_18plus,pooled,volunteered_org,5 Indian 2nd gen,242,1678394.706700,0.337042,0.038076,154.119097
+adults_18plus,pooled,volunteered_org,6 US-born NH white,98132,427277805.050700,0.297854,0.001791,65217.954723
+adults_18plus,pooled,volunteered_org,7 All US-born,123980,596765530.076500,0.266048,0.001570,79211.318599
+adults_18plus,pooled,volunteered_org,8 Indian 2nd gen (self-ID),245,1780994.626700,0.287038,0.035092,166.180919
+adults_18plus,pooled,volunteered_org,9 US-born Asian (any),2180,12769893.098900,0.239170,0.011898,1285.341433
