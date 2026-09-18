@@ -1,0 +1,16 @@
+outcome,spec,beta_hisp,t,p,R2,n
+cleaning_per1k,raw,3.788,0.6259,0.5314,0.019,36
+cleaning_per1k,+income,1.3064,0.1964,0.8443,0.1036,36
+cleaning_per1k,full,3.0233,0.3738,0.7085,0.223,36
+graffiti_per1k,raw,-0.2931,-0.1035,0.9176,0.0007,36
+graffiti_per1k,+income,-0.1598,-0.0537,0.9572,0.0021,36
+graffiti_per1k,full,-0.5247,-0.1508,0.8801,0.1629,36
+encampment_per1k,raw,0.6379,0.4602,0.6454,0.0071,36
+encampment_per1k,+income,0.4351,0.2924,0.7699,0.0145,36
+encampment_per1k,full,1.0104,0.5675,0.5704,0.2451,36
+all_311_per1k,raw,2.7449,0.2176,0.8277,0.0025,36
+all_311_per1k,+income,1.0741,0.0778,0.938,0.0122,36
+all_311_per1k,full,2.965,0.1729,0.8627,0.1713,36
+building_per1k,raw,0.0142,0.3944,0.6933,0.0061,36
+building_per1k,+income,-0.015,-0.575,0.5653,0.272,36
+building_per1k,full,-0.0315,-1.0735,0.283,0.5135,36

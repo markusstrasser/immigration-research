@@ -1,0 +1,8 @@
+test,n,groups,beta,t,p,clean_t,R2
+"all routes, spec C",7318,24,0.01883,5.69155,0.0,,0.12489
++ city cleaning effort,7318,24,0.01826,6.34835,0.0,3.63391,0.13167
+residential routes only,5065,23,0.01152,3.04353,0.00234,,0.12446
+commercial routes only,2253,24,0.03294,6.87404,0.0,,0.11918
+below-median-income groups only,3590,12,0.02326,7.69205,0.0,,0.08944
+above-median-income groups only,3728,12,0.01177,3.94493,8e-05,,0.13284
+"drop Bayview, Tenderloin, SoMa",6564,21,0.01824,5.33553,0.0,,0.0992

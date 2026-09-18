@@ -1,0 +1,327 @@
+downloaded bytes: 141729433 expected: 141729433 MATCH
+zip opens OK; contents: ['ahs2023n.csv']
+using: ahs2023n.csv 837082564 bytes uncompressed
+header column count: 3208 (expected 3208)
+missing core: []
+households: 55669
+--- HHSPAN (nuniq=2) ---
+HHSPAN
+2      40309
+1       8218
+NaN     7142
+--- HHRACE (nuniq=20) ---
+HHRACE
+01     35677
+02      7927
+NaN     7142
+04      3379
+03       583
+07       238
+06       220
+05       182
+08       123
+10        57
+15        39
+11        27
+09        16
+14        14
+--- TENURE (nuniq=3) ---
+TENURE
+1      28192
+2      19735
+NaN     7142
+3        600
+--- ADEQUACY (nuniq=3) ---
+ADEQUACY
+1    51904
+2     2577
+3     1188
+--- NEARTRASH (nuniq=3) ---
+NEARTRASH
+3      42617
+NaN     8091
+2       3456
+1       1505
+--- NEARABAND (nuniq=4) ---
+NEARABAND
+3      42961
+NaN     8344
+2       1539
+4       1539
+1       1286
+--- NEARBARCL (nuniq=3) ---
+NEARBARCL
+3      41503
+NaN     8844
+2       4283
+1       1039
+--- NHQPCRIME (nuniq=2) ---
+NHQPCRIME
+2      37223
+1       9325
+NaN     9121
+--- NHQSCRIME (nuniq=2) ---
+NHQSCRIME
+2      42796
+NaN     8865
+1       4008
+--- NHQSCHOOL (nuniq=2) ---
+NHQSCHOOL
+1      38615
+NaN    13196
+2       3858
+--- NHQPUBTRN (nuniq=2) ---
+NHQPUBTRN
+1      23487
+2      22050
+NaN    10132
+--- NHQRISK (nuniq=2) ---
+NHQRISK
+2      42797
+NaN     8661
+1       4211
+--- BLD (nuniq=10) ---
+BLD
+02    30627
+09     5258
+03     3977
+06     3040
+07     2910
+08     2775
+05     2676
+01     2486
+04     1895
+10       25
+--- UNITSIZE (nuniq=9) ---
+UNITSIZE
+4      12530
+5       9147
+3       7274
+6       6018
+NaN     5599
+2       5076
+7       3285
+8       3153
+1       1908
+9       1679
+--- HUDSUB (nuniq=3) ---
+HUDSUB
+NaN    35334
+3      14016
+1       3716
+2       2603
+--- RATINGNH (nuniq=10) ---
+RATINGNH
+10.0    14477
+8.0     11942
+NaN      8474
+9.0      8090
+7.0      6332
+6.0      2417
+5.0      2289
+4.0       662
+3.0       405
+1.0       347
+2.0       234
+weighted Hispanic householder share: 13.57%  (ACS benchmark ~14%)
+HHNATVTY top 15:
+HHNATVTY
+057    38068
+303     2247
+210      690
+207      511
+073      415
+327      404
+233      322
+247      304
+329      303
+312      268
+313      208
+364      188
+110      185
+332      178
+301      174
+modal HHNATVTY code taken as United States: 057 (78.4% of non-missing)
+HHNATVTY among Hispanic householders, top 10:
+HHNATVTY
+303    2209
+073     405
+327     404
+329     299
+312     265
+313     200
+364     185
+314     139
+373     130
+370      80
+code taken as Mexico: 303 n = 2247
+outcomes analysed: ['inadequate', 'sev_inadequate', 'nh_rating', 'unit_rating', 'trash_nearby', 'abandoned_nearby', 'bars_on_windows', 'petty_crime', 'serious_crime', 'school_problem', 'transit_problem', 'disaster_risk']
+  hisp          inadequate         raw                      beta=+0.0192 t=  4.94 n=48527
+  hisp          inadequate         +income                  beta=+0.0162 t=  4.19 n=48527
+  hisp          inadequate         +income, tenure, metro   beta=+0.0098 t=  2.43 n=48527
+  hisp          inadequate         +persons per room, hou   beta=+0.0028 t=  0.67 n=48527
+  hisp          sev_inadequate     raw                      beta=+0.0109 t=  4.84 n=48527
+  hisp          sev_inadequate     +income                  beta=+0.0097 t=  4.30 n=48527
+  hisp          sev_inadequate     +income, tenure, metro   beta=+0.0068 t=  2.96 n=48527
+  hisp          sev_inadequate     +persons per room, hou   beta=+0.0042 t=  1.74 n=48527
+  hisp          nh_rating          raw                      beta=-0.1634 t= -5.92 n=47195
+  hisp          nh_rating          +income                  beta=-0.1367 t= -4.96 n=47195
+  hisp          nh_rating          +income, tenure, metro   beta=+0.0631 t=  2.24 n=47195
+  hisp          nh_rating          +persons per room, hou   beta=+0.1220 t=  4.22 n=47195
+  hisp          unit_rating        raw                      beta=-0.0968 t= -3.58 n=47300
+  hisp          unit_rating        +income                  beta=-0.0660 t= -2.45 n=47300
+  hisp          unit_rating        +income, tenure, metro   beta=+0.1704 t=  6.34 n=47300
+  hisp          unit_rating        +persons per room, hou   beta=+0.2551 t=  9.16 n=47300
+  hisp          trash_nearby       raw                      beta=+0.0216 t=  6.79 n=47578
+  hisp          trash_nearby       +income                  beta=+0.0200 t=  6.30 n=47578
+  hisp          trash_nearby       +income, tenure, metro   beta=+0.0116 t=  3.61 n=47578
+  hisp          trash_nearby       +persons per room, hou   beta=+0.0087 t=  2.67 n=47578
+  hisp          abandoned_nearby   raw                      beta=+0.0032 t=  1.17 n=47325
+  hisp          abandoned_nearby   +income                  beta=+0.0023 t=  0.83 n=47325
+  hisp          abandoned_nearby   +income, tenure, metro   beta=+0.0007 t=  0.23 n=47325
+  hisp          abandoned_nearby   +persons per room, hou   beta=-0.0011 t= -0.35 n=47325
+  hisp          bars_on_windows    raw                      beta=+0.0137 t=  5.06 n=46825
+  hisp          bars_on_windows    +income                  beta=+0.0132 t=  4.85 n=46825
+  hisp          bars_on_windows    +income, tenure, metro   beta=+0.0082 t=  2.86 n=46825
+  hisp          bars_on_windows    +persons per room, hou   beta=+0.0089 t=  3.06 n=46825
+  hisp          petty_crime        raw                      beta=+0.0804 t= 11.98 n=46548
+  hisp          petty_crime        +income                  beta=+0.0740 t= 11.02 n=46548
+  hisp          petty_crime        +income, tenure, metro   beta=+0.0335 t=  4.85 n=46548
+  hisp          petty_crime        +persons per room, hou   beta=+0.0229 t=  3.22 n=46548
+  hisp          serious_crime      raw                      beta=+0.0370 t=  8.07 n=46804
+  hisp          serious_crime      +income                  beta=+0.0323 t=  7.09 n=46804
+  hisp          serious_crime      +income, tenure, metro   beta=+0.0157 t=  3.31 n=46804
+  hisp          serious_crime      +persons per room, hou   beta=+0.0088 t=  1.80 n=46804
+  hisp          school_problem     raw                      beta=-0.0176 t= -3.66 n=42473
+  hisp          school_problem     +income                  beta=-0.0158 t= -3.26 n=42473
+  hisp          school_problem     +income, tenure, metro   beta=-0.0064 t= -1.23 n=42473
+  hisp          school_problem     +persons per room, hou   beta=-0.0006 t= -0.12 n=42473
+  hisp          transit_problem    raw                      beta=+0.2039 t= 25.42 n=45537
+  hisp          transit_problem    +income                  beta=+0.1997 t= 24.84 n=45537
+  hisp          transit_problem    +income, tenure, metro   beta=+0.1033 t= 13.08 n=45537
+  hisp          transit_problem    +persons per room, hou   beta=+0.0942 t= 11.68 n=45537
+  hisp          disaster_risk      raw                      beta=+0.0124 t=  2.61 n=47008
+  hisp          disaster_risk      +income                  beta=+0.0106 t=  2.22 n=47008
+  hisp          disaster_risk      +income, tenure, metro   beta=-0.0087 t= -1.69 n=47008
+  hisp          disaster_risk      +persons per room, hou   beta=-0.0104 t= -1.97 n=47008
+  foreign_born  inadequate         raw                      beta=+0.0064 t=  1.87 n=48527
+  foreign_born  inadequate         +income                  beta=+0.0063 t=  1.83 n=48527
+  foreign_born  inadequate         +income, tenure, metro   beta=+0.0036 t=  1.02 n=48527
+  foreign_born  inadequate         +persons per room, hou   beta=-0.0026 t= -0.72 n=48527
+  foreign_born  sev_inadequate     raw                      beta=+0.0076 t=  3.81 n=48527
+  foreign_born  sev_inadequate     +income                  beta=+0.0076 t=  3.79 n=48527
+  foreign_born  sev_inadequate     +income, tenure, metro   beta=+0.0056 t=  2.75 n=48527
+  foreign_born  sev_inadequate     +persons per room, hou   beta=+0.0034 t=  1.62 n=48527
+  foreign_born  nh_rating          raw                      beta=-0.0340 t= -1.41 n=47195
+  foreign_born  nh_rating          +income                  beta=-0.0325 t= -1.35 n=47195
+  foreign_born  nh_rating          +income, tenure, metro   beta=+0.1135 t=  4.62 n=47195
+  foreign_born  nh_rating          +persons per room, hou   beta=+0.1649 t=  6.54 n=47195
+  foreign_born  unit_rating        raw                      beta=-0.0540 t= -2.25 n=47300
+  foreign_born  unit_rating        +income                  beta=-0.0522 t= -2.18 n=47300
+  foreign_born  unit_rating        +income, tenure, metro   beta=+0.1017 t=  4.29 n=47300
+  foreign_born  unit_rating        +persons per room, hou   beta=+0.1687 t=  6.87 n=47300
+  foreign_born  trash_nearby       raw                      beta=+0.0047 t=  1.86 n=47578
+  foreign_born  trash_nearby       +income                  beta=+0.0047 t=  1.84 n=47578
+  foreign_born  trash_nearby       +income, tenure, metro   beta=-0.0030 t= -1.14 n=47578
+  foreign_born  trash_nearby       +persons per room, hou   beta=-0.0059 t= -2.19 n=47578
+  foreign_born  abandoned_nearby   raw                      beta=-0.0085 t= -3.96 n=47325
+  foreign_born  abandoned_nearby   +income                  beta=-0.0085 t= -3.97 n=47325
+  foreign_born  abandoned_nearby   +income, tenure, metro   beta=-0.0074 t= -3.33 n=47325
+  foreign_born  abandoned_nearby   +persons per room, hou   beta=-0.0091 t= -4.05 n=47325
+  foreign_born  bars_on_windows    raw                      beta=+0.0064 t=  2.78 n=46825
+  foreign_born  bars_on_windows    +income                  beta=+0.0064 t=  2.78 n=46825
+  foreign_born  bars_on_windows    +income, tenure, metro   beta=+0.0031 t=  1.25 n=46825
+  foreign_born  bars_on_windows    +persons per room, hou   beta=+0.0035 t=  1.39 n=46825
+  foreign_born  petty_crime        raw                      beta=+0.0170 t=  2.96 n=46548
+  foreign_born  petty_crime        +income                  beta=+0.0169 t=  2.95 n=46548
+  foreign_born  petty_crime        +income, tenure, metro   beta=-0.0182 t= -3.13 n=46548
+  foreign_born  petty_crime        +persons per room, hou   beta=-0.0294 t= -4.91 n=46548
+  foreign_born  serious_crime      raw                      beta=+0.0066 t=  1.72 n=46804
+  foreign_born  serious_crime      +income                  beta=+0.0065 t=  1.72 n=46804
+  foreign_born  serious_crime      +income, tenure, metro   beta=-0.0095 t= -2.44 n=46804
+  foreign_born  serious_crime      +persons per room, hou   beta=-0.0166 t= -4.10 n=46804
+  foreign_born  school_problem     raw                      beta=-0.0030 t= -0.71 n=42473
+  foreign_born  school_problem     +income                  beta=-0.0029 t= -0.69 n=42473
+  foreign_born  school_problem     +income, tenure, metro   beta=+0.0037 t=  0.82 n=42473
+  foreign_born  school_problem     +persons per room, hou   beta=+0.0093 t=  1.99 n=42473
+  foreign_born  transit_problem    raw                      beta=+0.1858 t= 25.20 n=45537
+  foreign_born  transit_problem    +income                  beta=+0.1856 t= 25.24 n=45537
+  foreign_born  transit_problem    +income, tenure, metro   beta=+0.0567 t=  8.05 n=45537
+  foreign_born  transit_problem    +persons per room, hou   beta=+0.0473 t=  6.58 n=45537
+  foreign_born  disaster_risk      raw                      beta=-0.0109 t= -2.64 n=47008
+  foreign_born  disaster_risk      +income                  beta=-0.0109 t= -2.65 n=47008
+  foreign_born  disaster_risk      +income, tenure, metro   beta=-0.0213 t= -4.93 n=47008
+  foreign_born  disaster_risk      +persons per room, hou   beta=-0.0230 t= -5.13 n=47008
+  mex_born      inadequate         raw                      beta=+0.0188 t=  2.71 n=48527
+  mex_born      inadequate         +income                  beta=+0.0152 t=  2.20 n=48527
+  mex_born      inadequate         +income, tenure, metro   beta=+0.0106 t=  1.49 n=48527
+  mex_born      inadequate         +persons per room, hou   beta=-0.0005 t= -0.06 n=48527
+  mex_born      sev_inadequate     raw                      beta=+0.0176 t=  3.56 n=48527
+  mex_born      sev_inadequate     +income                  beta=+0.0162 t=  3.28 n=48527
+  mex_born      sev_inadequate     +income, tenure, metro   beta=+0.0138 t=  2.78 n=48527
+  mex_born      sev_inadequate     +persons per room, hou   beta=+0.0098 t=  1.95 n=48527
+  mex_born      nh_rating          raw                      beta=-0.0563 t= -1.16 n=47195
+  mex_born      nh_rating          +income                  beta=-0.0225 t= -0.46 n=47195
+  mex_born      nh_rating          +income, tenure, metro   beta=+0.1730 t=  3.60 n=47195
+  mex_born      nh_rating          +persons per room, hou   beta=+0.2650 t=  5.35 n=47195
+  mex_born      unit_rating        raw                      beta=+0.0757 t=  1.65 n=47300
+  mex_born      unit_rating        +income                  beta=+0.1141 t=  2.50 n=47300
+  mex_born      unit_rating        +income, tenure, metro   beta=+0.3258 t=  7.40 n=47300
+  mex_born      unit_rating        +persons per room, hou   beta=+0.4550 t=  9.89 n=47300
+  mex_born      trash_nearby       raw                      beta=+0.0263 t=  4.30 n=47578
+  mex_born      trash_nearby       +income                  beta=+0.0243 t=  3.97 n=47578
+  mex_born      trash_nearby       +income, tenure, metro   beta=+0.0154 t=  2.47 n=47578
+  mex_born      trash_nearby       +persons per room, hou   beta=+0.0107 t=  1.69 n=47578
+  mex_born      abandoned_nearby   raw                      beta=-0.0016 t= -0.38 n=47325
+  mex_born      abandoned_nearby   +income                  beta=-0.0028 t= -0.66 n=47325
+  mex_born      abandoned_nearby   +income, tenure, metro   beta=-0.0070 t= -1.61 n=47325
+  mex_born      abandoned_nearby   +persons per room, hou   beta=-0.0099 t= -2.25 n=47325
+  mex_born      bars_on_windows    raw                      beta=+0.0137 t=  2.90 n=46825
+  mex_born      bars_on_windows    +income                  beta=+0.0130 t=  2.75 n=46825
+  mex_born      bars_on_windows    +income, tenure, metro   beta=+0.0067 t=  1.38 n=46825
+  mex_born      bars_on_windows    +persons per room, hou   beta=+0.0074 t=  1.50 n=46825
+  mex_born      petty_crime        raw                      beta=+0.0599 t=  5.23 n=46548
+  mex_born      petty_crime        +income                  beta=+0.0513 t=  4.48 n=46548
+  mex_born      petty_crime        +income, tenure, metro   beta=+0.0070 t=  0.62 n=46548
+  mex_born      petty_crime        +persons per room, hou   beta=-0.0113 t= -0.98 n=46548
+  mex_born      serious_crime      raw                      beta=+0.0302 t=  3.67 n=46804
+  mex_born      serious_crime      +income                  beta=+0.0241 t=  2.94 n=46804
+  mex_born      serious_crime      +income, tenure, metro   beta=+0.0089 t=  1.08 n=46804
+  mex_born      serious_crime      +persons per room, hou   beta=-0.0023 t= -0.27 n=46804
+  mex_born      school_problem     raw                      beta=-0.0074 t= -0.93 n=42473
+  mex_born      school_problem     +income                  beta=-0.0049 t= -0.61 n=42473
+  mex_born      school_problem     +income, tenure, metro   beta=+0.0056 t=  0.69 n=42473
+  mex_born      school_problem     +persons per room, hou   beta=+0.0148 t=  1.73 n=42473
+  mex_born      transit_problem    raw                      beta=+0.1876 t= 13.48 n=45537
+  mex_born      transit_problem    +income                  beta=+0.1817 t= 13.03 n=45537
+  mex_born      transit_problem    +income, tenure, metro   beta=+0.1241 t=  9.17 n=45537
+  mex_born      transit_problem    +persons per room, hou   beta=+0.1075 t=  7.78 n=45537
+  mex_born      disaster_risk      raw                      beta=-0.0034 t= -0.43 n=47008
+  mex_born      disaster_risk      +income                  beta=-0.0058 t= -0.73 n=47008
+  mex_born      disaster_risk      +income, tenure, metro   beta=-0.0237 t= -2.94 n=47008
+  mex_born      disaster_risk      +persons per room, hou   beta=-0.0268 t= -3.22 n=47008
+  SDR hisp inadequate: beta=+0.0028 se=0.0039 t=0.72 (160 reps)
+  SDR hisp trash_nearby: beta=+0.0087 se=0.0033 t=2.64 (160 reps)
+  SDR hisp abandoned_nearby: beta=-0.0011 se=0.0027 t=-0.39 (160 reps)
+  SDR hisp bars_on_windows: beta=+0.0089 se=0.0027 t=3.24 (160 reps)
+  SDR hisp nh_rating: beta=+0.1220 se=0.0288 t=4.24 (160 reps)
+  SDR mex_born inadequate: beta=-0.0005 se=0.0061 t=-0.08 (160 reps)
+  SDR mex_born trash_nearby: beta=+0.0107 se=0.0062 t=1.72 (160 reps)
+  SDR mex_born abandoned_nearby: beta=-0.0099 se=0.0039 t=-2.52 (160 reps)
+  SDR mex_born bars_on_windows: beta=+0.0074 se=0.0047 t=1.57 (160 reps)
+  SDR mex_born nh_rating: beta=+0.2650 se=0.0468 t=5.66 (160 reps)
+
+=== weighted means by income band and Hispanic origin ===
+inc_band  hispanic    n  wgt_households  mean_income  inadequate  sev_inadequate  nh_rating  unit_rating  trash_nearby  abandoned_nearby  bars_on_windows  petty_crime  serious_crime  school_problem  transit_problem  disaster_risk
+100-150k         0 5655    17654672.081   124250.232       0.026           0.004      8.434        8.505         0.012             0.017            0.015        0.124          0.038           0.933            0.392          0.075
+100-150k         1 1109     3019424.562   123254.553       0.040           0.012      8.333        8.505         0.031             0.021            0.027        0.202          0.070           0.903            0.594          0.106
+   150k+         0 8275    23015633.682   302089.242       0.025           0.003      8.636        8.744         0.011             0.013            0.014        0.110          0.034           0.934            0.398          0.080
+   150k+         1 1015     2563544.300   265505.353       0.042           0.016      8.390        8.589         0.024             0.038            0.030        0.188          0.058           0.900            0.616          0.079
+  25-50k         0 6879    20399790.656    38273.417       0.055           0.013      8.237        8.259         0.034             0.038            0.018        0.202          0.079           0.906            0.426          0.095
+  25-50k         1 1670     4153216.530    38042.753       0.085           0.029      8.044        8.159         0.056             0.041            0.032        0.281          0.117           0.910            0.642          0.107
+  50-75k         0 5550    18113646.248    62765.646       0.044           0.010      8.251        8.320         0.029             0.031            0.020        0.168          0.062           0.915            0.420          0.092
+  50-75k         1 1280     3333993.830    62938.403       0.048           0.014      8.215        8.376         0.048             0.032            0.031        0.229          0.087           0.906            0.656          0.106
+ 75-100k         0 4453    14160489.156    87971.905       0.042           0.010      8.354        8.412         0.021             0.028            0.015        0.151          0.046           0.923            0.424          0.082
+ 75-100k         1  981     2664619.343    87651.508       0.039           0.010      8.283        8.373         0.038             0.014            0.024        0.246          0.083           0.890            0.564          0.069
+    <25k         0 9497    20156951.728    12127.172       0.082           0.025      8.110        8.140         0.040             0.035            0.025        0.233          0.117           0.897            0.477          0.110
+    <25k         1 2163     3994794.963    11783.234       0.108           0.039      7.976        8.032         0.065             0.029            0.042        0.291          0.156           0.893            0.660          0.126

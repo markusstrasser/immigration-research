@@ -1,0 +1,43 @@
+outcome,spec,beta,t,p,per10pp_sd,n,tracts,R2
+sidewalk_litter,raw,0.03248,5.6568,0.0,0.36308,7291,235,0.04153
+sidewalk_litter,+tract income,0.0264,4.7214,0.0,0.29507,7291,235,0.07019
+sidewalk_litter,"+land use, period",0.02638,5.05268,0.0,0.29481,7291,235,0.08689
+sidewalk_litter,"+density, homelessness",0.02282,5.4651,0.0,0.25511,7291,235,0.10029
+sidewalk_litter,"+tenure, crowding, race",0.02257,4.22522,2e-05,0.25227,7291,235,0.11328
+sidewalk_litter,+poverty instead of income,0.02551,6.07014,0.0,0.28514,7291,235,0.08729
+sidewalk_litter,+neighborhood-group FE,0.0065,1.52923,0.12621,0.07268,7291,235,0.15558
+street_litter,raw,0.02034,5.22947,0.0,0.27489,7291,235,0.02381
+street_litter,+tract income,0.01563,4.20782,3e-05,0.2112,7291,235,0.04894
+street_litter,"+land use, period",0.01542,4.28663,2e-05,0.2084,7291,235,0.06581
+street_litter,"+density, homelessness",0.01194,3.81055,0.00014,0.16139,7291,235,0.07328
+street_litter,"+tenure, crowding, race",0.01265,3.27207,0.00107,0.17093,7291,235,0.07856
+street_litter,+poverty instead of income,0.01409,4.53221,1e-05,0.19046,7291,235,0.06187
+street_litter,+neighborhood-group FE,0.0011,0.35833,0.7201,0.0149,7291,235,0.10483
+litter_bad,raw,0.01202,5.55878,0.0,0.31944,7291,235,0.03215
+litter_bad,+tract income,0.01015,4.70258,0.0,0.26975,7291,235,0.04744
+litter_bad,"+land use, period",0.01016,4.99947,0.0,0.26985,7291,235,0.05524
+litter_bad,"+density, homelessness",0.00914,5.8853,0.0,0.24279,7291,235,0.06993
+litter_bad,"+tenure, crowding, race",0.00827,4.33408,1e-05,0.21967,7291,235,0.08019
+litter_bad,+poverty instead of income,0.00996,6.29252,0.0,0.26455,7291,235,0.06311
+litter_bad,+neighborhood-group FE,0.00336,2.0004,0.04546,0.08918,7291,235,0.10741
+dumping_any,raw,0.00691,3.51455,0.00044,0.14914,7291,235,0.00701
+dumping_any,+tract income,0.00568,2.89791,0.00376,0.12268,7291,235,0.01134
+dumping_any,"+land use, period",0.00567,2.97891,0.00289,0.1225,7291,235,0.01712
+dumping_any,"+density, homelessness",0.00363,2.08099,0.03743,0.0783,7291,235,0.02407
+dumping_any,"+tenure, crowding, race",0.00361,1.76934,0.07684,0.078,7291,235,0.02525
+dumping_any,+poverty instead of income,0.00404,2.3719,0.0177,0.08733,7291,235,0.02291
+dumping_any,+neighborhood-group FE,-0.00219,-1.07462,0.28255,-0.04738,7291,235,0.04687
+graffiti_tot,raw,1.55347,3.86456,0.00011,0.43583,7291,235,0.05984
+graffiti_tot,+tract income,1.41554,3.49868,0.00047,0.39713,7291,235,0.06911
+graffiti_tot,"+land use, period",1.42883,3.96285,7e-05,0.40086,7291,235,0.17922
+graffiti_tot,"+density, homelessness",0.97448,3.20618,0.00135,0.27339,7291,235,0.24016
+graffiti_tot,"+tenure, crowding, race",1.12096,3.58714,0.00033,0.31449,7291,235,0.26628
+graffiti_tot,+poverty instead of income,0.94781,3.15629,0.0016,0.26591,7291,235,0.24078
+graffiti_tot,+neighborhood-group FE,0.15302,0.59942,0.54889,0.04293,7291,235,0.36993
+feces,raw,0.04151,3.67782,0.00024,0.15773,7291,235,0.00784
+feces,+tract income,0.03382,3.12922,0.00175,0.12853,7291,235,0.01312
+feces,"+land use, period",0.03435,3.23988,0.0012,0.13053,7291,235,0.02076
+feces,"+density, homelessness",0.01732,1.92295,0.05449,0.06582,7291,235,0.03474
+feces,"+tenure, crowding, race",0.0131,1.26656,0.20531,0.04976,7291,235,0.04417
+feces,+poverty instead of income,0.01864,2.01808,0.04358,0.07084,7291,235,0.03661
+feces,+neighborhood-group FE,0.0118,1.10298,0.27003,0.04482,7291,235,0.05511
