@@ -2,84 +2,90 @@ group,step,item,label,item_bn,cumulative_bn,cumulative_per_person,se_bn,flag
 mexico_born,0,base,all_age_shared absolute,0.0,6.629354990890361,542.4656993799379,3.1258570351348083,cps_records
 mexico_born,1,G,state-local general services,-50.08660637893661,-43.45725138804625,-3556.0123571207564,3.2772847986227265,cps_records
 mexico_born,2,K,K-12 capital outlay and interest on school debt,-5.024396713996733,-48.48164810204298,-3967.147811650767,3.359676802731816,cps_records
-mexico_born,3,D,district cost-to-serve differential,0.0,-48.48164810204298,-3967.147811650767,3.359676802731816,dropped_no_verified_parameter
-mexico_born,4,U,transfer under-reporting,-2.1986613052749835,-50.68030940731797,-4147.059483948378,3.425226977088665,cps_records
-mexico_born,5,I,refundable-credit improper payments,-1.393343009604118,-52.07365241692209,-4261.073711760839,3.4513710483919904,cps_records
-mexico_born,6,M,MEPS-to-NHEA coverage scaling,-10.826607780645798,-62.90026019756789,-5146.99147747269,3.5629960395806957,cps_records
-mexico_born,7,N,institutional care (external add),-5.7701671365,-68.67042733406788,-5619.151703549256,3.5629960395806948,external_add_no_se
-mexico_born,8,E,immigration enforcement,-2.716778160145586,-71.38720549421348,-5841.459751123819,3.588555267812015,cps_records
-mexico_born,9,C,"corporate income tax, federal and state",8.167829918309526,-63.219375575903946,-5173.103994773369,3.753651497070984,cps_records
-mexico_born,10,X,excise and selective sales taxes,11.272104431459042,-51.9472711444449,-4250.732207126214,3.6716918397021647,cps_records
-mexico_born,11,R,rest of the federal budget by function,-32.23047121082995,-84.17774235527484,-6888.081561739615,3.996122599085854,cps_records
-mexico_born,12,F,"federal defense, net interest, general government",0.0,-84.17774235527484,-6888.081561739615,3.996122599085854,central_arm_is_zero
-mexico_born,13,S,state-funded coverage for undocumented residents,-1.485180505004549,-85.6629228602794,-7009.610652044754,4.016843184248884,cps_records
+mexico_born,3,P,non-school state and local capital outlay,-1.9104033689248545,-50.39205147096784,-4123.471964007319,3.372179723132257,cps_records
+mexico_born,4,D,district cost-to-serve differential,-0.660661914459947,-51.052713385427786,-4177.5324914603925,3.3840049603416054,cps_records
+mexico_born,5,U,transfer under-reporting,-2.1986613052749835,-53.251374690702775,-4357.444163758005,3.4501647429615265,cps_records
+mexico_born,6,I,refundable-credit improper payments,-1.393343009604118,-54.64471770030689,-4471.458391570465,3.4765670646863676,cps_records
+mexico_born,7,M,MEPS-to-NHEA coverage scaling,-10.826607780645798,-65.47132548095269,-5357.376157282316,3.5898669091728435,cps_records
+mexico_born,8,N,institutional care (external add),-5.7701671365,-71.24149261745269,-5829.5363833588835,3.5898669091728435,external_add_no_se
+mexico_born,9,E,immigration enforcement,-2.716778160145586,-73.95827077759829,-6051.844430933445,3.6160564256681935,cps_records
+mexico_born,10,C,"corporate income tax, federal and state",8.167829918309526,-65.79044085928875,-5383.488674582995,3.77790289544783,cps_records
+mexico_born,11,X,excise and selective sales taxes,11.272104431459042,-54.51833642782971,-4461.116886935841,3.693468097195716,cps_records
+mexico_born,12,R,rest of the federal budget by function,-32.23047121082995,-86.74880763865967,-7098.466241549242,4.024407767287274,cps_records
+mexico_born,13,F,"federal defense, net interest, general government",0.0,-86.74880763865967,-7098.466241549242,4.024407767287274,central_arm_is_zero
+mexico_born,14,S,state-funded coverage for undocumented residents,-1.485180505004549,-88.23398814366422,-7219.995331854382,4.045788657684874,cps_records
 mexican_second_gen,0,base,all_age_shared absolute,0.0,10.693472380705494,746.0622333198487,3.4224548533777277,cps_records
 mexican_second_gen,1,G,state-local general services,-59.538380642591314,-48.84490826188582,-3407.81179833762,3.7100133681351726,cps_records
 mexican_second_gen,2,K,K-12 capital outlay and interest on school debt,-8.861116585816248,-57.70602484770207,-4026.034223604264,3.877015537517451,cps_records
-mexican_second_gen,3,D,district cost-to-serve differential,0.0,-57.70602484770207,-4026.034223604264,3.877015537517451,dropped_no_verified_parameter
-mexican_second_gen,4,U,transfer under-reporting,-3.629662205597831,-61.3356870532999,-4279.268514103858,3.9814155107213574,cps_records
-mexican_second_gen,5,I,refundable-credit improper payments,-2.0594483661804035,-63.3951354194803,-4422.9521177807865,4.03141115855852,cps_records
-mexican_second_gen,6,M,MEPS-to-NHEA coverage scaling,-11.243658847542699,-74.638794267023,-5207.399763207889,4.1798774454736245,cps_records
-mexican_second_gen,7,N,institutional care (external add),-6.498023236449247,-81.13681750347224,-5660.753880126622,4.1798774454736245,external_add_no_se
-mexican_second_gen,8,E,immigration enforcement,0.0,-81.13681750347224,-5660.753880126622,4.1798774454736245,cps_records
-mexican_second_gen,9,C,"corporate income tax, federal and state",11.376453351418316,-69.76036415205392,-4867.041427104111,4.395607253725271,cps_records
-mexican_second_gen,10,X,excise and selective sales taxes,13.220555599037048,-56.539808553016876,-3944.669639456956,4.277284940403194,cps_records
-mexican_second_gen,11,R,rest of the federal budget by function,-39.52828444539228,-96.06809299840914,-6702.479181831813,4.602062730787873,cps_records
-mexican_second_gen,12,F,"federal defense, net interest, general government",0.0,-96.06809299840914,-6702.479181831813,4.602062730787873,central_arm_is_zero
-mexican_second_gen,13,S,state-funded coverage for undocumented residents,0.0,-96.06809299840914,-6702.479181831813,4.602062730787873,cps_records
+mexican_second_gen,3,P,non-school state and local capital outlay,-2.2765655663739652,-59.98259041407603,-4184.865661165425,3.894219490339245,cps_records
+mexican_second_gen,4,D,district cost-to-serve differential,-1.1680162626611585,-61.15060667673718,-4266.355825487278,3.919562623712721,cps_records
+mexican_second_gen,5,U,transfer under-reporting,-3.629662205597831,-64.78026888233501,-4519.590115986873,4.02414951478951,cps_records
+mexican_second_gen,6,I,refundable-credit improper payments,-2.0594483661804035,-66.83971724851541,-4663.273719663801,4.074396790940454,cps_records
+mexican_second_gen,7,M,MEPS-to-NHEA coverage scaling,-11.243658847542699,-78.08337609605812,-5447.721365090903,4.224795619954191,cps_records
+mexican_second_gen,8,N,institutional care (external add),-6.498023236449247,-84.58139933250737,-5901.075482009636,4.224795619954191,external_add_no_se
+mexican_second_gen,9,E,immigration enforcement,0.0,-84.58139933250737,-5901.075482009636,4.224795619954191,cps_records
+mexican_second_gen,10,C,"corporate income tax, federal and state",11.376453351418316,-73.20494598108905,-5107.363028987125,4.437361202497785,cps_records
+mexican_second_gen,11,X,excise and selective sales taxes,13.220555599037048,-59.984390382052005,-4184.99124133997,4.316375605278519,cps_records
+mexican_second_gen,12,R,rest of the federal budget by function,-39.52828444539228,-99.51267482744427,-6942.800783714827,4.646747367581686,cps_records
+mexican_second_gen,13,F,"federal defense, net interest, general government",0.0,-99.51267482744427,-6942.800783714827,4.646747367581686,central_arm_is_zero
+mexican_second_gen,14,S,state-funded coverage for undocumented residents,0.0,-99.51267482744427,-6942.800783714827,4.646747367581686,cps_records
 mexican_third_plus_selfid,0,base,all_age_shared absolute,0.0,32.91538687702236,2294.9426989642566,4.943384971679043,cps_records
 mexican_third_plus_selfid,1,G,state-local general services,-56.344971483564244,-23.42958460654189,-1633.5689546485082,5.14096853649736,cps_records
 mexican_third_plus_selfid,2,K,K-12 capital outlay and interest on school debt,-8.845248566307792,-32.274833172849675,-2250.281700380892,5.264968162916637,cps_records
-mexican_third_plus_selfid,3,D,district cost-to-serve differential,0.0,-32.274833172849675,-2250.281700380892,5.264968162916637,dropped_no_verified_parameter
-mexican_third_plus_selfid,4,U,transfer under-reporting,-3.614457707895681,-35.889290880745364,-2502.2906881057434,5.3301299451206585,cps_records
-mexican_third_plus_selfid,5,I,refundable-credit improper payments,-1.2855615765254016,-37.17485245727076,-2591.9232409643423,5.361608084073254,cps_records
-mexican_third_plus_selfid,6,M,MEPS-to-NHEA coverage scaling,-13.080114399752597,-50.25496685702336,-3503.9013731212694,5.492221338170972,cps_records
-mexican_third_plus_selfid,7,N,institutional care (external add),-6.800368831050752,-57.05533568807411,-3978.040014036914,5.492221338170972,external_add_no_se
-mexican_third_plus_selfid,8,E,immigration enforcement,0.0,-57.05533568807411,-3978.040014036914,5.492221338170972,cps_records
-mexican_third_plus_selfid,9,C,"corporate income tax, federal and state",15.005683372227615,-42.049652315846494,-2931.806420407088,5.705427280565309,cps_records
-mexican_third_plus_selfid,10,X,excise and selective sales taxes,13.229186179053118,-28.82046613679338,-2009.4346327599335,5.618277892167349,cps_records
-mexican_third_plus_selfid,11,R,rest of the federal budget by function,-43.38049659921208,-72.20096273600547,-5034.030829054488,6.045309888232385,cps_records
-mexican_third_plus_selfid,12,F,"federal defense, net interest, general government",0.0,-72.20096273600547,-5034.030829054488,6.045309888232385,central_arm_is_zero
-mexican_third_plus_selfid,13,S,state-funded coverage for undocumented residents,0.0,-72.20096273600547,-5034.030829054488,6.045309888232385,cps_records
+mexican_third_plus_selfid,3,P,non-school state and local capital outlay,-2.3587941695476164,-34.63362734239729,-2414.742700884631,5.28066126560447,cps_records
+mexican_third_plus_selfid,4,D,district cost-to-serve differential,-0.9177208331154758,-35.55134817551277,-2478.7284815626645,5.296143953491785,cps_records
+mexican_third_plus_selfid,5,U,transfer under-reporting,-3.614457707895681,-39.16580588340845,-2730.737469287516,5.362008130581034,cps_records
+mexican_third_plus_selfid,6,I,refundable-credit improper payments,-1.2855615765254016,-40.451367459933856,-2820.3700221461154,5.393599001845202,cps_records
+mexican_third_plus_selfid,7,M,MEPS-to-NHEA coverage scaling,-13.080114399752597,-53.531481859686444,-3732.3481543030416,5.527665435769506,cps_records
+mexican_third_plus_selfid,8,N,institutional care (external add),-6.800368831050752,-60.3318506907372,-4206.486795218686,5.527665435769506,external_add_no_se
+mexican_third_plus_selfid,9,E,immigration enforcement,0.0,-60.3318506907372,-4206.486795218686,5.527665435769506,cps_records
+mexican_third_plus_selfid,10,C,"corporate income tax, federal and state",15.005683372227615,-45.32616731850958,-3160.25320158886,5.736673249187133,cps_records
+mexican_third_plus_selfid,11,X,excise and selective sales taxes,13.229186179053118,-32.09698113945647,-2237.881413941706,5.646153566254272,cps_records
+mexican_third_plus_selfid,12,R,rest of the federal budget by function,-43.38049659921208,-75.47747773866855,-5262.47761023626,6.083698742182556,cps_records
+mexican_third_plus_selfid,13,F,"federal defense, net interest, general government",0.0,-75.47747773866855,-5262.47761023626,6.083698742182556,central_arm_is_zero
+mexican_third_plus_selfid,14,S,state-funded coverage for undocumented residents,0.0,-75.47747773866855,-5262.47761023626,6.083698742182556,cps_records
 mexican_observed_total,0,base,all_age_shared absolute,0.0,50.23821424861819,1228.4210912499898,7.473981330782249,cps_records
 mexican_observed_total,1,G,state-local general services,-165.96995850509214,-115.73174425647393,-2829.8640327509806,7.789012226547317,cps_records
 mexican_observed_total,2,K,K-12 capital outlay and interest on school debt,-22.730761866120773,-138.46250612259473,-3385.674937142189,7.963316784910744,cps_records
-mexican_observed_total,3,D,district cost-to-serve differential,0.0,-138.46250612259473,-3385.674937142189,7.963316784910744,dropped_no_verified_parameter
-mexican_observed_total,4,U,transfer under-reporting,-9.442781218768495,-147.90528734136322,-3616.569123623221,8.076535693225914,cps_records
-mexican_observed_total,5,I,refundable-credit improper payments,-4.738352952309922,-152.64364029367314,-3732.4309788157407,8.149480232797382,cps_records
-mexican_observed_total,6,M,MEPS-to-NHEA coverage scaling,-35.1503810279411,-187.79402132161425,-4591.925490434135,8.295461277263781,cps_records
-mexican_observed_total,7,N,institutional care (external add),-19.068559204,-206.86258052561425,-5058.188486766394,8.295461277263781,external_add_no_se
-mexican_observed_total,8,E,immigration enforcement,-2.716778160145586,-209.57935868575987,-5124.618944976042,8.305864983930539,cps_records
-mexican_observed_total,9,C,"corporate income tax, federal and state",34.54996664195546,-175.0293920438044,-4279.80572142224,8.705472138480944,cps_records
-mexican_observed_total,10,X,excise and selective sales taxes,37.7218462095492,-137.3075458342552,-3357.4339337750857,8.585568785417927,cps_records
-mexican_observed_total,11,R,rest of the federal budget by function,-115.13925225543431,-252.4467980896895,-6172.810396030983,8.784939534032159,cps_records
-mexican_observed_total,12,F,"federal defense, net interest, general government",0.0,-252.4467980896895,-6172.810396030983,8.784939534032159,central_arm_is_zero
-mexican_observed_total,13,S,state-funded coverage for undocumented residents,-1.485180505004549,-253.93197859469407,-6209.125919660708,8.808802250729439,cps_records
+mexican_observed_total,3,P,non-school state and local capital outlay,-6.545763104846436,-145.00826922744116,-3545.7314514228597,7.980675842618817,cps_records
+mexican_observed_total,4,D,district cost-to-serve differential,-2.7463990102365807,-147.75466823767775,-3612.886196463494,8.003947387111332,cps_records
+mexican_observed_total,5,U,transfer under-reporting,-9.442781218768495,-157.19744945644624,-3843.780382944526,8.118012989046939,cps_records
+mexican_observed_total,6,I,refundable-credit improper payments,-4.738352952309922,-161.93580240875616,-3959.6422381370458,8.191257302262041,cps_records
+mexican_observed_total,7,M,MEPS-to-NHEA coverage scaling,-35.1503810279411,-197.08618343669727,-4819.13674975544,8.339584618225572,cps_records
+mexican_observed_total,8,N,institutional care (external add),-19.068559204,-216.15474264069726,-5285.399746087699,8.339584618225572,external_add_no_se
+mexican_observed_total,9,E,immigration enforcement,-2.716778160145586,-218.87152080084286,-5351.830204297347,8.350068431457728,cps_records
+mexican_observed_total,10,C,"corporate income tax, federal and state",34.54996664195546,-184.32155415888738,-4507.016980743546,8.746314846571009,cps_records
+mexican_observed_total,11,X,excise and selective sales taxes,37.7218462095492,-146.59970794933818,-3584.6451930963913,8.623764457676165,cps_records
+mexican_observed_total,12,R,rest of the federal budget by function,-115.13925225543431,-261.7389602047725,-6400.021655352288,8.82838969065869,cps_records
+mexican_observed_total,13,F,"federal defense, net interest, general government",0.0,-261.7389602047725,-6400.021655352288,8.82838969065869,central_arm_is_zero
+mexican_observed_total,14,S,state-funded coverage for undocumented residents,-1.485180505004549,-263.2241407097771,-6436.337178982013,8.85265117055456,cps_records
 third_plus_nh_white,0,base,all_age_shared absolute,0.0,807.8547591735547,4668.226431166829,34.65564937333716,cps_records
 third_plus_nh_white,1,G,state-local general services,-670.1691409506075,137.68561822294726,795.6227711494158,34.74355269234759,cps_records
 third_plus_nh_white,2,K,K-12 capital outlay and interest on school debt,-54.25299668765607,83.4326215352912,482.1192976210604,34.84082583245951,cps_records
-third_plus_nh_white,3,D,district cost-to-serve differential,0.0,83.4326215352912,482.1192976210604,34.84082583245951,dropped_no_verified_parameter
-third_plus_nh_white,4,U,transfer under-reporting,-25.121136107140106,58.311485428151094,336.95564013854386,35.033768526075455,cps_records
-third_plus_nh_white,5,I,refundable-credit improper payments,-5.575522492001757,52.735962936149335,304.7372231902368,35.087827912406155,cps_records
-third_plus_nh_white,6,M,MEPS-to-NHEA coverage scaling,-229.04247049287483,-176.30650755672548,-1018.7953827306762,35.195666127028,cps_records
-third_plus_nh_white,7,N,institutional care (external add),-143.19980084,-319.50630839672544,-1846.282115498069,35.195666127028,external_add_no_se
-third_plus_nh_white,8,E,immigration enforcement,0.0,-319.50630839672544,-1846.282115498069,35.195666127028,cps_records
-third_plus_nh_white,9,C,"corporate income tax, federal and state",465.84654678124593,146.34023838452043,845.6338976931237,40.58918820567857,cps_records
-third_plus_nh_white,10,X,excise and selective sales taxes,159.62002901215823,305.9602673966787,1768.0056853402782,40.558603469485156,cps_records
-third_plus_nh_white,11,R,rest of the federal budget by function,-682.2424747367795,-376.28220734010085,-2174.3642974633813,43.141216930004106,cps_records
-third_plus_nh_white,12,F,"federal defense, net interest, general government",0.0,-376.28220734010085,-2174.3642974633813,43.141216930004106,central_arm_is_zero
-third_plus_nh_white,13,S,state-funded coverage for undocumented residents,0.0,-376.28220734010085,-2174.3642974633813,43.141216930004106,cps_records
+third_plus_nh_white,3,P,non-school state and local capital outlay,-25.438292695075667,57.99432884021553,335.1229359923999,34.84172129690445,cps_records
+third_plus_nh_white,4,D,district cost-to-serve differential,10.97058908880603,68.96491792902157,398.51699707613534,34.82203933793487,cps_records
+third_plus_nh_white,5,U,transfer under-reporting,-25.121136107140106,43.84378182188146,253.35333959361878,35.015393435730616,cps_records
+third_plus_nh_white,6,I,refundable-credit improper payments,-5.575522492001757,38.2682593298797,221.13492264531178,35.069387453949155,cps_records
+third_plus_nh_white,7,M,MEPS-to-NHEA coverage scaling,-229.04247049287483,-190.77421116299513,-1102.3976832756014,35.17773229147504,cps_records
+third_plus_nh_white,8,N,institutional care (external add),-143.19980084,-333.9740120029951,-1929.8844160429942,35.17773229147504,external_add_no_se
+third_plus_nh_white,9,E,immigration enforcement,0.0,-333.9740120029951,-1929.8844160429942,35.17773229147504,cps_records
+third_plus_nh_white,10,C,"corporate income tax, federal and state",465.84654678124593,131.87253477825078,762.0315971481986,40.57338265626718,cps_records
+third_plus_nh_white,11,X,excise and selective sales taxes,159.62002901215823,291.49256379040906,1684.403384795353,40.54268373942107,cps_records
+third_plus_nh_white,12,R,rest of the federal budget by function,-682.2424747367795,-390.7499109463705,-2257.9665980083064,43.12684533198792,cps_records
+third_plus_nh_white,13,F,"federal defense, net interest, general government",0.0,-390.7499109463705,-2257.9665980083064,43.12684533198792,central_arm_is_zero
+third_plus_nh_white,14,S,state-funded coverage for undocumented residents,0.0,-390.7499109463705,-2257.9665980083064,43.12684533198792,cps_records
 all_native,0,base,all_age_shared absolute,0.0,1110.9203443131366,3916.211821647353,43.18097842096343,cps_records
 all_native,1,G,state-local general services,-1120.4292416870408,-9.508897373904052,-33.52072585324619,43.320029499111556,cps_records
 all_native,2,K,K-12 capital outlay and interest on school debt,-107.23176693401247,-116.74066430791652,-411.53370893778646,43.49227462836783,cps_records
-all_native,3,D,district cost-to-serve differential,0.0,-116.74066430791652,-411.53370893778646,43.49227462836783,dropped_no_verified_parameter
-all_native,4,U,transfer under-reporting,-55.278476714899696,-172.01914102281623,-606.4011673489432,43.82558403967806,cps_records
-all_native,5,I,refundable-credit improper payments,-15.274826177957292,-187.29396720077352,-660.2479216711087,43.911190001411995,cps_records
-all_native,6,M,MEPS-to-NHEA coverage scaling,-339.1046691671461,-526.3986363679196,-1855.6583045723917,44.001654888003706,cps_records
-all_native,7,N,institutional care (external add),-241.224615342,-767.6232517099196,-2706.0223249187466,44.0016548880037,external_add_no_se
-all_native,8,E,immigration enforcement,0.0,-767.6232517099196,-2706.0223249187466,44.0016548880037,cps_records
-all_native,9,C,"corporate income tax, federal and state",612.5104076084186,-155.11284410150097,-546.8031590826794,49.891527296466776,cps_records
-all_native,10,X,excise and selective sales taxes,261.65121566041074,106.53837155890979,375.5686285644764,49.856183244423995,cps_records
-all_native,11,R,rest of the federal budget by function,-1040.8670435721504,-934.3286720132405,-3293.6915858757097,53.06373912761137,cps_records
-all_native,12,F,"federal defense, net interest, general government",0.0,-934.3286720132405,-3293.6915858757097,53.06373912761137,central_arm_is_zero
-all_native,13,S,state-funded coverage for undocumented residents,0.0,-934.3286720132405,-3293.6915858757097,53.06373912761137,cps_records
+all_native,3,P,non-school state and local capital outlay,-41.7928149230325,-158.53347923094904,-558.861567950661,43.49668210977695,cps_records
+all_native,4,D,district cost-to-serve differential,9.172855718045048,-149.360623512904,-526.5254547584194,43.48488879625511,cps_records
+all_native,5,U,transfer under-reporting,-55.278476714899696,-204.63910022780368,-721.3929131695762,43.81843360600218,cps_records
+all_native,6,I,refundable-credit improper payments,-15.274826177957292,-219.91392640576098,-775.2396674917417,43.904017623532994,cps_records
+all_native,7,M,MEPS-to-NHEA coverage scaling,-339.1046691671461,-559.018595572907,-1970.6500503930247,43.99546710459429,cps_records
+all_native,8,N,institutional care (external add),-241.224615342,-800.243210914907,-2821.01407073938,43.99546710459429,external_add_no_se
+all_native,9,E,immigration enforcement,0.0,-800.243210914907,-2821.01407073938,43.99546710459429,cps_records
+all_native,10,C,"corporate income tax, federal and state",612.5104076084186,-187.7328033064884,-661.7949049033123,49.884668822752836,cps_records
+all_native,11,X,excise and selective sales taxes,261.65121566041074,73.91841235392236,260.57688274384356,49.84881393905044,cps_records
+all_native,12,R,rest of the federal budget by function,-1040.8670435721504,-966.9486312182279,-3408.683331696343,53.058248157299964,cps_records
+all_native,13,F,"federal defense, net interest, general government",0.0,-966.9486312182279,-3408.683331696343,53.058248157299964,central_arm_is_zero
+all_native,14,S,state-funded coverage for undocumented residents,0.0,-966.9486312182279,-3408.683331696343,53.058248157299964,cps_records

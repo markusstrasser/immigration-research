@@ -61,12 +61,13 @@ NATIONAL = "all_civilian_residents"
 # Waterfall order, central arms only.
 # The brief's order runs to F at step 12; item S is appended as step 13 so the
 # endpoint includes state-funded coverage, with the step-12 endpoint still visible.
-WATERFALL_ORDER = ["G", "K", "D", "U", "I", "M", "N", "E", "C", "X", "R", "F", "S"]
-BRIEF_FINAL_STEP = 12
+WATERFALL_ORDER = ["G", "K", "P", "D", "U", "I", "M", "N", "E", "C", "X", "R", "F", "S"]
+BRIEF_FINAL_STEP = WATERFALL_ORDER.index("F") + 1
 
 ITEM_LABEL = {
     "G": "state-local general services",
     "K": "K-12 capital outlay and interest on school debt",
+    "P": "non-school state and local capital outlay",
     "D": "district cost-to-serve differential",
     "U": "transfer under-reporting",
     "I": "refundable-credit improper payments",
@@ -82,7 +83,7 @@ ITEM_LABEL = {
 
 # Items whose charge is dialled by the marginality parameter m. Records-based
 # items (U, I, M, N, E, C, X) stay at m_item = 1.
-MARGINAL_ITEMS = {"G", "K", "D", "F", "R_percapita"}
+MARGINAL_ITEMS = {"G", "K", "P", "D", "F", "R_percapita"}
 
 # PEAFEVER is veteran status ("ever served"); VET_YN only flags receipt of
 # veterans' payments. PEN_SC1/PEN_SC2 carry the pension SOURCE (3 = federal
@@ -311,6 +312,87 @@ def read_cog_national_lines(path: Path) -> tuple[float, float]:
     return float(by_line[7][2]) * 1000.0, float(by_line[67][2]) * 1000.0
 
 
+# 2022 Census of Governments Table 1 line numbers. Lines 69..112 are the
+# FUNCTIONAL breakdown of line 66 direct general expenditure and each function's
+# own capital outlay is INSIDE its function total; line 67 is the same dollars
+# cut by character, not an addition to them. So the general-services residual
+# behind item G (line 66 less education, public welfare, hospitals, health and
+# correction) already carries the capital outlay of every function it retains.
+COG_LINE_CAPITAL_TOTAL = 67          # direct general capital outlay, all functions
+COG_LINE_EDUCATION_CAPITAL = 70      # education capital outlay, all levels
+COG_LINE_ELSEC_CAPITAL = 74          # elementary and secondary capital outlay
+COG_LINE_HOSPITALS_CAPITAL = 82      # hospitals capital outlay
+COG_LINE_CORRECTION_CAPITAL = 95     # correction capital outlay
+
+
+def read_cog_capital(path: Path, pop: pd.Series) -> tuple[dict, dict, dict]:
+    """State and local capital outlay by state, split into the part item G
+    already charges and the part nothing in the account charges yet.
+
+    Returns (per_capita_by_arm, national_by_arm, national_components), all in
+    2022 dollars. Two arms:
+
+    `briefed_gross`   total capital outlay less elementary-and-secondary capital
+                      outlay, the literal quantity the extension brief names.
+    `net_of_item_G`   the same less the capital outlay already inside the item G
+                      general-services residual, which is every function except
+                      education, hospitals and correction. Equal to education
+                      capital less elementary-and-secondary capital, plus
+                      hospitals capital, plus correction capital.
+    """
+    import openpyxl
+    ws = openpyxl.load_workbook(path, read_only=True, data_only=True)["2022_US_WY"]
+    rows = [[("" if c is None else c) for c in r] for r in ws.iter_rows(values_only=True)]
+    header = rows[8]
+    blocks = [(name.strip(), col) for col, name in enumerate(header)
+              if isinstance(name, str) and name.strip() and col >= 2]
+    by_line = {int(r[0]): r for r in rows if isinstance(r[0], (int, float)) and r[0]}
+    wanted = [COG_LINE_CAPITAL_TOTAL, COG_LINE_EDUCATION_CAPITAL, COG_LINE_ELSEC_CAPITAL,
+              COG_LINE_HOSPITALS_CAPITAL, COG_LINE_CORRECTION_CAPITAL]
+    missing = [ln for ln in wanted if ln not in by_line]
+    if missing:
+        raise SystemExit(f"[BLOCKED] Census of Governments capital lines not found: {missing}")
+
+    per_capita = {"briefed_gross": {}, "net_of_item_G": {}}
+    national = {"briefed_gross": 0.0, "net_of_item_G": 0.0}
+    components = {k: 0.0 for k in ["capital_total", "education_capital", "elsec_capital",
+                                   "hospitals_capital", "correction_capital",
+                                   "capital_inside_item_G"]}
+    for name, col in blocks:
+        def amount(line: int) -> float:
+            v = by_line[line][col]
+            return 1000.0 * float(v) if isinstance(v, (int, float)) else 0.0
+        total = amount(COG_LINE_CAPITAL_TOTAL)
+        educ = amount(COG_LINE_EDUCATION_CAPITAL)
+        elsec = amount(COG_LINE_ELSEC_CAPITAL)
+        hosp = amount(COG_LINE_HOSPITALS_CAPITAL)
+        corr = amount(COG_LINE_CORRECTION_CAPITAL)
+        inside_g = total - educ - hosp - corr
+        gross = total - elsec
+        net = educ + hosp + corr - elsec
+        if net < 0:
+            raise SystemExit(f"[BLOCKED] negative unpriced non-school capital in {name}")
+        if name == "United States Total":
+            national["briefed_gross"] = gross
+            national["net_of_item_G"] = net
+            components.update(capital_total=total, education_capital=educ,
+                              elsec_capital=elsec, hospitals_capital=hosp,
+                              correction_capital=corr, capital_inside_item_G=inside_g)
+            continue
+        fips = STATE_NAME_TO_FIPS.get(name)
+        if fips is None:
+            continue
+        if fips not in pop.index:
+            raise SystemExit(f"[BLOCKED] no 2022 population for {name}")
+        per_capita["briefed_gross"][fips] = gross / pop.loc[fips]
+        per_capita["net_of_item_G"][fips] = net / pop.loc[fips]
+    for arm, mapping in per_capita.items():
+        if len(mapping) != 51:
+            raise SystemExit(f"[BLOCKED] capital arm {arm}: parsed {len(mapping)} "
+                             "jurisdictions, expected 51")
+    return per_capita, national, components
+
+
 def read_omb_functions(path: Path) -> dict:
     """FY2024 dollar outlays for every function row of the cached OMB Table 3.1."""
     import openpyxl
@@ -439,6 +521,7 @@ def build_charges(ctx, p: Params):
     weights_full = ctx["weights"][:, 0]
     fips = d.GESTFIPS.to_numpy()
     ch = Charges(len(d))
+    off = set(ctx.get("off") or [])
     dropped: list[dict] = []
     national: dict[str, dict] = {}
     ratio_inversion_check: list[dict] = []
@@ -533,16 +616,53 @@ def build_charges(ctx, p: Params):
     record_national("K", "central", k12_national,
                     -unit_share(cap_person) * civilian, "pupil_based")
 
+    # ---- P: non-school state and local capital outlay ---------------------
+    # Charged per capita by state of residence on the same 2022 state population
+    # denominator item G uses, inflated by the same state-local price index.
+    cap_pc, cap_national, cap_components = ctx["capital"]
+    if "P" in off:
+        drop("P", "switched off at the command line with --off P")
+    elif deflator_ratio is None:
+        drop("P", "the BEA state-local price index is not verified, so the 2022 capital "
+                  "figures could not be brought to the 2024 price level")
+    else:
+        for arm in ["net_of_item_G", "briefed_gross"]:
+            rate = d.GESTFIPS.map(cap_pc[arm]).to_numpy(dtype=float) * deflator_ratio
+            if np.isnan(rate).any():
+                raise ValueError(f"state without a capital per-capita rate for arm {arm}")
+            vector = np.where(civilian, -rate, 0.0)
+            ch.add("P", arm, vector, source="cache:22slsstab1.xlsx + params:deflator",
+                   marginal=True, price_level="2024", deflator=deflator_ratio,
+                   national_2022=cap_national[arm])
+            record_national("P", arm, cap_national[arm] * deflator_ratio, vector,
+                            "state_per_capita")
+
     # ---- D: district cost-to-serve differential ---------------------------
-    hisp_diff = p.pick("k12", ["hispanic", "differential"], "state_money")
-    white_diff = p.pick("k12", ["white", "differential"], "state_money")
-    if hisp_diff and white_diff:
+    hisp_diff = (None if "D" in off else
+                 p.pick("district", ["hispanic", "minus_all"], "state_money",
+                        preferred="hispanic_minus_all_by_state")
+                 or p.pick("k12", ["hispanic", "differential"], "state_money"))
+    white_diff = (None if "D" in off else
+                  p.pick("district", ["white", "minus_all"], "state_money",
+                         preferred="white_minus_all_by_state")
+                  or p.pick("k12", ["white", "differential"], "state_money"))
+    if "D" in off:
+        drop("D", "switched off at the command line with --off D")
+    elif hisp_diff and white_diff:
         h = pd.Series(fips).map(hisp_diff).fillna(0.0).to_numpy(dtype=float)
         w = pd.Series(fips).map(white_diff).fillna(0.0).to_numpy(dtype=float)
         rate = np.where(ctx["is_white_ref"], w, np.where(ctx["is_target"], h, 0.0))
         diff_person = children * rate * ext.PUPIL_RATIO_NATIVE_ACS
         ch.add("D", "central", -unit_share(diff_person) * civilian,
-               source="params:k12 district differential", marginal=True)
+               source="params:district F-33 x CCD per-pupil differentials", marginal=True,
+               rule="Mexican-origin public pupils aged 5-17 are charged their state's "
+                    "Hispanic-minus-all differential, the third-plus non-Hispanic white "
+                    "reference its white-minus-all differential, and every other record "
+                    "zero; there is no separate all-native rate, so the all-native "
+                    "reference carries only the charges of its own members")
+    elif hisp_diff or white_diff:
+        drop("D", "only one of the two district differentials is verified; the item needs "
+                  "both the Hispanic-minus-all and the white-minus-all vector")
     else:
         drop("D", "district F-33 x CCD Hispanic/white per-pupil differentials not verified")
 
@@ -1042,7 +1162,9 @@ def build_charges(ctx, p: Params):
     else:
         drop("S", "no state general-fund coverage cost for undocumented residents was verified")
 
-    centrals = dict(G=g_central, K="central", D="central" if "D|central" in ch.meta else None,
+    centrals = dict(G=g_central, K="central",
+                    P="net_of_item_G" if "P|net_of_item_G" in ch.meta else None,
+                    D="central" if "D|central" in ch.meta else None,
                     U="central" if "U|central" in ch.meta else None,
                     I="central" if "I|central" in ch.meta else None,
                     M="central" if "M|central" in ch.meta else None,
@@ -1061,8 +1183,11 @@ def sdr_se(values: np.ndarray) -> float:
 
 
 def generate(args):
-    out = HERE / "derived"
-    out.mkdir(exist_ok=True)
+    out = Path(args.out_dir) if getattr(args, "out_dir", None) else HERE / "derived"
+    out.mkdir(parents=True, exist_ok=True)
+    if getattr(args, "off", None):
+        print(f"[off] items switched off at the command line: {sorted(set(args.off))}",
+              flush=True)
     params = Params(args.params, args.allow_placeholder)
     if not args.allow_placeholder:
         bad = [f"{g}.{k}" for g, entries in params.raw.items() if isinstance(entries, dict)
@@ -1124,6 +1249,15 @@ def generate(args):
     print("[stage] cached aggregates", flush=True)
     pop_state = resid.read_state_population()
     gs_pc, gs_national = resid.read_general_services_per_capita(pop_state)
+    cap_pc, cap_national, cap_components = read_cog_capital(
+        RESIDUAL / "_cache/22slsstab1.xlsx", pop_state)
+    print(f"[capital] 2022 state-local direct general capital outlay "
+          f"${cap_components['capital_total']/1e9:,.1f}bn: "
+          f"${cap_components['elsec_capital']/1e9:,.1f}bn elementary and secondary, "
+          f"${cap_components['capital_inside_item_G']/1e9:,.1f}bn already inside the item G "
+          f"general-services residual, ${cap_national['net_of_item_G']/1e9:,.1f}bn unpriced "
+          f"(briefed gross arm would charge ${cap_national['briefed_gross']/1e9:,.1f}bn)",
+          flush=True)
     assf = read_assf_k12(GENEXT / "census_assf_fy2024_summary_tables.xlsx")
     omb = read_omb_functions(RESIDUAL / "_cache/omb_hist03z1_fy2027.xlsx")
     missing_functions = [c for c, n in OMB_FUNCTION_ROWS.items() if n not in omb]
@@ -1165,6 +1299,8 @@ def generate(args):
                donor_codes=codes, donor_payer_means=payer_means, exposure=exposure,
                n_civilian=n_civilian, us_resident=us_resident,
                consumption_proxy=base_matrix[:, 4],
+               capital=(cap_pc, cap_national, cap_components),
+               off=list(args.off or []),
                is_white_ref=groups[WHITE], is_target=member_count > 0)
 
     print("[gate 0] reproducing the upstream union absolute before any new item", flush=True)
@@ -1454,8 +1590,26 @@ def generate(args):
              "defense, net interest and general government, priced as pure public goods"),
             ("OMB function 950 undistributed offsetting receipts", func_950, "never priced"),
             ("OMB function 920 allowances", -func_920, "never priced"),
-            ("state and local capital outlay", -sl_capital * deflator_used,
-             "only the K-12 share is priced, as item K")]:
+            ("state and local capital outlay, elementary and secondary share",
+             -cap_components["elsec_capital"] * deflator_used,
+             "priced as item K, but from the Census F-33 FY2024 district file at "
+             f"${national.get('K|central', {}).get('target_dollars', 0.0)/1e9:,.1f}bn of capital "
+             "plus interest on school debt, not from "
+             "this 2022 Census of Governments line; the two differ in year, in universe and "
+             "in whether interest on school debt is included, so they are not the same dollars"),
+            ("state and local capital outlay already inside item G",
+             -cap_components["capital_inside_item_G"] * deflator_used,
+             "the Census of Governments functional lines carry each function's own capital "
+             "outlay inside the function total, so the general-services residual behind item G "
+             "already charges the capital of every function it retains"),
+            ("state and local capital outlay, non-school, priced as item P",
+             -cap_national[centrals.get("P") or "net_of_item_G"] * deflator_used,
+             f"item P central arm {centrals.get('P')}"),
+            ("state and local capital outlay still unpriced",
+             -(sl_capital - cap_components["elsec_capital"]
+               - cap_components["capital_inside_item_G"]
+               - cap_national[centrals.get("P") or "net_of_item_G"]) * deflator_used,
+             "total direct general capital outlay less the three lines above")]:
         lines.append(dict(block="known part of the residual", line=label, amount_bn=value / 1e9,
                           note=note))
     lines.append(dict(block="residual", line="unpriced or coverage",
@@ -1516,6 +1670,95 @@ def generate(args):
     failed_cancel = {k: v for k, v in cancellation.items() if not v["passed"]}
     if failed_cancel:
         raise SystemExit(f"[BLOCKED] common-charge cancellation failed: {failed_cancel}")
+
+    # Public pupils aged 5-17 by group, on the ledger's own pupil rule, so items
+    # K, D and P can be read per pupil as well as per person.
+    school_age = d.A_AGE.between(5, 17).to_numpy()
+    pupils = {g: float(weights[groups[g] & school_age, 0].sum()) * ext.PUPIL_RATIO_NATIVE_ACS
+              for g in TARGETS + [WHITE, ALL_NATIVE]}
+    pupils[UNION] = sum(pupils[g] for g in TARGETS)
+
+    # ---- item D: the district coverage gate, re-tested here ---------------
+    # The parameter file carries one coverage ratio per state: the enrolment
+    # weighted all-pupil per-pupil current spending over the F-33 state summary
+    # figure. Every state either clears 10% or carries a differential of zero.
+    district_gate = dict(built=False)
+    dist_group = params.raw.get("district") or {}
+    build_meta = params.raw.get("_district_build") or {}
+    if dist_group:
+        tol = float(build_meta.get("tolerance", 0.10))
+        ratios = (dist_group.get("coverage_ratio_by_state") or {}).get("value") or {}
+        hisp = (dist_group.get("hispanic_minus_all_by_state") or {}).get("value") or {}
+        white = (dist_group.get("white_minus_all_by_state") or {}).get("value") or {}
+        states = sorted(ratios)
+        failing = [k for k in states if abs(float(ratios[k]) - 1.0) > tol]
+        zeroed = [k for k in failing
+                  if abs(float(hisp.get(k, 0.0))) < 1e-9 and abs(float(white.get(k, 0.0))) < 1e-9]
+        district_gate = dict(
+            built=True, tolerance=tol, states=len(states),
+            min_ratio=min(float(v) for v in ratios.values()) if ratios else None,
+            max_ratio=max(float(v) for v in ratios.values()) if ratios else None,
+            states_failing_the_coverage_gate=failing,
+            failing_states_charged_zero=zeroed,
+            every_state_clears_or_is_zeroed=bool(set(failing) == set(zeroed)),
+            all_51_jurisdictions=len(states) == 51,
+            per_state={k: dict(coverage_ratio=float(ratios[k]),
+                               hispanic_minus_all=float(hisp.get(k, float("nan"))),
+                               white_minus_all=float(white.get(k, float("nan"))))
+                       for k in states},
+            counts=build_meta.get("counts"), sources=build_meta.get("sources"))
+        if not district_gate["every_state_clears_or_is_zeroed"]:
+            raise SystemExit("[BLOCKED] a state fails the district coverage gate and still "
+                             f"carries a nonzero differential: "
+                             f"{sorted(set(failing) - set(zeroed))}")
+        if not district_gate["all_51_jurisdictions"]:
+            raise SystemExit(f"[BLOCKED] the district differential covers {len(states)} "
+                             "jurisdictions, expected 51")
+        print(f"[district] coverage ratios {district_gate['min_ratio']:.4f} to "
+              f"{district_gate['max_ratio']:.4f} over {len(states)} jurisdictions; "
+              f"{len(failing)} failed the {tol:.0%} gate and carry a zero differential "
+              f"{failing or ''} -> PASS", flush=True)
+
+    # ---- item P: the capital reconciliation gate --------------------------
+    # P is a per-capita charge by state of residence on the same denominator as
+    # item G, so its charged-over-target ratio must be G's ratio exactly and must
+    # sit within a few points of the civilian-household population ratio.
+    capital_gate = dict(built=False)
+    if centrals.get("P"):
+        p_key = f"P|{centrals['P']}"
+        g_key = f"G|{g_arm_for_gate}" if (g_arm_for_gate := centrals.get("G")) else None
+        p_ratio = float(national[p_key]["ratio"])
+        g_ratio = float(national[g_key]["ratio"]) if g_key in national else float("nan")
+        capital_gate = dict(
+            built=True, arm=centrals["P"], charge_key=p_key,
+            national_target_2022=cap_national[centrals["P"]],
+            national_target_2024=float(national[p_key]["target_dollars"]),
+            charged_dollars=float(national[p_key]["charged_dollars"]),
+            ratio=p_ratio, item_G_ratio=g_ratio, population_ratio=pop_ratio,
+            item_G_ratio_difference=p_ratio - g_ratio,
+            matches_item_G=abs(p_ratio - g_ratio) <= 0.05,
+            within_population_ratio=abs(p_ratio - pop_ratio) <= 0.05,
+            components=cap_components,
+            cog_line_67_matches_the_parsed_total=abs(
+                sl_capital - cap_components["capital_total"]) < 1.0,
+            alternative_arm_national_2022=cap_national["briefed_gross"],
+            note="the briefed gross arm charges total capital outlay less elementary and "
+                 "secondary capital outlay; the central arm removes, in addition, the "
+                 "capital outlay already inside the item G general-services residual")
+        for flag, label in [("matches_item_G",
+                             "P's per-capita ratio is far from item G's, although both are "
+                             "charged per capita by state on the same 2022 denominator; the "
+                             "two differ only by the state mix of the dollars"),
+                            ("within_population_ratio",
+                             "P does not reconcile to the population ratio"),
+                            ("cog_line_67_matches_the_parsed_total",
+                             "the parsed capital total disagrees with Census line 67")]:
+            if not capital_gate[flag]:
+                raise SystemExit(f"[BLOCKED] {label}: {capital_gate}")
+        print(f"[capital] item P charged {capital_gate['charged_dollars']/1e9:,.1f}bn of "
+              f"{capital_gate['national_target_2024']/1e9:,.1f}bn, ratio {p_ratio:.5f} "
+              f"vs item G {g_ratio:.5f} and population ratio {pop_ratio:.5f} -> PASS",
+              flush=True)
 
     # ---- waterfall --------------------------------------------------------
     water_rows = []
@@ -1684,6 +1927,9 @@ def generate(args):
         replicate_se_finite=bool(finite), sibling_lane_crosschecks=sibling,
         admin_over_survey_inversion_check=ratio_inversion,
         items_dropped=dropped, central_arms=centrals,
+        district_coverage_gate=district_gate, capital_reconciliation_gate=capital_gate,
+        public_pupils_5_17_by_group=pupils,
+        items_switched_off=sorted(set(args.off or [])),
         upstream_partial_gap_anchor=gap_anchor,
         national_reconciliation_vs_consolidated_budget=dict(
             account_position=account_position, consolidated_position=consolidated_position,
@@ -1734,7 +1980,11 @@ def generate(args):
             "brief applies Social Security only when that ratio is below 1",
             "item S outside the waterfall: the brief's waterfall order does not include it, so "
             "the state coverage charge is reported per item but not accumulated",
-            "state and local capital outlay outside K-12",
+            "state and local capital outlay outside K-12 beyond what items G and P carry: "
+            "the Census of Governments gives no capital sub-line for public welfare, health, "
+            "airports, ports, housing and community development, general public buildings or "
+            "the unallocable residual, so the split between what item G already charges and "
+            "what item P adds is exact only for the functions that publish one",
             "deficit finance: the account charges outlays, not the tax burden that would fund them",
             "emigration, mortality and any lifetime or dynamic margin",
         ],
@@ -1760,6 +2010,12 @@ def main():
     ap.add_argument("--params", type=Path, required=True)
     ap.add_argument("--allow-placeholder", action="store_true",
                     help="development only: accept entries whose status is not `verified`")
+    ap.add_argument("--off", action="append", default=[], metavar="ITEM",
+                    help="switch an item off and carry it through the waterfall as a "
+                         "dropped step; repeatable, e.g. --off D --off P")
+    ap.add_argument("--out-dir", type=Path, default=None,
+                    help="write `derived/` artefacts somewhere else, for an off-switch "
+                         "reproduction run that must not clobber the published output")
     generate(ap.parse_args())
 
 

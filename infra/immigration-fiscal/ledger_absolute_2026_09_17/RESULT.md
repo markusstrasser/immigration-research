@@ -345,3 +345,53 @@ EXIT=0
 
 36/36 gates passed
 ```
+
+---
+
+## Revision, September 18, 2026 — items D and P are now priced
+
+The result above is the account **without** the district cost-to-serve
+differential and **without** non-school state and local capital. It is
+reproducible from the current code with `--off D --off P`, which returns the
+step-13 endpoint of **−253.931979bn** to the dollar. The full extension result,
+with its build, its gates and its one deviation from the brief, is in
+[`RESULT_extension.md`](RESULT_extension.md).
+
+**What changed.** Item D charges each state's Hispanic-minus-all per-pupil
+differential to Mexican-origin public pupils aged 5-17 and its white-minus-all
+differential to the third-plus non-Hispanic white reference, from the Census F-33
+FY2024 district finance file joined to the NCES CCD LEA membership file for
+school year 2023-24. Item P charges the state and local capital outlay that
+neither item K nor item G already carries, per capita by state of residence.
+
+**Concept affected: the completeness of the absolute account.** Both items were
+listed as gaps in the original result. Item D is the only item in the account
+whose sign differs between the target groups and the white reference: Hispanic
+pupils attend districts spending $474 per pupil above their state's mean while
+white pupils attend districts $624 below it, so D is a cost for the Mexican-origin
+union and a receipt for the white reference. That makes it a gap-widening item of
+roughly item K's size. Item P is close to a common per-capita charge and moves
+the gap by $14 per standardized person.
+
+| quantity | this result (D and P off) | with D and P |
+|---|---|---|
+| union complete absolute | −253.93bn | **−263.22bn** |
+| union complete common-age gap vs 3rd+ NH white, $/person | −7,095 (302) | **−7,224 (302)** |
+| union complete age-matched gap vs white, $bn | −354.3 (12.0) | **−361.1 (12.0)** |
+| union complete common-age gap vs all natives, $/person | −4,928 (257) | **−5,023 (257)** |
+| arms matrix range, 144 combinations | −548.37 to −87.04 | **−557.67 to −96.33** |
+| break-even marginality dial m\* | 0.1204 | **0.1167** |
+| national account position | −966.7bn | −1,007.4bn |
+| national residual, unpriced or coverage | −1,624.1bn | −1,583.4bn |
+| outlay coverage of the consolidated budget | 0.6296 | **0.6341** |
+
+The waterfall now runs G, K, P, D, U, I, M, N, E, C, X, R, F, S, so the brief's
+final step F is step 13 and item S is step 14. The sign of the completed account
+is unchanged and the arms matrix still never turns positive.
+
+**The deviation.** The extension brief defined item P as total state and local
+capital outlay less elementary-and-secondary capital outlay. That double-counts
+$239.5bn, because the Census of Governments functional lines carry each
+function's capital inside the function total and item G already charges every
+function it retains. The briefed quantity is built as the `briefed_gross` arm and
+reported; the central arm charges only the $47.0bn nothing else charges.

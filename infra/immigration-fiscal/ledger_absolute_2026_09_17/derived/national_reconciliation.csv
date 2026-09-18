@@ -10,7 +10,8 @@ account,base component lunch,24.08257037350689,charged over the civilian househo
 account,base component public medical,-1164.5096822347798,MEPS public-payer transport
 account,item G (deflated2024),-1347.95971462022,state-local general services
 account,item K (central),-125.87722878466619,K-12 capital outlay and interest on school debt
-account,item D,0.0,dropped for want of a verified parameter
+account,item P (net_of_item_G),-49.24944680380911,non-school state and local capital outlay
+account,item D (central),8.545277936207466,district cost-to-serve differential
 account,item U (central),-65.75521609898993,transfer under-reporting
 account,item I (central),-19.35143533153756,refundable-credit improper payments
 account,item M (central),-389.4256652376674,MEPS-to-NHEA coverage scaling
@@ -29,8 +30,11 @@ consolidated,consolidated position,-2590.803830470415,receipts less outlays
 known part of the residual,item F charged at zero in the central arm,-1788.718,"defense, net interest and general government, priced as pure public goods"
 known part of the residual,OMB function 950 undistributed offsetting receipts,-146.736,never priced
 known part of the residual,OMB function 920 allowances,-0.0,never priced
-known part of the residual,state and local capital outlay,-385.85119522088,"only the K-12 share is priced, as item K"
-residual,unpriced or coverage,-1624.136741557831,consolidated position less the account's national sum; NOT forced to zero and NOT an error estimate
-coverage,account outlays as a share of consolidated outlays,0.6295747177705501,"share, not dollars"
-coverage,account receipts as a share of consolidated receipts,0.7093414502216238,"share, not dollars"
+known part of the residual,"state and local capital outlay, elementary and secondary share",-88.08991711516799,"priced as item K, but from the Census F-33 FY2024 district file at $136.2bn of capital plus interest on school debt, not from this 2022 Census of Governments line; the two differ in year, in universe and in whether interest on school debt is included, so they are not the same dollars"
+known part of the residual,state and local capital outlay already inside item G,-248.912169462032,"the Census of Governments functional lines carry each function's own capital outlay inside the function total, so the general-services residual behind item G already charges the capital of every function it retains"
+known part of the residual,"state and local capital outlay, non-school, priced as item P",-48.84910864368,item P central arm net_of_item_G
+known part of the residual,state and local capital outlay still unpriced,-0.0,total direct general capital outlay less the three lines above
+residual,unpriced or coverage,-1583.4325726902296,consolidated position less the account's national sum; NOT forced to zero and NOT an error estimate
+coverage,account outlays as a share of consolidated outlays,0.6340845087394498,"share, not dollars"
+coverage,account receipts as a share of consolidated receipts,0.7103673238325581,"share, not dollars"
 coverage,civilian household population over resident population,0.9900527030312051,"share, not dollars"

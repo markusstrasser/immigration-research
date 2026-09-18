@@ -17,6 +17,24 @@ K,central,K-12 capital outlay and interest on school debt,mexican_third_plus_sel
 K,central,K-12 capital outlay and interest on school debt,mexican_observed_total,-22.730761866120773,-555.8109043912077,0.43624255412027346,-115.92470782708259,"params:k12 F-33 capital, interest and fall membership by state",False
 K,central,K-12 capital outlay and interest on school debt,third_plus_nh_white,-54.25299668765607,-313.50347352835547,0.4812718026612316,0.0,"params:k12 F-33 capital, interest and fall membership by state",False
 K,central,K-12 capital outlay and interest on school debt,all_native,-107.23176693401247,-378.0129830845402,0.684911431494879,-11.408329982423991,"params:k12 F-33 capital, interest and fall membership by state",False
+P,net_of_item_G,non-school state and local capital outlay,mexico_born,-1.9104033689248545,-156.32415235655162,0.03944364291872035,-9.135706746634906,cache:22slsstab1.xlsx + params:deflator,False
+P,net_of_item_G,non-school state and local capital outlay,mexican_second_gen,-2.2765655663739652,-158.83143756116124,0.048144830584780016,-14.791372011224922,cache:22slsstab1.xlsx + params:deflator,False
+P,net_of_item_G,non-school state and local capital outlay,mexican_third_plus_selfid,-2.3587941695476164,-164.46100050373963,0.05218416192656005,-19.600377760720843,cache:22slsstab1.xlsx + params:deflator,False
+P,net_of_item_G,non-school state and local capital outlay,mexican_observed_total,-6.545763104846436,-160.05651428067128,0.06825307352638688,-14.447292117174362,cache:22slsstab1.xlsx + params:deflator,False
+P,net_of_item_G,non-school state and local capital outlay,third_plus_nh_white,-25.438292695075667,-146.9963616286605,0.0691822910313078,0.0,cache:22slsstab1.xlsx + params:deflator,False
+P,net_of_item_G,non-school state and local capital outlay,all_native,-41.7928149230325,-147.3278590128745,0.07567563903139672,-0.16959866345212984,cache:22slsstab1.xlsx + params:deflator,False
+P,briefed_gross,non-school state and local capital outlay,mexico_born,-10.843273378741637,-887.2814753546547,0.21026813779499082,13.392308727264767,cache:22slsstab1.xlsx + params:deflator,False
+P,briefed_gross,non-school state and local capital outlay,mexican_second_gen,-12.767882325889742,-890.7896765138396,0.26014619362538094,12.542716200291625,cache:22slsstab1.xlsx + params:deflator,False
+P,briefed_gross,non-school state and local capital outlay,mexican_third_plus_selfid,-12.957255460924765,-903.4121011478164,0.28198585965281864,-11.299493925076963,cache:22slsstab1.xlsx + params:deflator,False
+P,briefed_gross,non-school state and local capital outlay,mexican_observed_total,-36.568411165556135,-894.1680794417638,0.3287767557449784,3.17786453249118,cache:22slsstab1.xlsx + params:deflator,False
+P,briefed_gross,non-school state and local capital outlay,third_plus_nh_white,-155.12435970709825,-896.3933527399487,0.3463187760556481,0.0,cache:22slsstab1.xlsx + params:deflator,False
+P,briefed_gross,non-school state and local capital outlay,all_native,-253.64105131698807,-894.1343892993514,0.4331114573471084,2.755001470255176,cache:22slsstab1.xlsx + params:deflator,False
+D,central,district cost-to-serve differential,mexico_born,-0.660661914459947,-54.06052745307435,0.03432334109085192,-122.87493295014954,params:district F-33 x CCD per-pupil differentials,False
+D,central,district cost-to-serve differential,mexican_second_gen,-1.1680162626611585,-81.49016432185297,0.05362710352158762,-114.8107673155003,params:district F-33 x CCD per-pupil differentials,False
+D,central,district cost-to-serve differential,mexican_third_plus_selfid,-0.9177208331154758,-63.98578067803293,0.04158811322977689,-102.06443899250165,params:district F-33 x CCD per-pupil differentials,False
+D,central,district cost-to-serve differential,mexican_observed_total,-2.7463990102365807,-67.15474504063423,0.08349343699008319,-114.90099085308805,params:district F-33 x CCD per-pupil differentials,False
+D,central,district cost-to-serve differential,third_plus_nh_white,10.97058908880603,63.39406108373545,0.16936666309795972,0.0,params:district F-33 x CCD per-pupil differentials,False
+D,central,district cost-to-serve differential,all_native,9.172855718045048,32.33611319224154,0.19338165555093145,-34.27009301408396,params:district F-33 x CCD per-pupil differentials,False
 U,central,transfer under-reporting,mexico_born,-2.1986613052749835,-179.91167229761135,0.15944664345169637,-40.937201556339865,params:underreporting,False
 U,central,transfer under-reporting,mexican_second_gen,-3.629662205597831,-253.2342904995945,0.2568147948071529,-100.2079250821019,params:underreporting,False
 U,central,transfer under-reporting,mexican_third_plus_selfid,-3.614457707895681,-252.00898772485175,0.2690171247546317,-87.28205867094393,params:underreporting,False
