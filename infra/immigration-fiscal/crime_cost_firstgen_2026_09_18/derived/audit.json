@@ -1,0 +1,81 @@
+{
+ "cms": {
+  "factor_adult": {
+   "citizen": 1.0,
+   "undocumented": 0.7703585861499466,
+   "legal_immigrant": 0.7399821158162508,
+   "foreign_born": 0.7507502465798241,
+   "naturalized": 0.720696885754277,
+   "legal_noncitizen": 0.7703585861499463
+  },
+  "factor_18_39": {
+   "citizen": 1.0,
+   "undocumented": 0.7156786549405241,
+   "legal_immigrant": 0.9681532444009611,
+   "foreign_born": 0.8580471811422226,
+   "naturalized": 1.2728839507380116,
+   "legal_noncitizen": 0.715678654940524
+  },
+  "shares_adult": {
+   "usborn": 0.7021316530219343,
+   "noncitizen": 0.9114348378084641,
+   "naturalized": 0.974239887670789,
+   "foreign_born": 0.9352399898909385,
+   "legal": 0.9488494897575127,
+   "legal_noncitizen": 0.9114348378084643
+  }
+ },
+ "pew": {
+  "factor_adult": {
+   "citizen": 1.0,
+   "undocumented": 0.7641427657852203,
+   "legal_immigrant": 0.7405736969277339,
+   "foreign_born": 0.7488082425442888,
+   "naturalized": 0.7229713102524945,
+   "legal_noncitizen": 0.7641427657852203
+  },
+  "factor_18_39": {
+   "citizen": 1.0,
+   "undocumented": 0.6451765963994044,
+   "legal_immigrant": 0.8734134767948343,
+   "foreign_born": 0.7755905143643949,
+   "naturalized": 1.2118083043663614,
+   "legal_noncitizen": 0.6451765963994044
+  },
+  "shares_adult": {
+   "usborn": 0.6983325238321271,
+   "noncitizen": 0.9138770333244367,
+   "naturalized": 0.9659201048907978,
+   "foreign_born": 0.9325919296231888,
+   "legal": 0.9429615536295117,
+   "legal_noncitizen": 0.9138770333244368
+  }
+ },
+ "cms_split": {
+  "factor_adult": {
+   "citizen": 1.0,
+   "undocumented": 0.7703585861499466,
+   "legal_immigrant": 0.7399821158162508,
+   "foreign_born": 0.7507502465798241,
+   "naturalized": 0.720696885754277,
+   "legal_noncitizen": 0.7703585861499463
+  },
+  "factor_18_39": {
+   "citizen": 1.0,
+   "undocumented": 0.7156786549405241,
+   "legal_immigrant": 0.9681532444009611,
+   "foreign_born": 0.8580471811422226,
+   "naturalized": 1.2728839507380116,
+   "legal_noncitizen": 0.715678654940524
+  },
+  "shares_adult": {
+   "usborn": 0.7021316530219343,
+   "noncitizen": 0.9114348378084641,
+   "naturalized": 0.974239887670789,
+   "foreign_born": 0.9352399898909385,
+   "legal": 0.9488494897575127,
+   "legal_noncitizen": 0.9114348378084643
+  }
+ },
+ "infl_2008_24": 1.45697
+}

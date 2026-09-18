@@ -28,6 +28,7 @@ Latest supplied-data audit: [immigration-new-datasets-and-conclusions-2026-09-17
 
 | File | Topic | Consult before |
 |------|-------|----------------|
+| `immigration-first-generation-crime-cost-weighted-2026-09-18.md` | Texas felony arrest charges by immigration status weighted by McCollister social cost: undocumented mix ordinary (0.40→0.43), legal immigrants reach cost parity per capita on homicide and sexual-assault charges, foreign-born pooled 0.79 per capita / 0.59 per adult; comparator is all US-born, legal premium sits on the DHS-record boundary | Claiming first-generation crime is "less but costlier", or comparing ladder 78 (vs whites) with first-generation rows (vs all natives) |
 | `immigration-new-conclusions-audit-2026-09-17.md` | Adversarial correction of fertility, automation, disability, agglomeration and political-cost conclusions; proposed family-migration-history classification with public/restricted data limits | Reusing ladder 93–97, the political dollar range, or “third generation” as a complete ancestry category |
 | `immigration-clarity-update-2026-09-05.md` | Current integrated findings: fiscal account, Black wage/crime groups, missing residents and recording failures | Answering what the completed audit and data expansion established |
 | `immigration-second-order-effects-2026-09-05.md` | Concise evidence by mechanism: incumbent welfare, capacity, institutions and conditional restrictions | What second-order costs establish, and what remains unmeasured |
