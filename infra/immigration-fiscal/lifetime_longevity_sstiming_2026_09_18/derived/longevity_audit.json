@@ -1,0 +1,40 @@
+{
+  "arms": [
+    "terminal83",
+    "common_white",
+    "group_specific",
+    "paradox_fades",
+    "mortality_65plus",
+    "fenelon_mexican",
+    "truncate83",
+    "male",
+    "female",
+    "lt2023"
+  ],
+  "fenelon_foreign_born_e0": 79.758,
+  "fenelon_foreign_born_e65": 21.7,
+  "fenelon_us_born_e0": 79.203,
+  "fenelon_us_born_e65": 20.316,
+  "gate_hazard_rebuild_e0_error_years": 3e-06,
+  "gate_max_abs_diff_vs_pronatal_usd": 0.0,
+  "hispanic_minus_white_e0_2024": 2.883,
+  "hispanic_minus_white_e25_2024": 2.998,
+  "hispanic_minus_white_e65_2024": 2.305,
+  "life_expectancy_at_birth_rebuilt_from_Lx": {
+    "2023_hispanic": 81.282,
+    "2023_hispanic_female": 83.968,
+    "2023_hispanic_male": 78.453,
+    "2023_nh_white": 78.446,
+    "2023_nh_white_female": 80.947,
+    "2023_nh_white_male": 76.022,
+    "2023_total": 78.421,
+    "2024_hispanic": 81.814,
+    "2024_hispanic_female": 84.298,
+    "2024_hispanic_male": 79.174,
+    "2024_nh_white": 78.93,
+    "2024_nh_white_female": 81.26,
+    "2024_nh_white_male": 76.663,
+    "2024_total": 78.971
+  },
+  "published_ex_at_birth": {}
+}
