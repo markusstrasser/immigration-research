@@ -1,0 +1,157 @@
+design,spec,level,outcome,treatment,estimator,n,coef,se,t,first_stage_F,fe
+a: metro flight,long 2008-2023,elem,"d priv share (wnh, US-born)",d hisp_share,WLS HC1,333,0.1536356796682403,0.095436462496481,1.6098216095751166,,
+a: metro flight,long 2008-2023,elem,"d priv share (wnh, US-born)",d fb_share,WLS HC1,333,-0.2836086393654402,0.1946317134962142,-1.4571553333776546,,
+a: metro flight,horse-race 2008-2023,elem,"d priv share (wnh, US-born)",d hisp_share,WLS HC1,333,0.1185714827096463,0.0994128013362232,1.1927184539205034,,
+a: metro flight,horse-race 2008-2023,elem,"d priv share (wnh, US-born)",d asian_share,WLS HC1,333,-0.3230404853019872,0.2372503005362085,-1.3616020067071974,,
+a: metro flight,horse-race 2008-2023,elem,"d priv share (wnh, US-born)",d black_share,WLS HC1,333,-0.0570873006794487,0.1480530557405673,-0.3855867776176298,,
+a: metro flight,by group 2008-2023,elem,d priv share (all US-born non-Hispanic),d hisp_share,WLS HC1,333,0.1068292805720061,0.0860752538691222,1.2411149055039727,,
+a: metro flight,by group 2008-2023,elem,d priv share (US-born Hispanic),d hisp_share,WLS HC1,333,0.0066862239318872,0.1051020001561567,0.0636165241570387,,
+a: metro flight,generation split 2008-2023,elem,"d priv share (wnh, US-born)",d hisp foreign-born share,WLS HC1,333,-0.1293471677697952,0.2453064923517807,-0.5272879919717145,,
+a: metro flight,generation split 2008-2023,elem,"d priv share (wnh, US-born)",d hisp US-born share,WLS HC1,333,0.2084233495527824,0.0944145361347767,2.207534539546518,,
+a: metro flight,counts 2008-2023,elem,d wnh private enrol (per 100 base),d hispanic public enrol (per 100 base),WLS HC1,333,0.1007133449335507,0.0274648285919645,3.6669933910680457,,
+a: metro flight,"counts, growth controlled 2008-2023",elem,d wnh private enrol (per 100 base),d hispanic public enrol (per 100 base),"WLS HC1, + d total enrol",333,-0.126887766101342,0.0410955036994501,-3.087631363015506,,
+a: metro flight,counts 2008-2023,elem,d wnh private enrol (per 100 base),d foreign-born public enrol (per 100 base),WLS HC1,333,-0.0754283276351636,0.0989060151313351,-0.7626262925971088,,
+a: metro flight,"counts, growth controlled 2008-2023",elem,d wnh private enrol (per 100 base),d foreign-born public enrol (per 100 base),"WLS HC1, + d total enrol",333,-0.3549696217247869,0.0950368073557928,-3.735075194559871,,
+a: metro flight,IV 2008-2023,elem,"d priv share (wnh, US-born)",d fb_share,2SLS (z_fb),333,-0.2022670475997576,0.7883910992816422,-0.2565567366045319,32.910385393014835,
+a: metro flight,IV 2008-2023,elem,"d priv share (wnh, US-born)",d fb_share,2SLS (z_mex),333,0.302944049541123,0.6778693505427433,0.446906250147713,12.467345436778782,
+a: metro flight,long [SCH def change] 2005-2023,elem,"d priv share (wnh, US-born)",d hisp_share,WLS HC1,327,0.1349131200047894,0.0912677046286041,1.4782131374267782,,
+a: metro flight,long [SCH def change] 2005-2023,elem,"d priv share (wnh, US-born)",d fb_share,WLS HC1,327,-0.3356132501767653,0.2169387838011488,-1.547041263421096,,
+a: metro flight,horse-race [SCH def change] 2005-2023,elem,"d priv share (wnh, US-born)",d hisp_share,WLS HC1,327,0.1213838862555387,0.0977680218661785,1.2415499867807978,,
+a: metro flight,horse-race [SCH def change] 2005-2023,elem,"d priv share (wnh, US-born)",d asian_share,WLS HC1,327,-0.2330285667066095,0.3157644568236109,-0.7379822575685951,,
+a: metro flight,horse-race [SCH def change] 2005-2023,elem,"d priv share (wnh, US-born)",d black_share,WLS HC1,327,0.0520218315863348,0.1527764015190568,0.3405096014114838,,
+a: metro flight,by group [SCH def change] 2005-2023,elem,d priv share (all US-born non-Hispanic),d hisp_share,WLS HC1,327,0.0806162191967787,0.0957715763032018,0.8417551669146277,,
+a: metro flight,by group [SCH def change] 2005-2023,elem,d priv share (US-born Hispanic),d hisp_share,WLS HC1,327,0.0357249219271888,0.078525698434775,0.4549456119369977,,
+a: metro flight,generation split [SCH def change] 2005-2023,elem,"d priv share (wnh, US-born)",d hisp foreign-born share,WLS HC1,327,-0.2846185815434287,0.2580190995198227,-1.103091135784552,,
+a: metro flight,generation split [SCH def change] 2005-2023,elem,"d priv share (wnh, US-born)",d hisp US-born share,WLS HC1,327,0.2121417595553969,0.0869810750366603,2.438941568220265,,
+a: metro flight,counts [SCH def change] 2005-2023,elem,d wnh private enrol (per 100 base),d hispanic public enrol (per 100 base),WLS HC1,327,0.1432455721335613,0.0377382776413266,3.7957633757163105,,
+a: metro flight,"counts, growth controlled [SCH def change] 2005-2023",elem,d wnh private enrol (per 100 base),d hispanic public enrol (per 100 base),"WLS HC1, + d total enrol",327,-0.1385850664036598,0.0356079716446226,-3.891967444446904,,
+a: metro flight,counts [SCH def change] 2005-2023,elem,d wnh private enrol (per 100 base),d foreign-born public enrol (per 100 base),WLS HC1,327,-0.0414576455094222,0.1094560537151843,-0.3787606450466341,,
+a: metro flight,"counts, growth controlled [SCH def change] 2005-2023",elem,d wnh private enrol (per 100 base),d foreign-born public enrol (per 100 base),"WLS HC1, + d total enrol",327,-0.3695812048303445,0.0962098173211467,-3.8414084458417466,,
+a: metro flight,IV [SCH def change] 2005-2023,elem,"d priv share (wnh, US-born)",d fb_share,2SLS (z_fb),327,0.699686662632303,1.545318809484405,0.4527781958893991,5.342353328581564,
+a: metro flight,IV [SCH def change] 2005-2023,elem,"d priv share (wnh, US-born)",d fb_share,2SLS (z_mex),327,-0.0805117454330839,0.4327208911677659,-0.1860592984448017,22.685799782827612,
+a: metro flight,two-way FE,elem,"priv share (wnh, US-born)",hisp_share,"WLS, cluster(CBSA)",1336,0.107098375506845,0.0800508885256473,1.33787866042901,,
+a: metro flight,two-way FE,elem,"priv share (wnh, US-born)",fb_share,"WLS, cluster(CBSA)",1336,-0.2240902606488842,0.1368162961457785,-1.6378915886607166,,
+a: metro flight,two-way FE horse-race,elem,"priv share (wnh, US-born)",hisp_share,"WLS, cluster(CBSA)",1336,0.0946323240990823,0.0813321839337123,1.1635286244890444,,
+a: metro flight,two-way FE horse-race,elem,"priv share (wnh, US-born)",asian_share,"WLS, cluster(CBSA)",1336,-0.1112919441658104,0.2345308798041005,-0.4745300246124117,,
+a: metro flight,two-way FE horse-race,elem,"priv share (wnh, US-born)",black_share,"WLS, cluster(CBSA)",1336,-0.0440527293181418,0.0983653746594794,-0.4478479289144507,,
+a: metro flight,long 2008-2023,sec,"d priv share (wnh, US-born)",d hisp_share,WLS HC1,329,0.0776917892041586,0.0732101479213637,1.0612161211258395,,
+a: metro flight,long 2008-2023,sec,"d priv share (wnh, US-born)",d fb_share,WLS HC1,329,-0.1452851126034609,0.1135636012014441,-1.279328156789849,,
+a: metro flight,horse-race 2008-2023,sec,"d priv share (wnh, US-born)",d hisp_share,WLS HC1,329,0.0793343048637805,0.0737179725725403,1.0761867438190005,,
+a: metro flight,horse-race 2008-2023,sec,"d priv share (wnh, US-born)",d asian_share,WLS HC1,329,-0.1236036851305273,0.1828085301007389,-0.6761374048706257,,
+a: metro flight,horse-race 2008-2023,sec,"d priv share (wnh, US-born)",d black_share,WLS HC1,329,0.0470856123999448,0.091662865944002,0.5136825247064609,,
+a: metro flight,by group 2008-2023,sec,d priv share (all US-born non-Hispanic),d hisp_share,WLS HC1,329,0.0551434699794468,0.0656019283283962,0.840576967545901,,
+a: metro flight,by group 2008-2023,sec,d priv share (US-born Hispanic),d hisp_share,WLS HC1,329,-0.0157036561753661,0.058256534291333,-0.2695604255624662,,
+a: metro flight,generation split 2008-2023,sec,"d priv share (wnh, US-born)",d hisp foreign-born share,WLS HC1,329,-0.0947430131744511,0.1505986434789718,-0.6291093398041141,,
+a: metro flight,generation split 2008-2023,sec,"d priv share (wnh, US-born)",d hisp US-born share,WLS HC1,329,0.0930499496685591,0.0729432128924548,1.2756491793931408,,
+a: metro flight,counts 2008-2023,sec,d wnh private enrol (per 100 base),d hispanic public enrol (per 100 base),WLS HC1,329,0.1028732212623197,0.01610186910006,6.388899364604592,,
+a: metro flight,"counts, growth controlled 2008-2023",sec,d wnh private enrol (per 100 base),d hispanic public enrol (per 100 base),"WLS HC1, + d total enrol",329,-0.1171404245389349,0.0306264260787026,-3.824815348611421,,
+a: metro flight,counts 2008-2023,sec,d wnh private enrol (per 100 base),d foreign-born public enrol (per 100 base),WLS HC1,329,0.0912405675925835,0.0733440240491048,1.244008203469948,,
+a: metro flight,"counts, growth controlled 2008-2023",sec,d wnh private enrol (per 100 base),d foreign-born public enrol (per 100 base),"WLS HC1, + d total enrol",329,-0.0540890013811379,0.056470513024743,-0.957827341810024,,
+a: metro flight,IV 2008-2023,sec,"d priv share (wnh, US-born)",d fb_share,2SLS (z_fb),329,0.0624901265753571,2.3390581816806204,0.0267159350993389,0.3755359236972313,
+a: metro flight,IV 2008-2023,sec,"d priv share (wnh, US-born)",d fb_share,2SLS (z_mex),329,-0.1112781432077321,0.2367936741301767,-0.4699371451390936,52.39518443865083,
+a: metro flight,long [SCH def change] 2005-2023,sec,"d priv share (wnh, US-born)",d hisp_share,WLS HC1,322,0.0986397075532831,0.0671135825162335,1.4697428427311876,,
+a: metro flight,long [SCH def change] 2005-2023,sec,"d priv share (wnh, US-born)",d fb_share,WLS HC1,322,-0.043770316949581,0.1138813231781309,-0.3843502668222108,,
+a: metro flight,horse-race [SCH def change] 2005-2023,sec,"d priv share (wnh, US-born)",d hisp_share,WLS HC1,322,0.0888376944966659,0.0663637639230861,1.3386476179926503,,
+a: metro flight,horse-race [SCH def change] 2005-2023,sec,"d priv share (wnh, US-born)",d asian_share,WLS HC1,322,-0.4584678259699121,0.2156871252551695,-2.125615172567763,,
+a: metro flight,horse-race [SCH def change] 2005-2023,sec,"d priv share (wnh, US-born)",d black_share,WLS HC1,322,-0.0276166674444335,0.0963279013990464,-0.2866943745616253,,
+a: metro flight,by group [SCH def change] 2005-2023,sec,d priv share (all US-born non-Hispanic),d hisp_share,WLS HC1,322,0.0661521110588773,0.0537087278311825,1.2316827027965904,,
+a: metro flight,by group [SCH def change] 2005-2023,sec,d priv share (US-born Hispanic),d hisp_share,WLS HC1,322,0.0374404139578285,0.0614460360107106,0.6093218763746182,,
+a: metro flight,generation split [SCH def change] 2005-2023,sec,"d priv share (wnh, US-born)",d hisp foreign-born share,WLS HC1,322,0.0825637197033471,0.1570239343375078,0.5258034073065854,,
+a: metro flight,generation split [SCH def change] 2005-2023,sec,"d priv share (wnh, US-born)",d hisp US-born share,WLS HC1,322,0.0986507042107157,0.0672860587705032,1.4661388408435374,,
+a: metro flight,counts [SCH def change] 2005-2023,sec,d wnh private enrol (per 100 base),d hispanic public enrol (per 100 base),WLS HC1,322,0.119518941461423,0.0178613272563389,6.691492728739167,,
+a: metro flight,"counts, growth controlled [SCH def change] 2005-2023",sec,d wnh private enrol (per 100 base),d hispanic public enrol (per 100 base),"WLS HC1, + d total enrol",322,-0.1560412834653309,0.030851043388104,-5.057893229163824,,
+a: metro flight,counts [SCH def change] 2005-2023,sec,d wnh private enrol (per 100 base),d foreign-born public enrol (per 100 base),WLS HC1,322,0.2590674512775047,0.0569034876891711,4.552751716953301,,
+a: metro flight,"counts, growth controlled [SCH def change] 2005-2023",sec,d wnh private enrol (per 100 base),d foreign-born public enrol (per 100 base),"WLS HC1, + d total enrol",322,0.0351393833962676,0.0552902618086794,0.6355438054871272,,
+a: metro flight,IV [SCH def change] 2005-2023,sec,"d priv share (wnh, US-born)",d fb_share,2SLS (z_fb),322,-0.6822152055747221,0.6589749358662886,-1.0352673044808325,2.968341666211173,
+a: metro flight,IV [SCH def change] 2005-2023,sec,"d priv share (wnh, US-born)",d fb_share,2SLS (z_mex),322,-0.0964053364677414,0.1959720865187242,-0.4919340207082519,117.75168593240664,
+a: metro flight,two-way FE,sec,"priv share (wnh, US-born)",hisp_share,"WLS, cluster(CBSA)",1336,0.0423354207381614,0.0576635053079102,0.7341804927067779,,
+a: metro flight,two-way FE,sec,"priv share (wnh, US-born)",fb_share,"WLS, cluster(CBSA)",1336,-0.0656479349587048,0.0828794524606424,-0.7920893901884741,,
+a: metro flight,two-way FE horse-race,sec,"priv share (wnh, US-born)",hisp_share,"WLS, cluster(CBSA)",1336,0.037851592588129,0.0576312274185488,0.6567896309622296,,
+a: metro flight,two-way FE horse-race,sec,"priv share (wnh, US-born)",asian_share,"WLS, cluster(CBSA)",1336,-0.2010063411098259,0.1575198185210991,-1.276070166897138,,
+a: metro flight,two-way FE horse-race,sec,"priv share (wnh, US-born)",black_share,"WLS, cluster(CBSA)",1336,-0.0167282153029335,0.0665563536919189,-0.2513391190323667,,
+a: metro flight,long 2008-2023,all,"d priv share (wnh, US-born)",d hisp_share,WLS HC1,333,0.1369784919452198,0.0833697919144113,1.643023075862346,,
+a: metro flight,long 2008-2023,all,"d priv share (wnh, US-born)",d fb_share,WLS HC1,333,-0.3052759149515528,0.1521528720223847,-2.006376290462927,,
+a: metro flight,horse-race 2008-2023,all,"d priv share (wnh, US-born)",d hisp_share,WLS HC1,333,0.1123746925170845,0.08402681172066,1.3373670881463957,,
+a: metro flight,horse-race 2008-2023,all,"d priv share (wnh, US-born)",d asian_share,WLS HC1,333,-0.4243847992939957,0.2313994761680268,-1.8339920483909649,,
+a: metro flight,horse-race 2008-2023,all,"d priv share (wnh, US-born)",d black_share,WLS HC1,333,0.0088928437121202,0.1305004771757924,0.0681441470910566,,
+a: metro flight,by group 2008-2023,all,d priv share (all US-born non-Hispanic),d hisp_share,WLS HC1,333,0.095618177849406,0.0824209839543953,1.160119344150427,,
+a: metro flight,by group 2008-2023,all,d priv share (US-born Hispanic),d hisp_share,WLS HC1,333,0.0009080017036811,0.0826840062469494,0.0109815881558677,,
+a: metro flight,generation split 2008-2023,all,"d priv share (wnh, US-born)",d hisp foreign-born share,WLS HC1,333,-0.1454736891816739,0.1941904557774345,-0.7491289342685519,,
+a: metro flight,generation split 2008-2023,all,"d priv share (wnh, US-born)",d hisp US-born share,WLS HC1,333,0.1955755645779512,0.0861066835010018,2.271316890002803,,
+a: metro flight,counts 2008-2023,all,d wnh private enrol (per 100 base),d hispanic public enrol (per 100 base),WLS HC1,333,0.1126893340829496,0.0204721731517479,5.504512552118967,,
+a: metro flight,"counts, growth controlled 2008-2023",all,d wnh private enrol (per 100 base),d hispanic public enrol (per 100 base),"WLS HC1, + d total enrol",333,-0.1351048572753113,0.038775305034623,-3.4843015974903175,,
+a: metro flight,counts 2008-2023,all,d wnh private enrol (per 100 base),d foreign-born public enrol (per 100 base),WLS HC1,333,-0.0066793869456667,0.0942867866135605,-0.0708411770680294,,
+a: metro flight,"counts, growth controlled 2008-2023",all,d wnh private enrol (per 100 base),d foreign-born public enrol (per 100 base),"WLS HC1, + d total enrol",333,-0.2703863475078188,0.0758543290069182,-3.5645473507933647,,
+a: metro flight,IV 2008-2023,all,"d priv share (wnh, US-born)",d fb_share,2SLS (z_fb),333,-0.2824750097419929,1.2397456029522806,-0.2278491724990338,4.247428106207076,
+a: metro flight,IV 2008-2023,all,"d priv share (wnh, US-born)",d fb_share,2SLS (z_mex),333,0.046464831572626,0.389491687307319,0.1192960802163773,33.513908107000724,
+a: metro flight,long [SCH def change] 2005-2023,all,"d priv share (wnh, US-born)",d hisp_share,WLS HC1,330,0.1428058499886839,0.0767303529875427,1.8611389681977435,,
+a: metro flight,long [SCH def change] 2005-2023,all,"d priv share (wnh, US-born)",d fb_share,WLS HC1,330,-0.2553111284904628,0.14022605610396,-1.8207110403303477,,
+a: metro flight,horse-race [SCH def change] 2005-2023,all,"d priv share (wnh, US-born)",d hisp_share,WLS HC1,330,0.1181512626764164,0.0801805709486477,1.4735647461538692,,
+a: metro flight,horse-race [SCH def change] 2005-2023,all,"d priv share (wnh, US-born)",d asian_share,WLS HC1,330,-0.4744980527834386,0.3031129587618847,-1.56541658503023,,
+a: metro flight,horse-race [SCH def change] 2005-2023,all,"d priv share (wnh, US-born)",d black_share,WLS HC1,330,0.010499765119673,0.1397272297641855,0.0751447311837017,,
+a: metro flight,by group [SCH def change] 2005-2023,all,d priv share (all US-born non-Hispanic),d hisp_share,WLS HC1,330,0.0886190229454783,0.0758421652889212,1.168466414531858,,
+a: metro flight,by group [SCH def change] 2005-2023,all,d priv share (US-born Hispanic),d hisp_share,WLS HC1,330,0.0536201168540767,0.0562980394002523,0.9524331117974318,,
+a: metro flight,generation split [SCH def change] 2005-2023,all,"d priv share (wnh, US-born)",d hisp foreign-born share,WLS HC1,330,-0.1802543668936801,0.1981605907111729,-0.9096378157067984,,
+a: metro flight,generation split [SCH def change] 2005-2023,all,"d priv share (wnh, US-born)",d hisp US-born share,WLS HC1,330,0.1818760421113694,0.0791288289397005,2.298480143690317,,
+a: metro flight,counts [SCH def change] 2005-2023,all,d wnh private enrol (per 100 base),d hispanic public enrol (per 100 base),WLS HC1,330,0.155557594066506,0.0302434158175656,5.143519336733006,,
+a: metro flight,"counts, growth controlled [SCH def change] 2005-2023",all,d wnh private enrol (per 100 base),d hispanic public enrol (per 100 base),"WLS HC1, + d total enrol",330,-0.1482855552138977,0.0325925674257722,-4.549673957156332,,
+a: metro flight,counts [SCH def change] 2005-2023,all,d wnh private enrol (per 100 base),d foreign-born public enrol (per 100 base),WLS HC1,330,0.1456846306603061,0.0950515685353393,1.532690442726802,,
+a: metro flight,"counts, growth controlled [SCH def change] 2005-2023",all,d wnh private enrol (per 100 base),d foreign-born public enrol (per 100 base),"WLS HC1, + d total enrol",330,-0.2189935042913637,0.0710228874493118,-3.083421586423907,,
+a: metro flight,IV [SCH def change] 2005-2023,all,"d priv share (wnh, US-born)",d fb_share,2SLS (z_fb),330,5.6246176655137585,13.470049913458787,0.4175647233418076,0.1748108059049495,
+a: metro flight,IV [SCH def change] 2005-2023,all,"d priv share (wnh, US-born)",d fb_share,2SLS (z_mex),330,-0.1082405233586993,0.2853514209045838,-0.3793235828844635,68.79989782861917,
+a: metro flight,two-way FE,all,"priv share (wnh, US-born)",hisp_share,"WLS, cluster(CBSA)",1336,0.1141465138142995,0.0716521202049837,1.593065403895196,,
+a: metro flight,two-way FE,all,"priv share (wnh, US-born)",fb_share,"WLS, cluster(CBSA)",1336,-0.2130771135356225,0.1072553580781097,-1.9866337435603636,,
+a: metro flight,two-way FE horse-race,all,"priv share (wnh, US-born)",hisp_share,"WLS, cluster(CBSA)",1336,0.0985060745639665,0.0723712894983488,1.3611208981734937,,
+a: metro flight,two-way FE horse-race,all,"priv share (wnh, US-born)",asian_share,"WLS, cluster(CBSA)",1336,-0.3380549666760058,0.2417885652323401,-1.3981429037025015,,
+a: metro flight,two-way FE horse-race,all,"priv share (wnh, US-born)",black_share,"WLS, cluster(CBSA)",1336,-0.0188163563767045,0.10299320132295,-0.1826951306980266,,
+a: metro flight,placebo pre-trend 2008-2010 on 2010-2023,elem,d priv share 2008-2010,d hisp_share 2010-2023,WLS HC1,331,0.0181616728641865,0.0575911042215225,0.3153555242547211,,
+a: metro flight,placebo pre-trend 2008-2010 on 2010-2023,sec,d priv share 2008-2010,d hisp_share 2010-2023,WLS HC1,323,0.0654304804313165,0.056239999896061,1.1634153725505108,,
+a: metro flight,influence: drop 5 largest metros,sec,"d priv share (wnh, US-born)",d hisp_share,WLS HC1,324,0.0798998491479726,0.0760953851132701,1.0499959889688366,,
+a: metro flight,influence: drop California,sec,"d priv share (wnh, US-born)",d hisp_share,WLS HC1,303,0.0648545692311969,0.0802794755218875,0.8078599020432669,,
+b: district finance,A district+year FE,,pp_current,hisp_share,"WLS, cluster(district)",38084,-2277.260541739912,698.597901000009,-3.2597586372362763,,leaid+year_f
+b: district finance,A district+year FE,,pp_instruction,hisp_share,"WLS, cluster(district)",38084,-1074.654527920488,378.06921164862104,-2.842480939493365,,leaid+year_f
+b: district finance,A district+year FE,,pp_rev_local,hisp_share,"WLS, cluster(district)",38084,-4660.071843128426,664.7936571442485,-7.009801903265259,,leaid+year_f
+b: district finance,A district+year FE,,pp_rev_proptax,hisp_share,"WLS, cluster(district)",34745,-3088.2165807773267,598.4525397150604,-5.160336661362839,,leaid+year_f
+b: district finance,A district+year FE,,pp_rev_state,hisp_share,"WLS, cluster(district)",38084,1344.5707154889171,735.5119341032752,1.8280746418182827,,leaid+year_f
+b: district finance,A district+year FE,,pp_rev_total,hisp_share,"WLS, cluster(district)",38084,-3024.0464598570784,1070.019827321781,-2.826159275409085,,leaid+year_f
+b: district finance,A district+year FE,,local_effort,hisp_share,"WLS, cluster(district)",24856,-0.0865174585575491,0.0243250282560904,-3.5567259222355503,,leaid+year_f
+b: district finance,A district+year FE,,proptax_effort,hisp_share,"WLS, cluster(district)",22854,-0.0687428927102732,0.022872185636103,-3.0055235561644182,,leaid+year_f
+b: district finance,B district+state-year FE,,pp_current,hisp_share,"WLS, cluster(district)",38084,-1108.6463520232926,635.7725201508969,-1.74377834348701,,leaid+state_year
+b: district finance,B district+state-year FE,,pp_instruction,hisp_share,"WLS, cluster(district)",38084,-597.3725364635927,308.81069100729854,-1.934429583752572,,leaid+state_year
+b: district finance,B district+state-year FE,,pp_rev_local,hisp_share,"WLS, cluster(district)",38084,-4471.702060989015,686.5709430348561,-6.513095414761813,,leaid+state_year
+b: district finance,B district+state-year FE,,pp_rev_proptax,hisp_share,"WLS, cluster(district)",34745,-3692.699270712074,664.466590714809,-5.557388922653888,,leaid+state_year
+b: district finance,B district+state-year FE,,pp_rev_state,hisp_share,"WLS, cluster(district)",38084,2808.5326762879045,704.2256302444055,3.988114825234616,,leaid+state_year
+b: district finance,B district+state-year FE,,pp_rev_total,hisp_share,"WLS, cluster(district)",38084,-1062.8520659447158,1093.177462103015,-0.9722594023298284,,leaid+state_year
+b: district finance,B district+state-year FE,,local_effort,hisp_share,"WLS, cluster(district)",24856,-0.071707525824362,0.019647238634869,-3.6497508457549257,,leaid+state_year
+b: district finance,B district+state-year FE,,proptax_effort,hisp_share,"WLS, cluster(district)",22854,-0.0654513556539784,0.0181920957671853,-3.597790847827362,,leaid+state_year
+b: district finance,B-elf district+state-year FE,,pp_current,elf,"WLS, cluster(district)",38084,-473.9862734525458,265.3628037934912,-1.786182037107989,,leaid+state_year
+b: district finance,B-elf district+state-year FE,,pp_rev_local,elf,"WLS, cluster(district)",38084,1155.3575947878553,474.7995672323776,2.433358567537188,,leaid+state_year
+b: district finance,C + elderly share (Poterba),,pp_current,hisp_share,"WLS, cluster(district)",38079,-989.6176970609066,643.8957948603804,-1.5369221308169765,,leaid+state_year
+b: district finance,C + elderly share (Poterba),,pp_current,share65_c,"WLS, cluster(district)",38079,4916.912931118609,1767.6109824638456,2.781671408414198,,leaid+state_year
+b: district finance,C + elderly share (Poterba),,pp_current,hisp_x_65,"WLS, cluster(district)",38079,5954.358980702262,6621.923661492387,0.8991887078565814,,leaid+state_year
+b: district finance,C + elderly share (Poterba),,pp_rev_local,hisp_share,"WLS, cluster(district)",38079,-4418.891552761838,707.11443898209,-6.249188687368554,,leaid+state_year
+b: district finance,C + elderly share (Poterba),,pp_rev_local,share65_c,"WLS, cluster(district)",38079,2027.194441794988,3517.6897297113287,0.576285743643839,,leaid+state_year
+b: district finance,C + elderly share (Poterba),,pp_rev_local,hisp_x_65,"WLS, cluster(district)",38079,-2370.336625349939,7280.544224812196,-0.3255713518327103,,leaid+state_year
+b: district finance,C + elderly share (Poterba),,pp_rev_proptax,hisp_share,"WLS, cluster(district)",34744,-3644.610091240493,687.8984601949539,-5.29818033057901,,leaid+state_year
+b: district finance,C + elderly share (Poterba),,pp_rev_proptax,share65_c,"WLS, cluster(district)",34744,2260.3633475345846,2924.9305747994326,0.7727921363362894,,leaid+state_year
+b: district finance,C + elderly share (Poterba),,pp_rev_proptax,hisp_x_65,"WLS, cluster(district)",34744,566.0636863423787,6876.56101658005,0.0823178453557737,,leaid+state_year
+b: district finance,"E long diff 2000-2019, state FE",,d_pp_current,d_hisp_share,"WLS, cluster(district)",11877,-1565.75411735506,590.5338606948645,-2.651421402851788,,state_year
+b: district finance,"E long diff 2000-2019, state FE",,d_pp_instruction,d_hisp_share,"WLS, cluster(district)",11877,-752.8251732805694,264.7319885423487,-2.8437257523192794,,state_year
+b: district finance,"E long diff 2000-2019, state FE",,d_pp_rev_local,d_hisp_share,"WLS, cluster(district)",11877,-4954.861572681501,860.6067178577043,-5.757405176914682,,state_year
+b: district finance,"E long diff 2000-2019, state FE",,d_pp_rev_proptax,d_hisp_share,"WLS, cluster(district)",10931,-3768.508044405456,685.8435796193571,-5.494704851647042,,state_year
+b: district finance,"E long diff 2000-2019, state FE",,d_pp_rev_state,d_hisp_share,"WLS, cluster(district)",11877,2811.9461190409043,643.8057794336463,4.3676931908169,,state_year
+b: district finance,"E long diff 2000-2019, state FE",,d_pp_rev_total,d_hisp_share,"WLS, cluster(district)",11877,-1783.519082048186,1159.8417856458636,-1.5377261831061075,,state_year
+b: district finance,"F placebo: d outcome 2000-2010 on d hisp 2010-2019, state FE",,d_pp_current,d_hisp_late,"WLS, cluster(district)",11789,-29.559305496282196,853.9608743255693,-0.0346143557450769,,state_year
+b: district finance,"F placebo: d outcome 2000-2010 on d hisp 2010-2019, state FE",,d_pp_rev_local,d_hisp_late,"WLS, cluster(district)",11789,-1254.349768617113,769.0523907925494,-1.6310329226393,,state_year
+b: district finance,"F placebo: d outcome 2000-2010 on d hisp 2010-2019, state FE",,d_pp_rev_proptax,d_hisp_late,"WLS, cluster(district)",10860,-122.33434447154698,623.3471511942386,-0.1962539561417308,,state_year
+b: district finance,"E2 long diff 2000-2010, state FE",,d_pp_current,d_hisp_early,"WLS, cluster(district)",11789,-89.9302437567044,677.6367701485967,-0.1327115760512581,,state_year
+b: district finance,"E2 long diff 2000-2010, state FE",,d_pp_rev_local,d_hisp_early,"WLS, cluster(district)",11789,-3336.2508914451614,579.4199193281275,-5.757915425679093,,state_year
+b: district finance,"E2 long diff 2000-2010, state FE",,d_pp_rev_proptax,d_hisp_early,"WLS, cluster(district)",10860,-2827.743565787889,480.50373253037816,-5.884956503660697,,state_year
+b: CA ballot measures,"pct: yes vote share, year+threshold FE",,yes vote share,hisp_share,,2954,0.0424709548361058,0.0192456030119253,2.206787431383117,,
+b: CA ballot measures,"pct: yes vote share, year+threshold FE",,yes vote share,elf,,2954,0.0071541122801558,0.0370890997094587,0.1928898877621264,,
+b: CA ballot measures,"pct: yes vote share, + elderly share",,yes vote share,hisp_share,,2954,0.0401463162278561,0.0185623992821936,2.162776245545332,,
+b: CA ballot measures,"pct: yes vote share, + elderly share",,yes vote share,share65,,2954,-0.0784550899572277,0.22096483631079,-0.3550569007589949,,
+b: CA ballot measures,"passed: passed (LPM), year+threshold FE",,"passed: passed (LPM), year+threshold FE",hisp_share,,2954,0.0876742912476972,0.0576127944586939,1.5217850838767453,,
+b: CA ballot measures,"passed: passed (LPM), year+threshold FE",,"passed: passed (LPM), year+threshold FE",elf,,2954,-0.0118413952753431,0.0817286832996387,-0.1448866517514975,,
+b: CA ballot measures,"passed: passed (LPM), + elderly share",,"passed: passed (LPM), + elderly share",hisp_share,,2954,0.0825332395900914,0.0590233012006644,1.398316222765973,,
+b: CA ballot measures,"passed: passed (LPM), + elderly share",,"passed: passed (LPM), + elderly share",share65,,2954,-0.1735072577909659,0.6504620547475863,-0.2667446264152886,,

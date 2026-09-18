@@ -1,0 +1,9 @@
+spec,outcome,treatment,n,coef,se,t
+"pct: yes vote share, year+threshold FE",yes vote share,hisp_share,2954,0.042470954836105856,0.01924560301192532,2.206787431383117
+"pct: yes vote share, year+threshold FE",yes vote share,elf,2954,0.007154112280155816,0.037089099709458756,0.19288988776212646
+"pct: yes vote share, + elderly share",yes vote share,hisp_share,2954,0.040146316227856166,0.018562399282193658,2.162776245545332
+"pct: yes vote share, + elderly share",yes vote share,share65,2954,-0.07845508995722776,0.22096483631079009,-0.35505690075899493
+"passed: passed (LPM), year+threshold FE","passed: passed (LPM), year+threshold FE",hisp_share,2954,0.08767429124769723,0.057612794458693925,1.5217850838767453
+"passed: passed (LPM), year+threshold FE","passed: passed (LPM), year+threshold FE",elf,2954,-0.011841395275343183,0.08172868329963871,-0.1448866517514975
+"passed: passed (LPM), + elderly share","passed: passed (LPM), + elderly share",hisp_share,2954,0.0825332395900914,0.059023301200664444,1.3983162227659727
+"passed: passed (LPM), + elderly share","passed: passed (LPM), + elderly share",share65,2954,-0.17350725779096593,0.6504620547475863,-0.2667446264152886
