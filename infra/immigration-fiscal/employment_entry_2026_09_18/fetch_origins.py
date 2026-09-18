@@ -46,6 +46,8 @@ def leaf_vars(group_json, prefix):
             continue
         if l.startswith("Estimate!!"):
             l = l[len("Estimate!!"):]
+        # later ACS vintages punctuate every non-leaf level with a trailing colon
+        l = l.replace(":!!", "!!").rstrip(":")
         if not l.startswith("Total!!"):
             continue
         lab[k] = l

@@ -168,8 +168,18 @@ def arm_rows(m, j, rec, extra=None, cluster=None):
             ex_j = pd.get_dummies(j["win"], prefix="w", drop_first=True).astype(float)
             ex_j.index = j.index
         rj = dict(rec); rj["n_metro"] = len(j)
-        rho_m = float(np.corrcoef(j["Zm"], j["Zm_lag"])[0, 1])
-        rho_1 = float(np.corrcoef(j["Z"], j["Z_lag"])[0, 1])
+        # Correlation between the current and lagged predicted inflows, computed WITHIN each
+        # window and averaged. Computing it on the stacked sample would mix windows that differ
+        # in scale and sign and would not describe the collinearity the 2SLS actually faces.
+        def _rho(a, b):
+            if "win" in j.columns:
+                vals = [float(np.corrcoef(g[a], g[b])[0, 1])
+                        for _, g in j.groupby("win") if len(g) > 5]
+                vals = [v for v in vals if np.isfinite(v)]
+                return float(np.mean(vals)) if vals else np.nan
+            return float(np.corrcoef(j[a], j[b])[0, 1])
+        rho_m = _rho("Zm", "Zm_lag")
+        rho_1 = _rho("Z", "Z_lag")
         out.append({**rj, "estimator": "IV-multi-same-sample",
                     **run(j, ("dX",), ("Zm",), ex_j, cl_j),
                     "corr_Zm_Zmlag": rho_m, "corr_Z_Zlag": rho_1})

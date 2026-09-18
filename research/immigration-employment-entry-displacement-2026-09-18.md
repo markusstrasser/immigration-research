@@ -2,7 +2,7 @@
 
 Model self-report: `claude-opus-5[1m]` (verbatim from the environment-info block).
 
-**Verdict:** PROBE IN PROGRESS [UNVERIFIED] — data build running, estimates not yet computed.
+**Verdict:** UNINFORMATIVE on the estimand, and the reason is the finding. A US metro replication of the Dustmann–Schönberg–Stuhler native-entry-employment result cannot be identified on 2005–2023 with either the conventional past-settlement instrument or the Jaeger–Ruist–Stuhler correction. The best-identified number, the 10-year single-instrument IV (first-stage F 145), is −0.43 points of native no-college E/POP per 1-point rise in the Mexico-born share, 95% interval [−1.28, +0.42], which contains zero and the DSS benchmark (about −0.6 to −0.9) at comparable distance. The 5-year single instrument is powerless when pooled (F 3.6) because the national Mexico-born stock stopped growing in 2008 and then fell, so the shift half of the shift-share is near zero or negative; window by window it flips sign (+1.20 [+0.62, +1.77] in 2008–13, −0.83 [−1.77, +0.10] in 2013–18), and the one window that looks like DSS fails a pre-trend placebo (+2.36, SE 0.53, opposite sign). The JRS correction is underidentified here exactly as JRS report for every US decade after the 1970s: current and lagged multi-origin predicted inflows correlate 0.82 across metros and Shea's partial R² is 0.0007, so its coefficient (−9.65 [−53, +34]) is noise. The college control group does not move (+0.09 [−0.62, +0.80]), so the no-college estimate is not a metro-demand artifact, but the two are not distinguishable. Nothing here contradicts DSS; nothing here replicates it. [SOURCE: `infra/immigration-fiscal/employment_entry_2026_09_18/derived/estimates.csv`, `derived/placebo_single.csv`; every row re-run by the parent session 2026-09-18, byte-identical]
 
 Purpose: replicate on US data the estimand that Jaeger, Ruist & Stuhler (2018) and Dustmann,
 Schönberg & Stuhler (2017) identify as the durable margin of low-skill immigration — native
@@ -18,6 +18,8 @@ moves the short-run coefficient.
   (a 1% inflow reduces average wages by about 0.7 log points, "substantially more negative" than
   the conventional IV). (ii) JRS report their own correction is underidentified outside the 1970s,
   which is the period this panel sits outside of.
+- 2026-09-18 14:01 — [VERIFIED] estimation complete, 2,904 rows in `derived/estimates.csv`; the lane closed before writing sections 3 and 5.
+- 2026-09-18 14:45 — [VERIFIED] parent session re-ran `estimate.py` and `report.py` (byte-identical), ran the single-instrument placebo the lane had not (`placebo_single.py`), and wrote the verdict, section 3 reading and section 5 results from those files.
 
 ---
 
@@ -168,34 +170,185 @@ because the other origins continued to grow by roughly 3 million per window thro
 
 ## 3. Estimates
 
-[UNVERIFIED] — pending. Will be written to `derived/estimates.csv`.
+All figures below: metros with at least 50,000 weighted native no-college residents in the base year, both sexes, ages 18–29, Mexico-born treatment unless labelled; the 25,000-floor rows are in `derived/estimates.csv` and move nothing that follows. Every row was re-run by the parent session after the lane closed; `estimates.csv` and `tables.md` reproduce byte-for-byte. [SOURCE: `derived/estimates.csv`, 2,904 rows; `derived/tables.md`; re-run 2026-09-18 14:40]
 
-### Benchmarks, in this memo's units
+**Headline reading, in order of how much weight each number can bear.**
 
-Both comparison papers report effects in units that are not percentage points of an
-employment-to-population rate, so the conversion is stated here before any estimate exists.
+1. **The best-identified estimate is uninformative against the benchmark.** The 10-year single-instrument IV has a strong first stage (F 145, Shea partial R² 0.10) and gives −0.43 points of native no-college E/POP per 1-point rise in the Mexico-born share, 95% interval [−1.28, +0.42]. That interval contains zero, the DSS all-native equivalent of about −0.6, and the DSS unskilled equivalent of about −0.9, at comparable distance. At the 25,000 floor it is −0.57 [−1.38, +0.24]. This is disconfirmation test 6 failing in the sense specified in advance: the data cannot separate "no effect" from "the DSS effect." [SOURCE: `estimates.csv` rows min_pop 50000/25000, window POOLED, length 10y, estimator IV-single]
 
-**Dustmann–Schönberg–Stuhler (2017).** Verbatim from the paper: "By 1993, a 1 percentage point
-increase in the inflow of Czech workers relative to employment in the baseline has led to about
-a 0.13 percent decrease in native wages, a 0.93 percent decrease in native local employment, and
-a 0.07 (1-0.93) percent increase in total (including Czech) local employment." Their Table IV
-reports −0.926 for all natives and **−1.371 for unskilled natives**, the closest group to the
-population studied here. [SOURCE: IZA DP 10114 full text, fetched 2026-09-18; the published
-version is QJE 132(1)]
+2. **The pooled 5-year single instrument is powerless (F 3.6) for the reason section 2 predicted.** Within each 5-year window the 2000 base share predicts the local change strongly (window F 14 to 152), but the national Mexico-born shift changes sign across windows (+0.74M, +0.17M, −0.07M, −0.41M, −0.25M), so the predicted inflow flips sign for the same metros and a single pooled slope has nothing stable to fit. The pooled 5-year IV, −1.00 [−5.26, +3.26], is therefore not a number to read.
 
-Their −0.93 is a percent change in the native employment *count*. A native employment-to-population
-ratio near 65% converts it to roughly **−0.6 percentage points** of E/POP per 1-point rise in the
-immigrant share, and the unskilled −1.37 to roughly **−0.9 points**. The conversion holds the
-native population fixed, which is exactly the margin DSS show is not fixed, so treat it as an
-order-of-magnitude target rather than a like-for-like number. The useful question for this memo
-is whether the confidence intervals here are tight enough to *exclude* an effect that size.
+3. **The 5-year windows flip sign, which fails disconfirmation test 4.** Single-instrument IV by window: 2005–10 −0.26 [−1.91, +1.39]; 2008–13 **+1.20 [+0.62, +1.77]**; 2010–15 +0.25 [−1.03, +1.52]; 2013–18 **−0.83 [−1.77, +0.10]**; 2018–23 +0.22 [−1.18, +1.61]. A positive, significant "effect" of Mexican inflow on native youth employment in 2008–13 is the recovery pattern (metros whose Mexican-born population grew out of the recession were the metros whose labour markets recovered), not a supply effect, and it is the same magnitude as the negative 2013–18 point estimate that looks like DSS. The 2013–18 window is the only one in which sign, size and first stage all line up with the benchmark, and it fails the placebo (item 5).
 
-**Card (2001).** Verbatim: "The results imply that immigrant inflows over the 1980s reduced wages
-and employment rates of low-skilled natives in traditional gateway cities like Miami and Los
-Angeles by 1–3 percentage points." [SOURCE: 10.1086/209979, verified against the publisher page
-2026-09-18] That is a *total* effect over a decade in the highest-inflow cities, not a
-per-point coefficient, so the comparison runs the other way: multiply the coefficient estimated
-here by the decade-long share change actually observed in a gateway metro.
+4. **The JRS correction cannot be run on this period, and the reason reproduces JRS's own finding.** The multi-origin current and lagged predicted inflows correlate 0.82 across metros; Shea's partial R² in the two-endogenous system is 0.0007 while the naive first-stage F is 20. That is the signature JRS describe for every US decade after the 1970s: individual first stages look fine, the system is underidentified. The JRS coefficient, −9.65 [−53.2, +33.9], is noise around an unidentified parameter, not a corrected estimate; the same-sample multi-origin IV without the lag is −23 [−496, +450]. **So the question the brief asked, "does adding the lagged shock move the short-run coefficient, and in which direction," has the answer: it cannot be answered on 2005–2023 US data, because the identifying variation JRS rely on, change in the national origin mix, is not there.** [SOURCE: `estimates.csv` rows estimator IV-JRS / IV-multi-same-sample; JRS NBER w24285 p.17ff]
+
+5. **The single-instrument placebo fails in the one window that looked like DSS.** The lane's stored placebo arm used the multi-origin instrument, whose first stage is dead (F 0.009), so it could neither pass nor fail. The parent ran the placebo the brief specified, `placebo_single.py`: the 2013–18 Mexican instrument regressed on the 2008–13 native no-college E/POP change. Reduced form +2.36 (SE 0.53); as an IV coefficient on the pre-window share change, +1.15 (SE 0.27). The instrument that "predicts" a fall in native youth employment in 2013–18 predicts, more strongly, a rise in 2008–13 in the same metros, which is mean reversion in Mexican-heavy metros' recovery paths, not a supply shock. For 2018–23 the placebo is −1.20 (SE 0.73), same sign as the current-window reduced form; for 2010–15 it is uninformative (SE 27). The raw correlation between the current instrument and the previous window's actual share change is 0.27 to 0.68, which is the JRS problem stated in the simplest terms. [SOURCE: `derived/placebo_single.csv`]
+
+6. **The college control group does not move, but the difference is not significant.** 10-year pooled IV on native 18–29 with a bachelor's degree: +0.09 [−0.62, +0.80], F 95; by 5-year window the college IV point estimates are +0.08, +0.53, −0.68, −0.26, +0.05 against the no-college −0.26, +1.20, +0.25, −0.83, +0.22. The no-college 10-year estimate is not a metro-demand artifact, but −0.43 against +0.09 with those intervals does not establish a skill-specific effect either.
+
+7. **All-foreign-born arm.** Pooled 5-year IV +0.17 [−0.10, +0.43], F 5.4 (weak); 10-year rows in `estimates.csv`. The positive point estimate is consistent with test 5's warning that the all-origin inflow follows local demand.
+
+8. **Men and women, and the 16–24 arm**, add nothing beyond wider intervals: pooled 5-year IV +1.44 [−1.46, +4.35] for men, −4.67 [−13.46, +4.13] for women, +1.64 [−4.89, +8.17] for 16–24, all with pooled F below 5.
+
+**Against Card (2001).** The largest decade-long Mexico-born share change in a gateway metro in this panel is on the order of 1–2 points; even the 10-year point estimate of −0.43 per point gives well under one point of native youth E/POP over a decade, below Card's 1–3 points for the 1980s, and the interval includes zero.
+
+**National stock change over each window, millions of people**
+
+| window | Mexico-born | all matched origins |
+|---|---:|---:|
+| 2005-2010 | +0.74 | +2.75 |
+| 2008-2013 | +0.17 | +1.76 |
+| 2010-2015 | -0.07 | +2.92 |
+| 2013-2018 | -0.41 | +2.89 |
+| 2018-2023 | -0.25 | +2.45 |
+| 2005-2015 | +0.67 | +5.67 |
+| 2008-2018 | -0.24 | +4.65 |
+| 2013-2023 | -0.67 | +5.34 |
+### Headline: pooled across 5-year windows, both sexes, ages 18–29
+
+
+**E/POP 18-29, treatment = Mexico-born, pooled 5-year windows**
+
+| estimator | metros | coef (pp) | 95% CI | 1st-stage F | Shea partial R2 | corr(Z, Z lag) |
+|---|---|---|---|---|---|---|
+| OLS | 661 | +0.246 | [-0.07, +0.56] |  |  |  |
+| IV-single | 661 | -1.001 | [-5.26, +3.26] | 3.6 | 0.00798 |  |
+| IV-multi | 661 | +1.709 | [-2.93, +6.35] | 0.409 | 0.0111 |  |
+| IV-multi-same-sample | 379 | -23.087 | [-495.70, +449.52] | 0.00915 | 0.000107 | 0.819 |
+| IV-JRS | 379 | -9.654 | [-53.21, +33.90] | 20.2 | 0.000712 | 0.819 |
+| IV-placebo-pre | 379 | +7.250 | [-139.76, +154.26] | 0.00915 | 0.000107 | 0.819 |
+
+**LFP 18-29, treatment = Mexico-born, pooled 5-year windows**
+
+| estimator | metros | coef (pp) | 95% CI | 1st-stage F | Shea partial R2 | corr(Z, Z lag) |
+|---|---|---|---|---|---|---|
+| OLS | 661 | +0.051 | [-0.24, +0.34] |  |  |  |
+| IV-single | 661 | -1.033 | [-3.39, +1.32] | 3.6 | 0.00798 |  |
+| IV-multi | 661 | +1.392 | [-2.67, +5.45] | 0.409 | 0.0111 |  |
+| IV-multi-same-sample | 379 | -22.328 | [-479.92, +435.27] | 0.00915 | 0.000107 | 0.819 |
+| IV-JRS | 379 | -9.458 | [-42.22, +23.31] | 20.2 | 0.000712 | 0.819 |
+| IV-placebo-pre | 379 | -7.139 | [-155.46, +141.18] | 0.00915 | 0.000107 | 0.819 |
+
+**E/POP 18-29, treatment = all foreign-born, pooled 5-year windows**
+
+| estimator | metros | coef (pp) | 95% CI | 1st-stage F | Shea partial R2 | corr(Z, Z lag) |
+|---|---|---|---|---|---|---|
+| OLS | 661 | +0.113 | [-0.06, +0.28] |  |  |  |
+| IV-single | 661 | +0.167 | [-0.10, +0.43] | 5.38 | 0.168 |  |
+| IV-multi | 661 | +1.301 | [-2.53, +5.13] | 0.31 | 0.00796 |  |
+| IV-multi-same-sample | 379 | -57.374 | [-5040.78, +4926.03] | 0.000513 | 6.25e-06 | 0.819 |
+| IV-JRS | 379 | -26.049 | [-629.53, +577.44] | 6.68 | 3.83e-05 | 0.819 |
+| IV-placebo-pre | 379 | +18.017 | [-1515.39, +1551.43] | 0.000513 | 6.25e-06 | 0.819 |
+
+**LFP 18-29, treatment = all foreign-born, pooled 5-year windows**
+
+| estimator | metros | coef (pp) | 95% CI | 1st-stage F | Shea partial R2 | corr(Z, Z lag) |
+|---|---|---|---|---|---|---|
+| OLS | 661 | +0.034 | [-0.11, +0.18] |  |  |  |
+| IV-single | 661 | +0.082 | [-0.16, +0.32] | 5.38 | 0.168 |  |
+| IV-multi | 661 | +1.059 | [-2.59, +4.71] | 0.31 | 0.00796 |  |
+| IV-multi-same-sample | 379 | -55.486 | [-4838.76, +4727.79] | 0.000513 | 6.25e-06 | 0.819 |
+| IV-JRS | 379 | -25.268 | [-594.92, +544.38] | 6.68 | 3.83e-05 | 0.819 |
+| IV-placebo-pre | 379 | -17.740 | [-1583.37, +1547.89] | 0.000513 | 6.25e-06 | 0.819 |
+
+### By sex, pooled 5-year windows, E/POP 18–29
+
+
+**E/POP 18-29, men, Mexico-born treatment**
+
+| estimator | metros | coef (pp) | 95% CI | 1st-stage F | Shea partial R2 | corr(Z, Z lag) |
+|---|---|---|---|---|---|---|
+| OLS | 685 | +0.161 | [-0.19, +0.51] |  |  |  |
+| IV-single | 685 | +1.443 | [-1.46, +4.35] | 4.27 | 0.00944 |  |
+| IV-multi | 685 | -0.451 | [-3.19, +2.29] | 0.389 | 0.0101 |  |
+| IV-multi-same-sample | 394 | -12.238 | [-165.78, +141.30] | 0.0254 | 0.000282 | 0.815 |
+| IV-JRS | 394 | -7.506 | [-45.20, +30.19] | 19.7 | 0.000867 | 0.815 |
+| IV-placebo-pre | 394 | +22.695 | [-264.09, +309.48] | 0.0254 | 0.000282 | 0.815 |
+
+**E/POP 18-29, women, Mexico-born treatment**
+
+| estimator | metros | coef (pp) | 95% CI | 1st-stage F | Shea partial R2 | corr(Z, Z lag) |
+|---|---|---|---|---|---|---|
+| OLS | 632 | +0.337 | [-0.03, +0.71] |  |  |  |
+| IV-single | 632 | -4.666 | [-13.46, +4.13] | 2.87 | 0.00664 |  |
+| IV-multi | 632 | +3.759 | [-6.32, +13.83] | 0.406 | 0.0113 |  |
+| IV-multi-same-sample | 362 | -23.777 | [-453.10, +405.54] | 0.0116 | 0.000138 | 0.841 |
+| IV-JRS | 362 | -10.877 | [-52.66, +30.91] | 20.8 | 0.000781 | 0.841 |
+| IV-placebo-pre | 362 | -15.769 | [-322.60, +291.07] | 0.0116 | 0.000138 | 0.841 |
+
+### Pooled 16–24 arm and 10-year windows
+
+
+**E/POP 16-24, 5y windows, Mexico-born treatment**
+
+| estimator | metros | coef (pp) | 95% CI | 1st-stage F | Shea partial R2 | corr(Z, Z lag) |
+|---|---|---|---|---|---|---|
+| OLS | 566 | +0.118 | [-0.19, +0.42] |  |  |  |
+| IV-single | 566 | +1.640 | [-4.89, +8.17] | 1.47 | 0.00396 |  |
+| IV-multi | 566 | +1.588 | [-4.93, +8.11] | 0.335 | 0.0098 |  |
+| IV-multi-same-sample | 323 | -13.835 | [-113.37, +85.70] | 0.0764 | 0.000873 | 0.847 |
+| IV-JRS | 323 | -20.024 | [-125.06, +85.01] | 21.2 | 0.000517 | 0.847 |
+| IV-placebo-pre | 323 | +6.297 | [-42.42, +55.02] | 0.0764 | 0.000873 | 0.847 |
+
+**E/POP 18-29, 10y windows, Mexico-born treatment**
+
+| estimator | metros | coef (pp) | 95% CI | 1st-stage F | Shea partial R2 | corr(Z, Z lag) |
+|---|---|---|---|---|---|---|
+| OLS | 388 | -0.018 | [-0.26, +0.23] |  |  |  |
+| IV-single | 388 | -0.431 | [-1.28, +0.42] | 145 | 0.102 |  |
+| IV-multi | 388 | +1.564 | [-4.29, +7.41] | 0.304 | 0.0111 |  |
+
+### Window by window, E/POP 18–29, both sexes, Mexico-born treatment
+
+
+**window 2005-2010**
+
+| estimator | metros | coef (pp) | 95% CI | 1st-stage F | Shea partial R2 | corr(Z, Z lag) |
+|---|---|---|---|---|---|---|
+| OLS | 114 | +0.803 | [+0.22, +1.39] |  |  |  |
+| IV-single | 114 | -0.261 | [-1.91, +1.39] | 14.1 | 0.373 |  |
+| IV-multi | 114 | -0.176 | [-2.00, +1.65] | 2.87 | 0.151 |  |
+
+**window 2008-2013**
+
+| estimator | metros | coef (pp) | 95% CI | 1st-stage F | Shea partial R2 | corr(Z, Z lag) |
+|---|---|---|---|---|---|---|
+| OLS | 136 | +0.684 | [+0.32, +1.05] |  |  |  |
+| IV-single | 136 | +1.197 | [+0.62, +1.77] | 30.4 | 0.384 |  |
+| IV-multi | 136 | +1.243 | [-0.51, +3.00] | 1.15 | 0.0481 |  |
+
+**window 2010-2015**
+
+| estimator | metros | coef (pp) | 95% CI | 1st-stage F | Shea partial R2 | corr(Z, Z lag) |
+|---|---|---|---|---|---|---|
+| OLS | 135 | -0.094 | [-0.89, +0.71] |  |  |  |
+| IV-single | 135 | +0.245 | [-1.03, +1.52] | 67.6 | 0.455 |  |
+| IV-multi | 135 | -1.686 | [-9.08, +5.70] | 0.45 | 0.00829 |  |
+| IV-multi-same-sample | 114 | -1.947 | [-10.91, +7.01] | 0.344 | 0.0068 | 0.792 |
+| IV-JRS | 114 | -19.459 | [-754.78, +715.86] | 22.1 | 7.98e-05 | 0.792 |
+| IV-placebo-pre | 114 | -2.718 | [-19.55, +14.11] | 0.344 | 0.0068 | 0.792 |
+
+**window 2013-2018**
+
+| estimator | metros | coef (pp) | 95% CI | 1st-stage F | Shea partial R2 | corr(Z, Z lag) |
+|---|---|---|---|---|---|---|
+| OLS | 141 | -0.334 | [-1.23, +0.56] |  |  |  |
+| IV-single | 141 | -0.834 | [-1.77, +0.10] | 152 | 0.611 |  |
+| IV-multi | 141 | +2.662 | [-48.54, +53.86] | 0.0314 | 0.000505 |  |
+| IV-multi-same-sample | 133 | +2.559 | [-60.27, +65.39] | 0.0203 | 0.000328 | 0.797 |
+| IV-JRS | 133 | +0.593 | [-15.14, +16.32] | 84.2 | 0.0017 | 0.797 |
+| IV-placebo-pre | 133 | -0.068 | [-24.54, +24.40] | 0.0203 | 0.000328 | 0.797 |
+
+**window 2018-2023**
+
+| estimator | metros | coef (pp) | 95% CI | 1st-stage F | Shea partial R2 | corr(Z, Z lag) |
+|---|---|---|---|---|---|---|
+| OLS | 135 | -0.109 | [-0.92, +0.70] |  |  |  |
+| IV-single | 135 | +0.216 | [-1.18, +1.61] | 104 | 0.481 |  |
+| IV-multi | 135 | -7.020 | [-22.12, +8.08] | 1.41 | 0.00878 |  |
+| IV-multi-same-sample | 132 | -7.108 | [-22.74, +8.52] | 1.34 | 0.00854 | 0.869 |
+| IV-JRS | 132 | -7.036 | [-15.56, +1.49] | 1.63 | 0.00982 | 0.869 |
+| IV-placebo-pre | 132 | +0.579 | [-7.22, +8.38] | 1.34 | 0.00854 | 0.869 |
 
 ## 4. What this design does and does not identify
 
@@ -257,6 +410,21 @@ Six tests, all specified before the estimates were read.
    A confidence interval that contains both zero and the benchmark rules out nothing, and must
    be reported as uninformative rather than as a null.
 
+### Results
+
+| Test | Result | Reading |
+|---|---|---|
+| 1. Pre-window placebo | **Fails** in 2013–18 (single instrument: reduced form on the 2008–13 outcome change +2.36, SE 0.53; IV-pre +1.15, SE 0.27); marginal in 2018–23 (−1.20, SE 0.73); uninformative in 2010–15. The stored multi-origin placebo arm has a dead first stage (F 0.009) and decides nothing. | The instrument tracks recovery paths of Mexican-heavy metros, not a supply shock. |
+| 2. College control | 10-year pooled IV +0.09 [−0.62, +0.80] against no-college −0.43 [−1.28, +0.42]. | Consistent with a skill-specific effect; does not establish one. |
+| 3. Identification strength | Single instrument: pooled 5-year F 3.6, 10-year F 145, window F 14–152. JRS arm: F 20 but Shea partial R² 0.0007, corr(Zm, Zm lag) 0.82. | The 10-year single IV is the only identified arm; the JRS arm is underidentified, as JRS found for post-1970s US data. |
+| 4. Sign stability | 5-year IV: −0.26, **+1.20**, +0.25, **−0.83**, +0.22. | **Fails.** Adjacent windows flip sign with significant estimates on both sides. |
+| 5. Mexico-born vs all foreign-born | All-foreign-born pooled 5-year IV +0.17 [−0.10, +0.43] (F 5.4); Mexico-born −1.00 [−5.26, +3.26] (F 3.6). | Point estimates disagree in sign; both first stages weak; the all-origin arm leans demand-driven as anticipated. |
+| 6. Can the data detect the benchmark? | Best interval [−1.28, +0.42] contains zero and −0.6/−0.9. | **No.** Uninformative, and reported as such rather than as a null. |
+
+[SOURCE: `derived/estimates.csv`, `derived/placebo_single.csv`]
+
+**What survives.** A design-level negative result: the two instruments the literature uses for Mexican inflows both fail on the last fifteen years, one because the national Mexican inflow stopped (the same fact the arrival-cohort memo records from the other side), the other because the origin mix that JRS's correction needs did not change enough. Any US metro-level claim about the employment-entry effect of Mexican immigration since 2008, in either direction, that rests on a past-settlement instrument should be read against this. The DSS result itself, from a sharp exogenous shock, is untouched. [INFERENCE]
+
 ## 6. Byproduct
 
 The build produces `derived/metro_year_panel.csv`, a metro × year panel of foreign-born and
@@ -283,5 +451,8 @@ gated]
 
 ## 8. Analysis code
 
-`infra/immigration-fiscal/employment_entry_2026_09_18/` — `fetch_crosswalks.py`, `pull_pums.py`,
-`build_panel.py`, `estimate.py`, with the verbatim dispatch brief in `BRIEF.md`.
+`infra/immigration-fiscal/employment_entry_2026_09_18/` — `fetch_crosswalks.py`, `fetch_origins.py`, `pull_pums3.py`, `pull_placebo.py`, `build_panel.py`, `build_instruments.py`, `diagnostics.py`, `estimate.py` (writes `derived/estimates.csv`), `report.py` (writes `derived/tables.md`), `write_memo.py` (inserts the tables into section 3), `placebo_single.py` (parent-added single-instrument placebo, writes `derived/placebo_single.csv`), with the verbatim dispatch brief in `BRIEF.md` and the lane result in `RESULT.md`. The API pull cache under `_cache/` is not committed. Run from the lane directory with `uv run --no-project --with "pandas>=2" --with "numpy>=2" --with linearmodels --with statsmodels python3 <script>`.
+
+## Revisions
+
+2026-09-18, first version. Lane computed the estimates and closed before writing the verdict and results; the parent session re-ran the estimation (byte-identical), added the single-instrument placebo and wrote sections 3 and 5 from the derived files. Concept affected: identification of the employment-entry effect of Mexican inflows on recent US data; qualifies the canon audit's reading of C7/C8 by showing neither instrument identifies it after 2008.
