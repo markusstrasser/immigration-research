@@ -1,0 +1,67 @@
+{
+  "awi_2023": 66621.8,
+  "awi_2024": 69846.57,
+  "complete_gap_union_before": -7224.0,
+  "coverage_scale_to_trustees_2024": 0.959549,
+  "cps_total_oasdi_tax_bn": 1347.82,
+  "descriptives": {
+    "all_native": {
+      "mean_oasdi_tax_all_ages": 3837.286,
+      "mean_wage_earners": 76823.1704,
+      "mean_wage_incl_zero": 58927.3911,
+      "pop_21_64": 150123488.1981,
+      "ratio_to_awi_earners": 1.0999,
+      "ratio_to_awi_incl_zero": 0.8437,
+      "share_married": 0.4795,
+      "share_one_earner_couple": 0.1053,
+      "share_with_wage": 0.7671
+    },
+    "mexican_second_gen": {
+      "mean_oasdi_tax_all_ages": 2745.2591,
+      "mean_wage_earners": 55007.0329,
+      "mean_wage_incl_zero": 42738.297,
+      "pop_21_64": 7137973.717,
+      "ratio_to_awi_earners": 0.7875,
+      "ratio_to_awi_incl_zero": 0.6119,
+      "share_married": 0.3326,
+      "share_one_earner_couple": 0.0715,
+      "share_with_wage": 0.777
+    },
+    "mexican_third_plus_selfid": {
+      "mean_oasdi_tax_all_ages": 2712.0954,
+      "mean_wage_earners": 60981.3456,
+      "mean_wage_incl_zero": 46856.3074,
+      "pop_21_64": 6384977.7489,
+      "ratio_to_awi_earners": 0.8731,
+      "ratio_to_awi_incl_zero": 0.6708,
+      "share_married": 0.4101,
+      "share_one_earner_couple": 0.0825,
+      "share_with_wage": 0.7684
+    },
+    "mexico_born": {
+      "mean_oasdi_tax_all_ages": 3628.6672,
+      "mean_wage_earners": 48214.2635,
+      "mean_wage_incl_zero": 33685.3839,
+      "pop_21_64": 9804028.9284,
+      "ratio_to_awi_earners": 0.6903,
+      "ratio_to_awi_incl_zero": 0.4823,
+      "share_married": 0.5683,
+      "share_one_earner_couple": 0.189,
+      "share_with_wage": 0.6987
+    },
+    "third_plus_nh_white": {
+      "mean_oasdi_tax_all_ages": 4330.8684,
+      "mean_wage_earners": 82382.6002,
+      "mean_wage_incl_zero": 63773.3454,
+      "pop_21_64": 95695973.1387,
+      "ratio_to_awi_earners": 1.1795,
+      "ratio_to_awi_incl_zero": 0.913,
+      "share_married": 0.5548,
+      "share_one_earner_couple": 0.1228,
+      "share_with_wage": 0.7741
+    }
+  },
+  "gate_population_max_abs_diff_people": 0.0,
+  "oasdi_cap_2024": 168600.0,
+  "oasdi_rate_each_side": 0.062
+}
