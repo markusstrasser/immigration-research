@@ -1,0 +1,81 @@
+{
+  "labor_force_16plus": 175478713.0,
+  "fb_dropout": 6635078.0,
+  "mexborn_dropout": 3165994.0,
+  "share_before": 0.03781129851345559,
+  "share_after_lf_adjusted": 0.02013248946527273,
+  "share_after_lf_fixed": 0.019769258280347656,
+  "dln_share_lf_adjusted": -0.6302730590177434,
+  "dln_share_lf_fixed": -0.6484798413898364,
+  "share_reduction_pct": 46.75536081336019,
+  "native_consumer_units": {
+    "q1_lowest": 22721802.1488973,
+    "q2_second": 22806980.85524365,
+    "q3_third": 22727620.077325854,
+    "q4_fourth": 22999632.99349947,
+    "q5_highest": 22483817.868646197
+  },
+  "cex_consumer_units_thousands": {
+    "all_cu": 135760.0,
+    "q1_lowest": 27139.0,
+    "q2_second": 27186.0,
+    "q3_third": 26959.0,
+    "q4_fourth": 27205.0,
+    "q5_highest": 27272.0
+  },
+  "narrow_expenditure_per_cu": {
+    "q1_lowest": 624.9824414509828,
+    "q2_second": 796.5788177627946,
+    "q3_third": 1133.2841843787514,
+    "q4_fourth": 1571.5180857227506,
+    "q5_highest": 3201.6800650433634
+  },
+  "nontraded_expenditure_per_cu": {
+    "q1_lowest": 1742.9302227977655,
+    "q2_second": 2558.477973573956,
+    "q3_third": 3432.72666954788,
+    "q4_fourth": 4894.529676034051,
+    "q5_highest": 8106.74682817468
+  },
+  "dropped_cex_lines": [
+    {
+      "line": "Household laundry and dry cleaning, sent out (nonclothing) not coin-operated [D]",
+      "published_value": "d/"
+    }
+  ],
+  "price_arms": {
+    "published_jpe_2008": {
+      "beta_intensive": -0.2119679908168919,
+      "beta_nontraded": -0.02100512951274732
+    },
+    "working_paper_2005": {
+      "beta_intensive": -0.13729110128131042,
+      "beta_nontraded": -0.02100512951274732
+    },
+    "half_published": {
+      "beta_intensive": -0.10598399540844596,
+      "beta_nontraded": -0.01050256475637366
+    }
+  },
+  "hours_arms": {
+    "hours_given_working_addl_controls": {
+      "beta": 0.98,
+      "se": 0.497
+    },
+    "usual_hours_addl_controls": {
+      "beta": 0.451,
+      "se": 0.563
+    },
+    "half_hours_given_working": {
+      "beta": 0.49,
+      "se": null
+    }
+  },
+  "tax_arms": {
+    "cbo_economywide_federal_2018": 0.27,
+    "high_earner_buildup": 0.35,
+    "incl_employer_payroll": 0.43
+  },
+  "beta_native_lowskill_wage": -0.06314196802396481,
+  "beta_immigrant_lowskill_wage": -0.8748447344264413
+}

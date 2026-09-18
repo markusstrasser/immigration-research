@@ -1,0 +1,10 @@
+{
+  "cut_points": [
+    29932.0,
+    57452.0,
+    94511.0,
+    155925.0
+  ],
+  "source": "ACS 2024 1-year PUMS person file, household income approximated as the sum of ADJINC-adjusted PINCP within SERIALNO (housing file HINCP not staged); housing units only; householder = RELSHIPP 20.",
+  "total_households": 132737099.0
+}

@@ -1,0 +1,151 @@
+row,item,all_cu,q1_lowest,q2_second,q3_third,q4_fourth,q5_highest
+3,Item,"All
+consumer
+units","Lowest
+20
+percent","Second
+20
+percent","Third
+20
+percent","Fourth
+20
+percent","Highest
+20
+percent"
+4,Number of consumer units (in thousands) a/,135760.0,27139.0,27186.0,26959.0,27205.0,27272.0
+5,Lower limit,n.a.,n.a.,29932.0,57452.0,94511.0,155925.0
+10,Income before taxes,104207.0,16658.0,42925.0,74474.0,121548.0,264510.0
+14,Age of reference person,52.2,57.1,56.0,50.4,48.5,48.9
+17,People,2.4,1.6,2.1,2.5,2.9,3.2
+18,Children under 18,0.6,0.3,0.4,0.5,0.7,0.8
+19,Adults 65 and older,0.4,0.5,0.6,0.5,0.3,0.3
+20,Earners,1.3,0.5,0.8,1.4,1.8,2.1
+21,Vehicles,1.9,1.0,1.6,1.9,2.3,2.7
+26,Men,48.0,39.0,44.0,48.0,51.0,57.0
+27,Women,52.0,61.0,56.0,52.0,49.0,43.0
+30,Homeowner,65.0,43.0,58.0,62.0,74.0,88.0
+31,With mortgage,37.0,12.0,21.0,33.0,50.0,68.0
+32,Without mortgage,28.0,31.0,37.0,29.0,24.0,20.0
+33,Renter,35.0,57.0,42.0,38.0,26.0,12.0
+36,Black or African-American,13.0,20.0,14.0,14.0,12.0,7.0
+37,"White, Asian, and all other races, not including Black or African-American",87.0,80.0,86.0,86.0,88.0,93.0
+40,Hispanic or Latino,16.0,15.0,19.0,20.0,15.0,10.0
+41,Not Hispanic or Latino,84.0,85.0,81.0,80.0,85.0,90.0
+44,Elementary (1-8),3.0,5.0,4.0,2.0,2.0,1.0
+45,High school (9-12),27.0,43.0,36.0,27.0,21.0,10.0
+46,College,70.0,52.0,60.0,71.0,78.0,89.0
+47,Never attended and other,c/,1.0,c/,c/,c/,d/
+49,At least one vehicle owned or leased,89.0,68.0,88.0,93.0,96.0,97.0
+52,Average annual expenditures,78535.0,35046.0,50054.0,66900.0,89972.0,150342.0
+57,Food,10169.0,5498.0,7400.0,9097.0,11845.0,16989.0
+62,Food at home,6224.0,3843.0,4952.0,5820.0,7162.0,9336.0
+67,Cereals and bakery products,779.0,501.0,626.0,740.0,860.0,1166.0
+72,Cereals and cereal products,240.0,156.0,191.0,223.0,270.0,359.0
+77,Bakery products,539.0,345.0,435.0,517.0,589.0,807.0
+82,"Meats, poultry, fish, and eggs",1414.0,889.0,1117.0,1342.0,1647.0,2074.0
+87,Beef,408.0,237.0,336.0,382.0,492.0,593.0
+92,Pork,260.0,180.0,234.0,241.0,285.0,357.0
+97,Other meats,150.0,92.0,107.0,151.0,172.0,227.0
+102,Poultry,267.0,171.0,200.0,250.0,311.0,405.0
+107,Fish and seafood,224.0,132.0,157.0,219.0,263.0,348.0
+112,Eggs,105.0,77.0,84.0,99.0,124.0,143.0
+117,Dairy products,631.0,385.0,493.0,594.0,733.0,951.0
+122,Fresh milk and cream,141.0,99.0,108.0,133.0,162.0,205.0
+127,Other dairy products,490.0,287.0,385.0,461.0,571.0,746.0
+132,Fruits and vegetables,953.0,579.0,774.0,879.0,1084.0,1445.0
+137,Fresh fruits,394.0,223.0,321.0,367.0,450.0,610.0
+142,Fresh vegetables,355.0,231.0,283.0,330.0,398.0,532.0
+147,Processed fruits and vegetables,203.0,125.0,170.0,182.0,236.0,303.0
+152,Other food at home,2447.0,1489.0,1941.0,2265.0,2838.0,3700.0
+157,Sugar and other sweets,230.0,148.0,185.0,217.0,252.0,347.0
+162,Fats and oils,125.0,74.0,106.0,116.0,144.0,186.0
+167,Miscellaneous foods,1284.0,761.0,992.0,1153.0,1520.0,1994.0
+172,Nonalcoholic beverages,714.0,478.0,610.0,695.0,801.0,985.0
+177,Food prepared by consumer unit on out of town trips,94.0,29.0,48.0,85.0,122.0,188.0
+182,Food away from home,3945.0,1655.0,2448.0,3277.0,4682.0,7652.0
+188,Alcoholic beverages,643.0,244.0,342.0,504.0,726.0,1395.0
+194,Housing,26266.0,14563.0,19174.0,24093.0,29374.0,44033.0
+199,Shelter,16317.0,9178.0,11902.0,15257.0,17851.0,27338.0
+204,Owned dwellings,9310.0,2989.0,5153.0,7657.0,10557.0,20133.0
+209,Mortgage interest and charges,3646.0,720.0,1367.0,2667.0,4593.0,8850.0
+214,Property taxes,2738.0,1054.0,1643.0,2155.0,3003.0,5816.0
+219,"Maintenance, repairs, insurance, and other expenses",2926.0,1215.0,2142.0,2835.0,2961.0,5467.0
+224,Rented dwellings,5660.0,5781.0,6225.0,6720.0,5697.0,3894.0
+229,Other lodging,1347.0,409.0,523.0,880.0,1597.0,3312.0
+234,"Utilities, fuels, and public services",4736.0,2934.0,4065.0,4635.0,5431.0,6607.0
+239,Natural gas,493.0,287.0,410.0,458.0,555.0,751.0
+244,Electricity,1833.0,1276.0,1674.0,1813.0,2023.0,2376.0
+249,Fuel oil and other fuels,125.0,63.0,107.0,96.0,139.0,220.0
+254,Telephone services,1460.0,834.0,1204.0,1465.0,1770.0,2024.0
+259,"Residential phone service, VOIP, and phone cards",100.0,113.0,119.0,89.0,92.0,88.0
+264,Cellular phone service,1359.0,720.0,1084.0,1376.0,1678.0,1935.0
+269,Water and other public services,826.0,474.0,670.0,803.0,945.0,1236.0
+274,Household operations,1921.0,851.0,1128.0,1511.0,2009.0,4093.0
+279,Personal services,547.0,185.0,118.0,320.0,542.0,1565.0
+284,Other household expenses,1374.0,666.0,1009.0,1191.0,1467.0,2529.0
+289,Housekeeping supplies,877.0,513.0,681.0,798.0,1067.0,1327.0
+294,Laundry and cleaning products,209.0,138.0,169.0,217.0,258.0,263.0
+299,Other household products,537.0,320.0,416.0,476.0,665.0,808.0
+304,Postage and stationery,131.0,55.0,96.0,105.0,144.0,256.0
+309,Household furnishings and equipment,2414.0,1086.0,1399.0,1893.0,3015.0,4668.0
+314,Household textiles,107.0,69.0,89.0,89.0,139.0,147.0
+319,Furniture,648.0,275.0,371.0,462.0,795.0,1334.0
+324,Floor coverings,30.0,6.0,12.0,22.0,38.0,73.0
+329,Major appliances,385.0,182.0,217.0,353.0,514.0,658.0
+334,Small appliances and miscellaneous housewares,155.0,73.0,137.0,117.0,162.0,285.0
+339,Miscellaneous household equipment,1089.0,480.0,575.0,850.0,1367.0,2170.0
+345,Apparel and services,2001.0,1124.0,1328.0,1642.0,2034.0,3872.0
+350,Men and boys,467.0,247.0,310.0,364.0,475.0,936.0
+355,"Men, 16 and over",374.0,191.0,268.0,293.0,396.0,723.0
+360,"Boys, 2 to 15",92.0,55.0,43.0,72.0,79.0,213.0
+365,Women and girls,744.0,417.0,501.0,616.0,754.0,1429.0
+370,"Women, 16 and over",632.0,355.0,434.0,518.0,646.0,1206.0
+375,"Girls, 2 to 15",112.0,63.0,67.0,99.0,108.0,223.0
+380,Children under 2,77.0,21.0,54.0,51.0,110.0,151.0
+385,Footwear,461.0,302.0,299.0,415.0,450.0,840.0
+390,Other apparel products and services,252.0,137.0,163.0,196.0,246.0,516.0
+396,Transportation,13318.0,5105.0,8430.0,11657.0,15952.0,25378.0
+401,Vehicle purchases (net outlay),5337.0,1718.0,2925.0,4121.0,5945.0,11938.0
+406,"Cars and trucks, new",2469.0,819.0,982.0,1365.0,2333.0,6823.0
+411,"Cars and trucks, used",2818.0,883.0,1942.0,2750.0,3513.0,4989.0
+416,Gasoline and other fuels,2645.0,1262.0,2031.0,2643.0,3350.0,3932.0
+421,Gasoline,2411.0,1177.0,1893.0,2442.0,3058.0,3477.0
+426,Other vehicle expenses,4206.0,1653.0,3019.0,4018.0,5407.0,6916.0
+431,Vehicle finance charges,418.0,101.0,239.0,376.0,632.0,739.0
+436,Maintenance and repairs,984.0,394.0,693.0,950.0,1174.0,1707.0
+441,"Vehicle rental, leases, licenses, and other charges",811.0,263.0,408.0,664.0,1083.0,1630.0
+446,Vehicle insurance,1993.0,895.0,1679.0,2028.0,2518.0,2840.0
+451,Public and other transportation,1131.0,472.0,456.0,875.0,1250.0,2593.0
+457,Healthcare,6197.0,3445.0,4826.0,5676.0,7247.0,9771.0
+462,Health insurance,4055.0,2153.0,3194.0,3842.0,4913.0,6160.0
+467,Medical services,1252.0,661.0,848.0,1063.0,1384.0,2297.0
+472,Drugs,658.0,416.0,644.0,572.0,700.0,957.0
+477,Medical supplies,233.0,215.0,140.0,200.0,251.0,359.0
+483,Entertainment,3609.0,1316.0,2156.0,2764.0,4133.0,7660.0
+488,Fees and admissions,935.0,197.0,324.0,545.0,1054.0,2546.0
+493,Audio and visual equipment and services,965.0,538.0,870.0,889.0,1084.0,1444.0
+498,"Pets, toys, hobbies, and playground equipment",1069.0,439.0,645.0,843.0,1164.0,2250.0
+503,Pets,880.0,368.0,529.0,673.0,967.0,1861.0
+508,"Toys, hobbies, and playground equipment",189.0,70.0,116.0,169.0,197.0,390.0
+513,"Other entertainment supplies, equipment, and services",640.0,142.0,317.0,487.0,831.0,1419.0
+519,Personal care products and services,978.0,427.0,659.0,852.0,1145.0,1802.0
+525,Reading,125.0,47.0,75.0,82.0,122.0,300.0
+531,Education,1569.0,828.0,407.0,749.0,1353.0,4492.0
+537,Tobacco products and smoking supplies,352.0,340.0,359.0,437.0,360.0,267.0
+543,Miscellaneous,1218.0,619.0,767.0,1173.0,1458.0,2072.0
+549,Cash contributions,2292.0,778.0,1420.0,1924.0,2291.0,5031.0
+555,Personal insurance and pensions,9797.0,711.0,2712.0,6248.0,11934.0,27279.0
+560,Life and other personal insurance,575.0,174.0,305.0,435.0,618.0,1339.0
+565,"Retirement, pensions, and Social Security",9222.0,537.0,2407.0,5813.0,11316.0,25940.0
+573,Income before taxes,104207.0,16658.0,42925.0,74474.0,121548.0,264510.0
+577,Wages and salaries,80864.0,5172.0,23546.0,55348.0,100178.0,219281.0
+582,Self-employment income,7084.0,299.0,1423.0,3349.0,5867.0,24385.0
+587,"Social Security, private and government retirement",11646.0,8871.0,15695.0,13105.0,11470.0,9105.0
+592,"Interest, dividends, rental income, and other property income",3066.0,226.0,823.0,1334.0,2742.0,10164.0
+597,"Public assistance, Supplemental Security Income, Supplementary Nutrition Assistance Program (SNAP)",620.0,1407.0,796.0,505.0,241.0,154.0
+602,"Unemployment and workers' compensation, veterans' benefits, and regular contributions for support",635.0,285.0,393.0,566.0,799.0,1130.0
+607,Other income,291.0,399.0,249.0,266.0,251.0,291.0
+616,Other money receipts,942.0,893.0,726.0,718.0,877.0,1490.0
+620,Mortgage principal paid on owned property,-2924.0,-619.0,-1022.0,-1937.0,-3269.0,-7744.0
+624,Estimated market value of owned home,310670.0,139521.0,203773.0,247234.0,335268.0,625710.0
+628,Estimated monthly rental value of owned home,1556.0,755.0,1082.0,1323.0,1757.0,2856.0
