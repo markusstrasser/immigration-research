@@ -1,0 +1,140 @@
+{
+  "missing_columns": {
+    "2020": [],
+    "2024": []
+  },
+  "items": {
+    "strpres_helpful": {
+      "label": "president acting without regard to Congress and the courts would be HELPFUL (7-point summary, codes 1-3 = helpful)",
+      "years": [
+        2020,
+        2024
+      ],
+      "stage": "pre"
+    },
+    "strleader_agree": {
+      "label": "agrees a strong leader is good for the US even if the leader bends the rules",
+      "years": [
+        2020,
+        2024
+      ],
+      "stage": "post"
+    },
+    "prefer_democracy": {
+      "label": "agrees democracy is preferable to any other kind of government (CSES6, 2024 only)",
+      "years": [
+        2024
+      ],
+      "stage": "post"
+    },
+    "courts_authority": {
+      "label": "agrees the courts should be able to stop the government acting beyond its authority (CSES6 Q04B, 2024 only)",
+      "years": [
+        2024
+      ],
+      "stage": "post"
+    },
+    "people_decide": {
+      "label": "agrees the people, not politicians, should make the most important policy decisions (CSES5, 2020 only)",
+      "years": [
+        2020
+      ],
+      "stage": "post"
+    },
+    "votes_counted_fairly": {
+      "label": "votes are counted fairly all or most of the time",
+      "years": [
+        2020,
+        2024
+      ],
+      "stage": "post"
+    },
+    "violence_justified": {
+      "label": "political violence is at least 'a little' justified",
+      "years": [
+        2020,
+        2024
+      ],
+      "stage": "pre"
+    },
+    "satisfied_democracy": {
+      "label": "very or fairly satisfied with the way democracy works in the US",
+      "years": [
+        2020,
+        2024
+      ],
+      "stage": "post"
+    },
+    "trust_govt": {
+      "label": "trusts the federal government to do what is right always or most of the time",
+      "years": [
+        2020,
+        2024
+      ],
+      "stage": "pre"
+    },
+    "trust_election_officials": {
+      "label": "trusts election officials a great deal or a lot",
+      "years": [
+        2020,
+        2024
+      ],
+      "stage": "pre"
+    },
+    "auth_obedience": {
+      "label": "picks obedience over self-reliance as the more important child quality",
+      "years": [
+        2020,
+        2024
+      ],
+      "stage": "post"
+    },
+    "auth_respect": {
+      "label": "picks respect for elders over independence",
+      "years": [
+        2020,
+        2024
+      ],
+      "stage": "post"
+    },
+    "auth_manners": {
+      "label": "picks good manners over curiosity",
+      "years": [
+        2020,
+        2024
+      ],
+      "stage": "post"
+    },
+    "auth_behaved": {
+      "label": "picks well behaved over being considerate",
+      "years": [
+        2020,
+        2024
+      ],
+      "stage": "post"
+    },
+    "minorities_adapt": {
+      "label": "agrees minorities should adapt to the customs and traditions of the US (CSES5, 2020 only)",
+      "years": [
+        2020
+      ],
+      "stage": "post"
+    },
+    "born_here_important": {
+      "label": "says being born in the US is very or fairly important to being American",
+      "years": [
+        2020,
+        2024
+      ],
+      "stage": "post"
+    },
+    "auth_scale4": {
+      "label": "authoritarian child-rearing scale, 0-4 authoritarian choices",
+      "years": [
+        2020,
+        2024
+      ],
+      "stage": "post"
+    }
+  }
+}
