@@ -1,0 +1,33 @@
+series,year,value,units,source
+private_share_all_grades,1995,11.7,percent of total K-12 enrollment,NCES Digest 2023 table 205.10
+private_share_all_grades,1999,11.4,percent of total K-12 enrollment,NCES Digest 2023 table 205.10
+private_share_all_grades,2001,11.7,percent of total K-12 enrollment,NCES Digest 2023 table 205.10
+private_share_all_grades,2005,11.0,percent of total K-12 enrollment,NCES Digest 2023 table 205.10
+private_share_all_grades,2007,10.8,percent of total K-12 enrollment,NCES Digest 2023 table 205.10
+private_share_all_grades,2011,9.7,percent of total K-12 enrollment,NCES Digest 2023 table 205.10
+private_share_all_grades,2015,10.3,percent of total K-12 enrollment,NCES Digest 2023 table 205.10
+private_share_all_grades,2019,9.8,percent of total K-12 enrollment,NCES Digest 2023 table 205.10
+private_share_all_grades,2021,10.0,percent of total K-12 enrollment,NCES Digest 2023 table 205.10
+private_share_west,1995,10.0,percent of West total enrollment,NCES Digest 2023 table 205.10
+private_share_west,2021,8.3,percent of West total enrollment,NCES Digest 2023 table 205.10
+private_enrollment_total,1995,5918,thousands,NCES Digest 2023 table 205.10
+private_enrollment_total,2021,5474,thousands,NCES Digest 2023 table 205.10
+private_avg_tuition,1999,4570,current dollars (SASS 1999-2000),NCES Digest 2023 table 205.50
+private_avg_tuition,2003,6070,current dollars (SASS 2003-04),NCES Digest 2023 table 205.50
+private_avg_tuition,2007,7840,current dollars (SASS 2007-08),NCES Digest 2023 table 205.50
+private_avg_tuition,2011,9950,current dollars (SASS 2011-12),NCES Digest 2023 table 205.50
+private_avg_tuition,2021,12790,current dollars (NTPS 2021-22),NCES Digest 2023 table 205.50
+private_avg_tuition_elem,2021,9210,current dollars (NTPS 2021-22),NCES Digest 2023 table 205.50
+private_avg_tuition_secondary,2021,15420,current dollars (NTPS 2021-22),NCES Digest 2023 table 205.50
+private_avg_tuition_combined,2021,15550,current dollars (NTPS 2021-22),NCES Digest 2023 table 205.50
+private_k12_enrollment_pss,2021,4417240,students (NTPS 2021-22 K-12),NCES Digest 2023 table 205.50
+private_k12_enrollment_pss,1999,5262850,students (SASS 1999-2000 K-12),NCES Digest 2023 table 205.50
+public_hispanic_share_us,2000,16.4,percent of public K-12 enrollment,NCES Digest 2023 table 203.50
+public_hispanic_share_us,2010,23.1,percent of public K-12 enrollment,NCES Digest 2023 table 203.50
+public_hispanic_share_us,2022,28.9,percent of public K-12 enrollment,NCES Digest 2023 table 203.50
+public_hispanic_share_west,2000,32.2,percent of West public K-12 enrollment,NCES Digest 2023 table 203.50
+public_hispanic_share_west,2022,44.2,percent of West public K-12 enrollment,NCES Digest 2023 table 203.50
+public_hispanic_share_south,2000,14.5,percent of South public K-12 enrollment,NCES Digest 2023 table 203.50
+public_hispanic_share_south,2022,29.0,percent of South public K-12 enrollment,NCES Digest 2023 table 203.50
+public_enrollment_total_us,2000,47204,thousands,NCES Digest 2023 table 203.50
+public_enrollment_total_us,2022,49618,thousands,NCES Digest 2023 table 203.50
