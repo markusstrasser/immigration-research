@@ -1,0 +1,8 @@
+undercount_factor_k,implied_lths_share_2018_23,still_below_1975-80 (1980 census),still_below_1985-90 (1990 census),still_below_1995-00 (2000 census),still_below_2005-10 (2010 ACS)
+1.0,0.332533,True,True,True,True
+1.1,0.3932118181818183,True,True,True,True
+1.2,0.44377749999999994,True,True,True,True
+1.3,0.4865638461538461,True,True,True,True
+1.5,0.555022,True,True,True,False
+1.75,0.6185902857142856,True,True,False,False
+2.0,0.6662665,True,False,False,False
