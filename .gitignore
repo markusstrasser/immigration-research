@@ -51,3 +51,6 @@ warehouse/*.duckdb
 
 # in-progress warehouse builds (paths.staged_output); replaced atomically on success
 *.duckdb.building*
+
+# lane scratch caches (2026-09-18)
+**/_cache/
