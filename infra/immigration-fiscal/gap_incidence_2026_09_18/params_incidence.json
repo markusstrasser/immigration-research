@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "written_by": "gap_incidence_2026_09_18 lane, model claude-opus-5[1m]",
+    "date": "2026-09-18",
+    "note": "parameters fetched by this lane only; every other parameter is reused from ledger_absolute_2026_09_17/params/params.json or from the cached aggregates named in the source column"
+  },
+  "treasury_avg_interest_rate_total_interest_bearing_debt_2024_09_30": {
+    "value": 3.324, "unit": "percent", "fiscal_year": "FY2024 (Sept 30 2024 record date)",
+    "source_url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/avg_interest_rates?filter=record_date:eq:2024-09-30,security_desc:eq:Total%20Interest-bearing%20Debt",
+    "quote": "{\"record_date\": \"2024-09-30\", \"security_type_desc\": \"Interest-bearing Debt\", \"security_desc\": \"Total Interest-bearing Debt\", \"avg_interest_rate_amt\": \"3.324\"}",
+    "fetched": "2026-09-18", "status": "verified",
+    "notes": "Treasury Fiscal Data, Average Interest Rates on U.S. Treasury Securities; the FY2024 year-end average rate on the whole interest-bearing debt"
+  },
+  "treasury_10y_par_yield_2026_09_17": {
+    "value": 4.94, "unit": "percent", "fiscal_year": "daily, 2026-09-17",
+    "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve",
+    "quote": "09/17/2026,3.97,3.98,4.09,4.12,4.23,4.20,4.40,4.67,4.75,4.78,4.86,4.94,5.32,5.29",
+    "fetched": "2026-09-18", "status": "verified",
+    "notes": "Daily Treasury Par Yield Curve Rates, 10 Yr column, most recent observation; local copy dtyc2026.csv"
+  },
+  "property_tax_renter_passthrough_literature": {
+    "value": null, "unit": "share of a property tax increase shifted to renters", "status": "verified (range, not a point)",
+    "entries": [
+      {"cite": "Tsoodle, Leah J. and Tracy M. Turner (2008), Property Taxes and Residential Rents, Real Estate Economics 36(1):63-80",
+       "source_url": "https://www.k-state.edu/economics/about/staff/websites/turner/tsoodleturner.pdf",
+       "quote": "we find that a one standard deviation increase in the property tax rate raises residential rents by between $402 and $450 annually",
+       "context_quote": "an increase of 0.34% in the property tax rate from its sample mean of 1.4% increases rents by an amount between $402 and $451 annually",
+       "average_sample_annual_rent": 7347,
+       "notes": "hedonic two-stage, American Housing Survey 1999/2001/2003, 14 cities; implies full or more-than-full long-run pass-through at plausible rent-to-value ratios (see RESULT.md arithmetic)"},
+      {"cite": "Schwegman, David J. and John Yinger (2020), The Shifting of the Property Tax on Urban Renters: Evidence from New York State's Homestead Tax Option, US Census Bureau CES Working Paper 20-43",
+       "source_url": "https://www2.census.gov/ces/wp/2020/CES-WP-20-43.pdf",
+       "quote": "We find that property owners shift approximately 14 percent of an increase in taxes onto renters.",
+       "context_quote": "Our estimated effect is measurably smaller than most previous studies, which often found shifting effects of over 60 percent.",
+       "notes": "within-unit across-time variation, restricted-use AHS; the low end of the published range"}
+    ]
+  }
+}
