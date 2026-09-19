@@ -1,5 +1,7 @@
 # Hedonic composition lane — result
 
+> **Current interpretation, 2026-09-19:** The original verdict below is retained as history. Its exact/failed-reproduction framing is superseded by the [source-contract check and modern bridge](../../../research/immigration-hedonic-replay-2026-09-19.md). The exercises differ in outcomes, controls, sample rule, clustering and gravity construction; original-data replay is pending. The earlier [bounded audit](../../../notes/immigration-hedonic-audit-evidence-2026-09-19.md) also corrects “every instrument,” the scalar-instrument objection, causal metro wording and the dollar-bound claim. Calculated outputs remain unchanged.
+
 **Verdict:** Saiz and Wachter's within-metro composition discount does **not** reproduce on
 2013–2023 data, and the lane cannot put a defensible dollar figure on the compositional
 amenity. Three independent checks break the naive reproduction. (1) The negative gradient
