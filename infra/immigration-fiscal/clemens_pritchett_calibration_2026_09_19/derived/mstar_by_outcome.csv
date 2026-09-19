@@ -1,0 +1,625 @@
+domain,outcome,a_basis,a,tau_basis,tau,c,mstar,mstar_over_observed,T_years,phi_at_optimum
+earnings,"CPS total personal income, common age",a(G1->G2),0.019011,paper Mexico row,0.239000,0.00,0.066197,111.069,75.3,3.482055
+earnings,"CPS total personal income, common age",a(G1->G2),0.019011,paper Mexico row,0.239000,0.50,0.013420,22.517,371.2,0.705907
+earnings,"CPS total personal income, common age",a(G1->G2),0.019011,paper Mexico row,0.239000,0.90,0.008194,13.748,608.0,0.431004
+earnings,"CPS total personal income, common age",a(G1->G2),0.019011,repo maximum,0.664480,0.00,-0.029550,-49.581,inf,
+earnings,"CPS total personal income, common age",a(G1->G2),0.019011,repo maximum,0.664480,0.50,-0.012238,-20.534,inf,
+earnings,"CPS total personal income, common age",a(G1->G2),0.019011,repo maximum,0.664480,0.90,-0.008333,-13.982,inf,
+earnings,"CPS total personal income, common age",a(G1->G2),0.019011,repo minimum,0.347107,0.00,0.019626,32.929,253.9,1.032339
+earnings,"CPS total personal income, common age",a(G1->G2),0.019011,repo minimum,0.347107,0.50,0.005293,8.881,941.3,0.278417
+earnings,"CPS total personal income, common age",a(G1->G2),0.019011,repo minimum,0.347107,0.90,0.003341,5.606,1491.2,0.175741
+earnings,"CPS total personal income, common age",a(G1->G2),0.019011,"repo, nearest 5 years since arrival",0.416113,0.00,0.002552,4.281,1952.6,0.134217
+earnings,"CPS total personal income, common age",a(G1->G2),0.019011,"repo, nearest 5 years since arrival",0.416113,0.50,0.000783,1.314,6363.0,0.041186
+earnings,"CPS total personal income, common age",a(G1->G2),0.019011,"repo, nearest 5 years since arrival",0.416113,0.90,0.000504,0.845,9891.4,0.026494
+earnings,"CPS total personal income, common age",a(G1->G3+),0.009948,paper Mexico row,0.239000,0.00,-0.005088,-8.536,inf,
+earnings,"CPS total personal income, common age",a(G1->G3+),0.009948,paper Mexico row,0.239000,0.50,-0.001031,-1.730,inf,
+earnings,"CPS total personal income, common age",a(G1->G3+),0.009948,paper Mexico row,0.239000,0.90,-0.000630,-1.057,inf,
+earnings,"CPS total personal income, common age",a(G1->G3+),0.009948,repo maximum,0.664480,0.00,-0.055190,-92.600,inf,
+earnings,"CPS total personal income, common age",a(G1->G3+),0.009948,repo maximum,0.664480,0.50,-0.022857,-38.351,inf,
+earnings,"CPS total personal income, common age",a(G1->G3+),0.009948,repo maximum,0.664480,0.90,-0.015563,-26.113,inf,
+earnings,"CPS total personal income, common age",a(G1->G3+),0.009948,repo minimum,0.347107,0.00,-0.029457,-49.425,inf,
+earnings,"CPS total personal income, common age",a(G1->G3+),0.009948,repo minimum,0.347107,0.50,-0.007945,-13.330,inf,
+earnings,"CPS total personal income, common age",a(G1->G3+),0.009948,repo minimum,0.347107,0.90,-0.005015,-8.414,inf,
+earnings,"CPS total personal income, common age",a(G1->G3+),0.009948,"repo, nearest 5 years since arrival",0.416113,0.00,-0.038392,-64.416,inf,
+earnings,"CPS total personal income, common age",a(G1->G3+),0.009948,"repo, nearest 5 years since arrival",0.416113,0.50,-0.011781,-19.767,inf,
+earnings,"CPS total personal income, common age",a(G1->G3+),0.009948,"repo, nearest 5 years since arrival",0.416113,0.90,-0.007579,-12.716,inf,
+earnings,"CPS total personal income, common age",a(G2->G3+),0.000885,paper Mexico row,0.239000,0.00,-0.076372,-128.142,inf,
+earnings,"CPS total personal income, common age",a(G2->G3+),0.000885,paper Mexico row,0.239000,0.50,-0.015483,-25.978,inf,
+earnings,"CPS total personal income, common age",a(G2->G3+),0.000885,paper Mexico row,0.239000,0.90,-0.009453,-15.861,inf,
+earnings,"CPS total personal income, common age",a(G2->G3+),0.000885,repo maximum,0.664480,0.00,-0.080830,-135.620,inf,
+earnings,"CPS total personal income, common age",a(G2->G3+),0.000885,repo maximum,0.664480,0.50,-0.033476,-56.168,inf,
+earnings,"CPS total personal income, common age",a(G2->G3+),0.000885,repo maximum,0.664480,0.90,-0.022794,-38.244,inf,
+earnings,"CPS total personal income, common age",a(G2->G3+),0.000885,repo minimum,0.347107,0.00,-0.078540,-131.779,inf,
+earnings,"CPS total personal income, common age",a(G2->G3+),0.000885,repo minimum,0.347107,0.50,-0.021182,-35.540,inf,
+earnings,"CPS total personal income, common age",a(G2->G3+),0.000885,repo minimum,0.347107,0.90,-0.013370,-22.434,inf,
+earnings,"CPS total personal income, common age",a(G2->G3+),0.000885,"repo, nearest 5 years since arrival",0.416113,0.00,-0.079335,-133.113,inf,
+earnings,"CPS total personal income, common age",a(G2->G3+),0.000885,"repo, nearest 5 years since arrival",0.416113,0.50,-0.024345,-40.847,inf,
+earnings,"CPS total personal income, common age",a(G2->G3+),0.000885,"repo, nearest 5 years since arrival",0.416113,0.90,-0.015661,-26.276,inf,
+earnings,"CPS wage and salary, common age",a(G1->G2),0.019454,paper Mexico row,0.239000,0.00,0.069682,116.916,71.5,3.581873
+earnings,"CPS wage and salary, common age",a(G1->G2),0.019454,paper Mexico row,0.239000,0.50,0.014126,23.702,352.7,0.726143
+earnings,"CPS wage and salary, common age",a(G1->G2),0.019454,paper Mexico row,0.239000,0.90,0.008625,14.472,577.6,0.443360
+earnings,"CPS wage and salary, common age",a(G1->G2),0.019454,repo maximum,0.664480,0.00,-0.028297,-47.478,inf,
+earnings,"CPS wage and salary, common age",a(G1->G2),0.019454,repo maximum,0.664480,0.50,-0.011719,-19.663,inf,
+earnings,"CPS wage and salary, common age",a(G1->G2),0.019454,repo maximum,0.664480,0.90,-0.007980,-13.389,inf,
+earnings,"CPS wage and salary, common age",a(G1->G2),0.019454,repo minimum,0.347107,0.00,0.022025,36.955,226.2,1.132157
+earnings,"CPS wage and salary, common age",a(G1->G2),0.019454,repo minimum,0.347107,0.50,0.005940,9.967,838.7,0.305338
+earnings,"CPS wage and salary, common age",a(G1->G2),0.019454,repo minimum,0.347107,0.90,0.003749,6.291,1328.8,0.192734
+earnings,"CPS wage and salary, common age",a(G1->G2),0.019454,"repo, nearest 5 years since arrival",0.416113,0.00,0.004553,7.639,1094.3,0.234035
+earnings,"CPS wage and salary, common age",a(G1->G2),0.019454,"repo, nearest 5 years since arrival",0.416113,0.50,0.001397,2.344,3566.0,0.071816
+earnings,"CPS wage and salary, common age",a(G1->G2),0.019454,"repo, nearest 5 years since arrival",0.416113,0.90,0.000899,1.508,5543.4,0.046198
+earnings,"CPS wage and salary, common age",a(G1->G3+),0.011523,paper Mexico row,0.239000,0.00,0.007301,12.249,682.4,0.633569
+earnings,"CPS wage and salary, common age",a(G1->G3+),0.011523,paper Mexico row,0.239000,0.50,0.001480,2.483,3366.2,0.128442
+earnings,"CPS wage and salary, common age",a(G1->G3+),0.011523,paper Mexico row,0.239000,0.90,0.000904,1.516,5513.3,0.078422
+earnings,"CPS wage and salary, common age",a(G1->G3+),0.011523,repo maximum,0.664480,0.00,-0.050734,-85.124,inf,
+earnings,"CPS wage and salary, common age",a(G1->G3+),0.011523,repo maximum,0.664480,0.50,-0.021012,-35.255,inf,
+earnings,"CPS wage and salary, common age",a(G1->G3+),0.011523,repo maximum,0.664480,0.90,-0.014307,-24.005,inf,
+earnings,"CPS wage and salary, common age",a(G1->G3+),0.011523,repo minimum,0.347107,0.00,-0.020927,-35.113,inf,
+earnings,"CPS wage and salary, common age",a(G1->G3+),0.011523,repo minimum,0.347107,0.50,-0.005644,-9.470,inf,
+earnings,"CPS wage and salary, common age",a(G1->G3+),0.011523,repo minimum,0.347107,0.90,-0.003563,-5.978,inf,
+earnings,"CPS wage and salary, common age",a(G1->G3+),0.011523,"repo, nearest 5 years since arrival",0.416113,0.00,-0.031277,-52.477,inf,
+earnings,"CPS wage and salary, common age",a(G1->G3+),0.011523,"repo, nearest 5 years since arrival",0.416113,0.50,-0.009597,-16.103,inf,
+earnings,"CPS wage and salary, common age",a(G1->G3+),0.011523,"repo, nearest 5 years since arrival",0.416113,0.90,-0.006174,-10.359,inf,
+earnings,"CPS wage and salary, common age",a(G2->G3+),0.003593,paper Mexico row,0.239000,0.00,-0.055073,-92.404,inf,
+earnings,"CPS wage and salary, common age",a(G2->G3+),0.003593,paper Mexico row,0.239000,0.50,-0.011165,-18.733,inf,
+earnings,"CPS wage and salary, common age",a(G2->G3+),0.003593,paper Mexico row,0.239000,0.90,-0.006817,-11.438,inf,
+earnings,"CPS wage and salary, common age",a(G2->G3+),0.003593,repo maximum,0.664480,0.00,-0.073169,-122.766,inf,
+earnings,"CPS wage and salary, common age",a(G2->G3+),0.003593,repo maximum,0.664480,0.50,-0.030303,-50.845,inf,
+earnings,"CPS wage and salary, common age",a(G2->G3+),0.003593,repo maximum,0.664480,0.90,-0.020633,-34.620,inf,
+earnings,"CPS wage and salary, common age",a(G2->G3+),0.003593,repo minimum,0.347107,0.00,-0.063874,-107.172,inf,
+earnings,"CPS wage and salary, common age",a(G2->G3+),0.003593,repo minimum,0.347107,0.50,-0.017227,-28.904,inf,
+earnings,"CPS wage and salary, common age",a(G2->G3+),0.003593,repo minimum,0.347107,0.90,-0.010874,-18.245,inf,
+earnings,"CPS wage and salary, common age",a(G2->G3+),0.003593,"repo, nearest 5 years since arrival",0.416113,0.00,-0.067101,-112.586,inf,
+earnings,"CPS wage and salary, common age",a(G2->G3+),0.003593,"repo, nearest 5 years since arrival",0.416113,0.50,-0.020591,-34.548,inf,
+earnings,"CPS wage and salary, common age",a(G2->G3+),0.003593,"repo, nearest 5 years since arrival",0.416113,0.90,-0.013246,-22.224,inf,
+earnings,"mean earnings, adults 25-64",a(G1->G2),0.016801,paper Mexico row,0.239000,0.00,0.048815,81.904,102.1,2.905460
+earnings,"mean earnings, adults 25-64",a(G1->G2),0.016801,paper Mexico row,0.239000,0.50,0.009896,16.604,503.4,0.589015
+earnings,"mean earnings, adults 25-64",a(G1->G2),0.016801,paper Mexico row,0.239000,0.90,0.006042,10.138,824.6,0.359634
+earnings,"mean earnings, adults 25-64",a(G1->G2),0.016801,repo maximum,0.664480,0.00,-0.035802,-60.071,inf,
+earnings,"mean earnings, adults 25-64",a(G1->G2),0.016801,repo maximum,0.664480,0.50,-0.014828,-24.879,inf,
+earnings,"mean earnings, adults 25-64",a(G1->G2),0.016801,repo maximum,0.664480,0.90,-0.010096,-16.940,inf,
+earnings,"mean earnings, adults 25-64",a(G1->G2),0.016801,repo minimum,0.347107,0.00,0.007657,12.847,650.7,0.455744
+earnings,"mean earnings, adults 25-64",a(G1->G2),0.016801,repo minimum,0.347107,0.50,0.002065,3.465,2412.6,0.122912
+earnings,"mean earnings, adults 25-64",a(G1->G2),0.016801,repo minimum,0.347107,0.90,0.001303,2.187,3822.1,0.077584
+earnings,"mean earnings, adults 25-64",a(G1->G2),0.016801,"repo, nearest 5 years since arrival",0.416113,0.00,-0.007432,-12.470,inf,
+earnings,"mean earnings, adults 25-64",a(G1->G2),0.016801,"repo, nearest 5 years since arrival",0.416113,0.50,-0.002281,-3.827,inf,
+earnings,"mean earnings, adults 25-64",a(G1->G2),0.016801,"repo, nearest 5 years since arrival",0.416113,0.90,-0.001467,-2.462,inf,
+earnings,"mean earnings, adults 25-64",a(G1->G3+),0.010789,paper Mexico row,0.239000,0.00,0.001527,2.563,3261.9,0.141566
+earnings,"mean earnings, adults 25-64",a(G1->G3+),0.010789,paper Mexico row,0.239000,0.50,0.000310,0.520,16090.2,0.028699
+earnings,"mean earnings, adults 25-64",a(G1->G3+),0.010789,paper Mexico row,0.239000,0.90,0.000189,0.317,26352.8,0.017523
+earnings,"mean earnings, adults 25-64",a(G1->G3+),0.010789,repo maximum,0.664480,0.00,-0.052811,-88.608,inf,
+earnings,"mean earnings, adults 25-64",a(G1->G3+),0.010789,repo maximum,0.664480,0.50,-0.021872,-36.698,inf,
+earnings,"mean earnings, adults 25-64",a(G1->G3+),0.010789,repo maximum,0.664480,0.90,-0.014892,-24.987,inf,
+earnings,"mean earnings, adults 25-64",a(G1->G3+),0.010789,repo minimum,0.347107,0.00,-0.024903,-41.783,inf,
+earnings,"mean earnings, adults 25-64",a(G1->G3+),0.010789,repo minimum,0.347107,0.50,-0.006716,-11.269,inf,
+earnings,"mean earnings, adults 25-64",a(G1->G3+),0.010789,repo minimum,0.347107,0.90,-0.004239,-7.113,inf,
+earnings,"mean earnings, adults 25-64",a(G1->G3+),0.010789,"repo, nearest 5 years since arrival",0.416113,0.00,-0.034592,-58.041,inf,
+earnings,"mean earnings, adults 25-64",a(G1->G3+),0.010789,"repo, nearest 5 years since arrival",0.416113,0.50,-0.010615,-17.810,inf,
+earnings,"mean earnings, adults 25-64",a(G1->G3+),0.010789,"repo, nearest 5 years since arrival",0.416113,0.90,-0.006829,-11.457,inf,
+earnings,"mean earnings, adults 25-64",a(G2->G3+),0.004776,paper Mexico row,0.239000,0.00,-0.045768,-76.792,inf,
+earnings,"mean earnings, adults 25-64",a(G2->G3+),0.004776,paper Mexico row,0.239000,0.50,-0.009278,-15.568,inf,
+earnings,"mean earnings, adults 25-64",a(G2->G3+),0.004776,paper Mexico row,0.239000,0.90,-0.005665,-9.505,inf,
+earnings,"mean earnings, adults 25-64",a(G2->G3+),0.004776,repo maximum,0.664480,0.00,-0.069822,-117.151,inf,
+earnings,"mean earnings, adults 25-64",a(G2->G3+),0.004776,repo maximum,0.664480,0.50,-0.028917,-48.519,inf,
+earnings,"mean earnings, adults 25-64",a(G2->G3+),0.004776,repo maximum,0.664480,0.90,-0.019689,-33.036,inf,
+earnings,"mean earnings, adults 25-64",a(G2->G3+),0.004776,repo minimum,0.347107,0.00,-0.057468,-96.422,inf,
+earnings,"mean earnings, adults 25-64",a(G2->G3+),0.004776,repo minimum,0.347107,0.50,-0.015499,-26.005,inf,
+earnings,"mean earnings, adults 25-64",a(G2->G3+),0.004776,repo minimum,0.347107,0.90,-0.009783,-16.415,inf,
+earnings,"mean earnings, adults 25-64",a(G2->G3+),0.004776,"repo, nearest 5 years since arrival",0.416113,0.00,-0.061757,-103.619,inf,
+earnings,"mean earnings, adults 25-64",a(G2->G3+),0.004776,"repo, nearest 5 years since arrival",0.416113,0.50,-0.018951,-31.797,inf,
+earnings,"mean earnings, adults 25-64",a(G2->G3+),0.004776,"repo, nearest 5 years since arrival",0.416113,0.90,-0.012191,-20.454,inf,
+earnings,"median earnings, workers 25-64",a(G1->G2),0.018060,paper Mexico row,0.239000,0.00,0.058717,98.519,84.8,3.251234
+earnings,"median earnings, workers 25-64",a(G1->G2),0.018060,paper Mexico row,0.239000,0.50,0.011904,19.972,418.5,0.659113
+earnings,"median earnings, workers 25-64",a(G1->G2),0.018060,paper Mexico row,0.239000,0.90,0.007268,12.195,685.5,0.402433
+earnings,"median earnings, workers 25-64",a(G1->G2),0.018060,repo maximum,0.664480,0.00,-0.032241,-54.095,inf,
+earnings,"median earnings, workers 25-64",a(G1->G2),0.018060,repo maximum,0.664480,0.50,-0.013353,-22.404,inf,
+earnings,"median earnings, workers 25-64",a(G1->G2),0.018060,repo maximum,0.664480,0.90,-0.009092,-15.255,inf,
+earnings,"median earnings, workers 25-64",a(G1->G2),0.018060,repo minimum,0.347107,0.00,0.014475,24.288,344.2,0.801517
+earnings,"median earnings, workers 25-64",a(G1->G2),0.018060,repo minimum,0.347107,0.50,0.003904,6.550,1276.2,0.216166
+earnings,"median earnings, workers 25-64",a(G1->G2),0.018060,repo minimum,0.347107,0.90,0.002464,4.135,2021.8,0.136447
+earnings,"median earnings, workers 25-64",a(G1->G2),0.018060,"repo, nearest 5 years since arrival",0.416113,0.00,-0.001745,-2.927,inf,
+earnings,"median earnings, workers 25-64",a(G1->G2),0.018060,"repo, nearest 5 years since arrival",0.416113,0.50,-0.000535,-0.898,inf,
+earnings,"median earnings, workers 25-64",a(G1->G2),0.018060,"repo, nearest 5 years since arrival",0.416113,0.90,-0.000344,-0.578,inf,
+earnings,"median earnings, workers 25-64",a(G1->G3+),0.013331,paper Mexico row,0.239000,0.00,0.021521,36.110,231.5,1.614388
+earnings,"median earnings, workers 25-64",a(G1->G3+),0.013331,paper Mexico row,0.239000,0.50,0.004363,7.320,1141.9,0.327280
+earnings,"median earnings, workers 25-64",a(G1->G3+),0.013331,paper Mexico row,0.239000,0.90,0.002664,4.470,1870.2,0.199827
+earnings,"median earnings, workers 25-64",a(G1->G3+),0.013331,repo maximum,0.664480,0.00,-0.045619,-76.542,inf,
+earnings,"median earnings, workers 25-64",a(G1->G3+),0.013331,repo maximum,0.664480,0.50,-0.018894,-31.701,inf,
+earnings,"median earnings, workers 25-64",a(G1->G3+),0.013331,repo maximum,0.664480,0.90,-0.012864,-21.585,inf,
+earnings,"median earnings, workers 25-64",a(G1->G3+),0.013331,repo minimum,0.347107,0.00,-0.011136,-18.684,inf,
+earnings,"median earnings, workers 25-64",a(G1->G3+),0.013331,repo minimum,0.347107,0.50,-0.003003,-5.039,inf,
+earnings,"median earnings, workers 25-64",a(G1->G3+),0.013331,repo minimum,0.347107,0.90,-0.001896,-3.181,inf,
+earnings,"median earnings, workers 25-64",a(G1->G3+),0.013331,"repo, nearest 5 years since arrival",0.416113,0.00,-0.023109,-38.773,inf,
+earnings,"median earnings, workers 25-64",a(G1->G3+),0.013331,"repo, nearest 5 years since arrival",0.416113,0.50,-0.007091,-11.898,inf,
+earnings,"median earnings, workers 25-64",a(G1->G3+),0.013331,"repo, nearest 5 years since arrival",0.416113,0.90,-0.004562,-7.654,inf,
+earnings,"median earnings, workers 25-64",a(G2->G3+),0.008602,paper Mexico row,0.239000,0.00,-0.015674,-26.299,inf,
+earnings,"median earnings, workers 25-64",a(G2->G3+),0.008602,paper Mexico row,0.239000,0.50,-0.003178,-5.332,inf,
+earnings,"median earnings, workers 25-64",a(G2->G3+),0.008602,paper Mexico row,0.239000,0.90,-0.001940,-3.255,inf,
+earnings,"median earnings, workers 25-64",a(G2->G3+),0.008602,repo maximum,0.664480,0.00,-0.058998,-98.990,inf,
+earnings,"median earnings, workers 25-64",a(G2->G3+),0.008602,repo maximum,0.664480,0.50,-0.024435,-40.998,inf,
+earnings,"median earnings, workers 25-64",a(G2->G3+),0.008602,repo maximum,0.664480,0.90,-0.016637,-27.915,inf,
+earnings,"median earnings, workers 25-64",a(G2->G3+),0.008602,repo minimum,0.347107,0.00,-0.036747,-61.656,inf,
+earnings,"median earnings, workers 25-64",a(G2->G3+),0.008602,repo minimum,0.347107,0.50,-0.009910,-16.628,inf,
+earnings,"median earnings, workers 25-64",a(G2->G3+),0.008602,repo minimum,0.347107,0.90,-0.006256,-10.496,inf,
+earnings,"median earnings, workers 25-64",a(G2->G3+),0.008602,"repo, nearest 5 years since arrival",0.416113,0.00,-0.044473,-74.618,inf,
+earnings,"median earnings, workers 25-64",a(G2->G3+),0.008602,"repo, nearest 5 years since arrival",0.416113,0.50,-0.013647,-22.897,inf,
+earnings,"median earnings, workers 25-64",a(G2->G3+),0.008602,"repo, nearest 5 years since arrival",0.416113,0.90,-0.008779,-14.730,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G2),0.003413,paper Mexico row,0.239000,0.00,-0.056488,-94.779,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G2),0.003413,paper Mexico row,0.239000,0.50,-0.011452,-19.214,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G2),0.003413,paper Mexico row,0.239000,0.90,-0.006992,-11.732,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G2),0.003413,repo maximum,0.664480,0.00,-0.073678,-123.620,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G2),0.003413,repo maximum,0.664480,0.50,-0.030514,-51.199,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G2),0.003413,repo maximum,0.664480,0.90,-0.020777,-34.860,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G2),0.003413,repo minimum,0.347107,0.00,-0.064849,-108.808,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G2),0.003413,repo minimum,0.347107,0.50,-0.017490,-29.345,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G2),0.003413,repo minimum,0.347107,0.90,-0.011040,-18.523,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G2),0.003413,"repo, nearest 5 years since arrival",0.416113,0.00,-0.067915,-113.951,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G2),0.003413,"repo, nearest 5 years since arrival",0.416113,0.50,-0.020840,-34.967,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G2),0.003413,"repo, nearest 5 years since arrival",0.416113,0.90,-0.013406,-22.494,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G3+),0.006040,paper Mexico row,0.239000,0.00,-0.035826,-60.110,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G3+),0.006040,paper Mexico row,0.239000,0.50,-0.007263,-12.186,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G3+),0.006040,paper Mexico row,0.239000,0.90,-0.004434,-7.440,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G3+),0.006040,repo maximum,0.664480,0.00,-0.066246,-111.151,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G3+),0.006040,repo maximum,0.664480,0.50,-0.027436,-46.034,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G3+),0.006040,repo maximum,0.664480,0.90,-0.018681,-31.344,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G3+),0.006040,repo minimum,0.347107,0.00,-0.050622,-84.936,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G3+),0.006040,repo minimum,0.347107,0.50,-0.013653,-22.907,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G3+),0.006040,repo minimum,0.347107,0.90,-0.008618,-14.459,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G3+),0.006040,"repo, nearest 5 years since arrival",0.416113,0.00,-0.056047,-94.038,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G3+),0.006040,"repo, nearest 5 years since arrival",0.416113,0.50,-0.017198,-28.857,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G1->G3+),0.006040,"repo, nearest 5 years since arrival",0.416113,0.90,-0.011064,-18.563,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G2->G3+),0.008667,paper Mexico row,0.239000,0.00,-0.015163,-25.442,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G2->G3+),0.008667,paper Mexico row,0.239000,0.50,-0.003074,-5.158,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G2->G3+),0.008667,paper Mexico row,0.239000,0.90,-0.001877,-3.149,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G2->G3+),0.008667,repo maximum,0.664480,0.00,-0.058814,-98.681,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G2->G3+),0.008667,repo maximum,0.664480,0.50,-0.024358,-40.870,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G2->G3+),0.008667,repo maximum,0.664480,0.90,-0.016585,-27.828,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G2->G3+),0.008667,repo minimum,0.347107,0.00,-0.036395,-61.065,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G2->G3+),0.008667,repo minimum,0.347107,0.50,-0.009816,-16.469,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G2->G3+),0.008667,repo minimum,0.347107,0.90,-0.006196,-10.396,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G2->G3+),0.008667,"repo, nearest 5 years since arrival",0.416113,0.00,-0.044179,-74.126,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G2->G3+),0.008667,"repo, nearest 5 years since arrival",0.416113,0.50,-0.013557,-22.746,inf,
+fiscal,"ledger balance, common age (all_age_shared)",a(G2->G3+),0.008667,"repo, nearest 5 years since arrival",0.416113,0.90,-0.008721,-14.632,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G2),0.009182,paper Mexico row,0.239000,0.00,-0.011112,-18.645,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G2),0.009182,paper Mexico row,0.239000,0.50,-0.002253,-3.780,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G2),0.009182,paper Mexico row,0.239000,0.90,-0.001375,-2.308,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G2),0.009182,repo maximum,0.664480,0.00,-0.057357,-96.236,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G2),0.009182,repo maximum,0.664480,0.50,-0.023755,-39.857,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G2),0.009182,repo maximum,0.664480,0.90,-0.016174,-27.138,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G2),0.009182,repo minimum,0.347107,0.00,-0.033606,-56.386,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G2),0.009182,repo minimum,0.347107,0.50,-0.009063,-15.207,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G2),0.009182,repo minimum,0.347107,0.90,-0.005721,-9.599,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G2),0.009182,"repo, nearest 5 years since arrival",0.416113,0.00,-0.041852,-70.222,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G2),0.009182,"repo, nearest 5 years since arrival",0.416113,0.50,-0.012843,-21.548,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G2),0.009182,"repo, nearest 5 years since arrival",0.416113,0.90,-0.008262,-13.862,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G3+),0.007069,paper Mexico row,0.239000,0.00,-0.027732,-46.531,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G3+),0.007069,paper Mexico row,0.239000,0.50,-0.005622,-9.433,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G3+),0.007069,paper Mexico row,0.239000,0.90,-0.003433,-5.759,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G3+),0.007069,repo maximum,0.664480,0.00,-0.063335,-106.266,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G3+),0.007069,repo maximum,0.664480,0.50,-0.026231,-44.011,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G3+),0.007069,repo maximum,0.664480,0.90,-0.017860,-29.967,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G3+),0.007069,repo minimum,0.347107,0.00,-0.045049,-75.586,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G3+),0.007069,repo minimum,0.347107,0.50,-0.012150,-20.385,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G3+),0.007069,repo minimum,0.347107,0.90,-0.007669,-12.867,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G3+),0.007069,"repo, nearest 5 years since arrival",0.416113,0.00,-0.051398,-86.238,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G3+),0.007069,"repo, nearest 5 years since arrival",0.416113,0.50,-0.015772,-26.463,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G1->G3+),0.007069,"repo, nearest 5 years since arrival",0.416113,0.90,-0.010146,-17.023,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G2->G3+),0.004956,paper Mexico row,0.239000,0.00,-0.044352,-74.416,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G2->G3+),0.004956,paper Mexico row,0.239000,0.50,-0.008991,-15.086,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G2->G3+),0.004956,paper Mexico row,0.239000,0.90,-0.005490,-9.211,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G2->G3+),0.004956,repo maximum,0.664480,0.00,-0.069313,-116.296,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G2->G3+),0.004956,repo maximum,0.664480,0.50,-0.028706,-48.165,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G2->G3+),0.004956,repo maximum,0.664480,0.90,-0.019546,-32.795,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G2->G3+),0.004956,repo minimum,0.347107,0.00,-0.056493,-94.787,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G2->G3+),0.004956,repo minimum,0.347107,0.50,-0.015236,-25.564,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G2->G3+),0.004956,repo minimum,0.347107,0.90,-0.009617,-16.136,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G2->G3+),0.004956,"repo, nearest 5 years since arrival",0.416113,0.00,-0.060944,-102.255,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G2->G3+),0.004956,"repo, nearest 5 years since arrival",0.416113,0.50,-0.018701,-31.378,inf,
+fiscal,"ledger balance, common age (personal_sources)",a(G2->G3+),0.004956,"repo, nearest 5 years since arrival",0.416113,0.90,-0.012030,-20.185,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G2),-0.006161,paper Mexico row,0.239000,0.00,-0.131793,-221.128,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G2),-0.006161,paper Mexico row,0.239000,0.50,-0.026718,-44.829,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G2),-0.006161,paper Mexico row,0.239000,0.90,-0.016313,-27.371,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G2),-0.006161,repo maximum,0.664480,0.00,-0.100763,-169.066,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G2),-0.006161,repo maximum,0.664480,0.50,-0.041732,-70.020,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G2),-0.006161,repo maximum,0.664480,0.90,-0.028415,-47.676,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G2),-0.006161,repo minimum,0.347107,0.00,-0.116700,-195.805,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G2),-0.006161,repo minimum,0.347107,0.50,-0.031473,-52.808,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G2),-0.006161,repo minimum,0.347107,0.90,-0.019867,-33.333,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G2),-0.006161,"repo, nearest 5 years since arrival",0.416113,0.00,-0.111167,-186.521,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G2),-0.006161,"repo, nearest 5 years since arrival",0.416113,0.50,-0.034112,-57.236,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G2),-0.006161,"repo, nearest 5 years since arrival",0.416113,0.90,-0.021944,-36.819,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G3+),0.001438,paper Mexico row,0.239000,0.00,-0.072023,-120.844,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G3+),0.001438,paper Mexico row,0.239000,0.50,-0.014601,-24.498,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G3+),0.001438,paper Mexico row,0.239000,0.90,-0.008915,-14.958,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G3+),0.001438,repo maximum,0.664480,0.00,-0.079265,-132.995,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G3+),0.001438,repo maximum,0.664480,0.50,-0.032828,-55.081,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G3+),0.001438,repo maximum,0.664480,0.90,-0.022352,-37.504,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G3+),0.001438,repo minimum,0.347107,0.00,-0.075545,-126.754,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G3+),0.001438,repo minimum,0.347107,0.50,-0.020374,-34.185,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G3+),0.001438,repo minimum,0.347107,0.90,-0.012861,-21.578,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G3+),0.001438,"repo, nearest 5 years since arrival",0.416113,0.00,-0.076837,-128.921,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G3+),0.001438,"repo, nearest 5 years since arrival",0.416113,0.50,-0.023578,-39.561,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G1->G3+),0.001438,"repo, nearest 5 years since arrival",0.416113,0.90,-0.015168,-25.449,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G2->G3+),0.009038,paper Mexico row,0.239000,0.00,-0.012245,-20.545,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G2->G3+),0.009038,paper Mexico row,0.239000,0.50,-0.002482,-4.165,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G2->G3+),0.009038,paper Mexico row,0.239000,0.90,-0.001516,-2.543,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G2->G3+),0.009038,repo maximum,0.664480,0.00,-0.057764,-96.920,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G2->G3+),0.009038,repo maximum,0.664480,0.50,-0.023924,-40.140,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G2->G3+),0.009038,repo maximum,0.664480,0.90,-0.016289,-27.331,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G2->G3+),0.009038,repo minimum,0.347107,0.00,-0.034386,-57.694,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G2->G3+),0.009038,repo minimum,0.347107,0.50,-0.009274,-15.560,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G2->G3+),0.009038,repo minimum,0.347107,0.90,-0.005854,-9.822,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G2->G3+),0.009038,"repo, nearest 5 years since arrival",0.416113,0.00,-0.042503,-71.314,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G2->G3+),0.009038,"repo, nearest 5 years since arrival",0.416113,0.50,-0.013042,-21.883,inf,
+fiscal,"ledger balance, common age and place (all_age_shared)",a(G2->G3+),0.009038,"repo, nearest 5 years since arrival",0.416113,0.90,-0.008390,-14.077,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G2),-0.005358,paper Mexico row,0.239000,0.00,-0.125477,-210.531,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G2),-0.005358,paper Mexico row,0.239000,0.50,-0.025437,-42.680,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G2),-0.005358,paper Mexico row,0.239000,0.90,-0.015531,-26.059,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G2),-0.005358,repo maximum,0.664480,0.00,-0.098491,-165.254,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G2),-0.005358,repo maximum,0.664480,0.50,-0.040791,-68.442,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G2),-0.005358,repo maximum,0.664480,0.90,-0.027774,-46.601,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G2),-0.005358,repo minimum,0.347107,0.00,-0.112351,-188.508,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G2),-0.005358,repo minimum,0.347107,0.50,-0.030301,-50.840,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G2),-0.005358,repo minimum,0.347107,0.90,-0.019126,-32.091,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G2),-0.005358,"repo, nearest 5 years since arrival",0.416113,0.00,-0.107539,-180.434,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G2),-0.005358,"repo, nearest 5 years since arrival",0.416113,0.50,-0.032999,-55.368,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G2),-0.005358,"repo, nearest 5 years since arrival",0.416113,0.90,-0.021228,-35.618,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G3+),0.002964,paper Mexico row,0.239000,0.00,-0.060020,-100.705,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G3+),0.002964,paper Mexico row,0.239000,0.50,-0.012168,-20.416,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G3+),0.002964,paper Mexico row,0.239000,0.90,-0.007429,-12.465,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G3+),0.002964,repo maximum,0.664480,0.00,-0.074948,-125.752,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G3+),0.002964,repo maximum,0.664480,0.50,-0.031040,-52.081,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G3+),0.002964,repo maximum,0.664480,0.90,-0.021135,-35.461,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G3+),0.002964,repo minimum,0.347107,0.00,-0.067281,-112.888,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G3+),0.002964,repo minimum,0.347107,0.50,-0.018145,-30.445,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G3+),0.002964,repo minimum,0.347107,0.90,-0.011454,-19.218,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G3+),0.002964,"repo, nearest 5 years since arrival",0.416113,0.00,-0.069943,-117.354,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G3+),0.002964,"repo, nearest 5 years since arrival",0.416113,0.50,-0.021463,-36.011,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G1->G3+),0.002964,"repo, nearest 5 years since arrival",0.416113,0.90,-0.013807,-23.166,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G2->G3+),0.011285,paper Mexico row,0.239000,0.00,0.005429,9.108,917.7,0.481049
+fiscal,"ledger balance, common age and place (personal_sources)",a(G2->G3+),0.011285,paper Mexico row,0.239000,0.50,0.001101,1.847,4527.0,0.097522
+fiscal,"ledger balance, common age and place (personal_sources)",a(G2->G3+),0.011285,paper Mexico row,0.239000,0.90,0.000672,1.127,7414.4,0.059544
+fiscal,"ledger balance, common age and place (personal_sources)",a(G2->G3+),0.011285,repo maximum,0.664480,0.00,-0.051407,-86.254,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G2->G3+),0.011285,repo maximum,0.664480,0.50,-0.021291,-35.723,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G2->G3+),0.011285,repo maximum,0.664480,0.90,-0.014497,-24.323,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G2->G3+),0.011285,repo minimum,0.347107,0.00,-0.022216,-37.276,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G2->G3+),0.011285,repo minimum,0.347107,0.50,-0.005992,-10.053,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G2->G3+),0.011285,repo minimum,0.347107,0.90,-0.003782,-6.346,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G2->G3+),0.011285,"repo, nearest 5 years since arrival",0.416113,0.00,-0.032352,-54.281,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G2->G3+),0.011285,"repo, nearest 5 years since arrival",0.416113,0.50,-0.009927,-16.657,inf,
+fiscal,"ledger balance, common age and place (personal_sources)",a(G2->G3+),0.011285,"repo, nearest 5 years since arrival",0.416113,0.90,-0.006386,-10.715,inf,
+norms,All-13 confidence index (scale pts),a(G1->G2),0.064545,paper Mexico row,0.239000,0.00,0.424344,711.987,11.7,6.574393
+norms,All-13 confidence index (scale pts),a(G1->G2),0.064545,paper Mexico row,0.239000,0.50,0.086026,144.339,57.9,1.332807
+norms,All-13 confidence index (scale pts),a(G1->G2),0.064545,paper Mexico row,0.239000,0.90,0.052525,88.129,94.9,0.813770
+norms,All-13 confidence index (scale pts),a(G1->G2),0.064545,repo maximum,0.664480,0.00,0.099268,166.557,50.2,1.537966
+norms,All-13 confidence index (scale pts),a(G1->G2),0.064545,repo maximum,0.664480,0.50,0.041113,68.981,121.2,0.636964
+norms,All-13 confidence index (scale pts),a(G1->G2),0.064545,repo maximum,0.664480,0.90,0.027993,46.968,178.0,0.433700
+norms,All-13 confidence index (scale pts),a(G1->G2),0.064545,repo minimum,0.347107,0.00,0.266227,446.690,18.7,4.124677
+norms,All-13 confidence index (scale pts),a(G1->G2),0.064545,repo minimum,0.347107,0.50,0.071800,120.470,69.4,1.112408
+norms,All-13 confidence index (scale pts),a(G1->G2),0.064545,repo minimum,0.347107,0.90,0.045322,76.043,109.9,0.702170
+norms,All-13 confidence index (scale pts),a(G1->G2),0.064545,"repo, nearest 5 years since arrival",0.416113,0.00,0.208258,349.426,23.9,3.226555
+norms,All-13 confidence index (scale pts),a(G1->G2),0.064545,"repo, nearest 5 years since arrival",0.416113,0.50,0.063906,107.225,78.0,0.990099
+norms,All-13 confidence index (scale pts),a(G1->G2),0.064545,"repo, nearest 5 years since arrival",0.416113,0.90,0.041110,68.976,121.2,0.636919
+norms,All-13 confidence index (scale pts),a(G1->G3+),0.025282,paper Mexico row,0.239000,0.00,0.115522,193.829,43.1,4.569330
+norms,All-13 confidence index (scale pts),a(G1->G3+),0.025282,paper Mexico row,0.239000,0.50,0.023419,39.294,212.7,0.926327
+norms,All-13 confidence index (scale pts),a(G1->G3+),0.025282,paper Mexico row,0.239000,0.90,0.014299,23.992,348.4,0.565586
+norms,All-13 confidence index (scale pts),a(G1->G3+),0.025282,repo maximum,0.664480,0.00,-0.011809,-19.814,inf,
+norms,All-13 confidence index (scale pts),a(G1->G3+),0.025282,repo maximum,0.664480,0.50,-0.004891,-8.206,inf,
+norms,All-13 confidence index (scale pts),a(G1->G3+),0.025282,repo maximum,0.664480,0.90,-0.003330,-5.587,inf,
+norms,All-13 confidence index (scale pts),a(G1->G3+),0.025282,repo minimum,0.347107,0.00,0.053588,89.913,93.0,2.119613
+norms,All-13 confidence index (scale pts),a(G1->G3+),0.025282,repo minimum,0.347107,0.50,0.014452,24.249,344.7,0.571651
+norms,All-13 confidence index (scale pts),a(G1->G3+),0.025282,repo minimum,0.347107,0.90,0.009123,15.306,546.1,0.360835
+norms,All-13 confidence index (scale pts),a(G1->G3+),0.025282,"repo, nearest 5 years since arrival",0.416113,0.00,0.030882,51.815,161.3,1.221491
+norms,All-13 confidence index (scale pts),a(G1->G3+),0.025282,"repo, nearest 5 years since arrival",0.416113,0.50,0.009476,15.900,525.7,0.374826
+norms,All-13 confidence index (scale pts),a(G1->G3+),0.025282,"repo, nearest 5 years since arrival",0.416113,0.90,0.006096,10.228,817.3,0.241121
+norms,All-13 confidence index (scale pts),a(G2->G3+),-0.013982,paper Mexico row,0.239000,0.00,-0.193309,-324.343,inf,
+norms,All-13 confidence index (scale pts),a(G2->G3+),-0.013982,paper Mexico row,0.239000,0.50,-0.039189,-65.753,inf,
+norms,All-13 confidence index (scale pts),a(G2->G3+),-0.013982,paper Mexico row,0.239000,0.90,-0.023927,-40.147,inf,
+norms,All-13 confidence index (scale pts),a(G2->G3+),-0.013982,repo maximum,0.664480,0.00,-0.122889,-206.190,inf,
+norms,All-13 confidence index (scale pts),a(G2->G3+),-0.013982,repo maximum,0.664480,0.50,-0.050896,-85.396,inf,
+norms,All-13 confidence index (scale pts),a(G2->G3+),-0.013982,repo maximum,0.664480,0.90,-0.034654,-58.145,inf,
+norms,All-13 confidence index (scale pts),a(G2->G3+),-0.013982,repo minimum,0.347107,0.00,-0.159057,-266.873,inf,
+norms,All-13 confidence index (scale pts),a(G2->G3+),-0.013982,repo minimum,0.347107,0.50,-0.042897,-71.975,inf,
+norms,All-13 confidence index (scale pts),a(G2->G3+),-0.013982,repo minimum,0.347107,0.90,-0.027077,-45.432,inf,
+norms,All-13 confidence index (scale pts),a(G2->G3+),-0.013982,"repo, nearest 5 years since arrival",0.416113,0.00,-0.146499,-245.804,inf,
+norms,All-13 confidence index (scale pts),a(G2->G3+),-0.013982,"repo, nearest 5 years since arrival",0.416113,0.50,-0.044955,-75.427,inf,
+norms,All-13 confidence index (scale pts),a(G2->G3+),-0.013982,"repo, nearest 5 years since arrival",0.416113,0.90,-0.028919,-48.521,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G2),0.016840,paper Mexico row,0.239000,0.00,0.049121,82.418,101.4,2.916947
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G2),0.016840,paper Mexico row,0.239000,0.50,0.009958,16.708,500.3,0.591344
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G2),0.016840,paper Mexico row,0.239000,0.90,0.006080,10.202,819.4,0.361056
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G2),0.016840,repo maximum,0.664480,0.00,-0.035692,-59.886,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G2),0.016840,repo maximum,0.664480,0.50,-0.014782,-24.802,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G2),0.016840,repo maximum,0.664480,0.90,-0.010065,-16.888,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G2),0.016840,repo minimum,0.347107,0.00,0.007868,13.202,633.2,0.467231
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G2),0.016840,repo minimum,0.347107,0.50,0.002122,3.560,2347.8,0.126010
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G2),0.016840,repo minimum,0.347107,0.90,0.001339,2.247,3719.5,0.079540
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G2),0.016840,"repo, nearest 5 years since arrival",0.416113,0.00,-0.007256,-12.175,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G2),0.016840,"repo, nearest 5 years since arrival",0.416113,0.50,-0.002227,-3.736,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G2),0.016840,"repo, nearest 5 years since arrival",0.416113,0.90,-0.001432,-2.403,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G3+),0.009747,paper Mexico row,0.239000,0.00,-0.006668,-11.189,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G3+),0.009747,paper Mexico row,0.239000,0.50,-0.001352,-2.268,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G3+),0.009747,paper Mexico row,0.239000,0.90,-0.000825,-1.385,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G3+),0.009747,repo maximum,0.664480,0.00,-0.055759,-93.555,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G3+),0.009747,repo maximum,0.664480,0.50,-0.023093,-38.747,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G3+),0.009747,repo maximum,0.664480,0.90,-0.015724,-26.382,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G3+),0.009747,repo minimum,0.347107,0.00,-0.030546,-51.251,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G3+),0.009747,repo minimum,0.347107,0.50,-0.008238,-13.822,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G3+),0.009747,repo minimum,0.347107,0.90,-0.005200,-8.725,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G3+),0.009747,"repo, nearest 5 years since arrival",0.416113,0.00,-0.039300,-65.939,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G3+),0.009747,"repo, nearest 5 years since arrival",0.416113,0.50,-0.012060,-20.234,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G1->G3+),0.009747,"repo, nearest 5 years since arrival",0.416113,0.90,-0.007758,-13.016,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G2->G3+),0.002654,paper Mexico row,0.239000,0.00,-0.062458,-104.796,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G2->G3+),0.002654,paper Mexico row,0.239000,0.50,-0.012662,-21.245,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G2->G3+),0.002654,paper Mexico row,0.239000,0.90,-0.007731,-12.971,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G2->G3+),0.002654,repo maximum,0.664480,0.00,-0.075825,-127.223,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G2->G3+),0.002654,repo maximum,0.664480,0.50,-0.031404,-52.691,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G2->G3+),0.002654,repo maximum,0.664480,0.90,-0.021382,-35.876,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G2->G3+),0.002654,repo minimum,0.347107,0.00,-0.068960,-115.705,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G2->G3+),0.002654,repo minimum,0.347107,0.50,-0.018598,-31.205,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G2->G3+),0.002654,repo minimum,0.347107,0.90,-0.011739,-19.697,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G2->G3+),0.002654,"repo, nearest 5 years since arrival",0.416113,0.00,-0.071344,-119.704,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G2->G3+),0.002654,"repo, nearest 5 years since arrival",0.416113,0.50,-0.021892,-36.732,inf,
+norms,"Anti-American Muslim clergyman, 3 items",a(G2->G3+),0.002654,"repo, nearest 5 years since arrival",0.416113,0.90,-0.014083,-23.629,inf,
+norms,Death penalty (pp),a(G1->G2),0.044738,paper Mexico row,0.239000,0.00,0.268553,450.592,18.6,6.002785
+norms,Death penalty (pp),a(G1->G2),0.044738,paper Mexico row,0.239000,0.50,0.054443,91.347,91.5,1.216927
+norms,Death penalty (pp),a(G1->G2),0.044738,paper Mexico row,0.239000,0.90,0.033241,55.774,149.9,0.743017
+norms,Death penalty (pp),a(G1->G2),0.044738,repo maximum,0.664480,0.00,0.043233,72.538,115.2,0.966358
+norms,Death penalty (pp),a(G1->G2),0.044738,repo maximum,0.664480,0.50,0.017905,30.043,278.2,0.400226
+norms,Death penalty (pp),a(G1->G2),0.044738,repo maximum,0.664480,0.90,0.012192,20.456,408.7,0.272509
+norms,Death penalty (pp),a(G1->G2),0.044738,repo minimum,0.347107,0.00,0.158957,266.707,31.3,3.553069
+norms,Death penalty (pp),a(G1->G2),0.044738,repo minimum,0.347107,0.50,0.042870,71.930,116.2,0.958247
+norms,Death penalty (pp),a(G1->G2),0.044738,repo minimum,0.347107,0.90,0.027060,45.403,184.1,0.604861
+norms,Death penalty (pp),a(G1->G2),0.044738,"repo, nearest 5 years since arrival",0.416113,0.00,0.118777,199.290,41.9,2.654947
+norms,Death penalty (pp),a(G1->G2),0.044738,"repo, nearest 5 years since arrival",0.416113,0.50,0.036448,61.154,136.7,0.814695
+norms,Death penalty (pp),a(G1->G2),0.044738,"repo, nearest 5 years since arrival",0.416113,0.90,0.023446,39.340,212.5,0.524084
+norms,Death penalty (pp),a(G1->G3+),0.037216,paper Mexico row,0.239000,0.00,0.209388,351.323,23.8,5.626302
+norms,Death penalty (pp),a(G1->G3+),0.037216,paper Mexico row,0.239000,0.50,0.042449,71.223,117.4,1.140604
+norms,Death penalty (pp),a(G1->G3+),0.037216,paper Mexico row,0.239000,0.90,0.025918,43.486,192.2,0.696416
+norms,Death penalty (pp),a(G1->G3+),0.037216,repo maximum,0.664480,0.00,0.021953,36.834,226.9,0.589874
+norms,Death penalty (pp),a(G1->G3+),0.037216,repo maximum,0.664480,0.50,0.009092,15.255,548.0,0.244302
+norms,Death penalty (pp),a(G1->G3+),0.037216,repo maximum,0.664480,0.90,0.006191,10.387,804.8,0.166342
+norms,Death penalty (pp),a(G1->G3+),0.037216,repo minimum,0.347107,0.00,0.118220,198.355,42.1,3.176586
+norms,Death penalty (pp),a(G1->G3+),0.037216,repo minimum,0.347107,0.50,0.031883,53.496,156.3,0.856711
+norms,Death penalty (pp),a(G1->G3+),0.037216,repo minimum,0.347107,0.90,0.020125,33.767,247.6,0.540770
+norms,Death penalty (pp),a(G1->G3+),0.037216,"repo, nearest 5 years since arrival",0.416113,0.00,0.084795,142.274,58.8,2.278463
+norms,Death penalty (pp),a(G1->G3+),0.037216,"repo, nearest 5 years since arrival",0.416113,0.50,0.026020,43.658,191.5,0.699168
+norms,Death penalty (pp),a(G1->G3+),0.037216,"repo, nearest 5 years since arrival",0.416113,0.90,0.016739,28.085,297.6,0.449767
+norms,Death penalty (pp),a(G2->G3+),0.029694,paper Mexico row,0.239000,0.00,0.150224,252.054,33.2,5.059079
+norms,Death penalty (pp),a(G2->G3+),0.029694,paper Mexico row,0.239000,0.50,0.030455,51.098,163.6,1.025612
+norms,Death penalty (pp),a(G2->G3+),0.029694,paper Mexico row,0.239000,0.90,0.018595,31.199,267.9,0.626206
+norms,Death penalty (pp),a(G2->G3+),0.029694,repo maximum,0.664480,0.00,0.000673,1.129,7407.1,0.022652
+norms,Death penalty (pp),a(G2->G3+),0.029694,repo maximum,0.664480,0.50,0.000279,0.467,17884.5,0.009381
+norms,Death penalty (pp),a(G2->G3+),0.029694,repo maximum,0.664480,0.90,0.000190,0.318,26266.5,0.006388
+norms,Death penalty (pp),a(G2->G3+),0.029694,repo minimum,0.347107,0.00,0.077482,130.004,64.3,2.609363
+norms,Death penalty (pp),a(G2->G3+),0.029694,repo minimum,0.347107,0.50,0.020897,35.062,238.4,0.703734
+norms,Death penalty (pp),a(G2->G3+),0.029694,repo minimum,0.347107,0.90,0.013190,22.131,377.7,0.444208
+norms,Death penalty (pp),a(G2->G3+),0.029694,"repo, nearest 5 years since arrival",0.416113,0.00,0.050814,85.258,98.0,1.711241
+norms,Death penalty (pp),a(G2->G3+),0.029694,"repo, nearest 5 years since arrival",0.416113,0.50,0.015593,26.162,319.5,0.525110
+norms,Death penalty (pp),a(G2->G3+),0.029694,"repo, nearest 5 years since arrival",0.416113,0.90,0.010031,16.830,496.7,0.337797
+norms,Ever approves police striking a citizen (pp),a(G1->G2),0.017588,paper Mexico row,0.239000,0.00,0.055005,92.290,90.6,3.127403
+norms,Ever approves police striking a citizen (pp),a(G1->G2),0.017588,paper Mexico row,0.239000,0.50,0.011151,18.710,446.8,0.634009
+norms,Ever approves police striking a citizen (pp),a(G1->G2),0.017588,paper Mexico row,0.239000,0.90,0.006808,11.424,731.8,0.387106
+norms,Ever approves police striking a citizen (pp),a(G1->G2),0.017588,repo maximum,0.664480,0.00,-0.033576,-56.335,inf,
+norms,Ever approves police striking a citizen (pp),a(G1->G2),0.017588,repo maximum,0.664480,0.50,-0.013906,-23.332,inf,
+norms,Ever approves police striking a citizen (pp),a(G1->G2),0.017588,repo maximum,0.664480,0.90,-0.009468,-15.886,inf,
+norms,Ever approves police striking a citizen (pp),a(G1->G2),0.017588,repo minimum,0.347107,0.00,0.011919,19.999,418.0,0.677687
+norms,Ever approves police striking a citizen (pp),a(G1->G2),0.017588,repo minimum,0.347107,0.50,0.003215,5.394,1549.9,0.182769
+norms,Ever approves police striking a citizen (pp),a(G1->G2),0.017588,repo minimum,0.347107,0.90,0.002029,3.404,2455.4,0.115367
+norms,Ever approves police striking a citizen (pp),a(G1->G2),0.017588,"repo, nearest 5 years since arrival",0.416113,0.00,-0.003877,-6.505,inf,
+norms,Ever approves police striking a citizen (pp),a(G1->G2),0.017588,"repo, nearest 5 years since arrival",0.416113,0.50,-0.001190,-1.996,inf,
+norms,Ever approves police striking a citizen (pp),a(G1->G2),0.017588,"repo, nearest 5 years since arrival",0.416113,0.90,-0.000765,-1.284,inf,
+norms,Ever approves police striking a citizen (pp),a(G1->G3+),0.027469,paper Mexico row,0.239000,0.00,0.132724,222.691,37.5,4.831759
+norms,Ever approves police striking a citizen (pp),a(G1->G3+),0.027469,paper Mexico row,0.239000,0.50,0.026907,45.145,185.2,0.979528
+norms,Ever approves police striking a citizen (pp),a(G1->G3+),0.027469,paper Mexico row,0.239000,0.90,0.016428,27.564,303.3,0.598069
+norms,Ever approves police striking a citizen (pp),a(G1->G3+),0.027469,repo maximum,0.664480,0.00,-0.005622,-9.433,inf,
+norms,Ever approves police striking a citizen (pp),a(G1->G3+),0.027469,repo maximum,0.664480,0.50,-0.002328,-3.907,inf,
+norms,Ever approves police striking a citizen (pp),a(G1->G3+),0.027469,repo maximum,0.664480,0.90,-0.001585,-2.660,inf,
+norms,Ever approves police striking a citizen (pp),a(G1->G3+),0.027469,repo minimum,0.347107,0.00,0.065432,109.786,76.1,2.382043
+norms,Ever approves police striking a citizen (pp),a(G1->G3+),0.027469,repo minimum,0.347107,0.50,0.017647,29.609,282.3,0.642427
+norms,Ever approves police striking a citizen (pp),a(G1->G3+),0.027469,repo minimum,0.347107,0.90,0.011139,18.690,447.3,0.405510
+norms,Ever approves police striking a citizen (pp),a(G1->G3+),0.027469,"repo, nearest 5 years since arrival",0.416113,0.00,0.040762,68.392,122.2,1.483921
+norms,Ever approves police striking a citizen (pp),a(G1->G3+),0.027469,"repo, nearest 5 years since arrival",0.416113,0.50,0.012508,20.987,398.3,0.455355
+norms,Ever approves police striking a citizen (pp),a(G1->G3+),0.027469,"repo, nearest 5 years since arrival",0.416113,0.90,0.008046,13.501,619.2,0.292925
+norms,Ever approves police striking a citizen (pp),a(G2->G3+),0.037351,paper Mexico row,0.239000,0.00,0.210450,353.105,23.7,5.634395
+norms,Ever approves police striking a citizen (pp),a(G2->G3+),0.037351,paper Mexico row,0.239000,0.50,0.042664,71.584,116.8,1.142244
+norms,Ever approves police striking a citizen (pp),a(G2->G3+),0.037351,paper Mexico row,0.239000,0.90,0.026049,43.707,191.3,0.697418
+norms,Ever approves police striking a citizen (pp),a(G2->G3+),0.037351,repo maximum,0.664480,0.00,0.022335,37.474,223.1,0.597968
+norms,Ever approves police striking a citizen (pp),a(G2->G3+),0.037351,repo maximum,0.664480,0.50,0.009250,15.520,538.6,0.247654
+norms,Ever approves police striking a citizen (pp),a(G2->G3+),0.037351,repo maximum,0.664480,0.90,0.006298,10.568,791.0,0.168624
+norms,Ever approves police striking a citizen (pp),a(G2->G3+),0.037351,repo minimum,0.347107,0.00,0.118951,199.582,41.9,3.184679
+norms,Ever approves police striking a citizen (pp),a(G2->G3+),0.037351,repo minimum,0.347107,0.50,0.032081,53.826,155.3,0.858894
+norms,Ever approves police striking a citizen (pp),a(G2->G3+),0.037351,repo minimum,0.347107,0.90,0.020250,33.976,246.0,0.542148
+norms,Ever approves police striking a citizen (pp),a(G2->G3+),0.037351,"repo, nearest 5 years since arrival",0.416113,0.00,0.085405,143.297,58.3,2.286557
+norms,Ever approves police striking a citizen (pp),a(G2->G3+),0.037351,"repo, nearest 5 years since arrival",0.416113,0.50,0.026207,43.972,190.1,0.701651
+norms,Ever approves police striking a citizen (pp),a(G2->G3+),0.037351,"repo, nearest 5 years since arrival",0.416113,0.90,0.016859,28.287,295.5,0.451364
+norms,"Generalized trust (GSS, adjusted)",a(G1->G2),-0.001453,paper Mexico row,0.239000,0.00,-0.094762,-158.996,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G2),-0.001453,paper Mexico row,0.239000,0.50,-0.019211,-32.233,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G2),-0.001453,paper Mexico row,0.239000,0.90,-0.011730,-19.680,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G2),-0.001453,repo maximum,0.664480,0.00,-0.087444,-146.718,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G2),-0.001453,repo maximum,0.664480,0.50,-0.036216,-60.765,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G2),-0.001453,repo maximum,0.664480,0.90,-0.024659,-41.374,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G2),-0.001453,repo minimum,0.347107,0.00,-0.091202,-153.024,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G2),-0.001453,repo minimum,0.347107,0.50,-0.024597,-41.270,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G2),-0.001453,repo minimum,0.347107,0.90,-0.015526,-26.050,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G2),-0.001453,"repo, nearest 5 years since arrival",0.416113,0.00,-0.089897,-150.835,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G2),-0.001453,"repo, nearest 5 years since arrival",0.416113,0.50,-0.027586,-46.285,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G2),-0.001453,"repo, nearest 5 years since arrival",0.416113,0.90,-0.017746,-29.775,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G3+),0.001003,paper Mexico row,0.239000,0.00,-0.075444,-126.584,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G3+),0.001003,paper Mexico row,0.239000,0.50,-0.015295,-25.662,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G3+),0.001003,paper Mexico row,0.239000,0.90,-0.009338,-15.668,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G3+),0.001003,repo maximum,0.664480,0.00,-0.080496,-135.060,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G3+),0.001003,repo maximum,0.664480,0.50,-0.033338,-55.936,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G3+),0.001003,repo maximum,0.664480,0.90,-0.022699,-38.086,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G3+),0.001003,repo minimum,0.347107,0.00,-0.077901,-130.707,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G3+),0.001003,repo minimum,0.347107,0.50,-0.021010,-35.251,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G3+),0.001003,repo minimum,0.347107,0.90,-0.013262,-22.251,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G3+),0.001003,"repo, nearest 5 years since arrival",0.416113,0.00,-0.078802,-132.218,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G3+),0.001003,"repo, nearest 5 years since arrival",0.416113,0.50,-0.024181,-40.572,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G1->G3+),0.001003,"repo, nearest 5 years since arrival",0.416113,0.90,-0.015555,-26.100,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G2->G3+),0.003459,paper Mexico row,0.239000,0.00,-0.056127,-94.172,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G2->G3+),0.003459,paper Mexico row,0.239000,0.50,-0.011378,-19.091,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G2->G3+),0.003459,paper Mexico row,0.239000,0.90,-0.006947,-11.657,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G2->G3+),0.003459,repo maximum,0.664480,0.00,-0.073548,-123.402,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G2->G3+),0.003459,repo maximum,0.664480,0.50,-0.030460,-51.108,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G2->G3+),0.003459,repo maximum,0.664480,0.90,-0.020740,-34.799,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G2->G3+),0.003459,repo minimum,0.347107,0.00,-0.064600,-108.390,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G2->G3+),0.003459,repo minimum,0.347107,0.50,-0.017422,-29.232,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G2->G3+),0.003459,repo minimum,0.347107,0.90,-0.010997,-18.452,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G2->G3+),0.003459,"repo, nearest 5 years since arrival",0.416113,0.00,-0.067707,-113.602,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G2->G3+),0.003459,"repo, nearest 5 years since arrival",0.416113,0.50,-0.020776,-34.860,inf,
+norms,"Generalized trust (GSS, adjusted)",a(G2->G3+),0.003459,"repo, nearest 5 years since arrival",0.416113,0.90,-0.013365,-22.425,inf,
+norms,Government should reduce income differences (1-7),a(G1->G2),0.000589,paper Mexico row,0.239000,0.00,-0.078701,-132.048,inf,
+norms,Government should reduce income differences (1-7),a(G1->G2),0.000589,paper Mexico row,0.239000,0.50,-0.015955,-26.770,inf,
+norms,Government should reduce income differences (1-7),a(G1->G2),0.000589,paper Mexico row,0.239000,0.90,-0.009741,-16.345,inf,
+norms,Government should reduce income differences (1-7),a(G1->G2),0.000589,repo maximum,0.664480,0.00,-0.081667,-137.025,inf,
+norms,Government should reduce income differences (1-7),a(G1->G2),0.000589,repo maximum,0.664480,0.50,-0.033823,-56.750,inf,
+norms,Government should reduce income differences (1-7),a(G1->G2),0.000589,repo maximum,0.664480,0.90,-0.023030,-38.641,inf,
+norms,Government should reduce income differences (1-7),a(G1->G2),0.000589,repo minimum,0.347107,0.00,-0.080143,-134.469,inf,
+norms,Government should reduce income differences (1-7),a(G1->G2),0.000589,repo minimum,0.347107,0.50,-0.021614,-36.266,inf,
+norms,Government should reduce income differences (1-7),a(G1->G2),0.000589,repo minimum,0.347107,0.90,-0.013643,-22.891,inf,
+norms,Government should reduce income differences (1-7),a(G1->G2),0.000589,"repo, nearest 5 years since arrival",0.416113,0.00,-0.080672,-135.356,inf,
+norms,Government should reduce income differences (1-7),a(G1->G2),0.000589,"repo, nearest 5 years since arrival",0.416113,0.50,-0.024755,-41.535,inf,
+norms,Government should reduce income differences (1-7),a(G1->G2),0.000589,"repo, nearest 5 years since arrival",0.416113,0.90,-0.015925,-26.719,inf,
+norms,Government should reduce income differences (1-7),a(G1->G3+),0.010548,paper Mexico row,0.239000,0.00,-0.000368,-0.618,inf,
+norms,Government should reduce income differences (1-7),a(G1->G3+),0.010548,paper Mexico row,0.239000,0.50,-0.000075,-0.125,inf,
+norms,Government should reduce income differences (1-7),a(G1->G3+),0.010548,paper Mexico row,0.239000,0.90,-0.000046,-0.076,inf,
+norms,Government should reduce income differences (1-7),a(G1->G3+),0.010548,repo maximum,0.664480,0.00,-0.053492,-89.752,inf,
+norms,Government should reduce income differences (1-7),a(G1->G3+),0.010548,repo maximum,0.664480,0.50,-0.022154,-37.172,inf,
+norms,Government should reduce income differences (1-7),a(G1->G3+),0.010548,repo maximum,0.664480,0.90,-0.015085,-25.310,inf,
+norms,Government should reduce income differences (1-7),a(G1->G3+),0.010548,repo minimum,0.347107,0.00,-0.026208,-43.973,inf,
+norms,Government should reduce income differences (1-7),a(G1->G3+),0.010548,repo minimum,0.347107,0.50,-0.007068,-11.859,inf,
+norms,Government should reduce income differences (1-7),a(G1->G3+),0.010548,repo minimum,0.347107,0.90,-0.004462,-7.486,inf,
+norms,Government should reduce income differences (1-7),a(G1->G3+),0.010548,"repo, nearest 5 years since arrival",0.416113,0.00,-0.035681,-59.868,inf,
+norms,Government should reduce income differences (1-7),a(G1->G3+),0.010548,"repo, nearest 5 years since arrival",0.416113,0.50,-0.010949,-18.371,inf,
+norms,Government should reduce income differences (1-7),a(G1->G3+),0.010548,"repo, nearest 5 years since arrival",0.416113,0.90,-0.007043,-11.818,inf,
+norms,Government should reduce income differences (1-7),a(G2->G3+),0.020507,paper Mexico row,0.239000,0.00,0.077964,130.812,63.9,3.801829
+norms,Government should reduce income differences (1-7),a(G2->G3+),0.020507,paper Mexico row,0.239000,0.50,0.015805,26.519,315.2,0.770734
+norms,Government should reduce income differences (1-7),a(G2->G3+),0.020507,paper Mexico row,0.239000,0.90,0.009650,16.192,516.3,0.470586
+norms,Government should reduce income differences (1-7),a(G2->G3+),0.020507,repo maximum,0.664480,0.00,-0.025318,-42.480,inf,
+norms,Government should reduce income differences (1-7),a(G2->G3+),0.020507,repo maximum,0.664480,0.50,-0.010486,-17.593,inf,
+norms,Government should reduce income differences (1-7),a(G2->G3+),0.020507,repo maximum,0.664480,0.90,-0.007140,-11.979,inf,
+norms,Government should reduce income differences (1-7),a(G2->G3+),0.020507,repo minimum,0.347107,0.00,0.027728,46.523,179.7,1.352113
+norms,Government should reduce income differences (1-7),a(G2->G3+),0.020507,repo minimum,0.347107,0.50,0.007478,12.547,666.2,0.364659
+norms,Government should reduce income differences (1-7),a(G2->G3+),0.020507,repo minimum,0.347107,0.90,0.004720,7.920,1055.5,0.230179
+norms,Government should reduce income differences (1-7),a(G2->G3+),0.020507,"repo, nearest 5 years since arrival",0.416113,0.00,0.009310,15.621,535.1,0.453991
+norms,Government should reduce income differences (1-7),a(G2->G3+),0.020507,"repo, nearest 5 years since arrival",0.416113,0.50,0.002857,4.793,1743.9,0.139311
+norms,Government should reduce income differences (1-7),a(G2->G3+),0.020507,"repo, nearest 5 years since arrival",0.416113,0.90,0.001838,3.084,2710.9,0.089617
+norms,Obedience as a top child quality (pp),a(G1->G2),0.062873,paper Mexico row,0.239000,0.00,0.411193,689.921,12.1,6.540059
+norms,Obedience as a top child quality (pp),a(G1->G2),0.062873,paper Mexico row,0.239000,0.50,0.083360,139.866,59.8,1.325847
+norms,Obedience as a top child quality (pp),a(G1->G2),0.062873,paper Mexico row,0.239000,0.90,0.050897,85.398,97.9,0.809520
+norms,Obedience as a top child quality (pp),a(G1->G2),0.062873,repo maximum,0.664480,0.00,0.094538,158.621,52.7,1.503632
+norms,Obedience as a top child quality (pp),a(G1->G2),0.062873,repo maximum,0.664480,0.50,0.039154,65.694,127.2,0.622744
+norms,Obedience as a top child quality (pp),a(G1->G2),0.062873,repo maximum,0.664480,0.90,0.026659,44.730,186.9,0.424018
+norms,Obedience as a top child quality (pp),a(G1->G2),0.062873,repo minimum,0.347107,0.00,0.257172,431.497,19.4,4.090343
+norms,Obedience as a top child quality (pp),a(G1->G2),0.062873,repo minimum,0.347107,0.50,0.069358,116.373,71.8,1.103148
+norms,Obedience as a top child quality (pp),a(G1->G2),0.062873,repo minimum,0.347107,0.90,0.043780,73.456,113.8,0.696325
+norms,Obedience as a top child quality (pp),a(G1->G2),0.062873,"repo, nearest 5 years since arrival",0.416113,0.00,0.200704,336.752,24.8,3.192220
+norms,Obedience as a top child quality (pp),a(G1->G2),0.062873,"repo, nearest 5 years since arrival",0.416113,0.50,0.061588,103.336,80.9,0.979563
+norms,Obedience as a top child quality (pp),a(G1->G2),0.062873,"repo, nearest 5 years since arrival",0.416113,0.90,0.039619,66.475,125.8,0.630141
+norms,Obedience as a top child quality (pp),a(G1->G3+),0.022366,paper Mexico row,0.239000,0.00,0.092586,155.346,53.8,4.139589
+norms,Obedience as a top child quality (pp),a(G1->G3+),0.022366,paper Mexico row,0.239000,0.50,0.018770,31.493,265.4,0.839207
+norms,Obedience as a top child quality (pp),a(G1->G3+),0.022366,paper Mexico row,0.239000,0.90,0.011460,19.228,434.7,0.512393
+norms,Obedience as a top child quality (pp),a(G1->G3+),0.022366,repo maximum,0.664480,0.00,-0.020059,-33.656,inf,
+norms,Obedience as a top child quality (pp),a(G1->G3+),0.022366,repo maximum,0.664480,0.50,-0.008308,-13.939,inf,
+norms,Obedience as a top child quality (pp),a(G1->G3+),0.022366,repo maximum,0.664480,0.90,-0.005656,-9.491,inf,
+norms,Obedience as a top child quality (pp),a(G1->G3+),0.022366,repo minimum,0.347107,0.00,0.037796,63.416,131.8,1.689872
+norms,Obedience as a top child quality (pp),a(G1->G3+),0.022366,repo minimum,0.347107,0.50,0.010193,17.103,488.8,0.455751
+norms,Obedience as a top child quality (pp),a(G1->G3+),0.022366,repo minimum,0.347107,0.90,0.006434,10.796,774.3,0.287678
+norms,Obedience as a top child quality (pp),a(G1->G3+),0.022366,"repo, nearest 5 years since arrival",0.416113,0.00,0.017708,29.712,281.3,0.791750
+norms,Obedience as a top child quality (pp),a(G1->G3+),0.022366,"repo, nearest 5 years since arrival",0.416113,0.50,0.005434,9.117,916.8,0.242956
+norms,Obedience as a top child quality (pp),a(G1->G3+),0.022366,"repo, nearest 5 years since arrival",0.416113,0.90,0.003496,5.865,1425.3,0.156291
+norms,Obedience as a top child quality (pp),a(G2->G3+),-0.018141,paper Mexico row,0.239000,0.00,-0.226021,-379.230,inf,
+norms,Obedience as a top child quality (pp),a(G2->G3+),-0.018141,paper Mexico row,0.239000,0.50,-0.045821,-76.880,inf,
+norms,Obedience as a top child quality (pp),a(G2->G3+),-0.018141,paper Mexico row,0.239000,0.90,-0.027977,-46.941,inf,
+norms,Obedience as a top child quality (pp),a(G2->G3+),-0.018141,repo maximum,0.664480,0.00,-0.134655,-225.932,inf,
+norms,Obedience as a top child quality (pp),a(G2->G3+),-0.018141,repo maximum,0.664480,0.50,-0.055769,-93.572,inf,
+norms,Obedience as a top child quality (pp),a(G2->G3+),-0.018141,repo maximum,0.664480,0.90,-0.037972,-63.712,inf,
+norms,Obedience as a top child quality (pp),a(G2->G3+),-0.018141,repo minimum,0.347107,0.00,-0.181581,-304.666,inf,
+norms,Obedience as a top child quality (pp),a(G2->G3+),-0.018141,repo minimum,0.347107,0.50,-0.048972,-82.167,inf,
+norms,Obedience as a top child quality (pp),a(G2->G3+),-0.018141,repo minimum,0.347107,0.90,-0.030912,-51.865,inf,
+norms,Obedience as a top child quality (pp),a(G2->G3+),-0.018141,"repo, nearest 5 years since arrival",0.416113,0.00,-0.165288,-277.329,inf,
+norms,Obedience as a top child quality (pp),a(G2->G3+),-0.018141,"repo, nearest 5 years since arrival",0.416113,0.50,-0.050720,-85.101,inf,
+norms,Obedience as a top child quality (pp),a(G2->G3+),-0.018141,"repo, nearest 5 years since arrival",0.416113,0.90,-0.032628,-54.744,inf,
+norms,Political violence at least a little justified (pp),a(G1->G2),0.026184,paper Mexico row,0.239000,0.00,0.122616,205.732,40.6,4.682877
+norms,Political violence at least a little justified (pp),a(G1->G2),0.026184,paper Mexico row,0.239000,0.50,0.024858,41.708,200.4,0.949346
+norms,Political violence at least a little justified (pp),a(G1->G2),0.026184,paper Mexico row,0.239000,0.90,0.015177,25.465,328.3,0.579640
+norms,Political violence at least a little justified (pp),a(G1->G2),0.026184,repo maximum,0.664480,0.00,-0.009257,-15.532,inf,
+norms,Political violence at least a little justified (pp),a(G1->G2),0.026184,repo maximum,0.664480,0.50,-0.003834,-6.433,inf,
+norms,Political violence at least a little justified (pp),a(G1->G2),0.026184,repo maximum,0.664480,0.90,-0.002611,-4.380,inf,
+norms,Political violence at least a little justified (pp),a(G1->G2),0.026184,repo minimum,0.347107,0.00,0.058473,98.109,85.2,2.233161
+norms,Political violence at least a little justified (pp),a(G1->G2),0.026184,repo minimum,0.347107,0.50,0.015770,26.460,315.9,0.602274
+norms,Political violence at least a little justified (pp),a(G1->G2),0.026184,repo minimum,0.347107,0.90,0.009954,16.702,500.5,0.380165
+norms,Political violence at least a little justified (pp),a(G1->G2),0.026184,"repo, nearest 5 years since arrival",0.416113,0.00,0.034957,58.652,142.5,1.335039
+norms,Political violence at least a little justified (pp),a(G1->G2),0.026184,"repo, nearest 5 years since arrival",0.416113,0.50,0.010727,17.998,464.5,0.409669
+norms,Political violence at least a little justified (pp),a(G1->G2),0.026184,"repo, nearest 5 years since arrival",0.416113,0.90,0.006900,11.578,722.0,0.263535
+norms,Political violence at least a little justified (pp),a(G1->G3+),0.006780,paper Mexico row,0.239000,0.00,-0.030005,-50.345,inf,
+norms,Political violence at least a little justified (pp),a(G1->G3+),0.006780,paper Mexico row,0.239000,0.50,-0.006083,-10.206,inf,
+norms,Political violence at least a little justified (pp),a(G1->G3+),0.006780,paper Mexico row,0.239000,0.90,-0.003714,-6.232,inf,
+norms,Political violence at least a little justified (pp),a(G1->G3+),0.006780,repo maximum,0.664480,0.00,-0.064152,-107.638,inf,
+norms,Political violence at least a little justified (pp),a(G1->G3+),0.006780,repo maximum,0.664480,0.50,-0.026569,-44.579,inf,
+norms,Political violence at least a little justified (pp),a(G1->G3+),0.006780,repo maximum,0.664480,0.90,-0.018091,-30.354,inf,
+norms,Political violence at least a little justified (pp),a(G1->G3+),0.006780,repo minimum,0.347107,0.00,-0.046614,-78.212,inf,
+norms,Political violence at least a little justified (pp),a(G1->G3+),0.006780,repo minimum,0.347107,0.50,-0.012572,-21.093,inf,
+norms,Political violence at least a little justified (pp),a(G1->G3+),0.006780,repo minimum,0.347107,0.90,-0.007935,-13.315,inf,
+norms,Political violence at least a little justified (pp),a(G1->G3+),0.006780,"repo, nearest 5 years since arrival",0.416113,0.00,-0.052704,-88.429,inf,
+norms,Political violence at least a little justified (pp),a(G1->G3+),0.006780,"repo, nearest 5 years since arrival",0.416113,0.50,-0.016173,-27.135,inf,
+norms,Political violence at least a little justified (pp),a(G1->G3+),0.006780,"repo, nearest 5 years since arrival",0.416113,0.90,-0.010404,-17.456,inf,
+norms,Political violence at least a little justified (pp),a(G2->G3+),-0.012624,paper Mexico row,0.239000,0.00,-0.182627,-306.421,inf,
+norms,Political violence at least a little justified (pp),a(G2->G3+),-0.012624,paper Mexico row,0.239000,0.50,-0.037023,-62.120,inf,
+norms,Political violence at least a little justified (pp),a(G2->G3+),-0.012624,paper Mexico row,0.239000,0.90,-0.022605,-37.928,inf,
+norms,Political violence at least a little justified (pp),a(G2->G3+),-0.012624,repo maximum,0.664480,0.00,-0.119047,-199.744,inf,
+norms,Political violence at least a little justified (pp),a(G2->G3+),-0.012624,repo maximum,0.664480,0.50,-0.049305,-82.726,inf,
+norms,Political violence at least a little justified (pp),a(G2->G3+),-0.012624,repo maximum,0.664480,0.90,-0.033571,-56.327,inf,
+norms,Political violence at least a little justified (pp),a(G2->G3+),-0.012624,repo minimum,0.347107,0.00,-0.151702,-254.533,inf,
+norms,Political violence at least a little justified (pp),a(G2->G3+),-0.012624,repo minimum,0.347107,0.50,-0.040913,-68.647,inf,
+norms,Political violence at least a little justified (pp),a(G2->G3+),-0.012624,repo minimum,0.347107,0.90,-0.025825,-43.331,inf,
+norms,Political violence at least a little justified (pp),a(G2->G3+),-0.012624,"repo, nearest 5 years since arrival",0.416113,0.00,-0.140364,-235.510,inf,
+norms,Political violence at least a little justified (pp),a(G2->G3+),-0.012624,"repo, nearest 5 years since arrival",0.416113,0.50,-0.043072,-72.269,inf,
+norms,Political violence at least a little justified (pp),a(G2->G3+),-0.012624,"repo, nearest 5 years since arrival",0.416113,0.90,-0.027708,-46.489,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G2),-0.001236,paper Mexico row,0.239000,0.00,-0.093055,-156.133,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G2),-0.001236,paper Mexico row,0.239000,0.50,-0.018865,-31.652,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G2),-0.001236,paper Mexico row,0.239000,0.90,-0.011518,-19.326,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G2),-0.001236,repo maximum,0.664480,0.00,-0.086830,-145.688,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G2),-0.001236,repo maximum,0.664480,0.50,-0.035962,-60.338,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G2),-0.001236,repo maximum,0.664480,0.90,-0.024486,-41.083,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G2),-0.001236,repo minimum,0.347107,0.00,-0.090027,-151.052,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G2),-0.001236,repo minimum,0.347107,0.50,-0.024280,-40.738,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G2),-0.001236,repo minimum,0.347107,0.90,-0.015326,-25.715,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G2),-0.001236,"repo, nearest 5 years since arrival",0.416113,0.00,-0.088917,-149.190,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G2),-0.001236,"repo, nearest 5 years since arrival",0.416113,0.50,-0.027285,-45.780,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G2),-0.001236,"repo, nearest 5 years since arrival",0.416113,0.90,-0.017552,-29.450,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G3+),0.024028,paper Mexico row,0.239000,0.00,0.105658,177.279,47.2,4.397306
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G3+),0.024028,paper Mexico row,0.239000,0.50,0.021420,35.939,232.6,0.891453
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G3+),0.024028,paper Mexico row,0.239000,0.90,0.013078,21.943,380.9,0.544293
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G3+),0.024028,repo maximum,0.664480,0.00,-0.015357,-25.766,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G3+),0.024028,repo maximum,0.664480,0.50,-0.006360,-10.671,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G3+),0.024028,repo maximum,0.664480,0.90,-0.004331,-7.266,inf,
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G3+),0.024028,repo minimum,0.347107,0.00,0.046797,78.518,106.5,1.947590
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G3+),0.024028,repo minimum,0.347107,0.50,0.012621,21.176,394.8,0.525257
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G3+),0.024028,repo minimum,0.347107,0.90,0.007966,13.367,625.4,0.331550
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G3+),0.024028,"repo, nearest 5 years since arrival",0.416113,0.00,0.025217,42.310,197.6,1.049468
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G3+),0.024028,"repo, nearest 5 years since arrival",0.416113,0.50,0.007738,12.983,643.9,0.322039
+norms,Stouffer 15-item tolerance (scale pts),a(G1->G3+),0.024028,"repo, nearest 5 years since arrival",0.416113,0.90,0.004978,8.352,1000.9,0.207164
+norms,Stouffer 15-item tolerance (scale pts),a(G2->G3+),0.049292,paper Mexico row,0.239000,0.00,0.304372,510.691,16.4,6.174877
+norms,Stouffer 15-item tolerance (scale pts),a(G2->G3+),0.049292,paper Mexico row,0.239000,0.50,0.061704,103.531,80.7,1.251814
+norms,Stouffer 15-item tolerance (scale pts),a(G2->G3+),0.049292,paper Mexico row,0.239000,0.90,0.037675,63.213,132.2,0.764318
+norms,Stouffer 15-item tolerance (scale pts),a(G2->G3+),0.049292,repo maximum,0.664480,0.00,0.056116,94.155,88.8,1.138449
+norms,Stouffer 15-item tolerance (scale pts),a(G2->G3+),0.049292,repo maximum,0.664480,0.50,0.023241,38.995,214.4,0.471500
+norms,Stouffer 15-item tolerance (scale pts),a(G2->G3+),0.049292,repo maximum,0.664480,0.90,0.015825,26.551,314.8,0.321038
+norms,Stouffer 15-item tolerance (scale pts),a(G2->G3+),0.049292,repo minimum,0.347107,0.00,0.183621,308.088,27.1,3.725160
+norms,Stouffer 15-item tolerance (scale pts),a(G2->G3+),0.049292,repo minimum,0.347107,0.50,0.049522,83.090,100.6,1.004660
+norms,Stouffer 15-item tolerance (scale pts),a(G2->G3+),0.049292,repo minimum,0.347107,0.90,0.031259,52.448,159.4,0.634157
+norms,Stouffer 15-item tolerance (scale pts),a(G2->G3+),0.049292,"repo, nearest 5 years since arrival",0.416113,0.00,0.139350,233.809,35.8,2.827038
+norms,Stouffer 15-item tolerance (scale pts),a(G2->G3+),0.049292,"repo, nearest 5 years since arrival",0.416113,0.50,0.042761,71.747,116.5,0.867503
+norms,Stouffer 15-item tolerance (scale pts),a(G2->G3+),0.049292,"repo, nearest 5 years since arrival",0.416113,0.90,0.027508,46.154,181.1,0.558055
+reference,paper Table 1 Mexico a,paper individual-level,0.028200,paper Mexico row,0.239000,0.00,0.138473,232.338,36.0,4.910400
+reference,paper Table 1 Mexico a,paper individual-level,0.028200,paper Mexico row,0.239000,0.50,0.028072,47.101,177.5,0.995471
+reference,paper Table 1 Mexico a,paper individual-level,0.028200,paper Mexico row,0.239000,0.90,0.017140,28.758,290.7,0.607803
+reference,paper Table 1 Mexico a,paper individual-level,0.028200,repo maximum,0.664480,0.00,-0.003554,-5.963,inf,
+reference,paper Table 1 Mexico a,paper individual-level,0.028200,repo maximum,0.664480,0.50,-0.001472,-2.470,inf,
+reference,paper Table 1 Mexico a,paper individual-level,0.028200,repo maximum,0.664480,0.90,-0.001002,-1.682,inf,
+reference,paper Table 1 Mexico a,paper individual-level,0.028200,repo minimum,0.347107,0.00,0.069391,116.428,71.8,2.460683
+reference,paper Table 1 Mexico a,paper individual-level,0.028200,repo minimum,0.347107,0.50,0.018715,31.400,266.2,0.663636
+reference,paper Table 1 Mexico a,paper individual-level,0.028200,repo minimum,0.347107,0.90,0.011813,19.820,421.8,0.418897
+reference,paper Table 1 Mexico a,paper individual-level,0.028200,"repo, nearest 5 years since arrival",0.416113,0.00,0.044064,73.933,113.1,1.562561
+reference,paper Table 1 Mexico a,paper individual-level,0.028200,"repo, nearest 5 years since arrival",0.416113,0.50,0.013522,22.687,368.5,0.479486
+reference,paper Table 1 Mexico a,paper individual-level,0.028200,"repo, nearest 5 years since arrival",0.416113,0.90,0.008698,14.594,572.8,0.308448

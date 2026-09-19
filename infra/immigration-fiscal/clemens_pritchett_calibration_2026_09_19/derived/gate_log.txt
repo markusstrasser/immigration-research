@@ -1,0 +1,32 @@
+Clemens & Pritchett, IZA DP 9730 (Feb 2016) -- reproduction gate
+source PDF sha256 pinned in _cache/SHA256SUMS.txt; text via pdftotext -layout
+known parameters parsed from section 5.3: gamma=0.8 beta=6.0 alpha=0.6 rho=0.05; derived gamma-tilde=0.886595
+
+Per-country reproduction (paper Table 1 rows recomputed from its own coefficients):
+country                 delta                   a               tau   m*(c=0.5)    x m0
+Bangladesh   0.4555 vs 0.4560    0.0525 vs 0.0525    0.497 vs 0.497      0.0399    13.3
+Ghana        0.2953 vs 0.2960    0.1070 vs 0.1070    0.326 vs 0.326      0.1374    45.8
+Guyana       0.1344 vs 0.1340    0.1275 vs 0.1280    0.157 vs 0.157      0.2074    69.1
+Haiti        0.3002 vs 0.3000    0.0751 vs 0.0752    0.407 vs 0.407      0.0798    26.6
+Liberia      0.1585 vs 0.1590    0.0867 vs 0.0862    0.164 vs 0.164      0.1344    44.8
+Mexico       0.1250 vs 0.1250    0.0281 vs 0.0282    0.239 vs 0.239      0.0281     9.4
+Nepal        0.3949 vs 0.3950    0.0978 vs 0.0978    0.425 vs 0.425      0.1087    36.2
+Nicaragua    0.2702 vs 0.2700    0.0612 vs 0.0612    0.308 vs 0.308      0.0716    23.9
+Somalia      0.2941 vs 0.2940    0.0255 vs 0.0255    0.356 vs 0.356      0.0141     4.7
+
+Baseline transition time, eq. (9): at the paper's own observed rate m0=0.003, T = 1661 years; at Mexico's Table 1 m* it is 177 years.
+
+Diagnostic, not a gate check: eq. (2) puts the steady-state unassimilated share at phi = m/a, and eq. (2) states 0 < phi < 1.
+  phi at each country's own reported optimum (c=0.5): Bangladesh 0.76, Ghana 1.28, Guyana 1.62, Haiti 1.06, Liberia 1.56, Mexico 1.00, Nepal 1.11, Nicaragua 1.17, Somalia 0.55
+  6 of 9 countries have phi >= 1 at their own optimum: Ghana, Guyana, Haiti, Liberia, Nepal, Nicaragua. At phi >= 1 the congestion term 1-c*phi in eq. (3) is at or past its own bound and the first-order approximations behind eq. (8) do not hold.
+
+Checks:
+  [PASS] G1 delta, 9 countries, |err| <= 0.001  --  max abs err 0.000653
+  [PASS] G2 a, 9 countries, rel err <= 0.01  --  max rel err 0.005916
+  [PASS] G3 tau = delta/gamma, 9 countries, |err| <= 0.001  --  max abs err 0.000426
+  [PASS] G4 c=0.5, tau=0.5, a=0.03 => m* > 0.01  --  m* = 0.010229
+  [PASS] G5 section 8 ranges == Table 1 min/max (at the prose's precision)  --  a [0.0255, 0.128] vs stated [0.026, 0.128] (the stated lower bound is Somalia's 0.0255 rounded); tau [0.157, 0.497] vs stated [0.157, 0.497]
+  [PASS] G6 Figure 9: every country's m* at c=0.5 is >= 3x m0=0.003  --  minimum is Somalia at 4.70x (m* = 0.014098)
+  [PASS] G7 eq. (9) transition time == footnote 5 form  --  eq9 498.211145618 vs fn5 498.211145618
+
+GATE: 7/7 checks pass (brief requires at least 2 reported optimal-migration figures reproduced).

@@ -1,0 +1,17 @@
+{
+  "alpha": 0.6,
+  "beta": 6.0,
+  "claim_a": 0.03,
+  "claim_c": 0.5,
+  "claim_mstar": 0.01,
+  "claim_tau": 0.5,
+  "congestion_upper": 0.5,
+  "delta_years_since_arrival": 5.0,
+  "gamma": 0.8,
+  "m0_observed": 0.003,
+  "range_a_hi": 0.128,
+  "range_a_lo": 0.026,
+  "range_tau_hi": 0.497,
+  "range_tau_lo": 0.157,
+  "rho": 0.05
+}
