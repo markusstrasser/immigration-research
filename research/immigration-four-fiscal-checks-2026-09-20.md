@@ -1,5 +1,8 @@
 # Four executed fiscal checks and the revised annual account
 
+**Current-account successor:** [complete annual calculation and response assumptions](immigration-complete-annual-account-2026-09-20.md).
+The partial balance below remains an intermediate release and source-check record.
+
 **Verdict:** Actual public-school enrollment raises the modeled Mexican-origin
 annual deficit by **$25.04bn shared / $26.94bn personal**. The revised partial
 balances are **−$259.38bn / −$283.20bn**. National coverage, tax and healthcare
@@ -207,3 +210,10 @@ calculation notes are retained. See the [decision record](../decisions/2026-09-2
 The LLM instrument caveat applies to source choice and interpretation. Source
 tables, explicit units, held-out discrepancies and reproducible arithmetic take
 precedence over whether a revision agrees with the expected conclusion.
+## Revisions
+
+2026-09-20: The [complete annual account](immigration-complete-annual-account-2026-09-20.md)
+supersedes this partial balance for current-account coverage. The four checks
+above remain evidence for their source comparisons; the successor changes the
+accounting boundary and incidence assumptions and separately tests fiscal response.
+See the [method decision](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
