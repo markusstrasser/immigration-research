@@ -1,14 +1,31 @@
 {
-  "effective_rate_fy2024": 0.03220790586972007,
-  "net_interest_bn": 879.879,
-  "debt_start_bn": 26330.142473,
-  "debt_end_bn": 28307.312291,
-  "complete_minus_partial_per_person_year": {
-    "mexico_born": -7762.46,
-    "mexican_second_gen": -7688.86,
-    "mexican_third_plus_selfid": -7557.42,
-    "mexican_observed_total": -7664.76,
-    "third_plus_nh_white": -6926.19,
-    "all_native": -7324.9
-  }
+  "schema": "fiscal-real-financing-v2",
+  "inputs": [
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profiles.csv",
+      "sha256": "ddac25cc844f7fd72ec48937377ae29deff53bc826202a536725f15513dab12a"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profile_components.csv",
+      "sha256": "8884b4126e6e4c60b74868ae57dc4b316651a38e3e767d7c25a44f7f63db5d62"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/audit.json",
+      "sha256": "6f5dbb7dad8f70e221e0b709f1a54bd86655949bc3c45f205ce4cd62f7e5db06"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gap_interest_2026_09_18/interest_on_gap.py",
+      "sha256": "ff6014c94c924702f2d025922941936ef3b7742307fe7b4207018a37780c9b9c"
+    }
+  ],
+  "output_sha256": "5df42a7be0e7120e7089a23995ff6132ed664a9433026c4e89f449eaf7d3ff3e",
+  "allocation": "shared",
+  "flow": "constant annual expanded-account real 2024 dollars; no population change",
+  "timing": "year-end flows, real annual compounding, positive debt is borrowing",
+  "financing": "specified fractions are assumptions, not observed immigration-caused borrowing",
+  "excluded": "federal-share fractions are not inferred from stale incidence outputs",
+  "supersedes": [
+    "per_person_terminal_values.csv",
+    "complete_minus_partial_per_person_year"
+  ]
 }

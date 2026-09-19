@@ -5,6 +5,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from cost_model import load_current_results
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "derived"
@@ -17,6 +18,7 @@ def md(df, floatfmt="%.3f"):
 
 
 def main() -> None:
+    res = load_current_results(OUT)
     print("=" * 78)
     print("A1. Victim x offender ethnicity, SHR criminal homicide")
     for w in ["2019_2023", "2015_2023"]:
@@ -103,9 +105,8 @@ def main() -> None:
                 "mean_child_years", "mean_sole_child_years", "mean_years_to_16_max"]]))
 
     print("\nB3. Treasury cost per cleared homicide by offender ethnicity")
-    res = pd.read_csv(OUT / "treasury_cost_per_homicide.csv")
     life = sorted(res.life_share.unique())[1]
-    for acct in ["partial", "complete"]:
+    for acct in ["partial", "expanded"]:
         for rate in [0.0, 0.03]:
             sub = res[(res.account.eq(acct)) & (res.rate.eq(rate))
                       & (res.life_share.eq(life)) & (res.foster_share.eq(0.0))]

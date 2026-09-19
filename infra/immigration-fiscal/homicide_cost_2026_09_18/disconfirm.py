@@ -5,7 +5,7 @@ C1  does the victim x offender ethnicity matrix move when ethnicity-missing reco
 C2  does the offender age distribution differ between Hispanic and non-Hispanic white
     offenders beyond what the two populations' age structures imply (age-standardised)
 C3  does the treasury cost per homicide by offender ethnicity change sign under the
-    complete-account shift  (read off treasury_cost_per_homicide.csv)
+    expanded age-component account (read off treasury_cost_per_homicide.csv)
 C4  sensitivity to the life-sentence arm  (same file)
 """
 from __future__ import annotations
@@ -15,6 +15,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from cost_model import load_current_results
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
@@ -73,6 +74,7 @@ def impute(df, side, rng):
 
 
 def main() -> None:
+    res = load_current_results(OUT)
     rng = np.random.default_rng(20260918)
     cols = ["Year", "State", "Solved", "Situation", "VicAge", "VicRace", "VicEthnic",
             "OffAge", "OffRace", "OffEthnic", "Circumstance", "Homicide"]
@@ -152,7 +154,6 @@ def main() -> None:
     pop.round(0).to_csv(OUT / "c2_population_by_age.csv")
 
     # ---- C3 / C4 ----------------------------------------------------------
-    res = pd.read_csv(OUT / "treasury_cost_per_homicide.csv")
     piv = res[(res.rate == 0.0) & (res.foster_share == 0.0)].pivot_table(
         index=["off_eth", "life_share"], columns="account", values="total")
     print("\n[C3/C4] total treasury cost per cleared homicide, undiscounted, no foster arm")

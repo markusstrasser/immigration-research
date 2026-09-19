@@ -5,12 +5,12 @@ G,nominal2022,state-local general services,mexican_third_plus_selfid,-54.2137216
 G,nominal2022,state-local general services,mexican_observed_total,-159.6921410559025,-3904.7803970328164,1.5151838500672345,-190.68080602186137,cache:22slsstab1.xlsx,False
 G,nominal2022,state-local general services,third_plus_nh_white,-644.8199779763992,-3726.1223386407664,1.6927481533938056,0.0,cache:22slsstab1.xlsx,False
 G,nominal2022,state-local general services,all_native,-1078.0489801782726,-3800.333824203511,2.0172397530419475,-71.20004115901484,cache:22slsstab1.xlsx,False
-G,deflated2024,state-local general services,mexico_born,-50.08660637893661,-4098.478056500694,0.9807678122963134,-194.2231230757622,cache:22slsstab1.xlsx + params:deflator,False
-G,deflated2024,state-local general services,mexican_second_gen,-59.538380642591314,-4153.8740316574695,1.1985552211499093,-263.76853496303175,cache:22slsstab1.xlsx + params:deflator,False
-G,deflated2024,state-local general services,mexican_third_plus_selfid,-56.344971483564244,-3928.511653612765,1.2032027225669937,-53.19607820975601,cache:22slsstab1.xlsx + params:deflator,False
-G,deflated2024,state-local general services,mexican_observed_total,-165.96995850509214,-4058.2851240009704,1.5747487575811017,-198.17684986819432,cache:22slsstab1.xlsx + params:deflator,False
-G,deflated2024,state-local general services,third_plus_nh_white,-670.1691409506075,-3872.6036600174125,1.7592934687999662,0.0,cache:22slsstab1.xlsx + params:deflator,False
-G,deflated2024,state-local general services,all_native,-1120.4292416870408,-3949.7325475005996,2.096541482213577,-73.9990571770576,cache:22slsstab1.xlsx + params:deflator,False
+G,deflated2024,state-local general services,mexico_born,-43.00456719033249,-3518.9701938562334,0.8416114494022833,-145.98605292859062,cache:22slsstab1.xlsx + params:deflator,False
+G,deflated2024,state-local general services,mexican_second_gen,-51.09900267780703,-3565.075468564169,1.027486933300429,-205.4663253012083,cache:22slsstab1.xlsx + params:deflator,False
+G,deflated2024,state-local general services,mexican_third_plus_selfid,-48.31217212061752,-3368.444888512448,1.0306685225926895,-23.31311912757524,cache:22slsstab1.xlsx + params:deflator,False
+G,deflated2024,state-local general services,mexican_observed_total,-142.41574198875705,-3482.3391675355547,1.3506144979088583,-149.87378841508146,cache:22slsstab1.xlsx + params:deflator,False
+G,deflated2024,state-local general services,third_plus_nh_white,-578.5900503303305,-3343.409610565815,1.5468139101149083,0.0,cache:22slsstab1.xlsx + params:deflator,False
+G,deflated2024,state-local general services,all_native,-966.2214409438636,-3406.1198435366105,1.8087016773545443,-60.17282957129407,cache:22slsstab1.xlsx + params:deflator,False
 K,central,K-12 capital outlay and interest on school debt,mexico_born,-5.024396713996733,-411.13545453001007,0.17122196961405006,-135.72711158530404,"params:k12 F-33 capital, interest and fall membership by state",False
 K,central,K-12 capital outlay and interest on school debt,mexican_second_gen,-8.861116585816248,-618.2224252666439,0.2776276623234786,-99.4680155813983,"params:k12 F-33 capital, interest and fall membership by state",False
 K,central,K-12 capital outlay and interest on school debt,mexican_third_plus_selfid,-8.845248566307792,-616.7127457323835,0.3261952657361326,-83.56109266439671,"params:k12 F-33 capital, interest and fall membership by state",False
@@ -35,12 +35,12 @@ D,central,district cost-to-serve differential,mexican_third_plus_selfid,-0.91772
 D,central,district cost-to-serve differential,mexican_observed_total,-2.7463990102365807,-67.15474504063423,0.08349343699008319,-114.90099085308805,params:district F-33 x CCD per-pupil differentials,False
 D,central,district cost-to-serve differential,third_plus_nh_white,10.97058908880603,63.39406108373545,0.16936666309795972,0.0,params:district F-33 x CCD per-pupil differentials,False
 D,central,district cost-to-serve differential,all_native,9.172855718045048,32.33611319224154,0.19338165555093145,-34.27009301408396,params:district F-33 x CCD per-pupil differentials,False
-U,central,transfer under-reporting,mexico_born,-2.1986613052749835,-179.91167229761135,0.15944664345169637,-40.937201556339865,params:underreporting,False
-U,central,transfer under-reporting,mexican_second_gen,-3.629662205597831,-253.2342904995945,0.2568147948071529,-100.2079250821019,params:underreporting,False
-U,central,transfer under-reporting,mexican_third_plus_selfid,-3.614457707895681,-252.00898772485175,0.2690171247546317,-87.28205867094393,params:underreporting,False
-U,central,transfer under-reporting,mexican_observed_total,-9.442781218768495,-230.8941864810323,0.45032397026674365,-81.62849302692547,params:underreporting,False
-U,central,transfer under-reporting,third_plus_nh_white,-25.121136107140106,-145.16365748251658,0.8203358560640328,0.0,params:underreporting,False
-U,central,transfer under-reporting,all_native,-55.278476714899696,-194.86745841115678,1.1334243497938237,-42.386373056044164,params:underreporting,False
+U,central,transfer under-reporting,mexico_born,-3.762439800034943,-307.8722651457757,0.19669268618468427,216.9414297653362,params:underreporting,False
+U,central,transfer under-reporting,mexican_second_gen,-4.870099313969742,-339.77711273894164,0.2905781824008568,20.691528018102304,params:underreporting,False
+U,central,transfer under-reporting,mexican_third_plus_selfid,-5.646496014247875,-393.68775615622343,0.30055125643242747,13.801801983932577,params:underreporting,False
+U,central,transfer under-reporting,mexican_observed_total,-14.279035128252561,-349.14990862214825,0.5072620700802817,106.08331910585832,params:underreporting,False
+U,central,transfer under-reporting,third_plus_nh_white,-101.05434989695499,-583.9472774239105,1.0738457249556044,0.0,params:underreporting,False
+U,central,transfer under-reporting,all_native,-154.8514675369456,-545.8817554939764,1.378815348608547,-29.69338993999455,params:underreporting,False
 I,central,refundable-credit improper payments,mexico_born,-1.393343009604118,-114.01422781246045,0.05831047157624473,-87.3687285559962,params:improper_payments,False
 I,central,refundable-credit improper payments,mexican_second_gen,-2.0594483661804035,-143.68360367692813,0.08190528959640495,-54.286816478703315,params:improper_payments,False
 I,central,refundable-credit improper payments,mexican_third_plus_selfid,-1.2855615765254016,-89.63255285859923,0.06728489495831062,-23.847733347888283,params:improper_payments,False
@@ -119,24 +119,24 @@ X,consumption_proxy,excise and selective sales taxes,mexican_third_plus_selfid,1
 X,consumption_proxy,excise and selective sales taxes,mexican_observed_total,27.799400267715846,679.7488749095425,0.40316574744202627,-313.21839890413395,"params:omb,corporate",False
 X,consumption_proxy,excise and selective sales taxes,third_plus_nh_white,177.1960854096133,1023.9358498731609,1.3890496822430676,0.0,"params:omb,corporate",False
 X,consumption_proxy,excise and selective sales taxes,all_native,265.9690860346306,937.5931265040975,1.7070742511412407,-54.48153575527846,"params:omb,corporate",False
-R,central,rest of the federal budget by function,mexico_born,-32.23047121082995,-2637.349354613401,0.9119786694052293,1308.1759501363504,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,central,rest of the federal budget by function,mexican_second_gen,-39.52828444539228,-2757.809542374858,0.951217392216645,513.0294503569354,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,central,rest of the federal budget by function,mexican_third_plus_selfid,-43.38049659921208,-3024.596196294555,1.5858755208991144,171.75817170155864,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,central,rest of the federal budget by function,mexican_observed_total,-115.13925225543431,-2815.3764622558965,1.864341304365653,840.2450636307974,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,central,rest of the federal budget by function,third_plus_nh_white,-682.2424747367795,-3942.3699828036597,10.329246819780517,0.0,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,central,rest of the federal budget by function,all_native,-1040.8670435721504,-3669.2602144401862,11.744845237689566,25.180158944428165,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,all_per_capita,rest of the federal budget by function,mexico_born,-54.739177542553236,-4479.187835001673,1.1120284708641621,-3.974578427855624e-12,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,all_per_capita,rest of the federal budget by function,mexican_second_gen,-64.20117419487148,-4479.187835001676,1.2727659036490395,-5.070994228856471e-12,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,all_per_capita,rest of the federal budget by function,mexican_third_plus_selfid,-64.24308569903361,-4479.187835001672,1.3799653030505605,-3.500838760800449e-12,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,all_per_capita,rest of the federal budget by function,mexican_observed_total,-183.18343743645835,-4479.187835001674,1.6944574995875687,-4.134909841608818e-12,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,all_per_capita,rest of the federal budget by function,third_plus_nh_white,-775.1408941048161,-4479.18783500167,1.705989484365432,0.0,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,all_per_capita,rest of the federal budget by function,all_native,-1270.6209772407342,-4479.187835001676,2.1579406561960734,-4.434067434802823e-12,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,central_housing_by_reported_subsidy,rest of the federal budget by function,mexico_born,-31.73227455474789,-2596.5830058748484,0.9412213746494147,1154.044061286212,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,central_housing_by_reported_subsidy,rest of the federal budget by function,mexican_second_gen,-39.34402013391772,-2744.953788991336,1.0574618916454332,388.28237304299046,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,central_housing_by_reported_subsidy,rest of the federal budget by function,mexican_third_plus_selfid,-44.48894285507195,-3101.879828159008,1.7538540650441528,-27.618560977773356,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,central_housing_by_reported_subsidy,rest of the federal budget by function,mexican_observed_total,-115.56523754373757,-2825.7926229522996,2.0461530363664475,702.800290927113,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,central_housing_by_reported_subsidy,rest of the federal budget by function,third_plus_nh_white,-661.4145081753156,-3822.014605917409,10.398612717081381,0.0,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
-R,central_housing_by_reported_subsidy,rest of the federal budget by function,all_native,-1038.4917023034434,-3660.886671184294,12.19168397489299,-82.70164748353525,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,central,rest of the federal budget by function,mexico_born,-26.17465239413713,-2141.814872868254,0.7986134201129426,862.1388620355764,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,central,rest of the federal budget by function,mexican_second_gen,-31.501143697014424,-2197.771947410551,0.8147459989679287,377.4235628731893,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,central,rest of the federal budget by function,mexican_third_plus_selfid,-34.475639040056365,-2403.7273632149354,1.406851886009407,116.63353512617414,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,central,rest of the federal budget by function,mexican_observed_total,-92.1514351312079,-2253.280061745918,1.7332362607625587,560.3279449305816,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,central,rest of the federal budget by function,third_plus_nh_white,-518.4521490739114,-2995.899941318691,9.860293825805757,0.0,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,central,rest of the federal budget by function,all_native,-797.7700365981963,-2812.2956468256602,11.260981285557717,20.197526899120945,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,all_per_capita,rest of the federal budget by function,mexico_born,-45.01782995557571,-3683.711106883818,0.9145389254013734,-7.505406176478306e-13,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,all_per_capita,rest of the federal budget by function,mexican_second_gen,-52.79943310449326,-3683.7111068838203,1.0467303601553906,-3.119145696893554e-12,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,all_per_capita,rest of the federal budget by function,mexican_third_plus_selfid,-52.8339013784473,-3683.7111068838203,1.1348917931591156,-3.1668418234519506e-12,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,all_per_capita,rest of the federal budget by function,mexican_observed_total,-150.6511644385163,-3683.7111068838203,1.3935320735150523,-1.7451628664194235e-12,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,all_per_capita,rest of the federal budget by function,third_plus_nh_white,-637.4805491970844,-3683.711106883818,1.403016047390567,0.0,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,all_per_capita,rest of the federal budget by function,all_native,-1044.9663597328288,-3683.711106883825,1.7747034185769002,-4.90040349065965e-12,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,central_housing_by_reported_subsidy,rest of the federal budget by function,mexico_born,-25.73807562213992,-2106.090745214819,0.8236708107333492,727.0709091006687,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,central_housing_by_reported_subsidy,rest of the federal budget by function,mexican_second_gen,-31.339670276196056,-2186.5062689977176,0.906744258704541,268.1059356572536,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,central_housing_by_reported_subsidy,rest of the federal budget by function,mexican_third_plus_selfid,-35.44698616253883,-2471.452102262655,1.5679914185773414,-58.083114015988485,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,central_housing_by_reported_subsidy,rest of the federal budget by function,mexican_observed_total,-92.5247320608748,-2262.407890602102,1.9110019708713908,439.8831477559962,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,central_housing_by_reported_subsidy,rest of the federal budget by function,third_plus_nh_white,-500.2003075618092,-2890.4308232665453,9.928781477525161,0.0,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
+R,central_housing_by_reported_subsidy,rest of the federal budget by function,all_native,-795.6884914677269,-2804.9577925060717,11.626670609411098,-74.34082503993046,cache:omb_hist03z1_fy2027.xlsx + params:omb,False
 R,all_zero,rest of the federal budget by function,mexico_born,0.0,0.0,0.0,0.0,convention,False
 R,all_zero,rest of the federal budget by function,mexican_second_gen,0.0,0.0,0.0,0.0,convention,False
 R,all_zero,rest of the federal budget by function,mexican_third_plus_selfid,0.0,0.0,0.0,0.0,convention,False
@@ -149,18 +149,18 @@ F,zero,"federal defense, net interest, general government",mexican_third_plus_se
 F,zero,"federal defense, net interest, general government",mexican_observed_total,0.0,0.0,0.0,0.0,convention,False
 F,zero,"federal defense, net interest, general government",third_plus_nh_white,0.0,0.0,0.0,0.0,convention,False
 F,zero,"federal defense, net interest, general government",all_native,0.0,0.0,0.0,0.0,convention,False
-F,per_capita,"federal defense, net interest, general government",mexico_born,-64.27176215606897,-5259.218499579908,1.3056832893515335,-2.7223646891635652e-12,cache:omb_hist03z1_fy2027.xlsx,False
-F,per_capita,"federal defense, net interest, general government",mexican_second_gen,-75.38152349449174,-5259.21849957991,1.494412432048179,-3.2423932783772716e-12,cache:omb_hist03z1_fy2027.xlsx,False
-F,per_capita,"federal defense, net interest, general government",mexican_third_plus_selfid,-75.43073370092972,-5259.218499579909,1.6202801306677441,-2.467522747305181e-12,cache:omb_hist03z1_fy2027.xlsx,False
-F,per_capita,"federal defense, net interest, general government",mexican_observed_total,-215.08401935149044,-5259.21849957991,1.9895397462338096,-3.0168081049268594e-12,cache:omb_hist03z1_fy2027.xlsx,False
-F,per_capita,"federal defense, net interest, general government",third_plus_nh_white,-910.1282375793551,-5259.218499579905,2.0030799749348835,0.0,cache:omb_hist03z1_fy2027.xlsx,False
-F,per_capita,"federal defense, net interest, general government",all_native,-1491.8939762338134,-5259.218499579913,2.5337364357388665,-5.519174342815685e-12,cache:omb_hist03z1_fy2027.xlsx,False
-F,proportional_to_federal_tax,"federal defense, net interest, general government",mexico_born,-31.164072461548066,-2550.088264485929,1.2763397260431517,3844.965449106943,cache:omb_hist03z1_fy2027.xlsx,False
-F,proportional_to_federal_tax,"federal defense, net interest, general government",mexican_second_gen,-37.41172839304117,-2610.1416493700667,1.2249108958102235,2770.670909780749,cache:omb_hist03z1_fy2027.xlsx,False
-F,proportional_to_federal_tax,"federal defense, net interest, general government",mexican_third_plus_selfid,-51.81130099032397,-3612.41286258702,2.2541396925056008,2163.7658062512137,cache:omb_hist03z1_fy2027.xlsx,False
-F,proportional_to_federal_tax,"federal defense, net interest, general government",mexican_observed_total,-120.3871018449132,-2943.6964914575874,3.080993910572848,3106.2691273714518,cache:omb_hist03z1_fy2027.xlsx,False
-F,proportional_to_federal_tax,"federal defense, net interest, general government",third_plus_nh_white,-1049.7741124156578,-6066.168705061325,14.743701251514242,0.0,cache:omb_hist03z1_fy2027.xlsx,False
-F,proportional_to_federal_tax,"federal defense, net interest, general government",all_native,-1516.825745503077,-5347.107869908479,18.07723095128715,587.4238385653975,cache:omb_hist03z1_fy2027.xlsx,False
+F,per_capita,"federal defense, net interest, general government",mexico_born,-63.24598708117472,-5175.281556366933,1.284844629744374,-4.184761899871354e-12,cache:omb_hist03z1_fy2027.xlsx,False
+F,per_capita,"federal defense, net interest, general government",mexican_second_gen,-74.17843701740965,-5175.2815563669365,1.470561661927948,-6.363971619533547e-12,cache:omb_hist03z1_fy2027.xlsx,False
+F,per_capita,"federal defense, net interest, general government",mexican_third_plus_selfid,-74.22686183067489,-5175.281556366933,1.5944205164821528,-4.240368275803727e-12,cache:omb_hist03z1_fy2027.xlsx,False
+F,per_capita,"federal defense, net interest, general government",mexican_observed_total,-211.65128592925925,-5175.281556366935,1.957786761505605,-4.568545516042107e-12,cache:omb_hist03z1_fy2027.xlsx,False
+F,per_capita,"federal defense, net interest, general government",third_plus_nh_white,-895.6026227564824,-5175.281556366929,1.971110888630351,0.0,cache:omb_hist03z1_fy2027.xlsx,False
+F,per_capita,"federal defense, net interest, general government",all_native,-1468.0834005802408,-5175.281556366938,2.4932980908896103,-6.967474699984373e-12,cache:omb_hist03z1_fy2027.xlsx,False
+F,proportional_to_federal_tax,"federal defense, net interest, general government",mexico_born,-30.666694955612744,-2509.3889450221486,1.2559693886795489,3783.599935089354,cache:omb_hist03z1_fy2027.xlsx,False
+F,proportional_to_federal_tax,"federal defense, net interest, general government",mexican_second_gen,-36.814638517068786,-2568.4838799850354,1.2053613607774463,2726.4510990171,cache:omb_hist03z1_fy2027.xlsx,False
+F,proportional_to_federal_tax,"federal defense, net interest, general government",mexican_third_plus_selfid,-50.98439443959547,-3554.7588797123763,2.218163701894244,2129.2321797019486,cache:omb_hist03z1_fy2027.xlsx,False
+F,proportional_to_federal_tax,"federal defense, net interest, general government",mexican_observed_total,-118.46572791227699,-2896.715198465208,3.0318213555759512,3056.6931807989295,cache:omb_hist03z1_fy2027.xlsx,False
+F,proportional_to_federal_tax,"federal defense, net interest, general government",third_plus_nh_white,-1033.0197543171455,-5969.352864807165,14.508392295479075,0.0,cache:omb_hist03z1_fy2027.xlsx,False
+F,proportional_to_federal_tax,"federal defense, net interest, general government",all_native,-1492.6172596844258,-5261.768215420649,17.788718977896607,578.0485746581185,cache:omb_hist03z1_fy2027.xlsx,False
 S,half_inside_meps,state-funded coverage for undocumented residents,mexico_born,-1.485180505004549,-121.5290903051395,0.13038703945419705,-115.71358388276441,"params:state_medicaid_undocumented, assembled from individual verified state lines",False
 S,half_inside_meps,state-funded coverage for undocumented residents,mexican_second_gen,0.0,0.0,0.0,0.0,"params:state_medicaid_undocumented, assembled from individual verified state lines",False
 S,half_inside_meps,state-funded coverage for undocumented residents,mexican_third_plus_selfid,0.0,0.0,0.0,0.0,"params:state_medicaid_undocumented, assembled from individual verified state lines",False

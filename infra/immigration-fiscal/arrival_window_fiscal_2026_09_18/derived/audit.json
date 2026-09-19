@@ -26,11 +26,11 @@
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/absolute_ledger.py",
-      "sha256": "2ee6157643bf8bae930f0a82ae539bd301e3fd83453768af48119121c4b7fae7"
+      "sha256": "fc234ffe3321c69cb8d2bb6b18b29ca06f900eac6dd67b7a3fd32ef81fc9cddf"
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/arrival_window_ledger.py",
-      "sha256": "a721d9a3268968342bd7725152872d6bff3858402746a1b9126a4cd714192fa6"
+      "sha256": "f52a885231332de0fd4893f12ba2e42610b2d520e18210c8826281ed97c46d05"
     }
   ],
   "peinusyr_codes": {
@@ -145,10 +145,10 @@
     "all_standard_errors_finite": true,
     "charge_columns_vs_absolute_lane": {
       "checked": true,
-      "mine_bn": -76.06936987230425,
-      "absolute_lane_bn": -76.06936987230425,
-      "mine_gap": 978.225715475277,
-      "absolute_lane_gap": 978.2257154752841,
+      "mine_bn": -62.93151186700732,
+      "absolute_lane_bn": -62.9315118670073,
+      "mine_gap": 580.4256975216931,
+      "absolute_lane_gap": 580.4256975216817,
       "passed": true
     }
   },
@@ -219,8 +219,10 @@
       0.10051446851042085
     ]
   },
-  "complete_account": {
+  "selected_account": {
     "built": true,
+    "complete": false,
+    "account": "partial_plus_G_K_X_R",
     "keys": [
       "G|deflated2024",
       "K|central",
@@ -228,6 +230,19 @@
       "R|central"
     ],
     "missing_items": [],
+    "excluded_items": [
+      "P",
+      "D",
+      "U",
+      "I",
+      "M",
+      "N",
+      "E",
+      "C",
+      "F",
+      "S"
+    ],
+    "exclusion_reason": "This arrival-window lane has only four additional annual items; institutional data do not identify arrival windows. These outputs cannot substitute for the expanded annual account.",
     "dropped": [
       {
         "item": "S(states without a verified line)",
@@ -239,9 +254,9 @@
     "population_vintage": "NST-EST2024 (params)",
     "national": {
       "G|deflated2024": {
-        "target_dollars": 1335361699610.256,
-        "charged_dollars": 1347959714620.2197,
-        "ratio": 1.0094341593095268,
+        "target_dollars": 1151083850794.3362,
+        "charged_dollars": 1161659516296.8035,
+        "ratio": 1.009187571778693,
         "kind": "state_per_capita"
       },
       "K|central": {

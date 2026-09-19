@@ -203,7 +203,8 @@ def build_account(args):
                heads=heads, general_services=(gs_pc, gs_national), assf=assf, omb=omb,
                donor_codes=codes,
                donor_payer_means={"medicaid": payer_cell["TOTMCD24"],
-                                  "medicare": payer_cell["TOTMCR24"]},
+                                  "medicare": payer_cell["TOTMCR24"],
+                                  "tricare": payer_cell["TOTTRI24"]},
                exposure=exposure, n_civilian=float(w0[civilian].sum()),
                us_resident=us_resident, consumption_proxy=base_matrix[:, 4],
                capital=(cap_pc, cap_national, cap_components), off=[],
@@ -284,12 +285,26 @@ def build_account(args):
     for item in ["I", "E", "R"]:
         if centrals.get(item):
             fed[f"item_{item}"] = vec(item)
+    # Annual G includes the delivered services; R nets the matching federal
+    # grants. Move their financing between governments without another charge.
+    r_meta = charges.meta.get(f"R|{centrals.get('R')}", {})
+    grant_financing = sum(float(part.get("federal_grants_netted", 0.0))
+                          for part in r_meta.get("detail", {}).values()
+                          if isinstance(part, dict))
+    if not np.isfinite(grant_financing) or grant_financing < 0:
+        raise ValueError("Invalid matched federal grant financing amount")
+    grant_vector = np.where(civilian, -grant_financing / us_resident, 0.0)
+    fed["matched_grants_financing"] = grant_vector
+    stl["matched_grants_financing"] = -grant_vector
     f_key = f"F|{args.f_arm}"
     if f_key not in charges.columns:
         raise SystemExit(f"[BLOCKED] item F arm {args.f_arm} was not built")
     fed["item_F"] = charges.data[charges.columns.index(f_key)]
 
     u_ratios = {
+        "social_security": (params.admin_over_survey("underreporting", [["social_security"]], "social_security",
+                                                    preferred="ratio_social_security"),
+                            d.SS_VAL.to_numpy(dtype=float), "person", 1.0),
         "snap": (params.admin_over_survey("underreporting", [["snap"]], "snap",
                                           preferred="ratio_snap"),
                  heads.SPM_SNAPSUB.to_numpy(dtype=float), "unit", 1.0),
@@ -345,12 +360,25 @@ def build_account(args):
     fed["item_X"] = excise_fed_share * vec("X")
     stl["item_X"] = (1.0 - excise_fed_share) * vec("X")
 
+    expected = base_matrix @ AL.COEFFICIENTS - means[codes] * exposure
+    for item, arm in centrals.items():
+        if arm is not None:
+            expected = expected + (fed["item_F"] if item == "F" else vec(item))
+    if not np.allclose(sum(fed.values()) + sum(stl.values()), expected,
+                       atol=1e-6, rtol=1e-10):
+        raise ValueError("Government financing split does not conserve the annual record account")
+
     splits = dict(k12_federal_share=k12_federal_share,
                   medicaid_federal_share=medicaid_federal_share,
                   corporate_federal_share=corp_fed_share,
                   excise_federal_share=excise_fed_share,
                   tanf_federal_share=args.tanf_federal_share,
                   unemployment_federal_share=0.0,
+                  matched_federal_grants=grant_financing,
+                  corrections_federal_share=args.corrections_federal_share,
+                  grant_financing_allocation="ASSUMPTION: national per-resident financing "
+                  "of the grants netted from R, not observed state grant shares; G includes "
+                  "the corresponding services net of its own-source fee credit",
                   k12_current_spending_us=k12_current_us)
 
     return dict(d=d, index=index, n_units=n_units, weights=weights, w0=w0, heads=heads,
@@ -363,7 +391,7 @@ def build_account(args):
 
 # --------------------------------------------------------------------- item N
 def institutional_split(acc):
-    """Item N split into corrections (state-local) and public nursing (mixed)."""
+    """N financing scenario: ACS does not identify federal prison financing."""
     cells_df = pd.read_csv(INSTITUTIONAL / "derived/acs_cells.csv")
     inst, inst_men = {}, {}
     for _, r in cells_df.iterrows():
@@ -375,6 +403,9 @@ def institutional_split(acc):
     prison, nf_public = 60989.0, (147e9 / 1.2e6) * (0.63 + 0.14)
     mcd_fed = acc["splits"]["medicaid_federal_share"]
     nursing_federal = (0.14 + 0.63 * mcd_fed) / (0.63 + 0.14)
+    correction_federal = acc["splits"]["corrections_federal_share"]
+    if not 0 <= correction_federal <= 1:
+        raise ValueError("Correctional federal share must lie in [0,1]")
 
     d, w0, groups = acc["d"], acc["w0"], acc["groups"]
     bands = np.digitize(d.A_AGE, [18, 25, 35, 45, 55, 65, 75])
@@ -416,9 +447,10 @@ def institutional_split(acc):
                 corr += wgt * c
                 nurse += wgt * n
         out[g] = dict(corrections=-corr, nursing=-nurse, total=-(corr + nurse),
-                      federal=-(nurse * nursing_federal),
-                      state_local=-(corr + nurse * (1.0 - nursing_federal)))
+                      federal=-(corr * correction_federal + nurse * nursing_federal),
+                      state_local=-(corr * (1.0 - correction_federal) + nurse * (1.0 - nursing_federal)))
     acc["splits"]["nursing_federal_share"] = nursing_federal
+    acc["splits"]["corrections_financing_status"] = "ASSUMPTION: ACS institutional proxy does not identify government payer; 0/1 runs bound this split"
     return out
 
 
@@ -573,8 +605,36 @@ def cell_frame(hh, shares, weight):
     return cell.groupby(["decile", "tenure"], as_index=False).sum()
 
 
+def live_annual_anchor(directory, group, f_arm, centrals, params_sha256=None):
+    """Use the current annual waterfall and only the requested F-arm difference."""
+    directory = Path(directory)
+    audit = json.loads((directory / "audit.json").read_text())
+    if params_sha256 is not None and audit.get("params_sha256") != params_sha256:
+        raise ValueError("Live annual outputs use different parameters; rebuild the annual account")
+    if audit["central_arms"] != centrals:
+        raise ValueError("Annual arm selection differs from incidence reconstruction")
+    water = pd.read_csv(directory / "waterfall.csv")
+    block = water[water.group.eq(group)].sort_values("step")
+    if block.empty or block.step.duplicated().any():
+        raise ValueError(f"Missing or duplicate live annual waterfall: {group}")
+    anchor = float(block.cumulative_bn.iloc[-1])
+    if f_arm != centrals["F"]:
+        items = pd.read_csv(directory / "items_by_group.csv")
+        def amount(arm):
+            row = items[items.group.eq(group) & items.item.eq("F") & items.arm.eq(arm)]
+            if len(row) != 1:
+                raise ValueError(f"Missing or duplicate live F arm: {group}/{arm}")
+            return float(row.total_bn.iloc[0])
+        anchor += amount(f_arm) - amount(centrals["F"])
+    if not np.isfinite(anchor):
+        raise ValueError("Nonfinite annual anchor")
+    return anchor
+
+
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--corrections-federal-share", type=float, required=True,
+                    help="explicit financing sensitivity in [0,1]; no identified central estimate")
     ap.add_argument("--params", default=str(ABS / "params/params.json"))
     ap.add_argument("--tanf-federal-share", type=float, default=0.55)
     ap.add_argument("--corporate-labour-share", type=float, default=0.25)
@@ -622,15 +682,13 @@ def main():
         return float(r.federal_bn) * 1e9, float(r.state_local_bn) * 1e9
 
     union_us = sum(account_of(UNION, "US")) / 1e9
-    if args.f_arm == "zero":
-        gate = abs(union_us - (-263.224141)) <= 0.02
-        print(f"[gate] union complete absolute rebuilt {union_us:+.6f}bn vs published "
-              f"-263.224141bn -> {'PASS' if gate else 'FAIL'}", flush=True)
-        if not gate:
-            raise SystemExit(f"[BLOCKED] account rebuild gate failed: {union_us}")
-    else:
-        print(f"[arm] item F = {args.f_arm}: union complete absolute {union_us:+.6f}bn",
-              flush=True)
+    anchor = live_annual_anchor(ABS / "derived", UNION, args.f_arm, acc["centrals"],
+                                acc["params"].sha256)
+    gate = abs(union_us - anchor) <= 1e-6
+    print(f"[gate] union expanded absolute rebuilt {union_us:+.6f}bn vs live annual "
+          f"{anchor:+.6f}bn -> {'PASS' if gate else 'FAIL'}", flush=True)
+    if not gate:
+        raise SystemExit(f"[BLOCKED] live annual account rebuild gate failed: {union_us} vs {anchor}")
 
     detail = []
     for bucket, store in [("federal", acc["fed"]), ("state_local", acc["stl"])]:
@@ -739,6 +797,10 @@ def main():
     pd.DataFrame(interest).to_csv(OUT / "interest.csv", index=False)
 
     audit = dict(splits=acc["splits"],
+                 builder_sha256=AL.sha256(Path(__file__)),
+                 annual_audit_sha256=AL.sha256(ABS / "derived/audit.json"),
+                 output_sha256={name: AL.sha256(OUT / name) for name in
+                                ["account_by_level.csv", "incidence_matrix.csv", "interest.csv"]},
                  federal_receipt_mix=fed_mix_us,
                  state_local_own_source_mix_us=revenue_mix(acc["params"], cog.loc[0])[1],
                  institutional=inst,
@@ -747,6 +809,8 @@ def main():
                  native_households_weighted=float(w_all.sum()),
                  native_households_unweighted=int(len(hh_all)),
                  gate_union_absolute_bn=union_us,
+                 gate_live_annual_anchor_bn=anchor,
+                 annual_params_sha256=acc["params"].sha256,
                  central_arms=acc["centrals"], item_F_arm=args.f_arm,
                  medical_anchors=acc["medical_anchors"])
     (OUT / "audit.json").write_text(json.dumps(audit, indent=2, default=float))

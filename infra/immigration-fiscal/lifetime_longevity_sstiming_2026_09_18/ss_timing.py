@@ -225,6 +225,15 @@ def standardized(p: pd.DataFrame, value: np.ndarray, group: str, ref: str) -> fl
 
 
 def main() -> None:
+    raise SystemExit(
+        "[BLOCKED] This archived MWR diagnostic is disabled: whole-career ratios do not "
+        "identify current-year accrued liability; group-mean masks overwrite overlapping "
+        "groups and complete_gap_after uses a stale union baseline. Use "
+        "ledger_absolute_2026_09_17/lifetime.py for current cash period-profile NPVs."
+    )
+
+
+def archived_diagnostic_not_for_current_estimates() -> None:
     mwr = parse_mwr()
     mwr.to_csv(OUT / "mwr_table.csv", index=False)
     print(f"[mwr] parsed {len(mwr)} rows of Actuarial Note 2025.7 Table 1")
