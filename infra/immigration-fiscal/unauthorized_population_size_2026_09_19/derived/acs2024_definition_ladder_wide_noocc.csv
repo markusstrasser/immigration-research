@@ -1,0 +1,6 @@
+definition,acs2024_weighted,se,note
+"Borjas residual, ACS 2024, no coverage adjustment",12668426,95225,foreign born minus everyone a Borjas rule marks legal; ACS lacks rule (f)
+"Borjas residual, non-citizens only",12668426,95225,drops the naturalised; identical by construction of rule (b)
+"All non-citizens, ACS 2024",24402333,117774,"CIT==5; includes students, H-1B, green-card holders, TPS, parolees"
+All non-citizens who arrived 1980 or later,23622762,115669,the base CIS subtracts its legal-stock estimate from
+"All foreign born, ACS 2024",50280846,125793,NATIVITY==2; includes naturalised citizens

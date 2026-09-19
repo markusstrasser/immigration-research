@@ -1,0 +1,16 @@
+{
+  "acs_2024_1yr_person_rows": 3422888,
+  "borjas_residual_ohss_coverage": 13618152,
+  "borjas_residual_se": 95225,
+  "borjas_residual_unadjusted": 12668426,
+  "foreign_born": 50280846,
+  "foreign_born_se": 125793,
+  "non_citizens": 24402333,
+  "non_citizens_post_1980_arrival": 23622762,
+  "rules": {
+    "occupation_rule": false,
+    "refugee": "wide",
+    "rule_f_available": false
+  },
+  "weighted_total_population": 340110990
+}

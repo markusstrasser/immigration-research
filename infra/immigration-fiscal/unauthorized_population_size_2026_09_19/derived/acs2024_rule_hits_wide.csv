@@ -1,0 +1,10 @@
+rule,foreign_born_hits,se,unweighted_rows
+a_arrived_pre_1980,5693762,24791,61694
+b_citizen,25878513,79759,243545
+c_benefits,17042911,75429,157135
+d_veteran_or_armed_forces,1051568,14643,10206
+e_government_sector,3682300,28525,34719
+f_subsidised_housing,0,0,0
+g_refugee_origin,6624866,50686,57907
+h_licensed_occupation,1804766,20692,16953
+i_spouse_legal_or_citizen,2854158,24278,23709

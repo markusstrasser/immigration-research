@@ -1,0 +1,9 @@
+estimate,as_of,value
+Stock-flow: DHS Jan-2022 + CBO OFN net 2022-2024,2025-01-01,16690000
+Stock-flow: DHS Jan-2022 + CBO OFN net 2022-2025,2026-01-01,16330000
+"CIS CPS residual, coverage-adjusted",2025-01-01,15800000
+"CIS CPS residual, coverage-adjusted",2026-07-01,13500000
+MPI ACS residual,2024-07-01,15754000
+CMS ACS residual,2024-07-01,14610000
+"This lane, CPS ASEC 2025 Borjas residual, no coverage adj.",2025-03-01,14896401
+"This lane, ACS 2024 Borjas residual, no coverage adj.",2024-07-01,12973901
