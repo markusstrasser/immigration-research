@@ -1,0 +1,3 @@
+group,self_id_count,self_id_se,attrition_rate_applied,attrition_se,corrected_count,corrected_se,added
+"G2 (parental birthplace, no self-ID needed)",14353824.6,283635.7,0.0,0.0,14353824.6,283635.7,0.0
+"G3+ self-ID, corrected at the reproduced 3rd-gen child rate",14383006.5,308923.0,0.09191,0.01001,15838745.6,382376.4,1455739.1

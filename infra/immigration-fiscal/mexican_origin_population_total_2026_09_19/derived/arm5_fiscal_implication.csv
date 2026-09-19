@@ -1,0 +1,13 @@
+population_assumption,attriter_characteristics,attriters_added,attriter_gap_per_person,population_before,population_after,gap_per_person_before,gap_per_person_after,aggregate_gap_bn_before,aggregate_gap_bn_after
+"floor: 3rd-generation attriters only, no 4th-plus correction","fully converged (white balance, gap $0)",801695.9,0.0,40896574.2,41698270.1,-7105.5,-6968.9,-290.59,-290.59
+"floor: 3rd-generation attriters only, no 4th-plus correction",Duncan-Trejo selectivity (0.76/1.05 of the education gap closed),801695.9,-1417.6,40896574.2,41698270.1,-7105.5,-6996.1,-290.59,-291.73
+"floor: 3rd-generation attriters only, no 4th-plus correction",halfway to white,801695.9,-2571.6,40896574.2,41698270.1,-7105.5,-7018.3,-290.59,-292.65
+4th-plus identifies at the measured 3rd-generation rate,"fully converged (white balance, gap $0)",1812052.5,0.0,40896574.2,42708626.7,-7105.5,-6804.0,-290.59,-290.59
+4th-plus identifies at the measured 3rd-generation rate,Duncan-Trejo selectivity (0.76/1.05 of the education gap closed),1812052.5,-1417.6,40896574.2,42708626.7,-7105.5,-6864.1,-290.59,-293.16
+4th-plus identifies at the measured 3rd-generation rate,halfway to white,1812052.5,-2571.6,40896574.2,42708626.7,-7105.5,-6913.1,-290.59,-295.25
+4th-plus identifies at Duncan-Trejo 1994-2006 rate (70.8%),"fully converged (white balance, gap $0)",4109220.4,0.0,40896574.2,45005794.6,-7105.5,-6456.7,-290.59,-290.59
+4th-plus identifies at Duncan-Trejo 1994-2006 rate (70.8%),Duncan-Trejo selectivity (0.76/1.05 of the education gap closed),4109220.4,-1417.6,40896574.2,45005794.6,-7105.5,-6586.1,-290.59,-296.41
+4th-plus identifies at Duncan-Trejo 1994-2006 rate (70.8%),halfway to white,4109220.4,-2571.6,40896574.2,45005794.6,-7105.5,-6691.5,-290.59,-301.16
+4th-plus identifies at the 1970 reinterview 4th-generation rate (44.4%),"fully converged (white balance, gap $0)",10844275.8,0.0,40896574.2,51740850.0,-7105.5,-5616.3,-290.59,-290.59
+4th-plus identifies at the 1970 reinterview 4th-generation rate (44.4%),Duncan-Trejo selectivity (0.76/1.05 of the education gap closed),10844275.8,-1417.6,40896574.2,51740850.0,-7105.5,-5913.4,-290.59,-305.96
+4th-plus identifies at the 1970 reinterview 4th-generation rate (44.4%),halfway to white,10844275.8,-2571.6,40896574.2,51740850.0,-7105.5,-6155.2,-290.59,-318.48

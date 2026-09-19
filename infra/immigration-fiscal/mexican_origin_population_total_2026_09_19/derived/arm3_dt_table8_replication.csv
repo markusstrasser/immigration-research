@@ -1,0 +1,13 @@
+cell,generation,pct_identified_mexican_2025,se,pct_identified_mexican_DT_1994_2006,pct_of_generation_2025,pct_of_generation_DT,pct_of_all_us_born_mexican_children_2025,weighted,unweighted_n
+"2nd gen, both parents Mexico-born",2nd gen,96.79,0.78,97.9,58.01,68.4,28.35,2283661.9,1048
+"2nd gen, one parent Mexico-born",2nd gen,86.48,2.1,80.6,41.99,31.6,20.52,1652929.8,753
+"2nd gen, all",2nd gen,92.46,1.01,92.4,100.0,100.0,48.87,3936591.7,1801
+"3rd gen, four grandparents Mexico-born",3rd gen,97.99,1.32,96.2,28.02,10.0,6.53,526316.2,208
+"3rd gen, three grandparents Mexico-born",3rd gen,91.3,4.08,95.2,11.1,7.1,2.59,208547.2,88
+"3rd gen, two grandparents Mexico-born",3rd gen,89.05,2.71,78.7,33.68,34.5,7.85,632577.9,266
+"3rd gen, one grandparent Mexico-born",3rd gen,78.04,4.29,58.4,27.2,48.5,6.34,510848.4,249
+"3rd gen, all",3rd gen,88.81,1.53,71.8,100.0,100.0,23.32,1878289.6,811
+"4th+ gen, both parents identified Mexican",4th+ gen,98.44,1.24,98.4,38.56,42.9,10.73,864021.5,327
+"4th+ gen, one parent identified Mexican",4th+ gen,81.9,2.38,50.1,61.44,57.1,17.09,1376677.2,636
+"4th+ gen, all",4th+ gen,88.28,1.62,70.8,100.0,100.0,27.82,2240698.6,963
+all US-born Mexican children,all,90.45,0.82,84.2,100.0,100.0,100.0,8055580.0,3575

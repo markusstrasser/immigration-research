@@ -1,0 +1,13 @@
+definition,population,se,unweighted_n,construction
+total civilian household population,337689633.1,75782.1,142125,all person records
+"G1 Mexico-born, foreign-born",12231213.6,248295.1,5637,"PENATVTY=303 & PRCITSHP in (4,5)"
+"G1 Mexico-born, any citizenship",12605225.0,253961.4,5808,PENATVTY=303
+"G2 native, >=1 Mexico-born parent",14353824.6,283635.7,6364,"PRCITSHP in (1,2,3) & (PEMNTVTY=303 | PEFNTVTY=303)"
+"G3+ native, 2 US-area parents, self-ID Mexican",14383006.5,308923.0,6373,"PRCITSHP in (1,2,3) & both parents US-area & PRDTHSP=1"
+UNION repo definition (G1+G2+G3+),40968044.7,378561.0,18374,disjoint union of the three
+G2 Census construction (self-ID + any FB parent),14027255.6,263792.9,6208,"PRCITSHP in (1,2,3) & PRDTHSP=1 & >=1 foreign-born parent"
+G3+ Census construction (self-ID + 2 US parents),14383006.5,308923.0,6373,identical to G3+ self-ID
+all natives self-identifying Mexican,28410262.1,314703.2,12581,"PRCITSHP in (1,2,3) & PRDTHSP=1"
+residual: native self-ID Mexican in neither G2 nor G3+,660604.9,58640.6,284,native & PRDTHSP=1 & not G2 & not G3+
+all self-identifying Mexican (any nativity),40360113.3,364946.3,18105,PRDTHSP=1
+UNION Census construction (G1 any + G2c + G3c),40688341.2,365735.6,18234,Mexico-born + self-ID with FB parent + self-ID with US parents

@@ -1,0 +1,55 @@
+group,outcome,attrition_rate,se,weighted_base,unweighted_n,note
+2nd gen children (any parent Mexico-born),not Mexican,0.0632,0.00685,8817932.5,3868,
+2nd gen children (any parent Mexico-born),not Hispanic at all,0.02904,0.00443,8817932.5,3868,
+2nd gen children (any parent Mexico-born),Hispanic but not Mexican,0.03416,0.00521,8817932.5,3868,
+"2nd gen, both parents Mexican descent",not Mexican,0.03459,0.00712,5353268.8,2375,
+"2nd gen, both parents Mexican descent",not Hispanic at all,0.0174,0.00453,5353268.8,2375,
+"2nd gen, both parents Mexican descent",Hispanic but not Mexican,0.01719,0.00551,5353268.8,2375,
+"2nd gen, one parent Mexican descent",not Mexican,0.10739,0.01228,3464663.7,1493,
+"2nd gen, one parent Mexican descent",not Hispanic at all,0.04702,0.00891,3464663.7,1493,
+"2nd gen, one parent Mexican descent",Hispanic but not Mexican,0.06037,0.00951,3464663.7,1493,
+"2nd gen, two parents present",not Mexican,0.07025,0.00855,6510188.4,2903,
+"2nd gen, two parents present",not Hispanic at all,0.0317,0.00513,6510188.4,2903,
+"2nd gen, two parents present",Hispanic but not Mexican,0.03855,0.00674,6510188.4,2903,
+3rd gen children (>=1 Mexico-born grandparent),not Mexican,0.09191,0.01001,3905232.8,1615,
+3rd gen children (>=1 Mexico-born grandparent),not Hispanic at all,0.05053,0.00707,3905232.8,1615,
+3rd gen children (>=1 Mexico-born grandparent),Hispanic but not Mexican,0.04138,0.0074,3905232.8,1615,
+"3rd gen, both parents Mexican descent",not Mexican,0.03302,0.01197,948952.9,383,
+"3rd gen, both parents Mexican descent",not Hispanic at all,0.00401,0.00413,948952.9,383,
+"3rd gen, both parents Mexican descent",Hispanic but not Mexican,0.02901,0.01265,948952.9,383,
+"3rd gen, one parent Mexican descent",not Mexican,0.11081,0.01261,2956279.9,1232,
+"3rd gen, one parent Mexican descent",not Hispanic at all,0.06546,0.00911,2956279.9,1232,
+"3rd gen, one parent Mexican descent",Hispanic but not Mexican,0.04535,0.00865,2956279.9,1232,
+"3rd gen, two parents present",not Mexican,0.11534,0.01394,2334561.4,1001,
+"3rd gen, two parents present",not Hispanic at all,0.07172,0.01086,2334561.4,1001,
+"3rd gen, two parents present",Hispanic but not Mexican,0.04362,0.01001,2334561.4,1001,
+3rd gen children aged 0-5,not Mexican,0.09227,0.01854,1195760.7,433,age band
+3rd gen children aged 0-5,not Hispanic at all,0.04175,0.01169,1195760.7,433,age band
+3rd gen children aged 0-5,Hispanic but not Mexican,0.05052,0.0153,1195760.7,433,age band
+2nd gen children aged 0-5,not Mexican,0.10327,0.0175,1332521.3,542,age band
+2nd gen children aged 0-5,not Hispanic at all,0.03325,0.00932,1332521.3,542,age band
+2nd gen children aged 0-5,Hispanic but not Mexican,0.07003,0.01499,1332521.3,542,age band
+3rd gen children aged 6-11,not Mexican,0.09527,0.01663,961074.6,438,age band
+3rd gen children aged 6-11,not Hispanic at all,0.04556,0.01071,961074.6,438,age band
+3rd gen children aged 6-11,Hispanic but not Mexican,0.04971,0.01154,961074.6,438,age band
+2nd gen children aged 6-11,not Mexican,0.05191,0.01358,1636204.3,764,age band
+2nd gen children aged 6-11,not Hispanic at all,0.02061,0.0057,1636204.3,764,age band
+2nd gen children aged 6-11,Hispanic but not Mexican,0.0313,0.01203,1636204.3,764,age band
+3rd gen children aged 12-17,not Mexican,0.09102,0.01866,879472.1,400,age band
+3rd gen children aged 12-17,not Hispanic at all,0.04978,0.01234,879472.1,400,age band
+3rd gen children aged 12-17,Hispanic but not Mexican,0.04124,0.01453,879472.1,400,age band
+2nd gen children aged 12-17,not Mexican,0.05826,0.00934,2120526.3,988,age band
+2nd gen children aged 12-17,not Hispanic at all,0.0282,0.0076,2120526.3,988,age band
+2nd gen children aged 12-17,Hispanic but not Mexican,0.03006,0.00645,2120526.3,988,age band
+"3rd gen, 1 Mexico-born grandparent(s) of 4",not Mexican,0.21992,0.03501,655263.0,307,two parents linked
+"3rd gen, 1 Mexico-born grandparent(s) of 4",not Hispanic at all,0.15279,0.02774,655263.0,307,two parents linked
+"3rd gen, 1 Mexico-born grandparent(s) of 4",Hispanic but not Mexican,0.06713,0.0246,655263.0,307,two parents linked
+"3rd gen, 2 Mexico-born grandparent(s) of 4",not Mexican,0.11778,0.02688,796733.7,336,two parents linked
+"3rd gen, 2 Mexico-born grandparent(s) of 4",not Hispanic at all,0.07973,0.02117,796733.7,336,two parents linked
+"3rd gen, 2 Mexico-born grandparent(s) of 4",Hispanic but not Mexican,0.03804,0.01402,796733.7,336,two parents linked
+"3rd gen, 3 Mexico-born grandparent(s) of 4",not Mexican,0.07127,0.03296,254588.1,105,two parents linked
+"3rd gen, 3 Mexico-born grandparent(s) of 4",not Hispanic at all,0.01493,0.01563,254588.1,105,two parents linked
+"3rd gen, 3 Mexico-born grandparent(s) of 4",Hispanic but not Mexican,0.05634,0.03634,254588.1,105,two parents linked
+"3rd gen, 4 Mexico-born grandparent(s) of 4",not Mexican,0.021,0.01183,627976.6,253,two parents linked
+"3rd gen, 4 Mexico-born grandparent(s) of 4",not Hispanic at all,0.0,0.0,627976.6,253,two parents linked
+"3rd gen, 4 Mexico-born grandparent(s) of 4",Hispanic but not Mexican,0.021,0.01183,627976.6,253,two parents linked

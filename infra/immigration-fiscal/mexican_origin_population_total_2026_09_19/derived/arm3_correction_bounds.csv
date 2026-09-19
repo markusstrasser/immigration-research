@@ -1,0 +1,5 @@
+assumption,fourth_plus_identification_rate,third_gen_identification_rate,self_id_third_plus,corrected_third_plus,added,corrected_union,union_added,note
+"floor: 3rd-generation attriters only, no 4th-plus correction",1.0,0.8881,14383006.5,15184702.4,801695.9,41769740.6,801695.9,the only piece CPS measures; a strict lower bound
+4th-plus identifies at the measured 3rd-generation rate,0.8881,0.8881,14383006.5,16195059.0,1812052.5,42780097.2,1812052.5,assumes identification stops decaying after the third generation
+4th-plus identifies at Duncan-Trejo 1994-2006 rate (70.8%),0.708,0.8881,14383006.5,18492226.9,4109220.4,45077265.1,4109220.4,"their Table 8 4th+ row, itself censored upward"
+4th-plus identifies at the 1970 reinterview 4th-generation rate (44.4%),0.444,0.8881,14383006.5,25227282.3,10844275.8,51812320.5,10844275.8,"n=27, 1970 population; an upper bound, not an estimate"
