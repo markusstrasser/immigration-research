@@ -1,0 +1,6 @@
+scheme,rate_us_born,rate_legal_mexico_born,rate_unauthorized_mexico_born,counted_union,coverage_adjusted_union,multiplier,note
+A: controls are right (Bureau's own blended base),0.0,0.0,0.0,40968044.7,40968044.7,1.0,CPS weights already remove survey undercoverage
+B: PES Hispanic 4.99% on everyone,0.0499,0.0499,0.0499,40968044.7,43119718.7,1.0525,2020 census-base error; partly absorbed by the Blended Base
+"C: PES on US-born, OHSS decay on the unauthorized Mexico-born",0.0499,0.0499,0.0882,40968044.7,43321647.9,1.0574,OHSS rate concentrated on the unauthorized
+"D: PES on US-born, CMS 5/37 on the unauthorized Mexico-born",0.0499,0.0499,0.2097,40968044.7,44091653.2,1.0762,CMS Warren et al. 2026
+"E: no adjustment for natives, CMS 5/37 on the unauthorized only",0.0,0.0,0.2097,40968044.7,42179849.2,1.0296,narrowest defensible arm

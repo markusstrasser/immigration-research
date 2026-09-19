@@ -1,0 +1,14 @@
+cell,population,se,unweighted_n,note
+total population,340110990.0,4.0,3422888,
+Mexico-born (POBP=303),11592022.0,58971.4,91819,
+HISP = Mexican,38932033.0,79640.6,312879,
+Mexican ancestry (ANC1P or ANC2P),27685749.0,93969.8,216295,
+Mexican ancestry AND HISP Mexican,26470423.0,94034.5,206383,
+"Mexican ancestry, HISP other Hispanic",883875.0,18535.3,7005,"claims Mexican ancestry, reports a different Hispanic origin"
+"Mexican ancestry, HISP NOT Hispanic",331451.0,10900.9,2907,ancestry without Hispanic origin -- the attrition-visible cell
+"HISP Mexican, NO Mexican ancestry",12461610.0,72020.7,106496,
+"HISP Mexican, no Mexican ancestry, other Hispanic ancestry",2945398.0,33025.4,24882,
+"HISP Mexican, ancestry not reported",7991559.0,62481.4,68504,
+UNION ancestry-or-origin (Mexico-born | HISP Mex | Mex anc),40544464.0,72464.9,326258,
+ancestry-only definition (Mexican ancestry | Mexico-born),30371519.0,86344.9,239793,
+origin-only definition (HISP Mexican | Mexico-born),39429519.0,75333.5,317038,

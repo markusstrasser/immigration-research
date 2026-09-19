@@ -1,0 +1,15 @@
+nativity,cell,population,se,unweighted_n
+foreign-born,HISP Mexican,11143743.0,58394.6,87854
+foreign-born,Mexican ancestry,8829373.0,60381.8,67633
+foreign-born,both,8703783.0,59181.9,66761
+foreign-born,"ancestry only, not Hispanic",21801.0,3433.0,141
+foreign-born,"ancestry only, other Hispanic origin",103789.0,6748.2,731
+foreign-born,HISP Mexican without Mexican ancestry,2439960.0,27840.3,21093
+foreign-born,union of the two,11269333.0,59255.6,88726
+US-born,HISP Mexican,27788290.0,63024.0,225025
+US-born,Mexican ancestry,18856376.0,67405.6,148662
+US-born,both,17766640.0,65355.5,139622
+US-born,"ancestry only, not Hispanic",309650.0,10200.7,2766
+US-born,"ancestry only, other Hispanic origin",780086.0,17084.6,6274
+US-born,HISP Mexican without Mexican ancestry,10021650.0,62247.1,85403
+US-born,union of the two,28878026.0,62496.9,234065

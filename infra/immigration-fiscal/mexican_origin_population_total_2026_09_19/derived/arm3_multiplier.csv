@@ -1,0 +1,7 @@
+quantity,children,se
+"A: self-identified Mexican, two US-area-born parents",3770428.3,135721.5
+B: objectively 3rd generation (>=1 Mexico-born grandparent),1878289.6,124909.3
+A and B: 3rd-generation identifiers,1668129.2,
+B not A: 3rd-generation attriters (recoverable),210160.4,32629.4
+A not B: 4th-plus identifiers (no Mexico-born grandparent),2102299.0,
+multiplier (A + B\A) / A applied to the adult G3+ count,1.05574,

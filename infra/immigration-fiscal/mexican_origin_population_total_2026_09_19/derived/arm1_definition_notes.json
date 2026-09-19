@@ -1,0 +1,21 @@
+{
+  "file": "CPS ASEC 2025 public-use person file (pppub25.csv), income year 2024",
+  "g1": 12231213.6,
+  "g2": 14353824.6,
+  "g3_selfid": 14383006.5,
+  "marsupwt_ratio_to_pwwgt0": 100.0,
+  "mexico_code": 303,
+  "records": 142125,
+  "second_gen_child_attrition_not_mexican": 0.0632,
+  "third_gen_child_attrition_not_mexican": 0.09191,
+  "union_repo": 40968044.7,
+  "us_area_codes": [
+    57,
+    60,
+    66,
+    69,
+    73,
+    78
+  ],
+  "weights": "pwwgt0 full, pwwgt1..160 replicate; SDR variance factor 4/160"
+}
