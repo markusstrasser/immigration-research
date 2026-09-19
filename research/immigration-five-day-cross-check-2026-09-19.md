@@ -1,3 +1,6 @@
+<!-- fiscal-repair-2026-09-19 -->
+**Current fiscal release (September 19):** [Repaired yearly and lifetime calculation index](immigration-yearly-lifetime-cost-repair-2026-09-19.md) supersedes affected annual, household-financing and lifetime figures below. It reports both allocation conventions, actual-age survival NPVs and unresolved coverage. Earlier text and calculations remain historical evidence; unrelated findings are unchanged.
+
 # September 19 cross-check — result and assumption index
 
 **Status:** The descriptive evidence is substantially stronger than several recent interpretations. Do not reuse the expanded absolute fiscal total, birth-versus-arrival subsidy budget, hard-falsification counts or claimed causal nulls as settled results. The corrections below govern the linked September 16–19 material. Narrative writing belongs to the operator. [INFERENCE from the checks indexed below]
@@ -64,3 +67,8 @@ Uncompleted calculations are explicit: function-matched grant/fee consolidation;
 The audit applies the same counterfactual, denominator and uncertainty checks to favorable and adverse findings. This is LLM-assisted research; independent arithmetic and primary-source inspection, not model agreement or the political identity of critics, support its dispositions. [INFERENCE; project quantitative-bias checklist]
 
 Interpretation decision: [September 19](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md).
+
+
+## Revisions — fiscal repair, September 19, 2026
+
+Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.

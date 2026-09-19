@@ -1,3 +1,6 @@
+<!-- fiscal-repair-2026-09-19 -->
+**Current fiscal release (September 19):** [Repaired yearly and lifetime calculation index](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) supersedes affected annual, household-financing and lifetime figures below. It reports both allocation conventions, actual-age survival NPVs and unresolved coverage. Earlier text and calculations remain historical evidence; unrelated findings are unchanged.
+
 # Homicide victim–offender distribution and the treasury cost of one homicide
 
 Model self-report: claude-opus-5[1m] (Opus 5, 1M context). September 18, 2026.
@@ -112,3 +115,8 @@ The life-sentence share is a 2006 BJS parameter (23.1%, *Felony Sentences in Sta
 calculation — a factor of three, wider than every other arm combined, and it reverses the
 ordering of offender groups. Any future use of this lane's cost figures needs a modern
 life-sentence share first.
+
+
+## Revisions — fiscal repair, September 19, 2026
+
+Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.

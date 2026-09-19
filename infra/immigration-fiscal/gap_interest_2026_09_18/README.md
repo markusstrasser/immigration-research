@@ -1,3 +1,6 @@
+<!-- fiscal-repair-2026-09-19 -->
+**Current fiscal release (September 19):** [Repaired yearly and lifetime calculation index](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) supersedes affected annual, household-financing and lifetime figures below. It reports both allocation conventions, actual-age survival NPVs and unresolved coverage. Earlier text and calculations remain historical evidence; unrelated findings are unchanged.
+
 # Interest on the fiscal gap — September 18, 2026
 
 ## Audit correction — September 19, 2026
@@ -29,3 +32,8 @@ Inputs: `ledger_absolute_2026_09_17/derived/waterfall.csv` (step 14 endpoints), 
 - The F item of the complete account charges a share of existing net interest under its per-capita and tax-share arms; this file charges interest on the gap itself, a different object, and the two should not be added under the zero-F central arm without saying so.
 - The deficit share is a convention. The incidence lane's federal/state partition (10.7% / 50.9% by F arm) is carried as two arms; states balance operating budgets, so the state-local part is a current-taxpayer bill, not debt.
 - The per-person terminal values compound 83 years of a period profile and are dominated by the horizon; they are stored for completeness, not quoted.
+
+
+## Revisions — fiscal repair, September 19, 2026
+
+Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.

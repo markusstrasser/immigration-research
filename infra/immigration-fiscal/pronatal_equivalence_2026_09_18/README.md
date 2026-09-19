@@ -1,3 +1,6 @@
+<!-- fiscal-repair-2026-09-19 -->
+**Current fiscal release (September 19):** [Repaired yearly and lifetime calculation index](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) supersedes affected annual, household-financing and lifetime figures below. It reports both allocation conventions, actual-age survival NPVs and unresolved coverage. Earlier text and calculations remain historical evidence; unrelated findings are unchanged.
+
 # Lifetime period profiles and the pro-natal equivalence budget — September 18, 2026
 
 ## Audit correction — September 19, 2026
@@ -39,3 +42,8 @@ Children carry a per-head share of their household's taxes under shared allocati
 - The marginal child induced by a subsidy is not the average reference child; the all-native columns are the fairer comparator.
 - Descendants are in the profiles (a Mexico-born adult's children are the second-generation row; a reference child's children are in the reference), so the budgets already carry one generation of descendants at today's profiles.
 - No behavioural response, no general-equilibrium effect, no valuation of the immigrant's own welfare. This is a treasury-equivalence number only.
+
+
+## Revisions — fiscal repair, September 19, 2026
+
+Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.
