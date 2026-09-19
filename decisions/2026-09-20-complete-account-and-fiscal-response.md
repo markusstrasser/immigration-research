@@ -51,3 +51,19 @@ or lifetime question requires a different population and dynamic counterfactual.
 The prior partial annual ledger as the preferred complete current-account view.
 Its data and calculations remain intact. No older lifetime, crime or historical
 counterfactual result is mechanically validated or updated by this decision.
+
+## Interpretation update: endpoint evidential weight, 2026-09-20
+
+The user's question about whether$360bn is fair prompted an exact-row audit.
+The$356.84bn endpoint adds$55.73bn responsive spending to the source-centered
+personal/cash case; Medicaid alone rises$68.70bn when coverage headcounts replace
+expected payer dollars, partly offset by other categories. CMS beneficiary-class
+spending confirms that those headcounts are not equivalent to expenditure shares.
+Veteran→adult and Social Security dollar→age substitutions further weaken this
+bundle as a best estimate. The tax-tail adjustment has a separate evidential basis.
+
+Retain all computed scenarios and the broad range, but explicitly label its
+high endpoint as a weaker proxy stress test. Lead the index with source-centered
+cases and preserve all response/ownership limits. This changes evidential weight,
+not numerical output or the underlying long-run service-response assumption.
+Sources and the complete decomposition are in the calculation record linked above.

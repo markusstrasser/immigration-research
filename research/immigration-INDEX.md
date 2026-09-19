@@ -9,8 +9,10 @@ Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [m
 ## Core State
 
 Latest complete annual account: [national reconciliation and conditional net effects](immigration-complete-annual-account-2026-09-20.md).
-The declared long-run model gives **$262–357bn/year net cost to other US residents**
-after production benefits, conditional on full ordinary-service response, fixed
+The source-centered long-run model gives **$270–289bn/year net cost to other US residents**
+after production benefits. The **$262–357bn** grid includes weaker proxy stress tests;
+the high endpoint chiefly replaces Medicaid spending weights with coverage headcounts.
+Results are conditional on full ordinary-service response, fixed
 defense/general government/old interest, and stated ownership/fiscal recycling.
 Fixed-service cases can be positive. Complete incidence, counterfactual response
 and sign-reversal thresholds are separate; this is not a measured policy effect.
