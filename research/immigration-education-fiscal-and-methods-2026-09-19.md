@@ -1,0 +1,53 @@
+# Education-specific fiscal evidence and useful methods
+
+Date: 2026-09-19. Evidence index and calculation notes; narrative remains operator-owned. [FRAMING-SENSITIVE] Net public receipts minus attributed expenditure is the outcome. It is not total incumbent welfare. This LLM-assisted analysis is subject to the [instrument caveat](../notes/llm-bias-caveat.md); contrary findings are retained.
+
+## Annual results
+
+[MODEL OUTPUT] CPS ASEC 2025 civilian household residents aged 25–64, income year 2024, dollars at 2024 prices, current education. The expanded account reuses the repaired taxes/transfers/service allocations, excluding external institutional item N and the extra per-capita defense/interest/general-government allocation F. Household sharing and personal/source attribution answer different allocation questions; their range is not a confidence interval. Personal attribution does not charge every child's cost to the parents.
+
+| Mexico-born education | Population | Personal annual balance/person | Conditional 95% sampling interval | Household-shared balance/person |
+|---|---:|---:|---:|---:|
+| Below HS | 3,885,815 | −$1,951 | −$3,413 to −$488 | −$5,558 |
+| HS-only, including GED | 3,354,704 | +$522 | −$610 to +$1,655 | −$3,541 |
+| Some college/associate | 1,120,819 | +$3,803 | +$1,988 to +$5,617 | −$645 |
+| BA+ | 1,085,224 | +$15,016 | +$10,729 to +$19,304 | +$8,913 |
+
+[SOURCE: executed `education_origin_fiscal_2026_09_19/derived/annual_estimates.csv`; [generator and reproduction](../infra/immigration-fiscal/education_origin_fiscal_2026_09_19/README.md).] Intervals combine CPS replication and MEPS donor sampling conditional on transport and other fixed model parameters. They exclude policy, coverage, classification and future-cohort uncertainty.
+
+[MODEL OUTPUT] Under common ages and personal attribution, the Mexico-born below-HS balance exceeds the **below-HS native** balance by **$2,709/person/year** (conditional 95% interval +$880 to +$4,539). For HS-only it is **$2,122 lower** (−$3,511 to −$733). Against all-education natives the corresponding gaps are −$16,519 and −$14,288. These comparisons use the same four supported working-age bands and fixed all-native age shares. [SOURCE: `comparisons.csv` in the same release.]
+
+[INFERENCE] Education composition explains part of the large pooled benchmark difference. A remaining within-education difference is descriptive: it does not identify an effect of origin, replacement of a native worker, or a new admission. Selecting natives with the same attained education changes the comparison; it does not settle the admission counterfactual.
+
+Other Central America, Caribbean, South America and identifiable Southeast Asia are calculated separately in the [annual lane](../infra/immigration-fiscal/education_origin_fiscal_2026_09_19/RESULT.md), including sample support, residents arriving during 2016–March 2025 and both native references. South American and Southeast Asian below-HS age profiles contain sparse cells. Pooling these regions into a single low-skill parameter would discard observed heterogeneity and uncertainty. Detailed-country fiscal rankings are not supported by this single CPS sample.
+
+## Lifetime and healthcare assumptions
+
+[MODEL OUTPUT] Personal-source adult period profiles, alive at 25, common US 2024 survival, 3% real discount, no real growth/outmigration/descendants, through the final 100+ life-table interval: Mexico-born below-HS **−$137,254** (conditional 95% −$163,846 to −$110,662); HS-only **−$83,767** (−$110,498 to −$57,035). N and extra F are excluded here. The F allocation moves these to **−$275,943** and **−$222,456**. Shared attribution gives −$219,701 and −$157,572 before F/N. These use current residents' age profiles, not arrival at 25 or a completed lifetime. [SOURCE: [period generator and schema](../infra/immigration-fiscal/period_uncertainty_2026_09_19/README.md), `derived/period_profiles.csv`.]
+
+[MODEL OUTPUT] Adding education to medical donor matching raises calibrated working-age healthcare costs for Mexico-born below-HS adults by about **$765/year** (SE $847), and for HS-only by about **$1,642/year**. The same change is much larger for below-HS natives: about **$7,961/year** (SE $3,153). This is evidence that broad age/nativity matching is a material assumption; it does not prove that the richer model is correct. [SOURCE: [health sensitivity results](../infra/immigration-fiscal/health_transport_sensitivity_2026_09_19/RESULT.md).]
+
+[MODEL OUTPUT] Replacing the whole calibrated medical term with the education-sensitive fit moves the personal 3% lifetime profiles to **−$176,990 below-HS** (conditional 95% −$216,758 to −$137,221) and **−$106,729 HS-only** (−$169,546 to −$43,913), before F/N. Insurance-sensitive matching gives −$147,128 and −$94,753. The alternate lifetime calculation replaces the medical covariance too; it does not add an independently estimated error bar to the old one. For the HS working-age annual balance, the education model's extra $1,642 changes the +$522 baseline point estimate to approximately −$1,120. The annual sign is assumption-sensitive even before adding institutional or public-goods charges. [SOURCE: `period_uncertainty_2026_09_19/derived/health_period_profiles.csv`; annual arithmetic uses the two executed releases above.]
+
+The public MEPS donor cannot observe these detailed origin costs. Its education is recorded at first entry, while CPS attainment is current; ambiguous/unknown donor education is excluded from the richer fit and its weight disclosed. The fitted cells pass declared sample screens but several means remain noisy. Full survey design is retained for domain covariance, following [AHRQ guidance](https://meps.ahrq.gov/survey_comp/standard_errors.jsp). Medical calibration uses a historical adjusted-NHEA reconciliation, with nursing-home/institutional spending removed from its numerator; an automatic M/N overlap claim would be wrong. Transporting those historical coverage ratios to 2024 remains an assumption. [SOURCE: [AHRQ reconciliation, Tables 4 and 6](https://meps.ahrq.gov/data_files/publications/workingpapers/wp_17003.pdf).]
+
+[SOURCE / MODEL] [ACS institutional counts](../infra/immigration-fiscal/institutional_education_2026_09_19/RESULT.md) have matching education/origin domains and 80 replicates. Additional public costs of $0/$50k/$100k/$150k per institutional resident-year are **uncalibrated scenarios**, not empirically established bounds or a new central estimate. The all-type institutional category does not identify prison, nursing or payer costs. The lifetime consumer applies those external costs over CPS household denominators and propagates both surveys' errors. Sparse or zero ACS cells remain a limitation. ACS native NH-white is not silently substituted for CPS third-plus NH-white.
+
+## Methods worth using
+
+- **Correlated survey uncertainty:** sum each CPS replicate across ages before taking variance; sum MEPS gradients before multiplying by the joint covariance. Add ACS sampling variance under an explicit independent-survey approximation. This is now implemented, including alternate-health lifetime scenarios on complete target support.
+- **Break-even amounts:** report the omitted net fiscal receipts required to make the specified account zero. At 3%, the personal below-HS/HS period profiles require about $5,122/$3,126 in constant annual survival-weighted receipts before F/N. These are thresholds, not estimates of missing benefits. Extending them to welfare requires a matched admission counterfactual and benefits net of already counted taxes/transfers. The approach is related to [breakdown-frontier analysis](https://economics.yale.edu/sites/default/files/cwp201717.pd_.pdf), but does not inherit that paper's causal identification or formal inference theorem.
+- **Calculus:** the consumer computes `dNPV/dr = −Σ t S_t f_t/(1+r)^(t+1)` and checks it against finite differences. It identifies which distant flows drive discount sensitivity; it does not estimate future flows. Net flows can change sign, so monotonicity is not guaranteed.
+- **Future policy designs:** robust parallel-trend sensitivity is useful if an actual policy comparison and pre/post panel exist; [Rambachan–Roth](https://www.jonathandroth.com/assets/files/HonestParallelTrends_Main.pdf) is relevant then. It cannot turn the present cross-section into a policy experiment.
+
+[INFERENCE] No new topology or estimator is needed for the current question. The useful contribution is coherent integration and transparent sign-change assumptions. Marginal costs can exceed average costs under congestion, so the old 0–1 marginal-cost dial is a sensitivity range rather than a universal bound; [NAS, fiscal-concepts chapter, pp. 345–346](https://www.nationalacademies.org/read/23550/chapter/12) explicitly discusses this case.
+
+## Reproduction and validation
+
+The four linked analysis lanes contain generators, schemas, source URLs and reproduction commands. Executed releases contain 360 annual profiles, 720 annual estimates, 2,592 reference comparisons; 2,940 health estimates and 5,880 contrasts; 35 ACS domains with six age bands and 80 replicates; 2,720 baseline period scenarios and 1,200 alternative-health period scenarios. Twenty stock period profiles fail required-age support and remain withheld. Recent-entry groups are excluded from lifetime projection by design.
+
+Twenty-six focused tests pass. The full ACS run passes 68 gates, including two exact external count anchors. Original all-education Mexican age totals reproduce before the declared D-attribution extension. All four education strata conserve totals in every CPS replicate. An independent in-task review also reproduced 70 canonical medical profile means/full-age covariance matrices and 120 exact self-contrast cancellations. It caught missing healthcare output-hash validation and lost ACS sparse-cell disclosure in the lifetime consumer; both were fixed, with a tampering regression and explicit output flags. Input, implementation and output fingerprints bind the final releases. The attempted external design-review dispatch was rejected by automatic approval review; the independent in-task review and deterministic checks were used instead.
+
+## Revisions
+
+- 2026-09-19: Added education/origin separation, conditional lifetime sampling uncertainty, medical transport tests and institutional scenarios under the [education-specific inference decision](../decisions/2026-09-19-education-specific-fiscal-inference.md). The earlier all-education repair remains valid for its own population and assumptions; it is not relabeled as a low-skill result.
