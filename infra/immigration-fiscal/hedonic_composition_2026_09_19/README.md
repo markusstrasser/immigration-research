@@ -1,6 +1,6 @@
 # Hedonic composition lane — what neighbourhood composition is worth in housing prices
 
-> **Status correction, 2026-09-19:** This is a modern adaptation, not an exact reproduction of the original study. See the [specification check and frozen-input comparisons](../../../research/immigration-hedonic-replay-2026-09-19.md). Original-data replay remains pending; existing estimates are preserved.
+> **Status correction, 2026-09-19:** This modern adaptation differs from the original study. The [original-data replay](../../../research/immigration-hedonic-replay-2026-09-19.md) now recovers the historical coefficients and stronger IV diagnostics. Existing modern estimates are preserved. The older custom Hansen J statistic was incorrect: future runs emit missing J and an explicit `J_status`; historical J rejection claims are unverified. The replay's original-data J is separately checked with efficient GMM.
 
 Within-metro capitalisation of Hispanic, Mexican-origin and foreign-born neighbourhood
 share into rents and house values, 2013–2023, reproducing the design of
