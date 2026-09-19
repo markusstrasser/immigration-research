@@ -203,3 +203,11 @@ accurately. This pass demonstrates component checks and a pupil-rate transport
 weakness. It does not benchmark GPT6 against economists, establish a general
 intelligence ranking, or turn descriptive origin correlations into causal effects.
 The live question is how well each construction survives the same controls.
+
+## Follow-up, 2026-09-19
+
+The [gap diagnosis and data check](immigration-gap-diagnosis-and-data-2026-09-19.md)
+decomposes the school discrepancy, resolves the small SNAP territorial component
+using a separate matched administrative series, and identifies usable public
+enrollment, tax and health checks. The baseline and conditional rakes above are
+unchanged; unresolved residuals are not relabeled ethnic reporting errors.
