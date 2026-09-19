@@ -1,0 +1,51 @@
+{
+  "recorded": "2026-09-20",
+  "sources": [
+    {
+      "name": "Section3All_xls.xlsx",
+      "path": "/Users/alien/research-data/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx",
+      "bytes": 2785842,
+      "sha256": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+      "source_url": "https://apps.bea.gov/national/Release/XLS/Survey/Section3All_xls.xlsx",
+      "codebook_url": "https://www.bea.gov/resources/methodologies/nipa-handbook",
+      "acquisition": "Existing local primary source reused read-only; not redownloaded in this lane"
+    },
+    {
+      "name": "asecpub25csv.zip",
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+      "bytes": 147271429,
+      "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+      "source_url": "https://www2.census.gov/programs-surveys/cps/datasets/2025/march/asecpub25csv.zip",
+      "codebook_url": "https://www2.census.gov/programs-surveys/cps/datasets/2025/march/asec2025_ddl_pub_full.pdf",
+      "acquisition": "Existing local primary source reused read-only; not redownloaded in this lane"
+    },
+    {
+      "name": "NST-EST2024-ALLDATA.csv",
+      "path": "/Users/alien/research-data/immigration-fiscal/data/external/census_popest_2024/NST-EST2024-ALLDATA.csv",
+      "bytes": 41378,
+      "sha256": "b8b50bd345d8a5f33d5c8a28c95aeaa0a50971356f000d9b48276a65fd9022a7",
+      "source_url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/state/totals/NST-EST2024-ALLDATA.csv",
+      "codebook_url": "https://www.census.gov/programs-surveys/popest/technical-documentation/methodology.html",
+      "acquisition": "Existing local primary source reused read-only; not redownloaded in this lane"
+    },
+    {
+      "name": "h256dat.zip",
+      "path": "/Users/alien/Projects/immigration-research/sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256dat.zip",
+      "bytes": 6125956,
+      "sha256": "d0779e49de4f5ff0b0fff6774167023382366a0ef0905e6a3c40126114f988c9",
+      "source_url": "https://meps.ahrq.gov/data_files/pufs/h256dat.zip",
+      "codebook_url": "https://meps.ahrq.gov/data_files/pufs/h256doc.pdf",
+      "acquisition": "Existing local primary source reused read-only; not redownloaded in this lane"
+    },
+    {
+      "name": "h256su.txt",
+      "path": "/Users/alien/Projects/immigration-research/sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256su.txt",
+      "bytes": 565233,
+      "sha256": "a7bd4eca49833f40df45b53aad803dfca15b1a3a9b1de03aa6e79f508c5e24be",
+      "source_url": "https://meps.ahrq.gov/data_stats/download_data/pufs/h256/h256su.txt",
+      "codebook_url": "https://meps.ahrq.gov/data_files/pufs/h256doc.pdf",
+      "acquisition": "Existing local primary source reused read-only; not redownloaded in this lane"
+    }
+  ],
+  "raw_bytes": 156789838
+}

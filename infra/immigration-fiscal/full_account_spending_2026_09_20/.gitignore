@@ -1,0 +1,4 @@
+derived/
+raw/
+__pycache__/
+.pytest_cache/
