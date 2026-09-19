@@ -8,6 +8,13 @@ Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [m
 
 ## Core State
 
+Gap diagnosis: [which assumptions should change and better data](immigration-gap-diagnosis-and-data-2026-09-19.md)
+decomposes the school discrepancy: the fixed enrollment rate explains 63–64% of
+the all-child CA/TX shortfall and almost all the national Hispanic shortfall.
+Verifies the public October CPS enrollment route, matched-year tax comparisons,
+health-data boundaries and restricted-access limits. National accounting coverage
+remains the larger completeness issue; this note does not recalibrate the model.
+
 Executed reality checks: [administrative earnings, benefit totals and pupil counts](immigration-administrative-checks-2026-09-19.md)
 compare the uncalibrated model with unused official observations. National wages
 are 2.25% above SSA employer records; wage-recipient and payroll coverage still
