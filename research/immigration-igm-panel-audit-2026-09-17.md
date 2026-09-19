@@ -2,6 +2,17 @@ claude-opus-5[1m]
 
 # IGM / Clark Center expert-panel immigration polls — inventory and comment audit
 
+**2026-09-19 interpretation correction:** Shimer's comment describes the incidence of
+low-skill immigration on existing workers; the earlier claim that he reversed the fiscal
+ranking of immigrant skill groups is withdrawn. Hart and Shimer both mention fiscal costs.
+Shapiro's substitution argument can also fit a question about increased legal entry;
+the poll does not stipulate that total entry must rise one-for-one.
+The numerical fiscal comparisons below are historical: use the
+[repaired calculation index](immigration-yearly-lifetime-cost-repair-2026-09-19.md).
+Resident-stock accounting gaps do not establish the effect of additional legal admissions
+on average citizen welfare. Comment ratings assess the public justification, not everything
+a panelist knows or the panelist's general intelligence. [SOURCE: primary poll; INFERENCE]
+
 **Verdict:** Thirteen immigration polls exist across the US and European panels, 22 statements
 in all, every one of them about **legal** admission channels. **No IGM poll has ever asked
 about unauthorized immigration, deportation, border enforcement, asylum policy, or the
@@ -9,12 +20,11 @@ about unauthorized immigration, deportation, border enforcement, asylum policy, 
 December 2013 low-skill poll — agreement is the weakest of any US immigration poll in the
 series: 52.2% of the panel, 58.5% of respondents, 63% confidence-weighted, with 31.7% of
 respondents uncertain. Of the 24 panelists who agreed, 17 left no reason at all. Of the 7 who
-did, none cited a fiscal estimate or named a study. Three gave reasons that do not establish the
-claim on the ballot — a global-skill comparison that addresses only the wage channel, a factor-input
-truism conditioned on an employment assumption the panelist declined to endorse, and an argument
-for substituting legal for unauthorized entry, which holds the number constant and so answers a
-different question. A fourth assigned the fiscal cost to high-skilled rather than low-skilled
-immigration, inverting the standard result. The panel simultaneously agreed, 56.1% of respondents, that low-skilled American workers
+did, none cited a fiscal estimate or named a study. The short comments identify mechanisms,
+but do not quantify a combined citizen-welfare effect. Shapiro's legal-for-unauthorized
+substitution is a possible interpretation of greater legal admission; the poll leaves the
+response of unauthorized entry unspecified. Shimer explicitly distinguished wage costs borne by low-skilled workers
+from fiscal costs borne by high-skilled workers. The panel simultaneously agreed, 56.1% of respondents, that low-skilled American workers
 would be substantially worse off — so the same body endorsed both a positive average and a
 negative distributional effect in one sitting.
 
@@ -350,9 +360,9 @@ until netted against both.
 
 **Oliver Hart (Harvard), Agree, confidence 8** — "On average citizens would be better off--by
 classical gains from trade. A countervailing effect : welfare payments to unemployed immigrants"
-→ **HOLDS-NARROWLY, and it is the only agreeing comment that names the fiscal channel.** Hart
+→ **HOLDS-NARROWLY; Hart and Shimer both name the fiscal channel.** Hart
 is correct that the classical gains-from-trade argument delivers a positive aggregate for
-factor-owners in the receiving economy, and he is the only agreer who explicitly books the
+factor-owners in the receiving economy, and he explicitly names a
 fiscal offset. The audit point is that he names the offset without sizing it, and its size is
 what determines the sign. Under this repo's measurement the offset is not a rounding error:
 the measured partial balance for the 40.90m Mexican-origin population is **+$50.24bn** in the
@@ -363,26 +373,29 @@ transfer-side one, and it persists among the employed [SOURCE: ladder 76, 127].
 
 **Carl Shapiro (Berkeley), Agree, confidence 6** — "Substituting legal immigration for illegal
 immigration would enhance efficiency and equity."
-→ **UNSUPPORTED — this answers a different question.** The statement asks whether admitting
-*a larger number* of low-skilled workers makes the average citizen better off. Substitution of
-legal for unauthorized entry holds the number constant and changes only the status. That is a
-composition claim, and it may well be right, but it is not evidence for the level claim on the
-ballot. Shapiro gave the same reason on Question B. Notably, his is the only comment in the
+→ **HOLDS-NARROWLY as a conditional status-substitution argument.** The statement asks about
+more workers being legally allowed to enter. It does not require total entry to rise
+one-for-one: greater legal admission might partly replace unauthorized entry. The previous
+audit incorrectly treated the question as fixing that counterfactual. Shapiro's mechanism
+therefore fits one reading of the question, although the comment supplies neither the
+substitution rate nor a quantified net welfare effect. [INFERENCE from primary wording]
+Shapiro gave the same reason on Question B. Notably, his is the only comment in the
 entire IGM immigration series that engages unauthorized immigration at all — and it does so as
 an aside on a poll about legal admission, which underlines §1's verified negative.
 
 **Robert Shimer (University of Chicago), Agree, confidence 5** — "For low skill workers, the
 main adverse effects are through wages. For high skill, through fiscal costs. Both costs could
 be small."
-→ **PARTIALLY WRONG on the channel assignment.** Shimer's taxonomy inverts the standard result.
-The fiscal cost is concentrated in **low**-skilled immigration, not high-skilled: NAS 2016
-finds the net fiscal burden falls with education and concentrates in state and local education
-spending [SOURCE: ladder 45-46 discussion; NAS 2016 ch. 7-8 conventions verified in
-ladder 80], and this repo's own measurement finds the large negative gap in the low-education
-Mexican-origin population [SOURCE: ladder 123, 125]. High-skilled immigration is the case where
-the fiscal term is most reliably positive — which is what the panel's own 95% agreement on the
-February 2013 high-skilled statement reflects. The second half of the comment ("both costs could
-be small") is a possibility claim, not evidence. Shimer voted Uncertain on Question B, citing
+→ **HOLDS-NARROWLY as an incidence distinction.** In the context of a question about
+low-skilled entrants, the natural reading is that low-skilled existing workers face wage
+competition while high-skilled existing workers face fiscal costs through taxation. He does
+not claim that high-skilled immigrants generate greater fiscal costs than low-skilled
+immigrants. The previous audit confused the people bearing a cost with the entrants whose
+admission is being evaluated; its "PARTIALLY WRONG" rating is withdrawn. [INFERENCE from
+the wording and question context; SOURCE: primary poll linked below]
+The comment does not quantify either channel or establish that the combined welfare effect
+is positive. Its statement that both costs could be small remains a possibility claim.
+Shimer voted Uncertain on Question B, citing
 mixed evidence on low-skill wages, which is consistent with this repo's position on Mariel
 [SOURCE: ladder 44].
 
@@ -571,9 +584,9 @@ share is built on under two-thirds of the panel.
    63% confidence-weighted, mean confidence 5.92 among agreers, 31.7% of respondents uncertain.
    Compare 95% weighted on the high-skilled statement ten months earlier.
 5. **Seventeen of the 24 agreers gave no reason.** Of the seven who did, none cited a fiscal
-   estimate. One (Hart) named the fiscal offset without sizing it; one (Shapiro) answered a
-   composition question rather than the level question on the ballot; one (Shimer) assigned the
-   fiscal cost to high-skilled rather than low-skilled immigration, inverting the standard result.
+   estimate. Hart and Shimer named fiscal costs without sizing them; Shimer distinguished
+   their incidence across existing workers. Shapiro offered a substitution-of-status argument
+   whose sufficiency for the question about greater legal entry remains disputed.
 6. **The same panel agreed, at 56.1% of respondents, that low-skilled Americans would be
    substantially worse off.** Twelve panelists voted Agree on both. The joint position requires
    an aggregate criterion that tolerates uncompensated losers.
@@ -590,6 +603,12 @@ share is built on under two-thirds of the panel.
 
 2026-09-17 — created. Inventory and audit built from primary retrieval of all 13 Clark Center
 immigration polls and their per-poll response CSVs.
+
+2026-09-19 — [Correct the Shimer incidence reading](../decisions/2026-09-19-igm-shimer-incidence-reading.md).
+Withdraw the mistaken immigrant-skill interpretation in the verdict, detailed rating and
+summary, correct the claim that only Hart mentioned fiscal costs, and recognize that Shapiro's
+legal-for-unauthorized substitution can fit the poll's wording. Original response
+text and vote data are unchanged; the prior interpretation remains in Git history.
 
 ---
 
@@ -639,7 +658,7 @@ whose post-training disposition on immigration is documented as tilted toward th
 "less costly/harmful" direction (`notes/llm-bias-caveat.md`; ladder §44 preamble). Two guards
 were applied. First, every quantitative claim about the polls is recomputed from the site's own
 raw arrays and CSVs rather than summarised, so the numbers are checkable. Second, the audit
-ratings cut in both directions: three agreeing comments are rated UNSUPPORTED or WRONG and three
-disagreeing comments are rated HOLDS, and the finding that most agreers gave no reason is a
+ratings address the stated arguments rather than treating support or opposition as evidence
+of correctness, and the finding that most agreers gave no reason is a
 finding about the poll's evidentiary weight, not about the correctness of their votes. The
 memo takes no position on whether more low-skilled immigration is desirable. [FRAMING-SENSITIVE]
