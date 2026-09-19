@@ -1,4 +1,4 @@
-**Verdict:** Non-citizen voting in US federal and California elections is real, non-zero, overwhelmingly caused by defective registration systems rather than intent, and too small by three to four orders of magnitude to have decided any federal or California contest. Point estimate after the second pass: roughly 300 to 3,000 non-citizen ballots per federal election nationwide. Upper bound: 24,000, the Census Bureau's August 2026 figure taken entirely at face value, which is 0.015% of the 2020 vote and smaller than the margin in every single state that year. That Census brief reports no false-match rate, no confidence interval and no authors, and its former chief scientist says the false match rate likely exceeds the effect it measures. Where states adjudicate their own flagged lists the numbers collapse: Texas proved 578 of 2,724 SAVE flags were citizens (21.2%) and referred 117; Michigan charged 6 of 38 referrals; Ohio charged 12 of 633. The largest confirmed ballot count anywhere in this file is New Jersey's fewer than 400, produced by a motor-vehicle software defect that registered people who had answered "no" to the citizenship question.
+**Verdict:** Non-citizen voting in US federal and California elections is real, non-zero, overwhelmingly caused by defective registration systems rather than intent, and too small by three to four orders of magnitude to have decided any federal or California contest. Point estimate after the second pass: roughly 300 to 3,000 non-citizen ballots per federal election nationwide. Upper bound: 24,000, the Census Bureau's August 2026 figure taken entirely at face value, which is 0.015% of the 2020 vote and smaller than the margin in every single state that year. The one federal list ever subjected to case-by-case review shrank by 98.8%: DHS told Nevada there "may be as many as" 15,903 non-citizens and confirmed 185. That Census brief reports no false-match rate, no confidence interval and no authors, and its former chief scientist says the false match rate likely exceeds the effect it measures. Where states adjudicate their own flagged lists the numbers collapse: Texas proved 578 of 2,724 SAVE flags were citizens (21.2%) and referred 117; Michigan charged 6 of 38 referrals; Ohio charged 12 of 633. The largest confirmed ballot count anywhere in this file is New Jersey's fewer than 400, produced by a motor-vehicle software defect that registered people who had answered "no" to the citizenship question.
 
 # Non-citizen voting in US federal and California elections — primary evidence review
 
@@ -276,8 +276,10 @@ WVXU/Statehouse News 2025-10-28, News5 Cleveland 2025-10-29, Ohio Capital Journa
 **Virginia 2024.** Executive Order 35 (2024-08-07) formalized daily DMV-driven removals; it
 announced **6,303** removals under the same process between January 2022 and July 2024. DOJ sued
 under the NVRA 90-day Quiet Period Provision. The complaint documents error in the program:
-in **Prince William County, at least 43 of the 162** people removed before 2024-07-31 were
-**likely US citizens** (a 27% false-positive rate). Fairfax removed 28 in August 2024; Loudoun
+in **Prince William County, of the 162 removed, 43 had voted — and the registrar's own line-by-line
+review found all 43 had affirmed US citizenship, many 2-5 times, and all had Social Security
+numbers**. **[CORRECTED in Block 7.1 — my earlier reading of this as a "27% false-positive rate"
+was wrong; see Block 7.1 for the registrar's sworn review.]** Fairfax removed 28 in August 2024; Loudoun
 removed 90 in September 2024 against 62 in all of January–August 2024. [SOURCE: DOJ complaint,
 *United States v. Commonwealth of Virginia*, <https://www.justice.gov/crt/media/1373371/dl>]
 [GAP] The Supreme Court's late-October 2024 disposition and the final count of Virginia
@@ -544,7 +546,8 @@ face value: 0.015% of ballots, below the margin in every 2020 state, direction o
 
 **Update to Block 5 from this search:** in **June 2026 a federal judge blocked use of the
 overhauled SAVE tool**, finding it threatened privacy and voting rights. [SOURCE: Votebeat
-2026-08-20] [GAP] case name and court not retrieved.
+2026-08-20] **Case now identified (Block 7.2): *League of Women Voters v. U.S. Dep't of Homeland
+Sec.*, No. CV 25-3501 (SLS), 2026 WL 1784297, at *16 (D.D.C. June 22, 2026).**
 
 ## 6.2 New Jersey, Governor Sherrill statement, 2026-07-21
 
@@ -638,9 +641,13 @@ supporting the headline:
 1. **The flag is not a finding of non-citizenship.** Per AG Opinion 26-014, "Declared NonCitizen"
    means the person ticked "no" to "Are you a citizen?" in a DMV online portal, a method the
    Commonwealth's own chief legal officer says flags eligible citizens through inadvertent user
-   error and has no false-positive filter. The DOJ's 2024 complaint put a measured error rate on
-   this exact population: **43 of 162 removals in Prince William County, 27%, were likely US
-   citizens.** Applying any rate in that neighbourhood to 6,111 removes most of it.
+   error and has no false-positive filter. The Prince William registrar's sworn line-by-line review
+   of this exact population is the direct check: of 162 such cancellations, the **43 who had voted
+   had all affirmed US citizenship on a registration application (many 2-5 times), all held Social
+   Security numbers, all were cancelled after a DMV update, and none was shown to have voted
+   illegally** (Block 7.1). Fairfax reported a 30% error rate on ELECT cancellations; the Prince
+   William registrar estimated 50%. That is the disconfirming evidence for 6,111, and it is the
+   only audit that inspected the individual voters rather than the flag.
 2. **Ballots are not people.** The 6,111 figure counts ballots across elections back to February
    2019 cast by 1,756 registrants, averaging 3.5 ballots each. Per federal election it is a small
    fraction of that.
@@ -719,7 +726,8 @@ that the office had no data on noncitizens voting or being incorrectly registere
 [GAP] California's SAVE participation remains unestablished; the state is litigating against
 federal access to its voter file, which makes voluntary SAVE submission unlikely but is not proof.
 
-**The 449,000 disqualified-jurors figure.** [UNVERIFIED in this pass.] An AFP fact check exists
+**The 449,000 disqualified-jurors figure. [RESOLVED in Block 7.3 — it is a jury-pool figure,
+449,404 disqualified for non-citizenship in FY2016-17, and not a voter-roll number.]** Superseded text follows. [UNVERIFIED in this pass.] An AFP fact check exists
 titled "No evidence 449,000 noncitizens are registered to vote in [California]," which establishes
 that the claim circulates and has been checked, but I did not retrieve its text. The lead's account
 — that the number comes from a 2016–17 California Judicial Council report on jury-summons
@@ -808,7 +816,9 @@ against a primary · **C** = advocacy- or vendor-derived analysis of genuine off
 | Michigan | 38 referred | **6 charged**; 2 found to be citizens | 5 in Nov 2024 | ~5.7M ballots 2024 | 2026-08-13 | A |
 | New Jersey, MVC error | ~6,600 registered | ~6,600 self-declared noncitizen | **<400** (first-time registrants only) | ~4.3M ballots 2024 | 2026-07-21 | A |
 | Virginia, DOJ complaint | 6,303 removed 2022–2024 | — | — | — | 2024-08-07 | A |
-| → Prince William error rate | 162 removed | **43 likely US citizens (27%)** | — | 1 county | 2024 | A |
+| → Prince William registrar's review | 162 removed | **43 voted; all 43 had affirmed citizenship + held SSNs; 0 illegal ballots shown** | 0 shown illegal | 1 county, May 2023–Feb 2024 | 2024-09-30 | A |
+| → Fairfax / Prince William program error rates | 26 / — | **7 in error (≥30%)** / registrar estimate **50%** | — | 2 counties | 2025-02 | A |
+| Nevada, DHS letter then manual review | 15,903 asserted; 8,576 "matched" | **185 confirmed (1.16%)** | **none alleged** | NV public voter file | 2026-08-13 | A |
 | Virginia, Judicial Watch | 6,531 cancelled | — | **no vote histories produced** | Jun 2024–Jun 2026 | 2026-07-30 | B |
 | Virginia, EPEC | 8,566 removed | self-attestation tick only | 6,111 claimed, 1,756 registrants, since Feb 2019 | statewide | 2026-06 | **C** |
 | Iowa | 2,022 | 154 declared after registering | unknown; none removed | 12-year lookback | 2024-10-30 | B |
@@ -909,3 +919,171 @@ denominator and error handling, not by sponsor. That rule puts the Texas Secreta
 and the Census brief at grade D, and it is the same rule that earlier put Heritage's own 68-case
 total to work as the strongest pro-prevalence evidence in the file. The rule cuts both ways by
 design, which is the point of using it.
+
+---
+
+# Block 7 — corrections and primary-document upgrades (third pass, 2026-09-19)
+
+Block 6 already covered the five 2026 items. This block records four things the earlier passes got
+wrong, guessed at, or left open, each now pinned to a primary document.
+
+## 7.1 CORRECTION — Prince William County. My "43 of 162 were likely citizens" was wrong, and the truth is stronger.
+
+Prior position (Blocks 4 and 6.3, and the summary table): "at least 43 of the 162 people removed in
+Prince William County were likely US citizens, a 27% false-positive rate," sourced to the DOJ's
+2024 NVRA complaint. **That mixed up two different quantities and understated the finding.**
+
+Primary now read: the sworn review by **Eric Olsen, Director of Elections and General Registrar,
+Prince William County**, filed as Exhibit 3,
+<https://storage.courtlistener.com/recap/gov.uscourts.vaed.561740/gov.uscourts.vaed.561740.9.4.pdf>
+[SOURCE, full text]. Covering May 2023 through February 2024, 162 voters cancelled for the VERIS
+reason "declared non-citizen":
+
+| Finding | Value |
+|---|---|
+| Cancelled for VERIS reason "declared non-citizen" | 162 |
+| Of those, never cast a ballot | roughly three quarters |
+| **Had a voting history** (mostly 2012–2020) | **43** |
+| Of the 43, had a registration application **affirming US citizenship** | **43 — all of them**, many reaffirmed 2–5 times |
+| Of the 43, supplied a Social Security number | **43 — all of them** |
+| Of the 43, cancelled **after updating information at the DMV** | **43 — all of them** |
+| Of the 43, subsequently moved, re-registered or affirmed status | **26** |
+| Took no action (which Olsen says does not indicate non-citizenship) | 17 |
+| **Ballots shown to have been cast illegally** | **0** |
+
+So **43 is the count who voted, not the count of errors.** Olsen's own words: the VERIS reason "is
+a VERIS classification and is **NOT dispositive** of the individuals not being citizens"; the
+cancellations happened "**due to an omission at the DMV, a form with known shortcomings in design
+and data transfer limitations**"; and "**No evidence exists that demonstrates any ballots were cast
+illegally.**" The mechanism he identifies: the citizenship question sits **outside the main
+application** on the DMV form, ELECT receives only transferred data and never form images, so a
+missed checkbox on an update triggers a mandatory cancellation under Va. Code § 24.2-427 even for
+someone who affirmed citizenship on every prior registration.
+
+Olsen said the same thing on the record at the Virginia Board of Elections hearing of 2024-09-30,
+quoted in the plaintiffs' second amended complaint,
+<https://storage.courtlistener.com/recap/gov.uscourts.vaed.561386/gov.uscourts.vaed.561386.182.0.pdf>
+[SOURCE, ¶61]: "We looked at 162 individuals that were listed as noncitizens in the VERIS system.
+Forty-three of those have voted. We looked at all forty-three of those. **Every single one of them
+had verified their citizenship previously. Some by as many as five times. All had Social Security
+Numbers.** And we had to cancel them because of state protocol, but we also didn't see any issue
+that they had done anything illegal."
+
+Two other county error rates from the same filing (¶ following): **Fairfax** reported that of 26
+cancellations sent by ELECT, **7 were sent in error and one voter re-registered immediately — at
+least a 30% error rate**. The **Prince William** registrar separately estimated a **50% program
+error rate** and flagged the cancellation of a US-born citizen resident in the county for 14 years.
+**Arlington** identified a distinct failure: registrants who update an address at the DMV are
+flagged, but the county never receives the new address, so the intent-to-cancel notice goes to the
+old one.
+
+**[INFERENCE] This is the disconfirming evidence for the EPEC Virginia number, and it is decisive
+at the county level.** EPEC's 6,111 ballots come from exactly this population: registrations
+removed with the VERIS reason "declared non-citizen." In the one county where a registrar
+individually reviewed every such voter, **all 43 had affirmed citizenship, all had Social Security
+numbers, and none was shown to have voted illegally.** EPEC's grade stays C, but the reading
+changes from "probably heavily inflated" to "the only line-by-line audit of this exact flag found
+zero confirmed non-citizen ballots." Anyone citing 6,111 must address Olsen's review.
+
+Corrected in this file: the Block 4 Virginia paragraph, Block 6.3, and the summary table row.
+
+## 7.2 The DHS four-state numbers now have a measured attrition rate: 185 of 15,903
+
+The best calibration of the July 2026 DHS letters comes from Nevada, because DHS met state
+officials and had to show its work. [SOURCE: The Guardian 2026-08-21,
+<https://www.theguardian.com/us-news/2026/aug/21/dhs-confirm-nevada-voter-numbers>, on records
+obtained; CNN 2026-08-21 on a recording of the 2026-08-13 meeting plus a dozen emails]
+
+| Quantity | Value |
+|---|---|
+| DHS letter to Nevada, 2026-07-16, "may be as many as" | 15,903 |
+| Claimed name+DOB+address+SSN matches | 8,576 |
+| **Confirmed non-citizens after DHS manual review** | **185** |
+| Still unresolved | >14,000 |
+| Labelled "higher confidence matches" | 6,200 |
+| **Confirmed share of the headline** | **1.16%** |
+
+DHS's own fraud-division lead, Kimberley Vogt, on the recording: checking names individually "is a
+lot of work to go one by one," and "We're going to manually review to be sure that it is not
+someone's dad or someone's son — that it is that person. Then we're reducing the list down to what
+is a confirmed match." DHS conceded that even the 6,200 higher-confidence matches could include
+naturalized citizens whose immigration records were not updated, and **declined to send Nevada the
+full list, saying it wanted to avoid sending inaccurate records.** Nevada's Secretary of State
+Cisco Aguilar: DHS "informed our office that the numbers that were provided to the public are
+preliminary and that there is not high enough confidence to be able to share the full dataset."
+
+**Nevada's reply letter of July 2026** (<https://www.democracydocket.com/wp-content/uploads/2026/07/Nevada-response-to-DHS.pdf>,
+[SOURCE, read]) puts the SSN contradiction to DHS directly rather than as an inference: "Given the
+current litigation from the Department of Justice for the State of Nevada's non-public voter
+information, including Social Security and Driver's License numbers, **how did your department
+match social security numbers to Nevada registrants**, and what data sources did you use if not the
+voter information provided by the NVSOS?" An election-data expert quoted by Votebeat put the same
+point technically: matching on name, date of birth and address and then "imputing that the
+additional records indicate a determination about citizenship" is an extrapolation — "It would
+only be fair to assert that Social Security numbers were matched if they exist in both data sets."
+
+[INFERENCE] **This upgrades my Block 6.4 reasoning from inference to measurement.** I had argued
+the DHS figures were uncountable because the claimed SSN key could not have come from a public
+file. Nevada is now a worked example: the same methodology, subjected to DHS's own manual review,
+retained **1.16%**. Applying that rate to California's 190,832 implies roughly **2,200** actual
+non-citizen registrants — which independently converges on the ~2,800 that the Washington Times got
+by applying the Texas SAVE rate to California's roll. Two unrelated methods, same order of
+magnitude, about 1.5% of the DHS headline. **And DHS has still alleged no ballots cast in any of
+the four states.**
+
+**Closing a Block 5/6.1 gap — the June 2026 SAVE injunction now has a citation.** From Nevada's
+letter: ***League of Women Voters v. U.S. Dep't of Homeland Sec.***, No. CV 25-3501 (SLS), 2026 WL
+1784297, at *16 (D.D.C. June 22, 2026), enjoining removal of US citizens from voter rolls based on
+inaccurate SAVE information. And ***State v. Trump***, No. 1:26-cv-11581-IT, 2026 WL 1826490, at
+*13 n.14 (D. Mass. June 25, 2026): "**DHS does not dispute that the SAVE system has erroneously
+flagged citizens as noncitizens.**" That concession, made by DHS in litigation, is the single
+cleanest source in this file for the false-positive problem.
+
+## 7.3 The 449,000 figure — resolved, and the lead's account is correct
+
+[SOURCE: PolitiFact 2019-11-11,
+<https://politifact.com/factchecks/2019/nov/11/viral-image/no-evidence-449000-noncitizens-were-registered-vot/>,
+reporting Judicial Council of California jury data obtained directly; corroborated by Snopes
+2018-12-11 and a Gigafact/AZCIR fact brief updated 2026-05-13]
+
+| Fiscal year | Total disqualified from jury duty | Disqualified for non-citizenship |
+|---|---|---|
+| **2016–17** | 1,096,478 | **449,404** |
+| 2017–18 | 1,063,784 | 425,814 |
+| Jul 2008 – Jun 2017 (cumulative) | ~11.3 million | ~4.7 million |
+
+**It is a jury-pool number, not a voter-roll number.** California courts draw jurors primarily from
+the **DMV licensed-driver and ID-holder list**, with the voter registration list as a secondary
+source; San Diego Superior Court confirmed the DMV list is most courts' primary source. Non-citizens
+including lawful permanent residents can hold California licenses, and unauthorized immigrants have
+been able to since AB 60 took effect in January 2015. So non-citizens appear in the jury pool
+through the DMV path without ever touching the voter rolls. The Secretary of State's office stated
+flatly that it is "not true that 449,000 noncitizens were registered to vote," and said it knew of
+no recent convictions for non-citizens registering. PolitiFact rated the claim **False**; Snopes
+found that in San Diego County, non-citizenship accounted for only 29% of jury disqualifications,
+against the claim's implied ~41% statewide. **Resolves the Block 6.4 [GAP]. Do not use 449,000 as a
+registration figure in either direction.**
+
+## 7.4 Census brief — figures read directly from the PDF, not from reporting
+
+Read from the local copy of the primary
+(`scratchpad/census_ncv_2020.pdf`, 126,974 bytes; identical to the census.gov URL) [SOURCE]:
+
+| Table 2, initial noncitizen voters by country of birth | Count |
+|---|---|
+| Mexico | **3,800** |
+| **Country not reported** | **6,900** |
+| Total | 24,000 |
+
+So **29% of the 24,000 carry no country of birth in any linked record** — confirmed from the brief
+itself rather than from Stewart's "nearly 7,000." State figures confirmed: California **4,300**,
+New York 1,700, Kentucky 200, New Mexico 150. Coverage confirmed: New Jersey 97.1%, Georgia 93.9%,
+Pennsylvania 92.5%, South Carolina 92.2%. The ITIN language is verbatim as quoted in Block 6.1, and
+~63,800 pre-election naturalizations were excluded by the screen.
+
+One point available only from the PDF: **the brief's own reference list cites Layne, Wagner and
+Rothhaas (2014), "Estimating Record Linkage False Match Rate for the Person Identification
+Validation System," CARRA Working Paper 2014-02** — and then reports no false match rate. [INFERENCE]
+The authors knew the Bureau's own method for estimating the quantity Abowd says would decide the
+result, cited the paper that describes it, and omitted the estimate. A record linkage where 29% of
+the flagged cases have no country of birth is not one where that omission is incidental.
