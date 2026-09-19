@@ -1,0 +1,13 @@
+outcome,level,period,treat,coef,se,t,n
+rent,metro_ACS,pooled,imm_pc,1.31882,0.417254,3.16072,758
+rent,metro_ACS,A,imm_pc,1.66921,0.441239,3.783,381
+rent,metro_ACS,B,imm_pc,0.965103,0.558313,1.7286,377
+rent,metro_ACS,pooled,hisp_pc,0.682812,0.182887,3.73352,758
+rent,metro_ACS,A,hisp_pc,0.48329,0.148403,3.2566,381
+rent,metro_ACS,B,hisp_pc,0.975751,0.423724,2.3028,377
+value,metro_ACS,pooled,imm_pc,3.43019,0.687093,4.99233,758
+value,metro_ACS,A,imm_pc,4.18507,0.754968,5.54337,381
+value,metro_ACS,B,imm_pc,2.6128,0.749703,3.48511,377
+value,metro_ACS,pooled,hisp_pc,2.68128,0.373404,7.18063,758
+value,metro_ACS,A,hisp_pc,2.81189,0.40402,6.95979,381
+value,metro_ACS,B,hisp_pc,2.47818,0.522107,4.7465,377

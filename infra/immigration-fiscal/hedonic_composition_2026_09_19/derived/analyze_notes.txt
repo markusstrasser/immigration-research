@@ -1,0 +1,6 @@
+panel rows (metro, in-CBSA) = 120558
+sw_sample cutoff (5-yr FB growth / initial pop) = 0.0108; selected 169 of 758 CBSA-periods (>=76.5% of metro FB growth, the paper's coverage target)
+[rent] estimation universe rows=110145 cbsa-periods=758 tracts=57248
+[rent] national origin growth ['afr', 'asia', 'carib', 'camer', 'eur', 'mex', 'namer', 'oce', 'samer'] -> afr:+0.264, asia:+0.103, carib:+0.106, camer:+0.003, eur:-0.000, mex:-0.034, namer:+0.013, oce:+0.150, samer:+0.198
+[value] estimation universe rows=113571 cbsa-periods=758 tracts=58013
+[value] national origin growth ['afr', 'asia', 'carib', 'camer', 'eur', 'mex', 'namer', 'oce', 'samer'] -> afr:+0.265, asia:+0.109, carib:+0.111, camer:+0.007, eur:+0.000, mex:-0.030, namer:+0.014, oce:+0.154, samer:+0.199

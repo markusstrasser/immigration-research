@@ -1,0 +1,11 @@
+BASE QUANTITIES (weighted means over the estimation universe, end of period)
+  annual_rent_per_renter_hh: 15,715.5
+  home_value_per_owner_unit: 336,389.6
+  pop_per_tract: 5,920.9
+  renter_hh_per_tract: 1,068.0
+  owner_units_per_tract: 1,584.1
+
+DOLLARS PER +10 PERCENTAGE POINTS OF GROUP SHARE, per group resident-year
+  hisp: ACS-measured arms -979 to -86 | independent-measure arms +303 to +464
+  mex: ACS-measured arms -955 to -107 | independent-measure arms +231 to +396
+  fb: ACS-measured arms -492 to +384 | independent-measure arms +249 to +702
