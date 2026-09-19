@@ -1,8 +1,10 @@
 # Reconciled annual account and conditional effects on other residents
 
 **Verdict:** National current accounts close exactly. The declared long-run
-response grid gives an annual outside-resident loss of $262.05–356.84bn after
-modeled production benefits. This is a conditional model range, not a confidence
+source-centered response cases give an annual outside-resident loss of $270–289bn
+after modeled production benefits. The broader $262.05–356.84bn grid includes
+weaker headcount/age proxy stress cases with unequal evidential support.
+This is a conditional model range, not a confidence
 interval, historical immigration effect, admission estimate or removal saving.
 See the [calculation record](../../../research/immigration-complete-annual-account-2026-09-20.md).
 
