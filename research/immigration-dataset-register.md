@@ -494,3 +494,19 @@ Common acquisition record: [ACQUIRED.md](../infra/immigration-fiscal/new_dataset
 - Quirks/use/license: self-ID Latino frame misses nonidentifiers and non-Latino controls; foreign-born grandparent count does not prove Mexican birthplace. DK codes can remain nominally valid in software metadata. No respondent arrest/incarceration outcome established. Only marginal-frequency bounds analyzed; ICPSR packaged conditions apply.
 
   **Second download, September 17:** raw root `ICPSR_20862-V6 (1).zip` (2,385,704 bytes) contains seven documentation files, all byte-identical to counterparts in the original archive. Only the DS0003 codebook is retained from the original four codebooks; actual data are still absent. The packaged catalog names public data formats but does not explain the account's access status. [Inventory and hashes](../infra/immigration-fiscal/new_datasets_2026_09_17/completion_check.json). Ask for an actual `.dta`, `.sav` or `.tsv` respondent file; if unavailable, obtain the visible access message and selected download options.
+
+### OPENICPSR_114757_V1 — Saiz–Wachter original housing replication
+
+**Source:** Albert Saiz and Susan Wachter / American Economic Association, openICPSR.
+**Acquired:** 2026-09-19, authenticated browser download after operator approval of download terms.
+**Official:** [Project 114757, V1](https://www.openicpsr.org/openicpsr/project/114757/version/V1/view), DOI10.3886/E114757V1.
+**Local path:** `infra/immigration-fiscal/hedonic_replay_2026_09_19/_cache/original/` (ignored).
+**Codebook:** labels in `DATAAEJPOLICY_MS_2009_191.dta`, main and supplemental `.do` files, packaged README.
+**Size:** five files; ZIP41,152,145 bytes; `.dta`105,273,639 bytes,102,766 rows×248 fields.
+**License:** archive specifies BSD-3-Clause for code, CC-BY4.0 for other objects; supplied license retained. [Hashes and provenance](../infra/immigration-fiscal/hedonic_replay_2026_09_19/ACQUIRED.md).
+
+**Key variables:** `dloval`/`dlomval` changes in log mean/median house value; `dforeigncap` change in foreign-born share; `l1own` initial owner-unit weight; `tract`/`year` unique row key; `msayear` fixed effect; `immicapmsa` metro inflow rate; `cha*`/`Ql1*` housing controls; `pull`/`pulli`/`pullmsa` supplied gravity instruments.
+
+**Known quirks:** only1990/2000 rows, representing prior-decade changes. This is a prepared analysis file, with no upstream Geolytics/gravity build code. Historical keys require validated crosswalks before any modern ACS join. Archived baseline has43 controls versus44 in prose; column1 and appendix first-stage Ns differ from printed tables; main column4 F remains unresolved. Full source details and separate matched-row mean/median checks are in the [replay note](immigration-hedonic-replay-2026-09-19.md).
+
+**Used in:** the linked replay note and lane `src/original_replay.py` / `src/verify_original.py`. Six historical coefficients/SEs, stronger-IV F/J diagnostics and appendix median estimate recovered by independently checked Python translation. No native Stata or upstream-data reconstruction claim.
