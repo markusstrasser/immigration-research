@@ -1,3 +1,8 @@
+<!-- fiscal-repair-2026-09-19 -->
+Current setup: run `uv run --no-project python3 infra/immigration-fiscal/ledger_absolute_2026_09_17/consolidation.py --fetch` before the builder to stage and verify the added OMB sources. The current lifetime interface is [LIFETIME.md](LIFETIME.md). The expanded account retains unresolved coverage; the historical “complete” terminology below does not certify completeness.
+
+**Current fiscal release (September 19):** [Repaired yearly and lifetime calculation index](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) supersedes affected annual, household-financing and lifetime figures below. It reports both allocation conventions, actual-age survival NPVs and unresolved coverage. Earlier text and calculations remain historical evidence; unrelated findings are unchanged.
+
 # Complete absolute account for the all-age Mexican-origin ledger — September 17, 2026
 
 ## Audit correction — September 19, 2026
@@ -275,3 +280,8 @@ item P sharing item G's per-capita convention, the exhaustiveness of the capital
 split against Census line 67, item P's position after item K in the waterfall,
 both items sitting on the marginality dial, and the absence of any
 command-line-disabled item in a published run.
+
+
+## Revisions — fiscal repair, September 19, 2026
+
+Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.

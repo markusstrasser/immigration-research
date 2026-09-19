@@ -1,3 +1,6 @@
+<!-- fiscal-repair-2026-09-19 -->
+**Current fiscal release (September 19):** [Repaired yearly and lifetime calculation index](immigration-yearly-lifetime-cost-repair-2026-09-19.md) supersedes affected annual, household-financing and lifetime figures below. It reports both allocation conventions, actual-age survival NPVs and unresolved coverage. Earlier text and calculations remain historical evidence; unrelated findings are unchanged.
+
 # Two objections to a period account: longevity and Social Security timing
 
 ## Audit correction — September 19, 2026
@@ -51,3 +54,8 @@ NVSS United States Life Tables 2024 (NVSR 75-5) and 2023 (NVSR 74-6). Fenelon A,
 ## Revisions — September 19, 2026
 
 Linked inherited account limitations; see the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md).
+
+
+## Revisions — fiscal repair, September 19, 2026
+
+Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.

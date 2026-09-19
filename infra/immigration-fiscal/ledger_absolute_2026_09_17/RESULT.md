@@ -1,3 +1,6 @@
+<!-- fiscal-repair-2026-09-19 -->
+**Current fiscal release (September 19):** [Repaired yearly and lifetime calculation index](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) supersedes affected annual, household-financing and lifetime figures below. It reports both allocation conventions, actual-age survival NPVs and unresolved coverage. Earlier text and calculations remain historical evidence; unrelated findings are unchanged.
+
 **Verdict:** Completing the account does not preserve the sign of the partial balance, and it does not rescue the gap either. The Mexican-origin union's measured partial absolute of **+$50.24bn** becomes **−$253.93bn** once every priceable omitted item is charged under the central conventions. The age-standardized gap against third-plus non-Hispanic whites widens from **−$5,795 to −$7,095 per standardized person**, and the age-matched total from **−$290.6bn to −$354.3bn**. That endpoint is a convention, not a measurement: across the 144 combinations of the four contested arms the union absolute runs from −$548.37bn to −$87.04bn and never turns positive. The account is dominated by average-cost public services, so the break-even marginality dial sits at **m\* = 0.120**. Summed over all civilian-household residents the account reaches a position of −$966.7bn against a consolidated FY2024 position of −$2,590.8bn, covering 63% of consolidated outlays and 71% of consolidated receipts; the −$1,624.1bn residual is reported, not forced.
 
 ## Audit correction — September 19, 2026
@@ -402,3 +405,8 @@ $239.5bn, because the Census of Governments functional lines carry each
 function's capital inside the function total and item G already charges every
 function it retains. The briefed quantity is built as the `briefed_gross` arm and
 reported; the central arm charges only the $47.0bn nothing else charges.
+
+
+## Revisions — fiscal repair, September 19, 2026
+
+Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.

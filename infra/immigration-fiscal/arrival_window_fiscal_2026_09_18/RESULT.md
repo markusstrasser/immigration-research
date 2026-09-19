@@ -1,3 +1,8 @@
+<!-- fiscal-repair-2026-09-19 -->
+Current scope: `partial_plus_G_K_X_R`; nine expansion items and external institutional costs are absent. The current CLI option is `--skip-selected-charges`. The old `--skip-complete` interface and complete-account labels are superseded.
+
+**Current fiscal release (September 19):** [Repaired yearly and lifetime calculation index](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) supersedes affected annual, household-financing and lifetime figures below. It reports both allocation conventions, actual-age survival NPVs and unresolved coverage. Earlier text and calculations remain historical evidence; unrelated findings are unchanged.
+
 claude-opus-5[1m]
 
 ## Audit correction — September 19, 2026
@@ -328,3 +333,8 @@ SE $6.802bn, all matching `all_age_ledger_2026_09_17/derived/estimates.csv`.
 | `derived/window_derivatives.csv` | levels, first and second differences with replicate SEs |
 | `derived/window_descriptives.csv` | codes, span, populations, mean age, own children per adult |
 | `derived/audit.json` | input hashes, the PEINUSYR code list, window definitions, supports, gate residuals, charge provenance, the ASEC 2026 failure |
+
+
+## Revisions — fiscal repair, September 19, 2026
+
+Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.

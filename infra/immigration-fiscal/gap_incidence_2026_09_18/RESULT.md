@@ -1,3 +1,8 @@
+<!-- fiscal-repair-2026-09-19 -->
+Current command: `uv run --no-project python3 infra/immigration-fiscal/gap_incidence_2026_09_18/incidence.py --corrections-federal-share 0`; repeat with `--corrections-federal-share 1 --out-dir infra/immigration-fiscal/gap_incidence_2026_09_18/derived/corrections_federal_upper`. These are financing endpoints, not a measured central payer split. Tables below describe the earlier release. Current table readers reject stale source/output hashes.
+
+**Current fiscal release (September 19):** [Repaired yearly and lifetime calculation index](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) supersedes affected annual, household-financing and lifetime figures below. It reports both allocation conventions, actual-age survival NPVs and unresolved coverage. Earlier text and calculations remain historical evidence; unrelated findings are unchanged.
+
 claude-opus-5[1m]
 
 **Verdict:** The Mexican-origin population's complete-account balance of **−$263.22bn** is **89% a state-and-local deficit** (−$235.10bn) and only 11% a federal one (−$28.12bn), because the central account charges item F — defence, net interest and general government, $1,788.7bn nationally — at zero. Spread over the **117.20m native-headed households** the annual figure is **$2,246 per household** under average financing and **$2,014–$2,018** under marginal financing, where only the federal tenth is borrowed and only its interest ($0.93bn at the FY2024 average rate of 3.324%, $1.39bn at the 10-year par yield of 4.94%) falls due each year. It runs from **$548** in the bottom native income decile to **$7,177** in the top, and the top three deciles carry **60.2%** of it — but as a share of income it is **regressive**, 7.39% of decile 1's resources against 2.57% of decile 10's, because 89% of the bill is state-local and state-local own-source revenue is 20% property tax, 24% sales tax and 28% charges. In California the same arithmetic gives **$8,498 per native household** and in Texas **$5,177**. The pass-through arm barely matters (renters move $1,411 → $1,560, owners $2,673 → $2,600, total unchanged). The **whites-as-control result is decisive**: the share vector is identical for every group, so the same matrix applied to the third-plus non-Hispanic white reference's own −$390.75bn gives **$3,334 per native household, 48% more** than the Mexican-origin figure. Nothing in the distribution is about Mexicans; only the scalar is.
@@ -236,3 +241,8 @@ levels, which it computes directly from the same CPS records. The 144-arm matrix
 in `derived/arms_matrix.csv` was not re-run through the incidence allocation;
 only the item-F dimension was, because the disconfirmation showed it is the one
 that moves the answer.
+
+
+## Revisions — fiscal repair, September 19, 2026
+
+Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.
