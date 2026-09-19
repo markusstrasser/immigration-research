@@ -1,5 +1,10 @@
 # Which discrepancies justify adjustment, and which data improve the account?
 
+**Executed September20:** [Four fiscal checks](immigration-four-fiscal-checks-2026-09-20.md)
+apply the enrollment correction and report the national, same-year tax and health
+results. The earlier IRS anchors below reproduce2022, despite their source's2023
+heading; the new check uses pinned2023 detailed tables.
+
 **Verdict:** Some discrepancies identify weaknesses in our construction; others
 compare different populations or accounting concepts. Better public data remain
 available. The highest-value work is national accounting coverage, directly
@@ -144,7 +149,7 @@ the historical multiplier raises CPS above the existing BEA comparator.
 
 ## Health and the larger accounting gap
 
-[SOURCE / FEASIBILITY] Medicaid's [state/eligibility spending methodology](https://www.medicaid.gov/state-overviews/scorecard/content/scorecard-release/PerCapitaExpendDataMethod-2025.pdf)
+[SOURCE / FEASIBILITY] Medicaid's [state/eligibility spending methodology](https://www.medicaid.gov/state-overviews/scorecard/content/scorecard-rel/PerCapitaExpendDataMethod-2025.pdf)
 supports a stronger test than matching a single total: recipients, member-months
 and costs across five eligibility categories. First compare children, adults,
 aged and disabled groups at state level. Claims service-year spending and
@@ -188,3 +193,10 @@ calibrating every cell and reporting agreement would hide failure. Better linked
 data can reduce reporting error, but unknown ancestry, public-good attribution
 and the response to an immigration policy remain distinct problems. Increasing
 statistical complexity cannot identify them from absent observations.
+
+## Revisions
+
+2026-09-20: [Measured enrollment and residual boundaries](../decisions/2026-09-20-measured-enrollment-and-residual-boundaries.md)
+records execution of the recommended checks. The IRS comparison's original
+source year was wrong; pinned detailed tables replace that anchor. The live CMS
+methodology URL is corrected; exact state eligibility matching is still unavailable.

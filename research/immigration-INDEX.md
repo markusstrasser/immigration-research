@@ -8,12 +8,19 @@ Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [m
 
 ## Core State
 
+Latest annual account: [four executed fiscal checks](immigration-four-fiscal-checks-2026-09-20.md).
+Measured public-school enrollment raises the partial deficit to **$259.38bn shared
+/$283.20bn personal**. Matched-year tax units locate the national income-tax
+shortfall mainly at high incomes; healthcare and national-account checks retain
+material unresolved scope/attribution. These are all-age resident balances,
+not policy effects or confidence bounds. [National coverage detail](immigration-national-coverage-execution-2026-09-20.md).
+
 Gap diagnosis: [which assumptions should change and better data](immigration-gap-diagnosis-and-data-2026-09-19.md)
 decomposes the school discrepancy: the fixed enrollment rate explains 63–64% of
 the all-child CA/TX shortfall and almost all the national Hispanic shortfall.
 Verifies the public October CPS enrollment route, matched-year tax comparisons,
 health-data boundaries and restricted-access limits. National accounting coverage
-remains the larger completeness issue; this note does not recalibrate the model.
+remains the larger completeness issue; execution is linked above.
 
 Executed reality checks: [administrative earnings, benefit totals and pupil counts](immigration-administrative-checks-2026-09-19.md)
 compare the uncalibrated model with unused official observations. National wages
@@ -27,10 +34,11 @@ shows that the current partial account assigns lower receipts **and lower spendi
 per Mexican-origin resident than per other resident. Priorities are tax/earnings
 distributions, current transfer totals, Medicaid eligibility costs and public-pupil
 counts; CA/TX records and source-reuse limits are linked. Read the executed results
-above for the outcome; Medicaid eligibility matching remains unexecuted.
+above for the outcome; exact state administrative-eligibility matching remains unavailable.
 
-Latest three checks: [observed2024 fiscal refresh and national reconciliation](immigration-macro-reconciliation-2026-09-19.md)
-updates the annual partial deficit to **$234.34bn shared/$256.26bn personal**;
+Previous three checks: [observed2024 fiscal refresh and national reconciliation](immigration-macro-reconciliation-2026-09-19.md)
+produced the **$234.34bn shared/$256.26bn personal** annual version, superseded by
+the September20 enrollment correction above;
 [matched skill/capital/tax benefits](immigration-matched-benefits-2026-09-19.md)
 gives $6–19bn long-run production gains in the source-centered grid, with larger
 conditional capital-tax effects requiring ownership/overlap accounting;
@@ -43,7 +51,7 @@ Fiscal scale and benefits: [population-normalized comparison, national reconcili
 
 Education-specific fiscal evidence: [annual comparisons, lifetime uncertainty and methods](immigration-education-fiscal-and-methods-2026-09-19.md) separates below-HS from HS-only, five origin regions, current stocks and recent arrivals; retains same-education and all-education native references. Adds joint survey uncertainty, material healthcare-matching tests and explicit institutional-cost scenarios. Below-HS Mexican-born adults outperform below-HS natives in the baseline common-age comparison, while HS-only do worse; this qualifies blanket origin-based rankings. These remain resident-account models, not admission effects.
 
-Earlier repaired fiscal profiles: [yearly and lifetime results](immigration-yearly-lifetime-cost-repair-2026-09-19.md). The $217.32bn/$239.24bn annual source vintage is superseded by the $234.34bn/$256.26bn refresh above. Lifetime comparisons retain pinned age profiles, conditional survival and explicit discount/allocation assumptions; they are not validated admission forecasts. The [September19 cross-check](immigration-five-day-cross-check-2026-09-19.md) and birth-versus-arrival budget remain superseded/withdrawn. Narrative and essay writing are operator-owned.
+Earlier repaired fiscal profiles: [yearly and lifetime results](immigration-yearly-lifetime-cost-repair-2026-09-19.md). The $217.32bn/$239.24bn annual source vintage is superseded by the finance refresh and September20 school correction above. Lifetime comparisons retain pinned age profiles, conditional survival and explicit discount/allocation assumptions; they are not validated admission forecasts. The [September19 cross-check](immigration-five-day-cross-check-2026-09-19.md) and birth-versus-arrival budget remain superseded/withdrawn. Narrative and essay writing are operator-owned.
 
 Consistent accounting and raw histories: [all-age fiscal and later-generation findings](immigration-all-age-and-lineage-findings-2026-09-17.md) rebuilds the expanded account on one population with CPS/MEPS uncertainty, tests fixed-budget attribution and common ages, and reconstructs IIMMLA generations/outcomes. Large benchmark shortfalls persist; absolute partial balances, allocation effects and outcome-specific generation differences are reported separately (ladder 123–124).
 

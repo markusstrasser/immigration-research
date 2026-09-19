@@ -1,5 +1,11 @@
 # Executed fiscal checks against administrative records
 
+**September20 follow-up:** [Four executed checks](immigration-four-fiscal-checks-2026-09-20.md)
+replace the school proxy and execute matched-year tax/health diagnostics. The IRS
+paragraph below is retained as a historical extraction; its amounts reproduce
+**Tax Year2022**, despite the source PDF's2023 heading. Use the successor's pinned
+2023 SOI tables for a matched comparison.
+
 **Verdict:** The first checks support a substantial receipt gap, while finding
 specific weaknesses in the payroll and schooling assumptions. They do not
 independently identify the Mexican-origin fiscal total. The existing annual
@@ -59,7 +65,7 @@ per resident are$3,748 versus$5,302. Lower earnings and progressive income taxes
 are therefore observable parts of the modeled receipt gap, in addition to the
 all-age denominator. This does not establish why earnings differ. [CALCULATION]
 
-[SOURCE / LIMIT] IRS2023 [Publication4801](https://www.irs.gov/pub/irs-pdf/p4801.pdf),
+[HISTORICAL EXTRACTION; YEAR CORRECTED ABOVE] [Publication4801](https://www.irs.gov/pub/irs-pdf/p4801.pdf),
 revision June2026, supplies a further federal-income-tax diagnostic. Its tax
 liability after nonrefundable credits is$2,098.923bn, compared with CPS2024
 FEDTAX_BC$1,981.110bn, a raw−5.61%. Different income years, tax units, nonfilers,
@@ -211,3 +217,10 @@ decomposes the school discrepancy, resolves the small SNAP territorial component
 using a separate matched administrative series, and identifies usable public
 enrollment, tax and health checks. The baseline and conditional rakes above are
 unchanged; unresolved residuals are not relabeled ethnic reporting errors.
+
+## Revisions
+
+2026-09-20: [Measured enrollment and residual boundaries](../decisions/2026-09-20-measured-enrollment-and-residual-boundaries.md)
+replaces the school proxy and executes matched-year tax checks. The old IRS
+amounts reproduce2022, not2023; source metadata is repaired while the historical
+diagnostic remains visible. No national tax residual is assigned proportionally.
