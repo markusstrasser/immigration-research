@@ -17,6 +17,10 @@ while [[ $# -gt 0 ]]; do
         *) echo "unknown arg: $1" >&2; exit 2 ;;
     esac
 done
+case "$TIER" in
+    required|optional|all|derived) ;;
+    *) echo "bad tier: $TIER" >&2; exit 2 ;;
+esac
 
 MANIFEST="$ROOT/DOWNLOAD_MANIFEST.tsv"
 DATA="$PNY_DATA_ROOT"
@@ -26,13 +30,15 @@ skipped=0
 
 _should_check() {
     local req="$1" script="$2"
+    if [[ "$TIER" == derived ]]; then
+        [[ "$script" == build || "$script" == compose ]]
+        return
+    fi
     case "$script" in build|compose) return 1 ;; esac
     case "$TIER" in
         required) [[ "$req" == required ]] ;;
         optional) [[ "$req" == required || "$req" == optional ]] ;;
         all) [[ "$req" == required || "$req" == optional || "$req" == blocked ]] ;;
-        derived) return 0 ;;
-        *) echo "bad tier: $TIER" >&2; exit 2 ;;
     esac
 }
 
@@ -40,10 +46,6 @@ while IFS=$'\t' read -r stage req relpath min_bytes script notes; do
     [[ "$stage" == stage ]] && continue
     [[ -z "$relpath" ]] && continue
     if ! _should_check "$req" "$script"; then
-        skipped=$((skipped + 1))
-        continue
-    fi
-    if [[ "$TIER" == "derived" && "$script" != build && "$script" != compose ]]; then
         skipped=$((skipped + 1))
         continue
     fi
@@ -68,4 +70,8 @@ done < "$MANIFEST"
 echo "---"
 echo "tier=$TIER data=$DATA derived=$DERIVED_ROOT"
 echo "checked $checked skipped $skipped — missing/invalid: $missing"
+if [[ "$checked" -eq 0 ]]; then
+    echo "No manifest entries selected for tier=$TIER; verification is incomplete" >&2
+    exit 1
+fi
 exit $([[ $missing -eq 0 ]] && echo 0 || echo 1)
