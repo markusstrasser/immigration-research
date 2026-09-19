@@ -1,0 +1,30 @@
+{
+  "acquired": "2026-09-20",
+  "landing": "https://www.census.gov/data/datasets/2024/demo/cps/cps-school-enrollment.html",
+  "files": [
+    {
+      "file": "oct24pub.zip",
+      "url": "https://www2.census.gov/programs-surveys/cps/datasets/2024/supp/oct24pub.zip",
+      "bytes": 11676962,
+      "sha256": "21f68cc8e9a586d886bfee506cf7cca994260e41cb76942fb2e991ece52d4fc6"
+    },
+    {
+      "file": "oct24rep.zip",
+      "url": "https://www2.census.gov/programs-surveys/cps/datasets/2024/supp/oct24rep.zip",
+      "bytes": 68782739,
+      "sha256": "84b06b38e0b5e752d34975190df64e3d6094f03907ac6f7c6bfbb6c890da2af1"
+    },
+    {
+      "file": "cpsoct24.pdf",
+      "url": "https://www2.census.gov/programs-surveys/cps/techdocs/cpsoct24.pdf",
+      "bytes": 1831454,
+      "sha256": "e8dab1fc34a7bdc29238b8caadabafd5caebccf6859e6c9618a4229c346d466e"
+    },
+    {
+      "file": "cps_school_repwgt_oct24.sas",
+      "url": "https://www2.census.gov/programs-surveys/cps/datasets/2024/supp/cps_school_repwgt_oct24.sas",
+      "bytes": 10276,
+      "sha256": "aaeae42372f6607ffee63e0d8a84e2657cd177e1b53d7042ab5256b0096d2db3"
+    }
+  ]
+}
