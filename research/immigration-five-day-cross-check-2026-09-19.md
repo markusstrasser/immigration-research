@@ -2,7 +2,7 @@
 
 **Status:** The descriptive evidence is substantially stronger than several recent interpretations. Do not reuse the expanded absolute fiscal total, birth-versus-arrival subsidy budget, hard-falsification counts or claimed causal nulls as settled results. The corrections below govern the linked September 16–19 material. Narrative writing belongs to the operator. [INFERENCE from the checks indexed below]
 
-**Window:** Git history since 2026-09-14 00:00 through `63d40dd`: 173 commits screened; substantive findings in this window are dated September 16–19. Three independent audit lanes inspected principal code, selected outputs and primary sources. This is a targeted materiality audit, not certification of every parameter or a full rerun of the repository. The two September 19 framework lanes were in progress at the cutoff and are not completed evidence.
+**Window:** Git history since 2026-09-14 00:00 through `63d40dd`: 173 commits screened; substantive findings in this window are dated September 16–19. Three independent audit lanes inspected principal code, selected outputs and primary sources. This is a targeted materiality audit, not certification of every parameter or a full rerun of the repository. The two September 19 framework lanes were in progress at that cutoff. Clemens–Pritchett subsequently completed in `c4e3e5a` and received a separate bounded [mapping audit](../notes/immigration-cp-calibration-audit-evidence-2026-09-19.md); its current correction is indexed below.
 
 ## Material corrections
 
@@ -40,7 +40,7 @@
 | Neighborhood price capitalization | Test conditional price/rent associations and, with valid identification, price responses to neighborhood change. | A bundled price change does not isolate ethnicity preferences or national welfare loss. State whose welfare is counted, separate owner/tenant incidence, and avoid adding both capitalized stock loss and its rental flow or re-adding school/crime amenities already priced elsewhere. The brief acknowledges bundled amenities; these further restrictions govern dollar reuse. [Current brief](../infra/immigration-fiscal/hedonic_composition_2026_09_19/BRIEF.md) [INFERENCE] |
 | Generational accounting | Report birthplace, parental birthplace and self-identification separately; include descendants when the question requires them. | A self-identified third-plus cross-section is not a full lineage forecast. Selection on earnings does not bound every fiscal or attitude outcome. |
 
-These are conditions on interpretation, not a replacement of the project's causal protocol or permission to invent missing parameters. Active framework-lane outputs were left untouched.
+These are conditions on interpretation, not a replacement of the project's causal protocol or permission to invent missing parameters. The subsequent Clemens–Pritchett result received a dated interpretation correction; its calculations were preserved. The still-active hedonic lane was left untouched.
 
 ## Primary-source and arithmetic checks
 
