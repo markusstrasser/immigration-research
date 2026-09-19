@@ -1,5 +1,24 @@
 # Claim scorecard: the pro-low-skill commentators against the repo's own measurements
 
+## Current correction — September 19, 2026
+
+**Verdict:** Several HARD grades were not established by the evidence cited. The resident fiscal profiles remain useful, but an unmatched population, horizon or outcome cannot refute a commentator's stated claim. Withdraw the aggregate HARD/COORDINATE/AGREE counts as a current summary; the historical counts include mixed grades and the rows below need these corrections. [INFERENCE; primary and local checks in the linked audit]
+
+| Rows | Current disposition | What would adjudicate the stronger claim |
+|---|---|---|
+| S4, N4: revenue or fiscal-positive claims | The Mexican-origin annual account does not refute an all-origin federal projection or a differently defined historical account. Average-cost sensitivity is substantive, but its adverse endpoint is not a measured admission cost. | Same population, years, descendant treatment, budgets and marginal-cost assumptions. |
+| S5: descendant integration | Persistent gaps are measured; failure of all assimilation is not. Different birth cohorts and selective self-identification prevent reading one cross-section as a lineage forecast. | Matched outcomes and cohorts, including nonidentifying descendants. |
+| C3: welfare exclusion or entry fees | A shortfall against higher-tax natives does not prove that no fee or eligibility change can protect taxpayers. The claimed $7,095 annual fee for life is not calculated from an entrant's incremental fiscal balance. | A specified entrant cohort and policy, lifetime net costs, responses and fee collection. |
+| C4, N2: first-generation crime comparisons | A true comparison with all natives is not numerically refuted by comparing US-born Mexican-origin men with whites. State why the additional comparison matters; do not label the first false. | Matched numerator, denominator, age, origin and generation. |
+| D1: GDP per person refutes incumbent gains | Withdrawn. CBO's denominator includes newcomers; a lower average can coexist with gains for every incumbent. The repo's earlier Decker correction already established this. | Incumbent real-income or welfare outcomes, plus explicit assumptions behind any universal claim. |
+| MR T2: schooling as a repaid loan | Not adjudicated by the benchmark fiscal gap. Paying less tax than whites does not show that lifetime taxes fail to cover schooling; all-origin parity does not establish repayment either. | Discounted incremental schooling costs and resulting tax receipts, with other fiscal obligations stated. |
+
+The strongest retained criticism is that favorable aggregates do not answer every origin, generation or local-budget question. The strongest counterargument is that these resident profiles do not yet settle the effect of a different admission policy. Both statements apply. Claims about what an audience supposedly inferred are framing judgments, not hard falsifications.
+
+This correction governs conflicting claims in the retained assessment below. Evidence and scope: [five-day cross-check](immigration-five-day-cross-check-2026-09-19.md).
+
+## Retained assessment and evidence
+
 **Verdict:** None of the four targets has retracted anything. Smith has moved the furthest without saying so: his 9 September 2026 essay concedes selection, enforcement, local housing and local government finance while keeping the national-aggregate fiscal claim. Caplan, Decker and Nowrasteh are unchanged. Claim by claim, the repo's microdata lands hard on six statements (the resident population is net fiscal positive; welfare exclusion or fees would close the gap; immigrants "must" make incumbents richer; the second generation integrates; Indian-versus-all-natives and immigrant-versus-native-Black crime comparators; cost-of-living effects are small), lands only on the coordinate on five (they are right on the axis they chose and wrong on the one the reader hears), and agrees with them on four (average wage null, first-generation crime, no inflation link, high-skill immigration positive). The honest size of the dunk: large on the fiscal unit and the generational unit, zero on wages, and bounded everywhere by the fact that the repo measures resident groups, not the effect of admitting anyone.
 
 Date: 2026-09-18. Grades: **HARD** = the repo's own reproduced microdata contradicts the claim as stated; **COORDINATE** = the claim is true on its stated axis (federal, first-generation, national average) and false on the axis the audience takes it to answer (resident account, descendants, local incidence); **AGREE** = the repo adopts it. Sources: the June dismantling memos ([Smith](immigration-dismantle-noah-smith-2026-06-25.md), [Decker](immigration-dismantle-decker-2026-06-25.md), [Cato](immigration-dismantle-cato-2026-06-25.md)), the [Caplan audit](immigration-bryan-caplan-claims-audit-2026-04-21.md), the [September standing note](immigration-essay-angles-from-bookmarks-2026-09-16.md), the [complete-account lane](../infra/immigration-fiscal/ledger_absolute_2026_09_17/RESULT.md), the [IGM audit](immigration-igm-panel-audit-2026-09-17.md) and ladder entries cited inline.
@@ -85,3 +104,8 @@ Ladder entries 44, 45, 48, 65, 66, 76, 85, 100, 117, 119, 123, 125, 128, 130 in 
 ## Revisions
 
 - **2026-09-18 evening:** Added Tabarrok and Cowen from the full Marginal Revolution archive ([MR audit](immigration-marginal-revolution-claims-audit-2026-09-18.md)); the count line now carries both the four-target and six-commentator totals. Concept affected: scorecard coverage; no existing grade changed.
+
+
+## Revisions — September 19, 2026
+
+Corrected the interpretation at the point of reuse; original calculations and evidence are retained. See the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md) and linked audit for the claim-specific reason.

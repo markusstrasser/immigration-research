@@ -1,5 +1,12 @@
 # Does local spending shift from education toward law and order where the immigrant share rises? Not in the Census of Governments
 
+## Audit correction — September 19, 2026
+
+**Keep the associations; the causal sign is unresolved.** Invalidating an opposite-signed IV does not establish zero. The repo's Hispanic/foreign-born stock-share treatment also differs from the cited paper's unauthorized-arrival treatment, so confidence intervals cannot be compared as a matched replication without reconciling those quantities. The cited paper's own budget-share table is a separate source-reading question. [SOURCE: design and caveats below; mechanisms audit]
+
+This supersedes conflicting interpretations below; calculations are retained as evidence. [Audit index](immigration-five-day-cross-check-2026-09-19.md).
+
+
 **Verdict:** Not reproduced. On 3,126 counties across the 2007, 2012, 2017 and 2022 Censuses of Governments, aggregating every local unit inside a county, no arm shows local budgets shifting from education toward police, corrections and courts as the Hispanic or foreign-born share rises, and none shows total local spending per resident falling. The log of law-and-order over education spending moves by −0.154 (se 0.063) per 10 points of Hispanic share over 2007–2022 and −0.227 (0.113) over 2012–2022, that is toward education; the police share, the endorsed paper's strongest share result, is −0.463 (0.264) weighted and −0.435 (0.162) unweighted, and the 95% interval at this sample's own mean dose excludes the paper's +0.23 points. The opposite-signed shift is not itself identified: over 2007–2022 the pre-period placebo (−0.151) equals the estimate, and over 2012–2022 the estimate halves and loses significance when California alone is dropped, which its 2013 Local Control Funding Formula explains. The defensible statement is the null. Separately, the sentence Tabarrok quoted rests on the paper's log-level columns; in its own share specification the education share coefficient is +0.23 (se 0.61), and the 2025 revision drops the share columns while keeping the sentence in the abstract. [SOURCE: `infra/immigration-fiscal/local_spending_composition_2026_09_18/derived/estimates_composition.csv`; Tiburcio and Camarena 2023 Table 4, 2025 Table 3]
 
 Date: 2026-09-18. Lane: `infra/immigration-fiscal/local_spending_composition_2026_09_18/` (four local scripts plus two Modal fetch scripts, seven derived files, reproduced byte-identically by the parent). Extends ladder 141 (school flight: local school revenue falls, state aid offsets) from revenue to the composition of total local spending. Descriptive, within state, no instrument (ladder 136).
@@ -44,3 +51,8 @@ The consular-ID treatment is confidential and cannot be rebuilt, and this lane h
 ## Sources
 
 Tiburcio E, Camarena KR, The Local Reaction to Unauthorized Mexican Migration to the US, 2023 and 2025 versions (cached). Census Bureau Annual Survey of State and Local Government Finances individual-unit files 2012, 2017–2023 and technical documentation; Willamette Government Finance Database (2007); ACS 5-year via api.census.gov; 2000 Census SF1/SF3. Instrument note: LLM-assisted; every number reproduced by the lane scripts.
+
+
+## Revisions — September 19, 2026
+
+Corrected the interpretation for the reasons above; see the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md).

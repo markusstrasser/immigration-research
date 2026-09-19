@@ -1,5 +1,12 @@
 claude-opus-5[1m]
 
+## Audit correction — September 19, 2026
+
+**“Tax-driven” overstates the design.** Retain the descriptive association and the tax-rate comparison; the data do not identify moving motives. Native population change includes natural increase and IRS filer movement does not isolate natives. The index should say more strongly associated with taxes, with causal motives unresolved. [SOURCE: the memo's own scope limitations; mechanisms audit]
+
+This supersedes conflicting interpretations below; calculations are retained as evidence. [Audit index](immigration-five-day-cross-check-2026-09-19.md).
+
+
 **Verdict:** The third-order channel is real in California, an order of magnitude too small
 to matter fiscally, and not attributable to the Mexican-origin gap. California's net outflow
 of adjusted gross income rose from about zero in 2012-2016 to $20.6bn in 2021 and $17.2bn in
@@ -498,3 +505,8 @@ Migration and the Labor Market Impact of Immigration*, JHR, NBER w11610; Peri & 
 (2011) *Assessing Inherent Model Bias*, JUE 69(1):82-91, 10.1016/j.jue.2010.08.005;
 Jaeger, Ruist & Stuhler (2018), NBER w24285. Wilson & Zhou (2026), Dallas Fed WP 2607,
 <https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2607.pdf>, Table 6.
+
+
+## Revisions — September 19, 2026
+
+Corrected the interpretation for the reasons above; see the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md).

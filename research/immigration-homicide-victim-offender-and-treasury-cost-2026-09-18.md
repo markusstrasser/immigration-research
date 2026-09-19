@@ -1,3 +1,12 @@
+# Correction to the September 18 account
+
+## Current correction — September 19, 2026
+
+**Verdict:** The $1.5–1.8m treasury totals assume conviction and the specified prison-sentence distribution. They are not expected costs per cleared homicide: clearance does not guarantee conviction or imprisonment, and no disposition probability was supplied. To produce the latter, weight the offender channel by those probabilities while retaining the separately incurred victim channel. The observed victim–offender matrix remains useful subject to clearance and missingness selection. The $13.7m VSL is roughly 8–9 times the displayed treasury total, not a hundred times. [SOURCE: §§3.4–3.5 and limitations below; INFERENCE; arithmetic]
+
+This correction governs conflicting claims in the retained assessment below. Evidence and scope: [five-day cross-check](immigration-five-day-cross-check-2026-09-19.md).
+
+## Retained assessment and evidence
 claude-opus-5[1m]
 
 # Homicide: the victim–offender joint distribution, and what one homicide costs the treasury
@@ -559,3 +568,8 @@ uncomfortable.
 ## Revisions
 
 - **2026-09-18 (late evening).** The intra-group shares in §2.1 (Hispanic → Hispanic 0.717 / 0.667) are a cleared-homicide quantity. On non-fatal violence the NCVS gives 0.404 for Hispanic offenders and a Hispanic-offender → white-victim share of 0.402 against 0.156 here; part is a real severity gradient, part clearance selection. See [NCVS off the murder margin](immigration-ncvs-victim-offender-off-the-murder-margin-2026-09-18.md), ladder 148. Claim change: any assortative-victimization statement must name its margin.
+
+
+## Revisions — September 19, 2026
+
+Corrected the interpretation at the point of reuse; original calculations and evidence are retained. See the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md) and linked audit for the claim-specific reason.

@@ -1,5 +1,10 @@
 # Two objections to a period account: longevity and Social Security timing
 
+## Audit correction — September 19, 2026
+
+These are mortality and timing sensitivities on period profiles. Expanded absolute endpoints inherit the unnetted intergovernmental-transfer defect identified on September 19. No claim of a corrected total or a genuine cohort projection follows from the existing arm grid. The earlier pronatal budget has separately been withdrawn after its allocation sensitivity changed sign. [Audit index](immigration-five-day-cross-check-2026-09-19.md).
+
+
 **Verdict:** Both objections are real, both are small, and the one usually raised in the group's favour runs against it. Giving the Mexican-origin groups the pooled Hispanic life table instead of the white one widens the complete-account lifetime gap against third-plus whites by $60k to $69k per person undiscounted, because every year past 65 in these profiles is a deficit year; with Mexican-specific mortality (Fenelon, Chinn and Anderson 2017: above the white hazard at 25–64, below it only at 65+) the effect shrinks to $11k to $26k, and the union's lifetime gap lands $1,283 from where the repo's terminal-age-83 convention already had it, 0.2%. On Social Security timing the two halves of the objection point opposite ways: charging this year's workers the present value of the benefits their tax accrues narrows the common-age gap from −$7,224 to −$6,183, while the internally consistent cash-to-accrual switch, which also stops charging today's retirees' benefits to today, widens it to −$7,899. Across 576 Mexican-origin cells no arm makes the gap non-negative; the best is −$3,198 per year. [SOURCE: `infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/RESULT.md`; `derived/combined_summary.csv`]
 
 Date: 2026-09-18. Lane: `infra/immigration-fiscal/lifetime_longevity_sstiming_2026_09_18/` (three scripts, 12 derived files, reproduced byte-identically by the parent from the CPS zip). Prior result: the generation memo's §5.1 priced the same survival swap on the working-age partial ledger, undiscounted, at about $20,000 per adult, 5% of a $250,000 lifetime gap ([2026-09-16 memo](immigration-mexican-origin-by-generation-2026-09-16.md)); this memo moves it to the complete all-age account (ladder 130), adds discounting, the nativity split and Mexican-specific mortality, and prices the timing objection for the first time.
@@ -41,3 +46,8 @@ The 75+ band is carried flat to age 100, so the longevity penalty is a floor if 
 ## Sources
 
 NVSS United States Life Tables 2024 (NVSR 75-5) and 2023 (NVSR 74-6). Fenelon A, Chinn JJ, Anderson RN, SSM Population Health 2017;3:245–254. SSA Actuarial Note 2025.7 (Rose and Burkhalter), Actuarial Note 151 (Goss et al. 2013), 2025 OASDI Trustees Report. CPS ASEC 2025 via the pronatal-lane profiles. Instrument note: LLM-assisted; every number reproduced by the lane scripts.
+
+
+## Revisions — September 19, 2026
+
+Linked inherited account limitations; see the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md).

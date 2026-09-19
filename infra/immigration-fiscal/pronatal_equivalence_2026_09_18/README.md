@@ -1,5 +1,12 @@
 # Lifetime period profiles and the pro-natal equivalence budget — September 18, 2026
 
+## Audit correction — September 19, 2026
+
+**Withdraw the actionable budget claim.** The existing person-source allocation changes the 3% white-child-minus-Mexico-born-age-25 comparison from approximately +$202k to **−$38,628** (white-child profile +$65,023; Mexico-born adult +$103,651). Thus the statement that allocation leaves lifetime sums nearly unchanged is false. Household sharing assigns existing parental tax receipts to children; it does not show receipts created by an additional birth. The script also does not project descendants recursively. Both allocations are period-profile scenarios, not identified birth or admission effects. [SOURCE: independent estimator substitution and output in the fiscal audit evidence]
+
+This supersedes conflicting interpretations below; calculations are retained as evidence. [Audit index](../../../research/immigration-five-day-cross-check-2026-09-19.md).
+
+
 **Verdict:** On the all-age partial account's period profile (today's cross-section applied as a lifetime), a third-plus non-Hispanic white child has a lifetime balance of +$400k undiscounted, +$231k at 3%; a Mexico-born adult arriving at 25 has −$109k / +$28k; a Mexican second-generation child −$109k / −$12k; a third-plus self-identified child +$16k / +$69k. The fiscal budget that could be paid for one additional reference-profile child and leave the treasury where one more Mexican-origin resident leaves it is therefore **$202k (Mexico-born, from 25), $243k (second generation) and $161k (third-plus) at 3%** against a white child, and $139k / $180k / $99k against an all-native child. Undiscounted, $509k / $509k / $384k against white and $380k / $380k / $255k against all natives.
 
 ## Reproduce

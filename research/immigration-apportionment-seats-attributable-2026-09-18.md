@@ -1,5 +1,12 @@
 # Where the Mexican-origin population is counted moves 24 House seats
 
+## Audit correction — September 19, 2026
+
+**Retain 24 seats as the fixed-location counting counterfactual, not a political-effect estimate.** It depends on uneven geography at the observed group size. Proportional removal is a scale-invariance check, not proof that size is irrelevant. The calculation includes US-born citizens, does not assign seats to an ethnic group, and holds electoral winners fixed. [SOURCE: construction below; mechanisms audit]
+
+This supersedes conflicting interpretations below; calculations are retained as evidence. [Audit index](immigration-five-day-cross-check-2026-09-19.md).
+
+
 **Verdict:** Counting the Mexican-origin population where it lives moves 24 of 435 House seats in the 2020 apportionment (California −12, Texas −8, Arizona, Colorado, Illinois and New Mexico −1; Florida and New York +3, Ohio, Pennsylvania and Virginia +2, eleven states +1) and 25 in 2010. The Mexico-born alone move 7 seats, the Mexico-born with their US-born children under 18 move 10, and the unauthorized population of all origins moves 2. No arm changes the 2020 or 2024 presidential outcome; the largest shift is 7 electoral votes toward the 2024 Republican column against a 44-vote threshold. The mechanism is concentration: a proportional placebo removing the same number of people spread across states moves zero seats in every arm, and removing all 44 million foreign-born, 8 million more people, moves 10 fewer seats than removing the Mexican-origin population, because 59% of it lives in California and Texas against 21% of all residents. This is arithmetic on certified counts under the method of equal proportions, which the lane first reproduced exactly for 2020 and 2010, down to the published 89-person New York near-miss. [SOURCE: `infra/immigration-fiscal/apportionment_2026_09_18/derived/arms_summary.csv`, `ec_arithmetic.csv`]
 
 Date: 2026-09-18. Lane: `infra/immigration-fiscal/apportionment_2026_09_18/` (eight scripts, 55 derived files, reproduced byte-identically by the parent). A third-order political consequence with no identification problem: the Constitution apportions on total persons, so the counterfactual removes people from counts, not from the country, and says nothing about behaviour.
@@ -39,3 +46,8 @@ It is the exact answer to "how much representation follows the Mexican-origin po
 ## Sources
 
 Census Bureau apportionment tables 2020 and 2010; 2020 Detailed DHC-A T01001 and T02003; 2010 SF1 PCT011; ACS 5-year B05006, B03001, B05002; Pew Research unauthorized estimates 2019 and 2021; Center for Migration Studies 2019; Census Vintage 2024 state estimates; Brennan Center 2030 projection; local IPUMS panel (`~/research-data/immigration-fiscal/derived`). Instrument note: LLM-assisted; every number reproduced by the lane scripts.
+
+
+## Revisions — September 19, 2026
+
+Corrected the interpretation for the reasons above; see the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md).
