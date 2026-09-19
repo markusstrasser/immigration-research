@@ -1,0 +1,26 @@
+Correlates of State Policy v2.2: 6,120 state-years, 51 state codes, 1900-2019
+in-state tuition, 2001-2014 window: 19 of 51 states ever coded 1; first years 2001-2014
+analysis table: 49 states; 1 have no county group under 10% Mexican origin carrying at least 5% of the state's votes, so their stand-in is missing
+
+=== in-state tuition for unauthorized immigrants, n=48 states ===
+adopters' mean Mexican-origin share 8.2% vs non-adopters 3.8%
+adopters' mean non-Hispanic-county Democratic share 51.1 vs non-adopters 51.0
+logit, Mexican-origin share alone:      b=+0.0926 se=0.0507 z=+1.83
+logit, non-Hispanic-county Dem share:   b=+0.0004 se=0.0244 z=+0.02
+logit, both:  mex b=+0.1007 se=0.0541 z=+1.86 | non-Hisp Dem b=+0.0151 se=0.0266 z=+0.57
+  (n is about fifty; these are ordering tests, not identified effects)
+
+share of states with in-state tuition, split at the median of each:
+                           Republican-leaning rest of state  Democratic-leaning rest of state
+low Mexican-origin share                               0.00                              0.31
+high Mexican-origin share                              0.46                              0.73
+cell counts:
+nonhisp_dem2p_2008  False  True 
+mex_share_pp                    
+False                  11     13
+True                   13     11
+
+=== restrictive minus accommodating immigration laws 2005-2012, n=46 states ===
+Spearman(net restrictive laws, Mexican-origin share) = +0.056
+Spearman(net restrictive laws, non-Hispanic-county Dem share) = -0.615
+  the Correlates law counts are missing for many state-years inside 2005-2012 (Texas is absent in every even year), so this is the weakest arm in the lane and is reported as an ordering, not a coefficient

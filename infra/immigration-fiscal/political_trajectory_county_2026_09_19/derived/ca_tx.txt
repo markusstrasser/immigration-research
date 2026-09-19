@@ -1,0 +1,92 @@
+=== California and Texas, 2000-2024 ===
+
+mex_share_pop_pp
+state     CA     TX
+year               
+2000   24.96  24.32
+2004   27.38  27.58
+2008   30.04  30.69
+2012   31.81  33.36
+2016   32.24  33.69
+2020   32.29  32.96
+2024   32.25  32.20
+
+hisp_share_pop_pp
+state     CA     TX
+year               
+2000   32.38  31.99
+2004   34.59  34.50
+2008   36.09  35.92
+2012   38.18  38.18
+2016   38.88  39.17
+2020   39.68  39.89
+2024   39.83  39.46
+
+dem2p_pp
+state     CA     TX
+year               
+2000   56.20  39.04
+2004   55.05  38.49
+2008   62.28  44.06
+2012   61.87  41.99
+2016   66.13  45.29
+2020   64.91  47.17
+2024   60.40  43.06
+
+dem2p_counties_under10pct_mex
+state     CA     TX
+year               
+2000   56.59  31.25
+2004   58.49  28.66
+2008   64.20  26.95
+2012   69.58  22.05
+2016   70.96  17.89
+2020   70.23  18.24
+2024   72.24  16.63
+
+cps_hisp_share_of_voters_pp
+state     CA     TX
+year               
+2000     NaN    NaN
+2004   16.25  19.28
+2008   21.42  20.12
+2012   23.45  21.87
+2016   23.20  20.14
+2020   26.87  25.03
+2024   27.74  23.22
+
+cps_hisp_share_of_cvap_pp
+state     CA     TX
+year               
+2000     NaN    NaN
+2004   21.42  26.48
+2008   23.80  29.87
+2012   27.80  30.30
+2016   28.49  27.51
+2020   32.01  30.13
+2024   32.66  30.25
+
+share of each state's votes cast in counties under 10% Mexican origin
+state   CA    TX
+year            
+2000   9.3  22.8
+2004   9.2  12.3
+2008   8.2   6.7
+2012   6.1   4.1
+2016   6.4   3.3
+2020   5.8   2.6
+2024   4.7   2.6
+
+=== splitting the California minus Texas gap ===
+composition = the two states' Hispanic shares of the electorate differ;
+conversion  = everyone else votes differently. Hispanic Democratic share is the national exit-poll number in both states (stated assumption).
+ year  gap_CA_minus_TX_pp  hisp_share_of_voters_CA_pp  hisp_share_of_voters_TX_pp  hisp_dem2p_national_pp  nonhisp_dem2p_CA_pp  nonhisp_dem2p_TX_pp  composition_term_pp  conversion_term_pp  residual_pp
+ 2004               16.56                       16.25                       19.28                   54.64                55.13                34.63                -0.30               16.85          0.0
+ 2008               18.21                       21.42                       20.12                   68.37                60.62                37.94                 0.25               17.97          0.0
+ 2012               19.88                       23.45                       21.87                   72.45                58.63                33.47                 0.42               19.46          0.0
+ 2016               20.84                       23.20                       20.14                   70.21                64.89                39.00                 0.56               20.28          0.0
+ 2020               17.74                       26.87                       25.03                   67.01                64.14                40.55                 0.27               17.47          0.0
+ 2024               17.34                       27.74                       23.22                   52.58                63.40                40.18                 0.04               17.30          0.0
+
+averaged over 6 elections: gap +18.4 points, of which composition +0.2 and conversion +18.2; the non-Hispanic Democratic two-party share is 61.1 in California against 37.6 in Texas.
+survey-free cross-check: in counties under 10% Mexican origin the Democratic two-party share averages 66.0 in California and 23.1 in Texas, a gap of +42.9 points with no Hispanic voters of consequence in either set.

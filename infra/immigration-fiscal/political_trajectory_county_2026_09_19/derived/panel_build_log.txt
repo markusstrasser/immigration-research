@@ -1,0 +1,17 @@
+votes: 21,739 county-year rows, 2000:3104, 2004:3105, 2008:3105, 2012:3105, 2016:3105, 2020:3104, 2024:3111
+composition rows by year: 2000:3183, 2004:3182, 2008:3183, 2012:3183, 2016:3183, 2020:3183, 2024:3183
+merged: 21,726 rows before balancing
+balanced panel: 3,103 counties x 7 years; 1 counties dropped for incomplete coverage
+  dropped (first 25): 08014
+final panel: 3,103 counties, 21,721 rows
+panel-wide (population-weighted) series:
+      dem2p_pw  mex_share_pw  turnout_cvap_pw
+year                                         
+2000    0.5019        0.0743              NaN
+2004    0.4867        0.0869              NaN
+2008    0.5359        0.0985           0.6326
+2012    0.5192        0.1097           0.5892
+2016    0.5103        0.1132           0.5989
+2020    0.5219        0.1134           0.6648
+2024    0.4908        0.1139           0.6473
+wrote derived/county_panel.csv (3.05 MB)
