@@ -1,0 +1,28 @@
+award,rows,year_coverage,in_window_winner_years
+Academy Award for Best Actor,254,1.0,36
+Academy Award for Best Actress,250,0.996,36
+Academy Award for Best Adapted Screenplay,198,0.995,50
+Academy Award for Best Director,254,0.996,38
+Academy Award for Best Original Screenplay,203,0.995,52
+Academy Award for Best Supporting Actor,198,1.0,36
+Academy Award for Best Supporting Actress,157,1.0,36
+Grammy Award for Album of the Year,148,0.926,31
+Grammy Award for Best New Artist,121,0.992,29
+Grammy Award for Record of the Year,99,0.98,24
+Grammy Award for Song of the Year,87,0.977,23
+MacArthur Fellows Program,1502,0.65,565
+National Book Award for Fiction,79,0.987,25
+National Book Award for Nonfiction,74,1.0,27
+National Book Award for Poetry,42,1.0,24
+National Medal of Arts,496,0.46,95
+Pulitzer Prize for Biography or Autobiography,153,1.0,40
+Pulitzer Prize for Drama,146,1.0,33
+Pulitzer Prize for Fiction,92,1.0,31
+Pulitzer Prize for General Nonfiction,104,1.0,39
+Pulitzer Prize for History,143,1.0,34
+Pulitzer Prize for Music,100,1.0,35
+Pulitzer Prize for Poetry,144,1.0,35
+Tony Award for Best Direction of a Musical,76,0.987,28
+Tony Award for Best Direction of a Play,84,1.0,29
+Tony Award for Best Musical,93,0.989,3
+Tony Award for Best Play,84,1.0,32

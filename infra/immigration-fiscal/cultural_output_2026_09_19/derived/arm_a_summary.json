@@ -1,0 +1,145 @@
+{
+  "cells_with_zero_group_pop": {
+    "FBOTHER": 0,
+    "MEXBORN": 0,
+    "USMEX": 0,
+    "USWHITE": 0
+  },
+  "creative_worker_samples": {
+    "FBOTHER": 3325,
+    "MEXBORN": 426,
+    "USMEX": 1042,
+    "USWHITE": 16796
+  },
+  "genre_worker_samples": {
+    "film_tv": {
+      "FBOTHER": 432,
+      "MEXBORN": 40,
+      "USMEX": 169,
+      "USWHITE": 2554
+    },
+    "music_perf": {
+      "FBOTHER": 334,
+      "MEXBORN": 54,
+      "USMEX": 86,
+      "USWHITE": 1455
+    },
+    "sports": {
+      "FBOTHER": 271,
+      "MEXBORN": 28,
+      "USMEX": 105,
+      "USWHITE": 1614
+    },
+    "visual_design": {
+      "FBOTHER": 1745,
+      "MEXBORN": 216,
+      "USMEX": 512,
+      "USWHITE": 8111
+    },
+    "writers_media": {
+      "FBOTHER": 814,
+      "MEXBORN": 116,
+      "USMEX": 275,
+      "USWHITE": 4676
+    }
+  },
+  "groups": {
+    "FBOTHER": "NATIVITY = '2' AND POBP <> '303'",
+    "MEXBORN": "POBP = '303'",
+    "USMEX": "NATIVITY = '1' AND HISP = '02'",
+    "USWHITE": "NATIVITY = '1' AND HISP = '01' AND RAC1P = '1'"
+  },
+  "min_cell_unweighted_pop": {
+    "FBOTHER": 2094,
+    "MEXBORN": 246,
+    "USMEX": 417,
+    "USWHITE": 4259
+  },
+  "n_cells": 40,
+  "occp_creative": [
+    "2600",
+    "2631",
+    "2632",
+    "2633",
+    "2634",
+    "2635",
+    "2636",
+    "2640",
+    "2700",
+    "2710",
+    "2740",
+    "2751",
+    "2752",
+    "2755",
+    "2770",
+    "2805",
+    "2810",
+    "2825",
+    "2830",
+    "2840",
+    "2850",
+    "2861",
+    "2862",
+    "2865",
+    "2905",
+    "2910",
+    "2920"
+  ],
+  "occp_genres": {
+    "film_tv": [
+      "2710",
+      "2905",
+      "2920"
+    ],
+    "music_perf": [
+      "2700",
+      "2740",
+      "2751",
+      "2752",
+      "2755",
+      "2770"
+    ],
+    "sports": [
+      "2721",
+      "2722",
+      "2723"
+    ],
+    "visual_design": [
+      "2600",
+      "2631",
+      "2632",
+      "2633",
+      "2634",
+      "2635",
+      "2636",
+      "2640",
+      "2910"
+    ],
+    "writers_media": [
+      "2805",
+      "2810",
+      "2825",
+      "2830",
+      "2840",
+      "2850",
+      "2861",
+      "2862",
+      "2865"
+    ]
+  },
+  "sample_sizes": {
+    "FBOTHER": 222034,
+    "MEXBORN": 67948,
+    "USMEX": 90722,
+    "USWHITE": 1007048
+  },
+  "se_method": "80 successive-difference replicate weights, 4/80 factor",
+  "source": "ACS 2024 1-year PUMS person file (psam_pusa/b), Census Bureau",
+  "universe": "age 25-64, all persons",
+  "weighted_population": {
+    "FBOTHER": 26457907.0,
+    "MEXBORN": 8816848.0,
+    "USMEX": 10659798.0,
+    "USWHITE": 92862322.0
+  }
+}

@@ -1,0 +1,1 @@
+REPRODUCIBLE: all 27 files in derived/ byte-identical after a second from-scratch run over the warm cache.

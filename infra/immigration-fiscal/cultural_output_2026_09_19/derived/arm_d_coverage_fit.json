@@ -1,0 +1,18 @@
+{
+  "osm_coverage": {
+    "n": 573,
+    "coef_log_share": 0.01725,
+    "se": 0.01213,
+    "t": 1.422,
+    "mean_coverage": 0.7336,
+    "median_coverage": 0.724
+  },
+  "tagged_coverage": {
+    "n": 573,
+    "coef_log_share": 0.03642,
+    "se": 0.01394,
+    "t": 2.612,
+    "mean_coverage": 0.5993,
+    "median_coverage": 0.5854
+  }
+}
