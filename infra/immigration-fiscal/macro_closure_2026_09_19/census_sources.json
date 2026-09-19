@@ -1,0 +1,45 @@
+{
+  "acquired": "2026-09-19",
+  "files": [
+    {
+      "file": "finance_2022_us_combined.json",
+      "source_url": "https://api.census.gov/data/timeseries/govslocalfin?get=AGG_DESC%2CAGG_DESC_LABEL%2CGOVTYPE%2CGOVTYPE_LABEL%2CNAME%2CYEAR%2CAMOUNT%2CAMOUNT_F%2CAMOUNT_CV%2CAMOUNT_CV_F&time=2022&GOVTYPE=001&for=us%3A%2A",
+      "sha256": "7c0bb5b89236235673fd67b5709ffc2a62b2bf5afc2880e9e28e74262c94fa1d",
+      "bytes": 44293,
+      "rows": 232
+    },
+    {
+      "file": "finance_2022_state_combined.json",
+      "source_url": "https://api.census.gov/data/timeseries/govslocalfin?get=AGG_DESC%2CAGG_DESC_LABEL%2CGOVTYPE%2CGOVTYPE_LABEL%2CNAME%2CYEAR%2CAMOUNT%2CAMOUNT_F%2CAMOUNT_CV%2CAMOUNT_CV_F&time=2022&GOVTYPE=001&for=state%3A%2A",
+      "sha256": "4631ea83442ac1852ec4d40ba37b4642fa9c87dfce4b8e7892434f52952ab407",
+      "bytes": 2072805,
+      "rows": 11182
+    },
+    {
+      "file": "finance_2024_us_combined.json",
+      "source_url": "https://api.census.gov/data/timeseries/govslocalfin?get=AGG_DESC%2CAGG_DESC_LABEL%2CGOVTYPE%2CGOVTYPE_LABEL%2CNAME%2CYEAR%2CAMOUNT%2CAMOUNT_F%2CAMOUNT_CV%2CAMOUNT_CV_F&time=2024&GOVTYPE=001&for=us%3A%2A",
+      "sha256": "85c4d95d3216c882240b034846e938dfb1a7cf39a7a1c68243680b7c6fd6f068",
+      "bytes": 44328,
+      "rows": 232
+    },
+    {
+      "file": "finance_2024_state_combined.json",
+      "source_url": "https://api.census.gov/data/timeseries/govslocalfin?get=AGG_DESC%2CAGG_DESC_LABEL%2CGOVTYPE%2CGOVTYPE_LABEL%2CNAME%2CYEAR%2CAMOUNT%2CAMOUNT_F%2CAMOUNT_CV%2CAMOUNT_CV_F&time=2024&GOVTYPE=001&for=state%3A%2A",
+      "sha256": "e5e0b320c1125fcfb67e8243b4a5fb1ccbcc52fddefea2f75e6a706a24cb736c",
+      "bytes": 2075868,
+      "rows": 11188
+    },
+    {
+      "file": "variables.json",
+      "source_url": "https://api.census.gov/data/timeseries/govslocalfin/variables.json",
+      "sha256": "d9ab84c9844a47aef80d04e3dbd5e9ad3925c34505156b380cba559df2edd922",
+      "bytes": 3290
+    },
+    {
+      "file": "methodology.pdf",
+      "source_url": "https://www2.census.gov/programs-surveys/gov-finances/technical-documentation/methodology/2024/2024_methodology.pdf",
+      "sha256": "6a8d82a94335bf6d03130ba047f68df037a555761d9d82bde15ead86f9a9b6f9",
+      "bytes": 384434
+    }
+  ]
+}
