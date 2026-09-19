@@ -1,5 +1,10 @@
 # Yearly and lifetime fiscal results — repaired calculation index
 
+**Latest annual update, 2026-09-20:** The [measured enrollment correction](immigration-four-fiscal-checks-2026-09-20.md)
+produces −$259.38bn shared/−$283.20bn personal. Lifetime tables below retain their
+pinned earlier age-profile inputs; neither subsequent annual change has been
+applied as a flat lifetime shift.
+
 **Later source update, 2026-09-19:** The [Census2024 finance refresh](immigration-macro-reconciliation-2026-09-19.md)
 updates the union's annual partial balance to −$234.34bn shared/−$256.26bn
 personal. Tables below preserve the earlier pinned profile version. The
@@ -7,7 +12,7 @@ personal. Tables below preserve the earlier pinned profile version. The
 assumptions and composition/exit sensitivities; no lifetime admission forecast
 is validated. See the [decision](../decisions/2026-09-19-matched-accounts-and-projection-checks.md).
 
-**Status:** Current September 19 calculation release. The annual bookkeeping and age-profile propagation are repaired. This is an **expanded partial fiscal account**, with explicit allocation scenarios, not an exhaustive government account or an identified effect of immigration policy. Earlier $263.22bn, $2,246/household, 89% state/local and flat-adjustment lifetime headlines are superseded. Evidence remains in Git and the original files.
+**Status:** Pinned September 19 calculation release. The annual bookkeeping and age-profile propagation are repaired. This is an **expanded partial fiscal account**, with explicit allocation scenarios, not an exhaustive government account or an identified effect of immigration policy. Earlier $263.22bn, $2,246/household, 89% state/local and flat-adjustment lifetime headlines are superseded. Evidence remains in Git and the original files.
 
 ## Annual results
 
@@ -87,3 +92,7 @@ Executed: **17 focused tests; 54 annual gates; 768 lifetime scenarios; annual/pr
 2026-09-19, later: [Matched accounts and projection checks](../decisions/2026-09-19-matched-accounts-and-projection-checks.md)
 versions the observed2024 refresh separately and retains these profiles for
 comparisons. The older annual source vintage retained here is no longer the latest.
+
+2026-09-20: [Measured enrollment and residual boundaries](../decisions/2026-09-20-measured-enrollment-and-residual-boundaries.md)
+versions the new annual school correction separately. Lifetime age profiles remain
+pinned; the new annual total cannot be propagated as a flat lifetime shift.

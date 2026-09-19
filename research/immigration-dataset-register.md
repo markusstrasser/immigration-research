@@ -1,5 +1,30 @@
 # Immigration — Dataset Register
 
+## September 20 executed fiscal checks
+
+Public source acquisition and reuse for [four fiscal checks](immigration-four-fiscal-checks-2026-09-20.md).
+Raw inputs and derived outputs are ignored; tracked locks and generators preserve
+provenance. No restricted linkage or administrative Mexican-origin tax/health
+file was acquired. Detailed field definitions and limitations are in each lane.
+
+| Dataset / reference period | Storage and provenance | Variables and permitted use | Main limitation |
+|---|---|---|---|
+| CPS October 2024 school supplement, 160 replicate weights, dictionary and SAS controls | `school_enrollment_2026_09_20/_cache/`; four files, 82,301,431 bytes; [source URLs and hashes](../infra/immigration-fiscal/school_enrollment_2026_09_20/sources.json), [card](../infra/immigration-fiscal/school_enrollment_2026_09_20/DATASET_CARD.md) | Grade/public-private child and adult branches; own/parent birthplace, self-ID, age/state; within-October `QSTNUM/OCCURNUM` join only | 27,342 zero-weight nonperson rows lack replicates; four implied weight decimals. October-to-March rate transport is not person linkage or annual pupil-month measurement. |
+| CPS ASEC 2024, income 2023 | Existing `sources/immigration-fiscal/data/census/cps_asec_2024_march.zip` reused; downloaded copy is byte-identical, SHA256 `cdb39cdac34bef99dd0940ab28e306f692404c2eea44d85dfd634214872a0a09` | Native `TAX_ID`, tax carriers, dependent filers, 160 replicate weights | Modeled returns, not observed filings; 560 zero-income filing units require count convention/bounds. The older claim of unavailable local data is superseded. |
+| IRS SOI complete 2023 Tables 1.2/1.4; 2022 tables and June 2026 Publication 4801 for source-year verification | `same_year_tax_2026_09_20/_cache/`; [source lock](../infra/immigration-fiscal/same_year_tax_2026_09_20/source_lock.json) | 19 AGI bands, return counts, AGI, taxable income, tax after nonrefundable credits, total/W-2 wages; amounts in thousands | Publication 4801 p9 repeats 2022 totals under a 2023 heading; use year-specific tables. Tax liability, collections and payroll remain distinct. |
+| SSA 2025 Supplement 4.B10/4.B12, income 2023 | [Pinned primary transcription](../infra/immigration-fiscal/same_year_tax_2026_09_20/ssa_sources.json); direct HTTP403, official page read through web tool | OASDI/HI wage and self-employment amounts by geography; domestic-scope diagnostics | Preliminary 1% CWHS estimates, no origin; even removing territories does not match every CPS population/compensation boundary. |
+| ACS 2024 one-year person PUMS | Existing `sources/immigration-fiscal/data/external/acs_pums_2024_1yr/csv_pus.zip`; reused read-only, hash in tax lane audit | `STATE`, `HISP=2`, `POBP=303`, wage/ADJINC and 80 replicates; common civilian-household comparison | Rolling annual income and no parental-origin fields; no complete CPS-union match. |
+| CMS Scorecard EX.5 and 2026 Beneficiary Profile, CY2023; EX.2 FY2023 | `health_admin_2026_09_20/raw/`; [pins, API requests and hashes](../infra/immigration-fiscal/health_admin_2026_09_20/source_pins.json); ETL3.9.61/data20251205 | 648 EX.5 eligibility/state/year rates, quality notes; national member-years/spending; EX.2 service/program scale diagnostics | Institutions/territories and Medicare premiums included; EX.5 excludes CHIP/admin/DSH. State eligibility numerators/member-months not exposed by retrieved API. |
+| CMS/Mathematica 2023 LTSS tables and methodology | Same health lane; nine new health/documentation files together 8,224,811 bytes; [card](../infra/immigration-fiscal/health_admin_2026_09_20/REGISTER_SNIPPET.md) | Institutional/HCBS spending by state/delivery system; source-quality flags | TAF encounters differ from CMS-64 cash; CA HCBS high concern. Scope tests are not exact reconciliations or hard bounds. |
+
+The healthcare lane reuses existing MEPS HC-251 (2023) and CPS ASEC 2024
+read-only; monthly coverage produces member-years. The national lane reuses the
+pinned August 26, 2026 BEA workbook below. No new institution or ethnic residual
+is added to the annual account. Reproduction: [school](../infra/immigration-fiscal/school_enrollment_2026_09_20/README.md),
+[tax](../infra/immigration-fiscal/same_year_tax_2026_09_20/README.md),
+[health](../infra/immigration-fiscal/health_admin_2026_09_20/README.md),
+[national coverage](../infra/immigration-fiscal/national_coverage_2026_09_20/README.md).
+
 ## September19 observed state/local finance refresh
 
 **CENSUS_SLGF_2024_AND_2022.** US Census public aggregates, [FY2024 release,

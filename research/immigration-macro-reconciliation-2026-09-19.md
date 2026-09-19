@@ -1,5 +1,10 @@
 # National reconciliation and the updated annual fiscal account
 
+**Later annual release, September20:** [Measured enrollment and three additional
+checks](immigration-four-fiscal-checks-2026-09-20.md) update the partial balance to
+−$259.38bn shared/−$283.20bn personal. This memo retains the preceding finance
+vintage and its national comparisons.
+
 **Verdict:** Updating available state/local inputs to observed FY2024 worsens the
 Mexican-origin union's annual attributed balance by **$17.02bn**, to **−$234.34bn
 under household sharing or −$256.26bn under personal-source attribution**.
@@ -126,3 +131,9 @@ Census state-to-US controls; source-units, duplicate-field and geographic-univer
 regressions; fee-loss endpoint; refreshed receipt-minus-spending identity. Source
 survey uncertainty and structural uncertainty are not eliminated by arithmetic
 checks. Interpretation remains subject to the [instrument caveat](../notes/llm-bias-caveat.md).
+
+## Revisions
+
+2026-09-20: [Measured enrollment and residual boundaries](../decisions/2026-09-20-measured-enrollment-and-residual-boundaries.md)
+supersedes this annual headline with the measured-school version and locates
+national receipt categories. This finance-vintage evidence remains unchanged.
