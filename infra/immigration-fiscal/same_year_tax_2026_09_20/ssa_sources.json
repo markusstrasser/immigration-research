@@ -1,0 +1,22 @@
+{
+ "accessed":"2026-09-20",
+ "extraction":"Manually transcribed from primary web-tool-rendered SSA tables; direct HTTP source request returned403. Not inferred from CPS.",
+ "url":"https://www.ssa.gov/policy/docs/statcomps/supplement/2025/4b.html",
+ "tables":{"oasdi":"4.B10","hi":"4.B12"},
+ "year":2023,
+ "columns":["workers_thousands","wage_workers_thousands","se_workers_thousands","total_base_millions","wage_base_millions","se_base_millions"],
+ "oasdi":{
+ "all_areas":[182689,170248,21802,9838972,9350365,488607],
+ "CA":[20070,18520,2509,1199139,1138682,60457],
+ "TX":[15649,14389,2078,831901,787054,44847],
+ "PR":[1193,1060,177,36468,32922,3546],
+ "other_unknown":[662,643,22,27242,26821,421]},
+ "hi":{
+ "all_areas":[186620,174442,22950,12111034,11318022,793012],
+ "CA":[20993,19492,2658,1666658,1568828,97830],
+ "TX":[16440,15240,2181,1044610,978864,65746],
+ "PR":[1193,1063,180,38376,34052,4325],
+ "other_unknown":[674,654,22,29464,28994,470]},
+ "awi":{"url":"https://www.ssa.gov/oact/cola/awidevelop.html","year":2023,"workers_thousands":173671,"wages_millions":11103241},
+ "limits":["Preliminary CWHS1% sample; amounts rounded; wages and self-employment worker counts overlap","Mostly end-of-year residence, employer-location fallback for paper records","Other includes territories beyondPR, overseas employment and unknown residence","OASDI reported taxable wages unadjusted for multi-employer tax refunds; individual combined cap proxy differs","2023 employment estimates may include BLS/NIPA estimation; no published Mexican-origin breakdown"]
+}
