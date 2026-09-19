@@ -54,7 +54,7 @@ These are conditions on interpretation, not a replacement of the project's causa
 
 ## Coverage and unresolved work
 
-The [fiscal](../notes/immigration-fiscal-audit-evidence-2026-09-19.md), [crime](../notes/immigration-crime-audit-evidence-2026-09-19.md) and [mechanisms](../notes/immigration-mechanisms-audit-evidence-2026-09-19.md) evidence notes list covered and skipped files and source-access limits. Their line anchors refer to the pre-correction snapshot. Corrections are placed in the affected source memos and the confidence ladder so old headlines are not silently reused.
+The [fiscal](../notes/immigration-fiscal-audit-evidence-2026-09-19.md), [crime](../notes/immigration-crime-audit-evidence-2026-09-19.md) and [mechanisms](../notes/immigration-mechanisms-audit-evidence-2026-09-19.md) evidence notes list covered and skipped files and source-access limits. Their line anchors refer to the pre-correction snapshot. Corrections are placed in the affected source memos and the confidence ladder so old headlines are not silently reused. The earlier [September 17 evidence-review index](../notes/immigration-evidence-review-2026-09-17.md) retains all 29 substantive correction rows and associated scope decisions from that review.
 
 Uncompleted calculations are explicit: function-matched grant/fee consolidation; a genuine birth-versus-arrival fiscal counterfactual; conviction-weighted homicide costs; offender-age and pair-specific NCVS severity estimates; full-design civic uncertainty. Re-labeling resolves the unsupported current claim; it does not complete those analyses. No new aggregate net-welfare conclusion follows from this audit.
 
