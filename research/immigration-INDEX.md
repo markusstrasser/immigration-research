@@ -8,6 +8,13 @@ Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [m
 
 ## Core State
 
+Independent reality checks: [necessary fiscal implications and administrative tests](immigration-fiscal-reality-checks-2026-09-19.md)
+shows that the current partial account assigns lower receipts **and lower spending**
+per Mexican-origin resident than per other resident. Priorities are tax/earnings
+distributions, current transfer totals, Medicaid eligibility costs and public-pupil
+counts; CA/TX records and source-reuse limits are linked. This is a validation
+route, not a claim that the new administrative tests have passed.
+
 Latest three checks: [observed2024 fiscal refresh and national reconciliation](immigration-macro-reconciliation-2026-09-19.md)
 updates the annual partial deficit to **$234.34bn shared/$256.26bn personal**;
 [matched skill/capital/tax benefits](immigration-matched-benefits-2026-09-19.md)
