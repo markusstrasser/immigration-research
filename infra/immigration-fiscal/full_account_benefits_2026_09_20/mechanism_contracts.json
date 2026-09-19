@@ -1,0 +1,36 @@
+{
+  "treatment": "With versus without the current observed Mexican-origin union's labor, all ages/education; separate stationary fiscal-response assumptions",
+  "beneficiaries": "Other US residents outside that union",
+  "primary_sources_reused": {
+    "production": "https://www.nationalacademies.org/read/23550/chapter/8",
+    "current_tax_phaseout_and_substitution": "https://www.dominiksachs.com/downloads/fiscal_low_skilled_immigration_final.pdf",
+    "capital_tax": "https://docs.iza.org/dp15592.pdf"
+  },
+  "unpriced_mechanisms": [
+    {
+      "mechanism": "Crime and homicide welfare",
+      "included": false,
+      "evidence": "research/immigration-ncvs-victim-offender-off-the-murder-margin-2026-09-18.md; research/immigration-homicide-victim-offender-and-treasury-cost-2026-09-18.md",
+      "reason": "Published offender/victim tables use broader Hispanic populations and selected reported/cleared cases. Criminal-justice payments are already partly in fiscal spending; victim ethnicity is not taxpayer incidence. Neither same-target counterfactual incidents nor exact outside-target victims are observed. Do not add VSL to overlapping quality-of-life valuations or CJS totals."
+    },
+    {
+      "mechanism": "Local service prices and native household hours",
+      "included": false,
+      "evidence": "research/immigration-consumer-price-and-native-hours-2026-09-18.md",
+      "reason": "Scenario removes about3.17m Mexico-born dropout workers, not the40.9m all-generation union; beneficiaries differ and factor-income/hour effects can overlap CES."
+    },
+    {
+      "mechanism": "Neighborhood amenity capitalization",
+      "included": false,
+      "evidence": "research/immigration-hedonic-composition-amenity-2026-09-19.md",
+      "reason": "Price-source sign reversals, failed placebo and composition confounding prevent a matched causal welfare amount. Housing capitalization also bundles schools/crime and redistributes between owners and renters."
+    },
+    {
+      "mechanism": "Culture and product variety",
+      "included": false,
+      "evidence": "research/immigration-cultural-output-and-variety-saturation-2026-09-19.md",
+      "reason": "Creative earnings are already in production. Local restaurant associations do not identify national removal or outside-target consumer surplus. The proposed surplus multiples are inferences, not measured values."
+    }
+  ],
+  "residual_contract": "Z is a signed, nonoverlapping benefit to included residents under the same counterfactual. No numerical Z is invented; output gives the Z required for zero."
+}
