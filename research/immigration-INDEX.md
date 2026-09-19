@@ -8,7 +8,14 @@ Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [m
 
 ## Core State
 
-Latest annual account: [four executed fiscal checks](immigration-four-fiscal-checks-2026-09-20.md).
+Latest complete annual account: [national reconciliation and conditional net effects](immigration-complete-annual-account-2026-09-20.md).
+The declared long-run model gives **$262–357bn/year net cost to other US residents**
+after production benefits, conditional on full ordinary-service response, fixed
+defense/general government/old interest, and stated ownership/fiscal recycling.
+Fixed-service cases can be positive. Complete incidence, counterfactual response
+and sign-reversal thresholds are separate; this is not a measured policy effect.
+
+Preceding partial account: [four executed fiscal checks](immigration-four-fiscal-checks-2026-09-20.md).
 Measured public-school enrollment raises the partial deficit to **$259.38bn shared
 /$283.20bn personal**. Matched-year tax units locate the national income-tax
 shortfall mainly at high incomes; healthcare and national-account checks retain
