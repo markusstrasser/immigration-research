@@ -1,0 +1,64 @@
+outcome,label,treat,period,coef,se,t,n,cbsa_periods
+dlog_zhvi,Zillow ZHVI (independent),fb,pooled,0.127677,0.0388703,3.28468,27741,625
+dlog_zhvi,Zillow ZHVI (independent),fb,A,-0.136113,0.0755606,-1.80137,13336,300
+dlog_zhvi,Zillow ZHVI (independent),fb,B,0.229145,0.0405819,5.64647,14405,325
+dlog_zhvi,Zillow ZHVI (independent),hisp,pooled,0.0826277,0.0292729,2.82267,27741,625
+dlog_zhvi,Zillow ZHVI (independent),hisp,A,-0.0779034,0.0676163,-1.15214,13336,300
+dlog_zhvi,Zillow ZHVI (independent),hisp,B,0.181293,0.0264783,6.84685,14405,325
+dlog_zhvi,Zillow ZHVI (independent),mex,pooled,0.0716606,0.0358107,2.0011,27741,625
+dlog_zhvi,Zillow ZHVI (independent),mex,A,-0.0452218,0.0583237,-0.77536,13336,300
+dlog_zhvi,Zillow ZHVI (independent),mex,B,0.201646,0.037742,5.34275,14405,325
+dlog_acsvalue,ACS median value (same sample),fb,pooled,0.0709215,0.0379882,1.86694,30631,684
+dlog_acsvalue,ACS median value (same sample),fb,A,-0.123278,0.0596182,-2.06778,15415,343
+dlog_acsvalue,ACS median value (same sample),fb,B,0.0736648,0.0349334,2.10873,15216,341
+dlog_acsvalue,ACS median value (same sample),hisp,pooled,-0.0948643,0.0380746,-2.49153,30631,684
+dlog_acsvalue,ACS median value (same sample),hisp,A,-0.211773,0.0561883,-3.76899,15415,343
+dlog_acsvalue,ACS median value (same sample),hisp,B,-0.00885824,0.0323893,-0.273493,15216,341
+dlog_acsvalue,ACS median value (same sample),mex,pooled,-0.175049,0.0453803,-3.85738,30631,684
+dlog_acsvalue,ACS median value (same sample),mex,A,-0.269822,0.069021,-3.90927,15415,343
+dlog_acsvalue,ACS median value (same sample),mex,B,-0.0495193,0.040856,-1.21205,15216,341
+dlog_zori,Zillow ZORI (independent),fb,pooled,0.0875357,0.0695163,1.25921,1205,36
+dlog_zori,Zillow ZORI (independent),fb,B,0.0875357,0.0695163,1.25921,1205,36
+dlog_zori,Zillow ZORI (independent),hisp,pooled,0.162489,0.0518009,3.1368,1205,36
+dlog_zori,Zillow ZORI (independent),hisp,B,0.162489,0.0518009,3.1368,1205,36
+dlog_zori,Zillow ZORI (independent),mex,pooled,0.081009,0.0746115,1.08574,1205,36
+dlog_zori,Zillow ZORI (independent),mex,B,0.081009,0.0746115,1.08574,1205,36
+dlog_acsrent,ACS median rent (same sample),fb,pooled,0.00190449,0.0202397,0.0940968,29188,669
+dlog_acsrent,ACS median rent (same sample),fb,A,-0.0548531,0.0389926,-1.40675,14821,337
+dlog_acsrent,ACS median rent (same sample),fb,B,-0.00297448,0.047714,-0.0623398,14367,332
+dlog_acsrent,ACS median rent (same sample),hisp,pooled,-0.107091,0.0308493,-3.47142,29188,669
+dlog_acsrent,ACS median rent (same sample),hisp,A,-0.150035,0.0471234,-3.18387,14821,337
+dlog_acsrent,ACS median rent (same sample),hisp,B,-0.0677168,0.0445522,-1.51994,14367,332
+dlog_acsrent,ACS median rent (same sample),mex,pooled,-0.156332,0.0330977,-4.72335,29188,669
+dlog_acsrent,ACS median rent (same sample),mex,A,-0.145149,0.0438809,-3.30779,14821,337
+dlog_acsrent,ACS median rent (same sample),mex,B,-0.140805,0.036163,-3.89362,14367,332
+dlog_zhvi,MATCHED Zillow (value),fb,pooled,0.129191,0.038891,3.32188,27654,623
+dlog_acsvalue,MATCHED ACS (value),fb,pooled,0.0707817,0.0394271,1.79526,27654,623
+dlog_zhvi,MATCHED Zillow (value),fb,A,-0.135695,0.0756011,-1.79488,13312,299
+dlog_acsvalue,MATCHED ACS (value),fb,A,-0.126792,0.0616206,-2.05762,13312,299
+dlog_zhvi,MATCHED Zillow (value),fb,B,0.231505,0.0404858,5.71817,14342,324
+dlog_acsvalue,MATCHED ACS (value),fb,B,0.0707994,0.034846,2.03178,14342,324
+dlog_zhvi,MATCHED Zillow (value),hisp,pooled,0.0838148,0.0294822,2.84289,27654,623
+dlog_acsvalue,MATCHED ACS (value),hisp,pooled,-0.0964354,0.0393767,-2.44905,27654,623
+dlog_zhvi,MATCHED Zillow (value),hisp,A,-0.0773778,0.0676946,-1.14304,13312,299
+dlog_acsvalue,MATCHED ACS (value),hisp,A,-0.224521,0.0616368,-3.64265,13312,299
+dlog_zhvi,MATCHED Zillow (value),hisp,B,0.183212,0.0264767,6.91976,14342,324
+dlog_acsvalue,MATCHED ACS (value),hisp,B,-0.00794455,0.0323044,-0.245928,14342,324
+dlog_zhvi,MATCHED Zillow (value),mex,pooled,0.0731546,0.0361505,2.02361,27654,623
+dlog_acsvalue,MATCHED ACS (value),mex,pooled,-0.168006,0.0463251,-3.62666,27654,623
+dlog_zhvi,MATCHED Zillow (value),mex,A,-0.0443969,0.0583735,-0.760567,13312,299
+dlog_acsvalue,MATCHED ACS (value),mex,A,-0.258251,0.0723641,-3.56878,13312,299
+dlog_zhvi,MATCHED Zillow (value),mex,B,0.204326,0.0381002,5.36287,14342,324
+dlog_acsvalue,MATCHED ACS (value),mex,B,-0.0479546,0.0404267,-1.18621,14342,324
+dlog_zori,MATCHED Zillow (rent),fb,pooled,0.0875357,0.0695163,1.25921,1205,36
+dlog_acsrent,MATCHED ACS (rent),fb,pooled,-0.175039,0.0740901,-2.36252,1205,36
+dlog_zori,MATCHED Zillow (rent),fb,B,0.0875357,0.0695163,1.25921,1205,36
+dlog_acsrent,MATCHED ACS (rent),fb,B,-0.175039,0.0740901,-2.36252,1205,36
+dlog_zori,MATCHED Zillow (rent),hisp,pooled,0.162489,0.0518009,3.1368,1205,36
+dlog_acsrent,MATCHED ACS (rent),hisp,pooled,-0.351444,0.0828768,-4.24055,1205,36
+dlog_zori,MATCHED Zillow (rent),hisp,B,0.162489,0.0518009,3.1368,1205,36
+dlog_acsrent,MATCHED ACS (rent),hisp,B,-0.351444,0.0828768,-4.24055,1205,36
+dlog_zori,MATCHED Zillow (rent),mex,pooled,0.081009,0.0746115,1.08574,1205,36
+dlog_acsrent,MATCHED ACS (rent),mex,pooled,-0.342805,0.111398,-3.07731,1205,36
+dlog_zori,MATCHED Zillow (rent),mex,B,0.081009,0.0746115,1.08574,1205,36
+dlog_acsrent,MATCHED ACS (rent),mex,B,-0.342805,0.111398,-3.07731,1205,36

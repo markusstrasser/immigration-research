@@ -1,0 +1,55 @@
+source,treat,outcome,coef,se,measure,pct_change,dollars_per_affected_household_year,dollars_per_group_resident_year,capitalised_per_owner_unit,cap_rate
+ACS tract ols2_baseline [full],hisp,rent,-0.0530366,0.0127886,ACS (same survey as regressor),-0.528962,-83.1288,-149.951,,
+ACS tract ols2_baseline [full],hisp,value,-0.0501147,0.0138084,ACS (same survey as regressor),-0.499893,-67.2636,-179.958,-1681.59,0.04
+ACS tract ols2_baseline [full],hisp,value,-0.0501147,0.0138084,ACS (same survey as regressor),-0.499893,-100.895,-269.936,-1681.59,0.06
+ACS tract ols3_meanrev [full],hisp,rent,-0.0314669,0.014687,ACS (same survey as regressor),-0.314174,-49.3739,-89.0628,,
+ACS tract ols3_meanrev [full],hisp,value,-0.0828016,0.012801,ACS (same survey as regressor),-0.824597,-110.954,-296.849,-2773.86,0.04
+ACS tract ols3_meanrev [full],hisp,value,-0.0828016,0.012801,ACS (same survey as regressor),-0.824597,-166.432,-445.273,-2773.86,0.06
+ACS tract ols2_baseline [sw],hisp,rent,-0.056487,0.0162794,ACS (same survey as regressor),-0.563278,-88.5216,-159.679,,
+ACS tract ols2_baseline [sw],hisp,value,-0.0413062,0.0211649,ACS (same survey as regressor),-0.41221,-55.4653,-148.392,-1386.63,0.04
+ACS tract ols2_baseline [sw],hisp,value,-0.0413062,0.0211649,ACS (same survey as regressor),-0.41221,-83.1979,-222.589,-1386.63,0.06
+ACS tract ols3_meanrev [sw],hisp,rent,-0.0304224,0.0153619,ACS (same survey as regressor),-0.303762,-47.7375,-86.111,,
+ACS tract ols3_meanrev [sw],hisp,value,-0.0802375,0.0207684,ACS (same survey as regressor),-0.799165,-107.532,-287.693,-2688.31,0.04
+ACS tract ols3_meanrev [sw],hisp,value,-0.0802375,0.0207684,ACS (same survey as regressor),-0.799165,-161.298,-431.539,-2688.31,0.06
+ACS tract ols2_baseline [full],mex,rent,-0.0626087,0.0134236,ACS (same survey as regressor),-0.624131,-98.085,-176.93,,
+ACS tract ols2_baseline [full],mex,value,-0.0846415,0.0176377,ACS (same survey as regressor),-0.842843,-113.409,-303.417,-2835.24,0.04
+ACS tract ols2_baseline [full],mex,value,-0.0846415,0.0176377,ACS (same survey as regressor),-0.842843,-170.114,-455.125,-2835.24,0.06
+ACS tract ols3_meanrev [full],mex,rent,-0.0377067,0.0099492,ACS (same survey as regressor),-0.376357,-59.1462,-106.69,,
+ACS tract ols3_meanrev [full],mex,value,-0.112649,0.0187827,ACS (same survey as regressor),-1.12017,-150.725,-403.252,-3768.13,0.04
+ACS tract ols3_meanrev [full],mex,value,-0.112649,0.0187827,ACS (same survey as regressor),-1.12017,-226.088,-604.878,-3768.13,0.06
+ACS tract ols2_baseline [sw],mex,rent,-0.0825986,0.0173056,ACS (same survey as regressor),-0.822584,-129.273,-233.188,,
+ACS tract ols2_baseline [sw],mex,value,-0.10555,0.0240838,ACS (same survey as regressor),-1.04995,-141.277,-377.973,-3531.92,0.04
+ACS tract ols2_baseline [sw],mex,value,-0.10555,0.0240838,ACS (same survey as regressor),-1.04995,-211.915,-566.96,-3531.92,0.06
+ACS tract ols3_meanrev [sw],mex,rent,-0.0519096,0.0162226,ACS (same survey as regressor),-0.517751,-81.3669,-146.773,,
+ACS tract ols3_meanrev [sw],mex,value,-0.140084,0.0257245,ACS (same survey as regressor),-1.39107,-187.177,-500.776,-4679.43,0.04
+ACS tract ols3_meanrev [sw],mex,value,-0.140084,0.0257245,ACS (same survey as regressor),-1.39107,-280.766,-751.163,-4679.43,0.06
+ACS tract ols2_baseline [full],fb,rent,-0.00659986,0.00917983,ACS (same survey as regressor),-0.0659768,-10.3686,-18.7032,,
+ACS tract ols2_baseline [full],fb,value,0.0117298,0.0134712,ACS (same survey as regressor),0.117367,15.7924,42.2511,394.81,0.04
+ACS tract ols2_baseline [full],fb,value,0.0117298,0.0134712,ACS (same survey as regressor),0.117367,23.6886,63.3767,394.81,0.06
+ACS tract ols3_meanrev [full],fb,rent,0.0162599,0.0140124,ACS (same survey as regressor),0.162731,25.574,46.1314,,
+ACS tract ols3_meanrev [full],fb,value,-0.0105828,0.0138604,ACS (same survey as regressor),-0.105772,-14.2322,-38.0771,-355.806,0.04
+ACS tract ols3_meanrev [full],fb,value,-0.0105828,0.0138604,ACS (same survey as regressor),-0.105772,-21.3484,-57.1156,-355.806,0.06
+ACS tract ols2_baseline [sw],fb,rent,0.00459125,0.0157087,ACS (same survey as regressor),0.045923,7.21701,13.0184,,
+ACS tract ols2_baseline [sw],fb,value,0.0458877,0.019871,ACS (same survey as regressor),0.459931,61.8865,165.572,1547.16,0.04
+ACS tract ols2_baseline [sw],fb,value,0.0458877,0.019871,ACS (same survey as regressor),0.459931,92.8297,248.358,1547.16,0.06
+ACS tract ols3_meanrev [sw],fb,rent,0.0241435,0.0156199,ACS (same survey as regressor),0.241727,37.9884,68.5251,,
+ACS tract ols3_meanrev [sw],fb,value,0.0213084,0.0178212,ACS (same survey as regressor),0.213311,28.7023,76.7903,717.557,0.04
+ACS tract ols3_meanrev [sw],fb,value,0.0213084,0.0178212,ACS (same survey as regressor),0.213311,43.0534,115.186,717.557,0.06
+ZCTA MATCHED Zillow (value),fb,value,0.129191,0.038891,Zillow (independent),1.30029,174.962,468.095,4374.04,0.04
+ZCTA MATCHED Zillow (value),fb,value,0.129191,0.038891,Zillow (independent),1.30029,262.443,702.142,4374.04,0.06
+ZCTA MATCHED ACS (value),fb,value,0.0707817,0.0394271,ACS (same survey as regressor),0.710328,95.5788,255.712,2389.47,0.04
+ZCTA MATCHED ACS (value),fb,value,0.0707817,0.0394271,ACS (same survey as regressor),0.710328,143.368,383.569,2389.47,0.06
+ZCTA MATCHED Zillow (value),hisp,value,0.0838148,0.0294822,Zillow (independent),0.84167,113.252,302.995,2831.29,0.04
+ZCTA MATCHED Zillow (value),hisp,value,0.0838148,0.0294822,Zillow (independent),0.84167,169.877,454.492,2831.29,0.06
+ZCTA MATCHED ACS (value),hisp,value,-0.0964354,0.0393767,ACS (same survey as regressor),-0.959719,-129.136,-345.491,-3228.4,0.04
+ZCTA MATCHED ACS (value),hisp,value,-0.0964354,0.0393767,ACS (same survey as regressor),-0.959719,-193.704,-518.237,-3228.4,0.06
+ZCTA MATCHED Zillow (value),mex,value,0.0731546,0.0361505,Zillow (independent),0.734228,98.7947,264.316,2469.87,0.04
+ZCTA MATCHED Zillow (value),mex,value,0.0731546,0.0361505,Zillow (independent),0.734228,148.192,396.475,2469.87,0.06
+ZCTA MATCHED ACS (value),mex,value,-0.168006,0.0463251,ACS (same survey as regressor),-1.66603,-224.173,-599.756,-5604.34,0.04
+ZCTA MATCHED ACS (value),mex,value,-0.168006,0.0463251,ACS (same survey as regressor),-1.66603,-336.26,-899.634,-5604.34,0.06
+ZCTA MATCHED Zillow (rent),fb,rent,0.0875357,0.0695163,Zillow (independent),0.879199,138.17,249.237,,
+ZCTA MATCHED ACS (rent),fb,rent,-0.175039,0.0740901,ACS (same survey as regressor),-1.73516,-272.688,-491.886,,
+ZCTA MATCHED Zillow (rent),hisp,rent,0.162489,0.0518009,Zillow (independent),1.63816,257.445,464.39,,
+ZCTA MATCHED ACS (rent),hisp,rent,-0.351444,0.0828768,ACS (same survey as regressor),-3.4534,-542.718,-978.977,,
+ZCTA MATCHED Zillow (rent),mex,rent,0.081009,0.0746115,Zillow (independent),0.81338,127.826,230.579,,
+ZCTA MATCHED ACS (rent),mex,rent,-0.342805,0.111398,ACS (same survey as regressor),-3.36996,-529.604,-955.322,,

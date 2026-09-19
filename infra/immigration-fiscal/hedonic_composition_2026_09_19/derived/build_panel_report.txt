@@ -1,0 +1,16 @@
+[2013] raw rows=73056
+  top code rent2013: 2001 on 2125 tracts (dropped)
+  top code value2013: 1000001 on 559 tracts (dropped)
+[2013] tracts with geo=73051
+[2018] raw rows=73056
+  top code rent2018: 3501 on 133 tracts (dropped)
+  top code value2018: 2000001 on 176 tracts (dropped)
+[2018] tracts with geo=73056
+[2023] raw rows=84400
+[2023] aggregated to 2010 parents: 71752
+  top code rent2023: 3501 on 912 tracts (dropped)
+  top code value2023: 2000001 on 452 tracts (dropped)
+[2023] tracts with geo=71728
+[period A] merged tracts=73051
+[period B] merged tracts=71728
+[panel] rows=144779 in-CBSA=133786 metro=120558
