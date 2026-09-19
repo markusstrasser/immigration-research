@@ -5,7 +5,8 @@
   "weight": "initial owner-occupied units",
   "fixed_effect": "MSA by period",
   "cluster": "tract",
-  "sample_rule": "decennial increase in MSA foreign-born count / initial MSA population >= 0.05",
+  "sample_rule": "decennial increase in MSA foreign-born count / initial MSA population > 0.05 (archived code)",
+  "source_discrepancies": "Published col1 N is 34833; archived command yields 34835. Published prose lists 44 controls; archived baseline has 43. Col4 published F76.01 is not recovered by the archived clustered first stage.",
   "coefficient_rounding_tolerance": 0.0005,
   "se_rounding_tolerance": 0.0005,
   "columns": [

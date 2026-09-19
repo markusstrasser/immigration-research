@@ -40,6 +40,7 @@ def fit(d, arm, cluster="cbsa", iv=None, extra=None):
     row = estim.row(result, "d_fb_share")
     # This lane verifies beta, covariance and first-stage F; no over-ID claim.
     row.pop("J_p", None)
+    row.pop("J_status", None)
     row.update(arm=arm, cluster=cluster, metros=d.cbsa.nunique(),
                row_hash=digest(d, ["geoid", "period"]),
                fixed_matrix_hash=digest(d, ["cbsa_period", "_w", "dlog_value", "d_fb_share"] + CONTROLS))
