@@ -1,0 +1,3 @@
+quantity,value,tag,source
+generation_length_years,29.0,INFERENCE,lane brief stipulation; sensitivity at 25 and 33 in parameters.csv
+gamma_mexico,0.523000,SOURCE,"Clemens & Pritchett Table 1 (gamma from Jones 2016), parsed from _cache/dp9730.txt"

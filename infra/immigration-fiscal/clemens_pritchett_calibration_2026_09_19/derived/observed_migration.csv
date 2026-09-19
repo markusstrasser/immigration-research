@@ -1,0 +1,10 @@
+quantity,value,unit,tag,source
+"Mexico LPR admissions, FY2024",202600,persons,SOURCE,DHS OHSS Yearbook FY2024 Table 3 (_cache/dhs_lpr_fy2024.xlsx)
+"Mexico LPR admissions, mean FY2015-FY2024",155110,persons per year,CALCULATION,DHS OHSS Yearbook FY2024 Table 3
+"US resident population, July 1 2024",340110988,persons,SOURCE,"Census Bureau NA-EST2024-POP, Vintage 2024 monthly estimates"
+"m_mexico, FY2024 LPR",0.000596,per year,CALCULATION,"LPR/population, the paper's footnote-6 convention"
+"m_mexico, FY2015-FY2024 LPR mean",0.000456,per year,CALCULATION,"LPR/population, the paper's footnote-6 convention"
+Mexico-born resident stock,12220782,persons,SOURCE,all_age_ledger_2026_09_17/derived/estimates.csv (CPS ASEC 2025)
+"phi_mexico_born, stock share",0.035932,share,CALCULATION,CPS ASEC 2025 stock over Census July 2024 population
+"Mexican-origin resident stock, all three generations",40896574,persons,SOURCE,"all_age_ledger_2026_09_17/derived/estimates.csv, mexican_observed_total"
+"phi_mexican_origin, stock share",0.120245,share,CALCULATION,CPS ASEC 2025 stock over Census July 2024 population

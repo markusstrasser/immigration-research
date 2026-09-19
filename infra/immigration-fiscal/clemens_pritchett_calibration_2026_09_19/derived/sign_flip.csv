@@ -1,0 +1,22 @@
+kind,basis,a,tau_flip,note
+"a fixed, tau that sets m*=0","earnings: CPS total personal income, common age",0.009948,0.224409,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0","earnings: CPS wage and salary, common age",0.011523,0.259938,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0","earnings: mean earnings, adults 25-64",0.010789,0.243380,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0","earnings: median earnings, workers 25-64",0.013331,0.300723,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0","fiscal: ledger balance, common age (all_age_shared)",0.006040,0.136252,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0","fiscal: ledger balance, common age (personal_sources)",0.007069,0.159464,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0","fiscal: ledger balance, common age and place (all_age_shared)",0.001438,0.032439,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0","fiscal: ledger balance, common age and place (personal_sources)",0.002964,0.066863,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0",norms: All-13 confidence index (scale pts),0.025282,0.570316,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0","norms: Anti-American Muslim clergyman, 3 items",0.009747,0.219875,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0",norms: Death penalty (pp),0.037216,0.839526,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0",norms: Ever approves police striking a citizen (pp),0.027469,0.619651,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0","norms: Generalized trust (GSS, adjusted)",0.001003,0.022626,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0",norms: Government should reduce income differences (1-7),0.010548,0.237944,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0",norms: Obedience as a top child quality (pp),0.022366,0.504537,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0",norms: Political violence at least a little justified (pp),0.006780,0.152945,m* > 0 only for tau below this
+"a fixed, tau that sets m*=0",norms: Stouffer 15-item tolerance (scale pts),0.024028,0.542029,m* > 0 only for tau below this
+"tau fixed, a that sets m*=0",tau: paper Mexico row,0.010595,0.239000,m* > 0 only for a above this
+"tau fixed, a that sets m*=0",tau: repo maximum,0.029456,0.664480,m* > 0 only for a above this
+"tau fixed, a that sets m*=0",tau: repo minimum,0.015387,0.347107,m* > 0 only for a above this
+"tau fixed, a that sets m*=0","tau: repo, nearest 5 years since arrival",0.018446,0.416113,m* > 0 only for a above this
