@@ -1,0 +1,91 @@
+{
+  "acquired": "2026-09-20",
+  "etl_version": "3.9.61",
+  "data_version": "20251205",
+  "files": [
+    {
+      "name": "ex5.json",
+      "url": "https://data.medicaid.gov/api/1/datastore/query/ce69c011-1dc5-5ffa-94fb-d3e9b05afc4b/0",
+      "sha256": "400da7f8c4ac2abfa20e43d67480ea960dc1100f8b9eb0546fc3aa7969fc91d5",
+      "bytes": 1443519,
+      "post_json": {
+        "conditions": [
+          {
+            "property": "measure_id",
+            "value": "EX.5",
+            "operator": "="
+          }
+        ],
+        "limit": 8000
+      }
+    },
+    {
+      "name": "version.json",
+      "url": "https://data.medicaid.gov/api/1/datastore/query/2eb2dbeb-08d4-56a3-b081-2c87d0353027/0",
+      "sha256": "46a3cd0f629687db46fa3b103fe1132c569b18c255748f9efea81c7423c2f7b4",
+      "bytes": 635
+    },
+    {
+      "name": "methodology.pdf",
+      "url": "https://www.medicaid.gov/state-overviews/scorecard/content/scorecard-rel/PerCapitaExpendDataMethod-2025.pdf",
+      "sha256": "8bb6d39bca9706376ba0725e81cee4693275acce70de936c94e0cfc215512c54",
+      "bytes": 563965
+    },
+    {
+      "name": "beneficiary-profile-2026.pdf",
+      "url": "https://www.medicaid.gov/medicaid/quality-of-care/downloads/beneficiary-profile-2026.pdf",
+      "sha256": "25428c9c7ad868e6cdcea0d6f37ad4d0a3e1e56ecc88e1fdc1c79b173fd3b481",
+      "bytes": 2326989
+    },
+    {
+      "name": "ltss2023.pdf",
+      "url": "https://www.medicaid.gov/medicaid/long-term-services-supports/downloads/ltss-users-expenditures-category-brief-2023.pdf",
+      "sha256": "5ec0a9407ce79e45dc6a65ef8ef53ea9eb1908ba88381c9a9679778796e4e6bd",
+      "bytes": 807415
+    },
+    {
+      "name": "ltss2023_tables.zip",
+      "url": "https://www.medicaid.gov/medicaid/long-term-services-supports/downloads/ltss-data-notes-taf-users-expenditures-2023.zip",
+      "sha256": "2e817d2e94bf50aa94a1673d82371dbb0690d1136db95578a096f90d8b09d367",
+      "bytes": 1679826
+    },
+    {
+      "name": "ltss2023_methodology.pdf",
+      "url": "https://www.medicaid.gov/medicaid/long-term-services-supports/downloads/ltss-users-ident-method-2023.pdf",
+      "sha256": "35491f3bff2311dafbeeb914526244ba76eb47eca66483397fcc7fa61955073d",
+      "bytes": 596397
+    },
+    {
+      "name": "cps2024_dictionary.pdf",
+      "url": "https://www2.census.gov/programs-surveys/cps/datasets/2024/march/asec2024_ddl_pub_full.pdf",
+      "sha256": "761c67ea53f5c3264329b3e9ddbdd802826ba4a859122b8a8a2f29ab85b3a840",
+      "bytes": 720396
+    },
+    {
+      "name": "ex2_national2023.json",
+      "url": "https://data.medicaid.gov/api/1/datastore/query/ce69c011-1dc5-5ffa-94fb-d3e9b05afc4b/0",
+      "sha256": "be8139fc46bfc39de7642c3f381acb7364b8f47edac305188e59cd212ebafbfd",
+      "bytes": 85669,
+      "post_json": {
+        "conditions": [
+          {
+            "property": "measure_id",
+            "value": "EX.2",
+            "operator": "="
+          },
+          {
+            "property": "data_period",
+            "value": "2023",
+            "operator": "="
+          },
+          {
+            "property": "state_abbreviation",
+            "value": "U.S.",
+            "operator": "="
+          }
+        ],
+        "limit": 200
+      }
+    }
+  ]
+}
