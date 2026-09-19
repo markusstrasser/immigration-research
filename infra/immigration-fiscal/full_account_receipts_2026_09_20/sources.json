@@ -1,0 +1,31 @@
+{
+  "price_year": 2024,
+  "population": "CPS ASEC2025 civilian household residents; observed Mexican-origin union across all ages and educational levels",
+  "sources": [
+    {"id":"bea2024", "url":"https://apps.bea.gov/national/Release/XLS/Survey/Section3All_xls.xlsx", "locator":"Tables3.1,3.4,3.5,3.6;2024; August26,2026 vintage; millions of dollars", "sha256":"69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e"},
+    {"id":"cbo", "url":"https://www.cbo.gov/publication/60706", "locator":"AppendixA, allocation of taxes", "rule":"Employer payroll to labor; corporate75%capital/25%labor; consumption excises; capital includes adjusted capital gains absent from this CPS proxy"},
+    {"id":"treasury", "url":"https://home.treasury.gov/system/files/131/Summary-of-OTA-Distribution-Methodology-05102021.pdf", "locator":"pp1–3, footnote4", "rule":"81.5%capital/18.5%labor at2022 income levels is a historical illustration, not a2024 estimated share"},
+    {"id":"nas", "url":"https://www.nationalacademies.org/read/23550/chapter/13", "locator":"Annex8-2, pp473–477", "rule":"Corporate80%dividend/interest and20%wages; supplementary Medicare contributions by beneficiaries; UI per positive-FICA worker; national-control scaling is an accounting assumption"},
+    {"id":"cps", "url":"https://www2.census.gov/programs-surveys/cps/datasets/2025/march/asecpub25csv.zip", "sha256":"318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b", "locator":"Income2024; MCARE=1 last-year Medicare; AGI and modeled tax fields are not tax payment records"}
+  ],
+  "scenario_priors": {
+    "cbo_collective":"Corporate75/25; consumption-proxy product taxes; owner-property model retained and remaining property to observed capital; public assets collective per-capita; all domestic receipt pools mapped to household proxies",
+    "federal_gap_high_agi":"Keep modeled federal tax amounts; allocate only positive national federal residual by observed AGI>=500000 tax-carrier liability; matched2023 diagnostic locates aggregate undercoverage in this tail, without identifying2024 group shares",
+    "treasury_815":"Only corporate capital fraction changes to historical81.5%; CPS gains remain absent",
+    "nas_80":"Only corporate rule changes to80%interest/dividend,20%wages; does not reproduce full NAS model",
+    "corporate_all_capital":"Corporate endpoint100%capital; not a confidence bound",
+    "property_residual_consumption":"Only property receipts beyond modeled owner housing shift to consumption; broad pass-through stress, not empirical incidence estimate",
+    "public_assets_tax_base":"Only public-asset and enterprise-surplus ownership changes from population to federal modeled liability; causal response stays0",
+    "capital_external_50":"Assume50%of capital-attributed corporate, property-residual, other-production and business-transfer burden borne by foreign/nonresident owners; no measured foreign share",
+    "capital_external_100":"Same mathematical endpoint at100%; no measured foreign share",
+    "medicare_income_weighted":"Only SMI premiums weighted by positive AGI+1 among enrolled Medicare recipients; stress for income-related premiums, not statutory IRMAA reconstruction"
+  },
+  "fixed_rules": {
+    "income_tax_source":"Public liability cannot be identified by marginal labor/capital source. Entire income-tax liability exported as source_unknown; observed asset-income share is a separate proxy, never a measured capital-tax amount.",
+    "credits":"EITC+ACTC moved from negative federal receipts to spending once; net balance unchanged. State tax retained after credits because refundable-state split unavailable.",
+    "public_asset_response":0,
+    "universe_closure":"Complete tax arms conditionally attribute all domestic receipts to CPS civilian household proxies. Other includes outside-CPS residents, with0 tax receipts implicitly attributed to them by this closure, not an observed0. Collective public assets use340110988 July2024 residents; target held observed40.896574m. Institutions, excluded military, territories, nonprofits and businesses are not observed as household tax units; this is not measured full-population incidence.",
+    "external":"BEA RoW flows observed; capital_external arms additionally assume an explicit foreign/nonresident capital burden fraction. Unknown domestic incidence is never silently renamed external.",
+    "no_policy_claim":"Assigned burden/collective ownership is not revenue that disappears if the population disappears. No fiscal net balance or welfare offset estimated here."
+  }
+}
