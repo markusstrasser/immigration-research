@@ -1,0 +1,11 @@
+{
+  "checked_date": "2026-09-19",
+  "acs_sha256": "afdc6d90c6e2f0bab365ed32d95ba4c4d8ac651162f46ac7861295b2dc469894",
+  "acs_url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/1-Year/csv_pus.zip",
+  "administrative_controls": [
+    {"area": "California", "fips": 6, "origin": "all", "school_year": "2023-24", "total": 5837690, "excluded_early_education": 151491, "locator": "Grade table; remove transitional kindergarten", "url": "https://www.cde.ca.gov/ds/ad/cefenrollmentcomp.asp"},
+    {"area": "California", "fips": 6, "origin": "all", "school_year": "2024-25", "total": 5806221, "excluded_early_education": 177570, "locator": "Grade table; remove transitional kindergarten", "url": "https://www.cde.ca.gov/ds/ad/cefenrollmentcomp.asp"},
+    {"area": "Texas", "fips": 48, "origin": "all", "school_year": "2023-24", "total": 5531236, "excluded_early_education": 275423, "locator": "Table 10 p17; remove EE26847 + PK3 42669 + PK4 205907", "url": "https://tea.texas.gov/reports-and-data/school-performance/accountability-research/enroll-2023-24.pdf"},
+    {"area": "Texas", "fips": 48, "origin": "hispanic", "school_year": "2023-24", "total": 2942144, "excluded_early_education": 167418, "locator": "Table 12 p20; remove EE12616 + PK3 28486 + PK4 126316", "url": "https://tea.texas.gov/reports-and-data/school-performance/accountability-research/enroll-2023-24.pdf"}
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "retrieved": "2026-09-19",
+  "snap": {
+    "sha256": "a0e4a3a440f6cfd0b4e5cf68d46fcc8b129dfda58c97593a51bc67de4a10636c",
+    "url": "https://www.fns.usda.gov/sites/default/files/resource-files/snap-4fymonthly-9.xlsx",
+    "release": "Data as of September 11, 2026",
+    "calendar_year": 2024,
+    "scope": "National SNAP benefit costs, January-December; includes territorial programs and possibly disaster assistance; excludes program administration. Territory subtraction not identified from this workbook.",
+    "cells": "Sheet1 A27:D35 and A37:D39; monthly labels, benefit-cost column D"
+  },
+  "social_security": {
+    "url": "https://www.ssa.gov/policy/docs/statcomps/supplement/2025/5j.html",
+    "table": "5.J1, estimated total annual benefits paid, 2024",
+    "unit": "million dollars",
+    "all_areas": 1471195,
+    "excluded": {"American Samoa":77,"Guam":313,"Northern Mariana Islands":47,"Puerto Rico":11980,"US Virgin Islands":414,"Foreign countries":8391,"Unknown":9},
+    "scope": "50 states and DC after displayed exclusions; Master Beneficiary Record and USPS geography. Includes institutional residents. Excludes lump-sum death payments. Unnegotiated checks not deducted. Geography annual totals are estimated and rounded. Raw HTML download returned403; cells transcribed from primary web-tool rendering, not a local raw HTML archive."
+  },
+  "ssi_due": {
+    "url": "https://www.ssa.gov/policy/docs/statcomps/ssi_asr/2024/sect01.html",
+    "table": "Table2 all recipients 2024",
+    "unit": "thousand dollars",
+    "total": 63079493,
+    "federal": 59665127,
+    "federally_administered_state":3414366,
+    "scope": "Months due in2024, reduced by overpayment recoveries; excludes state-administered supplementation. Includes recipients outside CPS noninstitutional domain. Timing is not payment-date cash. Raw HTML download returned403; primary rendered cells transcribed."
+  },
+  "ssi_cash_federal": {
+    "url": "https://www.ssa.gov/oact/ssir/SSI25/IV_C_Payments.html",
+    "table": "2025 Annual Report TableIV.C1,2024 all",
+    "unit":"million dollars",
+    "value":63080,
+    "scope":"Federal only, payment-date CY2024, not reduced for certain overpayments remitted to Treasury; not the same definition as the near-identical SSI ASR63.079493bn federally administered federal-plus-state due total. No state supplements added without a matched timing bridge."
+  },
+  "bea": {
+    "url":"https://apps.bea.gov/national/Release/XLS/Survey/Section3All_xls.xlsx",
+    "sha256":"69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+    "table":"T31200-A,2024 column; sheet published September26,2025; workbook created August25,2026",
+    "rows":{"social_security":[5],"ui":[7],"snap":[21],"ssi":[23,36]},
+    "scope":"Government social benefits to persons, calendar2024; SSI federal+state. Reuses macro_closure's BEA workbook, so not an independent national-account source. Not identical to program cash-accounting and survey noninstitutional boundaries."
+  }
+}
