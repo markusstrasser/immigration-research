@@ -8,12 +8,19 @@ Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [m
 
 ## Core State
 
-Independent reality checks: [necessary fiscal implications and administrative tests](immigration-fiscal-reality-checks-2026-09-19.md)
+Executed reality checks: [administrative earnings, benefit totals and pupil counts](immigration-administrative-checks-2026-09-19.md)
+compare the uncalibrated model with unused official observations. National wages
+are 2.25% above SSA employer records; wage-recipient and payroll coverage still
+differ. The receipt-gap mechanism survives this check. Pupil exposure and older
+benefit-reporting factors need refinement; the memo separates raw errors from
+uniform-calibration sensitivities. These do not validate a causal ethnic cost.
+
+Test design: [necessary fiscal implications and administrative tests](immigration-fiscal-reality-checks-2026-09-19.md)
 shows that the current partial account assigns lower receipts **and lower spending**
 per Mexican-origin resident than per other resident. Priorities are tax/earnings
 distributions, current transfer totals, Medicaid eligibility costs and public-pupil
-counts; CA/TX records and source-reuse limits are linked. This is a validation
-route, not a claim that the new administrative tests have passed.
+counts; CA/TX records and source-reuse limits are linked. Read the executed results
+above for the outcome; Medicaid eligibility matching remains unexecuted.
 
 Latest three checks: [observed2024 fiscal refresh and national reconciliation](immigration-macro-reconciliation-2026-09-19.md)
 updates the annual partial deficit to **$234.34bn shared/$256.26bn personal**;

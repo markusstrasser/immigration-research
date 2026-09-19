@@ -1,5 +1,9 @@
 # Fiscal reality checks: necessary implications and independent records
 
+**Follow-up:** The [executed administrative checks](immigration-administrative-checks-2026-09-19.md)
+now report earnings/payroll diagnostics, current transfer totals and pupil counts.
+This original note preserves the test rationale and prior necessary implications.
+
 **Verdict:** The next strongest check is administrative earnings and tax receipts,
 followed by current transfer totals and state/age/eligibility spending. Our
 account implies a receipt shortfall per resident, not unusually high spending
@@ -157,3 +161,11 @@ LLM-assisted source selection and interpretation follow the project's
 [instrument caveat](../notes/llm-bias-caveat.md). Contrary facts and source-quality
 limits are retained above. No inference of institutional deception is made from
 ordinary missingness, revisions or modeling assumptions.
+
+## Revisions
+
+- 2026-09-19: [Executed the next checks](immigration-administrative-checks-2026-09-19.md).
+  National earnings are close in dollars but differ in recipient/coverage
+  distributions; transported benefit and pupil factors require refinement.
+  The original test specification above is retained. No new ethnic total or
+  causal policy estimate is claimed.
