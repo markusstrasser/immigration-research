@@ -2,6 +2,8 @@
 
 ## Current audit status — September 19, 2026
 
+**Entry 154, completed during this audit:** formula reproduction is retained; the substituted earnings/fiscal/attitude rates are conditional scenarios, not measured TFP assimilation or a demonstrated refutation. See the [calibration correction](immigration-clemens-pritchett-calibration-mexican-origin-2026-09-19.md).
+
 The [result and assumption index](immigration-five-day-cross-check-2026-09-19.md) supersedes conflicting claims in retained entries below. In particular: entry 78's 8–10% agreement in every arrest year and lower-bound interpretation are withdrawn; the $1,421 stock scenario differs from newer flow scenarios by −15% to +23%. Entry 130's expanded absolute total and dependent incidence/interest entries require grant consolidation. Birth-versus-arrival subsidy budgets are withdrawn after an allocation-driven sign reversal. Entry 132 does not bound all benefits or offset a matched fiscal counterfactual. Entry 145's schooling-loan grade and totals are withdrawn. Recent displacement/local-budget designs do not identify a null; NCVS age adjustment and cost incidence are proxies; civic uncertainty is approximate. Primary descriptive tables retain their stated populations and account definitions. Narrative writing is operator-owned.
 
 

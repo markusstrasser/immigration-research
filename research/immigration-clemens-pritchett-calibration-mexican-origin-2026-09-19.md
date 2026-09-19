@@ -1,5 +1,10 @@
 # The Clemens–Pritchett transmission model with Mexican-origin assimilation rates measured in this repo
 
+## Audit correction — September 19, 2026
+
+**Conditional calibration, not a measured refutation.** The formula reproduction and parameter sensitivities are retained. The substituted common-age earnings/income gaps are unconditional on schooling, employment and hours; the paper's productivity concept excludes observed human-capital differences. Dividing contemporary G1/G3+ gaps by an assumed 58-year interval also does not measure one dynastic population's decay rate. Fiscal and attitude gaps have no estimated mapping into TFP. Thus a negative algebraic optimum in these substitutions is a scenario result, not an empirically identified zero-admission optimum or evidence that the paper's conservatism argument is reversed. The global-versus-native distinction already stated below remains valid. [SOURCE: paper §6.2 and equation 10; repo_inputs.py and cpmodel.py; [bounded audit](../notes/immigration-cp-calibration-audit-evidence-2026-09-19.md)]
+
+
 **Verdict:** Clemens and Pritchett's "epidemiological" model of migration restriction reproduces from its own text (7 of 7 gates, every Table 1 row and both numerical claims), and its conclusion for Mexico, an optimal migration rate 47 times the observed one, rests on an assimilation rate of 0.028 per year that this repo's generational measurements do not support. Measured across three generations of the Mexican-origin lineage against third-plus non-Hispanic whites, the annual convergence rate is 0.010 to 0.013 on earnings and 0.001 to 0.007 on the fiscal balance, below the paper's stated floor of 0.026; the transmission rate for Mexico, built the paper's way from the repo's arrival-cohort wage residuals, is 0.42 against the paper's 0.24. At those values the model's optimal rate is negative on every economic outcome, meaning the model no longer supports relaxing restrictions for this origin. What survives every disconfirmation arm is the collapse in magnitude: no construction using a repo-measured assimilation rate exceeds 15 times the observed rate, and the substitution of the assimilation rate, not the transmission rate, does nearly all the work. The paper's own conservatism argument, that children assimilate faster than their parents so its individual-level rate understates the dynastic one, runs backwards for this lineage: the dynastic earnings rate is below its individual Mexico estimate because the second native-born generation adds almost nothing. [SOURCE: `infra/immigration-fiscal/clemens_pritchett_calibration_2026_09_19/RESULT.md`, `derived/gate_log.txt`, `derived/parameters.csv`, `derived/mstar_by_outcome.csv`, `derived/arms.csv`] [FRAMING-SENSITIVE: the model is about global output, its parameters are total factor productivity, and every repo outcome is a proxy]
 
 Date: 2026-09-19. Lane: `infra/immigration-fiscal/clemens_pritchett_calibration_2026_09_19/`. Paper: Clemens and Pritchett, "The New Economic Case for Migration Restrictions: An Assessment", IZA DP 9730 / CGD WP 423 (2016), published JDE 138 (2019) 153–164; the open working paper is the version parsed and pinned by sha256, the published revision was not obtained.
@@ -52,3 +57,8 @@ Global-efficiency model, not a host-country balance; TFP parameters proxied by e
 ## Sources
 
 Clemens and Pritchett, IZA DP 9730 (2016), sha256 pinned in the lane; DHS OHSS Yearbook FY2024 Table 3; Census Bureau NA-EST2024-POP; repo lanes `acs_earnings_replication_2026_09_17`, `all_age_ledger_2026_09_17`, `ledger_stress_2026_09_17`, `norms_gen_2026_09_18`, `arrival_cohorts_2026_09_18`; ladder 67, 97, 110, 117, 125, 135.
+
+
+## Revisions — September 19, 2026
+
+Narrowed the parameter-substitution conclusion to conditional sensitivity; see the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md).
