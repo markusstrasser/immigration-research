@@ -45,7 +45,7 @@ print(f"[2sls] OLS is biased as designed: {ols['beta'][0]:.3f} vs IV {iv['beta']
 assert abs(iv["beta"][0] - 2.0) < 0.12, "IV far from truth"
 assert ols["beta"][0] - 2.0 > 0.2, "OLS should be upward biased here"
 
-# ---- 3. Overidentified: J should not reject a valid instrument set --------
+# ---- 3. Overidentified: do not emit the former invalid Hansen statistic ----
 z2 = rng.normal(size=n)
 xe3 = 0.8 * z + 0.6 * z2 + v
 y3 = 2.0 * xe3 + 0.5 * x2 + fe + (0.9 * v + rng.normal(0, 1, n))
@@ -56,14 +56,16 @@ iv3 = estim.tsls(dm3["y"], dm3[["xe"]], dm3[["x2"]], dm3[["z", "z2"]], w, grp,
 print(f"[over] beta={iv3['beta'][0]:.3f} F_first={iv3['F_first']:.1f} "
       f"J={iv3['J']:.2f} df={iv3['J_df']} p={iv3['J_p']:.3f}")
 assert iv3["F_first"] > 50, "first-stage F implausibly weak"
-assert iv3["J_p"] > 0.01, "J rejects a valid instrument set"
+assert np.isnan(iv3["J"]) and np.isnan(iv3["J_p"])
+assert iv3["J_status"] == "unavailable_requires_verified_efficient_GMM"
 
-# ---- 4. Invalid instrument SHOULD be rejected by J ------------------------
+# ---- 4. An invalid instrument is not licensed by an unavailable J test -----
 zbad = 0.5 * v + rng.normal(size=n)     # correlated with the structural error
 dm4 = estim.wdemean(pd.DataFrame({"y": y3, "xe": xe3, "x2": x2, "z": z, "zb": zbad}),
                     ["y", "xe", "x2", "z", "zb"], grp, w)
 iv4 = estim.tsls(dm4["y"], dm4[["xe"]], dm4[["x2"]], dm4[["z", "zb"]], w, grp,
                  ["xe"], ["x2"])
-print(f"[bad]  beta={iv4['beta'][0]:.3f} J p={iv4['J_p']:.4f} (should reject)")
-assert iv4["J_p"] < 0.05, "J failed to flag an invalid instrument"
+print(f"[bad]  beta={iv4['beta'][0]:.3f} J status={iv4['J_status']}")
+assert np.isnan(iv4["J"]) and np.isnan(iv4["J_p"])
+assert estim.row(iv4, "xe")["J_status"] == "unavailable_requires_verified_efficient_GMM"
 print("ALL ESTIMATOR CONTROLS PASSED")

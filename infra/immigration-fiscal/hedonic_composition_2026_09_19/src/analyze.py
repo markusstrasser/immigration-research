@@ -108,7 +108,7 @@ def main():
 
     res = pd.DataFrame(rows)[
         ["outcome", "treat", "sample", "period", "arm", "coef", "se", "t", "n",
-         "clusters", "cbsa_periods", "F_first", "J_p", "r2"]]
+         "clusters", "cbsa_periods", "F_first", "J_p", "J_status", "r2"]]
     res = res.sort_values(["outcome", "treat", "sample", "period", "arm"])
     res.to_csv(DERIVED / "results_main.csv", index=False, float_format="%.6g")
     (DERIVED / "analyze_notes.txt").write_text("\n".join(notes) + "\n")

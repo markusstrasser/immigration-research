@@ -84,19 +84,17 @@ def tsls(y, Xend, Xexo, Z, w, clusters, names_end, names_exo, k_absorbed=0):
     RVR = R @ fs["V"] @ R.T
     F = float(Rb @ np.linalg.solve(RVR, Rb) / q)
 
-    # Hansen J (2SLS residuals, cluster-robust weight matrix).
+    # Do not label a moment quadratic at the 2SLS estimate as Hansen J.
+    # ivreg2's robust test requires the corresponding efficient-GMM estimate
+    # (Baum/Schaffer/Stillman 2003, section 4.3). This within-only API lacks
+    # the full FE moment design needed to certify that test in general.
+    # Original-paper J is verified separately in hedonic_replay/src/verify_original.py.
     J, Jdf, Jp = np.nan, max(Zx.shape[1] - Xe.shape[1], 0), np.nan
-    if Jdf > 0:
-        gmeat, _ = _cluster_meat(Zfull * u[:, None], clusters)
-        gbar = Zfull.T @ u
-        try:
-            J = float(gbar @ np.linalg.solve(gmeat, gbar))
-            from scipy import stats
-            Jp = float(1 - stats.chi2.cdf(J, Jdf))
-        except Exception:
-            pass
+    Jstatus = ("unavailable_requires_verified_efficient_GMM" if Jdf > 0
+               else "not_applicable_exactly_identified")
     return {"names": list(names_end) + list(names_exo), "beta": beta, "se": se,
             "n": n, "G": G, "F_first": F, "J": J, "J_df": Jdf, "J_p": Jp,
+            "J_status": Jstatus,
             "r2": np.nan, "resid": u, "V": V}
 
 
@@ -106,4 +104,6 @@ def row(res, focus):
     return {"coef": b, "se": s, "t": b / s if s else np.nan,
             "n": res["n"], "clusters": res["G"],
             "F_first": res.get("F_first", np.nan),
-            "J_p": res.get("J_p", np.nan), "r2": res.get("r2", np.nan)}
+            "J_p": res.get("J_p", np.nan),
+            "J_status": res.get("J_status", "not_applicable_WLS"),
+            "r2": res.get("r2", np.nan)}
