@@ -1,11 +1,19 @@
 # Reproduce immigration-fiscal data stack
 
-**One command:** from repo root:
+For the **official URL → cleared AWS mirror → reader/browser acquisition** routes,
+exact source versions, and **join/normalization recipes**, use
+[Reader inputs, joins and normalization](REPRODUCTION_INPUTS.md).
+It distinguishes the core warehouse from newer standalone analysis lanes.
+
+From the repository root:
 
 ```bash
 ./scripts/reproduce-immigration-data.sh init
-./scripts/reproduce-immigration-data.sh all minimal   # ~2 GB download + warehouse
-./scripts/reproduce-immigration-data.sh all standard  # full public stack (~50 GB attempts)
+./scripts/reproduce-immigration-data.sh download minimal
+./scripts/reproduce-immigration-data.sh verify required
+./scripts/reproduce-immigration-data.sh build context # core warehouse only
+# Alternatively, attempt the full public stack (~50 GB):
+# ./scripts/reproduce-immigration-data.sh all standard
 ```
 
 Or from `infra/immigration-fiscal/`:
@@ -33,7 +41,7 @@ checksums) into `dist/immigration-data-v<date>/`.
 
 | Tier | Download | Build | Disk (approx) |
 |------|----------|-------|----------------|
-| `minimal` | ACS 2023 PUMS + CPS ASEC | `immigration_context.duckdb` | ~2 GB |
+| `minimal` | ACS 2023 PUMS + CPS ASEC | Use `build context` for only the core warehouse | ~2 GB |
 | `standard` | + stage2/3/5, IRS panel, lifetime PDFs | + MVP + lifetime union | ~50 GB |
 | `full` | + tier-a labor + restrictionist + causal (Saiz, BEA) | same as standard | +5 GB |
 
@@ -56,10 +64,15 @@ On machines with `sources/` in-repo (not symlinked), `init` also links:
 ```bash
 ./reproduce.sh verify required    # 3 census zips (pre-build)
 ./reproduce.sh verify optional    # full manifest downloads
-./reproduce.sh verify derived     # post-build CSV outputs
+./reproduce.sh verify derived     # manifest-listed build/compose outputs
 ```
 
 Manifest: `DOWNLOAD_MANIFEST.tsv`
+
+These are presence/minimum-size checks, not checksum verification. `all minimal`
+limits the download tier but still calls `build all`; it does not isolate a core
+build. Use the separate commands above. For result-specific checks and missing
+input handling, see [verification limits](REPRODUCTION_INPUTS.md#verify-what-was-actually-reproduced).
 
 ## Manual / blocked
 

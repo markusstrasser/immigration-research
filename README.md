@@ -40,6 +40,11 @@ single well-sourced falsification beats ten plausible syntheses.
 **Two paths.** Grab the packaged data if you just want to query; rebuild from source if you want
 to re-derive or extend the panels.
 
+The [input and normalization guide](infra/immigration-fiscal/REPRODUCTION_INPUTS.md)
+maps official downloads, cleared mirror candidates and reader/browser steps to
+the actual join keys, recodes and validation recipes. AWS URLs are not yet
+registered; a staged package is not an automatically cleared public release.
+
 ### Fastest — download the data (no multi-GB rebuild)
 
 ```bash
@@ -67,8 +72,10 @@ cd immigration-research
 # Playwright is only needed for two WAF-blocked sources (HUD CHAS + SAFMR):
 uv run --with playwright python -m playwright install chromium
 
-./scripts/reproduce-immigration-data.sh all minimal    # ~2 GB, core warehouse only
-# or: all standard                                      # ~50 GB, full public stack
+./scripts/reproduce-immigration-data.sh download minimal
+./scripts/reproduce-immigration-data.sh verify required
+./scripts/reproduce-immigration-data.sh build context  # core warehouse only
+# Or: ./scripts/reproduce-immigration-data.sh all standard  # ~50 GB attempts
 
 ./scripts/reproduce-immigration-data.sh smoke    # sanity-check the warehouse
 ./scripts/reproduce-immigration-data.sh query    # rerun the headline SQL
@@ -78,10 +85,11 @@ uv run --with playwright python -m playwright install chromium
 `infra/immigration-fiscal/reproduce.sh` — run either. Paths live in
 `infra/immigration-fiscal/acquire/config.local.env` (gitignored).
 
-**License note:** the IPUMS census microdata panel (44 M rows, used to derive the Borjas
-supply-shock cells) is **license-restricted and excluded from any redistributable release** — only
-the aggregated `borjas_supply_shock_panel` ships. Rebuilding it requires your own IPUMS USA
-extract; see `infra/immigration-fiscal/REPRODUCE.md`.
+**License note:** raw IPUMS records are kept in a separate local microdata warehouse;
+rebuilding the historical cells requires the specified extract. Other sources have
+their own redistribution terms too. The current packager exports the whole unified
+warehouse without a licensing filter; use the [source-specific routes](infra/immigration-fiscal/REPRODUCTION_INPUTS.md)
+before publishing a bundle.
 
 ## Where to start reading
 

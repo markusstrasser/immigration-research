@@ -2,6 +2,8 @@
 
 **Purpose:** Read the reasoning in order, know which claims are canonical vs superseded, and rerun the headline SQL. **Setup/quickstart now lives in the root [`README.md`](../README.md)** — this is the deep companion (reading order, claim status, warehouse query definitions).
 
+**Reader inputs (2026-09-19):** [Acquisition, joins and normalization](../infra/immigration-fiscal/REPRODUCTION_INPUTS.md) supplies official-download, cleared-mirror and browser/manual routes, plus the current lane recipes. The core warehouse build does not reproduce every September analysis, and no AWS mirror URL is registered in that guide yet.
+
 **Updated:** 2026-09-05. Start with the [material repair report](immigration-material-repair-report-2026-09-05.md) and [recent evidence synthesis](immigration-framing-refresh-2026-09-05.md). The earlier household-donor fiscal schema and its figures are invalid; September replacements use person-year donors and explicitly partial accounting. Historical claim tables below are subject to the current corrections.
 
 ---
@@ -38,7 +40,9 @@ source only if you need to re-derive or extend the panels (§2).
 
 **Setup is in the root [`README.md`](../README.md) → "Rebuild from source":** `init` → `doctor` →
 playwright install (only for HUD CHAS + SAFMR, which are WAF-blocked on plain curl) →
-`all minimal` (~2 GB, core warehouse) or `all standard` (~50 GB, full public stack).
+`download minimal` → `verify required` → `build context` (~2 GB, core warehouse),
+or `all standard` (~50 GB of public-stack download attempts). `all minimal` still
+invokes `build all`; it is not a core-only build.
 
 **Outputs:**
 

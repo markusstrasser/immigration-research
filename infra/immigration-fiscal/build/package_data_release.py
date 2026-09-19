@@ -10,9 +10,9 @@ Produces dist/immigration-data-<version>/:
   SHA256SUMS                — integrity
 …then tars it to dist/immigration-data-<version>.tar.gz.
 
-Everything here is a DERIVED aggregate over public US-government sources; the
-compilation is shareable. Raw application-gated microdata (PSID, IRS PUF, LEHD)
-is never included. Actual external publish is a human-gated step — see README.
+Copies the whole unified warehouse and exports its cataloged tables without
+filtering source licenses. Staging does not establish redistribution permission;
+inspect content and upstream rights before external publication — see README.
 
 Run: uv run --with duckdb python package_data_release.py [VERSION]
 """
@@ -108,18 +108,22 @@ table name exists in two source warehouses, `main` points at the canonical copy:
 
 ## Provenance & license
 
-Derived aggregates over **public US-government sources** — Census ACS/CPS PUMS,
+The intended inputs include **public US-government sources** — Census ACS/CPS PUMS,
 CDC, HUD (CHAS/SAFMR/PIT), IRS SOI migration, CMS Medicaid, USDA SNAP, OMB, BEA,
 SAIPE, EOIR, OHSS, and BJA SCAAP (criminal-alien custody reimbursements) — plus
-published NPV benchmarks (NAS/NRC, Storesletten, Orrenius). Inputs are
-public-domain or public-use; this compilation is shareable.
+published NPV benchmarks (NAS/NRC, Storesletten, Orrenius) and third-party series.
+This packager copies the whole unified warehouse and exports every cataloged
+table; it does not filter by source license. A staged package is not proof of
+redistribution permission. Inspect its contents and upstream rights using
+`infra/immigration-fiscal/REPRODUCTION_INPUTS.md` before publishing.
 
 The **crime-by-status tables** (`crime_tx_arrests_by_status`,
 `crime_spi_inmates_by_citizenship`, and the optional `crime_spi_incarceration_rate`) are derived
 **aggregates** computed from two registration-gated archives — Light/He/Robey's
 Texas DPS replication (openICPSR 124923) and BJS's Survey of Prison Inmates 2016
-(ICPSR 37692). The archives' gating restricts redistribution of the underlying
-microdata, not aggregate statistics; only available aggregate counts/rates ship here.
+(ICPSR 37692). Login requirements do not determine redistribution rights.
+The intended tables contain aggregate counts/rates; check the applicable terms
+and actual table contents rather than assuming that aggregation clears every use.
 An SPI rate is included only with a source-labeled, matched 2016 national adult
 population denominator including institutional residents. Counts-only builds omit
 that rate; a later population cannot substitute for the matched denominator.
@@ -127,9 +131,9 @@ To rebuild these tables from scratch you must register for and
 download the two archives yourself — see the MANUAL_ACQUIRE notes referenced in
 `research/immigration-dataset-register.md`.
 
-No license-restricted or application-gated microdata is included — IPUMS PUMS
-(not redistributable; held local-only in `immigration_microdata.duckdb`), PSID,
-IRS SOI PUF, Synthetic SIPP, FSRDC LEHD. Only derived aggregates ship here.
+Raw IPUMS records are intended to remain local in `immigration_microdata.duckdb`.
+This packager does not enforce that separation or detect other restricted inputs.
+Do not add restricted microdata to the unified warehouse used for publication.
 Full catalog + quirks: `research/immigration-dataset-register.md`.
 
 ## Reproduce from scratch
