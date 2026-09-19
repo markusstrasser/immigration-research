@@ -1,5 +1,12 @@
 # Yearly and lifetime fiscal results — repaired calculation index
 
+**Later source update, 2026-09-19:** The [Census2024 finance refresh](immigration-macro-reconciliation-2026-09-19.md)
+updates the union's annual partial balance to −$234.34bn shared/−$256.26bn
+personal. Tables below preserve the earlier pinned profile version. The
+[projection tests](immigration-projection-backtest-2026-09-19.md) assess historical
+assumptions and composition/exit sensitivities; no lifetime admission forecast
+is validated. See the [decision](../decisions/2026-09-19-matched-accounts-and-projection-checks.md).
+
 **Status:** Current September 19 calculation release. The annual bookkeeping and age-profile propagation are repaired. This is an **expanded partial fiscal account**, with explicit allocation scenarios, not an exhaustive government account or an identified effect of immigration policy. Earlier $263.22bn, $2,246/household, 89% state/local and flat-adjustment lifetime headlines are superseded. Evidence remains in Git and the original files.
 
 ## Annual results
@@ -76,3 +83,7 @@ Executed: **17 focused tests; 54 annual gates; 768 lifetime scenarios; annual/pr
 ## Revisions
 
 2026-09-19: [Program ownership and period-profile decision](../decisions/2026-09-19-fiscal-program-ownership-and-period-profiles.md). Replaces the affected annual, financing and lifetime headlines while preserving historical evidence. This file is a calculation index, not essay text.
+
+2026-09-19, later: [Matched accounts and projection checks](../decisions/2026-09-19-matched-accounts-and-projection-checks.md)
+versions the observed2024 refresh separately and retains these profiles for
+comparisons. The older annual source vintage retained here is no longer the latest.

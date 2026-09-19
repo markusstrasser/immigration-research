@@ -1,5 +1,16 @@
 # Research frontier: stronger questions across domains of life
 
+**Execution update, 2026-09-19:** The [education-specific fiscal lane](immigration-education-fiscal-and-methods-2026-09-19.md)
+and [projection checks](immigration-projection-backtest-2026-09-19.md) address
+items1/2/4/5 in the later seven-question entry. NRC debt-policy assumptions can
+be tested, but public repeated cross-sections do not supply exact Mexican
+lifetime validation. The new all-origin schooling test gives no general
+optimistic bias; recent-arrival education, parental mix and conditional exit
+effects are calculated. Actual current exit hazards/overseas entitlements,
+linked admission histories and complete model uncertainty remain unresolved.
+The original claim that 28 years of CPS alone can score an entire lifetime
+forecast, and its asserted model-spread/sampling-interval ratio, are superseded.
+
 **Verdict:** The largest remaining gap is between verified descriptions of groups and effects of specified policies on people's lives. Better measurement remains valuable, but neither more downloaded files nor more adjustments to the same sample can bridge that gap by themselves. The next substantial advance should close selected causal chains, measure who gains and loses, and make the values behind overall judgments explicit. This is a frontier assessment and recommendation, not an adopted change to the project's constitution, causal tree or analysis protocol. [INFERENCE from the inspected evidence below.]
 
 Scope: immigration is the worked example. The distinctions also apply to research on technology, education, family policy, health systems and institutions; this memo does not claim that their substantive evidence has been audited. The [existing main question](immigration-main-question-reset.md) already asks about explicit populations, horizons, counterfactuals and incidence. The gap is executing that framing with appropriate evidence, rather than inventing another framework. [SOURCE: GOALS.md and current topic memos.]

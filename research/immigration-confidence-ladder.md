@@ -541,4 +541,14 @@ end-knowledge-index -->
 
 ## Revisions — fiscal repair, September 19, 2026
 
+**Later source and inference update:** [Observed2024 finance](immigration-macro-reconciliation-2026-09-19.md)
+gives −$234.34bn shared/−$256.26bn personal, still an expanded partial annual
+account, not confidence bounds or policy savings. National coverage differences
+remain unallocated. [Matched benefits](immigration-matched-benefits-2026-09-19.md)
+adds skills/capital/tax scenarios with private offsets and overlap checks.
+[Projection tests](immigration-projection-backtest-2026-09-19.md) qualify ladder159:
+conditional profiles, incomplete coverage, 101 original intervals, and no
+universally favorable exit direction. The debt-rule failure does not establish
+optimistic schooling bias. [Decision](../decisions/2026-09-19-matched-accounts-and-projection-checks.md).
+
 Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.
