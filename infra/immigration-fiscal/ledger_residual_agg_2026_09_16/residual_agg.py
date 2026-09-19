@@ -245,7 +245,9 @@ def read_general_services_per_capita(pop: pd.Series) -> tuple[pd.Series, dict]:
     for name, col in blocks:
         def amount(line: int) -> float:
             v = by_line[line][col]
-            return float(v) if isinstance(v, (int, float)) else 0.0
+            if not isinstance(v, (int, float)) or not np.isfinite(v):
+                raise ValueError(f"Missing required Census spending cell: {name}, line {line}: {v!r}")
+            return float(v)
         # Table is in thousands of dollars.
         residual = 1000.0 * (amount(CENSUS_LINE_DIRECT_GENERAL)
                              - sum(amount(ln) for ln in CENSUS_LINES_SUBTRACTED))

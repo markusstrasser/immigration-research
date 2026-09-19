@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Reporting tables for the incidence lane. Reads derived/ and derived_F_percapita/."""
 from pathlib import Path
+import hashlib
+import json
 import pandas as pd
 import numpy as np
 
@@ -11,6 +13,14 @@ WHITE = "third_plus_nh_white"
 
 def load(sub):
     d = HERE / sub
+    audit = json.loads((d / "audit.json").read_text())
+    digest = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
+    if (audit.get("builder_sha256") != digest(HERE / "incidence.py")
+            or audit.get("annual_audit_sha256") != digest(HERE.parent / "ledger_absolute_2026_09_17/derived/audit.json")):
+        raise ValueError(f"[BLOCKED] stale incidence scenario {sub}; rebuild with an explicit correctional financing share")
+    for name in ["incidence_matrix.csv", "account_by_level.csv", "interest.csv"]:
+        if audit.get("output_sha256", {}).get(name) != digest(d / name):
+            raise ValueError(f"[BLOCKED] stale or altered incidence output: {sub}/{name}")
     return (pd.read_csv(d / "incidence_matrix.csv"),
             pd.read_csv(d / "account_by_level.csv"),
             pd.read_csv(d / "interest.csv"))
@@ -39,7 +49,7 @@ def main():
     m0, lvl0, int0 = load("derived")
     mF, lvlF, intF = load("derived_F_percapita")
 
-    w("## A. Account by level of government, complete central account (item F = zero)\n")
+    w("## A. Expanded partial account, item F = zero; correctional financing is the explicit recorded assumption\n")
     t = lvl0[lvl0.group.isin([UNION, WHITE, "all_native"])].copy()
     t["federal_share_of_deficit"] = t.federal_bn / t.total_bn
     w(t.round(3).to_string(index=False))

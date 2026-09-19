@@ -143,11 +143,12 @@ def main() -> int:
     else:
         gate("arms_matrix_contains_the_waterfall_endpoint", False,
              f"{int(mask.sum())} rows match the central combination {want}")
-    expected = 1
-    for col in ["F_arm", "E_arm", "C_arm", "R_arm"]:
-        expected *= max(arms[col].nunique(dropna=False), 1)
-    gate("arms_matrix_is_the_full_grid", len(arms) == expected,
-         f"{len(arms)} rows, grid {expected}")
+    expected = sum(1 for f in arms.F_arm.unique() for e in arms.E_arm.unique()
+                   for c in arms.C_arm.unique() for r in arms.R_arm.unique()
+                   if e == "zero" or r == "all_zero")
+    gate("arms_matrix_covers_nonoverlapping_combinations", len(arms) == expected
+         and not ((arms.E_arm != "zero") & (arms.R_arm != "all_zero")).any(),
+         f"{len(arms)} rows; additive E/R enforcement combinations excluded")
 
     # --- complete-account gaps ----------------------------------------------
     anchor = audit.get("upstream_partial_gap_anchor", [])
@@ -182,9 +183,27 @@ def main() -> int:
          f"residual {reported_residual/1e9:+,.1f}bn, outlay coverage "
          f"{float(nr.get('outlay_coverage', 0)):.3f}, receipt coverage "
          f"{float(nr.get('receipt_coverage', 0)):.3f}")
-    gate("national_residual_is_a_real_unforced_quantity", abs(reported_residual) > 1e9,
-         "the residual is reported, never solved for; a residual near zero would mean it "
-         "had been forced")
+    # Zero is valid. A large residual is not evidence of reconciliation.
+    comparator = nat[(nat.block == "consolidated") & (nat.line != "consolidated position")].amount_bn.sum() * 1e9
+    gate("national_comparator_rows_sum", abs(comparator - nr["consolidated_position"]) < 1e3)
+    gate("national_bridge_arithmetic", abs(comparator - account_lines * 1e9 - reported_residual) < 1e3)
+    gate("unresolved_coverage_is_not_certified_complete", audit.get("account_status") == "expanded_partial",
+         "arithmetic gates do not certify program completeness")
+    from consolidation import require_conservation
+    detail = audit["item_metadata"]["R|central"]["detail"]
+    va = detail["700_veterans_net_of_medical"]
+    require_conservation(va["gross"], va["va_medical_already_priced"] + va["cash_already_priced"], 0,
+                         va["dollars"], "VA base cash plus residual")
+    for name in ["400_transportation", "600_income_security_net"]:
+        row = detail[name]
+        gross = row["gross"] if name.startswith("400") else row["general_retirement_601"] + row["housing_assistance_604"]
+        require_conservation(gross, 0, row["federal_grants_netted"], row["dollars"], name)
+    gate("known_program_ownership_identities", True, "VA cash and matched grants count once")
+    from lifetime import load_age_profiles
+    profiles, _ = load_age_profiles(HERE.parents[2])
+    exported = profiles[(profiles.allocation == "shared") & (profiles.account == "expanded")].groupby("group").net_total.sum()
+    gate("age_profiles_reproduce_each_annual_total", all(abs(exported[g] - r.cumulative_bn * 1e9) < 1.0
+                                                       for g, r in ends.iterrows()))
 
     # --- item D: the district cost-to-serve differential ---------------------
     dg = audit.get("district_coverage_gate", {})

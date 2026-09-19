@@ -3,8 +3,9 @@
 
 Native-First: the upstream CPS builder (`gen_ledger_extension_2026_09_16`), the
 all-age lane's account matrix / estimator (`all_age_ledger_2026_09_17`) and the
-complete-account charge builder (`ledger_absolute_2026_09_17`) are imported and
-called, never copied. This lane only re-cuts the `mexico_born` group by PEINUSYR.
+expanded-account charge builder (`ledger_absolute_2026_09_17`) are imported and
+called, never copied. This lane re-cuts the `mexico_born` group by PEINUSYR and
+reports the partial account plus only G, K, X and R; it is not a complete account.
 
 Run from the repository root:
 
@@ -57,6 +58,8 @@ COMPONENT_ORDER = ["tax", "employer", "sales", "owner_property", "cash", "noncas
 WHITE = "third_plus_nh_white"
 ALL_NATIVE = "all_native"
 BAND_LABELS = ["0-17", "18-24", "25-34", "35-44", "45-54", "55-64", "65-74", "75+"]
+SELECTED_ACCOUNT = "partial_plus_G_K_X_R"
+SELECTED_ITEMS = ["G", "K", "X", "R"]
 
 # ---------------------------------------------------------------------------
 # PEINUSYR, "When did you come to the U.S. to stay?", CPS ASEC March 2025
@@ -152,9 +155,9 @@ def component_split(target, reference, coefficients, means):
 
 
 # ---------------------------------------------------------------------------
-def complete_charges(state, base_matrix, civilian, groups_for_ctx, codes, payer_means, exposure,
+def selected_charges(state, base_matrix, civilian, groups_for_ctx, codes, payer_means, exposure,
                      params_path):
-    """Per-record charge vectors for the complete-account items, via the absolute lane.
+    """Annual charge vectors from which this lane selects only G, K, X and R.
 
     Recomputed from `ledger_absolute_2026_09_17`'s own `build_charges` and its
     verified parameter file; nothing is read back from that lane's derived CSVs.
@@ -246,7 +249,8 @@ def try_asec2026(cps_2026: Path) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--params", type=Path, default=ABSOLUTE / "params/params.json")
-    ap.add_argument("--skip-complete", action="store_true")
+    ap.add_argument("--skip-selected-charges", action="store_true",
+                    help="omit the partial-account extension containing only G, K, X and R")
     args = ap.parse_args()
 
     out = HERE / "derived"
@@ -293,17 +297,16 @@ def main() -> None:
         raise SystemExit("[BLOCKED] post-reference-year exclusion contains a noninfant")
     health = np.eye(len(cells))[codes] * exposure[:, None]
 
-    # ---- complete-account flat charges (items G, K, X, R central arms) -----
+    # ---- selected additional charges (G, K, X, R central arms only) --------
     charge_matrix = np.zeros((len(d), 0))
     charge_keys: list[str] = []
-    complete_info: dict = dict(built=False)
-    if not args.skip_complete:
-        print("[stage] complete-account charges via ledger_absolute_2026_09_17", flush=True)
-        charges, dropped, centrals, national, us_resident, vintage = complete_charges(
+    complete_info: dict = dict(built=False, complete=False, account=SELECTED_ACCOUNT)
+    if not args.skip_selected_charges:
+        print("[stage] selected annual charges G, K, X, R", flush=True)
+        charges, dropped, centrals, national, us_resident, vintage = selected_charges(
             state, shared, civilian, lane_groups, codes,
             _payer_means(medical, cells), exposure, args.params)
-        wanted = [("G", centrals.get("G")), ("K", centrals.get("K")),
-                  ("X", centrals.get("X")), ("R", centrals.get("R"))]
+        wanted = [(item, centrals.get(item)) for item in SELECTED_ITEMS]
         cols, keys, missing = [], [], []
         full = charges.matrix()
         for item, arm in wanted:
@@ -313,13 +316,21 @@ def main() -> None:
                 continue
             cols.append(full[:, charges.columns.index(key)])
             keys.append(key)
+        if missing:
+            raise SystemExit(f"[BLOCKED] {SELECTED_ACCOUNT} requires all four items: {missing}")
         charge_matrix = np.column_stack(cols) if cols else np.zeros((len(d), 0))
         charge_keys = keys
-        complete_info = dict(built=True, keys=keys, missing_items=missing,
+        complete_info = dict(built=True, complete=False, account=SELECTED_ACCOUNT,
+                             keys=keys, missing_items=missing,
+                             excluded_items=[item for item in AL.WATERFALL_ORDER
+                                             if item not in SELECTED_ITEMS],
+                             exclusion_reason="This arrival-window lane has only four additional "
+                             "annual items; institutional data do not identify arrival windows. "
+                             "These outputs cannot substitute for the expanded annual account.",
                              dropped=dropped, us_resident=us_resident,
                              population_vintage=vintage,
                              national={k: national[k] for k in keys if k in national})
-        print(f"[complete] charge columns used: {keys}; dropped items: "
+        print(f"[{SELECTED_ACCOUNT}] charge columns used: {keys}; dropped items: "
               f"{[x['item'] for x in dropped]}", flush=True)
 
     values = np.column_stack([shared, charge_matrix]) if charge_matrix.size else shared
@@ -414,8 +425,8 @@ def main() -> None:
     for name in WINDOW_NAMES + ["mexico_born"]:
         cell = stats[name]
         n = cell["n"].sum(axis=0)
-        for label, coeff, tag in [("partial", base_coeff, ""), ("complete", complete_coeff, "")]:
-            if label == "complete" and not charge_keys:
+        for label, coeff, tag in [("partial", base_coeff, ""), (SELECTED_ACCOUNT, complete_coeff, "")]:
+            if label == SELECTED_ACCOUNT and not charge_keys:
                 continue
             y = account(cell, coeff, means).sum(axis=0)
             q = -cell["h"][:, :, 0].sum(axis=0)
@@ -461,7 +472,7 @@ def main() -> None:
             band_rows.append(dict(
                 window=name, band=b, band_label=BAND_LABELS[b], population=pop_b,
                 partial_balance_per_person=float(per_band[b, 0] / pop_b) if pop_b > 0 else float("nan"),
-                complete_balance_per_person=(float(per_band_c[b, 0] / pop_b)
+                partial_plus_G_K_X_R_balance_per_person=(float(per_band_c[b, 0] / pop_b)
                                              if (charge_keys and pop_b > 0) else float("nan"))))
 
     table = pd.DataFrame(rows)
@@ -471,7 +482,7 @@ def main() -> None:
 
     # ---- derivative view --------------------------------------------------
     deriv_rows = []
-    for label in (["partial"] + (["complete"] if charge_keys else [])):
+    for label in (["partial"] + ([SELECTED_ACCOUNT] if charge_keys else [])):
         for ref in [WHITE, ALL_NATIVE]:
             key = f"{label}_common_age_gap_per_person_common_support"
             series = [rep[f"{w}|{ref}|{key}"] for w in WINDOW_NAMES]
@@ -537,7 +548,7 @@ def main() -> None:
                      per_window={w: [BAND_LABELS[i] for i in np.flatnonzero(supports[w])]
                                  for w in WINDOW_NAMES},
                      white_age_shares=white_shares.tolist()),
-        complete_account=complete_info,
+        selected_account=complete_info,
         asec_2026=asec26,
     )
     (out / "audit.json").write_text(json.dumps(audit, indent=2, default=str, allow_nan=False) + "\n")
@@ -548,12 +559,12 @@ def main() -> None:
     print(descr[["window", "span", "records", "weighted_population", "mean_age",
                  "own_children_under18_per_adult"]].round(3).to_string(index=False))
     show = table[table.window.isin(WINDOW_NAMES + ["mexico_born"])]
-    for metric in ["partial_absolute_per_person", "complete_absolute_per_person"]:
+    for metric in ["partial_absolute_per_person", f"{SELECTED_ACCOUNT}_absolute_per_person"]:
         sub = show[(show.metric == metric)]
         if len(sub):
             print(f"\n[{metric}]")
             print(sub[["window", "population", "estimate", "se_joint"]].round(1).to_string(index=False))
-    for label in (["partial"] + (["complete"] if charge_keys else [])):
+    for label in (["partial"] + ([SELECTED_ACCOUNT] if charge_keys else [])):
         sub = show[(show.metric == f"{label}_common_age_gap_per_person_common_support")
                    & (show.reference == WHITE)]
         print(f"\n[{label} common-age gap vs third-plus NH white, common support]")
@@ -574,11 +585,12 @@ def main() -> None:
 
 
 def _payer_means(medical, cells):
-    """MEPS Medicaid/Medicare donor means, as the absolute lane computes them."""
+    """Public-payer means needed by annual M and the TRICARE-netted F arms."""
     valid = medical.PERWT24F.gt(0) & medical.AGE24X.ge(0) & medical.BORNUSA.isin([1, 2])
     sample = medical.loc[valid]
     out = {}
-    for label, column in [("medicaid", "TOTMCD24"), ("medicare", "TOTMCR24")]:
+    for label, column in [("medicaid", "TOTMCD24"), ("medicare", "TOTMCR24"),
+                          ("tricare", "TOTTRI24")]:
         wx = sample.assign(wx=sample[column] * sample.PERWT24F).groupby(["age_band", "born"]).wx.sum()
         pop = sample.groupby(["age_band", "born"]).PERWT24F.sum()
         series = (wx / pop).reindex(pd.MultiIndex.from_frame(cells[["age_band", "born"]]))

@@ -361,7 +361,9 @@ def read_cog_capital(path: Path, pop: pd.Series) -> tuple[dict, dict, dict]:
     for name, col in blocks:
         def amount(line: int) -> float:
             v = by_line[line][col]
-            return 1000.0 * float(v) if isinstance(v, (int, float)) else 0.0
+            if not isinstance(v, (int, float)) or not np.isfinite(v):
+                raise ValueError(f"Missing required Census capital cell: {name}, line {line}: {v!r}")
+            return 1000.0 * float(v)
         total = amount(COG_LINE_CAPITAL_TOTAL)
         educ = amount(COG_LINE_EDUCATION_CAPITAL)
         elsec = amount(COG_LINE_ELSEC_CAPITAL)
@@ -572,17 +574,27 @@ def build_charges(ctx, p: Params):
                     np.where(civilian, -gs_rate, 0.0), "state_per_capita")
     if deflator_ratio:
         factor = deflator_ratio
-        ch.add("G", "deflated2024", np.where(civilian, -gs_rate * factor, 0.0),
+        from consolidation import census_finance
+        finance = census_finance(RESIDUAL / "_cache/22slsstab1.xlsx")
+        pop_state = resid.read_state_population()
+        fee_pc = {STATE_NAME_TO_FIPS[name]: row["fees"] / pop_state.loc[STATE_NAME_TO_FIPS[name]]
+                  for name, row in finance.items() if name in STATE_NAME_TO_FIPS}
+        fee_rate = d.GESTFIPS.map(fee_pc).to_numpy(dtype=float)
+        if not np.isfinite(fee_rate).all():
+            raise ValueError("Missing state service-fee allocation")
+        net_rate = (gs_rate - fee_rate) * factor
+        national_fees = finance["United States Total"]["fees"] * factor
+        ch.add("G", "deflated2024", np.where(civilian, -net_rate, 0.0),
                source="cache:22slsstab1.xlsx + params:deflator", marginal=True,
-               price_level="2024", deflator=factor)
-        record_national("G", "deflated2024", gs_national["general_services_total"] * factor,
-                        np.where(civilian, -gs_rate * factor, 0.0), "state_per_capita")
+               price_level="2024", deflator=factor, gross_services=gs_national["general_services_total"] * factor,
+               mapped_service_fees=national_fees, fees_by_state_per_capita=fee_pc,
+               fee_rule="net service cost by state; Census fee lines 28..36 only; user incidence not observed",
+               excluded_receipts="other charges, education, hospitals and miscellaneous revenue")
+        record_national("G", "deflated2024", gs_national["general_services_total"] * factor - national_fees,
+                        np.where(civilian, -net_rate, 0.0), "state_per_capita")
         g_central = "deflated2024"
     else:
-        drop("G(deflated central arm)",
-             "BEA state-local price index 2022 and 2024 not verified; the deflated "
-             "central arm was not computed and G is carried at its FY2022 price level")
-        g_central = "nominal2022"
+        raise ValueError("2024-price account requires a verified state/local deflator")
 
     # ---- K: K-12 capital outlay and interest on school debt ---------------
     k12, federal_k12_revenue = ctx["assf"]
@@ -612,9 +624,11 @@ def build_charges(ctx, p: Params):
     cap_person = children * pd.Series(fips).map(cap_pp).to_numpy(dtype=float) * ext.PUPIL_RATIO_NATIVE_ACS
     if np.isnan(cap_person).any():
         raise ValueError("state without K-12 capital per-pupil")
-    ch.add("K", "central", -unit_share(cap_person) * civilian, source=k12_source, marginal=True)
+    personal = ctx.get("allocation", "shared") == "personal"
+    recipient = lambda x: x if personal else unit_share(x)
+    ch.add("K", "central", -recipient(cap_person) * civilian, source=k12_source, marginal=True)
     record_national("K", "central", k12_national,
-                    -unit_share(cap_person) * civilian, "pupil_based")
+                    -recipient(cap_person) * civilian, "pupil_based")
 
     # ---- P: non-school state and local capital outlay ---------------------
     # Charged per capita by state of residence on the same 2022 state population
@@ -653,7 +667,7 @@ def build_charges(ctx, p: Params):
         w = pd.Series(fips).map(white_diff).fillna(0.0).to_numpy(dtype=float)
         rate = np.where(ctx["is_white_ref"], w, np.where(ctx["is_target"], h, 0.0))
         diff_person = children * rate * ext.PUPIL_RATIO_NATIVE_ACS
-        ch.add("D", "central", -unit_share(diff_person) * civilian,
+        ch.add("D", "central", -recipient(diff_person) * civilian,
                source="params:district F-33 x CCD per-pupil differentials", marginal=True,
                rule="Mexican-origin public pupils aged 5-17 are charged their state's "
                     "Hispanic-minus-all differential, the third-plus non-Hispanic white "
@@ -720,18 +734,11 @@ def build_charges(ctx, p: Params):
         for name, (ratio, base, level) in ratios.items():
             if ratio is None:
                 continue
-            if name == "social_security" and ratio >= 1.0:
-                excluded = float(base @ weights_full) * (ratio - 1.0)
-                priced_u[name] = dict(
-                    ratio=ratio, applied=False,
-                    note="the brief applies Social Security only when its admin/survey ratio is "
-                         "below 1; this one is above 1, so the item omits it",
-                    national_cost_not_charged=excluded)
-                continue
             unit_total = base.copy() if level == "unit" else np.bincount(
                 index, weights=base, minlength=n_units)
             increment = unit_total * (ratio - 1.0)
-            spread = ext.allocate(increment, index, np.ones(len(d), bool), n_units)
+            spread = (base * (ratio - 1.0) if personal and level == "person" else
+                      ext.allocate(increment, index, np.ones(len(d), bool), n_units))
             vector = vector - spread
             priced_u[name] = dict(ratio=ratio, applied=True,
                                   national_increment=float(spread @ weights_full))
@@ -905,6 +912,8 @@ def build_charges(ctx, p: Params):
     # unemployment, food and nutrition and other income security, and subfunction
     # 501 is the federal share already sitting inside per-pupil current spending.
     omb = ctx["omb"]
+    from consolidation import federal_programs, require_conservation
+    programs = federal_programs(HERE / "_cache")
 
     def func(code):
         return omb[OMB_FUNCTION_ROWS[code]]
@@ -932,14 +941,19 @@ def build_charges(ctx, p: Params):
     # 700 veterans, net of VA hospital and medical care, which MEPS TOTVA24 prices
     f703 = sub("703", "veterans medical")
     if n_vets > 0 and f703 is not None:
-        net700 = func("700") - f703
+        va_cash = float((recipient(d.VET_VAL.to_numpy(dtype=float)) * civilian) @ weights_full)
+        net700 = func("700") - f703 - va_cash
+        if net700 < 0:
+            raise ValueError("CPS veterans cash exceeds the administrative nonmedical VA target")
         r_parts.append(("700_veterans_net_of_medical",
                         np.where(veterans_mask, -net700 / n_vets, 0.0),
                         per_capita_of(net700), False))
         r_detail["700_veterans_net_of_medical"] = dict(
             dollars=net700, gross=func("700"), va_medical_already_priced=f703,
-            rule="function 700 less subfunction 703 VA hospital and medical care, which the "
-                 "MEPS public-payer transport already charges, spread per veteran "
+            cash_already_priced=va_cash,
+            conservation_residual=func("700") - f703 - va_cash - net700,
+            rule="function 700 less subfunction 703 and the exact weighted CPS VA cash "
+                 "already charged in this allocation, with the remainder spread per veteran "
                  "(PEAFEVER = 1, ever served on active duty)")
     else:
         r_missing.append("703 VA medical subfunction, needed to net function 700")
@@ -966,18 +980,19 @@ def build_charges(ctx, p: Params):
     f753 = sub("753", "federal correctional")
     bop_share = p.pick("enforcement", ["bop", "share"], "share",
                        preferred="bop_inmates_mexican_share_pct")
-    if f753 is not None and bop_share is not None and n_mex_noncit > 0:
-        targeted = f753 * bop_share
-        r_parts.append(("753_correctional_mexican_nationals",
-                        np.where(mex_noncit, -targeted / n_mex_noncit, 0.0),
-                        per_capita_of(targeted), False))
-        rest = func("750") - targeted
+    if f753 is not None:
+        # Item N already prices institutional correctional residents at every
+        # government level. Do not add federal prisons for the same people.
+        justice_grants = programs["justice_grants"]
+        rest = func("750") - f753 - justice_grants
         r_parts.append(("750_remainder", per_capita_of(rest), per_capita_of(rest), True))
         r_detail["750_administration_of_justice"] = dict(
-            dollars=func("750"), correctional_subfunction=f753,
-            bop_mexican_national_share=bop_share, correctional_to_mexico_born=targeted,
-            rule="the BOP Mexican-national share of subfunction 753 to Mexico-born noncitizens "
-                 "per head; the remainder of function 750 per capita")
+            dollars=rest, gross=func("750"), correctional_subfunction=f753,
+            federal_grants_netted=justice_grants,
+            conservation_residual=require_conservation(func("750"), f753, justice_grants, rest, "justice"),
+            matching_limit="justice grants finance G police/courts or N corrections; program amounts include tribal/territorial recipients",
+            correctional_already_owned_by="N institutional cost proxy, all government levels",
+            rule="exclude federal correctional outlays already represented by N; remaining justice per capita")
     else:
         r_missing.append("753 correctional subfunction or the BOP Mexican-national share")
 
@@ -1000,19 +1015,20 @@ def build_charges(ctx, p: Params):
     # 551 is health care services, far broader than Medicaid, so the NHEA federal
     # Medicaid figure is the right netting quantity.
     f551 = sub("551", "health care services")
-    medicaid_federal = p.first("meps_coverage", [["nhea_2023_medicaid_federal"],
-                                                 ["medicaid", "federal"]], "money",
-                               preferred="nhea_2023_medicaid_federal")
+    medicaid_federal = programs["medicaid_federal"]
     if medicaid_federal is not None:
-        net550 = func("550") - medicaid_federal
+        chip_federal = programs["chip_federal"]
+        net550 = func("550") - medicaid_federal - chip_federal
         r_parts.append(("550_health_net", per_capita_of(net550), per_capita_of(net550), True))
         r_detail["550_health_net"] = dict(
             dollars=net550, gross=func("550"), federal_medicaid_netted=medicaid_federal,
+            federal_chip_netted=chip_federal,
+            conservation_residual=require_conservation(func("550"), medicaid_federal + chip_federal, 0, net550, "health"),
             health_care_services_subfunction_not_used=f551,
-            rule="function 550 less federal Medicaid (NHEA 2023), which the MEPS public-payer "
+            rule="function 550 less federal Medicaid and CHIP (OMB FY2024), which the MEPS public-payer "
                  "transport already charges, per capita. OMB subfunction 551 is health care "
                  "services, much broader than Medicaid, so it is not the netting quantity",
-            year_mismatch="federal Medicaid is NHEA calendar 2023 against FY2024 outlays")
+            year_mismatch="Medicaid and federal function now both FY2024; MEPS transport remains calendar 2024")
     else:
         r_missing.append("NHEA federal Medicaid, needed to net function 550")
 
@@ -1022,17 +1038,22 @@ def build_charges(ctx, p: Params):
     housing_per_capita = np.zeros(len(d))
     housing_by_subsidy = np.zeros(len(d))
     if f601 is not None and f604 is not None:
-        net600 = f601 + f604
+        housing_grants = programs["housing"]["dollars"]
+        net604 = f604 - housing_grants
+        net600 = f601 + net604
         # Housing assistance is isolated so its allocation rule can be switched.
-        housing_per_capita = per_capita_of(f604)
+        housing_per_capita = per_capita_of(net604)
         subsidy_basis = ext.allocate(heads.SPM_CAPHOUSESUB.to_numpy(dtype=float),
                                      index, np.ones(len(d), bool), n_units)
-        housing_by_subsidy = (proportional(f604, subsidy_basis, sign=-1.0)
+        housing_by_subsidy = (proportional(net604, subsidy_basis, sign=-1.0)
                               if float(subsidy_basis @ weights_full) > 0 else housing_per_capita)
         r_parts.append(("600_income_security_net", per_capita_of(net600), per_capita_of(net600), True))
         r_detail["600_income_security_net"] = dict(
             dollars=net600, gross=func("600"), general_retirement_601=f601,
             housing_assistance_604=f604,
+            federal_grants_netted=housing_grants, grant_programs=programs["housing"]["programs"],
+            conservation_residual=require_conservation(f601 + f604, 0, housing_grants, net600, "income security"),
+            matching_limit=programs["limitation"],
             already_priced=["603 unemployment (CPS UC_VAL)",
                             "605 food and nutrition (SPM SNAP, WIC, school lunch)",
                             "609 other income security (CPS SSI and the refundable credits "
@@ -1044,9 +1065,16 @@ def build_charges(ctx, p: Params):
         r_missing.append("601 or 604 income-security subfunctions")
 
     # 400 transportation, per capita in every arm
-    r_parts.append(("400_transportation", per_capita_of(func("400")),
-                    per_capita_of(func("400")), True))
-    r_detail["400_transportation"] = dict(dollars=func("400"), rule="per capita")
+    transport_grants = programs["transport"]["dollars"]
+    transport_net = func("400") - transport_grants
+    r_parts.append(("400_transportation", per_capita_of(transport_net),
+                    per_capita_of(transport_net), True))
+    r_detail["400_transportation"] = dict(
+        dollars=transport_net, gross=func("400"), federal_grants_netted=transport_grants,
+        grant_programs=programs["transport"]["programs"],
+        conservation_residual=require_conservation(func("400"), 0, transport_grants, transport_net, "transportation"),
+        matching_limit=programs["limitation"],
+        rule="per capita after named highway/airport/port grants whose final services are in G; transit grants retained")
 
     # functions the central arm treats as pure public goods and prices at zero
     zero_codes = ["150", "250", "270", "300", "350", "370", "450"]
@@ -1077,7 +1105,7 @@ def build_charges(ctx, p: Params):
                    note="the central arm with subfunction 604 housing assistance allocated by "
                         "each record's share of the reported SPM capped housing subsidy instead "
                         "of per capita; every other part is unchanged",
-                   housing_dollars=f604)
+                   housing_dollars=net604)
         r_central = "central"
     else:
         drop("R", "no function of the rest of the federal budget could be priced")
@@ -1089,11 +1117,13 @@ def build_charges(ctx, p: Params):
         drop("R(sub-items)", "not priced for lack of a verified parameter: " + "; ".join(r_missing))
 
     # ---- F: federal pure public goods -------------------------------------
-    f_total = func("050") + func("900") + func("800")
+    tricare_base = ctx["donor_payer_means"]["tricare"][ctx["donor_codes"]] * ctx["exposure"] * civilian
+    tricare_priced = float(tricare_base @ weights_full)
+    f_total = func("050") + func("900") + func("800") - tricare_priced
     ch.add("F", "zero", np.zeros(len(d)), source="convention", marginal=True)
     flat_f = per_capita_of(f_total)
     ch.add("F", "per_capita", flat_f, source="cache:omb_hist03z1_fy2027.xlsx", marginal=True,
-           national_dollars=f_total)
+           national_dollars=f_total, tricare_already_priced=tricare_priced)
     record_national("F", "per_capita", f_total, flat_f, "flat_per_capita")
     fed_tax_basis = unit_share(np.clip(d.FEDTAX_AC.to_numpy(dtype=float)
                                        + d.FICA.to_numpy(dtype=float), 0, None))
@@ -1168,8 +1198,11 @@ def build_charges(ctx, p: Params):
                     U="central" if "U|central" in ch.meta else None,
                     I="central" if "I|central" in ch.meta else None,
                     M="central" if "M|central" in ch.meta else None,
-                    E=e_central, C=c_central, X=x_central, R=r_central, F="zero",
-                    S="half_inside_meps" if "S|half_inside_meps" in ch.meta else None)
+                    E="zero", C=c_central, X=x_central, R=r_central, F="zero",
+                    S="all_inside_meps" if "S|all_inside_meps" in ch.meta else None)
+    ch.meta["E|zero"]["rule"] = "enforcement outlays are owned by R750; appropriation-based E is a standalone allocation sensitivity only"
+    if "S|all_inside_meps" in ch.meta:
+        ch.meta["S|all_inside_meps"]["rule"] = "no extra mixed-year 2025/2026 coverage appropriation in a 2024 account; overlap unverified"
     return ch, dropped, centrals, national, ratio_inversion_check
 
 
@@ -1238,7 +1271,7 @@ def generate(args):
     valid = medical.PERWT24F.gt(0) & medical.AGE24X.ge(0) & medical.BORNUSA.isin([1, 2])
     sample = medical.loc[valid]
     payer_means = {}
-    for label, column in [("medicaid", "TOTMCD24"), ("medicare", "TOTMCR24")]:
+    for label, column in [("medicaid", "TOTMCD24"), ("medicare", "TOTMCR24"), ("tricare", "TOTTRI24")]:
         wx = sample.assign(wx=sample[column] * sample.PERWT24F).groupby(["age_band", "born"]).wx.sum()
         pop = sample.groupby(["age_band", "born"]).PERWT24F.sum()
         series = (wx / pop).reindex(pd.MultiIndex.from_frame(cells[["age_band", "born"]]))
@@ -1289,10 +1322,7 @@ def generate(args):
     us_resident = params.pick("population", ["2024"], "count")
     population_vintage = "NST-EST2024 (params)"
     if us_resident is None:
-        us_resident = resid.read_us_population()
-        population_vintage = ("NST-EST2023 vintage-2023 July 1 2023 estimate, from the cached "
-                              "Census file reused from ledger_residual_agg_2026_09_16, because "
-                              "the NST-EST2024 parameter was not verified")
+        raise ValueError("Missing verified 2024 resident population; a prior-year denominator is not a fallback")
     print(f"[population] resident denominator {us_resident:,.0f} ({population_vintage})", flush=True)
     ctx = dict(d=d, index=index, n_units=n_units, civilian=civilian, weights=weights,
                heads=heads, general_services=(gs_pc, gs_national), assf=assf, omb=omb,
@@ -1447,8 +1477,10 @@ def generate(args):
     func_050, func_900, func_800 = omb[OMB_FUNCTION_ROWS["050"]], omb[OMB_FUNCTION_ROWS["900"]], \
         omb[OMB_FUNCTION_ROWS["800"]]
     func_950 = params.pick("omb", ["950"], "money",
-                           preferred="func_950_undistributed_offsetting_receipts") or 0.0
-    func_920 = params.pick("omb", ["920"], "money", preferred="func_920_allowances") or 0.0
+                           preferred="func_950_undistributed_offsetting_receipts")
+    func_920 = params.pick("omb", ["920"], "money", preferred="func_920_allowances")
+    if func_950 is None or func_920 is None:
+        raise ValueError("Missing verified OMB 950/920; an absent budget series is not zero")
 
     # ---- complete-account gaps against both references --------------------
     # The absolute balance answers "what does this group cost". The gap answers
@@ -1536,8 +1568,10 @@ def generate(args):
         value = national_total(coeff, zero_means)
         lines.append(dict(block="account", line=f"base component {name}", amount_bn=value / 1e9,
                           note="charged over the civilian household population"))
-        account_outlays += -min(value, 0.0)
-        account_receipts += max(value, 0.0)
+        if name in {"tax", "employer", "sales", "owner_property"}:
+            account_receipts += value
+        else:
+            account_outlays -= value
     medical_value = -float(np.einsum("bjr,j->br", national_cell["h"], means)[:, 0].sum())
     lines.append(dict(block="account", line="base component public medical", amount_bn=medical_value / 1e9,
                       note="MEPS public-payer transport"))
@@ -1564,15 +1598,27 @@ def generate(args):
         value = national_total(coeff, zero_means)
         lines.append(dict(block="account", line=f"item {item} ({arm})", amount_bn=value / 1e9,
                           note=ITEM_LABEL[item]))
-        account_outlays += -min(value, 0.0)
-        account_receipts += max(value, 0.0)
+        if item in {"C", "X"}:
+            account_receipts += value
+        else:
+            account_outlays -= value
+        if item == "G":
+            fee_mapping = charges.meta[f"G|{arm}"]["fees_by_state_per_capita"]
+            fees_allocated = float((d.GESTFIPS.map(fee_mapping).to_numpy(dtype=float)
+                                    * deflator_used * civilian) @ weights[:, 0])
+            # G is stored net. Gross coverage accounting puts fees on receipts;
+            # lunch/D corrections, by contrast, reverse expenditure only.
+            account_receipts += fees_allocated
+            account_outlays += fees_allocated
     account_position = sum(r["amount_bn"] for r in lines if r["block"] == "account") * 1e9
 
     federal_outlays = p_total_outlays
     federal_receipts = p_total_receipts
     sl_expenditure = gs_national["direct_general_total"] * deflator_used
     sl_revenue = sl_own_revenue * deflator_used
-    consolidated_outlays = federal_outlays + sl_expenditure
+    from consolidation import census_finance
+    sl_grants = census_finance(RESIDUAL / "_cache/22slsstab1.xlsx")["United States Total"]["federal_grants"] * deflator_used
+    consolidated_outlays = federal_outlays + sl_expenditure - sl_grants
     consolidated_receipts = federal_receipts + sl_revenue
     consolidated_position = consolidated_receipts - consolidated_outlays
     for label, value, note in [
@@ -1582,13 +1628,15 @@ def generate(args):
              f"2022 Census of Governments, inflated by {deflator_used:.6f}"),
             ("state and local general revenue from own sources", sl_revenue,
              f"2022 Census of Governments, inflated by {deflator_used:.6f}"),
-            ("consolidated position", consolidated_position, "receipts less outlays")]:
+            ("state and local federal grants consolidation adjustment", sl_grants,
+             "removes intergovernmental financing once; Census 2022 inflated, not a matched-FY cash identity"),
+            ("consolidated position", consolidated_position, "mixed-vintage general-finance comparator, not an exact whole-government total")]:
         lines.append(dict(block="consolidated", line=label, amount_bn=value / 1e9, note=note))
     national_residual = consolidated_position - account_position
     for label, value, note in [
-            ("item F charged at zero in the central arm", -(func_050 + func_900 + func_800),
-             "defense, net interest and general government, priced as pure public goods"),
-            ("OMB function 950 undistributed offsetting receipts", func_950, "never priced"),
+            ("item F charged at zero in the central arm", -charges.meta["F|per_capita"]["national_dollars"],
+             "defense, net interest and general government less TRICARE already in base medical"),
+            ("OMB function 950 undistributed offsetting receipts", -func_950, "negative outlays increase the balance; never priced"),
             ("OMB function 920 allowances", -func_920, "never priced"),
             ("state and local capital outlay, elementary and secondary share",
              -cap_components["elsec_capital"] * deflator_used,
@@ -1802,6 +1850,14 @@ def generate(args):
                                    se_bn=sdr_se(cumulative) / 1e9, flag=flag))
     waterfall = pd.DataFrame(water_rows)
     waterfall.to_csv(out / "waterfall.csv", index=False)
+    from profile_export import export_profiles
+    age_profile_export = export_profiles(
+        state, ctx, charges, centrals, stats, means, inst_by_group, out,
+        personal_builder=lambda c: build_charges(c, Params(args.params, args.allow_placeholder)))
+    for row in waterfall[waterfall.step.eq(waterfall.step.max())].itertuples():
+        profile_total = age_profile_export["totals"][f"shared|expanded|{row.group}"]
+        if abs(profile_total - row.cumulative_bn * 1e9) > 1.0:
+            raise ValueError(f"Annual/profile sum mismatch: {row.group}")
 
     # ---- arms matrix ------------------------------------------------------
     def arm_vector(item, arm, g=UNION):
@@ -1833,6 +1889,8 @@ def generate(args):
         for ea in e_arms or [None]:
             for ca in c_arms or [None]:
                 for ra in r_arms or [None]:
+                    if ea != "zero" and ra != "all_zero":
+                        continue  # appropriation E duplicates enforcement inside R750
                     v = (fixed + arm_vector("F", fa) + arm_vector("E", ea)
                          + arm_vector("C", ca) + arm_vector("R", ra))
                     matrix_rows.append(dict(F_arm=fa, E_arm=ea, C_arm=ca, R_arm=ra,
@@ -1895,12 +1953,11 @@ def generate(args):
                              "adult across groups under equal_all_members"))
     f_row = items_table[(items_table.item == "F") & (items_table.arm == "per_capita")
                         & (items_table.group == UNION)]
-    f_pp = -float(f_row.per_person.iloc[0]) * us_resident / resid.read_us_population()
-    sibling.append(dict(check="federal_public_goods_per_person_rebased_to_the_2023_denominator",
-                        value=f_pp, low=5336.0, high=5346.0,
-                        passed=5336.0 <= f_pp <= 5346.0,
-                        note="ledger_residual_agg_2026_09_16 RESULT.md, $5,341 per adult flat "
-                             "under equal_all_members on the 2023 resident population"))
+    f_pp = -float(f_row.per_person.iloc[0])
+    f_expected = charges.meta["F|per_capita"]["national_dollars"] / us_resident
+    sibling.append(dict(check="federal_public_goods_net_of_already_priced_TRICARE",
+                        value=f_pp, passed=abs(f_pp - f_expected) < 1e-6,
+                        note="gross defense/interest/general government less already charged TRICARE, per resident"))
     for check in sibling:
         print(f"[sibling] {check['check']}: {check['value']:,.2f} -> "
               f"{'PASS' if check['passed'] else 'FAIL'}", flush=True)
@@ -1914,6 +1971,9 @@ def generate(args):
     np.savez_compressed(out / "replicates.npz", **rep_saved)
     finite = all(np.isfinite(v).all() for v in rep_saved.values())
     audit = dict(
+        account_status="expanded_partial",
+        age_profile_export=age_profile_export,
+        interpretation="annual attributed fiscal balance; not a marginal immigration effect or exhaustive fiscal account",
         params_file=str(params.path), params_sha256=params.sha256,
         params_allow_placeholder=bool(args.allow_placeholder),
         params_used=params.used, params_refused=params.refused,
@@ -1945,12 +2005,15 @@ def generate(args):
         item_metadata={k: v for k, v in charges.meta.items() if not v.get("hidden")},
         marginality_dial=marginal_detail, break_even_m_star=m_star,
         inputs=[dict(path=str(pth), sha256=sha256(pth)) for pth in [
-            cps, medical_zip, medical_sas, GENEXT / "state_parameters.csv",
+            cps, medical_zip, medical_sas, params.path, GENEXT / "state_parameters.csv",
             GENEXT / "census_assf_fy2024_summary_tables.xlsx",
             RESIDUAL / "_cache/omb_hist03z1_fy2027.xlsx",
             RESIDUAL / "_cache/22slsstab1.xlsx", RESIDUAL / "_cache/nst_est2023.csv",
             INSTITUTIONAL / "derived/acs_cells.csv", ALL_AGE / "derived/estimates.csv",
-            Path(__file__)]],
+            Path(__file__), HERE / "consolidation.py", HERE / "profile_export.py",
+            Path(ext.__file__), Path(ext.base.__file__), Path(resid.__file__), ALL_AGE / "analyze.py",
+            Path(sys.modules[donor_model.__module__].__file__), ALL_AGE / "estimator.py",
+            HERE / "_cache/outlays_fy2027.xlsx", HERE / "_cache/omb_hist12z3_fy2027.xlsx"]],
         medical_anchors=anchors, cps_validation=state["validation"],
         institutional_external_add=dict(
             source="institutional_bound_2026_09_17/derived/acs_cells.csv",
@@ -1975,11 +2038,10 @@ def generate(args):
             "federal and state capital stock other than school capital",
             "the reported housing-subsidy base in the CPS (SPM_CAPHOUSESUB sits outside the "
             "account's selected non-cash transfers); federal housing assistance is instead "
-            "carried whole as OMB subfunction 604 inside item R",
-            "Social Security under-reporting: its admin/survey ratio is 1.0881, above 1, and the "
-            "brief applies Social Security only when that ratio is below 1",
-            "item S outside the waterfall: the brief's waterfall order does not include it, so "
-            "the state coverage charge is reported per item but not accumulated",
+            "carried as OMB subfunction 604 less the named physical-housing grants inside item R",
+            "unmapped state-local other charges and miscellaneous general receipts",
+            "unresolved federal grant recipient/timing matches outside the named transportation and physical-housing programs",
+            "item S mixed-year coverage appropriations are diagnostic only; no additional 2024 central charge",
             "state and local capital outlay outside K-12 beyond what items G and P carry: "
             "the Census of Governments gives no capital sub-line for public welfare, health, "
             "airports, ports, housing and community development, general public buildings or "

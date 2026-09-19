@@ -1,4 +1,50 @@
 {
+  "account_status": "expanded_partial",
+  "age_profile_export": {
+    "files": {
+      "age_profiles.csv": "ddac25cc844f7fd72ec48937377ae29deff53bc826202a536725f15513dab12a",
+      "age_profile_components.csv": "8884b4126e6e4c60b74868ae57dc4b316651a38e3e767d7c25a44f7f63db5d62"
+    },
+    "price_year": 2024,
+    "primary_allocation": "personal",
+    "point_estimates_only": true,
+    "totals": {
+      "shared|partial|mexico_born": 6629354990.890362,
+      "shared|expanded|mexico_born": -72457949967.9771,
+      "shared|partial|third_plus_nh_white": 807854759173.5554,
+      "shared|expanded|third_plus_nh_white": -211313708453.0426,
+      "shared|partial|all_native": 1110920344313.1367,
+      "shared|expanded|all_native": -669216814323.1414,
+      "shared|partial|mexican_second_gen": 10693472380.705494,
+      "shared|expanded|mexican_second_gen": -84286593222.65407,
+      "shared|partial|mexican_third_plus_selfid": 32915386877.022316,
+      "shared|expanded|mexican_third_plus_selfid": -60571859122.91834,
+      "shared|partial|mexican_observed_total": 50238214248.6181,
+      "shared|expanded|mexican_observed_total": -217316402313.54956,
+      "personal|partial|mexico_born": 33466946930.291576,
+      "personal|expanded|mexico_born": -41930317997.45575,
+      "personal|partial|third_plus_nh_white": 819203546084.2717,
+      "personal|expanded|third_plus_nh_white": -200054697561.17273,
+      "personal|partial|all_native": 895675797507.4236,
+      "personal|expanded|all_native": -896317679781.062,
+      "personal|partial|mexican_second_gen": -169896501.0715294,
+      "personal|expanded|mexican_second_gen": -97442704133.8686,
+      "personal|partial|mexican_third_plus_selfid": -3900911058.0949326,
+      "personal|expanded|mexican_third_plus_selfid": -99868007286.40456,
+      "personal|partial|mexican_observed_total": 29396139371.125046,
+      "personal|expanded|mexican_observed_total": -239241029417.72897
+    },
+    "personal_items_dropped": [
+      {
+        "item": "S(states without a verified line)",
+        "label": "S(states without a verified line)",
+        "reason": "priced for 6, 8, 17, 36, 41, 53 only; not priced: mn_minnesotacare_undocumented_state_cost: not verified; ma_health_safety_net_state_cost: not verified; co_cover_all_coloradans_children_state_cost: not verified; ca_undocumented_total_general_fund_2024_25: not verified"
+      }
+    ],
+    "institution_N_denominator_note": "N is an external ACS institutional-cost add divided by the CPS civilian household population in each age band. It is an allocated burden per household resident, not an institutional resident cost or transition rate.",
+    "allocation_note": "Personal attribution uses direct tax, cash, employer payroll, school, K, D, and person-reported U recipients. Unit-level noncash and indirect receipts retain their documented household or incidence allocation. Medical stays personal in both arms. Person weights mean reallocations may change weighted totals."
+  },
+  "interpretation": "annual attributed fiscal balance; not a marginal immigration effect or exhaustive fiscal account",
   "params_file": "infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json",
   "params_sha256": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922",
   "params_allow_placeholder": false,
@@ -836,14 +882,6 @@
       "source_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z2_fy2027.xlsx",
       "note": "unit 'USD millions' -> x1e+06"
     },
-    "meps_coverage.nhea_2023_medicaid_federal": {
-      "value": 592600000000.0,
-      "raw_value": 592.6,
-      "unit": "USD billions",
-      "status": "verified",
-      "source_url": "https://www.cms.gov/files/zip/nhe-tables.zip",
-      "note": "unit 'USD billions' -> x1e+09"
-    },
     "omb.subf_601_general_retirement_disability": {
       "value": 22325000000.0,
       "raw_value": 22325.0,
@@ -1204,9 +1242,9 @@
     {
       "charge": "G|deflated2024",
       "kind": "state_per_capita",
-      "target_dollars": 1335361699610.256,
-      "charged_dollars": 1347959714620.2197,
-      "ratio": 1.0094341593095268,
+      "target_dollars": 1151083850794.3362,
+      "charged_dollars": 1161659516296.8035,
+      "ratio": 1.009187571778693,
       "expected_population_ratio": null,
       "residual": null,
       "ok": true
@@ -1274,11 +1312,11 @@
     {
       "charge": "F|per_capita",
       "kind": "flat_per_capita",
-      "target_dollars": 1788718000000.0,
-      "charged_dollars": 1770925090860.5718,
-      "ratio": 0.9900527030312055,
+      "target_dollars": 1760170123314.1353,
+      "charged_dollars": 1742661188381.9292,
+      "ratio": 0.9900527030312051,
       "expected_population_ratio": 0.9900527030312051,
-      "residual": 4.440892098500626e-16,
+      "residual": 0.0,
       "ok": true
     }
   ],
@@ -1289,8 +1327,8 @@
       "passed": true
     },
     "F|per_capita": {
-      "gap_per_standardized_person": -3.0168081049268594e-12,
-      "relative": -5.736228881092947e-16,
+      "gap_per_standardized_person": -4.568545516042107e-12,
+      "relative": -8.82762699243216e-16,
       "passed": true
     }
   },
@@ -1305,12 +1343,10 @@
       "note": "ledger_residual_agg_2026_09_16 RESULT.md, $3,738 to $4,240 per adult across groups under equal_all_members"
     },
     {
-      "check": "federal_public_goods_per_person_rebased_to_the_2023_denominator",
-      "value": 5340.8135221934535,
-      "low": 5336.0,
-      "high": 5346.0,
+      "check": "federal_public_goods_net_of_already_priced_TRICARE",
+      "value": 5175.281556366935,
       "passed": true,
-      "note": "ledger_residual_agg_2026_09_16 RESULT.md, $5,341 per adult flat under equal_all_members on the 2023 resident population"
+      "note": "gross defense/interest/general government less already charged TRICARE, per resident"
     }
   ],
   "admin_over_survey_inversion_check": [
@@ -1365,12 +1401,12 @@
     "U": "central",
     "I": "central",
     "M": "central",
-    "E": "stock",
+    "E": "zero",
     "C": "wage25_capital75",
     "X": "per_capita",
     "R": "central",
     "F": "zero",
-    "S": "half_inside_meps"
+    "S": "all_inside_meps"
   },
   "district_coverage_gate": {
     "built": true,
@@ -1675,9 +1711,9 @@
     "national_target_2024": 48849108643.68,
     "charged_dollars": 49249446803.809074,
     "ratio": 1.0081954035855447,
-    "item_G_ratio": 1.0094341593095268,
+    "item_G_ratio": 1.009187571778693,
     "population_ratio": 0.9900527030312051,
-    "item_G_ratio_difference": -0.0012387557239821323,
+    "item_G_ratio_difference": -0.0009921681931481796,
     "matches_item_G": true,
     "within_population_ratio": true,
     "components": {
@@ -1768,15 +1804,15 @@
     }
   ],
   "national_reconciliation_vs_consolidated_budget": {
-    "account_position": -1007371257780.1857,
-    "consolidated_position": -2590803830470.415,
-    "residual_unpriced_or_coverage": -1583432572690.2295,
-    "consolidated_outlays": 10920560873762.031,
+    "account_position": -658201047439.2136,
+    "consolidated_position": -1283475415487.7588,
+    "residual_unpriced_or_coverage": -625274368048.5452,
+    "consolidated_outlays": 9613232458779.375,
     "consolidated_receipts": 8329757043291.616,
-    "account_outlays": 6924558476798.653,
-    "account_receipts": 5917187219018.467,
-    "outlay_coverage": 0.6340845087394498,
-    "receipt_coverage": 0.7103673238325581,
+    "account_outlays": 6729060616471.383,
+    "account_receipts": 6070859569032.17,
+    "outlay_coverage": 0.6999789764082949,
+    "receipt_coverage": 0.7288159231392405,
     "state_local_price_adjustment": 1.039312,
     "note": "the residual is reported, never forced; it is not an error estimate"
   },
@@ -1785,97 +1821,97 @@
       "group": "mexico_born",
       "reference": "third_plus_nh_white",
       "base_common_age_gap_per_person": -6561.711620368309,
-      "complete_common_age_gap_per_person": -7782.724760181735,
+      "complete_common_age_gap_per_person": -7583.611487920926,
       "base_common_age_se": 320.9966375516852,
-      "complete_common_age_se": 385.1632702603119,
+      "complete_common_age_se": 383.81673803697896,
       "base_age_matched_gap_bn": -103.10087003258417,
-      "complete_age_matched_gap_bn": -122.2336228262268,
+      "complete_age_matched_gap_bn": -120.52273839185801,
       "base_age_matched_se_bn": 4.90525078988575,
-      "complete_age_matched_se_bn": 5.761989690326464
+      "complete_age_matched_se_bn": 5.711228384963418
     },
     {
       "group": "mexico_born",
       "reference": "all_native",
       "base_common_age_gap_per_person": -5055.6828268015515,
-      "complete_common_age_gap_per_person": -5581.874341860899,
+      "complete_common_age_gap_per_person": -5404.297648276597,
       "base_common_age_se": 294.0468686088278,
-      "complete_common_age_se": 351.8536595108277,
+      "complete_common_age_se": 350.8131178273709,
       "base_age_matched_gap_bn": -85.15752531182201,
-      "complete_age_matched_gap_bn": -95.81778075620345,
+      "complete_age_matched_gap_bn": -94.32537020588357,
       "base_age_matched_se_bn": 4.285784219461249,
-      "complete_age_matched_se_bn": 5.039106396790017
+      "complete_age_matched_se_bn": 4.984079306272329
     },
     {
       "group": "mexican_second_gen",
       "reference": "third_plus_nh_white",
       "base_common_age_gap_per_person": -5943.399390763294,
-      "complete_common_age_gap_per_person": -7565.007162204891,
+      "complete_common_age_gap_per_person": -7521.41138692661,
       "base_common_age_se": 469.0053612568862,
-      "complete_common_age_se": 616.834014217725,
+      "complete_common_age_se": 615.178974838458,
       "base_age_matched_gap_bn": -113.72329480855052,
-      "complete_age_matched_gap_bn": -142.00235483926633,
+      "complete_age_matched_gap_bn": -141.19374219785243,
       "base_age_matched_se_bn": 5.050134871509685,
-      "complete_age_matched_se_bn": 5.887572057344771
+      "complete_age_matched_se_bn": 5.872563366539783
     },
     {
       "group": "mexican_second_gen",
       "reference": "all_native",
       "base_common_age_gap_per_person": -4437.370597196537,
-      "complete_common_age_gap_per_person": -5364.1567438840575,
+      "complete_common_age_gap_per_person": -5342.097547282281,
       "base_common_age_se": 444.7121856205837,
-      "complete_common_age_se": 588.8327122858698,
+      "complete_common_age_se": 588.7503256890792,
       "base_age_matched_gap_bn": -84.27855309418668,
-      "complete_age_matched_gap_bn": -101.8410183898111,
+      "complete_age_matched_gap_bn": -101.2880538421966,
       "base_age_matched_se_bn": 4.060206523181386,
-      "complete_age_matched_se_bn": 4.722521064324444
+      "complete_age_matched_se_bn": 4.708230296607093
     },
     {
       "group": "mexican_third_plus_selfid",
       "reference": "third_plus_nh_white",
       "base_common_age_gap_per_person": -4622.449839398683,
-      "complete_common_age_gap_per_person": -6270.46616183965,
+      "complete_common_age_gap_per_person": -6194.623978677977,
       "base_common_age_se": 370.7461756823512,
-      "complete_common_age_se": 460.7503979851884,
+      "complete_common_age_se": 457.0128191432633,
       "base_age_matched_gap_bn": -73.76550875782262,
-      "complete_age_matched_gap_bn": -96.89709830683046,
+      "complete_age_matched_gap_bn": -96.39465706800752,
       "base_age_matched_se_bn": 4.930973403606858,
-      "complete_age_matched_se_bn": 5.624813497818926
+      "complete_age_matched_se_bn": 5.617414164149449
     },
     {
       "group": "mexican_third_plus_selfid",
       "reference": "all_native",
       "base_common_age_gap_per_person": -3116.421045831926,
-      "complete_common_age_gap_per_person": -4069.6157435188134,
+      "complete_common_age_gap_per_person": -4015.310139033647,
       "base_common_age_se": 356.9336275219065,
-      "complete_common_age_se": 445.0572983097439,
+      "complete_common_age_se": 440.4995282850177,
       "base_age_matched_gap_bn": -45.55972248294334,
-      "complete_age_matched_gap_bn": -58.147443683488454,
+      "complete_age_matched_gap_bn": -57.92792385843831,
       "base_age_matched_se_bn": 4.361733588326319,
-      "complete_age_matched_se_bn": 4.919234610328416
+      "complete_age_matched_se_bn": 4.896827478361821
     },
     {
       "group": "mexican_observed_total",
       "reference": "third_plus_nh_white",
       "base_common_age_gap_per_person": -5795.340382266619,
-      "complete_common_age_gap_per_person": -7224.219110123849,
+      "complete_common_age_gap_per_person": -7151.887239338126,
       "base_common_age_se": 245.093906680334,
-      "complete_common_age_se": 301.5661435474292,
+      "complete_common_age_se": 301.9746543629734,
       "base_age_matched_gap_bn": -290.58967359895735,
-      "complete_age_matched_gap_bn": -361.1330759723237,
+      "complete_age_matched_gap_bn": -358.1111376577181,
       "base_age_matched_se_bn": 10.645222035388553,
-      "complete_age_matched_se_bn": 11.992126007119106
+      "complete_age_matched_se_bn": 11.98401984162719
     },
     {
       "group": "mexican_observed_total",
       "reference": "all_native",
       "base_common_age_gap_per_person": -4289.31158869986,
-      "complete_common_age_gap_per_person": -5023.368691803013,
+      "complete_common_age_gap_per_person": -4972.573399693796,
       "base_common_age_se": 206.60573747480774,
-      "complete_common_age_se": 257.0994078762685,
+      "complete_common_age_se": 257.93089625968236,
       "base_age_matched_gap_bn": -214.995800888952,
-      "complete_age_matched_gap_bn": -255.806242829503,
+      "complete_age_matched_gap_bn": -253.54134790651847,
       "base_age_matched_se_bn": 8.347166359669167,
-      "complete_age_matched_se_bn": 9.339518094816516
+      "complete_age_matched_se_bn": 9.317394032920683
     }
   ],
   "brief_final_step": 13,
@@ -1893,7 +1929,64 @@
       "source": "cache:22slsstab1.xlsx + params:deflator",
       "marginal": true,
       "price_level": "2024",
-      "deflator": 1.039312
+      "deflator": 1.039312,
+      "gross_services": 1335361699610.256,
+      "mapped_service_fees": 184277848815.92,
+      "fees_by_state_per_capita": {
+        "1": 299.2891271275781,
+        "2": 875.0429579039816,
+        "4": 361.61869013115415,
+        "5": 271.8063658004651,
+        "6": 694.3334603122041,
+        "8": 644.211757531494,
+        "9": 295.8617299386539,
+        "10": 772.6519654051806,
+        "11": 802.4872233209976,
+        "12": 622.1945082787677,
+        "13": 482.3358975181318,
+        "15": 1106.2561527415262,
+        "16": 519.8205669325774,
+        "17": 469.40361287071784,
+        "18": 409.67502181557705,
+        "19": 475.1624608985925,
+        "20": 398.4566434071255,
+        "21": 362.61158272642984,
+        "22": 332.9944073950806,
+        "23": 453.2144085888387,
+        "24": 615.9254871161997,
+        "25": 682.0846830900191,
+        "26": 388.32182613045524,
+        "27": 565.1245121887196,
+        "28": 249.1170249832592,
+        "29": 363.42106933144765,
+        "30": 399.2740083962817,
+        "31": 384.2880806479477,
+        "32": 521.3907757266035,
+        "33": 402.94695579637784,
+        "34": 619.9234905516436,
+        "35": 321.7505190501335,
+        "36": 709.2559420938129,
+        "37": 386.6778733849634,
+        "38": 493.42159319666405,
+        "39": 382.28467961376896,
+        "40": 425.0517071379362,
+        "41": 738.5008511859874,
+        "42": 557.5394128826263,
+        "44": 527.1309750402709,
+        "45": 463.20004618627263,
+        "46": 341.44585649142897,
+        "47": 349.76229171442776,
+        "48": 462.5595840511747,
+        "49": 525.0402515529825,
+        "50": 320.9068010075567,
+        "51": 617.4071755605046,
+        "53": 951.472655131488,
+        "54": 454.2418836155995,
+        "55": 406.4930856119716,
+        "56": 532.9290664667683
+      },
+      "fee_rule": "net service cost by state; Census fee lines 28..36 only; user incidence not observed",
+      "excluded_receipts": "other charges, education, hospitals and miscellaneous revenue"
     },
     "K|central": {
       "item": "K",
@@ -1954,9 +2047,8 @@
         },
         "social_security": {
           "ratio": 1.0881,
-          "applied": false,
-          "note": "the brief applies Social Security only when its admin/survey ratio is below 1; this one is above 1, so the item omits it",
-          "national_cost_not_charged": 108039012163.2871
+          "applied": true,
+          "national_increment": 110549904209.5346
         }
       },
       "missing": []
@@ -1995,7 +2087,8 @@
       "item": "E",
       "arm": "zero",
       "source": "convention",
-      "marginal": false
+      "marginal": false,
+      "rule": "enforcement outlays are owned by R750; appropriation-based E is a standalone allocation sensitivity only"
     },
     "E|stock": {
       "item": "E",
@@ -2072,10 +2165,12 @@
       "marginal": false,
       "detail": {
         "700_veterans_net_of_medical": {
-          "dollars": 187102000000.0,
+          "dollars": 52569624068.82945,
           "gross": 325645000000.0,
           "va_medical_already_priced": 138543000000.0,
-          "rule": "function 700 less subfunction 703 VA hospital and medical care, which the MEPS public-payer transport already charges, spread per veteran (PEAFEVER = 1, ever served on active duty)"
+          "cash_already_priced": 134532375931.17055,
+          "conservation_residual": 0.0,
+          "rule": "function 700 less subfunction 703 and the exact weighted CPS VA cash already charged in this allocation, with the remainder spread per veteran (PEAFEVER = 1, ever served on active duty)"
         },
         "602_federal_retirement": {
           "dollars": 179924000000.0,
@@ -2085,11 +2180,14 @@
           "weighted_people_with_a_federal_pension_source": 1526560.5604553302
         },
         "750_administration_of_justice": {
-          "dollars": 83793000000.0,
+          "dollars": 68472000000.0,
+          "gross": 83793000000.0,
           "correctional_subfunction": 9057000000.0,
-          "bop_mexican_national_share": 0.08,
-          "correctional_to_mexico_born": 724560000.0,
-          "rule": "the BOP Mexican-national share of subfunction 753 to Mexico-born noncitizens per head; the remainder of function 750 per capita"
+          "federal_grants_netted": 6264000000.0,
+          "conservation_residual": 0.0,
+          "matching_limit": "justice grants finance G police/courts or N corrections; program amounts include tribal/territorial recipients",
+          "correctional_already_owned_by": "N institutional cost proxy, all government levels",
+          "rule": "exclude federal correctional outlays already represented by N; remaining justice per capita"
         },
         "500_education_net": {
           "dollars": 200997000000.0,
@@ -2100,18 +2198,70 @@
           "pell_not_netted": true
         },
         "550_health_net": {
-          "dollars": 318690000000.0,
+          "dollars": 274324000000.0,
           "gross": 911290000000.0,
-          "federal_medicaid_netted": 592600000000.0,
+          "federal_medicaid_netted": 617517000000.0,
+          "federal_chip_netted": 19449000000.0,
+          "conservation_residual": 0.0,
           "health_care_services_subfunction_not_used": 854342000000.0,
-          "rule": "function 550 less federal Medicaid (NHEA 2023), which the MEPS public-payer transport already charges, per capita. OMB subfunction 551 is health care services, much broader than Medicaid, so it is not the netting quantity",
-          "year_mismatch": "federal Medicaid is NHEA calendar 2023 against FY2024 outlays"
+          "rule": "function 550 less federal Medicaid and CHIP (OMB FY2024), which the MEPS public-payer transport already charges, per capita. OMB subfunction 551 is health care services, much broader than Medicaid, so it is not the netting quantity",
+          "year_mismatch": "Medicaid and federal function now both FY2024; MEPS transport remains calendar 2024"
         },
         "600_income_security_net": {
-          "dollars": 92333000000.0,
+          "dollars": 83674000000.0,
           "gross": 670548000000.0,
           "general_retirement_601": 22325000000.0,
           "housing_assistance_604": 70008000000.0,
+          "federal_grants_netted": 8659000000.0,
+          "grant_programs": [
+            {
+              "row": 4074,
+              "agency": "Department of Housing and Urban Development",
+              "account": "0163",
+              "name": "Public Housing Operating Fund",
+              "subfunction": "604",
+              "category": "Discretionary",
+              "dollars": 5000000.0
+            },
+            {
+              "row": 4079,
+              "agency": "Department of Housing and Urban Development",
+              "account": "0218",
+              "name": "Revitalization of Severely Distressed Public Housing (HOPE VI)",
+              "subfunction": "604",
+              "category": "Discretionary",
+              "dollars": 3000000.0
+            },
+            {
+              "row": 4089,
+              "agency": "Department of Housing and Urban Development",
+              "account": "0304",
+              "name": "Public Housing Capital Fund",
+              "subfunction": "604",
+              "category": "Discretionary",
+              "dollars": 624000000.0
+            },
+            {
+              "row": 4104,
+              "agency": "Department of Housing and Urban Development",
+              "account": "0349",
+              "name": "Choice Neighborhoods Initiative",
+              "subfunction": "604",
+              "category": "Discretionary",
+              "dollars": 154000000.0
+            },
+            {
+              "row": 4107,
+              "agency": "Department of Housing and Urban Development",
+              "account": "0481",
+              "name": "Public Housing Fund",
+              "subfunction": "604",
+              "category": "Discretionary",
+              "dollars": 7873000000.0
+            }
+          ],
+          "conservation_residual": 0.0,
+          "matching_limit": "Function match only: federal program totals include some territorial/tribal recipients; G uses 2022 expenditure in 2024 prices. No exact recipient or fiscal-year matching is claimed.",
           "already_priced": [
             "603 unemployment (CPS UC_VAL)",
             "605 food and nutrition (SPM SNAP, WIC, school lunch)",
@@ -2121,8 +2271,158 @@
           "rule": "subfunctions 601 and 604 only, per capita; every other income-security subfunction is already inside the account"
         },
         "400_transportation": {
-          "dollars": 136582000000.0,
-          "rule": "per capita"
+          "dollars": 68910000000.0,
+          "gross": 136582000000.0,
+          "federal_grants_netted": 67672000000.0,
+          "grant_programs": [
+            {
+              "row": 3451,
+              "agency": "Department of Transportation",
+              "account": "1735",
+              "name": "Safe Streets and Roads for All",
+              "subfunction": "401",
+              "category": "Discretionary",
+              "dollars": 33000000.0
+            },
+            {
+              "row": 3481,
+              "agency": "Department of Transportation",
+              "account": "1337",
+              "name": "Airport Terminal Program",
+              "subfunction": "402",
+              "category": "Discretionary",
+              "dollars": 596000000.0
+            },
+            {
+              "row": 3482,
+              "agency": "Department of Transportation",
+              "account": "1338",
+              "name": "Airport Infrastructure Grants",
+              "subfunction": "402",
+              "category": "Discretionary",
+              "dollars": 1069000000.0
+            },
+            {
+              "row": 3498,
+              "agency": "Department of Transportation",
+              "account": "8106",
+              "name": "Grants-in-aid for Airports (Airport and Airway Trust Fund)",
+              "subfunction": "402",
+              "category": "Discretionary",
+              "dollars": 3871000000.0
+            },
+            {
+              "row": 3506,
+              "agency": "Department of Transportation",
+              "account": "0500",
+              "name": "Emergency Relief Program",
+              "subfunction": "401",
+              "category": "Discretionary",
+              "dollars": 1097000000.0
+            },
+            {
+              "row": 3517,
+              "agency": "Department of Transportation",
+              "account": "0548",
+              "name": "Highway Infrastructure Programs",
+              "subfunction": "401",
+              "category": "Discretionary",
+              "dollars": 6308000000.0
+            },
+            {
+              "row": 3521,
+              "agency": "Department of Transportation",
+              "account": "0647",
+              "name": "Neighborhood Access and Environmental Programs",
+              "subfunction": "401",
+              "category": "Mandatory",
+              "dollars": 17000000.0
+            },
+            {
+              "row": 3528,
+              "agency": "Department of Transportation",
+              "account": "8083",
+              "name": "Federal-aid Highways",
+              "subfunction": "401",
+              "category": "Discretionary",
+              "dollars": 52684000000.0
+            },
+            {
+              "row": 3530,
+              "agency": "Department of Transportation",
+              "account": "8083",
+              "name": "Federal-aid Highways",
+              "subfunction": "401",
+              "category": "Mandatory",
+              "dollars": 578000000.0
+            },
+            {
+              "row": 3540,
+              "agency": "Department of Transportation",
+              "account": "9911",
+              "name": "Miscellaneous Appropriations",
+              "subfunction": "401",
+              "category": "Discretionary",
+              "dollars": 5000000.0
+            },
+            {
+              "row": 3545,
+              "agency": "Department of Transportation",
+              "account": "9972",
+              "name": "Miscellaneous Highway Trust Funds",
+              "subfunction": "401",
+              "category": "Discretionary",
+              "dollars": 3000000.0
+            },
+            {
+              "row": 3546,
+              "agency": "Department of Transportation",
+              "account": "2817",
+              "name": "Motor Carrier Safety Grants, General Fund",
+              "subfunction": "401",
+              "category": "Discretionary",
+              "dollars": 83000000.0
+            },
+            {
+              "row": 3554,
+              "agency": "Department of Transportation",
+              "account": "8158",
+              "name": "Motor Carrier Safety Grants",
+              "subfunction": "401",
+              "category": "Discretionary",
+              "dollars": 398000000.0
+            },
+            {
+              "row": 3569,
+              "agency": "Department of Transportation",
+              "account": "0671",
+              "name": "Supplemental Highway Traffic Safety Programs",
+              "subfunction": "401",
+              "category": "Discretionary",
+              "dollars": 32000000.0
+            },
+            {
+              "row": 3572,
+              "agency": "Department of Transportation",
+              "account": "8020",
+              "name": "Highway Traffic Safety Grants",
+              "subfunction": "401",
+              "category": "Discretionary",
+              "dollars": 793000000.0
+            },
+            {
+              "row": 3707,
+              "agency": "Department of Transportation",
+              "account": "1713",
+              "name": "Port Infrastructure Development Program",
+              "subfunction": "403",
+              "category": "Discretionary",
+              "dollars": 105000000.0
+            }
+          ],
+          "conservation_residual": 0.0,
+          "matching_limit": "Function match only: federal program totals include some territorial/tribal recipients; G uses 2022 expenditure in 2024 prices. No exact recipient or fiscal-year matching is claimed.",
+          "rule": "per capita after named highway/airport/port grants whose final services are in G; transit grants retained"
         },
         "zero_in_central": {
           "codes": [
@@ -2147,7 +2447,7 @@
         }
       },
       "missing": [],
-      "national_dollars": 1191141685657.4592
+      "national_dollars": 921937113751.8978
     },
     "R|all_per_capita": {
       "item": "R",
@@ -2162,7 +2462,7 @@
       "source": "cache:omb_hist03z1_fy2027.xlsx + params:omb",
       "marginal": false,
       "note": "the central arm with subfunction 604 housing assistance allocated by each record's share of the reported SPM capped housing subsidy instead of per capita; every other part is unchanged",
-      "housing_dollars": 70008000000.0
+      "housing_dollars": 61349000000.0
     },
     "R|all_zero": {
       "item": "R",
@@ -2181,14 +2481,15 @@
       "arm": "per_capita",
       "source": "cache:omb_hist03z1_fy2027.xlsx",
       "marginal": true,
-      "national_dollars": 1788718000000.0
+      "national_dollars": 1760170123314.1353,
+      "tricare_already_priced": 28547876685.86486
     },
     "F|proportional_to_federal_tax": {
       "item": "F",
       "arm": "proportional_to_federal_tax",
       "source": "cache:omb_hist03z1_fy2027.xlsx",
       "marginal": true,
-      "national_dollars": 1788718000000.0
+      "national_dollars": 1760170123314.1353
     },
     "S|half_inside_meps": {
       "item": "S",
@@ -2383,7 +2684,8 @@
         "ma_health_safety_net_state_cost: not verified",
         "co_cover_all_coloradans_children_state_cost: not verified",
         "ca_undocumented_total_general_fund_2024_25: not verified"
-      ]
+      ],
+      "rule": "no extra mixed-year 2025/2026 coverage appropriation in a 2024 account; overlap unverified"
     }
   },
   "marginality_dial": [
@@ -2444,7 +2746,7 @@
       "dialled": false
     }
   ],
-  "break_even_m_star": 0.11668838327241572,
+  "break_even_m_star": 0.15825726289773234,
   "inputs": [
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
@@ -2457,6 +2759,10 @@
     {
       "path": "/Users/alien/Projects/immigration-research/sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256su.txt",
       "sha256": "a7bd4eca49833f40df45b53aad803dfca15b1a3a9b1de03aa6e79f508c5e24be"
+    },
+    {
+      "path": "infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json",
+      "sha256": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922"
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/state_parameters.csv",
@@ -2488,7 +2794,47 @@
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/absolute_ledger.py",
-      "sha256": "2ee6157643bf8bae930f0a82ae539bd301e3fd83453768af48119121c4b7fae7"
+      "sha256": "fc234ffe3321c69cb8d2bb6b18b29ca06f900eac6dd67b7a3fd32ef81fc9cddf"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/consolidation.py",
+      "sha256": "81cbc8a3ec926358707eb850578347f761262aae2d4f084dccf68a074bee7e94"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/profile_export.py",
+      "sha256": "34127541ff858a006f7b6fb4662eb717641292bf14286cd107e376dd2ec6ea62"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/extend_ledger.py",
+      "sha256": "460c17f349a8651946d2000c2f7ba968663038bca7938a83a804eef41737ebd7"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/build/analyze_cps_fiscal_2025.py",
+      "sha256": "17c57aa74867fb099daaf83259a6c04f1b84e741b3ca5513e273da6eeda743dd"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_residual_agg_2026_09_16/residual_agg.py",
+      "sha256": "93a038f4d930750ea5c9dd5edf1967714cd6a4720749761d042f1b93e544e6ff"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/all_age_ledger_2026_09_17/analyze.py",
+      "sha256": "eadbad147c80012ca4bb76f76f5feae9517757ace007938d5d069c958ee979b4"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/build/meps_health_transport_2024.py",
+      "sha256": "8a3eda7a2fce7b27f2e4cb0aa865526d7c188893644c39b7693d05e6632fd587"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/all_age_ledger_2026_09_17/estimator.py",
+      "sha256": "6ef0d6ce99c484c01313a288361c8f7f00c6919950c655e9f4bf0367f354db8a"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/_cache/outlays_fy2027.xlsx",
+      "sha256": "d892f2247e6c1aed68414d3e4168f8b4ab97bcfc7acf82a6a449a3fcb1addb07"
+    },
+    {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/_cache/omb_hist12z3_fy2027.xlsx",
+      "sha256": "43aa30c0d39116909b990a93926540fd173bce4963f26ee3a0d28a6f900d974d"
     }
   ],
   "medical_anchors": {
@@ -2523,9 +2869,10 @@
   "unpriced": [
     "OMB function 920 allowances and 950 undistributed offsetting receipts",
     "federal and state capital stock other than school capital",
-    "the reported housing-subsidy base in the CPS (SPM_CAPHOUSESUB sits outside the account's selected non-cash transfers); federal housing assistance is instead carried whole as OMB subfunction 604 inside item R",
-    "Social Security under-reporting: its admin/survey ratio is 1.0881, above 1, and the brief applies Social Security only when that ratio is below 1",
-    "item S outside the waterfall: the brief's waterfall order does not include it, so the state coverage charge is reported per item but not accumulated",
+    "the reported housing-subsidy base in the CPS (SPM_CAPHOUSESUB sits outside the account's selected non-cash transfers); federal housing assistance is instead carried as OMB subfunction 604 less the named physical-housing grants inside item R",
+    "unmapped state-local other charges and miscellaneous general receipts",
+    "unresolved federal grant recipient/timing matches outside the named transportation and physical-housing programs",
+    "item S mixed-year coverage appropriations are diagnostic only; no additional 2024 central charge",
     "state and local capital outlay outside K-12 beyond what items G and P carry: the Census of Governments gives no capital sub-line for public welfare, health, airports, ports, housing and community development, general public buildings or the unallocable residual, so the split between what item G already charges and what item P adds is exact only for the functions that publish one",
     "deficit finance: the account charges outlays, not the tax burden that would fund them",
     "emigration, mortality and any lifetime or dynamic margin"

@@ -6,8 +6,19 @@
     "excise_federal_share": 0.32331259584127675,
     "tanf_federal_share": 0.55,
     "unemployment_federal_share": 0.0,
+    "matched_federal_grants": 82595000000.0,
+    "corrections_federal_share": 0.0,
+    "grant_financing_allocation": "ASSUMPTION: national per-resident financing of the grants netted from R, not observed state grant shares; G includes the corresponding services net of its own-source fee credit",
     "k12_current_spending_us": 817027465093.9199,
-    "nursing_federal_share": 0.7367621505197333
+    "nursing_federal_share": 0.7367621505197333,
+    "corrections_financing_status": "ASSUMPTION: ACS institutional proxy does not identify government payer; 0/1 runs bound this split"
+  },
+  "builder_sha256": "aac257b5db5c393b72c0d88206fac68b0bb8675252740db31604a37a7ebeb1c1",
+  "annual_audit_sha256": "6f5dbb7dad8f70e221e0b709f1a54bd86655949bc3c45f205ce4cd62f7e5db06",
+  "output_sha256": {
+    "account_by_level.csv": "94279cdeecd82d0a334c6fa7256d89e70d862bf23604910f625d4688fc4bf120",
+    "incidence_matrix.csv": "5e69338e6c3e3d566958b871236f712a340200d7d9b3d9a65e6bcb4705686452",
+    "interest.csv": "19cbaab0cd8d0e4f48ae2f6f6b6128ce5d552b65373b5e9929e1c66b1b0eba02"
   },
   "federal_receipt_mix": {
     "fed_individual_income": 0.5090057541658223,
@@ -88,7 +99,9 @@
   },
   "native_households_weighted": 117199840.75543512,
   "native_households_unweighted": 48068,
-  "gate_union_absolute_bn": -478.3081600612676,
+  "gate_union_absolute_bn": -428.9676882428087,
+  "gate_live_annual_anchor_bn": -428.9676882428088,
+  "annual_params_sha256": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922",
   "central_arms": {
     "G": "deflated2024",
     "K": "central",
@@ -97,12 +110,12 @@
     "U": "central",
     "I": "central",
     "M": "central",
-    "E": "stock",
+    "E": "zero",
     "C": "wage25_capital75",
     "X": "per_capita",
     "R": "central",
     "F": "zero",
-    "S": "half_inside_meps"
+    "S": "all_inside_meps"
   },
   "item_F_arm": "per_capita",
   "medical_anchors": {
