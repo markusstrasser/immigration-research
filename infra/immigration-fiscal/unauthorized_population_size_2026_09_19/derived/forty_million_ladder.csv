@@ -1,0 +1,11 @@
+definition,population,se,basis,reaches_40m
+"A. No lawful status: Borjas residual, ACS 2024, counted",12973901,98154.0,"ACS 2024 1-year PUMS, rule list of Borjas (2017), no coverage adjustment",False
+"B. A, with the DHS OHSS coverage model",13953938,,13% at arrival declining 7.5% per year of presence,False
+"C. A, with the CMS 2024 coverage model",15856155,,"5% for 1982-2020 arrivals, 37% for 2021-2024 arrivals",False
+"D. A, with CMS's highest published country rate on every recent arrival",21079770,,"5% pre-2021, 65% for 2021-2024; an upper bound, not an estimate",False
+"E. CPS ASEC 2025 residual, same rule list, counted",14896401,316399.0,CPS ASEC 2025; the survey the repo's ledger runs on,False
+"F. Every non-citizen in the ACS, counted",24402333,117774.0,"CIT==5: includes green-card holders, students, H-1B and every temporary visa",False
+"G. F, with the upper-bound coverage model",38078940,,applies a recent-arrival undercount rate to lawful permanent residents too,False
+H. F plus every US-born person living with a non-citizen,42156871,,a mixed-status-household count; most of the added people are US citizens,True
+H'. F plus US-born children under 18 living with a non-citizen,34536637,,the narrower mixed-status reading,False
+I. Every foreign-born person in the ACS,50280846,125793.0,NATIVITY==2; about half are naturalised US citizens,True

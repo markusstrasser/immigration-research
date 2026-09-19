@@ -1,0 +1,9 @@
+{
+  "highest_published_undercount_rate_pct": 65.0,
+  "highest_published_undercount_scope": "CMS 2026 Table A1, Ecuadorians who arrived 2021-2024 only; CMS's rate for 1982-2020 arrivals is 5 percent",
+  "implied_undercount_rate_pct": 39.0,
+  "multiplier_on_all_non_citizens_to_reach_40m": 1.6392,
+  "non_citizens_counted": 24402333,
+  "us_born_children_under_18_living_with_a_non_citizen": 10134304,
+  "us_born_living_with_a_non_citizen": 17754538
+}

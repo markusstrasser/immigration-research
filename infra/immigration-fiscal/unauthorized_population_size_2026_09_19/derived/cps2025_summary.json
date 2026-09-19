@@ -1,0 +1,13 @@
+{
+  "borjas_residual_mexico_born": 4567144,
+  "borjas_residual_mexico_se": 165012,
+  "borjas_residual_se": 316399,
+  "borjas_residual_unadjusted": 14896401,
+  "cps_asec_2025_person_rows": 142125,
+  "foreign_born": 53118195,
+  "foreign_born_se": 482358,
+  "max_full_weight_difference": 0.005049970000015946,
+  "residual_arrived_2022_or_later": 3796130,
+  "residual_arrived_2022_or_later_se": 179346,
+  "weighted_total_population": 337689642
+}

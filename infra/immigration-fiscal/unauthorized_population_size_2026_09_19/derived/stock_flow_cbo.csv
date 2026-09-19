@@ -1,0 +1,6 @@
+as_of,opening_stock,cbo_ofn_net,closing_stock,note
+2022-01-01,,,10990000,"DHS OHSS published residual, January 1 2022"
+2023-01-01,10990000.0,2000000.0,12990000,"CBO calendar-year net immigration, OFN category"
+2024-01-01,12990000.0,2400000.0,15390000,"CBO calendar-year net immigration, OFN category"
+2025-01-01,15390000.0,1300000.0,16690000,"CBO calendar-year net immigration, OFN category"
+2026-01-01,16690000.0,-360000.0,16330000,"CBO calendar-year net immigration, OFN category"
