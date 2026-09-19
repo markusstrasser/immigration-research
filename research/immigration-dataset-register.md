@@ -1,5 +1,31 @@
 # Immigration — Dataset Register
 
+## September19 observed state/local finance refresh
+
+**CENSUS_SLGF_2024_AND_2022.** US Census public aggregates, [FY2024 release,
+July2026](https://www.census.gov/data/datasets/2024/econ/local/public-use-datasets.html);
+[API documentation](https://www.census.gov/data/developers/data-sets/govslocalfin.html).
+Acquired2026-09-19. Government type001; 50 states/DC and independent US totals.
+Ignored cache: `infra/immigration-fiscal/macro_closure_2026_09_19/_cache/`.
+Public queries, byte counts, rows and SHA256: [pinned manifest](../infra/immigration-fiscal/macro_closure_2026_09_19/census_sources.json).
+
+Schema: geography × YEAR × GOVTYPE × AGG_DESC; AMOUNT in **thousands of dollars**,
+with amount flags/CV retained. Four data responses plus variables metadata and
+FY2024 methodology. Repeated predicate columns must agree before collapsing.
+Omitted state values become zero at published precision only after nonnegative
+reported cells exhaust the independent US control. Flagged values fail.
+
+Use: G/P functions, mapped fees and combined state/local corporate/selective-sales
+taxes. The [generator contract](../infra/immigration-fiscal/macro_closure_2026_09_19/README.md)
+specifies codes and Census2024 population join excluding Puerto Rico. Different
+fiscal year ends and survey uncertainty remain; this is not ethnic microdata.
+
+Paired existing source: BEA `Section3All_xls.xlsx`, August26,2026 vintage,
+tables3.1/3.2/3.3/3.18B, hashed read-only at
+`/Users/alien/research-data/immigration-fiscal/data/external/bea_nipa/`.
+Table3.19 ends2023. [Macro memo](immigration-macro-reconciliation-2026-09-19.md)
+documents current/capital, fiscal/calendar and grant-consolidation boundaries.
+
 This is the working register for the immigration project. It is not the byte-level storage manifest. For raw-file inventory and trap-file warnings, see `sources/immigration-fiscal/data/MANIFEST.md`. For datasets we **don't have yet** (acquisition targets, crime + benefit-side gaps), see `research/immigration-dataset-roadmap.md`.
 
 **Verified storage update, 2026-09-05:** `sources` currently points to a missing SSD offload directory. Historical paths below describe the older layout and are not proof of current availability. Verified fiscal raw root: `/Volumes/2TBPNY/research-data/immigration-fiscal/data`; corrected derived root: `/Volumes/2TBPNY/research-data/immigration-fiscal/derived`. Local warehouses remain in `warehouse/`. The [repair report](immigration-material-repair-report-2026-09-05.md) governs corrected outputs; the [recent acquisition memo](immigration-dataset-proxy-refresh-2026-09-05.md) binds new files to hashes and source definitions.

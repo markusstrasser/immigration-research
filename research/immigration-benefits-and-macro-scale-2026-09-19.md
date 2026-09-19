@@ -1,5 +1,9 @@
 # Population-normalized fiscal differences, macro scale and benefits
 
+**Later release, 2026-09-19:** Use [observed2024 finance and national boundaries](immigration-macro-reconciliation-2026-09-19.md)
+and [matched skills/capital/tax benefits](immigration-matched-benefits-2026-09-19.md).
+The homogeneous fixed-capital case below is a retained benchmark, not a bound.
+
 Date: 2026-09-19. Calculation index, not essay text. [FRAMING-SENSITIVE]
 Gains to residents outside the observed Mexican-origin union differ from gains
 to all natives, all citizens or everyone. LLM-assisted interpretation is subject
@@ -110,3 +114,9 @@ characteristics requires out-of-sample comparison and transport to the actual
 admission cohort. Irish/French historical comparisons need matched cohort, age
 and ancestry definitions before numerical ranking. No new causal ethnic
 mechanism is established here.
+
+## Revisions
+
+2026-09-19, later: [Matched accounts and projection checks](../decisions/2026-09-19-matched-accounts-and-projection-checks.md)
+extends benefits to skills, capital adjustment and tax/private conservation,
+and updates the available state/local fiscal source vintage.
