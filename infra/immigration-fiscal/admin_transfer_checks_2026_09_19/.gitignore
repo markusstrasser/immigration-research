@@ -1,0 +1,5 @@
+derived/
+_cache/
+__pycache__/
+*.xlsx
+PROGRESS.md
