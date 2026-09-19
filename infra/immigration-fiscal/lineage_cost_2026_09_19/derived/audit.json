@@ -1,0 +1,135 @@
+{
+ "attrition": {
+  "attriter_gap_per_person": -1417.6,
+  "attriter_retained_share_of_gap": 0.19950742382661318,
+  "attriter_share": 0.1119,
+  "fourth_plus_identification_rate": 0.8881,
+  "selfid_gap_per_person": -7105.5
+ },
+ "checks": [
+  {
+   "check": "shared/partial == all_age_shared",
+   "max_abs_diff_usd": 9.094947017729282e-12,
+   "pass": true
+  },
+  {
+   "check": "reproduce ledger_absolute lifetime/period_profiles.csv",
+   "max_abs_diff_usd": 5.820766091346741e-11,
+   "pass": true,
+   "rows": 768
+  },
+  {
+   "check": "locate pronatal_equivalence lifetime balances",
+   "identified_grid": [
+    "personal/partial/total/last82",
+    "shared/partial/hispanic/last100",
+    "shared/partial/hispanic/last82",
+    "shared/partial/nh_white/last100",
+    "shared/partial/nh_white/last82",
+    "shared/partial/total/last100"
+   ],
+   "max_abs_diff_usd": 9098.758402557403
+  }
+ ],
+ "crime_line": "reported separately from the fiscal line; the corrections component is already inside the expanded fiscal account, so the incremental crime cost is social minus corrections",
+ "crime_rates": {
+  "A1_bjs_stock": {
+   "mexican": {
+    "corrections": 423.3,
+    "social": 1419.2,
+    "tangible": 507.6
+   },
+   "white": {
+    "corrections": 191.9,
+    "social": 553.4,
+    "tangible": 222.3
+   }
+  },
+  "A2_acs_stock": {
+   "mexican": {
+    "corrections": 841.2,
+    "social": 2820.2,
+    "tangible": 1008.8
+   },
+   "white": {
+    "corrections": 485.2,
+    "social": 1399.1,
+    "tangible": 562.0
+   }
+  },
+  "status_texas_arrests": {
+   "foreign_born": {
+    "adult_share": 0.9352399898909385,
+    "corrections": 54.9577868307297,
+    "social": 824.1269388939203,
+    "tangible": 135.1835800078901
+   },
+   "undocumented": {
+    "adult_share": 0.9114348378084641,
+    "corrections": 30.681644852680776,
+    "social": 454.7912947860227,
+    "tangible": 75.13155868021624
+   },
+   "usborn_citizen": {
+    "adult_share": 0.7021316530219343,
+    "corrections": 98.03192849055297,
+    "social": 1389.8223442855028,
+    "tangible": 237.6136146005486
+   }
+  }
+ },
+ "fertility": {
+  "age_std_own_children": {
+   "mexican_second_gen": 0.1921,
+   "mexican_third_plus_selfid": 0.2082,
+   "mexico_born": 0.2514,
+   "third_plus_nh_white": 0.2275
+  },
+  "high_nvsr2010": {
+   "mexican_second_gen": 2.256,
+   "mexican_third_plus_selfid": 2.256,
+   "mexico_born": 2.256,
+   "third_plus_nh_white": 1.791
+  },
+  "low_cps2025": {
+   "mexican_second_gen": 1.2940362637362637,
+   "mexican_third_plus_selfid": 1.40249010989011,
+   "mexico_born": 1.6934967032967034,
+   "third_plus_nh_white": 1.5325
+  },
+  "mean_age_at_birth": {
+   "mexican_second_gen": 28.270562919438362,
+   "mexican_third_plus_selfid": 29.193748952376495,
+   "mexico_born": 31.703769383195223,
+   "third_plus_nh_white": 31.46554429771846
+  }
+ },
+ "founder_start_age": 25,
+ "generation_length_central": 29,
+ "horizon_years": 100,
+ "inputs_sha256": {
+  "all_age_ledger_2026_09_17/derived/age_profiles.csv": "4c7a0871cb8a9eaea7e8d033357d9a04b4b96dc620692d992af72723c045e0db",
+  "crime_cost_2026_09_16/crime_cost_by_group.csv": "2ee150fc75d1f6e198ed43e0f6918991feb03cfc347d3f4e99591e2fda31a702",
+  "crime_cost_firstgen_2026_09_18/derived/audit.json": "92113524bb788eb7a75267f884cab9974e0f632cb71c5da743b84bc659e5385c",
+  "crime_cost_firstgen_2026_09_18/derived/firstgen_cost_weighted.csv": "684cf6ad1b6ec08af251974d7bc9b8d722212c26bbb49c5a8a953ae46f21233a",
+  "demo_momentum_2026_09_16/cps_fertility_agestd.csv": "6b7e9902465b1281190ae340a82d39901d8d845d700a1287fd14250d1580dac0",
+  "ledger_absolute_2026_09_17/derived/age_profiles.csv": "ddac25cc844f7fd72ec48937377ae29deff53bc826202a536725f15513dab12a",
+  "ledger_absolute_2026_09_17/derived/lifetime/period_profiles.csv": "3a6e570fada6019c0d655f51f66ac8d9b1b6fc08abb03bcd3d927e967362ec33",
+  "ledger_absolute_2026_09_17/derived/waterfall.csv": "e96079cca8dab7cfd528f6de240504c85c83cb1b748d6ddc0f0d1f390c6cd65b",
+  "lifetime_longevity_sstiming_2026_09_18/derived/survival_tables.csv": "b18d4c85756730b99be26840b5bc8e432052247b83fe9a4f069a9a6aa41fbb1a",
+  "mexican_origin_population_total_2026_09_19/derived/arm3_correction_bounds.csv": "609dc69ce4a34befeb7ecd3af83b9448c4fced7f1e7939bac10f6b668716fe63",
+  "mexican_origin_population_total_2026_09_19/derived/arm5_fiscal_implication.csv": "af4a05a7bdce82608223fff0e8d33fdf700be7f8fb5304a2912f18bc17f19a33",
+  "pronatal_equivalence_2026_09_18/derived/lifetime_equivalence.csv": "dde6613b2d4ba8acfa5302d7c362808160ad59096799e6896fe315a462ed826b",
+  "status_impute_2026_09_16/RESULT.md": "7edabaee75a171b785227a55bc69cc5ae5b00f3b753ee9e996cbc4cb55f74ef4"
+ },
+ "interpretation": "survival-weighted period-profile lineage scenario; not a cohort projection, not an admission-policy counterfactual, no general equilibrium, no behavioural response, no wage growth by default",
+ "lane": "lineage_cost_2026_09_19",
+ "price_year": 2024,
+ "unauthorized_penalty": {
+  "imputed_unauthorized": -9720.0,
+  "penalty_per_adult_year": -870.0,
+  "pooled_mexico_born": -8850.0,
+  "source": "status_impute_2026_09_16/RESULT.md section 3 corrected arm",
+  "unit": "2024 USD per adult 25-64 per year, corrected arm (taxes - transfers)"
+ }
+}
