@@ -1,0 +1,49 @@
+=== inputs ===
+exit-poll Hispanic two-party Democratic share and the CPS share of voters
+ year  hisp_dem  hisp_rep  hisp_dem2p  exit_hisp_pct_of_voters  cps_mex_pct_of_voters  cps_hisp_other_pct
+ 2000        62        35       63.92                        7                    NaN                 NaN
+ 2004        53        44       54.64                        8                   3.34                2.69
+ 2008        67        31       68.37                        9                   3.96                3.47
+ 2012        71        27       72.45                       10                   4.41                4.00
+ 2016        66        28       70.21                       11                   4.99                4.23
+ 2020        65        32       67.01                       13                   6.05                4.59
+ 2024        51        46       52.58                       11                   6.04                4.70
+
+Pew validated voters (Hispanic voters), the higher-graded series:
+ year  hisp_dem  hisp_rep                      pew_source  dem2p
+ 2020        59        38   Pew 2021 report, as published  60.82
+ 2020        61        36 Pew 2025 report, restating 2020  62.89
+ 2024        51        48                 Pew 2025 report  51.52
+  NOTE a restatement: Pew's 2020 Hispanic figure is 59/38 in its 2021 report and 61/36 when restated in its 2025 report. Both are carried; the decomposition uses the exit-poll series for continuity back to 2004 and reports the Pew-based version alongside.
+
+=== decomposition of the national Democratic two-party share change ===
+all entries in points of the national two-party Democratic share
+                                             window  total_change_pp  composition_pp  conversion_pp  interaction_pp  mexican_share_composition_pp  mex_share_of_voters_start_pct  mex_share_of_voters_end_pct  hisp_dem2p_start  hisp_dem2p_end  nonhisp_dem2p_start  nonhisp_dem2p_end source
+                             exit polls, 2004->2024             0.49           0.294          0.315          -0.119                         0.169                          3.343                        6.041            54.639          52.577               48.382             48.850   exit
+                             exit polls, 2012->2024            -2.71           0.520         -2.797          -0.433                         0.364                          4.414                        6.041            72.449          52.577               50.077             48.850   exit
+exit polls, 2004->2012 (the pre-realignment window)             3.20           0.149          2.667           0.384                         0.067                          3.343                        4.414            54.639          72.449               48.382             50.077   exit
+
+2004->2024: the total move is +0.49 points. Rising group shares contribute +0.29; moving group partisanship contributes +0.31; the cross term -0.12.
+The Mexican-origin share of voters rose from 3.34% to 6.04% of all voters. Holding that group's partisanship at its 2004 level, the share rise alone is worth +0.17 points of the national Democratic two-party share, measured against the non-Hispanic voters it displaces.
+
+sensitivity, Mexican-origin voters 5 points more Republican than other Hispanic voters in both years: composition +0.28, conversion +0.32 (main run +0.29 / +0.31)
+
+=== turnout, the other half of the composition channel ===
+CPS reported turnout of citizens 18+, by group (percent):
+group  hisp_other  mexican  non_hispanic
+year                                    
+2004         53.2     43.2          65.3
+2008         56.7     45.1          65.1
+2012         56.4     42.2          63.5
+2016         52.0     44.4          63.3
+2020         56.9     51.5          68.8
+2024         55.6     47.2          67.7
+Mexican-origin citizens' share of the citizen voting-age population (percent):
+year
+2004    4.94
+2008    5.59
+2012    6.46
+2016    6.90
+2020    7.84
+2024    8.36
+turnout gap, non-Hispanic minus Mexican-origin citizens: 17.3 to 22.1 points, 20.0 on average; it does not close over the window

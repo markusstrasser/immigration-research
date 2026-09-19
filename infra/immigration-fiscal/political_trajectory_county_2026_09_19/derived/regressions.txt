@@ -1,0 +1,38 @@
+panel: 3,103 counties x 7 years = 21,721 rows; outcomes and regressors in percentage points
+
+=== presidential two-party Democratic share ===
+S1             mex_pp                       b=-0.0211  se=0.1486  t=-0.14  95% CI [-0.3122, +0.2701]  n=21,721 clusters=49
+S2             mex_pp                       b=+0.4891  se=0.1438  t=+3.40  95% CI [+0.2073, +0.7709]  n=21,721 clusters=49
+S3             d_mex                        b=-0.1208  se=0.2607  t=-0.46  95% CI [-0.6319, +0.3902]  n=3,103 clusters=49
+  [S4 instrument] national Mexican-origin growth 2000-2024 in-panel = 81.3%; z_i = mex_share_i,2000 x g
+S4             d_mex (instrumented)         b=-0.4240  se=0.3649  t=-1.16  n=3,103  first-stage F=22.9
+S5             mex_pp                       b=+0.4511  se=0.3518  t=+1.28  95% CI [-0.2383, +1.1406]  n=19,201 clusters=45
+S6             mex_pp                       b=+0.5971  se=0.1768  t=+3.38  95% CI [+0.2506, +0.9436]  n=9,309 clusters=49
+S7             d_mex_late                   b=-0.2218  se=0.2508  t=-0.88  95% CI [-0.7133, +0.2698]  n=3,103 clusters=49
+S8             mex_pp                       b=+0.2016  se=0.1478  t=+1.36  95% CI [-0.0880, +0.4912]  n=21,721 clusters=49
+               nonmex_hisp_pp               b=+0.7112  se=0.1812  t=+3.93
+S9             mex_pp                       b=+0.1292  se=0.1449  t=+0.89  95% CI [-0.1548, +0.4132]  n=15,515 clusters=49
+S10            hisp_pp                      b=+0.4448  se=0.1800  t=+2.47  95% CI [+0.0920, +0.7977]  n=21,721 clusters=49
+  [scale] raw sd(mex_pp)=11.31pp; after county and state x year FE the residual sd is 1.55pp; within-county 2000->2024 change: median 1.56pp, p90 7.79pp
+
+=== turnout (total votes / citizen voting-age population), 2008-2024 ===
+T1             mex_pp                       b=-0.0881  se=0.2830  t=-0.31  95% CI [-0.6428, +0.4666]  n=15,515 clusters=49
+T2             mex_pp                       b=-0.1945  se=0.2168  t=-0.90  95% CI [-0.6194, +0.2303]  n=15,515 clusters=49
+
+=== Rio Grande Valley and South Texas border counties, 2020 -> 2024 ===
+          county  mex_share_pp_2024  dem2p_2012  dem2p_2016  dem2p_2020  dem2p_2024  swing_2020_2024  swing_2012_2024  votes_2024
+fips                                                                                                                             
+48427      Starr               92.4        86.9        80.7        52.5        42.0            -10.5            -44.9       16419
+48323   Maverick               90.7        79.3        78.7        54.8        40.7            -14.1            -38.6       15743
+48479       Webb               90.2        77.2        76.6        61.8        48.9            -12.9            -28.3       65845
+48505     Zapata               89.3        71.7        66.7        47.3        38.7             -8.6            -33.0        4871
+48215    Hidalgo               87.6        71.1        71.0        58.6        48.6            -10.0            -22.5      217194
+48061    Cameron               84.2        65.7        66.8        56.6        47.1             -9.5            -18.6      116122
+48489    Willacy               83.8        71.8        68.9        56.0        48.3             -7.7            -23.5        5563
+48131      Duval               77.1        77.3        67.9        51.3        45.1             -6.2            -32.2        4461
+48247   Jim Hogg               76.4        78.5        79.2        59.0        54.1             -4.9            -24.4        1585
+48465  Val Verde               73.9        52.7        54.2        45.0        36.6             -8.4            -16.1       14578
+48273    Kleberg               65.5        53.9        51.9        49.1        43.6             -5.5            -10.3       10010
+48355     Nueces               56.1        48.3        49.2        48.5        44.2             -4.3             -4.1      121614
+vote-weighted 2020->2024 swing across these counties: -9.0 points
+all 72 counties at or above 50% Mexican origin in 2024: vote-weighted Dem two-party share 54.7 (2012) -> 56.5 (2016) -> 52.5 (2020) -> 45.4 (2024)
