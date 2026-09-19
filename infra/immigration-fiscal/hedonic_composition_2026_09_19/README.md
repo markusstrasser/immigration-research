@@ -1,5 +1,7 @@
 # Hedonic composition lane — what neighbourhood composition is worth in housing prices
 
+> **Status correction, 2026-09-19:** This is a modern adaptation, not an exact reproduction of the original study. See the [specification check and frozen-input comparisons](../../../research/immigration-hedonic-replay-2026-09-19.md). Original-data replay remains pending; existing estimates are preserved.
+
 Within-metro capitalisation of Hispanic, Mexican-origin and foreign-born neighbourhood
 share into rents and house values, 2013–2023, reproducing the design of
 **Saiz and Wachter (2011), "Immigration and the Neighborhood," American Economic Journal:
