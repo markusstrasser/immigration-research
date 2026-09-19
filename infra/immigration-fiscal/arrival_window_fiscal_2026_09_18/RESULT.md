@@ -1,5 +1,12 @@
 claude-opus-5[1m]
 
+## Audit correction — September 19, 2026
+
+**The recent-arrival “complete” balance is a partial account plus G, K, X and R.** It omits P, D, U, I, M, N, E, C and S, so it is not comparable to the full expanded account's endpoint. Retain the stock-by-arrival-window descriptions and their age-support uncertainty; do not call this an admission-cohort NPV or a fully reconciled balance. [SOURCE: component list in the retained result]
+
+This supersedes conflicting interpretations below; calculations are retained as evidence. [Audit index](../../../research/immigration-five-day-cross-check-2026-09-19.md).
+
+
 **Verdict:** The Mexico-born fiscal account by arrival window is **age structure first, cohort quality second**. On the raw (partial) account the most recent arrivals look *best* — the 2016-2025 window is **+$3,495 per person per year**, the only clearly positive window — but that is because 72.5% of them are aged 18-54 and only 3.2% are 65+. Once age is held fixed on the common-age standard the same window is **−$3,978 per standardized person versus third-plus non-Hispanic white**, still the least negative of the five, with the older windows clustered at −$4,800 to −$5,300. Under the complete account (adding the four flat central charges) **every window is negative per person**, from −$9,288 (pre-1990) to −$2,318 (2016-2025). The cohort trend is **improving in point estimate and flat in evidence**: the first difference turns positive after the 1990s window and grows to +$847 per window, but its standard error is +/-1,575, so **no adjacent-window change reaches one standard error** and the second derivative (+$403 to +$423, SE 1,268-2,451) carries no information at all.
 
 [DATA] [INFERENCE] — CPS ASEC 2025 (income year 2024) and MEPS HC-256, via the held lanes. Model-based charges, not observed receipts.

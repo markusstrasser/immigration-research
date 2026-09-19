@@ -1,5 +1,12 @@
 # Native Employment at Labor-Market Entry and Low-Skill Immigration — US Metro Replication
 
+## Audit correction — September 19, 2026
+
+**Identification remains unresolved.** Within a single window, multiplying one instrument by any nonzero scalar leaves its first-stage F and 2SLS estimate unchanged. A small or negative national shift alone cannot explain weak identification or a coefficient reversal. Pooled-window relative shifts, exposure-outcome correlation and sample changes can matter. A flat college control does not establish absence of demand confounding. Retain the actual F statistics and intervals; remove the unsupported explanation. [SOURCE: principal code and independent IV scaling probe in the mechanisms audit]
+
+This supersedes conflicting interpretations below; calculations are retained as evidence. [Audit index](immigration-five-day-cross-check-2026-09-19.md).
+
+
 Model self-report: `claude-opus-5[1m]` (verbatim from the environment-info block).
 
 **Verdict:** UNINFORMATIVE on the estimand, and the reason is the finding. A US metro replication of the Dustmann–Schönberg–Stuhler native-entry-employment result cannot be identified on 2005–2023 with either the conventional past-settlement instrument or the Jaeger–Ruist–Stuhler correction. The best-identified number, the 10-year single-instrument IV (first-stage F 145), is −0.43 points of native no-college E/POP per 1-point rise in the Mexico-born share, 95% interval [−1.28, +0.42], which contains zero and the DSS benchmark (about −0.6 to −0.9) at comparable distance. The 5-year single instrument is powerless when pooled (F 3.6) because the national Mexico-born stock stopped growing in 2008 and then fell, so the shift half of the shift-share is near zero or negative; window by window it flips sign (+1.20 [+0.62, +1.77] in 2008–13, −0.83 [−1.77, +0.10] in 2013–18), and the one window that looks like DSS fails a pre-trend placebo (+2.36, SE 0.53, opposite sign). The JRS correction is underidentified here exactly as JRS report for every US decade after the 1970s: current and lagged multi-origin predicted inflows correlate 0.82 across metros and Shea's partial R² is 0.0007, so its coefficient (−9.65 [−53, +34]) is noise. The college control group does not move (+0.09 [−0.62, +0.80]), so the no-college estimate is not a metro-demand artifact, but the two are not distinguishable. Nothing here contradicts DSS; nothing here replicates it. [SOURCE: `infra/immigration-fiscal/employment_entry_2026_09_18/derived/estimates.csv`, `derived/placebo_single.csv`; every row re-run by the parent session 2026-09-18, byte-identical]
@@ -456,3 +463,8 @@ gated]
 ## Revisions
 
 2026-09-18, first version. Lane computed the estimates and closed before writing the verdict and results; the parent session re-ran the estimation (byte-identical), added the single-instrument placebo and wrote sections 3 and 5 from the derived files. Concept affected: identification of the employment-entry effect of Mexican inflows on recent US data; qualifies the canon audit's reading of C7/C8 by showing neither instrument identifies it after 2008.
+
+
+## Revisions — September 19, 2026
+
+Corrected the interpretation for the reasons above; see the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md).

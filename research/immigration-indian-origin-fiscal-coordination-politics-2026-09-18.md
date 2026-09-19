@@ -1,5 +1,12 @@
 # Indian-origin residents: the treasury, co-ethnic coordination, giving and the vote
 
+## Audit correction — September 19, 2026
+
+**The favorable working-age fiscal contrast and civic participation point estimates remain descriptive findings.** Compare fiscal figures with Mexico only on the same ledger, ages and allocation. CPS civic standard errors use weight/model approximations rather than the full survey design. Comparing opt-in IAAS vote estimates with separate GSS white-graduate groups is a benchmark sensitivity, not an identified education decomposition or an exact adjusted 6–14-point residual. The small second-generation adult cell does not project the still-young descendant population. The existing one-firm limit on adjudicated favoritism remains essential. [SOURCE: linked lane methods and fiscal/mechanisms audit evidence]
+
+This supersedes conflicting interpretations below; calculations are retained as evidence. [Audit index](immigration-five-day-cross-check-2026-09-19.md).
+
+
 Model self-report: claude-fable-5-1 (parent synthesis); lanes ran on claude-opus-5. September 18, 2026.
 Lanes: `infra/immigration-fiscal/indian_ledger_2026_09_18/`, `indian_civic_cps_2026_09_18/`,
 `indian_coordination_2026_09_18/`, `indian_politics_2026_09_18/`. Each `RESULT.md` carries the
@@ -199,3 +206,8 @@ Senate and governors not verified; FARA filings for the Indian government not re
 ## Revisions
 
 - 2026-09-18 — created. Ladder 150–153.
+
+
+## Revisions — September 19, 2026
+
+Corrected the interpretation for the reasons above; see the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md).

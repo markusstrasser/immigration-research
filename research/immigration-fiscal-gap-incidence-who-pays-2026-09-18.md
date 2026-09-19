@@ -1,3 +1,12 @@
+# Correction to the September 18 account
+
+## Current correction — September 19, 2026
+
+**Verdict:** The $2,246 per native-headed household and 89% state-local figures are imposed financing allocations under the central average-cost scenario, not measured bills caused by the Mexican-origin population. Federal grants are not fully netted from the state-local account, and the federal share changes materially with the public-goods convention. The code reproducing the total verifies a partition, not causal incidence. Retain the same-rule white-population control and the alternate arms; do not present the central split as an observed fiscal burden. [SOURCE: construction and limitations below; INFERENCE]
+
+This correction governs conflicting claims in the retained assessment below. Evidence and scope: [five-day cross-check](immigration-five-day-cross-check-2026-09-19.md).
+
+## Retained assessment and evidence
 claude-opus-5[1m]
 
 **Verdict:** The complete resident account's Mexican-origin balance of −$263.22bn is overwhelmingly a **state-and-local** deficit, not a federal one: −$235.10bn of it (89%) is charged by states, counties, school districts and municipalities, and only −$28.12bn (11%) by Washington. Spread over the 117.20m native-headed households the annual figure is **$2,246 per household** under average financing and **$2,014** under marginal financing, where only the federal tenth is borrowed and only its interest falls due. It is **regressive as a share of income** — 7.39% of the bottom native decile's resources against 2.57% of the top decile's — because state-local revenue is mostly property, sales and user charges. In California it is **$8,498 per native household**, in Texas **$5,177**. The property-tax pass-through arm the brief asks about moves nothing: total unchanged, renters ±$149, owners ∓$73. What moves the answer is item F. And the control settles the interpretive question: the financing share vector is **identical for every group**, so the same matrix applied to the third-plus non-Hispanic white reference's own −$390.75bn gives **$3,334 per native household, 48% more**. Nothing in the distribution is about Mexican-origin residents. Only the scalar is.
@@ -250,3 +259,8 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project --with numpy --with pandas --with ope
 
 Full method, arms, gates, per-geography tables and the source table are in
 `infra/immigration-fiscal/gap_incidence_2026_09_18/RESULT.md`.
+
+
+## Revisions — September 19, 2026
+
+Corrected the interpretation at the point of reuse; original calculations and evidence are retained. See the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md) and linked audit for the claim-specific reason.

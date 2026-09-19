@@ -1,5 +1,12 @@
 # Complete absolute account for the all-age Mexican-origin ledger — September 17, 2026
 
+## Audit correction — September 19, 2026
+
+**The −$263bn endpoint and the national reconciliation are provisional.** Item G retains gross state/local highway spending while item R includes federal transportation outlays; intergovernmental grants are not consistently netted. The reconciliation also adds federal outlays to state/local direct spending while crediting only state/local own-source revenue. The same grant can therefore be charged twice. Some education/Medicaid overlap is already netted; do not subtract all grants indiscriminately. User charges and miscellaneous revenue also require reconciliation. A revised endpoint needs function- and vintage-matched consolidation; this audit does not assert a corrected total or a sign reversal. The same-age partial-account benchmark gaps remain descriptive results. [SOURCE: fiscal audit evidence; Census definitions and FHWA FA-5]
+
+This supersedes conflicting interpretations below; calculations are retained as evidence. [Audit index](../../../research/immigration-five-day-cross-check-2026-09-19.md).
+
+
 This lane takes the partial all-age account in
 [`all_age_ledger_2026_09_17`](../all_age_ledger_2026_09_17/README.md), whose union
 absolute balance is **+$50.24bn**, and adds the fiscal items that account omits,

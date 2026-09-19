@@ -1,5 +1,15 @@
 # Pricing the two largest pro-side benefits: cheaper immigrant-intensive services and more high-skill native women's hours
 
+## Current correction — September 19, 2026
+
+**Verdict:** Retain these as extrapolation scenarios, not a bound on all benefits or a demonstrated offset to the fiscal account. The numerator removes about 3.17 million Mexico-born high-school-dropout workers; the $291bn denominator covers about 40.9 million current Mexican-origin residents across generations. Those are different population counterfactuals. The reported 7.5% and 3% ratios are scale comparisons, not an identified net benefit or deficit offset. The $21.8bn sum also combines private welfare and tax receipts. [SOURCE: tables below; INFERENCE]
+
+The 2026 Kim–Leung–Weinberger paper finds lower consumer-packaged-goods prices through demand/search; it is not a failed replication of a services-price outcome. Barrett–Tan reports an imprecise other-services result, which does not establish zero. Neither finding supplies an upper bound on all price benefits. An implausible extrapolation is not a mathematical upper bound, and omitted sectors or equilibrium responses can move estimates either way. [SOURCE: [Kim et al., full paper](https://ryansungryongkim.github.io/papers/KLW_25Feb2026.pdf); [Barrett–Tan](https://www.imf.org/-/media/Files/Publications/WP/2025/English/wpiea2025005-print-pdf.ashx); INFERENCE]
+
+This correction governs conflicting claims in the retained assessment below. Evidence and scope: [five-day cross-check](immigration-five-day-cross-check-2026-09-19.md).
+
+## Retained assessment and evidence
+
 **Verdict:** Both channels are real and both are **an order of magnitude too small to close the Mexican-origin fiscal gap**. Taking the published elasticities at face value and extrapolating them log-linearly to the removal of every Mexico-born high-school dropout from the labor force, natives lose about **$23.8bn a year** of consumer surplus on immigrant-intensive services and about **$8.7bn a year** of federal, state and payroll tax on the extra hours worked by high-wage native college-educated women. Netting the same paper's implied **$10.7bn wage gain to native high-school dropouts** leaves a defensible native total of **$21.8bn a year**, or **7.5% of the $291bn reference gap** and **8.6% of the $254bn complete-account absolute balance** [SOURCE: ladder 123 / 130, `immigration-confidence-ladder.md`]. The purely *fiscal* offset is **$8.7bn, 3.0% of the reference gap**. Under the conservative arm the totals are $10.5bn and $4.4bn. Two independent post-2008 US studies fail to reproduce the services-price channel at all.
 
 Generator: [`infra/immigration-fiscal/consumer_price_benefit_2026_09_18/`](../infra/immigration-fiscal/consumer_price_benefit_2026_09_18/RESULT.md). Every table is in `derived/*.csv`.
@@ -156,3 +166,8 @@ The pro-side's two flagship native benefits, priced at their own authors' publis
 | Repo fiscal denominators (ladder 123, 130) | [`immigration-confidence-ladder.md`](immigration-confidence-ladder.md), [`all-age findings`](immigration-all-age-and-lineage-findings-2026-09-17.md) | — |
 
 Data-file SHA-256 hashes are recorded in `derived/cex_audit.json` and `derived/acs_audit.json`.
+
+
+## Revisions — September 19, 2026
+
+Corrected the interpretation at the point of reuse; original calculations and evidence are retained. See the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md) and linked audit for the claim-specific reason.

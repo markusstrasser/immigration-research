@@ -1,5 +1,13 @@
 # Is first-generation crime costlier per offence? Texas felony arrests weighted by social cost
 
+## Current correction — September 19, 2026
+
+**Verdict:** Retain the all-age pooled foreign-born cost-weighted charge ratio of 0.79 against all US-born Texans. The 0.59 “per-adult” ratio and the 18–39 arm change only population denominators, not the ages of charged people; they are denominator scenarios, not age-specific or age-standardized charge rates. The legal-immigrant classification is also not “anyone with a DHS record”: the primary classifies DHS-designated undocumented people separately and combines designated-legal people, other noncitizens not designated undocumented, and foreign-born citizens in the legal group. A status-mismatch explanation for the cost premium is unestablished. [SOURCE: [Light, He and Robey, Materials and Methods](https://www.pnas.org/doi/10.1073/pnas.2014704117); lane weighting code; INFERENCE]
+
+This correction governs conflicting claims in the retained assessment below. Evidence and scope: [five-day cross-check](immigration-five-day-cross-check-2026-09-19.md).
+
+## Retained assessment and evidence
+
 **Verdict:** No for the undocumented, partly for legal immigrants. Weighting each felony arrest charge by its McCollister social cost moves the undocumented ratio to the US-born from 0.40 to 0.43 per capita (0.31 to 0.33 per adult): their offence mix is not costlier. Legal immigrants (naturalized included) are charged 0.78 times as often as the US-born but carry 1.01 times the cost per capita (0.75 per adult), because their homicide charges run at parity and their sexual-assault charges at 1.6 to 2.0 times the US-born rate in every year. The foreign-born pooled land at 0.63 by count and 0.79 by cost per capita, 0.48 and 0.59 per adult. The comparator is all US-born Texans, not US-born whites, and the legal/undocumented boundary rests on DHS record matching, so the pooled row is the robust one. [SOURCE: `infra/immigration-fiscal/crime_cost_firstgen_2026_09_18/derived/firstgen_cost_weighted.csv`]
 
 Date: 2026-09-18. Lane: `infra/immigration-fiscal/crime_cost_firstgen_2026_09_18/`. Extends ladder 48 (first-generation conviction and arrest rates lower) and ladder 78 (cost-weighted excess of US-born Mexican-origin adults over US-born whites), which had no first-generation arm.
@@ -41,3 +49,8 @@ Pew denominators, the naturalized split, arm B pricing, per-adult and 18–39 st
 ## Sources
 
 Light, He & Robey 2020, PNAS 117(51), doi:10.1073/pnas.2014704117, replication package openICPSR 124923 (local copy under `~/research-data/immigration-fiscal/data/external/crime_frontier/light_texas/`). McCollister, French & Fang 2010, Drug Alcohol Depend 108(1–2):98–109. ACS 2015 and 2018 1-year PUMS via api.census.gov. Instrument note: LLM-assisted; every number above is reproduced by the scripts named in the lane README.
+
+
+## Revisions — September 19, 2026
+
+Corrected the interpretation at the point of reuse; original calculations and evidence are retained. See the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md) and linked audit for the claim-specific reason.

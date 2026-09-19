@@ -1,5 +1,12 @@
 claude-opus-5[1m]
 
+## Audit correction — September 19, 2026
+
+**Private-school welfare cost remains unpriced.** The later DC voucher trial is not the only randomized US evidence, and a test-score null does not show tuition buys no benefits. The earlier federal DC evaluation found a graduation benefit; the later evaluation also found attendance, perceived-safety and satisfaction benefits. Neither identifies immigration-induced switching or its net welfare value. Preserve the observed revenue associations and test-score findings; withdraw the claim that these experiments settle the defensive-expenditure classification. A weak or invalid migration instrument also does not establish a null, and a nonzero national scalar cannot mechanically weaken a single-window IV. [SOURCE: official IES evaluation records and independent IV probe in the mechanisms audit]
+
+This supersedes conflicting interpretations below; calculations are retained as evidence. [Audit index](immigration-five-day-cross-check-2026-09-19.md).
+
+
 **Verdict:** NOT REPRODUCED in modern US data. Betts & Fairlie's one-native-per-four-immigrants
 holds up as a citation — the phrase is verbatim in their abstract, for secondary school, from
 1980–1990 Census data — but nothing like it survives in 2008–2023 metro data. The raw count
@@ -903,3 +910,8 @@ looking at any estimate, to report every specification run rather than a selecti
 write out the aggregate national series in §5.1 that cuts against the hypothesis before
 estimating anything.
 
+
+
+## Revisions — September 19, 2026
+
+Corrected the interpretation for the reasons above; see the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md).

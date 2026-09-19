@@ -1,5 +1,10 @@
 # Interest on the fiscal gap — September 18, 2026
 
+## Audit correction — September 19, 2026
+
+The debt arithmetic reproduces, but the inputs inherit the expanded-account grant-consolidation defect and the pronatal allocation reversal. Withdraw the statement that the pronatal budgets remain actionable. The borrowing share, fixed flow and price path are assumptions; this is not an observed immigration-caused debt trajectory. [Audit index](../../../research/immigration-five-day-cross-check-2026-09-19.md).
+
+
 **Verdict:** If the Mexican-origin population's complete-account absolute balance of −$263bn a year is financed by borrowing at the FY2024 effective federal rate (3.22% = net interest $879.9bn over average debt held by the public $27.3tn), the accumulated debt after 10 years is $3.05tn, of which $416bn is interest, and the interest bill alone in year 10 is $87bn a year, a third of the flow. After 30 years the debt is $13.0tn and the annual interest, $397bn, exceeds the flow itself. Half deficit-financed (states balance budgets, so the state-local part lands on current taxpayers): $1.52tn, $208bn and $43bn at year 10. At the incidence lane's federal share of the flow, 10.7% under the central zero-F arm (`gap_incidence_2026_09_18`, ladder 138), the year-10 debt is $326bn and the interest bill $9bn a year ($1.39tn and $42bn by year 30); with F per capita the federal share is 50.9% and the figures $1.55tn and $44bn. The all-deficit path is the upper bound. On the same-age gap against third-plus whites (−$361bn) the year-10 figures are $4.18tn, $571bn and $119bn. Per person, compounding the pronatal lane's lifetime profile forward to age 83 instead of discounting it back reproduces the present-value ordering scaled by (1+r)^(83−age); the present-value budgets already carry the interest and remain the number to quote.
 
 ## Reproduce

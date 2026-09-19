@@ -1,5 +1,12 @@
 **Verdict:** Completing the account does not preserve the sign of the partial balance, and it does not rescue the gap either. The Mexican-origin union's measured partial absolute of **+$50.24bn** becomes **−$253.93bn** once every priceable omitted item is charged under the central conventions. The age-standardized gap against third-plus non-Hispanic whites widens from **−$5,795 to −$7,095 per standardized person**, and the age-matched total from **−$290.6bn to −$354.3bn**. That endpoint is a convention, not a measurement: across the 144 combinations of the four contested arms the union absolute runs from −$548.37bn to −$87.04bn and never turns positive. The account is dominated by average-cost public services, so the break-even marginality dial sits at **m\* = 0.120**. Summed over all civilian-household residents the account reaches a position of −$966.7bn against a consolidated FY2024 position of −$2,590.8bn, covering 63% of consolidated outlays and 71% of consolidated receipts; the −$1,624.1bn residual is reported, not forced.
 
+## Audit correction — September 19, 2026
+
+**The −$263bn endpoint and the national reconciliation are provisional.** Item G retains gross state/local highway spending while item R includes federal transportation outlays; intergovernmental grants are not consistently netted. The reconciliation also adds federal outlays to state/local direct spending while crediting only state/local own-source revenue. The same grant can therefore be charged twice. Some education/Medicaid overlap is already netted; do not subtract all grants indiscriminately. User charges and miscellaneous revenue also require reconciliation. A revised endpoint needs function- and vintage-matched consolidation; this audit does not assert a corrected total or a sign reversal. The same-age partial-account benchmark gaps remain descriptive results. [SOURCE: fiscal audit evidence; Census definitions and FHWA FA-5]
+
+This supersedes conflicting interpretations below; calculations are retained as evidence. [Audit index](../../../research/immigration-five-day-cross-check-2026-09-19.md).
+
+
 claude-opus-5[1m]
 
 [DATA: CPS ASEC 2025 public-use file, income year 2024, 142,125 person records, 58,147 SPM units, full and 160 replicate weights; MEPS 2024 full-year donor transport]

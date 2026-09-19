@@ -1,5 +1,15 @@
 # Marginal Revolution on immigration, 2003–2026: Cowen and Tabarrok graded against the repo
 
+## Current correction — September 19, 2026
+
+**Verdict:** Withdraw T2's HARD grade and the corresponding claim-count headline. A negative fiscal difference from whites does not establish whether a child's lifetime taxes repay schooling; parity for all-origin descendants does not establish it either. Tabarrok's broad assurance requires a lifetime test, but this account did not supply that test. His [original post](https://marginalrevolution.com/marginalrevolution/2015/09/open-borders-and-welfare.html) was checked directly. [SOURCE; INFERENCE]
+
+The resident account is also not the complete cost-benefit study requested by Cowen: it omits an admission counterfactual and a common welfare accounting of incumbent benefits and costs. The phrase “second-order channels tested and null” is withdrawn where the designs fail identification. T8's employment-entry cost is unestablished in the recent panel. C15's educational-norms statement remains untested, not an empirical agreement. Retain the archive and the documented concessions; do not reuse its old grading totals as validated findings.
+
+This correction governs conflicting claims in the retained assessment below. Evidence and scope: [five-day cross-check](immigration-five-day-cross-check-2026-09-19.md).
+
+## Retained assessment and evidence
+
 **Verdict:** The blog is not a target in the way Smith, Decker and Nowrasteh are. Of 23 graded author-voice claims, Cowen's grade AGREE 10, COORDINATE 5, HARD 0; Tabarrok's grade AGREE 3, COORDINATE 4, HARD 1. Cowen has said in his own voice most of what the repo measures: California's fiscal burden (2004), state and local policy as the real immigration policy (2019), welfare and immigration as complements (2024), backlash as the binding constraint (2015 onward), and that natives run a negative fiscal balance too under average cost (2025). His COORDINATE rows are the CBO and Colas–Sachs fiscal citations (federal, model output, first generation) and the 2012 forecast that Mexican assimilation would now run faster than critics predicted, which holds on language and attitudes and fails on the fiscal unit. Tabarrok's one HARD row is the 2015 claim that schooling immigrant children is a loan repaid through their later taxes: on the Mexican-origin second generation the repo's microdata says it is not, while on the all-origin second generation it is. His 2024 fiscal post names the NAS caveat against his own side before arguing it away with model output. The single most useful sentence in the archive is Cowen's 2024 complaint that immigration critics never send him a cost-benefit study; the resident account under 144 conventions is that study. [SOURCE: `infra/immigration-fiscal/mr_archive_2026_09_18/derived/mr_claims.csv`; grades below]
 
 Date: 2026-09-18. Archive: all 40,174 Marginal Revolution posts inventoried from the Yoast sitemap; 1,860 immigration candidates (slug regex over every post, ten-keyword site search, Exa, Firecrawl map); 1,723 fetched (1,643 Wayback, 80 Firecrawl); 1,093 verbatim claims from 562 posts, each asserted to be a substring of its post body; bylines parsed, never guessed (Cowen 1,426 posts, Tabarrok 283, Rojas 13). Build report: [`RESULT.md`](../infra/immigration-fiscal/mr_archive_2026_09_18/RESULT.md). Grades use the [scorecard](immigration-claim-scorecard-2026-09-18.md) rubric: HARD, COORDINATE, AGREE. Unlike the scorecard's four targets, most of what this blog says on the topic is a quoted paper; only the authors' own sentences are graded. [INSTRUMENT: LLM-assisted grading; every quote is verbatim from the archive]
@@ -51,3 +61,8 @@ Quoted-block claims (663 of 1,093) are the blog quoting papers and columns and w
 ## Revisions
 
 - **2026-09-18 (late evening).** T4 regraded: the backlash half is adopted, the composition half ("shift it away from education towards law-and-order") is COORDINATE. The paper's own share specification has education at +0.23 (se 0.61), and the Census of Governments panel shows no shift toward law and order in any arm (ladder 149). See [local spending composition](immigration-local-spending-composition-2026-09-18.md).
+
+
+## Revisions — September 19, 2026
+
+Corrected the interpretation at the point of reuse; original calculations and evidence are retained. See the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md) and linked audit for the claim-specific reason.

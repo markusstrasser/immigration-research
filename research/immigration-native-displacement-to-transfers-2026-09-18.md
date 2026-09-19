@@ -1,5 +1,12 @@
 claude-opus-5[1m]
 
+## Audit correction — September 19, 2026
+
+**A failed design leaves an unidentified causal effect, not a null.** The baseline-level correlation is a balance/mean-reversion diagnostic, not a direct test of exclusion for an outcome change. In the 2008–2018 Mexico-born SSI arm, independently scaling the single instrument by 1, −1 and 0.001 leaves F=44.0025 and the IV coefficient +0.213008 unchanged. Negative national inflow cannot invalidate an estimate through sign alone. Placebo and dynamic-confounding concerns still prevent a causal conclusion; the probe does not validate displacement. [SOURCE: principal code and independent probe in the mechanisms audit]
+
+This supersedes conflicting interpretations below; calculations are retained as evidence. [Audit index](immigration-five-day-cross-check-2026-09-19.md).
+
+
 **Verdict:** NO EVIDENCE of native displacement onto transfers, on the margins this lane could
 measure, and the one margin most likely to carry it was unreachable. Applying the
 Autor–Dorn–Hanson design to immigration on 2000–2010, where the shift-share instrument is alive
@@ -910,3 +917,8 @@ the same lane reports a wage-incidence bound of $1–26 bn a year falling on Mex
 (section 6) and declines to use the more immigration-favourable of the two Ottaviano–Peri figures
 without verification. The strongest claim here is a **negative** one about what the data can
 support, and negative claims are the least sensitive to the instrument's disposition.
+
+
+## Revisions — September 19, 2026
+
+Corrected the interpretation for the reasons above; see the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md).
