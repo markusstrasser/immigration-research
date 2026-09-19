@@ -1,0 +1,11 @@
+{
+  "primary_spec": "complete_states_only",
+  "primary_elasticity": 0.18100554200991759,
+  "primary_se": 0.02982690591792964,
+  "primary_n_cbsa": 573,
+  "cbsas_fully_covered": 573,
+  "cbsas_total": 935,
+  "all_cbsas_elasticity": 0.3844587459954202,
+  "all_cbsas_se": 0.044892063941527324,
+  "interpretation": "b<1 means Mexican-cuisine variety per capita grows less than proportionally with the Mexican-origin share"
+}
