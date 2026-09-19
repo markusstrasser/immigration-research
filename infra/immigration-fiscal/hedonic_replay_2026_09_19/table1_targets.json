@@ -1,0 +1,19 @@
+{
+  "source": "Saiz and Wachter (2011), Table 1, p.174, DOI:10.1257/pol.3.2.169",
+  "outcome": "change in log average house value",
+  "treatment": "change in foreign-born population share, fraction units",
+  "weight": "initial owner-occupied units",
+  "fixed_effect": "MSA by period",
+  "cluster": "tract",
+  "sample_rule": "decennial increase in MSA foreign-born count / initial MSA population >= 0.05",
+  "coefficient_rounding_tolerance": 0.0005,
+  "se_rounding_tolerance": 0.0005,
+  "columns": [
+    {"column": 1, "method": "WLS", "coef": -0.418, "se": 0.016, "n": 34833, "r2": 0.79},
+    {"column": 2, "method": "WLS", "coef": -0.246, "se": 0.015, "n": 34833, "r2": 0.85},
+    {"column": 3, "method": "WLS", "coef": -0.244, "se": 0.015, "n": 30947, "r2": 0.86},
+    {"column": 4, "method": "2SLS", "coef": -0.323, "se": 0.136, "n": 34833, "first_stage_F": 76.01},
+    {"column": 5, "method": "2SLS", "coef": -0.211, "se": 0.050, "n": 34833, "first_stage_F": 362.23, "hansen_p": 0.95},
+    {"column": 6, "method": "2SLS", "coef": -0.214, "se": 0.054, "n": 34833, "first_stage_F": 337.632, "hansen_p": 0.80}
+  ]
+}
