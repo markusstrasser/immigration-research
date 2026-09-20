@@ -1,5 +1,13 @@
 # Actual FY2024 custody payments: verified federal subtotal
 
+**Later September20 reconciliation:** the [completed public-account audit](../detention_reconciliation_2026_09_20/README.md)
+acquired expired-funding data and reconciled USAspending gross, SF133 gross/net,
+and Treasury net account totals. The custody subtotal below stands. The remaining
+gap is a missing custody allocation within broad public program accounts and
+unmatched local cost/receipt records, rather than inaccessible historic accounts.
+The acquisition checklist below records the earlier stage; see the new audit for
+its resolved and unresolved components.
+
 **Verdict, September 20 follow-up:** Actual federal custody payments are publicly
 reported. The initial acquisition's missing-spending statement was a source gap,
 not evidence that spending cannot be measured. Two explicitly identified Custody
