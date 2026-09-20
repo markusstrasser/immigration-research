@@ -1,11 +1,17 @@
 """Public NLSY97 descendant descriptions, survey-linearized contrasts and sensitivities."""
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / "build"))
+import paths as _data_paths
+
 import argparse,hashlib,json,re
 from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy.stats import norm,t
 
-P=argparse.ArgumentParser();P.add_argument('--lane-dir',type=Path,default=Path('/Users/alien/Projects/immigration-research/infra/immigration-fiscal/new_datasets_2026_09_17'));P.add_argument('--output-dir',type=Path,default=Path(__file__).resolve().parents[1]/'derived/nlsy');P.add_argument('--profile-dir',type=Path,default=Path('/Users/alien/Projects/iq-sex-differences/data/nlsy/profile_outcomes'));A=P.parse_args();O=A.output_dir
+P=argparse.ArgumentParser();P.add_argument('--lane-dir',type=Path,default=Path(__file__).resolve().parents[2]/'new_datasets_2026_09_17');P.add_argument('--output-dir',type=Path,default=Path(__file__).resolve().parents[1]/'derived/nlsy');P.add_argument('--profile-dir',type=Path,default=_data_paths.reused_surveys_root(require_exists=False) / 'nlsy/profile_outcomes');A=P.parse_args();O=A.output_dir
 paths={'family':A.lane_dir/'derived/nlsy_family/family_analysis_rows.csv','base':A.lane_dir/'derived/nlsy/full_selected_data.csv','new':O/'selected.csv','adult':A.profile_dir/'source_extract.parquet'}
 d=pd.read_csv(paths['family']).set_index('R0000100').sort_index()
 for key in ['base','new']:

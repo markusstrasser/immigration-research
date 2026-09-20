@@ -10,13 +10,19 @@ all consumer units.  Nativity of the householder comes from the person file
 (SPORDER==1 is not reliable; RELSHIPP==20 identifies the householder).
 """
 from __future__ import annotations
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 import json, zipfile
 from pathlib import Path
 import numpy as np, pandas as pd
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "derived"; OUT.mkdir(exist_ok=True)
-DATA = Path("/Users/alien/research-data/immigration-fiscal/data/external/acs_pums_2024_1yr")
+DATA = _data_paths.data_root(require_exists=False) / 'external/acs_pums_2024_1yr'
 PZIP = DATA / "csv_pus.zip"
 HZIP = DATA / "csv_hus.zip"
 CUTS = [29932.0, 57452.0, 94511.0, 155925.0]

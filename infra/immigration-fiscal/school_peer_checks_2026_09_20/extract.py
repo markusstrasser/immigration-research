@@ -3,11 +3,14 @@ import hashlib
 import json
 import argparse
 from pathlib import Path
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'build'))
+from paths import reused_surveys_root
 import re
 import pandas as pd
 
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--source-dir', type=Path, required=True)
+parser.add_argument('--source-dir', type=Path, default=reused_surveys_root(require_exists=False) / 'ecls_k')
 parser.add_argument('--out', type=Path, default=Path(__file__).resolve().parent / '_cache')
 args = parser.parse_args()
 SOURCE, OUT = args.source_dir, args.out

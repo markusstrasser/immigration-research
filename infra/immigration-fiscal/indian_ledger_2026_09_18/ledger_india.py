@@ -21,6 +21,12 @@ Run: uv run --no-project --with "pandas>=2" --with "numpy>=2" python3 ledger_ind
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import argparse
 import hashlib
 import sys
@@ -210,11 +216,9 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--cps-zip", type=Path, default=None)
     ap.add_argument("--meps-zip", type=Path,
-                    default=Path.home() / "research-data/immigration-fiscal/data/external/"
-                                          "stage3/ahrq/meps_2024/h256dat.zip")
+                    default=_data_paths.data_root(require_exists=False) / 'external/stage3/ahrq/meps_2024/h256dat.zip')
     ap.add_argument("--meps-sas", type=Path,
-                    default=Path.home() / "research-data/immigration-fiscal/data/external/"
-                                          "stage3/ahrq/meps_2024/h256su.txt")
+                    default=_data_paths.data_root(require_exists=False) / 'external/stage3/ahrq/meps_2024/h256su.txt')
     ap.add_argument("--out", type=Path, default=HERE / "derived")
     args = ap.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)

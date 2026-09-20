@@ -11,6 +11,12 @@ derived/acs_totals.csv and derived/acs_audit.json.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import argparse
 import hashlib
 import json
@@ -32,7 +38,7 @@ import shared  # noqa: E402
 import taxcalc_io as TC  # noqa: E402
 import units as U  # noqa: E402
 
-DATA = Path("/Users/alien/research-data/immigration-fiscal/data/external/acs_pums_2024_1yr")
+DATA = _data_paths.data_root(require_exists=False) / 'external/acs_pums_2024_1yr'
 ZIP = DATA / "csv_pus.zip"
 SRC_URL = "https://www2.census.gov/programs-surveys/acs/data/pums/2024/1-Year/csv_pus.zip"
 OUT = HERE / "derived"

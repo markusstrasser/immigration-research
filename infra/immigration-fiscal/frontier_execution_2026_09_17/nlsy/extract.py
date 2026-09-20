@@ -1,8 +1,14 @@
 """Extract only declared public score/design and crime timing fields."""
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / "build"))
+import paths as _data_paths
+
 from pathlib import Path
 import argparse,json,re,zipfile,hashlib
 import pandas as pd
-P=argparse.ArgumentParser();P.add_argument('--archive',type=Path,default=Path('/Users/alien/Projects/iq-sex-differences/data/nlsy/nlsy97_all_1997-2023.zip'));P.add_argument('--output-dir',type=Path,default=Path(__file__).resolve().parents[1]/'derived/nlsy');A=P.parse_args();O=A.output_dir;O.mkdir(parents=True,exist_ok=True)
+P=argparse.ArgumentParser();P.add_argument('--archive',type=Path,default=_data_paths.reused_surveys_root(require_exists=False) / 'nlsy/nlsy97_all_1997-2023.zip');P.add_argument('--output-dir',type=Path,default=Path(__file__).resolve().parents[1]/'derived/nlsy');A=P.parse_args();O=A.output_dir;O.mkdir(parents=True,exist_ok=True)
 fixed={'R0000100','R1489700','R1489800','R9829600','R1236101','R0536300','R0536401','R0536402','T6657200','R1205300','T5206900'}
 head=re.compile(r'^([A-Z]\d{5})\.(\d{2})\s+\[([^]]+)\]')
 codebook={};candidates={};lines=[]

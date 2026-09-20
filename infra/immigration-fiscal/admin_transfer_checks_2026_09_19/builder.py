@@ -1,5 +1,11 @@
 """Audit transfer national totals before any optional uniform raking sensitivity."""
 from __future__ import annotations
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 import argparse
 import hashlib
 import importlib.util
@@ -80,7 +86,7 @@ def main():
             checks.append(dict(check=f"canonical U {allocation}/{group}", residual_bn=got-old.iloc[0]))
     table.to_csv(out / "program_totals.csv", index=False)
     pd.DataFrame(diagnostics).to_csv(out / "snap_unit_diagnostics.csv", index=False)
-    official, months, arms, admin_sources = read_comparators(HERE, Path("/Users/alien/research-data/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx"))
+    official, months, arms, admin_sources = read_comparators(HERE, _data_paths.data_root(require_exists=False) / 'external/bea_nipa/Section3All_xls.xlsx')
     errors, components, sensitivities = compare(table, macro, official, arms)
     official.to_csv(out / "official_comparators.csv", index=False)
     months.to_csv(out / "snap_calendar2024_months.csv", index=False)

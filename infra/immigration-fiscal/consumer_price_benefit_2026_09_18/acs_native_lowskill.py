@@ -8,13 +8,19 @@ low-skilled wages under the same log-linear extrapolation, an offset to the cons
 loss.  This pass sizes the affected earnings base from ACS 2024.
 """
 from __future__ import annotations
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 import json, zipfile
 from pathlib import Path
 import numpy as np, pandas as pd
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "derived"
-DATA = Path("/Users/alien/research-data/immigration-fiscal/data/external/acs_pums_2024_1yr")
+DATA = _data_paths.data_root(require_exists=False) / 'external/acs_pums_2024_1yr'
 COLS = ["PWGTP", "AGEP", "NATIVITY", "POBP", "SCHL", "ESR", "PERNP", "WAGP", "ADJINC", "SERIALNO"]
 
 

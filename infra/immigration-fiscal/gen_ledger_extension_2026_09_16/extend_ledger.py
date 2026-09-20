@@ -15,6 +15,12 @@ rates, not a measured payment. Run with --help for inputs.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import os
 import subprocess
 import sys
@@ -115,8 +121,7 @@ def resolve_cps_zip(explicit: Path | None) -> Path:
     root = os.environ.get("PNY_DATA_ROOT")
     if root:
         candidates.append(Path(root) / "external/stage3/census/cps_asec_2025/asecpub25csv.zip")
-    candidates.append(Path("/Volumes/2TBPNY/research-data/immigration-fiscal/data/"
-                           "external/stage3/census/cps_asec_2025/asecpub25csv.zip"))
+    candidates.append(_data_paths.data_root(require_exists=False) / 'external/stage3/census/cps_asec_2025/asecpub25csv.zip')
     cache = HERE / "_cache" / "asecpub25csv.zip"
     candidates.append(cache)
     for c in candidates:

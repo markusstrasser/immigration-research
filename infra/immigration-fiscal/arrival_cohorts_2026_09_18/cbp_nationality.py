@@ -6,11 +6,17 @@ events and not persons: under Title 42 a single person expelled and re-crossing 
 time, and those repeat crossings were concentrated among Mexican nationals, so the Mexican share of
 encounters overstates the Mexican share of arriving persons, most severely in FY2021-FY2022.
 """
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 import os
 import pandas as pd
 
-SRC = "/Users/alien/research-data/immigration-fiscal/data/external/cbp/nationwide-encounters-fy22-fy25-aor.csv"
-ALT = "/Users/alien/research-data/immigration-fiscal/data/external/cbp/nationwide-encounters-fy21-fy24-aor.csv"
+SRC = str(_data_paths.data_root(require_exists=False) / 'external/cbp/nationwide-encounters-fy22-fy25-aor.csv')
+ALT = str(_data_paths.data_root(require_exists=False) / 'external/cbp/nationwide-encounters-fy21-fy24-aor.csv')
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "derived")
 
 def load(p):

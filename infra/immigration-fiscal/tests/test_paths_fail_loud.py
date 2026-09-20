@@ -51,7 +51,7 @@ class PathsFailLoud(unittest.TestCase):
     def test_existing_legacy_root_is_used(self):
         with tempfile.TemporaryDirectory() as d:
             repo = Path(d)
-            derived = repo / "sources" / "immigration-fiscal" / "data" / "derived"
+            derived = repo / "sources" / "immigration-fiscal" / "derived"
             derived.mkdir(parents=True)
             env = {k: v for k, v in os.environ.items() if k not in {"PNY_DATA_ROOT", "DERIVED_ROOT"}}
             with mock.patch.dict(os.environ, env, clear=True), mock.patch.object(paths, "_REPO_ROOT", repo):

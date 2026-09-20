@@ -33,32 +33,54 @@ def commit_output(tmp: Path, path: Path) -> Path:
 
 
 def _existing_fallback(path: Path, what: str, env_var: str) -> Path:
-    """Legacy fallbacks must exist; a dangling symlink or unmounted SSD is an error, not a target.
+    """Default inputs must exist; a missing local tree is an error, not a target.
 
     The 2026-09-16 recovery probe found that with DERIVED_ROOT unset this module silently
     resolved to a dead symlink, which is how a lost data tree went unnoticed.
     """
     if not path.exists():
         raise FileNotFoundError(
-            f"{what} {path} does not exist (dangling symlink or SSD not mounted); "
+            f"{what} {path} does not exist; restore the project-local dataset or "
             f"set {env_var} (see acquire/config.env.example) or run via reproduce.sh"
         )
     return path
 
 
-def data_root() -> Path:
-    if v := os.environ.get("PNY_DATA_ROOT"):
+def data_root(*, require_exists: bool = True) -> Path:
+    """Resolve raw data; defer validation only when constructing unused defaults."""
+    if v := os.environ.get("PNY_DATA_ROOT") or os.environ.get("IMMIGRATION_DATA_ROOT"):
         return Path(v)
-    # Legacy: sources/immigration-fiscal/data on symlinked SSD layout
-    return _existing_fallback(
-        _REPO_ROOT / "sources" / "immigration-fiscal" / "data", "legacy data root", "PNY_DATA_ROOT"
-    )
+    target = _REPO_ROOT / "sources" / "immigration-fiscal" / "data"
+    return _existing_fallback(target, "local data root", "PNY_DATA_ROOT") if require_exists else target
 
 
-def derived_root() -> Path:
-    if v := os.environ.get("DERIVED_ROOT"):
+def derived_root(*, require_exists: bool = True) -> Path:
+    if v := os.environ.get("DERIVED_ROOT") or os.environ.get("IMMIGRATION_DERIVED_ROOT"):
         return Path(v)
-    return _existing_fallback(data_root() / "derived", "legacy derived root", "DERIVED_ROOT")
+    raw_override = os.environ.get("PNY_DATA_ROOT") or os.environ.get("IMMIGRATION_DATA_ROOT")
+    target = (Path(raw_override) / "derived" if raw_override else
+              _REPO_ROOT / "sources" / "immigration-fiscal" / "derived")
+    return _existing_fallback(target, "local derived root", "DERIVED_ROOT") if require_exists else target
+
+
+def corpus_root() -> Path:
+    """Optional mirrors; individual callers must check their required source file."""
+    value = os.environ.get("CORPUS_ROOT") or os.environ.get("IMMIGRATION_CORPUS_ROOT")
+    return Path(value) if value else _REPO_ROOT / "sources" / "corpus"
+
+
+def itep_table_path() -> Path:
+    """Select the ITEP source; IMMIGRATION_FISCAL_ROOT denotes code, not data."""
+    if value := os.environ.get("ITEP_TABLE_PATH"):
+        return Path(value)
+    return data_root(require_exists=False) / "itep/itep_table_5.tsv"
+
+
+def reused_surveys_root(*, require_exists: bool = True) -> Path:
+    if value := os.environ.get("REUSED_SURVEYS_ROOT"):
+        return Path(value)
+    target = _REPO_ROOT / "sources" / "reused-surveys"
+    return _existing_fallback(target, "local reused survey root", "REUSED_SURVEYS_ROOT") if require_exists else target
 
 
 def duckdb_path() -> Path:
@@ -86,10 +108,10 @@ def unified_duckdb_path() -> Path:
     return _WAREHOUSE / "immigration.duckdb"
 
 
-def microdata_duckdb_path() -> Path:
+def microdata_duckdb_path(*, require_exists: bool = True) -> Path:
     """Local-only raw microdata (IPUMS PUMS etc.). NOT redistributable — never part of the
     unified release; isolated from the aggregate warehouses for size + licensing.
-    Defaults to the (large, SSD-backed) derived root, not the repo warehouse/ on the main disk."""
+    Defaults to the project-local derived root, separate from aggregate warehouse/."""
     if v := os.environ.get("MICRODATA_DUCKDB_PATH"):
         return Path(v)
-    return derived_root() / "immigration_microdata.duckdb"
+    return derived_root(require_exists=require_exists) / "immigration_microdata.duckdb"

@@ -8,13 +8,19 @@ Writes derived/cex_detail_all.csv, derived/cex_quintile_parents.csv, derived/cex
 Gate: the major Table 1101 components must sum to 'Average annual expenditures' per column.
 """
 from __future__ import annotations
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 import hashlib, json
 from pathlib import Path
 import openpyxl, pandas as pd
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "derived"; OUT.mkdir(exist_ok=True)
-CEX = Path("/Users/alien/research-data/immigration-fiscal/data/external/cex_2024")
+CEX = _data_paths.data_root(require_exists=False) / 'external/cex_2024'
 DETAIL = CEX / "cu-all-detail-2024.xlsx"
 QUINT = CEX / "cu-income-quintiles-before-taxes-2024.xlsx"
 STATS = {"Mean", "Share", "SE", "RSE", "Percent Reporting"}

@@ -8,6 +8,12 @@ Read-only on the raw zip. Streams in chunks so peak memory stays modest.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import sys
 import zipfile
 from pathlib import Path
@@ -16,7 +22,7 @@ import pandas as pd
 
 HERE = Path(__file__).resolve().parent
 CACHE = HERE / "_cache"
-ZIP = Path.home() / "research-data/immigration-fiscal/data/external/acs_pums_2024_1yr/csv_pus.zip"
+ZIP = _data_paths.data_root(require_exists=False) / 'external/acs_pums_2024_1yr/csv_pus.zip'
 
 BASE = ["SERIALNO", "SPORDER", "PWGTP", "AGEP", "CIT", "CITWP", "YOEP", "DECADE",
         "NATIVITY", "POBP", "ESR", "COW", "OCCP", "MIL", "HINS3", "HINS4", "HINS5",

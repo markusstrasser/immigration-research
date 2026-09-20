@@ -27,6 +27,12 @@ Outputs (this directory only):
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import os
 import subprocess
 import sys
@@ -101,8 +107,7 @@ def resolve_zip(kind: str, explicit: Path | None) -> Path:
             raise SystemExit(f"[BLOCKED] --{kind}-zip not found: {explicit}")
         return explicit
     if kind == "cps25":
-        for c in [Path("/Volumes/2TBPNY/research-data/immigration-fiscal/data/external/"
-                       "stage3/census/cps_asec_2025/asecpub25csv.zip"),
+        for c in [_data_paths.data_root(require_exists=False) / 'external/stage3/census/cps_asec_2025/asecpub25csv.zip',
                   FISCAL / "gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
                   cache / "asecpub25csv.zip"]:
             if c.exists():

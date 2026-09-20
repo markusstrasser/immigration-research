@@ -5,6 +5,12 @@ Missing links stay unresolved. No population imputation or fiscal reallocation.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import hashlib
 import json
 import zipfile
@@ -14,7 +20,7 @@ import numpy as np
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
-RAW = Path.home() / 'research-data/immigration-fiscal/data/external/stage3/census/cps_asec_2025/asecpub25csv.zip'
+RAW = _data_paths.data_root(require_exists=False) / 'external/stage3/census/cps_asec_2025/asecpub25csv.zip'
 SHA = '318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b'
 US = [57, 60, 66, 69, 73, 78]
 WEIGHTS = [f'pwwgt{i}' for i in range(161)]

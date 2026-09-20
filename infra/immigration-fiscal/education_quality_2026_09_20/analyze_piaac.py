@@ -5,6 +5,12 @@ Hispanic versus non-Hispanic white, BA or higher. Sensitivities: BA-only and
 descriptive weighted adjustment for five-year age bands and sex. No data pooling.
 """
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import argparse
 import hashlib
 import json
@@ -17,7 +23,7 @@ from scipy.stats import norm, t
 
 
 LANE = Path(__file__).resolve().parent
-DATA = Path("/Users/alien/Projects/iq-sex-differences/data")
+DATA = _data_paths.reused_surveys_root(require_exists=False)
 SOURCES = {
     "2012_14": DATA / "docs/2016667REV_HHPUF.zip",
     "2017": DATA / "piaac/prgusap1_2017.csv",

@@ -7,12 +7,18 @@ no UHRSWORK in this extract -- those come from the ACS PUMS lane (acs_cohorts.py
 
 Outputs derived/ipums_*.csv
 """
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 import os
 import duckdb
 import pandas as pd
 import numpy as np
 
-DB = "/Users/alien/research-data/immigration-fiscal/derived/immigration_microdata.duckdb"
+DB = str(_data_paths.microdata_duckdb_path(require_exists=False))
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "derived")
 os.makedirs(OUT, exist_ok=True)
 

@@ -18,6 +18,12 @@ infra/immigration-fiscal/build/analyze_cps_fiscal_2025.py uses.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import json
 import os
 import sys
@@ -35,8 +41,7 @@ IMPUTE_LANE = HERE.parent / "status_impute_2026_09_16"
 sys.path.insert(0, str(IMPUTE_LANE))
 from impute_status import impute  # noqa: E402
 
-ZIP = (Path.home() / "research-data/immigration-fiscal/data/external/stage3/"
-       "census/cps_asec_2025/asecpub25csv.zip")
+ZIP = (_data_paths.data_root(require_exists=False) / 'external/stage3/census/cps_asec_2025/asecpub25csv.zip')
 
 PERSON = ["PH_SEQ", "PPPOS", "A_LINENO", "A_SPOUSE", "A_AGE", "PRPERTYP",
           "PRCITSHP", "PENATVTY", "PEINUSYR", "MARSUPWT", "SS_VAL", "SSI_VAL",

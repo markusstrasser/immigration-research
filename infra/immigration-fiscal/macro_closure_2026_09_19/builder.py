@@ -4,6 +4,12 @@ Unallocated differences remain unallocated. This is not a policy-effect model.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import argparse
 import importlib.util
 import json
@@ -18,7 +24,7 @@ from finance_vintage import read_finance, vintage_effects
 HERE = Path(__file__).resolve().parent
 BEA_URL = "https://apps.bea.gov/national/Release/XLS/Survey/Section3All_xls.xlsx"
 BEA_SHA = "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e"
-BEA_DEFAULT = Path("/Users/alien/research-data/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx")
+BEA_DEFAULT = _data_paths.data_root(require_exists=False) / 'external/bea_nipa/Section3All_xls.xlsx'
 UNION = "mexican_observed_total"
 RECEIPTS = {"tax", "employer", "sales", "owner_property", "C", "X"}
 

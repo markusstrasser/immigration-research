@@ -2,7 +2,7 @@
 
 **Canonical location (git-tracked):** `infra/immigration-fiscal/` in the immigration-research repo.
 
-The `sources/` symlink points at an external SSD and is **not** in git. All download logic lives here so anyone can reproduce on their machine.
+Dataset bytes live in this project's ignored `sources/` directory. All download logic lives here so anyone can reproduce on their machine. Explicit environment overrides remain available.
 
 ## New machine quickstart
 
@@ -52,14 +52,23 @@ See `REPRODUCE.md` for tiers, verify modes, and manual-acquire list.
 | `IMMIGRATION_DERIVED_ROOT` / `DERIVED_ROOT` | Builder outputs (stage2/3 CSVs) |
 | `IMMIGRATION_DUCKDB_PATH` / `DUCKDB_PATH` | Slim warehouse file |
 | `IMMIGRATION_CAUSAL_DATA` | Path to `immigration-causal/data` for receiver-city CSV copy |
+| `REUSED_SURVEYS_ROOT` | Locally retained ECLS, ELS, PIAAC and NLSY source files |
+| `ITEP_TABLE_PATH` | Exact ITEP table for the Tiebout lane; replaces its former use of `IMMIGRATION_FISCAL_ROOT` as a data override |
 
-## SSD symlink layout (this project)
+## Project-local dataset layout
 
-` sources/immigration-fiscal` on PNY delegates to these scripts via wrappers. Set:
+Paths default to these directories relative to the checkout, regardless of the shell's working directory:
 
-```bash
-export IMMIGRATION_FISCAL_INFRA="$HOME/Projects/immigration-research/infra/immigration-fiscal"
+```text
+sources/immigration-fiscal/data/       raw fiscal inputs
+sources/immigration-fiscal/derived/    derived tables and microdata warehouse
+sources/corpus/                       optional source mirrors
+sources/reused-surveys/               reused survey releases and metadata
 ```
+
+`data/derived` is a relative link to `../derived`. The layout initializer accepts physical directories and refuses to replace conflicting paths. Python callers share `build/paths.py`; shell callers share `acquire/lib.sh` and `config.env.example`. Missing default input roots fail loudly. Reconnect the USB only to recover a specifically identified missing source; it is no longer a default runtime dependency.
+
+Setting only `PNY_DATA_ROOT` (or `IMMIGRATION_DATA_ROOT`) retains that root's `derived/` subtree. An explicit `DERIVED_ROOT` (or `IMMIGRATION_DERIVED_ROOT`) takes precedence. The sibling local derived directory above applies when no raw-root override is supplied. `IMMIGRATION_FISCAL_ROOT` identifies code, including for the Tiebout lane; use `ITEP_TABLE_PATH` to select a different ITEP table.
 
 ## Manual / WAF-blocked
 

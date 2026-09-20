@@ -10,7 +10,7 @@ Inputs/definitions: [dataset card](DATASET_CARD.md), [source lock](sources.json)
 ## Reproduce
 
 ```sh
-uv run python3 infra/immigration-fiscal/school_peer_checks_2026_09_20/extract.py --source-dir /path/to/ecls_k
+uv run python3 infra/immigration-fiscal/school_peer_checks_2026_09_20/extract.py
 uv run python3 infra/immigration-fiscal/school_peer_checks_2026_09_20/analyze.py
 uv run python3 infra/immigration-fiscal/school_peer_checks_2026_09_20/tabulate_growth.py
 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 uv run python3 infra/immigration-fiscal/school_peer_checks_2026_09_20/verify.py --data-dir infra/immigration-fiscal/school_peer_checks_2026_09_20/_cache --results infra/immigration-fiscal/school_peer_checks_2026_09_20/derived/results.json --source-lock infra/immigration-fiscal/school_peer_checks_2026_09_20/sources.json --out infra/immigration-fiscal/school_peer_checks_2026_09_20/derived/verification
@@ -19,7 +19,9 @@ OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 uv run python3 infra/immigration
 The input directory must contain `childk8p.dat` and
 `ECLSK_Kto8_child_STATA.dct`. Both are pinned by SHA-256. Raw bytes remain
 read-only; extraction selects fewer than 100 fields into ignored `_cache/`.
-The held 1.59 GB file was read from the sibling IQ research project, not copied.
+The original run read the 1.59 GB file from the sibling IQ research project.
+The default input now lives at `sources/reused-surveys/ecls_k` inside this project;
+`--source-dir` can override it.
 Readers acquire the public files through the NCES route in the dataset card;
 restricted files and personally identifying linkages are not required.
 

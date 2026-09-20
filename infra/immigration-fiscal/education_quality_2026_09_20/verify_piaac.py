@@ -1,4 +1,10 @@
 """Independent raw-file PIAAC calculation with QR WLS; analyzer not imported."""
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 import json
 import math
 import statistics
@@ -10,7 +16,7 @@ from scipy.linalg import lstsq
 from scipy.stats import norm, t
 
 ROOT=Path(__file__).resolve().parent/'derived/piaac'
-DATA=Path('/Users/alien/Projects/iq-sex-differences/data')
+DATA=_data_paths.reused_surveys_root(require_exists=False)
 WCOLS=['SPFWT'+str(k) for k in range(46)]
 PV={d:[p+str(k) for k in range(1,11)] for d,p in [('literacy','PVLIT'),('numeracy','PVNUM')]}
 FACTORS=['EDCAT8','J_Q04A','J_Q06A','J_Q07A','RACETHN_5CAT','AGEG5LFSEXT','GENDER_R']

@@ -1,5 +1,11 @@
 """Exhaustive conditional BEA2024 receipt attribution, with an unallocated diagnostic."""
 from __future__ import annotations
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 import argparse
 import importlib.util
 import json
@@ -93,7 +99,7 @@ def derive_keys(root, coverage, hashes):
                    medicare_income=medicare*(d.AGI.clip(lower=0).to_numpy(float)+1))
     params_path=fiscal/'ledger_absolute_2026_09_17/params/params.json'
     params=json.loads(params_path.read_text())
-    population_path=Path('/Users/alien/research-data/immigration-fiscal/data/external/census_popest_2024/NST-EST2024-ALLDATA.csv')
+    population_path=_data_paths.data_root(require_exists=False) / 'external/census_popest_2024/NST-EST2024-ALLDATA.csv'
     expected='b8b50bd345d8a5f33d5c8a28c95aeaa0a50971356f000d9b48276a65fd9022a7'
     if coverage.sha(population_path)!=expected:
         raise ValueError('Unreviewed resident-population vintage')
@@ -280,7 +286,7 @@ def validate_bea_parents(frame,tables,coverage):
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--source-root',type=Path,required=True)
-    ap.add_argument('--bea',type=Path,default=Path('/Users/alien/research-data/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx'))
+    ap.add_argument('--bea',type=Path,default=_data_paths.data_root(require_exists=False) / 'external/bea_nipa/Section3All_xls.xlsx')
     ap.add_argument('--out',type=Path,default=HERE/'derived')
     args=ap.parse_args()
     root=args.source_root.resolve(); fiscal=root/'infra/immigration-fiscal'

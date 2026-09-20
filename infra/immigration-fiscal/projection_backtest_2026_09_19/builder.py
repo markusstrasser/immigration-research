@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """Run historical assumption checks and labeled period-profile sensitivities."""
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 import argparse
 import hashlib
 import json
@@ -64,7 +70,7 @@ def historical_budget(out):
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--source-root",type=Path,default=HERE.parents[2])
-    p.add_argument("--microdata-db",type=Path,default=Path("/Users/alien/research-data/immigration-fiscal/derived/immigration_microdata.duckdb"))
+    p.add_argument("--microdata-db",type=Path,default=_data_paths.microdata_duckdb_path(require_exists=False))
     p.add_argument("--out",type=Path,default=HERE/"derived")
     p.add_argument("--fetch",action="store_true")
     p.add_argument("--source-cache",type=Path)

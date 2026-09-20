@@ -7,13 +7,19 @@ members) and slightly understates (children living apart from a Mexico-born pare
 [INFERENCE] — labelled as an estimate, cross-checked against a CPS ASEC parent-birthplace
 calculation in kids_cps.py.
 """
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 from pathlib import Path
 import duckdb
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
 DERIVED = HERE / "derived"
-DB = "/Users/alien/research-data/immigration-fiscal/derived/immigration_microdata.duckdb"
+DB = str(_data_paths.microdata_duckdb_path(require_exists=False))
 YEARS = (2010, 2023)  # the only ACS vintages in the local panel; interpolated to 2020
 
 FIPS_NAME = {
