@@ -1,0 +1,16 @@
+{
+  "dataset": "NCES ECLS-K 1998-99 kindergarten-through-eighth-grade public-use child file",
+  "reference_waves": "Fall 1998, spring 1999, spring 2000",
+  "official_page": "https://ies.ed.gov/use-work/dataset/early-childhood-longitudinal-study-kindergarten-class-1998-99-ecls-k-kindergarten-through-eighth",
+  "manual": "https://files.eric.ed.gov/fulltext/ED511826.pdf",
+  "fall_teacher_questionnaire": "https://nces.ed.gov/ecls/pdf/kindergarten/fallteachersABC.pdf",
+  "first_grade_teacher_questionnaire": "https://nces.ed.gov/ecls/pdf/firstgrade/teachersABC.pdf",
+  "data_file": "childk8p.dat",
+  "data_bytes": 1591930422,
+  "data_sha256": "bd1e111d5a3830ce434215af828b7ca4c5382e4b3efc98a0f0916d8b172f54bf",
+  "dictionary_file": "ECLSK_Kto8_child_STATA.dct",
+  "dictionary_sha256": "4023a6b71e81a77d14e68b6f74440af45ddc95a49a3b2a696997cb2b0618d2ab",
+  "rows": 21409,
+  "physical_lines_per_record": 15,
+  "acquisition": "Read previously held public-use files; no new registration or restricted-data agreement; raw input not copied into this repository."
+}
