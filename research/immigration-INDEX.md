@@ -50,6 +50,11 @@ The report now regenerates all category comparisons and composition diagnostics.
 Fixed-service cases can be positive; property-receipt and service-quality effects
 remain unresolved. See the [response decision](../decisions/2026-09-20-category-service-response.md).
 
+[Objections and answers](immigration-objections-faq-2026-09-21.md): twelve standard
+objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
+second generation, reference group, education, single year, legacy cohorts, ageing,
+policy reading, crime), each steel-manned and routed to its executed table.
+
 [Cumulative 2005–2024 back-cast](immigration-historical-backcast-2026-09-20.md):
 no past year is measured. Actual BEA budgets and ACS population by year, with the
 2024 relative position held or income-adjusted, give **$1.4–2.0tn (10y), $2.0–3.1tn
