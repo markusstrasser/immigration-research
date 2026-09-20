@@ -45,6 +45,8 @@ for source in ['Identifiers','Nonidentifiers','Historical_calibrated_pool']:
     d = all_d if source == 'Historical_calibrated_pool' else all_d[all_d.source.eq(source)]
     weight = 'calibrated_weight' if source == 'Historical_calibrated_pool' else 'weight'
     groups = {'All_adults': np.ones(len(d),dtype=bool), 'US_born':d.q4.eq(2), 'US_born_25plus':d.q4.eq(2)&d.valid_age.ge(25),'US_born_USparents':d.q4.eq(2)&d.q7.eq(2)&d.q8.eq(2), 'G3':d.generation.eq('G3'),'G4plus':d.generation.eq('G4plus')}
+    # Completed-schooling sensitivity; exact-age missingness remains explicit.
+    groups['US_born_USparents_25plus'] = groups['US_born_USparents'] & d.valid_age.ge(25)
     for group, mask in groups.items():
         z=d.loc[mask]
         # Income wording differs across surveys: do not pool these outcomes.

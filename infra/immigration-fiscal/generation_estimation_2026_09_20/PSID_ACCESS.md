@@ -1,5 +1,15 @@
 # PSID exact-generation completeness audit
 
+**Later verification, 2026-09-20 — route closed for this workflow:** the in-app
+browser reached PSID's ZIP warning: Conditions of Use have not been accepted.
+The [current conditions](https://simba.isr.umich.edu/U/CondUse.aspx), item5,
+explicitly prohibit AI programs and LLMs in conjunction with PSID data. This
+is a use restriction in addition to the authentication gate described below.
+No conditions were accepted, no account created, no microdata downloaded and
+no contact sent. Reopening requires PSID permission covering the intended
+workflow or a separately conducted compliant human analysis. User login alone
+would not resolve this restriction. Earlier access findings are retained below.
+
 **Status, 2026-09-20:** primary field audit complete; microdata access and joint
 completeness counts pending. No data were obtained from the attempted downloads.
 PSID registration is separate from ICPSR. No account creation, access application,
