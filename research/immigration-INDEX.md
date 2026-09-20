@@ -17,6 +17,13 @@ defense/general government/old interest, and stated ownership/fiscal recycling.
 Fixed-service cases can be positive. Complete incidence, counterfactual response
 and sign-reversal thresholds are separate; this is not a measured policy effect.
 
+[Policy effects and new administrative outcomes](immigration-policy-causal-evidence-2026-09-20.md)
+checks Secure Communities victimization/reporting, Mariel school spending and
+H-2B employer benefits; records the direct Mexican-inflow crime replication route.
+Adds a verified 72 MB BEA/IRS county panel, with source units, missing years and
+geographic coverage preserved. Immigration-only offenses carry no automatic
+victim-harm charge. These findings do not change the conditional national total.
+
 Scope checks: [education and administration](immigration-education-administration-scope-2026-09-20.md)
 shows which staffing costs are already included and isolates the general-government
 response assumption. The [executed state/local response test](immigration-administration-response-test-2026-09-20.md)

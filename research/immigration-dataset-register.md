@@ -569,3 +569,38 @@ Common acquisition record: [ACQUIRED.md](../infra/immigration-fiscal/new_dataset
 **Key variables:** `v75` own birth country, `c28/c29` nonrespondent parent's parents' birthplace, `v25/v26.../v51` ethnic identification, `v348` family income, `v338` SSI, `c80/c94/c95...` schooling.
 **Quirks/license:** historical LA/San Antonio family follow-up, 1965–66 baseline and 1998–2002 follow-up. Author labels data 2019; older ICPSR28481v2 codebook cannot establish identical variables, blanking or missing codes. Identity requires multiple-response/skip reconstruction, not `v25` alone. Raw/derived ignored; redistribution permission not established. Inventory complete; outcome/generation reconstruction pending.
 **Used in:** [ancestry-outcomes evidence update](immigration-ancestry-outcomes-evidence-2026-09-20.md).
+
+### BEA_CAINC4_CORPUS_20260920 — county income components
+
+**Source/acquired:** US BEA; copied read-only from the operator's external corpus
+on September 20, 2026. [Official release route](https://apps.bea.gov/regional/zip/CAINC4.zip).
+CSV 29,012,947 bytes; full source 1969–2024, joined subset 2011 and 2013–2022.
+**Local:** `infra/immigration-fiscal/causal_evidence_2026_09_20/raw/county_outcomes/raw/bea_cainc4/`.
+[Pinned hash](../infra/immigration-fiscal/causal_evidence_2026_09_20/SOURCES.json),
+[acquisition and verification](../infra/immigration-fiscal/causal_evidence_2026_09_20/CORPUS.md).
+**Variables:** GeoFIPS/year, population (line 20), workplace earnings 35, social-insurance
+contributions 36, residence adjustment 42, net residence earnings 45, transfers 47,
+wages 50. Population is persons; source monetary fields are thousands of nominal dollars.
+**Quirks/use:** transfers include net business transfers, not solely government
+benefits. Virginia combined areas excluded from exact county joins; historical
+boundaries and Connecticut/Alaska mismatches remain unresolved. No ethnicity or
+policy treatment. Public government aggregate data; originals retained, raw/derived
+not redistributed in Git. Used in the [policy evidence/data memo](immigration-policy-causal-evidence-2026-09-20.md).
+
+### IRS_COUNTY_NOAGI_2011_2013_2022 — returns, income and tax liability
+
+**Source/acquired:** IRS SOI; 11 corpus CSVs copied September 20, 2026, 43,107,945 bytes;
+11 official annual codebooks acquired and read. [Official catalog](https://www.irs.gov/statistics/soi-tax-stats-county-data).
+**Local:** same lane, `raw/county_outcomes/raw/irs_soi/county/`; guides under
+`raw/county_outcomes/codebooks/`. All 23 combined BEA/IRS inputs have hashes/URLs
+in [SOURCES.json](../infra/immigration-fiscal/causal_evidence_2026_09_20/SOURCES.json).
+**Variables:** state/county FIPS, AGI_STUB=0 total rows, N1 returns, A00100 AGI,
+A00200 wage income, A06500 income-tax amount, N00200/N06500 corresponding counts.
+Guides confirm amounts in thousands; later A06500 labels specify after credits.
+**Quirks/use:** tax liability is not net federal receipts; refunds and other taxes
+remain distinct. 2012 absent. Zero amount with zero returns is disclosure-ambiguous
+and flagged/masked; positive cells can also omit protected amounts. Filing windows
+and ZIP-derived geography differ from BEA concepts. Outer county-year join produces
+34,733 rows with unmatched records retained, not a full national balanced panel.
+Public government aggregates; raw/derived ignored. Used with the BEA card above;
+contains no origin, nativity or legal-status field.
