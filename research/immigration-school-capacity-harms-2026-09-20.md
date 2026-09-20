@@ -9,6 +9,10 @@ schoolwide capacity effect. [SOURCE/INFERENCE: evidence below]
 
 ## Conditional estimate of resource dilution
 
+**Observed-data follow-up:** [measured enrollment and pupil-level checks](immigration-school-peer-checks-2026-09-20.md)
+now supplies actual Texas/California changes and original ECLS-K analyses. The
+10% below remains a hypothetical stress case, not a measured immigration surge.
+
 For an illustrative 10% enrollment increase, let funding grow by `r × 10%`:
 
 `spending per pupil / baseline = (1 + 0.10r) / 1.10`.
@@ -106,13 +110,19 @@ spending. No national dollar term is added here. [ACCOUNTING CONVENTION]
 
 Reproduce all arithmetic with
 [`school_spillovers.py`](../infra/immigration-fiscal/causal_execution_2026_09_20/school_spillovers.py).
-Source estimates are transcribed; no original student data were acquired or
-re-estimated. Independent primary-table checks verified both spending calibrations.
+Source estimates in this memo are transcribed; its original exercise did not
+re-estimate student data. The [subsequent pupil-level analysis](immigration-school-peer-checks-2026-09-20.md)
+does so with the held public ECLS-K file. Independent primary-table checks
+verified both spending calibrations.
 Contrary/null/adverse findings are retained together; LLM source selection remains
 an instrument limitation. This is an evidence note, not essay narrative.
 
 ## Revisions
 
+- 2026-09-20, pupil-level follow-up: actual state enrollment/staffing and ECLS-K
+  starting-score/school-adjusted comparisons are now executed in the linked
+  successor. This resolves the earlier absence of student microdata execution;
+  it does not change the [unpriced school-quality decision](../decisions/2026-09-20-school-quality-unpriced.md).
 - 2026-09-20: withdraw the September16 school-angle memo's $0/no-US-harm/blanket
   second-generation exclusion, and the corresponding ladder81 and §13 summaries.
   The decisive distinction is peer exposure versus total resource capacity;
