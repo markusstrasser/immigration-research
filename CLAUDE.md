@@ -115,6 +115,13 @@ derived files. Distinguish data absent, data present but not yet tabulated, and 
 unidentified causal effect. Older acquisition roadmaps describe leads; check the
 current register before treating a listed dataset as missing.
 
+For crime, incarceration or detention-cost claims, first read the
+[custody/crime measurement rule](research/immigration-detention-crime-and-fiscal-scope-2026-09-20.md)
+and [completed detention spending audit](infra/immigration-fiscal/detention_reconciliation_2026_09_20/README.md).
+The [verification handoff](research/immigration-verification-handoff.md#detention-crime-and-spending-reuse-before-researching)
+identifies the preserved distinctions, runnable checks and evidence needed to
+reopen the remaining gaps. Reuse the pinned work before repeating acquisition.
+
 ## Decision Journal (`decisions/`)
 
 Records of concept-level pivots — when an interpretation shifts, a methodology is adopted/dropped, a causal node gets resolved or reopened. One file per decision, `YYYY-MM-DD-slug.md`. Template in `decisions/.template.md`. Records use YAML frontmatter for machine-readable metadata (concept grouping, typed relations, provenance).

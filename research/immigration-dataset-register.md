@@ -23,6 +23,13 @@ ACS institutional residence cannot distinguish immigration custody, criminal
 custody and noncorrectional institutions. Preserve that limitation at the claim;
 retain detention as a fiscal cost with federal/local payments consolidated once.
 
+**Completed spending follow-up:** the [FY2024 account reconciliation](../infra/immigration-fiscal/detention_reconciliation_2026_09_20/README.md)
+holds USAspending, SF133, Treasury and national local-finance evidence, with source
+pins and offline probes. It supersedes earlier suggestions that expired-funding
+payments still need downloading. Custody-purpose and local-reimbursement splits
+remain unidentified; use the linked records specification rather than restarting
+the same acquisition. The verified custody subtotal is not a national net total.
+
 ## September 20 executed fiscal checks
 
 Public source acquisition and reuse for [four fiscal checks](immigration-four-fiscal-checks-2026-09-20.md).

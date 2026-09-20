@@ -2,6 +2,37 @@
 
 Use this file when another agent needs to verify commentator or economist claims against this repo and the local data stack.
 
+## Detention, crime and spending: reuse before researching
+
+**September 20, 2026 handoff.** The canonical [measurement and accounting rule](immigration-detention-crime-and-fiscal-scope-2026-09-20.md)
+and [completed FY2024 spending audit](../infra/immigration-fiscal/detention_reconciliation_2026_09_20/README.md)
+take precedence over earlier missing-data statements on this question. Read them
+before a new web search or acquisition. Preserve these distinctions in claims:
+
+- Civil immigration detention, immigration-only criminal offenses, other criminal
+  offenses and ACS institutional residence are separate outcomes. State explicitly
+  when a source cannot separate them; criminal history is not current custody basis.
+- Excluding detention from a crime comparison does not erase its fiscal cost.
+  A custody subtotal, whole ERO/ICE spending and an all-government total differ.
+- Appropriations, obligations and actual outlays differ; gross and net outlays
+  differ; federal payments to local governments must be consolidated once.
+- Missing allocation is not zero cost. Observed spending is not marginal policy
+  cost, and these accounts do not supply a Mexican-origin or generation allocation.
+
+**Already done:** USAspending Files A/B, all-funding-year SF133 and Treasury
+reconcile; the national local-finance file and an audited county example were
+inspected. The audit README links originals, hashes, acquisition receipts,
+reproduction commands and the precise remaining [records specification](../infra/immigration-fiscal/detention_reconciliation_2026_09_20/RECORDS_NEEDED.md).
+Use its offline checks to verify held evidence; restore pinned files only when
+missing. Raw bytes and generated outputs are ignored by Git, so a fresh clone
+needs the documented restore process, not a new discovery project.
+
+**Reopen with new evidence:** a custody-level execution/allocation schedule across
+funding years, matched provider expense/receipt records, a changed source release,
+or a different requested year/scope. Repeating the same broad accounts cannot
+recover the missing allocation. Append dated corrections if new evidence changes
+the result; retain the source history. No external records request has been sent.
+
 ## First principle
 
 Do not verify "immigration" as one object.
