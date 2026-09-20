@@ -1,0 +1,5 @@
+_cache/
+derived/
+ranges/
+__pycache__/
+manifest*.json

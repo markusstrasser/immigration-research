@@ -1,0 +1,157 @@
+[
+  {
+    "file": "ice_fy2024_annual.pdf",
+    "source_path": "sources/immigration-fiscal/data/external/crime_frontier/ice/ice_ero_annual_fy2024.pdf",
+    "url": "https://www.ice.gov/doclib/eoy/iceAnnualReportFY2024.pdf",
+    "bytes": 2941904,
+    "sha256": "ca5ec28b2b99fac101f80bf3c353811bfa5086c981a2e93a99ece427076ffad1",
+    "acquired": "2026-09-20T13:21:38.610331+00:00",
+    "local_file": "_cache/ice_fy2024_annual.pdf",
+    "access": "public official publication",
+    "codebook": "self-documenting official report"
+  },
+  {
+    "file": "ice_fy2025_budget.pdf",
+    "source_path": "sources/immigration-fiscal/data/external/lifetime/admin/ice_fy25_budget_justification.pdf",
+    "url": "https://www.dhs.gov/sites/default/files/2024-04/2024_0308_us_immigration_and_customs_enforcement.pdf",
+    "bytes": 4016509,
+    "sha256": "ca565c3dca121021d4720a5ad03a0901a4ef99789e7780c72efd962909c28e1f",
+    "acquired": "2026-09-20T13:21:38.775424+00:00",
+    "local_file": "_cache/ice_fy2025_budget.pdf",
+    "access": "public official publication",
+    "codebook": "self-documenting official report"
+  },
+  {
+    "file": "ice_fy2026_budget.pdf",
+    "source_path": "sources/immigration-fiscal/data/external/dhs_budget/ice_fy2026_cj.pdf",
+    "url": "https://www.dhs.gov/sites/default/files/2025-05/25_0530_ice_fy26-congressional-budget-justification.pdf",
+    "bytes": 4795694,
+    "sha256": "96292f7790703ccc2b0a52777b4b9eebb7325e2fca63c614758115f208961543",
+    "acquired": "2026-09-20T13:21:39.286080+00:00",
+    "local_file": "_cache/ice_fy2026_budget.pdf",
+    "access": "public official publication",
+    "codebook": "self-documenting official report"
+  },
+  {
+    "file": "scaap_fy2024_awards.pdf",
+    "source_path": ".scratch/clarity-next-20260905/conduct/scaap_fy24_awards.pdf",
+    "url": "https://bja.ojp.gov/funding/scaap-fy24-awards.pdf",
+    "bytes": 284355,
+    "sha256": "0c9db3357c1b2d72a89669ee8a315746ac2da3488f9cd8d38045efce41fc997d",
+    "acquired": "2026-09-20T13:21:39.458459+00:00",
+    "local_file": "_cache/scaap_fy2024_awards.pdf",
+    "access": "public official publication",
+    "codebook": "scaap_fy2024_codebook.pdf"
+  },
+  {
+    "file": "scaap_fy2024_awards.csv",
+    "source_path": ".scratch/clarity-next-20260905/conduct/analysis/scaap_fy24_awards.csv",
+    "url": null,
+    "bytes": 40773,
+    "sha256": "b6964e2aae9cec5f68e168d34cba97017e544cb626c06426e0b3f8f2f88c2a69",
+    "acquired": "2026-09-20T13:21:39.501455+00:00",
+    "local_file": "derived/scaap_fy2024_awards.csv",
+    "access": "project-derived CSV from official BJA PDF; not original agency CSV",
+    "codebook": "scaap_fy2024_codebook.pdf",
+    "producer": "parse_scaap.py",
+    "producer_source": "infra/immigration-fiscal/build/analyze_conduct_denominators.py:87-109",
+    "inputs": [
+      "scaap_fy2024_awards.pdf"
+    ]
+  },
+  {
+    "file": "vera_dictionary.md",
+    "source_path": ".scratch/frontier-20260905/datasets/ice/README.md",
+    "url": "https://raw.githubusercontent.com/vera-institute/ice-fytd-stats/a6bf48e2627323f01827d52776f0d08023c410ba/README.md",
+    "bytes": 50831,
+    "sha256": "b476c8e4e040764d69d816015d401d55e564106a2734635d9a14fde2fdf2f984",
+    "acquired": "2026-09-20T13:21:39.502180+00:00",
+    "local_file": "_cache/vera_dictionary.md",
+    "access": "official ICE workbook archived by Vera, or Vera documentation; retain license and attribution",
+    "codebook": "self-documenting official report"
+  },
+  {
+    "file": "vera_license.md",
+    "source_path": ".scratch/frontier-20260905/datasets/ice/License.md",
+    "url": "https://raw.githubusercontent.com/vera-institute/ice-fytd-stats/a6bf48e2627323f01827d52776f0d08023c410ba/License.md",
+    "bytes": 2779,
+    "sha256": "2d7704715f3da0b4af7e1512c374464675b9aab9bcf0534af671dc40ddacfc89",
+    "acquired": "2026-09-20T13:21:39.502604+00:00",
+    "local_file": "_cache/vera_license.md",
+    "access": "official ICE workbook archived by Vera, or Vera documentation; retain license and attribution",
+    "codebook": "self-documenting official report"
+  },
+  {
+    "file": "ice_fy2026_july20.xlsx",
+    "source_path": ".scratch/frontier-20260905/datasets/ice/2026-07-20_FY26_detentionStats07202026.xlsx",
+    "url": "https://raw.githubusercontent.com/vera-institute/ice-fytd-stats/a6bf48e2627323f01827d52776f0d08023c410ba/raw/FY2026/2026-07-20_FY26_detentionStats07202026.xlsx",
+    "bytes": 251974,
+    "sha256": "f83255a56773a7f7a53e46a72ed3bf742397db03eaf14f6abe3f9b07744d28a6",
+    "acquired": "2026-09-20T13:21:39.503163+00:00",
+    "local_file": "_cache/ice_fy2026_july20.xlsx",
+    "access": "official ICE workbook archived by Vera, or Vera documentation; retain license and attribution",
+    "codebook": "Footnotes worksheet and vera_dictionary.md"
+  },
+  {
+    "file": "scaap_fy2024_codebook.pdf",
+    "source_path": null,
+    "url": "https://bja.ojp.gov/funding/O-BJA-2024-172032.pdf",
+    "bytes": 560654,
+    "sha256": "ee4b157fdb8aace9bb71b9d2f69db23377cc8fd865afd1e1d811dedf3b991973",
+    "acquired": "2026-09-20T13:21:43.724316+00:00",
+    "local_file": "_cache/scaap_fy2024_codebook.pdf",
+    "access": "public official publication",
+    "codebook": "scaap_fy2024_codebook.pdf"
+  },
+  {
+    "file": "ussc_2024_table9.pdf",
+    "source_path": null,
+    "url": "https://www.ussc.gov/sites/default/files/pdf/research-and-publications/annual-reports-and-sourcebooks/2024/Table09.pdf",
+    "bytes": 91152,
+    "sha256": "31043cd76a0e0533e30727ee7749581b161068f5a657b2730f958cc23b38f66a",
+    "acquired": "2026-09-20T13:21:45.487373+00:00",
+    "local_file": "_cache/ussc_2024_table9.pdf",
+    "access": "public official publication",
+    "codebook": "ussc_2024_codebook.pdf"
+  },
+  {
+    "file": "ice_fy2024_yearend.xlsx",
+    "url": "https://raw.githubusercontent.com/vera-institute/ice-fytd-stats/a6bf48e2627323f01827d52776f0d08023c410ba/raw/FY2024/2024-10-01_FY24_detentionStats.xlsx",
+    "bytes": 240012,
+    "sha256": "ebd4a083f33aca8d7cc717ee4b9c363ac2f4b6c0e74b9ddc54b0772a414ce29e",
+    "acquired": "2026-09-20T13:22:40.452645+00:00",
+    "provenance": "official ICE raw workbook via Vera unmodified archive",
+    "local_file": "_cache/ice_fy2024_yearend.xlsx",
+    "access": "official ICE workbook archived by Vera, or Vera documentation; retain license and attribution",
+    "codebook": "Footnotes worksheet and vera_dictionary.md"
+  },
+  {
+    "file": "ice_fy2025_sept25.xlsx",
+    "url": "https://raw.githubusercontent.com/vera-institute/ice-fytd-stats/a6bf48e2627323f01827d52776f0d08023c410ba/raw/FY2025/2025-10-30_FY25_detentionStats09252025.xlsx",
+    "bytes": 1566719,
+    "sha256": "3b9e2d626b1e249b2c87539554758333b27bc0da64a37e5dac99944a210c0782",
+    "acquired": "2026-09-20T13:23:22.153380+00:00",
+    "provenance": "official ICE raw workbook via Vera unmodified archive",
+    "local_file": "_cache/ice_fy2025_sept25.xlsx",
+    "access": "official ICE workbook archived by Vera, or Vera documentation; retain license and attribution",
+    "codebook": "Footnotes worksheet and vera_dictionary.md"
+  },
+  {
+    "file": "ussc_2024_codebook.pdf",
+    "url": "https://www.ussc.gov/sites/default/files/pdf/research-and-publications/annual-reports-and-sourcebooks/2024/AppendixA.pdf",
+    "bytes": 516547,
+    "sha256": "8d4932cfdef20a30d90a0b8ba2aba85967280e278ce327ee5d02786d1b7270f1",
+    "local_file": "_cache/ussc_2024_codebook.pdf",
+    "access": "public official publication",
+    "codebook": "ussc_2024_codebook.pdf"
+  },
+  {
+    "file": "bjs_jails2023_table12.csv",
+    "local_file": "_cache/bjs_jails2023_table12.csv",
+    "url": "https://bjs.ojp.gov/document/ji23stt12.csv",
+    "bytes": 3806,
+    "sha256": "eb642260e5b63e5b8c85e6cf088dcbf5bcf7ad2b222dcccce3120c24e7531917",
+    "codebook": "Embedded table notes and https://bjs.ojp.gov/library/publications/jail-inmates-2023-statistical-tables/web-report",
+    "access": "public official table"
+  }
+]
