@@ -222,6 +222,12 @@ Method decision: [complete account and fiscal response](../decisions/2026-09-20-
 
 ## Revisions
 
+2026-09-20, detention scope: [the measurement/accounting rule](immigration-detention-crime-and-fiscal-scope-2026-09-20.md)
+keeps actual custody costs while separating them from ordinary offending. A
+detention breakout must reconcile to this account's existing government totals;
+no new expenditure or ethnic attribution is added by this clarification.
+[Decision](../decisions/2026-09-20-separate-detention-offenses-and-spending.md).
+
 2026-09-20, endpoint audit: decomposed the$356.84bn row and distinguished the weaker
 headcount/age spending substitutions from preferred program-dollar proxies.
 The broad grid is retained as sensitivity, not an equally supported uncertainty

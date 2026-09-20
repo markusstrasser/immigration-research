@@ -109,6 +109,11 @@ INFERENCE for the last sentence]
 
 ## Crime-harm rule
 
+[Source-specific detention/crime scope](immigration-detention-crime-and-fiscal-scope-2026-09-20.md)
+specifies which held data can separate civil custody and criminal offenses, and
+how federal payments/local receipts are consolidated. ACS institutions cannot
+supply a detention-adjusted crime rate.
+
 **An immigration-only violation has no automatic victim-harm price.** A crossing
 that uses no enforcement resources and causes no separate harm gets **$0 at that
 event**. Real additional enforcement, courts or detention belong in government

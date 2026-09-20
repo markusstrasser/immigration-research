@@ -1,3 +1,5 @@
+**Measurement correction, 2026-09-20:** The ACS institutionalization evidence behind S5/C4/N2 does not identify ordinary offending or exclude immigration detention and noncorrectional institutions. See the [current measurement scope](immigration-detention-crime-and-fiscal-scope-2026-09-20.md); historical crime-cost extensions remain conditional scenarios.
+
 <!-- fiscal-repair-2026-09-19 -->
 **Current fiscal release (September 19):** [Repaired yearly and lifetime calculation index](immigration-yearly-lifetime-cost-repair-2026-09-19.md) supersedes affected annual, household-financing and lifetime figures below. It reports both allocation conventions, actual-age survival NPVs and unresolved coverage. Earlier text and calculations remain historical evidence; unrelated findings are unchanged.
 
@@ -105,6 +107,8 @@ Where the dunk is largest and cleanest: the generational unit (S5, C4, N2), whic
 Ladder entries 44, 45, 48, 65, 66, 76, 85, 100, 117, 119, 123, 125, 128, 130 in [the confidence ladder](immigration-confidence-ladder.md); lanes `all_age_ledger_2026_09_17`, `metro_match_2026_09_17`, `ledger_absolute_2026_09_17`; archived posts under `infra/immigration-fiscal/acs_institutional_2026_09_16/x_pull_2026_09_16/`; Smith's essays of 2024-01 and 2026-09-09 as quoted in the dismantle memo and standing note. All quotations of the targets are verbatim from those archives. [INSTRUMENT: LLM-conducted; the grading rubric is the author's and the AGREE rows are the check on its direction.]
 
 ## Revisions
+
+- 2026-09-20: Separated institutional residence, civil detention, criminal offenses and fiscal costs; historical counts are retained with narrower interpretation. [Decision](../decisions/2026-09-20-separate-detention-offenses-and-spending.md).
 
 - **2026-09-18 evening:** Added Tabarrok and Cowen from the full Marginal Revolution archive ([MR audit](immigration-marginal-revolution-claims-audit-2026-09-18.md)); the count line now carries both the four-target and six-commentator totals. Concept affected: scorecard coverage; no existing grade changed.
 

@@ -1,5 +1,13 @@
 # School / classroom incidence of immigrant & ELL concentration
 
+**Correction, 2026-09-20:** The categorical verdict below is superseded by the
+[school-capacity audit](../../../research/immigration-school-capacity-harms-2026-09-20.md).
+The education-quality channel is **unpriced**, not established at $0. Some peer
+designs absorb schoolwide resource changes or control staffing, while US spending
+cuts measurably harm white pupils. Neither fact identifies immigration's national
+effect. The blanket second-generation exclusion is also withdrawn. Original
+findings remain below as dated evidence, not the current conclusion.
+
 **Verdict:** NO measured incumbent-student cost in US data. The best-identified US estimates (family-FE Florida, Haitian-influx IV, Delaware new-EL spillovers, Hunt's 1940-settlement IV) are ZERO to POSITIVE. The one credible negative is small, heterogeneous, and attaches to **English-learner status, not immigrant origin** — Diette & Oyelere's own decomposition finds Latin-American share has NO effect while limited-English share has a small one. The only causally-supported classroom mechanism (teacher time reallocation) is a **−1.8% SD non-US working-paper estimate** whose US analogues are zero. Threshold/non-linearity is NOT supported; the Colombia paper finds the effect *vanishes* at higher concentration. **None of it applies to the Mexican-origin second generation**, who are English-proficient by school age. Price it at **$0 per pupil-year**; the school channel's real content is head-count operating and capital cost.
 
 Model self-report: claude-opus-5[1m] (Opus 5, 1M context), agent `school-angle`, dispatched 2026-09-16.

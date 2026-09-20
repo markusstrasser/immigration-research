@@ -15,6 +15,8 @@ Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [m
 
 ## Core State
 
+Civil custody, criminal offenses and fiscal spending: [detention/crime measurement scope](immigration-detention-crime-and-fiscal-scope-2026-09-20.md). ACS institutional counts cannot separate immigration detention; government custody spending remains a cost, with intergovernmental payments consolidated once.
+
 Latest complete annual account: [national reconciliation and conditional net effects](immigration-complete-annual-account-2026-09-20.md).
 The source-centered long-run model gives **$270–289bn/year net cost to other US residents**
 after production benefits. The **$262–357bn** grid includes weaker proxy stress tests;

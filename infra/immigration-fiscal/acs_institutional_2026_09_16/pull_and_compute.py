@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """Institutional group-quarters share of men 18-39 by origin x nativity, ACS 1-year PUMS via the Census API.
 
-Replicates Rumbaut et al. 2006 (2000 census 5% PUMS, Table 1) for 2010, 2019 and 2023. TYPE/TYPEHUGQ=2 is
-ALL institutional GQ (correctional, nursing, mental, juvenile); for men 18-39 it is overwhelmingly correctional,
-and since 2010 it includes ICE detention (biases foreign-born up). NATIVITY=1 pools second and third-plus
-generations: ACS has no parental birthplace. HISP=24 ("all other Hispanic") absorbs prison records coded
-generically Hispanic; the CSV reports a raw and an adjusted Mexican rate (excess of HISP=24 above the all-native
-rate reallocated to named origins by population share).
+Extends the origin/nativity comparison of Rumbaut et al. 2006, but DOES NOT replicate its
+correctional-only outcome. TYPE/TYPEHUGQ=2 covers all institutional GQ (correctional,
+nursing, mental, juvenile) and can include ICE detention. Public PUMS cannot split them.
+These are institutional-residence shares, not detention-adjusted incarceration or crime rates.
+NATIVITY=1 pools second and later generations: ACS has no parental birthplace.
+HISP identifies self-reported origin, not country of birth. The adjusted Mexican rate
+reallocates excess HISP=24 ("all other Hispanic") by population share; this is a sensitivity
+scenario, not observed recovery of misclassified individuals. See README.md for scope.
 
 Run:  uv run python3 pull_and_compute.py          (uses CENSUS_API_KEY from env or ../acquire/config.local.env;
                                                    skips fetching when the JSON tabulations are already here)

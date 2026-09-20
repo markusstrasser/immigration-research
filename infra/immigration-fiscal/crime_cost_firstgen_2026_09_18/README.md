@@ -1,3 +1,5 @@
+**Custody/offense scope, 2026-09-20:** These are felony arrest charges, not civil ICE detention, convictions or distinct incidents. Named offenses allow narrower comparisons; the residual category is not certified immigration-offense-free. Unit-cost weighting is a scenario, not observed government spending. See the [reporting and fiscal rule](../../../research/immigration-detention-crime-and-fiscal-scope-2026-09-20.md).
+
 # First-generation crime, cost-weighted (Texas felony arrest charges 2012–2018)
 
 Question: the foreign-born are arrested less often than the US-born; is their offence mix costlier, so that the gap narrows or reverses once each charge carries its social cost?

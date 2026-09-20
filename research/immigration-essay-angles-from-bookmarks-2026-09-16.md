@@ -1,5 +1,11 @@
 # Essay angles mined from the operator's X bookmarks (2026-09-16)
 
+**School-channel correction, 2026-09-20:** The statements below that classroom
+harm is disconfirmed, precisely zero or priced at $0 are superseded by the
+[capacity audit](immigration-school-capacity-harms-2026-09-20.md). Resource shortages
+can harm pupils; the national immigration-attributable loss is unpriced. Earlier
+bookmark/source evidence remains retained. [Decision](../decisions/2026-09-20-school-quality-unpriced.md).
+
 **Verdict:** 1,361 immigration-related posts out of 10,181 bookmarks were read by two Claude lanes and two Grok 4.6 reads (one per half). About 190 posts carry an extractable angle; the rest are rhetoric, single incidents or off-topic. Against ladder entries 65–81, the reads agree on five angles worth building, four that are already measured, and a handful of bookmarked claims that would fail verification and must not enter the essay. The operator's flagged angle, mixed-classroom and literacy costs, has no evidential lead in the bookmarks and is disconfirmed by the literature (ladder 81). [SOURCE: `../infra/immigration-fiscal/bookmark_angles_2026_09_16/angles_a.md`, `angles_b.md`, `grok_angles_b.md`; quotes there are ≤15 words with URLs; the raw extract stays outside the repo]
 
 ## Angles worth building (agreed by at least two reads)
@@ -136,3 +142,7 @@ The claim: minority, immigrant and women-owned set-asides explain who gets prose
 | "You never see white guys locked up for fraud like this" | False as a base rate | US Sentencing Commission fraud/theft/embezzlement offenders are roughly a third white, a third Black, a fifth Hispanic in recent fiscal years; the largest recent federal fraud sentences (Madoff, Bankman-Fried, Milton) are white men. [TRAINING-DATA; USSC Quick Facts on fraud offenders is the citable source] |
 
 What survives for the essay is the row already in the first table: **program fraud as an unpriced ledger line** (Feeding Our Future, Minnesota autism and housing-stabilization cases, now the LA homelessness cases). The set-aside story is not the lever; the measurable lever is the USSC individual datafile, which records offender citizenship by offense type, so the non-citizen share of federal fraud and program-fraud offenders can be compared with the non-citizen adult share, and PaymentAccuracy.gov improper-payment rates by program price the pool. Neither is built. Grade: HAD-PARTS (angle known, no measurement). [INFERENCE]
+
+## Revisions
+
+- 2026-09-20: Withdraw the categorical zero for school-quality harm; distinguish adjusted peer effects from schoolwide resource effects. [Decision](../decisions/2026-09-20-school-quality-unpriced.md).

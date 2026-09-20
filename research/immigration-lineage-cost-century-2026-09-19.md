@@ -1,3 +1,5 @@
+**Crime measurement correction, 2026-09-20:** Historical additions below import BJS prisoner stocks, unsplit ACS institutions and Texas arrest charges. These do not jointly identify lineage-specific ordinary offending or detention-adjusted crime costs. The [current scope](immigration-detention-crime-and-fiscal-scope-2026-09-20.md) governs reuse; actual detention spending remains a separate fiscal item, counted once.
+
 # The hundred-year fiscal cost of one Mexico-born arrival's lineage
 
 **Current qualification, 2026-09-19:** The scenarios below are retained historical
@@ -43,6 +45,8 @@ Period profiles, not cohort projections; no general equilibrium, no behavioural 
 `ledger_absolute_2026_09_17/derived/lifetime/period_profiles.csv` and `age_profiles.csv`; `demo_momentum_2026_09_16` (age-standardised fertility by generation; NVSR 74-01 Table 2 white TFR 1.5325; NVSR 61-01 origin-specific 2010 TFRs); `status_impute_2026_09_16` (unauthorized penalty −$870 per adult-year); `crime_cost_2026_09_16`; `crime_cost_firstgen_2026_09_18`; `mexican_origin_population_total_2026_09_19` (fourth-plus identification 0.8881; attriter retained share 0.1995); NVSS life tables via `lifetime_longevity_sstiming_2026_09_18`; ladder 78, 85, 121, 130, 131, 158.
 
 ## Revisions
+
+- 2026-09-20: Separated institutional residence, civil detention, criminal offenses and fiscal costs; historical counts are retained with narrower interpretation. [Decision](../decisions/2026-09-20-separate-detention-offenses-and-spending.md).
 
 2026-09-19, later: [Matched accounts and projection checks](../decisions/2026-09-19-matched-accounts-and-projection-checks.md)
 narrows completeness, horizon, uncertainty and exit-direction claims; preserves
