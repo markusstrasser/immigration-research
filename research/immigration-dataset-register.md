@@ -1,5 +1,58 @@
 # Immigration — Dataset Register
 
+## September 20 project-local storage update
+
+`sources/` is now a physical, ignored directory inside this checkout. Fiscal raw
+inputs live in `sources/immigration-fiscal/data/`, generated tables in
+`sources/immigration-fiscal/derived/`, and reused ECLS/ELS/PIAAC/NLSY inputs in
+`sources/reused-surveys/`. The previous `~/research-data` path points inward to
+this tree for existing saved commands. This supersedes the storage-location
+claims below; original acquisition paths and source identities remain evidence.
+
+The complete ACS2019 person archive and BEA SAINC35 source were recovered from
+the USB and matched their recorded SHA-256 hashes. Their local paths are
+`sources/immigration-fiscal/data/external/acs_pums_2019_1yr/csv_pus.zip` and
+`sources/corpus/bea_data/SAINC/SAINC35__ALL_AREAS_1929_2024.csv`. The associated
+ACS2024 household archive and PDF dictionary are alongside the local ACS2024
+person archive. The previously incomplete ACS2019 cache was removed after
+recovery. [Storage changes and verification](../notes/immigration-storage-cleanup-2026-09-20.md).
+
+### AHS_2023_NATIONAL_PUF — recovered full housing survey archives
+
+**Source:** US Census Bureau. **Recovered:** 2026-09-20.
+**Local:** `sources/immigration-fiscal/data/external/ahs_2023/`.
+**Official:** [Census 2023 AHS directory](https://www2.census.gov/programs-surveys/ahs/2023/).
+**Size:** v1.0 141,729,433 bytes; v1.1 141,845,539 bytes, both full-CRC verified.
+**SHA-256:** v1.0 `c595a82f1bfff2b992e5f2b1711556436a785ebc3fe940c522483c501bd195dc`;
+v1.1 `429be06168986d87a9e5f9b2bc2c722ece90726c2e0cdbf7630c444073d6d08a`.
+**Codebooks:** `enclave_quality_2026_09_18/_cache/ahs_mini_2023.pdf`,
+`ahs_items.pdf`, `ahs_definitions.pdf`, `ahs_cdbk_ref.pdf` under the fiscal infra tree.
+**Fields/use:** CONTROL, WEIGHT, HHSPAN, HHRACE, HHNATVTY, HINCP, TENURE and
+housing/neighborhood quality; [analysis](../infra/immigration-fiscal/enclave_quality_2026_09_18/ahs_analysis.py).
+Public-use household sample; distinguish survey versions, nativity and Hispanic
+identity, and use the documented complex-sample weights. The lane's v1.0 cache
+now holds a verified clone, replacing its truncated download. Both releases are
+preserved; recovery does not change the published estimates.
+
+### GFD_FULL_LOCAL_FINANCE — recovered Government Finance Database
+
+**Source:** Pierson, Hand and Thompson's recoding of Census government finance.
+**Recovered:** 2026-09-20 from the existing owned Modal `gfd` volume.
+**Local:** `sources/immigration-fiscal/data/external/government_finance_database/gfd_entire.zip`.
+**Upstream:** [Recorded full archive](https://drive.google.com/uc?export=download&id=1FtZQR34S69D2DnOeM_agRTeIVwojbaAK).
+**Size:** 340,921,174 bytes; all members pass `unzip -tqq`.
+**SHA-256:** `86cf9b3adecbc1309bf29c9e8d1ff6a960793fd6381e30170263fe05e1d9d7e0`.
+**Codebook:** archive contains the database appendix, PLoS paper, 2006
+classification manual and 2017 individual-unit disclaimer alongside the full CSV.
+**Fields/use:** government/year identifiers, county geography and direct
+expenditure by education, police, corrections, judiciary, welfare and health;
+[county aggregation recipe and limits](../infra/immigration-fiscal/local_spending_composition_2026_09_18/README.md).
+The current county subset and historical-school-finance supplement remain
+distinct artifacts. This full archive enables regeneration of the subset; it
+does not supply confidential consular-ID migration treatment. Local recovery
+does not establish redistribution permission. Its old truncated lane archive
+was replaced by a verified clone.
+
 ## September 20 pupil-level school checks
 
 | Dataset / reference period | Local lane and provenance | Usable fields / limitations |
