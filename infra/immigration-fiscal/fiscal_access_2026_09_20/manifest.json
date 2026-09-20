@@ -1,0 +1,192 @@
+[
+  {
+    "filename": "census_linkage_inventory.pdf",
+    "url": "https://www2.census.gov/about/linkage/data-file-inventory.pdf",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": "491936",
+    "http_status": 200,
+    "final_url": "https://www2.census.gov/about/linkage/data-file-inventory.pdf",
+    "content_type": "application/pdf",
+    "bytes": 491936,
+    "sha256": "62cda116c7201c0d45b5880d36c04023cb585b7b6ad1d550de2c9b67f5c9645a"
+  },
+  {
+    "filename": "census_ssa_linkage_documentation.pdf",
+    "url": "https://www.census.gov/content/dam/Census/library/working-papers/2021/econ/KatieWP112.pdf",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": "277090",
+    "http_status": 200,
+    "final_url": "https://www.census.gov/content/dam/Census/library/working-papers/2021/econ/KatieWP112.pdf",
+    "content_type": "application/pdf",
+    "bytes": 277090,
+    "sha256": "409b535f942e5eb7ed3b4299c5f75de723d522ec2be494c5f790494ddd94b13b"
+  },
+  {
+    "filename": "census_access.html",
+    "url": "https://www.census.gov/topics/research/guidance/restricted-use-microdata/standard-application-process.html",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": null,
+    "http_status": 200,
+    "final_url": "https://www.census.gov/topics/research/guidance/restricted-use-microdata/standard-application-process.html",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 360912,
+    "sha256": "cfcdd3de7dbc054405ff29e4f579c57da7e38caa614d5922be609b29e6c33750"
+  },
+  {
+    "filename": "census_remote_access.html",
+    "url": "https://www.census.gov/about/adrm/fsrdc/about/secure-remote-access.html",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": null,
+    "http_status": 200,
+    "final_url": "https://www.census.gov/about/adrm/fsrdc/about/secure-remote-access.html",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 326446,
+    "sha256": "35a91b041af6717bca7be35f4055abcc6f2a429d0eaadffec1e8d636b2ab9ced"
+  },
+  {
+    "filename": "resdac_foreign_access.html",
+    "url": "https://resdac.org/articles/cms-non-us-based-researcher-policy",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": "7302",
+    "http_status": 200,
+    "final_url": "https://resdac.org/articles/cms-non-us-based-researcher-policy",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 28461,
+    "sha256": "ee6916f80a1e6864c0a1bc56d14f2ce92d766c8e95f9c2da1075e4ddcbeeacbc"
+  },
+  {
+    "filename": "resdac_availability.html",
+    "url": "https://resdac.org/file-availability",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": "10286",
+    "http_status": 200,
+    "final_url": "https://resdac.org/file-availability",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 128768,
+    "sha256": "6aa2be8073a1297767147c1de2e1400710b2205f21fde84b38990c65957c1f9f"
+  },
+  {
+    "filename": "resdac_taf_de.html",
+    "url": "https://resdac.org/cms-data/files/taf-de",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": "8179",
+    "http_status": 200,
+    "final_url": "https://resdac.org/cms-data/files/taf-de",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 33274,
+    "sha256": "6f7111cf7b5d6aa1295e99972a6e8bc4f0bc3bf89f309e72cc697a14a28a3b10"
+  },
+  {
+    "filename": "resdac_taf_documentation.html",
+    "url": "https://resdac.org/cms-data/files/taf-de/data-documentation",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": "5899",
+    "http_status": 200,
+    "final_url": "https://resdac.org/cms-data/files/taf-de/data-documentation",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 22775,
+    "sha256": "2a18a3bca767051ec163c0f755a53d1fbefe47d4510c64c4b560414e8ecc07bc"
+  },
+  {
+    "filename": "taf_de_technical_guide.pdf",
+    "url": "https://resdac.org/sites/datadocumentation.resdac.org/files/2021-08/TAF_TechGuide_DE_File.pdf",
+    "status": "failed",
+    "head_status": 404,
+    "head_content_length": "17833",
+    "http_status": 404,
+    "final_url": "https://resdac.org/sites/datadocumentation.resdac.org/files/2021-08/TAF_TechGuide_DE_File.pdf",
+    "content_type": "text/html; charset=UTF-8",
+    "error": "404 Client Error: Not Found for url: https://resdac.org/sites/datadocumentation.resdac.org/files/2021-08/TAF_TechGuide_DE_File.pdf"
+  },
+  {
+    "filename": "cms_vrdc_fees_2026.pdf",
+    "url": "https://resdac.org/sites/datadocumentation.resdac.org/files/2026-05/CMS-Fee-List-CCW-VRDC-Cloud-Environment.pdf",
+    "status": "failed",
+    "head_status": 404,
+    "head_content_length": "17851",
+    "http_status": 404,
+    "final_url": "https://resdac.org/sites/datadocumentation.resdac.org/files/2026-05/CMS-Fee-List-CCW-VRDC-Cloud-Environment.pdf",
+    "content_type": "text/html; charset=UTF-8",
+    "error": "404 Client Error: Not Found for url: https://resdac.org/sites/datadocumentation.resdac.org/files/2026-05/CMS-Fee-List-CCW-VRDC-Cloud-Environment.pdf"
+  },
+  {
+    "filename": "mcbs_overview.html",
+    "url": "https://www.cms.gov/data-research/research/medicare-current-beneficiary-survey",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": "33175",
+    "http_status": 200,
+    "final_url": "https://www.cms.gov/data-research/research/medicare-current-beneficiary-survey",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 204727,
+    "sha256": "9074a5512046f22c61edea70a5696347f3c68cc3ede8bfe69a3737846d3e2832"
+  },
+  {
+    "filename": "CSPUF2023_Data.zip",
+    "url": "https://data.cms.gov/sites/default/files/2026-01/e68b9516-a8f0-425e-916c-909c3b693afe/CSPUF2023_Data.zip",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": "10692279",
+    "http_status": 200,
+    "final_url": "https://data.cms.gov/sites/default/files/2026-01/e68b9516-a8f0-425e-916c-909c3b693afe/CSPUF2023_Data.zip",
+    "content_type": "application/zip",
+    "bytes": 10692279,
+    "sha256": "56937f1a623b77a85d5b401c1fdc00791098772c240073f70cbbbdff9db86d41",
+    "members": [
+      {
+        "name": "CSPUF2023_Import.txt",
+        "bytes": 12867
+      },
+      {
+        "name": "cspuf2023.csv",
+        "bytes": 9886954
+      },
+      {
+        "name": "cspuf2023.xpt",
+        "bytes": 6841680
+      }
+    ]
+  },
+  {
+    "filename": "CSPUF2023_Codebook.txt",
+    "url": "https://data.cms.gov/sites/default/files/2026-01/CSPUF2023_Codebook.txt",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": "1917",
+    "http_status": 200,
+    "final_url": "https://data.cms.gov/sites/default/files/2026-01/CSPUF2023_Codebook.txt",
+    "content_type": "text/plain",
+    "bytes": 32057,
+    "sha256": "865624a99f0cdbdca5c6903bc88c93e738046710ab1ade803abea9ca88712fed"
+  },
+  {
+    "filename": "CSPUF2023_Methodology.zip",
+    "url": "https://data.cms.gov/sites/default/files/2026-01/2023%20Cost%20Supplement%20Methodology.zip",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": "1176312",
+    "http_status": 200,
+    "final_url": "https://data.cms.gov/sites/default/files/2026-01/2023%20Cost%20Supplement%20Methodology.zip",
+    "content_type": "application/zip",
+    "bytes": 1176312,
+    "sha256": "451ac6f724acf99ac5ca7447925e7587da04597eb57e744bcf10656e79770f2d",
+    "members": [
+      {
+        "name": "MCBSMicrodataPUFDataUsersGuide.pdf",
+        "bytes": 1015260
+      },
+      {
+        "name": "2023MCBSSummaryofChangesCSPUF.pdf",
+        "bytes": 248158
+      }
+    ]
+  }
+]

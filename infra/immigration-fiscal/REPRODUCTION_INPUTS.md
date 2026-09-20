@@ -4,6 +4,13 @@ Updated 2026-09-19. This guide connects source acquisition to the existing analy
 
 ## Get the exact inputs
 
+**September 20 additions:** [ENADID 2018/2023](enadid_2026_09_20/README.md),
+[MCBS public expenditure data and restricted-access routes](fiscal_access_2026_09_20/README.md),
+and [ICE/BJS/USSC/SCAAP custody and fiscal evidence](detention_evidence_2026_09_20/README.md)
+have separate pinned manifests and local verification recipes. Raw `_cache/`
+and generated `derived/` directories are not committed. Access documentation
+for restricted tax/claims files is not possession of those microdata.
+
 Use these routes in order, for each input file:
 
 1. **Official download:** use the recorded official URL or API and verify the release, format and checksum. A working URL is an access route, not redistribution permission. A site's usage terms still apply to automated downloading.

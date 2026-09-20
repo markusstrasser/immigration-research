@@ -1,0 +1,74 @@
+[
+  {
+    "filename": "taf_de_codebook.pdf",
+    "url": "https://www2.ccwdata.org/documents/10280/19022436/codebook-taf-demographic-eligibility.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www2.ccwdata.org', port=443): Max retries exceeded with url: /documents/10280/19022436/codebook-taf-demographic-eligibility.pdf (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.ccwdata.org', port=443) at 0x108b156d0>, 'Connection to www2.ccwdata.org timed out. (connect timeout=30)'))"
+  },
+  {
+    "filename": "taf_claims_codebook.pdf",
+    "url": "https://www2.ccwdata.org/documents/10280/19022436/codebook-taf-claims.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www2.ccwdata.org', port=443): Max retries exceeded with url: /documents/10280/19022436/codebook-taf-claims.pdf (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.ccwdata.org', port=443) at 0x108b15810>, 'Connection to www2.ccwdata.org timed out. (connect timeout=30)'))"
+  },
+  {
+    "filename": "mbsf_abcd_v2_codebook.pdf",
+    "url": "https://www2.ccwdata.org/documents/10280/19022436/codebook-mbsf-abcd-v2.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www2.ccwdata.org', port=443): Max retries exceeded with url: /documents/10280/19022436/codebook-mbsf-abcd-v2.pdf (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.ccwdata.org', port=443) at 0x108b15950>, 'Connection to www2.ccwdata.org timed out. (connect timeout=30)'))"
+  },
+  {
+    "filename": "mbsf_costuse_codebook.pdf",
+    "url": "https://www2.ccwdata.org/documents/10280/19022436/codebook-mbsf-cu.pdf",
+    "status": "failed",
+    "error": "HTTPSConnectionPool(host='www2.ccwdata.org', port=443): Max retries exceeded with url: /documents/10280/19022436/codebook-mbsf-cu.pdf (Caused by ConnectTimeoutError(<HTTPSConnection(host='www2.ccwdata.org', port=443) at 0x108b24590>, 'Connection to www2.ccwdata.org timed out. (connect timeout=30)'))"
+  },
+  {
+    "filename": "cms_rif_policy.pdf",
+    "url": "https://www.cms.gov/files/document/research-identifiable-file-data-use-agreement-policies.pdf",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": "267226",
+    "http_status": 200,
+    "final_url": "https://www.cms.gov/files/document/research-identifiable-file-data-use-agreement-policies.pdf",
+    "content_type": "application/pdf",
+    "bytes": 267226,
+    "sha256": "4fc51aeed81a3735e06973d4fe1e03c50817f29606646ee10ed62cc2daf531a3"
+  },
+  {
+    "filename": "resdac_request_documents.html",
+    "url": "https://resdac.org/document-index",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": "7155",
+    "http_status": 200,
+    "final_url": "https://resdac.org/document-index",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 29259,
+    "sha256": "f4a9429b137bfcfd48e8f0983c47c9b8cdd5cfb17eb86e0fbf19007402a8e709"
+  },
+  {
+    "filename": "resdac_citizenship.html",
+    "url": "https://resdac.org/cms-data/variables/us-citizenship-indicator-latest-year",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": "6093",
+    "http_status": 200,
+    "final_url": "https://resdac.org/cms-data/variables/us-citizenship-indicator-latest-year",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 23880,
+    "sha256": "f85ace9761ca032ae990c3b29b589eb609ed1aa24ae3b97b7f86f4681e551e59"
+  },
+  {
+    "filename": "cms_research_access.html",
+    "url": "https://www.cms.gov/data-research/cms-data/data-available-researchers",
+    "status": "acquired",
+    "head_status": 200,
+    "head_content_length": "31564",
+    "http_status": 200,
+    "final_url": "https://www.cms.gov/data-research/cms-data/data-available-researchers",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 196855,
+    "sha256": "9eb83a68cab52add866a2ea3ccb4824f43f07bfae044e0c3c176448bc45021ac"
+  }
+]

@@ -1,5 +1,28 @@
 # Immigration — Dataset Register
 
+## September 20 migration, custody and healthcare acquisitions
+
+The following bytes are held locally under `infra/immigration-fiscal/`; each lane
+keeps raw files in ignored `_cache/`, pinned source metadata in version control,
+and reproducible checks in ignored `derived/`. Public access to a documentation
+page does not mean restricted microdata have been acquired.
+
+| Dataset / period | Local lane and provenance | Variables / permitted use | Measurement and access limits |
+|---|---|---|---|
+| INEGI ENADID 2018 and 2023 complete open-data bundles | [Card](../infra/immigration-fiscal/enadid_2026_09_20/DATASET_CARD.md), [12 source hashes/URLs](../infra/immigration-fiscal/enadid_2026_09_20/sources.json), [recipe](../infra/immigration-fiscal/enadid_2026_09_20/README.md) | Validated `TMigrante` departures/destination/return and `TSDem` birthplace/prior residence, weights, strata and PSUs; retain string person keys and wave-specific question mapping | Household-reported five-year departures and current residents' five-year residence endpoints have different coverage. Not a ready annual bilateral net series; whole-household departures can be missed. INEGI free-use terms require attribution/metadata and disclosed transformations. |
+| CMS MCBS 2023 Cost Supplement PUF | [Acquisition/access report](../infra/immigration-fiscal/fiscal_access_2026_09_20/RESULT.md), [main manifest](../infra/immigration-fiscal/fiscal_access_2026_09_20/manifest.json), [recipe](../infra/immigration-fiscal/fiscal_access_2026_09_20/README.md) | 6,920 records × 134 fields; payer/service spending, age/sex/broad race, main weight and 100 replicates; community-Medicare cost checks | No Mexico/parent birthplace; excludes any facility/hospice/institutional events or costs. Costs top-coded; randomized IDs cannot join other MCBS releases, claims or years. This PUF is not full claims. |
+| ICE FY2024 year-end and FY2025 partial-year workbooks, documentation; reused FY2026 July workbook | [Manifest](../infra/immigration-fiscal/detention_evidence_2026_09_20/manifest.json), [cells/coverage](../infra/immigration-fiscal/detention_evidence_2026_09_20/RESULT.md), [recipe](../infra/immigration-fiscal/detention_evidence_2026_09_20/README.md) | Civil-custody counts, monthly/annual average daily population, history categories and facilities. Original ICE workbooks through pinned Vera archive; official endpoint returned403 | FY2024 complete; FY2025 ADP only through September20. History is not current custody's legal basis. No ACS-matched origin/age/sex linkage or paid-dollar fields. |
+| BJS Jail Inmates 2023 Table12 | Same detention lane; official CSV | Midyear local-jail inmates held for ICE, USMS and other authorities; survey uncertainty | Stock, not annual days; ICE-held local inmates can overlap ICE totals. No Mexican generation split. |
+| USSC 2024 Table9 and AppendixA | Same detention lane; official tables/definitions | Sentenced federal cases by citizenship and primary offense; separates primary immigration category | Citizenship is not nativity; primary immigration includes smuggling/document offenses and does not prove every conviction count was immigration-only. |
+| SCAAP FY2024 awards and matching solicitation | Same detention lane; 485 parsed application rows with official source | Criminal-custody salaries, total/confirmed/unknown-status inmate-days and federal reimbursement awards; reporting period July2022–June2023 | Not civil ICE contracts. Unknown days are not all undocumented; awards are not verified outlays; reported all-inmate salaries are not undocumented-only costs. Consolidate transfers once. |
+| ICE FY2025/26 budget justifications and FY2024 annual report | Same detention lane; retained official PDFs | Detention cost definitions, prior-year performance estimates, appropriations/requests | Budgeted/enacted/requested amounts are not actual expenditure; no verified matched FY2024/25 actual federal-plus-local detention cost total. |
+| Census linked survey–IRS/SSA and detailed CMS Medicare/Medicaid records | **Restricted; not acquired.** [Verified routes, public documentation and remaining gates](../infra/immigration-fiscal/fiscal_access_2026_09_20/RESULT.md) | Candidate approved linkages could validate earnings/taxes and health spending; exact files/years/joins require agency approval | US institutional/residency/security requirements, approved project/DUA and potential fees; overseas access prohibited under the checked routes. Holdings inventory is not an access grant. Public claims fields alone do not identify Mexican generations. |
+
+[Detention/crime reporting rule](immigration-detention-crime-and-fiscal-scope-2026-09-20.md):
+ACS institutional residence cannot distinguish immigration custody, criminal
+custody and noncorrectional institutions. Preserve that limitation at the claim;
+retain detention as a fiscal cost with federal/local payments consolidated once.
+
 ## September 20 executed fiscal checks
 
 Public source acquisition and reuse for [four fiscal checks](immigration-four-fiscal-checks-2026-09-20.md).
