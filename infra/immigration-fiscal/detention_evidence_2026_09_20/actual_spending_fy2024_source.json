@@ -1,0 +1,16 @@
+{
+  "url": "https://www.dhs.gov/sites/default/files/2024-12/2024_1029_dmo_ocfo_monthly_budget_execution_and_staffing_report_september.pdf",
+  "acquired": "2026-09-20",
+  "local_file": "_cache/dhs_execution_september2024.pdf",
+  "bytes": 3076838,
+  "sha256": "cd414a7d5e8f6a7baf359e30d4f5b81bddc5cfeb0de5b13183662cd00f3d0a24",
+  "printed_pages": [
+    1,
+    12,
+    13
+  ],
+  "period": "2023-10-01/2024-09-30",
+  "measurement": "Two displayed Custody Operations rows only; not exhaustive all-vintage spending",
+  "obligations_usd": 3438384353,
+  "outlays_usd": 2917041003
+}
