@@ -2806,7 +2806,7 @@
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/extend_ledger.py",
-      "sha256": "460c17f349a8651946d2000c2f7ba968663038bca7938a83a804eef41737ebd7"
+      "sha256": "72bfd4162d55e9ab4bbcd5a65513084700ff62975385f2e67095e965a1226055"
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/build/analyze_cps_fiscal_2025.py",
@@ -2814,7 +2814,7 @@
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_residual_agg_2026_09_16/residual_agg.py",
-      "sha256": "93a038f4d930750ea5c9dd5edf1967714cd6a4720749761d042f1b93e544e6ff"
+      "sha256": "997a252b3587fe3b477055d5ff847e190eb9c5fc01625165dc5c4e1157ff67d2"
     },
     {
       "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/all_age_ledger_2026_09_17/analyze.py",
