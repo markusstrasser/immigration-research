@@ -26,6 +26,10 @@ now separates observed G3 (2.870m) and G4+ (2.073m), leaving 9.399m unresolved
 within the existing G3+ total. Additional checks find 25–32k adjacent-year CPS
 candidates and an independent GSS adult benchmark; neither imputes the residual.
 Exact G4 versus G5+ remains unmeasured. No fiscal total changes.
+[Age-adjusted generation estimates](immigration-later-generation-estimates-2026-09-20.md)
+give 3.51–3.83m generic G4+ adults under central assumptions; missing-age and
+grandparent scenarios span 2.71–4.71m before sampling error. Historical Pew is
+lower, and PSID exact-generation completeness awaits authenticated data access.
 [Program-fraud trace index](immigration-fraud-trace-index-2026-09-20.md) links SNAP,
 childcare, adult-day and hospice cases to records, separating paid losses, billings,
 allegations and duplicate fiscal attribution. No fraud adjustment has been estimated.
