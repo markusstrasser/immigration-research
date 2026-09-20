@@ -1,3 +1,5 @@
+**Measurement correction, 2026-09-20:** Route A2 applies a sentenced-prisoner offense mix and unit costs to ACS institutional shares, which cannot separate criminal custody, immigration detention or noncorrectional institutions. Its dollar results are conditional proxy scenarios, not measured ordinary-crime or detention costs. See the [current scope](../../../research/immigration-detention-crime-and-fiscal-scope-2026-09-20.md); the historical calculations below are retained for reproducibility.
+
 # Offence-weighted cost of crime per adult 25–64, by group
 
 Model self-report: claude-opus-5[1m] (Opus 5, 1M context)

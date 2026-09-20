@@ -1,4 +1,6 @@
 <!-- fiscal-repair-2026-09-19 -->
+**Measurement correction, 2026-09-20:** ACS institutionalization ratios below cannot distinguish criminal custody, immigration detention and noncorrectional institutions. Use them as institutional-residence comparisons, not ordinary-crime rates; related cost extensions remain conditional proxies. See the [current scope](immigration-detention-crime-and-fiscal-scope-2026-09-20.md).
+
 **Current fiscal release (September 19):** [Repaired yearly and lifetime calculation index](immigration-yearly-lifetime-cost-repair-2026-09-19.md) supersedes affected annual, household-financing and lifetime figures below. It reports both allocation conventions, actual-age survival NPVs and unresolved coverage. Earlier text and calculations remain historical evidence; unrelated findings are unchanged.
 
 # Marginal Revolution on immigration, 2003–2026: Cowen and Tabarrok graded against the repo
@@ -62,6 +64,8 @@ Date: 2026-09-18. Archive: all 40,174 Marginal Revolution posts inventoried from
 Quoted-block claims (663 of 1,093) are the blog quoting papers and columns and were not graded; the parent grades the authors, not their sources. Claims typed "other" (405) and "political" (135) were read and are not fiscal or crime claims; the political rows above are the ones with a repo measurement. 137 candidates from the 2004 site-map dump were not fetched, none with an immigration slug. Firecrawl spent 164 of 250 authorized credits. [SOURCE: `RESULT.md`]
 
 ## Revisions
+
+- 2026-09-20: Separated institutional residence, civil detention, criminal offenses and fiscal costs; historical counts are retained with narrower interpretation. [Decision](../decisions/2026-09-20-separate-detention-offenses-and-spending.md).
 
 - **2026-09-18 (late evening).** T4 regraded: the backlash half is adopted, the composition half ("shift it away from education towards law-and-order") is COORDINATE. The paper's own share specification has education at +0.23 (se 0.61), and the Census of Governments panel shows no shift toward law and order in any arm (ladder 149). See [local spending composition](immigration-local-spending-composition-2026-09-18.md).
 

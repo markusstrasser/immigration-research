@@ -1,3 +1,5 @@
+**Custody/offense scope, 2026-09-20:** Felony arrest charges exclude civil ICE custody as an outcome, but are neither convictions nor unique criminal incidents. Named offenses and the broad residual category have different interpretive limits. Cost weights do not measure actual detention spending. See the [current scope](immigration-detention-crime-and-fiscal-scope-2026-09-20.md).
+
 # Is first-generation crime costlier per offence? Texas felony arrests weighted by social cost
 
 ## Current correction — September 19, 2026
@@ -52,5 +54,7 @@ Light, He & Robey 2020, PNAS 117(51), doi:10.1073/pnas.2014704117, replication p
 
 
 ## Revisions — September 19, 2026
+
+- 2026-09-20: Clarified arrest-charge versus civil-custody scope and retained costs separately. [Decision](../decisions/2026-09-20-separate-detention-offenses-and-spending.md).
 
 Corrected the interpretation at the point of reuse; original calculations and evidence are retained. See the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md) and linked audit for the claim-specific reason.
