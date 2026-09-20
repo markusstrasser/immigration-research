@@ -13,6 +13,18 @@ uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09
 uv run --no-project python3 infra/immigration-fiscal/historical_backcast_2026_09_20/backcast.py
 ```
 
+```sh
+# programme-by-programme version; run backcast.py first
+cd infra/immigration-fiscal/historical_backcast_2026_09_20 && uv run --no-project python3 backcast_categories.py
+```
+
+`backcast_categories.py` carries each 2024 benefit, function and household receipt line back with its
+own BEA series (the source cells in `full_account_spending_2026_09_20/derived/categories.csv`; Table 3.1
+lines 3, 4, 8 and 17 for direct receipts), keeps each response case's 2024 coefficients, and fails unless
+every anchor reconstructs the account's 2024 value. It writes `backcast_categories_annual.csv`,
+`backcast_categories_windows.csv` (with a variant setting 2020–2021 to the 2019/2022 mean) and
+`national_programme_index.csv`.
+
 ## Measured by year
 
 | Series | Source | Pin |

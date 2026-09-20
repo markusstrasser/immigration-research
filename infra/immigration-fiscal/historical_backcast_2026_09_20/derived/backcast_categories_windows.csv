@@ -1,0 +1,17 @@
+case,rule,10y_2015_2024,15y_2010_2024,20y_2005_2024
+cbo_informed_low,programme,1.6977,2.363,2.738
+cbo_informed_low,programme_ex_pandemic,1.3177,1.983,2.358
+cbo_informed_low,income,1.9659,2.8816,3.4608
+cbo_informed_low,income_ex_pandemic,1.5895,2.5051,3.0844
+cbo_informed_high,programme,1.9792,2.7667,3.252
+cbo_informed_high,programme_ex_pandemic,1.6163,2.4038,2.8891
+cbo_informed_high,income,2.2353,3.262,3.9425
+cbo_informed_high,income_ex_pandemic,1.8758,2.9025,3.583
+full_proportional_low,programme,2.639,3.7171,4.4461
+full_proportional_low,programme_ex_pandemic,2.2533,3.3313,4.0603
+full_proportional_low,income,2.9073,4.2357,5.1689
+full_proportional_low,income_ex_pandemic,2.5251,3.8535,4.7867
+full_proportional_high,programme,2.8001,3.9482,4.7431
+full_proportional_high,programme_ex_pandemic,2.4316,3.5798,4.3746
+full_proportional_high,income,3.0561,4.4436,5.4336
+full_proportional_high,income_ex_pandemic,2.6911,4.0785,5.0685
