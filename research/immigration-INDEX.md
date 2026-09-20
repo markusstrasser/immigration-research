@@ -15,6 +15,12 @@ Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [m
 
 ## Core State
 
+[Measured school growth and pupil-level checks](immigration-school-peer-checks-2026-09-20.md):
+actual Texas/California enrollment and staffing; ECLS-K white US-born pupils'
+scores conditional on starting scores and school, including retained-K forms.
+Mixed classroom associations, explicit uncertainty and causal limits replace
+using the illustrative 10% enrollment stress case as an observed change.
+
 [Executed causal checks](immigration-causal-execution-2026-09-20.md): actual
 Chalfin crime-data translation and 21 public school-finance synthetic-control models;
 count/rate identities, weak-IV intervals, donor influence and calendar limits.

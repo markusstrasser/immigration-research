@@ -1,5 +1,16 @@
 # Immigration — Dataset Register
 
+## September 20 pupil-level school checks
+
+| Dataset / reference period | Local lane and provenance | Usable fields / limitations |
+|---|---|---|
+| NCES ECLS-K 1998 cohort, K–8 public child file; waves1998/1999/2000 used | [Card](../infra/immigration-fiscal/school_peer_checks_2026_09_20/DATASET_CARD.md), [source hashes](../infra/immigration-fiscal/school_peer_checks_2026_09_20/sources.json), [recipe](../infra/immigration-fiscal/school_peer_checks_2026_09_20/README.md). Read existing sibling raw file, 21,409 children, 1.59GB; compact selected Parquet in ignored `_cache/` | Child birthplace, race/home language, repeated IRT scale scores, school IDs, classroom LEP/race counts and weights. Separate retained-K form is harmonized. LEP/nonwhite counts are not immigrant counts; public/private schools; model-based rather than complete survey-design variance. |
+| TEA2018–19/2023–24 and CDE2018–19–2025–26 official tables | Same lane's `tabulate_growth.py`; exact source values, URLs, five generated CSVs | Observed enrollment, recent-immigrant program stocks, teacher/staff FTE, earmarked grants. Program stocks are not arrivals or descendants; statewide staffing ratios do not identify local crowding or immigration-caused spending. |
+| ECLS-K:2011 K–5 public file, feasibility only | Existing sibling raw file; [coverage limits](../infra/immigration-fiscal/school_peer_checks_2026_09_20/DATASET_CARD.md) | Repeated scores/classroom EL counts/internal school IDs survive; child birthplace, teacher and external CCD IDs are suppressed. No new native-born regression from this release. |
+
+[Executed results and interpretation](immigration-school-peer-checks-2026-09-20.md).
+No raw microdata redistribution or restricted administrative access is claimed.
+
 ## September 20 migration, custody and healthcare acquisitions
 
 The following bytes are held locally under `infra/immigration-fiscal/`; each lane
