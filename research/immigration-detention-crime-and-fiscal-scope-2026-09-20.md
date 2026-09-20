@@ -61,6 +61,14 @@ already keeps unmatched crime valuations outside that total.
 
 ## Federal, state and local detention costs
 
+**Later September20 completion audit:** [all-vintage federal accounts now reconcile](../infra/immigration-fiscal/detention_reconciliation_2026_09_20/README.md).
+The public data do not identify a unique detention total: older-funding ERO
+payments mix custody and other missions; fee and shared costs need allocation;
+national local-finance records lack ICE-purpose expenses matched to receipts.
+The $2.917bn subtotal is gross observed custody payments, not consolidated net
+cost. The records specification and acquired data establish this limitation
+without treating missing costs as zero or broad enforcement as detention.
+
 **September 20 follow-up:** [Actual FY2024 payments are now verified](../infra/immigration-fiscal/detention_evidence_2026_09_20/ACTUAL_SPENDING_FY2024.md).
 Two explicitly identified federal Custody Operations accounts report $2.917bn
 in outlays, separately from $3.438bn obligated. The initial gap below is therefore
@@ -144,6 +152,10 @@ both directions: custody is not automatically offending, and excluding it from
 crime does not make its spending disappear.
 
 ## Revisions
+
+- 2026-09-20, later completion audit: expired-funding USAspending and SF133 records
+  plus Treasury now reconcile account-wide actual payments. Custody allocation
+  and local matched-ledger gaps remain. [Evidence and records specification](../infra/immigration-fiscal/detention_reconciliation_2026_09_20/README.md).
 
 - 2026-09-20, follow-up: DHS year-end execution records establish an actual federal
   custody-outlay subtotal; the earlier gap now concerns completeness and
