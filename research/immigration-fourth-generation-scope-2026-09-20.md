@@ -2,6 +2,10 @@
 
 Date: 2026-09-20. [MEASUREMENT / ACCOUNTING] Extended with an executed partial generation split; no change to the total population or fiscal account.
 
+Follow-up: [aggregate later-generation estimates](immigration-later-generation-estimates-2026-09-20.md)
+now execute the age-adjusted GSS model, historical checks and PSID access audit.
+The observed classification counts below are unchanged.
+
 **Finding:** The current 40.896574m Mexican-origin annual-account population already includes identifying fourth and later generations within G3+. Parent linkage separates 2.870m as observed G3 and 2.073m as observed G4+, leaving 9.399m unresolved within G3+. These are identified portions, not complete generation totals. Exact G4 versus G5+ remains unmeasured. Adding G4+ again would double-count residents already in the account.
 
 ## Current executable definition
@@ -174,6 +178,10 @@ then a PSID ancestry-completeness audit if exact G4/G5 still changes the researc
 question. These are feasible next steps, not completed national imputations.
 More precise labels alone do not change the existing fiscal total.
 
+**Follow-up, 2026-09-20:** The aggregate estimation step is now
+[executed](immigration-later-generation-estimates-2026-09-20.md). PSID field and
+access checks are complete; its joint pedigree count still requires the data.
+
 ## Is G5+ a rounding error?
 
 **Not established.** The strongest version of the recent-wave argument is that
@@ -221,3 +229,9 @@ assumption. No missing-generation fiscal adjustment follows. [MEASUREMENT / GAP]
   rows, 27 CPS diagnostics and 81 original linkage rows; two diagnostic issues
   were fixed without changing the reported totals. No canonical person
   classification or fiscal output changes.
+- **2026-09-20, aggregate-model extension:** The previously proposed age-aligned
+  survey estimates are now [executed](immigration-later-generation-estimates-2026-09-20.md).
+  The [decision](../decisions/2026-09-20-estimate-generations-without-relabeling-records.md)
+  keeps conditional population estimates separate from observed person labels.
+  Historical sources disagree somewhat; missingness and transport remain material.
+  PSID fields are verified but the joint completeness count needs authenticated access.
