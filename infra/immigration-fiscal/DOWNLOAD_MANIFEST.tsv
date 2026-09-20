@@ -38,7 +38,7 @@ stage5	optional	derived/stage4/eoir/eoir_court_workload_historical_fy.csv	500	bu
 stage5	optional	derived/stage4/eoir/eoir_pending_cases_fy.csv	100	build	EOIR pending/receipts/completions FY2016+
 stage5	optional	derived/stage4/eoir/eoir_amnesty_cases_by_state.csv	500	build	EOIR amnesty cases by state
 lifetime	optional	external/lifetime/nas/nas_2017_immigration_economic_fiscal_full.pdf	1000000	setup-lifetime.sh	NAS 2017 full report (education NPV tables)
-lifetime	optional	external/lifetime/nrc/nrc_1997_new_americans.pdf	500000	setup-lifetime.sh	NRC 1997 New Americans benchmark
+lifetime	blocked	external/lifetime/nrc/nrc_1997_new_americans.pdf	500000	setup-lifetime.sh	NRC 1997 benchmark not acquired: held response is HTML (verified 2026-09-20); retained as acquisition evidence
 lifetime	optional	external/lifetime/dallasfed/orrenius_nas_fiscal_sensitivity_wp1704.pdf	50000	setup-lifetime.sh	Orrenius NAS sensitivity synthesis
 lifetime	optional	external/lifetime/nber/storesletten_2003_fiscal_heterogeneity_w9489.pdf	50000	setup-lifetime.sh	Storesletten fiscal heterogeneity
 lifetime	optional	external/lifetime/census/sehsd_wp2024_01_sipp_research_files.pdf	100000	setup-lifetime.sh	SIPP restricted research files WP
@@ -48,13 +48,13 @@ lifetime	optional	external/lifetime/applications/synthetic_sipp_beta_landing.htm
 lifetime	optional	external/lifetime/imf/g20_2025_aging_and_migration.pdf	100000	setup-lifetime.sh	IMF G20 aging-migration macro frame
 lifetime	optional	external/lifetime/iza/iza_dp18218_agi_soon_migration.pdf	500000	setup-lifetime.sh	IZA AGI-soon migration reframing
 lifetime	optional	external/lifetime/worldbank/mexico_worker_remittances_bx_trf_pwkr_cd_dt.json	1000	setup-lifetime.sh	World Bank Mexico remittance series
-lifetime	optional	external/lifetime/nap/nap_1998_immigration_debate_fiscal_effects.pdf	500000	setup-lifetime.sh	NAP Immigration Debate Lee/Miller fiscal
+lifetime	blocked	external/lifetime/nap/nap_1998_immigration_debate_fiscal_effects.pdf	500000	setup-lifetime.sh	NAP Immigration Debate not acquired: held response is HTML (verified 2026-09-20); retained as acquisition evidence
 lifetime	optional	external/lifetime/nber/lee_miller_1998_generational_accounting_immigration_w7041.pdf	50000	setup-lifetime.sh	Lee Miller generational accounting
 lifetime	optional	external/lifetime/nber/auerbach_oreopoulos_2000_generational_accounting_immigration.pdf	50000	setup-lifetime.sh	Auerbach Oreopoulos GA immigration
-lifetime	optional	external/lifetime/aer/lee_miller_2000_immigration_social_security_fiscal_aer.pdf	10000	setup-lifetime.sh	Lee Miller AER Social Security fiscal
+lifetime	blocked	external/lifetime/aer/lee_miller_2000_immigration_social_security_fiscal_aer.pdf	10000	setup-lifetime.sh	Lee Miller AER not acquired: held file is unrelated ZIP containing P20181119_Imelda_DS.pdf (verified 2026-09-20); retained as acquisition evidence
 lifetime	optional	external/lifetime/nber/borjas_2016_undocumented_labor_supply_w22102.pdf	50000	setup-lifetime.sh	Borjas undocumented labor supply
 lifetime	optional	external/lifetime/nber/card_2005_is_new_immigration_really_so_bad_w11547.pdf	50000	setup-lifetime.sh	Card immigration disconfirmation
-lifetime	optional	external/lifetime/bea/spi_state_summary_2023.zip	5000	setup-lifetime.sh	BEA state personal income summary
+lifetime	blocked	external/lifetime/bea/spi_state_summary_2023.zip	5000	setup-lifetime.sh	Not acquired: held response was HTML, not a ZIP (verified 2026-09-20); no analytical reader
 lifetime	optional	external/lifetime/cms/medicare_trustees_report_2024.pdf	500000	setup-lifetime.sh	Medicare Trustees 2024 late-life costs
 lifetime	optional	external/lifetime/cdc/nvsr72_12_us_life_tables_2021_hispanic_origin.pdf	500000	setup-lifetime.sh	CDC life tables by Hispanic origin 2021
 lifetime	optional	external/lifetime/cgdev/clemens_2023_fiscal_effect_capital_tax_adjustment.pdf	50000	setup-lifetime.sh	Clemens capital-tax NAS adjustment
