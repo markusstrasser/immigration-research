@@ -286,6 +286,19 @@ future-profile rebuild and cannot be obtained by multiplying these annual values
 
 ## Verification and disposition
 
+**Executed scaling check:** [school and state-service tests](immigration-service-scaling-test-2026-09-20.md)
+find school spending elasticities of .735 unweighted/.836 pupil-weighted within
+districts, versus .945/1.004 across districts. A proportional model predicts held-out
+district costs better than universal 3/4 or 5/6. All ten full-panel within-state
+service intervals include 1. These descriptive associations cannot distinguish
+efficiency from quality loss, budget delay, prices or composition. Under an assumed
+power law, the exact finite-removal response is `[1−(1−s)^b]/s`; 5/6 at the national
+illustrative target share implies 84.21% response and a uniform theory-only
+$214–232bn conditional cost. That geographical/category transfer is not estimated
+for our target. The CBO-informed comparison remains unchanged; no additional
+scaling discount is stacked onto it. [MODEL / INFERENCE;
+[calibration decision](../decisions/2026-09-20-service-scaling-calibration.md)]
+
 [EXECUTED] Three source builders and both integration builders ran from the
 canonical checkout with verified input/output hashes.27 tests pass. All1,296
 production scenarios were replayed;18 old ownership cases reconciled;3,888
@@ -307,6 +320,11 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+2026-09-20, scaling test: added the executed school/state comparisons and exact
+finite-cost derivation. Descriptive sublinear school spending supports heterogeneous
+responses, but not a universal complexity exponent or additional causal savings.
+Existing fiscal values are preserved. [Decision](../decisions/2026-09-20-service-scaling-calibration.md).
 
 2026-09-20, category response integration: incorporated CBO-informed school and
 delayed-service responses into the report producer, replacing the single prominent

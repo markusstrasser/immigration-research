@@ -50,6 +50,12 @@ The report now regenerates all category comparisons and composition diagnostics.
 Fixed-service cases can be positive; property-receipt and service-quality effects
 remain unresolved. See the [response decision](../decisions/2026-09-20-category-service-response.md).
 
+[Executed service-scaling test](immigration-service-scaling-test-2026-09-20.md):
+school panel spending elasticity .735 unweighted/.836 pupil-weighted; across-district
+prediction favors proportional spending over universal 3/4 or 5/6. Ten state-service
+within-panel estimates are imprecise. Complexity theory supplies an exact finite-cost
+sensitivity, not another discount on the CBO-informed account.
+
 [Policy effects and new administrative outcomes](immigration-policy-causal-evidence-2026-09-20.md)
 checks Secure Communities victimization/reporting, Mariel school spending and
 H-2B employer benefits; records the direct Mexican-inflow crime replication route.
