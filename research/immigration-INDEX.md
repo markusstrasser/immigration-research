@@ -2,6 +2,13 @@
 
 Files the agent should consult before acting. Start with Core State, then branch by question.
 
+For **what our data show**, first use the [dataset register](immigration-dataset-register.md)
+and the relevant analysis README to locate inputs, variables and executed outputs.
+The [raw-file manifest](../sources/immigration-fiscal/data/MANIFEST.md) records storage;
+the [reproduction-input guide](../infra/immigration-fiscal/REPRODUCTION_INPUTS.md)
+records acquisition and joins. Check local availability, including ignored files,
+before treating an old roadmap item or an uncomputed table as missing data.
+
 Instrument note: this topic is politically charged and much of the synthesis is LLM-assisted. Treat this index as a routing layer, not as a neutral substitute for the cited artifacts. Consult `notes/llm-bias-caveat.md` before writing headline claims.
 
 Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [material inference repair](../decisions/2026-09-05-material-inference-repair.md) are listed once, in the Historical section at the end, with their successors; their bodies are retained verbatim below a `historical-snapshot` marker for provenance and must not be cited as current. Index refreshed 2026-09-16 (session a73215f4).
