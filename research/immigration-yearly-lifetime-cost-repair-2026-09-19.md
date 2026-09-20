@@ -53,6 +53,23 @@ The public-goods convention matters materially. It adds $5,175 per resident-year
 
 The earlier child-versus-adult “birth subsidy” inference remains withdrawn. These results do not estimate the fiscal effect of an additional birth, admission or descendant. A projected lifetime requires assumptions about future earnings, policies, migration and cohort change that current cross-sectional profiles cannot establish.
 
+## Same rates under different age structures
+
+[DERIVATION; FRAMING-SENSITIVE; added 2026-09-20] Current age-specific expanded balances are held fixed and only the age structure varies. Net dollars per person per year, household-shared allocation; the gap against the white reference **under the same structure** is in parentheses.
+
+| Age structure applied | White reference | Mexico-born | Second generation | Third-plus self-identified | Union |
+|---|---:|---:|---:|---:|---:|
+| Each group's own ages today | −1,221 | −5,929 (−4,708) | −5,881 (−4,659) | −4,223 (−3,002) | −5,314 (−4,093) |
+| White reference's ages today | −1,221 | −8,746 (−7,525) | −8,664 (−7,443) | −7,337 (−6,116) | −8,303 (−7,082) |
+| Union's ages today | +3,403 | −6,254 (−9,656) | −5,919 (−9,322) | −3,490 (−6,892) | −5,314 (−8,716) |
+| Stationary life course | −1,072 | −8,643 (−7,571) | −8,624 (−7,553) | −6,975 (−5,903) | −8,120 (−7,049) |
+
+The stationary row weights ages by US-total 2024 life-table person-years (22.6% under 18, 20.9% aged 65+; the white reference today is 18.0%/23.4%, the union 29.6%/7.7%). It equals the 0% period-profile NPV divided by its 78.97 person-years, so it puts both populations through a whole life course instead of ageing one toward the other. The eight-band white-age gaps sit within 2% of the published finer-cell gaps above. Personal-source stationary gaps are −7,398, −6,534, −5,430 and −6,677.
+
+[INFERENCE] The union's young age structure is worth about $4,600 per person a year: the white reference would run +$3,403 at the union's ages against −$1,221 at its own. The raw −$4,093 difference therefore understates every same-age comparison (−$7,049 to −$8,716). Under the stationary structure the union's gap is −$9,482 of receipts against +$2,434 of lower spending; the second generation's lower-spending offset is only +$822.
+
+This is a statement about age composition, not a forecast. Old-age rates for the second and third-plus generations come from 0.52m and 1.00m residents aged 65+ born before about 1960; schooling and earnings of younger cohorts, policy, outmigration and descendants are held out, defense/interest/general government stay at zero, and the later annual corrections are not propagated into these profiles. The [projection back-tests](immigration-projection-backtest-2026-09-19.md) show how sensitive cohort projections are to those assumptions. [SOURCE: `infra/immigration-fiscal/ledger_absolute_2026_09_17/age_normalizations.py` → `derived/age_normalizations.csv`; the script fails unless its own-age, stationary and white-age rows reproduce the annual, period-profile and published-gap exports.]
+
 ## Accounting repairs and source ownership
 
 | Component | Repair | Primary evidence / implementation |
@@ -92,6 +109,11 @@ Executed: **17 focused tests; 54 annual gates; 768 lifetime scenarios; annual/pr
 2026-09-19, later: [Matched accounts and projection checks](../decisions/2026-09-19-matched-accounts-and-projection-checks.md)
 versions the observed2024 refresh separately and retains these profiles for
 comparisons. The older annual source vintage retained here is no longer the latest.
+
+2026-09-20, age structures: added the four-structure comparison from the existing
+age-profile and period-profile exports. No existing value changes. The ledger was
+rebuilt after the data-root refactor changed two fingerprinted source files; all ten
+data outputs were byte-identical and only `audit.json` fingerprints moved.
 
 2026-09-20: [Measured enrollment and residual boundaries](../decisions/2026-09-20-measured-enrollment-and-residual-boundaries.md)
 versions the new annual school correction separately. Lifetime age profiles remain
