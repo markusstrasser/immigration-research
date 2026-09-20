@@ -70,6 +70,110 @@ No design-based confidence interval or national fiscal extrapolation is claimed.
 [SOURCE: [Pew methodology](https://www.pewresearch.org/race-and-ethnicity/2017/12/20/methodology-hispanic-identity/);
 [NLSY linkage audit](immigration-nlsy97-parent-linkage-2026-09-17.md).]
 
+## Can additional data resolve the missing histories?
+
+**Partially.** The executed annual CPS linkage has low yield; GSS adds an
+independent adult benchmark with substantially less missing grandparent history.
+Neither check assigns the full 9.399m residual or separates exact G4 from G5+.
+[MEASUREMENT: [reproduction and input locks](../infra/immigration-fiscal/generation_split_2026_09_20/README.md#additional-recovery-checks).]
+
+### Why the current CPS records are unresolved
+
+| Mutually exclusive reason | People, millions |
+|---|---:|
+| No co-resident biological parent linked | 6.655 |
+| One linked biological parent; insufficient grandparent history | 2.054 |
+| Linked parent's birthplace contradicts reported native parentage | 0.519 |
+| Two linked parents; non-Mexico foreign grandparents prevent strict all-US G4+ | 0.171 |
+| **Total unresolved** | **9.399** |
+
+[MEASUREMENT] The first two rows explain 92.66% of the residual. Most missingness
+is absent parental branches, not a missing surname-origin label. The last row
+also exposes a definition issue: a Mexican identifier can have a foreign-born
+grandparent from another country. That is generic immigrant G3, without proving
+Mexican-lineage G3. The current Mexican-specific classifier is not silently
+replaced with the generic convention.
+
+Joining the held 2024 and 2026 ASEC waves on person IDs, retaining the 2025 target
+weights and checking stable demographics and family histories, produces
+**25,049–32,365 candidate people** (12–15 records), **0.27%–0.34%** of the residual.
+The range reflects the rule for comparing currently observed parent branches,
+not a confidence interval. No candidate classifications have been applied:
+edited-field adjudication is incomplete. Complementary branches across waves
+and all eight monthly CPS interviews remain untested; this annual check does
+not bound their yield. CPS does not follow movers to their new addresses.
+[SOURCE: generated recovery CSVs;
+[Census ASEC matching documentation, chapter3](https://www2.census.gov/programs-surveys/cps/techdocs/cpsmar25.pdf);
+[Census Technical Paper63, longitudinal matching](https://www2.census.gov/programs-surveys/cps/methodology/tp63rv.pdf).]
+
+### GSS supplies a useful adult benchmark
+
+[MEASUREMENT] GSS Mexican/Mexican-American/Chicano identifiers, US-born with
+both parents US-born, all adult education levels. Percentages are within that
+subgroup, including unknown grandparents. The recent 2016–2024 window provides
+more observations; 2021–2024 tests sensitivity to the older observations. These
+are pooled repeated cross-sections, weighted by NORC's recommended WTSSNRPS,
+not a 2025 population allocation or equal-year average.
+
+| GSS window | Generic G3 | G4+ | Unknown grandparents | Sample n |
+|---|---:|---:|---:|---:|
+| 2016–2024 | 48.25% | 40.19% | 11.55% | 383 |
+| 2021–2024 | 48.83% | 36.93% | 14.24% | 252 |
+
+`GRANBORN` counts foreign-born grandparents; it does not give their countries.
+G4+ here means four US-born grandparents among Mexican identifiers. It does not
+prove a Mexican-born great-grandparent. The WTSSPS sensitivity gives G4+ shares
+40.61% and 37.32%, respectively. Unknown grandparents cannot simply be dropped;
+doing so would raise the headline share. The code retains them and age-missing
+records. Age cells are small, no design-based interval is fitted, and survey
+mode/nonresponse differences remain. [SOURCE:
+[NORC data](https://gss.norc.org/get-the-data.html), held cumulative R3a source;
+2024 R3a codebook p.40 for weights;
+[primary grandparent question](https://sda.berkeley.edu/sdaweb/docs/gss21rel3/DOC/hcbk0032.htm).]
+
+[INFERENCE] This supports a meaningful aggregate estimation route, not the
+calculation `40.19% × 9.399m`. A further model needs age/cohort and sampling-frame
+alignment, survey-design uncertainty, sensitivity to unknown grandparents and
+identity selection, and validation against independently observed family history.
+Estimating population shares is easier than identifying generation-specific
+fiscal profiles: an aggregate share alone does not identify how taxes or benefits
+are distributed within the missing group. Using income to predict generation
+and then treating the inferred income gap as independently observed evidence
+would overstate what the data establish.
+
+### Names, panels and administrative records
+
+| Route | What it can establish | Remaining requirement |
+|---|---|---|
+| Surname plus location, such as BISG | Probabilities of broad racial/ethnic identification | No validated G3/G4+ target; public CPS has no names |
+| Original Latino National Survey2006, ICPSR20862 DS0001 | Larger historical adult sample with parent/grandparent questions | Acquire full original file; held documentation/replication subsets lack the full joint fields; limited geography and old cohort composition |
+| PSID Family Identification Mapping System | Actual links to some biological parents, grandparents and great-grandparents | Audit Mexican sample size and birthplace completeness; panel generations are not immigration generations |
+| Restricted Census survey/administrative linkages | Parent-child graphs linked to birthplace records | Approved access plus coverage audit; Hispanic and lower-income linkage gaps are documented |
+| Purpose-built ancestry survey | Direct respondent, parent, grandparent and great-grandparent birthplace reports | Representative recruitment including people who no longer identify as Mexican; preserve don't-know answers |
+
+[SOURCE: [CFPB BISG methodology](https://files.consumerfinance.gov/f/201409_cfpb_report_proxy-methodology.pdf);
+[Census surname tables](https://www.census.gov/data/developers/data-sets/surnames.html);
+[LNS2006](https://www.icpsr.umich.edu/web/ICPSR/studies/20862), held DS0001 codebook pp.32–33;
+[PSID mapping manual](https://simba.isr.umich.edu/FIMS/FIMS_UG.pdf), pp.3–4,8,12–13;
+[Census linkage example](https://www2.census.gov/ces/wp/2020/CES-WP-20-36.pdf), parent-child links and Numident birthplace;
+[Census linkage coverage audit](https://www2.census.gov/ces/wp/2024/CES-WP-24-18.pdf);
+[restricted access route](https://www.census.gov/programs-surveys/dcdl/accessing-linked-data.html).]
+
+[INFERENCE] Names could assist aggregate identity-attrition sensitivity if
+validated against actual ancestry; they do not record which ancestor immigrated.
+Marriage can remove or introduce a surname, and the same surname can span many
+generations and origin countries. High Hispanic-classification accuracy would
+therefore not validate a generation classifier. Direct family histories are the
+relevant target. PSID's 1990 Latino oversample ended in 1995, so its existence
+does not guarantee a large continuously followed Mexican sample.
+[SOURCE: [Duncan–Trejo, surname and attrition discussion](https://fraser.stlouisfed.org/files/docs/historical/frbatl/events/frbatl_2010hei_duncan.pdf);
+[PSID FAQ](https://psidonline.isr.umich.edu/guide/faq.aspx).]
+
+**Next useful work:** design-aware, age-aligned GSS/Pew/NLSY aggregate estimates,
+then a PSID ancestry-completeness audit if exact G4/G5 still changes the research
+question. These are feasible next steps, not completed national imputations.
+More precise labels alone do not change the existing fiscal total.
+
 ## Is G5+ a rounding error?
 
 **Not established.** The strongest version of the recent-wave argument is that
@@ -109,3 +213,11 @@ assumption. No missing-generation fiscal adjustment follows. [MEASUREMENT / GAP]
   the claim that later generations are negligible. The original total and
   ancestry-selection limits remain. Independent code review reproduced all 47
   generation-distribution rows. No new causal attribution rule is adopted.
+- **2026-09-20, additional-data check:** [Unresolved-reason, adjacent-wave and GSS
+  probes](../infra/immigration-fiscal/generation_split_2026_09_20/README.md#additional-recovery-checks)
+  explain the missing history and establish a stronger independent adult
+  benchmark. The annual-wave yield is small; survey transport and exact G4/G5
+  remain unestablished. Independent review reproduced 72 recent GSS subgroup
+  rows, 27 CPS diagnostics and 81 original linkage rows; two diagnostic issues
+  were fixed without changing the reported totals. No canonical person
+  classification or fiscal output changes.
