@@ -11,7 +11,13 @@ interpretations, falsifiable claims, and honest uncertainty.
 
 ### Read this first
 
-**September 2026 correction:** material fiscal-unit, source-version and inference errors were found in earlier analyses. Start with the [repair report](research/immigration-material-repair-report-2026-09-05.md) and [current assessment](research/immigration-economist-dismantling-2026-06-25.md). Historical dollar figures and causal verdicts must be checked against their supersession notes.
+Start with the [topic index](research/immigration-INDEX.md) for current results and
+the [dataset register](research/immigration-dataset-register.md) for data already
+held, their fields, local paths and limits. Follow the relevant analysis README
+to its actual inputs and outputs. The warehouse alone does not inventory newer
+analysis directories; ignored files require `rg --files --no-ignore`.
+
+**September 5, 2026 correction baseline:** material fiscal-unit, source-version and inference errors were found in earlier analyses. The [repair report](research/immigration-material-repair-report-2026-09-05.md) and [corrected assessment](research/immigration-economist-dismantling-2026-06-25.md) preserve that audit. Later results are routed through the topic index above. Historical dollar figures and causal verdicts must be checked against their supersession notes.
 
 The [recent evidence synthesis](research/immigration-framing-refresh-2026-09-05.md) integrates June–September papers, essays and X claims with newly staged labor, housing and enforcement data. The repaired fiscal outputs remain partial accounting estimates; the report states their units, assumptions and validation.
 

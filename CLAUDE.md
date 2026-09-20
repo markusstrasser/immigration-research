@@ -96,6 +96,25 @@ sources/           — archived source material, data files
 notes/             — working notes, drafts, threads of analysis
 ```
 
+### Finding local data and current results
+
+For a question about what our data show, follow these existing entry points before
+substituting a web summary or declaring a measurement unavailable:
+
+- [Topic index](research/immigration-INDEX.md): current results and supersession notes.
+- [Dataset register](research/immigration-dataset-register.md): local inputs, fields,
+  join keys, coverage and limitations; follow its linked analysis README and outputs.
+- [Raw-file manifest](sources/immigration-fiscal/data/MANIFEST.md): storage inventory;
+  verify that the referenced file exists and resolve `sources` on this machine.
+- [Reproduction inputs](infra/immigration-fiscal/REPRODUCTION_INPUTS.md): official
+  acquisition routes, pinned versions, normalization and reproduction commands.
+
+The unified warehouse is one entry point, not a complete inventory of newer
+analysis directories. Use `rg --files --no-ignore` when locating ignored raw or
+derived files. Distinguish data absent, data present but not yet tabulated, and an
+unidentified causal effect. Older acquisition roadmaps describe leads; check the
+current register before treating a listed dataset as missing.
+
 ## Decision Journal (`decisions/`)
 
 Records of concept-level pivots — when an interpretation shifts, a methodology is adopted/dropped, a causal node gets resolved or reopened. One file per decision, `YYYY-MM-DD-slug.md`. Template in `decisions/.template.md`. Records use YAML frontmatter for machine-readable metadata (concept grouping, typed relations, provenance).
