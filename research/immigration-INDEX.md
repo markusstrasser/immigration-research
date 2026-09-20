@@ -17,6 +17,14 @@ defense/general government/old interest, and stated ownership/fiscal recycling.
 Fixed-service cases can be positive. Complete incidence, counterfactual response
 and sign-reversal thresholds are separate; this is not a measured policy effect.
 
+Scope checks: [education and administration](immigration-education-administration-scope-2026-09-20.md)
+shows which staffing costs are already included and isolates the general-government
+response assumption; [fourth-generation coverage](immigration-fourth-generation-scope-2026-09-20.md)
+confirms identifying G4+ residents are already inside G3+ and explains ancestry selection.
+[Program-fraud trace index](immigration-fraud-trace-index-2026-09-20.md) links SNAP,
+childcare, adult-day and hospice cases to records, separating paid losses, billings,
+allegations and duplicate fiscal attribution. No fraud adjustment has been estimated.
+
 Preceding partial account: [four executed fiscal checks](immigration-four-fiscal-checks-2026-09-20.md).
 Measured public-school enrollment raises the partial deficit to **$259.38bn shared
 /$283.20bn personal**. Matched-year tax units locate the national income-tax
