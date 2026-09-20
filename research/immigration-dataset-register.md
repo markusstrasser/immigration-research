@@ -570,6 +570,10 @@ Common acquisition record: [ACQUIRED.md](../infra/immigration-fiscal/new_dataset
 **Quirks/license:** historical LA/San Antonio family follow-up, 1965–66 baseline and 1998–2002 follow-up. Author labels data 2019; older ICPSR28481v2 codebook cannot establish identical variables, blanking or missing codes. Identity requires multiple-response/skip reconstruction, not `v25` alone. Raw/derived ignored; redistribution permission not established. Inventory complete; outcome/generation reconstruction pending.
 **Used in:** [ancestry-outcomes evidence update](immigration-ancestry-outcomes-evidence-2026-09-20.md).
 
+**Later2026-09-20 execution:** [MASP analysis](../infra/immigration-fiscal/masp_2026_09_20/RESULT.md) identifies758 adult-child interviews/482 families and distinguishes initial ethnic mentions (`v12–v23`), preferred identity (`v25`) and race-form response (`v51`). Completed education/benefit comparisons and genealogy with explicit informant-code sensitivity; small nonidentifier-generation cells prevent a national correction. This supersedes the reconstruction-pending status above; raw hashes unchanged.
+
+**SIPP lineage clarification, later2026-09-20:** the already-held public2023–2025 files were [audited for ancestry recovery](../infra/immigration-fiscal/sipp_lineage_2026_09_20/RESULT.md). Own/parent foreign birthplaces are region recodes, not usable Mexican-country identifiers; the earlier variable-label inference is withdrawn.2025 generic-G3/G4+ identifier-only adult support is small; no nonidentifier outcome correction fitted. No new source acquisition.
+
 ### BEA_CAINC4_CORPUS_20260920 — county income components
 
 **Source/acquired:** US BEA; copied read-only from the operator's external corpus

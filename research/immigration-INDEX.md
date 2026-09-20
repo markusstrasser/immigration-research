@@ -41,6 +41,10 @@ lower, and PSID exact-generation completeness awaits authenticated data access.
 adds a direct Pew schooling comparison of identifiers and nonidentifiers, the
 newly acquired historical MASP family data, and the verified SIPP linkage route.
 It supplies no national all-descendant fiscal or crime correction.
+Later same-day execution completes MASP/Pew sensitivities and stops this search:
+public SIPP birthplace fields are region recodes, relevant samples are small,
+and PSID's current conditions prohibit the proposed AI use. See the linked
+ancestry-outcomes memo's continuation and [stopping decision](../decisions/2026-09-20-ancestry-outcome-data-ceiling.md).
 [Program-fraud trace index](immigration-fraud-trace-index-2026-09-20.md) links SNAP,
 childcare, adult-day and hospice cases to records, separating paid losses, billings,
 allegations and duplicate fiscal attribution. No fraud adjustment has been estimated.
