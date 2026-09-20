@@ -61,6 +61,12 @@ already keeps unmatched crime valuations outside that total.
 
 ## Federal, state and local detention costs
 
+**September 20 follow-up:** [Actual FY2024 payments are now verified](../infra/immigration-fiscal/detention_evidence_2026_09_20/ACTUAL_SPENDING_FY2024.md).
+Two explicitly identified federal Custody Operations accounts report $2.917bn
+in outlays, separately from $3.438bn obligated. The initial gap below is therefore
+narrowed to a complete all-funding-vintage federal and consolidated local total;
+the observed subtotal is neither zero nor the entire national cost.
+
 The [acquired detention bundle](../infra/immigration-fiscal/detention_evidence_2026_09_20/RESULT.md)
 pins the primary records, source definitions and reproducible probes:
 
@@ -136,3 +142,10 @@ were altered, no ICE count was subtracted from ACS, and no new causal cost or
 detention-adjusted crime ratio is claimed. LLM-assisted framing is checked in
 both directions: custody is not automatically offending, and excluding it from
 crime does not make its spending disappear.
+
+## Revisions
+
+- 2026-09-20, follow-up: DHS year-end execution records establish an actual federal
+  custody-outlay subtotal; the earlier gap now concerns completeness and
+  consolidation. [Source](../infra/immigration-fiscal/detention_evidence_2026_09_20/ACTUAL_SPENDING_FY2024.md),
+  [accounting decision](../decisions/2026-09-20-separate-detention-offenses-and-spending.md).

@@ -8,6 +8,12 @@ Promote `acquire_sources.py`, `source_contract.py`, `parse_scaap.py`, `probe.py`
 
 ## Acquired and verified
 
+**September 20 follow-up:** [DHS execution actuals](ACTUAL_SPENDING_FY2024.md)
+now verify $2.917bn paid from two custody accounts in FY2024. This supersedes the
+earlier absence of any actual-spending figure below; the complete all-vintage
+federal and state/local total remains unreconciled. The additional PDF has its
+own `actual_spending_fy2024_source.json` receipt.
+
 Fourteen pinned inputs are in `manifest.json`, with SHA256, size, source URL/path and documentation. Original government workbooks are from Vera's explicitly unmodified archive at commit `a6bf48e2627323f01827d52776f0d08023c410ba`; the official ICE endpoint returns403. Raw bytes and extracted text are in `_cache/`. `probe.py` verifies every hash, asserts nonempty485 unique SCAAP applications, and reconciles ICE monthly and annual detainee-days and history subtotals. Latest successful results: `derived/probes.json`. Run `UV_CACHE_DIR=/private/tmp/codex-uv-cache uv run --no-project --with openpyxl python3 probe.py` from this folder. For repository integration copy `probe.py`, `manifest.json`, `_cache/`, `derived/`, this result and README; the other acquisition scripts are session working scripts, not required runtime.
 
 ### Civil immigration detention

@@ -33,3 +33,11 @@ Compatible person-level custody/offense data or matched origin/age/sex/time
 administrative aggregates allow a defensible split. Re-estimate a policy effect
 only with an identified counterfactual. This changes classification and reuse,
 not the raw counts or the current national fiscal total.
+
+## Follow-up evidence, September 20
+
+The [DHS September 2024 execution report](../infra/immigration-fiscal/detention_evidence_2026_09_20/ACTUAL_SPENDING_FY2024.md)
+now establishes $2.917bn in actual outlays from two named custody accounts.
+The missing complete total is a reconciliation task; it is not evidence of
+unavailable actuals or zero expenditure. This does not change the transfer-netting
+rule or add the subtotal to spending already inside the national account.
