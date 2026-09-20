@@ -1,5 +1,13 @@
 # Research frontier: stronger questions across domains of life
 
+**Migration correction, 2026-09-20:** The later seven-question entry's statement
+that the Mexican population's inflow "ended" is withdrawn. The held ACS 2024
+recent-arrival table measures continuing Mexico-born immigrant resident cohorts
+reporting entry in 2021–24. A smaller origin share, flat population stock or low
+net migration does not establish zero arrivals. No continuous annual post-2010
+bilateral net-flow series was verified in that entry. See the
+[correction and evidence](../decisions/2026-09-20-distinguish-mexican-arrivals-from-net-flows.md).
+
 **Execution update, 2026-09-19:** The [education-specific fiscal lane](immigration-education-fiscal-and-methods-2026-09-19.md)
 and [projection checks](immigration-projection-backtest-2026-09-19.md) address
 items1/2/4/5 in the later seven-question entry. NRC debt-policy assumptions can
@@ -99,6 +107,11 @@ A useful statement should therefore answer: **What is observed? For whom and whe
 Coverage: current research question and goals; current survey analyses; economic and social frontier audits using cited memos and selected raw-derived source tables; methodological primary sources. Not performed: an exhaustive review of all civilizational domains, new causal estimation, verification of every inherited paper, or restricted-data acquisition. No model consensus is counted as independent evidence. LLM framing can affect what is selected and emphasized; opposing signs and normative disagreements remain explicit.
 
 ## Revisions
+
+**2026-09-20, migration scope:** The [arrival-versus-net-flow correction](../decisions/2026-09-20-distinguish-mexican-arrivals-from-net-flows.md)
+supersedes the "inflow ended" statement and the unsupported continuous-net-flow
+reading in item 3 of the September 19 entry below. Historical text is retained;
+the question of transfer from established residents to new arrivals remains open.
 
 **2026-09-17, execution:** The user authorized all six workstreams. The [executed findings](immigration-frontier-execution-2026-09-17.md) and [coverage/reproduction record](../infra/immigration-fiscal/frontier_execution_2026_09_17/README.md) now supersede the prospective next-action status above. Source-scale and survey-design checks, adult outcomes, CPS/GSS, NYC exposure, fiscal reconciliation and policy/automation checks ran. Policy replication and complete local incidence remain partial at recorded access/identification limits. The [decision](../decisions/2026-09-17-bind-frontier-claims-to-measured-outcomes.md) records changed interpretation and reopening conditions; the original proposal remains preserved.
 
