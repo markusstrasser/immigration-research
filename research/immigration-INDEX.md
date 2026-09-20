@@ -273,6 +273,8 @@ Historical five-domain research/acquisition pass. DOI resolution checks bibliogr
 
 ## Interpretation & External Debate
 
+Current cross-media coverage: [podcast, YouTube and Substack audit](immigration-media-perspectives-audit-2026-09-20.md) checks 16 media pieces with explicit access limits, maps claims to existing evidence, adds visa-mobility/H-1B/Dutch study screens, and distinguishes high-skill selection from low-skill evidence. The user-linked Reddit bibliography remains inaccessible and ungraded.
+
 | File | Topic | Consult before |
 |------|-------|----------------|
 | `immigration-clark-respondent-audit.md` | How to read the Clark poll without overclaiming | Saying "economists agree" |
