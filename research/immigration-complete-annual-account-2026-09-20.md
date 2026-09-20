@@ -3,13 +3,18 @@
 Date:2026-09-20. [MODEL / FRAMING-SENSITIVE] Evidence and calculations only;
 narrative authorship remains operator-owned.
 
-**Result:** Under the declared long-run response assumptions, the model gives
-**$270–289bn/year of net cost to other US residents** in source-centered cases
-after production benefits. The wider **$262–357bn** grid includes weaker proxy
-stress tests; its endpoints do not have equal empirical support. These are conditional model results,
-not a measured causal cost of ethnicity, an admission estimate, or a confidence
-interval. The fixed-service-budget cases include positive results, so an
-unconditional claim of a proven annual net cost is not established.
+**Result:** The source-centered model gives **$165–197bn/year of conditional net
+cost to other US residents** when CBO-informed school and delayed-service budget
+responses replace full proportional spending, holding other model terms fixed.
+An additional fixed-non-school-education sensitivity gives **$121–160bn/year**.
+The full proportional-service benchmark remains **$270–289bn/year** after
+production benefits. These are different response constructions, not a confidence
+interval or competing measurements of a causal ethnic cost. CBO did not estimate
+these Mexican-origin totals; its short-run evidence is transported here as a
+sensitivity with production held fully adjusted. Fully fixed-service cases can
+be positive. The wider **$262–357bn** proportional-service grid includes weaker
+proxy stress tests with unequal empirical support. See the executed category
+comparison below before reusing any single headline.
 
 ## Units, population and comparison
 
@@ -111,6 +116,87 @@ error. Core long-run production gains range$5.98–12.92bn cash/$8.77–21.08bn 
 Tax and ownership parameters are transported or unestimated assumptions, not
 newly measured2024 elasticities. [SOURCE: `welfare_summary.csv`, `headline_cases.csv`,
 `headline_summary.json`; linked benefit source notes.]
+
+## Executed category-specific service responses
+
+[MODEL / TRANSFERRED EVIDENCE] `report.py` now produces this comparison every run;
+it is part of the annual account, not an unexecuted proposal. The same four central
+personal/shared and cash/GDP production cases are used. Taxes, household benefits,
+ownership, fully adjusted private capital, fixed defense/general government/old
+interest and O=Z=0 remain unchanged. Only ordinary-service responses vary.
+
+| Service construction | Conditional net cost, $bn/year | Evidential role |
+|---|---:|---|
+| Full proportional services | 269.8–288.7 | Original benchmark |
+| CBO school response; all other services proportional | 207.9–240.2 | Isolates school response |
+| CBO school response; economic affairs/recreation budgets fixed; other services proportional | **165.1–197.4** | Main CBO-informed comparison |
+| Same, also fixing non-school education budgets | **120.8–160.3** | Additional favorable budget assumption |
+| All education and economic affairs/recreation fixed; remaining services proportional | 33.7–46.4 | Removes school-composition dependence; diagnostic only |
+
+[SOURCE: `derived/service_response_cases.csv`, `service_response_components.csv`,
+`service_response_summary.csv` and the source/cell receipt `service_response_audit.json`.]
+
+**Where the coefficients come from.** CBO's state-panel school analysis associates
++1 percentage point of enrollment growth with−0.37 points of per-pupil spending
+growth; the decline-side association is−0.34. Total spending equals enrollment
+times spending per pupil, giving first-order responses of63%/66%. These are two
+directional sensitivity values, not a confidence interval or fitted response for
+our population. CBO holds some near-term service budgets fixed and assumes
+proportional response for safety, housing/community, health and income-security
+services. The main comparison follows that category distinction and retains the
+old full response for non-school education. It lowers the paired benchmark loss
+by **$89.8–106.7bn/year**, rather than multiplying the whole fiscal deficit by63%.
+[SOURCE: [CBO June2025 analysis, General Services and Appendix A](https://www.cbo.gov/publication/61464),
+checked2026-09-20; DERIVATION: component exports.]
+
+**Education construction check.** Our assigned education services are$193.37bn
+shared/$199.57bn personal. They include higher education and other education;
+the old school-plus-postsecondary allocation-key mix is not a measured expenditure
+split. In the pinned BEA workbook, Table3.15.5 reports$1,404.129bn education
+consumption plus investment, including$1,056.499bn elementary/secondary. Table3.17
+reports$1,221.159bn education consumption and$182.969bn gross investment, with
+$0.001bn rounding discrepancy. Assigning the implied investment residual wholly
+to schools versus elsewhere bounds the national school **current-consumption**
+share at71.5–86.5%, assuming nonnegative component investment. Gross investment
+is never added to our current-service bill. [SOURCE: pinned workbook cells
+T31505-A:29–32 and T31700-A:9,113, extracted by `service_response.py`.]
+
+Applying this national share to target education spending is an explicit
+**common-composition assumption**, not a bound on measured Mexican-origin school
+spending. Non-school education's response is varied separately. The unrestricted
+zero/full-education diagnostics expose dependence on the composition assumption;
+they are not empirical bounds on all uncertainty. Our preceding conversational
+calculation applying63% to the entire education row was too coarse for integration.
+[INFERENCE; [construction evidence](../notes/immigration-service-response-external-evidence-2026-09-20.md).]
+
+**What survives.** Within these constructions, realistic budget lags can materially
+reduce the magnitude without overturning the negative sign. Even zero education
+response leaves$33.7–46.4bn conditional loss **if** the other CBO-style responsive
+categories stay proportional. Those category responses are assumptions too;
+reducing them further can still reverse the sign. The roughly20% break-even value
+remains a threshold, not an estimate to substitute into the calculation.
+[MODEL / INFERENCE]
+
+**What this does not establish.** CBO studies short-run, state/local changes and
+small enrollment fluctuations. Our counterfactual covers an established all-age
+population and all government levels; current consumption differs from school
+finance's spending basis. Holding long-run production fixed isolates the service
+channel but does not create an estimated adjustment path. Surge-specific private
+school displacement and English-learner surcharges are not imported into the
+all-generation population. Fixed budgets can cause crowding or quality losses;
+no dollar value is invented for those harms. The property-receipt bridge and
+other omitted effects remain unresolved. [INFERENCE / FRAMING-SENSITIVE]
+
+Decision: [category-specific response integration](../decisions/2026-09-20-category-service-response.md).
+The next discriminating evidence is matched category/horizon response and actual
+subgroup current-education composition, not another arbitrary uniform percentage.
+
+[EXECUTED] The added producer generated60 response cases and240 component rows;
+all four original central results reconcile to their prior values. Eleven
+integration tests pass. An independent in-session review found no blocking
+calculation defect; its reference-shape/finite-value hardening was implemented
+with a regression check. The review emphasized the composition and horizon
+transfer limitations retained above.
 
 ## The $356.84bn endpoint and its evidential weight
 
@@ -221,6 +307,12 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+2026-09-20, category response integration: incorporated CBO-informed school and
+delayed-service responses into the report producer, replacing the single prominent
+proportional-service figure with the structured comparison above. The negative
+sign survives the new assumptions, while the magnitude falls materially. The
+original model outputs are preserved. [Decision](../decisions/2026-09-20-category-service-response.md).
 
 2026-09-20, detention scope: [the measurement/accounting rule](immigration-detention-crime-and-fiscal-scope-2026-09-20.md)
 keeps actual custody costs while separating them from ordinary offending. A

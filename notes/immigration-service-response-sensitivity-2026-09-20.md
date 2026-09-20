@@ -1,5 +1,7 @@
 **Verdict:** The service-response fraction is the incremental public-service expense divided by our assigned service spending. It is an assumption, not the percentage of immigrants receiving benefits. The 19–26% figures are model break-even thresholds, not estimates of the actual response. Education dominates the pool; education alone can exceed the threshold. Evidence against immediate proportional spending does not establish low long-run costs or zero congestion harm. [MODEL / INFERENCE]
 
+**Integrated follow-up, same date:** The [main annual account](../research/immigration-complete-annual-account-2026-09-20.md#executed-category-specific-service-responses) now executes category-specific CBO-informed responses, with separate school/non-school education and current/investment accounting. It gives $165–197bn/year conditional net cost, or $121–160bn with non-school education budgets fixed as well. The uniform percentages below remain diagnostic, not the latest evidence-informed comparison. [MODEL]
+
 ## Definition and scope
 
 Date: 2026-09-20. All local amounts are billions of nominal 2024 dollars per year. Population: 40.896574m observed Mexican-origin civilian-household residents, all ages and schooling including observed descendants. Welfare beneficiaries: other US residents. These are conditional stationary-counterfactual calculations, not observed removal savings or lifetime balances. [SOURCE: `research/immigration-complete-annual-account-2026-09-20.md:14–29`.]

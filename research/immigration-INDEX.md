@@ -40,13 +40,15 @@ No exact national total is identified by the examined files; this is not a claim
 that such a total is impossible in principle.
 
 Latest complete annual account: [national reconciliation and conditional net effects](immigration-complete-annual-account-2026-09-20.md).
-The source-centered long-run model gives **$270–289bn/year net cost to other US residents**
-after production benefits. The **$262–357bn** grid includes weaker proxy stress tests;
-the high endpoint chiefly replaces Medicaid spending weights with coverage headcounts.
-Results are conditional on full ordinary-service response, fixed
-defense/general government/old interest, and stated ownership/fiscal recycling.
-Fixed-service cases can be positive. Complete incidence, counterfactual response
-and sign-reversal thresholds are separate; this is not a measured policy effect.
+The integrated CBO-informed school/delayed-service comparison gives **$165–197bn/year
+conditional net cost to other US residents**; fixing non-school education budgets
+as well gives **$121–160bn**. The full proportional-service benchmark remains
+**$270–289bn**. Production is held fully adjusted while service responses vary;
+these transferred short-run assumptions do not identify a long-run effect.
+The **$262–357bn** proportional-service grid includes weaker proxy stress tests.
+The report now regenerates all category comparisons and composition diagnostics.
+Fixed-service cases can be positive; property-receipt and service-quality effects
+remain unresolved. See the [response decision](../decisions/2026-09-20-category-service-response.md).
 
 [Policy effects and new administrative outcomes](immigration-policy-causal-evidence-2026-09-20.md)
 checks Secure Communities victimization/reporting, Mariel school spending and
