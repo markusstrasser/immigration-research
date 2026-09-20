@@ -78,3 +78,57 @@ parent records, duplicate parent slots, and valid negative replicate weights.
 The independent respondent-wise Pew classifier matches all 1901 records.
 
 Findings: [fourth-generation scope and executed split](../../../research/immigration-fourth-generation-scope-2026-09-20.md).
+
+## Additional recovery checks
+
+```sh
+UV_CACHE_DIR=/private/tmp/codex-uv-cache uv run python3 infra/immigration-fiscal/generation_split_2026_09_20/analyze_gss.py
+UV_CACHE_DIR=/private/tmp/codex-uv-cache uv run python3 infra/immigration-fiscal/generation_split_2026_09_20/probe_adjacent_years.py
+```
+
+These standalone probes add evidence; they do not apply candidate classifications
+to `cps_generation_split.csv` or change the fiscal account. No existing public
+interface changes. Outputs go to ignored `derived/recovery/`; the adjacent-year
+script also runs `audit_unresolved.py` to produce the missing-history partition.
+
+- GSS input: `../attitudes_gen_2026_09_16/raw/GSS_stata/gss7224_r3a.dta`,
+  SHA-256 `a7622e03d9130e25968943b6f022f44dc0087baf0aa6b5cef150871152827344`.
+  [NORC source](https://gss.norc.org/get-the-data.html). Local 2024 R3a codebook,
+  printed p.40, recommends WTSSNRPS when available. The recent subgroup table
+  gives WTSSNRPS and WTSSPS; the wider historical diagnostic uses WTSSPS only.
+  `HISPANIC=2`, `BORN=1`, `PARBORN=0` defines the recent subgroup. `GRANBORN=0`
+  identifies four US-born grandparents; 1–4 establishes a foreign grandparent,
+  without country. Unknown grandparents and unknown ages remain visible.
+  Pooled survey weights are not normalized to equal year mass or standardized
+  to CPS age composition. No design-based intervals or current-year imputation.
+- CPS2024 input: `../same_year_tax_2026_09_20/_cache/asecpub24csv.zip`.
+  [Census download](https://www2.census.gov/programs-surveys/cps/datasets/2024/march/asecpub24csv.zip).
+- CPS2026 input: `../ledger_asec2026_2026_09_16/_cache/asecpub26csv.zip`.
+  [Census download](https://www2.census.gov/programs-surveys/cps/datasets/2026/march/asecpub26csv.zip).
+  Both archive hashes are pinned in the script and recorded with the 2025 hash
+  in the audit manifest. `PERIDNUM` is a string with unique, nonmissing values.
+
+Adjacent-wave candidates retain the current 2025 sample and weights. Own and
+parental birthplace, sex, citizenship and Mexican identification must agree;
+age must change by 0–2 years in the expected direction. The existing biological
+parent classifier runs on each adjacent wave. Shared parents' own and parental
+birthplaces must agree. Current inconsistent parent histories remain excluded.
+The stricter arm also excludes any currently observed biological parent absent
+from the other wave. Both arms remain candidates: edited-field adjudication,
+complementary partial-branch combination, and all monthly interviews are unrun.
+The union removes cross-wave G3/G4 conflicts and uses each target person once.
+
+Generated outputs:
+
+- `gss_generation_subgroup_20260920.csv`: recent G3+/adult denominator, two
+  weighting methods, age bands, known/unknown counts and shares.
+- `gss_generation_probe_20260920.csv`: wider historical origin-definition diagnostic.
+- `generation_unresolved_reasons_20260920.csv`: exhaustive reasons plus explicitly
+  overlapping diagnostics; do not add overlapping rows to the partition.
+- `cps_adjacent_generation_candidates_20260920.csv`: each linkage filter and
+  candidate union, all-age/child/adult counts and conditional sampling SEs.
+- JSON manifests: raw hashes, labels, counts and material limitations.
+
+The annual-wave candidate yield does not bound the unexecuted monthly or
+complementary-branch routes. Public CPS contains no name fields. A surname
+ethnicity classifier would not supply the missing grandparents' birthplaces.
