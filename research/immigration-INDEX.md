@@ -50,6 +50,13 @@ The report now regenerates all category comparisons and composition diagnostics.
 Fixed-service cases can be positive; property-receipt and service-quality effects
 remain unresolved. See the [response decision](../decisions/2026-09-20-category-service-response.md).
 
+[Cumulative 2005–2024 back-cast](immigration-historical-backcast-2026-09-20.md):
+no past year is measured. Actual BEA budgets and ACS population by year, with the
+2024 relative position held or income-adjusted, give **$1.4–2.0tn (10y), $2.0–3.1tn
+(15y), $2.4–3.8tn (20y)** for the main net-cost case, 2024 dollars, no interest.
+Measured relative per-capita income rose 0.52→0.61 over 2008–2024. Model ranges,
+not intervals; a measured series needs the account rebuilt on each ASEC file.
+
 [Executed service-scaling test](immigration-service-scaling-test-2026-09-20.md):
 school panel spending elasticity .735 unweighted/.836 pupil-weighted; across-district
 prediction favors proportional spending over universal 3/4 or 5/6. Ten state-service
