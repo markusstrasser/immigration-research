@@ -561,3 +561,11 @@ Common acquisition record: [ACQUIRED.md](../infra/immigration-fiscal/new_dataset
 **Known quirks:** only1990/2000 rows, representing prior-decade changes. This is a prepared analysis file, with no upstream Geolytics/gravity build code. Historical keys require validated crosswalks before any modern ACS join. Archived baseline has43 controls versus44 in prose; column1 and appendix first-stage Ns differ from printed tables; main column4 F remains unresolved. Full source details and separate matched-row mean/median checks are in the [replay note](immigration-hedonic-replay-2026-09-19.md).
 
 **Used in:** the linked replay note and lane `src/original_replay.py` / `src/verify_original.py`. Six historical coefficients/SEs, stronger-IV F/J diagnostics and appendix median estimate recovered by independently checked Python translation. No native Stata or upstream-data reconstruction claim.
+
+### MASP_AUTHOR_2019 — Mexican American Study Project family follow-up
+
+**Source/acquired:** Edward Telles and Vilma Ortiz; 2026-09-20, actual author-distributed Stata data acquired and parsed. [Official project/download](https://www.edwardtelles.com/masp), [codebook](https://www.edwardtelles.com/new-page-1).
+**Local:** `infra/immigration-fiscal/masp_2026_09_20/raw/`; two downloads, 24,552,591 bytes total. Data: 1,850 rows × 2,560 fields, not 1,850 independent child respondents. [Hashes and recipe](../infra/immigration-fiscal/masp_2026_09_20/ACQUIRED.md).
+**Key variables:** `v75` own birth country, `c28/c29` nonrespondent parent's parents' birthplace, `v25/v26.../v51` ethnic identification, `v348` family income, `v338` SSI, `c80/c94/c95...` schooling.
+**Quirks/license:** historical LA/San Antonio family follow-up, 1965–66 baseline and 1998–2002 follow-up. Author labels data 2019; older ICPSR28481v2 codebook cannot establish identical variables, blanking or missing codes. Identity requires multiple-response/skip reconstruction, not `v25` alone. Raw/derived ignored; redistribution permission not established. Inventory complete; outcome/generation reconstruction pending.
+**Used in:** [ancestry-outcomes evidence update](immigration-ancestry-outcomes-evidence-2026-09-20.md).

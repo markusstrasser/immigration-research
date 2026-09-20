@@ -30,6 +30,10 @@ Exact G4 versus G5+ remains unmeasured. No fiscal total changes.
 give 3.51–3.83m generic G4+ adults under central assumptions; missing-age and
 grandparent scenarios span 2.71–4.71m before sampling error. Historical Pew is
 lower, and PSID exact-generation completeness awaits authenticated data access.
+[Ancestry and outcomes](immigration-ancestry-outcomes-evidence-2026-09-20.md)
+adds a direct Pew schooling comparison of identifiers and nonidentifiers, the
+newly acquired historical MASP family data, and the verified SIPP linkage route.
+It supplies no national all-descendant fiscal or crime correction.
 [Program-fraud trace index](immigration-fraud-trace-index-2026-09-20.md) links SNAP,
 childcare, adult-day and hospice cases to records, separating paid losses, billings,
 allegations and duplicate fiscal attribution. No fraud adjustment has been estimated.
