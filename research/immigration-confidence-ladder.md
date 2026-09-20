@@ -1,5 +1,11 @@
 **Measurement correction, 2026-09-20:** ACS institutionalization ratios below cannot distinguish criminal custody, immigration detention and noncorrectional institutions. Offense-cost extensions are conditional proxies. Use the [detention/crime scope](immigration-detention-crime-and-fiscal-scope-2026-09-20.md) for current interpretation and fiscal transfer accounting. Earlier text is retained as historical evidence.
 
+**School-quality correction, 2026-09-20:** Entry 81's categorical no-US-harm/$0
+conclusion is superseded by the [capacity and incumbent-outcome audit](immigration-school-capacity-harms-2026-09-20.md).
+Peer effects and schoolwide resource effects are different estimands. The national
+quality channel remains unpriced; favorable/null and adverse evidence are retained.
+[Decision](../decisions/2026-09-20-school-quality-unpriced.md).
+
 <!-- fiscal-repair-2026-09-19 -->
 **Current fiscal release (September 19):** [Repaired yearly and lifetime calculation index](immigration-yearly-lifetime-cost-repair-2026-09-19.md) supersedes affected annual, household-financing and lifetime figures below. It reports both allocation conventions, actual-age survival NPVs and unresolved coverage. Earlier text and calculations remain historical evidence; unrelated findings are unchanged.
 
@@ -245,6 +251,8 @@ The [result and assumption index](immigration-five-day-cross-check-2026-09-19.md
 160. **Growth in a county's Mexican-origin share does not move its presidential vote or turnout once state-by-year shocks are absorbed (−0.02 Democratic points per point, SE 0.15; turnout −0.09 ± 0.28; 3,103 counties × 7 elections, 2000–2024); the shift-share IV sits on the Republican side (−0.42 ± 0.36); the Mexican-origin share of voters doubled 2004–2024 (3.34% → 6.04%) and is worth +0.29 points nationally against −2.80 from the group's own 2012–2024 swing; California and Texas have Mexican-origin shares within half a point and an 18.4-point Democratic gap that is +0.2 composition, +18.2 conversion, with their low-Mexican counties at 66.0 vs 23.1 Democratic and diverging — bounds the input side of 97/102: the resident-group political externality is small in level with no established sign.** Positive association appears only with national year effects and attaches to the non-Mexican Hispanic share conditional on both; 2016–2024 alone flips it (+0.60, t 3.38, partly ACS-vintage noise) and is the one reversing arm; dropping border states flips it insignificantly; placebo null; splice between vote sources measured at 0.016 points; in-state tuition tracks the group's size, restrictive-law counts track the rest of the electorate (n = 48, ordering only). Rating: **ecological panel with fixed effects and a measured placebo; 24-year level effect only; partisanship survey-based; laws descriptive**. [SOURCE: `immigration-political-trajectory-county-panel-2026-09-19.md`; `infra/immigration-fiscal/political_trajectory_county_2026_09_19/`]
 
 ## Revisions
+
+- 2026-09-20: Withdraw entry 81's categorical zero for school-quality harm; distinguish adjusted peer effects from schoolwide resource effects. [Decision](../decisions/2026-09-20-school-quality-unpriced.md).
 
 - 2026-09-20: Separated institutional residence, civil detention, criminal offenses and fiscal costs; historical counts are retained with narrower interpretation. [Decision](../decisions/2026-09-20-separate-detention-offenses-and-spending.md).
 

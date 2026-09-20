@@ -15,6 +15,13 @@ Status: rows without a tag are live. Memos superseded on 2026-09-05 under the [m
 
 ## Core State
 
+[Executed causal checks](immigration-causal-execution-2026-09-20.md): actual
+Chalfin crime-data translation and 21 public school-finance synthetic-control models;
+count/rate identities, weak-IV intervals, donor influence and calendar limits.
+[Incumbent school-capacity harm](immigration-school-capacity-harms-2026-09-20.md)
+adds conditional learning-loss estimates and withdraws the old $0/no-harm claim.
+Neither exercise adds an identified national dollar term.
+
 Civil custody, criminal offenses and fiscal spending: [detention/crime measurement scope](immigration-detention-crime-and-fiscal-scope-2026-09-20.md). ACS institutional counts cannot separate immigration detention; government custody spending remains a cost, with intergovernmental payments consolidated once.
 
 Latest complete annual account: [national reconciliation and conditional net effects](immigration-complete-annual-account-2026-09-20.md).
