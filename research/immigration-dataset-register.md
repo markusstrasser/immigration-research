@@ -631,3 +631,33 @@ and ZIP-derived geography differ from BEA concepts. Outer county-year join produ
 34,733 rows with unmatched records retained, not a full national balanced panel.
 Public government aggregates; raw/derived ignored. Used with the BEA card above;
 contains no origin, nativity or legal-status field.
+
+### OPENICPSR_113382_V1 — Chalfin2015 Mexican-inflow crime panel
+
+**Source/acquired:** Aaron Chalfin/AEA/openICPSR; existing operator download verified
+2026-09-20. [Official record](https://doi.org/10.3886/E113382V1).
+**Local:** `infra/immigration-fiscal/causal_execution_2026_09_20/raw/chalfin/`.
+**Size/license:** archive138,701 bytes; data259,427 bytes,276×172,92 MSAs,1980/90/2000.
+Archive licenses code BSD-3-Clause and other objects CC-BY4.0; full license retained.
+[Hashes/acquisition recipe](../infra/immigration-fiscal/causal_execution_2026_09_20/README.md).
+**Variables:** `FMSA`, `year`, initial-population `popweight`, prepared instrument
+`dins`, exposure `dmexfb_alt`, offense counts and supplied `dlogpc_*` outcomes.
+**Quirks/use:** `dlogpc_*` numerically equals change in log counts, not rate levels;
+exposure equals100×change in `mexfba`, whose exact age definition is undocumented.
+Crime/Census geography differs; no per-arrival dollar conversion. Prepared upstream
+instrument only. [Seven-model replay and sensitivities](immigration-causal-execution-2026-09-20.md).
+
+### GFD_PLOS_S7_2015 — historical school-district finance
+
+**Source/acquired:** Pierson, Hand, Thompson, based on Census; public PLOS S7
+acquired2026-09-20. [Article](https://doi.org/10.1371/journal.pone.0130119).
+**Local:** `infra/immigration-fiscal/causal_execution_2026_09_20/mariel/work/`.
+**Size/license:** ZIP85,277,958 bytes, underlying CSV649,878,780 bytes streamed;
+selected1967–92 extract268,798 rows/17,259 units. PLOS public supplement/CC-BY;
+raw/derived ignored. [Source lock and recipe](../infra/immigration-fiscal/causal_execution_2026_09_20/mariel/README.md).
+**Variables:** Census government`ID`, survey`Year4`, `FYEndDate`, enrollment,
+`Total_Current_Oper`, total expenditure, taxes and intergovernmental revenues.
+**Quirks/use:** dollars are nominal thousands; survey/fiscal calendar alignment is
+unit-specific; historical enrollment can be substituted/unusable; current operating
+spending differs from total-minus-capital. No pupil nativity/white outcome/class-size
+measure. Used in21 conditional Mariel SCM models, not national population accounting.

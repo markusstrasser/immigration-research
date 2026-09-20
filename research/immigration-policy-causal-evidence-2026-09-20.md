@@ -2,6 +2,14 @@
 
 **Date:** September 20, 2026. Evidence index and calculation record; narrative writing remains operator-owned.
 
+**Later execution update:** The [raw-data causal checks](immigration-causal-execution-2026-09-20.md)
+now supersede the pending Chalfin status below: the existing local archive was found,
+validated and executed. Supplied crime outcomes are log-count changes despite
+rate-suggesting names. The Mariel total-spending p=.045 below is **one-sided**;
+TableA3 operating spending is+.20 log with one-sided p=.09. Independent public-data
+reconstruction estimates operating log gaps.161–.194 with weaker two-sided placebo
+evidence. These are specification estimates, not a national confidence interval.
+
 **Finding:** Specific policy effects are more defensible than a causal dollar
 total for an ethnic-origin population. New primary evidence supports additional
 school costs after one immigration shock and increased Hispanic victimization
@@ -78,7 +86,7 @@ substantive benefits to retain, but no fresh national dollar offset follows.
 [publication identifier](https://doi.org/10.1257/app.20250049);
 [existing audit](../infra/immigration-fiscal/frontier_execution_2026_09_17/policy/RESULT.md)]
 
-## Direct Mexican-inflow crime replication: located, not yet executed
+## Direct Mexican-inflow crime replication: earlier status, superseded above
 
 Chalfin (2015) has a small [public replication package](https://doi.org/10.3886/E113382V1):
 a 253.3 KB Stata file and 1.7 KB code file. The authenticated download is prepared;
@@ -164,3 +172,10 @@ Arithmetic for ten published-table rows is reproducible with
 No national cost change is inferred from this round. LLM selection can bias which
 papers look salient; adverse cost, favorable production and enforcement-harm
 evidence are retained together. [INFERENCE; [instrument note](../notes/llm-bias-caveat.md)]
+
+## Revisions
+
+- Later2026-09-20: locate and execute the already-held Chalfin archive; withdraw
+  the unresolved-download status as current. Clarify the Mariel one-sided tests
+  and distinguish operating/total spending. Preserve earlier source notes above;
+  [executed update](immigration-causal-execution-2026-09-20.md).
