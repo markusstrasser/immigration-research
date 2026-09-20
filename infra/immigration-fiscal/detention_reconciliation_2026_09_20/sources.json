@@ -1,0 +1,71 @@
+{
+  "acquired": "2026-09-20",
+  "sources": [
+    {
+      "name": "dhs_fy2024_fileab.zip",
+      "url": "https://files.usaspending.gov/generated_downloads/FY2024P01-P12_DHS_TAS_AccountData_2026-09-20_H13M59S00844448.zip",
+      "bytes": 560594,
+      "sha256": "02466f6b894351ff2d90bc66076b65eb61c59ff101fcabb9fdd8c2ff14473bc2"
+    },
+    {
+      "name": "usaspending_accounts.md",
+      "url": "https://raw.githubusercontent.com/fedspendingtransparency/usaspending-api/1692d484b38c66361c54faa221548527cae29964/usaspending_api/api_contracts/contracts/v2/download/accounts.md",
+      "bytes": 5531,
+      "sha256": "45fae1ce80d720bc71e38a8c0278a610158dc714323de4d0b4b46386a92d3c77"
+    },
+    {
+      "name": "usaspending_account_download_filter.py",
+      "url": "https://raw.githubusercontent.com/fedspendingtransparency/usaspending-api/1692d484b38c66361c54faa221548527cae29964/usaspending_api/accounts/v2/filters/account_download.py",
+      "bytes": 28242,
+      "sha256": "df596dd28ec89533f11566473ec04cb7e91d4f2127983e696dd4c100c3284053"
+    },
+    {
+      "name": "census_2024_units.zip",
+      "url": "https://www2.census.gov/programs-surveys/gov-finances/tables/2024/2024_Individual_Unit_Files.zip",
+      "bytes": 4267040,
+      "sha256": "0967c4d30466593796acb26f2b30c1afb37b5b9a5de43766dc65e4ccc95bd89a"
+    },
+    {
+      "name": "census_2024_method.pdf",
+      "url": "https://www2.census.gov/programs-surveys/gov-finances/tables/2024/2024_methodology.pdf",
+      "bytes": 384434,
+      "sha256": "6a8d82a94335bf6d03130ba047f68df037a555761d9d82bde15ead86f9a9b6f9"
+    },
+    {
+      "name": "census_classification.pdf",
+      "url": "https://www2.census.gov/govs/pubs/classification/2006_classification_manual.pdf",
+      "bytes": 2920718,
+      "sha256": "6e121ec3444602ea8f390a371f6073fd9313dfebd3de769db64e1e0a5db1c5f9"
+    },
+    {
+      "name": "baker2024.pdf",
+      "url": "https://flauditor.gov/pages/county_efile%20rpts/2024%20baker%20county.pdf",
+      "bytes": 1951089,
+      "sha256": "1910e5dd8ebd0765927030afa0144e333e6f58490527ebcd3a200ac8bcbd9cbc"
+    },
+    {
+      "name": "bjs_jeet.html",
+      "url": "https://bjs.ojp.gov/jeet-resources",
+      "bytes": 69997,
+      "sha256": "9c5a768a497e33d556038e7264746abd66f2bbf1499ba1d8ab662fc4c5898d84"
+    },
+    {
+      "name": "dhs_sf133_2024.zip",
+      "url": "https://portal.max.gov/portal/document/SF133/Budget/attachments/2438300552/2454160252.zip",
+      "bytes": 3121756,
+      "sha256": "a0e94d99458238607c6cdcd71a00ac05fb34c8d6d17c3edf7c4d8fc23c91ea1d"
+    },
+    {
+      "name": "sf133_2024_index.html",
+      "url": "https://portal.max.gov/portal/document/SF133/Budget/FY%202024%20-%20SF%20133%20Reports%20on%20Budget%20Execution%20and%20Budgetary%20Resources.html",
+      "bytes": 143593,
+      "sha256": "c9ae8311ff9acc3101eb20b7afe3d88c3b1888599671cb5f2e14447058a37fe2"
+    },
+    {
+      "name": "treasury_cs2024_dhs.pdf",
+      "url": "https://fiscal.treasury.gov/system/files/files/reports-statements/combined-statement/cs2024/c18.pdf",
+      "bytes": 1387778,
+      "sha256": "4a7f678ab5c7b1a148dccf073d4a8d62aed0528633ed20633e3a6222d7deb57b"
+    }
+  ]
+}
