@@ -24,6 +24,15 @@ Neither exercise adds an identified national dollar term.
 
 Civil custody, criminal offenses and fiscal spending: [detention/crime measurement scope](immigration-detention-crime-and-fiscal-scope-2026-09-20.md). ACS institutional counts cannot separate immigration detention; government custody spending remains a cost, with intergovernmental payments consolidated once.
 
+**Detention spending investigation completed through September 20, 2026:**
+[FY2024 reconciled accounts, verified custody subtotal and identification limits](../infra/immigration-fiscal/detention_reconciliation_2026_09_20/README.md).
+Expired-funding records have been acquired and reconciled; the unresolved pieces
+are custody allocation and matched local expenses/receipts, not missing account
+downloads. Start with the [reuse handoff](immigration-verification-handoff.md#detention-crime-and-spending-reuse-before-researching)
+and [specific records needed](../infra/immigration-fiscal/detention_reconciliation_2026_09_20/RECORDS_NEEDED.md).
+No exact national total is identified by the examined files; this is not a claim
+that such a total is impossible in principle.
+
 Latest complete annual account: [national reconciliation and conditional net effects](immigration-complete-annual-account-2026-09-20.md).
 The source-centered long-run model gives **$270–289bn/year net cost to other US residents**
 after production benefits. The **$262–357bn** grid includes weaker proxy stress tests;
