@@ -18,12 +18,10 @@ _log()  { printf '[%(%H:%M:%S)T] %s\n' -1 "$*" | tee -a "$LOG"; }
 _ok()   { _log "  ok   $*"; }
 _warn() { _log "  warn $*"; }
 
+# shellcheck source=validation.sh
+source "$HERE/validation.sh"
 _validate_file() {
-    local dest="$1" min_bytes="${2:-512}"
-    local sz
-    sz=$(wc -c < "$dest" | tr -d ' ')
-    [[ "$sz" -ge "$min_bytes" ]] || { rm -f "$dest"; return 1; }
-    [[ "$dest" != *.zip ]] || unzip -tqq "$dest" 2>/dev/null
+    immigration_fiscal_validate_file "$@"
 }
 
 _fetch() {
@@ -32,7 +30,7 @@ _fetch() {
     [[ -s "$dest" ]] && _validate_file "$dest" "$min" && { _ok "exists $dest"; return 0; }
     _log "fetch(stage5) $url"
     if curl -sSL --fail --max-time 600 -o "$dest.part" "$url" \
-        && _validate_file "$dest.part" "$min"; then
+        && _validate_file "$dest.part" "$min" "$dest"; then
         mv "$dest.part" "$dest"
         _ok "$dest ($(wc -c < "$dest" | tr -d ' ') bytes)"
         return 0

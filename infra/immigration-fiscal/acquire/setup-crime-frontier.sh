@@ -7,25 +7,20 @@
 # Idempotent + non-fatal: re-running skips valid files; a dead URL warns and continues.
 set -uo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-IMMIGRATION_FISCAL_ROOT="$(cd "$HERE/.." && pwd)"
-if [[ -f "$HERE/config.local.env" ]]; then source "$HERE/config.local.env"
-elif [[ -f "$HERE/config.env" ]]; then source "$HERE/config.env"
-else source "$HERE/config.env.example"; fi
+source "$HERE/lib.sh"
+immigration_fiscal_load_config
 
-CF="${PNY_DATA_ROOT:-$HOME/research-data/immigration-fiscal/data}/external/crime_frontier"
+CF="$PNY_DATA_ROOT/external/crime_frontier"
 SCRIPTS="$(cd "$HERE/../scripts" && pwd)"
 LOG="$HERE/setup.log"
 _log()  { printf '[%(%H:%M:%S)T] %s\n' -1 "$*" | tee -a "$LOG"; }
 _ok()   { _log "  ok   $*"; }
 _warn() { _log "  warn $*"; }
 
+# shellcheck source=validation.sh
+source "$HERE/validation.sh"
 _validate_file() {
-    local dest="$1" min_bytes="${2:-512}" sz
-    sz=$(wc -c < "$dest" | tr -d ' ')
-    [[ "$sz" -ge "$min_bytes" ]] || { rm -f "$dest"; return 1; }
-    # reject HTML error pages masquerading as PDFs
-    [[ "$dest" != *.pdf ]] || head -c 5 "$dest" | grep -q '%PDF' || { rm -f "$dest"; return 1; }
-    [[ "$dest" != *.zip ]] || unzip -tqq "$dest" 2>/dev/null
+    immigration_fiscal_validate_file "$@"
 }
 
 _fetch() {  # curl with validation; idempotent + non-fatal
@@ -35,7 +30,7 @@ _fetch() {  # curl with validation; idempotent + non-fatal
     _log "fetch $url"
     if curl -sSL --fail --max-time 600 \
             -A "Mozilla/5.0 (research-reproduce)" \
-            -o "$dest.part" "$url" && _validate_file "$dest.part" "$min"; then
+            -o "$dest.part" "$url" && _validate_file "$dest.part" "$min" "$dest"; then
         mv "$dest.part" "$dest"; _ok "$dest ($(wc -c < "$dest" | tr -d ' ') bytes)"; return 0
     fi
     rm -f "$dest.part" "$dest"; _warn "skip $dest (try MANUAL_ACQUIRE or Playwright)"; return 0

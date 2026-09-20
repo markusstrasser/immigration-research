@@ -5,6 +5,8 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 # shellcheck source=../acquire/lib.sh
 source "$ROOT/acquire/lib.sh"
+# shellcheck source=../acquire/validation.sh
+source "$ROOT/acquire/validation.sh"
 immigration_fiscal_load_config
 
 TIER="required"
@@ -64,11 +66,15 @@ while IFS=$'\t' read -r stage req relpath min_bytes script notes; do
     if [[ "$sz" -lt "${min_bytes:-1}" ]]; then
         echo "TOO_SMALL [$req] $dest (${sz}B < ${min_bytes}B)"
         missing=$((missing + 1))
+    elif ! immigration_fiscal_validate_file "$dest" "${min_bytes:-1}" "$dest" directory; then
+        echo "INVALID [$req/$script] $dest"
+        missing=$((missing + 1))
     fi
 done < "$MANIFEST"
 
 echo "---"
 echo "tier=$TIER data=$DATA derived=$DERIVED_ROOT"
+echo "ZIP validation: central directory only; acquisition checks member CRCs"
 echo "checked $checked skipped $skipped — missing/invalid: $missing"
 if [[ "$checked" -eq 0 ]]; then
     echo "No manifest entries selected for tier=$TIER; verification is incomplete" >&2

@@ -6,6 +6,7 @@ import shutil
 import subprocess
 import tempfile
 import unittest
+import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,7 +18,7 @@ class VerifyDownloadsTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        for relative in ("scripts/verify-downloads.sh", "acquire/lib.sh",
+        for relative in ("scripts/verify-downloads.sh", "acquire/lib.sh", "acquire/validation.sh",
                          "acquire/config.env.example"):
             target = self.root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -59,13 +60,24 @@ class VerifyDownloadsTests(unittest.TestCase):
         self.assertEqual(complete.returncode, 0, complete.stdout + complete.stderr)
 
     def test_raw_tiers_do_not_require_derived_outputs(self):
-        (self.data / "raw.zip").write_text("valid")
+        with zipfile.ZipFile(self.data / "raw.zip", "w") as archive:
+            archive.writestr("data.csv", "valid")
         required = self.run_tier("required")
         self.assertEqual(required.returncode, 0, required.stdout + required.stderr)
         self.assertIn("checked 1", required.stdout)
         self.assertEqual(self.run_tier("optional").returncode, 1)
-        (self.data / "extra.zip").write_text("valid")
+        shutil.copyfile(self.data / "raw.zip", self.data / "extra.zip")
         self.assertEqual(self.run_tier("optional").returncode, 0)
+
+    def test_large_html_and_truncated_archive_fail_without_deletion(self):
+        path = self.data / "raw.zip"
+        for payload in (b"<html>blocked</html>" * 2000, b"PK\x03\x04" + b"x" * 26000):
+            with self.subTest(payload=payload[:20]):
+                path.write_bytes(payload)
+                result = self.run_tier("required")
+                self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+                self.assertIn("INVALID", result.stdout)
+                self.assertEqual(path.read_bytes(), payload)
 
     def test_no_selected_rows_cannot_pass(self):
         self.manifest.write_text(HEADER + "1\trequired\traw.zip\t4\tacquire\ttest\n")

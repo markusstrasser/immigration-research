@@ -26,30 +26,10 @@ _sha256() {
 }
 
 # Reject WAF/HTML traps: empty files, tiny payloads, broken zips.
+# shellcheck source=validation.sh
+source "$HERE/validation.sh"
 _validate_file() {
-    local dest="$1" min_bytes="${2:-512}"
-    local sz
-    sz=$(wc -c < "$dest" | tr -d ' ')
-    if [[ "$sz" -lt "$min_bytes" ]]; then
-        _warn "reject $dest (${sz}B < ${min_bytes}B min — likely WAF/HTML trap)"
-        rm -f "$dest"
-        return 1
-    fi
-    if [[ "$dest" == *.zip ]]; then
-        if ! unzip -tqq "$dest" 2>/dev/null; then
-            _warn "reject $dest (invalid zip)"
-            rm -f "$dest"
-            return 1
-        fi
-    fi
-    if [[ "$dest" == *.xlsx ]]; then
-        if ! unzip -tqq "$dest" 2>/dev/null; then
-            _warn "reject $dest (invalid xlsx)"
-            rm -f "$dest"
-            return 1
-        fi
-    fi
-    return 0
+    immigration_fiscal_validate_file "$@"
 }
 
 _head_ok() {
@@ -62,7 +42,7 @@ _head_ok() {
 _fetch() {
     local url="$1" dest="$2" required="${3:---required}" max_time="${4:-900}"
     mkdir -p "$(dirname "$dest")"
-    if [[ -s "$dest" ]]; then
+    if [[ -s "$dest" ]] && _validate_file "$dest"; then
         _ok "exists $dest"
         return 0
     fi
@@ -70,12 +50,11 @@ _fetch() {
     if ! _head_ok "$url"; then
         _warn "HEAD failed for $url — trying GET"
     fi
-    if curl -sSL --fail --max-time "$max_time" -o "$dest.part" "$url"; then
+    if curl -sSL --fail --max-time "$max_time" -o "$dest.part" "$url" \
+        && _validate_file "$dest.part" 512 "$dest"; then
         mv "$dest.part" "$dest"
-        if _validate_file "$dest"; then
-            _ok "$dest ($(wc -c < "$dest" | tr -d ' ') bytes)"
-            return 0
-        fi
+        _ok "$dest ($(wc -c < "$dest" | tr -d ' ') bytes)"
+        return 0
     fi
     rm -f "$dest.part" "$dest"
     [[ "$required" == "--required" ]] && { _fail "$dest"; return 1; }
@@ -100,7 +79,7 @@ _fetch_hud_chas() {
     if curl -sSL --fail --max-time 120 -A "Mozilla/5.0" \
         -H "Referer: https://www.huduser.gov/portal/datasets/chas.html" \
         -o "$dest.part" "$url" \
-        && _validate_file "$dest.part" 10240; then
+        && _validate_file "$dest.part" 10240 "$dest"; then
         mv "$dest.part" "$dest"
         _ok "$dest"
         return 0
@@ -352,7 +331,7 @@ _fetch_eoir_pdf() {
     [[ -s "$dest" ]] && _validate_file "$dest" 5000 && { _ok "exists $dest"; return 0; }
     _log "fetch(EOIR) $slug"
     if curl -sSL --fail --max-time 120 -A "Mozilla/5.0" -o "$dest.part" "$url" \
-        && _validate_file "$dest.part" 5000; then
+        && _validate_file "$dest.part" 5000 "$dest"; then
         mv "$dest.part" "$dest"
         _ok "$dest"
         return 0
