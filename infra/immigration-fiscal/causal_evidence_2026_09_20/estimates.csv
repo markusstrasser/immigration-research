@@ -1,0 +1,11 @@
+study,version,outcome,population,estimate,se,unit,permutation_p,source_url
+secure_communities,2026-04_CES26-23_Table2,victimized,Hispanic_12plus,0.152,0.067,percentage_points_person_month,,https://www2.census.gov/library/working-papers/2026/adrm/ces/CES-WP-26-23.pdf
+secure_communities,2026-04_CES26-23_Table2,reported_to_police,Hispanic_victim_incidents,-9.446,3.664,percentage_points_incidents,,https://www2.census.gov/library/working-papers/2026/adrm/ces/CES-WP-26-23.pdf
+secure_communities,2026-04_CES26-23_Table2,victimized_and_reported,Hispanic_12plus,-0.005,0.035,percentage_points_person_month,,https://www2.census.gov/library/working-papers/2026/adrm/ces/CES-WP-26-23.pdf
+secure_communities,2026-04_CES26-23_Table2,victimized,non_Hispanic_12plus,0.003,0.035,percentage_points_person_month,,https://www2.census.gov/library/working-papers/2026/adrm/ces/CES-WP-26-23.pdf
+secure_communities,2026-04_CES26-23_Table2,reported_to_police,non_Hispanic_victim_incidents,-1.112,1.343,percentage_points_incidents,,https://www2.census.gov/library/working-papers/2026/adrm/ces/CES-WP-26-23.pdf
+secure_communities,2026-04_CES26-23_Table2,victimized,all_12plus,0.030,0.033,percentage_points_person_month,,https://www2.census.gov/library/working-papers/2026/adrm/ces/CES-WP-26-23.pdf
+h2b_lottery,2026-07_published_Table2,revenue_ITT,responding_surviving_applicant_firms,0.135,0.051,log_points,,https://www.piie.com/sites/default/files/2026-07/wp26-11.pdf
+mariel_school,2024-08-09_manuscript_Table2,total_expenditure,Miami_Dade_school_district,0.25,,log_points,0.045,https://wagner.nyu.edu/files/faculty/publications/Mariel%20Boatlift_5.pdf
+mariel_city,2024-08-09_manuscript_Table2,total_expenditure,Miami_city,0.05,,log_points,0.38,https://wagner.nyu.edu/files/faculty/publications/Mariel%20Boatlift_5.pdf
+mariel_county,2024-08-09_manuscript_Table2,total_expenditure,Miami_Dade_county,-0.08,,log_points,0.65,https://wagner.nyu.edu/files/faculty/publications/Mariel%20Boatlift_5.pdf

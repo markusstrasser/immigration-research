@@ -1,0 +1,168 @@
+{
+  "kind": "acquired_source_lock",
+  "staged_on": "2026-09-20",
+  "corpus_source_csv_bytes": 72120892,
+  "inputs": [
+    {
+      "bytes": 131584,
+      "sha256": "da7ca2840586286fd87f0e70426333216a16feeff61ce65b7b6c8da1fe0c8c31",
+      "official_url": "https://www.irs.gov/pub/irs-soi/11incydocguide.doc",
+      "source_kind": "official_codebook_seed",
+      "local_relative_path": "codebooks/11incydocguide.doc"
+    },
+    {
+      "bytes": 159232,
+      "sha256": "4caf18f4bd7d29bd779ccf47ea49a25d77f3208669b3e2f96c6ab6064e195fe3",
+      "official_url": "https://www.irs.gov/pub/irs-soi/13incydocguide.doc",
+      "source_kind": "official_codebook_seed",
+      "local_relative_path": "codebooks/13incydocguide.doc"
+    },
+    {
+      "bytes": 172032,
+      "sha256": "926620a075747dbe3dd819657275039048dde08edb20b8c74060be4eb9a91766",
+      "official_url": "https://www.irs.gov/pub/irs-soi/14incydocguide.doc",
+      "source_kind": "official_codebook_seed",
+      "local_relative_path": "codebooks/14incydocguide.doc"
+    },
+    {
+      "bytes": 179712,
+      "sha256": "9d2bfc81e8ade7aa3540af15c34ab47abed29e02750c08d7068777023611f677",
+      "official_url": "https://www.irs.gov/pub/irs-soi/15incydocguide.doc",
+      "source_kind": "official_codebook_seed",
+      "local_relative_path": "codebooks/15incydocguide.doc"
+    },
+    {
+      "bytes": 193536,
+      "sha256": "1954229aeb6c35cbb77bbf1d788cc076838e0be42dc71f4b332bc8cd3f86ba44",
+      "official_url": "https://www.irs.gov/pub/irs-soi/16incydocguide.doc",
+      "source_kind": "official_codebook_seed",
+      "local_relative_path": "codebooks/16incydocguide.doc"
+    },
+    {
+      "bytes": 37497,
+      "sha256": "04d47bb00782a1af8d434edd3dba61602bf10f68f7e4b4d883a8aae8375dd685",
+      "official_url": "https://www.irs.gov/pub/irs-soi/17incydocguide.docx",
+      "source_kind": "official_codebook_seed",
+      "local_relative_path": "codebooks/17incydocguide.docx"
+    },
+    {
+      "bytes": 38402,
+      "sha256": "acd392c6c7a7a3bacee17ed9e10f8c6bf44dd4c24ed2eb978e59e6993b2095cb",
+      "official_url": "https://www.irs.gov/pub/irs-soi/18incydocguide.docx",
+      "source_kind": "official_codebook_seed",
+      "local_relative_path": "codebooks/18incydocguide.docx"
+    },
+    {
+      "bytes": 48117,
+      "sha256": "27ecb36e2443b1ee2599f8527baf95029ee721b3ed82b0253fa6e41b09e08a66",
+      "official_url": "https://www.irs.gov/pub/irs-soi/19incydocguide.docx",
+      "source_kind": "official_codebook_seed",
+      "local_relative_path": "codebooks/19incydocguide.docx"
+    },
+    {
+      "bytes": 52319,
+      "sha256": "422d094051a4bcd31f474c864179a1f198d240e76fc2aead6692849310307277",
+      "official_url": "https://www.irs.gov/pub/irs-soi/20incydocguide.docx",
+      "source_kind": "official_codebook_seed",
+      "local_relative_path": "codebooks/20incydocguide.docx"
+    },
+    {
+      "bytes": 52479,
+      "sha256": "c10b9803de42fc2d6c126c5bbdd19c09c5ac8d8328462ff8bc2621d1d33c0367",
+      "official_url": "https://www.irs.gov/pub/irs-soi/21incydocguide.docx",
+      "source_kind": "official_codebook_seed",
+      "local_relative_path": "codebooks/21incydocguide.docx"
+    },
+    {
+      "bytes": 47920,
+      "sha256": "a6acb748d4155614ee4a95d3eb55b7f3d07bf010be269d09d9f06781fbc48787",
+      "official_url": "https://www.irs.gov/pub/irs-soi/22incydocguide.docx",
+      "source_kind": "official_codebook_seed",
+      "local_relative_path": "codebooks/22incydocguide.docx"
+    },
+    {
+      "bytes": 29012947,
+      "sha256": "61858e273cbd7dcfb2a9d374952cc65ef0f3cb4ce45eac5a7c851f291b6d0ceb",
+      "official_url": "https://apps.bea.gov/regional/zip/CAINC4.zip",
+      "source_kind": "corpus",
+      "local_relative_path": "raw/bea_cainc4/CAINC4.csv"
+    },
+    {
+      "bytes": 2321231,
+      "sha256": "32c90b911b5bf0a248011bcb4150ac86adfe77fa2bd8c609172e2c0a8d1ab0c1",
+      "official_url": "https://www.irs.gov/pub/irs-soi/11incyallnoagi.csv",
+      "source_kind": "corpus",
+      "local_relative_path": "raw/irs_soi/county/11incyallnoagi.csv"
+    },
+    {
+      "bytes": 3573573,
+      "sha256": "4bccc0e02cbeb2efc019e028276077ebcc158c3527b093833d9f89547dbe972a",
+      "official_url": "https://www.irs.gov/pub/irs-soi/13incyallnoagi.csv",
+      "source_kind": "corpus",
+      "local_relative_path": "raw/irs_soi/county/13incyallnoagi.csv"
+    },
+    {
+      "bytes": 3937115,
+      "sha256": "6bfd4ea6f971b66c051f6edd12b45244e9eae786809178545fe49b55d2e4707c",
+      "official_url": "https://www.irs.gov/pub/irs-soi/14incyallnoagi.csv",
+      "source_kind": "corpus",
+      "local_relative_path": "raw/irs_soi/county/14incyallnoagi.csv"
+    },
+    {
+      "bytes": 4057908,
+      "sha256": "77be924164c8a535f01336c2f2eef553d4df1cc5213ec5bc4c8b1bda87d2155d",
+      "official_url": "https://www.irs.gov/pub/irs-soi/15incyallnoagi.csv",
+      "source_kind": "corpus",
+      "local_relative_path": "raw/irs_soi/county/15incyallnoagi.csv"
+    },
+    {
+      "bytes": 2235164,
+      "sha256": "2b32fe4f47fbfadbf255e5e2a4ff5e04e43d79fdc544c0d9d8c3dc7199c06a86",
+      "official_url": "https://www.irs.gov/pub/irs-soi/16incyallnoagi.csv",
+      "source_kind": "corpus",
+      "local_relative_path": "raw/irs_soi/county/16incyallnoagi.csv"
+    },
+    {
+      "bytes": 4709479,
+      "sha256": "1cf1ce8e6d521865dc1bca2975981f5534fbbd2c3a19b68c9aa43630a0d27e74",
+      "official_url": "https://www.irs.gov/pub/irs-soi/17incyallnoagi.csv",
+      "source_kind": "corpus",
+      "local_relative_path": "raw/irs_soi/county/17incyallnoagi.csv"
+    },
+    {
+      "bytes": 4703206,
+      "sha256": "39ca61bcb7aa16da57cfa2dbeae304f800d0b6bbd192e3031512a7f8007ca1cf",
+      "official_url": "https://www.irs.gov/pub/irs-soi/18incyallnoagi.csv",
+      "source_kind": "corpus",
+      "local_relative_path": "raw/irs_soi/county/18incyallnoagi.csv"
+    },
+    {
+      "bytes": 2318331,
+      "sha256": "8cdb3c99e9b731ad4f8e23e06b1ec18cb509298b66749732649e35139a311da2",
+      "official_url": "https://www.irs.gov/pub/irs-soi/19incyallnoagi.csv",
+      "source_kind": "corpus",
+      "local_relative_path": "raw/irs_soi/county/19incyallnoagi.csv"
+    },
+    {
+      "bytes": 5066184,
+      "sha256": "12c35f4ec86557124a409ec1f4d204bd88e05e9842ec63ff1e03c21dc1fb63f3",
+      "official_url": "https://www.irs.gov/pub/irs-soi/20incyallnoagi.csv",
+      "source_kind": "corpus",
+      "local_relative_path": "raw/irs_soi/county/20incyallnoagi.csv"
+    },
+    {
+      "bytes": 5110507,
+      "sha256": "2dd7a604653ecec5e032a4a20244eaf14329e88071a8c9c8c6d0d2e6bbfee956",
+      "official_url": "https://www.irs.gov/pub/irs-soi/21incyallnoagi.csv",
+      "source_kind": "corpus",
+      "local_relative_path": "raw/irs_soi/county/21incyallnoagi.csv"
+    },
+    {
+      "bytes": 5075247,
+      "sha256": "2c04ff235bcbacb990b316bf79c7c628089a9a4c1dd9593ac51f74a109b13343",
+      "official_url": "https://www.irs.gov/pub/irs-soi/22incyallnoagi.csv",
+      "source_kind": "corpus",
+      "local_relative_path": "raw/irs_soi/county/22incyallnoagi.csv"
+    }
+  ]
+}
