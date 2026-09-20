@@ -24,6 +24,17 @@ from lifetime import BANDS, LANE, ROOT, load_age_profiles, load_period_profiles,
 WHITE, UNION = "third_plus_nh_white", "mexican_observed_total"
 GROUPS = ["mexico_born", "mexican_second_gen", "mexican_third_plus_selfid", UNION, WHITE, "all_native"]
 RECEIPTS = {"tax", "employer", "sales", "X", "owner_property", "C"}
+CATEGORIES = {"income_payroll_tax": ["tax", "employer"],
+              "sales_excise_property_tax": ["sales", "X", "owner_property"],
+              "corporate_tax_incidence": ["C"],
+              "cash_transfers_incl_social_security": ["cash", "U", "I"],
+              "public_medical": ["medical", "M", "S"],
+              "institutions": ["N"],
+              "k12_schooling": ["school", "K", "D", "lunch"],
+              "noncash_aid": ["noncash"],
+              "state_local_services_capital": ["G", "P"],
+              "rest_of_federal_budget": ["R"],
+              "enforcement_defense_interest": ["E", "F"]}
 
 
 def band_shares(profiles: pd.DataFrame, allocation: str, group: str) -> np.ndarray:
@@ -66,6 +77,44 @@ def calculate(profiles: pd.DataFrame, components: pd.DataFrame, table: pd.DataFr
     return pd.DataFrame(rows)
 
 
+def by_category(profiles: pd.DataFrame, components: pd.DataFrame, table: pd.DataFrame,
+                result: pd.DataFrame) -> pd.DataFrame:
+    """Category rows; `total_bn` keeps each group's observed headcount and changes only its ages."""
+    lookup = {component: name for name, members in CATEGORIES.items() for component in members}
+    expanded = components[components.account == "expanded"].copy()
+    if not set(expanded.component).issubset(lookup):
+        raise ValueError(f"[BLOCKED] unmapped components: {set(expanded.component) - set(lookup)}")
+    expanded["category"] = expanded.component.map(lookup)
+    dollars = expanded.groupby(["allocation", "group", "band", "category"]).signed_total.sum().unstack("category")
+    population = profiles[profiles.account == "expanded"].set_index(["allocation", "group", "band"]).population
+    rates = dollars.div(population, axis=0).fillna(0.0)
+    headcount = population.groupby(["allocation", "group"]).sum()
+    rows = []
+    for allocation in ("shared", "personal"):
+        structures = {"own_ages_today": None,
+                      "white_ages_today": band_shares(profiles, allocation, WHITE),
+                      "union_ages_today": band_shares(profiles, allocation, UNION),
+                      "stationary_life_course": stationary_shares(table)}
+        for structure, weights in structures.items():
+            own = weights is None
+            white_w = band_shares(profiles, allocation, WHITE) if own else weights
+            reference = rates.loc[(allocation, WHITE)].sort_index().to_numpy().T @ white_w
+            for group in GROUPS:
+                group_w = band_shares(profiles, allocation, group) if own else weights
+                value = rates.loc[(allocation, group)].sort_index().to_numpy().T @ group_w
+                for name, amount, ref in zip(rates.columns, value, reference):
+                    rows.append(dict(allocation=allocation, structure=structure, group=group, category=name,
+                                     per_person=amount, gap_vs_white=amount - ref,
+                                     total_bn=amount * headcount[(allocation, group)] / 1e9,
+                                     gap_vs_white_bn=(amount - ref) * headcount[(allocation, group)] / 1e9))
+    detail = pd.DataFrame(rows)
+    sums = detail.groupby(["allocation", "structure", "group"]).per_person.sum().rename("category_sum")
+    joined = result.set_index(["allocation", "structure", "group"]).join(sums)
+    if not np.allclose(joined.net_per_person, joined.category_sum, rtol=1e-10, atol=1e-6):
+        raise ValueError("[BLOCKED] categories do not reconstruct the structure nets")
+    return detail
+
+
 def verify(result: pd.DataFrame, profiles: pd.DataFrame, period: pd.DataFrame, gaps: pd.DataFrame) -> None:
     raw = profiles[profiles.account == "expanded"].groupby(["allocation", "group"])[["net_total", "population"]].sum()
     raw = (raw.net_total / raw.population).rename("expected")
@@ -95,11 +144,18 @@ def main() -> None:
     profiles, _ = load_age_profiles(root)
     components = pd.read_csv(derived / "age_profile_components.csv")
     period = load_period_profiles(derived / "lifetime", root)
-    result = calculate(profiles, components, read_life_table(root, "total"))
+    table = read_life_table(root, "total")
+    result = calculate(profiles, components, table)
     verify(result, profiles, period, pd.read_csv(derived / "complete_gaps.csv"))
     target = derived / "age_normalizations.csv"
     result.to_csv(target, index=False, float_format="%.6f")
     print(f"[written] {len(result)} rows: {target}")
+    detail = by_category(profiles, components, table, result)
+    target = derived / "age_normalizations_by_category.csv"
+    detail.to_csv(target, index=False, float_format="%.6f")
+    print(f"[written] {len(detail)} rows: {target}")
+    union = detail[(detail.allocation == "shared") & (detail.group == UNION)]
+    print(union.pivot(index="category", columns="structure", values="total_bn").round(1).to_string())
     view = result[result.allocation == "shared"].pivot(index="structure", columns="group", values="net_gap_vs_white")
     print(view[GROUPS[:4]].round(0).to_string())
 
