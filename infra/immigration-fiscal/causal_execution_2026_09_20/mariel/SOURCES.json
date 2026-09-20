@@ -1,0 +1,31 @@
+{
+  "canonical_url": "https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0130119.s007",
+  "source_article": "https://doi.org/10.1371/journal.pone.0130119",
+  "retrieved": "2026-09-20",
+  "bytes": 85277958,
+  "md5": "20544a4de3b7eddc66bb12637e30cceb",
+  "sha256": "33e3d7682c9c8d5642406fb4452233dc5ede70edbb0c66dcf0a91ce95f7d52eb",
+  "members": [
+    {
+      "name": "2006_classification_manual.pdf",
+      "bytes": 2920718,
+      "crc32": 350492069
+    },
+    {
+      "name": "Appendix For The Government Finance Database.pdf",
+      "bytes": 637784,
+      "crc32": 984677308
+    },
+    {
+      "name": "SchoolDistrictData.csv",
+      "bytes": 649878780,
+      "crc32": 2694813563
+    },
+    {
+      "name": "PLoS ONE The Government Finance Database.pdf",
+      "bytes": 741410,
+      "crc32": 2493698334
+    }
+  ],
+  "validation": "publisher Content-Length, ETag/MD5, all member CRCs"
+}
