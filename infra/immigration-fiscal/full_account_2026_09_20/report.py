@@ -5,6 +5,7 @@ from pathlib import Path
 import pandas as pd
 
 from builder import sha
+from service_response import export_service_response
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE/"derived"
@@ -34,6 +35,7 @@ def main():
         preferred_service_roots=core.query("receipt_scenario == 'cbo_collective' and spending_scenario == 'complete_preferred_F_per_capita'").groupby("allocation").break_even_service_response_beta1.agg(["min", "max"]).to_dict("index"),
         welfare_rows=len(w), complete_account_rows=int(pd.read_csv(OUT/"accounts.csv").complete.sum()),
     )
+    summary["category_service_response_sensitivity"] = export_service_response(baseline, OUT)
     (OUT/"headline_summary.json").write_text(json.dumps(summary, indent=2)+"\n")
     print(baseline[columns].to_string(index=False))
     print(json.dumps(summary, indent=2))
