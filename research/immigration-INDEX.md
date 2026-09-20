@@ -19,7 +19,9 @@ and sign-reversal thresholds are separate; this is not a measured policy effect.
 
 Scope checks: [education and administration](immigration-education-administration-scope-2026-09-20.md)
 shows which staffing costs are already included and isolates the general-government
-response assumption; [fourth-generation coverage](immigration-fourth-generation-scope-2026-09-20.md)
+response assumption. The [executed state/local response test](immigration-administration-response-test-2026-09-20.md)
+is too imprecise to identify an actual fixed/variable share; the 25% illustration
+remains an assumption. [Fourth-generation coverage](immigration-fourth-generation-scope-2026-09-20.md)
 confirms identifying G4+ residents are already inside G3+ and explains ancestry selection.
 [Program-fraud trace index](immigration-fraud-trace-index-2026-09-20.md) links SNAP,
 childcare, adult-day and hospice cases to records, separating paid losses, billings,

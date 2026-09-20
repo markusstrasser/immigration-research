@@ -40,3 +40,7 @@ Keeping defense, existing interest and all other model assumptions unchanged, at
 Federal-to-state grants are consolidated once. Annual current consumption includes depreciation but not gross construction investment; adding an entire building's price to recurring annual costs would mix account bases. The model does not estimate short-run construction/hiring paths or separate casework requirements for each immigration status.
 
 Validation: executable service partition/response mapping, preferred allocation outputs and pinned workbook federal/state rows checked; input/output hashes matched the existing audit. No generator changed or model rerun.
+
+## Follow-up — September 20, 2026
+
+The [executed administration-response test](immigration-administration-response-test-2026-09-20.md) attempts to replace the illustrative fraction with a US state/local estimate. The coefficient is too imprecise and specification-sensitive to establish a fixed/variable share; federal response is not identified. The table above remains a sensitivity, not an empirical calibration.
