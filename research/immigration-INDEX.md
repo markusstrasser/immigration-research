@@ -54,8 +54,10 @@ remain unresolved. See the [response decision](../decisions/2026-09-20-category-
 no past year is measured. Actual BEA budgets and ACS population by year, with the
 2024 relative position held or income-adjusted, give **$1.4–2.0tn (10y), $2.0–3.1tn
 (15y), $2.4–3.8tn (20y)** for the main net-cost case, 2024 dollars, no interest.
-Measured relative per-capita income rose 0.52→0.61 over 2008–2024. Model ranges,
-not intervals; a measured series needs the account rebuilt on each ASEC file.
+Measured relative per-capita income rose 0.52→0.61 over 2008–2024. Carrying each
+programme back with its own BEA series gives $1.3–2.2tn, $2.0–3.3tn and $2.4–3.9tn;
+2020–2021 supply over a third of the ten-year total. Model ranges, not intervals;
+a measured series needs the account rebuilt on each ASEC file.
 
 [Executed service-scaling test](immigration-service-scaling-test-2026-09-20.md):
 school panel spending elasticity .735 unweighted/.836 pupil-weighted; across-district

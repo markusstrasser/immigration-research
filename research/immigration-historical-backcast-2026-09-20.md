@@ -8,7 +8,9 @@ for each year with the group's **2024 relative position** gives, for the main
 CBO-informed net cost to other residents ($165–197bn in 2024), about **$1.4–2.0tn
 over 2015–2024, $2.0–3.1tn over 2010–2024 and $2.4–3.8tn over 2005–2024**, in 2024
 dollars without interest. The ranges span three back-casting rules and the low/high
-2024 anchor; they are not confidence intervals.
+2024 anchor; they are not confidence intervals. A programme-by-programme version
+using measured national spending on every benefit and function gives $1.3–2.2tn,
+$2.0–3.3tn and $2.4–3.9tn.
 
 ## What is measured and what is assumed
 
@@ -47,6 +49,48 @@ it is $45–61bn, $162–185bn, $85–109bn and $264–297bn. The gap against th
 resident cancels a deficit everyone shares and stays between $150bn (2009, `ratio`)
 and $313bn (2022, `income`).
 
+## Programme-by-programme version
+
+[DERIVATION; added 2026-09-21] National spending on each benefit programme and
+government function, and collections on each household receipt line, are measured
+for every year in the same BEA cells the complete account cites. Each of the group's
+2024 lines is carried back with its own national series; only the group's **relative
+use of each programme** stays at its 2024 value. All four 2024 anchors reconstruct
+the account to six digits.
+
+| Main net-cost case, $tn | 2015–2024 | 2010–2024 | 2005–2024 |
+|---|---:|---:|---:|
+| Programme rule | 1.70–1.98 | 2.36–2.77 | 2.74–3.25 |
+| Programme rule, income-adjusted receipts | 1.97–2.24 | 2.88–3.26 | 3.46–3.94 |
+| Same two rules with 2020–2021 set to the 2019/2022 mean | 1.32–1.88 | 1.98–2.90 | 2.36–3.58 |
+
+Full proportional services: 2.25–3.06, 3.33–4.44 and 4.06–5.43. [SOURCE:
+`derived/backcast_categories_windows.csv`, `backcast_categories_annual.csv`.]
+
+Real national spending per resident, 2024 = 1, for the group's largest lines
+[SOURCE: `derived/national_programme_index.csv`]:
+
+| Line (group's assigned 2024 $bn, shared) | 2005 | 2010 | 2015 | 2019 | 2021 |
+|---|---:|---:|---:|---:|---:|
+| Medicaid, CHIP, other medical (117) | 0.58 | 0.66 | 0.78 | 0.82 | 0.91 |
+| Education (193) | 0.85 | 0.91 | 0.90 | 0.93 | 0.98 |
+| Medicare (64) | 0.53 | 0.72 | 0.78 | 0.89 | 0.94 |
+| Social Security (63) | 0.63 | 0.73 | 0.82 | 0.88 | 0.90 |
+| Public order and safety (62) | 0.90 | 0.98 | 0.95 | 1.01 | 0.99 |
+| Refundable tax credits (55) | 0.42 | 0.97 | 0.75 | 0.86 | 4.36 |
+| SNAP (14) | 0.54 | 1.05 | 0.96 | 0.70 | 1.81 |
+
+Benefits did change: Medicaid and Medicare were 42–47% smaller per resident in 2005,
+and refundable credits quadrupled in 2021. Police, courts and prisons were flat, and
+the account charges them per capita, so no group-specific policing cost exists in any
+year. The pandemic years supply 35–38% of the ten-year programme-rule total, because
+2020–2021 credits are attributed at the group's 2024 ratio (2.3 times other residents
+per person, an EITC and child-credit pattern). Pandemic payments were close to uniform
+per head and the first round excluded households filing without Social Security
+numbers [TRAINING-DATA; not verified here], so that attribution is too high; the
+third row removes it. The group's relative use of each programme in earlier years is
+still unmeasured. CPS ASEC reports programme receipt by origin in every year.
+
 ## Reading
 
 [INFERENCE] The measured income series is the one piece of disconfirming evidence
@@ -75,3 +119,10 @@ income series. The repository holds 2022–2026 only.
 
 [INSTRUMENT] LLM-assisted modelling on a politically charged topic; the measured
 series and each assumption are separately inspectable.
+
+## Revisions
+
+2026-09-21: added the programme-by-programme version and the 2020–2021 sensitivity. The
+coarse totals are unchanged; the combined range widens slightly to $1.3–2.2tn, $2.0–3.3tn
+and $2.4–3.9tn because measured programme growth and the pandemic attribution pull in
+opposite directions.
