@@ -6,6 +6,12 @@ Native-First: curl performs HTTP probes/downloads; this task-specific file recor
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import csv
 import hashlib
 import io
@@ -232,7 +238,7 @@ def main():
                 audits["ICE_raw"]["sheets"][ws.title] = dict(nonempty_rows=len(rows), columns=ws.max_column, preview=rows[:35])
             wb.close()
     # Reuse the existing BEA principal file instead of downloading the same vintage.
-    bea = Path("/Volumes/2TBPNY/corpus/bea_data/SAINC/SAINC35__ALL_AREAS_1929_2024.csv")
+    bea = _data_paths.corpus_root() / 'bea_data/SAINC/SAINC35__ALL_AREAS_1929_2024.csv'
     if bea.exists():
         audit, rows = csv_audit(bea)
         audit["path"] = str(bea); audit["sha256"] = sha(bea); audit["bytes"] = bea.stat().st_size

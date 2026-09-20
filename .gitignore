@@ -26,24 +26,14 @@ __pycache__/
 *.pyc
 .venv/
 
-# Data (symlinked to external SSD)
-sources/*/data/
+# Project-local research inputs, generated intermediates, and retained snapshots.
+/sources/
 
 # OS
 .DS_Store
 .env.local
 .project-upgrade/
-# immigration-fiscal: track rebuild tooling; ignore staged bytes
-sources/immigration-fiscal/data/**
-!sources/immigration-fiscal/data/derived/
-!sources/immigration-fiscal/data/derived/**
-sources/immigration-fiscal/data/derived/**/*.duckdb
-sources/immigration-fiscal/data/derived/_tmp/
-sources/immigration-fiscal/data/derived/stage2/**
-sources/immigration-fiscal/data/derived/stage3_proto/**
-sources/immigration-fiscal/data/derived/stage4/**
-sources/immigration-fiscal/data/derived/origin/**
-sources/immigration-fiscal/setup.log
+# immigration-fiscal: track rebuild tooling; ignore machine configuration.
 infra/immigration-fiscal/acquire/config.local.env
 infra/immigration-fiscal/acquire/setup.log
 warehouse/*.duckdb

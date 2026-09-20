@@ -1,10 +1,16 @@
 """Select parent identity/nativity fields; never materialize the full wide CSV."""
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / "build"))
+import paths as _data_paths
+
 import argparse,hashlib,json,re,zipfile
 from pathlib import Path
 import pandas as pd
 
 P=argparse.ArgumentParser(description=__doc__)
-P.add_argument('--archive',type=Path,default=Path('/Users/alien/Projects/iq-sex-differences/data/nlsy/nlsy97_all_1997-2023.zip'))
+P.add_argument('--archive',type=Path,default=_data_paths.reused_surveys_root(require_exists=False) / 'nlsy/nlsy97_all_1997-2023.zip')
 P.add_argument('--output-dir',type=Path,default=Path(__file__).resolve().parents[1]/'derived/nlsy_family')
 A=P.parse_args();A.output_dir.mkdir(parents=True,exist_ok=True)
 with A.archive.open('rb') as source:

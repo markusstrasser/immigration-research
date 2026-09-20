@@ -1,4 +1,10 @@
 """Native birth rate vs foreign-born share: cross-sections, long differences, shift-share IV."""
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 import json, pathlib, re, warnings
 import numpy as np, pandas as pd, statsmodels.api as sm
 from build_panel import build
@@ -6,8 +12,7 @@ warnings.filterwarnings("ignore")
 
 HERE = pathlib.Path(__file__).resolve().parent
 CACHE = HERE / "_cache"
-ZORI = pathlib.Path("/Users/alien/research-data/immigration-fiscal/data/external/"
-                    "urban_housing/zillow/metro_zori_sfrcondomfr_sm_month.csv")
+ZORI = _data_paths.data_root(require_exists=False) / 'external/urban_housing/zillow/metro_zori_sfrcondomfr_sm_month.csv'
 CTRL = ["log_rent", "log_income", "ba_plus_share", "black_share", "hisp_share",
         "ownership_rate", "median_age_native_female", "share_women_20_34"]
 OUT = []

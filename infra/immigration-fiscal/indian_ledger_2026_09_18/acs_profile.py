@@ -19,6 +19,12 @@ Run: uv run --no-project --with "pandas>=2" --with "numpy>=2" python3 acs_profil
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import argparse
 import csv
 import json
@@ -29,7 +35,7 @@ import numpy as np
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
-DATA = Path.home() / "research-data/immigration-fiscal/data/external"
+DATA = _data_paths.data_root(require_exists=False) / 'external'
 
 PERSON_COLS = ["SERIALNO", "SPORDER", "PWGTP", "ST", "PUMA", "AGEP", "SEX", "CIT", "NATIVITY",
                "POBP", "YOEP", "SCHL", "ENG", "OCCP", "INDP", "COW", "ESR", "WAGP", "PINCP",
@@ -113,11 +119,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--year", type=int, default=2023)
     ap.add_argument("--person-zip", type=Path,
-                    default=Path.home() / "research-data/immigration-fiscal/data/census/"
-                                          "acs_pums_2023_person.zip")
+                    default=_data_paths.data_root(require_exists=False) / 'census/acs_pums_2023_person.zip')
     ap.add_argument("--household-zip", type=Path,
-                    default=Path.home() / "research-data/immigration-fiscal/data/census/"
-                                          "acs_pums_2023_household.zip")
+                    default=_data_paths.data_root(require_exists=False) / 'census/acs_pums_2023_household.zip')
     ap.add_argument("--dictionary", type=Path,
                     default=HERE / "_cache" / "PUMS_Data_Dictionary_2023.csv")
     ap.add_argument("--tag", default="2023")

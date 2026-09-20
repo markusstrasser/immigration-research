@@ -1,3 +1,9 @@
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 import unittest
 import numpy as np
 from pathlib import Path
@@ -7,7 +13,7 @@ from builder import distribute
 class TransferChecks(unittest.TestCase):
     def test_real_pinned_admin_workbooks(self):
         here=Path(__file__).resolve().parent
-        official,months,arms,_=read_comparators(here,Path("/Users/alien/research-data/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx"))
+        official,months,arms,_=read_comparators(here,_data_paths.data_root(require_exists=False) / 'external/bea_nipa/Section3All_xls.xlsx')
         self.assertAlmostEqual(months.amount_dollars.sum()/1e9,95.115241680)
         self.assertAlmostEqual(arms["SNAP_OASDI_only"]["social_security"],1449.964)
         self.assertAlmostEqual(arms["plus_SSI_BEA_persons"]["ssi"],65.134)

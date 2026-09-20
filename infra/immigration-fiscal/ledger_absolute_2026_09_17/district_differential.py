@@ -20,6 +20,12 @@ group to the parameter file.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import argparse
 import datetime as dt
 import hashlib
@@ -29,7 +35,7 @@ from pathlib import Path
 import pandas as pd
 
 HERE = Path(__file__).resolve().parent
-EXTERNAL = Path.home() / "research-data/immigration-fiscal/data/external"
+EXTERNAL = _data_paths.data_root(require_exists=False) / 'external'
 F33 = EXTERNAL / "census_f33_district/elsec24t.txt"
 CCD = EXTERNAL / "nces_ccd/ccd_lea_052_2324_l_1a_073124.csv"
 

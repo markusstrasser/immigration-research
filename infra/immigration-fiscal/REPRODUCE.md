@@ -35,7 +35,7 @@ checksums) into `dist/immigration-data-v<date>/`.
 
 ## Why scripts live in `infra/`
 
-`research/sources` is often a symlink to an external SSD and is **not in git**. Download and build logic is versioned under `infra/immigration-fiscal/`.
+Dataset bytes are kept in the project's ignored `sources/` directory. Download and build logic is versioned under `infra/immigration-fiscal/`.
 
 ## Tiers
 
@@ -50,14 +50,18 @@ checksums) into `dist/immigration-data-v<date>/`.
 `./reproduce.sh init` creates `acquire/config.local.env` from portable defaults:
 
 ```bash
-PNY_DATA_ROOT=$HOME/research-data/immigration-fiscal/data
-DERIVED_ROOT=$PNY_DATA_ROOT/derived
+PNY_DATA_ROOT=$REPO_ROOT/sources/immigration-fiscal/data
+DERIVED_ROOT=$REPO_ROOT/sources/immigration-fiscal/derived
+CORPUS_ROOT=$REPO_ROOT/sources/corpus
+REUSED_SURVEYS_ROOT=$REPO_ROOT/sources/reused-surveys
 DUCKDB_PATH=$REPO_ROOT/warehouse/immigration_context.duckdb
 ```
 
-On machines with `sources/` in-repo (not symlinked), `init` also links:
+`init` accepts the physical local directories and creates the relative compatibility link:
 
-`sources/immigration-fiscal/data` → `$PNY_DATA_ROOT`
+`sources/immigration-fiscal/data/derived` → `../derived`
+
+Deliberate external overrides remain supported; conflicting existing directories are never replaced.
 
 ## Verify
 

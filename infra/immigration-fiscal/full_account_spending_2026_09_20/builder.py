@@ -3,6 +3,12 @@
 Native-First: BEA workbook cells and existing survey parsers/operating-school
 outputs; no residual inferred from the desired sign and no core ledger edits.
 """
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 from pathlib import Path
 import argparse
 import hashlib
@@ -343,5 +349,5 @@ def main(args):
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(); p.add_argument('--source-root',type=Path,required=True)
-    p.add_argument('--bea',type=Path,default=Path('/Users/alien/research-data/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx'))
+    p.add_argument('--bea',type=Path,default=_data_paths.data_root(require_exists=False) / 'external/bea_nipa/Section3All_xls.xlsx')
     p.add_argument('--out',type=Path,default=HERE/'derived'); main(p.parse_args())

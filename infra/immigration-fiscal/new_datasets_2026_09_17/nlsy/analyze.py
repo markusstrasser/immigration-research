@@ -1,6 +1,12 @@
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / "build"))
+import paths as _data_paths
+
 import argparse,json,pathlib
 import numpy as np,pandas as pd
-p=argparse.ArgumentParser();p.add_argument('--output-dir',type=pathlib.Path,default=pathlib.Path(__file__).resolve().parents[1]/'derived/nlsy');p.add_argument('--profile-source-dir',type=pathlib.Path,default=pathlib.Path('/Users/alien/Projects/iq-sex-differences/data/nlsy'));args=p.parse_args();out=args.output_dir
+p=argparse.ArgumentParser();p.add_argument('--output-dir',type=pathlib.Path,default=pathlib.Path(__file__).resolve().parents[1]/'derived/nlsy');p.add_argument('--profile-source-dir',type=pathlib.Path,default=_data_paths.reused_surveys_root(require_exists=False) / 'nlsy');args=p.parse_args();out=args.output_dir
 d=pd.read_csv(out/'full_selected_data.csv'); s=pd.read_csv(out/'download_selected_data.csv')
 audit={}
 for name,x in [('full',d),('supplied',s)]:

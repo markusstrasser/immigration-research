@@ -1,6 +1,12 @@
 """Own-children-under-5 per woman 15-44, by Hispanic generation, CPS ASEC 2025."""
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 import zipfile, pandas as pd, numpy as np
-Z = "/Users/alien/research-data/immigration-fiscal/data/external/stage3/census/cps_asec_2025/asecpub25csv.zip"
+Z = str(_data_paths.data_root(require_exists=False) / 'external/stage3/census/cps_asec_2025/asecpub25csv.zip')
 COLS = ["PH_SEQ","PPPOS","A_AGE","A_SEX","PRCITSHP","PENATVTY","PEFNTVTY","PEMNTVTY",
         "PEHSPNON","PRDTRACE","PRDTHSP","MARSUPWT","PEPAR1","PEPAR2","PEPAR1TYP","PEPAR2TYP"]
 US = [57,60,66,69,73,78]

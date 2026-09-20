@@ -1,4 +1,10 @@
 """Extract the frozen public field request from the existing full NLSY97 archive."""
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[2] / "build"))
+import paths as _data_paths
+
 import argparse
 import hashlib
 import json
@@ -11,8 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--raw-dir', type=Path, default=ROOT / 'raw')
 parser.add_argument('--output-dir', type=Path, default=ROOT / 'derived/nlsy')
-parser.add_argument('--baseline-archive', type=Path, default=Path(
-    '/Users/alien/Projects/iq-sex-differences/data/nlsy/nlsy97_all_1997-2023.zip'))
+parser.add_argument('--baseline-archive', type=Path, default=_data_paths.reused_surveys_root(require_exists=False) / 'nlsy/nlsy97_all_1997-2023.zip')
 args = parser.parse_args()
 out = args.output_dir
 out.mkdir(parents=True, exist_ok=True)

@@ -21,6 +21,12 @@ Outputs: derived/arm3_allocation_check.csv
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import sys
 import zipfile
 from pathlib import Path
@@ -31,7 +37,7 @@ import pandas as pd
 HERE = Path(__file__).resolve().parent
 CACHE = HERE / "_cache"
 DERIVED = HERE / "derived"
-ZIP = (Path.home() / "research-data/immigration-fiscal/data/external/stage3/census"
+ZIP = (_data_paths.data_root(require_exists=False) / 'external/stage3/census'
        / "cps_asec_2025/asecpub25csv.zip")
 
 MEXICO = 303

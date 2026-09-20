@@ -1,6 +1,12 @@
 """Locate national fiscal residuals without assigning them to an ethnic group."""
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import argparse
 import hashlib
 import json
@@ -12,7 +18,7 @@ import pandas as pd
 
 HERE = Path(__file__).resolve().parent
 BEA_SHA = "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e"
-BEA_DEFAULT = Path("/Users/alien/research-data/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx")
+BEA_DEFAULT = _data_paths.data_root(require_exists=False) / 'external/bea_nipa/Section3All_xls.xlsx'
 
 
 def sha(path):

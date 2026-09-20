@@ -15,6 +15,8 @@ new acquisition, survey framework or shared API mutation is needed.
 """
 from __future__ import annotations
 
+import paths as _data_paths
+
 import argparse
 from datetime import datetime, timezone
 import json
@@ -183,8 +185,8 @@ def self_test() -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--acs-2019", type=Path, default=Path("/Volumes/2TBPNY/corpus/census_acs_2019_1yr/csv_pus.zip"))
-    parser.add_argument("--acs-2024", type=Path, default=Path("/Volumes/2TBPNY/corpus/census_acs_2024_1yr/csv_pus.zip"))
+    parser.add_argument("--acs-2019", type=Path, default=_data_paths.data_root(require_exists=False) / 'external/acs_pums_2019_1yr/csv_pus.zip')
+    parser.add_argument("--acs-2024", type=Path, default=_data_paths.data_root(require_exists=False) / 'external/acs_pums_2024_1yr/csv_pus.zip')
     parser.add_argument("--inflation", type=Path)
     parser.add_argument("--out", type=Path)
     parser.add_argument("--chunk-size", type=int, default=100_000)

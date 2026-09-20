@@ -17,6 +17,12 @@ Writes derived/institutional_bound_with_variance.csv and derived/audit.json.
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import csv
 import hashlib
 import json
@@ -30,7 +36,7 @@ import pandas as pd
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "derived"
 BOUND = HERE.parent / "institutional_bound_2026_09_17"
-ZIP = Path("/Users/alien/research-data/immigration-fiscal/data/external/acs_pums_2024_1yr/csv_pus.zip")
+ZIP = _data_paths.data_root(require_exists=False) / 'external/acs_pums_2024_1yr/csv_pus.zip'
 
 REPS = [f"PWGTP{i}" for i in range(1, 81)]
 WCOLS = ["PWGTP"] + REPS

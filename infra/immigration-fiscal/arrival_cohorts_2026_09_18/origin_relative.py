@@ -11,12 +11,18 @@ https://cuentame.inegi.org.mx/poblacion/escolaridad.aspx (fetched 2026-09-18):
 The age bases differ (origin 15+, migrants 25-54), so levels are NOT comparable; the comparison is
 between the two SLOPES.
 """
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 import os
 import duckdb
 import numpy as np
 import pandas as pd
 
-DB = "/Users/alien/research-data/immigration-fiscal/derived/immigration_microdata.duckdb"
+DB = str(_data_paths.microdata_duckdb_path(require_exists=False))
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "derived")
 
 YRS = {1: 2.5, 2: 6.5, 3: 9, 4: 10, 5: 11, 6: 12, 7: 13, 8: 14, 9: 15, 10: 16, 11: 18}

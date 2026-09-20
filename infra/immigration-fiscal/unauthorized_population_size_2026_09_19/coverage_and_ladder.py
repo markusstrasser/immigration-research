@@ -24,6 +24,12 @@ Output: derived/coverage_grid.csv
 """
 from __future__ import annotations
 
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
+
 import json
 import os
 import sys
@@ -80,8 +86,7 @@ def main() -> int:
     # weights are controlled to Vintage 2024, an ACS-calibrated undercount rate
     # layered on top is partly double-counting.  Test it: the weighted ACS total
     # should equal the published Vintage 2024 July 1 2024 national estimate.
-    nst = Path.home() / ("research-data/immigration-fiscal/data/external/"
-                         "census_popest_2024/NST-EST2024-ALLDATA.csv")
+    nst = _data_paths.data_root(require_exists=False) / 'external/census_popest_2024/NST-EST2024-ALLDATA.csv'
     if nst.exists():
         pe = pd.read_csv(nst, dtype={"SUMLEV": str, "STATE": str})
         v2024 = int(pe.loc[pe.NAME.eq("United States"), "POPESTIMATE2024"].iloc[0])

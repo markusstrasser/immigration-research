@@ -6,7 +6,10 @@ Sources
   exemptions (n2, a person count) and AGI in $thousands.
   ACS 1-year state covariates (`_cache/state_covariates.csv`).
   ITEP "Who Pays?" 2024 effective state+local tax rate on the top 1% of taxpayers
-  (`$IMMIGRATION_FISCAL_ROOT/data/itep/itep_table_5.tsv`, column 4).
+  (`$PNY_DATA_ROOT/itep/itep_table_5.tsv`, column 4; project-local data by default).
+  Override the exact source with ITEP_TABLE_PATH=/path/to/itep_table_5.tsv.
+  IMMIGRATION_FISCAL_ROOT now consistently identifies the code directory; its
+  historical use as this lane's data-root override has been removed.
 
 Outcomes (per 100 of the state's non-migrant base, so a positive number is net OUTflow)
   net_out_all   (outflow_n2_0 - inflow_n2_0) / nonmig_n2_0 * 100
@@ -24,6 +27,10 @@ errors on state.
 Output: derived/state_panel.csv, derived/state_estimates.csv
 """
 import os, re
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "build"))
+from paths import itep_table_path
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
@@ -32,9 +39,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 CACHE = os.path.join(HERE, "_cache")
 DERIVED = os.path.join(HERE, "derived")
 os.makedirs(DERIVED, exist_ok=True)
-ITEP = os.path.join(os.environ.get("IMMIGRATION_FISCAL_ROOT",
-                                   os.path.expanduser("~/research-data/immigration-fiscal")),
-                    "data", "itep", "itep_table_5.tsv")
+ITEP = itep_table_path()
 
 REGION = {
     "CT": "NE", "ME": "NE", "MA": "NE", "NH": "NE", "RI": "NE", "VT": "NE",

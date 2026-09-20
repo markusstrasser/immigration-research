@@ -59,7 +59,7 @@ For the historical IPUMS recipe, request 1980/1990/2000 5% Census samples plus 2
 This reproduces one frozen input in [the fiscal catalog](acquire/fiscal_2024_sources.tsv); it does not run the whole analysis. From the repository root after `init`, choose the same data root as in `config.local.env`:
 
 ```bash
-export IMMIGRATION_DATA_ROOT="$HOME/research-data/immigration-fiscal/data"
+export IMMIGRATION_DATA_ROOT="$PWD/sources/immigration-fiscal/data"
 mkdir -p "$IMMIGRATION_DATA_ROOT/external/stage3/census/cps_asec_2025"
 cd "$IMMIGRATION_DATA_ROOT/external/stage3/census/cps_asec_2025"
 # Use an empty staging directory or a new filename; preserve existing raw inputs.

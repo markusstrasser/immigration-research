@@ -13,12 +13,18 @@
 
 Outputs derived/bound_*.csv
 """
+
+import sys as _path_sys
+from pathlib import Path as _Path
+_path_sys.path.insert(0, str(_Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 import os
 import duckdb
 import numpy as np
 import pandas as pd
 
-DB = "/Users/alien/research-data/immigration-fiscal/derived/immigration_microdata.duckdb"
+DB = str(_data_paths.microdata_duckdb_path(require_exists=False))
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "derived")
 os.makedirs(OUT, exist_ok=True)
