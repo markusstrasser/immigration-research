@@ -1,0 +1,16 @@
+concept,rule,10y_2015_2024,15y_2010_2024,20y_2005_2024
+net_cost_cbo_informed_low,flat,1.5743,2.296,2.9174
+net_cost_cbo_informed_low,ratio,1.4078,2.0405,2.4144
+net_cost_cbo_informed_low,income,1.7372,2.6875,3.3173
+net_cost_cbo_informed_high,flat,1.8819,2.7447,3.4874
+net_cost_cbo_informed_high,ratio,1.6945,2.4434,2.9099
+net_cost_cbo_informed_high,income,2.0239,3.0904,3.8129
+net_cost_full_proportional_low,flat,2.5724,3.7518,4.7671
+net_cost_full_proportional_low,ratio,2.338,3.348,4.0224
+net_cost_full_proportional_low,income,2.6675,3.995,4.9253
+net_cost_full_proportional_high,flat,2.7527,4.0147,5.1011
+net_cost_full_proportional_high,ratio,2.506,3.584,4.3127
+net_cost_full_proportional_high,income,2.8355,4.231,5.2157
+gap_vs_average_resident,flat,2.6145,3.8132,4.8451
+gap_vs_average_resident,ratio,2.4817,3.4411,4.304
+gap_vs_average_resident,income,2.8111,4.0881,5.207
