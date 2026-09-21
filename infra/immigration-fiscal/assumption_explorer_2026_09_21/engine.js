@@ -27,6 +27,7 @@
       fiscal_weight: 1,
       service_response: 1,
       public_goods_response: 0,
+      general_government_response: 0,
       school_share: schoolShareBounds(model)[0],
       school_response: 1,
       other_education_response: 1,
@@ -75,7 +76,9 @@
     if (typeof override === "number") return override;
     switch (line.response_class) {
       case "household_transfer": return state.transfer_response;
-      case "public_goods": return state.public_goods_response;
+      // The executed grid moves defense and general government together; the page separates them.
+      case "public_goods":
+        return line.id === "general_public_services" ? state.general_government_response : state.public_goods_response;
       case "interest": return state.interest_response;
       case "subsidy": return state.subsidy_response;
       case "service":

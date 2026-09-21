@@ -29,6 +29,7 @@ for (const row of vectors.grid) {
   state.spending_keys = scenarioKeys[row.spending_scenario];
   state.allocation = row.allocation;
   state.public_goods_response = row.public_goods_response;
+  state.general_government_response = row.public_goods_response;  // one dimension in the executed grid
   state.service_response = row.service_response;
   state.fiscal_weight = row.fiscal_weight;
   const out = Engine.evaluate(model, state);
