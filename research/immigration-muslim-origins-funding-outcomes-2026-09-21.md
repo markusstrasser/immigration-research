@@ -97,7 +97,9 @@ three out-groups against 1.6% of native Christians (B21, B22). The same paper sa
 population is "predominantly middle class and highly educated" (B23). Denmark's Finance Ministry,
 2019: MENAPT immigrants −74,000 kr per person (−13bn kr), MENAPT descendants −109,000 kr
 (−11bn kr), while all immigrants together are +3bn kr; the ministry attributes the immigrant gap
-to employment rates (B24–B26). MENAPT is a birthplace grouping, as ours is (B28). The
+to employment rates (B24–B26). MENAPT is a birthplace grouping, as ours is (B28). Income-year
+2019 (revised September 2023) is the latest edition the reader found; a later one was not ruled
+out. The
 descendants' figure being worse than the immigrants' is the European datum most relevant to the
 operator's regression-to-the-mean question, and it is confounded by age: descendants are young.
 [INFERENCE for the last clause]
@@ -113,11 +115,15 @@ operator's regression-to-the-mean question, and it is confounded by age: descend
   (A5, A8, A10). That is evidence against a large hidden subsidy, not a measurement of its absence.
 - **Foreign-state money is documented case by case.**
   - Iran: the Alavi Foundation, which supports Shia Islamic centers in several states, was the
-    target of a federal forfeiture action from 2008; prosecutors won summary judgment in 2013 and
-    a jury verdict in 2017 (A11, A12). The Second Circuit heard the case again in 2019 (934 F.3d
-    147); as recalled, it vacated the verdict, and a 2026 SDNY release exists that the reader
-    could not open [TRAINING-DATA; UNVERIFIED]. The final status must be read before this case is
-    cited as adjudicated.
+    target of a federal forfeiture action from 2008. The amended complaint alleged transfers to
+    Bank Melli, owned by the Iranian government (A12); prosecutors won summary judgment in 2013
+    and announced a settlement on distributing the forfeited properties (New York, Maryland,
+    Virginia, Texas, California) in 2014 (A11). A jury verdict for the government followed in
+    2017 [pointer only: Bloomberg, 2017-06-29, via the Wikipedia article; not read]. The Second
+    Circuit decided the case again on 2019-08-09 (934 F.3d 147, located through CourtListener,
+    text not retrieved); as recalled, it vacated the verdict [TRAINING-DATA]. A 2026 SDNY release
+    exists that the reader could not open. The final status must be read before this case is
+    cited as adjudicated. [UNVERIFIED]
   - Saudi Arabia: two named mosques (King Fahd Mosque, Los Angeles; the Islamic Center of
     Washington) were acknowledged on the king's own website as receiving official support; the
     quantified Saudi figures are worldwide self-reports (A14, A15). The Freedom House 2005 study
@@ -154,3 +160,6 @@ specified before its data, and the parent re-checked 15 quotes. See `notes/llm-b
 2. Form 990s for NAIT, Alavi, ISNA, ICNA: the partial ledger.
 3. New America and GWU offender tables by nativity: the second-generation gap.
 4. Pew 2017 microdata (free account, operator action): income and attitudes by nativity and origin.
+5. New Immigrant Survey 2003 public-use files (ICPSR 38031, 38061; listed in the sociology
+   frontier memo as pullable): religion with earnings for new green-card holders. Visa class sits
+   in the restricted tier. The outcomes reader names it the highest-value source not reached.
