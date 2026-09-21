@@ -105,7 +105,8 @@ lengths], so the step from second to third-plus is not a forecast for the grandc
 recent arrivals. The first and second generations are indistinguishable ($62 apart, standard
 error at most 725); the third-plus is $1,389 better than the first, at least 2.3 standard errors
 [CALCULATION from `complete_gaps.csv`; the white reference's sampling error sits in both gaps, so
-these standard errors are upper bounds]. On the personal allocation the gap at white ages
+these standard errors are upper bounds if the generations' own sampling errors are uncorrelated;
+the gap replicates are not saved, so the exact figure is not computable from the outputs]. On the personal allocation the gap at white ages
 narrows at each step (−$7,830, −$6,799, −$6,018); on the shared allocation it is −$7,525,
 −$7,443, −$6,116 [`age_normalizations.csv`]. The National Academies results are a different
 object: all origins, from arrival, with descendants, discounted. The 1997 volume's baseline is
