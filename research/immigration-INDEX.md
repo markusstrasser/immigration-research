@@ -49,6 +49,11 @@ The **$262–357bn** proportional-service grid includes weaker proxy stress test
 The report now regenerates all category comparisons and composition diagnostics.
 Fixed-service cases can be positive; property-receipt and service-quality effects
 remain unresolved. See the [response decision](../decisions/2026-09-20-category-service-response.md).
+"CBO-informed" covers two inputs only: CBO's tax-incidence rules and its 63–66%
+school-spending response with economic-affairs and recreation budgets fixed. Defense,
+general public services, existing interest and business subsidies are held at **zero
+response by assumption**, not by a CBO estimate; general public services at 25% would
+add $12.1bn ([scope memo](immigration-education-administration-scope-2026-09-20.md)).
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): twelve standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
@@ -56,13 +61,15 @@ second generation, reference group, education, single year, legacy cohorts, agei
 policy reading, crime), each steel-manned and routed to its executed table.
 
 [Cumulative 2005–2024 back-cast](immigration-historical-backcast-2026-09-20.md):
-no past year is measured. Actual BEA budgets and ACS population by year, with the
-2024 relative position held or income-adjusted, give **$1.4–2.0tn (10y), $2.0–3.1tn
-(15y), $2.4–3.8tn (20y)** for the main net-cost case, 2024 dollars, no interest.
-Measured relative per-capita income rose 0.52→0.61 over 2008–2024. Carrying each
-programme back with its own BEA series gives $1.3–2.2tn, $2.0–3.3tn and $2.4–3.9tn;
-2020–2021 supply over a third of the ten-year total. Model ranges, not intervals;
-a measured series needs the account rebuilt on each ASEC file.
+no past year is measured. Actual BEA budgets, each benefit programme's own series and
+ACS population by year, with the 2024 relative position held or income-adjusted, give
+**$1.3–2.2tn (10y), $2.0–3.3tn (15y), $2.4–3.9tn (20y)** for the main net-cost case,
+2024 dollars, no interest; the whole-budget rules alone give $1.4–2.0tn, $2.0–3.1tn and
+$2.4–3.8tn. 2020–2021 supply over a third of the ten-year total. Measured trend (ACS):
+per-capita income 0.52→0.61 of the national figure over 2008–2024, median household
+income 0.78→0.91, full-time men's earnings 0.64→0.75 with the gain in 2016–2019 and
+2021–2023 and none in 2024. Model ranges, not intervals; a measured series needs the
+account rebuilt on each ASEC file. Not comparable with ladder 137's forward debt path.
 
 [Executed service-scaling test](immigration-service-scaling-test-2026-09-20.md):
 school panel spending elasticity .735 unweighted/.836 pupil-weighted; across-district
@@ -272,7 +279,7 @@ Historical five-domain research/acquisition pass. DOI resolution checks bibliogr
 
 | File | Topic | Consult before |
 |------|-------|----------------|
-| `immigration-fiscal-impact-unauthorized-memo.md` | Main fiscal memo: federal/state-local split, wage debate, child-attribution dispute | Any fiscal bottom line |
+| `immigration-fiscal-impact-unauthorized-memo.md` | **[pre-repair, March 2026; status banner added 2026-09-21]** Literature memo: federal/state-local split, wage debate, child-attribution dispute. Its NAS "second generation net positive" statements are all-origin, not the Mexican-origin result | The literature and the child-attribution dispute; **not** a current fiscal bottom line (use Core State) |
 | `immigration-full-spectrum-costs-unauthorized-memo.md` | Non-ledger costs: congestion, courts, labor-law erosion, backlash | Claiming "hidden" costs beyond taxes/transfers |
 | `immigration-unified-scenarios-memo.md` | Scenario comparison across methods | Converting arguments into a bounded range |
 | `immigration-state-local-cost-examples-ny-ca-tx.md` | Concrete state/local examples | Generalizing from national ledgers to local burden |

@@ -103,7 +103,10 @@ and the newer arrivals are better but not different in sign. On the partial acco
 2016–2025 arrival window is −$3,978 per standardized person against whites, the older windows
 −$4,800 to −$5,300. The less-than-high-school share of new arrivals fell from 82% to 33%
 *(routed)*, and the group's per-capita income rose from 0.52 to 0.61 of the national figure
-between 2008 and 2024. The old-age cells, which do rest on small pre-1960 birth cohorts,
+between 2008 and 2024 (household income 0.78 to 0.91; full-time men's earnings 0.64 to 0.75,
+gained in 2016–2019 and 2021–2023 and flat in 2024). The position was flat before 2016, part
+of the per-capita gain is a falling child share, and across generations the tax shortfall
+flattens at $12.1k, $8.4k and $7.0k. The old-age cells, which do rest on small pre-1960 birth cohorts,
 *reduce* the measured gap, so they are not what produces it. Forward-looking claims should use
 the recent window, not the stock. [SOURCE:
 `infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/RESULT.md`;
