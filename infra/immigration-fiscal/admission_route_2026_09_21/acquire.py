@@ -15,7 +15,7 @@ import zipfile
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-CACHE = HERE / "_cache"
+CACHE, DERIVED = HERE / "_cache", HERE / "derived"
 BASE = "https://ohss.dhs.gov"
 YEARS = range(2004, 2024)
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -72,7 +72,8 @@ def main():
                                "sha256": hashlib.sha256(data).hexdigest(), "members": members}
         print(f"  ✓ FY{year}: {target.name} {len(data):,} bytes"
               + (f", {len(members)} members" if members else ""))
-    (CACHE / "acquire_manifest.json").write_text(json.dumps(manifest, indent=1))
+    DERIVED.mkdir(exist_ok=True)  # tracked: the hashes are the provenance of the ignored workbooks
+    (DERIVED / "acquire_manifest.json").write_text(json.dumps(manifest, indent=1))
 
 
 if __name__ == "__main__":
