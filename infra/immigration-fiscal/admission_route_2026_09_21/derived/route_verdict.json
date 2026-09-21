@@ -1,0 +1,32 @@
+{
+ "p1_medicaid_degree_25_64": {
+  "model1": 8.73,
+  "model2": 4.82,
+  "model2_ci": [
+   -4.53,
+   14.17
+  ],
+  "fell_by_more_than_half": false,
+  "model2_interval_spans_zero": true,
+  "penalty_persists": false
+ },
+ "p2_income_100k_degree_25_64": {
+  "model1": -1.83,
+  "model2": 2.73,
+  "model2_ci": [
+   -2.15,
+   7.62
+  ],
+  "fell_by_more_than_half": false,
+  "model2_interval_spans_zero": true,
+  "penalty_persists": false
+ },
+ "reading": "not settled by this design",
+ "dropped_units": [
+  {
+   "birthplace": "Africa",
+   "in_dhs": false,
+   "in_pew": false
+  }
+ ]
+}
