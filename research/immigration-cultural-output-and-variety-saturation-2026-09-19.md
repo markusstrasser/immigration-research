@@ -23,6 +23,10 @@ OpenStreetMap restaurant and fast-food features in 32 fetched states (271,624 fe
 | Mexican share of tagged restaurants | 0.208 | 0.015 |
 | Metros over 250,000, tag | 0.211 | 0.036 |
 | Placebos: all / Chinese / Italian / American | −0.03 / −0.08 / −0.06 / −0.00 | |
+| All 935 CBSAs, tag (disclosure only, see below) | 0.384 | 0.045 |
+| … placebos on the 935: all / Chinese / Italian / Indian / American | 0.17 / 0.18 / 0.15 / 0.27 / 0.18 | |
+
+The all-CBSA row is a disclosure and not an alternative estimate (added 2026-09-21). It adds the 362 metros that touch one of the 19 unfetched states, where a zero count is missing data: 346 of the 935 metros show no Mexican restaurant against 13 of the 573 covered ones, the excluded metros are the lower-share half, and on that sample the placebo for all restaurants loads at 0.17 where it should be zero. The 0.38 is therefore inflated by coverage that rises with Mexican share. Both samples reject proportional scaling, at 27 and 14 standard errors below one. [SOURCE: `derived/arm_d_elasticity.csv`, specs `all_cbsas` and `all_cbsas_placebo`; `scripts/11_arm_d_elasticity.py`, the `complete_states_only` comment]
 
 Quadratic fit: predicted Mexican restaurants per 100,000 are 5.5 at a 0.5% share, 12.6 at 5%, 14.6 at 10%, 16.1 at 20% and 16.9 at 50%; the quadratic term is negative (−0.051, SE 0.014). Buffalo (0.6% Mexican-origin) carries 8.8 per 100,000 against Los Angeles (34%) at 15.5: a 53-fold difference in share and 1.8 times the density. OSM coverage against County Business Patterns establishment counts does not vary with Mexican share (t 1.4); the share of restaurants carrying any cuisine tag does rise with it (t 2.6), which biases the tag elasticity upward, so the headline is conservative. Pre-registered rejection conditions (elasticity near one, density still rising at the top) do not hold. What is identified is the local margin: within the observed range the marginal group member adds almost no further restaurant variety to the metro they live in, while the costs the repo prices scale per person. The national counterfactual is not identified, because every metro draws on a national labour market and supply chain, and 12.05% (SE 0.32) of US chefs and cooks are Mexico-born, 20.5% with the US-born Mexican-origin. [SOURCE: `derived/arm_d_elasticity.csv`, `arm_d_coverage_fit.json`, `arm_d_osm_coverage_check.csv`, `arm_d_cooks_shares.csv`] [CALCULATION]
 
@@ -41,3 +45,7 @@ Occupation measures supply, not quality or influence; awards are gated by creden
 ## Sources
 
 ACS 2024 1-year PUMS (on disk); CPS ASEC March 2025; Wikidata SPARQL award statements (2026-09-19); Census 2010 surname file; ACS C15002I, B15002, B03001 and 2019–2023 5-year CBSA tables; OpenStreetMap via Overpass; TIGER 2023 CBSA boundaries; County Business Patterns 2023; RIAA year-end reports 2024 and 2025; ladder 130.
+
+## Revisions
+
+- 2026-09-21. §3 now discloses the all-CBSA specification (0.38) that the lane computed and the memo had not reported, with the reason the covered sample is preferred. A second agent's summary had presented 0.38 as an equally valid alternative; the placebo on that sample shows it is a coverage artefact. The local-saturation finding and its limit (national counterfactual not identified) are unchanged. Ladder 156.
