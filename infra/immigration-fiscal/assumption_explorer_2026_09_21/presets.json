@@ -1,0 +1,85 @@
+{
+  "note": "Author presets are RECONSTRUCTIONS from the truth-conditions of claims recorded in this repo's audits, not quoted positions. Basis: stated = the author says it; implied = needed for a recorded claim to hold; not_addressed = the audits record no position, so the line is switched off to show what the argument leaves out. Counting only stated bases, the audits give Yglesias 5, Caplan 4, Smith 2 and Decker 1 of 11 dimensions.",
+  "presets": [
+    {
+      "id": "repo_central", "kind_label": "This repo", "label": "CBO-informed central case",
+      "summary": "Schools respond 63-66%, colleges and other services fully, roads and parks not at all; defense, general government, existing interest and business subsidies held fixed; production gain counted.",
+      "scope_note": "Only two inputs are CBO's: the tax-incidence rules and the 63-66% school response. Zero response for defense, general government and interest is an assumption of this account.",
+      "settings": [
+        {"path": "school_response", "value": 0.63, "label": "School response", "basis": "stated", "note": "CBO 63-66%; the band is swept in the range.", "ref": "full_account_2026_09_20/service_response.py"},
+        {"path": "school_response_band", "value": [0.63, 0.66], "label": "School response band", "basis": "stated", "note": "Both executed values enter the unresolved range."},
+        {"path": "other_education_response", "value": 1, "label": "Non-school education", "basis": "stated", "note": "Profile cbo_category_lag_non_school_full; the fixed variant gives 121-160 bn."},
+        {"path": "delayed_response", "value": 0, "label": "Slow categories", "basis": "stated", "note": "Economic affairs and recreation held fixed."}
+      ],
+      "misses": ["Second-generation and lifetime dynamics: this is one income year of a resident stock.", "Any crime-specific cost: police, courts and prisons are charged per head.", "Prices, elder care and complementarity beyond the CES gain (see the context cards; none can simply be added)."]
+    },
+    {
+      "id": "proportional", "kind_label": "This repo", "label": "All services at average cost",
+      "summary": "Every public service scales one for one with population. The account's proportional benchmark, 270-289 bn.",
+      "settings": [{"label": "All category responses at 1", "basis": "stated", "note": "Profile proportional_reference.", "ref": "full_account_2026_09_20/derived/service_response_summary.csv"}],
+      "misses": ["Evidence that school budgets respond less than one for one in the short run (CBO 63-66%)."]
+    },
+    {
+      "id": "taxes_minus_benefits", "kind_label": "Archetype", "label": "Taxes paid minus benefits received",
+      "summary": "The common tally: what the group remits against the cash and in-kind benefits it draws. No schools, no police, no production side.",
+      "settings": [
+        {"path": "service_response", "value": 0, "label": "Public services", "basis": "not_addressed", "note": "A taxes-versus-benefits tally never charges services."},
+        {"path": "count_production", "value": false, "label": "Production gain", "basis": "not_addressed", "note": "A budget tally has no production side."}
+      ],
+      "misses": ["Education: about 200 bn assigned to this group, the largest single line in the ledger.", "Police, courts, health and other services: about 158 bn.", "The production gain that a budget tally also leaves out (+8.8 to +13.3 bn)."]
+    },
+    {
+      "id": "average_cost_everything", "kind_label": "Archetype", "label": "Everything at average cost",
+      "summary": "The restrictionist tally: a per-capita share of every line including defense, general government and interest on debt already issued, and no production gain.",
+      "settings": [
+        {"path": "public_goods_response", "value": 1, "label": "Defense and general government", "basis": "stated", "note": "Charged per head."},
+        {"path": "interest_response", "value": 1, "label": "Interest on existing debt", "basis": "stated", "note": "Charged per head although legacy debt does not shrink with population."},
+        {"path": "subsidy_response", "value": 1, "label": "Business subsidies", "basis": "stated", "note": "Charged per head."},
+        {"path": "count_production", "value": false, "label": "Production gain", "basis": "not_addressed", "note": "Left out."}
+      ],
+      "misses": ["Defense and interest on existing debt do not fall when a population is smaller: 286 bn of this total is non-responsive by construction.", "The production gain to other residents.", "CBO's evidence that school budgets respond 63-66%, not 100%."]
+    },
+    {
+      "id": "smith", "kind_label": "Reading of", "label": "Noah Smith, federal-aggregate claim",
+      "summary": "His fiscal claim is the federal deficit aggregate (CBO's 2024-2034 window): higher revenue, with state and local service costs outside the frame. In his own words elsewhere the arrivals need heavy state and city support, which would put services at 1; the audits no longer call that a contradiction.",
+      "scope_note": "He writes about all immigrants and a recent surge. This applies the claim's assumptions to the Mexican-origin resident stock; it does not test his number.",
+      "settings": [
+        {"path": "service_response", "value": 0, "label": "State and local services", "basis": "implied", "note": "A federal-window claim does not charge schools or police; 89% of the service incidence is state and local. His own 2024 concession implies 1.", "ref": "research/immigration-claim-scorecard-2026-09-18.md:53; research/immigration-dismantle-noah-smith-2026-06-25.md:13"},
+        {"path": "public_goods_response", "value": 0, "label": "Defense, general government", "basis": "implied", "note": "No recorded claim charges them.", "ref": "research/immigration-claim-scorecard-2026-09-18.md:53"}
+      ],
+      "misses": ["The second generation: 'no mention of the second generation' (scorecard :35). Most of this population is US-born.", "Local school and shelter costs in the national ledger, which he concedes in 2024 and September 2026.", "A number for the production or complementarity gain: none is recorded."]
+    },
+    {
+      "id": "yglesias", "kind_label": "Reading of", "label": "Matthew Yglesias, 'cost taxpayers nothing'",
+      "summary": "He states no fiscal number in his own voice; the CBO material on Slow Boring is in guest posts. The preset is the truth-condition of 'would cost taxpayers nothing': services and public goods not charged, the production side at its most favourable executed setting.",
+      "scope_note": "He writes about immigrants of virtually all stripes and national scale. His price and consumer-surplus channel is outside this account (see context cards).",
+      "settings": [
+        {"path": "service_response", "value": 0, "label": "Public services", "basis": "implied", "note": "He addresses wages, not local budgets; schools and police are never named as costs.", "ref": "research/immigration-yglesias-claims-audit-2026-09-21.md:50; :67"},
+        {"path": "public_goods_response", "value": 0, "label": "Defense, general government", "basis": "implied", "note": "The costs he names are congestion, not budget lines.", "ref": "research/immigration-yglesias-claims-audit-2026-09-21.md:104"},
+        {"path": "production.sigma", "value": 1.5, "label": "Skill substitution", "basis": "implied", "note": "Most favourable executed value; he argues large productive-capacity gains.", "ref": "research/immigration-yglesias-claims-audit-2026-09-21.md:70"}
+      ],
+      "misses": ["Any fiscal number of his own, and the National Academies 2016 report (audit :138-139).", "Second-generation outcomes except as upside (audit :139-140).", "Local budgets: schools are the largest line here."]
+    },
+    {
+      "id": "caplan", "kind_label": "Reading of", "label": "Bryan Caplan, keyhole welfare exclusion",
+      "summary": "Fiscal effects are small, and whatever remains is handled by excluding migrants from transfers. Represented by not counting benefits, not charging services, and the most favourable executed production setting.",
+      "scope_note": "His case is open borders for future entrants. Most of this population is US-born citizens, for whom welfare exclusion is not available, so the preset shows the argument's arithmetic, not a feasible policy for this stock. The 'double world GDP' figure is sourced to openborders.info, not to a verbatim Caplan sentence.",
+      "settings": [
+        {"path": "transfer_response", "value": 0, "label": "Benefits excluded by the keyhole", "basis": "stated", "note": "Welfare exclusion is his stated remedy; the instrument is never costed.", "ref": "research/immigration-bryan-caplan-claims-audit-2026-04-21.md:59; :216"},
+        {"path": "service_response", "value": 0, "label": "Schools, police, shelter", "basis": "implied", "note": "Exclusion is offered as sufficient protection, which presumes services add no cost. The audit lists this as his main omission.", "ref": "research/immigration-bryan-caplan-claims-audit-2026-04-21.md:288"},
+        {"path": "production.sigma", "value": 1.5, "label": "Skill substitution", "basis": "implied", "note": "Most favourable executed value; his gains claim is a global place-premium argument, far outside this CES block.", "ref": "research/immigration-bryan-caplan-claims-audit-2026-04-21.md:82"}
+      ],
+      "misses": ["School, shelter and service load on state and local budgets: what survives the welfare exclusion.", "Housing demand and rent burden.", "The cost and feasibility of the keyhole instruments themselves.", "Descendants: the generational unit is addressed by none of the four."]
+    },
+    {
+      "id": "decker", "kind_label": "Reading of", "label": "Nicholas Decker, production gains only",
+      "summary": "'Immigrants must make us richer': the audits record a production-function argument and no cost convention at all. Represented by giving the budget no weight, so only the private production gain remains. With capital fully adjusted, this account's CES block leaves other residents a private gain near zero; its production gain arrives as induced tax receipts, which a budget-free view also drops.",
+      "scope_note": "He argues from increasing returns (ideas, specialisation, fixed costs), which a CES block cannot represent; the production figure here is this account's, not his.",
+      "settings": [
+        {"path": "fiscal_weight", "value": 0, "label": "Budget lines", "basis": "not_addressed", "note": "'Overcompresses the problem into one production-function dispute'; federal versus local incidence, child attribution and public-goods assignment are never engaged.", "ref": "research/immigration-noah-smith-nicholas-decker-claims-audit-2026-04-11.md:255-256"},
+        {"path": "production.sigma", "value": 1.5, "label": "Skill substitution", "basis": "implied", "note": "Most favourable executed value.", "ref": "research/immigration-noah-smith-nicholas-decker-claims-audit-2026-04-11.md:71"}
+      ],
+      "misses": ["Every fiscal line: taxes, benefits and services are all absent from the argument.", "The negative terms are never quantified; 'must' needs them to be zero, second-order or dominated.", "Composition: his own July 2026 visa-ranking proposal concedes that composition decides the sign."]
+    }
+  ]
+}
