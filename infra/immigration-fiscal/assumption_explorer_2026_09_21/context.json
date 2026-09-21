@@ -1,0 +1,1669 @@
+{
+ "items": [
+  {
+   "id": "e1_gap_under_age_structures",
+   "faq_entry": 1,
+   "objection": "Steel-man: a population that is 30% under 18 will look expensive in any single year.",
+   "finding": "Age works the other way. The raw difference from whites is −$4,093 per person; at any common age structure it is −$7,049 to −$8,716.",
+   "values": [
+    {
+     "label": "union gap vs white, each group's own ages (raw)",
+     "value": -4092.718435,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:5"
+    },
+    {
+     "label": "union gap vs white, white's ages today",
+     "value": -7082.092093,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:11"
+    },
+    {
+     "label": "union gap vs white, union's ages today",
+     "value": -8716.406417,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:17"
+    },
+    {
+     "label": "union gap vs white, stationary life course",
+     "value": -7048.689736,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:23"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19 … One is not a decomposition of the other, and the generation split must not be scaled onto the complete-account total.",
+   "memo": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Same rates under different age structures",
+   "population": "observed Mexican-origin union, 40.897m, all ages",
+   "comparator": "third-plus non-Hispanic whites under the same age structure",
+   "horizon": "annual, income-year 2024, current age-specific balances held fixed",
+   "evidence_level": "[DERIVATION; FRAMING-SENSITIVE]"
+  },
+  {
+   "id": "e1_value_of_the_young_structure",
+   "faq_entry": 1,
+   "objection": "Steel-man: a population that is 30% under 18 will look expensive in any single year.",
+   "finding": "Whites with the Mexican-origin age pyramid would run +$3,403 per person, against −$1,221 at their own ages, so the young structure is worth about $4,600 a year.",
+   "values": [
+    {
+     "label": "white reference at union's ages today",
+     "value": 3402.601855,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:18"
+    },
+    {
+     "label": "white reference at its own ages today",
+     "value": -1221.086127,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:6"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19: per-person balances against a reference group, or the group's own balance re-weighted by age.",
+   "memo": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Same rates under different age structures",
+   "population": "third-plus non-Hispanic white reference, 173.054m, re-weighted to the union's age structure",
+   "comparator": "the same white reference at its own ages",
+   "horizon": "annual 2024",
+   "evidence_level": "[INFERENCE] (on top of [DERIVATION] rows)"
+  },
+  {
+   "id": "e2_fixed_functions_and_cbo_inputs",
+   "faq_entry": 2,
+   "objection": "Steel-man: charging every resident an equal share of the national deficit inflates any group's cost.",
+   "finding": "The headline already holds defense, general public services, existing interest and business subsidies fixed at zero response. That is an assumption, not a CBO estimate. What comes from CBO is the tax-incidence rule set (`cbo_collective`: corporate tax 75% to capital income, 25% to wages) and the 63–66% school-spending response.",
+   "values": [
+    {
+     "label": "corporate tax incidence to capital income",
+     "value": "75%",
+     "unit": "share",
+     "se": null,
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:52"
+    },
+    {
+     "label": "corporate tax incidence to wages",
+     "value": "25%",
+     "unit": "share",
+     "se": null,
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:53"
+    },
+    {
+     "label": "CBO school-spending response (first-order)",
+     "value": "63%/66%",
+     "unit": "share",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:142"
+    }
+   ],
+   "relation_to_headline": "inside_headline",
+   "combining_rule": "The $165–197bn (entries 2, 4, 11) is the September 20 complete account's change for all other residents under a stated service-response assumption, with no reference group.",
+   "memo": "research/immigration-complete-annual-account-2026-09-20.md § Where the coefficients come from",
+   "population": "same union; the response applies to nationally assigned service budgets",
+   "comparator": "full proportional-service benchmark",
+   "horizon": "annual 2024, long-run production held fully adjusted",
+   "evidence_level": "[ASSUMPTIONS] + [MODEL / TRANSFERRED EVIDENCE]"
+  },
+  {
+   "id": "e2_fixed_service_range_and_breakeven",
+   "faq_entry": 2,
+   "objection": "Steel-man: charging every resident an equal share of the national deficit inflates any group's cost.",
+   "finding": "With every ordinary service budget fixed the result runs from −$41.5bn to +$112.7bn, and break-even needs only 18.5–25.8% of assigned service costs to be incremental.",
+   "values": [
+    {
+     "label": "ordinary service budget fixed; private capital fixed",
+     "value": "-41.53 to +112.67",
+     "unit": "$bn/year net outside effect",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:257"
+    },
+    {
+     "label": "half of assigned service costs respond; intermediate private capital",
+     "value": "-203.55 to -81.73",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:258"
+    },
+    {
+     "label": "all assigned service costs respond; capital fully adjusts",
+     "value": "-356.84 to -262.05",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:259"
+    }
+   ],
+   "relation_to_headline": "inside_headline",
+   "combining_rule": null,
+   "memo": "research/immigration-complete-annual-account-2026-09-20.md § What can reverse the sign?",
+   "population": "same union",
+   "comparator": "other residents",
+   "horizon": "annual 2024, declared capacity paths",
+   "evidence_level": "[DISCONFIRMATION / MODEL SENSITIVITY]"
+  },
+  {
+   "id": "e2_general_public_services_sensitivity",
+   "faq_entry": 2,
+   "objection": "Steel-man: charging every resident an equal share of the national deficit inflates any group's cost.",
+   "finding": "Making general public services 10%, 25%, 50% or 100% responsive adds $4.8bn, $12.1bn, $24.2bn or $48.3bn.",
+   "values": [
+    {
+     "label": "10% responsive, all government",
+     "value": 4.83,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-education-administration-scope-2026-09-20.md:33"
+    },
+    {
+     "label": "25% responsive, all government",
+     "value": 12.07,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-education-administration-scope-2026-09-20.md:34"
+    },
+    {
+     "label": "50% responsive, all government",
+     "value": 24.15,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-education-administration-scope-2026-09-20.md:35"
+    },
+    {
+     "label": "100% responsive, all government",
+     "value": 48.29,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-education-administration-scope-2026-09-20.md:36"
+    },
+    {
+     "label": "assigned general public services, consolidated",
+     "value": 48.291,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-education-administration-scope-2026-09-20.md:19"
+    }
+   ],
+   "relation_to_headline": "inside_headline",
+   "combining_rule": null,
+   "memo": "research/immigration-education-administration-scope-2026-09-20.md § Isolated arithmetic sensitivity",
+   "population": "current observed Mexican-origin population including descendants",
+   "comparator": "the main long-run case, which sets this response to zero",
+   "horizon": "annual 2024, fiscal-dollar weight one",
+   "evidence_level": "[MODEL SCOPE / SENSITIVITY] / [MODEL SENSITIVITY]"
+  },
+  {
+   "id": "e2_muni_bond_paper_cannot_settle",
+   "faq_entry": 2,
+   "objection": "Steel-man: charging every resident an equal share of the national deficit inflates any group's cost.",
+   "finding": "A 2025 municipal-bond paper sometimes cited for \"local spending rises and revenue does not\" cannot settle the response share: its revenue result is +0.2% with an interval of −1.8% to +2.2%, wider than every spending effect it reports, and it estimates no total expenditure.",
+   "values": [
+    {
+     "label": "total revenue at two years",
+     "value": "+0.2%",
+     "unit": "percent",
+     "se": "SE 1.0 (interval -1.8% to +2.2%)",
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:95-96"
+    },
+    {
+     "label": "education spending at two years",
+     "value": "+2.0%",
+     "unit": "percent",
+     "se": "SE 1.0",
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:96"
+    },
+    {
+     "label": "unconditional yield effect, top quintile",
+     "value": "+1.4bp",
+     "unit": "basis points",
+     "se": "SE 1.7",
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:93"
+    }
+   ],
+   "relation_to_headline": "different_object",
+   "combining_rule": "A result refutes a claim only when population, horizon and outcome match.",
+   "memo": "research/immigration-marginal-revolution-leads-read-2026-09-21.md § 2. Local budgets and municipal bond yields",
+   "population": "US counties/local governments, 2010–2023 recent-arrival immigration-court flow (largely not Mexican)",
+   "comparator": "quintiles of a push-predicted court-filing index",
+   "horizon": "one and two years after the flow",
+   "evidence_level": "[SOURCE] + [INFERENCE]"
+  },
+  {
+   "id": "e2_per_capita_three_functions",
+   "faq_entry": 2,
+   "objection": "Steel-man: charging every resident an equal share of the national deficit inflates any group's cost.",
+   "finding": "Charging all three functions per capita moves the assigned balance by $286bn but is not part of the net-cost headline.",
+   "values": [
+    {
+     "label": "difference between the two absolute-balance conventions",
+     "value": 285.61,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:61"
+    }
+   ],
+   "relation_to_headline": "different_object",
+   "combining_rule": "The $165–197bn (entries 2, 4, 11) is the September 20 complete account's change for all other residents under a stated service-response assumption, with no reference group.",
+   "memo": "research/immigration-complete-annual-account-2026-09-20.md § Complete accounting, before any causal interpretation",
+   "population": "same union",
+   "comparator": "assignment convention only",
+   "horizon": "annual 2024",
+   "evidence_level": "[MODEL]"
+  },
+  {
+   "id": "e3_lower_benefit_draw_by_generation",
+   "faq_entry": 3,
+   "objection": "Steel-man: unauthorized workers' payroll taxes are a pure transfer to everyone else.",
+   "finding": "Both sides are already in the account. At the same ages the Mexico-born draw $3,506 less in cash transfers and $977 less in public medical spending than whites; the second generation's lower draw is $1,253 and $54.",
+   "values": [
+    {
+     "label": "Mexico-born, cash transfers incl. Social Security, gap vs white at white ages",
+     "value": 3505.585236,
+     "unit": "$/person/year (lower draw)",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations_by_category.csv:68"
+    },
+    {
+     "label": "Mexico-born, public medical, gap vs white at white ages",
+     "value": 977.360561,
+     "unit": "$/person/year (lower draw)",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations_by_category.csv:75"
+    },
+    {
+     "label": "second generation, cash transfers incl. Social Security",
+     "value": 1253.128576,
+     "unit": "$/person/year (lower draw)",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations_by_category.csv:79"
+    },
+    {
+     "label": "second generation, public medical",
+     "value": 54.011519,
+     "unit": "$/person/year (lower draw)",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations_by_category.csv:86"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19 … One is not a decomposition of the other.",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 3 (source cited directly to the data file)",
+   "population": "Mexico-born (12.221m) and Mexican second generation (14.333m)",
+   "comparator": "third-plus non-Hispanic whites at the white age structure",
+   "horizon": "annual 2024",
+   "evidence_level": "[DATA] (cited straight to the CSV in the FAQ)"
+  },
+  {
+   "id": "e3_union_offset_mirrors_tax_gap",
+   "faq_entry": 3,
+   "objection": "Steel-man: unauthorized workers' payroll taxes are a pure transfer to everyone else.",
+   "finding": "For the union, $2,653 of lower spending against $9,735 of lower receipts.",
+   "values": [
+    {
+     "label": "union spending gap vs white at white ages (lower spending)",
+     "value": 2652.988346,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:11"
+    },
+    {
+     "label": "union receipts gap vs white at white ages (lower receipts)",
+     "value": -9735.080439,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:11"
+    },
+    {
+     "label": "second generation's lower-spending offset, stationary structure",
+     "value": 822,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:69"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19.",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 3; research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Same rates under different age structures",
+   "population": "observed Mexican-origin union, 40.897m",
+   "comparator": "third-plus non-Hispanic whites at the white / stationary age structure",
+   "horizon": "annual 2024",
+   "evidence_level": "[DATA] / [INFERENCE] for the stationary reading"
+  },
+  {
+   "id": "e4_prices_and_native_hours",
+   "faq_entry": 4,
+   "objection": "Steel-man: cheaper services, complementary labour and capital returns never appear in a fiscal ledger.",
+   "finding": "Consumer prices and native women's hours are priced at $21.8bn *(routed)* and overlap the factor-income gains, so they are not added.",
+   "values": [
+    {
+     "label": "defensible native total (A net + B-tax), central arm",
+     "value": 21.76,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:29"
+    },
+    {
+     "label": "A. consumer surplus on immigrant-intensive services",
+     "value": 23.76,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:23"
+    },
+    {
+     "label": "A-offset. native high-school-dropout wage gain forgone",
+     "value": -10.73,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:25"
+    },
+    {
+     "label": "B-tax. tax on top-quartile native college women's extra earnings at 35%",
+     "value": 8.73,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:28"
+    },
+    {
+     "label": "fiscal-only share of the -$290.59bn partial gap",
+     "value": "3.0%",
+     "unit": "share",
+     "se": null,
+     "file_line": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:35"
+    }
+   ],
+   "relation_to_headline": "overlaps_headline",
+   "combining_rule": "Prices and native hours ($21.8bn) overlap it. … No ratio of \"offsets to cost\" can be formed from these.",
+   "memo": "research/immigration-consumer-price-and-native-hours-2026-09-18.md § 1. Summary table",
+   "population": "numerator removes about 3.17 million Mexico-born high-school-dropout workers; denominator covers about 40.9 million current Mexican-origin residents across generations",
+   "comparator": "natives / native consumer units, not a matched reference group",
+   "horizon": "annual, first-order, 2024 dollars, no capital adjustment",
+   "evidence_level": "routed; [SOURCE]/[INFERENCE]; the memo's September 19 correction governs"
+  },
+  {
+   "id": "e4_production_gain_inside_headline",
+   "faq_entry": 4,
+   "objection": "Steel-man: cheaper services, complementary labour and capital returns never appear in a fiscal ledger.",
+   "finding": "The account adds production gains and the induced taxes on them: $8.8bn (cash scaling) to $13.3bn (GDP scaling), $6–21bn across the parameter grid.",
+   "values": [
+    {
+     "label": "production plus induced receipts, cash scaling",
+     "value": 8.79,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:106"
+    },
+    {
+     "label": "production plus induced receipts, GDP scaling",
+     "value": 13.32,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:108"
+    },
+    {
+     "label": "union's share of national earnings used in the production term",
+     "value": "8.35%",
+     "unit": "share",
+     "se": null,
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:125-126"
+    }
+   ],
+   "relation_to_headline": "inside_headline",
+   "combining_rule": "The production gain ($8.8–13.3bn) is already inside the headline.",
+   "memo": "research/immigration-complete-annual-account-2026-09-20.md § Benefits joined to an explicit fiscal response",
+   "population": "same union; production counterfactual is a stationary economy with and without the target's labor",
+   "comparator": "other residents",
+   "horizon": "annual 2024, long-run, private capital fully adjusts",
+   "evidence_level": "[MODEL]"
+  },
+  {
+   "id": "e5_asec2026_replication",
+   "faq_entry": 5,
+   "objection": "Steel-man: the classic result is a costly first generation and a contributing second.",
+   "finding": "The adult ledger re-run on the next survey year moved from −$6,066 to −$6,499, inside one standard error.",
+   "values": [
+    {
+     "label": "ASEC 2025 (income year 2024), Mexican 2nd gen minus 3rd+ NH white, taxes minus selected transfers",
+     "value": -6066,
+     "unit": "$/standardized person/year",
+     "se": 353,
+     "file_line": "infra/immigration-fiscal/ledger_asec2026_2026_09_16/RESULT.md:196"
+    },
+    {
+     "label": "ASEC 2026 (income year 2025)",
+     "value": -6499,
+     "unit": "$/standardized person/year",
+     "se": 489,
+     "file_line": "infra/immigration-fiscal/ledger_asec2026_2026_09_16/RESULT.md:197"
+    },
+    {
+     "label": "pooled",
+     "value": -6282,
+     "unit": "$/standardized person/year",
+     "se": 301,
+     "file_line": "infra/immigration-fiscal/ledger_asec2026_2026_09_16/RESULT.md:88"
+    }
+   ],
+   "relation_to_headline": "different_object",
+   "combining_rule": "A result refutes a claim only when population, horizon and outcome match.",
+   "memo": "infra/immigration-fiscal/ledger_asec2026_2026_09_16/RESULT.md (replication table)",
+   "population": "Mexican second generation, adults, ledger re-run on the next survey year",
+   "comparator": "third-plus non-Hispanic whites",
+   "horizon": "annual, income years 2024 and 2025",
+   "evidence_level": "[MODEL OUTPUT], replication check"
+  },
+  {
+   "id": "e5_ethnic_attrition_narrows_gap",
+   "faq_entry": 5,
+   "objection": "Steel-man: the classic result is a costly first generation and a contributing second.",
+   "finding": "Third-plus is self-identified; including those who stopped identifying narrows the union gap to −$6,864 *(routed)*.",
+   "values": [
+    {
+     "label": "per-person gap vs third-plus whites, standing",
+     "value": -7105,
+     "unit": "$/person/year (all-age ledger, shared allocation)",
+     "se": null,
+     "file_line": "research/immigration-mexican-origin-population-total-2026-09-19.md:41"
+    },
+    {
+     "label": "central +1.81M attriters, Duncan–Trejo arm",
+     "value": -6864,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "research/immigration-mexican-origin-population-total-2026-09-19.md:41"
+    },
+    {
+     "label": "CPS ASEC 2025 self-identification union",
+     "value": "40.97M",
+     "unit": "people",
+     "se": "±0.38M",
+     "file_line": "research/immigration-mexican-origin-population-total-2026-09-19.md:3"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "Entries 7 and 9 rest on separate partial accounts.",
+   "memo": "research/immigration-mexican-origin-population-total-2026-09-19.md § Verdict / attrition arm",
+   "population": "observed union plus estimated ethnic attriters (third and fourth-plus generations)",
+   "comparator": "third-plus non-Hispanic whites, all-age ledger, shared allocation",
+   "horizon": "annual 2024",
+   "evidence_level": "[CALCULATION] / [FRAMING-SENSITIVE]"
+  },
+  {
+   "id": "e5_gaps_under_both_allocations",
+   "faq_entry": 5,
+   "objection": "Steel-man: the classic result is a costly first generation and a contributing second.",
+   "finding": "On the personal allocation the gap at white ages narrows at each step (−$7,830, −$6,799, −$6,018); on the shared allocation it is −$7,525, −$7,443, −$6,116.",
+   "values": [
+    {
+     "label": "personal, Mexico-born at white ages",
+     "value": -7830.09828,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:32"
+    },
+    {
+     "label": "personal, second generation",
+     "value": -6798.687293,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:33"
+    },
+    {
+     "label": "personal, third-plus self-ID",
+     "value": -6018.486338,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:34"
+    },
+    {
+     "label": "shared, Mexico-born at white ages",
+     "value": -7524.745048,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:8"
+    },
+    {
+     "label": "shared, second generation",
+     "value": -7442.561039,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:9"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19.",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 5 (Scope paragraph); research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Same rates under different age structures",
+   "population": "the three generations alive in 2024",
+   "comparator": "third-plus non-Hispanic whites at the white age structure",
+   "horizon": "annual 2024",
+   "evidence_level": "[DERIVATION; FRAMING-SENSITIVE]"
+  },
+  {
+   "id": "e5_generation_difference_tests",
+   "faq_entry": 5,
+   "objection": "Steel-man: the classic result is a costly first generation and a contributing second.",
+   "finding": "The first and second generations are indistinguishable ($62 apart, standard error at most 725); the third-plus is $1,389 better than the first, at least 2.3 standard errors.",
+   "values": [
+    {
+     "label": "first minus second generation gap difference",
+     "value": 62,
+     "unit": "$/standardized person/year",
+     "se": "at most 725",
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:105-106"
+    },
+    {
+     "label": "third-plus better than first",
+     "value": 1389,
+     "unit": "$/standardized person/year",
+     "se": "at least 2.3 standard errors",
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:106"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19.",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 5 (Scope paragraph)",
+   "population": "the three generations alive in 2024",
+   "comparator": "each other, both measured against third-plus non-Hispanic whites",
+   "horizon": "annual 2024",
+   "evidence_level": "[CALCULATION] with an explicit non-computability note"
+  },
+  {
+   "id": "e5_lifetime_npv_from_birth",
+   "faq_entry": 5,
+   "objection": "Steel-man: the classic result is a costly first generation and a contributing second.",
+   "finding": "Period-profile lifetime values at 3%: second generation from birth −$280k, third-plus −$225k, white reference −$96k.",
+   "values": [
+    {
+     "label": "second generation, age 0, expanded partial profile NPV",
+     "value": -279720,
+     "unit": "$ NPV, 2024 prices",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:43"
+    },
+    {
+     "label": "third-plus self-identified, age 0",
+     "value": -225309,
+     "unit": "$ NPV",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:44"
+    },
+    {
+     "label": "white reference, age 0",
+     "value": -96210,
+     "unit": "$ NPV",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:45"
+    },
+    {
+     "label": "Mexico-born, age 25",
+     "value": -56166,
+     "unit": "$ NPV",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:42"
+    },
+    {
+     "label": "white reference, age 25",
+     "value": 265713,
+     "unit": "$ NPV",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:46"
+    }
+   ],
+   "relation_to_headline": "different_object",
+   "combining_rule": "The National Academies results it is usually set against are all origins, followed from arrival, with descendants, discounted, under a budget rule. Neither refutes the other.",
+   "memo": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Lifetime results",
+   "population": "current personal-source age profiles; conditional survival from the stated starting age",
+   "comparator": "white reference profile at the same starting age",
+   "horizon": "lifetime present values, common US-total 2024 mortality, 3% real discounting, zero real growth, no outmigration/fertility/descendants",
+   "evidence_level": "[MODEL OUTPUT; FRAMING-SENSITIVE]"
+  },
+  {
+   "id": "e5_national_academies_different_object",
+   "faq_entry": 5,
+   "objection": "Steel-man: the classic result is a costly first generation and a contributing second.",
+   "finding": "The National Academies results are a different object: all origins, from arrival, with descendants, discounted. The 1997 volume's baseline is +$80,000 per immigrant with descendants and −$15,000 with no fiscal adjustment (1996 dollars), and its rule of holding debt at the 2016 share of GDP did not happen (76.0% → 97.4% by 2024).",
+   "values": [
+    {
+     "label": "NRC 1997 baseline NPV per immigrant with descendants",
+     "value": 80000,
+     "unit": "$ NPV, 1996 dollars",
+     "se": null,
+     "file_line": "research/immigration-projection-backtest-2026-09-19.md:3"
+    },
+    {
+     "label": "NRC 1997 no-fiscal-adjustment scenario",
+     "value": -15000,
+     "unit": "$ NPV, 1996 dollars",
+     "se": null,
+     "file_line": "research/immigration-projection-backtest-2026-09-19.md:3"
+    },
+    {
+     "label": "federal debt held by the public, 2016",
+     "value": "76.0%",
+     "unit": "share of GDP",
+     "se": null,
+     "file_line": "research/immigration-projection-backtest-2026-09-19.md:22"
+    },
+    {
+     "label": "federal debt held by the public, 2024",
+     "value": "97.4%",
+     "unit": "share of GDP",
+     "se": "+21.4 points vs the assumption",
+     "file_line": "research/immigration-projection-backtest-2026-09-19.md:25"
+    }
+   ],
+   "relation_to_headline": "different_object",
+   "combining_rule": "Entry 5 compares Mexican-origin generations alive in 2024 with whites at common ages. The National Academies results it is usually set against are all origins, followed from arrival, with descendants, discounted, under a budget rule. Neither refutes the other.",
+   "memo": "research/immigration-projection-backtest-2026-09-19.md § Verdict; research/immigration-canon-citation-audit-2026-09-17.md § C9 (2016 volume)",
+   "population": "all origins, immigrants followed from arrival with descendants",
+   "comparator": "a budget rule holding debt at a fixed share of GDP",
+   "horizon": "discounted lifetime NPV, 1996 dollars",
+   "evidence_level": "[SOURCE] + [CALCULATION: lane outputs]"
+  },
+  {
+   "id": "e5_same_age_gaps_by_generation",
+   "faq_entry": 5,
+   "objection": "Steel-man: the classic result is a costly first generation and a contributing second.",
+   "finding": "The same-age gap is −$7,584, −$7,521 and −$6,195 for the first, second and third-plus generations.",
+   "values": [
+    {
+     "label": "Mexico-born vs third-plus NH white, complete common-age gap",
+     "value": -7583.611487920926,
+     "unit": "$/standardized person/year",
+     "se": 383.81673803697896,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/complete_gaps.csv:2"
+    },
+    {
+     "label": "second generation vs third-plus NH white",
+     "value": -7521.41138692661,
+     "unit": "$/standardized person/year",
+     "se": 615.178974838458,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/complete_gaps.csv:4"
+    },
+    {
+     "label": "third-plus self-ID vs third-plus NH white",
+     "value": -6194.623978677977,
+     "unit": "$/standardized person/year",
+     "se": 457.0128191432633,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/complete_gaps.csv:6"
+    },
+    {
+     "label": "union vs third-plus NH white",
+     "value": -7151.887239338126,
+     "unit": "$/standardized person/year",
+     "se": 301.9746543629734,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/complete_gaps.csv:8"
+    },
+    {
+     "label": "union age-matched total vs white",
+     "value": -358.1111376577181,
+     "unit": "$bn/year",
+     "se": 11.98401984162719,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/complete_gaps.csv:8"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "One is not a decomposition of the other, and the generation split must not be scaled onto the complete-account total.",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 5; research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Annual results",
+   "population": "generations alive in 2024: Mexico-born 12.221m, second generation 14.333m, third-plus self-identified 14.343m",
+   "comparator": "third-plus non-Hispanic whites, 173.054m, at common ages",
+   "horizon": "annual, income-year 2024; a stock, not one lineage followed over time",
+   "evidence_level": "[MODEL OUTPUT] / [FRAMING-SENSITIVE]"
+  },
+  {
+   "id": "e5_tax_convergence_by_generation",
+   "faq_entry": 5,
+   "objection": "Steel-man: the classic result is a costly first generation and a contributing second.",
+   "finding": "Taxes converge ($12.1k, $8.4k and $7.0k below whites) but the first generation's lower benefit use disappears by the second.",
+   "values": [
+    {
+     "label": "Mexico-born receipts gap vs white at white ages",
+     "value": -12149.335352,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:8"
+    },
+    {
+     "label": "second generation receipts gap",
+     "value": -8395.399616,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:9"
+    },
+    {
+     "label": "third-plus self-ID receipts gap",
+     "value": -6983.549019,
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_normalizations.csv:10"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19: per-person balances against a reference group, or the group's own balance re-weighted by age.",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 5; also quoted in research/immigration-historical-backcast-2026-09-20.md:132-133",
+   "population": "the three generations alive in 2024",
+   "comparator": "third-plus non-Hispanic whites at the white age structure",
+   "horizon": "annual 2024",
+   "evidence_level": "[DERIVATION]"
+  },
+  {
+   "id": "e6_gap_against_average_resident",
+   "faq_entry": 6,
+   "objection": "\"Comparing with whites is cherry-picking.\"",
+   "finding": "Against the average resident of the complete account the union gap is −$274bn, about −$6,700 per person. The net-cost headline compares with no reference group at all: it is the change for all other residents, other immigrants included.",
+   "values": [
+    {
+     "label": "gap versus the same domestic account's average resident, shared",
+     "value": -274.23,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:59"
+    },
+    {
+     "label": "same, personal",
+     "value": -296.29,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:59"
+    }
+   ],
+   "relation_to_headline": "different_object",
+   "combining_rule": "The $165–197bn (entries 2, 4, 11) is the September 20 complete account's change for all other residents under a stated service-response assumption, with no reference group.",
+   "memo": "research/immigration-complete-annual-account-2026-09-20.md § Complete accounting; research/immigration-objections-faq-2026-09-21.md § 6",
+   "population": "40.896574m union against the 340.110988m full resident denominator",
+   "comparator": "average resident of the same domestic account, per-capita-cost convention",
+   "horizon": "annual 2024",
+   "evidence_level": "[MODEL]"
+  },
+  {
+   "id": "e6_gaps_against_all_natives",
+   "faq_entry": 6,
+   "objection": "\"Comparing with whites is cherry-picking.\"",
+   "finding": "Against all natives the same-age gaps are −$5,404, −$5,342 and −$4,015.",
+   "values": [
+    {
+     "label": "Mexico-born vs all natives, complete common-age gap",
+     "value": -5404.297648276597,
+     "unit": "$/standardized person/year",
+     "se": 350.8131178273709,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/complete_gaps.csv:3"
+    },
+    {
+     "label": "second generation vs all natives",
+     "value": -5342.097547282281,
+     "unit": "$/standardized person/year",
+     "se": 588.7503256890792,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/complete_gaps.csv:5"
+    },
+    {
+     "label": "third-plus self-ID vs all natives",
+     "value": -4015.310139033647,
+     "unit": "$/standardized person/year",
+     "se": 440.4995282850177,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/complete_gaps.csv:7"
+    },
+    {
+     "label": "union vs all natives",
+     "value": -4972.573399693796,
+     "unit": "$/standardized person/year",
+     "se": 257.93089625968236,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/complete_gaps.csv:9"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19: per-person balances against a reference group.",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 6",
+   "population": "the three generations alive in 2024 and their union",
+   "comparator": "all natives, 283.672m, at common ages",
+   "horizon": "annual 2024",
+   "evidence_level": "[DATA] (cited straight to derived/complete_gaps.csv)"
+  },
+  {
+   "id": "e7_cell_level_is_not_a_gap",
+   "faq_entry": 7,
+   "objection": "Steel-man: origin adds nothing once schooling is held fixed.",
+   "finding": "The cell's own balance is still negative (−$1,951 personal, −$5,558 shared); that is a level and should not be set against the gaps in the table.",
+   "values": [
+    {
+     "label": "Mexico-born below-HS cell, own net balance, shared",
+     "value": -5558.173427978456,
+     "unit": "$/person/year",
+     "se": "columns ci95_low/ci95_high/se_joint on this row",
+     "file_line": "infra/immigration-fiscal/education_origin_fiscal_2026_09_19/derived/annual_estimates.csv:4"
+    },
+    {
+     "label": "same cell, personal",
+     "value": -1951,
+     "unit": "$/person/year",
+     "se": "-3,413 to -488",
+     "file_line": "research/immigration-education-fiscal-and-methods-2026-09-19.md:11"
+    },
+    {
+     "label": "cell population",
+     "value": 3885815.28273003,
+     "unit": "people (ages 25-64)",
+     "se": "unweighted n = 1,771",
+     "file_line": "infra/immigration-fiscal/education_origin_fiscal_2026_09_19/derived/annual_estimates.csv:4"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "Entries 7 and 9 rest on separate partial accounts.",
+   "memo": "research/immigration-education-fiscal-and-methods-2026-09-19.md § table and line 20; infra/immigration-fiscal/education_origin_fiscal_2026_09_19/RESULT.md:4,7,21",
+   "population": "Mexico-born below high school, ages 25–64, 3.886m",
+   "comparator": "none — this is a level, not a gap",
+   "horizon": "annual 2024",
+   "evidence_level": "[MODEL OUTPUT]"
+  },
+  {
+   "id": "e7_education_specific_gaps",
+   "faq_entry": 7,
+   "objection": "Steel-man: origin adds nothing once schooling is held fixed.",
+   "finding": "Below-high-school Mexico-born adults outperform below-high-school natives at common ages, while high-school-only adults do worse. The aggregate gap is largely a composition effect, which is a description of who the residents are and does not make the dollars smaller.",
+   "values": [
+    {
+     "label": "below HS vs natives below HS, personal",
+     "value": 2709.4094763273415,
+     "unit": "$/person/year",
+     "se": "columns ci95_low/ci95_high/se_joint on this row; FAQ prints +880 to +4,539",
+     "file_line": "infra/immigration-fiscal/education_origin_fiscal_2026_09_19/derived/comparisons.csv:1306"
+    },
+    {
+     "label": "below HS vs natives below HS, shared",
+     "value": 2262.594250180832,
+     "unit": "$/person/year",
+     "se": "columns ci95_low/ci95_high/se_joint on this row; FAQ prints +751 to +3,774",
+     "file_line": "infra/immigration-fiscal/education_origin_fiscal_2026_09_19/derived/comparisons.csv:10"
+    },
+    {
+     "label": "below HS vs third-plus whites below HS, personal",
+     "value": 1019.6299866118338,
+     "unit": "$/person/year",
+     "se": "columns ci95_low/ci95_high on this row; FAQ prints -1,761 to +3,800",
+     "file_line": "infra/immigration-fiscal/education_origin_fiscal_2026_09_19/derived/comparisons.csv:1310"
+    },
+    {
+     "label": "below HS vs third-plus whites below HS, shared",
+     "value": 704.7391019051859,
+     "unit": "$/person/year",
+     "se": "columns ci95_low/ci95_high on this row; FAQ prints -1,339 to +2,749",
+     "file_line": "infra/immigration-fiscal/education_origin_fiscal_2026_09_19/derived/comparisons.csv:14"
+    },
+    {
+     "label": "HS only vs natives HS only, personal",
+     "value": -2121.9052773156322,
+     "unit": "$/person/year",
+     "se": "columns ci95_low/ci95_high on this row; FAQ prints -3,511 to -733",
+     "file_line": "infra/immigration-fiscal/education_origin_fiscal_2026_09_19/derived/comparisons.csv:1354"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "Entries 7 and 9 rest on separate partial accounts.",
+   "memo": "research/immigration-education-fiscal-and-methods-2026-09-19.md (line 20, added 2026-09-21); research/immigration-objections-faq-2026-09-21.md § 7 table",
+   "population": "Mexico-born, ages 25–64, common ages, entry='stock' (bands 25-34, 35-44, 45-54, 55-64)",
+   "comparator": "natives and third-plus non-Hispanic whites, held at the same schooling level except where noted",
+   "horizon": "annual, dollars per person per year, 2024 prices",
+   "evidence_level": "routed; [MODEL OUTPUT]"
+  },
+  {
+   "id": "e8_measured_programme_series",
+   "faq_entry": 8,
+   "objection": "\"One year proves nothing, and benefit rules keep changing.\"",
+   "finding": "National spending per resident on each programme is measured for every year: Medicaid and Medicare were 42–47% smaller in 2005, refundable credits were 4.4 times their 2024 level in 2021, police, courts and prisons were flat.",
+   "values": [
+    {
+     "label": "Medicaid/CHIP/other medical index, 2005 (2024 = 1)",
+     "value": 0.58,
+     "unit": "real national spending per resident index",
+     "se": null,
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:74"
+    },
+    {
+     "label": "Medicare index, 2005",
+     "value": 0.53,
+     "unit": "index",
+     "se": null,
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:76"
+    },
+    {
+     "label": "refundable tax credits index, 2021",
+     "value": 4.36,
+     "unit": "index",
+     "se": null,
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:79"
+    }
+   ],
+   "relation_to_headline": "different_object",
+   "combining_rule": "A result refutes a claim only when population, horizon and outcome match.",
+   "memo": "research/immigration-historical-backcast-2026-09-20.md § Programme-by-programme version",
+   "population": "national spending per resident, all residents (not group-specific)",
+   "comparator": "2024 = 1",
+   "horizon": "2005-2021 annual series",
+   "evidence_level": "[DERIVATION; added 2026-09-21]"
+  },
+  {
+   "id": "e9_arrival_window_gaps",
+   "faq_entry": 9,
+   "objection": "Steel-man: the 2024 stock is a legacy of an ended wave.",
+   "finding": "On the partial account the 2016–2025 arrival window is −$3,978 per standardized person against whites, the older windows −$4,800 to −$5,300.",
+   "values": [
+    {
+     "label": "w5_2016_2025 vs third-plus NH white",
+     "value": -3978,
+     "unit": "$/standardized person/year",
+     "se": 1247,
+     "file_line": "infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/RESULT.md:127"
+    },
+    {
+     "label": "w1_pre1990",
+     "value": -4901,
+     "unit": "$/standardized person/year",
+     "se": 753,
+     "file_line": "infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/RESULT.md:123"
+    },
+    {
+     "label": "w2_1990_1999",
+     "value": -5296,
+     "unit": "$/standardized person/year",
+     "se": 809,
+     "file_line": "infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/RESULT.md:124"
+    },
+    {
+     "label": "w3_2000_2009",
+     "value": -5268,
+     "unit": "$/standardized person/year",
+     "se": 983,
+     "file_line": "infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/RESULT.md:125"
+    },
+    {
+     "label": "w4_2010_2015",
+     "value": -4824,
+     "unit": "$/standardized person/year",
+     "se": 1199,
+     "file_line": "infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/RESULT.md:126"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "Entries 7 and 9 rest on separate partial accounts.",
+   "memo": "infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/RESULT.md § window table; research/immigration-objections-faq-2026-09-21.md § 9",
+   "population": "Mexico-born residents by arrival window",
+   "comparator": "third-plus non-Hispanic whites (and all natives) at common ages",
+   "horizon": "annual 2024; partial account plus G/K/X/R, not the entire expanded account",
+   "evidence_level": "[MODEL OUTPUT]"
+  },
+  {
+   "id": "e9_new_arrivals_education",
+   "faq_entry": 9,
+   "objection": "Steel-man: the 2024 stock is a legacy of an ended wave.",
+   "finding": "The less-than-high-school share of new arrivals fell from 82% to 33% *(routed)*.",
+   "values": [
+    {
+     "label": "1980 census, 1975-80 arrivals, less than high school",
+     "value": "82.5%",
+     "unit": "share of arrivals aged 25-54 within five years of arrival",
+     "se": null,
+     "file_line": "research/immigration-mexican-arrival-cohorts-2026-09-18.md:92"
+    },
+    {
+     "label": "2023 ACS, 2018-23 arrivals, less than high school",
+     "value": "33.3%",
+     "unit": "share",
+     "se": null,
+     "file_line": "research/immigration-mexican-arrival-cohorts-2026-09-18.md:96"
+    }
+   ],
+   "relation_to_headline": "different_object",
+   "combining_rule": "A result refutes a claim only when population, horizon and outcome match.",
+   "memo": "research/immigration-mexican-arrival-cohorts-2026-09-18.md § cohort education table",
+   "population": "Mexican arrivals observed at ages 25–54 within five years of arrival",
+   "comparator": "earlier arrival cohorts of the same group",
+   "horizon": "1980 census to 2023 ACS",
+   "evidence_level": "routed; [MODEL OUTPUT]"
+  },
+  {
+   "id": "e10_ageing_by_category",
+   "faq_entry": 10,
+   "objection": "\"What happens as this population ages?\"",
+   "finding": "Social Security and other cash add $70bn, public medical $80bn; schools save $31bn; custody-type institutional cost falls $1.4bn while nursing cost rises $9.2bn.",
+   "values": [
+    {
+     "label": "cash transfers incl. Social Security (memo's stated change)",
+     "value": -70.2,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:71"
+    },
+    {
+     "label": "public medical",
+     "value": -80.2,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:71"
+    },
+    {
+     "label": "institutions",
+     "value": -7.9,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:71"
+    },
+    {
+     "label": "rest of federal",
+     "value": -7.5,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:71"
+    },
+    {
+     "label": "K-12",
+     "value": 30.9,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:71"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19.",
+   "memo": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Same rates under different age structures ([DERIVATION] paragraph)",
+   "population": "observed Mexican-origin union, 40.9m",
+   "comparator": "the same population re-weighted to the white age structure",
+   "horizon": "annual 2024",
+   "evidence_level": "[DERIVATION]"
+  },
+  {
+   "id": "e10_ageing_composition_total",
+   "faq_entry": 10,
+   "objection": "\"What happens as this population ages?\"",
+   "finding": "At the white age structure and today's rates the 40.9m residents' balance moves from −$217bn to −$340bn.",
+   "values": [
+    {
+     "label": "union shared balance at own ages",
+     "value": -217.32,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:26"
+    },
+    {
+     "label": "union shared balance at the white age structure",
+     "value": -339.6,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:71"
+    },
+    {
+     "label": "change",
+     "value": -122.3,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:71"
+    },
+    {
+     "label": "same number of white-reference residents at those ages",
+     "value": -49.9,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:71"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19 … One is not a decomposition of the other.",
+   "memo": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Same rates under different age structures",
+   "population": "observed Mexican-origin union at the observed 40.9m headcount",
+   "comparator": "the same population re-weighted to the white reference's age structure",
+   "horizon": "annual 2024, a composition exercise, not a forecast",
+   "evidence_level": "[DERIVATION; FRAMING-SENSITIVE]"
+  },
+  {
+   "id": "e10_old_age_cells_rest_on_small_cohorts",
+   "faq_entry": 10,
+   "objection": "\"What happens as this population ages?\"",
+   "finding": "Would change it: US-born cohorts reaching 65 with higher covered earnings than the 0.5m second-generation and 1.0m third-plus residents born before about 1960 whose rates fill the 65+ cells today.",
+   "values": [
+    {
+     "label": "second-generation residents aged 65+ born before about 1960",
+     "value": "0.52m",
+     "unit": "people",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:73"
+    },
+    {
+     "label": "third-plus residents aged 65+ born before about 1960",
+     "value": "1.00m",
+     "unit": "people",
+     "se": null,
+     "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:73"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19.",
+   "memo": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md § Same rates under different age structures; research/immigration-objections-faq-2026-09-21.md § 10",
+   "population": "65+ cells of the second and third-plus generations",
+   "comparator": "n/a — a support/sample-size statement",
+   "horizon": "annual 2024",
+   "evidence_level": "[INFERENCE] / support statement"
+  },
+  {
+   "id": "e12_incarceration_ratio_series",
+   "faq_entry": 12,
+   "objection": "\"What about crime?\"",
+   "finding": "US-born Mexican-origin men aged 18–39 in institutional group quarters, as a ratio to native non-Hispanic white men: 2.56× (2010), 1.91× (2019), 1.72× (2023, the low point), 1.94× (2024); flat near 1.9× since 2019, and 2.1–2.3× after prison records coded generically \"Hispanic\" are reallocated.",
+   "values": [
+    {
+     "label": "2024 ratio",
+     "value": "1.94×",
+     "unit": "ratio",
+     "se": null,
+     "file_line": "research/immigration-mexican-origin-generation-incarceration-2026-09-16.md:43"
+    },
+    {
+     "label": "all native-born rate, 2023",
+     "value": "2.05",
+     "unit": "percent",
+     "se": null,
+     "file_line": "research/immigration-mexican-origin-generation-incarceration-2026-09-16.md:29"
+    }
+   ],
+   "relation_to_headline": "different_object",
+   "combining_rule": "A result refutes a claim only when population, horizon and outcome match.",
+   "memo": "research/immigration-mexican-origin-generation-incarceration-2026-09-16.md § table and \"ACS 2024 added\"",
+   "population": "US-born Mexican-origin men aged 18–39 in institutional group quarters",
+   "comparator": "native non-Hispanic white men 18–39; and all native-born men 18–39",
+   "horizon": "single-year cross-sections 2000, 2010, 2019, 2023, 2024",
+   "evidence_level": "routed; [SOURCE] ladder 65 + Census API ACS PUMS tabulations"
+  },
+  {
+   "id": "e12_no_group_crime_cost_in_headline",
+   "faq_entry": 12,
+   "objection": "\"What about crime?\"",
+   "finding": "Police, courts and prisons are charged per capita, equal for every resident, so the fiscal headline contains no group-specific crime cost, and victim costs are outside a fiscal account.",
+   "values": [
+    {
+     "label": "public order and safety, group's assigned 2024 amount (shared)",
+     "value": 62,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:78"
+    },
+    {
+     "label": "flat per-capita items' common-age gap against the white reference, by construction",
+     "value": "exactly zero (verified to 5e-16 relative)",
+     "unit": "$/standardized person",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/RESULT.md:169"
+    }
+   ],
+   "relation_to_headline": "inside_headline",
+   "combining_rule": "The $165–197bn (entries 2, 4, 11) is the September 20 complete account's change for all other residents under a stated service-response assumption, with no reference group.",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 12; research/immigration-detention-crime-and-fiscal-scope-2026-09-20.md (measurement rule)",
+   "population": "all residents equally",
+   "comparator": "none — a flat per-capita charge cancels from every relative comparison",
+   "horizon": "annual 2024",
+   "evidence_level": "routed; account-construction fact"
+  },
+  {
+   "id": "e13_care_workforce_composition",
+   "faq_entry": 13,
+   "objection": "Steel-man: two shift-share studies find it. Ten more points of less-educated foreign-born share lower institutionalization of the US-born elderly by 1.5 points, and 1,000 more immigrants mean about ten fewer elderly deaths a year.",
+   "finding": "The channel exists in that literature and the account omits it, but it runs through health workers, and 1.2% of Mexican immigrants work as aide, nurse or doctor against 14% of Philippine immigrants. The Mexico-born are 14.9% of foreign-born direct-care workers and 38.5% of the less-educated foreign-born.",
+   "values": [
+    {
+     "label": "Mexican immigrants working as aide, nurse or doctor",
+     "value": "1.2%",
+     "unit": "share",
+     "se": null,
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:30"
+    },
+    {
+     "label": "Philippine immigrants, same",
+     "value": "14%",
+     "unit": "share",
+     "se": null,
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:30"
+    },
+    {
+     "label": "Mexico-born share of foreign-born direct-care workers",
+     "value": "14.9%",
+     "unit": "share",
+     "se": null,
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:65"
+    },
+    {
+     "label": "Mexico-born share of the Butcher-Moran-Watson treatment population",
+     "value": "38.5%",
+     "unit": "share",
+     "se": null,
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:65"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The elder-care figure ($2.3–14.9bn) is an upper bound on one omitted channel.",
+   "memo": "research/immigration-marginal-revolution-leads-read-2026-09-21.md § Who staffs direct care in 2024",
+   "population": "2024 US direct-care workforce; Mexican and Philippine immigrants",
+   "comparator": "the all-origin treatment population of the cited shift-share studies",
+   "horizon": "2024 cross-section (ACS one-year PUMS)",
+   "evidence_level": "[DATA: `derived/acs_care_inputs.csv`, ACS 2024 one-year PUMS]"
+  },
+  {
+   "id": "e13_elder_care_medicaid_bound",
+   "faq_entry": 13,
+   "objection": "Steel-man: two shift-share studies find it. Ten more points of less-educated foreign-born share lower institutionalization of the US-born elderly by 1.5 points, and 1,000 more immigrants mean about ten fewer elderly deaths a year.",
+   "finding": "Priced generously, the Medicaid nursing-facility saving attributable to the Mexico-born is $2.3–14.9bn a year, $5.8bn at the preferred coefficient weighted by who staffs care: 1–9% of the headline.",
+   "values": [
+    {
+     "label": "price per avoided institutional resident",
+     "value": 55051,
+     "unit": "$ (Medicaid $78.9bn nursing-facility spending over 1.43m institutional residents; CMS NHE 2024 Table 15)",
+     "se": null,
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:73-74"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The elder-care figure ($2.3–14.9bn) is an upper bound on one omitted channel. … No ratio of \"offsets to cost\" can be formed from these.",
+   "memo": "research/immigration-marginal-revolution-leads-read-2026-09-21.md § 1. Elder care (Bound)",
+   "population": "52.1m US-born elderly; Mexico-born share of the working-age population 3.45%, less-educated foreign-born 8.95%",
+   "comparator": "an omitted channel priced against the headline; no reference group",
+   "horizon": "annual, 2024 dollars",
+   "evidence_level": "[CALCULATION … ; model output]"
+  },
+  {
+   "id": "e13_mortality_instrument_null",
+   "faq_entry": 13,
+   "objection": "Steel-man: two shift-share studies find it. Ten more points of less-educated foreign-born share lower institutionalization of the US-born elderly by 1.5 points, and 1,000 more immigrants mean about ten fewer elderly deaths a year.",
+   "finding": "The mortality study's instrument weighted by non-health work finds nothing (−0.00252, SE 0.00370). The first study loses significance with year-by-state effects.",
+   "values": [
+    {
+     "label": "Grabowski-Gruber-McGarry, instrument weighted by work outside health care",
+     "value": -0.00252,
+     "unit": "coefficient",
+     "se": 0.0037,
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:58"
+    },
+    {
+     "label": "same study, health-weighted instrument (deaths)",
+     "value": -0.00761,
+     "unit": "coefficient (9.8 fewer deaths a year per 1,000 more working-age immigrants)",
+     "se": "0.00208, F 21.2",
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:54"
+    },
+    {
+     "label": "Butcher-Moran-Watson preferred 2SLS (65+ institutionalization)",
+     "value": -0.151,
+     "unit": "points per unit share",
+     "se": "0.027, F 28.3",
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:42"
+    },
+    {
+     "label": "same with year-by-state effects",
+     "value": -0.061,
+     "unit": "points",
+     "se": "0.058, F 4.8",
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:44-45"
+    },
+    {
+     "label": "same dropping California",
+     "value": -0.09,
+     "unit": "points",
+     "se": "F 9.2",
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:45"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The elder-care figure ($2.3–14.9bn) is an upper bound on one omitted channel.",
+   "memo": "research/immigration-marginal-revolution-leads-read-2026-09-21.md § 1. Elder care",
+   "population": "US-born elderly (Census commuting zones 1980–2000) and 18.0m Medicare beneficiaries 2008–2019",
+   "comparator": "all-origin foreign-born share; the identifying variation is south-western / Africa, India, West Indies",
+   "horizon": "decadal (Census) and 2008–2019 (Medicare)",
+   "evidence_level": "[SOURCE: notes] + [INFERENCE] where marked"
+  },
+  {
+   "id": "e14_complementarity_removal_model",
+   "faq_entry": 14,
+   "objection": "Steel-man: if natives and immigrants are imperfect substitutes, natives' wages rise with immigrant labour even after capital adjusts.",
+   "finding": "A 2026 general-equilibrium model puts the native loss from removing half of unauthorized workers at 0.33% of wages, $38.6bn a year at 2024 wages and $26.8–80.4bn across published elasticities.",
+   "values": [
+    {
+     "label": "native loss at elasticity 3 (midpoint)",
+     "value": 38.6,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:120"
+    },
+    {
+     "label": "at elasticity 4.6",
+     "value": 26.8,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:120"
+    },
+    {
+     "label": "at elasticity 1.3",
+     "value": 80.4,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:120"
+    },
+    {
+     "label": "BEA 2024 wages and salaries used",
+     "value": 12410,
+     "unit": "$bn (NIPA Table 1.10)",
+     "se": "native wage-bill weight 0.942 [INFERENCE]",
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:118-119"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The complementarity figure ($26.8–80.4bn) covers half of all unauthorized workers of every origin and is matched by other immigrants' losses. No ratio of \"offsets to cost\" can be formed from these.",
+   "memo": "research/immigration-marginal-revolution-leads-read-2026-09-21.md § 3. The removal model and the account's production term",
+   "population": "half of 4.95m unauthorized workers of every origin; \"natives\" include naturalized citizens and every US-born Mexican-origin worker",
+   "comparator": "the account's production term, which credits $8.8–13.3bn",
+   "horizon": "long-run, capital adjusts, no scale effects, no tax/transfer/public-service block",
+   "evidence_level": "[SOURCE: notes] + [CALCULATION] + [INFERENCE]"
+  },
+  {
+   "id": "complete_account_356_endpoint",
+   "faq_entry": null,
+   "objection": null,
+   "finding": "The $356.84bn endpoint is a disclosed pessimistic stress test; its largest spending move is Medicaid/CHIP/other medical rising from $116.91bn to $185.61bn when reported coverage headcounts replace age/birth-specific expected payer dollars.",
+   "values": [
+    {
+     "label": "conditional net cost, endpoint",
+     "value": 356.84,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:217"
+    },
+    {
+     "label": "Social Security dollars → age65+",
+     "value": 13.81,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:228-229"
+    },
+    {
+     "label": "veterans benefit dollars → all adults",
+     "value": 10.46,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:229"
+    },
+    {
+     "label": "refundable credits (downward)",
+     "value": -23.46,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:230"
+    }
+   ],
+   "relation_to_headline": "overlaps_headline",
+   "combining_rule": null,
+   "memo": "research/immigration-complete-annual-account-2026-09-20.md § The $356.84bn endpoint and its evidential weight",
+   "population": "same union",
+   "comparator": "other residents",
+   "horizon": "annual 2024",
+   "evidence_level": "[EXACT MODEL ROW] / [MODEL / ASSESSMENT] / [JUDGMENT]"
+  },
+  {
+   "id": "complete_account_assigned_balance",
+   "faq_entry": null,
+   "objection": null,
+   "finding": "Default receipt and preferred service keys give an assigned balance of −$478.76bn shared / −$500.82bn personal; zeroing defense, general government and old domestic interest leaves −$193.15bn / −$215.21bn.",
+   "values": [
+    {
+     "label": "receipts, shared",
+     "value": 545.12,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:55"
+    },
+    {
+     "label": "receipts, personal",
+     "value": 517.1,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:55"
+    },
+    {
+     "label": "current spending, shared",
+     "value": 1023.88,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:56"
+    },
+    {
+     "label": "current spending, personal",
+     "value": 1017.92,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:56"
+    },
+    {
+     "label": "assigned balance, shared",
+     "value": -478.76,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:57"
+    }
+   ],
+   "relation_to_headline": "inside_headline",
+   "combining_rule": null,
+   "memo": "research/immigration-complete-annual-account-2026-09-20.md § Complete accounting, before any causal interpretation",
+   "population": "same 40.896574m union; full resident denominator 340.110988m",
+   "comparator": "assignment conventions, not a reference group",
+   "horizon": "annual 2024",
+   "evidence_level": "[OFFICIAL TOTALS] + [MODEL]"
+  },
+  {
+   "id": "interest_on_gap_lane",
+   "faq_entry": null,
+   "objection": null,
+   "finding": "If the complete-account absolute balance of −$263bn a year is financed by borrowing at the FY2024 effective federal rate of 3.22%, the accumulated debt after 10 years is $3.05tn, of which $416bn is interest.",
+   "values": [
+    {
+     "label": "accumulated debt after 10 years",
+     "value": 3.05,
+     "unit": "$tn",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/gap_interest_2026_09_18/README.md:11"
+    },
+    {
+     "label": "interest component of that debt",
+     "value": 416,
+     "unit": "$bn",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/gap_interest_2026_09_18/README.md:11"
+    },
+    {
+     "label": "year-10 annual interest bill",
+     "value": 87,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/gap_interest_2026_09_18/README.md:11"
+    },
+    {
+     "label": "FY2024 effective federal rate",
+     "value": "3.22%",
+     "unit": "rate (net interest $879.9bn over average debt held by the public $27.3tn)",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/gap_interest_2026_09_18/README.md:11"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The two must not be compared or summed. (research/immigration-historical-backcast-2026-09-20.md:142)",
+   "memo": "infra/immigration-fiscal/gap_interest_2026_09_18/README.md (ladder 137), reached via research/immigration-historical-backcast-2026-09-20.md § Relation to the interest-on-gap calculation",
+   "population": "the Mexican-origin union's complete-account absolute balance",
+   "comparator": "none — a financing projection on a superseded balance",
+   "horizon": "10 and 30 years forward, compounded",
+   "evidence_level": "[MODEL], carries its own correction banner"
+  },
+  {
+   "id": "ledger_absolute_uncertainty_scope",
+   "faq_entry": null,
+   "objection": null,
+   "finding": "Standard errors are the CPS 160-replicate SDR only; none of them covers the arms, which span $461bn and dominate every sampling interval by a factor of fifty.",
+   "values": [
+    {
+     "label": "SE on the union absolute endpoint",
+     "value": 8.81,
+     "unit": "$bn",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/RESULT.md:262"
+    },
+    {
+     "label": "SE on the complete common-age gap against whites",
+     "value": 302,
+     "unit": "$/standardized person",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/RESULT.md:262"
+    },
+    {
+     "label": "SE on the complete age-matched total",
+     "value": 12.0,
+     "unit": "$bn",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/RESULT.md:262"
+    },
+    {
+     "label": "arms span",
+     "value": 461,
+     "unit": "$bn",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/RESULT.md:262"
+    },
+    {
+     "label": "institutional add's union population mismatch",
+     "value": "39.38M against the CPS union's 40.90M",
+     "unit": "people",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/RESULT.md:264"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": null,
+   "memo": "infra/immigration-fiscal/ledger_absolute_2026_09_17/RESULT.md § Uncertainty, and what it does not cover",
+   "population": "observed Mexican-origin union",
+   "comparator": "n/a — an uncertainty statement",
+   "horizon": "annual 2024",
+   "evidence_level": "[UNVERIFIED: the arms matrix, not the standard errors, is the honest width of the result]"
+  },
+  {
+   "id": "ledger_absolute_waterfall_and_arms",
+   "faq_entry": null,
+   "objection": null,
+   "finding": "The Mexican-origin union's measured partial absolute of +$50.24bn becomes −$253.93bn once every priceable omitted item is charged under the central conventions; across the 144 combinations of the four contested arms the union absolute runs from −$548.37bn to −$87.04bn and never turns positive.",
+   "values": [
+    {
+     "label": "base partial account",
+     "value": 50.238214,
+     "unit": "$bn/year",
+     "se": 7.473981,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/RESULT.md:293"
+    },
+    {
+     "label": "complete absolute (step 13, D and P off)",
+     "value": -253.931979,
+     "unit": "$bn/year",
+     "se": 8.808802,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/RESULT.md:306"
+    },
+    {
+     "label": "with items D and P on",
+     "value": -263.22,
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/RESULT.md:388"
+    },
+    {
+     "label": "union complete common-age gap vs white, with D and P",
+     "value": -7224,
+     "unit": "$/standardized person",
+     "se": 302,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/RESULT.md:389"
+    },
+    {
+     "label": "arms matrix range (D, P on)",
+     "value": "-557.67 to -96.33",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_absolute_2026_09_17/RESULT.md:392"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "One is not a decomposition of the other, and the generation split must not be scaled onto the complete-account total.",
+   "memo": "infra/immigration-fiscal/ledger_absolute_2026_09_17/RESULT.md § Waterfall, central arms / § Items, union / § Arms matrix / Revision September 18",
+   "population": "observed Mexican-origin union and its three generations",
+   "comparator": "absolute balances; gaps are against third-plus NH whites and all natives",
+   "horizon": "annual, income-year 2024",
+   "evidence_level": "[DATA: CPS ASEC 2025] + [INFERENCE: every item is an accounting scenario] + [UNVERIFIED: the allocation conventions are choices]"
+  },
+  {
+   "id": "school_flight_not_estimated_for_hispanic_inflows",
+   "faq_entry": null,
+   "objection": null,
+   "finding": "Each Asian student arriving in a high-income California district is followed by 1.5 white departures, to other districts and not to private schools; white flight from Hispanic arrivals is not estimated, and the repo's non-reproduction for Hispanic inflows stands.",
+   "values": [
+    {
+     "label": "IV coefficient, white departures per Asian arrival",
+     "value": -1.47,
+     "unit": "students",
+     "se": "0.268, F 56",
+     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:140"
+    }
+   ],
+   "relation_to_headline": "different_object",
+   "combining_rule": "A result refutes a claim only when population, horizon and outcome match.",
+   "memo": "research/immigration-marginal-revolution-leads-read-2026-09-21.md § 4. Three context papers",
+   "population": "152 high-income California school districts; Asian student arrivals",
+   "comparator": "n/a — not estimated for Hispanic arrivals",
+   "horizon": "district panel (Journal of Urban Economics Insight 141, 2024)",
+   "evidence_level": "[SOURCE: notes in the lane] + [INFERENCE]"
+  },
+  {
+   "id": "service_scaling_test",
+   "faq_entry": null,
+   "objection": null,
+   "finding": "School spending elasticities are .735 unweighted / .836 pupil-weighted within districts, versus .945 / 1.004 across districts; all ten full-panel within-state service intervals include 1.",
+   "values": [
+    {
+     "label": "implied finite-removal response at 5/6",
+     "value": "84.21%",
+     "unit": "share",
+     "se": null,
+     "file_line": "research/immigration-complete-annual-account-2026-09-20.md:296"
+    }
+   ],
+   "relation_to_headline": "different_object",
+   "combining_rule": "A result refutes a claim only when population, horizon and outcome match.",
+   "memo": "research/immigration-service-scaling-test-2026-09-20.md; summarized in research/immigration-complete-annual-account-2026-09-20.md § Verification and disposition",
+   "population": "US school districts and state/local service panels; not the Mexican-origin population",
+   "comparator": "a proportional (elasticity 1) model",
+   "horizon": "2000/2010/2019 cross-sections and within-district panel",
+   "evidence_level": "[MODEL / INFERENCE]"
+  }
+ ],
+ "combining_rules": [
+  {
+   "id": "cr_two_anchors",
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:16-23",
+   "text": "**The two anchors are different objects.** The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19: per-person balances against a reference group, or the group's own balance re-weighted by age. Entries 7 and 9 rest on separate partial accounts. The $165–197bn (entries 2, 4, 11) is the September 20 complete account's change for all other residents under a stated service-response assumption, with no reference group; it carries later corrections that were not propagated to the ledger (ladder 161) and has no generation dimension yet. They agree in direction. One is not a decomposition of the other, and the generation split must not be scaled onto the complete-account total."
+  },
+  {
+   "id": "cr_offsets_do_not_add",
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:25-29",
+   "text": "**Offsets do not add.** The production gain ($8.8–13.3bn) is already inside the headline. Prices and native hours ($21.8bn) overlap it. The elder-care figure ($2.3–14.9bn) is an upper bound on one omitted channel. The complementarity figure ($26.8–80.4bn) covers half of all unauthorized workers of every origin and is matched by other immigrants' losses. No ratio of \"offsets to cost\" can be formed from these."
+  },
+  {
+   "id": "cr_match_population_horizon_outcome",
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:31-34",
+   "text": "**A result refutes a claim only when population, horizon and outcome match.** Entry 5 compares Mexican-origin generations alive in 2024 with whites at common ages. The National Academies results it is usually set against are all origins, followed from arrival, with descendants, discounted, under a budget rule. Neither refutes the other."
+  },
+  {
+   "id": "cr_faq_preamble_routed",
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:3-6",
+   "text": "[ROUTING / FRAMING-SENSITIVE] A question-and-answer index over executed results. Each objection is stated in its strongest form first. Numbers are 2024 dollars per year unless stated. Entries marked *(routed)* quote the topic index and must be opened at the linked memo before reuse. Narrative authorship remains operator-owned."
+  },
+  {
+   "id": "cr_instrument_ranking_warning",
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:247-251",
+   "text": "A summary that ranks findings by how much they surprise the model selects for results that contradict its prior, which is also where errors concentrate; surprising results need more checking before they get more prominence."
+  }
+ ]
+}
