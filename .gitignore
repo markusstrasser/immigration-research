@@ -8,6 +8,10 @@
 .model-review/allage-construct*
 .model-review/preflight-latest.json
 .model-review/2026-09-17-all-age-fiscal-and-generation-constructs-*/
+# Failed 2026-09-19 dispatch (error and receipt files only, no review output) and its
+# context packet, an extract of confidence-ladder entries 65–126.
+.model-review/2026-09-19-education-specific-fiscal-accounts-and-u-*/
+.model-review/ladder-extract-*.md
 
 # Generator banks / mining scaffolding — internal workshop, not published
 research/.mining/
