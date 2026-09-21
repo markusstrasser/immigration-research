@@ -107,6 +107,15 @@ the blog.
    or above white women, men 10% below at the median. A by-origin contrast for the
    Mexican-origin second-generation result.
 
+**Read in full, 2026-09-21 (later):** all six leads, seven papers, are now read from their
+primary PDFs; results in the [papers memo](immigration-marginal-revolution-leads-read-2026-09-21.md)
+and ladder 164–167. Two statements above do not survive the reading. Lead 1: the municipal-bond
+paper does **not** speak to the service-response parameter; its revenue result is an imprecise
+zero and it estimates no total expenditure. Lead 2: the elder-care channel transfers weakly,
+because 1.2% of Mexican immigrants work in health occupations, and its Medicaid value for the
+Mexico-born is bounded at $2.3–14.9bn a year. Lead 3 turned out to matter most: it exposes the
+perfect-substitution assumption in the account's production term.
+
 Already covered: Akee–Chin–Crown on return migration (ladder 92), Cowen's house-price test
 (hedonic lane, ladder 155), Tiburcio–Camarena (ladder 149), the Danish benefit cut (C9), the
 German fiscal analysis (C10), Boustan et al. on fifteen destination countries (paper-gaps memo).
