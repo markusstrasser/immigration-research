@@ -1,0 +1,7 @@
+coefficient,weighting,rate_change_pp,fewer_institutionalized,medicaid_bn,all_payer_bn
+preferred,labour_share,0.52,271269,14.93,41.62
+preferred,care_workforce,0.201,105057,5.78,16.12
+without_california,labour_share,0.31,161683,8.9,24.81
+without_california,care_workforce,0.12,62617,3.45,9.61
+year_by_state_ns,labour_share,0.21,109585,6.03,16.81
+year_by_state_ns,care_workforce,0.081,42440,2.34,6.51
