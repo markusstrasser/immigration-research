@@ -80,11 +80,10 @@ Infra & integrations:
 ### MCP Servers (`.mcp.json`)
 - **exa** — semantic web search, entity enrichment, deep research
 - **research** (research-mcp) — Semantic Scholar, corpus management, claim verification, preprint surveillance
-- **brave-search** — independent web index (triangulation with Exa)
-- **agent-infra** — cross-project knowledge base (hook designs, agent patterns, research findings)
 - **firecrawl** — web scraping and structured extraction
-- **parallel** — deep web research via Parallel Task API (lite/core/ultra tiers)
-- **context7** — library documentation lookup
+
+Only these three are configured in `.mcp.json` (checked 2026-09-21); brave-search,
+agent-infra, parallel and context7 are not available in this project.
 
 ## Structure
 
@@ -92,9 +91,30 @@ Infra & integrations:
 GOALS.md           — human-owned mission, strategy, success metrics (read at session start)
 research/          — topic files, one per question or area
 decisions/         — concept-level pivots, approach selections, methodology shifts
-sources/           — archived source material, data files
+infra/immigration-fiscal/<lane>_<date>/ — one analysis per directory: script, README or
+                     RESULT.md, tracked `derived/` summaries, ignored `_cache/` raw pulls
+warehouse/         — DuckDB warehouses (context, lifetime evidence); not a full inventory
+sources/           — archived source material, data files (resolves to ~/research-data)
 notes/             — working notes, drafts, threads of analysis
 ```
+
+### Running analysis lanes
+
+```sh
+# from the repository root; lanes document any extra --with wheels in their README
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/<lane>/<script>.py
+uv run --no-project python3 -m pytest infra/immigration-fiscal/<lane>/ -q
+# Census API: the key lives in the untracked acquire/config.local.env; never print it
+set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
+```
+
+- Consumers of `ledger_absolute_2026_09_17` (and other lanes whose manifests fingerprint
+  `gen_ledger_extension_2026_09_16/extend_ledger.py`) verify source hashes and stop with
+  `[BLOCKED] missing or stale source` after any edit to a fingerprinted `.py`. Repair by
+  rebuilding to a scratch `--out-dir`, byte-comparing the outputs, then re-running
+  `absolute_ledger.py`, `check_gates.py` and `lifetime.py` in place. Never edit a hash.
+- Pipe Census API output through a redaction filter; error messages and `pgrep`/`ps`
+  dumps carry the key in the URL. A hook blocks reads of `~/.config` secret stores.
 
 ### Finding local data and current results
 
@@ -108,6 +128,16 @@ substituting a web summary or declaring a measurement unavailable:
   verify that the referenced file exists and resolve `sources` on this machine.
 - [Reproduction inputs](infra/immigration-fiscal/REPRODUCTION_INPUTS.md): official
   acquisition routes, pinned versions, normalization and reproduction commands.
+
+- [Objections FAQ](research/immigration-objections-faq-2026-09-21.md): standard objections,
+  each routed to its executed table; start here for "what about X?" questions.
+- Fiscal results **by generation against a white reference** exist only in
+  `infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/` (`complete_gaps.csv`,
+  `age_profile_components.csv`, `age_normalizations*.csv`). The later finance-refresh,
+  enrollment and complete accounts carry the all-generation union only; do not flat-scale
+  the split onto their totals.
+- Only income-year 2024 is a measured account. Earlier years are a
+  [model back-cast](research/immigration-historical-backcast-2026-09-20.md).
 
 The unified warehouse is one entry point, not a complete inventory of newer
 analysis directories. Use `rg --files --no-ignore` when locating ignored raw or
@@ -138,7 +168,7 @@ Each topic has a file prefix and its own index. Read the relevant topic index wh
 
 | Topic | Prefix | Index | Files |
 |-------|--------|-------|-------|
-| Immigration (fiscal/crime) | `immigration-*` | `research/immigration-INDEX.md` | 130+ |
+| Immigration (fiscal/crime) | `immigration-*` | `research/immigration-INDEX.md` | `ls research/immigration-*.md \| wc -l` |
 
 New topics: create `research/<topic>-INDEX.md`, add a row here, use `<topic>-*` prefix for all files. Every top-level `research/*.md` file carries the `immigration-*` prefix — the pre-prefix legacy files were migrated 2026-06-24.
 
