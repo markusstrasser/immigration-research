@@ -121,11 +121,12 @@ errors pulled, no nativity or generation split.]
 | Median earnings, full-time year-round men | 0.641 | 0.640 | 0.641 | 0.735 | 0.703 | 0.734 | 0.756 | 0.754 |
 | Median earnings, full-time year-round women | 0.713 | 0.699 | 0.701 | 0.733 | 0.742 | 0.764 | 0.781 | 0.760 |
 
-Flat from 2008 to about 2016, rising since. Per-capita and household income gain about one
-point a year with no slowdown through 2024, but the median-age gap to the nation narrowed
-from 11.2 to 9.4 years, so part of that gain is fewer children and more earners per
-household. Workers' pay is the cleaner measure: men gained in 2016–2019 and 2021–2023 and
-not in 2024; women fell back in 2024. [INFERENCE] Those two bursts coincide with tight
+Flat from 2008 to about 2016, rising since. Per-capita and household income gained about one
+point a year from 2013 to 2023. In 2024 per-capita income kept that pace (+1.2 points) and
+household income did not (+0.2). The median-age gap to the nation narrowed from 11.2 to 9.4
+years, so part of the income gain is fewer children and more earners per household. Workers'
+pay is the cleaner measure: men gained in 2016–2019 and 2021–2023 and not in 2024 (−0.2);
+women fell back in 2024 (−2.1). Three of the four series paused in 2024. [INFERENCE] Those two bursts coincide with tight
 low-wage labour markets, so a group-specific convergence is not identified, and one flat
 year does not establish a plateau. Across generations the flattening is clearer: the
 same-age tax shortfall is $12.1k, $8.4k and $7.0k for the first, second and third-plus
@@ -157,3 +158,7 @@ series and each assumption are separately inspectable.
 coarse totals are unchanged; the combined range widens slightly to $1.3–2.2tn, $2.0–3.3tn
 and $2.4–3.9tn because measured programme growth and the pandemic attribution pull in
 opposite directions.
+
+2026-09-21, trend wording: "no slowdown through 2024" held for per-capita income only.
+Household income gained 0.2 points in 2024 after about 1.1 a year, so three of the four
+series paused that year. Ladder 163 carries the same correction. No total changes.
