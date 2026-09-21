@@ -14,22 +14,33 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 
 
-def digits(value):
-    text = f"{value}"
-    return re.sub(r"[^\d.]", "", text.replace(",", "")).rstrip("0").rstrip(".") if isinstance(value, (int, float)) else None
+def numbers(text):
+    """Unsigned number tokens as printed, thousands separators removed."""
+    return re.findall(r"\d+(?:\.\d+)?", str(text).replace(",", ""))
 
 
 def confirmed(value, ref):
-    match = re.match(r"(.+?):(\d+)", str(ref or ""))
+    """Every number in the recorded value equals, at its own printed precision, a number printed
+    within two lines of the cited file:line (a range `a-b` or list `a,b` of lines widens the window).
+    A range, pair or before/after string is therefore checked number by number, and a CSV cell with
+    more decimals than the memo confirms the memo's rounding. Signs are not compared."""
+    match = re.match(r"(.+?):(\d+)((?:\s*[-,]\s*\d+)*)", str(ref or ""))
     if not match or not (ROOT/match.group(1)).is_file():
         return False
+    cited = [int(match.group(2))]+[int(n) for n in re.findall(r"\d+", match.group(3))]
     lines = (ROOT/match.group(1)).read_text(errors="replace").splitlines()
-    n = int(match.group(2))
-    window = " ".join(lines[max(0, n-3):n+2]).replace(",", "").replace("−", "-")
-    want = digits(abs(value)) if isinstance(value, (int, float)) else None
-    if want is None:
+    window = " ".join(lines[max(0, min(cited)-3):max(cited)+2])
+    if match.group(1).endswith(".csv"):
+        window = window.replace(",", " ")  # field separators here, never thousands separators
+    printed = [float(n) for n in numbers(window)]
+    wanted = numbers(repr(abs(value)) if isinstance(value, (int, float)) else value)
+    if not wanted:
         return str(value)[:12] in window
-    return want in window or want.split(".")[0] in re.findall(r"\d+", window)
+    for token in wanted:
+        places = len(token.split(".")[1]) if "." in token else 0
+        if not any(abs(round(x, places)-float(token)) < 0.5*10**-places for x in printed):
+            return False
+    return True
 
 
 def main():

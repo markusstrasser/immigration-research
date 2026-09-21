@@ -22,8 +22,10 @@ node test_engine.js
 uv run --no-project python3 build_ui.py && open derived/explorer.html
 ```
 
-`context.json` is rebuilt with `build_context.py <inventory.json>`; it keeps a value only when its
-digits re-verify at the cited file:line (42 of 50 items, 88 values removed on 2026-09-21).
+`context.json` is rebuilt with `build_context.py <inventory.json>`; it keeps a value only when every
+number in it equals, at its printed precision, a number within two lines of the cited file:line
+(49 of 50 items and all 255 values on 2026-09-21; the dropped item is a caveat with no number).
+Fabricated numbers at real locations are rejected in memo and CSV files alike.
 
 ## Limits [FRAMING-SENSITIVE]
 
