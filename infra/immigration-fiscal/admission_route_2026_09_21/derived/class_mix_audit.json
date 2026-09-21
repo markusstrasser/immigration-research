@@ -1,0 +1,126 @@
+{
+ "2005": {
+  "countries": 192,
+  "suppressed_cells": 138,
+  "published_total": 1122373.0,
+  "sum_of_country_rows": 1122373.0
+ },
+ "2006": {
+  "countries": 194,
+  "suppressed_cells": 90,
+  "published_total": 1266264.0,
+  "sum_of_country_rows": 1266264.0
+ },
+ "2007": {
+  "countries": 193,
+  "suppressed_cells": 94,
+  "published_total": 1052415.0,
+  "sum_of_country_rows": 1052415.0
+ },
+ "2008": {
+  "countries": 193,
+  "suppressed_cells": 106,
+  "published_total": 1107126.0,
+  "sum_of_country_rows": 1107126.0
+ },
+ "2009": {
+  "countries": 199,
+  "suppressed_cells": 90,
+  "published_total": 1130818.0,
+  "sum_of_country_rows": 1130818.0
+ },
+ "2010": {
+  "countries": 199,
+  "suppressed_cells": 100,
+  "published_total": 1042625.0,
+  "sum_of_country_rows": 1042625.0
+ },
+ "2011": {
+  "countries": 193,
+  "suppressed_cells": 74,
+  "published_total": 1062040.0,
+  "sum_of_country_rows": 1062040.0
+ },
+ "2012": {
+  "countries": 197,
+  "suppressed_cells": 140,
+  "published_total": 1031631.0,
+  "sum_of_country_rows": 1031631.0
+ },
+ "2013": {
+  "countries": 192,
+  "suppressed_cells": 87,
+  "published_total": 990553.0,
+  "sum_of_country_rows": 990553.0
+ },
+ "2014": {
+  "countries": 197,
+  "suppressed_cells": 152,
+  "published_total": 1016518.0,
+  "sum_of_country_rows": 1016518.0
+ },
+ "2015": {
+  "countries": 198,
+  "suppressed_cells": 136,
+  "published_total": 1051031.0,
+  "sum_of_country_rows": 1051031.0
+ },
+ "2016": {
+  "countries": 201,
+  "suppressed_cells": 95,
+  "published_total": 1183505.0,
+  "sum_of_country_rows": 1183505.0
+ },
+ "2017": {
+  "countries": 198,
+  "suppressed_cells": 95,
+  "published_total": 1127167.0,
+  "sum_of_country_rows": 1127167.0
+ },
+ "2018": {
+  "countries": 196,
+  "suppressed_cells": 151,
+  "published_total": 1096611.0,
+  "sum_of_country_rows": 1096611.0
+ },
+ "2019": {
+  "countries": 198,
+  "suppressed_cells": 147,
+  "published_total": 1031765.0,
+  "sum_of_country_rows": 1031765.0
+ },
+ "2020": {
+  "countries": 195,
+  "suppressed_cells": 177,
+  "published_total": 707362.0,
+  "sum_of_country_rows": 707362.0
+ },
+ "2021": {
+  "countries": 197,
+  "suppressed_cells": 193,
+  "published_total": 740002.0,
+  "sum_of_country_rows": 740002.0
+ },
+ "2022": {
+  "countries": 199,
+  "suppressed_cells": 173,
+  "published_total": 1018349.0,
+  "sum_of_country_rows": 1018349.0
+ },
+ "2023": {
+  "countries": 199,
+  "suppressed_cells": 0,
+  "published_total": 1172910.0,
+  "sum_of_country_rows": 1173040.0
+ },
+ "harmonized_names": {
+  "Korea, South": "Korea",
+  "Bosnia-Herzegovina": "Bosnia and Herzegovina",
+  "China, People's Republic": "China",
+  "Burma": "Myanmar",
+  "Cape Verde": "Cabo Verde",
+  "Czech Republic": "Czechia",
+  "Macedonia": "North Macedonia",
+  "North Macedonia (formerly Macedonia)": "North Macedonia"
+ }
+}
