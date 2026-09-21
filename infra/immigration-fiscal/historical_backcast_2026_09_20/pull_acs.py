@@ -20,7 +20,11 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 KEY = os.environ["CENSUS_API_KEY"]
-LABELS = {"per_capita_income": r"per capita income \(dollars\)$", "median_age": r"median age \(years\)$"}
+LABELS = {"per_capita_income": r"per capita income \(dollars\)$", "median_age": r"median age \(years\)$",
+          # earnings of full-time year-round workers do not move with the group's falling child share
+          "median_earnings_ftyr_male": r"median earnings \(dollars\).*full-time, year-round workers.*!!male$",
+          "median_earnings_ftyr_female": r"median earnings \(dollars\).*full-time, year-round workers.*!!female$",
+          "median_household_income": r"median household income \(dollars\)$"}
 
 
 def get(url: str):
@@ -70,8 +74,8 @@ def main() -> None:
         row.update(profile(year) if year >= 2008 else {})
         rows.append(row)
         print(f"  ✓ {year}: {row}")
-    fields = ["year", "acs_total", "acs_mexican_origin", "per_capita_income_mexican", "per_capita_income_total",
-              "median_age_mexican", "median_age_total"]
+    fields = ["year", "acs_total", "acs_mexican_origin"] + [f"{name}_{tag}" for name in LABELS
+                                                            for tag in ("mexican", "total")]
     target = HERE / "inputs/acs_mexican_origin.csv"
     with target.open("w", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=fields)

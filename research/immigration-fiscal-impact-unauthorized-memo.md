@@ -1,5 +1,17 @@
 # Fiscal Impact of Unauthorized Immigration — Research Memo
 
+**Status, 2026-09-21: pre-repair literature memo; do not use for a current fiscal bottom line.**
+It predates the September 5 inference repair and every executed account. Current results:
+[complete annual account](immigration-complete-annual-account-2026-09-20.md),
+[generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md) and the
+[objections FAQ](immigration-objections-faq-2026-09-21.md). Two statements below need this
+qualification: the NAS 2017 finding that the second generation is "among the strongest net
+fiscal contributors" and "typically net positive" is an **all-origin** literature result. The
+repository's own measurement for the **Mexican-origin** second generation is −$7,521 per person
+a year against same-age third-plus non-Hispanic whites, and a period-profile lifetime value of
+−$280k at 3% against −$96k for the white reference. The memo's text is retained unchanged as
+the March 2026 record of the literature and the child-attribution dispute.
+
 **Question:** What is the total lifetime fiscal cost of an unauthorized Mexican immigrant to the US? What are the categories, and how do methodological choices drive results?
 **Tier:** Deep | **Date:** 2026-03-13
 **Ground truth:** Prior conversation established the methodological framework (buckets, 6 binary methodological choices). This memo adds sourced empirical estimates and causal structure.

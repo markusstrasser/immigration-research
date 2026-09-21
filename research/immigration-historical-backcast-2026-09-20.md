@@ -5,12 +5,11 @@ Date: 2026-09-20. [MODEL / FRAMING-SENSITIVE] Calculation record; narrative auth
 **Result:** No historical cost is measured here. The account exists for income-year
 2024 only. Combining measured national budgets and measured Mexican-origin population
 for each year with the group's **2024 relative position** gives, for the main
-CBO-informed net cost to other residents ($165–197bn in 2024), about **$1.4–2.0tn
-over 2015–2024, $2.0–3.1tn over 2010–2024 and $2.4–3.8tn over 2005–2024**, in 2024
-dollars without interest. The ranges span three back-casting rules and the low/high
-2024 anchor; they are not confidence intervals. A programme-by-programme version
-using measured national spending on every benefit and function gives $1.3–2.2tn,
-$2.0–3.3tn and $2.4–3.9tn.
+CBO-informed net cost to other residents ($165–197bn in 2024), about **$1.3–2.2tn
+over 2015–2024, $2.0–3.3tn over 2010–2024 and $2.4–3.9tn over 2005–2024**, in 2024
+dollars without interest. The ranges span every back-casting rule below, including the
+programme-by-programme version, and the low/high 2024 anchor; they are not confidence
+intervals. The whole-budget rules alone give $1.4–2.0tn, $2.0–3.1tn and $2.4–3.8tn.
 
 ## What is measured and what is assumed
 
@@ -108,6 +107,38 @@ crime, housing, innovation and institutions unpriced. See the
 [complete annual account](immigration-complete-annual-account-2026-09-20.md).
 These are resident-stock accounts, not the effect of an admission policy, and the
 comparison population includes other immigrants.
+
+## Measured trend in the group's relative position
+
+[SOURCE: ACS 1-year Selected Population Profile S0201, self-identified Mexican group over the
+total population; `inputs/acs_mexican_origin.csv`. Published means and medians; no standard
+errors pulled, no nativity or generation split.]
+
+| Ratio to the national figure | 2008 | 2013 | 2016 | 2019 | 2021 | 2022 | 2023 | 2024 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Per-capita income | 0.519 | 0.509 | 0.535 | 0.563 | 0.585 | 0.591 | 0.599 | 0.611 |
+| Median household income | 0.781 | 0.782 | 0.809 | 0.851 | 0.873 | 0.889 | 0.905 | 0.907 |
+| Median earnings, full-time year-round men | 0.641 | 0.640 | 0.641 | 0.735 | 0.703 | 0.734 | 0.756 | 0.754 |
+| Median earnings, full-time year-round women | 0.713 | 0.699 | 0.701 | 0.733 | 0.742 | 0.764 | 0.781 | 0.760 |
+
+Flat from 2008 to about 2016, rising since. Per-capita and household income gain about one
+point a year with no slowdown through 2024, but the median-age gap to the nation narrowed
+from 11.2 to 9.4 years, so part of that gain is fewer children and more earners per
+household. Workers' pay is the cleaner measure: men gained in 2016–2019 and 2021–2023 and
+not in 2024; women fell back in 2024. [INFERENCE] Those two bursts coincide with tight
+low-wage labour markets, so a group-specific convergence is not identified, and one flat
+year does not establish a plateau. Across generations the flattening is clearer: the
+same-age tax shortfall is $12.1k, $8.4k and $7.0k for the first, second and third-plus
+generations.
+
+## Relation to the interest-on-gap calculation
+
+The September 18 [interest lane](../infra/immigration-fiscal/gap_interest_2026_09_18/README.md)
+(ladder 137) reports $3.05tn of debt after ten years. It compounds a constant **−$263bn
+absolute balance forward** at 3.22%; that balance is superseded, includes the group's share
+of a deficit every resident runs, and carries its own correction banner. The totals here run
+**backward**, use the conditional net cost to other residents, vary with each year's
+population and budgets, and add no interest. The two must not be compared or summed.
 
 ## What would make it measured
 

@@ -69,6 +69,14 @@ What they cannot settle cleanly:
 
 ## 2. Federal vs state/local fiscal claims
 
+**Routing correction, 2026-09-21:** items 1 and 3 below are March–April 2026 memos that
+predate the September 5 inference repair (each carries its own pre-repair note), and item 2
+is a cost inventory. For any current fiscal bottom line start with the
+[complete annual account](immigration-complete-annual-account-2026-09-20.md), the
+[generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md) and the
+[objections FAQ](immigration-objections-faq-2026-09-21.md). Use this list for the literature
+and the child-attribution dispute.
+
 Use first:
 
 1. `research/immigration-fiscal-impact-unauthorized-memo.md`

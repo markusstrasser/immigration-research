@@ -121,3 +121,12 @@ Corrected the interpretation at the point of reuse; original calculations and ev
 ## Revisions — fiscal repair, September 19, 2026
 
 Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.
+
+## Revisions — September 21, 2026
+
+The "break-even only if under 12% of average service cost is marginal" statement above is the superseded
+m* of 0.117. On the complete account the threshold is 18.5–25.8% of assigned service costs. The per-person
+generation gaps quoted above (−$7,435, −$6,149) are an older vintage of the same estimand; current values are
+−$7,521 and −$6,195. The "89% tax-side" composition is a different quantity from the withdrawn 89%
+state-and-local financing split. See the [complete annual account](immigration-complete-annual-account-2026-09-20.md)
+and the [objections FAQ](immigration-objections-faq-2026-09-21.md).
