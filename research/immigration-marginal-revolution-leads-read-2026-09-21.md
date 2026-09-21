@@ -138,7 +138,10 @@ workers from the CPS file the production lane already reads.
 
 [SOURCE: notes in the lane] **Boustan–Cai–Tseng:** each Asian student arriving in a high-income
 California district is followed by 1.5 white departures (IV −1.470, SE 0.268, F 56), to other
-districts and not to private schools. The Hispanic and Black coefficients in the paper measure
+districts and not to private schools (published as a *Journal of Urban Economics* Insight, 141,
+2024). Within the sample the effect shrinks as district income rises, −4.5, −2.3 and −0.84 by
+tercile, and the best-instrumented top tercile (F 97) is below one for one (Appendix Table 2).
+The Hispanic and Black coefficients in the paper measure
 whether Asian arrivals coincide with minority arrivals; white flight from Hispanic arrivals is
 not estimated, and the proposed mechanism, academic competition, does not carry over. It leaves
 the repo's non-reproduction for Hispanic inflows (ladder 141) where it was. **Cesur–Yıldırım:**
@@ -146,8 +149,11 @@ diversity is predicted genetic heterozygosity instrumented by prehistoric migrat
 one cross-section of countries; immigration appears in a literature footnote only. It does not
 bear on ladder 133–134. **Black–white gap:** second-generation Black women earn 7.7 log points
 above white women at the median and men 11.0 below, against −34.0 for native Black men (Table
-1); 812 and 961 second-generation observations in 2019–24 and no standard errors. A by-origin
-contrast for the Mexican second-generation result, with selection of the parents untested.
+1); 812 and 961 second-generation observations in 2019–24 and no standard errors. Both results
+are conditional on working: with non-workers included the men's gap more than doubles to −26.9
+(Table S3, p.39), and the women's advantage fell from about +19 log points in 1995–2000 to +8 in
+2019–24. A by-origin contrast for the Mexican second-generation result, with selection of the
+parents untested.
 
 ## What changes
 
