@@ -1,0 +1,833 @@
+{
+ "acs_pums_2023_1yr": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www2.census.gov/programs-surveys/acs/data/pums/2023/1-Year/csv_pus.zip",
+  "content_type": "application/zip",
+  "title": null,
+  "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2023/1-Year/csv_pus.zip",
+  "date": "2026-09-21"
+ },
+ "acs_pums_2024_1yr": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/1-Year/csv_pus.zip",
+  "content_type": "application/zip",
+  "title": null,
+  "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/1-Year/csv_pus.zip",
+  "date": "2026-09-21"
+ },
+ "acs_pums_api_care_2024": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://api.census.gov/data/2024/acs/acs1/pums.html",
+  "content_type": "text/html",
+  "title": "Census Data API: /data/2024/acs/acs1/pums",
+  "url": "https://api.census.gov/data/2024/acs/acs1/pums.html",
+  "date": "2026-09-21"
+ },
+ "acs_pums_dict_2024": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2024.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2024.pdf",
+  "date": "2026-09-21"
+ },
+ "ahrq_meps_nhea_reconciliation_wp17003": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://meps.ahrq.gov/data_files/publications/workingpapers/wp_17003.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://meps.ahrq.gov/data_files/publications/workingpapers/wp_17003.pdf",
+  "date": "2026-09-21"
+ },
+ "ahrq_meps_payer_scope_st456": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://meps.ahrq.gov/data_files/publications/st456/stat456.shtml",
+  "content_type": "text/html",
+  "title": "STATISTICAL BRIEF #456: National Health Care Expenses in the U.S. Civilian Noninstitutionalized Population, Distributions by Type of Service and Source of Payme",
+  "url": "https://meps.ahrq.gov/data_files/publications/st456/stat456.shtml",
+  "date": "2026-09-21"
+ },
+ "ahrq_meps_standard_errors": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://meps.ahrq.gov/survey_comp/standard_errors.jsp",
+  "content_type": "text/html",
+  "title": "Medical Expenditure Panel Survey Computing Standard Errors for MEPS Estimates",
+  "url": "https://meps.ahrq.gov/survey_comp/standard_errors.jsp",
+  "date": "2026-09-21"
+ },
+ "barrett_tan_imf_2025_005": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://ideas.repec.org/p/imf/imfwpa/2025-005.html",
+  "content_type": "text/html",
+  "title": "Immigration and Local Inflation",
+  "url": "https://ideas.repec.org/p/imf/imfwpa/2025-005.html",
+  "date": "2026-09-21"
+ },
+ "bea_nipa_handbook": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.bea.gov/resources/methodologies/nipa-handbook",
+  "content_type": "text/html",
+  "title": "NIPA Handbook: Concepts and Methods of the U.S. National Income and Product Accounts | U.S. Bureau of Economic Analysis (BEA)",
+  "url": "https://www.bea.gov/resources/methodologies/nipa-handbook",
+  "date": "2026-09-21"
+ },
+ "bea_nipa_handbook_ch9": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.bea.gov/resources/methodologies/nipa-handbook/pdf/chapter-09.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www.bea.gov/resources/methodologies/nipa-handbook/pdf/chapter-09.pdf",
+  "date": "2026-09-21"
+ },
+ "bea_nipa_section3_workbook": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://apps.bea.gov/national/Release/XLS/Survey/Section3All_xls.xlsx",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "title": null,
+  "url": "https://apps.bea.gov/national/Release/XLS/Survey/Section3All_xls.xlsx",
+  "date": "2026-09-21"
+ },
+ "bea_nipa_section7": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://apps.bea.gov/national/Release/XLS/Survey/Section7All_xls.xlsx",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "title": null,
+  "url": "https://apps.bea.gov/national/Release/XLS/Survey/Section7All_xls.xlsx",
+  "date": "2026-09-21"
+ },
+ "bettencourt_2013_science": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.colorado.edu/socialreactors/sites/default/files/attached-files/bettencourt_2013_science.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www.colorado.edu/socialreactors/sites/default/files/attached-files/bettencourt_2013_science.pdf",
+  "date": "2026-09-21"
+ },
+ "bettencourt_lobo_arxiv_2015": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://arxiv.org/pdf/1507.07878",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://arxiv.org/pdf/1507.07878",
+  "date": "2026-09-21"
+ },
+ "bls_cex_2024_table1101": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error/cu-income-quintiles-before-taxes-2024.xlsx",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "title": null,
+  "url": "https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error/cu-income-quintiles-before-taxes-2024.xlsx",
+  "date": "2026-09-21"
+ },
+ "bls_cex_2024_table2500": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.bls.gov/cex/tables/calendar-year/mean/cu-all-detail-2024.xlsx",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "title": null,
+  "url": "https://www.bls.gov/cex/tables/calendar-year/mean/cu-all-detail-2024.xlsx",
+  "date": "2026-09-21"
+ },
+ "boustan_cai_tseng_nber_w31434": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nber.org/papers/w31434",
+  "content_type": "text/html",
+  "title": "White Flight from Asian Immigration: Evidence from California Public Schools | NBER",
+  "url": "https://www.nber.org/papers/w31434",
+  "date": "2026-09-21"
+ },
+ "butcher_moran_watson_nber_w29520": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nber.org/papers/w29520",
+  "content_type": "text/html",
+  "title": "Immigrant Labor and the Institutionalization of the U.S.-born Elderly | NBER",
+  "url": "https://www.nber.org/papers/w29520",
+  "date": "2026-09-21"
+ },
+ "caplan_2011_immigration_and_the_welfare_state": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.econlib.org/archives/2011/06/immigration_and_2.html",
+  "content_type": "text/html",
+  "title": "Immigration and the Welfare State - Econlib",
+  "url": "https://www.econlib.org/archives/2011/06/immigration_and_2.html",
+  "date": "2026-09-21"
+ },
+ "caplan_2012_econlib": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.econlib.org/archives/2012/01/why_should_we_r.html",
+  "content_type": "text/html",
+  "title": "Why Should We Restrict Immigration? - Econlib",
+  "url": "https://www.econlib.org/archives/2012/01/why_should_we_r.html",
+  "date": "2026-09-21"
+ },
+ "caplan_cato_journal_2012": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2012/1/cj32n1-2.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2012/1/cj32n1-2.pdf",
+  "date": "2026-09-21"
+ },
+ "caplan_does_immigration_shrink_the_welfare_state": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.econlib.org/does-immigration-shrink-the-welfare-state/",
+  "content_type": "text/html",
+  "title": "Does Immigration Shrink the Welfare State? - Econlib",
+  "url": "https://www.econlib.org/does-immigration-shrink-the-welfare-state/",
+  "date": "2026-09-21"
+ },
+ "cbo_2024_07_immigration_surge": {
+  "ok": false,
+  "status": 403,
+  "url": "https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf",
+  "date": "2026-09-21"
+ },
+ "cbo_2024_federal_surge_alt_id": {
+  "ok": false,
+  "status": 403,
+  "url": "https://www.cbo.gov/publication/60569",
+  "date": "2026-09-21"
+ },
+ "cbo_2025_state_local_surge": {
+  "ok": false,
+  "status": 403,
+  "url": "https://www.cbo.gov/publication/61464",
+  "date": "2026-09-21"
+ },
+ "cbo_marginal_tax_rates_54911": {
+  "ok": false,
+  "status": 403,
+  "url": "https://www.cbo.gov/publication/54911",
+  "date": "2026-09-21"
+ },
+ "cbo_tax_distribution_appendix_a": {
+  "ok": false,
+  "status": 403,
+  "url": "https://www.cbo.gov/publication/60706",
+  "date": "2026-09-21"
+ },
+ "census_2024_asec_generation_table4": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www2.census.gov/programs-surveys/demo/tables/foreign-born/2024/cps2024/2024_asec_generation_table4.xlsx",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "title": null,
+  "url": "https://www2.census.gov/programs-surveys/demo/tables/foreign-born/2024/cps2024/2024_asec_generation_table4.xlsx",
+  "date": "2026-09-21"
+ },
+ "census_acs_b03001_api": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://api.census.gov/data/2024/acs/acs1/groups/B03001.html",
+  "content_type": "text/html",
+  "title": "Census Data API: /data/2024/acs/acs1/groups/B03001",
+  "url": "https://api.census.gov/data/2024/acs/acs1/groups/B03001.html",
+  "date": "2026-09-21"
+ },
+ "census_acs_spp_api": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://api.census.gov/data/2024/acs/acs1/spp.html",
+  "content_type": "text/html",
+  "title": "Census Data API: /data/2024/acs/acs1/spp",
+  "url": "https://api.census.gov/data/2024/acs/acs1/spp.html",
+  "date": "2026-09-21"
+ },
+ "census_gov_finance_glossary": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.census.gov/programs-surveys/state/about/glossary.html",
+  "content_type": "text/html",
+  "title": "Glossary",
+  "url": "https://www.census.gov/programs-surveys/state/about/glossary.html",
+  "date": "2026-09-21"
+ },
+ "census_popest_2024_resident_control": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/state/totals/NST-EST2024-ALLDATA.csv",
+  "content_type": "text/csv",
+  "title": null,
+  "url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/state/totals/NST-EST2024-ALLDATA.csv",
+  "date": "2026-09-21"
+ },
+ "census_sehsd_wp2025_07": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www2.census.gov/library/working-papers/2025/demo/sehsd-wp2025-07.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www2.census.gov/library/working-papers/2025/demo/sehsd-wp2025-07.pdf",
+  "date": "2026-09-21"
+ },
+ "census_state_local_finances_2022": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www2.census.gov/programs-surveys/gov-finances/tables/2022/22slsstab1.xlsx",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "title": null,
+  "url": "https://www2.census.gov/programs-surveys/gov-finances/tables/2022/22slsstab1.xlsx",
+  "date": "2026-09-21"
+ },
+ "clemens_2011_jep": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.aeaweb.org/articles?id=10.1257/jep.25.3.83",
+  "content_type": "text/html",
+  "title": "Economics and Emigration: Trillion-Dollar Bills on the Sidewalk? - American Economic Association",
+  "url": "https://www.aeaweb.org/articles?id=10.1257/jep.25.3.83",
+  "date": "2026-09-21"
+ },
+ "clemens_2022_capital_tax_iza": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://docs.iza.org/dp15592.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://docs.iza.org/dp15592.pdf",
+  "date": "2026-09-21"
+ },
+ "clemens_pritchett_iza_dp9730": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://docs.iza.org/dp9730.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://docs.iza.org/dp9730.pdf",
+  "date": "2026-09-21"
+ },
+ "cms_beneficiary_profile_2026": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.medicaid.gov/medicaid/quality-of-care/downloads/beneficiary-profile-2026.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www.medicaid.gov/medicaid/quality-of-care/downloads/beneficiary-profile-2026.pdf",
+  "date": "2026-09-21"
+ },
+ "cms_nhe_tables": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.cms.gov/files/zip/nhe-tables.zip",
+  "content_type": "application/zip",
+  "title": null,
+  "url": "https://www.cms.gov/files/zip/nhe-tables.zip",
+  "date": "2026-09-21"
+ },
+ "colas_sachs_manuscript": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.dominiksachs.com/downloads/fiscal_low_skilled_immigration_final.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www.dominiksachs.com/downloads/fiscal_low_skilled_immigration_final.pdf",
+  "date": "2026-09-21"
+ },
+ "colas_sachs_published": {
+  "ok": false,
+  "status": 403,
+  "url": "https://doi.org/10.1257/pol.20220176",
+  "date": "2026-09-21"
+ },
+ "cornaggia_ssrn_5026977": {
+  "ok": false,
+  "status": 403,
+  "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5026977",
+  "date": "2026-09-21"
+ },
+ "cortes_2008_jpe": {
+  "ok": false,
+  "status": 403,
+  "url": "https://www.journals.uchicago.edu/doi/10.1086/589756",
+  "date": "2026-09-21"
+ },
+ "cortes_2023_nber_wp31234": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nber.org/system/files/working_papers/w31234/w31234.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www.nber.org/system/files/working_papers/w31234/w31234.pdf",
+  "date": "2026-09-21"
+ },
+ "cortes_tessada_appendix": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://assets.aeaweb.org/asset-server/articles-attachments/aej/app/app/2009-0171_app.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www.aeaweb.org/articles/materials/1197",
+  "date": "2026-09-21"
+ },
+ "cortes_working_paper": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.economics.uci.edu/files/docs/colloqpapers/w06/Cortes.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www.economics.uci.edu/files/docs/colloqpapers/w06/Cortes.pdf",
+  "date": "2026-09-21"
+ },
+ "cps_asec_2025_codebook": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www2.census.gov/programs-surveys/cps/datasets/2025/march/asec2025_ddl_pub_full.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www2.census.gov/programs-surveys/cps/datasets/2025/march/asec2025_ddl_pub_full.pdf",
+  "date": "2026-09-21"
+ },
+ "cps_asec_2025_microdata": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www2.census.gov/programs-surveys/cps/datasets/2025/march/asecpub25csv.zip",
+  "content_type": "application/zip",
+  "title": null,
+  "url": "https://www2.census.gov/programs-surveys/cps/datasets/2025/march/asecpub25csv.zip",
+  "date": "2026-09-21"
+ },
+ "cps_asec_2026": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www2.census.gov/programs-surveys/cps/datasets/2026/march/asecpub26csv.zip",
+  "content_type": "application/zip",
+  "title": null,
+  "url": "https://www2.census.gov/programs-surveys/cps/datasets/2026/march/asecpub26csv.zip",
+  "date": "2026-09-21"
+ },
+ "cps_asec_2026_dictionary": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www2.census.gov/programs-surveys/cps/datasets/2026/march/asec2026_ddl_pub_full.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www2.census.gov/programs-surveys/cps/datasets/2026/march/asec2026_ddl_pub_full.pdf",
+  "date": "2026-09-21"
+ },
+ "cps_mar2025_techdoc": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www2.census.gov/programs-surveys/cps/techdocs/cpsmar25.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www2.census.gov/programs-surveys/cps/techdocs/cpsmar25.pdf",
+  "date": "2026-09-21"
+ },
+ "cravino_nber_w34790": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nber.org/papers/w34790",
+  "content_type": "text/html",
+  "title": "The Economic Impact of Mass Deportations | NBER",
+  "url": "https://www.nber.org/papers/w34790",
+  "date": "2026-09-21"
+ },
+ "decker_2026_07_visa_ranking_post": {
+  "ok": false,
+  "status": "not fetched: host blocks scripts",
+  "url": "https://x.com/nominalthoughts/status/2079203832001892368",
+  "date": "2026-09-21"
+ },
+ "decker_yes_immigrants_must_make_us_richer": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://nicholasdecker.substack.com/p/yes-immigrants-must-make-us-richer",
+  "content_type": "text/html",
+  "title": "Yes, Immigrants Must Make Us Richer - by Nicholas Decker",
+  "url": "https://nicholasdecker.substack.com/p/yes-immigrants-must-make-us-richer",
+  "date": "2026-09-21"
+ },
+ "dhs_fy2026_budget_in_brief": {
+  "ok": false,
+  "status": 403,
+  "url": "https://www.dhs.gov/sites/default/files/2025-07/2025_07_03_ocfo_fy-2026-budget-in-brief.pdf",
+  "date": "2026-09-21"
+ },
+ "duncan_trejo_2011_jole": {
+  "ok": false,
+  "status": 403,
+  "url": "https://doi.org/10.1086/658088",
+  "date": "2026-09-21"
+ },
+ "duncan_trejo_2017_ilr": {
+  "ok": false,
+  "status": 403,
+  "url": "https://doi.org/10.1177/0019793916679613",
+  "date": "2026-09-21"
+ },
+ "duncan_trejo_2025_iza_dp17579": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://docs.iza.org/dp17579.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://docs.iza.org/dp17579.pdf",
+  "date": "2026-09-21"
+ },
+ "erp_2026_gdp": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/2026-Economic-Report-of-the-President.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/2026-Economic-Report-of-the-President.pdf",
+  "date": "2026-09-21"
+ },
+ "furtado_hock_2010": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4160832/",
+  "content_type": "text/html",
+  "title": "Low Skilled Immigration and Work-Fertility Tradeoffs Among High Skilled US Natives - PMC",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4160832/",
+  "date": "2026-09-21"
+ },
+ "gao_2004_school_capacity": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.gao.gov/assets/a243051.html",
+  "content_type": "text/html",
+  "title": "GAO-04-733, Illegal Alien Schoolchildren: Issues in Estimating State-by-State Costs",
+  "url": "https://www.gao.gov/assets/a243051.html",
+  "date": "2026-09-21"
+ },
+ "grabowski_gruber_mcgarry_nber_w34791": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nber.org/papers/w34791",
+  "content_type": "text/html",
+  "title": "Is Immigration Good for Health? The Effect of Immigration on Older Adult Mortality in the United States | NBER",
+  "url": "https://www.nber.org/papers/w34791",
+  "date": "2026-09-21"
+ },
+ "ipums_usa": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://usa.ipums.org/usa/",
+  "content_type": "text/html",
+  "title": "IPUMS USA",
+  "url": "https://usa.ipums.org/usa/",
+  "date": "2026-09-21"
+ },
+ "irs_pub15_2024": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.irs.gov/pub/irs-prior/p15--2024.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www.irs.gov/pub/irs-prior/p15--2024.pdf",
+  "date": "2026-09-21"
+ },
+ "irs_pub15_2025": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.irs.gov/pub/irs-prior/p15--2025.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www.irs.gov/pub/irs-prior/p15--2025.pdf",
+  "date": "2026-09-21"
+ },
+ "klw_prices_immigration_2026": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://ryansungryongkim.github.io/papers/KLW_25Feb2026.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://ryansungryongkim.github.io/papers/KLW_25Feb2026.pdf",
+  "date": "2026-09-21"
+ },
+ "light_texas_pnas_2020": {
+  "ok": false,
+  "status": 403,
+  "url": "https://www.pnas.org/doi/10.1073/pnas.2014704117",
+  "date": "2026-09-21"
+ },
+ "meps_2024_full_year_puf": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data_files_detail.jsp?cboPufNumber=HC-256",
+  "content_type": "text/html",
+  "title": "Medical Expenditure Panel Survey Public Use File Details",
+  "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data_files_detail.jsp?cboPufNumber=HC-256",
+  "date": "2026-09-21"
+ },
+ "mr_post_elderly_health_2026": {
+  "ok": false,
+  "status": 403,
+  "url": "https://marginalrevolution.com/marginalrevolution/2026/02/immigration-and-health-for-elderly-americans.html",
+  "date": "2026-09-21"
+ },
+ "mr_post_mass_deportation_2026": {
+  "ok": false,
+  "status": 403,
+  "url": "https://marginalrevolution.com/marginalrevolution/2026/02/the-economics-of-mass-deportation.html",
+  "date": "2026-09-21"
+ },
+ "mr_post_muni_bonds_2024": {
+  "ok": false,
+  "status": 403,
+  "url": "https://marginalrevolution.com/marginalrevolution/2024/11/unauthorized-immigration-and-local-government-finances.html",
+  "date": "2026-09-21"
+ },
+ "mr_post_nursing_homes_2021": {
+  "ok": false,
+  "status": 403,
+  "url": "https://marginalrevolution.com/marginalrevolution/2021/11/immigrants-keep-us-out-of-nursing-homes.html",
+  "date": "2026-09-21"
+ },
+ "mr_post_white_flight_2023": {
+  "ok": false,
+  "status": 403,
+  "url": "https://marginalrevolution.com/marginalrevolution/2023/07/white-flight-from-asian-immigration-evidence-from-california-public-schools.html",
+  "date": "2026-09-21"
+ },
+ "nas_2016_annex_8_2": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nationalacademies.org/read/23550/chapter/13",
+  "content_type": "text/html",
+  "title": "Read &quot;The Economic and Fiscal Consequences of Immigration&quot; at NAP.edu",
+  "url": "https://www.nationalacademies.org/read/23550/chapter/13",
+  "date": "2026-09-21"
+ },
+ "nas_2016_chapter_4_production": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nationalacademies.org/read/23550/chapter/8",
+  "content_type": "text/html",
+  "title": "Read &quot;The Economic and Fiscal Consequences of Immigration&quot; at NAP.edu",
+  "url": "https://www.nationalacademies.org/read/23550/chapter/8",
+  "date": "2026-09-21"
+ },
+ "nas_2016_chapter_7_marginal_cost": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nationalacademies.org/read/23550/chapter/12",
+  "content_type": "text/html",
+  "title": "Read &quot;The Economic and Fiscal Consequences of Immigration&quot; at NAP.edu",
+  "url": "https://www.nationalacademies.org/read/23550/chapter/12",
+  "date": "2026-09-21"
+ },
+ "nas_2016_doi": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nationalacademies.org/projects/DBASSE-CNSTAT-13-03/publication/23550",
+  "content_type": "text/html",
+  "title": "The Economic and Fiscal Consequences of Immigration",
+  "url": "https://doi.org/10.17226/23550",
+  "date": "2026-09-21"
+ },
+ "nces_f33_fy19_documentation": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://nces.ed.gov/ccd/pdf/2021306_FY19F33_Documentation.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://nces.ed.gov/ccd/pdf/2021306_FY19F33_Documentation.pdf",
+  "date": "2026-09-21"
+ },
+ "nrc_1997_chapter9": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nationalacademies.org/read/5779/chapter/9",
+  "content_type": "text/html",
+  "title": "Read &quot;The New Americans: Economic, Demographic, and Fiscal Effects of Immigration&quot; at NAP.edu",
+  "url": "https://www.nationalacademies.org/read/5779/chapter/9",
+  "date": "2026-09-21"
+ },
+ "omb_grants_by_function_hist12z3": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist12z3_fy2027.xlsx",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "title": null,
+  "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist12z3_fy2027.xlsx",
+  "date": "2026-09-21"
+ },
+ "omb_hist03z1_fy2027": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z1_fy2027.xlsx",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "title": null,
+  "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z1_fy2027.xlsx",
+  "date": "2026-09-21"
+ },
+ "omb_hist03z2_fy2027": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z2_fy2027.xlsx",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "title": null,
+  "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z2_fy2027.xlsx",
+  "date": "2026-09-21"
+ },
+ "omb_hist07z1_fy2027": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist07z1_fy2027.xlsx",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "title": null,
+  "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist07z1_fy2027.xlsx",
+  "date": "2026-09-21"
+ },
+ "omb_outlays_fy2027": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/outlays_fy2027.xlsx",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "title": null,
+  "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/outlays_fy2027.xlsx",
+  "date": "2026-09-21"
+ },
+ "openborders_double_world_gdp": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://openborders.info/double-world-gdp/",
+  "content_type": "text/html",
+  "title": "Double world GDP | Open Borders: The Case",
+  "url": "https://openborders.info/double-world-gdp/",
+  "date": "2026-09-21"
+ },
+ "place_premium_cgd_2008": {
+  "ok": false,
+  "status": 403,
+  "url": "https://www.cgdev.org/publication/place-premium-wage-differences-identical-workers-across-us-border-working-paper-148",
+  "date": "2026-09-21"
+ },
+ "plos_one_scaling_2018": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0204574",
+  "content_type": "text/html",
+  "title": "Evolution of urban scaling: Evidence from Brazil | PLOS One",
+  "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0204574",
+  "date": "2026-09-21"
+ },
+ "prison_policy_group_quarters_errors": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.prisonersofthecensus.org/news/2024/10/30/group_quarters_errors/",
+  "content_type": "text/html",
+  "title": "If the Census Bureau truly values accuracy, it should count incarcerated people at home | Prison Gerrymandering Project",
+  "url": "https://www.prisonersofthecensus.org/news/2024/10/30/group_quarters_errors/",
+  "date": "2026-09-21"
+ },
+ "smith_2024_america_please_be_reasonable": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.noahpinion.blog/p/america-please-be-reasonable-on-immigration",
+  "content_type": "text/html",
+  "title": "America, please be reasonable on immigration",
+  "url": "https://www.noahpinion.blog/p/america-please-be-reasonable-on-immigration",
+  "date": "2026-09-21"
+ },
+ "smith_mass_deportation_accomplish_nothing": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.noahpinion.blog/p/mass-deportation-would-accomplish",
+  "content_type": "text/html",
+  "title": "Mass deportation would accomplish nothing - by Noah Smith",
+  "url": "https://www.noahpinion.blog/p/mass-deportation-would-accomplish",
+  "date": "2026-09-21"
+ },
+ "st_clair_mariel_local_fiscal": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://wagner.nyu.edu/files/faculty/publications/Mariel%20Boatlift_4.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://wagner.nyu.edu/files/faculty/publications/Mariel%20Boatlift_4.pdf",
+  "date": "2026-09-21"
+ },
+ "stlouis_fed_synopses_2011_31": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://fraser.stlouisfed.org/title/economic-synopses-6715/immigration-extremes-skill-distribution-624332",
+  "content_type": "text/html",
+  "title": "Economic Synopses, Immigration at the Extremes of the Skill Distribution, 2011, No. 31 | FRASER | St. Louis Fed",
+  "url": "https://doi.org/10.20955/es.2011.31",
+  "date": "2026-09-21"
+ },
+ "treasury_debt_to_penny": {
+  "ok": false,
+  "status": "URLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certific",
+  "url": "https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/debt-to-the-penny",
+  "date": "2026-09-21"
+ },
+ "treasury_ota_distribution_methodology": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://home.treasury.gov/system/files/131/Summary-of-OTA-Distribution-Methodology-05102021.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://home.treasury.gov/system/files/131/Summary-of-OTA-Distribution-Methodology-05102021.pdf",
+  "date": "2026-09-21"
+ },
+ "yglesias_2020_one_billion_americans_nymag_excerpt": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://nymag.com/intelligencer/2020/08/one-billion-americans-by-matthew-yglesias-book-excerpt.html",
+  "content_type": "text/html",
+  "title": "‘One Billion Americans,’ by Matthew Yglesias: Book Excerpt",
+  "url": "https://nymag.com/intelligencer/2020/08/one-billion-americans-by-matthew-yglesias-book-excerpt.html",
+  "date": "2026-09-21"
+ },
+ "yglesias_2021_inflationary_economy": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.slowboring.com/p/inflationary-economy",
+  "content_type": "text/html",
+  "title": "Expanded legal immigration is the ultimate supply side reform",
+  "url": "https://slowboring.com/p/inflationary-economy",
+  "date": "2026-09-21"
+ },
+ "yglesias_2025_immigration_agenda_2029": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.slowboring.com/p/an-immigration-agenda-for-2029",
+  "content_type": "text/html",
+  "title": "An immigration agenda for 2029 - by Matthew Yglesias",
+  "url": "https://www.slowboring.com/p/an-immigration-agenda-for-2029",
+  "date": "2026-09-21"
+ },
+ "yglesias_guest_elmendorf_williams_2023_dynamic_scoring": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.slowboring.com/p/a-serious-case-for-dynamic-scoring",
+  "content_type": "text/html",
+  "title": "A serious case for dynamic scoring",
+  "url": "https://slowboring.com/p/a-serious-case-for-dynamic-scoring",
+  "date": "2026-09-21"
+ },
+ "yglesias_guest_kolko_2024_new_data": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.slowboring.com/p/can-new-data-solve-an-immigration",
+  "content_type": "text/html",
+  "title": "Can new data solve an immigration puzzle? - by Jed Kolko",
+  "url": "https://slowboring.com/p/can-new-data-solve-an-immigration",
+  "date": "2026-09-21"
+ }
+}

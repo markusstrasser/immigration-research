@@ -14,7 +14,9 @@ alone), convention cards, an exact Shapley split of the distance from the centra
 with uncounted-but-assigned amounts, a sensitivity ranking, and the full receipt and spending
 ledger with per-line allocation rule and response. Below the ledger: whose welfare the ledger
 counts, what four commentators argue (text, no number under any name), the 49 FAQ-routed
-objection cards, and the whole confidence ladder, searchable and linked to ledger lines.
+objection cards, the whole confidence ladder, searchable and linked to ledger lines, and a
+Sources section. Every assumption, card, convention and author statement carries short source
+labels that open the paper, report or dataset directly.
 
 ## Reproduce
 
@@ -24,6 +26,7 @@ uv run --no-project --with duckdb --with pandas --with numpy python3 build_model
 OPENBLAS_NUM_THREADS=1 uv run --no-project --with openpyxl --with numpy python3 scaling_check.py
 node test_engine.js
 uv run --no-project python3 build_ui.py && open derived/explorer.html
+uv run --no-project python3 check_sources.py        # optional: re-fetch every link, rewrite sources_check.json
 ```
 
 `context.json` is rebuilt with `build_context.py <inventory.json>`; it keeps a value only when every
@@ -37,6 +40,46 @@ Status is mechanical: entries 1-51 are the dated earlier layers; an entry is `qu
 opens with a bracketed correction, is named in the file's opening correction notes, or is named by
 a later entry as replaced, superseded, qualified or narrowed. Topics and ledger links are keyword
 rules and the page says so. Only current entries show by default.
+
+## Sources and links
+
+`sources.json` is the registry: 99 external sources (2026-09-21), each with authors, year, title,
+venue, link, a short label, the places on the page it supports (`control:<id>`, `card:<id>`,
+`preset:<id>`, `argue:<author>:<n>`, `ledger`, `production`, `standing`) and where this repo cites
+it (`repo_ref`, file:line). The links were mined from citations already in the repo. 13 are marked
+`resolved`: built on 2026-09-21 from an identifier the repo records (NBER number, DOI, SSRN id, a
+Census API template instantiated for 2024, a corrected host). Bibliographic details were checked
+against Crossref or the publisher's `citation_*` tags where the repo's note and the record
+disagreed (Duncan and Trejo 2017 is ILR Review 70(5), not 71(5)). [SOURCE: sources.json]
+
+`build_ui.py` refuses to build when a source lacks a link or a repo reference, or names a place
+that is not on the page, and prints the places that carry no outside source. 22 do: three author
+summaries and the assumptions the account sets itself (labor share, labor-supply response, capital
+adjustment, fiscal weight, the service, defense, interest and general-government responses). The
+page labels those "No outside source: the account sets this itself" rather than borrowing authority.
+
+`check_sources.py` fetches each link once and writes `sources_check.json`, a dated receipt: 79 of
+99 answered; 18 returned 403 to a script (CBO, PNAS, SSRN, SAGE, AEA, CGD, DHS, Marginal
+Revolution, University of Chicago Press), one host is not fetched by rule (x.com) and Treasury
+FiscalData failed certificate verification. The page marks each of them "open it by hand". Two
+links the repo pins are dead: MEPS `h256dat.zip` returns 404 and `www.meps.ahrq.gov` no longer
+resolves; the registry points at the HC-256 landing page and the host without `www`.
+
+A file named in a reference becomes a local link only when it exists in this checkout (60 on
+2026-09-21). Ladder entries keep the links their own markdown carries.
+
+The citation pass corrected three statements, on the page and in `presets.json`: Yglesias's
+"would cost taxpayers nothing" is an aside in a sentence about housing reform, with immigration as
+the comparison, so the page now says he did not argue it; the 63-66% school response is this
+repo's first-order arithmetic on CBO's two regression coefficients (0.37 and 0.34), not a figure
+CBO states; and the 1.5-2.5 substitution range follows Colas and Sachs, not the National Academies.
+
+## Wording
+
+A separate-context editing pass (`/de-slop`, 45 findings) found the page speaking the build's
+language. Options, allocation rules (47, named from the two upstream builders and guarded at build
+time), statuses and card labels now use reader words; `context.json` prose was edited directly in
+two passes that compare the multiset of numbers in every string before writing, so no value moved.
 
 ## General government: a proposal, not the published account
 
@@ -79,6 +122,10 @@ Adopting this in the published account is a change of analysis protocol and need
 - The production block is CES; increasing-returns arguments are outside it.
 - Compiled through an LLM (notes/llm-bias-caveat.md): the ledger numbers are gated, the readings
   of authors and the ladder's keyword links are not.
-- Built for a desktop window and checked there in both themes (no overflow at 1400 px; the
-  blue/orange pair passes the colour-vision validator in light and dark). At 390 px the page still
-  scrolls sideways by 7 px; the cause was not found.
+- One light theme, set as a printed handout after Tufte: off-white paper, one serif, rules only
+  where a table needs them, native form controls, colour on data marks only. The mark outlines
+  (#5c97d2, #ca7a5e) pass the palette validator on the paper colour; the pastel fills do not reach
+  3:1 against it, so every bar carries its value and the ledger tables repeat the chart.
+- Checked at 1400 px and 390 px: no horizontal overflow at either. The template must open with
+  `<!doctype html>` (the build refuses otherwise): without it browsers use quirks mode and the
+  ledger tables stop inheriting the text colour.

@@ -34,8 +34,47 @@ RULES = [
 
 
 def plain(text):
-    text = re.sub(r"\[([^\]]+)\]\((?:[^)]+)\)", r"\1", text)      # [label](url) -> label
+    text = re.sub(r"\[([^\[\]]+)\]\((?:[^)\s]+)\)", r"\1", text)  # [label](url) -> label
     return re.sub(r"\*\*|__", "", text).strip()
+
+
+LINK = re.compile(r"\[([^\[\]]+)\]\(([^)\s]+)\)|(https?://[^\s)\]>\"']+)")
+
+
+def link_parts(raw, base):
+    """The entry as text and link parts, so the page keeps the ladder's own links.
+
+    {"t": text} is plain, {"t", "u"} an external link, {"t", "r"} a file in this repo (only when
+    it exists, so the page never carries a dead local link). Concatenated "t" equals plain(raw).
+    """
+    parts, at = [], 0
+
+    def text(chunk):
+        chunk = re.sub(r"\*\*|__", "", chunk)
+        if chunk:
+            parts.append({"t": chunk})
+
+    for match in LINK.finditer(raw):
+        text(raw[at:match.start()])
+        at = match.end()
+        label, target, bare = match.group(1), match.group(2), match.group(3)
+        if bare:
+            url = bare.rstrip(".,;:")
+            at -= len(bare)-len(url)
+            parts.append({"t": url, "u": url})
+        elif target.startswith(("http://", "https://")):
+            parts.append({"t": re.sub(r"\*\*|__", "", label), "u": target})
+        else:
+            local = (base/target.split("#")[0]).resolve()
+            if target.split("#")[0] and local.is_file() and ROOT in local.parents:
+                parts.append({"t": re.sub(r"\*\*|__", "", label), "r": str(local.relative_to(ROOT))})
+            else:
+                text(label)
+    text(raw[at:])
+    if parts:
+        parts[0]["t"] = parts[0]["t"].lstrip()
+        parts[-1]["t"] = parts[-1]["t"].rstrip()
+    return parts
 
 
 NUMBER_LIST = r"((?:\d+(?![\d%]|\.\d)\s*(?:[–-]\s*\d+(?![\d%]|\.\d))?(?:\s*(?:,|/|and)\s*)?)+)"
@@ -85,8 +124,8 @@ def parse(path=LADDER) -> dict[str, Any]:
         j = i+1
         while j < len(lines) and lines[j].strip() and not re.match(r"^\d+\. |^#", lines[j]):
             j += 1
-        raw = " ".join(l.strip() for l in lines[i:j])
-        text = plain(re.sub(r"^\d+\.\s*", "", raw))
+        raw = re.sub(r"^\d+\.\s*", "", " ".join(l.strip() for l in lines[i:j]))
+        text = plain(raw)
         bracket = re.match(r"^\[([^\]]{12,})\]", text)
         if number <= 51:
             status, note = "historical", f"Dated earlier ladder, layer: {section}"
@@ -102,7 +141,7 @@ def parse(path=LADDER) -> dict[str, Any]:
                 topics.append(topic)
                 affects += [t for t in tokens if t not in affects]
         cards.append(dict(n=number, line=i+1, section=section, status=status, note=note, text=text,
-                          topics=topics or ["Other"], affects=affects))
+                          parts=link_parts(raw, path.parent), topics=topics or ["Other"], affects=affects))
     by_number = {card["n"]: card for card in cards}
     for card in cards:  # a later entry that replaces, supersedes, qualifies or narrows an earlier one
         for match in ACTS_ON.finditer(card["text"]):
