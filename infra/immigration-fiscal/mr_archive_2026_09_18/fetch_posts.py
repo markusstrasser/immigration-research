@@ -157,6 +157,15 @@ def firecrawl(url, tries=4):
     return None, "fc-429-exhausted"
 
 
+SIGNED_QUERY_RE = re.compile(r"[?&](?:X-Amz-[A-Za-z]+|AWSAccessKeyId|Signature)=", re.I)
+
+
+def strip_signed_query(href):
+    # A presigned link is expired on arrival, and its credential parameter reads as a leaked
+    # key to secret scanners (GitHub push protection blocked the 2026-09-21 push on one).
+    return href.split("?", 1)[0] if SIGNED_QUERY_RE.search(href) else href
+
+
 def node_text(el):
     parts = []
     for child in el.iterchildren():
@@ -223,7 +232,7 @@ def parse_post(doc_html, url):
         for e in ce.xpath(".//a[@href]"):
             href = re.sub(r"^https?://web\.archive\.org/web/\d+[a-z_]*/", "", e.get("href", ""))
             if href.startswith("http"):
-                links.append(href)
+                links.append(strip_signed_query(href))
     return {"title": title, "author": author, "date": date, "categories": cats, "tags": tags,
             "body_text": body, "links": sorted(set(links))}
 
