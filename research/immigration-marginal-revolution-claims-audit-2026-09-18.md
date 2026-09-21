@@ -63,6 +63,54 @@ Date: 2026-09-18. Archive: all 40,174 Marginal Revolution posts inventoried from
 
 Quoted-block claims (663 of 1,093) are the blog quoting papers and columns and were not graded; the parent grades the authors, not their sources. Claims typed "other" (405) and "political" (135) were read and are not fiscal or crime claims; the political rows above are the ones with a repo measurement. 137 candidates from the 2004 site-map dump were not fetched, none with an immigration slug. Firecrawl spent 164 of 250 authorized credits. [SOURCE: `RESULT.md`]
 
+## 5. Leads in the archive with no repo coverage (checked 2026-09-21)
+
+[DATA: author and keyword search over `research/*.md` and lane READMEs. The blog text is the
+archived post; the papers themselves were not read, so every finding below is an abstract as
+quoted by the blog, [UNVERIFIED] beyond that.] The archive's recall is limited for subtopics
+(one post mentions "amnesty", none "bracero"), so absence from the archive says nothing about
+the blog.
+
+1. **Local budgets priced by the bond market.** "Unauthorized Immigration and Local Government
+   Finances" (SSRN 5026977; [post, 2024-11-30](https://marginalrevolution.com/marginalrevolution/2024/11/unauthorized-immigration-and-local-government-finances.html)):
+   TRAC origin-and-arrival data with a shift-share instrument. Municipal yields fall where
+   labour markets are structurally tight and rise in typical and in sanctuary areas; local
+   spending on welfare, construction, education and law enforcement rises and is "not offset
+   by higher tax revenues". [INFERENCE] It speaks to the account's least-identified parameter,
+   how far service budgets respond to population (63–66% for schools against full
+   proportionality), and to ladder 138 and 149, where the repo's own county test was too
+   imprecise to choose.
+2. **Elder care.** Butcher, Moran and Watson ([post, 2021-11-30](https://marginalrevolution.com/marginalrevolution/2021/11/immigrants-keep-us-out-of-nursing-homes.html)):
+   a ten-point rise in the less-educated foreign-born labour share lowers institutionalization
+   of the US-born elderly by 1.5 points at 65+ and 3.8 at 80+, 26–29% of the mean. Grabowski,
+   Gruber and McGarry (NBER w34791; [post, 2026-02-11](https://marginalrevolution.com/marginalrevolution/2026/02/immigration-and-health-for-elderly-americans.html)):
+   1,000 new immigrants add 142 foreign health-care workers without native crowd-out, and a
+   25% higher inflow means 5,000 fewer deaths a year, through less nursing-home use. No memo
+   covers the channel and the complete account has no long-term-care term. [INFERENCE] It is
+   the one channel found where the group's presence could lower a large spending line of
+   other residents, since Medicaid is the main payer of nursing-home care [TRAINING-DATA]; it
+   is also absent from the $21.8bn prices-and-hours benefit. Both papers are shift-share
+   designs on all less-educated immigrants, not on Mexican-origin residents.
+3. **General-equilibrium removal model.** Cravino, Levchenko, Ortega and Pandalai-Nayar (NBER
+   w34790; post 2026-02-12): removing half of unauthorized immigrants raises native real
+   wages 0.15% in the short run and lowers them 0.33% in the long run as capital decumulates;
+   farm-sector prices rise about 1%. Model output, the evidence level of Colas–Sachs.
+   [INFERENCE] Use: an outside magnitude check on the account's $8.8–13.3bn production gains.
+4. **White flight from Asian immigration.** Boustan, Cai and Tseng (NBER w31434; post
+   2023-07-10): white enrollment falls in high-income California districts as Asian students
+   arrive, not explained by prices or Hispanic arrivals. [INFERENCE] A published positive
+   flight result to set beside the repo's non-reproduction for Hispanic inflows (ladder 141).
+5. **"The Misery of Diversity"** (NBER w33163; post 2024-11-19): diversity lowers subjective
+   well-being through cohesion and state capacity, from a historical natural experiment.
+   Bears on the norms and trust entries (ladder 133–134).
+6. **Second-generation Black immigrants' earnings** (NBER w34327; post 2025-10-12): women at
+   or above white women, men 10% below at the median. A by-origin contrast for the
+   Mexican-origin second-generation result.
+
+Already covered: Akee–Chin–Crown on return migration (ladder 92), Cowen's house-price test
+(hedonic lane, ladder 155), Tiburcio–Camarena (ladder 149), the Danish benefit cut (C9), the
+German fiscal analysis (C10), Boustan et al. on fifteen destination countries (paper-gaps memo).
+
 ## Revisions
 
 - 2026-09-20: Separated institutional residence, civil detention, criminal offenses and fiscal costs; historical counts are retained with narrower interpretation. [Decision](../decisions/2026-09-20-separate-detention-offenses-and-spending.md).
