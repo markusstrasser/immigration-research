@@ -11,6 +11,28 @@ services) and the [generation ledger](immigration-yearly-lifetime-cost-repair-20
 (same-age gap against third-plus non-Hispanic whites: Mexico-born −$7,584, second generation
 −$7,521, third-plus −$6,195 per person, standard errors 384, 615 and 457).
 
+## Before combining numbers from different entries
+
+**The two anchors are different objects.** The generation gaps and the age structures (entries
+1, 3, 5, 10) come from the generation ledger pinned on September 19: per-person balances against
+a reference group, or the group's own balance re-weighted by age. Entries 7 and 9 rest on
+separate partial accounts. The $165–197bn (entries 2, 4, 11) is the September 20 complete
+account's change for all other residents under a stated service-response assumption, with no
+reference group; it carries later corrections that were not propagated to the ledger (ladder
+161) and has no generation dimension yet. They agree in direction. One is not a decomposition
+of the other, and the generation split must not be scaled onto the complete-account total.
+
+**Offsets do not add.** The production gain ($8.8–13.3bn) is already inside the headline. Prices
+and native hours ($21.8bn) overlap it. The elder-care figure ($2.3–14.9bn) is an upper bound on
+one omitted channel. The complementarity figure ($26.8–80.4bn) covers half of all unauthorized
+workers of every origin and is matched by other immigrants' losses. No ratio of "offsets to
+cost" can be formed from these.
+
+**A result refutes a claim only when population, horizon and outcome match.** Entry 5 compares
+Mexican-origin generations alive in 2024 with whites at common ages. The National Academies
+results it is usually set against are all origins, followed from arrival, with descendants,
+discounted, under a budget rule. Neither refutes the other.
+
 ## 1. "They are young. Children cost money everywhere and pay it back later."
 
 Steel-man: a population that is 30% under 18 will look expensive in any single year.
@@ -55,7 +77,11 @@ for the union, $2,653 of lower spending against $9,735 of lower receipts. [SOURC
 Steel-man: cheaper services, complementary labour and capital returns never appear in a
 fiscal ledger. Finding: the account adds production gains and the induced taxes on them:
 $8.8bn (cash scaling) to $13.3bn (GDP scaling), $6–21bn across the parameter grid. Omitted
-benefits would have to reach $165–197bn a year to offset the main case. Consumer prices and
+benefits would have to reach $165–197bn a year to offset the main case. That threshold is
+conditional on the service-response share, which is assumed and unmeasured: it is $121–160bn
+if non-school education budgets are also held fixed and reaches zero where 18.5–25.8% of
+assigned service costs are incremental (entry 2), so the response share moves the result more
+than any offset listed here. Consumer prices and
 native women's hours are priced at $21.8bn *(routed)* and overlap the factor-income gains,
 so they are not added. Crime, housing, innovation and institutions are unpriced in both
 directions. [SOURCE: complete account; [prices and hours](immigration-consumer-price-and-native-hours-2026-09-18.md)]
@@ -73,6 +99,23 @@ union gap to −$6,864 *(routed)*. [SOURCE: generation ledger;
 `infra/immigration-fiscal/ledger_asec2026_2026_09_16/RESULT.md`;
 [population total](immigration-mexican-origin-population-total-2026-09-19.md)]
 
+Scope: these are generations alive in 2024, not one lineage followed over time. Today's
+third-plus adults descend mostly from arrivals before about 1970 [INFERENCE from generation
+lengths], so the step from second to third-plus is not a forecast for the grandchildren of
+recent arrivals. The first and second generations are indistinguishable ($62 apart, standard
+error at most 725); the third-plus is $1,389 better than the first, at least 2.3 standard errors
+[CALCULATION from `complete_gaps.csv`; the white reference's sampling error sits in both gaps, so
+these standard errors are upper bounds]. On the personal allocation the gap at white ages
+narrows at each step (−$7,830, −$6,799, −$6,018); on the shared allocation it is −$7,525,
+−$7,443, −$6,116 [`age_normalizations.csv`]. The National Academies results are a different
+object: all origins, from arrival, with descendants, discounted. The 1997 volume's baseline is
++$80,000 per immigrant with descendants and −$15,000 with no fiscal adjustment (1996 dollars), and its rule of
+holding debt at the 2016 share of GDP did not happen (76.0% → 97.4% by 2024), which the
+[back-tests](immigration-projection-backtest-2026-09-19.md) grade as a failed policy assumption
+and not as a failure of assimilation; the 2016 volume's sign turns on its public-goods and
+descendant scenarios ([canon audit](immigration-canon-citation-audit-2026-09-17.md), C9). Would
+change it: a linked parent–child file, or the second generation tabulated by birth cohort.
+
 ## 6. "Comparing with whites is cherry-picking."
 
 Finding: against all natives the same-age gaps are −$5,404, −$5,342 and −$4,015; against
@@ -88,6 +131,23 @@ Mexico-born adults outperform below-high-school natives at common ages, while hi
 adults do worse. The aggregate gap is largely a composition effect, which is a description of
 who the residents are and does not make the dollars smaller.
 [SOURCE: [education-specific accounts](immigration-education-fiscal-and-methods-2026-09-19.md)]
+
+Size and scope (Mexico-born, ages 25–64, common ages, dollars per person per year):
+
+| Comparison | Personal allocation | Household costs shared |
+|---|---:|---:|
+| Below high school, against natives below high school | +2,709 (+880 to +4,539) | +2,263 (+751 to +3,774) |
+| Below high school, against third-plus whites below high school | +1,020 (−1,761 to +3,800) | +705 (−1,339 to +2,749) |
+| High school only, against natives with high school only | −2,122 (−3,511 to −733) | −2,286 (−3,645 to −926) |
+| High school only, against third-plus whites with high school only | −4,008 (−5,619 to −2,397) | −4,026 (−5,637 to −2,416) |
+| Below high school, against natives of all schooling | −16,519 | −13,502 |
+
+The advantage over natives below high school holds under both allocations. Against whites
+below high school, the reference group used everywhere else in this file, it cannot be told
+from zero. The cell's own balance is still negative (−$1,951 personal, −$5,558 shared); that
+is a level and should not be set against the gaps in the table. [SOURCE:
+`infra/immigration-fiscal/education_origin_fiscal_2026_09_19/derived/comparisons.csv`, account
+`expanded_excluding_N`, entry `stock`; `RESULT.md`]
 
 ## 8. "One year proves nothing, and benefit rules keep changing."
 
@@ -121,7 +181,10 @@ Finding: at the white age structure and today's rates the 40.9m residents' balan
 −$217bn to −$340bn. Social Security and other cash add $70bn, public medical $80bn; schools
 save $31bn; custody-type institutional cost falls $1.4bn while nursing cost rises $9.2bn. This
 is a composition exercise on the September 19 ledger, not a forecast. [SOURCE: age structures
-section, `age_normalizations_by_category.csv`]
+section, `age_normalizations_by_category.csv`] Would change it: US-born cohorts reaching 65 with
+higher covered earnings than the 0.5m second-generation and 1.0m third-plus residents born
+before about 1960 whose rates fill the 65+ cells today (ladder 161). The sign of the
+composition effect at today's rates is solid; its size for future cohorts is not measured.
 
 ## 11. "So ending this migration would save $165–197bn?"
 
@@ -137,6 +200,16 @@ headline contains no group-specific crime cost, and victim costs are outside a f
 Start from the [custody and crime measurement rule](immigration-detention-crime-and-fiscal-scope-2026-09-20.md)
 and the [generation incarceration memo](immigration-mexican-origin-generation-incarceration-2026-09-16.md)
 before quoting any ratio.
+
+No single year should be quoted alone. US-born Mexican-origin men aged 18–39 in institutional
+group quarters, as a ratio to native non-Hispanic white men: 2.56× (2010), 1.91× (2019), 1.72×
+(2023, the low point), 1.94× (2024); flat near 1.9× since 2019, and 2.1–2.3× after prison
+records coded generically "Hispanic" are reallocated. Their 2023 parity with all natives (1.92%
+against 2.05%) is the raw figure; reallocated it is 2.36%, and the 2024 rates are 2.04% raw and
+2.34% reallocated. The 2000 figure of 3.45× counts correctional institutions only and the later
+series counts every institution, so 2000 to 2010 is not like-for-like; immigration detention
+inflates the foreign-born rows only. [SOURCE: ladder 65; generation incarceration memo, table and "ACS 2024 added";
+`infra/immigration-fiscal/acs_institutional_2026_09_16/acs_institutional_rates.csv`]
 
 ## 13. "Immigrant care workers keep the elderly out of nursing homes and save Medicaid money."
 
@@ -171,4 +244,20 @@ at these magnitudes it changes the size of the net cost and leaves its sign. [SO
 ## Instrument
 
 LLM-assisted allocation and synthesis on a politically charged topic. Every answer above
-names the assumption that would reverse it; see `notes/llm-bias-caveat.md`.
+names the assumption that would reverse it; see `notes/llm-bias-caveat.md`. A summary that
+ranks findings by how much they surprise the model selects for results that contradict its
+prior, which is also where errors concentrate; surprising results need more checking before
+they get more prominence.
+
+## Revisions
+
+- 2026-09-21 (scope pass). A second agent's ranked summary of this repo set the two anchors
+  side by side as one picture, read entry 5 as refuting the National Academies result, formed
+  a ratio from non-additive offsets, and quoted the 2023 incarceration low point; the operator
+  pasted its self-critique and every figure was re-checked against the cited files. Added
+  "Before combining numbers"; the conditional threshold in entry 4; scope, difference tests and
+  the object mismatch in entry 5; sizes under both allocations and the white comparison in
+  entry 7; the reversing condition in entry 10; the year-by-year series in entry 12. One
+  correction to that critique is recorded in entry 7: the below-high-school advantage over
+  natives survives the shared allocation (+$2,263); the −$5,558 it cited is the cell's level.
+  No headline number changed.
