@@ -6,7 +6,7 @@
  --display:Charter,"Iowan Old Style","Palatino Linotype",Georgia,serif;--body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--data:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ground:#111614;--surface:#19201d;--ink:#eef3ef;--ink2:#c2cdc6;--muted:#93a097;--rule:#2e3833;--accent:#74c7aa;--accent-soft:#1f3029;--pos:#3987e5;--neg:#d95926;--ghost:#4b5751;--lit:#3a3413;--warn:#e0b060}}
 :root[data-theme="dark"]{--ground:#111614;--surface:#19201d;--ink:#eef3ef;--ink2:#c2cdc6;--muted:#93a097;--rule:#2e3833;--accent:#74c7aa;--accent-soft:#1f3029;--pos:#3987e5;--neg:#d95926;--ghost:#4b5751;--lit:#3a3413;--warn:#e0b060}
-*{box-sizing:border-box}
+*{box-sizing:border-box} html{scroll-padding-top:104px}
 body{margin:0;background:var(--ground);color:var(--ink);font:14px/1.45 var(--body)}
 .wrap{max-width:1360px;margin:0 auto;padding-inline:20px;padding-block:22px 60px;display:flex;flex-direction:column;gap:22px}
 h1{font:600 28px/1.15 var(--display);margin:0;text-wrap:balance}
@@ -31,20 +31,20 @@ button{font:inherit;color:inherit;cursor:pointer}
 .main{display:grid;grid-template-columns:minmax(300px,380px) minmax(0,1fr);gap:22px;align-items:start}
 @media (max-width:900px){.main{grid-template-columns:minmax(0,1fr)}}
 .panel{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px}
-.stack{display:flex;flex-direction:column;gap:22px;min-width:0}
+.stack{display:flex;flex-direction:column;gap:22px;min-width:0} .main>*,.stack>*{min-width:0;max-width:100%}
 .big{font:600 52px/1 var(--display);background:none!important;font-variant-numeric:tabular-nums}
-.big.neg{color:var(--neg)} .big.pos{color:var(--pos)} .unit{font:16px var(--body);color:var(--muted);margin-left:6px}
+.big,#b-value{color:var(--ink);padding-left:10px;border-left:6px solid var(--rule)} .big.neg,#b-value.neg{border-left-color:var(--neg)} .big.pos,#b-value.pos{border-left-color:var(--pos)} .unit{font:16px var(--body);color:var(--muted);margin-left:6px}
 .hl{display:flex;flex-direction:column;gap:6px}
 .status{display:inline-block;font-size:12px;padding:3px 8px;border-radius:4px;border:1px solid var(--rule);color:var(--ink2);align-self:flex-start}
 .status.grid{border-color:var(--accent);color:var(--accent)} .status.own{border-color:var(--warn);color:var(--warn)}
-ul.bars{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:3px}
-ul.bars li{display:grid;grid-template-columns:minmax(150px,1.2fr) minmax(80px,1fr) auto;gap:10px;align-items:center;padding:3px 6px;border-radius:4px}
+ul.bars{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:minmax(150px,1.2fr) minmax(80px,1fr) auto;gap:3px 10px}
+ul.bars li{display:grid;grid-template-columns:subgrid;grid-column:1/-1;align-items:center;padding:3px 6px;border-radius:4px}
 .dl em{display:block;font-style:normal;font:12px var(--data);color:var(--muted)} .db{height:10px;background:var(--accent-soft);border-radius:3px;overflow:hidden}.db i{display:block;height:10px}
 .dv,.tv{font:12px var(--data);color:var(--ink2);white-space:nowrap}
 .tb{position:relative;height:12px;background:var(--accent-soft);border-radius:3px}.tb .bar{position:absolute;top:0;height:12px;background:var(--accent);border-radius:3px;min-width:2px}.tb .now{position:absolute;top:-3px;width:2px;height:18px;background:var(--ink)}
-@media (max-width:700px){ul.bars li{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:700px){ul.bars{grid-template-columns:minmax(0,1fr)}}
 .lit{background:var(--lit)!important}
-svg{width:100%;height:auto;display:block} svg text{font:12px var(--body);fill:var(--ink)} svg .val{font:12px var(--data);fill:var(--ink2)} svg .dlt{fill:var(--muted)} svg .tot{font-weight:700}
+svg{width:100%;height:auto;display:block} svg text{font:12px var(--body);fill:var(--ink)} svg .val{font:12px var(--data);fill:var(--ink2);paint-order:stroke;stroke:var(--surface);stroke-width:4px;stroke-linejoin:round} svg .dlt{fill:var(--muted)} svg .tot{font-weight:700}
 svg .axis{stroke:var(--ink2);stroke-width:1} svg .link{stroke:var(--ghost);stroke-width:1;stroke-dasharray:2 2} svg .ghost{fill:none;stroke:var(--ghost);stroke-width:1.5;stroke-dasharray:4 3}
 svg g.lit rect.pos,svg g.lit rect.neg{stroke:var(--ink);stroke-width:1.5} .scroll{overflow-x:auto}
 fieldset{border:0;border-top:1px solid var(--rule);margin:0;padding:12px 0 4px;display:flex;flex-direction:column;gap:12px}
@@ -52,7 +52,7 @@ legend{font:600 13px var(--body);letter-spacing:.05em;text-transform:uppercase;c
 .ctl{display:grid;gap:3px;padding:4px 6px;border-radius:6px;border-left:3px solid transparent}.ctl.differs{border-left-color:var(--neg)}
 .ctl label{font-weight:600;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
 .reset{border:0;background:none;color:var(--muted);font-size:12px;text-decoration:underline;padding:0}
-.ctl input[type=range]{width:100%;accent-color:var(--accent)} output{font:12px var(--data);color:var(--ink2)}
+.ctl input[type=range]{width:100%;margin-inline:0;accent-color:var(--accent)} output{font:12px var(--data);color:var(--ink2)}
 .help{font-size:12px;color:var(--muted);margin:0}
 .seg{display:flex;flex-wrap:wrap;gap:4px}.seg button{background:var(--ground);border:1px solid var(--rule);border-radius:5px;padding:3px 8px;font-size:13px}.seg button.on{background:var(--accent);border-color:var(--accent);color:var(--surface)}
 table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;padding:4px 8px;border-bottom:1px solid var(--rule);vertical-align:middle}
@@ -69,14 +69,41 @@ tr.grp th,tr.grp td{background:var(--accent-soft);font-weight:600} .key{font:12p
 #context header{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}.faq{font:12px var(--data);color:var(--muted)}
 .obj{font:italic 14px var(--display);color:var(--ink2)} #context ul{margin:0;padding-left:0;list-style:none;font-size:13px}#context li b{font:13px var(--data)}#context li span{color:var(--muted)}
 .rule{font-size:12px;color:var(--warn)} footer{margin-top:auto}
+#bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--rule);box-shadow:0 2px 10px rgba(0,0,0,.08)}
+#bar .in{max-width:1360px;margin:0 auto;padding-inline:20px;padding-block:8px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 22px;align-items:center}
+#bar .res{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap} #bar .lbl{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+#b-value{font:600 30px/1 var(--display);font-variant-numeric:tabular-nums;background:none!important;border-left-width:4px;padding-left:8px}
+#bar .small{font:12px var(--data);color:var(--ink2)} #bar .res .small+.small{border-left:1px solid var(--rule);padding-left:8px}
+#b-active{grid-column:1/-1;min-width:0;font-size:13px;color:var(--ink2);min-height:1.45em} #b-active b{color:var(--ink)}
+@media (max-width:700px){#bar .in{grid-template-columns:minmax(0,1fr)} #b-value{font-size:24px}}
+.rng{position:relative;display:block;padding-bottom:9px}.rng input{display:block}
+.rng .cm{position:absolute;bottom:0;width:2px;height:8px;background:var(--accent);transform:translateX(-1px)} .rng .xm{position:absolute;bottom:2px;width:1px;height:5px;background:var(--ghost)}
+.cval{font:12px var(--data);color:var(--muted);font-weight:400;white-space:nowrap} .seg button.central{box-shadow:inset 0 -3px 0 var(--accent)} .seg button.on.central{box-shadow:inset 0 -3px 0 var(--accent-soft)}
+.preset.current{border-style:dashed;cursor:default}
+.authors{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:14px}
+.authors article{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.authors ul{margin:0;padding-left:18px} .authors .q{margin:0;padding-left:10px;border-left:2px solid var(--rule)} .authors .q code{display:block}
+.link{background:none;border:0;padding:0;color:var(--accent);text-decoration:underline;font-weight:600}
+.standing td:first-child{font-weight:600;white-space:nowrap}.standing td:last-child{font:12px var(--data);color:var(--muted);white-space:nowrap}
+.filters{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0}.filters input[type=search]{flex:1 1 240px;font:inherit;padding:5px 8px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink)}
+.chip{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:2px 10px;font-size:12px}.chip.on{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+#ladder{display:flex;flex-direction:column;gap:6px;max-height:720px;overflow-y:auto;border:1px solid var(--rule);border-radius:8px;padding:8px;background:var(--surface)}
+#ladder details{padding:6px 8px;border-radius:6px;border-left:3px solid var(--rule)}#ladder details.current{border-left-color:var(--accent)}#ladder details.qualified{border-left-color:var(--warn)}
+#ladder summary{cursor:pointer;display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:baseline}#ladder .n{font:12px var(--data);color:var(--muted)}#ladder .body{margin:6px 0 0 0;color:var(--ink2)}
+#ladder .meta{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}.tag.current{border-color:var(--accent);color:var(--accent)}.tag.qualified{border-color:var(--warn);color:var(--warn)}.tag.historical{color:var(--muted)}
+.find{background:none;border:0;padding:0;margin-left:8px;color:var(--accent);font:12px var(--body);text-decoration:underline;font-weight:400}
 </style>
+<div id="bar" role="status" aria-live="polite"><div class="in">
+  <div class="res"><span class="lbl" id="b-name"></span><span id="b-value"></span><span class="small">bn a year</span><span class="small" id="b-range"></span><span class="small" id="b-delta"></span></div>
+  <div class="tools"><button id="undo" type="button">Undo</button><button id="reset-all" type="button">Back to central case</button></div>
+  <div id="b-active"></div>
+</div></div>
 <div class="wrap">
   <div class="top">
     <div><h1>Fiscal Assumption Explorer</h1><p class="sub" id="scope"></p></div>
-    <div class="tools"><button id="undo" type="button">Undo</button><button id="reset-all" type="button">Back to central case</button></div>
   </div>
   <section aria-label="Presets"><h2>Start from a view of the account</h2>
-    <p class="sub">Each card evaluates the same ledger under a different set of assumptions; the bar shows where it lands, in billions of dollars a year. Author cards are reconstructions from claims recorded in this repo's audits, not quoted positions.</p>
+    <p class="sub">Each card evaluates the same ledger under a different set of assumptions; the bar shows where it lands, in billions of dollars a year. Cards are accounting conventions, not people: no commentator produced a number for this population, so none appears under a name. What four commentators argue is set out in text further down.</p>
     <div id="presets"></div></section>
   <div class="main">
     <aside class="panel" aria-label="Assumptions"><h2>Assumptions</h2><p class="help">An orange edge marks a setting that differs from the central case. Hover anything to light up what it touches.</p><div id="controls"></div></aside>
@@ -93,9 +120,14 @@ tr.grp th,tr.grp td{background:var(--accent-soft);font-weight:600} .key{font:12p
   </div>
   <section class="panel"><h2>The ledger</h2><p class="sub">Every 2024 national-accounts receipt and expenditure, the rule that assigns a share to the group, and how much of it the current assumptions count. Change a line's allocation rule (each option is an executed allocation) or its response.</p>
     <div class="ledgers"><div class="scroll"><h3>Receipts</h3><table id="ledger-receipts"></table></div><div class="scroll"><h3>Spending</h3><table id="ledger-spending"></table></div></div></section>
-  <section><h2>Outside this account</h2><p class="sub">Executed results that sit beside the ledger. The tag says whether a number is already inside the result, overlaps it, or measures a different object. None of them can simply be added.</p><div id="context"></div></section>
+  <section><h2 id="standing-title"></h2><div class="panel"><div class="scroll"><table class="standing" id="standing"></table></div><p class="sub" id="standing-text" style="margin-top:8px"></p></div></section>
+  <section><h2>What four commentators argue, and where it meets this ledger</h2><p class="sub">Their words and the repo's audit references. Where a convention of this ledger comes close to a claim, the link loads it; the number belongs to the convention, not to the author.</p><div class="authors" id="authors"></div></section>
+  <section><h2>Objections, with the executed result for each</h2><p class="sub">Executed results that sit beside the ledger. The tag says whether a number is already inside the result, overlaps it, or measures a different object. None of them can simply be added.</p><div id="context"></div></section>
+  <section id="ladder-section"><h2>Everything else the repo has measured</h2><p class="sub" id="ladder-note"></p>
+    <div class="filters"><input type="search" id="ladder-q" placeholder="Search the ladder: school flight, Tiebout, incarceration, rent ..." aria-label="Search ladder entries"><label class="small"><input type="checkbox" id="ladder-all"> include qualified and historical entries</label></div>
+    <div class="filters" id="ladder-topics"></div><div id="ladder"></div></section>
   <p class="help">Instrument: this page, its presets and its context cards were compiled through an LLM, which has systematic dispositions on politically charged topics (notes/llm-bias-caveat.md). The ledger numbers are gated against the executed account; the readings of the four authors are interpretation and are tagged as such.</p>
 </div>
-<script>window.MODEL=/*MODEL*/;window.PRESETS=/*PRESETS*/;window.CONTEXT=/*CONTEXT*/;</script>
+<script>window.MODEL=/*MODEL*/;window.PRESETS=/*PRESETS*/;window.CONTEXT=/*CONTEXT*/;window.EVIDENCE=/*EVIDENCE*/;window.LADDER=/*LADDER*/;</script>
 <script>/*ENGINE*/</script>
 <script>/*UI*/</script>
