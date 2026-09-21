@@ -1,71 +1,71 @@
 {
-  "note": "Number cards are ACCOUNTING CONVENTIONS, never people: no commentator produced a number for this population, so none is shown under a name. The authors section is text: what each argues, which object the claim is about, the convention in this ledger that comes closest (if any) and why it is not the same thing.",
+  "note": "Number columns are accounting conventions, never people: no commentator produced a number for this population. The authors section is text: what each argues, what the claim is about, the convention in this ledger that comes closest (if any) and why it is not the same thing. External links live in sources.json, keyed to the ids used here.",
   "presets": [
     {
       "id": "repo_central", "kind_label": "This repo, published", "label": "CBO-informed central case",
-      "summary": "Schools respond 63-66%, colleges and other services fully, roads and parks not at all; defense, general government, existing interest and business subsidies held fixed; production gain counted.",
-      "scope_note": "Only two inputs are CBO's: the tax-incidence rules and the 63-66% school response. Zero response for defense, general government and interest is an assumption of this account; the next card tests the general-government part.",
+      "summary": "School spending follows enrollment 63-66%, colleges and other services fully, roads and parks not at all. Defense, general government, interest on existing debt and business subsidies are held fixed. The gain from the group's work is counted.",
+      "scope_note": "Only two inputs rest on CBO: the rules for who bears each tax, and the school figure, which this repo derives from a CBO regression. Holding defense, general government and interest at zero is this account's assumption. The column \"Central case, general government grows with the population\" tests the general-government part.",
       "settings": [
-        {"path": "school_response", "value": 0.63, "label": "School response", "basis": "stated", "note": "CBO 63-66%; the band is swept in the range.", "ref": "full_account_2026_09_20/service_response.py"},
-        {"path": "school_response_band", "value": [0.63, 0.66], "label": "School response band", "basis": "stated", "note": "Both executed values enter the unresolved range."},
-        {"path": "other_education_response", "value": 1, "label": "Non-school education", "basis": "stated", "note": "Profile cbo_category_lag_non_school_full; the fixed variant gives 121-160 bn."},
-        {"path": "delayed_response", "value": 0, "label": "Slow categories", "basis": "stated", "note": "Economic affairs and recreation held fixed."}
+        {"path": "school_response", "value": 0.63, "label": "School spending", "basis": "stated", "note": "CBO's state panel: spending per pupil grows 0.37 points slower for each point of enrollment growth, and 0.34 points faster for each point of decline. Total school spending then moves 63-66% as much as enrollment. These are two point values; the range covers both.", "ref": "full_account_2026_09_20/service_response.py; notes/immigration-service-response-external-evidence-2026-09-20.md:17"},
+        {"path": "school_response_band", "value": [0.63, 0.66], "label": "School spending, both values", "basis": "stated", "note": "Both values enter the range of open choices."},
+        {"path": "other_education_response", "value": 1, "label": "College and other education", "basis": "stated", "note": "The account's profile cbo_category_lag_non_school_full. Holding this at zero instead gives 121-160 bn."},
+        {"path": "delayed_response", "value": 0, "label": "Roads, economic affairs, parks", "basis": "stated", "note": "Held fixed."}
       ],
-      "misses": ["Second-generation and lifetime dynamics: this is one income year of a resident stock.", "Any crime-specific cost: police, courts and prisons are charged per head.", "Prices, elder care and complementarity beyond the CES gain (see the evidence sections; none can simply be added)."]
+      "misses": ["Second-generation and lifetime dynamics: this is one income year of a population already here.", "Any cost specific to crime: police, courts and prisons are charged per head.", "Prices, elder care and gains from complementary skills beyond the production model (see \"Objections, with the result this repo computed for each\"; none of them can be added)."]
     },
     {
-      "id": "repo_central_gg", "kind_label": "Proposed, not adopted", "label": "Central, general government scales with people",
-      "summary": "The central case with general government no longer fixed. Tax collection, financial management and state and local administration grow with population; legislatures and the federal executive do not. Defense and interest on debt already issued stay fixed.",
-      "scope_note": "A proposal raised on 2026-09-21, not the published account. 63% of general government outside interest is state and local, and across the 50 states administration spending rises 8.4% for every 10% more residents. That is long-run evidence about scale, not a measured response to this group.",
+      "id": "repo_central_gg", "kind_label": "Proposed, not adopted", "label": "Central case, general government grows with the population",
+      "summary": "The central case, except that general government is no longer fixed. Tax collection, financial management and state and local administration grow with the population; legislatures and the federal executive do not. Defense and interest on debt already issued stay fixed.",
+      "scope_note": "Raised on 2026-09-21. 63% of general government outside interest is state and local, and across the 50 states administration spending rises 8.4% for every 10% more residents. That is long-run evidence about scale, not a measured response to this group.",
       "settings": [
-        {"path": "school_response", "value": 0.63, "label": "School response", "basis": "stated", "note": "As the central case."},
-        {"path": "school_response_band", "value": [0.63, 0.66], "label": "School response band", "basis": "stated", "note": "As the central case."},
-        {"path": "other_education_response", "value": 1, "label": "Non-school education", "basis": "stated", "note": "As the central case."},
-        {"path": "delayed_response", "value": 0, "label": "Slow categories", "basis": "stated", "note": "As the central case."},
-        {"path": "general_government_response", "value_from": "composite_low", "label": "General government", "basis": "implied", "note": "Low end of the implied range: federal executive and legislative held fixed, federal tax collection and all state and local administration at their cross-state elasticities.", "ref": "assumption_explorer_2026_09_21/scaling_check.py; BEA Table 3.16 lines 3-6, 44-47; Census 2022 State and Local Government Finance Table 1"}
+        {"path": "school_response", "value": 0.63, "label": "School spending", "basis": "stated", "note": "As in the central case."},
+        {"path": "school_response_band", "value": [0.63, 0.66], "label": "School spending, both values", "basis": "stated", "note": "As in the central case."},
+        {"path": "other_education_response", "value": 1, "label": "College and other education", "basis": "stated", "note": "As in the central case."},
+        {"path": "delayed_response", "value": 0, "label": "Roads, economic affairs, parks", "basis": "stated", "note": "As in the central case."},
+        {"path": "general_government_response", "value_from": "composite_low", "label": "General government", "basis": "implied", "note": "The low end of the implied range: the federal executive and legislature held fixed, federal tax collection and all state and local administration growing as they do across states.", "ref": "assumption_explorer_2026_09_21/scaling_check.py; BEA Table 3.16 lines 3-6 and 44-47; Census 2022 State and Local Government Finance, Table 1"}
       ],
-      "misses": ["A causal estimate: a cross-section of states shows how administration scales in the long run, not what one group's presence adds.", "Federal police, courts and prisons (82.8 bn, FBI included) are not here: they were already charged, inside police, courts and prisons."]
+      "misses": ["A causal estimate. A comparison across states shows how administration scales in the long run, not what one group's presence adds.", "Federal police, courts and prisons (82.8 bn, the FBI among them) are not here: they were already charged, inside police, courts and prisons."]
     },
     {
       "id": "proportional", "kind_label": "This repo, published", "label": "All services at average cost",
-      "summary": "Every public service scales one for one with population. The account's proportional benchmark, 270-289 bn.",
-      "settings": [{"label": "All category responses at 1", "basis": "stated", "note": "Profile proportional_reference.", "ref": "full_account_2026_09_20/derived/service_response_summary.csv"}],
-      "misses": ["Evidence that school budgets respond less than one for one in the short run (CBO 63-66%)."]
+      "summary": "Every public service grows one for one with the population. This is the account's proportional benchmark, 270-289 bn.",
+      "settings": [{"label": "Every service category at 1", "basis": "stated", "note": "The account's profile proportional_reference.", "ref": "full_account_2026_09_20/derived/service_response_summary.csv"}],
+      "misses": ["Evidence that school budgets move less than one for one with enrollment in the short run (63-66%, derived from CBO)."]
     },
     {
       "id": "taxes_minus_benefits", "kind_label": "Convention", "label": "Taxes paid minus benefits received",
-      "summary": "The common tally: what the group remits against the cash and in-kind benefits it draws. No schools, no police, no production side.",
+      "summary": "The common tally: what the group pays in taxes against the cash and in-kind benefits it draws. No schools, no police, no production side.",
       "settings": [
-        {"path": "service_response", "value": 0, "label": "Public services", "basis": "not_addressed", "note": "A taxes-versus-benefits tally never charges services."},
-        {"path": "count_production", "value": false, "label": "Production gain", "basis": "not_addressed", "note": "A budget tally has no production side."}
+        {"path": "service_response", "value": 0, "label": "Public services", "basis": "not_addressed", "note": "A tally of taxes against benefits never charges services."},
+        {"path": "count_production", "value": false, "label": "Gain from the group's work", "basis": "not_addressed", "note": "A budget tally has no production side."}
       ],
-      "misses": ["Education: about 200 bn assigned to this group, the largest single line in the ledger.", "Police, courts, health and other services: about 158 bn.", "The production gain that a budget tally also leaves out."]
+      "misses": ["Education: about 200 bn assigned to this group, the largest single line in the ledger.", "Police, courts, health and other services: about 158 bn.", "The gain from the group's work, which a budget tally also leaves out."]
     },
     {
       "id": "no_services", "kind_label": "Convention", "label": "No public services charged",
-      "summary": "Taxes, benefits and the production gain, with schools, police, health and every other service left out. The nearest this consolidated ledger comes to a federal-budget view, because federal agencies deliver 1% of education and 15% of police, courts and prisons.",
-      "scope_note": "Not a federal-only account: state and local taxes are still counted here. A true federal window would drop them too.",
+      "summary": "Taxes, benefits and the gain from the group's work, with schools, police, health and every other service left out. This is the nearest this combined federal, state and local ledger comes to a federal-budget view, because federal agencies deliver 1% of education and 15% of police, courts and prisons.",
+      "scope_note": "It is not a federal-only account: state and local taxes are still counted here. A true federal window would drop them too.",
       "settings": [
         {"path": "service_response", "value": 0, "label": "Public services", "basis": "not_addressed", "note": "Left out."}
       ],
-      "misses": ["Every service line: 358 bn assigned to the group, 200 bn of it education.", "CBO's own state and local report: costs exceeded revenues by 9.2 bn for the surge population in 2023."]
+      "misses": ["Every service line: 358 bn assigned to the group, 200 bn of it education.", "CBO's own state and local report: for the surge population, costs exceeded revenues by 9.2 bn in 2023."]
     },
     {
       "id": "average_cost_everything", "kind_label": "Convention", "label": "Everything at average cost",
-      "summary": "A per-capita share of every line including defense, general government and interest on debt already issued, and no production gain.",
+      "summary": "A per-head share of every line, including defense, general government and interest on debt already issued, and no gain from the group's work.",
       "settings": [
         {"path": "public_goods_response", "value": 1, "label": "Defense", "basis": "stated", "note": "Charged per head."},
         {"path": "general_government_response", "value": 1, "label": "General government", "basis": "stated", "note": "Charged per head."},
-        {"path": "interest_response", "value": 1, "label": "Interest on existing debt", "basis": "stated", "note": "Charged per head although legacy debt does not shrink with population."},
+        {"path": "interest_response", "value": 1, "label": "Interest on existing debt", "basis": "stated", "note": "Charged per head, although debt already issued does not shrink with the population."},
         {"path": "subsidy_response", "value": 1, "label": "Business subsidies", "basis": "stated", "note": "Charged per head."},
-        {"path": "count_production", "value": false, "label": "Production gain", "basis": "not_addressed", "note": "Left out."}
+        {"path": "count_production", "value": false, "label": "Gain from the group's work", "basis": "not_addressed", "note": "Left out."}
       ],
-      "misses": ["Defense and interest on existing debt do not fall when a population is smaller: about 237 bn of this total is non-responsive by construction.", "The production gain to other residents.", "CBO's evidence that school budgets respond 63-66%, not 100%."]
+      "misses": ["Defense and interest on existing debt do not fall when a population is smaller, and about 237 bn of this total is spending of that kind.", "The gain to other residents from the group's work.", "Evidence that school budgets move 63-66% as much as enrollment, not 100%."]
     },
     {
       "id": "production_only", "kind_label": "Convention", "label": "Production side only",
-      "summary": "No budget lines at all: only what other residents gain privately from the group's labor. With capital fully adjusted this account's constant-returns production block leaves that private gain near zero; its production gain arrives as induced tax receipts, which a budget-free view drops.",
-      "scope_note": "Constant returns by construction. Arguments from increasing returns (ideas, specialisation, fixed costs) cannot be represented by this block.",
+      "summary": "No budget lines at all: only what other residents gain privately from the group's work. Once investment has caught up, this account's production model leaves almost nothing for other residents directly. What remains arrives as extra tax receipts on the added output, and a view with no budget lines drops those too.",
+      "scope_note": "The production model has constant returns by construction. Arguments from increasing returns (ideas, specialization, fixed costs) cannot be represented in it.",
       "settings": [
         {"path": "fiscal_weight", "value": 0, "label": "Budget lines", "basis": "not_addressed", "note": "Given no weight."}
       ],
@@ -75,32 +75,32 @@
   "standing": {
     "title": "Whose ledger is this?",
     "rows": [
-      ["Other US residents", "This page. Taxes the group remits, benefits and services it draws, and the production gain that reaches everyone else.", "Computed here"],
-      ["The group's own members", "What they earn here against what they would earn elsewhere: the place premium. It is inside US GDP but not in this ledger, and it is where most of any world-GDP gain sits.", "Not computed in this repo"],
-      ["The rest of the world", "Origin-country effects: remittances received, workers departed.", "Not computed in this repo"]
+      ["Other US residents", "This page. The taxes the group pays, the benefits and services it draws, and the gain from its work that reaches everyone else.", "Computed here"],
+      ["The group's own members", "What they earn here against what they would earn elsewhere, known as the place premium. It is inside US GDP but not in this ledger, and it is where most of any world-GDP gain sits.", "Not computed in this repo"],
+      ["The rest of the world", "Effects on countries of origin: money sent home, workers departed.", "Not computed in this repo"]
     ],
-    "text": "World-GDP claims add all three. They cannot be netted against this page's number without deciding how much a dollar to a migrant counts against a dollar to an incumbent, which is a moral weight, not a measurement. Interest on US debt would never be deducted from world GDP: it is a payment from taxpayers to bondholders, a transfer, not lost output. Inside this ledger it is held fixed because debt already issued does not shrink when a population is smaller."
+    "text": "Claims about world GDP add all three. They cannot be netted against this page's number without deciding how much a dollar to a migrant counts against a dollar to someone already here, which is a moral weight, not a measurement. Interest on US debt would never be deducted from world GDP: it is a payment from taxpayers to bondholders, a transfer, and no output is lost. Inside this ledger it is held fixed because debt already issued does not shrink when a population is smaller."
   },
   "authors": [
     {
       "id": "smith", "name": "Noah Smith",
       "argues": [
-        ["He cites CBO's July 2024 projection: the 2021-26 surge lowers federal deficits by about $0.9tn over 2024-2034. CBO's headline excludes discretionary appropriations and state and local budgets.", "research/immigration-dismantle-decker-2026-06-25.md:75; research/immigration-claim-scorecard-2026-09-18.md:53"],
+        ["He cites CBO's July 2024 projection: the 2021-26 surge lowers covered federal deficits by about $0.9tn over 2024-2034. CBO's headline excludes discretionary appropriations and state and local budgets.", "research/immigration-dismantle-decker-2026-06-25.md:75; research/immigration-claim-scorecard-2026-09-18.md:53"],
         ["In his own words the same arrivals are \"a long-term fiscal problem, because these people will require heavy government support for their health care, housing, and education; this will end up coming from city and state governments\".", "research/immigration-dismantle-noah-smith-2026-06-25.md:13"]
       ],
       "object": "A recent surge of all origins, the federal budget, a ten-year window.",
-      "closest": {"preset": "no_services", "why": "A federal-window claim does not charge schools or police, which are almost entirely state and local. He names that local cost himself and does not net it against the federal gain; the repo's September revision no longer calls this a contradiction."},
-      "leaves_out": ["The second generation: 'no mention of the second generation' (scorecard :35). Most of this population is US-born.", "A number for the production or complementarity gain: none is recorded."]
+      "closest": {"preset": "no_services", "why": "A claim about the federal budget does not charge schools or police, which are almost entirely state and local. He names that local cost himself and does not net it against the federal gain. The repo's September revision no longer calls this a contradiction."},
+      "leaves_out": ["The second generation: 'no mention of the second generation' (scorecard :35). Most of this population is US-born.", "A number for the gain from production or complementary skills: none is recorded."]
     },
     {
       "id": "yglesias", "name": "Matthew Yglesias",
       "argues": [
-        ["He states no fiscal number in his own voice; the CBO material on Slow Boring is in guest posts (Kolko 2024-09-12; Elmendorf and Williams 2023-08-28).", "research/immigration-yglesias-claims-audit-2026-09-21.md:14; :52"],
-        ["His case is scale and growth, lower grocery and service prices, high-wage women's hours freed, and the claim that more immigration 'would cost taxpayers nothing'. He concedes congestion costs (traffic, rent, water, pollution) and that crime counts scale with population.", "research/immigration-yglesias-claims-audit-2026-09-21.md:50; :69; :84; :104"]
+        ["He states no fiscal number in his own voice. The CBO material on Slow Boring is in guest posts (Kolko, 2024-09-12; Elmendorf and Williams, 2023-08-28).", "research/immigration-yglesias-claims-audit-2026-09-21.md:14; :52"],
+        ["His case is scale and growth, lower grocery and service prices, and hours freed for high-wage women. On cost he has one aside, in a sentence about housing: the tools to end housing shortages, \"like immigration\", \"would cost taxpayers nothing\". He concedes congestion costs (traffic, rent, water, pollution) and that crime counts rise with population.", "research/immigration-yglesias-claims-audit-2026-09-21.md:50; :69; :84; :104; infra/immigration-fiscal/yglesias_claims_2026_09_21/notes/economic_claims.md:12"]
       ],
       "object": "Immigrants 'of virtually all stripes', national scale, no stated horizon.",
-      "closest": {"preset": "no_services", "why": "This is the condition under which 'would cost taxpayers nothing' holds in this ledger, an inference from the claim, not something he wrote. His price channel is outside the account (see the evidence sections)."},
-      "leaves_out": ["Local budgets: 'He addresses wages, not local budgets' (audit :67).", "The National Academies 2016 report and any federal, Social Security or debt number of his own (audit :138-139).", "Second-generation outcomes except as upside (audit :139-140)."]
+      "closest": {"preset": "no_services", "why": "This is the condition under which immigration \"would cost taxpayers nothing\" holds in this ledger. That is an inference from his aside; he did not argue it. His price channel is outside the account (see the objections section)."},
+      "leaves_out": ["Local budgets: 'He addresses wages, not local budgets' (audit :67).", "The National Academies 2016 report, and any federal, Social Security or debt number of his own (audit :138-139).", "Second-generation outcomes except as upside (audit :139-140)."]
     },
     {
       "id": "caplan", "name": "Bryan Caplan",
@@ -110,16 +110,16 @@
       ],
       "object": "Future entrants under open borders; the welfare of migrants and the world as well as natives.",
       "closest": {"preset": null, "why": "No setting of this ledger represents his claim, so no number is shown. His large gains accrue mainly to the migrants themselves (the second row of the table above), and his keyhole remedy applies to future entrants: it cannot be applied to a resident population that is mostly US-born citizens. Switching benefits off in this ledger would only stop counting 364 bn of costs; it would not be his argument."},
-      "leaves_out": ["School, shelter and service load on state and local budgets: what survives a welfare exclusion (audit :288). The audit's verdict on the taxpayer claim: 'Federal gains can coexist with state/local costs in education, shelter, and related services'.", "Housing demand and rent burden (audit :287).", "The cost and feasibility of the keyhole instruments themselves (audit :216)."]
+      "leaves_out": ["School, shelter and service load on state and local budgets: what survives an exclusion from welfare (audit :288). The audit's verdict on the taxpayer claim: 'Federal gains can coexist with state/local costs in education, shelter, and related services'.", "Housing demand and rent burden (audit :287).", "The cost and feasibility of the keyhole instruments themselves (audit :216)."]
     },
     {
       "id": "decker", "name": "Nicholas Decker",
       "argues": [
-        ["'Immigrants must make us richer': \"I think the assumption of constant returns to scale is nonsense... There are three main channels by which returns simply have to be increasing: specialization, ideas, and fixed costs\".", "research/immigration-dismantle-decker-2026-06-25.md:15"]
+        ["'Immigrants must make us richer': \"I think the assumption of constant returns to scale is nonsense. Not only that, it is obvious nonsense… There are three main channels by which returns simply have to be increasing: specialization, ideas, and fixed costs… of course immigrants make us richer.\"", "research/immigration-dismantle-decker-2026-06-25.md:15"]
       ],
-      "object": "All immigrants; the aggregate income of incumbents; no horizon or cost convention stated.",
-      "closest": {"preset": "production_only", "why": "His argument has a production side and no fiscal side. But this ledger's production block has constant returns, the assumption he rejects, so its near-zero private gain is this account's result and not a test of his claim. The repo has withdrawn two of its own earlier rebuttals of him."},
-      "leaves_out": ["Every fiscal line: the audits record him compressing the question into 'one production-function dispute' (audit 2026-04-11 :255-256).", "Composition: his July 2026 visa-ranking proposal concedes that composition decides the sign (scorecard :79)."]
+      "object": "All immigrants; the total income of people already here; no horizon or cost convention stated.",
+      "closest": {"preset": "production_only", "why": "His argument has a production side and no fiscal side. But this ledger's production model has constant returns, the assumption he rejects, so its near-zero private gain is this account's result and not a test of his claim. The repo has withdrawn two of its own earlier rebuttals of him."},
+      "leaves_out": ["Every fiscal line: the audits record him compressing the question into 'one production-function dispute' (audit 2026-04-11 :255-256).", "Composition: his July 2026 proposal to rank visas concedes that composition decides the sign (scorecard :79)."]
     }
   ]
 }

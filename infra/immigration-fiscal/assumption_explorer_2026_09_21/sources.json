@@ -1,0 +1,1600 @@
+{
+ "note": "One registry of external sources. `supports` names places on the page (control:, card:, preset:, author:, argue:<author>:<n>, ledger, production, standing); build_ui.py rejects a place that does not exist. `repo_ref` is where this repo cites the link; `resolved` marks a link built from an identifier the repo records. check_sources.py writes the fetch receipt.",
+ "sources": [
+  {
+   "key": "cbo_2025_state_local_surge",
+   "short": "CBO 2025, state and local budgets",
+   "kind": "report",
+   "authors": "Congressional Budget Office",
+   "year": 2025,
+   "title": "Effects of the Surge in Immigration on State and Local Budgets in 2023",
+   "venue": "CBO publication 61464",
+   "url": "https://www.cbo.gov/publication/61464",
+   "repo_ref": "notes/immigration-service-response-external-evidence-2026-09-20.md:15",
+   "supports": [
+    "control:school_response",
+    "card:e2_fixed_functions_and_cbo_inputs",
+    "card:e2_fixed_service_range_and_breakeven",
+    "card:e4_offset_threshold_is_conditional",
+    "card:headline_cbo_informed_net_cost",
+    "card:complete_account_356_endpoint",
+    "card:service_scaling_test",
+    "argue:smith:0",
+    "argue:caplan:1",
+    "preset:no_services",
+    "preset:repo_central"
+   ],
+   "pdf": "https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf"
+  },
+  {
+   "key": "cbo_2024_federal_surge_alt_id",
+   "short": "CBO 2024, federal budget",
+   "kind": "report",
+   "authors": "Congressional Budget Office",
+   "year": 2024,
+   "title": "Effects of the Immigration Surge on the Federal Budget and the Economy",
+   "venue": "CBO publication 60569",
+   "url": "https://www.cbo.gov/publication/60569",
+   "repo_ref": "research/immigration-second-order-effects-2026-09-05.md:23",
+   "supports": [
+    "argue:smith:0"
+   ]
+  },
+  {
+   "key": "cbo_2024_07_immigration_surge",
+   "short": "CBO 2024, federal budget (PDF)",
+   "kind": "report",
+   "authors": "Congressional Budget Office",
+   "year": 2024,
+   "title": "Effects of the Immigration Surge on the Federal Budget and the Economy",
+   "venue": "CBO, July 2024, full report",
+   "url": "https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf",
+   "repo_ref": "research/immigration-dismantle-noah-smith-2026-06-25.md:47",
+   "supports": [
+    "argue:smith:0"
+   ]
+  },
+  {
+   "key": "cbo_tax_distribution_appendix_a",
+   "short": "CBO 2024, who bears each tax",
+   "kind": "report",
+   "authors": "Congressional Budget Office",
+   "year": 2024,
+   "title": "The Distribution of Household Income in 2021, Appendix A: allocating taxes to households",
+   "venue": "CBO publication 60706",
+   "url": "https://www.cbo.gov/publication/60706",
+   "repo_ref": "infra/immigration-fiscal/full_account_receipts_2026_09_20/sources.json:6",
+   "supports": [
+    "control:receipt_scenario",
+    "card:e2_fixed_functions_and_cbo_inputs",
+    "card:e2_per_capita_three_functions",
+    "card:complete_account_assigned_balance",
+    "card:headline_cbo_informed_net_cost",
+    "ledger"
+   ]
+  },
+  {
+   "key": "treasury_ota_distribution_methodology",
+   "short": "Treasury 2021",
+   "kind": "report",
+   "authors": "U.S. Treasury, Office of Tax Analysis",
+   "year": 2021,
+   "title": "Summary of OTA Distribution Methodology",
+   "venue": "US Department of the Treasury, 2021-05-10",
+   "url": "https://home.treasury.gov/system/files/131/Summary-of-OTA-Distribution-Methodology-05102021.pdf",
+   "repo_ref": "infra/immigration-fiscal/full_account_receipts_2026_09_20/sources.json:7",
+   "supports": [
+    "control:receipt_scenario",
+    "card:e2_fixed_functions_and_cbo_inputs",
+    "card:complete_account_assigned_balance"
+   ]
+  },
+  {
+   "key": "nas_2016_annex_8_2",
+   "short": "National Academies 2016, ch. 8",
+   "kind": "book",
+   "authors": "National Academies of Sciences, Engineering, and Medicine",
+   "year": 2016,
+   "title": "The Economic and Fiscal Consequences of Immigration, chapter 8 and Annex 8-2",
+   "venue": "National Academies Press",
+   "url": "https://www.nationalacademies.org/read/23550/chapter/13",
+   "repo_ref": "infra/immigration-fiscal/full_account_receipts_2026_09_20/sources.json:8",
+   "supports": [
+    "control:receipt_scenario",
+    "card:e2_fixed_functions_and_cbo_inputs",
+    "card:complete_account_assigned_balance",
+    "card:e5_national_academies_different_object",
+    "control:public_goods_response",
+    "control:service_response"
+   ]
+  },
+  {
+   "key": "nas_2016_chapter_7_marginal_cost",
+   "short": "National Academies 2016, ch. 7",
+   "kind": "book",
+   "authors": "National Academies of Sciences, Engineering, and Medicine",
+   "year": 2016,
+   "title": "The Economic and Fiscal Consequences of Immigration, chapter 7 (marginal and average cost)",
+   "venue": "National Academies Press",
+   "url": "https://www.nationalacademies.org/read/23550/chapter/12",
+   "repo_ref": "notes/immigration-service-response-external-evidence-2026-09-20.md:27",
+   "supports": [
+    "control:school_response",
+    "card:e4_production_gain_inside_headline",
+    "card:e5_national_academies_different_object",
+    "card:complete_account_assigned_balance",
+    "control:service_response"
+   ]
+  },
+  {
+   "key": "nas_2016_chapter_4_production",
+   "short": "National Academies 2016, ch. 4",
+   "kind": "book",
+   "authors": "National Academies of Sciences, Engineering, and Medicine",
+   "year": 2016,
+   "title": "The Economic and Fiscal Consequences of Immigration, chapter 4 (production structure)",
+   "venue": "National Academies Press",
+   "url": "https://www.nationalacademies.org/read/23550/chapter/8",
+   "repo_ref": "infra/immigration-fiscal/matched_benefits_2026_09_19/builder.py:20",
+   "supports": [
+    "production",
+    "control:count_production"
+   ]
+  },
+  {
+   "key": "nas_2016_doi",
+   "short": "National Academies 2016",
+   "kind": "book",
+   "authors": "National Academies of Sciences, Engineering, and Medicine",
+   "year": 2016,
+   "title": "The Economic and Fiscal Consequences of Immigration",
+   "venue": "National Academies Press",
+   "url": "https://doi.org/10.17226/23550",
+   "repo_ref": "infra/immigration-fiscal/all_age_ledger_2026_09_17/derived/review/fiscal-construct-sources-20260917.md:17",
+   "supports": [
+    "card:e5_national_academies_different_object"
+   ]
+  },
+  {
+   "key": "nrc_1997_chapter9",
+   "short": "National Research Council 1997",
+   "kind": "book",
+   "authors": "National Research Council (Smith and Edmonston, eds.)",
+   "year": 1997,
+   "title": "The New Americans: Economic, Demographic, and Fiscal Effects of Immigration, chapter 9",
+   "venue": "National Academy Press",
+   "url": "https://www.nationalacademies.org/read/5779/chapter/9",
+   "repo_ref": "research/immigration-projection-backtest-2026-09-19.md:16",
+   "supports": [
+    "card:e5_national_academies_different_object"
+   ]
+  },
+  {
+   "key": "bea_nipa_section3_workbook",
+   "short": "BEA national accounts, Section 3",
+   "kind": "dataset",
+   "authors": "Bureau of Economic Analysis",
+   "year": 2026,
+   "title": "National Income and Product Accounts, Section 3: government current receipts and expenditures (Tables 3.1-3.17)",
+   "venue": "Workbook Section3All_xls.xlsx",
+   "url": "https://apps.bea.gov/national/Release/XLS/Survey/Section3All_xls.xlsx",
+   "repo_ref": "infra/immigration-fiscal/full_account_receipts_2026_09_20/sources.json:5",
+   "supports": [
+    "ledger",
+    "control:school_share",
+    "card:e2_fixed_functions_and_cbo_inputs",
+    "card:e2_fixed_service_range_and_breakeven",
+    "card:e2_general_public_services_sensitivity",
+    "card:e2_per_capita_three_functions",
+    "card:e4_offset_threshold_is_conditional",
+    "card:e4_production_gain_inside_headline",
+    "card:e6_gap_against_average_resident",
+    "card:e8_backcast_cumulative_windows",
+    "card:e8_measured_programme_series",
+    "card:e11_not_a_policy_saving",
+    "card:e12_no_group_crime_cost_in_headline",
+    "card:complete_account_356_endpoint",
+    "card:complete_account_assigned_balance",
+    "card:headline_cbo_informed_net_cost",
+    "card:interest_on_gap_lane",
+    "card:service_scaling_test",
+    "card:ledger_absolute_waterfall_and_arms",
+    "control:general_government_response",
+    "preset:repo_central_gg"
+   ]
+  },
+  {
+   "key": "bea_nipa_handbook",
+   "short": "BEA NIPA Handbook",
+   "kind": "report",
+   "authors": "Bureau of Economic Analysis",
+   "year": 2026,
+   "title": "NIPA Handbook: Concepts and Methods of the U.S. National Income and Product Accounts",
+   "venue": "BEA methodologies",
+   "url": "https://www.bea.gov/resources/methodologies/nipa-handbook",
+   "repo_ref": "infra/immigration-fiscal/full_account_spending_2026_09_20/SOURCE_PINS.json:10",
+   "supports": [
+    "ledger"
+   ]
+  },
+  {
+   "key": "bea_nipa_handbook_ch9",
+   "short": "BEA NIPA Handbook, ch. 9",
+   "kind": "report",
+   "authors": "Bureau of Economic Analysis",
+   "year": 2024,
+   "title": "NIPA Handbook, chapter 9: government consumption expenditures and gross investment",
+   "venue": "U.S. Bureau of Economic Analysis",
+   "url": "https://www.bea.gov/resources/methodologies/nipa-handbook/pdf/chapter-09.pdf",
+   "repo_ref": "research/immigration-education-administration-scope-2026-09-20.md:11",
+   "supports": [
+    "card:e2_general_public_services_sensitivity",
+    "card:e2_per_capita_three_functions",
+    "card:e2_fixed_service_range_and_breakeven",
+    "card:complete_account_assigned_balance",
+    "card:e12_no_group_crime_cost_in_headline",
+    "ledger"
+   ]
+  },
+  {
+   "key": "bea_nipa_section7",
+   "short": "BEA national accounts, Section 7",
+   "kind": "dataset",
+   "authors": "Bureau of Economic Analysis",
+   "year": 2026,
+   "title": "National Income and Product Accounts, Section 7: supplemental tables",
+   "venue": "Workbook Section7All_xls.xlsx",
+   "url": "https://apps.bea.gov/national/Release/XLS/Survey/Section7All_xls.xlsx",
+   "repo_ref": "infra/immigration-fiscal/historical_backcast_2026_09_20/README.md:34",
+   "supports": [
+    "card:e8_backcast_cumulative_windows",
+    "card:e8_measured_programme_series"
+   ]
+  },
+  {
+   "key": "cps_asec_2025_microdata",
+   "short": "CPS ASEC 2025",
+   "kind": "dataset",
+   "authors": "U.S. Census Bureau and Bureau of Labor Statistics",
+   "year": 2025,
+   "title": "Current Population Survey, Annual Social and Economic Supplement, March 2025 public-use microdata (income year 2024)",
+   "venue": "Census Bureau; SHA256 318845a2...deef0b",
+   "url": "https://www2.census.gov/programs-surveys/cps/datasets/2025/march/asecpub25csv.zip",
+   "repo_ref": "infra/immigration-fiscal/full_account_receipts_2026_09_20/sources.json:9",
+   "supports": [
+    "ledger",
+    "card:e1_gap_under_age_structures",
+    "card:e1_value_of_the_young_structure",
+    "card:e2_fixed_functions_and_cbo_inputs",
+    "card:e2_fixed_service_range_and_breakeven",
+    "card:e2_per_capita_three_functions",
+    "card:e3_lower_benefit_draw_by_generation",
+    "card:e3_union_offset_mirrors_tax_gap",
+    "card:e4_offset_threshold_is_conditional",
+    "card:e4_production_gain_inside_headline",
+    "card:e5_asec2026_replication",
+    "card:e5_ethnic_attrition_narrows_gap",
+    "card:e5_gaps_under_both_allocations",
+    "card:e5_generation_difference_tests",
+    "card:e5_lifetime_npv_from_birth",
+    "card:e5_same_age_gaps_by_generation",
+    "card:e5_tax_convergence_by_generation",
+    "card:e6_gap_against_average_resident",
+    "card:e6_gaps_against_all_natives",
+    "card:e7_cell_level_is_not_a_gap",
+    "card:e7_education_specific_gaps",
+    "card:e8_backcast_cumulative_windows",
+    "card:e8_measured_programme_series",
+    "card:e9_arrival_window_gaps",
+    "card:e10_ageing_by_category",
+    "card:e10_ageing_composition_total",
+    "card:e10_old_age_cells_rest_on_small_cohorts",
+    "card:e11_not_a_policy_saving",
+    "card:e12_no_group_crime_cost_in_headline",
+    "card:complete_account_356_endpoint",
+    "card:complete_account_assigned_balance",
+    "card:generation_ledger_annual_balances",
+    "card:generation_ledger_later_annual_refreshes",
+    "card:headline_cbo_informed_net_cost",
+    "card:interest_on_gap_lane",
+    "card:ledger_absolute_uncertainty_scope",
+    "card:ledger_absolute_waterfall_and_arms",
+    "card:service_scaling_test"
+   ]
+  },
+  {
+   "key": "cps_asec_2025_codebook",
+   "short": "CPS ASEC 2025 data dictionary",
+   "kind": "report",
+   "authors": "U.S. Census Bureau",
+   "year": 2025,
+   "title": "CPS ASEC 2025 public-use data dictionary (asec2025_ddl_pub_full.pdf)",
+   "venue": "Census Bureau",
+   "url": "https://www2.census.gov/programs-surveys/cps/datasets/2025/march/asec2025_ddl_pub_full.pdf",
+   "repo_ref": "infra/immigration-fiscal/full_account_spending_2026_09_20/SOURCE_PINS.json:19",
+   "supports": [
+    "ledger",
+    "card:e1_gap_under_age_structures",
+    "card:e5_same_age_gaps_by_generation",
+    "card:generation_ledger_annual_balances",
+    "card:ledger_absolute_waterfall_and_arms",
+    "card:complete_account_assigned_balance"
+   ]
+  },
+  {
+   "key": "cps_mar2025_techdoc",
+   "short": "CPS March 2025 technical documentation",
+   "kind": "report",
+   "authors": "U.S. Census Bureau",
+   "year": 2025,
+   "title": "Current Population Survey, March 2025 technical documentation",
+   "venue": "U.S. Census Bureau",
+   "url": "https://www2.census.gov/programs-surveys/cps/techdocs/cpsmar25.pdf",
+   "repo_ref": "infra/immigration-fiscal/education_origin_fiscal_2026_09_19/README.md:22",
+   "supports": [
+    "card:e7_cell_level_is_not_a_gap",
+    "card:e7_education_specific_gaps",
+    "card:e5_ethnic_attrition_narrows_gap",
+    "ledger"
+   ]
+  },
+  {
+   "key": "cps_asec_2026",
+   "short": "CPS ASEC 2026",
+   "kind": "dataset",
+   "authors": "U.S. Census Bureau and Bureau of Labor Statistics",
+   "year": 2026,
+   "title": "Current Population Survey, Annual Social and Economic Supplement, March 2026 public-use microdata (income year 2025)",
+   "venue": "U.S. Census Bureau",
+   "url": "https://www2.census.gov/programs-surveys/cps/datasets/2026/march/asecpub26csv.zip",
+   "repo_ref": "infra/immigration-fiscal/ledger_asec2026_2026_09_16/RESULT.md:10",
+   "supports": [
+    "card:e5_asec2026_replication"
+   ]
+  },
+  {
+   "key": "cps_asec_2026_dictionary",
+   "short": "CPS ASEC 2026 data dictionary",
+   "kind": "report",
+   "authors": "U.S. Census Bureau",
+   "year": 2026,
+   "title": "CPS ASEC 2026 public-use data dictionary",
+   "venue": "U.S. Census Bureau",
+   "url": "https://www2.census.gov/programs-surveys/cps/datasets/2026/march/asec2026_ddl_pub_full.pdf",
+   "repo_ref": "infra/immigration-fiscal/ledger_asec2026_2026_09_16/RESULT.md:162",
+   "supports": [
+    "card:e5_asec2026_replication"
+   ]
+  },
+  {
+   "key": "census_popest_2024_resident_control",
+   "short": "Census population estimates 2024",
+   "kind": "dataset",
+   "authors": "U.S. Census Bureau, Population Estimates Program",
+   "year": 2024,
+   "title": "State and national population totals, vintage 2024 (NST-EST2024-ALLDATA)",
+   "venue": "Census Bureau; SHA256 b8b50bd3...9022a7",
+   "url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/state/totals/NST-EST2024-ALLDATA.csv",
+   "repo_ref": "infra/immigration-fiscal/full_account_spending_2026_09_20/SOURCE_PINS.json:27",
+   "supports": [
+    "ledger",
+    "card:e2_per_capita_three_functions",
+    "card:e6_gap_against_average_resident",
+    "card:e11_not_a_policy_saving",
+    "card:complete_account_assigned_balance",
+    "card:headline_cbo_informed_net_cost",
+    "card:ledger_absolute_waterfall_and_arms"
+   ]
+  },
+  {
+   "key": "census_state_local_finances_2022",
+   "short": "Census state and local finances 2022",
+   "kind": "table",
+   "authors": "U.S. Census Bureau",
+   "year": 2022,
+   "title": "Annual Survey of State and Local Government Finances, 2022, Table 1",
+   "venue": "U.S. Census Bureau",
+   "url": "https://www2.census.gov/programs-surveys/gov-finances/tables/2022/22slsstab1.xlsx",
+   "repo_ref": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:90",
+   "supports": [
+    "card:e1_gap_under_age_structures",
+    "card:e1_value_of_the_young_structure",
+    "card:e3_lower_benefit_draw_by_generation",
+    "card:e3_union_offset_mirrors_tax_gap",
+    "card:e5_gaps_under_both_allocations",
+    "card:e5_lifetime_npv_from_birth",
+    "card:e5_same_age_gaps_by_generation",
+    "card:e5_tax_convergence_by_generation",
+    "card:e6_gaps_against_all_natives",
+    "card:e9_arrival_window_gaps",
+    "card:e10_ageing_by_category",
+    "card:e10_ageing_composition_total",
+    "card:generation_ledger_annual_balances",
+    "card:generation_ledger_later_annual_refreshes",
+    "card:ledger_absolute_waterfall_and_arms",
+    "card:ledger_absolute_uncertainty_scope",
+    "control:general_government_response",
+    "preset:repo_central_gg"
+   ]
+  },
+  {
+   "key": "census_gov_finance_glossary",
+   "short": "Census government finance glossary",
+   "kind": "report",
+   "authors": "U.S. Census Bureau",
+   "year": 2024,
+   "title": "State and local government finances: glossary",
+   "venue": "U.S. Census Bureau",
+   "url": "https://www.census.gov/programs-surveys/state/about/glossary.html",
+   "repo_ref": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:90",
+   "supports": [
+    "card:e1_gap_under_age_structures",
+    "card:generation_ledger_annual_balances",
+    "card:ledger_absolute_waterfall_and_arms"
+   ]
+  },
+  {
+   "key": "census_2024_asec_generation_table4",
+   "short": "Census 2024, foreign-born tables",
+   "kind": "table",
+   "authors": "U.S. Census Bureau",
+   "year": 2024,
+   "title": "CPS 2024 ASEC foreign-born tables, Table 4 (population by generation)",
+   "venue": "U.S. Census Bureau",
+   "url": "https://www2.census.gov/programs-surveys/demo/tables/foreign-born/2024/cps2024/2024_asec_generation_table4.xlsx",
+   "repo_ref": "infra/immigration-fiscal/mexican_origin_population_total_2026_09_19/RESULT.md:46",
+   "supports": [
+    "card:e5_ethnic_attrition_narrows_gap",
+    "card:e12_incarceration_ratio_series"
+   ]
+  },
+  {
+   "key": "census_sehsd_wp2025_07",
+   "short": "Census working paper 2025-07",
+   "kind": "paper",
+   "authors": "U.S. Census Bureau, Social, Economic and Housing Statistics Division",
+   "year": 2025,
+   "title": "SEHSD Working Paper 2025-07 (group-quarters coding quality)",
+   "venue": "U.S. Census Bureau",
+   "url": "https://www2.census.gov/library/working-papers/2025/demo/sehsd-wp2025-07.pdf",
+   "repo_ref": "research/immigration-mexican-origin-generation-incarceration-2026-09-16.md:45",
+   "supports": [
+    "card:e12_incarceration_ratio_series"
+   ]
+  },
+  {
+   "key": "census_acs_spp_api",
+   "short": "ACS Selected Population Profiles",
+   "kind": "dataset",
+   "authors": "U.S. Census Bureau",
+   "year": 2024,
+   "title": "American Community Survey 1-year Selected Population Profiles, Census Data API",
+   "venue": "Census Data API",
+   "url": "https://api.census.gov/data/2024/acs/acs1/spp.html",
+   "repo_ref": "infra/immigration-fiscal/historical_backcast_2026_09_20/pull_acs.py:44",
+   "supports": [
+    "card:e9_relative_income_trend",
+    "card:e8_measured_programme_series",
+    "card:e8_backcast_cumulative_windows"
+   ],
+   "resolved": "2026-09-21",
+   "resolved_from": "the repo's API template with the year set to 2024",
+   "url_in_repo": "https://api.census.gov/data/{year}/acs/acs1/spp"
+  },
+  {
+   "key": "census_acs_b03001_api",
+   "short": "ACS table B03001",
+   "kind": "dataset",
+   "authors": "U.S. Census Bureau",
+   "year": 2024,
+   "title": "American Community Survey 1-year, table B03001: Hispanic or Latino origin by specific origin, Census Data API",
+   "venue": "Census Data API",
+   "url": "https://api.census.gov/data/2024/acs/acs1/groups/B03001.html",
+   "repo_ref": "infra/immigration-fiscal/historical_backcast_2026_09_20/pull_acs.py:70",
+   "supports": [
+    "card:e9_relative_income_trend",
+    "card:e8_backcast_cumulative_windows"
+   ],
+   "resolved": "2026-09-21",
+   "resolved_from": "the repo's API template with the year set to 2024",
+   "url_in_repo": "https://api.census.gov/data/{year}/acs/acs1?get=B03001_001E"
+  },
+  {
+   "key": "acs_pums_api_care_2024",
+   "short": "ACS PUMS tabulation API",
+   "kind": "dataset",
+   "authors": "U.S. Census Bureau",
+   "year": 2024,
+   "title": "American Community Survey 1-year Public Use Microdata Sample, Census Data API",
+   "venue": "Census Data API",
+   "url": "https://api.census.gov/data/2024/acs/acs1/pums.html",
+   "repo_ref": "infra/immigration-fiscal/mr_leads_papers_2026_09_21/pull_acs_care.py:18",
+   "supports": [
+    "card:e13_care_workforce_composition",
+    "card:e13_elder_care_medicaid_bound",
+    "card:e12_incarceration_ratio_series"
+   ],
+   "resolved": "2026-09-21",
+   "resolved_from": "the repo's API template with the year set to 2024",
+   "url_in_repo": "https://api.census.gov/data/{YEAR}/acs/acs1/pums?tabulate=weight(PWGTP)"
+  },
+  {
+   "key": "acs_pums_dict_2024",
+   "short": "ACS PUMS 2024 data dictionary",
+   "kind": "report",
+   "authors": "U.S. Census Bureau",
+   "year": 2024,
+   "title": "ACS 2024 PUMS data dictionary (TYPEHUGQ group-quarters codes)",
+   "venue": "U.S. Census Bureau",
+   "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2024.pdf",
+   "repo_ref": "infra/immigration-fiscal/acs_institutional_2026_09_16/README.md:18",
+   "supports": [
+    "card:e12_incarceration_ratio_series",
+    "card:e12_no_group_crime_cost_in_headline"
+   ]
+  },
+  {
+   "key": "acs_pums_2024_1yr",
+   "short": "ACS PUMS 2024",
+   "kind": "dataset",
+   "authors": "U.S. Census Bureau",
+   "year": 2024,
+   "title": "American Community Survey 2024 1-year Public Use Microdata Sample, person file",
+   "venue": "U.S. Census Bureau",
+   "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2024/1-Year/csv_pus.zip",
+   "repo_ref": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:165",
+   "supports": [
+    "card:e4_prices_and_native_hours",
+    "card:e5_ethnic_attrition_narrows_gap",
+    "card:e12_incarceration_ratio_series",
+    "card:e13_care_workforce_composition"
+   ]
+  },
+  {
+   "key": "acs_pums_2023_1yr",
+   "short": "ACS PUMS 2023",
+   "kind": "dataset",
+   "authors": "U.S. Census Bureau",
+   "year": 2023,
+   "title": "American Community Survey 2023 1-year Public Use Microdata Sample, person file",
+   "venue": "U.S. Census Bureau",
+   "url": "https://www2.census.gov/programs-surveys/acs/data/pums/2023/1-Year/csv_pus.zip",
+   "repo_ref": "sources/immigration-fiscal/data/MANIFEST.md:14",
+   "supports": [
+    "card:e9_new_arrivals_education"
+   ]
+  },
+  {
+   "key": "ipums_usa",
+   "short": "IPUMS USA",
+   "kind": "dataset",
+   "authors": "Ruggles, Steven, and others",
+   "year": 2024,
+   "title": "IPUMS USA: harmonized census and American Community Survey microdata",
+   "venue": "University of Minnesota",
+   "url": "https://usa.ipums.org/usa/",
+   "repo_ref": "infra/immigration-fiscal/REPRODUCTION_INPUTS.md:36",
+   "supports": [
+    "card:e9_new_arrivals_education"
+   ]
+  },
+  {
+   "key": "meps_2024_full_year_puf",
+   "short": "MEPS 2024 (HC-256)",
+   "kind": "dataset",
+   "authors": "Agency for Healthcare Research and Quality",
+   "year": 2024,
+   "title": "Medical Expenditure Panel Survey HC-256: 2024 Full Year Consolidated Data File",
+   "venue": "AHRQ MEPS; SHA256 d0779e49...f988c9",
+   "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data_files_detail.jsp?cboPufNumber=HC-256",
+   "repo_ref": "infra/immigration-fiscal/full_account_spending_2026_09_20/SOURCE_PINS.json:36",
+   "supports": [
+    "ledger",
+    "card:e3_lower_benefit_draw_by_generation",
+    "card:e7_cell_level_is_not_a_gap",
+    "card:e7_education_specific_gaps",
+    "card:e10_ageing_by_category",
+    "card:complete_account_356_endpoint",
+    "card:headline_cbo_informed_net_cost",
+    "card:ledger_absolute_waterfall_and_arms"
+   ],
+   "resolved": "2026-09-21",
+   "resolved_from": "the file number HC-256; the zip address the repo pins (h256dat.zip) returned 404 on 2026-09-21",
+   "url_in_repo": "https://meps.ahrq.gov/data_files/pufs/h256dat.zip"
+  },
+  {
+   "key": "ahrq_meps_payer_scope_st456",
+   "short": "MEPS Statistical Brief 456",
+   "kind": "report",
+   "authors": "Agency for Healthcare Research and Quality",
+   "year": 2023,
+   "title": "Statistical Brief 456: National Health Care Expenses in the U.S. Civilian Noninstitutionalized Population, Distributions by Type of Service and Source of Payment",
+   "venue": "AHRQ Medical Expenditure Panel Survey",
+   "url": "https://meps.ahrq.gov/data_files/publications/st456/stat456.shtml",
+   "repo_ref": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:90",
+   "supports": [
+    "card:e1_gap_under_age_structures",
+    "card:e3_lower_benefit_draw_by_generation",
+    "card:e10_ageing_by_category",
+    "card:generation_ledger_annual_balances",
+    "card:ledger_absolute_waterfall_and_arms"
+   ],
+   "resolved": "2026-09-21",
+   "resolved_from": "the repo's address without the www. host, which does not resolve",
+   "url_in_repo": "https://www.meps.ahrq.gov/data_files/publications/st456/stat456.shtml"
+  },
+  {
+   "key": "ahrq_meps_standard_errors",
+   "short": "MEPS standard errors",
+   "kind": "report",
+   "authors": "Agency for Healthcare Research and Quality",
+   "year": 2024,
+   "title": "Computing Standard Errors for MEPS Estimates",
+   "venue": "AHRQ Medical Expenditure Panel Survey",
+   "url": "https://meps.ahrq.gov/survey_comp/standard_errors.jsp",
+   "repo_ref": "research/immigration-education-fiscal-and-methods-2026-09-19.md:34",
+   "supports": [
+    "card:e7_cell_level_is_not_a_gap",
+    "card:e7_education_specific_gaps"
+   ]
+  },
+  {
+   "key": "ahrq_meps_nhea_reconciliation_wp17003",
+   "short": "AHRQ Working Paper 17003",
+   "kind": "paper",
+   "authors": "Agency for Healthcare Research and Quality (MEPS working paper 17003)",
+   "year": 2017,
+   "title": "Reconciling MEPS expenditures with the National Health Expenditure Accounts, Tables 4 and 6",
+   "venue": "AHRQ MEPS Working Paper series",
+   "url": "https://meps.ahrq.gov/data_files/publications/workingpapers/wp_17003.pdf",
+   "repo_ref": "research/immigration-education-fiscal-and-methods-2026-09-19.md:34",
+   "supports": [
+    "card:e7_cell_level_is_not_a_gap",
+    "card:e7_education_specific_gaps"
+   ]
+  },
+  {
+   "key": "cms_beneficiary_profile_2026",
+   "short": "CMS Medicaid Beneficiary Profile 2026",
+   "kind": "report",
+   "authors": "Centers for Medicare & Medicaid Services",
+   "year": 2026,
+   "title": "Medicaid Beneficiary Profile 2026, pp.13–15",
+   "venue": "Medicaid.gov",
+   "url": "https://www.medicaid.gov/medicaid/quality-of-care/downloads/beneficiary-profile-2026.pdf",
+   "repo_ref": "research/immigration-complete-annual-account-2026-09-20.md:238",
+   "supports": [
+    "card:complete_account_356_endpoint"
+   ]
+  },
+  {
+   "key": "cms_nhe_tables",
+   "short": "CMS National Health Expenditure tables",
+   "kind": "dataset",
+   "authors": "Centers for Medicare & Medicaid Services, Office of the Actuary",
+   "year": 2024,
+   "title": "National Health Expenditure Accounts, historical tables 1970–2024 (nhe-tables.zip)",
+   "venue": "CMS",
+   "url": "https://www.cms.gov/files/zip/nhe-tables.zip",
+   "repo_ref": "infra/immigration-fiscal/mr_leads_papers_2026_09_21/README.md:28",
+   "supports": [
+    "card:e13_elder_care_medicaid_bound"
+   ]
+  },
+  {
+   "key": "omb_outlays_fy2027",
+   "short": "OMB Public Budget Database, outlays",
+   "kind": "table",
+   "authors": "Office of Management and Budget",
+   "year": 2026,
+   "title": "Public Budget Database, account-level outlays (FY2027 Budget edition)",
+   "venue": "Executive Office of the President",
+   "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/outlays_fy2027.xlsx",
+   "repo_ref": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:90",
+   "supports": [
+    "card:e1_gap_under_age_structures",
+    "card:e3_lower_benefit_draw_by_generation",
+    "card:e5_lifetime_npv_from_birth",
+    "card:e9_arrival_window_gaps",
+    "card:e10_ageing_by_category",
+    "card:generation_ledger_annual_balances",
+    "card:ledger_absolute_waterfall_and_arms",
+    "card:ledger_absolute_uncertainty_scope"
+   ]
+  },
+  {
+   "key": "omb_grants_by_function_hist12z3",
+   "short": "OMB Historical Table 12.3",
+   "kind": "table",
+   "authors": "Office of Management and Budget",
+   "year": 2026,
+   "title": "Historical Tables 12.3, federal grants to state and local governments by function (FY2027 edition)",
+   "venue": "Executive Office of the President",
+   "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist12z3_fy2027.xlsx",
+   "repo_ref": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:90",
+   "supports": [
+    "card:e1_gap_under_age_structures",
+    "card:generation_ledger_annual_balances",
+    "card:generation_ledger_later_annual_refreshes",
+    "card:ledger_absolute_waterfall_and_arms"
+   ]
+  },
+  {
+   "key": "omb_hist03z1_fy2027",
+   "short": "OMB Historical Table 3.1",
+   "kind": "table",
+   "authors": "Office of Management and Budget",
+   "year": 2026,
+   "title": "Historical Tables 3.1, outlays by superfunction and function (FY2027 edition)",
+   "venue": "Executive Office of the President",
+   "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z1_fy2027.xlsx",
+   "repo_ref": "infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json:28",
+   "supports": [
+    "card:ledger_absolute_waterfall_and_arms",
+    "card:ledger_absolute_uncertainty_scope",
+    "card:e12_no_group_crime_cost_in_headline"
+   ]
+  },
+  {
+   "key": "omb_hist03z2_fy2027",
+   "short": "OMB Historical Table 3.2",
+   "kind": "table",
+   "authors": "Office of Management and Budget",
+   "year": 2026,
+   "title": "Historical Tables 3.2, outlays by function and subfunction (FY2027 edition)",
+   "venue": "Executive Office of the President",
+   "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist03z2_fy2027.xlsx",
+   "repo_ref": "infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json:34",
+   "supports": [
+    "card:interest_on_gap_lane",
+    "card:ledger_absolute_waterfall_and_arms"
+   ]
+  },
+  {
+   "key": "omb_hist07z1_fy2027",
+   "short": "OMB Historical Table 7.1",
+   "kind": "table",
+   "authors": "Office of Management and Budget",
+   "year": 2026,
+   "title": "Historical Tables 7.1, federal debt at the end of year (FY2027 edition)",
+   "venue": "Executive Office of the President",
+   "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/hist07z1_fy2027.xlsx",
+   "repo_ref": "research/immigration-projection-backtest-2026-09-19.md:18",
+   "supports": [
+    "card:e5_national_academies_different_object"
+   ]
+  },
+  {
+   "key": "irs_pub15_2024",
+   "short": "IRS Publication 15, 2024",
+   "kind": "report",
+   "authors": "Internal Revenue Service",
+   "year": 2024,
+   "title": "Publication 15 (Circular E), Employer's Tax Guide, 2024",
+   "venue": "IRS",
+   "url": "https://www.irs.gov/pub/irs-prior/p15--2024.pdf",
+   "repo_ref": "infra/immigration-fiscal/ledger_asec2026_2026_09_16/RESULT.md:137",
+   "supports": [
+    "card:e5_asec2026_replication"
+   ]
+  },
+  {
+   "key": "irs_pub15_2025",
+   "short": "IRS Publication 15, 2025",
+   "kind": "report",
+   "authors": "Internal Revenue Service",
+   "year": 2025,
+   "title": "Publication 15 (Circular E), Employer's Tax Guide, 2025",
+   "venue": "IRS",
+   "url": "https://www.irs.gov/pub/irs-prior/p15--2025.pdf",
+   "repo_ref": "infra/immigration-fiscal/ledger_asec2026_2026_09_16/RESULT.md:138",
+   "supports": [
+    "card:e5_asec2026_replication"
+   ]
+  },
+  {
+   "key": "dhs_fy2026_budget_in_brief",
+   "short": "DHS FY2026 Budget in Brief",
+   "kind": "report",
+   "authors": "U.S. Department of Homeland Security, Office of the CFO",
+   "year": 2025,
+   "title": "FY 2026 Budget in Brief (FY2024 Enacted columns)",
+   "venue": "DHS",
+   "url": "https://www.dhs.gov/sites/default/files/2025-07/2025_07_03_ocfo_fy-2026-budget-in-brief.pdf",
+   "repo_ref": "infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json:70",
+   "supports": [
+    "card:e12_no_group_crime_cost_in_headline",
+    "card:ledger_absolute_waterfall_and_arms"
+   ]
+  },
+  {
+   "key": "nces_f33_fy19_documentation",
+   "short": "NCES school district finance survey, FY19",
+   "kind": "report",
+   "authors": "National Center for Education Statistics",
+   "year": 2021,
+   "title": "NCES 2021-306, FY19 School District Finance Survey (F-33) documentation",
+   "venue": "NCES",
+   "url": "https://nces.ed.gov/ccd/pdf/2021306_FY19F33_Documentation.pdf",
+   "repo_ref": "research/immigration-service-scaling-test-2026-09-20.md:41",
+   "supports": [
+    "card:service_scaling_test"
+   ]
+  },
+  {
+   "key": "bls_cex_2024_table2500",
+   "short": "BLS Consumer Expenditure Survey 2024, Table 2500",
+   "kind": "table",
+   "authors": "Bureau of Labor Statistics",
+   "year": 2024,
+   "title": "Consumer Expenditure Survey 2024, Table 2500 (all consumer units, detail)",
+   "venue": "BLS",
+   "url": "https://www.bls.gov/cex/tables/calendar-year/mean/cu-all-detail-2024.xlsx",
+   "repo_ref": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:163",
+   "supports": [
+    "card:e4_prices_and_native_hours"
+   ]
+  },
+  {
+   "key": "bls_cex_2024_table1101",
+   "short": "BLS Consumer Expenditure Survey 2024, Table 1101",
+   "kind": "table",
+   "authors": "Bureau of Labor Statistics",
+   "year": 2024,
+   "title": "Consumer Expenditure Survey 2024, Table 1101 (income quintiles before taxes)",
+   "venue": "BLS",
+   "url": "https://www.bls.gov/cex/tables/calendar-year/mean-item-share-average-standard-error/cu-income-quintiles-before-taxes-2024.xlsx",
+   "repo_ref": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:164",
+   "supports": [
+    "card:e4_prices_and_native_hours"
+   ]
+  },
+  {
+   "key": "erp_2026_gdp",
+   "short": "Economic Report of the President 2026",
+   "kind": "report",
+   "authors": "Council of Economic Advisers",
+   "year": 2026,
+   "title": "Economic Report of the President 2026",
+   "venue": "White House",
+   "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/2026-Economic-Report-of-the-President.pdf",
+   "repo_ref": "infra/immigration-fiscal/matched_benefits_2026_09_19/builder.py:24",
+   "supports": [
+    "production",
+    "control:production.normalization"
+   ]
+  },
+  {
+   "key": "colas_sachs_manuscript",
+   "short": "Colas and Sachs 2022 (manuscript)",
+   "kind": "paper",
+   "authors": "Mark Colas and Dominik Sachs",
+   "year": 2022,
+   "title": "The Indirect Fiscal Benefits of Low-Skilled Immigration",
+   "venue": "Author manuscript, the version this repo read",
+   "url": "https://www.dominiksachs.com/downloads/fiscal_low_skilled_immigration_final.pdf",
+   "repo_ref": "infra/immigration-fiscal/matched_benefits_2026_09_19/builder.py:21",
+   "supports": [
+    "production",
+    "control:production.sigma",
+    "control:count_production"
+   ]
+  },
+  {
+   "key": "colas_sachs_published",
+   "short": "Colas and Sachs 2024",
+   "kind": "paper",
+   "authors": "Mark Colas and Dominik Sachs",
+   "year": 2024,
+   "title": "The Indirect Fiscal Benefits of Low-Skilled Immigration",
+   "venue": "American Economic Journal: Economic Policy 16(2): 515-550",
+   "url": "https://doi.org/10.1257/pol.20220176",
+   "repo_ref": "infra/immigration-fiscal/matched_benefits_2026_09_19/builder.py:22",
+   "supports": [
+    "production",
+    "control:production.sigma"
+   ]
+  },
+  {
+   "key": "clemens_2022_capital_tax_iza",
+   "short": "Clemens 2022",
+   "kind": "paper",
+   "authors": "Michael A. Clemens",
+   "year": 2022,
+   "title": "The Fiscal Effect of Immigration: Reducing Bias in Influential Estimates",
+   "venue": "IZA Discussion Paper 15592",
+   "url": "https://docs.iza.org/dp15592.pdf",
+   "repo_ref": "infra/immigration-fiscal/matched_benefits_2026_09_19/builder.py:23",
+   "supports": [
+    "production",
+    "card:e4_production_gain_inside_headline",
+    "card:complete_account_assigned_balance",
+    "control:production.capital_tax_retention"
+   ]
+  },
+  {
+   "key": "clemens_2011_jep",
+   "short": "Clemens 2011",
+   "kind": "paper",
+   "authors": "Michael A. Clemens",
+   "year": 2011,
+   "title": "Economics and Emigration: Trillion-Dollar Bills on the Sidewalk?",
+   "venue": "Journal of Economic Perspectives 25(3): 83-106",
+   "url": "https://www.aeaweb.org/articles?id=10.1257/jep.25.3.83",
+   "repo_ref": "research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md:107",
+   "supports": [
+    "standing",
+    "argue:caplan:0"
+   ]
+  },
+  {
+   "key": "place_premium_cgd_2008",
+   "short": "Clemens, Montenegro and Pritchett 2008",
+   "kind": "paper",
+   "authors": "Michael A. Clemens, Claudio E. Montenegro and Lant Pritchett",
+   "year": 2008,
+   "title": "The Place Premium: Wage Differences for Identical Workers across the US Border (Working Paper 148)",
+   "venue": "Center for Global Development Working Paper 148",
+   "url": "https://www.cgdev.org/publication/place-premium-wage-differences-identical-workers-across-us-border-working-paper-148",
+   "repo_ref": "research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md:119",
+   "supports": [
+    "standing"
+   ]
+  },
+  {
+   "key": "openborders_double_world_gdp",
+   "short": "openborders.info, Double world GDP",
+   "kind": "post",
+   "authors": "Open Borders: The Case",
+   "year": "n.d.",
+   "title": "Double world GDP",
+   "venue": "openborders.info",
+   "url": "https://openborders.info/double-world-gdp/",
+   "repo_ref": "research/immigration-open-borders-double-world-gdp-and-apartheid-audit-2026-04-21.md:234",
+   "supports": [
+    "standing",
+    "argue:caplan:0"
+   ]
+  },
+  {
+   "key": "clemens_pritchett_iza_dp9730",
+   "short": "Clemens and Pritchett 2016",
+   "kind": "paper",
+   "authors": "Michael A. Clemens and Lant Pritchett",
+   "year": 2016,
+   "title": "The New Economic Case for Migration Restrictions: An Assessment (IZA DP 9730)",
+   "venue": "IZA Discussion Paper 9730",
+   "url": "https://docs.iza.org/dp9730.pdf",
+   "repo_ref": "infra/immigration-fiscal/clemens_pritchett_calibration_2026_09_19/README.md:36",
+   "supports": [
+    "standing"
+   ]
+  },
+  {
+   "key": "caplan_cato_journal_2012",
+   "short": "Caplan 2012, Cato Journal",
+   "kind": "paper",
+   "authors": "Bryan Caplan",
+   "year": 2012,
+   "title": "Why Should We Restrict Immigration?",
+   "venue": "Cato Journal 32(1)",
+   "url": "https://www.cato.org/sites/cato.org/files/serials/files/cato-journal/2012/1/cj32n1-2.pdf",
+   "repo_ref": "research/immigration-bryan-caplan-claims-audit-2026-04-21.md:82",
+   "supports": [
+    "standing",
+    "argue:caplan:0",
+    "argue:caplan:1"
+   ]
+  },
+  {
+   "key": "caplan_2012_econlib",
+   "short": "Caplan 2012, EconLog",
+   "kind": "post",
+   "authors": "Bryan Caplan",
+   "year": 2012,
+   "title": "Why Should We Restrict Immigration?",
+   "venue": "EconLog, January 2012",
+   "url": "https://www.econlib.org/archives/2012/01/why_should_we_r.html",
+   "repo_ref": "research/immigration-bryan-caplan-claims-audit-2026-04-21.md:20",
+   "supports": [
+    "argue:caplan:0",
+    "argue:caplan:1"
+   ]
+  },
+  {
+   "key": "caplan_2011_immigration_and_the_welfare_state",
+   "short": "Caplan 2011, EconLog",
+   "kind": "post",
+   "authors": "Bryan Caplan",
+   "year": 2011,
+   "title": "Immigration and the Welfare State",
+   "venue": "EconLog, June 2011",
+   "url": "https://www.econlib.org/archives/2011/06/immigration_and_2.html",
+   "repo_ref": "research/immigration-bryan-caplan-claims-audit-2026-04-21.md:22",
+   "supports": [
+    "argue:caplan:1"
+   ]
+  },
+  {
+   "key": "caplan_does_immigration_shrink_the_welfare_state",
+   "short": "Caplan, Does Immigration Shrink the Welfare State?",
+   "kind": "post",
+   "authors": "Bryan Caplan",
+   "year": "n.d.",
+   "title": "Does Immigration Shrink the Welfare State?",
+   "venue": "EconLog",
+   "url": "https://www.econlib.org/does-immigration-shrink-the-welfare-state/",
+   "repo_ref": "research/immigration-bryan-caplan-claims-audit-2026-04-21.md:23",
+   "supports": [
+    "argue:caplan:1"
+   ]
+  },
+  {
+   "key": "gao_2004_school_capacity",
+   "short": "GAO 2004",
+   "kind": "report",
+   "authors": "U.S. Government Accountability Office",
+   "year": 2004,
+   "title": "Illegal Alien Schoolchildren: Issues in Estimating State-by-State Costs",
+   "venue": "GAO-04-733",
+   "url": "https://www.gao.gov/assets/a243051.html",
+   "repo_ref": "notes/immigration-service-response-external-evidence-2026-09-20.md:35",
+   "supports": [
+    "control:school_response"
+   ]
+  },
+  {
+   "key": "st_clair_mariel_local_fiscal",
+   "short": "St. Clair 2024",
+   "kind": "paper",
+   "authors": "Travis St. Clair",
+   "year": 2024,
+   "title": "The Fiscal Effects of Immigration on Local Governments: Revisiting the Mariel Boatlift (author-hosted working paper, sections 5-7)",
+   "venue": "Working-paper version; published in Regional Science and Urban Economics 109 (2024), 104053",
+   "url": "https://wagner.nyu.edu/files/faculty/publications/Mariel%20Boatlift_4.pdf",
+   "repo_ref": "notes/immigration-service-response-external-evidence-2026-09-20.md:43",
+   "supports": [
+    "control:school_response"
+   ]
+  },
+  {
+   "key": "smith_2024_america_please_be_reasonable",
+   "short": "Smith 2024, Noahpinion",
+   "kind": "post",
+   "authors": "Noah Smith",
+   "year": 2024,
+   "title": "America, please be reasonable on immigration",
+   "venue": "Noahpinion, 29 January 2024",
+   "url": "https://www.noahpinion.blog/p/america-please-be-reasonable-on-immigration",
+   "repo_ref": "research/immigration-dismantle-noah-smith-2026-06-25.md:11",
+   "supports": [
+    "argue:smith:1"
+   ]
+  },
+  {
+   "key": "smith_mass_deportation_accomplish_nothing",
+   "short": "Smith, Mass deportation would accomplish nothing",
+   "kind": "post",
+   "authors": "Noah Smith",
+   "year": "n.d.",
+   "title": "Mass deportation would accomplish nothing",
+   "venue": "Noahpinion",
+   "url": "https://www.noahpinion.blog/p/mass-deportation-would-accomplish",
+   "repo_ref": "research/immigration-dismantle-noah-smith-2026-06-25.md:11",
+   "supports": [
+    "argue:smith:1"
+   ]
+  },
+  {
+   "key": "yglesias_guest_kolko_2024_new_data",
+   "short": "Kolko 2024, Slow Boring",
+   "kind": "post",
+   "authors": "Jed Kolko",
+   "year": 2024,
+   "title": "Can new data solve an immigration puzzle?",
+   "venue": "Guest post on Slow Boring, 12 September 2024",
+   "url": "https://slowboring.com/p/can-new-data-solve-an-immigration",
+   "repo_ref": "infra/immigration-fiscal/yglesias_claims_2026_09_21/notes/economic_claims.md:67",
+   "supports": [
+    "argue:yglesias:0"
+   ]
+  },
+  {
+   "key": "yglesias_guest_elmendorf_williams_2023_dynamic_scoring",
+   "short": "Elmendorf and Williams 2023, Slow Boring",
+   "kind": "post",
+   "authors": "Doug Elmendorf and Heidi Williams",
+   "year": 2023,
+   "title": "A serious case for dynamic scoring",
+   "venue": "Guest post on Slow Boring, 28 August 2023",
+   "url": "https://slowboring.com/p/a-serious-case-for-dynamic-scoring",
+   "repo_ref": "infra/immigration-fiscal/yglesias_claims_2026_09_21/notes/economic_claims.md:68",
+   "supports": [
+    "argue:yglesias:0"
+   ]
+  },
+  {
+   "key": "yglesias_2020_one_billion_americans_nymag_excerpt",
+   "short": "Yglesias 2020, New York magazine",
+   "kind": "post",
+   "authors": "Matthew Yglesias",
+   "year": 2020,
+   "title": "'One Billion Americans,' by Matthew Yglesias: book excerpt",
+   "venue": "New York magazine, Intelligencer, 31 August 2020",
+   "url": "https://nymag.com/intelligencer/2020/08/one-billion-americans-by-matthew-yglesias-book-excerpt.html",
+   "repo_ref": "infra/immigration-fiscal/yglesias_claims_2026_09_21/notes/economic_claims.md:9",
+   "supports": [
+    "argue:yglesias:1"
+   ]
+  },
+  {
+   "key": "yglesias_2021_inflationary_economy",
+   "short": "Yglesias 2021, Slow Boring",
+   "kind": "post",
+   "authors": "Matthew Yglesias",
+   "year": 2021,
+   "title": "Expanded legal immigration is the ultimate supply side reform",
+   "venue": "Slow Boring, 15 November 2021",
+   "url": "https://slowboring.com/p/inflationary-economy",
+   "repo_ref": "infra/immigration-fiscal/yglesias_claims_2026_09_21/notes/economic_claims.md:18",
+   "supports": [
+    "argue:yglesias:1"
+   ]
+  },
+  {
+   "key": "yglesias_2025_immigration_agenda_2029",
+   "short": "Yglesias 2025, Slow Boring",
+   "kind": "post",
+   "authors": "Matthew Yglesias",
+   "year": 2025,
+   "title": "An immigration agenda for 2029",
+   "venue": "Slow Boring, 6 November 2025",
+   "url": "https://www.slowboring.com/p/an-immigration-agenda-for-2029",
+   "repo_ref": "infra/immigration-fiscal/yglesias_claims_2026_09_21/notes/social_claims.md:26",
+   "supports": [
+    "argue:yglesias:1"
+   ]
+  },
+  {
+   "key": "decker_yes_immigrants_must_make_us_richer",
+   "short": "Decker, Yes, Immigrants Must Make Us Richer",
+   "kind": "post",
+   "authors": "Nicholas Decker",
+   "year": "n.d.",
+   "title": "Yes, Immigrants Must Make Us Richer",
+   "venue": "nicholasdecker.substack.com",
+   "url": "https://nicholasdecker.substack.com/p/yes-immigrants-must-make-us-richer",
+   "repo_ref": "research/immigration-dismantle-decker-2026-06-25.md:11",
+   "supports": [
+    "argue:decker:0"
+   ]
+  },
+  {
+   "key": "decker_2026_07_visa_ranking_post",
+   "short": "Decker 2026, post on X",
+   "kind": "post",
+   "authors": "Nicholas Decker",
+   "year": 2026,
+   "title": "Post on ranking visa applicants, 20 July 2026",
+   "venue": "X, @nominalthoughts; the repo holds a truncated copy",
+   "url": "https://x.com/nominalthoughts/status/2079203832001892368",
+   "repo_ref": "research/immigration-recent-narratives-2026-09-05.md:76",
+   "supports": [
+    "author:decker"
+   ]
+  },
+  {
+   "key": "duncan_trejo_2025_iza_dp17579",
+   "short": "Duncan and Trejo 2025",
+   "kind": "paper",
+   "authors": "Brian Duncan and Stephen J. Trejo",
+   "year": 2025,
+   "title": "Ethnic attrition and the observed outcomes of Mexican Americans (AEA P&P 115:451–56 / IZA DP 17579)",
+   "venue": "IZA Discussion Paper 17579",
+   "url": "https://docs.iza.org/dp17579.pdf",
+   "repo_ref": "infra/immigration-fiscal/mexican_origin_population_total_2026_09_19/README.md:55",
+   "supports": [
+    "card:e5_ethnic_attrition_narrows_gap"
+   ]
+  },
+  {
+   "key": "prison_policy_group_quarters_errors",
+   "short": "Prison Policy Initiative 2024",
+   "kind": "post",
+   "authors": "Prison Policy Initiative",
+   "year": 2024,
+   "title": "If the Census Bureau truly values accuracy, it should count incarcerated people at home",
+   "venue": "Prison Gerrymandering Project, 30 October 2024",
+   "url": "https://www.prisonersofthecensus.org/news/2024/10/30/group_quarters_errors/",
+   "repo_ref": "research/immigration-mexican-origin-generation-incarceration-2026-09-16.md:45",
+   "supports": [
+    "card:e12_incarceration_ratio_series"
+   ]
+  },
+  {
+   "key": "light_texas_pnas_2020",
+   "short": "Light, He and Robey 2020",
+   "kind": "paper",
+   "authors": "Michael T. Light, Jingying He and Jason P. Robey",
+   "year": 2020,
+   "title": "Comparing crime rates between undocumented immigrants, legal immigrants, and native-born US citizens in Texas",
+   "venue": "Proceedings of the National Academy of Sciences 117(51): 32340-32347",
+   "url": "https://www.pnas.org/doi/10.1073/pnas.2014704117",
+   "repo_ref": "research/immigration-detention-crime-and-fiscal-scope-2026-09-20.md:21",
+   "supports": [
+    "card:e12_no_group_crime_cost_in_headline"
+   ]
+  },
+  {
+   "key": "bettencourt_2013_science",
+   "short": "Bettencourt 2013",
+   "kind": "paper",
+   "authors": "Luís M. A. Bettencourt",
+   "year": 2013,
+   "title": "The Origins of Scaling in Cities",
+   "venue": "Science 340(6139): 1438-1441",
+   "url": "https://www.colorado.edu/socialreactors/sites/default/files/attached-files/bettencourt_2013_science.pdf",
+   "repo_ref": "research/immigration-service-scaling-test-2026-09-20.md:17",
+   "supports": [
+    "card:service_scaling_test"
+   ]
+  },
+  {
+   "key": "bettencourt_lobo_arxiv_2015",
+   "short": "Bettencourt and Lobo 2015",
+   "kind": "paper",
+   "authors": "Luís M. A. Bettencourt and José Lobo",
+   "year": 2015,
+   "title": "Urban scaling in Europe (arXiv 1507.07878)",
+   "venue": "arXiv 1507.07878",
+   "url": "https://arxiv.org/pdf/1507.07878",
+   "repo_ref": "research/immigration-service-scaling-test-2026-09-20.md:26",
+   "supports": [
+    "card:service_scaling_test"
+   ]
+  },
+  {
+   "key": "plos_one_scaling_2018",
+   "short": "Meirelles and others 2018",
+   "kind": "paper",
+   "authors": "Joao Meirelles, Camilo Rodrigues Neto, Fernando Fagundes Ferreira, Fabiano Lemes Ribeiro and Claudia Rebeca Binder",
+   "year": 2018,
+   "title": "Evolution of urban scaling: Evidence from Brazil",
+   "venue": "PLOS ONE 13(10): e0204574",
+   "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0204574",
+   "repo_ref": "research/immigration-service-scaling-test-2026-09-20.md:27",
+   "supports": [
+    "card:service_scaling_test"
+   ]
+  },
+  {
+   "key": "cortes_2008_jpe",
+   "short": "Cortés 2008",
+   "kind": "paper",
+   "authors": "Patricia Cortés",
+   "year": 2008,
+   "title": "The Effect of Low-Skilled Immigration on U.S. Prices: Evidence from CPI Data",
+   "venue": "Journal of Political Economy 116(3): 381-422",
+   "url": "https://www.journals.uchicago.edu/doi/10.1086/589756",
+   "repo_ref": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:149",
+   "supports": [
+    "card:e4_prices_and_native_hours"
+   ]
+  },
+  {
+   "key": "cortes_working_paper",
+   "short": "Cortés 2006 (working paper)",
+   "kind": "paper",
+   "authors": "Patricia Cortés",
+   "year": 2006,
+   "title": "The Effect of Low-Skilled Immigration on U.S. Prices (working-paper version, Tables 1–3, 10)",
+   "venue": "UC Irvine colloquium paper",
+   "url": "https://www.economics.uci.edu/files/docs/colloqpapers/w06/Cortes.pdf",
+   "repo_ref": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:150",
+   "supports": [
+    "card:e4_prices_and_native_hours"
+   ]
+  },
+  {
+   "key": "cortes_tessada_appendix",
+   "short": "Cortés and Tessada 2011",
+   "kind": "paper",
+   "authors": "Patricia Cortés and José Tessada",
+   "year": 2011,
+   "title": "Low-Skilled Immigration and the Labor Supply of Highly Skilled Women",
+   "venue": "American Economic Journal: Applied Economics 3(3): 88-123; the link is the article's data and appendix page",
+   "url": "https://www.aeaweb.org/articles/materials/1197",
+   "repo_ref": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:152",
+   "supports": [
+    "card:e4_prices_and_native_hours"
+   ]
+  },
+  {
+   "key": "cortes_2023_nber_wp31234",
+   "short": "Cortés 2023",
+   "kind": "paper",
+   "authors": "Patricia Cortés",
+   "year": 2023,
+   "title": "Immigration and the labour market (NBER Working Paper 31234), p.9",
+   "venue": "NBER Working Paper 31234",
+   "url": "https://www.nber.org/system/files/working_papers/w31234/w31234.pdf",
+   "repo_ref": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:153",
+   "supports": [
+    "card:e4_prices_and_native_hours"
+   ]
+  },
+  {
+   "key": "furtado_hock_2010",
+   "short": "Furtado and Hock 2010",
+   "kind": "paper",
+   "authors": "Delia Furtado and Heinrich Hock",
+   "year": 2010,
+   "title": "Low Skilled Immigration and Work-Fertility Tradeoffs Among High Skilled US Natives",
+   "venue": "American Economic Review 100(2): 224-228, via PubMed Central",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4160832/",
+   "repo_ref": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:154",
+   "supports": [
+    "card:e4_prices_and_native_hours"
+   ]
+  },
+  {
+   "key": "barrett_tan_imf_2025_005",
+   "short": "Barrett and Tan 2025",
+   "kind": "paper",
+   "authors": "Philip Barrett and Sophia Tan",
+   "year": 2025,
+   "title": "Immigration and Local Inflation",
+   "venue": "IMF Working Paper 2025/005",
+   "url": "https://ideas.repec.org/p/imf/imfwpa/2025-005.html",
+   "repo_ref": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:158",
+   "supports": [
+    "card:e4_prices_and_native_hours"
+   ]
+  },
+  {
+   "key": "klw_prices_immigration_2026",
+   "short": "Kim, Leung and Weinberger 2026",
+   "kind": "paper",
+   "authors": "Kim, Leung and Weinberger",
+   "year": 2026,
+   "title": "Prices and Immigration: Firm-Level Evidence",
+   "venue": "Working paper, February 2026",
+   "url": "https://ryansungryongkim.github.io/papers/KLW_25Feb2026.pdf",
+   "repo_ref": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:159",
+   "supports": [
+    "card:e4_prices_and_native_hours"
+   ]
+  },
+  {
+   "key": "stlouis_fed_synopses_2011_31",
+   "short": "Hernández-Murillo and Martinek 2011",
+   "kind": "report",
+   "authors": "Rubén Hernández-Murillo and Christopher J. Martinek",
+   "year": 2011,
+   "title": "Immigration at the Extremes of the Skill Distribution",
+   "venue": "Federal Reserve Bank of St. Louis, Economic Synopses 2011, no. 31",
+   "url": "https://doi.org/10.20955/es.2011.31",
+   "repo_ref": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:160",
+   "supports": [
+    "card:e4_prices_and_native_hours"
+   ]
+  },
+  {
+   "key": "cbo_marginal_tax_rates_54911",
+   "short": "CBO 2019, marginal tax rates",
+   "kind": "report",
+   "authors": "Congressional Budget Office",
+   "year": 2019,
+   "title": "Marginal Federal Tax Rates on Labor Income: 1962 to 2028",
+   "venue": "CBO publication 54911",
+   "url": "https://www.cbo.gov/publication/54911",
+   "repo_ref": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:162",
+   "supports": [
+    "card:e4_prices_and_native_hours"
+   ]
+  },
+  {
+   "key": "mr_post_muni_bonds_2024",
+   "short": "Cowen 2024, Marginal Revolution",
+   "kind": "post",
+   "authors": "Tyler Cowen",
+   "year": 2024,
+   "title": "Unauthorized Immigration and Local Government Finances",
+   "venue": "Marginal Revolution, November 2024",
+   "url": "https://marginalrevolution.com/marginalrevolution/2024/11/unauthorized-immigration-and-local-government-finances.html",
+   "repo_ref": "research/immigration-marginal-revolution-claims-audit-2026-09-18.md:75",
+   "supports": [
+    "card:e2_muni_bond_paper_cannot_settle"
+   ]
+  },
+  {
+   "key": "mr_post_nursing_homes_2021",
+   "short": "Cowen 2021, Marginal Revolution",
+   "kind": "post",
+   "authors": "Tyler Cowen",
+   "year": 2021,
+   "title": "Immigrants keep us out of nursing homes",
+   "venue": "Marginal Revolution, November 2021",
+   "url": "https://marginalrevolution.com/marginalrevolution/2021/11/immigrants-keep-us-out-of-nursing-homes.html",
+   "repo_ref": "research/immigration-marginal-revolution-claims-audit-2026-09-18.md:83",
+   "supports": [
+    "card:e13_elder_care_medicaid_bound",
+    "card:e13_mortality_instrument_null"
+   ]
+  },
+  {
+   "key": "mr_post_elderly_health_2026",
+   "short": "Cowen 2026, Marginal Revolution (health)",
+   "kind": "post",
+   "authors": "Tyler Cowen",
+   "year": 2026,
+   "title": "Immigration and health for elderly Americans",
+   "venue": "Marginal Revolution, February 2026",
+   "url": "https://marginalrevolution.com/marginalrevolution/2026/02/immigration-and-health-for-elderly-americans.html",
+   "repo_ref": "research/immigration-marginal-revolution-claims-audit-2026-09-18.md:86",
+   "supports": [
+    "card:e13_mortality_instrument_null",
+    "card:e13_care_workforce_composition"
+   ]
+  },
+  {
+   "key": "mr_post_mass_deportation_2026",
+   "short": "Cowen 2026, Marginal Revolution (deportation)",
+   "kind": "post",
+   "authors": "Tyler Cowen",
+   "year": 2026,
+   "title": "The economics of mass deportation",
+   "venue": "Marginal Revolution, February 2026",
+   "url": "https://marginalrevolution.com/marginalrevolution/2026/02/the-economics-of-mass-deportation.html",
+   "repo_ref": "infra/immigration-fiscal/mr_archive_2026_09_18/derived/mr_posts.jsonl:1019",
+   "supports": [
+    "card:e14_complementarity_removal_model"
+   ]
+  },
+  {
+   "key": "mr_post_white_flight_2023",
+   "short": "Cowen 2023, Marginal Revolution",
+   "kind": "post",
+   "authors": "Tyler Cowen",
+   "year": 2023,
+   "title": "White Flight from Asian Immigration: Evidence from California Public Schools",
+   "venue": "Marginal Revolution, July 2023",
+   "url": "https://marginalrevolution.com/marginalrevolution/2023/07/white-flight-from-asian-immigration-evidence-from-california-public-schools.html",
+   "repo_ref": "infra/immigration-fiscal/mr_archive_2026_09_18/derived/mr_posts.jsonl:1073",
+   "supports": [
+    "card:school_flight_not_estimated_for_hispanic_inflows"
+   ]
+  },
+  {
+   "key": "butcher_moran_watson_nber_w29520",
+   "short": "Butcher, Moran and Watson 2021",
+   "authors": "Kristin F. Butcher, Kelsey Moran and Tara Watson",
+   "year": 2021,
+   "title": "Immigrant Labor and the Institutionalization of the U.S.-born Elderly",
+   "venue": "NBER Working Paper 29520; published in Review of International Economics 30(5), 2022",
+   "url": "https://www.nber.org/papers/w29520",
+   "resolved_from": "NBER number w29520",
+   "kind": "paper",
+   "repo_ref": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:29",
+   "resolved": "2026-09-21",
+   "supports": [
+    "card:e13_elder_care_medicaid_bound",
+    "card:e13_mortality_instrument_null",
+    "card:e13_care_workforce_composition"
+   ]
+  },
+  {
+   "key": "grabowski_gruber_mcgarry_nber_w34791",
+   "short": "Grabowski, Gruber and McGarry 2026",
+   "authors": "David C. Grabowski, Jonathan Gruber and Brian McGarry",
+   "year": 2026,
+   "title": "Is Immigration Good for Health? The Effect of Immigration on Older Adult Mortality in the United States",
+   "venue": "NBER Working Paper 34791",
+   "url": "https://www.nber.org/papers/w34791",
+   "resolved_from": "NBER number w34791",
+   "kind": "paper",
+   "repo_ref": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:30",
+   "resolved": "2026-09-21",
+   "supports": [
+    "card:e13_mortality_instrument_null",
+    "card:e13_care_workforce_composition"
+   ]
+  },
+  {
+   "key": "cornaggia_ssrn_5026977",
+   "short": "Cornaggia, Cornaggia and Israelsen 2025",
+   "authors": "Cornaggia, Cornaggia and Israelsen",
+   "year": 2025,
+   "title": "Unauthorized Immigration and Local Government Finances",
+   "venue": "SSRN 5026977",
+   "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5026977",
+   "resolved_from": "SSRN id 5026977",
+   "kind": "paper",
+   "repo_ref": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:31",
+   "resolved": "2026-09-21",
+   "supports": [
+    "card:e2_muni_bond_paper_cannot_settle"
+   ]
+  },
+  {
+   "key": "cravino_nber_w34790",
+   "short": "Cravino and others 2026",
+   "authors": "Javier Cravino, Andrei Levchenko, Francesc Ortega and Nitya Pandalai-Nayar",
+   "year": 2026,
+   "title": "The Economic Impact of Mass Deportations",
+   "venue": "NBER Working Paper 34790",
+   "url": "https://www.nber.org/papers/w34790",
+   "resolved_from": "NBER number w34790",
+   "kind": "paper",
+   "repo_ref": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:32",
+   "resolved": "2026-09-21",
+   "supports": [
+    "card:e14_complementarity_removal_model"
+   ]
+  },
+  {
+   "key": "boustan_cai_tseng_nber_w31434",
+   "short": "Boustan, Cai and Tseng 2023",
+   "authors": "Leah Boustan, Christine Cai and Tammy Tseng",
+   "year": 2023,
+   "title": "White Flight from Asian Immigration: Evidence from California Public Schools",
+   "venue": "NBER Working Paper 31434",
+   "url": "https://www.nber.org/papers/w31434",
+   "resolved_from": "NBER number w31434",
+   "kind": "paper",
+   "repo_ref": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:33",
+   "resolved": "2026-09-21",
+   "supports": [
+    "card:school_flight_not_estimated_for_hispanic_inflows"
+   ]
+  },
+  {
+   "key": "treasury_debt_to_penny",
+   "short": "Treasury, Debt to the Penny",
+   "authors": "U.S. Treasury, Bureau of the Fiscal Service",
+   "year": 2024,
+   "title": "Debt to the Penny",
+   "venue": "FiscalData",
+   "url": "https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/debt-to-the-penny",
+   "resolved_from": "the dataset name debt_to_penny",
+   "kind": "dataset",
+   "repo_ref": "infra/immigration-fiscal/gap_interest_2026_09_18/README.md:19",
+   "resolved": "2026-09-21",
+   "supports": [
+    "card:interest_on_gap_lane"
+   ]
+  },
+  {
+   "key": "duncan_trejo_2011_jole",
+   "short": "Duncan and Trejo 2011",
+   "authors": "Brian Duncan and Stephen J. Trejo",
+   "year": 2011,
+   "title": "Intermarriage and the Intergenerational Transmission of Ethnic Identity and Human Capital for Mexican Americans",
+   "venue": "Journal of Labor Economics 29(2): 195-227",
+   "url": "https://doi.org/10.1086/658088",
+   "resolved_from": "DOI 10.1086/658088",
+   "kind": "paper",
+   "repo_ref": "infra/immigration-fiscal/mexican_origin_population_total_2026_09_19/README.md:53",
+   "resolved": "2026-09-21",
+   "supports": [
+    "card:e5_ethnic_attrition_narrows_gap"
+   ]
+  },
+  {
+   "key": "duncan_trejo_2017_ilr",
+   "short": "Duncan and Trejo 2017",
+   "authors": "Brian Duncan and Stephen J. Trejo",
+   "year": 2017,
+   "title": "The Complexity of Immigrant Generations: Implications for Assessing the Socioeconomic Integration of Hispanics and Asians",
+   "venue": "ILR Review 70(5): 1146-1175",
+   "url": "https://doi.org/10.1177/0019793916679613",
+   "resolved_from": "DOI 10.1177/0019793916679613",
+   "kind": "paper",
+   "repo_ref": "infra/immigration-fiscal/mexican_origin_population_total_2026_09_19/README.md:54",
+   "resolved": "2026-09-21",
+   "supports": [
+    "card:e5_ethnic_attrition_narrows_gap"
+   ]
+  }
+ ]
+}
