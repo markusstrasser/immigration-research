@@ -17,6 +17,7 @@ Date: 2026-09-19. Lane: `infra/immigration-fiscal/political_trajectory_county_20
 | S7 | placebo: 2000→2008 vote change on 2008→2024 composition change | −0.222 (0.251) |
 | S8 | S1 with non-Mexican Hispanic share | Mexican +0.202 (0.148); non-Mexican Hispanic +0.711 (0.181) |
 | S9 | S1 on 2000–2016, one vote source | +0.129 (0.145) |
+| S10 | S1 with the total Hispanic share in place of the Mexican-origin share (row added 2026-09-21) | +0.445 (0.180) |
 | T1 | turnout on citizen VAP, 2008–2024, county + state×year FE | −0.088 (0.283) |
 
 Residual SD of the regressor after both fixed effects is 1.55 points (raw 11.31); median county gain 2000–2024 is 1.56 points, 90th percentile 7.79. Votes: MEDSL GitHub mirror 2000–2016, tonmcg 2020–2024 (Dataverse refuses scripted download); splice measured on the 2016 overlap at a median 0.016 points. [SOURCE: `derived/regressions.csv`, `county_panel.csv`] [CALCULATION]
@@ -49,6 +50,12 @@ Correlates of State Policy v2.2, n = 48 states, ordering tests only. In-state tu
 
 Ecological; survey-based partisanship on a different frame from the CPS shares; state laws few and endogenous; 2024 composition uses the 2019–2023 ACS (midpoint 2021); 2000 CPS not on the API; Alaska and Connecticut dropped for geography. Ladder 147 holds the apportionment effect (24 seats) and is not redone. No policy advice.
 
+Added 2026-09-21. State-by-year effects absorb every channel that works at the state level, including statewide realignment and any reaction of low-share counties to statewide change, so S1 measures the within-state county gradient only (residual SD of the regressor 1.55 points against 11.31 raw). The largest movement in the data sits in that absorbed part: counties under 10% Mexican origin went 56.6 → 72.2 Democratic in California and 31.3 → 16.6 in Texas (§3), and this design cannot say whether statewide composition caused either. S2 keeps that variation and cannot separate it from other state trends. Within the S1 design the total Hispanic share does load (S10: +0.44, t 2.5), through its non-Mexican component (S8). The verdict is therefore a statement about the Mexican-origin share's county gradient over 2000–2024, with one reversing window (S6); it is not a finding that composition has no political effect. [SOURCE: `derived/regressions.csv`] [INFERENCE for the last sentence]
+
 ## Sources
 
 MEDSL county returns (GitHub mirror), tonmcg 2020/2024; Census API dec/sf1 2000 and 2010 (PCT011004), ACS 5-year 2009–2023 (B03001, B03002, B05003, B05003I, B19013); CPS November Voting and Registration Supplement 2004–2024 via Census API; Roper Center exit polls; Pew validated-voter reports 2021 and 2025; MSU IPPSR Correlates of State Policy v2.2; Mayda, Peri and Steingress 2022; ladder 87, 97, 102, 104, 147.
+
+## Revisions
+
+- 2026-09-21. Added specification S10, which the lane had computed and the memo omitted, and a limits paragraph on what state-by-year effects absorb. A second agent's summary had read S1 as "share growth does not move votes"; the estimates are unchanged and the verdict is now scoped to the county gradient. Ladder 160.
