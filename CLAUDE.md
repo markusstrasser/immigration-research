@@ -45,6 +45,12 @@ All commits to main. No branches.
 
 Scopes: `[research]` (findings), `[analysis]` (data work), `[docs]` (index/notes), `[infra]` (tooling/config).
 
+Worktrees are temporary. Once a worktree's output is committed on main, remove it in the same
+session (`git worktree remove <path>`); `git worktree list` should show only main between
+sessions. A stale worktree keeps an old copy of this file and pre-integration drafts that a
+search can mistake for current work. Before removing one, confirm its HEAD is on main and that
+its uncommitted and ignored files (`_cache/`, `raw/`) exist on main.
+
 ## Tools Available
 
 ### Skills (symlinked from `~/Projects/skills/`)
@@ -128,7 +134,6 @@ substituting a web summary or declaring a measurement unavailable:
   verify that the referenced file exists and resolve `sources` on this machine.
 - [Reproduction inputs](infra/immigration-fiscal/REPRODUCTION_INPUTS.md): official
   acquisition routes, pinned versions, normalization and reproduction commands.
-
 - [Objections FAQ](research/immigration-objections-faq-2026-09-21.md): standard objections,
   each routed to its executed table; start here for "what about X?" questions.
 - Fiscal results **by generation against a white reference** exist only in
@@ -138,6 +143,11 @@ substituting a web summary or declaring a measurement unavailable:
   the split onto their totals.
 - Only income-year 2024 is a measured account. Earlier years are a
   [model back-cast](research/immigration-historical-backcast-2026-09-20.md).
+- The headline's "CBO-informed" label covers two inputs only: CBO's tax-incidence rules and
+  its 63–66% school-spending response. Defense, general public services, existing interest
+  and business subsidies are held at **zero response by assumption**; see the
+  [complete annual account](research/immigration-complete-annual-account-2026-09-20.md)
+  and FAQ entry 2 for the sensitivity.
 
 The unified warehouse is one entry point, not a complete inventory of newer
 analysis directories. Use `rg --files --no-ignore` when locating ignored raw or
