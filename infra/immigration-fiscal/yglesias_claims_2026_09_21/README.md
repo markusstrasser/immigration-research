@@ -9,6 +9,10 @@
 - `notes/economic_claims.md`, `notes/social_claims.md`: one file per reader agent, each opening
   with the model self-report and a `**Verdict:**`. Both list the posts not yet fetched.
 - `_cache/` (ignored): fetched pages, the Slow Boring archive listing, the Borjas 1995 abstract page.
+- `extract_post.py`: byline, date, paywall status and body text from a cached page, one summary
+  line each: `uv run --no-project python3 extract_post.py _cache/sb_<slug>.html`. Checked against
+  a free post (18,313 characters against the reader's 18,391), a paywalled preview and the
+  Humphreys guest post.
 
 Routes that work for Slow Boring: `sitemap.xml` for discovery (the archive API rejects
 `sort=search`), then `slowboring.com/p/<slug>`; the body sits between `class="body markup"` and
