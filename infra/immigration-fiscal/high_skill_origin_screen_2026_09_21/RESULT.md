@@ -68,6 +68,39 @@ Venezuela, Mexico, Pakistan/Bangladesh and India pass; the former-USSR and Phili
 suggestive only. Degree holders of every origin remain positive in absolute terms (+$7,264 for
 Venezuela to +$36,021 for Iran per adult aged 25+). [CALCULATION: same file]
 
+## At the native age mix (added later on 2026-09-21)
+
+The headline table is a snapshot at each group's own ages, which flatters young groups: 12% of
+India-born adults are 65 or older against 28% of natives. `age_standardized.py` re-weights each
+group's own 25–64 and 65+ balances to the native 65+ share, and as a bound replaces the group's
+65+ balance with the native one (−$27,741), since today's immigrant elderly often arrived late
+and hold smaller entitlements than today's workers will. Personal allocation, dollars per
+adult-year; the standard error treats the two bands as independent (approximate).
+[CALCULATION: `derived/origin_screen_native_ages.csv`]
+
+| Birthplace | 65+ share | Own ages | Native age mix (±se) | Native old-age cost |
+|---|---:|---:|---:|---:|
+| India | 11.9% | +29,174 | +21,832 (1,795) | +17,121 |
+| Iran | 30.0% | +21,228 | +22,292 (6,380) | +19,083 |
+| United Kingdom | 38.9% | +15,931 | +21,798 (4,831) | +18,801 |
+| China (mainland) | 25.8% | +16,915 | +15,966 (2,704) | +12,522 |
+| Brazil | 8.0% | +17,438 | +10,128 (3,228) | +6,891 |
+| Nigeria | 9.4% | +14,891 | +8,866 (5,223) | +5,145 |
+| Russia, Ukraine, "USSR" | 20.6% | +9,798 | +6,629 (2,059) | +5,641 |
+| Third-plus NH white | 31.6% | +3,294 | +4,861 (387) | +4,653 |
+| Philippines | 32.3% | +948 | +2,895 (1,568) | +3,440 |
+| All native | 28.0% | +2,785 | +2,785 (330) | +2,785 |
+| Pakistan, Bangladesh | 19.4% | +5,331 | +2,329 (3,287) | +963 |
+| Venezuela | 9.2% | +4,458 | −877 (1,436) | −2,689 |
+| Mexico | 14.9% | −2,282 | −5,684 (642) | −6,650 |
+
+Youth supplies a quarter of the India-born figure and 40% or more of the Brazil- and
+Nigeria-born figures; the ordering survives. With age held at the native mix the Venezuela-born
+are at or below zero and the Pakistan/Bangladesh-born cannot be told from natives. On the shared
+allocation, which charges household children's costs to the adults, the same re-weighting gives
+India +$13,452, natives −$1,657, Pakistan/Bangladesh −$1,709, Venezuela −$2,329 and Mexico
+−$7,903. Two bands only; this is not a lifetime account, and it prices no descendants.
+
 ## What the account cannot see: ACS 2024 proxies (large samples, no dollars)
 
 The CPS account transports public medical spending by age band and US birth only, so an origin's
