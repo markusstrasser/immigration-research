@@ -100,8 +100,13 @@ decisions/         — concept-level pivots, approach selections, methodology sh
 infra/immigration-fiscal/<lane>_<date>/ — one analysis per directory: script, README or
                      RESULT.md, tracked `derived/` summaries, ignored `_cache/` raw pulls
 warehouse/         — DuckDB warehouses (context, lifetime evidence); not a full inventory
-sources/           — archived source material, data files (resolves to ~/research-data)
+sources/           — archived source material, data files; ignored, a real directory here
+                     (`~/research-data` is a symlink to it, not a second copy)
 notes/             — working notes, drafts, threads of analysis
+queries/immigration/ — checked-in SQL reproducing the headline numbers (`-- requires:`/`-- backs:`)
+scripts/reproduce-immigration-data.sh — init, doctor, download, verify, build, smoke, query
+casebank/          — verbatim example cases with induced principles
+HUMAN.md           — async asks to the operator; CYCLE.md is a finished April–June loop log
 ```
 
 ### Running analysis lanes
@@ -113,6 +118,9 @@ uv run --no-project python3 -m pytest infra/immigration-fiscal/<lane>/ -q
 # Census API: the key lives in the untracked acquire/config.local.env; never print it
 set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
 ```
+
+- `--no-project` reuses the main checkout's `.venv`. In a worktree or fresh clone it fails with
+  `ModuleNotFoundError`; drop the flag there (`uv run python3 …` builds from `uv.lock`).
 
 - Consumers of `ledger_absolute_2026_09_17` (the `lifetime.py` loaders, `age_normalizations.py`)
   verify stored source hashes, including upstream
