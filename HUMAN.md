@@ -58,3 +58,11 @@ independent products); **K#2 → now ADJUDICATES** — replaced the bare RPP lis
 border(TX/AZ/NM)-vs-gateway(NY/NJ/MA/IL) test: **destination spread 24.6% (SUPPORTED, >15%); clean
 border-gateway split only ~10% (modest — CA is a high-cost border outlier).** Details + Revisions:
 `research/immigration-theory-verdicts-2026-06-25.md`.
+
+## Open asks, 2026-09-21
+session: adae2b38-fa63-4fd0-b727-08c73975b287
+
+- **Push is blocked** by GitHub push protection on a false-positive AWS key ID in a974758 (`mr_archive_2026_09_18/derived/mr_posts.jsonl:597`, a 2016 presigned third-party URL; nothing to rotate). Choose: open the unblock link GitHub printed and mark it a false positive, or say "rewrite" (history rewrite was rehearsed in a scratch clone, not applied; main has advanced since, so it needs a fresh rehearsal).
+- **Pew 2017 Survey of US Muslims microdata** need a free Pew account (religion × nativity × income × attitudes; the only US religion-observed file we can get quickly).
+- **New Immigrant Survey 2003** public-use files (ICPSR 38031, 38061; free ICPSR login): religion with earnings for new green-card holders.
+- **Propose, not enacted (analysis protocol):** for a contested cross-unit test, commit the lane README with outcomes, models and decision rule before downloading the predictors, and record deviations in RESULT.md. Done once in `admission_route_2026_09_21` (6df195d); worth making the rule?
