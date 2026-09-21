@@ -114,11 +114,15 @@ uv run --no-project python3 -m pytest infra/immigration-fiscal/<lane>/ -q
 set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
 ```
 
-- Consumers of `ledger_absolute_2026_09_17` (and other lanes whose manifests fingerprint
-  `gen_ledger_extension_2026_09_16/extend_ledger.py`) verify source hashes and stop with
+- Consumers of `ledger_absolute_2026_09_17` (the `lifetime.py` loaders, `age_normalizations.py`)
+  verify stored source hashes, including upstream
+  `gen_ledger_extension_2026_09_16/extend_ledger.py`, and stop with
   `[BLOCKED] missing or stale source` after any edit to a fingerprinted `.py`. Repair by
   rebuilding to a scratch `--out-dir`, byte-comparing the outputs, then re-running
   `absolute_ledger.py`, `check_gates.py` and `lifetime.py` in place. Never edit a hash.
+  Hashes in other lanes' `audit.json` or `manifest.json` are build-time provenance, rewritten
+  by each build (the `full_account_*` builders replay their upstream instead); an older hash
+  there records what produced the outputs.
 - Pipe Census API output through a redaction filter; error messages and `pgrep`/`ps`
   dumps carry the key in the URL. A hook blocks reads of `~/.config` secret stores.
 
