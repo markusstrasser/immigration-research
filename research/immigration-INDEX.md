@@ -55,10 +55,20 @@ general public services, existing interest and business subsidies are held at **
 response by assumption**, not by a CBO estimate; general public services at 25% would
 add $12.1bn ([scope memo](immigration-education-administration-scope-2026-09-20.md)).
 
-[Objections and answers](immigration-objections-faq-2026-09-21.md): twelve standard
+[Objections and answers](immigration-objections-faq-2026-09-21.md): fourteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
 second generation, reference group, education, single year, legacy cohorts, ageing,
-policy reading, crime), each steel-manned and routed to its executed table.
+policy reading, crime, elder care, native–immigrant complementarity), each steel-manned and
+routed to its executed table.
+
+[Seven papers from the Marginal Revolution archive, read in full](immigration-marginal-revolution-leads-read-2026-09-21.md):
+headline unchanged. The nursing-home channel is bounded at **$2.3–14.9bn a year** of Medicaid
+spending for the Mexico-born ($5.8bn preferred); it transfers weakly because 1.2% of Mexican
+immigrants work in health occupations. The 2025 municipal-bond paper cannot identify the
+service-response share. **Open:** the production term ($8.8–13.3bn) assumes perfect
+substitution between union and outside workers within skill groups; a 2026 removal model with
+imperfect substitution implies native wage gains of $27–80bn from half of all unauthorized
+workers, offset by other immigrants' losses (ladder 164–167).
 
 [Cumulative 2005–2024 back-cast](immigration-historical-backcast-2026-09-20.md):
 no past year is measured. Actual BEA budgets, each benefit programme's own series and

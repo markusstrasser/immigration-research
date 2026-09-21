@@ -33,7 +33,10 @@ economic-affairs and recreation budgets held fixed. Making general public servic
 test was too imprecise to choose among them. Charging all three functions per capita moves
 the *assigned balance* by $286bn but is not part of the net-cost headline. With every
 ordinary service budget fixed the result runs from −$41.5bn to +$112.7bn, and break-even needs
-only 18.5–25.8% of assigned service costs to be incremental. [SOURCE: complete account;
+only 18.5–25.8% of assigned service costs to be incremental. A 2025 municipal-bond paper
+sometimes cited for "local spending rises and revenue does not" cannot settle the response
+share: its revenue result is +0.2% with an interval of −1.8% to +2.2%, wider than every spending
+effect it reports, and it estimates no total expenditure (ladder 165). [SOURCE: complete account;
 [administration scope](immigration-education-administration-scope-2026-09-20.md);
 [scaling test](immigration-service-scaling-test-2026-09-20.md)]
 
@@ -134,6 +137,36 @@ headline contains no group-specific crime cost, and victim costs are outside a f
 Start from the [custody and crime measurement rule](immigration-detention-crime-and-fiscal-scope-2026-09-20.md)
 and the [generation incarceration memo](immigration-mexican-origin-generation-incarceration-2026-09-16.md)
 before quoting any ratio.
+
+## 13. "Immigrant care workers keep the elderly out of nursing homes and save Medicaid money."
+
+Steel-man: two shift-share studies find it. Ten more points of less-educated foreign-born share
+lower institutionalization of the US-born elderly by 1.5 points, and 1,000 more immigrants mean
+about ten fewer elderly deaths a year. Finding: the channel exists in that literature and the
+account omits it, but it runs through health workers, and 1.2% of Mexican immigrants work as
+aide, nurse or doctor against 14% of Philippine immigrants. The Mexico-born are 14.9% of
+foreign-born direct-care workers and 38.5% of the less-educated foreign-born. The mortality
+study's instrument weighted by non-health work finds nothing (−0.00252, SE 0.00370). Priced
+generously, the Medicaid nursing-facility saving attributable to the Mexico-born is
+$2.3–14.9bn a year, $5.8bn at the preferred coefficient weighted by who staffs care: 1–9% of the
+headline. The first study loses significance with year-by-state effects. Would change it: an
+origin-specific estimate, which neither paper runs. [SOURCE:
+[papers read](immigration-marginal-revolution-leads-read-2026-09-21.md#1-elder-care); ladder 164]
+
+## 14. "Immigrants complement native workers, so your production gain is far too small."
+
+Steel-man: if natives and immigrants are imperfect substitutes, natives' wages rise with
+immigrant labour even after capital adjusts. A 2026 general-equilibrium model puts the native
+loss from removing half of unauthorized workers at 0.33% of wages, $38.6bn a year at 2024 wages
+and $26.8–80.4bn across published elasticities. Finding: this is a fair hit on the account's
+production term, which puts union and outside workers in the same skill group as perfect
+substitutes and credits $8.8–13.3bn. Three limits keep it from being added as it stands. The
+model's aggregate real wage is unchanged by construction, so the native gain is matched by
+losses of other immigrants, who are inside "other residents" here. Its "natives" include
+naturalized citizens and every US-born Mexican-origin worker. It has no taxes, transfers or
+public services. The nested calculation on the account's own earnings data is the open item;
+at these magnitudes it changes the size of the net cost and leaves its sign. [SOURCE:
+[papers read](immigration-marginal-revolution-leads-read-2026-09-21.md#3-the-removal-model-and-the-accounts-production-term); ladder 166]
 
 ## Instrument
 
