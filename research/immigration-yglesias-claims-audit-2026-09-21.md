@@ -82,6 +82,7 @@ the high-skill inflow, where this repo agrees with him. [FRAMING-SENSITIVE]
 |---|---|---|
 | S-01 (2025): "immigrants commit crimes at lower rates than native-born Americans, which is true" | First generation: agreed on the conviction margin, a result carried by legal immigrants (ladder 48). He says nothing about descendants; our descendant contrasts carry the [September 20 measurement rule](immigration-detention-crime-and-fiscal-scope-2026-09-20.md) and do not identify offending. | AGREE as stated |
 | S-02 (2025): a million arrivals will not commit zero crimes, "in that sense immigration makes crime worse" | Arithmetic. It is also the honest form of the argument: counts, victims and costs scale with population even at a lower rate. | AGREE |
+| Hispanic incarceration statistics attributed to him | The one Slow Boring post carrying Hispanic-versus-white incarceration statistics (`/p/hispanic-prison`, 2021-08-28) is a guest post by Keith Humphreys [SOURCE: cached page, `<meta name="author" content="Keith Humphreys">`]. Nothing in it is Yglesias's claim; it remains usable as a source in its own right. | Attribution note |
 
 ### Assimilation
 
@@ -107,6 +108,7 @@ gives the stock at 14.6–16.7m and no 2025 trend. [OPEN]
 | 2025-03 | "strong borders … deporting people who actually do commit crimes … 'building a wall around the welfare state'" |
 | 2025-10 | "elite liberals — including fairly moderate ones like me — are uncomfortable with the idea of being mean to sympathetic immigration cases" |
 | 2025-11 | "in that sense immigration makes crime worse"; the left overstates "the substantive case that immigration is bad economics" |
+| 2026-04 | "I'm not sure asylum has a future" (podcast preview) |
 | 2026-05 | If robots replace unskilled work, "that would … make certain restrictionist ideas much more true" |
 | 2026-07 | "it's not good enough for liberals to reassure voters that assimilation happens" |
 
@@ -116,12 +118,26 @@ as new framing and the 2020 universal is never marked withdrawn. [INFERENCE]
 
 ## 4. Gaps
 
-- Paywalled and read only as previews: "The truth about immigration and wages" (2021-01-04), his
-  single dedicated wages post, 396 characters; parts 1–3 of the October–November 2025 series;
-  "Immigration policy should prioritize" (2025-02-10); "The case for assimilation" (2026-07-02).
+- Paywalled and read only as free previews. Five yielded a quote used here: "Hostility to
+  immigration isn't about economics" (2023-09-06); parts one and three of the October–November
+  2025 series (2025-10-15 and 2025-10-28); "Should we end asylum?" (2026-04-30); "The case for
+  assimilation" (2026-07-02). Five yielded nothing: `/p/immigration-and-wages` (2021-01-04), his
+  single dedicated wages post, 396 characters; "One Billion Americans — now more than ever"
+  (2022-10-26), whose 10,511-character preview restates the national-power case of §1 and
+  carries no fiscal, wage or skill claim; `/p/immigration-policy-should-prioritize`
+  (2025-02-10); "Blame Trump for Trump-era immigration excesses" (2026-01-20); "Immigration
+  enforcement's accountability gap" (2026-01-30). Part two of the 2025 series
+  (`/p/democrats-cant-just-go-back-to-obamas`) was not fetched.
 - *One Billion Americans* is represented by the New York magazine excerpt he bylined; the book's
   fiscal and wage chapters were not read. Vox (2016–2019) and Bloomberg columns were not fetched.
-- Seventeen free, on-topic Slow Boring posts are listed in the notes files as not yet fetched.
+- Twelve on-topic Slow Boring posts named in the notes files were not fetched. The two readers'
+  lists overlap, and two slugs on the social list (`immigration-openness`, the Kolko guest post)
+  were fetched by the economic reader.
+- `/p/immigration-can-power-american-energy` (2024-04-27) has an unresolved byline and was left
+  unused.
+- Negative results in the pieces read: no reference to the National Academies' 2016 fiscal
+  report, no federal fiscal, Social Security or debt number in his own voice, and no claim about
+  second-generation outcomes beyond E-07 and the Boustan citation in SC-09.
 - OPEN rows name what would settle them.
 
 [DISCONFIRMATION] The collection was weighted toward claims that could embarrass this repo's
@@ -133,3 +149,15 @@ That limit is stated in §1 and is not resolved here.
 [INSTRUMENT] Graded by an LLM whose September 18 grades of four other commentators were
 over-strong and corrected a day later; the matching rule above is that correction applied in
 advance. See [`notes/llm-bias-caveat.md`](../notes/llm-bias-caveat.md).
+
+## Revisions
+
+- 2026-09-21 (later the same day): reconciled against the two readers' final reports. No grade
+  changed. Added the Humphreys attribution note, the April 2026 asylum line and the readers'
+  negative results; rewrote the preview list from the fetch inventory (it had named "parts 1–3"
+  of the 2025 series where only parts one and three were fetched, and omitted four previews);
+  corrected "seventeen" unfetched posts to twelve, since the first count added the two readers'
+  lists without removing overlaps. Fetched one post neither reader listed, "One Billion
+  Americans — now more than ever" (2022-10-26): its free preview holds no fiscal claim, so the
+  statement that the 2020 universals were never marked withdrawn still rests on the pieces read,
+  not on his full output. [INFERENCE]
