@@ -147,7 +147,10 @@ substituting a web summary or declaring a measurement unavailable:
 - [Reproduction inputs](infra/immigration-fiscal/REPRODUCTION_INPUTS.md): official
   acquisition routes, pinned versions, normalization and reproduction commands.
 - [Objections FAQ](research/immigration-objections-faq-2026-09-21.md): standard objections,
-  each routed to its executed table; start here for "what about X?" questions.
+  each routed to its executed table; start here for "what about X?" questions. Before
+  writing any summary or ranking of results, in chat as much as in a memo, read its section
+  "Before combining numbers from different entries": the commit-time bias gate does not see
+  a chat answer.
 - Fiscal results **by generation against a white reference** exist only in
   `infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/` (`complete_gaps.csv`,
   `age_profile_components.csv`, `age_normalizations*.csv`). The later finance-refresh,
@@ -199,7 +202,7 @@ New topics: create `research/<topic>-INDEX.md`, add a row here, use `<topic>-*` 
 | File | Topic | Consult before |
 |------|-------|----------------|
 | `notes/llm-bias-caveat.md` | LLM instrument bias on politically charged topics | Any politically sensitive analysis |
-| `notes/quant-bias-checklist.md` | Quant-bias gate, project instance + self-audit record (canonical 32-item list: research skill `references/quant-bias-checklist.md`) | Committing any memo with numbers doing argumentative work, causal language, or welfare conclusions |
+| `notes/quant-bias-checklist.md` | Quant-bias gate, project instance + self-audit record (canonical list: research skill `references/quant-bias-checklist.md`) | Committing any memo with numbers doing argumentative work, causal language, or welfare conclusions |
 | `notes/fact-check-prompt-template.md` | Multi-agent fact-check template | Running fact-check sweeps |
 | `notes/exa-answer-evaluation.md` | Exa /answer accuracy evaluation | Choosing Exa vs alternatives |
 
