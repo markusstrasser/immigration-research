@@ -18,7 +18,14 @@ term being induced tax receipts. The sign never changes. Placing the whole union
 of its own instead (Option B) gives +$754bn at ε = 3, a number produced by removing an entire
 CES branch and not by the data; it is reported as structurally unverified. Applied to the
 headline, ε = 3 would lower the $165–197bn conditional net cost by $9–14bn; it is **not
-applied**, because the choice of ε is a convention the account has not adopted.
+applied**, because the choice of ε is a convention the account has not adopted. The jobs on
+the same CPS file put the elasticity this two-cell nest has to carry near **6** (sketch
+about **4–9**): low-cell natives and foreign-born share **0.644** of detailed-occupation
+earnings, and mixing a within-job elasticity of 20 with a between-job elasticity of 2.5
+gives **5.7** on detailed occupations and **7.6** on major groups. At the neighboring
+computed rows, ε = 5 and ε = 7, the term is **+$21.5 / +$14.2bn** and **+$19.2 / +$12.6bn**.
+That reading is not applied either. [CALCULATION: `derived/occupation_overlap.csv`,
+`derived/elasticity_sketch.csv`]
 [CALCULATION: [`production_nativity_nest_2026_09_22`](../infra/immigration-fiscal/production_nativity_nest_2026_09_22/RESULT.md),
 `derived/nest_headline.csv`; independent re-derivation `independent_check.py`]
 
@@ -123,14 +130,76 @@ the account's table, not a re-run of `full_account_2026_09_20`]. None of this is
 The account's convention is a choice between transported elasticities from studies of other
 populations, and adopting one is an analysis-protocol change for the operator. What the lane
 settles is the size of the item ladder entry 166 left open: on this account's own data the
-imperfect-substitution correction is a doubling of a small term, $9–14bn a year at the removal
-model's elasticity, and $22–33bn at the lowest published estimate, against a $165–197bn net
-cost. It moves the size, not the sign, exactly as the entry predicted. The gross sides are
+imperfect-substitution correction is a doubling of a small term at the removal model's
+elasticity, $9–14bn a year, and $22–33bn at the lowest published estimate, against a
+$165–197bn net cost. The job distribution in §5 puts the relevant elasticity near 6, where
+the correction is about half of that doubling. It moves the size, not the sign, exactly as the entry predicted. The gross sides are
 larger than the net, and a reader who counts only natives as beneficiaries would see a
 +$54bn gain at ε = 3 while a reader who counts all other residents sees +$8bn; the account
 counts all other residents.
 
-## 5. Gates and verification
+## 5. Where the elasticity sits, given the jobs
+
+[CALCULATION for the overlap; MODEL sketch for ε; the dollars at ε = 5 and ε = 7 are the
+grid already in §2] The nest has two schooling cells and no occupations, so its ε has to
+stand in for two different margins. Inside one detailed occupation, a Mexico-born worker
+and a native worker do the same task, and the within-cell literature puts that elasticity
+high, on the order of 20, with a real chance it is higher. Across occupations the
+elasticity is low: the removal model uses 1.6 between occupations, and this account uses 2
+between the two schooling groups. Jobs inside one schooling cell should substitute at least
+that easily.
+
+On the account's own CPS file, earnings-weighted, high-school-or-less cell, positive
+civilian earners, the overlap (one minus the Duncan dissimilarity) is:
+
+| contrast | detailed occupations | major groups |
+|---|---:|---:|
+| all natives vs all foreign-born (the nest's own contrast) | 0.644 | 0.768 |
+| other natives vs Mexico-born | 0.558 | 0.662 |
+| other foreign-born vs Mexico-born | 0.629 | 0.785 |
+| US-born union members vs other natives | 0.726 | 0.907 |
+
+[CALCULATION: `derived/occupation_overlap.csv`] Branch earnings match
+`branch_composition.csv` before the occupation cut. People with positive earnings and no
+occupation code are 2.3% of earnings and are out of the overlap. The high cell is closer:
+natives vs foreign-born overlap 0.730 detailed and 0.836 at major groups. US-born union
+members sit with other natives, which is the job-distribution reason Option A is the
+reading and Option B is not.
+
+The largest Mexico-born slices in the low cell are shared jobs and crowded jobs together.
+Construction laborers are 10.2% of Mexico-born low-cell earnings and 31% of that job;
+landscaping 4.9% and 39%; other agricultural workers 4.5% and 54%; truck drivers 4.1% and
+8%. [CALCULATION: `derived/occupation_top_mexico_born_low.csv`; titles from the OCCP block
+of the ACS 2024 PUMS dictionary, the same 2018 codes as CPS `PEIOOCC`]
+
+A weighted harmonic sketch, not the nest's solver, mixes the two margins:
+`1/ε ≈ overlap / 20 + (1 − overlap) / ε_between`. On the nest's own low-cell contrast, with
+the within-job elasticity held at 20:
+
+| grain | between-job 1.6 | 2.0 | 2.5 | 3.0 |
+|---|---:|---:|---:|---:|
+| detailed | 3.9 | 4.8 | **5.7** | 6.6 |
+| major groups | 5.5 | 6.5 | **7.6** | 8.6 |
+
+[CALCULATION: `derived/elasticity_sketch.csv`] The center of that table is about **6**. The
+removal model's 3 sits at the low edge, and only if detailed occupations are combined with
+its occupation elasticity of 1.6 and the within-job elasticity is allowed to fall to 10
+(the sketch then gives 3.5). Clemens–Lewis 1.3 is below every cell of the sketch. It
+matches the one job where the groups barely meet: agricultural workers, 4.5% of Mexico-born
+low-cell earnings. ε = 20 is the within-job number, and this model has nowhere else to put
+the third of low-cell earnings that do not share a detailed occupation.
+
+At the computed rows on either side of 6, the production term rises by about half. Natives
+gain **+$31.7bn** at ε = 5 and **+$22.4bn** at ε = 7; other foreign-born residents lose
+**−$27.0bn** and **−$19.1bn**. The same arithmetic as §4, cash cases down $5.4bn and $3.9bn,
+GDP cases down $8.2bn and $5.8bn, would put the $165–197bn band near **$157–192bn** at ε = 5
+and **$159–194bn** at ε = 7. [INFERENCE: arithmetic on the account's table and on §2, not a
+re-run] None of this is applied. The sketch chooses the two elasticities it mixes; only the
+overlap is measured. The direct low-skill estimates read for ladder 181 (8.7 Caiumi–Peri, 17.9
+Piyapromdee) sit at or above the sketch's upper end and move the term by $2–5bn; the three
+readings (3, about 6, 8.7–17.9) bracket the correction at $2–14bn, all size, none sign.
+
+## 6. Gates and verification
 
 Nine gates in `derived/audit.json`, all passed on the committed build: the replayed upstream
 chain reproduces the two published rows at zero deviation (G1) and the 1,296- and
@@ -152,7 +221,7 @@ source. The parent session re-derived all seven Option A GDP rows from `branch_c
 with a separate calculation before committing; `independent_check.py` reproduces them to 5e-12.
 [CALCULATION: `derived/audit.json`; `test_nest_model.py`, 11 tests; `independent_check.py`]
 
-## 6. Limits
+## 7. Limits
 
 - Two education cells, one closed economy, no occupations, regions, trade or prices; the
   removal model's mechanism runs through 36 occupations, 44 sectors and 48 regions. Comparable
@@ -167,8 +236,10 @@ with a separate calculation before committing; `independent_check.py` reproduces
   earnings ($1,591bn at GDP scaling) appear only as a diagnostic column.
 - The direct fiscal response A is unchanged; only the production term and its induced
   receipts move. Re-running the account with a chosen ε is a separate step.
+- The occupation sketch is not an estimate of ε. It mixes a measured overlap with two
+  chosen elasticities, and the harmonic form is not the nest's aggregator.
 
-## 7. Sources
+## 8. Sources
 
 [DATA: CPS ASEC 2025 `pppub25.csv` via `gen_ledger_extension_2026_09_16`; upstream lanes
 `matched_benefits_2026_09_19`, `full_account_benefits_2026_09_20`, `full_account_2026_09_20`;
@@ -177,17 +248,23 @@ with a separate calculation before committing; `independent_check.py` reproduces
 [papers read](immigration-marginal-revolution-leads-read-2026-09-21.md#3-the-removal-model-and-the-accounts-production-term)]
 [CALCULATION: `infra/immigration-fiscal/production_nativity_nest_2026_09_22/` — `SPEC.md`,
 `BRIEF.md`, `nest_model.py`, `builder.py`, `test_nest_model.py`, `independent_check.py`,
-`RESULT.md`, `derived/nest_headline.csv`, `derived/branch_composition.csv`, `derived/audit.json`]
+`RESULT.md`, `derived/nest_headline.csv`, `derived/branch_composition.csv`, `derived/audit.json`,
+`occupation_overlap.py`, `derived/occupation_overlap.csv`,
+`derived/occupation_top_mexico_born_low.csv`, `derived/elasticity_sketch.csv`]
 
 ## Revisions
 
 - 2026-09-22: created. Ladder 176; qualifies ladder 166 ("not yet executed" is now
   executed) and FAQ entry 14. No published value changes; the headline band keeps the
   perfect-substitution term pending the operator's choice of ε.
-
 - 2026-09-22 (evening, grid): three rows added at the elasticities the fourteen-paper reading
   found in primary texts, 8.7 (Caiumi–Peri, no-diploma cells), 17.9 (Piyapromdee, low-skill
   cells) and 9 (Burstein et al., "roughly twice" their calibrated 4.6). Under Option A they give
   +18.01 / +11.88bn, +17.85 / +11.78bn and +15.59 / +10.29bn (GDP / cash), so the headline band
   would move by $2–5bn rather than the $9–14bn at ε = 3. Earlier rows unchanged; ε still not
   adopted. Ladder 181, [reading memo](immigration-us-lowskill-effects-integration-2026-09-22.md).
+
+- 2026-09-22: occupation overlap on the same CPS file. The two-cell nest's elasticity
+  sits near 6 (sketch about 4–9 at a within-job elasticity of 20), so the ε = 3 doubling
+  is the low edge of that reading and the neighboring rows ε = 5 and ε = 7 are the
+  relevant computed cases. No published value changes; ε is still not adopted.
