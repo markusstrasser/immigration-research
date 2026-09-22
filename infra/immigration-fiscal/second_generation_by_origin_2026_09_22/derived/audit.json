@@ -1,0 +1,365 @@
+{
+  "lane": "second_generation_by_origin_2026_09_22",
+  "generated": "2026-09-22T15:20:16+0200",
+  "gates": {
+    "G1_manifest_sha256": {
+      "status": "PASS",
+      "sha256": "a510e7a9695486945fc87618b98e2f8d51f7d0d7df35f01319a70564ea8065a2",
+      "file": "sources/immigration-fiscal/data/external/cps/cps_2ndgen.csv.gz",
+      "bytes": 131330429
+    },
+    "G4_ddi_codes": {
+      "status": "PASS",
+      "codes": {
+        "EMPSTAT.employed": {
+          "10": "At work",
+          "12": "Has job, not at work last week"
+        },
+        "EMPSTAT.armed_forces_dropped": {
+          "1": "Armed Forces"
+        },
+        "LABFORCE.in_labor_force": {
+          "2": "Yes, in the labor force"
+        },
+        "LABFORCE.out_of_labor_force": {
+          "1": "No, not in the labor force"
+        },
+        "EDUC.college_plus_min": {
+          "111": "Bachelor's degree"
+        },
+        "EDUC.lt_hs_max": {
+          "71": "12th grade, no diploma"
+        },
+        "EDUC.first_hs_completion": {
+          "73": "High school diploma or equivalent"
+        },
+        "EDUC.niu": {
+          "0": "NIU or no schooling",
+          "1": "NIU or blank",
+          "999": "Missing/Unknown"
+        },
+        "HISPAN.not_hispanic": {
+          "0": "Not Hispanic"
+        },
+        "HISPAN.mexican": {
+          "100": "Mexican",
+          "102": "Mexican American",
+          "103": "Mexicano/Mexicana",
+          "104": "Chicano/Chicana",
+          "108": "Mexican (Mexicano)",
+          "109": "Mexicano/Chicano"
+        },
+        "RACE.white": {
+          "100": "White"
+        },
+        "CITIZEN.native": {
+          "1": "Born in U.S",
+          "2": "Born in U.S. outlying",
+          "3": "Born abroad of American parents"
+        },
+        "CITIZEN.foreign": {
+          "4": "Naturalized citizen",
+          "5": "Not a citizen"
+        },
+        "NATIVITY.first_generation": {
+          "5": "Foreign born"
+        },
+        "NATIVITY.second_generation": {
+          "2": "Father foreign, mother native",
+          "3": "Mother foreign, father native",
+          "4": "Both parents foreign"
+        },
+        "NATIVITY.third_plus": {
+          "1": "Both parents native-born"
+        },
+        "BPL.mexico": {
+          "20000": "Mexico"
+        }
+      }
+    },
+    "G2_loader_reproduction": {
+      "rows_expected": 37,
+      "rows_reproduced": 37,
+      "max_abs_diff": 0.0,
+      "tolerance": 1e-09,
+      "status": "PASS"
+    },
+    "G3_population_anchor": {
+      "status": "PASS",
+      "tolerance_rel": 0.005,
+      "worst_rel_diff": 4.9352637498485995e-08,
+      "universe": "ASEC 2025, civilian (EMPSTAT<>1) adults 25-64, ASECWT \u2014 the ledger's own adults_25_64 & PRPERTYP==2 universe, person weighting",
+      "rows": [
+        {
+          "group": "mexico_born",
+          "ipums_n_obs": 4318,
+          "ledger_n_obs": 4318,
+          "ipums_weighted": 9446563.200000014,
+          "ledger_weighted": 9446562.93512691,
+          "rel_diff": 2.803909802845201e-08
+        },
+        {
+          "group": "mexican_second_gen",
+          "ipums_n_obs": 2452,
+          "ledger_n_obs": 2452,
+          "ipums_weighted": 5614636.590000001,
+          "ledger_weighted": 5614636.31290289,
+          "rel_diff": 4.9352637498485995e-08
+        },
+        {
+          "group": "third_plus_nh_white",
+          "ipums_n_obs": 36287,
+          "ledger_n_obs": 36287,
+          "ipums_weighted": 87647855.48999994,
+          "ledger_weighted": 87647853.34583464,
+          "rel_diff": 2.446340909140063e-08
+        },
+        {
+          "group": "mexican_third_plus_selfid",
+          "ipums_n_obs": 2477,
+          "ledger_n_obs": 2477,
+          "ipums_weighted": 5526182.310000002,
+          "ledger_weighted": 5526182.2353818305,
+          "rel_diff": 1.3502662185615574e-08
+        }
+      ]
+    },
+    "G5_cell_floor_and_finite_se": {
+      "status": "PASS",
+      "min_n_report": 100,
+      "cells_reported": 3296,
+      "cells_suppressed_below_floor": 344,
+      "gaps_reported": 3172,
+      "closing_ratios": 745,
+      "closing_ratios_with_nonfinite_se": 0,
+      "note": "a closing ratio is a ratio of two estimated gaps; where the first-generation gap is near zero the ratio is unstable and its bootstrap spread is reported as it comes out, not trimmed"
+    }
+  },
+  "ddi_sha256": "896a888b1d0dbc9ebf6525d0ca0e777142a7ae873041ac189f0f02efe6206705",
+  "analysis_py_sha256": "04ef78587673ab1348fd59b43c8b7661871f915735853b2e84824daad9d007d1",
+  "sample_decisions": {
+    "asecflag": "the extract is ASEC only (ASECFLAG = 1 for all 5,721,633 records); no March Basic records to drop",
+    "hflag_2014": {
+      "finding": "both 2014 parts carry full-population weights, so keeping both double counts 2014",
+      "weighted_by_hflag": {
+        "0": 313395421.830001,
+        "1": 313443193.6999972
+      },
+      "weighted_2013_2015": {
+        "2013": 311116170.11000025,
+        "2015": 316167948.589999
+      },
+      "choice": "drop HFLAG = 1 (the 3/8 redesign sample); keep HFLAG = 0 (5/8 traditional) so the income questions are comparable with 1994-2013"
+    },
+    "civilian": "EMPSTAT = 1 (Armed Forces) dropped, matching the ledger's PRPERTYP = 2 civilian-adult universe",
+    "nativity_unknown": "NATIVITY = 0 (Unknown) dropped, as the loader does",
+    "g1_origin": "first generation takes its origin from its own BPL (the brief), not from parental birthplace as the committed loader does",
+    "us_outlying": "birthplaces in general codes 100-120 (Puerto Rico, Guam, USVI, American Samoa, outlying n.s.) are a tenth origin category, 'US outlying'; the loader's nine-region map leaves them unassigned"
+  },
+  "us_outlying_composition": {
+    "universe": "first generation (NATIVITY 5) whose own birthplace is a US area, general codes 100-120; the second-generation side of the category is built the same way from parental birthplace",
+    "n_obs_total": 22114,
+    "weighted_total": 32547358.632699996,
+    "by_birthplace": [
+      {
+        "bpl": 11000,
+        "label": "Puerto Rico",
+        "n_obs": 19915,
+        "weighted": 29205642.5299,
+        "weighted_share": 0.8973275791589856
+      },
+      {
+        "bpl": 12090,
+        "label": "U.S. outlying areas, n.s.",
+        "n_obs": 1391,
+        "weighted": 1883412.96,
+        "weighted_share": 0.057866845087323135
+      },
+      {
+        "bpl": 10500,
+        "label": "Guam",
+        "n_obs": 380,
+        "weighted": 688240.5174,
+        "weighted_share": 0.021145817857813255
+      },
+      {
+        "bpl": 11500,
+        "label": "U.S. Virgin Islands",
+        "n_obs": 282,
+        "weighted": 628792.7933,
+        "weighted_share": 0.019319318670248664
+      },
+      {
+        "bpl": 10000,
+        "label": "American Samoa",
+        "n_obs": 141,
+        "weighted": 132172.4161,
+        "weighted_share": 0.004060926036781607
+      },
+      {
+        "bpl": 10750,
+        "label": "Northern Mariana Islands",
+        "n_obs": 5,
+        "weighted": 9097.416,
+        "weighted_share": 0.0002795131888478323
+      }
+    ]
+  },
+  "wls_status": {
+    "unique_statuses": [
+      "no-gaps",
+      "ok"
+    ],
+    "n_lstsq_fallback": 0
+  },
+  "universe": {
+    "rows": 2874753,
+    "households": 1696418,
+    "years": [
+      1994,
+      2025
+    ],
+    "n_years": 32,
+    "definition": "civilian adults 25-64, ASECWT, NATIVITY 1-5, 2014 3/8 redesign dropped",
+    "weighted_total": 4992854937.0746
+  },
+  "design": {
+    "fixed_effects": "8 five-year age bands x sex x 32 survey years = 512 cells",
+    "reference_group": "third-plus generation, non-Hispanic white (NATIVITY 1, HISPAN 0, RACE 100)",
+    "also_reported": "3rd+_other is the all-native-parentage residual; the loader's native_baseline is the union of 3rd+_NH_white, 3rd+_Mexican_selfid and 3rd+_other and is reproduced exactly in G2",
+    "taxonomies": {
+      "region_gen_union": [
+        "Mexico|1st_foreign_born",
+        "Mexico|2nd_gen_all",
+        "Central America|1st_foreign_born",
+        "Central America|2nd_gen_all",
+        "Caribbean|1st_foreign_born",
+        "Caribbean|2nd_gen_all",
+        "South America|1st_foreign_born",
+        "South America|2nd_gen_all",
+        "Europe|1st_foreign_born",
+        "Europe|2nd_gen_all",
+        "Asia|1st_foreign_born",
+        "Asia|2nd_gen_all",
+        "Africa|1st_foreign_born",
+        "Africa|2nd_gen_all",
+        "Canada|1st_foreign_born",
+        "Canada|2nd_gen_all",
+        "Other|1st_foreign_born",
+        "Other|2nd_gen_all",
+        "US outlying|1st_foreign_born",
+        "US outlying|2nd_gen_all",
+        "3rd+_NH_white",
+        "3rd+_Mexican_selfid",
+        "3rd+_other"
+      ],
+      "region_gen_detail": [
+        "Mexico|1st_foreign_born",
+        "Mexico|2nd_father_foreign",
+        "Mexico|2nd_mother_foreign",
+        "Mexico|2nd_both_foreign",
+        "Central America|1st_foreign_born",
+        "Central America|2nd_father_foreign",
+        "Central America|2nd_mother_foreign",
+        "Central America|2nd_both_foreign",
+        "Caribbean|1st_foreign_born",
+        "Caribbean|2nd_father_foreign",
+        "Caribbean|2nd_mother_foreign",
+        "Caribbean|2nd_both_foreign",
+        "South America|1st_foreign_born",
+        "South America|2nd_father_foreign",
+        "South America|2nd_mother_foreign",
+        "South America|2nd_both_foreign",
+        "Europe|1st_foreign_born",
+        "Europe|2nd_father_foreign",
+        "Europe|2nd_mother_foreign",
+        "Europe|2nd_both_foreign",
+        "Asia|1st_foreign_born",
+        "Asia|2nd_father_foreign",
+        "Asia|2nd_mother_foreign",
+        "Asia|2nd_both_foreign",
+        "Africa|1st_foreign_born",
+        "Africa|2nd_father_foreign",
+        "Africa|2nd_mother_foreign",
+        "Africa|2nd_both_foreign",
+        "Canada|1st_foreign_born",
+        "Canada|2nd_father_foreign",
+        "Canada|2nd_mother_foreign",
+        "Canada|2nd_both_foreign",
+        "Other|1st_foreign_born",
+        "Other|2nd_father_foreign",
+        "Other|2nd_mother_foreign",
+        "Other|2nd_both_foreign",
+        "US outlying|1st_foreign_born",
+        "US outlying|2nd_father_foreign",
+        "US outlying|2nd_mother_foreign",
+        "US outlying|2nd_both_foreign",
+        "3rd+_NH_white",
+        "3rd+_Mexican_selfid",
+        "3rd+_other"
+      ],
+      "country_gen_union": [
+        "Mexico|1st_foreign_born",
+        "Mexico|2nd_gen_all",
+        "Canada|1st_foreign_born",
+        "Canada|2nd_gen_all",
+        "Italy|1st_foreign_born",
+        "Italy|2nd_gen_all",
+        "Germany|1st_foreign_born",
+        "Germany|2nd_gen_all",
+        "Philippines|1st_foreign_born",
+        "Philippines|2nd_gen_all",
+        "England|1st_foreign_born",
+        "England|2nd_gen_all",
+        "China|1st_foreign_born",
+        "China|2nd_gen_all",
+        "Cuba|1st_foreign_born",
+        "Cuba|2nd_gen_all",
+        "Poland|1st_foreign_born",
+        "Poland|2nd_gen_all",
+        "Ireland|1st_foreign_born",
+        "Ireland|2nd_gen_all",
+        "Other origin|1st_foreign_born",
+        "Other origin|2nd_gen_all",
+        "3rd+_NH_white",
+        "3rd+_Mexican_selfid",
+        "3rd+_other"
+      ]
+    },
+    "top_ten_parental_birthplaces": {
+      "20000": "Mexico",
+      "15000": "Canada",
+      "43400": "Italy",
+      "45300": "Germany",
+      "51500": "Philippines",
+      "41000": "England",
+      "50000": "China",
+      "25000": "Cuba",
+      "45500": "Poland",
+      "41400": "Ireland"
+    },
+    "min_n_design": 20,
+    "min_n_report": 100,
+    "estimator": "weighted least squares of the outcome on group dummies plus a full set of age-band x sex x survey-year dummies; the group coefficients are the reported adjusted gaps and no coefficient on a control is reported"
+  },
+  "bootstrap": {
+    "draws": 200,
+    "seed": 20260922,
+    "cluster": "household (YEAR, SERIAL), resampled with replacement within each survey year",
+    "applies_to": "every reported mean, adjusted gap, raw gap, closing ratio and period change",
+    "limitation": "this extract carries no replicate weights, so the resample ignores the CPS stratified PSU design; the CPS design effect is above one, so every standard error here is a LOWER BOUND on the true sampling error",
+    "second_limitation": "the CPS rotation panel returns about half of each March sample the following March, and resampling SERIAL within YEAR treats the same household in two adjacent ASECs as two independent clusters; that makes the pooled multi-year standard errors a lower bound for a second, separate reason"
+  },
+  "limitations": [
+    "Descriptive. Cross-sectional generation contrasts are not the same families followed over time; the first generation observed in a period is not the parent generation of the second generation observed in the same period.",
+    "Origin-group differences confound selection into migration, cohort of arrival, destination, legal status and period with anything transmitted within families.",
+    "Age and sex adjustment plus survey-year fixed effects remove composition on those margins only. Education, state of residence and legal status are NOT controlled, by design: they are outcomes or endogenous to the comparison.",
+    "NCHILD counts coresident own children, not completed fertility (see research/immigration-gated-data-specs-2026-06-25.md section 1).",
+    "EDUC is a categorical attainment code; college_plus and less_than_hs are shares built from the DDI code list, and no years-of-schooling scale is imputed.",
+    "INCTOT and INCWAGE are nominal as reported, not deflated; survey-year fixed effects absorb the common price level within a year but period means in levels are not comparable across periods and only the gaps to the same-year reference are.",
+    "Income means are conditional on positive income, so they mix a participation margin into the level; positive_wage is reported alongside for that reason.",
+    "Standard errors ignore the CPS PSU design AND the CPS rotation panel (about half of each March sample returns the following March), so they are lower bounds twice over.",
+    "IPUMS NATIVITY treats people born in US outlying areas and people born abroad to American parents as foreign-born, so a small number of US citizens by birth sit in the first generation here. The ledger's PRCITSHP rule treats them as native; that difference is why the G3 anchor uses CITIZEN rather than NATIVITY.",
+    "The loader table reproduced in G2 (build/load_cps_second_gen.py; a local derived file under sources/, not tracked) kept both 2014 ASEC files until 2026-09-22 and now drops the 3/8 redesign file as this lane does; its cells still differ from this lane's in universe (armed forces kept), origin rule (parental birthplace for the first generation too) and the missing US-outlying category."
+  ]
+}
