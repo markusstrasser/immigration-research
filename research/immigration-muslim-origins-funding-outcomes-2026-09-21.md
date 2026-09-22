@@ -73,8 +73,9 @@ mostly through family; Iraq and Afghanistan through refugee and special-immigran
 The often-quoted "76% against 59% say never" is a split inside "rarely or never" (the public
 says "rarely" three times as often), not a difference in rejection (B9). Foreign-born Muslims
 hold degrees more often than US-born Muslims, 38% against 21% (B4). Microdata are downloadable
-with a free Pew account (B30). Not reached: New Immigrant Survey 2003 (religion, earnings and,
-in the restricted tier, visa class), the Cooperative Election Study religion item, ISPU's poll.
+with a free Pew account (B30). Not reached: the Cooperative Election Study religion item and
+ISPU's poll. The New Immigrant Survey 2003 public files were reached on September 22 (§2b);
+visa class stays in the restricted tier.
 
 ### 2a. The microdata, September 22 [DATA / CALCULATION]
 
@@ -107,6 +108,35 @@ under $30,000) and the children of immigrants (n = 181; 69% aged 18–29, 28% wi
 which is why nativity alone hides more than it shows. The file has no public-assistance item.
 [CALCULATION: `derived/cuts_by_origin.csv`; lane
 [`pew_muslims_2017_2026_09_22`](../infra/immigration-fiscal/pew_muslims_2017_2026_09_22/RESULT.md)]
+
+### 2b. The New Immigrant Survey 2003 cohort, September 22 [DATA / CALCULATION]
+
+The public-use NIS 2003 (8,573 adults granted permanent residence in 2003, interviewed about
+four months later) observes religion together with employment and earnings for one cohort of
+new green-card holders. Muslims (n = 606 at ages 18–64) were 10.4 ± 2.6 points less likely
+than Christians to be working at interview, 0.507 against 0.611. The gap is composition: it
+falls to −2.3 ± 2.4 with age, sex, schooling, English and class of admission held fixed and to
+−0.8 ± 2.6 with country of birth added. Conditional on working, the pay rate on the current
+job is not lower: +0.05 ± 0.07 log points adjusted, +0.04 with origin, +0.04 among full-time
+workers. The one measure that keeps a Muslim deficit is wage income received over the prior
+twelve months, −0.29 ± 0.13 raw and −0.08 ± 0.10 adjusted, and for a cohort interviewed four
+months after admission that measure counts months in the country and employed rather than the
+wage. The pooled Christian reference hides its own spread, Orthodox −8.8 and Protestant −3.0
+points against Catholics on employment, and Muslims sit inside it (−5.5 against Catholics).
+Hindus show the same composition pattern (−6.5 raw, +0.2 with origin).
+[CALCULATION: `nis2003_religion_earnings_2026_09_22/derived/earnings_gaps.csv`; lane
+[`nis2003_religion_earnings_2026_09_22`](../infra/immigration-fiscal/nis2003_religion_earnings_2026_09_22/RESULT.md);
+ladder 179]
+
+Limits that matter here: one cohort at the start of its US career, so nothing about
+trajectories; self-reported first religion with 417 non-responses; the public file masks origin
+to 21 countries plus seven regions, so Pakistan and Bangladesh sit with China and India inside
+one region and the origin control is coarser for Muslims than for Hindus or Catholics; no PSU
+identifier, so the 500-draw stratified bootstrap understates design variance. The design
+weights were rebuilt from the documentation to 4.8e−14 and 19 of 26 published counts reproduce
+exactly, the rest reported as near-misses. Means-tested program use was not tabulated, because
+Sections G–I go to the household's financial respondent and a group rate would carry a
+selected denominator. Visa-class detail stays in the restricted tier.
 
 ## 3. Extremism counts
 
@@ -170,7 +200,9 @@ operator's regression-to-the-mean question, and it is confounded by age: descend
 
 [FRAMING-SENSITIVE] "Islamists" and "Muslim immigrants" are different populations; the evidence
 above is about the second and says little about the first beyond offender counts. For the US the
-better-measured evidence is reassuring on earnings, degrees and attitudes to violence, mixed on
+better-measured evidence is reassuring on earnings [extended 2026-09-22: §2b, in the NIS 2003
+green-card cohort the Muslim employment deficit at admission is composition and the pay-rate
+gap is zero], degrees and attitudes to violence, mixed on
 social attitudes and poverty, and silent on the second generation [qualified 2026-09-22: §2a
 gives the second generation's attitudes, which run toward rejection of violence] and on foreign funding. The
 European evidence is alarming and is about differently selected populations; the mechanism both
@@ -196,7 +228,8 @@ specified before its data, and the parent re-checked 15 quotes. See `notes/llm-b
 5. New Immigrant Survey 2003 public-use files (ICPSR 38031, 38061; listed in the sociology
    frontier memo as pullable): religion with earnings for new green-card holders. Visa class sits
    in the restricted tier. The outcomes reader names it the highest-value source not reached.
-   Public files acquired 2026-09-22 (ICPSR 38031 v3); the religion-by-earnings lane is running.
+   Public files acquired 2026-09-22 (ICPSR 38031 v3). ~~The religion-by-earnings lane is
+   running.~~ Done 2026-09-22, §2b, ladder 179; visa class remains restricted.
 
 ## Revisions
 
@@ -206,3 +239,9 @@ specified before its data, and the parent re-checked 15 quotes. See `notes/llm-b
   the violence item is a foreign-born South Asian result that the US-born second generation
   reverses; "US-born Muslims" is two populations. §6's "silent on the second generation" is
   qualified for attitudes. No fiscal value changes.
+- 2026-09-22 (later): §2b added from the NIS 2003 public files (lane
+  `nis2003_religion_earnings_2026_09_22`, ladder 179). Claim added: in the 2003 green-card
+  cohort the Muslim employment deficit at admission is composition (−10.4 → −0.8 points with
+  country of birth) and the pay-rate gap is zero; the twelve-month wage deficit loads on months
+  worked. §6's "reassuring on earnings" is extended to a source with religion observed; §2's
+  "not reached" list loses NIS; Next item 5 closed. No fiscal value changes.
