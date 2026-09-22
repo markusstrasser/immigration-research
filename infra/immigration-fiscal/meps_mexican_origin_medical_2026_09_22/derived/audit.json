@@ -1,0 +1,262 @@
+{
+  "lane": "meps_mexican_origin_medical_2026_09_22",
+  "generated_for_income_year": 2024,
+  "inputs": {
+    "h256dat.zip": {
+      "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256dat.zip",
+      "sha256": "d0779e49de4f5ff0b0fff6774167023382366a0ef0905e6a3c40126114f988c9"
+    },
+    "h256su.txt": {
+      "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256su.txt",
+      "sha256": "a7bd4eca49833f40df45b53aad803dfca15b1a3a9b1de03aa6e79f508c5e24be"
+    },
+    "h251dat.zip": {
+      "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps/h251dat.zip",
+      "sha256": "ad0edc2e34b28b90c8c89f43869f4e90338c93c97c0bfc2cad73140b96edd55a"
+    },
+    "h251su.txt": {
+      "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt",
+      "sha256": "d6c44b31306f1a8e7904d9540f06e2f18a8c0c3c66cc65a76823412dd7c4535f"
+    },
+    "age_profile_components.csv": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profile_components.csv",
+      "sha256": "8884b4126e6e4c60b74868ae57dc4b316651a38e3e767d7c25a44f7f63db5d62"
+    },
+    "age_profiles.csv": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profiles.csv",
+      "sha256": "ddac25cc844f7fd72ec48937377ae29deff53bc826202a536725f15513dab12a"
+    },
+    "params.json": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json",
+      "sha256": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922"
+    },
+    "meps_health_transport_2024.py": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/build/meps_health_transport_2024.py",
+      "sha256": "8a3eda7a2fce7b27f2e4cb0aa865526d7c188893644c39b7693d05e6632fd587"
+    },
+    "cpi_all_urban.csv": {
+      "path": "/Users/alien/research-data/immigration-fiscal/data/external/fred/cpi_all_urban.csv",
+      "sha256": "788111197a818c80e40722270c0f63e487df5c9713436e808f102b3424e94ee6"
+    }
+  },
+  "codebook_quotes": {
+    "HISPNCAT": "Name: HISPNCAT / Description: HISPANIC ETHNICITY (EDITED/IMPUTED) / Start: 211 / \"1 MEXICAN/MEX AMER/CHICANO - NO OTHER HISP RPTD 2,679 42,446,768\" ... \"9 NON-HISPANIC 15,024 271,192,047\" [h256cb.pdf p.109]",
+    "HISPANX": "Name: HISPANX / \"1 HISPANIC 4,116 68,605,583\" / \"2 NOT HISPANIC 15,024 271,192,047\" [h256cb.pdf p.108]",
+    "RACEV1X": "Name: RACEV1X / Description: RACE (EDITED/IMPUTED) / Start: 203 / \"1 WHITE - NO OTHER RACE REPORTED 14,459 252,364,775\" [h256cb.pdf p.107]",
+    "RACETHX": "Name: RACETHX / Description: RACE/ETHNICITY (EDITED/IMPUTED) / \"2 NON-HISPANIC WHITE ONLY 10,766 191,692,001\" [h256cb.pdf p.107]",
+    "BORNUSA": "Name: BORNUSA / Description: PERSON BORN IN THE US / Start: 278 / \"1 YES 16,002 285,498,519\" / \"2 NO 3,050 52,835,316\" [h256cb.pdf p.121]",
+    "YRSINUS": "Name: YRSINUS / Description: YEARS PERSON LIVED IN THE US / Start: 280 / \"-1 INAPPLICABLE 16,090 286,962,313\" ... \"5 15 YEARS OR MORE 2,001 33,246,175\" [h256cb.pdf p.121]",
+    "AGE24X": "Name: AGE24X / Description: AGE AS OF 12/31/24 (EDITED/IMPUTED) / Start: 192 / \"-1 INAPPLICABLE 161 2,998,984\" [h256cb.pdf p.99]",
+    "MCDEV24": "Name: MCDEV24 / Description: EVER HAVE MCAID/SCHIP DURING 2024 (ED) / Start: 2799 / \"1 YES 4,941 78,147,553\" / \"2 NO 14,199 261,650,077\" [h256cb.pdf p.469]",
+    "MCREV24": "Name: MCREV24 / Description: EVER HAVE MEDICARE DURING 2024 (ED) / Start: 2798 / \"1 YES 5,469 70,105,211\" / \"2 NO 13,671 269,692,419\" [h256cb.pdf p.469]",
+    "INSURC24": "Name: INSURC24 / Description: FULL YEAR INSURANCE COVERAGE STATUS 2024 / Start: 2806 / \"1 <65 ANY PRIVATE\" \"2 <65 PUBLIC ONLY\" \"3 <65 UNINSURED\" \"4 65+ EDITED MEDICARE ONLY\" [h256cb.pdf p.471]",
+    "PERWT24F": "Name: PERWT24F / Description: FINAL PERSON WEIGHT, 2024 / Start: 4599 / \"0.000000 457\" / \"776.278855 - 91256.761356 18,683\" [h256cb.pdf p.529]",
+    "VARSTR": "Name: VARSTR / Description: VARIANCE ESTIMATION STRATUM, 2024 / Start: 4635 / \"2001 - 2117 19,140\" [h256cb.pdf p.531]",
+    "VARPSU": "Name: VARPSU / Description: VARIANCE ESTIMATION PSU, 2024 / Start: 4639 / \"1-7 19,140\" [h256cb.pdf p.531]",
+    "TOTMCR24": "Name: TOTMCR24 / Description: TOTAL AMT PAID BY MEDICARE 24 / Start: 3208 [h256cb.pdf p.554]",
+    "TOTMCD24": "Name: TOTMCD24 / Description: TOTAL AMT PAID BY MEDICAID 24 / Start: 3214 [h256cb.pdf p.554]",
+    "TOTVA24": "Name: TOTVA24 / Description: TOTAL AMT PAID BY VA/CHAMPVA 24 / Start: 3227 [h256cb.pdf p.555]",
+    "TOTTRI24": "Name: TOTTRI24 / Description: TOTAL AMT PAID BY TRICARE 24 / Start: 3233 [h256cb.pdf p.555]",
+    "TOTOFD24": "Name: TOTOFD24 / Description: TOTAL AMT PAID BY OTHER FEDERAL 24 / Start: 3239 [h256cb.pdf p.555]",
+    "TOTSTL24": "Name: TOTSTL24 / Description: TOTAL AMT PAID BY OTH ST/LOCAL 24 / Start: 3244 [h256cb.pdf p.556]",
+    "TOTSLF24": "Name: TOTSLF24 / Description: TOTAL AMT PAID BY SELF/FAMILY 24 / Start: 3202 [h256cb.pdf p.553]",
+    "TOTPRV24": "Name: TOTPRV24 / Description: TOTAL AMT PAID BY PRIVATE INS 24 / Start: 3221 [h256cb.pdf p.554]",
+    "TOTEXP24": "Name: TOTEXP24 / Description: TOTAL HEALTH CARE EXP 24 / Start: 3195 [h256cb.pdf p.553]"
+  },
+  "band_definitions": {
+    "transport": "np.digitize(age, [18, 35, 50, 65]) -- verbatim from build/meps_health_transport_2024.py::age_band",
+    "ledger": "np.digitize(age, [18, 25, 35, 45, 55, 65, 75]) -- verbatim from ledger_absolute_2026_09_17/profile_export.py line 80"
+  },
+  "groups": {
+    "mexican_origin": "HISPNCAT == 1 (MEXICAN/MEX AMER/CHICANO - NO OTHER HISP RPTD)",
+    "nh_white": "HISPANX == 2 and RACEV1X == 1; identical to RACETHX == 2",
+    "all_donors": "the transport's valid set: PERWT24F > 0, AGE24X >= 0, BORNUSA in (1,2)"
+  },
+  "public_payer_definition": "TOTMCR24 + TOTMCD24 + TOTVA24 + TOTTRI24 + TOTOFD24 + TOTSTL24, the transport's PUBLIC_PAYERS list",
+  "gates": {
+    "n_records": 19140,
+    "n_positive_weight": 18683,
+    "hispncat_codebook": {
+      "1": {
+        "label": "MEXICAN/MEX AMER/CHICANO - NO OTHER HISP RPTD",
+        "unweighted": 2679,
+        "weighted": 42446767.91
+      },
+      "2": {
+        "label": "PUERTO RICAN - NO OTHER HISPANIC RPTD",
+        "unweighted": 282,
+        "weighted": 5310040.09
+      },
+      "3": {
+        "label": "CUBAN/CUBAN AMERICAN - NO OTHER HISPANIC RPTD",
+        "unweighted": 144,
+        "weighted": 2030497.54
+      },
+      "4": {
+        "label": "DOMINICAN - NO OTHER HISPANIC RPTD",
+        "unweighted": 131,
+        "weighted": 2829666.89
+      },
+      "5": {
+        "label": "CENTRAL OR SOUTH AMERICAN - NO OTHER HISPANIC RPTD",
+        "unweighted": 588,
+        "weighted": 10298521.7
+      },
+      "6": {
+        "label": "OTH LAT AM/HISP/LATINO/SPNSH ORGN-NO OTH",
+        "unweighted": 216,
+        "weighted": 4168032.35
+      },
+      "8": {
+        "label": "MULTIPLE HISPANIC GROUPS REPORTED",
+        "unweighted": 76,
+        "weighted": 1522056.43
+      },
+      "9": {
+        "label": "NON-HISPANIC",
+        "unweighted": 15024,
+        "weighted": 271192046.69
+      }
+    },
+    "nativity_anchors": {
+      "all": 339797629.6,
+      "born_us": 285498518.67,
+      "born_elsewhere": 52835316.12
+    },
+    "nh_white_equals_racethx2": {
+      "unweighted": 10766,
+      "weighted": 191692001.0
+    },
+    "design": {
+      "n_strata": 105,
+      "n_psu": 264,
+      "min_psu_per_stratum": 2,
+      "max_psu_per_stratum": 5
+    },
+    "mcdev_codebook": {
+      "unweighted": 4941,
+      "weighted": 78147553.0
+    }
+  },
+  "se_validation": {
+    "cell": "65+, both nativities, mexican_origin / all_donors, public payments",
+    "linearized_se": 0.14456539068975985,
+    "bootstrap_se": 0.14731296193543109,
+    "bootstrap_replicates": 2000,
+    "bootstrap_method": "Rao-Wu(n_h - 1) rescaling bootstrap over PSUs within strata; multiplier n_h/(n_h-1) times the multinomial count",
+    "relative_difference": 0.019005733201853125,
+    "formula_status": "the with-replacement stratified-PSU linearization is the estimator build/meps_health_transport_2024.py::donor_model already uses; the bootstrap is an independent check of this implementation, not a second published method"
+  },
+  "leave_one_out": {
+    "method": "each ledger band's mexican_origin / all_donors public ratio recomputed with that band's single largest Mexican-origin weighted contributor removed",
+    "note": "MEPS top-codes total expenditures; a single retained record can carry a small cell. Point values only: a leave-one-out has no design-based standard error.",
+    "bands": {
+      "0": {
+        "ratio": 1.0900830411806932,
+        "dropped_public": 1242405.0,
+        "dropped_weight": 25338.681909,
+        "dropped_age": 4.0,
+        "n_mexican": 729,
+        "n_all_donors": 3545,
+        "dropped_share_of_mexican_band_mean": 0.6830780192793257,
+        "all_donor_top1_share_of_band_mean": 0.2920699908262512
+      },
+      "1": {
+        "ratio": 0.7489766647738073,
+        "dropped_public": 22649.0,
+        "dropped_weight": 26338.054193,
+        "dropped_age": 19.0,
+        "n_mexican": 283,
+        "n_all_donors": 1189,
+        "dropped_share_of_mexican_band_mean": 0.12720968648698222,
+        "all_donor_top1_share_of_band_mean": 0.0963995197486376
+      },
+      "2": {
+        "ratio": 1.0035664405533617,
+        "dropped_public": 49499.0,
+        "dropped_weight": 33169.524487,
+        "dropped_age": 27.0,
+        "n_mexican": 358,
+        "n_all_donors": 1951,
+        "dropped_share_of_mexican_band_mean": 0.19659953577552639,
+        "all_donor_top1_share_of_band_mean": 0.10904892622762258
+      },
+      "3": {
+        "ratio": 0.47878280757298985,
+        "dropped_public": 46349.0,
+        "dropped_weight": 18449.445401,
+        "dropped_age": 38.0,
+        "n_mexican": 342,
+        "n_all_donors": 2293,
+        "dropped_share_of_mexican_band_mean": 0.16116871503386504,
+        "all_donor_top1_share_of_band_mean": 0.12487814975362793
+      },
+      "4": {
+        "ratio": 0.4790867464387288,
+        "dropped_public": 24804.0,
+        "dropped_weight": 38230.557715,
+        "dropped_age": 54.0,
+        "n_mexican": 301,
+        "n_all_donors": 2119,
+        "dropped_share_of_mexican_band_mean": 0.1875204236086454,
+        "all_donor_top1_share_of_band_mean": 0.03860823802393959
+      },
+      "5": {
+        "ratio": 0.6512554112703725,
+        "dropped_public": 114192.0,
+        "dropped_weight": 17318.901469,
+        "dropped_age": 59.0,
+        "n_mexican": 283,
+        "n_all_donors": 2540,
+        "dropped_share_of_mexican_band_mean": 0.1813763340656415,
+        "all_donor_top1_share_of_band_mean": 0.08015966471273901
+      },
+      "6": {
+        "ratio": 0.7820729945472681,
+        "dropped_public": 110460.0,
+        "dropped_weight": 29113.276507,
+        "dropped_age": 74.0,
+        "n_mexican": 172,
+        "n_all_donors": 2784,
+        "dropped_share_of_mexican_band_mean": 0.19577960290009644,
+        "all_donor_top1_share_of_band_mean": 0.020145254190631193
+      },
+      "7": {
+        "ratio": 0.8109658953207098,
+        "dropped_public": 65226.0,
+        "dropped_weight": 17337.086453,
+        "dropped_age": 75.0,
+        "n_mexican": 108,
+        "n_all_donors": 2055,
+        "dropped_share_of_mexican_band_mean": 0.08140118084141916,
+        "all_donor_top1_share_of_band_mean": 0.015057135632035853
+      }
+    }
+  },
+  "nativity_mix_source": "age_profile_components.csv carries no nativity split for mexican_observed_total, so the union's own per-band foreign-born share is taken from age_profiles.csv as population(mexico_born) / population(mexican_observed_total); the three sub-group populations sum to the union's exactly in every band (checked).",
+  "nhea_ratios": {
+    "medicaid": 1.5432,
+    "medicare": 1.2804,
+    "source": "ledger_absolute_2026_09_17/params/params.json meps_coverage"
+  },
+  "translation_assumption": "Each ledger band's medical and M charge is multiplied by that band's MEPS mexican_origin / all_donors ratio, the nativity cells combined with the union's own per-band foreign-born share. This is a translation under the assumption that the union's members in a band resemble MEPS Mexican-origin donors in that band. It is not a re-estimate of the ledger.",
+  "pooled_2023_2024_65plus": {
+    "cpi_2023_annual_avg": 304.703,
+    "cpi_2024_annual_avg": 313.6981666666666,
+    "deflator_2023_to_2024": 1.0295210964994328,
+    "cpi_source": "external/fred/cpi_all_urban.csv (CPIAUCSL monthly, annual mean)",
+    "pooled_65plus_public_ratio_vs_nh_white": {
+      "ratio": 0.7981641736891089,
+      "se": 0.0930076514646168,
+      "n_mexican": 558,
+      "n_denominator": 6733
+    },
+    "pooled_65plus_public_ratio_vs_all_donors": {
+      "ratio": 0.8101989453803885,
+      "se": 0.08977563986166431,
+      "n_mexican": 558,
+      "n_denominator": 9336
+    }
+  },
+  "pooled_note": "Secondary. 2023 dollars deflated to 2024 by the CPI-U annual-average ratio from the acquired FRED file; both years' weights halved; 2023 strata offset by 10000 so the two samples never share a stratum."
+}
