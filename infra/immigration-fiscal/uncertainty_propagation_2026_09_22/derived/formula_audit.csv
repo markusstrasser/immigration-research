@@ -1,0 +1,74 @@
+object,case_id,allocation,normalization,profile,welfare_bn_recomputed,welfare_bn_published,abs_diff_bn
+service_response_case,personal_0,personal,gdp,proportional_reference,-284.1836611692407,-284.18366116924074,5.684341886080802e-14
+service_response_case,personal_0,personal,cash,proportional_reference,-288.71563139203187,-288.7156313920319,5.684341886080802e-14
+service_response_case,personal_1,personal,gdp,school_response_only,-231.36317430798312,-231.36317430798303,8.526512829121202e-14
+service_response_case,personal_1,personal,cash,school_response_only,-235.8951445307743,-235.89514453077425,5.684341886080802e-14
+service_response_case,personal_2,personal,gdp,cbo_category_lag_non_school_fixed,-131.75732058481395,-131.757320584814,5.684341886080802e-14
+service_response_case,personal_2,personal,cash,cbo_category_lag_non_school_fixed,-136.28929080760514,-136.2892908076052,5.684341886080802e-14
+service_response_case,personal_3,personal,gdp,cbo_category_lag_non_school_full,-188.5693883893636,-188.56938838936367,5.684341886080802e-14
+service_response_case,personal_3,personal,cash,cbo_category_lag_non_school_full,-193.1013586121548,-193.10135861215485,5.684341886080802e-14
+service_response_case,personal_4,personal,gdp,school_response_only,-235.6459164859229,-235.6459164859229,0.0
+service_response_case,personal_4,personal,cash,school_response_only,-240.17788670871408,-240.17788670871408,0.0
+service_response_case,personal_5,personal,gdp,cbo_category_lag_non_school_fixed,-136.04006276275376,-136.04006276275382,5.684341886080802e-14
+service_response_case,personal_5,personal,cash,cbo_category_lag_non_school_fixed,-140.57203298554495,-140.57203298554504,8.526512829121202e-14
+service_response_case,personal_6,personal,gdp,cbo_category_lag_non_school_full,-192.8521305673035,-192.8521305673035,0.0
+service_response_case,personal_6,personal,cash,cbo_category_lag_non_school_full,-197.3841007900947,-197.3841007900947,0.0
+service_response_case,personal_7,personal,gdp,school_response_only,-220.29935790234077,-220.29935790234077,0.0
+service_response_case,personal_7,personal,cash,school_response_only,-224.83132812513196,-224.83132812513196,0.0
+service_response_case,personal_8,personal,gdp,cbo_category_lag_non_school_fixed,-150.59571068090756,-150.5957106809076,2.842170943040401e-14
+service_response_case,personal_8,personal,cash,cbo_category_lag_non_school_fixed,-155.12768090369875,-155.12768090369875,0.0
+service_response_case,personal_9,personal,gdp,cbo_category_lag_non_school_full,-177.50557198372135,-177.50557198372138,2.842170943040401e-14
+service_response_case,personal_9,personal,cash,cbo_category_lag_non_school_full,-182.03754220651254,-182.03754220651257,2.842170943040401e-14
+service_response_case,personal_10,personal,gdp,school_response_only,-225.47916627533272,-225.47916627533263,8.526512829121202e-14
+service_response_case,personal_10,personal,cash,school_response_only,-230.0111364981239,-230.01113649812385,5.684341886080802e-14
+service_response_case,personal_11,personal,gdp,cbo_category_lag_non_school_fixed,-155.77551905389944,-155.77551905389947,2.842170943040401e-14
+service_response_case,personal_11,personal,cash,cbo_category_lag_non_school_fixed,-160.30748927669063,-160.30748927669066,2.842170943040401e-14
+service_response_case,personal_12,personal,gdp,cbo_category_lag_non_school_full,-182.6853803567132,-182.68538035671327,5.684341886080802e-14
+service_response_case,personal_12,personal,cash,cbo_category_lag_non_school_full,-187.2173505795044,-187.21735057950443,2.842170943040401e-14
+service_response_case,personal_13,personal,gdp,education_fixed_diagnostic,-41.81973484807797,-41.81973484807803,5.684341886080802e-14
+service_response_case,personal_13,personal,cash,education_fixed_diagnostic,-46.35170507086917,-46.35170507086923,5.684341886080802e-14
+service_response_case,personal_14,personal,gdp,education_full_diagnostic,-241.3898752506213,-241.38987525062137,8.526512829121202e-14
+service_response_case,personal_14,personal,cash,education_full_diagnostic,-245.92184547341247,-245.92184547341253,5.684341886080802e-14
+service_response_case,shared_0,shared,gdp,proportional_reference,-269.8119124377106,-269.8119124377106,0.0
+service_response_case,shared_0,shared,cash,proportional_reference,-274.3438826605018,-274.3438826605018,0.0
+service_response_case,shared_1,shared,gdp,school_response_only,-218.63362634321675,-218.6336263432168,5.684341886080802e-14
+service_response_case,shared_1,shared,cash,school_response_only,-223.16559656600793,-223.165596566008,5.684341886080802e-14
+service_response_case,shared_2,shared,gdp,cbo_category_lag_non_school_fixed,-120.79407253233609,-120.79407253233614,5.684341886080802e-14
+service_response_case,shared_2,shared,cash,cbo_category_lag_non_school_fixed,-125.32604275512729,-125.32604275512736,7.105427357601002e-14
+service_response_case,shared_3,shared,gdp,cbo_category_lag_non_school_full,-175.83984042459736,-175.8398404245974,5.684341886080802e-14
+service_response_case,shared_3,shared,cash,cbo_category_lag_non_school_full,-180.37181064738854,-180.3718106473886,5.684341886080802e-14
+service_response_case,shared_4,shared,gdp,school_response_only,-222.7832171076352,-222.7832171076352,0.0
+service_response_case,shared_4,shared,cash,school_response_only,-227.3151873304264,-227.3151873304264,0.0
+service_response_case,shared_5,shared,gdp,cbo_category_lag_non_school_fixed,-124.9436632967545,-124.94366329675456,7.105427357601002e-14
+service_response_case,shared_5,shared,cash,cbo_category_lag_non_school_fixed,-129.47563351954568,-129.47563351954574,5.684341886080802e-14
+service_response_case,shared_6,shared,gdp,cbo_category_lag_non_school_full,-179.98943118901576,-179.98943118901582,5.684341886080802e-14
+service_response_case,shared_6,shared,cash,cbo_category_lag_non_school_full,-184.52140141180695,-184.521401411807,5.684341886080802e-14
+service_response_case,shared_7,shared,gdp,school_response_only,-207.91378646759784,-207.9137864675979,5.684341886080802e-14
+service_response_case,shared_7,shared,cash,school_response_only,-212.44575669038903,-212.4457566903891,5.684341886080802e-14
+service_response_case,shared_8,shared,gdp,cbo_category_lag_non_school_fixed,-139.04677286109262,-139.04677286109268,5.684341886080802e-14
+service_response_case,shared_8,shared,cash,cbo_category_lag_non_school_fixed,-143.5787430838838,-143.57874308388386,5.684341886080802e-14
+service_response_case,shared_9,shared,gdp,cbo_category_lag_non_school_full,-165.12000054897845,-165.1200005489785,5.684341886080802e-14
+service_response_case,shared_9,shared,cash,cbo_category_lag_non_school_full,-169.65197077176964,-169.6519707717697,5.684341886080802e-14
+service_response_case,shared_10,shared,gdp,school_response_only,-212.93255343814752,-212.9325534381476,8.526512829121202e-14
+service_response_case,shared_10,shared,cash,school_response_only,-217.4645236609387,-217.46452366093877,5.684341886080802e-14
+service_response_case,shared_11,shared,gdp,cbo_category_lag_non_school_fixed,-144.0655398316423,-144.06553983164235,5.684341886080802e-14
+service_response_case,shared_11,shared,cash,cbo_category_lag_non_school_fixed,-148.59751005443349,-148.59751005443354,5.684341886080802e-14
+service_response_case,shared_12,shared,gdp,cbo_category_lag_non_school_full,-170.13876751952813,-170.1387675195282,5.684341886080802e-14
+service_response_case,shared_12,shared,cash,cbo_category_lag_non_school_full,-174.67073774231932,-174.67073774231935,2.842170943040401e-14
+service_response_case,shared_13,shared,gdp,education_fixed_diagnostic,-33.65266647954937,-33.652666479549424,5.684341886080802e-14
+service_response_case,shared_13,shared,cash,education_fixed_diagnostic,-38.18463670234057,-38.184636702340626,5.684341886080802e-14
+service_response_case,shared_14,shared,gdp,education_full_diagnostic,-227.01812651909114,-227.0181265190912,5.684341886080802e-14
+service_response_case,shared_14,shared,cash,education_full_diagnostic,-231.55009674188233,-231.5500967418824,8.526512829121202e-14
+headline_cases,personal_0,personal,gdp,proportional_reference,-284.1836611692407,-284.18366116924074,5.684341886080802e-14
+headline_cases,personal_0,personal,cash,proportional_reference,-288.71563139203187,-288.7156313920319,5.684341886080802e-14
+headline_cases,shared_0,shared,gdp,proportional_reference,-269.8119124377106,-269.81191243771065,5.684341886080802e-14
+headline_cases,shared_0,shared,cash,proportional_reference,-274.3438826605018,-274.34388266050183,5.684341886080802e-14
+headline_summary,core long-run grid min,,,,-356.837793602026,-356.8377936020259,1.1368683772161603e-13
+headline_summary,core long-run grid max,,,,-262.0537882647353,-262.0537882647353,0.0
+headline_summary,"full capital, all ownership, max",,,,-21.30982596031572,-21.309825960315766,4.618527782440651e-14
+headline_summary,capacity path 0.0 min,,,,-41.53408911356398,-41.53408911356392,5.684341886080802e-14
+headline_summary,capacity path 0.0 max,,,,112.67126129844317,112.6712612984431,7.105427357601002e-14
+headline_summary,capacity path 0.5 min,,,,-203.55029606096517,-203.55029606096508,8.526512829121202e-14
+headline_summary,capacity path 0.5 max,,,,-81.72533922333058,-81.72533922333065,7.105427357601002e-14
+headline_summary,capacity path 1.0 min,,,,-356.837793602026,-356.8377936020259,1.1368683772161603e-13
+headline_summary,capacity path 1.0 max,,,,-262.0537882647353,-262.0537882647353,0.0

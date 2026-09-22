@@ -1,0 +1,30 @@
+{
+  "hf_point": 0.9900527030311822,
+  "hf_se": 1.1062746564398097e-13,
+  "school_relative_se": {
+    "personal": {
+      "indep": 0.01050679573069151,
+      "upper": 0.012194709901682067,
+      "target_school_plus_P_bn": 152.08725560277998,
+      "se_upper_bn": 1.8546599618188724
+    },
+    "shared": {
+      "indep": 0.010094626609139857,
+      "upper": 0.011956910899011956,
+      "target_school_plus_P_bn": 145.26555218130753,
+      "se_upper_bn": 1.736927264127666
+    }
+  },
+  "production_term_se": {
+    "gdp": 1.124282551880874,
+    "cash": 0.7373582935572889
+  },
+  "meps_cells": 10,
+  "meps_payer_sets": [
+    "medicare",
+    "medicaid",
+    "va_medical",
+    "tricare",
+    "health_other"
+  ]
+}
