@@ -117,17 +117,6 @@ and not as a failure of assimilation; the 2016 volume's sign turns on its public
 descendant scenarios ([canon audit](immigration-canon-citation-audit-2026-09-17.md), C9). Would
 change it: a linked parent–child file, or the second generation tabulated by birth cohort.
 
-## 6. "Comparing with whites is cherry-picking."
-
-Finding: against all natives the same-age gaps are −$5,404, −$5,342 and −$4,015; against
-the average resident of the complete account the union gap is −$274bn, about −$6,700 per
-person. The net-cost headline compares with no reference group at all: it is the change for
-all other residents, other immigrants included. [SOURCE: `derived/complete_gaps.csv`;
-complete account]
-
-## 7. "Is this just low education? Poor natives cost money too."
-
-Steel-man: origin adds nothing once schooling is held fixed. Finding *(routed)*: below-high-school
 On adult outcomes rather than dollars the convergence is partial and uneven. In IPUMS-CPS
 1994–2025 the US-born children of Mexican immigrants close 76% of the first generation's
 no-high-school gap but 31% of its college gap (−29.8 → −20.6 points against third-plus
@@ -140,6 +129,17 @@ flat fiscal gap above. Descriptive, cross-sectional generations; the third-plus 
 subject to ethnic attrition; standard errors are lower bounds. [CALCULATION:
 [second generation by origin](immigration-second-generation-by-origin-2026-09-22.md), ladder 178]
 
+## 6. "Comparing with whites is cherry-picking."
+
+Finding: against all natives the same-age gaps are −$5,404, −$5,342 and −$4,015; against
+the average resident of the complete account the union gap is −$274bn, about −$6,700 per
+person. The net-cost headline compares with no reference group at all: it is the change for
+all other residents, other immigrants included. [SOURCE: `derived/complete_gaps.csv`;
+complete account]
+
+## 7. "Is this just low education? Poor natives cost money too."
+
+Steel-man: origin adds nothing once schooling is held fixed. Finding *(routed)*: below-high-school
 Mexico-born adults outperform below-high-school natives at common ages, while high-school-only
 adults do worse. The aggregate gap is largely a composition effect, which is a description of
 who the residents are and does not make the dollars smaller.
