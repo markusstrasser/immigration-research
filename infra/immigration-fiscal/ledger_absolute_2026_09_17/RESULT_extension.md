@@ -122,7 +122,7 @@ The white reference ends at −$390.75bn and all natives at −$966.95bn.
 | union complete common-age gap vs white, $/standardized person | −7,095 | **−7,224** (se 302) |
 | union complete age-matched gap vs white, $bn | −354.3 | **−361.1** (se 12.0) |
 | union complete common-age gap vs all natives | −4,928 | **−5,023** (se 257) |
-| arms matrix range over 144 combinations | −548.37 to −87.04 | **−557.67 to −96.33** |
+| arms matrix range over 144 combinations | −548.37 to −87.04 | **−557.67 to −96.33** | [STALE since the September 19 rebuild (6a4b8b0): the live grid holds 63 admissible cells, −$496.2bn to −$76.1bn, central −$217.3bn with D and P on; practitioner range −$290bn to −$190bn in `../ledger_recut_2026_09_22/RESULT.md`]
 | break-even marginality dial m\* | 0.1204 | **0.1167** |
 | national account position | −966.7bn | −1,007.4bn |
 | national residual, unpriced or coverage | −1,624.1bn | −1,583.4bn |

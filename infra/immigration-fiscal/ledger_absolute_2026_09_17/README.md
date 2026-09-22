@@ -156,6 +156,7 @@ All under `derived/`; `*.npz` is ignored.
   stock as a fourth arm, and the federal-function item gained an arm that
   allocates subfunction 604 housing assistance by each record's share of the
   reported SPM capped housing subsidy instead of per capita.
+  Since the September 19 rebuild (6a4b8b0) the grid holds 63 admissible cells, not 144: E ≠ zero is skipped unless R = all zero, because the enforcement appropriation duplicates function 750 inside R; the live range is −$496.2bn to −$76.1bn and the practitioner recut is in `../ledger_recut_2026_09_22/`.
 - `marginality_curve.csv` — the union absolute as the marginality dial m runs
   from 0 to 1, with the break-even m\*.
 - `audit.json` — gates, the parameter file's hash and every parameter consumed,
