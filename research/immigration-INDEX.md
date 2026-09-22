@@ -51,6 +51,9 @@ at ε = 3 against +$8.8 / +$13.3bn (ladder 176). The same file's jobs put that e
 where the computed neighbors ε = 5 and ε = 7 give about +$13–22bn and would put the band near
 $157–194bn; the directly estimated low-skill elasticities 8.7–17.9 (ladder 181) give
 +$10–18bn and a band near $160–196bn. The band is not re-run.
+Sampling plus donor error is about **±$12bn (1 SE)** per headline case; the main band's 95% intervals
+run **$141–221bn** together, and across constructions the assumptions dominate (ladder 184,
+[uncertainty lane](../infra/immigration-fiscal/uncertainty_propagation_2026_09_22/RESULT.md)).
 The **$262–357bn** proportional-service grid includes weaker proxy stress tests.
 The report now regenerates all category comparisons and composition diagnostics.
 Fixed-service cases can be positive; property-receipt and service-quality effects
