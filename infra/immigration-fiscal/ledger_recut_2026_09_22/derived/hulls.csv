@@ -1,0 +1,5 @@
+hull,low_bn,high_bn,central_bn,members,note
+practitioner,-290.4763184826092,-190.11515439244818,-217.3164023135495,"strict: R all per capita, C all capital, E targeted (netted), F general government at the admin elasticity; lenient: G at cross-state function elasticities, state-local interest like federal interest, K and D at the within-district school elasticity",conventions a named class of modeler runs; not a confidence interval
+design_grid,-496.2378371454583,-76.12536744429862,-217.3164023135495,all 63 admissible F x E x C x R cells,"hull of the switch design, grows with every arm added"
+design_with_dial,-496.2378371454583,40.85796942106115,-217.3164023135495,the grid plus the marginality dial from 0 to 1,the widest thing the lane can produce; +41 is taxes and transfers only
+second_object_public_goods,-502.1276044118684,-401.7664403217074,-428.9676882428087,the practitioner hull with F per capita added,"assigned share of defense, net interest and general government; a different question"
