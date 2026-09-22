@@ -49,7 +49,7 @@ earnings [CALCULATION: `derived/branch_composition.csv`]:
   worker substitutes worse for other natives than a foreign-born non-Mexican worker does.
   [UNVERIFIED-STRUCTURAL]
 
-The ε grid is {1.3, 3, 4.6, 5, 7, 20, ∞}: 3 is the removal model's chosen midpoint, 1.3 and
+The ε grid is {1.3, 3, 4.6, 5, 7, 8.7, 9, 17.9, 20, ∞} (8.7, 9 and 17.9 added on the evening of 2026-09-22, see Revisions): 3 is the removal model's chosen midpoint, 1.3 and
 4.6 are the two published estimates it cites (Clemens–Lewis; Burstein et al.), 20 is the
 upper end of the older literature range it states, ∞ is the account's current assumption; 5
 and 7 have no source in this repository and are tagged as such in every row. Every ε is
@@ -184,3 +184,10 @@ with a separate calculation before committing; `independent_check.py` reproduces
 - 2026-09-22: created. Ladder 176; qualifies ladder 166 ("not yet executed" is now
   executed) and FAQ entry 14. No published value changes; the headline band keeps the
   perfect-substitution term pending the operator's choice of ε.
+
+- 2026-09-22 (evening, grid): three rows added at the elasticities the fourteen-paper reading
+  found in primary texts, 8.7 (Caiumi–Peri, no-diploma cells), 17.9 (Piyapromdee, low-skill
+  cells) and 9 (Burstein et al., "roughly twice" their calibrated 4.6). Under Option A they give
+  +18.01 / +11.88bn, +17.85 / +11.78bn and +15.59 / +10.29bn (GDP / cash), so the headline band
+  would move by $2–5bn rather than the $9–14bn at ε = 3. Earlier rows unchanged; ε still not
+  adopted. Ladder 181, [reading memo](immigration-us-lowskill-effects-integration-2026-09-22.md).
