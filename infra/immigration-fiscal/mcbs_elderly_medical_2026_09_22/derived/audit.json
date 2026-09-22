@@ -1,0 +1,86 @@
+{
+  "lane": "mcbs_elderly_medical_2026_09_22",
+  "question": "Public medical spending per community-dwelling Medicare beneficiary aged 65+, Hispanic vs non-Hispanic white, 2023 MCBS Cost Supplement PUF",
+  "inputs": {
+    "zip": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/fiscal_access_2026_09_20/_cache/CSPUF2023_Data.zip",
+    "zip_sha256": "56937f1a623b77a85d5b401c1fdc00791098772c240073f70cbbbdff9db86d41",
+    "csv_member": "cspuf2023.csv",
+    "csv_sha256": "3407a9a76e8ddb71d9b8e840c4c14c94ddd25648c2cc60bf7eeb1d537c96b188",
+    "codebook": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/fiscal_access_2026_09_20/_cache/CSPUF2023_Codebook.txt",
+    "codebook_sha256": "865624a99f0cdbdca5c6903bc88c93e738046710ab1ade803abea9ca88712fed",
+    "validation_json": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/fiscal_access_2026_09_20/derived/mcbs_validation.json",
+    "user_guide": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/fiscal_access_2026_09_20/_cache/methodology/MCBSMicrodataPUFDataUsersGuide.pdf",
+    "summary_of_changes": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/fiscal_access_2026_09_20/_cache/methodology/2023MCBSSummaryofChangesCSPUF.pdf"
+  },
+  "gates": {
+    "zip_sha256_matches_pin": true,
+    "csv_sha256_matches_pin": true,
+    "zip_sha256": "56937f1a623b77a85d5b401c1fdc00791098772c240073f70cbbbdff9db86d41",
+    "csv_sha256": "3407a9a76e8ddb71d9b8e840c4c14c94ddd25648c2cc60bf7eeb1d537c96b188",
+    "codebook_sha256": "865624a99f0cdbdca5c6903bc88c93e738046710ab1ade803abea9ca88712fed",
+    "rows": 6920,
+    "columns": 134,
+    "puf_id_unique": true,
+    "survey_year_2023": true,
+    "race_counts_match_validation_json": true,
+    "race_counts": {
+      "1": 5091,
+      "3": 753,
+      "2": 732,
+      "4": 344
+    },
+    "cspufwgt_all_positive": true,
+    "replicate_weights_present": 100,
+    "payer_amounts_complete": true,
+    "anchor_overall_weighted_matches": true,
+    "weight_sum": 61369576.68439028,
+    "anchor_race_totals_match": true,
+    "anchor_exhibit_3_3_matches": true,
+    "elderly_n_obs": 5862,
+    "elderly_weighted": 54589922.561031744,
+    "elderly_hispanic_n_obs": 632,
+    "elderly_nhwhite_n_obs": 4454
+  },
+  "variance": {
+    "method": "Balanced repeated replication with Fay's adjustment",
+    "rho": 0.3,
+    "replicates": 100,
+    "scale": 0.020408163265306124,
+    "formula": "V(theta) = 1/(R*(1-rho)^2) * sum_r (theta_r - theta_0)^2",
+    "formula_status": "The acquired documents PRESCRIBE the method and the software options, not the algebra. The algebraic line above is the standard definition of those options (SAS VARMETHOD=BRR(FAY=.30), Stata vce(brr) fay(.3), R svrepdesign type='Fay' rho=0.3); it is not a literal quote.",
+    "quote_user_guide_7_1": "When using the replicate weight approach to variance estimation, the variance estimation method of balanced repeated replication (BRR) using Fay's adjustment of 0.3 is recommended.",
+    "quote_user_guide_appendix_b_r": "mcbs <- svrepdesign( weights = ~CSPUFWGT, repweights = \"CSPUF[001-100]+\", type = \"Fay\", rho = 0.3, data = <Source dataset>, combined.weights = TRUE )",
+    "quote_user_guide_appendix_b_stata": "svyset _n [pweight= CSPUFWGT ], brrweight(CSPUF001 - CSPUF100) fay(.3) vce(brr) singleunit(missing)",
+    "quote_user_guide_7_3_subsetting": "The recommended method of variance estimation for subgroup analysis is the BRR method; which does not require any special subgroup considerations. The BRR method allows the researcher to subset data to a subgroup of interest and still produce unbiased standard error estimates.",
+    "centering_sensitivity": {
+      "PUBLIC": {
+        "ratio": 1.264997160212953,
+        "se_centred_full_sample": 0.15246216057505946,
+        "se_centred_replicate_mean": 0.14733636055810911
+      },
+      "PAMTTOT": {
+        "ratio": 0.9937175428128954,
+        "se_centred_full_sample": 0.10129276922383428,
+        "se_centred_replicate_mean": 0.09746915440781627
+      }
+    }
+  },
+  "anchor": {
+    "source": "2023MCBSSummaryofChangesCSPUF.pdf, Exhibits 3.2.3 and 3.3",
+    "reproduced": true,
+    "overall_weighted_published": 61369577,
+    "overall_weighted_computed": 61369577,
+    "detail": "derived/anchor_reproduction.csv"
+  },
+  "outputs": {
+    "elderly_cost_by_race.csv": 200,
+    "ratios.csv": 50,
+    "anchor_reproduction.csv": 3
+  },
+  "caveats": [
+    "Community-dwelling full-year beneficiaries only; anyone with a facility interview or any facility, hospice or institutional event or cost in 2023 is excluded.",
+    "Service- and payer-specific cost and event variables are top-coded at the 99.5 percent level.",
+    "CSP_RACE=3 is Hispanic of any national origin, NOT Mexican-origin.",
+    "No country of birth, no nativity, no generation; 2023 calendar year only."
+  ]
+}
