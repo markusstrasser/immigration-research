@@ -113,7 +113,7 @@ and ladder 164–167. Two statements above do not survive the reading. Lead 1: t
 paper does **not** speak to the service-response parameter; its revenue result is an imprecise
 zero and it estimates no total expenditure. Lead 2: the elder-care channel transfers weakly,
 because 1.2% of Mexican immigrants work in health occupations, and its Medicaid value for the
-Mexico-born is bounded at $2.3–14.9bn a year. Lead 3 turned out to matter most: it exposes the
+Mexico-born is bounded at $2.3–14.6bn a year (corrected 2026-09-22 from $2.3–14.9bn; see the leads memo's Revisions). Lead 3 turned out to matter most: it exposes the
 perfect-substitution assumption in the account's production term.
 
 Already covered: Akee–Chin–Crown on return migration (ladder 92), Cowen's house-price test
