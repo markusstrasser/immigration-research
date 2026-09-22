@@ -19,6 +19,8 @@ the bottleneck is a BUILD, not more search.** Three things for you:
 - **Result:** corr(fb-share, rent LEVEL) = **+0.69** (immigrants concentrate in high-rent metros; **+0.74 in inelastic metros** — the Wilson-Zhou incidence mechanism), but corr(fb-share, rent GROWTH) = **−0.17** (didn't drive recent growth). **Honest bound:** the level corr is **sorting-confounded** (immigrants choose expensive/inelastic metros — Borjas critique), NOT causal.
 - **Remaining (autonomous, no key — flag if you want it):** the causal `Δrent ~ Δfb-share × elasticity` (Wilson-Zhou +2.2%/+1.4%) needs a **2nd ACS year** (another no-key `acsdt1yYYYY-b05002.dat`) + a shift-share IV. I can build this without you; say the word.
 
+- 2026-09-22: the descriptive leg is executed in `housing_supply_ca_tx_2026_09_22` (ladder 180, memo `immigration-housing-supply-ca-tx-2026-09-22.md`): Δ Mexican-origin share 2010→2023 associates with 2015–2026 rent growth within state (+0.030 log points per point), the share × inverse-elasticity interaction is not separately identified, and the state permit and 2024 native-migration cuts are in. The causal `Δrent ~ Δshare × elasticity` leg stays open and is only identifiable on 2000–2010 (ladder 136/140); it is a separate build, not started. — session 87fa457f
+
 ### B. Gated pulls that unblock the deepest tests (login-gated, you pull; loaders/specs ready)
 - **IPUMS-CPS** 2nd-gen extract → cluster-V V02 (loader `load_cps_second_gen.py` ready; uses PARENTAL
   birthplace, so it's already robust to the ethnic-attrition bias the sociology pass flagged).
