@@ -1,0 +1,307 @@
+:root {
+  --paper: #f3efe6;
+  --ink: #1c1917;
+  --muted: #5e584e;
+  --faint: #8a8376;
+  --rule: #d4cdb8;
+  --rust: #8c2f16;
+  --slate: #24384a;
+  --brass: #7c6232;
+  --gain: #1d5a42;
+  --wash: #e7dcc4;
+  --track: #e4dcc8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+main {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 6rem;
+}
+
+h1, h2, h3, p { font-weight: 400; }
+
+h1 {
+  font-size: 2.35rem;
+  line-height: 1.15;
+  margin: 0.2rem 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.45rem;
+  line-height: 1.25;
+  margin: 0 0 0.4rem;
+}
+
+.kicker {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lead { font-size: 1.15rem; max-width: 38rem; }
+
+.epigraph {
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 0.8rem 0;
+  margin: 1.6rem 0 2rem;
+  max-width: 40rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  margin: 0 0 2.5rem;
+  font-size: 0.92rem;
+}
+
+nav a { color: var(--rust); text-underline-offset: 0.18em; }
+
+section.fig {
+  margin: 0 0 4.2rem;
+  padding-top: 0.4rem;
+}
+
+.object {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 0 1rem;
+  max-width: 40rem;
+}
+
+.src {
+  color: var(--faint);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  margin: 0.9rem 0 0;
+  max-width: 44rem;
+}
+
+.live {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 0.6rem 0 1rem;
+}
+
+.live div { border-top: 1px solid var(--ink); padding-top: 0.35rem; }
+.live .n {
+  display: block;
+  font-size: 1.55rem;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.live .l { color: var(--muted); font-size: 0.82rem; }
+
+.slider {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.8rem;
+  align-items: center;
+  margin: 0.2rem 0 0.8rem;
+}
+
+.slider button, .picks button {
+  font: inherit;
+  font-size: 0.88rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  color: var(--muted);
+  padding: 0.15rem 0;
+  cursor: pointer;
+}
+
+.slider button.on, .picks button.on {
+  color: var(--ink);
+  border-bottom-color: var(--rust);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 1px;
+  background: var(--ink);
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--rust);
+  cursor: pointer;
+}
+
+.picks { display: flex; flex-wrap: wrap; gap: 0.9rem; margin: 0 0 0.6rem; }
+
+svg { display: block; width: 100%; height: auto; overflow: visible; }
+svg text { fill: var(--ink); font-family: inherit; }
+svg .muted { fill: var(--muted); }
+svg .faint { fill: var(--faint); }
+
+.rates, .cats { margin-top: 0.4rem; }
+
+.cat {
+  display: grid;
+  grid-template-columns: 14.5rem 1fr 5.2rem;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.88rem;
+  margin: 0.18rem 0;
+}
+
+.cat .track {
+  position: relative;
+  height: 8px;
+  background: linear-gradient(to right, transparent 49.8%, var(--rule) 49.8%, var(--rule) 50.2%, transparent 50.2%);
+}
+
+.cat .bar {
+  position: absolute;
+  top: 0;
+  height: 8px;
+}
+
+.cat .bar.cost { background: var(--rust); }
+.cat .bar.save { background: var(--gain); }
+.cat .ghost {
+  position: absolute;
+  top: 2px;
+  height: 4px;
+  background: var(--rule);
+}
+.cat .num { font-variant-numeric: tabular-nums; text-align: right; }
+
+table.places {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+
+table.places th, table.places td {
+  text-align: left;
+  font-weight: 400;
+  padding: 0.38rem 0.4rem 0.38rem 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: middle;
+}
+
+table.places thead th {
+  border-bottom: 1px solid var(--ink);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+table.places td.num, table.places th.num { text-align: right; }
+table.places tr.national th, table.places tr.national td { color: var(--muted); }
+
+.meter {
+  position: relative;
+  height: 7px;
+  width: 9.5rem;
+}
+.meter .fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--rust); }
+.meter .whisk {
+  position: absolute;
+  top: 2px;
+  height: 3px;
+  background: var(--ink);
+}
+
+.matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.88rem;
+  margin-top: 1.2rem;
+}
+.matrix th, .matrix td {
+  font-weight: 400;
+  text-align: left;
+  padding: 0.28rem 0.5rem 0.28rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.matrix thead th {
+  border-bottom: 1px solid var(--ink);
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.cell { display: flex; align-items: center; gap: 0.45rem; min-height: 1.1rem; }
+.cell i {
+  display: block;
+  height: 7px;
+  background: var(--rust);
+}
+.cell em { font-style: normal; color: var(--faint); }
+
+.sparks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 1.1rem;
+}
+.sparks p { margin: 0.25rem 0 0; font-size: 0.85rem; color: var(--muted); }
+
+.edu-row {
+  display: grid;
+  grid-template-columns: 18rem 1fr 6.5rem;
+  gap: 0.6rem;
+  align-items: center;
+  margin: 0.55rem 0;
+  font-size: 0.92rem;
+}
+.edu-plot { position: relative; height: 22px; }
+.edu-plot .zero {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--ink);
+}
+.edu-plot .dot {
+  position: absolute;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--rust);
+  transform: translateX(-50%);
+}
+.edu-plot .whisk {
+  position: absolute;
+  top: 10px;
+  height: 1px;
+  background: var(--ink);
+}
+
+.sentence { font-size: 1.05rem; max-width: 40rem; }
+.sentence svg { display: inline-block; width: 7.2rem; height: 1.4rem; vertical-align: -0.35rem; margin: 0 0.15rem; }
+
+@media (max-width: 720px) {
+  .live, .sparks { grid-template-columns: 1fr; }
+  .cat, .edu-row { grid-template-columns: 1fr; }
+  .cat .num, .edu-row .num { text-align: left; }
+}
