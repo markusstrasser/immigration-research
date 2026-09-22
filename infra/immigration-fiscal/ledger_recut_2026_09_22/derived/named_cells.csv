@@ -1,0 +1,15 @@
+id,definition,union_absolute_bn,se_bn,source,role
+central,"F 0, E 0 (inside R750), C 25/75, R central; D and P on",-217.3164023135495,8.700282162278883,grid,central
+practitioner_pessimistic_grid,"R all per capita, C all capital (grid cell)",-284.5865512161991,9.087301987657874,grid,"strict bound, grid part"
+practitioner_pessimistic,"R all per capita, C all capital, enforcement targeted (netted), federal general government at the administration elasticity",-290.4763184826092,9.113289717081779,grid + this lane,strict bound of the practitioner set
+practitioner_optimistic_functions_only,"central with G at cross-state function elasticities and K, D at the within-district school elasticity",-203.58730285364163,8.63772015638117,this lane,lenient bound without the interest consistency arm
+practitioner_optimistic,"central with G at cross-state function elasticities, state-local interest at zero like federal interest, K and D at the within-district school elasticity",-190.11515439244818,8.597462353236816,this lane,lenient bound of the practitioner set
+stretch_school_m_0_63_on_all_dialled,"m = 0.63 on G, K, P, D and the per-capita part of R (the school coefficient applied to police, fire, highways and federal functions)",-121.79188477174353,8.38205602195395,marginality curve,"disclosed stretch, outside the set"
+stretch_school_m_0_66_on_all_dialled,m = 0.66 on the same,-129.53711592378184,8.404751459557744,marginality curve,"disclosed stretch, outside the set"
+wishful_corner,"R all zero, C per capita (least negative grid cell)",-76.12536744429862,7.94181837638305,grid,dropped: two arms nobody runs
+no_congestible_services,"m = 0: taxes and transfers only, every dialled service free",40.85796942106115,8.043318684101637,marginality curve,"dropped: the convention commentators use, not a modeler's"
+second_object_public_goods_on_central,F per capita on the central,-428.9676882428087,9.609933799685269,grid,second object: assigned share of fixed federal costs
+second_object_public_goods_by_federal_tax,"F in proportion to federal taxes paid, on the central",-335.78213022582645,6.879621873429003,grid,"second object, benefit-principle variant"
+second_object_stacked_corner,F per capita on the pessimistic grid cell (most negative grid cell),-496.2378371454583,10.133670784980369,grid,"second object, strict corner"
+stretch_plus_cbo_school_on_base_school,"m = 0.63 on all dialled items plus 0.63 on base school current spending, which is not on the dial",-78.9581068751615,,marginality curve + age_profile_components,"disclosed stretch, point only: base school replicates are not saved"
+personal_source_allocation,the same account under the personal-source allocation (published),-239.24102941772895,,age_profiles.csv,"orientation: a different allocation of the same account, not a switch"

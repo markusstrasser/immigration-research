@@ -1,0 +1,139 @@
+{
+  "object": "ledger_absolute_2026_09_17, Mexican-origin union, income-year 2024, household-shared allocation, expanded partial account",
+  "ledger_build_params_sha256": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922",
+  "inputs": {
+    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/replicates.npz": "23b25f3eaf77621b3eb2c36b3053763e37b86da9eb8858719b2f3f72e7511ecc",
+    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/arms_matrix.csv": "1984e9ebe6d1764f991356f697cf2c7e23060608a5ab68368f4fd680bc8ded6a",
+    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/marginality_curve.csv": "83ff7008b7c8cc19f0b5de68c4d852684a6b69d2977a08a9e636b79a6cab13df",
+    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/items_by_group.csv": "de29ac5d9ecb72bc329ef76a0f3a052853cfb647bcd35d81508aa4e0c04be9da",
+    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/audit.json": "7c76461945ef3ced2d6d41e799e042b65f9657564db8a265bdee0e306bb5e7fc",
+    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profiles.csv": "ddac25cc844f7fd72ec48937377ae29deff53bc826202a536725f15513dab12a",
+    "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profile_components.csv": "8884b4126e6e4c60b74868ae57dc4b316651a38e3e767d7c25a44f7f63db5d62",
+    "infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922",
+    "infra/immigration-fiscal/scaling_test_2026_09_20/derived/state/estimates.csv": "f19132060945459e923245ada6e138aac3d56a2e0582cf50b5b544619c93c219",
+    "infra/immigration-fiscal/scaling_test_2026_09_20/derived/school_estimates.csv": "ce3d81032b7d5ca8d2da1d2a00ae01ac24a6ccb452fcaa860c2ff3b4844dd738",
+    "infra/immigration-fiscal/ledger_residual_agg_2026_09_16/_cache/22slsstab1.xlsx": "4dd123c5ad520e33d9692f622d389a020e2d3a7e6e782763663854dd84643b9b"
+  },
+  "gates": {
+    "grid_reproduced": {
+      "cells": 63,
+      "worst_abs_diff_bn": 5.684341886080802e-14,
+      "worst_se_diff_bn": 1.7763568394002505e-15,
+      "inadmissible_rows": 0,
+      "passed": true
+    },
+    "curve_reproduced": {
+      "points": 21,
+      "worst_abs_diff_bn": 1.4210854715202004e-14,
+      "m_star": 0.15825726289773234,
+      "published_m_star": 0.1582572628977323,
+      "passed": true
+    },
+    "central_is_grid_cell": {
+      "value_bn": -217.3164023135495,
+      "passed": 1.0
+    },
+    "headcount_share_carrier": {
+      "share_full": 0.12024478948134382,
+      "expected": 0.12024478948134383,
+      "passed": true
+    },
+    "f_split_reconciles": {
+      "gross": 1788718000000.0,
+      "tricare": 28547876685.86486,
+      "national": 1760170123314.1353,
+      "passed": true
+    },
+    "g_gross_and_fees": {
+      "gross_bn": -165.96995850509214,
+      "fees_bn": 23.55421651633508,
+      "net_bn": -142.41574198875705,
+      "passed": 1.0
+    },
+    "gross_flows_reproduce_central": {
+      "net_bn": -217.31640231354947,
+      "central_bn": -217.3164023135495,
+      "passed": 1.0
+    },
+    "practitioner_hull_ordered": {
+      "low": -290.4763184826092,
+      "central": -217.3164023135495,
+      "high": -190.11515439244818,
+      "passed": 1.0
+    },
+    "stretch_outside_hull": {
+      "passed": 1.0
+    }
+  },
+  "elasticities": {
+    "police": {
+      "beta": 1.0373670226437803,
+      "se": 0.0375400649885341,
+      "ci_low": 0.9619274376425998,
+      "ci_high": 1.112806607644961
+    },
+    "fire": {
+      "beta": 1.0846371428329982,
+      "se": 0.0648036956219756,
+      "ci_low": 0.9544092408366154,
+      "ci_high": 1.214865044829381
+    },
+    "highways_nontoll": {
+      "beta": 0.726607147969056,
+      "se": 0.0605187020819705,
+      "ci_low": 0.6049902628819263,
+      "ci_high": 0.8482240330561858
+    },
+    "parks": {
+      "beta": 0.9481565916663064,
+      "se": 0.0586339429782797,
+      "ci_low": 0.8303272718019078,
+      "ci_high": 1.065985911530705
+    },
+    "libraries": {
+      "beta": 0.9736986476378432,
+      "se": 0.0509234303227098,
+      "ci_low": 0.8713641830716493,
+      "ci_high": 1.0760331122040372
+    },
+    "admin": {
+      "beta": 0.8241172656710053,
+      "se": 0.0472406173984791,
+      "ci_low": 0.729183690760325,
+      "ci_high": 0.9190508405816856
+    },
+    "school_within_unweighted": {
+      "beta": 0.7353651268775631,
+      "se": 0.0302532422939493,
+      "ci_low": 0.6745689603207715,
+      "ci_high": 0.7961612934343546
+    },
+    "school_within_pupil_weighted": {
+      "beta": 0.8356191832646906,
+      "se": 0.0239922267104515,
+      "ci_low": 0.7874049985837764,
+      "ci_high": 0.8838333679456049
+    }
+  },
+  "g_dial": {
+    "m_functions": 0.9425128316419826,
+    "interest_share": 0.08117221081777946,
+    "m_interest_zero": 0.9188277891822205,
+    "m_both": 0.8613406208242032,
+    "composition": "national 2022 Census of Governments shares, not the union's state mix"
+  },
+  "f_split_dollars": {
+    "defense": 873523000000.0,
+    "tricare_netted": 28547876685.86486,
+    "net_interest": 879879000000.0,
+    "general_government": 35316000000.0
+  },
+  "e_targeted": {
+    "mexico_share_dollars": 2716778160.145587,
+    "union_headcount_share": 0.12024478948134382,
+    "delta_bn": -2.3900997422113672
+  },
+  "base_school_shared_bn": -115.76696728805958,
+  "pop_ratio_civilian_household_to_resident": 0.9900527030312051,
+  "interpretation": "convention hulls over a published accounting scenario; not a confidence interval, not a marginal immigration effect"
+}
