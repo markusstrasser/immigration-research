@@ -369,14 +369,8 @@ for pair in \
                "$DATA/external/fred/${name}.csv" --optional
 done
 
-# --- Extract QCEW if only zip present ---
-QCEW_ZIP="$DATA/bls/qcew_2023_annual_by_industry.zip"
-QCEW_DIR="$DATA/bls/qcew_2023_annual_by_industry"
-if [[ -s "$QCEW_ZIP" && ! -d "$QCEW_DIR" ]]; then
-    _log "extract $QCEW_ZIP"
-    mkdir -p "$QCEW_DIR"
-    if unzip -q -o "$QCEW_ZIP" -d "$QCEW_DIR"; then _ok "extracted QCEW"; else _warn "QCEW extract failed"; fi
-fi
+# --- QCEW: keep the zip. Do not unpack all 2,159 industry CSVs (~1.1 GB).
+# Focus-sector extracts live in $DATA/bls/extracted/ when needed.
 
 _log ""
 if (( ERRORS == 0 )); then

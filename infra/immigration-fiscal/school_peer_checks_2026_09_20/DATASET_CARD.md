@@ -36,11 +36,15 @@ additional checks before applying that restriction. This run does not apply it
 or claim to reproduce Cho's sample. An older manuscript's suppression statement
 does not establish absence from this final public release.
 
-**Related public ECLS-K:2011 probe:** held 18,174-child K–5 file has repeated
-scores, school IDs and classroom EL counts. Teacher IDs, external CCD IDs and
-child birthplace are suppressed in that public file. Therefore it cannot directly
-repeat this US-born target definition or join school capacity via those IDs.
-Only feasibility was checked; no 2011 regression is claimed.
+**Related public ECLS-K:2011 probe (executed 2026-09-21):** 18,174-child K–5 file.
+`P2BTHPLC`/`P2CNTRYB` are all missing; `T1_ID` is constantly `-2`. Internal `S1_ID`
+(860 schools), `X_HISP_R`, `X12LANGST`, and teacher ELL counts (`A1*NMELL`) are
+populated. English-home non-Hispanic-white kindergarten school-FE association of
+classroom ELL share with spring IRT theta, controlling fall theta/age/SES/sex:
+reading +0.009 (se 0.013, n=2,044, 343 schools); math −0.001 (se 0.014, n=2,037).
+Intervals include zero. This is not the 1998 US-born target and uses theta points,
+not the 1998 scale-score SDs. [CALCULATION: `extract_2011.py`, `analyze_2011.py`,
+`derived/ecls_k2011_summary.json`]
 
 **State context:** TEA enrollment Tables2/14 and 2019/2024 TPRS staff tables;
 CDE total enrollment and Title III immigrant-count/grant tables. Their period,

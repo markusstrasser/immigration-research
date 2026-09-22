@@ -2,8 +2,9 @@
 
 Google Drive throttles the laptop to ~35 kB/s (3+ hours to completion); a
 container usually gets full speed. Run:  modal run modal_fetch_gfd.py
-The file lands in the `gfd` volume; pull it with
-  modal volume get gfd gfd_entire.zip _cache/gfd_entire.zip
+The file lands in the `gfd` volume. Canonical local copy:
+`sources/immigration-fiscal/data/external/government_finance_database/gfd_entire.zip`.
+Do not clone it into this lane's `_cache/`.
 """
 import modal
 
