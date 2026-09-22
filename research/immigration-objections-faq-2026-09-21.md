@@ -128,6 +128,18 @@ complete account]
 ## 7. "Is this just low education? Poor natives cost money too."
 
 Steel-man: origin adds nothing once schooling is held fixed. Finding *(routed)*: below-high-school
+On adult outcomes rather than dollars the convergence is partial and uneven. In IPUMS-CPS
+1994–2025 the US-born children of Mexican immigrants close 76% of the first generation's
+no-high-school gap but 31% of its college gap (−29.8 → −20.6 points against third-plus
+non-Hispanic whites at the same age, sex and year), 59% of the employment gap and 66% of the
+log-income gap, and adults who still identify as Mexican in the third-plus generation sit
+where the second generation sits. Over 1994–2025 the second generation's college gap widened
+(−17.4 → −22.5 points) while its no-high-school gap narrowed and its adjusted income gap did
+not move. Participation converges; the degree margin does not, which is the input side of the
+flat fiscal gap above. Descriptive, cross-sectional generations; the third-plus group is
+subject to ethnic attrition; standard errors are lower bounds. [CALCULATION:
+[second generation by origin](immigration-second-generation-by-origin-2026-09-22.md), ladder 178]
+
 Mexico-born adults outperform below-high-school natives at common ages, while high-school-only
 adults do worse. The aggregate gap is largely a composition effect, which is a description of
 who the residents are and does not make the dollars smaller.
