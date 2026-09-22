@@ -272,3 +272,11 @@ Corrected the interpretation at the point of reuse; original calculations and ev
 ## Revisions — fiscal repair, September 19, 2026
 
 Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.
+
+## Revisions — 2026-09-21
+
+The live California vs Texas comparison for Mexican-origin residents vs **local** whites is
+the shared all-age ledger (−$12,133 / −$7,479 per standardized person), not the $8,498 /
+$5,177 per native-headed household rows in the retained assessment. See
+[CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md). Those
+household figures remain historical, as of the September 19 correction above.
