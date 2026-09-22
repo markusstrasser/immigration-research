@@ -1,0 +1,342 @@
+{
+  "lane": "pew_muslims_2017_2026_09_22",
+  "source_zip": "sources/immigration-fiscal/data/external/pew/Pew-2017-US-Muslims.zip",
+  "zip_sha256": "1117f84325f3450e12fce58c637e864684b190e33f98e22ad517527aaa5926af",
+  "zip_bytes": 6121578,
+  "sav_sha256": "d45ac1077a9363cbc7ca9e345f6311dbb0950abe98988366093035e384ad6e81",
+  "n_rows": 1001,
+  "n_variables": 222,
+  "weight_variable": "weight",
+  "weight_label": "Main weight. This variable, either alone or in conjunction with the full set of replicate weights (RPL001-RPL100) should be used in calculating all point estimates. Replicate weights must be used to calculate standard errors.",
+  "weight_min": 53.27662458837381,
+  "weight_max": 28128.617968043956,
+  "weight_sum": 2350355.000048764,
+  "variance": {
+    "method": "jackknife repeated replication (JRR), 100 replicate weights rpl001-rpl100",
+    "multiplier": 1.0,
+    "source": "Pew, U.S.-MUSLIMS-FULL-REPORT.pdf, Appendix B: \"analyses in this report used a repeated replication technique, specifically jackknife repeated replication (JRR), to calculate the standard errors... A total of 100 replicates were created.\"",
+    "replicate_weight_ratios": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "rows_zeroed_per_replicate_mean": 5.01,
+    "rows_doubled_per_replicate_mean": 5.0,
+    "rows_ever_zeroed": 501,
+    "published_average_design_effect": 3.51,
+    "published_average_design_effect_source": "back-solved from the published +/-5.8pp 95% margin of error at p=0.5 on n=1,001 (Appendix B margins table)"
+  },
+  "variables_used": [
+    {
+      "variable": "STRATUM",
+      "variable_label": "Stratum code",
+      "value_labels": {
+        "1.0": "Muslim Flagged",
+        "2.0": "Very high",
+        "3.0": "High",
+        "4.0": "Medium",
+        "5.0": "Low",
+        "6.0": "Very Low"
+      }
+    },
+    {
+      "variable": "agerec",
+      "variable_label": "What is your age?",
+      "value_labels": {
+        "1.0": "18-19",
+        "2.0": "20-24",
+        "3.0": "25-29",
+        "4.0": "30-34",
+        "5.0": "35-39",
+        "6.0": "40-44",
+        "7.0": "45-49",
+        "8.0": "50-54",
+        "9.0": "55-59",
+        "10.0": "60-64",
+        "11.0": "65-69",
+        "12.0": "70 or older",
+        "99.0": "Don't know/Refused"
+      }
+    },
+    {
+      "variable": "citizen",
+      "variable_label": "CITIZEN. Are you currently a citizen of the United States, or not?",
+      "value_labels": {
+        "1.0": "Yes",
+        "2.0": "No",
+        "9.0": "(VOL) Don't know/Refused"
+      }
+    },
+    {
+      "variable": "educrec",
+      "variable_label": "What is the highest level of school you have completed or the highest degree you have received?",
+      "value_labels": {
+        "1.0": "Did not finish high school",
+        "2.0": "High school graduate",
+        "3.0": "Some college, no degree",
+        "4.0": "Two year associate degree",
+        "5.0": "Four year college or university degree",
+        "6.0": "Postgraduate or professional schooling after college",
+        "9.0": "Don't know/Refused"
+      }
+    },
+    {
+      "variable": "employ",
+      "variable_label": "EMPLOY. Are you now employed full-time, part-time or not employed?",
+      "value_labels": {
+        "1.0": "Full-time",
+        "2.0": "Part-time",
+        "3.0": "Not employed",
+        "9.0": "(VOL) Don't know/Refused"
+      }
+    },
+    {
+      "variable": "employ1",
+      "variable_label": "EMPLOY1. Are you currently looking for work, or not?",
+      "value_labels": {
+        "1.0": "Yes, looking for work",
+        "2.0": "No, not looking",
+        "9.0": "(VOL) Don't know/Refused"
+      }
+    },
+    {
+      "variable": "father_birthregion2",
+      "variable_label": "In what country was your father born? [COLLAPSED INTO GEOGRAPHIC REGIONS]",
+      "value_labels": {
+        "1.0": "U.S. (native born)",
+        "2.0": "Americas (excluding U.S.)",
+        "5.0": "South Asia",
+        "6.0": "Other Asia/Pacific (excluding S. Asia)",
+        "7.0": "Europe",
+        "8.0": "MENA (Middle East/North Africa)",
+        "9.0": "Sub-Saharan Africa",
+        "10.0": "Other/Undetermined",
+        "88.0": "Undesignated",
+        "99.0": "Don't know/Refused"
+      }
+    },
+    {
+      "variable": "fertREC",
+      "variable_label": "How many children have you ever had? Please count all your biological children who were born alive at any time in your life.",
+      "value_labels": {
+        "0.0": "None",
+        "1.0": "One",
+        "2.0": "Two",
+        "3.0": "Three",
+        "4.0": "Four or more",
+        "9.0": "Don't know/Refused."
+      }
+    },
+    {
+      "variable": "income",
+      "variable_label": "INCOME. Last year, that is in 2016, what was your total family income from all sources, before taxes?",
+      "value_labels": {
+        "1.0": "Less than $10,000",
+        "2.0": "10 to under $20,000",
+        "3.0": "20 to under $30,000",
+        "4.0": "30 to under $40,000",
+        "5.0": "40 to under $50,000",
+        "6.0": "50 to under $75,000",
+        "7.0": "75 to under $100,000",
+        "8.0": "100 to under $150,000 [OR]",
+        "9.0": "$150,000 or more",
+        "10.0": "(VOL) Don't know/Refused"
+      }
+    },
+    {
+      "variable": "mother_birthregion2",
+      "variable_label": "In what country was your mother born? [COLLAPSED INTO GEOGRAPHIC REGIONS]",
+      "value_labels": {
+        "1.0": "U.S. (native born)",
+        "2.0": "Americas (excluding U.S.)",
+        "5.0": "South Asia",
+        "6.0": "Other Asia/Pacific (excluding S. Asia)",
+        "7.0": "Europe",
+        "8.0": "MENA (Middle East/North Africa)",
+        "9.0": "Sub-Saharan Africa",
+        "10.0": "Other/Undetermined",
+        "88.0": "Undesignated",
+        "99.0": "Don't know/Refused"
+      }
+    },
+    {
+      "variable": "party",
+      "variable_label": "PARTY. In politics TODAY, do you consider yourself a Republican, Democrat, or independent?",
+      "value_labels": {
+        "1.0": "Republican",
+        "2.0": "Democrat",
+        "3.0": "Independent",
+        "4.0": "(VOL) No preference",
+        "5.0": "(VOL) Other party",
+        "9.0": "(VOL) Don't know/Refused"
+      }
+    },
+    {
+      "variable": "partyln",
+      "variable_label": "PARTYLN. As of today do you lean more to the Republican Party or more to the Democratic Party?",
+      "value_labels": {
+        "1.0": "Republican",
+        "2.0": "Democrat",
+        "9.0": "(VOL) Other/Don't know/Refused"
+      }
+    },
+    {
+      "variable": "qa2",
+      "variable_label": "Q.A2. Overall, are you satisfied or dissatisfied with the way things are going in this country today?",
+      "value_labels": {
+        "1.0": "Satisfied",
+        "2.0": "Dissatisfied",
+        "9.0": "(VOL) Don't know/Refused"
+      }
+    },
+    {
+      "variable": "qa6",
+      "variable_label": "Q.A6. Are you a homeowner, or not?",
+      "value_labels": {
+        "1.0": "Yes",
+        "2.0": "No",
+        "9.0": "(VOL) Don't know/Refused"
+      }
+    },
+    {
+      "variable": "qb2c",
+      "variable_label": "Q.B2c. Please tell me how important the pair is: (1) Homosexuality should be accepted by society OR... (2) Homosexuality should be discouraged by society",
+      "value_labels": {
+        "1.0": "Statement #1",
+        "2.0": "Statement #2",
+        "3.0": "(VOL) Neither/Both equally",
+        "9.0": "(VOL) Don't know/refused"
+      }
+    },
+    {
+      "variable": "qb7a",
+      "variable_label": "Q.B7a. Just your impression, in the United States today, is there a lot of discrimination against Muslims, or not?",
+      "value_labels": {
+        "1.0": "Yes, there is a lot of discrimination",
+        "2.0": "No, not a lot of discrimination",
+        "9.0": "(VOL) Don't know/Refused"
+      }
+    },
+    {
+      "variable": "qc13",
+      "variable_label": "Q.C13. Generally speaking, how much would you say you have in common with most Americans? Would you say you have a lot in common with most Americans, some in common, not much in common, or nothing at all in common with most Americans?",
+      "value_labels": {
+        "1.0": "A lot in common",
+        "2.0": "Some in common",
+        "3.0": "Not much in common",
+        "4.0": "Nothing at all in common",
+        "5.0": "(VOL) Depends",
+        "9.0": "(VOL) Don't know/Refused"
+      }
+    },
+    {
+      "variable": "qc17b",
+      "variable_label": "QC17b. I am proud to be an American. Do you completely agree, mostly agree, mostly DISagree or completely DISagree?",
+      "value_labels": {
+        "1.0": "Completely agree",
+        "2.0": "Mostly agree",
+        "3.0": "Mostly disagree",
+        "4.0": "Completely disagree",
+        "9.0": "(VOL) Don't know/Refused"
+      }
+    },
+    {
+      "variable": "qc17d",
+      "variable_label": "QC17d. I feel a strong sense of belonging to the Muslim community in the U.S. Do you completely agree, mostly agree, mostly DISagree or completely DISagree?",
+      "value_labels": {
+        "1.0": "Completely agree",
+        "2.0": "Mostly agree",
+        "3.0": "Mostly disagree",
+        "4.0": "Completely disagree",
+        "9.0": "(VOL) Don't know/Refused"
+      }
+    },
+    {
+      "variable": "qc3",
+      "variable_label": "Q.C3. In recent years, has it become more difficult to be a Muslim in the U.S. or hasn't it changed very much?",
+      "value_labels": {
+        "1.0": "Has become more difficult to be a Muslim in the U.S.",
+        "2.0": "Hasn't changed very much",
+        "3.0": "(VOL) Has become easier to be a Muslim in the U.S.",
+        "9.0": "(VOL) Don't know/Refused"
+      }
+    },
+    {
+      "variable": "qd1a",
+      "variable_label": "QD1a. In the past twelve months, have people acted as if they are suspicious of you because you are a Muslim, or not?",
+      "value_labels": {
+        "1.0": "Yes, has happened",
+        "2.0": "No, has not happened",
+        "9.0": "(VOL) Don't know/Refused"
+      }
+    },
+    {
+      "variable": "qd1c",
+      "variable_label": "QD1c. In the past twelve months, have you been called offensive names because you are a Muslim, or not?",
+      "value_labels": {
+        "1.0": "Yes, has happened",
+        "2.0": "No, has not happened",
+        "9.0": "(VOL) Don't know/Refused"
+      }
+    },
+    {
+      "variable": "qd1f",
+      "variable_label": "QD1f. In the past twelve months, have you been physically threatened or attacked because you are a Muslim, or not?",
+      "value_labels": {
+        "1.0": "Yes, has happened",
+        "2.0": "No, has not happened",
+        "9.0": "(VOL) Don't know/Refused"
+      }
+    },
+    {
+      "variable": "qf3",
+      "variable_label": "Q.F3. Some people think targeting and killing civilians can be justified in order to further a political, social or religious cause. Other people believe that, no matter what the reason, this kind of violence can never be justified.",
+      "value_labels": {
+        "1.0": "Can often be justified",
+        "2.0": "Can sometimes be justified",
+        "3.0": "Can rarely be justified",
+        "4.0": "Can never be justified",
+        "9.0": "(VOL) Don't know/refused"
+      }
+    },
+    {
+      "variable": "racethn",
+      "variable_label": "Combined RACE and HISP variable",
+      "value_labels": {
+        "1.0": "White non-Hispanic",
+        "2.0": "Black non-Hispanic",
+        "3.0": "Asian non-Hispanic",
+        "4.0": "Hispanic",
+        "5.0": "Other",
+        "9.0": "Don\u2019t know/Refused (VOL.)"
+      }
+    },
+    {
+      "variable": "respondent_birthregion2",
+      "variable_label": "In what country were you born? [COLLAPSED INTO GEOGRAPHIC REGIONS]",
+      "value_labels": {
+        "1.0": "U.S. (native born)",
+        "2.0": "Americas (excluding U.S.)",
+        "5.0": "South Asia",
+        "6.0": "Other Asia/Pacific (excluding S. Asia)",
+        "7.0": "Europe",
+        "8.0": "MENA (Middle East/North Africa)",
+        "9.0": "Sub-Saharan Africa",
+        "10.0": "Other/Undetermined",
+        "99.0": "Don't know/Refused"
+      }
+    },
+    {
+      "variable": "sex",
+      "variable_label": "SEX. [ENTER RESPONDENT'S SEX:]",
+      "value_labels": {
+        "1.0": "Male",
+        "2.0": "Female"
+      }
+    }
+  ],
+  "items_searched_and_absent": {
+    "public_assistance_or_welfare_receipt": "No item. Label search for assist/welfare/medicaid/food stamp/SNAP/benefit/unemploy/insur over all 222 variable labels returned zero hits."
+  },
+  "reproduction_misses_over_1pt": []
+}

@@ -1,0 +1,901 @@
+cut,group,n_group,outcome_id,outcome,variable,estimate,jrr_se,n_base,small_cell_flag,replicates_used
+origin,Foreign born: Americas (excluding U.S.),23,age_18_29,Aged 18-29,agerec,33.04,21.17,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,age_30_49,Aged 30-49,agerec,39.95,16.85,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,age_50_plus,Aged 50 or older,agerec,27.02,12.86,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,female,Female,sex,25.7,13.03,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,race_black,"Black, non-Hispanic",racethn,21.21,12.98,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,income_lt_30k,"Family income under $30,000",income,26.61,12.47,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,income_30_75k,"Family income $30,000-$75,000",income,38.04,22.01,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,income_75_100k,"Family income $75,000-$100,000",income,12.21,8.24,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,income_ge_100k,"Family income $100,000 or more",income,23.13,13.52,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,income_refused,Income not reported (of all respondents),income,5.35,5.68,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,edu_lt_hs,Did not finish high school,educrec,9.4,6.51,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,edu_hs,High school graduate,educrec,30.67,14.34,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,edu_some_college,Some college or associate degree,educrec,8.36,8.87,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,edu_ba_plus,Four-year college degree or more,educrec,51.57,18.63,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,edu_postgrad,Postgraduate or professional schooling,educrec,32.26,22.02,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,78.63,11.14,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,78.63,11.14,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,party_republican,Identifies as Republican,party,5.56,5.93,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,party_democrat,Identifies as Democrat,party,21.63,12.11,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,party_independent,Identifies as independent,party,72.17,12.44,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,party_rep_or_lean,Republican or leans Republican,party+partyln,12.04,9.32,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,party_dem_or_lean,Democrat or leans Democratic,party+partyln,67.33,15.94,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,fert_none,No children ever born,fertREC,36.72,20.61,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,fert_3plus,Three or more children ever born,fertREC,25.86,12.94,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,1.51,0.51,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,satisfied_country,Satisfied with the way things are going in the country,qa2,11.61,8.17,21,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,homeowner,Owns their home,qa6,71.62,11.06,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,11.23,7.23,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,civilians_rarely_never,Killing civilians rarely or never justified,qf3,83.42,9.7,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,5.35,5.68,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,42.92,16.79,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,89.9,8.0,21,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,76.66,12.87,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,exp_suspicion,Past year: people acted suspicious of them,qd1a,46.9,18.58,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,exp_offensive_names,Past year: called offensive names,qd1c,42.04,20.05,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,exp_threatened,Past year: physically threatened or attacked,qd1f,23.5,23.19,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,proud_american,Completely or mostly agree: proud to be an American,qc17b,100.0,0.0,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,72.44,25.81,21,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,lot_in_common,A lot in common with most Americans,qc13,78.06,12.39,22,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,employed_full_time,Employed full time,employ,21.48,11.94,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,employed_part_time,Employed part time,employ,40.46,20.49,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,not_employed,Not employed,employ,38.06,15.37,23,n<50,100
+origin,Foreign born: Americas (excluding U.S.),23,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,76.4,12.9,13,n<50,100
+origin,Foreign born: South Asia,245,age_18_29,Aged 18-29,agerec,27.89,5.37,242,,100
+origin,Foreign born: South Asia,245,age_30_49,Aged 30-49,agerec,51.99,5.06,242,,100
+origin,Foreign born: South Asia,245,age_50_plus,Aged 50 or older,agerec,20.12,3.73,242,,100
+origin,Foreign born: South Asia,245,female,Female,sex,47.48,7.23,245,,100
+origin,Foreign born: South Asia,245,race_black,"Black, non-Hispanic",racethn,0.0,0.0,238,,100
+origin,Foreign born: South Asia,245,income_lt_30k,"Family income under $30,000",income,47.34,5.52,221,,100
+origin,Foreign born: South Asia,245,income_30_75k,"Family income $30,000-$75,000",income,21.51,4.33,221,,100
+origin,Foreign born: South Asia,245,income_75_100k,"Family income $75,000-$100,000",income,8.94,2.94,221,,100
+origin,Foreign born: South Asia,245,income_ge_100k,"Family income $100,000 or more",income,22.21,4.79,221,,100
+origin,Foreign born: South Asia,245,income_refused,Income not reported (of all respondents),income,9.41,2.37,245,,100
+origin,Foreign born: South Asia,245,edu_lt_hs,Did not finish high school,educrec,14.3,6.85,244,,100
+origin,Foreign born: South Asia,245,edu_hs,High school graduate,educrec,23.67,6.85,244,,100
+origin,Foreign born: South Asia,245,edu_some_college,Some college or associate degree,educrec,18.68,4.84,244,,100
+origin,Foreign born: South Asia,245,edu_ba_plus,Four-year college degree or more,educrec,43.35,5.88,244,,100
+origin,Foreign born: South Asia,245,edu_postgrad,Postgraduate or professional schooling,educrec,15.97,3.23,244,,100
+origin,Foreign born: South Asia,245,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,70.89,6.7,244,,100
+origin,Foreign born: South Asia,245,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,70.89,6.7,244,,100
+origin,Foreign born: South Asia,245,party_republican,Identifies as Republican,party,6.91,2.88,236,,100
+origin,Foreign born: South Asia,245,party_democrat,Identifies as Democrat,party,34.01,4.57,236,,100
+origin,Foreign born: South Asia,245,party_independent,Identifies as independent,party,55.23,4.92,236,,100
+origin,Foreign born: South Asia,245,party_rep_or_lean,Republican or leans Republican,party+partyln,17.22,5.16,236,,100
+origin,Foreign born: South Asia,245,party_dem_or_lean,Democrat or leans Democratic,party+partyln,64.41,7.17,236,,100
+origin,Foreign born: South Asia,245,fert_none,No children ever born,fertREC,31.05,5.15,238,,100
+origin,Foreign born: South Asia,245,fert_3plus,Three or more children ever born,fertREC,32.56,7.69,238,,100
+origin,Foreign born: South Asia,245,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,1.73,0.17,238,,100
+origin,Foreign born: South Asia,245,satisfied_country,Satisfied with the way things are going in the country,qa2,46.72,5.56,221,,100
+origin,Foreign born: South Asia,245,homeowner,Owns their home,qa6,49.42,6.22,245,,100
+origin,Foreign born: South Asia,245,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,20.48,5.58,245,,100
+origin,Foreign born: South Asia,245,civilians_rarely_never,Killing civilians rarely or never justified,qf3,67.27,7.22,245,,100
+origin,Foreign born: South Asia,245,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,12.25,5.65,245,,100
+origin,Foreign born: South Asia,245,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,47.62,5.92,245,,100
+origin,Foreign born: South Asia,245,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,68.15,5.3,234,,100
+origin,Foreign born: South Asia,245,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,40.44,4.74,235,,100
+origin,Foreign born: South Asia,245,exp_suspicion,Past year: people acted suspicious of them,qd1a,18.39,4.2,244,,100
+origin,Foreign born: South Asia,245,exp_offensive_names,Past year: called offensive names,qd1c,11.84,2.62,244,,100
+origin,Foreign born: South Asia,245,exp_threatened,Past year: physically threatened or attacked,qd1f,1.67,0.97,245,,100
+origin,Foreign born: South Asia,245,proud_american,Completely or mostly agree: proud to be an American,qc17b,95.62,2.96,239,,100
+origin,Foreign born: South Asia,245,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,87.7,5.01,238,,100
+origin,Foreign born: South Asia,245,lot_in_common,A lot in common with most Americans,qc13,49.87,5.93,243,,100
+origin,Foreign born: South Asia,245,employed_full_time,Employed full time,employ,45.11,5.83,240,,100
+origin,Foreign born: South Asia,245,employed_part_time,Employed part time,employ,12.73,6.37,240,,100
+origin,Foreign born: South Asia,245,not_employed,Not employed,employ,42.15,7.97,240,,100
+origin,Foreign born: South Asia,245,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,47.82,11.7,79,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,age_18_29,Aged 18-29,agerec,18.85,8.11,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,age_30_49,Aged 30-49,agerec,37.92,10.3,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,age_50_plus,Aged 50 or older,agerec,43.23,8.87,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,female,Female,sex,63.23,12.07,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,race_black,"Black, non-Hispanic",racethn,3.7,2.72,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,income_lt_30k,"Family income under $30,000",income,16.07,8.89,58,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,income_30_75k,"Family income $30,000-$75,000",income,29.69,10.37,58,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,income_75_100k,"Family income $75,000-$100,000",income,3.56,1.91,58,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,income_ge_100k,"Family income $100,000 or more",income,50.68,13.15,58,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,income_refused,Income not reported (of all respondents),income,21.37,9.51,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,edu_lt_hs,Did not finish high school,educrec,10.87,7.74,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,edu_hs,High school graduate,educrec,22.59,9.5,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,edu_some_college,Some college or associate degree,educrec,23.23,10.85,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,edu_ba_plus,Four-year college degree or more,educrec,43.3,9.95,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,edu_postgrad,Postgraduate or professional schooling,educrec,26.18,10.21,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,63.13,7.5,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,63.13,7.5,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,party_republican,Identifies as Republican,party,4.99,3.42,62,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,party_democrat,Identifies as Democrat,party,55.68,10.73,62,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,party_independent,Identifies as independent,party,37.47,10.98,62,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,party_rep_or_lean,Republican or leans Republican,party+partyln,7.81,4.2,62,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,party_dem_or_lean,Democrat or leans Democratic,party+partyln,91.53,4.32,62,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,fert_none,No children ever born,fertREC,32.52,10.11,66,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,fert_3plus,Three or more children ever born,fertREC,22.54,10.41,66,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,1.57,0.37,66,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,satisfied_country,Satisfied with the way things are going in the country,qa2,47.63,9.66,63,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,homeowner,Owns their home,qa6,52.93,8.73,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,5.9,3.67,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,civilians_rarely_never,Killing civilians rarely or never justified,qf3,87.58,4.31,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,6.52,3.62,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,60.25,12.85,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,67.07,8.98,64,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,36.91,9.45,66,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,exp_suspicion,Past year: people acted suspicious of them,qd1a,10.14,5.17,66,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,exp_offensive_names,Past year: called offensive names,qd1c,13.63,7.99,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,exp_threatened,Past year: physically threatened or attacked,qd1f,1.62,1.68,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,proud_american,Completely or mostly agree: proud to be an American,qc17b,96.52,2.25,64,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,59.78,10.93,63,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,lot_in_common,A lot in common with most Americans,qc13,51.06,8.71,67,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,employed_full_time,Employed full time,employ,49.5,13.97,66,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,employed_part_time,Employed part time,employ,4.2,2.92,66,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,not_employed,Not employed,employ,46.3,14.51,66,,100
+origin,Foreign born: Other Asia/Pacific (excluding S. Asia),67,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,25.83,20.04,19,n<50,100
+origin,Foreign born: Europe,30,age_18_29,Aged 18-29,agerec,9.55,5.66,30,n<50,100
+origin,Foreign born: Europe,30,age_30_49,Aged 30-49,agerec,56.38,18.15,30,n<50,100
+origin,Foreign born: Europe,30,age_50_plus,Aged 50 or older,agerec,34.07,17.31,30,n<50,100
+origin,Foreign born: Europe,30,female,Female,sex,41.66,18.0,30,n<50,100
+origin,Foreign born: Europe,30,race_black,"Black, non-Hispanic",racethn,5.35,3.91,28,n<50,100
+origin,Foreign born: Europe,30,income_lt_30k,"Family income under $30,000",income,7.09,4.56,26,n<50,100
+origin,Foreign born: Europe,30,income_30_75k,"Family income $30,000-$75,000",income,28.96,14.18,26,n<50,100
+origin,Foreign born: Europe,30,income_75_100k,"Family income $75,000-$100,000",income,3.25,1.6,26,n<50,100
+origin,Foreign born: Europe,30,income_ge_100k,"Family income $100,000 or more",income,60.7,16.91,26,n<50,100
+origin,Foreign born: Europe,30,income_refused,Income not reported (of all respondents),income,5.15,3.27,30,n<50,100
+origin,Foreign born: Europe,30,edu_lt_hs,Did not finish high school,educrec,0.0,0.0,30,n<50,100
+origin,Foreign born: Europe,30,edu_hs,High school graduate,educrec,32.46,21.41,30,n<50,100
+origin,Foreign born: Europe,30,edu_some_college,Some college or associate degree,educrec,50.04,18.95,30,n<50,100
+origin,Foreign born: Europe,30,edu_ba_plus,Four-year college degree or more,educrec,17.5,8.35,30,n<50,100
+origin,Foreign born: Europe,30,edu_postgrad,Postgraduate or professional schooling,educrec,4.38,2.79,30,n<50,100
+origin,Foreign born: Europe,30,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,97.35,2.22,30,n<50,100
+origin,Foreign born: Europe,30,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,97.35,2.22,30,n<50,100
+origin,Foreign born: Europe,30,party_republican,Identifies as Republican,party,53.35,18.0,30,n<50,100
+origin,Foreign born: Europe,30,party_democrat,Identifies as Democrat,party,17.73,9.38,30,n<50,100
+origin,Foreign born: Europe,30,party_independent,Identifies as independent,party,25.58,12.09,30,n<50,100
+origin,Foreign born: Europe,30,party_rep_or_lean,Republican or leans Republican,party+partyln,58.92,16.46,30,n<50,100
+origin,Foreign born: Europe,30,party_dem_or_lean,Democrat or leans Democratic,party+partyln,37.85,15.59,30,n<50,100
+origin,Foreign born: Europe,30,fert_none,No children ever born,fertREC,8.43,4.82,29,n<50,100
+origin,Foreign born: Europe,30,fert_3plus,Three or more children ever born,fertREC,6.57,3.35,29,n<50,100
+origin,Foreign born: Europe,30,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,1.46,0.21,29,n<50,100
+origin,Foreign born: Europe,30,satisfied_country,Satisfied with the way things are going in the country,qa2,14.65,7.19,29,n<50,100
+origin,Foreign born: Europe,30,homeowner,Owns their home,qa6,79.26,9.56,30,n<50,100
+origin,Foreign born: Europe,30,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,6.49,4.3,30,n<50,100
+origin,Foreign born: Europe,30,civilians_rarely_never,Killing civilians rarely or never justified,qf3,91.2,5.24,30,n<50,100
+origin,Foreign born: Europe,30,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,2.31,2.47,30,n<50,100
+origin,Foreign born: Europe,30,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,60.51,20.43,30,n<50,100
+origin,Foreign born: Europe,30,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,39.13,16.14,29,n<50,100
+origin,Foreign born: Europe,30,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,45.42,18.41,30,n<50,100
+origin,Foreign born: Europe,30,exp_suspicion,Past year: people acted suspicious of them,qd1a,4.3,2.64,30,n<50,100
+origin,Foreign born: Europe,30,exp_offensive_names,Past year: called offensive names,qd1c,6.02,4.49,30,n<50,100
+origin,Foreign born: Europe,30,exp_threatened,Past year: physically threatened or attacked,qd1f,3.21,2.74,30,n<50,100
+origin,Foreign born: Europe,30,proud_american,Completely or mostly agree: proud to be an American,qc17b,99.11,0.95,30,n<50,100
+origin,Foreign born: Europe,30,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,68.89,17.42,29,n<50,100
+origin,Foreign born: Europe,30,lot_in_common,A lot in common with most Americans,qc13,88.6,6.55,30,n<50,100
+origin,Foreign born: Europe,30,employed_full_time,Employed full time,employ,89.93,5.35,30,n<50,100
+origin,Foreign born: Europe,30,employed_part_time,Employed part time,employ,7.46,4.62,30,n<50,100
+origin,Foreign born: Europe,30,not_employed,Not employed,employ,2.62,1.75,30,n<50,100
+origin,Foreign born: Europe,30,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,33.9,35.93,3,n<50,100
+origin,Foreign born: MENA (Middle East/North Africa),185,age_18_29,Aged 18-29,agerec,39.92,6.18,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,age_30_49,Aged 30-49,agerec,38.72,5.23,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,age_50_plus,Aged 50 or older,agerec,21.36,3.88,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,female,Female,sex,36.34,8.07,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,race_black,"Black, non-Hispanic",racethn,5.1,2.07,180,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,income_lt_30k,"Family income under $30,000",income,41.58,6.19,162,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,income_30_75k,"Family income $30,000-$75,000",income,35.6,5.3,162,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,income_75_100k,"Family income $75,000-$100,000",income,5.99,2.32,162,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,income_ge_100k,"Family income $100,000 or more",income,16.83,4.47,162,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,income_refused,Income not reported (of all respondents),income,13.12,3.67,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,edu_lt_hs,Did not finish high school,educrec,6.42,3.12,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,edu_hs,High school graduate,educrec,35.66,6.14,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,edu_some_college,Some college or associate degree,educrec,24.76,6.12,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,edu_ba_plus,Four-year college degree or more,educrec,33.16,7.31,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,edu_postgrad,Postgraduate or professional schooling,educrec,10.96,3.18,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,65.71,5.67,184,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,65.71,5.67,184,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,party_republican,Identifies as Republican,party,2.75,1.41,171,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,party_democrat,Identifies as Democrat,party,29.77,5.57,171,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,party_independent,Identifies as independent,party,48.43,5.1,171,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,party_rep_or_lean,Republican or leans Republican,party+partyln,3.94,1.67,171,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,party_dem_or_lean,Democrat or leans Democratic,party+partyln,63.24,8.62,171,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,fert_none,No children ever born,fertREC,40.5,6.57,179,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,fert_3plus,Three or more children ever born,fertREC,29.93,6.0,179,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,1.55,0.22,179,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,satisfied_country,Satisfied with the way things are going in the country,qa2,45.55,5.99,169,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,homeowner,Owns their home,qa6,29.13,4.24,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,9.46,3.93,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,civilians_rarely_never,Killing civilians rarely or never justified,qf3,86.48,5.84,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,4.06,2.64,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,45.73,6.29,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,59.67,4.87,180,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,36.08,6.12,178,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,exp_suspicion,Past year: people acted suspicious of them,qd1a,25.32,4.48,184,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,exp_offensive_names,Past year: called offensive names,qd1c,21.88,4.63,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,exp_threatened,Past year: physically threatened or attacked,qd1f,7.95,3.95,185,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,proud_american,Completely or mostly agree: proud to be an American,qc17b,94.73,3.31,176,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,79.8,5.12,180,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,lot_in_common,A lot in common with most Americans,qc13,48.31,6.64,180,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,employed_full_time,Employed full time,employ,34.92,6.04,182,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,employed_part_time,Employed part time,employ,19.65,5.33,182,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,not_employed,Not employed,employ,45.43,5.04,182,,100
+origin,Foreign born: MENA (Middle East/North Africa),185,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,20.45,7.16,69,,100
+origin,Foreign born: Sub-Saharan Africa,80,age_18_29,Aged 18-29,agerec,23.17,7.24,80,,100
+origin,Foreign born: Sub-Saharan Africa,80,age_30_49,Aged 30-49,agerec,59.76,9.22,80,,100
+origin,Foreign born: Sub-Saharan Africa,80,age_50_plus,Aged 50 or older,agerec,17.07,6.27,80,,100
+origin,Foreign born: Sub-Saharan Africa,80,female,Female,sex,45.38,12.43,80,,100
+origin,Foreign born: Sub-Saharan Africa,80,race_black,"Black, non-Hispanic",racethn,80.45,8.91,80,,100
+origin,Foreign born: Sub-Saharan Africa,80,income_lt_30k,"Family income under $30,000",income,47.11,10.14,76,,100
+origin,Foreign born: Sub-Saharan Africa,80,income_30_75k,"Family income $30,000-$75,000",income,25.92,7.24,76,,100
+origin,Foreign born: Sub-Saharan Africa,80,income_75_100k,"Family income $75,000-$100,000",income,3.4,1.45,76,,100
+origin,Foreign born: Sub-Saharan Africa,80,income_ge_100k,"Family income $100,000 or more",income,23.57,10.04,76,,100
+origin,Foreign born: Sub-Saharan Africa,80,income_refused,Income not reported (of all respondents),income,2.56,1.36,80,,100
+origin,Foreign born: Sub-Saharan Africa,80,edu_lt_hs,Did not finish high school,educrec,0.99,0.99,79,,100
+origin,Foreign born: Sub-Saharan Africa,80,edu_hs,High school graduate,educrec,18.3,6.22,79,,100
+origin,Foreign born: Sub-Saharan Africa,80,edu_some_college,Some college or associate degree,educrec,53.71,7.79,79,,100
+origin,Foreign born: Sub-Saharan Africa,80,edu_ba_plus,Four-year college degree or more,educrec,27.01,7.21,79,,100
+origin,Foreign born: Sub-Saharan Africa,80,edu_postgrad,Postgraduate or professional schooling,educrec,3.89,1.47,79,,100
+origin,Foreign born: Sub-Saharan Africa,80,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,71.07,10.72,79,,100
+origin,Foreign born: Sub-Saharan Africa,80,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,71.07,10.72,79,,100
+origin,Foreign born: Sub-Saharan Africa,80,party_republican,Identifies as Republican,party,1.87,1.08,78,,100
+origin,Foreign born: Sub-Saharan Africa,80,party_democrat,Identifies as Democrat,party,51.76,11.09,78,,100
+origin,Foreign born: Sub-Saharan Africa,80,party_independent,Identifies as independent,party,38.12,8.46,78,,100
+origin,Foreign born: Sub-Saharan Africa,80,party_rep_or_lean,Republican or leans Republican,party+partyln,14.78,9.3,78,,100
+origin,Foreign born: Sub-Saharan Africa,80,party_dem_or_lean,Democrat or leans Democratic,party+partyln,77.73,9.32,78,,100
+origin,Foreign born: Sub-Saharan Africa,80,fert_none,No children ever born,fertREC,25.85,6.26,78,,100
+origin,Foreign born: Sub-Saharan Africa,80,fert_3plus,Three or more children ever born,fertREC,58.02,10.52,78,,100
+origin,Foreign born: Sub-Saharan Africa,80,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,2.16,0.25,78,,100
+origin,Foreign born: Sub-Saharan Africa,80,satisfied_country,Satisfied with the way things are going in the country,qa2,17.84,5.72,74,,100
+origin,Foreign born: Sub-Saharan Africa,80,homeowner,Owns their home,qa6,38.63,10.04,80,,100
+origin,Foreign born: Sub-Saharan Africa,80,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,9.0,4.26,80,,100
+origin,Foreign born: Sub-Saharan Africa,80,civilians_rarely_never,Killing civilians rarely or never justified,qf3,90.63,4.29,80,,100
+origin,Foreign born: Sub-Saharan Africa,80,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,0.37,0.38,80,,100
+origin,Foreign born: Sub-Saharan Africa,80,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,34.47,8.7,80,,100
+origin,Foreign born: Sub-Saharan Africa,80,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,83.79,7.55,79,,100
+origin,Foreign born: Sub-Saharan Africa,80,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,65.52,8.71,79,,100
+origin,Foreign born: Sub-Saharan Africa,80,exp_suspicion,Past year: people acted suspicious of them,qd1a,39.8,11.08,79,,100
+origin,Foreign born: Sub-Saharan Africa,80,exp_offensive_names,Past year: called offensive names,qd1c,8.51,4.32,80,,100
+origin,Foreign born: Sub-Saharan Africa,80,exp_threatened,Past year: physically threatened or attacked,qd1f,0.54,0.55,80,,100
+origin,Foreign born: Sub-Saharan Africa,80,proud_american,Completely or mostly agree: proud to be an American,qc17b,99.53,0.35,78,,100
+origin,Foreign born: Sub-Saharan Africa,80,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,93.17,5.25,80,,100
+origin,Foreign born: Sub-Saharan Africa,80,lot_in_common,A lot in common with most Americans,qc13,66.37,9.84,79,,100
+origin,Foreign born: Sub-Saharan Africa,80,employed_full_time,Employed full time,employ,54.18,10.09,78,,100
+origin,Foreign born: Sub-Saharan Africa,80,employed_part_time,Employed part time,employ,8.54,4.2,78,,100
+origin,Foreign born: Sub-Saharan Africa,80,not_employed,Not employed,employ,37.28,10.04,78,,100
+origin,Foreign born: Sub-Saharan Africa,80,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,77.23,8.19,18,n<50,100
+origin,Foreign born: Other/Undetermined,1,age_18_29,Aged 18-29,agerec,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,age_30_49,Aged 30-49,agerec,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,age_50_plus,Aged 50 or older,agerec,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,female,Female,sex,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,race_black,"Black, non-Hispanic",racethn,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,income_lt_30k,"Family income under $30,000",income,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,income_30_75k,"Family income $30,000-$75,000",income,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,income_75_100k,"Family income $75,000-$100,000",income,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,income_ge_100k,"Family income $100,000 or more",income,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,income_refused,Income not reported (of all respondents),income,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,edu_lt_hs,Did not finish high school,educrec,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,edu_hs,High school graduate,educrec,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,edu_some_college,Some college or associate degree,educrec,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,edu_ba_plus,Four-year college degree or more,educrec,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,edu_postgrad,Postgraduate or professional schooling,educrec,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,party_republican,Identifies as Republican,party,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,party_democrat,Identifies as Democrat,party,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,party_independent,Identifies as independent,party,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,party_rep_or_lean,Republican or leans Republican,party+partyln,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,party_dem_or_lean,Democrat or leans Democratic,party+partyln,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,fert_none,No children ever born,fertREC,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,fert_3plus,Three or more children ever born,fertREC,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,3.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,satisfied_country,Satisfied with the way things are going in the country,qa2,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,homeowner,Owns their home,qa6,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,civilians_rarely_never,Killing civilians rarely or never justified,qf3,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,exp_suspicion,Past year: people acted suspicious of them,qd1a,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,exp_offensive_names,Past year: called offensive names,qd1c,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,exp_threatened,Past year: physically threatened or attacked,qd1f,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,proud_american,Completely or mostly agree: proud to be an American,qc17b,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,lot_in_common,A lot in common with most Americans,qc13,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,employed_full_time,Employed full time,employ,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,employed_part_time,Employed part time,employ,0.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,not_employed,Not employed,employ,100.0,0.0,1,n<50,99
+origin,Foreign born: Other/Undetermined,1,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,100.0,0.0,1,n<50,99
+origin,U.S. born: both parents U.S. born,166,age_18_29,Aged 18-29,agerec,25.11,4.27,165,,100
+origin,U.S. born: both parents U.S. born,166,age_30_49,Aged 30-49,agerec,53.31,7.02,165,,100
+origin,U.S. born: both parents U.S. born,166,age_50_plus,Aged 50 or older,agerec,21.59,5.55,165,,100
+origin,U.S. born: both parents U.S. born,166,female,Female,sex,50.44,6.98,166,,100
+origin,U.S. born: both parents U.S. born,166,race_black,"Black, non-Hispanic",racethn,51.75,9.78,164,,100
+origin,U.S. born: both parents U.S. born,166,income_lt_30k,"Family income under $30,000",income,56.37,7.5,153,,100
+origin,U.S. born: both parents U.S. born,166,income_30_75k,"Family income $30,000-$75,000",income,23.42,5.49,153,,100
+origin,U.S. born: both parents U.S. born,166,income_75_100k,"Family income $75,000-$100,000",income,3.51,2.16,153,,100
+origin,U.S. born: both parents U.S. born,166,income_ge_100k,"Family income $100,000 or more",income,16.71,4.46,153,,100
+origin,U.S. born: both parents U.S. born,166,income_refused,Income not reported (of all respondents),income,7.63,2.66,166,,100
+origin,U.S. born: both parents U.S. born,166,edu_lt_hs,Did not finish high school,educrec,3.53,1.54,166,,100
+origin,U.S. born: both parents U.S. born,166,edu_hs,High school graduate,educrec,46.64,6.08,166,,100
+origin,U.S. born: both parents U.S. born,166,edu_some_college,Some college or associate degree,educrec,36.06,6.95,166,,100
+origin,U.S. born: both parents U.S. born,166,edu_ba_plus,Four-year college degree or more,educrec,13.77,2.38,166,,100
+origin,U.S. born: both parents U.S. born,166,edu_postgrad,Postgraduate or professional schooling,educrec,3.65,0.89,166,,100
+origin,U.S. born: both parents U.S. born,166,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,,,0,n<50,0
+origin,U.S. born: both parents U.S. born,166,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,100.0,0.0,166,,100
+origin,U.S. born: both parents U.S. born,166,party_republican,Identifies as Republican,party,5.3,2.84,164,,100
+origin,U.S. born: both parents U.S. born,166,party_democrat,Identifies as Democrat,party,41.81,7.55,164,,100
+origin,U.S. born: both parents U.S. born,166,party_independent,Identifies as independent,party,39.38,4.56,164,,100
+origin,U.S. born: both parents U.S. born,166,party_rep_or_lean,Republican or leans Republican,party+partyln,16.85,5.29,164,,100
+origin,U.S. born: both parents U.S. born,166,party_dem_or_lean,Democrat or leans Democratic,party+partyln,58.9,8.43,164,,100
+origin,U.S. born: both parents U.S. born,166,fert_none,No children ever born,fertREC,21.14,2.84,162,,100
+origin,U.S. born: both parents U.S. born,166,fert_3plus,Three or more children ever born,fertREC,29.66,4.72,162,,100
+origin,U.S. born: both parents U.S. born,166,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,1.8,0.14,162,,100
+origin,U.S. born: both parents U.S. born,166,satisfied_country,Satisfied with the way things are going in the country,qa2,23.18,10.11,158,,100
+origin,U.S. born: both parents U.S. born,166,homeowner,Owns their home,qa6,18.07,3.48,166,,100
+origin,U.S. born: both parents U.S. born,166,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,13.81,5.46,166,,100
+origin,U.S. born: both parents U.S. born,166,civilians_rarely_never,Killing civilians rarely or never justified,qf3,86.04,5.47,166,,100
+origin,U.S. born: both parents U.S. born,166,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,0.15,0.15,166,,100
+origin,U.S. born: both parents U.S. born,166,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,48.36,8.55,166,,100
+origin,U.S. born: both parents U.S. born,166,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,92.45,3.09,166,,100
+origin,U.S. born: both parents U.S. born,166,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,59.74,10.41,164,,100
+origin,U.S. born: both parents U.S. born,166,exp_suspicion,Past year: people acted suspicious of them,qd1a,58.09,4.14,163,,100
+origin,U.S. born: both parents U.S. born,166,exp_offensive_names,Past year: called offensive names,qd1c,23.83,6.01,166,,100
+origin,U.S. born: both parents U.S. born,166,exp_threatened,Past year: physically threatened or attacked,qd1f,9.9,4.9,166,,100
+origin,U.S. born: both parents U.S. born,166,proud_american,Completely or mostly agree: proud to be an American,qc17b,86.82,2.92,166,,100
+origin,U.S. born: both parents U.S. born,166,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,91.23,2.52,165,,100
+origin,U.S. born: both parents U.S. born,166,lot_in_common,A lot in common with most Americans,qc13,64.52,5.33,165,,100
+origin,U.S. born: both parents U.S. born,166,employed_full_time,Employed full time,employ,43.29,5.91,164,,100
+origin,U.S. born: both parents U.S. born,166,employed_part_time,Employed part time,employ,18.74,3.25,164,,100
+origin,U.S. born: both parents U.S. born,166,not_employed,Not employed,employ,37.97,5.37,164,,100
+origin,U.S. born: both parents U.S. born,166,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,65.06,8.22,64,,100
+origin,U.S. born: at least one foreign-born parent,181,age_18_29,Aged 18-29,agerec,68.56,6.74,180,,100
+origin,U.S. born: at least one foreign-born parent,181,age_30_49,Aged 30-49,agerec,26.75,6.76,180,,100
+origin,U.S. born: at least one foreign-born parent,181,age_50_plus,Aged 50 or older,agerec,4.69,2.63,180,,100
+origin,U.S. born: at least one foreign-born parent,181,female,Female,sex,57.97,8.04,181,,100
+origin,U.S. born: at least one foreign-born parent,181,race_black,"Black, non-Hispanic",racethn,7.39,2.95,175,,100
+origin,U.S. born: at least one foreign-born parent,181,income_lt_30k,"Family income under $30,000",income,29.23,5.89,154,,100
+origin,U.S. born: at least one foreign-born parent,181,income_30_75k,"Family income $30,000-$75,000",income,32.75,8.42,154,,100
+origin,U.S. born: at least one foreign-born parent,181,income_75_100k,"Family income $75,000-$100,000",income,17.78,5.68,154,,100
+origin,U.S. born: at least one foreign-born parent,181,income_ge_100k,"Family income $100,000 or more",income,20.25,4.77,154,,100
+origin,U.S. born: at least one foreign-born parent,181,income_refused,Income not reported (of all respondents),income,16.57,5.81,181,,100
+origin,U.S. born: at least one foreign-born parent,181,edu_lt_hs,Did not finish high school,educrec,11.79,5.23,180,,100
+origin,U.S. born: at least one foreign-born parent,181,edu_hs,High school graduate,educrec,22.91,5.42,180,,100
+origin,U.S. born: at least one foreign-born parent,181,edu_some_college,Some college or associate degree,educrec,37.07,7.8,180,,100
+origin,U.S. born: at least one foreign-born parent,181,edu_ba_plus,Four-year college degree or more,educrec,28.23,6.43,180,,100
+origin,U.S. born: at least one foreign-born parent,181,edu_postgrad,Postgraduate or professional schooling,educrec,9.65,3.07,180,,100
+origin,U.S. born: at least one foreign-born parent,181,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,,,0,n<50,0
+origin,U.S. born: at least one foreign-born parent,181,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,100.0,0.0,181,,100
+origin,U.S. born: at least one foreign-born parent,181,party_republican,Identifies as Republican,party,7.11,3.4,177,,100
+origin,U.S. born: at least one foreign-born parent,181,party_democrat,Identifies as Democrat,party,45.28,5.19,177,,100
+origin,U.S. born: at least one foreign-born parent,181,party_independent,Identifies as independent,party,41.92,4.49,177,,100
+origin,U.S. born: at least one foreign-born parent,181,party_rep_or_lean,Republican or leans Republican,party+partyln,12.28,4.76,177,,100
+origin,U.S. born: at least one foreign-born parent,181,party_dem_or_lean,Democrat or leans Democratic,party+partyln,79.99,4.77,177,,100
+origin,U.S. born: at least one foreign-born parent,181,fert_none,No children ever born,fertREC,79.48,4.8,175,,100
+origin,U.S. born: at least one foreign-born parent,181,fert_3plus,Three or more children ever born,fertREC,5.45,1.47,175,,100
+origin,U.S. born: at least one foreign-born parent,181,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,0.41,0.09,175,,100
+origin,U.S. born: at least one foreign-born parent,181,satisfied_country,Satisfied with the way things are going in the country,qa2,9.59,2.59,172,,100
+origin,U.S. born: at least one foreign-born parent,181,homeowner,Owns their home,qa6,29.18,8.45,180,,100
+origin,U.S. born: at least one foreign-born parent,181,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,4.9,4.62,181,,100
+origin,U.S. born: at least one foreign-born parent,181,civilians_rarely_never,Killing civilians rarely or never justified,qf3,91.29,5.08,181,,100
+origin,U.S. born: at least one foreign-born parent,181,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,3.81,2.14,181,,100
+origin,U.S. born: at least one foreign-born parent,181,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,66.15,7.08,181,,100
+origin,U.S. born: at least one foreign-born parent,181,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,89.75,3.38,181,,100
+origin,U.S. born: at least one foreign-born parent,181,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,66.98,6.05,180,,100
+origin,U.S. born: at least one foreign-born parent,181,exp_suspicion,Past year: people acted suspicious of them,qd1a,36.94,8.33,180,,100
+origin,U.S. born: at least one foreign-born parent,181,exp_offensive_names,Past year: called offensive names,qd1c,25.92,4.4,181,,100
+origin,U.S. born: at least one foreign-born parent,181,exp_threatened,Past year: physically threatened or attacked,qd1f,7.03,3.97,181,,100
+origin,U.S. born: at least one foreign-born parent,181,proud_american,Completely or mostly agree: proud to be an American,qc17b,94.38,3.15,180,,100
+origin,U.S. born: at least one foreign-born parent,181,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,80.77,3.75,178,,100
+origin,U.S. born: at least one foreign-born parent,181,lot_in_common,A lot in common with most Americans,qc13,72.93,6.97,179,,100
+origin,U.S. born: at least one foreign-born parent,181,employed_full_time,Employed full time,employ,36.54,5.98,179,,100
+origin,U.S. born: at least one foreign-born parent,181,employed_part_time,Employed part time,employ,22.99,6.98,179,,100
+origin,U.S. born: at least one foreign-born parent,181,not_employed,Not employed,employ,40.47,9.08,179,,100
+origin,U.S. born: at least one foreign-born parent,181,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,48.43,16.34,66,,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,age_18_29,Aged 18-29,agerec,57.04,15.41,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,age_30_49,Aged 30-49,agerec,13.43,19.39,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,age_50_plus,Aged 50 or older,agerec,29.53,25.19,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,female,Female,sex,46.73,16.6,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,race_black,"Black, non-Hispanic",racethn,26.47,40.46,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,income_lt_30k,"Family income under $30,000",income,64.01,23.7,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,income_30_75k,"Family income $30,000-$75,000",income,4.91,7.25,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,income_75_100k,"Family income $75,000-$100,000",income,31.07,28.71,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,income_ge_100k,"Family income $100,000 or more",income,0.0,0.0,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,income_refused,Income not reported (of all respondents),income,0.0,0.0,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,edu_lt_hs,Did not finish high school,educrec,26.8,28.12,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,edu_hs,High school graduate,educrec,25.79,39.85,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,edu_some_college,Some college or associate degree,educrec,35.74,23.99,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,edu_ba_plus,Four-year college degree or more,educrec,11.66,17.27,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,edu_postgrad,Postgraduate or professional schooling,educrec,1.81,2.72,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,,,0,n<50,0
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,100.0,0.0,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,party_republican,Identifies as Republican,party,26.8,28.12,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,party_democrat,Identifies as Democrat,party,12.55,18.36,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,party_independent,Identifies as independent,party,60.65,17.06,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,party_rep_or_lean,Republican or leans Republican,party+partyln,31.52,23.19,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,party_dem_or_lean,Democrat or leans Democratic,party+partyln,66.01,20.84,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,fert_none,No children ever born,fertREC,60.65,20.75,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,fert_3plus,Three or more children ever born,fertREC,7.62,10.94,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,0.6,0.25,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,satisfied_country,Satisfied with the way things are going in the country,qa2,2.44,4.03,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,homeowner,Owns their home,qa6,15.9,22.38,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,0.0,0.0,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,civilians_rarely_never,Killing civilians rarely or never justified,qf3,100.0,0.0,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,0.0,0.0,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,74.21,39.85,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,70.05,24.75,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,17.47,24.39,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,exp_suspicion,Past year: people acted suspicious of them,qd1a,44.27,15.16,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,exp_offensive_names,Past year: called offensive names,qd1c,46.73,16.6,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,exp_threatened,Past year: physically threatened or attacked,qd1f,7.62,10.94,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,proud_american,Completely or mostly agree: proud to be an American,qc17b,70.74,30.7,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,76.94,37.47,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,lot_in_common,A lot in common with most Americans,qc13,85.85,20.36,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,employed_full_time,Employed full time,employ,71.8,26.59,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,employed_part_time,Employed part time,employ,1.14,1.88,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,not_employed,Not employed,employ,27.06,27.83,10,n<50,100
+origin,"U.S. born, parent from: Americas (excluding U.S.)",10,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,0.95,99.05,2,n<50,100
+origin,"U.S. born, parent from: South Asia",65,age_18_29,Aged 18-29,agerec,71.51,10.36,65,,100
+origin,"U.S. born, parent from: South Asia",65,age_30_49,Aged 30-49,agerec,28.16,10.31,65,,100
+origin,"U.S. born, parent from: South Asia",65,age_50_plus,Aged 50 or older,agerec,0.33,0.34,65,,100
+origin,"U.S. born, parent from: South Asia",65,female,Female,sex,68.62,9.85,65,,100
+origin,"U.S. born, parent from: South Asia",65,race_black,"Black, non-Hispanic",racethn,0.0,0.0,65,,100
+origin,"U.S. born, parent from: South Asia",65,income_lt_30k,"Family income under $30,000",income,10.96,5.46,57,,100
+origin,"U.S. born, parent from: South Asia",65,income_30_75k,"Family income $30,000-$75,000",income,45.25,17.65,57,,100
+origin,"U.S. born, parent from: South Asia",65,income_75_100k,"Family income $75,000-$100,000",income,14.79,6.9,57,,100
+origin,"U.S. born, parent from: South Asia",65,income_ge_100k,"Family income $100,000 or more",income,29.0,10.74,57,,100
+origin,"U.S. born, parent from: South Asia",65,income_refused,Income not reported (of all respondents),income,13.43,8.41,65,,100
+origin,"U.S. born, parent from: South Asia",65,edu_lt_hs,Did not finish high school,educrec,8.44,8.02,65,,100
+origin,"U.S. born, parent from: South Asia",65,edu_hs,High school graduate,educrec,21.03,8.49,65,,100
+origin,"U.S. born, parent from: South Asia",65,edu_some_college,Some college or associate degree,educrec,28.15,18.38,65,,100
+origin,"U.S. born, parent from: South Asia",65,edu_ba_plus,Four-year college degree or more,educrec,42.38,12.56,65,,100
+origin,"U.S. born, parent from: South Asia",65,edu_postgrad,Postgraduate or professional schooling,educrec,13.98,6.18,65,,100
+origin,"U.S. born, parent from: South Asia",65,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,,,0,n<50,0
+origin,"U.S. born, parent from: South Asia",65,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,100.0,0.0,65,,100
+origin,"U.S. born, parent from: South Asia",65,party_republican,Identifies as Republican,party,3.43,3.36,63,,100
+origin,"U.S. born, parent from: South Asia",65,party_democrat,Identifies as Democrat,party,54.41,15.54,63,,100
+origin,"U.S. born, parent from: South Asia",65,party_independent,Identifies as independent,party,41.55,16.27,63,,100
+origin,"U.S. born, parent from: South Asia",65,party_rep_or_lean,Republican or leans Republican,party+partyln,5.2,3.88,63,,100
+origin,"U.S. born, parent from: South Asia",65,party_dem_or_lean,Democrat or leans Democratic,party+partyln,88.71,5.26,63,,100
+origin,"U.S. born, parent from: South Asia",65,fert_none,No children ever born,fertREC,88.16,5.94,64,,100
+origin,"U.S. born, parent from: South Asia",65,fert_3plus,Three or more children ever born,fertREC,3.0,1.53,64,,100
+origin,"U.S. born, parent from: South Asia",65,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,0.19,0.08,64,,100
+origin,"U.S. born, parent from: South Asia",65,satisfied_country,Satisfied with the way things are going in the country,qa2,12.78,5.67,63,,100
+origin,"U.S. born, parent from: South Asia",65,homeowner,Owns their home,qa6,34.38,17.27,65,,100
+origin,"U.S. born, parent from: South Asia",65,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,0.0,0.0,65,,100
+origin,"U.S. born, parent from: South Asia",65,civilians_rarely_never,Killing civilians rarely or never justified,qf3,96.63,3.29,65,,100
+origin,"U.S. born, parent from: South Asia",65,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,3.37,3.29,65,,100
+origin,"U.S. born, parent from: South Asia",65,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,86.84,6.61,65,,100
+origin,"U.S. born, parent from: South Asia",65,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,89.22,5.63,65,,100
+origin,"U.S. born, parent from: South Asia",65,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,68.99,11.59,64,,100
+origin,"U.S. born, parent from: South Asia",65,exp_suspicion,Past year: people acted suspicious of them,qd1a,51.64,14.34,65,,100
+origin,"U.S. born, parent from: South Asia",65,exp_offensive_names,Past year: called offensive names,qd1c,18.28,6.97,65,,100
+origin,"U.S. born, parent from: South Asia",65,exp_threatened,Past year: physically threatened or attacked,qd1f,5.98,3.89,65,,100
+origin,"U.S. born, parent from: South Asia",65,proud_american,Completely or mostly agree: proud to be an American,qc17b,98.05,1.55,65,,100
+origin,"U.S. born, parent from: South Asia",65,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,83.6,8.77,65,,100
+origin,"U.S. born, parent from: South Asia",65,lot_in_common,A lot in common with most Americans,qc13,69.42,18.5,63,,100
+origin,"U.S. born, parent from: South Asia",65,employed_full_time,Employed full time,employ,32.41,10.28,64,,100
+origin,"U.S. born, parent from: South Asia",65,employed_part_time,Employed part time,employ,34.4,17.69,64,,100
+origin,"U.S. born, parent from: South Asia",65,not_employed,Not employed,employ,33.2,11.41,64,,100
+origin,"U.S. born, parent from: South Asia",65,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,29.86,14.21,24,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,age_18_29,Aged 18-29,agerec,69.43,39.35,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,age_30_49,Aged 30-49,agerec,25.42,33.79,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,age_50_plus,Aged 50 or older,agerec,5.14,7.83,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,female,Female,sex,41.96,52.09,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,race_black,"Black, non-Hispanic",racethn,0.0,0.0,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,income_lt_30k,"Family income under $30,000",income,60.83,50.61,8,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,income_30_75k,"Family income $30,000-$75,000",income,7.45,10.3,8,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,income_75_100k,"Family income $75,000-$100,000",income,2.46,3.9,8,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,income_ge_100k,"Family income $100,000 or more",income,29.26,39.23,8,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,income_refused,Income not reported (of all respondents),income,1.59,2.48,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,edu_lt_hs,Did not finish high school,educrec,0.0,0.0,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,edu_hs,High school graduate,educrec,5.14,7.83,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,edu_some_college,Some college or associate degree,educrec,60.96,48.74,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,edu_ba_plus,Four-year college degree or more,educrec,33.89,42.94,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,edu_postgrad,Postgraduate or professional schooling,educrec,24.97,33.3,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,,,0,n<50,0
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,100.0,0.0,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,party_republican,Identifies as Republican,party,5.14,7.83,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,party_democrat,Identifies as Democrat,party,92.44,10.53,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,party_independent,Identifies as independent,party,2.42,3.75,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,party_rep_or_lean,Republican or leans Republican,party+partyln,5.14,7.83,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,party_dem_or_lean,Democrat or leans Democratic,party+partyln,94.86,7.83,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,fert_none,No children ever born,fertREC,94.86,7.83,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,fert_3plus,Three or more children ever born,fertREC,0.0,0.0,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,0.05,0.08,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,satisfied_country,Satisfied with the way things are going in the country,qa2,0.0,0.0,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,homeowner,Owns their home,qa6,9.6,12.92,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,0.0,0.0,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,civilians_rarely_never,Killing civilians rarely or never justified,qf3,100.0,0.0,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,0.0,0.0,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,95.54,6.33,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,94.86,7.83,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,93.13,9.71,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,exp_suspicion,Past year: people acted suspicious of them,qd1a,0.0,0.0,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,exp_offensive_names,Past year: called offensive names,qd1c,2.73,4.24,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,exp_threatened,Past year: physically threatened or attacked,qd1f,0.0,0.0,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,proud_american,Completely or mostly agree: proud to be an American,qc17b,100.0,0.0,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,31.02,39.77,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,lot_in_common,A lot in common with most Americans,qc13,31.48,40.28,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,employed_full_time,Employed full time,employ,32.98,41.99,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,employed_part_time,Employed part time,employ,12.3,16.21,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,not_employed,Not employed,employ,54.72,55.87,9,n<50,100
+origin,"U.S. born, parent from: Other Asia/Pacific (excluding S. Asia)",9,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,100.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Europe",7,age_18_29,Aged 18-29,agerec,25.69,28.71,6,n<50,100
+origin,"U.S. born, parent from: Europe",7,age_30_49,Aged 30-49,agerec,74.03,28.69,6,n<50,100
+origin,"U.S. born, parent from: Europe",7,age_50_plus,Aged 50 or older,agerec,0.28,0.33,6,n<50,100
+origin,"U.S. born, parent from: Europe",7,female,Female,sex,45.14,28.72,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,race_black,"Black, non-Hispanic",racethn,0.0,0.0,5,n<50,100
+origin,"U.S. born, parent from: Europe",7,income_lt_30k,"Family income under $30,000",income,0.26,0.31,6,n<50,100
+origin,"U.S. born, parent from: Europe",7,income_30_75k,"Family income $30,000-$75,000",income,98.94,1.07,6,n<50,100
+origin,"U.S. born, parent from: Europe",7,income_75_100k,"Family income $75,000-$100,000",income,0.0,0.0,6,n<50,100
+origin,"U.S. born, parent from: Europe",7,income_ge_100k,"Family income $100,000 or more",income,0.8,0.94,6,n<50,100
+origin,"U.S. born, parent from: Europe",7,income_refused,Income not reported (of all respondents),income,5.05,5.49,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,edu_lt_hs,Did not finish high school,educrec,29.02,31.8,6,n<50,100
+origin,"U.S. born, parent from: Europe",7,edu_hs,High school graduate,educrec,30.75,28.59,6,n<50,100
+origin,"U.S. born, parent from: Europe",7,edu_some_college,Some college or associate degree,educrec,0.28,0.33,6,n<50,100
+origin,"U.S. born, parent from: Europe",7,edu_ba_plus,Four-year college degree or more,educrec,39.95,27.34,6,n<50,100
+origin,"U.S. born, parent from: Europe",7,edu_postgrad,Postgraduate or professional schooling,educrec,0.0,0.0,6,n<50,100
+origin,"U.S. born, parent from: Europe",7,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,,,0,n<50,0
+origin,"U.S. born, parent from: Europe",7,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,100.0,0.0,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,party_republican,Identifies as Republican,party,29.23,31.66,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,party_democrat,Identifies as Democrat,party,65.48,30.94,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,party_independent,Identifies as independent,party,5.05,5.49,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,party_rep_or_lean,Republican or leans Republican,party+partyln,29.23,31.66,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,party_dem_or_lean,Democrat or leans Democratic,party+partyln,65.48,30.94,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,fert_none,No children ever born,fertREC,98.42,1.67,4,n<50,100
+origin,"U.S. born, parent from: Europe",7,fert_3plus,Three or more children ever born,fertREC,1.58,1.67,4,n<50,100
+origin,"U.S. born, parent from: Europe",7,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,0.05,0.05,4,n<50,100
+origin,"U.S. born, parent from: Europe",7,satisfied_country,Satisfied with the way things are going in the country,qa2,0.53,0.32,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,homeowner,Owns their home,qa6,45.29,28.85,6,n<50,100
+origin,"U.S. born, parent from: Europe",7,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,0.0,0.0,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,civilians_rarely_never,Killing civilians rarely or never justified,qf3,100.0,0.0,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,0.0,0.0,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,44.9,28.65,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,73.33,28.54,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,73.84,28.58,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,exp_suspicion,Past year: people acted suspicious of them,qd1a,68.28,28.48,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,exp_offensive_names,Past year: called offensive names,qd1c,34.24,30.98,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,exp_threatened,Past year: physically threatened or attacked,qd1f,5.05,5.49,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,proud_american,Completely or mostly agree: proud to be an American,qc17b,100.0,0.0,6,n<50,100
+origin,"U.S. born, parent from: Europe",7,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,55.75,28.55,6,n<50,100
+origin,"U.S. born, parent from: Europe",7,lot_in_common,A lot in common with most Americans,qc13,99.47,0.32,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,employed_full_time,Employed full time,employ,39.85,27.23,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,employed_part_time,Employed part time,employ,30.68,28.5,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,not_employed,Not employed,employ,29.48,31.61,7,n<50,100
+origin,"U.S. born, parent from: Europe",7,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,0.84,45.9,3,n<50,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,age_18_29,Aged 18-29,agerec,75.95,7.21,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,age_30_49,Aged 30-49,agerec,21.41,7.04,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,age_50_plus,Aged 50 or older,agerec,2.64,1.69,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,female,Female,sex,57.38,9.77,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,race_black,"Black, non-Hispanic",racethn,3.74,3.02,72,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,income_lt_30k,"Family income under $30,000",income,30.47,10.18,62,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,income_30_75k,"Family income $30,000-$75,000",income,21.27,8.65,62,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,income_75_100k,"Family income $75,000-$100,000",income,26.19,12.64,62,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,income_ge_100k,"Family income $100,000 or more",income,22.07,8.69,62,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,income_refused,Income not reported (of all respondents),income,27.5,8.95,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,edu_lt_hs,Did not finish high school,educrec,10.24,5.64,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,edu_hs,High school graduate,educrec,25.42,7.87,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,edu_some_college,Some college or associate degree,educrec,44.19,10.89,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,edu_ba_plus,Four-year college degree or more,educrec,20.15,6.96,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,edu_postgrad,Postgraduate or professional schooling,educrec,9.04,4.34,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,,,0,n<50,0
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,100.0,0.0,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,party_republican,Identifies as Republican,party,1.49,0.95,74,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,party_democrat,Identifies as Democrat,party,34.99,8.0,74,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,party_independent,Identifies as independent,party,51.94,10.48,74,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,party_rep_or_lean,Republican or leans Republican,party+partyln,10.89,9.27,74,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,party_dem_or_lean,Democrat or leans Democratic,party+partyln,79.41,9.66,74,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,fert_none,No children ever born,fertREC,74.1,7.66,75,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,fert_3plus,Three or more children ever born,fertREC,5.91,2.83,75,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,0.55,0.16,75,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,satisfied_country,Satisfied with the way things are going in the country,qa2,13.63,5.38,70,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,homeowner,Owns their home,qa6,31.39,9.71,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,10.65,8.63,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,civilians_rarely_never,Killing civilians rarely or never justified,qf3,83.06,8.89,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,6.29,4.47,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,48.34,10.54,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,96.26,1.82,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,68.53,8.85,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,exp_suspicion,Past year: people acted suspicious of them,qd1a,27.34,7.91,75,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,exp_offensive_names,Past year: called offensive names,qd1c,22.44,7.29,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,exp_threatened,Past year: physically threatened or attacked,qd1f,9.9,9.04,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,proud_american,Completely or mostly agree: proud to be an American,qc17b,96.75,3.13,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,90.26,4.78,74,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,lot_in_common,A lot in common with most Americans,qc13,79.93,6.85,76,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,employed_full_time,Employed full time,employ,28.71,6.93,75,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,employed_part_time,Employed part time,employ,21.51,6.61,75,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,not_employed,Not employed,employ,49.78,9.88,75,,100
+origin,"U.S. born, parent from: MENA (Middle East/North Africa)",76,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,57.91,15.3,30,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,age_18_29,Aged 18-29,agerec,74.9,14.89,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,age_30_49,Aged 30-49,agerec,20.54,13.49,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,age_50_plus,Aged 50 or older,agerec,4.56,4.66,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,female,Female,sex,74.23,14.39,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,race_black,"Black, non-Hispanic",racethn,58.49,23.73,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,income_lt_30k,"Family income under $30,000",income,39.35,27.16,10,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,income_30_75k,"Family income $30,000-$75,000",income,35.13,23.25,10,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,income_75_100k,"Family income $75,000-$100,000",income,0.0,0.0,10,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,income_ge_100k,"Family income $100,000 or more",income,25.52,21.54,10,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,income_refused,Income not reported (of all respondents),income,9.8,6.95,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,edu_lt_hs,Did not finish high school,educrec,4.56,4.66,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,edu_hs,High school graduate,educrec,14.51,10.54,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,edu_some_college,Some college or associate degree,educrec,49.92,23.17,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,edu_ba_plus,Four-year college degree or more,educrec,31.01,20.11,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,edu_postgrad,Postgraduate or professional schooling,educrec,1.22,1.32,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,,,0,n<50,0
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,100.0,0.0,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,party_republican,Identifies as Republican,party,4.56,4.66,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,party_democrat,Identifies as Democrat,party,51.88,23.24,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,party_independent,Identifies as independent,party,33.86,24.32,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,party_rep_or_lean,Republican or leans Republican,party+partyln,8.03,6.38,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,party_dem_or_lean,Democrat or leans Democratic,party+partyln,67.57,24.55,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,fert_none,No children ever born,fertREC,74.16,15.56,12,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,fert_3plus,Three or more children ever born,fertREC,22.46,14.54,12,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,0.92,0.58,12,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,satisfied_country,Satisfied with the way things are going in the country,qa2,3.47,3.83,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,homeowner,Owns their home,qa6,12.26,9.68,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,4.77,4.26,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,civilians_rarely_never,Killing civilians rarely or never justified,qf3,91.76,6.14,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,3.47,3.83,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,91.95,5.89,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,96.53,3.83,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,93.05,5.72,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,exp_suspicion,Past year: people acted suspicious of them,qd1a,33.24,24.68,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,exp_offensive_names,Past year: called offensive names,qd1c,77.06,13.31,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,exp_threatened,Past year: physically threatened or attacked,qd1f,0.0,0.0,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,proud_american,Completely or mostly agree: proud to be an American,qc17b,82.76,18.66,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,100.0,0.0,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,lot_in_common,A lot in common with most Americans,qc13,26.49,14.56,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,employed_full_time,Employed full time,employ,59.38,21.44,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,employed_part_time,Employed part time,employ,17.42,18.84,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,not_employed,Not employed,employ,23.2,13.42,13,n<50,100
+origin,"U.S. born, parent from: Sub-Saharan Africa",13,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,39.92,25.5,6,n<50,100
+origin,"U.S. born, parent from: Other/Undetermined",1,age_18_29,Aged 18-29,agerec,100.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,age_30_49,Aged 30-49,agerec,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,age_50_plus,Aged 50 or older,agerec,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,female,Female,sex,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,race_black,"Black, non-Hispanic",racethn,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,income_lt_30k,"Family income under $30,000",income,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,income_30_75k,"Family income $30,000-$75,000",income,100.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,income_75_100k,"Family income $75,000-$100,000",income,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,income_ge_100k,"Family income $100,000 or more",income,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,income_refused,Income not reported (of all respondents),income,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,edu_lt_hs,Did not finish high school,educrec,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,edu_hs,High school graduate,educrec,100.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,edu_some_college,Some college or associate degree,educrec,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,edu_ba_plus,Four-year college degree or more,educrec,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,edu_postgrad,Postgraduate or professional schooling,educrec,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,,,0,n<50,0
+origin,"U.S. born, parent from: Other/Undetermined",1,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,100.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,party_republican,Identifies as Republican,party,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,party_democrat,Identifies as Democrat,party,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,party_independent,Identifies as independent,party,100.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,party_rep_or_lean,Republican or leans Republican,party+partyln,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,party_dem_or_lean,Democrat or leans Democratic,party+partyln,100.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,fert_none,No children ever born,fertREC,100.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,fert_3plus,Three or more children ever born,fertREC,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,satisfied_country,Satisfied with the way things are going in the country,qa2,,,0,n<50,0
+origin,"U.S. born, parent from: Other/Undetermined",1,homeowner,Owns their home,qa6,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,civilians_rarely_never,Killing civilians rarely or never justified,qf3,100.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,exp_suspicion,Past year: people acted suspicious of them,qd1a,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,exp_offensive_names,Past year: called offensive names,qd1c,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,exp_threatened,Past year: physically threatened or attacked,qd1f,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,proud_american,Completely or mostly agree: proud to be an American,qc17b,100.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,100.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,lot_in_common,A lot in common with most Americans,qc13,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,employed_full_time,Employed full time,employ,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,employed_part_time,Employed part time,employ,100.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,not_employed,Not employed,employ,0.0,0.0,1,n<50,99
+origin,"U.S. born, parent from: Other/Undetermined",1,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,,,0,n<50,0
+origin,Birthplace not reported,14,age_18_29,Aged 18-29,agerec,36.03,17.06,12,n<50,100
+origin,Birthplace not reported,14,age_30_49,Aged 30-49,agerec,57.83,16.78,12,n<50,100
+origin,Birthplace not reported,14,age_50_plus,Aged 50 or older,agerec,6.14,5.84,12,n<50,100
+origin,Birthplace not reported,14,female,Female,sex,37.01,15.76,14,n<50,100
+origin,Birthplace not reported,14,race_black,"Black, non-Hispanic",racethn,9.38,6.37,8,n<50,100
+origin,Birthplace not reported,14,income_lt_30k,"Family income under $30,000",income,44.15,23.66,8,n<50,100
+origin,Birthplace not reported,14,income_30_75k,"Family income $30,000-$75,000",income,32.13,25.11,8,n<50,100
+origin,Birthplace not reported,14,income_75_100k,"Family income $75,000-$100,000",income,7.8,7.01,8,n<50,100
+origin,Birthplace not reported,14,income_ge_100k,"Family income $100,000 or more",income,15.92,17.47,8,n<50,100
+origin,Birthplace not reported,14,income_refused,Income not reported (of all respondents),income,42.87,16.75,14,n<50,100
+origin,Birthplace not reported,14,edu_lt_hs,Did not finish high school,educrec,0.0,0.0,14,n<50,100
+origin,Birthplace not reported,14,edu_hs,High school graduate,educrec,13.25,9.21,14,n<50,100
+origin,Birthplace not reported,14,edu_some_college,Some college or associate degree,educrec,25.54,17.06,14,n<50,100
+origin,Birthplace not reported,14,edu_ba_plus,Four-year college degree or more,educrec,61.21,17.16,14,n<50,100
+origin,Birthplace not reported,14,edu_postgrad,Postgraduate or professional schooling,educrec,4.54,4.78,14,n<50,100
+origin,Birthplace not reported,14,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,100.0,0.0,12,n<50,100
+origin,Birthplace not reported,14,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,100.0,0.0,12,n<50,100
+origin,Birthplace not reported,14,party_republican,Identifies as Republican,party,19.62,20.75,10,n<50,100
+origin,Birthplace not reported,14,party_democrat,Identifies as Democrat,party,44.49,20.68,10,n<50,100
+origin,Birthplace not reported,14,party_independent,Identifies as independent,party,35.89,19.4,10,n<50,100
+origin,Birthplace not reported,14,party_rep_or_lean,Republican or leans Republican,party+partyln,19.62,20.75,10,n<50,100
+origin,Birthplace not reported,14,party_dem_or_lean,Democrat or leans Democratic,party+partyln,44.49,20.68,10,n<50,100
+origin,Birthplace not reported,14,fert_none,No children ever born,fertREC,48.57,22.47,9,n<50,100
+origin,Birthplace not reported,14,fert_3plus,Three or more children ever born,fertREC,43.53,20.23,9,n<50,100
+origin,Birthplace not reported,14,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,1.46,0.64,9,n<50,100
+origin,Birthplace not reported,14,satisfied_country,Satisfied with the way things are going in the country,qa2,42.29,17.47,13,n<50,100
+origin,Birthplace not reported,14,homeowner,Owns their home,qa6,49.15,17.18,14,n<50,100
+origin,Birthplace not reported,14,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,37.07,16.33,14,n<50,100
+origin,Birthplace not reported,14,civilians_rarely_never,Killing civilians rarely or never justified,qf3,47.01,16.7,14,n<50,100
+origin,Birthplace not reported,14,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,15.92,12.58,14,n<50,100
+origin,Birthplace not reported,14,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,55.0,16.87,14,n<50,100
+origin,Birthplace not reported,14,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,63.62,17.25,14,n<50,100
+origin,Birthplace not reported,14,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,56.39,16.55,14,n<50,100
+origin,Birthplace not reported,14,exp_suspicion,Past year: people acted suspicious of them,qd1a,19.95,15.02,14,n<50,100
+origin,Birthplace not reported,14,exp_offensive_names,Past year: called offensive names,qd1c,22.64,15.76,14,n<50,100
+origin,Birthplace not reported,14,exp_threatened,Past year: physically threatened or attacked,qd1f,0.85,0.88,14,n<50,100
+origin,Birthplace not reported,14,proud_american,Completely or mostly agree: proud to be an American,qc17b,85.74,14.89,14,n<50,100
+origin,Birthplace not reported,14,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,75.8,14.63,13,n<50,100
+origin,Birthplace not reported,14,lot_in_common,A lot in common with most Americans,qc13,77.76,13.65,14,n<50,100
+origin,Birthplace not reported,14,employed_full_time,Employed full time,employ,55.72,20.79,10,n<50,100
+origin,Birthplace not reported,14,employed_part_time,Employed part time,employ,18.39,14.64,10,n<50,100
+origin,Birthplace not reported,14,not_employed,Not employed,employ,25.89,18.63,10,n<50,100
+origin,Birthplace not reported,14,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,40.04,72.1,2,n<50,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,age_18_29,Aged 18-29,agerec,-12.03,7.43,427,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,age_30_49,Aged 30-49,agerec,13.27,8.02,427,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,age_50_plus,Aged 50 or older,agerec,-1.24,5.19,427,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,female,Female,sex,11.13,11.48,430,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,race_black,"Black, non-Hispanic",racethn,-5.1,2.07,418,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,income_lt_30k,"Family income under $30,000",income,5.76,9.59,383,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,income_30_75k,"Family income $30,000-$75,000",income,-14.09,6.77,383,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,income_75_100k,"Family income $75,000-$100,000",income,2.95,3.7,383,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,income_ge_100k,"Family income $100,000 or more",income,5.37,6.81,383,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,income_refused,Income not reported (of all respondents),income,-3.71,4.33,430,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,edu_lt_hs,Did not finish high school,educrec,7.88,7.15,429,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,edu_hs,High school graduate,educrec,-11.99,9.8,429,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,edu_some_college,Some college or associate degree,educrec,-6.08,7.89,429,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,edu_ba_plus,Four-year college degree or more,educrec,10.19,9.48,429,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,edu_postgrad,Postgraduate or professional schooling,educrec,5.0,4.17,429,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,5.17,8.79,428,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,5.17,8.79,428,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,party_republican,Identifies as Republican,party,4.16,3.12,407,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,party_democrat,Identifies as Democrat,party,4.25,7.54,407,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,party_independent,Identifies as independent,party,6.8,6.72,407,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,party_rep_or_lean,Republican or leans Republican,party+partyln,13.28,5.3,407,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,party_dem_or_lean,Democrat or leans Democratic,party+partyln,1.18,11.02,407,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,fert_none,No children ever born,fertREC,-9.45,7.57,417,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,fert_3plus,Three or more children ever born,fertREC,2.63,9.4,417,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,0.19,0.26,417,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,satisfied_country,Satisfied with the way things are going in the country,qa2,1.17,7.32,390,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,homeowner,Owns their home,qa6,20.3,7.71,430,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,11.02,6.79,430,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,civilians_rarely_never,Killing civilians rarely or never justified,qf3,-19.21,9.42,430,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,8.18,6.12,430,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,1.89,9.09,430,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,8.48,7.74,414,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,4.36,6.97,413,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,exp_suspicion,Past year: people acted suspicious of them,qd1a,-6.93,5.78,428,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,exp_offensive_names,Past year: called offensive names,qd1c,-10.03,5.17,429,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,exp_threatened,Past year: physically threatened or attacked,qd1f,-6.27,4.07,430,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,proud_american,Completely or mostly agree: proud to be an American,qc17b,0.89,4.38,415,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,7.89,6.97,418,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,lot_in_common,A lot in common with most Americans,qc13,1.56,10.19,423,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,employed_full_time,Employed full time,employ,10.19,9.3,422,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,employed_part_time,Employed part time,employ,-6.92,8.26,422,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,not_employed,Not employed,employ,-3.27,10.7,422,,100
+origin_contrast,Difference: Foreign born: South Asia minus Foreign born: MENA (Middle East/North Africa),430,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,27.37,14.74,148,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,age_18_29,Aged 18-29,agerec,43.45,6.01,345,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,age_30_49,Aged 30-49,agerec,-26.56,6.67,345,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,age_50_plus,Aged 50 or older,agerec,-16.89,6.48,345,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,female,Female,sex,7.52,11.48,347,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,race_black,"Black, non-Hispanic",racethn,-44.35,10.17,339,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,income_lt_30k,"Family income under $30,000",income,-27.14,11.11,307,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,income_30_75k,"Family income $30,000-$75,000",income,9.33,12.5,307,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,income_75_100k,"Family income $75,000-$100,000",income,14.27,6.14,307,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,income_ge_100k,"Family income $100,000 or more",income,3.54,4.85,307,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,income_refused,Income not reported (of all respondents),income,8.95,6.53,347,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,edu_lt_hs,Did not finish high school,educrec,8.26,6.38,346,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,edu_hs,High school graduate,educrec,-23.73,9.47,346,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,edu_some_college,Some college or associate degree,educrec,1.01,10.49,346,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,edu_ba_plus,Four-year college degree or more,educrec,14.46,5.96,346,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,edu_postgrad,Postgraduate or professional schooling,educrec,6.0,3.07,346,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,0.0,0.0,347,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,party_republican,Identifies as Republican,party,1.8,4.31,341,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,party_democrat,Identifies as Democrat,party,3.47,8.09,341,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,party_independent,Identifies as independent,party,2.53,6.62,341,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,party_rep_or_lean,Republican or leans Republican,party+partyln,-4.57,6.42,341,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,party_dem_or_lean,Democrat or leans Democratic,party+partyln,21.09,8.53,341,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,fert_none,No children ever born,fertREC,58.34,6.45,337,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,fert_3plus,Three or more children ever born,fertREC,-24.2,4.88,337,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,-1.38,0.17,337,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,satisfied_country,Satisfied with the way things are going in the country,qa2,-13.58,10.57,330,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,homeowner,Owns their home,qa6,11.11,7.0,346,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,-8.91,5.11,347,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,civilians_rarely_never,Killing civilians rarely or never justified,qf3,5.25,6.43,347,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,3.66,2.15,347,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,17.78,11.91,347,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,-2.7,4.24,347,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,7.24,12.03,344,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,exp_suspicion,Past year: people acted suspicious of them,qd1a,-21.15,8.91,343,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,exp_offensive_names,Past year: called offensive names,qd1c,2.09,6.8,347,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,exp_threatened,Past year: physically threatened or attacked,qd1f,-2.87,5.92,347,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,proud_american,Completely or mostly agree: proud to be an American,qc17b,7.56,3.93,346,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,-10.46,4.62,343,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,lot_in_common,A lot in common with most Americans,qc13,8.41,10.59,344,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,employed_full_time,Employed full time,employ,-6.75,7.81,343,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,employed_part_time,Employed part time,employ,4.24,6.7,343,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,not_employed,Not employed,employ,2.5,11.43,343,,100
+origin_contrast,Difference: U.S. born: at least one foreign-born parent minus U.S. born: both parents U.S. born,347,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,-16.63,15.25,130,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,age_18_29,Aged 18-29,agerec,43.62,12.18,307,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,age_30_49,Aged 30-49,agerec,-23.83,12.42,307,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,age_50_plus,Aged 50 or older,agerec,-19.79,3.74,307,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,female,Female,sex,21.15,7.36,310,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,race_black,"Black, non-Hispanic",racethn,0.0,0.0,303,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,income_lt_30k,"Family income under $30,000",income,-36.38,8.07,278,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,income_30_75k,"Family income $30,000-$75,000",income,23.74,18.53,278,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,income_75_100k,"Family income $75,000-$100,000",income,5.84,7.32,278,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,income_ge_100k,"Family income $100,000 or more",income,6.8,11.51,278,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,income_refused,Income not reported (of all respondents),income,4.02,8.9,310,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,edu_lt_hs,Did not finish high school,educrec,-5.86,11.88,309,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,edu_hs,High school graduate,educrec,-2.64,7.99,309,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,edu_some_college,Some college or associate degree,educrec,9.47,19.64,309,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,edu_ba_plus,Four-year college degree or more,educrec,-0.97,12.0,309,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,edu_postgrad,Postgraduate or professional schooling,educrec,-1.98,6.92,309,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,29.11,6.7,309,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,party_republican,Identifies as Republican,party,-3.48,4.37,299,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,party_democrat,Identifies as Democrat,party,20.39,15.0,299,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,party_independent,Identifies as independent,party,-13.68,15.91,299,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,party_rep_or_lean,Republican or leans Republican,party+partyln,-12.02,6.6,299,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,party_dem_or_lean,Democrat or leans Democratic,party+partyln,24.3,7.26,299,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,fert_none,No children ever born,fertREC,57.11,8.1,302,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,fert_3plus,Three or more children ever born,fertREC,-29.56,8.47,302,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,-1.54,0.21,302,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,satisfied_country,Satisfied with the way things are going in the country,qa2,-33.94,8.3,284,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,homeowner,Owns their home,qa6,-15.04,16.87,310,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,-20.48,5.58,310,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,civilians_rarely_never,Killing civilians rarely or never justified,qf3,29.36,7.28,310,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,-8.88,6.12,310,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,39.22,9.47,310,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,21.06,7.23,299,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,28.54,13.35,299,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,exp_suspicion,Past year: people acted suspicious of them,qd1a,33.26,14.91,309,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,exp_offensive_names,Past year: called offensive names,qd1c,6.44,7.8,309,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,exp_threatened,Past year: physically threatened or attacked,qd1f,4.31,3.98,310,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,proud_american,Completely or mostly agree: proud to be an American,qc17b,2.44,3.29,304,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,-4.09,8.43,303,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,lot_in_common,A lot in common with most Americans,qc13,19.55,18.8,306,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,employed_full_time,Employed full time,employ,-12.71,10.33,304,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,employed_part_time,Employed part time,employ,21.66,12.32,304,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,not_employed,Not employed,employ,-8.96,8.94,304,,100
+origin_contrast,"Difference: U.S. born, parent from: South Asia minus Foreign born: South Asia",310,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,-17.96,15.65,103,n<50,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,age_18_29,Aged 18-29,agerec,36.03,10.0,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,age_30_49,Aged 30-49,agerec,-17.31,9.23,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,age_50_plus,Aged 50 or older,agerec,-18.72,4.16,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,female,Female,sex,21.03,11.35,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,race_black,"Black, non-Hispanic",racethn,-1.36,3.57,252,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,income_lt_30k,"Family income under $30,000",income,-11.11,11.33,224,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,income_30_75k,"Family income $30,000-$75,000",income,-14.33,10.56,224,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,income_75_100k,"Family income $75,000-$100,000",income,20.2,12.56,224,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,income_ge_100k,"Family income $100,000 or more",income,5.24,9.3,224,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,income_refused,Income not reported (of all respondents),income,14.37,8.85,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,edu_lt_hs,Did not finish high school,educrec,3.82,6.53,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,edu_hs,High school graduate,educrec,-10.24,10.11,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,edu_some_college,Some college or associate degree,educrec,19.42,12.12,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,edu_ba_plus,Four-year college degree or more,educrec,-13.0,8.49,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,edu_postgrad,Postgraduate or professional schooling,educrec,-1.93,4.91,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,34.29,5.67,260,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,party_republican,Identifies as Republican,party,-1.27,1.7,245,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,party_democrat,Identifies as Democrat,party,5.22,10.08,245,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,party_independent,Identifies as independent,party,3.51,11.83,245,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,party_rep_or_lean,Republican or leans Republican,party+partyln,6.94,9.42,245,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,party_dem_or_lean,Democrat or leans Democratic,party+partyln,16.17,13.07,245,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,fert_none,No children ever born,fertREC,33.6,8.46,254,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,fert_3plus,Three or more children ever born,fertREC,-24.02,7.01,254,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,-0.99,0.25,254,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,satisfied_country,Satisfied with the way things are going in the country,qa2,-31.92,8.34,239,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,homeowner,Owns their home,qa6,2.27,10.01,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,1.2,9.37,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,civilians_rarely_never,Killing civilians rarely or never justified,qf3,-3.42,10.31,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,2.22,5.06,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,2.61,11.97,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,36.59,5.18,256,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,32.45,11.21,254,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,exp_suspicion,Past year: people acted suspicious of them,qd1a,2.02,8.61,259,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,exp_offensive_names,Past year: called offensive names,qd1c,0.56,8.79,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,exp_threatened,Past year: physically threatened or attacked,qd1f,1.95,9.88,261,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,proud_american,Completely or mostly agree: proud to be an American,qc17b,2.02,4.6,252,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,10.46,7.08,254,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,lot_in_common,A lot in common with most Americans,qc13,31.62,10.23,256,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,employed_full_time,Employed full time,employ,-6.21,8.49,257,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,employed_part_time,Employed part time,employ,1.86,8.62,257,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,not_employed,Not employed,employ,4.35,10.13,257,,100
+origin_contrast,"Difference: U.S. born, parent from: MENA (Middle East/North Africa) minus Foreign born: MENA (Middle East/North Africa)",261,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,37.45,16.8,99,n<50,100
