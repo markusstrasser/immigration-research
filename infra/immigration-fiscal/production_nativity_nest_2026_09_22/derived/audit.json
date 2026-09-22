@@ -88,6 +88,21 @@
           "shock_1e4": 3.728631900364717e-05,
           "shock_1e6": 3.7115793428280055e-07
         },
+        "8.7": {
+          "shock_1pct": 0.0038454276449490705,
+          "shock_1e4": 3.8347470403556626e-05,
+          "shock_1e6": 3.840595538133989e-07
+        },
+        "9": {
+          "shock_1pct": 0.003860006271083024,
+          "shock_1e4": 3.8493122850897755e-05,
+          "shock_1e6": 3.840595538133989e-07
+        },
+        "17.9": {
+          "shock_1pct": 0.004070193671499916,
+          "shock_1e4": 4.059319290317881e-05,
+          "shock_1e6": 4.0556225324467283e-07
+        },
         "20": {
           "shock_1pct": 0.0040925089366514004,
           "shock_1e4": 4.081616542742497e-05,
@@ -213,6 +228,24 @@
         "delta_1e-12": 3.572662166106966e-10,
         "meets_1e9_criterion": true
       },
+      "8.7": {
+        "delta_1e-06": 3.4556646539840585e-05,
+        "delta_1e-09": 8.56501433110779e-08,
+        "delta_1e-12": 1.9867563150199885e-10,
+        "meets_1e9_criterion": true
+      },
+      "9": {
+        "delta_1e-06": 3.339688309444977e-05,
+        "delta_1e-09": 8.103289272920478e-08,
+        "delta_1e-12": 1.8364887388599982e-10,
+        "meets_1e9_criterion": true
+      },
+      "17.9": {
+        "delta_1e-06": 2.0348548568693836e-05,
+        "delta_1e-09": 3.7201763891658857e-08,
+        "delta_1e-12": 6.194933455105911e-11,
+        "meets_1e9_criterion": true
+      },
       "20": {
         "delta_1e-06": 1.9227044058656162e-05,
         "delta_1e-09": 3.4203354704054334e-08,
@@ -264,9 +297,9 @@
     "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/matched_benefits_2026_09_19/builder.py": "a37ff8332468a34588534209aa8a3d68654a5c0020089859de18855105e2122a",
     "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/matched_benefits_2026_09_19/model.py": "8740f820a937dcce0dfe700d5a167b4ff6b52b82ea5a92a0ab60d99de93e56cc",
     "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/education_origin_fiscal_2026_09_19/builder.py": "c7a7b4a410f98723a8422c1a12ed35794d74ca3b5c36ae08cb652cf227aeeddf",
-    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/builder.py": "876a6b1bfc9070e241d3b78979bb76bbb8a4ff5206a37834b5e77751a334f66d",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/builder.py": "aadb78881d3c5e29f821156c8f13ed9e68955582ed9c0fcdebd0be393dfc4338",
     "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/nest_model.py": "61a5f8ace2b077f01fba0099e251b52f5b4466a10b4d361899815cc844a27cec",
-    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/test_nest_model.py": "e92778afad6390c9aa773056bb5e2da6d43397cc4fdd6735c31eab42fa1a6caf",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/test_nest_model.py": "2e06ec3895baced8024435a16bd7020c0cedd86bb505de3d1bba941663d87c8a",
     "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/SPEC.md": "9e039ebb369c5e57ed7f9b5e444bff6ba6cf4735a656666eb0a99a39cd201e42",
     "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/BRIEF.md": "fb75616cf8ea182c6b90a8fba448e3adea9569a3cac411c31afbf877e01cad37",
     "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/matched_benefits_2026_09_19/test_model.py": "68fac8fa4643ce81446ce6fad070134573cfd531ffb813d3e4f0d38e35844474",
@@ -286,12 +319,12 @@
   "national_population": 336727803.00001377,
   "upstream_scenarios": 1296,
   "expanded_ownership_scenarios": 3888,
-  "nest_scenarios": 54432,
-  "distinct_equilibria": 3024,
+  "nest_scenarios": 77760,
+  "distinct_equilibria": 4320,
   "sigma_NI_grid": {
     "1.3": {
       "sourced": true,
-      "citation": "SOURCE: Cravino-Levchenko-Ortega-Pandalai-Nayar w34790 p.23 - Clemens and Lewis (2024) randomized estimate 1.3"
+      "citation": "SOURCE: Cravino-Levchenko-Ortega-Pandalai-Nayar w34790 p.23 - Clemens and Lewis (2024) randomized estimate 1.3; primary text Table 7: sigma = 1.26, 95% CI (0.12, 2.39), firm-level effective elasticity on 472 H-2B firms (us_lowskill_effects_2026_09_22/reads/clemens_lewis_h2b.md)"
     },
     "3": {
       "sourced": true,
@@ -299,7 +332,7 @@
     },
     "4.6": {
       "sourced": true,
-      "citation": "SOURCE: same paper p.23 - Burstein et al. (2020) estimate 4.6"
+      "citation": "SOURCE: same paper p.23 - Burstein et al. (2020) estimate 4.6; primary text Table III: calibrated within one occupation, no standard error (reads/burstein_ecta_2020.md)"
     },
     "5": {
       "sourced": false,
@@ -308,6 +341,18 @@
     "7": {
       "sourced": false,
       "citation": "UNVERIFIED: no repo source for this value"
+    },
+    "8.7": {
+      "sourced": true,
+      "citation": "SOURCE: Caiumi and Peri w32389 Table 7 Panel A - 1/sigma_IMMI = 0.115 (0.031) for natives vs immigrants inside no-diploma cells, 2000-2019 2SLS (reads/caiumi_peri_nber_2024.md); their pooled value is 17"
+    },
+    "9": {
+      "sourced": false,
+      "citation": "INFERENCE: Burstein et al. (2020) footnote 42 - the aggregate native-immigrant elasticity 'is roughly twice as high as our assumed value of rho' (4.6); no numeric value printed"
+    },
+    "17.9": {
+      "sourced": true,
+      "citation": "SOURCE: Piyapromdee (2020) Table 1 Panel I - sigma_M,L = 17.870 (0.819), natives vs immigrants inside low-skill x gender cells, 114 metros (reads/piyapromdee_restud_2020.md)"
     },
     "20": {
       "sourced": true,
@@ -340,7 +385,10 @@
   ],
   "outputs": {
     "branch_composition.csv": "aec24f9812fa11e2ad54147ca9105b0c115036f482de488d37a10a14e75efa10",
-    "nest_headline.csv": "b34cc5c0e576dc614300e3511535e33de1d75fa2e8ccbcaff244aeb75ef3ca05",
-    "nest_scenarios.csv": "b6bde5af99fcf03bc066affed0e8801166fd664142bf0c50f887ac946a9cd04a"
+    "elasticity_sketch.csv": "1272fa4585df470a9f5347898ab407c0014fa5b1b52eaf9600015f488051b227",
+    "nest_headline.csv": "7654a8f91b3b520400b104b682c0267964838ab37d3a19701508633723d42d8b",
+    "nest_scenarios.csv": "8051742ad4ca1dad97692e7d0d3d9015d0a41db7ea7289ed3719d4a78744efe5",
+    "occupation_overlap.csv": "5c60551c225953f28c3f9112391e68833203a17de359ec43d97b8a2388e40a5b",
+    "occupation_top_mexico_born_low.csv": "88869e0c0107f44221b92e77c3ea5836ad1bd5cae5a932443731ae093638ceab"
   }
 }

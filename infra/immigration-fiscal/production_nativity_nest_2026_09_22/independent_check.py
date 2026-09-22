@@ -13,7 +13,7 @@ import pandas as pd
 
 HERE = Path(__file__).resolve().parent
 GDP_BN, S, SIGMA, TAU = 29298.0, 0.65, 2.0, np.array([.384, .426])
-EPS = [1.3, 3.0, 4.6, 5.0, 7.0, 20.0, np.inf]
+EPS = [1.3, 3.0, 4.6, 5.0, 7.0, 8.7, 9.0, 17.9, 20.0, np.inf]
 
 
 def main():
