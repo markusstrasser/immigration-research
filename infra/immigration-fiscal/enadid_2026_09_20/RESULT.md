@@ -20,6 +20,21 @@ All12 downloaded sources have verified SHA256; both ZIPs pass CRC; both table ty
 
 Examples use FAC_VIV except2023 TMigrante, which uses FAC_HOG. The2023 US-destination share is87.917% (1,072,331 /1,219,710), reproducing the official results PDF’s rounded87.9%. The first two rows concern departures sinceAugust2013 orAugust2018, respectively, through the survey; the last two concern residence inAugust2013 orAugust2018 versus current survey residence. These are weighted point estimates without intervals. They are not interchangeable flow counts. Do not subtract them and report net migration. A full net exercise must align coverage and include movements not represented by these household retrospective questions.
 
+## Schooling of people now in Mexico who were in the US five years earlier
+
+Mexico-born ages 25–54. Stayers are everyone else in that cut. LTHS is accumulated grades below 9 (completed secundaria). BA+ is NIV 8–11. Weights `FAC_VIV`. Design-naive. [CALCULATION: `selectivity.py`] [DATA: `derived/return_selectivity_by_schooling.csv`]
+
+| Wave | Group | n | Mean years | LTHS | BA+ |
+|---|---|---:|---:|---:|---:|
+| 2018 | Stayer | 152,239 | 10.29 | 25.9% | 22.3% |
+| 2018 | In US in Aug 2013 | 836 | 8.98 | 37.3% | 9.9% |
+| 2023 | Stayer | 143,657 | 10.79 | 21.0% | 25.3% |
+| 2023 | In US in Aug 2018 | 511 | 9.66 | 26.1% | 13.7% |
+
+2018 men 8.77 years (n=683), women 9.92 (n=153). 2023 men 9.35 (n=424), women 11.28 (n=87). Mean years are lower for the US group in every 5-year band in both waves. 2023 LTHS flips in 25–29 (n=62) and 40–44 (n=80).
+
+This is people who came back, interviewed in Mexico. It is not the education of people still in the US, and not a departure-cohort census: TMigrante has no schooling field, and whole households that left are missing. It is the Mexico-side object Fernández-Huertas Moraga used, and it points the other way from the ACS stayer comparison. [SOURCE: https://www.inegi.org.mx/programas/enadid/2018/ and https://www.inegi.org.mx/programas/enadid/2023/]
+
 ## Repository location and reproduction
 
 The repository lane is `infra/immigration-fiscal/enadid_2026_09_20/`. Raw `_cache/` and generated `derived/` are ignored. `sources.json` contains authoritative URLs, dates, HTTP status/headers, bytes, SHA256 and archive members. See README.md for acquisition and validation commands.
