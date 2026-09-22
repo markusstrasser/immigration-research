@@ -1,0 +1,265 @@
+model,reference,group,stat,estimate,se,n_cell,boot_draws,reported
+A_christian_ref,Christian,Buddhist,emp_rate,0.42936642184154605,0.03563254336646697,287,500,True
+A_christian_ref,Christian,Buddhist,any_wage_12m,0.8148509969817092,0.03656564572110771,155,500,True
+A_christian_ref,Christian,Buddhist,mean_earn,21118.53143038644,1781.2048378420768,93,500,True
+A_christian_ref,Christian,Buddhist,median_earn,16106.766729021369,1454.0130658644414,93,500,True
+A_christian_ref,Christian,Buddhist,median_wage12m,7990.483614017166,1903.446832040471,100,500,True
+A_christian_ref,Christian,Buddhist,median_earn_ft,17464.353948223892,2208.1951644229325,82,500,True
+A_christian_ref,Christian,Christian,emp_rate,0.6110474702193461,0.008162367303477703,4921,500,True
+A_christian_ref,Christian,Christian,any_wage_12m,0.8531989979985598,0.00730412835282213,3231,500,True
+A_christian_ref,Christian,Christian,mean_earn,25949.477595995842,1268.3948300747434,2173,500,True
+A_christian_ref,Christian,Christian,median_earn,18730.458180916467,335.0262457336411,2173,500,True
+A_christian_ref,Christian,Christian,median_wage12m,15000.0,494.44008669139936,2202,500,True
+A_christian_ref,Christian,Christian,median_earn_ft,20800.0,331.145047246099,1935,500,True
+A_christian_ref,Christian,Hindu,emp_rate,0.5460502857745608,0.0260298804206415,585,500,True
+A_christian_ref,Christian,Hindu,any_wage_12m,0.9263441203623412,0.018450398459089648,392,500,True
+A_christian_ref,Christian,Hindu,mean_earn,47984.948620103605,2933.677433786806,272,500,True
+A_christian_ref,Christian,Hindu,median_earn,40380.231574232304,11259.767478634665,272,500,True
+A_christian_ref,Christian,Hindu,median_wage12m,30035.76769079995,9794.021516632582,280,500,True
+A_christian_ref,Christian,Hindu,median_earn_ft,50000.0,9068.302546155295,262,500,True
+A_christian_ref,Christian,Jewish,emp_rate,0.6078098323507378,0.057532825519652324,98,500,True
+A_christian_ref,Christian,Jewish,any_wage_12m,0.8237409900392239,0.060248008580528346,72,500,True
+A_christian_ref,Christian,Jewish,mean_earn,48165.07336332177,6505.390624424963,42,500,False
+A_christian_ref,Christian,Jewish,median_earn,37853.98705203951,7470.974191149951,42,500,False
+A_christian_ref,Christian,Jewish,median_wage12m,30894.93070699753,7041.3823433185435,55,500,True
+A_christian_ref,Christian,Jewish,median_earn_ft,42050.10776622937,7672.442681032405,37,500,False
+A_christian_ref,Christian,Muslim,emp_rate,0.5072979653790477,0.025209043706993048,606,500,True
+A_christian_ref,Christian,Muslim,any_wage_12m,0.8694897485146592,0.02100038841192497,370,500,True
+A_christian_ref,Christian,Muslim,mean_earn,27608.562632166366,4765.68126543667,231,500,True
+A_christian_ref,Christian,Muslim,median_earn,17428.624989511485,777.3891445176881,231,500,True
+A_christian_ref,Christian,Muslim,median_wage12m,10000.0,1486.0537417184894,254,500,True
+A_christian_ref,Christian,Muslim,median_earn_ft,18720.0,673.945912586376,206,500,True
+A_christian_ref,Christian,No religion,emp_rate,0.606267021002763,0.018465957622580964,918,500,True
+A_christian_ref,Christian,No religion,any_wage_12m,0.855267727361612,0.016853996042303004,618,500,True
+A_christian_ref,Christian,No religion,mean_earn,37218.0997043547,3037.04428792825,404,500,True
+A_christian_ref,Christian,No religion,median_earn,21600.0,1647.9229322971655,404,500,True
+A_christian_ref,Christian,No religion,median_wage12m,15000.0,1777.0298522919961,428,500,True
+A_christian_ref,Christian,No religion,median_earn_ft,24972.26751292972,1981.2840179831346,370,500,True
+A_christian_ref,Christian,Other,emp_rate,0.5334738509182622,0.03978113303192497,192,500,True
+A_christian_ref,Christian,Other,any_wage_12m,0.8664631376810505,0.03422375317123994,115,500,True
+A_christian_ref,Christian,Other,mean_earn,25873.953602529476,2288.934050196367,82,500,True
+A_christian_ref,Christian,Other,median_earn,20800.0,1490.0622172391593,82,500,True
+A_christian_ref,Christian,Other,median_wage12m,18058.925413815723,1867.6026776265055,79,500,True
+A_christian_ref,Christian,Other,median_earn_ft,20833.25360024432,1631.056701953769,76,500,True
+A_christian_ref,Christian,Buddhist,empgap_unadj,-0.18168104837779941,0.036370822083301856,287,500,True
+A_christian_ref,Christian,Hindu,empgap_unadj,-0.06499718444478496,0.02719775003977551,585,500,True
+A_christian_ref,Christian,Jewish,empgap_unadj,-0.0032376378686081006,0.05853127753001069,98,500,True
+A_christian_ref,Christian,Muslim,empgap_unadj,-0.10374950484029698,0.026293878020097066,606,500,True
+A_christian_ref,Christian,No religion,empgap_unadj,-0.004780449216583029,0.020206161320290277,918,500,True
+A_christian_ref,Christian,Other,empgap_unadj,-0.07757361930108407,0.040520153273812996,192,500,True
+A_christian_ref,Christian,Buddhist,empgap_adj,-0.027495246943796528,0.037334768941364456,287,500,True
+A_christian_ref,Christian,Hindu,empgap_adj,-0.06271470561385321,0.028011962255433266,585,500,True
+A_christian_ref,Christian,Jewish,empgap_adj,-0.07718908313653171,0.05547699902105755,98,500,True
+A_christian_ref,Christian,Muslim,empgap_adj,-0.022508671556300885,0.02431477792536015,606,500,True
+A_christian_ref,Christian,No religion,empgap_adj,0.011889357179662306,0.019697346428819002,918,500,True
+A_christian_ref,Christian,Other,empgap_adj,-0.05998102604308657,0.036692621987730364,192,500,True
+A_christian_ref,Christian,Buddhist,empgap_adj_origin,0.04292734476029572,0.0388012165587696,287,500,True
+A_christian_ref,Christian,Hindu,empgap_adj_origin,0.0014768787063175332,0.03640809824272162,585,500,True
+A_christian_ref,Christian,Jewish,empgap_adj_origin,-0.061243725213070976,0.05755373498483541,98,500,True
+A_christian_ref,Christian,Muslim,empgap_adj_origin,-0.00788421397393091,0.02611538931115335,606,500,True
+A_christian_ref,Christian,No religion,empgap_adj_origin,0.029126597816725053,0.021642366473931546,918,500,True
+A_christian_ref,Christian,Other,empgap_adj_origin,-0.0252549451332827,0.03857356817341732,192,500,True
+A_christian_ref,Christian,Buddhist,loggap_earnC_unadj,-0.0009217531222791213,0.12260442992154219,93,500,True
+A_christian_ref,Christian,Hindu,loggap_earnC_unadj,0.4877992550703043,0.15057104804359692,272,500,True
+A_christian_ref,Christian,Jewish,loggap_earnC_unadj,0.8644576700968577,0.13865075779209451,42,500,False
+A_christian_ref,Christian,Muslim,loggap_earnC_unadj,0.12253461965517559,0.08040863746574285,231,500,True
+A_christian_ref,Christian,No religion,loggap_earnC_unadj,0.3749602654282734,0.08002230449371865,404,500,True
+A_christian_ref,Christian,Other,loggap_earnC_unadj,0.2871569435117166,0.10164211482493006,82,500,True
+A_christian_ref,Christian,Buddhist,loggap_earnC_adj,0.059798105926012,0.13094230952299152,93,500,True
+A_christian_ref,Christian,Hindu,loggap_earnC_adj,-0.05441390711980624,0.137403384043816,272,500,True
+A_christian_ref,Christian,Jewish,loggap_earnC_adj,0.4733668459876353,0.14772441470247522,42,500,False
+A_christian_ref,Christian,Muslim,loggap_earnC_adj,0.050837944845647104,0.07213574191826992,231,500,True
+A_christian_ref,Christian,No religion,loggap_earnC_adj,0.17545191273011826,0.07217423013150549,404,500,True
+A_christian_ref,Christian,Other,loggap_earnC_adj,0.16335075927372802,0.08635848100144072,82,500,True
+A_christian_ref,Christian,Buddhist,loggap_earnC_adj_origin,0.02814691677289216,0.14661001883229238,93,500,True
+A_christian_ref,Christian,Hindu,loggap_earnC_adj_origin,-0.2060664546069732,0.18235964155030288,272,500,True
+A_christian_ref,Christian,Jewish,loggap_earnC_adj_origin,0.43366527842403546,0.1365743971558489,42,500,False
+A_christian_ref,Christian,Muslim,loggap_earnC_adj_origin,0.039932461937677466,0.07947095189474135,231,500,True
+A_christian_ref,Christian,No religion,loggap_earnC_adj_origin,0.1155571533831188,0.07010540297832848,404,500,True
+A_christian_ref,Christian,Other,loggap_earnC_adj_origin,0.09701804974125106,0.09291899566084334,82,500,True
+A_christian_ref,Christian,Buddhist,loggap_earnFT_unadj,0.06402339649691331,0.10730908407357098,82,500,True
+A_christian_ref,Christian,Hindu,loggap_earnFT_unadj,0.5506140275716814,0.12868616701445623,262,500,True
+A_christian_ref,Christian,Jewish,loggap_earnFT_unadj,0.8380329072131347,0.1365040380008905,37,500,False
+A_christian_ref,Christian,Muslim,loggap_earnFT_unadj,0.1205718033773241,0.07804082637236223,206,500,True
+A_christian_ref,Christian,No religion,loggap_earnFT_unadj,0.35507812069533934,0.07714587033401171,370,500,True
+A_christian_ref,Christian,Other,loggap_earnFT_unadj,0.17108110824681003,0.10653368522754876,76,500,True
+A_christian_ref,Christian,Buddhist,loggap_earnFT_adj,0.06943476259347525,0.11820393071914638,82,500,True
+A_christian_ref,Christian,Hindu,loggap_earnFT_adj,0.022266421307802504,0.11501886311178339,262,500,True
+A_christian_ref,Christian,Jewish,loggap_earnFT_adj,0.4807282833935194,0.13199433033266494,37,500,False
+A_christian_ref,Christian,Muslim,loggap_earnFT_adj,0.04374544203126413,0.06957751094731761,206,500,True
+A_christian_ref,Christian,No religion,loggap_earnFT_adj,0.15428054084189569,0.06963457719000526,370,500,True
+A_christian_ref,Christian,Other,loggap_earnFT_adj,0.11062608197669023,0.0850908995535127,76,500,True
+A_christian_ref,Christian,Buddhist,loggap_earnFT_adj_origin,0.009849555378971697,0.13420716555990866,82,500,True
+A_christian_ref,Christian,Hindu,loggap_earnFT_adj_origin,-0.1674509847808167,0.17449235484498263,262,500,True
+A_christian_ref,Christian,Jewish,loggap_earnFT_adj_origin,0.41243719572584303,0.12303107170294295,37,500,False
+A_christian_ref,Christian,Muslim,loggap_earnFT_adj_origin,0.03013882402441112,0.0794108785454408,206,500,True
+A_christian_ref,Christian,No religion,loggap_earnFT_adj_origin,0.06675052562954265,0.06672495954332279,370,500,True
+A_christian_ref,Christian,Other,loggap_earnFT_adj_origin,0.02689198747922139,0.09057258087315147,76,500,True
+A_christian_ref,Christian,Buddhist,loggap_wageG_unadj,-0.5512873778788422,0.24890591118563246,100,500,True
+A_christian_ref,Christian,Hindu,loggap_wageG_unadj,0.5439431234789129,0.1447459944211149,280,500,True
+A_christian_ref,Christian,Jewish,loggap_wageG_unadj,0.9563424679715287,0.1742812062908884,55,500,True
+A_christian_ref,Christian,Muslim,loggap_wageG_unadj,-0.2900537620875977,0.12497662361953202,254,500,True
+A_christian_ref,Christian,No religion,loggap_wageG_unadj,0.04333640827230454,0.11262136326838314,428,500,True
+A_christian_ref,Christian,Other,loggap_wageG_unadj,0.16803239027110062,0.21940247356701909,79,500,True
+A_christian_ref,Christian,Buddhist,loggap_wageG_adj,-0.43696995188588866,0.21645030843859456,100,500,True
+A_christian_ref,Christian,Hindu,loggap_wageG_adj,0.11254706661327911,0.12330095295286907,280,500,True
+A_christian_ref,Christian,Jewish,loggap_wageG_adj,0.4595558334222132,0.18225679219180857,55,500,True
+A_christian_ref,Christian,Muslim,loggap_wageG_adj,-0.08228060056744002,0.09941807332723919,254,500,True
+A_christian_ref,Christian,No religion,loggap_wageG_adj,-0.01904802726494812,0.09952164684026582,428,500,True
+A_christian_ref,Christian,Other,loggap_wageG_adj,-0.11830937946928927,0.20175404405388295,79,500,True
+A_christian_ref,Christian,Buddhist,loggap_wageG_adj_origin,-0.4358354179184309,0.22907596617956494,100,500,True
+A_christian_ref,Christian,Hindu,loggap_wageG_adj_origin,-0.024282482659579163,0.17666299602742994,280,500,True
+A_christian_ref,Christian,Jewish,loggap_wageG_adj_origin,0.4910468896591753,0.17900340155912844,55,500,True
+A_christian_ref,Christian,Muslim,loggap_wageG_adj_origin,-0.10283491483862794,0.1043881890334656,254,500,True
+A_christian_ref,Christian,No religion,loggap_wageG_adj_origin,0.006945777375035135,0.10040423000142554,428,500,True
+A_christian_ref,Christian,Other,loggap_wageG_adj_origin,-0.08638060976257056,0.1643628303359277,79,500,True
+B_catholic_ref,Catholic,Buddhist,emp_rate,0.42936642184154605,0.03563254336646697,287,500,True
+B_catholic_ref,Catholic,Buddhist,any_wage_12m,0.8148509969817092,0.03656564572110771,155,500,True
+B_catholic_ref,Catholic,Buddhist,mean_earn,21118.53143038644,1781.2048378420768,93,500,True
+B_catholic_ref,Catholic,Buddhist,median_earn,16106.766729021369,1454.0130658644414,93,500,True
+B_catholic_ref,Catholic,Buddhist,median_wage12m,7990.483614017166,1903.446832040471,100,500,True
+B_catholic_ref,Catholic,Buddhist,median_earn_ft,17464.353948223892,2208.1951644229325,82,500,True
+B_catholic_ref,Catholic,Catholic,emp_rate,0.6243007684599822,0.010537325679667999,2870,500,True
+B_catholic_ref,Catholic,Catholic,any_wage_12m,0.8452057096106945,0.009750904985136729,1861,500,True
+B_catholic_ref,Catholic,Catholic,mean_earn,24929.537385490476,1656.0105978231277,1297,500,True
+B_catholic_ref,Catholic,Catholic,median_earn,18720.0,406.27485371348655,1297,500,True
+B_catholic_ref,Catholic,Catholic,median_wage12m,15000.0,763.7260087973508,1261,500,True
+B_catholic_ref,Catholic,Catholic,median_earn_ft,20195.98900305611,532.7673189174467,1159,500,True
+B_catholic_ref,Catholic,Hindu,emp_rate,0.5460502857745608,0.0260298804206415,585,500,True
+B_catholic_ref,Catholic,Hindu,any_wage_12m,0.9263441203623412,0.018450398459089648,392,500,True
+B_catholic_ref,Catholic,Hindu,mean_earn,47984.948620103605,2933.677433786806,272,500,True
+B_catholic_ref,Catholic,Hindu,median_earn,40380.231574232304,11259.767478634665,272,500,True
+B_catholic_ref,Catholic,Hindu,median_wage12m,30035.76769079995,9794.021516632582,280,500,True
+B_catholic_ref,Catholic,Hindu,median_earn_ft,50000.0,9068.302546155295,262,500,True
+B_catholic_ref,Catholic,Jewish,emp_rate,0.6078098323507378,0.057532825519652324,98,500,True
+B_catholic_ref,Catholic,Jewish,any_wage_12m,0.8237409900392239,0.060248008580528346,72,500,True
+B_catholic_ref,Catholic,Jewish,mean_earn,48165.07336332177,6505.390624424963,42,500,False
+B_catholic_ref,Catholic,Jewish,median_earn,37853.98705203951,7470.974191149951,42,500,False
+B_catholic_ref,Catholic,Jewish,median_wage12m,30894.93070699753,7041.3823433185435,55,500,True
+B_catholic_ref,Catholic,Jewish,median_earn_ft,42050.10776622937,7672.442681032405,37,500,False
+B_catholic_ref,Catholic,Muslim,emp_rate,0.5072979653790477,0.025209043706993048,606,500,True
+B_catholic_ref,Catholic,Muslim,any_wage_12m,0.8694897485146592,0.02100038841192497,370,500,True
+B_catholic_ref,Catholic,Muslim,mean_earn,27608.562632166366,4765.68126543667,231,500,True
+B_catholic_ref,Catholic,Muslim,median_earn,17428.624989511485,777.3891445176881,231,500,True
+B_catholic_ref,Catholic,Muslim,median_wage12m,10000.0,1486.0537417184894,254,500,True
+B_catholic_ref,Catholic,Muslim,median_earn_ft,18720.0,673.945912586376,206,500,True
+B_catholic_ref,Catholic,No religion,emp_rate,0.606267021002763,0.018465957622580964,918,500,True
+B_catholic_ref,Catholic,No religion,any_wage_12m,0.855267727361612,0.016853996042303004,618,500,True
+B_catholic_ref,Catholic,No religion,mean_earn,37218.0997043547,3037.04428792825,404,500,True
+B_catholic_ref,Catholic,No religion,median_earn,21600.0,1647.9229322971655,404,500,True
+B_catholic_ref,Catholic,No religion,median_wage12m,15000.0,1777.0298522919961,428,500,True
+B_catholic_ref,Catholic,No religion,median_earn_ft,24972.26751292972,1981.2840179831346,370,500,True
+B_catholic_ref,Catholic,Orthodox,emp_rate,0.5502534794666075,0.020737650581199783,810,500,True
+B_catholic_ref,Catholic,Orthodox,any_wage_12m,0.8671446570969017,0.018228925148383326,525,500,True
+B_catholic_ref,Catholic,Orthodox,mean_earn,23526.984239295707,1622.5489748329414,316,500,True
+B_catholic_ref,Catholic,Orthodox,median_earn,17150.124025054567,845.8399957797983,316,500,True
+B_catholic_ref,Catholic,Orthodox,median_wage12m,10648.771781844196,1219.9827773850543,347,500,True
+B_catholic_ref,Catholic,Orthodox,median_earn_ft,19096.254624728623,922.5340779907916,271,500,True
+B_catholic_ref,Catholic,Other,emp_rate,0.5334738509182622,0.03978113303192497,192,500,True
+B_catholic_ref,Catholic,Other,any_wage_12m,0.8664631376810505,0.03422375317123994,115,500,True
+B_catholic_ref,Catholic,Other,mean_earn,25873.953602529476,2288.934050196367,82,500,True
+B_catholic_ref,Catholic,Other,median_earn,20800.0,1490.0622172391593,82,500,True
+B_catholic_ref,Catholic,Other,median_wage12m,18058.925413815723,1867.6026776265055,79,500,True
+B_catholic_ref,Catholic,Other,median_earn_ft,20833.25360024432,1631.056701953769,76,500,True
+B_catholic_ref,Catholic,Protestant,emp_rate,0.6108366993876871,0.015945766853327357,1241,500,True
+B_catholic_ref,Catholic,Protestant,any_wage_12m,0.8657795404973582,0.01374739107792294,845,500,True
+B_catholic_ref,Catholic,Protestant,mean_earn,29775.283589632392,2945.2665106780355,560,500,True
+B_catholic_ref,Catholic,Protestant,median_earn,20800.0,703.5287850868326,560,500,True
+B_catholic_ref,Catholic,Protestant,median_wage12m,16301.914801657533,1754.697113975807,594,500,True
+B_catholic_ref,Catholic,Protestant,median_earn_ft,22007.632134354564,1023.7453914999194,505,500,True
+B_catholic_ref,Catholic,Buddhist,empgap_unadj,-0.19493434661843564,0.0366118108770968,287,500,True
+B_catholic_ref,Catholic,Hindu,empgap_unadj,-0.07825048268542122,0.02779183458985067,585,500,True
+B_catholic_ref,Catholic,Jewish,empgap_unadj,-0.01649093610924429,0.059032349707249784,98,500,True
+B_catholic_ref,Catholic,Muslim,empgap_unadj,-0.1170028030809331,0.026516108516410127,606,500,True
+B_catholic_ref,Catholic,No religion,empgap_unadj,-0.018033747457219258,0.021005238740884873,918,500,True
+B_catholic_ref,Catholic,Orthodox,empgap_unadj,-0.07404728899337502,0.02278851778444452,810,500,True
+B_catholic_ref,Catholic,Other,empgap_unadj,-0.09082691754172048,0.040874615230315506,192,500,True
+B_catholic_ref,Catholic,Protestant,empgap_unadj,-0.013464069072295852,0.018781553485602016,1241,500,True
+B_catholic_ref,Catholic,Buddhist,empgap_adj,-0.04778396194301077,0.03768741163172036,287,500,True
+B_catholic_ref,Catholic,Hindu,empgap_adj,-0.0834805715622874,0.028731740420788368,585,500,True
+B_catholic_ref,Catholic,Jewish,empgap_adj,-0.11080536594575506,0.05562316539055595,98,500,True
+B_catholic_ref,Catholic,Muslim,empgap_adj,-0.05479528132522141,0.025366134679699597,606,500,True
+B_catholic_ref,Catholic,No religion,empgap_adj,-0.01027167152569909,0.020909757413695558,918,500,True
+B_catholic_ref,Catholic,Orthodox,empgap_adj,-0.08817592824521768,0.023338908379255795,810,500,True
+B_catholic_ref,Catholic,Other,empgap_adj,-0.07964503839527927,0.03711203278896687,192,500,True
+B_catholic_ref,Catholic,Protestant,empgap_adj,-0.0301155940661771,0.01773796326961322,1241,500,True
+B_catholic_ref,Catholic,Buddhist,empgap_adj_origin,0.028372146055733377,0.03975149911779532,287,500,True
+B_catholic_ref,Catholic,Hindu,empgap_adj_origin,-0.010700978218738819,0.03751060046835288,585,500,True
+B_catholic_ref,Catholic,Jewish,empgap_adj_origin,-0.08346135148166578,0.05782909271942293,98,500,True
+B_catholic_ref,Catholic,Muslim,empgap_adj_origin,-0.027818583543580716,0.028092431181214312,606,500,True
+B_catholic_ref,Catholic,No religion,empgap_adj_origin,0.014415872557846834,0.024118143759203205,918,500,True
+B_catholic_ref,Catholic,Orthodox,empgap_adj_origin,-0.0600977592359587,0.026743447151769913,810,500,True
+B_catholic_ref,Catholic,Other,empgap_adj_origin,-0.03559570236541233,0.039235998593566225,192,500,True
+B_catholic_ref,Catholic,Protestant,empgap_adj_origin,-0.0063728262225109245,0.019163717974766112,1241,500,True
+B_catholic_ref,Catholic,Buddhist,loggap_earnC_unadj,-0.005894832776478152,0.1257279234079151,93,500,True
+B_catholic_ref,Catholic,Hindu,loggap_earnC_unadj,0.48282617541610545,0.1529299208371267,272,500,True
+B_catholic_ref,Catholic,Jewish,loggap_earnC_unadj,0.8594845904426587,0.1375423572327023,42,500,False
+B_catholic_ref,Catholic,Muslim,loggap_earnC_unadj,0.1175615400009771,0.08332065941081983,231,500,True
+B_catholic_ref,Catholic,No religion,loggap_earnC_unadj,0.3699871857740747,0.08193624521763146,404,500,True
+B_catholic_ref,Catholic,Orthodox,loggap_earnC_unadj,-0.04254556991322149,0.08511760061577077,316,500,True
+B_catholic_ref,Catholic,Other,loggap_earnC_unadj,0.28218386385751687,0.10316514458831524,82,500,True
+B_catholic_ref,Catholic,Protestant,loggap_earnC_unadj,0.0005057241604720218,0.08903798878394133,560,500,True
+B_catholic_ref,Catholic,Buddhist,loggap_earnC_adj,-0.014459781039978812,0.1338922201117755,93,500,True
+B_catholic_ref,Catholic,Hindu,loggap_earnC_adj,-0.13023799643833137,0.14110057768279277,272,500,True
+B_catholic_ref,Catholic,Jewish,loggap_earnC_adj,0.362250004340448,0.15159871957041143,42,500,False
+B_catholic_ref,Catholic,Muslim,loggap_earnC_adj,-0.060073919975222476,0.08606481548199045,231,500,True
+B_catholic_ref,Catholic,No religion,loggap_earnC_adj,0.09819204509901715,0.07905603690652867,404,500,True
+B_catholic_ref,Catholic,Orthodox,loggap_earnC_adj,-0.2529700803598744,0.0852933015998074,316,500,True
+B_catholic_ref,Catholic,Other,loggap_earnC_adj,0.09720498989907926,0.09016190150676422,82,500,True
+B_catholic_ref,Catholic,Protestant,loggap_earnC_adj,-0.141024756833447,0.08611194171725237,560,500,True
+B_catholic_ref,Catholic,Buddhist,loggap_earnC_adj_origin,-0.023766662213336343,0.1479587034260262,93,500,True
+B_catholic_ref,Catholic,Hindu,loggap_earnC_adj_origin,-0.24885599436349837,0.1863601625426325,272,500,True
+B_catholic_ref,Catholic,Jewish,loggap_earnC_adj_origin,0.35755765184449345,0.14130764958951103,42,500,False
+B_catholic_ref,Catholic,Muslim,loggap_earnC_adj_origin,-0.029398450612805292,0.09291644726395415,231,500,True
+B_catholic_ref,Catholic,No religion,loggap_earnC_adj_origin,0.06510056373788564,0.0785715839646001,404,500,True
+B_catholic_ref,Catholic,Orthodox,loggap_earnC_adj_origin,-0.1754957631328476,0.08577935225812747,316,500,True
+B_catholic_ref,Catholic,Other,loggap_earnC_adj_origin,0.0616956285640842,0.09728113613084247,82,500,True
+B_catholic_ref,Catholic,Protestant,loggap_earnC_adj_origin,-0.05764051848072138,0.08403834894739187,560,500,True
+B_catholic_ref,Catholic,Buddhist,loggap_earnFT_unadj,0.06652486056632274,0.10946867484729424,82,500,True
+B_catholic_ref,Catholic,Hindu,loggap_earnFT_unadj,0.5531154916410916,0.13130158651853702,262,500,True
+B_catholic_ref,Catholic,Jewish,loggap_earnFT_unadj,0.8405343712825474,0.13588307809467776,37,500,False
+B_catholic_ref,Catholic,Muslim,loggap_earnFT_unadj,0.1230732674467343,0.0806029879387926,206,500,True
+B_catholic_ref,Catholic,No religion,loggap_earnFT_unadj,0.35757958476474816,0.07966797655801676,370,500,True
+B_catholic_ref,Catholic,Orthodox,loggap_earnFT_unadj,-0.015571950245209323,0.09165407015280992,271,500,True
+B_catholic_ref,Catholic,Other,loggap_earnFT_unadj,0.17358257231622176,0.10861033765364736,76,500,True
+B_catholic_ref,Catholic,Protestant,loggap_earnFT_unadj,0.01723182582511493,0.0847118338694321,505,500,True
+B_catholic_ref,Catholic,Buddhist,loggap_earnFT_adj,0.00883345741884297,0.12181191795092898,82,500,True
+B_catholic_ref,Catholic,Hindu,loggap_earnFT_adj,-0.040844979441762845,0.11766650207661869,262,500,True
+B_catholic_ref,Catholic,Jewish,loggap_earnFT_adj,0.385099225493445,0.13711658422024714,37,500,False
+B_catholic_ref,Catholic,Muslim,loggap_earnFT_adj,-0.0511990674780891,0.08344118099530434,206,500,True
+B_catholic_ref,Catholic,No religion,loggap_earnFT_adj,0.0892127716058888,0.0772680832037346,370,500,True
+B_catholic_ref,Catholic,Orthodox,loggap_earnFT_adj,-0.24072197026385742,0.09294999623121072,271,500,True
+B_catholic_ref,Catholic,Other,loggap_earnFT_adj,0.05620416506458115,0.08965008696222164,76,500,True
+B_catholic_ref,Catholic,Protestant,loggap_earnFT_adj,-0.10833975475488705,0.08246382202782979,505,500,True
+B_catholic_ref,Catholic,Buddhist,loggap_earnFT_adj_origin,-0.03943640521857761,0.13540347644770173,82,500,True
+B_catholic_ref,Catholic,Hindu,loggap_earnFT_adj_origin,-0.20752226337427804,0.1779797476361924,262,500,True
+B_catholic_ref,Catholic,Jewish,loggap_earnFT_adj_origin,0.33533178707885136,0.12804301010206776,37,500,False
+B_catholic_ref,Catholic,Muslim,loggap_earnFT_adj_origin,-0.039289324784674756,0.09062257455775717,206,500,True
+B_catholic_ref,Catholic,No religion,loggap_earnFT_adj_origin,0.0162444343721099,0.07568384962463784,370,500,True
+B_catholic_ref,Catholic,Orthodox,loggap_earnFT_adj_origin,-0.1966939984348865,0.08967236395217043,271,500,True
+B_catholic_ref,Catholic,Other,loggap_earnFT_adj_origin,-0.00541391187543433,0.09579798916474724,76,500,True
+B_catholic_ref,Catholic,Protestant,loggap_earnFT_adj_origin,-0.043661785789888,0.07951288213932846,505,500,True
+B_catholic_ref,Catholic,Buddhist,loggap_wageG_unadj,-0.6246279354825931,0.2519970565551006,100,500,True
+B_catholic_ref,Catholic,Hindu,loggap_wageG_unadj,0.4706025658751626,0.14861614919007402,280,500,True
+B_catholic_ref,Catholic,Jewish,loggap_wageG_unadj,0.8830019103677786,0.17573705873685191,55,500,True
+B_catholic_ref,Catholic,Muslim,loggap_wageG_unadj,-0.3633943196913474,0.12830801152613758,254,500,True
+B_catholic_ref,Catholic,No religion,loggap_wageG_unadj,-0.030004149331448814,0.11657190416095589,428,500,True
+B_catholic_ref,Catholic,Orthodox,loggap_wageG_unadj,-0.31224679526915017,0.10873510574836602,347,500,True
+B_catholic_ref,Catholic,Other,loggap_wageG_unadj,0.09469183266735012,0.2217293073440229,79,500,True
+B_catholic_ref,Catholic,Protestant,loggap_wageG_unadj,-0.12804783197455588,0.10677939752044008,594,500,True
+B_catholic_ref,Catholic,Buddhist,loggap_wageG_adj,-0.5629197805735717,0.22103092759128024,100,500,True
+B_catholic_ref,Catholic,Hindu,loggap_wageG_adj,-0.02516631208384847,0.12880442758253358,280,500,True
+B_catholic_ref,Catholic,Jewish,loggap_wageG_adj,0.2620091978520268,0.18887484987040573,55,500,True
+B_catholic_ref,Catholic,Muslim,loggap_wageG_adj,-0.2760819354827073,0.10658354355750627,254,500,True
+B_catholic_ref,Catholic,No religion,loggap_wageG_adj,-0.15784622416533128,0.1071678249065138,428,500,True
+B_catholic_ref,Catholic,Orthodox,loggap_wageG_adj,-0.41058705169734644,0.0991336012428908,347,500,True
+B_catholic_ref,Catholic,Other,loggap_wageG_adj,-0.23745902954889586,0.20403287558988756,79,500,True
+B_catholic_ref,Catholic,Protestant,loggap_wageG_adj,-0.2672947769348016,0.09484550080623569,594,500,True
+B_catholic_ref,Catholic,Buddhist,loggap_wageG_adj_origin,-0.5203717217191633,0.2312516355776307,100,500,True
+B_catholic_ref,Catholic,Hindu,loggap_wageG_adj_origin,-0.09832457116689391,0.1779212566388833,280,500,True
+B_catholic_ref,Catholic,Jewish,loggap_wageG_adj_origin,0.36181309356683977,0.18488844814797656,55,500,True
+B_catholic_ref,Catholic,Muslim,loggap_wageG_adj_origin,-0.21894945444251385,0.11204087480839281,254,500,True
+B_catholic_ref,Catholic,No religion,loggap_wageG_adj_origin,-0.08068976809548248,0.10582866741629111,428,500,True
+B_catholic_ref,Catholic,Orthodox,loggap_wageG_adj_origin,-0.27453112763834264,0.10769807672849803,347,500,True
+B_catholic_ref,Catholic,Other,loggap_wageG_adj_origin,-0.14860816527242837,0.16657858170724166,79,500,True
+B_catholic_ref,Catholic,Protestant,loggap_wageG_adj_origin,-0.09887848057382098,0.08263148720433805,594,500,True

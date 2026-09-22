@@ -1,0 +1,454 @@
+{
+  "lane": "nis2003_religion_earnings_2026_09_22",
+  "source_zip": "/Users/alien/Projects/immigration-research/sources/immigration-fiscal/data/external/icpsr_nis_2003/ICPSR_38031-V3.zip",
+  "source_zip_sha256": "61a6e3d58d79f6522bfe1deda84d287aa53960d46b5e97fbee265b010b9885c1",
+  "datasets_used": {
+    "DS0002": [
+      "PU_ID",
+      "CISBIRTHYERMO",
+      "CISADMYER",
+      "CISCOBINSMO",
+      "CISADJUST",
+      "VISACATMO",
+      "NISADULTSTR",
+      "NISWGTSAMP1"
+    ],
+    "DS0003": [
+      "PU_ID",
+      "A6",
+      "A7",
+      "A20",
+      "STRTYR",
+      "LANGUAGE"
+    ],
+    "DS0006": [
+      "PU_ID",
+      "C1",
+      "C16",
+      "C22_1",
+      "C33_1",
+      "C37_1",
+      "C47_1",
+      "C48A2_1"
+    ],
+    "DS0007": [
+      "PU_ID",
+      "C48_1PPP",
+      "C49_1PPP"
+    ],
+    "DS0011": [
+      "PU_ID",
+      "WHOKNOW",
+      "G1",
+      "G7"
+    ],
+    "DS0012": [
+      "PU_ID",
+      "G7APPP"
+    ],
+    "DS0013": [
+      "PU_ID",
+      "H1",
+      "H1A"
+    ],
+    "DS0017": [
+      "PU_ID",
+      "J30_1MO",
+      "J13",
+      "J14"
+    ]
+  },
+  "spouse_datasets_used": {
+    "DS0053": [
+      "PU_ID",
+      "G1",
+      "G2",
+      "G15"
+    ],
+    "DS0054": [
+      "PU_ID",
+      "G16PPP"
+    ]
+  },
+  "gates": {
+    "G1_zip_sha256": "PASS",
+    "G2_8573_unique_per_dataset": {
+      "DS0002": {
+        "rows": 8573,
+        "unique_PU_ID": true
+      },
+      "DS0003": {
+        "rows": 8573,
+        "unique_PU_ID": true
+      },
+      "DS0006": {
+        "rows": 8573,
+        "unique_PU_ID": true
+      },
+      "DS0007": {
+        "rows": 8573,
+        "unique_PU_ID": true
+      },
+      "DS0011": {
+        "rows": 8573,
+        "unique_PU_ID": true
+      },
+      "DS0012": {
+        "rows": 8573,
+        "unique_PU_ID": true
+      },
+      "DS0013": {
+        "rows": 8573,
+        "unique_PU_ID": true
+      },
+      "DS0017": {
+        "rows": 8573,
+        "unique_PU_ID": true
+      },
+      "DS0053(spouse)": {
+        "rows": 4915,
+        "unique_PU_ID": true
+      },
+      "DS0054(spouse)": {
+        "rows": 4915,
+        "unique_PU_ID": true
+      }
+    },
+    "G3_anchors_exact": "19/26",
+    "G4_codes_printed": "see code_lists",
+    "G5_reported_cells_n_ge_50_finite_se": {
+      "reported": 246,
+      "suppressed": 18
+    }
+  },
+  "code_lists": {
+    "J30_1MO religion (RELPICK1)": {
+      "1": "Catholic",
+      "2": "Orthodox Christian",
+      "3": "Protestant",
+      "4": "Muslim",
+      "5": "Jewish",
+      "6": "Buddhist",
+      "7": "Hindu",
+      "8": "No religion",
+      "997": "Some other religion",
+      "-1": "REFUSED",
+      "-2": "DON'T KNOW"
+    },
+    "J14 how well speak English": {
+      "1": "Very well",
+      "2": "Well",
+      "3": "Not well",
+      "4": "Not at all",
+      "-1": "REFUSED",
+      "-2": "DON'T KNOW"
+    },
+    "C1 current employment": {
+      "1": "WORKING NOW",
+      "2": "UNEMPLOYED AND LOOKING FOR WORK",
+      "3": "TEMPORARILY LAID OFF, ON SICK OR OTHER LEAVE",
+      "4": "DISABLED",
+      "5": "RETIRED",
+      "6": "HOMEMAKER",
+      "97": "OTHER (SPECIFY)",
+      "-1": "REFUSED",
+      "-2": "DON'T KNOW"
+    },
+    "C47_1 salaried or paid by the hour": {
+      "1": "SALARIED",
+      "2": "HOURLY",
+      "3": "PIECEWORK/COMMISSION",
+      "4": "OTHER/COMBINATION",
+      "-1": "REFUSED",
+      "-2": "DON'T KNOW"
+    },
+    "C48A2_1 salary unit": {
+      "1": "Hour",
+      "2": "Week",
+      "3": "Every two weeks/bi-weekly",
+      "4": "Month",
+      "5": "Year",
+      "97": "OTHER (SPECIFY)",
+      "-1": "REFUSED",
+      "-2": "DON'T KNOW"
+    },
+    "G7 / G15 wage and salary income last 12 months": {
+      "1": "YES",
+      "2": "NO",
+      "-1": "REFUSED",
+      "-2": "DON'T KNOW"
+    },
+    "A6 gender": {
+      "1": "(IM) MALE",
+      "2": "(IM) FEMALE"
+    },
+    "CISADJUST": {
+      "0": "New arrival",
+      "1": "Adjusting status"
+    },
+    "VISACATMO class of admission": {
+      "0": "Other",
+      "1": "Spouse of U.S. Citizen",
+      "2": "Spouse of Legal Permanent Resident",
+      "3": "Parent of U.S. Citizen",
+      "4": "Child of U.S. Citizen",
+      "5": "Family Fourth Preference",
+      "7": "Employment Preferences",
+      "9": "Diversity Immigrants",
+      "11": "Refugee/Asylee/Parolee",
+      "13": "Legalization"
+    },
+    "NISADULTSTR sampling stratum": {
+      "1": "Spouse of U.S. Citizen",
+      "2": "Employment principal",
+      "3": "Diversity",
+      "4": "Other"
+    },
+    "CISCOBINSMO country of birth": {
+      "38": "CANADA",
+      "44": "CHINA, PEOPLES REPUBLIC",
+      "47": "COLOMBIA",
+      "55": "CUBA",
+      "62": "DOMINICAN REPUBLIC",
+      "65": "EL SALVADOR",
+      "69": "ETHIOPIA",
+      "88": "GUATEMALA",
+      "92": "HAITI",
+      "98": "INDIA",
+      "105": "JAMAICA",
+      "111": "KOREA",
+      "135": "MEXICO",
+      "152": "NIGERIA",
+      "163": "PERU",
+      "164": "PHILIPPINES",
+      "166": "POLAND",
+      "172": "RUSSIA",
+      "215": "UKRAINE",
+      "217": "UNITED KINGDOM",
+      "218": "UNITED STATES",
+      "219": "UNKNOWN",
+      "224": "VIETNAM",
+      "301": "EUROPE & CENTRAL ASIA",
+      "302": "EAST ASIA, SOUTH ASIA & THE PACIFIC",
+      "304": "OTHER NORTH AMERICA",
+      "305": "LATIN AMERICA & THE CARIBBEAN",
+      "306": "AFRICAN SUB-SAHARAN",
+      "307": "MIDDLE EAST & NORTH AFRICA",
+      "308": "OCEANIA",
+      "310": "ARCTIC REGION"
+    }
+  },
+  "variable_labels_verified": {
+    "J30_1MO": "R's religion, 1 (DS0017 ICPSR codebook; codes from questionnaire item J30_X)",
+    "J14": "HOW WELL SPEAK ENGLISH (DS0017 ICPSR codebook; codes from questionnaire item J14)",
+    "A6": "GENDER \u2014 1 Male (4,133), 2 Female (4,440) (DS0003 P.I. codebook R00008.00)",
+    "A7": "YEAR BORN (DS0003 ICPSR codebook)",
+    "A20": "YEARS SCHOOL COMPLETED (DS0003 ICPSR codebook)",
+    "C1": "CURRENT EMPLOYMENT (DS0006 ICPSR codebook; codes from questionnaire item C1)",
+    "C33_1": "HRS PER WEEK CURRENTLY WORK (DS0006 ICPSR codebook; item C33_X, upper limit 168)",
+    "C37_1": "WKS PER YR USUALLY WORK (DS0006 ICPSR codebook; item C37_X, upper limit 52)",
+    "C47_1": "SALARIED OR PAID BY THE HOUR (DS0006 ICPSR codebook; item C47_X)",
+    "C48A2_1": "SALARY UNIT (DS0006 ICPSR codebook; item C48A2_X)",
+    "C48_1PPP": "SALARY BEFORE TAX in US current prices, PPP adjusted (DS0007 ICPSR codebook)",
+    "C49_1PPP": "HOURLY WAGE RATE in US current prices, PPP adjusted (DS0007 ICPSR codebook)",
+    "G7": "INCOME FROM WAGES AND SALARY (DS0011 ICPSR codebook; item G7)",
+    "G7APPP": "INCOME FROM WAGES AND SALARY in US current prices, PPP adj (DS0012 ICPSR codebook)",
+    "G15 (spouse path)": "SPOUSE INCOME FROM WAGES AND SALARY (DS0011 ICPSR codebook; item G15)",
+    "G16PPP (spouse path)": "HOW MUCH SPOUSE WAGES in US current prices, PPP adj (DS0012/DS0054)",
+    "WHOKNOW": "WHO IS MOST KNOWLEDGEABLE RE FINANCES (DS0011 ICPSR codebook)",
+    "CISADJUST": "1=adjust, 0=new arrival (DS0002 P.I. codebook)",
+    "CISCOBINSMO": "Country of birth, valid 2003 ins code (DS0002 P.I. codebook)",
+    "VISACATMO": "NIS visa categories (DS0002 P.I. codebook)",
+    "NISADULTSTR": "1=spcitz, 2=empprin, 3=divprin, 4=other (DS0002 P.I. codebook)",
+    "NISWGTSAMP1": "Sampling Weights (DS0002; recipe in 38031-Documentation-sampling_weights.pdf)",
+    "H1 / H1A": "PLACE WHERE YOU LIVE / H1 OWN THIS PLACE (DS0013 ICPSR codebook; items H1, H1A)"
+  },
+  "anomalies_and_resolutions": {
+    "A1_muslim_median_below_christian_but_mean_log_above": {
+      "looked_wrong": "median earn_annual is lower for Muslims than Christians while the unadjusted log-earnings gap is positive (+0.12)",
+      "muslim_earn_annual": {
+        "p10": 6030.4,
+        "p25": 12849.0,
+        "p50": 17428.6,
+        "p75": 26962.4,
+        "p90": 47122.0,
+        "n": 231,
+        "mean_log": 9.7141
+      },
+      "christian_earn_annual": {
+        "p10": 2219.4,
+        "p25": 11700.0,
+        "p50": 18730.5,
+        "p75": 29996.5,
+        "p90": 47320.0,
+        "n": 2173,
+        "mean_log": 9.5916
+      },
+      "resolution": "real feature, not an artefact. The mean of log earnings is a geometric mean, so it is driven by the left tail, and the Christian left tail is much lower (see p10). Median and mean-log therefore rank the two groups in opposite directions. Both are reported in derived/earnings_gaps.csv; neither is presented alone.",
+      "codebook_check": "J30_1MO code 4 = MUSLIM (questionnaire item J30_X, RELPICK1); codes 1/2/3 = CATHOLIC/ORTHODOX CHRISTIAN/PROTESTANT. Verified, no recode error."
+    },
+    "A2_hindu_median_earnings_has_a_very_large_bootstrap_se": {
+      "looked_wrong": "bootstrap SE on the Hindu weighted median earnings is about $11,000 on a $40,000 median, far larger than for any other group",
+      "median_neighbourhood": {
+        "Hindu": {
+          "p45": 23302.4,
+          "p50": 40380.2,
+          "p55": 54539.3,
+          "p55_minus_p45": 31237.0,
+          "n": 272
+        },
+        "Christian": {
+          "p45": 17680.0,
+          "p50": 18730.5,
+          "p55": 20800.0,
+          "p55_minus_p45": 3120.0,
+          "n": 2173
+        }
+      },
+      "resolution": "real feature of a bimodal distribution, not a bug in wmedian (unit-tested against numpy.median at equal weights). The Hindu earnings distribution is close to flat between roughly $27k and $55k, so the weighted median moves a long way under resampling; compare the much narrower Christian p45-p55 band. The Hindu median is reported with its SE and should not be read as precise; the log-earnings gaps, which use the whole distribution, are the stable statistic for this group."
+    },
+    "A3_section_C_and_section_G_earnings_gaps_differ_in_sign": {
+      "looked_wrong": "unadjusted Muslim-Christian log gap is +0.12 on the Section C measure and -0.29 on the Section G measure",
+      "section_G_coverage_by_group": {
+        "Christian": {
+          "n_18_64": 4925,
+          "answered_section_G": 3231,
+          "share_answered_section_G": 0.656,
+          "employed_rate_C1": 0.6105
+        },
+        "Muslim": {
+          "n_18_64": 606,
+          "answered_section_G": 370,
+          "share_answered_section_G": 0.6106,
+          "employed_rate_C1": 0.5073
+        },
+        "Hindu": {
+          "n_18_64": 587,
+          "answered_section_G": 392,
+          "share_answered_section_G": 0.6678,
+          "employed_rate_C1": 0.5425
+        },
+        "Buddhist": {
+          "n_18_64": 287,
+          "answered_section_G": 155,
+          "share_answered_section_G": 0.5401,
+          "employed_rate_C1": 0.4294
+        },
+        "No religion": {
+          "n_18_64": 919,
+          "answered_section_G": 618,
+          "share_answered_section_G": 0.6725,
+          "employed_rate_C1": 0.6056
+        }
+      },
+      "resolution": "the two measures answer different questions and both are reported. Section C (C48_1PPP / C49_1PPP) annualises the pay rate on the job held at interview, so it conditions on working and ignores weeks not worked. Section G (G7APPP) is wage and salary income actually received over the last twelve months, which for a cohort interviewed about four months after admission loads heavily on months spent in the United States and employed. A group with a lower employment rate and the same pay rate will show parity on Section C and a deficit on Section G, which is what the two columns show."
+    },
+    "A4_any_wage_12m_is_higher_for_muslims_than_christians": {
+      "looked_wrong": "share reporting any wage income in the last twelve months is 0.87 for Muslims against 0.85 for Christians, the opposite direction to the current-employment rate (0.51 against 0.61)",
+      "section_G_coverage_by_group": {
+        "Christian": {
+          "n_18_64": 4925,
+          "answered_section_G": 3231,
+          "share_answered_section_G": 0.656,
+          "employed_rate_C1": 0.6105
+        },
+        "Muslim": {
+          "n_18_64": 606,
+          "answered_section_G": 370,
+          "share_answered_section_G": 0.6106,
+          "employed_rate_C1": 0.5073
+        },
+        "Hindu": {
+          "n_18_64": 587,
+          "answered_section_G": 392,
+          "share_answered_section_G": 0.6678,
+          "employed_rate_C1": 0.5425
+        },
+        "Buddhist": {
+          "n_18_64": 287,
+          "answered_section_G": 155,
+          "share_answered_section_G": 0.5401,
+          "employed_rate_C1": 0.4294
+        },
+        "No religion": {
+          "n_18_64": 919,
+          "answered_section_G": 618,
+          "share_answered_section_G": 0.6725,
+          "employed_rate_C1": 0.6056
+        }
+      },
+      "resolution": "a universe difference, and it is flagged in the table rather than adjusted away. any_wage_12m is defined only for respondents whose household answered Section G (item G7, or the spouse's G15), so its denominator is a selected subset of each religion group, whereas the C1 employment rate covers the whole group. Compare share_answered_section_G across groups. The employment rate, not any_wage_12m, is the comparable participation measure."
+    },
+    "A5_spouse_path_recovers_fewer_cases_than_the_spouse_G1_count_suggested": {
+      "looked_wrong": "1,522 adults with no own Section G have a valid spouse G1, but only 840 wage reports are recovered from the spouse path",
+      "counts": {
+        "own_G7_missing": 4145,
+        "spouse_record_exists": 2461,
+        "spouse_G1_valid": 1522,
+        "spouse_G1_equals_1_someone_worked": 1322,
+        "spouse_G2_in_2_3_reaches_G13_branch": 848,
+        "spouse_G15_valid": 849,
+        "spouse_G15_usable_yes_no": 840,
+        "recovered_into_wage_src": 840
+      },
+      "resolution": "correct behaviour, and the recovery is exhaustive over the universe the instrument allows. The recoverable item is the spouse's G15, not the spouse's G1. Section G item G13, which leads to G15, is reached only 'IF NOT MARRIED/PARTNERED OR G2=1: G21', so the spouse income block is skipped unless the respondent is married or partnered and the spouse worked for pay. 840 is therefore the ceiling, not a shortfall. An earlier test asserted the wrong ceiling (>1000) and was corrected against the questionnaire rather than by loosening the threshold."
+    }
+  },
+  "code_sources": {
+    "J30_1MO": "ICPSR_38031/DS0017/38031-0017-Questionnaire-SectionJ_MULTI.pdf (item J30_X) and ICPSR_38031/DS0001/38031-0001-Documentation-picklists_public_MULTI.pdf (RELPICK1)",
+    "J14": "ICPSR_38031/DS0017/38031-0017-Questionnaire-SectionJ_MULTI.pdf (item J14)",
+    "C1": "ICPSR_38031/DS0006/38031-0006-Questionnaire-SectionC_MULTI.pdf (item C1)",
+    "C47_1": "ICPSR_38031/DS0006/38031-0006-Questionnaire-SectionC_MULTI.pdf (item C47_X)",
+    "C48A2_1": "ICPSR_38031/DS0006/38031-0006-Questionnaire-SectionC_MULTI.pdf (item C48A2_X)",
+    "G7/G15": "ICPSR_38031/DS0011/38031-0011-Questionnaire-SectionG_MULTI.pdf (items G7, G15)",
+    "A6": "ICPSR_38031/DS0003/38031-0003-Codebook-PI.pdf (R00008.00 [A6])",
+    "CISADJUST": "ICPSR_38031/DS0002/38031-0002-Codebook-PI.pdf (cisadjust)",
+    "VISACATMO": "ICPSR_38031/DS0002/38031-0002-Codebook-PI.pdf (visacatmo)",
+    "CISCOBINSMO": "ICPSR_38031/DS0002/38031-0002-Codebook-PI.pdf (ciscobinsmo)",
+    "NISADULTSTR": "ICPSR_38031/DS0002/38031-0002-Codebook-PI.pdf (nisadultstr)",
+    "NISWGTSAMP1": "ICPSR_38031/38031-Documentation-sampling_weights.pdf (design-weight recipe + Table 1)"
+  },
+  "country_to_region_map": {
+    "166": "EUROPE & CENTRAL ASIA",
+    "172": "EUROPE & CENTRAL ASIA",
+    "215": "EUROPE & CENTRAL ASIA",
+    "217": "EUROPE & CENTRAL ASIA",
+    "44": "EAST ASIA, SOUTH ASIA & THE PACIFIC",
+    "98": "EAST ASIA, SOUTH ASIA & THE PACIFIC",
+    "111": "EAST ASIA, SOUTH ASIA & THE PACIFIC",
+    "164": "EAST ASIA, SOUTH ASIA & THE PACIFIC",
+    "224": "EAST ASIA, SOUTH ASIA & THE PACIFIC",
+    "38": "OTHER NORTH AMERICA",
+    "218": "OTHER NORTH AMERICA",
+    "47": "LATIN AMERICA & THE CARIBBEAN",
+    "55": "LATIN AMERICA & THE CARIBBEAN",
+    "62": "LATIN AMERICA & THE CARIBBEAN",
+    "65": "LATIN AMERICA & THE CARIBBEAN",
+    "88": "LATIN AMERICA & THE CARIBBEAN",
+    "92": "LATIN AMERICA & THE CARIBBEAN",
+    "105": "LATIN AMERICA & THE CARIBBEAN",
+    "135": "LATIN AMERICA & THE CARIBBEAN",
+    "163": "LATIN AMERICA & THE CARIBBEAN",
+    "69": "AFRICAN SUB-SAHARAN",
+    "152": "AFRICAN SUB-SAHARAN"
+  },
+  "variance": {
+    "method": "stratified respondent bootstrap, 500 draws, seed 20260922",
+    "strata": "32 stratum x replicate design cells recovered from the distinct NISWGTSAMP1 values (the public file carries no PSU identifier, so no Taylor-linearised design variance is available)"
+  },
+  "earnings_definitions": {
+    "earn_annual": "current main job, annualised: C48_1PPP x unit factor (C48A2_1) for salaried/piecework/other, C49_1PPP x C33_1 x C37_1 for hourly; PPP-adjusted US current prices, 2003-2004 interview",
+    "earn_ft": "earn_annual restricted to usual hours on the current main job (C33_1) of 30 or more a week",
+    "wage_12m": "own wage and salary income in the last twelve months, G7APPP; for households where the spouse answered Section G, the sampled immigrant's amount is the spouse questionnaire's G16PPP, linked on the 4-digit case id"
+  },
+  "sample_sizes": {
+    "adults": 8573,
+    "age_18_64": 7978,
+    "with_religion": 8156,
+    "with_employment_18_64": 7967,
+    "with_earn_annual_18_64": 3409,
+    "with_earn_ft_18_64": 3072,
+    "with_wage_12m_18_64": 3516,
+    "wage_12m_from_spouse_path": 829
+  }
+}
