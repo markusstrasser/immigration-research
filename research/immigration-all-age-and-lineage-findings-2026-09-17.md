@@ -168,3 +168,11 @@ The closeout deferred geographic standardization and earnings/tax error as attac
 ## Revisions — fiscal repair, September 19, 2026
 
 Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.
+
+## Revisions — 2026-09-21
+
+The California / Texas / metro vs-white figures in the deferred stress tests (CA **−$12,133**,
+TX **−$7,479**, Los Angeles **−$17,196**, Houston **−$7,493** on the shared all-age ledger)
+are the numbers to quote for "is it just California?" Pair with
+[CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md). They are not
+the $165–197bn complete account.

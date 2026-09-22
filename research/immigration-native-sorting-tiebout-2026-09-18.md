@@ -510,3 +510,11 @@ Jaeger, Ruist & Stuhler (2018), NBER w24285. Wilson & Zhou (2026), Dallas Fed WP
 ## Revisions — September 19, 2026
 
 Corrected the interpretation for the reasons above; see the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md).
+
+## Revisions — 2026-09-21
+
+Same-share California vs Texas is now the routing fact for the fiscal-geography question
+(gaps vs local whites, Los Angeles vs Houston, New York / San Francisco coverage):
+[CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md). §5's
+$189.3bn / $111.7bn remain the stress-lane **totals** on that same shared all-age ledger;
+do not mix them with the $165–197bn complete account.
