@@ -1,0 +1,687 @@
+{
+  "lane": "housing_supply_ca_tx_2026_09_22",
+  "generated_at": "2026-09-22T14:16:33+00:00",
+  "gates": {
+    "G1": {
+      "status": "PASS",
+      "detail": "sum of the 12 monthly BPS files reproduces FRED within 0.1%, so the December year-to-date gap recorded above is a Census product difference (the year-to-date file absorbs late reports) and not a parser error: CABPPRIV 2015: monthly sum 97,611 vs FRED 97,611 (0.0000%); CABPPRIV 2019: monthly sum 109,904 vs FRED 109,904 (0.0000%); CABPPRIV 2023: monthly sum 109,707 vs FRED 109,707 (0.0000%); TXBPPRIV 2015: monthly sum 171,003 vs FRED 171,003 (0.0000%); TXBPPRIV 2019: monthly sum 199,600 vs FRED 199,600 (0.0000%); TXBPPRIV 2023: monthly sum 220,532 vs FRED 220,532 (0.0000%)"
+    },
+    "G2": {
+      "status": "PASS",
+      "detail": "California: popest 39,198,693 vs ACS 38,965,193 (0.599%); Texas: popest 30,727,890 vs ACS 30,503,301 (0.736%)"
+    },
+    "G3": {
+      "status": "PASS",
+      "detail": "168 of 168 metros joined to both a 2010 and a 2023 ACS CBSA row; 0 failures listed in derived/metro_join_failures.csv; regressions run on the joined set only"
+    },
+    "G6": {
+      "status": "PASS",
+      "detail": "168 of 168 warehouse elasticities re-joined to the primary Saiz file by metro name; largest absolute difference in elasticity 0.00e+00, in WRLURI 0.00e+00"
+    },
+    "G4": {
+      "status": "PASS",
+      "detail": "California: PUMS 9,640,427 (SE 15,669, n=110,738) vs B05003H_009E+020E 9,636,867 (0.037%); Texas: PUMS 9,228,285 (SE 12,615, n=111,125) vs B05003H_009E+020E 9,231,939 (0.040%)"
+    },
+    "G5": {
+      "status": "PASS",
+      "detail": "all reported ratios have finite positive denominators (yes); minimum PUMS cell observations 313 >= 100 (yes)"
+    }
+  },
+  "limitations": [
+    "Descriptive only. No causal identification is attempted or claimed anywhere in this lane. Ladder 136 records that the usual shift-share instruments for Mexican inflows lose their variation after 2005, so no instrumental-variables estimate is reported.",
+    "The metro crosswalk in msa_rent_elasticity_panel is names-only. Metros are matched to ACS CBSA rows on principal-city name plus state; ambiguous matches are refused and listed as join failures rather than resolved by guesswork.",
+    "CBSA boundaries and principal-city names changed between the 2010 and 2023 ACS 5-year vintages, so the 2010 and 2023 population shares are not measured on identical geographies for every metro.",
+    "Saiz supply elasticities are estimated on 1970-2000 geography and land-use data and are held fixed here; they are not re-estimated for the 2010-2023 window.",
+    "The demand elasticity in the mechanical calculation is assumed (0.5, 0.7, 1.0), not estimated. The mechanical response is arithmetic on published elasticities under a single-market competitive assumption, not an estimate of any actual rent change.",
+    "ACS 5-year estimates for 2010 (2006-2010) and 2023 (2019-2023) overlap no years but each average five years, so a share change is a change in five-year averages.",
+    "State housing-unit counts come from ACS 1-year B25001 and exist only for the vintages fetched (2010, 2015, 2019, 2023, 2024); permits per 1,000 units is blank in other years. The United States housing-unit figure is the sum of the 51 state rows (50 states plus DC) and therefore excludes Puerto Rico.",
+    "Permit counts are authorisations, not completions, and BPS imputes for non-responding permit offices; the reported (non-imputed) columns of the BPS file are not used.",
+    "PUMS migration is a single year (2024) of gross flows with a one-year lookback. It counts moves, not movers' motives, and says nothing about why anyone moved.",
+    "The 2018 BPS annual file (st1812y.txt) is refused by the Census WAF at its plain URL and was retrieved with an inert query parameter appended; the bytes were validated (December 2018 survey date, 51 state rows) and the CA/TX totals sit inside the same FRED cross-check band as the other years."
+  ],
+  "variable_labels": {
+    "2010:B03001_001E": "Estimate!!Total",
+    "2010:B03001_004E": "Estimate!!Total!!Hispanic or Latino!!Mexican",
+    "2023:B03001_001E": "Estimate!!Total:",
+    "2023:B03001_004E": "Estimate!!Total:!!Hispanic or Latino:!!Mexican"
+  },
+  "join_counts": {
+    "panel_rows": 168,
+    "joined": 168,
+    "failed": 0,
+    "failures": []
+  },
+  "source_hashes": {
+    "warehouse/immigration_context.duckdb": "3664b92f944205c063a1e21701c2a9856b1a65f665352313087b0f54dbf13159",
+    "zillow_metro_zori": "ceb962e2617a375b1a2332edc09eff2de014cce183e0c97b701dd5dc67d0e9ae",
+    "saiz_2010_msa_elasticity.dta": "8699efc85e76322494b804d9695727c0f6bd916a6a80ef2341e537c9a8520807",
+    "acs_pums_2024_1yr/csv_pus.zip": "afdc6d90c6e2f0bab365ed32d95ba4c4d8ac651162f46ac7861295b2dc469894"
+  },
+  "permit_vintage_reconciliation": [
+    "CABPPRIV 2015: December YTD 95,955 vs FRED 97,611 (-1.697%)",
+    "CABPPRIV 2019: December YTD 109,338 vs FRED 109,904 (-0.515%)",
+    "CABPPRIV 2023: December YTD 111,221 vs FRED 109,707 (+1.380%)",
+    "TXBPPRIV 2015: December YTD 173,990 vs FRED 171,003 (+1.747%)",
+    "TXBPPRIV 2019: December YTD 203,317 vs FRED 199,600 (+1.862%)",
+    "TXBPPRIV 2023: December YTD 227,417 vs FRED 220,532 (+3.122%)"
+  ],
+  "g1_detail": [
+    "CABPPRIV 2015: monthly sum 97,611 vs FRED 97,611 (0.0000%)",
+    "CABPPRIV 2019: monthly sum 109,904 vs FRED 109,904 (0.0000%)",
+    "CABPPRIV 2023: monthly sum 109,707 vs FRED 109,707 (0.0000%)",
+    "TXBPPRIV 2015: monthly sum 171,003 vs FRED 171,003 (0.0000%)",
+    "TXBPPRIV 2019: monthly sum 199,600 vs FRED 199,600 (0.0000%)",
+    "TXBPPRIV 2023: monthly sum 220,532 vs FRED 220,532 (0.0000%)"
+  ],
+  "g2_detail": [
+    "California: popest 39,198,693 vs ACS 38,965,193 (0.599%)",
+    "Texas: popest 30,727,890 vs ACS 30,503,301 (0.736%)"
+  ],
+  "saiz_check": {
+    "matched": 168,
+    "max_abs_elasticity_diff": 0.0,
+    "max_abs_wrluri_diff": 0.0
+  },
+  "regression_samples": {
+    "specs_1_to_5_n": 152,
+    "specs_6_to_8_n": 168,
+    "dropped_from_2015_window": [
+      "Auburn, AL",
+      "Brownsville, TX",
+      "Casper, WY",
+      "Duluth, MN",
+      "Fort Smith, AR",
+      "Greeley, CO",
+      "Iowa City, IA",
+      "Lincoln, NE",
+      "Peoria, IL",
+      "Redding, CA",
+      "Sioux Falls, SD",
+      "Springfield, MA",
+      "Sumter, SC",
+      "Syracuse, NY",
+      "Youngstown, OH",
+      "Yuba City, CA"
+    ],
+    "dropped_mean_elasticity": 3.1025608852505684,
+    "kept_mean_elasticity": 2.2105093312106634
+  },
+  "g4_detail": [
+    "California: PUMS 9,640,427 (SE 15,669, n=110,738) vs B05003H_009E+020E 9,636,867 (0.037%)",
+    "Texas: PUMS 9,228,285 (SE 12,615, n=111,125) vs B05003H_009E+020E 9,231,939 (0.040%)"
+  ],
+  "g4_note": "No published ACS table crosses nativity with ages 25-64, so the gate compares the cell B05003H does publish: native-born white-alone non-Hispanic aged 18 and over (B05003H_009E male + B05003H_020E female). The 25-64 counts used in the migration table are reported with replicate SEs but have no published counterpart.",
+  "download_manifest": {
+    "acs1_b05003h_2024.json": {
+      "bytes": 2061,
+      "fetched_at": "2026-09-22T15:47:15+0200",
+      "note": "B05003H native male 18+ (009E) and native female 18+ (020E), white alone not Hispanic",
+      "sha256": "ec7f3b3a2dac8500f865e41a8d257455f13c802896ea7a1b77eb07907c3750c0",
+      "url": "https://api.census.gov/data/2024/acs/acs1?{'get': 'NAME,B05003H_009E,B05003H_020E', 'for': 'state:*'}"
+    },
+    "acs1_hu_2010.json": {
+      "bytes": 1561,
+      "fetched_at": "2026-09-22T15:47:00+0200",
+      "note": "ACS 1-year 2010 total housing units by state",
+      "sha256": "220b81941b62b474e8f02d934f021a5e990b5bd66928a1b6c2afb68795ee8a20",
+      "url": "https://api.census.gov/data/2010/acs/acs1?{'get': 'NAME,B25001_001E', 'for': 'state:*'}"
+    },
+    "acs1_hu_2015.json": {
+      "bytes": 1563,
+      "fetched_at": "2026-09-22T15:47:02+0200",
+      "note": "ACS 1-year 2015 total housing units by state",
+      "sha256": "5dd35459d7b73e1b304fdc7a8d75244bfc2ffbc41cc3a98d57deccffd03358f0",
+      "url": "https://api.census.gov/data/2015/acs/acs1?{'get': 'NAME,B25001_001E', 'for': 'state:*'}"
+    },
+    "acs1_hu_2019.json": {
+      "bytes": 1563,
+      "fetched_at": "2026-09-22T15:47:04+0200",
+      "note": "ACS 1-year 2019 total housing units by state",
+      "sha256": "49fdb1f83e7c70712529a7918b100faa9af3286cb271c1e73d075a0da72287b1",
+      "url": "https://api.census.gov/data/2019/acs/acs1?{'get': 'NAME,B25001_001E', 'for': 'state:*'}"
+    },
+    "acs1_hu_2023.json": {
+      "bytes": 1564,
+      "fetched_at": "2026-09-22T15:47:08+0200",
+      "note": "ACS 1-year 2023 total housing units by state",
+      "sha256": "8ada1bd24b3dd1049734f6cc1aa2e0ca884dd81fb2eebf916fbc975346aec51d",
+      "url": "https://api.census.gov/data/2023/acs/acs1?{'get': 'NAME,B25001_001E', 'for': 'state:*'}"
+    },
+    "acs1_hu_2024.json": {
+      "bytes": 1564,
+      "fetched_at": "2026-09-22T15:47:09+0200",
+      "note": "ACS 1-year 2024 total housing units by state",
+      "sha256": "87ac2d20fcd46a8489bccced974b6a5611510a3afc86c79577d074af254f72b0",
+      "url": "https://api.census.gov/data/2024/acs/acs1?{'get': 'NAME,B25001_001E', 'for': 'state:*'}"
+    },
+    "acs1_pop_2023.json": {
+      "bytes": 1581,
+      "fetched_at": "2026-09-22T15:47:12+0200",
+      "note": "ACS 1-year 2023 total population by state, popest cross-check",
+      "sha256": "596d15e48c0d7b55dbb4e32a579b7c96fffe8f2fe2dc23d438ce4cb50e2d9225",
+      "url": "https://api.census.gov/data/2023/acs/acs1?{'get': 'NAME,B01003_001E', 'for': 'state:*'}"
+    },
+    "acs5_metro_b03001_2010.json": {
+      "bytes": 53500,
+      "fetched_at": "2026-09-22T15:47:19+0200",
+      "note": "ACS 5-year 2010 Mexican-origin and total population by CBSA",
+      "sha256": "a4f9bee5205fe51bfd6c5a4a089bbb8fa78db4e08a4ae6c3cd3ad1cc16e90ff2",
+      "url": "https://api.census.gov/data/2010/acs/acs5?{'get': 'NAME,B03001_001E,B03001_004E', 'for': 'metropolitan statistical area/micropolitan statistical area:*'}"
+    },
+    "acs5_metro_b03001_2023.json": {
+      "bytes": 52515,
+      "fetched_at": "2026-09-22T15:47:24+0200",
+      "note": "ACS 5-year 2023 Mexican-origin and total population by CBSA",
+      "sha256": "6c9bc78f7192c3cd3635e89b87185209ad73f6d5ce8b15ba859976139e38dbf8",
+      "url": "https://api.census.gov/data/2023/acs/acs5?{'get': 'NAME,B03001_001E,B03001_004E', 'for': 'metropolitan statistical area/micropolitan statistical area:*'}"
+    },
+    "acsvar_2010_B03001_001E.json": {
+      "bytes": 236,
+      "fetched_at": "2026-09-22T15:46:55+0200",
+      "note": "variable label confirmation (key-free)",
+      "sha256": "fe52fc8e956b78464b10a7b8d6a4db93ab8e92c50a60bf8362516088f0c23640",
+      "url": "https://api.census.gov/data/2010/acs/acs5/variables/B03001_001E.json"
+    },
+    "acsvar_2010_B03001_004E.json": {
+      "bytes": 265,
+      "fetched_at": "2026-09-22T15:46:56+0200",
+      "note": "variable label confirmation (key-free)",
+      "sha256": "669d36a99830a3ff99501ac24c3ac00a1bdf676d7a1973f086da3715c2eaad5d",
+      "url": "https://api.census.gov/data/2010/acs/acs5/variables/B03001_004E.json"
+    },
+    "acsvar_2023_B03001_001E.json": {
+      "bytes": 237,
+      "fetched_at": "2026-09-22T15:46:57+0200",
+      "note": "variable label confirmation (key-free)",
+      "sha256": "653dadce860f41c817015de7dcc667b10fd6344f4309636cdd63d96c2fc65c88",
+      "url": "https://api.census.gov/data/2023/acs/acs5/variables/B03001_001E.json"
+    },
+    "acsvar_2023_B03001_004E.json": {
+      "bytes": 267,
+      "fetched_at": "2026-09-22T15:46:58+0200",
+      "note": "variable label confirmation (key-free)",
+      "sha256": "307f233102edb83ae4a9aa5dc884720ff31d0f35c4540447fddc94d0162dfd99",
+      "url": "https://api.census.gov/data/2023/acs/acs5/variables/B03001_004E.json"
+    },
+    "bps_state_2000.txt": {
+      "bytes": 10245,
+      "fetched_at": "2026-09-22T15:46:12+0200",
+      "note": "annual (Dec year-to-date) state permits, 2000",
+      "sha256": "399f4a1297793b296bff348e3b5417e2ba0315d36a8a313f348b6353d755f463",
+      "url": "https://www2.census.gov/econ/bps/State/st0012y.txt"
+    },
+    "bps_state_2001.txt": {
+      "bytes": 10323,
+      "fetched_at": "2026-09-22T15:46:13+0200",
+      "note": "annual (Dec year-to-date) state permits, 2001",
+      "sha256": "64a517c58ea85183843e7a31dfd8ffe683674251ef67412e3b5eb88496cedec4",
+      "url": "https://www2.census.gov/econ/bps/State/st0112y.txt"
+    },
+    "bps_state_2002.txt": {
+      "bytes": 10352,
+      "fetched_at": "2026-09-22T15:46:16+0200",
+      "note": "annual (Dec year-to-date) state permits, 2002",
+      "sha256": "d1212570e830c3d86d10281f3e2c8d93d229b5506cc770bba81e34177b927e27",
+      "url": "https://www2.census.gov/econ/bps/State/st0212y.txt"
+    },
+    "bps_state_2003.txt": {
+      "bytes": 10463,
+      "fetched_at": "2026-09-22T15:46:18+0200",
+      "note": "annual (Dec year-to-date) state permits, 2003",
+      "sha256": "e626e9309ce33b4f92d3e56a7bd3a34a21433ee0fe4a0b278245609e1b499846",
+      "url": "https://www2.census.gov/econ/bps/State/st0312y.txt"
+    },
+    "bps_state_2004.txt": {
+      "bytes": 10530,
+      "fetched_at": "2026-09-22T15:46:19+0200",
+      "note": "annual (Dec year-to-date) state permits, 2004",
+      "sha256": "15abc31cab9d0c78d6845594e2fa4fe527b7d18c4079e26cc1fd41affab74dc5",
+      "url": "https://www2.census.gov/econ/bps/State/st0412y.txt"
+    },
+    "bps_state_2005.txt": {
+      "bytes": 10495,
+      "fetched_at": "2026-09-22T15:46:20+0200",
+      "note": "annual (Dec year-to-date) state permits, 2005",
+      "sha256": "34bd3ba24bae1a8fbfd38835b979d35673bf697b35d9c5d92e7e0e21988a507d",
+      "url": "https://www2.census.gov/econ/bps/State/st0512y.txt"
+    },
+    "bps_state_2006.txt": {
+      "bytes": 10525,
+      "fetched_at": "2026-09-22T15:46:21+0200",
+      "note": "annual (Dec year-to-date) state permits, 2006",
+      "sha256": "51bbd8ff21093744c3a645c31b5bc14478a1343500a75172a8fa56eab9f1a0c6",
+      "url": "https://www2.census.gov/econ/bps/State/st0612y.txt"
+    },
+    "bps_state_2007.txt": {
+      "bytes": 10389,
+      "fetched_at": "2026-09-22T15:46:22+0200",
+      "note": "annual (Dec year-to-date) state permits, 2007",
+      "sha256": "a2398514f47633d110352c7e5886d0038725e899d659b19c6ef35b724011b2e1",
+      "url": "https://www2.census.gov/econ/bps/State/st0712y.txt"
+    },
+    "bps_state_2008.txt": {
+      "bytes": 10103,
+      "fetched_at": "2026-09-22T15:46:23+0200",
+      "note": "annual (Dec year-to-date) state permits, 2008",
+      "sha256": "e10189367335dc2cf69938d5c83d3809e7b10c92f17df99a3154ba96fcc703cc",
+      "url": "https://www2.census.gov/econ/bps/State/st0812y.txt"
+    },
+    "bps_state_2009.txt": {
+      "bytes": 9815,
+      "fetched_at": "2026-09-22T15:46:24+0200",
+      "note": "annual (Dec year-to-date) state permits, 2009",
+      "sha256": "2f44612a800e383051fec090fea88e2db6a7c2d3e8a1c9527ebc851d2b9c85aa",
+      "url": "https://www2.census.gov/econ/bps/State/st0912y.txt"
+    },
+    "bps_state_2010.txt": {
+      "bytes": 9789,
+      "fetched_at": "2026-09-22T15:46:25+0200",
+      "note": "annual (Dec year-to-date) state permits, 2010",
+      "sha256": "54996892b89958fac4f623291d1af04c0faaa38645327ab60faf340b13b42c8a",
+      "url": "https://www2.census.gov/econ/bps/State/st1012y.txt"
+    },
+    "bps_state_2011.txt": {
+      "bytes": 9815,
+      "fetched_at": "2026-09-22T15:46:26+0200",
+      "note": "annual (Dec year-to-date) state permits, 2011",
+      "sha256": "003149bc0071a69c2a533530447af94ff338411da81ea5cd407da3624bf72b62",
+      "url": "https://www2.census.gov/econ/bps/State/st1112y.txt"
+    },
+    "bps_state_2012.txt": {
+      "bytes": 9984,
+      "fetched_at": "2026-09-22T15:46:27+0200",
+      "note": "annual (Dec year-to-date) state permits, 2012",
+      "sha256": "a25f40ec2d78f1f8a4e5348aee755b8b33e420e83ca17e0a054507466694cfd6",
+      "url": "https://www2.census.gov/econ/bps/State/st1212y.txt"
+    },
+    "bps_state_2013.txt": {
+      "bytes": 10093,
+      "fetched_at": "2026-09-22T15:46:28+0200",
+      "note": "annual (Dec year-to-date) state permits, 2013",
+      "sha256": "d31106143fc9c8b94e3bf077d842a475317aceadce9f59e68e54fb33fe5f70f9",
+      "url": "https://www2.census.gov/econ/bps/State/st1312y.txt"
+    },
+    "bps_state_2014.txt": {
+      "bytes": 10103,
+      "fetched_at": "2026-09-22T15:46:29+0200",
+      "note": "annual (Dec year-to-date) state permits, 2014",
+      "sha256": "a898680dc9bba0f2e5604958a62efb85e024dcab544ce9559bb0bc0846cfb86b",
+      "url": "https://www2.census.gov/econ/bps/State/st1412y.txt"
+    },
+    "bps_state_2015.txt": {
+      "bytes": 10185,
+      "fetched_at": "2026-09-22T15:46:30+0200",
+      "note": "annual (Dec year-to-date) state permits, 2015",
+      "sha256": "104ef44daba9a0a05a8fdd258a16aa49b40989af36b165e0231d3b1465045e2a",
+      "url": "https://www2.census.gov/econ/bps/State/st1512y.txt"
+    },
+    "bps_state_2016.txt": {
+      "bytes": 10225,
+      "fetched_at": "2026-09-22T15:46:32+0200",
+      "note": "annual (Dec year-to-date) state permits, 2016",
+      "sha256": "fd3ea00f2aeaff447458bf8cbab301629cafa5b5f84d90b220409a082da7bab1",
+      "url": "https://www2.census.gov/econ/bps/State/st1612y.txt"
+    },
+    "bps_state_2017.txt": {
+      "bytes": 10156,
+      "fetched_at": "2026-09-22T15:46:33+0200",
+      "note": "annual (Dec year-to-date) state permits, 2017",
+      "sha256": "85fe73962b5cf34946fb8170967129eadfd4b8867d899522575840ea43be92ef",
+      "url": "https://www2.census.gov/econ/bps/State/st1712y.txt"
+    },
+    "bps_state_2018.txt": {
+      "bytes": 10153,
+      "fetched_at": "2026-09-22T15:51:19+0200",
+      "note": "annual (Dec year-to-date) state permits, 2018; retrieved cachebust",
+      "sha256": "9c0e2853e14554292ea61b220a83f0c779e643cec81d58d8c39cfb682af347ae",
+      "url": "https://www2.census.gov/econ/bps/State/st1812y.txt"
+    },
+    "bps_state_2019.txt": {
+      "bytes": 10234,
+      "fetched_at": "2026-09-22T15:46:36+0200",
+      "note": "annual (Dec year-to-date) state permits, 2019",
+      "sha256": "0a68fb09a7ca7bd9a1a26a40239fd18eb6923b44a3aa75b06e6c4ed755abd2fd",
+      "url": "https://www2.census.gov/econ/bps/State/st1912y.txt"
+    },
+    "bps_state_2020.txt": {
+      "bytes": 10273,
+      "fetched_at": "2026-09-22T15:46:39+0200",
+      "note": "annual (Dec year-to-date) state permits, 2020",
+      "sha256": "7b4a7c625d2db310bcf55c43d685c272910492686dc1c6541213453e62c5f03f",
+      "url": "https://www2.census.gov/econ/bps/State/st2012y.txt"
+    },
+    "bps_state_2021.txt": {
+      "bytes": 10362,
+      "fetched_at": "2026-09-22T15:46:40+0200",
+      "note": "annual (Dec year-to-date) state permits, 2021",
+      "sha256": "951a50e5c3de58e6e8a32f275e61bdd7acf56eaf353ad45f7768317a7bb6c441",
+      "url": "https://www2.census.gov/econ/bps/State/st2112y.txt"
+    },
+    "bps_state_2022.txt": {
+      "bytes": 10353,
+      "fetched_at": "2026-09-22T15:46:42+0200",
+      "note": "annual (Dec year-to-date) state permits, 2022",
+      "sha256": "59435e122e1d61644af79a6fc01420e3bce52a34686d588bc8fdbf44630f6961",
+      "url": "https://www2.census.gov/econ/bps/State/st2212y.txt"
+    },
+    "bps_state_2023.txt": {
+      "bytes": 10334,
+      "fetched_at": "2026-09-22T15:46:44+0200",
+      "note": "annual (Dec year-to-date) state permits, 2023",
+      "sha256": "14d44a89780634b5898aa492bbd1764aa7d4c4c85164b03fcd641dd1948a04e7",
+      "url": "https://www2.census.gov/econ/bps/State/st2312y.txt"
+    },
+    "bps_state_2024.txt": {
+      "bytes": 10334,
+      "fetched_at": "2026-09-22T15:46:45+0200",
+      "note": "annual (Dec year-to-date) state permits, 2024",
+      "sha256": "c5c2ab0ab600e27a537533e4c726c485a59e26a0ea662e3d9993e438c4650531",
+      "url": "https://www2.census.gov/econ/bps/State/st2412y.txt"
+    },
+    "bps_state_monthly_201501.txt": {
+      "bytes": 8088,
+      "fetched_at": "2026-09-22T15:58:27+0200",
+      "note": "monthly (current month) state permits, 2015-01; retrieved direct",
+      "sha256": "538100133aed15d4d960ad7f082bfb3e8439bbc4f18339d18a1b4b1c1418fac4",
+      "url": "https://www2.census.gov/econ/bps/State/st1501c.txt"
+    },
+    "bps_state_monthly_201502.txt": {
+      "bytes": 8098,
+      "fetched_at": "2026-09-22T15:58:28+0200",
+      "note": "monthly (current month) state permits, 2015-02; retrieved direct",
+      "sha256": "dab29e804ae0798d444397d74765ae89d9cefa48234f740d5f0f2d1c8f25fb90",
+      "url": "https://www2.census.gov/econ/bps/State/st1502c.txt"
+    },
+    "bps_state_monthly_201503.txt": {
+      "bytes": 8240,
+      "fetched_at": "2026-09-22T15:58:28+0200",
+      "note": "monthly (current month) state permits, 2015-03; retrieved direct",
+      "sha256": "a573d1a69a17471b9428154be380c27dddaa120edba9007c35d3efeaf7684352",
+      "url": "https://www2.census.gov/econ/bps/State/st1503c.txt"
+    },
+    "bps_state_monthly_201504.txt": {
+      "bytes": 8348,
+      "fetched_at": "2026-09-22T15:58:29+0200",
+      "note": "monthly (current month) state permits, 2015-04; retrieved direct",
+      "sha256": "235656f20355cce182efa9dde7144d9589d2db9378290970c09623fca5730ce6",
+      "url": "https://www2.census.gov/econ/bps/State/st1504c.txt"
+    },
+    "bps_state_monthly_201505.txt": {
+      "bytes": 8377,
+      "fetched_at": "2026-09-22T15:58:30+0200",
+      "note": "monthly (current month) state permits, 2015-05; retrieved direct",
+      "sha256": "0c555b4d86aa4ba58a43995bb30a00e41d8f0af94065bb62e887cf713a51d8b1",
+      "url": "https://www2.census.gov/econ/bps/State/st1505c.txt"
+    },
+    "bps_state_monthly_201506.txt": {
+      "bytes": 8536,
+      "fetched_at": "2026-09-22T15:58:30+0200",
+      "note": "monthly (current month) state permits, 2015-06; retrieved direct",
+      "sha256": "f9bacfeacb298c5ef02ef40cafdc2ead89d4129901a8b206d6fc9c6864be1beb",
+      "url": "https://www2.census.gov/econ/bps/State/st1506c.txt"
+    },
+    "bps_state_monthly_201507.txt": {
+      "bytes": 8459,
+      "fetched_at": "2026-09-22T15:58:31+0200",
+      "note": "monthly (current month) state permits, 2015-07; retrieved direct",
+      "sha256": "b6e5fe2e2105a9e44da3a9ad2e71d663910229b3975613221ec4654fcaa47101",
+      "url": "https://www2.census.gov/econ/bps/State/st1507c.txt"
+    },
+    "bps_state_monthly_201508.txt": {
+      "bytes": 8396,
+      "fetched_at": "2026-09-22T15:58:32+0200",
+      "note": "monthly (current month) state permits, 2015-08; retrieved direct",
+      "sha256": "69401de1b049ac0e498596f0fb0f6f46edeca1569d76bb4b2949bf625440f7b5",
+      "url": "https://www2.census.gov/econ/bps/State/st1508c.txt"
+    },
+    "bps_state_monthly_201509.txt": {
+      "bytes": 8465,
+      "fetched_at": "2026-09-22T15:58:33+0200",
+      "note": "monthly (current month) state permits, 2015-09; retrieved direct",
+      "sha256": "de376b2bd480091e1105c9762cc37d92e1b6f7f88d5d42bbbbabbbbb9b8f65b9",
+      "url": "https://www2.census.gov/econ/bps/State/st1509c.txt"
+    },
+    "bps_state_monthly_201510.txt": {
+      "bytes": 8434,
+      "fetched_at": "2026-09-22T15:58:34+0200",
+      "note": "monthly (current month) state permits, 2015-10; retrieved direct",
+      "sha256": "782bf2930a3e10bd3171ef6d2f63a67711539ce161e11e61998f309ba1b4d97a",
+      "url": "https://www2.census.gov/econ/bps/State/st1510c.txt"
+    },
+    "bps_state_monthly_201511.txt": {
+      "bytes": 8248,
+      "fetched_at": "2026-09-22T15:58:34+0200",
+      "note": "monthly (current month) state permits, 2015-11; retrieved direct",
+      "sha256": "23463898667dab9d532ea9dcd37f246959d24e0352da450189e5660dcf2d4e5a",
+      "url": "https://www2.census.gov/econ/bps/State/st1511c.txt"
+    },
+    "bps_state_monthly_201512.txt": {
+      "bytes": 8338,
+      "fetched_at": "2026-09-22T15:58:35+0200",
+      "note": "monthly (current month) state permits, 2015-12; retrieved direct",
+      "sha256": "d3c30ec6e53fc9c30c8022c2eefd8552d2f167e50ccda646b7778bdc47d3465d",
+      "url": "https://www2.census.gov/econ/bps/State/st1512c.txt"
+    },
+    "bps_state_monthly_201901.txt": {
+      "bytes": 8243,
+      "fetched_at": "2026-09-22T15:58:36+0200",
+      "note": "monthly (current month) state permits, 2019-01; retrieved direct",
+      "sha256": "4d039f67e36077638762f7f07c34948abe78e3a5ba6f8ad8df0d9f43bb302308",
+      "url": "https://www2.census.gov/econ/bps/State/st1901c.txt"
+    },
+    "bps_state_monthly_201902.txt": {
+      "bytes": 8181,
+      "fetched_at": "2026-09-22T15:58:37+0200",
+      "note": "monthly (current month) state permits, 2019-02; retrieved direct",
+      "sha256": "f8b76418168009937dd19a585a139a2f12fb134830c5561c5644a6032fbac8fc",
+      "url": "https://www2.census.gov/econ/bps/State/st1902c.txt"
+    },
+    "bps_state_monthly_201903.txt": {
+      "bytes": 8289,
+      "fetched_at": "2026-09-22T15:58:38+0200",
+      "note": "monthly (current month) state permits, 2019-03; retrieved direct",
+      "sha256": "497e791a7ea67bec0d803225c68e273c62aad3fb6cf474bf247462f9fd1b1204",
+      "url": "https://www2.census.gov/econ/bps/State/st1903c.txt"
+    },
+    "bps_state_monthly_201904.txt": {
+      "bytes": 8447,
+      "fetched_at": "2026-09-22T15:58:39+0200",
+      "note": "monthly (current month) state permits, 2019-04; retrieved direct",
+      "sha256": "035bb3266ed223db9c8bdc622546a90f80b95cb7493816ecf0a176af549962be",
+      "url": "https://www2.census.gov/econ/bps/State/st1904c.txt"
+    },
+    "bps_state_monthly_201905.txt": {
+      "bytes": 8419,
+      "fetched_at": "2026-09-22T15:58:40+0200",
+      "note": "monthly (current month) state permits, 2019-05; retrieved direct",
+      "sha256": "7f049d8a40900408e48775b09b99adcaf524d6ef5ead817dbbd33fefbb08faba",
+      "url": "https://www2.census.gov/econ/bps/State/st1905c.txt"
+    },
+    "bps_state_monthly_201906.txt": {
+      "bytes": 8439,
+      "fetched_at": "2026-09-22T15:58:41+0200",
+      "note": "monthly (current month) state permits, 2019-06; retrieved direct",
+      "sha256": "ad64a94e45566fa56e5526af17d093cf9d1083091da0be591b2426aee6521068",
+      "url": "https://www2.census.gov/econ/bps/State/st1906c.txt"
+    },
+    "bps_state_monthly_201907.txt": {
+      "bytes": 8520,
+      "fetched_at": "2026-09-22T15:58:42+0200",
+      "note": "monthly (current month) state permits, 2019-07; retrieved direct",
+      "sha256": "33875c612cea59960a05c27aca48f1156f75b4f8071f4b8ca8a726d6f1770678",
+      "url": "https://www2.census.gov/econ/bps/State/st1907c.txt"
+    },
+    "bps_state_monthly_201908.txt": {
+      "bytes": 8494,
+      "fetched_at": "2026-09-22T15:58:43+0200",
+      "note": "monthly (current month) state permits, 2019-08; retrieved direct",
+      "sha256": "703b5611f1ee287ab10e9f962566c1eb85f63ee99f335f3c2768fc6e5f43e62f",
+      "url": "https://www2.census.gov/econ/bps/State/st1908c.txt"
+    },
+    "bps_state_monthly_201909.txt": {
+      "bytes": 8423,
+      "fetched_at": "2026-09-22T15:58:43+0200",
+      "note": "monthly (current month) state permits, 2019-09; retrieved direct",
+      "sha256": "29a854e52414156ac1494468c30368ae79d4133303ffdcedc3d1378c58914962",
+      "url": "https://www2.census.gov/econ/bps/State/st1909c.txt"
+    },
+    "bps_state_monthly_201910.txt": {
+      "bytes": 8546,
+      "fetched_at": "2026-09-22T15:58:44+0200",
+      "note": "monthly (current month) state permits, 2019-10; retrieved direct",
+      "sha256": "ffab2f98b4e2a281593f7efd422486b478a16ccb5a9fd8ed60a496d7162767b4",
+      "url": "https://www2.census.gov/econ/bps/State/st1910c.txt"
+    },
+    "bps_state_monthly_201911.txt": {
+      "bytes": 8347,
+      "fetched_at": "2026-09-22T15:58:45+0200",
+      "note": "monthly (current month) state permits, 2019-11; retrieved direct",
+      "sha256": "274f3b683dd34d22ef3ea0be5121e87a115b60e7ccc4a5a5c51337059d01be92",
+      "url": "https://www2.census.gov/econ/bps/State/st1911c.txt"
+    },
+    "bps_state_monthly_201912.txt": {
+      "bytes": 8336,
+      "fetched_at": "2026-09-22T15:58:46+0200",
+      "note": "monthly (current month) state permits, 2019-12; retrieved direct",
+      "sha256": "47ec2ade56389ac91a22ea6046d5976ceecc09a41b9054a7dd379fe59e93692c",
+      "url": "https://www2.census.gov/econ/bps/State/st1912c.txt"
+    },
+    "bps_state_monthly_202301.txt": {
+      "bytes": 8387,
+      "fetched_at": "2026-09-22T15:58:47+0200",
+      "note": "monthly (current month) state permits, 2023-01; retrieved direct",
+      "sha256": "f601b9c989d673452673098378f7f54d5d9ea39f262ac28eb1c7484d3214093d",
+      "url": "https://www2.census.gov/econ/bps/State/st2301c.txt"
+    },
+    "bps_state_monthly_202302.txt": {
+      "bytes": 8365,
+      "fetched_at": "2026-09-22T15:58:48+0200",
+      "note": "monthly (current month) state permits, 2023-02; retrieved direct",
+      "sha256": "c7293f66b4499a8f832540d5a18e6c4c9d2b951d01997bbb22386de65755a17b",
+      "url": "https://www2.census.gov/econ/bps/State/st2302c.txt"
+    },
+    "bps_state_monthly_202303.txt": {
+      "bytes": 8596,
+      "fetched_at": "2026-09-22T15:58:49+0200",
+      "note": "monthly (current month) state permits, 2023-03; retrieved direct",
+      "sha256": "6843fdf9897933679729c9658a919f1629d2b4211da98f100bf9f2ef581c90c7",
+      "url": "https://www2.census.gov/econ/bps/State/st2303c.txt"
+    },
+    "bps_state_monthly_202304.txt": {
+      "bytes": 8557,
+      "fetched_at": "2026-09-22T15:58:49+0200",
+      "note": "monthly (current month) state permits, 2023-04; retrieved direct",
+      "sha256": "7c7aa849841013129edd1af60f34e312bef2bde54d376bc914278f94862f4fde",
+      "url": "https://www2.census.gov/econ/bps/State/st2304c.txt"
+    },
+    "bps_state_monthly_202305.txt": {
+      "bytes": 8630,
+      "fetched_at": "2026-09-22T15:58:50+0200",
+      "note": "monthly (current month) state permits, 2023-05; retrieved direct",
+      "sha256": "ebe58f2dff0d5c9244ce54825f7500205b70c843ab4893a1592f5d8c5076df54",
+      "url": "https://www2.census.gov/econ/bps/State/st2305c.txt"
+    },
+    "bps_state_monthly_202306.txt": {
+      "bytes": 8613,
+      "fetched_at": "2026-09-22T15:58:51+0200",
+      "note": "monthly (current month) state permits, 2023-06; retrieved direct",
+      "sha256": "e2d2dc6a2c3beec6324bb375c1b4ee817d8b56a0c145a06d1bfb48c3b1285680",
+      "url": "https://www2.census.gov/econ/bps/State/st2306c.txt"
+    },
+    "bps_state_monthly_202307.txt": {
+      "bytes": 8548,
+      "fetched_at": "2026-09-22T15:58:51+0200",
+      "note": "monthly (current month) state permits, 2023-07; retrieved direct",
+      "sha256": "10be087d20f861a59ab4de0ae9b8f1ef86160bbc2a2caa7a90a9c14666db246a",
+      "url": "https://www2.census.gov/econ/bps/State/st2307c.txt"
+    },
+    "bps_state_monthly_202308.txt": {
+      "bytes": 8710,
+      "fetched_at": "2026-09-22T15:58:52+0200",
+      "note": "monthly (current month) state permits, 2023-08; retrieved direct",
+      "sha256": "0b3d4fdb5f2f4582b41af1366f53b269447ea4b7c863157a7186dad15e9492e3",
+      "url": "https://www2.census.gov/econ/bps/State/st2308c.txt"
+    },
+    "bps_state_monthly_202309.txt": {
+      "bytes": 8564,
+      "fetched_at": "2026-09-22T15:58:53+0200",
+      "note": "monthly (current month) state permits, 2023-09; retrieved direct",
+      "sha256": "f9003fc4ff6d37ddbec887add58ed11cb1314bea310383f79c2cdb3f08a8501c",
+      "url": "https://www2.census.gov/econ/bps/State/st2309c.txt"
+    },
+    "bps_state_monthly_202310.txt": {
+      "bytes": 8566,
+      "fetched_at": "2026-09-22T15:58:54+0200",
+      "note": "monthly (current month) state permits, 2023-10; retrieved direct",
+      "sha256": "2867d4cbfb3a215ac822e4fb95ccba6a89977cc8268f20302487012638c6c2b2",
+      "url": "https://www2.census.gov/econ/bps/State/st2310c.txt"
+    },
+    "bps_state_monthly_202311.txt": {
+      "bytes": 8443,
+      "fetched_at": "2026-09-22T15:58:55+0200",
+      "note": "monthly (current month) state permits, 2023-11; retrieved direct",
+      "sha256": "a9adfac850e3d4a7fbf483225d05e3de09c216fb63502bebbfc0ab6047d6c364",
+      "url": "https://www2.census.gov/econ/bps/State/st2311c.txt"
+    },
+    "bps_state_monthly_202312.txt": {
+      "bytes": 8389,
+      "fetched_at": "2026-09-22T15:58:56+0200",
+      "note": "monthly (current month) state permits, 2023-12; retrieved direct",
+      "sha256": "db23e48a66973ca22be8b52b8990c364a6d0f5be7397c77896320e4092673b0b",
+      "url": "https://www2.census.gov/econ/bps/State/st2312c.txt"
+    },
+    "bps_stateasc.pdf": {
+      "bytes": 151547,
+      "fetched_at": "2026-09-22T15:46:11+0200",
+      "note": "state file record layout, read before parsing",
+      "sha256": "c80b331127952f2ca0eead1c63ebfa632facad0095ef2e3038140079d41a8cb4",
+      "url": "https://www2.census.gov/econ/bps/Documentation/stateasc.pdf"
+    },
+    "fred_CABPPRIV.csv": {
+      "bytes": 7613,
+      "fetched_at": "2026-09-22T15:46:46+0200",
+      "note": "FRED CABPPRIV monthly private housing units authorised",
+      "sha256": "037b48c7fb3fab15d0370f6e94bc83332d7f72387a83851490377a25c9956353",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CABPPRIV"
+    },
+    "fred_TXBPPRIV.csv": {
+      "bytes": 7746,
+      "fetched_at": "2026-09-22T15:46:47+0200",
+      "note": "FRED TXBPPRIV monthly private housing units authorised",
+      "sha256": "f0760268151cf88eeb07ef13cdc2f1568ef138a02179d3ea67170c2a00408142",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=TXBPPRIV"
+    },
+    "popest_2000_2010_intercensal.csv": {
+      "bytes": 5481291,
+      "fetched_at": "2026-09-22T15:46:54+0200",
+      "note": "intercensal state estimates, 2000-2010",
+      "sha256": "a83f02d9deca8bc02ba9b03d124a9b28906f4a17e831953cc42c86da2aef6a8a",
+      "url": "https://www2.census.gov/programs-surveys/popest/datasets/2000-2010/intercensal/state/st-est00int-alldata.csv"
+    },
+    "popest_2010_2019.csv": {
+      "bytes": 74085,
+      "fetched_at": "2026-09-22T15:46:49+0200",
+      "note": "vintage 2019 state estimates, 2010-2019 (state rows carry SUMLEV 040)",
+      "sha256": "d4ba7fe9f8a351418cda2b6209aa05d6fef0f7132803196862e4732dad6c2a8c",
+      "url": "https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/national/totals/nst-est2019-alldata.csv"
+    },
+    "popest_2020_2024.csv": {
+      "bytes": 41378,
+      "fetched_at": "2026-09-22T15:46:48+0200",
+      "note": "vintage 2024 state estimates, 2020-2024",
+      "sha256": "b8b50bd345d8a5f33d5c8a28c95aeaa0a50971356f000d9b48276a65fd9022a7",
+      "url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/state/totals/NST-EST2024-ALLDATA.csv"
+    },
+    "pums_data_dictionary_2024.csv": {
+      "bytes": 329514,
+      "fetched_at": "2026-09-22T15:47:25+0200",
+      "note": "2024 ACS PUMS code lists (MIGSP, NATIVITY, RAC1P, HISP, SCHL, STATE)",
+      "sha256": "cd562a3719c6cdf79736bd9cfbacf8c20e650d641c62abd7e67fd131da036e18",
+      "url": "https://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2024.csv"
+    }
+  },
+  "zori_window": {
+    "start": "2015-01-31",
+    "end": "2026-05-31"
+  }
+}
