@@ -1,0 +1,346 @@
+{
+  "gates": {
+    "G2_grid_intact": {
+      "passed": true,
+      "upstream_scenarios": 1296,
+      "expanded_scenarios": 3888,
+      "ownership_baselines": 18,
+      "detail": "expand_ownership and validate_ownership_baselines are imported and run unweakened from full_account_benefits_2026_09_20/builder.py; their own 1296-row, duplicate-key and 18-baseline assertions are the gate"
+    },
+    "G1_published_production_term": {
+      "passed": true,
+      "worst_absolute_bn": 0.0,
+      "tolerance_bn": 1e-09,
+      "detail": "ces_0086_owner000 = 13.32259791925651 bn (gdp) and ces_0248_owner000 = 8.790627696465311 bn (cash), with both components, reproduced from a fresh replay of matched_benefits_2026_09_19 through full_account_benefits_2026_09_20.expand_ownership"
+    },
+    "G7_calibration_reconciliation": {
+      "passed": true,
+      "worst_relative": 0.0,
+      "tolerance": 1e-06,
+      "detail": "The four branch earnings totals sum to national and the two union branches sum to target, in every one of the 161 weights and all four proxy/split combinations; the four PEARNVAL/hs_or_less anchors match the stored estimates to a tenth of a cent"
+    },
+    "G3_strict_generalization": {
+      "passed": true,
+      "worst_absolute_normalized": 6.696032617270475e-16,
+      "worst_relative_to_own_scale": 1.832899560045796e-11,
+      "assertion": "numpy.allclose(rtol=1e-12, atol=1e-15) on normalized units, where one unit is GDP",
+      "scenarios": 1296,
+      "reformulated": true,
+      "detail": "REFORMULATED, and strictly stronger in the collapse direction. With the removal proportional across branches the nest returns the unnested labor_gain, capital_gain, private_wtp and current_receipts_gain at EVERY epsilon in the grid, not only at epsilon = sigma, for all 1296 upstream scenarios and both options. SPEC section 5 G3 as worded is unsatisfiable: at kappa = rho the cell aggregate is the power mean of the branch quantities while the unnested model uses their arithmetic mean, so Jensen separates the two whenever the removal is uneven across branches. test_nest_model.test_literal_spec_g3_is_not_an_identity records the measured gap; test_epsilon_equals_sigma_matches_an_independent_flat_ces checks that case against an independently written flat CES instead.",
+      "literal_spec_wording": {
+        "holds": false,
+        "unnested_cell_quantity": [
+          0.8216959444091556,
+          0.9424852977019974
+        ],
+        "nested_cell_quantity_at_epsilon_equals_sigma": [
+          0.8168876411816091,
+          0.9424775228491271
+        ],
+        "gross_income_gain_unnested": 0.00045472721411903005,
+        "gross_income_gain_nested": 0.0011700541293615495,
+        "ratio_nested_over_unnested": 2.5730901802927377,
+        "removed_share_of_foreign_branch_cell0": 0.3910764336265431,
+        "removed_share_of_native_branch_cell0": 0.11120845929428064,
+        "note": "At epsilon = sigma the nested cell quantity is the power mean of the branch quantities and the unnested model uses their arithmetic mean, so the two agree only when the removal is even across branches. At PEARNVAL/hs_or_less/sigma=2/adj=1/eta=0 they are not equal and the income gains differ by the ratio shown. This is why G3 is run with a proportional removal at every epsilon instead."
+      }
+    },
+    "G4_perfect_substitution_limit": {
+      "passed": true,
+      "worst_absolute_normalized": 3.0531133177191805e-16,
+      "worst_relative_to_own_scale": 9.861515942781607e-12,
+      "assertion": "numpy.allclose(rtol=1e-12, atol=1e-15) on normalized units, where one unit is GDP",
+      "scenarios": 1296,
+      "detail": "At epsilon = infinity (kappa = 1, its own code path, never a large number) the nest returns the unnested results for every one of the 1296 upstream scenarios with the real uneven removal, under both options"
+    },
+    "G5_zero_shock": {
+      "passed": true,
+      "worst_absolute": 8.881784197001252e-16,
+      "tolerance": 1e-13,
+      "detail": "Zero removal leaves every branch wage at one and every gain at zero, across all four proxy/split calibrations, both options, all seven epsilon and both labor-supply elasticities"
+    },
+    "G8_small_shock_linearization": {
+      "passed": true,
+      "tolerance_at_1pct": 0.01,
+      "by_epsilon": {
+        "1.3": {
+          "shock_1pct": 0.0013529813260582488,
+          "shock_1e4": 1.3475476619819294e-05,
+          "shock_1e6": 1.3032770154969463e-07
+        },
+        "3": {
+          "shock_1pct": 0.0030141229349770152,
+          "shock_1e4": 3.0045667933710902e-05,
+          "shock_1e6": 3.02349296359056e-07
+        },
+        "4.6": {
+          "shock_1pct": 0.0034555353866621316,
+          "shock_1e4": 3.445308432906025e-05,
+          "shock_1e6": 3.453546949652718e-07
+        },
+        "5": {
+          "shock_1pct": 0.0035217318209656064,
+          "shock_1e4": 3.511413228343488e-05,
+          "shock_1e6": 3.539557747377814e-07
+        },
+        "7": {
+          "shock_1pct": 0.003739206042620655,
+          "shock_1e4": 3.728631900364717e-05,
+          "shock_1e6": 3.7115793428280055e-07
+        },
+        "20": {
+          "shock_1pct": 0.0040925089366514004,
+          "shock_1e4": 4.081616542742497e-05,
+          "shock_1e6": 4.0986279300276155e-07
+        },
+        "inf": {
+          "shock_1pct": 0.00428270140416155,
+          "shock_1e4": 4.271678580434195e-05,
+          "shock_1e6": 4.2706495254778074e-07
+        }
+      },
+      "detail": "A 1 percent removal of the foreign branch in the low-skill cell agrees with the section 3.2 formulas in sign, in both cells and for both branches, to the relative deviation listed, and the deviation falls in proportion to the shock. The literal 'three significant figures at 1 percent' reading is NOT met at any epsilon: the measured deviation is 3.0e-3 to 4.3e-3. That is the truncation error of a first-order formula at a finite shock, not a solver error, as the 1e-4 and 1e-6 shock columns show; the gate's stated purpose, catching sign and index errors the collapses cannot catch, is met."
+    },
+    "G6_euler_and_partition": {
+      "passed": true,
+      "worst_private_partition": 4.163336342344337e-17,
+      "tolerance": 1e-10,
+      "detail": "The unweakened Euler assertion inside nest_model.solve fires per skill cell and in total at every scenario and all 161 replicates, fiscal_and_private's own partition identity is unchanged and fires at every row, and the branch split of private WTP closes against it to the deviation shown"
+    },
+    "G9_monotonicity": {
+      "reported_not_asserted": true,
+      "cases": [
+        {
+          "normalization": "cash",
+          "nest_option": "A_by_nativity",
+          "other_immigrant_side": "loses_from_the_union",
+          "native_gain_falls_in_epsilon": true,
+          "other_immigrant_magnitude_falls_in_epsilon": true,
+          "other_immigrant_loss_shrinks_in_epsilon": true,
+          "native_range_bn": [
+            4.852990088253593,
+            86.13119879458775
+          ],
+          "other_immigrant_range_bn": [
+            -73.30116279958162,
+            -4.206117788738978
+          ]
+        },
+        {
+          "normalization": "cash",
+          "nest_option": "B_target_branch",
+          "other_immigrant_side": "gains_from_the_union",
+          "native_gain_falls_in_epsilon": true,
+          "other_immigrant_magnitude_falls_in_epsilon": true,
+          "other_immigrant_loss_shrinks_in_epsilon": false,
+          "native_range_bn": [
+            24.989246670732864,
+            1363.0592045035808
+          ],
+          "other_immigrant_range_bn": [
+            5.8236581298192185,
+            299.7637326207324
+          ]
+        },
+        {
+          "normalization": "gdp",
+          "nest_option": "A_by_nativity",
+          "other_immigrant_side": "loses_from_the_union",
+          "native_gain_falls_in_epsilon": true,
+          "other_immigrant_magnitude_falls_in_epsilon": true,
+          "other_immigrant_loss_shrinks_in_epsilon": true,
+          "native_range_bn": [
+            7.354928212684648,
+            130.5357671222098
+          ],
+          "other_immigrant_range_bn": [
+            -111.09126136526764,
+            -6.37456368706569
+          ]
+        },
+        {
+          "normalization": "gdp",
+          "nest_option": "B_target_branch",
+          "other_immigrant_side": "gains_from_the_union",
+          "native_gain_falls_in_epsilon": true,
+          "other_immigrant_magnitude_falls_in_epsilon": true,
+          "other_immigrant_loss_shrinks_in_epsilon": false,
+          "native_range_bn": [
+            37.872345092394276,
+            2065.778502830318
+          ],
+          "other_immigrant_range_bn": [
+            8.826019979664023,
+            454.30563304226416
+          ]
+        }
+      ],
+      "non_monotone": [],
+      "detail": "Reported, never asserted, over the six finite epsilon of the published cases; the infinite point is the collapse and is excluded from the difference. Both sides fall in magnitude as epsilon rises, converging on the perfect-substitution result, in all four blocks. The SPEC wording 'other immigrants' loss falls' presumes Option A's sign: only under Option A is the other-foreign-born branch itself cut, so only there do other immigrants lose from the union's presence. Under Option B nothing outside the union is removed, both surviving branches face the same wage change and other immigrants gain, so other_immigrant_loss_shrinks_in_epsilon is false there by construction and is not a non-monotonicity."
+    }
+  },
+  "delta_floor_convergence": {
+    "estimator": "Exact removal of the branch term; the floor never produces a published number",
+    "monotone_in_delta": true,
+    "by_epsilon": {
+      "1.3": {
+        "delta_1e-06": 0.04803983212969176,
+        "delta_1e-09": 0.009702651480375413,
+        "delta_1e-12": 0.001968302390061405,
+        "meets_1e9_criterion": false
+      },
+      "3": {
+        "delta_1e-06": 0.0003033389090520977,
+        "delta_1e-09": 3.052363007016723e-06,
+        "delta_1e-12": 3.054215946818317e-08,
+        "meets_1e9_criterion": false
+      },
+      "4.6": {
+        "delta_1e-06": 9.051724954212137e-05,
+        "delta_1e-09": 4.192700858718368e-07,
+        "delta_1e-12": 1.8950859770328066e-09,
+        "meets_1e9_criterion": false
+      },
+      "5": {
+        "delta_1e-06": 7.629198300729279e-05,
+        "delta_1e-09": 3.159252188744688e-07,
+        "delta_1e-12": 1.2699106211044864e-09,
+        "meets_1e9_criterion": false
+      },
+      "7": {
+        "delta_1e-06": 4.446603751639966e-05,
+        "delta_1e-09": 1.294038161070432e-07,
+        "delta_1e-12": 3.572662166106966e-10,
+        "meets_1e9_criterion": true
+      },
+      "20": {
+        "delta_1e-06": 1.9227044058656162e-05,
+        "delta_1e-09": 3.4203354704054334e-08,
+        "delta_1e-12": 5.5350390937292104e-11,
+        "meets_1e9_criterion": true
+      },
+      "inf": {
+        "delta_1e-06": 2.136335551350399e-06,
+        "delta_1e-09": 2.1360394564240437e-09,
+        "delta_1e-12": 2.0676793610618915e-12,
+        "meets_1e9_criterion": true
+      }
+    },
+    "note": "The floored aggregate deviates from the exact drop as delta**kappa with kappa = 1 - 1/epsilon, so the brief's 'agree to 1e-9 relative' is reachable only at high epsilon; at epsilon = 1.3 even delta = 1e-12 is about 2e-3 away. Convergence is monotone at every epsilon and nothing published depends on it, because the estimator drops the term exactly."
+  },
+  "b_deep_cravino": {
+    "built": false,
+    "machinery_tested": true,
+    "sigma_FT": 14.0,
+    "options_clean": true,
+    "reason": "Not built, and the omission is a judgment about transport, not a gate failure. Options A and B pass every gate, which is the brief's condition, but the deep arm's inner elasticity sigma_FT = 14 is Cravino's authorized-versus-unauthorized elasticity while this lane's inner split is Mexico-born versus other foreign-born, a different partition that the CPS cannot resolve (SPEC section 7.8). Shipping it would add a fourth arm whose only new parameter is transported across a partition mismatch. nest_model.three_level and test_three_level_nest_absorbs_into_two_when_elasticities_match are written and passing, and make_case already accepts 'B_deep_cravino', so the arm is one grid entry away once the operator accepts that transport."
+  },
+  "source_hashes": {
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/audit.json": "7c76461945ef3ced2d6d41e799e042b65f9657564db8a265bdee0e306bb5e7fc",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+    "/Users/alien/Projects/immigration-research/sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256dat.zip": "d0779e49de4f5ff0b0fff6774167023382366a0ef0905e6a3c40126114f988c9",
+    "/Users/alien/Projects/immigration-research/sources/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256su.txt": "a7bd4eca49833f40df45b53aad803dfca15b1a3a9b1de03aa6e79f508c5e24be",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/state_parameters.csv": "00b0bb778861cc8406a04c8159938368146494965348d477e0514c4b0efccff2",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/census_assf_fy2024_summary_tables.xlsx": "848133174f299957653bbc7070633cf3ff23e4242695ccb628893fb8f6571154",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_residual_agg_2026_09_16/_cache/omb_hist03z1_fy2027.xlsx": "47864b5078698919c3237038ad7296fb7aeb62f6942c3d8acccf98ad0a7122f7",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_residual_agg_2026_09_16/_cache/22slsstab1.xlsx": "4dd123c5ad520e33d9692f622d389a020e2d3a7e6e782763663854dd84643b9b",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_residual_agg_2026_09_16/_cache/nst_est2023.csv": "8f0733f32bb01e8c60c22e1eb88ed300e54dcd85306debb13521a81e0c53332a",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/institutional_bound_2026_09_17/derived/acs_cells.csv": "d14e1d1c98c7f8138c8d5d58822dcdf4779b033705b761781eafc52d25217fe7",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/all_age_ledger_2026_09_17/derived/estimates.csv": "41b47bc237bfcf5b09319b8e1668df5af16d299c01ee078e3fcbc225f81fa53c",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/absolute_ledger.py": "fc234ffe3321c69cb8d2bb6b18b29ca06f900eac6dd67b7a3fd32ef81fc9cddf",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/consolidation.py": "81cbc8a3ec926358707eb850578347f761262aae2d4f084dccf68a074bee7e94",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/profile_export.py": "34127541ff858a006f7b6fb4662eb717641292bf14286cd107e376dd2ec6ea62",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/extend_ledger.py": "72bfd4162d55e9ab4bbcd5a65513084700ff62975385f2e67095e965a1226055",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/build/analyze_cps_fiscal_2025.py": "17c57aa74867fb099daaf83259a6c04f1b84e741b3ca5513e273da6eeda743dd",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_residual_agg_2026_09_16/residual_agg.py": "997a252b3587fe3b477055d5ff847e190eb9c5fc01625165dc5c4e1157ff67d2",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/all_age_ledger_2026_09_17/analyze.py": "eadbad147c80012ca4bb76f76f5feae9517757ace007938d5d069c958ee979b4",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/build/meps_health_transport_2024.py": "8a3eda7a2fce7b27f2e4cb0aa865526d7c188893644c39b7693d05e6632fd587",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/all_age_ledger_2026_09_17/estimator.py": "6ef0d6ce99c484c01313a288361c8f7f00c6919950c655e9f4bf0367f354db8a",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/_cache/outlays_fy2027.xlsx": "d892f2247e6c1aed68414d3e4168f8b4ab97bcfc7acf82a6a449a3fcb1addb07",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/_cache/omb_hist12z3_fy2027.xlsx": "43aa30c0d39116909b990a93926540fd173bce4963f26ee3a0d28a6f900d974d",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profiles.csv": "ddac25cc844f7fd72ec48937377ae29deff53bc826202a536725f15513dab12a",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profile_components.csv": "8884b4126e6e4c60b74868ae57dc4b316651a38e3e767d7c25a44f7f63db5d62",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/matched_benefits_2026_09_19/builder.py": "a37ff8332468a34588534209aa8a3d68654a5c0020089859de18855105e2122a",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/matched_benefits_2026_09_19/model.py": "8740f820a937dcce0dfe700d5a167b4ff6b52b82ea5a92a0ab60d99de93e56cc",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/education_origin_fiscal_2026_09_19/builder.py": "c7a7b4a410f98723a8422c1a12ed35794d74ca3b5c36ae08cb652cf227aeeddf",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/builder.py": "876a6b1bfc9070e241d3b78979bb76bbb8a4ff5206a37834b5e77751a334f66d",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/nest_model.py": "61a5f8ace2b077f01fba0099e251b52f5b4466a10b4d361899815cc844a27cec",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/test_nest_model.py": "e92778afad6390c9aa773056bb5e2da6d43397cc4fdd6735c31eab42fa1a6caf",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/SPEC.md": "9e039ebb369c5e57ed7f9b5e444bff6ba6cf4735a656666eb0a99a39cd201e42",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/BRIEF.md": "fb75616cf8ea182c6b90a8fba448e3adea9569a3cac411c31afbf877e01cad37",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/matched_benefits_2026_09_19/test_model.py": "68fac8fa4643ce81446ce6fad070134573cfd531ffb813d3e4f0d38e35844474",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/full_account_benefits_2026_09_20/builder.py": "4f19e18ad137a03ba2f77bac3168668e927887ee3bbeb3ca36ef562e44e64b71",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/full_account_benefits_2026_09_20/derived/benefit_scenarios.csv": "7a8488397c134d2aaab0a987abfad0adcfbfa754e3b1479d143b26d55fa645ad",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/upstream_replay/existing_tax_credits.csv": "f581518c3a4d6d269c9032b4a86ff11ad22a17b14ff3e81fd82736f0de509203",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/upstream_replay/magnitude_thresholds.csv": "b3569c2c87ae196867e4c61448832f4fb5330e3c0437c446c6065076bbe9e694",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/upstream_replay/ownership_sensitivity.csv": "7bffae9d9e88fb85a6390088cbc6eda7c5604872857bb9b4d8ddff2ea2359a62",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/upstream_replay/replacement_arithmetic.csv": "21a304a9329ff3cb4154bed58981b3801b325c708a4fe179840b49191da2dfad",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/upstream_replay/scenarios.csv": "70ce197197847dc534fa78ed1608da1808c2c6a3dc5db29c5b3f24f76fb97540",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/upstream_replay/skill_composition.csv": "473f4ca0421c9141988a14a4abae963f55d5cf8d1447e61c696bf29bf3b4f78e",
+    "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/production_nativity_nest_2026_09_22/derived/upstream_replay/audit.json": "dbf8e4d5d5719b7f345dbef82c3b2bb95afeede6b6f886a38187c0662f359327"
+  },
+  "dollar_year": 2024,
+  "gdp_billions": 29298.0,
+  "population": 40896574.152351856,
+  "national_population": 336727803.00001377,
+  "upstream_scenarios": 1296,
+  "expanded_ownership_scenarios": 3888,
+  "nest_scenarios": 54432,
+  "distinct_equilibria": 3024,
+  "sigma_NI_grid": {
+    "1.3": {
+      "sourced": true,
+      "citation": "SOURCE: Cravino-Levchenko-Ortega-Pandalai-Nayar w34790 p.23 - Clemens and Lewis (2024) randomized estimate 1.3"
+    },
+    "3": {
+      "sourced": true,
+      "citation": "SOURCE: same paper p.23 and Table 1 p.24 - the selected native-foreign elasticity 3"
+    },
+    "4.6": {
+      "sourced": true,
+      "citation": "SOURCE: same paper p.23 - Burstein et al. (2020) estimate 4.6"
+    },
+    "5": {
+      "sourced": false,
+      "citation": "UNVERIFIED: no repo source for this value"
+    },
+    "7": {
+      "sourced": false,
+      "citation": "UNVERIFIED: no repo source for this value"
+    },
+    "20": {
+      "sourced": true,
+      "citation": "SOURCE: same paper p.23, the upper end of the literature range the primary text states; NOT attributed to Ottaviano-Peri, who have no numeric elasticity in this repository"
+    },
+    "inf": {
+      "sourced": true,
+      "citation": "DATA: the account's own current assumption, matched_benefits_2026_09_19/derived/audit.json model_assumptions"
+    }
+  },
+  "nest_options": {
+    "A_by_nativity": "Two branches: native (PRCITSHP 1-3, including union G2 and G3+) against foreign-born (PRCITSHP 4-5, including union G1). Removal cuts both branches, because most of the union's earnings belong to people who are US-born.",
+    "B_target_branch": "[UNVERIFIED-STRUCTURAL] Three branches: native non-union, other foreign-born, and the union at the same epsilon against natives. It asserts that a third-generation self-identified Mexican-origin US-born worker is a worse substitute for other natives than a foreign-born non-Mexican worker is, which this repository has no evidence for. Reported beside Option A, never instead of it."
+  },
+  "sign_convention": "With target minus without target; positive means other residents gain from the union's presence",
+  "beneficiaries": "Other US residents outside the canonical target; the union's own welfare is excluded",
+  "counterfactual": "Stationary economy with versus without the union's labor, with a branch nest inside each skill cell",
+  "sampling": "161 joint CPS replicate weights carried through the branch composition and the core excluded_capital_owner_share == 0 rows; no covariance is invented for the epsilon dimension, which is an assumption and not a sampled quantity",
+  "limitations": [
+    "No change to the capital block: the single comparative-static capital adjustment, the .246 capital tax, domestic_capital_gain and opportunity_income are untouched; the nest moves labor composition only",
+    "No dynamics: two stationary economies with versus without the union's labor; no transition path, no arrival or removal timing, no capital accumulation path",
+    "The union's own welfare stays out, as the account defines its beneficiaries; target_branch_gain_bn is a diagnostic and never enters a welfare total",
+    "No new fiscal channel: the direct fiscal response A is unchanged; only P and F move, and the 165-197bn headline is recomputed by re-running the parent, not here",
+    "Other residents contains both winners and losers: natives gain and other foreign-born residents lose from the union's presence under the nest, so the net moves much less than either side",
+    "The elasticity is transported, not estimated: no epsilon here is estimated on this population; every value comes from a paper about a different population and a different shock",
+    "No occupations, no regions, no trade, no prices: two education cells and one closed economy, so a number here is not comparable to Cravino's 38.6bn except in order of magnitude",
+    "No unauthorized/authorized split: the union is defined by origin and generation, and the CPS carries no legal-status variable",
+    "Sign is not at stake: ladder entry 166 already records that this affects size, not sign",
+    "Sampling standard errors condition on the model and on every transported parameter; the spread across epsilon is a model range, not a confidence interval"
+  ],
+  "outputs": {
+    "branch_composition.csv": "aec24f9812fa11e2ad54147ca9105b0c115036f482de488d37a10a14e75efa10",
+    "nest_headline.csv": "b34cc5c0e576dc614300e3511535e33de1d75fa2e8ccbcaff244aeb75ef3ca05",
+    "nest_scenarios.csv": "b6bde5af99fcf03bc066affed0e8801166fd664142bf0c50f887ac946a9cd04a"
+  }
+}
