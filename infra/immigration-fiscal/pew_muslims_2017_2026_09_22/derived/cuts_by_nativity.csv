@@ -1,0 +1,173 @@
+cut,group,n_group,outcome_id,outcome,variable,estimate,jrr_se,n_base,small_cell_flag,replicates_used
+nativity,All Muslim adults,1001,age_18_29,Aged 18-29,agerec,34.94,3.31,993,,100
+nativity,All Muslim adults,1001,age_30_49,Aged 30-49,agerec,44.13,3.51,993,,100
+nativity,All Muslim adults,1001,age_50_plus,Aged 50 or older,agerec,20.93,2.46,993,,100
+nativity,All Muslim adults,1001,female,Female,sex,49.45,3.21,1001,,100
+nativity,All Muslim adults,1001,race_black,"Black, non-Hispanic",racethn,19.67,3.64,969,,100
+nativity,All Muslim adults,1001,income_lt_30k,"Family income under $30,000",income,40.48,2.14,888,,100
+nativity,All Muslim adults,1001,income_30_75k,"Family income $30,000-$75,000",income,27.66,2.31,888,,100
+nativity,All Muslim adults,1001,income_75_100k,"Family income $75,000-$100,000",income,7.66,1.42,888,,100
+nativity,All Muslim adults,1001,income_ge_100k,"Family income $100,000 or more",income,24.2,1.97,888,,100
+nativity,All Muslim adults,1001,income_refused,Income not reported (of all respondents),income,12.21,1.46,1001,,100
+nativity,All Muslim adults,1001,edu_lt_hs,Did not finish high school,educrec,8.37,1.83,997,,100
+nativity,All Muslim adults,1001,edu_hs,High school graduate,educrec,30.17,2.28,997,,100
+nativity,All Muslim adults,1001,edu_some_college,Some college or associate degree,educrec,30.19,3.4,997,,100
+nativity,All Muslim adults,1001,edu_ba_plus,Four-year college degree or more,educrec,31.26,2.75,997,,100
+nativity,All Muslim adults,1001,edu_postgrad,Postgraduate or professional schooling,educrec,11.95,1.68,997,,100
+nativity,All Muslim adults,1001,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,69.68,2.59,640,,100
+nativity,All Muslim adults,1001,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,82.45,1.7,996,,100
+nativity,All Muslim adults,1001,party_republican,Identifies as Republican,party,7.11,1.62,960,,100
+nativity,All Muslim adults,1001,party_democrat,Identifies as Democrat,party,40.19,2.53,960,,100
+nativity,All Muslim adults,1001,party_independent,Identifies as independent,party,44.15,2.37,960,,100
+nativity,All Muslim adults,1001,party_rep_or_lean,Republican or leans Republican,party+partyln,14.36,1.79,960,,100
+nativity,All Muslim adults,1001,party_dem_or_lean,Democrat or leans Democratic,party+partyln,68.66,2.72,960,,100
+nativity,All Muslim adults,1001,fert_none,No children ever born,fertREC,38.76,2.56,967,,100
+nativity,All Muslim adults,1001,fert_3plus,Three or more children ever born,fertREC,25.96,2.34,967,,100
+nativity,All Muslim adults,1001,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,1.47,0.09,967,,100
+nativity,All Muslim adults,1001,satisfied_country,Satisfied with the way things are going in the country,qa2,31.37,3.44,930,,100
+nativity,All Muslim adults,1001,homeowner,Owns their home,qa6,36.67,3.29,1000,,100
+nativity,All Muslim adults,1001,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,11.53,2.7,1001,,100
+nativity,All Muslim adults,1001,civilians_rarely_never,Killing civilians rarely or never justified,qf3,83.51,3.48,1001,,100
+nativity,All Muslim adults,1001,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,4.96,1.55,1001,,100
+nativity,All Muslim adults,1001,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,52.37,2.48,1001,,100
+nativity,All Muslim adults,1001,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,76.91,1.82,978,,100
+nativity,All Muslim adults,1001,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,51.27,3.48,978,,100
+nativity,All Muslim adults,1001,exp_suspicion,Past year: people acted suspicious of them,qd1a,32.15,2.45,993,,100
+nativity,All Muslim adults,1001,exp_offensive_names,Past year: called offensive names,qd1c,19.36,2.14,1000,,100
+nativity,All Muslim adults,1001,exp_threatened,Past year: physically threatened or attacked,qd1f,5.96,1.6,1001,,100
+nativity,All Muslim adults,1001,proud_american,Completely or mostly agree: proud to be an American,qc17b,93.62,1.21,980,,100
+nativity,All Muslim adults,1001,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,82.26,2.27,977,,100
+nativity,All Muslim adults,1001,lot_in_common,A lot in common with most Americans,qc13,60.36,2.49,989,,100
+nativity,All Muslim adults,1001,employed_full_time,Employed full time,employ,43.76,2.84,981,,100
+nativity,All Muslim adults,1001,employed_part_time,Employed part time,employ,16.06,2.31,981,,100
+nativity,All Muslim adults,1001,not_employed,Not employed,employ,40.18,2.59,981,,100
+nativity,All Muslim adults,1001,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,45.85,6.44,335,,100
+nativity,U.S. born,356,age_18_29,Aged 18-29,agerec,44.61,5.29,353,,100
+nativity,U.S. born,356,age_30_49,Aged 30-49,agerec,41.5,6.35,353,,100
+nativity,U.S. born,356,age_50_plus,Aged 50 or older,agerec,13.89,3.13,353,,100
+nativity,U.S. born,356,female,Female,sex,53.02,4.6,356,,100
+nativity,U.S. born,356,race_black,"Black, non-Hispanic",racethn,32.07,6.79,345,,100
+nativity,U.S. born,356,income_lt_30k,"Family income under $30,000",income,45.41,4.15,314,,100
+nativity,U.S. born,356,income_30_75k,"Family income $30,000-$75,000",income,26.96,2.8,314,,100
+nativity,U.S. born,356,income_75_100k,"Family income $75,000-$100,000",income,9.3,2.98,314,,100
+nativity,U.S. born,356,income_ge_100k,"Family income $100,000 or more",income,18.33,3.81,314,,100
+nativity,U.S. born,356,income_refused,Income not reported (of all respondents),income,11.44,2.66,356,,100
+nativity,U.S. born,356,edu_lt_hs,Did not finish high school,educrec,7.06,1.95,355,,100
+nativity,U.S. born,356,edu_hs,High school graduate,educrec,35.54,3.59,355,,100
+nativity,U.S. born,356,edu_some_college,Some college or associate degree,educrec,36.74,4.98,355,,100
+nativity,U.S. born,356,edu_ba_plus,Four-year college degree or more,educrec,20.65,3.18,355,,100
+nativity,U.S. born,356,edu_postgrad,Postgraduate or professional schooling,educrec,6.56,1.47,355,,100
+nativity,U.S. born,356,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,,,0,n<50,0
+nativity,U.S. born,356,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,100.0,0.0,356,,100
+nativity,U.S. born,356,party_republican,Identifies as Republican,party,6.85,1.98,350,,100
+nativity,U.S. born,356,party_democrat,Identifies as Democrat,party,42.88,5.14,350,,100
+nativity,U.S. born,356,party_independent,Identifies as independent,party,40.4,3.04,350,,100
+nativity,U.S. born,356,party_rep_or_lean,Republican or leans Republican,party+partyln,15.43,3.63,350,,100
+nativity,U.S. born,356,party_dem_or_lean,Democrat or leans Democratic,party+partyln,67.59,5.45,350,,100
+nativity,U.S. born,356,fert_none,No children ever born,fertREC,47.14,2.98,344,,100
+nativity,U.S. born,356,fert_3plus,Three or more children ever born,fertREC,19.29,2.84,344,,100
+nativity,U.S. born,356,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,1.19,0.11,344,,100
+nativity,U.S. born,356,satisfied_country,Satisfied with the way things are going in the country,qa2,18.1,5.66,339,,100
+nativity,U.S. born,356,homeowner,Owns their home,qa6,23.37,4.99,355,,100
+nativity,U.S. born,356,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,9.7,4.41,356,,100
+nativity,U.S. born,356,civilians_rarely_never,Killing civilians rarely or never justified,qf3,88.56,4.19,356,,100
+nativity,U.S. born,356,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,1.74,0.95,356,,100
+nativity,U.S. born,356,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,56.59,4.97,356,,100
+nativity,U.S. born,356,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,90.57,2.51,356,,100
+nativity,U.S. born,356,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,62.59,6.48,353,,100
+nativity,U.S. born,356,exp_suspicion,Past year: people acted suspicious of them,qd1a,48.2,4.81,352,,100
+nativity,U.S. born,356,exp_offensive_names,Past year: called offensive names,qd1c,24.76,4.09,356,,100
+nativity,U.S. born,356,exp_threatened,Past year: physically threatened or attacked,qd1f,8.79,3.25,356,,100
+nativity,U.S. born,356,proud_american,Completely or mostly agree: proud to be an American,qc17b,90.33,2.23,355,,100
+nativity,U.S. born,356,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,86.84,2.07,352,,100
+nativity,U.S. born,356,lot_in_common,A lot in common with most Americans,qc13,68.64,3.08,353,,100
+nativity,U.S. born,356,employed_full_time,Employed full time,employ,41.27,4.3,351,,100
+nativity,U.S. born,356,employed_part_time,Employed part time,employ,20.29,3.82,351,,100
+nativity,U.S. born,356,not_employed,Not employed,employ,38.45,4.46,351,,100
+nativity,U.S. born,356,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,57.38,8.84,131,,100
+nativity,Foreign born,631,age_18_29,Aged 18-29,agerec,27.79,3.35,628,,100
+nativity,Foreign born,631,age_30_49,Aged 30-49,agerec,45.84,2.82,628,,100
+nativity,Foreign born,631,age_50_plus,Aged 50 or older,agerec,26.37,3.13,628,,100
+nativity,Foreign born,631,female,Female,sex,47.07,5.73,631,,100
+nativity,Foreign born,631,race_black,"Black, non-Hispanic",racethn,10.69,2.08,616,,100
+nativity,Foreign born,631,income_lt_30k,"Family income under $30,000",income,36.76,2.86,566,,100
+nativity,Foreign born,631,income_30_75k,"Family income $30,000-$75,000",income,28.12,3.48,566,,100
+nativity,Foreign born,631,income_75_100k,"Family income $75,000-$100,000",income,6.45,1.46,566,,100
+nativity,Foreign born,631,income_ge_100k,"Family income $100,000 or more",income,28.67,3.08,566,,100
+nativity,Foreign born,631,income_refused,Income not reported (of all respondents),income,12.14,2.63,631,,100
+nativity,Foreign born,631,edu_lt_hs,Did not finish high school,educrec,9.51,2.84,628,,100
+nativity,Foreign born,631,edu_hs,High school graduate,educrec,26.56,2.22,628,,100
+nativity,Foreign born,631,edu_some_college,Some college or associate degree,educrec,25.45,3.75,628,,100
+nativity,Foreign born,631,edu_ba_plus,Four-year college degree or more,educrec,38.48,3.43,628,,100
+nativity,Foreign born,631,edu_postgrad,Postgraduate or professional schooling,educrec,16.08,2.63,628,,100
+nativity,Foreign born,631,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,69.22,2.67,628,,100
+nativity,Foreign born,631,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,69.22,2.67,628,,100
+nativity,Foreign born,631,party_republican,Identifies as Republican,party,7.12,2.06,600,,100
+nativity,Foreign born,631,party_democrat,Identifies as Democrat,party,37.97,3.16,600,,100
+nativity,Foreign born,631,party_independent,Identifies as independent,party,47.31,3.16,600,,100
+nativity,Foreign born,631,party_rep_or_lean,Republican or leans Republican,party+partyln,13.42,2.4,600,,100
+nativity,Foreign born,631,party_dem_or_lean,Democrat or leans Democratic,party+partyln,69.93,4.65,600,,100
+nativity,Foreign born,631,fert_none,No children ever born,fertREC,32.52,3.31,614,,100
+nativity,Foreign born,631,fert_3plus,Three or more children ever born,fertREC,30.57,4.28,614,,100
+nativity,Foreign born,631,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,1.67,0.12,614,,100
+nativity,Foreign born,631,satisfied_country,Satisfied with the way things are going in the country,qa2,41.25,2.79,578,,100
+nativity,Foreign born,631,homeowner,Owns their home,qa6,46.22,3.1,631,,100
+nativity,Foreign born,631,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,12.35,2.61,631,,100
+nativity,Foreign born,631,civilians_rarely_never,Killing civilians rarely or never justified,qf3,80.54,3.66,631,,100
+nativity,Foreign born,631,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,7.1,2.7,631,,100
+nativity,Foreign born,631,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,49.21,4.09,631,,100
+nativity,Foreign born,631,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,66.79,2.74,608,,100
+nativity,Foreign born,631,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,42.43,3.66,611,,100
+nativity,Foreign born,631,exp_suspicion,Past year: people acted suspicious of them,qd1a,20.64,2.74,627,,100
+nativity,Foreign born,631,exp_offensive_names,Past year: called offensive names,qd1c,15.31,2.4,630,,100
+nativity,Foreign born,631,exp_threatened,Past year: physically threatened or attacked,qd1f,3.98,1.35,631,,100
+nativity,Foreign born,631,proud_american,Completely or mostly agree: proud to be an American,qc17b,96.3,1.39,611,,100
+nativity,Foreign born,631,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,78.86,3.95,612,,100
+nativity,Foreign born,631,lot_in_common,A lot in common with most Americans,qc13,53.91,3.5,622,,100
+nativity,Foreign born,631,employed_full_time,Employed full time,employ,45.42,3.41,620,,100
+nativity,Foreign born,631,employed_part_time,Employed part time,employ,12.91,2.25,620,,100
+nativity,Foreign born,631,not_employed,Not employed,employ,41.67,3.09,620,,100
+nativity,Foreign born,631,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,38.08,8.11,202,,100
+nativity,Difference: foreign born minus U.S. born,987,age_18_29,Aged 18-29,agerec,-16.82,5.27,981,,100
+nativity,Difference: foreign born minus U.S. born,987,age_30_49,Aged 30-49,agerec,4.33,6.09,981,,100
+nativity,Difference: foreign born minus U.S. born,987,age_50_plus,Aged 50 or older,agerec,12.48,4.19,981,,100
+nativity,Difference: foreign born minus U.S. born,987,female,Female,sex,-5.95,8.29,987,,100
+nativity,Difference: foreign born minus U.S. born,987,race_black,"Black, non-Hispanic",racethn,-21.38,6.81,961,,100
+nativity,Difference: foreign born minus U.S. born,987,income_lt_30k,"Family income under $30,000",income,-8.65,5.49,880,,100
+nativity,Difference: foreign born minus U.S. born,987,income_30_75k,"Family income $30,000-$75,000",income,1.16,4.53,880,,100
+nativity,Difference: foreign born minus U.S. born,987,income_75_100k,"Family income $75,000-$100,000",income,-2.85,3.48,880,,100
+nativity,Difference: foreign born minus U.S. born,987,income_ge_100k,"Family income $100,000 or more",income,10.34,5.57,880,,100
+nativity,Difference: foreign born minus U.S. born,987,income_refused,Income not reported (of all respondents),income,0.71,4.48,987,,100
+nativity,Difference: foreign born minus U.S. born,987,edu_lt_hs,Did not finish high school,educrec,2.45,3.48,983,,100
+nativity,Difference: foreign born minus U.S. born,987,edu_hs,High school graduate,educrec,-8.99,3.8,983,,100
+nativity,Difference: foreign born minus U.S. born,987,edu_some_college,Some college or associate degree,educrec,-11.29,5.37,983,,100
+nativity,Difference: foreign born minus U.S. born,987,edu_ba_plus,Four-year college degree or more,educrec,17.83,3.8,983,,100
+nativity,Difference: foreign born minus U.S. born,987,edu_postgrad,Postgraduate or professional schooling,educrec,9.52,2.77,983,,100
+nativity,Difference: foreign born minus U.S. born,987,citizen_yes_of_foreign_born,U.S. citizen (item asked of the foreign born only),citizen,,0.0,628,n<50,100
+nativity,Difference: foreign born minus U.S. born,987,citizen_or_us_born,"U.S. citizen, counting the U.S. born as citizens",citizen+respondent_birthregion2,-30.78,2.67,984,,100
+nativity,Difference: foreign born minus U.S. born,987,party_republican,Identifies as Republican,party,0.27,2.37,950,,100
+nativity,Difference: foreign born minus U.S. born,987,party_democrat,Identifies as Democrat,party,-4.91,6.72,950,,100
+nativity,Difference: foreign born minus U.S. born,987,party_independent,Identifies as independent,party,6.91,4.08,950,,100
+nativity,Difference: foreign born minus U.S. born,987,party_rep_or_lean,Republican or leans Republican,party+partyln,-2.01,4.86,950,,100
+nativity,Difference: foreign born minus U.S. born,987,party_dem_or_lean,Democrat or leans Democratic,party+partyln,2.34,8.49,950,,100
+nativity,Difference: foreign born minus U.S. born,987,fert_none,No children ever born,fertREC,-14.62,3.55,958,,100
+nativity,Difference: foreign born minus U.S. born,987,fert_3plus,Three or more children ever born,fertREC,11.29,5.77,958,,100
+nativity,Difference: foreign born minus U.S. born,987,fert_mean_floor,Mean children ever born (top code 4+ counted as 4: a floor),fertREC,0.48,0.14,958,,100
+nativity,Difference: foreign born minus U.S. born,987,satisfied_country,Satisfied with the way things are going in the country,qa2,23.15,6.04,917,,100
+nativity,Difference: foreign born minus U.S. born,987,homeowner,Owns their home,qa6,22.85,5.18,986,,100
+nativity,Difference: foreign born minus U.S. born,987,civilians_often_sometimes,Killing civilians often or sometimes justified,qf3,2.65,4.42,987,,100
+nativity,Difference: foreign born minus U.S. born,987,civilians_rarely_never,Killing civilians rarely or never justified,qf3,-8.01,3.22,987,,100
+nativity,Difference: foreign born minus U.S. born,987,civilians_no_answer,Killing civilians: no answer given (volunteered DK/refused),qf3,5.36,2.9,987,,100
+nativity,Difference: foreign born minus U.S. born,987,homosexuality_accepted,Homosexuality should be accepted by society,qb2c,-7.39,7.51,987,,100
+nativity,Difference: foreign born minus U.S. born,987,discrim_a_lot,A lot of discrimination against Muslims in the U.S.,qb7a,-23.78,3.84,964,,100
+nativity,Difference: foreign born minus U.S. born,987,harder_to_be_muslim,Has become more difficult to be a Muslim in the U.S.,qc3,-20.16,7.98,964,,100
+nativity,Difference: foreign born minus U.S. born,987,exp_suspicion,Past year: people acted suspicious of them,qd1a,-27.56,6.13,979,,100
+nativity,Difference: foreign born minus U.S. born,987,exp_offensive_names,Past year: called offensive names,qd1c,-9.45,5.0,986,,100
+nativity,Difference: foreign born minus U.S. born,987,exp_threatened,Past year: physically threatened or attacked,qd1f,-4.8,3.44,987,,100
+nativity,Difference: foreign born minus U.S. born,987,proud_american,Completely or mostly agree: proud to be an American,qc17b,5.97,2.67,966,,100
+nativity,Difference: foreign born minus U.S. born,987,belong_muslim_community,Completely or mostly agree: strong belonging to U.S. Muslim community,qc17d,-7.98,4.67,964,,100
+nativity,Difference: foreign born minus U.S. born,987,lot_in_common,A lot in common with most Americans,qc13,-14.73,4.83,975,,100
+nativity,Difference: foreign born minus U.S. born,987,employed_full_time,Employed full time,employ,4.15,4.93,971,,100
+nativity,Difference: foreign born minus U.S. born,987,employed_part_time,Employed part time,employ,-7.37,3.74,971,,100
+nativity,Difference: foreign born minus U.S. born,987,not_employed,Not employed,employ,3.22,5.43,971,,100
+nativity,Difference: foreign born minus U.S. born,987,looking_for_work_of_not_employed,Looking for work (base: not employed),employ1,-19.31,11.43,333,,100
