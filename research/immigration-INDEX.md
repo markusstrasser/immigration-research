@@ -164,6 +164,14 @@ Education-specific fiscal evidence: [annual comparisons, lifetime uncertainty an
 
 Earlier repaired fiscal profiles: [yearly and lifetime results](immigration-yearly-lifetime-cost-repair-2026-09-19.md). The $217.32bn/$239.24bn annual source vintage is superseded by the finance refresh and September20 school correction above. Lifetime comparisons retain pinned age profiles, conditional survival and explicit discount/allocation assumptions; they are not validated admission forecasts. The [September19 cross-check](immigration-five-day-cross-check-2026-09-19.md) and birth-versus-arrival budget remain superseded/withdrawn. Narrative and essay writing are operator-owned.
 
+[Practitioner range for the September 19 ledger](immigration-ledger-practitioner-range-2026-09-22.md):
+the conventions a budget modeler would run put the union's annual expanded balance at
+**−$290bn to −$190bn** around −$217bn (ladder 172); the full 63-cell design spans −$496bn to
+−$76bn, and the −$548/−$87bn range still printed in the ledger's RESULT.md is the stale
+September 17 build. Public goods per capita is a second object (−$502 to −$402bn). Convention
+hulls, not confidence intervals.
+
+
 Consistent accounting and raw histories: [all-age fiscal and later-generation findings](immigration-all-age-and-lineage-findings-2026-09-17.md) rebuilds the expanded account on one population with CPS/MEPS uncertainty, tests fixed-budget attribution and common ages, and reconstructs IIMMLA generations/outcomes. Large benchmark shortfalls persist; absolute partial balances, allocation effects and outcome-specific generation differences are reported separately (ladder 123–124).
 
 All-age claim audit: [fiscal benchmark gaps, remittances and later generations](immigration-aggregate-and-generation-audit-2026-09-17.md) reproduces the $212bn/$153bn partial-account differences, exposes their positive absolute balance, and corrects the remittance ceiling and incompatible ancestry definitions.
@@ -196,6 +204,7 @@ Latest supplied-data audit: [immigration-new-datasets-and-conclusions-2026-09-17
 | `immigration-ncvs-victim-offender-off-the-murder-margin-2026-09-18.md` | Victim/perceived-offender distributions; corrected Hispanic $90.91 annual CJS scenario reproduces, but severity is imputed and victim ethnicity does not identify taxpayer incidence; age adjustment is a proxy | Separating measured incident distributions from cost scenarios |
 | `immigration-apportionment-seats-attributable-2026-09-18.md` | 24-seat fixed-location count counterfactual for Mexican-origin residents; depends on size and uneven geography; not ethnic seat ownership or an immigration-policy/election effect | Representation counterfactuals |
 | [Current yearly/lifetime calculation index](immigration-yearly-lifetime-cost-repair-2026-09-19.md) | Repaired program ownership, personal/shared annual balances, actual-age survival NPVs, real discounts and explicit unresolved coverage | Reusing any September yearly or lifetime scalar |
+| [Practitioner range, Sept 19 ledger](immigration-ledger-practitioner-range-2026-09-22.md) | 2026-09-22, ladder 172: practitioner hull −$290 to −$190bn around −$217bn; design hull −$496 to −$76bn (+$41bn with the dial at zero); public-goods object −$502 to −$402bn; stale 144-cell range stamped | Quoting any range for the ledger, or choosing between its conventions |
 | `immigration-lifetime-longevity-and-social-security-timing-2026-09-18.md` | Historical mortality/timing study; flat-shift results superseded by current calculation index; invalid SSA accrual adjustment disabled | Tracing earlier lifetime claims |
 | `immigration-marginal-revolution-claims-audit-2026-09-18.md` | Source archive and commentator comparisons; schooling-loan HARD grade and claim totals withdrawn by the September 19 audit; resident accounting is not a full cost-benefit analysis | Reusing a commentator rebuttal |
 | `immigration-first-generation-crime-cost-weighted-2026-09-18.md` | Texas all-age cost-weighted foreign-born charge ratio 0.79 vs all US-born; adult/18–39 versions change denominators only; DHS-record explanation corrected | Comparing status, age and charge denominators |
