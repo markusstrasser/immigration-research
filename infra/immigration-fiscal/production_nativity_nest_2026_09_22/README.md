@@ -8,7 +8,12 @@ counterfactual with a native–immigrant nest inside each skill cell moves the t
 unverified Option B. Under Option A the move is almost entirely a transfer *inside* the
 beneficiary set: natives gain **+53.97bn** and other foreign-born residents lose **−45.93bn**
 at ε = 3, gdp scaling, so the net private change is **+8.04bn**
-[CALCULATION: `derived/nest_headline.csv`].
+[CALCULATION: `derived/nest_headline.csv`]. Occupation overlap on the same CPS file puts the
+elasticity this two-cell nest has to carry near 6 (sketch about 4–9 at a within-job elasticity
+of 20). The computed neighbors are ε = 5 and ε = 7, where the term is +21.53 / +14.21bn and
++19.16 / +12.64bn. That reading is a sketch, not an estimate, and it is not applied
+[CALCULATION: `occupation_overlap.py`, `derived/occupation_overlap.csv`,
+`derived/elasticity_sketch.csv`].
 
 All nine gates pass; G3 is reformulated and G9's criterion is option-neutral, both stated in
 `RESULT.md` and in `derived/audit.json`. Numbers are conditional model scenarios under a
@@ -98,6 +103,9 @@ is reported beside Option A, never instead of it.
 | `derived/branch_composition.csv` | yes | four branches × two cells × four proxy/split, 32 rows |
 | `derived/audit.json` | yes | 43 source hashes, ε citation status, all gate results, δ-floor table, limits |
 | `derived/nest_scenarios.csv` | no | 77,760 rows: 3,888 upstream keys × 10 ε × 2 options (grid extended 2026-09-22 evening with 8.7, 9 and 17.9) |
+| `derived/occupation_overlap.csv` | yes | earnings-share overlap inside each skill cell |
+| `derived/occupation_top_mexico_born_low.csv` | yes | twelve largest Mexico-born low-cell occupations |
+| `derived/elasticity_sketch.csv` | yes | harmonic mix of a within-job and a between-job elasticity; not an estimate |
 
 ## Limitations
 
@@ -119,6 +127,8 @@ Copied from `SPEC.md` §7 without softening; the machine-readable copy is `limit
    residents lose from the union's presence under Option A, so the net moves much less than
    either side.
 6. **The elasticity is transported, not estimated.** No ε here is estimated on this population.
+   `occupation_overlap.py` measures job overlap and sketches where ε would sit; it does not
+   replace the grid.
 7. **No occupations, no regions, no trade, no prices.** Two education cells and one closed
    economy. A number here is not comparable to Cravino's $38.6bn except in order of magnitude.
 8. **No unauthorized/authorized split.** The union is defined by origin and generation; the CPS

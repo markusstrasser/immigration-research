@@ -20,6 +20,15 @@ natives gain **+53.97bn** and other foreign-born residents lose **−45.93bn** a
 scaling, netting to **+8.04bn** of private willingness to pay
 [CALCULATION: `derived/nest_headline.csv`].
 
+**Job distribution, added after the gates.** On the same CPS file, low-cell natives and
+foreign-born share 0.644 of detailed-occupation earnings (0.768 at major groups). A harmonic
+sketch with a within-job elasticity of 20 and a between-job elasticity of 2.5 gives ε of 5.7
+and 7.6; across between-job elasticities 1.6–3 the sketch runs about 3.9–8.6. The center is
+about 6. The computed neighbors already in the table are ε = 5 (+21.53 / +14.21bn) and ε = 7
+(+19.16 / +12.64bn). The sketch is not an estimate and was not fed back into the solver.
+[CALCULATION: `occupation_overlap.py`, `derived/occupation_overlap.csv`,
+`derived/elasticity_sketch.csv`]
+
 [UNVERIFIED-STRUCTURAL] applies to every `B_target_branch` row. Every number below is a
 conditional model scenario under a stationary comparison, never an identified policy effect.
 
