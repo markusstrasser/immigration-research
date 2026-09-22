@@ -29,6 +29,16 @@ landing + AER article). Items I could not confirm at the primary source are tagg
 
 ## 1. IPUMS-CPS — 2nd-generation-by-origin cultural-transmission test (cluster-V V02)
 
+**Status 2026-09-22: EXECUTED.** The extract is staged and registered (dataset register
+`IPUMS_CPS_ASEC_1994_2025_2NDGEN`, fetched through the IPUMS API by
+`acquire/ipums_cps_second_gen.py`); `build/load_cps_second_gen.py` builds
+`cps_second_gen_by_origin`, and the lane
+[`second_generation_by_origin_2026_09_22`](../infra/immigration-fiscal/second_generation_by_origin_2026_09_22/RESULT.md)
+runs the V02 battery (memo: [second generation by origin](immigration-second-generation-by-origin-2026-09-22.md),
+ladder 178). Two things this spec did not anticipate: IPUMS-CPS `BPL`/`FBPL`/`MBPL` arrive as
+5-digit detailed codes (the general code is the integer quotient by 100), and the 2014 ASEC ships
+two full-population files (`HFLAG` 0 and 1) that double count the year unless one is dropped.
+
 ### What it unblocks
 The repo's IPUMS-**USA** supply-shock panel lacks **parental** birthplace, so it cannot identify
 who is a 2nd-generation immigrant or what their parents' origin is. IPUMS-**CPS** carries father's
