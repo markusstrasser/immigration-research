@@ -63,7 +63,7 @@ Inputs, all hashed into `derived/audit.json` and re-checked by the tests:
 3. **Named cells and hulls** (`derived/named_cells.csv`, `derived/hulls.csv`): central,
    practitioner pessimistic and optimistic, the disclosed stretches, the dropped corners,
    and the second object (F per capita). `derived/gross_flows.csv` carries the receipts
-   and outlays behind the net and what 20% of each would be.
+   and outlays behind the net.
 
 Standard errors follow the ledger's rule, 4/160 × Σ(replicate − full)², on the same 160
 replicate weights, so cell and difference SEs are exact for the survey part. They say
