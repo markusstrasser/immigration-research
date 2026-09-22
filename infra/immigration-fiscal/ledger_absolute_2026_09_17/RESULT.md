@@ -1,7 +1,7 @@
 <!-- fiscal-repair-2026-09-19 -->
 **Current fiscal release (September 19):** [Repaired yearly and lifetime calculation index](../../../research/immigration-yearly-lifetime-cost-repair-2026-09-19.md) supersedes affected annual, household-financing and lifetime figures below. It reports both allocation conventions, actual-age survival NPVs and unresolved coverage. Earlier text and calculations remain historical evidence; unrelated findings are unchanged.
 
-**Verdict:** Completing the account does not preserve the sign of the partial balance, and it does not rescue the gap either. The Mexican-origin union's measured partial absolute of **+$50.24bn** becomes **−$253.93bn** once every priceable omitted item is charged under the central conventions. The age-standardized gap against third-plus non-Hispanic whites widens from **−$5,795 to −$7,095 per standardized person**, and the age-matched total from **−$290.6bn to −$354.3bn**. That endpoint is a convention, not a measurement: across the 144 combinations of the four contested arms the union absolute runs from −$548.37bn to −$87.04bn and never turns positive. The account is dominated by average-cost public services, so the break-even marginality dial sits at **m\* = 0.120**. Summed over all civilian-household residents the account reaches a position of −$966.7bn against a consolidated FY2024 position of −$2,590.8bn, covering 63% of consolidated outlays and 71% of consolidated receipts; the −$1,624.1bn residual is reported, not forced.
+**Verdict:** [STALE since the September 19 rebuild (6a4b8b0): the live grid holds 63 admissible cells, −$496.2bn to −$76.1bn, central −$217.3bn with D and P on; practitioner range −$290bn to −$190bn in `../ledger_recut_2026_09_22/RESULT.md`] Completing the account does not preserve the sign of the partial balance, and it does not rescue the gap either. The Mexican-origin union's measured partial absolute of **+$50.24bn** becomes **−$253.93bn** once every priceable omitted item is charged under the central conventions. The age-standardized gap against third-plus non-Hispanic whites widens from **−$5,795 to −$7,095 per standardized person**, and the age-matched total from **−$290.6bn to −$354.3bn**. That endpoint is a convention, not a measurement: across the 144 combinations of the four contested arms the union absolute runs from −$548.37bn to −$87.04bn and never turns positive. The account is dominated by average-cost public services, so the break-even marginality dial sits at **m\* = 0.120**. Summed over all civilian-household residents the account reaches a position of −$966.7bn against a consolidated FY2024 position of −$2,590.8bn, covering 63% of consolidated outlays and 71% of consolidated receipts; the −$1,624.1bn residual is reported, not forced.
 
 ## Audit correction — September 19, 2026
 
@@ -103,7 +103,7 @@ Every reported number comes from `params/params.json` (sha256 in `audit.json`) o
 
 ### Arms matrix, union absolute $bn
 
-144 combinations, from -548.4bn to -87.0bn.
+144 combinations, from -548.4bn to -87.0bn. [STALE since the September 19 rebuild (6a4b8b0): the live grid holds 63 admissible cells, −$496.2bn to −$76.1bn, central −$217.3bn with D and P on; practitioner range −$290bn to −$190bn in `../ledger_recut_2026_09_22/RESULT.md`]
 
 | corner | F | E | C | R | union $bn |
 |---|---|---|---|---|---|
@@ -305,7 +305,7 @@ EXIT=0
    12    F    0.000000    -252.446798 8.784940           central_arm_is_zero
    13    S   -1.485181    -253.931979 8.808802                   cps_records
 
-arms matrix union absolute range: -548.37bn to -87.04bn over 144 combinations
+arms matrix union absolute range: -548.37bn to -87.04bn over 144 combinations [STALE since the September 19 rebuild (6a4b8b0): the live grid holds 63 admissible cells, −$496.2bn to −$76.1bn, central −$217.3bn with D and P on; practitioner range −$290bn to −$190bn in `../ledger_recut_2026_09_22/RESULT.md`]
 break-even m* = 0.12044407952168636
 items dropped for want of a verified parameter: ['D', 'S(states without a verified line)']
 PASS: 168 item rows, 84 waterfall rows, 144 arm combinations, 21 marginality points
@@ -389,7 +389,7 @@ the gap by $14 per standardized person.
 | union complete common-age gap vs 3rd+ NH white, $/person | −7,095 (302) | **−7,224 (302)** |
 | union complete age-matched gap vs white, $bn | −354.3 (12.0) | **−361.1 (12.0)** |
 | union complete common-age gap vs all natives, $/person | −4,928 (257) | **−5,023 (257)** |
-| arms matrix range, 144 combinations | −548.37 to −87.04 | **−557.67 to −96.33** |
+| arms matrix range, 144 combinations | −548.37 to −87.04 | **−557.67 to −96.33** | [STALE since the September 19 rebuild (6a4b8b0): the live grid holds 63 admissible cells, −$496.2bn to −$76.1bn, central −$217.3bn with D and P on; practitioner range −$290bn to −$190bn in `../ledger_recut_2026_09_22/RESULT.md`]
 | break-even marginality dial m\* | 0.1204 | **0.1167** |
 | national account position | −966.7bn | −1,007.4bn |
 | national residual, unpriced or coverage | −1,624.1bn | −1,583.4bn |
