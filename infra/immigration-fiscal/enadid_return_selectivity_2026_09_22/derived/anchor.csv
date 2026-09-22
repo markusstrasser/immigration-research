@@ -1,0 +1,9 @@
+wave,source,figure,published_pct,reproduced_pct,se_pct,diff_pp,weighted_denominator,n_unweighted
+2018,"resultados_enadid23.pdf, prior-residence chart","prior residence: same state, population 5+",96.6,96.64561222087254,0.06913813080204614,0.0456122208725418,115702246.0,356560
+2018,"resultados_enadid23.pdf, prior-residence chart","prior residence: another state, population 5+",2.9,2.9125104451299935,0.06544104998408283,0.012510445129993553,115702246.0,356560
+2018,"resultados_enadid23.pdf, prior-residence chart","prior residence: another country, population 5+",0.4,0.44187733399747486,0.021107108110482407,0.04187733399747484,115702246.0,356560
+2018,"resultados_enadid23.pdf, destination-country chart",share of international emigrants whose destination was the US,84.8,84.84172144604412,1.1295913538678237,0.041721446044121535,760779.0,2611
+2023,"resultados_enadid23.pdf, prior-residence chart","prior residence: same state, population 5+",96.7,96.68429242163049,0.06625926473877745,-0.015707578369514863,121585903.0,336829
+2023,"resultados_enadid23.pdf, prior-residence chart","prior residence: another state, population 5+",3.0,2.9707309078421695,0.06359743286995623,-0.029269092157830467,121585903.0,336829
+2023,"resultados_enadid23.pdf, prior-residence chart","prior residence: another country, population 5+",0.3,0.344976670527339,0.01642653053802483,0.044976670527339,121585903.0,336829
+2023,"resultados_enadid23.pdf, destination-country chart",share of international emigrants whose destination was the US,87.9,87.91688188175878,0.7816191494144695,0.016881881758777695,1219710.0,3660
