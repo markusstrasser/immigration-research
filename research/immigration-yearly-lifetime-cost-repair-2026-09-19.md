@@ -126,3 +126,9 @@ the missing ethnicity dimension of the 65+ community public medical transport (a
 birth only) at −3% to +56% of the union's −$43.6bn 65+ cell: up to about $24bn more cost and
 no reduction (ladder 173). Institutional item N is not bounded by it. No value changes; the
 re-aged and lifetime 65+ cells inherit the bound.
+
+2026-09-22, later: the [MEPS Mexican-origin check](immigration-mexican-origin-medical-transport-check-2026-09-22.md)
+on the transport's own donor file gives 0.89 (CI 0.61–1.18) at 65+ and 0.69 (SE 0.10) at
+18–64 against the all-donor cell means, so the two files together leave the 65+ ethnicity
+dimension unsigned (about −40% to +56%) and the earlier "no reduction" clause is withdrawn;
+under 65 the direction is a smaller cost. No value changes (ladder 175).

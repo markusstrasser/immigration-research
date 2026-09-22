@@ -13,8 +13,9 @@ a Medicaid payment against 5% of whites, while out-of-pocket and private insuran
 income, 0.70 (CI 0.48–0.92) at or above, and 51% of Hispanic 65+ beneficiaries sit below
 that line against 14% of whites. The ledger's public medical transport carries age and US
 birth and nothing else, so for the union's 65+ cell (−$43.6bn) this file bounds the missing
-ethnicity dimension at **−3% to +56%: up to about $24bn more cost, and no reduction**; the
-point ratio implies $11.6bn more. Hispanic is not Mexican-origin, institutional care is
+ethnicity dimension at **−3% to +56%: up to about $24bn more cost, and no reduction** [the
+"no reduction" clause is WITHDRAWN 2026-09-22 (later): the Mexican-origin check on the transport's own
+MEPS file gives 0.89 (CI 0.61–1.18) at 65+, see Revisions]; the point ratio implies $11.6bn more. Hispanic is not Mexican-origin, institutional care is
 outside the file, and the Medicare Advantage accounting makes the public figure a lower
 bound.
 [CALCULATION: [`mcbs_elderly_medical_2026_09_22`](../infra/immigration-fiscal/mcbs_elderly_medical_2026_09_22/RESULT.md)]
@@ -110,3 +111,9 @@ manifest.json, derived/mcbs_validation.json)] [CALCULATION:
 ## Revisions
 
 - 2026-09-22: created. Ladder 173. No ledger value changes.
+- 2026-09-22, later: the [Mexican-origin check on the transport's own MEPS file](immigration-mexican-origin-medical-transport-check-2026-09-22.md)
+  runs the other way at 65+ (Mexican-origin/all-donor public spending 0.89, CI 0.61–1.18;
+  2023–24 pooled 0.81, SE 0.09). Taken together the two files leave the sign of the missing
+  ethnicity dimension open, about −40% to +56% on the 65+ cell; the "no reduction" clause in
+  the verdict above is withdrawn. The mechanism both files agree on stands: far more Medicaid,
+  far less out-of-pocket and private payment, equal or lower total spending. Ladder 175.
