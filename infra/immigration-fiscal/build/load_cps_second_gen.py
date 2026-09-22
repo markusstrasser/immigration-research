@@ -110,6 +110,11 @@ def build() -> None:
                      WHEN CAST(SEX AS INT)=2 THEN 0.0 END AS female_in_lf
             FROM _cps
             WHERE CAST(AGE AS INT) BETWEEN 25 AND 64
+              -- 2014 ASEC ships two full-population files (HFLAG 0 = 5/8 traditional income
+              -- questions, HFLAG 1 = 3/8 redesigned), each weighted to the whole population;
+              -- keeping both double counts 2014 (fixed 2026-09-22). Keep the traditional file,
+              -- whose income questions match 1994-2013.
+              AND NOT (CAST(YEAR AS INT) = 2014 AND COALESCE(CAST(HFLAG AS VARCHAR), '') = '1')
         )
         SELECT
             {GEN_CASE} AS generation,
