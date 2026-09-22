@@ -1,0 +1,4 @@
+quantity,published_bn,published_se_bn,published_where,rebuilt_bn,rebuilt_se_bn
+base partial account,50.238214,7.473981,ledger RESULT.md line 262 and live waterfall.csv step 0,50.23821424861819,7.473981330782249
+"live union complete endpoint (D,P on; E zero)",-217.3164023135495,8.700282162278882,live waterfall.csv step 14,-217.3164023135495,8.70028216227888
+"Sept 17 union endpoint (stale vintage; D,P off; E stock; S half)",-253.93,8.81,ledger RESULT.md line 262 (superseded by Sept 18-19 rebuilds),-212.22619886361662,8.693755838344751

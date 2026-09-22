@@ -1,0 +1,11 @@
+object,allocation,line,assigned_bn,headline_response,charged_in_headline_bn,sign_convention
+complete account,personal,general_public_services (all levels),48.29126941402353,0.0,0.0,welfare_bn negative = cost to others
+complete account,personal,domestic_interest (all levels),134.53828760699113,0.0,0.0,welfare_bn negative = cost to others
+complete account,personal,"ordinary services in the G-like functions (public order, economic affairs, housing, recreation)",106.96722761691778,,,response 1 in the proportional reference; economic affairs and recreation 0 in the CBO-lag profiles
+complete account,shared,general_public_services (all levels),48.29126941402353,0.0,0.0,welfare_bn negative = cost to others
+complete account,shared,domestic_interest (all levels),134.53828760699113,0.0,0.0,welfare_bn negative = cost to others
+complete account,shared,"ordinary services in the G-like functions (public order, economic affairs, housing, recreation)",106.96722761691778,,,response 1 in the proportional reference; economic affairs and recreation 0 in the CBO-lag profiles
+"ledger (live, shared)",shared,"item G state-local general services, fee-netted",142.41574198875705,1.0,142.41574198875705,balance negative = cost; charged at m=1 in the central arm
+"ledger (live, shared)",shared,"of which state-local general administration (financial admin, public buildings, other admin), gross-share transport",15.071799870784101,1.0,15.071799870784101,share 0.1058 of 2022 gross G applied to net G [INFERENCE]
+"ledger (live, shared)",shared,"of which state-local interest on general debt, gross-share transport",11.560200632481864,1.0,11.560200632481864,share 0.0812 of 2022 gross G applied to net G [INFERENCE]
+"ledger (live, shared)",shared,"item F federal defense, net interest, general government",0.0,0.0,0.0,"central arm zero, same treatment as the complete account"
