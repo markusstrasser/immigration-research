@@ -37,6 +37,7 @@ COH = [(0, 1979, "pre1980"), (1980, 1989, "1980-89"), (1990, 1999, "1990-99"),
 
 
 def cohort_of(y):
+    y = pd.to_numeric(y, errors="coerce")
     if pd.isna(y):
         return None
     for lo, hi, lab in COH:
@@ -103,18 +104,24 @@ def load_staged():
     for f in sorted(glob.glob(os.path.join(CACHE, "acs_*.parquet"))):
         d = pd.read_parquet(f)
         d = d[d.POBP == 303].copy()
-        d["edu4"] = edu4_modern(d.SCHL)
+        d["edu4"] = edu4_old(d.SCHL) if int(d.YEAR.iloc[0]) <= 2007 else edu4_modern(d.SCHL)
         frames.append(d)
     return frames
 
 
 def main():
-    parts = load_api() + load_staged()
+    staged = load_staged()
+    staged_years = {int(p.YEAR.iloc[0]) for p in staged}
+    api = [p for p in load_api() if int(p.YEAR.iloc[0]) not in staged_years]
+    parts = api + staged
     if not parts:
         raise SystemExit("no input files")
     keep = ["YEAR", "PWGTP", "AGEP", "SEX", "SCHL", "ENG", "YOEP", "CIT", "ESR", "WAGP",
             "WKHP", "edu4"]
     df = pd.concat([p[[c for c in keep if c in p.columns]] for p in parts], ignore_index=True)
+    for c in ["YEAR", "PWGTP", "AGEP", "SEX", "SCHL", "ENG", "YOEP", "CIT", "ESR", "WAGP", "WKHP"]:
+        if c in df.columns:
+            df[c] = pd.to_numeric(df[c], errors="coerce")
     df = df[(df.AGEP >= 25) & (df.AGEP <= 54)].copy()
     df["cohort"] = df.YOEP.map(cohort_of)
     df["ysm"] = df.YEAR - df.YOEP

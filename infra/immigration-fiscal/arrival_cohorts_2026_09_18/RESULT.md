@@ -33,7 +33,7 @@ Memo: `/Users/alien/Projects/immigration-research/research/immigration-mexican-a
 | `derived/bound_implied_leaver_education.csv` | Return-migration accounting bound on education |
 | `derived/bound_stayer_residual_inflation.csv` | Stayer-only bias in the earnings residual as L·δ |
 | `derived/bound_undercount_sensitivity.csv` | ACS undercount stress test for the 2018–23 cohort |
-| `derived/english_*.csv`, `derived/edu_*_cohort_x_duration_matrix.csv` | English and education by cohort × duration band, **2023 and 2024 only**, so most cells are empty and the decomposition is not identified (see Not delivered) |
+| `derived/english_*.csv`, `derived/edu_*_cohort_x_duration_matrix.csv` | English and education by cohort × duration band, ACS 1-year 2005–2024 except 2020 (1.08M Mexico-born ages 25–54). Weighted, design-naive, stayers only. 2016/2018/2021/2022 are Census PUMS API state chunks (`POBP=303`); other years are staged person zips. |
 
 ## Scripts
 
@@ -49,10 +49,13 @@ state reads like a survey year and would silently corrupt every cross-cohort com
 - IPUMS USA panel `ipums_usa_borjas_panel` in
   `/Users/alien/research-data/immigration-fiscal/derived/immigration_microdata.duckdb`, opened
   read-only and not modified. 1980/1990/2000 censuses + 2010/2023 ACS. Mexico-born `BPL == 200`.
-- ACS 1-year PUMS 2023 (`data/census/acs_pums_2023_person.zip`) and 2024
-  (`data/external/acs_pums_2024_1yr/csv_pus.zip`). Mexico-born `POBP == 303`.
-- Mexico-born person records for ACS 1-year 2005–2021 pulled from the Census PUMS API with the
-  predicate `POBP=303`, cached in `_cache/pums_api_<year>_mex.json`.
+- ACS 1-year PUMS person zips in `data/external/acs_pums_years/csv_pus_{year}.zip` for
+  2005–2015, 2017–2018, 2021, plus the already-held 2013/2019/2023/2024 files. 2016 and 2022
+  zips failed a size check and are retried; Mexico-born 25–54 for those years (and 2018/2021)
+  are in `_cache/states_<year>/` from `fetch_pums_mex.py`. 2020 has no 1-year ACS.
+- Mexico-born person records: staged `_cache/acs_<year>.parquet` (all birthplaces, ages 25–54)
+  plus complete 51-state API pulls for 2016/2018/2021/2022. Partial 2013/2019 API dirs are
+  ignored (`english_cohorts.py` refuses <51 state files).
 - CBP Nationwide Encounters FY2021–FY2024 (retrieved this lane, saved to
   `data/external/cbp/nationwide-encounters-fy21-fy24-aor.csv`) and FY2022–FY2025 (already staged).
 - INEGI grado promedio de escolaridad 2000–2020 and the 2020 census attainment distribution,
@@ -68,8 +71,12 @@ worked: force `--http1.1` with `-C -` resume for files that support byte ranges,
 do not (cbp.gov), loop fresh fetches and validate the payload before accepting it. The Census PUMS
 API with a `POBP=303` predicate is far cheaper than downloading the full person file when only one
 birthplace is needed; it also drops connections, so validate that the JSON ends in `]]`.
-Partial FTP downloads are parked at `data/external/acs_pums_years/pus_*.zip.part` with the
-resumable loop in `/tmp/dl_pums.sh`.
+Do not resume unverified `.part` files (`-C -` grew a junk suffix on 2005 and a junk prefix on
+2013). Fetcher: `download_missing_acs_years.sh` (HTTP/1.1, Content-Length + `unzip -t`).
+Mexico-born state chunks: `fetch_pums_mex.py`. Vermont 2022 returned HTTP 200 with an empty
+body (zero Mexico-born 25–54); stored as a header-only table. A fresh `--http1.1` 2013 zip:
+`csv_pus_2013.zip`, 616,326,250 bytes, SHA-256
+`414dad47774ae751209391cd83e4c88706488ca8a7dd4ac1c2faa4bf2d7cf2a1`, `unzip -tqq` exit 0.
 
 ## Caveats that travel with these numbers
 
@@ -84,21 +91,17 @@ comparable because the INEGI base is ages 15+ and the migrant base is 25–54.
 
 ## Not delivered
 
-**English ability at two fixed points per cohort** (brief item 2). Separating cohort from duration
-needs ACS 1-year files between 2005 and 2019. The Census FTP site served full-year PUMS zips at
-roughly 13 MB/min and dropped every large transfer; the Census PUMS API with a `POBP=303` predicate
-returns exactly the right records and works, but at about 27 KB/s, roughly an hour per survey year.
-`english_cohorts.py` is written and tested against the staged 2023/2024 files and consumes
-state-chunked API pulls from `_cache/states_<year>/st_*.json`; the fetcher is `/tmp/fetch_states.sh
-<year>`, which skips state files it already has, so rerunning it resumes. Partial 2013 and 2019
-pulls (4 of 51 states each) are on disk; the background fetchers were stopped when this lane closed
-rather than left competing for bandwidth. Run the fetcher to completion and then
-`english_cohorts.py` to finish the item. No cohort-versus-duration claim about
-English appears in the memo.
-
 **Origin attainment by birth cohort.** The origin comparison uses INEGI's national mean years of
 schooling for ages 15+, which supports a slope comparison but not placement of each migrant cohort
 in the origin distribution of its own generation. INEGI's census tabulados carry attainment by age
 group; they were not retrieved.
 
-Not committed.
+## Revisions
+
+**2026-09-22.** Brief item 2 (English/education at two durations per cohort) is now a measured
+table, not a missing download. Later Mexico-born cohorts arrive with more English and BA+ at 0–5
+years since arrival, and English also rises with duration inside a cohort.
+[DATA: `derived/english_cohort_x_duration_matrix.csv`, `derived/edu_baplus_cohort_x_duration_matrix.csv`;
+ACS 1-year 2005–2024 except 2020] [CALCULATION: `english_cohorts.py`] Stayers only; 2020
+absent; 2016 zip still a failed size check (API year used instead). No English claim was added to
+the memo.
