@@ -65,5 +65,7 @@ session: adae2b38-fa63-4fd0-b727-08c73975b287
 
 - **Push is blocked** by GitHub push protection on a false-positive AWS key ID in a974758 (`mr_archive_2026_09_18/derived/mr_posts.jsonl:597`, a 2016 presigned third-party URL; nothing to rotate). Choose: open the unblock link GitHub printed and mark it a false positive, or say "rewrite" (history rewrite was rehearsed in a scratch clone, not applied; main has advanced since, so it needs a fresh rehearsal).
 - **Pew 2017 Survey of US Muslims microdata** need a free Pew account (religion × nativity × income × attitudes; the only US religion-observed file we can get quickly).
+  consumed: 2026-09-22 zip staged at `external/pew/Pew-2017-US-Muslims.zip`, lane `pew_muslims_2017_2026_09_22` (report reproduced within 0.5 points), ladder 177, Muslim memo §2a — session 87fa457f
 - **New Immigrant Survey 2003** public-use files (ICPSR 38031, 38061; free ICPSR login): religion with earnings for new green-card holders.
+  consumed: 2026-09-22 ICPSR 38031 v3 staged at `external/icpsr_nis_2003/`, lane `nis2003_religion_earnings_2026_09_22` (19/26 anchors exact), ladder 179, Muslim memo §2b; 38061 (Round 2) not downloaded, visa class stays restricted — session 87fa457f
 - **Propose, not enacted (analysis protocol):** for a contested cross-unit test, commit the lane README with outcomes, models and decision rule before downloading the predictors, and record deviations in RESULT.md. Done once in `admission_route_2026_09_21` (6df195d); worth making the rule?
