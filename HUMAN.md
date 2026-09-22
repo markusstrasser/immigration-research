@@ -34,6 +34,7 @@ Everything doable without you is done and committed. Four things need you:
 ### 1. Pull two gated extracts → unblocks the deepest open tests (HIGH value, LOW effort)
 Both are spec'd and the analysis code is already built + wired (skips until the data lands).
 - **IPUMS-CPS** (your IPUMS account) → unblocks the **V02 2nd-generation-by-origin** cultural-transmission test (the real cross-generational decay, which IPUMS-USA can't do). Exact extract recipe: `research/immigration-gated-data-specs-2026-06-25.md` §1. Stage the CSV at `<data_root>/external/cps/cps_2ndgen.csv`; `load_cps_second_gen.py` runs automatically on the next `build context`.
+  consumed: 2026-09-22 extract 1 staged at `external/cps/cps_2ndgen.csv.gz` (5,721,633 rows, ASEC 1994–2025) and the loader fixed for CPS 5-digit codes (0ef9f5a) — session 87fa457f
 - **openICPSR 120490** (free login) → Abramitzky-Boustan immigrant intergenerational-mobility data (rank-rank by origin). Spec §3. File manifest is `[UNVERIFIED]` (the page 403s automated fetch) — open it in a browser.
 
 ### 2. Decide: build the housing/rent panel? — **SUPERSEDED by item A above (2026-06-25): now spec'd, Zillow acquired, ready to build.**
