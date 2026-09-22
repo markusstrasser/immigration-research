@@ -7,7 +7,7 @@ rate in every one of the 25 years. But over 2010–2024 California's housing sto
 than its population (1.77 added people per added unit against 2.31 in Texas), because its
 population barely grew. The same demand shift moves rents about 2.0 to 2.5 times more in
 coastal California than in Houston on published supply elasticities, which is why an equal
-Mexican-origin share can carry unequal rent effects. Across 168 metros, those whose
+Mexican-origin share can carry unequal rent effects. Across the 152 of 168 metros with a 2015 rent value, those whose
 Mexican-origin share rose more in 2010–2023 had higher rent growth in 2015–2026 (about 0.03
 log points per percentage point within state), but the "amplified where supply is inelastic"
 interaction is not separately identified in this cross-section. In 2024 native non-Hispanic
