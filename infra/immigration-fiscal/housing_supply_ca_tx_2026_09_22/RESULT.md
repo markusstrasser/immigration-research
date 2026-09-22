@@ -5,7 +5,7 @@ times as many per existing housing unit in 2023-24, and California sat below the
 rate in every sub-period. But over 2010-2024 California's housing stock grew faster than its
 population (8.73% against 5.66%, 1.77 added people per added unit) while Texas added 2.31
 people per added unit, because California's population barely grew. Both statements are
-descriptive. Across the 168-metro cross-section, metros whose Mexican-origin share rose more
+descriptive. Across the 168-metro cross-section (152 with a 2015 rent value), metros whose Mexican-origin share rose more
 had higher rent growth, and the interaction of that share change with the inverse supply
 elasticity is **not** separately distinguishable once main effects are included. On the ACS
 2024 PUMS, native-born non-Hispanic white adults 25-64 left California on net at 11.73 per

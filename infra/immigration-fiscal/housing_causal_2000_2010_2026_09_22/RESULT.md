@@ -5,7 +5,7 @@ rise in the foreign-born share of population over the decade raises **house valu
 6 to 12%** and **rents by 0 to 4%** when instrumented with the ancestry push-pull prediction
 (ladder 182): values **+11.6% (SE 2.9)**, +5.7% (2.8) with the 2000 level controlled; rents
 **+1.4% (1.4)**, a null whose interval [−1.5, +4.2] contains both zero and Saiz's one-for-one.
-The settlement shift-share gives figures two to five times larger (values +29%, rents +7.8%)
+The settlement shift-share gives figures 2.5 to 5.7 times larger (values +29%, rents +7.8%)
 and Hansen J rejects the instrument pair on both outcomes (p 0.00001 and 0.0006), the same
 pattern as the transfers outcomes: the settlement instrument loads on where prices were
 already high and rising. No amplification in supply-inelastic metros is detectable: on the

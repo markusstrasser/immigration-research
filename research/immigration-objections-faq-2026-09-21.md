@@ -23,15 +23,27 @@ reference group; it carries later corrections that were not propagated to the le
 of the other, and the generation split must not be scaled onto the complete-account total.
 
 **Offsets do not add.** The production gain ($8.8–13.3bn) is already inside the headline. Prices
-and native hours ($21.8bn) overlap it. The elder-care figure ($2.3–14.9bn) is an upper bound on
+and native hours ($21.8bn) overlap it. The elder-care figure ($2.3–14.6bn) is an upper bound on
 one omitted channel. The complementarity figure ($26.8–80.4bn) covers half of all unauthorized
-workers of every origin and is matched by other immigrants' losses. No ratio of "offsets to
+workers of every origin and is matched by other immigrants' losses. The account's own nest
+is a different object: at the elasticities its job distribution supports, it moves the
+production term by about $4–8bn at the job-overlap reading and $2–5bn at
+the direct low-skill estimates (entry 14). No ratio of "offsets to
 cost" can be formed from these.
 
 **A result refutes a claim only when population, horizon and outcome match.** Entry 5 compares
 Mexican-origin generations alive in 2024 with whites at common ages. The National Academies
 results it is usually set against are all origins, followed from arrival, with descendants,
 discounted, under a budget rule. Neither refutes the other.
+
+**California and Texas per-person gaps are the shared all-age ledger.** The −$12,133 /
+−$7,479 (CA/TX vs local third-plus NH whites) and metro figures (Los Angeles −$17,196,
+Houston −$7,493) are from the September 17 stress and metro-match tables (entry 15). They
+are not a split of the $165–197bn complete account and not the generation-ledger −$6k to
+−$8k. The superseded $8,498 / $5,177 per native-headed household in California and Texas
+is a financing allocation of a later complete-account total; do not mix it with those
+per-person gaps. [SOURCE: [CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md);
+[who pays](immigration-fiscal-gap-incidence-who-pays-2026-09-18.md)]
 
 ## 1. "They are young. Children cost money everywhere and pay it back later."
 
@@ -92,10 +104,10 @@ Steel-man: the classic result is a costly first generation and a contributing se
 Finding: the same-age gap is −$7,584, −$7,521 and −$6,195 for the first, second and
 third-plus generations. Taxes converge ($12.1k, $8.4k and $7.0k below whites) but the first
 generation's lower benefit use disappears by the second. Period-profile lifetime values at 3%:
-second generation from birth −$280k, third-plus −$225k, white reference −$96k. The adult
+second generation from birth −$280k, third-plus −$225k, white reference −$96k. The September 16 adult
 ledger re-run on the next survey year moved from −$6,066 to −$6,499, inside one standard
 error. Third-plus is self-identified; including those who stopped identifying narrows the
-union gap to −$6,864 *(routed)*. [SOURCE: generation ledger;
+all-age union gap by about $230, from −$7,152 to −$6,921 on the September 19 ledger *(routed)*. [SOURCE: generation ledger;
 `infra/immigration-fiscal/ledger_asec2026_2026_09_16/RESULT.md`;
 [population total](immigration-mexican-origin-population-total-2026-09-19.md)]
 
@@ -192,7 +204,7 @@ the recent window, not the stock. [SOURCE:
 
 Finding: at the white age structure and today's rates the 40.9m residents' balance moves from
 −$217bn to −$340bn. Social Security and other cash add $70bn, public medical $80bn; schools
-save $31bn; custody-type institutional cost falls $1.4bn while nursing cost rises $9.2bn. This
+save $31bn; under-65 institutional cost falls $1.3bn while nursing cost rises $9.2bn. This
 is a composition exercise on the September 19 ledger, not a forecast. [SOURCE: age structures
 section, `age_normalizations_by_category.csv`] Would change it: US-born cohorts reaching 65 with
 higher covered earnings than the 0.5m second-generation and 1.0m third-plus residents born
@@ -230,11 +242,11 @@ Steel-man: two shift-share studies find it. Ten more points of less-educated for
 lower institutionalization of the US-born elderly by 1.5 points, and 1,000 more immigrants mean
 about ten fewer elderly deaths a year. Finding: the channel exists in that literature and the
 account omits it, but it runs through health workers, and 1.2% of Mexican immigrants work as
-aide, nurse or doctor against 14% of Philippine immigrants. The Mexico-born are 14.9% of
-foreign-born direct-care workers and 38.5% of the less-educated foreign-born. The mortality
+aide, nurse or doctor against 14% of Philippine immigrants. The Mexico-born are 14.5% of
+foreign-born direct-care workers and 37.7% of the less-educated foreign-born. The mortality
 study's instrument weighted by non-health work finds nothing (−0.00252, SE 0.00370). Priced
 generously, the Medicaid nursing-facility saving attributable to the Mexico-born is
-$2.3–14.9bn a year, $5.8bn at the preferred coefficient weighted by who staffs care: 1–9% of the
+$2.3–14.6bn a year, $5.6bn at the preferred coefficient weighted by who staffs care: 1–9% of the
 headline. The first study loses significance with year-by-state effects. Would change it: an
 origin-specific estimate, which neither paper runs. [SOURCE:
 [papers read](immigration-marginal-revolution-leads-read-2026-09-21.md#1-elder-care); ladder 164]
@@ -253,8 +265,64 @@ naturalized citizens and every US-born Mexican-origin worker. It has no taxes, t
 public services. The nested calculation on the account's own earnings data is now executed:
 natives against foreign-born inside each skill cell at ε = 3 doubles the term to $17.9–27.1bn,
 with natives +$54bn and other foreign-born residents −$46bn netting inside the beneficiary set,
-and would lower the $165–197bn band by $9–14bn; size, not sign. [SOURCE:
+and would lower the $165–197bn band by $9–14bn. The jobs on the same file put that elasticity
+near 6: low-cell natives and foreign-born share 0.644 of detailed-occupation earnings, and the
+sketch gives 5.7–7.6. At the computed neighbors ε = 5 and ε = 7 the term is $13–22bn and the
+band would fall by about $4–8bn. The direct low-skill estimates (8.7 and 17.9; ladder 181)
+move it $2–5bn, a band near $160–196bn. Size, not sign, and none applied. [SOURCE:
 [papers read](immigration-marginal-revolution-leads-read-2026-09-21.md#3-the-removal-model-and-the-accounts-production-term); ladder 166; [executed nest](immigration-production-term-nativity-nest-2026-09-22.md), ladder 176]
+
+## 15. "It's just California. Texas has the same Mexican-origin share and is doing fine."
+
+Steel-man: California's white-reference gap is a coastal-price, high-service artifact.
+Texas already has about 32% Mexican-origin residents — the same share as California —
+and is the relevant picture for the rest of the country. If the gap is California, the
+national figure overstates the cost of Mexican-origin settlement. Alternatively: once
+every state reaches that share, the national total explodes.
+
+Finding: the two states **do** have the same share (ACS 31.7–33.5% Texas, 31.8–32.5%
+California; 2020 Census 31.0% / 30.8%). They do **not** have the same gap. On the shared
+all-age ledger, matched to **local** third-plus NH whites at common ages: California
+**−$12,133** [−14,068, −10,198], Texas **−$7,479** [−9,253, −5,705]. Los Angeles
+**−$17,196**, Houston **−$7,493**. Every named union interval is adverse; Texas is
+smaller than California, not zero. Matching on metro does not shrink the national
+per-person gap (−$5,734 age-only → −$5,797 metro×age vs whites); it **widens** the
+national total because Mexican-origin residents live where the local white benchmark is
+higher. Share catch-up toward 32% is already realized in Texas and does not produce
+Los Angeles–sized dollars. Nominal dollars; no regional price parity. New York is 1.4%
+of US Mexican-origin (0.50m); San Francisco has no published single-metro gap. These
+figures are not the $165–197bn complete account. [SOURCE:
+[CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md);
+[stress RESULT](../infra/immigration-fiscal/ledger_stress_2026_09_17/RESULT.md);
+[metro RESULT](../infra/immigration-fiscal/metro_match_2026_09_17/RESULT.md)]
+[DATA: `infra/immigration-fiscal/ledger_stress_2026_09_17/derived/state_matched.csv`;
+`infra/immigration-fiscal/metro_match_2026_09_17/derived/metro_matched.csv`;
+`infra/immigration-fiscal/apportionment_2026_09_18/derived/arm_2020_mexican_origin.csv`]
+Would change it: a complete-account rerun with state splits; PPP-deflated gaps; a
+single-metro San Francisco estimate.
+
+## 16. "CBO says the immigration surge shrinks the deficit."
+
+Steel-man: the Congressional Budget Office projected in July 2024 that the 2021–2026 surge
+lowers federal deficits by about $0.9tn over 2024–2034, so immigration is a fiscal gain and
+any ledger that says otherwise is measuring the wrong thing. Finding: the two numbers are
+different objects and both can hold. CBO's figure is a ten-year projection for one recent
+inflow of every origin, mostly working-age adults in their first years, and it covers federal
+revenue, mandatory spending and net interest only: discretionary appropriations are excluded
+(CBO's proportional illustration adds about $0.2tn of spending) and state and local budgets
+are excluded entirely. CBO's June 2025 companion puts the surge's 2023 state and local account
+in deficit. Our account is the annual position of the resident Mexican-origin population of
+all ages and generations in income-year 2024, state and local services included, −$165 to
+−197bn under the central conventions (entry 2). Where the two overlap they agree: a young
+recent inflow is net positive on the measured items here too, +$3,495 per person for
+Mexico-born arrivals of 2016–2025 on the partial account and about break-even on the complete
+account (−$2,318; ladder 134; entry 9). A decade of a cohort's cheapest years cannot be netted
+against one year of a whole population, and a federal-only projection cannot be set against
+an account that includes state and local services. Neither refutes the other. [SOURCE: CBO
+60165, July 2024; CBO 61256, June 2025; [Caplan audit](immigration-bryan-caplan-claims-audit-2026-04-21.md)
+federal-ledger rows; [second-order effects](immigration-second-order-effects-2026-09-05.md)
+federal-finances row; ladder 134] Would change it: a CBO-style ten-year projection of the same
+resident population, or a state-and-local total for the surge cohort.
 
 ## Instrument
 
@@ -276,3 +344,18 @@ they get more prominence.
   correction to that critique is recorded in entry 7: the below-high-school advantage over
   natives survives the shared allocation (+$2,263); the −$5,558 it cited is the cell's level.
   No headline number changed.
+- 2026-09-21 (California vs Texas). Added the combining rule that the CA/TX per-person
+  gaps are the shared all-age ledger, not the complete account or the superseded
+  $8,498 / $5,177 household rows. Added entry 15. Routing memo:
+  [CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md).
+  No headline number changed.
+- 2026-09-22 (jobs). Entry 14 gained the occupation-overlap reading of the production-term
+  elasticity: the sketch centers near 6, and the computed neighbors are ε = 5 and ε = 7.
+  The combining note now separates that $4–8bn movement from the removal model's
+  $26.8–80.4bn. No headline number changed.
+- 2026-09-22 (number audit). Corrected against the lanes' derived files
+  ([audit](../infra/immigration-fiscal/number_audit_2026_09_22/AUDIT.md)): elder-care bound
+  $2.3–14.6bn / $5.6bn (numerator had counted Mexico-born US citizens), attriter narrowing
+  re-based on the September 19 ledger (−$6,921, was −$6,864 on the September 17 base),
+  under-65 institutional change $1.3bn, and entry 14 now carries ladder 181's direct
+  estimates beside the job-overlap reading. No headline number changed.
