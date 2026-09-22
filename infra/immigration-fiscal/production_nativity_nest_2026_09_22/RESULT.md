@@ -37,6 +37,9 @@ adj = 1.0, η = 0.0, retention = 1.0, owner = 0.0), $bn, with minus without
 | gdp | A_by_nativity | 4.6 | yes | +34.5915 | −29.4755 | +5.1160 | 17.1389 | **22.2550** | 1.6767 | +8.9324 |
 | gdp | A_by_nativity | 5 | **no** | +31.7213 | −27.0395 | +4.6818 | 16.8484 | **21.5302** | 1.6205 | +8.2076 |
 | gdp | A_by_nativity | 7 | **no** | +22.3566 | −19.0942 | +3.2624 | 15.8989 | **19.1613** | 1.4473 | +5.8387 |
+| gdp | A_by_nativity | 8.7 | yes | +17.8188 | −15.2456 | +2.5732 | 15.4378 | **18.0110** | 1.3703 | +4.6884 |
+| gdp | A_by_nativity | 9 | **no** | +17.1978 | −14.7190 | +2.4788 | 15.3747 | **17.8535** | 1.3601 | +4.5309 |
+| gdp | A_by_nativity | 17.9 | yes | +8.2947 | −7.1711 | +1.1236 | 14.4680 | **15.5917** | 1.2276 | +2.2691 |
 | gdp | A_by_nativity | 20 | yes | +7.3549 | −6.3746 | +0.9804 | 14.3722 | **15.3526** | 1.2152 | +2.0300 |
 | gdp | B_target_branch | ∞ | yes | −0.6124 | +0.3765 | −0.2359 | 13.5585 | **13.3226** | 1.1243 | 0.0000 |
 | gdp | B_target_branch | 1.3 | yes | +2065.7785 | +454.3056 | +2520.0841 | 1786.6449 | **4306.7290** | 60.6235 | +4293.4064 |
@@ -44,6 +47,9 @@ adj = 1.0, η = 0.0, retention = 1.0, owner = 0.0), $bn, with minus without
 | gdp | B_target_branch | 4.6 | yes | +200.1087 | +44.4475 | +244.5563 | 185.1864 | **429.7427** | 6.8354 | +416.4201 |
 | gdp | B_target_branch | 5 | **no** | +180.3002 | +40.0981 | +220.3983 | 168.2437 | **388.6419** | 6.1973 | +375.3193 |
 | gdp | B_target_branch | 7 | **no** | +120.5255 | +26.9734 | +147.4989 | 117.1240 | **264.6229** | 4.2803 | +251.3003 |
+| gdp | B_target_branch | 8.7 | yes | +93.9639 | +21.1415 | +115.1053 | 94.4117 | **209.5170** | 3.4412 | +196.1944 |
+| gdp | B_target_branch | 9 | **no** | +90.4406 | +20.3679 | +110.8085 | 91.3992 | **202.2077** | 3.3312 | +188.8851 |
+| gdp | B_target_branch | 17.9 | yes | +42.6395 | +9.8727 | +52.5122 | 50.5313 | **103.0436** | 1.9128 | +89.7210 |
 | gdp | B_target_branch | 20 | yes | +37.8723 | +8.8260 | +46.6984 | 46.4560 | **93.1543** | 1.7865 | +79.8317 |
 | cash | A_by_nativity | ∞ | yes | −0.4041 | +0.2484 | −0.1557 | 8.9463 | **8.7906** | 0.7374 | 0.0000 |
 | cash | A_by_nativity | 1.3 | yes | +86.1312 | −73.3012 | +12.8300 | 17.6336 | **30.4637** | 2.5612 | +21.6731 |
@@ -51,6 +57,9 @@ adj = 1.0, η = 0.0, retention = 1.0, owner = 0.0), $bn, with minus without
 | cash | A_by_nativity | 4.6 | yes | +22.8245 | −19.4488 | +3.3757 | 11.3087 | **14.6845** | 1.0977 | +5.8938 |
 | cash | A_by_nativity | 5 | **no** | +20.9306 | −17.8414 | +3.0892 | 11.1171 | **14.2062** | 1.0609 | +5.4156 |
 | cash | A_by_nativity | 7 | **no** | +14.7516 | −12.5989 | +2.1526 | 10.4905 | **12.6432** | 0.9476 | +3.8525 |
+| cash | A_by_nativity | 8.7 | yes | +11.7573 | −10.0595 | +1.6979 | 10.1863 | **11.8842** | 0.8973 | +3.0936 |
+| cash | A_by_nativity | 9 | **no** | +11.3476 | −9.7120 | +1.6356 | 10.1446 | **11.7802** | 0.8907 | +2.9896 |
+| cash | A_by_nativity | 17.9 | yes | +5.4731 | −4.7317 | +0.7414 | 9.5464 | **10.2878** | 0.8043 | +1.4972 |
 | cash | A_by_nativity | 20 | yes | +4.8530 | −4.2061 | +0.6469 | 9.4832 | **10.1301** | 0.7963 | +1.3394 |
 | cash | B_target_branch | ∞ | yes | −0.4041 | +0.2484 | −0.1557 | 8.9463 | **8.7906** | 0.7374 | 0.0000 |
 | cash | B_target_branch | 1.3 | yes | +1363.0592 | +299.7637 | +1662.8229 | 1178.8789 | **2841.7019** | 40.3993 | +2832.9113 |
@@ -58,7 +67,12 @@ adj = 1.0, η = 0.0, retention = 1.0, owner = 0.0), $bn, with minus without
 | cash | B_target_branch | 4.6 | yes | +132.0374 | +29.3277 | +161.3652 | 122.1912 | **283.5564** | 4.4333 | +274.7658 |
 | cash | B_target_branch | 5 | **no** | +118.9672 | +26.4579 | +145.4250 | 111.0119 | **256.4370** | 4.0166 | +247.6463 |
 | cash | B_target_branch | 7 | **no** | +79.5261 | +17.7978 | +97.3240 | 77.2817 | **174.6057** | 2.7663 | +165.8151 |
+| cash | B_target_branch | 8.7 | yes | +62.0000 | +13.9497 | +75.9497 | 62.2955 | **138.2453** | 2.2200 | +129.4547 |
+| cash | B_target_branch | 9 | **no** | +59.6753 | +13.4393 | +73.1146 | 60.3078 | **133.4224** | 2.1485 | +124.6318 |
+| cash | B_target_branch | 17.9 | yes | +28.1348 | +6.5143 | +34.6491 | 33.3420 | **67.9911** | 1.2292 | +59.2004 |
 | cash | B_target_branch | 20 | yes | +24.9892 | +5.8237 | +30.8129 | 30.6530 | **61.4659** | 1.1480 | +52.6752 |
+
+**Grid extension, 2026-09-22 evening.** Three rows were added after the fourteen-paper reading (ladder 181): ε = 8.7 (Caiumi–Peri, natives against immigrants inside no-diploma cells, 1/σ 0.115 ± 0.031), ε = 17.9 (Piyapromdee, low-skill cells across 114 metros, ± 0.8) and ε = 9 (Burstein et al. footnote 42, "roughly twice" their calibrated 4.6; an inference, unsourced as a number). Under Option A, cash scaling, the three give **+11.8842 / +11.7802 / +10.2878bn** (+3.09 / +2.99 / +1.50 against perfect substitution). The earlier rows are unchanged to the printed digits; all nine gates pass on the 77,760-row grid and `independent_check.py` matches the ten Option A gdp rows to 5.18e-12bn. [CALCULATION: `derived/nest_headline.csv`, `derived/audit.json` `sigma_NI_grid`]
 
 ε = 5 and ε = 7 carry `sigma_NI_sourced = false` in every row: no paper in this repository
 reports either as a native–immigrant elasticity. ε = 20 is the upper end of the literature range
@@ -79,6 +93,8 @@ beneficiary set [CALCULATION: `derived/nest_headline.csv`, gdp scaling].
 |---|---:|---:|---:|---:|---:|---:|
 | A_by_nativity | 1.3 | +130.5358 | −111.0913 | +19.4445 | +19.4445 | 85.1% of the native gain is offset |
 | A_by_nativity | 3 | +53.9664 | −45.9282 | +8.0381 | +8.0381 | 85.1% |
+| A_by_nativity | 8.7 | +17.8188 | −15.2456 | +2.5732 | +2.5732 | 85.6% |
+| A_by_nativity | 17.9 | +8.2947 | −7.1711 | +1.1236 | +1.1236 | 86.5% |
 | A_by_nativity | 20 | +7.3549 | −6.3746 | +0.9804 | +0.9804 | 86.7% |
 | A_by_nativity | ∞ | −0.6124 | +0.3765 | −0.2359 | −0.2359 | — |
 | B_target_branch | 3 | +356.5120 | +78.7910 | +435.3030 | +435.3030 | nothing offsets; both branches gain |
@@ -100,6 +116,8 @@ comparison with Cravino's −0.33% native and +3.2%/+12.2% other-immigrant figur
 |---|---:|---:|---:|---:|---:|
 | A_by_nativity | 1.3 | −0.9556 | −1.7259 | +32.4848 | −0.5949 |
 | A_by_nativity | 3 | +2.8686 | −1.5554 | +16.6886 | −1.0660 |
+| A_by_nativity | 8.7 | +4.6600 | −1.4713 | +9.3096 | −1.3027 |
+| A_by_nativity | 17.9 | +5.1303 | −1.4487 | +7.3750 | −1.3667 |
 | A_by_nativity | ∞ | +5.5694 | −1.4274 | +5.5694 | −1.4274 |
 | B_target_branch | 3 | −1.6469 | −4.9621 | −1.6469 | −4.9621 |
 

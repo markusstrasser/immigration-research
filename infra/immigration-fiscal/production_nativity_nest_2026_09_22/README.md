@@ -97,7 +97,7 @@ is reported beside Option A, never instead of it.
 | `derived/nest_headline.csv` | yes | the two published cases by ε and option, 28 rows |
 | `derived/branch_composition.csv` | yes | four branches × two cells × four proxy/split, 32 rows |
 | `derived/audit.json` | yes | 43 source hashes, ε citation status, all gate results, δ-floor table, limits |
-| `derived/nest_scenarios.csv` | no | 54,432 rows: 3,888 upstream keys × 7 ε × 2 options |
+| `derived/nest_scenarios.csv` | no | 77,760 rows: 3,888 upstream keys × 10 ε × 2 options (grid extended 2026-09-22 evening with 8.7, 9 and 17.9) |
 
 ## Limitations
 

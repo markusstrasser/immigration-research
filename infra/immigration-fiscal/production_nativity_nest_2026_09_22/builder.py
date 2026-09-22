@@ -37,13 +37,16 @@ KEEP = ("labor_gain", "capital_gain", "domestic_capital_gain", "opportunity_inco
         "wage_without_over_with")
 # Section 4 of SPEC.md; 5 and 7 carry no source in this repository.
 SIGMA_NI_GRID = ((1.3, True), (3., True), (4.6, True), (5., False), (7., False),
-                 (20., True), (np.inf, True))
+                 (8.7, True), (9., False), (17.9, True), (20., True), (np.inf, True))
 SIGMA_NI_CITATION = {
-    "1.3": "SOURCE: Cravino-Levchenko-Ortega-Pandalai-Nayar w34790 p.23 - Clemens and Lewis (2024) randomized estimate 1.3",
+    "1.3": "SOURCE: Cravino-Levchenko-Ortega-Pandalai-Nayar w34790 p.23 - Clemens and Lewis (2024) randomized estimate 1.3; primary text Table 7: sigma = 1.26, 95% CI (0.12, 2.39), firm-level effective elasticity on 472 H-2B firms (us_lowskill_effects_2026_09_22/reads/clemens_lewis_h2b.md)",
     "3": "SOURCE: same paper p.23 and Table 1 p.24 - the selected native-foreign elasticity 3",
-    "4.6": "SOURCE: same paper p.23 - Burstein et al. (2020) estimate 4.6",
+    "4.6": "SOURCE: same paper p.23 - Burstein et al. (2020) estimate 4.6; primary text Table III: calibrated within one occupation, no standard error (reads/burstein_ecta_2020.md)",
     "5": "UNVERIFIED: no repo source for this value",
     "7": "UNVERIFIED: no repo source for this value",
+    "8.7": "SOURCE: Caiumi and Peri w32389 Table 7 Panel A - 1/sigma_IMMI = 0.115 (0.031) for natives vs immigrants inside no-diploma cells, 2000-2019 2SLS (reads/caiumi_peri_nber_2024.md); their pooled value is 17",
+    "9": "INFERENCE: Burstein et al. (2020) footnote 42 - the aggregate native-immigrant elasticity 'is roughly twice as high as our assumed value of rho' (4.6); no numeric value printed",
+    "17.9": "SOURCE: Piyapromdee (2020) Table 1 Panel I - sigma_M,L = 17.870 (0.819), natives vs immigrants inside low-skill x gender cells, 114 metros (reads/piyapromdee_restud_2020.md)",
     "20": "SOURCE: same paper p.23, the upper end of the literature range the primary text states; NOT attributed to Ottaviano-Peri, who have no numeric elasticity in this repository",
     "inf": "DATA: the account's own current assumption, matched_benefits_2026_09_19/derived/audit.json model_assumptions",
 }

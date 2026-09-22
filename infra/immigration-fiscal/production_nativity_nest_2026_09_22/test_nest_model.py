@@ -30,7 +30,7 @@ NATIVE, FOREIGN = FOUR[0] + FOUR[1], FOUR[2] + FOUR[3]
 BRANCHES = np.stack([NATIVE, FOREIGN])
 REMOVED = np.stack([FOUR[1] / NATIVE, FOUR[3] / FOREIGN])
 UNION = (BRANCHES * REMOVED).sum(axis=0)
-GRID = (1.3, 3., 4.6, 5., 7., 20., np.inf)
+GRID = (1.3, 3., 4.6, 5., 7., 8.7, 9., 17.9, 20., np.inf)
 COMPARED = ("labor_gain", "capital_gain", "domestic_capital_gain", "opportunity_income",
             "gross_income_gain", "disutility_difference", "output_without_over_with",
             "capital_without_over_with")
