@@ -20,6 +20,7 @@ the bottleneck is a BUILD, not more search.** Three things for you:
 - **Remaining (autonomous, no key — flag if you want it):** the causal `Δrent ~ Δfb-share × elasticity` (Wilson-Zhou +2.2%/+1.4%) needs a **2nd ACS year** (another no-key `acsdt1yYYYY-b05002.dat`) + a shift-share IV. I can build this without you; say the word.
 
 - 2026-09-22: the descriptive leg is executed in `housing_supply_ca_tx_2026_09_22` (ladder 180, memo `immigration-housing-supply-ca-tx-2026-09-22.md`): Δ Mexican-origin share 2010→2023 associates with 2015–2026 rent growth within state (+0.030 log points per point), the share × inverse-elasticity interaction is not separately identified, and the state permit and 2024 native-migration cuts are in. The causal `Δrent ~ Δshare × elasticity` leg stays open and is only identifiable on 2000–2010 (ladder 136/140); it is a separate build, not started. — session 87fa457f
+- 2026-09-22 (evening): the causal leg is executed too, `housing_causal_2000_2010_2026_09_22` (ladder 183): 2000–2010, ancestry-prediction IV (ladder 182), rents +1.4% (SE 1.4) and values +11.6% (2.9) per point of foreign-born share, no inelastic-metro amplification on 223 Saiz-matched metros. The 'Remaining' shift-share item above is closed; what is still open is the Mexican-born version (needs a 2000 metro endpoint) and native migration by education. session: eb198c12
 
 ### B. Gated pulls that unblock the deepest tests (login-gated, you pull; loaders/specs ready)
 - **IPUMS-CPS** 2nd-gen extract → cluster-V V02 (loader `load_cps_second_gen.py` ready; uses PARENTAL

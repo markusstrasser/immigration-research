@@ -220,3 +220,15 @@ lane's and this model's, and a reader should check the tables rather than the pr
 
 - **2026-09-22 (initial).** Written from the lane after grading; the permit vintage check was
   restated from a failing gate to a recorded reconciliation before any number was copied.
+- **2026-09-22 (evening, causal leg executed).** Layer 2 of §6 is run as
+  [`housing_causal_2000_2010_2026_09_22`](../infra/immigration-fiscal/housing_causal_2000_2010_2026_09_22/RESULT.md)
+  (ladder 183), on the all-foreign-born share rather than the Mexican-born share (no 2000
+  metro endpoint for the latter) and with the ancestry push-pull prediction of ladder 182 as
+  the instrument. Per point of foreign-born share over 2000–2010: rents +1.4% (SE 1.4), a
+  null containing Saiz's one-for-one; values +11.6% (2.9), +5.7% (2.8) with the 2000 level.
+  The settlement instrument gives two to five times more and Hansen J rejects the pair. No
+  extra effect in supply-inelastic metros is detectable (rents −2.3% ± 3.9, values +0.9% ±
+  6.2 on 223 Saiz-matched metros), which bounds the mechanical-response arithmetic of §4
+  for rents: the two-to-three-fold coastal amplification it implies is outside the interval
+  at the decade horizon. Native migration by education was not built. Nothing in §1–5
+  changes.

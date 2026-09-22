@@ -244,8 +244,12 @@ The two US papers disagree in sign because they measure different horizons: thre
 against a decade. That is the frame for the housing section, and the reason the memo on
 supply rates (ladder 180) needs a causal leg at the decade horizon before it can say
 anything about rents. Monras's design, a push factor interacted with settlement networks over
-1990–2000, is the template, and the IPUMS panel covers those years; the peso crisis is the
-one identified Mexican push shock in the data and cannot be reused for later decades.
+1990–2000, is the template for his construction channel, and the IPUMS panel covers those
+years; the peso crisis is the one identified Mexican push shock in the data and cannot be
+reused for later decades. The 2000–2010 decade is now measured with the ancestry instrument
+(ladder 183): rents +1.4% (SE 1.4) and values +11.6% (2.9) per point of foreign-born share,
+with no extra effect in supply-inelastic metros, so at ten years the demand side dominates
+and the construction-cost offset, if present, is not large enough to show.
 
 ### 3.4 Who gains from selection
 
@@ -300,10 +304,10 @@ tax, service or schooling line; the account remains the only stationary object i
 1. Done the same evening: ε = 8.7, 9 and 17.9 rows added to `production_nativity_nest_2026_09_22`
    (its RESULT.md carries the rows and the gate record).
 2. Done the same evening: `ancestry_instrument_2026_09_22`, §2.3.
-3. The housing causal leg at the decade horizon, Monras's design on the IPUMS panel for
-   1990–2000, which the California–Texas memo specified and left unstarted.
-
-Item 3 is not started here.
+3. Done the same evening, on 2000–2010 rather than 1990–2000 because ladder 182 gave that
+   decade a clean instrument: `housing_causal_2000_2010_2026_09_22` (ladder 183), rents
+   +1.4% (1.4) and values +11.6% (2.9) per point of foreign-born share, no inelastic-metro
+   amplification. Monras's 1990–2000 design remains the way to test his construction channel.
 
 ## Revisions
 
@@ -313,3 +317,4 @@ Item 3 is not started here.
 - 2026-09-22 (evening): §2.3 now reports the executed second-instrument run (ladder 182)
   instead of proposing it; the displacement lane's public-assistance result is the one
   claim in the repo this reading changes, from a negative estimate to a null.
+- 2026-09-22 (evening): §3.3 and §7 record the executed 2000–2010 housing leg (ladder 183).
