@@ -45,6 +45,10 @@ conditional net cost to other US residents**; fixing non-school education budget
 as well gives **$121–160bn**. The full proportional-service benchmark remains
 **$270–289bn**. Production is held fully adjusted while service responses vary;
 these transferred short-run assumptions do not identify a long-run effect.
+The production term's perfect-substitution assumption now has an executed sensitivity: a
+[native–immigrant nest](immigration-production-term-nativity-nest-2026-09-22.md) gives +$17.9 / +$27.1bn
+at ε = 3 against +$8.8 / +$13.3bn (ladder 176), which would put the band near $151–188bn;
+the band is not re-run.
 The **$262–357bn** proportional-service grid includes weaker proxy stress tests.
 The report now regenerates all category comparisons and composition diagnostics.
 Fixed-service cases can be positive; property-receipt and service-quality effects
@@ -207,6 +211,7 @@ Latest supplied-data audit: [immigration-new-datasets-and-conclusions-2026-09-17
 | [Practitioner range, Sept 19 ledger](immigration-ledger-practitioner-range-2026-09-22.md) | 2026-09-22, ladder 172: practitioner hull −$290 to −$190bn around −$217bn; design hull −$496 to −$76bn (+$41bn with the dial at zero); public-goods object −$502 to −$402bn; stale 144-cell range stamped | Quoting any range for the ledger, or choosing between its conventions |
 | [Elderly public medical by ethnicity, MCBS 2023](immigration-elderly-medical-by-ethnicity-2026-09-22.md) | 2026-09-22, ladder 173: Hispanic/white public payments at 65+ 1.27 (CI 0.97–1.56), total spending equal, Medicaid 9×, income reverses the sign; with the MEPS Mexican-origin check (ladder 175) the 65+ ethnicity dimension is unsigned, about −40% to +56% | Any claim about elderly medical cost by origin; the re-aged and lifetime 65+ cells |
 | [Mexican-origin medical on the transport's MEPS file](immigration-mexican-origin-medical-transport-check-2026-09-22.md) | 2026-09-22, ladder 175: Mexican-origin/all-donor public spending 0.89 at 65+ (CI 0.61–1.18), 0.69 at 18–64 (excludes 1); Medicaid 3.3× but Medicare, out-of-pocket and private lower; 65+ translation $2.7bn less (SE 6.7); all-ages unusable (one record) | Any ethnicity adjustment to the medical transport; read with the MCBS row |
+| [Production term under imperfect substitution](immigration-production-term-nativity-nest-2026-09-22.md) | 2026-09-22, ladder 176: native–immigrant nest inside the skill cells doubles the production term at ε = 3 (+$27.1 / +$17.9bn GDP / cash against +$13.3 / +$8.8bn); natives +$54bn, other foreign-born −$46bn, about 85% nets out; union-as-own-branch variant structurally unverified; headline band not re-run | Any reading of the account's production term or the removal-model comparison (FAQ 14) |
 | [Return migration selectivity, ENADID 2018/2023](immigration-mexico-return-migration-selectivity-2026-09-22.md) | 2026-09-22, ladder 174: returnees from the US hold about one year less schooling than Mexico-born stayers (tertiary −12 to −14 points), men only; short-window returnees are better educated (22–28% tertiary); departures unmeasured on schooling | Any attrition or exit assumption; reading US arrival-cohort education trends |
 | `immigration-lifetime-longevity-and-social-security-timing-2026-09-18.md` | Historical mortality/timing study; flat-shift results superseded by current calculation index; invalid SSA accrual adjustment disabled | Tracing earlier lifetime claims |
 | `immigration-marginal-revolution-claims-audit-2026-09-18.md` | Source archive and commentator comparisons; schooling-loan HARD grade and claim totals withdrawn by the September 19 audit; resident accounting is not a full cost-benefit analysis | Reusing a commentator rebuttal |
