@@ -139,8 +139,13 @@ The downloaded ancestry-instrument files are the paper's rejected instrument: fi
 of the identifying weight. The preferred design needs origin-by-destination flows from
 restricted immigration-court records. The account's own finding that the settlement
 instrument is dead for 2021–24 (F 0.002, ladder 140) is a different construction and is not
-contradicted; it is not rescued either. The county file could serve the 2000–2010 window as a
-second instrument, which is the only executable use.
+contradicted; it is not rescued either. The county file does serve the 2000–2010 window as a
+second instrument, and that was executed the same evening: F 63.9 against the settlement
+instrument's 29.1, no correlation with the 2000 baseline level (the settlement instrument
+has one), a third of its variance from Mexico; the SSI response becomes −0.28 (0.06) instead
+of −0.44 (0.10) and the public-assistance response a null (−0.10 ± 0.19) instead of −0.99
+(0.28), with Hansen J rejecting the pair. The displacement lane's negative claim stands at a
+smaller size (ladder 182, [lane](../infra/immigration-fiscal/ancestry_instrument_2026_09_22/RESULT.md)).
 
 ### 2.4 Two small pointers
 
@@ -294,15 +299,17 @@ tax, service or schooling line; the account remains the only stationary object i
 
 1. Done the same evening: ε = 8.7, 9 and 17.9 rows added to `production_nativity_nest_2026_09_22`
    (its RESULT.md carries the rows and the gate record).
-2. Re-run the displacement lane's 2000–2010 first stage with the county ancestry file as a
-   second instrument, reporting F and Rotemberg weights beside the settlement instrument.
+2. Done the same evening: `ancestry_instrument_2026_09_22`, §2.3.
 3. The housing causal leg at the decade horizon, Monras's design on the IPUMS panel for
    1990–2000, which the California–Texas memo specified and left unstarted.
 
-Items 2 and 3 are not started here.
+Item 3 is not started here.
 
 ## Revisions
 
 - 2026-09-22 (evening): §2.1 and the verdict now quote computed nest rows at ε = 8.7, 9
   and 17.9 instead of interpolating between 7 and 20; the headline move is $2–5bn. Ladder
   181 and the nest memo carry the same revision. No claim changes direction.
+- 2026-09-22 (evening): §2.3 now reports the executed second-instrument run (ladder 182)
+  instead of proposing it; the displacement lane's public-assistance result is the one
+  claim in the repo this reading changes, from a negative estimate to a null.
