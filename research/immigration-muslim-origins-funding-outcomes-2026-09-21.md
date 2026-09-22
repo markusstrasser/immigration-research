@@ -76,6 +76,38 @@ hold degrees more often than US-born Muslims, 38% against 21% (B4). Microdata ar
 with a free Pew account (B30). Not reached: New Immigrant Survey 2003 (religion, earnings and,
 in the restricted tier, visa class), the Cooperative Election Study religion item, ISPU's poll.
 
+### 2a. The microdata, September 22 [DATA / CALCULATION]
+
+The public-use file (1,001 respondents, 100 jackknife replicate weights) reproduces all ten
+rows above within half a point, so the table stands, with two corrections to how it should be
+read. Design effects run 1.7 to 8.8, so the violence item carries a standard error of ±2.7
+points and the "84% against 83% for the public" comparison is inside noise. The report's
+denominators keep volunteered "don't know" answers; among people who answered, 88% say
+killing civilians is rarely or never justified and 61% say homosexuality should be accepted.
+[CALCULATION: `pew_muslims_2017_2026_09_22/derived/report_reproduction.csv`]
+
+By nativity, the attitude items the memo treats as the assimilation question do not move:
+foreign-born minus US-born is +2.6 ± 4.4 points on civilians justified, −7.4 ± 7.5 on
+accepting homosexuality, +2.3 ± 8.5 on leaning Democratic, +4.2 ± 4.9 on full-time work and
+−8.6 ± 5.5 on household income under $30,000. What does move: immigrants are more satisfied
+with the country's direction (+23 ± 6), more often homeowners (+23 ± 5) and degree holders
+(+18 ± 4), and prouder to be American (+6 ± 3), while US-born Muslims report far more
+personal hostility (people acting suspicious of them, −28 ± 6; "a lot of discrimination",
+−24 ± 4). [CALCULATION: `derived/cuts_by_nativity.csv`]
+
+By origin, the 12% who say violence against civilians can be justified is a foreign-born
+South Asian result: 20.5 ± 5.6 there, with 12.2 ± 5.6 giving no answer, against 9.5 among
+foreign-born MENA respondents. Their US-born children go the other way: none of the 65
+US-born respondents with a South Asian parent says often or sometimes, and 96.6 ± 3.3 say
+rarely or never, +29 ± 7 points on their parents' generation. [FRAMING-SENSITIVE] That is the
+opposite sign from the Danish descendants pattern in §4, on a different measure, an attitude
+rather than a fiscal balance, and in a much younger group. "US-born Muslims" is also two
+populations: those with two US-born parents (n = 166; 52% Black, 14% with a degree, 56%
+under $30,000) and the children of immigrants (n = 181; 69% aged 18–29, 28% with a degree),
+which is why nativity alone hides more than it shows. The file has no public-assistance item.
+[CALCULATION: `derived/cuts_by_origin.csv`; lane
+[`pew_muslims_2017_2026_09_22`](../infra/immigration-fiscal/pew_muslims_2017_2026_09_22/RESULT.md)]
+
 ## 3. Extremism counts
 
 Cato Policy Analysis 991, 1975–2024: 237 foreign-born terrorists, 3,046 murders, 0.30% of US
@@ -139,7 +171,8 @@ operator's regression-to-the-mean question, and it is confounded by age: descend
 [FRAMING-SENSITIVE] "Islamists" and "Muslim immigrants" are different populations; the evidence
 above is about the second and says little about the first beyond offender counts. For the US the
 better-measured evidence is reassuring on earnings, degrees and attitudes to violence, mixed on
-social attitudes and poverty, and silent on the second generation and on foreign funding. The
+social attitudes and poverty, and silent on the second generation [qualified 2026-09-22: §2a
+gives the second generation's attitudes, which run toward rejection of violence] and on foreign funding. The
 European evidence is alarming and is about differently selected populations; the mechanism both
 sides' data point to is selection at admission, which ladder 171 also finds for degree
 conversion.
@@ -159,7 +192,17 @@ specified before its data, and the parent re-checked 15 quotes. See `notes/llm-b
 1. Alavi: read 934 F.3d 147 and the 2026 SDNY release; settle what is adjudicated.
 2. Form 990s for NAIT, Alavi, ISNA, ICNA: the partial ledger.
 3. New America and GWU offender tables by nativity: the second-generation gap.
-4. Pew 2017 microdata (free account, operator action): income and attitudes by nativity and origin.
+4. ~~Pew 2017 microdata (free account, operator action): income and attitudes by nativity and origin.~~ Done 2026-09-22, §2a.
 5. New Immigrant Survey 2003 public-use files (ICPSR 38031, 38061; listed in the sociology
    frontier memo as pullable): religion with earnings for new green-card holders. Visa class sits
    in the restricted tier. The outcomes reader names it the highest-value source not reached.
+   Public files acquired 2026-09-22 (ICPSR 38031 v3); the religion-by-earnings lane is running.
+
+## Revisions
+
+- 2026-09-22: §2a added from the Pew 2017 microdata (lane `pew_muslims_2017_2026_09_22`,
+  ladder 177). The §2 table is confirmed within half a point; the "84% against 83%"
+  comparison is inside the survey's design effect; nativity does not move the attitude items;
+  the violence item is a foreign-born South Asian result that the US-born second generation
+  reverses; "US-born Muslims" is two populations. §6's "silent on the second generation" is
+  qualified for attitudes. No fiscal value changes.
