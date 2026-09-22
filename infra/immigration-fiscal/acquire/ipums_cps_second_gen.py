@@ -97,11 +97,40 @@ def download(key: str, number: int) -> Path:
     out_dir.mkdir(parents=True, exist_ok=True)
     out = out_dir / "cps_2ndgen.csv.gz"
     tmp = out.with_suffix(".gz.part")
+    # Resumable, retried download: IPUMS drops long streams mid-way (seen 2026-09-22 at 26 of 131 MB).
+    expected = None
+    for attempt in range(1, 9):
+        have = tmp.stat().st_size if tmp.exists() else 0
+        headers = {"Authorization": key}
+        if have:
+            headers["Range"] = f"bytes={have}-"
+        try:
+            with requests.get(url, headers=headers, stream=True, timeout=(30, 120)) as r:
+                if have and r.status_code != 206:
+                    raise SystemExit(f"[FAILED] server ignored the Range request (status {r.status_code}); delete {tmp} and rerun")
+                r.raise_for_status()
+                if expected is None:
+                    total = r.headers.get("Content-Range", "").rsplit("/", 1)[-1] or r.headers.get("Content-Length")
+                    expected = int(total) if total and total.isdigit() else None
+                with open(tmp, "ab") as f:
+                    for chunk in r.iter_content(chunk_size=1 << 20):
+                        f.write(chunk)
+        except (requests.exceptions.ChunkedEncodingError, requests.exceptions.ConnectionError,
+                requests.exceptions.ReadTimeout) as exc:
+            print(f"  ! attempt {attempt}: transfer broke at {tmp.stat().st_size / 1e6:.1f} MB ({type(exc).__name__}); resuming")
+            time.sleep(min(60, 5 * attempt))
+            continue
+        size = tmp.stat().st_size
+        if expected is not None and size != expected:
+            print(f"  ! attempt {attempt}: have {size} of {expected} bytes; resuming")
+            continue
+        break
+    else:
+        raise SystemExit(f"[FAILED] download of extract {number} incomplete after 8 attempts; partial file kept at {tmp}")
     h = hashlib.sha256()
-    with requests.get(url, headers={"Authorization": key}, stream=True, timeout=600) as r, open(tmp, "wb") as f:
-        r.raise_for_status()
-        for chunk in r.iter_content(chunk_size=1 << 20):
-            f.write(chunk); h.update(chunk)
+    with open(tmp, "rb") as f:
+        for block in iter(lambda: f.read(1 << 20), b""):
+            h.update(block)
     tmp.replace(out)
     manifest = {"extract_number": number, "collection": COLLECTION, "description": DESCRIPTION,
                 "samples": sorted(info.get("samples", {})), "variables": sorted(info.get("variables", {})),
