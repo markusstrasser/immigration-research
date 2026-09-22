@@ -120,3 +120,9 @@ data outputs were byte-identical and only `audit.json` fingerprints moved.
 2026-09-20: [Measured enrollment and residual boundaries](../decisions/2026-09-20-measured-enrollment-and-residual-boundaries.md)
 versions the new annual school correction separately. Lifetime age profiles remain
 pinned; the new annual total cannot be propagated as a flat lifetime shift.
+
+2026-09-22: [MCBS 2023 check](immigration-elderly-medical-by-ethnicity-2026-09-22.md) bounds
+the missing ethnicity dimension of the 65+ community public medical transport (age and US
+birth only) at −3% to +56% of the union's −$43.6bn 65+ cell: up to about $24bn more cost and
+no reduction (ladder 173). Institutional item N is not bounded by it. No value changes; the
+re-aged and lifetime 65+ cells inherit the bound.
