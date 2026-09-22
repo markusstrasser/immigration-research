@@ -8,7 +8,7 @@ papers from abstracts only.
 **Result:** None of the seven changes the $165–197bn conditional net cost. Two identify benefits
 to other residents that the [complete account](immigration-complete-annual-account-2026-09-20.md)
 omits. The nursing-home channel is real in the literature but transfers weakly to Mexican-origin
-immigrants: its Medicaid value for the Mexico-born is bounded at **$2.3–14.9bn a year**, $5.8bn
+immigrants: its Medicaid value for the Mexico-born is bounded at **$2.3–14.6bn a year**, $5.6bn
 at the preferred coefficient weighted by who staffs direct care. Native–immigrant complementarity
 is the larger open item: the account's production term ($8.8–13.3bn) treats union and outside
 workers as perfect substitutes within two skill groups, while a 2026 general-equilibrium model
@@ -61,28 +61,28 @@ first-year effect of one extra cohort of 325,000 (fn.12), and the coefficient ca
 a resident stock.
 
 **Who staffs direct care in 2024.** [DATA: `derived/acs_care_inputs.csv`, ACS 2024 one-year PUMS]
-3.68m employed aides and nursing assistants; 28.1% foreign-born. The Mexico-born are 154,000:
-4.2% of the workforce and 14.9% of its foreign-born part, against 38.5% of the
+3.68m employed aides and nursing assistants; 28.1% foreign-born. The foreign-born Mexico-born are 150,000:
+4.1% of the workforce and 14.5% of its foreign-born part, against 37.7% of the
 Butcher–Moran–Watson treatment population. Mexican-origin workers of every generation are
 416,000, or 11.3% of the workforce, while the union is 12.0% of residents and 4.9% of people 65
 and over (2.99m of 61.2m).
 
 **Bound.** [CALCULATION: `elder_care_bound.py` → `derived/elder_care_bound.csv`; model output]
 The less-educated foreign-born are 8.95% of the working-age population and the Mexico-born part
-is 3.45%. Applying each published coefficient to that share, to 52.1m US-born elderly, and
+is 3.37%. Applying each published coefficient to that share, to 52.1m US-born elderly, and
 pricing each avoided institutional resident at Medicaid's $78.9bn of nursing-facility spending
 over 1.43m institutional residents ($55,051; CMS NHE 2024, Table 15):
 
 | Coefficient | Weighted by labour share | Weighted by share of foreign-born care workers |
 |---|---:|---:|
-| Preferred, −0.151 | 271,000 fewer residents, $14.9bn | 105,000, $5.8bn |
-| Without California, −0.090 | 162,000, $8.9bn | 63,000, $3.4bn |
-| Year-by-state, −0.061 (not significant) | 110,000, $6.0bn | 42,000, $2.3bn |
+| Preferred, −0.151 | 265,000 fewer residents, $14.6bn | 102,000, $5.6bn |
+| Without California, −0.090 | 158,000, $8.7bn | 61,000, $3.4bn |
+| Year-by-state, −0.061 (not significant) | 107,000, $5.9bn | 41,000, $2.3bn |
 
-All-payer values are 2.8 times larger ($6.5–41.6bn), most of it private. Ledger: Medicaid
+All-payer values are 2.8 times larger ($6.3–40.7bn), most of it private. Ledger: Medicaid
 nursing-facility spending. Unit: 2024 dollars a year. Gross: no offset for Medicaid home-care
 spending on those who stay at home. Out of window: a coefficient identified on a 3.3-point change
-is applied to a 3.45-point share, and the per-resident price is overstated because CMS totals
+is applied to a 3.37-point share, and the per-resident price is overstated because CMS totals
 include residents under 65. Against the $165–197bn headline the bound is 1–9%.
 
 ## 2. Local budgets and municipal bond yields
@@ -162,9 +162,18 @@ the native–immigrant nest in the production term, and a Medicaid long-term-car
 complete account if the operator wants the bound carried as a sensitivity.
 
 [DISCONFIRMATION] Two results cut against the account's size: an omitted Medicaid saving of up to
-$14.9bn and an omitted native wage gain of tens of billions. One result that seemed to support a
+$14.6bn and an omitted native wage gain of tens of billions. One result that seemed to support a
 full spending response does not survive reading.
 
 [INSTRUMENT] LLM-assisted reading and calculation on a politically charged topic. Reader agents
 were told to steel-man each paper first; every criticism tagged [INFERENCE] is the reader's or
 mine, not the authors'. See `notes/llm-bias-caveat.md`.
+
+## Revisions
+
+- 2026-09-22: The Mexico-born numerators counted both nativity codes for birthplace Mexico, adding
+  about 4,000 care workers and 162,000 working-age adults who were US citizens at birth, while the
+  denominators and the Butcher–Moran–Watson treatment are foreign-born only. `elder_care_bound.py`
+  now takes foreign-born Mexico-born only: shares 14.5% and 37.7% (were 14.9% and 38.5%), bound
+  $2.3–14.6bn (was $2.3–14.9bn), preferred $5.6bn (was $5.8bn). Still 1–9% of the headline. Found by
+  the [number audit](../infra/immigration-fiscal/number_audit_2026_09_22/AUDIT.md), item 1.

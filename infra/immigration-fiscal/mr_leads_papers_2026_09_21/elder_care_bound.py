@@ -53,9 +53,9 @@ def main():
     total = acs()
     working_age = total("wa_pop_by_nativity")
     treat_all = total("wa_lowed_by_nativity", NATIVITY="2")
-    treat_mex = total("wa_lowed_mexico_born")
+    treat_mex = total("wa_lowed_mexico_born", NATIVITY="2")  # foreign-born only, as treat_all
     care_fb = total("care_by_nativity", NATIVITY="2")
-    care_mex = total("care_mexico_born")
+    care_mex = total("care_mexico_born", NATIVITY="2")  # excludes Mexico-born US citizens at birth
     elderly_us = total("age65_by_gq_nativity", NATIVITY="1")
     institutional = total("age65_by_gq_nativity", TYPEHUGQ="2")
     nhe = nhe_2024()

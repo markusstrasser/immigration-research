@@ -1,7 +1,7 @@
 # Seven papers from the Marginal Revolution archive, read in full
 
 **Verdict:** None of the seven changes the account's headline. Two identify benefits the account
-omits: a nursing-home channel bounded at $2.3–14.9bn a year of Medicaid spending for the
+omits: a nursing-home channel bounded at $2.3–14.6bn a year (corrected 2026-09-22: foreign-born Mexico-born only) of Medicaid spending for the
 Mexico-born, and native–immigrant complementarity, which the production term assumes away.
 Memo: [`research/immigration-marginal-revolution-leads-read-2026-09-21.md`](../../../research/immigration-marginal-revolution-leads-read-2026-09-21.md).
 
