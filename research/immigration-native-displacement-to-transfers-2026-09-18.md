@@ -922,3 +922,16 @@ support, and negative claims are the least sensitive to the instrument's disposi
 ## Revisions — September 19, 2026
 
 Corrected the interpretation for the reasons above; see the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md).
+
+## Revisions — September 22, 2026
+
+A second instrument for the 2000–2010 window, the public Burchardi–Chaney–Hassan ancestry
+push-pull prediction aggregated to the same 2013 CBSAs, is stronger (F 63.9 against 29.1),
+passes the baseline-level exogeneity test that the settlement instrument fails (−0.085 ± 0.083
+against +0.132 ± 0.035 on the 2000 SSI level) and carries a third of its variance from Mexico
+rather than two thirds. With it the household SSI response is −0.28 (SE 0.06) instead of
+−0.44 (0.10) and the public-assistance response is −0.10 (0.19), a null, instead of −0.99
+(0.28); Hansen J rejects the pair (p 0.011 and 0.0002). The negative claim of this memo stands;
+the public-assistance association in the table above should be read as not surviving a cleaner
+instrument. Employment and participation were not testable at the 2000 endpoint. Ladder 182,
+[lane](../infra/immigration-fiscal/ancestry_instrument_2026_09_22/RESULT.md).

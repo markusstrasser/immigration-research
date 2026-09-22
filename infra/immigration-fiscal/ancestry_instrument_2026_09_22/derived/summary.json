@@ -1,0 +1,25 @@
+{
+ "gates": {
+  "G1_settlement_first_stage": {
+   "n": 334,
+   "n_ref": 334,
+   "coef": 0.15296841468112732,
+   "coef_ref": 0.1529684146811273,
+   "se": 0.028361494765078696,
+   "se_ref": 0.0283614947650786,
+   "passed": true
+  },
+  "G2_iv_reproduced": true
+ },
+ "file": {
+  "counties_in_file": 3141,
+  "origins": 195,
+  "counties_unmatched_to_cbsa": 1335,
+  "national_pred_2000s_all": 10450964.943875598,
+  "national_pred_2000s_mex": 3150296.9025055896,
+  "national_pred_1990s_all": 11814610.199099004
+ },
+ "window": "2000-2010",
+ "treatment": "all foreign-born share, published ACS (as the lane's 2000-based windows)",
+ "rows": 42
+}
