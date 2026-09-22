@@ -29,6 +29,8 @@ def main():
     year = int(sys.argv[1])
     zpath = sys.argv[2]
     members = sys.argv[3:] or ["psam_pusa.csv", "psam_pusb.csv"]
+    if len(members) == 1 and " " in members[0]:
+        members = members[0].split()
     hp = subprocess.Popen(["unzip", "-p", zpath, members[0]], stdout=subprocess.PIPE)
     header = hp.stdout.readline().decode().replace('"', '').strip().split(",")
     hp.stdout.close()
