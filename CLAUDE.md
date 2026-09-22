@@ -53,35 +53,10 @@ its uncommitted and ignored files (`_cache/`, `raw/`) exist on main.
 
 ## Tools Available
 
-### Skills (symlinked from `~/Projects/skills/`)
+### Skills
 
-Research & evidence:
-- **research** — one-shot research with source grading
-- **research-ops** — autonomous research loops, knowledge compilation, training-data diff
-- **bio-verify** — bio/medical/scientific claim verification with evidence hierarchy
-- **analyze** — causal/DAG/hypotheses/forensic analysis modes
-- **observe** — session retrospectives, architectural patterns, supervision audits
-- **critique** — adversarial review of plans, findings and closeouts (model, verify, close)
-- **code-review** — review of a diff, PR or change against the code
-- **brainstorm** — divergent ideation via systematic perturbation
-- **de-slop** — adversarial editor for AI-generated prose patterns
-
-Workflow & project:
-- **entity-management** — versioned knowledge management for entities
-- **trending-scout** — scan for new AI/agent developments
-
-Data acquisition:
-- **data-acquisition** — probe→stage→register for external datasets (research + intel patterns)
-- **census-data** — Census Data API + IPUMS extracts (ACS, CPS, SIPP, QWI variable codes)
-- **youtube-transcript** — fetch video transcripts via yt-dlp (podcasts, interviews)
-- **dataset-register** — standardize per-topic dataset catalogs
-
-Infra & integrations:
-- **google-workspace** — Google Workspace automation (Drive, Sheets, Gmail, Calendar)
-- **scientific-drawing** — Typst/CeTZ, TikZ, D2, Asymptote diagrams
-- **modal** — Modal serverless Python cloud compute
-- **llmx-guide** — llmx CLI routing and gotchas
-- **model-guide** — frontier model selection and prompting
+Symlinked into `.claude/skills/` from `~/Projects/skills/`; each `SKILL.md` carries its own
+description, and the session's skill listing shows which are enabled.
 
 ### MCP Servers (`.mcp.json`)
 - **exa** — semantic web search, entity enrichment, deep research
