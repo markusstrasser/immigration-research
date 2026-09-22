@@ -12,6 +12,8 @@ Inputs/definitions: [dataset card](DATASET_CARD.md), [source lock](sources.json)
 ```sh
 uv run python3 infra/immigration-fiscal/school_peer_checks_2026_09_20/extract.py
 uv run python3 infra/immigration-fiscal/school_peer_checks_2026_09_20/analyze.py
+uv run python3 infra/immigration-fiscal/school_peer_checks_2026_09_20/extract_2011.py
+uv run python3 infra/immigration-fiscal/school_peer_checks_2026_09_20/analyze_2011.py
 uv run python3 infra/immigration-fiscal/school_peer_checks_2026_09_20/tabulate_growth.py
 OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 uv run python3 infra/immigration-fiscal/school_peer_checks_2026_09_20/verify.py --data-dir infra/immigration-fiscal/school_peer_checks_2026_09_20/_cache --results infra/immigration-fiscal/school_peer_checks_2026_09_20/derived/results.json --source-lock infra/immigration-fiscal/school_peer_checks_2026_09_20/sources.json --out infra/immigration-fiscal/school_peer_checks_2026_09_20/derived/verification
 ```

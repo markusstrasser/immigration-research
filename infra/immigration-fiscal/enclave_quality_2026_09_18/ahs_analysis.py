@@ -33,8 +33,11 @@ import io, json, pathlib, re, sys, zipfile
 import numpy as np, pandas as pd
 import statsmodels.api as sm
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "build"))
+import paths as _data_paths
+
 HERE = pathlib.Path(__file__).parent; CD = HERE/"_cache"
-ZIP = CD/"ahs2023_flat.zip"
+ZIP = _data_paths.data_root(require_exists=False) / "external/ahs_2023/ahs2023_flat_v1_0.zip"
 pd.set_option("display.width", 250, "display.max_columns", 60)
 
 EXPECTED = 141729433

@@ -73,3 +73,25 @@ the clone a different group and protected per-inode provenance attribute. The
 maintenance script was corrected to preserve owner/group, permissions, flags,
 modification time and user xattrs while accepting the OS's new provenance marker.
 A native clone probe verified metadata preservation and independent writes.
+
+## 2026-09-21 follow-up
+
+True extra copies removed (logical `du`, unique sources kept): GFD and AHS
+v1.0 lane-cache clones (same SHA-256 as `sources/`), unzipped ACS 2024 CSVs
+under `cultural_output/_cache/pums`, the QCEW 2,159-CSV extract, and the CCD
+`.sas7bdat`. `ahs_analysis.py` now reads
+`sources/.../ahs2023_flat_v1_0.zip`. `setup.sh` no longer unpacks QCEW.
+
+The ACS 2013 `.part` was the official 616,326,250-byte zip plus a 90,112-byte
+prefix; stripping the prefix left a same-size file whose first member still
+failed CRC. A fresh `--http1.1` download passed `unzip -tqq`:
+`csv_pus_2013.zip`, SHA-256
+`414dad47774ae751209391cd83e4c88706488ca8a7dd4ac1c2faa4bf2d7cf2a1`.
+3,132,795 person rows, weighted population 316,128,839, Mexico-born weighted
+11,812,890.
+
+ECLS-K:2011 is no longer idle: birthplace and teacher IDs are suppressed in
+the microdata; an English-home NH-white kindergarten school-FE ELL association
+is in `school_peer_checks_2026_09_20/derived/ecls_k2011_summary.json`.
+
+Checkout `du` after this pass: **20 GB** (sources 12 GB, analysis lanes 6.4 GB).

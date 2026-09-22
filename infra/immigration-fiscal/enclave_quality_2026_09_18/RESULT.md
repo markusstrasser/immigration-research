@@ -221,5 +221,5 @@ tract via `B25014`.
 ## Do not
 
 Nothing was committed. Raw pulls and downloaded documentation are cached under `_cache/` and
-are untracked. The truncated `_cache/ahs2023_flat.zip` is dead weight and can be deleted; the
-analysis no longer depends on it.
+are untracked. `ahs_analysis.py` reads the v1.0 archive at
+`sources/immigration-fiscal/data/external/ahs_2023/ahs2023_flat_v1_0.zip`.
