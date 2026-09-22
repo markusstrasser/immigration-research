@@ -211,3 +211,7 @@ Senate and governors not verified; FARA filings for the Indian government not re
 ## Revisions — September 19, 2026
 
 Corrected the interpretation for the reasons above; see the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md).
+
+## Revisions — September 21, 2026
+
+Third-plus Indian (US-born, both parents US-born, Asian Indian race) is now on the same 2025 ledger: n=49 adults 25–64, age-standardised gap **+$11,806 (se 8,150)** vs 3rd+ NH whites, which does not reject parity. G2 age-standardised **+$23,692 (se 5,482)** is unchanged. The G3 cell is an identified-race remainder, not observed grandparents. [DATA: `infra/immigration-fiscal/indian_generation_2026_09_21/RESULT.md`]
