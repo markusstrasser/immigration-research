@@ -238,9 +238,11 @@ substitutes and credits $8.8–13.3bn. Three limits keep it from being added as 
 model's aggregate real wage is unchanged by construction, so the native gain is matched by
 losses of other immigrants, who are inside "other residents" here. Its "natives" include
 naturalized citizens and every US-born Mexican-origin worker. It has no taxes, transfers or
-public services. The nested calculation on the account's own earnings data is the open item;
-at these magnitudes it changes the size of the net cost and leaves its sign. [SOURCE:
-[papers read](immigration-marginal-revolution-leads-read-2026-09-21.md#3-the-removal-model-and-the-accounts-production-term); ladder 166]
+public services. The nested calculation on the account's own earnings data is now executed:
+natives against foreign-born inside each skill cell at ε = 3 doubles the term to $17.9–27.1bn,
+with natives +$54bn and other foreign-born residents −$46bn netting inside the beneficiary set,
+and would lower the $165–197bn band by $9–14bn; size, not sign. [SOURCE:
+[papers read](immigration-marginal-revolution-leads-read-2026-09-21.md#3-the-removal-model-and-the-accounts-production-term); ladder 166; [executed nest](immigration-production-term-nativity-nest-2026-09-22.md), ladder 176]
 
 ## Instrument
 
