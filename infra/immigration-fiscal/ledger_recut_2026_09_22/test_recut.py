@@ -136,7 +136,7 @@ def test_gross_flows_reproduce_central(cells):
     flows = pd.read_csv(D / "gross_flows.csv").set_index("line").bn
     assert flows["net"] == pytest.approx(cells.loc["central", "union_absolute_bn"], abs=1e-6)
     assert flows["gross receipts"] > 0 > flows["gross outlays"]
-    assert flows["20% of gross outlays"] > flows["20% of the net"] * 2
+    assert set(flows.index) == {"gross receipts", "gross outlays", "net", "replicate standard error of the central"}
 
 
 def test_point_only_rows_have_no_se(cells):

@@ -469,9 +469,6 @@ def main() -> None:
     outlays = float(by_component[by_component < 0].sum())
     flows = pd.DataFrame([dict(line="gross receipts", bn=receipts), dict(line="gross outlays", bn=outlays),
                           dict(line="net", bn=receipts + outlays),
-                          dict(line="20% of gross outlays", bn=0.2 * abs(outlays)),
-                          dict(line="20% of gross receipts", bn=0.2 * receipts),
-                          dict(line="20% of the net", bn=0.2 * abs(receipts + outlays)),
                           dict(line="replicate standard error of the central", bn=se_of(central) / BN)])
     flows.to_csv(out / "gross_flows.csv", index=False)
     gates["gross_flows_reproduce_central"] = dict(net_bn=receipts + outlays, central_bn=central[0] / BN,

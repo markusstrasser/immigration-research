@@ -75,13 +75,9 @@ R750). Values are billions of 2024 dollars per year, costs negative.
 | Gross receipts | 417.0 |
 | Gross outlays | −634.3 |
 | Net | −217.3 |
-| 20% of gross outlays | 126.9 |
-| 20% of gross receipts | 83.4 |
-| 20% of the net | 43.5 |
 | Replicate SE of the central | 8.7 |
 
-A flat percentage on the net has no unit: the same 20% is $127bn on outlays, $83bn on
-receipts and $43bn on the net. [CALCULATION: `derived/gross_flows.csv`.]
+[CALCULATION: `derived/gross_flows.csv`.]
 
 ## Gates
 
