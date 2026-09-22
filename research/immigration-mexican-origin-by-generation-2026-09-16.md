@@ -264,6 +264,8 @@ What "cause more crime" would then mean. A raw contrast answers "do they offend 
 - **2026-09-18 (evening).** §5.1 longevity qualified: on the complete all-age account with Mexican-specific mortality (Fenelon et al. 2017) the survival swap is worth $1,283 on a −$548,270 lifetime gap, and the pooled-Hispanic table that gave the $20,000 / 5% figure overstates the Mexican-origin advantage. See [longevity and Social Security timing](immigration-lifetime-longevity-and-social-security-timing-2026-09-18.md).
 
 
+- **2026-09-22 (adult outcomes by generation, IPUMS-CPS).** The [second-generation memo](immigration-second-generation-by-origin-2026-09-22.md) (ladder 178) measures the convergence that §5 and §9 read from the fiscal side: on CPS ASEC 1994–2025 the Mexican second generation closes 76% of the first generation's no-high-school gap, 31% of the college gap, 59% of the employment gap and 66% of the log-income gap against third-plus non-Hispanic whites at the same age, sex and year, and self-identified third-plus Mexican adults sit at the second generation's level. No value in this memo changes; the reading that the second-to-third step is small gains a non-fiscal measurement, and the flat first-to-second fiscal gap gains its input side (participation converges, the degree margin does not).
+
 ## Revisions — fiscal repair, September 19, 2026
 
 Grant/fee ownership, veterans and enforcement double counting, real discounting and age-profile propagation were corrected. The $263bn/$2,246/89% and flat-shift lifetime headlines are superseded; the birth-policy inference remains withdrawn. See [current results](immigration-yearly-lifetime-cost-repair-2026-09-19.md) and its linked decision record.
