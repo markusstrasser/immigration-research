@@ -16,11 +16,12 @@ insignificant employment coefficient (Clemens–Lewis), and a **calibrated** wit
 (Burstein et al., footnote 42). The two papers that estimate the object directly for
 low-skill workers put it at **8.7 to 17** nationally (Caiumi–Peri: 1/σ = 0.115 ± 0.031 for
 no-diploma workers, 0.058 ± 0.025 pooled) and **17.9 ± 0.8** across cities (Piyapromdee).
-That range brackets the account's own-file sketch of about 6 and sits far from 3. On the
-nest's already-computed rows, ε between 7 and 20 puts the production term at **+$15.4 to
-+19.2bn (GDP scaling) or +$10.1 to +12.6bn (cash)** against the published +13.3 / +8.8bn, so
-the adjustment to the $165–197bn headline is **about $2 to 6bn, not the $9 to 14bn** that
-ε = 3 implied. Sign unchanged, size smaller, still not applied. The other ten papers do not
+That range brackets the account's own-file sketch of about 6 and sits far from 3. Computed
+on the nest at those two elasticities (rows added the same evening), the production term is
+**+$18.0bn (GDP scaling) / +$11.9bn (cash) at ε = 8.7 and +$15.6 / +$10.3bn at ε = 17.9**
+against the published +13.3 / +8.8bn, so the adjustment to the $165–197bn headline is
+**about $2 to 5bn, not the $9 to 14bn** that ε = 3 implied. Sign unchanged, size smaller,
+still not applied. The other ten papers do not
 touch the account's terms. They supply four sections that stand on their own: who bears the
 wage cost (earlier immigrants and entering cohorts, locals briefly), whether removal hands
 jobs to natives (three designs say no), housing (a demand shock now, a construction-cost
@@ -80,23 +81,25 @@ primary texts say what those numbers are:
 sentence in the parsed texts]
 
 The three estimates of the low-cell object itself, 8.7, 17 and 17.9, and the own-file 6, all
-lie above the nest's ε = 7 row; two lie near the ε = 20 row. Reading the existing rows
+lie above the removal model's 3. The nest grid was extended with 8.7, 9 and 17.9 on the
+evening of 2026-09-22 (all nine gates pass, independent re-derivation to 5e-12bn)
 [CALCULATION: `nest_headline.csv`, Option A, σ = 2, full capital adjustment]:
 
 | ε | term, GDP scaling ($bn) | term, cash ($bn) | natives after tax | other foreign-born | change vs perfect substitution, GDP / cash |
 |---:|---:|---:|---:|---:|---:|
 | ∞ (published) | 13.32 | 8.79 | −0.6 | +0.4 | 0 / 0 |
 | 20 | 15.35 | 10.13 | +7.4 | −6.4 | +2.0 / +1.3 |
+| 17.9 (Piyapromdee) | 15.59 | 10.29 | +8.3 | −7.2 | +2.3 / +1.5 |
+| 9 (Burstein aggregate, inferred) | 17.85 | 11.78 | +17.2 | −14.7 | +4.5 / +3.0 |
+| 8.7 (Caiumi–Peri, no diploma) | 18.01 | 11.88 | +17.8 | −15.2 | +4.7 / +3.1 |
 | 7 | 19.16 | 12.64 | +22.4 | −19.1 | +5.8 / +3.9 |
 | 4.6 | 22.25 | 14.68 | +34.6 | −29.5 | +8.9 / +5.9 |
 | 3 | 27.13 | 17.90 | +54.0 | −45.9 | +13.8 / +9.1 |
 | 1.3 | 46.17 | 30.46 | +130.5 | −111.1 | +32.8 / +21.7 |
 
-So at the published low-cell estimates the production term is **+$15 to 19bn GDP / +$10 to
-13bn cash**, the headline band would move by **$2 to 6bn**, and the transfer inside the
-beneficiary set shrinks from ±$50bn to ±$7–22bn. The ε = 9 and ε = 18 rows are not
-computed; the statement interpolates between computed neighbours and the term is monotone in
-ε across the grid. The comparison in FAQ 14 with the removal model's $38.6bn native loss
+So at the published low-cell estimates the production term is **+$15.6 to 18.0bn GDP /
++$10.3 to 11.9bn cash**, the headline band would move by **$2 to 5bn**, and the transfer
+inside the beneficiary set shrinks from ±$50bn at ε = 3 to ±$7–18bn. The comparison in FAQ 14 with the removal model's $38.6bn native loss
 stands, with the added fact that its ε rests on one interval that includes 0.12 and one
 calibrated number whose own authors double it. Whether to adopt an ε remains the operator's
 call; the evidence now points to the upper half of the grid rather than the lower.
@@ -289,11 +292,17 @@ tax, service or schooling line; the account remains the only stationary object i
 
 ## 7. Executions this reading proposes
 
-1. Add ε = 9 and ε = 18 rows to the nest grid so the §2.1 statement is computed rather than
-   interpolated; one re-run of `production_nativity_nest_2026_09_22`, no new data.
+1. Done the same evening: ε = 8.7, 9 and 17.9 rows added to `production_nativity_nest_2026_09_22`
+   (its RESULT.md carries the rows and the gate record).
 2. Re-run the displacement lane's 2000–2010 first stage with the county ancestry file as a
    second instrument, reporting F and Rotemberg weights beside the settlement instrument.
 3. The housing causal leg at the decade horizon, Monras's design on the IPUMS panel for
    1990–2000, which the California–Texas memo specified and left unstarted.
 
-None of the three is started here.
+Items 2 and 3 are not started here.
+
+## Revisions
+
+- 2026-09-22 (evening): §2.1 and the verdict now quote computed nest rows at ε = 8.7, 9
+  and 17.9 instead of interpolating between 7 and 20; the headline move is $2–5bn. Ladder
+  181 and the nest memo carry the same revision. No claim changes direction.
