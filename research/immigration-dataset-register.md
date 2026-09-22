@@ -756,3 +756,24 @@ raw/derived ignored. [Source lock and recipe](../infra/immigration-fiscal/causal
 unit-specific; historical enrollment can be substituted/unusable; current operating
 spending differs from total-minus-capital. No pupil nativity/white outcome/class-size
 measure. Used in21 conditional Mariel SCM models, not national population accounting.
+
+### NAS_2016_FISCAL_REPORT_PDF — The Economic and Fiscal Consequences of Immigration (2016)
+
+- Source/acquired: National Academies Press catalog 23550, free PDF; downloaded by the operator with a NAP login, September 22, 2026.
+- Local/codebook/size: `sources/immigration-fiscal/data/external/nas_2016/23550.pdf`, 7,195,875 bytes, 643 pages; SHA256 `c6fffc8f764e257b…` (full hash in the raw-file manifest).
+- Key content: chapters 7–8 fiscal accounts (static 2011–2013 scenarios; 75-year net present values by education and generation) and the chapter 12 framework the complete annual account already cites.
+- Quirks/use: primary source for every NAS-attributed number; parse tables from this file, never from a secondary summary (the Firecrawl extraction fabricated an SSA table). Not yet used in a lane.
+
+### ICE_DETENTION_STATS_FY19_FY26 — ERO detention statistics workbooks
+
+- Source/acquired: ICE Detention Statistics workbooks (ice.gov/detain/detention-management), downloaded by the operator September 22, 2026: FY19, FY20, FY21, FY22, FY23, FY24, FY25 (September 24, 2025 release) and FY26 year-to-date (July 20, 2026 release). Automated fetch is blocked at the site.
+- Local/size: `sources/immigration-fiscal/data/external/ice_detention_stats/*.xlsx`, 132 KB to 1.57 MB each; SHA256 per file in the raw-file manifest.
+- Key sheets: `Detention FYxx` (currently detained by processing disposition and by criminality; initial book-ins by facility type; book-outs by release reason; average daily population and average length of stay by arresting agency, CBP against ICE, by criminality), `Facilities FYxx` (per-facility ADP, detailed type IGSA/CDF/SPC/USMS, classification levels, ALOS, inspections), `ICLOS and Detainees` (from FY22), ATD, semiannual, segregation and vulnerable-population sheets.
+- Quirks/use: no country of citizenship and no cost or per-diem column; layouts change every year (`Facilities FY19` is 220 × 31, `Facilities FY25` 196 × 28; the FY25 segregation sheet spans 16,383 mostly empty columns). Supports allocating Custody Operations dollars by arresting agency and facility type for the custody item in the [detention reconciliation](../infra/immigration-fiscal/detention_reconciliation_2026_09_20/README.md); it does not close that lane's execution-records gap. Not yet used.
+
+### ICPSR_38031_V3 — New Immigrant Survey 2003 Round 1, public-use
+
+- Source/acquired: ICPSR 38031 version 3 (Jasso, Massey, Rosenzweig, Smith), downloaded by the operator with an ICPSR login, September 22, 2026. Round 2 (ICPSR 38061) is not downloaded.
+- Local/size: `sources/immigration-fiscal/data/external/icpsr_nis_2003/ICPSR_38031-V3.zip`, 567,819,638 bytes; 1.26 GB unpacked, 675 files, 66 tab-separated data files with ICPSR and PI codebooks and questionnaires. Adult sample 8,573 respondents: DS0001 roster (1,884 variables), DS0002 preload, DS0003 Section A demographics (3,461 variables), DS0004–DS0005 Section B pre-immigration, DS0006–DS0024 sections C–R; later blocks repeat the sections for the spouse and child samples.
+- Key variables: religion in Section J, DS0017 (`J30_1MO` respondent's religion, `J31_1MO` other, `J33_1MO` denomination, `J36_1MO` another religion); income and earnings in Section H, DS0013 and DS0014 (`H54*`, `H58*` asset and income items); occupation and industry codes in Section A (`A959OC`, `A959IN`).
+- Quirks/use: new legal permanent residents of 2003–04 only, no unauthorized population; sampling weights documented in `38031-Documentation-sampling_weights.pdf`; ICPSR missing-value codes in the TSVs. Intended for religion by earnings among new green-card holders (HUMAN.md ask of September 21). Not yet used.
