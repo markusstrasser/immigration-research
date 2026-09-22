@@ -89,14 +89,17 @@ def build() -> None:
 
     # working-age; parental origin = father's BPL, fall back to mother's when father US-born (<150).
     # NATIVITY 1 (3rd+) has no foreign parent → origin 'native_baseline'.
+    # IPUMS-CPS BPL/FBPL/MBPL are the 5-digit detailed codes (09900 US, 20000 Mexico, 15000 Canada,
+    # 21030 El Salvador, 51500 India); integer division by 100 gives the general code REGION_CASE
+    # expects (fixed 2026-09-22: the raw 5-digit codes mapped every parent, US-born included, to 'Other').
     con.execute(f"""
         CREATE OR REPLACE TABLE cps_second_gen_by_origin AS
         WITH base AS (
             SELECT
                 CAST(NATIVITY AS INT) AS NATIVITY,
                 CAST(ASECWT AS DOUBLE) AS w,
-                CASE WHEN CAST(FBPL AS INT) >= 150 THEN CAST(FBPL AS INT)
-                     WHEN CAST(MBPL AS INT) >= 150 THEN CAST(MBPL AS INT)
+                CASE WHEN CAST(FBPL AS INT) // 100 >= 150 THEN CAST(FBPL AS INT) // 100
+                     WHEN CAST(MBPL AS INT) // 100 >= 150 THEN CAST(MBPL AS INT) // 100
                      ELSE NULL END AS bpl_origin,
                 -- [VERIFY-AT-EXTRACT against the DDI] CPS EMPSTAT: 10=at work, 12=has job not at work = employed
                 CASE WHEN CAST(EMPSTAT AS INT) IN (10,12) THEN 1.0 ELSE 0.0 END AS employed,
