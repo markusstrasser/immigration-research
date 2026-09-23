@@ -1,0 +1,33 @@
+entered_without_papers,category,n,share_of_group,share_adjusted_inside_us
+False,Cancellation of removal or registry,6,0.0084,1.0
+False,Child of US citizen,35,0.0546,0.6883
+False,Employment,33,0.0245,0.7011
+False,Family fourth preference,19,0.0285,0.3847
+False,Legalization classes (W),4,0.0064,1.0
+False,Other,1,0.0015,1.0
+False,Other family preference,38,0.0549,0.5653
+False,Parent of US citizen,186,0.2963,0.3043
+False,Spouse of LPR,49,0.0777,0.3605
+False,Spouse of US citizen,141,0.4472,0.8919
+True,Cancellation of removal or registry,56,0.074,1.0
+True,Child of US citizen,40,0.0521,0.8892
+True,Employment,45,0.025,1.0
+True,Family fourth preference,11,0.0129,0.6441
+True,Legalization classes (W),25,0.0351,1.0
+True,Other,1,0.0012,1.0
+True,Other family preference,86,0.1138,0.9031
+True,Parent of US citizen,76,0.0984,0.4151
+True,Refugee/asylee/parolee,1,0.0018,1.0
+True,Spouse of LPR,73,0.0924,0.9373
+True,Spouse of US citizen,185,0.4933,0.9435
+share_within_category,Cancellation of removal or registry,62,0.9152,
+share_within_category,Child of US citizen,75,0.5383,
+share_within_category,Employment,78,0.5553,
+share_within_category,Family fourth preference,30,0.3553,
+share_within_category,Legalization classes (W),29,0.8697,
+share_within_category,Other,2,0.5054,
+share_within_category,Other family preference,124,0.7166,
+share_within_category,Parent of US citizen,262,0.2886,
+share_within_category,Refugee/asylee/parolee,1,1.0,
+share_within_category,Spouse of LPR,122,0.5921,
+share_within_category,Spouse of US citizen,326,0.5739,
