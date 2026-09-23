@@ -1,0 +1,62 @@
+{
+ "ltss-expenditures-user-data-2022.zip": {
+  "url": "https://www.medicaid.gov/medicaid/long-term-services-supports/downloads/ltss-expenditures-user-data-2022.zip",
+  "wayback_snapshot": "20241129153342",
+  "sha256": "9c4889003ccca8268d308ed03296a04b5c4914fefee7f4dc17891318b9a334c4",
+  "bytes": 1605574
+ },
+ "ltss-expenditures-user-data-2019-2021.zip": {
+  "url": "https://www.medicaid.gov/medicaid/long-term-services-supports/downloads/ltss-expenditures-user-data-2019-2021.zip",
+  "wayback_snapshot": "20240927124641",
+  "sha256": "f2a765c98afebf0b14c461b0f32ad8cde8fb3a59f8a2f859e7822c63887c4abd",
+  "bytes": 4646065
+ },
+ "ltss-user-character-brief-2023.pdf": {
+  "url": "https://www.medicaid.gov/medicaid/long-term-services-supports/downloads/ltss-user-character-brief-2023.pdf",
+  "wayback_snapshot": "20260403063600",
+  "sha256": "0af16678a92ed886beefdf9711000db2bd2e658c4346e5ae28891a2b54a2a65d",
+  "bytes": 416455
+ },
+ "ltss-user-character-brief-2022.pdf": {
+  "url": "https://www.medicaid.gov/medicaid/long-term-services-supports/downloads/ltss-user-character-brief-2022.pdf",
+  "wayback_snapshot": "20241205151552",
+  "sha256": "7e4f2423a3031bd10d1562279e7de014fc6792f49b5435276cc3ed7cc0ee762d",
+  "bytes": 1850385
+ },
+ "ltssexpenditures2020.pdf": {
+  "url": "https://www.medicaid.gov/medicaid/long-term-services-supports/downloads/ltssexpenditures2020.pdf",
+  "wayback_snapshot": "20240502200029",
+  "sha256": "16022817788531e36ecdabf7d027486e4e458fa1e6f6232176cf9043e9ed25fb",
+  "bytes": 2710036
+ },
+ "ltssexpenditures2020-app-d.xlsx": {
+  "url": "https://www.medicaid.gov/medicaid/long-term-services-supports/downloads/ltssexpenditures2020-app-d.xlsx",
+  "wayback_snapshot": "20240928013615",
+  "sha256": "407dd5cfc7395519849b52663246fb362349b7a8d8d707581657b29c95645242",
+  "bytes": 276490
+ },
+ "ltssexpenditures2020-app-e.xlsx": {
+  "url": "https://www.medicaid.gov/medicaid/long-term-services-supports/downloads/ltssexpenditures2020-app-e.xlsx",
+  "wayback_snapshot": "20240927081644",
+  "sha256": "9d7a24be1084bc81681b3dfa4f3eb55cc00dd57ef3b4b1b3016bf6f889c583ff",
+  "bytes": 275636
+ },
+ "ltss-users-taf-method-2023.pdf": {
+  "url": "https://www.medicaid.gov/medicaid/long-term-services-supports/downloads/ltss-users-taf-method-2023.pdf",
+  "wayback_snapshot": "20260123020751",
+  "sha256": "d61d31b9e6d0c2d7ca5cbe5893d8eca12b5ff7f591028567f712dbed559f584a",
+  "bytes": 397099
+ },
+ "financial-management-report-fy2023.zip": {
+  "url": "https://www.medicaid.gov/medicaid/financial-management/downloads/financial-management-report-fy2023.zip",
+  "wayback_snapshot": "20240929145348",
+  "sha256": "23242828ff7193bcda7e20a4d12ed077ca9ac8f8669c3d4d4b08cd55340fe903",
+  "bytes": 1050665
+ },
+ "financial-management-report-fy2024.zip": {
+  "url": "https://www.medicaid.gov/medicaid/financial-management/downloads/financial-management-report-fy2024.zip",
+  "wayback_snapshot": "20251002175227",
+  "sha256": "def068767bb0137aa7f14e4c17935cd0e71b3bcac2650ad18765f739d1acfd66",
+  "bytes": 1050237
+ }
+}

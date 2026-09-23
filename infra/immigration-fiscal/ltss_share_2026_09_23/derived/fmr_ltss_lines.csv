@@ -1,0 +1,2623 @@
+fiscal_year,state,line,group,total_computable
+2023,Alabama,Mental Health Facility Services - Reg. Payments,mhf,80439356.0
+2023,Alabama,Mental Health Facility - DSH,mhf_dsh,3215000.0
+2023,Alabama,Nursing Facility Services - Reg. Payments,nf,1217223305.0
+2023,Alabama,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Alabama,Intermediate Care Facility - Public,icf,0.0
+2023,Alabama,Intermediate Care - Private,icf,2632487.0
+2023,Alabama,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Alabama,Home Health Services,hcbs_other,105811415.0
+2023,Alabama,Medicaid - MCO,mco_capitation,0.0
+2023,Alabama,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Alabama,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,519245534.0
+2023,Alabama,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Alabama,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,103829294.0
+2023,Alabama,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Alabama,All-Inclusive Care Elderly,hcbs_other,7789764.0
+2023,Alabama,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,Alabama,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Alabama,Targeted Case Management Services - Com. Case-Man.,hcbs_other,49419510.0
+2023,Alabama,Case Management - State Wide,hcbs_other,0.0
+2023,Alabama,Rehabilitative Services (non-school-based),hcbs_other,149922944.0
+2023,Alabama,Private Duty Nursing,hcbs_other,9525415.0
+2023,Alabama,Balance,map_total,7877361436.0
+2023,Alabama,Collections,collections,-47705358.0
+2023,Alaska,Mental Health Facility Services - Reg. Payments,mhf,12094608.0
+2023,Alaska,Mental Health Facility - DSH,mhf_dsh,17611765.0
+2023,Alaska,Nursing Facility Services - Reg. Payments,nf,202073562.0
+2023,Alaska,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Alaska,Intermediate Care Facility - Public,icf,0.0
+2023,Alaska,Intermediate Care - Private,icf,1519025.0
+2023,Alaska,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Alaska,Home Health Services,hcbs_other,1950499.0
+2023,Alaska,Medicaid - MCO,mco_capitation,0.0
+2023,Alaska,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Alaska,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,349540074.0
+2023,Alaska,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Alaska,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Alaska,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,19588861.0
+2023,Alaska,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Alaska,Personal Care Services - Reg. Payments,hcbs_pc_cfc,20336928.0
+2023,Alaska,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Alaska,Targeted Case Management Services - Com. Case-Man.,hcbs_other,2723573.0
+2023,Alaska,Case Management - State Wide,hcbs_other,0.0
+2023,Alaska,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2023,Alaska,Private Duty Nursing,hcbs_other,0.0
+2023,Alaska,Balance,map_total,2560061626.0
+2023,Alaska,Collections,collections,-29801347.0
+2023,Amer. Samoa,Mental Health Facility Services - Reg. Payments,mhf,0.0
+2023,Amer. Samoa,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Amer. Samoa,Nursing Facility Services - Reg. Payments,nf,0.0
+2023,Amer. Samoa,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Amer. Samoa,Intermediate Care Facility - Public,icf,0.0
+2023,Amer. Samoa,Intermediate Care - Private,icf,0.0
+2023,Amer. Samoa,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Amer. Samoa,Home Health Services,hcbs_other,0.0
+2023,Amer. Samoa,Medicaid - MCO,mco_capitation,0.0
+2023,Amer. Samoa,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Amer. Samoa,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,0.0
+2023,Amer. Samoa,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Amer. Samoa,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Amer. Samoa,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Amer. Samoa,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Amer. Samoa,Personal Care Services - Reg. Payments,hcbs_pc_cfc,57969.0
+2023,Amer. Samoa,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Amer. Samoa,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2023,Amer. Samoa,Case Management - State Wide,hcbs_other,0.0
+2023,Amer. Samoa,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2023,Amer. Samoa,Private Duty Nursing,hcbs_other,0.0
+2023,Amer. Samoa,Balance,map_total,59932077.0
+2023,Amer. Samoa,Collections,collections,0.0
+2023,Arizona,Mental Health Facility Services - Reg. Payments,mhf,7568914.0
+2023,Arizona,Mental Health Facility - DSH,mhf_dsh,28474900.0
+2023,Arizona,Nursing Facility Services - Reg. Payments,nf,65119626.0
+2023,Arizona,Nursing Facility Services - Sup. Payments,nf,11645365.0
+2023,Arizona,Intermediate Care Facility - Public,icf,0.0
+2023,Arizona,Intermediate Care - Private,icf,0.0
+2023,Arizona,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Arizona,Home Health Services,hcbs_other,7449101.0
+2023,Arizona,Medicaid - MCO,mco_capitation,18306238958.0
+2023,Arizona,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Arizona,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,0.0
+2023,Arizona,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Arizona,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Arizona,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Arizona,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Arizona,Personal Care Services - Reg. Payments,hcbs_pc_cfc,948937.0
+2023,Arizona,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Arizona,Targeted Case Management Services - Com. Case-Man.,hcbs_other,233954.0
+2023,Arizona,Case Management - State Wide,hcbs_other,0.0
+2023,Arizona,Rehabilitative Services (non-school-based),hcbs_other,471925225.0
+2023,Arizona,Private Duty Nursing,hcbs_other,3574.0
+2023,Arizona,Balance,map_total,22185252119.0
+2023,Arizona,Collections,collections,-1279980.0
+2023,Arkansas,Mental Health Facility Services - Reg. Payments,mhf,16745441.0
+2023,Arkansas,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Arkansas,Nursing Facility Services - Reg. Payments,nf,903961896.0
+2023,Arkansas,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Arkansas,Intermediate Care Facility - Public,icf,158543451.0
+2023,Arkansas,Intermediate Care - Private,icf,458183.0
+2023,Arkansas,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Arkansas,Home Health Services,hcbs_other,55938285.0
+2023,Arkansas,Medicaid - MCO,mco_capitation,533074038.0
+2023,Arkansas,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Arkansas,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,910634061.0
+2023,Arkansas,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Arkansas,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Arkansas,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Arkansas,All-Inclusive Care Elderly,hcbs_other,27346997.0
+2023,Arkansas,Personal Care Services - Reg. Payments,hcbs_pc_cfc,182883249.0
+2023,Arkansas,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,34813950.0
+2023,Arkansas,Targeted Case Management Services - Com. Case-Man.,hcbs_other,98.0
+2023,Arkansas,Case Management - State Wide,hcbs_other,3150124.0
+2023,Arkansas,Rehabilitative Services (non-school-based),hcbs_other,179226496.0
+2023,Arkansas,Private Duty Nursing,hcbs_other,8454009.0
+2023,Arkansas,Balance,map_total,8643000111.0
+2023,Arkansas,Collections,collections,-37803620.0
+2023,California,Mental Health Facility Services - Reg. Payments,mhf,516778341.0
+2023,California,Mental Health Facility - DSH,mhf_dsh,243652.0
+2023,California,Nursing Facility Services - Reg. Payments,nf,1784809622.0
+2023,California,Nursing Facility Services - Sup. Payments,nf,137313404.0
+2023,California,Intermediate Care Facility - Public,icf,71157502.0
+2023,California,Intermediate Care - Private,icf,521018429.0
+2023,California,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,135871676.0
+2023,California,Home Health Services,hcbs_other,7890089.0
+2023,California,Medicaid - MCO,mco_capitation,54574177367.0
+2023,California,Medicaid MCO - Community First Choice,hcbs_pc_cfc,-4493593.0
+2023,California,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,6099351545.0
+2023,California,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,1095731372.0
+2023,California,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,California,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,11328070510.0
+2023,California,All-Inclusive Care Elderly,hcbs_other,1280415152.0
+2023,California,Personal Care Services - Reg. Payments,hcbs_pc_cfc,6501356343.0
+2023,California,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,199089994.0
+2023,California,Targeted Case Management Services - Com. Case-Man.,hcbs_other,912595364.0
+2023,California,Case Management - State Wide,hcbs_other,30979226.0
+2023,California,Rehabilitative Services (non-school-based),hcbs_other,761990997.0
+2023,California,Private Duty Nursing,hcbs_other,0.0
+2023,California,Balance,map_total,124063730563.31
+2023,California,Collections,collections,-1329908781.0
+2023,Colorado,Mental Health Facility Services - Reg. Payments,mhf,9914920.0
+2023,Colorado,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Colorado,Nursing Facility Services - Reg. Payments,nf,646353737.0
+2023,Colorado,Nursing Facility Services - Sup. Payments,nf,121366308.0
+2023,Colorado,Intermediate Care Facility - Public,icf,31840921.0
+2023,Colorado,Intermediate Care - Private,icf,6370622.0
+2023,Colorado,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Colorado,Home Health Services,hcbs_other,866670557.0
+2023,Colorado,Medicaid - MCO,mco_capitation,578276442.0
+2023,Colorado,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Colorado,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1956265043.0
+2023,Colorado,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,6315.0
+2023,Colorado,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Colorado,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Colorado,All-Inclusive Care Elderly,hcbs_other,253023532.0
+2023,Colorado,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,Colorado,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Colorado,Targeted Case Management Services - Com. Case-Man.,hcbs_other,34651351.0
+2023,Colorado,Case Management - State Wide,hcbs_other,0.0
+2023,Colorado,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2023,Colorado,Private Duty Nursing,hcbs_other,119157795.0
+2023,Colorado,Balance,map_total,12959433815.0
+2023,Colorado,Collections,collections,-155112305.0
+2023,Connecticut,Mental Health Facility Services - Reg. Payments,mhf,159174715.0
+2023,Connecticut,Mental Health Facility - DSH,mhf_dsh,105573725.0
+2023,Connecticut,Nursing Facility Services - Reg. Payments,nf,1205205335.0
+2023,Connecticut,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Connecticut,Intermediate Care Facility - Public,icf,153645081.0
+2023,Connecticut,Intermediate Care - Private,icf,75338402.0
+2023,Connecticut,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Connecticut,Home Health Services,hcbs_other,201234565.0
+2023,Connecticut,Medicaid - MCO,mco_capitation,0.0
+2023,Connecticut,Medicaid MCO - Community First Choice,hcbs_pc_cfc,-23807.0
+2023,Connecticut,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1612936844.0
+2023,Connecticut,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,4994944.0
+2023,Connecticut,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Connecticut,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,218524472.0
+2023,Connecticut,All-Inclusive Care Elderly,hcbs_other,-560.0
+2023,Connecticut,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,Connecticut,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Connecticut,Targeted Case Management Services - Com. Case-Man.,hcbs_other,83223424.0
+2023,Connecticut,Case Management - State Wide,hcbs_other,36.0
+2023,Connecticut,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2023,Connecticut,Private Duty Nursing,hcbs_other,0.0
+2023,Connecticut,Balance,map_total,10425838601.0
+2023,Connecticut,Collections,collections,-100146868.0
+2023,Delaware,Mental Health Facility Services - Reg. Payments,mhf,13971807.0
+2023,Delaware,Mental Health Facility - DSH,mhf_dsh,6207995.0
+2023,Delaware,Nursing Facility Services - Reg. Payments,nf,984128.0
+2023,Delaware,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Delaware,Intermediate Care Facility - Public,icf,17924791.0
+2023,Delaware,Intermediate Care - Private,icf,17060453.0
+2023,Delaware,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Delaware,Home Health Services,hcbs_other,49084.0
+2023,Delaware,Medicaid - MCO,mco_capitation,2840509438.0
+2023,Delaware,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Delaware,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,288967212.0
+2023,Delaware,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,2239581.0
+2023,Delaware,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Delaware,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Delaware,All-Inclusive Care Elderly,hcbs_other,19943423.0
+2023,Delaware,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,Delaware,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Delaware,Targeted Case Management Services - Com. Case-Man.,hcbs_other,7629363.0
+2023,Delaware,Case Management - State Wide,hcbs_other,0.0
+2023,Delaware,Rehabilitative Services (non-school-based),hcbs_other,17187206.0
+2023,Delaware,Private Duty Nursing,hcbs_other,7364.0
+2023,Delaware,Balance,map_total,3343321747.0
+2023,Delaware,Collections,collections,-3537938.0
+2023,Dist. Of Col.,Mental Health Facility Services - Reg. Payments,mhf,94410338.0
+2023,Dist. Of Col.,Mental Health Facility - DSH,mhf_dsh,6967539.0
+2023,Dist. Of Col.,Nursing Facility Services - Reg. Payments,nf,324661148.0
+2023,Dist. Of Col.,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Dist. Of Col.,Intermediate Care Facility - Public,icf,0.0
+2023,Dist. Of Col.,Intermediate Care - Private,icf,100991149.0
+2023,Dist. Of Col.,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,107609.0
+2023,Dist. Of Col.,Home Health Services,hcbs_other,14943370.0
+2023,Dist. Of Col.,Medicaid - MCO,mco_capitation,1983545807.0
+2023,Dist. Of Col.,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Dist. Of Col.,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,565794548.0
+2023,Dist. Of Col.,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,4045171.0
+2023,Dist. Of Col.,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Dist. Of Col.,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,24464903.0
+2023,Dist. Of Col.,All-Inclusive Care Elderly,hcbs_other,932279.0
+2023,Dist. Of Col.,Personal Care Services - Reg. Payments,hcbs_pc_cfc,121322440.0
+2023,Dist. Of Col.,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Dist. Of Col.,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2023,Dist. Of Col.,Case Management - State Wide,hcbs_other,0.0
+2023,Dist. Of Col.,Rehabilitative Services (non-school-based),hcbs_other,9749617.0
+2023,Dist. Of Col.,Private Duty Nursing,hcbs_other,10910154.0
+2023,Dist. Of Col.,Balance,map_total,4156788185.0
+2023,Dist. Of Col.,Collections,collections,-28234920.0
+2023,Florida,Mental Health Facility Services - Reg. Payments,mhf,1551734158.0
+2023,Florida,Mental Health Facility - DSH,mhf_dsh,120070308.0
+2023,Florida,Nursing Facility Services - Reg. Payments,nf,186249901.0
+2023,Florida,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Florida,Intermediate Care Facility - Public,icf,74254655.0
+2023,Florida,Intermediate Care - Private,icf,446246421.0
+2023,Florida,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Florida,Home Health Services,hcbs_other,25278254.0
+2023,Florida,Medicaid - MCO,mco_capitation,23808908093.0
+2023,Florida,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Florida,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1558273333.0
+2023,Florida,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Florida,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,213881137.0
+2023,Florida,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Florida,All-Inclusive Care Elderly,hcbs_other,113275098.0
+2023,Florida,Personal Care Services - Reg. Payments,hcbs_pc_cfc,162651018.0
+2023,Florida,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Florida,Targeted Case Management Services - Com. Case-Man.,hcbs_other,5194783.0
+2023,Florida,Case Management - State Wide,hcbs_other,0.0
+2023,Florida,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2023,Florida,Private Duty Nursing,hcbs_other,21651193.0
+2023,Florida,Balance,map_total,34641023901.0
+2023,Florida,Collections,collections,-447093777.0
+2023,Georgia,Mental Health Facility Services - Reg. Payments,mhf,18327866.0
+2023,Georgia,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Georgia,Nursing Facility Services - Reg. Payments,nf,1593587694.0
+2023,Georgia,Nursing Facility Services - Sup. Payments,nf,81732752.0
+2023,Georgia,Intermediate Care Facility - Public,icf,34523633.0
+2023,Georgia,Intermediate Care - Private,icf,8224002.0
+2023,Georgia,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,2636432.0
+2023,Georgia,Home Health Services,hcbs_other,82956054.0
+2023,Georgia,Medicaid - MCO,mco_capitation,7407914562.0
+2023,Georgia,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Georgia,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1968487805.0
+2023,Georgia,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Georgia,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Georgia,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Georgia,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Georgia,Personal Care Services - Reg. Payments,hcbs_pc_cfc,26432409.0
+2023,Georgia,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Georgia,Targeted Case Management Services - Com. Case-Man.,hcbs_other,54968873.0
+2023,Georgia,Case Management - State Wide,hcbs_other,0.0
+2023,Georgia,Rehabilitative Services (non-school-based),hcbs_other,265505821.0
+2023,Georgia,Private Duty Nursing,hcbs_other,54912281.0
+2023,Georgia,Balance,map_total,16007360741.0
+2023,Georgia,Collections,collections,-70727164.0
+2023,Guam,Mental Health Facility Services - Reg. Payments,mhf,0.0
+2023,Guam,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Guam,Nursing Facility Services - Reg. Payments,nf,910362.0
+2023,Guam,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Guam,Intermediate Care Facility - Public,icf,0.0
+2023,Guam,Intermediate Care - Private,icf,0.0
+2023,Guam,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Guam,Home Health Services,hcbs_other,459274.0
+2023,Guam,Medicaid - MCO,mco_capitation,0.0
+2023,Guam,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Guam,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,0.0
+2023,Guam,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Guam,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Guam,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Guam,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Guam,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,Guam,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Guam,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2023,Guam,Case Management - State Wide,hcbs_other,0.0
+2023,Guam,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2023,Guam,Private Duty Nursing,hcbs_other,0.0
+2023,Guam,Balance,map_total,180050749.0
+2023,Guam,Collections,collections,0.0
+2023,Hawaii,Mental Health Facility Services - Reg. Payments,mhf,0.0
+2023,Hawaii,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Hawaii,Nursing Facility Services - Reg. Payments,nf,244629.0
+2023,Hawaii,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Hawaii,Intermediate Care Facility - Public,icf,0.0
+2023,Hawaii,Intermediate Care - Private,icf,10401642.0
+2023,Hawaii,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Hawaii,Home Health Services,hcbs_other,0.0
+2023,Hawaii,Medicaid - MCO,mco_capitation,2423445280.0
+2023,Hawaii,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Hawaii,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,187683132.0
+2023,Hawaii,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Hawaii,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Hawaii,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Hawaii,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Hawaii,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,Hawaii,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Hawaii,Targeted Case Management Services - Com. Case-Man.,hcbs_other,1211501.0
+2023,Hawaii,Case Management - State Wide,hcbs_other,418.0
+2023,Hawaii,Rehabilitative Services (non-school-based),hcbs_other,108100.0
+2023,Hawaii,Private Duty Nursing,hcbs_other,0.0
+2023,Hawaii,Balance,map_total,3044228261.0
+2023,Hawaii,Collections,collections,-45961928.0
+2023,Idaho,Mental Health Facility Services - Reg. Payments,mhf,5491533.0
+2023,Idaho,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Idaho,Nursing Facility Services - Reg. Payments,nf,71500565.0
+2023,Idaho,Nursing Facility Services - Sup. Payments,nf,54146206.0
+2023,Idaho,Intermediate Care Facility - Public,icf,7551964.0
+2023,Idaho,Intermediate Care - Private,icf,28009342.0
+2023,Idaho,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,8609291.0
+2023,Idaho,Home Health Services,hcbs_other,13963718.0
+2023,Idaho,Medicaid - MCO,mco_capitation,233760567.0
+2023,Idaho,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Idaho,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,580102333.0
+2023,Idaho,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,17405369.0
+2023,Idaho,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Idaho,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Idaho,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Idaho,Personal Care Services - Reg. Payments,hcbs_pc_cfc,46103810.0
+2023,Idaho,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Idaho,Targeted Case Management Services - Com. Case-Man.,hcbs_other,9974446.0
+2023,Idaho,Case Management - State Wide,hcbs_other,0.0
+2023,Idaho,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2023,Idaho,Private Duty Nursing,hcbs_other,0.0
+2023,Idaho,Balance,map_total,3580631217.0
+2023,Idaho,Collections,collections,-41513763.0
+2023,Illinois,Mental Health Facility Services - Reg. Payments,mhf,17525340.0
+2023,Illinois,Mental Health Facility - DSH,mhf_dsh,89408434.0
+2023,Illinois,Nursing Facility Services - Reg. Payments,nf,468035344.0
+2023,Illinois,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Illinois,Intermediate Care Facility - Public,icf,258921111.0
+2023,Illinois,Intermediate Care - Private,icf,580421637.0
+2023,Illinois,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Illinois,Home Health Services,hcbs_other,120550333.0
+2023,Illinois,Medicaid - MCO,mco_capitation,23799572594.0
+2023,Illinois,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Illinois,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,3338677002.0
+2023,Illinois,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Illinois,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Illinois,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Illinois,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Illinois,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,Illinois,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Illinois,Targeted Case Management Services - Com. Case-Man.,hcbs_other,14345336.0
+2023,Illinois,Case Management - State Wide,hcbs_other,19373393.0
+2023,Illinois,Rehabilitative Services (non-school-based),hcbs_other,92784182.0
+2023,Illinois,Private Duty Nursing,hcbs_other,1093714.0
+2023,Illinois,Balance,map_total,32282765114.0
+2023,Illinois,Collections,collections,-92036787.0
+2023,Indiana,Mental Health Facility Services - Reg. Payments,mhf,85789773.0
+2023,Indiana,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Indiana,Nursing Facility Services - Reg. Payments,nf,2008952598.0
+2023,Indiana,Nursing Facility Services - Sup. Payments,nf,803336869.0
+2023,Indiana,Intermediate Care Facility - Public,icf,0.0
+2023,Indiana,Intermediate Care - Private,icf,322086223.0
+2023,Indiana,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Indiana,Home Health Services,hcbs_other,258356073.0
+2023,Indiana,Medicaid - MCO,mco_capitation,8134965812.0
+2023,Indiana,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Indiana,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,2355010119.0
+2023,Indiana,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,17213962.0
+2023,Indiana,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Indiana,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Indiana,All-Inclusive Care Elderly,hcbs_other,28954011.0
+2023,Indiana,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,Indiana,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Indiana,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2023,Indiana,Case Management - State Wide,hcbs_other,0.0
+2023,Indiana,Rehabilitative Services (non-school-based),hcbs_other,265015193.0
+2023,Indiana,Private Duty Nursing,hcbs_other,0.0
+2023,Indiana,Balance,map_total,17347562587.0
+2023,Indiana,Collections,collections,-69171086.0
+2023,Iowa,Mental Health Facility Services - Reg. Payments,mhf,834002.0
+2023,Iowa,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Iowa,Nursing Facility Services - Reg. Payments,nf,29618888.0
+2023,Iowa,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Iowa,Intermediate Care Facility - Public,icf,817587.0
+2023,Iowa,Intermediate Care - Private,icf,4066521.0
+2023,Iowa,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Iowa,Home Health Services,hcbs_other,9592510.0
+2023,Iowa,Medicaid - MCO,mco_capitation,6687033688.0
+2023,Iowa,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Iowa,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,43281686.0
+2023,Iowa,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,1264834.0
+2023,Iowa,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Iowa,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Iowa,All-Inclusive Care Elderly,hcbs_other,33017944.0
+2023,Iowa,Personal Care Services - Reg. Payments,hcbs_pc_cfc,20945.0
+2023,Iowa,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Iowa,Targeted Case Management Services - Com. Case-Man.,hcbs_other,-65.0
+2023,Iowa,Case Management - State Wide,hcbs_other,4125421.0
+2023,Iowa,Rehabilitative Services (non-school-based),hcbs_other,456913.0
+2023,Iowa,Private Duty Nursing,hcbs_other,11871.0
+2023,Iowa,Balance,map_total,6924105326.0
+2023,Iowa,Collections,collections,-147344502.0
+2023,Kansas,Mental Health Facility Services - Reg. Payments,mhf,516606.0
+2023,Kansas,Mental Health Facility - DSH,mhf_dsh,23311563.0
+2023,Kansas,Nursing Facility Services - Reg. Payments,nf,11665796.0
+2023,Kansas,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Kansas,Intermediate Care Facility - Public,icf,59580965.0
+2023,Kansas,Intermediate Care - Private,icf,713.0
+2023,Kansas,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Kansas,Home Health Services,hcbs_other,43.0
+2023,Kansas,Medicaid - MCO,mco_capitation,4474314537.0
+2023,Kansas,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Kansas,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,7709.0
+2023,Kansas,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Kansas,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Kansas,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Kansas,All-Inclusive Care Elderly,hcbs_other,51473461.0
+2023,Kansas,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,Kansas,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Kansas,Targeted Case Management Services - Com. Case-Man.,hcbs_other,26542.0
+2023,Kansas,Case Management - State Wide,hcbs_other,0.0
+2023,Kansas,Rehabilitative Services (non-school-based),hcbs_other,432449.0
+2023,Kansas,Private Duty Nursing,hcbs_other,0.0
+2023,Kansas,Balance,map_total,5222302809.0
+2023,Kansas,Collections,collections,-28952323.0
+2023,Kentucky,Mental Health Facility Services - Reg. Payments,mhf,4515003.0
+2023,Kentucky,Mental Health Facility - DSH,mhf_dsh,31615031.0
+2023,Kentucky,Nursing Facility Services - Reg. Payments,nf,1318659089.0
+2023,Kentucky,Nursing Facility Services - Sup. Payments,nf,550000.0
+2023,Kentucky,Intermediate Care Facility - Public,icf,134744555.0
+2023,Kentucky,Intermediate Care - Private,icf,43532346.0
+2023,Kentucky,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Kentucky,Home Health Services,hcbs_other,17847650.0
+2023,Kentucky,Medicaid - MCO,mco_capitation,13033583734.0
+2023,Kentucky,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Kentucky,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1475732274.0
+2023,Kentucky,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Kentucky,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Kentucky,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Kentucky,All-Inclusive Care Elderly,hcbs_other,3841056.0
+2023,Kentucky,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,Kentucky,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Kentucky,Targeted Case Management Services - Com. Case-Man.,hcbs_other,24893707.0
+2023,Kentucky,Case Management - State Wide,hcbs_other,0.0
+2023,Kentucky,Rehabilitative Services (non-school-based),hcbs_other,15823781.0
+2023,Kentucky,Private Duty Nursing,hcbs_other,9962819.0
+2023,Kentucky,Balance,map_total,16320309117.0
+2023,Kentucky,Collections,collections,-21488213.0
+2023,Louisiana,Mental Health Facility Services - Reg. Payments,mhf,6934906.0
+2023,Louisiana,Mental Health Facility - DSH,mhf_dsh,134212525.0
+2023,Louisiana,Nursing Facility Services - Reg. Payments,nf,1196628795.0
+2023,Louisiana,Nursing Facility Services - Sup. Payments,nf,3795868.0
+2023,Louisiana,Intermediate Care Facility - Public,icf,147561335.0
+2023,Louisiana,Intermediate Care - Private,icf,286778492.0
+2023,Louisiana,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Louisiana,Home Health Services,hcbs_other,10104927.0
+2023,Louisiana,Medicaid - MCO,mco_capitation,12936550763.0
+2023,Louisiana,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Louisiana,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,993317670.0
+2023,Louisiana,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Louisiana,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Louisiana,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Louisiana,All-Inclusive Care Elderly,hcbs_other,14409260.0
+2023,Louisiana,Personal Care Services - Reg. Payments,hcbs_pc_cfc,266401938.0
+2023,Louisiana,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Louisiana,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2023,Louisiana,Case Management - State Wide,hcbs_other,28547592.0
+2023,Louisiana,Rehabilitative Services (non-school-based),hcbs_other,6812.0
+2023,Louisiana,Private Duty Nursing,hcbs_other,0.0
+2023,Louisiana,Balance,map_total,16387693051.0
+2023,Louisiana,Collections,collections,-181119966.0
+2023,Maine,Mental Health Facility Services - Reg. Payments,mhf,76954305.0
+2023,Maine,Mental Health Facility - DSH,mhf_dsh,57514840.0
+2023,Maine,Nursing Facility Services - Reg. Payments,nf,400703957.0
+2023,Maine,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Maine,Intermediate Care Facility - Public,icf,1773864.0
+2023,Maine,Intermediate Care - Private,icf,51660018.0
+2023,Maine,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Maine,Home Health Services,hcbs_other,4815180.0
+2023,Maine,Medicaid - MCO,mco_capitation,0.0
+2023,Maine,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Maine,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,750012769.0
+2023,Maine,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Maine,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Maine,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Maine,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Maine,Personal Care Services - Reg. Payments,hcbs_pc_cfc,170706913.0
+2023,Maine,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Maine,Targeted Case Management Services - Com. Case-Man.,hcbs_other,38617226.0
+2023,Maine,Case Management - State Wide,hcbs_other,0.0
+2023,Maine,Rehabilitative Services (non-school-based),hcbs_other,119323690.0
+2023,Maine,Private Duty Nursing,hcbs_other,26280113.0
+2023,Maine,Balance,map_total,4182453166.0
+2023,Maine,Collections,collections,-81491199.0
+2023,Maryland,Mental Health Facility Services - Reg. Payments,mhf,407046772.0
+2023,Maryland,Mental Health Facility - DSH,mhf_dsh,67841936.0
+2023,Maryland,Nursing Facility Services - Reg. Payments,nf,1438525786.0
+2023,Maryland,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Maryland,Intermediate Care Facility - Public,icf,23272750.0
+2023,Maryland,Intermediate Care - Private,icf,0.0
+2023,Maryland,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Maryland,Home Health Services,hcbs_other,72791549.0
+2023,Maryland,Medicaid - MCO,mco_capitation,7511195686.0
+2023,Maryland,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Maryland,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,2324652336.0
+2023,Maryland,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,41381.0
+2023,Maryland,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Maryland,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,524663009.0
+2023,Maryland,All-Inclusive Care Elderly,hcbs_other,7085492.0
+2023,Maryland,Personal Care Services - Reg. Payments,hcbs_pc_cfc,11222733.0
+2023,Maryland,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Maryland,Targeted Case Management Services - Com. Case-Man.,hcbs_other,123852252.0
+2023,Maryland,Case Management - State Wide,hcbs_other,0.0
+2023,Maryland,Rehabilitative Services (non-school-based),hcbs_other,1174203405.0
+2023,Maryland,Private Duty Nursing,hcbs_other,141751115.0
+2023,Maryland,Balance,map_total,16988658190.0
+2023,Maryland,Collections,collections,-71919661.0
+2023,Massachusetts,Mental Health Facility Services - Reg. Payments,mhf,133152251.0
+2023,Massachusetts,Mental Health Facility - DSH,mhf_dsh,109200000.0
+2023,Massachusetts,Nursing Facility Services - Reg. Payments,nf,1442674620.0
+2023,Massachusetts,Nursing Facility Services - Sup. Payments,nf,196124333.0
+2023,Massachusetts,Intermediate Care Facility - Public,icf,143584886.0
+2023,Massachusetts,Intermediate Care - Private,icf,0.0
+2023,Massachusetts,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Massachusetts,Home Health Services,hcbs_other,302992393.0
+2023,Massachusetts,Medicaid - MCO,mco_capitation,10003136675.0
+2023,Massachusetts,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Massachusetts,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,2223716964.0
+2023,Massachusetts,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Massachusetts,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Massachusetts,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Massachusetts,All-Inclusive Care Elderly,hcbs_other,243466816.0
+2023,Massachusetts,Personal Care Services - Reg. Payments,hcbs_pc_cfc,1369369174.0
+2023,Massachusetts,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Massachusetts,Targeted Case Management Services - Com. Case-Man.,hcbs_other,104974724.0
+2023,Massachusetts,Case Management - State Wide,hcbs_other,0.0
+2023,Massachusetts,Rehabilitative Services (non-school-based),hcbs_other,407640636.0
+2023,Massachusetts,Private Duty Nursing,hcbs_other,25837833.0
+2023,Massachusetts,Balance,map_total,23407486687.0
+2023,Massachusetts,Collections,collections,-179296788.0
+2023,Michigan,Mental Health Facility Services - Reg. Payments,mhf,33632116.0
+2023,Michigan,Mental Health Facility - DSH,mhf_dsh,340392035.0
+2023,Michigan,Nursing Facility Services - Reg. Payments,nf,1741221886.0
+2023,Michigan,Nursing Facility Services - Sup. Payments,nf,421968787.0
+2023,Michigan,Intermediate Care Facility - Public,icf,0.0
+2023,Michigan,Intermediate Care - Private,icf,0.0
+2023,Michigan,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Michigan,Home Health Services,hcbs_other,1489513.0
+2023,Michigan,Medicaid - MCO,mco_capitation,12527898350.0
+2023,Michigan,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Michigan,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,561077665.0
+2023,Michigan,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Michigan,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Michigan,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Michigan,All-Inclusive Care Elderly,hcbs_other,215079295.0
+2023,Michigan,Personal Care Services - Reg. Payments,hcbs_pc_cfc,535290286.0
+2023,Michigan,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Michigan,Targeted Case Management Services - Com. Case-Man.,hcbs_other,820872.0
+2023,Michigan,Case Management - State Wide,hcbs_other,0.0
+2023,Michigan,Rehabilitative Services (non-school-based),hcbs_other,506702.0
+2023,Michigan,Private Duty Nursing,hcbs_other,30456488.0
+2023,Michigan,Balance,map_total,23362147224.0
+2023,Michigan,Collections,collections,-370791540.0
+2023,Minnesota,Mental Health Facility Services - Reg. Payments,mhf,140021596.0
+2023,Minnesota,Mental Health Facility - DSH,mhf_dsh,14974208.0
+2023,Minnesota,Nursing Facility Services - Reg. Payments,nf,1091727067.0
+2023,Minnesota,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Minnesota,Intermediate Care Facility - Public,icf,378605.0
+2023,Minnesota,Intermediate Care - Private,icf,102876342.0
+2023,Minnesota,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Minnesota,Home Health Services,hcbs_other,92539904.0
+2023,Minnesota,Medicaid - MCO,mco_capitation,9847230280.0
+2023,Minnesota,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Minnesota,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,4405690054.0
+2023,Minnesota,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Minnesota,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Minnesota,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Minnesota,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Minnesota,Personal Care Services - Reg. Payments,hcbs_pc_cfc,949941314.0
+2023,Minnesota,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Minnesota,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2023,Minnesota,Case Management - State Wide,hcbs_other,315871105.0
+2023,Minnesota,Rehabilitative Services (non-school-based),hcbs_other,35530444.0
+2023,Minnesota,Private Duty Nursing,hcbs_other,105706644.0
+2023,Minnesota,Balance,map_total,18507329248.0
+2023,Minnesota,Collections,collections,-191843563.0
+2023,Mississippi,Mental Health Facility Services - Reg. Payments,mhf,19040309.0
+2023,Mississippi,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Mississippi,Nursing Facility Services - Reg. Payments,nf,924749926.0
+2023,Mississippi,Nursing Facility Services - Sup. Payments,nf,10537992.0
+2023,Mississippi,Intermediate Care Facility - Public,icf,116745604.0
+2023,Mississippi,Intermediate Care - Private,icf,120091387.0
+2023,Mississippi,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Mississippi,Home Health Services,hcbs_other,2000982.0
+2023,Mississippi,Medicaid - MCO,mco_capitation,2844209824.0
+2023,Mississippi,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Mississippi,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,637283568.0
+2023,Mississippi,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,16029021.0
+2023,Mississippi,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Mississippi,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Mississippi,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Mississippi,Personal Care Services - Reg. Payments,hcbs_pc_cfc,62672.0
+2023,Mississippi,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Mississippi,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2023,Mississippi,Case Management - State Wide,hcbs_other,0.0
+2023,Mississippi,Rehabilitative Services (non-school-based),hcbs_other,18767337.0
+2023,Mississippi,Private Duty Nursing,hcbs_other,22872025.0
+2023,Mississippi,Balance,map_total,6347076756.0
+2023,Mississippi,Collections,collections,-22759170.0
+2023,Missouri,Mental Health Facility Services - Reg. Payments,mhf,17672584.0
+2023,Missouri,Mental Health Facility - DSH,mhf_dsh,208634147.0
+2023,Missouri,Nursing Facility Services - Reg. Payments,nf,1282072922.0
+2023,Missouri,Nursing Facility Services - Sup. Payments,nf,6345021.0
+2023,Missouri,Intermediate Care Facility - Public,icf,93659839.0
+2023,Missouri,Intermediate Care - Private,icf,6326472.0
+2023,Missouri,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Missouri,Home Health Services,hcbs_other,3692323.0
+2023,Missouri,Medicaid - MCO,mco_capitation,5271012276.0
+2023,Missouri,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Missouri,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1973370638.0
+2023,Missouri,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Missouri,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Missouri,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Missouri,All-Inclusive Care Elderly,hcbs_other,1578939.0
+2023,Missouri,Personal Care Services - Reg. Payments,hcbs_pc_cfc,1004694735.0
+2023,Missouri,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Missouri,Targeted Case Management Services - Com. Case-Man.,hcbs_other,102987345.0
+2023,Missouri,Case Management - State Wide,hcbs_other,0.0
+2023,Missouri,Rehabilitative Services (non-school-based),hcbs_other,137645718.0
+2023,Missouri,Private Duty Nursing,hcbs_other,50404978.0
+2023,Missouri,Balance,map_total,15944157034.0
+2023,Missouri,Collections,collections,-79541569.0
+2023,Montana,Mental Health Facility Services - Reg. Payments,mhf,20753122.0
+2023,Montana,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Montana,Nursing Facility Services - Reg. Payments,nf,148601876.0
+2023,Montana,Nursing Facility Services - Sup. Payments,nf,13692269.0
+2023,Montana,Intermediate Care Facility - Public,icf,0.0
+2023,Montana,Intermediate Care - Private,icf,2050729.0
+2023,Montana,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Montana,Home Health Services,hcbs_other,38670460.0
+2023,Montana,Medicaid - MCO,mco_capitation,0.0
+2023,Montana,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Montana,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,215033208.0
+2023,Montana,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Montana,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Montana,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,51640132.0
+2023,Montana,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Montana,Personal Care Services - Reg. Payments,hcbs_pc_cfc,-7307110.0
+2023,Montana,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,1863.0
+2023,Montana,Targeted Case Management Services - Com. Case-Man.,hcbs_other,4926412.0
+2023,Montana,Case Management - State Wide,hcbs_other,2955446.0
+2023,Montana,Rehabilitative Services (non-school-based),hcbs_other,24791295.0
+2023,Montana,Private Duty Nursing,hcbs_other,3060672.0
+2023,Montana,Balance,map_total,2363497647.0
+2023,Montana,Collections,collections,-24735010.0
+2023,N. Mariana Islands,Mental Health Facility Services - Reg. Payments,mhf,0.0
+2023,N. Mariana Islands,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,N. Mariana Islands,Nursing Facility Services - Reg. Payments,nf,0.0
+2023,N. Mariana Islands,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,N. Mariana Islands,Intermediate Care Facility - Public,icf,0.0
+2023,N. Mariana Islands,Intermediate Care - Private,icf,0.0
+2023,N. Mariana Islands,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,N. Mariana Islands,Home Health Services,hcbs_other,1458775.0
+2023,N. Mariana Islands,Medicaid - MCO,mco_capitation,0.0
+2023,N. Mariana Islands,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,N. Mariana Islands,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,0.0
+2023,N. Mariana Islands,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,N. Mariana Islands,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,N. Mariana Islands,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,N. Mariana Islands,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,N. Mariana Islands,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,N. Mariana Islands,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,N. Mariana Islands,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2023,N. Mariana Islands,Case Management - State Wide,hcbs_other,0.0
+2023,N. Mariana Islands,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2023,N. Mariana Islands,Private Duty Nursing,hcbs_other,0.0
+2023,N. Mariana Islands,Balance,map_total,86034771.0
+2023,N. Mariana Islands,Collections,collections,0.0
+2023,Nebraska,Mental Health Facility Services - Reg. Payments,mhf,0.0
+2023,Nebraska,Mental Health Facility - DSH,mhf_dsh,1811337.0
+2023,Nebraska,Nursing Facility Services - Reg. Payments,nf,487189706.0
+2023,Nebraska,Nursing Facility Services - Sup. Payments,nf,23702806.0
+2023,Nebraska,Intermediate Care Facility - Public,icf,25873839.0
+2023,Nebraska,Intermediate Care - Private,icf,36522889.0
+2023,Nebraska,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Nebraska,Home Health Services,hcbs_other,17426.0
+2023,Nebraska,Medicaid - MCO,mco_capitation,2738497666.0
+2023,Nebraska,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Nebraska,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,715773656.0
+2023,Nebraska,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Nebraska,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Nebraska,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Nebraska,All-Inclusive Care Elderly,hcbs_other,11256440.0
+2023,Nebraska,Personal Care Services - Reg. Payments,hcbs_pc_cfc,10091371.0
+2023,Nebraska,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Nebraska,Targeted Case Management Services - Com. Case-Man.,hcbs_other,41117014.0
+2023,Nebraska,Case Management - State Wide,hcbs_other,0.0
+2023,Nebraska,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2023,Nebraska,Private Duty Nursing,hcbs_other,0.0
+2023,Nebraska,Balance,map_total,3766768984.0
+2023,Nebraska,Collections,collections,-17938158.0
+2023,Nevada,Mental Health Facility Services - Reg. Payments,mhf,45231661.0
+2023,Nevada,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Nevada,Nursing Facility Services - Reg. Payments,nf,210268308.0
+2023,Nevada,Nursing Facility Services - Sup. Payments,nf,149950550.0
+2023,Nevada,Intermediate Care Facility - Public,icf,13267592.0
+2023,Nevada,Intermediate Care - Private,icf,9496400.0
+2023,Nevada,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Nevada,Home Health Services,hcbs_other,18985143.0
+2023,Nevada,Medicaid - MCO,mco_capitation,2838172714.0
+2023,Nevada,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Nevada,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,237991466.0
+2023,Nevada,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,13153587.0
+2023,Nevada,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Nevada,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Nevada,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Nevada,Personal Care Services - Reg. Payments,hcbs_pc_cfc,143318434.0
+2023,Nevada,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Nevada,Targeted Case Management Services - Com. Case-Man.,hcbs_other,65848079.0
+2023,Nevada,Case Management - State Wide,hcbs_other,0.0
+2023,Nevada,Rehabilitative Services (non-school-based),hcbs_other,141130071.0
+2023,Nevada,Private Duty Nursing,hcbs_other,30318859.0
+2023,Nevada,Balance,map_total,5605575827.0
+2023,Nevada,Collections,collections,-33607871.0
+2023,New Hampshire,Mental Health Facility Services - Reg. Payments,mhf,34868.0
+2023,New Hampshire,Mental Health Facility - DSH,mhf_dsh,63363096.0
+2023,New Hampshire,Nursing Facility Services - Reg. Payments,nf,251277365.0
+2023,New Hampshire,Nursing Facility Services - Sup. Payments,nf,174187833.0
+2023,New Hampshire,Intermediate Care Facility - Public,icf,0.0
+2023,New Hampshire,Intermediate Care - Private,icf,3648468.0
+2023,New Hampshire,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,New Hampshire,Home Health Services,hcbs_other,1286918.0
+2023,New Hampshire,Medicaid - MCO,mco_capitation,1163519472.0
+2023,New Hampshire,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,New Hampshire,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,458660118.0
+2023,New Hampshire,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,New Hampshire,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,New Hampshire,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,New Hampshire,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,New Hampshire,Personal Care Services - Reg. Payments,hcbs_pc_cfc,688635.0
+2023,New Hampshire,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,New Hampshire,Targeted Case Management Services - Com. Case-Man.,hcbs_other,9022461.0
+2023,New Hampshire,Case Management - State Wide,hcbs_other,170551.0
+2023,New Hampshire,Rehabilitative Services (non-school-based),hcbs_other,48939643.0
+2023,New Hampshire,Private Duty Nursing,hcbs_other,2299312.0
+2023,New Hampshire,Balance,map_total,2458979679.0
+2023,New Hampshire,Collections,collections,-14679447.0
+2023,New Jersey,Mental Health Facility Services - Reg. Payments,mhf,149113965.0
+2023,New Jersey,Mental Health Facility - DSH,mhf_dsh,357902660.0
+2023,New Jersey,Nursing Facility Services - Reg. Payments,nf,121724770.0
+2023,New Jersey,Nursing Facility Services - Sup. Payments,nf,9888629.0
+2023,New Jersey,Intermediate Care Facility - Public,icf,432941107.0
+2023,New Jersey,Intermediate Care - Private,icf,11077251.0
+2023,New Jersey,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,New Jersey,Home Health Services,hcbs_other,1092440.0
+2023,New Jersey,Medicaid - MCO,mco_capitation,15695848937.0
+2023,New Jersey,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,New Jersey,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,2595722366.0
+2023,New Jersey,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,New Jersey,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,New Jersey,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,New Jersey,All-Inclusive Care Elderly,hcbs_other,75483231.0
+2023,New Jersey,Personal Care Services - Reg. Payments,hcbs_pc_cfc,87897212.0
+2023,New Jersey,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,New Jersey,Targeted Case Management Services - Com. Case-Man.,hcbs_other,18721016.0
+2023,New Jersey,Case Management - State Wide,hcbs_other,0.0
+2023,New Jersey,Rehabilitative Services (non-school-based),hcbs_other,24796153.0
+2023,New Jersey,Private Duty Nursing,hcbs_other,202714.0
+2023,New Jersey,Balance,map_total,22655898964.0
+2023,New Jersey,Collections,collections,-346066244.0
+2023,New Mexico,Mental Health Facility Services - Reg. Payments,mhf,3412005.0
+2023,New Mexico,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,New Mexico,Nursing Facility Services - Reg. Payments,nf,469477.0
+2023,New Mexico,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,New Mexico,Intermediate Care Facility - Public,icf,897949.0
+2023,New Mexico,Intermediate Care - Private,icf,32078270.0
+2023,New Mexico,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,New Mexico,Home Health Services,hcbs_other,124665522.0
+2023,New Mexico,Medicaid - MCO,mco_capitation,6647288135.0
+2023,New Mexico,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,New Mexico,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,642849582.0
+2023,New Mexico,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,New Mexico,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,New Mexico,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,New Mexico,All-Inclusive Care Elderly,hcbs_other,15881179.0
+2023,New Mexico,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,New Mexico,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,New Mexico,Targeted Case Management Services - Com. Case-Man.,hcbs_other,103.0
+2023,New Mexico,Case Management - State Wide,hcbs_other,0.0
+2023,New Mexico,Rehabilitative Services (non-school-based),hcbs_other,1361.0
+2023,New Mexico,Private Duty Nursing,hcbs_other,0.0
+2023,New Mexico,Balance,map_total,8124915256.0
+2023,New Mexico,Collections,collections,-19144144.0
+2023,New York,Mental Health Facility Services - Reg. Payments,mhf,346444023.0
+2023,New York,Mental Health Facility - DSH,mhf_dsh,605000000.0
+2023,New York,Nursing Facility Services - Reg. Payments,nf,6515925860.0
+2023,New York,Nursing Facility Services - Sup. Payments,nf,19149719.0
+2023,New York,Intermediate Care Facility - Public,icf,136143279.0
+2023,New York,Intermediate Care - Private,icf,768622304.0
+2023,New York,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,New York,Home Health Services,hcbs_other,443004631.0
+2023,New York,Medicaid - MCO,mco_capitation,47827337609.0
+2023,New York,Medicaid MCO - Community First Choice,hcbs_pc_cfc,11470777086.0
+2023,New York,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,8636112145.0
+2023,New York,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,New York,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,New York,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,315084888.0
+2023,New York,All-Inclusive Care Elderly,hcbs_other,582079831.0
+2023,New York,Personal Care Services - Reg. Payments,hcbs_pc_cfc,940300124.0
+2023,New York,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,New York,Targeted Case Management Services - Com. Case-Man.,hcbs_other,49839677.0
+2023,New York,Case Management - State Wide,hcbs_other,99419.0
+2023,New York,Rehabilitative Services (non-school-based),hcbs_other,96649517.0
+2023,New York,Private Duty Nursing,hcbs_other,59326468.0
+2023,New York,Balance,map_total,97862827572.0
+2023,New York,Collections,collections,-5417962640.0
+2023,North Carolina,Mental Health Facility Services - Reg. Payments,mhf,395501.0
+2023,North Carolina,Mental Health Facility - DSH,mhf_dsh,365807016.0
+2023,North Carolina,Nursing Facility Services - Reg. Payments,nf,2185824023.0
+2023,North Carolina,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,North Carolina,Intermediate Care Facility - Public,icf,223160.0
+2023,North Carolina,Intermediate Care - Private,icf,1117431.0
+2023,North Carolina,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,North Carolina,Home Health Services,hcbs_other,9760781.0
+2023,North Carolina,Medicaid - MCO,mco_capitation,7992154865.0
+2023,North Carolina,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,North Carolina,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,576418841.0
+2023,North Carolina,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,North Carolina,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,North Carolina,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,North Carolina,All-Inclusive Care Elderly,hcbs_other,116936284.0
+2023,North Carolina,Personal Care Services - Reg. Payments,hcbs_pc_cfc,564701909.0
+2023,North Carolina,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,34720.0
+2023,North Carolina,Targeted Case Management Services - Com. Case-Man.,hcbs_other,6985248.0
+2023,North Carolina,Case Management - State Wide,hcbs_other,0.0
+2023,North Carolina,Rehabilitative Services (non-school-based),hcbs_other,10333683.0
+2023,North Carolina,Private Duty Nursing,hcbs_other,172277644.0
+2023,North Carolina,Balance,map_total,19443040982.0
+2023,North Carolina,Collections,collections,-117432499.0
+2023,North Dakota,Mental Health Facility Services - Reg. Payments,mhf,16571015.0
+2023,North Dakota,Mental Health Facility - DSH,mhf_dsh,1015717.0
+2023,North Dakota,Nursing Facility Services - Reg. Payments,nf,294804133.0
+2023,North Dakota,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,North Dakota,Intermediate Care Facility - Public,icf,28736312.0
+2023,North Dakota,Intermediate Care - Private,icf,96848016.0
+2023,North Dakota,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,North Dakota,Home Health Services,hcbs_other,10465078.0
+2023,North Dakota,Medicaid - MCO,mco_capitation,371108382.0
+2023,North Dakota,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,North Dakota,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,250051110.0
+2023,North Dakota,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,258685.0
+2023,North Dakota,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,North Dakota,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,North Dakota,All-Inclusive Care Elderly,hcbs_other,10850008.0
+2023,North Dakota,Personal Care Services - Reg. Payments,hcbs_pc_cfc,35841869.0
+2023,North Dakota,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,North Dakota,Targeted Case Management Services - Com. Case-Man.,hcbs_other,2482007.0
+2023,North Dakota,Case Management - State Wide,hcbs_other,0.0
+2023,North Dakota,Rehabilitative Services (non-school-based),hcbs_other,17072073.0
+2023,North Dakota,Private Duty Nursing,hcbs_other,1193361.0
+2023,North Dakota,Balance,map_total,1523887277.0
+2023,North Dakota,Collections,collections,-8670699.0
+2023,Ohio,Mental Health Facility Services - Reg. Payments,mhf,-22201.0
+2023,Ohio,Mental Health Facility - DSH,mhf_dsh,93432758.0
+2023,Ohio,Nursing Facility Services - Reg. Payments,nf,1580722110.0
+2023,Ohio,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Ohio,Intermediate Care Facility - Public,icf,232117201.0
+2023,Ohio,Intermediate Care - Private,icf,521377320.0
+2023,Ohio,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Ohio,Home Health Services,hcbs_other,251567242.0
+2023,Ohio,Medicaid - MCO,mco_capitation,17740821373.0
+2023,Ohio,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Ohio,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,3748512169.0
+2023,Ohio,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,674830.0
+2023,Ohio,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Ohio,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Ohio,All-Inclusive Care Elderly,hcbs_other,22771600.0
+2023,Ohio,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,Ohio,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Ohio,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2023,Ohio,Case Management - State Wide,hcbs_other,125819541.0
+2023,Ohio,Rehabilitative Services (non-school-based),hcbs_other,91072437.0
+2023,Ohio,Private Duty Nursing,hcbs_other,32135243.0
+2023,Ohio,Balance,map_total,31853903670.0
+2023,Ohio,Collections,collections,-187918081.0
+2023,Oklahoma,Mental Health Facility Services - Reg. Payments,mhf,93132319.0
+2023,Oklahoma,Mental Health Facility - DSH,mhf_dsh,3273248.0
+2023,Oklahoma,Nursing Facility Services - Reg. Payments,nf,700823625.0
+2023,Oklahoma,Nursing Facility Services - Sup. Payments,nf,133763819.0
+2023,Oklahoma,Intermediate Care Facility - Public,icf,29435528.0
+2023,Oklahoma,Intermediate Care - Private,icf,69968093.0
+2023,Oklahoma,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,10421989.0
+2023,Oklahoma,Home Health Services,hcbs_other,27064707.0
+2023,Oklahoma,Medicaid - MCO,mco_capitation,0.0
+2023,Oklahoma,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Oklahoma,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,691198743.0
+2023,Oklahoma,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Oklahoma,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Oklahoma,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Oklahoma,All-Inclusive Care Elderly,hcbs_other,29883177.0
+2023,Oklahoma,Personal Care Services - Reg. Payments,hcbs_pc_cfc,10051353.0
+2023,Oklahoma,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Oklahoma,Targeted Case Management Services - Com. Case-Man.,hcbs_other,75285773.0
+2023,Oklahoma,Case Management - State Wide,hcbs_other,0.0
+2023,Oklahoma,Rehabilitative Services (non-school-based),hcbs_other,232425553.0
+2023,Oklahoma,Private Duty Nursing,hcbs_other,0.0
+2023,Oklahoma,Balance,map_total,9569336350.0
+2023,Oklahoma,Collections,collections,-964368133.0
+2023,Oregon,Mental Health Facility Services - Reg. Payments,mhf,304106.0
+2023,Oregon,Mental Health Facility - DSH,mhf_dsh,4993773.0
+2023,Oregon,Nursing Facility Services - Reg. Payments,nf,641141686.0
+2023,Oregon,Nursing Facility Services - Sup. Payments,nf,89605735.0
+2023,Oregon,Intermediate Care Facility - Public,icf,0.0
+2023,Oregon,Intermediate Care - Private,icf,0.0
+2023,Oregon,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Oregon,Home Health Services,hcbs_other,291887.0
+2023,Oregon,Medicaid - MCO,mco_capitation,8839164372.0
+2023,Oregon,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Oregon,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,76872331.0
+2023,Oregon,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,121916791.0
+2023,Oregon,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,22980015.0
+2023,Oregon,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,3233429678.0
+2023,Oregon,All-Inclusive Care Elderly,hcbs_other,131399899.0
+2023,Oregon,Personal Care Services - Reg. Payments,hcbs_pc_cfc,68053019.0
+2023,Oregon,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Oregon,Targeted Case Management Services - Com. Case-Man.,hcbs_other,63712807.0
+2023,Oregon,Case Management - State Wide,hcbs_other,202088336.0
+2023,Oregon,Rehabilitative Services (non-school-based),hcbs_other,74082445.0
+2023,Oregon,Private Duty Nursing,hcbs_other,14927173.0
+2023,Oregon,Balance,map_total,14799439921.0
+2023,Oregon,Collections,collections,-131454314.0
+2023,Pennsylvania,Mental Health Facility Services - Reg. Payments,mhf,92444286.0
+2023,Pennsylvania,Mental Health Facility - DSH,mhf_dsh,298530896.0
+2023,Pennsylvania,Nursing Facility Services - Reg. Payments,nf,311493464.0
+2023,Pennsylvania,Nursing Facility Services - Sup. Payments,nf,42630035.0
+2023,Pennsylvania,Intermediate Care Facility - Public,icf,223019382.0
+2023,Pennsylvania,Intermediate Care - Private,icf,427396487.0
+2023,Pennsylvania,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Pennsylvania,Home Health Services,hcbs_other,13057951.0
+2023,Pennsylvania,Medicaid - MCO,mco_capitation,31481160362.0
+2023,Pennsylvania,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Pennsylvania,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,4193892475.0
+2023,Pennsylvania,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Pennsylvania,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Pennsylvania,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Pennsylvania,All-Inclusive Care Elderly,hcbs_other,367856561.0
+2023,Pennsylvania,Personal Care Services - Reg. Payments,hcbs_pc_cfc,1237545.0
+2023,Pennsylvania,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Pennsylvania,Targeted Case Management Services - Com. Case-Man.,hcbs_other,49742116.0
+2023,Pennsylvania,Case Management - State Wide,hcbs_other,0.0
+2023,Pennsylvania,Rehabilitative Services (non-school-based),hcbs_other,762732.0
+2023,Pennsylvania,Private Duty Nursing,hcbs_other,0.0
+2023,Pennsylvania,Balance,map_total,43995159641.0
+2023,Pennsylvania,Collections,collections,-228187663.0
+2023,Puerto Rico,Mental Health Facility Services - Reg. Payments,mhf,0.0
+2023,Puerto Rico,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Puerto Rico,Nursing Facility Services - Reg. Payments,nf,0.0
+2023,Puerto Rico,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Puerto Rico,Intermediate Care Facility - Public,icf,0.0
+2023,Puerto Rico,Intermediate Care - Private,icf,0.0
+2023,Puerto Rico,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Puerto Rico,Home Health Services,hcbs_other,0.0
+2023,Puerto Rico,Medicaid - MCO,mco_capitation,3772157172.0
+2023,Puerto Rico,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Puerto Rico,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,0.0
+2023,Puerto Rico,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Puerto Rico,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Puerto Rico,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Puerto Rico,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Puerto Rico,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,Puerto Rico,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Puerto Rico,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2023,Puerto Rico,Case Management - State Wide,hcbs_other,0.0
+2023,Puerto Rico,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2023,Puerto Rico,Private Duty Nursing,hcbs_other,0.0
+2023,Puerto Rico,Balance,map_total,3869331777.0
+2023,Puerto Rico,Collections,collections,-776264.0
+2023,Rhode Island,Mental Health Facility Services - Reg. Payments,mhf,3537298.0
+2023,Rhode Island,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Rhode Island,Nursing Facility Services - Reg. Payments,nf,288816299.0
+2023,Rhode Island,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Rhode Island,Intermediate Care Facility - Public,icf,0.0
+2023,Rhode Island,Intermediate Care - Private,icf,6389659.0
+2023,Rhode Island,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Rhode Island,Home Health Services,hcbs_other,675714.0
+2023,Rhode Island,Medicaid - MCO,mco_capitation,2123196831.0
+2023,Rhode Island,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Rhode Island,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,404469807.0
+2023,Rhode Island,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Rhode Island,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Rhode Island,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Rhode Island,All-Inclusive Care Elderly,hcbs_other,20181843.0
+2023,Rhode Island,Personal Care Services - Reg. Payments,hcbs_pc_cfc,70970854.0
+2023,Rhode Island,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Rhode Island,Targeted Case Management Services - Com. Case-Man.,hcbs_other,3944315.0
+2023,Rhode Island,Case Management - State Wide,hcbs_other,0.0
+2023,Rhode Island,Rehabilitative Services (non-school-based),hcbs_other,86415196.0
+2023,Rhode Island,Private Duty Nursing,hcbs_other,0.0
+2023,Rhode Island,Balance,map_total,3466385479.0
+2023,Rhode Island,Collections,collections,-17812704.0
+2023,South Carolina,Mental Health Facility Services - Reg. Payments,mhf,2717479.0
+2023,South Carolina,Mental Health Facility - DSH,mhf_dsh,60903051.0
+2023,South Carolina,Nursing Facility Services - Reg. Payments,nf,743244440.0
+2023,South Carolina,Nursing Facility Services - Sup. Payments,nf,15893766.0
+2023,South Carolina,Intermediate Care Facility - Public,icf,176799942.0
+2023,South Carolina,Intermediate Care - Private,icf,0.0
+2023,South Carolina,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,South Carolina,Home Health Services,hcbs_other,22223744.0
+2023,South Carolina,Medicaid - MCO,mco_capitation,4583861490.0
+2023,South Carolina,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,South Carolina,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1076811665.0
+2023,South Carolina,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,South Carolina,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,South Carolina,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,South Carolina,All-Inclusive Care Elderly,hcbs_other,20924881.0
+2023,South Carolina,Personal Care Services - Reg. Payments,hcbs_pc_cfc,53944813.0
+2023,South Carolina,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,South Carolina,Targeted Case Management Services - Com. Case-Man.,hcbs_other,49301046.0
+2023,South Carolina,Case Management - State Wide,hcbs_other,0.0
+2023,South Carolina,Rehabilitative Services (non-school-based),hcbs_other,41901047.0
+2023,South Carolina,Private Duty Nursing,hcbs_other,17538593.0
+2023,South Carolina,Balance,map_total,8913646094.0
+2023,South Carolina,Collections,collections,-462181533.0
+2023,South Dakota,Mental Health Facility Services - Reg. Payments,mhf,1681124.0
+2023,South Dakota,Mental Health Facility - DSH,mhf_dsh,751299.0
+2023,South Dakota,Nursing Facility Services - Reg. Payments,nf,172292364.0
+2023,South Dakota,Nursing Facility Services - Sup. Payments,nf,247525.0
+2023,South Dakota,Intermediate Care Facility - Public,icf,37278762.0
+2023,South Dakota,Intermediate Care - Private,icf,0.0
+2023,South Dakota,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,South Dakota,Home Health Services,hcbs_other,23635004.0
+2023,South Dakota,Medicaid - MCO,mco_capitation,0.0
+2023,South Dakota,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,South Dakota,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,222555673.0
+2023,South Dakota,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,South Dakota,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,South Dakota,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,South Dakota,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,South Dakota,Personal Care Services - Reg. Payments,hcbs_pc_cfc,11953800.0
+2023,South Dakota,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,South Dakota,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2023,South Dakota,Case Management - State Wide,hcbs_other,0.0
+2023,South Dakota,Rehabilitative Services (non-school-based),hcbs_other,21919036.0
+2023,South Dakota,Private Duty Nursing,hcbs_other,0.0
+2023,South Dakota,Balance,map_total,1188400569.0
+2023,South Dakota,Collections,collections,-14916368.0
+2023,Tennessee,Mental Health Facility Services - Reg. Payments,mhf,63854020.0
+2023,Tennessee,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Tennessee,Nursing Facility Services - Reg. Payments,nf,-1352.0
+2023,Tennessee,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Tennessee,Intermediate Care Facility - Public,icf,69398074.0
+2023,Tennessee,Intermediate Care - Private,icf,158064653.0
+2023,Tennessee,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Tennessee,Home Health Services,hcbs_other,0.0
+2023,Tennessee,Medicaid - MCO,mco_capitation,8115788943.0
+2023,Tennessee,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Tennessee,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,775695524.0
+2023,Tennessee,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Tennessee,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Tennessee,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Tennessee,All-Inclusive Care Elderly,hcbs_other,14997108.0
+2023,Tennessee,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,Tennessee,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Tennessee,Targeted Case Management Services - Com. Case-Man.,hcbs_other,206599322.0
+2023,Tennessee,Case Management - State Wide,hcbs_other,0.0
+2023,Tennessee,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2023,Tennessee,Private Duty Nursing,hcbs_other,0.0
+2023,Tennessee,Balance,map_total,12560690895.0
+2023,Tennessee,Collections,collections,-90852125.0
+2023,Texas,Mental Health Facility Services - Reg. Payments,mhf,1989231.0
+2023,Texas,Mental Health Facility - DSH,mhf_dsh,304479784.0
+2023,Texas,Nursing Facility Services - Reg. Payments,nf,329075222.0
+2023,Texas,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Texas,Intermediate Care Facility - Public,icf,847577683.0
+2023,Texas,Intermediate Care - Private,icf,272506812.0
+2023,Texas,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,7191152.0
+2023,Texas,Home Health Services,hcbs_other,109910909.0
+2023,Texas,Medicaid - MCO,mco_capitation,36101395101.0
+2023,Texas,Medicaid MCO - Community First Choice,hcbs_pc_cfc,1194719822.0
+2023,Texas,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1350681666.0
+2023,Texas,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,25916796.0
+2023,Texas,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Texas,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,388886036.0
+2023,Texas,All-Inclusive Care Elderly,hcbs_other,41492847.0
+2023,Texas,Personal Care Services - Reg. Payments,hcbs_pc_cfc,1004009287.0
+2023,Texas,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,-6268576.0
+2023,Texas,Targeted Case Management Services - Com. Case-Man.,hcbs_other,61414032.0
+2023,Texas,Case Management - State Wide,hcbs_other,11910542.0
+2023,Texas,Rehabilitative Services (non-school-based),hcbs_other,17320969.0
+2023,Texas,Private Duty Nursing,hcbs_other,0.0
+2023,Texas,Balance,map_total,57284033548.0
+2023,Texas,Collections,collections,-769923070.0
+2023,Utah,Mental Health Facility Services - Reg. Payments,mhf,22222635.0
+2023,Utah,Mental Health Facility - DSH,mhf_dsh,934586.0
+2023,Utah,Nursing Facility Services - Reg. Payments,nf,284745866.0
+2023,Utah,Nursing Facility Services - Sup. Payments,nf,121548921.0
+2023,Utah,Intermediate Care Facility - Public,icf,52467766.0
+2023,Utah,Intermediate Care - Private,icf,26123801.0
+2023,Utah,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,1042745.0
+2023,Utah,Home Health Services,hcbs_other,29258974.0
+2023,Utah,Medicaid - MCO,mco_capitation,2249022794.0
+2023,Utah,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Utah,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,505867711.0
+2023,Utah,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Utah,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Utah,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Utah,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Utah,Personal Care Services - Reg. Payments,hcbs_pc_cfc,8103048.0
+2023,Utah,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Utah,Targeted Case Management Services - Com. Case-Man.,hcbs_other,25557.0
+2023,Utah,Case Management - State Wide,hcbs_other,0.0
+2023,Utah,Rehabilitative Services (non-school-based),hcbs_other,84411751.0
+2023,Utah,Private Duty Nursing,hcbs_other,1319397.0
+2023,Utah,Balance,map_total,4565937796.0
+2023,Utah,Collections,collections,-34586573.0
+2023,Vermont,Mental Health Facility Services - Reg. Payments,mhf,17462940.0
+2023,Vermont,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Vermont,Nursing Facility Services - Reg. Payments,nf,172449898.0
+2023,Vermont,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Vermont,Intermediate Care Facility - Public,icf,10410.0
+2023,Vermont,Intermediate Care - Private,icf,3743.0
+2023,Vermont,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Vermont,Home Health Services,hcbs_other,7612809.0
+2023,Vermont,Medicaid - MCO,mco_capitation,0.0
+2023,Vermont,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Vermont,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,387138430.0
+2023,Vermont,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Vermont,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Vermont,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Vermont,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Vermont,Personal Care Services - Reg. Payments,hcbs_pc_cfc,12052697.0
+2023,Vermont,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Vermont,Targeted Case Management Services - Com. Case-Man.,hcbs_other,786.0
+2023,Vermont,Case Management - State Wide,hcbs_other,0.0
+2023,Vermont,Rehabilitative Services (non-school-based),hcbs_other,288582341.0
+2023,Vermont,Private Duty Nursing,hcbs_other,0.0
+2023,Vermont,Balance,map_total,2000110676.0
+2023,Vermont,Collections,collections,-2698768.0
+2023,Virgin Islands,Mental Health Facility Services - Reg. Payments,mhf,0.0
+2023,Virgin Islands,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Virgin Islands,Nursing Facility Services - Reg. Payments,nf,106912.0
+2023,Virgin Islands,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,Virgin Islands,Intermediate Care Facility - Public,icf,0.0
+2023,Virgin Islands,Intermediate Care - Private,icf,0.0
+2023,Virgin Islands,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Virgin Islands,Home Health Services,hcbs_other,1087102.0
+2023,Virgin Islands,Medicaid - MCO,mco_capitation,0.0
+2023,Virgin Islands,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Virgin Islands,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,0.0
+2023,Virgin Islands,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Virgin Islands,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Virgin Islands,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Virgin Islands,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Virgin Islands,Personal Care Services - Reg. Payments,hcbs_pc_cfc,6332144.0
+2023,Virgin Islands,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Virgin Islands,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2023,Virgin Islands,Case Management - State Wide,hcbs_other,0.0
+2023,Virgin Islands,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2023,Virgin Islands,Private Duty Nursing,hcbs_other,0.0
+2023,Virgin Islands,Balance,map_total,164885657.0
+2023,Virgin Islands,Collections,collections,-482852.0
+2023,Virginia,Mental Health Facility Services - Reg. Payments,mhf,97437530.0
+2023,Virginia,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Virginia,Nursing Facility Services - Reg. Payments,nf,154579483.0
+2023,Virginia,Nursing Facility Services - Sup. Payments,nf,21687044.0
+2023,Virginia,Intermediate Care Facility - Public,icf,31626696.0
+2023,Virginia,Intermediate Care - Private,icf,127127178.0
+2023,Virginia,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Virginia,Home Health Services,hcbs_other,502680.0
+2023,Virginia,Medicaid - MCO,mco_capitation,13947249357.0
+2023,Virginia,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Virginia,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,3484738710.0
+2023,Virginia,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Virginia,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Virginia,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Virginia,All-Inclusive Care Elderly,hcbs_other,113033546.0
+2023,Virginia,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2023,Virginia,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Virginia,Targeted Case Management Services - Com. Case-Man.,hcbs_other,83606147.0
+2023,Virginia,Case Management - State Wide,hcbs_other,0.0
+2023,Virginia,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2023,Virginia,Private Duty Nursing,hcbs_other,3664158.0
+2023,Virginia,Balance,map_total,21835064453.0
+2023,Virginia,Collections,collections,-713490502.0
+2023,Washington,Mental Health Facility Services - Reg. Payments,mhf,20491021.0
+2023,Washington,Mental Health Facility - DSH,mhf_dsh,106804592.0
+2023,Washington,Nursing Facility Services - Reg. Payments,nf,867941663.0
+2023,Washington,Nursing Facility Services - Sup. Payments,nf,6051335.0
+2023,Washington,Intermediate Care Facility - Public,icf,172890023.0
+2023,Washington,Intermediate Care - Private,icf,0.0
+2023,Washington,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Washington,Home Health Services,hcbs_other,7856408.0
+2023,Washington,Medicaid - MCO,mco_capitation,18276088567.0
+2023,Washington,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Washington,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1400619552.0
+2023,Washington,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Washington,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Washington,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,3291455783.0
+2023,Washington,All-Inclusive Care Elderly,hcbs_other,79203157.0
+2023,Washington,Personal Care Services - Reg. Payments,hcbs_pc_cfc,64740306.0
+2023,Washington,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Washington,Targeted Case Management Services - Com. Case-Man.,hcbs_other,17424608.0
+2023,Washington,Case Management - State Wide,hcbs_other,89754.0
+2023,Washington,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2023,Washington,Private Duty Nursing,hcbs_other,46925214.0
+2023,Washington,Balance,map_total,29197626447.0
+2023,Washington,Collections,collections,-10856250244.0
+2023,West Virginia,Mental Health Facility Services - Reg. Payments,mhf,7583812.0
+2023,West Virginia,Mental Health Facility - DSH,mhf_dsh,18429853.0
+2023,West Virginia,Nursing Facility Services - Reg. Payments,nf,956890879.0
+2023,West Virginia,Nursing Facility Services - Sup. Payments,nf,0.0
+2023,West Virginia,Intermediate Care Facility - Public,icf,0.0
+2023,West Virginia,Intermediate Care - Private,icf,70579242.0
+2023,West Virginia,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,West Virginia,Home Health Services,hcbs_other,21937431.0
+2023,West Virginia,Medicaid - MCO,mco_capitation,2608170933.0
+2023,West Virginia,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,West Virginia,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,512742119.0
+2023,West Virginia,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,West Virginia,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,West Virginia,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,West Virginia,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,West Virginia,Personal Care Services - Reg. Payments,hcbs_pc_cfc,45324403.0
+2023,West Virginia,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,West Virginia,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2023,West Virginia,Case Management - State Wide,hcbs_other,1404256.0
+2023,West Virginia,Rehabilitative Services (non-school-based),hcbs_other,45925627.0
+2023,West Virginia,Private Duty Nursing,hcbs_other,4895298.0
+2023,West Virginia,Balance,map_total,5473215030.0
+2023,West Virginia,Collections,collections,-46034121.0
+2023,Wisconsin,Mental Health Facility Services - Reg. Payments,mhf,25728527.0
+2023,Wisconsin,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Wisconsin,Nursing Facility Services - Reg. Payments,nf,680707953.0
+2023,Wisconsin,Nursing Facility Services - Sup. Payments,nf,40039345.0
+2023,Wisconsin,Intermediate Care Facility - Public,icf,143763435.0
+2023,Wisconsin,Intermediate Care - Private,icf,406028.0
+2023,Wisconsin,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,18888002.0
+2023,Wisconsin,Home Health Services,hcbs_other,66395275.0
+2023,Wisconsin,Medicaid - MCO,mco_capitation,3326561893.0
+2023,Wisconsin,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Wisconsin,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,954780789.0
+2023,Wisconsin,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Wisconsin,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Wisconsin,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Wisconsin,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Wisconsin,Personal Care Services - Reg. Payments,hcbs_pc_cfc,203472632.0
+2023,Wisconsin,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,299736893.0
+2023,Wisconsin,Targeted Case Management Services - Com. Case-Man.,hcbs_other,-29.0
+2023,Wisconsin,Case Management - State Wide,hcbs_other,45966027.0
+2023,Wisconsin,Rehabilitative Services (non-school-based),hcbs_other,451878119.0
+2023,Wisconsin,Private Duty Nursing,hcbs_other,31664111.0
+2023,Wisconsin,Balance,map_total,12072792392.0
+2023,Wisconsin,Collections,collections,-88955483.0
+2023,Wyoming,Mental Health Facility Services - Reg. Payments,mhf,7259844.0
+2023,Wyoming,Mental Health Facility - DSH,mhf_dsh,0.0
+2023,Wyoming,Nursing Facility Services - Reg. Payments,nf,82715486.0
+2023,Wyoming,Nursing Facility Services - Sup. Payments,nf,40350915.0
+2023,Wyoming,Intermediate Care Facility - Public,icf,20610603.0
+2023,Wyoming,Intermediate Care - Private,icf,0.0
+2023,Wyoming,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2023,Wyoming,Home Health Services,hcbs_other,12197734.0
+2023,Wyoming,Medicaid - MCO,mco_capitation,1998852.0
+2023,Wyoming,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2023,Wyoming,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,166761927.0
+2023,Wyoming,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2023,Wyoming,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2023,Wyoming,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2023,Wyoming,All-Inclusive Care Elderly,hcbs_other,0.0
+2023,Wyoming,Personal Care Services - Reg. Payments,hcbs_pc_cfc,6432.0
+2023,Wyoming,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2023,Wyoming,Targeted Case Management Services - Com. Case-Man.,hcbs_other,2524463.0
+2023,Wyoming,Case Management - State Wide,hcbs_other,1045312.0
+2023,Wyoming,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2023,Wyoming,Private Duty Nursing,hcbs_other,0.0
+2023,Wyoming,Balance,map_total,725666745.0
+2023,Wyoming,Collections,collections,-9759786.0
+2023,National Totals,Mental Health Facility Services - Reg. Payments,mhf,4470067691.0
+2023,National Totals,Mental Health Facility - DSH,mhf_dsh,3652903269.0
+2023,National Totals,Nursing Facility Services - Reg. Payments,nf,39741953700.0
+2023,National Totals,Nursing Facility Services - Sup. Payments,nf,2751253151.0
+2023,National Totals,Intermediate Care Facility - Public,icf,4205561842.0
+2023,National Totals,Intermediate Care - Private,icf,5377515082.0
+2023,National Totals,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,184768896.0
+2023,National Totals,Home Health Services,hcbs_other,3526050390.0
+2023,National Totals,Medicaid - MCO,mco_capitation,468201120591.0
+2023,National Totals,Medicaid MCO - Community First Choice,hcbs_pc_cfc,12660979508.0
+2023,National Totals,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,71961063701.0
+2023,National Totals,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,1320892639.0
+2023,National Totals,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,340690446.0
+2023,National Totals,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,19395808272.0
+2023,National Totals,All-Inclusive Care Elderly,hcbs_other,3955863551.0
+2023,National Totals,Personal Care Services - Reg. Payments,hcbs_pc_cfc,14705588590.0
+2023,National Totals,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,527408844.0
+2023,National Totals,Targeted Case Management Services - Com. Case-Man.,hcbs_other,2384867139.0
+2023,National Totals,Case Management - State Wide,hcbs_other,793596499.0
+2023,National Totals,Rehabilitative Services (non-school-based),hcbs_other,5924164717.0
+2023,National Totals,Private Duty Nursing,hcbs_other,1060747602.0
+2023,National Totals,Balance,map_total,884379115557.31
+2023,National Totals,Collections,collections,-24497469412.0
+2024,Alabama,Mental Health Facility Services - Reg. Payments,mhf,69955424.0
+2024,Alabama,Mental Health Facility - DSH,mhf_dsh,3215000.0
+2024,Alabama,Nursing Facility Services - Reg. Payments,nf,1242799454.0
+2024,Alabama,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Alabama,Intermediate Care Facility - Public,icf,0.0
+2024,Alabama,Intermediate Care - Private,icf,2768909.0
+2024,Alabama,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Alabama,Home Health Services,hcbs_other,111162329.0
+2024,Alabama,Medicaid - MCO,mco_capitation,0.0
+2024,Alabama,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Alabama,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,613582995.0
+2024,Alabama,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Alabama,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,142043561.0
+2024,Alabama,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Alabama,All-Inclusive Care Elderly,hcbs_other,8611799.0
+2024,Alabama,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,Alabama,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Alabama,Targeted Case Management Services - Com. Case-Man.,hcbs_other,55374280.0
+2024,Alabama,Case Management - State Wide,hcbs_other,0.0
+2024,Alabama,Rehabilitative Services (non-school-based),hcbs_other,143479723.0
+2024,Alabama,Private Duty Nursing,hcbs_other,9444388.0
+2024,Alabama,Balance,map_total,8156803465.0
+2024,Alabama,Collections,collections,-47436696.0
+2024,Alaska,Mental Health Facility Services - Reg. Payments,mhf,12490693.0
+2024,Alaska,Mental Health Facility - DSH,mhf_dsh,17611765.0
+2024,Alaska,Nursing Facility Services - Reg. Payments,nf,197258233.0
+2024,Alaska,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Alaska,Intermediate Care Facility - Public,icf,0.0
+2024,Alaska,Intermediate Care - Private,icf,1246634.0
+2024,Alaska,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Alaska,Home Health Services,hcbs_other,1864516.0
+2024,Alaska,Medicaid - MCO,mco_capitation,0.0
+2024,Alaska,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Alaska,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,406233703.0
+2024,Alaska,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Alaska,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Alaska,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,22176426.0
+2024,Alaska,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Alaska,Personal Care Services - Reg. Payments,hcbs_pc_cfc,21353593.0
+2024,Alaska,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Alaska,Targeted Case Management Services - Com. Case-Man.,hcbs_other,4165625.0
+2024,Alaska,Case Management - State Wide,hcbs_other,0.0
+2024,Alaska,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,Alaska,Private Duty Nursing,hcbs_other,0.0
+2024,Alaska,Balance,map_total,2729409570.0
+2024,Alaska,Collections,collections,-14294231.0
+2024,Amer. Samoa,Mental Health Facility Services - Reg. Payments,mhf,0.0
+2024,Amer. Samoa,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Amer. Samoa,Nursing Facility Services - Reg. Payments,nf,0.0
+2024,Amer. Samoa,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Amer. Samoa,Intermediate Care Facility - Public,icf,0.0
+2024,Amer. Samoa,Intermediate Care - Private,icf,0.0
+2024,Amer. Samoa,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Amer. Samoa,Home Health Services,hcbs_other,0.0
+2024,Amer. Samoa,Medicaid - MCO,mco_capitation,0.0
+2024,Amer. Samoa,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Amer. Samoa,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,0.0
+2024,Amer. Samoa,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Amer. Samoa,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Amer. Samoa,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Amer. Samoa,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Amer. Samoa,Personal Care Services - Reg. Payments,hcbs_pc_cfc,113223.0
+2024,Amer. Samoa,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Amer. Samoa,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2024,Amer. Samoa,Case Management - State Wide,hcbs_other,0.0
+2024,Amer. Samoa,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,Amer. Samoa,Private Duty Nursing,hcbs_other,0.0
+2024,Amer. Samoa,Balance,map_total,56924210.0
+2024,Amer. Samoa,Collections,collections,0.0
+2024,Arizona,Mental Health Facility Services - Reg. Payments,mhf,9151941.0
+2024,Arizona,Mental Health Facility - DSH,mhf_dsh,28474900.0
+2024,Arizona,Nursing Facility Services - Reg. Payments,nf,64094800.0
+2024,Arizona,Nursing Facility Services - Sup. Payments,nf,8757286.0
+2024,Arizona,Intermediate Care Facility - Public,icf,0.0
+2024,Arizona,Intermediate Care - Private,icf,0.0
+2024,Arizona,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Arizona,Home Health Services,hcbs_other,5536331.0
+2024,Arizona,Medicaid - MCO,mco_capitation,17664935198.0
+2024,Arizona,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Arizona,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,0.0
+2024,Arizona,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Arizona,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Arizona,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Arizona,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Arizona,Personal Care Services - Reg. Payments,hcbs_pc_cfc,940644.0
+2024,Arizona,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Arizona,Targeted Case Management Services - Com. Case-Man.,hcbs_other,169331.0
+2024,Arizona,Case Management - State Wide,hcbs_other,15565755.0
+2024,Arizona,Rehabilitative Services (non-school-based),hcbs_other,135200598.0
+2024,Arizona,Private Duty Nursing,hcbs_other,77361.0
+2024,Arizona,Balance,map_total,19966771706.0
+2024,Arizona,Collections,collections,-408956.0
+2024,Arkansas,Mental Health Facility Services - Reg. Payments,mhf,17017897.0
+2024,Arkansas,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Arkansas,Nursing Facility Services - Reg. Payments,nf,969107510.0
+2024,Arkansas,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Arkansas,Intermediate Care Facility - Public,icf,158926040.0
+2024,Arkansas,Intermediate Care - Private,icf,148893.0
+2024,Arkansas,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Arkansas,Home Health Services,hcbs_other,50328698.0
+2024,Arkansas,Medicaid - MCO,mco_capitation,808617441.0
+2024,Arkansas,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Arkansas,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,446598445.0
+2024,Arkansas,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Arkansas,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Arkansas,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Arkansas,All-Inclusive Care Elderly,hcbs_other,27399696.0
+2024,Arkansas,Personal Care Services - Reg. Payments,hcbs_pc_cfc,196152476.0
+2024,Arkansas,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,34522145.0
+2024,Arkansas,Targeted Case Management Services - Com. Case-Man.,hcbs_other,-1329.0
+2024,Arkansas,Case Management - State Wide,hcbs_other,3086560.0
+2024,Arkansas,Rehabilitative Services (non-school-based),hcbs_other,201605087.0
+2024,Arkansas,Private Duty Nursing,hcbs_other,8579077.0
+2024,Arkansas,Balance,map_total,7832697340.0
+2024,Arkansas,Collections,collections,-43224046.0
+2024,California,Mental Health Facility Services - Reg. Payments,mhf,526867804.0
+2024,California,Mental Health Facility - DSH,mhf_dsh,149416.0
+2024,California,Nursing Facility Services - Reg. Payments,nf,840227684.0
+2024,California,Nursing Facility Services - Sup. Payments,nf,141159730.0
+2024,California,Intermediate Care Facility - Public,icf,50747524.0
+2024,California,Intermediate Care - Private,icf,182181140.0
+2024,California,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,113904921.0
+2024,California,Home Health Services,hcbs_other,10939736.0
+2024,California,Medicaid - MCO,mco_capitation,67721503392.0
+2024,California,Medicaid MCO - Community First Choice,hcbs_pc_cfc,-76780301.0
+2024,California,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,7574616972.0
+2024,California,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,1475085473.0
+2024,California,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,California,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,13774983579.0
+2024,California,All-Inclusive Care Elderly,hcbs_other,1398254281.0
+2024,California,Personal Care Services - Reg. Payments,hcbs_pc_cfc,7094933927.0
+2024,California,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,247321788.0
+2024,California,Targeted Case Management Services - Com. Case-Man.,hcbs_other,1211161074.0
+2024,California,Case Management - State Wide,hcbs_other,32053721.0
+2024,California,Rehabilitative Services (non-school-based),hcbs_other,820780542.0
+2024,California,Private Duty Nursing,hcbs_other,0.0
+2024,California,Balance,map_total,150413664949.1
+2024,California,Collections,collections,-1641028859.0
+2024,Colorado,Mental Health Facility Services - Reg. Payments,mhf,8661638.0
+2024,Colorado,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Colorado,Nursing Facility Services - Reg. Payments,nf,771944705.0
+2024,Colorado,Nursing Facility Services - Sup. Payments,nf,156817429.0
+2024,Colorado,Intermediate Care Facility - Public,icf,44273564.0
+2024,Colorado,Intermediate Care - Private,icf,6555545.0
+2024,Colorado,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Colorado,Home Health Services,hcbs_other,1016781032.0
+2024,Colorado,Medicaid - MCO,mco_capitation,501414688.0
+2024,Colorado,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Colorado,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,2330291823.0
+2024,Colorado,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,43913.0
+2024,Colorado,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Colorado,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Colorado,All-Inclusive Care Elderly,hcbs_other,296091452.0
+2024,Colorado,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,Colorado,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Colorado,Targeted Case Management Services - Com. Case-Man.,hcbs_other,67054050.0
+2024,Colorado,Case Management - State Wide,hcbs_other,0.0
+2024,Colorado,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,Colorado,Private Duty Nursing,hcbs_other,131150618.0
+2024,Colorado,Balance,map_total,13918870460.0
+2024,Colorado,Collections,collections,-164495355.0
+2024,Connecticut,Mental Health Facility Services - Reg. Payments,mhf,148987740.0
+2024,Connecticut,Mental Health Facility - DSH,mhf_dsh,105573725.0
+2024,Connecticut,Nursing Facility Services - Reg. Payments,nf,1256353262.0
+2024,Connecticut,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Connecticut,Intermediate Care Facility - Public,icf,137767338.0
+2024,Connecticut,Intermediate Care - Private,icf,71447683.0
+2024,Connecticut,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Connecticut,Home Health Services,hcbs_other,198750325.0
+2024,Connecticut,Medicaid - MCO,mco_capitation,0.0
+2024,Connecticut,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Connecticut,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1971631196.0
+2024,Connecticut,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,4663326.0
+2024,Connecticut,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Connecticut,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,255549681.0
+2024,Connecticut,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Connecticut,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,Connecticut,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Connecticut,Targeted Case Management Services - Com. Case-Man.,hcbs_other,106493983.0
+2024,Connecticut,Case Management - State Wide,hcbs_other,0.0
+2024,Connecticut,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,Connecticut,Private Duty Nursing,hcbs_other,0.0
+2024,Connecticut,Balance,map_total,10967111816.0
+2024,Connecticut,Collections,collections,-131797261.0
+2024,Delaware,Mental Health Facility Services - Reg. Payments,mhf,16640980.0
+2024,Delaware,Mental Health Facility - DSH,mhf_dsh,7131761.0
+2024,Delaware,Nursing Facility Services - Reg. Payments,nf,1072590.0
+2024,Delaware,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Delaware,Intermediate Care Facility - Public,icf,19034182.0
+2024,Delaware,Intermediate Care - Private,icf,16782283.0
+2024,Delaware,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Delaware,Home Health Services,hcbs_other,61459.0
+2024,Delaware,Medicaid - MCO,mco_capitation,2690226784.0
+2024,Delaware,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Delaware,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,315977377.0
+2024,Delaware,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,4041460.0
+2024,Delaware,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Delaware,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Delaware,All-Inclusive Care Elderly,hcbs_other,23013847.0
+2024,Delaware,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,Delaware,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Delaware,Targeted Case Management Services - Com. Case-Man.,hcbs_other,7452488.0
+2024,Delaware,Case Management - State Wide,hcbs_other,0.0
+2024,Delaware,Rehabilitative Services (non-school-based),hcbs_other,19198637.0
+2024,Delaware,Private Duty Nursing,hcbs_other,2335.0
+2024,Delaware,Balance,map_total,3207687016.0
+2024,Delaware,Collections,collections,-6576334.0
+2024,Dist. Of Col.,Mental Health Facility Services - Reg. Payments,mhf,100866653.0
+2024,Dist. Of Col.,Mental Health Facility - DSH,mhf_dsh,6510808.0
+2024,Dist. Of Col.,Nursing Facility Services - Reg. Payments,nf,299988975.0
+2024,Dist. Of Col.,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Dist. Of Col.,Intermediate Care Facility - Public,icf,0.0
+2024,Dist. Of Col.,Intermediate Care - Private,icf,93261305.0
+2024,Dist. Of Col.,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Dist. Of Col.,Home Health Services,hcbs_other,39340981.0
+2024,Dist. Of Col.,Medicaid - MCO,mco_capitation,1866281511.0
+2024,Dist. Of Col.,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Dist. Of Col.,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,552283903.0
+2024,Dist. Of Col.,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,3292555.0
+2024,Dist. Of Col.,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Dist. Of Col.,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,39986297.0
+2024,Dist. Of Col.,All-Inclusive Care Elderly,hcbs_other,5261765.0
+2024,Dist. Of Col.,Personal Care Services - Reg. Payments,hcbs_pc_cfc,100063146.0
+2024,Dist. Of Col.,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Dist. Of Col.,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2024,Dist. Of Col.,Case Management - State Wide,hcbs_other,0.0
+2024,Dist. Of Col.,Rehabilitative Services (non-school-based),hcbs_other,8891704.0
+2024,Dist. Of Col.,Private Duty Nursing,hcbs_other,14991068.0
+2024,Dist. Of Col.,Balance,map_total,4147597260.0
+2024,Dist. Of Col.,Collections,collections,-9777763.0
+2024,Florida,Mental Health Facility Services - Reg. Payments,mhf,2037240823.0
+2024,Florida,Mental Health Facility - DSH,mhf_dsh,135512795.0
+2024,Florida,Nursing Facility Services - Reg. Payments,nf,249329321.0
+2024,Florida,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Florida,Intermediate Care Facility - Public,icf,75044907.0
+2024,Florida,Intermediate Care - Private,icf,511274168.0
+2024,Florida,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Florida,Home Health Services,hcbs_other,24746305.0
+2024,Florida,Medicaid - MCO,mco_capitation,22820327683.0
+2024,Florida,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Florida,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1572209439.0
+2024,Florida,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Florida,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,246371867.0
+2024,Florida,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Florida,All-Inclusive Care Elderly,hcbs_other,134930391.0
+2024,Florida,Personal Care Services - Reg. Payments,hcbs_pc_cfc,182753949.0
+2024,Florida,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Florida,Targeted Case Management Services - Com. Case-Man.,hcbs_other,7966241.0
+2024,Florida,Case Management - State Wide,hcbs_other,0.0
+2024,Florida,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,Florida,Private Duty Nursing,hcbs_other,17924734.0
+2024,Florida,Balance,map_total,35538855380.0
+2024,Florida,Collections,collections,-569633744.0
+2024,Georgia,Mental Health Facility Services - Reg. Payments,mhf,17805965.0
+2024,Georgia,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Georgia,Nursing Facility Services - Reg. Payments,nf,1718158723.0
+2024,Georgia,Nursing Facility Services - Sup. Payments,nf,100095092.0
+2024,Georgia,Intermediate Care Facility - Public,icf,23960481.0
+2024,Georgia,Intermediate Care - Private,icf,7195445.0
+2024,Georgia,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Georgia,Home Health Services,hcbs_other,97487097.0
+2024,Georgia,Medicaid - MCO,mco_capitation,5834817159.0
+2024,Georgia,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Georgia,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,2138263682.0
+2024,Georgia,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Georgia,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Georgia,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Georgia,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Georgia,Personal Care Services - Reg. Payments,hcbs_pc_cfc,34772378.0
+2024,Georgia,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Georgia,Targeted Case Management Services - Com. Case-Man.,hcbs_other,60020320.0
+2024,Georgia,Case Management - State Wide,hcbs_other,0.0
+2024,Georgia,Rehabilitative Services (non-school-based),hcbs_other,329796215.0
+2024,Georgia,Private Duty Nursing,hcbs_other,75142309.0
+2024,Georgia,Balance,map_total,15005884864.0
+2024,Georgia,Collections,collections,-135588311.0
+2024,Guam,Mental Health Facility Services - Reg. Payments,mhf,0.0
+2024,Guam,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Guam,Nursing Facility Services - Reg. Payments,nf,1043149.0
+2024,Guam,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Guam,Intermediate Care Facility - Public,icf,0.0
+2024,Guam,Intermediate Care - Private,icf,0.0
+2024,Guam,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Guam,Home Health Services,hcbs_other,935828.0
+2024,Guam,Medicaid - MCO,mco_capitation,0.0
+2024,Guam,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Guam,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,0.0
+2024,Guam,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Guam,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Guam,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Guam,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Guam,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,Guam,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Guam,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2024,Guam,Case Management - State Wide,hcbs_other,0.0
+2024,Guam,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,Guam,Private Duty Nursing,hcbs_other,0.0
+2024,Guam,Balance,map_total,188113389.0
+2024,Guam,Collections,collections,0.0
+2024,Hawaii,Mental Health Facility Services - Reg. Payments,mhf,0.0
+2024,Hawaii,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Hawaii,Nursing Facility Services - Reg. Payments,nf,18242.0
+2024,Hawaii,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Hawaii,Intermediate Care Facility - Public,icf,0.0
+2024,Hawaii,Intermediate Care - Private,icf,10755472.0
+2024,Hawaii,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Hawaii,Home Health Services,hcbs_other,0.0
+2024,Hawaii,Medicaid - MCO,mco_capitation,2670773212.0
+2024,Hawaii,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Hawaii,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,169604120.0
+2024,Hawaii,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Hawaii,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Hawaii,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Hawaii,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Hawaii,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,Hawaii,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Hawaii,Targeted Case Management Services - Com. Case-Man.,hcbs_other,1317574.0
+2024,Hawaii,Case Management - State Wide,hcbs_other,0.0
+2024,Hawaii,Rehabilitative Services (non-school-based),hcbs_other,2716.0
+2024,Hawaii,Private Duty Nursing,hcbs_other,0.0
+2024,Hawaii,Balance,map_total,3113757830.0
+2024,Hawaii,Collections,collections,-65527444.0
+2024,Idaho,Mental Health Facility Services - Reg. Payments,mhf,5753727.0
+2024,Idaho,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Idaho,Nursing Facility Services - Reg. Payments,nf,85896792.0
+2024,Idaho,Nursing Facility Services - Sup. Payments,nf,104968718.0
+2024,Idaho,Intermediate Care Facility - Public,icf,8944573.0
+2024,Idaho,Intermediate Care - Private,icf,29170700.0
+2024,Idaho,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,9083776.0
+2024,Idaho,Home Health Services,hcbs_other,15668235.0
+2024,Idaho,Medicaid - MCO,mco_capitation,229610966.0
+2024,Idaho,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Idaho,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,634643817.0
+2024,Idaho,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,19615519.0
+2024,Idaho,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Idaho,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Idaho,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Idaho,Personal Care Services - Reg. Payments,hcbs_pc_cfc,64591103.0
+2024,Idaho,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Idaho,Targeted Case Management Services - Com. Case-Man.,hcbs_other,16966979.0
+2024,Idaho,Case Management - State Wide,hcbs_other,0.0
+2024,Idaho,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,Idaho,Private Duty Nursing,hcbs_other,0.0
+2024,Idaho,Balance,map_total,3933796146.0
+2024,Idaho,Collections,collections,-40585669.0
+2024,Illinois,Mental Health Facility Services - Reg. Payments,mhf,-29474402.0
+2024,Illinois,Mental Health Facility - DSH,mhf_dsh,89408328.0
+2024,Illinois,Nursing Facility Services - Reg. Payments,nf,543587316.0
+2024,Illinois,Nursing Facility Services - Sup. Payments,nf,48580783.0
+2024,Illinois,Intermediate Care Facility - Public,icf,380559882.0
+2024,Illinois,Intermediate Care - Private,icf,457808575.0
+2024,Illinois,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Illinois,Home Health Services,hcbs_other,87807267.0
+2024,Illinois,Medicaid - MCO,mco_capitation,23979687645.0
+2024,Illinois,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Illinois,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,2470461617.0
+2024,Illinois,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Illinois,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Illinois,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Illinois,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Illinois,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,Illinois,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Illinois,Targeted Case Management Services - Com. Case-Man.,hcbs_other,22708.0
+2024,Illinois,Case Management - State Wide,hcbs_other,23123597.0
+2024,Illinois,Rehabilitative Services (non-school-based),hcbs_other,101899103.0
+2024,Illinois,Private Duty Nursing,hcbs_other,1088192.0
+2024,Illinois,Balance,map_total,32546202125.0
+2024,Illinois,Collections,collections,-82112104.0
+2024,Indiana,Mental Health Facility Services - Reg. Payments,mhf,111639118.0
+2024,Indiana,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Indiana,Nursing Facility Services - Reg. Payments,nf,1830125233.0
+2024,Indiana,Nursing Facility Services - Sup. Payments,nf,787834733.0
+2024,Indiana,Intermediate Care Facility - Public,icf,0.0
+2024,Indiana,Intermediate Care - Private,icf,313356608.0
+2024,Indiana,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Indiana,Home Health Services,hcbs_other,330897804.0
+2024,Indiana,Medicaid - MCO,mco_capitation,9353898438.0
+2024,Indiana,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Indiana,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,3490470459.0
+2024,Indiana,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,17811212.0
+2024,Indiana,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Indiana,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Indiana,All-Inclusive Care Elderly,hcbs_other,40327213.0
+2024,Indiana,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,Indiana,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Indiana,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2024,Indiana,Case Management - State Wide,hcbs_other,0.0
+2024,Indiana,Rehabilitative Services (non-school-based),hcbs_other,251811941.0
+2024,Indiana,Private Duty Nursing,hcbs_other,0.0
+2024,Indiana,Balance,map_total,19546729900.0
+2024,Indiana,Collections,collections,-122814999.0
+2024,Iowa,Mental Health Facility Services - Reg. Payments,mhf,720019.0
+2024,Iowa,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Iowa,Nursing Facility Services - Reg. Payments,nf,38720388.0
+2024,Iowa,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Iowa,Intermediate Care Facility - Public,icf,515154.0
+2024,Iowa,Intermediate Care - Private,icf,3419018.0
+2024,Iowa,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Iowa,Home Health Services,hcbs_other,10471676.0
+2024,Iowa,Medicaid - MCO,mco_capitation,8492182435.0
+2024,Iowa,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Iowa,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,47825168.0
+2024,Iowa,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,1495970.0
+2024,Iowa,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Iowa,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Iowa,All-Inclusive Care Elderly,hcbs_other,34806623.0
+2024,Iowa,Personal Care Services - Reg. Payments,hcbs_pc_cfc,13531.0
+2024,Iowa,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Iowa,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2024,Iowa,Case Management - State Wide,hcbs_other,3877809.0
+2024,Iowa,Rehabilitative Services (non-school-based),hcbs_other,312025.0
+2024,Iowa,Private Duty Nursing,hcbs_other,0.0
+2024,Iowa,Balance,map_total,8813898555.0
+2024,Iowa,Collections,collections,-124579954.0
+2024,Kansas,Mental Health Facility Services - Reg. Payments,mhf,208219.0
+2024,Kansas,Mental Health Facility - DSH,mhf_dsh,22307137.0
+2024,Kansas,Nursing Facility Services - Reg. Payments,nf,18740816.0
+2024,Kansas,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Kansas,Intermediate Care Facility - Public,icf,64235552.0
+2024,Kansas,Intermediate Care - Private,icf,46466.0
+2024,Kansas,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Kansas,Home Health Services,hcbs_other,0.0
+2024,Kansas,Medicaid - MCO,mco_capitation,4510587224.0
+2024,Kansas,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Kansas,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,8604.0
+2024,Kansas,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Kansas,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Kansas,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Kansas,All-Inclusive Care Elderly,hcbs_other,59065493.0
+2024,Kansas,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,Kansas,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Kansas,Targeted Case Management Services - Com. Case-Man.,hcbs_other,45296.0
+2024,Kansas,Case Management - State Wide,hcbs_other,0.0
+2024,Kansas,Rehabilitative Services (non-school-based),hcbs_other,2060723.0
+2024,Kansas,Private Duty Nursing,hcbs_other,0.0
+2024,Kansas,Balance,map_total,5192672869.0
+2024,Kansas,Collections,collections,-24685411.0
+2024,Kentucky,Mental Health Facility Services - Reg. Payments,mhf,3828331.0
+2024,Kentucky,Mental Health Facility - DSH,mhf_dsh,27555147.0
+2024,Kentucky,Nursing Facility Services - Reg. Payments,nf,1554918125.0
+2024,Kentucky,Nursing Facility Services - Sup. Payments,nf,550000.0
+2024,Kentucky,Intermediate Care Facility - Public,icf,121117785.0
+2024,Kentucky,Intermediate Care - Private,icf,47004358.0
+2024,Kentucky,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Kentucky,Home Health Services,hcbs_other,49084329.0
+2024,Kentucky,Medicaid - MCO,mco_capitation,13893254456.0
+2024,Kentucky,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Kentucky,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1671153744.0
+2024,Kentucky,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Kentucky,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Kentucky,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Kentucky,All-Inclusive Care Elderly,hcbs_other,14262029.0
+2024,Kentucky,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,Kentucky,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Kentucky,Targeted Case Management Services - Com. Case-Man.,hcbs_other,41632100.0
+2024,Kentucky,Case Management - State Wide,hcbs_other,0.0
+2024,Kentucky,Rehabilitative Services (non-school-based),hcbs_other,20311238.0
+2024,Kentucky,Private Duty Nursing,hcbs_other,13075954.0
+2024,Kentucky,Balance,map_total,17926681540.0
+2024,Kentucky,Collections,collections,-47977017.0
+2024,Louisiana,Mental Health Facility Services - Reg. Payments,mhf,4379724.0
+2024,Louisiana,Mental Health Facility - DSH,mhf_dsh,132359625.0
+2024,Louisiana,Nursing Facility Services - Reg. Payments,nf,1437877345.0
+2024,Louisiana,Nursing Facility Services - Sup. Payments,nf,6724268.0
+2024,Louisiana,Intermediate Care Facility - Public,icf,161883259.0
+2024,Louisiana,Intermediate Care - Private,icf,256996897.0
+2024,Louisiana,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Louisiana,Home Health Services,hcbs_other,15562359.0
+2024,Louisiana,Medicaid - MCO,mco_capitation,13483921354.0
+2024,Louisiana,Medicaid MCO - Community First Choice,hcbs_pc_cfc,-4220.0
+2024,Louisiana,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,876763313.0
+2024,Louisiana,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Louisiana,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Louisiana,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Louisiana,All-Inclusive Care Elderly,hcbs_other,20482430.0
+2024,Louisiana,Personal Care Services - Reg. Payments,hcbs_pc_cfc,198331276.0
+2024,Louisiana,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Louisiana,Targeted Case Management Services - Com. Case-Man.,hcbs_other,64317820.0
+2024,Louisiana,Case Management - State Wide,hcbs_other,-36776933.0
+2024,Louisiana,Rehabilitative Services (non-school-based),hcbs_other,12271.0
+2024,Louisiana,Private Duty Nursing,hcbs_other,0.0
+2024,Louisiana,Balance,map_total,16918343662.0
+2024,Louisiana,Collections,collections,-253112418.0
+2024,Maine,Mental Health Facility Services - Reg. Payments,mhf,77043318.0
+2024,Maine,Mental Health Facility - DSH,mhf_dsh,74617791.0
+2024,Maine,Nursing Facility Services - Reg. Payments,nf,454646275.0
+2024,Maine,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Maine,Intermediate Care Facility - Public,icf,2711609.0
+2024,Maine,Intermediate Care - Private,icf,63094933.0
+2024,Maine,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Maine,Home Health Services,hcbs_other,6568515.0
+2024,Maine,Medicaid - MCO,mco_capitation,0.0
+2024,Maine,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Maine,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,835264803.0
+2024,Maine,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Maine,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Maine,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Maine,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Maine,Personal Care Services - Reg. Payments,hcbs_pc_cfc,236011871.0
+2024,Maine,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Maine,Targeted Case Management Services - Com. Case-Man.,hcbs_other,41646642.0
+2024,Maine,Case Management - State Wide,hcbs_other,0.0
+2024,Maine,Rehabilitative Services (non-school-based),hcbs_other,11329456.0
+2024,Maine,Private Duty Nursing,hcbs_other,29516555.0
+2024,Maine,Balance,map_total,4610480903.0
+2024,Maine,Collections,collections,-83561820.0
+2024,Maryland,Mental Health Facility Services - Reg. Payments,mhf,369516219.0
+2024,Maryland,Mental Health Facility - DSH,mhf_dsh,72271344.0
+2024,Maryland,Nursing Facility Services - Reg. Payments,nf,1556681360.0
+2024,Maryland,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Maryland,Intermediate Care Facility - Public,icf,18317594.0
+2024,Maryland,Intermediate Care - Private,icf,0.0
+2024,Maryland,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Maryland,Home Health Services,hcbs_other,76301042.0
+2024,Maryland,Medicaid - MCO,mco_capitation,7172426582.0
+2024,Maryland,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Maryland,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,3020523787.0
+2024,Maryland,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,32105.0
+2024,Maryland,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Maryland,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,540083658.0
+2024,Maryland,All-Inclusive Care Elderly,hcbs_other,9666921.0
+2024,Maryland,Personal Care Services - Reg. Payments,hcbs_pc_cfc,10866090.0
+2024,Maryland,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,1769063.0
+2024,Maryland,Targeted Case Management Services - Com. Case-Man.,hcbs_other,150230732.0
+2024,Maryland,Case Management - State Wide,hcbs_other,0.0
+2024,Maryland,Rehabilitative Services (non-school-based),hcbs_other,1430016072.0
+2024,Maryland,Private Duty Nursing,hcbs_other,143310486.0
+2024,Maryland,Balance,map_total,17848095113.0
+2024,Maryland,Collections,collections,-97117275.0
+2024,Massachusetts,Mental Health Facility Services - Reg. Payments,mhf,325579322.0
+2024,Massachusetts,Mental Health Facility - DSH,mhf_dsh,-109200000.0
+2024,Massachusetts,Nursing Facility Services - Reg. Payments,nf,1626963890.0
+2024,Massachusetts,Nursing Facility Services - Sup. Payments,nf,1650089.0
+2024,Massachusetts,Intermediate Care Facility - Public,icf,181080109.0
+2024,Massachusetts,Intermediate Care - Private,icf,0.0
+2024,Massachusetts,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Massachusetts,Home Health Services,hcbs_other,231827008.0
+2024,Massachusetts,Medicaid - MCO,mco_capitation,11612398870.0
+2024,Massachusetts,Medicaid MCO - Community First Choice,hcbs_pc_cfc,1.0
+2024,Massachusetts,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,2469754269.0
+2024,Massachusetts,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Massachusetts,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Massachusetts,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Massachusetts,All-Inclusive Care Elderly,hcbs_other,260943245.0
+2024,Massachusetts,Personal Care Services - Reg. Payments,hcbs_pc_cfc,1526003109.0
+2024,Massachusetts,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Massachusetts,Targeted Case Management Services - Com. Case-Man.,hcbs_other,139639377.0
+2024,Massachusetts,Case Management - State Wide,hcbs_other,0.0
+2024,Massachusetts,Rehabilitative Services (non-school-based),hcbs_other,567127842.0
+2024,Massachusetts,Private Duty Nursing,hcbs_other,25257833.0
+2024,Massachusetts,Balance,map_total,25035132331.0
+2024,Massachusetts,Collections,collections,-224954460.0
+2024,Michigan,Mental Health Facility Services - Reg. Payments,mhf,22590902.0
+2024,Michigan,Mental Health Facility - DSH,mhf_dsh,161165352.0
+2024,Michigan,Nursing Facility Services - Reg. Payments,nf,2202027374.0
+2024,Michigan,Nursing Facility Services - Sup. Payments,nf,521700407.0
+2024,Michigan,Intermediate Care Facility - Public,icf,0.0
+2024,Michigan,Intermediate Care - Private,icf,0.0
+2024,Michigan,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Michigan,Home Health Services,hcbs_other,1108287.0
+2024,Michigan,Medicaid - MCO,mco_capitation,13665556003.0
+2024,Michigan,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Michigan,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1099972714.0
+2024,Michigan,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Michigan,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Michigan,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Michigan,All-Inclusive Care Elderly,hcbs_other,243294015.0
+2024,Michigan,Personal Care Services - Reg. Payments,hcbs_pc_cfc,587711828.0
+2024,Michigan,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Michigan,Targeted Case Management Services - Com. Case-Man.,hcbs_other,758145.0
+2024,Michigan,Case Management - State Wide,hcbs_other,0.0
+2024,Michigan,Rehabilitative Services (non-school-based),hcbs_other,3508945.0
+2024,Michigan,Private Duty Nursing,hcbs_other,35823882.0
+2024,Michigan,Balance,map_total,24977121385.0
+2024,Michigan,Collections,collections,-517433350.0
+2024,Minnesota,Mental Health Facility Services - Reg. Payments,mhf,177577486.0
+2024,Minnesota,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Minnesota,Nursing Facility Services - Reg. Payments,nf,1185819579.0
+2024,Minnesota,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Minnesota,Intermediate Care Facility - Public,icf,395371.0
+2024,Minnesota,Intermediate Care - Private,icf,121125240.0
+2024,Minnesota,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Minnesota,Home Health Services,hcbs_other,110826290.0
+2024,Minnesota,Medicaid - MCO,mco_capitation,8750080362.0
+2024,Minnesota,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Minnesota,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,5211295762.0
+2024,Minnesota,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,4998075.0
+2024,Minnesota,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Minnesota,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Minnesota,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Minnesota,Personal Care Services - Reg. Payments,hcbs_pc_cfc,1051351104.0
+2024,Minnesota,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Minnesota,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2024,Minnesota,Case Management - State Wide,hcbs_other,346214957.0
+2024,Minnesota,Rehabilitative Services (non-school-based),hcbs_other,26799773.0
+2024,Minnesota,Private Duty Nursing,hcbs_other,132770708.0
+2024,Minnesota,Balance,map_total,18682730485.0
+2024,Minnesota,Collections,collections,-274980702.0
+2024,Mississippi,Mental Health Facility Services - Reg. Payments,mhf,13968962.0
+2024,Mississippi,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Mississippi,Nursing Facility Services - Reg. Payments,nf,1053777271.0
+2024,Mississippi,Nursing Facility Services - Sup. Payments,nf,3547320.0
+2024,Mississippi,Intermediate Care Facility - Public,icf,155584505.0
+2024,Mississippi,Intermediate Care - Private,icf,139247015.0
+2024,Mississippi,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Mississippi,Home Health Services,hcbs_other,1703003.0
+2024,Mississippi,Medicaid - MCO,mco_capitation,4028748279.0
+2024,Mississippi,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Mississippi,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,792601939.0
+2024,Mississippi,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,18351822.0
+2024,Mississippi,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Mississippi,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Mississippi,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Mississippi,Personal Care Services - Reg. Payments,hcbs_pc_cfc,263925.0
+2024,Mississippi,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Mississippi,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2024,Mississippi,Case Management - State Wide,hcbs_other,2672233.0
+2024,Mississippi,Rehabilitative Services (non-school-based),hcbs_other,19829967.0
+2024,Mississippi,Private Duty Nursing,hcbs_other,25796729.0
+2024,Mississippi,Balance,map_total,7187080341.0
+2024,Mississippi,Collections,collections,-32794029.0
+2024,Missouri,Mental Health Facility Services - Reg. Payments,mhf,25500703.0
+2024,Missouri,Mental Health Facility - DSH,mhf_dsh,207312096.0
+2024,Missouri,Nursing Facility Services - Reg. Payments,nf,1422683510.0
+2024,Missouri,Nursing Facility Services - Sup. Payments,nf,18841770.0
+2024,Missouri,Intermediate Care Facility - Public,icf,101947221.0
+2024,Missouri,Intermediate Care - Private,icf,4627640.0
+2024,Missouri,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Missouri,Home Health Services,hcbs_other,3254690.0
+2024,Missouri,Medicaid - MCO,mco_capitation,4524948900.0
+2024,Missouri,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Missouri,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,2362964830.0
+2024,Missouri,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Missouri,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Missouri,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Missouri,All-Inclusive Care Elderly,hcbs_other,2867365.0
+2024,Missouri,Personal Care Services - Reg. Payments,hcbs_pc_cfc,1099468963.0
+2024,Missouri,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Missouri,Targeted Case Management Services - Com. Case-Man.,hcbs_other,103484570.0
+2024,Missouri,Case Management - State Wide,hcbs_other,0.0
+2024,Missouri,Rehabilitative Services (non-school-based),hcbs_other,136771765.0
+2024,Missouri,Private Duty Nursing,hcbs_other,53462376.0
+2024,Missouri,Balance,map_total,16030044530.0
+2024,Missouri,Collections,collections,-138374614.0
+2024,Montana,Mental Health Facility Services - Reg. Payments,mhf,22356883.0
+2024,Montana,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Montana,Nursing Facility Services - Reg. Payments,nf,182872779.0
+2024,Montana,Nursing Facility Services - Sup. Payments,nf,16221970.0
+2024,Montana,Intermediate Care Facility - Public,icf,0.0
+2024,Montana,Intermediate Care - Private,icf,2507300.0
+2024,Montana,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Montana,Home Health Services,hcbs_other,36937164.0
+2024,Montana,Medicaid - MCO,mco_capitation,0.0
+2024,Montana,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Montana,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,252953929.0
+2024,Montana,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Montana,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Montana,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,70949576.0
+2024,Montana,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Montana,Personal Care Services - Reg. Payments,hcbs_pc_cfc,-3665700.0
+2024,Montana,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Montana,Targeted Case Management Services - Com. Case-Man.,hcbs_other,11441779.0
+2024,Montana,Case Management - State Wide,hcbs_other,1223059.0
+2024,Montana,Rehabilitative Services (non-school-based),hcbs_other,26847699.0
+2024,Montana,Private Duty Nursing,hcbs_other,3778457.0
+2024,Montana,Balance,map_total,2390129952.0
+2024,Montana,Collections,collections,-20520648.0
+2024,N. Mariana Islands,Mental Health Facility Services - Reg. Payments,mhf,0.0
+2024,N. Mariana Islands,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,N. Mariana Islands,Nursing Facility Services - Reg. Payments,nf,0.0
+2024,N. Mariana Islands,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,N. Mariana Islands,Intermediate Care Facility - Public,icf,0.0
+2024,N. Mariana Islands,Intermediate Care - Private,icf,0.0
+2024,N. Mariana Islands,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,N. Mariana Islands,Home Health Services,hcbs_other,1928616.0
+2024,N. Mariana Islands,Medicaid - MCO,mco_capitation,0.0
+2024,N. Mariana Islands,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,N. Mariana Islands,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,0.0
+2024,N. Mariana Islands,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,N. Mariana Islands,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,N. Mariana Islands,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,N. Mariana Islands,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,N. Mariana Islands,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,N. Mariana Islands,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,N. Mariana Islands,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2024,N. Mariana Islands,Case Management - State Wide,hcbs_other,0.0
+2024,N. Mariana Islands,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,N. Mariana Islands,Private Duty Nursing,hcbs_other,0.0
+2024,N. Mariana Islands,Balance,map_total,93499284.0
+2024,N. Mariana Islands,Collections,collections,0.0
+2024,Nebraska,Mental Health Facility Services - Reg. Payments,mhf,0.0
+2024,Nebraska,Mental Health Facility - DSH,mhf_dsh,1811337.0
+2024,Nebraska,Nursing Facility Services - Reg. Payments,nf,496495168.0
+2024,Nebraska,Nursing Facility Services - Sup. Payments,nf,21428723.0
+2024,Nebraska,Intermediate Care Facility - Public,icf,32991764.0
+2024,Nebraska,Intermediate Care - Private,icf,33358121.0
+2024,Nebraska,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Nebraska,Home Health Services,hcbs_other,6333.0
+2024,Nebraska,Medicaid - MCO,mco_capitation,2451269836.0
+2024,Nebraska,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Nebraska,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,835915986.0
+2024,Nebraska,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Nebraska,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Nebraska,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Nebraska,All-Inclusive Care Elderly,hcbs_other,12441061.0
+2024,Nebraska,Personal Care Services - Reg. Payments,hcbs_pc_cfc,11602423.0
+2024,Nebraska,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Nebraska,Targeted Case Management Services - Com. Case-Man.,hcbs_other,47366408.0
+2024,Nebraska,Case Management - State Wide,hcbs_other,0.0
+2024,Nebraska,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,Nebraska,Private Duty Nursing,hcbs_other,0.0
+2024,Nebraska,Balance,map_total,3668280693.0
+2024,Nebraska,Collections,collections,-22008765.0
+2024,Nevada,Mental Health Facility Services - Reg. Payments,mhf,56846685.0
+2024,Nevada,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Nevada,Nursing Facility Services - Reg. Payments,nf,262520225.0
+2024,Nevada,Nursing Facility Services - Sup. Payments,nf,108394320.0
+2024,Nevada,Intermediate Care Facility - Public,icf,14985805.0
+2024,Nevada,Intermediate Care - Private,icf,7748610.0
+2024,Nevada,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Nevada,Home Health Services,hcbs_other,10651076.0
+2024,Nevada,Medicaid - MCO,mco_capitation,3110208759.0
+2024,Nevada,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Nevada,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,262747868.0
+2024,Nevada,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,11574533.0
+2024,Nevada,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Nevada,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Nevada,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Nevada,Personal Care Services - Reg. Payments,hcbs_pc_cfc,176051912.0
+2024,Nevada,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Nevada,Targeted Case Management Services - Com. Case-Man.,hcbs_other,52473383.0
+2024,Nevada,Case Management - State Wide,hcbs_other,0.0
+2024,Nevada,Rehabilitative Services (non-school-based),hcbs_other,108144637.0
+2024,Nevada,Private Duty Nursing,hcbs_other,33981988.0
+2024,Nevada,Balance,map_total,5955457480.0
+2024,Nevada,Collections,collections,-40022148.0
+2024,New Hampshire,Mental Health Facility Services - Reg. Payments,mhf,1343547.0
+2024,New Hampshire,Mental Health Facility - DSH,mhf_dsh,91124688.0
+2024,New Hampshire,Nursing Facility Services - Reg. Payments,nf,270685877.0
+2024,New Hampshire,Nursing Facility Services - Sup. Payments,nf,169425029.0
+2024,New Hampshire,Intermediate Care Facility - Public,icf,0.0
+2024,New Hampshire,Intermediate Care - Private,icf,4811130.0
+2024,New Hampshire,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,New Hampshire,Home Health Services,hcbs_other,2329890.0
+2024,New Hampshire,Medicaid - MCO,mco_capitation,1063616835.0
+2024,New Hampshire,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,New Hampshire,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,547221047.0
+2024,New Hampshire,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,New Hampshire,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,New Hampshire,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,New Hampshire,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,New Hampshire,Personal Care Services - Reg. Payments,hcbs_pc_cfc,1527687.0
+2024,New Hampshire,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,New Hampshire,Targeted Case Management Services - Com. Case-Man.,hcbs_other,16616706.0
+2024,New Hampshire,Case Management - State Wide,hcbs_other,0.0
+2024,New Hampshire,Rehabilitative Services (non-school-based),hcbs_other,47682730.0
+2024,New Hampshire,Private Duty Nursing,hcbs_other,3199561.0
+2024,New Hampshire,Balance,map_total,2464948138.0
+2024,New Hampshire,Collections,collections,-10699755.0
+2024,New Jersey,Mental Health Facility Services - Reg. Payments,mhf,150241714.0
+2024,New Jersey,Mental Health Facility - DSH,mhf_dsh,362958310.0
+2024,New Jersey,Nursing Facility Services - Reg. Payments,nf,183222048.0
+2024,New Jersey,Nursing Facility Services - Sup. Payments,nf,7224334.0
+2024,New Jersey,Intermediate Care Facility - Public,icf,552050751.0
+2024,New Jersey,Intermediate Care - Private,icf,13057922.0
+2024,New Jersey,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,New Jersey,Home Health Services,hcbs_other,1128842.0
+2024,New Jersey,Medicaid - MCO,mco_capitation,15740149666.0
+2024,New Jersey,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,New Jersey,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,2958123313.0
+2024,New Jersey,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,New Jersey,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,New Jersey,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,New Jersey,All-Inclusive Care Elderly,hcbs_other,80882054.0
+2024,New Jersey,Personal Care Services - Reg. Payments,hcbs_pc_cfc,90164046.0
+2024,New Jersey,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,81332.0
+2024,New Jersey,Targeted Case Management Services - Com. Case-Man.,hcbs_other,18446770.0
+2024,New Jersey,Case Management - State Wide,hcbs_other,0.0
+2024,New Jersey,Rehabilitative Services (non-school-based),hcbs_other,25088879.0
+2024,New Jersey,Private Duty Nursing,hcbs_other,469384.0
+2024,New Jersey,Balance,map_total,23426076809.0
+2024,New Jersey,Collections,collections,-315773449.0
+2024,New Mexico,Mental Health Facility Services - Reg. Payments,mhf,3770724.0
+2024,New Mexico,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,New Mexico,Nursing Facility Services - Reg. Payments,nf,943317.0
+2024,New Mexico,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,New Mexico,Intermediate Care Facility - Public,icf,389098.0
+2024,New Mexico,Intermediate Care - Private,icf,38525056.0
+2024,New Mexico,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,New Mexico,Home Health Services,hcbs_other,121090040.0
+2024,New Mexico,Medicaid - MCO,mco_capitation,6368066540.0
+2024,New Mexico,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,New Mexico,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,725392932.0
+2024,New Mexico,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,New Mexico,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,New Mexico,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,New Mexico,All-Inclusive Care Elderly,hcbs_other,14689303.0
+2024,New Mexico,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,New Mexico,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,New Mexico,Targeted Case Management Services - Com. Case-Man.,hcbs_other,155.0
+2024,New Mexico,Case Management - State Wide,hcbs_other,0.0
+2024,New Mexico,Rehabilitative Services (non-school-based),hcbs_other,235.0
+2024,New Mexico,Private Duty Nursing,hcbs_other,0.0
+2024,New Mexico,Balance,map_total,7942159173.0
+2024,New Mexico,Collections,collections,-18457053.0
+2024,New York,Mental Health Facility Services - Reg. Payments,mhf,386878782.0
+2024,New York,Mental Health Facility - DSH,mhf_dsh,302500000.0
+2024,New York,Nursing Facility Services - Reg. Payments,nf,7344618128.0
+2024,New York,Nursing Facility Services - Sup. Payments,nf,75878829.0
+2024,New York,Intermediate Care Facility - Public,icf,132960512.0
+2024,New York,Intermediate Care - Private,icf,757423695.0
+2024,New York,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,New York,Home Health Services,hcbs_other,-121467062.0
+2024,New York,Medicaid - MCO,mco_capitation,50647550955.0
+2024,New York,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,New York,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,10642023173.0
+2024,New York,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,New York,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,New York,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,1106353612.0
+2024,New York,All-Inclusive Care Elderly,hcbs_other,787905846.0
+2024,New York,Personal Care Services - Reg. Payments,hcbs_pc_cfc,1015046500.0
+2024,New York,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,New York,Targeted Case Management Services - Com. Case-Man.,hcbs_other,63034963.0
+2024,New York,Case Management - State Wide,hcbs_other,48575.0
+2024,New York,Rehabilitative Services (non-school-based),hcbs_other,59596115.0
+2024,New York,Private Duty Nursing,hcbs_other,67052898.0
+2024,New York,Balance,map_total,96024580523.0
+2024,New York,Collections,collections,-1563784774.0
+2024,North Carolina,Mental Health Facility Services - Reg. Payments,mhf,599.0
+2024,North Carolina,Mental Health Facility - DSH,mhf_dsh,210044040.0
+2024,North Carolina,Nursing Facility Services - Reg. Payments,nf,2311626956.0
+2024,North Carolina,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,North Carolina,Intermediate Care Facility - Public,icf,0.0
+2024,North Carolina,Intermediate Care - Private,icf,0.0
+2024,North Carolina,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,North Carolina,Home Health Services,hcbs_other,6419980.0
+2024,North Carolina,Medicaid - MCO,mco_capitation,17455125165.0
+2024,North Carolina,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,North Carolina,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,623674424.0
+2024,North Carolina,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,North Carolina,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,North Carolina,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,North Carolina,All-Inclusive Care Elderly,hcbs_other,144662438.0
+2024,North Carolina,Personal Care Services - Reg. Payments,hcbs_pc_cfc,527041203.0
+2024,North Carolina,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,36324443.0
+2024,North Carolina,Targeted Case Management Services - Com. Case-Man.,hcbs_other,7205403.0
+2024,North Carolina,Case Management - State Wide,hcbs_other,0.0
+2024,North Carolina,Rehabilitative Services (non-school-based),hcbs_other,10652717.0
+2024,North Carolina,Private Duty Nursing,hcbs_other,197201928.0
+2024,North Carolina,Balance,map_total,28802680042.0
+2024,North Carolina,Collections,collections,-81731093.0
+2024,North Dakota,Mental Health Facility Services - Reg. Payments,mhf,14603826.0
+2024,North Dakota,Mental Health Facility - DSH,mhf_dsh,988478.0
+2024,North Dakota,Nursing Facility Services - Reg. Payments,nf,315350409.0
+2024,North Dakota,Nursing Facility Services - Sup. Payments,nf,3942548.0
+2024,North Dakota,Intermediate Care Facility - Public,icf,28266036.0
+2024,North Dakota,Intermediate Care - Private,icf,103491124.0
+2024,North Dakota,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,North Dakota,Home Health Services,hcbs_other,9661611.0
+2024,North Dakota,Medicaid - MCO,mco_capitation,199977642.0
+2024,North Dakota,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,North Dakota,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,281644990.0
+2024,North Dakota,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,703099.0
+2024,North Dakota,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,North Dakota,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,North Dakota,All-Inclusive Care Elderly,hcbs_other,11646788.0
+2024,North Dakota,Personal Care Services - Reg. Payments,hcbs_pc_cfc,39662835.0
+2024,North Dakota,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,-73479.0
+2024,North Dakota,Targeted Case Management Services - Com. Case-Man.,hcbs_other,3921388.0
+2024,North Dakota,Case Management - State Wide,hcbs_other,-2852.0
+2024,North Dakota,Rehabilitative Services (non-school-based),hcbs_other,20943145.0
+2024,North Dakota,Private Duty Nursing,hcbs_other,1297299.0
+2024,North Dakota,Balance,map_total,1421845604.0
+2024,North Dakota,Collections,collections,-18378879.0
+2024,Ohio,Mental Health Facility Services - Reg. Payments,mhf,88572.0
+2024,Ohio,Mental Health Facility - DSH,mhf_dsh,186865516.0
+2024,Ohio,Nursing Facility Services - Reg. Payments,nf,2045181237.0
+2024,Ohio,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Ohio,Intermediate Care Facility - Public,icf,241589533.0
+2024,Ohio,Intermediate Care - Private,icf,710572432.0
+2024,Ohio,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Ohio,Home Health Services,hcbs_other,267592396.0
+2024,Ohio,Medicaid - MCO,mco_capitation,18228003194.0
+2024,Ohio,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Ohio,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,4957252745.0
+2024,Ohio,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,1941088.0
+2024,Ohio,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Ohio,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Ohio,All-Inclusive Care Elderly,hcbs_other,24013796.0
+2024,Ohio,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,Ohio,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Ohio,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2024,Ohio,Case Management - State Wide,hcbs_other,123838359.0
+2024,Ohio,Rehabilitative Services (non-school-based),hcbs_other,135823021.0
+2024,Ohio,Private Duty Nursing,hcbs_other,59684894.0
+2024,Ohio,Balance,map_total,34260577182.0
+2024,Ohio,Collections,collections,-273060798.0
+2024,Oklahoma,Mental Health Facility Services - Reg. Payments,mhf,87112697.0
+2024,Oklahoma,Mental Health Facility - DSH,mhf_dsh,3273248.0
+2024,Oklahoma,Nursing Facility Services - Reg. Payments,nf,866943461.0
+2024,Oklahoma,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Oklahoma,Intermediate Care Facility - Public,icf,24900762.0
+2024,Oklahoma,Intermediate Care - Private,icf,79106411.0
+2024,Oklahoma,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,5254054.0
+2024,Oklahoma,Home Health Services,hcbs_other,30091110.0
+2024,Oklahoma,Medicaid - MCO,mco_capitation,1725867580.0
+2024,Oklahoma,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Oklahoma,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,774928352.0
+2024,Oklahoma,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Oklahoma,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Oklahoma,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Oklahoma,All-Inclusive Care Elderly,hcbs_other,28706344.0
+2024,Oklahoma,Personal Care Services - Reg. Payments,hcbs_pc_cfc,9991459.0
+2024,Oklahoma,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Oklahoma,Targeted Case Management Services - Com. Case-Man.,hcbs_other,62648165.0
+2024,Oklahoma,Case Management - State Wide,hcbs_other,0.0
+2024,Oklahoma,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,Oklahoma,Private Duty Nursing,hcbs_other,0.0
+2024,Oklahoma,Balance,map_total,9874920466.0
+2024,Oklahoma,Collections,collections,-835469002.0
+2024,Oregon,Mental Health Facility Services - Reg. Payments,mhf,3720781.0
+2024,Oregon,Mental Health Facility - DSH,mhf_dsh,39491017.0
+2024,Oregon,Nursing Facility Services - Reg. Payments,nf,762488058.0
+2024,Oregon,Nursing Facility Services - Sup. Payments,nf,18432045.0
+2024,Oregon,Intermediate Care Facility - Public,icf,0.0
+2024,Oregon,Intermediate Care - Private,icf,0.0
+2024,Oregon,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Oregon,Home Health Services,hcbs_other,403834.0
+2024,Oregon,Medicaid - MCO,mco_capitation,8844492902.0
+2024,Oregon,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Oregon,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,74540371.0
+2024,Oregon,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,114416250.0
+2024,Oregon,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,24443524.0
+2024,Oregon,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,3678435153.0
+2024,Oregon,All-Inclusive Care Elderly,hcbs_other,152873371.0
+2024,Oregon,Personal Care Services - Reg. Payments,hcbs_pc_cfc,70318595.0
+2024,Oregon,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Oregon,Targeted Case Management Services - Com. Case-Man.,hcbs_other,70922252.0
+2024,Oregon,Case Management - State Wide,hcbs_other,290353356.0
+2024,Oregon,Rehabilitative Services (non-school-based),hcbs_other,42741420.0
+2024,Oregon,Private Duty Nursing,hcbs_other,23759999.0
+2024,Oregon,Balance,map_total,16167467052.0
+2024,Oregon,Collections,collections,-127122224.0
+2024,Pennsylvania,Mental Health Facility Services - Reg. Payments,mhf,95526409.0
+2024,Pennsylvania,Mental Health Facility - DSH,mhf_dsh,332354309.0
+2024,Pennsylvania,Nursing Facility Services - Reg. Payments,nf,426612872.0
+2024,Pennsylvania,Nursing Facility Services - Sup. Payments,nf,35622189.0
+2024,Pennsylvania,Intermediate Care Facility - Public,icf,211720309.0
+2024,Pennsylvania,Intermediate Care - Private,icf,412510531.0
+2024,Pennsylvania,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Pennsylvania,Home Health Services,hcbs_other,11623721.0
+2024,Pennsylvania,Medicaid - MCO,mco_capitation,31839011953.0
+2024,Pennsylvania,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Pennsylvania,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,4744518035.0
+2024,Pennsylvania,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Pennsylvania,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Pennsylvania,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Pennsylvania,All-Inclusive Care Elderly,hcbs_other,373029453.0
+2024,Pennsylvania,Personal Care Services - Reg. Payments,hcbs_pc_cfc,1104874.0
+2024,Pennsylvania,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Pennsylvania,Targeted Case Management Services - Com. Case-Man.,hcbs_other,51990390.0
+2024,Pennsylvania,Case Management - State Wide,hcbs_other,0.0
+2024,Pennsylvania,Rehabilitative Services (non-school-based),hcbs_other,498675.0
+2024,Pennsylvania,Private Duty Nursing,hcbs_other,584758.0
+2024,Pennsylvania,Balance,map_total,43536218044.0
+2024,Pennsylvania,Collections,collections,-314400750.0
+2024,Puerto Rico,Mental Health Facility Services - Reg. Payments,mhf,0.0
+2024,Puerto Rico,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Puerto Rico,Nursing Facility Services - Reg. Payments,nf,0.0
+2024,Puerto Rico,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Puerto Rico,Intermediate Care Facility - Public,icf,0.0
+2024,Puerto Rico,Intermediate Care - Private,icf,0.0
+2024,Puerto Rico,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Puerto Rico,Home Health Services,hcbs_other,0.0
+2024,Puerto Rico,Medicaid - MCO,mco_capitation,5513463273.0
+2024,Puerto Rico,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Puerto Rico,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,0.0
+2024,Puerto Rico,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Puerto Rico,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Puerto Rico,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Puerto Rico,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Puerto Rico,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,Puerto Rico,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Puerto Rico,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2024,Puerto Rico,Case Management - State Wide,hcbs_other,0.0
+2024,Puerto Rico,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,Puerto Rico,Private Duty Nursing,hcbs_other,0.0
+2024,Puerto Rico,Balance,map_total,4710162013.0
+2024,Puerto Rico,Collections,collections,-1033079.0
+2024,Rhode Island,Mental Health Facility Services - Reg. Payments,mhf,6128475.0
+2024,Rhode Island,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Rhode Island,Nursing Facility Services - Reg. Payments,nf,339933776.0
+2024,Rhode Island,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Rhode Island,Intermediate Care Facility - Public,icf,0.0
+2024,Rhode Island,Intermediate Care - Private,icf,7159133.0
+2024,Rhode Island,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Rhode Island,Home Health Services,hcbs_other,799442.0
+2024,Rhode Island,Medicaid - MCO,mco_capitation,2104194466.0
+2024,Rhode Island,Medicaid MCO - Community First Choice,hcbs_pc_cfc,609272.0
+2024,Rhode Island,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,506957023.0
+2024,Rhode Island,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Rhode Island,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Rhode Island,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Rhode Island,All-Inclusive Care Elderly,hcbs_other,21392165.0
+2024,Rhode Island,Personal Care Services - Reg. Payments,hcbs_pc_cfc,88923186.0
+2024,Rhode Island,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Rhode Island,Targeted Case Management Services - Com. Case-Man.,hcbs_other,3989323.0
+2024,Rhode Island,Case Management - State Wide,hcbs_other,0.0
+2024,Rhode Island,Rehabilitative Services (non-school-based),hcbs_other,102644385.0
+2024,Rhode Island,Private Duty Nursing,hcbs_other,0.0
+2024,Rhode Island,Balance,map_total,3526592205.0
+2024,Rhode Island,Collections,collections,-17809608.0
+2024,South Carolina,Mental Health Facility Services - Reg. Payments,mhf,2843106.0
+2024,South Carolina,Mental Health Facility - DSH,mhf_dsh,60903051.0
+2024,South Carolina,Nursing Facility Services - Reg. Payments,nf,872828726.0
+2024,South Carolina,Nursing Facility Services - Sup. Payments,nf,9313183.0
+2024,South Carolina,Intermediate Care Facility - Public,icf,158374062.0
+2024,South Carolina,Intermediate Care - Private,icf,0.0
+2024,South Carolina,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,South Carolina,Home Health Services,hcbs_other,25537582.0
+2024,South Carolina,Medicaid - MCO,mco_capitation,6040367649.0
+2024,South Carolina,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,South Carolina,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1076493783.0
+2024,South Carolina,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,South Carolina,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,South Carolina,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,South Carolina,All-Inclusive Care Elderly,hcbs_other,23348444.0
+2024,South Carolina,Personal Care Services - Reg. Payments,hcbs_pc_cfc,69239955.0
+2024,South Carolina,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,South Carolina,Targeted Case Management Services - Com. Case-Man.,hcbs_other,46188963.0
+2024,South Carolina,Case Management - State Wide,hcbs_other,0.0
+2024,South Carolina,Rehabilitative Services (non-school-based),hcbs_other,53594816.0
+2024,South Carolina,Private Duty Nursing,hcbs_other,21691636.0
+2024,South Carolina,Balance,map_total,10085497940.0
+2024,South Carolina,Collections,collections,-358956617.0
+2024,South Dakota,Mental Health Facility Services - Reg. Payments,mhf,3228540.0
+2024,South Dakota,Mental Health Facility - DSH,mhf_dsh,751299.0
+2024,South Dakota,Nursing Facility Services - Reg. Payments,nf,229192904.0
+2024,South Dakota,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,South Dakota,Intermediate Care Facility - Public,icf,41968469.0
+2024,South Dakota,Intermediate Care - Private,icf,0.0
+2024,South Dakota,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,South Dakota,Home Health Services,hcbs_other,27866201.0
+2024,South Dakota,Medicaid - MCO,mco_capitation,0.0
+2024,South Dakota,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,South Dakota,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,263725868.0
+2024,South Dakota,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,South Dakota,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,South Dakota,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,South Dakota,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,South Dakota,Personal Care Services - Reg. Payments,hcbs_pc_cfc,13727303.0
+2024,South Dakota,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,South Dakota,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2024,South Dakota,Case Management - State Wide,hcbs_other,0.0
+2024,South Dakota,Rehabilitative Services (non-school-based),hcbs_other,28687424.0
+2024,South Dakota,Private Duty Nursing,hcbs_other,0.0
+2024,South Dakota,Balance,map_total,1515923154.0
+2024,South Dakota,Collections,collections,-17648781.0
+2024,Tennessee,Mental Health Facility Services - Reg. Payments,mhf,118874987.0
+2024,Tennessee,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Tennessee,Nursing Facility Services - Reg. Payments,nf,-3659363.0
+2024,Tennessee,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Tennessee,Intermediate Care Facility - Public,icf,58606175.0
+2024,Tennessee,Intermediate Care - Private,icf,174309360.0
+2024,Tennessee,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Tennessee,Home Health Services,hcbs_other,0.0
+2024,Tennessee,Medicaid - MCO,mco_capitation,8962768452.0
+2024,Tennessee,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Tennessee,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,817492003.0
+2024,Tennessee,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Tennessee,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Tennessee,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Tennessee,All-Inclusive Care Elderly,hcbs_other,17972725.0
+2024,Tennessee,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,Tennessee,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Tennessee,Targeted Case Management Services - Com. Case-Man.,hcbs_other,182058449.0
+2024,Tennessee,Case Management - State Wide,hcbs_other,0.0
+2024,Tennessee,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,Tennessee,Private Duty Nursing,hcbs_other,0.0
+2024,Tennessee,Balance,map_total,13314379430.0
+2024,Tennessee,Collections,collections,-88173462.0
+2024,Texas,Mental Health Facility Services - Reg. Payments,mhf,1379251.0
+2024,Texas,Mental Health Facility - DSH,mhf_dsh,277675816.0
+2024,Texas,Nursing Facility Services - Reg. Payments,nf,475667467.0
+2024,Texas,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Texas,Intermediate Care Facility - Public,icf,1108541576.0
+2024,Texas,Intermediate Care - Private,icf,242178635.0
+2024,Texas,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,6560484.0
+2024,Texas,Home Health Services,hcbs_other,105551934.0
+2024,Texas,Medicaid - MCO,mco_capitation,27571201424.0
+2024,Texas,Medicaid MCO - Community First Choice,hcbs_pc_cfc,1263040642.0
+2024,Texas,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1416348313.0
+2024,Texas,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,28539532.0
+2024,Texas,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Texas,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,404250485.0
+2024,Texas,All-Inclusive Care Elderly,hcbs_other,43165462.0
+2024,Texas,Personal Care Services - Reg. Payments,hcbs_pc_cfc,1147725842.0
+2024,Texas,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,3728.0
+2024,Texas,Targeted Case Management Services - Com. Case-Man.,hcbs_other,56685838.0
+2024,Texas,Case Management - State Wide,hcbs_other,13926535.0
+2024,Texas,Rehabilitative Services (non-school-based),hcbs_other,20878912.0
+2024,Texas,Private Duty Nursing,hcbs_other,0.0
+2024,Texas,Balance,map_total,50974507372.0
+2024,Texas,Collections,collections,-3819648821.0
+2024,Utah,Mental Health Facility Services - Reg. Payments,mhf,20274380.0
+2024,Utah,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Utah,Nursing Facility Services - Reg. Payments,nf,230841952.0
+2024,Utah,Nursing Facility Services - Sup. Payments,nf,237608982.0
+2024,Utah,Intermediate Care Facility - Public,icf,65949575.0
+2024,Utah,Intermediate Care - Private,icf,20789174.0
+2024,Utah,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Utah,Home Health Services,hcbs_other,43801427.0
+2024,Utah,Medicaid - MCO,mco_capitation,2066011027.0
+2024,Utah,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Utah,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,625630634.0
+2024,Utah,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Utah,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Utah,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Utah,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Utah,Personal Care Services - Reg. Payments,hcbs_pc_cfc,7651485.0
+2024,Utah,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Utah,Targeted Case Management Services - Com. Case-Man.,hcbs_other,229875.0
+2024,Utah,Case Management - State Wide,hcbs_other,0.0
+2024,Utah,Rehabilitative Services (non-school-based),hcbs_other,186756886.0
+2024,Utah,Private Duty Nursing,hcbs_other,4296122.0
+2024,Utah,Balance,map_total,4943464166.0
+2024,Utah,Collections,collections,-36371493.0
+2024,Vermont,Mental Health Facility Services - Reg. Payments,mhf,50136927.0
+2024,Vermont,Mental Health Facility - DSH,mhf_dsh,1940.0
+2024,Vermont,Nursing Facility Services - Reg. Payments,nf,215951738.0
+2024,Vermont,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Vermont,Intermediate Care Facility - Public,icf,180.0
+2024,Vermont,Intermediate Care - Private,icf,0.0
+2024,Vermont,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Vermont,Home Health Services,hcbs_other,16424267.0
+2024,Vermont,Medicaid - MCO,mco_capitation,0.0
+2024,Vermont,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Vermont,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,413719766.0
+2024,Vermont,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Vermont,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Vermont,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Vermont,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Vermont,Personal Care Services - Reg. Payments,hcbs_pc_cfc,13039408.0
+2024,Vermont,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Vermont,Targeted Case Management Services - Com. Case-Man.,hcbs_other,188153.0
+2024,Vermont,Case Management - State Wide,hcbs_other,0.0
+2024,Vermont,Rehabilitative Services (non-school-based),hcbs_other,286372981.0
+2024,Vermont,Private Duty Nursing,hcbs_other,0.0
+2024,Vermont,Balance,map_total,2133180293.0
+2024,Vermont,Collections,collections,-576574.0
+2024,Virgin Islands,Mental Health Facility Services - Reg. Payments,mhf,0.0
+2024,Virgin Islands,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Virgin Islands,Nursing Facility Services - Reg. Payments,nf,819802.0
+2024,Virgin Islands,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,Virgin Islands,Intermediate Care Facility - Public,icf,0.0
+2024,Virgin Islands,Intermediate Care - Private,icf,0.0
+2024,Virgin Islands,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Virgin Islands,Home Health Services,hcbs_other,1388092.0
+2024,Virgin Islands,Medicaid - MCO,mco_capitation,0.0
+2024,Virgin Islands,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Virgin Islands,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,0.0
+2024,Virgin Islands,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Virgin Islands,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Virgin Islands,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Virgin Islands,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Virgin Islands,Personal Care Services - Reg. Payments,hcbs_pc_cfc,3957346.0
+2024,Virgin Islands,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Virgin Islands,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2024,Virgin Islands,Case Management - State Wide,hcbs_other,0.0
+2024,Virgin Islands,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,Virgin Islands,Private Duty Nursing,hcbs_other,0.0
+2024,Virgin Islands,Balance,map_total,137545564.0
+2024,Virgin Islands,Collections,collections,-11269307.0
+2024,Virginia,Mental Health Facility Services - Reg. Payments,mhf,103957376.0
+2024,Virginia,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Virginia,Nursing Facility Services - Reg. Payments,nf,234499438.0
+2024,Virginia,Nursing Facility Services - Sup. Payments,nf,23723097.0
+2024,Virginia,Intermediate Care Facility - Public,icf,61042006.0
+2024,Virginia,Intermediate Care - Private,icf,122226770.0
+2024,Virginia,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Virginia,Home Health Services,hcbs_other,879058.0
+2024,Virginia,Medicaid - MCO,mco_capitation,13216593384.0
+2024,Virginia,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Virginia,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,3680271092.0
+2024,Virginia,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Virginia,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Virginia,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Virginia,All-Inclusive Care Elderly,hcbs_other,128921724.0
+2024,Virginia,Personal Care Services - Reg. Payments,hcbs_pc_cfc,0.0
+2024,Virginia,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Virginia,Targeted Case Management Services - Com. Case-Man.,hcbs_other,84143583.0
+2024,Virginia,Case Management - State Wide,hcbs_other,0.0
+2024,Virginia,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,Virginia,Private Duty Nursing,hcbs_other,3945428.0
+2024,Virginia,Balance,map_total,22313257446.0
+2024,Virginia,Collections,collections,-529722141.0
+2024,Washington,Mental Health Facility Services - Reg. Payments,mhf,0.0
+2024,Washington,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Washington,Nursing Facility Services - Reg. Payments,nf,984643161.0
+2024,Washington,Nursing Facility Services - Sup. Payments,nf,3435598.0
+2024,Washington,Intermediate Care Facility - Public,icf,334576217.0
+2024,Washington,Intermediate Care - Private,icf,0.0
+2024,Washington,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Washington,Home Health Services,hcbs_other,7227705.0
+2024,Washington,Medicaid - MCO,mco_capitation,8510735382.0
+2024,Washington,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Washington,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1586384626.0
+2024,Washington,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Washington,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Washington,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,3731824130.0
+2024,Washington,All-Inclusive Care Elderly,hcbs_other,107340986.0
+2024,Washington,Personal Care Services - Reg. Payments,hcbs_pc_cfc,-44474695.0
+2024,Washington,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Washington,Targeted Case Management Services - Com. Case-Man.,hcbs_other,19335954.0
+2024,Washington,Case Management - State Wide,hcbs_other,74691.0
+2024,Washington,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,Washington,Private Duty Nursing,hcbs_other,40874181.0
+2024,Washington,Balance,map_total,21500482060.0
+2024,Washington,Collections,collections,-1462434401.0
+2024,West Virginia,Mental Health Facility Services - Reg. Payments,mhf,8969658.0
+2024,West Virginia,Mental Health Facility - DSH,mhf_dsh,18887044.0
+2024,West Virginia,Nursing Facility Services - Reg. Payments,nf,1039328608.0
+2024,West Virginia,Nursing Facility Services - Sup. Payments,nf,0.0
+2024,West Virginia,Intermediate Care Facility - Public,icf,0.0
+2024,West Virginia,Intermediate Care - Private,icf,73810303.0
+2024,West Virginia,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,West Virginia,Home Health Services,hcbs_other,19310778.0
+2024,West Virginia,Medicaid - MCO,mco_capitation,2149017949.0
+2024,West Virginia,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,West Virginia,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,675718036.0
+2024,West Virginia,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,West Virginia,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,West Virginia,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,West Virginia,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,West Virginia,Personal Care Services - Reg. Payments,hcbs_pc_cfc,128410309.0
+2024,West Virginia,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,West Virginia,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2024,West Virginia,Case Management - State Wide,hcbs_other,576668.0
+2024,West Virginia,Rehabilitative Services (non-school-based),hcbs_other,70421913.0
+2024,West Virginia,Private Duty Nursing,hcbs_other,5473119.0
+2024,West Virginia,Balance,map_total,4942208180.0
+2024,West Virginia,Collections,collections,-51875553.0
+2024,Wisconsin,Mental Health Facility Services - Reg. Payments,mhf,26007099.0
+2024,Wisconsin,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Wisconsin,Nursing Facility Services - Reg. Payments,nf,794575469.0
+2024,Wisconsin,Nursing Facility Services - Sup. Payments,nf,12803462.0
+2024,Wisconsin,Intermediate Care Facility - Public,icf,143444187.0
+2024,Wisconsin,Intermediate Care - Private,icf,474088.0
+2024,Wisconsin,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,10911209.0
+2024,Wisconsin,Home Health Services,hcbs_other,65787746.0
+2024,Wisconsin,Medicaid - MCO,mco_capitation,3046031992.0
+2024,Wisconsin,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Wisconsin,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,1050719230.0
+2024,Wisconsin,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Wisconsin,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Wisconsin,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Wisconsin,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Wisconsin,Personal Care Services - Reg. Payments,hcbs_pc_cfc,195785283.0
+2024,Wisconsin,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,336728756.0
+2024,Wisconsin,Targeted Case Management Services - Com. Case-Man.,hcbs_other,0.0
+2024,Wisconsin,Case Management - State Wide,hcbs_other,31015752.0
+2024,Wisconsin,Rehabilitative Services (non-school-based),hcbs_other,521498331.0
+2024,Wisconsin,Private Duty Nursing,hcbs_other,29216427.0
+2024,Wisconsin,Balance,map_total,12486797420.0
+2024,Wisconsin,Collections,collections,-260314929.0
+2024,Wyoming,Mental Health Facility Services - Reg. Payments,mhf,11344268.0
+2024,Wyoming,Mental Health Facility - DSH,mhf_dsh,0.0
+2024,Wyoming,Nursing Facility Services - Reg. Payments,nf,95094139.0
+2024,Wyoming,Nursing Facility Services - Sup. Payments,nf,33260058.0
+2024,Wyoming,Intermediate Care Facility - Public,icf,16232521.0
+2024,Wyoming,Intermediate Care - Private,icf,0.0
+2024,Wyoming,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,0.0
+2024,Wyoming,Home Health Services,hcbs_other,12093815.0
+2024,Wyoming,Medicaid - MCO,mco_capitation,1936328.0
+2024,Wyoming,Medicaid MCO - Community First Choice,hcbs_pc_cfc,0.0
+2024,Wyoming,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,180508623.0
+2024,Wyoming,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,0.0
+2024,Wyoming,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,0.0
+2024,Wyoming,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,0.0
+2024,Wyoming,All-Inclusive Care Elderly,hcbs_other,0.0
+2024,Wyoming,Personal Care Services - Reg. Payments,hcbs_pc_cfc,5195.0
+2024,Wyoming,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,0.0
+2024,Wyoming,Targeted Case Management Services - Com. Case-Man.,hcbs_other,2088312.0
+2024,Wyoming,Case Management - State Wide,hcbs_other,863257.0
+2024,Wyoming,Rehabilitative Services (non-school-based),hcbs_other,0.0
+2024,Wyoming,Private Duty Nursing,hcbs_other,0.0
+2024,Wyoming,Balance,map_total,767542853.0
+2024,Wyoming,Collections,collections,-8601835.0
+2024,National Totals,Mental Health Facility Services - Reg. Payments,mhf,5250154492.0
+2024,National Totals,Mental Health Facility - DSH,mhf_dsh,2871607083.0
+2024,National Totals,Nursing Facility Services - Reg. Payments,nf,43603140274.0
+2024,National Totals,Nursing Facility Services - Sup. Payments,nf,2677941992.0
+2024,National Totals,Intermediate Care Facility - Public,icf,4935636188.0
+2024,National Totals,Intermediate Care - Private,icf,5143574722.0
+2024,National Totals,Intermediate Care Facility - Individuals with Intellectual Disabilities (ICF/IID): Supplemental Payments,icf,145714444.0
+2024,National Totals,Home Health Services,hcbs_other,3204080740.0
+2024,National Totals,Medicaid - MCO,mco_capitation,483131860935.0
+2024,National Totals,Medicaid MCO - Community First Choice,hcbs_pc_cfc,1186865394.0
+2024,National Totals,Home & Community-Based Services - Regular Payment (1915(c) Waiver),hcbs_1915c,83049904643.0
+2024,National Totals,Home & Community-Based Services - St. Plan 1915(i) Only Pay.,hcbs_other,1706605932.0
+2024,National Totals,Home & Community-Based Services - St. Plan 1915(j) Only Pay.,hcbs_pc_cfc,412858952.0
+2024,National Totals,Home & Community Based Services State Plan 1915(k) Community First Choice,hcbs_pc_cfc,23624592597.0
+2024,National Totals,All-Inclusive Care Elderly,hcbs_other,4552270525.0
+2024,National Totals,Personal Care Services - Reg. Payments,hcbs_pc_cfc,15968532587.0
+2024,National Totals,Personal Care Services - SDS 1915(j),hcbs_pc_cfc,656677776.0
+2024,National Totals,Targeted Case Management Services - Com. Case-Man.,hcbs_other,2880894218.0
+2024,National Totals,Case Management - State Wide,hcbs_other,851735099.0
+2024,National Totals,Rehabilitative Services (non-school-based),hcbs_other,5979621264.0
+2024,National Totals,Private Duty Nursing,hcbs_other,1213922684.0
+2024,National Totals,Balance,map_total,923873539678.1
+2024,National Totals,Collections,collections,-15200738761.0

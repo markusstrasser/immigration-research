@@ -1,0 +1,11 @@
+{
+ "key_share": {
+  "medicaid": 0.12375631002695106,
+  "medicaid_ex_home_health": 0.12636376158562482,
+  "home_health_only": 0.10918814159733724
+ },
+ "published_medicaid_key": 0.123756310026951,
+ "gate_reproduces_published_key": true,
+ "meps_national_medicaid_bn": 363.4319655103972,
+ "meps_national_medicaid_home_health_bn": 53.80363087039648
+}
