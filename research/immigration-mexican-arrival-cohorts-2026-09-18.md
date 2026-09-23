@@ -637,3 +637,16 @@ male cohorts when duration is not held fixed, which is section 5's caveat.
   `infra/immigration-fiscal/arrival_cohorts_2026_09_18/` (`ipums_cohorts.py`, `acs_cohorts.py`,
   `entry_quality.py`, `bounds.py`, `origin_relative.py`, `cbp_nationality.py`, `stage_acs.py`,
   `derived/*.csv`).
+
+## Revisions
+
+- 2026-09-23: The gap left open in section 8 and flagged in section 11 is now filled. That gap
+  was an origin attainment distribution by birth cohort. The
+  [schooling-position lane](../infra/immigration-fiscal/schooling_selection_position_2026_09_23/RESULT.md)
+  (ladder 197) places each adult arrival among Mexicans of the same sex and birth year, using the
+  INEGI 2000, 2010 and 2020 census tabulations. Arrivals rank at a mean percentile of 0.51–0.56
+  in every cohort from 1975–79 to 2020–23, with no rise from cohort to cohort. That confirms the
+  section 8 reading, which rejects rising selectivity, on the decisive cut. The level claim that
+  migrants are "a little above the median" depends on US measurement: an undercount of the
+  least-schooled by 1.19–2.36 brings each cohort to the median. Concept affected: the selection of
+  Mexican arrival cohorts on schooling.
