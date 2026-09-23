@@ -5,6 +5,8 @@ claude-opus-5[1m]
 Lane `infra/immigration-fiscal/ncvs_victim_offender_2026_09_18/`. September 18, 2026.
 Model self-report: claude-opus-5[1m] (Opus 5, 1M context).
 
+**Double-count correction, 2026-09-23:** the social-cost tables price aggravated assault at McCollister's $155,924, of which $118,871 (76%) is a statistical-life premium for the chance of death; deaths are counted separately as murders, so those tables count them twice. The upper anchor of k (10.31) uses the same price and falls to about 1 without the premium. Victimisation rates and cross-group shares are unaffected. See `infra/immigration-fiscal/crime_victim_cost_2026_09_23/RESULT.md`.
+
 **Verdict:** Off the murder margin the victim–offender matrix looks nothing like the
 homicide one. Pooling the National Crime Victimization Survey's published 2022–2024 tables,
 the share of each offender group's violent incidents falling on a victim of the same group
