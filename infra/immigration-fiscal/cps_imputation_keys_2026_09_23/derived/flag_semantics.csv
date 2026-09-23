@@ -1,0 +1,9 @@
+flag,dictionary_text
+"I_ANNVAL-type (ERN_VAL, WS_VAL, SE_VAL, FRM_VAL, DIV_VAL, RNT_VAL, PAW_VAL, WC_VAL, ...)","""Levels 1-3 indicate imputations use of income range responses and 4-8 indicate imputations without range responses. Within each group, lower numbers indicate more match variables (and better matches)."" 7 = ""Level 104 statistical match (age, sex)""; 8 = ""Level 105 statistical match (all donors can match to all recipients)""; 9 = ""FL_665 ≠ 1 (full record impute)""."
+"Composite value flags (I_INTVAL, I_UCVAL, I_SSVAL, I_SSIVAL, I_VETVAL)","""Imputation for non-response was conducted on the component variables."" 11-14 = value imputed is <25%, 25-50%, 50-75%, 75-100% of the composite; 15 = ""Value is 100% imputed in composite variable""."
+"Composite recipiency flags (I_INTYN, I_UCYN, I_SSYN, I_SSIYN, I_DSTYNCOMP)","10 = ""Some of the components are imputed""; 11 = ""All of the components imputed""."
+FL_665,"""Supplement Interview Status"": 0 = ""Complete nonresponse to supplement"", 1 = ""Supplement interview"", 2 = ""Some supplement response but not enough for interview"", 3 = ""Supplement interview but not enough income data""."
+"I_MCARE, I_MCAID, I_MOOP","0 = ""Reported"", 1 = ""Hotdeck imputation"", 2 = ""Logical imputation"", 3 = ""Whole unit imputation""."
+"Household flags (I_HFOODS, I_HFDVAL, I_HPUBLI, I_HLOREN, I_HFLUNC, I_HENGAS, I_HENGVA)","0 = ""No allocation"", 1 = ""Allocated"" (I_HFDVAL, I_HENGVA also 2 = ""Allocated with range response"")."
+WICYNA,"""Allocation flag for WICYN"": 0 = ""Not allocated or NIU"", 1 = ""Allocated""."
+"PXNATVTY, PXMNTVTY, PXFNTVTY, PXHSPNON, PRCITFLG","00 = ""Not allocated""; 10-13 edited to a value; 20-23 longitudinal value; 40-43 allocated value."
