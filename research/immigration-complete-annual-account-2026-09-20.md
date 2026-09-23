@@ -235,7 +235,9 @@ changed business subsidies are held fixed in the welfare response.
 $116.91bn becomes$185.61bn, **+$68.70bn**, when reported coverage headcounts replace
 age/birth-specific expected payer dollars. That implicitly allocates equal annual
 dollars per covered person despite different ages, eligibility and coverage
-duration. Other upward substitutions include Social Security dollars→age65+
+duration. [2026-09-23: pooled MEPS 2016–2024 rejects that assumption for this group:
+Mexican-origin people are 19.4% of those covered by Medicaid but 13.5% of its dollars
+(ladder 206).] Other upward substitutions include Social Security dollars→age65+
 (+$13.81bn) and veterans benefit dollars→all adults (+$10.46bn). Downward changes,
 including refundable credits−$23.46bn and Medicare−$7.83bn, partly offset them.
 [SOURCE: matched personal rows of spending `derived/allocations.csv`; endpoint
@@ -330,6 +332,11 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+2026-09-23, medical ethnicity (pooled MEPS, ladder 206): the +$68.70bn coverage-key
+sensitivity rests on equal dollars per covered person, which the pooled data reject
+(19.4% of the covered, 13.5% of the dollars). Candidate line corrections (Medicaid
++$13.6bn, Medicare −$9.9bn, nursing facilities −$4.0 to −6.2bn) await the operator.
 
 2026-09-20, scaling test: added the executed school/state comparisons and exact
 finite-cost derivation. Descriptive sublinear school spending supports heterogeneous

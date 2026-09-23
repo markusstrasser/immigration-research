@@ -6,7 +6,7 @@ Calculation record; narrative authorship remains operator-owned.
 **Verdict:** In MEPS HC-256, the file the ledger transports medical costs from, people of
 Mexican origin draw **less** public medical money per person than the average of the very
 donor cell the transport assigns them, not more: **0.89 at 65+ (SE 0.15, 95% CI 0.61–1.18)**,
-**0.69 at 18–64 (SE 0.10, interval excludes 1)**, 0.76 across all ages (SE 0.21). Medicaid
+**0.69 at 18–64 (SE 0.10, interval excludes 1)** [2026-09-23: an age-domain figure; on the transport's cells the pooled 2016–2024 ratio is 0.92, ladder 206], 0.76 across all ages (SE 0.21). Medicaid
 alone runs the other way, 3.3× the white dollars at 65+ with coverage of 26% against 7% for
 whites and 12% for all donors; Medicare at 0.85×, out-of-pocket at 0.40× and private
 insurance at 0.38× keep the public total below one. Holding the Medicaid mix at the
@@ -131,5 +131,6 @@ gates in `derived/audit.json`, `test_meps_mexican.py` (20 tests)]
 
 ## Revisions
 
+- 2026-09-23: Pooled MEPS 2016–2024 ([lane](../infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/RESULT.md), ladder 206). Claim change: the 18–64 figure of 0.69 compares whole age domains; on the transport's cells the union-weighted ratio is 0.92 (0.96 winsorized). The 65+ range narrows to 0.88 (CI 0.74–1.02) against MCBS's 1.265, still open. The all-ages ledger correction, unusable on 2024 alone, is +$0.15bn (SE 10.4).
 - 2026-09-22: created. Ladder 175; qualifies ladder 173 and the MCBS memo's "no reduction"
   clause, which is withdrawn there. No ledger value changes.
