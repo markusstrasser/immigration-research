@@ -6,6 +6,12 @@ scenarios, the executed category service-response cases and the accounting cases
 `full_account_*_2026_09_20`. Writes `derived/model.json` plus `derived/test_vectors.json`:
 rows SELECTED from the executed exports, used to gate `engine.js` (the page's evaluator)
 against the account it displays. Fails closed on stale upstream hashes or an incomplete grid.
+
+Two lanes executed after the account add allocation rules (decision 2026-09-23): public order and
+safety by use (`cj_use_allocation_2026_09_23`) and Medicaid with the under-charged part of
+uncompensated hospital care keyed to uninsured use (`uncompensated_care_2026_09_23`). Each added
+rule moves the target's amount on its line by the lane's executed change and keeps the national
+total; existing rules and the preferred and alternative choices are untouched.
 """
 from __future__ import annotations
 
@@ -33,6 +39,8 @@ SERVICE_CASES = ACCOUNT/"derived/service_response_cases.csv"
 SERVICE_COMPONENTS = ACCOUNT/"derived/service_response_components.csv"
 ACCOUNTS = ACCOUNT/"derived/accounts.csv"
 HEADLINE = ACCOUNT/"derived/headline_summary.json"
+JUSTICE = FISCAL/"cj_use_allocation_2026_09_23/derived/summary.json"
+UNCOMPENSATED = FISCAL/"uncompensated_care_2026_09_23/derived/summary.json"
 
 # welfare.py:response_pools — receipts that are not independently remitted by households.
 CAPITAL_CATEGORIES = {"corporate_capital", "corporate_labor", "modeled_owner_property",
@@ -111,6 +119,54 @@ def spending_lines(spending, alternatives):
     return lines
 
 
+def use_keys(lines):
+    """Add the rules the two use lanes executed. Each is the preferred rule with the target's amount
+    moved by the lane's change in both allocations (other residents carry the rest), as
+    main_case_2026_09_23/main_case.js shifts it. Every number is read from the lanes' summary.json."""
+    justice, care = json.loads(JUSTICE.read_text()), json.loads(UNCOMPENSATED.read_text())
+    by_id = {line["id"]: line for line in lines}
+    # Positive controls: the justice lane's per-head reference is this account's preferred allocation,
+    # and its central target is that reference plus its change.
+    for cell in by_id["public_order_safety"]["keys"]["population"].values():
+        if abs(cell["target_bn"]-justice["reference_bn"]) > 1e-6:
+            raise ValueError("Justice lane reference differs from the account's per-head allocation")
+    if abs(justice["reference_bn"]+justice["central"]["change_bn"]-justice["central"]["target_bn"]) > 1e-6:
+        raise ValueError("Justice lane central target is not its reference plus its change")
+    summary = "derived/summary.json"
+    # (line, rule the lane measured its change against, added rule, change in bn, where it is read)
+    added = [
+        ("public_order_safety", "population", "use", justice["central"]["change_bn"],
+         f"cj_use_allocation_2026_09_23/{summary}: central.change_bn"),
+        ("public_order_safety", "population", "use_raw_coding", justice["one_at_a_time_change_bn"]["scaling_raw"],
+         f"cj_use_allocation_2026_09_23/{summary}: one_at_a_time_change_bn.scaling_raw"),
+    ]
+    for arm, suffix in [("1.0", ""), ("0.7", "_07")]:
+        for i, end in enumerate(("low", "high")):
+            added.append(("medicaid_and_chip_other_medical", "medicaid", f"uninsured_use{suffix}_{end}",
+                          care[f"inside_undercharged_bn_use_{arm}"][i],
+                          f"uncompensated_care_2026_09_23/{summary}: inside_undercharged_bn_use_{arm}[{i}]"))
+    record = []
+    for line_id, base, key, change, source in added:
+        line = by_id[line_id]
+        if base != line["preferred_key"] or key in line["keys"]:
+            raise ValueError(f"Upstream rules moved under {line_id}: preferred {line['preferred_key']}, keys {sorted(line['keys'])}")
+        cells = {}
+        for allocation, cell in line["keys"][base].items():
+            target, other = cell["target_bn"]+change, cell["other_bn"]-change
+            if abs(target+other-line["national_bn"]) > 1e-6:
+                raise ValueError(f"{line_id}/{key}/{allocation} does not keep the national total")
+            # The share keeps the base rule's denominator (its key's universe, not the national total,
+            # which the lanes' own target_share uses), so the ledger compares rules on one footing.
+            cells[allocation] = dict(target_bn=round(target, ROUND), other_bn=round(other, ROUND),
+                                     share=round(cell["share"]*target/cell["target_bn"], ROUND))
+        line["keys"][key] = cells
+        record.append(dict(line=line_id, key=key, base_key=base, change_bn=round(change, ROUND), source=source))
+    for cell in by_id["public_order_safety"]["keys"]["use"].values():
+        if abs(cell["target_bn"]-justice["central"]["target_bn"]) > 1e-6:
+            raise ValueError("The use rule does not reproduce the justice lane's central target")
+    return record
+
+
 def production_table(benefits):
     levels = {d: sorted(benefits[d].unique().tolist()) for d in PRODUCTION_DIMS}
     size = int(np.prod([len(v) for v in levels.values()]))
@@ -180,6 +236,8 @@ def main():
         if part.empty:
             raise ValueError(f"Service case without components: {case.case_id}")
     grid_rows, vectors = grid_vectors()
+    s_lines = spending_lines(spending, alternatives)
+    added_keys = use_keys(s_lines)
     model = dict(
         meta=dict(
             title="Complete annual account, income year 2024", units="billions of 2024 dollars per year",
@@ -188,9 +246,9 @@ def main():
             resident_population=float(population.resident_population.iloc[0]),
             grid_rows=grid_rows, headline=json.loads(HEADLINE.read_text()),
             inputs={str(p.relative_to(FISCAL.parents[1])): sha(p) for p in
-                    [RECEIPTS, SPENDING, ALTERNATIVES, BENEFITS, GRID, SERVICE_CASES, ACCOUNTS]}),
+                    [RECEIPTS, SPENDING, ALTERNATIVES, BENEFITS, GRID, SERVICE_CASES, ACCOUNTS, JUSTICE, UNCOMPENSATED]}),
         receipts=dict(scenarios=receipt_scenarios, reference="cbo_collective", lines=r_lines),
-        spending=dict(scenarios=SPENDING_SCENARIOS, lines=spending_lines(spending, alternatives)),
+        spending=dict(scenarios=SPENDING_SCENARIOS, lines=s_lines, added_keys=added_keys),
         production=production_table(benefits),
         # service_response.py: the two categories CBO's evidence treats as slow to respond.
         service=dict(delayed=["economic_affairs_services", "recreation_culture"], profiles=profiles),
@@ -203,7 +261,8 @@ def main():
         "receipt_scenario", "spending_scenario", "allocation", "target_balance_bn", "normalized_gap_bn"]].to_dict("records"))
     (args.out/"test_vectors.json").write_text(json.dumps(vectors, sort_keys=True, separators=(",", ":"))+"\n")
     print(f"model.json: {len(r_lines)} receipt lines, {len(model['spending']['lines'])} spending lines, "
-          f"{len(model['production']['private_wtp_bn'])} production scenarios, {len(profiles)} service cases")
+          f"{len(model['production']['private_wtp_bn'])} production scenarios, {len(profiles)} service cases, "
+          f"{len(added_keys)} rules added from the use lanes")
     print(f"test_vectors.json: {len(vectors['grid'])} of {grid_rows} grid rows, {len(profiles)} service cases, "
           f"{len(vectors['accounts'])} accounting cases")
 

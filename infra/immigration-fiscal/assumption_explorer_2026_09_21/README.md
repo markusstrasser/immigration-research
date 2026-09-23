@@ -7,6 +7,10 @@ allocations and the 3,888 executed production scenarios. `test_engine.js` gates 
 2,629 rows of the 497,664-row grid (every level of every dimension), all 60 category
 service-response cases, all 32 complete accounting cases and the four published headline
 bounds (165.1-197.4 and 269.8-288.7 bn); worst gap 4e-9 bn. [CALCULATION: test_engine.js]
+Since 2026-09-23 the page's central case is the adopted main case (see "Adopted 2026-09-23"
+below). The same gate checks the adopted presets against the main-case lane: central
+203.2-249.6 bn, with non-school education fixed 158.9-212.6 bn, and proportional 307.9-341.0 bn.
+[CALCULATION: test_engine.js against main_case_2026_09_23/derived/main_case_bands.csv]
 
 The page has a pinned result bar (the live number, its unresolved-convention span, the distance
 from the central case, and the last-touched setting beside its central value and its effect
@@ -24,10 +28,17 @@ labels that open the paper, report or dataset directly.
 cd infra/immigration-fiscal/assumption_explorer_2026_09_21
 uv run --no-project --with duckdb --with pandas --with numpy python3 build_model.py   # hash-guards upstream
 OPENBLAS_NUM_THREADS=1 uv run --no-project --with openpyxl --with numpy python3 scaling_check.py
+node ../main_case_2026_09_23/main_case.js           # reads model.json; its tracked outputs must not change
 node test_engine.js
 uv run --no-project python3 build_ui.py && open derived/explorer.html
 uv run --no-project python3 check_sources.py        # optional: re-fetch every link, rewrite sources_check.json
 ```
+
+`build_model.py` also reads the two use lanes' `derived/summary.json` and adds six allocation
+rules (`spending.added_keys` in `model.json` records each rule's base, change and source field).
+`test_engine.js` reads `main_case_2026_09_23/derived/main_case_bands.csv` and `inputs.json`. The
+CSV prints four decimals, so the gate checks it to half a unit of the last digit and checks the
+lane's own identity (published band plus the three changes, from `inputs.json`) to 1e-6 bn.
 
 `context.json` is rebuilt with `build_context.py <inventory.json>`; it keeps a value only when every
 number in it equals, at its printed precision, a number within two lines of the cited file:line
@@ -52,11 +63,18 @@ Census API template instantiated for 2024, a corrected host). Bibliographic deta
 against Crossref or the publisher's `citation_*` tags where the repo's note and the record
 disagreed (Duncan and Trejo 2017 is ILR Review 70(5), not 71(5)). [SOURCE: sources.json]
 
-`build_ui.py` refuses to build when a source lacks a link or a repo reference, or names a place
-that is not on the page, and prints the places that carry no outside source. 22 do: three author
-summaries and the assumptions the account sets itself (labor share, labor-supply response, capital
-adjustment, fiscal weight, the service, defense, interest and general-government responses). The
-page labels those "No outside source: the account sets this itself" rather than borrowing authority.
+Since 2026-09-23 the registry also lists four documents of this repo (`kind: repo`, with the
+`path` of the file instead of a link): the adoption decision, the main-case lane and the justice
+and uncompensated-care lanes. The page opens them locally and lists them after the external
+sources; `check_sources.py` skips them.
+
+`build_ui.py` refuses to build when a source lacks a link or a repo reference (for a repo
+document, when its file is missing from this checkout), or names a place that is not on the page,
+and prints the places that carry no outside source. 21 do (2026-09-23): three author summaries,
+three conventions (taxes minus benefits, everything at average cost, production only) and fifteen
+assumptions the account sets itself (among them labor share, labor-supply response, capital
+adjustment, fiscal weight and the service, interest and transfer responses). The page labels those
+"No outside source: the account sets this itself" rather than borrowing authority.
 
 `check_sources.py` fetches each link once and writes `sources_check.json`, a dated receipt: 79 of
 99 answered; 18 returned 403 to a script (CBO, PNAS, SSRN, SAGE, AEA, CGD, DHS, Marginal
@@ -81,9 +99,45 @@ language. Options, allocation rules (47, named from the two upstream builders an
 time), statuses and card labels now use reader words; `context.json` prose was edited directly in
 two passes that compare the multiset of numbers in every string before writing, so no value moved.
 
-## General government: a proposal, not the published account
+## Adopted 2026-09-23: general government grows, justice and uncompensated care by use
 
-The published account holds defense **and** general government at zero response. The engine now
+The operator adopted three changes to the main case on 2026-09-23
+([decision](../../../decisions/2026-09-23-main-case-general-government-and-use-keys.md);
+[main-case lane](../main_case_2026_09_23/RESULT.md)). The page's central case
+(`repo_central_gg`, marked `central` in `presets.json`) carries all three; the proportional
+benchmark carries them too, and the September 20 central case stays as a convention
+(`repo_central`, general government fixed, justice per head).
+
+1. **General government** responds at 0.59-0.84 instead of zero, read from
+   `derived/scaling_check.json` (`composite_low`, `composite_high`). Both values enter the range
+   (`general_government_response_band`). The evidence is set out below.
+2. **Public order and safety by use.** `build_model.py` adds the rule `use`: the per-head
+   allocation with the group's part raised by the justice lane's central change,
+   `cj_use_allocation_2026_09_23/derived/summary.json` `central.change_bn` (+5.94 bn, target
+   68.37 bn), national total unchanged. `use_raw_coding` applies the lane's raw ethnicity coding
+   (`one_at_a_time_change_bn.scaling_raw`, +1.67 bn).
+3. **Uncompensated hospital care.** `uninsured_use_low` and `uninsured_use_high` raise the
+   group's Medicaid allocation by the part of government uncompensated-care payments that the
+   account's keys under-charge, at equal use:
+   `uncompensated_care_2026_09_23/derived/summary.json` `inside_undercharged_bn_use_1.0`
+   (3.65-5.75 bn). Both ends enter the range (`key_band`). `uninsured_use_07_low` and
+   `uninsured_use_07_high` are the 0.7x-use arm (2.12-3.51 bn), selectable in the ledger.
+
+Both added rules sit on lines that count in full in every published profile, so they move the
+result one for one. The result is 203.2-249.6 bn for the central case, 158.9-212.6 bn with
+non-school education fixed and 307.9-341.0 bn for the proportional benchmark (September 20:
+165.1-197.4, 120.8-160.3 and 269.8-288.7 bn). [CALCULATION: main_case_2026_09_23/main_case.js;
+test_engine.js reproduces it]
+
+The engine reports a band as a range: `unresolvedRange` evaluates the cartesian product of the
+account's open choices, `school_response_band`, `general_government_response_band` and every
+`key_band` entry, and returns the minimum and maximum. A preset sets the point value to one end
+of each band, as the school band did; moving that control, or choosing another rule for that
+line, drops the band.
+
+### Evidence for general government
+
+The published account held defense **and** general government at zero response. The engine
 separates the two (`general_government_response`; the executed grid moves them together, and the
 gate sets both from the grid's one column). `scaling_check.py` gives the evidence for treating
 them differently [CALCULATION: scaling_check.py -> derived/scaling_check.json]:
@@ -99,11 +153,12 @@ them differently [CALCULATION: scaling_check.py -> derived/scaling_check.json]:
   state and local at 0.842) to 0.84 (everything at 0.842). On the 48.3 bn assigned to the group
   that is 28.5-40.6 bn a year: the central span moves from 165-197 to 194-226 (low) or 206-238
   (high). [INFERENCE: a cross-section shows long-run scale, not a measured response to this group]
-- Federal police, courts and prisons (82.8 bn, FBI included) are already charged per head inside
-  `public_order_safety`; this is not an added cost. Defense and interest on debt already issued
-  stay at zero.
+- Federal police, courts and prisons (82.8 bn, FBI included) are already charged inside
+  `public_order_safety` (per head in the September 20 account, by use since 2026-09-23); this is
+  not an added cost. Defense and interest on debt already issued stay at zero.
 
-Adopting this in the published account is a change of analysis protocol and needs the operator.
+Adopting this changed the analysis protocol, so it waited for the operator; he adopted it on
+2026-09-23 (decision above).
 
 ## Limits [FRAMING-SENSITIVE]
 
@@ -115,10 +170,20 @@ Adopting this in the published account is a change of analysis protocol and need
 - The ledger counts other US residents only. Gains to the group's own members (the place premium,
   where most of any world-GDP gain sits) and origin-country effects are not computed in this repo;
   the page says so rather than netting them.
-- Settings off the executed grid are exact evaluations of the same linear formula, and are
-  labelled as the reader's own assumptions.
-- One income year of a resident stock. No generation split, lifetime value, crime-specific cost
-  or policy effect; the cards say which outside results overlap and none may be added.
+- Settings off the executed grid are exact evaluations of the same linear formula. The page says
+  whether the account ran the exact case, only its formula applies (any mix of executed rules per
+  line, since 2026-09-23), or a setting is one the account never uses (the reader's own).
+- One income year of a resident stock. No generation split, lifetime value or policy effect; the
+  cards say which outside results overlap and none may be added. Since 2026-09-23 police, courts
+  and prisons are charged by use. Crime victims' harm, free hospital care absorbed outside
+  government budgets and rent transfers are priced beside the account
+  (research/immigration-real-fiscal-and-social-costs-2026-09-23.md), never inside it.
+- The objection cards (`context.json`) were verified on 2026-09-21 against the September 20
+  account. Five of them quote its bands or its per-head justice key
+  (`headline_cbo_informed_net_cost`, `e2_fixed_functions_and_cbo_inputs`,
+  `e4_offset_threshold_is_conditional`, `e11_not_a_policy_saving`,
+  `e12_no_group_crime_cost_in_headline`) and need a rebuild with `build_context.py` from a fresh
+  inventory of the updated FAQ.
 - The production block is CES; increasing-returns arguments are outside it.
 - Compiled through an LLM (notes/llm-bias-caveat.md): the ledger numbers are gated, the readings
   of authors and the ladder's keyword links are not.

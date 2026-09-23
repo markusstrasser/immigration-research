@@ -51,7 +51,7 @@ button.link:hover,.tools button:hover,.reset:hover,.find:hover{text-decoration-c
 .preset{display:grid;gap:2px;align-content:start;text-align:left;background:none;border:0;border-top:1px solid var(--rule);border-radius:0;padding:8px 0 12px}
 .preset:hover .pl{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px} .preset.on{border-top:2px solid var(--ink);padding-top:7px}
 .preset.current{border-top-style:dashed;cursor:default}
-.pk{font:italic 14px var(--text);color:var(--muted)} .pl{line-height:1.25} .pv{font-size:15px;color:var(--ink2)}
+.pk{font:italic 14px var(--text);color:var(--muted)} .pk span{white-space:nowrap} .pl{line-height:1.25} .pv{font-size:15px;color:var(--ink2)}
 .track{position:relative;height:9px;margin-top:5px;border-bottom:1px solid var(--rule)}
 .track i{position:absolute;bottom:0;height:5px;min-width:3px}.track .span.pos{background:var(--pos)}.track .span.neg{background:var(--neg)}.track .zero{width:0;min-width:0;height:9px;border-left:1px solid var(--ink)}
 
@@ -100,7 +100,7 @@ thead th{font:italic 400 14.5px var(--text);color:var(--ink2);border-bottom:1px 
 .num{text-align:right;white-space:nowrap}
 tr.grp th,tr.grp td{padding-top:16px;font-variant-caps:all-small-caps;letter-spacing:.05em;font-size:16px} tbody:first-of-type tr.grp th,tbody:first-of-type tr.grp td{padding-top:8px}
 tr.grp .find,tr.grp .num{font-variant-caps:normal;letter-spacing:0} tr.grp .num{font-size:15px}
-.key{font-size:14.5px;color:var(--ink2)}
+.key{font-size:14.5px;color:var(--ink2)} .key small{display:block;font-size:13.5px;color:var(--muted)}
 select{font-size:14.5px;max-width:300px;text-overflow:ellipsis}
 .resp{min-width:150px} .resp>div{display:flex;gap:8px;align-items:center}
 .resp input{width:64px;font-size:14.5px}.resp input.ov{color:var(--changed)}

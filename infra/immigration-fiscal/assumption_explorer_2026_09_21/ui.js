@@ -36,9 +36,9 @@
 
   function elasticity(name) { var r = EV.elasticities.filter(function (x) { return x.scope === "50 states" && x.function.indexOf(name) === 0; })[0]; return r ? r.elasticity : null; }
   var gps = EV.general_public_service_2024_bn;
-  var GG_HELP = "The published account holds this at zero by assumption. " + Math.round(EV.state_local_share * 100) + "% of general government outside interest is state and local. Across the 50 states, administration spending rises " +
+  var GG_HELP = "The account published on September 20 held this at zero by assumption; the central case adopted on 2026-09-23 lets it grow. " + Math.round(EV.state_local_share * 100) + "% of general government outside interest is state and local. Across the 50 states, administration spending rises " +
     (elasticity("Governmental administration") * 10).toFixed(1) + "% for every 10% more residents (police " + (elasticity("Police") * 10).toFixed(1) + "%, schools " + (elasticity("Elementary") * 10).toFixed(1) + "%). Federal tax collection costs $" + gps.federal_tax_financial.toFixed(1) +
-    "bn; the federal executive and legislature $" + gps.federal_executive_legislative.toFixed(1) + "bn. Together that implies a share between " + EV.composite_low + " and " + EV.composite_high + ". Federal police, courts and prisons, the FBI among them, are already charged under police, courts, prisons.";
+    "bn; the federal executive and legislature $" + gps.federal_executive_legislative.toFixed(1) + "bn. Together that implies a share between " + EV.composite_low + " and " + EV.composite_high + "; the central case enters both. Federal police, courts and prisons, the FBI among them, are charged under police, courts, prisons.";
 
   var levels = function (d) { return M.production.dims[d]; };
   var CONTROLS = [
@@ -83,7 +83,9 @@
     { group: "Choices the account leaves open", id: "fiscal_weight", label: "What a budget dollar is worth to other residents", type: "slider", affects: ["all"], help: "1 means a dollar of tax money is worth a dollar to other residents. 0 is the opposite extreme; nobody estimates it." }
   ];
   var BY_ID = {}; CONTROLS.forEach(function (k) { BY_ID[k.id] = k; });
-  var PATHS = CONTROLS.map(function (c) { return c.id; }).concat(["school_response_band", "key_override", "response_override"]);
+  var PATHS = CONTROLS.map(function (c) { return c.id; }).concat(["school_response_band", "general_government_response_band", "key_override", "key_band", "response_override"]);
+  var PATH_LABEL = { school_response_band: "School spending, both values", general_government_response_band: "General government, both values",
+    key_override: "Allocation rules chosen for single lines", key_band: "Allocation rules with both ends in the range", response_override: "Shares typed into the ledger" };
 
   function get(s, p) { return p.split(".").reduce(function (o, k) { return o == null ? o : o[k]; }, s); }
   function set(s, p, v) { var ks = p.split("."), o = s; for (var i = 0; i < ks.length - 1; i++) o = o[ks[i]]; if (v === undefined) delete o[ks[ks.length - 1]]; else o[ks[ks.length - 1]] = v; }
@@ -106,7 +108,11 @@
       housing_support: "Housing subsidy received", resources: "Household resources per member", medicare: "Expected Medicare spending, by age and US or foreign birth",
       medicaid: "Expected Medicaid spending, by age and US or foreign birth", va_medical: "Expected VA medical spending", tricare: "Expected Tricare spending",
       health_other: "Expected VA, Tricare and other public medical spending", school_operating: "School cost at measured enrollment", postsecondary: "Public college cost",
-      education_mix: "Schools and public colleges together", external: "Paid abroad, none assigned" },
+      education_mix: "Schools and public colleges together", external: "Paid abroad, none assigned",
+      // Added from the two use lanes (build_model.py use_keys): the preferred rule with the group's part moved.
+      use: "By use (custody, arrests, criminal courts)", use_raw_coding: "By use, ethnicity codes as recorded",
+      uninsured_use_low: "Medicaid plus uninsured care, low end", uninsured_use_high: "Medicaid plus uninsured care, high end",
+      uninsured_use_07_low: "Medicaid plus uninsured care at 0.7× use, low end", uninsured_use_07_high: "Medicaid plus uninsured care at 0.7× use, high end" },
     receipts: { population: "Per head", resident_population: "Per head, counting residents outside the survey", adults: "People aged 18 and over", wage: "Wages and salaries",
       wage_oasdi: "Wages up to the Social Security cap", self_payroll: "Payroll tax owed on self-employment earnings", positive_fica_worker: "Workers who pay payroll tax",
       capital: "Interest, dividends and rent reported", interest_dividend: "Interest and dividends reported", federal_liability: "Federal income tax owed before credits (Census tax model)",
@@ -115,19 +121,30 @@
       medicare_income: "People covered by Medicare, weighted by income", modeled_owner_property: "Property tax modeled for owner-occupied homes", none: "Paid from abroad, none assigned" }
   };
   function keyName(side, k) { return KEY[side][k] || String(k).replace(/_/g, " "); }
-  function show(v) { return typeof v === "number" ? String(Math.round(v * 1000) / 1000) : v === true ? "yes" : v === false ? "no" : OPTION[v] || String(v).replace(/_/g, " "); }
+  function show(v) {
+    if (Array.isArray(v)) return v.map(show).join(" and ");  // a band: both values enter the range
+    if (v && typeof v === "object") {  // per-line rules (their names say which line) or typed shares, keyed by line
+      var ids = Object.keys(v);
+      return ids.length ? ids.map(function (id) {
+        return typeof v[id] === "number" ? label(id.replace(/^receipt:/, "")) + ": " + show(v[id]) : [].concat(v[id]).map(function (k) { return keyName("spending", k); }).join(" and ");
+      }).join("; ") : "none";
+    }
+    return typeof v === "number" ? String(Math.round(v * 1000) / 1000) : v === true ? "yes" : v === false ? "no" : v == null ? "none" : OPTION[v] || String(v).replace(/_/g, " ");
+  }
   function esc(t) { return String(t == null ? "" : t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function same(a, b) { return JSON.stringify(a) === JSON.stringify(b); }
 
   /* ---------- sources: one registry, cited wherever a claim appears ---------- */
-  var SOURCES = SRC.sources.slice().sort(function (a, b) { return (a.authors + " " + a.year).localeCompare(b.authors + " " + b.year); });
+  // External sources first, then documents of this repo (kind "repo"), which open their file in the checkout.
+  var SOURCES = SRC.sources.slice().sort(function (a, b) { return ((a.kind === "repo") - (b.kind === "repo")) || (a.authors + " " + a.year).localeCompare(b.authors + " " + b.year); });
   var BY_SUPPORT = {};
   SOURCES.forEach(function (s) { (s.supports || []).forEach(function (id) { (BY_SUPPORT[id] = BY_SUPPORT[id] || []).push(s); }); });
   function citation(s) { return s.authors + " (" + s.year + "). " + s.title + (s.venue ? ". " + s.venue : "") + "."; }
+  function sourceHref(s) { return s.kind === "repo" ? repoHref(s.path) : s.url; }
   function citeLinks(ids) {
     var seen = {}, list = [];
     [].concat(ids).forEach(function (id) { (BY_SUPPORT[id] || []).forEach(function (s) { if (!seen[s.key]) { seen[s.key] = 1; list.push(s); } }); });
-    return list.map(function (s) { return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener" title="' + esc(citation(s)) + '">' + esc(s.short) + '</a>'; }).join(", ");
+    return list.map(function (s) { return '<a href="' + esc(sourceHref(s)) + '" target="_blank" rel="noopener" title="' + esc(citation(s)) + '">' + esc(s.short) + '</a>'; }).join(", ");
   }
   function cites(ids, lead) { var links = citeLinks(ids); return links ? '<span class="cites">' + (lead || "Sources: ") + links + '</span>' : ""; }
   function repoHref(path) { return SRC.repo_prefix + "/" + path.split("/").map(encodeURIComponent).join("/"); }
@@ -141,8 +158,11 @@
     (p.settings || []).forEach(function (x) { if (x.path) set(s, x.path, JSON.parse(JSON.stringify(x.value))); });
     return s;
   }
-  var CENTRAL = presetState(PRESETS.filter(function (p) { return p.id === "repo_central"; })[0]);
-  function centralText(k) { return k.id === "school_response" && CENTRAL.school_response_band ? CENTRAL.school_response_band.join("–") : show(get(CENTRAL, k.id)); }
+  var CENTRAL_PRESET = PRESETS.filter(function (p) { return p.central; })[0], CENTRAL_ID = CENTRAL_PRESET.id, CENTRAL = presetState(CENTRAL_PRESET);
+  // A control whose central value is a band shows both ends; moving it drops the band, going back restores it.
+  var BAND_OF = { school_response: "school_response_band", general_government_response: "general_government_response_band" };
+  function centralText(k) { return BAND_OF[k.id] && CENTRAL[BAND_OF[k.id]] ? CENTRAL[BAND_OF[k.id]].join("–") : show(get(CENTRAL, k.id)); }
+  function restoreBand(s, id) { if (BAND_OF[id]) { if (CENTRAL[BAND_OF[id]]) s[BAND_OF[id]] = E.clone(CENTRAL[BAND_OF[id]]); else delete s[BAND_OF[id]]; } }
 
   function outcome(s, key) {
     var out = E.evaluate(M, s), range = E.unresolvedRange(M, s, key || lens);
@@ -151,13 +171,16 @@
 
   function executedStatus(s) {
     var d = E.defaultState(M), contract = ["transfer_response", "interest_response", "subsidy_response", "direct_receipt_response", "indirect_receipt_response"]
-      .every(function (k) { return s[k] === d[k]; }) && !Object.keys(s.key_override).length && !Object.keys(s.response_override).length && s.count_production;
+      .every(function (k) { return s[k] === d[k]; }) && !Object.keys(s.response_override).length && s.count_production;
     if (!contract) return ["own", "Your own assumptions: the account's formula, with settings the account never uses"];
+    if (same(s, CENTRAL)) return ["formula", "The central case (" + CENTRAL_PRESET.kind_label + "), computed with the account's formula"];
+    // Every rule in the ledger was executed, but the account ran whole sets of rules, never a mix per line.
+    var mixed = Object.keys(s.key_override).length || Object.keys(s.key_band || {}).length;
     var flat = s.school_response === 1 && s.other_education_response === 1 && s.delayed_response === 1 && !s.school_response_band;
     var onLevels = [0, 0.5, 1].indexOf(s.service_response) >= 0 && [0, 1].indexOf(s.public_goods_response) >= 0 && s.general_government_response === s.public_goods_response && [0, 1].indexOf(s.fiscal_weight) >= 0;
-    if (flat && onLevels && s.service_response === s.production.capital_adjustment) return ["grid", "The account ran this exact case (one of its 497,664 rows)"];
+    if (!mixed && flat && onLevels && s.service_response === s.production.capital_adjustment) return ["grid", "The account ran this exact case (one of its 497,664 rows)"];
     var ref = M.production.reference, atRef = E.PRODUCTION_DIMS.every(function (k) { return k === "normalization" || s.production[k] === ref[k]; });
-    if (atRef && s.service_response === 1 && s.public_goods_response === 0 && s.general_government_response === 0 && s.fiscal_weight === 1 && s.receipt_scenario === M.receipts.reference && s.spending_keys === "preferred")
+    if (!mixed && atRef && s.service_response === 1 && s.public_goods_response === 0 && s.general_government_response === 0 && s.fiscal_weight === 1 && s.receipt_scenario === M.receipts.reference && s.spending_keys === "preferred")
       return ["grid", "The account ran this exact case (one of its 60 service-response cases)"];
     return ["formula", "Computed with the account's formula; the account did not run this exact combination"];
   }
@@ -176,7 +199,7 @@
     var k = BY_ID[activeControl];
     $("b-active").classList.toggle("live", !!k);  // on a phone the hint is dropped to keep the readout short
     if (!k) { $("b-active").textContent = "Move a slider or pick an option to see its central value and what it alone does to the result."; return; }
-    var back = E.clone(state); set(back, k.id, JSON.parse(JSON.stringify(get(CENTRAL, k.id)))); if (k.id === "school_response") back.school_response_band = CENTRAL.school_response_band;
+    var back = E.clone(state); set(back, k.id, JSON.parse(JSON.stringify(get(CENTRAL, k.id)))); restoreBand(back, k.id);
     var alone = o.value - E.evaluate(M, back)[lens];
     $("b-active").innerHTML = "<b>" + esc(k.label) + "</b>: " + esc(show(get(state, k.id))) + " (central " + esc(centralText(k)) + "). " +
       (same(get(state, k.id), get(CENTRAL, k.id)) ? "" : Math.abs(alone) < 0.05 ? "It does not move this result." : "On its own it moves the result by " + signed(alone, 1) + " bn.");
@@ -189,7 +212,7 @@
     var x = function (v) { return (v - lo) / (hi - lo || 1) * 100; };
     $("presets").innerHTML = cards.map(function (c) {
       var v = c.v, a = x(Math.min(v.range[0], v.range[1])), b = x(Math.max(v.range[0], v.range[1]));
-      var inner = '<span class="pk">' + esc(c.p.kind_label) + '</span><span class="pl">' + esc(c.p.label) + '</span>' +
+      var inner = '<span class="pk">' + esc(c.p.kind_label).replace(/\d{4}-\d{2}-\d{2}/g, "<span>$&</span>") + '</span><span class="pl">' + esc(c.p.label) + '</span>' +
         '<span class="pv">' + fmtAuto(v.range[0]) + (Math.abs(v.range[1] - v.range[0]) > 0.5 ? " to " + fmtAuto(v.range[1]) : "") + '</span>' +
         '<span class="track"><i class="zero" style="left:' + x(0) + '%"></i><i class="span ' + (v.value < 0 ? "neg" : "pos") + '" style="left:' + a + '%;width:' + Math.max(b - a, 0.8) + '%"></i></span>';
       return c.current ? '<div class="preset current">' + inner + '</div>'
@@ -213,12 +236,17 @@
       : "Each bar is one assumption changed alone; too many differ to split their interactions.") : "");
     var max = Math.max.apply(null, parts.map(function (p) { return Math.abs(p.effect_bn); }).concat([1]));
     $("diff").innerHTML = parts.map(function (p) {
-      var k = BY_ID[p.path] || { label: p.path.replace(/_/g, " ") };
+      var k = BY_ID[p.path] || { label: PATH_LABEL[p.path] || p.path.replace(/_/g, " ") };
       return '<li data-affects="' + (k.affects || []).join(" ") + '"><span class="dl">' + esc(k.label) + '<em>' + esc(show(p.from)) + " → " + esc(show(p.to)) + '</em></span>' +
         '<span class="db"><i class="' + (p.effect_bn < 0 ? "neg" : "pos") + '" style="width:' + Math.abs(p.effect_bn) / max * 100 + '%"></i></span><span class="dv">' + signed(p.effect_bn, 1) + '</span></li>';
     }).join("");
+    var bands = [];  // bands these assumptions declare; the engine's range spans every combination
+    if (state.school_response_band) bands.push("both school values, " + show(state.school_response_band));
+    if (state.general_government_response_band) bands.push("both general-government values, " + show(state.general_government_response_band));
+    Object.keys(state.key_band || {}).forEach(function (id) { bands.push("both ends of the allocation rule for " + label(id)); });
     $("h-range").textContent = "The account leaves three choices open: whether household money is shared, how the production gain is scaled, and the school share of education" +
-      (state.school_response_band ? ", plus the two school values, 63% and 66%" : "") + ". Across them the result runs from " + fmtAuto(o.range[0]) + " to " + fmtAuto(o.range[1]) + " bn.";
+      (bands.length ? ". These assumptions add " + bands.slice(0, -1).join("; ") + (bands.length > 1 ? "; and " : "") + bands[bands.length - 1] : "") +
+      ". Across them the result runs from " + fmtAuto(o.range[0]) + " to " + fmtAuto(o.range[1]) + " bn.";
     $("h-per").textContent = lens === "welfare_bn" ? money(o.out.per_other_resident) + " a year per other resident; " + money(o.out.per_target_person) + " per member of the group."
       : money(o.value * 1e9 / M.meta.target_population) + " a year per member of the group.";
     $("h-status").textContent = st[1]; $("h-status").className = "status " + st[0];
@@ -273,7 +301,7 @@
     var base = E.evaluate(M, state)[lens];
     var rows = CONTROLS.map(function (k) {
       var ends = k.type === "slider" ? [k.min == null ? 0 : k.min, k.max == null ? 1 : k.max] : k.levels;
-      var vals = ends.map(function (v) { var s = E.clone(state); set(s, k.id, v); if (k.id === "school_response") delete s.school_response_band; return { v: v, y: E.evaluate(M, s)[lens] }; });
+      var vals = ends.map(function (v) { var s = E.clone(state); set(s, k.id, v); if (BAND_OF[k.id]) delete s[BAND_OF[k.id]]; return { v: v, y: E.evaluate(M, s)[lens] }; });
       vals.sort(function (a, b) { return a.y - b.y; });
       return { k: k, lo: vals[0], hi: vals[vals.length - 1], swing: vals[vals.length - 1].y - vals[0].y };
     }).filter(function (r) { return r.swing > 0.05; }).sort(function (a, b) { return b.swing - a.swing; });
@@ -323,6 +351,8 @@
         return '<tbody data-affects="' + g + '"><tr class="grp"><th colspan="3">' + esc(CLASS_LABEL[g] || g) + findButton(g) + '</th><td class="num">' + fmt(sum, 1) + '</td><td class="num">' + fmt(counted, 1) + '</td><td></td></tr>' + rows.map(function (l) {
           var oid = (side === "receipts" ? "receipt:" : "") + l.id, overridden = typeof state.response_override[oid] === "number";
           var keyCell = side === "spending" && l.keys.length > 1 ? '<select data-key="' + l.id + '" id="k-' + l.id + '" aria-label="Allocation rule for ' + esc(label(l.id)) + '">' + l.keys.map(function (k) { return '<option value="' + esc(k) + '" title="rule id: ' + esc(k) + '"' + (k === l.key ? " selected" : "") + '>' + esc(keyName(side, k)) + '</option>'; }).join("") + '</select>' : '<span title="rule id: ' + esc(l.key) + '">' + esc(keyName(side, l.key)) + '</span>';
+          var band = side === "spending" && (state.key_band || {})[l.id];
+          if (band) keyCell += '<small title="' + esc(band.map(function (k) { return keyName(side, k); }).join(" and ")) + '">Both ends of this rule enter the range.</small>';
           return '<tr data-affects="' + l.id + " " + g + '"><td>' + esc(label(l.id)) + findButton(l.id) + '</td><td class="key">' + keyCell + '</td><td class="num">' + (l.share * 100).toFixed(1) + '%</td><td class="num">' + fmt(l.amount_bn, 1) + '</td>' +
             '<td class="num">' + fmt(Math.abs(l.effect_bn), 1) + '</td><td class="resp"><div><input type="number" min="0" max="1" step="0.05" id="r-' + oid + '" data-resp="' + oid + '" aria-label="Share counted for ' + esc(label(l.id)) + '" value="' + (Math.round(l.response * 1000) / 1000) + '"' + (overridden ? ' class="ov"' : "") + '><span class="mini"><i style="width:' + Math.abs(l.amount_bn) / max * 100 + '%"></i><b style="width:' + Math.abs(l.effect_bn) / max * 100 + '%"></b></span></div></td></tr>';
         }).join("") + '</tbody>';
@@ -338,10 +368,11 @@
     var p = PRESETS.filter(function (q) { return q.id === activePreset; })[0];
     if (!p) { $("preset-note").hidden = true; return; }
     $("preset-note").hidden = false;
-    $("preset-note").innerHTML = '<h3>' + esc(p.label) + '</h3><p>' + esc(p.summary) + '</p>' + (p.scope_note ? '<p class="scope">' + esc(p.scope_note) + '</p>' : "") +
+    $("preset-note").innerHTML = '<h3>' + esc(p.label) + '</h3><p>' + repoLinks(p.summary) + '</p>' + (p.scope_note ? '<p class="scope">' + repoLinks(p.scope_note) + '</p>' : "") +
       '<div class="scroll"><table class="basis"><thead><tr><th>Assumption</th><th>Where it comes from</th><th>Why</th></tr></thead><tbody>' + (p.settings || []).map(function (s) {
-        return '<tr><td>' + esc(s.label || s.path) + (s.path ? ": " + esc(show(s.value)) : "") + '</td><td><span class="tag ' + esc(s.basis) + '">' + esc(BASIS[s.basis] || s.basis) + '</span></td><td>' + esc(s.note) + (s.ref ? ' <span class="path">' + repoLinks(s.ref) + '</span>' : "") + '</td></tr>'; }).join("") + '</tbody></table></div>' +
-      (p.misses && p.misses.length ? '<h4>Left out of this set of assumptions</h4><ul>' + p.misses.map(function (m) { return '<li>' + esc(m) + '</li>'; }).join("") + '</ul>' : "") + cites("preset:" + p.id);
+        var value = /^key_(override|band)\./.test(s.path || "") ? [].concat(s.value).map(function (k) { return keyName("spending", k); }).join(" and ") : show(s.value);
+        return '<tr><td>' + esc(s.label || s.path) + (s.path ? ": " + esc(value) : "") + '</td><td><span class="tag ' + esc(s.basis) + '">' + esc(BASIS[s.basis] || s.basis) + '</span></td><td>' + esc(s.note) + (s.ref ? ' <span class="path">' + repoLinks(s.ref) + '</span>' : "") + '</td></tr>'; }).join("") + '</tbody></table></div>' +
+      (p.misses && p.misses.length ? '<h4>Left out of this set of assumptions</h4><ul>' + p.misses.map(function (m) { return '<li>' + repoLinks(m) + '</li>'; }).join("") + '</ul>' : "") + cites("preset:" + p.id);
   }
 
   function drawStanding() {
@@ -410,14 +441,14 @@
   }
 
   function drawSources() {
-    var checked = SOURCES.filter(function (s) { return s.checked && s.checked.ok; }).length;
-    $("sources-note").textContent = SOURCES.length + " external sources. Each link comes from a citation already in this repo, or was resolved from one and is marked as such. A script fetched every link once; " + checked +
+    var checked = SOURCES.filter(function (s) { return s.checked && s.checked.ok; }).length, own = SOURCES.filter(function (s) { return s.kind === "repo"; }).length;
+    $("sources-note").textContent = (SOURCES.length - own) + " external sources and " + own + " documents of this repo. Each link comes from a citation already in this repo, or was resolved from one and is marked as such. A script fetched every external link once; " + checked +
       " answered, and the rest are marked. A short label elsewhere on the page opens its source directly.";
     $("sources").innerHTML = SOURCES.map(function (s) {
       var places = {}; (s.supports || []).forEach(function (id) { places[placeName(id)] = 1; });
-      var host = s.url.replace(/^https?:\/\/(www\.)?/, "").split("/")[0];
-      var status = !s.checked ? "" : s.checked.ok ? "Link answered on " + s.checked.date + "." : "Link did not answer the script on " + s.checked.date + " (" + esc(s.checked.status) + "); open it by hand.";
-      return '<li id="src-' + esc(s.key) + '">' + esc(s.authors) + " (" + esc(s.year) + "). <i>" + esc(s.title) + "</i>" + (s.venue ? ". " + esc(s.venue) : "") + '. <a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(host) + '</a>' +
+      var host = s.kind === "repo" ? s.path : s.url.replace(/^https?:\/\/(www\.)?/, "").split("/")[0];
+      var status = s.kind === "repo" ? "A document of this repo; the build checks that the file exists." : !s.checked ? "" : s.checked.ok ? "Link answered on " + s.checked.date + "." : "Link did not answer the script on " + s.checked.date + " (" + esc(s.checked.status) + "); open it by hand.";
+      return '<li id="src-' + esc(s.key) + '">' + esc(s.authors) + " (" + esc(s.year) + "). <i>" + esc(s.title) + "</i>" + (s.venue ? ". " + esc(s.venue) : "") + '. <a href="' + esc(sourceHref(s)) + '" target="_blank" rel="noopener">' + esc(host) + '</a>' +
         '<span class="used">' + (s.repo_ref ? "Cited in this repo at " + repoLinks(s.repo_ref) + ". " : "") + (s.resolved ? "Link resolved on " + esc(s.resolved) + " from the repo's citation. " : "") + status + " Used for " + esc(Object.keys(places).join("; ")) + ".</span></li>";
     }).join("");
   }
@@ -430,17 +461,17 @@
     var t = e.target.closest("[data-preset],[data-value],[data-reset],[data-lens],[data-find],[data-topic],#undo,#reset-all"); if (!t) return;
     if (t.dataset.preset) { commit(function () { var p = PRESETS.filter(function (q) { return q.id === t.dataset.preset; })[0]; state = presetState(p); activePreset = p.id; activeControl = null; }, true); if (t.classList.contains("link")) window.scrollTo({ top: 0, behavior: SMOOTH }); }
     else if (t.dataset.value) { activeControl = t.dataset.path; commit(function () { set(state, t.dataset.path, JSON.parse(t.dataset.value)); }); }
-    else if (t.dataset.reset) { activeControl = t.dataset.reset; commit(function () { set(state, t.dataset.reset, JSON.parse(JSON.stringify(get(CENTRAL, t.dataset.reset)))); if (t.dataset.reset === "school_response") state.school_response_band = CENTRAL.school_response_band; }); }
+    else if (t.dataset.reset) { activeControl = t.dataset.reset; commit(function () { set(state, t.dataset.reset, JSON.parse(JSON.stringify(get(CENTRAL, t.dataset.reset)))); restoreBand(state, t.dataset.reset); }); }
     else if (t.dataset.lens) { lens = t.dataset.lens; Array.prototype.forEach.call(document.querySelectorAll("[data-lens]"), function (b) { b.classList.toggle("on", b === t); }); render(); }
     else if (t.dataset.find !== undefined) { ladder.token = t.dataset.find || null; drawLadder(); if (ladder.token) $("ladder-section").scrollIntoView({ behavior: SMOOTH }); }
     else if (t.dataset.topic) { ladder.topics[t.dataset.topic] = !ladder.topics[t.dataset.topic]; drawLadder(); }
     else if (t.id === "undo" && history.length) { var h = JSON.parse(history.pop()); state = h.s; activePreset = h.p; render(); }
-    else if (t.id === "reset-all") commit(function () { state = E.clone(CENTRAL); activePreset = "repo_central"; activeControl = null; }, true);
+    else if (t.id === "reset-all") commit(function () { state = E.clone(CENTRAL); activePreset = CENTRAL_ID; activeControl = null; }, true);
   });
   document.addEventListener("input", function (e) {
     var t = e.target;
     if (t.type === "range" && t.dataset.path) {
-      set(state, t.dataset.path, parseFloat(t.value)); if (t.dataset.path === "school_response") delete state.school_response_band;
+      set(state, t.dataset.path, parseFloat(t.value)); if (BAND_OF[t.dataset.path]) delete state[BAND_OF[t.dataset.path]];
       activePreset = null; activeControl = t.dataset.path;
       var box = t.closest(".ctl"); box.querySelector("output").textContent = show(parseFloat(t.value));
       box.classList.toggle("differs", !same(get(state, t.dataset.path), get(CENTRAL, t.dataset.path)));
@@ -451,7 +482,7 @@
     var t = e.target;
     if (t.type === "range") { history.push(JSON.stringify({ s: state, p: activePreset })); drawControls(); drawPresetNote(); }
     else if (t.id === "ladder-all") { ladder.all = t.checked; drawLadder(); drawLedger(); }
-    else if (t.dataset.key) commit(function () { state.key_override[t.dataset.key] = t.value; });
+    else if (t.dataset.key) commit(function () { state.key_override[t.dataset.key] = t.value; if (state.key_band) delete state.key_band[t.dataset.key]; });
     else if (t.dataset.resp) commit(function () { var v = parseFloat(t.value); if (isFinite(v)) state.response_override[t.dataset.resp] = Math.max(0, Math.min(1, v)); else delete state.response_override[t.dataset.resp]; });
   });
   function highlight(tokens, on) {
@@ -471,7 +502,7 @@
   if (window.ResizeObserver) new ResizeObserver(syncBar).observe($("bar"));
   syncBar();
 
-  state = E.clone(CENTRAL); activePreset = "repo_central";
+  state = E.clone(CENTRAL); activePreset = CENTRAL_ID;
   $("scope").textContent = "Mexican-origin residents of the United States, every generation, age and level of schooling: " + (M.meta.target_population / 1e6).toFixed(1) + " million people, income year 2024, in billions of 2024 dollars. The account compares the country as it is with the same country without this group, holding everything else at 2024 levels. It does not estimate what admitting or removing anyone would do.";
   $("ledger-cites").innerHTML = citeLinks("ledger") ? "Sources: " + citeLinks("ledger") : "";
   $("bridge-cites").innerHTML = citeLinks(["production", "ledger"]) ? "Sources: " + citeLinks(["production", "ledger"]) : "";

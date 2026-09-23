@@ -38,7 +38,8 @@ def fetch(url):
 
 
 def main():
-    sources = json.loads((HERE/"sources.json").read_text())["sources"]
+    # Documents of this repo have no link to fetch; build_ui.py checks that their files exist.
+    sources = [s for s in json.loads((HERE/"sources.json").read_text())["sources"] if s.get("kind") != "repo"]
     out_path = HERE/"sources_check.json"
     checks = json.loads(out_path.read_text()) if out_path.exists() else {}
     wanted = set(sys.argv[1:])

@@ -2,10 +2,12 @@
 
 The page loads nothing from the network and opens from file://. Links out are citations only.
 Build-time checks, so a typo cannot silently do nothing:
-- every preset path exists in the engine's state, and a value marked `value_from` is read from
-  derived/scaling_check.json rather than typed;
+- every preset path exists in the engine's state, a value marked `value_from` is read from
+  derived/scaling_check.json rather than typed, a per-line allocation rule names a line and rule the
+  model holds, a band contains its point value, and exactly one preset is the central case;
+- a `{published:<profile>}` token in preset text becomes the September 20 account's published band;
 - every id a source claims to support exists on the page (a setting, a card, a convention, an author
-  statement), and every source carries a link and a short label;
+  statement), and every source carries a short label and either a link or a file in this checkout;
 - a file named in a reference becomes a local link only when it exists in this checkout;
 - every allocation rule in the model has a plain name in ui.js.
 """
@@ -22,7 +24,9 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 LANES = ROOT/"infra/immigration-fiscal"
 OUT = HERE/"derived"
-STATE_PATHS = re.compile(r"^(production\.[a-z_]+|[a-z_]+)$")
+STATE_PATHS = re.compile(r"^((production|key_override|key_band)\.[a-z_]+|[a-z_]+)$")
+BANDS = {"school_response_band": "school_response", "general_government_response_band": "general_government_response"}
+PUBLISHED = re.compile(r"\{published:([a-z_]+)\}")
 FILE_TOKEN = re.compile(r"[A-Za-z0-9_][A-Za-z0-9_./-]*\.(?:md|py|csv|json|js|sql|html)\b")  # same pattern as ui.js repoLinks
 FIXED_PLACES = {"ledger", "production", "standing"}
 
@@ -61,21 +65,77 @@ def check_sources(sources, presets, context, control_ids):
         places |= {f"argue:{author['id']}:{i}" for i in range(len(author["argues"]))}
     keys = set()
     for source in sources["sources"]:
-        missing = {"key", "short", "authors", "year", "title", "url", "supports"}-set(source)
+        # A document of this repo (a decision record, an analysis lane) links to its file in the checkout.
+        repo = source.get("kind") == "repo"
+        missing = {"key", "short", "authors", "year", "title", "supports", "path" if repo else "url"}-set(source)
         if missing:
             raise ValueError(f"Source {source.get('key')} lacks {sorted(missing)}")
         if source["key"] in keys:
             raise ValueError(f"Duplicate source key {source['key']}")
         keys.add(source["key"])
-        if not re.match(r"^https?://", source["url"]):
+        if repo:
+            if not (ROOT/source["path"]).is_file():
+                raise ValueError(f"Source {source['key']} names no file in this checkout: {source['path']}")
+        elif not re.match(r"^https?://", source["url"]):
             raise ValueError(f"Source {source['key']} has no http(s) link")
-        if not source.get("repo_ref") and not source.get("resolved"):
+        elif not source.get("repo_ref") and not source.get("resolved"):
             raise ValueError(f"Source {source['key']} names neither where the repo cites it nor when its link was resolved")
         unknown = set(source["supports"])-places
         if unknown:
             raise ValueError(f"Source {source['key']} supports places that are not on the page: {sorted(unknown)}")
     cited = {place for source in sources["sources"] for place in source["supports"]}
     return sorted(places-cited-FIXED_PLACES)
+
+
+def check_presets(presets, model, evidence, known):
+    """Resolve `value_from` in place and refuse a setting the engine or the model cannot honour."""
+    lines = {line["id"]: line for line in model["spending"]["lines"]}
+    if sum(1 for p in presets["presets"] if p.get("central")) != 1:
+        raise ValueError("Exactly one preset must be marked central")
+    for preset in presets["presets"]:
+        values = {}
+        for setting in preset.get("settings", []):
+            path = setting.get("path")
+            if path is None:
+                continue
+            if "value_from" in setting:
+                names = setting.pop("value_from")
+                setting["value"] = [evidence[n] for n in names] if isinstance(names, list) else evidence[names]
+            head, _, tail = path.partition(".")
+            if not STATE_PATHS.match(path) or head not in known:
+                raise ValueError(f"Preset {preset['id']} sets an unknown state path: {path}")
+            if head == "production" and setting["value"] not in model["production"]["dims"][tail]:
+                raise ValueError(f"Preset {preset['id']} uses a production level that was never executed: {path}")
+            if head in ("key_override", "key_band"):
+                rules = setting["value"] if head == "key_band" else [setting["value"]]
+                if tail not in lines or not all(r in lines[tail]["keys"] for r in rules) or (head == "key_band" and len(rules) < 2):
+                    raise ValueError(f"Preset {preset['id']} names an allocation rule the model does not hold: {path}")
+            values[path] = setting["value"]
+        # A band is reported as a range; the preset's point value must be one of its ends, as for schools.
+        pairs = list(BANDS.items())+[(p, "key_override."+p.partition(".")[2]) for p in values if p.startswith("key_band.")]
+        for band, point in pairs:
+            if band in values and values.get(point) not in values[band]:
+                raise ValueError(f"Preset {preset['id']} declares {band} but sets {point} to none of its values")
+
+
+def resolve_published(node, bands):
+    """Replace {published:<profile>} with the September 20 account's cost band for that profile, whole bn."""
+    if isinstance(node, dict):
+        return {k: resolve_published(v, bands) for k, v in node.items()}
+    if isinstance(node, list):
+        return [resolve_published(v, bands) for v in node]
+    if not isinstance(node, str):
+        return node
+
+    def band(match):
+        if match.group(1) not in bands:
+            raise ValueError(f"No published band for service profile {match.group(1)}")
+        b = bands[match.group(1)]
+        return f"{-b['max_welfare_bn']:.0f}–{-b['min_welfare_bn']:.0f}"
+    text = PUBLISHED.sub(band, node)
+    if re.search(r"\{[a-z_]+:[^}]*\}", text):
+        raise ValueError(f"Unresolved token in preset text: {text[:100]}")
+    return text
 
 
 def check_key_names(model, ui):
@@ -102,20 +162,11 @@ def main():
     checks = json.loads(checks_path.read_text()) if checks_path.exists() else {}
     engine = (HERE/"engine.js").read_text()
     ui = (HERE/"ui.js").read_text()
-    known = set(re.findall(r"^\s{6}([a-z_]+):", engine, flags=re.M)) | {"school_response_band"}
+    known = set(re.findall(r"^\s{6}([a-z_]+):", engine, flags=re.M)) | set(BANDS)
     ids = {p["id"] for p in presets["presets"]}
-    for preset in presets["presets"]:
-        for setting in preset.get("settings", []):
-            path = setting.get("path")
-            if path is None:
-                continue
-            if "value_from" in setting:
-                setting["value"] = evidence[setting.pop("value_from")]
-            head = path.split(".")[0]
-            if not STATE_PATHS.match(path) or head not in known:
-                raise ValueError(f"Preset {preset['id']} sets an unknown state path: {path}")
-            if head == "production" and setting["value"] not in model["production"]["dims"][path.split(".")[1]]:
-                raise ValueError(f"Preset {preset['id']} uses a production level that was never executed: {path}")
+    check_presets(presets, model, evidence, known)
+    published = model["meta"]["headline"]["category_service_response_sensitivity"]
+    presets = {k: v if k == "note" else resolve_published(v, published) for k, v in presets.items()}  # the note documents the token
     for author in presets["authors"]:
         if author["closest"]["preset"] not in ids | {None}:
             raise ValueError(f"Author {author['id']} points at an unknown convention")
@@ -144,9 +195,11 @@ def main():
         raise ValueError("The page must not load network resources")
     (OUT/"explorer.html").write_text(page)
     answered = sum(1 for s in sources["sources"] if s.get("checked", {}).get("ok"))
+    repo_docs = sum(1 for s in sources["sources"] if s.get("kind") == "repo")
     print(f"explorer.html: {len(page)/1e6:.2f} MB, {len(presets['presets'])} conventions, {len(presets['authors'])} authors, "
           f"{len(context['items'])} objection cards, {len(parsed_ladder['cards'])} ladder entries, "
-          f"{len(sources['sources'])} sources ({answered} links answered), {len(sources_block['paths'])} local file links")
+          f"{len(sources['sources'])-repo_docs} sources ({answered} links answered) and {repo_docs} repo documents, "
+          f"{len(sources_block['paths'])} local file links")
     if uncited:
         print(f"  ! {len(uncited)} places carry no external source: {', '.join(uncited[:12])}{' ...' if len(uncited) > 12 else ''}")
 

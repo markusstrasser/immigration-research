@@ -11,10 +11,10 @@ const vectors = JSON.parse(fs.readFileSync(path.join(derived, "test_vectors.json
 const TOLERANCE = 1e-6;  // billions; the exports are rounded at 1e-9
 let failures = 0, worst = 0;
 
-function check(label, got, want) {
+function check(label, got, want, tolerance) {
   const gap = Math.abs(got - want);
-  worst = Math.max(worst, gap);
-  if (!(gap <= TOLERANCE)) {
+  if (tolerance === undefined) worst = Math.max(worst, gap);
+  if (!(gap <= (tolerance === undefined ? TOLERANCE : tolerance))) {
     failures += 1;
     if (failures <= 10) console.error(`MISMATCH ${label}: engine ${got} executed ${want}`);
   }
@@ -73,6 +73,57 @@ const proportional = span({});
 check("proportional low", proportional[0], headline.proportional_reference.min_welfare_bn);
 check("proportional high", proportional[1], headline.proportional_reference.max_welfare_bn);
 
+// Presets as the page loads them: value_from read from scaling_check.json, dotted paths set in place.
+const presets = JSON.parse(fs.readFileSync(path.join(__dirname, "presets.json"), "utf8")).presets;
+const evidence = JSON.parse(fs.readFileSync(path.join(derived, "scaling_check.json"), "utf8"));
+function presetState(id, extra) {
+  const state = Engine.defaultState(model);
+  for (const s of presets.find((p) => p.id === id).settings || []) {
+    if (!s.path) continue;
+    const value = s.value_from === undefined ? s.value
+      : Array.isArray(s.value_from) ? s.value_from.map((k) => evidence[k]) : evidence[s.value_from];
+    const keys = s.path.split("."), last = keys.pop();
+    keys.reduce((o, k) => o[k], state)[last] = JSON.parse(JSON.stringify(value));
+  }
+  return Object.assign(state, extra || {});
+}
+function costBand(state) {  // welfare sign flipped: the main-case lane reports cost as positive bn
+  const range = Engine.unresolvedRange(model, state, "welfare_bn");
+  return [-range[1], -range[0]];
+}
+
+// September 20 conventions still reproduce the published bands.
+const sept20 = costBand(presetState("repo_central"));
+check("September 20 central low", sept20[0], -headline.cbo_category_lag_non_school_full.max_welfare_bn);
+check("September 20 central high", sept20[1], -headline.cbo_category_lag_non_school_full.min_welfare_bn);
+
+// Adopted conventions reproduce the main-case lane (main_case_2026_09_23). Its CSV prints four decimals, so
+// it is checked to half a unit of the last digit; the full-precision check is the lane's own gate identity,
+// published band + GG response x GG amount + justice change + uncompensated-care change, from its inputs.json.
+const MAIN = path.join(__dirname, "..", "main_case_2026_09_23", "derived");
+const oracle = {};
+fs.readFileSync(path.join(MAIN, "main_case_bands.csv"), "utf8").trim().split("\n").slice(1).forEach((line) => {
+  const [profile, variant, low, high] = line.split(",");
+  oracle[`${profile}/${variant}`] = [Number(low), Number(high)];
+});
+const inputs = JSON.parse(fs.readFileSync(path.join(MAIN, "inputs.json"), "utf8"));
+const PRINTED = 5e-5 + 1e-9;
+let adoptedChecks = 0;
+function checkAdopted(label, band, profile) {
+  const printed = oracle[`${profile}/adopted`], published = headline[profile];
+  const gg = inputs.general_government_response, ggBn = inputs.general_government_target_bn, j = inputs.justice_change_bn.central;
+  const uc = inputs.uncompensated_inside_bn;
+  check(`${label} low vs main_case_bands.csv`, band[0], printed[0], PRINTED);
+  check(`${label} high vs main_case_bands.csv`, band[1], printed[1], PRINTED);
+  check(`${label} low vs lane identity`, band[0], -published.max_welfare_bn + gg.low * ggBn + j + uc.equal_low);
+  check(`${label} high vs lane identity`, band[1], -published.min_welfare_bn + gg.high * ggBn + j + uc.equal_high);
+  adoptedChecks += 1;
+}
+const adopted = costBand(presetState("repo_central_gg"));
+checkAdopted("adopted central", adopted, "cbo_category_lag_non_school_full");
+checkAdopted("adopted, non-school education fixed", costBand(presetState("repo_central_gg", { other_education_response: 0 })), "cbo_category_lag_non_school_fixed");
+checkAdopted("adopted proportional", costBand(presetState("proportional")), "proportional_reference");
+
 // Attribution must be exhaustive: Shapley effects sum to the total difference.
 const from = Engine.defaultState(model);
 const to = Object.assign(Engine.defaultState(model), { service_response: 0.5, public_goods_response: 1, count_production: false });
@@ -84,4 +135,5 @@ check("attribution closure", parts.reduce((s, p) => s + p.effect_bn, 0),
 
 const counts = `${vectors.grid.length} grid rows, ${vectors.service.length} service cases, ${vectors.accounts.length} accounting cases`;
 if (failures) { console.error(`FAIL: ${failures} mismatches over ${counts}; worst gap ${worst}`); process.exit(1); }
-console.log(`PASS: ${counts}, 4 headline bounds, attribution closure; worst gap ${worst.toExponential(2)} bn`);
+console.log(`PASS: ${counts}, 4 headline bounds, September 20 central preset, ${adoptedChecks} adopted bands ` +
+  `(central ${adopted[0].toFixed(4)} to ${adopted[1].toFixed(4)} bn), attribution closure; worst gap ${worst.toExponential(2)} bn`);
