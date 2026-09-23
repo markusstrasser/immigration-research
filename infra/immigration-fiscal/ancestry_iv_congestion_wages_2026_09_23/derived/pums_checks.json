@@ -1,0 +1,29 @@
+{
+ "200001": {
+  "rows": 8713769,
+  "pop": 176581799.0,
+  "fb_share": 0.14118758638312434,
+  "ftfy_native_obs": 2949330,
+  "wage_native_obs": 4259985,
+  "commuters": 119015039.0,
+  "puma_merge_miss": 0.0
+ },
+ "201001": {
+  "rows": 1902839,
+  "pop": 197066710.0,
+  "fb_share": 0.1635468365001882,
+  "ftfy_native_obs": 628696,
+  "wage_native_obs": 876695,
+  "commuters": 124823906.0,
+  "puma_merge_miss": 0.00022376370552696352
+ },
+ "201103": {
+  "rows": 5655340,
+  "pop": 196967628.0,
+  "fb_share": 0.1635654717840233,
+  "ftfy_native_obs": 1887316,
+  "wage_native_obs": 2621160,
+  "commuters": 125690352.0,
+  "puma_merge_miss": 0.00022376370552696352
+ }
+}

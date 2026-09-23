@@ -1,0 +1,207 @@
+family,outcome,x,arm,iv_rows,strong_rows,coef_min_strong,coef_max_strong,wald_negative_strong,wald_positive_strong,ar_rows_strong,ar_excludes_zero_negative,ar_excludes_zero_positive,weak_rows
+commute,commute (minutes),dX,long difference,15,10,-0.6746014259041244,-0.0052661342717539,2,0,8,2,0,5
+commute,commute (minutes),dX,baseline-level control,15,10,-4.8561225574023865,3.4774844212868175,0,0,0,0,0,5
+commute,log commute,dX,long difference,15,10,-0.0224158888500855,0.0006452607617458,2,0,8,2,0,5
+commute,log commute,dX,baseline-level control,15,10,-0.1280793766239298,0.093529988826603,0,0,0,0,0,5
+commute,"log commute, mode-share controls",dX,long difference,15,8,-0.0130015095943626,-0.0012065869539374,1,0,6,1,0,7
+commute,log commute,dlnpop,long difference,15,0,,,0,0,0,0,0,15
+commute,log commute,dlnpop,baseline-level control,15,0,,,0,0,0,0,0,15
+commute,"log commute, mode-share controls",dlnpop,long difference,15,2,-0.1805392255082062,-0.109028154201761,0,0,2,1,0,13
+commute,commute_nontransit (minutes),dX,long difference,15,5,-0.9220584640326006,-0.2606320430072029,2,0,4,2,0,10
+commute,commute_nontransit (minutes),dX,baseline-level control,15,5,-2.3798174102822145,0.0650115892098313,0,0,0,0,0,10
+commute,log commute_nontransit,dX,long difference,15,5,-0.03410484117453,-0.009260501508812,2,0,4,2,0,10
+commute,log commute_nontransit,dX,baseline-level control,15,5,-0.0804206510469498,0.0036701197404438,0,0,0,0,0,10
+commute,"log commute_nontransit, mode-share controls",dX,long difference,15,4,-0.032452559220185,-0.0126913430717701,1,0,3,2,0,11
+commute,log commute_nontransit,dlnpop,long difference,15,1,0.4030976918734725,0.4030976918734725,0,1,1,0,1,14
+commute,log commute_nontransit,dlnpop,baseline-level control,15,1,0.2312695837484666,0.2312695837484666,0,0,0,0,0,14
+commute,"log commute_nontransit, mode-share controls",dlnpop,long difference,15,0,,,0,0,0,0,0,15
+commute,sh_transit (points),dX,long difference,15,10,0.7003649235583447,1.638511835902821,0,2,8,0,3,5
+commute,sh_transit (points),dX,baseline-level control,15,10,-0.0970610244774912,0.2067246033270499,0,0,0,0,0,5
+commute,sh_home (points),dX,long difference,15,10,0.243527164333333,0.4898354049492468,0,9,8,0,7,5
+commute,sh_home (points),dX,baseline-level control,15,10,0.1974182016703265,0.4512757311173434,0,8,0,0,0,5
+commute,sh_alone (points),dX,long difference,15,10,-2.0811730628294205,-0.8394628410676241,5,0,8,4,0,5
+commute,sh_alone (points),dX,baseline-level control,15,10,-1.3415334317401406,1.9612539936248223,2,0,0,0,0,5
+commute,sh_carpool (points),dX,long difference,15,10,-1.6035074008682528,0.1770421155220791,5,0,8,5,0,5
+commute,sh_carpool (points),dX,baseline-level control,15,10,-1.1160088650088085,-0.1120622807495821,1,0,0,0,0,5
+commute,log population (SF1),dX,long difference,15,10,-0.0084269743965937,0.0528668584874335,0,3,8,0,2,5
+commute,"log PUMS natives' commute, 2010 ACS",dlnpop,long difference,10,0,,,0,0,0,0,0,10
+commute,"log PUMS natives' commute, 2010 ACS",dlnpop,baseline-level control,10,0,,,0,0,0,0,0,10
+commute,"log PUMS natives' commute, 2010 ACS",dX,long difference,10,5,-0.0363860719066623,6.023800516916089e-05,1,0,4,1,0,5
+commute,"log PUMS natives' commute, 2010 ACS",dX,baseline-level control,10,5,-0.0058373774190061,0.6293542213442151,0,0,0,0,0,5
+commute,"log PUMS natives' commute, 2009-11 ACS",dlnpop,long difference,10,0,,,0,0,0,0,0,10
+commute,"log PUMS natives' commute, 2009-11 ACS",dlnpop,baseline-level control,10,0,,,0,0,0,0,0,10
+commute,"log PUMS natives' commute, 2009-11 ACS",dX,long difference,10,5,-0.030166569165755,0.0015663472629925,1,0,4,1,0,5
+commute,"log PUMS natives' commute, 2009-11 ACS",dX,baseline-level control,10,5,-0.0003283004904649,0.4108752308694647,0,0,0,0,0,5
+commute,"log PUMS natives' car commute, 2010 ACS",dlnpop,long difference,10,0,,,0,0,0,0,0,10
+commute,"log PUMS natives' car commute, 2010 ACS",dlnpop,baseline-level control,10,0,,,0,0,0,0,0,10
+commute,"log PUMS natives' car commute, 2010 ACS",dX,long difference,10,5,-0.0373818923654433,-0.0028433303631254,1,0,4,1,0,5
+commute,"log PUMS natives' car commute, 2010 ACS",dX,baseline-level control,10,5,-1.588398723035425,0.0114177828690973,0,0,0,0,0,5
+commute,"log PUMS natives' car commute, 2009-11 ACS",dlnpop,long difference,10,0,,,0,0,0,0,0,10
+commute,"log PUMS natives' car commute, 2009-11 ACS",dlnpop,baseline-level control,10,0,,,0,0,0,0,0,10
+commute,"log PUMS natives' car commute, 2009-11 ACS",dX,long difference,10,5,-0.0347135274642929,-0.0034161884569877,1,0,4,1,0,5
+commute,"log PUMS natives' car commute, 2009-11 ACS",dX,baseline-level control,10,5,-1.241873989915803,0.0135427199946616,0,0,0,0,0,5
+commute,"log PUMS all workers' commute, 2010 ACS",dlnpop,long difference,10,0,,,0,0,0,0,0,10
+commute,"log PUMS all workers' commute, 2010 ACS",dlnpop,baseline-level control,10,0,,,0,0,0,0,0,10
+commute,"log PUMS all workers' commute, 2010 ACS",dX,long difference,10,5,-0.0310765637165311,0.0008628005372201,1,0,4,1,0,5
+commute,"log PUMS all workers' commute, 2010 ACS",dX,baseline-level control,10,5,-0.0045780534048686,0.2258034985992765,0,0,0,0,0,5
+commute,"log PUMS all workers' commute, 2009-11 ACS",dlnpop,long difference,10,0,,,0,0,0,0,0,10
+commute,"log PUMS all workers' commute, 2009-11 ACS",dlnpop,baseline-level control,10,0,,,0,0,0,0,0,10
+commute,"log PUMS all workers' commute, 2009-11 ACS",dX,long difference,10,5,-0.0288271460073524,0.0021241941481411,1,0,4,1,0,5
+commute,"log PUMS all workers' commute, 2009-11 ACS",dX,baseline-level control,10,5,-9.756019733819787e-05,0.1820840367546736,0,0,0,0,0,5
+wages,adj_week_noba,d_fbemp,long difference,30,28,-0.2910472552110045,0.3421990497483047,0,0,22,0,0,2
+wages,adj_week_noba,d_fbemp,baseline-level control,30,28,0.8835491580938575,2.67987818590732,0,28,0,0,0,2
+wages,adj_week_noba,d_mexemp,long difference,30,6,-0.131029147026177,0.1248876068850134,0,0,6,0,0,24
+wages,adj_week_noba,d_mexemp,baseline-level control,30,6,2.2133615509320133,2.7193412317538463,0,6,0,0,0,24
+wages,adj_week_noba,inflow,long difference,30,30,-0.2272090158212873,0.1586850222469771,0,0,24,0,0,0
+wages,adj_week_noba,inflow,baseline-level control,30,30,0.3489706581661548,1.5253848398389969,0,24,0,0,0,0
+wages,adj_week_ba,d_fbemp,long difference,30,28,0.3928456076373323,0.6958687201955451,0,15,22,0,9,2
+wages,adj_week_ba,d_fbemp,baseline-level control,30,28,1.2706916328679465,5.771757823528635,0,18,0,0,0,2
+wages,adj_week_ba,d_mexemp,long difference,30,6,1.7424106620673585,1.904930613002073,0,0,6,0,4,24
+wages,adj_week_ba,d_mexemp,baseline-level control,30,6,3.074930793197155,3.4131941016469343,0,6,0,0,0,24
+wages,adj_week_ba,inflow,long difference,30,30,0.1363312211311623,0.583424596580534,0,11,24,0,9,0
+wages,adj_week_ba,inflow,baseline-level control,30,30,0.3650959331346219,5.139606074700386,0,18,0,0,0,0
+wages,adj_week_hsl,d_fbemp,long difference,30,28,-0.4046789239758359,0.3265504817620077,0,0,22,0,0,2
+wages,adj_week_hsl,d_fbemp,baseline-level control,30,28,0.873082254262935,2.1782675096193995,0,28,0,0,0,2
+wages,adj_week_hsl,d_mexemp,long difference,30,6,-0.2182686806724492,0.0293530165535211,0,0,6,0,0,24
+wages,adj_week_hsl,d_mexemp,baseline-level control,30,6,2.4053987581655054,2.6889100733099074,0,6,0,0,0,24
+wages,adj_week_hsl,inflow,long difference,30,30,-0.3067373181196142,0.1514284464006519,0,0,24,0,0,0
+wages,adj_week_hsl,inflow,baseline-level control,30,30,0.3499305944582242,1.2013300237839246,0,30,0,0,0,0
+wages,adj_week_somecol,d_fbemp,long difference,30,28,-0.380748778243724,0.2773175494201454,0,0,22,0,0,2
+wages,adj_week_somecol,d_fbemp,baseline-level control,30,28,0.8541305301853076,3.362793653850935,0,28,0,0,0,2
+wages,adj_week_somecol,d_mexemp,long difference,30,6,-0.465300103359441,-0.0477823439388425,0,0,6,0,0,24
+wages,adj_week_somecol,d_mexemp,baseline-level control,30,6,1.9788369128731391,2.592191235396072,0,3,0,0,0,24
+wages,adj_week_somecol,inflow,long difference,30,30,-0.297235427000326,0.1231036536159002,0,0,24,0,0,0
+wages,adj_week_somecol,inflow,baseline-level control,30,30,0.3337954593207195,2.2677469988218464,0,23,0,0,0,0
+wages,adj_hour_noba,d_fbemp,long difference,30,28,-0.2940599044093415,0.3847285610423421,0,0,22,0,0,2
+wages,adj_hour_noba,d_fbemp,baseline-level control,30,28,0.7402716744201092,1.852770856331154,0,25,0,0,0,2
+wages,adj_hour_noba,d_mexemp,long difference,30,6,0.0731206999410029,0.1982724063296894,0,0,6,0,0,24
+wages,adj_hour_noba,d_mexemp,baseline-level control,30,6,1.7397767673642002,1.9939630175974272,0,3,0,0,0,24
+wages,adj_hour_noba,inflow,long difference,30,30,-0.2314607876235946,0.1784068667430728,0,0,24,0,0,0
+wages,adj_hour_noba,inflow,baseline-level control,30,30,0.288011367689278,0.9845958257330444,0,24,0,0,0,0
+wages,adj_hour_ba,d_fbemp,long difference,30,28,0.4471876863804412,1.0970846509839405,0,24,22,0,18,2
+wages,adj_hour_ba,d_fbemp,baseline-level control,30,28,1.0779348901423236,5.997609986789677,0,21,0,0,0,2
+wages,adj_hour_ba,d_mexemp,long difference,30,6,2.690094404900646,2.838380593160904,0,6,6,0,6,24
+wages,adj_hour_ba,d_mexemp,baseline-level control,30,6,3.497461830561743,3.929098430929616,0,6,0,0,0,24
+wages,adj_hour_ba,inflow,long difference,30,30,0.1932080019460518,0.9111983153871982,0,24,24,0,18,0
+wages,adj_hour_ba,inflow,baseline-level control,30,30,0.3045091265835192,7.091750981875018,0,18,0,0,0,0
+wages,adj_hour_hsl,d_fbemp,long difference,30,28,-0.2409579703488219,0.5519178682546519,0,4,22,0,0,2
+wages,adj_hour_hsl,d_fbemp,baseline-level control,30,28,0.7710322707162497,1.569520240263053,0,28,0,0,0,2
+wages,adj_hour_hsl,d_mexemp,long difference,30,6,0.4051229405624765,0.5571660663151267,0,0,6,0,0,24
+wages,adj_hour_hsl,d_mexemp,baseline-level control,30,6,1.9451722714812016,2.2562171619445075,0,6,0,0,0,24
+wages,adj_hour_hsl,inflow,long difference,30,30,-0.1969570473405403,0.2636679087770823,0,6,24,0,2,0
+wages,adj_hour_hsl,inflow,baseline-level control,30,30,0.3068822659806058,0.7224774380997443,0,27,0,0,0,0
+wages,adj_hour_somecol,d_fbemp,long difference,30,28,-0.4908475084238988,0.1449966091191122,0,0,22,0,0,2
+wages,adj_hour_somecol,d_fbemp,baseline-level control,30,28,0.6939259167312312,2.7008026200480666,0,10,0,0,0,2
+wages,adj_hour_somecol,d_mexemp,long difference,30,6,-0.8191187024985214,-0.3346719833218048,0,0,6,0,0,24
+wages,adj_hour_somecol,d_mexemp,baseline-level control,30,6,1.550576082307386,1.6842676089918784,0,0,0,0,0,24
+wages,adj_hour_somecol,inflow,long difference,30,30,-0.3831851265062502,0.0643652462016981,0,0,24,0,0,0
+wages,adj_hour_somecol,inflow,baseline-level control,30,30,0.2688486375578071,1.7625220682706604,0,12,0,0,0,0
+wages,raw_week_noba,d_fbemp,long difference,30,28,-0.3176206883276755,0.0996802015324327,0,0,22,0,0,2
+wages,raw_week_noba,d_fbemp,baseline-level control,30,28,0.5988834405112868,2.2260784327932015,0,17,0,0,0,2
+wages,raw_week_noba,d_mexemp,long difference,30,6,-0.8506621745909513,-0.2123360034952028,0,0,6,0,0,24
+wages,raw_week_noba,d_mexemp,baseline-level control,30,6,1.6497347065949557,2.299893125826827,0,0,0,0,0,24
+wages,raw_week_noba,inflow,long difference,30,30,-0.2479538381046921,0.0462238425541841,0,0,24,0,0,0
+wages,raw_week_noba,inflow,baseline-level control,30,30,0.1711814004607461,1.3224319363309291,0,13,0,0,0,0
+wages,raw_week_ba,d_fbemp,long difference,30,28,0.1754883250033634,1.019757739478007,0,23,22,0,15,2
+wages,raw_week_ba,d_fbemp,baseline-level control,30,28,0.2738084600221384,5.887581749482138,0,18,0,0,0,2
+wages,raw_week_ba,d_mexemp,long difference,30,6,1.8046391259571788,2.0711738940618183,0,0,6,0,4,24
+wages,raw_week_ba,d_mexemp,baseline-level control,30,6,2.2960198227075708,2.770911935637436,0,6,0,0,0,24
+wages,raw_week_ba,inflow,long difference,30,30,-0.0290831664046233,0.8529931995162006,0,15,24,0,15,0
+wages,raw_week_ba,inflow,baseline-level control,30,30,-0.0246775541480275,5.455936329810356,0,16,0,0,0,0
+wages,rel_week,d_fbemp,long difference,30,28,-0.9706722052509582,-0.0855038186809036,24,0,22,18,0,2
+wages,rel_week,d_fbemp,baseline-level control,30,28,-1.8372581219823505,-0.454677602990105,24,0,0,0,0,2
+wages,rel_week,d_mexemp,long difference,30,6,-2.016610637268661,-1.7218873490003168,6,0,6,6,0,24
+wages,rel_week,d_mexemp,baseline-level control,30,6,-3.32625108706132,-2.846336287638026,6,0,0,0,0,24
+wages,rel_week,d_lnLH,long difference,30,14,-0.437963191046181,-0.0518505107891686,6,0,12,6,0,16
+wages,rel_week,d_lnLH,baseline-level control,30,14,-1.036441423572536,-0.2585733121529532,7,0,0,0,0,16
+wages,rel_week,d_lnLH_hrs,long difference,30,3,-0.385638697426633,-0.1023797136272777,1,0,3,1,0,27
+wages,rel_week,d_lnLH_hrs,baseline-level control,30,3,-0.885641973726871,-0.4982324420741916,1,0,0,0,0,27
+wages,rel_week,d_lnLH_hsl,long difference,30,30,-0.4072917045072136,-0.0191123657760217,18,0,24,18,0,0
+wages,rel_week,d_lnLH_hsl,baseline-level control,30,30,-1.0197342927314823,-0.0951639511843382,24,0,0,0,0,0
+wages,rel_hour,d_fbemp,long difference,30,28,-1.3894557468049629,-0.0909517659670968,24,0,22,18,0,2
+wages,rel_hour,d_fbemp,baseline-level control,30,28,-1.7532551174936677,-0.4493590172735935,26,0,0,0,0,2
+wages,rel_hour,d_mexemp,long difference,30,6,-2.7463538376728227,-2.5049409929784665,6,0,6,6,0,24
+wages,rel_hour,d_mexemp,baseline-level control,30,6,-4.1968833321092855,-3.5902480586881693,6,0,0,0,0,24
+wages,rel_hour,d_lnLH,long difference,30,14,-0.6258610410719,-0.0294757365449597,6,0,12,6,0,16
+wages,rel_hour,d_lnLH,baseline-level control,30,14,-1.0668176686691542,-0.2431467308768706,7,0,0,0,0,16
+wages,rel_hour,d_lnLH_hrs,long difference,30,3,-0.5504466883984355,-0.0456352178408837,1,0,3,1,0,27
+wages,rel_hour,d_lnLH_hrs,baseline-level control,30,3,-0.9422962394059502,-0.4295282005036919,1,0,0,0,0,27
+wages,rel_hour,d_lnLH_hsl,long difference,30,30,-0.558174055004383,-0.0121912490087518,20,0,24,18,0,0
+wages,rel_hour,d_lnLH_hsl,baseline-level control,30,30,-0.8040154270699642,-0.0900175002485462,26,0,0,0,0,0
+wages,relhs_week,d_fbemp,long difference,30,28,-1.0942584609911163,-0.1195783151257712,24,0,22,18,0,2
+wages,relhs_week,d_fbemp,baseline-level control,30,28,-2.010731372719724,-0.7253715519051855,24,0,0,0,0,2
+wages,relhs_week,d_mexemp,long difference,30,6,-2.121866451085328,-1.8101920311441884,6,0,6,6,0,24
+wages,relhs_week,d_mexemp,baseline-level control,30,6,-3.626753870725692,-3.1590735810965893,6,0,0,0,0,24
+wages,relhs_week,d_lnLH,long difference,30,14,-0.4450364712689385,-0.0585212762445086,4,0,12,6,0,16
+wages,relhs_week,d_lnLH,baseline-level control,30,14,-1.2148981207564022,-0.3767625161905091,10,0,0,0,0,16
+wages,relhs_week,d_lnLH_hrs,long difference,30,3,-0.3975731834286806,-0.0906043920453472,0,0,3,1,0,27
+wages,relhs_week,d_lnLH_hrs,baseline-level control,30,3,-1.026282102269386,-0.6297938549362356,1,0,0,0,0,27
+wages,relhs_week,d_lnLH_hsl,long difference,30,30,-0.46205682701278,-0.0242045673708119,18,0,24,18,0,0
+wages,relhs_week,d_lnLH_hsl,baseline-level control,30,30,-1.167008520241795,-0.1468884330648248,26,0,0,0,0,0
+wages,adj_week_noba,d_lnLH,long difference,30,14,-0.0717394583245818,0.1932835049692659,0,0,12,0,0,16
+wages,adj_week_noba,d_lnLH,baseline-level control,30,14,0.3389222923117246,0.4956731642079938,0,14,0,0,0,16
+wages,adj_week_ba,d_lnLH,long difference,30,14,0.1194310504872477,0.4352159816855487,0,0,12,0,3,16
+wages,adj_week_ba,d_lnLH,baseline-level control,30,14,0.2726534832506649,0.7757498333005027,0,8,0,0,0,16
+wages,adj_week_hsl,d_lnLH,long difference,30,14,-0.0788127385473378,0.1789154957620504,0,0,12,0,0,16
+wages,adj_week_hsl,d_lnLH,baseline-level control,30,14,0.3151095898597837,0.476774180532726,0,14,0,0,0,16
+wages,"native employment 25-64, log change",d_fbemp,long difference,30,28,-1.3794916134973896,0.9057036202286372,0,0,22,5,0,2
+wages,"native employment 25-64, log change",inflow,long difference,30,30,-1.1426993787703363,0.4718719898908499,0,0,24,5,0,0
+wages,log(L/H) employment 25-64,d_fbemp,long difference,30,28,-0.046713017990406,1.8770481375148549,0,22,22,0,16,2
+wages,log(L/H) employment 25-64,d_mexemp,long difference,30,6,4.2904914820390445,6.580423721967406,0,6,6,0,6,24
+pre-trend,"adj_week_noba, 1990-2000 (placebo)",d_fbemp,long difference,8,7,-0.1187646808475517,0.5977126340013053,0,2,7,0,2,1
+pre-trend,"adj_week_noba, 2000-2010 (same metros)",d_fbemp,long difference,8,7,-0.2587347108644877,0.5706540852477435,0,0,7,0,0,1
+pre-trend,"adj_week_noba, 2000-2010 given 1990-2000 change",d_fbemp,long difference,4,4,0.1025862139238948,0.2869583536600335,0,0,4,0,0,0
+pre-trend,"adj_week_noba, 1990-2000 on 1990s inflow",pre_fbemp_x,long difference,4,4,0.0389094741537208,0.3525036100812538,0,1,4,0,1,0
+pre-trend,"adj_week_ba, 1990-2000 (placebo)",d_fbemp,long difference,8,7,0.8012049002451174,1.8172116797521265,0,6,7,0,6,1
+pre-trend,"adj_week_ba, 2000-2010 (same metros)",d_fbemp,long difference,8,7,0.3919696480693073,0.5638183302738853,0,0,7,0,0,1
+pre-trend,"adj_week_ba, 2000-2010 given 1990-2000 change",d_fbemp,long difference,4,4,0.9098268682303216,1.1092291034175603,0,4,4,0,4,0
+pre-trend,"adj_week_ba, 1990-2000 on 1990s inflow",pre_fbemp_x,long difference,4,4,0.8292778329455073,0.973794801255772,0,4,4,0,4,0
+pre-trend,"adj_week_hsl, 1990-2000 (placebo)",d_fbemp,long difference,8,7,-0.4114452794736872,0.3626916654442358,1,1,7,1,1,1
+pre-trend,"adj_week_hsl, 2000-2010 (same metros)",d_fbemp,long difference,8,7,-0.1824225376718411,0.5526361247883522,0,0,7,0,0,1
+pre-trend,"adj_week_hsl, 2000-2010 given 1990-2000 change",d_fbemp,long difference,4,4,0.0459275303073392,0.1934268113656161,0,0,4,0,0,0
+pre-trend,"adj_week_hsl, 1990-2000 on 1990s inflow",pre_fbemp_x,long difference,4,4,-0.187761532428705,0.2027010781434156,0,0,4,0,0,0
+pre-trend,"adj_hour_noba, 1990-2000 (placebo)",d_fbemp,long difference,8,7,-0.5846506564120131,0.3686862463499298,0,0,7,0,0,1
+pre-trend,"adj_hour_noba, 2000-2010 (same metros)",d_fbemp,long difference,8,7,-0.1510824341277128,0.5972484084176208,0,0,7,0,0,1
+pre-trend,"adj_hour_noba, 2000-2010 given 1990-2000 change",d_fbemp,long difference,4,4,0.067455064708514,0.2101578924464927,0,0,4,0,0,0
+pre-trend,"adj_hour_noba, 1990-2000 on 1990s inflow",pre_fbemp_x,long difference,4,4,-0.2482866942781287,0.1528066238700692,0,0,4,0,0,0
+pre-trend,"adj_hour_ba, 1990-2000 (placebo)",d_fbemp,long difference,8,7,0.3682900404287199,1.1478602966299642,0,6,7,0,5,1
+pre-trend,"adj_hour_ba, 2000-2010 (same metros)",d_fbemp,long difference,8,7,0.6616779579622956,0.9440969154291003,0,6,7,0,4,1
+pre-trend,"adj_hour_ba, 2000-2010 given 1990-2000 change",d_fbemp,long difference,4,4,1.1154224116362736,1.3252201450188412,0,4,4,0,4,0
+pre-trend,"adj_hour_ba, 1990-2000 on 1990s inflow",pre_fbemp_x,long difference,4,4,0.4591632411695019,0.6710228149145196,0,3,4,0,3,0
+pre-trend,"adj_hour_hsl, 1990-2000 (placebo)",d_fbemp,long difference,8,7,-1.0391366687020387,0.1436686331737102,1,0,7,1,0,1
+pre-trend,"adj_hour_hsl, 2000-2010 (same metros)",d_fbemp,long difference,8,7,0.0569206059382234,0.7584139630968573,0,1,7,0,1,1
+pre-trend,"adj_hour_hsl, 2000-2010 given 1990-2000 change",d_fbemp,long difference,4,4,0.1286069498202072,0.2676796567378313,0,0,4,0,0,0
+pre-trend,"adj_hour_hsl, 1990-2000 on 1990s inflow",pre_fbemp_x,long difference,4,4,-0.4742061777156211,0.0057087441135884,0,0,4,0,0,0
+pre-trend,"rel_week, 1990-2000 (placebo)",d_fbemp,long difference,8,7,-1.7319486375289777,-0.8098711085876521,7,0,7,7,0,1
+pre-trend,"rel_week, 2000-2010 (same metros)",d_fbemp,long difference,8,7,-0.6507043589337997,0.1355679887172216,2,0,7,4,0,1
+pre-trend,"rel_week, 2000-2010 given 1990-2000 change",d_fbemp,long difference,4,4,-0.6349226601223938,-0.3891355790422498,2,0,4,2,0,0
+pre-trend,"rel_week, 1990-2000 on 1990s inflow",pre_fbemp_x,long difference,4,4,-0.790368358791787,-0.6212911911745178,4,0,4,4,0,0
+pre-trend,"lnLH, 1990-2000 (placebo)",d_fbemp,long difference,8,7,-1.2430441680686215,-0.1288433972995761,1,0,7,2,0,1
+pre-trend,"lnLH, 2000-2010 (same metros)",d_fbemp,long difference,8,7,1.615072524184917,2.5211295658764783,0,7,7,0,7,1
+pre-trend,"lnLH, 2000-2010 given 1990-2000 change",d_fbemp,long difference,4,4,1.9324930339881612,2.4284591323998157,0,4,4,0,4,0
+pre-trend,"lnLH, 1990-2000 on 1990s inflow",pre_fbemp_x,long difference,4,4,-0.6494681795161554,-0.4729525624681088,2,0,4,2,0,0
+pre-trend,"lncomm_nat, 1990-2000 (placebo)",d_fbemp,long difference,8,7,-0.5405728473900737,0.4385148539747519,0,0,7,0,0,1
+pre-trend,"lncomm_nat, 2000-2010 (same metros)",d_fbemp,long difference,8,7,-0.8990785024195054,-0.3726356737058003,1,0,7,2,0,1
+pre-trend,"lncomm_nat, 2000-2010 given 1990-2000 change",d_fbemp,long difference,4,4,-0.5240865351610529,-0.3785581184188384,0,0,4,1,0,0
+pre-trend,"lncomm_nat, 1990-2000 on 1990s inflow",pre_fbemp_x,long difference,4,4,-0.246688420742478,-0.0239649022611612,0,0,4,0,0,0
+pre-trend,"lncar_nat, 1990-2000 (placebo)",d_fbemp,long difference,8,7,-0.3265074080916363,0.5007750075009838,0,0,7,0,0,1
+pre-trend,"lncar_nat, 2000-2010 (same metros)",d_fbemp,long difference,8,7,-0.9098008636388788,-0.427021145723895,2,0,7,2,0,1
+pre-trend,"lncar_nat, 2000-2010 given 1990-2000 change",d_fbemp,long difference,4,4,-0.5773809863329051,-0.4070191772023299,1,0,4,1,0,0
+pre-trend,"lncar_nat, 1990-2000 on 1990s inflow",pre_fbemp_x,long difference,4,4,-0.1490004487863743,0.0722861975492197,0,0,4,0,0,0
+pre-trend,"foreign-born employment share, 1990-2000",d_fbemp,long difference,8,7,1.5332393779163702,2.1913182862944645,0,7,7,0,7,1
+pre-trend,"rel_week, 2000s minus 1990s change",dd_fbemp,long difference,8,8,-1.0206366553402335,-0.7268489486494486,6,0,6,6,0,0
+pre-trend,"rel_week, 2000s minus 1990s change",dd_lnLH,long difference,8,8,0.2123928933150666,0.3039321022823156,0,8,6,0,6,0
+pre-trend,"adj_week_noba, 2000s minus 1990s change",dd_fbemp,long difference,8,8,0.1895870623955869,0.7399735775636911,0,0,6,0,0,0
+pre-trend,"adj_week_ba, 2000s minus 1990s change",dd_fbemp,long difference,8,8,1.0177986467372997,1.6894193758486185,0,8,6,0,5,0
+pre-trend,"adj_week_hsl, 2000s minus 1990s change",dd_fbemp,long difference,8,8,-0.3151661198555333,0.4066020065173356,0,0,6,0,0,0
+pre-trend,"lncar_nat, 2000s minus 1990s change",dd_fbemp,long difference,8,8,0.1780258346600356,1.2123101322420724,0,0,6,0,0,0
+pre-trend,"lncomm_nat, 2000s minus 1990s change",dd_fbemp,long difference,8,8,-0.0845791895114604,0.9843180705956622,0,0,6,0,0,0
+pre-trend,"rel_week, 1990-2000 (placebo)",d_lnLH,long difference,8,8,-0.7143093285523844,-0.418342711436703,8,0,8,8,0,0
+pre-trend,"rel_week, 2000-2010 (same metros)",d_lnLH,long difference,8,8,-0.3099246512381901,0.0638518994886778,0,0,8,4,0,0
+pre-trend,"relhs_week, 1990-2000 (placebo)",d_fbemp,long difference,8,7,-2.2286569592258236,-1.044892077144723,7,0,7,7,0,1
+pre-trend,"relhs_week, 2000-2010 (same metros)",d_fbemp,long difference,8,7,-0.5743921857411411,0.1175500282578285,4,0,7,4,0,1
+pre-trend,"relhs_week, 1990-2000 (placebo)",d_lnLH_hsl,long difference,8,8,-0.3668501714961483,-0.2417412521640159,8,0,8,8,0,0
+pre-trend,"relhs_week, 2000-2010 (same metros)",d_lnLH_hsl,long difference,8,8,-0.1278076196134858,0.0244363427515611,2,0,8,4,0,0
+pre-trend,"relhs_week, 2000-2010 given 1990-2000 change",d_fbemp,long difference,4,4,-0.5915525528548272,-0.3750803816113655,2,0,4,2,0,0
+pre-trend,"relhs_week, 2000s minus 1990s change",dd_fbemp,long difference,8,8,-1.5094735482102466,-1.093275482081466,7,0,6,6,0,0
+pre-trend,"relhs_week, 2000s minus 1990s change",dd_lnLH_hsl,long difference,8,8,0.2106640555805331,0.33282102868225,0,8,6,0,6,0

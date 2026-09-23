@@ -1,0 +1,10 @@
+regressor,outcome,n,coef,se,weighted_r2
+Z2_mex: Mexico PushPull_10 per 100 residents (the lane's instrument),"Mexico-born share of employment 2000, points",341,0.4441153493880284,0.9458029531212585,0.003404129599131611
+Z2_mex: Mexico PushPull_10 per 100 residents (the lane's instrument),"change in that share 2000-2010, points",341,-0.001649951346128678,0.1348597180249269,8.289739519273809e-07
+Z2_mex: Mexico PushPull_10 per 100 residents (the lane's instrument),"Mexico-born employment growth 2000-2010 / 2000 employment, points",341,-0.24480791223358297,0.25216845157176704,0.004324492237549382
+Mexico PushPull_9 per 100 residents (1990s wave),"Mexico-born share of employment 2000, points",341,0.17802060861225522,0.7322752385483577,0.0011258148634955
+Mexico PushPull_9 per 100 residents (1990s wave),"change in that share 2000-2010, points",341,-0.020619275817128108,0.08864175633002339,0.000266475521452314
+Mexico PushPull_9 per 100 residents (1990s wave),"Mexico-born employment growth 2000-2010 / 2000 employment, points",341,-0.27678272161924083,0.15550931981826974,0.011378213238875223
+Mexico predicted 2010 ancestry per 100 residents (file's Ancestry column),"Mexico-born share of employment 2000, points",341,0.44681945288366554,0.03856384266161518,0.8999837254974312
+Mexico predicted 2010 ancestry per 100 residents (file's Ancestry column),"change in that share 2000-2010, points",341,0.07030986979586018,0.014712018971427342,0.39317617013561
+Mexico predicted 2010 ancestry per 100 residents (file's Ancestry column),"Mexico-born employment growth 2000-2010 / 2000 employment, points",341,0.1983105621241789,0.02548065586287931,0.741194016817831
