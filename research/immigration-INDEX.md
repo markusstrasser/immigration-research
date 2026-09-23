@@ -32,6 +32,8 @@ Civil custody, criminal offenses and fiscal spending: [detention/crime measureme
 
 Crime selection by arrival cohort ([lane](../infra/immigration-fiscal/crime_selection_cohorts_2026_09_23/RESULT.md), ladder 196): Mexico-born arrival cohorts from 1975 to 2019 do not show rising positive selection on custody. Butcher and Piehl's result covers all immigrants and is measured in percentage points. The interstate movers' advantage is their schooling. The 2000 census assigned a US birthplace to most institutionalized Mexican-origin men whose birthplace it allocated, so 2000-census immigrant institutional rates (Butcher–Piehl, Rumbaut) run low for the foreign-born. The size of that bias is under an external count check.
 
+Schooling position by arrival cohort ([lane](../infra/immigration-fiscal/schooling_selection_position_2026_09_23/RESULT.md), ladder 197): Mexican adult arrivals rank at a mean percentile of 0.51–0.56 among Mexicans of their own sex and birth year, where 0.50 is the median. The rank shows no rise across cohorts from 1975 to 2023. Every specification stays within 0.44–0.60. Studies on Mexican surveys, which count mostly returnees, find negative selection.
+
 **Detention spending investigation completed through September 20, 2026:**
 [FY2024 reconciled accounts, verified custody subtotal and identification limits](../infra/immigration-fiscal/detention_reconciliation_2026_09_20/README.md).
 Expired-funding records have been acquired and reconciled; the unresolved pieces
