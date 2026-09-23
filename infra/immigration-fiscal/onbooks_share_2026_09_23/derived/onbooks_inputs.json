@@ -1,0 +1,100 @@
+{
+  "all_wage_earner_mean_capped_wage": 62972.85624776188,
+  "all_wage_earner_mean_uncapped_wage": 72348.84882058881,
+  "unauthorized_all_origins_M": 14.89640116,
+  "construction": {
+    "H2010": 0.4428571428571429,
+    "H2040": 0.31818181818181823,
+    "EROSION_2024": 0.058181818181818175,
+    "H_MMP_SETTLED": 0.3815789473684211,
+    "H_POST2001": 0.33,
+    "wage_ratio_uncapped": {
+      "mex": 0.605820622797587,
+      "oth": 0.638262170174872
+    },
+    "PROTECTED": {
+      "mex": [
+        0.08,
+        0.11,
+        0.15
+      ],
+      "oth": [
+        0.15,
+        0.25,
+        0.35
+      ]
+    },
+    "S_AUTH": [
+      0.8,
+      0.9,
+      0.92
+    ],
+    "shares": {
+      "low": [
+        0.4150526315789474,
+        0.4005
+      ],
+      "central": [
+        0.5262685374807583,
+        0.5500607625284325
+      ],
+      "high": [
+        0.6350825452461911,
+        0.6828011332124232
+      ]
+    }
+  },
+  "latin": {
+    "persons_M": 9.53544965,
+    "wage_earners_M": 6.16281276,
+    "capped_wages_bn": 259.6753258746,
+    "mean_capped_wage_ratio_to_all_earners": 0.6691112320690181,
+    "mean_wage_ratio_to_all_earners_uncapped": 0.6218364701179443,
+    "wage_share_arrived_2022_2025": 0.19590839372169275,
+    "wage_share_arrived_2020_2025": 0.2938432531546257,
+    "wage_share_arrived_after_2001": 0.7117216012502856,
+    "modelled_fedtax_bc_bn": 25.06792932689,
+    "modelled_fedtax_ac_bn": 17.96713605537,
+    "modelled_actc_bn": 2.08694632829,
+    "modelled_eitc_bn": 5.013846943230001
+  },
+  "mexico": {
+    "persons_M": 4.5671444900000004,
+    "wage_earners_M": 3.12033556,
+    "capped_wages_bn": 130.0339970489,
+    "mean_capped_wage_ratio_to_all_earners": 0.6617626013251332,
+    "mean_wage_ratio_to_all_earners_uncapped": 0.605820622797587,
+    "wage_share_arrived_2022_2025": 0.13772910404549854,
+    "wage_share_arrived_2020_2025": 0.19926631144189066,
+    "wage_share_arrived_after_2001": 0.5767368100912683,
+    "modelled_fedtax_bc_bn": 11.6193367364,
+    "modelled_fedtax_ac_bn": 7.887179640239999,
+    "modelled_actc_bn": 1.07131040735,
+    "modelled_eitc_bn": 2.66084668881
+  },
+  "other_latin": {
+    "persons_M": 4.968305159999999,
+    "wage_earners_M": 3.0424772,
+    "capped_wages_bn": 129.6413288257,
+    "mean_capped_wage_ratio_to_all_earners": 0.6766479175789222,
+    "mean_wage_ratio_to_all_earners_uncapped": 0.638262170174872,
+    "wage_share_arrived_2022_2025": 0.25426390157237744,
+    "wage_share_arrived_2020_2025": 0.3887066572169402,
+    "wage_share_arrived_after_2001": 0.8471152453467381,
+    "modelled_fedtax_bc_bn": 13.44859259049,
+    "modelled_fedtax_ac_bn": 10.079956415129999,
+    "modelled_actc_bn": 1.01563592094,
+    "modelled_eitc_bn": 2.35300025442
+  },
+  "modelled_filing_units_with_unauthorized_head_or_spouse_M": 8.51341225,
+  "itin_returns_ty2022_over_modelled_units": 0.4453468114386214,
+  "itin_primary_ty2023_over_modelled_units": 0.28190811504517477,
+  "unauthorized_adults_by_FILESTAT_M": {
+    "1": 5.475158,
+    "2": 0.07700794,
+    "3": 0.05188286,
+    "4": 0.8287638900000001,
+    "5": 5.02901442,
+    "6": 1.793419
+  }
+}
