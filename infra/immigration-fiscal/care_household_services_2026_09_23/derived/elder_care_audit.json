@@ -1,0 +1,50 @@
+{
+  "cps_scale": 1.0372070224848546,
+  "nh_residents": 1258309.1,
+  "nh_source": "CMS provider file Aug 2026 (14632 facilities)",
+  "nhe_check": "NHE workbook matches",
+  "nhe_2024_bn": {
+    "total": 219.9,
+    "medicare": 47.3,
+    "medicaid": 78.9
+  },
+  "nh_share_65plus": 0.821,
+  "prices": {
+    "per_nh_resident": 62703.19431052354,
+    "per_acs_institutional_65p": 45197.20123973804
+  },
+  "hcbs_price_2024": {
+    "state_plan_all": 16847.34072353957,
+    "waiver_seniors_pd": 21331.88465714363
+  },
+  "cpi_ratio_2024_2020": 1.21203890097407,
+  "demand_share": {
+    "need_all_ages": 0.08865832887719538,
+    "need_65plus": 0.06754484612987838,
+    "need_medicaid": 0.10704178263347594,
+    "no_netting": 0.0
+  },
+  "union_institutional_share_65p": 0.03148213814622497,
+  "bases": {
+    "others_citizen_65p": 56754691.0,
+    "others_citizen_65p_institutional": 1374800.0,
+    "others_usborn_65p": 50682147.0,
+    "others_medicaid_65p_with_need_in_households": 2147275.0,
+    "nh_residents_all": 1258309.1,
+    "nh_residents_others": 1218694.8390831482,
+    "acs_institutional_65p_all": 1433206.0
+  },
+  "bmw_T0": 0.08948692556988018,
+  "bmw_T1_union": 0.061134818074261466,
+  "bmw_T1_mexborn": 0.055788472153109,
+  "bmw_dT_union": 0.028352107495618714,
+  "bmw_dT_mexborn": 0.033698453416771176,
+  "lowed_fb_hour_share": {
+    "home_care_aaf": 0.2580206443923961,
+    "home_care_kw": 0.2036482419746633,
+    "direct_care_all": 0.168347881764006
+  },
+  "draws": 200000,
+  "seed": 20260923,
+  "faq13_price_per_resident": 55051.402240850235
+}
