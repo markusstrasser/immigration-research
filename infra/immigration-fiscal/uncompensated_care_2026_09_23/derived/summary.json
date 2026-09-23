@@ -11,5 +11,35 @@
  "excess_over_per_head_bn_2024_prices": 7.023529175294862,
  "target_share_of_medicaid_covered": 0.19647486897309102,
  "check_price_x_exposure_national_bn": 49.618480629753286,
- "check_price_x_exposure_target_bn": 12.772421510895873
+ "check_price_x_exposure_target_bn": 12.772421510895873,
+ "added_cost_bn_use_0.7": [
+  4.684391940848963,
+  7.404485663059295
+ ],
+ "inside_undercharged_bn_use_0.7": [
+  2.1180610680824943,
+  3.5052173709521566
+ ],
+ "outside_accounts_bn_use_0.7": [
+  2.4604836076619407,
+  4.2162394350351695
+ ],
+ "added_cost_bn_use_1.0": [
+  7.336094853406156,
+  10.586529158127924
+ ],
+ "inside_undercharged_bn_use_1.0": [
+  3.6515760054649666,
+  5.747597015128038
+ ],
+ "outside_accounts_bn_use_1.0": [
+  3.2435368167392316,
+  5.558065005244833
+ ],
+ "account_key_shares": {
+  "medicaid": 0.12252526925906518,
+  "medicare": 0.058025598186795944,
+  "health_other": 0.07677651459357537,
+  "per_head": 0.120245
+ }
 }
