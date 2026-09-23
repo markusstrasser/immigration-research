@@ -1,0 +1,11 @@
+rules,highest_parent_education,children_millions,n,share_no_legal_parent_present,se
+borjas_paper_rules,below_high_school,1.351,604,0.4477,0.0328
+borjas_paper_rules,high_school,1.881,847,0.3288,0.0274
+borjas_paper_rules,some_college,1.003,471,0.1674,0.0274
+borjas_paper_rules,bachelor_plus,0.774,333,0.1382,0.0282
+borjas_paper_rules,all,5.009,2255,0.2991,0.0154
+no_medicaid_rule,below_high_school,1.351,604,0.6163,0.0315
+no_medicaid_rule,high_school,1.881,847,0.4649,0.0305
+no_medicaid_rule,some_college,1.003,471,0.2169,0.0296
+no_medicaid_rule,bachelor_plus,0.774,333,0.1914,0.0318
+no_medicaid_rule,all,5.009,2255,0.4138,0.0158
