@@ -1,15 +1,15 @@
 {
   "group_scale_cps_over_acs": 1.0372070224848546,
-  "areas": 424,
-  "metro_areas": 377,
-  "saiz_matched_areas": 225,
-  "saiz_matched_share_of_other_rent": 0.8438765191250189,
-  "saiz_local_long_run_fill_elasticity": 0.5209087830459375,
+  "areas": 428,
+  "metro_areas": 381,
+  "saiz_matched_areas": 227,
+  "saiz_matched_share_of_other_rent": 0.8505704965998079,
+  "saiz_local_long_run_fill_elasticity": 0.5209333460089406,
   "exposure_mean_group_share_weighted_by": {
-    "other_renter_rent": 0.11519854445893112,
-    "group_renter_rent": 0.2787051198657337,
-    "other_owner_value": 0.11503202349497078,
-    "persons": 0.12024478832630489
+    "other_renter_rent": 0.11520630820080538,
+    "group_renter_rent": 0.278709674015852,
+    "other_owner_value": 0.11503641724966884,
+    "persons": 0.12024478832630493
   },
   "long_run_elasticities": {
     "low": 0.25,
@@ -22,46 +22,46 @@
   ],
   "extra_rent_per_native_head_renter_household": {
     "short_run_low": {
-      "metro_local": 1946.1042667944698,
+      "metro_local": 1946.2354234098489,
       "national_uniform": 2031.352896833858
     },
     "short_run_central": {
-      "metro_local": 2722.854837808909,
-      "national_uniform": 2953.508181666911
+      "metro_local": 2723.047467355222,
+      "national_uniform": 2953.5081816669112
     },
     "short_run_high": {
-      "metro_local": 3402.522036025178,
-      "national_uniform": 3818.4461931355495
+      "metro_local": 3402.7734769895546,
+      "national_uniform": 3818.44619313555
     },
     "long_run_low": {
-      "metro_local": 546.1328876701916,
-      "national_uniform": 532.4898092140929
+      "metro_local": 546.1667210968378,
+      "national_uniform": 532.489809214093
     },
     "long_run_central": {
-      "metro_local": 834.9094946316756,
+      "metro_local": 834.9621086028143,
       "national_uniform": 825.503574217048
     },
     "long_run_high": {
-      "metro_local": 1234.6777103919142,
+      "metro_local": 1234.7573967805097,
       "national_uniform": 1244.6905912290963
     }
   },
   "breakeven_common_leak_share": {
     "short_run_national_uniform": {
-      "frame": 0.10849904348139625,
-      "welfare": 0.054828169743885775
+      "frame": 0.1084990434813962,
+      "welfare": 0.05482816974388577
     },
     "short_run_metro_local": {
-      "frame": 0.21945657117906098,
-      "welfare": 0.11449312543933587
+      "frame": 0.21944755780347477,
+      "welfare": 0.1144883448742569
     },
     "long_run_national_uniform": {
       "frame": 0.10849904348139623,
       "welfare": 0.05665801689029032
     },
     "long_run_metro_local": {
-      "frame": 0.2405222658365382,
-      "welfare": 0.12909979713168473
+      "frame": 0.24051332236713702,
+      "welfare": 0.12909439190659622
     }
   }
 }

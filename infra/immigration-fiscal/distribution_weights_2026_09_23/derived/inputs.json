@@ -163,29 +163,29 @@
  },
  "housing": {
   "low|metro_local": {
-   "renters": 22.146225995032054,
-   "net": 2.30098497550333,
-   "owners_stock": 1263.8331911911675
+   "renters": 22.147597973774975,
+   "net": 2.300981876715154,
+   "owners_stock": 1263.8785232803805
   },
   "low|national_uniform": {
-   "renters": 21.592985738717044,
-   "net": 0.4531429154183446,
+   "renters": 21.592985738717047,
+   "net": 0.4531429154183445,
    "owners_stock": 1232.3383897849458
   },
   "central|metro_local": {
-   "renters": 33.8564015662745,
-   "net": 3.507583155590023,
-   "owners_stock": 1931.5696299857125
+   "renters": 33.858535114576824,
+   "net": 3.507578587187932,
+   "owners_stock": 1931.6398319116452
   },
   "central|national_uniform": {
    "renters": 33.47498223794534,
    "net": 0.7082298460183115,
-   "owners_stock": 1910.4586187551597
+   "owners_stock": 1910.4586187551593
   },
   "high|metro_local": {
-   "renters": 50.06739609111531,
-   "net": 5.1682296556170035,
-   "owners_stock": 2855.3063201808704
+   "renters": 50.07062745258503,
+   "net": 5.168223296244807,
+   "owners_stock": 2855.4119883751405
   },
   "high|national_uniform": {
    "renters": 50.473428261833945,

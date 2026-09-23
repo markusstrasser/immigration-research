@@ -169,18 +169,18 @@
  },
  "acs_rent_low_metro_local": {
   "passed": true,
-  "acs": 22.14622599503205,
-  "lane": 22.146225995032054
+  "acs": 22.147597973774978,
+  "lane": 22.147597973774975
  },
  "acs_owner_value_low_metro_local": {
   "passed": true,
-  "acs": 1263.8331911911673,
-  "lane": 1263.8331911911675
+  "acs": 1263.87852328038,
+  "lane": 1263.8785232803805
  },
  "acs_rent_low_national_uniform": {
   "passed": true,
   "acs": 21.592985823170086,
-  "lane": 21.592985738717044
+  "lane": 21.592985738717047
  },
  "acs_owner_value_low_national_uniform": {
   "passed": true,
@@ -189,13 +189,13 @@
  },
  "acs_rent_central_metro_local": {
   "passed": true,
-  "acs": 33.85640156627449,
-  "lane": 33.8564015662745
+  "acs": 33.85853511457682,
+  "lane": 33.858535114576824
  },
  "acs_owner_value_central_metro_local": {
   "passed": true,
-  "acs": 1931.5696299857123,
-  "lane": 1931.5696299857125
+  "acs": 1931.6398319116447,
+  "lane": 1931.6398319116452
  },
  "acs_rent_central_national_uniform": {
   "passed": true,
@@ -205,17 +205,17 @@
  "acs_owner_value_central_national_uniform": {
   "passed": true,
   "acs": 1910.4586261595507,
-  "lane": 1910.4586187551597
+  "lane": 1910.4586187551593
  },
  "acs_rent_high_metro_local": {
   "passed": true,
-  "acs": 50.0673960911153,
-  "lane": 50.06739609111531
+  "acs": 50.07062745258501,
+  "lane": 50.07062745258503
  },
  "acs_owner_value_high_metro_local": {
   "passed": true,
-  "acs": 2855.306320180869,
-  "lane": 2855.3063201808704
+  "acs": 2855.4119883751396,
+  "lane": 2855.4119883751405
  },
  "acs_rent_high_national_uniform": {
   "passed": true,
@@ -269,18 +269,18 @@
  },
  "sum_spm_renters": {
   "passed": true,
-  "split": -33.8564015662745,
-  "given": -33.8564015662745
+  "split": -33.85853511457682,
+  "given": -33.858535114576824
  },
  "sum_spm_landlords": {
   "passed": true,
-  "split": 37.36398472186452,
-  "given": 37.363984721864526
+  "split": 37.36611370176475,
+  "given": 37.36611370176475
  },
  "sum_spm_housing_net": {
   "passed": true,
-  "split": 3.507583155590026,
-  "given": 3.507583155590023
+  "split": 3.5075785871879335,
+  "given": 3.507578587187932
  },
  "sum_spm_crime": {
   "passed": true,
@@ -319,18 +319,18 @@
  },
  "sum_spm_owner_value_stock_metro_local_central": {
   "passed": true,
-  "split": 1931.5696299857123,
-  "given": 1931.5696299857125
+  "split": 1931.6398319116447,
+  "given": 1931.6398319116452
  },
  "sum_spm_TOTAL_a": {
   "passed": true,
-  "split": -262.6246719251768,
-  "given": -262.6246719251765
+  "split": -262.62467649357893,
+  "given": -262.6246764935786
  },
  "sum_spm_TOTAL_b": {
   "passed": true,
-  "split": -262.6246719251768,
-  "given": -262.6246719251765
+  "split": -262.6246764935789,
+  "given": -262.6246764935786
  },
  "eta0_spm_fiscal_a": {
   "passed": true
@@ -549,18 +549,18 @@
  },
  "sum_money_renters": {
   "passed": true,
-  "split": -33.85640156627449,
-  "given": -33.8564015662745
+  "split": -33.85853511457682,
+  "given": -33.858535114576824
  },
  "sum_money_landlords": {
   "passed": true,
-  "split": 37.363984721864526,
-  "given": 37.363984721864526
+  "split": 37.36611370176475,
+  "given": 37.36611370176475
  },
  "sum_money_housing_net": {
   "passed": true,
-  "split": 3.507583155590029,
-  "given": 3.507583155590023
+  "split": 3.5075785871879384,
+  "given": 3.507578587187932
  },
  "sum_money_crime": {
   "passed": true,
@@ -599,18 +599,18 @@
  },
  "sum_money_owner_value_stock_metro_local_central": {
   "passed": true,
-  "split": 1931.5696299857123,
-  "given": 1931.5696299857125
+  "split": 1931.6398319116445,
+  "given": 1931.6398319116452
  },
  "sum_money_TOTAL_a": {
   "passed": true,
-  "split": -262.6246719251768,
-  "given": -262.6246719251765
+  "split": -262.6246764935789,
+  "given": -262.6246764935786
  },
  "sum_money_TOTAL_b": {
   "passed": true,
-  "split": -262.6246719251768,
-  "given": -262.6246719251765
+  "split": -262.6246764935789,
+  "given": -262.6246764935786
  },
  "eta0_money_fiscal_a": {
   "passed": true
