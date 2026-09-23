@@ -550,7 +550,9 @@
     "card:e4_prices_and_native_hours",
     "card:e5_ethnic_attrition_narrows_gap",
     "card:e12_incarceration_ratio_series",
-    "card:e13_care_workforce_composition"
+    "card:e13_care_workforce_composition",
+    "card:e4_care_channels_add",
+    "card:e4_scale_and_schooling_net"
    ]
   },
   {
@@ -681,7 +683,8 @@
    "url": "https://www.cms.gov/files/zip/nhe-tables.zip",
    "repo_ref": "infra/immigration-fiscal/mr_leads_papers_2026_09_21/README.md:28",
    "supports": [
-    "card:e13_elder_care_medicaid_bound"
+    "card:e13_elder_care_medicaid_bound",
+    "card:e4_care_channels_add"
    ]
   },
   {
@@ -1309,7 +1312,8 @@
    "url": "https://www.aeaweb.org/articles/materials/1197",
    "repo_ref": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:152",
    "supports": [
-    "card:e4_prices_and_native_hours"
+    "card:e4_prices_and_native_hours",
+    "card:e4_care_channels_add"
    ]
   },
   {
@@ -1625,7 +1629,8 @@
    "path": "infra/immigration-fiscal/main_case_2026_09_23/RESULT.md",
    "supports": [
     "preset:repo_central_gg",
-    "preset:proportional"
+    "preset:proportional",
+    "card:real_costs_and_benefits_totals"
    ]
   },
   {
@@ -1640,7 +1645,8 @@
    "supports": [
     "preset:repo_central_gg",
     "preset:proportional",
-    "ledger"
+    "ledger",
+    "card:e12_no_group_crime_cost_in_headline"
    ]
   },
   {
@@ -1655,7 +1661,167 @@
    "supports": [
     "preset:repo_central_gg",
     "preset:proportional",
-    "ledger"
+    "ledger",
+    "card:real_costs_and_benefits_totals"
+   ]
+  },
+  {
+   "key": "card_rothstein_yi_nber_w31587",
+   "short": "Card, Rothstein and Yi 2023",
+   "kind": "paper",
+   "authors": "David Card, Jesse Rothstein and Moises Yi",
+   "year": 2023,
+   "title": "Location, Location, Location",
+   "venue": "NBER Working Paper 31587",
+   "url": "https://www.nber.org/system/files/working_papers/w31587/w31587.pdf",
+   "repo_ref": "infra/immigration-fiscal/scale_spillovers_2026_09_23/fetch.py:44",
+   "supports": [
+    "card:e4_scale_and_schooling_net"
+   ]
+  },
+  {
+   "key": "burchardi_et_al_nber_w27075",
+   "short": "Burchardi and others 2021",
+   "kind": "paper",
+   "authors": "Konrad B. Burchardi, Thomas Chaney, Tarek Alexander Hassan, Lisa Tarquinio and Stephen J. Terry",
+   "year": 2021,
+   "title": "Immigration, Innovation, and Growth",
+   "venue": "NBER Working Paper 27075 (May 2020, revised November 2021)",
+   "url": "https://www.nber.org/system/files/working_papers/w27075/w27075.pdf",
+   "repo_ref": "infra/immigration-fiscal/scale_spillovers_2026_09_23/fetch.py:43",
+   "supports": [
+    "card:e4_scale_and_schooling_net"
+   ]
+  },
+  {
+   "key": "almuhaisen_amuedo_dorantes_furtado_iza_dp16357",
+   "short": "Almuhaisen, Amuedo-Dorantes and Furtado 2023",
+   "kind": "paper",
+   "authors": "Abdulmohsen Almuhaisen, Catalina Amuedo-Dorantes and Delia Furtado",
+   "year": 2023,
+   "title": "Immigration Enforcement and the Institutionalization of Elderly Americans",
+   "venue": "IZA Discussion Paper 16357; published in Journal of Health Economics 94 (2024)",
+   "url": "https://docs.iza.org/dp16357.pdf",
+   "repo_ref": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md:213",
+   "resolved": "2026-09-23",
+   "resolved_from": "IZA discussion paper number 16357",
+   "supports": [
+    "card:e4_care_channels_add",
+    "card:e13_elder_care_medicaid_bound",
+    "card:e13_care_workforce_composition"
+   ]
+  },
+  {
+   "key": "cadena_kovak_aej_applied_2016",
+   "short": "Cadena and Kovak 2016",
+   "kind": "paper",
+   "authors": "Brian C. Cadena and Brian K. Kovak",
+   "year": 2016,
+   "title": "Immigrants Equilibrate Local Labor Markets: Evidence from the Great Recession",
+   "venue": "American Economic Journal: Applied Economics 8(1): 257-290, via PubMed Central",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4991313/",
+   "repo_ref": "infra/immigration-fiscal/labor_mobility_insurance_2026_09_23/RESULT.md:42",
+   "resolved": "2026-09-23",
+   "resolved_from": "PMCID PMC4991313",
+   "supports": [
+    "card:e4_shock_insurance_mobility"
+   ]
+  },
+  {
+   "key": "fbi_nibrs_incident_files_2022_2023",
+   "short": "FBI NIBRS incident files",
+   "kind": "dataset",
+   "authors": "Federal Bureau of Investigation, Crime Data Explorer",
+   "year": 2023,
+   "title": "National Incident-Based Reporting System incident files by state, 2022-2023 (Texas, Arizona; California as a sensitivity)",
+   "venue": "Crime Data Explorer; the link returns a signed download address for the Texas 2023 file",
+   "url": "https://cde.ucr.cjis.gov/LATEST/s3/signedurl?key=nibrs/incident/2023/TX-2023.zip",
+   "repo_ref": "infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/derived/source_manifest.csv:11",
+   "supports": [
+    "card:e12_no_group_crime_cost_in_headline"
+   ]
+  },
+  {
+   "key": "repo_care_household_services_2026_09_23",
+   "short": "Care lane, 2026-09-23",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "Care channels the account omits: native women's hours and elder care",
+   "venue": "Analysis lane care_household_services_2026_09_23",
+   "path": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md",
+   "supports": [
+    "card:e4_care_channels_add",
+    "card:e4_prices_and_native_hours",
+    "card:e13_elder_care_medicaid_bound",
+    "card:e13_care_workforce_composition",
+    "card:e13_mortality_instrument_null"
+   ]
+  },
+  {
+   "key": "repo_construction_housing_supply_2026_09_23",
+   "short": "Construction lane, 2026-09-23",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "Cheaper construction from the group's labour",
+   "venue": "Analysis lane construction_housing_supply_2026_09_23",
+   "path": "infra/immigration-fiscal/construction_housing_supply_2026_09_23/RESULT.md",
+   "supports": [
+    "card:e4_prices_and_native_hours"
+   ]
+  },
+  {
+   "key": "repo_scale_spillovers_2026_09_23",
+   "short": "Scale lane, 2026-09-23",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "City size and schooling-mix spillovers on other residents' earnings",
+   "venue": "Analysis lane scale_spillovers_2026_09_23",
+   "path": "infra/immigration-fiscal/scale_spillovers_2026_09_23/RESULT.md",
+   "supports": [
+    "card:e4_scale_and_schooling_net"
+   ]
+  },
+  {
+   "key": "repo_labor_mobility_insurance_2026_09_23",
+   "short": "Mobility lane, 2026-09-23",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "The group's mobility as insurance against local shocks",
+   "venue": "Analysis lane labor_mobility_insurance_2026_09_23",
+   "path": "infra/immigration-fiscal/labor_mobility_insurance_2026_09_23/RESULT.md",
+   "supports": [
+    "card:e4_shock_insurance_mobility"
+   ]
+  },
+  {
+   "key": "repo_offender_ethnicity_nibrs_2026_09_23",
+   "short": "NIBRS offender lane, 2026-09-23",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "Offender ethnicity in Texas and Arizona police records",
+   "venue": "Analysis lane offender_ethnicity_nibrs_2026_09_23",
+   "path": "infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/RESULT.md",
+   "supports": [
+    "card:e12_no_group_crime_cost_in_headline"
+   ]
+  },
+  {
+   "key": "repo_real_costs_2026_09_23",
+   "short": "Real costs memo, 2026-09-23",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "Real fiscal and social costs of the Mexican-origin population to other residents",
+   "venue": "Research memo",
+   "path": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md",
+   "supports": [
+    "card:real_costs_and_benefits_totals",
+    "card:e12_no_group_crime_cost_in_headline"
    ]
   }
  ]

@@ -118,7 +118,7 @@
      "value": "75% / 25%",
      "unit": "share",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:64"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:68"
     },
     {
      "label": "school-spending response derived from CBO's coefficients (first-order)",
@@ -208,21 +208,21 @@
     },
     {
      "label": "25% responsive, all government",
-     "value": 12.07,
+     "value": "12.07",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-education-administration-scope-2026-09-20.md:34"
     },
     {
      "label": "50% responsive, all government",
-     "value": 24.15,
+     "value": "24.15",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-education-administration-scope-2026-09-20.md:35"
     },
     {
      "label": "100% responsive, all government",
-     "value": 48.29,
+     "value": "48.29",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-education-administration-scope-2026-09-20.md:36"
@@ -294,7 +294,7 @@
    "values": [
     {
      "label": "difference between the two absolute-balance conventions",
-     "value": 285.61,
+     "value": "285.61",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-complete-annual-account-2026-09-20.md:71"
@@ -395,6 +395,56 @@
    "evidence_level": "[DATA] / [INFERENCE] for the stationary reading"
   },
   {
+   "id": "e4_care_channels_add",
+   "faq_entry": 4,
+   "objection": "Cheaper services, complementary labour and capital returns never appear in a fiscal ledger.",
+   "finding": "Two care channels add to the fiscal account, which omits them: taxes on the extra hours native women work because household services are cheaper, $2.7bn a year ($1.8–5.8bn), and the net Medicaid saving on elder care, $1.5bn (FAQ 13). Together they come to about $4.1bn ($2.6–13.3bn), about 2% of the main case; the result on this page does not include them. The September 18 hours tax ($8.7bn) rested on a misread regressor, the wrong table and a tax rate outside the account.",
+   "values": [
+    {
+     "label": "care channels together",
+     "value": "4.1 (2.6-13.3)",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md:7"
+    },
+    {
+     "label": "taxes on native women's extra hours (household-service channel)",
+     "value": "2.7 (1.8-5.8)",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md:3"
+    },
+    {
+     "label": "net Medicaid saving on elder care",
+     "value": "1.5 (1.2-7.6)",
+     "unit": "$bn/year",
+     "se": "90% interval -1.8 to +8.3",
+     "file_line": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md:4"
+    },
+    {
+     "label": "fiscal main case with care and mobility added (custody footing)",
+     "value": "199.1-245.5",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:326"
+    },
+    {
+     "label": "September 18 hours tax, corrected",
+     "value": "8.7 → 2.7",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md:13"
+    }
+   ],
+   "relation_to_headline": "adds_to_headline",
+   "combining_rule": "Offsets do not add unless an entry says so. Two care items do add, because the account omits them: taxes on native women's extra hours ($2.7bn) and the net elder-care Medicaid saving ($1.5bn), $4.1bn together.",
+   "memo": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md; research/immigration-objections-faq-2026-09-21.md § 4 and § 13; research/immigration-consumer-price-and-native-hours-2026-09-18.md (Revisions, 2026-09-23)",
+   "population": "other residents: native women's hours and taxes, Medicaid elders",
+   "comparator": "the account, which holds native hours fixed and omits other residents' nursing-facility spending",
+   "horizon": "annual, 2024 dollars",
+   "evidence_level": "[CALCULATION: care lane, coefficients checked against the papers] + [INFERENCE: log-linear extrapolation beyond the identifying variation]"
+  },
+  {
    "id": "e4_offset_threshold_is_conditional",
    "faq_entry": 4,
    "objection": "Cheaper services, complementary labour and capital returns never appear in a fiscal ledger.",
@@ -448,51 +498,51 @@
    "id": "e4_prices_and_native_hours",
    "faq_entry": 4,
    "objection": "Cheaper services, complementary labour and capital returns never appear in a fiscal ledger.",
-   "finding": "Consumer prices and native women's hours are priced at $21.8bn and overlap the factor-income gains, so they are not added.",
+   "finding": "Cheaper household services are worth $21.8bn a year to consumers, or $11.9bn net of native low-skill wage gains. That is the production gain seen from the spending side, so it is not added. Cheaper construction is inside the production gain too: construction costs 0.75% less with the group present, which trims other renters' extra rent from $33.5bn to $29.9bn, and nothing is added to the account. Of the household-service channel, only the taxes native women pay on their extra hours ($2.7bn) add; a separate card under this entry adds them.",
    "values": [
     {
-     "label": "defensible native total (A net + B-tax), central case",
-     "value": 21.76,
+     "label": "cheaper household services to consumers, gross (union frame)",
+     "value": "21.8",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:29"
+     "file_line": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md:9"
     },
     {
-     "label": "same, working-paper elasticity case / conservative case",
-     "value": "8.31 / 10.54",
+     "label": "same, net of native low-skill wage gains: inside the production term",
+     "value": "11.9 (3.9-12.8)",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:29"
+     "file_line": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md:28"
     },
     {
-     "label": "A. consumer surplus on immigrant-intensive services",
-     "value": 23.76,
-     "unit": "$bn/year",
+     "label": "construction costs with the group present",
+     "value": "0.75% lower (0.53-1.17%)",
+     "unit": "share",
      "se": null,
-     "file_line": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:23"
+     "file_line": "infra/immigration-fiscal/construction_housing_supply_2026_09_23/RESULT.md:7"
     },
     {
-     "label": "A-offset. native high-school-dropout wage gain forgone",
-     "value": -10.73,
+     "label": "other renters' extra rent, demand only → with cheaper construction",
+     "value": "33.5 → 29.9",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:25"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:312"
     },
     {
-     "label": "B-tax. tax on top-quartile native college women's extra earnings at 35%",
-     "value": 8.73,
-     "unit": "$bn/year",
+     "label": "group's share of construction-trades jobs",
+     "value": "24.4%",
+     "unit": "share",
      "se": null,
-     "file_line": "research/immigration-consumer-price-and-native-hours-2026-09-18.md:28"
+     "file_line": "infra/immigration-fiscal/construction_housing_supply_2026_09_23/RESULT.md:3"
     }
    ],
    "relation_to_headline": "overlaps_headline",
-   "combining_rule": "Prices and native hours ($21.8bn) overlap it. No ratio of \"offsets to cost\" can be formed from these.",
-   "memo": "research/immigration-consumer-price-and-native-hours-2026-09-18.md § 1. Summary table",
-   "population": "numerator removes about 3.17 million Mexico-born high-school-dropout workers; denominator covers about 40.9 million current Mexican-origin residents across generations",
-   "comparator": "natives / native consumer units, not a matched reference group",
-   "horizon": "annual, first-order, 2024 dollars, no capital adjustment",
-   "evidence_level": "routed; [SOURCE]/[INFERENCE]; the memo's September 19 correction governs"
+   "combining_rule": "Offsets do not add unless an entry says so. The production gain ($8.8–13.3bn) is already inside the headline, and cheaper services ($21.8bn to consumers) overlap it.",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 4; infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md § Overlap ruling; infra/immigration-fiscal/construction_housing_supply_2026_09_23/RESULT.md; research/immigration-consumer-price-and-native-hours-2026-09-18.md (Revisions, 2026-09-23)",
+   "population": "the Mexican-origin union's effect on other residents' service prices and construction costs",
+   "comparator": "the account's production term, which already contains these gains",
+   "horizon": "annual, 2024 dollars, long run with capital adjusting",
+   "evidence_level": "[CALCULATION: care and construction lanes] + [INFERENCE: overlap ruling]"
   },
   {
    "id": "e4_production_gain_inside_headline",
@@ -509,7 +559,7 @@
     },
     {
      "label": "production plus induced receipts, GDP scaling",
-     "value": 13.32,
+     "value": "13.32",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-complete-annual-account-2026-09-20.md:118"
@@ -543,6 +593,106 @@
    "comparator": "other residents",
    "horizon": "annual 2024, long-run, private capital fully adjusts",
    "evidence_level": "[MODEL]"
+  },
+  {
+   "id": "e4_scale_and_schooling_net",
+   "faq_entry": 4,
+   "objection": "Cheaper services, complementary labour and capital returns never appear in a fiscal ledger.",
+   "finding": "City size and the group's schooling mix, measured in one regression, net to +$13.9bn a year (95% −$56.6bn to +$84.4bn): bigger cities add $38.6bn to other residents' earnings, and lower average schooling takes back $24.9bn. The net would add through the production term and induced receipts, but it is proposed, not adopted; adopted, the main case would be $189.3–235.7bn. The instrumented 1970–2000 college-share studies would make it a $109–677bn cost instead. Innovation is not added: Burchardi et al. find no patent response at the group's schooling.",
+   "values": [
+    {
+     "label": "net of city size and schooling mix (Card–Rothstein–Yi, one regression)",
+     "value": "+13.9 (-56.6 to +84.4)",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/scale_spillovers_2026_09_23/RESULT.md:3"
+    },
+    {
+     "label": "city size",
+     "value": "+38.6 (32.3-45.0)",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/scale_spillovers_2026_09_23/RESULT.md:10"
+    },
+    {
+     "label": "lower schooling, net of the account's own substitution",
+     "value": "-24.9 (-93.0 to +43.1)",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/scale_spillovers_2026_09_23/RESULT.md:18"
+    },
+    {
+     "label": "main case if the net were adopted",
+     "value": "189.3-235.7",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-confidence-ladder.md:333"
+    },
+    {
+     "label": "net with the instrumented 1970–2000 college-share studies",
+     "value": "-109 to -677",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/scale_spillovers_2026_09_23/RESULT.md:6-7"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The net of city size and schooling mix (+$13.9bn) would add the same way as the care items, through the production term and induced receipts, but it is proposed, not adopted.",
+   "memo": "infra/immigration-fiscal/scale_spillovers_2026_09_23/RESULT.md; research/immigration-objections-faq-2026-09-21.md § 4; research/immigration-confidence-ladder.md entry 201",
+   "population": "other residents' earnings across commuting zones",
+   "comparator": "the account's production term, which already counts substitution between skill groups",
+   "horizon": "annual, 2024 dollars; cross-sectional wage premia",
+   "evidence_level": "[CALCULATION: scale lane] + [INFERENCE: cross-sectional gradients; proposed, not adopted]"
+  },
+  {
+   "id": "e4_shock_insurance_mobility",
+   "faq_entry": 4,
+   "objection": "Cheaper services, complementary labour and capital returns never appear in a fiscal ledger.",
+   "finding": "The group's mobility across local labour markets is worth about $0.65bn a year to other residents ($0.18–2.46bn). It sits beside the account with the social items; its fiscal slice is $0.03bn. Mexico-born men with high school or less no longer move more than other natives: they moved between states or arrived from abroad at 1.92% a year in 2019–24, against 2.13%. Local-shock insurance is worth $0.13bn at today's mobility, and Borjas's efficiency gain at the group's observed location $0.52bn.",
+   "values": [
+    {
+     "label": "mobility, lane total",
+     "value": "0.65 (0.18-2.46)",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/labor_mobility_insurance_2026_09_23/RESULT.md:32"
+    },
+    {
+     "label": "fiscal slice",
+     "value": "0.03",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/labor_mobility_insurance_2026_09_23/RESULT.md:16"
+    },
+    {
+     "label": "local-shock insurance at present-day mobility",
+     "value": "0.13 (0-1.03)",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/labor_mobility_insurance_2026_09_23/RESULT.md:27"
+    },
+    {
+     "label": "efficiency gain in Borjas's model, observed 2024 location",
+     "value": "0.52 (0.18-1.43)",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/labor_mobility_insurance_2026_09_23/RESULT.md:29"
+    },
+    {
+     "label": "moves between states or from abroad, Mexico-born men HS or less vs other natives, 2019–24",
+     "value": "1.92% vs 2.13%",
+     "unit": "share a year",
+     "se": "difference -0.21pp, SE 0.06",
+     "file_line": "infra/immigration-fiscal/labor_mobility_insurance_2026_09_23/RESULT.md:10"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "Mobility insurance ($0.65bn) sits beside the account with the social items.",
+   "memo": "infra/immigration-fiscal/labor_mobility_insurance_2026_09_23/RESULT.md; research/immigration-objections-faq-2026-09-21.md § 4; research/immigration-confidence-ladder.md entry 203",
+   "population": "other residents' employment through local shocks; the group's location across regions",
+   "comparator": "other natives' own mobility; the account, which has no places or shocks",
+   "horizon": "annual, 2024 dollars",
+   "evidence_level": "[CALCULATION: mobility lane] + [INFERENCE: one recession episode replicates; assumed weights]"
   },
   {
    "id": "e5_asec2026_replication",
@@ -691,14 +841,14 @@
      "value": 62,
      "unit": "$/standardized person/year",
      "se": "at most 725",
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:133-134"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:147-148"
     },
     {
      "label": "third-plus better than first",
      "value": 1389,
      "unit": "$/standardized person/year",
      "se": "at least 2.3 standard errors",
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:134"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:148"
     }
    ],
    "relation_to_headline": "outside_not_addable",
@@ -896,14 +1046,14 @@
    "values": [
     {
      "label": "gap versus the same domestic account's average resident, shared (September 20 account)",
-     "value": -274.23,
+     "value": "-274.23",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-complete-annual-account-2026-09-20.md:69"
     },
     {
      "label": "same, personal (September 20 account)",
-     "value": -296.29,
+     "value": "-296.29",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-complete-annual-account-2026-09-20.md:69"
@@ -913,7 +1063,7 @@
      "value": "about -6,700",
      "unit": "$/person/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:163-164"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:177-178"
     }
    ],
    "relation_to_headline": "different_object",
@@ -1297,14 +1447,14 @@
    "values": [
     {
      "label": "cash transfers incl. Social Security (memo's stated change)",
-     "value": -70.2,
+     "value": "-70.2",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:71"
     },
     {
      "label": "public medical",
-     "value": -80.2,
+     "value": "-80.2",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:71"
@@ -1325,7 +1475,7 @@
     },
     {
      "label": "K-12",
-     "value": 30.9,
+     "value": "30.9",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:71"
@@ -1347,21 +1497,21 @@
    "values": [
     {
      "label": "all generations, shared balance at own ages",
-     "value": -217.32,
+     "value": "-217.32",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:26"
     },
     {
      "label": "all generations, shared balance at the white age structure",
-     "value": -339.6,
+     "value": "-339.6",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:71"
     },
     {
      "label": "change",
-     "value": -122.3,
+     "value": "-122.3",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:71"
@@ -1375,7 +1525,7 @@
     },
     {
      "label": "same number of white-reference residents at those ages",
-     "value": -49.9,
+     "value": "-49.9",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-yearly-lifetime-cost-repair-2026-09-19.md:71"
@@ -1429,7 +1579,7 @@
      "value": "203-250",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:232"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:246"
     },
     {
      "label": "the same figure as published September 20",
@@ -1458,10 +1608,10 @@
    "id": "e12_incarceration_ratio_series",
    "faq_entry": 12,
    "objection": "\"What about crime?\"",
-   "finding": "US-born Mexican-origin men aged 18–39 in institutional group quarters, as a ratio to native non-Hispanic white men: 2.56× (2010), 1.91× (2019), 1.72× (2023, the low point), 1.94× (2024); flat near 1.9× since 2019, and 2.1–2.3× after prison records coded generically \"Hispanic\" are reallocated.",
+   "finding": "US-born Mexican-origin men aged 18–39 in institutional group quarters, as a ratio to native non-Hispanic white men: 2.56× (2010), 1.91× (2019), 1.72× (2023, the low point), 1.94× (2024); flat near 1.9× since 2019, and 2.1–2.3× after prison records coded generically \"Hispanic\" are reallocated. The 2000 figure of 3.45× counts every institution, as the later series do, but the census filled in a US birthplace for most Mexican-origin inmates; spreading those allocated birthplaces in the reported mix gives about 2.7–3.0×.",
    "values": [
     {
-     "label": "ratio raw; coding-adjusted, 2000 / 2010 / 2019 / 2023",
+     "label": "ratio raw; coding-adjusted, 2000 / 2010 / 2019 / 2023 (the 2000 raw figure is inflated by birthplace allocation)",
      "value": "3.45; — / 2.56; 2.60 / 1.91; 2.10 / 1.72; 2.11",
      "unit": "ratio to native NH white men 18-39",
      "se": null,
@@ -1508,7 +1658,7 @@
    "id": "e12_no_group_crime_cost_in_headline",
    "faq_entry": 12,
    "objection": "\"What about crime?\"",
-   "finding": "Since September 23 the main case charges police, courts and prisons by use: prisons by custody, police half by arrests, courts by their criminal share, border enforcement per head. That adds $5.9bn to the fiscal headline ($1.7bn with census ethnicity codes as recorded). It adds little because the account compares the group with the average other resident: Hispanic residents are 20.2% of people in prisons and jails against 20.7% of residents aged 18–64, while Hispanic adults are imprisoned at 1.3 times the all-adult rate and 2.6 times the non-Hispanic white rate (BJS, 2023). Victim harm sits outside the fiscal account: crimes by group members against other residents cost the victims about $29bn a year ($15–45bn), a social cost reported beside the headline.",
+   "finding": "Since September 23 the main case charges police, courts and prisons by use: prisons by custody, police half by arrests, courts by their criminal share, border enforcement per head. That adds $5.9bn to the fiscal headline ($1.7bn with census ethnicity codes as recorded). It adds little because the account compares the group with the average other resident: Hispanic residents are 20.2% of people in prisons and jails against 20.7% of residents aged 18–64, while Hispanic adults are imprisoned at 1.3 times the all-adult rate and 2.6 times the non-Hispanic white rate (BJS, 2023). Victim harm sits outside the fiscal account: crimes by group members against other residents cost the victims about $29bn a year ($15–45bn), a social cost reported beside the headline. Police records agree: on Texas and Arizona NIBRS offender rates the cost is $28.6bn, and the $43bn arrest-share arm fails a check against victims' own reported ethnicity.",
    "values": [
     {
      "label": "public order and safety keyed by use, change to the main case",
@@ -1529,7 +1679,7 @@
      "value": "62.4 → 68.4",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:65"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:70"
     },
     {
      "label": "Hispanic share of people in prisons and jails / of residents aged 18-64",
@@ -1540,39 +1690,39 @@
     },
     {
      "label": "victims' harm from crimes by group members against other residents (social cost, outside the fiscal account)",
-     "value": "about 29 (15-45)",
+     "value": "about 29 (15-45); 28.6 on police records",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:15"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:15-16"
     }
    ],
    "relation_to_headline": "inside_headline",
    "combining_rule": "Victim harm is reported beside the fiscal headline as a social item, never inside it; the $203–250bn already carries the use-keyed justice charge.",
-   "memo": "research/immigration-objections-faq-2026-09-21.md § 12; research/immigration-real-fiscal-and-social-costs-2026-09-23.md §2–3; research/immigration-detention-crime-and-fiscal-scope-2026-09-20.md (measurement rule)",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 12; research/immigration-real-fiscal-and-social-costs-2026-09-23.md §2–3; infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/RESULT.md; research/immigration-detention-crime-and-fiscal-scope-2026-09-20.md (measurement rule)",
    "population": "the Mexican-origin union's share of public order and safety spending; victims among other residents",
    "comparator": "the average other resident (the account's comparison), not whites",
    "horizon": "annual 2024",
-   "evidence_level": "[CALCULATION: justice-by-use lane, 38 gates; adopted 2026-09-23] + [MODEL: victim harm, lives valued at VSL]"
+   "evidence_level": "[CALCULATION: justice-by-use lane, 38 gates; adopted 2026-09-23] + [MODEL: victim harm, lives valued at VSL; offender rates from NIBRS]"
   },
   {
    "id": "e13_care_workforce_composition",
    "faq_entry": 13,
    "objection": "Two shift-share studies find it. Ten more points of less-educated foreign-born share lower institutionalization of the US-born elderly by 1.5 points, and 1,000 more immigrants mean about ten fewer elderly deaths a year.",
-   "finding": "The channel exists in that literature and the account omits it, but it runs through health workers, and 1.2% of Mexican immigrants work as aide, nurse or doctor against 14% of Philippine immigrants. The Mexico-born are 14.5% of foreign-born direct-care workers and 37.7% of the less-educated foreign-born.",
+   "finding": "The channel reaches this group. Counting its US-born members, the group supplies 15.4% of home-care hours against 12.0% of residents; the Mexico-born alone are 14.5% of foreign-born direct-care workers and 37.7% of the less-educated foreign-born, which is why the earlier reading that the channel transfers weakly was wrong. Secure Communities, which removed mostly Mexican and Central American workers, cut home-care hours and raised institutionalization of the US-born elderly.",
    "values": [
     {
-     "label": "Mexican immigrants working as aide, nurse or doctor",
-     "value": "1.2%",
+     "label": "group's share of home-care hours, all generations",
+     "value": "15.4%",
      "unit": "share",
      "se": null,
-     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:30"
+     "file_line": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md:120"
     },
     {
-     "label": "Philippine immigrants, same",
-     "value": "14%",
+     "label": "group's share of residents",
+     "value": "12.0%",
      "unit": "share",
      "se": null,
-     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:30"
+     "file_line": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md:14"
     },
     {
      "label": "Mexico-born share of foreign-born direct-care workers",
@@ -1589,70 +1739,70 @@
      "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:65"
     },
     {
-     "label": "employed aides and nursing assistants, 2024; foreign-born share",
-     "value": "3.68m; 28.1%",
-     "unit": "people / share",
-     "se": null,
-     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:64"
+     "label": "Mexican and Central American home-care hours under Secure Communities",
+     "value": "-17.4%",
+     "unit": "change",
+     "se": "SE 6.2",
+     "file_line": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md:198"
     }
    ],
-   "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The elder-care figure ($2.3–14.6bn) is an upper bound on one omitted channel.",
-   "memo": "research/immigration-marginal-revolution-leads-read-2026-09-21.md § Who staffs direct care in 2024",
-   "population": "2024 US direct-care workforce; Mexican and Philippine immigrants",
-   "comparator": "the all-origin treatment population of the cited shift-share studies",
-   "horizon": "2024 cross-section (ACS one-year PUMS)",
-   "evidence_level": "[DATA: `derived/acs_care_inputs.csv`, ACS 2024 one-year PUMS]"
+   "relation_to_headline": "different_object",
+   "combining_rule": "Offsets do not add unless an entry says so. Two care items do add, because the account omits them: taxes on native women's extra hours ($2.7bn) and the net elder-care Medicaid saving ($1.5bn), $4.1bn together.",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 13; infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md § 2. Elder care; research/immigration-marginal-revolution-leads-read-2026-09-21.md § Who staffs direct care in 2024",
+   "population": "2024 US home-care and direct-care workforce; the group's members of every generation",
+   "comparator": "the group's 12.0% share of residents",
+   "horizon": "2024 cross-section (ACS one-year PUMS); Secure Communities difference-in-differences",
+   "evidence_level": "[DATA: ACS 2024 PUMS, CPS-scaled] + [SOURCE: Secure Communities designs]"
   },
   {
    "id": "e13_elder_care_medicaid_bound",
    "faq_entry": 13,
    "objection": "Two shift-share studies find it. Ten more points of less-educated foreign-born share lower institutionalization of the US-born elderly by 1.5 points, and 1,000 more immigrants mean about ten fewer elderly deaths a year.",
-   "finding": "Priced generously, the Medicaid nursing-facility saving attributable to the Mexico-born is $2.3–14.6bn a year, $5.6bn at the preferred coefficient weighted by who staffs care: 1–9% of the headline as published September 20.",
+   "finding": "Netted, the Medicaid saving is about $1.5bn a year (design range $1.2–7.6bn; 90% interval −$1.8bn to +$8.3bn), and it adds to the account. It replaces the earlier gross bound of $2.3–14.6bn. The group's own care needs absorb more than half of what it supplies, so the net dose is 7.2%; per unit of dose, nursing-home residents rise only 2.7%; Medicaid pays $45,197 per institutionalized resident 65+, not $55,051; and the same workers staff $1.0–1.3bn of Medicaid home care.",
    "values": [
     {
-     "label": "preferred coefficient -0.151, weighted by labour share",
-     "value": "265,000 fewer residents, $14.6bn",
+     "label": "net Medicaid saving: nursing facilities less Medicaid home care",
+     "value": "1.5 (1.2-7.6)",
      "unit": "$bn/year",
-     "se": null,
-     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:78"
+     "se": "90% interval -1.8 to +8.3",
+     "file_line": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md:4"
     },
     {
-     "label": "preferred coefficient, weighted by share of foreign-born care workers",
-     "value": "102,000, $5.6bn",
-     "unit": "$bn/year",
+     "label": "net dose: fall in care per unit of other residents' need",
+     "value": "7.2% (5.3-9.3%)",
+     "unit": "share",
      "se": null,
-     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:78"
+     "file_line": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md:122"
     },
     {
-     "label": "without California, -0.090",
-     "value": "$8.7bn / $3.4bn",
-     "unit": "$bn/year",
+     "label": "nursing-home residents per unit of dose (Secure Communities)",
+     "value": "2.7%",
+     "unit": "share",
      "se": null,
-     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:79"
+     "file_line": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md:17"
     },
     {
-     "label": "year-by-state, -0.061 (not significant)",
-     "value": "$5.9bn / $2.3bn",
-     "unit": "$bn/year",
+     "label": "Medicaid price per institutionalized resident 65+ (was $55,051)",
+     "value": "45,197",
+     "unit": "$",
      "se": null,
-     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:80"
+     "file_line": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md:203"
     },
     {
-     "label": "price per avoided institutional resident",
-     "value": 55051,
-     "unit": "$ (Medicaid $78.9bn nursing-facility spending over 1.43m institutional residents; CMS NHE 2024 Table 15)",
+     "label": "Medicaid home care the same workers staff, an outlay",
+     "value": "1.0-1.3",
+     "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:73-74"
+     "file_line": "infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md:18"
     }
    ],
-   "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The elder-care figure ($2.3–14.6bn) is an upper bound on one omitted channel. No ratio of \"offsets to cost\" can be formed from these.",
-   "memo": "research/immigration-marginal-revolution-leads-read-2026-09-21.md § 1. Elder care (Bound)",
-   "population": "52.1m US-born elderly; Mexico-born share of the working-age population 3.37%, less-educated foreign-born 8.95%",
-   "comparator": "an omitted channel priced against the headline; no reference group",
+   "relation_to_headline": "adds_to_headline",
+   "combining_rule": "Offsets do not add unless an entry says so. Two care items do add, because the account omits them: taxes on native women's extra hours ($2.7bn) and the net elder-care Medicaid saving ($1.5bn), $4.1bn together.",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 13; infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md § 2. Elder care; research/immigration-marginal-revolution-leads-read-2026-09-21.md § 1 (Revisions, 2026-09-23: superseded)",
+   "population": "other residents' nursing-facility and Medicaid home-care use; the group's home-care workers of every generation",
+   "comparator": "the account, which omits other residents' nursing-facility spending",
    "horizon": "annual, 2024 dollars",
-   "evidence_level": "[CALCULATION … ; model output]"
+   "evidence_level": "[CALCULATION: care lane, Secure Communities designs weighted by precision] + [INFERENCE: log-linear extrapolation]"
   },
   {
    "id": "e13_mortality_instrument_null",
@@ -1662,28 +1812,28 @@
    "values": [
     {
      "label": "Grabowski-Gruber-McGarry, instrument weighted by work outside health care",
-     "value": -0.00252,
+     "value": "-0.00252",
      "unit": "coefficient",
      "se": 0.0037,
      "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:58"
     },
     {
      "label": "same study, health-weighted instrument (deaths)",
-     "value": -0.00761,
+     "value": "-0.00761",
      "unit": "coefficient (9.8 fewer deaths a year per 1,000 more working-age immigrants)",
      "se": "0.00208, F 21.2",
      "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:54"
     },
     {
      "label": "Butcher-Moran-Watson preferred 2SLS (65+ institutionalization)",
-     "value": -0.151,
+     "value": "-0.151",
      "unit": "points per unit share",
      "se": "0.027, F 28.3",
      "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:42"
     },
     {
      "label": "same with year-by-state effects",
-     "value": -0.061,
+     "value": "-0.061",
      "unit": "points",
      "se": "0.058, F 4.8",
      "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:44-45"
@@ -1697,7 +1847,7 @@
     }
    ],
    "relation_to_headline": "outside_not_addable",
-   "combining_rule": "The elder-care figure ($2.3–14.6bn) is an upper bound on one omitted channel.",
+   "combining_rule": "Offsets do not add unless an entry says so. Two care items do add, because the account omits them: taxes on native women's extra hours ($2.7bn) and the net elder-care Medicaid saving ($1.5bn), $4.1bn together.",
    "memo": "research/immigration-marginal-revolution-leads-read-2026-09-21.md § 1. Elder care",
    "population": "US-born elderly (Census commuting zones 1980–2000) and 18.0m Medicare beneficiaries 2008–2019",
    "comparator": "all-origin foreign-born share; the identifying variation is south-western / Africa, India, West Indies",
@@ -1719,21 +1869,21 @@
     },
     {
      "label": "native loss at elasticity 3 (midpoint)",
-     "value": 38.6,
+     "value": "38.6",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:120"
     },
     {
      "label": "at elasticity 4.6",
-     "value": 26.8,
+     "value": "26.8",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:120"
     },
     {
      "label": "at elasticity 1.3",
-     "value": 80.4,
+     "value": "80.4",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-marginal-revolution-leads-read-2026-09-21.md:120"
@@ -1762,7 +1912,7 @@
    "values": [
     {
      "label": "conditional net cost, endpoint (September 20)",
-     "value": 356.84,
+     "value": "356.84",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-complete-annual-account-2026-09-20.md:227"
@@ -1783,14 +1933,14 @@
     },
     {
      "label": "Social Security dollars → age65+",
-     "value": 13.81,
+     "value": "13.81",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-complete-annual-account-2026-09-20.md:238-239"
     },
     {
      "label": "refundable credits (downward)",
-     "value": -23.46,
+     "value": "-23.46",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-complete-annual-account-2026-09-20.md:240"
@@ -1812,35 +1962,35 @@
    "values": [
     {
      "label": "receipts, shared (September 20 keys)",
-     "value": 545.12,
+     "value": "545.12",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-complete-annual-account-2026-09-20.md:65"
     },
     {
      "label": "receipts, personal (September 20 keys)",
-     "value": 517.1,
+     "value": "517.1",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-complete-annual-account-2026-09-20.md:65"
     },
     {
      "label": "current spending, shared (September 20 keys)",
-     "value": 1023.88,
+     "value": "1,023.88",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-complete-annual-account-2026-09-20.md:66"
     },
     {
      "label": "current spending, personal (September 20 keys)",
-     "value": 1017.92,
+     "value": "1,017.92",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-complete-annual-account-2026-09-20.md:66"
     },
     {
      "label": "assigned balance, shared (September 20 keys)",
-     "value": -478.76,
+     "value": "-478.76",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-complete-annual-account-2026-09-20.md:67"
@@ -2098,7 +2248,7 @@
    "values": [
     {
      "label": "central, September 19 ledger (D and P on, E zero)",
-     "value": -217.3,
+     "value": "-217.3",
      "unit": "$bn/year",
      "se": 8.7,
      "file_line": "infra/immigration-fiscal/ledger_recut_2026_09_22/RESULT.md:20"
@@ -2139,6 +2289,56 @@
    "comparator": "absolute balances, no reference group",
    "horizon": "annual, income-year 2024",
    "evidence_level": "[CALCULATION: named cells, SEs from 160 replicates] + [INFERENCE: every cell is an accounting scenario] + [UNVERIFIED: the allocation conventions are choices]"
+  },
+  {
+   "id": "real_costs_and_benefits_totals",
+   "faq_entry": null,
+   "objection": null,
+   "finding": "Priced to the same standard, the benefits the account omits come to $4.8bn a year, or $18.7bn with the proposed scale net. On the custody footing, fiscal and social costs together are $256–307bn at central values; with care and mobility $251–303bn, and $237–289bn adding the scale net. None changes the sign.",
+   "values": [
+    {
+     "label": "fiscal and social costs together, central values (custody footing)",
+     "value": "256-307",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:328"
+    },
+    {
+     "label": "with care and mobility",
+     "value": "251-303",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:328"
+    },
+    {
+     "label": "adding the proposed scale net",
+     "value": "237-289",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:328"
+    },
+    {
+     "label": "omitted benefits, without / with the scale net",
+     "value": "4.8 / 18.7",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:331"
+    },
+    {
+     "label": "fiscal main case with care and mobility / adding the scale net",
+     "value": "199.1-245.5 / 185.2-231.6",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:326"
+    }
+   ],
+   "relation_to_headline": "different_object",
+   "combining_rule": "Transfers among other residents are not added, the generation ledger is not mixed in, and social items stay beside the fiscal result, never inside it.",
+   "memo": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md § 7 and § 7b",
+   "population": "the Mexican-origin union; effects on all other US residents",
+   "comparator": "no reference group; the fiscal account plus social items beside it",
+   "horizon": "annual, 2024 dollars, central values",
+   "evidence_level": "[CALCULATION: sums of lane results] + [FRAMING-SENSITIVE: the victim figure values lives at VSL]"
   },
   {
    "id": "school_flight_not_estimated_for_hispanic_inflows",
@@ -2217,16 +2417,16 @@
   {
    "id": "cr_two_anchors",
    "file_line": "research/immigration-objections-faq-2026-09-21.md:17-24",
-   "text": "**The two anchors are different objects.** The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger fixed on September 19: per-person balances against a reference group, or the group's own balance re-weighted by age. Entries 7 and 9 rest on separate partial accounts. The $203–250bn (entries 2, 4, 11) is the complete account's change for all other residents in the main case adopted September 23 ($165–197bn as published September 20), under a stated service-response assumption, with no reference group; it carries later corrections that were not propagated to the ledger (ladder 161) and has no generation dimension yet. They agree in direction. One is not a decomposition of the other, and the generation split must not be scaled onto the complete-account total."
+   "text": "**The two anchors are different objects.** The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19: per-person balances against a reference group, or the group's own balance re-weighted by age. Entries 7 and 9 rest on separate partial accounts. The $203–250bn (entries 2, 4, 11) is the complete account's change for all other residents in the main case adopted September 23 ($165–197bn as published September 20), under a stated service-response assumption, with no reference group; it carries later corrections that were not propagated to the ledger (ladder 161) and has no generation dimension yet. They agree in direction. One is not a decomposition of the other, and the generation split must not be scaled onto the complete-account total."
   },
   {
    "id": "cr_offsets_do_not_add",
-   "file_line": "research/immigration-objections-faq-2026-09-21.md:26-33",
-   "text": "**Offsets do not add.** The production gain ($8.8–13.3bn) is already inside the headline. Prices and native hours ($21.8bn) overlap it. The elder-care figure ($2.3–14.6bn) is an upper bound on one omitted channel. The complementarity figure ($26.8–80.4bn) covers half of all unauthorized workers of every origin and is matched by other immigrants' losses. The account's own nest is a different object: at the elasticities its job distribution supports, it moves the production term by about $4–8bn at the job-overlap reading and $2–5bn at the direct low-skill estimates (entry 14). No ratio of \"offsets to cost\" can be formed from these."
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:26-37",
+   "text": "**Offsets do not add unless an entry says so.** The production gain ($8.8–13.3bn) is already inside the headline, and cheaper services ($21.8bn to consumers) overlap it. Two care items do add, because the account omits them: taxes on native women's extra hours ($2.7bn) and the net elder-care Medicaid saving ($1.5bn), $4.1bn together (entries 4 and 13, ladder 198). The net of city size and schooling mix (+$13.9bn, ladder 201) would add the same way, through the production term and induced receipts, but it is proposed, not adopted. Mobility insurance ($0.65bn, ladder 203) sits beside the account with the social items. The complementarity figure ($26.8–80.4bn) covers half of all unauthorized workers of every origin and is matched by other immigrants' losses. The account's own nest is a different object: at the elasticities its job distribution supports, it moves the production term by about $4–8bn at the job-overlap reading and $2–5bn at the direct low-skill estimates (entry 14). No ratio of \"offsets to cost\" can be formed from these."
   },
   {
    "id": "cr_match_population_horizon_outcome",
-   "file_line": "research/immigration-objections-faq-2026-09-21.md:35-38",
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:39-42",
    "text": "**A result refutes a claim only when population, horizon and outcome match.** Entry 5 compares Mexican-origin generations alive in 2024 with whites at common ages. The National Academies results it is usually set against are all origins, followed from arrival, with descendants, discounted, under a budget rule. Neither refutes the other."
   },
   {
@@ -2236,7 +2436,7 @@
   },
   {
    "id": "cr_instrument_ranking_warning",
-   "file_line": "research/immigration-objections-faq-2026-09-21.md:357-360",
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:388-391",
    "text": "A summary that ranks findings by how much they surprise the model selects for results that contradict its prior, which is also where errors concentrate; surprising results need more checking before they get more prominence."
   }
  ]
