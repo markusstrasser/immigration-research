@@ -1,0 +1,67 @@
+{
+  "gates": {
+    "account_keys": {
+      "medicaid": {
+        "national": 348327305644.4026,
+        "target": 43107702028.18123
+      },
+      "medicare": {
+        "national": 714030930141.3267,
+        "target": 41848349808.249146
+      },
+      "health_other": {
+        "national": 102151446449.04993,
+        "target": 7921630833.263342
+      },
+      "tricare": {
+        "national": 28547876685.86486,
+        "target": 2612382821.1329365
+      },
+      "va_medical": {
+        "national": 63867028950.37424,
+        "target": 4073926378.8613296
+      }
+    },
+    "ledger_band_worst_abs_residual_usd": 1.52587890625e-05,
+    "ledger_medical_total_bn": -92.87768266969371,
+    "ledger_M_total_bn": -35.15038102794111,
+    "nhea_ratios": {
+      "medicaid": 1.5432,
+      "medicare": 1.2804
+    }
+  },
+  "account_lines_bn": {
+    "medicaid_and_chip_other_medical": 116.91361192727248,
+    "medicare": 63.9649823655796,
+    "health_services": 23.53499600651205,
+    "military_medical": 0.648413932682994,
+    "veterans_other": 2.369883793096611
+  },
+  "inputs": {
+    "asecpub25csv.zip": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+      "sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b"
+    },
+    "params.json": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json",
+      "sha256": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922"
+    },
+    "age_profile_components.csv": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/age_profile_components.csv",
+      "sha256": "8884b4126e6e4c60b74868ae57dc4b316651a38e3e767d7c25a44f7f63db5d62"
+    },
+    "incidence_keys.csv": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/full_account_spending_2026_09_20/derived/incidence_keys.csv",
+      "sha256": "74f27f55ff4aac21eeea9e19b562456519327731034813b1818711f1adca0bb8"
+    },
+    "allocations.csv": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/full_account_spending_2026_09_20/derived/allocations.csv",
+      "sha256": "fde600b9bf5eefc844b2b445b637cd21a265055f856734204af6cc51b568f89d"
+    },
+    "pooled.parquet": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/pooled.parquet",
+      "sha256": "db5634372d3c951c19d2265e8f75ec9f58e72aaf7c42750b58b994dfca993392"
+    }
+  },
+  "sign_convention": "delta_cost_bn / delta_bn = corrected cost minus current cost; negative means the account charges the union more than Mexican-origin donors in the same cells draw"
+}

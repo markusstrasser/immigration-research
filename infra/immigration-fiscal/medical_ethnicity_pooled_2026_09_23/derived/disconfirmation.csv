@@ -1,0 +1,109 @@
+sample,domain,group,quantity,value,se,n
+pooled_2016_2024,all_ages,mexican_origin,"OPU $/person 2016-18 (Medicaid paid, person not reporting enrollment)",22.815270221273718,6.024132667529194,16594
+pooled_2016_2024,all_ages,mexican_origin,OPU share of harmonized Medicaid $ 2016-18,0.02844248726479133,0.0075000898900496145,16594
+pooled_2016_2024,all_ages,mexican_origin,"Medicaid $/person paid for people never reporting Medicaid, 2019-24",19.38388657065938,3.817188418449104,20619
+pooled_2016_2024,all_ages,mexican_origin,"share of Medicaid $ paid for people never reporting Medicaid, 2019-24",0.018602096963485876,0.0049584392171347245,20619
+pooled_2016_2024,all_ages,mexican_origin,"uninsured all year, share",0.17431174441936426,0.007993305662527532,37213
+pooled_2016_2024,all_ages,mexican_origin,public $/person among the uninsured all year,164.28699074881703,24.85740691270588,7012
+pooled_2016_2024,all_ages,mexican_origin,state/local + other federal $/person among the uninsured all year,91.03410191125762,21.290183543096134,7012
+pooled_2016_2024,all_ages,mexican_origin,"Medicaid ever, share",0.3826400329978096,0.014345123068756745,37213
+pooled_2016_2024,all_ages,all_donors,"OPU $/person 2016-18 (Medicaid paid, person not reporting enrollment)",14.775604855683314,2.118572395713488,92442
+pooled_2016_2024,all_ages,all_donors,OPU share of harmonized Medicaid $ 2016-18,0.01832831600403499,0.0026505034372196834,92442
+pooled_2016_2024,all_ages,all_donors,"Medicaid $/person paid for people never reporting Medicaid, 2019-24",25.675492010013187,3.0180380516491048,139329
+pooled_2016_2024,all_ages,all_donors,"share of Medicaid $ paid for people never reporting Medicaid, 2019-24",0.029866471909102577,0.003706618992477938,139329
+pooled_2016_2024,all_ages,all_donors,"uninsured all year, share",0.064914491830414,0.002204890664839242,231771
+pooled_2016_2024,all_ages,all_donors,public $/person among the uninsured all year,267.77602882085694,36.290138601772576,17651
+pooled_2016_2024,all_ages,all_donors,state/local + other federal $/person among the uninsured all year,138.18956730532707,31.237783227851555,17651
+pooled_2016_2024,all_ages,all_donors,"Medicaid ever, share",0.22788316614614762,0.004817880001763918,231771
+pooled_2016_2024,all_ages,nh_white,"OPU $/person 2016-18 (Medicaid paid, person not reporting enrollment)",11.490839702115217,2.5880018068238404,41350
+pooled_2016_2024,all_ages,nh_white,OPU share of harmonized Medicaid $ 2016-18,0.01712159216362112,0.003979814011392191,41350
+pooled_2016_2024,all_ages,nh_white,"Medicaid $/person paid for people never reporting Medicaid, 2019-24",29.0915944762908,4.76232850375008,75211
+pooled_2016_2024,all_ages,nh_white,"share of Medicaid $ paid for people never reporting Medicaid, 2019-24",0.04160840466602131,0.0068708586843350605,75211
+pooled_2016_2024,all_ages,nh_white,"uninsured all year, share",0.03938928619762458,0.0014537421962702592,116561
+pooled_2016_2024,all_ages,nh_white,public $/person among the uninsured all year,373.01458110179374,99.14662585418398,4375
+pooled_2016_2024,all_ages,nh_white,state/local + other federal $/person among the uninsured all year,179.11522829329996,85.44892089821589,4375
+pooled_2016_2024,all_ages,nh_white,"Medicaid ever, share",0.1521571091511597,0.004424383393002775,116561
+pooled_2016_2024,all_ages,mexican_origin foreign-born,"public ratio, under 5 years in US / all foreign-born donors",0.25977873519820244,0.06975726895650441,424
+pooled_2016_2024,all_ages,mexican_origin foreign-born,"public ratio, 5-14 years / all foreign-born donors",0.2898814256821499,0.041471922166574735,2195
+pooled_2016_2024,all_ages,mexican_origin foreign-born,"public ratio, 15+ years / all foreign-born donors",0.867570428864073,0.07078391729867937,9857
+pooled_2016_2024,65plus,mexican_origin,"OPU $/person 2016-18 (Medicaid paid, person not reporting enrollment)",60.28154369127315,23.505050702606905,1072
+pooled_2016_2024,65plus,mexican_origin,OPU share of harmonized Medicaid $ 2016-18,0.0473069125134203,0.016825624713125275,1072
+pooled_2016_2024,65plus,mexican_origin,"Medicaid $/person paid for people never reporting Medicaid, 2019-24",48.294692481225155,13.430130222036206,1961
+pooled_2016_2024,65plus,mexican_origin,"share of Medicaid $ paid for people never reporting Medicaid, 2019-24",0.04536808261079983,0.015635021330056016,1961
+pooled_2016_2024,65plus,mexican_origin,"uninsured all year, share",0.022453981042243883,0.0037554522416973464,3033
+pooled_2016_2024,65plus,mexican_origin,public $/person among the uninsured all year,600.4455138676036,289.17758482541694,81
+pooled_2016_2024,65plus,mexican_origin,state/local + other federal $/person among the uninsured all year,128.47610112396848,74.13571264970571,81
+pooled_2016_2024,65plus,mexican_origin,"Medicaid ever, share",0.30283908868156345,0.01906470814084842,3033
+pooled_2016_2024,65plus,all_donors,"OPU $/person 2016-18 (Medicaid paid, person not reporting enrollment)",24.38678254238215,3.6499896245801704,14652
+pooled_2016_2024,65plus,all_donors,OPU share of harmonized Medicaid $ 2016-18,0.03584665386538024,0.006290010573592926,14652
+pooled_2016_2024,65plus,all_donors,"Medicaid $/person paid for people never reporting Medicaid, 2019-24",40.32991178669431,4.542689187561981,31987
+pooled_2016_2024,65plus,all_donors,"share of Medicaid $ paid for people never reporting Medicaid, 2019-24",0.07302101699260029,0.009224363015869146,31987
+pooled_2016_2024,65plus,all_donors,"uninsured all year, share",0.003335441615556996,0.0004110203267538162,46639
+pooled_2016_2024,65plus,all_donors,public $/person among the uninsured all year,430.00871872827196,174.00768179890937,205
+pooled_2016_2024,65plus,all_donors,state/local + other federal $/person among the uninsured all year,188.1879692021476,136.74043007608503,205
+pooled_2016_2024,65plus,all_donors,"Medicaid ever, share",0.11719306336336925,0.00415238742074484,46639
+pooled_2016_2024,65plus,nh_white,"OPU $/person 2016-18 (Medicaid paid, person not reporting enrollment)",19.50295327190052,3.9089983400053954,9357
+pooled_2016_2024,65plus,nh_white,OPU share of harmonized Medicaid $ 2016-18,0.05072088609922716,0.01238772705400238,9357
+pooled_2016_2024,65plus,nh_white,"Medicaid $/person paid for people never reporting Medicaid, 2019-24",41.83333473337135,5.516327457356166,22636
+pooled_2016_2024,65plus,nh_white,"share of Medicaid $ paid for people never reporting Medicaid, 2019-24",0.13251498898981234,0.018696600623442226,22636
+pooled_2016_2024,65plus,nh_white,"uninsured all year, share",0.001102995916542878,0.0002568792987287887,31993
+pooled_2016_2024,65plus,nh_white,public $/person among the uninsured all year,284.2369554581317,163.34487944981151,38
+pooled_2016_2024,65plus,nh_white,state/local + other federal $/person among the uninsured all year,22.39534918192784,12.708248417161208,38
+pooled_2016_2024,65plus,nh_white,"Medicaid ever, share",0.0642291703496433,0.0028241854202017574,31993
+pooled_2016_2024,65plus,mexican_origin foreign-born,"public ratio, under 5 years in US / all foreign-born donors",0.2798253919301002,0.14900021536560554,13
+pooled_2016_2024,65plus,mexican_origin foreign-born,"public ratio, 5-14 years / all foreign-born donors",0.26747073949740213,0.09759930290341884,82
+pooled_2016_2024,65plus,mexican_origin foreign-born,"public ratio, 15+ years / all foreign-born donors",0.8985786164456137,0.08451489635619222,1527
+pooled_2016_2024,18_64,mexican_origin,"OPU $/person 2016-18 (Medicaid paid, person not reporting enrollment)",31.320780980075813,9.671676073004205,9530
+pooled_2016_2024,18_64,mexican_origin,OPU share of harmonized Medicaid $ 2016-18,0.04780340985728962,0.014797547165990922,9530
+pooled_2016_2024,18_64,mexican_origin,"Medicaid $/person paid for people never reporting Medicaid, 2019-24",24.62479115424437,5.935699136995733,12259
+pooled_2016_2024,18_64,mexican_origin,"share of Medicaid $ paid for people never reporting Medicaid, 2019-24",0.028583459008250958,0.006917327010259978,12259
+pooled_2016_2024,18_64,mexican_origin,"uninsured all year, share",0.25948165775496324,0.011592246337152116,21789
+pooled_2016_2024,18_64,mexican_origin,public $/person among the uninsured all year,171.91867368276786,27.43407898168539,6336
+pooled_2016_2024,18_64,mexican_origin,state/local + other federal $/person among the uninsured all year,98.48663088641005,23.578818580288107,6336
+pooled_2016_2024,18_64,mexican_origin,"Medicaid ever, share",0.24398528221352464,0.01580194201718388,21789
+pooled_2016_2024,18_64,all_donors,"OPU $/person 2016-18 (Medicaid paid, person not reporting enrollment)",17.43554145464202,3.4035479374418056,54120
+pooled_2016_2024,18_64,all_donors,OPU share of harmonized Medicaid $ 2016-18,0.021383550729367092,0.00411328286722692,54120
+pooled_2016_2024,18_64,all_donors,"Medicaid $/person paid for people never reporting Medicaid, 2019-24",25.594269076586446,4.340040108417352,78709
+pooled_2016_2024,18_64,all_donors,"share of Medicaid $ paid for people never reporting Medicaid, 2019-24",0.027383116595480938,0.00471895277217767,78709
+pooled_2016_2024,18_64,all_donors,"uninsured all year, share",0.09621061830687483,0.003191735715274807,132829
+pooled_2016_2024,18_64,all_donors,public $/person among the uninsured all year,274.04977200859645,41.02333078018949,15891
+pooled_2016_2024,18_64,all_donors,state/local + other federal $/person among the uninsured all year,141.61905981611827,35.56669713861643,15891
+pooled_2016_2024,18_64,all_donors,"Medicaid ever, share",0.18206667239648586,0.004393962571805614,132829
+pooled_2016_2024,18_64,nh_white,"OPU $/person 2016-18 (Medicaid paid, person not reporting enrollment)",12.268074476096697,4.092634394929758,24047
+pooled_2016_2024,18_64,nh_white,OPU share of harmonized Medicaid $ 2016-18,0.016541539202535288,0.0054781228839529544,24047
+pooled_2016_2024,18_64,nh_white,"Medicaid $/person paid for people never reporting Medicaid, 2019-24",26.573072745373647,7.107877465569831,40656
+pooled_2016_2024,18_64,nh_white,"share of Medicaid $ paid for people never reporting Medicaid, 2019-24",0.03193031975671819,0.008482218192407182,40656
+pooled_2016_2024,18_64,nh_white,"uninsured all year, share",0.05896791382937539,0.002104528124154113,64703
+pooled_2016_2024,18_64,nh_white,public $/person among the uninsured all year,390.9495652807231,109.61399346877492,3924
+pooled_2016_2024,18_64,nh_white,state/local + other federal $/person among the uninsured all year,197.49579933914006,95.25920043591003,3924
+pooled_2016_2024,18_64,nh_white,"Medicaid ever, share",0.1404307506522833,0.004334483978116527,64703
+pooled_2016_2024,18_64,mexican_origin foreign-born,"public ratio, under 5 years in US / all foreign-born donors",0.5437466911740503,0.22710528137745156,302
+pooled_2016_2024,18_64,mexican_origin foreign-born,"public ratio, 5-14 years / all foreign-born donors",0.5961196383791005,0.09190657386788738,1876
+pooled_2016_2024,18_64,mexican_origin foreign-born,"public ratio, 15+ years / all foreign-born donors",1.0820758538094712,0.10676111892565325,8293
+pooled_2016_2024,under18,mexican_origin,"OPU $/person 2016-18 (Medicaid paid, person not reporting enrollment)",0.6324894828033638,0.2550579795398765,5992
+pooled_2016_2024,under18,mexican_origin,OPU share of harmonized Medicaid $ 2016-18,0.0006391460766108319,0.0002649446719084148,5992
+pooled_2016_2024,under18,mexican_origin,"Medicaid $/person paid for people never reporting Medicaid, 2019-24",2.9365713338616235,1.0438346351318057,6399
+pooled_2016_2024,under18,mexican_origin,"share of Medicaid $ paid for people never reporting Medicaid, 2019-24",0.0021243612053450725,0.0011819270230250072,6399
+pooled_2016_2024,under18,mexican_origin,"uninsured all year, share",0.04489475126531735,0.004919616297539481,12391
+pooled_2016_2024,under18,mexican_origin,public $/person among the uninsured all year,35.81785872375202,14.48561836820872,595
+pooled_2016_2024,under18,mexican_origin,state/local + other federal $/person among the uninsured all year,5.8056614377081575,1.7667538271725294,595
+pooled_2016_2024,under18,mexican_origin,"Medicaid ever, share",0.661031054050115,0.015488264801286069,12391
+pooled_2016_2024,under18,all_donors,"OPU $/person 2016-18 (Medicaid paid, person not reporting enrollment)",0.79793983759004,0.2227374565944117,23670
+pooled_2016_2024,under18,all_donors,OPU share of harmonized Medicaid $ 2016-18,0.0009168523404794579,0.0002689216040613496,23670
+pooled_2016_2024,under18,all_donors,"Medicaid $/person paid for people never reporting Medicaid, 2019-24",14.236951624258793,4.754578128942662,28633
+pooled_2016_2024,under18,all_donors,"share of Medicaid $ paid for people never reporting Medicaid, 2019-24",0.015836843241195823,0.00546489945658403,28633
+pooled_2016_2024,under18,all_donors,"uninsured all year, share",0.02682200638271557,0.0019388244735314205,52303
+pooled_2016_2024,under18,all_donors,public $/person among the uninsured all year,191.0046258026099,91.55263922680496,1555
+pooled_2016_2024,under18,all_donors,state/local + other federal $/person among the uninsured all year,99.9086959183264,64.16807865044045,1555
+pooled_2016_2024,under18,all_donors,"Medicaid ever, share",0.43752034492549846,0.009595104864542243,52303
+pooled_2016_2024,under18,nh_white,"OPU $/person 2016-18 (Medicaid paid, person not reporting enrollment)",0.3090099006401774,0.17263537195343723,7946
+pooled_2016_2024,under18,nh_white,OPU share of harmonized Medicaid $ 2016-18,0.0004105814095228949,0.00024089144310047466,7946
+pooled_2016_2024,under18,nh_white,"Medicaid $/person paid for people never reporting Medicaid, 2019-24",21.652294804243997,9.369032273625074,11919
+pooled_2016_2024,under18,nh_white,"share of Medicaid $ paid for people never reporting Medicaid, 2019-24",0.029422136904637818,0.012231892116995659,11919
+pooled_2016_2024,under18,nh_white,"uninsured all year, share",0.020727330365659383,0.0023912278057130307,19865
+pooled_2016_2024,under18,nh_white,public $/person among the uninsured all year,212.28886334092675,176.89566306295455,413
+pooled_2016_2024,under18,nh_white,state/local + other federal $/person among the uninsured all year,18.521492595343602,10.473646253732806,413
+pooled_2016_2024,under18,nh_white,"Medicaid ever, share",0.2940634785543649,0.01122578736341582,19865
+pooled_2016_2024,under18,mexican_origin foreign-born,"public ratio, under 5 years in US / all foreign-born donors",1.1318745405859691,0.39484060759324285,109
+pooled_2016_2024,under18,mexican_origin foreign-born,"public ratio, 5-14 years / all foreign-born donors",1.4065134619718085,0.6525281644789005,237
+pooled_2016_2024,under18,mexican_origin foreign-born,"public ratio, 15+ years / all foreign-born donors",1.9803224666389363,0.7123048658206431,37

@@ -1,0 +1,1114 @@
+{
+  "inputs": {
+    "h192dat.zip": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h192dat.zip",
+      "sha256": "f564ad7730eed6d7d84c927405e988d2ff50441f52292e9365ec6e863794329a"
+    },
+    "h192su.txt": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h192su.txt",
+      "sha256": "d4917a483baf3903aa8f2492d219cbc81121002c2ed4e12fa86965e44066ac19"
+    },
+    "h192cb.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h192cb.pdf",
+      "sha256": "6a84f2ef5e6c09bd548fa897efa4ef7a6fd0d723e632db3f79e8a1e538a13f77"
+    },
+    "h192doc.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h192doc.pdf",
+      "sha256": "033d614e7a085d3ab5ccfe9119653582a695244fda6b69f7fdf36d038fe82e9c"
+    },
+    "h201dat.zip": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h201dat.zip",
+      "sha256": "644ff24d934e55e029cfed863b658c09473193b784ebd9cb85ab77e6c6611669"
+    },
+    "h201su.txt": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h201su.txt",
+      "sha256": "37dfe33466b1d89b77f7815606a1192bf9faf11f566747c2ad73983964db7ee0"
+    },
+    "h201cb.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h201cb.pdf",
+      "sha256": "35643644675abab9e4bd83d0255f0a2779d4452918c5750e280806cf752a06eb"
+    },
+    "h201doc.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h201doc.pdf",
+      "sha256": "9ddeb911db10347be474ffe98ddb0a06677cfb5685e8c26448071f718cbfd867"
+    },
+    "h209dat.zip": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h209dat.zip",
+      "sha256": "6b031e8c316fcf9285b9e841c63472a0fbdebf8b04e6e9dfad94ef92373b9dee"
+    },
+    "h209su.txt": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h209su.txt",
+      "sha256": "8f53bb1fdb161bbd918a3390ac8e2e01bfc0799679382847615154b3aab003eb"
+    },
+    "h209cb.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h209cb.pdf",
+      "sha256": "0069cd186f114580ca0e5602b3d63ba9c6ab01e737b1e7d42de8dc56eecf5f7c"
+    },
+    "h209doc.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h209doc.pdf",
+      "sha256": "f78be1e6032ac1e89d76289aee9569460a6983eb4cddd54b52bfb0cdf6dae19e"
+    },
+    "h216dat.zip": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h216dat.zip",
+      "sha256": "53b025b959623fdca1fae7d9beb8d0ed66f75c50973a96330e59d61ad4154ebf"
+    },
+    "h216su.txt": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h216su.txt",
+      "sha256": "841cc0dd5f7ca5d8f5924a374327cc0a03526310fbfb06c7f92a3cdf44a455f7"
+    },
+    "h216cb.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h216cb.pdf",
+      "sha256": "64d79fcbfc13d2c40abc13d0cd2d33ea11fad9f8029223f93dc03c1b03545912"
+    },
+    "h216doc.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h216doc.pdf",
+      "sha256": "0c84d9d53f3d96390cb8c22f2452f47c2d7a8393a15eef08dd34d8c4925f7cc7"
+    },
+    "h224dat.zip": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h224dat.zip",
+      "sha256": "3aaf2350fdcd41ea9910ae9eba04287f5a689866f27b4861dfb191aa4e8976a4"
+    },
+    "h224su.txt": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h224su.txt",
+      "sha256": "01733e1e14ceeea62c18b0558cb0c0c58bc861da94f85f0fb2e3235b69de3a39"
+    },
+    "h224cb.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h224cb.pdf",
+      "sha256": "83c305987fd6d1f065d5ce9a168daab55830d00abab50d97299ce346ce64efe4"
+    },
+    "h224doc.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h224doc.pdf",
+      "sha256": "cd2c461698b4edfa3e3520e38c0d2597de6f2e007b6b88aaaa2107a1935262d7"
+    },
+    "h233dat.zip": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h233dat.zip",
+      "sha256": "07cb5aa2ae0caf06475901b7364ef6bd1dc23c6624bf2bcd6837096afaaa05ba"
+    },
+    "h233su.txt": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h233su.txt",
+      "sha256": "1d331516d0da157f57bec9cefc2f8652907175dbae70c167c9e4d62750df7d16"
+    },
+    "h233cb.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h233cb.pdf",
+      "sha256": "8dd7fdce1c74f164532038ea3471a984ba8118b015b01ced15acb9bb1c085544"
+    },
+    "h233doc.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h233doc.pdf",
+      "sha256": "96e1008bfbcca9c18a3aff3b304e65a633a2c09d624ebf8f061aa03c43cec2d9"
+    },
+    "h243dat.zip": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h243dat.zip",
+      "sha256": "aa17c8bacf091adbeacbef411cf3630759fe49c30ab4765a5964dacaa745938e"
+    },
+    "h243su.txt": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h243su.txt",
+      "sha256": "fe0fe47e853f975166f093f5a5a94718f4e7e6497cbbe852bcd3d8acd33d81b4"
+    },
+    "h243cb.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h243cb.pdf",
+      "sha256": "5084c52f799cfa1d3fc32d4d839564e70d7cf0ebf96f17c327c8d3ccf463e734"
+    },
+    "h243doc.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h243doc.pdf",
+      "sha256": "c25a4cf6c5260e0590fa0438b6f49c39ec9371a248f268d8ce8e06dc880da290"
+    },
+    "h251dat.zip": {
+      "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps/h251dat.zip",
+      "sha256": "ad0edc2e34b28b90c8c89f43869f4e90338c93c97c0bfc2cad73140b96edd55a"
+    },
+    "h251su.txt": {
+      "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt",
+      "sha256": "d6c44b31306f1a8e7904d9540f06e2f18a8c0c3c66cc65a76823412dd7c4535f"
+    },
+    "h251cb.pdf": {
+      "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps/h251cb.pdf",
+      "sha256": "9545a6f7f6b49740150491d2d5f8718b07f31ce206213fd8a942ad1fd06fa847"
+    },
+    "h251doc.pdf": {
+      "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps/h251doc.pdf",
+      "sha256": "c96de6e7af6b2415ba1118037caaffbfc2582158b1b319ce89704ffcce0da7d5"
+    },
+    "h256dat.zip": {
+      "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256dat.zip",
+      "sha256": "d0779e49de4f5ff0b0fff6774167023382366a0ef0905e6a3c40126114f988c9"
+    },
+    "h256su.txt": {
+      "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256su.txt",
+      "sha256": "a7bd4eca49833f40df45b53aad803dfca15b1a3a9b1de03aa6e79f508c5e24be"
+    },
+    "h256cb.pdf": {
+      "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256cb.pdf",
+      "sha256": "c5f0de30624e7337559f9b14a535b3b20118769e2eea074ee54103cf4f168885"
+    },
+    "h256doc.pdf": {
+      "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256doc.pdf",
+      "sha256": "31a3adfe4131b78a34f7abddc34b890201ace8dcad4be7bdcc3c3521de50c140"
+    },
+    "h36u24dat.zip": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h36u24dat.zip",
+      "sha256": "27a1dc9c453c0d0f3505a29e858d0b815998db79d0321386f8b232c6cc186386"
+    },
+    "h36u24su.txt": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/h36u24su.txt",
+      "sha256": "beeb8f9fbb31763a469d158553f404d44fba72ad4229341e5e61e9a98d990d48"
+    },
+    "bls_cpi_medical_allitems.json": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/bls_cpi_medical_allitems.json",
+      "sha256": "30dc7a6039596fd4dfe9c41bd78f7c69b5f18571b4c0b1763176252b33511f57"
+    }
+  },
+  "years": {
+    "2016": {
+      "year": 2016,
+      "records": 34655,
+      "hispncat": {
+        "1": {
+          "label": "MEXICAN/MEX AMER/CHICANO-NO OTHER HISP",
+          "unweighted": 6957,
+          "weighted": 35119652
+        },
+        "2": {
+          "label": "PUERTO RICAN -NO OTHER HISP REPORTED",
+          "unweighted": 953,
+          "weighted": 5193019
+        },
+        "3": {
+          "label": "CUBAN/CUBAN AMERICAN -NO OTHER HISP RPTD",
+          "unweighted": 470,
+          "weighted": 2197537
+        },
+        "4": {
+          "label": "DOMINICAN -NO OTHER HISP REPORTED",
+          "unweighted": 399,
+          "weighted": 1654185
+        },
+        "5": {
+          "label": "CENTRAL OR SOUTH AMERICAN -NO OTHER HISP",
+          "unweighted": 1762,
+          "weighted": 9456871
+        },
+        "6": {
+          "label": "OTH LAT AM/HISP/LATINO/SPNSH ORGN-NO OTH",
+          "unweighted": 425,
+          "weighted": 3020125
+        },
+        "8": {
+          "label": "MULTIPLE HISPANIC GROUPS REPORTED",
+          "unweighted": 275,
+          "weighted": 1486616
+        },
+        "9": {
+          "label": "NON-HISPANIC",
+          "unweighted": 23414,
+          "weighted": 265013681
+        }
+      },
+      "mexican_label": "MEXICAN/MEX AMER/CHICANO-NO OTHER HISP",
+      "bornusa": {
+        "-9": {
+          "label": "NOT ASCERTAINED",
+          "unweighted": 72,
+          "weighted": 80985
+        },
+        "-8": {
+          "label": "DK",
+          "unweighted": 12,
+          "weighted": 69378
+        },
+        "-7": {
+          "label": "REFUSED",
+          "unweighted": 27,
+          "weighted": 101000
+        },
+        "-1": {
+          "label": "INAPPLICABLE, THOSE WHO ARE DEC/INSTD",
+          "unweighted": 33,
+          "weighted": 522659
+        },
+        "1": {
+          "label": "YES",
+          "unweighted": 27040,
+          "weighted": 276843356
+        },
+        "2": {
+          "label": "NO",
+          "unweighted": 7471,
+          "weighted": 45524308
+        }
+      },
+      "nh_white": {
+        "unweighted": 13236,
+        "weighted": 194556659,
+        "label": "NON-HISPANIC WHITE ONLY",
+        "records_where_hispanx_racev1x_definition_differs": 0
+      },
+      "totexp_identity_max_abs_residual": 4.0,
+      "totexp_identity_records_off": 4901,
+      "annual_design": {
+        "strata": 165,
+        "psus": 368
+      },
+      "positive_weight": 33259,
+      "population": 323141686.707079,
+      "mcdev_codes": [
+        1,
+        2
+      ]
+    },
+    "2017": {
+      "year": 2017,
+      "records": 31880,
+      "hispncat": {
+        "1": {
+          "label": "MEXICAN/MEX AMER/CHICANO-NO OTHER HISP",
+          "unweighted": 5644,
+          "weighted": 35208128
+        },
+        "2": {
+          "label": "PUERTO RICAN -NO OTHER HISP REPORTED",
+          "unweighted": 780,
+          "weighted": 5819570
+        },
+        "3": {
+          "label": "CUBAN/CUBAN AMERICAN -NO OTHER HISP RPTD",
+          "unweighted": 363,
+          "weighted": 2227078
+        },
+        "4": {
+          "label": "DOMINICAN -NO OTHER HISP REPORTED",
+          "unweighted": 280,
+          "weighted": 1635862
+        },
+        "5": {
+          "label": "CENTRAL OR SOUTH AMERICAN -NO OTHER HISP",
+          "unweighted": 1354,
+          "weighted": 9475038
+        },
+        "6": {
+          "label": "OTH LAT AM/HISP/LATINO/SPNSH ORGN-NO OTH",
+          "unweighted": 473,
+          "weighted": 3305832
+        },
+        "8": {
+          "label": "MULTIPLE HISPANIC GROUPS REPORTED",
+          "unweighted": 234,
+          "weighted": 1683473
+        },
+        "9": {
+          "label": "NON-HISPANIC",
+          "unweighted": 22752,
+          "weighted": 265424930
+        }
+      },
+      "mexican_label": "MEXICAN/MEX AMER/CHICANO-NO OTHER HISP",
+      "bornusa": {
+        "-9": {
+          "label": "NOT ASCERTAINED",
+          "unweighted": 182,
+          "weighted": 1599341
+        },
+        "-8": {
+          "label": "DK",
+          "unweighted": 8,
+          "weighted": 44588
+        },
+        "-7": {
+          "label": "REFUSED",
+          "unweighted": 31,
+          "weighted": 216966
+        },
+        "-1": {
+          "label": "INAPPLICABLE, THOSE WHO ARE DEC/INSTD",
+          "unweighted": 33,
+          "weighted": 370714
+        },
+        "1": {
+          "label": "YES",
+          "unweighted": 25725,
+          "weighted": 276723050
+        },
+        "2": {
+          "label": "NO",
+          "unweighted": 5901,
+          "weighted": 45825250
+        }
+      },
+      "nh_white": {
+        "unweighted": 14235,
+        "weighted": 194529717,
+        "label": "NON-HISPANIC WHITE ONLY",
+        "records_where_hispanx_racev1x_definition_differs": 0
+      },
+      "totexp_identity_max_abs_residual": 4.0,
+      "totexp_identity_records_off": 4801,
+      "annual_design": {
+        "strata": 282,
+        "psus": 621
+      },
+      "positive_weight": 30716,
+      "population": 324779908.525702,
+      "mcdev_codes": [
+        1,
+        2
+      ]
+    },
+    "2018": {
+      "year": 2018,
+      "records": 30461,
+      "hispncat": {
+        "1": {
+          "label": "MEXICAN/MEX AMER/CHICANO-NO OTHER HISP",
+          "unweighted": 4786,
+          "weighted": 37227644
+        },
+        "2": {
+          "label": "PUERTO RICAN -NO OTHER HISP REPORTED",
+          "unweighted": 578,
+          "weighted": 5762557
+        },
+        "3": {
+          "label": "CUBAN/CUBAN AMERICAN -NO OTHER HISP RPTD",
+          "unweighted": 302,
+          "weighted": 2735441
+        },
+        "4": {
+          "label": "DOMINICAN -NO OTHER HISP REPORTED",
+          "unweighted": 188,
+          "weighted": 1835672
+        },
+        "5": {
+          "label": "CENTRAL OR SOUTH AMERICAN -NO OTHER HISP",
+          "unweighted": 931,
+          "weighted": 8569682
+        },
+        "6": {
+          "label": "OTH LAT AM/HISP/LATINO/SPNSH ORGN-NO OTH",
+          "unweighted": 407,
+          "weighted": 3018644
+        },
+        "8": {
+          "label": "MULTIPLE HISPANIC GROUPS REPORTED",
+          "unweighted": 114,
+          "weighted": 1080148
+        },
+        "9": {
+          "label": "NON-HISPANIC",
+          "unweighted": 23155,
+          "weighted": 266098100
+        }
+      },
+      "mexican_label": "MEXICAN/MEX AMER/CHICANO-NO OTHER HISP",
+      "bornusa": {
+        "-15": {
+          "label": "CANNOT BE COMPUTED",
+          "unweighted": 94,
+          "weighted": 940278
+        },
+        "-8": {
+          "label": "DK",
+          "unweighted": 15,
+          "weighted": 119742
+        },
+        "-7": {
+          "label": "REFUSED",
+          "unweighted": 32,
+          "weighted": 271144
+        },
+        "-1": {
+          "label": "INAPPLICABLE, THOSE WHO ARE DEC/INSTD",
+          "unweighted": 44,
+          "weighted": 448394
+        },
+        "1": {
+          "label": "YES",
+          "unweighted": 25645,
+          "weighted": 278028344
+        },
+        "2": {
+          "label": "NO",
+          "unweighted": 4631,
+          "weighted": 46519986
+        }
+      },
+      "nh_white": {
+        "unweighted": 15836,
+        "weighted": 194766207,
+        "label": "NON-HISPANIC WHITE ONLY",
+        "records_where_hispanx_racev1x_definition_differs": 0
+      },
+      "totexp_identity_max_abs_residual": 4.0,
+      "totexp_identity_records_off": 5035,
+      "annual_design": {
+        "strata": 117,
+        "psus": 257
+      },
+      "positive_weight": 29415,
+      "population": 326327887.86332,
+      "mcdev_codes": [
+        1,
+        2
+      ]
+    },
+    "2019": {
+      "year": 2019,
+      "records": 28512,
+      "hispncat": {
+        "1": {
+          "label": "MEXICAN/MEX AMER/CHICANO-NO OTHER HISP",
+          "unweighted": 4230,
+          "weighted": 36990711
+        },
+        "2": {
+          "label": "PUERTO RICAN -NO OTHER HISP REPORTED",
+          "unweighted": 474,
+          "weighted": 4829310
+        },
+        "3": {
+          "label": "CUBAN/CUBAN AMERICAN -NO OTHER HISP RPTD",
+          "unweighted": 274,
+          "weighted": 2766195
+        },
+        "4": {
+          "label": "DOMINICAN -NO OTHER HISP REPORTED",
+          "unweighted": 193,
+          "weighted": 2191932
+        },
+        "5": {
+          "label": "CENTRAL OR SOUTH AMERICAN -NO OTHER HISP",
+          "unweighted": 937,
+          "weighted": 9290311
+        },
+        "6": {
+          "label": "OTH LAT AM/HISP/LATINO/SPNSH ORGN-NO OTH",
+          "unweighted": 315,
+          "weighted": 2963915
+        },
+        "8": {
+          "label": "MULTIPLE HISPANIC GROUPS REPORTED",
+          "unweighted": 139,
+          "weighted": 1424133
+        },
+        "9": {
+          "label": "NON-HISPANIC",
+          "unweighted": 21950,
+          "weighted": 266940187
+        }
+      },
+      "mexican_label": "MEXICAN/MEX AMER/CHICANO-NO OTHER HISP",
+      "bornusa": {
+        "-15": {
+          "label": "CANNOT BE COMPUTED",
+          "unweighted": 1,
+          "weighted": 11121
+        },
+        "-8": {
+          "label": "DK",
+          "unweighted": 24,
+          "weighted": 243804
+        },
+        "-7": {
+          "label": "REFUSED",
+          "unweighted": 35,
+          "weighted": 291811
+        },
+        "-1": {
+          "label": "INAPPLICABLE, THOSE WHO ARE DEC/INSTD",
+          "unweighted": 33,
+          "weighted": 310960
+        },
+        "1": {
+          "label": "YES",
+          "unweighted": 24040,
+          "weighted": 278841512
+        },
+        "2": {
+          "label": "NO",
+          "unweighted": 4379,
+          "weighted": 47697485
+        }
+      },
+      "nh_white": {
+        "unweighted": 15281,
+        "weighted": 195488622,
+        "label": "NON-HISPANIC WHITE ONLY",
+        "records_where_hispanx_racev1x_definition_differs": 0
+      },
+      "totexp_identity_max_abs_residual": 5.0,
+      "totexp_identity_records_off": 5149,
+      "annual_design": {
+        "strata": 105,
+        "psus": 281
+      },
+      "positive_weight": 27648,
+      "population": 327396692.93539405,
+      "mcdev_codes": [
+        1,
+        2
+      ]
+    },
+    "2020": {
+      "year": 2020,
+      "records": 27805,
+      "hispncat": {
+        "1": {
+          "label": "MEXICAN/MEX AMER/CHICANO - NO OTHER HISP RPTD",
+          "unweighted": 4394,
+          "weighted": 37772528
+        },
+        "2": {
+          "label": "PUERTO RICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 445,
+          "weighted": 4229285
+        },
+        "3": {
+          "label": "CUBAN/CUBAN AMERICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 301,
+          "weighted": 2578214
+        },
+        "4": {
+          "label": "DOMINICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 207,
+          "weighted": 2175784
+        },
+        "5": {
+          "label": "CENTRAL OR SOUTH AMERICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 969,
+          "weighted": 9446381
+        },
+        "6": {
+          "label": "OTH LAT AM/HISP/LATINO/SPNSH ORGN-NO OTH",
+          "unweighted": 354,
+          "weighted": 3839958
+        },
+        "8": {
+          "label": "MULTIPLE HISPANIC GROUPS REPORTED",
+          "unweighted": 144,
+          "weighted": 1570338
+        },
+        "9": {
+          "label": "NON-HISPANIC",
+          "unweighted": 20991,
+          "weighted": 266932809
+        }
+      },
+      "mexican_label": "MEXICAN/MEX AMER/CHICANO - NO OTHER HISP RPTD",
+      "bornusa": {
+        "-15": {
+          "label": "CANNOT BE COMPUTED",
+          "unweighted": 3,
+          "weighted": 18575
+        },
+        "-8": {
+          "label": "DK",
+          "unweighted": 14,
+          "weighted": 92980
+        },
+        "-7": {
+          "label": "REFUSED",
+          "unweighted": 32,
+          "weighted": 202681
+        },
+        "-1": {
+          "label": "INAPPLICABLE",
+          "unweighted": 21,
+          "weighted": 340028
+        },
+        "1": {
+          "label": "YES",
+          "unweighted": 23140,
+          "weighted": 279543458
+        },
+        "2": {
+          "label": "NO",
+          "unweighted": 4595,
+          "weighted": 48347575
+        }
+      },
+      "nh_white": {
+        "unweighted": 14595,
+        "weighted": 194633575,
+        "label": "NON-HISPANIC WHITE ONLY",
+        "records_where_hispanx_racev1x_definition_differs": 0
+      },
+      "totexp_identity_max_abs_residual": 4.0,
+      "totexp_identity_records_off": 4854,
+      "annual_design": {
+        "strata": 105,
+        "psus": 281
+      },
+      "positive_weight": 26847,
+      "population": 328545296.809381,
+      "mcdev_codes": [
+        1,
+        2
+      ]
+    },
+    "2021": {
+      "year": 2021,
+      "records": 28336,
+      "hispncat": {
+        "1": {
+          "label": "MEXICAN/MEX AMER/CHICANO - NO OTHER HISP RPTD",
+          "unweighted": 4325,
+          "weighted": 37800485
+        },
+        "2": {
+          "label": "PUERTO RICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 462,
+          "weighted": 4604803
+        },
+        "3": {
+          "label": "CUBAN/CUBAN AMERICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 287,
+          "weighted": 2685488
+        },
+        "4": {
+          "label": "DOMINICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 223,
+          "weighted": 2382422
+        },
+        "5": {
+          "label": "CENTRAL OR SOUTH AMERICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 971,
+          "weighted": 9675229
+        },
+        "6": {
+          "label": "OTH LAT AM/HISP/LATINO/SPNSH ORGN-NO OTH",
+          "unweighted": 374,
+          "weighted": 3947522
+        },
+        "8": {
+          "label": "MULTIPLE HISPANIC GROUPS REPORTED",
+          "unweighted": 156,
+          "weighted": 1684066
+        },
+        "9": {
+          "label": "NON-HISPANIC",
+          "unweighted": 21538,
+          "weighted": 268469378
+        }
+      },
+      "mexican_label": "MEXICAN/MEX AMER/CHICANO - NO OTHER HISP RPTD",
+      "bornusa": {
+        "-15": {
+          "label": "CANNOT BE COMPUTED",
+          "unweighted": 1,
+          "weighted": 10502
+        },
+        "-8": {
+          "label": "DK",
+          "unweighted": 12,
+          "weighted": 55660
+        },
+        "-7": {
+          "label": "REFUSED",
+          "unweighted": 36,
+          "weighted": 182075
+        },
+        "-1": {
+          "label": "INAPPLICABLE",
+          "unweighted": 37,
+          "weighted": 501935
+        },
+        "1": {
+          "label": "YES",
+          "unweighted": 23671,
+          "weighted": 282316754
+        },
+        "2": {
+          "label": "NO",
+          "unweighted": 4579,
+          "weighted": 48182468
+        }
+      },
+      "nh_white": {
+        "unweighted": 15023,
+        "weighted": 194089626,
+        "label": "NON-HISPANIC WHITE ONLY",
+        "records_where_hispanx_racev1x_definition_differs": 0
+      },
+      "totexp_identity_max_abs_residual": 4.0,
+      "totexp_identity_records_off": 5202,
+      "annual_design": {
+        "strata": 105,
+        "psus": 385
+      },
+      "positive_weight": 27332,
+      "population": 331249393.42083,
+      "mcdev_codes": [
+        1,
+        2
+      ]
+    },
+    "2022": {
+      "year": 2022,
+      "records": 22431,
+      "hispncat": {
+        "1": {
+          "label": "MEXICAN/MEX AMER/CHICANO - NO OTHER HISP RPTD",
+          "unweighted": 3071,
+          "weighted": 39847190
+        },
+        "2": {
+          "label": "PUERTO RICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 357,
+          "weighted": 4826604
+        },
+        "3": {
+          "label": "CUBAN/CUBAN AMERICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 186,
+          "weighted": 2435521
+        },
+        "4": {
+          "label": "DOMINICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 165,
+          "weighted": 2402945
+        },
+        "5": {
+          "label": "CENTRAL OR SOUTH AMERICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 737,
+          "weighted": 9427368
+        },
+        "6": {
+          "label": "OTH LAT AM/HISP/LATINO/SPNSH ORGN-NO OTH",
+          "unweighted": 258,
+          "weighted": 3465169
+        },
+        "8": {
+          "label": "MULTIPLE HISPANIC GROUPS REPORTED",
+          "unweighted": 109,
+          "weighted": 1759612
+        },
+        "9": {
+          "label": "NON-HISPANIC",
+          "unweighted": 17548,
+          "weighted": 268888834
+        }
+      },
+      "mexican_label": "MEXICAN/MEX AMER/CHICANO - NO OTHER HISP RPTD",
+      "bornusa": {
+        "-8": {
+          "label": "DON'T KNOW",
+          "unweighted": 5,
+          "weighted": 19533
+        },
+        "-7": {
+          "label": "REFUSED",
+          "unweighted": 24,
+          "weighted": 223132
+        },
+        "-1": {
+          "label": "INAPPLICABLE",
+          "unweighted": 31,
+          "weighted": 497492
+        },
+        "1": {
+          "label": "YES",
+          "unweighted": 18663,
+          "weighted": 281993864
+        },
+        "2": {
+          "label": "NO",
+          "unweighted": 3708,
+          "weighted": 50319222
+        }
+      },
+      "nh_white": {
+        "unweighted": 12211,
+        "weighted": 192947932,
+        "label": "NON-HISPANIC WHITE ONLY",
+        "records_where_hispanx_racev1x_definition_differs": 0
+      },
+      "totexp_identity_max_abs_residual": 4.0,
+      "totexp_identity_records_off": 4365,
+      "annual_design": {
+        "strata": 105,
+        "psus": 364
+      },
+      "positive_weight": 21747,
+      "population": 333053242.837302,
+      "mcdev_codes": [
+        1,
+        2
+      ]
+    },
+    "2023": {
+      "year": 2023,
+      "records": 18919,
+      "hispncat": {
+        "1": {
+          "label": "MEXICAN/MEX AMER/CHICANO - NO OTHER HISP RPTD",
+          "unweighted": 2766,
+          "weighted": 41969123
+        },
+        "2": {
+          "label": "PUERTO RICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 305,
+          "weighted": 5493877
+        },
+        "3": {
+          "label": "CUBAN/CUBAN AMERICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 145,
+          "weighted": 2251459
+        },
+        "4": {
+          "label": "DOMINICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 126,
+          "weighted": 2429061
+        },
+        "5": {
+          "label": "CENTRAL OR SOUTH AMERICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 567,
+          "weighted": 8733760
+        },
+        "6": {
+          "label": "OTH LAT AM/HISP/LATINO/SPNSH ORGN-NO OTH",
+          "unweighted": 207,
+          "weighted": 3541308
+        },
+        "8": {
+          "label": "MULTIPLE HISPANIC GROUPS REPORTED",
+          "unweighted": 72,
+          "weighted": 1340460
+        },
+        "9": {
+          "label": "NON-HISPANIC",
+          "unweighted": 14731,
+          "weighted": 268771225
+        }
+      },
+      "mexican_label": "MEXICAN/MEX AMER/CHICANO - NO OTHER HISP RPTD",
+      "bornusa": {
+        "-8": {
+          "label": "DON'T KNOW",
+          "unweighted": 7,
+          "weighted": 92367
+        },
+        "-7": {
+          "label": "REFUSED",
+          "unweighted": 30,
+          "weighted": 411262
+        },
+        "-1": {
+          "label": "INAPPLICABLE",
+          "unweighted": 33,
+          "weighted": 718953
+        },
+        "1": {
+          "label": "YES",
+          "unweighted": 15686,
+          "weighted": 282254540
+        },
+        "2": {
+          "label": "NO",
+          "unweighted": 3163,
+          "weighted": 51053151
+        }
+      },
+      "nh_white": {
+        "unweighted": 10338,
+        "weighted": 191904354,
+        "label": "NON-HISPANIC WHITE ONLY",
+        "records_where_hispanx_racev1x_definition_differs": 3
+      },
+      "totexp_identity_max_abs_residual": 4.0,
+      "totexp_identity_records_off": 3780,
+      "annual_design": {
+        "strata": 105,
+        "psus": 262
+      },
+      "positive_weight": 18463,
+      "population": 334530273.168012,
+      "mcdev_codes": [
+        1,
+        2
+      ]
+    },
+    "2024": {
+      "year": 2024,
+      "records": 19140,
+      "hispncat": {
+        "1": {
+          "label": "MEXICAN/MEX AMER/CHICANO - NO OTHER HISP RPTD",
+          "unweighted": 2679,
+          "weighted": 42446768
+        },
+        "2": {
+          "label": "PUERTO RICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 282,
+          "weighted": 5310040
+        },
+        "3": {
+          "label": "CUBAN/CUBAN AMERICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 144,
+          "weighted": 2030498
+        },
+        "4": {
+          "label": "DOMINICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 131,
+          "weighted": 2829667
+        },
+        "5": {
+          "label": "CENTRAL OR SOUTH AMERICAN - NO OTHER HISPANIC RPTD",
+          "unweighted": 588,
+          "weighted": 10298522
+        },
+        "6": {
+          "label": "OTH LAT AM/HISP/LATINO/SPNSH ORGN-NO OTH",
+          "unweighted": 216,
+          "weighted": 4168032
+        },
+        "8": {
+          "label": "MULTIPLE HISPANIC GROUPS REPORTED",
+          "unweighted": 76,
+          "weighted": 1522056
+        },
+        "9": {
+          "label": "NON-HISPANIC",
+          "unweighted": 15024,
+          "weighted": 271192047
+        }
+      },
+      "mexican_label": "MEXICAN/MEX AMER/CHICANO - NO OTHER HISP RPTD",
+      "bornusa": {
+        "-8": {
+          "label": "DON'T KNOW",
+          "unweighted": 10,
+          "weighted": 106207
+        },
+        "-7": {
+          "label": "REFUSED",
+          "unweighted": 43,
+          "weighted": 689705
+        },
+        "-1": {
+          "label": "INAPPLICABLE",
+          "unweighted": 35,
+          "weighted": 667882
+        },
+        "1": {
+          "label": "YES",
+          "unweighted": 16002,
+          "weighted": 285498519
+        },
+        "2": {
+          "label": "NO",
+          "unweighted": 3050,
+          "weighted": 52835316
+        }
+      },
+      "nh_white": {
+        "unweighted": 10766,
+        "weighted": 191692001,
+        "label": "NON-HISPANIC WHITE ONLY",
+        "records_where_hispanx_racev1x_definition_differs": 0
+      },
+      "totexp_identity_max_abs_residual": 3.0,
+      "totexp_identity_records_off": 4119,
+      "annual_design": {
+        "strata": 105,
+        "psus": 264
+      },
+      "positive_weight": 18683,
+      "population": 339797629.595972,
+      "mcdev_codes": [
+        1,
+        2
+      ]
+    }
+  },
+  "hc036_gates": {
+    "inh": {
+      "2016": {
+        "inh_flag_count": 34655,
+        "codebook": 34655,
+        "same_id_format": 34655
+      },
+      "2017": {
+        "inh_flag_count": 47650,
+        "codebook": 47650,
+        "same_id_format": 31880
+      },
+      "2018": {
+        "inh_flag_count": 45091,
+        "codebook": 45091,
+        "same_id_format": 30461
+      },
+      "2019": {
+        "inh_flag_count": 28512,
+        "codebook": 28512,
+        "same_id_format": 28512
+      },
+      "2020": {
+        "inh_flag_count": 27805,
+        "codebook": 27805,
+        "same_id_format": 27805
+      },
+      "2021": {
+        "inh_flag_count": 28336,
+        "codebook": 28336,
+        "same_id_format": 28336
+      },
+      "2022": {
+        "inh_flag_count": 22431,
+        "codebook": 22431,
+        "same_id_format": 22431
+      },
+      "2023": {
+        "inh_flag_count": 18919,
+        "codebook": 18919,
+        "same_id_format": 18919
+      },
+      "2024": {
+        "inh_flag_count": 19140,
+        "codebook": 19140,
+        "same_id_format": 19140
+      }
+    },
+    "panel22_duplicates_same_design_cells": 257,
+    "panel22_persons_in_both_2017_and_2018": 14630
+  },
+  "pooled_design": {
+    "strata": 282,
+    "psus": 779,
+    "min_psu_per_stratum": 2,
+    "max_psu_per_stratum": 8
+  },
+  "persons_in_more_than_one_year": 69992,
+  "unique_persons": 144756,
+  "opu_share_of_harmonized_medicaid": {
+    "2016": 0.035032151420367634,
+    "2017": 0.013546077621573905,
+    "2018": 0.00845956185282773
+  },
+  "deflators": {
+    "primary": "CUUR0000SAM CPI-U Medical care, U.S. city average, NSA, annual average (BLS)",
+    "sensitivity": "CUUR0000SA0 CPI-U All items, U.S. city average, NSA, annual average (BLS)",
+    "factor_to_2024": {
+      "CUUR0000SAM": {
+        "2016": 1.2160263115328624,
+        "2017": 1.1862295454449825,
+        "2018": 1.1632615167513571,
+        "2019": 1.1312726594210023,
+        "2020": 1.0866584694609118,
+        "2021": 1.0734185456788432,
+        "2022": 1.031629079651782,
+        "2023": 1.026875669296501,
+        "2024": 1.0
+      },
+      "CUUR0000SA0": {
+        "2016": 1.3069993791847738,
+        "2017": 1.279736455613577,
+        "2018": 1.249224434205339,
+        "2019": 1.2269916333212076,
+        "2020": 1.21203890097407,
+        "2021": 1.1576521386131307,
+        "2022": 1.0718730245510928,
+        "2023": 1.0294943912412784,
+        "2024": 1.0
+      }
+    },
+    "source": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/bls_cpi_medical_allitems.json",
+    "sha256": "30dc7a6039596fd4dfe9c41bd78f7c69b5f18571b4c0b1763176252b33511f57"
+  }
+}
