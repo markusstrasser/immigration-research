@@ -1,0 +1,56 @@
+a,b,shared_samples,n_a,n_b,matched,rate_a,rate_b,columns_compared,disagreements,result,note
+2,3,5,967300,967300,967300,1.0,1.0,13,{},pass,
+2,4,3,,6558144,6558144,,1.0,15,{},pass,"one-way: extract 2 has no SEX, so only extract 4's records were checked against it"
+2,5,2,,39471,39471,,1.0,16,{},pass,"one-way: extract 2 has no SEX, so only extract 5's records were checked against it"
+2,6,3,,6558144,6558144,,1.0,11,{},pass,"one-way: extract 2 has no SEX, so only extract 6's records were checked against it"
+2,7,1,,408356,408356,,1.0,14,{},pass,"one-way: extract 2 has no SEX, so only extract 7's records were checked against it"
+2,8,2,,758165,758165,,1.0,14,{},pass,"one-way: extract 2 has no SEX, so only extract 8's records were checked against it"
+2,9,1,,408356,408356,,1.0,14,{},pass,"one-way: extract 2 has no SEX, so only extract 9's records were checked against it"
+2,10,2,10948875,10948875,10948875,1.0,1.0,16,{},pass,
+2,11,1,7937859,7937859,7937859,1.0,1.0,15,{},pass,
+2,13,5,967300,967300,967300,1.0,1.0,10,{},pass,
+2,14,3,,121364,121364,,1.0,11,{},pass,"one-way: extract 2 has no SEX, so only extract 14's records were checked against it"
+2,15,1,200397,200397,200397,1.0,1.0,13,{},pass,
+3,4,3,255804,255804,255804,1.0,1.0,13,{},pass,
+3,5,18,361850,361850,361850,1.0,1.0,14,{},pass,
+3,6,3,255804,255804,255804,1.0,1.0,12,{},pass,
+3,7,3,0,0,0,,,12,{},disjoint,
+3,8,18,0,0,0,,,12,{},disjoint,
+3,9,3,0,0,0,,,12,{},disjoint,
+3,10,2,458123,458123,458123,1.0,1.0,15,{},pass,
+3,11,1,177882,177882,177882,1.0,1.0,14,{},pass,
+3,13,23,2575058,2575058,2575058,1.0,1.0,10,{},pass,
+3,14,3,1973,1973,1973,1.0,1.0,10,{},pass,
+3,15,1,1933,1933,1933,1.0,1.0,11,{},pass,
+4,6,3,6558144,6558144,6558144,1.0,1.0,12,{},pass,
+4,10,1,2262402,2262402,2262402,1.0,1.0,16,{},pass,
+4,11,1,2236671,2236671,2236671,1.0,1.0,16,{},pass,
+4,13,3,255804,,255804,1.0,,9,{},pass,"one-way: extract 13 has no SEX, AGE, so only extract 4's records were checked against it"
+4,14,3,121364,121364,121364,1.0,1.0,14,{},pass,
+4,15,1,62336,62336,62336,1.0,1.0,18,{},pass,
+5,7,3,0,0,0,,,98,{},disjoint,
+5,8,18,0,0,0,,,17,{},disjoint,
+5,9,3,0,0,0,,,17,{},disjoint,
+5,10,1,24561,24561,24561,1.0,1.0,17,{},pass,
+5,13,18,361850,,361850,1.0,,10,{},pass,"one-way: extract 13 has no SEX, AGE, so only extract 5's records were checked against it"
+6,10,1,2262402,2262402,2262402,1.0,1.0,12,{},pass,
+6,11,1,2236671,2236671,2236671,1.0,1.0,12,{},pass,
+6,13,3,255804,,255804,1.0,,10,{},pass,"one-way: extract 13 has no SEX, AGE, so only extract 6's records were checked against it"
+6,14,3,121364,121364,121364,1.0,1.0,10,{},pass,
+6,15,1,62336,62336,62336,1.0,1.0,11,{},pass,
+7,8,3,1207425,1207425,1207425,1.0,1.0,17,{},pass,
+7,9,3,1207425,1207425,1207425,1.0,1.0,17,{},pass,
+7,13,3,0,,0,,,10,{},disjoint,"one-way: extract 13 has no SEX, AGE, so only extract 7's records were checked against it"
+8,9,3,1207425,1207425,1207425,1.0,1.0,17,{},pass,
+8,10,1,349809,349809,349809,1.0,1.0,15,{},pass,
+8,13,18,0,,0,,,10,{},disjoint,"one-way: extract 13 has no SEX, AGE, so only extract 8's records were checked against it"
+9,13,3,0,,0,,,10,{},disjoint,"one-way: extract 13 has no SEX, AGE, so only extract 9's records were checked against it"
+10,13,2,458123,,458123,1.0,,10,{},pass,"one-way: extract 13 has no AGE, so only extract 10's records were checked against it"
+10,14,1,62336,62336,62336,1.0,1.0,12,{},pass,
+10,15,1,106563,106563,106563,1.0,1.0,14,{},pass,
+11,13,1,177882,,177882,1.0,,9,{},pass,"one-way: extract 13 has no AGE, so only extract 11's records were checked against it"
+11,14,1,32071,32071,32071,1.0,1.0,12,{},pass,
+12,13,5,109834,109834,109834,1.0,1.0,9,{},pass,
+13,14,3,,1973,1973,,1.0,7,{},pass,"one-way: extract 13 has no SEX, AGE, so only extract 14's records were checked against it"
+13,15,1,1933,1933,1933,1.0,1.0,7,{},pass,
+14,15,1,62336,62336,62336,1.0,1.0,16,{},pass,

@@ -1,0 +1,104 @@
+extract,gate,expected,observed,result,note
+10,DDI sha256 = IPUMS,a64b427a0934065cb07099f1b4a4c15c6b46b65de61b09b75666a6ad212d6b56,a64b427a0934065cb07099f1b4a4c15c6b46b65de61b09b75666a6ad212d6b56,pass,
+10,Parquet rows = CSV rows,16851363,16851363,pass,
+10,case selection holds,0,0,pass,"""AGE"" IN (16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42,..."
+10,data bytes = IPUMS,323450857,323450857,pass,
+10,data sha256 = IPUMS,0b3e62b946d8f09c98470e2a14f6f3c9f1001871b8d517422510dc89a2762253,0b3e62b946d8f09c98470e2a14f6f3c9f1001871b8d517422510dc89a2762253,pass,
+10,person key unique,0,0,pass,"key = YEAR, SAMPLE, SERIAL, PERNUM"
+10,samples in data = samples requested,3,3,pass,
+11,DDI sha256 = IPUMS,4a89803f1f8468a9e53a28f2eefc7eab52e56c2c68f6ab21d6caf54522144b1e,4a89803f1f8468a9e53a28f2eefc7eab52e56c2c68f6ab21d6caf54522144b1e,pass,
+11,Parquet rows = CSV rows,7937859,7937859,pass,
+11,case selection holds,0,0,pass,"""AGE"" IN (16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42,..."
+11,data bytes = IPUMS,131318370,131318370,pass,
+11,data sha256 = IPUMS,36cb3240589aa1032abfc80897049fdb80b9088842ea7f1ef47af87866d4a1e1,36cb3240589aa1032abfc80897049fdb80b9088842ea7f1ef47af87866d4a1e1,pass,
+11,person key unique,0,0,pass,"key = YEAR, SAMPLE, SERIAL, PERNUM"
+11,samples in data = samples requested,1,1,pass,
+12,DDI sha256 = IPUMS,25007c2824eaa11e6740317111a560d2ffd175c7a062c92cb5a171aaedda8c1f,25007c2824eaa11e6740317111a560d2ffd175c7a062c92cb5a171aaedda8c1f,pass,
+12,Parquet rows = CSV rows,109834,109834,pass,
+12,case selection holds,0,0,pass,"""BPL"" IN (200)"
+12,data bytes = IPUMS,1501073,1501073,pass,
+12,data sha256 = IPUMS,d4641be42a09466f7e3128be28a7f37258b15edbbf60fce9b28eb972d5e16fb5,d4641be42a09466f7e3128be28a7f37258b15edbbf60fce9b28eb972d5e16fb5,pass,
+12,person key unique,0,0,pass,"key = YEAR, SAMPLE, SERIAL, PERNUM"
+12,samples in data = samples requested,5,5,pass,
+13,DDI sha256 = IPUMS,ee31a4fb6cd45db1fc54a36e9483d194d78727cb9009dd84a0b069db286ac4e4,ee31a4fb6cd45db1fc54a36e9483d194d78727cb9009dd84a0b069db286ac4e4,pass,
+13,Parquet rows = CSV rows,2684892,2684892,pass,
+13,case selection holds,0,0,pass,"""BPL"" IN (200)"
+13,data bytes = IPUMS,30078112,30078112,pass,
+13,data sha256 = IPUMS,9616b1adee0fbe3dde717a4764487f139faee5eecc958a46d57b3d0820eba062,9616b1adee0fbe3dde717a4764487f139faee5eecc958a46d57b3d0820eba062,pass,
+13,person key unique,0,0,pass,"key = YEAR, SAMPLE, SERIAL, PERNUM"
+13,samples in data = samples requested,28,28,pass,
+14,DDI sha256 = IPUMS,d4795ab66f1dc11d5cb0b17d9e931845ca29824983e055e12c8eeeb65d4204ed,d4795ab66f1dc11d5cb0b17d9e931845ca29824983e055e12c8eeeb65d4204ed,pass,
+14,Parquet rows = CSV rows,121364,121364,pass,
+14,case selection holds,0,0,pass,"""GQ"" IN (3) AND ""SEX"" IN (1) AND ""AGE"" IN (18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36..."
+14,data bytes = IPUMS,1361669,1361669,pass,
+14,data sha256 = IPUMS,0824a2c7d867c17a54caf36d28eaedc264727bd963b845b8447332461e70adb3,0824a2c7d867c17a54caf36d28eaedc264727bd963b845b8447332461e70adb3,pass,
+14,person key unique,0,0,pass,"key = YEAR, SAMPLE, SERIAL, PERNUM"
+14,samples in data = samples requested,3,3,pass,
+15,DDI sha256 = IPUMS,8f70e1b68ac60c23ee94a6fe4474d9e43e85fd516f11075f6498c404109a7e4e,8f70e1b68ac60c23ee94a6fe4474d9e43e85fd516f11075f6498c404109a7e4e,pass,
+15,Parquet rows = CSV rows,200397,200397,pass,
+15,case selection holds,0,0,pass,"""GQ"" IN (3)"
+15,data bytes = IPUMS,2615513,2615513,pass,
+15,data sha256 = IPUMS,76389afaabfbafaac1aeffd744ade2b295fce748fd0c15857a2b274392abebb3,76389afaabfbafaac1aeffd744ade2b295fce748fd0c15857a2b274392abebb3,pass,
+15,person key unique,0,0,pass,"key = YEAR, SAMPLE, SERIAL, PERNUM"
+15,samples in data = samples requested,1,1,pass,
+2,Parquet rows = CSV rows,44393133,44393133,pass,
+2,case selection holds,0,0,pass,TRUE
+2,data sha256 = IPUMS,not published (files expired at IPUMS),8d0bf32acfb3a3dcc384a41d775b21704aa6fbc97dd09c74a39e4e4b8c276e61,pass,first recorded hash of the June download
+2,person key unique,0,0,pass,"key = YEAR, SAMPLE, SERIAL, PERNUM"
+2,samples in data = samples requested,5,5,pass,
+2 SEX,"SEX agrees across extracts 3, 4, 8, 10, 11",0,0,pass,
+2 SEX,rule check: 1990/2000 ages 18-40 missing from extract 4 are all women,0,0,pass,"4,541,087 records checked against SEX in extracts 10 and 11"
+2 SEX,rule check: 2010 US-born ages 18-40 missing from extract 8 are all women,0,0,pass,"351,997 records checked against SEX in extract 10"
+3,DDI sha256 = IPUMS,ed851a9b70e8840e3c0b4c099c8b3a35a37e4fe196c6d46bf3317294aeeaac1f,ed851a9b70e8840e3c0b4c099c8b3a35a37e4fe196c6d46bf3317294aeeaac1f,pass,
+3,Parquet rows = CSV rows,2575058,2575058,pass,
+3,case selection holds,0,0,pass,"""BPL"" IN (200)"
+3,data bytes = IPUMS,40361372,40361372,pass,
+3,data sha256 = IPUMS,b87bc6c0da83fa0c573971c6e360032fd14ee9a4708370fbdcf3f42f5b33d2f2,b87bc6c0da83fa0c573971c6e360032fd14ee9a4708370fbdcf3f42f5b33d2f2,pass,
+3,person key unique,0,0,pass,"key = YEAR, SAMPLE, SERIAL, PERNUM"
+3,samples in data = samples requested,23,23,pass,
+4,DDI sha256 = IPUMS,22e9acf017219fb4b83103a8d07e0a8a87acaed812034fd1ca51320de19606f7,22e9acf017219fb4b83103a8d07e0a8a87acaed812034fd1ca51320de19606f7,pass,
+4,Parquet rows = CSV rows,6558144,6558144,pass,
+4,case selection holds,0,0,pass,"""SEX"" IN (1) AND ""AGE"" IN (18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40)"
+4,data bytes = IPUMS,81243547,81243547,pass,
+4,data sha256 = IPUMS,af06286eb3753abc79e9224f21347b248b79ee0264a0a83254918a728a0dc8d5,af06286eb3753abc79e9224f21347b248b79ee0264a0a83254918a728a0dc8d5,pass,
+4,person key unique,0,0,pass,"key = YEAR, SAMPLE, SERIAL, PERNUM"
+4,samples in data = samples requested,3,3,pass,
+5,DDI sha256 = IPUMS,056495cde9e80b19b8ebacdb6e2758bc6d1f30311579c5b9c2cf6da2022c16e3,056495cde9e80b19b8ebacdb6e2758bc6d1f30311579c5b9c2cf6da2022c16e3,pass,
+5,Parquet rows = CSV rows,361850,361850,pass,
+5,case selection holds,0,0,pass,"""SEX"" IN (1) AND ""AGE"" IN (18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40..."
+5,data bytes = IPUMS,48448718,48448718,pass,
+5,data sha256 = IPUMS,94c4ebc486dd2aee05923218e2fd4339caa2acd19bacb5f330eeb5665c4b6189,94c4ebc486dd2aee05923218e2fd4339caa2acd19bacb5f330eeb5665c4b6189,pass,
+5,person key unique,0,0,pass,"key = YEAR, SAMPLE, SERIAL, PERNUM"
+5,samples in data = samples requested,18,18,pass,
+6,DDI sha256 = IPUMS,c46e4efb93653103b1d677caf2cfe13ac970e8ac7a0a1b8facc463dfbe23d3dd,c46e4efb93653103b1d677caf2cfe13ac970e8ac7a0a1b8facc463dfbe23d3dd,pass,
+6,Parquet rows = CSV rows,6558144,6558144,pass,
+6,case selection holds,0,0,pass,"""SEX"" IN (1) AND ""AGE"" IN (18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40)"
+6,data bytes = IPUMS,76154649,76154649,pass,
+6,data sha256 = IPUMS,f77d405ca2601f936f9efb1cbb09bfc15fac97194a4943082d80050a0b565681,f77d405ca2601f936f9efb1cbb09bfc15fac97194a4943082d80050a0b565681,pass,
+6,person key unique,0,0,pass,"key = YEAR, SAMPLE, SERIAL, PERNUM"
+6,samples in data = samples requested,3,3,pass,
+7,DDI sha256 = IPUMS,06555b659a07b638bd687671014f9d22b1e5d05f1e930509c9c601844cefb111,06555b659a07b638bd687671014f9d22b1e5d05f1e930509c9c601844cefb111,pass,
+7,Parquet rows = CSV rows,1207425,1207425,pass,
+7,case selection holds,0,0,pass,"""SEX"" IN (1) AND ""AGE"" IN (18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40..."
+7,data bytes = IPUMS,152975361,152975361,pass,
+7,data sha256 = IPUMS,be3339baba8e7d6162960d4d8bd1aa6f479d349e006ea92f4b177e0b051462b1,be3339baba8e7d6162960d4d8bd1aa6f479d349e006ea92f4b177e0b051462b1,pass,
+7,person key unique,0,0,pass,"key = YEAR, SAMPLE, SERIAL, PERNUM"
+7,samples in data = samples requested,3,3,pass,
+8,DDI sha256 = IPUMS,378597e8df0f3907f66026835d38c703607408040c3f49129e275c73a17e3cfc,378597e8df0f3907f66026835d38c703607408040c3f49129e275c73a17e3cfc,pass,
+8,Parquet rows = CSV rows,6684204,6684204,pass,
+8,case selection holds,0,0,pass,"""SEX"" IN (1) AND ""AGE"" IN (18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40..."
+8,data bytes = IPUMS,127611443,127611443,pass,
+8,data sha256 = IPUMS,e1f6c5f30c5b720f0b1e7e77b34f335856d3fb77ccd3e88fe40e26de7eb34090,e1f6c5f30c5b720f0b1e7e77b34f335856d3fb77ccd3e88fe40e26de7eb34090,pass,
+8,person key unique,0,0,pass,"key = YEAR, SAMPLE, SERIAL, PERNUM"
+8,samples in data = samples requested,18,18,pass,
+9,DDI sha256 = IPUMS,b9e16a3750855526a4ec28aa742217299423e5228354b8f719ef67866581f38b,b9e16a3750855526a4ec28aa742217299423e5228354b8f719ef67866581f38b,pass,
+9,Parquet rows = CSV rows,1207425,1207425,pass,
+9,case selection holds,0,0,pass,"""SEX"" IN (1) AND ""AGE"" IN (18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40..."
+9,data bytes = IPUMS,23309087,23309087,pass,
+9,data sha256 = IPUMS,74d2e80c7372257082a787b0fbd7bbc66007696b457fa09d6f0db4e9e6648745,74d2e80c7372257082a787b0fbd7bbc66007696b457fa09d6f0db4e9e6648745,pass,
+9,person key unique,0,0,pass,"key = YEAR, SAMPLE, SERIAL, PERNUM"
+9,samples in data = samples requested,3,3,pass,
+qflags,QBPL agrees across flag extracts,0,0,pass,
+qflags,QCITIZEN agrees across flag extracts,0,0,pass,
+qflags,QEDUC agrees across flag extracts,0,0,pass,
+qflags,QYRIMM agrees across flag extracts,0,0,pass,
