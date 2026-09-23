@@ -177,3 +177,11 @@ mine, not the authors'. See `notes/llm-bias-caveat.md`.
   now takes foreign-born Mexico-born only: shares 14.5% and 37.7% (were 14.9% and 38.5%), bound
   $2.3–14.6bn (was $2.3–14.9bn), preferred $5.6bn (was $5.8bn). Still 1–9% of the headline. Found by
   the [number audit](../infra/immigration-fiscal/number_audit_2026_09_22/AUDIT.md), item 1.
+- 2026-09-23: The elder-care result is superseded by the
+  [care lane](../infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md)
+  (ladder 198). "Transfers weakly" counted only Mexico-born workers. With the group's US-born
+  aides counted, it supplies 15.4% of home-care hours against 12.0% of residents. Net of the
+  group's own care needs, the Secure Communities nursing-home response (2.7%) and the Medicaid
+  home care the same aides staff, the saving is about $1.5bn a year (design range $1.2–7.6bn).
+  The gross $2.3–14.6bn is withdrawn as the figure to quote. Concept affected: the elder-care
+  benefit.
