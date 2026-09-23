@@ -1,0 +1,8 @@
+table,geography,spec,gain_bn,gain_low_bn,gain_high_bn,induced_receipts_bn,private_bn,per_group_member,per_other_resident
+scale_grid,CZ 1990,"CRY place effect by education, conditional on college share [central]",38.64683303419723,32.261554161641875,45.032111906752576,16.336715634323653,22.310117399873572,944.9895004456174,129.16099949608454
+composition_grid,CZ 1990,"CRY college gradient net of CES, sigma 2, CRY-implied weights [central]",-24.92909982784804,-92.98612210508264,43.12792244938655,-10.465694100549289,-14.463405727298753,-609.5645035657031,-83.31516964024902
+joint_grid,CZ 1990,"CRY joint: scale by education + college gradient net of CES (sigma 2, CRY weights) [central]",13.927466764218613,-56.56867989186499,84.42361342030222,5.959734945102332,7.967731819116281,340.5533863110052,46.54677722552851
+joint_grid,CBSA 2023,"CRY joint: scale by education + college gradient net of CES (sigma 2, CRY weights) [central]",13.959223789166561,-54.910546986951815,82.82899456528494,5.971154250024939,7.988069539141622,341.32990673415725,46.6529119010314
+joint_grid,national,"CRY joint: scale by education + college gradient net of CES (sigma 2, CRY weights) [central]",16.082511635829245,-53.256192122606926,85.42121539426542,6.877842533981826,9.20466910184742,393.2483839802631,53.7491202824574
+innovation_bchtt,national,"BCHTT structural transport, patents gradient at Mexico-born schooling",-24.087769897959493,-518.1078703627659,469.9323305668469,,,-588.9923664011438,-80.50337353384568
+innovation_bchtt,national,"BCHTT structural transport, wages gradient at Mexico-born schooling",50.267604174815496,-138.9718140815393,239.50702243117033,,,1229.1397361259528,167.9986039670478

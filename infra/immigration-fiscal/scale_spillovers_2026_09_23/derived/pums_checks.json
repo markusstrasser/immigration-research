@@ -1,0 +1,8 @@
+{
+  "group_persons_acs": 39429519.0,
+  "mexborn_persons_acs": 11592022.0,
+  "all_persons_acs": 340110990.0,
+  "gate_tolerance": 0.02,
+  "gate_max_abs_difference": 0.0020816333352684513,
+  "gate_passed": true
+}
