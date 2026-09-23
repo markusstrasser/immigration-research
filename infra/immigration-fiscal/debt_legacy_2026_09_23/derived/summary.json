@@ -1,0 +1,137 @@
+{
+ "account_interest_allocation_bn": 134.538287607,
+ "account_interest_row_bn": 1118.87,
+ "anchors": {
+  "high": {
+   "allocation": "personal",
+   "delayed": 0.0,
+   "gg": 0.84,
+   "justice": 5.943591614299166,
+   "normalization": "cash",
+   "other_edu": 1.0,
+   "profile": "cbo_category_lag_non_school_full",
+   "school_response": 0.66,
+   "school_share": 0.7153278156243373,
+   "uc": 5.747597015128038
+  },
+  "low": {
+   "allocation": "shared",
+   "delayed": 0.0,
+   "gg": 0.59,
+   "justice": 5.943591614299166,
+   "normalization": "gdp",
+   "other_edu": 1.0,
+   "profile": "cbo_category_lag_non_school_full",
+   "school_response": 0.63,
+   "school_share": 0.8651608840454027,
+   "uc": 3.6515760054649666
+  }
+ },
+ "debt_increase_fy2005_2023_bn": 21940.048000000003,
+ "gps_federal_fraction_2024": {
+  "central": [
+   0.11401340921019847,
+   0.25252336938997755
+  ],
+  "high": [
+   0.11401340921019847,
+   0.3666881737153041
+  ],
+  "low": [
+   0.10215318818912164,
+   0.25252336938997755
+  ]
+ },
+ "income_security_matching_fraction_2024": 0.6707607097036643,
+ "induced_receipts_federal_share_2024": 0.8840492611199644,
+ "inputs": {
+  "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/fred_GS10.csv": "e22128f6caa50e4e7fed03a1c2d323a517bad452a2c69eab89277450fb59bc5c",
+  "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/hist03z2_fy2027.xlsx": "78100f3efb1a6b08d675b24af173a57359e47dce103a2f1499d905a4bbba06ce",
+  "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/hist07z1_fy2027.xlsx": "c3cfce645fe7e4eb9beeb46a970e2b0b30301f02f03f3e5461e9950538641ff9",
+  "infra/immigration-fiscal/debt_legacy_2026_09_23/_cache/hist12z3_fy2027.xlsx": "43aa30c0d39116909b990a93926540fd173bce4963f26ee3a0d28a6f900d974d",
+  "infra/immigration-fiscal/historical_backcast_2026_09_20/_cache/Section7All_xls.xlsx": "ce107c8ce92393613c0abae38156afcfaef8ab571eedf0302dc09ca44738b9ef",
+  "sources/immigration-fiscal/data/external/bea_nipa/Section1All_xls.xlsx": "238ba851c9a4932d91a0dedb1b3f2e6c6d37574d154a54267da18b9cb0921a19",
+  "sources/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e",
+  "sources/immigration-fiscal/data/external/nhea/nhe_tables/Table 03 National Health Expenditures, by Source of Funds.xlsx": "d379d2746ece097b6f864543d99832882f7dbdc197d1a25473d53d22cdfd58c7",
+  "sources/immigration-fiscal/data/external/omb_hist_fy2027/hist03z1_fy2027.xlsx": "47864b5078698919c3237038ad7296fb7aeb62f6942c3d8acccf98ad0a7122f7"
+ },
+ "justice_federal": {
+  "central": 0.8097478431773406,
+  "change_bn": 5.943591999999998,
+  "components": {
+   "fire": 0.0,
+   "law_courts": 1.007575000000001,
+   "police_cbp": 0.0,
+   "police_ice_border": 0.0,
+   "police_ice_interior": 0.100485,
+   "police_non_border": 2.206205999999998,
+   "prisons": 2.629325999999999
+  },
+  "high": 3.217836266960162,
+  "low": 0.5885102669601632,
+  "shares": {
+   "fire": 0.013393802718630467,
+   "law_courts": 0.12208186959663155,
+   "police_cbp": 1.0,
+   "police_ice_border": 1.0,
+   "police_ice_interior": 1.0,
+   "police_non_border": 0.1654508360512741,
+   "prisons": 0.08414231488114352
+  }
+ },
+ "medicaid_federal_share_nhea_2024": 0.6404422024256735,
+ "per_head_share": 0.1202447894813438,
+ "per_head_share_of_debt_increase_fy2005_2023_bn": 2518.19385375809,
+ "per_head_share_of_omb_net_interest_bn": 105.8008651240553,
+ "programme_control_max_abs_diff_bn": 4.973758797177652e-05,
+ "proposed_benefits": {
+  "care_elder_medicaid_bn": 1.4871944918978677,
+  "care_output_receipts_bn": -0.0282383467048764,
+  "care_taxes_bn": 2.688622998456876,
+  "federal_omitted_bn": 3.329534513191499,
+  "federal_with_scale_bn": 8.598233787880048,
+  "mobility_tax_bn": 0.028461436251836128,
+  "scale_induced_receipts_bn": 5.959734945102332,
+  "source_sha256": {
+   "infra/immigration-fiscal/care_household_services_2026_09_23/derived/summary.csv": "ea351ee9aac908ba97599fdfb59e7b2d642ab5e6acb65e86ce48a9a016a2ceef",
+   "infra/immigration-fiscal/labor_mobility_insurance_2026_09_23/derived/insurance_summary.json": "63ae37b4b8e65f48257bb586d360c8a9673b08f05203c2701b4917424760388b",
+   "infra/immigration-fiscal/scale_spillovers_2026_09_23/derived/summary.csv": "385c45e73ab523c28ef38ff24b0b05704aa32c1a2630c11fb89d8443c56b54c0"
+  },
+  "total_omitted_bn": 4.176040579901704,
+  "total_with_scale_bn": 10.135775525004036
+ },
+ "rate_2024": {
+  "ladder137": 0.03220790586972007,
+  "omb_net_interest_over_average_debt": 0.03233098518085556,
+  "public_securities_interest_over_average_debt": 0.034877473885556606
+ },
+ "refundable_credit_key_share_2024": {
+  "main_high": 0.22788323646360065,
+  "main_low": 0.24214181544432256,
+  "proportional_high": 0.22788323646360065,
+  "proportional_low": 0.24214181544432256
+ },
+ "uncompensated_federal": {
+  "equal_high": {
+   "central": 1.8581634410089678,
+   "high": 1.8581634410089678,
+   "low": 1.4546709459532947,
+   "parts": {
+    "medicaid": 2.27135398080222,
+    "state_local": 3.476243034325799
+   },
+   "total": 5.747597015128019
+  },
+  "equal_low": {
+   "central": 1.9377426628932675,
+   "high": 1.9377426628932675,
+   "low": 1.5773205945492652,
+   "parts": {
+    "medicaid": 1.0401762452038685,
+    "medicare": 0.9111478291600321,
+    "state_local": 1.7002519311010542
+   },
+   "total": 3.651576005464955
+  }
+ }
+}
