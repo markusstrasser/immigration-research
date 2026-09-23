@@ -62,3 +62,18 @@ The bias is **weakest** on:
 - It does not mean every conservative claim is secretly correct. Many are genuinely wrong.
 - It does not mean progressive claims are secretly wrong. Many are genuinely correct.
 - It means: on the subset of claims where the verdict depends on *whose frame you trust*, this instrument has a thumb on one side of the scale. Weight accordingly.
+
+## Evidence from this repo
+
+- 2026-09-23, [study integrity audit](../research/immigration-study-integrity-audit-2026-09-23.md):
+  of 26 external studies behind the crime, legalization and children's-outcome conclusions, the
+  repo's text went beyond the source 18 times, 14 in the direction favourable to immigration or
+  legalization, 3 against and once both ways. Most of the split is composition: 18 of the 26 report
+  favourable results, and the repo overstated two-thirds of the studies on each side, usually by
+  quoting a point estimate without its interval. The remainder matches pattern 3 above. Both double
+  standards the audit found favoured immigration: Lott's Arizona study was dismissed over a
+  status-flag flaw, an unsourced agency confirmation and the author's affiliation, while Texas flags
+  contaminated the other way were rated robust; and an ethnicity proxy for status was accepted in
+  Freedman–Owens–Bohn although the repo treats ethnicity coding as a bias elsewhere. The check that
+  would have caught both is a symmetry test: name the flaw, then search the repo for the same flaw
+  on the other side and grade both alike (proposed in the audit memo, awaiting the operator).
