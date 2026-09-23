@@ -266,9 +266,10 @@ Statute text checked on the US Code (Cornell LII) on 2026-09-23; the time-sensit
 | DACA | arrived as children | Not a status and no path to one; initial requests held since 2021 | Fifth Circuit (January 2025) limited relief to Texas; district court had not ruled on implementation as of February 2026 |
 | Legalization or registry | registry: entry before 1 January 1972 | None enacted since IRCA (1986): nearly 2.7M legalized, 75% born in Mexico. The Dignity Act (H.R. 4393) has sat in subcommittee since July 2025 | Keeping Families Together (2024) would have paroled an estimated 500,000 spouses of citizens with ten years' presence; a Texas federal court vacated it on 7 Nov 2024 |
 
-Mexico has never had Temporary Protected Status [TRAINING-DATA]. The 2026 visa-bulletin dates
-advanced partly because a January–August 2026 pause on immigrant visas for 75 countries (not
-Mexico) freed numbers; the State Department warns of retrogression.
+Mexico has never had Temporary Protected Status [TRAINING-DATA]. The State Department says the
+2026 visa-bulletin dates advanced after lower issuance to some nationalities, and warns of
+retrogression; a January–August 2026 pause on immigrant visas for 75 countries, which did not
+include Mexico, is presumably among the causes [INFERENCE].
 
 Read together: a Mexican who entered without papers after 2001 and has no citizen or resident
 spouse or parent has no way to a green card except a defense in removal proceedings (4,000 a year
