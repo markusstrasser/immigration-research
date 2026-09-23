@@ -83,13 +83,15 @@ Beside the fiscal headline, as social costs:
 - crimes by group members against other residents cost the victims **$29bn** a year ($15–45bn;
   $43bn on arrest shares);
 - unreimbursed hospital care costs **$3.2–5.6bn**;
-- housing nets other residents **+$0.7–3.5bn**, while their renters pay $22–58bn more.
+- housing nets other residents **+$0.7–3.5bn**, while their renters pay $22–58bn more;
+- road congestion costs other residents **$19bn** a year in time and fuel ($8–35bn), with road
+  budgets fixed as in the main case.
 
 Wages move **$66–166bn** from less- to more-educated natives. Fiscal plus social costs come to
-**$228–287bn a year** at central values. The transfers are not added, but they run from poorer
+**$248–307bn a year** at central values ($212–340bn full span). The transfers are not added, but they run from poorer
 to richer residents: outside the budget the bottom four fifths lose $80.7bn a year and the top
 fifth gains $46.0bn. The fiscal cost is progressive if financed by tax shares and regressive if
-by equal cuts per person (ladder 194). The congestion lane is running.
+by equal cuts per person (ladder 194).
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,

@@ -107,7 +107,8 @@ so they are not added. Crime and housing are now priced beside the account. Crim
 members against other residents cost the victims about $29bn a year ($15–45bn). Hospitals,
 physicians and private payers bear $3.2–5.6bn of the group's unreimbursed care. Housing nets
 other residents a small gain (+$0.7–3.5bn), while their renters pay $22–58bn more to landlords.
-Transfers like these cancel in dollars but not by income: outside the budget the bottom four
+With road budgets fixed, the group's traffic costs other residents about $19bn a year in time
+and fuel ($8–35bn; ladder 195). Transfers like these cancel in dollars but not by income: outside the budget the bottom four
 fifths of other residents lose $80.7bn a year and the top fifth gains $46.0bn (ladder 194).
 Innovation and institutions remain unpriced in both directions. [SOURCE: complete account;
 [prices and hours](immigration-consumer-price-and-native-hours-2026-09-18.md);
