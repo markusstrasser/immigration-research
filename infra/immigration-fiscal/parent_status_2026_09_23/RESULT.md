@@ -159,3 +159,90 @@ simple reading: Bean's unauthorized group mixes in unknown-status mothers; Landa
 find children of undocumented Mexican mothers no worse than children of US-born mothers on
 behaviour; the Census–IRS mobility studies cannot see children of unauthorized parents at all.
 Full table, grades and verification levels: `literature.md`.
+
+---
+
+# How Mexicans get green cards, and how hard it is after entering without papers (added 2026-09-23)
+
+**Verdict:** Hard, and usually only by leaving the country first. In 2003, 55% of the Mexican
+adults who received green cards had at some point entered the US without papers (16% for everyone
+else), a median 12 years before the green card, and about 1 in 100 unauthorized Mexicans got one
+that year. Three quarters of those who had entered without papers adjusted inside the US under
+section 245(i), which covers only people whose petition or labor certification was filed by April
+30, 2001; that door is shut to anyone who arrived later. For them the main route left is a
+US-citizen or permanent-resident spouse or parent, an I-601A waiver of the ten-year bar and a visa
+interview in Mexico. A US-born child can petition for a parent only at 21 and does not count toward
+the waiver. Family ties carry 94% of Mexico's green cards (2005–2022).
+
+Question from the operator: "how easy is it to get legal status?"
+
+## Mexican green cards by class, FY2005–2022 (DHS)
+
+| Class | Mean per year | Share of Mexico's green cards in these classes | Mexico's share of the class |
+|---|---:|---:|---:|
+| Spouses of US citizens | 51,991 | 36.9% | 19.2% |
+| Children of US citizens | 13,145 | 9.3% | 16.8% |
+| Parents of US citizens | 27,632 | 19.6% | 22.7% |
+| Spouses and children of permanent residents (F2) | 30,959 | 21.9% | 32.2% |
+| Other family preferences (F1, F3, F4) | 8,927 | 6.3% | 8.5% |
+| Employment (five preferences) | 8,416 | 6.0% | 5.2% |
+| Diversity lottery | 10 | 0.0% | 0.0% |
+
+141,100 a year in these classes (16.1% of all such green cards), from 88,600 in 2020 to 187,200 in
+2008. The workbook omits refugees, asylees and the "other" classes, cancellation of removal among
+them; in FY2003 those added 3.6% to Mexico's count (cancellation 2,503, other 1,557, refugee and
+asylee 85 of 115,864) [SOURCE: DHS, 2003 Yearbook of Immigration Statistics, Table 8].
+[CALCULATION: `lpr_routes.py`; DATA: `derived/lpr_class_summary_mexico.csv`,
+`derived/lpr_class_by_year_mexico_and_total.csv`]
+
+## Who had entered without papers, and how they got through (NIS 2003)
+
+New Immigrant Survey 2003, adults granted permanent residence May–November 2003 (ICPSR 38031),
+design-weighted, standard errors from a bootstrap within sampling strata. For every move of 60 days
+or more to the US, Section K asks "did you have a visa or other entry document?"; a "no" on any
+move counts as entering without papers.
+
+| New green-card holders, 2003 | n | Ever entered without papers (SE) | Adjusted inside the US |
+|---|---:|---:|---:|
+| Born in Mexico | 1,164 | 55.0% (1.7) | 76.4% |
+| Born elsewhere | 7,409 | 15.8% (0.5) | 53.3% |
+
+Mexicans who had entered without papers (n 599), by how they got the green card:
+
+| Route | Share (SE) |
+|---|---:|
+| Adjusted inside the US in a family or employment class, last entry without papers: needed 245(i) | 76.7% (1.6) |
+| Left and came back on an immigrant visa | 11.3% (1.3) |
+| Cancellation of removal or registry (class Z) | 7.4% (0.9) |
+| Legalization classes (W) | 3.5% (0.7) |
+| Adjusted inside, last entry documented | 0.8% (0.4) |
+
+INA 245(a) requires inspection and admission or parole, so an adjustment inside the US in a family
+or employment class after an entry without papers needed 245(i) [SOURCE: INA 245(a), 245(i); code
+list in the 2003 Yearbook, Table 5]. Years from the first entry without papers to the green card,
+median (interquartile range): all 12 (8–16); spouses of US citizens 11 (7–14); children of
+citizens 10 (7–15); spouses of permanent residents 12 (9–15); other family preferences 13 (10–16);
+cancellation or registry 14 (12–15); employment 15 (12–17); parents of citizens 16 (2–26);
+legalization classes 23 (22–25). Parents of citizens had entered without papers least often (29%)
+and more often came back from abroad (59% of those who had). [CALCULATION:
+`nis_prior_undocumented.py`; DATA: `derived/nis2003_entered_without_papers.csv`,
+`derived/nis2003_mexico_route_type.csv`, `derived/nis2003_mexico_route_by_entry.csv`,
+`derived/nis2003_mexico_years_to_green_card.csv`]
+
+Checks. The script reproduces the codebook counts and the handout's 17.5% weighted Mexican share.
+In the two classes whose recipients had all been unlawfully present (legalization, cancellation or
+registry), the item flags 90%, so it misses about one in ten, presumably overstays. The Mexican
+class mix tracks the FY2003 Yearbook where an adults-only survey should: parents of citizens 18.5%
+against 18.0%, employment 2.5% against 2.8%; children of citizens 5.6% against 12.9% because
+minors are excluded. [DATA: `derived/nis2003_mexico_vs_yearbook.csv`]
+
+## About 1 in 100 a year, in 2003
+
+In FY2003, 115,864 Mexicans got green cards [SOURCE: 2003 Yearbook, Table 3]. With the NIS share
+who had entered without papers (55%, or 61% corrected for the missed tenth), less those who came
+back from abroad, 56,500–62,800 previously undocumented Mexicans became permanent residents. DHS
+put the unauthorized Mexican population at 4.68M in January 2000 and 5.97M in January 2005
+[SOURCE: DHS OIS, Estimates of the Unauthorized Immigrant Population, January 2005, Table 3];
+interpolated to 2003, 5.45–5.58M. The ratio is 1.0–1.15% a year. Measured: the FY2003 count and
+the adults' share. Assumed: the adult share holds for children, and the stock grows linearly
+between the DHS estimates. [CALCULATION: `derived/nis2003_mexico_annual_legalization_rate.csv`]
