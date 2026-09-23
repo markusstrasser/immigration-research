@@ -30,6 +30,8 @@ Neither exercise adds an identified national dollar term.
 
 Civil custody, criminal offenses and fiscal spending: [detention/crime measurement scope](immigration-detention-crime-and-fiscal-scope-2026-09-20.md). ACS institutional counts cannot separate immigration detention; government custody spending remains a cost, with intergovernmental payments consolidated once.
 
+Crime selection by arrival cohort ([lane](../infra/immigration-fiscal/crime_selection_cohorts_2026_09_23/RESULT.md), ladder 196): Mexico-born arrival cohorts from 1975 to 2019 do not show rising positive selection on custody. Butcher and Piehl's result covers all immigrants and is measured in percentage points. The interstate movers' advantage is their schooling. The 2000 census assigned a US birthplace to most institutionalized Mexican-origin men whose birthplace it allocated, so 2000-census immigrant institutional rates (Butcher–Piehl, Rumbaut) run low for the foreign-born. The size of that bias is under an external count check.
+
 **Detention spending investigation completed through September 20, 2026:**
 [FY2024 reconciled accounts, verified custody subtotal and identification limits](../infra/immigration-fiscal/detention_reconciliation_2026_09_20/README.md).
 Expired-funding records have been acquired and reconciled; the unresolved pieces
