@@ -141,3 +141,21 @@ unusual (28% of its minors uninsured); it is not used.
 - IIMMLA is Los Angeles in 2004, unweighted; its never-legalized cells have 7 and 12 cases.
 - Nothing here separates parental status from what goes with it: recency of arrival, English,
   informal work, fear of enforcement.
+
+## Published evidence (added 2026-09-23)
+
+The literature agrees in direction. Bean, Leach, Brown, Bachmeier & Hipp (2011, IIMMLA, 1.5 and
+second generation pooled): children of Mexican mothers who remained unauthorized or of unknown
+status have 2.04 fewer years of school, 1.51 after controls, 1.24 with an IRCA-timing instrument
+[SOURCE: IMR 45(2), pp. 372–374, re-read from the corpus PDF]; this lane's seven explicitly
+never-legalized mothers give 2.03 unadjusted. Their book's summary: the harm comes from parents'
+"long-term inability ... to acquire green cards", and children of parents who legalize reach
+"schooling on par with those whose parents come legally" [SOURCE: publisher summary; book not
+read]. Quasi-experiments: DACA protection of mothers cut their citizen children's adjustment and
+anxiety diagnoses 4.3–4.5 points from about 7.9% (Hainmueller et al. 2017, Science); IRCA
+legalization raised Mexican mothers' birthweights 96 g (Cascio, Cornell & Lewis 2024, NBER
+w32635); DACA mothers' children gained 5 points of Medicaid enrollment (Tran 2025). Against a
+simple reading: Bean's unauthorized group mixes in unknown-status mothers; Landale et al. (2015)
+find children of undocumented Mexican mothers no worse than children of US-born mothers on
+behaviour; the Census–IRS mobility studies cannot see children of unauthorized parents at all.
+Full table, grades and verification levels: `literature.md`.
