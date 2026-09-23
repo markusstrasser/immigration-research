@@ -51,6 +51,6 @@
   <p class="src">
     ledger_recut_2026_09_22/derived/hulls.csv. The hairline grows whenever an arm is added.
     The dashed stub is the marginality dial at its end. None of these is a confidence interval,
-    and none of them is the $165–197bn complete account.
+    and none of them is the $203–250bn complete account.
   </p>
 </section>

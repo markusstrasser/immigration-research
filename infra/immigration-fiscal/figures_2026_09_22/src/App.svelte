@@ -18,7 +18,7 @@
     assumption being turned, with the measured part left in ink and the modelled part hatched.
   </p>
   <p class="epigraph">
-    The generation ledger, the −$217bn union balance, and the $165–197bn complete account
+    The generation ledger, the −$217bn union balance, and the $203–250bn complete account
     agree in direction. One is not a decomposition of the others. Nothing here puts them
     on the same axis.
   </p>

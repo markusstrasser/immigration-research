@@ -62,10 +62,11 @@
 </section>
 
 <section class="fig" id="rule">
-  <p class="kicker">With fig. 6</p>
+  <p class="kicker">With fig. 6 · September 20 anchor</p>
   <h2>The path that drops the spike</h2>
   <p class="object">
-    Midpoint of the $165bn and $197bn anchors. Grey freezes 2024 program shares.
+    Midpoint of the September 20 anchors, $165bn and $197bn in 2024; this programme-by-programme
+    version has not been re-run on the adopted headline. Grey freezes 2024 program shares.
     Brass also scales receipts by relative income. Rust does that, then sets 2020 and 2021
     to the average of 2019 and 2022.
   </p>
@@ -86,7 +87,8 @@
     {/each}
   </svg>
   <p class="src">
-    backcast_categories_annual.csv, CBO-informed case. Replacing 2020–2021 is the same step as
-    income_ex_pandemic in backcast_categories_windows.csv: $1.6–1.9tn, $2.5–2.9tn and $3.1–3.6tn.
+    backcast_categories_annual.csv, CBO-informed case, September 20 anchor. Replacing 2020–2021
+    is the same step as income_ex_pandemic in backcast_categories_windows.csv: $1.6–1.9tn,
+    $2.5–2.9tn and $3.1–3.6tn on that anchor.
   </p>
 </section>

@@ -15,7 +15,7 @@
   <p class="object">
     California and Texas are both about 32% Mexican-origin. The bars are the gap against
     local third-plus non-Hispanic whites, per standardized person. This is not a slice of
-    the $165–197bn account.
+    the $203–250bn account.
   </p>
 
   <table class="places">
