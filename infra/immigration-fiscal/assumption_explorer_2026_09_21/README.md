@@ -43,7 +43,8 @@ lane's own identity (published band plus the three changes, from `inputs.json`) 
 `context.json` is rebuilt with `build_context.py <inventory.json>`; it keeps a value only when every
 number in it equals, at its printed precision, a number within two lines of the cited file:line
 (49 of 50 items and all 255 values on 2026-09-21, the dropped item a caveat with no number;
-49 cards and 211 values on 2026-09-23 after the adoption).
+49 cards and 211 values on 2026-09-23 after the adoption; 53 cards and 231 values later that day,
+after the benefit lanes).
 Fabricated numbers at real locations are rejected in memo and CSV files alike.
 
 `ladder.py` parses `research/immigration-confidence-ladder.md` at build time, so the page carries
@@ -175,10 +176,12 @@ Adopting this changed the analysis protocol, so it waited for the operator; he a
   whether the account ran the exact case, only its formula applies (any mix of executed rules per
   line, since 2026-09-23), or a setting is one the account never uses (the reader's own).
 - One income year of a resident stock. No generation split, lifetime value or policy effect; the
-  cards say which outside results overlap and none may be added. Since 2026-09-23 police, courts
-  and prisons are charged by use. Crime victims' harm, free hospital care absorbed outside
-  government budgets and rent transfers are priced beside the account
-  (research/immigration-real-fiscal-and-social-costs-2026-09-23.md), never inside it.
+  cards say which outside results overlap. Only the two care items the account omits (native
+  women's hours taxes and the net elder-care Medicaid saving, FAQ 4 and 13) may be added, each
+  once. Since 2026-09-23 police, courts and prisons are charged by use. Crime victims' harm, free
+  hospital care absorbed outside government budgets, rent transfers and mobility insurance are
+  priced beside the account (research/immigration-real-fiscal-and-social-costs-2026-09-23.md),
+  never inside it; the scale-and-schooling net is proposed there, not adopted.
 - The objection cards (`context.json`) were rebuilt on 2026-09-23 from a fresh inventory: 49
   cards, 211 values, none dropped. Cards lead with the adopted main case and name September 20
   values as such. The numeric gate confirms that a number is printed at its cited line, not that
@@ -186,6 +189,14 @@ Adopting this changed the analysis protocol, so it waited for the operator; he a
   corrected, pass it and must be replaced by hand. FAQ 15, FAQ 16 and entry 14's executed nest
   have no cards yet. The id `e12_no_group_crime_cost_in_headline` is kept because `sources.json`
   keys on it, although the card now describes justice charged by use.
+- A second pass the same day (inventory kept locally in the ignored `_cache/`) followed the care,
+  construction, scale, mobility and NIBRS lanes: the FAQ 4, 12 and 13 cards were rewritten, four
+  cards were added (`e4_care_channels_add`, `e4_scale_and_schooling_net`,
+  `e4_shock_insurance_mobility`, `real_costs_and_benefits_totals`), and the relation
+  `adds_to_headline` now marks the two care cards. The id `e4_prices_and_native_hours` is kept for
+  cheaper services and construction; the hours tax it once carried moved to `e4_care_channels_add`.
+  Numeric values the page would have rounded past their printed digits (13.32 shown as 13,
+  −0.00252 as 0.00) are now stored as text, so each card shows its source's digits.
 - The production block is CES; increasing-returns arguments are outside it.
 - Compiled through an LLM (notes/llm-bias-caveat.md): the ledger numbers are gated, the readings
   of authors and the ladder's keyword links are not.

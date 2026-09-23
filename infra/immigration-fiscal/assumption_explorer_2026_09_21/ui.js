@@ -394,7 +394,7 @@
   }
 
   function drawContext() {
-    var tagText = { inside_headline: "already inside the result", overlaps_headline: "overlaps the result: do not add", outside_not_addable: "outside the account: do not add", different_object: "measures something else: compare, do not add" };
+    var tagText = { inside_headline: "already inside the result", overlaps_headline: "overlaps the result: do not add", outside_not_addable: "outside the account: do not add", different_object: "measures something else: compare, do not add", adds_to_headline: "left out of the result: add it" };
     $("context").innerHTML = CONTEXT.map(function (c) {
       return '<article><header><span class="tag ' + esc(c.relation_to_headline) + '">' + esc(tagText[c.relation_to_headline] || c.relation_to_headline) + '</span>' + (c.faq_entry ? '<span class="faq">FAQ ' + esc(c.faq_entry) + '</span>' : "") + '</header>' +
         (c.objection ? '<p class="obj">' + esc(c.objection) + '</p>' : "") + '<p>' + esc(c.finding) + '</p><ul>' + (c.values || []).map(function (v) {

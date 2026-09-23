@@ -62,6 +62,15 @@
   "url": "https://meps.ahrq.gov/survey_comp/standard_errors.jsp",
   "date": "2026-09-21"
  },
+ "almuhaisen_amuedo_dorantes_furtado_iza_dp16357": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://docs.iza.org/dp16357.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://docs.iza.org/dp16357.pdf",
+  "date": "2026-09-23"
+ },
  "barrett_tan_imf_2025_005": {
   "ok": true,
   "status": 200,
@@ -152,6 +161,15 @@
   "url": "https://www.nber.org/papers/w31434",
   "date": "2026-09-21"
  },
+ "burchardi_et_al_nber_w27075": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nber.org/system/files/working_papers/w27075/w27075.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www.nber.org/system/files/working_papers/w27075/w27075.pdf",
+  "date": "2026-09-23"
+ },
  "butcher_moran_watson_nber_w29520": {
   "ok": true,
   "status": 200,
@@ -160,6 +178,15 @@
   "title": "Immigrant Labor and the Institutionalization of the U.S.-born Elderly | NBER",
   "url": "https://www.nber.org/papers/w29520",
   "date": "2026-09-21"
+ },
+ "cadena_kovak_aej_applied_2016": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4991313/",
+  "content_type": "text/html",
+  "title": "Immigrants Equilibrate Local Labor Markets: Evidence from the Great Recession - PMC",
+  "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4991313/",
+  "date": "2026-09-23"
  },
  "caplan_2011_immigration_and_the_welfare_state": {
   "ok": true,
@@ -196,6 +223,15 @@
   "title": "Does Immigration Shrink the Welfare State? - Econlib",
   "url": "https://www.econlib.org/does-immigration-shrink-the-welfare-state/",
   "date": "2026-09-21"
+ },
+ "card_rothstein_yi_nber_w31587": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://www.nber.org/system/files/working_papers/w31587/w31587.pdf",
+  "content_type": "application/pdf",
+  "title": null,
+  "url": "https://www.nber.org/system/files/working_papers/w31587/w31587.pdf",
+  "date": "2026-09-23"
  },
  "cbo_2024_07_immigration_surge": {
   "ok": false,
@@ -493,6 +529,15 @@
   "title": null,
   "url": "https://www.whitehouse.gov/wp-content/uploads/2026/04/2026-Economic-Report-of-the-President.pdf",
   "date": "2026-09-21"
+ },
+ "fbi_nibrs_incident_files_2022_2023": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://cde.ucr.cjis.gov/LATEST/s3/signedurl?key=nibrs/incident/2023/TX-2023.zip",
+  "content_type": "application/json",
+  "title": null,
+  "url": "https://cde.ucr.cjis.gov/LATEST/s3/signedurl?key=nibrs/incident/2023/TX-2023.zip",
+  "date": "2026-09-23"
  },
  "furtado_hock_2010": {
   "ok": true,
