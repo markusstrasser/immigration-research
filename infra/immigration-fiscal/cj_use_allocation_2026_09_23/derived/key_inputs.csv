@@ -7,7 +7,24 @@ fbi2019_hisp_share_adult_arrests,0.187808,FBI CIUS 2019 Table 43C ethnicity pane
 acs2019_hisp_share_adults,0.163970,ACS 2019 B01001/B01001I
 rr_arrest_hispanic,1.145383,ratio of the two above
 acs_hisp_share_inst_1864,0.201858,ACS 2024 1-year PUMS TYPEHUGQ=2
-bjs_hisp_share_custody,0.199800,BJS sentenced prisoners 2022 + jail inmates midyear 2023
+bjs_hisp_share_custody,0.201866,BJS sentenced prisoners yearend 2023 + jail inmates midyear 2023
+bjs_hisp_share_custody_overlap_low,0.200717,"less 65,552 prisoners held in local jails at the prison Hispanic share"
+bjs_hisp_share_custody_overlap_high,0.203960,"less 65,552 prisoners held in local jails at the jail Hispanic share"
+bjs_prison_hisp_share_2022,0.231013,Prisoners in 2022 Table 3 (earlier BJS check)
+bjs_imprisonment_ratio_hisp_2019,1.415584,"Prisoners in 2023 Table 6, Hispanic / all adults"
+bjs_imprisonment_ratio_hisp_2023,1.317391,"Prisoners in 2023 Table 6, Hispanic / all adults"
+spi2016_hisp_prisoners_fb_share,0.348876,"SPI 2016 V0945 other country, weighted, unresolved excluded"
+acs2016_hisp_inst_fb_share_1864,0.279009,ACS 2016 1-year PUMS TYPE=2
+acs2024_hisp_inst_fb_share_1864,0.270726,ACS 2024 1-year PUMS TYPEHUGQ=2
+acs2016_hisp_pop_fb_share_1864,0.466366,ACS 2016 1-year PUMS
+acs2024_hisp_pop_fb_share_1864,0.420859,ACS 2024 1-year PUMS
+acs2016_hisp_share_inst_1864,0.191085,ACS 2016 1-year PUMS TYPE=2
+acs2016_m_over_p_raw,1.003151,"scaling in the SPI year, raw"
+acs2016_m_over_p_adj,1.078781,"scaling in the SPI year, adjusted"
+acs2024_inst_allocated_origin_mexican,0.002261,"FHISP=1 share, HISP 02, 18-64"
+acs2024_inst_allocated_origin_generic,0.004459,"FHISP=1 share, HISP 24, 18-64"
+acs2024_inst_allocated_origin_hispanic,0.003335,"FHISP=1 share, HISP 02-24, 18-64"
+acs2024_hh_allocated_origin_hispanic,0.005801,"FHISP=1 share, households, 18-64"
 m_raw_mex_share_of_hisp_inst,0.581490,ACS 2024 1-year 18-64
 m_adj_mex_share_of_hisp_inst,0.653493,generic-Hispanic excess reallocated by population share
 m_adj_inst_mex_share_of_hisp_inst,0.661435,generic excess reallocated by institutional share

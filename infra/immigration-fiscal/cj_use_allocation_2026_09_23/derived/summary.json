@@ -24,19 +24,19 @@
   "mexico_born_bn": null
  },
  "range_change_bn": [
-  -1.102917619435793,
-  8.540565754605183
+  -1.0282244601027912,
+  8.646071364387595
  ],
  "range_change_adj_bn": [
-  1.4098612810671511,
-  8.540565754605183
+  1.481649967908858,
+  8.646071364387595
  ],
  "one_at_a_time_change_bn": {
   "central": 5.943591614299166,
   "prisons_custody_acs_raw": 4.057414343052201,
   "prisons_custody_acs_adj": 5.943591614299166,
-  "prisons_custody_bjs_raw": 3.9827211837191925,
-  "prisons_custody_bjs_adj": 5.871802927457466,
+  "prisons_custody_bjs_raw": 4.140480775492435,
+  "prisons_custody_bjs_adj": 6.049097224081592,
   "courts_0.5": 5.7756625057002395,
   "courts_0.6": 5.943591614299166,
   "courts_0.75": 6.195485277197562,
@@ -48,6 +48,8 @@
  },
  "sensitivity_delta_bn": {
   "arrest_rr_hispanic_1": -2.750082136193455,
+  "arrest_rr_carried_to_2023_by_imprisonment_ratio": -1.5028897077174668,
+  "arrest_scaling_m_over_p_2016": -1.2427324067893815,
   "tau_extra_at_national_rates": -0.7116025935956138,
   "ero_noncustody_by_ero_arrest_share": 0.5944202167063738,
   "cbp_keyed_like_police_half": 0.24996986393964132,
@@ -74,8 +76,8 @@
   "custody_acs5_adj": 0.13959531124131047,
   "custody_acs_adj_inst": 0.14364232903250113,
   "custody_acs5_adj_inst": 0.14327634013075347,
-  "custody_bjs_raw": 0.12575486728912175,
-  "custody_bjs_adj": 0.1413265620966621,
+  "custody_bjs_raw": 0.12705527910253214,
+  "custody_bjs_adj": 0.14278799842005024,
   "custody_acs_adj_minus_ice": 0.14176352000913942
  },
  "ice": {
@@ -105,11 +107,21 @@
   "cbp_751_excl_invest_bn": 23.871927970650006
  },
  "bjs": {
-  "prison_total": 1185648,
-  "prison_hisp": 273900,
+  "prison_total": 1210308,
+  "prison_hisp": 282700,
   "jail_total": 664200,
   "jail_hisp": 95700,
-  "hisp_share": 0.1998001998001998
+  "hisp_share": 0.20186630305125397,
+  "hisp_share_overlap_bounds": [
+   0.20071719077008907,
+   0.20396022022498506
+  ],
+  "prison_hisp_share_2022": 0.23101291445690458,
+  "held_in_local_jails_2023": 65552,
+  "imprisonment_ratio_hisp": {
+   "2019": 1.4155844155844155,
+   "2023": 1.317391304347826
+  }
  },
  "arrests": {
   "eth_total": 5492557,
@@ -157,8 +169,15 @@
   "canonical target = 40,896,574.15",
   "target nativity parts add up",
   "ACS 2024 all-age total equals the resident control",
+  "ACS 2024 allocation-flag pull reproduces the 18-64 institutional total",
   "BJS 2022 sentenced prisoners parsed",
+  "Prisoners in 2023 keeps the 2022 row (no restatement)",
+  "BJS yearend 2023 sentenced prisoners parsed",
+  "BJS Table 6 adult imprisonment rates parsed",
+  "BJS Table 14 prisoners held in local jails, yearend 2023",
   "BJS midyear 2023 jail inmates parsed",
+  "SPI 2016 public-use file is the audited copy",
+  "SPI Hispanic prisoners by birthplace match the 2026-09-05 audit",
   "FBI 2019 adult arrests, ethnicity panel",
   "NCVS pooled person-years identical on both sides",
   "ICE EOFY2024 detained by arresting agency sums to total",
@@ -185,5 +204,61 @@
    "us_born_bn": 43.77136908097006
   },
   "custody_mexico_born_fraction": 0.26208946099446956
+ },
+ "nativity_check": {
+  "spi2016_hisp_prisoners_fb_share": 0.3488755111308885,
+  "acs2016_hisp_inst_fb_share": 0.2790093225526975,
+  "acs2024_hisp_inst_fb_share": 0.27072562453588894,
+  "odds_ratio_spi_over_acs2016": 1.3845778858268,
+  "prisons_mexico_born_fraction_at_spi_odds": 0.32965598846823274,
+  "prisons_shift_to_mexico_born_bn": 1.1632817537910531
+ },
+ "acs_checks": {
+  "acs1_2016": {
+   "hisp_inst_fb_share": 0.2790093225526975,
+   "hisp_pop_fb_share": 0.4663655658462011,
+   "hisp_share_inst": 0.19108483156050257,
+   "m_raw": 0.619272963749865,
+   "m_adj": 0.6659618503295797,
+   "p": 0.6173279274376985
+  },
+  "acs1_2024": {
+   "hisp_inst_fb_share": 0.27072562453588894,
+   "hisp_pop_fb_share": 0.4208592170392993,
+   "hisp_share_inst": 0.20185794647326727,
+   "m_raw": 0.5814897323450978,
+   "m_adj": 0.6534931532940337,
+   "p": 0.5710239106674037
+  },
+  "acs5_2024": {
+   "hisp_inst_fb_share": 0.2588425405492211,
+   "hisp_pop_fb_share": 0.4219790896797395,
+   "hisp_share_inst": 0.1857324615162347,
+   "m_raw": 0.5492863738557893,
+   "m_adj": 0.6668311276335811,
+   "p": 0.5799161003145465
+  },
+  "allocated_mexican": {
+   "hh": 0.005372422659716276,
+   "inst": 0.002260898898062775
+  },
+  "allocated_generic": {
+   "hh": 0.011359091033917874,
+   "inst": 0.004458664770623177
+  },
+  "allocated_hispanic": {
+   "hh": 0.0058011663593321655,
+   "inst": 0.003334594314376585
+  },
+  "allocated_non_hispanic": {
+   "hh": 0.005979971898038781,
+   "inst": 0.004831554105610296
+  }
+ },
+ "spi2016": {
+  "us_born": 206610.12997535482,
+  "other_country": 110702.66275065707,
+  "unresolved": 860.24869758131,
+  "fb_share": 0.3488755111308885
  }
 }

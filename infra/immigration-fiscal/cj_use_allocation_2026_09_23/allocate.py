@@ -8,13 +8,18 @@ change. Every use key is written as the target's share of a national use count:
 
 Keys, with the per-head key kept as the reference:
   fire                    per head
-  prisons                 ACS institutional residence 18-64 (raw, generic-Hispanic adjusted), BJS check
+  prisons                 ACS institutional residence 18-64 (raw, generic-Hispanic adjusted), BJS 2023 check
   police (non-border)     offending (FBI 2019 adult arrests), half offending / half per head,
                           victimization (NCVS 2022-2024 violent victimizations); NCVS perceived-offender
                           rate reported as a disconfirmation arm
   law courts              criminal share c by the arrest key, civil share per head, c in {0.5, 0.6, 0.75}
   ICE custody (in police) interior (ICE-arrest) bed-days by Mexico's share; border-arrest custody per head
   CBP (in police)         per head in every set: border spending follows entry flows, not resident use
+
+Checks added after research/immigration-crime-race-ethnicity-2026-09-05.md: the BJS 2022 row is compared
+across report vintages, the Survey of Prison Inmates 2016 birthplace of Hispanic prisoners is set against
+ACS 2016, the ACS origin allocation flag is read, and BJS imprisonment ratios carry the 2019 arrest ratio
+to 2023 as a sensitivity.
 
 Run from the repository root (after acs_pull.py):
     OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/cj_use_allocation_2026_09_23/allocate.py
@@ -24,6 +29,7 @@ import ast, csv, importlib.util, itertools, json, pathlib, re, subprocess, sys, 
 
 import openpyxl
 import pandas as pd
+import pyreadstat
 
 HERE = pathlib.Path(__file__).resolve().parent
 FISCAL = HERE.parent
@@ -37,7 +43,10 @@ CPS_ZIP = FISCAL / "gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip"
 CRIME = FISCAL / "crime_cost_2026_09_16/crime_cost.py"
 NCVS = FISCAL / "ncvs_victim_offender_2026_09_18/derived/rates_by_victim_and_offender_2022_2024.csv"
 BJS_PRISON = FISCAL / "acs_institutional_2026_09_16/bjs_p22st_extract.txt"
+BJS_PRISON_2023 = HERE / "bjs_p23st_extract.txt"
 BJS_JAIL = HERE / "_cache/bjs/ji23stt05.csv"
+SPI = ROOT / "sources/immigration-fiscal/data/external/crime_frontier/spi/ICPSR_37692/DS0001/37692-0001-Data.dta"
+SPI_SHA = "9897027025c37ff0ba56f1b186ffb79037b26ce8f9ed44373dbd405afa2a0a6d"  # 2026-09-05 audit manifest
 DET = FISCAL / "detention_evidence_2026_09_20"
 ICE_XLSX = DET / "_cache/ice_fy2024_yearend.xlsx"
 ICE_PDF = DET / "_cache/ice_fy2024_annual.pdf"
@@ -46,6 +55,7 @@ OHSS = HERE / "_cache/ohss/ohss_monthly_tables_nov2024.xlsx"
 FILE_A = FISCAL / "detention_reconciliation_2026_09_20/_cache/dhs_fy2024_fileab.zip"
 ACS = DERIVED / "acs_hisp_nativity_gq.csv"
 ACS19 = DERIVED / "acs2019_adults.csv"
+ACS_ALLOC = DERIVED / "acs_hisp_allocation_1864.csv"
 
 RESIDENT = 340_110_988            # full resident control used by the complete account
 ERO_ALL_VINTAGES = 5_262_842_692.98  # detention_reconciliation README: ICE ERO direct program activity, all funding years
@@ -150,6 +160,25 @@ def cps_target(builder) -> dict:
 
 
 # ---------------------------------------------------------------- ACS custody
+def by_nativity(g: pd.DataFrame) -> dict:
+    """Mexican-coded institutional counts per nativity, raw and with the generic-Hispanic excess reallocated."""
+    by = {}
+    for nat in ("native", "foreign_born"):
+        gn = g[g.nativity == nat]
+        mex, gen = gn[gn.hisp == "02"].iloc[0], gn[gn.hisp == "24"].iloc[0]
+        named = gn[~gn.hisp.isin(["01", "24"])]
+        base = gn.inst.sum() / gn.total.sum()
+        excess = max(0.0, gen.inst - base * gen.total)
+        by[nat] = {"I_mex": float(mex.inst), "HH_mex": float(mex.hh), "P_mex": float(mex.total),
+                   "I_hisp": float(gn[gn.hisp != "01"].inst.sum()), "P_hisp": float(gn[gn.hisp != "01"].total.sum()),
+                   "I_gen": float(gen.inst), "P_gen": float(gen.total), "base": base, "excess": excess,
+                   "mex_share_named_pop": float(mex.total / named.total.sum()),
+                   "mex_share_named_inst": float(mex.inst / named.inst.sum())}
+        by[nat]["I_mex_adj"] = by[nat]["I_mex"] + excess * by[nat]["mex_share_named_pop"]
+        by[nat]["I_mex_adj_inst"] = by[nat]["I_mex"] + excess * by[nat]["mex_share_named_inst"]
+    return by
+
+
 def acs_custody(cps: dict) -> dict:
     a = pd.read_csv(ACS, dtype={"hisp": str, "ages": str})
     res = {}
@@ -159,20 +188,7 @@ def acs_custody(cps: dict) -> dict:
         if product == "acs1_2024":
             gate("ACS 2024 all-age total equals the resident control", abs(tot_all / RESIDENT - 1) < 1e-4, f"{tot_all:,}")
         I_all = g.inst.sum()
-        by = {}
-        for nat in ("native", "foreign_born"):
-            gn = g[g.nativity == nat]
-            mex, gen = gn[gn.hisp == "02"].iloc[0], gn[gn.hisp == "24"].iloc[0]
-            named = gn[~gn.hisp.isin(["01", "24"])]
-            base = gn.inst.sum() / gn.total.sum()
-            excess = max(0.0, gen.inst - base * gen.total)
-            by[nat] = {"I_mex": float(mex.inst), "HH_mex": float(mex.hh), "P_mex": float(mex.total),
-                       "I_hisp": float(gn[gn.hisp != "01"].inst.sum()), "P_hisp": float(gn[gn.hisp != "01"].total.sum()),
-                       "I_gen": float(gen.inst), "P_gen": float(gen.total), "base": base, "excess": excess,
-                       "mex_share_named_pop": float(mex.total / named.total.sum()),
-                       "mex_share_named_inst": float(mex.inst / named.inst.sum())}
-            by[nat]["I_mex_adj"] = by[nat]["I_mex"] + excess * by[nat]["mex_share_named_pop"]
-            by[nat]["I_mex_adj_inst"] = by[nat]["I_mex"] + excess * by[nat]["mex_share_named_inst"]
+        by = by_nativity(g)
         I_M = sum(v["I_mex"] for v in by.values())
         I_H = sum(v["I_hisp"] for v in by.values())
         P_M = sum(v["P_mex"] for v in by.values())
@@ -202,21 +218,87 @@ def ice_bound(acs: dict, cps: dict, ice: dict) -> dict:
     return {"share": sum(parts.values()) / denom, "parts": {k: v / denom for k, v in parts.items()}}
 
 
+def acs_checks() -> dict:
+    """Year and coding checks on the ACS custody inputs: nativity mix and scaling by year, origin allocation."""
+    a = pd.read_csv(ACS, dtype={"hisp": str, "ages": str})
+    out = {}
+    for product in ("acs1_2016", "acs1_2024", "acs5_2024"):
+        g = a[(a["product"] == product) & (a.ages == "1864")]
+        by = by_nativity(g)
+        h = g[g.hisp != "01"]
+        fb = h[h.nativity == "foreign_born"]
+        I_H, P_H = sum(v["I_hisp"] for v in by.values()), sum(v["P_hisp"] for v in by.values())
+        out[product] = {"hisp_inst_fb_share": fb.inst.sum() / h.inst.sum(), "hisp_pop_fb_share": fb.total.sum() / h.total.sum(),
+                        "hisp_share_inst": h.inst.sum() / g.inst.sum(),
+                        "m_raw": sum(v["I_mex"] for v in by.values()) / I_H,
+                        "m_adj": sum(v["I_mex_adj"] for v in by.values()) / I_H,
+                        "p": sum(v["P_mex"] for v in by.values()) / P_H}
+    f = pd.read_csv(ACS_ALLOC, dtype={"hisp": str})
+    gate("ACS 2024 allocation-flag pull reproduces the 18-64 institutional total",
+         abs(f.inst.sum() - a[(a["product"] == "acs1_2024") & (a.ages == "1864")].inst.sum()) <= 48, f"{f.inst.sum():,}")
+    for lab, sel in (("mexican", f.hisp == "02"), ("generic", f.hisp == "24"), ("hispanic", f.hisp != "01"),
+                     ("non_hispanic", f.hisp == "01")):
+        t = f[sel].groupby("fhisp")[["hh", "inst"]].sum()
+        out[f"allocated_{lab}"] = {c: float(t.loc[1, c] / t[c].sum()) for c in ("hh", "inst")}
+    return out
+
+
 # ---------------------------------------------------------------- BJS custody by Hispanic origin
+def bjs_rows(path: pathlib.Path, table: str, years: tuple) -> dict:
+    """Numeric cells of the year rows in a pdftotext BJS table (the year itself dropped)."""
+    txt = path.read_text()
+    t = txt[txt.index(f"{table}\n"):]
+    t = t[:t.index("Source:")]
+    return {y: [int(x.replace(",", "")) for x in next(l for l in t.splitlines() if l.startswith(y)).split()[1:]]
+            for y in years}
+
+
 def bjs_custody() -> dict:
-    txt = BJS_PRISON.read_text()
-    t3 = txt[txt.index("TABLE 3\nSentenced prisoners"):]
-    row = next(l for l in t3.splitlines() if l.startswith("2022"))
-    nums = [int(x.replace(",", "")) for x in row.split()[1:]]
-    total, hisp = nums[0], nums[7]
-    gate("BJS 2022 sentenced prisoners parsed", total == 1_185_648 and hisp == 273_900, f"total {total:,}, Hispanic {hisp:,}")
+    """Hispanic share of prisoners (yearend 2023) plus jail inmates (midyear 2023), and imprisonment ratios.
+
+    BJS race and Hispanic-origin prisoner counts are estimates adjusted with the 2004 and 2016 prisoner surveys
+    (Table 3 source note); jail counts are administrative reports from the Annual Survey of Jails."""
+    old = bjs_rows(BJS_PRISON, "TABLE 3", ("2022",))["2022"]
+    new = bjs_rows(BJS_PRISON_2023, "TABLE 3", ("2022", "2023"))
+    gate("BJS 2022 sentenced prisoners parsed", (old[0], old[7]) == (1_185_648, 273_900), f"total {old[0]:,}, Hispanic {old[7]:,}")
+    gate("Prisoners in 2023 keeps the 2022 row (no restatement)", new["2022"] == old, f"{len(old)} cells equal")
+    total, hisp = new["2023"][0], new["2023"][7]
+    gate("BJS yearend 2023 sentenced prisoners parsed", (total, hisp) == (1_210_308, 282_700), f"total {total:,}, Hispanic {hisp:,}")
+    rates = bjs_rows(BJS_PRISON_2023, "TABLE 6", ("2019", "2023"))
+    imp = {y: r[7] / r[0] for y, r in rates.items()}
+    gate("BJS Table 6 adult imprisonment rates parsed", [(r[0], r[7]) for r in rates.values()] == [(539, 763), (460, 606)],
+         f"Hispanic/total 2019 {imp['2019']:.4f}, 2023 {imp['2023']:.4f}")
+    t14 = BJS_PRISON_2023.read_text()
+    held = int(re.search(r"U\.S\. total\s+[\d,]+\s+[\d,]+\s+\S+\s+\S+\s+\S+\s+[\d,]+\s+([\d,]+)", t14).group(1).replace(",", ""))
+    gate("BJS Table 14 prisoners held in local jails, yearend 2023", held == 65_552, f"{held:,}")
     raw = BJS_JAIL.read_bytes().decode("latin-1")
     jrow = next(l for l in raw.splitlines() if l.startswith("2023"))
     fields = next(csv.reader([jrow]))
     jtotal, jhisp = int(fields[1].replace(",", "")), int(fields[7].replace(",", ""))
     gate("BJS midyear 2023 jail inmates parsed", jtotal == 664_200 and jhisp == 95_700, f"total {jtotal:,}, Hispanic {jhisp:,}")
+    # prisoners held in local jails appear in both counts; bound the share over their unknown composition
+    shares = (hisp / total, jhisp / jtotal)
+    bounds = [(hisp + jhisp - held * s) / (total + jtotal - held) for s in (max(shares), min(shares))]
     return {"prison_total": total, "prison_hisp": hisp, "jail_total": jtotal, "jail_hisp": jhisp,
-            "hisp_share": (hisp + jhisp) / (total + jtotal)}
+            "hisp_share": (hisp + jhisp) / (total + jtotal), "hisp_share_overlap_bounds": bounds,
+            "prison_hisp_share_2022": old[7] / old[0], "held_in_local_jails_2023": held,
+            "imprisonment_ratio_hisp": imp}
+
+
+def spi_birthplace(builder) -> dict:
+    """Survey of Prison Inmates 2016: reported birthplace of Hispanic state and federal prisoners, weighted.
+
+    The public file carries Hispanic origin as yes/no only and suppresses country of citizenship, so it cannot
+    name Mexican origin; V0945 is reported birthplace (United States or another country), not Census nativity."""
+    gate("SPI 2016 public-use file is the audited copy", builder.sha(SPI) == SPI_SHA, SPI_SHA[:12])
+    d, _ = pyreadstat.read_dta(str(SPI), usecols=["RV0003", "V0945", "V1585"])
+    h = d[d.RV0003 == 3]
+    w = h.groupby(h.V0945.where(h.V0945.isin([1, 2]), 0)).V1585.sum()
+    us, other, unresolved = float(w.get(1, 0.0)), float(w.get(2, 0.0)), float(w.get(0, 0.0))
+    gate("SPI Hispanic prisoners by birthplace match the 2026-09-05 audit",
+         all(abs(x - y) < 1 for x, y in ((us, 206_610), (other, 110_703), (unresolved, 860))),
+         f"US {us:,.0f}, other country {other:,.0f}, unresolved {unresolved:,.0f}")
+    return {"us_born": us, "other_country": other, "unresolved": unresolved, "fb_share": other / (us + other)}
 
 
 # ---------------------------------------------------------------- arrests and NCVS
@@ -314,7 +396,9 @@ def main() -> None:
     ref = reference(builder)
     cps = cps_target(builder)
     acs = acs_custody(cps)
+    chk = acs_checks()
     bjs = bjs_custody()
+    spi = spi_birthplace(builder)
     arr = arrests()
     vic = ncvs()
     ic = ice()
@@ -491,8 +575,12 @@ def main() -> None:
     rate = {"police": s_half - S, "prisons": shares["custody_acs_adj"] - S,
             "law_courts": cc * s_arr + (1 - cc) * S - S, "fire": 0.0}
     w155 = {k: v / bea["t3155_total_m"] * bea["line4_bn"] for k, v in bea["t3155_m"].items()}
+    imp = bjs["imprisonment_ratio_hisp"]
     sensitivity = {
         "arrest_rr_hispanic_1": arrest_delta(A_T * 1.0 * a1["m_adj"] / p),
+        "arrest_rr_carried_to_2023_by_imprisonment_ratio": arrest_delta(A_T * arr["rr_hisp"] * imp["2023"] / imp["2019"]
+                                                                        * a1["m_adj"] / p),
+        "arrest_scaling_m_over_p_2016": arrest_delta(A_T * arr["rr_hisp"] * chk["acs1_2016"]["m_adj"] / chk["acs1_2016"]["p"]),
         "tau_extra_at_national_rates": (cust_tau - shares["custody_acs_adj"]) * prisons_bn + arrest_delta(arr_tau),
         "ero_noncustody_by_ero_arrest_share": ic["ero_noncustody_bn"] * (ic["share_ero_arrests"] - s_half),
         "cbp_keyed_like_police_half": C * (s_half - S),
@@ -529,6 +617,16 @@ def main() -> None:
     split["proxy_mexico_born_bn"] = split.mexico_born_bn + split.unsplit_bn * fb_custody
     split["proxy_us_born_bn"] = split.us_born_bn + split.unsplit_bn * (1 - fb_custody)
     split.to_csv(DERIVED / "central_split.csv", index=False, float_format="%.6f")
+    # [INFERENCE] nativity check: SPI 2016 prisons against ACS 2016 institutions, same year, Hispanic of any origin.
+    # If the ACS understates the foreign-born share of custody by that odds ratio, prisons shift toward the Mexico-born.
+    odds = lambda x: x / (1 - x)
+    k_spi = odds(spi["fb_share"]) / odds(chk["acs1_2016"]["hisp_inst_fb_share"])
+    f_spi = odds(fb_custody) * k_spi / (1 + odds(fb_custody) * k_spi)
+    nativity_check = {"spi2016_hisp_prisoners_fb_share": spi["fb_share"],
+                      "acs2016_hisp_inst_fb_share": chk["acs1_2016"]["hisp_inst_fb_share"],
+                      "acs2024_hisp_inst_fb_share": chk["acs1_2024"]["hisp_inst_fb_share"],
+                      "odds_ratio_spi_over_acs2016": k_spi, "prisons_mexico_born_fraction_at_spi_odds": f_spi,
+                      "prisons_shift_to_mexico_born_bn": (f_spi - fb_custody) * cparts["prisons"].target_bn}
 
     inputs = [
         ("reference_share_national", S, "allocations.csv population key x pool fraction"),
@@ -539,7 +637,26 @@ def main() -> None:
         ("acs2019_hisp_share_adults", arr["hisp_share_adults_2019"], "ACS 2019 B01001/B01001I"),
         ("rr_arrest_hispanic", arr["rr_hisp"], "ratio of the two above"),
         ("acs_hisp_share_inst_1864", a1["hisp_share_inst"], "ACS 2024 1-year PUMS TYPEHUGQ=2"),
-        ("bjs_hisp_share_custody", bjs["hisp_share"], "BJS sentenced prisoners 2022 + jail inmates midyear 2023"),
+        ("bjs_hisp_share_custody", bjs["hisp_share"], "BJS sentenced prisoners yearend 2023 + jail inmates midyear 2023"),
+        ("bjs_hisp_share_custody_overlap_low", bjs["hisp_share_overlap_bounds"][0],
+         "less 65,552 prisoners held in local jails at the prison Hispanic share"),
+        ("bjs_hisp_share_custody_overlap_high", bjs["hisp_share_overlap_bounds"][1],
+         "less 65,552 prisoners held in local jails at the jail Hispanic share"),
+        ("bjs_prison_hisp_share_2022", bjs["prison_hisp_share_2022"], "Prisoners in 2022 Table 3 (earlier BJS check)"),
+        ("bjs_imprisonment_ratio_hisp_2019", imp["2019"], "Prisoners in 2023 Table 6, Hispanic / all adults"),
+        ("bjs_imprisonment_ratio_hisp_2023", imp["2023"], "Prisoners in 2023 Table 6, Hispanic / all adults"),
+        ("spi2016_hisp_prisoners_fb_share", spi["fb_share"], "SPI 2016 V0945 other country, weighted, unresolved excluded"),
+        ("acs2016_hisp_inst_fb_share_1864", chk["acs1_2016"]["hisp_inst_fb_share"], "ACS 2016 1-year PUMS TYPE=2"),
+        ("acs2024_hisp_inst_fb_share_1864", chk["acs1_2024"]["hisp_inst_fb_share"], "ACS 2024 1-year PUMS TYPEHUGQ=2"),
+        ("acs2016_hisp_pop_fb_share_1864", chk["acs1_2016"]["hisp_pop_fb_share"], "ACS 2016 1-year PUMS"),
+        ("acs2024_hisp_pop_fb_share_1864", chk["acs1_2024"]["hisp_pop_fb_share"], "ACS 2024 1-year PUMS"),
+        ("acs2016_hisp_share_inst_1864", chk["acs1_2016"]["hisp_share_inst"], "ACS 2016 1-year PUMS TYPE=2"),
+        ("acs2016_m_over_p_raw", chk["acs1_2016"]["m_raw"] / chk["acs1_2016"]["p"], "scaling in the SPI year, raw"),
+        ("acs2016_m_over_p_adj", chk["acs1_2016"]["m_adj"] / chk["acs1_2016"]["p"], "scaling in the SPI year, adjusted"),
+        ("acs2024_inst_allocated_origin_mexican", chk["allocated_mexican"]["inst"], "FHISP=1 share, HISP 02, 18-64"),
+        ("acs2024_inst_allocated_origin_generic", chk["allocated_generic"]["inst"], "FHISP=1 share, HISP 24, 18-64"),
+        ("acs2024_inst_allocated_origin_hispanic", chk["allocated_hispanic"]["inst"], "FHISP=1 share, HISP 02-24, 18-64"),
+        ("acs2024_hh_allocated_origin_hispanic", chk["allocated_hispanic"]["hh"], "FHISP=1 share, households, 18-64"),
         ("m_raw_mex_share_of_hisp_inst", a1["m_raw"], "ACS 2024 1-year 18-64"),
         ("m_adj_mex_share_of_hisp_inst", a1["m_adj"], "generic-Hispanic excess reallocated by population share"),
         ("m_adj_inst_mex_share_of_hisp_inst", a1["m_adj_inst"], "generic excess reallocated by institutional share"),
@@ -579,7 +696,8 @@ def main() -> None:
                                  "proxy": split[["proxy_mexico_born_bn", "proxy_us_born_bn"]].sum().to_dict(),
                                  "per_head": {"mexico_born_bn": ref["target_bn"] * fb_share,
                                               "us_born_bn": ref["target_bn"] * (1 - fb_share)},
-                                 "custody_mexico_born_fraction": fb_custody}}
+                                 "custody_mexico_born_fraction": fb_custody},
+               "nativity_check": nativity_check, "acs_checks": chk, "spi2016": spi}
     (DERIVED / "summary.json").write_text(json.dumps(summary, indent=1, default=float))
 
     print("\n[shares of the national subline, reference 0.120245]")
@@ -600,6 +718,9 @@ def main() -> None:
         print(f"  one at a time {k:28s} {v:+.3f}")
     for k, v in sensitivity.items():
         print(f"  sensitivity delta {k:36s} {v:+.3f}")
+    print("\n[nativity check, SPI 2016 against ACS]")
+    for k, v in nativity_check.items():
+        print(f"  {k:44s} {v:.4f}")
     print(f"\n{len(GATES)} gates passed")
 
 
