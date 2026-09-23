@@ -63,6 +63,11 @@ California alone, below high school: 26% (4.3) paper rules against 61% (4.2) wit
 - Co-resident parents only; the CPS under-samples 2022–24 arrivals.
 - Imputed legal includes naturalized citizens and green-card holders; the imputation cannot
   separate them.
+- The rules are an unvalidated person-level classifier (study audit D, 2026-09-23). Self-reported
+  citizenship, benefit receipt and a legal spouse push unauthorized parents into the legal cell;
+  post-1980 green-card holders without benefits in private jobs fall into the unauthorized cell.
+  Because program users are legal by rule, the poverty and insurance comparisons below are partly
+  built into the classification.
 
 ---
 
