@@ -87,7 +87,8 @@ Beside the fiscal headline, as social costs:
 - crimes by group members against other residents cost the victims **$29bn** a year ($15–45bn;
   $43bn on arrest shares);
 - unreimbursed hospital care costs **$3.2–5.6bn**;
-- housing nets other residents **+$0.7–3.5bn**, while their renters pay $22–58bn more;
+- housing nets other residents **+$0.7–3.5bn**, while their renters pay $22–58bn more ($30bn
+  central once cheaper construction is counted, ladder 200);
 - road congestion costs other residents **$19bn** a year in time and fuel ($8–35bn), with road
   budgets fixed as in the main case.
 
@@ -101,8 +102,12 @@ Benefits are priced to the same standard as the costs (evidence-symmetry rule 5)
 The first, the [care lane](../infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md)
 (ladder 198), adds **$4.1bn a year** ($2.6–13.3bn) to the fiscal account: native women's hours
 taxes of $2.7bn and an elder-care Medicaid saving of $1.5bn net. Cheaper services, worth $21.8bn
-to consumers, are already inside the production gain. The scale, construction and mobility lanes
-are running.
+to consumers, are already inside the production gain. The second, the
+[construction lane](../infra/immigration-fiscal/construction_housing_supply_2026_09_23/RESULT.md)
+(ladder 200), adds nothing. The group makes construction 0.75% cheaper, which trims other
+renters' extra rent from $34bn to $30bn a year, but that gain is already inside the production
+term. The scale and mobility lanes are running. The ancestry instrument could not measure the
+congestion or wage slopes, so both figures stand (ladder 199).
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,

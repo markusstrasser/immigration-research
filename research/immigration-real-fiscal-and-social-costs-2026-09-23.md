@@ -18,6 +18,8 @@ sit outside government budgets:
   **$3.2–5.6bn**.
 - **Housing.** Other renters pay about **$34bn** more rent in the long run ($22–58bn), almost
   all of it to landlords who are other residents, so the net is a small gain (+$0.7–3.5bn).
+  Counting the cheaper construction the group's labour brings, renters pay $30bn more; the net
+  barely moves (ladder 200).
 - **Road congestion.** The main case holds road budgets fixed, so the group's traffic shows up
   as other residents' delay: about **$19bn a year** in time and fuel ($8–35bn), 8.8 hours and
   $217 per other commuter.
@@ -342,3 +344,10 @@ grow with the population.
   $19.2bn ($8.0–35.3bn). Property crime, listed in §3 but missing from the first §7 table, is now
   included. Totals: $248–307bn at central values, $212–340bn full span. Concept affected: the
   social costs reported beside the fiscal headline.
+- 2026-09-23 (construction and grounding lanes): with cheaper construction (0.75%, ladder 200)
+  other renters' extra rent is $29.9bn instead of $33.5bn; the housing net moves by −$0.01bn, so §7
+  is unchanged. The ancestry instrument could not measure the congestion or wage slopes (ladder
+  199), so the congestion item stays on Couture–Duranton–Turner's elasticity and the wage transfer
+  stays a calibration. The distribution lane's quintile split (§4) used the $33.5bn and was not
+  re-run; the change is $3.6bn on the renter side. Concept affected: housing transfer and the
+  grounding of the social items.
