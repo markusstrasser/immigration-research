@@ -1,0 +1,6 @@
+measure,service_response,published_low,published_high,adopted_low,adopted_high
+capacity_path_welfare_bn,0.0000,-41.5341,112.6713,-87.8464,80.5278
+capacity_path_welfare_bn,0.5000,-203.5503,-81.7253,-252.8344,-116.8406
+capacity_path_welfare_bn,1.0000,-356.8378,-262.0538,-409.0936,-300.1408
+service_break_even_personal,,0.1851,0.2273,0.0548,0.1352
+service_break_even_shared,,0.2153,0.2581,0.0828,0.1643
