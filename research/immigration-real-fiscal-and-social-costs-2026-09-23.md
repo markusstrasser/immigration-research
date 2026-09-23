@@ -1,28 +1,30 @@
 # Real fiscal and social costs of the Mexican-origin population to other residents
 
-**Verdict:** The published account charges police, courts and prisons per head. Charging them
-by use raises the Mexican-origin population's annual cost to other residents by only
-**$1.7–5.9bn**, on top of the published **$165–197bn**. The reason is that Hispanic residents
-are 20.2% of people in prisons and jails combined, close to their 20.7% share of working-age
-residents. In state and federal prisons they are 23.4%. The account compares the group with the
-average other resident, not with whites; Hispanic adults are imprisoned at 2.6 times the white
-rate. The larger costs sit outside government budgets:
+**Verdict:** With the changes the operator adopted on September 23, the complete account's main
+case is a net cost to other residents of **$203–250bn a year** (published September 20:
+$165–197bn). Most of the increase is general government, which now grows with the population at
+0.59–0.84 instead of zero (+$28.5–40.6bn). Charging courts, police and prisons by use adds only
+**$5.9bn** ($1.7bn with census ethnicity codes as recorded). Hispanic residents are 20.2% of
+people in prisons and jails combined, close to their 20.7% share of working-age residents, and 23.4%
+in state and federal prisons. The account compares the group with the average other resident,
+not with whites; Hispanic adults are imprisoned at 2.6 times the white rate. The under-charged
+government part of uncompensated hospital care adds **$3.7–5.7bn**. The larger remaining costs
+sit outside government budgets:
 
 - **Crime victims.** Crimes by group members against other residents cost the victims about
   **$29bn a year** in full cost, including lives lost and pain. The range is $15–45bn, and the
   figure is $43bn if non-fatal offending follows arrest shares. Tangible losses are $4.5bn.
-- **Uncompensated hospital care** adds **$1.6–9.2bn**.
+- **Unreimbursed hospital care** borne by hospitals, physicians and private payers:
+  **$3.2–5.6bn**.
 - **Housing.** Other renters pay about **$34bn** more rent in the long run ($22–58bn), almost
   all of it to landlords who are other residents, so the net is a small gain (+$0.7–3.5bn).
 - **Wages.** Wages move **$66–166bn** a year from less-educated to more-educated natives. Like
   the rent, this is a transfer among other residents, not a net cost.
 
-Stacked on the published band, the use-keyed fiscal cost plus the social items come to about
-**$197–244bn a year** at central values (full span $172–261bn), or $4.8–6.0k per group member.
-If general government also grows with population (a proposal still open), the total is
-**$225–285bn**. Two lanes are still running: road congestion, and an income-weighted version
-that counts the transfers, which mostly run from poorer to richer residents (§4).
-[CALCULATION: lanes and commits in "Sources"]
+Fiscal and social costs together come to about **$228–287bn a year** at central values
+(full span $203–304bn), or $5.6–7.0k per group member. Two lanes are still running: road
+congestion, and an income-weighted version that counts the transfers, which mostly run from
+poorer to richer residents (§4). [CALCULATION: lanes and commits in "Sources"]
 
 Date: 2026-09-23. Operator request: "equal charge --- should it be weighted with use of
 courts, police, prisons? Do the remaining common sense stuff to get at the real fiscal and
@@ -102,8 +104,8 @@ Yes, use is the better key. It changes little because of what the account compar
 
 | Channel | What it is | $bn a year to other residents | Measured or modelled | Adds to the net? |
 |---|---|---:|---|---|
-| Courts, police, prisons by use | reallocation inside the fiscal account | +1.7 to +5.9 (grid −1.0 to +8.7) | measured shares, assumed keys | yes, if adopted (§6) |
-| Uncompensated hospital care | government offsets keyed below use; unreimbursed care outside any budget | +1.6 to +9.2 (outside budgets 1.7–4.6) | measured uninsured share, published offsets, assumed use | yes, if adopted (§6) |
+| Courts, police, prisons by use | reallocation inside the fiscal account | +5.9 adopted (+1.7 raw codes; grid −1.0 to +8.7) | measured shares, assumed keys | adopted into the main case |
+| Uncompensated hospital care | government offsets keyed below use; unreimbursed care outside any budget | +7.3 to +10.6: +3.7 to +5.7 inside, +3.2 to +5.6 outside budgets (+4.7 to +7.4 at 0.7× use) | measured uninsured share, published offsets, assumed use | inside part adopted; outside part a social item |
 | Crime victims' harm | losses of other residents who are victims; excludes justice costs and offenders | 28.9 full (one at a time 23.5–34.0; envelope 15.4–45.3; arrest shares 43.1); 4.5 tangible (1.3–6.0) | measured incidents, modelled prices (lives valued at VSL) | yes, as a social (Z) item |
 | Property crime | same frame, arrest-share proxy | 1.3–1.4 | proxy | yes, as Z; separate from the violent figure |
 | Housing, net to other residents | rent the group pays to other residents' landlords, less the surplus triangle | −0.7 to −3.5, a gain (range −9.4 to +0.4) | modelled elasticities, measured rents | yes, as Z, long run only |
@@ -129,8 +131,10 @@ Sources: [victim harm](../infra/immigration-fiscal/crime_victim_cost_2026_09_23/
 - **Uncompensated care.** The group holds 25.7% (SE 0.6) of the nation's uninsured
   person-years against 12.0% of residents: 35.1% of the Mexico-born are uninsured and 14.3% of
   US-born members. That is $11.0–13.2bn of hospitals' uncompensated care. Governments offset
-  65–80% of it (Urban Institute), and the account keys those offsets at 12–20%. The lower end
-  assumes the group's uninsured use hospitals at 0.7 times the average.
+  58–70% of it (Urban Institute, VA and IHS care excluded). The account keys those offsets by
+  measured MEPS payments: Medicaid 12.3%, Medicare 5.8%, government health consumption 7.7%. The
+  first version of this lane used 12.0–19.6% and understated the gap (corrected 575e2ee). The
+  0.7× rows assume the group's uninsured use hospitals at 0.7 times the average.
 - **Housing.** The long-run arm matches the account's primary case: structures are rebuilt and
   land is scarce. The short-run arm (fixed stock: renters pay $110–120bn) must not be paired with
   it. Monras (2020) finds rents *fall* with low-skilled Mexican inflows because construction
@@ -184,21 +188,23 @@ a value judgment, so every value is shown. [INFERENCE; FRAMING-SENSITIVE]
   district differential is $0.50–0.56bn
   ([school lane](../infra/immigration-fiscal/school_enrollment_2026_09_20/README.md)).
 
-## 6. What the operator is asked to decide
+## 6. Decisions (adopted 2026-09-23)
 
-These change the analysis protocol, so they are proposals.
+The operator adopted the proposals on September 23
+([decision](../decisions/2026-09-23-main-case-general-government-and-use-keys.md);
+[main-case lane](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md)).
 
-1. **Key public order and safety by use** in the headline: prisons by custody, police half by
-   arrests, courts by the criminal share. Choose CBP per head (lane central) or fixed. My view:
-   per head, because both alternatives rest on counterfactual border flows the account does not
-   model.
-2. **Key uncompensated hospital care** to uninsured use, and carry the unreimbursed part as a
-   cost outside the budget.
-3. **General government at 0.59–0.84 response** instead of zero. This has been open since
-   September 21 and adds $28.5–40.6bn: cross-state spending on administration scales with
-   population at 0.84 ([explorer README](../infra/immigration-fiscal/assumption_explorer_2026_09_21/README.md)).
-4. **Report victims' harm and the housing net as social (Z) items beside the fiscal headline**,
-   never folded into a figure labelled fiscal.
+1. **Public order and safety keyed by use** in the main case: prisons by custody, police half by
+   arrests, courts by the criminal share, CBP per head. CBP stays per head because both
+   alternatives rest on counterfactual border flows the account does not model.
+2. **Uncompensated hospital care keyed to uninsured use.** The under-charged government part
+   enters the account; the unreimbursed part is a cost outside the budget.
+3. **General government at 0.59–0.84 response** instead of zero: +$28.5–40.6bn. Across states,
+   administration spending scales at 0.842 (SE 0.039). The only within-state test gave 0.47
+   with a 95% interval of −0.72 to 1.66, which cannot tell zero from one. Zero was a
+   budget-scoring convention.
+4. **Victims' harm, unreimbursed care and the housing net are reported as social items beside
+   the fiscal headline**, never folded into a figure labelled fiscal.
 
 ## 7. Putting the pieces together
 
@@ -207,23 +213,23 @@ below is built in this account's frame and does not overlap the others: victims'
 justice costs, housing excludes the production term, uncompensated care is net of offsets
 already charged. [CALCULATION: sums of the rows above]
 
-The two crime lanes enter on one footing at a time (§3).
+The two crime lanes enter on one footing at a time (§3). The adopted justice key uses the
+custody ratio, so its column is the consistent pairing.
 
-| $bn a year | Mexican-origin rates = Hispanic | Custody ratio carried over |
+| $bn a year | Mexican-origin rates = Hispanic | Custody ratio carried over (adopted key) |
 |---|---:|---:|
-| Published fiscal net cost, main case | 165.1–197.4 | 165.1–197.4 |
-| + courts, police, prisons by use | +1.7 | +5.9 |
-| + uncompensated hospital care, equal use | +4.3 to +9.2 | +4.3 to +9.2 |
-| = fiscal, keyed by use | 171–208 | 175–213 |
+| Fiscal main case, adopted (general government 0.59–0.84, uncompensated care inside part) | 198.9–245.4 (justice +1.7) | **203.2–249.6** (justice +5.9) |
 | + crime victims' harm, full cost | +28.9 | +32.3 |
+| + unreimbursed hospital care, outside budgets | +3.2 to +5.6 | +3.2 to +5.6 |
 | − housing net gain | −3.5 to −0.7 | −3.5 to −0.7 |
-| **= total at central values** | **197–237** | **204–244** |
-| Per group member | $4.8–5.8k | $5.0–6.0k |
+| **= total at central values** | **228–279** | **235–287** |
+| Per group member | $5.6–6.8k | $5.8–7.0k |
 
-Stacking every low choice, then every high one (justice grid, uncompensated care at 0.7× use,
-the victim envelope, the housing range), spans **$172–261bn**, or $4.2–6.4k per member.
-Setting general government at 0.59–0.84 response adds $28.5–40.6bn, giving **$225–285bn**
-at central values. The published figure is $4.0–4.8k per member.
+Stacking every low choice, then every high one, spans **$203–304bn**, or $5.0–7.4k per member.
+The low end takes the justice grid's low end, uncompensated care at 0.7× use, the victim
+envelope's low end and the housing range; the high end takes the opposite ends.
+The published September 20 figure was $4.0–4.8k per member.
+[CALCULATION: `main_case_2026_09_23/derived/main_case_bands.csv` plus the rows above]
 
 The sign does not depend on any item here. As before, it turns only if public services do not
 grow with the population.
@@ -261,6 +267,17 @@ grow with the population.
 | [Crime victims' harm](../infra/immigration-fiscal/crime_victim_cost_2026_09_23/RESULT.md) | d5cf290, 95ed28d | $28.9bn full / $4.5bn tangible; $43.1bn on arrest shares |
 | Double-count correction in older crime prices | e8eab52 | McCollister risk-of-homicide premium removed |
 | [Housing transfer](../infra/immigration-fiscal/housing_transfer_2026_09_23/RESULT.md) | 073a79d | renters +$34bn; net +$0.7–3.5bn |
-| [Uncompensated care](../infra/immigration-fiscal/uncompensated_care_2026_09_23/RESULT.md) | 06a42b7 | +$1.6–9.2bn |
+| [Uncompensated care](../infra/immigration-fiscal/uncompensated_care_2026_09_23/RESULT.md) | 06a42b7, corrected 575e2ee | +$7.3–10.6bn ($3.7–5.7bn inside the account) |
 | [Wage split](../infra/immigration-fiscal/wage_distribution_2026_09_23/RESULT.md) | 3afdb25 | −$66 to −$166bn / +$71 to +$163bn |
+| [Adopted main case](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md) | 69eb31b | $203.2–249.6bn |
 | [Congestion](../infra/immigration-fiscal/congestion_2026_09_23/BRIEF.md) | 77d25cf (brief) | running |
+| [Income weights](../infra/immigration-fiscal/distribution_weights_2026_09_23/BRIEF.md) | 73077d1, c43a401 (brief) | running |
+
+## Revisions
+
+- 2026-09-23 (later): the operator adopted the §6 proposals
+  ([decision](../decisions/2026-09-23-main-case-general-government-and-use-keys.md)), so the fiscal
+  main case is now $203.2–249.6bn. Uncompensated care was corrected to the account's actual keys
+  (575e2ee), which raised it from $1.6–9.2bn to $4.7–10.6bn. Totals are recomputed: $228–287bn at
+  central values, $203–304bn full span. Concept affected: the complete account's main case and
+  the social items beside it.

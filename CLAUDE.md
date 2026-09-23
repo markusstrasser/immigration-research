@@ -134,8 +134,11 @@ substituting a web summary or declaring a measurement unavailable:
 - Only income-year 2024 is a measured account. Earlier years are a
   [model back-cast](research/immigration-historical-backcast-2026-09-20.md).
 - The headline's "CBO-informed" label covers two inputs only: CBO's tax-incidence rules and
-  its 63–66% school-spending response. Defense, general public services, existing interest
-  and business subsidies are held at **zero response by assumption**; see the
+  its 63–66% school-spending response. Since 2026-09-23 the main case ($203–250bn; September
+  20: $165–197bn) lets general public services respond at 0.59–0.84, from cross-state scale,
+  and charges justice and uncompensated care by use
+  ([decision](decisions/2026-09-23-main-case-general-government-and-use-keys.md)). Defense,
+  existing interest and business subsidies stay at **zero response by assumption**; see the
   [complete annual account](research/immigration-complete-annual-account-2026-09-20.md)
   and FAQ entry 2 for the sensitivity.
 

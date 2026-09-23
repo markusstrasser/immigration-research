@@ -3,6 +3,16 @@
 Date:2026-09-20. [MODEL / FRAMING-SENSITIVE] Evidence and calculations only;
 narrative authorship remains operator-owned.
 
+**Current main case (2026-09-23):** after the operator adopted three changes, the main
+CBO-informed case is **$203.2–249.6bn/year**. General government now responds at 0.59–0.84
+instead of zero (+$28.5–40.6bn). Public order and safety is keyed by use (+$5.9bn). The
+under-charged part of uncompensated hospital care is keyed to uninsured use (+$3.7–5.7bn). The
+other benchmarks move to $158.9–212.6bn (non-school education fixed) and $307.9–341.0bn
+(proportional). The September 20 figures below are unchanged as a record. Reuse the adopted ones:
+[main-case lane](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md),
+[decision](../decisions/2026-09-23-main-case-general-government-and-use-keys.md),
+[real costs beside the account](immigration-real-fiscal-and-social-costs-2026-09-23.md).
+
 **Result:** The source-centered model gives **$165–197bn/year of conditional net
 cost to other US residents** when CBO-informed school and delayed-service budget
 responses replace full proportional spending, holding other model terms fixed.
@@ -342,3 +352,10 @@ no new expenditure or ethnic attribution is added by this clarification.
 headcount/age spending substitutions from preferred program-dollar proxies.
 The broad grid is retained as sensitivity, not an equally supported uncertainty
 interval. See the [method decision's interpretation update](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
+
+2026-09-23, adopted main case: general government at 0.59–0.84 response (cross-state
+administration elasticity 0.842, SE 0.039; federal executive and legislature fixed at the low
+end), public order and safety keyed by use, and uncompensated hospital care keyed to uninsured
+use. The main case moves from $165.1–197.4bn to $203.2–249.6bn. Earlier outputs are preserved; the
+gated reproduction and the deltas are in `infra/immigration-fiscal/main_case_2026_09_23/`.
+[Decision](../decisions/2026-09-23-main-case-general-government-and-use-keys.md).
