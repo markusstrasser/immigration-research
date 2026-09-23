@@ -1,0 +1,436 @@
+{
+ "windows": {
+  "1222": {
+   "rotemberg_top5_w": [
+    "238///",
+    "493///",
+    "722///",
+    "622///",
+    "212///"
+   ],
+   "rotemberg_top5_u": [
+    "238///",
+    "722///",
+    "212///",
+    "236///",
+    "213///"
+   ]
+  },
+  "0717": {
+   "rotemberg_top5_w": [
+    "722///",
+    "621///",
+    "315///",
+    "313///",
+    "623///"
+   ],
+   "rotemberg_top5_u": [
+    "212///",
+    "722///",
+    "621///",
+    "624///",
+    "321///"
+   ]
+  },
+  "0712": {
+   "rotemberg_top5_w": [
+    "238///",
+    "321///",
+    "315///",
+    "236///",
+    "313///"
+   ],
+   "rotemberg_top5_u": [
+    "238///",
+    "321///",
+    "213///",
+    "623///",
+    "313///"
+   ]
+  }
+ },
+ "n_rows": 780,
+ "key": [
+  {
+   "window": "1222",
+   "outcome": "admin",
+   "sample": "all",
+   "weighted": true,
+   "method": "2SLS",
+   "instruments": "bartik+imm",
+   "controls": "lnpop0",
+   "n": 3093,
+   "clusters": 48,
+   "note": "",
+   "beta": -3.256640650948346,
+   "se": 3.5517625356021654,
+   "ci_lo": -10.21809522072859,
+   "ci_hi": 3.7048139188318983,
+   "fs_coef": "0.746714;-0.649661",
+   "fs_se": "0.10425;0.127593",
+   "F_eff": 40.9412609249807,
+   "F_robust": 34.828622583498586,
+   "rf_coef": "-1.42695;3.55428",
+   "rf_se": "1.00419;5.00625",
+   "ar_type": "interval",
+   "ar_lo": -5.088999999999696,
+   "ar_hi": 1.2540000000024225,
+   "ar_pieces": "[[-5.088999999999696, 1.2540000000024225]]",
+   "J": 0.26237578917521903,
+   "J_p": 0.6084926339659662,
+   "beta_gmm": -1.6207481153220942,
+   "label": "brief main: 2012-2022, Bartik + immigrant"
+  },
+  {
+   "window": "1222",
+   "outcome": "admin",
+   "sample": "all",
+   "weighted": true,
+   "method": "2SLS",
+   "instruments": "bartik",
+   "controls": "lnpop0",
+   "n": 3093,
+   "clusters": 48,
+   "note": "",
+   "beta": -2.16348665477449,
+   "se": 1.7146978623680806,
+   "ci_lo": -5.524294465015927,
+   "ci_hi": 1.1973211554669478,
+   "fs_coef": "0.803722",
+   "fs_se": "0.104625",
+   "F_eff": 59.01205751682953,
+   "F_robust": 59.012057516829536,
+   "rf_coef": "-1.73884",
+   "rf_se": "1.35334",
+   "ar_type": "interval",
+   "ar_lo": -5.8185623617751725,
+   "ar_hi": 1.141791994482452,
+   "ar_pieces": "",
+   "J": null,
+   "J_p": null,
+   "beta_gmm": null,
+   "label": "brief main: 2012-2022, Bartik"
+  },
+  {
+   "window": "1222",
+   "outcome": "admin",
+   "sample": "all",
+   "weighted": true,
+   "method": "2SLS",
+   "instruments": "imm",
+   "controls": "lnpop0",
+   "n": 3093,
+   "clusters": 48,
+   "note": "",
+   "beta": -5.055461201209889,
+   "se": 7.499132377465155,
+   "ci_lo": -19.75376066104159,
+   "ci_hi": 9.642838258621813,
+   "fs_coef": "-0.735507",
+   "fs_se": "0.139383",
+   "F_eff": 27.845571372608322,
+   "F_robust": 27.84557137260832,
+   "rf_coef": "3.71833",
+   "rf_se": "5.09271",
+   "ar_type": "interval",
+   "ar_lo": -25.45832769425075,
+   "ar_hi": 7.227342567864045,
+   "ar_pieces": "",
+   "J": null,
+   "J_p": null,
+   "beta_gmm": null,
+   "label": "brief main: 2012-2022, immigrant"
+  },
+  {
+   "window": "0717",
+   "outcome": "admin",
+   "sample": "all",
+   "weighted": true,
+   "method": "2SLS",
+   "instruments": "bartik",
+   "controls": "lnpop0",
+   "n": 3095,
+   "clusters": 48,
+   "note": "",
+   "beta": 0.909140696627131,
+   "se": 0.8225090654582622,
+   "ci_lo": -0.7029770716710627,
+   "ci_hi": 2.521258464925325,
+   "fs_coef": "0.406741",
+   "fs_se": "0.10438",
+   "F_eff": 15.184498039447089,
+   "F_robust": 15.18449803944709,
+   "rf_coef": "0.369785",
+   "rf_se": "0.337464",
+   "ar_type": "interval",
+   "ar_lo": -0.8394858247024375,
+   "ar_hi": 2.8986753765689457,
+   "ar_pieces": "",
+   "J": null,
+   "J_p": null,
+   "beta_gmm": null,
+   "label": "break-free long difference 2007-2017, Bartik"
+  },
+  {
+   "window": "stacked 0712+1217",
+   "outcome": "admin",
+   "sample": "all",
+   "weighted": true,
+   "method": "2SLS",
+   "instruments": "bartik",
+   "controls": "lnpop0",
+   "n": 6193,
+   "clusters": 48,
+   "note": "2007 shares for both periods",
+   "beta": 0.9085235362396378,
+   "se": 0.9273838675883052,
+   "ci_lo": -0.9091488442334403,
+   "ci_hi": 2.726195916712716,
+   "fs_coef": "0.363977",
+   "fs_se": "0.0570714",
+   "F_eff": 40.67330377500703,
+   "F_robust": 40.673303775007035,
+   "rf_coef": "0.330681",
+   "rf_se": "0.336191",
+   "ar_type": "interval",
+   "ar_lo": -0.9391377228926313,
+   "ar_hi": 2.8831223845798593,
+   "ar_pieces": "",
+   "J": null,
+   "J_p": null,
+   "beta_gmm": null,
+   "label": "break-free stacked 2007-12 and 2012-17, Bartik"
+  },
+  {
+   "window": "stacked 0712+1217",
+   "outcome": "admin",
+   "sample": "all",
+   "weighted": true,
+   "method": "2SLS",
+   "instruments": "bartik+imm",
+   "controls": "lnpop0",
+   "n": 6193,
+   "clusters": 48,
+   "note": "2007 shares for both periods",
+   "beta": 0.5833859161521078,
+   "se": 0.9258626990423171,
+   "ci_lo": -1.2313049739708337,
+   "ci_hi": 2.398076806275049,
+   "fs_coef": "0.366528;0.142971",
+   "fs_se": "0.0562091;0.162683",
+   "F_eff": 12.249048900926562,
+   "F_robust": 25.391832447496274,
+   "rf_coef": "0.314523;-0.905601",
+   "rf_se": "0.327606;1.86258",
+   "ar_type": "interval",
+   "ar_lo": -1.4209999999984708,
+   "ar_hi": 2.909000000002975,
+   "ar_pieces": "[[-1.4209999999984708, 2.909000000002975]]",
+   "J": 0.33324457733212187,
+   "J_p": 0.5637547804400461,
+   "beta_gmm": 0.7487580409348645,
+   "label": "break-free stacked 2007-12 and 2012-17, Bartik + immigrant"
+  },
+  {
+   "window": "stacked 0712+1217",
+   "outcome": "admin",
+   "sample": "all",
+   "weighted": true,
+   "method": "OLS",
+   "instruments": "",
+   "controls": "lnpop0",
+   "n": 6193,
+   "clusters": 48,
+   "note": "2007 shares for both periods",
+   "beta": 0.5800505973106721,
+   "se": 0.17238970796007194,
+   "ci_lo": 0.24216676970893108,
+   "ci_hi": 0.9179344249124131,
+   "fs_coef": null,
+   "fs_se": null,
+   "F_eff": null,
+   "F_robust": null,
+   "rf_coef": null,
+   "rf_se": null,
+   "ar_type": null,
+   "ar_lo": null,
+   "ar_hi": null,
+   "ar_pieces": null,
+   "J": null,
+   "J_p": null,
+   "beta_gmm": null,
+   "label": "break-free stacked 2007-12 and 2012-17, OLS"
+  },
+  {
+   "window": "1222",
+   "outcome": "admin",
+   "sample": "all",
+   "weighted": true,
+   "method": "OLS",
+   "instruments": "",
+   "controls": "lnpop0",
+   "n": 3093,
+   "clusters": 48,
+   "note": "",
+   "beta": 0.27031299797680586,
+   "se": 0.38057173740667094,
+   "ci_lo": -0.4756076073402692,
+   "ci_hi": 1.0162336032938808,
+   "fs_coef": null,
+   "fs_se": null,
+   "F_eff": null,
+   "F_robust": null,
+   "rf_coef": null,
+   "rf_se": null,
+   "ar_type": null,
+   "ar_lo": null,
+   "ar_hi": null,
+   "ar_pieces": null,
+   "J": null,
+   "J_p": null,
+   "beta_gmm": null,
+   "label": "2012-2022 OLS"
+  },
+  {
+   "label": "Anderson-Rubin tally",
+   "all instruments": {
+    "specs": 308,
+    "exclude_0.0": 52,
+    "exclude_0.59": 49,
+    "exclude_0.84": 55,
+    "exclude_1.0": 55,
+    "beta_min": -235520.82169740525,
+    "beta_max": 1457.5311070152948,
+    "F_eff_min": 1.1215748420744502e-09
+   },
+   "Bartik only": {
+    "specs": 78,
+    "exclude_0.0": 4,
+    "exclude_0.59": 0,
+    "exclude_0.84": 2,
+    "exclude_1.0": 2,
+    "beta_min": -235520.82169740525,
+    "beta_max": 80.73115583955146,
+    "F_eff_min": 1.1215748420744502e-09
+   },
+   "Bartik only, weighted, windows without the 2022 wave or the 2007-12 recession window": {
+    "specs": 17,
+    "exclude_0.0": 0,
+    "exclude_0.59": 0,
+    "exclude_0.84": 0,
+    "exclude_1.0": 0,
+    "beta_min": 0.27557140977634975,
+    "beta_max": 1.4926849133289815,
+    "F_eff_min": 4.5025037362456395
+   }
+  },
+  {
+   "label": "county cross-section in levels, 2017, state effects, weighted",
+   "beta": 0.978630945749414,
+   "se": 0.012308649043496218,
+   "n": 3095
+  }
+ ],
+ "map_points": [
+  {
+   "label": "brief main: 2012-2022, Bartik + immigrant: point",
+   "elasticity": -3.256640650948346
+  },
+  {
+   "label": "brief main: 2012-2022, Bartik + immigrant: Anderson-Rubin lo",
+   "elasticity": -5.088999999999696
+  },
+  {
+   "label": "brief main: 2012-2022, Bartik + immigrant: Anderson-Rubin hi",
+   "elasticity": 1.2540000000024225
+  },
+  {
+   "label": "brief main: 2012-2022, Bartik: point",
+   "elasticity": -2.16348665477449
+  },
+  {
+   "label": "brief main: 2012-2022, Bartik: Anderson-Rubin lo",
+   "elasticity": -5.8185623617751725
+  },
+  {
+   "label": "brief main: 2012-2022, Bartik: Anderson-Rubin hi",
+   "elasticity": 1.141791994482452
+  },
+  {
+   "label": "brief main: 2012-2022, immigrant: point",
+   "elasticity": -5.055461201209889
+  },
+  {
+   "label": "brief main: 2012-2022, immigrant: Anderson-Rubin lo",
+   "elasticity": -25.45832769425075
+  },
+  {
+   "label": "brief main: 2012-2022, immigrant: Anderson-Rubin hi",
+   "elasticity": 7.227342567864045
+  },
+  {
+   "label": "break-free long difference 2007-2017, Bartik: point",
+   "elasticity": 0.909140696627131
+  },
+  {
+   "label": "break-free long difference 2007-2017, Bartik: Anderson-Rubin lo",
+   "elasticity": -0.8394858247024375
+  },
+  {
+   "label": "break-free long difference 2007-2017, Bartik: Anderson-Rubin hi",
+   "elasticity": 2.8986753765689457
+  },
+  {
+   "label": "break-free stacked 2007-12 and 2012-17, Bartik: point",
+   "elasticity": 0.9085235362396378
+  },
+  {
+   "label": "break-free stacked 2007-12 and 2012-17, Bartik: Anderson-Rubin lo",
+   "elasticity": -0.9391377228926313
+  },
+  {
+   "label": "break-free stacked 2007-12 and 2012-17, Bartik: Anderson-Rubin hi",
+   "elasticity": 2.8831223845798593
+  },
+  {
+   "label": "break-free stacked 2007-12 and 2012-17, Bartik + immigrant: point",
+   "elasticity": 0.5833859161521078
+  },
+  {
+   "label": "break-free stacked 2007-12 and 2012-17, Bartik + immigrant: Anderson-Rubin lo",
+   "elasticity": -1.4209999999984708
+  },
+  {
+   "label": "break-free stacked 2007-12 and 2012-17, Bartik + immigrant: Anderson-Rubin hi",
+   "elasticity": 2.909000000002975
+  },
+  {
+   "label": "break-free stacked 2007-12 and 2012-17, OLS: point",
+   "elasticity": 0.5800505973106721
+  },
+  {
+   "label": "break-free stacked 2007-12 and 2012-17, OLS: 95% lo",
+   "elasticity": 0.24216676970893108
+  },
+  {
+   "label": "break-free stacked 2007-12 and 2012-17, OLS: 95% hi",
+   "elasticity": 0.9179344249124131
+  },
+  {
+   "label": "2012-2022 OLS: point",
+   "elasticity": 0.27031299797680586
+  },
+  {
+   "label": "2012-2022 OLS: 95% lo",
+   "elasticity": -0.4756076073402692
+  },
+  {
+   "label": "2012-2022 OLS: 95% hi",
+   "elasticity": 1.0162336032938808
+  },
+  {
+   "label": "county cross-section in levels 2017 (not causal)",
+   "elasticity": 0.978630945749414
+  }
+ ]
+}
