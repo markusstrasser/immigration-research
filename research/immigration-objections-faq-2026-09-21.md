@@ -26,7 +26,10 @@ of the other, and the generation split must not be scaled onto the complete-acco
 **Offsets do not add unless an entry says so.** The production gain ($8.8–13.3bn) is already
 inside the headline, and cheaper services ($21.8bn to consumers) overlap it. Two care items do
 add, because the account omits them: taxes on native women's extra hours ($2.7bn) and the net
-elder-care Medicaid saving ($1.5bn), $4.1bn together (entries 4 and 13, ladder 198). The complementarity figure ($26.8–80.4bn) covers half of all unauthorized
+elder-care Medicaid saving ($1.5bn), $4.1bn together (entries 4 and 13, ladder 198). The net of city size and schooling mix (+$13.9bn,
+ladder 201) would add the same way, through the production term and induced receipts, but it is
+proposed, not adopted. Mobility insurance ($0.65bn, ladder 203) sits beside the account with the
+social items. The complementarity figure ($26.8–80.4bn) covers half of all unauthorized
 workers of every origin and is matched by other immigrants' losses. The account's own nest
 is a different object: at the elasticities its job distribution supports, it moves the
 production term by about $4–8bn at the job-overlap reading and $2–5bn at
@@ -107,14 +110,21 @@ consumers, or $11.9bn net of native low-skill wage gains. That is the production
 the spending side, so it is not added. The taxes that native women pay on the extra hours
 cheaper services let them work do add: $2.7bn a year ($1.8–5.8bn). With the net Medicaid
 saving on elder care (entry 13), the care channels add $4.1bn ($2.6–13.3bn), about 2% of the
-main case (ladder 198). Crime and housing are now priced beside the account. Crimes by group
+main case (ladder 198). Cheaper construction is inside the production gain and adds nothing
+(ladder 200). City size and the group's schooling mix, measured in one regression, net to
++$13.9bn a year (95% −$57bn to +$84bn; ladder 201). Bigger cities add $38.6bn to other
+residents' earnings, and lower average schooling takes back $24.9bn. That net is proposed, not
+adopted, and the 1970–2000 college-share studies would make it a $109–677bn cost instead.
+Mobility across local labour markets is worth $0.65bn beside the account (ladder 203). Priced to
+the same standard, the omitted benefits come to $4.8bn, or $18.7bn with the scale net. Crime and housing are now priced beside the account. Crimes by group
 members against other residents cost the victims about $29bn a year ($15–45bn). Hospitals,
 physicians and private payers bear $3.2–5.6bn of the group's unreimbursed care. Housing nets
 other residents a small gain (+$0.7–3.5bn), while their renters pay $22–58bn more to landlords.
 With road budgets fixed, the group's traffic costs other residents about $19bn a year in time
 and fuel ($8–35bn; ladder 195). Transfers like these cancel in dollars but not by income: outside the budget the bottom four
 fifths of other residents lose $80.7bn a year and the top fifth gains $46.0bn (ladder 194).
-Innovation and institutions remain unpriced in both directions. [SOURCE: complete account;
+Innovation shows no patent response at the group's schooling and is not added; institutions
+remain unpriced in both directions. [SOURCE: complete account;
 [prices and hours](immigration-consumer-price-and-native-hours-2026-09-18.md);
 [real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md)]
 
@@ -249,9 +259,13 @@ use key adds little because the account compares the group with the average othe
 Hispanic residents are 20.2% of people in prisons and jails against 20.7% of residents aged
 18–64. Hispanic adults are imprisoned at 1.3 times the all-adult rate and 2.6 times the
 non-Hispanic white rate (BJS, 2023). Victim costs are outside a fiscal account. Crimes by group members against
-other residents cost the victims about $29bn a year ($15–45bn; $43bn if non-fatal offending
-follows arrest shares), a social cost beside the fiscal headline
-([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §2–3).
+other residents cost the victims about $29bn a year ($15–45bn), a social cost beside the fiscal
+headline ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §2–3). Police
+records agree. In Texas and Arizona (NIBRS 2022–2023), Hispanic residents offend at 1.7–2.3
+times the non-Hispanic white rate for murder, rape and assault and 4.2 times for robbery, but at
+0.92–1.18 times the rate of all residents, and 70–81% of their victims are Hispanic. These are
+crude rates for Hispanics of any origin. On those inputs the victims' cost is $28.6bn. The
+$43bn arrest-share arm fails a check against victims' own reported ethnicity (ladder 202).
 Start from the [custody and crime measurement rule](immigration-detention-crime-and-fiscal-scope-2026-09-20.md)
 and the [generation incarceration memo](immigration-mexican-origin-generation-incarceration-2026-09-16.md)
 before quoting any ratio.
@@ -422,3 +436,12 @@ they get more prominence.
     year, which replaces the gross $2.3–14.6bn.
 
   Concept affected: benefits the account omitted.
+
+- 2026-09-23 (benefits complete, offender ethnicity):
+  - Entry 4 carries the construction, scale and mobility lanes (ladder 200, 201, 203). The
+    omitted benefits come to $4.8bn, or $18.7bn with the proposed scale net.
+  - Entry 12 carries police-recorded offending (ladder 202) and drops the $43bn arrest-share
+    figure, which fails a check against NCVS victim counts.
+  - The combining rule names the scale net as proposed, not adopted.
+
+  Concepts affected: benefits the account omitted; the offender input of victim harm.
