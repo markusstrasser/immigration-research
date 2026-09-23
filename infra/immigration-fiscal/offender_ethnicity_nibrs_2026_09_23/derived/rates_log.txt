@@ -1,0 +1,170 @@
+-- Coverage by state-year --
+state  year  agencies  coverage_share  coverage_share_recording50  hispanic_covered_share_recording50  mexican_share_of_hispanic_covered  pop_share_place  pop_share_county_residual  pop_share_county_fallback  victimisations_share_recording50  victimisations_share_zero_population_agencies
+   TX  2022      1063           1.006                       0.931                               0.898                              0.813            0.704                      0.257                      0.039                             0.928                                          0.031
+   TX  2023      1362           1.013                       0.969                               0.965                              0.810            0.705                      0.256                      0.039                             0.953                                          0.039
+   AZ  2022        89           0.605                       0.430                               0.338                              0.829            0.764                      0.234                      0.002                             0.707                                          0.077
+   AZ  2023        92           0.637                       0.507                               0.433                              0.842            0.767                      0.231                      0.003                             0.786                                          0.054
+   CA  2022       559           0.417                       0.285                               0.278                              0.857            0.866                      0.132                      0.002                             0.712                                          0.038
+   CA  2023       630           0.610                       0.442                               0.434                              0.850            0.854                      0.145                      0.002                             0.746                                          0.030
+[gate] TX covered population within 5% of the FBI participation file (98.6%, 99.2%): PASS — 2022 1.006, 2023 1.013
+[gate] NCVS 2024 Hispanic 12+ equals the victim lane's 53,539,670: PASS — 53,539,670
+
+-- Central: TX+AZ 2022-2023, individuals 12+, agencies recording ethnicity >= 50%, allocation a --
+                     victimisations  rate_H  rate_NHW  rate_NHB  rate_all  RR_H_NHW  RR_H_all  RR_NHB_NHW  local_share_H  local_pop_share_H  national_share_H  share_noinfo  share_eth_unknown
+offence                                                                                                                                                                                       
+Murder                        3,810   0.073     0.031     0.272     0.072     2.303     1.002       8.628          0.357              0.357             0.202         0.095              0.128
+Rape/sexual assault          36,730   0.824     0.472     1.541     0.698     1.746     1.181       3.262          0.421              0.357             0.239         0.056              0.130
+Robbery                      49,966   0.871     0.206     4.692     0.950     4.219     0.917      22.727          0.327              0.357             0.188         0.132              0.167
+Aggravated assault          170,185   3.522     1.576    10.657     3.235     2.235     1.089       6.761          0.388              0.357             0.222         0.112              0.104
+Simple assault              533,367  11.118     6.382    27.036    10.137     1.742     1.097       4.236          0.391              0.357             0.220         0.034              0.059
+
+-- Hispanic/NH-white rate ratio and national Hispanic share, every specification --
+offence                                           Murder  Rape/sexual assault  Robbery  Aggravated assault  Simple assault
+spec                                                                                                                      
+central                                            2.303                1.746    4.219               2.235           1.742
+alloc=a0                                           2.192                1.769    4.273               2.175           1.758
+alloc=b                                            1.531                1.249    2.364               1.424           1.457
+alloc=c                                            3.928                2.787    9.747               3.753           2.240
+alloc=k                                            2.180                1.819    4.309               2.183           1.773
+agencies: ethnicity recorded >= 0%                 2.230                1.720    4.109               2.209           1.734
+agencies: ethnicity recorded >= 80%                1.834                1.559    3.109               1.899           1.706
+agencies: ethnicity recorded >= 95%                1.785                1.441    2.563               1.820           1.662
+agencies: offender-ethnicity start date by Jan 1   2.375                1.780    4.311               2.293           1.732
+agencies: 12 months reported                       2.317                1.749    4.205               2.232           1.733
+states=TX                                          2.316                1.791    4.149               2.255           1.753
+states=AZ                                          2.039                1.612    3.933               1.916           1.637
+states=CA                                          2.809                2.177    2.786               1.944           1.684
+states=TX+AZ+CA                                    2.406                1.866    3.559               2.146           1.712
+year=2022                                          2.208                1.704    4.082               2.292           1.692
+year=2023                                          2.423                1.791    4.373               2.182           1.792
+attribution=first                                  2.285                1.745    4.225               2.251           1.740
+attribution=anyH                                   2.639                1.782    5.325               2.373           1.841
+attribution=allH                                   2.004                1.712    3.316               2.103           1.648
+victims: all ages                                  2.298                1.705    4.225               2.241           1.741
+victims: individuals + officers                    2.300                1.746    4.219               2.222           1.732
+denominator: all ages                              2.089                1.583    3.826               2.026           1.580
+simple assault incl. intimidation 13C              2.303                1.746    4.219               2.235           1.719
+translation: rate vs all residents                 2.303                1.746    4.219               2.235           1.742
+incidents with an arrest only                      2.105                1.998    3.072               1.856           1.591
+states=TX+AZ+CA, alloc=b                           1.437                1.219    1.855               1.329           1.374
+states=TX+AZ+CA, alloc=c                           4.165                3.074    7.880               3.582           2.247
+offence                                           Murder  Rape/sexual assault  Robbery  Aggravated assault  Simple assault
+spec                                                                                                                      
+central                                            0.202                0.239    0.188               0.222           0.220
+alloc=a0                                           0.203                0.243    0.195               0.219           0.221
+alloc=b                                            0.149                0.188    0.128               0.162           0.195
+alloc=c                                            0.314                0.334    0.354               0.326           0.265
+alloc=k                                            0.202                0.246    0.195               0.219           0.222
+agencies: ethnicity recorded >= 0%                 0.200                0.236    0.185               0.221           0.219
+agencies: ethnicity recorded >= 80%                0.190                0.223    0.189               0.217           0.220
+agencies: ethnicity recorded >= 95%                0.183                0.208    0.194               0.216           0.214
+agencies: offender-ethnicity start date by Jan 1   0.206                0.244    0.190               0.226           0.220
+agencies: 12 months reported                       0.204                0.241    0.188               0.222           0.220
+states=TX                                          0.204                0.245    0.189               0.226           0.224
+states=AZ                                          0.183                0.182    0.187               0.186           0.175
+states=CA                                          0.201                0.232    0.153               0.192           0.188
+states=TX+AZ+CA                                    0.201                0.243    0.189               0.219           0.212
+year=2022                                          0.203                0.241    0.189               0.225           0.216
+year=2023                                          0.201                0.238    0.187               0.220           0.224
+attribution=first                                  0.202                0.239    0.187               0.223           0.220
+attribution=anyH                                   0.221                0.243    0.215               0.232           0.229
+attribution=allH                                   0.184                0.236    0.162               0.213           0.211
+victims: all ages                                  0.204                0.244    0.188               0.223           0.220
+victims: individuals + officers                    0.202                0.239    0.188               0.223           0.219
+denominator: all ages                              0.205                0.243    0.190               0.225           0.223
+simple assault incl. intimidation 13C              0.202                0.239    0.188               0.222           0.214
+translation: rate vs all residents                 0.187                0.221    0.171               0.204           0.205
+incidents with an arrest only                      0.188                0.264    0.206               0.213           0.218
+states=TX+AZ+CA, alloc=b                           0.138                0.179    0.122               0.156           0.182
+states=TX+AZ+CA, alloc=c                           0.315                0.344    0.347               0.320           0.259
+
+-- Unknown offender and unknown ethnicity shares of victimisations --
+        agencies state             offence  victimisations  offender_unknown  ethnicity_unknown  ethnicity_unknown_race_white  nh_race_unknown  recorded
+    all agencies    AZ  Aggravated assault          16,241             0.136              0.228                         0.139            0.004     0.636
+    all agencies    AZ              Murder             348             0.098              0.223                         0.148            0.006     0.679
+    all agencies    AZ Rape/sexual assault           5,059             0.186              0.291                         0.134            0.004     0.523
+    all agencies    AZ             Robbery           2,886             0.264              0.223                         0.101            0.002     0.513
+    all agencies    AZ      Simple assault          63,419             0.075              0.232                         0.157            0.004     0.693
+    all agencies    TX  Aggravated assault         166,245             0.112              0.137                         0.049            0.004     0.751
+    all agencies    TX              Murder           3,710             0.097              0.155                         0.038            0.005     0.748
+    all agencies    TX Rape/sexual assault          34,869             0.041              0.160                         0.066            0.004     0.800
+    all agencies    TX             Robbery          49,640             0.130              0.189                         0.038            0.005     0.681
+    all agencies    TX      Simple assault         514,866             0.031              0.101                         0.063            0.002     0.868
+central agencies    AZ  Aggravated assault          12,972             0.124              0.121                         0.055            0.005     0.755
+central agencies    AZ              Murder             262             0.053              0.087                         0.045            0.008     0.860
+central agencies    AZ Rape/sexual assault           4,151             0.180              0.213                         0.071            0.005     0.608
+central agencies    AZ             Robbery           2,295             0.244              0.139                         0.042            0.002     0.617
+central agencies    AZ      Simple assault          50,627             0.075              0.108                         0.061            0.004     0.817
+central agencies    TX  Aggravated assault         157,213             0.111              0.103                         0.022            0.004     0.786
+central agencies    TX              Murder           3,548             0.098              0.131                         0.016            0.006     0.770
+central agencies    TX Rape/sexual assault          32,579             0.040              0.120                         0.034            0.005     0.840
+central agencies    TX             Robbery          47,671             0.126              0.169                         0.021            0.005     0.705
+central agencies    TX      Simple assault         482,740             0.030              0.054                         0.025            0.002     0.915
+all agencies, CA    CA  Aggravated assault         111,247             0.120              0.289                         0.174            0.008     0.592
+all agencies, CA    CA              Murder           1,516             0.166              0.316                         0.159            0.008     0.519
+all agencies, CA    CA Rape/sexual assault          23,425             0.119              0.374                         0.230            0.011     0.507
+all agencies, CA    CA             Robbery          40,286             0.178              0.303                         0.122            0.005     0.519
+all agencies, CA    CA      Simple assault         225,609             0.051              0.305                         0.206            0.009     0.644
+
+-- Victims of Hispanic offenders (central, TX+AZ) --
+                     victims_H_offenders  victim_ethnicity_unknown  victim_hispanic  victim_non_hispanic  victim_nh_white  victim_nh_black
+offence                                                                                                                                   
+Aggravated assault                66,114                     0.040            0.783                0.217            0.132            0.074
+Murder                             1,361                     0.049            0.784                0.216            0.088            0.118
+Rape/sexual assault               15,475                     0.078            0.729                0.271            0.206            0.054
+Robbery                           16,350                     0.035            0.700                0.300            0.172            0.085
+Simple assault                   208,704                     0.043            0.805                0.195            0.140            0.045
+[gate] victim lane tract B03001 cache: 51 state files, national Mexican share of Hispanics 0.586: PASS — 83,608 tracts, 0.5860
+
+-- Victim ethnicity: TX/AZ observed -> national via tract exposure (NCVS national: H offenders 0.404, NH 0.140) --
+            offence offenders  p_victim_hispanic_txaz  delta  txaz_exposure_mean  national_exposure_mean  p_victim_hispanic_national  benchmark_shr_2024  benchmark_shr_2022_2024  benchmark_ncvs_2022_2024
+             Murder         H                   0.784  1.344               0.575                   0.491                       0.710               0.738                    0.723                     0.404
+             Murder        NH                   0.170 -0.729               0.274                   0.133                       0.077               0.077                    0.081                     0.140
+Rape/sexual assault         H                   0.729  0.961               0.574                   0.491                       0.651               0.738                    0.723                     0.404
+Rape/sexual assault        NH                   0.168 -0.728               0.271                   0.133                       0.077               0.077                    0.081                     0.140
+            Robbery         H                   0.700  0.758               0.576                   0.491                       0.618               0.738                    0.723                     0.404
+            Robbery        NH                   0.379  0.577               0.275                   0.133                       0.194               0.077                    0.081                     0.140
+ Aggravated assault         H                   0.783  1.335               0.575                   0.491                       0.708               0.738                    0.723                     0.404
+ Aggravated assault        NH                   0.177 -0.664               0.273                   0.133                       0.081               0.077                    0.081                     0.140
+     Simple assault         H                   0.805  1.513               0.574                   0.491                       0.734               0.738                    0.723                     0.404
+     Simple assault        NH                   0.147 -0.920               0.272                   0.133                       0.067               0.077                    0.081                     0.140
+
+-- P(offender Hispanic | victim group): NIBRS local -> national (central spec rows) --
+            offence victims  victimisations_local  p_off_hispanic_local  delta  local_exposure  national_exposure  p_off_hispanic_national  shr_logit_shift  p_off_hispanic_national_shr_calibrated  p_off_hispanic_national_shr2224_calibrated  benchmark_shr_2024  benchmark_shr_2022_2024  benchmark_ncvs_2022_2024
+             Murder       H                 1,405                 0.723  0.910           0.575              0.447                    0.601            0.749                                   0.719                                       0.702               0.719                    0.702                     0.331
+             Murder      NH                 2,179                 0.128 -1.119           0.274              0.133                    0.057            0.240                                   0.069                                       0.073               0.069                    0.073                     0.106
+Rape/sexual assault       H                13,696                 0.760  1.168           0.574              0.447                    0.643            0.749                                   0.756                                       0.740               0.719                    0.702                     0.331
+Rape/sexual assault      NH                20,134                 0.192 -0.539           0.271              0.133                    0.090            0.240                                   0.107                                       0.114               0.069                    0.073                     0.106
+            Robbery       H                23,365                 0.473 -0.622           0.578              0.447                    0.346            0.749                                   0.468                                       0.449               0.719                    0.702                     0.331
+            Robbery      NH                24,957                 0.190 -0.574           0.274              0.133                    0.087            0.240                                   0.104                                       0.111               0.069                    0.073                     0.106
+ Aggravated assault       H                67,315                 0.738  1.013           0.575              0.447                    0.618            0.749                                   0.734                                       0.717               0.719                    0.702                     0.331
+ Aggravated assault      NH                95,488                 0.144 -0.955           0.273              0.133                    0.065            0.240                                   0.078                                       0.083               0.069                    0.073                     0.106
+     Simple assault       H               206,148                 0.780  1.315           0.575              0.447                    0.667            0.749                                   0.775                                       0.760               0.719                    0.702                     0.331
+     Simple assault      NH               301,179                 0.129 -1.099           0.272              0.133                    0.058            0.240                                   0.070                                       0.075               0.069                    0.073                     0.106
+[gate] FBI 2023 Table 43C shares held by the arrests lane (aggravated assault 26.6%, murder 21.7%): PASS — assault 0.2662, murder 0.2169, simple assault 0.2282
+
+-- Translation check: NIBRS TX/AZ adult arrestees carried to the nation vs FBI 2023 Table 43C --
+                     arrestees_n  eth_unknown_share  RR_H_NHW  local_share_H  national_share_H  fbi_2023_table43c_share  predicted_minus_fbi
+offence                                                                                                                                     
+Aggravated assault        45,832              0.031     1.706          0.360             0.200                    0.266               -0.066
+Murder                     1,821              0.040     2.181          0.340             0.191                    0.217               -0.026
+Rape/sexual assault        3,452              0.035     1.998          0.454             0.265                    0.309               -0.044
+Robbery                    7,620              0.030     2.741          0.341             0.194                    0.266               -0.072
+Simple assault           145,585              0.031     1.522          0.372             0.205                    0.228               -0.023
+
+-- Incident offenders vs arrestees, same agencies (central) --
+                     arrestee_RR_H_NHW  arrestee_local_share_H  offender_RR_H_NHW  offender_local_share_H
+offence                                                                                                  
+Aggravated assault               1.652                   0.365              2.235                   0.388
+Murder                           2.279                   0.355              2.303                   0.357
+Rape/sexual assault              1.756                   0.445              1.746                   0.421
+Robbery                          2.946                   0.357              4.219                   0.327
+Simple assault                   1.488                   0.378              1.742                   0.391
+[gate] SHR76_25a.csv sha256 equals the homicide lane's pin: PASS — eeedbf5e58a4
+
+-- Homicide check, TX and AZ 2022-2023: NIBRS vs SHR --
+                                        source   state  victims  cleared_known_offender  share_offender_H  p_off_H_given_vic_H  p_off_H_given_vic_NHW  share_H_victims_of_H_offenders
+                                     SHR (MAP)   Texas    3,815                   2,781             0.354                0.730                  0.164                           0.743
+                                     SHR (MAP) Arizona      893                     577             0.409                0.730                  0.206                           0.653
+NIBRS 09A (first offender, recorded ethnicity)   Texas    3,859                   2,869             0.370                0.747                  0.164                           0.788
+NIBRS 09A (first offender, recorded ethnicity) Arizona      421                     264             0.333                0.704                  0.120                           0.695
