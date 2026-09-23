@@ -12,6 +12,25 @@
 
 Any commit touching `research/` where a number does argumentative work — especially: fiscal scalars (per-citizen, per-immigrant, aggregate), % changes from surge-era bases, receiver-city costs (gross outlays), TWFE/DiD coefficients promoted to ladder entries, and anything quoting NAS/CBO/Cato/MI/CIS constructions (item 29: provenance tags through every reuse).
 
+## Evidence-symmetry rules (adopted 2026-09-23)
+
+Adopted by the operator on 2026-09-23 after the study integrity audit found its two double
+standards both ran in immigration's favour
+([audit](../research/immigration-study-integrity-audit-2026-09-23.md);
+[decision](../decisions/2026-09-23-evidence-symmetry-rules.md)).
+
+1. Quote every external causal estimate with its interval or standard error and the population it
+   was measured on.
+2. Before dismissing a study for a flaw, search the repo for studies on the other side with the
+   same flaw, and grade both the same way.
+3. Give an author's affiliation or reputation no weight in a grade, or apply it to every
+   advocacy-affiliated source alike.
+4. Report the lean of any audit's findings against the lean of the audited set.
+5. Price costs and benefits alike. Every cost channel priced beside the fiscal account needs its
+   matching benefit channels researched and priced to the same evidence standard, and both appear
+   in the same table (operator, 2026-09-23: "if there's benefits and gains ... we need to research
+   and calculate them").
+
 ## Self-audit record — 2026-06-11 (Cato-dispute mirror test)
 
 Question: did this repo commit the moves the Cato $14.5T study was criticized for? Findings (all fixed via append-only downgrades; checklist item numbers refer to the canonical list):
