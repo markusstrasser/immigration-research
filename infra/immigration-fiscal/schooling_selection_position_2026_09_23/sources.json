@@ -1,0 +1,66 @@
+[
+  {
+    "file": "_cache/inegi/cpv2000/CPyV2000_NAL_Caracteristicas_educativas.pdf",
+    "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2000/tabulados/CPyV2000_NAL_Caracteristicas_educativas.pdf",
+    "bytes": 1089633,
+    "sha256": "d10f21a4d7aee1df3a90b728190b9059ae0acff3932247dc25ce132b0a307aa7",
+    "fetched": "2026-09-23",
+    "content": "XII Censo 2000 tabulados basicos, national: Educacion 5 (primaria grades), 7 (secundaria and tecnico con primaria grades), 8 (media superior grades, parts 1-2), 9 (profesional grades)"
+  },
+  {
+    "file": "_cache/inegi/cpv2010/07_08B_ESTATAL.xls",
+    "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2010/tabulados/Basico/07_08B_ESTATAL.xls",
+    "bytes": 334848,
+    "sha256": "a166aaaa467a31266d3f4dac729d9763c5ec7b8514e2c3fedeedd0f6b948b626",
+    "fetched": "2026-09-23",
+    "content": "Censo 2010 cuestionario basico Educacion 8: 3+ by entidad, sex, 5-year age; primaria grades"
+  },
+  {
+    "file": "_cache/inegi/cpv2010/07_10B_ESTATAL.xls",
+    "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2010/tabulados/Basico/07_10B_ESTATAL.xls",
+    "bytes": 304128,
+    "sha256": "2c1de32be9411f565212f27c3bf2627ddac002e68fb9bcc7175bec71f39332a0",
+    "fetched": "2026-09-23",
+    "content": "Educacion 10: 12+ by entidad, sex, 5-year age; secundaria and tecnico con primaria grades"
+  },
+  {
+    "file": "_cache/inegi/cpv2010/07_11B_ESTATAL.xls",
+    "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2010/tabulados/Basico/07_11B_ESTATAL.xls",
+    "bytes": 350720,
+    "sha256": "4f1137f1065a1564977a966facf3d491b92ea93b74d4a8b5063a75b42795be21",
+    "fetched": "2026-09-23",
+    "content": "Educacion 11: 15+ by entidad, sex, age; media superior grades"
+  },
+  {
+    "file": "_cache/inegi/cpv2010/07_12B_ESTATAL.xls",
+    "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2010/tabulados/Basico/07_12B_ESTATAL.xls",
+    "bytes": 391168,
+    "sha256": "1084bf8341321ce7d93527b5ae5c6467df87ab827763604669085085b3d6edcd",
+    "fetched": "2026-09-23",
+    "content": "Educacion 12: 18+ by entidad, sex, age; tecnico con preparatoria and profesional grades"
+  },
+  {
+    "file": "_cache/inegi/cpv2010/07_14B_ESTATAL.xls",
+    "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2010/tabulados/Basico/07_14B_ESTATAL.xls",
+    "bytes": 287744,
+    "sha256": "ef93b83e3cf09829843a7a0212e5239e11b333b4d0d5271f2fed08bcd7bff7cc",
+    "fetched": "2026-09-23",
+    "content": "Educacion 14: 15+ by entidad, sex, 5-year age; nivel de escolaridad and grado promedio (anchor)"
+  },
+  {
+    "file": "_cache/inegi/eic2015/06_educacion.xls",
+    "url": "https://www.inegi.org.mx/contenidos/programas/intercensal/2015/tabulados/06_educacion.xls",
+    "bytes": 11401728,
+    "sha256": "b0a5fa825ad148b917858b97c2b68fe5bbfd70cb8417104a9246268eeb74d2a4",
+    "fetched": "2026-09-23",
+    "content": "Encuesta Intercensal 2015 tabulados, Educacion 7-11 (survey estimates: percentages with standard errors). Not used: for five-year age groups primaria is one total and media superior and superior have no grade detail, so the C1/C2 and C3/C4 boundaries cannot be drawn by birth cohort"
+  },
+  {
+    "file": "sources/immigration-fiscal/data/external/stage3/inegi/cpv_educacion/cpv2020_b_eum_07_educacion.xlsx",
+    "url": "https://www.inegi.org.mx/contenidos/programas/ccpv/2020/tabulados/cpv2020_b_eum_07_educacion.xlsx",
+    "bytes": 3079946,
+    "sha256": "1f55ffc5d1797bf76c72da4aa2d53604c75c829d78702bff8114852c36d5a98d",
+    "fetched": "2026-09-22 (arrival_cohorts_2026_09_18/ACQUIRED.md)",
+    "content": "Censo 2020 cuestionario basico, Educacion 11 (levels and grades by sex and age) and 13 (ISCED)"
+  }
+]
