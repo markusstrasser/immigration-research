@@ -1,0 +1,95 @@
+{
+ "mexican_selfid_native_father_birthplace": {
+  "reported": {
+   "Mexico": 40.93,
+   "US area": 56.81,
+   "other": 2.27
+  },
+  "allocated": {
+   "Mexico": 28.07,
+   "US area": 62.41,
+   "other": 9.51
+  },
+  "allocated_weighted_m": 1.05022858
+ },
+ "mexican_selfid_native_mother_birthplace": {
+  "reported": {
+   "Mexico": 38.2,
+   "US area": 60.0,
+   "other": 1.8
+  },
+  "allocated": {
+   "Mexico": 34.58,
+   "US area": 51.62,
+   "other": 13.8
+  },
+  "allocated_weighted_m": 0.91022698
+ },
+ "nonhispanic_native_father_allocated_to_mexico_m": 0.00536153,
+ "nonhispanic_native_mother_allocated_to_mexico_m": 0.00900516,
+ "g2_only_by_allocated_mexico_parent_m": 0.41834791000000005,
+ "g2_only_by_allocated_mexico_parent_not_mexican_id_m": 0.10418145000000001,
+ "g1_birthplace_hotdeck_m": 0.06792669000000001,
+ "g1_nativity_flag_codes_weighted_m": {
+  "0": 11.7479,
+  "11": 0.0881,
+  "12": 0.0069,
+  "13": 0.31,
+  "41": 0.0231,
+  "42": 0.0088,
+  "43": 0.0361
+ },
+ "g3_hispanic_origin_allocated_m": 0.11615772000000002,
+ "g3_with_any_parent_allocated_to_us_m": 0.5852866699999999,
+ "born_mexico_of_us_parent": {
+  "total_m": 0.36721972999999997,
+  "in_g2_m": 0.31693508,
+  "in_g3_m": 0.01472349,
+  "outside_union_m": 0.035561159999999994,
+  "outside_union_mexican_id_m": 0.00218935
+ },
+ "mexico_born_by_region": {
+  "2025": {
+   "CA+TX": {
+    "n": 2555,
+    "mean_weight": 2467.045373776908,
+    "est_m": 6.3033006313927995,
+    "se_m": 0.2088603046535836
+   },
+   "other": {
+    "n": 3082,
+    "mean_weight": 1923.3981051265414,
+    "est_m": 5.9279129330055005,
+    "se_m": 0.20508990740953523
+   },
+   "all": {
+    "n": 5637,
+    "mean_weight": 2169.8090988114245,
+    "est_m": 12.231213564398299,
+    "se_m": 0.248295134743404
+   },
+   "mean_weight_all_records": 2376.00451412489
+  },
+  "2026": {
+   "CA+TX": {
+    "n": 2327,
+    "mean_weight": 2587.376987537602,
+    "est_m": 6.0208262078951,
+    "se_m": 0.19851158875712124
+   },
+   "other": {
+    "n": 2710,
+    "mean_weight": 1877.5353763837638,
+    "est_m": 5.08812084977429,
+    "se_m": 0.1716324154705426
+   },
+   "all": {
+    "n": 5037,
+    "mean_weight": 2205.468953742307,
+    "est_m": 11.10894705766939,
+    "se_m": 0.24206835645002722
+   },
+   "mean_weight_all_records": 2512.85835670123
+  }
+ }
+}

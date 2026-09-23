@@ -1,0 +1,136 @@
+{
+ "records": 142125,
+ "weight_total": 337689641.57,
+ "fl665_values": {
+  "1": 115928,
+  "2": 24383,
+  "3": 1814
+ },
+ "parent_flows": {
+  "mexican_second_gen": {
+   "pop_m": 14.333218389999999,
+   "parent_alloc_m": 0.48307687,
+   "parent_alloc_hotdeck_m": 0.47335199000000006
+  },
+  "mexican_third_plus_selfid": {
+   "pop_m": 14.34257476,
+   "parent_alloc_m": 0.5852866699999999,
+   "parent_alloc_hotdeck_m": 0.46849117000000007
+  },
+  "selfid_mexican_native_in_neither": {
+   "pop_m": 0.65930124,
+   "with_nonspecific_parent_code_m": 0.05763421999999999,
+   "with_allocated_parent_m": 0.12561381,
+   "top_parent_codes_person_m": {
+    "57": 0.452,
+    "313": 0.137,
+    "312": 0.103,
+    "555": 0.091,
+    "314": 0.068,
+    "329": 0.041,
+    "315": 0.036,
+    "364": 0.031
+   }
+  }
+ },
+ "parent_code_min": 57,
+ "parent_code_nonpositive_n": 0,
+ "nonspecific_parent_code_weighted_m_all": 2.2547458799999998,
+ "contradictions": {
+  "PENATVTY_US_area_but_foreign_born_n": 0,
+  "PENATVTY_303_but_PRCITSHP_1or2_n": 4,
+  "PENATVTY_303_PRCITSHP_3_weighted_m": 0.36721972999999997,
+  "PRCITSHP_1_but_PENATVTY_not_57_n": 14,
+  "foreign_born_PEINUSYR_0_n": 0,
+  "PRDTHSP_1_but_PEHSPNON_2_n": 0,
+  "PEHSPNON_1_but_PRDTHSP_0_n": 0,
+  "mexico_born_not_hispanic_weighted_m": 0.16761405,
+  "mexico_born_hispanic_not_mexican_weighted_m": 0.25566657,
+  "second_gen_not_hispanic_weighted_m": 0.40933701,
+  "second_gen_hispanic_not_mexican_weighted_m": 0.5778368600000001,
+  "age_max": 85,
+  "age_85_weighted_m": 5.87268176,
+  "age_80_weighted_m": 7.81248565
+ },
+ "sentinels": {
+  "ERN_VAL": {
+   "min": -9999.0,
+   "max": 1099999.0,
+   "n_9999999": 0,
+   "n_negative": 147
+  },
+  "WS_VAL": {
+   "min": 0.0,
+   "max": 1099999.0,
+   "n_9999999": 0,
+   "n_negative": 0
+  },
+  "WSAL_VAL": {
+   "min": 0.0,
+   "max": 2099999.0,
+   "n_9999999": 0,
+   "n_negative": 0
+  },
+  "PEARNVAL": {
+   "min": -9999.0,
+   "max": 3139998.0,
+   "n_9999999": 0,
+   "n_negative": 135
+  },
+  "SE_VAL": {
+   "min": -9999.0,
+   "max": 1099999.0,
+   "n_9999999": 0,
+   "n_negative": 110
+  },
+  "FICA": {
+   "min": 0.0,
+   "max": 86053.0,
+   "n_9999999": 0,
+   "n_negative": 0
+  },
+  "FEDTAX_AC": {
+   "min": -12097.0,
+   "max": 982908.0,
+   "n_9999999": 0,
+   "n_negative": 7641
+  },
+  "STATETAX_A": {
+   "min": -17723.0,
+   "max": 343789.0,
+   "n_9999999": 0,
+   "n_negative": 3993
+  }
+ },
+ "weights": {
+  "all_persons_m": 337.68964157,
+  "civilian_domain_m": 336.72781138,
+  "armed_forces_adults_m": 0.96183019,
+  "hispanic_m": 68.52643375999999,
+  "mexican_selfid_all_m": 40.360114679999995,
+  "mexican_share_of_hispanic_pct": 58.89714737141166,
+  "hispanic_detail_distribution_m": {
+   "1": 40.36,
+   "2": 5.657,
+   "3": 2.871,
+   "4": 2.564,
+   "5": 2.234,
+   "6": 5.466,
+   "7": 6.059,
+   "8": 3.316
+  },
+  "foreign_born_m": 53.11819486,
+  "mexico_born_any_cit_m": 12.605225419999998,
+  "zero_weight_records": 0,
+  "group_pop_m": {
+   "mexico_born": 12.2208,
+   "mexican_second_gen": 14.3332,
+   "mexican_third_plus_selfid": 14.3426,
+   "third_plus_nh_white": 173.0539,
+   "all_native": 283.6722,
+   "union": 40.8966
+  }
+ },
+ "mexico_born_entry_2020_2024_pct": 13.581641175829743,
+ "foreign_born_entry_2020_2024_pct": 18.461074526055533
+}
