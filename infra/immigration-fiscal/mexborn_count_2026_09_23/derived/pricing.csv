@@ -1,0 +1,8 @@
+scenario,level_m,cps_asec2025_m,excess_share,g1_share_step14,main_case_low_bn,main_case_high_bn,effect_at_main_low_bn,effect_at_main_high_bn,g1_ledger_net_step14_bn,g1_ledger_net_rescaled_bn
+low effect: ACS 2024 trended to 15 March 2025,11.257237,12.231214,0.07963,0.333421,203.207,249.64,-5.395247,-6.628067,-72.45795,-66.688091
+"central: ACS 2024, households + noninstitutional GQ",11.069008,12.231214,0.09502,0.333421,203.207,249.64,-6.437923,-7.908994,-72.45795,-65.573019
+high effect: ACS 2024 x CPS monthly change 2024 -> Feb-Apr 2025,10.723498,12.231214,0.123268,0.333421,203.207,249.64,-8.351841,-10.260245,-72.45795,-63.52621
+check: ACS 2024 x CPS MIS 5-8 change 2024 -> Feb-Apr 2025 (households recruited before 2025),10.965733,12.231214,0.103463,0.333421,203.207,249.64,-7.010006,-8.6118,-72.45795,-64.961213
+reference: ACS 2024 households only (audit low),11.005332,12.231214,0.100226,0.333421,203.207,249.64,-6.790649,-8.342319,-72.45795,-65.195801
+reference: ACS 2024 incl. institutional GQ (audit high),11.153915,12.231214,0.088078,0.333421,203.207,249.64,-5.967589,-7.331189,-72.45795,-66.07601
+reference: CPS ASEC 2026,11.108947,12.231214,0.091754,0.333421,203.207,249.64,-6.216685,-7.637203,-72.45795,-65.809618
