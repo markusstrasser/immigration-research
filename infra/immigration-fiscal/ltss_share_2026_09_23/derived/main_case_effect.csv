@@ -1,0 +1,30 @@
+variant,cost_low_bn,cost_high_bn,shift_low_bn,shift_high_bn
+"ltss: central",192.1148,238.5478,-11.0922,-11.0922
+"ltss: nf=inst65_only",191.9873,238.4202,-11.2197,-11.2197
+"ltss: nf=generic_spread",192.5744,239.0073,-10.6327,-10.6327
+"ltss: nf=all65",192.1986,238.6316,-11.0084,-11.0084
+"ltss: nf=acs_medicaid_users",191.0600,237.4930,-12.1470,-12.1470
+"ltss: hcbs=age_weighted",192.1214,238.5543,-11.0857,-11.0857
+"ltss: hcbs=all_ages",192.8796,239.3125,-10.3274,-10.3274
+"ltss: icf=all_ages",192.1117,238.5446,-11.0954,-11.0954
+"ltss: mhf=cog_u65",192.1076,238.5406,-11.0994,-11.0994
+"ltss: ihss_latino=31%",191.7325,238.1654,-11.4746,-11.4746
+"ltss: union=cps_scaled",193.0467,239.4796,-10.1603,-10.1603
+"ltss: diagnostic: national factors",192.8185,239.2515,-10.3885,-10.3885
+"ltss: diagnostic: no IHSS",189.1667,235.5997,-14.0403,-14.0403
+"ltss: no growth (2023 dollars)",193.0043,239.4373,-10.2027,-10.2027
+"ltss: brief: carve out only HCBS MEPS misses, key unchanged",192.2570,238.6900,-10.9500,-10.9500
+"medical-ethnicity lane alone: plain",206.3911,252.8241,3.1841,3.1841
+"joint with medical-ethnicity lane: plain",190.0307,236.4636,-13.1763,-13.1763
+"medical-ethnicity lane alone: winsor_p995",200.2044,246.6374,-3.0026,-3.0026
+"joint with medical-ethnicity lane: winsor_p995",185.5359,231.9688,-17.6711,-17.6711
+"medical-ethnicity lane alone: winsor_p999",200.0970,246.5299,-3.1100,-3.1100
+"joint with medical-ethnicity lane: winsor_p999",185.8167,232.2497,-17.3903,-17.3903
+"medical-ethnicity lane alone: two_part_lognormal",197.8170,244.2499,-5.3900,-5.3900
+"joint with medical-ethnicity lane: two_part_lognormal",182.1195,228.5524,-21.0875,-21.0875
+"medical-ethnicity lane alone: pooled_excl_2020_2021",211.2278,257.6608,8.0208,8.0208
+"joint with medical-ethnicity lane: pooled_excl_2020_2021",194.5592,240.9922,-8.6478,-8.6478
+"medical-ethnicity lane alone: pooled_cpi_all_items",205.3964,251.8293,2.1894,2.1894
+"joint with medical-ethnicity lane: pooled_cpi_all_items",189.2720,235.7050,-13.9350,-13.9350
+"medical-ethnicity lane alone: pooled_year_normalized",204.1911,250.6240,0.9841,0.9841
+"joint with medical-ethnicity lane: pooled_year_normalized",188.3554,234.7883,-14.8517,-14.8517

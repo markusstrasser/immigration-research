@@ -1,0 +1,65 @@
+{
+ "medicaid_national_bn": 954.2,
+ "group_medicaid_bn": 116.91361192727248,
+ "household_pool_fraction": 0.9900527030312052,
+ "household_key_share": 0.123756310026951,
+ "national_rate": 0.12252526925935074,
+ "allocation_rows_consistent": {
+  "personal": true,
+  "shared": true
+ },
+ "main_case_one_for_one": true,
+ "main_case_adopted_bn": [
+  203.207,
+  249.64
+ ],
+ "audit_inputs": {
+  "inst_bn": [
+   83.0,
+   87.0
+  ],
+  "hcbs_bn": 129.4,
+  "missed": [
+   0.0,
+   0.7
+  ],
+  "true_share": [
+   0.08,
+   0.04
+  ],
+  "charged": 0.123,
+  "bound_bn": [
+   -3.6,
+   -15.0
+  ]
+ },
+ "bound_bn_by_rate": {
+  "audit_stated_12.3pct": [
+   -3.569,
+   -14.739
+  ],
+  "national_rate": [
+   -3.53,
+   -14.655
+  ],
+  "household_key_share": [
+   -3.632,
+   -14.873
+  ]
+ },
+ "audit_bound_reproduced": true,
+ "med_lane_nf_gate": {
+  "ceiling": 0.032035717314122865,
+  "charged_bn": 8.42973852504333,
+  "use_based_bn": [
+   2.204057351211653,
+   4.408114702423306
+  ],
+  "published": [
+   2.204057351211653,
+   4.408114702423306,
+   8.42973852504333
+  ]
+ },
+ "med_lane_nf_gate_reproduced": true
+}
