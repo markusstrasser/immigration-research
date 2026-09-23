@@ -182,3 +182,7 @@ If approved, these go into the project's [quant-bias checklist](../notes/quant-b
 ## Revisions
 
 - 2026-09-23: created from the four audit files after the operator's request.
+- 2026-09-23 (later): the operator approved the four proposed rules; they are in
+  `notes/quant-bias-checklist.md` with a fifth, pricing costs and benefits alike
+  ([decision](../decisions/2026-09-23-evidence-symmetry-rules.md)). Concept affected: how
+  evidence is graded and which channels are priced.
