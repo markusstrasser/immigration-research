@@ -97,6 +97,13 @@ to richer residents: outside the budget the bottom four fifths lose $80.7bn a ye
 fifth gains $46.0bn. The fiscal cost is progressive if financed by tax shares and regressive if
 by equal cuts per person (ladder 194).
 
+Benefits are priced to the same standard as the costs (evidence-symmetry rule 5), by four lanes.
+The first, the [care lane](../infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md)
+(ladder 198), adds **$4.1bn a year** ($2.6–13.3bn) to the fiscal account: native women's hours
+taxes of $2.7bn and an elder-care Medicaid saving of $1.5bn net. Cheaper services, worth $21.8bn
+to consumers, are already inside the production gain. The scale, construction and mobility lanes
+are running.
+
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
 second generation, reference group, education, single year, legacy cohorts, ageing,
