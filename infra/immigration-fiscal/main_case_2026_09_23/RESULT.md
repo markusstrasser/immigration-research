@@ -58,13 +58,38 @@ three deltas.
 The account's statistical standard error, about $12bn per case (ladder 184), was computed before
 these changes and is not re-propagated here. [DATA: `derived/main_case_bands.csv`]
 
+## Sign reversal under the adopted case
+
+The September 20 account asked how little of the assigned service costs could respond before the
+sign flips, holding defense and general government fixed. `sign_reversal.py` reproduces those
+published rows from the executed welfare scenarios (gates, 1e-9) and shifts them by the adopted
+changes. Welfare in $bn a year, negative = cost to other residents.
+
+| Row | Published (Sept 20) | Adopted |
+|---|---:|---:|
+| Ordinary service budgets fixed, private capital fixed | −41.5 to +112.7 | −87.8 to +80.5 |
+| Half of service costs respond, intermediate capital | −203.6 to −81.7 | −252.8 to −116.8 |
+| All respond, capital fully adjusts | −356.8 to −262.1 | −409.1 to −300.1 |
+| Break-even share of assigned service costs, personal allocation | 18.5–22.7% | 5.5–13.5% |
+| Break-even share, shared allocation | 21.5–25.8% | 8.3–16.4% |
+
+General government responds at its adopted 0.59–0.84 in every row, including the row where
+ordinary service budgets are fixed. That pairing is the literal reading of the adopted
+convention. If general government is fixed as well, the first row loses only the
+uncompensated-care part ($3.7–5.7bn, a transfer that responds fully): −$47.3bn to +$109.0bn. The
+break-even rows use the preferred keys and fully adjusted capital, as published.
+[CALCULATION: `sign_reversal.py` → `derived/sign_reversal.csv`]
+
 ## Reproduce
 
 ```sh
 node infra/immigration-fiscal/main_case_2026_09_23/main_case.js
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/main_case_2026_09_23/sign_reversal.py
 ```
 
 It reads `assumption_explorer_2026_09_21/derived/{model.json,scaling_check.json}`,
 `cj_use_allocation_2026_09_23/derived/summary.json` and
 `uncompensated_care_2026_09_23/derived/summary.json`, and writes `derived/main_case_bands.csv`
-and `derived/inputs.json`. It exits 1 if any gate fails.
+and `derived/inputs.json`. `sign_reversal.py` then reads `inputs.json` and the September 20
+`welfare_scenarios.csv`, `response_pools.csv` and `headline_summary.json`, and writes
+`derived/sign_reversal.csv`. Both exit non-zero if any gate fails.
