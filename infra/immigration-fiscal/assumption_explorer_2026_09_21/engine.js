@@ -22,6 +22,7 @@
       receipt_scenario: model.receipts.reference,
       spending_keys: "preferred",
       key_override: {},
+      key_band: {},
       production: production,
       count_production: true,
       fiscal_weight: 1,
@@ -140,20 +141,46 @@
     };
   }
 
-  /* Dimensions the account itself leaves unresolved: report the span across them, never one corner. */
+  /* Dimensions the account itself leaves unresolved, plus the bands a convention declares
+   * (school_response_band, general_government_response_band, key_band {line: [keyA, keyB]}):
+   * report the span across their cartesian product, never one corner. */
   function unresolvedRange(model, state, outcome) {
     var bounds = schoolShareBounds(model), values = [];
+    var schools = state.school_response_band ? state.school_response_band : [state.school_response];
+    var governments = state.general_government_response_band ? state.general_government_response_band : [state.general_government_response];
+    var keySets = keyBandSets(model, state.key_band || {});
     ["personal", "shared"].forEach(function (allocation) {
       model.production.dims.normalization.forEach(function (normalization) {
         bounds.forEach(function (share) {
           var s = clone(state);
           s.allocation = allocation; s.production.normalization = normalization; s.school_share = share;
-          var responses = state.school_response_band ? state.school_response_band : [state.school_response];
-          responses.forEach(function (r) { s.school_response = r; values.push(evaluate(model, s)[outcome]); });
+          schools.forEach(function (r) {
+            s.school_response = r;
+            governments.forEach(function (g) {
+              s.general_government_response = g;
+              keySets.forEach(function (keys) {
+                Object.keys(keys).forEach(function (id) { s.key_override[id] = keys[id]; });
+                values.push(evaluate(model, s)[outcome]);
+              });
+            });
+          });
         });
       });
     });
     return [Math.min.apply(null, values), Math.max.apply(null, values)];
+  }
+
+  /* Every combination of the rules a key band names; a rule the model does not hold fails loudly. */
+  function keyBandSets(model, band) {
+    var sets = [{}];
+    Object.keys(band).forEach(function (id) {
+      var line = model.spending.lines.filter(function (l) { return l.id === id; })[0];
+      band[id].forEach(function (key) { if (!line || !line.keys[key]) throw new Error("Not an executed allocation rule: " + id + "/" + key); });
+      sets = [].concat.apply([], sets.map(function (set) {
+        return band[id].map(function (key) { var next = clone(set); next[id] = key; return next; });
+      }));
+    });
+    return sets;
   }
 
   /* Exact Shapley attribution of outcome(to) - outcome(from) over the controls that differ. */
