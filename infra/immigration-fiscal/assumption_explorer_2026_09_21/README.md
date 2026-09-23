@@ -42,7 +42,8 @@ lane's own identity (published band plus the three changes, from `inputs.json`) 
 
 `context.json` is rebuilt with `build_context.py <inventory.json>`; it keeps a value only when every
 number in it equals, at its printed precision, a number within two lines of the cited file:line
-(49 of 50 items and all 255 values on 2026-09-21; the dropped item is a caveat with no number).
+(49 of 50 items and all 255 values on 2026-09-21, the dropped item a caveat with no number;
+49 cards and 211 values on 2026-09-23 after the adoption).
 Fabricated numbers at real locations are rejected in memo and CSV files alike.
 
 `ladder.py` parses `research/immigration-confidence-ladder.md` at build time, so the page carries
@@ -178,12 +179,13 @@ Adopting this changed the analysis protocol, so it waited for the operator; he a
   and prisons are charged by use. Crime victims' harm, free hospital care absorbed outside
   government budgets and rent transfers are priced beside the account
   (research/immigration-real-fiscal-and-social-costs-2026-09-23.md), never inside it.
-- The objection cards (`context.json`) were verified on 2026-09-21 against the September 20
-  account. Five of them quote its bands or its per-head justice key
-  (`headline_cbo_informed_net_cost`, `e2_fixed_functions_and_cbo_inputs`,
-  `e4_offset_threshold_is_conditional`, `e11_not_a_policy_saving`,
-  `e12_no_group_crime_cost_in_headline`) and need a rebuild with `build_context.py` from a fresh
-  inventory of the updated FAQ.
+- The objection cards (`context.json`) were rebuilt on 2026-09-23 from a fresh inventory: 49
+  cards, 211 values, none dropped. Cards lead with the adopted main case and name September 20
+  values as such. The numeric gate confirms that a number is printed at its cited line, not that
+  the source still stands behind it: values a source stamps STALE, or that the FAQ has since
+  corrected, pass it and must be replaced by hand. FAQ 15, FAQ 16 and entry 14's executed nest
+  have no cards yet. The id `e12_no_group_crime_cost_in_headline` is kept because `sources.json`
+  keys on it, although the card now describes justice charged by use.
 - The production block is CES; increasing-returns arguments are outside it.
 - Compiled through an LLM (notes/llm-bias-caveat.md): the ledger numbers are gated, the readings
   of authors and the ladder's keyword links are not.
