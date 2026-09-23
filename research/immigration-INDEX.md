@@ -106,8 +106,14 @@ to consumers, are already inside the production gain. The second, the
 [construction lane](../infra/immigration-fiscal/construction_housing_supply_2026_09_23/RESULT.md)
 (ladder 200), adds nothing. The group makes construction 0.75% cheaper, which trims other
 renters' extra rent from $34bn to $30bn a year, but that gain is already inside the production
-term. The scale and mobility lanes are running. The ancestry instrument could not measure the
-congestion or wage slopes, so both figures stand (ladder 199).
+term. The third, the
+[scale lane](../infra/immigration-fiscal/scale_spillovers_2026_09_23/RESULT.md) (ladder 201),
+measures city size and schooling mix in one regression. Bigger cities add $38.6bn to other
+residents' earnings; the group's lower schooling takes back $24.9bn. That leaves **+$13.9bn**
+(95% −$57bn to +$84bn), not yet adopted; adopting it would put the main case at
+$189.3–235.7bn. The 1970–2000 college-share studies would make it a $109–677bn cost instead. The
+mobility lane is running. The ancestry instrument could not measure the congestion or wage
+slopes, so both figures stand (ladder 199).
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
