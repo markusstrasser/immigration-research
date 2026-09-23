@@ -257,7 +257,11 @@ custody, police half by arrests, courts by their criminal share, border enforcem
 That adds $5.9bn to the fiscal headline ($1.7bn with census ethnicity codes as recorded). The
 use key adds little because the account compares the group with the average other resident:
 Hispanic residents are 20.2% of people in prisons and jails against 20.7% of residents aged
-18–64. Hispanic adults are imprisoned at 1.3 times the all-adult rate and 2.6 times the
+18–64. [2026-09-23: the jail part of that figure is probably under-recorded. BJS jail counts put
+Hispanics at 14.4% of inmates against 22.1% of adult arrests, and unlike the prisoner series
+they are not adjusted for ethnicity. With jails at the arrest share, prisons and jails together
+are 22.9% Hispanic (ladder 204). The main case's custody key comes from the ACS, not from this
+figure.] Hispanic adults are imprisoned at 1.3 times the all-adult rate and 2.6 times the
 non-Hispanic white rate (BJS, 2023). Victim costs are outside a fiscal account. Crimes by group members against
 other residents cost the victims about $29bn a year ($15–45bn), a social cost beside the fiscal
 headline ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §2–3). Police
@@ -445,3 +449,10 @@ they get more prominence.
   - The combining rule names the scale net as proposed, not adopted.
 
   Concepts affected: benefits the account omitted; the offender input of victim harm.
+
+- 2026-09-23 (dataset integrity): Entry 12's BJS figure for prisons and jails, 20.2% Hispanic, is
+  marked as probably under-recorded. Jail counts carry no ethnicity adjustment and sit 7.7 points
+  below the adult arrest share; at that share the combined figure is 22.9% (ladder 204). The
+  custody key in the main case is the ACS figure and does not change.
+
+  Concept affected: the corroborating BJS custody share.
