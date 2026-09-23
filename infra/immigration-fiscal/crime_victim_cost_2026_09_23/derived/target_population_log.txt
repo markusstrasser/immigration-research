@@ -1,0 +1,11 @@
+[stage] CPS ASEC 2025 source: /Users/alien/Projects/immigration-research/infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip
+[gate] union total reproduces the complete account: 40,896,574.2
+                    group   age_0_11  age_12_17  age_18_plus  age_12_plus    all_ages
+                    union  7,690,317  4,433,207   28,773,051   33,206,257  40,896,574
+              mexico_born    300,500    245,483   11,674,799   11,920,282  12,220,782
+       mexican_second_gen  3,113,703  2,304,631    8,914,883   11,219,514  14,333,218
+mexican_third_plus_selfid  4,276,113  1,883,093    8,183,369   10,066,461  14,342,575
+    cps_hispanic_civilian 12,824,270  6,893,834   48,679,555   55,573,390  68,397,660
+         cps_all_civilian 46,873,331 26,104,571  263,749,901  289,854,472 336,727,803
+           union_hispanic  7,605,476  4,381,167   28,332,980   32,714,147  40,319,623
+       union_not_hispanic     84,840     52,040      440,071      492,111     576,951
