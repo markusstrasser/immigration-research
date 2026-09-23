@@ -1,0 +1,26 @@
+item,flags,value_columns,account_keys
+wage,I_WORKYN;I_ERNYN;I_WSYN;I_WSVAL,WSAL_VAL,"wage, wage_oasdi, wages"
+self_employment,I_WORKYN;I_ERNYN;I_WSYN;I_SEYN;I_SEVAL;I_FRMYN;I_FRMVAL,SEMP_VAL;FRSE_VAL,self_payroll
+interest,I_INTYN;I_INTVAL,INT_VAL,"capital, interest_dividend"
+dividends,I_DIVYN;I_DIVVAL,DIV_VAL,"capital, interest_dividend"
+rent,I_RNTYN;I_RNTVAL,RNT_VAL,capital
+social_security,I_SSYN;I_SSVAL,SS_VAL,"social_security, all_cash"
+ssi,I_SSIYN;I_SSIVAL,SSI_VAL,"ssi, all_cash"
+public_assistance,I_PAWYN;I_PAWVAL;I_PAWTYP;I_PAWMO,PAW_VAL,"cash_assistance, all_cash"
+unemployment,I_UCYN;I_UCVAL,UC_VAL,"unemployment, all_cash"
+veterans,I_VETYN;I_VETVAL;I_VETTYP;I_VETQVA,VET_VAL,"veterans, all_cash"
+workers_comp,I_WCYN;I_WCVAL;I_WCTYP,WC_VAL,workers_comp
+pensions_retirement,I_PENYN;I_PENVAL1;I_PENVAL2;I_PENSC1;I_PENSC2;I_DSTYNCOMP;I_DSTVAL1COMP;I_DSTVAL2COMP;I_DSTSC;I_DSTSCCOMP;I_ANNYN;I_ANNVAL,PEN_VAL1;PEN_VAL2;DST_VAL1;DST_VAL2;ANN_VAL,tax and SPM inputs
+survivor_disability,I_SURYN;I_SURVL1;I_SURVL2;I_SURSC1;I_SURSC2;I_DISYN;I_DISVL1;I_DISVL2;I_DISCS;I_DISHP;I_DISSC1;I_DISSC2,SUR_VAL1;SUR_VAL2;DIS_VAL1;DIS_VAL2,tax and SPM inputs
+other_income,I_CSPYN;I_CSPVAL;I_EDYN;I_EDTYP;I_OEDVAL;I_FINYN;I_FINVAL;I_OIVAL;I_CAPYN;I_CAPVAL,CSP_VAL;ED_VAL;FIN_VAL;OI_VAL;CAP_VAL,tax and SPM inputs
+whole_supplement,FL_665,all supplement items,all
+medicare,"I_MCARE (1,3 donor; 2 logical)",MCARE,"medicare, medicare_income"
+medicaid,"I_MCAID (1,3 donor; 2 logical)",MCAID,medicaid_covered (alternative key only)
+snap,I_HFOODS;I_HFDVAL;I_HFOODM;I_HFOODN,SPM_SNAPSUB,snap
+housing,I_HPUBLI;I_HLOREN,SPM_CAPHOUSESUB,housing_support
+school_lunch,I_HFLUNC;I_HFLUNN,SPM_SCHLUNCH,none in the complete account; SPM resources
+energy,I_HENGAS;I_HENGVA,SPM_ENGVAL,energy
+wic,WICYNA,SPM_WICVAL,wic
+eitc_inputs_and_tax,"members' earnings and income flags, FL_665 (tax unit TAX_ID)",FEDTAX_BC;STATETAX_A;EIT_CRED;ACTC_CRD (Census tax model),"federal_liability, state_liability, refundable_credits"
+spm_resources,"members' income flags, household noncash flags, WICYNA, I_MOOP, I_CHCAREVAL",SPM_RESOURCES,"consumption, resources"
+property_value,I_PROPVAL,HPROP_VAL,modeled_owner_property (response 0)
