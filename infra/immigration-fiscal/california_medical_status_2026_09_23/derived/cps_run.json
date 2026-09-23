@@ -1,0 +1,101 @@
+{
+  "cps_zip": "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/_cache/asecpub25csv.zip",
+  "rule_sets": [
+    "borjas_paper_rules",
+    "no_medicaid_rule",
+    "state_aware_california",
+    "state_aware_verified_states"
+  ],
+  "status_blind_2024": [
+    {
+      "state_fips": 6,
+      "program": "CA Medi-Cal: children 2016, 19-25 2020, 50+ May 2022, 26-49 Jan 2024",
+      "age_from": 0,
+      "age_to": 200
+    },
+    {
+      "state_fips": 41,
+      "program": "OR Healthier Oregon: all ages from 1 July 2023",
+      "age_from": 0,
+      "age_to": 200
+    },
+    {
+      "state_fips": 11,
+      "program": "DC Healthcare Alliance 21+ and children's coverage",
+      "age_from": 0,
+      "age_to": 200
+    },
+    {
+      "state_fips": 17,
+      "program": "IL children",
+      "age_from": 0,
+      "age_to": 18
+    },
+    {
+      "state_fips": 17,
+      "program": "IL HBIA 42-64 (new enrollment paused 2023) and HBIS 65+",
+      "age_from": 42,
+      "age_to": 200
+    },
+    {
+      "state_fips": 36,
+      "program": "NY children",
+      "age_from": 0,
+      "age_to": 18
+    },
+    {
+      "state_fips": 36,
+      "program": "NY Medicaid for undocumented 65+ from 1 Jan 2024",
+      "age_from": 65,
+      "age_to": 200
+    },
+    {
+      "state_fips": 53,
+      "program": "WA children",
+      "age_from": 0,
+      "age_to": 18
+    },
+    {
+      "state_fips": 9,
+      "program": "CT children",
+      "age_from": 0,
+      "age_to": 18
+    },
+    {
+      "state_fips": 23,
+      "program": "ME children",
+      "age_from": 0,
+      "age_to": 18
+    },
+    {
+      "state_fips": 25,
+      "program": "MA children",
+      "age_from": 0,
+      "age_to": 18
+    },
+    {
+      "state_fips": 34,
+      "program": "NJ children",
+      "age_from": 0,
+      "age_to": 18
+    },
+    {
+      "state_fips": 44,
+      "program": "RI children",
+      "age_from": 0,
+      "age_to": 18
+    },
+    {
+      "state_fips": 49,
+      "program": "UT children",
+      "age_from": 0,
+      "age_to": 18
+    },
+    {
+      "state_fips": 50,
+      "program": "VT children",
+      "age_from": 0,
+      "age_to": 18
+    }
+  ]
+}

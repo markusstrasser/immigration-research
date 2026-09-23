@@ -1,0 +1,21 @@
+measure,dhcs_window,age,survey_all_residents_with_medicaid_millions,dhcs_certified_eligibles_millions,survey_capture
+"CPS MCAID, any time in 2024",CY2024_average,0-18,3.3187,5.0363,0.659
+"CPS MCAID, any time in 2024",CY2024_average,19-44,3.3077,5.4658,0.605
+"CPS MCAID, any time in 2024",CY2024_average,45-64,2.0686,2.8918,0.715
+"CPS MCAID, any time in 2024",CY2024_average,65+,0.7711,1.5895,0.485
+"CPS MCAID, any time in 2024",CY2024_average,all,9.4662,14.9834,0.632
+"CPS MCAID, any time in 2024, vs Dec 2024",Dec2024,0-18,3.3187,4.9687,0.668
+"CPS MCAID, any time in 2024, vs Dec 2024",Dec2024,19-44,3.3077,5.4012,0.612
+"CPS MCAID, any time in 2024, vs Dec 2024",Dec2024,45-64,2.0686,2.8682,0.721
+"CPS MCAID, any time in 2024, vs Dec 2024",Dec2024,65+,0.7711,1.6578,0.465
+"CPS MCAID, any time in 2024, vs Dec 2024",Dec2024,all,9.4662,14.896,0.635
+"CPS NOW_MCAID, Feb-Apr 2025",Feb_Apr2025_average,0-18,3.2931,4.952,0.665
+"CPS NOW_MCAID, Feb-Apr 2025",Feb_Apr2025_average,19-44,3.207,5.3848,0.596
+"CPS NOW_MCAID, Feb-Apr 2025",Feb_Apr2025_average,45-64,2.0639,2.8575,0.722
+"CPS NOW_MCAID, Feb-Apr 2025",Feb_Apr2025_average,65+,0.7627,1.6881,0.452
+"CPS NOW_MCAID, Feb-Apr 2025",Feb_Apr2025_average,all,9.3267,14.8823,0.627
+"ACS HINS4, at interview in 2024",CY2024_average,0-18,3.8713,5.0363,0.769
+"ACS HINS4, at interview in 2024",CY2024_average,19-44,3.6025,5.4658,0.659
+"ACS HINS4, at interview in 2024",CY2024_average,45-64,2.1119,2.8918,0.73
+"ACS HINS4, at interview in 2024",CY2024_average,65+,1.4667,1.5895,0.923
+"ACS HINS4, at interview in 2024",CY2024_average,all,11.0524,14.9834,0.738

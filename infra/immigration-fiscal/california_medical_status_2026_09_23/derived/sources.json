@@ -1,0 +1,98 @@
+[
+  {
+    "file": "_cache/sb75_children_under19.csv",
+    "url": "https://data.chhs.ca.gov/dataset/fbf46fd8-63ca-441f-954c-e2ffb007c34f/resource/8d27e04c-a706-4721-9aa5-5d1c57c09878/download/sb-75_06-2026_suprsd_odp.csv",
+    "bytes": 187933,
+    "sha256": "23580c7f15ddb5b016866cf45a84b1807442e62aa154cd673592df05376b821b"
+  },
+  {
+    "file": "_cache/yae_19_25.csv",
+    "url": "https://data.chhs.ca.gov/dataset/9615f1b1-8329-4dbc-88cf-bb7ddfde8a71/resource/09a0fa21-bc20-4d2e-acb4-ce1ab9b8e224/download/yae-suprsd-06_2026_odp.csv",
+    "bytes": 151359,
+    "sha256": "3695b5231c0b88f74267bfb0829fb3408299864b6a8f5c72a9793da168a85e49"
+  },
+  {
+    "file": "_cache/ae_26_49.csv",
+    "url": "https://data.chhs.ca.gov/dataset/9615f1b1-8329-4dbc-88cf-bb7ddfde8a71/resource/a08f6d35-ca23-485b-bfe4-9348859ab68f/download/26-49-ae-county-06-2026_suprsd_odp.csv",
+    "bytes": 63357,
+    "sha256": "8f4a970fcad723ac6b1b3e183948f11c665776ec1f523f8e9b20e725e9e507d4"
+  },
+  {
+    "file": "_cache/oae_50plus.csv",
+    "url": "https://data.chhs.ca.gov/dataset/9615f1b1-8329-4dbc-88cf-bb7ddfde8a71/resource/9ea18162-1361-4df6-8624-5a4e718d7fd5/download/oae-06-2026-suprsd-data_odp.csv",
+    "bytes": 92815,
+    "sha256": "b70be6b8e7e0d7dc5596212589803730509e682a995bae47bfdbf4983f98cfb3"
+  },
+  {
+    "file": "_cache/chhs_pkg_adult_expansion.json",
+    "url": "https://data.chhs.ca.gov/api/3/action/package_show?id=medi-cal-adult-expansion",
+    "bytes": 21115,
+    "sha256": "43156635ef3e0c76f6b4cd3e064c73c4c4120842a1dc654ccd11694c6ee74796"
+  },
+  {
+    "file": "_cache/chhs_pkg_sb75.json",
+    "url": "https://data.chhs.ca.gov/api/3/action/package_show?id=sb-75-full-scope-medi-cal-for-all-children-enrollment",
+    "bytes": 7528,
+    "sha256": "ba645c92408bdb2bb3cf286b7893fe1a0755c00db1bd70c8f96977634ba2f641"
+  },
+  {
+    "file": "_cache/t1_eligibility_by_age_group_sex_201001_202609.csv",
+    "url": "https://data.chhs.ca.gov/dataset/8c897320-ba87-4574-bc37-bae974191c35/resource/cc08b60f-393f-4e37-9b3e-976d7a9f2a72/download/t1_eligibility_by_age_group_sex_201001_202609.csv",
+    "bytes": 4610876,
+    "sha256": "575c81e4bd822f8c8881d55a4e7b220fbbe34812e9a38d61f7eab3cebc76bd76"
+  },
+  {
+    "file": "_cache/M25-Medi-Cal-Local-Assistance-Estimate.pdf",
+    "url": "https://web.archive.org/web/20250622001304id_/https://www.dhcs.ca.gov/dataandstats/reports/mcestimates/Documents/2025_May_Estimate/MAY-2025-Medi-Cal-Local-Assistance-Estimate.pdf",
+    "bytes": 10904840,
+    "sha256": "ee0e88e30d4639ab4320f4029089051dda0880dfa8c69b488c20949769e9474f"
+  },
+  {
+    "file": "_cache/N25-Medi-Cal-Local-Assistance-Estimate.pdf",
+    "url": "https://web.archive.org/web/20260302191958id_/https://www.dhcs.ca.gov/dataandstats/reports/mcestimates/Documents/2025_November_Estimate/N25-Medi-Cal-Local-Assistance-Estimate.pdf",
+    "bytes": 8511142,
+    "sha256": "d89de31a6db36c7dc602fe40998c4705326e83c3e7720e343255bf6a30ac455c"
+  },
+  {
+    "file": "_cache/kff_more-states-are-providing-fully-state-funded-health-coverage-to-some-individuals-regardless-of-immigration-status.html",
+    "url": "https://www.kff.org/racial-equity-and-health-policy/more-states-are-providing-fully-state-funded-health-coverage-to-some-individuals-regardless-of-immigration-status/",
+    "bytes": 111936,
+    "sha256": "126af12b3228f9fed8a9d990f0e1316df066de4e54095923b6f6552348154d64"
+  },
+  {
+    "file": "_cache/kff_state-health-coverage-for-immigrants-and-implications-for-health-coverage-and-care.html",
+    "url": "https://www.kff.org/racial-equity-and-health-policy/state-health-coverage-for-immigrants-and-implications-for-health-coverage-and-care/",
+    "bytes": 164371,
+    "sha256": "78c065ce0a066cc8326a7e7419fdedd2b2b8d7d0356c1e3b549d11d9facdfa41"
+  },
+  {
+    "file": "_cache/dw_KfNPA_8.csv",
+    "url": "https://datawrapper.dwcdn.net/KfNPA/8/dataset.csv",
+    "bytes": 1253,
+    "sha256": "91aadcb63cc2ff054b148f789c4cc9cfa11f9c4af1422eeb1adfe52067dc7db2"
+  },
+  {
+    "file": "_cache/dw_kM1HV_8.csv",
+    "url": "https://datawrapper.dwcdn.net/kM1HV/8/dataset.csv",
+    "bytes": 1179,
+    "sha256": "978c71c05a2c7c85500782d68de891f317a4d9390b84ef9b1f005c6e918066dd"
+  },
+  {
+    "file": "_cache/oha_healthier_oregon.html",
+    "url": "https://www.oregon.gov/oha/hsd/ohp/pages/healthier-oregon.aspx",
+    "bytes": 95130,
+    "sha256": "5fd5fc03c399f11cf0ac67e6edea0999367d47c7e535075e780b4821a9322944"
+  },
+  {
+    "file": "_cache/nydoh_23inf-02.pdf",
+    "url": "https://www.health.ny.gov/health_care/medicaid/publications/docs/inf/23inf-02.pdf",
+    "bytes": 142238,
+    "sha256": "a5f759ac4664fe2431eaa69d3db934a7f21ecfbdeabac40c3af6fe18802f8ef1"
+  },
+  {
+    "file": "_cache/census_2006_classification_manual.pdf",
+    "url": "https://www2.census.gov/govs/pubs/classification/2006_classification_manual.pdf",
+    "bytes": 2920718,
+    "sha256": "6e121ec3444602ea8f390a371f6073fd9313dfebd3de769db64e1e0a5db1c5f9"
+  }
+]
