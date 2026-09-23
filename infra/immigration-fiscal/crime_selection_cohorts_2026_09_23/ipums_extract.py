@@ -58,6 +58,13 @@ EXTRACTS = {
         "select": {"SEX": ["1"], "AGE": AGES, "GQ": ["3"]},
         "flags": ["BPL", "CITIZEN"],
     },
+    "census2000_inst": {
+        "description": "immigration-research crime_selection_cohorts: census 2000 institutional persons, all ages, nativity flags",
+        "samples": ["us2000a"],
+        "variables": ["PERWT", "GQ", "GQTYPE", "STATEFIP", "AGE", "SEX", "BPL", "CITIZEN", "YRIMMIG", "HISPAN", "RACE"],
+        "select": {"GQ": ["3"]},
+        "flags": ["BPL", "CITIZEN"],
+    },
     "acs_mex": {
         "description": "immigration-research crime_selection_cohorts: ACS 2006-2024 Mexico-born men 18-40",
         "samples": [f"us{y}a" for y in range(2006, 2025) if y != 2020],

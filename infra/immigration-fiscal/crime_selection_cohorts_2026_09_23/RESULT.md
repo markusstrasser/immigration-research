@@ -22,6 +22,9 @@ Only the 2000 census shows a large fall, and it shows it for every cohort. The s
 arrivals stood at 0.42 in 1990 and 0.19 in 2000. That census recorded a birthplace for only 32% of
 Mexican-origin men in institutions. It classified 1.8% of the rest as foreign-born, against 38.5%
 of those it recorded [DATA: `derived/census_allocation_mexorig.csv`]. Its Mexico-born count is too low.
+Its count of all institutionalized noncitizens (73,395) is below the 89,676 noncitizens that BJS
+counted in state and federal prisons alone at midyear 2000 [DATA: `derived/admin_check_2000.csv`;
+SOURCE: BJS NCJ 198877, Table 6].
 Spreading allocated birthplaces in the reported mix raises the 2000 ratios 2.1–2.6-fold and the
 1980 and 1990 ratios 1.4–1.7-fold. Under that correction, at 0–5 years the three cohorts stand at
 0.69–0.75, 0.59–0.65 and 0.26–0.33. The 1980s arrivals are still no clear improvement, and at 0–5
@@ -316,6 +319,94 @@ What holds under every treatment [INFERENCE]:
 - After correction, the gap between the census and the ACS for the same 1990s cohorts shrinks from
   3.2–3.8× to 1.2–1.9×.
 
+### 2b external check: administrative prison counts, 2000
+
+**Administrative counts, quoted.**
+
+- BJS, *Prison and Jail Inmates at Midyear 2002* (NCJ 198877), Table 6, "Number of noncitizens
+  held in State or Federal prisons at midyear, 1999-2002": "2000 89,676 36,090 53,586" (total,
+  Federal, State) [SOURCE: https://bjs.ojp.gov/content/pub/pdf/pjim02.pdf, p. 5].
+- The same bulletin gives jurisdictions only for 2001 and 2002 ("6/30/02 6/30/01"): "California
+  19,418 20,616" and "Texas 8,002 7,332"; "*New York reports foreign-born inmates rather than
+  noncitizens" [same source].
+- BJS, *Immigration Offenders in the Federal Criminal Justice System, 2000* (NCJ 191745): "in 2000,
+  37,243 noncitizen inmates were 29% of all Federal prisoners" [SOURCE:
+  https://bjs.ojp.gov/content/pub/pdf/iofcjs00.pdf, p. 7].
+- BJS, *Profile of Jail Inmates, 2002* (NCJ 201932): "An estimated 8% of jail inmates were not
+  U.S. citizens, unchanged from 1996"; its table row reads "Noncitizen 7.8" (2002) and "7.4" (1996)
+  [SOURCE: https://bjs.ojp.gov/content/pub/pdf/pji02.pdf, p. 2].
+- BJS, *Prison and Jail Inmates at Midyear 2000* (NCJ 185989), on June 30, 2000: "were held in
+  local jails (621,149)" [SOURCE: https://bjs.ojp.gov/content/pub/pdf/pjim00.pdf, p. 1].
+
+All PDFs were parsed with `pdftotext -layout` into `_cache/admin/`. From these, noncitizens in
+jails at midyear 2000 were about 7.4–7.8% × 621,149 = 46,000–48,400 [CALCULATION]. INS average
+daily detention in FY2000 was 19,458 (2c), part of it held inside jails.
+
+Not pinned: BOP inmates who were Mexican citizens in 2000, the California Department of
+Corrections' foreign-born or Mexican-national counts, INS detention by nationality, and a primary
+SCAAP count for FY2000.
+
+**Census counts.** Every institutional person in the 2000 5% sample, all ages and both sexes
+(IPUMS extract 15). Noncitizen means foreign-born with CITIZEN 3. The reassignment is run within
+state group (CA, TX, rest) × sex × race/Hispanic origin. nativity_low spreads 65.2% of the
+allocated-to-US pool, the 1990 share with citizenship also allocated; nativity_high spreads all of
+it [CALCULATION: `admin_check.py` → `derived/admin_check_2000.csv`].
+
+| Scope | Administrative floor | Census as published | nativity_low | nativity_high |
+|---|---|---|---|---|
+| US, all noncitizens | prisons 89,676; with jails about 136,000–138,000; with INS at most about 158,000 | 73,395 | 126,084 | 154,214 |
+| US, Mexico-born noncitizens | not pinned | 26,538 | 52,480 | 66,329 |
+| US, noncitizen men 18–64 | — | 56,687 | 101,694 | 125,722 |
+| California, all noncitizens | state prisons alone 20,616 (mid-2001) | 13,897 | 30,399 | 39,209 |
+| Texas, all noncitizens | state prisons alone 7,332 (mid-2001) | 9,002 | 21,574 | 28,286 |
+
+The census allocated a birthplace for 52% of all institutional persons in 2000: 64% in
+California, 70% in Texas [DATA: same file]. No federal proxy is defensible, because the public file
+does not identify federal facilities.
+
+**Verdict of the check** [INFERENCE from the table].
+
+- **The published 2000 count fails the prison floor.** The census found 73,395 institutionalized
+  noncitizens across prisons, jails, INS detention and every other institution. That is 18% fewer
+  than BJS counted in state and federal prisons alone three months later (89,676), and about half
+  of prisons plus jails.
+- **California fails too.** Its published count (13,897) is 33% below the noncitizens in its state
+  prisons alone a year later (20,616). Timing is not the explanation, because the national state
+  count barely moved from mid-2000 to mid-2001 (53,586 → 54,031).
+- **The counts favour nativity_high.** Prisons plus jails alone (about 136,000–138,000) exceed
+  nativity_low (126,084). nativity_high (154,214) lands in the prisons + jails + INS range.
+- **The discrimination is weak.** The jail share is self-reported and dates from 1996 and 2002. New
+  York reports foreign-born inmates, which overstates the prison count. The census may miss inmates
+  altogether. Some INS detainees are inside the jail count.
+- **Texas cannot discriminate.** Its only admin figure covers state prisons, and the published count
+  already exceeds it.
+- **What the check establishes.** The allocation made most foreign-born inmates native-born, and at
+  least the nativity_low correction is needed to reach the administrative totals.
+
+**Rumbaut et al. (2006), Table 1.** Men 18–39, Hispanic origin Mexican (HISPAN 1), US-born
+(birthplace in the US) against foreign-born, institutional share [CALCULATION: `admin_check.py` →
+`derived/rumbaut_2000.csv`].
+
+| Treatment | Foreign-born Mexican | US-born Mexican | US-born ÷ foreign-born |
+|---|---|---|---|
+| Rumbaut et al. 2006, Table 1 (correctional institutions) | 0.70% | 5.90% | 8.4 |
+| IPUMS, as published (all institutions) | 0.62% | 6.05% | 9.8 |
+| nativity_low | 1.28% | 5.19% | 4.0 |
+| nativity_high | 1.62% | 4.68% | 2.9 |
+
+Rumbaut's figures inherit the bias: they come from the same 2000 5% file, and our as-published
+replication is close to them.
+
+- **Rescaled Table 1.** Scaling his two cells by our factors gives 1.45–1.84% for foreign-born
+  Mexican men, 4.57–5.06% for US-born Mexican men, and a ratio of 2.5–3.5 instead of 8.4
+  [CALCULATION].
+- **The memo's headline.** The US-born non-Hispanic white rate barely moves under reassignment
+  (factor 0.994–0.996 for men 18–40) [DATA: `derived/census_allocation_reassignment.csv`, column
+  `rate_scale_us_nhw`]. The memo's "US-born Mexican-origin men 3.45× native whites" therefore
+  becomes about 2.7–3.0× [CALCULATION: 3.45 × 0.775–0.858 / 0.994–0.996].
+- **The memo's 2000–2010 comparison.** It reads the jump from 0.70% (2000) to 2.34% (2010 ACS) for
+  foreign-born Mexican men as ICE detention. Part of that jump is this allocation instead.
+
 ### 2c. Immigration detention: a bound, not a subtraction
 
 The lane rule forbids subtracting an ICE count from a survey estimate. The bound below is the
@@ -507,6 +598,9 @@ replicate-weight SE, mostly below 1 after 2011, so these SEs may be understated 
   education-held gaps; census ratios; ACS placement sensitivity at f = 0.04 and 0.08
   (`census_movers.csv`, `acs_movers.csv`).
 - **Detention bound** (`ice_bound.csv`).
+- **2000 external check:** noncitizen and Mexico-born noncitizen institutional counts for the US,
+  CA and TX under three treatments (`admin_check_2000.csv`), and Rumbaut's Table 1 cells
+  (`rumbaut_2000.csv`).
 
 Results unfavourable to the immigrant-selection reading, all reported above:
 
@@ -541,6 +635,8 @@ Results unfavourable to the immigrant-selection reading, all reported above:
   not downloaded, so the mover SEs use the household jackknife. The ACS age × education reference
   comes from Census API tabulations with the main weight, held fixed across replicates.
 - **1998 *JPAM* paper** (Butcher and Piehl, cross-city crime) not read.
+- **2000 admin counts by origin.** BOP Mexican-citizen inmates, California Department of
+  Corrections counts and a primary FY2000 SCAAP count were not pinned (2b external check).
 - **Detention inputs.** FY2023 ICE average daily population not pinned, and no Mexico share for INS
   detention in 1980–2000. The 7% federal-prisoner share in 3b is [UNVERIFIED].
 - **ACS reported-only ratios** are crude, not age-standardized.
@@ -548,11 +644,10 @@ Results unfavourable to the immigrant-selection reading, all reported above:
 
 ## For the parent to check
 
-1. **2b is the new, load-bearing result.** Before quoting a corrected 2000 number, check it against
-   an external count of Mexican-national or Mexico-born prisoners around 2000 (BOP citizenship
-   tables, SCAAP, BJS). The as-published 2000 count of institutionalized Mexico-born men 18–40,
-   21,269, is about the size of the INS daily detention population of all nationalities in 2000,
-   19,458.
+1. **2b is the new, load-bearing result.** The external check (2b external check) rejects the
+   published 2000 count and favours nativity_high. It uses noncitizens of all origins; a
+   Mexican-citizen count for BOP or California around 2000 would test the Mexico-born piece
+   directly.
 2. **The chat sentences need correcting.** Sentence 2 should read "for all immigrants, as a gap in
    percentage points; on a ratio scale the 1980s arrivals were worse". Sentence 3 should be replaced
    by the corrected sentence in Part 1.
@@ -566,9 +661,10 @@ From the repository root. Microdata stay in `_cache/`, which is ignored (`.gitig
 ```sh
 set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a   # IPUMS and Census keys, never printed
 L=infra/immigration-fiscal/crime_selection_cohorts_2026_09_23
-uv run --no-project python3 $L/ipums_extract.py submit census census_q census_inst_q acs_mex acs_movers_lite
-uv run --no-project python3 $L/ipums_extract.py wait census census_q census_inst_q acs_mex acs_movers_lite --max-minutes 45
-uv run --no-project python3 $L/ipums_extract.py download census census_q census_inst_q acs_mex acs_movers_lite
+X="census census_q census_inst_q census2000_inst acs_mex acs_movers_lite"
+uv run --no-project python3 $L/ipums_extract.py submit $X
+uv run --no-project python3 $L/ipums_extract.py wait $X --max-minutes 45
+uv run --no-project python3 $L/ipums_extract.py download $X
 uv run --no-project python3 $L/acs_tabulate.py 2>&1 | sed -E 's/key=[A-Za-z0-9]+/key=<KEY>/g'
 uv run --no-project python3 $L/acs_reference.py 2>&1 | sed -E 's/key=[A-Za-z0-9]+/key=<KEY>/g'
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/analyze_census.py
@@ -576,9 +672,10 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/census_se_check.py
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/analyze_acs.py
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/analyze_movers.py
 uv run --no-project python3 $L/ice_bound.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/admin_check.py
 ```
 
 Extract checksums (sha256, first 16 hex characters) are in `_cache/ipums/extracts.json`: census
-af06286eb3753abc, census_q f77d405ca2601f93, census_inst_q 0824a2c7d867c17a, acs_mex
+af06286eb3753abc, census_q f77d405ca2601f93, census_inst_q 0824a2c7d867c17a, census2000_inst 76389afaabfbafaa, acs_mex
 94c4ebc486dd2aee, acs_movers_lite 74d2e80c73722570. A new IPUMS extract of the same definition
 can differ in row order; the tables should not.
