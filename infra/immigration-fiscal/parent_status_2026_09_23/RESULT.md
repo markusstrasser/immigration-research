@@ -246,3 +246,48 @@ put the unauthorized Mexican population at 4.68M in January 2000 and 5.97M in Ja
 interpolated to 2003, 5.45–5.58M. The ratio is 1.0–1.15% a year. Measured: the FY2003 count and
 the adults' share. Assumed: the adult share holds for children, and the stock grows linearly
 between the DHS estimates. [CALCULATION: `derived/nis2003_mexico_annual_legalization_rate.csv`]
+
+## The routes in September 2026, for someone who entered without papers
+
+Statute text checked on the US Code (Cornell LII) on 2026-09-23; the time-sensitive rows come from
+[`legal_routes_facts.md`](legal_routes_facts.md), each with its primary source and an exact quote.
+
+| Route | Who qualifies | What an entry without papers means | Scale or wait, 2026 |
+|---|---|---|---|
+| Spouse of a US citizen | the spouse | Cannot adjust inside (INA 245(a) requires inspection). Must attend a visa interview in Mexico; leaving after a year of unlawful presence bars return for ten years unless an I-601A waiver is approved first, and the waiver counts only hardship to a citizen or resident spouse or parent. A re-entry without inspection after a year of unlawful presence or a removal is a further bar (INA 212(a)(9)(C)). Someone who entered on a visa and overstayed can adjust inside. | I-601A median 24.3 months (FY2026). FY2026 through June: 20,826 approved, 2,612 denied, 77,755 pending. ICE arrested overstaying spouses at San Diego green-card interviews from November 2025 (one outlet, one city). |
+| Spouse or minor child of a permanent resident (F2A) | the spouse or child | Same interview abroad and bars; the waiver can rest on the resident spouse or parent | Mexico final action date 22 Aug 2025: about a year in line |
+| US-born child | a parent, once the child is 21 (INA 201(b)(2)(A)(i)) | Same interview abroad. The ten-year-bar waiver is open only to the "spouse or son or daughter" of a citizen or resident, so a child's petition carries no waiver: ten years abroad after a year of unlawful presence | Parents of citizens: 27,600 Mexican green cards a year, 20% (2005–2022) |
+| Adult children and siblings of citizens; adult children of residents | F1, F2B, F3, F4 | Same bars | Mexico final action dates 1 Jan 2008 (F1), 15 Feb 2009 (F2B), 1 Jul 2001 (F3), 8 Apr 2001 (F4): 17–25 years in line |
+| Employer sponsorship | EB-3 "other workers" with labor certification | Same interview abroad and bars; no waiver without a citizen or resident spouse or parent | Mexico final action date 1 Apr 2022; employment is 6% of Mexican green cards |
+| Cancellation of removal | 10 years' presence and "exceptional and extremely unusual hardship" to a citizen or resident spouse, parent or child | Available despite the entry, but only as a defense in removal proceedings | 4,000 a year nationwide (INA 240A(e)); Mexico 2,503 in FY2003 |
+| U visa | victims of listed crimes who help the police | Available despite the entry | 10,000 a year; 288,243 principal petitions pending (June 2026), about 29 years of the cap; interim work permit after a median 19.3 months, with 34% of FY2026 determinations ineligible |
+| Asylum | persecution | Available, with a one-year filing deadline [TRAINING-DATA] | Mexicans won 16.6% of immigration-court asylum decisions in FY2024 (TRAC via Axios) |
+| Military parole in place | relatives of service members | Parole counts as admission for an immediate relative's adjustment | Still offered; median 12.8 months (FY2026) |
+| DACA | arrived as children | Not a status and no path to one; initial requests held since 2021 | Fifth Circuit (January 2025) limited relief to Texas; district court had not ruled on implementation as of February 2026 |
+| Legalization or registry | registry: entry before 1 January 1972 | None enacted since IRCA (1986): nearly 2.7M legalized, 75% born in Mexico. The Dignity Act (H.R. 4393) has sat in subcommittee since July 2025 | Keeping Families Together (2024) would have paroled an estimated 500,000 spouses of citizens with ten years' presence; a Texas federal court vacated it on 7 Nov 2024 |
+
+Mexico has never had Temporary Protected Status [TRAINING-DATA]. The 2026 visa-bulletin dates
+advanced partly because a January–August 2026 pause on immigrant visas for 75 countries (not
+Mexico) freed numbers; the State Department warns of retrogression.
+
+Read together: a Mexican who entered without papers after 2001 and has no citizen or resident
+spouse or parent has no way to a green card except a defense in removal proceedings (4,000 a year
+nationwide) or a crime-victim visa with a queue of decades. A citizen spouse opens a route of about
+two years plus an interview abroad. A US-born child opens one only at 21, and only after ten years
+outside the country. In 2003, 245(i) carried 77% of the Mexicans who legalized after entering
+without papers; it reaches only petitions filed by 30 April 2001 by people present on 21 December
+2000 [SOURCE: 8 U.S.C. 1255(i)]. [INFERENCE from the table]
+
+## Limits of the green-card evidence
+
+- The survey item misses overstays and short undocumented visits; in classes where every recipient
+  had been unlawfully present it flags 90%.
+- Only people who got green cards are observed, so the 12-year median is the wait of those who
+  made it; nothing here gives the chance of ever legalizing.
+- One cohort, 2003, when 245(i) filings from 1998–2001 were being adjudicated; no later survey
+  repeats the question, so the 2026 picture rests on the law and on administrative counts.
+- "Needed 245(i)" is read from the class, the adjustment flag and the survey's last recorded entry;
+  a documented visit shorter than 60 days after that entry would have allowed an immediate relative
+  to adjust without it.
+- The 1-in-100 rate applies the adults' share to children and interpolates the DHS stock; it
+  describes 2003 only.
