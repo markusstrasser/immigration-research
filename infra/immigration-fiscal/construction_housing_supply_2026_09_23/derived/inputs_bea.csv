@@ -1,0 +1,48 @@
+item,value,source
+single_family_intermediate_share_2017,0.46634071630537227,"BEA 2017 detail Use, before redefinitions, row T005, column 233411"
+single_family_compensation_share_2017,0.3715166509582155,"BEA 2017 detail Use, before redefinitions, row V00100, column 233411"
+single_family_taxes_on_production_share_2017,0.005136663524976437,"BEA 2017 detail Use, before redefinitions, row V00200, column 233411"
+single_family_gross_operating_surplus_share_2017,0.15700596921143575,"BEA 2017 detail Use, before redefinitions, row V00300, column 233411"
+single_family_output_2017_bn,254.64,"BEA 2017 detail Use, row T008, column 233411"
+multifamily_intermediate_share_2017,0.4544098651006086,"BEA 2017 detail Use, before redefinitions, row T005, column 233412"
+multifamily_compensation_share_2017,0.3421224348474558,"BEA 2017 detail Use, before redefinitions, row V00100, column 233412"
+multifamily_taxes_on_production_share_2017,0.007204399877485251,"BEA 2017 detail Use, before redefinitions, row V00200, column 233412"
+multifamily_gross_operating_surplus_share_2017,0.1962766169949263,"BEA 2017 detail Use, before redefinitions, row V00300, column 233412"
+multifamily_output_2017_bn,75.093,"BEA 2017 detail Use, row T008, column 233412"
+other_residential_intermediate_share_2017,0.5651079723966567,"BEA 2017 detail Use, before redefinitions, row T005, column 2334A0"
+other_residential_compensation_share_2017,0.20895635310935814,"BEA 2017 detail Use, before redefinitions, row V00100, column 2334A0"
+other_residential_taxes_on_production_share_2017,0.009736032079130647,"BEA 2017 detail Use, before redefinitions, row V00200, column 2334A0"
+other_residential_gross_operating_surplus_share_2017,0.21619566039764423,"BEA 2017 detail Use, before redefinitions, row V00300, column 2334A0"
+other_residential_output_2017_bn,251.129,"BEA 2017 detail Use, row T008, column 2334A0"
+residential_repair_intermediate_share_2017,0.4483199483633926,"BEA 2017 detail Use, before redefinitions, row T005, column 230302"
+residential_repair_compensation_share_2017,0.3466603775926914,"BEA 2017 detail Use, before redefinitions, row V00100, column 230302"
+residential_repair_taxes_on_production_share_2017,0.008614376326601541,"BEA 2017 detail Use, before redefinitions, row V00200, column 230302"
+residential_repair_gross_operating_surplus_share_2017,0.1964052977173144,"BEA 2017 detail Use, before redefinitions, row V00300, column 230302"
+residential_repair_output_2017_bn,80.563,"BEA 2017 detail Use, row T008, column 230302"
+construction_gross_output_2017_bn,1577.966,"BEA GDP by industry TGO105-A, Construction"
+construction_gross_output_2024_bn,2511.507,"BEA GDP by industry TGO105-A, Construction"
+construction_value_added_2017_bn,840.22,"BEA GDP by industry TVA113-A, Construction"
+construction_value_added_2024_bn,1305.402,"BEA GDP by industry TVA113-A, Construction"
+construction_compensation_2017_bn,520.422,"BEA GDP by industry TVA113-A, Construction"
+construction_compensation_2024_bn,799.308,"BEA GDP by industry TVA113-A, Construction"
+construction_taxes_on_production_2017_bn,10.115,"BEA GDP by industry TVA113-A, Construction"
+construction_taxes_on_production_2024_bn,14.907,"BEA GDP by industry TVA113-A, Construction"
+construction_gross_operating_surplus_2017_bn,309.683,"BEA GDP by industry TVA113-A, Construction"
+construction_gross_operating_surplus_2024_bn,491.187,"BEA GDP by industry TVA113-A, Construction"
+construction_proprietors_income_2017_bn,185.791,"BEA NIPA T61200D, Construction"
+construction_proprietors_income_2024_bn,246.068,"BEA NIPA T61200D, Construction"
+construction_compensation_nipa_2017_bn,520.422,"BEA NIPA T60200D, Construction"
+construction_compensation_nipa_2024_bn,799.308,"BEA NIPA T60200D, Construction"
+construction_intermediate_share_2017,0.4675297186377906,1 - value added / gross output [CALCULATION]
+construction_proprietors_income_share_2017,0.1177408131734144,proprietors' income / gross output [CALCULATION]
+construction_labour_share_2017_low,0.3886759917514066,(compensation + 0.50 x proprietors' income) / gross output [CALCULATION]
+construction_labour_share_2017_central,0.40829946061364236,(compensation + 0.67 x proprietors' income) / gross output [CALCULATION]
+construction_labour_share_2017_high,0.44754639833811377,(compensation + 1.00 x proprietors' income) / gross output [CALCULATION]
+construction_intermediate_share_2024,0.4802315900373759,1 - value added / gross output [CALCULATION]
+construction_proprietors_income_share_2024,0.09797623498560824,proprietors' income / gross output [CALCULATION]
+construction_labour_share_2024_low,0.3672464380947375,(compensation + 0.50 x proprietors' income) / gross output [CALCULATION]
+construction_labour_share_2024_central,0.3835758105923389,(compensation + 0.67 x proprietors' income) / gross output [CALCULATION]
+construction_labour_share_2024_high,0.41623455558754163,(compensation + 1.00 x proprietors' income) / gross output [CALCULATION]
+single_family_labour_share_2017_low,0.4303870575449227,"detail compensation share + lambda x construction-wide proprietors' income share of output, 2017 [CALCULATION]"
+single_family_labour_share_2017_central,0.45001052640715844,"detail compensation share + lambda x construction-wide proprietors' income share of output, 2017 [CALCULATION]"
+single_family_labour_share_2017_high,0.4892574641316299,"detail compensation share + lambda x construction-wide proprietors' income share of output, 2017 [CALCULATION]"

@@ -1,0 +1,34 @@
+parameter,value,source
+theta_low,0.3672464380947375,"construction labour share of gross output, 2024, 0.5 x proprietors' income [DATA: inputs_bea.csv]"
+theta_central,0.4167931684997487,mean of construction 2024 and single-family 2017 at 0.67 x proprietors' income [CALCULATION]
+theta_high,0.4892574641316299,"single-family residential 2017, all proprietors' income as labour [DATA: inputs_bea.csv]"
+ell_hs_or_less,0.47238738375413475,"SCHL<=17 share of construction-industry earnings, ACS 2024 [DATA: construction_national.csv]"
+ell_below_ba,0.7605989093353016,"SCHL<=20 share of construction-industry earnings, ACS 2024 [DATA: construction_national.csv]"
+trades_union_earnings_share,0.2140630693749415,"union share of construction-trades earnings, ACS 2024 [DATA]"
+m_low_efficiency_share_hs_or_less,0.1783040555908462,"target share of the lower skill group's efficiency units, account CES [DATA: matched_benefits scenarios.csv]"
+m_low_efficiency_share_below_ba,0.1410669937418585,"target share of the lower skill group's efficiency units, account CES [DATA: matched_benefits scenarios.csv]"
+dlnw_low_hs_or_less_sigma1.5,-0.07209179860376819,"log lower-group wage, with minus without, account CES [DATA]"
+dlnw_low_hs_or_less_sigma2.0,-0.054198417349268724,"log lower-group wage, with minus without, account CES [DATA]"
+dlnw_low_hs_or_less_sigma2.5,-0.043420485570585414,"log lower-group wage, with minus without, account CES [DATA]"
+dlnw_low_below_ba_sigma1.5,-0.04260149381607268,"log lower-group wage, with minus without, account CES [DATA]"
+dlnw_low_below_ba_sigma2.0,-0.03206875161357747,"log lower-group wage, with minus without, account CES [DATA]"
+dlnw_low_below_ba_sigma2.5,-0.02571136054577244,"log lower-group wage, with minus without, account CES [DATA]"
+dlnw_high_hs_or_less_sigma1.5,0.01934146181655986,"log upper-group wage, with minus without, account CES [DATA]"
+dlnw_high_hs_or_less_sigma2.0,0.01437652796597751,"log upper-group wage, with minus without, account CES [DATA]"
+dlnw_high_hs_or_less_sigma2.5,0.011439470681611365,"log upper-group wage, with minus without, account CES [DATA]"
+dlnw_high_below_ba_sigma1.5,0.029519011319177026,"log upper-group wage, with minus without, account CES [DATA]"
+dlnw_high_below_ba_sigma2.0,0.022021627237860077,"log upper-group wage, with minus without, account CES [DATA]"
+dlnw_high_below_ba_sigma2.5,0.01756094253537735,"log upper-group wage, with minus without, account CES [DATA]"
+monras_state_construction,-0.454,Monras 2020 Table D10 col. 6 / Table 9 [SOURCE: doi:10.1086/707764]
+monras_state_construction_se,0.213,Monras 2020 Table D10 col. 6 / Table 9 [SOURCE: doi:10.1086/707764]
+monras_state_all,-0.255,Monras 2020 Table D10 col. 6 / Table 9 [SOURCE: doi:10.1086/707764]
+monras_state_all_se,0.16,Monras 2020 Table D10 col. 6 / Table 9 [SOURCE: doi:10.1086/707764]
+monras_metro_construction,-0.765,Monras 2020 Table D10 col. 6 / Table 9 [SOURCE: doi:10.1086/707764]
+monras_metro_construction_se,0.33,Monras 2020 Table D10 col. 6 / Table 9 [SOURCE: doi:10.1086/707764]
+monras_metro_all,-0.384,Monras 2020 Table D10 col. 6 / Table 9 [SOURCE: doi:10.1086/707764]
+monras_metro_all_se,0.232,Monras 2020 Table D10 col. 6 / Table 9 [SOURCE: doi:10.1086/707764]
+bratsberg_raaum_wage,-0.724,SE 0.202; CReAM DP 06/10 Tables 1 and 5 [SOURCE: doi:10.1111/j.1468-0297.2012.02540.x]
+bratsberg_raaum_price_all,-1.155,SE 0.214; CReAM DP 06/10 Tables 1 and 5 [SOURCE: doi:10.1111/j.1468-0297.2012.02540.x]
+bratsberg_raaum_price_excl_licensed,-0.387,SE 0.088; CReAM DP 06/10 Tables 1 and 5 [SOURCE: doi:10.1111/j.1468-0297.2012.02540.x]
+bratsberg_raaum_dose,0.06463282110579022,"construction minus all-sector ln(1 + M/N), below-BA earnings, ACS 2024 [CALCULATION]"
+mexico_born_low_skill_dose,0.10610411243439903,"Mexico-born / other low-skill employed, ACS 2024 [DATA]"
