@@ -1,0 +1,10 @@
+year,variant,nativity_flags,inst_unknown_nativity_weighted,inst_abroad_unknown_weighted,rate_scale_mex,rate_scale_us_all,rate_scale_us_nhw,rate_scale_us_mexorig,multiplier_us_all,multiplier_us_nhw,multiplier_us_mexorig
+1980,country,QBPL; QCITIZEN for 1990 institutional records (both allocated: 0.652),1.119e+05,8600,1.54,1,1,1,1.54,1.54,1.54
+1980,nativity_high,QBPL; QCITIZEN for 1990 institutional records (both allocated: 0.652),1.119e+05,8600,1.676,0.9958,0.9968,0.9897,1.683,1.681,1.693
+1980,nativity_low,QBPL; QCITIZEN for 1990 institutional records (both allocated: 0.652),1.119e+05,8600,1.63,0.9972,0.9979,0.9933,1.634,1.633,1.641
+1990,country,QBPL; QCITIZEN for 1990 institutional records (both allocated: 0.652),1.645e+05,2.363e+04,1.417,1,1,1,1.417,1.417,1.417
+1990,nativity_high,QBPL; QCITIZEN for 1990 institutional records (both allocated: 0.652),1.645e+05,2.363e+04,1.537,0.9914,0.9978,0.9709,1.55,1.54,1.583
+1990,nativity_low,QBPL; QCITIZEN for 1990 institutional records (both allocated: 0.652),1.645e+05,2.363e+04,1.554,0.9896,0.9973,0.9583,1.57,1.558,1.622
+2000,country,QBPL; QCITIZEN for 1990 institutional records (both allocated: 0.652),7.5e+05,0,1,1,1,1,1,1,1
+2000,nativity_high,QBPL; QCITIZEN for 1990 institutional records (both allocated: 0.652),7.5e+05,0,2.506,0.9573,0.9935,0.7729,2.618,2.523,3.243
+2000,nativity_low,QBPL; QCITIZEN for 1990 institutional records (both allocated: 0.652),7.5e+05,0,2.001,0.9723,0.9958,0.8569,2.057,2.009,2.335
