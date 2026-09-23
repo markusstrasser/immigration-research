@@ -36,12 +36,21 @@ PROFILES = {"net_cost_cbo_informed": "cbo_category_lag_non_school_full",
 
 
 def response_anchors() -> dict[str, float]:
-    """2024 conditional net cost to other residents, $bn; the range spans allocation and scaling cases."""
+    """2024 conditional net cost to other residents, $bn; the range spans allocation and scaling cases.
+
+    The September 20 bands, then the main case adopted on 2026-09-23 (general government at
+    0.59-0.84, justice and uncompensated care keyed by use; main_case_2026_09_23).
+    """
     summary = pd.read_csv(FISCAL / "full_account_2026_09_20/derived/service_response_summary.csv").set_index("profile")
+    adopted = pd.read_csv(FISCAL / "main_case_2026_09_23/derived/main_case_bands.csv")
+    adopted = adopted[adopted.variant == "adopted"].set_index("profile")
     out = {}
     for name, profile in PROFILES.items():
         out[f"{name}_low"] = -float(summary.loc[profile, "max_welfare_bn"])
         out[f"{name}_high"] = -float(summary.loc[profile, "min_welfare_bn"])
+    for name, profile in PROFILES.items():
+        out[f"{name}_adopted_low"] = float(adopted.loc[profile, "cost_low_bn"])
+        out[f"{name}_adopted_high"] = float(adopted.loc[profile, "cost_high_bn"])
     return out
 
 

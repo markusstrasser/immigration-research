@@ -2,6 +2,12 @@
 
 Date: 2026-09-20. [MODEL / FRAMING-SENSITIVE] Calculation record; narrative authorship remains operator-owned.
 
+**Adopted main case (2026-09-23):** on the $203–250bn anchor the operator adopted on September 23,
+the whole-budget rules give **$1.7–2.5tn over 2015–2024, $2.5–3.7tn over 2010–2024 and $3.0–4.6tn
+over 2005–2024**. The programme-by-programme version has not been re-run on that anchor. The
+figures below are on the September 20 anchor ($165–197bn) and stay as a record.
+[CALCULATION: `backcast.py` → `derived/backcast_windows.csv`, concepts `*_adopted_*`]
+
 **Result:** No historical cost is measured here. The account exists for income-year
 2024 only. Combining measured national budgets and measured Mexican-origin population
 for each year with the group's **2024 relative position** gives, for the main
@@ -162,3 +168,10 @@ opposite directions.
 2026-09-21, trend wording: "no slowdown through 2024" held for per-capita income only.
 Household income gained 0.2 points in 2024 after about 1.1 a year, so three of the four
 series paused that year. Ladder 163 carries the same correction. No total changes.
+
+2026-09-23, adopted main case: `backcast.py` also reads the adopted 2024 bands from
+`main_case_2026_09_23/derived/main_case_bands.csv` and adds them as concepts with an `_adopted`
+suffix. Every September 20 row and column is unchanged, checked value by value. On the adopted
+anchor the whole-budget rules give $1.75–2.49tn (10 years), $2.52–3.74tn (15) and $3.00–4.62tn (20);
+with full proportional services, $2.68–3.30tn, $3.82–4.88tn and $4.61–6.02tn. Concept affected: the
+back-cast's 2024 anchor. [Decision](../decisions/2026-09-23-main-case-general-government-and-use-keys.md).
