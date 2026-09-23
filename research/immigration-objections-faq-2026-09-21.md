@@ -95,8 +95,12 @@ if non-school education budgets are also held fixed and reaches zero where 18.5�
 assigned service costs are incremental (entry 2), so the response share moves the result more
 than any offset listed here. Consumer prices and
 native women's hours are priced at $21.8bn *(routed)* and overlap the factor-income gains,
-so they are not added. Crime, housing, innovation and institutions are unpriced in both
-directions. [SOURCE: complete account; [prices and hours](immigration-consumer-price-and-native-hours-2026-09-18.md)]
+so they are not added. Crime and housing are now priced beside the account. Crimes by group
+members against other residents cost the victims about $29bn a year ($15–45bn). Housing nets
+other residents a small gain (+$0.7–3.5bn), while their renters pay $22–58bn more to landlords.
+Innovation and institutions remain unpriced in both directions. [SOURCE: complete account;
+[prices and hours](immigration-consumer-price-and-native-hours-2026-09-18.md);
+[real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md)]
 
 ## 5. "The second generation pays it back."
 
@@ -222,6 +226,11 @@ future profiles; see the [projection back-tests](immigration-projection-backtest
 
 Police, courts and prisons are charged per capita, equal for every resident, so the fiscal
 headline contains no group-specific crime cost, and victim costs are outside a fiscal account.
+Charged by use instead, they add $1.7–5.9bn. The group's Hispanic custody share is close to
+its working-age share; whites' imprisonment rate is far lower. Crimes by group members against
+other residents cost the victims about $29bn a year ($15–45bn; $43bn if non-fatal offending
+follows arrest shares), a social cost beside the fiscal headline
+([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §2–3).
 Start from the [custody and crime measurement rule](immigration-detention-crime-and-fiscal-scope-2026-09-20.md)
 and the [generation incarceration memo](immigration-mexican-origin-generation-incarceration-2026-09-16.md)
 before quoting any ratio.
@@ -359,3 +368,7 @@ they get more prominence.
   re-based on the September 19 ledger (−$6,921, was −$6,864 on the September 17 base),
   under-65 institutional change $1.3bn, and entry 14 now carries ladder 181's direct
   estimates beside the job-overlap reading. No headline number changed.
+- 2026-09-23 (real costs). Entries 4 and 12 now route to the
+  [real-costs memo](immigration-real-fiscal-and-social-costs-2026-09-23.md): justice keyed by use,
+  crime victims' harm and the housing net are priced beside the account. No headline number
+  changed.

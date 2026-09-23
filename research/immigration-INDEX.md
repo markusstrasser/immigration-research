@@ -64,6 +64,20 @@ general public services, existing interest and business subsidies are held at **
 response by assumption**, not by a CBO estimate; general public services at 25% would
 add $12.1bn ([scope memo](immigration-education-administration-scope-2026-09-20.md)).
 
+[Real fiscal and social costs](immigration-real-fiscal-and-social-costs-2026-09-23.md)
+(September 23, ladder 188–192) prices the channels the headline left out:
+- charging courts, police and prisons by use adds **$1.7–5.9bn**;
+- uncompensated hospital care adds **$1.6–9.2bn**;
+- crimes by group members against other residents cost the victims **$29bn** a year
+  ($15–45bn; $43bn on arrest shares), a social cost beside the budget;
+- housing nets other residents **+$0.7–3.5bn**, while their renters pay $22–58bn more;
+- wages move **$66–166bn** from less- to more-educated natives.
+
+Summed at central values, the total is **$197–244bn a year**, against the published
+$165–197bn. The transfers are not added, but they run from poorer to richer residents.
+Adopting the use keys is a proposal awaiting the operator. Congestion and income-weighted
+lanes are running.
+
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
 second generation, reference group, education, single year, legacy cohorts, ageing,
