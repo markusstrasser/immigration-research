@@ -792,3 +792,28 @@ measure. Used in21 conditional Mariel SCM models, not national population accoun
 - Local/codebook/size: `sources/immigration-fiscal/data/external/cps/cps_2ndgen.csv.gz`, 131,330,429 bytes, SHA256 `a510e7a969548694…` in `cps_2ndgen.manifest.json` beside it; DDI codebook `cps_2ndgen.xml` (31 variables); 5,721,633 person rows, ASEC 1994–2025, rectangular person file.
 - Key variables: `NATIVITY` (1 both parents native … 5 foreign-born), `BPL`/`FBPL`/`MBPL` (5-digit IPUMS-CPS detailed codes: 09900 US, 20000 Mexico, 21030 El Salvador, 51500 India), `CITIZEN`, `YRIMMIG`, `AGE`, `SEX`, `RACE`, `HISPAN`, `MARST`, `EDUC`, `EMPSTAT` (10/12 employed), `LABFORCE` (2 in labor force), `INCTOT`/`INCWAGE` (999999999 not in universe), `UHRSWORKLY`, `WKSWORK1`, `NCHILD`, `YNGCH`, `ASECWT`; record ids `SERIAL`, `PERNUM`, `CPSID`, `CPSIDP`.
 - Quirks/use: parental birthplace is country-level but the loader collapses it to nine regions; `EDUC` is a code, not years; no replicate weights requested; ASEC oversample flags (`ASECFLAG`, `HFLAG`) carried. Consumed by `build/load_cps_second_gen.py` → `derived/lifetime/cps_second_gen_by_origin.csv` (37 generation × origin cells, ages 25–64, n ≥ 100) after the September 22 code fix; no memo yet.
+
+### IPUMS_USA_EXTRACTS_2026_09_23 — every IPUMS USA extract on the operator's account, one store
+
+- Source/acquired: IPUMS USA, University of Minnesota [SOURCE: https://usa.ipums.org/usa/]. Extracts 1 and 2 were built in the browser on June 23, 2026. Extract 1 was superseded by 2 and never downloaded, and the files of both have since expired at IPUMS. The schooling, crime and ancestry lanes submitted extracts 3–15 through the API on September 23, 2026. `infra/immigration-fiscal/ipums_usa_store_2026_09_23/organize.py` downloaded 7 and 8, fetched the missing DDIs and built the store. Every September file matches IPUMS's published sha256 [DATA: `infra/immigration-fiscal/ipums_usa_store_2026_09_23/derived/gates.csv`].
+- Local/codebook/size: `sources/immigration-fiscal/data/external/ipums/usa_extract/usa_000NN_<samples>_<universe>[_<content>].csv.gz`, each with its DDI beside it as `.xml` (none exists for 2). These are hard links to the lane caches. Catalog: `usa_extract/CATALOG.md` and `catalog.json`, with a tracked copy in the lane's `derived/`. 14 held extracts, 97,451,092 person rows, 1.64 GB compressed. Typed Parquet (1.13 GB) is in `sources/immigration-fiscal/derived/ipums_usa/`. DuckDB `sources/immigration-fiscal/derived/ipums_usa_extracts.duckdb` has views `usa_00002`…`usa_00015`, `qflags`, `usa_000NN_q` and `usa_00002_sex`, and tables `catalog`, `variables`, `value_labels`, `joins` and `gates`. SHA256 per file in the raw-file manifest.
+- Key variables: person key `YEAR`, `SAMPLE`, `SERIAL`, `PERNUM`, unique within every extract and the same person across extracts. Also `BPL`/`BPLD`, `CITIZEN`, `YRIMMIG`, `EDUC`/`EDUCD`, `AGE`, `SEX` (not in 2), `HISPAN`, `RACE`, `GQ`/`GQTYPE`, `STATEFIP`, `PERWT`, and `REPWTP1`–`REPWTP80` (5 and 7). Extract 10 has wages, hours, weeks, commute, `PUMA` and `MET2013`; 11 has the same with `METAREA` and `COUNTYFIP`. Allocation flags `QBPL`, `QYRIMM`, `QEDUC` and `QCITIZEN` come from 6, 13, 14 and 15.
+- Universes:
+  - 2: all persons in the 1980, 1990 and 2000 5% censuses and the ACS 2010 and 2023.
+  - 3: the Mexico-born, 1980–2000 censuses and ACS 2005–2024.
+  - 4 and 6: men 18–40, 1980–2000 censuses.
+  - 5: Mexico-born men 18–40, ACS 2006–2024 without 2020.
+  - 7 and 9: US-born men 18–40, ACS 2019, 2023 and 2024.
+  - 8: US-born men 18–40, ACS 2006–2024 without 2020.
+  - 10: ages 16–64 in the 2000 5% census, the ACS 2010 and the ACS 2009–2011.
+  - 11: ages 16–64 in the 1990 5% census.
+  - 12: the Mexico-born, ACS 2000–2004.
+  - 13: QEDUC for the people of 3 and 12.
+  - 14: institutionalized men 18–40, 1980–2000.
+  - 15: institutionalized persons of all ages, 2000.
+- Quirks/use:
+  - Joins: all 55 pairs of extracts that share a sample were joined on the four keys. Every record inside an overlapping universe found its counterpart, and 788 shared columns agree record by record, so flags and SEX carry across extracts [DATA: `infra/immigration-fiscal/ipums_usa_store_2026_09_23/derived/joins.csv`]. `usa_000NN_q` attaches the flags to each extract they cover; a NULL flag means not extracted for that record.
+  - SEX for the Borjas panel: `usa_00002_sex` covers 29–66% of weighted records by year. It includes two absence rules, each tested at 0 errors [DATA: `infra/immigration-fiscal/ipums_usa_store_2026_09_23/derived/sex_coverage.csv`].
+  - Store layout: the slugged names share `usa_extract/` with the original `usa_00002.csv.gz`, which `build/load_ipums_borjas_panel.py` resolves by exact name (4767db7). The views hold absolute Parquet paths, so re-run `organize.py duckdb` after moving the repository.
+  - Content limits: the 1990 and 2000 files do not identify institution type. US-born means the 50 states and DC.
+  - Used by: crime_selection_cohorts (4, 5, 6, 9, 14, 15), schooling_selection_position (3, 12, 13), ancestry_iv_congestion_wages (10, 11) and the Borjas panel loader (2). Extracts 7 and 8 are not yet used [INFERENCE: from `rg` over the lanes' scripts]. Store README: [`ipums_usa_store_2026_09_23/README.md`](../infra/immigration-fiscal/ipums_usa_store_2026_09_23/README.md).
