@@ -42,6 +42,8 @@ Two rules need a concrete list the paper does not print:
 """
 from __future__ import annotations
 
+import sys
+
 import numpy as np
 import pandas as pd
 
@@ -130,6 +132,14 @@ def impute(d: pd.DataFrame, hh: pd.DataFrame, *, use_occupation_rule: bool = Tru
     benefit = (d.SS_VAL.gt(0) | d.SSI_VAL.gt(0) | d.MCARE.eq(1)
                | d.MIL.eq(1) | d.CHAMPVA.eq(1))
     if use_medicaid_rule:
+        # The paper's clause assumes Medicaid implies legal status. States that cover people
+        # regardless of status break it (California: children from 2016, all ages from 2024).
+        # `california_medical_status_2026_09_23` measures the damage: 0.47-0.66M Mexico-born moved
+        # into the legal column; its STATUS_BLIND_2024 rule set is the state-aware alternative.
+        print("[DEGRADED] impute_status: Medicaid clause treats every Medicaid reporter as legal; "
+              "wrong in status-blind states (CA 2016+/2024+). State-aware variant: "
+              "california_medical_status_2026_09_23/cps_ca_status.py STATUS_BLIND_2024",
+              file=sys.stderr)
         benefit = benefit | d.MCAID.eq(1)
     rule["c_benefits"] = benefit.to_numpy()
     rule["d_veteran_or_armed_forces"] = (d.VET_YN.eq(1) | d.PEAFEVER.eq(1)
