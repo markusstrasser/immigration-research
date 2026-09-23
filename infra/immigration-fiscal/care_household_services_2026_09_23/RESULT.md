@@ -293,3 +293,7 @@ Re-running `hours_tax.py`, `elder_care.py` and `summary.py` reproduced every der
 - CEX detail by Hispanic origin (it matters only for the side view).
 
 Model: claude-opus-5-5[1m]. Nothing was committed.
+
+## Revisions
+
+2026-09-23: Connecticut planning regions (09110–09190) now map to 2013 CBSAs in the shared crosswalk (`hours_tax.py` and `summary.py` rerun); metro areas go 424 → 428. Household-service taxes: central $2.69bn → $2.69bn (−$0.0002bn), 95% upper bound $3.86bn → $3.85bn; additive total $4.15bn → $4.15bn; the consumer-surplus side view's metro figure $23.39bn → $23.40bn; Cortés–Tessada Table 7 (2.375) all-channel earnings $31.30bn → $31.29bn. The largest move in any cell is $0.004bn. Detail: [`CT_PLANNING_REGIONS.md`](../hedonic_composition_2026_09_19/CT_PLANNING_REGIONS.md).

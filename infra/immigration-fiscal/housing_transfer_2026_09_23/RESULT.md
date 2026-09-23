@@ -381,3 +381,7 @@ The tabulation takes about two minutes and the rest seconds. Five tests pass.
 | `inputs.py` | `inputs_land_foreign.csv` (Z.1), `inputs_scf.csv`, `inputs_wz.csv`, `inputs_rhfs.csv` |
 | `arms.py` | `cbsa_exposure.csv`, `arms_grid.csv` (every case), `arms_headline.csv`, `arms_summary.csv`, `parameters.csv` (each input with its source tag), `checks.json` |
 | `test_arms.py` | rent-path arithmetic, the fixed-stock welfare integral, support-limited form, land elasticity |
+
+## Revisions
+
+2026-09-23: Connecticut planning regions (09110–09190) now map to 2013 CBSAs in the shared crosswalk; `nonmetro_09` shrinks from 3.68m to 0.11m persons and metros go 377 → 381 (Hartford, New Haven, Bridgeport–Stamford, Norwich–New London; Worcester gains northeastern Connecticut). Saiz-matched metros go 225 → 227 (Hartford 1.50, New Haven 0.98; Bridgeport–Stamford, Norwich–New London and Worcester have no Saiz match), 84.4% → 85.1% of other renters' rent. Metro-local flows move by at most $0.01bn: long-run central other renters' extra rent $33.86bn → $33.86bn (+$0.002bn), short-run central $110.41bn → $110.42bn, Saiz-local $45.30bn → $45.31bn; frame and welfare nets move by under $0.001bn and national-uniform rows are unchanged; owners' stock (long-run central) $1,931.57bn → $1,931.64bn. In the arms table, two printed metro cells change in their last digit: landlords' gain from other renters goes from 106.5 to 106.6 (short run, central) and from 133.1 to 133.2 (short run, high). Detail: [`CT_PLANNING_REGIONS.md`](../hedonic_composition_2026_09_19/CT_PLANNING_REGIONS.md).

@@ -503,3 +503,7 @@ imports `../housing_transfer_2026_09_23/arms.py` and reads
   - A nest-consistent construction premium: that needs the production-nativity nest lane's model.
   - The published versions of East et al. (JOLE 2023) and Bratsberg–Raaum (EJ 2012): not read;
     the discussion papers were.
+
+## Revisions
+
+2026-09-23: Connecticut planning regions (09110–09190) now map to 2013 CBSAs in the shared crosswalk (`metro.py` and `supply.py` rerun); `construction_metro.csv` goes 424 → 428 areas. The §4.1 central case uses uniform geography and is unchanged ($29.91bn after the $3.56bn offset). Metro-local A_central: $30.41bn → $30.42bn with supply, offset $3.44bn → $3.44bn (+$0.001bn); the largest move in any cell is +$0.01bn (C_price_all, low, metro-local offset $42.57bn → $42.58bn). In the §4.2 table, one printed range changes: C_price_all owners' offset goes from $2.01–2.41tn to $2.02–2.41tn (largest stock move +$0.6bn, C_price_all low metro-local, $2.369tn → $2.370tn). Detail: [`CT_PLANNING_REGIONS.md`](../hedonic_composition_2026_09_19/CT_PLANNING_REGIONS.md).

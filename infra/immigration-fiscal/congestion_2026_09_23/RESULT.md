@@ -318,3 +318,7 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-f
 
 `arms.py` stops with `[POSITIVE CONTROL FAILED]` if the UMR totals are not reproduced, and
 `tabulate.py` with `[GATE FAILED]` if the PUMS totals miss B08301 by more than 3%.
+
+## Revisions
+
+2026-09-23: Connecticut planning regions (09110–09190) now map to 2013 CBSAs in the shared crosswalk; only `derived/cbsa_commute.csv` changes (424 → 428 areas; `nonmetro_09` other residents 3.61m → 0.11m; Hartford, New Haven, Bridgeport–Stamford and Norwich–New London rows added; Worcester 0.87m → 0.97m other residents). The urban-area headline and every other output are byte-identical. Detail: [`CT_PLANNING_REGIONS.md`](../hedonic_composition_2026_09_19/CT_PLANNING_REGIONS.md).
