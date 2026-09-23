@@ -1,0 +1,43 @@
+NTA Fig. 5.3.3 identity check (before - after == credits); other taxes = total tax paid - after
+  TY2017: before-after= 2,486,148,677 credits= 2,486,148,677 match=True  other taxes= 1,885,872,173  credits/before=0.157
+  TY2018: before-after= 3,956,375,887 credits= 3,956,375,887 match=True  other taxes= 2,048,193,439  credits/before=0.242
+  TY2019: before-after= 3,831,513,233 credits= 3,831,513,233 match=True  other taxes= 1,998,524,385  credits/before=0.240
+  TY2020: before-after= 3,355,509,920 credits= 3,355,509,920 match=True  other taxes= 2,298,348,454  credits/before=0.211
+  TY2021: before-after= 1,706,696,929 credits= 1,706,696,929 match=True  other taxes= 2,841,554,281  credits/before=0.090
+  TY2022: before-after= 3,694,743,508 credits= 3,694,743,508 match=True  other taxes= 2,797,770,958  credits/before=0.203
+  TY2023: before-after= 3,308,250,976 credits= 3,308,250,976 match=True  other taxes= 2,532,618,691  credits/before=0.201
+
+Top-15 states: 2,922,414 = 77.1% of 3,791,421 ITIN returns
+  CA: 22.9%
+  TX: 11.8%
+  IL: 4.5%
+  CO: 1.9%
+  MD: 3.5%
+  WA: 2.3%
+Top-15 foreign countries: 135,705 = 3.6%
+ACTC if 1,000/child: $2.0bn
+ACTC if 1,250/child: $2.5bn
+ACTC if 1,500/child: $3.0bn
+  median MFJ: tax 513, nonrefundable CTC 513, ACTC 3,000, refundable share 85%
+  median HOH: tax 1,163, nonrefundable CTC 1,163, ACTC 2,837, refundable share 71%
+
+WFTC ITIN dollars if dollar share = application share [INFERENCE]
+  TY2022 x 10.0%: $13.3m
+  TY2022 x 9.0%: $12.0m
+  TY2024 x 6.0%: $12.3m
+  TY2024 x 4.4%: $9.0m
+
+Maryland ITIN EITC claimants = eligible - non-claimers
+  TY2021: 48,750 claimed; x $1,100 avg = $54m
+  TY2022: 51,442 claimed; x $1,100 avg = $57m
+  TY2023: 47,060 claimed; x $1,100 avg = $52m
+
+Cal Grant 2024-25: paid/offered 0.651; $5,503 per paid recipient
+  CADAA 2024-25: 15,606 offered -> ~10,163 paid -> ~$56m
+  CADAA 2025-26: 16,844 offered -> ~10,970 paid -> ~$60m
+
+WA Grant avg $4,814; WASFA recipients x avg = $14.8m (3.2% of recipients)
+
+Texas FY2017: GR state grants per award $1,092; tuition+fees paid per affidavit student $2,808
+MN 2022-23 dollars ~ 411 x $6,715 = $2.76m
+Recurring student grants with a figure, excluding TX (ended 2025), NJ (2018-19), IL, NY: $83m
