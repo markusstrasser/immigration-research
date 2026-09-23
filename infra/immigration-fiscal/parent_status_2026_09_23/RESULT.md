@@ -147,17 +147,23 @@ unusual (28% of its minors uninsured); it is not used.
 The literature agrees in direction. Bean, Leach, Brown, Bachmeier & Hipp (2011, IIMMLA, 1.5 and
 second generation pooled): children of Mexican mothers who remained unauthorized or of unknown
 status have 2.04 fewer years of school, 1.51 after controls, 1.24 with an IRCA-timing instrument
-[SOURCE: IMR 45(2), pp. 372–374, re-read from the corpus PDF]; this lane's seven explicitly
+(no standard error or first-stage statistic reported for the IV) [SOURCE: IMR 45(2), pp. 372–374,
+re-read from the corpus PDF]; this lane's seven explicitly
 never-legalized mothers give 2.03 unadjusted. Their book's summary: the harm comes from parents'
 "long-term inability ... to acquire green cards", and children of parents who legalize reach
 "schooling on par with those whose parents come legally" [SOURCE: publisher summary; book not
-read]. Quasi-experiments: DACA protection of mothers cut their citizen children's adjustment and
-anxiety diagnoses 4.3–4.5 points from about 7.9% (Hainmueller et al. 2017, Science); IRCA
-legalization raised Mexican mothers' birthweights 96 g (Cascio, Cornell & Lewis 2024, NBER
-w32635); DACA mothers' children gained 5 points of Medicaid enrollment (Tran 2025). Against a
-simple reading: Bean's unauthorized group mixes in unknown-status mothers; Landale et al. (2015)
-find children of undocumented Mexican mothers no worse than children of US-born mothers on
-behaviour; the Census–IRS mobility studies cannot see children of unauthorized parents at all.
+read]. Quasi-experiments, each a single study with a wide interval (integrity audit
+2026-09-23, `../study_audit_2026_09_23/C_children_status.md`): mothers' age eligibility for DACA cut
+diagnosed adjustment or anxiety disorders among children 0–12 by 4.3 points (95% CI 0.6–7.9) from
+7.9% (Hainmueller et al. 2017, Science; one Oregon RD, DACA receipt unobserved); counties with more
+IRCA applicants saw Mexican-born mothers' babies 34 g heavier in the average county, 96 g when
+extrapolated to one applicant (t ≈ 2), 65 g with birth composition held fixed (Cascio, Cornell &
+Lewis 2024, NBER w32635); DACA mothers' children moved 5 points from private coverage to Medicaid
+with no clear gain in total coverage (Tran 2025). Against a simple reading: Bean's unauthorized
+group mixes in unknown-status mothers; Landale et al. (2015) find children of undocumented Mexican
+mothers no worse than children of US-born mothers on externalizing behaviour; the Census–IRS
+mobility study (Abramitzky et al. 2021) drops children whose parents never obtained Social Security
+numbers, about 21% of Hispanic children, which flatters Mexican-origin mobility.
 Full table, grades and verification levels: `literature.md`.
 
 ---
