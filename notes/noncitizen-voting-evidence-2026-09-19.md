@@ -1087,3 +1087,82 @@ Validation System," CARRA Working Paper 2014-02** — and then reports no false 
 The authors knew the Bureau's own method for estimating the quantity Abowd says would decide the
 result, cited the paper that describes it, and omitted the estimate. A record linkage where 29% of
 the flagged cases have no country of birth is not one where that omission is incidental.
+
+---
+
+# Block 8 — Reuters national tally of error registrations, Iowa and Pennsylvania resolved (appended 2026-09-23)
+
+**Reuters, "Thirty thousand mistakes. How red and blue states added non-citizens to the US voter
+rolls", 2026-09-23.** Full text via <https://ae.marketscreener.com/news/thirty-thousand-mistakes-how-red-and-blue-states-added-non-citizens-to-the-us-voter-rolls-ce785ad9dd8af420>
+and <https://www.usnews.com/news/politics/articles/2026-09-23/thirty-thousand-mistakes-how-red-and-blue-states-added-non-citizens-to-the-us-voter-rolls>
+[SOURCE, read]. Grade **B**: a news compilation built from the Center for Election Innovation &
+Research tracker, then checked by Reuters against state officials, court records and local media.
+- "US states may have added **more than 30,000 self-declared non-citizens** to the nation's voter
+  rolls **since 2000** because of software glitches and clerical errors made while processing their
+  driver's license and state ID applications." Twelve states: New Jersey plus California,
+  Illinois, Iowa, Nevada, Ohio, Oregon, Pennsylvania, South Dakota, Texas, Utah and Virginia.
+- "**Reuters was not able to determine how many of these non-citizens actually cast a ballot.**"
+  The article gives no per-state breakdown of the 30,000, and "the numbers are inexact because
+  state data is often tentative and subject to revision."
+- Virginia: "hundreds" a year since 2014 and **more than 4,500 in 2025 alone**, from the Department
+  of Elections' annual reports; "State officials say those numbers include people who later became
+  citizens." Oregon: "hundreds" registered from foreign passports and birth certificates, plus
+  "hundreds" of American Samoans (US nationals, not citizens).
+- Heritage's Don Palmer, quoted: DMV mistakes are "the primary issue."
+
+**Iowa, final disposition. [Resolves the Block 4 GAP.]** Iowa Secretary of State release,
+2025-03-20, <https://sos.iowa.gov/news-resources/iowa-secretary-states-audit-voter-registration-lists-finds-277-confirmed-noncitizens>
+[SOURCE, primary; AP, Iowa Capital Dispatch and the Iowa AG agree]:
+
+| Quantity | Value |
+|---|---|
+| Registrants challenged in Oct 2024 (DOT self-reported non-citizen at some point in 12 years) | 2,176 |
+| **Confirmed non-citizens after SAVE** | **277 (12.7%)**; the other ~87% were citizens |
+| Ballots counted, 2024 general | **35** (18 at polls, 15 absentee, 2 provisional) |
+| Ballots rejected | 5 |
+| Registered in 2024, did not vote | 22 |
+| Denominator | >1.6 million ballots; ~2.3 million registered |
+
+35 counted ballots in 1.6 million is **22 per million**. The 87% citizen share of the DOT flag is
+the same false-positive mechanism as Virginia's "declared non-citizen" flag (Block 7.1) and
+Pennsylvania's INS indicator below: a non-citizen answer given to a motor-vehicle agency years ago
+does not say the person is a non-citizen today.
+
+**Pennsylvania, the PennDOT motor-voter defect (in place since the mid-1990s, fixed December
+2017).** [SOURCE, primary: written testimony of Jonathan Marks, PA Department of State, House State
+Government Committee, 2017-10-25, <https://www.legis.state.pa.us/WU01/LI/TR/Transcripts/2017_0109_0002_TSTMNY.pdf>;
+Philadelphia City Commissioner Al Schmidt, same hearing, <https://www.legis.state.pa.us/WU01/LI/TR/Transcripts/2017_0109_0001_TSTMNY.pdf>;
+follow-up via Pittsburgh Post-Gazette/Inquirer 2018-07-27]
+- **1,160** registrants had self-reported non-citizenship and cancelled; **248 (21%)** had voted at
+  least once, casting **642** ballots; 769 (66%) had first registered through motor voter.
+- **544 ballots across 35 primaries and generals, 2000–2017, against 93.6 million cast: 5.8 per
+  million**, about 16 per statewide election.
+- Philadelphia alone: 220 documented non-citizen registrants 2006–2017, 90 (41%) voted, 227 votes.
+- The wider data match first flagged 11,198, which letters and robocalls narrowed to 8,698
+  unconfirmed records sent to counties in July 2018. The state warned the raw match overstated,
+  because many INS-indicator holders "may have become citizens since, and many had."
+
+**Rates in one unit.** Counted non-citizen ballots per million ballots, where a state measured
+them: Pennsylvania 2000–2017 **5.8**, Ohio 2018–2024 8.4 (referrals), Iowa 2024 **22**, New Jersey
+2024 under 93 (<400 of ~4.3M). Share of error registrants who ever voted: Pennsylvania 21%,
+Philadelphia 41%, Louisiana 21%, Georgia 45% (9 of 20), New Jersey at most 6% (short window); Iowa
+14% attempted in the single 2024 general.
+
+[INFERENCE] **The Reuters tally fits the Block 6 point estimate and does not move it.** Scaling
+Pennsylvania's own ratio (544 ballots per 1,160 self-reported registrants over 18 years) to 30,000
+registrations gives roughly 14,000 ballots across all elections since 2000, i.e. **a few hundred per
+federal election nationwide**, the low end of the 300–3,000 range. Two biases pull opposite ways.
+The tally counts only errors someone found: New Jersey's ran undetected for two years, and
+Pennsylvania's surfaced because registrants wrote in to cancel. It also includes flag-based counts
+with known citizen false positives: Virginia's annual figures by the state's own account, and Iowa's
+87% before SAVE. Neither bias approaches the three to four orders of magnitude between these counts
+and any state margin.
+
+**Scope for this repository.** Registration errors move no taxes, transfers or services, so they
+are not an item in the fiscal account; the only fiscal trace is administrative (vendor replacement,
+list maintenance, investigations). As a political channel they are small beside the lawful ones
+already measured: counting the unauthorized of all origins where they live moves 2 House seats
+(ladder 147), and the Mexican-origin share of *citizen* voters reached 6.04% in 2024 (ladder 160).
+
+[GAP] Reuters' per-state composition of the 30,000, which decides how much of it is Virginia's
+flag-based count. CEIR's tracker is the source to pull if this is reopened.
