@@ -1,0 +1,103 @@
+{
+  "frame": "annual, 2024 dollars, other residents",
+  "d_eta_gr_halves": 0.2239797121724335,
+  "phi_gap_gr_halves": 0.24492710055074685,
+  "eq7_predicted_gap_ours": -0.2936675935603455,
+  "eq7_predicted_gap_paper": -0.29,
+  "central_spec": "CK_T5b_IV, all metros, other-native men, D 5, L 10",
+  "ck_era_central_components_bn": {
+    "protection_bn": 1.8385918567006896,
+    "crowding_bn": 1.384788808692625,
+    "net_bn": 0.45380304800806476,
+    "net_bn_se": 0.1570077509849331,
+    "welfare_rho_1.0_bn": 0.4538030480080646,
+    "welfare_rho_0.75_bn": 0.8000002501812209,
+    "welfare_rho_0.5_bn": 1.146197452354377,
+    "welfare_rho_0.0_bn": 1.8385918567006896,
+    "risk_premium_gamma_1_bn": 0.13380685805913953,
+    "risk_premium_gamma_2_bn": 0.26761371611827905,
+    "risk_premium_gamma_3_bn": 0.4014205741774186,
+    "fiscal_net_bn": 0.17426037043509687,
+    "fiscal_protection_bn": 0.7060192729730648
+  },
+  "insurance_ck_era_bn": {
+    "low": 0.038466310924675784,
+    "central": 0.8000002501812209,
+    "high": 3.0293090967284426
+  },
+  "present_day": {
+    "long_distance_excess_2006_10": 0.0122645120387603,
+    "long_distance_excess_2019_24": -0.00206051127934744,
+    "return_rate_now": 0.007820160813187397,
+    "return_rate_ck_2005_10": 0.023,
+    "rate_ratio": 0.16332707305036154,
+    "elasticity_gap_mexfb_minus_natives_ols": {
+      "GR_2006_2010": 1.3183913280212285,
+      "COVID_2019_2021": 0.4470674594972546,
+      "COVID_2019_2022": -0.30978159477663053,
+      "COVID_2019_2023": 0.04904518774065869,
+      "BOOM_2012_2016": -0.2980894396984377
+    },
+    "elasticity_ratio_covid21_over_gr": 0.3391007282854761,
+    "factor_low": 0.0,
+    "factor_central": 0.16332707305036154,
+    "factor_high": 0.3391007282854761
+  },
+  "insurance_present_bn": {
+    "low": 0.0,
+    "central": 0.13066169930165578,
+    "high": 1.0272409209024327
+  },
+  "borjas_bn": {
+    "as_defined_full_sorting": {
+      "low": 3.4057377447449997,
+      "central": 5.5803039600675,
+      "high": 16.6110360849375
+    },
+    "observed_2024_sorting": {
+      "low": 0.1808228774287499,
+      "central": 0.52422141204,
+      "high": 1.43454656359125
+    }
+  },
+  "lane_total_present_bn": {
+    "low": 0.1808228774287499,
+    "central": 0.6548831113416558,
+    "high": 2.4617874844936827
+  },
+  "per_group_member_usd": {
+    "low": 4.42146761312451,
+    "central": 16.013153359537053,
+    "high": 60.195445332258956
+  },
+  "per_other_resident_usd": {
+    "low": 0.611236609913267,
+    "central": 2.213705138187799,
+    "high": 8.321594356564438
+  },
+  "insurance_ck_era_per_member_usd": {
+    "low": 0.9405753871870975,
+    "central": 19.561546895865188,
+    "high": 74.07244178273815
+  },
+  "denominators": {
+    "group_members": 40896574,
+    "other_residents": 295831228.85
+  },
+  "enadid_return_rates": {
+    "2018": {
+      "returnees_5yr_men": 219871.0,
+      "share_hs_or_less": 0.8980856957033898,
+      "acs_base_year": 2013.0,
+      "acs_mexfb_men_hs_or_less_18_59": 4151304.0,
+      "annual_rate": 0.009513299917327184
+    },
+    "2023": {
+      "returnees_5yr_men": 166742.0,
+      "share_hs_or_less": 0.8648330954408607,
+      "acs_base_year": 2018.0,
+      "acs_mexfb_men_hs_or_less_18_59": 3688006.0,
+      "annual_rate": 0.007820160813187397
+    }
+  }
+}

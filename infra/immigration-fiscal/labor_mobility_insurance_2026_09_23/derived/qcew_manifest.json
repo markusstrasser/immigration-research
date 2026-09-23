@@ -1,0 +1,47 @@
+{
+  "2006": {
+    "url": "https://data.bls.gov/cew/data/files/2006/csv/2006_annual_singlefile.zip",
+    "bytes": 78154538,
+    "sha256": "8962b4c72e5ba6d209fd6994b97464bac3b0f32a9d86ad1f6f5be23dad791763"
+  },
+  "2010": {
+    "url": "https://data.bls.gov/cew/data/files/2010/csv/2010_annual_singlefile.zip",
+    "bytes": 77958662,
+    "sha256": "7e16346d408eee039f776e04bac0ad78d5619bba2e1974a36a1514dc70339923"
+  },
+  "2012": {
+    "url": "https://data.bls.gov/cew/data/files/2012/csv/2012_annual_singlefile.zip",
+    "bytes": 76811253,
+    "sha256": "8722ceb01567a4cc5e68f0de9a2fe91ee6b55e6d4f4a6f07b6097a348ac2ffb3"
+  },
+  "2016": {
+    "url": "https://data.bls.gov/cew/data/files/2016/csv/2016_annual_singlefile.zip",
+    "bytes": 77800376,
+    "sha256": "29d62214a154b71a9b1b13b6e52bc927c39c2ed888f1a23d8cb2361bee9af7f8"
+  },
+  "2019": {
+    "url": "https://data.bls.gov/cew/data/files/2019/csv/2019_annual_singlefile.zip",
+    "bytes": 78411719,
+    "sha256": "ce3b0bbab9098170cd7f646908e6dfa6181db4119edfdb21f80ae415be1eae29"
+  },
+  "2020": {
+    "url": "https://data.bls.gov/cew/data/files/2020/csv/2020_annual_singlefile.zip",
+    "bytes": 77441967,
+    "sha256": "dbc9eea24a9dd1d7d5c011defba76e47f6d938b714933c851517e2737d02be44"
+  },
+  "2021": {
+    "url": "https://data.bls.gov/cew/data/files/2021/csv/2021_annual_singlefile.zip",
+    "bytes": 79217997,
+    "sha256": "96fc23b5f16adeaed7a97ae4063bb59feda1471c635082c4ccdcd6c42882d209"
+  },
+  "2022": {
+    "url": "https://data.bls.gov/cew/data/files/2022/csv/2022_annual_singlefile.zip",
+    "bytes": 77024919,
+    "sha256": "29f852b0f6405615b45e41d40e930d2e93dd8cecab505f8395b0ceb50061551d"
+  },
+  "2023": {
+    "url": "https://data.bls.gov/cew/data/files/2023/csv/2023_annual_singlefile.zip",
+    "bytes": 82932544,
+    "sha256": "6284aff110a81196803c4f2ab8613a511838878d1763b8a1a8a21231200b8f61"
+  }
+}
