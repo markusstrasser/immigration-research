@@ -116,7 +116,7 @@ ACS population by year, with the 2024 relative position held or income-adjusted,
 **$1.3–2.2tn (10y), $2.0–3.3tn (15y), $2.4–3.9tn (20y)** for the September 20 main net-cost
 case, 2024 dollars, no interest; the whole-budget rules alone give $1.4–2.0tn, $2.0–3.1tn and
 $2.4–3.8tn. On the adopted $203–250bn anchor the whole-budget rules give **$1.7–2.5tn, $2.5–3.7tn
-and $3.0–4.6tn**; the programme-by-programme version is not re-run. 2020–2021 supply over a third of the ten-year total. Measured trend (ACS):
+and $3.0–4.6tn**; the programme-by-programme version is not re-run. 2020–2021 supply 29–39% of the ten-year total under the rules that follow the benefit spike (over a third in the programme version) and 20% under the flat carry. Measured trend (ACS):
 per-capita income 0.52→0.61 of the national figure over 2008–2024, median household
 income 0.78→0.91, full-time men's earnings 0.64→0.75 with the gain in 2016–2019 and
 2021–2023 and none in 2024. Model ranges, not intervals; a measured series needs the
