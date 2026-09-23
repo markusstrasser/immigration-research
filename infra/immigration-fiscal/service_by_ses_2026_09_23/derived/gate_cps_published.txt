@@ -1,0 +1,5 @@
+National rates, population 16+, lane vs AmeriCorps published (same supplement):
+  volunteered    2021  lane  23.2%  published  23.2%  delta +0.0 points
+  volunteered    2023  lane  28.3%  published  28.3%  delta +0.0 points
+  gave_over_25   2021  lane  48.1%  published  48.1%  delta -0.0 points
+  gave_over_25   2023  lane  48.5%  published  48.5%  delta +0.0 points

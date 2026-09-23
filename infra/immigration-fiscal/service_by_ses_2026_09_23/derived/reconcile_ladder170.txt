@@ -1,0 +1,11 @@
+US-born men 18-49, share ever on active duty (MIL 1-2), person weights
+  2022  Mexican, ANC1P 210 (ladder 170's code)   records  24,793   5.32%
+  2022  Mexican, the lane's 7 ancestry codes     records  32,068   5.16%
+  2022  Asian Indian, ANC1P 615                  records   1,908   1.42%
+  2023  Mexican, ANC1P 210 (ladder 170's code)   records  25,822   5.25%
+  2023  Mexican, the lane's 7 ancestry codes     records  33,123   5.25%
+  2023  Asian Indian, ANC1P 615                  records   2,130   0.88%
+  2024  Mexican, ANC1P 210 (ladder 170's code)   records  26,319   5.73%  ladder 170 5.70%  PASS
+  2024  Mexican, the lane's 7 ancestry codes     records  33,795   5.55%
+  2024  Asian Indian, ANC1P 615                  records   2,302   1.05%  ladder 170 1.05%  PASS
+PASS

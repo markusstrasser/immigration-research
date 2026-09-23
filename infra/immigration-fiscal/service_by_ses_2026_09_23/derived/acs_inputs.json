@@ -1,0 +1,26 @@
+{
+ "2022": {
+  "parquet_rows": 2768627,
+  "person_records": 3373378,
+  "weighted_17plus": 265332860,
+  "zip": "sources/immigration-fiscal/data/external/acs_pums_years/csv_pus_2022.zip",
+  "zip_bytes": 591122084,
+  "zip_sha256": "687a97773d0fdfec6c624ea6bf48466f12059d3ee80283a2ad8604ea7a66231e"
+ },
+ "2023": {
+  "parquet_rows": 2806587,
+  "person_records": 3405809,
+  "weighted_17plus": 266712592,
+  "zip": "sources/immigration-fiscal/data/census/acs_pums_2023_person.zip",
+  "zip_bytes": 597292173,
+  "zip_sha256": "98b6ecb14b4830d1f2b54c265a5bd997828415c2dab14e17369c40e98b78d9d4"
+ },
+ "2024": {
+  "parquet_rows": 2831822,
+  "person_records": 3422888,
+  "weighted_17plus": 271725294,
+  "zip": "sources/immigration-fiscal/data/external/acs_pums_2024_1yr/csv_pus.zip",
+  "zip_bytes": 602847146,
+  "zip_sha256": "afdc6d90c6e2f0bab365ed32d95ba4c4d8ac651162f46ac7861295b2dc469894"
+ }
+}
