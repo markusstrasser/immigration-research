@@ -193,7 +193,9 @@ Finding: only income-year 2024 is a complete account. The adult ledger replicate
 National spending per resident on each programme is measured for every year: Medicaid and
 Medicare were 42–47% smaller in 2005, refundable credits were 4.4 times their 2024 level in
 2021, police, courts and prisons were flat. Carrying the 2024 position back on those series
-gives about $1.3–2.2tn over ten years, $2.0–3.3tn over fifteen and $2.4–3.9tn over twenty;
+gives about $1.3–2.2tn over ten years, $2.0–3.3tn over fifteen and $2.4–3.9tn over twenty on
+the September 20 anchor, and $1.7–2.5tn, $2.5–3.7tn and $3.0–4.6tn on the adopted one (whole-budget
+rules only);
 2020–2021 supply over a third of the ten-year figure and are probably over-attributed. The
 group's own programme use in earlier years is unmeasured. [SOURCE: [back-cast](immigration-historical-backcast-2026-09-20.md)]
 
