@@ -1,5 +1,16 @@
 # Immigration — Dataset Register
 
+## September 23 county inputs for the general-government IV
+
+Inputs for the [county IV lane](../infra/immigration-fiscal/gg_response_county_iv_2026_09_23/README.md),
+copied with the operator's approval from `/Volumes/2TBPNY/corpus/`. Hashes and official routes are
+in `sources/immigration-fiscal/data/MANIFEST.md`.
+
+| Dataset / reference period | Storage and provenance | Variables and permitted use | Main limitation |
+|---|---|---|---|
+| CBP_COUNTY_2012_2017_2022: County Business Patterns, county files 2012, 2017, 2022 | `sources/immigration-fiscal/data/external/cbp_county/cbp{12,17,22}co.txt` (ignored), from the corpus copy of census.gov `cbp/datasets/20YY/cbpYYco.zip`; 2007 in the lane's `_cache/cbp/` | March employment and establishments by county and NAICS; the lane's industry-mix (Bartik) instrument uses 3-digit NAICS | 53–55% of county 3-digit cells are suppressed in 2007 and 2012 and imputed from size classes; place of work, not residence |
+| PEP_CC_EST2023_ALLDATA: county population by age, sex, race and Hispanic origin, vintage 2023 (2020–2023) | `sources/immigration-fiscal/data/external/census_county_pop/cc-est2023-alldata.csv` (ignored), same bytes as census.gov `popest/datasets/2020-2023/counties/asrh/` | County population for 2022; earlier years come from the intercensal files in the lane's `_cache/pep/` | Vintage 2023 estimates, not the ACS; latin-1 encoding |
+
 ## September 21 elder-care inputs and seven papers read in full
 
 Inputs for the [papers memo](immigration-marginal-revolution-leads-read-2026-09-21.md); commands,
