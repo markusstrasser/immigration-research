@@ -196,7 +196,7 @@ Medicare were 42–47% smaller in 2005, refundable credits were 4.4 times their 
 gives about $1.3–2.2tn over ten years, $2.0–3.3tn over fifteen and $2.4–3.9tn over twenty on
 the September 20 anchor, and $1.7–2.5tn, $2.5–3.7tn and $3.0–4.6tn on the adopted one (whole-budget
 rules only);
-2020–2021 supply over a third of the ten-year figure and are probably over-attributed. The
+2020–2021 supply 29–39% of the ten-year figure where the rules follow the benefit spike, and are probably over-attributed. The
 group's own programme use in earlier years is unmeasured. [SOURCE: [back-cast](immigration-historical-backcast-2026-09-20.md)]
 
 ## 9. "You are measuring the low-skilled inflows of 1970–2007. New arrivals are different."
