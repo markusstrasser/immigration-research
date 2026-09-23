@@ -1,0 +1,29 @@
+{
+  "report_exhibit_1_2024": {
+    "travel_delay_bn_hours": 9.8,
+    "congestion_cost_bn_2024usd": 269,
+    "truck_congestion_cost_bn": 35.8,
+    "wasted_fuel_bn_gallons": 2.8,
+    "cost_per_auto_commuter_usd": 1480,
+    "delay_per_auto_commuter_hours": 63
+  },
+  "sum_of_494_areas": {
+    "travel_delay_bn_hours": 9.800519,
+    "congestion_cost_bn_2024usd": 268.724,
+    "truck_congestion_cost_bn": 35.766,
+    "wasted_fuel_bn_gallons": 2.818481,
+    "total_cost_over_auto_commuters_usd": 2413.782572375572
+  },
+  "summaries_sheet_494_area_sum": {
+    "delay_kph": 9800519,
+    "cost_musd": 268724,
+    "truck_cost_musd": 35766
+  },
+  "cost_rebuilt_from_parts_bn": 268.72739124842104,
+  "cost_rebuilt_max_abs_rel_error_areas_over_50m": 0.010189959514170122,
+  "truck_cost_rebuilt_bn": 35.769545008421055,
+  "passenger_time_cost_bn": 223.92993728000005,
+  "passenger_fuel_cost_bn": 9.02790896,
+  "eq_a4_hours_per_auto_commuter_national_delta": 62.27521507649671,
+  "passed": true
+}

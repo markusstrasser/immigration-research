@@ -1,0 +1,107 @@
+{
+  "national_commute_vehicle_minute_share_scaled": 0.1236175839188069,
+  "national_phi_commute_route": 0.10821851260028557,
+  "national_phi_population_route": 0.10674719857476622,
+  "umr_areas": 494,
+  "in_scope_areas": 481,
+  "match_counts": {
+    "exact": 412,
+    "first_city": 45,
+    "any_city": 20,
+    "puerto_rico": 11,
+    "override": 4,
+    "unmatched": 2
+  },
+  "umr_areas_sharing_a_census_ua": {
+    "03904": [
+      "Atlantic City NJ",
+      "Villas NJ"
+    ]
+  },
+  "delay_share_in_scope": 0.9888821194061254,
+  "delay_share_puerto_rico": 0.010720350626329075,
+  "delay_share_unmatched": 0.0003975299675455963,
+  "umr_pop_over_acs_allocation_delay_weighted": 0.9965042545771676,
+  "umr_pop_over_acs_allocation_quartiles": {
+    "0.1": 0.917,
+    "0.25": 0.962,
+    "0.5": 1.003,
+    "0.75": 1.057,
+    "0.9": 1.141
+  },
+  "group_share_persons_delay_weighted": 0.14825629968587156,
+  "phi_delay_weighted": 0.13517303291307978,
+  "phi_population_route_delay_weighted": 0.13483931997928278,
+  "c_commute_delay_weighted": 0.15008931347703508,
+  "national_uniform_phi": {
+    "2017 southwest": 0.13517303291307978,
+    "2022 national": 0.12158914442088486,
+    "2017 national": 0.1446395906415203
+  },
+  "group_share_persons_in_scope": 0.13329089707075684,
+  "in_scope_residents_m": 239.76,
+  "others_in_scope_m": 207.80217451831535,
+  "others_commuters_in_scope_m": 88.13447965782619,
+  "others_car_commuters_in_scope_m": 77.66660436755456,
+  "others_vehicle_hours_bn_2022": 55.1868622572722,
+  "delay_share_of_travel_time_hours_weighted": 0.14527429738621947,
+  "delay_share_clipped_areas": 0,
+  "bpr_implied_time_elasticity": {
+    "low": 0.43596816645604464,
+    "central": 0.5810971895448779,
+    "high": 0.8546486915231292
+  },
+  "cdt_supply_exponent": {
+    "theta 0.07, sigma 0": 0.07526881720430109,
+    "theta 0.07, sigma 8": 0.04697986577181209,
+    "theta 0.07, sigma 16": 0.03414634146341464,
+    "theta 0.07, sigma 32": 0.022082018927444796,
+    "theta 0.13, sigma 0": 0.14942528735632185,
+    "theta 0.13, sigma 8": 0.06806282722513089,
+    "theta 0.13, sigma 16": 0.04406779661016949,
+    "theta 0.13, sigma 32": 0.02584493041749503,
+    "theta 0.19, sigma 0": 0.2345679012345679,
+    "theta 0.19, sigma 8": 0.0815450643776824,
+    "theta 0.19, sigma 16": 0.04935064935064935,
+    "theta 0.19, sigma 32": 0.027576197387518143
+  },
+  "umr_average_cost_share_of_group_bn": 35.98496128296606,
+  "vot": {
+    "reproduce_2015_personal": 13.585576923076923,
+    "reproduce_2015_business": 25.41839788732394,
+    "reproduce_2015_all_purposes": 14.129886687432284,
+    "reproduce_2015_truck_driver": 27.233301886792454,
+    "ecec_ratio_2015q2_all": 1.4608274647887323,
+    "ecec_ratio_2015q2_transport": 1.5377358490566038,
+    "ecec_ratio_2024q2_all": 1.4531446540880504,
+    "ecec_ratio_2024q2_transport": 1.4578313253012047,
+    "truck_driver_median_wage_2024": 25.543506553253135
+  },
+  "tau": {
+    "low": 0.0737088975835393,
+    "central": 0.09697684330846783,
+    "high": 0.12024478903339636
+  },
+  "delta": 0.526262,
+  "acs_pi": 0.9109644402494157,
+  "p_other": 0.4144311973451363,
+  "a1_fill_in_central_rows": [
+    {
+      "f_fill_in": "DT 0.48",
+      "total_bn": 36.26296179174813
+    },
+    {
+      "f_fill_in": "DT 0.44",
+      "total_bn": 33.89351903255044
+    },
+    {
+      "f_fill_in": "DT 0.32",
+      "total_bn": 26.193327637216697
+    }
+  ],
+  "network_beta": {
+    "UMR 2019-2021 national swing": 2.5178855164784055,
+    "CDT-equivalent k / delay share": 1.0285734644378748
+  },
+  "delay_share_used_for_cdt_equivalent_beta": 0.14527429738621947
+}
