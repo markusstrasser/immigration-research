@@ -1,0 +1,25 @@
+price_set,offence,victim_tangible,intangible,full,excluded_non_victim,note
+miller2021,Murder,2372050.39,6591712.61,8963762.99,1029897.35,productivity is PV of lost earnings + household work; QoL is net of work loss (no overlap)
+miller2021,Rape/sexual assault,9993.17,200449.23,210442.40,1170.86,rape and other sexual assault pooled at Miller's Table 4 incidence (0.562 rape)
+miller2021,Robbery,8026.51,14262.66,22289.17,13188.96,
+miller2021,Aggravated assault,6615.03,75082.35,81697.38,7163.96,split from Miller's pooled assault at k=3.96
+miller2021,Simple assault,3537.73,17115.70,20653.43,7163.96,split from Miller's pooled assault at k=3.96
+miller2021,Burglary,2129.48,0.00,2129.48,1292.53,no quality-of-life loss priced
+miller2021,Larceny/theft,614.27,0.00,614.27,3561.51,no quality-of-life loss priced
+miller2021,Motor vehicle theft,8082.82,0.00,8082.82,3484.72,no quality-of-life loss priced
+mccollister2010,Murder,1074536.68,11225164.39,12299701.06,788082.73,full = Viscusi-Aldy VSL only; earnings are inside it
+mccollister2010,Rape/sexual assault,7930.26,288788.01,296718.27,54248.65,risk-of-homicide removed from both victim cost and intangible (deaths counted as murders)
+mccollister2010,Robbery,2383.60,7249.86,9633.45,54433.68,risk-of-homicide removed from both victim cost and intangible (deaths counted as murders)
+mccollister2010,Aggravated assault,1792.07,19574.33,21366.40,145441.56,risk-of-homicide removed from both victim cost and intangible (deaths counted as murders)
+mccollister2010,Simple assault,3537.73,17115.70,20653.43,7163.96,not priced by McCollister; Miller-derived value carried
+mccollister2010,Burglary,1942.13,0.00,1942.13,7515.03,"intangible is risk-of-homicide only, removed"
+mccollister2010,Larceny/theft,699.34,0.00,699.34,4446.66,"intangible is risk-of-homicide only, removed"
+mccollister2010,Motor vehicle theft,8872.92,0.00,8872.92,6856.48,"intangible is risk-of-homicide only, removed"
+miller2021_dot_vsl,Murder,2372050.39,11327949.61,13700000.00,1029897.35,"full = US DOT 2024 VSL $13,700,000 (includes earnings)"
+miller2021_dot_vsl,Rape/sexual assault,9993.17,200449.23,210442.40,1170.86,rape and other sexual assault pooled at Miller's Table 4 incidence (0.562 rape)
+miller2021_dot_vsl,Robbery,8026.51,14262.66,22289.17,13188.96,
+miller2021_dot_vsl,Aggravated assault,6615.03,75082.35,81697.38,7163.96,split from Miller's pooled assault at k=3.96
+miller2021_dot_vsl,Simple assault,3537.73,17115.70,20653.43,7163.96,split from Miller's pooled assault at k=3.96
+miller2021_dot_vsl,Burglary,2129.48,0.00,2129.48,1292.53,no quality-of-life loss priced
+miller2021_dot_vsl,Larceny/theft,614.27,0.00,614.27,3561.51,no quality-of-life loss priced
+miller2021_dot_vsl,Motor vehicle theft,8082.82,0.00,8082.82,3484.72,no quality-of-life loss priced

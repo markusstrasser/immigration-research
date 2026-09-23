@@ -1,0 +1,15 @@
+item,value
+target 12+ (CPS ASEC 2025 union),33206257.400000
+CPS Hispanic civilian 12+,55573389.700000
+NCVS Hispanic 12+ 2024,53539670.000000
+"population share, within CPS (central)",0.597521
+"population share, NCVS denominator (rate x target)",0.620218
+"ACS 2020-24 institutional, men 18-39: rate_mexican",0.018244
+"ACS 2020-24 institutional, men 18-39: rate_listed_hispanic",0.020247
+"ACS 2020-24 institutional, men 18-39: rate_specific_origins",0.016317
+"ACS 2020-24 institutional, men 18-39: ratio_generic_kept",0.901059
+"ACS 2020-24 institutional, men 18-39: ratio_generic_reallocated",1.118080
+"Mexican share of Hispanic neighbours, national",0.586036
+"Mexican share of Hispanic neighbours, state",0.728839
+"Mexican share of Hispanic neighbours, county",0.743891
+"Mexican share of Hispanic neighbours, tract",0.786175

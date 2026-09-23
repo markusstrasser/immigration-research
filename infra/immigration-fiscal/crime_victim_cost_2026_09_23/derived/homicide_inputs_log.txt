@@ -1,0 +1,19 @@
+[gate] SHR76_25a.csv sha256 matches the homicide lane's pin
+[2024] victims 15,862; cleared 0.744; Hispanic first offender 1,619, of which multiple-offender incidents 0.275
+[2022_2024] victims 52,920; cleared 0.708; Hispanic first offender 5,269, of which multiple-offender incidents 0.274
+[2019_2024] victims 109,791; cleared 0.675; Hispanic first offender 9,665, of which multiple-offender incidents 0.254
+   window   victim  victims_all  cleared_share  cleared_off_eth_known  off_hispanic  p_off_hispanic  p_off_nh_white  p_off_nh_black  p_off_nh_other
+     2024 hispanic         2376         0.7719                   1509          1085          0.7190          0.1027          0.1670          0.0113
+     2024 nh_white         2890         0.8799                   2000           204          0.1020          0.6840          0.1965          0.0175
+     2024 nh_black         6103         0.6774                   3279           160          0.0488          0.0442          0.9021          0.0049
+     2024 nh_other          284         0.8239                    193            21          0.1088          0.1710          0.1969          0.5233
+2022_2024 hispanic         8175         0.7245                   4957          3481          0.7022          0.1031          0.1820          0.0127
+2022_2024 nh_white         9426         0.8682                   6380           672          0.1053          0.6776          0.2009          0.0161
+2022_2024 nh_black        21195         0.6387                  10881           569          0.0523          0.0470          0.8946          0.0062
+2022_2024 nh_other         1091         0.7929                    718            95          0.1323          0.1351          0.1880          0.5446
+2019_2024 hispanic        16628         0.6557                   9025          6342          0.7027          0.1035          0.1820          0.0117
+2019_2024 nh_white        19512         0.8467                  12758          1341          0.1051          0.6729          0.2061          0.0159
+2019_2024 nh_black        43938         0.5983                  21250           985          0.0464          0.0487          0.8991          0.0059
+2019_2024 nh_other         2185         0.7616                   1397           154          0.1102          0.1467          0.1890          0.5540
+[gate] WONDER 2024 XML parse equals the homicide lane's derived CSV, 21 cells
+[wonder] 2024 homicide deaths 20,162: hispanic 3,776, nh_white 5,070, nh_black 10,294, nh_other 945, not_stated 77
