@@ -1,0 +1,17 @@
+parameter,value,source
+s_national,0.12024478903339636,CPS union 40.896574m / ACS 2024 residents 340.110988m [DATA]
+support_share,0.03,"per-point estimates come from inflows of about 1-5% of population (Saiz annual ~1%, Wilson-Zhou weighted mean 3.1% of employment ~2.3% of population, ladder 183 mean +2.17 points) [SOURCE: lanes cited in RESULT.md]"
+e_short_run_low,1.0,Saiz 2007 rents ~1 per inflow of 1% of population (as reported by Wilson-Zhou p.44 and the Sep 16 housing lane); Monras author rescaling ~1 [SOURCE]
+e_short_run_central,1.5,midpoint of the two short-horizon anchors; = 1/eD at eD 0.67 [ASSUMPTION]
+e_short_run_high,2.0,"Wilson-Zhou 1.438 per 1% of employment in worker flow = 1.79-1.90 per 1% of population on covered employment, 2.1-2.2 on private (derived/inputs_wz.csv); Cabral-Steingress ~2 as reported by Wilson-Zhou [CALCULATION/SOURCE]"
+e_repo_decade,1.2444444444444445,"ladder 183 ancestry IV +1.4% per point of foreign-born share (SE 1.4) / 1.125 (dlnN = ds/(1-s), s = 0.111 in 2000); CI spans both arms [CALCULATION]"
+land_share_low,0.25,Z.1 2019Q4 owner-occupied land share of value 0.35 net of structure depreciation in the rent (user-cost) share [CALCULATION/ASSUMPTION]
+land_share_central,0.35,"Z.1 2024Q4 owner-occupied land share of value 0.405, rent share with 2% structure depreciation at a 5% return about 0.34 [CALCULATION]"
+land_share_high,0.46,Z.1 2024Q4 noncorporate residential land share of value 0.461 [DATA]
+demand_elasticity_low_effect,1.0,"housing demand elasticity 1.0 [ASSUMPTION, as ladder 180]"
+demand_elasticity_central,0.7,"0.7 [ASSUMPTION, as ladder 180]"
+demand_elasticity_high_effect,0.5,"0.5 [ASSUMPTION, as ladder 180]"
+own_group_of_other_central,0.02,SCF 2022 Hispanic share of other residential real estate 2.9% x Mexican-origin share of Hispanic householders 55% = 1.6%; ACS group share of interest/dividend/rental income 2.2%; group share of on-site owners of 2-4 unit buildings 6.0% [CALCULATION]
+own_group_of_group_central,0.05,co-ethnic landlords of the group's own rentals: unmeasured; 2-10% range [ASSUMPTION]
+own_foreign_central,0.015,"Z.1 foreign direct investment in noncorporate real estate 0.7% of its value (2024Q4), plus foreign holdings of corporate and REIT landlords, unmeasured; 0.7-3% [DATA/ASSUMPTION]"
+rhfs_2024_units_by_entity,,"RHFS 2024 PUF, share of reported rental units: individual investors 35.4%, trustee 4.2%, general partnership/tenants in common 1.7%, LLP/LP/LLC 48.3%, REIT 1.5%, real estate corporation 3.4%, nonprofit/cooperative/other institution 5.5% (derived/inputs_rhfs.csv); institutions are counted through their beneficial owners [DATA]"
