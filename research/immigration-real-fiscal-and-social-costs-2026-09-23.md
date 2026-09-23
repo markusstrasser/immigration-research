@@ -22,9 +22,10 @@ sit outside government budgets:
   the rent, this is a transfer among other residents, not a net cost.
 
 Fiscal and social costs together come to about **$228–287bn a year** at central values
-(full span $203–304bn), or $5.6–7.0k per group member. Two lanes are still running: road
-congestion, and an income-weighted version that counts the transfers, which mostly run from
-poorer to richer residents (§4). [CALCULATION: lanes and commits in "Sources"]
+(full span $203–304bn), or $5.6–7.0k per group member. By income the transfers run upward:
+outside the budget the bottom four fifths of other residents lose $80.7bn a year and the top
+fifth gains $46.0bn (§4). Road congestion is still being priced. [CALCULATION: lanes and
+commits in "Sources"]
 
 Date: 2026-09-23. Operator request: "equal charge --- should it be weighted with use of
 courts, police, prisons? Do the remaining common sense stuff to get at the real fiscal and
@@ -161,18 +162,52 @@ effects on less-educated natives are disputed in both directions
 ([canon audit](immigration-canon-citation-audit-2026-09-17.md)). The dollar size depends on
 where the skill line falls and on the substitution elasticity σ.
 
-**The transfers run from poorer to richer residents.** Less-educated workers and renters pay.
-More-educated workers, landlords and, as a stock, homeowners gain. The same direction likely
-holds where the account nets gains without showing who gets them. Cheaper low-wage services go
-mostly to higher-income households: the top income quintile receives 43% of the consumer gain,
-the bottom 9% [SOURCE: [prices memo](immigration-consumer-price-and-native-hours-2026-09-18.md),
-`partA_price_results.csv`]. Violent victimisation is highest in low-income households
-[UNVERIFIED here; the distribution lane reads the NCVS tables]. The fiscal gap may run the
-other way, because federal taxes are progressive. Counting a dollar as a dollar, as the account
-does, hides all of this. The standard fix is to weight each dollar by the recipient's income
-relative to the mean, raised to −η. A distribution lane is dividing each channel's total by
-income quintile of other residents and reporting the net at η = 0, 1, 1.3 and 2. Choosing η is
-a value judgment, so every value is shown. [INFERENCE; FRAMING-SENSITIVE]
+**The transfers run from poorer to richer residents, measured.** The distribution lane ranks
+other residents by SPM resources per equivalent adult (CPS ASEC 2025) and splits each channel by
+income fifth, $bn a year:
+
+| Channel | Bottom fifth | 2nd | 3rd | 4th | Top fifth | Total |
+|---|---:|---:|---:|---:|---:|---:|
+| Wages, after tax | −4.8 | −11.1 | −11.8 | −4.2 | +30.4 | −1.5 |
+| Housing net (renters' extra rent, landlords' receipts) | −7.2 | −5.3 | −3.8 | −1.9 | +21.7 | +3.5 |
+| Crime victims' harm (custody footing) | −10.4 | −6.5 | −5.5 | −5.0 | −4.9 | −32.3 |
+| Unreimbursed hospital care | −0.5 | −0.7 | −1.0 | −1.1 | −1.2 | −4.4 |
+| **Outside the budget, together** | **−22.8** | **−23.5** | **−22.1** | **−12.2** | **+46.0** | **−34.7** |
+| Fiscal cost, financed in proportion to taxes paid | −6.9 | −14.6 | −24.6 | −40.3 | −141.6 | −227.9 |
+| Fiscal cost, financed by equal cuts per person | −45.6 | −45.6 | −45.6 | −45.6 | −45.6 | −227.9 |
+
+In dollars the channels outside the budget nearly cancel. By income they do not: the bottom four
+fifths lose $80.7bn a year and the top fifth gains $46.0bn.
+
+- **Housing.** Renters pay about the same extra rent in every fifth ($566 a year per renter
+  household at the bottom, $1,770 at the top, but 13.8m renter households against 4.0m).
+  Landlords' receipts go 77% to the top fifth and 65% to the top tenth.
+- **Wages.** Deciles 1–8 lose and the top two deciles gain.
+- **Crime.** Victimisation is highest in low-income households: 40.0 violent victimisations per
+  1,000 persons below $25,000 against 17.2–20.4 above $100,000 (NCVS 2022–2024). The harm takes
+  1.83% of the bottom fifth's resources and 0.09% of the top fifth's.
+- **Consumer prices** (side view, never added) are the one gain larger at the bottom relative
+  to resources, 0.39% against 0.18%, though 41% of the dollars go to the top fifth.
+
+**The fiscal cost's incidence is a financing convention.** If every tax rises in proportion, the
+top fifth bears 62% of it. If services are cut equally per person, it takes 8.0% of the bottom
+fifth's resources and 0.85% of the top fifth's. The actual mix of taxes, cuts and deficits is not
+identified. With the social items added, the central total of $262.6bn takes 5.2% of the bottom
+fifth's resources and 1.8% of the top fifth's under tax-share financing, and 12.1% and 0.0% under
+per-person cuts.
+
+**Weighted by income.** Each dollar is weighted by (y/ȳ)^−η, with a 5th-percentile floor, and
+the result is reported as the equal per-person loss that would be as bad, which does not depend
+on how the weights are normalized. The channels outside the budget cost $94–111bn at η = 1–2,
+2.7–3.2 times their dollar sum. The whole central total is equivalent to $182bn under tax-share
+financing and $330bn under per-person cuts at η = 1.3, the UK Green Book's value. OMB's 2023
+Circular A-4 used 1.4; it was revoked in 2025 and the reinstated 2003 Circular sets no weights.
+Choosing η is a value judgment, so η = 0, 1, 1.3, 1.4 and 2 are all in the lane. The lane's
+mean-normalized totals (−$407bn and −$738bn at 1.3) are the same sums multiplied by the average
+weight (2.24), not a larger harm.
+[CALCULATION: [distribution lane](../infra/immigration-fiscal/distribution_weights_2026_09_23/RESULT.md)
+(f5b6d67), `derived/channel_by_quintile.csv`, `derived/weighted_totals.csv`; 212 gates]
+[FRAMING-SENSITIVE]
 
 ## 5. Checked and not found, or already inside the account
 
@@ -271,7 +306,7 @@ grow with the population.
 | [Wage split](../infra/immigration-fiscal/wage_distribution_2026_09_23/RESULT.md) | 3afdb25 | −$66 to −$166bn / +$71 to +$163bn |
 | [Adopted main case](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md) | 69eb31b | $203.2–249.6bn |
 | [Congestion](../infra/immigration-fiscal/congestion_2026_09_23/BRIEF.md) | 77d25cf (brief) | running |
-| [Income weights](../infra/immigration-fiscal/distribution_weights_2026_09_23/BRIEF.md) | 73077d1, c43a401 (brief) | running |
+| [Income weights](../infra/immigration-fiscal/distribution_weights_2026_09_23/RESULT.md) | f5b6d67 | outside the budget: bottom four fifths −$80.7bn, top fifth +$46.0bn |
 
 ## Revisions
 
@@ -281,3 +316,7 @@ grow with the population.
   (575e2ee), which raised it from $1.6–9.2bn to $4.7–10.6bn. Totals are recomputed: $228–287bn at
   central values, $203–304bn full span. Concept affected: the complete account's main case and
   the social items beside it.
+- 2026-09-23 (income distribution): §4 now reports the distribution lane's measured split
+  (f5b6d67). The victimisation gradient is verified from the NCVS tables, and the sentence that
+  the fiscal gap "may run the other way" is replaced by the two financing conventions. Concept
+  affected: who bears the transfers among other residents.

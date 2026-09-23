@@ -87,7 +87,9 @@ Beside the fiscal headline, as social costs:
 
 Wages move **$66–166bn** from less- to more-educated natives. Fiscal plus social costs come to
 **$228–287bn a year** at central values. The transfers are not added, but they run from poorer
-to richer residents. Congestion and income-weighted lanes are running.
+to richer residents: outside the budget the bottom four fifths lose $80.7bn a year and the top
+fifth gains $46.0bn. The fiscal cost is progressive if financed by tax shares and regressive if
+by equal cuts per person (ladder 194). The congestion lane is running.
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
