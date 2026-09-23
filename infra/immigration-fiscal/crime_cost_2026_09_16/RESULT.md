@@ -1,5 +1,7 @@
 **Measurement correction, 2026-09-20:** Route A2 applies a sentenced-prisoner offense mix and unit costs to ACS institutional shares, which cannot separate criminal custody, immigration detention or noncorrectional institutions. Its dollar results are conditional proxy scenarios, not measured ordinary-crime or detention costs. See the [current scope](../../../research/immigration-detention-crime-and-fiscal-scope-2026-09-20.md); the historical calculations below are retained for reproducibility.
 
+**Double-count correction, 2026-09-23:** McCollister's aggravated-assault and robbery prices include a statistical-life premium for the chance that the victim dies (76% and 42% of those prices), while murders are also counted separately, so the same deaths are counted twice and these cost figures are biased upward; not re-priced here. The tangible arm also carries the earnings-based slice of the same premium. For the complete account's frame use `infra/immigration-fiscal/crime_victim_cost_2026_09_23/RESULT.md`: in the complete account's frame, offences by the whole Mexican-origin population against other US residents cost those victims $4.5bn tangible and $28.9bn full a year (envelope $15–45bn, murder 32%).
+
 # Offence-weighted cost of crime per adult 25–64, by group
 
 Model self-report: claude-opus-5[1m] (Opus 5, 1M context)
