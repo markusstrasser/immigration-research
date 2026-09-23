@@ -40,43 +40,54 @@ No exact national total is identified by the examined files; this is not a claim
 that such a total is impossible in principle.
 
 Latest complete annual account: [national reconciliation and conditional net effects](immigration-complete-annual-account-2026-09-20.md).
-The integrated CBO-informed school/delayed-service comparison gives **$165–197bn/year
-conditional net cost to other US residents**; fixing non-school education budgets
-as well gives **$121–160bn**. The full proportional-service benchmark remains
-**$270–289bn**. Production is held fully adjusted while service responses vary;
+**Adopted main case (September 23): $203–250bn/year conditional net cost to other US
+residents.** It adds three changes:
+- general government responds at 0.59–0.84 instead of zero;
+- courts, police and prisons are charged by use;
+- the under-charged part of uncompensated hospital care is keyed to uninsured use.
+
+With non-school education budgets fixed as well, the cost is $159–213bn. The proportional-service
+benchmark is $308–341bn ([main-case lane](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md),
+[decision](../decisions/2026-09-23-main-case-general-government-and-use-keys.md)). The September 20
+versions were **$165–197bn**, **$121–160bn** and **$270–289bn**; the notes below quote them where
+they were computed on them. Production is held fully adjusted while service responses vary;
 these transferred short-run assumptions do not identify a long-run effect.
 The production term's perfect-substitution assumption now has an executed sensitivity: a
 [native–immigrant nest](immigration-production-term-nativity-nest-2026-09-22.md) gives +$17.9 / +$27.1bn
 at ε = 3 against +$8.8 / +$13.3bn (ladder 176). The same file's jobs put that elasticity near 6,
 where the computed neighbors ε = 5 and ε = 7 give about +$13–22bn and would put the band near
 $157–194bn; the directly estimated low-skill elasticities 8.7–17.9 (ladder 181) give
-+$10–18bn and a band near $160–196bn. The band is not re-run.
-Sampling plus donor error is about **±$12bn (1 SE)** per headline case; the main band's 95% intervals
-run **$141–221bn** together, and across constructions the assumptions dominate (ladder 184,
++$10–18bn and a band near $160–196bn. The band is not re-run. These shifts are against the
+September 20 band; the same production shifts apply to the adopted one.
+Sampling plus donor error is about **±$12bn (1 SE)** per headline case; the September 20 main band's
+95% intervals run **$141–221bn** together (not re-propagated for the adopted case), and across constructions the assumptions dominate (ladder 184,
 [uncertainty lane](../infra/immigration-fiscal/uncertainty_propagation_2026_09_22/RESULT.md)).
 The **$262–357bn** proportional-service grid includes weaker proxy stress tests.
 The report now regenerates all category comparisons and composition diagnostics.
 Fixed-service cases can be positive; property-receipt and service-quality effects
 remain unresolved. See the [response decision](../decisions/2026-09-20-category-service-response.md).
 "CBO-informed" covers two inputs only: CBO's tax-incidence rules and its 63–66%
-school-spending response with economic-affairs and recreation budgets fixed. Defense,
-general public services, existing interest and business subsidies are held at **zero
-response by assumption**, not by a CBO estimate; general public services at 25% would
-add $12.1bn ([scope memo](immigration-education-administration-scope-2026-09-20.md)).
+school-spending response with economic-affairs and recreation budgets fixed. Since September 23
+general public services respond at **0.59–0.84**, from cross-state scale: administration spending
+rises 0.842% per 1% of population. Defense, existing interest and business subsidies stay at
+**zero response by assumption**, not by a CBO estimate
+([scope memo](immigration-education-administration-scope-2026-09-20.md)).
 
 [Real fiscal and social costs](immigration-real-fiscal-and-social-costs-2026-09-23.md)
-(September 23, ladder 188–192) prices the channels the headline left out:
-- charging courts, police and prisons by use adds **$1.7–5.9bn**;
-- uncompensated hospital care adds **$1.6–9.2bn**;
-- crimes by group members against other residents cost the victims **$29bn** a year
-  ($15–45bn; $43bn on arrest shares), a social cost beside the budget;
-- housing nets other residents **+$0.7–3.5bn**, while their renters pay $22–58bn more;
-- wages move **$66–166bn** from less- to more-educated natives.
+(September 23, ladder 188–193) prices the channels the headline left out. Two are now in the
+adopted main case:
+- courts, police and prisons by use, **+$5.9bn** ($1.7bn with census ethnicity codes as recorded);
+- the government part of uncompensated hospital care, **+$3.7–5.7bn**.
 
-Summed at central values, the total is **$197–244bn a year**, against the published
-$165–197bn. The transfers are not added, but they run from poorer to richer residents.
-Adopting the use keys is a proposal awaiting the operator. Congestion and income-weighted
-lanes are running.
+Beside the fiscal headline, as social costs:
+- crimes by group members against other residents cost the victims **$29bn** a year ($15–45bn;
+  $43bn on arrest shares);
+- unreimbursed hospital care costs **$3.2–5.6bn**;
+- housing nets other residents **+$0.7–3.5bn**, while their renters pay $22–58bn more.
+
+Wages move **$66–166bn** from less- to more-educated natives. Fiscal plus social costs come to
+**$228–287bn a year** at central values. The transfers are not added, but they run from poorer
+to richer residents. Congestion and income-weighted lanes are running.
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
