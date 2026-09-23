@@ -3,10 +3,16 @@ US residents cost those victims about **$4.5bn in tangible losses** (medical and
 care, lost earnings and household work, property) and about **$29bn in full victim cost**
 (tangible plus pain, suffering and lost quality of life, plus the statistical value of the
 lives lost) [CALCULATION: `victim_cost.py` → `derived/arms.csv`]. One-at-a-time sensitivities
-put the full cost at **$23–34bn** and the tangible cost at **$2.5–5.5bn**. Stacking every low
-or every high choice gives **$15–45bn** full and **$1.3–6.0bn** tangible; this deliberately
-wide envelope is not a confidence interval. **Murder accounts for 32% of the full cost**
-(26–43% across arms) and 54% of the tangible cost. The central estimate is about 1,020
+that keep the NCVS offender data put the full cost at **$23–34bn** and the tangible cost at
+**$2.5–5.5bn**. Stacking every low or every high choice gives **$15–45bn** full and
+**$1.3–6.0bn** tangible; this deliberately wide envelope is not a confidence interval. The
+offender-ethnicity input is the least settled. The homicide inputs imply a Hispanic-to-white
+offending ratio of 2.74, close to BJS's official 2023 imprisonment ratio of 2.62. By contrast,
+NCVS victims' perceptions put Hispanic non-fatal offending *below* white, at 0.94. If
+non-fatal offender ethnicity followed 2019 adult arrest shares instead, the full cost would be
+**$43bn** [CALCULATION: `derived/offender_rate_crosscheck.csv`, arm in `derived/arms.csv`].
+**Murder accounts for 32% of the full cost**
+(26–43% across the NCVS-based arms, 21% in the arrest-share arm) and 54% of the tangible cost. The central estimate is about 1,020
 killings and 402,000 non-fatal violent victimisations of other residents a year. Per member
 of the group, that is **$707 full and $110 tangible** a year. The earlier +$1,421 figure is
 a relative measure; the difference is explained below. Property crime, on an arrest-share
@@ -27,8 +33,9 @@ September 23, 2026.
 | **Central** (Miller et al. 2021 victim-only prices) | **4.50** | **28.92** |
 | Same incidents, McCollister 2010 prices with risk of homicide removed | 2.47 | 29.58 |
 | Same incidents, Miller 2021 non-fatal + US DOT 2024 VSL ($13.7m) for murder | 4.50 | 33.76 |
-| One-at-a-time range over all 16 sensitivity arms | 2.47–5.52 | 23.45–34.04 |
+| One-at-a-time range over the 16 arms that keep NCVS offender data | 2.47–5.52 | 23.45–34.04 |
 | Envelope: every low / every high choice stacked, all three price sets | 1.33–6.01 | 15.41–45.34 |
+| Disconfirmation arm: non-fatal offender ethnicity from 2019 adult arrest shares | 5.60 | 43.12 |
 | NCVS sampling error on the non-fatal part, one SE (understated, see limits) | ±0.21 | ±2.04 |
 | Murder's share of the central total | 53.8% | 31.7% |
 | Per group member (÷ 40,896,574) | $110 | $707 |
@@ -140,6 +147,62 @@ Hispanic" category, whose 8.6–10.3% rate is a known prison-coding artefact, ra
 `derived/scaling_hispanic_to_mexican.csv`]. Institutionalisation is not offending: this ratio
 proxies relative offending and says nothing about detention [SOURCE: detention scope memo].
 
+### Offender ethnicity: coding, coverage and a cross-check
+
+The ethnicity audit [SOURCE: `research/immigration-crime-race-ethnicity-2026-09-05.md`] sets
+the conventions reused here and rules out other held sources.
+
+- **Disjoint categories.** Groups are Hispanic of any race, non-Hispanic White, non-Hispanic
+  Black and the remaining non-Hispanic groups. Raw "White" overlaps Hispanic, because FBI and
+  NIBRS records carry race and Hispanic ethnicity as separate fields, so it is never used as a
+  comparator. All three incident sources follow this convention:
+  - CV2024 table 13 notes a, b and d exclude perceived-Hispanic offenders from White and Black.
+    An offender whose Hispanic origin the victim did not know is placed in Unknown, not White.
+  - The SHR coding, the homicide lane's `ethnicity()`, reads Hispanic from the ethnicity field
+    whatever the race. It assigns a race group only when ethnicity is recorded as non-Hispanic.
+  - FBI Table 43C shares are computed inside its ethnicity panel only (footnote 2), never
+    against race-panel White.
+- **No other held source can supply the input.** SPI 2016 gives prisoner shares, not rates,
+  and its public file suppresses country fields, so it has no Mexican origin. None of the 15
+  Light–He–Robey Texas tables has race or ethnicity. SCAAP and the Texas DPS release have no
+  person-level ethnicity. USSC microdata were not acquired. NCVS and SHR are therefore the only
+  held incident sources with offender ethnicity, and **no held source identifies Mexican
+  origin**. The population-share scaling is an assumption, not a measurement.
+- **The audit's caution applies twice.** Prisoner and institutional shares are not crime
+  rates. Carrying a national share to another outcome mixes geography, outcome, custody
+  duration and year. This lane therefore uses the ACS institutional ratio only as a relative
+  Mexican-versus-Hispanic sensitivity, and keeps the arrest-share lines (property and the
+  disconfirmation arm below) outside the central estimate.
+
+**Cross-check against BJS imprisonment rates.** BJS *Prisoners in 2023* Table 6 is held by the
+audit and parsed here from its text; the parse matches the audit's CSV (gate). Its adult
+imprisonment rates are official estimates that BJS adjusts for administrative race and
+Hispanic reporting using SPI 2016 [SOURCE: audit, "Recent official imprisonment rates"].
+
+| Offending or imprisonment ratio vs non-Hispanic white | Hispanic | Non-Hispanic Black |
+|---|---:|---:|
+| This lane's homicide inputs, 2024 offenders per resident 12+ (WONDER × SHR) | 2.74 | 12.11 |
+| NCVS perceived non-fatal offending, 2022–2024 | 0.94 | 2.47 |
+| BJS adult imprisonment rate, 2023 | 2.62 | 5.27 |
+| BJS adult imprisonment rate, 2019 | 2.90 | 5.46 |
+
+[CALCULATION: `derived/offender_rate_crosscheck.csv`] The homicide inputs agree with the
+imprisonment ratio. The NCVS non-fatal ratio sits far below both it and the 2019 arrest shares
+(25.5% of adult aggravated-assault arrests, 23.0% of robbery and 29.2% of rape, against 14.6% of
+known-offender NCVS incidents). Three explanations compete, and nothing held separates them:
+- victims misperceive offender ethnicity;
+- arrests and imprisonment weight serious offences and carry enforcement, sentencing and
+  panel-geography differences;
+- or both.
+Differential reporting to police does not explain the gap: 45.1% of Hispanic-offender
+incidents against white victims were reported, against 45.9% for white-offender incidents
+(NCJ 250747 table 6, 2012–15). The disconfirmation arm keeps NCVS's victim distribution but
+sets each non-fatal offence to 2024 national victimisations × the 2019 Hispanic arrest share.
+It raises non-fatal outside victims from 402,000 to 577,000 and the full cost from $28.9bn to
+**$43.1bn**, or $5.6bn tangible. The central estimate keeps the brief's NCVS input. The
+arrest-based figure is the size of the risk, not a better estimate [INFERENCE;
+FRAMING-SENSITIVE].
+
 ### Victims outside the group
 
 Victims who are not Hispanic are all other residents. Hispanic victims are other residents
@@ -234,7 +297,7 @@ Two held lanes inherit this double count:
   The central *k* = 3.96 is inherited here; *k* = 1.93 lowers the full total by 4%
   [CALCULATION: arm "assault cost ratio k at the NCVS injury/arrest floor 1.93"].
 
-These lanes were not edited. Their re-pricing is left to the parent.
+This lane did not edit either of them. Re-pricing them is left to the parent.
 
 ## Positive controls and gates (all PASS; `derived/run_log.txt`)
 
@@ -252,6 +315,9 @@ These lanes were not edited. Their re-pricing is left to the parent.
   The SHR sha256 equals its pin. CV2024 Table 2 and FBI Table 43C values are parsed from the
   files.
 - **Victimisations per incident:** within the NCVS lane's 1.06–1.09.
+- **BJS *Prisoners in 2023* Table 6:** parsed from the held PDF text (sha256 checked); equals
+  the ethnicity audit's CSV. CV2024 Table 1 2024 victimisations are parsed from the file. There
+  are 17 gates in all.
 - **Hand check:** the white-victim non-fatal cell reproduces by hand ($11.52bn full).
   Re-running `victim_cost.py` leaves `derived/` byte-identical.
 
@@ -276,6 +342,7 @@ These lanes were not edited. Their re-pricing is left to the parent.
 | homicide: SHR 2019–2024 distribution | 4.47 | 28.81 | 0.314 | $704 |
 | homicide: cleared cases only | 3.97 | 26.91 | 0.265 | $658 |
 | homicide: joint-pair imputed victim distribution | 4.68 | 29.58 | 0.332 | $723 |
+| *disconfirmation:* non-fatal offender ethnicity from 2019 adult arrest shares | 5.60 | 43.12 | 0.212 | $1,054 |
 | envelope low / high, Miller | 2.36 / 6.01 | 15.41 / 38.97 | | $377 / $953 |
 | envelope low / high, McCollister | 1.33 / 3.31 | 16.93 / 39.96 | | $414 / $977 |
 | envelope low / high, Miller + DOT VSL | 2.36 / 6.01 | 17.66 / 45.34 | | $432 / $1,109 |
@@ -314,10 +381,17 @@ adult, of which $841 was corrections and $1,979 victim cost [SOURCE:
 
 ## Limits, stated plainly
 
-1. **Perceived ethnicity.** NCVS offender ethnicity is the victim's perception. SHR ethnicity
-   is police-recorded and missing for about a third of cleared cases. Misperception lands
-   directly on the rate.
-2. **No Mexican-origin identifier** exists in either survey. The population share assumes
+1. **Perceived and recorded ethnicity.** NCVS offender ethnicity is the victim's perception,
+   and the NCVS-based Hispanic offending rate sits far below arrest and imprisonment ratios
+   (see the cross-check). This is the largest unresolved input; the arrest-share arm moves the
+   full cost from $28.9bn to $43.1bn. SHR ethnicity is police-recorded and missing for about a
+   third of cleared cases. BJS itself corrects administrative race and Hispanic reporting in
+   its prisoner rates using SPI 2016 [SOURCE: ethnicity audit], but the SHR carries no such
+   correction. If agencies record Hispanic offenders as non-Hispanic White, the homicide count
+   is too low. Victim-conditional imputation handles missing ethnicity, not misrecorded
+   ethnicity.
+2. **No Mexican-origin identifier** exists in either survey, or in any offender source the
+   ethnicity audit inventoried. The population share assumes
    Mexican-origin and other Hispanic residents offend at the same rate per resident aged 12+
    and have the same victim distribution. The ACS ratio (0.90–1.12) brackets 1 but measures
    institutionalisation, not offending [INFERENCE].
@@ -355,6 +429,11 @@ adult, of which $841 was corrections and $1,979 victim cost [SOURCE:
 
 - The brief, the crime-harm rule, the detention/crime scope memo and the complete account's
   frame and Z term.
+- The 2026-09-05 ethnicity audit (`research/immigration-crime-race-ethnicity-2026-09-05.md`)
+  for category conventions, source coverage and the held BJS *Prisoners in 2023* PDF in
+  `.scratch/clarity-next-20260905/conduct-race/`. This lane's fetches (McCollister record, FBI
+  Table 43C, ACS B03001) happened before the parent pointed it to the audit. None duplicates
+  a source the audit holds.
 - NCVS lane derived files: matrix, rates, populations, N-DASH, simple-assault prices, the
   Miller price set and the 2019 crime-type matrix. Its cached Miller 2021 PDF text and CV2024
   Table 2 were also used.
@@ -392,6 +471,9 @@ adult, of which $841 was corrections and $1,979 victim cost [SOURCE:
 | Homicide deaths 2024 by Hispanic origin and race | CDC WONDER D158, Underlying Cause of Death 2018–2024, GR113-127, cached XML in `../homicide_cost_2026_09_18/_cache/` |
 | Homicide victim × first offender, 2019–2024 | FBI Supplementary Homicide Reports, Murder Accountability Project compilation `SHR76_25a.csv` (sha256 `eeedbf5e…b88a12`), murderdata.org |
 | Adult arrests by ethnicity, 2019 | FBI *Crime in the United States 2019*, Table 43C, ucr.fbi.gov (parsed .xls) |
+| Source coverage and category conventions for offender ethnicity | `research/immigration-crime-race-ethnicity-2026-09-05.md` (SPI 2016, Light–He–Robey Texas, SCAAP, Texas DPS, USSC, FBI/NIBRS coding) |
+| Adult imprisonment rates by race and Hispanic origin, 2019 and 2023 | BJS *Prisoners in 2023 – Statistical Tables* (Sept 30, 2025), Table 6, bjs.ojp.gov/document/p23st.pdf, held by the ethnicity audit |
+| 2024 violent victimisations by offence | BJS *Criminal Victimization, 2024*, table 1, `cv24t01.csv` in the NCVS lane cache |
 | Unit costs, 2008$ | McCollister, French & Fang (2010), *Drug Alcohol Depend* 108(1–2):98–109, doi:10.1016/j.drugalcdep.2009.12.002, PMC2835847 (OAI JATS record) |
 | Unit costs, 2017$ | Miller, Cohen, Swedler, Ali & Hendrie (2021), *J Benefit-Cost Anal* 12(1):24–54, doi:10.1017/bca.2020.36, Tables 4, 5, 7 (held PDF) |
 | Simple-assault injury scaling and *k* | `../ncvs_victim_offender_2026_09_18/derived/simple_assault_unit_cost.csv`, `miller2021_price_set.csv` |
@@ -414,6 +496,10 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/homicide_inputs.py
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 $L/victim_cost.py
 ```
 
+`victim_cost.py` also reads BJS *Prisoners in 2023*
+(`.scratch/clarity-next-20260905/conduct-race/p23st.pdf` and `p23st.txt`, held by the ethnicity
+audit; restore from bjs.ojp.gov/document/p23st.pdf with `pdftotext -layout` if missing).
+
 Scripts: `fetch_sources.py` (McCollister JATS record, FBI Table 43C, source manifest),
 `target_population.py`, `acs_exposure.py`, `homicide_inputs.py` and `victim_cost.py` (model,
 gates and every arm). Raw pulls are in `_cache/` (ignored), with sha256 values in
@@ -423,5 +509,5 @@ gates and every arm). Raw pulls are in `_cache/` (ignored), with sha256 values i
 `wonder_2024_homicide_victims.csv`, `unit_costs_victim_only_2024usd.csv`,
 `mccollister_total_decomposition_2024usd.csv`, `cost_by_victim_and_offence_central.csv`,
 `cost_by_offence_central.csv`, `outside_victim_shares_central.csv`,
-`ncvs_sampling_error_central.csv`, `arms.csv`, `property_proxy.csv`,
+`ncvs_sampling_error_central.csv`, `arms.csv`, `property_proxy.csv`, `offender_rate_crosscheck.csv`,
 `fbi_2019_table43c_adult_arrests.csv` and the three console logs.
