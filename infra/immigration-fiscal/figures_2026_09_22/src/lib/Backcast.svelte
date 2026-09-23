@@ -6,7 +6,7 @@
   const top = 24
   const bot = 250
   const yLo = 0
-  const yHi = 360
+  const yHi = 400
   const x = (year) => left + ((year - 2005) / (2024 - 2005)) * (right - left)
   const y = (v) => top + ((yHi - v) / (yHi - yLo)) * (bot - top)
 
@@ -25,7 +25,7 @@
   <p class="kicker">Fig. 6 · Back-cast of the complete account</p>
   <h2>Only 2024 is measured</h2>
   <p class="object">
-    The band is the envelope of carrying the 2024 position back on flat, ratio and
+    The band is the envelope of carrying the adopted 2024 position back on flat, ratio and
     income rules, low and high. The line is the flat carry. 2020 and 2021 open up
     because the ratio and income rules follow the benefit spike.
   </p>
@@ -36,7 +36,7 @@
         <line x1="0" y1="0" x2="0" y2="5" stroke="#7c6232" stroke-width="1" />
       </pattern>
     </defs>
-    {#each [0, 100, 200, 300] as tick}
+    {#each [0, 100, 200, 300, 400] as tick}
       <line x1={left} x2={right} y1={y(tick)} y2={y(tick)} stroke="#d4cdb8" />
       <text class="faint" x={left - 6} y={y(tick) + 4} text-anchor="end" font-size="11">{tick}</text>
     {/each}
@@ -52,22 +52,24 @@
 
   <div class="live">
     <div>
-      <span class="n">$1.3–2.2tn</span>
+      <span class="n">$1.7–2.5tn</span>
       <span class="l">Ten years, 2024 dollars</span>
     </div>
     <div>
-      <span class="n">$2.0–3.3tn</span>
+      <span class="n">$2.5–3.7tn</span>
       <span class="l">Fifteen years</span>
     </div>
     <div>
-      <span class="n">$2.4–3.9tn</span>
+      <span class="n">$3.0–4.6tn</span>
       <span class="l">Twenty years, no interest</span>
     </div>
   </div>
 
   <p class="src">
-    historical_backcast_2026_09_20/derived/backcast_annual.csv, the six CBO-informed columns.
-    2020–2021 supply over a third of the ten-year total and are probably over-attributed.
+    historical_backcast_2026_09_20/derived/backcast_annual.csv, the six adopted CBO-informed
+    columns; the totals are backcast_windows.csv for the same concepts. 2020–2021 are probably
+    over-attributed: pandemic business support is in national spending but was not paid in
+    proportion to population.
     The band is a model range. It is not the generation ledger.
   </p>
 </section>

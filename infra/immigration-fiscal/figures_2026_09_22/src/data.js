@@ -28,38 +28,36 @@ export const categories = [
   { label: 'Noncash aid', own: -13.08, white: -11.64 },
 ]
 
-// Complete annual account. Positive = cost to other US residents.
+// Complete annual account, main case adopted 2026-09-23. Positive = cost to other US residents.
+// main_case_2026_09_23/derived/main_case_bands.csv, variant adopted; the fixed row is
+// sign_reversal.csv at service response 0, sign flipped.
 // The fixed row also holds private capital fixed; it is not the headline with one dial turned.
+// General government responds at 0.59–0.84 in every adopted row, the fixed row included.
 export const responseRows = [
   {
     label: 'Ordinary services fixed',
     note: 'Private capital fixed too',
-    lo: -112.67,
-    hi: 41.53,
+    lo: -80.53,
+    hi: 87.85,
   },
   {
     label: 'Non-school education also fixed',
     note: 'Headline case, those budgets held fixed',
-    lo: 121,
-    hi: 160,
+    lo: 158.88,
+    hi: 212.56,
   },
   {
     label: 'Headline',
-    note: 'School response 63–66%. Defense, interest, general government and subsidies at zero',
-    lo: 165.12,
-    hi: 197.38,
+    note: 'School response 63–66%, general government 0.59–0.84, justice and uncompensated care by use. Defense, interest and subsidies at zero',
+    lo: 203.21,
+    hi: 249.64,
   },
-  {
-    label: 'General public services at 25%',
-    note: 'Adds $12.1bn to the headline. 10% adds $4.8bn; 100% adds $48.3bn',
-    lo: 177.22,
-    hi: 209.48,
-  },
+  { label: 'September 20 headline', note: 'General government at zero, justice per head', lo: 165.12, hi: 197.38, record: true },
   {
     label: 'Services fully proportional',
     note: 'Every ordinary service budget scales',
-    lo: 269.81,
-    hi: 288.72,
+    lo: 307.9,
+    hi: 340.97,
   },
 ]
 
@@ -127,29 +125,30 @@ export const cohortMatrix = {
   ],
 }
 
-// CBO-informed back-cast, $bn cost. Envelope of flat / ratio / income × low / high.
+// CBO-informed back-cast of the adopted main case, $bn cost. Envelope of flat / ratio / income
+// × low / high: backcast_annual.csv, net_cost_cbo_informed_adopted_* columns.
 // Flat is the carry of the 2024 level. 2024 is the measured account; earlier years are not.
 export const backcast = [
-  { year: 2005, lo: 45.3, hi: 135.6, flatLo: 113.4, flatHi: 135.6 },
-  { year: 2006, lo: 39.3, hi: 143.5, flatLo: 120.0, flatHi: 143.5 },
-  { year: 2007, lo: 46.7, hi: 147.7, flatLo: 123.5, flatHi: 147.7 },
-  { year: 2008, lo: 88.1, hi: 161.0, flatLo: 130.2, flatHi: 155.6 },
-  { year: 2009, lo: 134.2, hi: 229.9, flatLo: 134.2, flatHi: 160.4 },
-  { year: 2010, lo: 139.5, hi: 244.0, flatLo: 139.5, flatHi: 166.7 },
-  { year: 2011, lo: 142.1, hi: 235.8, flatLo: 142.1, flatHi: 169.9 },
-  { year: 2012, lo: 135.5, hi: 220.2, flatLo: 144.2, flatHi: 172.3 },
-  { year: 2013, lo: 95.3, hi: 187.8, flatLo: 146.5, flatHi: 175.1 },
-  { year: 2014, lo: 89.6, hi: 178.8, flatLo: 149.6, flatHi: 178.8 },
-  { year: 2015, lo: 84.9, hi: 181.2, flatLo: 151.6, flatHi: 181.2 },
-  { year: 2016, lo: 96.6, hi: 183.5, flatLo: 153.5, flatHi: 183.5 },
-  { year: 2017, lo: 100.2, hi: 185.6, flatLo: 155.3, flatHi: 185.6 },
-  { year: 2018, lo: 111.1, hi: 187.2, flatLo: 156.6, flatHi: 187.2 },
-  { year: 2019, lo: 122.0, hi: 188.3, flatLo: 157.5, flatHi: 188.3 },
-  { year: 2020, lo: 157.6, hi: 326.4, flatLo: 157.6, flatHi: 188.4 },
-  { year: 2021, lo: 157.7, hi: 281.5, flatLo: 157.7, flatHi: 188.5 },
-  { year: 2022, lo: 89.1, hi: 189.4, flatLo: 158.4, flatHi: 189.4 },
-  { year: 2023, lo: 150.3, hi: 192.3, flatLo: 160.9, flatHi: 192.3 },
-  { year: 2024, lo: 165.1, hi: 197.4, flatLo: 165.1, flatHi: 197.4 },
+  { year: 2005, lo: 64.0, hi: 171.5, flatLo: 139.6, flatHi: 171.5 },
+  { year: 2006, lo: 59.5, hi: 181.4, flatLo: 147.7, flatHi: 181.4 },
+  { year: 2007, lo: 68.0, hi: 186.7, flatLo: 152.0, flatHi: 186.7 },
+  { year: 2008, lo: 111.7, hi: 196.8, flatLo: 160.2, flatHi: 196.8 },
+  { year: 2009, lo: 165.2, hi: 264.8, flatLo: 165.2, flatHi: 202.9 },
+  { year: 2010, lo: 171.6, hi: 281.4, flatLo: 171.6, flatHi: 210.8 },
+  { year: 2011, lo: 174.9, hi: 273.4, flatLo: 174.9, flatHi: 214.9 },
+  { year: 2012, lo: 162.7, hi: 257.5, flatLo: 177.4, flatHi: 217.9 },
+  { year: 2013, lo: 122.6, hi: 225.3, flatLo: 180.3, flatHi: 221.4 },
+  { year: 2014, lo: 117.5, hi: 226.1, flatLo: 184.1, flatHi: 226.1 },
+  { year: 2015, lo: 113.6, hi: 229.2, flatLo: 186.6, flatHi: 229.2 },
+  { year: 2016, lo: 125.9, hi: 232.1, flatLo: 189.0, flatHi: 232.1 },
+  { year: 2017, lo: 130.0, hi: 234.8, flatLo: 191.1, flatHi: 234.8 },
+  { year: 2018, lo: 141.8, hi: 236.8, flatLo: 192.8, flatHi: 236.8 },
+  { year: 2019, lo: 153.9, hi: 238.1, flatLo: 193.8, flatHi: 238.1 },
+  { year: 2020, lo: 193.9, hi: 380.6, flatLo: 193.9, flatHi: 238.3 },
+  { year: 2021, lo: 194.1, hi: 336.4, flatLo: 194.1, flatHi: 238.4 },
+  { year: 2022, lo: 123.6, hi: 239.6, flatLo: 195.0, flatHi: 239.6 },
+  { year: 2023, lo: 186.0, hi: 243.2, flatLo: 198.0, flatHi: 243.2 },
+  { year: 2024, lo: 203.2, hi: 249.6, flatLo: 203.2, flatHi: 249.6 },
 ]
 
 // Shared all-age ledger vs local third-plus NH whites. Not the complete account.
@@ -179,19 +178,20 @@ export const kitagawa = [
   { label: 'India-born, recent noncitizens', detail: 'Detailed occupations', mix: 26698, within: -3626, inter: -6925, gap: 16147 },
 ]
 
-// Programme-by-programme back-cast, CBO-informed, net cost $bn.
+// Programme-by-programme back-cast, CBO-informed, net cost $bn, September 20 anchor only:
+// backcast_categories.py has not been re-run on the adopted main case.
 // backcast_categories_annual.csv. 2020–21 on the preferred path are the mean of 2019 and 2022.
 const years = []
 for (let y = 2005; y <= 2024; y++) years.push(y)
 export const ruleYears = years
 export const rulePaths = {
   programme: {
-    lo: [48.6, 45.7, 48.1, 96.5, 136.1, 164.2, 154.4, 130.3, 107.4, 109.0, 109.9, 116.1, 111.7, 116.9, 120.4, 295.7, 357.7, 153.0, 151.1, 165.1],
-    hi: [68.6, 67.5, 71.4, 119.3, 158.5, 186.4, 177.2, 154.4, 133.6, 135.9, 137.9, 144.5, 140.6, 146.0, 149.9, 318.9, 377.8, 183.8, 182.5, 197.4],
+    lo: [48.6, 45.7, 48.1, 96.5, 136.1, 164.2, 154.4, 130.3, 107.4, 109.0, 109.9, 116.1, 111.7, 116.9, 120.4, 295.7, 357.7, 153.0, 151.1, 165.1], // September 20
+    hi: [68.6, 67.5, 71.4, 119.3, 158.5, 186.4, 177.2, 154.4, 133.6, 135.9, 137.9, 144.5, 140.6, 146.0, 149.9, 318.9, 377.8, 183.8, 182.5, 197.4], // September 20
   },
   income: {
-    lo: [84.5, 85.1, 89.7, 139.8, 180.2, 211.4, 203.5, 178.7, 161.6, 160.5, 160.4, 161.2, 150.9, 153.2, 151.9, 319.9, 376.2, 167.8, 159.4, 165.1],
-    hi: [102.9, 105.1, 111.1, 160.7, 200.7, 231.5, 224.2, 200.7, 185.3, 185.0, 186.0, 187.4, 178.0, 180.6, 180.0, 342.0, 395.4, 197.9, 190.4, 197.4],
+    lo: [84.5, 85.1, 89.7, 139.8, 180.2, 211.4, 203.5, 178.7, 161.6, 160.5, 160.4, 161.2, 150.9, 153.2, 151.9, 319.9, 376.2, 167.8, 159.4, 165.1], // September 20
+    hi: [102.9, 105.1, 111.1, 160.7, 200.7, 231.5, 224.2, 200.7, 185.3, 185.0, 186.0, 187.4, 178.0, 180.6, 180.0, 342.0, 395.4, 197.9, 190.4, 197.4], // September 20
   },
 }
 
