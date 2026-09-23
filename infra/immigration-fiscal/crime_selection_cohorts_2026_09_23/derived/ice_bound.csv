@@ -1,0 +1,37 @@
+year,ysm,mexico_born_men_18_40_institutional,adp_all_nationalities,mexico_share_of_bookins,mexican_stock_bound,bound_over_cell,adp_source,share_source
+1980,0-5,1560,1620.0,,,,Marshall Project compilation of INS/DHS appropriations records (detention.csv),
+1980,6-10,780,1620.0,,,,Marshall Project compilation of INS/DHS appropriations records (detention.csv),
+1980,11-15,380,1620.0,,,,Marshall Project compilation of INS/DHS appropriations records (detention.csv),
+1980,all,3500,1620.0,,,,Marshall Project compilation of INS/DHS appropriations records (detention.csv),
+1990,0-5,4564,6571.0,,,,Marshall Project compilation of INS/DHS appropriations records (detention.csv),
+1990,6-10,4543,6571.0,,,,Marshall Project compilation of INS/DHS appropriations records (detention.csv),
+1990,11-15,3731,6571.0,,,,Marshall Project compilation of INS/DHS appropriations records (detention.csv),
+1990,all,18267,6571.0,,,,Marshall Project compilation of INS/DHS appropriations records (detention.csv),
+2000,0-5,4580,19458.0,,,,Marshall Project compilation of INS/DHS appropriations records (detention.csv),
+2000,6-10,4012,19458.0,,,,Marshall Project compilation of INS/DHS appropriations records (detention.csv),
+2000,11-15,4380,19458.0,,,,Marshall Project compilation of INS/DHS appropriations records (detention.csv),
+2000,all,21269,19458.0,,,,Marshall Project compilation of INS/DHS appropriations records (detention.csv),
+2010,0-5,24019,30885.0,0.606,18716.0,0.78,Marshall Project compilation of INS/DHS appropriations records (detention.csv),"OHSS Enforcement Actions 2012, Table 5 (219,858 of 363,064)"
+2010,6-10,14914,30885.0,0.606,18716.0,1.25,Marshall Project compilation of INS/DHS appropriations records (detention.csv),"OHSS Enforcement Actions 2012, Table 5 (219,858 of 363,064)"
+2010,11-15,12473,30885.0,0.606,18716.0,1.5,Marshall Project compilation of INS/DHS appropriations records (detention.csv),"OHSS Enforcement Actions 2012, Table 5 (219,858 of 363,064)"
+2010,all,76956,30885.0,0.606,18716.0,0.24,Marshall Project compilation of INS/DHS appropriations records (detention.csv),"OHSS Enforcement Actions 2012, Table 5 (219,858 of 363,064)"
+2011,0-5,17727,33330.0,0.672,22398.0,1.26,CRS RL32369 (matches TMP),"OHSS Enforcement Actions 2012, Table 5 (288,581 of 429,247)"
+2011,6-10,15527,33330.0,0.672,22398.0,1.44,CRS RL32369 (matches TMP),"OHSS Enforcement Actions 2012, Table 5 (288,581 of 429,247)"
+2011,11-15,18829,33330.0,0.672,22398.0,1.19,CRS RL32369 (matches TMP),"OHSS Enforcement Actions 2012, Table 5 (288,581 of 429,247)"
+2011,all,87238,33330.0,0.672,22398.0,0.26,CRS RL32369 (matches TMP),"OHSS Enforcement Actions 2012, Table 5 (288,581 of 429,247)"
+2012,0-5,16220,34260.0,0.644,22063.0,1.36,Marshall Project compilation of INS/DHS appropriations records (detention.csv),"OHSS Enforcement Actions 2012, Table 5 (307,523 of 477,523)"
+2012,6-10,12374,34260.0,0.644,22063.0,1.78,Marshall Project compilation of INS/DHS appropriations records (detention.csv),"OHSS Enforcement Actions 2012, Table 5 (307,523 of 477,523)"
+2012,11-15,17997,34260.0,0.644,22063.0,1.23,Marshall Project compilation of INS/DHS appropriations records (detention.csv),"OHSS Enforcement Actions 2012, Table 5 (307,523 of 477,523)"
+2012,all,76669,34260.0,0.644,22063.0,0.29,Marshall Project compilation of INS/DHS appropriations records (detention.csv),"OHSS Enforcement Actions 2012, Table 5 (307,523 of 477,523)"
+2019,0-5,10306,50165.0,0.24,12040.0,1.17,"ICE ERO FY2019 report (TMP gives 49,403)",OHSS Enforcement Actions 2019 text: 24 percent
+2019,6-10,4372,50165.0,0.24,12040.0,2.75,"ICE ERO FY2019 report (TMP gives 49,403)",OHSS Enforcement Actions 2019 text: 24 percent
+2019,11-15,6410,50165.0,0.24,12040.0,1.88,"ICE ERO FY2019 report (TMP gives 49,403)",OHSS Enforcement Actions 2019 text: 24 percent
+2019,all,39919,50165.0,0.24,12040.0,0.3,"ICE ERO FY2019 report (TMP gives 49,403)",OHSS Enforcement Actions 2019 text: 24 percent
+2023,0-5,6474,,0.2037037037037037,,,,"OHSS FY2023 flow report text: Mexico 55,000 of 'more than 270,000'"
+2023,6-10,2555,,0.2037037037037037,,,,"OHSS FY2023 flow report text: Mexico 55,000 of 'more than 270,000'"
+2023,11-15,4754,,0.2037037037037037,,,,"OHSS FY2023 flow report text: Mexico 55,000 of 'more than 270,000'"
+2023,all,30219,,0.2037037037037037,,,,"OHSS FY2023 flow report text: Mexico 55,000 of 'more than 270,000'"
+2024,0-5,8518,37722.0,0.24957720125220395,9415.0,1.11,"ICE FY2024 detention workbook, Detention FY24!N99 (detention_evidence lane)","ICE FY2024 annual report via cj_use_allocation lane (69,360 of 277,910)"
+2024,6-10,5309,37722.0,0.24957720125220395,9415.0,1.77,"ICE FY2024 detention workbook, Detention FY24!N99 (detention_evidence lane)","ICE FY2024 annual report via cj_use_allocation lane (69,360 of 277,910)"
+2024,11-15,2983,37722.0,0.24957720125220395,9415.0,3.16,"ICE FY2024 detention workbook, Detention FY24!N99 (detention_evidence lane)","ICE FY2024 annual report via cj_use_allocation lane (69,360 of 277,910)"
+2024,all,34910,37722.0,0.24957720125220395,9415.0,0.27,"ICE FY2024 detention workbook, Detention FY24!N99 (detention_evidence lane)","ICE FY2024 annual report via cj_use_allocation lane (69,360 of 277,910)"
