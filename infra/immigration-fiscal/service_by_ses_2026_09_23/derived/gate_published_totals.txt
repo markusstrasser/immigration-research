@@ -1,0 +1,11 @@
+2022  civilian population 18+  PUMS   259,773,689  published   259,615,716 (B21001_001E)  +0.06%  PASS
+2022  civilian veterans 18+    PUMS    16,210,287  published    16,200,322 (B21001_002E)  +0.06%  PASS
+2022  armed forces             PUMS     1,347,206  published     1,347,885 (B23025_006E)  -0.05%  PASS
+2023  civilian population 18+  PUMS   261,089,554  published   260,971,464 (B21001_001E)  +0.05%  PASS
+2023  civilian veterans 18+    PUMS    15,857,646  published    15,813,955 (B21001_002E)  +0.28%  PASS
+2023  armed forces             PUMS     1,298,353  published     1,295,873 (B23025_006E)  +0.19%  PASS
+2024  civilian population 18+  PUMS   266,035,711  published   265,909,569 (B21001_001E)  +0.05%  PASS
+2024  civilian veterans 18+    PUMS    15,739,104  published    15,701,246 (B21001_002E)  +0.24%  PASS
+2024  armed forces             PUMS     1,265,551  published     1,272,572 (B23025_006E)  -0.55%  PASS
+
+Tolerance 1%. PASS
