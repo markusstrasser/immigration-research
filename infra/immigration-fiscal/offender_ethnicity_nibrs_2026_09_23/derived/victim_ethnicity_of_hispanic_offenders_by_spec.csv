@@ -1,0 +1,136 @@
+offence,spec,vH,vNHW,vNHB,vNHO,vNHU,vU
+Aggravated assault,central,49683.086,8406.215,4687.579,608.233,70.856,2658.500
+Murder,central,1015.336,114.378,152.666,12.643,0.000,66.365
+Rape/sexual assault,central,10403.261,2942.740,768.575,136.383,12.954,1211.141
+Robbery,central,11046.817,2717.593,1338.552,645.873,32.683,568.685
+Simple assault,central,160815.801,27976.602,9037.155,1701.538,163.628,9008.781
+Aggravated assault,alloc=a0,44533.221,9694.307,7638.929,727.017,75.934,2743.724
+Murder,alloc=a0,906.665,136.176,237.251,13.969,0.000,73.189
+Rape/sexual assault,alloc=a0,9806.767,3395.695,1059.052,161.266,19.749,1223.795
+Robbery,alloc=a0,10436.197,3042.695,1968.203,806.741,37.744,598.829
+Simple assault,alloc=a0,155020.838,31054.053,11659.106,2019.080,185.887,9446.775
+Aggravated assault,alloc=b,38470.047,6890.107,3746.467,474.783,46.433,1651.112
+Murder,alloc=b,791.521,97.792,117.250,11.583,0.000,43.183
+Rape/sexual assault,alloc=b,8943.840,2432.617,640.260,112.917,8.000,720.750
+Robbery,alloc=b,8113.643,1903.292,1001.661,450.071,22.238,339.896
+Simple assault,alloc=b,148511.412,25506.755,8322.986,1507.374,134.733,6231.922
+Aggravated assault,alloc=c,54200.321,14313.679,13790.401,1148.633,124.283,4555.735
+Murder,alloc=c,1111.505,204.875,450.147,18.250,0.000,127.500
+Rape/sexual assault,alloc=c,10990.616,4835.457,1623.997,243.250,37.000,1978.367
+Robbery,alloc=c,14989.617,5240.826,3869.212,1502.700,67.214,1093.879
+Simple assault,alloc=c,165123.824,40306.863,16805.791,2942.657,274.233,14829.477
+Aggravated assault,alloc=k,38470.047,6890.107,3746.467,474.783,46.433,1651.112
+Murder,alloc=k,791.521,97.792,117.250,11.583,0.000,43.183
+Rape/sexual assault,alloc=k,8943.840,2432.617,640.260,112.917,8.000,720.750
+Robbery,alloc=k,8113.643,1903.292,1001.661,450.071,22.238,339.896
+Simple assault,alloc=k,148511.412,25506.755,8322.986,1507.374,134.733,6231.922
+Aggravated assault,agencies: ethnicity recorded >= 0%,54628.252,8984.956,4903.072,637.106,77.651,3261.216
+Murder,agencies: ethnicity recorded >= 0%,1099.794,128.180,160.170,13.057,0.000,77.095
+Rape/sexual assault,agencies: ethnicity recorded >= 0%,11457.458,3160.205,822.514,147.021,13.615,1371.047
+Robbery,agencies: ethnicity recorded >= 0%,11935.983,2932.836,1390.459,664.134,36.025,671.108
+Simple assault,agencies: ethnicity recorded >= 0%,177655.898,29878.922,9567.238,1813.939,182.785,11339.437
+Aggravated assault,agencies: ethnicity recorded >= 80%,24316.507,4638.875,2020.763,272.567,32.691,991.612
+Murder,agencies: ethnicity recorded >= 80%,468.081,74.110,56.142,9.750,0.000,29.460
+Rape/sexual assault,agencies: ethnicity recorded >= 80%,5755.448,1780.296,383.073,77.358,7.697,365.652
+Robbery,agencies: ethnicity recorded >= 80%,4266.241,1324.054,474.750,247.107,14.833,184.102
+Simple assault,agencies: ethnicity recorded >= 80%,96000.025,17360.811,4831.197,860.345,84.882,4406.260
+Aggravated assault,agencies: ethnicity recorded >= 95%,8346.481,1358.746,534.420,66.318,3.863,144.994
+Murder,agencies: ethnicity recorded >= 95%,147.789,27.232,10.211,3.000,0.000,1.000
+Rape/sexual assault,agencies: ethnicity recorded >= 95%,1928.820,571.906,130.531,19.038,3.000,35.879
+Robbery,agencies: ethnicity recorded >= 95%,1331.881,274.727,103.407,58.316,1.000,9.516
+Simple assault,agencies: ethnicity recorded >= 95%,35805.793,6129.045,1858.692,271.028,14.323,584.252
+Aggravated assault,agencies: offender-ethnicity start date by Jan 1,46528.559,7884.113,4446.694,580.828,64.901,2458.692
+Murder,agencies: offender-ethnicity start date by Jan 1,957.626,108.381,139.779,12.674,0.000,65.251
+Rape/sexual assault,agencies: offender-ethnicity start date by Jan 1,9623.087,2761.529,705.274,124.196,12.841,1133.675
+Robbery,agencies: offender-ethnicity start date by Jan 1,10562.945,2597.163,1304.903,633.269,31.161,535.688
+Simple assault,agencies: offender-ethnicity start date by Jan 1,146588.464,25979.862,8119.596,1594.724,147.382,8229.984
+Aggravated assault,agencies: 12 months reported,49058.928,8255.588,4635.777,592.739,69.355,2605.456
+Murder,agencies: 12 months reported,1007.964,112.240,151.614,12.643,0.000,66.059
+Rape/sexual assault,agencies: 12 months reported,10271.835,2870.976,744.512,129.310,13.068,1191.248
+Robbery,agencies: 12 months reported,10990.231,2680.060,1332.595,640.982,32.683,565.372
+Simple assault,agencies: 12 months reported,157592.410,27191.800,8783.193,1648.705,155.103,8814.931
+Aggravated assault,states=TX,47308.908,7367.145,4457.164,517.145,62.284,2288.799
+Murder,states=TX,960.140,106.397,140.202,8.968,0.000,59.618
+Rape/sexual assault,states=TX,9830.535,2567.703,705.118,102.600,12.564,1011.502
+Robbery,states=TX,10639.113,2406.642,1267.098,611.114,30.479,510.801
+Simple assault,states=TX,151875.797,24528.218,8372.045,1306.861,130.384,7774.238
+Aggravated assault,states=AZ,2374.178,1039.070,230.415,91.088,8.572,369.701
+Murder,states=AZ,55.196,7.981,12.464,3.675,0.000,6.747
+Rape/sexual assault,states=AZ,572.726,375.038,63.456,33.783,0.390,199.639
+Robbery,states=AZ,407.705,310.950,71.453,34.760,2.204,57.884
+Simple assault,states=AZ,8940.004,3448.384,665.111,394.678,33.243,1234.543
+Aggravated assault,states=CA,26345.746,5817.989,1944.914,900.369,330.815,4553.723
+Murder,states=CA,376.883,57.441,40.384,16.161,2.750,77.510
+Rape/sexual assault,states=CA,4861.467,1413.602,313.695,164.648,52.066,1365.673
+Robbery,states=CA,7640.466,2213.648,616.306,976.482,299.359,1702.658
+Simple assault,states=CA,50573.499,10994.210,3107.629,1598.012,581.357,9639.222
+Aggravated assault,states=TX+AZ+CA,76028.832,14224.204,6632.493,1508.602,401.671,7212.224
+Murder,states=TX+AZ+CA,1392.219,171.819,193.050,28.804,2.750,143.875
+Rape/sexual assault,states=TX+AZ+CA,15264.728,4356.342,1082.270,301.032,65.021,2576.813
+Robbery,states=TX+AZ+CA,18687.284,4931.241,1954.858,1622.356,332.042,2271.343
+Simple assault,states=TX+AZ+CA,211389.300,38970.812,12144.784,3299.550,744.985,18648.003
+Aggravated assault,year=2022,24789.194,4292.280,2452.306,308.038,43.997,1398.864
+Murder,year=2022,526.465,59.113,73.639,2.427,0.000,30.043
+Rape/sexual assault,year=2022,5082.503,1456.428,366.382,60.334,8.314,580.271
+Robbery,year=2022,5404.538,1375.735,688.931,303.817,15.274,252.071
+Simple assault,year=2022,75880.015,13700.993,4241.490,789.136,93.813,4187.539
+Aggravated assault,year=2023,24893.892,4113.935,2235.273,300.195,26.859,1259.636
+Murder,year=2023,488.870,55.265,79.027,10.215,,36.322
+Rape/sexual assault,year=2023,5320.758,1486.312,402.193,76.049,4.640,630.869
+Robbery,year=2023,5642.280,1341.857,649.621,342.056,17.409,316.614
+Simple assault,year=2023,84935.785,14275.610,4795.665,912.402,69.814,4821.242
+Aggravated assault,attribution=first,49780.960,8436.476,4689.003,603.572,72.031,2655.462
+Murder,attribution=first,1015.369,109.924,154.957,14.934,0.000,65.973
+Rape/sexual assault,attribution=first,10408.215,2941.244,760.077,136.487,12.954,1210.021
+Robbery,attribution=first,11034.079,2668.094,1329.718,643.037,31.333,565.524
+Simple assault,attribution=first,160754.724,27953.456,9032.417,1695.123,163.975,8973.064
+Aggravated assault,attribution=anyH,50684.557,8938.419,5137.228,648.855,75.947,2759.490
+Murder,attribution=anyH,1061.616,131.589,176.827,16.055,0.000,74.066
+Rape/sexual assault,attribution=anyH,10468.183,3010.778,801.281,138.883,12.962,1227.161
+Robbery,attribution=anyH,12049.540,3189.413,1623.140,741.480,35.369,631.928
+Simple assault,attribution=anyH,163618.779,29868.972,10163.624,1855.957,178.582,9400.233
+Aggravated assault,attribution=allH,48597.188,7917.105,4293.560,569.275,66.029,2563.097
+Murder,attribution=allH,969.268,98.940,127.814,9.928,0.000,58.031
+Rape/sexual assault,attribution=allH,10340.042,2878.136,746.393,132.827,12.948,1196.728
+Robbery,attribution=allH,9983.318,2296.726,1105.228,559.147,29.226,504.446
+Simple assault,attribution=allH,157857.024,26168.457,8063.899,1558.049,149.026,8621.671
+Aggravated assault,victims: all ages,52785.305,8669.913,4889.936,627.642,92.321,3100.164
+Murder,victims: all ages,1071.862,119.017,153.702,13.644,0.000,73.145
+Rape/sexual assault,victims: all ages,14407.207,3405.988,882.526,156.958,24.726,1707.240
+Robbery,victims: all ages,11194.764,2734.508,1353.001,648.401,35.198,591.717
+Simple assault,victims: all ages,166777.913,28865.998,9473.510,1737.136,199.915,9768.644
+Aggravated assault,victims: individuals + officers,50128.881,8906.808,4745.675,628.598,77.763,2792.349
+Murder,victims: individuals + officers,1015.984,117.836,152.607,12.643,0.000,66.365
+Rape/sexual assault,victims: individuals + officers,10403.261,2942.740,768.575,136.383,12.954,1211.141
+Robbery,victims: individuals + officers,11046.817,2717.593,1338.552,645.873,32.683,568.685
+Simple assault,victims: individuals + officers,162368.887,29546.419,9216.643,1749.633,181.060,9385.145
+Aggravated assault,denominator: all ages,49683.086,8406.215,4687.579,608.233,70.856,2658.500
+Murder,denominator: all ages,1015.336,114.378,152.666,12.643,0.000,66.365
+Rape/sexual assault,denominator: all ages,10403.261,2942.740,768.575,136.383,12.954,1211.141
+Robbery,denominator: all ages,11046.817,2717.593,1338.552,645.873,32.683,568.685
+Simple assault,denominator: all ages,160815.801,27976.602,9037.155,1701.538,163.628,9008.781
+Aggravated assault,simple assault incl. intimidation 13C,49683.086,8406.215,4687.579,608.233,70.856,2658.500
+Murder,simple assault incl. intimidation 13C,1015.336,114.378,152.666,12.643,0.000,66.365
+Rape/sexual assault,simple assault incl. intimidation 13C,10403.261,2942.740,768.575,136.383,12.954,1211.141
+Robbery,simple assault incl. intimidation 13C,11046.817,2717.593,1338.552,645.873,32.683,568.685
+Simple assault,simple assault incl. intimidation 13C,198907.960,35754.069,11993.621,2313.073,235.622,11542.211
+Aggravated assault,translation: rate vs all residents,49683.086,8406.215,4687.579,608.233,70.856,2658.500
+Murder,translation: rate vs all residents,1015.336,114.378,152.666,12.643,0.000,66.365
+Rape/sexual assault,translation: rate vs all residents,10403.261,2942.740,768.575,136.383,12.954,1211.141
+Robbery,translation: rate vs all residents,11046.817,2717.593,1338.552,645.873,32.683,568.685
+Simple assault,translation: rate vs all residents,160815.801,27976.602,9037.155,1701.538,163.628,9008.781
+Aggravated assault,incidents with an arrest only,16130.875,2875.288,1335.259,188.386,22.534,850.046
+Murder,incidents with an arrest only,441.010,61.716,82.869,6.258,,29.449
+Rape/sexual assault,incidents with an arrest only,1216.567,299.956,70.966,12.000,1.000,85.103
+Robbery,incidents with an arrest only,2161.768,679.705,267.340,151.681,13.654,137.473
+Simple assault,incidents with an arrest only,54152.979,9892.036,2654.192,557.717,54.854,2991.823
+Aggravated assault,"states=TX+AZ+CA, alloc=b",59288.109,11658.622,5290.322,1154.910,303.260,3852.816
+Murder,"states=TX+AZ+CA, alloc=b",1041.036,143.023,144.171,23.250,2.750,83.150
+Rape/sexual assault,"states=TX+AZ+CA, alloc=b",12905.423,3474.283,886.210,243.950,45.667,1282.917
+Robbery,"states=TX+AZ+CA, alloc=b",13615.667,3545.408,1460.833,1092.624,218.038,1030.730
+Simple assault,"states=TX+AZ+CA, alloc=b",193779.821,35288.759,11126.207,2914.738,616.992,11167.364
+Aggravated assault,"states=TX+AZ+CA, alloc=c",82798.288,23022.482,17690.785,2794.098,635.276,11834.085
+Murder,"states=TX+AZ+CA, alloc=c",1531.171,293.773,550.717,43.917,2.750,247.667
+Rape/sexual assault,"states=TX+AZ+CA, alloc=c",16163.197,7071.974,2178.030,506.383,128.167,4049.383
+Robbery,"states=TX+AZ+CA, alloc=c",24565.614,8568.959,5012.050,3259.835,579.420,4064.830
+Simple assault,"states=TX+AZ+CA, alloc=c",217933.364,55324.324,21655.263,5361.733,1128.642,29488.870

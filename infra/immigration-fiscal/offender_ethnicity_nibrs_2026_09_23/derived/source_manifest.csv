@@ -1,0 +1,11 @@
+key,file,bytes,sha256,fetched,url
+additional-datasets/ucr/ucr_participation_1960_2025.csv,ucr_participation_1960_2025.csv,178823,6d0fda754652211a8bfd50e8d22f62aed8e3d8113d54bf79781008a9fe81906a,2026-09-23,https://cde.ucr.cjis.gov/LATEST/s3/signedurl?key=additional-datasets/ucr/ucr_participation_1960_2025.csv
+agency/byStateAbbr/AZ,cde_agencies_AZ.json,31240,55a593cb2eaee7914d246445a13ceb70cf06ea16f4728833e746f64fc478da12,2026-09-23,https://cde.ucr.cjis.gov/LATEST/agency/byStateAbbr/AZ
+agency/byStateAbbr/CA,cde_agencies_CA.json,221187,2a969077000efccee6805c7cf33188459c064c0f97e69477b6da48bcf1f10241,2026-09-23,https://cde.ucr.cjis.gov/LATEST/agency/byStateAbbr/CA
+agency/byStateAbbr/TX,cde_agencies_TX.json,431098,f5baec7c8e5ee588cca0490070226a9b91558858e0a745f858e042a10129ed77,2026-09-23,https://cde.ucr.cjis.gov/LATEST/agency/byStateAbbr/TX
+nibrs/incident/2022/AZ-2022.zip,AZ-2022.zip,17580744,3cf8957f3000b36e5575f0330bec5cc7b472f9d60ff79b6945c221c3d6781649,2026-09-23,https://cde.ucr.cjis.gov/LATEST/s3/signedurl?key=nibrs/incident/2022/AZ-2022.zip
+nibrs/incident/2022/CA-2022.zip,CA-2022.zip,66041509,313e67394c4b1be94b1a69719961fe31df0705f3badcf2c71304d35fc18c0732,2026-09-23,https://cde.ucr.cjis.gov/LATEST/s3/signedurl?key=nibrs/incident/2022/CA-2022.zip
+nibrs/incident/2022/TX-2022.zip,TX-2022.zip,134834288,9c2632330fda16ca292f3b32574174a5c92bb89c505661a4dcb9d3b717481224,2026-09-23,https://cde.ucr.cjis.gov/LATEST/s3/signedurl?key=nibrs/incident/2022/TX-2022.zip
+nibrs/incident/2023/AZ-2023.zip,AZ-2023.zip,17341607,21e027cd9a9348d39143e6eca7823eff9e8e2746683302875bdd86e1af69afc3,2026-09-23,https://cde.ucr.cjis.gov/LATEST/s3/signedurl?key=nibrs/incident/2023/AZ-2023.zip
+nibrs/incident/2023/CA-2023.zip,CA-2023.zip,92150802,2dcf66724830e933722ac7aa4e9d82615fe9adfdcbf5a07a1e67b8f83bc88584,2026-09-23,https://cde.ucr.cjis.gov/LATEST/s3/signedurl?key=nibrs/incident/2023/CA-2023.zip
+nibrs/incident/2023/TX-2023.zip,TX-2023.zip,128089362,895e708876005299e0e376c599e8f74971f17b5447fcf8776443c62d709d0b70,2026-09-23,https://cde.ucr.cjis.gov/LATEST/s3/signedurl?key=nibrs/incident/2023/TX-2023.zip

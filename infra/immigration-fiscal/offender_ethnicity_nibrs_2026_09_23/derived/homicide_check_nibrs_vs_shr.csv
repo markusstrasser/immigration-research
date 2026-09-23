@@ -1,0 +1,5 @@
+source,state,victims,cleared_known_offender,share_offender_H,p_off_H_given_vic_H,p_off_H_given_vic_NHW,share_H_victims_of_H_offenders
+SHR (MAP),Texas,3815.0000,2781.0000,0.3538,0.7303,0.1644,0.7429
+SHR (MAP),Arizona,893.0000,577.0000,0.4090,0.7299,0.2061,0.6525
+"NIBRS 09A (first offender, recorded ethnicity)",Texas,3859.0000,2869.0000,0.3698,0.7467,0.1641,0.7878
+"NIBRS 09A (first offender, recorded ethnicity)",Arizona,421.0000,264.0000,0.3333,0.7037,0.1205,0.6951

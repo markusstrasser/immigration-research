@@ -1,0 +1,37 @@
+window,victims,measure,value,cleared_known,residents_share
+2024,H,"SHR, all reporting states (pooled cases)",0.7190,1509.0000,
+2024,H,"SHR, state values weighted by residents (states with >= 20 cases)",0.7260,1374.0000,0.8603
+2024,H,"SHR, outside TX, AZ and CA (pooled cases)",0.6757,774.0000,0.5215
+2024,H,"model, outside TX, AZ and CA (SHR case weights)",0.4898,774.0000,
+2024,H,"SHR, TX and AZ (pooled cases)",0.7570,539.0000,
+2024,H,"model, TX and AZ (SHR case weights)",0.7149,539.0000,
+2024,H,"SHR, CA (pooled cases)",0.7857,196.0000,
+2024,H,"model, CA",0.7259,196.0000,
+2024,H,"model, nation (residents' tracts; the uncalibrated arm)",0.6006,,1.0000
+2024,NH,"SHR, all reporting states (pooled cases)",0.0704,5472.0000,
+2024,NH,"SHR, state values weighted by residents (states with >= 20 cases)",0.0831,5355.0000,0.9042
+2024,NH,"SHR, outside TX, AZ and CA (pooled cases)",0.0518,4382.0000,0.8269
+2024,NH,"model, outside TX, AZ and CA (SHR case weights)",0.0387,4382.0000,
+2024,NH,"SHR, TX and AZ (pooled cases)",0.1329,865.0000,
+2024,NH,"model, TX and AZ (SHR case weights)",0.1257,865.0000,
+2024,NH,"SHR, CA (pooled cases)",0.1911,225.0000,
+2024,NH,"model, CA",0.1385,225.0000,
+2024,NH,"model, nation (residents' tracts; the uncalibrated arm)",0.0567,,1.0000
+2022_2024,H,"SHR, all reporting states (pooled cases)",0.7022,4957.0000,
+2022_2024,H,"SHR, state values weighted by residents (states with >= 20 cases)",0.7034,4863.0000,0.9304
+2022_2024,H,"SHR, outside TX, AZ and CA (pooled cases)",0.6441,2332.0000,0.5272
+2022_2024,H,"model, outside TX, AZ and CA (SHR case weights)",0.4880,2332.0000,
+2022_2024,H,"SHR, TX and AZ (pooled cases)",0.7384,1751.0000,
+2022_2024,H,"model, TX and AZ (SHR case weights)",0.7145,1751.0000,
+2022_2024,H,"SHR, CA (pooled cases)",0.7849,874.0000,
+2022_2024,H,"model, CA",0.7259,874.0000,
+2022_2024,H,"model, nation (residents' tracts; the uncalibrated arm)",0.6006,,1.0000
+2022_2024,NH,"SHR, all reporting states (pooled cases)",0.0743,17979.0000,
+2022_2024,NH,"SHR, state values weighted by residents (states with >= 20 cases)",0.0858,17936.0000,0.9412
+2022_2024,NH,"SHR, outside TX, AZ and CA (pooled cases)",0.0522,14150.0000,0.8269
+2022_2024,NH,"model, outside TX, AZ and CA (SHR case weights)",0.0390,14150.0000,
+2022_2024,NH,"SHR, TX and AZ (pooled cases)",0.1403,2837.0000,
+2022_2024,NH,"model, TX and AZ (SHR case weights)",0.1258,2837.0000,
+2022_2024,NH,"SHR, CA (pooled cases)",0.2016,992.0000,
+2022_2024,NH,"model, CA",0.1385,992.0000,
+2022_2024,NH,"model, nation (residents' tracts; the uncalibrated arm)",0.0567,,1.0000

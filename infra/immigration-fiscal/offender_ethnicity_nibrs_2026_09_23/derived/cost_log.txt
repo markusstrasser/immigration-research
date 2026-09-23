@@ -1,0 +1,169 @@
+  [victim lane] [gate] CPI-U annual averages (BLS CUUR0000SA0, held by the NCVS lane): PASS — 2008 215.303, 2017 245.12, 2024 313.689
+  [victim lane] [gate] McCollister Table 4 intangible = pain and suffering + corrected risk of homicide: PASS — 7/7 offences, parsed from the PMC JATS record
+  [victim lane] [gate] Miller 2021 transcription appears in the PDF text: PASS — 85 values checked; missing []
+  [victim lane] [gate] Miller 2021 Table 5 rows close to published rounding: PASS — seven tangible columns sum to the subtotal within $1 (rape, other sexual assault and burglary are off by one: rape -1, other_sa +1, burglary -1); subtotal + QoL = total
+  [victim lane] [gate] assault split (k=3.9556) reconstructs Miller's pooled victim-only cost: PASS — pooled $30,366; simple $20,653, aggravated $81,697
+  [victim lane] [gate] assault split (k=1.9300) reconstructs Miller's pooled victim-only cost: PASS — pooled $30,366; simple $26,452, aggravated $51,052
+  [victim lane] [gate] positive control: Hispanic perceived-offender rate 13.9 per 1,000 residents 12+: PASS — 2,177,710 incidents / 156,526,080 person-years = 13.9128
+  [victim lane] [gate] positive control: Hispanic-offender same-group share 0.404: PASS — 0.40444
+  [victim lane] [gate] NCVS Hispanic person-years 2022-2024 equal the rate denominator: PASS — 156,526,080
+  [victim lane] [gate] victimisations per incident within 1.06-1.09 (NCVS lane cross-check): PASS — White 1.0863, Black 1.0608, Hispanic 1.0754, Other 1.0849
+  [victim lane] [gate] CV2024 table 1, 2024 violent victimisations: PASS — Rape/sexual assault 560,890, Robbery 642,150, Aggravated assault 1,341,950, Simple assault 4,126,640
+  [victim lane] [input] Hispanic share of 2019 adult arrests: Rape/sexual assault 0.292, Robbery 0.230, Aggravated assault 0.255, Simple assault 0.184
+[gate] victim lane central reproduced ($28.92bn full, $4.50bn tangible): PASS — full $28.9229bn (held 28.9229), tangible $4.5014bn (held 4.5014)
+[gate] victim lane arrest-share arm reproduced ($43.12bn): PASS — $43.1199bn
+Hispanic share of 2024 national victimisations implied by each source:
+  Rape/sexual assault    NCVS perception 0.138   2019 arrests 0.292
+  Robbery                NCVS perception 0.175   2019 arrests 0.230
+  Aggravated assault     NCVS perception 0.150   2019 arrests 0.255
+  Simple assault         NCVS perception 0.144   2019 arrests 0.184
+Share of the group's non-fatal victims who are other residents: Rape/sexual assault NCVS 0.714 / NIBRS national 0.488 / TX-AZ 0.427, Robbery NCVS 0.614 / NIBRS national 0.514 / TX-AZ 0.450, Aggravated assault NCVS 0.698 / NIBRS national 0.443 / TX-AZ 0.384, Simple assault NCVS 0.686 / NIBRS national 0.423 / TX-AZ 0.367
+
+-- Implied P(offender Hispanic | victim group) under each arm (SHR national homicide: H 0.719, NH 0.069) --
+            offence                                                    arm  hispanic_offender_share  p_victim_hispanic_given_offender_h  implied_p_off_h_given_victim_h  implied_p_off_h_given_victim_nh  ncvs_hispanic_victim_share
+Rape/sexual assault                          NCVS perception (victim lane)                    0.138                               0.364                           0.317                            0.104                       0.158
+Rape/sexual assault            offender (NIBRS share, NCVS victim pattern)                    0.239                               0.364                           0.550                            0.181                       0.158
+Rape/sexual assault      offender+victims (NIBRS share and victim pattern)                    0.239                               0.651                           0.985                            0.099                       0.158
+Rape/sexual assault    2019 arrests (victim lane arm, NCVS victim pattern)                    0.292                               0.364                           0.671                            0.220                       0.158
+Rape/sexual assault                           victim-conditional (central)                    0.177                               0.574                           0.643                            0.090                       0.158
+Rape/sexual assault           victim-conditional, SHR-calibrated (central)                    0.210                               0.570                           0.756                            0.107                       0.158
+Rape/sexual assault victim-conditional, SHR 2022-2024-calibrated (central)                    0.213                               0.550                           0.740                            0.114                       0.158
+            Robbery                          NCVS perception (victim lane)                    0.175                               0.491                           0.364                            0.117                       0.236
+            Robbery            offender (NIBRS share, NCVS victim pattern)                    0.188                               0.491                           0.390                            0.125                       0.236
+            Robbery      offender+victims (NIBRS share and victim pattern)                    0.188                               0.618                           0.492                            0.094                       0.236
+            Robbery    2019 arrests (victim lane arm, NCVS victim pattern)                    0.230                               0.491                           0.479                            0.154                       0.236
+            Robbery                           victim-conditional (central)                    0.148                               0.551                           0.346                            0.087                       0.236
+            Robbery           victim-conditional, SHR-calibrated (central)                    0.190                               0.580                           0.468                            0.104                       0.236
+            Robbery victim-conditional, SHR 2022-2024-calibrated (central)                    0.191                               0.555                           0.449                            0.111                       0.236
+ Aggravated assault                          NCVS perception (victim lane)                    0.150                               0.384                           0.350                            0.111                       0.165
+ Aggravated assault            offender (NIBRS share, NCVS victim pattern)                    0.222                               0.384                           0.518                            0.164                       0.165
+ Aggravated assault      offender+victims (NIBRS share and victim pattern)                    0.222                               0.708                           0.957                            0.078                       0.165
+ Aggravated assault    2019 arrests (victim lane arm, NCVS victim pattern)                    0.255                               0.384                           0.594                            0.188                       0.165
+ Aggravated assault                           victim-conditional (central)                    0.156                               0.653                           0.618                            0.065                       0.165
+ Aggravated assault           victim-conditional, SHR-calibrated (central)                    0.186                               0.649                           0.734                            0.078                       0.165
+ Aggravated assault victim-conditional, SHR 2022-2024-calibrated (central)                    0.188                               0.629                           0.718                            0.083                       0.165
+     Simple assault                          NCVS perception (victim lane)                    0.144                               0.400                           0.327                            0.105                       0.176
+     Simple assault            offender (NIBRS share, NCVS victim pattern)                    0.220                               0.400                           0.499                            0.160                       0.176
+     Simple assault      offender+victims (NIBRS share and victim pattern)                    0.220                               0.734                           0.917                            0.071                       0.176
+     Simple assault    2019 arrests (victim lane arm, NCVS victim pattern)                    0.184                               0.400                           0.417                            0.134                       0.176
+     Simple assault                           victim-conditional (central)                    0.165                               0.712                           0.666                            0.058                       0.176
+     Simple assault           victim-conditional, SHR-calibrated (central)                    0.194                               0.703                           0.775                            0.070                       0.176
+     Simple assault victim-conditional, SHR 2022-2024-calibrated (central)                    0.195                               0.685                           0.760                            0.075                       0.176
+
+-- Victim cost to other residents, 2024 $bn (homicide on WONDER x SHR throughout) --
+                                                              spec                                             arm  tangible_bn  full_bn  murder_full_bn  outside_nonfatal_victims
+                                                         reference     victim lane arrest-share arm (2019 arrests)         5.60    43.12            9.16                   577,464
+                                                         reference           victim lane central (NCVS perception)         4.50    28.92            9.16                   401,735
+                                                           central                                        offender         5.49    40.04            9.16                   597,695
+                                                           central                                offender+victims         4.44    29.40            9.16                   384,370
+                                                           central            offender+victims (TX/AZ as observed)         4.18    26.78            9.16                   333,978
+                                                           central         offender, arrest-calibrated translation         6.13    46.64            9.16                   706,146
+                                                           central offender+victims, arrest-calibrated translation         4.88    33.75            9.16                   456,220
+                                                          alloc=a0                                        offender         5.51    40.15            9.16                   600,231
+                                                          alloc=a0                                offender+victims         4.46    29.49            9.16                   386,341
+                                                           alloc=b                                        offender         4.88    33.51            9.16                   495,341
+                                                           alloc=b                                offender+victims         4.03    25.09            9.16                   316,726
+                                                           alloc=c                                        offender         6.68    51.95            9.16                   792,890
+                                                           alloc=c                                offender+victims         5.27    37.34            9.16                   515,892
+                                                           alloc=k                                        offender         5.52    40.35            9.16                   602,442
+                                                           alloc=k                                offender+victims         4.47    29.63            9.16                   387,748
+                                agencies: ethnicity recorded >= 0%                                        offender         5.47    39.78            9.16                   593,949
+                                agencies: ethnicity recorded >= 0%                                offender+victims         4.43    29.23            9.16                   381,874
+                               agencies: ethnicity recorded >= 80%                                        offender         5.43    38.97            9.16                   591,706
+                               agencies: ethnicity recorded >= 80%                                offender+victims         4.41    28.69            9.16                   380,440
+                               agencies: ethnicity recorded >= 95%                                        offender         5.37    38.01            9.16                   578,579
+                               agencies: ethnicity recorded >= 95%                                offender+victims         4.37    28.05            9.16                   372,358
+                  agencies: offender-ethnicity start date by Jan 1                                        offender         5.52    40.46            9.16                   602,313
+                  agencies: offender-ethnicity start date by Jan 1                                offender+victims         4.47    29.69            9.16                   387,473
+                                      agencies: 12 months reported                                        offender         5.49    40.11            9.16                   597,650
+                                      agencies: 12 months reported                                offender+victims         4.45    29.45            9.16                   384,384
+                                                         states=TX                                        offender         5.54    40.63            9.16                   607,731
+                                                         states=TX                                offender+victims         4.48    29.80            9.16                   390,760
+                                                         states=AZ                                        offender         4.95    33.93            9.16                   487,864
+                                                         states=AZ                                offender+victims         4.10    25.42            9.16                   315,309
+                                                         states=CA                                        offender         5.10    36.96            9.16                   516,262
+                                                         states=CA                                offender+victims         4.19    27.42            9.16                   331,946
+                                                   states=TX+AZ+CA                                        offender         5.44    39.76            9.16                   582,757
+                                                   states=TX+AZ+CA                                offender+victims         4.41    29.25            9.16                   375,231
+                                                         year=2022                                        offender         5.48    40.08            9.16                   592,692
+                                                         year=2022                                offender+victims         4.44    29.44            9.16                   381,387
+                                                         year=2023                                        offender         5.50    40.01            9.16                   602,723
+                                                         year=2023                                offender+victims         4.45    29.38            9.16                   387,385
+                                                 attribution=first                                        offender         5.49    40.05            9.16                   597,450
+                                                 attribution=first                                offender+victims         4.44    29.41            9.16                   384,169
+                                                  attribution=anyH                                        offender         5.64    41.10            9.16                   625,208
+                                                  attribution=anyH                                offender+victims         4.55    30.12            9.16                   402,924
+                                                  attribution=allH                                        offender         5.35    39.02            9.16                   571,331
+                                                  attribution=allH                                offender+victims         4.35    28.73            9.16                   366,635
+                                                 victims: all ages                                        offender         5.50    40.29            9.16                   598,932
+                                                 victims: all ages                                offender+victims         4.45    29.58            9.16                   385,208
+                                   victims: individuals + officers                                        offender         5.49    40.03            9.16                   596,849
+                                   victims: individuals + officers                                offender+victims         4.44    29.40            9.16                   383,852
+                                             denominator: all ages                                        offender         5.53    40.47            9.16                   606,091
+                                             denominator: all ages                                offender+victims         4.47    29.69            9.16                   389,764
+                             simple assault incl. intimidation 13C                                        offender         5.45    39.84            9.16                   588,203
+                             simple assault incl. intimidation 13C                                offender+victims         4.42    29.28            9.16                   378,516
+                                translation: rate vs all residents                                        offender         5.26    37.65            9.16                   553,987
+                                translation: rate vs all residents                                offender+victims         4.29    27.83            9.16                   356,095
+                                     incidents with an arrest only                                        offender         5.53    40.88            9.16                   599,046
+                                     incidents with an arrest only                                offender+victims         4.48    30.02            9.16                   386,445
+                                          states=TX+AZ+CA, alloc=b                                        offender         4.75    32.32            9.16                   467,228
+                                          states=TX+AZ+CA, alloc=b                                offender+victims         3.95    24.31            9.16                   298,882
+                                          states=TX+AZ+CA, alloc=c                                        offender         6.64    51.98            9.16                   781,245
+                                          states=TX+AZ+CA, alloc=c                                offender+victims         5.24    37.39            9.16                   508,453
+                                                           central                              victim-conditional         4.04    25.39            9.16                   304,684
+                                                           central              victim-conditional, SHR-calibrated         4.37    28.59            9.16                   365,485
+                                                           central    victim-conditional, SHR 2022-2024-calibrated         4.45    29.39            9.16                   379,831
+                                                          alloc=a0                              victim-conditional         4.29    28.05            9.16                   346,384
+                                                          alloc=a0              victim-conditional, SHR-calibrated         4.22    27.15            9.16                   334,717
+                                                           alloc=b                              victim-conditional         3.75    22.39            9.16                   257,104
+                                                           alloc=b              victim-conditional, SHR-calibrated         4.43    29.08            9.16                   386,247
+                                                           alloc=c                              victim-conditional         5.30    37.82            9.16                   508,661
+                                                           alloc=c              victim-conditional, SHR-calibrated         4.04    24.99            9.16                   287,637
+                                agencies: ethnicity recorded >= 0%                              victim-conditional         4.06    25.56            9.16                   308,180
+                                agencies: ethnicity recorded >= 0%              victim-conditional, SHR-calibrated         4.34    28.26            9.16                   359,748
+                               agencies: ethnicity recorded >= 80%                              victim-conditional         4.11    25.69            9.16                   315,750
+                               agencies: ethnicity recorded >= 80%              victim-conditional, SHR-calibrated         4.38    28.33            9.16                   366,742
+                               agencies: ethnicity recorded >= 95%                              victim-conditional         4.04    25.06            9.16                   307,765
+                               agencies: ethnicity recorded >= 95%              victim-conditional, SHR-calibrated         4.31    27.66            9.16                   357,670
+                                                         states=TX                              victim-conditional         4.01    25.08            9.16                   297,830
+                                                         states=TX              victim-conditional, SHR-calibrated         4.38    28.76            9.16                   367,065
+                                                         states=AZ                              victim-conditional         4.57    29.00            9.16                   392,202
+                                                         states=AZ              victim-conditional, SHR-calibrated         4.17    25.25            9.16                   322,013
+                                                         states=CA                              victim-conditional         4.72    31.77            9.16                   425,854
+                                                         states=CA              victim-conditional, SHR-calibrated         4.10    25.57            9.16                   312,682
+                                                   states=TX+AZ+CA                              victim-conditional         4.22    27.04            9.16                   334,670
+                                                   states=TX+AZ+CA              victim-conditional, SHR-calibrated         4.36    28.31            9.16                   360,393
+                                                         year=2022                              victim-conditional         4.03    25.31            9.16                   300,621
+                                                         year=2022              victim-conditional, SHR-calibrated         4.41    29.09            9.16                   371,492
+                                                         year=2023                              victim-conditional         4.06    25.47            9.16                   308,558
+                                                         year=2023              victim-conditional, SHR-calibrated         4.33    28.12            9.16                   359,744
+                                                 attribution=first                              victim-conditional         4.04    25.38            9.16                   304,164
+                                                 attribution=first              victim-conditional, SHR-calibrated         4.36    28.57            9.16                   364,895
+                                                  attribution=anyH                              victim-conditional         4.17    26.27            9.16                   327,495
+                                                  attribution=anyH              victim-conditional, SHR-calibrated         4.27    27.21            9.16                   346,536
+                                                  attribution=allH                              victim-conditional         3.93    24.59            9.16                   283,750
+                                                  attribution=allH              victim-conditional, SHR-calibrated         4.50    30.32            9.16                   389,798
+                                                 victims: all ages                              victim-conditional         4.02    24.93            9.16                   302,074
+                                                 victims: all ages              victim-conditional, SHR-calibrated         4.35    28.15            9.16                   364,405
+                                     incidents with an arrest only                              victim-conditional         4.10    25.67            9.16                   312,478
+                                     incidents with an arrest only              victim-conditional, SHR-calibrated         4.36    28.09            9.16                   360,216
+                                          states=TX+AZ+CA, alloc=b                              victim-conditional         3.87    23.46            9.16                   278,842
+                                          states=TX+AZ+CA, alloc=b              victim-conditional, SHR-calibrated         4.45    29.03            9.16                   387,967
+                                          states=TX+AZ+CA, alloc=c                              victim-conditional         5.51    39.92            9.16                   544,055
+                                          states=TX+AZ+CA, alloc=c              victim-conditional, SHR-calibrated         4.02    24.82            9.16                   283,298
+       central; prices: McCollister 2010, risk of homicide removed                                        offender         3.20    40.32           12.56                   597,695
+       central; prices: McCollister 2010, risk of homicide removed                                offender+victims         2.45    30.96           12.56                   384,370
+       central; prices: McCollister 2010, risk of homicide removed              victim-conditional, SHR-calibrated         2.39    30.43           12.56                   365,485
+                 central; prices: Miller + DOT 2024 VSL for murder                                        offender         5.49    44.87           13.99                   597,695
+                 central; prices: Miller + DOT 2024 VSL for murder                                offender+victims         4.44    34.24           13.99                   384,370
+                 central; prices: Miller + DOT 2024 VSL for murder              victim-conditional, SHR-calibrated         4.37    33.43           13.99                   365,485
+central; Hispanic victims all in-group (non-Hispanic victims only)                                        offender         4.28    33.28            6.03                   522,962
+central; Hispanic victims all in-group (non-Hispanic victims only)                                offender+victims         2.95    19.76            6.03                   251,616
+central; Hispanic victims all in-group (non-Hispanic victims only)              victim-conditional, SHR-calibrated         2.99    20.29            6.03                   255,237
+                   central; scaling: ACS institutional ratio 1.118                                        offender         6.14    44.76           10.24                   668,271
+                   central; scaling: ACS institutional ratio 1.118                                offender+victims         4.97    32.88           10.24                   429,756
+                   central; scaling: ACS institutional ratio 1.118              victim-conditional, SHR-calibrated         4.88    31.97           10.24                   408,642
+                   central; scaling: ACS institutional ratio 0.901                                        offender         4.95    36.08            8.25                   538,559
+                   central; scaling: ACS institutional ratio 0.901                                offender+victims         4.00    26.49            8.25                   346,340
+                   central; scaling: ACS institutional ratio 0.901              victim-conditional, SHR-calibrated         3.94    25.76            8.25                   329,324
