@@ -1,0 +1,15 @@
+{
+ "aha_national_bn": 42.67,
+ "uplift_2024": 1.2,
+ "target_share": 0.25741258798716626,
+ "target_share_se": 0.0062723548772911485,
+ "target_bn": 10.983795129412385,
+ "target_bn_2024_prices": 13.180554155294862,
+ "per_head_bn": 5.13085415,
+ "per_head_bn_2024_prices": 6.15702498,
+ "excess_over_per_head_bn": 5.852940979412385,
+ "excess_over_per_head_bn_2024_prices": 7.023529175294862,
+ "target_share_of_medicaid_covered": 0.19647486897309102,
+ "check_price_x_exposure_national_bn": 49.618480629753286,
+ "check_price_x_exposure_target_bn": 12.772421510895873
+}
