@@ -384,3 +384,7 @@ compositional attitudes into a fiscal-comparable dollar amount.
 `derived/` was deleted and every computation step re-run from the cached raw inputs; all 19
 files returned identical to the byte. The network steps are idempotent by construction: each
 fetch script skips any cache file that parses, so a second run makes zero API calls.
+
+## Revisions
+
+2026-09-23: Connecticut planning regions (09110–09190) now map to 2013 CBSAs in the shared crosswalk; `derived/geo_county_cbsa_2013.csv` gains nine rows (1,882 → 1,891; existing rows byte-identical), built in `src/build_geo.py` from the Census town crosswalk and 2020 town populations. This lane's own outputs are byte-identical (`build_panel.py` and `zillow.py` rerun). Mapping, sources and consumer effects: [`CT_PLANNING_REGIONS.md`](CT_PLANNING_REGIONS.md).

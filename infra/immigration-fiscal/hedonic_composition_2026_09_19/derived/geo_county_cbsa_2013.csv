@@ -173,6 +173,15 @@ county_fips,cbsa,cbsa_title,is_metro
 09011,35980,"Norwich-New London, CT",1
 09013,25540,"Hartford-West Hartford-East Hartford, CT",1
 09015,49340,"Worcester, MA-CT",1
+09110,25540,"Hartford-West Hartford-East Hartford, CT",1
+09120,14860,"Bridgeport-Stamford-Norwalk, CT",1
+09130,25540,"Hartford-West Hartford-East Hartford, CT",1
+09140,35300,"New Haven-Milford, CT",1
+09150,49340,"Worcester, MA-CT",1
+09160,45860,"Torrington, CT",0
+09170,35300,"New Haven-Milford, CT",1
+09180,35980,"Norwich-New London, CT",1
+09190,14860,"Bridgeport-Stamford-Norwalk, CT",1
 10001,20100,"Dover, DE",1
 10003,37980,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",1
 10005,41540,"Salisbury, MD-DE",1
