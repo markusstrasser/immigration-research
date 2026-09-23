@@ -56,3 +56,43 @@ Tiburcio E, Camarena KR, The Local Reaction to Unauthorized Mexican Migration to
 ## Revisions — September 19, 2026
 
 Corrected the interpretation for the reasons above; see the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md).
+
+## Revisions — September 23, 2026
+
+**The 2022 wave carries a financial-administration break; the weighted verdict survives it.** The
+July 2026 re-release of the 2022 unit file raises administration's share of direct spending
+between 2017 and 2022 as follows:
+
+| County | 2017 | 2022 |
+|---|---|---|
+| New York County (NYC) | 1.6% | 8.9% |
+| Philadelphia | 3.8% | 11.6% |
+| Cook | 4.2% | 7.6% |
+| Miami-Dade | 3.2% | 6.1% |
+
+Those gains lower every other share in those counties. The estimator was rerun on shares that
+leave administration out of the denominator in every year. Per 10 points of Hispanic share:
+
+| Arm | Outcome | Published | Administration left out |
+|---|---|---|---|
+| Weighted | police | −0.30 | −0.36 |
+| Weighted | law and order | −0.58 | −0.67 |
+| Weighted | education | +6.71 | +6.68 |
+| Weighted, 2017–2022 | law and order | −1.15 | −1.32 |
+| Weighted, 2012–2017 (before the break) | law and order | +0.05 | +0.03 |
+
+The unweighted arm does move: law and order goes from +0.49 (SE 0.28) to +1.11 (SE 0.40). The
+break does not cause that move:
+- the same gap appears in 2012–2017, before the break (+0.57 → +1.30);
+- it is absent in 2017–2022;
+- it survives dropping Florida, New York, Illinois and Pennsylvania;
+- it disappears under the lane's own trim (−0.75 → −0.83).
+
+The cause is a denominator effect in tiny counties. In Loving County, Texas, for example, the 2012
+law-and-order share goes from 21.9% to 41.0% once administration leaves the denominator.
+
+The verdict stands: no weighted arm shows a shift toward law and order. [CALCULATION:
+`../infra/immigration-fiscal/gg_response_county_iv_2026_09_23/e23_other_lanes.py` →
+`derived/e23_other_lanes.csv`, using this lane's own `estimate_composition.py` read-only; its
+derived files are byte-identical before and after.] The same break shows up in the Census state
+series for 2023, so any window ending in 2022 or later needs this check.

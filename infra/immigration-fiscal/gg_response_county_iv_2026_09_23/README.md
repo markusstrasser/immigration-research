@@ -40,6 +40,7 @@ r $L/build_panel.py          # ~25 s
 r $L/estimate.py             # ~10 s, 780 estimates
 r $L/verify.py               # independent full-matrix recomputation of the key estimates
 node $L/main_case_map.js     # gates again, then the main-case map
+r $L/e23_other_lanes.py      # ~20 s, the E23 break in the two older lanes (added 2026-09-23)
 ```
 
 ## Scripts
@@ -56,6 +57,7 @@ node $L/main_case_map.js     # gates again, then the main-case map
 | `iv.py` | OLS, 2SLS, first stages, effective F, Anderson-Rubin sets, Hansen J, Rotemberg weights |
 | `estimate.py` | every specification, placebos, cross-sections, key results |
 | `verify.py` | recomputes key estimates without `iv.py`'s partialling-out and checks Anderson-Rubin bounds directly |
+| `e23_other_lanes.py` | dates the E23 break in the administration lane's inputs and reruns the composition lane's share arms without administration in the denominator (read-only on both lanes) |
 
 ## Outputs
 
@@ -69,12 +71,15 @@ node $L/main_case_map.js     # gates again, then the main-case map
 | `derived/cross_section.csv` | elasticities in levels: counties, state sums of county areas, states (state and local) |
 | `derived/estimates_summary.json` | key specifications, Anderson-Rubin tally, map points |
 | `derived/main_case_map.csv` | composite response and adopted main-case band at each mapped elasticity |
+| `derived/e23_other_lanes.csv` | national E23 by year and level, state jump ratios, county administration shares, and published against ex-administration share arms |
 
 ## Traps
 
 - The 2022 individual-unit file (re-released July 2026) carries local financial administration of
   $39.9bn against $18.9bn in 2017; NYC alone reports +$9.55bn. The published 2022 Table 1 shows
-  $23.7bn. Windows ending in 2022 are contaminated; see `RESULT.md`.
+  $23.7bn. Windows ending in 2022 are contaminated; see `RESULT.md`. The Census state-by-level
+  series carries the same level into 2023 (national E23 $53.6bn in 2021, $97.3bn in 2022,
+  $96.3bn in 2023), so windows ending later are contaminated too (`e23_other_lanes.py`).
 - New York City's government is filed under New York County; the five boroughs are one unit here.
 - CBP suppresses 53–55% of county 3-digit cells in 2007 and 2012. They are imputed from size classes.
 - Python's `zipfile` cannot read the database's Deflate64 member; `unzip -p` can.

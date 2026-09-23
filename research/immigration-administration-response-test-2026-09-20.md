@@ -48,3 +48,33 @@ For a finite population change, define the responsive fraction of the per-capita
 2022 national E23/E29/E31 totals match the independent cached Census API amounts exactly; state sums reconcile within rounding and combined/state/local component conservation is exact. Input hashes are pinned and changed vintages fail. Source documents, population extraction and dataset paths are linked by the reproduction README. The script retains missing component cells instead of treating them as zero. All outputs are rederivable; no raw data changed.
 
 Independent double-demeaning and direct cluster-score calculations reproduce both main coefficients and standard errors within 3×10⁻¹⁴. A separate source check matches every one of the 1,050 level-specific panel rows to the original finance/population inputs. The reproducible `verify.py` retains the principal numerical and input-vintage checks.
+
+## Revisions
+
+**2026-09-23 — the 2022 and 2023 waves carry a reporting break in financial administration; the
+verdict stands.** National E23 current operations in this lane's own inputs run $53.6bn in 2021,
+**$97.3bn in 2022 and $96.3bn in 2023** (state $31.7bn → $57.4bn; local $21.9bn → $39.9bn), after
+growing 2–6% a year from 2017. The jump is uneven: 2022/2021 ratios are 4.8 in Wisconsin, 3.4 in
+New York and California, 2.9 in New Jersey and 2.3 in Illinois and Hawaii. Year effects therefore do
+not absorb it. The county lane that found it traces the local rise to NYC, Cook County,
+Philadelphia and Florida. [DATA: `derived/selected_finance.csv`, `derived/panel.csv`; CALCULATION:
+`../infra/immigration-fiscal/gg_response_county_iv_2026_09_23/e23_other_lanes.py` →
+`derived/e23_other_lanes.csv`; trigger: [county IV lane](../infra/immigration-fiscal/gg_response_county_iv_2026_09_23/RESULT.md)]
+
+Specifications affected:
+- **Contaminated:** the main estimate (0.47, which includes 2022 and 2023), census waves only
+  (−0.23), "exclude 2020–2022" (0.59, which still includes 2023), and the long differences ending
+  in 2022.
+- **Clean:** pre-2020 only, **0.38 (−0.78 to 1.54)**, and the 2012–2017 long difference.
+
+The clean estimate sits close to the main one and is just as wide, so the conclusion, that this
+panel cannot identify a fixed share, does not change.
+
+The main case does not read this series. Its general-government pool is BEA NIPA Table 3.17, and
+its 0.59–0.84 response comes from the published 2022 Table 1, whose cross-state levels the county
+lane found stable on either vintage. BEA's state and local general public service shows no break
+of the Census size. It grew 13.5% in 2021, 14.7% in 2022 ($255.3bn to $292.8bn), then 2.9% and
+1.1%. [DATA: `sources/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx`, T31700-A
+line 22] Whether part of BEA's 2022 rise shares the cause is not established. The ceiling on the
+main case is about $3–4bn: the union's 12% of the whole $37.5bn rise at a 0.59–0.84 response. The
+equal rise in 2021 argues that most of it is ordinary growth. [INFERENCE]

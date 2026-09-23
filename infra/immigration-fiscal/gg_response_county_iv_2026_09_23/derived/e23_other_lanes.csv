@@ -1,0 +1,89 @@
+check,spec,outcome,published,published_se,ex_admin,ex_admin_se,n
+national_E23_bn,2012,state_local,37.783,,,,
+national_E23_bn,2012,state,21.083,,,,
+national_E23_bn,2012,local,16.7,,,,
+national_E23_bn,2017,state_local,47.004,,,,
+national_E23_bn,2017,state,28.072,,,,
+national_E23_bn,2017,local,18.932,,,,
+national_E23_bn,2018,state_local,48.303,,,,
+national_E23_bn,2018,state,28.929,,,,
+national_E23_bn,2018,local,19.374,,,,
+national_E23_bn,2019,state_local,49.723,,,,
+national_E23_bn,2019,state,29.339,,,,
+national_E23_bn,2019,local,20.384,,,,
+national_E23_bn,2020,state_local,50.664,,,,
+national_E23_bn,2020,state,29.834,,,,
+national_E23_bn,2020,local,20.829,,,,
+national_E23_bn,2021,state_local,53.556,,,,
+national_E23_bn,2021,state,31.659,,,,
+national_E23_bn,2021,local,21.897,,,,
+national_E23_bn,2022,state_local,97.268,,,,
+national_E23_bn,2022,state,57.377,,,,
+national_E23_bn,2022,local,39.891,,,,
+national_E23_bn,2023,state_local,96.289,,,,
+national_E23_bn,2023,state,55.202,,,,
+national_E23_bn,2023,local,41.086,,,,
+state_E23_ratio,WI,2022_over_2021,4.836,,,,
+state_E23_ratio,WI,2023_over_2022,1.077,,,,
+state_E23_ratio,NY,2022_over_2021,3.439,,,,
+state_E23_ratio,NY,2023_over_2022,1.0,,,,
+state_E23_ratio,CA,2022_over_2021,3.414,,,,
+state_E23_ratio,CA,2023_over_2022,0.731,,,,
+state_E23_ratio,NJ,2022_over_2021,2.92,,,,
+state_E23_ratio,NJ,2023_over_2022,0.636,,,,
+state_E23_ratio,IL,2022_over_2021,2.322,,,,
+state_E23_ratio,IL,2023_over_2022,1.178,,,,
+state_E23_ratio,HI,2022_over_2021,2.317,,,,
+state_E23_ratio,HI,2023_over_2022,0.308,,,,
+county_admin_share_pct,12086 2012,admin,5.098,,,,
+county_admin_share_pct,17031 2012,admin,3.031,,,,
+county_admin_share_pct,36061 2012,admin,1.833,,,,
+county_admin_share_pct,42101 2012,admin,2.292,,,,
+county_admin_share_pct,12086 2017,admin,3.227,,,,
+county_admin_share_pct,17031 2017,admin,4.222,,,,
+county_admin_share_pct,36061 2017,admin,1.557,,,,
+county_admin_share_pct,42101 2017,admin,3.825,,,,
+county_admin_share_pct,12086 2022,admin,6.104,,,,
+county_admin_share_pct,17031 2022,admin,7.577,,,,
+county_admin_share_pct,36061 2022,admin,8.878,,,,
+county_admin_share_pct,42101 2022,admin,11.576,,,,
+lsc_share_arm,A_share_wtd,education,6.7088,2.0585,6.6751,2.0018,3126
+lsc_share_arm,A_share_wtd,police,-0.2945,0.319,-0.3605,0.33,3126
+lsc_share_arm,A_share_wtd,judicial,-0.3431,0.3007,-0.3595,0.3169,3126
+lsc_share_arm,A_share_wtd,law_order,-0.5837,0.6475,-0.6667,0.6785,3126
+lsc_share_arm,C_share_cov,education,5.7439,1.322,5.6153,1.3167,3126
+lsc_share_arm,C_share_cov,police,-0.0909,0.2499,-0.1592,0.2669,3126
+lsc_share_arm,C_share_cov,judicial,-0.2987,0.2686,-0.3173,0.2845,3126
+lsc_share_arm,C_share_cov,law_order,-0.2654,0.5329,-0.3519,0.5746,3126
+lsc_share_arm,F_share_droptop25,education,6.8303,2.6804,7.0148,2.6476,3101
+lsc_share_arm,F_share_droptop25,police,-0.0285,0.3266,-0.0645,0.3371,3101
+lsc_share_arm,F_share_droptop25,judicial,0.0796,0.1621,0.0825,0.1698,3101
+lsc_share_arm,F_share_droptop25,law_order,0.2428,0.5913,0.2232,0.6032,3101
+lsc_share_arm,I_share_2017_2022,education,5.143,2.0109,5.0394,1.8848,3126
+lsc_share_arm,I_share_2017_2022,police,-0.6579,0.3051,-0.7709,0.3139,3126
+lsc_share_arm,I_share_2017_2022,judicial,-0.6032,0.1809,-0.6484,0.1935,3126
+lsc_share_arm,I_share_2017_2022,law_order,-1.1505,0.4959,-1.318,0.5237,3126
+lsc_share_arm,A_weighted_2012_2017,education,5.5615,2.3138,5.4771,2.347,3126
+lsc_share_arm,A_weighted_2012_2017,police,0.2952,0.4488,0.2734,0.4712,3126
+lsc_share_arm,A_weighted_2012_2017,judicial,-0.2126,0.4414,-0.2093,0.4609,3126
+lsc_share_arm,A_weighted_2012_2017,law_order,0.0536,0.864,0.0329,0.9104,3126
+lsc_share_arm,B_share_unwtd,education,0.5881,1.0695,0.7481,1.0706,3126
+lsc_share_arm,B_share_unwtd,police,0.0443,0.1509,0.3374,0.2893,3126
+lsc_share_arm,B_share_unwtd,judicial,0.4035,0.1526,0.7187,0.31,3126
+lsc_share_arm,B_share_unwtd,law_order,0.4884,0.2758,1.1125,0.403,3126
+lsc_share_arm,B_unwtd_2012_2017,education,2.2795,0.9214,2.145,1.0041,3126
+lsc_share_arm,B_unwtd_2012_2017,police,0.0116,0.2412,0.3666,0.4292,3126
+lsc_share_arm,B_unwtd_2012_2017,judicial,0.5304,0.349,0.9109,0.5778,3126
+lsc_share_arm,B_unwtd_2012_2017,law_order,0.5653,0.3686,1.3001,0.7613,3126
+lsc_share_arm,B_unwtd_2017_2022,education,0.1687,1.6595,0.1706,1.7709,3126
+lsc_share_arm,B_unwtd_2017_2022,police,-0.1441,0.3379,-0.145,0.3805,3126
+lsc_share_arm,B_unwtd_2017_2022,judicial,0.0261,0.0662,0.0418,0.0707,3126
+lsc_share_arm,B_unwtd_2017_2022,law_order,-0.2742,0.4111,-0.2522,0.449,3126
+lsc_share_arm,B_unwtd_trim,education,2.5787,1.6087,3.03,1.6733,2386
+lsc_share_arm,B_unwtd_trim,police,-0.5049,0.2901,-0.5206,0.3208,2375
+lsc_share_arm,B_unwtd_trim,judicial,-0.1087,0.129,-0.1424,0.1393,2378
+lsc_share_arm,B_unwtd_trim,law_order,-0.7501,0.4651,-0.8249,0.5259,2380
+lsc_share_arm,B_unwtd_no_FL_NY_IL_PA,education,0.2892,1.0134,0.3872,0.9972,2832
+lsc_share_arm,B_unwtd_no_FL_NY_IL_PA,police,0.0842,0.1508,0.3864,0.2829,2832
+lsc_share_arm,B_unwtd_no_FL_NY_IL_PA,judicial,0.4448,0.1339,0.7785,0.2918,2832
+lsc_share_arm,B_unwtd_no_FL_NY_IL_PA,law_order,0.6369,0.3024,1.2905,0.3483,2832
