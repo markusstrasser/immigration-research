@@ -85,7 +85,7 @@ adopted main case:
 
 Beside the fiscal headline, as social costs:
 - crimes by group members against other residents cost the victims **$29bn** a year ($15–45bn;
-  $43bn on arrest shares);
+  police records give $28.6bn, and the $43bn arrest-share arm fails a victim-count check, ladder 202);
 - unreimbursed hospital care costs **$3.2–5.6bn**;
 - housing nets other residents **+$0.7–3.5bn**, while their renters pay $22–58bn more ($30bn
   central once cheaper construction is counted, ladder 200);
@@ -112,7 +112,11 @@ measures city size and schooling mix in one regression. Bigger cities add $38.6b
 residents' earnings; the group's lower schooling takes back $24.9bn. That leaves **+$13.9bn**
 (95% −$57bn to +$84bn), not yet adopted; adopting it would put the main case at
 $189.3–235.7bn. The 1970–2000 college-share studies would make it a $109–677bn cost instead. The
-mobility lane is running. The ancestry instrument could not measure the congestion or wage
+fourth, the [mobility lane](../infra/immigration-fiscal/labor_mobility_insurance_2026_09_23/RESULT.md)
+(ladder 203), is worth $0.65bn a year beside the account: the Mexico-born no longer move more than
+natives within the US. Priced to the same standard, the omitted benefits come to $4.8bn, or $18.7bn
+with the scale net. Costs and benefits together are **$251–303bn** at central values, or
+$237–289bn adding the proposed scale net ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §7b). The ancestry instrument could not measure the congestion or wage
 slopes, so both figures stand (ladder 199).
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard

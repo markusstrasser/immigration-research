@@ -12,8 +12,9 @@ government part of uncompensated hospital care adds **$3.7–5.7bn**. The larger
 sit outside government budgets:
 
 - **Crime victims.** Crimes by group members against other residents cost the victims about
-  **$29bn a year** in full cost, including lives lost and pain. The range is $15–45bn, and the
-  figure is $43bn if non-fatal offending follows arrest shares. Tangible losses are $4.5bn.
+  **$29bn a year** in full cost, including lives lost and pain. The range is $15–45bn. Police
+  records from Texas and Arizona give $28.6bn; the $43bn arrest-share arm fails a check against
+  victims' own reported ethnicity (ladder 202). Tangible losses are $4.5bn.
 - **Unreimbursed hospital care** borne by hospitals, physicians and private payers:
   **$3.2–5.6bn**.
 - **Housing.** Other renters pay about **$34bn** more rent in the long run ($22–58bn), almost
@@ -29,7 +30,9 @@ sit outside government budgets:
 Fiscal and social costs together come to about **$248–307bn a year** at central values
 (full span $212–340bn), or $6.1–7.5k per group member. By income the transfers run upward:
 outside the budget the bottom four fifths of other residents lose $80.7bn a year and the top
-fifth gains $46.0bn (§4). [CALCULATION: lanes and commits in "Sources"]
+fifth gains $46.0bn (§4). Priced to the same standard, the benefits the account omits come to
+$4.8bn a year, or $18.7bn with the proposed scale net (§7b); with all of them the total is
+$237–289bn. [CALCULATION: lanes and commits in "Sources"]
 
 Date: 2026-09-23. Operator request: "equal charge --- should it be weighted with use of
 courts, police, prisons? Do the remaining common sense stuff to get at the real fiscal and
@@ -138,9 +141,14 @@ Sources: [victim harm](../infra/immigration-fiscal/crime_victim_cost_2026_09_23/
   cost. Victim-only unit prices (Miller et al. 2021) are used, as the
   [crime-harm rule](immigration-policy-causal-evidence-2026-09-20.md) requires. The older
   McCollister prices double count deaths, which is corrected in e8eab52. The offender input
-  is the weakest link. NCVS victims perceive Hispanic non-fatal offending at 0.94 times the
-  white rate, while arrests and imprisonment put it far higher. The $43.1bn arm uses arrest
-  shares.
+  was the weakest link. NCVS victims perceive Hispanic non-fatal offending at 0.94 times the
+  white rate. Texas–Arizona police records (NIBRS 2022–2023) put it at 1.7–2.2 times, and 4.2
+  times for robbery, or 0.92–1.18 times all residents. They also put 70–81% of Hispanic
+  offenders' victims in-group, against about 40% in NCVS. The two corrections nearly cancel.
+  The result is $28.6bn full ($24.8–30.3bn over 20 specifications), or $32.0bn on the custody
+  footing. The $43.1bn arrest-share arm and a $40.0bn offender-share arm keep NCVS's victim
+  mix. Both imply twice the cross-group offending that police records support, and both fail
+  an adding-up check against NCVS victim counts (ladder 202).
 - **One footing for both crime lanes.** The justice central assumes Mexican-origin offending
   sits above the Hispanic average as custody does (ratio 1.14). The victim central assumes the
   two are equal. On the equal footing the pair is **+$1.7bn and $28.9bn**; on the custody
@@ -291,11 +299,46 @@ The published September 20 figure was $4.0–4.8k per member.
 The sign does not depend on any item here. As before, it turns only if public services do not
 grow with the population.
 
+## 7b. Benefits priced to the same standard
+
+Evidence-symmetry rule 5 requires pricing the gains the account omits the way the costs above are
+priced. Four lanes did so, and each ruled whether its gain already sits inside the production
+term P.
+
+| Benefit | $bn a year, central (range) | Where it goes | Ladder |
+|---|---:|---|---|
+| Care: taxes on native women's extra hours; net elder-care Medicaid saving | +4.1 (2.6–13.3) | adds to the fiscal account | 198 |
+| Cheaper services to consumers | 21.8 (11.9 net of native wage gains) | inside P; side view, not added | 198 |
+| Cheaper construction (0.75%) | 0 | inside P; other renters' extra rent $33.5bn → $29.9bn | 200 |
+| City size and schooling mix, one regression (Card–Rothstein–Yi) | +13.9 (−56.6 to +84.4) | adds through P (+8.0) and receipts (+6.0); proposed, not adopted | 201 |
+| Mobility: local-shock insurance and Borjas's gain | +0.65 (0.18–2.46) | beside the account; fiscal slice 0.03 | 203 |
+| Innovation (patents) | not added | no response at the group's schooling; interval ±$500bn | 201 |
+
+Scale is the one large and uncertain item. Bigger cities add $38.6bn to other residents'
+earnings; the group's lower schooling takes back $24.9bn. The instrumented 1970–2000
+college-share studies would make the net a cost of $109–677bn. Ciccone–Peri's joint estimate
+from the same era gives +$116–169bn.
+
+Combined with §7, on the custody footing:
+
+| $bn a year | Costs only (§7) | With care and mobility | Adding the scale net |
+|---|---:|---:|---:|
+| Fiscal main case | 203.2–249.6 | 199.1–245.5 | 185.2–231.6 |
+| Social items beside the account | 52.5–57.8 | 51.9–57.2 | 51.9–57.2 |
+| **Total at central values** | **256–307** | **251–303** | **237–289** |
+| Per group member | $6.3–7.5k | $6.1–7.4k | $5.8–7.1k |
+
+The omitted benefits come to $4.8bn without the scale net and $18.7bn with it, 2–9% of the main
+case. None changes the sign. [CALCULATION: rows of §7 and the lanes' `summary` files; care
+`care_household_services_2026_09_23/derived/summary.csv`, scale
+`scale_spillovers_2026_09_23/derived/summary.csv`, mobility
+`labor_mobility_insurance_2026_09_23/derived/insurance_summary.json`]
+
 ## 8. Still unpriced
 
 - **Road congestion** is now priced (§3). Its crash, emission and pavement-wear costs are not.
-- **Innovation and automation.** Low-skill labour supply may slow mechanisation; nothing is
-  priced for this group.
+- **Innovation and automation.** Burchardi et al. find no patent response to migrants at the
+  group's schooling, so nothing is added (ladder 201). Slower mechanisation is not priced.
 - **Institutions, politics and trust.** No dollar measure is defensible from held data.
 - **Amenity and culture.** Housing prices show no amenity discount (ladder 155). At matched
   age, education and sex, creative labour per head is 0.72–0.74 of whites' (ladder 156).
@@ -351,3 +394,9 @@ grow with the population.
   stays a calibration. The distribution lane's quintile split (§4) used the $33.5bn and was not
   re-run; the change is $3.6bn on the renter side. Concept affected: housing transfer and the
   grounding of the social items.
+- 2026-09-23 (offender ethnicity and benefits): police records (NIBRS, ladder 202) confirm the
+  victims' central: $28.6bn against $28.9bn, and $32.0bn against $32.3bn on the custody footing.
+  The $43bn arrest-share alternative fails a check against NCVS victim counts and leaves the
+  verdict. §7b combines the four benefit lanes (ladder 198, 200, 201, 203) with the costs:
+  $251–303bn with care and mobility, $237–289bn with the proposed scale net. Concepts affected:
+  the offender input of victim harm; costs and benefits on one standard.
