@@ -1,0 +1,16 @@
+row,item,low_bn,central_bn,high_bn,measured,source
+1,premium tax credits keyed as EITC+ACTC,-14.23,-14.23,-14.23,True,spending.md #1; spending_mts_credits.py
+2,"tax model assumes resident, compliant filers",5.00,10.60,17.00,False,cps.md row 1: 75% / 60% / 44% on-books
+3,federal gap keyed by CPS liability,9.48,9.48,9.48,True,cps.md row 2 (federal_gap_high_agi arm)
+4,ASEC 2025 Mexico-born count above ACS,-8.30,-7.10,-6.00,False,"cps.md row 3, if the ACS level is right"
+5,Medicaid long-term care keyed by MEPS community key,-15.00,-9.30,-3.60,False,spending.md #3 (bound; central = midpoint)
+6,education key 93% K-12,-4.80,-3.50,-2.20,True,spending.md #5
+7,justice key on FBI 2019 arrests,1.12,1.12,1.12,True,crime.md #1 (2024 Table 43C)
+8,unallocable S&L spending given the administration elasticity,2.00,2.00,2.00,True,spending.md #7
+9,MEPS donor filter,-2.00,-1.00,0.00,False,spending.md #4 (bound)
+10,foster care keyed by WIC,-2.00,-1.50,-1.00,False,spending.md #9 (bound)
+small,"origin allocation, grants, top-codes, flags",-0.50,-0.10,0.40,False,"cps.md rows 4-6, 12; spending.md #8, #11"
+net,rows 1-10 + small,-29.23,-13.53,2.97,,
+measured,"rows 1,3,6,7,8",-6.43,-5.13,-3.83,,
+11,household rental assistance held fixed,0.00,,7.50,choice,"spending.md #6: 0 now, +7.5 if it responded fully"
+12,income-security consumption keyed by public assistance,-20.00,,-7.50,choice,"spending.md #12: -7.5 population key, -20 all-cash key"

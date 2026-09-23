@@ -1,0 +1,25 @@
+{
+ "source": "Treasury Monthly Treasury Statement Table 5 via api.fiscaldata.treasury.gov",
+ "bea_line25_cy2024_bn": 228.809,
+ "lines": {
+  "ptc": {
+   "mts_line": "Refundable Premium Tax Credits and Cost Sharing Reductions",
+   "cy2024_bn": 118.352,
+   "months_null": []
+  },
+  "eitc_refundable": {
+   "mts_line": "Payment Where Earned Income Credit Exceeds Liability for Tax",
+   "cy2024_bn": 60.135,
+   "months_null": [
+    "2024-10"
+   ]
+  },
+  "actc": {
+   "mts_line": "Payment Where Child Tax Credit Exceeds Liability for Tax",
+   "cy2024_bn": 26.287,
+   "months_null": []
+  }
+ },
+ "ptc_effect_on_main_case_bn": -14.23,
+ "non_ptc_remainder_bn": 110.46
+}
