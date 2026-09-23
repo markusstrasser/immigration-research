@@ -171,3 +171,10 @@ Data-file SHA-256 hashes are recorded in `derived/cex_audit.json` and `derived/a
 ## Revisions — September 19, 2026
 
 Corrected the interpretation at the point of reuse; original calculations and evidence are retained. See the [decision](../decisions/2026-09-19-bind-report-claims-to-matched-estimands.md) and linked audit for the claim-specific reason.
+
+- 2026-09-23: The Part B hours tax is corrected from $8.7bn to $2.6bn on this memo's population. In the union frame at the account's tax rate it is $2.7bn a year ($1.8–5.8bn). Three things were wrong:
+  - the regressor: Cortés–Tessada's ℒ counts no-diploma natives as well as immigrants;
+  - the coefficient: 0.980 is Table 8's occupation split, and the household-service channel is Table 10's 0.479, SE 0.106;
+  - the tax rate: 0.35 was used instead of the account's 0.426.
+
+  Only the household-service part of the hours response adds to the account. The rest is a wage response, which the account's labour-supply arm already covers. Part A (cheaper services, $21.8bn gross, $11.9bn net of native low-skill wage gains) stands. It sits inside the production gain, so it is not added. Lane `care_household_services_2026_09_23`, ladder 198. Concept affected: induced native hours as a fiscal gain.

@@ -101,9 +101,12 @@ benefits would have to reach $203–250bn a year to offset the main case. That t
 conditional on the service-response share, which is assumed and unmeasured: it is $159–213bn
 if non-school education budgets are also held fixed and reaches zero where 5.5–16.4% of
 assigned service costs are incremental (entry 2), so the response share moves the result more
-than any offset listed here. Consumer prices and
-native women's hours are priced at $21.8bn *(routed)* and overlap the factor-income gains,
-so they are not added. Crime and housing are now priced beside the account. Crimes by group
+than any offset listed here. Cheaper household services are worth $21.8bn a year to
+consumers, or $11.9bn net of native low-skill wage gains. That is the production gain seen from
+the spending side, so it is not added. The taxes that native women pay on the extra hours
+cheaper services let them work do add: $2.7bn a year ($1.8–5.8bn). With the net Medicaid
+saving on elder care (entry 13), the care channels add $4.1bn ($2.6–13.3bn), about 2% of the
+main case (ladder 198). Crime and housing are now priced beside the account. Crimes by group
 members against other residents cost the victims about $29bn a year ($15–45bn). Hospitals,
 physicians and private payers bear $3.2–5.6bn of the group's unreimbursed care. Housing nets
 other residents a small gain (+$0.7–3.5bn), while their renters pay $22–58bn more to landlords.
@@ -266,16 +269,27 @@ inflates the foreign-born rows only. [SOURCE: ladder 65; generation incarceratio
 
 Steel-man: two shift-share studies find it. Ten more points of less-educated foreign-born share
 lower institutionalization of the US-born elderly by 1.5 points, and 1,000 more immigrants mean
-about ten fewer elderly deaths a year. Finding: the channel exists in that literature and the
-account omits it, but it runs through health workers, and 1.2% of Mexican immigrants work as
-aide, nurse or doctor against 14% of Philippine immigrants. The Mexico-born are 14.5% of
-foreign-born direct-care workers and 37.7% of the less-educated foreign-born. The mortality
-study's instrument weighted by non-health work finds nothing (−0.00252, SE 0.00370). Priced
-generously, the Medicaid nursing-facility saving attributable to the Mexico-born is
-$2.3–14.6bn a year, $5.6bn at the preferred coefficient weighted by who staffs care: 1–9% of the
-headline. The first study loses significance with year-by-state effects. Would change it: an
-origin-specific estimate, which neither paper runs. [SOURCE:
-[papers read](immigration-marginal-revolution-leads-read-2026-09-21.md#1-elder-care); ladder 164]
+about ten fewer elderly deaths a year. Finding: the channel exists, it reaches this group, and
+it is small once netted. The account omitted it until now.
+- **Reach.** Counting its US-born members, the group supplies 15.4% of home-care hours against
+  12.0% of residents. Secure Communities, which removed mostly Mexican and Central American
+  workers, cut home-care hours and raised institutionalization of the US-born elderly.
+- **Size.** Four things shrink it:
+  - the group's own care needs absorb more than half of what it supplies, so the net dose is
+    7.2%;
+  - per unit of that dose, nursing-home residents rise only 2.7% (LTCFocus count);
+  - Medicaid pays $45,197 per institutionalized resident 65+, not $55,051;
+  - the same workers staff $1.0–1.3bn of Medicaid home care, which Medicaid rations when aides
+    are scarce.
+- **Net.** The Medicaid saving is about $1.5bn a year, with a design range of $1.2–7.6bn and a
+  90% interval of −$1.8bn to +$8.3bn. It replaces the earlier gross bound of $2.3–14.6bn.
+- **Deaths.** The mortality study's instrument weighted by non-health work finds nothing
+  (−0.00252, SE 0.00370).
+- **What would change it.** An origin-specific estimate, which no paper runs.
+
+[SOURCE: [papers read](immigration-marginal-revolution-leads-read-2026-09-21.md#1-elder-care);
+[care lane](../infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md); ladders 164
+and 198]
 
 ## 14. "Immigrants complement native workers, so your production gain is far too small."
 
@@ -397,3 +411,11 @@ they get more prominence.
   anchors and the combining rules now quote it. Entry 2's sign-reversal figures were
   recomputed on the executed rows (`main_case_2026_09_23/sign_reversal.py`). Entry 4 adds the
   unreimbursed-care item. Concept affected: the complete account's main case.
+- 2026-09-23 (care channels): Entries 4 and 13 are corrected from the care lane (ladder 198).
+  - Entry 4: native women's hours taxes ($2.7bn) do not overlap the production gain, so they
+    now add. Cheaper services still do not add.
+  - Entry 13: the elder-care channel reaches the group, once its US-born aides are counted.
+    Net of the group's own care needs and of Medicaid home care, it is worth about $1.5bn a
+    year, which replaces the gross $2.3–14.6bn.
+
+  Concept affected: benefits the account omitted.
