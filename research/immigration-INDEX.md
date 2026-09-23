@@ -119,6 +119,19 @@ with the scale net. Costs and benefits together are **$251–303bn** at central 
 $237–289bn adding the proposed scale net ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §7b). The ancestry instrument could not measure the congestion or wage
 slopes, so both figures stand (ladder 199).
 
+The [dataset integrity audit](../infra/immigration-fiscal/dataset_integrity_2026_09_23/README.md)
+(September 23, ladder 204) checks the inputs themselves for formatting, columns, implausible
+statistics and category coding, across the CPS, ACS, spending and crime files. The defects run
+both ways and move the main case by **−$29bn to +$3bn** (−$13.5bn central); none flips the sign.
+The largest are keying errors:
+- ACA premium credits are keyed as EITC (−$14.2bn);
+- the tax model assumes every respondent is a legal, fully compliant filer (+$5bn to +$17bn);
+- federal tax the CPS misses at the top is spread by CPS liability (+$9.5bn).
+
+ASEC 2025 counts about 1.1M more Mexico-born than both ACS 2024 and ASEC 2026 (−$6bn to −$8bn if
+the ACS is right). Five measured corrections (−$5.1bn, to about $198–245bn) are proposed, not
+adopted. Three bands each await one measurement.
+
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
 second generation, reference group, education, single year, legacy cohorts, ageing,
