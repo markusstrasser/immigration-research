@@ -1,0 +1,12 @@
+source,item,value,unit
+"OHSS LPR population, Table 2a","Mexico-born LPRs, January 1 2024 (revised)",2920000.0,persons
+"OHSS LPR population, Table 2a","Mexico-born LPRs, January 1 2025",2950000.0,persons
+BLS population control adjustments 2025,"January 2025 change, civilian noninstitutional 16+ (thousands)",2871.0,thousands
+BLS population control adjustments 2025,"January 2025 change, Hispanic or Latino 16+ (thousands)",1277.0,thousands
+BLS population control adjustments 2025,Hispanic or Latino 16+ before the January 2025 controls (thousands),49483.0,thousands
+BLS population control adjustments 2026,"January 2026 change, civilian noninstitutional 16+ (thousands)",-231.0,thousands
+BLS population control adjustments 2026,"January 2026 change, Hispanic or Latino 16+ (thousands)",403.0,thousands
+BLS population control adjustments 2026,Hispanic or Latino 16+ before the January 2026 controls (thousands),52080.0,thousands
+"CMS 2024, Table 5","Mexican undocumented, 2020 (thousands)",4445.0,thousands
+"CMS 2024, Table 5","Mexican undocumented, 2024 (thousands)",5100.0,thousands
+MPI fact sheet 2025,"Mexican unauthorized, mid-2023 (millions)",5.5,millions

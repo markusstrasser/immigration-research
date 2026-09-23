@@ -1,0 +1,6 @@
+route,mexico_born_unauthorized_m,change_vs_lane_m,change_vs_lane_pct
+lane figure: Borjas residual on CPS ASEC 2025,4.567144,0.0,0.0
+"same rules on ACS 2024 (lane's own run), no coverage",3.963961,-0.603183,-13.207006
+same rules on ACS 2024 with OHSS coverage (lane's own run),4.162022,-0.405122,-8.870357
+CPS residual x ACS/CPS noncitizen ratio (excess spread like other CPS noncitizens),4.073986,-0.493158,-10.797956
+CPS residual x central level / CPS count,4.133175,-0.433969,-9.501968
