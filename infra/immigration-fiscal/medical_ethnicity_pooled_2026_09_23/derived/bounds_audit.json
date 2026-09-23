@@ -1,0 +1,77 @@
+{
+  "inputs": {
+    "ltss-users-expenditures-category-brief-2023.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/ltss-users-expenditures-category-brief-2023.pdf",
+      "sha256": "5ec0a9407ce79e45dc6a65ef8ef53ea9eb1908ba88381c9a9679778796e4e6bd"
+    },
+    "cbo_emergency_medicaid_2024.pdf": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/medical_ethnicity_pooled_2026_09_23/_cache/cbo_emergency_medicaid_2024.pdf",
+      "sha256": "dfe1971991d56b6903397d2d8331c6b3a46a463bad9aa90d97bcaf977314126e"
+    },
+    "acs_cells.csv": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/institutional_bound_2026_09_17/derived/acs_cells.csv",
+      "sha256": "d14e1d1c98c7f8138c8d5d58822dcdf4779b033705b761781eafc52d25217fe7"
+    },
+    "allocations.csv": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/full_account_spending_2026_09_20/derived/allocations.csv",
+      "sha256": "fde600b9bf5eefc844b2b445b637cd21a265055f856734204af6cc51b568f89d"
+    },
+    "incidence_keys.csv": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/full_account_spending_2026_09_20/derived/incidence_keys.csv",
+      "sha256": "74f27f55ff4aac21eeea9e19b562456519327731034813b1818711f1adca0bb8"
+    },
+    "params.json": {
+      "path": "/Users/alien/Projects/immigration-research/infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json",
+      "sha256": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922"
+    }
+  },
+  "urls": {
+    "ltss-users-expenditures-category-brief-2023.pdf": "https://www.medicaid.gov/medicaid/long-term-services-supports/downloads/ltss-users-expenditures-category-brief-2023.pdf (bytes via web.archive.org snapshot 20260109200423)",
+    "cbo_emergency_medicaid_2024.pdf": "https://www.cbo.gov/system/files/2024-10/Arrington_Letter_EmergencyMedicaid_Immigration_final.pdf (bytes via web.archive.org snapshot 20241003010917; cbo.gov serves a captcha to scripts)"
+  },
+  "ltss_2023": {
+    "institutional_bn": 82.7,
+    "institutional_bn_quote": "Expenditures for institutional LTSS totaled $82.7 billion nationwide in 2023",
+    "nursing_facility_bn": 68.8,
+    "nursing_facility_bn_quote": "institutional LTSS expenditures were for services at nursing facilities ($68.8 billion, or 83.2 percent)",
+    "icf_iid_bn": 10.6,
+    "icf_iid_bn_quote": "expenditures were higher for services at ICFs/IID ($10.6 billion",
+    "mental_health_bn": 3.2,
+    "mental_health_bn_quote": "health facility expenditures were a small share of total institutional expenditures ($3.2 billion",
+    "hcbs_bn": 145.9,
+    "hcbs_bn_quote": "HCBS expenditures totaled $145.9 billion nationwide in 2023",
+    "nursing_facility_users": 1294881.0,
+    "nursing_facility_users_quote": "received services at nursing facilities (1,294,881, or 85.2 percent)"
+  },
+  "nursing_facility": {
+    "line_share": 0.12252526925935074,
+    "union_65plus_institutional": 43447.0,
+    "denominator_floor": 1356205.0,
+    "share_ceiling": 0.032035717314122865,
+    "charged_bn": 8.42973852504333,
+    "use_based_bn": [
+      2.204057351211653,
+      4.408114702423306
+    ]
+  },
+  "emergency_medicaid": {
+    "cbo_total_fy2017_2023_m": 26554,
+    "mexico_share_of_unauthorized": {
+      "ohss_jan2022": 0.44,
+      "pew_2023": 0.3
+    },
+    "meps_recorded_bn": 0.7927345544977488
+  },
+  "coverage_key": {
+    "cps": {
+      "union_share_of_population": 0.1214529177216476,
+      "union_share_of_reported_medicaid_coverage": 0.1964748689730911,
+      "union_share_of_meps_medicaid_key": 0.123756310026951
+    },
+    "meps_pooled": {
+      "mexican_share_of_persons": 0.11580512706371329,
+      "mexican_share_of_medicaid_ever": 0.19444910473359195,
+      "mexican_share_of_medicaid_dollars": 0.1346161110123134
+    }
+  }
+}

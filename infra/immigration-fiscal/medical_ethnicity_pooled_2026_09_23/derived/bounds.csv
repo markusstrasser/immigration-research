@@ -1,0 +1,66 @@
+check,quantity,value,se,unit,basis
+nursing_facility,"use-based charge, union share = its share of the 65+ institutional population (a ceiling)",2.204057351211653,,$bn (2023),68.8 x 0.0320
+nursing_facility,"account over-charge, union share = its share of the 65+ institutional population (a ceiling)",6.225681173831678,,$bn (2023),68.8 x (0.1225 - 0.0320)
+nursing_facility,"use-based charge, union share doubled, allowing for under-65 residents",4.408114702423306,,$bn (2023),68.8 x 0.0641
+nursing_facility,"account over-charge, union share doubled, allowing for under-65 residents",4.0216238226200245,,$bn (2023),68.8 x (0.1225 - 0.0641)
+nursing_facility,account charge to the union of nursing-facility Medicaid,8.42973852504333,,$bn (2023),68.8 x line share 0.1225 (target_bn / national_bn of the preferred Medicaid line)
+nursing_facility,"union persons 65+ in institutional group quarters, ACS 2024",43447.0,,persons,"mexico_born + usborn_mexican, bands 65_74 and 75_99, TYPEHUGQ = 2"
+nursing_facility,"all natives + Mexico-born 65+ in institutional group quarters, ACS 2024",1356205.0,,persons,floor on the national count: other foreign-born omitted
+nursing_facility,institutional rate mexico_born 65_74,0.0058355468670097275,,share,ACS 2024 TYPEHUGQ = 2
+nursing_facility,institutional rate mexico_born 75_99,0.019719730680102746,,share,ACS 2024 TYPEHUGQ = 2
+nursing_facility,institutional rate usborn_mexican 65_74,0.013649700766503082,,share,ACS 2024 TYPEHUGQ = 2
+nursing_facility,institutional rate usborn_mexican 75_99,0.02614396422684124,,share,ACS 2024 TYPEHUGQ = 2
+nursing_facility,institutional rate all_natives 65_74,0.01376119698120358,,share,ACS 2024 TYPEHUGQ = 2
+nursing_facility,institutional rate all_natives 75_99,0.042212094987522236,,share,ACS 2024 TYPEHUGQ = 2
+nursing_facility,institutional rate native_nh_white 65_74,0.01148478857522825,,share,ACS 2024 TYPEHUGQ = 2
+nursing_facility,institutional rate native_nh_white 75_99,0.041934731046178494,,share,ACS 2024 TYPEHUGQ = 2
+medicaid_line_combined,"plain, nursing facility at share ceiling: change in the $116.91bn line",12.41655404402593,15.439158789471318,$bn,(116.914 - 8.430) x 1.1718 + 68.8 x 0.0320 - 116.914
+medical_lines_combined,"plain, nursing facility at share ceiling: change in all five medical lines ($207.43bn)",-4.490164112591856,16.491082703246214,$bn,Medicaid line as above + the other four lines' translate.py changes
+medicaid_line_combined,"plain, nursing facility at share doubled: change in the $116.91bn line",14.620611395237574,15.439158789471318,$bn,(116.914 - 8.430) x 1.1718 + 68.8 x 0.0641 - 116.914
+medical_lines_combined,"plain, nursing facility at share doubled: change in all five medical lines ($207.43bn)",-2.2861067613802106,16.491082703246214,$bn,Medicaid line as above + the other four lines' translate.py changes
+medicaid_line_combined,"winsor_p995, nursing facility at share ceiling: change in the $116.91bn line",6.429678197740941,5.853998333889167,$bn,(116.914 - 8.430) x 1.1167 + 68.8 x 0.0320 - 116.914
+medical_lines_combined,"winsor_p995, nursing facility at share ceiling: change in all five medical lines ($207.43bn)",-10.21164239424559,7.636136250433758,$bn,Medicaid line as above + the other four lines' translate.py changes
+medicaid_line_combined,"winsor_p995, nursing facility at share doubled: change in the $116.91bn line",8.633735548952586,5.853998333889167,$bn,(116.914 - 8.430) x 1.1167 + 68.8 x 0.0641 - 116.914
+medical_lines_combined,"winsor_p995, nursing facility at share doubled: change in all five medical lines ($207.43bn)",-8.007585043033945,7.636136250433758,$bn,Medicaid line as above + the other four lines' translate.py changes
+medicaid_line_combined,"winsor_p999, nursing facility at share ceiling: change in the $116.91bn line",5.055653237124616,6.513685822854179,$bn,(116.914 - 8.430) x 1.1040 + 68.8 x 0.0320 - 116.914
+medical_lines_combined,"winsor_p999, nursing facility at share ceiling: change in all five medical lines ($207.43bn)",-10.212327148832653,8.224116451448165,$bn,Medicaid line as above + the other four lines' translate.py changes
+medicaid_line_combined,"winsor_p999, nursing facility at share doubled: change in the $116.91bn line",7.259710588336262,6.513685822854179,$bn,(116.914 - 8.430) x 1.1040 + 68.8 x 0.0641 - 116.914
+medical_lines_combined,"winsor_p999, nursing facility at share doubled: change in all five medical lines ($207.43bn)",-8.008269797621008,8.224116451448165,$bn,Medicaid line as above + the other four lines' translate.py changes
+medicaid_line_combined,"two_part_lognormal, nursing facility at share ceiling: change in the $116.91bn line",10.070716957286365,6.514107022858193,$bn,(116.914 - 8.430) x 1.1502 + 68.8 x 0.0320 - 116.914
+medical_lines_combined,"two_part_lognormal, nursing facility at share ceiling: change in all five medical lines ($207.43bn)",-12.882014449211152,8.332765097159406,$bn,Medicaid line as above + the other four lines' translate.py changes
+medicaid_line_combined,"two_part_lognormal, nursing facility at share doubled: change in the $116.91bn line",12.274774308498024,6.514107022858193,$bn,(116.914 - 8.430) x 1.1502 + 68.8 x 0.0641 - 116.914
+medical_lines_combined,"two_part_lognormal, nursing facility at share doubled: change in all five medical lines ($207.43bn)",-10.677957097999492,8.332765097159406,$bn,Medicaid line as above + the other four lines' translate.py changes
+medicaid_line_combined,"pooled_excl_2020_2021, nursing facility at share ceiling: change in the $116.91bn line",13.506905110040776,17.99069343157356,$bn,(116.914 - 8.430) x 1.1819 + 68.8 x 0.0320 - 116.914
+medical_lines_combined,"pooled_excl_2020_2021, nursing facility at share ceiling: change in all five medical lines ($207.43bn)",0.26179641164829803,19.01761877223658,$bn,Medicaid line as above + the other four lines' translate.py changes
+medicaid_line_combined,"pooled_excl_2020_2021, nursing facility at share doubled: change in the $116.91bn line",15.71096246125245,17.99069343157356,$bn,(116.914 - 8.430) x 1.1819 + 68.8 x 0.0641 - 116.914
+medical_lines_combined,"pooled_excl_2020_2021, nursing facility at share doubled: change in all five medical lines ($207.43bn)",2.4658537628599717,19.01761877223658,$bn,Medicaid line as above + the other four lines' translate.py changes
+medicaid_line_combined,"pooled_cpi_all_items, nursing facility at share ceiling: change in the $116.91bn line",11.581079731493702,14.821864979523536,$bn,(116.914 - 8.430) x 1.1641 + 68.8 x 0.0320 - 116.914
+medical_lines_combined,"pooled_cpi_all_items, nursing facility at share ceiling: change in all five medical lines ($207.43bn)",-5.419990063207479,15.861859972130928,$bn,Medicaid line as above + the other four lines' translate.py changes
+medicaid_line_combined,"pooled_cpi_all_items, nursing facility at share doubled: change in the $116.91bn line",13.785137082705347,14.821864979523536,$bn,(116.914 - 8.430) x 1.1641 + 68.8 x 0.0641 - 116.914
+medical_lines_combined,"pooled_cpi_all_items, nursing facility at share doubled: change in all five medical lines ($207.43bn)",-3.2159327119958334,15.861859972130928,$bn,Medicaid line as above + the other four lines' translate.py changes
+medicaid_line_combined,"pooled_year_normalized, nursing facility at share ceiling: change in the $116.91bn line",10.559773086097536,13.69265942738316,$bn,(116.914 - 8.430) x 1.1547 + 68.8 x 0.0320 - 116.914
+medical_lines_combined,"pooled_year_normalized, nursing facility at share ceiling: change in all five medical lines ($207.43bn)",-6.545919434687448,14.70574786617339,$bn,Medicaid line as above + the other four lines' translate.py changes
+medicaid_line_combined,"pooled_year_normalized, nursing facility at share doubled: change in the $116.91bn line",12.763830437309196,13.69265942738316,$bn,(116.914 - 8.430) x 1.1547 + 68.8 x 0.0641 - 116.914
+medical_lines_combined,"pooled_year_normalized, nursing facility at share doubled: change in all five medical lines ($207.43bn)",-4.341862083475789,14.70574786617339,$bn,Medicaid line as above + the other four lines' translate.py changes
+emergency_medicaid,MEPS-recorded Medicaid for union-equivalent people never reporting Medicaid,0.7927345544977488,0.15610992920860248,"$bn (2024 $, MEPS scale)","19.38 $/person x 40,896,574"
+emergency_medicaid,"same, scaled by the ledger's NHEA/MEPS Medicaid ratio",1.2233479645009258,,$bn,x 1.5432
+emergency_medicaid,CBO federal+state emergency Medicaid FY2017,1.535,,$bn,"CBO letter 2 Oct 2024, Table 1 (CMS-64)"
+emergency_medicaid,CBO federal+state emergency Medicaid FY2018,2.607,,$bn,"CBO letter 2 Oct 2024, Table 1 (CMS-64)"
+emergency_medicaid,CBO federal+state emergency Medicaid FY2019,3.11,,$bn,"CBO letter 2 Oct 2024, Table 1 (CMS-64)"
+emergency_medicaid,CBO federal+state emergency Medicaid FY2020,3.076,,$bn,"CBO letter 2 Oct 2024, Table 1 (CMS-64)"
+emergency_medicaid,CBO federal+state emergency Medicaid FY2021,7.05,,$bn,"CBO letter 2 Oct 2024, Table 1 (CMS-64)"
+emergency_medicaid,CBO federal+state emergency Medicaid FY2022,5.401,,$bn,"CBO letter 2 Oct 2024, Table 1 (CMS-64)"
+emergency_medicaid,CBO federal+state emergency Medicaid FY2023,3.775,,$bn,"CBO letter 2 Oct 2024, Table 1 (CMS-64)"
+emergency_medicaid,FY2023 union-attributable (all of it) minus what MEPS records,2.982265445502251,,$bn,3.775 x 1.00 - 0.793 (floored at 0)
+emergency_medicaid,FY2023 union-attributable (OHSS 2022 Mexico share 44%) minus what MEPS records,0.8682654455022513,,$bn,3.775 x 0.44 - 0.793 (floored at 0)
+emergency_medicaid,FY2023 union-attributable (Pew 2023 Mexico share 30%) minus what MEPS records,0.3397654455022511,,$bn,3.775 x 0.30 - 0.793 (floored at 0)
+emergency_medicaid,FY2021 union-attributable (all of it) minus what MEPS records,6.257265445502251,,$bn,7.050 x 1.00 - 0.793 (floored at 0)
+emergency_medicaid,FY2021 union-attributable (OHSS 2022 Mexico share 44%) minus what MEPS records,2.309265445502251,,$bn,7.050 x 0.44 - 0.793 (floored at 0)
+emergency_medicaid,FY2021 union-attributable (Pew 2023 Mexico share 30%) minus what MEPS records,1.322265445502251,,$bn,7.050 x 0.30 - 0.793 (floored at 0)
+coverage_key,CPS union_share_of_population,0.1214529177216476,,share,"full_account_spending incidence_keys.csv, personal"
+coverage_key,CPS union_share_of_reported_medicaid_coverage,0.1964748689730911,,share,"full_account_spending incidence_keys.csv, personal"
+coverage_key,CPS union_share_of_meps_medicaid_key,0.123756310026951,,share,"full_account_spending incidence_keys.csv, personal"
+coverage_key,MEPS pooled mexican_share_of_persons,0.11580512706371329,,share,"pooled.parquet, valid donors, PERWT"
+coverage_key,MEPS pooled mexican_share_of_medicaid_ever,0.19444910473359195,,share,"pooled.parquet, valid donors, PERWT"
+coverage_key,MEPS pooled mexican_share_of_medicaid_dollars,0.1346161110123134,,share,"pooled.parquet, valid donors, PERWT"
+coverage_key,"MEPS dollars per Medicaid-covered person, Mexican-origin / all",0.6922948356936193,,ratio,share of $ / share of covered

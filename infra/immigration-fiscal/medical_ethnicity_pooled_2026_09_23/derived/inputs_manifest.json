@@ -1,0 +1,402 @@
+[
+  {
+    "year": 2016,
+    "hc": "HC-192",
+    "file": "h192dat.zip",
+    "path": "_cache/h192dat.zip",
+    "url": "https://meps.ahrq.gov/mepsweb/data_files/pufs/h192dat.zip",
+    "held_locally": false,
+    "bytes": 11360872,
+    "sha256": "f564ad7730eed6d7d84c927405e988d2ff50441f52292e9365ec6e863794329a"
+  },
+  {
+    "year": 2016,
+    "hc": "HC-192",
+    "file": "h192su.txt",
+    "path": "_cache/h192su.txt",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h192/h192su.txt",
+    "held_locally": false,
+    "bytes": 534018,
+    "sha256": "d4917a483baf3903aa8f2492d219cbc81121002c2ed4e12fa86965e44066ac19"
+  },
+  {
+    "year": 2016,
+    "hc": "HC-192",
+    "file": "h192cb.pdf",
+    "path": "_cache/h192cb.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h192/h192cb.pdf",
+    "held_locally": false,
+    "bytes": 1178398,
+    "sha256": "6a84f2ef5e6c09bd548fa897efa4ef7a6fd0d723e632db3f79e8a1e538a13f77"
+  },
+  {
+    "year": 2016,
+    "hc": "HC-192",
+    "file": "h192doc.pdf",
+    "path": "_cache/h192doc.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h192/h192doc.pdf",
+    "held_locally": false,
+    "bytes": 5632676,
+    "sha256": "033d614e7a085d3ab5ccfe9119653582a695244fda6b69f7fdf36d038fe82e9c"
+  },
+  {
+    "year": 2017,
+    "hc": "HC-201",
+    "file": "h201dat.zip",
+    "path": "_cache/h201dat.zip",
+    "url": "https://meps.ahrq.gov/mepsweb/data_files/pufs/h201/h201dat.zip",
+    "held_locally": false,
+    "bytes": 9225633,
+    "sha256": "644ff24d934e55e029cfed863b658c09473193b784ebd9cb85ab77e6c6611669"
+  },
+  {
+    "year": 2017,
+    "hc": "HC-201",
+    "file": "h201su.txt",
+    "path": "_cache/h201su.txt",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h201/h201su.txt",
+    "held_locally": false,
+    "bytes": 550188,
+    "sha256": "37dfe33466b1d89b77f7815606a1192bf9faf11f566747c2ad73983964db7ee0"
+  },
+  {
+    "year": 2017,
+    "hc": "HC-201",
+    "file": "h201cb.pdf",
+    "path": "_cache/h201cb.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h201/h201cb.pdf",
+    "held_locally": false,
+    "bytes": 5019348,
+    "sha256": "35643644675abab9e4bd83d0255f0a2779d4452918c5750e280806cf752a06eb"
+  },
+  {
+    "year": 2017,
+    "hc": "HC-201",
+    "file": "h201doc.pdf",
+    "path": "_cache/h201doc.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h201/h201doc.pdf",
+    "held_locally": false,
+    "bytes": 9006265,
+    "sha256": "9ddeb911db10347be474ffe98ddb0a06677cfb5685e8c26448071f718cbfd867"
+  },
+  {
+    "year": 2018,
+    "hc": "HC-209",
+    "file": "h209dat.zip",
+    "path": "_cache/h209dat.zip",
+    "url": "https://meps.ahrq.gov/mepsweb/data_files/pufs/h209/h209dat.zip",
+    "held_locally": false,
+    "bytes": 9759504,
+    "sha256": "6b031e8c316fcf9285b9e841c63472a0fbdebf8b04e6e9dfad94ef92373b9dee"
+  },
+  {
+    "year": 2018,
+    "hc": "HC-209",
+    "file": "h209su.txt",
+    "path": "_cache/h209su.txt",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h209/h209su.txt",
+    "held_locally": false,
+    "bytes": 523991,
+    "sha256": "8f53bb1fdb161bbd918a3390ac8e2e01bfc0799679382847615154b3aab003eb"
+  },
+  {
+    "year": 2018,
+    "hc": "HC-209",
+    "file": "h209cb.pdf",
+    "path": "_cache/h209cb.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h209/h209cb.pdf",
+    "held_locally": false,
+    "bytes": 4789112,
+    "sha256": "0069cd186f114580ca0e5602b3d63ba9c6ab01e737b1e7d42de8dc56eecf5f7c"
+  },
+  {
+    "year": 2018,
+    "hc": "HC-209",
+    "file": "h209doc.pdf",
+    "path": "_cache/h209doc.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h209/h209doc.pdf",
+    "held_locally": false,
+    "bytes": 3995317,
+    "sha256": "f78be1e6032ac1e89d76289aee9569460a6983eb4cddd54b52bfb0cdf6dae19e"
+  },
+  {
+    "year": 2019,
+    "hc": "HC-216",
+    "file": "h216dat.zip",
+    "path": "_cache/h216dat.zip",
+    "url": "https://meps.ahrq.gov/mepsweb/data_files/pufs/h216/h216dat.zip",
+    "held_locally": false,
+    "bytes": 8984574,
+    "sha256": "53b025b959623fdca1fae7d9beb8d0ed66f75c50973a96330e59d61ad4154ebf"
+  },
+  {
+    "year": 2019,
+    "hc": "HC-216",
+    "file": "h216su.txt",
+    "path": "_cache/h216su.txt",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h216/h216su.txt",
+    "held_locally": false,
+    "bytes": 501493,
+    "sha256": "841cc0dd5f7ca5d8f5924a374327cc0a03526310fbfb06c7f92a3cdf44a455f7"
+  },
+  {
+    "year": 2019,
+    "hc": "HC-216",
+    "file": "h216cb.pdf",
+    "path": "_cache/h216cb.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h216/h216cb.pdf",
+    "held_locally": false,
+    "bytes": 4616803,
+    "sha256": "64d79fcbfc13d2c40abc13d0cd2d33ea11fad9f8029223f93dc03c1b03545912"
+  },
+  {
+    "year": 2019,
+    "hc": "HC-216",
+    "file": "h216doc.pdf",
+    "path": "_cache/h216doc.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h216/h216doc.pdf",
+    "held_locally": false,
+    "bytes": 1634698,
+    "sha256": "0c84d9d53f3d96390cb8c22f2452f47c2d7a8393a15eef08dd34d8c4925f7cc7"
+  },
+  {
+    "year": 2020,
+    "hc": "HC-224",
+    "file": "h224dat.zip",
+    "path": "_cache/h224dat.zip",
+    "url": "https://meps.ahrq.gov/mepsweb/data_files/pufs/h224/h224dat.zip",
+    "held_locally": false,
+    "bytes": 7443502,
+    "sha256": "3aaf2350fdcd41ea9910ae9eba04287f5a689866f27b4861dfb191aa4e8976a4"
+  },
+  {
+    "year": 2020,
+    "hc": "HC-224",
+    "file": "h224su.txt",
+    "path": "_cache/h224su.txt",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h224/h224su.txt",
+    "held_locally": false,
+    "bytes": 507139,
+    "sha256": "01733e1e14ceeea62c18b0558cb0c0c58bc861da94f85f0fb2e3235b69de3a39"
+  },
+  {
+    "year": 2020,
+    "hc": "HC-224",
+    "file": "h224cb.pdf",
+    "path": "_cache/h224cb.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h224/h224cb.pdf",
+    "held_locally": false,
+    "bytes": 3746820,
+    "sha256": "83c305987fd6d1f065d5ce9a168daab55830d00abab50d97299ce346ce64efe4"
+  },
+  {
+    "year": 2020,
+    "hc": "HC-224",
+    "file": "h224doc.pdf",
+    "path": "_cache/h224doc.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h224/h224doc.pdf",
+    "held_locally": false,
+    "bytes": 1968820,
+    "sha256": "cd2c461698b4edfa3e3520e38c0d2597de6f2e007b6b88aaaa2107a1935262d7"
+  },
+  {
+    "year": 2021,
+    "hc": "HC-233",
+    "file": "h233dat.zip",
+    "path": "_cache/h233dat.zip",
+    "url": "https://meps.ahrq.gov/mepsweb/data_files/pufs/h233/h233dat.zip",
+    "held_locally": false,
+    "bytes": 8354598,
+    "sha256": "07cb5aa2ae0caf06475901b7364ef6bd1dc23c6624bf2bcd6837096afaaa05ba"
+  },
+  {
+    "year": 2021,
+    "hc": "HC-233",
+    "file": "h233su.txt",
+    "path": "_cache/h233su.txt",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h233/h233su.txt",
+    "held_locally": false,
+    "bytes": 524195,
+    "sha256": "1d331516d0da157f57bec9cefc2f8652907175dbae70c167c9e4d62750df7d16"
+  },
+  {
+    "year": 2021,
+    "hc": "HC-233",
+    "file": "h233cb.pdf",
+    "path": "_cache/h233cb.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h233/h233cb.pdf",
+    "held_locally": false,
+    "bytes": 3865384,
+    "sha256": "8dd7fdce1c74f164532038ea3471a984ba8118b015b01ced15acb9bb1c085544"
+  },
+  {
+    "year": 2021,
+    "hc": "HC-233",
+    "file": "h233doc.pdf",
+    "path": "_cache/h233doc.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h233/h233doc.pdf",
+    "held_locally": false,
+    "bytes": 2016247,
+    "sha256": "96e1008bfbcca9c18a3aff3b304e65a633a2c09d624ebf8f061aa03c43cec2d9"
+  },
+  {
+    "year": 2022,
+    "hc": "HC-243",
+    "file": "h243dat.zip",
+    "path": "_cache/h243dat.zip",
+    "url": "https://meps.ahrq.gov/mepsweb/data_files/pufs/h243/h243dat.zip",
+    "held_locally": false,
+    "bytes": 6123666,
+    "sha256": "aa17c8bacf091adbeacbef411cf3630759fe49c30ab4765a5964dacaa745938e"
+  },
+  {
+    "year": 2022,
+    "hc": "HC-243",
+    "file": "h243su.txt",
+    "path": "_cache/h243su.txt",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h243/h243su.txt",
+    "held_locally": false,
+    "bytes": 499740,
+    "sha256": "fe0fe47e853f975166f093f5a5a94718f4e7e6497cbbe852bcd3d8acd33d81b4"
+  },
+  {
+    "year": 2022,
+    "hc": "HC-243",
+    "file": "h243cb.pdf",
+    "path": "_cache/h243cb.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h243/h243cb.pdf",
+    "held_locally": false,
+    "bytes": 3527542,
+    "sha256": "5084c52f799cfa1d3fc32d4d839564e70d7cf0ebf96f17c327c8d3ccf463e734"
+  },
+  {
+    "year": 2022,
+    "hc": "HC-243",
+    "file": "h243doc.pdf",
+    "path": "_cache/h243doc.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h243/h243doc.pdf",
+    "held_locally": false,
+    "bytes": 1781285,
+    "sha256": "c25a4cf6c5260e0590fa0438b6f49c39ec9371a248f268d8ce8e06dc880da290"
+  },
+  {
+    "year": 2023,
+    "hc": "HC-251",
+    "file": "h251dat.zip",
+    "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps/h251dat.zip",
+    "url": "https://meps.ahrq.gov/mepsweb/data_files/pufs/h251/h251dat.zip",
+    "held_locally": true,
+    "bytes": 5037048,
+    "sha256": "ad0edc2e34b28b90c8c89f43869f4e90338c93c97c0bfc2cad73140b96edd55a"
+  },
+  {
+    "year": 2023,
+    "hc": "HC-251",
+    "file": "h251su.txt",
+    "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps/h251su.txt",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h251/h251su.txt",
+    "held_locally": true,
+    "bytes": 487150,
+    "sha256": "d6c44b31306f1a8e7904d9540f06e2f18a8c0c3c66cc65a76823412dd7c4535f"
+  },
+  {
+    "year": 2023,
+    "hc": "HC-251",
+    "file": "h251cb.pdf",
+    "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps/h251cb.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h251/h251cb.pdf",
+    "held_locally": true,
+    "bytes": 3459840,
+    "sha256": "9545a6f7f6b49740150491d2d5f8718b07f31ce206213fd8a942ad1fd06fa847"
+  },
+  {
+    "year": 2023,
+    "hc": "HC-251",
+    "file": "h251doc.pdf",
+    "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps/h251doc.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h251/h251doc.pdf",
+    "held_locally": true,
+    "bytes": 1381639,
+    "sha256": "c96de6e7af6b2415ba1118037caaffbfc2582158b1b319ce89704ffcce0da7d5"
+  },
+  {
+    "year": 2024,
+    "hc": "HC-256",
+    "file": "h256dat.zip",
+    "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256dat.zip",
+    "url": "https://meps.ahrq.gov/mepsweb/data_files/pufs/h256/h256dat.zip",
+    "held_locally": true,
+    "bytes": 6125956,
+    "sha256": "d0779e49de4f5ff0b0fff6774167023382366a0ef0905e6a3c40126114f988c9"
+  },
+  {
+    "year": 2024,
+    "hc": "HC-256",
+    "file": "h256su.txt",
+    "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256su.txt",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h256/h256su.txt",
+    "held_locally": true,
+    "bytes": 565233,
+    "sha256": "a7bd4eca49833f40df45b53aad803dfca15b1a3a9b1de03aa6e79f508c5e24be"
+  },
+  {
+    "year": 2024,
+    "hc": "HC-256",
+    "file": "h256cb.pdf",
+    "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256cb.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h256/h256cb.pdf",
+    "held_locally": true,
+    "bytes": 3905395,
+    "sha256": "c5f0de30624e7337559f9b14a535b3b20118769e2eea074ee54103cf4f168885"
+  },
+  {
+    "year": 2024,
+    "hc": "HC-256",
+    "file": "h256doc.pdf",
+    "path": "/Users/alien/research-data/immigration-fiscal/data/external/stage3/ahrq/meps_2024/h256doc.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h256/h256doc.pdf",
+    "held_locally": true,
+    "bytes": 1703083,
+    "sha256": "31a3adfe4131b78a34f7abddc34b890201ace8dcad4be7bdcc3c3521de50c140"
+  },
+  {
+    "year": null,
+    "hc": "HC-036",
+    "file": "h36u24dat.zip",
+    "path": "_cache/h36u24dat.zip",
+    "url": "https://meps.ahrq.gov/mepsweb/data_files/pufs/h036/h36u24dat.zip",
+    "held_locally": false,
+    "bytes": 3233413,
+    "sha256": "27a1dc9c453c0d0f3505a29e858d0b815998db79d0321386f8b232c6cc186386"
+  },
+  {
+    "year": null,
+    "hc": "HC-036",
+    "file": "h36u24su.txt",
+    "path": "_cache/h36u24su.txt",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h036/h36u24su.txt",
+    "held_locally": false,
+    "bytes": 31609,
+    "sha256": "beeb8f9fbb31763a469d158553f404d44fba72ad4229341e5e61e9a98d990d48"
+  },
+  {
+    "year": null,
+    "hc": "HC-036",
+    "file": "h36u24cb.pdf",
+    "path": "_cache/h36u24cb.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h036/h36u24cb.pdf",
+    "held_locally": false,
+    "bytes": 298605,
+    "sha256": "e1306443555f58eee50d7137daa14a29f93cd566a95a098ec3a43d77607dae78"
+  },
+  {
+    "year": null,
+    "hc": "HC-036",
+    "file": "h36u24doc.pdf",
+    "path": "_cache/h36u24doc.pdf",
+    "url": "https://meps.ahrq.gov/mepsweb/data_stats/download_data/pufs/h036/h36u24doc.pdf",
+    "held_locally": false,
+    "bytes": 339850,
+    "sha256": "352d072f03b67c638f3adf09c2256426e6b613d85a3b4e8ade17405990941d20"
+  }
+]

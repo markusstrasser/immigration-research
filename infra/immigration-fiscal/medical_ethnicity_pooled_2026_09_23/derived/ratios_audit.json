@@ -1,0 +1,103 @@
+{
+  "deflator": "CUUR0000SAM CPI-U Medical care, NSA annual average, 2024=1 (BLS)",
+  "weights": "PERWT / 9 in the pool (HC-036 section 4.0); PERWT in single years",
+  "variance": "with-replacement stratified-PSU Taylor linearization; STRA9624/PSU9624 from HC-036 in the pool, VARSTR/VARPSU in single years",
+  "gate_2024": {
+    "rows_checked": 51,
+    "max_abs_diff_ratio": 4.440892098500626e-16,
+    "max_abs_diff_se": 1.3322676295501878e-15,
+    "headline": {
+      "all_ages": {
+        "ratio": 0.7573343254667498,
+        "se": 0.21089722330204186
+      },
+      "65plus": {
+        "ratio": 0.8933746165162947,
+        "se": 0.14456539068975982
+      },
+      "18_64": {
+        "ratio": 0.6875400223116973,
+        "se": 0.0947760982391861
+      },
+      "under18": {
+        "ratio": 2.4309971964518278,
+        "se": 0.9378678291510455
+      }
+    }
+  },
+  "gate_2023_2024": {
+    "ratio": 0.8101989453803885,
+    "se": 0.08977563986166431,
+    "published": {
+      "ratio": 0.8101989453803885,
+      "se": 0.08977563986166431,
+      "n_mexican": 558,
+      "n_denominator": 9336
+    }
+  },
+  "pooled_sample": {
+    "person_years": 242139,
+    "valid_donors": 231771,
+    "mexican_origin_valid": 37213,
+    "psus": 779,
+    "strata": 282
+  },
+  "headline": {
+    "65plus": {
+      "plain": {
+        "ratio": 0.8477172990550969,
+        "se": 0.06676783551058062
+      },
+      "winsor_p995": {
+        "ratio": 0.8651098761082271,
+        "se": 0.06704615478784438
+      },
+      "winsor_p999": {
+        "ratio": 0.855996230505302,
+        "se": 0.06682657355094924
+      }
+    },
+    "18_64": {
+      "plain": {
+        "ratio": 0.6709235700529559,
+        "se": 0.03877230452934928
+      },
+      "winsor_p995": {
+        "ratio": 0.6687408252206066,
+        "se": 0.0341238308457396
+      },
+      "winsor_p999": {
+        "ratio": 0.687575009976406,
+        "se": 0.03731770374638182
+      }
+    },
+    "under18": {
+      "plain": {
+        "ratio": 1.3672189878398684,
+        "se": 0.26193437328902613
+      },
+      "winsor_p995": {
+        "ratio": 1.153531277490052,
+        "se": 0.06180280521578943
+      },
+      "winsor_p999": {
+        "ratio": 1.1395605853989867,
+        "se": 0.07351533311109422
+      }
+    },
+    "all_ages": {
+      "plain": {
+        "ratio": 0.5712972612983072,
+        "se": 0.050131732079141914
+      },
+      "winsor_p995": {
+        "ratio": 0.5303734699361843,
+        "se": 0.0290867800547668
+      },
+      "winsor_p999": {
+        "ratio": 0.5445274291900094,
+        "se": 0.02930053372507739
+      }
+    }
+  }
+}
