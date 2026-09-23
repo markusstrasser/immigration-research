@@ -18,14 +18,16 @@ sit outside government budgets:
   **$3.2–5.6bn**.
 - **Housing.** Other renters pay about **$34bn** more rent in the long run ($22–58bn), almost
   all of it to landlords who are other residents, so the net is a small gain (+$0.7–3.5bn).
+- **Road congestion.** The main case holds road budgets fixed, so the group's traffic shows up
+  as other residents' delay: about **$19bn a year** in time and fuel ($8–35bn), 8.8 hours and
+  $217 per other commuter.
 - **Wages.** Wages move **$66–166bn** a year from less-educated to more-educated natives. Like
   the rent, this is a transfer among other residents, not a net cost.
 
-Fiscal and social costs together come to about **$228–287bn a year** at central values
-(full span $203–304bn), or $5.6–7.0k per group member. By income the transfers run upward:
+Fiscal and social costs together come to about **$248–307bn a year** at central values
+(full span $212–340bn), or $6.1–7.5k per group member. By income the transfers run upward:
 outside the budget the bottom four fifths of other residents lose $80.7bn a year and the top
-fifth gains $46.0bn (§4). Road congestion is still being priced. [CALCULATION: lanes and
-commits in "Sources"]
+fifth gains $46.0bn (§4). [CALCULATION: lanes and commits in "Sources"]
 
 Date: 2026-09-23. Operator request: "equal charge --- should it be weighted with use of
 courts, police, prisons? Do the remaining common sense stuff to get at the real fiscal and
@@ -110,11 +112,24 @@ Yes, use is the better key. It changes little because of what the account compar
 | Crime victims' harm | losses of other residents who are victims; excludes justice costs and offenders | 28.9 full (one at a time 23.5–34.0; envelope 15.4–45.3; arrest shares 43.1); 4.5 tangible (1.3–6.0) | measured incidents, modelled prices (lives valued at VSL) | yes, as a social (Z) item |
 | Property crime | same frame, arrest-share proxy | 1.3–1.4 | proxy | yes, as Z; separate from the violent figure |
 | Housing, net to other residents | rent the group pays to other residents' landlords, less the surplus triangle | −0.7 to −3.5, a gain (range −9.4 to +0.4) | modelled elasticities, measured rents | yes, as Z, long run only |
-| Road congestion | delay on a road network held fixed in the main case | lane running | — | main case only |
+| Road congestion | other residents' extra travel time and fuel on a road network the main case holds fixed | 19.2 (8.0–35.3); network approaches 7–60 at central values | measured traffic shares and delay, modelled speed response | yes, as Z beside the main case; under proportional services only the 9.0 residual |
 
 Sources: [victim harm](../infra/immigration-fiscal/crime_victim_cost_2026_09_23/RESULT.md),
 [uncompensated care](../infra/immigration-fiscal/uncompensated_care_2026_09_23/RESULT.md),
-[housing](../infra/immigration-fiscal/housing_transfer_2026_09_23/RESULT.md).
+[housing](../infra/immigration-fiscal/housing_transfer_2026_09_23/RESULT.md),
+[congestion](../infra/immigration-fiscal/congestion_2026_09_23/RESULT.md).
+
+- **Congestion.** The central uses the cross-city estimate that a metro with more people is
+  slower on the same lanes (elasticity −0.12, SE 0.035, Couture, Duranton and Turner): $19.2bn,
+  94% of it time valued at USDOT's rates and 6% excess fuel. Approaches built on the Urban
+  Mobility Report's delay (9.8bn hours, $269bn, reproduced) give $7–60bn. The spread comes from
+  two inputs: how steeply delay rises with traffic (the link-level curve's 4 against 1.0–2.5 for
+  whole networks) and how much of the freed road space other drivers refill (Duranton and
+  Turner). Sharing CDT's slope and refill, the approaches agree near $10bn. The group drives
+  about 12% of commute vehicles and lives in congested metros; ten metros carry 47% of the cost,
+  Los Angeles 13%. Per other commuter it is $767 a year in Los Angeles and $58 in New York.
+  Under the proportional benchmark roads grow with population and only a $9.0bn residual
+  remains. Crash, emission and pavement-wear costs are not priced.
 
 - **Victims.** The central counts about 1,020 killings and 402,000 non-fatal violent
   victimisations of other residents a year, $707 per group member. Murder is 32% of the full
@@ -192,7 +207,7 @@ fifths lose $80.7bn a year and the top fifth gains $46.0bn.
 **The fiscal cost's incidence is a financing convention.** If every tax rises in proportion, the
 top fifth bears 62% of it. If services are cut equally per person, it takes 8.0% of the bottom
 fifth's resources and 0.85% of the top fifth's. The actual mix of taxes, cuts and deficits is not
-identified. With the social items added, the central total of $262.6bn takes 5.2% of the bottom
+identified. With the social items added (congestion and property crime excluded), the central total of $262.6bn takes 5.2% of the bottom
 fifth's resources and 1.8% of the top fifth's under tax-share financing, and 12.1% and 0.0% under
 per-person cuts.
 
@@ -255,14 +270,19 @@ custody ratio, so its column is the consistent pairing.
 |---|---:|---:|
 | Fiscal main case, adopted (general government 0.59–0.84, uncompensated care inside part) | 198.9–245.4 (justice +1.7) | **203.2–249.6** (justice +5.9) |
 | + crime victims' harm, full cost | +28.9 | +32.3 |
+| + property crime, arrest-share proxy | +1.3 to +1.4 | +1.3 to +1.4 |
 | + unreimbursed hospital care, outside budgets | +3.2 to +5.6 | +3.2 to +5.6 |
+| + road congestion, time and fuel | +19.2 | +19.2 |
 | − housing net gain | −3.5 to −0.7 | −3.5 to −0.7 |
-| **= total at central values** | **228–279** | **235–287** |
-| Per group member | $5.6–6.8k | $5.8–7.0k |
+| **= total at central values** | **248–300** | **256–307** |
+| Per group member | $6.1–7.3k | $6.3–7.5k |
 
-Stacking every low choice, then every high one, spans **$203–304bn**, or $5.0–7.4k per member.
+Stacking every low choice, then every high one, spans **$212–340bn**, or $5.2–8.3k per member.
 The low end takes the justice grid's low end, uncompensated care at 0.7× use, the victim
-envelope's low end and the housing range; the high end takes the opposite ends.
+envelope's low end, congestion's low end ($8.0bn) and the housing range; the high end takes the
+opposite ends (congestion $35.3bn). The congestion range is the central method's; the network
+approaches reach $60bn if nobody refills the road space. Property crime was listed in §3 but
+left out of the first version of this table; it is now included.
 The published September 20 figure was $4.0–4.8k per member.
 [CALCULATION: `main_case_2026_09_23/derived/main_case_bands.csv` plus the rows above]
 
@@ -271,9 +291,7 @@ grow with the population.
 
 ## 8. Still unpriced
 
-- **Road congestion.** In the main case highway and transit budgets are fixed, so the group's
-  traffic shows up as delay rather than spending. A lane is running
-  (`infra/immigration-fiscal/congestion_2026_09_23/`).
+- **Road congestion** is now priced (§3). Its crash, emission and pavement-wear costs are not.
 - **Innovation and automation.** Low-skill labour supply may slow mechanisation; nothing is
   priced for this group.
 - **Institutions, politics and trust.** No dollar measure is defensible from held data.
@@ -305,7 +323,7 @@ grow with the population.
 | [Uncompensated care](../infra/immigration-fiscal/uncompensated_care_2026_09_23/RESULT.md) | 06a42b7, corrected 575e2ee | +$7.3–10.6bn ($3.7–5.7bn inside the account) |
 | [Wage split](../infra/immigration-fiscal/wage_distribution_2026_09_23/RESULT.md) | 3afdb25 | −$66 to −$166bn / +$71 to +$163bn |
 | [Adopted main case](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md) | 69eb31b | $203.2–249.6bn |
-| [Congestion](../infra/immigration-fiscal/congestion_2026_09_23/BRIEF.md) | 77d25cf (brief) | running |
+| [Congestion](../infra/immigration-fiscal/congestion_2026_09_23/RESULT.md) | dd3c45a | $19.2bn ($8.0–35.3bn) |
 | [Income weights](../infra/immigration-fiscal/distribution_weights_2026_09_23/RESULT.md) | f5b6d67 | outside the budget: bottom four fifths −$80.7bn, top fifth +$46.0bn |
 
 ## Revisions
@@ -320,3 +338,7 @@ grow with the population.
   (f5b6d67). The victimisation gradient is verified from the NCVS tables, and the sentence that
   the fiscal gap "may run the other way" is replaced by the two financing conventions. Concept
   affected: who bears the transfers among other residents.
+- 2026-09-23 (congestion): road congestion priced (dd3c45a) and added to §7 as a social item,
+  $19.2bn ($8.0–35.3bn). Property crime, listed in §3 but missing from the first §7 table, is now
+  included. Totals: $248–307bn at central values, $212–340bn full span. Concept affected: the
+  social costs reported beside the fiscal headline.
