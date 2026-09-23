@@ -1,0 +1,36 @@
+subline,part,key,national_bn,target_share,target_bn,other_bn,mexico_born_bn,us_born_bn,split_basis,note
+police,whole,per_head,237.479888,0.120245,28.555719,208.924169,8.533067,20.022652,CPS target nativity,reference: complete-account key
+fire,whole,per_head,80.172512,0.120245,9.640327,70.532185,2.880738,6.759588,CPS target nativity,reference: complete-account key
+law_courts,whole,per_head,80.185498,0.120245,9.641888,70.543609,2.881205,6.760683,CPS target nativity,reference: complete-account key
+prisons,whole,per_head,121.315102,0.120245,14.587509,106.727593,4.359064,10.228445,CPS target nativity,reference: complete-account key
+prisons,whole,custody_acs_raw,121.315102,0.126371,15.330658,105.984444,4.249333,11.081324,ACS institutional 18-64 by nativity,"institutional residence, not correctional custody alone"
+prisons,whole,custody_acs_adj,121.315102,0.141918,17.216835,104.098267,4.512351,12.704484,ACS institutional 18-64 by nativity,"institutional residence, not correctional custody alone"
+prisons,whole,custody_acs_adj_inst,121.315102,0.143642,17.425984,103.889118,4.565466,12.860518,ACS institutional 18-64 by nativity,"institutional residence, not correctional custody alone"
+prisons,whole,custody_bjs_raw,121.315102,0.125755,15.255965,106.059137,,,,BJS prisons+jails Hispanic share x ACS Mexican/Hispanic institutional ratio x target/ACS scaling
+prisons,whole,custody_bjs_adj,121.315102,0.141327,17.145046,104.170056,,,,BJS prisons+jails Hispanic share x ACS Mexican/Hispanic institutional ratio x target/ACS scaling
+prisons,whole,custody_acs_adj_minus_ice,121.315102,0.141764,17.198056,104.117046,4.263820,12.934236,ACS institutional 18-64 by nativity,"bound: all 5,089 Mexican ICE detainees and all 37,684 detainees removed"
+police,cbp_border,per_head,23.871928,0.120245,2.870475,21.001453,0.857760,2.012715,CPS target nativity,CBP subfunction-751 FY2024 gross outlays excl. investment; border spending follows entry flows
+police,ice_custody_border_arrest,per_head,1.971105,0.120245,0.237015,1.734090,0.070825,0.166190,CPS target nativity,CBP-arrest share of FY2024 ICE ADP; treated like CBP
+police,cbp_border,zero,23.871928,0.000000,0.000000,23.871928,0.000000,0.000000,none,boundary variant: border spending held fixed with respect to the resident stock
+police,ice_custody_border_arrest,zero,1.971105,0.000000,0.000000,1.971105,0.000000,0.000000,none,boundary variant: border-arrest custody held fixed with respect to the resident stock
+police,ice_custody_interior,ice_interior_central,0.945936,0.226473,0.214229,0.731707,0.214229,0.000000,Mexican nationals,ICE-arrest share of FY2024 ADP x Mexico share of interior bed-days
+police,ice_custody_interior,ice_interior_low,0.945936,0.135044,0.127743,0.818193,0.127743,0.000000,Mexican nationals,ICE-arrest share of FY2024 ADP x Mexico share of interior bed-days
+police,ice_custody_interior,ice_interior_high,0.945936,0.373285,0.353104,0.592832,0.353104,0.000000,Mexican nationals,ICE-arrest share of FY2024 ADP x Mexico share of interior bed-days
+police,ice_custody_all,ice_all_detained,2.917041,0.135044,0.393929,2.523112,0.393929,0.000000,Mexican nationals,brief's literal option: all custody outlays by Mexico's FY2024 share
+police,ice_custody_all,ice_all_bookins,2.917041,0.249577,0.728027,2.189014,0.728027,0.000000,Mexican nationals,brief's literal option: all custody outlays by Mexico's FY2024 share
+police,ice_custody_all,ice_all_removals,2.917041,0.321559,0.937999,1.979042,0.937999,0.000000,Mexican nationals,brief's literal option: all custody outlays by Mexico's FY2024 share
+police,non_border,arrest_raw,210.690920,0.125631,26.469313,184.221607,,,not identified by nativity,
+police,non_border,arrest_adj,210.690920,0.141187,29.746896,180.944023,,,not identified by nativity,
+police,non_border,victimization,210.690920,0.110746,23.333164,187.357755,,,not identified by nativity,
+police,non_border,victimization_all_ages,210.690920,0.117596,24.776486,185.914433,,,not identified by nativity,
+police,non_border,ncvs_offender_raw,210.690920,0.091869,19.355888,191.335032,,,not identified by nativity,
+police,non_border,ncvs_offender_adj,210.690920,0.103244,21.752645,188.938274,,,not identified by nativity,
+police,non_border,half_arrest_raw,210.690920,0.122938,25.901899,184.789020,,,not identified by nativity,patrol half per head
+police,non_border,half_arrest_adj,210.690920,0.130716,27.540691,183.150229,,,not identified by nativity,patrol half per head
+law_courts,whole,criminal50_arrest_raw,80.185498,0.122938,9.857837,70.327661,,,not identified by nativity,"criminal share 0.50 by arrests, civil per head"
+law_courts,whole,criminal50_arrest_adj,80.185498,0.130716,10.481534,69.703964,,,not identified by nativity,"criminal share 0.50 by arrests, civil per head"
+law_courts,whole,criminal60_arrest_raw,80.185498,0.123477,9.901026,70.284471,,,not identified by nativity,"criminal share 0.60 by arrests, civil per head"
+law_courts,whole,criminal60_arrest_adj,80.185498,0.132810,10.649463,69.536035,,,not identified by nativity,"criminal share 0.60 by arrests, civil per head"
+law_courts,whole,criminal75_arrest_raw,80.185498,0.124284,9.965811,70.219687,,,not identified by nativity,"criminal share 0.75 by arrests, civil per head"
+law_courts,whole,criminal75_arrest_adj,80.185498,0.135952,10.901357,69.284141,,,not identified by nativity,"criminal share 0.75 by arrests, civil per head"
+police,ero_noncustody_sensitivity,ero_arrest_share,2.345802,0.384114,0.901054,1.444747,0.901054,0.000000,Mexican nationals,"sensitivity only: ERO all-vintage program activity less identified custody, not in any key set"

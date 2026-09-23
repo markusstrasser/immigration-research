@@ -1,0 +1,30 @@
+input,value,source
+reference_share_national,0.120245,allocations.csv population key x pool fraction
+target_adults_share,0.107711,CPS target 18+ / (CPS civilian 18+ + outside-CPS residents)
+target_12up_share,0.113240,CPS target 12+ / (CPS civilian 12+ + outside-CPS residents)
+target_mexico_born_share,0.298822,"CPS ASEC 2025 canonical target, PRCITSHP 4-5 and PENATVTY 303"
+fbi2019_hisp_share_adult_arrests,0.187808,FBI CIUS 2019 Table 43C ethnicity panel via crime_cost.py
+acs2019_hisp_share_adults,0.163970,ACS 2019 B01001/B01001I
+rr_arrest_hispanic,1.145383,ratio of the two above
+acs_hisp_share_inst_1864,0.201858,ACS 2024 1-year PUMS TYPEHUGQ=2
+bjs_hisp_share_custody,0.199800,BJS sentenced prisoners 2022 + jail inmates midyear 2023
+m_raw_mex_share_of_hisp_inst,0.581490,ACS 2024 1-year 18-64
+m_adj_mex_share_of_hisp_inst,0.653493,generic-Hispanic excess reallocated by population share
+m_adj_inst_mex_share_of_hisp_inst,0.661435,generic excess reallocated by institutional share
+m_raw_acs5,0.549286,ACS 2020-2024 5-year 18-64
+m_adj_acs5,0.666831,ACS 2020-2024 5-year 18-64
+p_mex_share_of_hisp_pop_1864,0.571024,ACS 2024 1-year 18-64
+tau_target_over_acs_mex_hh_1864,1.082398,CPS target 18-64 / ACS Mexican household 18-64
+ncvs_rr_victim_hispanic,0.977975,NCVS 2022-2024 pooled violent incidents per resident 12+
+ncvs_rr_offender_hispanic,0.796672,"NCVS 2022-2024 perceived offender, known single-group"
+ice_custody_outlays_bn,2.917041,"DHS execution report FY2024, two Custody Operations rows"
+ice_interior_share_adp,0.324279,ICE FY2024 ADP by arresting agency
+ice_mex_share_detained_eofy,0.135044,ICE FY2024 annual report Fig 15 / workbook total
+ice_mex_share_bookins,0.249577,"OHSS monthly tables Nov 2024, FY2024"
+ice_mex_share_removals,0.321559,ICE FY2024 annual report appendix
+ice_mex_share_ero_arrests,0.384114,"OHSS monthly tables Nov 2024, FY2024"
+ice_mex_los_ratio,0.469443,odds(detained share)/odds(book-in share)
+ice_mex_interior_bedday_central,0.226473,ERO arrest share with the Mexican LOS ratio [INFERENCE]
+ice_mex_interior_bedday_high,0.373285,"5,089 / 13,633 ICE-arrest detainees at EOFY2024"
+cbp_751_excl_invest_bn,23.871928,USAspending File A FY2024 gross outlays
+police_pool_bn,210.690920,police subline less CBP and ICE custody

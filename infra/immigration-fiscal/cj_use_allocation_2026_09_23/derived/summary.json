@@ -1,0 +1,189 @@
+{
+ "reference_bn": 62.42544319360809,
+ "reference_share": 0.1202447894813438,
+ "line4_bn": 519.153,
+ "sublines_bn": {
+  "police": 237.47988849124346,
+  "fire": 80.1725119255146,
+  "law_courts": 80.18549759296245,
+  "prisons": 121.31510199027949
+ },
+ "central": {
+  "police_key": "half",
+  "prisons_key": "custody_acs_adj",
+  "court_criminal_share": 0.6,
+  "ice_interior": "central",
+  "mexican_hispanic_scaling": "adj",
+  "cbp_border": "per_head",
+  "national_bn": 519.153,
+  "target_bn": 68.36903480790725,
+  "target_share": 0.13169342141508814,
+  "change_bn": 5.943591614299166,
+  "band_low": 171.0635921632777,
+  "band_high": 203.32769240439387,
+  "mexico_born_bn": null
+ },
+ "range_change_bn": [
+  -1.102917619435793,
+  8.540565754605183
+ ],
+ "range_change_adj_bn": [
+  1.4098612810671511,
+  8.540565754605183
+ ],
+ "one_at_a_time_change_bn": {
+  "central": 5.943591614299166,
+  "prisons_custody_acs_raw": 4.057414343052201,
+  "prisons_custody_acs_adj": 5.943591614299166,
+  "prisons_custody_bjs_raw": 3.9827211837191925,
+  "prisons_custody_bjs_adj": 5.871802927457466,
+  "courts_0.5": 5.7756625057002395,
+  "courts_0.6": 5.943591614299166,
+  "courts_0.75": 6.195485277197562,
+  "ice_low": 5.857105457443012,
+  "ice_central": 5.943591614299166,
+  "ice_high": 6.08246652046499,
+  "scaling_raw": 1.6701860606271026,
+  "cbp_zero": 2.8361015467610713
+ },
+ "sensitivity_delta_bn": {
+  "arrest_rr_hispanic_1": -2.750082136193455,
+  "tau_extra_at_national_rates": -0.7116025935956138,
+  "ero_noncustody_by_ero_arrest_share": 0.5944202167063738,
+  "cbp_keyed_like_police_half": 0.24996986393964132,
+  "bea_t3155_subline_shares": -0.02864458625850133,
+  "victimization_all_ages_police": 1.4433220040462051
+ },
+ "change_by_police_key_bn": {
+  "offending": 8.149797185540962,
+  "half": 5.943591614299166,
+  "victimization": 1.736065233363945,
+  "ncvs_offender": 0.15554619249530788
+ },
+ "shares": {
+  "per_head": 0.1202447894813438,
+  "arrest_raw": 0.12563101000032473,
+  "ncvs_offender_raw": 0.09186863651565819,
+  "arrest_adj": 0.14118736808219864,
+  "ncvs_offender_adj": 0.10324434229186265,
+  "victimization": 0.11074594247704125,
+  "victimization_all_ages": 0.11759636587141864,
+  "custody_acs_raw": 0.12637056276402636,
+  "custody_acs5_raw": 0.11498780012502588,
+  "custody_acs_adj": 0.14191831601405536,
+  "custody_acs5_adj": 0.13959531124131047,
+  "custody_acs_adj_inst": 0.14364232903250113,
+  "custody_acs5_adj_inst": 0.14327634013075347,
+  "custody_bjs_raw": 0.12575486728912175,
+  "custody_bjs_adj": 0.1413265620966621,
+  "custody_acs_adj_minus_ice": 0.14176352000913942
+ },
+ "ice": {
+  "custody_outlays_bn": 2.917041003,
+  "adp_ice": 12232.3989071038,
+  "adp_cbp": 25489.4043715847,
+  "adp_all": 37721.8032786885,
+  "interior_share": 0.32427927203614565,
+  "detained_total": 37684,
+  "detained_ice_arrest": 13633,
+  "detained_cbp_arrest": 24051,
+  "mex_detained": 5089,
+  "share_detained": 0.13504405052542193,
+  "share_bookins": 0.24957720125220395,
+  "share_removals": 0.32155854488662317,
+  "share_ero_arrests": 0.38411355020717625,
+  "bookins_interior": 90620,
+  "bookins_border": 187300,
+  "los_ratio_mex": 0.46944268399725186,
+  "q_central": 0.22647324128067436,
+  "q_low": 0.13504405052542193,
+  "q_high": 0.3732854104012323,
+  "ero_noncustody_bn": 2.3458016899799996
+ },
+ "cbp": {
+  "cbp_751_bn": 24.854871055609998,
+  "cbp_751_excl_invest_bn": 23.871927970650006
+ },
+ "bjs": {
+  "prison_total": 1185648,
+  "prison_hisp": 273900,
+  "jail_total": 664200,
+  "jail_hisp": 95700,
+  "hisp_share": 0.1998001998001998
+ },
+ "arrests": {
+  "eth_total": 5492557,
+  "eth_hisp": 1031548,
+  "hisp_share_arrests": 0.18780833771957214,
+  "hisp_share_adults_2019": 0.16396985160966,
+  "rr_hisp": 1.145383348682056,
+  "adults_2019": 255271738.0,
+  "hisp_adults_2019": 41856869.0
+ },
+ "ncvs": {
+  "rr_victim_hisp": 0.9779747328649441,
+  "rr_offender_hisp": 0.7966715808466629,
+  "hisp_victim_rate": 20.899903709337128,
+  "all_victim_rate": 21.370596812978555
+ },
+ "acs_m": {
+  "m_raw": 0.5814897323450978,
+  "m_adj": 0.6534931532940337,
+  "m_adj_inst": 0.6614347574588606,
+  "p_mex_of_hisp": 0.5710239106674037,
+  "hisp_share_inst": 0.20185794647326727
+ },
+ "band": [
+  165.1200005489785,
+  197.3841007900947
+ ],
+ "gates": [
+  "BEA workbook is the pinned vintage",
+  "T3.16 line 8 label",
+  "T3.16 line 9 label",
+  "T3.16 line 10 label",
+  "T3.16 line 11 label",
+  "T3.16 line 12 label",
+  "T3.17 line 4 label",
+  "T3.17 line 34 label",
+  "T3.16 sublines sum to T3.16 public order and safety",
+  "T3.16 total minus T3.17 line 4 is social benefits plus a small residual",
+  "T3.15.5 POS = T3.17 consumption + gross investment",
+  "scaled sublines sum to line 4",
+  "positive control: key share 0.121453",
+  "positive control: $62.425bn",
+  "CBO-informed band is 165.12-197.38",
+  "CPS ASEC 2025 archive is the pinned file",
+  "canonical target = 40,896,574.15",
+  "target nativity parts add up",
+  "ACS 2024 all-age total equals the resident control",
+  "BJS 2022 sentenced prisoners parsed",
+  "BJS midyear 2023 jail inmates parsed",
+  "FBI 2019 adult arrests, ethnicity panel",
+  "NCVS pooled person-years identical on both sides",
+  "ICE EOFY2024 detained by arresting agency sums to total",
+  "ICE FY2024 ADP by arresting agency sums to total",
+  "ICE annual report Mexico rows parsed",
+  "OHSS FY2024 removals agree with the ICE report within rounding",
+  "OHSS book-ins agree with ICE workbook total 277,913 within rounding",
+  "ICE O&S sits in subfunction 751 in File A",
+  "target adults match the account's adults key",
+  "every key set spends exactly line 4"
+ ],
+ "central_split": {
+  "identified": {
+   "mexico_born_bn": 13.473632265050487,
+   "us_born_bn": 33.229246721995985,
+   "unsplit_bn": 21.666155820860784
+  },
+  "proxy": {
+   "proxy_mexico_born_bn": 19.152103365962077,
+   "proxy_us_born_bn": 49.21693144194518
+  },
+  "per_head": {
+   "mexico_born_bn": 18.654074112638025,
+   "us_born_bn": 43.77136908097006
+  },
+  "custody_mexico_born_fraction": 0.26208946099446956
+ }
+}
