@@ -119,7 +119,8 @@ Mexican-origin; SF has no single-metro gap.
 [Seven papers from the Marginal Revolution archive, read in full](immigration-marginal-revolution-leads-read-2026-09-21.md):
 headline unchanged. The nursing-home channel is bounded at **$2.3–14.6bn a year** of Medicaid
 spending for the Mexico-born ($5.6bn preferred); it transfers weakly because 1.2% of Mexican
-immigrants work in health occupations. The 2025 municipal-bond paper cannot identify the
+immigrants work in health occupations. [Superseded 2026-09-23 by ladder 198: counting US-born
+aides the channel reaches the group, and net it is about $1.5bn a year.] The 2025 municipal-bond paper cannot identify the
 service-response share. The production term's perfect-substitution assumption is now executed
 (ladder 176): on this account's jobs the relevant elasticity is near 6, and the term rises by
 about half, to roughly $13–22bn; at the direct estimates of ladder 181 it rises $2–5bn. The removal model's $27–80bn is a different population and a

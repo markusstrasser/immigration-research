@@ -23,9 +23,10 @@ for all other residents in the main case adopted September 23 ($165–197bn as p
 161) and has no generation dimension yet. They agree in direction. One is not a decomposition
 of the other, and the generation split must not be scaled onto the complete-account total.
 
-**Offsets do not add.** The production gain ($8.8–13.3bn) is already inside the headline. Prices
-and native hours ($21.8bn) overlap it. The elder-care figure ($2.3–14.6bn) is an upper bound on
-one omitted channel. The complementarity figure ($26.8–80.4bn) covers half of all unauthorized
+**Offsets do not add unless an entry says so.** The production gain ($8.8–13.3bn) is already
+inside the headline, and cheaper services ($21.8bn to consumers) overlap it. Two care items do
+add, because the account omits them: taxes on native women's extra hours ($2.7bn) and the net
+elder-care Medicaid saving ($1.5bn), $4.1bn together (entries 4 and 13, ladder 198). The complementarity figure ($26.8–80.4bn) covers half of all unauthorized
 workers of every origin and is matched by other immigrants' losses. The account's own nest
 is a different object: at the elasticities its job distribution supports, it moves the
 production term by about $4–8bn at the job-overlap reading and $2–5bn at
