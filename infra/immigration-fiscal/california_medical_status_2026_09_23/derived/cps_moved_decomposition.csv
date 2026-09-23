@@ -1,0 +1,16 @@
+region,group,moved_millions,se,n,own_medicaid_millions,own_se,own_medicaid_donor_imputed_millions,own_medicaid_donor_imputed_se,via_spouse_only_millions
+US,all_foreign_born,3.6849,0.1608,1543,3.6738,0.1608,0.9924,0.0864,0.0111
+US,mexico_born,1.1424,0.0668,520,1.1375,0.0671,0.2742,0.0347,0.0049
+US,union,1.1424,0.0668,520,1.1375,0.0671,0.2742,0.0347,0.0049
+California,all_foreign_born,1.1082,0.0781,445,1.1082,0.0781,0.191,0.0385,0.0
+California,mexico_born,0.5918,0.0487,249,0.5918,0.0487,0.0802,0.0216,0.0
+California,union,0.5918,0.0487,249,0.5918,0.0487,0.0802,0.0216,0.0
+rest_of_US,all_foreign_born,2.5767,0.1376,1098,2.5656,0.1376,0.8014,0.0747,0.0111
+rest_of_US,mexico_born,0.5507,0.0449,271,0.5457,0.0447,0.194,0.0287,0.0049
+rest_of_US,union,0.5507,0.0449,271,0.5457,0.0447,0.194,0.0287,0.0049
+other_listed_states,all_foreign_born,1.29,0.0984,524,1.2877,0.0984,0.3179,0.0415,0.0024
+other_listed_states,mexico_born,0.2366,0.032,100,0.2366,0.032,0.0674,0.0183,0.0
+other_listed_states,union,0.2366,0.032,100,0.2366,0.032,0.0674,0.0183,0.0
+unlisted_states,all_foreign_born,1.2867,0.092,574,1.278,0.0917,0.4835,0.0652,0.0087
+unlisted_states,mexico_born,0.314,0.0363,171,0.3091,0.036,0.1266,0.0258,0.0049
+unlisted_states,union,0.314,0.0363,171,0.3091,0.036,0.1266,0.0258,0.0049

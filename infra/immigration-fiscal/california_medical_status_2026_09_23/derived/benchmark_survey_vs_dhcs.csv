@@ -1,0 +1,21 @@
+measure,dhcs_window,age,survey_no_medicaid_rule_with_medicaid_millions,se,survey_paper_rules_with_medicaid_millions,dhcs_expansion_enrollment_millions,capture_no_medicaid_rule,capture_se,survey_capture_all_medi_cal,expected_visible_expansion_enrollees_millions
+"CPS MCAID, any time in 2024",CY2024_average,0-18,0.2088,0.03,0.0,0.1974,1.058,0.152,0.632,0.1247
+"CPS MCAID, any time in 2024",CY2024_average,19-25,0.0915,0.0188,0.0,0.1402,0.653,0.134,0.632,0.0886
+"CPS MCAID, any time in 2024",CY2024_average,26-49,0.4976,0.0439,0.0,0.8028,0.62,0.055,0.632,0.5072
+"CPS MCAID, any time in 2024",CY2024_average,50+,0.3103,0.0347,0.0,0.3925,0.791,0.088,0.632,0.248
+"CPS MCAID, any time in 2024",CY2024_average,all,1.1082,0.0781,0.0,1.5329,0.723,0.051,0.632,0.9684
+"CPS MCAID, any time in 2024, vs Dec 2024",Dec2024,0-18,0.2088,0.03,0.0,0.2153,0.97,0.139,0.635,0.1368
+"CPS MCAID, any time in 2024, vs Dec 2024",Dec2024,19-25,0.0915,0.0188,0.0,0.1499,0.61,0.125,0.635,0.0953
+"CPS MCAID, any time in 2024, vs Dec 2024",Dec2024,26-49,0.4976,0.0439,0.0,0.8329,0.597,0.053,0.635,0.5293
+"CPS MCAID, any time in 2024, vs Dec 2024",Dec2024,50+,0.3103,0.0347,0.0,0.4262,0.728,0.081,0.635,0.2709
+"CPS MCAID, any time in 2024, vs Dec 2024",Dec2024,all,1.1082,0.0781,0.0,1.6243,0.682,0.048,0.635,1.0322
+"CPS NOW_MCAID, Feb-Apr 2025",Feb_Apr2025_average,0-18,0.2074,0.0301,0.0,0.2184,0.95,0.138,0.627,0.1369
+"CPS NOW_MCAID, Feb-Apr 2025",Feb_Apr2025_average,19-25,0.0915,0.0188,0.0,0.1523,0.601,0.123,0.627,0.0954
+"CPS NOW_MCAID, Feb-Apr 2025",Feb_Apr2025_average,26-49,0.4943,0.0434,0.0,0.8452,0.585,0.051,0.627,0.5297
+"CPS NOW_MCAID, Feb-Apr 2025",Feb_Apr2025_average,50+,0.3088,0.0344,0.0,0.4393,0.703,0.078,0.627,0.2753
+"CPS NOW_MCAID, Feb-Apr 2025",Feb_Apr2025_average,all,1.102,0.0767,0.0,1.6551,0.666,0.046,0.627,1.0373
+"ACS HINS4, at interview in 2024",CY2024_average,0-18,0.2299,0.0095,0.0,0.1974,1.165,0.048,0.738,0.1456
+"ACS HINS4, at interview in 2024",CY2024_average,19-25,0.104,0.0046,0.0,0.1402,0.742,0.033,0.738,0.1034
+"ACS HINS4, at interview in 2024",CY2024_average,26-49,0.6417,0.0134,0.0,0.8028,0.799,0.017,0.738,0.5922
+"ACS HINS4, at interview in 2024",CY2024_average,50+,0.3098,0.0082,0.0,0.3925,0.789,0.021,0.738,0.2895
+"ACS HINS4, at interview in 2024",CY2024_average,all,1.2853,0.0216,0.0,1.5329,0.839,0.014,0.738,1.1307

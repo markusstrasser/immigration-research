@@ -1,0 +1,8 @@
+rules,count,published_millions,reproduced_millions,pass
+borjas_paper_rules,national_all_ages,14.896401,14.896401,True
+borjas_paper_rules,mexico_all_ages,4.567144,4.567144,True
+borjas_paper_rules,union_all_ages,4.567144,4.567144,True
+borjas_paper_rules,mexico_25_64,3.917061,3.917061,True
+no_medicaid_rule,national_all_ages,18.581325,18.581325,True
+no_medicaid_rule,mexico_all_ages,5.709561,5.709561,True
+no_medicaid_rule,mexico_25_64,4.778136,4.778136,True

@@ -1,0 +1,11 @@
+survey,group,reading,millions,se
+CPS,all_foreign_born,lower_excess_over_unlisted_states,0.7491,0.071
+CPS,mexico_born,lower_excess_over_unlisted_states,0.4672,0.0476
+CPS,all_foreign_born,calibrated_dhcs_times_reporting_rate,0.9684,0.0256
+CPS,mexico_born,calibrated_dhcs_times_reporting_rate,0.5172,0.0137
+CPS,all_foreign_born,upper_all_moved,1.1082,0.0781
+CPS,mexico_born,upper_all_moved,0.5918,0.0487
+ACS,all_foreign_born,calibrated_dhcs_times_reporting_rate,1.1307,0.0057
+ACS,mexico_born,calibrated_dhcs_times_reporting_rate,0.6561,0.0033
+ACS,all_foreign_born,upper_all_moved,1.3389,0.0218
+ACS,mexico_born,upper_all_moved,0.7769,0.0152

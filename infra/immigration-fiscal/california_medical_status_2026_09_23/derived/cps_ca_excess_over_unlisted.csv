@@ -1,0 +1,11 @@
+group,age,excess_millions,se,california_rate,unlisted_rate
+all_foreign_born,0-18,0.106,0.0251,0.5747,0.2829
+all_foreign_born,19-25,0.0541,0.0181,0.26,0.1062
+all_foreign_born,26-49,0.3404,0.0424,0.2695,0.0852
+all_foreign_born,50-64,0.2486,0.0322,0.4246,0.0844
+all_foreign_born,0-64,0.7491,0.071,,
+mexico_born,0-18,0.0447,0.0136,0.7543,0.3124
+mexico_born,19-25,0.0218,0.0096,0.34,0.0875
+mexico_born,26-49,0.2577,0.0338,0.418,0.0761
+mexico_born,50-64,0.143,0.0239,0.3838,0.0628
+mexico_born,0-64,0.4672,0.0476,,
