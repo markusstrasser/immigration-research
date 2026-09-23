@@ -1,0 +1,4 @@
+check,sex,n,wN,ridit,ridit_se,q1,q5,mig_c1_none_primary_incomplete,mex_c1_none_primary_incomplete,mig_c5_tertiary,mex_c5_tertiary,diff_c1_none_primary_incomplete,diff_c5_tertiary,position,census2000_ridit_6to10ysm
+"CPS ASEC 1994+1995, Mexico-born arrived 1990-early 1995 at age 20+, ref 2000 census",P,934,1524258.80000,0.49395,0.01431,0.18072,0.17487,0.22492,0.26065,0.09865,0.14017,-0.03573,-0.04153,middle (fewer in both tails),0.53033
+"CPS ASEC 1994+1995, Mexico-born arrived 1990-early 1995 at age 20+, ref 2000 census",H,426,779938.43000,0.45337,0.02043,0.22939,0.13809,0.24226,0.22799,0.08826,0.16491,0.01427,-0.07665,"bottom (more at bottom, fewer at top)",0.52346
+"CPS ASEC 1994+1995, Mexico-born arrived 1990-early 1995 at age 20+, ref 2000 census",M,508,744320.37000,0.53647,0.01446,0.12972,0.21341,0.20675,0.29487,0.10954,0.11426,-0.08813,-0.00472,middle (fewer in both tails),0.53643
