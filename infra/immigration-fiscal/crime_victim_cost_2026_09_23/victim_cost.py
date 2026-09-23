@@ -267,6 +267,40 @@ def ncvs_inputs() -> dict:
                 vict_ratio=ratio, I2024=a24, serious_2019=serious_2019)
 
 
+def cv2024_number(table: str, label: str) -> float:
+    """The 2024 number in a BJS *Criminal Victimization, 2024* table (it sits under '2024*')."""
+    t = pd.read_csv(NCVS / "_cache/cv24" / table, header=None, encoding="latin-1", dtype=str,
+                    names=range(30)).fillna("")
+    year_row = t[t.apply(lambda r: "2024*" in [c.strip() for c in r], axis=1)].iloc[0]
+    j = [c.strip() for c in year_row].index("2024*")
+    for _, r in t.iterrows():
+        cells = [c.strip() for c in r]
+        if label in cells:
+            return float(cells[j].replace(",", ""))
+    raise SystemExit(f"[BLOCKED] {table} row {label} not found")
+
+
+def arrest_share_incidence() -> dict[str, float]:
+    """Disconfirmation input: Hispanic-offender victimisations by offence if offender ethnicity
+    followed the Hispanic share of 2019 adult arrests (FBI Table 43C, ethnicity panel) rather
+    than NCVS victims' perceptions.  National 2024 victimisations from CV2024 table 1.  FBI
+    'Rape' is narrower than NCVS rape/sexual assault; 'Other assaults' stands in for simple
+    assault.  Arrests carry enforcement, charging and panel-geography differences."""
+    n = {"Rape/sexual assault": cv2024_number("cv24t01.csv", "Rape/sexual assault/c"),
+         "Robbery": cv2024_number("cv24t01.csv", "Robbery"),
+         "Aggravated assault": cv2024_number("cv24t01.csv", "Aggravated assault"),
+         "Simple assault": cv2024_number("cv24t01.csv", "Simple assault")}
+    gate("CV2024 table 1, 2024 violent victimisations", n == {
+        "Rape/sexual assault": 560_890, "Robbery": 642_150, "Aggravated assault": 1_341_950,
+        "Simple assault": 4_126_640}, ", ".join(f"{k} {v:,.0f}" for k, v in n.items()))
+    x = pd.read_csv(HERE / "derived/fbi_2019_table43c_adult_arrests.csv").drop_duplicates().set_index("offense")
+    lab = {"Rape/sexual assault": "Rape3", "Robbery": "Robbery", "Aggravated assault": "Aggravated assault",
+           "Simple assault": "Other assaults"}
+    share = {o: float(x.loc[l, "hispanic"]) / float(x.loc[l, "ethnicity_total"]) for o, l in lab.items()}
+    say("[input] Hispanic share of 2019 adult arrests: " + ", ".join(f"{o} {s:.3f}" for o, s in share.items()))
+    return {o: n[o] * share[o] for o in NONFATAL}
+
+
 def institutional_ratio() -> dict[str, float]:
     a = pd.read_csv(ACSI / "acs5_2020_2024_origins.csv")
     h = a[a.block.eq("hispanic_origin")]
@@ -306,8 +340,19 @@ def run(o: dict, P: pd.DataFrame, nc: dict, hom: dict, s_pop: float, m_geo: dict
         for off in NONFATAL:
             rows.append(dict(block="nonfatal_violence", victim=v, offence=off,
                              hispanic_offender_incidents_2024=ih * mix[off],
+                             hispanic_victimisations=ih * float(nc["vict_ratio"][v]) * mix[off],
                              group_incidents=mex * mix[off], group_victimisations=vict * mix[off],
                              outside_victims=outside * mix[off]))
+    if o["nonfatal_source"] == "arrests_2019":
+        # keep NCVS's victim distribution; rescale each offence to the arrest-share total
+        nf = pd.DataFrame(rows)
+        for off in NONFATAL:
+            f = nc["arrest_based"][off] / nf.loc[nf.offence.eq(off), "hispanic_victimisations"].sum()
+            for r in rows:
+                if r["offence"] == off:
+                    for k in ["hispanic_offender_incidents_2024", "hispanic_victimisations",
+                              "group_incidents", "group_victimisations", "outside_victims"]:
+                        r[k] *= f
     for g, v in HOM_GROUPS.items():
         p = hom["p"].loc[(o["hom_window"], g)]
         n_h = hom["wonder"][g] * p.p_off_hispanic
@@ -380,6 +425,7 @@ def main() -> None:
     diag.to_csv(OUT / "mccollister_total_decomposition_2024usd.csv", index=False, float_format="%.2f")
 
     nc = ncvs_inputs()
+    nc["arrest_based"] = arrest_share_incidence()
     tp = pd.read_csv(HERE / "derived/target_population_cps2025.csv").set_index("group")
     gate("target population reproduces the complete account",
          abs(tp.loc["union", "all_ages"] - TARGET_ALL_AGES) < 1, f"{tp.loc['union', 'all_ages']:,.1f}")
@@ -410,7 +456,8 @@ def main() -> None:
 
     base = dict(price="miller2021", unknown="proportional", victimisations=True, ratio=1.0,
                 pop_basis="cps_share", m="tract", ncvs_year="pooled", mix="victim_group",
-                hom_window="2024", hom_scope="all", hom_dist="victim_conditional", k="k_central")
+                hom_window="2024", hom_scope="all", hom_dist="victim_conditional", k="k_central",
+                nonfatal_source="ncvs")
 
     def go(**kw):
         o = {**base, **kw}
@@ -484,7 +531,9 @@ def main() -> None:
              ("Hispanic victims Mexican at national share 0.586", dict(m="national")),
              ("homicide: SHR 2019-2024 offender distribution", dict(hom_window="2019_2024")),
              ("homicide: cleared cases only", dict(hom_scope="cleared_only")),
-             ("homicide: joint-imputed victim distribution (homicide lane C1b)", dict(hom_dist="joint_imputed"))]
+             ("homicide: joint-imputed victim distribution (homicide lane C1b)", dict(hom_dist="joint_imputed")),
+             ("non-fatal offender ethnicity from 2019 adult arrest shares, not NCVS perception",
+              dict(nonfatal_source="arrests_2019"))]
     lo_kw = dict(unknown="known_only", victimisations=False, ratio=ir["ratio_generic_kept"], m="none",
                  hom_scope="cleared_only", k="k_floor")
     hi_kw = dict(ratio=ir["ratio_generic_reallocated"], m="county", hom_dist="joint_imputed",
@@ -516,6 +565,8 @@ def main() -> None:
         f"lanes used them (with CJS, crime career and risk of homicide): ${dg.cost_old_totals.sum() / 1e9:,.2f}bn "
         f"against the victim-only full ${central['full'] / 1e9:,.2f}bn")
 
+    offender_rate_crosscheck(hom).to_csv(OUT / "offender_rate_crosscheck.csv", index=False, float_format="%.4f")
+
     # Property: arrest-based proxy, reported separately, not in the headline
     prop = property_proxy(P["k_central"], nc, s_pop["cps_share"], shares)
     prop.to_csv(OUT / "property_proxy.csv", index=False, float_format="%.4f")
@@ -524,22 +575,64 @@ def main() -> None:
     (OUT / "run_log.txt").write_text("\n".join(LOG) + "\n")
 
 
+def offender_rate_crosscheck(hom: dict) -> pd.DataFrame:
+    """Offending ratios implied by this lane's inputs against BJS official imprisonment rates.
+
+    BJS *Prisoners in 2023* Table 6 (adult imprisonment per 100,000, race/Hispanic reporting
+    adjusted by BJS with SPI 2016) is held by the 2026-09-05 ethnicity audit
+    (research/immigration-crime-race-ethnicity-2026-09-05.md); parsed here from its pdftotext."""
+    root = HERE.parents[2]
+    arch = root / ".scratch/clarity-next-20260905/conduct-race"
+    pdf, txt = arch / "p23st.pdf", arch / "p23st.txt"
+    import hashlib
+    if not txt.exists() or hashlib.sha256(pdf.read_bytes()).hexdigest() != (
+            "22a4cbe8ee0ff6156db97b4825db60907d53f0a345d02166b8484e0ac307b2e9"):
+        raise SystemExit("[BLOCKED] BJS p23st.pdf/.txt missing or changed; restore from "
+                         "https://bjs.ojp.gov/document/p23st.pdf (pdftotext -layout) into " + str(arch))
+    lines = txt.read_text(errors="replace").splitlines()
+    start = next(i for i, l in enumerate(lines) if l.strip() == "TABLE 6")
+    rates = {}
+    for l in lines[start:start + 25]:
+        f = l.split()
+        if f and f[0] in ("2019", "2023") and len(f) == 11:
+            v = [float(x.replace(",", "")) for x in f[1:]]
+            rates[int(f[0])] = dict(nh_white=v[5], nh_black=v[6], hispanic=v[7])
+    held = pd.read_csv(arch / "analysis/bjs_p23st_table6_adult_rates.csv").set_index("year")
+    gate("BJS Prisoners in 2023 Table 6 parse equals the ethnicity audit's table",
+         all(rates[y][k] == held.loc[y, {"nh_white": "non_hispanic_white", "nh_black": "non_hispanic_black",
+                                          "hispanic": "hispanic_any_race"}[k]] for y in rates for k in rates[y]),
+         f"2023 NH white {rates[2023]['nh_white']:.0f}, NH Black {rates[2023]['nh_black']:.0f}, "
+         f"Hispanic {rates[2023]['hispanic']:.0f} per 100,000 adults")
+    pop = pd.read_csv(NCVS / "derived/cv_population_12plus.csv")
+    pop = pop[pop.year.eq(2024)].set_index("group").population
+    p = hom["p"].xs("2024", level="window")
+    off = {o: sum(hom["wonder"][g] * p.loc[g, f"p_off_{o}"] for g in HOM_GROUPS) for o in ["hispanic", "nh_white", "nh_black"]}
+    hr = {"hispanic": off["hispanic"] / pop["Hispanic"], "nh_white": off["nh_white"] / pop["White"],
+          "nh_black": off["nh_black"] / pop["Black"]}
+    r = pd.read_csv(NCVS / "derived/rates_by_victim_and_offender_2022_2024.csv")
+    r = r[r.side.eq("offender")].set_index("group").rate_per_1000
+    rows = []
+    for g, lab in [("hispanic", "Hispanic"), ("nh_black", "Black")]:
+        rows.append(dict(group=g,
+                         homicide_offending_ratio_2024=hr[g] / hr["nh_white"],
+                         ncvs_nonfatal_offending_ratio_2022_2024=r[lab] / r["White"],
+                         bjs_imprisonment_ratio_2023=rates[2023][g] / rates[2023]["nh_white"],
+                         bjs_imprisonment_ratio_2019=rates[2019][g] / rates[2019]["nh_white"]))
+    out = pd.DataFrame(rows)
+    say("\n-- Offending ratios vs non-Hispanic white: this lane's inputs against BJS imprisonment --")
+    say(f"homicide offenders 2024 (WONDER x SHR): Hispanic {off['hispanic']:,.0f}, NH white {off['nh_white']:,.0f}, "
+        f"NH Black {off['nh_black']:,.0f}; per 100,000 residents 12+: "
+        + ", ".join(f"{k} {v * 1e5:.2f}" for k, v in hr.items()))
+    say(out.to_string(index=False, float_format=lambda x: f"{x:.3f}"))
+    return out
+
+
 def property_proxy(P: pd.DataFrame, nc: dict, s: float, shares: pd.DataFrame) -> pd.DataFrame:
     """NCVS 2024 household property victimisations x Hispanic share of adult arrests
     (FBI 2019 Table 43C, the ethnicity-reporting panel) x population share x outside share."""
-    t2 = pd.read_csv(NCVS / "_cache/cv24/cv24t02.csv", header=None, encoding="latin-1", dtype=str,
-                     names=range(30)).fillna("")
-    year_row = t2[t2.apply(lambda r: "2024*" in [c.strip() for c in r], axis=1)].iloc[0]
-    j = [c.strip() for c in year_row].index("2024*")     # the 2024 number sits under its year label
-
-    def val(label: str) -> float:
-        for _, r in t2.iterrows():
-            cells = [c.strip() for c in r]
-            if label in cells:
-                return float(cells[j].replace(",", ""))
-        raise SystemExit(f"[BLOCKED] CV2024 table 2 row {label} not found")
-    vict = {"Burglary": val("Burglary/c"), "Motor vehicle theft": val("Motor vehicle theft"),
-            "Larceny/theft": val("Other theft/e")}
+    vict = {"Burglary": cv2024_number("cv24t02.csv", "Burglary/c"),
+            "Motor vehicle theft": cv2024_number("cv24t02.csv", "Motor vehicle theft"),
+            "Larceny/theft": cv2024_number("cv24t02.csv", "Other theft/e")}
     gate("CV2024 table 2, 2024 property victimisations", vict["Burglary"] == 1_103_790
          and vict["Motor vehicle theft"] == 841_120 and vict["Larceny/theft"] == 10_618_790,
          ", ".join(f"{k} {v:,.0f}" for k, v in vict.items()))
