@@ -6,8 +6,8 @@ prisons,whole,per_head,121.315102,0.120245,14.587509,106.727593,4.359064,10.2284
 prisons,whole,custody_acs_raw,121.315102,0.126371,15.330658,105.984444,4.249333,11.081324,ACS institutional 18-64 by nativity,"institutional residence, not correctional custody alone"
 prisons,whole,custody_acs_adj,121.315102,0.141918,17.216835,104.098267,4.512351,12.704484,ACS institutional 18-64 by nativity,"institutional residence, not correctional custody alone"
 prisons,whole,custody_acs_adj_inst,121.315102,0.143642,17.425984,103.889118,4.565466,12.860518,ACS institutional 18-64 by nativity,"institutional residence, not correctional custody alone"
-prisons,whole,custody_bjs_raw,121.315102,0.125755,15.255965,106.059137,,,,BJS prisons+jails Hispanic share x ACS Mexican/Hispanic institutional ratio x target/ACS scaling
-prisons,whole,custody_bjs_adj,121.315102,0.141327,17.145046,104.170056,,,,BJS prisons+jails Hispanic share x ACS Mexican/Hispanic institutional ratio x target/ACS scaling
+prisons,whole,custody_bjs_raw,121.315102,0.127055,15.413724,105.901378,,,,BJS prisons+jails Hispanic share x ACS Mexican/Hispanic institutional ratio x target/ACS scaling
+prisons,whole,custody_bjs_adj,121.315102,0.142788,17.322341,103.992761,,,,BJS prisons+jails Hispanic share x ACS Mexican/Hispanic institutional ratio x target/ACS scaling
 prisons,whole,custody_acs_adj_minus_ice,121.315102,0.141764,17.198056,104.117046,4.263820,12.934236,ACS institutional 18-64 by nativity,"bound: all 5,089 Mexican ICE detainees and all 37,684 detainees removed"
 police,cbp_border,per_head,23.871928,0.120245,2.870475,21.001453,0.857760,2.012715,CPS target nativity,CBP subfunction-751 FY2024 gross outlays excl. investment; border spending follows entry flows
 police,ice_custody_border_arrest,per_head,1.971105,0.120245,0.237015,1.734090,0.070825,0.166190,CPS target nativity,CBP-arrest share of FY2024 ICE ADP; treated like CBP

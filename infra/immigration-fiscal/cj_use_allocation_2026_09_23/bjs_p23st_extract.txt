@@ -1,0 +1,172 @@
+Extract of BJS, Prisoners in 2023 - Statistical Tables (NCJ 310197), September 2025: Tables 3, 6 and 14 (first page).
+Source: https://bjs.ojp.gov/document/p23st.pdf; PDF sha256 22a4cbe8ee0ff6156db97b4825db60907d53f0a345d02166b8484e0ac307b2e9
+Held copy: .scratch/clarity-next-20260905/conduct-race/p23st.pdf (2026-09-05 race/ethnicity lane).
+Made with: pdftotext -layout, PDF pages 10, 14 and 26 (poppler 26.09.0).
+
+Population of sentenced prisoners                                                       Males accounted for 93% of the sentenced U.S. prison
+ At yearend 2023, persons sentenced to more than                                        population in 2023, with 1,124,400 males sentenced to
+  1 year under the legal authority of state and federal                                  more than 1 year in state or federal prison.
+  correctional authorities accounted for 96% (1,210,300)                                On December 31, 2023, approximately 33% of persons
+  of the total U.S. prison population (table 3).                                         sentenced to state or federal prison were black, 31%
+ In addition, 20,700 persons in state or federal prison                                 were white, 23% were Hispanic, 2% were American
+  at yearend 2023 were sentenced to serve 1 year or less                                 Indian or Alaska Native, and 1% were Asian, Native
+  and 22,000 were unsentenced (not shown in tables).                                     Hawaiian, or Other Pacific Islander.
+
+ The number of persons sentenced to more than 1 year                                   From yearend 2022 to yearend 2023, the number
+  in state or federal prison increased 2% (up 24,700)                                    of females (up 4%) in the sentenced U.S. prison
+  from yearend 2022 to yearend 2023.                                                     population increased by a larger percentage than
+                                                                                         the number of males (up 2%) in the sentenced U.S.
+                                                                                         prison population.
+
+
+TABLE 3
+Sentenced prisoners under the jurisdiction of state or federal correctional authorities, by jurisdiction, sex, and race or
+Hispanic origin, 2013–2023
+                                                                                                                                   American Indian/
+Year                Totala       Federalb        State          Male         Female       Whitec,d       Blackc,d    Hispanicd     Alaska Nativec,d Asianc,d,e
+2013              1,520,403      195,098       1,325,305     1,416,102       104,301      469,800        530,100      343,100          19,800        16,900
+2014              1,507,781      191,374       1,316,407     1,401,685       106,096      463,800        516,800      339,500          21,300        17,300
+2015              1,476,847      178,688       1,298,159     1,371,879       104,968      450,600        496,400      335,800          20,500        17,800
+2016              1,459,948      171,482       1,288,466     1,354,109       105,839      440,700        484,600      342,100          20,400        18,000
+2017              1,439,877      166,203       1,273,674     1,334,828       105,049      436,800        473,000      338,800          21,200        17,800
+2018              1,413,370      163,653       1,249,717     1,309,194       104,176      430,500        461,500      332,900          21,100        17,900
+2019              1,379,786      158,498       1,221,288     1,278,484       101,302      422,900        449,900      322,700          21,500        17,500
+2020              1,185,733      142,028       1,043,705     1,105,750        79,983      360,100        390,700      276,100          19,000        14,900
+2021              1,165,736      144,448       1,021,288     1,086,337        79,399      356,000        378,000      273,800          18,700        14,700
+2022              1,185,648      146,108       1,039,540     1,103,170        82,478      367,800        384,600      273,900          19,400        15,000
+2023              1,210,308      143,297       1,067,011     1,124,435        85,873      370,500        394,500      282,700          19,700        15,200
+Percent change
+  2022–2023           2.1%         -1.9%           2.6%          1.9%           4.1%         0.7%            2.6%         3.2%            1.5%              1.3%
+  2013–2023         -20.4         -26.6          -19.5         -20.6          -17.7        -21.1           -25.6        -17.6            -0.5             -10.1
+Note: Jurisdiction refers to the legal authority of state or federal correctional officials over a prisoner, regardless of where the prisoner is held. Counts are for
+December 31 of each year and are based on prisoners with a sentence of more than 1 year. As of December 31, 2001, persons sentenced for a felony in the
+District of Columbia were the responsibility of the Federal Bureau of Prisons. Counts for 2022 and earlier may have been revised from previous reports due
+to revisions in the correctional population.
+aIncludes persons of two or more races and other races that are not shown separately.
+bIncludes adult prisoners held in nonsecure community corrections facilities and adults and persons age 17 or younger held in privately operated facilities.
+cExcludes persons of Hispanic origin (e.g., “white” refers to non-Hispanic white persons and “black” refers to non-Hispanic black persons).
+dEstimates of race or Hispanic origin are rounded to the nearest 100.
+eIncludes Asians, Native Hawaiians, and Other Pacific Islanders.
+Source: Bureau of Justice Statistics, Federal Justice Statistics Program, 2023 (preliminary); National Corrections Reporting Program, 2022; National Prisoner
+Statistics, 2013–2023; Survey of Inmates in State and Federal Correctional Facilities, 2004; and Survey of Prison Inmates, 2016.
+
+
+
+
+Prisoners in 2023 – Statistical Tables | September 2025                                                                                                       10
+ The imprisonment rate for persons age 18 or older                                  In 2023, black adults (1,218 per 100,000) were
+  was 460 sentenced prisoners per 100,000 adult U.S.                                  imprisoned with a sentence of more than 1 year at
+  residents in 2023, up 1% from 2022 (454 per 100,000)                                a rate that was about 14 times that of Asian, Native
+  but down 26% from 2013 (624 per 100,000) (table 6).                                 Hawaiian, or Other Pacific Islander adults (88 per
+                                                                                      100,000), 5 times that of white adults (231 per
+ From 2022 to 2023, the imprisonment rate for adult                                  100,000), 2 times that of Hispanic adults (606 per
+  U.S. residents increased 2% for black persons, 1% for                               100,000), and 1.2 times that of American Indian or
+  white persons, and less than 1% each for Hispanic                                   Alaska Native adults (1,045 per 100,000).
+  persons and American Indian or Alaska Native
+  persons, while it declined less than 1% for Asian,                                 At yearend 2023, 871 per 100,000 male adult U.S.
+  Native Hawaiian, or Other Pacific Islander persons.                                 residents and 64 per 100,000 female adult U.S.
+                                                                                      residents were serving a sentence of more than 1 year
+ Over the past decade, the adult imprisonment rate                                   in state or federal prison.
+  declined 35% for Hispanic persons; 33% for black
+  persons; 30% for Asian, Native Hawaiian, or Other
+  Pacific Islander persons; 22% for white persons; and
+  10% for American Indian or Alaska Native persons.
+
+
+TABLE 6
+Imprisonment rates of adult U.S. residents, based on sentenced prisoners under the jurisdiction of state or federal
+correctional authorities, by jurisdiction, sex, and race or Hispanic origin, 2013–2023
+                                                                           Per 100,000 adult U.S. residents within each demographic group
+                   Per 100,000 adult U.S. residents                                                                        American Indian/
+Year               Totala     Federalb       State            Male        Female     Whitec        Blackc     Hispanic     Alaska Nativec              Asianc,d
+2013                624          80           544             1,194         83         295          1,818        935           1,160                     126
+2014                613          78           535             1,171         84         290          1,749        903           1,232                     125
+2015                595          72           523             1,135         82         281          1,659        871           1,172                     124
+2016                583          68           514             1,110         82         275          1,599        866           1,152                     122
+2017                570          66           504             1,085         81         272          1,543        837           1,183                     118
+2018                556          64           491             1,056         80         268          1,488        804           1,165                     116
+2019                539          62           477             1,024         77         263          1,436        763           1,175                     111
+2020                458          55           403               869         61         224          1,238        641           1,030                       93
+2021                448          56           393               850         60         222          1,186        619           1,004                       90
+2022                454          56           398               862         62         229          1,196        603           1,042                       88
+2023                460          54           405               871         64         231          1,218        606           1,045                       88
+Percent change
+  2022–2023           1.2%        -2.7%         1.8%            1.1%         3.2%         0.9%         1.9%         0.5%               0.3%              -0.3%
+  2013–2023         -26.3        -32.0        -25.5           -27.0        -22.9        -21.6        -33.0        -35.2               -9.9              -30.4
+Note: Jurisdiction refers to the legal authority of state or federal correctional officials over a prisoner, regardless of where the prisoner is held. Imprisonment
+rate is the number of sentenced prisoners age 18 or older under state or federal jurisdiction per 100,000 U.S. residents age 18 or older or per 100,000 U.S.
+residents age 18 or older in a given category. Rates are for December 31 of each year and are based on prisoners with a sentence of more than 1 year.
+Resident population estimates are from the U.S. Census Bureau for January 1 of the following year. As of December 31, 2001, persons sentenced for a felony
+in the District of Columbia were the responsibility of the Federal Bureau of Prisons. Rates for 2022 and earlier may have been revised from previous reports
+due to revisions in population estimates for U.S. residents or the correctional population.
+aIncludes persons of two or more races and other races that are not shown separately.
+bIncludes adult prisoners held in nonsecure community corrections facilities and adults and persons age 17 or younger held in privately operated facilities.
+cExcludes persons of Hispanic origin (e.g., “white” refers to non-Hispanic white persons and “black” refers to non-Hispanic black persons).
+dIncludes Asians, Native Hawaiians, and Other Pacific Islanders.
+Source: Bureau of Justice Statistics, Federal Justice Statistics Program, 2023 (preliminary), National Corrections Reporting Program, 2022, National Prisoner
+Statistics, 2013–2023, Survey of Inmates in State and Federal Correctional Facilities, 2004, and Survey of Prison Inmates, 2016; and U.S. Census Bureau,
+postcensal resident population estimates for January 1 of the following calendar year.
+
+
+
+
+Prisoners in 2023 – Statistical Tables | September 2025                                                                                                     14
+Prisoners held in privately operated prison facilities                      At yearend 2023, four states (Montana, New Mexico,
+and local jails                                                              Arizona, and Tennessee) held more than a quarter
+ In 2023, some 154,200 persons under the jurisdiction                       of the persons under their jurisdiction in private
+  of state or federal correctional authorities, or 12%                       prison facilities.
+  of all prisoners, were housed in privately operated                       In 2023, the FBOP reported it held no prisoners
+  prison facilities (88,600 persons) or local jails (65,600)                 in secure private prisons. Persons in facilities
+  (table 14).                                                                contracted to the FBOP were held in either privately
+ The number of persons held in privately operated                           operated halfway houses (8,000) or on home
+  prison facilities decreased almost 3% from 2022                            confinement (5,400).
+  (91,300) to 2023 (88,600).
+
+
+TABLE 14
+Prisoners held in the custody of private prisons or local jails under the jurisdiction of state or federal correctional
+authorities, by jurisdiction, 2022 and 2023
+                                Prisoners held in private prisonsa                                  Prisoners held in local jails
+                                                   Percent       Percent of total                                 Percent         Percent of total
+                                    Change,        change,       jurisdiction                       Change,       change,         jurisdiction
+Jurisdiction       2022     2023 2022–2023 2022–2023 population, 2023                2022     2023 2022–2023 2022–2023 population, 2023
+   U.S. total     91,320   88,618     -2,702         -3.0%             7.1%         65,573   65,552      -21             --             5.2%
+Federalb          13,834   13,358       -476         -3.4%             8.5%            647      627      -20          -3.1%             0.4%
+State             77,486   75,260     -2,226         -2.9%             6.9%         64,926   64,925       -1             --             5.9%
+   Alabama           253      221        -32        -12.6              0.8           1,721    1,613     -108          -6.3%             5.9
+   Alaskac           300      330         30         10.0              7.4              39       59       20         51.3               1.3
+   Arizona         9,738    9,842        104          1.1             28.5               0        0        0           0.0              0.0
+   Arkansas            0        0          0          0.0              0.0           2,231    2,024     -207          -9.3             10.9
+   California          0        0          0          0.0              0.0               0        0        0           0.0              0.0
+   Colorado        2,677    2,745         68          2.5             15.7             281       84     -197        -70.1               0.5
+   Connecticutc      447      538         91         20.4              4.8               0        0        0           0.0              0.0
+   Delawarec           ~        ~          ..           ..               ..              ~        ~        ..             ..              ..
+   Florida        11,728   11,637        -91         -0.8             13.3             830      759      -71          -8.6              0.9
+   Georgia         7,284    7,658        374          5.1             15.2           4,726    4,513     -213          -4.5              8.9
+   Hawaiic           966      876        -90         -9.3             22.2               0        0        0           0.0              0.0
+   Idaho             861      598       -263        -30.5              6.1             740      882      142         19.2               9.0
+   Illinois          335      352         17          5.1              1.2               0        0        0           0.0              0.0
+   Indianad        3,906    3,901         -5         -0.1             15.5           1,017      562     -455        -44.7               2.2
+   Iowa                0        0          0          0.0              0.0              72       52      -20        -27.8               0.6
+   Kansas              0        0          0          0.0              0.0              16        6      -10        -62.5               0.1
+   Kentucky          814      834         20          2.5              4.3           9,346    7,967 -1,379          -14.8              41.5
+   Louisiana           0        0          0          0.0              0.0          14,377   14,850      473           3.3             52.7
+   Maine               ~        ~          ..           ..               ..              0        0        0           0.0              0.0
+   Maryland            0        0          0          0.0              0.0             137      139        2           1.5              0.9
+   Massachusetts       ~        ~          ..           ..               ..            128       73      -55        -43.0               1.2
+   Michigan            ~        ~          ..           ..               ..              0        0        0           0.0              0.0
+   Minnesota           0        0          0          0.0              0.0             500      471      -29          -5.8              5.4
+   Mississippi     2,252    2,237        -15         -0.7             11.5           6,510    5,772     -738        -11.3              29.6
+   Missouri            0        0          0          0.0              0.0               0        0        0           0.0              0.0
+   Montana         2,319    2,427        108          4.7             48.7             308      556      248         80.5              11.2
+   Nebraska            0        0          0          0.0              0.0              78       44      -34        -43.6               0.7
+   Nevada              0        0          0          0.0              0.0               9       10        1         11.1               0.1
+   New Hampshire       ~        ~          ..           ..               ..             63       59       -4          -6.3              2.8
+   New Jersey        834      994        160         19.2              8.5             771      168     -603        -78.2               1.4
+   New Mexico      1,522    1,633        111          7.3             29.2               0        0        0           0.0              0.0
+   New York            0        0          0          0.0              0.0               0        0        0           0.0              0.0
+   North Carolina     29       27         -2         -6.9              0.1               ~        ~        ..             ..              ..
+                                                                                                                     Continued on next page
+
+Prisoners in 2023 – Statistical Tables | September 2025                                                                                     26
+

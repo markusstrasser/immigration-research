@@ -8,8 +8,12 @@ detention; public PUMS cannot split them.
 
 Run from the repository root:
     OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/cj_use_allocation_2026_09_23/acs_pull.py
-Writes _cache/*.json (ignored), derived/acs_hisp_nativity_gq.csv and derived/acs2019_adults.csv.
-Skips fetches already cached.
+Writes _cache/*.json (ignored), derived/acs_hisp_nativity_gq.csv, derived/acs2019_adults.csv and
+derived/acs_hisp_allocation_1864.csv. Skips fetches already cached.
+
+Two checks follow the 2026-09-05 race/ethnicity audit: ACS 2016, the Survey of Prison Inmates year (the
+2016 file names the group-quarters variable TYPE), and the 2024 detailed-Hispanic-origin allocation flag
+FHISP, which measures how much of the institutional origin coding is imputed.
 """
 import csv, json, os, pathlib, re, sys, urllib.request
 
@@ -20,6 +24,10 @@ ENV = HERE.parent / "acquire" / "config.local.env"
 PRODUCTS = {"acs1_2024": "https://api.census.gov/data/2024/acs/acs1/pums",
             "acs5_2024": "https://api.census.gov/data/2024/acs/acs5/pums"}
 AGES = {"1864": "&AGEP=18:64", "12up": "&AGEP=12:99", "all": ""}
+CHECKS = {"acs1_2016_1864": "https://api.census.gov/data/2016/acs/acs1/pums"
+                            "?tabulate=weight(PWGTP)&col+TYPE&row+NATIVITY&row+HISP&AGEP=18:64",
+          "acs1_2024_1864_fhisp": "https://api.census.gov/data/2024/acs/acs1/pums"
+                                  "?tabulate=weight(PWGTP)&col+TYPEHUGQ&row+FHISP&row+HISP&AGEP=18:64"}
 
 
 def key() -> str:
@@ -32,20 +40,23 @@ def key() -> str:
     return k
 
 
-def fetch(product: str, age: str) -> list:
-    out = CACHE / f"acs_{product}_{age}.json"
+def get(name: str, url: str) -> list:
+    out = CACHE / f"{name}.json"
     if not out.exists():
         k = key()
-        url = (f"{PRODUCTS[product]}?tabulate=weight(PWGTP)&col+TYPEHUGQ&row+NATIVITY&row+HISP"
-               f"{AGES[age]}&key={k}")
         try:
-            body = urllib.request.urlopen(url, timeout=300).read()
+            body = urllib.request.urlopen(f"{url}&key={k}", timeout=300).read()
         except Exception as e:  # never let the key reach a log
-            sys.exit(f"[BLOCKED] fetch {product} {age}: {str(e).replace(k, '<KEY>')}")
+            sys.exit(f"[BLOCKED] fetch {name}: {str(e).replace(k, '<KEY>')}")
         json.loads(body)
         CACHE.mkdir(exist_ok=True)
         out.write_bytes(body)
     return json.loads(out.read_text())
+
+
+def fetch(product: str, age: str) -> list:
+    return get(f"acs_{product}_{age}",
+               f"{PRODUCTS[product]}?tabulate=weight(PWGTP)&col+TYPEHUGQ&row+NATIVITY&row+HISP{AGES[age]}")
 
 
 def fetch_b01001_2019() -> dict:
@@ -72,7 +83,7 @@ def fetch_b01001_2019() -> dict:
 
 
 def cells(tab: list) -> dict:
-    """(nativity, hisp) -> {'hh', 'inst', 'noninst', 'total'} weighted persons."""
+    """(first row variable, second row variable) -> {'hh', 'inst', 'noninst', 'total'} weighted persons."""
     hdr = tab[0]
     col = {list(h.values())[0]: i for i, h in enumerate(hdr) if isinstance(h, dict)}
     res = {}
@@ -93,6 +104,9 @@ def main() -> None:
             for (nat, hisp), v in sorted(c.items()):
                 rows.append({"product": product, "ages": age, "nativity": {"1": "native", "2": "foreign_born"}[nat],
                              "hisp": hisp, **{k: round(x) for k, x in v.items()}})
+    for (nat, hisp), v in sorted(cells(get("acs1_2016_1864", CHECKS["acs1_2016_1864"])).items()):
+        rows.append({"product": "acs1_2016", "ages": "1864", "nativity": {"1": "native", "2": "foreign_born"}[nat],
+                     "hisp": hisp, **{k: round(x) for k, x in v.items()}})
     path = DERIVED / "acs_hisp_nativity_gq.csv"
     with open(path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
@@ -106,6 +120,13 @@ def main() -> None:
         w.writerow(["table", "group", "total", "adult18"])
         for tbl, grp in (("B01001", "all"), ("B01001I", "hispanic")):
             w.writerow([tbl, grp, round(pop19[tbl]["total"]), round(pop19[tbl]["adult18"])])
+    print(f"wrote {path.relative_to(HERE)}")
+    path = DERIVED / "acs_hisp_allocation_1864.csv"
+    with open(path, "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["product", "ages", "fhisp", "hisp", "hh", "inst", "noninst", "total"])
+        for (flag, hisp), v in sorted(cells(get("acs1_2024_1864_fhisp", CHECKS["acs1_2024_1864_fhisp"])).items()):
+            w.writerow(["acs1_2024", "1864", flag, hisp, *(round(v[c]) for c in ("hh", "inst", "noninst", "total"))])
     print(f"wrote {path.relative_to(HERE)}")
 
 
