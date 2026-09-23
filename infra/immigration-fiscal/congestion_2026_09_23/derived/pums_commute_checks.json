@@ -1,0 +1,7 @@
+{
+  "group_persons_acs": 39429519.0,
+  "all_persons_acs": 340110990.0,
+  "gate_tolerance": 0.03,
+  "gate_max_abs_difference_major_rows": 0.0017238227913134452,
+  "gate_passed": true
+}

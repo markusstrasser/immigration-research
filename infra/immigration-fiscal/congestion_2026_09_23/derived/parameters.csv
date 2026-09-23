@@ -1,0 +1,23 @@
+parameter,value,source
+scale_cps_over_acs,1.0372070224848546,CPS union 40.896574m / ACS HISP=02 or POBP=303 persons [DATA]
+delta_peak_share_of_delay,0.526262,"UMR 2025 Exhibit 15 weekday share x mean of Exhibits 10 and 13 peak shares [DATA, chart read]"
+p_other_peak_share,0.4144311973451363,NHTS 2022 non-Hispanic weekday peak share of driver VMT [CALCULATION]
+rho_central,0.8603130526224931,"NHTS 2017 southwest, Hispanic vs non-Hispanic all-purpose/commute driver VMT [CALCULATION]"
+r_all_central,0.8743346355559202,"NHTS 2017 southwest, Hispanic / non-Hispanic driver VMT per person [CALCULATION]"
+r_hours_central,0.9715851950239228,"NHTS 2017 southwest, Hispanic / non-Hispanic vehicle-occupant hours per person [CALCULATION]"
+occupancy_ratio_central,1.0444564111557617,"NHTS 2017 southwest, POV person-miles per driver mile, H / N [CALCULATION]"
+pi_peak_central,1.0254521515807025,"NHTS 2017 southwest, peak share of driver VMT, H / N [CALCULATION]"
+pi_peak_acs,0.9109644402494157,"ACS 2024 share of commute vehicles departing 6-10 a.m., group / other [CALCULATION]"
+tau_low,0.0737088975835393,group share of ACS personal income x CPS scale [CALCULATION]
+tau_central,0.09697684330846783,midpoint of low and high [INFERENCE]
+tau_high,0.12024478903339636,group share of residents [DATA]
+beta,"{""low"": 3.001, ""central"": 4.0, ""high"": 5.883}","NCHRP 716 average MPO curves: arterials 3.001, freeways 5.883; original BPR 4 [SOURCE]"
+fill_in_eta,"{""trips fixed"": 1.0, ""DT 0.48"": 0.48, ""DT 0.44"": 0.44, ""DT 0.32"": 0.32}","Duranton-Turner 2009 table 2 panel A, ln pop at fixed lanes, cols 2, 3, 5 [SOURCE]"
+theta,"{""low"": 0.07, ""central"": 0.13, ""high"": 0.19}",CDT table 5 col 6 = 0.13 (SE 0.035); table 8 range 0.07-0.19 [SOURCE]
+sigma,"{""0"": 0.0, ""8"": 8.0, ""16"": 16.0, ""32"": 32.0}","CDT section 7 and table 8, from Duranton-Turner (2009) demand estimate 16; range 8-32 [SOURCE]"
+pop_elasticity_fixed_lanes,"{""low"": 0.085, ""central"": 0.12, ""high"": 0.155}","CDT table 10 col 6, -0.12 (SE 0.035), +/- 1 SE [SOURCE]"
+pop_elasticity_unconditional,0.072,CDT section 6 [SOURCE]
+proportional_residuals,"{""T5 col 0, sigma 0"": 0.02318, ""T5 col 0, sigma 16"": 0.00871, ""T5 col 2, sigma 0"": 0.03034, ""T5 col 2, sigma 16"": 0.01019, ""T5 col 4 FE, sigma 0"": 0.02295, ""T5 col 4 FE, sigma 16"": 0.00923, ""T5 col 6 IV2, sigma 0"": 0.04598, ""T5 col 6 IV2, sigma 16"": 0.01356, ""T5 col 8 IV4, sigma 0"": 0.05116, ""T5 col 8 IV4, sigma 16"": 0.01419, ""PMSA text, sigma 0"": 0.0625, ""PMSA text, sigma 16"": 0.0125, ""fn19 -0.06, sigma 0"": 0.06897, ""fn19 -0.06, sigma 16"": 0.02034, ""fn19 -0.07, sigma 0"": 0.08046, ""fn19 -0.07, sigma 16"": 0.02373, ""T10 col 6: 0.12 - 0.066 lanes"": 0.054}","CDT table 5 columns, PMSA text, footnote 19; table 10 col 6 [CALCULATION]"
+under5_share,0.05399721720253733,ACS 2024 B01001 [DATA]
+vot_all_purposes,"{""low"": 14.62, ""central"": 20.66, ""high"": 24.79}","USDOT 2016 rev. 2 method, 2024 inputs [CALCULATION]"
+vot_truck_driver,"{""low"": 29.79, ""central"": 37.24, ""high"": 44.69}","USDOT 2016 rev. 2 method, 2024 inputs [CALCULATION]"
