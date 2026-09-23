@@ -275,10 +275,10 @@ group quarters, as a ratio to native non-Hispanic white men: 2.56× (2010), 1.91
 (2023, the low point), 1.94× (2024); flat near 1.9× since 2019, and 2.1–2.3× after prison
 records coded generically "Hispanic" are reallocated. Their 2023 parity with all natives (1.92%
 against 2.05%) is the raw figure; reallocated it is 2.36%, and the 2024 rates are 2.04% raw and
-2.34% reallocated. The 2000 figure of 3.45× counts correctional institutions only, and the census
-filled in a US birthplace for most Mexican-origin inmates; spreading those allocated birthplaces in
-the reported mix gives about 2.7–3.0× (ladder 196). The later series counts every institution, so
-2000 to 2010 is not like-for-like; immigration detention
+2.34% reallocated. The 2000 figure of 3.45× counts every institution, as the later series do (the
+1990 and 2000 files do not record institution type), but the census filled in a US birthplace for
+most Mexican-origin inmates; spreading those allocated birthplaces in the reported mix gives about
+2.7–3.0× (ladder 196). Allocation and detention make 2000 to 2010 not like-for-like; immigration detention
 inflates the foreign-born rows only. [SOURCE: ladder 65; generation incarceration memo, table and "ACS 2024 added";
 `infra/immigration-fiscal/acs_institutional_2026_09_16/acs_institutional_rates.csv`]
 
