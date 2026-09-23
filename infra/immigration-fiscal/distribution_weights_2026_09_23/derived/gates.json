@@ -1,0 +1,810 @@
+{
+ "cbo_pins_match_tables": {
+  "passed": true
+ },
+ "itep_pins_match_appendix": {
+  "passed": true,
+  "text": "(11.4, 10.4, 10.5, 10.3, 9.5, 8.3, 7.2)",
+  "pinned": "(11.4, 10.4, 10.5, 10.3, 9.5, 8.3, 7.2)"
+ },
+ "ncvs_cells_match_bjs_text": {
+  "passed": true,
+  "rows": 10.0
+ },
+ "cps_canonical_target": {
+  "passed": true,
+  "target": 40896574.152351856,
+  "expected": 40896574.15235156
+ },
+ "cps_civilian_total": {
+  "passed": true,
+  "civilian": 336727803.00001377,
+  "expected": 336727803.0
+ },
+ "cps_other_residents": {
+  "passed": true,
+  "other": 295831228.8476619,
+  "expected": 295831228.84764844
+ },
+ "cps_household_size_matches_records": {
+  "passed": true,
+  "mismatches": 0.0
+ },
+ "fiscal_band_reproduced": {
+  "passed": true,
+  "low": 165.1200005489785,
+  "high": 197.3841007900947,
+  "cases": 16.0
+ },
+ "adopted_band_is_published_plus_changes": {
+  "passed": true,
+  "adopted": [
+   203.207,
+   249.64
+  ],
+  "rebuilt": [
+   203.20696816874263,
+   249.6399894195219
+  ]
+ },
+ "bea_2024_totals": {
+  "passed": true,
+  "federal_bn": 4976.3150000000005,
+  "state_local_bn": 2553.4500000000003
+ },
+ "account_production_term": {
+  "passed": true,
+  "nest": 8.790627696466178,
+  "account": 8.790627696465311
+ },
+ "wage_base_below_ba_native_cell0": {
+  "passed": true,
+  "cps": 3821.3816225683977,
+  "nest": 3821.381622568373
+ },
+ "wage_base_below_ba_native_cell1": {
+  "passed": true,
+  "cps": 5614.966133303451,
+  "nest": 5614.966133303432
+ },
+ "wage_base_below_ba_other_fb_cell0": {
+  "passed": true,
+  "cps": 643.299510124197,
+  "nest": 643.2995101241958
+ },
+ "wage_base_below_ba_other_fb_cell1": {
+  "passed": true,
+  "cps": 1436.341419202398,
+  "nest": 1436.3414192023995
+ },
+ "wage_base_hs_or_less_native_cell0": {
+  "passed": true,
+  "cps": 1828.6074369171904,
+  "nest": 1828.6074369171924
+ },
+ "wage_base_hs_or_less_native_cell1": {
+  "passed": true,
+  "cps": 7607.7403189546585,
+  "nest": 7607.740318954641
+ },
+ "wage_base_hs_or_less_other_fb_cell0": {
+  "passed": true,
+  "cps": 395.05914641052675,
+  "nest": 395.0591464105268
+ },
+ "wage_base_hs_or_less_other_fb_cell1": {
+  "passed": true,
+  "cps": 1684.5817829160683,
+  "nest": 1684.58178291607
+ },
+ "wage_after_tax_equals_P_below_ba_s2.0": {
+  "passed": true,
+  "cps": -1.4690972631862365,
+  "nest": -1.469097263185951
+ },
+ "wage_receipts_equal_F_below_ba_s2.0": {
+  "passed": true,
+  "cps": 9.555833784514915,
+  "nest": 9.555833784515096
+ },
+ "wage_after_tax_equals_P_hs_or_less_s2.0": {
+  "passed": true,
+  "cps": -0.1556695560460658,
+  "nest": -0.1556695560463723
+ },
+ "wage_receipts_equal_F_hs_or_less_s2.0": {
+  "passed": true,
+  "cps": 8.946297252512759,
+  "nest": 8.94629725251255
+ },
+ "wage_after_tax_equals_P_below_ba_s2.0_eps3": {
+  "passed": true,
+  "cps": 3.405720575948409,
+  "nest": 3.405720575948912
+ },
+ "wage_receipts_equal_F_below_ba_s2.0_eps3": {
+  "passed": true,
+  "cps": 12.760321363104218,
+  "nest": 12.760321363104564
+ },
+ "wage_after_tax_equals_P_hs_or_less_s1.5": {
+  "passed": true,
+  "cps": -0.22434367170516967,
+  "nest": -0.22434367170541053
+ },
+ "wage_receipts_equal_F_hs_or_less_s1.5": {
+  "passed": true,
+  "cps": 11.996523436275606,
+  "nest": 11.996523436275416
+ },
+ "wage_after_tax_equals_P_hs_or_less_s2.5": {
+  "passed": true,
+  "cps": -0.11849406972047853,
+  "nest": -0.118494069720293
+ },
+ "wage_receipts_equal_F_hs_or_less_s2.5": {
+  "passed": true,
+  "cps": 7.132512282202958,
+  "nest": 7.1325122822030975
+ },
+ "wage_after_tax_equals_P_below_ba_s1.5": {
+  "passed": true,
+  "cps": -1.965451832294363,
+  "nest": -1.965451832293855
+ },
+ "wage_receipts_equal_F_below_ba_s1.5": {
+  "passed": true,
+  "cps": 12.759247723604103,
+  "nest": 12.759247723604409
+ },
+ "wage_after_tax_equals_P_below_ba_s2.5": {
+  "passed": true,
+  "cps": -1.1728094130492157,
+  "nest": -1.1728094130493165
+ },
+ "wage_receipts_equal_F_below_ba_s2.5": {
+  "passed": true,
+  "cps": 7.637989751413687,
+  "nest": 7.637989751413589
+ },
+ "acs_rent_low_metro_local": {
+  "passed": true,
+  "acs": 22.14622599503205,
+  "lane": 22.146225995032054
+ },
+ "acs_owner_value_low_metro_local": {
+  "passed": true,
+  "acs": 1263.8331911911673,
+  "lane": 1263.8331911911675
+ },
+ "acs_rent_low_national_uniform": {
+  "passed": true,
+  "acs": 21.592985823170086,
+  "lane": 21.592985738717044
+ },
+ "acs_owner_value_low_national_uniform": {
+  "passed": true,
+  "acs": 1232.338394604785,
+  "lane": 1232.3383897849458
+ },
+ "acs_rent_central_metro_local": {
+  "passed": true,
+  "acs": 33.85640156627449,
+  "lane": 33.8564015662745
+ },
+ "acs_owner_value_central_metro_local": {
+  "passed": true,
+  "acs": 1931.5696299857123,
+  "lane": 1931.5696299857125
+ },
+ "acs_rent_central_national_uniform": {
+  "passed": true,
+  "acs": 33.4749823676848,
+  "lane": 33.47498223794534
+ },
+ "acs_owner_value_central_national_uniform": {
+  "passed": true,
+  "acs": 1910.4586261595507,
+  "lane": 1910.4586187551597
+ },
+ "acs_rent_high_metro_local": {
+  "passed": true,
+  "acs": 50.0673960911153,
+  "lane": 50.06739609111531
+ },
+ "acs_owner_value_high_metro_local": {
+  "passed": true,
+  "acs": 2855.306320180869,
+  "lane": 2855.3063201808704
+ },
+ "acs_rent_high_national_uniform": {
+  "passed": true,
+  "acs": 50.473428454858905,
+  "lane": 50.473428261833945
+ },
+ "acs_owner_value_high_national_uniform": {
+  "passed": true,
+  "acs": 2880.580958170083,
+  "lane": 2880.58094715391
+ },
+ "scf_families": {
+  "passed": true,
+  "families_m": 131.3063893834636
+ },
+ "crime_central": {
+  "passed": true,
+  "equal_footing": 28.9228851746268,
+  "custody_footing": 32.3381
+ },
+ "uncompensated_inside_matches_main_case": {
+  "passed": true,
+  "lane": [
+   3.6516,
+   5.7476
+  ],
+  "main_case": [
+   3.6515760054649666,
+   5.747597015128038
+  ]
+ },
+ "sum_spm_fiscal_a": {
+  "passed": true,
+  "split": -227.92425781758064,
+  "given": -227.92425781758058
+ },
+ "sum_spm_fiscal_b": {
+  "passed": true,
+  "split": -227.9242578175806,
+  "given": -227.92425781758058
+ },
+ "sum_spm_fiscal_a_cps_tax_fields": {
+  "passed": true,
+  "split": -227.9242578175806,
+  "given": -227.92425781758058
+ },
+ "sum_spm_wages": {
+  "passed": true,
+  "split": -1.4690972631862365,
+  "given": -1.469097263185951
+ },
+ "sum_spm_renters": {
+  "passed": true,
+  "split": -33.8564015662745,
+  "given": -33.8564015662745
+ },
+ "sum_spm_landlords": {
+  "passed": true,
+  "split": 37.36398472186452,
+  "given": 37.363984721864526
+ },
+ "sum_spm_housing_net": {
+  "passed": true,
+  "split": 3.507583155590026,
+  "given": 3.507583155590023
+ },
+ "sum_spm_crime": {
+  "passed": true,
+  "split": -32.33809999999999,
+  "given": -32.3381
+ },
+ "sum_spm_crime_equal_footing": {
+  "passed": true,
+  "split": -28.922885174626796,
+  "given": -28.9228851746268
+ },
+ "sum_spm_crime_race_mix": {
+  "passed": true,
+  "split": -32.338100000000004,
+  "given": -32.3381
+ },
+ "sum_spm_crime_all_violent_key": {
+  "passed": true,
+  "split": -32.3381,
+  "given": -32.3381
+ },
+ "sum_spm_crime_dollar_brackets": {
+  "passed": true,
+  "split": -32.3381,
+  "given": -32.3381
+ },
+ "sum_spm_unreimbursed_care": {
+  "passed": true,
+  "split": -4.4008,
+  "given": -4.4008
+ },
+ "sum_spm_consumer_prices_side_view": {
+  "passed": true,
+  "split": 23.76338307391988,
+  "given": 23.76338307391988
+ },
+ "sum_spm_owner_value_stock_metro_local_central": {
+  "passed": true,
+  "split": 1931.5696299857123,
+  "given": 1931.5696299857125
+ },
+ "sum_spm_TOTAL_a": {
+  "passed": true,
+  "split": -262.6246719251768,
+  "given": -262.6246719251765
+ },
+ "sum_spm_TOTAL_b": {
+  "passed": true,
+  "split": -262.6246719251768,
+  "given": -262.6246719251765
+ },
+ "eta0_spm_fiscal_a": {
+  "passed": true
+ },
+ "eta0_spm_fiscal_b": {
+  "passed": true
+ },
+ "eta0_spm_wages": {
+  "passed": true
+ },
+ "eta0_spm_renters": {
+  "passed": true
+ },
+ "eta0_spm_landlords": {
+  "passed": true
+ },
+ "eta0_spm_crime": {
+  "passed": true
+ },
+ "eta0_spm_unreimbursed_care": {
+  "passed": true
+ },
+ "eta0_spm_housing_net": {
+  "passed": true
+ },
+ "eta0_spm_TOTAL_a": {
+  "passed": true
+ },
+ "eta0_spm_TOTAL_b": {
+  "passed": true
+ },
+ "eta0_spm_fiscal_a_cps_tax_fields": {
+  "passed": true
+ },
+ "eta0_spm_wages_pretax": {
+  "passed": true
+ },
+ "eta0_spm_fiscal_A_only_a": {
+  "passed": true
+ },
+ "eta0_spm_TOTAL_a_pretax_wages": {
+  "passed": true
+ },
+ "eta0_spm_fiscal_published_a": {
+  "passed": true
+ },
+ "eta0_spm_uncomp_inside_published_a": {
+  "passed": true
+ },
+ "eta0_spm_fiscal_A_only_b": {
+  "passed": true
+ },
+ "eta0_spm_TOTAL_b_pretax_wages": {
+  "passed": true
+ },
+ "eta0_spm_fiscal_published_b": {
+  "passed": true
+ },
+ "eta0_spm_uncomp_inside_published_b": {
+  "passed": true
+ },
+ "eta0_spm_crime_equal_footing": {
+  "passed": true
+ },
+ "eta0_spm_TOTAL_a_published_band": {
+  "passed": true
+ },
+ "eta0_spm_TOTAL_b_published_band": {
+  "passed": true
+ },
+ "eta0_spm_crime_tangible": {
+  "passed": true
+ },
+ "eta0_spm_crime_intangible": {
+  "passed": true
+ },
+ "eta0_spm_crime_all_violent_key": {
+  "passed": true
+ },
+ "eta0_spm_crime_dollar_brackets": {
+  "passed": true
+ },
+ "eta0_spm_crime_race_mix": {
+  "passed": true
+ },
+ "eta0_spm_wages_account_split": {
+  "passed": true
+ },
+ "eta0_spm_wages_eps3": {
+  "passed": true
+ },
+ "eta0_spm_wages_short_run_pretax": {
+  "passed": true
+ },
+ "eta0_spm_renters_metro_local_low": {
+  "passed": true
+ },
+ "eta0_spm_landlords_intp_metro_local_low": {
+  "passed": true
+ },
+ "eta0_spm_landlords_scf_metro_local_low": {
+  "passed": true
+ },
+ "eta0_spm_landlords_mid_metro_local_low": {
+  "passed": true
+ },
+ "eta0_spm_owner_value_stock_metro_local_low": {
+  "passed": true
+ },
+ "eta0_spm_renters_national_uniform_low": {
+  "passed": true
+ },
+ "eta0_spm_landlords_intp_national_uniform_low": {
+  "passed": true
+ },
+ "eta0_spm_landlords_scf_national_uniform_low": {
+  "passed": true
+ },
+ "eta0_spm_landlords_mid_national_uniform_low": {
+  "passed": true
+ },
+ "eta0_spm_owner_value_stock_national_uniform_low": {
+  "passed": true
+ },
+ "eta0_spm_renters_metro_local_central": {
+  "passed": true
+ },
+ "eta0_spm_landlords_intp_metro_local_central": {
+  "passed": true
+ },
+ "eta0_spm_landlords_scf_metro_local_central": {
+  "passed": true
+ },
+ "eta0_spm_landlords_mid_metro_local_central": {
+  "passed": true
+ },
+ "eta0_spm_owner_value_stock_metro_local_central": {
+  "passed": true
+ },
+ "eta0_spm_renters_national_uniform_central": {
+  "passed": true
+ },
+ "eta0_spm_landlords_intp_national_uniform_central": {
+  "passed": true
+ },
+ "eta0_spm_landlords_scf_national_uniform_central": {
+  "passed": true
+ },
+ "eta0_spm_landlords_mid_national_uniform_central": {
+  "passed": true
+ },
+ "eta0_spm_owner_value_stock_national_uniform_central": {
+  "passed": true
+ },
+ "eta0_spm_renters_metro_local_high": {
+  "passed": true
+ },
+ "eta0_spm_landlords_intp_metro_local_high": {
+  "passed": true
+ },
+ "eta0_spm_landlords_scf_metro_local_high": {
+  "passed": true
+ },
+ "eta0_spm_landlords_mid_metro_local_high": {
+  "passed": true
+ },
+ "eta0_spm_owner_value_stock_metro_local_high": {
+  "passed": true
+ },
+ "eta0_spm_renters_national_uniform_high": {
+  "passed": true
+ },
+ "eta0_spm_landlords_intp_national_uniform_high": {
+  "passed": true
+ },
+ "eta0_spm_landlords_scf_national_uniform_high": {
+  "passed": true
+ },
+ "eta0_spm_landlords_mid_national_uniform_high": {
+  "passed": true
+ },
+ "eta0_spm_owner_value_stock_national_uniform_high": {
+  "passed": true
+ },
+ "eta0_spm_consumer_prices_side_view": {
+  "passed": true
+ },
+ "eta0_spm_crime_A4_intangible_unweighted": {
+  "passed": true
+ },
+ "eta0_spm_TOTAL_a_A4_crime": {
+  "passed": true
+ },
+ "eta0_spm_TOTAL_b_A4_crime": {
+  "passed": true
+ },
+ "sum_money_fiscal_a": {
+  "passed": true,
+  "split": -227.9242578175806,
+  "given": -227.92425781758058
+ },
+ "sum_money_fiscal_b": {
+  "passed": true,
+  "split": -227.9242578175806,
+  "given": -227.92425781758058
+ },
+ "sum_money_fiscal_a_cps_tax_fields": {
+  "passed": true,
+  "split": -227.9242578175806,
+  "given": -227.92425781758058
+ },
+ "sum_money_wages": {
+  "passed": true,
+  "split": -1.4690972631862365,
+  "given": -1.469097263185951
+ },
+ "sum_money_renters": {
+  "passed": true,
+  "split": -33.85640156627449,
+  "given": -33.8564015662745
+ },
+ "sum_money_landlords": {
+  "passed": true,
+  "split": 37.363984721864526,
+  "given": 37.363984721864526
+ },
+ "sum_money_housing_net": {
+  "passed": true,
+  "split": 3.507583155590029,
+  "given": 3.507583155590023
+ },
+ "sum_money_crime": {
+  "passed": true,
+  "split": -32.33809999999999,
+  "given": -32.3381
+ },
+ "sum_money_crime_equal_footing": {
+  "passed": true,
+  "split": -28.922885174626796,
+  "given": -28.9228851746268
+ },
+ "sum_money_crime_race_mix": {
+  "passed": true,
+  "split": -32.338100000000004,
+  "given": -32.3381
+ },
+ "sum_money_crime_all_violent_key": {
+  "passed": true,
+  "split": -32.3381,
+  "given": -32.3381
+ },
+ "sum_money_crime_dollar_brackets": {
+  "passed": true,
+  "split": -32.3381,
+  "given": -32.3381
+ },
+ "sum_money_unreimbursed_care": {
+  "passed": true,
+  "split": -4.4008,
+  "given": -4.4008
+ },
+ "sum_money_consumer_prices_side_view": {
+  "passed": true,
+  "split": 23.76338307391988,
+  "given": 23.76338307391988
+ },
+ "sum_money_owner_value_stock_metro_local_central": {
+  "passed": true,
+  "split": 1931.5696299857123,
+  "given": 1931.5696299857125
+ },
+ "sum_money_TOTAL_a": {
+  "passed": true,
+  "split": -262.6246719251768,
+  "given": -262.6246719251765
+ },
+ "sum_money_TOTAL_b": {
+  "passed": true,
+  "split": -262.6246719251768,
+  "given": -262.6246719251765
+ },
+ "eta0_money_fiscal_a": {
+  "passed": true
+ },
+ "eta0_money_fiscal_b": {
+  "passed": true
+ },
+ "eta0_money_wages": {
+  "passed": true
+ },
+ "eta0_money_renters": {
+  "passed": true
+ },
+ "eta0_money_landlords": {
+  "passed": true
+ },
+ "eta0_money_crime": {
+  "passed": true
+ },
+ "eta0_money_unreimbursed_care": {
+  "passed": true
+ },
+ "eta0_money_housing_net": {
+  "passed": true
+ },
+ "eta0_money_TOTAL_a": {
+  "passed": true
+ },
+ "eta0_money_TOTAL_b": {
+  "passed": true
+ },
+ "eta0_money_fiscal_a_cps_tax_fields": {
+  "passed": true
+ },
+ "eta0_money_wages_pretax": {
+  "passed": true
+ },
+ "eta0_money_fiscal_A_only_a": {
+  "passed": true
+ },
+ "eta0_money_TOTAL_a_pretax_wages": {
+  "passed": true
+ },
+ "eta0_money_fiscal_published_a": {
+  "passed": true
+ },
+ "eta0_money_uncomp_inside_published_a": {
+  "passed": true
+ },
+ "eta0_money_fiscal_A_only_b": {
+  "passed": true
+ },
+ "eta0_money_TOTAL_b_pretax_wages": {
+  "passed": true
+ },
+ "eta0_money_fiscal_published_b": {
+  "passed": true
+ },
+ "eta0_money_uncomp_inside_published_b": {
+  "passed": true
+ },
+ "eta0_money_crime_equal_footing": {
+  "passed": true
+ },
+ "eta0_money_TOTAL_a_published_band": {
+  "passed": true
+ },
+ "eta0_money_TOTAL_b_published_band": {
+  "passed": true
+ },
+ "eta0_money_crime_tangible": {
+  "passed": true
+ },
+ "eta0_money_crime_intangible": {
+  "passed": true
+ },
+ "eta0_money_crime_all_violent_key": {
+  "passed": true
+ },
+ "eta0_money_crime_dollar_brackets": {
+  "passed": true
+ },
+ "eta0_money_crime_race_mix": {
+  "passed": true
+ },
+ "eta0_money_wages_account_split": {
+  "passed": true
+ },
+ "eta0_money_wages_eps3": {
+  "passed": true
+ },
+ "eta0_money_wages_short_run_pretax": {
+  "passed": true
+ },
+ "eta0_money_renters_metro_local_low": {
+  "passed": true
+ },
+ "eta0_money_landlords_intp_metro_local_low": {
+  "passed": true
+ },
+ "eta0_money_landlords_scf_metro_local_low": {
+  "passed": true
+ },
+ "eta0_money_landlords_mid_metro_local_low": {
+  "passed": true
+ },
+ "eta0_money_owner_value_stock_metro_local_low": {
+  "passed": true
+ },
+ "eta0_money_renters_national_uniform_low": {
+  "passed": true
+ },
+ "eta0_money_landlords_intp_national_uniform_low": {
+  "passed": true
+ },
+ "eta0_money_landlords_scf_national_uniform_low": {
+  "passed": true
+ },
+ "eta0_money_landlords_mid_national_uniform_low": {
+  "passed": true
+ },
+ "eta0_money_owner_value_stock_national_uniform_low": {
+  "passed": true
+ },
+ "eta0_money_renters_metro_local_central": {
+  "passed": true
+ },
+ "eta0_money_landlords_intp_metro_local_central": {
+  "passed": true
+ },
+ "eta0_money_landlords_scf_metro_local_central": {
+  "passed": true
+ },
+ "eta0_money_landlords_mid_metro_local_central": {
+  "passed": true
+ },
+ "eta0_money_owner_value_stock_metro_local_central": {
+  "passed": true
+ },
+ "eta0_money_renters_national_uniform_central": {
+  "passed": true
+ },
+ "eta0_money_landlords_intp_national_uniform_central": {
+  "passed": true
+ },
+ "eta0_money_landlords_scf_national_uniform_central": {
+  "passed": true
+ },
+ "eta0_money_landlords_mid_national_uniform_central": {
+  "passed": true
+ },
+ "eta0_money_owner_value_stock_national_uniform_central": {
+  "passed": true
+ },
+ "eta0_money_renters_metro_local_high": {
+  "passed": true
+ },
+ "eta0_money_landlords_intp_metro_local_high": {
+  "passed": true
+ },
+ "eta0_money_landlords_scf_metro_local_high": {
+  "passed": true
+ },
+ "eta0_money_landlords_mid_metro_local_high": {
+  "passed": true
+ },
+ "eta0_money_owner_value_stock_metro_local_high": {
+  "passed": true
+ },
+ "eta0_money_renters_national_uniform_high": {
+  "passed": true
+ },
+ "eta0_money_landlords_intp_national_uniform_high": {
+  "passed": true
+ },
+ "eta0_money_landlords_scf_national_uniform_high": {
+  "passed": true
+ },
+ "eta0_money_landlords_mid_national_uniform_high": {
+  "passed": true
+ },
+ "eta0_money_owner_value_stock_national_uniform_high": {
+  "passed": true
+ },
+ "eta0_money_consumer_prices_side_view": {
+  "passed": true
+ },
+ "eta0_money_crime_A4_intangible_unweighted": {
+  "passed": true
+ },
+ "eta0_money_TOTAL_a_A4_crime": {
+  "passed": true
+ },
+ "eta0_money_TOTAL_b_A4_crime": {
+  "passed": true
+ }
+}

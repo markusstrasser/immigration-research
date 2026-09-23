@@ -1,0 +1,196 @@
+{
+ "fiscal": {
+  "published": {
+   "A_low_cost": -178.442598468,
+   "A_high_cost": -206.174728487,
+   "A_mid": -192.3086634775,
+   "band": [
+    165.1200005489785,
+    197.3841007900947
+   ]
+  },
+  "adopted": {
+   "A_low_cost": -216.52956608776412,
+   "A_high_cost": -258.43061711642724,
+   "band": [
+    203.207,
+    249.64
+   ],
+   "general_government": [
+    28.491799999999984,
+    40.564700000000016
+   ],
+   "justice": 5.943591614299166,
+   "A_mid": -237.48009160209568
+  },
+  "uncomp_inside": [
+   3.6515760054649666,
+   5.747597015128038
+  ],
+  "PF_cash": 8.790627696465311,
+  "PF_gdp": 13.32259791925651
+ },
+ "federal_taxes_2024_bn": 4976.3150000000005,
+ "state_local_taxes_2024_bn": 2553.4500000000003,
+ "production": {
+  "central_P": -1.469097263185951,
+  "central_F": 9.555833784515096,
+  "account_P_plus_F": 8.790627696466178
+ },
+ "crime": {
+  "equal_footing": 28.9228851746268,
+  "custody_footing": 32.3381,
+  "tangible_equal": 4.50135218559,
+  "envelope": [
+   15.4099,
+   45.3424
+  ],
+  "serious_share": 0.8262614952793748,
+  "victim_race_shares": {
+   "Black|serious": 0.16734793668751233,
+   "Black|simple": 0.02198096787687806,
+   "Hispanic|serious": 0.16745507556372713,
+   "Hispanic|simple": 0.02164589327550662,
+   "Other|serious": 0.10064037912627709,
+   "Other|simple": 0.026516303546342216,
+   "White|serious": 0.39081810390186406,
+   "White|simple": 0.10359534002189263
+  }
+ },
+ "ncvs": {
+  "pooled_violent": [
+   39.997,
+   24.384,
+   21.133,
+   17.192,
+   20.366
+  ],
+  "pooled_serious": [
+   20.373,
+   9.856,
+   7.702,
+   5.783,
+   6.65
+  ],
+  "pooled_simple": [
+   19.624,
+   14.528,
+   13.432,
+   11.409,
+   13.716
+  ],
+  "pooled_persons": [
+   107637080.0,
+   174681170.0,
+   266235570.0,
+   216786120.0,
+   88194940.0
+  ],
+  "bracket_cum_share": [
+   0.1261,
+   0.3308,
+   0.6427,
+   0.8967
+  ],
+  "cps_bracket_share_12plus": {
+   "rank": [
+    0.1261,
+    0.2047,
+    0.3119,
+    0.254,
+    0.1033
+   ],
+   "dollar": [
+    0.0911,
+    0.1352,
+    0.2606,
+    0.3075,
+    0.2056
+   ]
+  },
+  "verified_against_text": true
+ },
+ "unreimbursed_care": {
+  "outside_low": 3.2435,
+  "outside_high": 5.5581,
+  "outside_mid": 4.4008,
+  "inside_low": 3.6516,
+  "inside_high": 5.7476
+ },
+ "consumer_prices_side_view_q": [
+  2.0298,
+  2.5967,
+  3.6815,
+  5.1662,
+  10.2892
+ ],
+ "acs": {
+  "other_persons_m": 292.943115,
+  "other_renter_households_m": 38.992079,
+  "group_share_of_positive_intp": 0.021808180233578743
+ },
+ "scf": {
+  "families_m": 131.3063893834636,
+  "oresre_tn": 8.837540004942536,
+  "top10pct_share": 0.6245422147052211,
+  "top1pct_share": 0.24472201734834667
+ },
+ "tax_spm": {
+  "other_share_of_taxes": 0.9345076128414668,
+  "state_local_group_shares": [
+   0.0567,
+   0.0935,
+   0.1433,
+   0.2102,
+   0.1427,
+   0.1005,
+   0.1176,
+   0.1355
+  ]
+ },
+ "tax_money": {
+  "other_share_of_taxes": 0.9353675459777068,
+  "state_local_group_shares": [
+   0.0447,
+   0.0925,
+   0.1468,
+   0.2149,
+   0.1449,
+   0.1016,
+   0.1187,
+   0.1358
+  ]
+ },
+ "housing": {
+  "low|metro_local": {
+   "renters": 22.146225995032054,
+   "net": 2.30098497550333,
+   "owners_stock": 1263.8331911911675
+  },
+  "low|national_uniform": {
+   "renters": 21.592985738717044,
+   "net": 0.4531429154183446,
+   "owners_stock": 1232.3383897849458
+  },
+  "central|metro_local": {
+   "renters": 33.8564015662745,
+   "net": 3.507583155590023,
+   "owners_stock": 1931.5696299857125
+  },
+  "central|national_uniform": {
+   "renters": 33.47498223794534,
+   "net": 0.7082298460183115,
+   "owners_stock": 1910.4586187551597
+  },
+  "high|metro_local": {
+   "renters": 50.06739609111531,
+   "net": 5.1682296556170035,
+   "owners_stock": 2855.3063201808704
+  },
+  "high|national_uniform": {
+   "renters": 50.473428261833945,
+   "net": 1.080515456274025,
+   "owners_stock": 2880.58094715391
+  }
+ }
+}
