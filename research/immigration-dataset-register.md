@@ -419,9 +419,10 @@ These categories are high-risk for bad inference:
    Wisconsin, New York and California ×3–5). The published 2022 Table 1 shows $70.7bn. Windows
    ending in 2022 or later need an ex-administration check; see
    `infra/immigration-fiscal/gg_response_county_iv_2026_09_23/e23_other_lanes.py`. BEA NIPA
-   Table 3.17, which the main case uses, shows no break of that size. State and local general
-   public service grew 13.5% in 2021 and 14.7% in 2022, then 2.9%; a common cause for part of
-   the 2022 rise is not ruled out (at most about $3–4bn on the main case).
+   Table 3.17, which the main case uses, shows no break of that size. BEA's state and local tax
+   collection and financial management (Table 3.16, line 83) grew 26% in 2021 and 30% in 2022,
+   then 5%; that is a two-year surge rather than a step, and at most $1.2–1.7bn on the main case
+   if all of it were an artifact.
 
 ## First stops by question
 

@@ -75,6 +75,8 @@ its 0.59–0.84 response comes from the published 2022 Table 1, whose cross-stat
 lane found stable on either vintage. BEA's state and local general public service shows no break
 of the Census size. It grew 13.5% in 2021, 14.7% in 2022 ($255.3bn to $292.8bn), then 2.9% and
 1.1%. [DATA: `sources/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx`, T31700-A
-line 22] Whether part of BEA's 2022 rise shares the cause is not established. The ceiling on the
-main case is about $3–4bn: the union's 12% of the whole $37.5bn rise at a 0.59–0.84 response. The
-equal rise in 2021 argues that most of it is ordinary growth. [INFERENCE]
+line 22] BEA's own tax-collection-and-financial-management line (Table 3.16, line 83) rose 26% in
+2021, before the Census break, and 30% in 2022 ($55.8bn to $72.5bn), then 5% and 2%. That is a
+two-year surge, not a step, and its 2022 rise of $16.7bn is well under the Census's $43.7bn. If
+all of it were the same artifact, the main case would move by at most $1.2–1.7bn: the union's 12%
+at a 0.59–0.84 response. [DATA: T31600-A line 83; INFERENCE on attribution]
