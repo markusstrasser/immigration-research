@@ -27,8 +27,7 @@ DER = LANE / "derived"
 CACHE.mkdir(parents=True, exist_ok=True)
 DER.mkdir(exist_ok=True)
 
-UA = {"User-Agent": "immigration-research-lane/1.0 (cultural-output arm B; "
-                    "research@synthoria.bio)"}
+UA = {"User-Agent": "immigration-research-lane/1.0 (cultural-output arm B)"}
 SPARQL = "https://query.wikidata.org/sparql"
 SEARCH = "https://www.wikidata.org/w/api.php"
 
