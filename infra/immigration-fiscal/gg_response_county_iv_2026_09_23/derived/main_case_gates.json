@@ -1,0 +1,34 @@
+{
+ "gates": [
+  {
+   "gate": "main_case.js reports all gates passed",
+   "pass": true,
+   "detail": "exit 0"
+  },
+  {
+   "gate": "main_case.js outputs on disk are current",
+   "pass": true,
+   "detail": "main_case_bands.csv identical, inputs.json identical"
+  },
+  {
+   "gate": "evaluator reproduces adopted main band",
+   "pass": true,
+   "detail": "203.207 to 249.640 bn"
+  },
+  {
+   "gate": "band is linear in the response, slope = general-government target",
+   "pass": true,
+   "detail": "48.2913 bn per unit response vs line 48.2913"
+  },
+  {
+   "gate": "composite positive control (cross-state 0.842)",
+   "pass": true,
+   "detail": "low 0.5942, high 0.8424"
+  }
+ ],
+ "adopted_band_bn": [
+  203.2070171247648,
+  249.6399557277583
+ ],
+ "general_government_target_bn": 48.291269414
+}

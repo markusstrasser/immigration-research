@@ -1,0 +1,93 @@
+{
+ "administration_lane": {
+  "beta": 0.4707543161665554,
+  "high95": 1.6590994724067651,
+  "low95": -0.7175908400736545,
+  "se": 0.6062985491021479
+ },
+ "gates": [
+  {
+   "detail": "low 0.5942, high 0.8424 (stored 0.59/0.84)",
+   "gate": "scaling_check composite 0.59/0.84",
+   "pass": true
+  },
+  {
+   "detail": "max |diff| after rounding 0.0",
+   "gate": "scaling_check elasticities",
+   "pass": true
+  },
+  {
+   "detail": "beta 0.4708 (CR1 SE 0.606, 95% -0.72 to 1.66), n=350",
+   "gate": "administration lane state panel 0.47",
+   "pass": true
+  },
+  {
+   "detail": "3138 counties, max |diff| 0.00 $k, national 50.845 vs 50.845 $bn",
+   "gate": "admin direct expenditure 2012, every county",
+   "pass": true
+  },
+  {
+   "detail": "3138 counties, max |diff| 0.00 $k, national 21.551 vs 21.551 $bn",
+   "gate": "judicial direct expenditure 2012, every county",
+   "pass": true
+  },
+  {
+   "detail": "3139 counties, max |diff| 0.00 $k, national 91.992 vs 91.992 $bn",
+   "gate": "admin direct expenditure 2022, every county",
+   "pass": true
+  },
+  {
+   "detail": "3139 counties, max |diff| 0.00 $k, national 29.019 vs 29.019 $bn",
+   "gate": "judicial direct expenditure 2022, every county",
+   "pass": true
+  },
+  {
+   "detail": "3137 counties, national rel diff 0.00000, log corr 1.00000, 100.0% within 1%",
+   "gate": "GFD vs individual units, E23+E29+E31 2012",
+   "pass": true
+  },
+  {
+   "detail": "3139 counties, national rel diff 0.00000, log corr 1.00000, 100.0% within 1%",
+   "gate": "GFD vs individual units, E23+E29+E31 2022",
+   "pass": true
+  }
+ ],
+ "gfd_vs_indunit": {
+  "2012": {
+   "counties": 3137,
+   "log_corr": 1.0,
+   "national_rel_diff": 0.0,
+   "share_within_1pct": 1.0
+  },
+  "2017": {
+   "counties": 3139,
+   "log_corr": 0.9989563564734134,
+   "national_rel_diff": 0.001131264331008011,
+   "share_within_1pct": 0.9732398853137942
+  },
+  "2022": {
+   "counties": 3139,
+   "log_corr": 1.0,
+   "national_rel_diff": 0.0,
+   "share_within_1pct": 1.0
+  }
+ },
+ "scaling_check": {
+  "admin_elasticity": 0.8424261988363778,
+  "admin_se": 0.038503104829232214,
+  "composite_high_unrounded": 0.8424261988363778,
+  "composite_low_unrounded": 0.5941838162325416,
+  "composition_bn": {
+   "federal_executive_legislative": 137.887,
+   "federal_other": 0.0,
+   "federal_tax_financial": 36.588,
+   "state_local_executive_legislative": 54.93299999999999,
+   "state_local_other": 168.676,
+   "state_local_tax_financial": 77.72899999999998
+  },
+  "federal_tax_financial_bn": 36.588,
+  "financial_admin_elasticity": 0.7889296558461218,
+  "state_local_bn": 301.33799999999997,
+  "total_bn": 475.813
+ }
+}

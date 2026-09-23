@@ -1,0 +1,79 @@
+level,year,outcome,state_fe,weighted,beta,se,n
+county,2002,admin,False,True,1.00636,0.0157328,3098
+county,2002,admin,False,False,0.889131,0.0212039,3098
+county,2002,admin,True,True,0.989167,0.0136789,3098
+county,2002,admin,True,False,0.862887,0.0201118,3098
+state sum of county areas (local only),2002,admin,False,False,0.999847,0.0340005,48
+county,2002,admin_judicial,False,True,1.07835,0.0236369,3098
+county,2002,admin_judicial,False,False,0.925787,0.0256968,3098
+county,2002,admin_judicial,True,True,1.03812,0.0134706,3098
+county,2002,admin_judicial,True,False,0.893475,0.0202202,3098
+state sum of county areas (local only),2002,admin_judicial,False,False,1.08912,0.0402744,48
+county,2002,admin_judicial_direct,False,True,1.09158,0.017698,3098
+county,2002,admin_judicial_direct,False,False,0.937638,0.0254481,3098
+county,2002,admin_judicial_direct,True,True,1.05371,0.011872,3098
+county,2002,admin_judicial_direct,True,False,0.906616,0.020793,3098
+state sum of county areas (local only),2002,admin_judicial_direct,False,False,1.1105,0.045949,48
+county,2007,admin,False,True,1.02585,0.0271952,3098
+county,2007,admin,False,False,0.894476,0.02102,3098
+county,2007,admin,True,True,0.983707,0.0154084,3098
+county,2007,admin,True,False,0.858352,0.0166431,3098
+state sum of county areas (local only),2007,admin,False,False,0.988023,0.0428305,48
+county,2007,admin_judicial,False,True,1.08004,0.0286921,3098
+county,2007,admin_judicial,False,False,0.924132,0.0238845,3098
+county,2007,admin_judicial,True,True,1.02491,0.0148013,3098
+county,2007,admin_judicial,True,False,0.886229,0.0168942,3098
+state sum of county areas (local only),2007,admin_judicial,False,False,1.0632,0.0446441,48
+county,2007,admin_judicial_direct,False,True,1.09602,0.0197673,3098
+county,2007,admin_judicial_direct,False,False,0.935232,0.0240243,3098
+county,2007,admin_judicial_direct,True,True,1.04321,0.0133397,3098
+county,2007,admin_judicial_direct,True,False,0.898686,0.0178824,3098
+state sum of county areas (local only),2007,admin_judicial_direct,False,False,1.06496,0.0468679,48
+county,2012,admin,False,True,0.997149,0.0235275,3098
+county,2012,admin,False,False,0.861452,0.0185764,3098
+county,2012,admin,True,True,0.97197,0.0127007,3098
+county,2012,admin,True,False,0.832183,0.0148463,3098
+state sum of county areas (local only),2012,admin,False,False,0.956089,0.0410968,48
+county,2012,admin_judicial,False,True,1.04523,0.0206719,3098
+county,2012,admin_judicial,False,False,0.895914,0.0213097,3098
+county,2012,admin_judicial,True,True,1.00726,0.0138408,3098
+county,2012,admin_judicial,True,False,0.862571,0.0148019,3098
+state sum of county areas (local only),2012,admin_judicial,False,False,1.038,0.0423282,48
+county,2012,admin_judicial_direct,False,True,1.05586,0.0167292,3098
+county,2012,admin_judicial_direct,False,False,0.90126,0.0210448,3098
+county,2012,admin_judicial_direct,True,True,1.01943,0.0128499,3098
+county,2012,admin_judicial_direct,True,False,0.871208,0.0152526,3098
+state sum of county areas (local only),2012,admin_judicial_direct,False,False,1.03081,0.0454275,48
+county,2017,admin,False,True,1.01151,0.0258827,3095
+county,2017,admin,False,False,0.853034,0.0215061,3095
+county,2017,admin,True,True,0.978631,0.0123086,3095
+county,2017,admin,True,False,0.841416,0.0145682,3095
+state sum of county areas (local only),2017,admin,False,False,0.955915,0.0446097,48
+county,2017,admin_judicial,False,True,1.05041,0.023104,3095
+county,2017,admin_judicial,False,False,0.883973,0.0214856,3095
+county,2017,admin_judicial,True,True,1.00689,0.0136581,3095
+county,2017,admin_judicial,True,False,0.86794,0.0131778,3095
+state sum of county areas (local only),2017,admin_judicial,False,False,1.03266,0.0450255,48
+county,2017,admin_judicial_direct,False,True,1.05896,0.0198101,3095
+county,2017,admin_judicial_direct,False,False,0.892366,0.0216847,3095
+county,2017,admin_judicial_direct,True,True,1.01901,0.0140301,3095
+county,2017,admin_judicial_direct,True,False,0.879992,0.0137729,3095
+state sum of county areas (local only),2017,admin_judicial_direct,False,False,1.03175,0.0467389,48
+county,2022,admin,False,True,1.13358,0.0466601,3093
+county,2022,admin,False,False,0.889573,0.0224941,3093
+county,2022,admin,True,True,1.09256,0.0472511,3093
+county,2022,admin,True,False,0.875582,0.0166299,3093
+state sum of county areas (local only),2022,admin,False,False,1.04967,0.0651726,48
+county,2022,admin_judicial,False,True,1.15188,0.0404467,3093
+county,2022,admin_judicial,False,False,0.915939,0.0228574,3093
+county,2022,admin_judicial,True,True,1.1008,0.0410067,3093
+county,2022,admin_judicial,True,False,0.898061,0.0154195,3093
+state sum of county areas (local only),2022,admin_judicial,False,False,1.10543,0.0599247,48
+county,2022,admin_judicial_direct,False,True,1.14924,0.0377342,3094
+county,2022,admin_judicial_direct,False,False,0.925774,0.022315,3094
+county,2022,admin_judicial_direct,True,True,1.10695,0.0390977,3094
+county,2022,admin_judicial_direct,True,False,0.912944,0.0158477,3094
+state sum of county areas (local only),2022,admin_judicial_direct,False,False,1.10049,0.0573388,48
+"state, state+local combined (Census state-by-level files)",2012,direct 23+25+29+31,False,False,0.873484,0.0379472,50
+"state, state+local combined (Census state-by-level files)",2017,direct 23+25+29+31,False,False,0.84258,0.0359934,50
+"state, state+local combined (Census state-by-level files)",2022,direct 23+25+29+31,False,False,0.891002,0.0441615,50

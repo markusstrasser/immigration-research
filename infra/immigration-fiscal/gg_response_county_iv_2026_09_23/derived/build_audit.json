@@ -1,0 +1,301 @@
+{
+ "bartik": {
+  "0712": {
+   "groups": 87,
+   "national_growth": -0.0388,
+   "nonfinite_growth_cells_with_share": 0,
+   "pooled_groups": [
+    "51_pooled"
+   ]
+  },
+  "0717": {
+   "groups": 87,
+   "national_growth": 0.0466,
+   "nonfinite_growth_cells_with_share": 0,
+   "pooled_groups": [
+    "51_pooled"
+   ]
+  },
+  "1217": {
+   "groups": 86,
+   "national_growth": 0.0888,
+   "nonfinite_growth_cells_with_share": 0,
+   "pooled_groups": []
+  },
+  "1217_s07": {
+   "groups": 87,
+   "national_growth": 0.0888,
+   "nonfinite_growth_cells_with_share": 526,
+   "pooled_groups": [
+    "51_pooled"
+   ]
+  },
+  "1222": {
+   "groups": 70,
+   "national_growth": 0.1484,
+   "nonfinite_growth_cells_with_share": 0,
+   "pooled_groups": [
+    "44_pooled",
+    "51_pooled"
+   ]
+  },
+  "1722": {
+   "groups": 70,
+   "national_growth": 0.0547,
+   "nonfinite_growth_cells_with_share": 0,
+   "pooled_groups": [
+    "44_pooled",
+    "51_pooled"
+   ]
+  },
+  "1722_s12": {
+   "groups": 70,
+   "national_growth": 0.0547,
+   "nonfinite_growth_cells_with_share": 0,
+   "pooled_groups": [
+    "44_pooled",
+    "51_pooled"
+   ]
+  }
+ },
+ "cbp": {
+  "2007": {
+   "flagged_share": 0.5314,
+   "national_private_employment_millions": 120.605,
+   "three_digit_cells": 187463
+  },
+  "2012": {
+   "flagged_share": 0.554,
+   "national_private_employment_millions": 115.928,
+   "three_digit_cells": 184466
+  },
+  "2017": {
+   "flagged_share": 0.0897,
+   "national_private_employment_millions": 126.226,
+   "three_digit_cells": 128328
+  },
+  "2022": {
+   "flagged_share": 0.0,
+   "national_private_employment_millions": 133.128,
+   "three_digit_cells": 128499
+  }
+ },
+ "immigrant_national_change_millions": {
+  "0712": {
+   "all": 3.714,
+   "mexico": 0.336
+  },
+  "0717": {
+   "all": 6.669,
+   "mexico": -0.05
+  },
+  "1217": {
+   "all": 2.955,
+   "mexico": -0.386
+  },
+  "1222": {
+   "all": 6.292,
+   "mexico": -0.708
+  },
+  "1722": {
+   "all": 3.337,
+   "mexico": -0.322
+  }
+ },
+ "no_county_govt_units": 84,
+ "origin_coverage": {
+  "2000": {
+   "foreign_born_millions": 31.108,
+   "share_in_origin_groups": 0.99999
+  },
+  "2009": {
+   "foreign_born_millions": 37.343,
+   "share_in_origin_groups": 1.0
+  },
+  "2014": {
+   "foreign_born_millions": 41.056,
+   "share_in_origin_groups": 1.0
+  },
+  "2019": {
+   "foreign_born_millions": 44.011,
+   "share_in_origin_groups": 1.0
+  },
+  "2024": {
+   "foreign_born_millions": 47.349,
+   "share_in_origin_groups": 1.0
+  }
+ },
+ "origins": {
+  "dropped_to_residual": [
+   "melanesia",
+   "micronesia",
+   "polynesia",
+   "yugoslavia"
+  ],
+  "named": [
+   "united kingdom",
+   "ireland",
+   "sweden",
+   "austria",
+   "france",
+   "germany",
+   "netherlands",
+   "greece",
+   "italy",
+   "portugal",
+   "spain",
+   "czechoslovakia",
+   "hungary",
+   "poland",
+   "romania",
+   "belarus",
+   "russia",
+   "ukraine",
+   "bosnia and herzegovina",
+   "china excluding hong kong and taiwan",
+   "hong kong",
+   "taiwan",
+   "japan",
+   "korea",
+   "afghanistan",
+   "bangladesh",
+   "india",
+   "iran",
+   "pakistan",
+   "cambodia",
+   "indonesia",
+   "laos",
+   "malaysia",
+   "philippines",
+   "thailand",
+   "vietnam",
+   "iraq",
+   "israel",
+   "jordan",
+   "lebanon",
+   "syria",
+   "turkey",
+   "armenia",
+   "ethiopia",
+   "middle africa",
+   "egypt",
+   "south africa",
+   "ghana",
+   "nigeria",
+   "sierra leone",
+   "australia",
+   "barbados",
+   "cuba",
+   "dominican republic",
+   "haiti",
+   "jamaica",
+   "trinidad and tobago",
+   "mexico",
+   "costa rica",
+   "el salvador",
+   "guatemala",
+   "honduras",
+   "nicaragua",
+   "panama",
+   "argentina",
+   "bolivia",
+   "brazil",
+   "chile",
+   "colombia",
+   "ecuador",
+   "guyana",
+   "peru",
+   "venezuela",
+   "canada"
+  ],
+  "regions": [
+   "Europe",
+   "Asia",
+   "Africa",
+   "Oceania",
+   "Caribbean",
+   "Central America",
+   "South America",
+   "Northern America"
+  ]
+ },
+ "population_national_millions": {
+  "2002": 287.625,
+  "2007": 301.231,
+  "2012": 314.339,
+  "2017": 326.609,
+  "2022": 333.271
+ },
+ "population_units_missing_a_year": [],
+ "spending_nominal_bn_in_sample_geography": {
+  "1997": {
+   "d23": 10.505218,
+   "d25": 12.887331,
+   "d29": 9.438727,
+   "d31": 5.707958,
+   "e23": 10.018982,
+   "e25": 12.143109,
+   "e29": 8.779028,
+   "e31": 3.618149
+  },
+  "2002": {
+   "d23": 13.337562,
+   "d25": 16.688492,
+   "d29": 13.798542,
+   "d31": 8.048282,
+   "e23": 12.794273,
+   "e25": 15.992404,
+   "e29": 12.540318,
+   "e31": 4.966108
+  },
+  "2007": {
+   "d23": 17.021544,
+   "d25": 19.663163,
+   "d29": 21.766631,
+   "d31": 10.271446,
+   "e23": 16.275105,
+   "e25": 19.210963,
+   "e29": 19.715239,
+   "e31": 6.610107
+  },
+  "2012": {
+   "d23": 16.508988,
+   "d25": 21.366487,
+   "d29": 22.979047,
+   "d31": 10.20306,
+   "e23": 16.184261,
+   "e25": 20.676285,
+   "e29": 21.505024,
+   "e31": 7.113709
+  },
+  "2017": {
+   "d23": 18.796261,
+   "d25": 23.808029,
+   "d29": 27.795743,
+   "d31": 10.856336,
+   "e23": 18.368216,
+   "e25": 23.114177,
+   "e29": 25.574764,
+   "e31": 7.762285
+  },
+  "2022": {
+   "d23": 39.285869,
+   "d25": 28.667792,
+   "d29": 36.941833,
+   "d31": 13.381173,
+   "e23": 38.657853,
+   "e25": 28.072646,
+   "e29": 35.008329,
+   "e31": 8.975115
+  }
+ },
+ "spending_units_by_year": {
+  "1997": 3101,
+  "2002": 3101,
+  "2007": 3098,
+  "2012": 3098,
+  "2017": 3098,
+  "2022": 3098
+ },
+ "units": 3098
+}
