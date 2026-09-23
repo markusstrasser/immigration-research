@@ -413,6 +413,15 @@ These categories are high-risk for bad inference:
 3. `ITEP` as a full fiscal estimate; it is a tax estimate.
 4. `CBO surge reports` as if they were the same object as the settled undocumented stock.
 5. Any file previously flagged as an `HTML trap` in `sources/immigration-fiscal/data/MANIFEST.md`.
+6. `Census government finance, financial administration (E23), FY2022 on`. National current
+   operations run $53.6bn in 2021, $97.3bn in 2022 and $96.3bn in 2023: the July 2026 re-release
+   of the 2022 unit file and the 2023 state-by-level file carry a new level (NYC alone +$9.4bn;
+   Wisconsin, New York and California ×3–5). The published 2022 Table 1 shows $70.7bn. Windows
+   ending in 2022 or later need an ex-administration check; see
+   `infra/immigration-fiscal/gg_response_county_iv_2026_09_23/e23_other_lanes.py`. BEA NIPA
+   Table 3.17, which the main case uses, shows no break of that size. State and local general
+   public service grew 13.5% in 2021 and 14.7% in 2022, then 2.9%; a common cause for part of
+   the 2022 rise is not ruled out (at most about $3–4bn on the main case).
 
 ## First stops by question
 
