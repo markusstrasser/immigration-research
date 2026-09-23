@@ -1,0 +1,8 @@
+channel,ruling,central_bn,low_bn,high_bn,ci_note,in_sum,per_group_member_usd,per_other_resident_usd
+taxes on native women's extra hours (household-service channel),adds to fiscal account,2.6888146387420515,1.8017834403118993,5.755728098987473,95% of central 1.52 to 3.86; tau .366: 2.31,True,65.74669650181582,8.986247028667716
+"output gain to other factors from those hours, and its taxes (CES)",adds (second order),-0.0282403376851587,-0.40515447979236513,-0.0282403376851587,"income 0.0002, receipts -0.028; capital fixed receipts -0.41",True,-0.6905306465318758,-0.094381608518227
+elder care: Medicaid nursing-facility saving net of Medicaid home care,adds to fiscal account,1.4871944918978677,1.1998308943517195,7.621776969980243,90% of central -1.82 to 8.34; P(net<0) 0.11-0.18,True,36.364769623437596,4.97033037953134
+native women's private gain from the extra hours,~0 (envelope),0.0,0.0,0.0,beyond the service consumer surplus,False,0.0,0.0
+non-service part of the Cortés–Tessada hours effect (taxes),"not added (wage response: account's 0.33 grid, or confounded)",8.91967945920902,,,all-channel taxes 11.61,False,218.10334184005288,29.810326781947808
+"consumer surplus on immigrant-intensive services, net of native low-skill wage gain",inside P (side view),11.94389064209251,3.938453365617707,12.822348371471024,gross 21.84 (broad 27.64); metro 23.39,False,292.0511298108372,39.917497564447245
+TOTAL of additive channels,adds,4.147768792954761,2.5964598548712536,13.349264731282558,,False,101.42093547872153,13.862195799680828

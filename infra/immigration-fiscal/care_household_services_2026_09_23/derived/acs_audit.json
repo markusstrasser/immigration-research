@@ -1,0 +1,22 @@
+{
+  "source_zip": "sources/immigration-fiscal/data/external/acs_pums_2024_1yr/csv_pus.zip",
+  "zip_sha256": "afdc6d90c6e2f0bab365ed32d95ba4c4d8ac651162f46ac7861295b2dc469894",
+  "records": 3422888,
+  "weighted_population": 340110990.0,
+  "gate_population_equals_acs_total": true,
+  "union_acs_persons": 39429519.0,
+  "female_p75_hourly_wage_by_division_native_20_64": {
+    "1": 44.26962209302326,
+    "2": 43.440985576923076,
+    "3": 35.251736111111114,
+    "4": 34.752788461538465,
+    "5": 37.94368686868687,
+    "6": 31.23846153846154,
+    "7": 33.84166666666667,
+    "8": 37.48615384615385,
+    "9": 45.556089743589745
+  },
+  "female_p75_hourly_wage_national_all_20_64": 38.67619047619048,
+  "puma_cells": 2462,
+  "gate_puma_pop_sum": 340110990.0
+}
