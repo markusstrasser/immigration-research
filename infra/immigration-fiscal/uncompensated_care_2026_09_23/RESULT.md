@@ -2,13 +2,25 @@
 
 **Verdict:** The union holds **25.7% of the nation's uninsured person-years** (SE 0.6 points)
 against 12.0% of residents, so it accounts for about **$11.0bn** of hospitals' uncompensated
-care at the 2020 national total, or **$13.2bn** at 2024 input prices. Governments offset most
-of that cost. Those payments are already in the complete account but are keyed at 12–20%, not
-26%. The rest falls on hospitals, physicians and private payers, outside any fiscal account.
-Together these add **$4.3–9.2bn** a year to the union's cost to other residents, of which
-**$2.2–4.6bn** sits outside government accounts. If the union's uninsured use hospital care at
-0.7 times the average uninsured person-year, the addition is $1.6–6.0bn.
-[CALCULATION: `uncompensated.py` → `derived/summary.json`, `derived/added_cost_arms.csv`]
+care at the 2020 national total, or **$13.2bn** at 2024 input prices. Governments offset 58–70%
+of providers' uncompensated care for the uninsured (VA and IHS care excluded). Those payments are
+already inside the complete account, on lines it keys by measured use: Medicaid at 12.3%,
+Medicare at 5.8% and government health consumption at 7.7% of dollars. None of those keys follows
+uninsured use. The rest falls on hospitals, physicians and private payers, outside any fiscal
+account. Together these add **$7.3–10.6bn** a year to the union's cost to other residents:
+**$3.7–5.7bn** is under-charged inside the account and **$3.2–5.6bn** sits outside government
+budgets. If the union's uninsured use hospital care at 0.7 times the average uninsured
+person-year, the addition is $4.7–7.4bn. [CALCULATION: `uncompensated.py` →
+`derived/summary.json`, `derived/added_cost_arms.csv`]
+
+**Correction (2026-09-23, same day).** The first version (06a42b7) keyed the offsets at 12.0%
+(per head) to 19.6% (the union's share of Medicaid-covered persons). Those are not the account's
+keys. The account charges the union 12.3% of Medicaid dollars, 5.8% of Medicare and 7.7% of
+government health consumption, read from the executed allocations
+(`assumption_explorer_2026_09_21/derived/model.json`). It used one offset share (0.65–0.80)
+instead of program-level offsets. Mapping each program's offsets to the line and key that carry
+them raises the addition from $4.3–9.2bn to $7.3–10.6bn at equal use. It raises the inside part
+from $2.1–4.6bn to $3.7–5.7bn. The first version's tables below are kept and marked superseded.
 
 Date: 2026-09-23. Operator request: the remaining common-sense costs, fiscal and social.
 
@@ -23,15 +35,41 @@ Date: 2026-09-23. Operator request: the remaining common-sense costs, fiscal and
 | Union share of Medicaid-covered persons | 19.6% | same |
 | Hospital uncompensated care, at cost | $42.67bn in 2020 | [SOURCE: AHA, *Uncompensated Hospital Care Cost Fact Sheet*, table "National Uncompensated Care Based on Cost: 2000–2020", `_cache/aha_2020_uncompensated_fact_sheet.pdf`, sha256 d019cba2…] |
 | 2024 price uplift | ×1.20 | `ledger_residual_micro_2026_09_16` [INFERENCE on hospital input prices] |
-| Government offset share *g* | 0.65 (2013) to about 0.80 (2017) | [SOURCE: Coughlin, Holahan, Caswell & McGrath, *Health Affairs* 33(5), 2014, doi:10.1377/hlthaff.2013.1068: "at least 65 percent"; KFF/Urban Institute, *Sources of Payment for Uncompensated Care for the Uninsured*, April 2021: $33.6bn against $42.4bn a year, "nearly 80.0 percent"] |
-| Account key for the government-financed part *k* | 0.120 (per head) to 0.196 (Medicaid coverage) | [INFERENCE: DSH and uncompensated-care-pool payments sit in Medicaid, keyed by MEPS Medicaid use or coverage; indigent-care appropriations sit in government health consumption, keyed by MEPS other public payments or per head. MEPS records no payment for free care, so neither key follows uninsured use] |
+| Government offset share *g* | 0.58 (2013) to 0.70 (2017), VA and IHS removed; the first version used 0.65–0.80 with them in | [SOURCE: Coughlin, Holahan, Caswell & McGrath, *Health Affairs* 33(5), 2014, doi:10.1377/hlthaff.2013.1068, and KFF/Urban Institute May 2014 Table 4; KFF/Urban Institute, *Sources of Payment for Uncompensated Care for the Uninsured*, April 2021, Table 1] |
+| Account keys for the offsets *k_p* | Medicaid 12.3%, Medicare 5.8%, government health consumption 7.7% (per head 12.0% as the alternative for state and local programs); the first version used 0.120–0.196 | [DATA: executed allocations, `assumption_explorer_2026_09_21/derived/model.json`; MEPS records no payment for free care, so none of these keys follows uninsured use] |
 
 The central uses the union's share of uninsured person-years times AHA's national total. The
 earlier lane's method, $1,524 per uninsured person-year times CPS exposure, implies a $49.6bn
 national total: CPS 2024 exposure, which includes half of part-year spells, exceeds the 28.0m
 full-year count the price divides by. That method gives the union $12.8bn, close to the central.
 
-## Added cost to other residents
+## Added cost to other residents (corrected)
+
+Added cost = *s·N* − Σ_p *g_p·k_p·N*: the union's share *s* of national uncompensated care *N*,
+less the government offsets the account already charges it. Each program's offsets *g_p* are
+charged at the key *k_p* of the account line that carries them. VA and IHS are removed from
+offsets and totals alike.
+
+| Program offsets, $bn | 2013 (Coughlin et al. 2014; KFF–Urban 2014, Table 4) | 2017 (KFF–Urban 2021, Table 1) | Account line and key |
+|---|---:|---:|---|
+| Medicaid DSH and supplemental or pool payments | 13.5 | 9.8 | Medicaid, 12.3% (MEPS Medicaid dollars) |
+| Medicare DSH and IME | 8.0 | not examined | Medicare, 5.8% |
+| State and local indigent care and public assistance, community health centers, Ryan White, Title V | 21.7 | 11.2 (CHCs are the $1.3bn residual) | government health consumption, 7.7%; per head (12.0%) as the alternative |
+| Uncompensated care they offset, VA and IHS removed | 74.7 (includes $10.5bn of office physicians' charity) | 29.8 | |
+| Offset share *g* | 0.58 | 0.70 | |
+
+[SOURCE: KFF/Urban Institute, *Uncompensated Care for the Uninsured in 2013: A Detailed
+Examination*, May 2014, Table 4; KFF/Urban Institute, *Sources of Payment for Uncompensated Care
+for the Uninsured*, April 2021, Table 1; DATA: account keys from `model.json`]
+
+| Use intensity | Range across offset year, state-local key and price year: union's care | Outside government budgets | Under-charged inside the account | **Added cost** |
+|---|---:|---:|---:|---:|
+| equal | $11.0–13.2bn | $3.2–5.6bn | $3.7–5.7bn | **$7.3–10.6bn** |
+| 0.7× | $8.3–10.0bn | $2.5–4.2bn | $2.1–3.5bn | **$4.7–7.4bn** |
+
+Every arm is in `derived/added_cost_arms.csv` (16 rows).
+
+## Superseded first version (06a42b7): added cost at a single offset share
 
 Added cost = *s·N* − *g·k·N*: the union's share *s* of national uncompensated care *N*, less the
 government-financed part the account already charges it. [CALCULATION: `derived/added_cost_arms.csv`]
@@ -54,9 +92,9 @@ government-financed part the account already charges it. [CALCULATION: `derived/
   and on MEPS the Mexican-origin population draws 0.69 of the public medical money of its age
   and US-birth cell at 18–64 (ladder 175). The 0.7× rows use that ratio as a proxy. No held file
   observes free care by origin. [INFERENCE]
-- **The 2017 offset share includes VA and Indian Health Service care** ($12.6bn of $33.6bn),
-  which the union rarely uses. Offsets on the care it does use (Medicaid DSH and pools, state and
-  local indigent care) may be a lower share; the 0.65 arm covers part of that.
+- **VA and Indian Health Service care are removed** from offsets and totals alike ($12.6bn of
+  the 2017 offsets, $10.2bn of 2013's): the union rarely uses them and AHA's community-hospital
+  total excludes VA hospitals. Keeping them in raises *g* to 0.65–0.80, as in the first version.
 - **Where the unreimbursed cost lands** is not identified. Urban Institute authors found no
   evidence that providers raised private rates to offset rising uncompensated care
   [SOURCE: KFF/Urban 2014, 2013 detailed examination]. It is a cost to other residents in every
@@ -72,4 +110,5 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/unco
 Reads the sha-gated CPS ASEC 2025 archive in `gen_ledger_extension_2026_09_16/_cache/`. The AHA
 PDF in `_cache/` (ignored) was fetched from
 https://www.aha.org/system/files/media/file/2020/01/2020-Uncompensated-Care-Fact-Sheet.pdf; the
-script uses only the $42.67bn constant pinned in `ledger_residual_micro_2026_09_16`.
+script uses only the $42.67bn constant pinned in `ledger_residual_micro_2026_09_16`. It also reads
+the account's key shares from `assumption_explorer_2026_09_21/derived/model.json`.

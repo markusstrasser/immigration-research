@@ -95,23 +95,60 @@ summary = dict(
     check_price_x_exposure_national_bn=t.loc["all_civilian", "cost_bn_price2020"],
     check_price_x_exposure_target_bn=t.loc["target", "cost_bn_price2020"])
 
-# What the account misses. Governments offset a share g of providers' uncompensated care
-# (Urban Institute: 0.65 in 2013, about 0.80 in 2017). That part is inside the account but keyed
-# at k, per head (0.120) or the target's Medicaid-coverage share (0.196), not its uninsured share.
-# The rest (1 - g) is borne by hospitals, physicians and private payers, outside any fiscal account.
-# Added cost to other residents = s*N - g*k*N. Use intensity r rescales the target's person-years.
+# What the account misses. Governments offset a share g of providers' uncompensated care for the
+# uninsured, program by program. Each program's money is inside the account on a spending line that
+# the account keys by measured use (MEPS payments), not by uninsured use: Medicaid DSH and pool
+# payments sit in the Medicaid line, Medicare DSH in Medicare, state and local indigent care, CHCs,
+# Ryan White and Title V in government health consumption. The rest (1 - g) is borne by hospitals,
+# physicians and private payers, outside any fiscal account. VA and IHS care is left out on both
+# sides: AHA's community-hospital total excludes it and the target rarely uses it.
+# Added cost to other residents = s*N - sum_p g_p * k_p * N; use intensity r rescales the target.
+MODEL = FISCAL / "assumption_explorer_2026_09_21" / "derived" / "model.json"
+lines = {l["id"]: l for l in json.loads(MODEL.read_text())["spending"]["lines"]}
+
+
+def key_share(line_id):
+    line = lines[line_id]
+    return line["keys"][line["preferred_key"]]["personal"]["target_bn"] / line["national_bn"]
+
+
+KEYS = {"medicaid": key_share("medicaid_and_chip_other_medical"), "medicare": key_share("medicare"),
+        "health_other": key_share("health_services"), "per_head": PER_HEAD_SHARE}
+# Offsets, $bn, and the uncompensated care they offset, with VA and IHS removed from both.
+# 2013: Coughlin et al. 2014 / KFF-Urban May 2014, Table 4 ($53.3bn against $84.9bn, which includes
+# $10.5bn of office-based physicians' charity); 2017: KFF-Urban April 2021, Table 1 ($33.6bn against
+# $42.4bn a year in 2015-2017; community health centers are the $1.3bn residual of the total).
+OFFSETS = {
+    2013: dict(total_uc=84.9 - 8.1 - 2.1, programs={"medicaid": 13.5, "medicare": 8.0,
+               "state_local": 9.8 + 7.3 + 3.0 + 1.5 + 0.1}),
+    2017: dict(total_uc=42.4 - 10.3 - 2.3, programs={"medicaid": 9.8, "state_local": 9.9 + 1.3}),
+}
 py_t = t.loc["target", "uninsured_person_years_m"]
 py_o = t.loc["other_civilian", "uninsured_person_years_m"]
 arms = []
 for r in (1.0, 0.7):
     s_r = r * py_t / (r * py_t + py_o)
-    for label, n, g, k in (("low", aha_bn, 0.80, t.loc["target", "share_of_medicaid_covered"]),
-                           ("high", aha_bn * UPLIFT, 0.65, PER_HEAD_SHARE)):
-        arms.append(dict(use_intensity=r, arm=label, national_bn=n, gov_offset_share=g, key_share=k,
-                         target_share=s_r, target_bn=s_r * n, outside_accounts_bn=(1 - g) * s_r * n,
-                         inside_misallocated_bn=g * (s_r - k) * n, added_cost_bn=s_r * n - g * k * n))
-pd.DataFrame(arms).round(4).to_csv(HERE / "derived" / "added_cost_arms.csv", index=False)
-print(pd.DataFrame(arms).round(2).to_string(index=False))
+    for year, spec in OFFSETS.items():
+        total_off = sum(spec["programs"].values())
+        g = total_off / spec["total_uc"]
+        for state_local_key in ("health_other", "per_head"):
+            k = sum(v / total_off * KEYS[state_local_key if p == "state_local" else p]
+                    for p, v in spec["programs"].items())
+            for price, n in (("2020", aha_bn), ("2024", aha_bn * UPLIFT)):
+                arms.append(dict(use_intensity=r, offset_year=year, state_local_key=state_local_key,
+                                 prices=price, national_bn=n, gov_offset_share=g, key_share=k,
+                                 target_share=s_r, target_bn=s_r * n,
+                                 outside_accounts_bn=(1 - g) * s_r * n,
+                                 inside_undercharged_bn=g * (s_r - k) * n,
+                                 added_cost_bn=s_r * n - g * k * n))
+arms = pd.DataFrame(arms)
+arms.round(4).to_csv(HERE / "derived" / "added_cost_arms.csv", index=False)
+print(arms.round(3).to_string(index=False))
+for r, grp in arms.groupby("use_intensity"):
+    summary[f"added_cost_bn_use_{r}"] = [grp.added_cost_bn.min(), grp.added_cost_bn.max()]
+    summary[f"inside_undercharged_bn_use_{r}"] = [grp.inside_undercharged_bn.min(), grp.inside_undercharged_bn.max()]
+    summary[f"outside_accounts_bn_use_{r}"] = [grp.outside_accounts_bn.min(), grp.outside_accounts_bn.max()]
+summary["account_key_shares"] = KEYS
 (HERE / "derived" / "summary.json").write_text(json.dumps(summary, indent=1))
 print(out.round(3).to_string(index=False))
 print(json.dumps(summary, indent=1))
