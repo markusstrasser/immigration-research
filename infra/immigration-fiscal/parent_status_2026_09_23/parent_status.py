@@ -41,9 +41,9 @@ EDU = [("below_high_school", range(31, 39)), ("high_school", [39]),
 PUBLISHED_MEX_25_64 = {"borjas_paper_rules": 3.9170610819750302, "no_medicaid_rule": 4.778136460024849}
 
 
-def load():
+def load(extra=()):
     with zipfile.ZipFile(CPS) as z:
-        d = pd.read_csv(z.open("pppub25.csv"), usecols=PERSON)
+        d = pd.read_csv(z.open("pppub25.csv"), usecols=PERSON + [c for c in extra if c not in PERSON])
         hh = pd.read_csv(z.open("hhpub25.csv"), usecols=["H_SEQ", "HPUBLIC", "HLORENT", "GESTFIPS"])
         r = pd.read_csv(z.open("asec_csv_repwgt_2025.csv"), usecols=["h_seq", "PPPOS", "pwwgt0"] + REPS)
     d = d.merge(r.rename(columns={"h_seq": "PH_SEQ"}), on=["PH_SEQ", "PPPOS"], how="left",
