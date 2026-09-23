@@ -132,6 +132,13 @@ ASEC 2025 counts about 1.1M more Mexico-born than both ACS 2024 and ASEC 2026 (�
 the ACS is right). Five measured corrections (−$5.1bn, to about $198–245bn) are proposed, not
 adopted. Three bands each await one measurement.
 
+The [debt legacy lane](../infra/immigration-fiscal/debt_legacy_2026_09_23/RESULT.md) (ladder 207)
+prices interest on the group's past federal gaps. Borrowed, the 2005–2023 gaps leave $0.94–1.20tn
+of debt, on which 2024 taxpayers pay **$30.5–38.9bn** of interest ($7.7–42.8bn across rules). That
+answers a historical question; the main case's static comparison treats existing interest as
+sunk. The line is proposed as the interest row's response, not adopted, and must never be added
+to the assigned balance or the stock to an annual figure.
+
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
 second generation, reference group, education, single year, legacy cohorts, ageing,
