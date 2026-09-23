@@ -1,0 +1,7 @@
+variant,group,institutional,population,rate,us_over_foreign
+as_published,foreign_mexican_origin_men_18_39,18073,2.9232e+06,0.0061826,9.7812
+as_published,us_mexican_origin_men_18_39,108468,1.79365e+06,0.0604733,9.7812
+nativity_low,foreign_mexican_origin_men_18_39,38904.3,3.02889e+06,0.0128444,4.03978
+nativity_low,us_mexican_origin_men_18_39,87578.5,1.68782e+06,0.0518886,4.03978
+nativity_high,foreign_mexican_origin_men_18_39,50025.7,3.08532e+06,0.0162141,2.88941
+nativity_high,us_mexican_origin_men_18_39,76426,1.63132e+06,0.0468493,2.88941
