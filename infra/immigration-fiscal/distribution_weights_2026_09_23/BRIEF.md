@@ -17,12 +17,21 @@ given, divide it among other residents by income, and then weight.
 
 1. **Income frame.** On CPS ASEC 2025 (income year 2024), use the account's archive and
    canonical target (`../full_account_spending_2026_09_20/builder.py` `canonical_target`; the
-   archive in `../gen_ledger_extension_2026_09_16/_cache/`, sha-gated). Rank **other
-   residents**, person-weighted, into quintiles of equivalized household income. The central
-   measure is SPM resources ÷ the SPM unit's equivalence scale, or household money income
-   ÷ √size; report the other as a check. Persons in a household with target members keep
-   their own place, but only non-target persons count. Report each quintile's mean
-   equivalized income ȳ_q and the overall mean ȳ.
+   archive in `../gen_ledger_extension_2026_09_16/_cache/`, sha-gated). Give every **other
+   resident** their own equivalized household income y_i and percentile rank, person-weighted.
+   The central measure is SPM resources ÷ the SPM unit's equivalence scale, or household money
+   income ÷ √size; report the other as a check. Persons in a household with target members keep
+   their own place, but only non-target persons count. Report the overall mean ȳ.
+
+   **Method amendment (operator, 14:43):** compute at the finest resolution the inputs allow —
+   per person, or percentiles where a channel's input is binned — and use quintiles and
+   deciles only to *display* results. Coarse bins bias the weighted result toward zero:
+   the weight (y/ȳ)^(−η) is convex, so a bin mean understates the weight of the poorest members,
+   and gains concentrated in the top few percent (rental income, capital) are diluted across the
+   whole top fifth. Floor y_i at the 5th percentile for the weights (report the 1st and 10th as
+   sensitivities), because reported incomes near zero are noisy. Where an input exists only in
+   bins (CEX quintiles, NCVS income brackets, CBO or ITEP tax groups), spread it within each bin
+   by the microdata's distribution of the channel's base, and say so.
 2. **Divide each channel among the quintiles**, in $bn a year, with signs from other residents'
    point of view:
    - **Wages.** Use `../wage_distribution_2026_09_23/` and its source grid
@@ -61,7 +70,9 @@ given, divide it among other residents by income, and then weight.
      (`research/immigration-consumer-price-and-native-hours-2026-09-18.md`;
      `../consumer_price_benefit_2026_09_18/derived/partA_price_results.csv`) overlaps them. Show it as an alternative lens, never added.
 3. **Weights.** For each channel and in total, compute the equity-weighted net
-   Σ_q (ȳ_q/ȳ)^(−η) × Δ_q for η = 0, 1, 1.3 and 2; at η = 0 it equals the unweighted sum.
+   Σ_i (y_i/ȳ)^(−η) × Δ_i over other residents (person or percentile cells) for η = 0, 1, 1.3
+   and 2; at η = 0 it equals the unweighted sum. Also report the quintile-bin version,
+   Σ_q (ȳ_q/ȳ)^(−η) × Δ_q, to show how much binning moves the answer.
    Cite the primary guidance for the η values: UK HM Treasury *Green Book* on the elasticity
    of marginal utility, and US OMB Circular A-4 (2023 revision) with its later status.
    Read both documents; do not rely on this brief for the values.
