@@ -1,0 +1,46 @@
+parent,contrast,outcome,raw_diff,adjusted_diff,adjusted_se_hc1,n_treat,n_base
+mother,no_green_card_any minus legal_entry,years_school,0.0145,0.0935,0.2155,150,231
+mother,no_green_card_any minus legal_entry,no_hs,0.0288,0.0214,0.0418,150,231
+mother,no_green_card_any minus legal_entry,ba_plus,-0.0035,0.0246,0.0422,150,231
+mother,no_green_card_any minus legal_entry,employed,0.0561,0.1014,0.0493,147,224
+mother,no_green_card_any minus legal_entry,inc_mid,-1118.753,3474.6036,2046.0896,145,219
+mother,no_green_card_any minus legal_entry,inc_ge30k,-0.0208,0.0522,0.0459,145,219
+mother,no_green_card_any minus legal_entry,arrested,-0.0395,-0.0013,0.0397,150,231
+mother,no_green_card_any minus legal_entry,incarcerated,0.0004,0.0207,0.0326,150,231
+mother,no_green_card_any minus legal_entry,any_welfare,0.0696,0.0166,0.0498,150,231
+mother,no_papers minus legal_entry,years_school,0.0967,0.2792,0.2976,54,231
+mother,no_papers minus legal_entry,no_hs,0.0207,0.0014,0.0617,54,231
+mother,no_papers minus legal_entry,ba_plus,0.0373,0.0894,0.0587,54,231
+mother,no_papers minus legal_entry,employed,-0.0182,0.0385,0.0741,53,224
+mother,no_papers minus legal_entry,inc_mid,-2415.4373,3937.1915,2542.2271,52,219
+mother,no_papers minus legal_entry,inc_ge30k,-0.0413,0.0806,0.0633,52,219
+mother,no_papers minus legal_entry,arrested,-0.0565,-0.021,0.055,54,231
+mother,no_papers minus legal_entry,incarcerated,-0.044,-0.0302,0.0399,54,231
+mother,no_papers minus legal_entry,any_welfare,0.1304,0.0649,0.0766,54,231
+father,no_green_card_any minus legal_entry,years_school,0.1469,0.1058,0.2171,157,194
+father,no_green_card_any minus legal_entry,no_hs,0.0492,0.0471,0.0442,157,194
+father,no_green_card_any minus legal_entry,ba_plus,0.0622,0.0537,0.0379,157,194
+father,no_green_card_any minus legal_entry,employed,0.0405,0.0421,0.0492,154,188
+father,no_green_card_any minus legal_entry,inc_mid,-464.0641,1464.9895,2057.6122,151,190
+father,no_green_card_any minus legal_entry,inc_ge30k,0.0007,0.021,0.0467,151,190
+father,no_green_card_any minus legal_entry,arrested,0.0149,0.0466,0.0372,157,194
+father,no_green_card_any minus legal_entry,incarcerated,-0.0051,0.0235,0.033,157,194
+father,no_green_card_any minus legal_entry,any_welfare,0.0207,0.0019,0.0522,157,194
+father,no_papers minus legal_entry,years_school,0.1704,0.1862,0.2865,72,194
+father,no_papers minus legal_entry,no_hs,0.0676,0.0602,0.0577,72,194
+father,no_papers minus legal_entry,ba_plus,0.1072,0.1126,0.0508,72,194
+father,no_papers minus legal_entry,employed,-0.0183,0.0065,0.0658,72,188
+father,no_papers minus legal_entry,inc_mid,-2431.8713,1040.49,2514.5943,72,190
+father,no_papers minus legal_entry,inc_ge30k,-0.0189,0.0372,0.058,72,190
+father,no_papers minus legal_entry,arrested,0.0779,0.105,0.0535,72,194
+father,no_papers minus legal_entry,incarcerated,0.0394,0.0642,0.0474,72,194
+father,no_papers minus legal_entry,any_welfare,0.057,0.0145,0.0696,72,194
+family,any parent without green card minus all with,years_school,-0.0102,0.1778,0.1938,211,227
+family,any parent without green card minus all with,no_hs,0.0632,0.0451,0.0389,211,227
+family,any parent without green card minus all with,ba_plus,0.0269,0.0695,0.0355,211,227
+family,any parent without green card minus all with,employed,0.0521,0.0998,0.0447,206,220
+family,any parent without green card minus all with,inc_mid,-1443.4164,2240.6654,1864.2992,201,221
+family,any parent without green card minus all with,inc_ge30k,-0.0318,0.0309,0.042,201,221
+family,any parent without green card minus all with,arrested,-0.029,-0.0019,0.0368,211,227
+family,any parent without green card minus all with,incarcerated,-0.0103,0.0066,0.0324,211,227
+family,any parent without green card minus all with,any_welfare,0.0684,0.0118,0.0462,211,227
