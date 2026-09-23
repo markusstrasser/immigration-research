@@ -32,19 +32,18 @@ import sys
 from paths import data_root, microdata_duckdb_path
 
 TABLE = "ipums_usa_borjas_panel"
-# IPUMS writes usa_NNNNN.csv.gz; accept either the gz or expanded csv, any extract number.
+# The panel is IPUMS USA extract #2 (DOWNLOAD_MANIFEST.tsv). Extracts 3-15 share this directory
+# since 2026-09-23, so the file is pinned by name, never picked by sort order.
+EXTRACT = "usa_00002"
 SEARCH_DIRS = ["external/ipums/usa_extract", "external/ipums"]
 
 
 def _find_csv():
     root = data_root()
     for sub in SEARCH_DIRS:
-        d = root / sub
-        if not d.exists():
-            continue
-        hits = sorted(d.glob("usa_*.csv.gz")) + sorted(d.glob("usa_*.csv"))
-        if hits:
-            return hits[-1]  # highest extract number / newest
+        for name in (f"{EXTRACT}.csv.gz", f"{EXTRACT}.csv"):
+            if (root / sub / name).exists():
+                return root / sub / name
     return None
 
 
@@ -56,8 +55,8 @@ def build() -> None:
 
     csv = _find_csv()
     if csv is None:
-        print(f"  ! IPUMS extract not found under {data_root()}/{SEARCH_DIRS[0]} — skip "
-              "(download usa_*.csv.gz from usa.ipums.org first)")
+        print(f"  ! IPUMS extract {EXTRACT} not found under {data_root()}/{SEARCH_DIRS[0]} — skip "
+              f"(download {EXTRACT}.csv.gz from usa.ipums.org first)")
         return
 
     db = microdata_duckdb_path()
