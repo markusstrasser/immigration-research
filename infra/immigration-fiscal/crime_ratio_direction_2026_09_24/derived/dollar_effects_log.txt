@@ -1,0 +1,152 @@
+[gate] victim lane central reproduced: PASS - full $28.9229bn, tangible $4.5014bn, murder $9.1552bn
+[gate] SHR lane row equals the victim lane's P (2024, hispanic): PASS - 0.719019
+[gate] SHR lane row equals the victim lane's P (2024, nh_white): PASS - 0.102000
+[gate] SHR lane row equals the victim lane's P (2024, nh_black): PASS - 0.048795
+[gate] SHR lane row equals the victim lane's P (2024, nh_other): PASS - 0.108808
+[gate] SHR lane row equals the victim lane's P (2022_2024, hispanic): PASS - 0.702239
+[gate] SHR lane row equals the victim lane's P (2022_2024, nh_white): PASS - 0.105329
+[gate] SHR lane row equals the victim lane's P (2022_2024, nh_black): PASS - 0.052293
+[gate] SHR lane row equals the victim lane's P (2022_2024, nh_other): PASS - 0.132312
+
+-- NIBRS: mean Hispanic fraction of mixed Hispanic / non-Hispanic offender groups --
+            offence  victimisations  mean_hispanic_fraction
+           All five           16096                  0.4977
+ Aggravated assault            2849                  0.5023
+             Murder             140                  0.4954
+Rape/sexual assault             241                  0.4782
+            Robbery            2247                  0.4951
+     Simple assault           10619                  0.4974
+   Select Hispanic excess over table 13, incidents 2022-2024: 412,377; matched by the Other deficit in the same victim row: 358,997
+[gate] mixed-group move keeps known-offender incidents (theta 0.0000): PASS - 
+[gate] mixed-group move keeps known-offender incidents (theta 0.5000): PASS - 
+[gate] mixed-group move keeps known-offender incidents (theta 0.4977): PASS - 
+[gate] mixed-group move keeps known-offender incidents (theta 0.4977): PASS - 
+[gate] mixed-group move keeps known-offender incidents (theta 1.0000): PASS - 
+                                                   item                                                                                                        method  full_bn  tangible_bn  murder_full_bn  delta_full_bn  delta_tangible_bn
+            murder: SHR imputation of unknown offenders                                                   2024: victim lane: cleared ethnicity-known, by victim group   28.923        4.501           9.155          0.000              0.000
+            murder: SHR imputation of unknown offenders                       2024: victim group only, race-known splits (ethnicity-missing solved split within race)   28.919        4.500           9.152         -0.004             -0.001
+            murder: SHR imputation of unknown offenders                                                                                                  2024: +state   28.882        4.490           9.114         -0.041             -0.011
+            murder: SHR imputation of unknown offenders                                                                                                 2024: +weapon   28.898        4.495           9.130         -0.025             -0.007
+            murder: SHR imputation of unknown offenders                                                                                     2024: +victim age and sex   29.069        4.540           9.301          0.146              0.039
+            murder: SHR imputation of unknown offenders                                                                                     2024: +circumstance class   28.968        4.513           9.201          0.046              0.012
+            murder: SHR imputation of unknown offenders                                                                           2024: +situation (multiple victims)   28.898        4.495           9.130         -0.025             -0.007
+            murder: SHR imputation of unknown offenders                                                     2024: chain state>weapon>victim age-sex>agency (kappa 20)   28.923        4.501           9.155          0.000              0.000
+            murder: SHR imputation of unknown offenders                                                     2024: chain state>agency>weapon>victim age-sex (kappa 20)   28.898        4.495           9.130         -0.025             -0.007
+            murder: SHR imputation of unknown offenders                                               2024: chain state>circumstance>weapon>victim age-sex (kappa 20)   28.847        4.481           9.079         -0.076             -0.020
+            murder: SHR imputation of unknown offenders                                                      2024: chain state>weapon>victim age-sex>agency (kappa 5)   28.917        4.500           9.150         -0.006             -0.001
+            murder: SHR imputation of unknown offenders                                                    2024: chain state>weapon>victim age-sex>agency (kappa 100)   28.861        4.485           9.094         -0.062             -0.016
+            murder: SHR imputation of unknown offenders                                          2024: multinomial logit, all covariates incl. state and agency (C=1)   29.116        4.553           9.349          0.194              0.051
+            murder: SHR imputation of unknown offenders                                        2024: multinomial logit, all covariates incl. state and agency (C=0.1)   29.189        4.572           9.421          0.266              0.070
+            murder: SHR imputation of unknown offenders                                                            2024: multinomial logit without circumstance (C=1)   29.043        4.533           9.275          0.120              0.032
+            murder: SHR imputation of unknown offenders                                                  2024: multinomial logit without circumstance or agency (C=1)   28.857        4.484           9.089         -0.066             -0.017
+            murder: SHR imputation of unknown offenders                                 2024: multinomial logit without circumstance, victim-group interactions (C=1)   29.297        4.600           9.529          0.374              0.099
+            murder: SHR imputation of unknown offenders                                 2024: solved only, ethnicity-missing split within race by state (no unsolved)   28.945        4.507           9.177          0.022              0.006
+            murder: SHR imputation of unknown offenders                                              2022_2024: victim lane: cleared ethnicity-known, by victim group   29.254        4.589           9.486          0.000              0.000
+            murder: SHR imputation of unknown offenders                  2022_2024: victim group only, race-known splits (ethnicity-missing solved split within race)   29.235        4.584           9.467         -0.019             -0.005
+            murder: SHR imputation of unknown offenders                                                                                             2022_2024: +state   29.264        4.592           9.497          0.011              0.003
+            murder: SHR imputation of unknown offenders                                                                                            2022_2024: +weapon   29.181        4.570           9.413         -0.073             -0.019
+            murder: SHR imputation of unknown offenders                                                                                2022_2024: +victim age and sex   29.394        4.626           9.626          0.140              0.037
+            murder: SHR imputation of unknown offenders                                                                                2022_2024: +circumstance class   29.256        4.590           9.488          0.002              0.001
+            murder: SHR imputation of unknown offenders                                                                      2022_2024: +situation (multiple victims)   29.226        4.581           9.458         -0.028             -0.007
+            murder: SHR imputation of unknown offenders                                                2022_2024: chain state>weapon>victim age-sex>agency (kappa 20)   29.335        4.611           9.568          0.082              0.022
+            murder: SHR imputation of unknown offenders                                                2022_2024: chain state>agency>weapon>victim age-sex (kappa 20)   29.332        4.610           9.564          0.078              0.021
+            murder: SHR imputation of unknown offenders                                          2022_2024: chain state>circumstance>weapon>victim age-sex (kappa 20)   29.319        4.606           9.551          0.065              0.017
+            murder: SHR imputation of unknown offenders                                                 2022_2024: chain state>weapon>victim age-sex>agency (kappa 5)   29.354        4.615           9.586          0.100              0.026
+            murder: SHR imputation of unknown offenders                                               2022_2024: chain state>weapon>victim age-sex>agency (kappa 100)   29.301        4.601           9.533          0.047              0.012
+            murder: SHR imputation of unknown offenders                                     2022_2024: multinomial logit, all covariates incl. state and agency (C=1)   29.416        4.632           9.649          0.163              0.043
+            murder: SHR imputation of unknown offenders                                   2022_2024: multinomial logit, all covariates incl. state and agency (C=0.1)   29.381        4.623           9.614          0.127              0.034
+            murder: SHR imputation of unknown offenders                                                       2022_2024: multinomial logit without circumstance (C=1)   29.420        4.633           9.652          0.166              0.044
+            murder: SHR imputation of unknown offenders                                             2022_2024: multinomial logit without circumstance or agency (C=1)   29.230        4.583           9.463         -0.023             -0.006
+            murder: SHR imputation of unknown offenders                            2022_2024: multinomial logit without circumstance, victim-group interactions (C=1)   29.414        4.631           9.647          0.161              0.043
+            murder: SHR imputation of unknown offenders                            2022_2024: solved only, ethnicity-missing split within race by state (no unsolved)   29.282        4.596           9.514          0.028              0.007
+non-fatal: mixed-offender groups with a Hispanic member                                                                theta 0.0000 of each group attributed Hispanic   28.923        4.501           9.155          0.000              0.000
+non-fatal: mixed-offender groups with a Hispanic member                                                                theta 0.5000 of each group attributed Hispanic   30.937        4.713           9.155          2.014              0.212
+non-fatal: mixed-offender groups with a Hispanic member           theta 0.4977 of each group attributed Hispanic (NIBRS TX+AZ mean Hispanic fraction of mixed groups)   30.927        4.712           9.155          2.005              0.211
+non-fatal: mixed-offender groups with a Hispanic member theta 0.4977 of each group attributed Hispanic (NIBRS fraction; only the excess matched by the Other deficit)   30.768        4.695           9.155          1.845              0.194
+non-fatal: mixed-offender groups with a Hispanic member                                                                theta 1.0000 of each group attributed Hispanic   32.951        4.925           9.155          4.028              0.424
+[gate] cj lane arrest ratio and RR->1 sensitivity: PASS - RR 1.1454, RR->1 -2.750bn, arrest-keyed dollars 21.67bn
+
+-- booking discordance factors (offender-segment / arrestee-segment Hispanic share) --
+                    universe  single_pairs  offender_segment_H  arrestee_segment_H  factor
+ all ages, all five offences        213452              0.3876              0.3727  1.0401
+      offender 18+, all five        189729              0.3843              0.3692  1.0411
+            all ages, murder          1210              0.3347              0.3298  1.0150
+           all ages, robbery          5387              0.3427              0.3302  1.0377
+all ages, aggravated assault         47988              0.3744              0.3596  1.0410
+                  Texas only        189898              0.3992              0.3825  1.0439
+                Arizona only         23554              0.2940              0.2940  1.0003
+
+[info] jail arm rows 78, ACS sensitivity rows 34
+[gate] jail worker's BJS-arm central (survey OR mean) re-derived by hand: 0.2186 x 0.70734 key, +$1.54bn: PASS - key 0.1546, +1.541bn
+
+-- justice key --
+                                                item                                                                                                                             method  delta_main_case_bn
+arrest key: booking under-records Hispanic arrestees                                                                             RR x 1.0401 (all ages, all five offences, TX+AZ NIBRS)              +0.869
+arrest key: booking under-records Hispanic arrestees                                                                                  RR x 1.0411 (offender 18+, all five, TX+AZ NIBRS)              +0.890
+arrest key: booking under-records Hispanic arrestees                                                                                        RR x 1.0150 (all ages, murder, TX+AZ NIBRS)              +0.326
+arrest key: booking under-records Hispanic arrestees                                                                                       RR x 1.0377 (all ages, robbery, TX+AZ NIBRS)              +0.816
+arrest key: booking under-records Hispanic arrestees                                                                            RR x 1.0410 (all ages, aggravated assault, TX+AZ NIBRS)              +0.889
+arrest key: booking under-records Hispanic arrestees                                                                                              RR x 1.0439 (Texas only, TX+AZ NIBRS)              +0.951
+arrest key: booking under-records Hispanic arrestees                                                                                            RR x 1.0003 (Arizona only, TX+AZ NIBRS)              +0.006
+               arrest key: White-subtraction (Arm 5)                                                                                                                               none              +0.000
+    arrest key: census undercount of Hispanics (PES)                                                                                                                           A_T x RR              +0.000
+    prisons: BJS check arm with corrected jail share                                                                                             jail share bjs_published_2023 (0.1441)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                                             jail share survey_or_silj1989 (0.1753)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                                             jail share survey_or_silj1996 (0.1713)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                                             jail share survey_or_silj2002 (0.1815)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                                            jail share survey_or_nis2_2008 (0.1825)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                                            jail share survey_or_nis3_2011 (0.2093)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                                        jail share survey_or_mean_post2000 (0.1913)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                        jail share survey_or_nis3_less_prison_house_effect (0.1976)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                                jail share prison_adjustment_transfer_2023 (0.1909)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                                         jail share census2010_national_or (0.1579)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                         jail share census2010_hispanic_count_on_bjs_total (0.1436)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                     jail share census2010_state_coding_on_coj2019_weights (0.1577)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                        jail share census2010_state_coding_growth_adjusted (0.1733)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                                    jail share benchmark_state_parity_2019 (0.1498)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                                 jail share acs_residual_2023_bjs_universe (0.1485)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                       jail share acs_residual_2023_with_federal_detention (0.1226)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                      jail share acs_residual_2024_on_bjs2023_bjs_universe (0.1791)              +0.000
+    prisons: BJS check arm with corrected jail share                                                            jail share acs_residual_2024_on_bjs2023_with_federal_detention (0.1549)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                          jail share acs_residual_5yr_2019_23_bjs_universe (0.1346)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                jail share acs_residual_5yr_2019_23_with_federal_detention (0.1080)              +0.000
+    prisons: BJS check arm with corrected jail share                                                             jail share acs_residual_2023_bjs_universe_prisons_admin_coded (0.2464)              +0.000
+    prisons: BJS check arm with corrected jail share                                                   jail share acs_residual_2023_with_federal_detention_prisons_admin_coded (0.2205)              +0.000
+    prisons: BJS check arm with corrected jail share                                                      jail share acs_residual_5yr_2019_23_bjs_universe_prisons_admin_coded (0.2325)              +0.000
+    prisons: BJS check arm with corrected jail share                                            jail share acs_residual_5yr_2019_23_with_federal_detention_prisons_admin_coded (0.2059)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                                           jail share arrest_share_fbi2023 (0.2182)              +0.000
+    prisons: BJS check arm with corrected jail share                                                                                           jail share arrest_share_fbi2024 (0.2213)              +0.000
+   prisons: ACS custody key / f (facility recording)                                             ACS acs1 2023 S2603 adult correctional; jail bjs_published_2023; bjs_universe; f 1.008              -0.135
+   prisons: ACS custody key / f (facility recording)                                    ACS acs1 2023 S2603 adult correctional; jail bjs_published_2023; fed_detention_central; f 0.965              +0.621
+   prisons: ACS custody key / f (facility recording)                                        ACS acs1 2023 S2603 adult correctional; jail bjs_published_2023; fed_detention_low; f 0.995              +0.080
+   prisons: ACS custody key / f (facility recording)                                       ACS acs1 2023 S2603 adult correctional; jail bjs_published_2023; fed_detention_high; f 0.924              +1.409
+   prisons: ACS custody key / f (facility recording)                                                     ACS acs1 2023 S2603 adult correctional; jail survey_min; bjs_universe; f 0.961              +0.695
+   prisons: ACS custody key / f (facility recording)                                            ACS acs1 2023 S2603 adult correctional; jail survey_min; fed_detention_central; f 0.924              +1.408
+   prisons: ACS custody key / f (facility recording)                                                ACS acs1 2023 S2603 adult correctional; jail survey_min; fed_detention_low; f 0.952              +0.876
+   prisons: ACS custody key / f (facility recording)                                               ACS acs1 2023 S2603 adult correctional; jail survey_min; fed_detention_high; f 0.887              +2.189
+   prisons: ACS custody key / f (facility recording)                                        ACS acs1 2023 S2603 adult correctional; jail survey_or_mean_post2000; bjs_universe; f 0.930              +1.304
+   prisons: ACS custody key / f (facility recording)                               ACS acs1 2023 S2603 adult correctional; jail survey_or_mean_post2000; fed_detention_central; f 0.897              +1.986
+   prisons: ACS custody key / f (facility recording)                                   ACS acs1 2023 S2603 adult correctional; jail survey_or_mean_post2000; fed_detention_low; f 0.922              +1.460
+   prisons: ACS custody key / f (facility recording)                                  ACS acs1 2023 S2603 adult correctional; jail survey_or_mean_post2000; fed_detention_high; f 0.862              +2.761
+   prisons: ACS custody key / f (facility recording)                                                     ACS acs1 2023 S2603 adult correctional; jail survey_max; bjs_universe; f 0.903              +1.854
+   prisons: ACS custody key / f (facility recording)                                            ACS acs1 2023 S2603 adult correctional; jail survey_max; fed_detention_central; f 0.873              +2.508
+   prisons: ACS custody key / f (facility recording)                                                ACS acs1 2023 S2603 adult correctional; jail survey_max; fed_detention_low; f 0.897              +1.986
+   prisons: ACS custody key / f (facility recording)                                               ACS acs1 2023 S2603 adult correctional; jail survey_max; fed_detention_high; f 0.840              +3.277
+   prisons: ACS custody key / f (facility recording)                                             ACS acs5 2023 S2603 adult correctional; jail bjs_published_2023; bjs_universe; f 0.983              +0.296
+   prisons: ACS custody key / f (facility recording)                                    ACS acs5 2023 S2603 adult correctional; jail bjs_published_2023; fed_detention_central; f 0.941              +1.071
+   prisons: ACS custody key / f (facility recording)                                        ACS acs5 2023 S2603 adult correctional; jail bjs_published_2023; fed_detention_low; f 0.971              +0.516
+   prisons: ACS custody key / f (facility recording)                                       ACS acs5 2023 S2603 adult correctional; jail bjs_published_2023; fed_detention_high; f 0.902              +1.879
+   prisons: ACS custody key / f (facility recording)                                                     ACS acs5 2023 S2603 adult correctional; jail survey_min; bjs_universe; f 0.938              +1.147
+   prisons: ACS custody key / f (facility recording)                                            ACS acs5 2023 S2603 adult correctional; jail survey_min; fed_detention_central; f 0.902              +1.879
+   prisons: ACS custody key / f (facility recording)                                                ACS acs5 2023 S2603 adult correctional; jail survey_min; fed_detention_low; f 0.928              +1.332
+   prisons: ACS custody key / f (facility recording)                                               ACS acs5 2023 S2603 adult correctional; jail survey_min; fed_detention_high; f 0.865              +2.679
+   prisons: ACS custody key / f (facility recording)                                        ACS acs5 2023 S2603 adult correctional; jail survey_or_mean_post2000; bjs_universe; f 0.907              +1.772
+   prisons: ACS custody key / f (facility recording)                               ACS acs5 2023 S2603 adult correctional; jail survey_or_mean_post2000; fed_detention_central; f 0.874              +2.471
+   prisons: ACS custody key / f (facility recording)                                   ACS acs5 2023 S2603 adult correctional; jail survey_or_mean_post2000; fed_detention_low; f 0.899              +1.931
+   prisons: ACS custody key / f (facility recording)                                  ACS acs5 2023 S2603 adult correctional; jail survey_or_mean_post2000; fed_detention_high; f 0.841              +3.266
+   prisons: ACS custody key / f (facility recording)                                                     ACS acs5 2023 S2603 adult correctional; jail survey_max; bjs_universe; f 0.881              +2.335
+   prisons: ACS custody key / f (facility recording)                                            ACS acs5 2023 S2603 adult correctional; jail survey_max; fed_detention_central; f 0.851              +3.006
+   prisons: ACS custody key / f (facility recording)                                                ACS acs5 2023 S2603 adult correctional; jail survey_max; fed_detention_low; f 0.874              +2.471
+   prisons: ACS custody key / f (facility recording)                                               ACS acs5 2023 S2603 adult correctional; jail survey_max; fed_detention_high; f 0.819              +3.794
+   prisons: ACS custody key / f (facility recording)    Census 2010 SF1 PCT20H state+federal prisons; jail nan; prisons only; BJS sentenced yearend 2010 (SISFCF/NIS-adjusted); f 0.796              +4.420
+   prisons: ACS custody key / f (facility recording) reference: all components administratively coded (NPS appendix, ASJ); jail survey_or_mean_post2000; fed_detention_central; f 0.781              +4.816

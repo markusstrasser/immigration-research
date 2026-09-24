@@ -1,0 +1,102 @@
+[gate] restaged victimisations sum to the NIBRS lane's staged cells (6 state-years, 13 classes): PASS - max |diff| 0.00e+00
+central universe: 794,058 victimisations (TX+AZ 2022-2023, agencies recording >= 50%)
+[gate] row-level replication of the lane's central (all five offences): PASS - murder 2.3034, robbery 4.2193
+fitting multinomial logits (one per offence) ...
+arrestee fill applies to 0.160% of central victimisations ({'Aggravated assault': 279, 'Murder': 20, 'Rape/sexual assault': 24, 'Robbery': 63, 'Simple assault': 881})
+
+-- Hispanic / NH-white by method (TX+AZ central universe) --
+offence                                                       Murder  Rape/sexual assault  Robbery  Aggravated assault  Simple assault
+method                                                                                                                                
+central (lane allocation a, replicated)                        2.303                1.746    4.219               2.235           1.742
++agency (kappa 20)                                             2.362                1.777    4.213               2.295           1.754
++victim sex and age (kappa 20)                                 2.305                1.744    4.228               2.231           1.742
++weapon (kappa 20)                                             2.298                1.742    4.283               2.238           1.741
++location (kappa 20)                                           2.294                1.748    4.242               2.248           1.743
++hour (kappa 20)                                               2.304                1.746    4.238               2.246           1.743
++gang flag (kappa 20)                                          2.300                1.745    4.216               2.236           1.742
++arrest and exceptional clearance (kappa 20)                   2.336                1.751    4.360               2.269           1.746
+chain agency>weapon>victim sex-age>location>hour (kappa 5)     2.390                1.768    4.208               2.300           1.749
+chain agency>weapon>victim sex-age>location>hour (kappa 20)    2.369                1.778    4.255               2.308           1.752
+chain agency>weapon>victim sex-age>location>hour (kappa 100)   2.336                1.781    4.267               2.308           1.756
+chain weapon>victim sex-age>location>hour>agency (kappa 20)    2.291                1.745    4.307               2.258           1.747
+chain arrest-exc>agency>weapon>victim sex-age (kappa 20)       2.379                1.780    4.344               2.325           1.754
+multinomial logit, all covariates incl. agency (C=1)           2.418                1.752    4.166               2.297           1.747
+multinomial logit, all covariates incl. agency (C=0.1)         2.395                1.752    4.182               2.293           1.747
+arrestee fill for ethnicity-unknown offenders, else central    2.300                1.745    4.219               2.232           1.740
+
+-- Hispanic / all residents by method --
+offence                                                       Murder  Rape/sexual assault  Robbery  Aggravated assault  Simple assault
+method                                                                                                                                
+central (lane allocation a, replicated)                        1.002                1.181    0.917               1.089           1.097
++agency (kappa 20)                                             1.009                1.189    0.927               1.099           1.100
++victim sex and age (kappa 20)                                 1.000                1.180    0.918               1.089           1.097
++weapon (kappa 20)                                             0.998                1.180    0.918               1.083           1.096
++location (kappa 20)                                           1.000                1.180    0.920               1.091           1.095
++hour (kappa 20)                                               1.001                1.181    0.920               1.092           1.097
++gang flag (kappa 20)                                          1.001                1.181    0.917               1.089           1.097
++arrest and exceptional clearance (kappa 20)                   1.007                1.182    0.915               1.092           1.098
+chain agency>weapon>victim sex-age>location>hour (kappa 5)     1.009                1.187    0.932               1.100           1.099
+chain agency>weapon>victim sex-age>location>hour (kappa 20)    1.008                1.190    0.930               1.100           1.100
+chain agency>weapon>victim sex-age>location>hour (kappa 100)   1.004                1.191    0.924               1.099           1.101
+chain weapon>victim sex-age>location>hour>agency (kappa 20)    0.996                1.181    0.920               1.091           1.097
+chain arrest-exc>agency>weapon>victim sex-age (kappa 20)       1.013                1.190    0.925               1.101           1.100
+multinomial logit, all covariates incl. agency (C=1)           1.020                1.181    0.935               1.100           1.098
+multinomial logit, all covariates incl. agency (C=0.1)         1.016                1.181    0.933               1.099           1.098
+arrestee fill for ethnicity-unknown offenders, else central    1.001                1.181    0.917               1.088           1.096
+
+-- Arrestee validation --
+                                                                              case             offence  victimisations  arrestee_hispanic_share  imputed_H_central  imputed_H_chain_k20  imputed_H_logit_C1
+offenders all ethnicity-unknown (recorded, no ethnicity), arrestee ethnicity known              Murder              20                    0.200              0.228                0.224               0.226
+offenders all ethnicity-unknown (recorded, no ethnicity), arrestee ethnicity known Rape/sexual assault              24                    0.250              0.395                0.399               0.376
+offenders all ethnicity-unknown (recorded, no ethnicity), arrestee ethnicity known             Robbery              63                    0.317              0.323                0.286               0.276
+offenders all ethnicity-unknown (recorded, no ethnicity), arrestee ethnicity known  Aggravated assault             279                    0.210              0.346                0.333               0.321
+offenders all ethnicity-unknown (recorded, no ethnicity), arrestee ethnicity known      Simple assault             881                    0.194              0.324                0.279               0.283
+offenders all ethnicity-unknown (recorded, no ethnicity), arrestee ethnicity known            all five            1267                    0.205              0.329                0.293               0.292
+                                        of which one offender record, one arrestee              Murder              17                    0.235              0.267                0.263               0.265
+                                        of which one offender record, one arrestee Rape/sexual assault              24                    0.250              0.395                0.399               0.376
+                                        of which one offender record, one arrestee             Robbery              35                    0.257              0.304                0.242               0.234
+                                        of which one offender record, one arrestee  Aggravated assault             253                    0.217              0.360                0.347               0.335
+                                        of which one offender record, one arrestee      Simple assault             821                    0.197              0.326                0.283               0.286
+                                        of which one offender record, one arrestee            all five            1150                    0.205              0.333                0.298               0.297
+                                                      of which recorded race White              Murder               5                    0.400              0.431                0.436               0.445
+                                                      of which recorded race White Rape/sexual assault              10                    0.200              0.492                0.474               0.403
+                                                      of which recorded race White             Robbery              15                    0.633              0.699                0.748               0.678
+                                                      of which recorded race White  Aggravated assault             146                    0.342              0.541                0.525               0.515
+                                                      of which recorded race White      Simple assault             629                    0.235              0.401                0.338               0.346
+                                                      of which recorded race White            all five             805                    0.263              0.434                0.382               0.384
+          single recorded offender and single arrestee: offender recorded Hispanic              Murder             405                    0.973                NaN                  NaN                 NaN
+      single recorded offender and single arrestee: offender recorded non-Hispanic              Murder             805                    0.006                NaN                  NaN                 NaN
+          single recorded offender and single arrestee: offender recorded NH white              Murder             277                    0.018                NaN                  NaN                 NaN
+          single recorded offender and single arrestee: offender recorded Hispanic Rape/sexual assault            1523                    0.968                NaN                  NaN                 NaN
+      single recorded offender and single arrestee: offender recorded non-Hispanic Rape/sexual assault            1828                    0.002                NaN                  NaN                 NaN
+          single recorded offender and single arrestee: offender recorded NH white Rape/sexual assault             941                    0.003                NaN                  NaN                 NaN
+          single recorded offender and single arrestee: offender recorded Hispanic             Robbery            1846                    0.962                NaN                  NaN                 NaN
+      single recorded offender and single arrestee: offender recorded non-Hispanic             Robbery            3541                    0.001                NaN                  NaN                 NaN
+          single recorded offender and single arrestee: offender recorded NH white             Robbery             928                    0.001                NaN                  NaN                 NaN
+          single recorded offender and single arrestee: offender recorded Hispanic  Aggravated assault           17966                    0.957                NaN                  NaN                 NaN
+      single recorded offender and single arrestee: offender recorded non-Hispanic  Aggravated assault           30022                    0.002                NaN                  NaN                 NaN
+          single recorded offender and single arrestee: offender recorded NH white  Aggravated assault           12426                    0.004                NaN                  NaN                 NaN
+          single recorded offender and single arrestee: offender recorded Hispanic      Simple assault           61002                    0.958                NaN                  NaN                 NaN
+      single recorded offender and single arrestee: offender recorded non-Hispanic      Simple assault           94514                    0.002                NaN                  NaN                 NaN
+          single recorded offender and single arrestee: offender recorded NH white      Simple assault           47061                    0.003                NaN                  NaN                 NaN
+          single recorded offender and single arrestee: offender recorded Hispanic            all five           82742                    0.958                NaN                  NaN                 NaN
+      single recorded offender and single arrestee: offender recorded non-Hispanic            all five          130710                    0.002                NaN                  NaN                 NaN
+          single recorded offender and single arrestee: offender recorded NH white            all five           61633                    0.003                NaN                  NaN                 NaN
+
+-- Clearance by victim ethnicity, same agencies --
+            offence victim  victimisations  offender_identified  offender_ethnicity_recorded  arrest  arrest_or_exceptional  firearm
+ Aggravated assault     vH           67315                0.863                        0.766   0.319                  0.348    0.475
+ Aggravated assault   vNHB           52571                0.912                        0.809   0.308                  0.360    0.524
+ Aggravated assault   vNHW           39548                0.902                        0.812   0.379                  0.420    0.387
+             Murder     vH            1405                0.890                        0.772   0.455                  0.485    0.774
+             Murder   vNHB            1364                0.911                        0.756   0.493                  0.521    0.876
+             Murder   vNHW             732                0.918                        0.854   0.530                  0.611    0.637
+Rape/sexual assault     vH           13696                0.948                        0.851   0.111                  0.153    0.014
+Rape/sexual assault   vNHB            6259                0.956                        0.843   0.097                  0.151    0.028
+Rape/sexual assault   vNHW           13094                0.939                        0.816   0.097                  0.155    0.010
+            Robbery     vH           23365                0.871                        0.706   0.182                  0.195    0.579
+            Robbery   vNHB           10938                0.890                        0.738   0.165                  0.187    0.544
+            Robbery   vNHW           10556                0.848                        0.684   0.230                  0.246    0.450
+     Simple assault     vH          206148                0.964                        0.919   0.332                  0.412    0.000
+     Simple assault   vNHB          129032                0.976                        0.934   0.300                  0.426    0.000
+     Simple assault   vNHW          158545                0.962                        0.907   0.367                  0.457    0.000

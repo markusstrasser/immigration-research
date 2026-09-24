@@ -1,0 +1,23 @@
+[gate] NIBRS central replicates the lane (murder 2.303, robbery 4.219): PASS - 2.3034, 4.2193
+wrote derived/ratio_adjustments.csv: 690 rows, arms ['1 imputation of unknown offenders', '1 arrestee validation of the imputation', '1 imputation of unknown offenders (SHR national)', '2 NCVS perceived offender', '2 multiple-offender rule', '3 reporting to police', '5 White subtraction', 'booking discordance', 'counter-item: census coverage', 'net']
+    offence                                                                          method  hispanic_div_nh_white  hispanic_div_all  change_vs_central  change_all_vs_central
+All violent NCVS table 13 rule: Hispanic only if every offender Hispanic (victim-cost lane)                 +0.933            +0.795              0.000                  0.000
+All violent               mixed groups attributed Hispanic at the NIBRS mean fraction 0.498                  1.021            +0.871             +0.094                 +0.094
+All violent         NIBRS mean fraction 0.498, only the excess matched by the Other deficit                  1.010            +0.861             +0.082                 +0.082
+All violent               Select coding: groups with any Hispanic offender counted Hispanic                  1.110            +0.946             +0.190                 +0.190
+     Murder                         NET allocation band, low (Arm 1 methods and validation)                  2.121            +0.958             -0.079                 -0.043
+     Murder                                                       NET allocation band, high                  2.418             1.020             +0.050                 +0.018
+     Murder                         NET central: lane allocation x reporting (Arms 1, 3, 5)                  2.303             1.002              0.000                  0.000
+     Murder                                                             NET low x reporting                  2.121            +0.958             -0.079                 -0.043
+     Murder                                                            NET high x reporting                  2.418             1.020             +0.050                 +0.018
+     Murder                                            NET central x reporting x census PES                  2.153            +0.949             -0.065                 -0.052
+     Murder                                                NET low x reporting x census PES                  1.983            +0.908             -0.139                 -0.093
+     Murder                                               NET high x reporting x census PES                  2.260            +0.967             -0.019                 -0.035
+    Robbery                         NET allocation band, low (Arm 1 methods and validation)                  3.710            +0.870             -0.121                 -0.052
+    Robbery                                                       NET allocation band, high                  4.360            +0.935             +0.033                 +0.020
+    Robbery                         NET central: lane allocation x reporting (Arms 1, 3, 5)                  4.151            +0.964             -0.016                 +0.051
+    Robbery                                                             NET low x reporting                  3.650            +0.914             -0.135                 -0.003
+    Robbery                                                            NET high x reporting                  4.289            +0.983             +0.017                 +0.072
+    Robbery                                            NET central x reporting x census PES                  3.880            +0.914             -0.080                 -0.004
+    Robbery                                                NET low x reporting x census PES                  3.412            +0.867             -0.191                 -0.055
+    Robbery                                               NET high x reporting x census PES                  4.010            +0.932             -0.050                 +0.016

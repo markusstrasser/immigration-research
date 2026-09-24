@@ -1,0 +1,36 @@
+model,stratum,n,actual_H,predicted_H,log_loss
+victim group only,all known,22936,0.21002,0.21003,0.67183
+victim group only,circumstance undetermined,7856,0.20481,0.20272,0.63733
+victim group only,weapon unknown,1450,0.22483,0.22555,0.80035
+victim group only,victim Hispanic,4957,0.70224,0.70219,0.84853
+victim group only,victim NH white,6380,0.10533,0.10539,0.89029
+victim group only,California,1866,0.47481,0.37314,0.88090
+victim group only,Texas,3824,0.35591,0.31179,0.77437
+chain state>weapon>victim age-sex>agency,all known,22936,0.21002,0.21186,0.64600
+chain state>weapon>victim age-sex>agency,circumstance undetermined,7856,0.20481,0.20285,0.60888
+chain state>weapon>victim age-sex>agency,weapon unknown,1450,0.22483,0.23008,0.78439
+chain state>weapon>victim age-sex>agency,victim Hispanic,4957,0.70224,0.70514,0.83289
+chain state>weapon>victim age-sex>agency,victim NH white,6380,0.10533,0.10797,0.85151
+chain state>weapon>victim age-sex>agency,California,1866,0.47481,0.47530,0.82785
+chain state>weapon>victim age-sex>agency,Texas,3824,0.35591,0.35535,0.76203
+logit all covariates,all known,22936,0.21002,0.21092,0.61538
+logit all covariates,circumstance undetermined,7856,0.20481,0.20503,0.58045
+logit all covariates,weapon unknown,1450,0.22483,0.22719,0.75215
+logit all covariates,victim Hispanic,4957,0.70224,0.70113,0.81079
+logit all covariates,victim NH white,6380,0.10533,0.10919,0.79278
+logit all covariates,California,1866,0.47481,0.47264,0.81271
+logit all covariates,Texas,3824,0.35591,0.35881,0.73344
+logit without circumstance,all known,22936,0.21002,0.21096,0.61774
+logit without circumstance,circumstance undetermined,7856,0.20481,0.20293,0.58025
+logit without circumstance,weapon unknown,1450,0.22483,0.22719,0.75455
+logit without circumstance,victim Hispanic,4957,0.70224,0.70120,0.81634
+logit without circumstance,victim NH white,6380,0.10533,0.10925,0.79820
+logit without circumstance,California,1866,0.47481,0.47254,0.81980
+logit without circumstance,Texas,3824,0.35591,0.35882,0.73416
+"logit without circumstance, victim-group interactions",all known,22936,0.21002,0.21197,0.61770
+"logit without circumstance, victim-group interactions",circumstance undetermined,7856,0.20481,0.20529,0.57783
+"logit without circumstance, victim-group interactions",weapon unknown,1450,0.22483,0.23067,0.76869
+"logit without circumstance, victim-group interactions",victim Hispanic,4957,0.70224,0.70520,0.81329
+"logit without circumstance, victim-group interactions",victim NH white,6380,0.10533,0.11022,0.80207
+"logit without circumstance, victim-group interactions",California,1866,0.47481,0.47243,0.83049
+"logit without circumstance, victim-group interactions",Texas,3824,0.35591,0.35987,0.73191

@@ -1,0 +1,8 @@
+universe,single_pairs,offender_segment_H,arrestee_segment_H,factor
+"all ages, all five offences",213452,0.387638,0.372693,1.040100
+"offender 18+, all five",189729,0.384343,0.369179,1.041074
+"all ages, murder",1210,0.334711,0.329752,1.015038
+"all ages, robbery",5387,0.342677,0.330239,1.037662
+"all ages, aggravated assault",47988,0.374385,0.359632,1.041024
+Texas only,189898,0.399246,0.382458,1.043895
+Arizona only,23554,0.294048,0.293963,1.000289

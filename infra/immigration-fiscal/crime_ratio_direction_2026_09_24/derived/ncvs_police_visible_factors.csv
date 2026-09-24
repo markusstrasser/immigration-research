@@ -1,0 +1,251 @@
+years,offence,victim,stat,estimate,se
+2012-2024,Rape/sexual assault,H,p_all,0.50769,0.05118
+2012-2024,Rape/sexual assault,H,p_reported,0.67779,0.06296
+2012-2024,Rape/sexual assault,H,factor,1.33506,0.15551
+2012-2024,Rape/sexual assault,H,rep_H,0.36757,0.06156
+2012-2024,Rape/sexual assault,H,rep_NHW,0.22670,0.06649
+2012-2024,Rape/sexual assault,NHW,p_all,0.14294,0.02278
+2012-2024,Rape/sexual assault,NHW,p_reported,0.19281,0.05640
+2012-2024,Rape/sexual assault,NHW,factor,1.34887,0.25589
+2012-2024,Rape/sexual assault,NHW,rep_H,0.43278,0.08955
+2012-2024,Rape/sexual assault,NHW,rep_NHW,0.26693,0.03792
+2012-2024,Rape/sexual assault,NHB,p_all,0.09419,0.03771
+2012-2024,Rape/sexual assault,NHB,p_reported,0.05410,0.05358
+2012-2024,Rape/sexual assault,NHB,factor,0.57442,0.52263
+2012-2024,Rape/sexual assault,NHB,rep_H,0.17520,0.14590
+2012-2024,Rape/sexual assault,NHB,rep_NHW,0.18300,0.09917
+2012-2024,Rape/sexual assault,NHO,p_all,0.13923,0.04881
+2012-2024,Rape/sexual assault,NHO,p_reported,0.05865,0.05547
+2012-2024,Rape/sexual assault,NHO,factor,0.42122,0.38142
+2012-2024,Rape/sexual assault,NHO,rep_H,0.10673,0.09378
+2012-2024,Rape/sexual assault,NHO,rep_NHW,0.31736,0.11848
+2012-2024,Rape/sexual assault,all,p_all,0.19421,0.01860
+2012-2024,Rape/sexual assault,all,p_reported,0.23434,0.03976
+2012-2024,Rape/sexual assault,all,factor,1.20660,0.16057
+2012-2024,Rape/sexual assault,all,rep_H,0.36767,0.05179
+2012-2024,Rape/sexual assault,all,rep_NHW,0.26634,0.03454
+2012-2024,Robbery,H,p_all,0.42551,0.04179
+2012-2024,Robbery,H,p_reported,0.40938,0.04610
+2012-2024,Robbery,H,factor,0.96209,0.08481
+2012-2024,Robbery,H,rep_H,0.55764,0.06420
+2012-2024,Robbery,H,rep_NHW,0.44797,0.12277
+2012-2024,Robbery,NHW,p_all,0.13549,0.02210
+2012-2024,Robbery,NHW,p_reported,0.12990,0.03080
+2012-2024,Robbery,NHW,factor,0.95878,0.14535
+2012-2024,Robbery,NHW,rep_H,0.55831,0.09333
+2012-2024,Robbery,NHW,rep_NHW,0.58696,0.04041
+2012-2024,Robbery,NHB,p_all,0.08710,0.02208
+2012-2024,Robbery,NHB,p_reported,0.09587,0.02831
+2012-2024,Robbery,NHB,factor,1.10065,0.16722
+2012-2024,Robbery,NHB,rep_H,0.73948,0.11141
+2012-2024,Robbery,NHB,rep_NHW,0.59716,0.16538
+2012-2024,Robbery,NHO,p_all,0.11360,0.02814
+2012-2024,Robbery,NHO,p_reported,0.08631,0.02890
+2012-2024,Robbery,NHO,factor,0.75980,0.21291
+2012-2024,Robbery,NHO,rep_H,0.41856,0.11687
+2012-2024,Robbery,NHO,rep_NHW,0.37799,0.12752
+2012-2024,Robbery,all,p_all,0.18795,0.01530
+2012-2024,Robbery,all,p_reported,0.17877,0.02050
+2012-2024,Robbery,all,factor,0.95116,0.07372
+2012-2024,Robbery,all,rep_H,0.56646,0.05075
+2012-2024,Robbery,all,rep_NHW,0.55727,0.03919
+2012-2024,Aggravated assault,H,p_all,0.46839,0.03297
+2012-2024,Aggravated assault,H,p_reported,0.50256,0.04264
+2012-2024,Aggravated assault,H,factor,1.07297,0.06061
+2012-2024,Aggravated assault,H,rep_H,0.67539,0.05183
+2012-2024,Aggravated assault,H,rep_NHW,0.64936,0.04233
+2012-2024,Aggravated assault,NHW,p_all,0.14965,0.01481
+2012-2024,Aggravated assault,NHW,p_reported,0.14215,0.01853
+2012-2024,Aggravated assault,NHW,factor,0.94987,0.09384
+2012-2024,Aggravated assault,NHW,rep_H,0.54935,0.05840
+2012-2024,Aggravated assault,NHW,rep_NHW,0.58024,0.02387
+2012-2024,Aggravated assault,NHB,p_all,0.09909,0.02110
+2012-2024,Aggravated assault,NHB,p_reported,0.08110,0.02280
+2012-2024,Aggravated assault,NHB,factor,0.81846,0.16739
+2012-2024,Aggravated assault,NHB,rep_H,0.55154,0.11457
+2012-2024,Aggravated assault,NHB,rep_NHW,0.51990,0.11233
+2012-2024,Aggravated assault,NHO,p_all,0.10873,0.02549
+2012-2024,Aggravated assault,NHO,p_reported,0.10924,0.04034
+2012-2024,Aggravated assault,NHO,factor,1.00469,0.26761
+2012-2024,Aggravated assault,NHO,rep_H,0.42271,0.11245
+2012-2024,Aggravated assault,NHO,rep_NHW,0.37615,0.07356
+2012-2024,Aggravated assault,all,p_all,0.19453,0.01243
+2012-2024,Aggravated assault,all,p_reported,0.19691,0.01692
+2012-2024,Aggravated assault,all,factor,1.01226,0.06091
+2012-2024,Aggravated assault,all,rep_H,0.59678,0.04010
+2012-2024,Aggravated assault,all,rep_NHW,0.57067,0.02102
+2012-2024,Simple assault,H,p_all,0.41358,0.02324
+2012-2024,Simple assault,H,p_reported,0.41575,0.03664
+2012-2024,Simple assault,H,factor,1.00524,0.06799
+2012-2024,Simple assault,H,rep_H,0.41670,0.03087
+2012-2024,Simple assault,H,rep_NHW,0.37921,0.03933
+2012-2024,Simple assault,NHW,p_all,0.11064,0.00857
+2012-2024,Simple assault,NHW,p_reported,0.10829,0.01005
+2012-2024,Simple assault,NHW,factor,0.97871,0.08479
+2012-2024,Simple assault,NHW,rep_H,0.39613,0.03713
+2012-2024,Simple assault,NHW,rep_NHW,0.41362,0.01340
+2012-2024,Simple assault,NHB,p_all,0.09767,0.01846
+2012-2024,Simple assault,NHB,p_reported,0.13857,0.03773
+2012-2024,Simple assault,NHB,factor,1.41871,0.19066
+2012-2024,Simple assault,NHB,rep_H,0.60583,0.09016
+2012-2024,Simple assault,NHB,rep_NHW,0.41359,0.06551
+2012-2024,Simple assault,NHO,p_all,0.11630,0.03090
+2012-2024,Simple assault,NHO,p_reported,0.15619,0.05787
+2012-2024,Simple assault,NHO,factor,1.34307,0.29244
+2012-2024,Simple assault,NHO,rep_H,0.53893,0.12305
+2012-2024,Simple assault,NHO,rep_NHW,0.36111,0.05859
+2012-2024,Simple assault,all,p_all,0.15400,0.00798
+2012-2024,Simple assault,all,p_reported,0.16193,0.01123
+2012-2024,Simple assault,all,factor,1.05146,0.05500
+2012-2024,Simple assault,all,rep_H,0.42958,0.02463
+2012-2024,Simple assault,all,rep_NHW,0.40620,0.01274
+2012-2024,All violent,H,p_all,0.43302,0.01677
+2012-2024,All violent,H,p_reported,0.44876,0.02445
+2012-2024,All violent,H,factor,1.03636,0.04300
+2012-2024,All violent,H,rep_H,0.48960,0.02492
+2012-2024,All violent,H,rep_NHW,0.42896,0.03199
+2012-2024,All violent,NHW,p_all,0.12242,0.00690
+2012-2024,All violent,NHW,p_reported,0.12331,0.00891
+2012-2024,All violent,NHW,factor,1.00732,0.06041
+2012-2024,All violent,NHW,rep_H,0.44986,0.02945
+2012-2024,All violent,NHW,rep_NHW,0.44653,0.01139
+2012-2024,All violent,NHB,p_all,0.09617,0.01220
+2012-2024,All violent,NHB,p_reported,0.11154,0.02158
+2012-2024,All violent,NHB,factor,1.15979,0.12221
+2012-2024,All violent,NHB,rep_H,0.58845,0.06572
+2012-2024,All violent,NHB,rep_NHW,0.43938,0.05257
+2012-2024,All violent,NHO,p_all,0.11698,0.02083
+2012-2024,All violent,NHO,p_reported,0.13323,0.03843
+2012-2024,All violent,NHO,factor,1.13898,0.20199
+2012-2024,All violent,NHO,rep_H,0.46230,0.08754
+2012-2024,All violent,NHO,rep_NHW,0.36090,0.04313
+2012-2024,All violent,all,p_all,0.16814,0.00600
+2012-2024,All violent,all,p_reported,0.17629,0.00823
+2012-2024,All violent,all,factor,1.04846,0.03638
+2012-2024,All violent,all,rep_H,0.47720,0.01796
+2012-2024,All violent,all,rep_NHW,0.43779,0.01060
+2022-2024,Rape/sexual assault,H,p_all,0.53951,0.08572
+2022-2024,Rape/sexual assault,H,p_reported,0.81396,0.09572
+2022-2024,Rape/sexual assault,H,factor,1.50871,0.25704
+2022-2024,Rape/sexual assault,H,rep_H,0.42972,0.10380
+2022-2024,Rape/sexual assault,H,rep_NHW,0.23046,0.12192
+2022-2024,Rape/sexual assault,NHW,p_all,0.12718,0.03218
+2022-2024,Rape/sexual assault,NHW,p_reported,0.16323,0.07291
+2022-2024,Rape/sexual assault,NHW,factor,1.28345,0.42890
+2022-2024,Rape/sexual assault,NHW,rep_H,0.45487,0.12865
+2022-2024,Rape/sexual assault,NHW,rep_NHW,0.36030,0.10140
+2022-2024,Rape/sexual assault,NHB,p_all,0.17640,0.08778
+2022-2024,Rape/sexual assault,NHB,p_reported,0.12551,0.16565
+2022-2024,Rape/sexual assault,NHB,factor,0.71153,0.94447
+2022-2024,Rape/sexual assault,NHB,rep_H,0.24234,0.22081
+2022-2024,Rape/sexual assault,NHB,rep_NHW,0.28633,0.17717
+2022-2024,Rape/sexual assault,NHO,p_all,0.12745,0.10510
+2022-2024,Rape/sexual assault,NHO,p_reported,0.00000,0.00000
+2022-2024,Rape/sexual assault,NHO,factor,0.00000,0.00000
+2022-2024,Rape/sexual assault,NHO,rep_H,0.00000,0.00000
+2022-2024,Rape/sexual assault,NHO,rep_NHW,0.60835,0.22452
+2022-2024,Rape/sexual assault,all,p_all,0.20850,0.02981
+2022-2024,Rape/sexual assault,all,p_reported,0.23655,0.06366
+2022-2024,Rape/sexual assault,all,factor,1.13452,0.25543
+2022-2024,Rape/sexual assault,all,rep_H,0.38784,0.07278
+2022-2024,Rape/sexual assault,all,rep_NHW,0.37179,0.08313
+2022-2024,Robbery,H,p_all,0.33115,0.09668
+2022-2024,Robbery,H,p_reported,0.35262,0.12238
+2022-2024,Robbery,H,factor,1.06483,0.26240
+2022-2024,Robbery,H,rep_H,0.63988,0.13930
+2022-2024,Robbery,H,rep_NHW,0.38969,0.24450
+2022-2024,Robbery,NHW,p_all,0.20418,0.06068
+2022-2024,Robbery,NHW,p_reported,0.19208,0.09200
+2022-2024,Robbery,NHW,factor,0.94073,0.25308
+2022-2024,Robbery,NHW,rep_H,0.58350,0.17332
+2022-2024,Robbery,NHW,rep_NHW,0.62188,0.07633
+2022-2024,Robbery,NHB,p_all,0.10728,0.05528
+2022-2024,Robbery,NHB,p_reported,0.18063,0.08121
+2022-2024,Robbery,NHB,factor,1.68371,0.34246
+2022-2024,Robbery,NHB,rep_H,1.00000,0.00000
+2022-2024,Robbery,NHB,rep_NHW,0.18363,0.21224
+2022-2024,Robbery,NHO,p_all,0.11859,0.05695
+2022-2024,Robbery,NHO,p_reported,0.10540,0.07318
+2022-2024,Robbery,NHO,factor,0.88873,0.41017
+2022-2024,Robbery,NHO,rep_H,0.55506,0.23909
+2022-2024,Robbery,NHO,rep_NHW,0.16038,0.16784
+2022-2024,Robbery,all,p_all,0.20964,0.04014
+2022-2024,Robbery,all,p_reported,0.22003,0.05891
+2022-2024,Robbery,all,factor,1.04957,0.13931
+2022-2024,Robbery,all,rep_H,0.64163,0.09164
+2022-2024,Robbery,all,rep_NHW,0.54817,0.07737
+2022-2024,Aggravated assault,H,p_all,0.52839,0.07705
+2022-2024,Aggravated assault,H,p_reported,0.61788,0.09177
+2022-2024,Aggravated assault,H,factor,1.16936,0.08002
+2022-2024,Aggravated assault,H,rep_H,0.77924,0.07685
+2022-2024,Aggravated assault,H,rep_NHW,0.65366,0.09242
+2022-2024,Aggravated assault,NHW,p_all,0.13002,0.02614
+2022-2024,Aggravated assault,NHW,p_reported,0.13046,0.02714
+2022-2024,Aggravated assault,NHW,factor,1.00335,0.18369
+2022-2024,Aggravated assault,NHW,rep_H,0.56651,0.10985
+2022-2024,Aggravated assault,NHW,rep_NHW,0.55308,0.05396
+2022-2024,Aggravated assault,NHB,p_all,0.07004,0.03631
+2022-2024,Aggravated assault,NHB,p_reported,0.08843,0.05173
+2022-2024,Aggravated assault,NHB,factor,1.26260,0.21638
+2022-2024,Aggravated assault,NHB,rep_H,0.89158,0.11614
+2022-2024,Aggravated assault,NHB,rep_NHW,0.45309,0.14929
+2022-2024,Aggravated assault,NHO,p_all,0.14439,0.05944
+2022-2024,Aggravated assault,NHO,p_reported,0.18311,0.08967
+2022-2024,Aggravated assault,NHO,factor,1.26818,0.48095
+2022-2024,Aggravated assault,NHO,rep_H,0.54477,0.19572
+2022-2024,Aggravated assault,NHO,rep_NHW,0.31193,0.14733
+2022-2024,Aggravated assault,all,p_all,0.18476,0.02566
+2022-2024,Aggravated assault,all,p_reported,0.21185,0.03578
+2022-2024,Aggravated assault,all,factor,1.14662,0.10878
+2022-2024,Aggravated assault,all,rep_H,0.67670,0.07010
+2022-2024,Aggravated assault,all,rep_NHW,0.53934,0.04648
+2022-2024,Simple assault,H,p_all,0.32434,0.04748
+2022-2024,Simple assault,H,p_reported,0.25532,0.06150
+2022-2024,Simple assault,H,factor,0.78719,0.15102
+2022-2024,Simple assault,H,rep_H,0.33592,0.05416
+2022-2024,Simple assault,H,rep_NHW,0.42745,0.08676
+2022-2024,Simple assault,NHW,p_all,0.11220,0.01514
+2022-2024,Simple assault,NHW,p_reported,0.11834,0.01927
+2022-2024,Simple assault,NHW,factor,1.05472,0.16380
+2022-2024,Simple assault,NHW,rep_H,0.41718,0.06614
+2022-2024,Simple assault,NHW,rep_NHW,0.40495,0.03084
+2022-2024,Simple assault,NHB,p_all,0.13444,0.06684
+2022-2024,Simple assault,NHB,p_reported,0.24496,0.12980
+2022-2024,Simple assault,NHB,factor,1.82205,0.31912
+2022-2024,Simple assault,NHB,rep_H,0.81016,0.16147
+2022-2024,Simple assault,NHB,rep_NHW,0.47523,0.10405
+2022-2024,Simple assault,NHO,p_all,0.18339,0.07406
+2022-2024,Simple assault,NHO,p_reported,0.31399,0.15457
+2022-2024,Simple assault,NHO,factor,1.71210,0.46788
+2022-2024,Simple assault,NHO,rep_H,0.67189,0.18219
+2022-2024,Simple assault,NHO,rep_NHW,0.35818,0.13814
+2022-2024,Simple assault,all,p_all,0.16023,0.01631
+2022-2024,Simple assault,all,p_reported,0.17922,0.02811
+2022-2024,Simple assault,all,factor,1.11851,0.12602
+2022-2024,Simple assault,all,rep_H,0.45412,0.05441
+2022-2024,Simple assault,all,rep_NHW,0.40550,0.02788
+2022-2024,All violent,H,p_all,0.38089,0.03862
+2022-2024,All violent,H,p_reported,0.39281,0.06000
+2022-2024,All violent,H,factor,1.03131,0.10855
+2022-2024,All violent,H,rep_H,0.50253,0.05444
+2022-2024,All violent,H,rep_NHW,0.44696,0.06999
+2022-2024,All violent,NHW,p_all,0.12640,0.01325
+2022-2024,All violent,NHW,p_reported,0.13418,0.01940
+2022-2024,All violent,NHW,factor,1.06155,0.11661
+2022-2024,All violent,NHW,rep_H,0.48218,0.05605
+2022-2024,All violent,NHW,rep_NHW,0.45610,0.02430
+2022-2024,All violent,NHB,p_all,0.11807,0.03712
+2022-2024,All violent,NHB,p_reported,0.17448,0.06609
+2022-2024,All violent,NHB,factor,1.47770,0.19026
+2022-2024,All violent,NHB,rep_H,0.77362,0.11067
+2022-2024,All violent,NHB,rep_NHW,0.42307,0.07360
+2022-2024,All violent,NHO,p_all,0.16675,0.05229
+2022-2024,All violent,NHO,p_reported,0.24163,0.10566
+2022-2024,All violent,NHO,factor,1.44903,0.32773
+2022-2024,All violent,NHO,rep_H,0.60418,0.14984
+2022-2024,All violent,NHO,rep_NHW,0.36602,0.10424
+2022-2024,All violent,all,p_all,0.17494,0.01159
+2022-2024,All violent,all,p_reported,0.19768,0.02003
+2022-2024,All violent,all,factor,1.13002,0.07855
+2022-2024,All violent,all,rep_H,0.52575,0.03915
+2022-2024,All violent,all,rep_NHW,0.44616,0.02139

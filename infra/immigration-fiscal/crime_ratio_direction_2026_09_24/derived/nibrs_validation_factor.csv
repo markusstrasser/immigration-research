@@ -1,0 +1,4 @@
+sample,victimisations,arrestee_H,central_imputed_H,factor
+all agencies,1267,0.2048,0.3286,0.6233
+without booking-discordant agencies,1093,0.2127,0.3165,0.6721
+without booking-discordant agencies and Lake Havasu City,805,0.2801,0.3225,0.8686

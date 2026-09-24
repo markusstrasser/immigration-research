@@ -6,6 +6,8 @@
  *             (a re-priced school allocation that responds with the school step only)
  *   benefits  admin_benefit_keys_2026_09_24          package_central (preferred-key target shifts)
  *   taxes     external_benchmarks_2026_09_24         all_but_medicaid|2022 (CBO) + vs_adopted_raw_keys (OTA)
+ *   crime     crime_ratio_direction_2026_09_24        booking factor 1.0401 on the justice "use" key
+ *             (derived/dollar_effects.csv; its national transfer from TX+AZ is an inference)
  *
  * SNAP, WIC (other_state_welfare) and cash assistance (family_and_general_assistance) are re-keyed by
  * both the benefits lane (administrative records by ethnicity) and the CBO bundle (income gradient,
@@ -101,6 +103,11 @@ const benefits = readJson("admin_benefit_keys_2026_09_24/derived/line_deltas.jso
 const cbo = readJson("external_benchmarks_2026_09_24/derived/cbo_deltas.json")["all_but_medicaid|2022"];
 const ota = readJson("external_benchmarks_2026_09_24/derived/ota_deltas.json").vs_adopted_raw_keys;
 const OVERLAP = ["snap", "other_state_welfare", "family_and_general_assistance"];
+const bookingRow = read("crime_ratio_direction_2026_09_24/derived/dollar_effects.csv").trim().split("\n")
+  .find((l) => l.includes('"RR x 1.0401 (all ages, all five offences, TX+AZ NIBRS)"'));
+if (!bookingRow) throw new Error("booking row not found in dollar_effects.csv");
+const booking = Number(bookingRow.split(",").slice(-2)[0]);
+if (!(booking > 0.8 && booking < 0.95)) throw new Error("unexpected booking delta " + booking);
 
 const edits = {
   schools: (m) => addReprice(m, schoolDelta),
@@ -113,6 +120,7 @@ const edits = {
     }
   },
   ota: (m) => { for (const [id, byKey] of Object.entries(ota.spending)) for (const [k, by] of Object.entries(byKey)) shiftKey(m, id, k, by); },
+  crime: (m) => shiftKey(m, "public_order_safety", "use", { personal: booking, shared: booking }),
 };
 function build(steps) {
   const m = clone(model);
@@ -150,6 +158,8 @@ const lanePublished = {
   ota: (() => { const r = csvRow("external_benchmarks_2026_09_24/derived/ota_main_case.csv", null,
     (x) => x.method === '"vs_adopted_raw_keys"' && x.profile === "cbo_category_lag_non_school_full")[0];
     return [Number(r.change_low_bn), Number(r.change_high_bn)]; })(),
+  // The crime lane states the justice key passes 1:1 into both band ends (response 1.0).
+  crime: [booking, booking],
 };
 
 console.log("[gates]");
@@ -160,7 +170,7 @@ const rows = [["spec", "cost_low_bn", "cost_high_bn", "change_low_bn", "change_h
 const record = (spec, b) => { rows.push([spec, b[0].toFixed(4), b[1].toFixed(4), (b[0] - base[0]).toFixed(4), (b[1] - base[1]).toFixed(4)]); return b; };
 record("adopted", base);
 
-for (const lane of ["schools", "benefits", "cbo", "ota"]) {
+for (const lane of ["schools", "benefits", "cbo", "ota", "crime"]) {
   const b = record(`${lane}_alone`, band(build([edits[lane]])));
   const got = [b[0] - base[0], b[1] - base[1]];
   const want = lanePublished[lane];
@@ -172,6 +182,8 @@ const combined = record("combined_benefits_on_overlap", band(build([
 const combinedAlt = record("combined_cbo_also_on_overlap", band(build([
   edits.schools, edits.benefits, (m) => edits.cbo(m), edits.ota])));
 const taxesOnly = record("cbo_without_overlap_plus_ota", band(build([(m) => edits.cbo(m, OVERLAP), edits.ota])));
+const four = record("combined_four_with_crime_booking", band(build([
+  edits.schools, edits.benefits, (m) => edits.cbo(m, OVERLAP), edits.ota, edits.crime])));
 
 fs.mkdirSync(path.join(HERE, "derived"), { recursive: true });
 fs.writeFileSync(path.join(HERE, "derived", "combined_bands.csv"), rows.map((r) => r.join(",")).join("\n") + "\n");
