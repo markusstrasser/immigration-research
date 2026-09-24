@@ -1,0 +1,7 @@
+method,profile,cost_low_bn,cost_high_bn,change_low_bn,change_high_bn
+"vs_adopted_raw_keys",cbo_category_lag_non_school_fixed,154.3268,208.2499,-4.5542,-4.3135
+"vs_audit_package_ssn_rule",cbo_category_lag_non_school_fixed,158.5173,212.2216,-0.3638,-0.3417
+"vs_adopted_raw_keys",cbo_category_lag_non_school_full,198.6528,245.3265,-4.5542,-4.3135
+"vs_audit_package_ssn_rule",cbo_category_lag_non_school_full,202.8432,249.2982,-0.3638,-0.3417
+"vs_adopted_raw_keys",proportional_reference,303.3447,336.6580,-4.5542,-4.3135
+"vs_audit_package_ssn_rule",proportional_reference,307.5351,340.6297,-0.3638,-0.3417

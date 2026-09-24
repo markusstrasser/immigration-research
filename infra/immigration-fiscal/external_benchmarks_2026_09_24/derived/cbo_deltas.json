@@ -1,0 +1,1382 @@
+{
+ "individual_inc_tax=individual_inc_tax_gross|2022": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -13.17261106025164,
+    "shared": -14.052573918014183
+   }
+  },
+  "spending": {}
+ },
+ "individual_inc_tax|2022": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -38.90398948822321,
+    "shared": -39.51999052107588
+   }
+  },
+  "spending": {}
+ },
+ "individual_inc_tax=individual_inc_tax_gross_q4|2022": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -12.043965129941272,
+    "shared": -12.762906846508367
+   }
+  },
+  "spending": {}
+ },
+ "individual_inc_tax=individual_inc_tax_gross|2019": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -12.093688280950259,
+    "shared": -12.912162288538571
+   }
+  },
+  "spending": {}
+ },
+ "individual_inc_tax|2019": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -45.493202960816404,
+    "shared": -45.94889191550371
+   }
+  },
+  "spending": {}
+ },
+ "individual_inc_tax=individual_inc_tax_gross_q4|2019": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -10.635882064041255,
+    "shared": -11.243804125066232
+   }
+  },
+  "spending": {}
+ },
+ "individual_inc_tax=individual_inc_tax_gross|2018": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -13.647955606596685,
+    "shared": -14.55528709453744
+   }
+  },
+  "spending": {}
+ },
+ "individual_inc_tax|2018": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -49.08483032351368,
+    "shared": -49.6197557642891
+   }
+  },
+  "spending": {}
+ },
+ "individual_inc_tax=individual_inc_tax_gross_q4|2018": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -12.04496650229847,
+    "shared": -12.724804548595968
+   }
+  },
+  "spending": {}
+ },
+ "payroll_taxes|2022": {
+  "receipts": {
+   "employee_oasdi": {
+    "personal": 0.10517185097776667,
+    "shared": 0.10274494186063905
+   },
+   "employee_hi": {
+    "personal": -0.054592887721876586,
+    "shared": -0.05866699515947303
+   },
+   "self_employment_oasdi_hi": {
+    "personal": 0.024158003960362995,
+    "shared": 0.01870464072256338
+   },
+   "employer_oasdi": {
+    "personal": 0.1060800451696048,
+    "shared": 0.10363217887863453
+   },
+   "employer_hi": {
+    "personal": -0.04856114070766989,
+    "shared": -0.05218511651827727
+   }
+  },
+  "spending": {}
+ },
+ "payroll_taxes|2019": {
+  "receipts": {
+   "employee_oasdi": {
+    "personal": 0.5068895544052776,
+    "shared": 0.5108994989702114
+   },
+   "employee_hi": {
+    "personal": 0.07720388162602745,
+    "shared": 0.07524441061203162
+   },
+   "self_employment_oasdi_hi": {
+    "personal": 0.11600583250117377,
+    "shared": 0.11589983483883064
+   },
+   "employer_oasdi": {
+    "personal": 0.51126671564124,
+    "shared": 0.5153112874218175
+   },
+   "employer_hi": {
+    "personal": 0.0686739374901661,
+    "shared": 0.06693096049089076
+   }
+  },
+  "spending": {}
+ },
+ "payroll_taxes|2018": {
+  "receipts": {
+   "employee_oasdi": {
+    "personal": -0.03603731314514519,
+    "shared": -0.04032028937877078
+   },
+   "employee_hi": {
+    "personal": -0.09427142706702861,
+    "shared": -0.09853484761835671
+   },
+   "self_employment_oasdi_hi": {
+    "personal": 0.003929415963014244,
+    "shared": -0.00011180255535126291
+   },
+   "employer_oasdi": {
+    "personal": -0.036348507425588074,
+    "shared": -0.04066846859484993
+   },
+   "employer_hi": {
+    "personal": -0.0838557589742654,
+    "shared": -0.08764813145955622
+   }
+  },
+  "spending": {}
+ },
+ "excise_taxes|2022": {
+  "receipts": {
+   "excise_selective_sales": {
+    "personal": 1.2646232472266612,
+    "shared": 1.2646232472266612
+   }
+  },
+  "spending": {}
+ },
+ "excise_taxes|2019": {
+  "receipts": {
+   "excise_selective_sales": {
+    "personal": 1.3532315652580136,
+    "shared": 1.3532315652580136
+   }
+  },
+  "spending": {}
+ },
+ "excise_taxes|2018": {
+  "receipts": {
+   "excise_selective_sales": {
+    "personal": 1.3319222661222134,
+    "shared": 1.3319222661222134
+   }
+  },
+  "spending": {}
+ },
+ "corporate_inc_tax|2022": {
+  "receipts": {
+   "corporate_capital": {
+    "personal": -5.364206306629667,
+    "shared": -4.480463035606559
+   },
+   "corporate_labor": {
+    "personal": -2.4728213213975483,
+    "shared": -2.613167321556365
+   }
+  },
+  "spending": {}
+ },
+ "corporate_inc_tax|2019": {
+  "receipts": {
+   "corporate_capital": {
+    "personal": -4.932489494879623,
+    "shared": -4.1137103291455634
+   },
+   "corporate_labor": {
+    "personal": -2.2079333759929796,
+    "shared": -2.3363597077970026
+   }
+  },
+  "spending": {}
+ },
+ "corporate_inc_tax|2018": {
+  "receipts": {
+   "corporate_capital": {
+    "personal": -5.05039199632124,
+    "shared": -4.216820817067576
+   },
+   "corporate_labor": {
+    "personal": -2.3342160742624807,
+    "shared": -2.465854357243334
+   }
+  },
+  "spending": {}
+ },
+ "medicaid_and_chip|2022": {
+  "receipts": {},
+  "spending": {
+   "medicaid_and_chip_other_medical": {
+    "medicaid": {
+     "personal": 22.469702278006725,
+     "shared": 22.469702278006725
+    }
+   }
+  }
+ },
+ "medicaid_and_chip=coverage_theta|2022": {
+  "receipts": {},
+  "spending": {
+   "medicaid_and_chip_other_medical": {
+    "medicaid": {
+     "personal": 47.53686399886889,
+     "shared": 47.53686399886889
+    }
+   }
+  }
+ },
+ "medicaid_and_chip|2019": {
+  "receipts": {},
+  "spending": {
+   "medicaid_and_chip_other_medical": {
+    "medicaid": {
+     "personal": 24.683516747674187,
+     "shared": 24.683516747674187
+    }
+   }
+  }
+ },
+ "medicaid_and_chip=coverage_theta|2019": {
+  "receipts": {},
+  "spending": {
+   "medicaid_and_chip_other_medical": {
+    "medicaid": {
+     "personal": 48.44278630392806,
+     "shared": 48.44278630392806
+    }
+   }
+  }
+ },
+ "medicaid_and_chip|2018": {
+  "receipts": {},
+  "spending": {
+   "medicaid_and_chip_other_medical": {
+    "medicaid": {
+     "personal": 25.456562064412424,
+     "shared": 25.456562064412424
+    }
+   }
+  }
+ },
+ "medicaid_and_chip=coverage_theta|2018": {
+  "receipts": {},
+  "spending": {
+   "medicaid_and_chip_other_medical": {
+    "medicaid": {
+     "personal": 48.97693565300048,
+     "shared": 48.97693565300048
+    }
+   }
+  }
+ },
+ "snap|2022": {
+  "receipts": {},
+  "spending": {
+   "snap": {
+    "snap": {
+     "personal": -0.2547583520219132,
+     "shared": -0.2547583520219132
+    }
+   }
+  }
+ },
+ "snap|2019": {
+  "receipts": {},
+  "spending": {
+   "snap": {
+    "snap": {
+     "personal": -0.17096950224930937,
+     "shared": -0.17096950224930937
+    }
+   }
+  }
+ },
+ "snap|2018": {
+  "receipts": {},
+  "spending": {
+   "snap": {
+    "snap": {
+     "personal": -0.11554838366727335,
+     "shared": -0.11554838366727335
+    }
+   }
+  }
+ },
+ "ssi|2022": {
+  "receipts": {},
+  "spending": {
+   "ssi": {
+    "ssi": {
+     "personal": -0.07934109680457398,
+     "shared": -0.07583925118351167
+    }
+   }
+  }
+ },
+ "ssi|2019": {
+  "receipts": {},
+  "spending": {
+   "ssi": {
+    "ssi": {
+     "personal": -0.06595250084906525,
+     "shared": -0.0590343779944108
+    }
+   }
+  }
+ },
+ "ssi|2018": {
+  "receipts": {},
+  "spending": {
+   "ssi": {
+    "ssi": {
+     "personal": -0.09179519909066841,
+     "shared": -0.08002240778054634
+    }
+   }
+  }
+ },
+ "other_transfers|2022": {
+  "receipts": {},
+  "spending": {
+   "family_and_general_assistance": {
+    "cash_assistance": {
+     "personal": -0.7062592421115035,
+     "shared": -0.41900939358876366
+    }
+   },
+   "energy_assistance": {
+    "energy": {
+     "personal": 0.024483489060197608,
+     "shared": 0.024483489060197608
+    }
+   },
+   "other_state_welfare": {
+    "wic": {
+     "personal": -0.024932325418927495,
+     "shared": -0.024932325418927495
+    }
+   }
+  }
+ },
+ "other_transfers|2019": {
+  "receipts": {},
+  "spending": {
+   "family_and_general_assistance": {
+    "cash_assistance": {
+     "personal": -0.32842198023363495,
+     "shared": -0.13569851644534683
+    }
+   },
+   "energy_assistance": {
+    "energy": {
+     "personal": 0.011323786763386311,
+     "shared": 0.011323786763386311
+    }
+   },
+   "other_state_welfare": {
+    "wic": {
+     "personal": 0.038001980508351914,
+     "shared": 0.038001980508351914
+    }
+   }
+  }
+ },
+ "other_transfers|2018": {
+  "receipts": {},
+  "spending": {
+   "family_and_general_assistance": {
+    "cash_assistance": {
+     "personal": -0.3091296480291375,
+     "shared": -0.12355363749444392
+    }
+   },
+   "energy_assistance": {
+    "energy": {
+     "personal": 0.012731643387761482,
+     "shared": 0.012731643387761482
+    }
+   },
+   "other_state_welfare": {
+    "wic": {
+     "personal": 0.06278240463457829,
+     "shared": 0.06278240463457829
+    }
+   }
+  }
+ },
+ "social_security|2022": {
+  "receipts": {},
+  "spending": {
+   "social_security": {
+    "social_security": {
+     "personal": -1.9955755495881533,
+     "shared": -2.067403450499381
+    }
+   },
+   "railroad_retirement": {
+    "social_security": {
+     "personal": -0.019974154375403484,
+     "shared": -0.020693095625990636
+    }
+   }
+  }
+ },
+ "social_security|2019": {
+  "receipts": {},
+  "spending": {
+   "social_security": {
+    "social_security": {
+     "personal": -1.7853791565477555,
+     "shared": -1.8286489453214263
+    }
+   },
+   "railroad_retirement": {
+    "social_security": {
+     "personal": -0.017870252468703746,
+     "shared": -0.01830334929680167
+    }
+   }
+  }
+ },
+ "social_security|2018": {
+  "receipts": {},
+  "spending": {
+   "social_security": {
+    "social_security": {
+     "personal": -1.3942227556658582,
+     "shared": -1.4278122852089303
+    }
+   },
+   "railroad_retirement": {
+    "social_security": {
+     "personal": -0.013955082061973378,
+     "shared": -0.014291287047361661
+    }
+   }
+  }
+ },
+ "medicare|2022": {
+  "receipts": {},
+  "spending": {
+   "medicare": {
+    "medicare": {
+     "personal": 0.7248499552481337,
+     "shared": 0.7248499552481337
+    }
+   }
+  }
+ },
+ "medicare|2019": {
+  "receipts": {},
+  "spending": {
+   "medicare": {
+    "medicare": {
+     "personal": 1.587548532941276,
+     "shared": 1.587548532941276
+    }
+   }
+  }
+ },
+ "medicare|2018": {
+  "receipts": {},
+  "spending": {
+   "medicare": {
+    "medicare": {
+     "personal": 1.855691634899573,
+     "shared": 1.855691634899573
+    }
+   }
+  }
+ },
+ "excise_all_consumption_lines=excise_taxes|2022": {
+  "receipts": {
+   "general_sales_tax": {
+    "personal": 7.621213465115609,
+    "shared": 7.621213465115609
+   },
+   "excise_selective_sales": {
+    "personal": 4.6967563924202835,
+    "shared": 4.6967563924202835
+   },
+   "customs_duties": {
+    "personal": 1.057441312531943,
+    "shared": 1.057441312531943
+   },
+   "personal_current_transfers": {
+    "personal": 1.7845832336645477,
+    "shared": 1.7845832336645477
+   }
+  },
+  "spending": {}
+ },
+ "excise_all_consumption_lines=excise_taxes|2019": {
+  "receipts": {
+   "general_sales_tax": {
+    "personal": 8.155208793750186,
+    "shared": 8.155208793750186
+   },
+   "excise_selective_sales": {
+    "personal": 5.025843877604505,
+    "shared": 5.025843877604505
+   },
+   "customs_duties": {
+    "personal": 1.1315330203396192,
+    "shared": 1.1315330203396192
+   },
+   "personal_current_transfers": {
+    "personal": 1.90962357201728,
+    "shared": 1.90962357201728
+   }
+  },
+  "spending": {}
+ },
+ "excise_all_consumption_lines=excise_taxes|2018": {
+  "receipts": {
+   "general_sales_tax": {
+    "personal": 8.026788951823292,
+    "shared": 8.026788951823292
+   },
+   "excise_selective_sales": {
+    "personal": 4.946702056391313,
+    "shared": 4.946702056391313
+   },
+   "customs_duties": {
+    "personal": 1.1137148019123442,
+    "shared": 1.1137148019123442
+   },
+   "personal_current_transfers": {
+    "personal": 1.879552783707572,
+    "shared": 1.879552783707572
+   }
+  },
+  "spending": {}
+ },
+ "all_concepts|2022": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -13.17261106025164,
+    "shared": -14.052573918014183
+   },
+   "employee_oasdi": {
+    "personal": 0.10517185097776667,
+    "shared": 0.10274494186063905
+   },
+   "employee_hi": {
+    "personal": -0.054592887721876586,
+    "shared": -0.05866699515947303
+   },
+   "self_employment_oasdi_hi": {
+    "personal": 0.024158003960362995,
+    "shared": 0.01870464072256338
+   },
+   "employer_oasdi": {
+    "personal": 0.1060800451696048,
+    "shared": 0.10363217887863453
+   },
+   "employer_hi": {
+    "personal": -0.04856114070766989,
+    "shared": -0.05218511651827727
+   },
+   "excise_selective_sales": {
+    "personal": 1.2646232472266612,
+    "shared": 1.2646232472266612
+   }
+  },
+  "spending": {
+   "medicaid_and_chip_other_medical": {
+    "medicaid": {
+     "personal": 22.469702278006725,
+     "shared": 22.469702278006725
+    }
+   },
+   "snap": {
+    "snap": {
+     "personal": -0.2547583520219132,
+     "shared": -0.2547583520219132
+    }
+   },
+   "ssi": {
+    "ssi": {
+     "personal": -0.07934109680457398,
+     "shared": -0.07583925118351167
+    }
+   },
+   "family_and_general_assistance": {
+    "cash_assistance": {
+     "personal": -0.7062592421115035,
+     "shared": -0.41900939358876366
+    }
+   },
+   "energy_assistance": {
+    "energy": {
+     "personal": 0.024483489060197608,
+     "shared": 0.024483489060197608
+    }
+   },
+   "other_state_welfare": {
+    "wic": {
+     "personal": -0.024932325418927495,
+     "shared": -0.024932325418927495
+    }
+   },
+   "social_security": {
+    "social_security": {
+     "personal": -1.9955755495881533,
+     "shared": -2.067403450499381
+    }
+   },
+   "railroad_retirement": {
+    "social_security": {
+     "personal": -0.019974154375403484,
+     "shared": -0.020693095625990636
+    }
+   },
+   "medicare": {
+    "medicare": {
+     "personal": 0.7248499552481337,
+     "shared": 0.7248499552481337
+    }
+   }
+  }
+ },
+ "all_but_medicaid|2022": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -13.17261106025164,
+    "shared": -14.052573918014183
+   },
+   "employee_oasdi": {
+    "personal": 0.10517185097776667,
+    "shared": 0.10274494186063905
+   },
+   "employee_hi": {
+    "personal": -0.054592887721876586,
+    "shared": -0.05866699515947303
+   },
+   "self_employment_oasdi_hi": {
+    "personal": 0.024158003960362995,
+    "shared": 0.01870464072256338
+   },
+   "employer_oasdi": {
+    "personal": 0.1060800451696048,
+    "shared": 0.10363217887863453
+   },
+   "employer_hi": {
+    "personal": -0.04856114070766989,
+    "shared": -0.05218511651827727
+   },
+   "excise_selective_sales": {
+    "personal": 1.2646232472266612,
+    "shared": 1.2646232472266612
+   }
+  },
+  "spending": {
+   "snap": {
+    "snap": {
+     "personal": -0.2547583520219132,
+     "shared": -0.2547583520219132
+    }
+   },
+   "ssi": {
+    "ssi": {
+     "personal": -0.07934109680457398,
+     "shared": -0.07583925118351167
+    }
+   },
+   "family_and_general_assistance": {
+    "cash_assistance": {
+     "personal": -0.7062592421115035,
+     "shared": -0.41900939358876366
+    }
+   },
+   "energy_assistance": {
+    "energy": {
+     "personal": 0.024483489060197608,
+     "shared": 0.024483489060197608
+    }
+   },
+   "other_state_welfare": {
+    "wic": {
+     "personal": -0.024932325418927495,
+     "shared": -0.024932325418927495
+    }
+   },
+   "social_security": {
+    "social_security": {
+     "personal": -1.9955755495881533,
+     "shared": -2.067403450499381
+    }
+   },
+   "railroad_retirement": {
+    "social_security": {
+     "personal": -0.019974154375403484,
+     "shared": -0.020693095625990636
+    }
+   },
+   "medicare": {
+    "medicare": {
+     "personal": 0.7248499552481337,
+     "shared": 0.7248499552481337
+    }
+   }
+  }
+ },
+ "all_concepts_excise_on_all_consumption_lines|2022": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -13.17261106025164,
+    "shared": -14.052573918014183
+   },
+   "employee_oasdi": {
+    "personal": 0.10517185097776667,
+    "shared": 0.10274494186063905
+   },
+   "employee_hi": {
+    "personal": -0.054592887721876586,
+    "shared": -0.05866699515947303
+   },
+   "self_employment_oasdi_hi": {
+    "personal": 0.024158003960362995,
+    "shared": 0.01870464072256338
+   },
+   "employer_oasdi": {
+    "personal": 0.1060800451696048,
+    "shared": 0.10363217887863453
+   },
+   "employer_hi": {
+    "personal": -0.04856114070766989,
+    "shared": -0.05218511651827727
+   },
+   "excise_selective_sales": {
+    "personal": 4.6967563924202835,
+    "shared": 4.6967563924202835
+   },
+   "general_sales_tax": {
+    "personal": 7.621213465115609,
+    "shared": 7.621213465115609
+   },
+   "customs_duties": {
+    "personal": 1.057441312531943,
+    "shared": 1.057441312531943
+   },
+   "personal_current_transfers": {
+    "personal": 1.7845832336645477,
+    "shared": 1.7845832336645477
+   }
+  },
+  "spending": {
+   "medicaid_and_chip_other_medical": {
+    "medicaid": {
+     "personal": 22.469702278006725,
+     "shared": 22.469702278006725
+    }
+   },
+   "snap": {
+    "snap": {
+     "personal": -0.2547583520219132,
+     "shared": -0.2547583520219132
+    }
+   },
+   "ssi": {
+    "ssi": {
+     "personal": -0.07934109680457398,
+     "shared": -0.07583925118351167
+    }
+   },
+   "family_and_general_assistance": {
+    "cash_assistance": {
+     "personal": -0.7062592421115035,
+     "shared": -0.41900939358876366
+    }
+   },
+   "energy_assistance": {
+    "energy": {
+     "personal": 0.024483489060197608,
+     "shared": 0.024483489060197608
+    }
+   },
+   "other_state_welfare": {
+    "wic": {
+     "personal": -0.024932325418927495,
+     "shared": -0.024932325418927495
+    }
+   },
+   "social_security": {
+    "social_security": {
+     "personal": -1.9955755495881533,
+     "shared": -2.067403450499381
+    }
+   },
+   "railroad_retirement": {
+    "social_security": {
+     "personal": -0.019974154375403484,
+     "shared": -0.020693095625990636
+    }
+   },
+   "medicare": {
+    "medicare": {
+     "personal": 0.7248499552481337,
+     "shared": 0.7248499552481337
+    }
+   }
+  }
+ },
+ "all_concepts|2019": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -12.093688280950259,
+    "shared": -12.912162288538571
+   },
+   "employee_oasdi": {
+    "personal": 0.5068895544052776,
+    "shared": 0.5108994989702114
+   },
+   "employee_hi": {
+    "personal": 0.07720388162602745,
+    "shared": 0.07524441061203162
+   },
+   "self_employment_oasdi_hi": {
+    "personal": 0.11600583250117377,
+    "shared": 0.11589983483883064
+   },
+   "employer_oasdi": {
+    "personal": 0.51126671564124,
+    "shared": 0.5153112874218175
+   },
+   "employer_hi": {
+    "personal": 0.0686739374901661,
+    "shared": 0.06693096049089076
+   },
+   "excise_selective_sales": {
+    "personal": 1.3532315652580136,
+    "shared": 1.3532315652580136
+   }
+  },
+  "spending": {
+   "medicaid_and_chip_other_medical": {
+    "medicaid": {
+     "personal": 24.683516747674187,
+     "shared": 24.683516747674187
+    }
+   },
+   "snap": {
+    "snap": {
+     "personal": -0.17096950224930937,
+     "shared": -0.17096950224930937
+    }
+   },
+   "ssi": {
+    "ssi": {
+     "personal": -0.06595250084906525,
+     "shared": -0.0590343779944108
+    }
+   },
+   "family_and_general_assistance": {
+    "cash_assistance": {
+     "personal": -0.32842198023363495,
+     "shared": -0.13569851644534683
+    }
+   },
+   "energy_assistance": {
+    "energy": {
+     "personal": 0.011323786763386311,
+     "shared": 0.011323786763386311
+    }
+   },
+   "other_state_welfare": {
+    "wic": {
+     "personal": 0.038001980508351914,
+     "shared": 0.038001980508351914
+    }
+   },
+   "social_security": {
+    "social_security": {
+     "personal": -1.7853791565477555,
+     "shared": -1.8286489453214263
+    }
+   },
+   "railroad_retirement": {
+    "social_security": {
+     "personal": -0.017870252468703746,
+     "shared": -0.01830334929680167
+    }
+   },
+   "medicare": {
+    "medicare": {
+     "personal": 1.587548532941276,
+     "shared": 1.587548532941276
+    }
+   }
+  }
+ },
+ "all_but_medicaid|2019": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -12.093688280950259,
+    "shared": -12.912162288538571
+   },
+   "employee_oasdi": {
+    "personal": 0.5068895544052776,
+    "shared": 0.5108994989702114
+   },
+   "employee_hi": {
+    "personal": 0.07720388162602745,
+    "shared": 0.07524441061203162
+   },
+   "self_employment_oasdi_hi": {
+    "personal": 0.11600583250117377,
+    "shared": 0.11589983483883064
+   },
+   "employer_oasdi": {
+    "personal": 0.51126671564124,
+    "shared": 0.5153112874218175
+   },
+   "employer_hi": {
+    "personal": 0.0686739374901661,
+    "shared": 0.06693096049089076
+   },
+   "excise_selective_sales": {
+    "personal": 1.3532315652580136,
+    "shared": 1.3532315652580136
+   }
+  },
+  "spending": {
+   "snap": {
+    "snap": {
+     "personal": -0.17096950224930937,
+     "shared": -0.17096950224930937
+    }
+   },
+   "ssi": {
+    "ssi": {
+     "personal": -0.06595250084906525,
+     "shared": -0.0590343779944108
+    }
+   },
+   "family_and_general_assistance": {
+    "cash_assistance": {
+     "personal": -0.32842198023363495,
+     "shared": -0.13569851644534683
+    }
+   },
+   "energy_assistance": {
+    "energy": {
+     "personal": 0.011323786763386311,
+     "shared": 0.011323786763386311
+    }
+   },
+   "other_state_welfare": {
+    "wic": {
+     "personal": 0.038001980508351914,
+     "shared": 0.038001980508351914
+    }
+   },
+   "social_security": {
+    "social_security": {
+     "personal": -1.7853791565477555,
+     "shared": -1.8286489453214263
+    }
+   },
+   "railroad_retirement": {
+    "social_security": {
+     "personal": -0.017870252468703746,
+     "shared": -0.01830334929680167
+    }
+   },
+   "medicare": {
+    "medicare": {
+     "personal": 1.587548532941276,
+     "shared": 1.587548532941276
+    }
+   }
+  }
+ },
+ "all_concepts_excise_on_all_consumption_lines|2019": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -12.093688280950259,
+    "shared": -12.912162288538571
+   },
+   "employee_oasdi": {
+    "personal": 0.5068895544052776,
+    "shared": 0.5108994989702114
+   },
+   "employee_hi": {
+    "personal": 0.07720388162602745,
+    "shared": 0.07524441061203162
+   },
+   "self_employment_oasdi_hi": {
+    "personal": 0.11600583250117377,
+    "shared": 0.11589983483883064
+   },
+   "employer_oasdi": {
+    "personal": 0.51126671564124,
+    "shared": 0.5153112874218175
+   },
+   "employer_hi": {
+    "personal": 0.0686739374901661,
+    "shared": 0.06693096049089076
+   },
+   "excise_selective_sales": {
+    "personal": 5.025843877604505,
+    "shared": 5.025843877604505
+   },
+   "general_sales_tax": {
+    "personal": 8.155208793750186,
+    "shared": 8.155208793750186
+   },
+   "customs_duties": {
+    "personal": 1.1315330203396192,
+    "shared": 1.1315330203396192
+   },
+   "personal_current_transfers": {
+    "personal": 1.90962357201728,
+    "shared": 1.90962357201728
+   }
+  },
+  "spending": {
+   "medicaid_and_chip_other_medical": {
+    "medicaid": {
+     "personal": 24.683516747674187,
+     "shared": 24.683516747674187
+    }
+   },
+   "snap": {
+    "snap": {
+     "personal": -0.17096950224930937,
+     "shared": -0.17096950224930937
+    }
+   },
+   "ssi": {
+    "ssi": {
+     "personal": -0.06595250084906525,
+     "shared": -0.0590343779944108
+    }
+   },
+   "family_and_general_assistance": {
+    "cash_assistance": {
+     "personal": -0.32842198023363495,
+     "shared": -0.13569851644534683
+    }
+   },
+   "energy_assistance": {
+    "energy": {
+     "personal": 0.011323786763386311,
+     "shared": 0.011323786763386311
+    }
+   },
+   "other_state_welfare": {
+    "wic": {
+     "personal": 0.038001980508351914,
+     "shared": 0.038001980508351914
+    }
+   },
+   "social_security": {
+    "social_security": {
+     "personal": -1.7853791565477555,
+     "shared": -1.8286489453214263
+    }
+   },
+   "railroad_retirement": {
+    "social_security": {
+     "personal": -0.017870252468703746,
+     "shared": -0.01830334929680167
+    }
+   },
+   "medicare": {
+    "medicare": {
+     "personal": 1.587548532941276,
+     "shared": 1.587548532941276
+    }
+   }
+  }
+ },
+ "all_concepts|2018": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -13.647955606596685,
+    "shared": -14.55528709453744
+   },
+   "employee_oasdi": {
+    "personal": -0.03603731314514519,
+    "shared": -0.04032028937877078
+   },
+   "employee_hi": {
+    "personal": -0.09427142706702861,
+    "shared": -0.09853484761835671
+   },
+   "self_employment_oasdi_hi": {
+    "personal": 0.003929415963014244,
+    "shared": -0.00011180255535126291
+   },
+   "employer_oasdi": {
+    "personal": -0.036348507425588074,
+    "shared": -0.04066846859484993
+   },
+   "employer_hi": {
+    "personal": -0.0838557589742654,
+    "shared": -0.08764813145955622
+   },
+   "excise_selective_sales": {
+    "personal": 1.3319222661222134,
+    "shared": 1.3319222661222134
+   }
+  },
+  "spending": {
+   "medicaid_and_chip_other_medical": {
+    "medicaid": {
+     "personal": 25.456562064412424,
+     "shared": 25.456562064412424
+    }
+   },
+   "snap": {
+    "snap": {
+     "personal": -0.11554838366727335,
+     "shared": -0.11554838366727335
+    }
+   },
+   "ssi": {
+    "ssi": {
+     "personal": -0.09179519909066841,
+     "shared": -0.08002240778054634
+    }
+   },
+   "family_and_general_assistance": {
+    "cash_assistance": {
+     "personal": -0.3091296480291375,
+     "shared": -0.12355363749444392
+    }
+   },
+   "energy_assistance": {
+    "energy": {
+     "personal": 0.012731643387761482,
+     "shared": 0.012731643387761482
+    }
+   },
+   "other_state_welfare": {
+    "wic": {
+     "personal": 0.06278240463457829,
+     "shared": 0.06278240463457829
+    }
+   },
+   "social_security": {
+    "social_security": {
+     "personal": -1.3942227556658582,
+     "shared": -1.4278122852089303
+    }
+   },
+   "railroad_retirement": {
+    "social_security": {
+     "personal": -0.013955082061973378,
+     "shared": -0.014291287047361661
+    }
+   },
+   "medicare": {
+    "medicare": {
+     "personal": 1.855691634899573,
+     "shared": 1.855691634899573
+    }
+   }
+  }
+ },
+ "all_but_medicaid|2018": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -13.647955606596685,
+    "shared": -14.55528709453744
+   },
+   "employee_oasdi": {
+    "personal": -0.03603731314514519,
+    "shared": -0.04032028937877078
+   },
+   "employee_hi": {
+    "personal": -0.09427142706702861,
+    "shared": -0.09853484761835671
+   },
+   "self_employment_oasdi_hi": {
+    "personal": 0.003929415963014244,
+    "shared": -0.00011180255535126291
+   },
+   "employer_oasdi": {
+    "personal": -0.036348507425588074,
+    "shared": -0.04066846859484993
+   },
+   "employer_hi": {
+    "personal": -0.0838557589742654,
+    "shared": -0.08764813145955622
+   },
+   "excise_selective_sales": {
+    "personal": 1.3319222661222134,
+    "shared": 1.3319222661222134
+   }
+  },
+  "spending": {
+   "snap": {
+    "snap": {
+     "personal": -0.11554838366727335,
+     "shared": -0.11554838366727335
+    }
+   },
+   "ssi": {
+    "ssi": {
+     "personal": -0.09179519909066841,
+     "shared": -0.08002240778054634
+    }
+   },
+   "family_and_general_assistance": {
+    "cash_assistance": {
+     "personal": -0.3091296480291375,
+     "shared": -0.12355363749444392
+    }
+   },
+   "energy_assistance": {
+    "energy": {
+     "personal": 0.012731643387761482,
+     "shared": 0.012731643387761482
+    }
+   },
+   "other_state_welfare": {
+    "wic": {
+     "personal": 0.06278240463457829,
+     "shared": 0.06278240463457829
+    }
+   },
+   "social_security": {
+    "social_security": {
+     "personal": -1.3942227556658582,
+     "shared": -1.4278122852089303
+    }
+   },
+   "railroad_retirement": {
+    "social_security": {
+     "personal": -0.013955082061973378,
+     "shared": -0.014291287047361661
+    }
+   },
+   "medicare": {
+    "medicare": {
+     "personal": 1.855691634899573,
+     "shared": 1.855691634899573
+    }
+   }
+  }
+ },
+ "all_concepts_excise_on_all_consumption_lines|2018": {
+  "receipts": {
+   "federal_income_tax": {
+    "personal": -13.647955606596685,
+    "shared": -14.55528709453744
+   },
+   "employee_oasdi": {
+    "personal": -0.03603731314514519,
+    "shared": -0.04032028937877078
+   },
+   "employee_hi": {
+    "personal": -0.09427142706702861,
+    "shared": -0.09853484761835671
+   },
+   "self_employment_oasdi_hi": {
+    "personal": 0.003929415963014244,
+    "shared": -0.00011180255535126291
+   },
+   "employer_oasdi": {
+    "personal": -0.036348507425588074,
+    "shared": -0.04066846859484993
+   },
+   "employer_hi": {
+    "personal": -0.0838557589742654,
+    "shared": -0.08764813145955622
+   },
+   "excise_selective_sales": {
+    "personal": 4.946702056391313,
+    "shared": 4.946702056391313
+   },
+   "general_sales_tax": {
+    "personal": 8.026788951823292,
+    "shared": 8.026788951823292
+   },
+   "customs_duties": {
+    "personal": 1.1137148019123442,
+    "shared": 1.1137148019123442
+   },
+   "personal_current_transfers": {
+    "personal": 1.879552783707572,
+    "shared": 1.879552783707572
+   }
+  },
+  "spending": {
+   "medicaid_and_chip_other_medical": {
+    "medicaid": {
+     "personal": 25.456562064412424,
+     "shared": 25.456562064412424
+    }
+   },
+   "snap": {
+    "snap": {
+     "personal": -0.11554838366727335,
+     "shared": -0.11554838366727335
+    }
+   },
+   "ssi": {
+    "ssi": {
+     "personal": -0.09179519909066841,
+     "shared": -0.08002240778054634
+    }
+   },
+   "family_and_general_assistance": {
+    "cash_assistance": {
+     "personal": -0.3091296480291375,
+     "shared": -0.12355363749444392
+    }
+   },
+   "energy_assistance": {
+    "energy": {
+     "personal": 0.012731643387761482,
+     "shared": 0.012731643387761482
+    }
+   },
+   "other_state_welfare": {
+    "wic": {
+     "personal": 0.06278240463457829,
+     "shared": 0.06278240463457829
+    }
+   },
+   "social_security": {
+    "social_security": {
+     "personal": -1.3942227556658582,
+     "shared": -1.4278122852089303
+    }
+   },
+   "railroad_retirement": {
+    "social_security": {
+     "personal": -0.013955082061973378,
+     "shared": -0.014291287047361661
+    }
+   },
+   "medicare": {
+    "medicare": {
+     "personal": 1.855691634899573,
+     "shared": 1.855691634899573
+    }
+   }
+  }
+ }
+}

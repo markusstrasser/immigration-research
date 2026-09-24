@@ -1,0 +1,193 @@
+group,rule,allocation,item,source,source_year,account_per_person,anchor_per_person,anchor_per_person_2024,account_over_anchor_2024
+unauthorized_all_origins,on_books_central,personal,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,6007.670907781501,1788.9908256880733,1958.689839424731,3.067188478164547
+unauthorized_all_origins,on_books_central,personal,payroll_oasdi,ITEP p.6,2022,3622.8182519015063,2357.7981651376144,2581.452762729004,1.4034028839139454
+unauthorized_all_origins,on_books_central,personal,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,3622.8182519015063,1203.7037037037037,2017.4429612061097,1.795747548538194
+unauthorized_all_origins,on_books_central,personal,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,3622.8182519015063,2181.8181818181815,2181.8181818181815,1.6604583654548573
+unauthorized_all_origins,on_books_central,personal,payroll_hi,ITEP p.6,2022,1135.7187751534702,587.1559633027523,642.8520498624758,1.7666876467088073
+unauthorized_all_origins,on_books_central,personal,other_social_contributions_ui,ITEP p.6,2022,255.48738757250314,165.1376146788991,180.80213902382133,1.4130772398596554
+unauthorized_all_origins,on_books_central,personal,state_local_income_tax,ITEP p.7,2022,1494.8210888837257,642.2018348623852,703.1194295370827,2.1259846138342113
+unauthorized_all_origins,on_books_central,personal,state_local_sales_excise,ITEP p.7,2022,2223.9795451682508,1385.321100917431,1516.7290551442788,1.4662998230469677
+unauthorized_all_origins,on_books_central,shared,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,5328.562342389507,1788.9908256880733,1958.689839424731,2.720472754356305
+unauthorized_all_origins,on_books_central,shared,payroll_oasdi,ITEP p.6,2022,3283.542894317092,2357.7981651376144,2581.452762729004,1.2719748126810067
+unauthorized_all_origins,on_books_central,shared,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,3283.542894317092,1203.7037037037037,2017.4429612061097,1.627576569676129
+unauthorized_all_origins,on_books_central,shared,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,3283.542894317092,2181.8181818181815,2181.8181818181815,1.504957159895334
+unauthorized_all_origins,on_books_central,shared,payroll_hi,ITEP p.6,2022,1016.8286508108082,587.1559633027523,642.8520498624758,1.5817459880984068
+unauthorized_all_origins,on_books_central,shared,other_social_contributions_ui,ITEP p.6,2022,238.27702757984346,165.1376146788991,180.80213902382133,1.3178883218215114
+unauthorized_all_origins,on_books_central,shared,state_local_income_tax,ITEP p.7,2022,1311.2162119910045,642.2018348623852,703.1194295370827,1.8648556090311403
+unauthorized_all_origins,on_books_central,shared,state_local_sales_excise,ITEP p.7,2022,2223.9795451682508,1385.321100917431,1516.7290551442788,1.4662998230469677
+unauthorized_all_origins,on_books_high,personal,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,6191.724689547928,1788.9908256880733,1958.689839424731,3.1611562815715857
+unauthorized_all_origins,on_books_high,personal,payroll_oasdi,ITEP p.6,2022,3854.847207365243,2357.7981651376144,2581.452762729004,1.4932859756418937
+unauthorized_all_origins,on_books_high,personal,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,3854.847207365243,1203.7037037037037,2017.4429612061097,1.910758956506338
+unauthorized_all_origins,on_books_high,personal,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,3854.847207365243,2181.8181818181815,2181.8181818181815,1.7668049700424031
+unauthorized_all_origins,on_books_high,personal,payroll_hi,ITEP p.6,2022,1199.969252216741,587.1559633027523,642.8520498624758,1.8666336250673048
+unauthorized_all_origins,on_books_high,personal,other_social_contributions_ui,ITEP p.6,2022,280.81379706488923,165.1376146788991,180.80213902382133,1.5531552811324374
+unauthorized_all_origins,on_books_high,personal,state_local_income_tax,ITEP p.7,2022,1544.94175618133,642.2018348623852,703.1194295370827,2.1972679053947965
+unauthorized_all_origins,on_books_high,personal,state_local_sales_excise,ITEP p.7,2022,2223.9795451682508,1385.321100917431,1516.7290551442788,1.4662998230469677
+unauthorized_all_origins,on_books_high,shared,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,5473.470730795787,1788.9908256880733,1958.689839424731,2.7944550590017614
+unauthorized_all_origins,on_books_high,shared,payroll_oasdi,ITEP p.6,2022,3445.055966036373,2357.7981651376144,2581.452762729004,1.3345415479903664
+unauthorized_all_origins,on_books_high,shared,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,3445.055966036373,1203.7037037037037,2017.4429612061097,1.7076348785478317
+unauthorized_all_origins,on_books_high,shared,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,3445.055966036373,2181.8181818181815,2181.8181818181815,1.5789839844333378
+unauthorized_all_origins,on_books_high,shared,payroll_hi,ITEP p.6,2022,1062.0095363407481,587.1559633027523,642.8520498624758,1.6520279223935614
+unauthorized_all_origins,on_books_high,shared,other_social_contributions_ui,ITEP p.6,2022,256.15697348097245,165.1376146788991,180.80213902382133,1.4167806579280728
+unauthorized_all_origins,on_books_high,shared,state_local_income_tax,ITEP p.7,2022,1346.7106295041503,642.2018348623852,703.1194295370827,1.9153369583184365
+unauthorized_all_origins,on_books_high,shared,state_local_sales_excise,ITEP p.7,2022,2223.9795451682508,1385.321100917431,1516.7290551442788,1.4662998230469677
+unauthorized_all_origins,on_books_low,personal,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,5821.521358350173,1788.9908256880733,1958.689839424731,2.972150690310396
+unauthorized_all_origins,on_books_low,personal,payroll_oasdi,ITEP p.6,2022,3387.2765609950698,2357.7981651376144,2581.452762729004,1.3121590330454789
+unauthorized_all_origins,on_books_low,personal,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,3387.2765609950698,1203.7037037037037,2017.4429612061097,1.6789949585340533
+unauthorized_all_origins,on_books_low,personal,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,3387.2765609950698,2181.8181818181815,2181.8181818181815,1.5525017571227404
+unauthorized_all_origins,on_books_low,personal,payroll_hi,ITEP p.6,2022,1070.522100380171,587.1559633027523,642.8520498624758,1.6652697935849872
+unauthorized_all_origins,on_books_low,personal,other_social_contributions_ui,ITEP p.6,2022,229.70602055861525,165.1376146788991,180.80213902382133,1.2704828703843525
+unauthorized_all_origins,on_books_low,personal,state_local_income_tax,ITEP p.7,2022,1444.0866460842435,642.2018348623852,703.1194295370827,2.053828390199651
+unauthorized_all_origins,on_books_low,personal,state_local_sales_excise,ITEP p.7,2022,2223.9795451682508,1385.321100917431,1516.7290551442788,1.4662998230469677
+unauthorized_all_origins,on_books_low,shared,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,5181.979303520946,1788.9908256880733,1958.689839424731,2.645635464695573
+unauthorized_all_origins,on_books_low,shared,payroll_oasdi,ITEP p.6,2022,3119.5954711873346,2357.7981651376144,2581.452762729004,1.2084650613127736
+unauthorized_all_origins,on_books_low,shared,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,3119.5954711873346,1203.7037037037037,2017.4429612061097,1.5463116088904507
+unauthorized_all_origins,on_books_low,shared,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,3119.5954711873346,2181.8181818181815,2181.8181818181815,1.429814590960862
+unauthorized_all_origins,on_books_low,shared,payroll_hi,ITEP p.6,2022,970.9855337213513,587.1559633027523,642.8520498624758,1.5104339076605144
+unauthorized_all_origins,on_books_low,shared,other_social_contributions_ui,ITEP p.6,2022,220.07571249533567,165.1376146788991,180.80213902382133,1.21721852232257
+unauthorized_all_origins,on_books_low,shared,state_local_income_tax,ITEP p.7,2022,1275.2883479299664,642.2018348623852,703.1194295370827,1.8137577975474042
+unauthorized_all_origins,on_books_low,shared,state_local_sales_excise,ITEP p.7,2022,2223.9795451682508,1385.321100917431,1516.7290551442788,1.4662998230469677
+unauthorized_all_origins,raw,personal,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,6281.853868579415,1788.9908256880733,1958.689839424731,3.2071713153034995
+unauthorized_all_origins,raw,personal,payroll_oasdi,ITEP p.6,2022,4645.01434123793,2357.7981651376144,2581.452762729004,1.7993799492683396
+unauthorized_all_origins,raw,personal,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,4645.01434123793,1203.7037037037037,2017.4429612061097,2.302426601672521
+unauthorized_all_origins,raw,personal,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,4645.01434123793,2181.8181818181815,2181.8181818181815,2.1289649064007183
+unauthorized_all_origins,raw,personal,payroll_hi,ITEP p.6,2022,1418.9668426358405,587.1559633027523,642.8520498624758,2.2072992423986166
+unauthorized_all_origins,raw,personal,other_social_contributions_ui,ITEP p.6,2022,366.54081886857534,165.1376146788991,180.80213902382133,2.027303553196803
+unauthorized_all_origins,raw,personal,state_local_income_tax,ITEP p.7,2022,1716.696772980818,642.2018348623852,703.1194295370827,2.441543642324108
+unauthorized_all_origins,raw,personal,state_local_sales_excise,ITEP p.7,2022,2223.9795451682508,1385.321100917431,1516.7290551442788,1.4662998230469677
+unauthorized_all_origins,raw,shared,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,5667.551701090773,1788.9908256880733,1958.689839424731,2.8935421969388164
+unauthorized_all_origins,raw,shared,payroll_oasdi,ITEP p.6,2022,3995.162968634888,2357.7981651376144,2581.452762729004,1.5476413228694406
+unauthorized_all_origins,raw,shared,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,3995.162968634888,1203.7037037037037,2017.4429612061097,1.980310246910979
+unauthorized_all_origins,raw,shared,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,3995.162968634888,2181.8181818181815,2181.8181818181815,1.831116360624324
+unauthorized_all_origins,raw,shared,payroll_hi,ITEP p.6,2022,1216.0314930907753,587.1559633027523,642.8520498624758,1.891619531042825
+unauthorized_all_origins,raw,shared,other_social_contributions_ui,ITEP p.6,2022,316.67727404827957,165.1376146788991,180.80213902382133,1.751512873454203
+unauthorized_all_origins,raw,shared,state_local_income_tax,ITEP p.7,2022,1468.3530328560103,642.2018348623852,703.1194295370827,2.0883408581423204
+unauthorized_all_origins,raw,shared,state_local_sales_excise,ITEP p.7,2022,2223.9795451682508,1385.321100917431,1516.7290551442788,1.4662998230469677
+unauthorized_latin_american_born,on_books_central,personal,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,1468.149281750845,1788.9908256880733,1958.689839424731,0.7495567966912218
+unauthorized_latin_american_born,on_books_central,personal,payroll_oasdi,ITEP p.6,2022,1856.7430820895147,2357.7981651376144,2581.452762729004,0.7192628541947997
+unauthorized_latin_american_born,on_books_central,personal,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,1856.7430820895147,1203.7037037037037,2017.4429612061097,0.9203447719679162
+unauthorized_latin_american_born,on_books_central,personal,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,1856.7430820895147,2181.8181818181815,2181.8181818181815,0.8510072459576944
+unauthorized_latin_american_born,on_books_central,personal,payroll_hi,ITEP p.6,2022,515.0704185063363,587.1559633027523,642.8520498624758,0.8012269986795941
+unauthorized_latin_american_born,on_books_central,personal,other_social_contributions_ui,ITEP p.6,2022,202.84861244638455,165.1376146788991,180.80213902382133,1.1219370165728986
+unauthorized_latin_american_born,on_books_central,personal,state_local_income_tax,ITEP p.7,2022,400.3235088897067,642.2018348623852,703.1194295370827,0.5693535010876748
+unauthorized_latin_american_born,on_books_central,personal,state_local_sales_excise,ITEP p.7,2022,1509.164287213155,1385.321100917431,1516.7290551442788,0.9950124460888604
+unauthorized_latin_american_born,on_books_central,shared,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,1491.0826454158087,1788.9908256880733,1958.689839424731,0.7612653189918732
+unauthorized_latin_american_born,on_books_central,shared,payroll_oasdi,ITEP p.6,2022,1749.0464896404756,2357.7981651376144,2581.452762729004,0.6775434805134519
+unauthorized_latin_american_born,on_books_central,shared,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,1749.0464896404756,1203.7037037037037,2017.4429612061097,0.8669620520992694
+unauthorized_latin_american_born,on_books_central,shared,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,1749.0464896404756,2181.8181818181815,2181.8181818181815,0.8016463077518847
+unauthorized_latin_american_born,on_books_central,shared,payroll_hi,ITEP p.6,2022,488.2979279232095,587.1559633027523,642.8520498624758,0.7595805722757984
+unauthorized_latin_american_born,on_books_central,shared,other_social_contributions_ui,ITEP p.6,2022,194.33747362816965,165.1376146788991,180.80213902382133,1.0748626906596774
+unauthorized_latin_american_born,on_books_central,shared,state_local_income_tax,ITEP p.7,2022,384.03694634558656,642.2018348623852,703.1194295370827,0.5461902064040919
+unauthorized_latin_american_born,on_books_central,shared,state_local_sales_excise,ITEP p.7,2022,1509.164287213155,1385.321100917431,1516.7290551442788,0.9950124460888604
+unauthorized_latin_american_born,on_books_high,personal,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,1766.1588182484668,1788.9908256880733,1958.689839424731,0.9017041813864666
+unauthorized_latin_american_born,on_books_high,personal,payroll_oasdi,ITEP p.6,2022,2229.5412345573627,2357.7981651376144,2581.452762729004,0.8636769445280823
+unauthorized_latin_american_born,on_books_high,personal,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,2229.5412345573627,1203.7037037037037,2017.4429612061097,1.1051322279884692
+unauthorized_latin_american_born,on_books_high,personal,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,2229.5412345573627,2181.8181818181815,2181.8181818181815,1.0218730658387913
+unauthorized_latin_american_born,on_books_high,personal,payroll_hi,ITEP p.6,2022,618.6114975309619,587.1559633027523,642.8520498624758,0.9622921754131456
+unauthorized_latin_american_born,on_books_high,personal,other_social_contributions_ui,ITEP p.6,2022,243.240817726774,165.1376146788991,180.80213902382133,1.345342588533901
+unauthorized_latin_american_born,on_books_high,personal,state_local_income_tax,ITEP p.7,2022,481.38158805658105,642.2018348623852,703.1194295370827,0.6846370158957368
+unauthorized_latin_american_born,on_books_high,personal,state_local_sales_excise,ITEP p.7,2022,1509.164287213155,1385.321100917431,1516.7290551442788,0.9950124460888604
+unauthorized_latin_american_born,on_books_high,shared,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,1724.4704891712906,1788.9908256880733,1958.689839424731,0.8804203986057176
+unauthorized_latin_american_born,on_books_high,shared,payroll_oasdi,ITEP p.6,2022,2009.5781208567932,2357.7981651376144,2581.452762729004,0.778467903759878
+unauthorized_latin_american_born,on_books_high,shared,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,2009.5781208567932,1203.7037037037037,2017.4429612061097,0.9961015798213128
+unauthorized_latin_american_born,on_books_high,shared,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,2009.5781208567932,2181.8181818181815,2181.8181818181815,0.9210566387260304
+unauthorized_latin_american_born,on_books_high,shared,payroll_hi,ITEP p.6,2022,561.35837502811,587.1559633027523,642.8520498624758,0.8732310570499081
+unauthorized_latin_american_born,on_books_high,shared,other_social_contributions_ui,ITEP p.6,2022,222.96983840532016,165.1376146788991,180.80213902382133,1.2332256665168275
+unauthorized_latin_american_born,on_books_high,shared,state_local_income_tax,ITEP p.7,2022,441.1641981198237,642.2018348623852,703.1194295370827,0.6274384970562907
+unauthorized_latin_american_born,on_books_high,shared,state_local_sales_excise,ITEP p.7,2022,1509.164287213155,1385.321100917431,1516.7290551442788,0.9950124460888604
+unauthorized_latin_american_born,on_books_low,personal,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,1166.7410486600859,1788.9908256880733,1958.689839424731,0.5956742232362623
+unauthorized_latin_american_born,on_books_low,personal,payroll_oasdi,ITEP p.6,2022,1478.3033496466028,2357.7981651376144,2581.452762729004,0.572663335541264
+unauthorized_latin_american_born,on_books_low,personal,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,1478.3033496466028,1203.7037037037037,2017.4429612061097,0.7327609147189038
+unauthorized_latin_american_born,on_books_low,personal,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,1478.3033496466028,2181.8181818181815,2181.8181818181815,0.6775557019213597
+unauthorized_latin_american_born,on_books_low,personal,payroll_hi,ITEP p.6,2022,410.0052068046813,587.1559633027523,642.8520498624758,0.6377909301096465
+unauthorized_latin_american_born,on_books_low,personal,other_social_contributions_ui,ITEP p.6,2022,161.73081131681155,165.1376146788991,180.80213902382133,0.8945182407134185
+unauthorized_latin_american_born,on_books_low,personal,state_local_income_tax,ITEP p.7,2022,318.27279602689777,642.2018348623852,703.1194295370827,0.45265822939417427
+unauthorized_latin_american_born,on_books_low,personal,state_local_sales_excise,ITEP p.7,2022,1509.164287213155,1385.321100917431,1516.7290551442788,0.9950124460888604
+unauthorized_latin_american_born,on_books_low,shared,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,1254.9958565499765,1788.9908256880733,1958.689839424731,0.6407323054877182
+unauthorized_latin_american_born,on_books_low,shared,payroll_oasdi,ITEP p.6,2022,1484.5896121895425,2357.7981651376144,2581.452762729004,0.5750985002026907
+unauthorized_latin_american_born,on_books_low,shared,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,1484.5896121895425,1203.7037037037037,2017.4429612061097,0.7358768702446955
+unauthorized_latin_american_born,on_books_low,shared,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,1484.5896121895425,2181.8181818181815,2181.8181818181815,0.6804369055868738
+unauthorized_latin_american_born,on_books_low,shared,payroll_hi,ITEP p.6,2022,414.1670540815202,587.1559633027523,642.8520498624758,0.6442649660526434
+unauthorized_latin_american_born,on_books_low,shared,other_social_contributions_ui,ITEP p.6,2022,165.19047867609945,165.1376146788991,180.80213902382133,0.9136533426428932
+unauthorized_latin_american_born,on_books_low,shared,state_local_income_tax,ITEP p.7,2022,326.21207472557006,642.2018348623852,703.1194295370827,0.4639497374440931
+unauthorized_latin_american_born,on_books_low,shared,state_local_sales_excise,ITEP p.7,2022,1509.164287213155,1385.321100917431,1516.7290551442788,0.9950124460888604
+unauthorized_latin_american_born,raw,personal,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,1933.748516505917,1788.9908256880733,1958.689839424731,0.9872663234286552
+unauthorized_latin_american_born,raw,personal,payroll_oasdi,ITEP p.6,2022,3499.109998129872,2357.7981651376144,2581.452762729004,1.355480932539226
+unauthorized_latin_american_born,raw,personal,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,3499.109998129872,1203.7037037037037,2017.4429612061097,1.7344282170128673
+unauthorized_latin_american_born,raw,personal,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,3499.109998129872,2181.8181818181815,2181.8181818181815,1.6037587491428582
+unauthorized_latin_american_born,raw,personal,payroll_hi,ITEP p.6,2022,971.5360037514696,587.1559633027523,642.8520498624758,1.5112902011579623
+unauthorized_latin_american_born,raw,personal,other_social_contributions_ui,ITEP p.6,2022,379.96384843557763,165.1376146788991,180.80213902382133,2.101545095025209
+unauthorized_latin_american_born,raw,personal,state_local_income_tax,ITEP p.7,2022,759.1538624434122,642.2018348623852,703.1194295370827,1.0796940470600012
+unauthorized_latin_american_born,raw,personal,state_local_sales_excise,ITEP p.7,2022,1509.164287213155,1385.321100917431,1516.7290551442788,0.9950124460888604
+unauthorized_latin_american_born,raw,shared,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,2044.6540978895573,1788.9908256880733,1958.689839424731,1.0438886528813944
+unauthorized_latin_american_born,raw,shared,payroll_oasdi,ITEP p.6,2022,2896.9494645464565,2357.7981651376144,2581.452762729004,1.1222167247731942
+unauthorized_latin_american_born,raw,shared,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,2896.9494645464565,1203.7037037037037,2017.4429612061097,1.4359511124986364
+unauthorized_latin_american_born,raw,shared,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,2896.9494645464565,2181.8181818181815,2181.8181818181815,1.3277685045837928
+unauthorized_latin_american_born,raw,shared,payroll_hi,ITEP p.6,2022,810.4251943185792,587.1559633027523,642.8520498624758,1.2606714009731352
+unauthorized_latin_american_born,raw,shared,other_social_contributions_ui,ITEP p.6,2022,319.8850825480151,165.1376146788991,180.80213902382133,1.76925496719853
+unauthorized_latin_american_born,raw,shared,state_local_income_tax,ITEP p.7,2022,636.9441739464424,642.2018348623852,703.1194295370827,0.9058833353044894
+unauthorized_latin_american_born,raw,shared,state_local_sales_excise,ITEP p.7,2022,1509.164287213155,1385.321100917431,1516.7290551442788,0.9950124460888604
+unauthorized_mexico_born_union,on_books_central,personal,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,1398.6253149603851,1788.9908256880733,1958.689839424731,0.7140616583640229
+unauthorized_mexico_born_union,on_books_central,personal,payroll_oasdi,ITEP p.6,2022,1927.891352832023,2357.7981651376144,2581.452762729004,0.7468241839118283
+unauthorized_mexico_born_union,on_books_central,personal,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,1927.891352832023,1203.7037037037037,2017.4429612061097,0.9556113307309818
+unauthorized_mexico_born_union,on_books_central,personal,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,1927.891352832023,2181.8181818181815,2181.8181818181815,0.8836168700480106
+unauthorized_mexico_born_union,on_books_central,personal,payroll_hi,ITEP p.6,2022,527.9335613356869,587.1559633027523,642.8520498624758,0.8212364904936164
+unauthorized_mexico_born_union,on_books_central,personal,other_social_contributions_ui,ITEP p.6,2022,211.1079951910888,165.1376146788991,180.80213902382133,1.1676189028011144
+unauthorized_mexico_born_union,on_books_central,personal,state_local_income_tax,ITEP p.7,2022,399.3578438156119,642.2018348623852,703.1194295370827,0.5679800998793899
+unauthorized_mexico_born_union,on_books_central,personal,state_local_sales_excise,ITEP p.7,2022,1480.59322014118,1385.321100917431,1516.7290551442788,0.9761751547644338
+unauthorized_mexico_born_union,on_books_central,shared,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,1401.4509657883518,1788.9908256880733,1958.689839424731,0.715504281269953
+unauthorized_mexico_born_union,on_books_central,shared,payroll_oasdi,ITEP p.6,2022,1748.1763242740171,2357.7981651376144,2581.452762729004,0.6772063969227615
+unauthorized_mexico_born_union,on_books_central,shared,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,1748.1763242740171,1203.7037037037037,2017.4429612061097,0.8665307311731312
+unauthorized_mexico_born_union,on_books_central,shared,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,1748.1763242740171,2181.8181818181815,2181.8181818181815,0.8012474819589246
+unauthorized_mexico_born_union,on_books_central,shared,payroll_hi,ITEP p.6,2022,482.6278341049349,587.1559633027523,642.8520498624758,0.7507603564586636
+unauthorized_mexico_born_union,on_books_central,shared,other_social_contributions_ui,ITEP p.6,2022,198.94569963930547,165.1376146788991,180.80213902382133,1.1003503648432702
+unauthorized_mexico_born_union,on_books_central,shared,state_local_income_tax,ITEP p.7,2022,371.12329072223775,642.2018348623852,703.1194295370827,0.527823972901128
+unauthorized_mexico_born_union,on_books_central,shared,state_local_sales_excise,ITEP p.7,2022,1480.59322014118,1385.321100917431,1516.7290551442788,0.9761751547644338
+unauthorized_mexico_born_union,on_books_high,personal,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,1682.5965838718175,1788.9908256880733,1958.689839424731,0.85904187074662
+unauthorized_mexico_born_union,on_books_high,personal,payroll_oasdi,ITEP p.6,2022,2315.0005147253796,2357.7981651376144,2581.452762729004,0.8967820554957813
+unauthorized_mexico_born_union,on_books_high,personal,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,2315.0005147253796,1203.7037037037037,2017.4429612061097,1.1474924244407771
+unauthorized_mexico_born_union,on_books_high,personal,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,2315.0005147253796,2181.8181818181815,2181.8181818181815,1.0610419025824658
+unauthorized_mexico_born_union,on_books_high,personal,payroll_hi,ITEP p.6,2022,634.0659368887289,587.1559633027523,642.8520498624758,0.9863326048728839
+unauthorized_mexico_born_union,on_books_high,personal,other_social_contributions_ui,ITEP p.6,2022,253.14484905590888,165.1376146788991,180.80213902382133,1.4001208748009124
+unauthorized_mexico_born_union,on_books_high,personal,state_local_income_tax,ITEP p.7,2022,480.2203937310526,642.2018348623852,703.1194295370827,0.6829855264378321
+unauthorized_mexico_born_union,on_books_high,personal,state_local_sales_excise,ITEP p.7,2022,1480.59322014118,1385.321100917431,1516.7290551442788,0.9761751547644338
+unauthorized_mexico_born_union,on_books_high,shared,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,1623.2368554367279,1788.9908256880733,1958.689839424731,0.828736037101961
+unauthorized_mexico_born_union,on_books_high,shared,payroll_oasdi,ITEP p.6,2022,2001.9187297199508,2357.7981651376144,2581.452762729004,0.7755008182305866
+unauthorized_mexico_born_union,on_books_high,shared,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,2001.9187297199508,1203.7037037037037,2017.4429612061097,0.9923049960843117
+unauthorized_mexico_born_union,on_books_high,shared,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,2001.9187297199508,2181.8181818181815,2181.8181818181815,0.9175460844549775
+unauthorized_mexico_born_union,on_books_high,shared,payroll_hi,ITEP p.6,2022,553.1567321441523,587.1559633027523,642.8520498624758,0.8604728448209633
+unauthorized_mexico_born_union,on_books_high,shared,other_social_contributions_ui,ITEP p.6,2022,226.57532974300878,165.1376146788991,180.80213902382133,1.2531673074573342
+unauthorized_mexico_born_union,on_books_high,shared,state_local_income_tax,ITEP p.7,2022,426.150560575577,642.2018348623852,703.1194295370827,0.6060855989375012
+unauthorized_mexico_born_union,on_books_high,shared,state_local_sales_excise,ITEP p.7,2022,1480.59322014118,1385.321100917431,1516.7290551442788,0.9761751547644338
+unauthorized_mexico_born_union,on_books_low,personal,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,1111.4405147629584,1788.9908256880733,1958.689839424731,0.5674407925092364
+unauthorized_mexico_born_union,on_books_low,personal,payroll_oasdi,ITEP p.6,2022,1534.932818658275,2357.7981651376144,2581.452762729004,0.59460038967965
+unauthorized_mexico_born_union,on_books_low,personal,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,1534.932818658275,1203.7037037037037,2017.4429612061097,0.7608308379338911
+unauthorized_mexico_born_union,on_books_low,personal,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,1534.932818658275,2181.8181818181815,2181.8181818181815,0.7035108752183761
+unauthorized_mexico_born_union,on_books_low,personal,payroll_hi,ITEP p.6,2022,420.2407808951179,587.1559633027523,642.8520498624758,0.6537130603923862
+unauthorized_mexico_born_union,on_books_low,personal,other_social_contributions_ui,ITEP p.6,2022,168.3160014059473,165.1376146788991,180.80213902382133,0.9309403213629628
+unauthorized_mexico_born_union,on_books_low,personal,state_local_income_tax,ITEP p.7,2022,317.50505464690696,642.2018348623852,703.1194295370827,0.45156632189206436
+unauthorized_mexico_born_union,on_books_low,personal,state_local_sales_excise,ITEP p.7,2022,1480.59322014118,1385.321100917431,1516.7290551442788,0.9761751547644338
+unauthorized_mexico_born_union,on_books_low,shared,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,1177.0893926480746,1788.9908256880733,1958.689839424731,0.600957522194421
+unauthorized_mexico_born_union,on_books_low,shared,payroll_oasdi,ITEP p.6,2022,1490.6241650047566,2357.7981651376144,2581.452762729004,0.5774361578590077
+unauthorized_mexico_born_union,on_books_low,shared,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,1490.6241650047566,1203.7037037037037,2017.4429612061097,0.7388680590570951
+unauthorized_mexico_born_union,on_books_low,shared,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,1490.6241650047566,2181.8181818181815,2181.8181818181815,0.6832027422938469
+unauthorized_mexico_born_union,on_books_low,shared,payroll_hi,ITEP p.6,2022,411.06883558032024,587.1559633027523,642.8520498624758,0.6394454768686815
+unauthorized_mexico_born_union,on_books_low,shared,other_social_contributions_ui,ITEP p.6,2022,170.81946223530008,165.1376146788991,180.80213902382133,0.9447867329312626
+unauthorized_mexico_born_union,on_books_low,shared,state_local_income_tax,ITEP p.7,2022,315.4240453350434,642.2018348623852,703.1194295370827,0.4486066407561958
+unauthorized_mexico_born_union,on_books_low,shared,state_local_sales_excise,ITEP p.7,2022,1480.59322014118,1385.321100917431,1516.7290551442788,0.9761751547644338
+unauthorized_mexico_born_union,raw,personal,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,1708.6522875237154,1788.9908256880733,1958.689839424731,0.8723444892252814
+unauthorized_mexico_born_union,raw,personal,payroll_oasdi,ITEP p.6,2022,3633.3694652239224,2357.7981651376144,2581.452762729004,1.4074901999689802
+unauthorized_mexico_born_union,raw,personal,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,3633.3694652239224,1203.7037037037037,2017.4429612061097,1.8009775419136242
+unauthorized_mexico_born_union,raw,personal,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,3633.3694652239224,2181.8181818181815,2181.8181818181815,1.6652943382276313
+unauthorized_mexico_born_union,raw,personal,payroll_hi,ITEP p.6,2022,995.8366304582319,587.1559633027523,642.8520498624758,1.5490914755133305
+unauthorized_mexico_born_union,raw,personal,other_social_contributions_ui,ITEP p.6,2022,395.43482856963993,165.1376146788991,180.80213902382133,2.187113663060922
+unauthorized_mexico_born_union,raw,personal,state_local_income_tax,ITEP p.7,2022,757.3226225722934,642.2018348623852,703.1194295370827,1.0770895963874825
+unauthorized_mexico_born_union,raw,personal,state_local_sales_excise,ITEP p.7,2022,1480.59322014118,1385.321100917431,1516.7290551442788,0.9761751547644338
+unauthorized_mexico_born_union,raw,shared,federal_income_tax_net_of_eitc_actc,ITEP p.5,2022,1950.8142197698883,1788.9908256880733,1958.689839424731,0.995979138965077
+unauthorized_mexico_born_union,raw,shared,payroll_oasdi,ITEP p.6,2022,2866.2620162997664,2357.7981651376144,2581.452762729004,1.1103290587698664
+unauthorized_mexico_born_union,raw,shared,payroll_oasdi,"SSA Note 151 p.3 ($13bn, 10.8m)",2010,2866.2620162997664,1203.7037037037037,2017.4429612061097,1.4207400513500505
+unauthorized_mexico_born_union,raw,shared,payroll_oasdi,"PWBM 2025 ($24bn, 11m)",2024,2866.2620162997664,2181.8181818181815,2181.8181818181815,1.313703424137393
+unauthorized_mexico_born_union,raw,shared,payroll_hi,ITEP p.6,2022,793.6169369247042,587.1559633027523,642.8520498624758,1.234525015661817
+unauthorized_mexico_born_union,raw,shared,other_social_contributions_ui,ITEP p.6,2022,320.0965029997053,165.1376146788991,180.80213902382133,1.7704243142694869
+unauthorized_mexico_born_union,raw,shared,state_local_income_tax,ITEP p.7,2022,614.7337188249259,642.2018348623852,703.1194295370827,0.8742948822074964
+unauthorized_mexico_born_union,raw,shared,state_local_sales_excise,ITEP p.7,2022,1480.59322014118,1385.321100917431,1516.7290551442788,0.9761751547644338

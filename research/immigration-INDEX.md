@@ -172,8 +172,11 @@ tests the keys against data built independently of the account. The BEA closure 
 catch a wrong key, because a wrong key only moves dollars between groups. Schools (ladder 215): the
 key already prices pupils at their state's average, but the group's districts and schools spend
 about 3.4% more than their states', so the main case would rise to **$206.6–252.7bn** (proposed).
-The same lane finds the audit's row 6 smaller through the engine than the audit states. Benefit keys,
-tax and transfer benchmarks and the direction of the crime-ratio errors are still running.
+The same lane finds the audit's row 6 smaller through the engine than the audit states. Taxes and
+transfers (ladder 216): CBO's 2022 income distribution and Treasury's EITC shares by ethnicity
+corroborate most keys; the income-tax key is too flat at the top (+$13.2–14.1bn, about $4bn beyond
+audit row 3), so the main case would be **$209.2–254.8bn** (proposed; not combined with schools).
+Benefit keys and the direction of the crime-ratio errors are still running.
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
