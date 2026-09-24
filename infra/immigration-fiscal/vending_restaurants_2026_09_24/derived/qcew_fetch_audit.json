@@ -1,0 +1,352 @@
+{
+ "2014_445110": {
+  "county_emp": 2170507.0,
+  "county_rows": 3210,
+  "county_share_of_national": 0.8797,
+  "disclosed": 1406,
+  "national_emp": 2467266.0
+ },
+ "2014_722330": {
+  "county_emp": 8056.0,
+  "county_rows": 877,
+  "county_share_of_national": 0.6221,
+  "disclosed": 193,
+  "national_emp": 12950.0
+ },
+ "2014_7225": {
+  "county_emp": 9489542.0,
+  "county_rows": 3246,
+  "county_share_of_national": 0.9818,
+  "disclosed": 2480,
+  "national_emp": 9665136.0
+ },
+ "2014_722511": {
+  "county_emp": 4981905.0,
+  "county_rows": 3213,
+  "county_share_of_national": 0.9898,
+  "disclosed": 2377,
+  "national_emp": 5033367.0
+ },
+ "2014_722513": {
+  "county_emp": 3941156.0,
+  "county_rows": 3125,
+  "county_share_of_national": 0.9994,
+  "disclosed": 2494,
+  "national_emp": 3943499.0
+ },
+ "2015_445110": {
+  "county_emp": 2215745.0,
+  "county_rows": 3211,
+  "county_share_of_national": 0.8796,
+  "disclosed": 1409,
+  "national_emp": 2519140.0
+ },
+ "2015_722330": {
+  "county_emp": 10015.0,
+  "county_rows": 973,
+  "county_share_of_national": 0.656,
+  "disclosed": 206,
+  "national_emp": 15266.0
+ },
+ "2015_7225": {
+  "county_emp": 9842567.0,
+  "county_rows": 3244,
+  "county_share_of_national": 0.9834,
+  "disclosed": 2481,
+  "national_emp": 10008264.0
+ },
+ "2015_722511": {
+  "county_emp": 5146727.0,
+  "county_rows": 3214,
+  "county_share_of_national": 0.9903,
+  "disclosed": 2379,
+  "national_emp": 5197336.0
+ },
+ "2015_722513": {
+  "county_emp": 4079930.0,
+  "county_rows": 3126,
+  "county_share_of_national": 0.9978,
+  "disclosed": 2471,
+  "national_emp": 4089056.0
+ },
+ "2016_445110": {
+  "county_emp": 2219763.0,
+  "county_rows": 3208,
+  "county_share_of_national": 0.8767,
+  "disclosed": 1382,
+  "national_emp": 2532014.0
+ },
+ "2016_722330": {
+  "county_emp": 11898.0,
+  "county_rows": 1026,
+  "county_share_of_national": 0.6857,
+  "disclosed": 251,
+  "national_emp": 17351.0
+ },
+ "2016_7225": {
+  "county_emp": 10143323.0,
+  "county_rows": 3240,
+  "county_share_of_national": 0.9821,
+  "disclosed": 2456,
+  "national_emp": 10328672.0
+ },
+ "2016_722511": {
+  "county_emp": 5269441.0,
+  "county_rows": 3209,
+  "county_share_of_national": 0.9892,
+  "disclosed": 2384,
+  "national_emp": 5327164.0
+ },
+ "2016_722513": {
+  "county_emp": 4238758.0,
+  "county_rows": 3117,
+  "county_share_of_national": 0.9981,
+  "disclosed": 2495,
+  "national_emp": 4246922.0
+ },
+ "2017_445110": {
+  "county_emp": 2220985.0,
+  "county_rows": 3209,
+  "county_share_of_national": 0.8745,
+  "disclosed": 1390,
+  "national_emp": 2539666.0
+ },
+ "2017_722330": {
+  "county_emp": 14520.0,
+  "county_rows": 1115,
+  "county_share_of_national": 0.7391,
+  "disclosed": 268,
+  "national_emp": 19646.0
+ },
+ "2017_7225": {
+  "county_emp": 10386771.0,
+  "county_rows": 3241,
+  "county_share_of_national": 0.9843,
+  "disclosed": 2475,
+  "national_emp": 10552882.0
+ },
+ "2017_722511": {
+  "county_emp": 5347310.0,
+  "county_rows": 3210,
+  "county_share_of_national": 0.9901,
+  "disclosed": 2401,
+  "national_emp": 5400561.0
+ },
+ "2017_722513": {
+  "county_emp": 4351531.0,
+  "county_rows": 3118,
+  "county_share_of_national": 0.9985,
+  "disclosed": 2510,
+  "national_emp": 4357875.0
+ },
+ "2018_445110": {
+  "county_emp": 2216333.0,
+  "county_rows": 3213,
+  "county_share_of_national": 0.8764,
+  "disclosed": 1373,
+  "national_emp": 2528949.0
+ },
+ "2018_722330": {
+  "county_emp": 16322.0,
+  "county_rows": 1183,
+  "county_share_of_national": 0.7296,
+  "disclosed": 293,
+  "national_emp": 22370.0
+ },
+ "2018_7225": {
+  "county_emp": 10538075.0,
+  "county_rows": 3239,
+  "county_share_of_national": 0.9836,
+  "disclosed": 2470,
+  "national_emp": 10713435.0
+ },
+ "2018_722511": {
+  "county_emp": 5410019.0,
+  "county_rows": 3206,
+  "county_share_of_national": 0.9912,
+  "disclosed": 2415,
+  "national_emp": 5457827.0
+ },
+ "2018_722513": {
+  "county_emp": 4414743.0,
+  "county_rows": 3123,
+  "county_share_of_national": 0.9982,
+  "disclosed": 2512,
+  "national_emp": 4422913.0
+ },
+ "2019_445110": {
+  "county_emp": 2202628.0,
+  "county_rows": 3207,
+  "county_share_of_national": 0.8748,
+  "disclosed": 1353,
+  "national_emp": 2517738.0
+ },
+ "2019_722330": {
+  "county_emp": 18346.0,
+  "county_rows": 1300,
+  "county_share_of_national": 0.7336,
+  "disclosed": 329,
+  "national_emp": 25007.0
+ },
+ "2019_7225": {
+  "county_emp": 10677250.0,
+  "county_rows": 3239,
+  "county_share_of_national": 0.9846,
+  "disclosed": 2494,
+  "national_emp": 10844234.0
+ },
+ "2019_722511": {
+  "county_emp": 5432664.0,
+  "county_rows": 3207,
+  "county_share_of_national": 0.9918,
+  "disclosed": 2431,
+  "national_emp": 5477630.0
+ },
+ "2019_722513": {
+  "county_emp": 4484444.0,
+  "county_rows": 3129,
+  "county_share_of_national": 0.9989,
+  "disclosed": 2522,
+  "national_emp": 4489360.0
+ },
+ "2020_445110": {
+  "county_emp": 2255905.0,
+  "county_rows": 3192,
+  "county_share_of_national": 0.8774,
+  "disclosed": 1363,
+  "national_emp": 2571091.0
+ },
+ "2020_722330": {
+  "county_emp": 15641.0,
+  "county_rows": 1403,
+  "county_share_of_national": 0.7609,
+  "disclosed": 330,
+  "national_emp": 20555.0
+ },
+ "2020_7225": {
+  "county_emp": 8786863.0,
+  "county_rows": 3244,
+  "county_share_of_national": 0.9839,
+  "disclosed": 2501,
+  "national_emp": 8930329.0
+ },
+ "2020_722511": {
+  "county_emp": 3978059.0,
+  "county_rows": 3210,
+  "county_share_of_national": 0.9887,
+  "disclosed": 2367,
+  "national_emp": 4023646.0
+ },
+ "2020_722513": {
+  "county_emp": 4138186.0,
+  "county_rows": 3127,
+  "county_share_of_national": 1.0014,
+  "disclosed": 2576,
+  "national_emp": 4132502.0
+ },
+ "2021_445110": {
+  "county_emp": 2238437.0,
+  "county_rows": 3190,
+  "county_share_of_national": 0.8736,
+  "disclosed": 1347,
+  "national_emp": 2562373.0
+ },
+ "2021_722330": {
+  "county_emp": 23157.0,
+  "county_rows": 1519,
+  "county_share_of_national": 0.7756,
+  "disclosed": 389,
+  "national_emp": 29857.0
+ },
+ "2021_7225": {
+  "county_emp": 9643293.0,
+  "county_rows": 3247,
+  "county_share_of_national": 0.9853,
+  "disclosed": 2501,
+  "national_emp": 9787492.0
+ },
+ "2021_722511": {
+  "county_emp": 4572741.0,
+  "county_rows": 3207,
+  "county_share_of_national": 0.9918,
+  "disclosed": 2401,
+  "national_emp": 4610687.0
+ },
+ "2021_722513": {
+  "county_emp": 4291234.0,
+  "county_rows": 3135,
+  "county_share_of_national": 0.9997,
+  "disclosed": 2551,
+  "national_emp": 4292659.0
+ },
+ "2022_445110": {
+  "county_emp": 2259430.0,
+  "county_rows": 3191,
+  "county_share_of_national": 0.8825,
+  "disclosed": 1372,
+  "national_emp": 2560145.0
+ },
+ "2022_722330": {
+  "county_emp": 27946.0,
+  "county_rows": 1660,
+  "county_share_of_national": 0.7715,
+  "disclosed": 437,
+  "national_emp": 36224.0
+ },
+ "2022_7225": {
+  "county_emp": 10464193.0,
+  "county_rows": 3242,
+  "county_share_of_national": 0.9883,
+  "disclosed": 2555,
+  "national_emp": 10587807.0
+ },
+ "2022_722511": {
+  "county_emp": 5107751.0,
+  "county_rows": 3201,
+  "county_share_of_national": 0.9948,
+  "disclosed": 2472,
+  "national_emp": 5134208.0
+ },
+ "2022_722513": {
+  "county_emp": 4467405.0,
+  "county_rows": 3142,
+  "county_share_of_national": 1.0007,
+  "disclosed": 2563,
+  "national_emp": 4464115.0
+ },
+ "2023_445110": {
+  "county_emp": 2306407.0,
+  "county_rows": 3184,
+  "county_share_of_national": 0.8869,
+  "disclosed": 1372,
+  "national_emp": 2600578.0
+ },
+ "2023_722330": {
+  "county_emp": 32254.0,
+  "county_rows": 1767,
+  "county_share_of_national": 0.8007,
+  "disclosed": 477,
+  "national_emp": 40284.0
+ },
+ "2023_7225": {
+  "county_emp": 10841588.0,
+  "county_rows": 3244,
+  "county_share_of_national": 0.9897,
+  "disclosed": 2593,
+  "national_emp": 10954238.0
+ },
+ "2023_722511": {
+  "county_emp": 5309763.0,
+  "county_rows": 3204,
+  "county_share_of_national": 0.996,
+  "disclosed": 2521,
+  "national_emp": 5331268.0
+ },
+ "2023_722513": {
+  "county_emp": 4612658.0,
+  "county_rows": 3144,
+  "county_share_of_national": 1.0014,
+  "disclosed": 2584,
+  "national_emp": 4606116.0
+ }
+}

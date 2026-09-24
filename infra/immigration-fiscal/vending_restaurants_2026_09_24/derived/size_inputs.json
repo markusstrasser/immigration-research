@@ -1,0 +1,24 @@
+{
+ "year": 2024,
+ "cpi_fafh_2014": 248.981,
+ "cpi_fafh_2024": 368.743,
+ "la_city_hispanic": 1922879.0,
+ "ca_hispanic": 15105846.1963198,
+ "ca_pop": 38982833.0,
+ "scale_ca_over_la_city": 7.8558485460186525,
+ "food_vending_la_city_bn_2024": 0.14955000000000002,
+ "food_vending_ca_upper_bn_2024": 1.1749,
+ "ca_7225_estab_2023": 79696,
+ "ca_7225_emp_2023": 1404974,
+ "ca_7225_payroll_bn_2023": 40.307828,
+ "payroll_per_c08_dollar_2023": 0.3717868662387023,
+ "county_c08_b2019": 0.00130512,
+ "county_c08_se2019": 0.0013399,
+ "hisp_min_ca_county": 0.0718724,
+ "lever_bn": 343.01754349665725,
+ "sales_change_bn": {
+  "central": 0.4476790563683573,
+  "low": -0.4531549884327379,
+  "high": 1.3485131011694524
+ }
+}
