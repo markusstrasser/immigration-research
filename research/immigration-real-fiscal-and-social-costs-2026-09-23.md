@@ -34,6 +34,18 @@ fifth gains $46.0bn (§4). Priced to the same standard, the benefits the account
 $4.8bn a year, or $18.7bn with the proposed scale net (§7b); with all of them the total is
 $237–289bn. [CALCULATION: lanes and commits in "Sources"]
 
+**Update, 2026-09-25 (main case adopted September 24, $200.9–246.3bn).** Fiscal and social costs
+together come to **$248–304bn a year** at central values (full span $210–337bn), or $6.1–7.4k per
+group member, with decision 4's victims figure ($30.9bn) at the low end and the custody footing at
+the high end; with this memo's $28.9bn the low end is $246bn. Care now sits inside the account, so
+the omitted benefits are mobility's $0.65bn, or $14.6bn with the scale net, and costs and benefits
+together are $253–303bn ($239–289bn adding the scale net). In the income split (§4) the fiscal
+channel is $225.1bn and the central total $259.8bn; the channels outside the budget do not move.
+The sections below keep their September 23 figures, which the lane reproduces exactly.
+[CALCULATION: `infra/immigration-fiscal/sept24_propagation_2026_09_24/real_costs_totals.py` →
+`derived/real_costs_totals.csv`; `distribution_weights_2026_09_23/distribute.py` →
+`derived/channel_by_quintile.csv`]
+
 Date: 2026-09-23. Operator request: "equal charge --- should it be weighted with use of
 courts, police, prisons? Do the remaining common sense stuff to get at the real fiscal and
 social costs?"
@@ -408,3 +420,12 @@ case. None changes the sign. [CALCULATION: rows of §7 and the lanes' `summary` 
   verdict. §7b combines the four benefit lanes (ladder 198, 200, 201, 203) with the costs:
   $251–303bn with care and mobility, $237–289bn with the proposed scale net. Concepts affected:
   the offender input of victim harm; costs and benefits on one standard.
+
+- 2026-09-25 (September 24 case, recomputed): the propagation lane rebuilt §7 and §7b from the
+  lanes' files on both cases. Every September 23 total above reproduces (three only as sums of
+  one-decimal rows). On the adopted case: §7 $246–296bn on the Hispanic-rates footing ($248–298bn
+  with decision 4's victims figure) and $253–304bn on the custody footing, full span $210–337bn;
+  §7b $258–308bn costs only, $253–303bn with care and mobility, $239–289bn adding the scale net.
+  The 2026-09-24 note's "about $253–304bn" summed the printed one-decimal social row; the exact
+  figure is $252.7–303.4bn. Concept affected: the combined totals' fiscal row
+  ([lane](../infra/immigration-fiscal/sept24_propagation_2026_09_24/RESULT.md)).

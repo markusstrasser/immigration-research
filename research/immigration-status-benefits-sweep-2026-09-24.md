@@ -80,7 +80,8 @@ CALCULATION: calendar-2024 blends and keying in
   12.0%, health 7.7%, other state benefits 22.6%) charge the group for services that went mostly to
   Venezuelans, then Ecuadorians, Colombians and Guineans. The correction, about −$0.5bn, is 0.2–0.5%
   of the $203.2–249.6bn main case. It is proposed, not adopted, and would join the dataset audit's
-  small keying rows.
+  small keying rows. [2026-09-24: adopted with the main case of that day as shelter keying,
+  −$0.51 / −0.55bn (ladder 219).]
 
 ## What would change it
 

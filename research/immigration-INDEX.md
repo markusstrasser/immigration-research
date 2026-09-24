@@ -72,8 +72,10 @@ where the computed neighbors ε = 5 and ε = 7 give about +$13–22bn and would 
 $157–194bn; the directly estimated low-skill elasticities 8.7–17.9 (ladder 181) give
 +$10–18bn and a band near $160–196bn. The band is not re-run. These shifts are against the
 September 20 band; the same production shifts apply to the adopted one.
-Sampling plus donor error is about **±$12bn (1 SE)** per headline case; the September 20 main band's
-95% intervals run **$141–221bn** together (not re-propagated for the adopted case), and across constructions the assumptions dominate (ladder 184,
+Sampling plus donor error is about **±$12bn (1 SE)** per September 20 case and **±$10.8–10.9bn** on the
+adopted September 24 case, whose 64 specifications' 95% intervals run **$180–268bn** together
+(September 20 band: $141–221bn). That SE is a floor: most corrections carry ranges, not SEs. Across
+constructions the assumptions dominate (ladder 184,
 [uncertainty lane](../infra/immigration-fiscal/uncertainty_propagation_2026_09_22/RESULT.md)).
 The **$262–357bn** proportional-service grid includes weaker proxy stress tests.
 The report now regenerates all category comparisons and composition diagnostics.
@@ -102,7 +104,8 @@ Beside the fiscal headline, as social costs:
   budgets fixed as in the main case.
 
 Wages move **$66–166bn** from less- to more-educated natives. Fiscal plus social costs come to
-**$248–307bn a year** at central values ($212–340bn full span). The transfers are not added, but they run from poorer
+**$248–304bn a year** at central values ($210–337bn full span) on the September 24 case
+(September 23: $248–307bn, $212–340bn). The transfers are not added, but they run from poorer
 to richer residents: outside the budget the bottom four fifths lose $80.7bn a year and the top
 fifth gains $46.0bn. The fiscal cost is progressive if financed by tax shares and regressive if
 by equal cuts per person (ladder 194).
@@ -120,14 +123,14 @@ term. The third, the
 measures city size and schooling mix in one regression. Bigger cities add $38.6bn to other
 residents' earnings; the group's lower schooling takes back $24.9bn. That leaves **+$13.9bn**
 (95% −$57bn to +$84bn), not yet adopted; adopting it would put the main case at
-$189.3–235.7bn. The 1970–2000 college-share studies would make it a $109–677bn cost instead. The
+$186.9–232.4bn (September 23 case: $189.3–235.7bn). The 1970–2000 college-share studies would make it a $109–677bn cost instead. The
 fourth, the [mobility lane](../infra/immigration-fiscal/labor_mobility_insurance_2026_09_23/RESULT.md)
 (ladder 203), is worth $0.65bn a year beside the account: the Mexico-born no longer move more than
-natives within the US. Priced to the same standard, the omitted benefits come to $4.8bn, or $18.7bn
-with the scale net. Costs and benefits together are **$251–303bn** at central values, or
-$237–289bn adding the proposed scale net ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §7b),
-computed on the September 23 case with care beside it. On the September 24 case, with care
-inside the account, the central total with mobility is about $253–304bn. The ancestry instrument could not measure the congestion or wage
+natives within the US. Priced to the same standard, the omitted benefits come to $0.65bn (mobility), or $14.6bn
+with the scale net, since care sits inside the September 24 account. Costs and benefits together
+are **$253–303bn** at central values, or $239–289bn adding the proposed scale net
+([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §7b; September 23 case with
+care beside it: $251–303bn and $237–289bn). The ancestry instrument could not measure the congestion or wage
 slopes, so both figures stand (ladder 199).
 
 The [dataset integrity audit](../infra/immigration-fiscal/dataset_integrity_2026_09_23/README.md)
@@ -151,8 +154,9 @@ one package; the operator adopted it on September 24, with row 6 run through the
 replaced by CBO's income-tax gradient and row 5 by the pooled-MEPS figure (ladder 219).
 
 The [debt legacy lane](../infra/immigration-fiscal/debt_legacy_2026_09_23/RESULT.md) (ladder 207)
-prices interest on the group's past federal gaps. Borrowed, the 2005–2023 gaps leave $0.94–1.20tn
-of debt, on which 2024 taxpayers pay **$30.5–38.9bn** of interest ($7.7–42.8bn across rules). That
+prices interest on the group's past federal gaps. On the September 24 case, borrowed, the 2005–2023
+gaps leave $0.88–1.13tn of debt, on which 2024 taxpayers pay **$28.3–36.4bn** of interest
+($6.3–37.3bn across rules; September 23 case: $0.94–1.20tn and $30.5–38.9bn). That
 answers a historical question; the main case's static comparison treats existing interest as
 sunk. The line is proposed as the interest row's response, not adopted, and must never be added
 to the assigned balance or the stock to an annual figure.
@@ -230,7 +234,8 @@ ACS population by year, with the 2024 relative position held or income-adjusted,
 case, 2024 dollars, no interest; the whole-budget rules alone give $1.4–2.0tn, $2.0–3.1tn and
 $2.4–3.8tn. On the adopted $201–246bn anchor (September 24) the whole-budget rules give **$1.7–2.4tn,
 $2.5–3.6tn and $3.0–4.5tn** (September 23, $203–250bn: $1.7–2.5tn, $2.5–3.7tn and $3.0–4.6tn); the
-programme-by-programme version is not re-run. 2020–2021 supply 29–39% of the ten-year total under the rules that follow the benefit spike (over a third in the programme version) and 20% under the flat carry. Measured trend (ACS):
+programme-by-programme version, run in the debt legacy lane, gives $1.95–2.33tn, $2.75–3.30tn and
+$3.27–3.97tn (September 23: $2.02–2.42tn, $2.82–3.39tn, $3.31–4.04tn). 2020–2021 supply 29–39% of the ten-year total under the rules that follow the benefit spike (over a third in the programme version) and 20% under the flat carry. Measured trend (ACS):
 per-capita income 0.52→0.61 of the national figure over 2008–2024, median household
 income 0.78→0.91, full-time men's earnings 0.64→0.75 with the gain in 2016–2019 and
 2021–2023 and none in 2024. Model ranges, not intervals; a measured series needs the
