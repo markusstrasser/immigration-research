@@ -260,8 +260,10 @@ Hispanic residents are 20.2% of people in prisons and jails against 20.7% of res
 18–64. [2026-09-23: the jail part of that figure is probably under-recorded. BJS jail counts put
 Hispanics at 14.4% of inmates against 22.1% of adult arrests, and unlike the prisoner series
 they are not adjusted for ethnicity. With jails at the arrest share, prisons and jails together
-are 22.9% Hispanic (ladder 204). The main case's custody key comes from the ACS, not from this
-figure.] Hispanic adults are imprisoned at 1.3 times the all-adult rate and 2.6 times the
+are 22.9% Hispanic: (282,700 + 22.1% × 664,200) ÷ 1,874,508, from BJS's 2023 counts of
+sentenced prisoners and jail inmates (ladder 204; counts gated in
+`infra/immigration-fiscal/cj_use_allocation_2026_09_23/allocate.py`). The main case's custody key
+comes from the ACS, not from this figure.] Hispanic adults are imprisoned at 1.3 times the all-adult rate and 2.6 times the
 non-Hispanic white rate (BJS, 2023). Victim costs are outside a fiscal account. Crimes by group members against
 other residents cost the victims about $29bn a year ($15–45bn), a social cost beside the fiscal
 headline ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §2–3). Police
