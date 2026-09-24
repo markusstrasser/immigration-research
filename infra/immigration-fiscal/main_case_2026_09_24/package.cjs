@@ -50,6 +50,16 @@ const MAIN_SPECS = product({
   school: [0.63, 0.66], gg: GG, uc: ["uninsured_use_low", "uninsured_use_high"], justice: ["use"],
 });
 const SYN = { school: "school_reprice", college: "college_rekey", constants: "lane_constants" };
+// The engine responds to these lines by class (engine.js spendingResponse); cost() below also sets
+// their responses explicitly.
+const SYN_LINES = [
+  { id: SYN.school, family: "consumption", response_class: "education_school_part",
+    label: "Schools priced where the group enrolls (correction)" },
+  { id: SYN.college, family: "consumption", response_class: "education_other_part",
+    label: "Colleges and other education, re-keyed (correction)" },
+  { id: SYN.constants, family: "consumption", response_class: "correction_constant",
+    label: "Care work, shelter and audit rows 8–10 (corrections counted in full)" },
+];
 // Service profiles of main_case_2026_09_23 (main_case_translate.js PROFILES): the main case, its
 // variant with non-school education fixed, and the proportional reference.
 const PROFILES = {
@@ -89,39 +99,36 @@ const KEY_FAMILIES = {
   [MEDICAID]: { medicaid: ["medicaid", "uninsured_use_low", "uninsured_use_high", "uninsured_use_07_low", "uninsured_use_07_high"] },
   public_order_safety: { use: ["use", "use_raw_coding"] },
 };
-function build(shifts) {
-  const m = JSON.parse(JSON.stringify(MODEL));
-  const cell = () => ({ target_bn: 0, other_bn: 0, share: 0 });
-  for (const id of Object.values(SYN)) {
-    m.spending.lines.push({ id, family: "consumption", national_bn: 0, response_class: id,
-      preferred_key: "k", alternative_key: "k", keys: { k: { personal: cell(), shared: cell() } } });
-  }
+// A list of shifts as the engine's cell edits (Engine.applyCorrections), in order.
+function expand(shifts) {
+  const edits = [];
   for (const s of shifts) {
     if (s.side === "receipt") {
       // Receipt changes are measured on the reference incidence rule. Every other executed rule takes
       // the same proportional change to the group's share of the line, so the rules keep their ratio;
       // on the lines where the rules agree that is the same dollar change.
-      const line = m.receipts.lines.find((l) => l.id === s.line);
+      const line = MODEL.receipts.lines.find((l) => l.id === s.line);
       if (!line) throw new Error("no receipt line " + s.line);
-      const orig = MODEL.receipts.lines.find((l) => l.id === s.line).cells;
-      for (const sc of m.receipts.scenarios) for (const a of ALLOCS) {
-        const t0 = orig[m.receipts.reference][a].target_bn;
-        const d = s.by[a] * (t0 === 0 ? 1 : orig[sc][a].target_bn / t0);
-        line.cells[sc][a].target_bn += d; line.cells[sc][a].other_bn -= d;
+      for (const sc of MODEL.receipts.scenarios) {
+        const by = {};
+        for (const a of ALLOCS) {
+          const t0 = line.cells[MODEL.receipts.reference][a].target_bn;
+          by[a] = s.by[a] * (t0 === 0 ? 1 : line.cells[sc][a].target_bn / t0);
+        }
+        edits.push({ side: "receipt", line: s.line, scenario: sc, by });
       }
       continue;
     }
-    const line = m.spending.lines.find((l) => l.id === s.line);
+    const line = MODEL.spending.lines.find((l) => l.id === s.line) || SYN_LINES.find((l) => l.id === s.line);
     if (!line) throw new Error("no spending line " + s.line);
-    const key = s.key || line.preferred_key;
-    const keys = (KEY_FAMILIES[s.line] && KEY_FAMILIES[s.line][key]) || [key];
-    for (const k of keys) {
-      if (!line.keys[k]) throw new Error(`no key ${s.line}/${k}`);
-      for (const a of ALLOCS) { line.keys[k][a].target_bn += s.by[a]; line.keys[k][a].other_bn -= s.by[a]; }
+    const key = s.key || line.preferred_key || "k";
+    for (const k of (KEY_FAMILIES[s.line] && KEY_FAMILIES[s.line][key]) || [key]) {
+      edits.push({ side: "spending", line: s.line, key: k, by: { personal: s.by.personal, shared: s.by.shared } });
     }
   }
-  return m;
+  return edits;
 }
+const build = (shifts) => Engine.applyCorrections(MODEL, { lines: SYN_LINES, edits: expand(shifts) });
 const scale = (by, f) => ({ personal: by.personal * f.personal, shared: by.shared * f.shared });
 const plus = (a, b) => ({ personal: a.personal + b.personal, shared: a.shared + b.shared });
 
@@ -342,10 +349,28 @@ const evalPackage = (caseName, method, o) =>
 const mean2 = (a, b) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
 const central = (o) => mean2(...METHODS.map((m) => evalPackage("central", m, Object.assign({}, CENTRAL, o))));
 
+// The adopted package as the engine's corrections payload (derived/corrections.json): the central case
+// with the two fill-in methods' shift lists averaged (the engine is linear), one net edit per cell.
+function correctionsPayload() {
+  const shifts = METHODS.flatMap((meth) => packageShifts(STACKS[`row4+status_state_aware|central|${meth}`], "central", meth, CENTRAL)
+    .map((x) => ({ ...x, by: scale(x.by, both(0.5)) })));
+  const net = new Map();
+  for (const e of expand(shifts)) {
+    const id = [e.side, e.line, e.side === "receipt" ? e.scenario : e.key].join("|");
+    if (net.has(id)) net.get(id).by = plus(net.get(id).by, e.by); else net.set(id, e);
+  }
+  return {
+    meta: { source: "main_case_2026_09_24/package.cjs", adopted: "2026-09-24",
+      decision: "decisions/2026-09-24-main-case-audit-and-outside-checks.md",
+      case: `central; fill-in methods ${METHODS.join(" and ")} averaged` },
+    lines: SYN_LINES, edits: [...net.values()],
+  };
+}
+
 module.exports = {
-  Engine, MODEL, FISCAL, HERE, ALLOCS, SYN, MEDICAID, MAIN_SPECS, PROFILES, MAIN_PROFILE, CASES, METHODS, STACKS, CENTRAL, CONSTANTS,
+  Engine, MODEL, FISCAL, HERE, ALLOCS, SYN, SYN_LINES, MEDICAID, MAIN_SPECS, PROFILES, MAIN_PROFILE, CASES, METHODS, STACKS, CENTRAL, CONSTANTS,
   BOOKING, LTSS_CENTRAL, LTSS_RANGE, gateState, gate, near, span, f2, csvRows, read, readJson, both, scale, plus,
-  cost, band, build, stackShifts, stackFactor, cboShifts, row3Shifts, otaShifts, row1Shifts, medicalShifts,
+  cost, band, build, expand, correctionsPayload, stackShifts, stackFactor, cboShifts, row3Shifts, otaShifts, row1Shifts, medicalShifts,
   educationShifts, minusT0, benefitShifts, justiceShifts, constantShifts, bookingRow, packageShifts,
   evalPackage, mean2, central, mts, schoolV, schoolLines, ltssMain, benefitSe,
 };

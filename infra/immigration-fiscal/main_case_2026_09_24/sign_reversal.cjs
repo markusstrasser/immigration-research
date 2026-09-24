@@ -12,15 +12,15 @@
  * changes are measured on. The September 23 lane's break-even rows are on this frame and are
  * reproduced first (gate). Its frozen-services row ranges over every incidence rule and key set,
  * so on this frame the script reports that row for both cases side by side instead.
- * The package enters as the mean of the two fill-in methods' shift lists (the engine is linear).
+ * The package enters as the engine's corrections payload (package.cjs correctionsPayload(): the two
+ * fill-in methods' shift lists averaged, the engine being linear).
  * Run from anywhere: node sign_reversal.cjs  ->  derived/sign_reversal.csv
  */
 "use strict";
 const fs = require("fs");
 const path = require("path");
 const P = require("./package.cjs");
-const { Engine, MODEL, SYN, STACKS, METHODS, CENTRAL, HERE, gate, near, gateState, readJson, csvRows, scale, both,
-  build, packageShifts } = P;
+const { Engine, MODEL, SYN, HERE, gate, near, gateState, readJson, csvRows, build, correctionsPayload } = P;
 
 const inputs = readJson("main_case_2026_09_23/derived/inputs.json");
 const published = csvRows("main_case_2026_09_23/derived/sign_reversal.csv");
@@ -52,10 +52,7 @@ function welfare(m, allocation, s, pair, production, share) {
 }
 
 const baseModel = build([]);
-const pkgShifts = METHODS.flatMap((meth) =>
-  packageShifts(STACKS[`row4+status_state_aware|central|${meth}`], "central", meth, CENTRAL)
-    .map((x) => ({ ...x, by: scale(x.by, both(0.5)) })));
-const pkgModel = build(pkgShifts);
+const pkgModel = Engine.applyCorrections(MODEL, correctionsPayload());
 
 function breakEven(m, allocation) {
   const roots = { least: [], most: [] };

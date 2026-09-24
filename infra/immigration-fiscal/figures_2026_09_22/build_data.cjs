@@ -2,7 +2,7 @@
  *
  * The complete-account figures run the explorer's evaluator (assumption_explorer_2026_09_21/
  * engine.js, gated there by test_engine.js) on its executed model and on that model with the
- * corrections adopted on 2026-09-24 (main_case_2026_09_24/package.cjs); every response is set
+ * corrections adopted on 2026-09-24 (main_case_2026_09_24/derived/corrections.json); every response is set
  * explicitly per service line, so each step of the staircase and each cell of the matrix is one
  * evaluation of the account's own formula. The other figures read lane CSVs. Nothing is typed
  * in, and the gates reproduce published figures before the file is written.
@@ -19,19 +19,21 @@ const EXPLORER = path.join(FISCAL, "assumption_explorer_2026_09_21");
 const Engine = require(path.join(EXPLORER, "engine.js"));
 const model = JSON.parse(fs.readFileSync(path.join(EXPLORER, "derived", "model.json"), "utf8"));
 const scaling = JSON.parse(fs.readFileSync(path.join(EXPLORER, "derived", "scaling_check.json"), "utf8"));
-// The data corrections adopted on 2026-09-24 (dataset audit and outside checks) as model edits. The
-// two fill-in methods' shift lists are averaged into one model: the engine is linear, and the gates
-// check that the averaged model reproduces the published bands.
+// The data corrections adopted on 2026-09-24 (dataset audit and outside checks) as the engine's cell
+// edits, written by main_case_2026_09_24/main_case.cjs after its gates; the gates below check that
+// the corrected model reproduces the published bands.
 const MAIN_CASE = path.join(FISCAL, "main_case_2026_09_24");
-const Pkg = require(path.join(MAIN_CASE, "package.cjs"));
-const pkgShifts = Pkg.METHODS.flatMap((meth) =>
-  Pkg.packageShifts(Pkg.STACKS[`row4+status_state_aware|central|${meth}`], "central", meth, Pkg.CENTRAL)
-    .map((x) => ({ ...x, by: Pkg.scale(x.by, Pkg.both(0.5)) })));
+const corrections = JSON.parse(fs.readFileSync(path.join(MAIN_CASE, "derived", "corrections.json"), "utf8"));
 const MODELS = {
   base: model,
-  taxes: Pkg.build(pkgShifts.filter((x) => x.side === "receipt")),
-  adopted: Pkg.build(pkgShifts),
+  taxes: Engine.applyCorrections(model, { lines: corrections.lines, edits: corrections.edits.filter((e) => e.side === "receipt") }),
+  adopted: Engine.applyCorrections(model, corrections),
 };
+// The correction lines by response class (engine.js); cost() sets their responses explicitly.
+const CORR = Object.fromEntries(corrections.lines.map((l) => [l.response_class, l.id]));
+if (!CORR.education_school_part || !CORR.education_other_part || !CORR.correction_constant) {
+  throw new Error("corrections.json lacks a correction line class");
+}
 
 let failures = 0;
 function gate(label, ok, detail) {
@@ -105,11 +107,11 @@ function cost(spec, r, m = MODELS.base) {
     housing_community_services: r.other,
     economic_affairs_services: r.delayed,
     recreation_culture: r.delayed,
-    // The corrections' own lines (package.cjs SYN; absent from the base model): the school price
-    // at the school response, the college re-key at the college response, lane constants in full.
-    [Pkg.SYN.school]: spec.share * schools,
-    [Pkg.SYN.college]: (1 - spec.share) * r.colleges,
-    [Pkg.SYN.constants]: 1,
+    // The correction lines (absent from the base model): the school price at the school response,
+    // the college re-key at the college response, correction constants in full.
+    [CORR.education_school_part]: spec.share * schools,
+    [CORR.education_other_part]: (1 - spec.share) * r.colleges,
+    [CORR.correction_constant]: 1,
   };
   return -Engine.evaluate(m, s).welfare_bn; // positive = cost to other US residents
 }
@@ -262,8 +264,8 @@ const matrix = ROWS.map((row) => {
     // Outer: fiscal part over every executed key, incidence and allocation choice, plus the
     // production span. welfare = P + F + direct, and P, F depend only on the production index,
     // so the envelope of the sum is the sum of the envelopes.
-    // The corrections are measured on the reference incidence rule; package.cjs build() carries
-    // them to the other rules as the same proportional change to the group's share of each line.
+    // The corrections are measured on the reference incidence rule; the payload carries them to the
+    // other rules as the same proportional change to the group's share of each line.
     const direct = span(outerSpecs.map((spec) => cost(spec, { ...r, production: false }, MODELS.adopted)));
     const outer = [direct[0] - PROD_SPAN[1], direct[1] - PROD_SPAN[0]];
     return { gg: g, inner: inner.map((x) => round(x)), outer: outer.map((x) => round(x)) };

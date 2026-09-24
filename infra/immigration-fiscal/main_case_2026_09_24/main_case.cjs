@@ -46,7 +46,7 @@
 const fs = require("fs");
 const path = require("path");
 const {
-  Engine, MODEL, FISCAL, HERE, ALLOCS, SYN, MEDICAID, MAIN_SPECS, PROFILES, MAIN_PROFILE, CASES, METHODS, STACKS, CENTRAL, CONSTANTS, BOOKING, LTSS_CENTRAL, LTSS_RANGE, gateState, gate, near, span, f2, csvRows, read, readJson, both, scale, plus, cost, band, build, stackShifts, stackFactor, cboShifts, row3Shifts, otaShifts, row1Shifts, medicalShifts, educationShifts, minusT0, benefitShifts, justiceShifts, constantShifts, bookingRow, packageShifts, evalPackage, mean2, central, mts, schoolV, schoolLines, ltssMain, benefitSe,
+  Engine, MODEL, FISCAL, HERE, ALLOCS, SYN, MEDICAID, MAIN_SPECS, PROFILES, MAIN_PROFILE, CASES, METHODS, STACKS, CENTRAL, CONSTANTS, BOOKING, LTSS_CENTRAL, LTSS_RANGE, gateState, gate, near, span, f2, csvRows, read, readJson, both, scale, plus, cost, band, build, correctionsPayload, stackShifts, stackFactor, cboShifts, row3Shifts, otaShifts, row1Shifts, medicalShifts, educationShifts, minusT0, benefitShifts, justiceShifts, constantShifts, bookingRow, packageShifts, evalPackage, mean2, central, mts, schoolV, schoolLines, ltssMain, benefitSe,
 } = require("./package.cjs");
 
 // ---------------------------------------------------------------------------------------------------
@@ -183,6 +183,13 @@ const receiptsTotal = (m) => Object.fromEntries(ALLOCS.map((a) =>
 const receiptsAfter = METHODS.map((meth) => receiptsTotal(build(packageShifts(STACKS[`row4+status_state_aware|central|${meth}`],
   "central", meth, CENTRAL)))).reduce((a, b) => ({ personal: (a.personal + b.personal) / 2, shared: (a.shared + b.shared) / 2 }));
 const groupReceipts = { adopted_2026_09_23: receiptsTotal(MODEL), adopted: receiptsAfter };
+// The engine's corrections payload, which the explorer and the figures page load: one net edit per cell.
+const payload = correctionsPayload();
+const payloadBand = band(Engine.applyCorrections(MODEL, payload));
+gate("corrections.json reproduces the adopted case", near(payloadBand[0], C[0], 1e-4) && near(payloadBand[1], C[1], 1e-4), f2(payloadBand));
+const payloadTaxes = band(Engine.applyCorrections(MODEL, { lines: payload.lines, edits: payload.edits.filter((e) => e.side === "receipt") }));
+gate("its receipt edits reproduce the receipts side", near(payloadTaxes[0] - base[0], sides.receipts[0], 1e-4)
+  && near(payloadTaxes[1] - base[1], sides.receipts[1], 1e-4), f2([payloadTaxes[0] - base[0], payloadTaxes[1] - base[1]]));
 gate("the two sides add to the package", near(sides.receipts[0] + sides.spending[0], C[0] - base[0], 1e-6)
   && near(sides.receipts[1] + sides.spending[1], C[1] - base[1], 1e-6), `${f2(sides.receipts)} + ${f2(sides.spending)}`);
 
@@ -217,6 +224,8 @@ const summary = {
   alone_on_adopted: aloneParts,
 };
 fs.writeFileSync(path.join(HERE, "derived", "summary.json"), JSON.stringify(summary, null, 1) + "\n");
+// Pages load the payload directly, so it is written only when every gate so far has passed.
+if (!gateState.failures) fs.writeFileSync(path.join(HERE, "derived", "corrections.json"), JSON.stringify(payload, null, 1) + "\n");
 
 console.log("\n[result]");
 console.log(`  adopted 2026-09-23          ${base[0].toFixed(2)}–${base[1].toFixed(2)}`);
