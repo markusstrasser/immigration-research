@@ -1,0 +1,5 @@
+weight,first_stage_coef,se,F_cluster,n_obs,districts,mean_h0_pupil_weighted,spec,strong_F_ge_10
+unweighted,0.233462,0.123900,3.550496,234204,13009,0.165994,fe_fy2001_2019,False
+pupils,-0.144441,0.135088,1.143256,234204,13009,0.165994,fe_fy2001_2019,False
+unweighted,0.184129,0.139423,1.744112,11734,11736,,long_difference_fy2001_2019,False
+pupils,-0.149287,0.115502,1.670559,11734,11736,,long_difference_fy2001_2019,False

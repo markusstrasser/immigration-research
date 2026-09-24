@@ -1,0 +1,73 @@
+spec,horizon,function,class,share_of_current,response,response_ci_low,response_ci_high,contribution,share_of_nonresponse
+fd_fy2000_2019,1 year,instruction,dilution,0.617680,0.481037,0.408692,0.553381,0.320553,0.581518
+fd_fy2000_2019,1 year,pupil_support,dilution_broad,0.052213,0.415486,0.342866,0.488107,0.030519,0.055365
+fd_fy2000_2019,1 year,instr_staff,dilution_broad,0.044891,0.373578,0.264871,0.482286,0.028121,0.051014
+fd_fy2000_2019,1 year,gen_admin,scale,0.018170,0.293002,0.246152,0.339852,0.012846,0.023304
+fd_fy2000_2019,1 year,school_admin,scale,0.055422,0.444086,0.365173,0.522999,0.030810,0.055893
+fd_fy2000_2019,1 year,business,scale,0.032394,0.352417,0.262324,0.442509,0.020978,0.038056
+fd_fy2000_2019,1 year,om,scale,0.094991,0.396598,0.327973,0.465224,0.057318,0.103980
+fd_fy2000_2019,1 year,transport,scale,0.042323,0.382014,0.289191,0.474838,0.026155,0.047448
+fd_fy2000_2019,1 year,other_elsec,scale,0.041151,0.486494,0.417633,0.555355,0.021131,0.038334
+fd_fy2000_2019,1 year,support_other,scale,0.000757,0.757171,0.674848,0.839493,0.000184,0.000333
+fd_fy2000_2019,1 year,capital_outlay,beside_current,0.119453,0.045736,-0.184712,0.276183,,
+fd_fy2000_2019,1 year,interest,beside_current,0.031982,0.266637,0.082843,0.450430,,
+dl3_fy2000_2019,3 years,instruction,dilution,0.617680,0.749228,0.676552,0.821903,0.154897,0.516008
+dl3_fy2000_2019,3 years,pupil_support,dilution_broad,0.052213,0.730944,0.653538,0.808350,0.014048,0.046799
+dl3_fy2000_2019,3 years,instr_staff,dilution_broad,0.044891,0.606717,0.468695,0.744739,0.017655,0.058814
+dl3_fy2000_2019,3 years,gen_admin,scale,0.018170,0.440167,0.376001,0.504334,0.010172,0.033887
+dl3_fy2000_2019,3 years,school_admin,scale,0.055422,0.743203,0.670830,0.815576,0.014232,0.047412
+dl3_fy2000_2019,3 years,business,scale,0.032394,0.555429,0.462730,0.648127,0.014401,0.047975
+dl3_fy2000_2019,3 years,om,scale,0.094991,0.595457,0.533449,0.657465,0.038428,0.128015
+dl3_fy2000_2019,3 years,transport,scale,0.042323,0.645273,0.580072,0.710475,0.015013,0.050013
+dl3_fy2000_2019,3 years,other_elsec,scale,0.041151,0.719829,0.655266,0.784392,0.011529,0.038407
+dl3_fy2000_2019,3 years,support_other,scale,0.000757,0.796716,0.691857,0.901574,0.000154,0.000513
+dl3_fy2000_2019,3 years,capital_outlay,beside_current,0.119453,0.066059,-0.265377,0.397495,,
+dl3_fy2000_2019,3 years,interest,beside_current,0.031982,0.745212,0.512043,0.978382,,
+ld_stacked_fy2000_2019,4-5 years,instruction,dilution,0.617680,0.807163,0.744989,0.869336,0.119112,0.492703
+ld_stacked_fy2000_2019,4-5 years,pupil_support,dilution_broad,0.052213,0.746377,0.658870,0.833883,0.013242,0.054777
+ld_stacked_fy2000_2019,4-5 years,instr_staff,dilution_broad,0.044891,0.666114,0.564352,0.767876,0.014988,0.062000
+ld_stacked_fy2000_2019,4-5 years,gen_admin,scale,0.018170,0.389070,0.276258,0.501883,0.011101,0.045917
+ld_stacked_fy2000_2019,4-5 years,school_admin,scale,0.055422,0.758043,0.694057,0.822029,0.013410,0.055470
+ld_stacked_fy2000_2019,4-5 years,business,scale,0.032394,0.625122,0.564626,0.685618,0.012144,0.050233
+ld_stacked_fy2000_2019,4-5 years,om,scale,0.094991,0.689776,0.623143,0.756409,0.029468,0.121896
+ld_stacked_fy2000_2019,4-5 years,transport,scale,0.042323,0.676060,0.590473,0.761647,0.013710,0.056712
+ld_stacked_fy2000_2019,4-5 years,other_elsec,scale,0.041151,0.788721,0.675831,0.901610,0.008694,0.035964
+ld_stacked_fy2000_2019,4-5 years,support_other,scale,0.000757,0.798288,0.760990,0.835586,0.000153,0.000632
+ld_stacked_fy2000_2019,4-5 years,capital_outlay,beside_current,0.119453,0.542701,0.265646,0.819756,,
+ld_stacked_fy2000_2019,4-5 years,interest,beside_current,0.031982,0.569348,0.293973,0.844723,,
+ld19_2000_2019,19 years,instruction,dilution,0.617680,0.923790,0.861171,0.986410,0.047073,0.358673
+ld19_2000_2019,19 years,pupil_support,dilution_broad,0.052213,0.901121,0.830378,0.971863,0.005163,0.039338
+ld19_2000_2019,19 years,instr_staff,dilution_broad,0.044891,0.846106,0.746134,0.946079,0.006908,0.052639
+ld19_2000_2019,19 years,gen_admin,scale,0.018170,0.542575,0.432633,0.652517,0.008311,0.063328
+ld19_2000_2019,19 years,school_admin,scale,0.055422,0.870820,0.814736,0.926903,0.007159,0.054551
+ld19_2000_2019,19 years,business,scale,0.032394,0.708402,0.609168,0.807635,0.009446,0.071973
+ld19_2000_2019,19 years,om,scale,0.094991,0.752320,0.703019,0.801621,0.023527,0.179265
+ld19_2000_2019,19 years,transport,scale,0.042323,0.780110,0.733450,0.826770,0.009306,0.070910
+ld19_2000_2019,19 years,other_elsec,scale,0.041151,0.790223,0.745146,0.835300,0.008633,0.065775
+ld19_2000_2019,19 years,support_other,scale,0.000757,0.775485,0.656391,0.894578,0.000170,0.001295
+ld19_2000_2019,19 years,capital_outlay,beside_current,0.119453,0.750363,0.448318,1.052408,,
+ld19_2000_2019,19 years,interest,beside_current,0.031982,0.328252,0.003069,0.653434,,
+fe_log_fy2000_2019,"within-district, all horizons",instruction,dilution,0.617680,0.889802,0.836732,0.942873,0.068067,0.400300
+fe_log_fy2000_2019,"within-district, all horizons",pupil_support,dilution_broad,0.052213,0.847518,0.771362,0.923674,0.007962,0.046822
+fe_log_fy2000_2019,"within-district, all horizons",instr_staff,dilution_broad,0.044891,0.750414,0.621959,0.878868,0.011204,0.065891
+fe_log_fy2000_2019,"within-district, all horizons",gen_admin,scale,0.018170,0.475099,0.380824,0.569374,0.009537,0.056089
+fe_log_fy2000_2019,"within-district, all horizons",school_admin,scale,0.055422,0.848008,0.781046,0.914970,0.008424,0.049540
+fe_log_fy2000_2019,"within-district, all horizons",business,scale,0.032394,0.666021,0.592478,0.739563,0.010819,0.063626
+fe_log_fy2000_2019,"within-district, all horizons",om,scale,0.094991,0.732540,0.696147,0.768933,0.025406,0.149413
+fe_log_fy2000_2019,"within-district, all horizons",transport,scale,0.042323,0.708863,0.662010,0.755717,0.012322,0.072464
+fe_log_fy2000_2019,"within-district, all horizons",other_elsec,scale,0.041151,0.791324,0.726054,0.856595,0.008587,0.050501
+fe_log_fy2000_2019,"within-district, all horizons",support_other,scale,0.000757,0.747556,0.636993,0.858120,0.000191,0.001124
+fe_log_fy2000_2019,"within-district, all horizons",capital_outlay,beside_current,0.119453,0.438019,0.276181,0.599858,,
+fe_log_fy2000_2019,"within-district, all horizons",interest,beside_current,0.031982,0.573563,0.294331,0.852796,,
+fe_level_fy2000_2019,"within-district, all horizons (additive)",instruction,dilution,0.617680,0.767966,0.712801,0.823131,0.143323,0.538957
+fe_level_fy2000_2019,"within-district, all horizons (additive)",pupil_support,dilution_broad,0.052213,0.703583,0.642583,0.764584,0.015477,0.058200
+fe_level_fy2000_2019,"within-district, all horizons (additive)",instr_staff,dilution_broad,0.044891,0.640174,0.535231,0.745118,0.016153,0.060742
+fe_level_fy2000_2019,"within-district, all horizons (additive)",gen_admin,scale,0.018170,0.399395,0.284197,0.514594,0.010913,0.041038
+fe_level_fy2000_2019,"within-district, all horizons (additive)",school_admin,scale,0.055422,0.795857,0.699552,0.892162,0.011314,0.042546
+fe_level_fy2000_2019,"within-district, all horizons (additive)",business,scale,0.032394,0.712478,0.515774,0.909182,0.009314,0.035025
+fe_level_fy2000_2019,"within-district, all horizons (additive)",om,scale,0.094991,0.679730,0.612095,0.747364,0.030423,0.114403
+fe_level_fy2000_2019,"within-district, all horizons (additive)",transport,scale,0.042323,0.636625,0.523148,0.750103,0.015379,0.057833
+fe_level_fy2000_2019,"within-district, all horizons (additive)",other_elsec,scale,0.041151,0.708500,0.633862,0.783138,0.011995,0.045108
+fe_level_fy2000_2019,"within-district, all horizons (additive)",support_other,scale,0.000757,-1.118019,-3.799702,1.563663,0.001603,0.006029
+fe_level_fy2000_2019,"within-district, all horizons (additive)",capital_outlay,beside_current,0.119453,0.372643,0.088648,0.656638,,
+fe_level_fy2000_2019,"within-district, all horizons (additive)",interest,beside_current,0.031982,0.743380,0.110744,1.376016,,

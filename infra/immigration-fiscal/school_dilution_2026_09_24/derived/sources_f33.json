@@ -1,0 +1,332 @@
+[
+ {
+  "file": "elsec00.txt",
+  "fiscal_year": 2000,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2000/secondary-education-finance/elsec00.txt",
+  "bytes": 14592790,
+  "rows": 15514,
+  "header_fields": 256,
+  "sha256": "75c2641e339890b50732c570692274b36c97b76371ae8ed61e181b3ea2d9d1d5"
+ },
+ {
+  "file": "elsec01.txt",
+  "fiscal_year": 2001,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2001/secondary-education-finance/elsec01.txt",
+  "bytes": 14606102,
+  "rows": 15470,
+  "header_fields": 256,
+  "sha256": "dd47d423717e554bdf7d0bda58d9b01f8badaa43ef609ab1f7d31dbf7643783c"
+ },
+ {
+  "file": "elsec02.txt",
+  "fiscal_year": 2002,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2002/secondary-education-finance/elsec02.txt",
+  "bytes": 7302430,
+  "rows": 15383,
+  "header_fields": 137,
+  "sha256": "b1d3042f9d762f739c718f891d9dd1dc44a6f1bbc6d8b070fb3d2b1db9a377a6"
+ },
+ {
+  "file": "elsec03.txt",
+  "fiscal_year": 2003,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2003/secondary-education-finance/elsec03.txt",
+  "bytes": 7443111,
+  "rows": 15361,
+  "header_fields": 139,
+  "sha256": "c177e13df60907cd4e621c654c935eab9fffebddf879c2fd9201a7ccb06d46c6"
+ },
+ {
+  "file": "elsec04.txt",
+  "fiscal_year": 2004,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2004/secondary-education-finance/elsec04.txt",
+  "bytes": 7457666,
+  "rows": 15370,
+  "header_fields": 139,
+  "sha256": "544d94711d99f439fbb8874492b2f650129672169297f256def046e791fa94fe"
+ },
+ {
+  "file": "elsec05.txt",
+  "fiscal_year": 2005,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2005/secondary-education-finance/elsec05.txt",
+  "bytes": 7434860,
+  "rows": 15249,
+  "header_fields": 139,
+  "sha256": "942b20c19bbbaea8bf63241f73bb43214fcbcc102852f55aea9af4af95660470"
+ },
+ {
+  "file": "elsec05_sttables.xls",
+  "fiscal_year": 2005,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2005/secondary-education-finance/elsec05_sttables.xls",
+  "bytes": 259072,
+  "sha256": "2742e0e8a978585e7e429e1914e858f6884993421ef7aa9d960b57a7e7021acf"
+ },
+ {
+  "file": "elsec06.txt",
+  "fiscal_year": 2006,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2006/secondary-education-finance/elsec06.txt",
+  "bytes": 7568552,
+  "rows": 15188,
+  "header_fields": 143,
+  "sha256": "289ee21c5bc4d520ad9eb3c94c37209926ab5ca2c299c2fb2a8235a235bc38a5"
+ },
+ {
+  "file": "elsec07.txt",
+  "fiscal_year": 2007,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2007/secondary-education-finance/elsec07.txt",
+  "bytes": 7415841,
+  "rows": 14885,
+  "header_fields": 142,
+  "sha256": "fce7ca44526be432d3ebf6e0df78c2fdc0fae2219ca1a8ab14fc4bea29ea88f7"
+ },
+ {
+  "file": "elsec08.txt",
+  "fiscal_year": 2008,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2008/secondary-education-finance/elsec08.txt",
+  "bytes": 7438230,
+  "rows": 14866,
+  "header_fields": 142,
+  "sha256": "5d47291b7d11c48344eed87256465d3161066b7be0e21528fe4e3e802e241c03"
+ },
+ {
+  "file": "elsec09.txt",
+  "fiscal_year": 2009,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2009/secondary-education-finance/elsec09.txt",
+  "bytes": 7368822,
+  "rows": 14633,
+  "header_fields": 142,
+  "sha256": "e942a8ba235423d773e634814d589d8c6a789e832e1aafff9623138693c31b90"
+ },
+ {
+  "file": "elsec10.txt",
+  "fiscal_year": 2010,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2010/secondary-education-finance/elsec10.txt",
+  "bytes": 7313233,
+  "rows": 14549,
+  "header_fields": 141,
+  "sha256": "5bebf41c59ddb0f8ddc4e00070abbcb522237fec1c9febac9078d8e3fc841896"
+ },
+ {
+  "file": "elsec10_sttables.xls",
+  "fiscal_year": 2010,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2010/secondary-education-finance/elsec10_sttables.xls",
+  "bytes": 473088,
+  "sha256": "147511becbc8e968986f3df6db88f6afe19175076040025ded0c3d0f4d6be7cf"
+ },
+ {
+  "file": "elsec11.txt",
+  "fiscal_year": 2011,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2011/secondary-education-finance/elsec11.txt",
+  "bytes": 7283065,
+  "rows": 14491,
+  "header_fields": 141,
+  "sha256": "6ab759e9d895a565936ac43de649306f7e46f55806abd03812549ac81bb413f5"
+ },
+ {
+  "file": "elsec12.txt",
+  "fiscal_year": 2012,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2012/secondary-education-finance/elsec12.txt",
+  "bytes": 7273777,
+  "rows": 14482,
+  "header_fields": 141,
+  "sha256": "50687138f57e13d7e5ec11c29ba0a02ba0de441adb3006e97d23fdcc11958cfa"
+ },
+ {
+  "file": "elsec13.txt",
+  "fiscal_year": 2013,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2013/secondary-education-finance/elsec13.txt",
+  "bytes": 7269199,
+  "rows": 14460,
+  "header_fields": 141,
+  "sha256": "885c9555df969bcf95fc68029909026fca8b41dd083aecb5b4155a27b08aa6e9"
+ },
+ {
+  "file": "elsec14.txt",
+  "fiscal_year": 2014,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2014/secondary-education-finance/elsec14.txt",
+  "bytes": 7251210,
+  "rows": 14401,
+  "header_fields": 141,
+  "sha256": "01f543bb00857997ea2dce2ad490b451761807e808ee0923387b06608348dce3"
+ },
+ {
+  "file": "elsec15.txt",
+  "fiscal_year": 2015,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2015/secondary-education-finance/elsec15.txt",
+  "bytes": 7255960,
+  "rows": 14376,
+  "header_fields": 141,
+  "sha256": "1c5f37bf8b1dabef17034b56c7ef6a3a0fb36f8609392a23bf0dc77d70e7ca0e"
+ },
+ {
+  "file": "elsec15_sttables.xls",
+  "fiscal_year": 2015,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2015/secondary-education-finance/elsec15_sttables.xls",
+  "bytes": 486912,
+  "sha256": "da08fb01424ba3b2028c6dacf71d094dd78e1c2e256505dd773825297bb13843"
+ },
+ {
+  "file": "school15doc.pdf",
+  "fiscal_year": 2015,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2015/secondary-education-finance/school15doc.pdf",
+  "bytes": 689064,
+  "sha256": "824553b59165613a1a4909084ee7dc9b8969228596d6dd1db8010421c0e0f9c8"
+ },
+ {
+  "file": "elsec16.txt",
+  "fiscal_year": 2016,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2016/secondary-education-finance/elsec16.txt",
+  "bytes": 7253769,
+  "rows": 14328,
+  "header_fields": 141,
+  "sha256": "f3ded3df830de19045144f643283f7a1118ce2304353f7ea068ad8b04b5f533f"
+ },
+ {
+  "file": "elsec17.txt",
+  "fiscal_year": 2017,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2017/secondary-education-finance/elsec17.txt",
+  "bytes": 7263480,
+  "rows": 14309,
+  "header_fields": 141,
+  "sha256": "101670d8fdbc05d5ba7b191f2fcde6fc3b237e06f639f1963675cb59895b8ea8"
+ },
+ {
+  "file": "elsec18.txt",
+  "fiscal_year": 2018,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2018/secondary-education-finance/elsec18.txt",
+  "bytes": 7259529,
+  "rows": 14274,
+  "header_fields": 141,
+  "sha256": "ff3c94df24800925ff7fdc1bb7a607366ccfb2b642ab719ea4637acf9dc532f5"
+ },
+ {
+  "file": "elsec19.txt",
+  "fiscal_year": 2019,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2019/secondary-education-finance/elsec19.txt",
+  "bytes": 7255007,
+  "rows": 14197,
+  "header_fields": 141,
+  "sha256": "0d3fe071e52fa01d40b5dddaabfe0e07c997a593b740d9c35b3c240a137ddb09"
+ },
+ {
+  "file": "elsec19_sumtables.xls",
+  "fiscal_year": 2019,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2019/secondary-education-finance/elsec19_sumtables.xls",
+  "bytes": 533504,
+  "sha256": "96807e7c1cb6b6390439f92310fc82d04df8be7e1a55d1b4c6a135ed431e76fc"
+ },
+ {
+  "file": "elsec20.txt",
+  "fiscal_year": 2020,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2020/secondary-education-finance/elsec20.txt",
+  "bytes": 7684122,
+  "rows": 14136,
+  "header_fields": 156,
+  "sha256": "e9240626b5ea1cbc933dcae6ccf4798b9fed13eedf9ce62f94924de6e2d99526"
+ },
+ {
+  "file": "elsec21.txt",
+  "fiscal_year": 2021,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2021/secondary-education-finance/elsec21.txt",
+  "bytes": 7917055,
+  "rows": 14120,
+  "header_fields": 160,
+  "sha256": "6716cf04e6c97e920c7fd70a416f04fecd74c0b6b1fdf75cd5d93a6c16672a38"
+ },
+ {
+  "file": "elsec22_xlsx.csv",
+  "converted_from": "elsec22.xlsx",
+  "fiscal_year": 2022,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2022/secondary-education-finance/elsec22.xlsx",
+  "bytes_source": 12798700,
+  "sha256_source": "3af4d1ac059257684c3abc851855c1c3ee4c68b410c7dc597b25b1e59f075780",
+  "rows": 14105,
+  "header_fields": 184,
+  "sha256": "e6fe34b8be667ef93dc5e0627a33ea3d09ab03eb8a8b382f81177350096038c7",
+  "note": "elsec22.txt on census.gov holds 1,729 of 14,105 rows; the .xlsx is used"
+ },
+ {
+  "file": "elsec23.txt",
+  "fiscal_year": 2023,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2023/secondary-education-finance/elsec23.txt",
+  "bytes": 8679168,
+  "rows": 14088,
+  "header_fields": 183,
+  "sha256": "db51c7cef12fbe388b231dc498d73a93549174c8783772462c4bd474c879afd0"
+ },
+ {
+  "file": "elsec23_sumtables.xlsx",
+  "fiscal_year": 2023,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2023/secondary-education-finance/elsec23_sumtables.xlsx",
+  "bytes": 284631,
+  "sha256": "8e3128cebbbd967588e300b6ad8aef0c24d53e8cfdca83398ee928eec9d7dce9"
+ },
+ {
+  "file": "elsec24.txt",
+  "fiscal_year": 2024,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2024/secondary-education-finance/elsec24.txt",
+  "bytes": 8641482,
+  "rows": 14077,
+  "header_fields": 183,
+  "sha256": "89757cb6955ccce1224acefcec46fd3e7e02c8f5d5bdae7127516e0299baf211"
+ },
+ {
+  "file": "elsec24_sumtables.xlsx",
+  "fiscal_year": 2024,
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2024/secondary-education-finance/elsec24_sumtables.xlsx",
+  "bytes": 290596,
+  "sha256": "848133174f299957653bbc7070633cf3ff23e4242695ccb628893fb8f6571154"
+ },
+ {
+  "file": "saipe/ussd05.txt",
+  "url": "https://www2.census.gov/programs-surveys/saipe/datasets/2005/2005-school-districts/ussd05.txt",
+  "bytes": 1747250,
+  "rows": 13978,
+  "sha256": "6ea070844007db0d79d6bb1c37c3579e0dc54ddaf7eda3768e3ba979684d3445"
+ },
+ {
+  "file": "saipe/ussd10.txt",
+  "url": "https://www2.census.gov/programs-surveys/saipe/datasets/2010/2010-school-districts/ussd10.txt",
+  "bytes": 1797708,
+  "rows": 13619,
+  "sha256": "0f066f15f7abc1a70d07e7a0ab5c51c87a1cf8d2dfa08efbb6229920dbdad435"
+ },
+ {
+  "file": "saipe/ussd19.txt",
+  "url": "https://www2.census.gov/programs-surveys/saipe/datasets/2019/2019-school-districts/ussd19.txt",
+  "bytes": 1740156,
+  "rows": 13183,
+  "sha256": "75b778a862273a7b4802a911a89600624108633009612576305680824f7bfca9"
+ },
+ {
+  "file": "saipe/ussd23.txt",
+  "url": "https://www2.census.gov/programs-surveys/saipe/datasets/2023/2023-school-districts/ussd23.txt",
+  "bytes": 1734876,
+  "rows": 13143,
+  "sha256": "5b97cf591042c1a9878d05711b75a3efc1cf57e4e3f5dc223f51fcc57784f9a4"
+ },
+ {
+  "file": "dt23_203.50.html",
+  "url": "https://nces.ed.gov/programs/digest/d23/tables/dt23_203.50.asp",
+  "bytes": 162188,
+  "sha256": "8edad66897140f5058962492b9c2af0f209c9a60ec0bd5dd55aa3e840eac3786"
+ },
+ {
+  "file": "cpiaucsl_monthly.csv",
+  "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL",
+  "bytes": 17744,
+  "rows": 956,
+  "sha256": "f8ecddf53a9a9a74dda92c2c4204e6039466fcb744bc74171b73b5f6aac48119"
+ },
+ {
+  "file": "nces/ccd_lea_059_1819_l_1a_091019.zip",
+  "url": "https://nces.ed.gov/ccd/Data/zip/ccd_lea_059_1819_l_1a_091019.zip",
+  "bytes": 7921661,
+  "sha256": "d16a154683e6fe52350facb1060e309d6cc61456f4f655b6169b2cf2692da501"
+ },
+ {
+  "file": "nces/ccd_lea_059_2324_l_1a_073124.zip",
+  "url": "https://nces.ed.gov/ccd/Data/zip/ccd_lea_059_2324_l_1a_073124.zip",
+  "bytes": 10318990,
+  "sha256": "cbba88c3b824744119792e1a37f11f27c88e0a757e36b519a4bbbb39842de48a"
+ }
+]

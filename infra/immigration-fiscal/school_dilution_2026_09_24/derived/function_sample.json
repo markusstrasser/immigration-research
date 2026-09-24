@@ -1,0 +1,52 @@
+{
+ "fy2000_2019": {
+  "rows": 253835,
+  "districts": 13492,
+  "spells": 13741,
+  "spike_rows_dropped": 309,
+  "pupils_mean_per_year": 47812389.85,
+  "shares_of_current": {
+   "current": 1.0,
+   "instruction": 0.6176797368257138,
+   "pupil_support": 0.05221310680644402,
+   "instr_staff": 0.044890933062614574,
+   "gen_admin": 0.01816997794193979,
+   "school_admin": 0.055422478612904634,
+   "business": 0.032393950499415534,
+   "om": 0.09499068215614365,
+   "transport": 0.042323232172439856,
+   "support_other": 0.0007569664902807564,
+   "other_elsec": 0.041150848734699506,
+   "capital_outlay": 0.11945283410308703,
+   "interest": 0.031982490770898785,
+   "instr_support": 0.09710403986905859,
+   "administration": 0.10598640705425995,
+   "support_total": 0.3411694144395868
+  }
+ },
+ "fy2000_2024": {
+  "rows": 315549,
+  "districts": 13593,
+  "spells": 13979,
+  "spike_rows_dropped": 338,
+  "pupils_mean_per_year": 47569926.2,
+  "shares_of_current": {
+   "current": 1.0,
+   "instruction": 0.616120050799579,
+   "pupil_support": 0.05474235759408033,
+   "instr_staff": 0.04547332234448223,
+   "gen_admin": 0.018210416186736886,
+   "school_admin": 0.05517671142822266,
+   "business": 0.033341240673768896,
+   "om": 0.09444892197376338,
+   "transport": 0.041707557891183515,
+   "support_other": 0.000655224491345641,
+   "other_elsec": 0.04011791524664405,
+   "capital_outlay": 0.1210096554787249,
+   "interest": 0.03147491508169075,
+   "instr_support": 0.10021567993856256,
+   "administration": 0.10672836828872843,
+   "support_total": 0.3437620339537767
+  }
+ }
+}
