@@ -51,7 +51,7 @@ Together these raise the school component of the key by k = 1.034 (low 1.020, hi
 
 | Package | School line, $bn | Total, $bn | Change in total, $bn |
 |---|---|---|---|
-| Adopted main case | 87.14–113.96 | 203.21–249.64 | — |
+| Main case adopted September 23 | 87.14–113.96 | 203.21–249.64 | — |
 | Main case, k = 1.034 | 89.94–117.62 | 206.59–252.67 | +3.38 / +3.03 |
 | k = 1.020, pre-COVID district pattern | 88.76–116.07 | 205.16–251.39 | +1.95 / +1.75 |
 | k = 1.047, adds the English-learner premium within districts | 91.01–119.03 | 207.89–253.84 | +4.68 / +4.20 |
@@ -134,7 +134,7 @@ At Treasury's shares the adopted main case falls −$4.6bn / −$4.3bn; the audi
 
 | Package | Total, $bn | Change, $bn |
 |---|---|---|
-| Adopted main case | 203.21–249.64 | — |
+| Main case adopted September 23 | 203.21–249.64 | — |
 | With the CBO keys (Medicaid excluded) and Treasury's credit shares | 209.2–254.8 | +6.0 / +5.1 (SE about 3.8 / 3.5) |
 | Audit package with the same | 203.6–250.6 | +0.7 / −0.5, before rows 2 and 13 shrink the income-tax increment |
 
@@ -184,7 +184,7 @@ all 18 derived files byte-identical].
 - The literature agrees on citizenship: in linked SNAP records, noncitizens under-report no more than
   natives (49% against 49%, net) [SOURCE: Census SEHSD Working Paper 2017-49, Table 3, p. 25].
 
-| Package | Change, $bn | Main case, $bn |
+| Package | Change, $bn | Main case on the September 23 frame, $bn |
 |---|---|---|
 | Central: administrative state dollars and validated state ethnicity | +2.27 / +2.17 (SE about 1.1) | 205.5–251.8 |
 | Route A (Hispanic ≈ Mexican states, ρ applied to the group) | +0.01 / −0.04 | 203.2–249.6 |
