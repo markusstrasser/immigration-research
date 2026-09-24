@@ -526,7 +526,7 @@
      "value": "33.5 → 29.9",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:312"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:324"
     },
     {
      "label": "group's share of construction-trades jobs",
@@ -598,7 +598,7 @@
    "id": "e4_scale_and_schooling_net",
    "faq_entry": 4,
    "objection": "Cheaper services, complementary labour and capital returns never appear in a fiscal ledger.",
-   "finding": "City size and the group's schooling mix, measured in one regression, net to +$13.9bn a year (95% −$56.6bn to +$84.4bn): bigger cities add $38.6bn to other residents' earnings, and lower average schooling takes back $24.9bn. The net would add through the production term and induced receipts, but it is proposed, not adopted; on the September 23 case, adopting it would have given $189.3–235.7bn. The instrumented 1970–2000 college-share studies would make it a $109–677bn cost instead. Innovation is not added: Burchardi et al. find no patent response at the group's schooling.",
+   "finding": "City size and the group's schooling mix, measured in one regression, net to +$13.9bn a year (95% −$56.6bn to +$84.4bn): bigger cities add $38.6bn to other residents' earnings, and lower average schooling takes back $24.9bn. The net would add through the production term and induced receipts, but it is proposed, not adopted; adopting it would put the main case adopted September 24 at $186.9–232.4bn ($189.3–235.7bn on the September 23 case). The instrumented 1970–2000 college-share studies would make it a $109–677bn cost instead. Innovation is not added: Burchardi et al. find no patent response at the group's schooling.",
    "values": [
     {
      "label": "net of city size and schooling mix (Card–Rothstein–Yi, one regression)",
@@ -622,8 +622,8 @@
      "file_line": "infra/immigration-fiscal/scale_spillovers_2026_09_23/RESULT.md:18"
     },
     {
-     "label": "main case if the net were adopted, computed on the September 23 case",
-     "value": "189.3-235.7",
+     "label": "main case if the net were adopted: September 24 case / September 23 case",
+     "value": "186.9-232.4 / 189.3-235.7",
      "unit": "$bn/year",
      "se": null,
      "file_line": "research/immigration-confidence-ladder.md:333"
@@ -2480,35 +2480,42 @@
    "id": "real_costs_and_benefits_totals",
    "faq_entry": null,
    "objection": null,
-   "finding": "On the main case adopted September 24, fiscal and social costs together come to about $253–304bn at central values with mobility; care now sits inside the account and the other social items are unchanged. The memo's totals were computed on the September 23 case: on the custody footing $256–307bn, $251–303bn with care and mobility, and $237–289bn adding the scale net. Priced to the same standard, the omitted benefits came to $4.8bn, or $18.7bn with the scale net; with care now inside the account, $0.65bn remains beside it, or $14.6bn with the scale net. None changes the sign.",
+   "finding": "On the main case adopted September 24, fiscal and social costs together come to $248–304bn a year at central values (full span $210–337bn), $6.1–7.4k per group member, with decision 4's victims figure at the low end and the custody footing at the high end. Care now sits inside the account, so the omitted benefits are mobility's $0.65bn, or $14.6bn with the scale net; costs and benefits together are $253–303bn, or $239–289bn adding the scale net. On the September 23 case the memo's totals were $256–307bn on the custody footing, $251–303bn with care and mobility and $237–289bn adding the scale net. None changes the sign.",
    "values": [
     {
-     "label": "fiscal and social costs together with mobility, central values, main case adopted September 24",
-     "value": "253-304",
+     "label": "fiscal and social costs together, central values, main case adopted September 24",
+     "value": "248-304",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:378-380"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:38"
     },
     {
-     "label": "same on the September 23 case (custody footing): costs only; with care and mobility; adding the scale net",
-     "value": "256-307; 251-303; 237-289",
+     "label": "full span: every low choice, then every high one",
+     "value": "210-337",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:328"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:38"
     },
     {
-     "label": "omitted benefits, without / with the scale net (September 23 case)",
-     "value": "4.8 / 18.7",
+     "label": "costs and benefits together, with care and mobility / adding the scale net (September 24)",
+     "value": "253-303; 239-289",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:331"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:42"
     },
     {
-     "label": "omitted benefits left beside the account now that care is inside, without / with the scale net",
+     "label": "omitted benefits beside the account, without / with the scale net (September 24)",
      "value": "0.65 / 14.6",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:123-124"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:41"
+    },
+    {
+     "label": "September 23 case: custody footing / with care and mobility / adding the scale net",
+     "value": "256-307; 251-303; 237-289",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:340"
     }
    ],
    "relation_to_headline": "different_object",
