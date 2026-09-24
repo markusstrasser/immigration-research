@@ -3,7 +3,14 @@
 Date:2026-09-20. [MODEL / FRAMING-SENSITIVE] Evidence and calculations only;
 narrative authorship remains operator-owned.
 
-**Current main case (2026-09-23):** after the operator adopted three changes, the main
+**Current main case (2026-09-24): $200.9–246.3bn/year.** The operator adopted the dataset audit,
+the pooled-MEPS medical figure with long-term care by use, care and household services, shelter
+keying and the four outside checks, run once through the engine. The group's taxes and its keyed
+spending were both overstated by about $50bn, so the case moves by −$2.3bn / −$3.3bn
+([main-case lane](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md), [decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md), ladder 219).
+The paragraph below is kept as a record.
+
+**Main case of 2026-09-23 (superseded 2026-09-24):** after the operator adopted three changes, the main
 CBO-informed case is **$203.2–249.6bn/year**. General government now responds at 0.59–0.84
 instead of zero (+$28.5–40.6bn). Public order and safety is keyed by use (+$5.9bn). The
 under-charged part of uncompensated hospital care is keyed to uninsured use (+$3.7–5.7bn). The
@@ -332,6 +339,11 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+2026-09-24, main case adopted (ladder 219): the operator adopted the dataset audit, the pooled
+medical figure, care, shelter and the four outside checks. One engine run moves the main case from
+$203.2–249.6bn to $200.9–246.3bn; the range with every component at an extreme is $172–276bn.
+Concept affected: the complete account's main case ([decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md)).
 
 2026-09-23, medical ethnicity (pooled MEPS, ladder 206): the +$68.70bn coverage-key
 sensitivity rests on equal dollars per covered person, which the pooled data reject

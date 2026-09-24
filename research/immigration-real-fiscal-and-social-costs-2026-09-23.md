@@ -373,6 +373,14 @@ case. None changes the sign. [CALCULATION: rows of §7 and the lanes' `summary` 
 
 ## Revisions
 
+- 2026-09-24 (main case adopted): the fiscal main case is now $200.9–246.3bn (ladder 219). It
+  includes care and household services (−$4.15bn), which §7b listed beside the account. §7 and §7b
+  stay as computed on the September 23 case. On the new case the central total with mobility is
+  about $253–304bn; care now sits inside the account and the other social items are unchanged
+  [CALCULATION: 200.9 + 51.9; 246.3 + 57.2]. The crime check's mixed-group correction adds $2.0bn
+  to victims' harm on the Hispanic-rates footing (ladder 218). It is not recomputed on the custody
+  footing. Concept affected: the fiscal row of the combined totals ([decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md)).
+
 - 2026-09-23 (later): the operator adopted the §6 proposals
   ([decision](../decisions/2026-09-23-main-case-general-government-and-use-keys.md)), so the fiscal
   main case is now $203.2–249.6bn. Uncompensated care was corrected to the account's actual keys

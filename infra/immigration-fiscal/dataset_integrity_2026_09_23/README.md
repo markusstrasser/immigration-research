@@ -16,6 +16,11 @@ No combination changes the sign. Two alternatives move the central case down:
 
 [CALCULATION: `synthesis.py` → `derived/synthesis_net.csv`, reading the CPS imputation lane's stacks]
 
+**Adopted 2026-09-24 (operator decision 1).** The package went into the engine with the outside checks.
+Row 6 runs through the engine, CBO's income-tax gradient replaces row 3, and the pooled-MEPS figure
+replaces row 5. The adopted main case is $200.9–246.3bn
+([`main_case_2026_09_24`](../main_case_2026_09_24/RESULT.md), [decision](../../../decisions/2026-09-24-main-case-audit-and-outside-checks.md)). The figures below are the audit's own.
+
 Date: 2026-09-23, band lanes folded in 2026-09-24. Operator: "Did we ever look at issues with the
 datasets itself? Just formatting errors, bad columns, weird statistics that can't be real given real
 world knowledge and taste? Bad political ways to categorize etc?" and "/analyze". Brief:

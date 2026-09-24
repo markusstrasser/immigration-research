@@ -126,6 +126,10 @@ only correction the sweep finds is the shelter keying, and it lowers the charge.
 
 ## Revisions
 
+- 2026-09-24 (later): the shelter keying correction (−$0.5bn) was adopted into the main case with
+  the dataset audit and the outside checks; the main case is now $200.9–246.3bn ([decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md),
+  ladder 219). Concept affected: the account's charge for migrant shelters.
+
 - 2026-09-24: the fraud-by-citizenship lane reported; its section and ladder 214 were added. The
   claim changes: the sweep had found no charged fraud tied to status, and the sentencing data now
   give a rate by citizenship. Noncitizens' fraud ratio matches their ratio for other federal crime,

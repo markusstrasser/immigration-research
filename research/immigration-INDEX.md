@@ -44,14 +44,22 @@ No exact national total is identified by the examined files; this is not a claim
 that such a total is impossible in principle.
 
 Latest complete annual account: [national reconciliation and conditional net effects](immigration-complete-annual-account-2026-09-20.md).
-**Adopted main case (September 23): $203–250bn/year conditional net cost to other US
-residents.** It adds three changes:
+**Adopted main case (September 24): $201–246bn/year conditional net cost to other US
+residents** ($200.9–246.3bn; [lane](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md),
+[decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md), ladder 219). One engine run builds in
+the dataset audit, the pooled-MEPS medical figure with long-term care by use, care and household
+services, shelter keying and the four outside checks. The group's taxes were overstated (+$48.7 /
++$50.3bn) and so was its keyed spending (−$51.0 / −$53.6bn), so the headline barely moves. Every
+component at its extreme in one direction spans $172–276bn (about $189–260bn in quadrature); no
+combination changes the sign. With no fill-in correction for the CPS it is $193.1–237.6bn.
+
+The September 23 case, **$203–250bn**, added three changes to the September 20 account:
 - general government responds at 0.59–0.84 instead of zero;
 - courts, police and prisons are charged by use;
 - the under-charged part of uncompensated hospital care is keyed to uninsured use.
 
-With non-school education budgets fixed as well, the cost is $159–213bn. The proportional-service
-benchmark is $308–341bn ([main-case lane](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md),
+On that case, with non-school education budgets fixed as well, the cost is $159–213bn, and the
+proportional-service benchmark is $308–341bn ([main-case lane](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md),
 [decision](../decisions/2026-09-23-main-case-general-government-and-use-keys.md)). The September 20
 versions were **$165–197bn**, **$121–160bn** and **$270–289bn**; the notes below quote them where
 they were computed on them. Production is held fully adjusted while service responses vary;
@@ -116,7 +124,9 @@ fourth, the [mobility lane](../infra/immigration-fiscal/labor_mobility_insurance
 (ladder 203), is worth $0.65bn a year beside the account: the Mexico-born no longer move more than
 natives within the US. Priced to the same standard, the omitted benefits come to $4.8bn, or $18.7bn
 with the scale net. Costs and benefits together are **$251–303bn** at central values, or
-$237–289bn adding the proposed scale net ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §7b). The ancestry instrument could not measure the congestion or wage
+$237–289bn adding the proposed scale net ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §7b),
+computed on the September 23 case with care beside it. On the September 24 case, with care
+inside the account, the central total with mobility is about $253–304bn. The ancestry instrument could not measure the congestion or wage
 slopes, so both figures stand (ladder 199).
 
 The [dataset integrity audit](../infra/immigration-fiscal/dataset_integrity_2026_09_23/README.md)
@@ -136,7 +146,8 @@ $192–262bn. None flips the sign. The defects are real, run both ways and nearl
 
 Two alternatives move the central case down. With the pooled-MEPS medical figure it is
 $196.3–244.5bn; if the fill-ins carry no group bias, $195.3–242.0bn. The corrections are proposed as
-one package, not adopted.
+one package; the operator adopted it on September 24, with row 6 run through the engine, row 3
+replaced by CBO's income-tax gradient and row 5 by the pooled-MEPS figure (ladder 219).
 
 The [debt legacy lane](../infra/immigration-fiscal/debt_legacy_2026_09_23/RESULT.md) (ladder 207)
 prices interest on the group's past federal gaps. Borrowed, the 2005–2023 gaps leave $0.94–1.20tn
@@ -185,7 +196,8 @@ ratios; the NIBRS murder ratio stays at 2.30, and crimes by Hispanic offenders a
 more often. Booking adds $0.87bn to the justice line; victims' harm beside the account rises to $30.9bn.
 Run together through the engine, the proposals give **$216.4–261.8bn** on the adopted main case
 (+$13.2bn / +$12.2bn; [combined run](../infra/immigration-fiscal/outside_checks_combined_2026_09_24/README.md));
-they overlap the audit package's rows 3, 6 and 13 and do not add to it.
+they overlap the audit package's rows 3, 6 and 13 and do not add to it. Adopted September 24 together
+with the audit in one engine run (ladder 219).
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
@@ -214,7 +226,7 @@ no past year is measured. Actual BEA budgets, each benefit programme's own serie
 ACS population by year, with the 2024 relative position held or income-adjusted, give
 **$1.3–2.2tn (10y), $2.0–3.3tn (15y), $2.4–3.9tn (20y)** for the September 20 main net-cost
 case, 2024 dollars, no interest; the whole-budget rules alone give $1.4–2.0tn, $2.0–3.1tn and
-$2.4–3.8tn. On the adopted $203–250bn anchor the whole-budget rules give **$1.7–2.5tn, $2.5–3.7tn
+$2.4–3.8tn. On the September 23 $203–250bn anchor the whole-budget rules give **$1.7–2.5tn, $2.5–3.7tn
 and $3.0–4.6tn**; the programme-by-programme version is not re-run. 2020–2021 supply 29–39% of the ten-year total under the rules that follow the benefit spike (over a third in the programme version) and 20% under the flat carry. Measured trend (ACS):
 per-capita income 0.52→0.61 of the national figure over 2008–2024, median household
 income 0.78→0.91, full-time men's earnings 0.64→0.75 with the gain in 2016–2019 and

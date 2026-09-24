@@ -3,6 +3,10 @@
 Date: 2026-09-24. [MODEL / FRAMING-SENSITIVE] Proposed corrections only. The main case stays as
 adopted until the operator decides, and narrative authorship remains the operator's.
 
+**Adopted 2026-09-24 (ladder 219).** The operator adopted these checks together with the dataset audit. One
+engine run gives a main case of $200.9–246.3bn ([lane](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md),
+[decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md)). The proposals below are kept as computed on the September 23 case.
+
 The complete annual account allocates BEA's 2024 consolidated government account exactly: $8,008.290bn
 of current receipts and $10,061.458bn of current expenditure, a balance of −$2,053.168bn [SOURCE:
 [complete account](immigration-complete-annual-account-2026-09-20.md), section "Complete accounting,
@@ -269,3 +273,12 @@ This is relative to the adopted main case. The audit package already takes most 
 and credit corrections (its row 3 and SSN rule), and its rows 3, 6 and 13 overlap these proposals,
 so the two cannot be combined by addition; that needs the audit's rows in the engine. Victims' harm
 (+$2.0bn, to $30.9bn) sits beside the account and is not in these figures. None of this is adopted.
+
+## Revisions
+
+- 2026-09-24 (later): the operator adopted all four checks with the dataset audit. In one engine run
+  CBO's income-tax gradient replaces audit row 3, and the benefit keys replace CBO on SNAP, WIC and
+  cash. The pooled-MEPS ratios replace CBO's Medicare gradient, and the booking factor applies to
+  the 2024 arrest ratio. The main case is $200.9–246.3bn ([decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md), ladder 219). The
+  figures above stay as computed on the September 23 case. Concept affected: the status of these
+  corrections.
