@@ -120,17 +120,23 @@ $237–289bn adding the proposed scale net ([real costs](immigration-real-fiscal
 slopes, so both figures stand (ladder 199).
 
 The [dataset integrity audit](../infra/immigration-fiscal/dataset_integrity_2026_09_23/README.md)
-(September 23, ladder 204) checks the inputs themselves for formatting, columns, implausible
-statistics and category coding, across the CPS, ACS, spending and crime files. The defects run
-both ways and move the main case by **−$29bn to +$3bn** (−$13.5bn central); none flips the sign.
-The largest are keying errors:
-- ACA premium credits are keyed as EITC (−$14.2bn);
-- the tax model assumes every respondent is a legal, fully compliant filer (+$5bn to +$17bn);
-- federal tax the CPS misses at the top is spread by CPS liability (+$9.5bn).
+(September 23–24, ladder 204 and 208–210) checks the inputs themselves: formatting, columns,
+implausible statistics and category coding, across the CPS, ACS, spending and crime files. Its
+band lanes are folded in and combined on one frame. The corrections leave the main case at
+**$202.9–251.1bn** at central values, against the published $203.2–249.6bn, and widen its range to
+$192–262bn. None flips the sign. The defects are real, run both ways and nearly cancel:
+- **Spending keys, net −$28.1bn.** ACA premium credits are keyed as EITC (−$14.2bn). Medicaid
+  long-term care is keyed by a community-only survey (−$11.1bn; the group draws 7.4% of those
+  dollars, not 12.25%). The education key over-weights K–12 (−$3.5bn).
+- **Tax records that overstate the group's taxes, stacked: +$27.9bn / +$29.6bn.** The Census tax
+  model assumes every respondent is a legal, fully compliant filer. The CPS fill-ins give the group
+  too much income (ladder 208). Federal tax the CPS misses at the top is spread by CPS liability.
+  Recounting the Mexico-born at the ACS level offsets part of this: ASEC 2025 counts about 1.2M too
+  many, which is worth −$2.2–2.5bn once the tax corrections are in (ladder 209).
 
-ASEC 2025 counts about 1.1M more Mexico-born than both ACS 2024 and ASEC 2026 (−$6bn to −$8bn if
-the ACS is right). Five measured corrections (−$5.1bn, to about $198–245bn) are proposed, not
-adopted. Three bands each await one measurement.
+Two alternatives move the central case down. With the pooled-MEPS medical figure it is
+$196.3–244.5bn; if the fill-ins carry no group bias, $195.3–242.0bn. The corrections are proposed as
+one package, not adopted.
 
 The [debt legacy lane](../infra/immigration-fiscal/debt_legacy_2026_09_23/RESULT.md) (ladder 207)
 prices interest on the group's past federal gaps. Borrowed, the 2005–2023 gaps leave $0.94–1.20tn
