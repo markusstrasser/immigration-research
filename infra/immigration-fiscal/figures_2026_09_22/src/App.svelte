@@ -1,49 +1,48 @@
 <script>
-  import ResponseLine from './lib/ResponseLine.svelte'
+  import Staircase from './lib/Staircase.svelte'
+  import Matrix from './lib/Matrix.svelte'
   import AgeWeights from './lib/AgeWeights.svelte'
-  import Ranges from './lib/Ranges.svelte'
   import Slope from './lib/Slope.svelte'
-  import Schooling from './lib/Schooling.svelte'
-  import Backcast from './lib/Backcast.svelte'
-  import Paths from './lib/Paths.svelte'
+  import Skills from './lib/Skills.svelte'
   import Places from './lib/Places.svelte'
-  import Rest from './lib/Rest.svelte'
+  import WhoPays from './lib/WhoPays.svelte'
+  import Crime from './lib/Crime.svelte'
+  import Sentences from './lib/Sentences.svelte'
 </script>
 
 <main>
   <p class="kicker">Income year 2024 · executed tables</p>
   <h1>Assumptions, drawn</h1>
-  <p class="lead">
-    Each figure stays inside a single account. The interesting motion is an
-    assumption being turned, with the measured part left in ink and the modelled part hatched.
+  <p class="subtitle">
+    What the Mexican-origin population costs other US residents, and which assumptions decide it.
   </p>
-  <p class="epigraph">
-    The generation ledger, the −$217bn union balance, and the $203–250bn complete account
-    agree in direction. One is not a decomposition of the others. Nothing here puts them
-    on the same axis.
+  <p class="lead">
+    Each figure stays inside one account and names it above its title. The first two show every budget
+    assumption at once; the rest show the people behind the totals.
+  </p>
+  <p class="rule-note">
+    The generation ledger, the −$217bn union balance and the $203–250bn complete account agree in
+    direction. None is a slice of another, and no figure puts two of them on one axis.
   </p>
   <nav>
-    <a href="#response">1 Response</a>
-    <a href="#age">2 Age weights</a>
-    <a href="#ranges">3 Conventions</a>
-    <a href="#generations">4 Generations</a>
-    <a href="#schooling">5 Schooling</a>
-    <a href="#backcast">6 Back-cast</a>
-    <a href="#programmes">Budgets</a>
-    <a href="#rule">The path</a>
-    <a href="#places">7 Places</a>
-    <a href="#education">8 Schooling sign</a>
-    <a href="#kitagawa">9 India, occupations</a>
-    <a href="#custody">Custody</a>
+    <a href="#staircase">The tally and the bill</a>
+    <a href="#matrix">Every combination</a>
+    <a href="#age">Ages</a>
+    <a href="#generations">Generations</a>
+    <a href="#skills">Schooling</a>
+    <a href="#places">Places</a>
+    <a href="#whopays">Who pays</a>
+    <a href="#crime">Crime</a>
+    <a href="#sentences">In a sentence</a>
   </nav>
 
-  <ResponseLine />
+  <Staircase />
+  <Matrix />
   <AgeWeights />
-  <Ranges />
   <Slope />
-  <Schooling />
-  <Backcast />
-  <Paths />
+  <Skills />
   <Places />
-  <Rest />
+  <WhoPays />
+  <Crime />
+  <Sentences />
 </main>

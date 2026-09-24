@@ -28,47 +28,6 @@ export const categories = [
   { label: 'Noncash aid', own: -13.08, white: -11.64 },
 ]
 
-// Complete annual account, main case adopted 2026-09-23. Positive = cost to other US residents.
-// main_case_2026_09_23/derived/main_case_bands.csv, variant adopted; the fixed row is
-// sign_reversal.csv at service response 0, sign flipped.
-// The fixed row also holds private capital fixed; it is not the headline with one dial turned.
-// General government responds at 0.59–0.84 in every adopted row, the fixed row included.
-export const responseRows = [
-  {
-    label: 'Ordinary services fixed',
-    note: 'Private capital fixed too',
-    lo: -80.53,
-    hi: 87.85,
-  },
-  {
-    label: 'Non-school education also fixed',
-    note: 'Headline case, those budgets held fixed',
-    lo: 158.88,
-    hi: 212.56,
-  },
-  {
-    label: 'Headline',
-    note: 'School response 63–66%, general government 0.59–0.84, justice and uncompensated care by use. Defense, interest and subsidies at zero',
-    lo: 203.21,
-    hi: 249.64,
-  },
-  { label: 'September 20 headline', note: 'General government at zero, justice per head', lo: 165.12, hi: 197.38, record: true },
-  {
-    label: 'Services fully proportional',
-    note: 'Every ordinary service budget scales',
-    lo: 307.9,
-    hi: 340.97,
-  },
-]
-
-// Production gain, already inside the headline. Cash scaling to GDP scaling.
-export const production = [
-  { id: 'inf', label: 'Perfect substitution', lo: 8.8, hi: 13.3 },
-  { id: 'direct', label: 'ε 8.7–17.9, direct low-skill estimates', lo: 10.3, hi: 18.0 },
-  { id: 'jobs', label: 'ε near 6, where the jobs sit', lo: 14.2, hi: 21.5 },
-  { id: 'e3', label: 'ε = 3', lo: 17.9, hi: 27.1 },
-]
-
 // September 19 ledger recut. Negative = shortfall of the union balance.
 export const hulls = {
   practitioner: { lo: -290.5, hi: -190.1, mark: -217.3 },
@@ -109,20 +68,6 @@ export const incomeRatios = {
   perCapita: [0.5194, 0.5088, 0.5062, 0.5102, 0.5088, 0.5184, 0.5248, 0.5354, 0.5472, 0.5531, 0.5625, 0.5847, 0.5912, 0.5994, 0.6113],
   household: [0.7812, 0.7789, 0.7699, 0.7779, 0.7818, 0.7867, 0.7966, 0.8094, 0.8194, 0.8267, 0.8513, 0.8735, 0.8893, 0.9047, 0.9069],
   men: [0.6413, 0.6291, 0.6358, 0.6411, 0.6397, 0.6446, 0.6346, 0.6413, 0.6971, 0.7092, 0.7352, 0.7033, 0.7341, 0.7557, 0.7541],
-}
-
-// Less-than-high-school share by arrival cohort and years since arrival. Empty = not observed.
-export const cohortMatrix = {
-  cols: ['0–5', '6–10', '11–20', '21+'],
-  rows: [
-    { cohort: '1980–89', cells: [null, null, 0.583, 0.522] },
-    { cohort: '1990–99', cells: [null, 0.588, 0.579, 0.481] },
-    { cohort: '2000–07', cells: [0.581, 0.570, 0.530, 0.478] },
-    { cohort: '2008–14', cells: [0.489, 0.450, 0.426, null] },
-    { cohort: '2015–19', cells: [0.413, 0.389, null, null] },
-    { cohort: '2020–21', cells: [0.388, null, null, null] },
-    { cohort: '2022–24', cells: [0.360, null, null, null] },
-  ],
 }
 
 // CBO-informed back-cast of the adopted main case, $bn cost. Envelope of flat / ratio / income
@@ -177,23 +122,6 @@ export const kitagawa = [
   { label: 'US-born, Asian Indian ancestry', detail: 'IT vs not IT', mix: 2714, within: 63476, inter: -2167, gap: 64022 },
   { label: 'India-born, recent noncitizens', detail: 'Detailed occupations', mix: 26698, within: -3626, inter: -6925, gap: 16147 },
 ]
-
-// Programme-by-programme back-cast, CBO-informed, net cost $bn, September 20 anchor only:
-// backcast_categories.py has not been re-run on the adopted main case.
-// backcast_categories_annual.csv. 2020–21 on the preferred path are the mean of 2019 and 2022.
-const years = []
-for (let y = 2005; y <= 2024; y++) years.push(y)
-export const ruleYears = years
-export const rulePaths = {
-  programme: {
-    lo: [48.6, 45.7, 48.1, 96.5, 136.1, 164.2, 154.4, 130.3, 107.4, 109.0, 109.9, 116.1, 111.7, 116.9, 120.4, 295.7, 357.7, 153.0, 151.1, 165.1], // September 20
-    hi: [68.6, 67.5, 71.4, 119.3, 158.5, 186.4, 177.2, 154.4, 133.6, 135.9, 137.9, 144.5, 140.6, 146.0, 149.9, 318.9, 377.8, 183.8, 182.5, 197.4], // September 20
-  },
-  income: {
-    lo: [84.5, 85.1, 89.7, 139.8, 180.2, 211.4, 203.5, 178.7, 161.6, 160.5, 160.4, 161.2, 150.9, 153.2, 151.9, 319.9, 376.2, 167.8, 159.4, 165.1], // September 20
-    hi: [102.9, 105.1, 111.1, 160.7, 200.7, 231.5, 224.2, 200.7, 185.3, 185.0, 186.0, 187.4, 178.0, 180.6, 180.0, 342.0, 395.4, 197.9, 190.4, 197.4], // September 20
-  },
-}
 
 // Real national spending per resident, 2024 = 1. national_programme_index.csv
 export const programmeYears = [2005, 2010, 2015, 2019, 2020, 2021, 2024]
