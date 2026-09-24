@@ -1,0 +1,72 @@
+AFFIRMATIVE ACTION COST TO NON-HISPANIC WHITE NATIVES - accounting scenarios
+==============================================================================================
+Derived published parameters:
+  elite URM seat loss (E&C Table 2, AKR Harvard Table 11): Black 0.637-0.721, Hispanic 0.511-0.519; white share of freed seats 0.124-0.340
+  selective URM seat loss (Hinrichs Table 5, AKR UNC in-state): Black 0.204/0.287/0.355, Hispanic 0.176/0.214/0.276; white share of freed seats 0.690/0.774/0.931
+IPEDS fall 2023 first-time degree-seeking (EFALEVEL 4), four-year, >=1000 applicants, no HBCUs;
+  public universities in pre-2023 ban states excluded; E = admit rate <15%;
+  S = admit 15-50% and SAT median >=1200 or ACT median >=26; B (high scenario only) = admit
+  50-70% and SAT median >=1250 or ACT median >=27; territories excluded
+  tier E: 53 institutions (94% private), first-year 68,607: white 23,422, Black 5,235, Hispanic 9,626, AIAN 158, Asian 14,142, nonresident 9,542
+  tier S: 80 institutions (78% private), first-year 135,483: white 71,573, Black 7,782, Hispanic 16,761, AIAN 177, Asian 20,559, nonresident 8,730
+  tier B: 79 institutions (71% private), first-year 156,118: white 85,411, Black 9,033, Hispanic 22,386, AIAN 312, Asian 21,176, nonresident 7,578
+NCES Digest 2024 Table 306.10, % of resident enrollment: black 1976:9.6, 1980:9.4, 1990:9.3, 2000:11.7, 2013:14.7, 2018:13.4, 2019:13.2, 2020:13.1, 2021:13.1, 2022:13.2, 2023:13.4; hisp 1976:3.6, 1980:4.0, 1990:5.8, 2000:9.9, 2013:15.8, 2018:19.5, 2019:20.3, 2020:20.3, 2021:20.6, 2022:21.5, 2023:22.2
+  stock 2022: entry cohorts 1979-2018; mean share relative to 2023: Black 0.860, Hispanic 0.449
+  stock 2024: entry cohorts 1981-2020; mean share relative to 2023: Black 0.874, Hispanic 0.486
+CPS ASEC 2025 (income year 2024), weights MARSUPWT/100:
+  non-Hispanic white native workers (earnings>0): 97.5m of 175.5m; mean earnings $77,004
+  NH-white-native BA+ aged 25-64 mean earnings $111,719; share with earnings, ages 22-61: 0.900; native share of NH-white BA+ 22-40: 0.936; native share of NH-white workers: 0.950; NH-white share of earners who are neither Hispanic nor non-Hispanic Black: 0.854
+  Mexican share of Hispanics: BA+ aged 22-40 0.512; workers 0.584; incorporated self-employed 0.464
+  foreign-born or foreign-born parent (generations 1-2) share of Hispanics: BA+ aged 22-40 0.670; workers 0.722; incorporated self-employed 0.795
+  NH-white-native share of income+payroll+state income tax 0.634; of incorporated self-employed earnings 0.670
+USAspending contract obligations ($bn; award types A-D; set-aside codes 8A+8AN for 8(a)-restricted):
+  FY2022: all 680.57; self-certified SDB 67.53; 8(a) participants 31.85; minority-owned 69.34; Hispanic-owned 12.38; 8(a)-restricted 12.18 (Hispanic-owned 1.21 = 9.9%)
+  FY2023: all 746.49; self-certified SDB 76.02; 8(a) participants 34.90; minority-owned 76.57; Hispanic-owned 12.39; 8(a)-restricted 14.13 (Hispanic-owned 1.27 = 9.0%)
+  FY2024: all 740.66; self-certified SDB 77.29; 8(a) participants 36.70; minority-owned 78.79; Hispanic-owned 13.29; 8(a)-restricted 15.13 (Hispanic-owned 1.36 = 9.0%)
+Admissions: white-native up-crossings per entering cohort (seats freed x white share x native share):
+  low     boundary E black 387; boundary E hisp 580; boundary S black 1,719; boundary S hisp 3,028; total 5,714
+  central boundary E black 771; boundary E hisp 1,093; boundary S black 2,705; boundary S hisp 4,151; total 8,720
+  high    boundary E black 1,200; boundary E hisp 1,614; boundary S black 6,814; boundary S hisp 11,862; total 21,489
+  low     2024 stock cost by boundary: E $0.00bn (loss per affected worker-year $0), S $0.00bn ($0)
+  central 2024 stock cost by boundary: E $1.06bn (loss per affected worker-year $21,887), S $0.53bn ($3,018)
+  high    2024 stock cost by boundary: E $3.21bn (loss per affected worker-year $43,773), S $4.71bn ($10,060)
+
+CHANNEL TABLE, $bn per year (pre-2023 = 2022 stock / FY2022 contracting; 2024 = 2024 stock / FY2024)
+channel                                                            pre-2023 L/C/H             2024 L/C/H   Hisp    Mex grade
+1 Admissions, undergraduate (earnings of working stock)      0.00/  1.52/  7.58    0.00/  1.58/  7.92  44.7%  22.9% C
+2 Employment, federal contractors (EO 11246)                 0.00/  1.37/  5.48    0.00/  1.37/  5.48  20.0%  11.7% C-/D
+3a Contracting, 8(a) lost profits                            0.12/  0.37/  2.14    0.15/  0.46/  2.46   9.0%   4.2% C
+3b Contracting, DOT DBE lost profits (minority part)         0.02/  0.07/  0.18    0.02/  0.07/  0.25  16.9%   7.8% C-
+3c Contracting, DBE price premium (taxpayers)                0.00/  0.48/  0.95    0.00/  0.48/  1.29  16.9%   7.8% B-/C
+3d Contracting, 8(a) price premium (taxpayers)               0.00/  0.00/  1.13    0.00/  0.00/  1.30   9.0%   4.2% D
+TOTAL priced channels                                        0.15/  3.80/ 17.46    0.18/  3.96/ 18.70
+  career loss (rows 1, 2, 3a, 3b)                            0.15/  3.32/ 15.37    0.18/  3.48/ 16.11
+  taxpayer premium (rows 3c, 3d)                             0.00/  0.48/  2.08    0.00/  0.48/  2.59
+  of which Hispanic beneficiaries (2024 central): $1.11bn (28.2%); Mexican-origin $0.58bn (14.8%)
+  2024 low    : Hispanic $0.02bn (admissions 0.00, employment 0.00, contracting 0.02); Mexican-origin $0.01bn; generations 1-2 $0.01bn
+  2024 central: Hispanic $1.11bn (admissions 0.71, employment 0.27, contracting 0.13); Mexican-origin $0.58bn; generations 1-2 $0.78bn
+  2024 high   : Hispanic $7.03bn (admissions 3.69, employment 2.74, contracting 0.60); Mexican-origin $3.76bn; generations 1-2 $4.92bn
+  per NH-white-native worker, 2024: $2 / $41 / $192; central as share of their mean earnings 0.053%
+
+Admissions flow: PV (3% real) of lifetime losses per entering cohort, pre-SFFA: $0.00bn / $1.30bn / $6.58bn; Hispanic share 59.3%
+Employment: white-native workers displaced from contractor jobs 11,381 / 355,668 / 711,336
+
+Parameter notes:
+  r_elite = (0.0, 0.115, 0.23): low: Dale-Krueger w17159 p.25 selection-adjusted return ~0; high: Chetty-Deming-Friedman w31492 p.37 mean proportional Ivy-Plus vs flagship effect 23%; central: half of 23% because the displaced applicant's next-best is above a flagship (CDF p.30) [INFERENCE]
+  r_sel = (0.0, 0.03, 0.1): low: Bleemer QJE Fig. VIII p.36 Berkeley RD log wages -0.10 (0.11), DK selection-adjusted ~0; high: Hoekstra 2009 via DK p.2, +20% men, 0 women -> 10% average; central: half of DK p.25 basic-model 6% per 100 school-SAT points [INFERENCE]
+  elite_earn_2007 = 139698: Dale-Krueger w17159 Table 1 p.29: 1989-cohort mean 2007 earnings, C&B colleges
+  career_years = 40: entry cohorts aged 22-61 in the stock year [INFERENCE: career span]
+  discount = 0.03: real discount rate for per-cohort present values [INFERENCE]
+  contractor_share = 0.25: Miller 2017 AEJ Applied p.153: contractors employ about a quarter of the US workforce (OFCCP 2013)
+  shift_pp = (0.032, 1.0, 2.0): pp of contractor employment moved from whites to preferred groups. low: Kurtulus 2016 Table 4 p.53 white female -0.122 + white male +0.090; central: Miller 2017 p.153 Black +0.8 pp at 5 years plus Hispanic +0.2 [INFERENCE: fn 1 says 'qualitatively similar', Kurtulus finds Hispanic shares fell]; high: Miller's +0.8 plus +0.8 persistence, Hispanic +0.4 [INFERENCE]
+  r_emp = (0.0, 0.05, 0.1): earnings loss of a displaced white worker relative to the next job. low: pure reshuffling across employers (mechanism in Leonard 1990 and Smith-Welch as summarized by Holzer-Neumark w7323 p.37) [INFERENCE: zero loss]; central/high [INFERENCE: Holzer-Neumark p.37 expect some loss because sector wage levels differ, but no cited paper measures it]
+  hisp_share_emp = (0.0, 0.2, 0.5): Hispanic share of the employment shift. low: Kurtulus Table 4 Hispanic men -0.058; central 0.2/1.0 [INFERENCE]; high: Hispanic effect equal to Black (Miller fn 1)
+  share_shifted_8a = (0.5, 0.75, 1.0): share of 8(a)-restricted dollars that non-8(a) firms would otherwise win [INFERENCE]
+  margin = (0.03, 0.06, 0.1): economic profit margin on a federal contract [INFERENCE]
+  dbe_awards_fy2020 = 6200000000.0: CRS IF12055 v3: FY2020 nationwide DBE awards and commitments ~$6.2bn
+  dbe_minority_share = 0.546875: Marion 2007 WP p.12: 1993-99 MBE 7.0% vs WBE 5.8% of federal-aid highway dollars [dated]
+  dbe_pref_caused = (0.3412698412698413, 0.5, 0.8): share of DBE dollars caused by goals. low: Marion 2007 WP p.4 10pp goal -> +4.3pp utilization over 12.6% average participation (p.11); high: 'nearly one-for-one' without state trends (p.4) [INFERENCE: 0.8]; central midpoint [INFERENCE]
+  dbe_participation = 0.126: Marion 2007 WP p.11: 12.6% of federal-aid contract dollars to MBEs/WBEs
+  premium_dbe = (0.0, 0.028, 0.056): Marion 2009 REStat abstract p.503: state-funded prices -5.6% after Prop 209 (full text paywalled); central half [INFERENCE]
+  premium_8a = (0.0, 0.0, 0.056): no causal estimate for 8(a); high borrows Marion's 5.6% [INFERENCE]
+  dbe_2024_scale = (1.0, 1.0, 1.35): FY2024 DBE dollars relative to FY2020 [INFERENCE: IIJA raised federal-aid obligations; national total not published]
