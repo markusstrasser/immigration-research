@@ -278,7 +278,7 @@ before quoting any ratio.
 
 No single year should be quoted alone. US-born Mexican-origin men aged 18–39 in institutional
 group quarters, as a ratio to native non-Hispanic white men: 2.56× (2010), 1.91× (2019), 1.72×
-(2023, the low point), 1.94× (2024); flat near 1.9× since 2019, and 2.1–2.3× after prison
+(2023, the low point), 1.94× (2024); flat near 1.9× since 2019, and 2.10–2.23× after prison
 records coded generically "Hispanic" are reallocated. Their 2023 parity with all natives (1.92%
 against 2.05%) is the raw figure; reallocated it is 2.36%, and the 2024 rates are 2.04% raw and
 2.34% reallocated. The 2000 figure of 3.45× counts every institution, as the later series do (the
@@ -458,3 +458,7 @@ they get more prominence.
   custody key in the main case is the ACS figure and does not change.
 
   Concept affected: the corroborating BJS custody share.
+
+- 2026-09-24 (custody rounding): entry 12's reallocated custody ratio read 2.1–2.3×; the series is
+  2.10 (2019), 2.11 (2023) and 2.23 (2024), so it now reads 2.10–2.23×. Concept affected: the
+  reallocated custody ratio.
