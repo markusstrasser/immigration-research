@@ -400,6 +400,47 @@ federal-ledger rows; [second-order effects](immigration-second-order-effects-202
 federal-finances row; ladder 134] Would change it: a CBO-style ten-year projection of the same
 resident population, or a state-and-local total for the surge cohort.
 
+## 17. "Survey data are unreliable. Immigrants hide income and benefits, and surveys miss the unauthorized."
+
+Steel-man: the account rests on the Census Bureau's March household survey (CPS ASEC). People
+without papers avoid interviewers, fear of enforcement leads families to hide benefits, and
+Census fills in missing income answers from other respondents who may not resemble the group. A
+result built on that base could be wrong in either direction by more than its own size.
+Finding: the errors are real and large, but they run both ways and nearly cancel. Before the
+September 24 case was adopted, every dataset behind it was audited, and its keys were checked
+against administrative records and against CBO and Treasury distributions. The group's taxes
+were overstated, which understated its net cost by $48.7–50.3bn. The survey's tax model treats
+every respondent as a compliant resident filer. Census's fill-ins keep only 9% of the group's
+own wage gap to other residents, so its missing incomes are filled in too high. And the income
+tax key was too flat at the top against CBO's distribution. On the spending side the
+corrections, with the care items moved into the account the same day, lowered the charge by
+$51.0–53.6bn, mostly by fixing keys. ACA premium credits had been keyed as if they were the EITC
+(−$14.2bn). Long-term care had been charged at the group's share of community Medicaid, 12.25%,
+where CMS records give it 7.4% of those dollars. Together the corrections moved the main case
+from $203.2–249.6bn to $200.9–246.3bn. Set every correction to its extreme in the same direction
+and the range is $172–276bn; no combination changes the sign.
+
+The hiding story does not show where the group's benefit dollars are. In the states where most
+Hispanics are of Mexican origin, the survey reports Hispanic SNAP receipt and Medicaid coverage
+at or above the administrative rate, and it over-reports housing assistance. California's SNAP
+records give Hispanic participants 44.0% of benefit dollars against the survey's 44.1%.
+Unemployment insurance and WIC are under-reported, as they are for everyone; re-keying on
+administrative records would add $2.2bn (proposed).
+
+The count error runs the other way from the objection. Since 2019 the CPS has put the Mexico-born
+population 9–13% above the larger American Community Survey: 12.2M against about 11.1M. The
+adopted case corrects to the ACS level. The people in the excess are mostly working-age
+noncitizens who pay about what they are charged ($10.8–12.7bn of taxes against $10.5–12.2bn of
+spending), so an error in that count barely moves the net in either direction. The consumption,
+state and local income, and property tax keys have no outside benchmark yet.
+[SOURCE: ladders 204, 208, 209, 210, 216, 217 and 219;
+[outside checks](immigration-outside-checks-2026-09-24.md);
+[adopted case](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md);
+[decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md)] Would change it:
+linked tax and benefit records for the group (IRS, SSA and Census), evidence that its
+nonrespondents differ from respondents with the same characteristics, or an ACS 2025 count
+that confirms the CPS level.
+
 ## Instrument
 
 LLM-assisted allocation and synthesis on a politically charged topic. Every answer above
@@ -492,3 +533,10 @@ they get more prominence.
 - 2026-09-24 (back-cast on the corrected case): the cumulative figures now quote the September 24
   anchor, $1.7–2.4tn, $2.5–3.6tn and $3.0–4.5tn, with the September 23 values beside them. Concept
   affected: the back-cast's 2024 anchor.
+
+- 2026-09-24 (entry 17, survey reliability): new outward-facing entry. The audit and outside checks
+  found the survey errors large on both sides (taxes overstated, raising the cost by
+  $48.7–50.3bn; charged spending lowered by $51.0–53.6bn with care), nearly cancelling. The
+  administrative checks show no fear-driven benefit under-reporting where the group's dollars are,
+  and the CPS over-counts rather than under-counts the Mexico-born against the ACS. Concept
+  affected: the reliability of survey-keyed shares.
