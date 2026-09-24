@@ -21,8 +21,9 @@ a reference group, or the group's own balance re-weighted by age. Entries 7 and 
 separate partial accounts. The $201–246bn (entries 2, 4, 11) is the complete account's change
 for all other residents in the main case adopted September 24 ($203–250bn on September 23;
 $165–197bn as published September 20), under a stated service-response assumption, with no reference group; it carries later corrections that were not propagated to the ledger (ladder
-161) and has no generation dimension yet. They agree in direction. One is not a decomposition
-of the other, and the generation split must not be scaled onto the complete-account total.
+161). Since September 25 it has its own generation split, computed on the account with no
+reference group (ladder 224). They agree in direction. One is not a decomposition
+of the other, and the ledger's generation gaps must not be scaled onto the complete-account total.
 
 **Offsets do not add unless an entry says so.** The production gain ($8.8–13.3bn) is already
 inside the headline, and cheaper services ($21.8bn to consumers) overlap it. Two care items that the
@@ -177,6 +178,17 @@ not move. Participation converges; the degree margin does not, which is the inpu
 flat fiscal gap above. Descriptive, cross-sectional generations; the third-plus group is
 subject to ethnic attrition; standard errors are lower bounds. [CALCULATION:
 [second generation by origin](immigration-second-generation-by-origin-2026-09-22.md), ladder 178]
+
+On the adopted account itself, with no reference group, every generation alive in 2024 is a net
+cost at all 64 specifications (September 25). Counted with their children, as the National
+Academies count them, a second-generation adult costs other residents $5.6–5.9k a year, against
+$9.4–11.5k per Mexico-born adult and $4.9–7.2k per third-plus adult; the second generation's
+total is $50–53bn and the third-plus's $40–59bn. So the second generation costs less than the
+first but is not a net contributor in this year's account; whether today's children pay more as
+adults needs a cohort account, which this one-year split is not. Counted in their own
+generation, children push the second generation's total to $82–95bn, above the first's
+$54–64bn. [CALCULATION: [adopted account by generation](immigration-adopted-account-by-generation-2026-09-25.md),
+ladder 224]
 
 ## 6. "Comparing with whites is cherry-picking."
 
@@ -450,6 +462,11 @@ prior, which is also where errors concentrate; surprising results need more chec
 they get more prominence.
 
 ## Revisions
+
+- 2026-09-25 (generation split of the adopted account): entry 5 gains the account's own split by
+  generation (ladder 224), and the combining rules now say the complete account has one, computed
+  without a reference group. Concept affected: whether the second generation pays it back; the
+  ledger's gaps and the account's split stay separate objects. No headline number changed.
 
 - 2026-09-24 (main case adopted): the operator adopted the dataset audit, the pooled medical figure,
   care, shelter and the outside checks. One engine run gives $201–246bn, from $203–250bn (ladder 219,

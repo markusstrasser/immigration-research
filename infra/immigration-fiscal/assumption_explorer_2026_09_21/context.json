@@ -111,14 +111,14 @@
      "value": "27.8-39.5 (was 28.5-40.6)",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:73-74"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:74-75"
     },
     {
      "label": "corporate tax incidence to capital income / wages (CBO's rules)",
      "value": "75% / 25%",
      "unit": "share",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:68"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:71"
     },
     {
      "label": "school-spending response derived from CBO's coefficients (first-order)",
@@ -232,7 +232,7 @@
      "value": "27.8-39.5 (was 28.5-40.6)",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:73-74"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:74-75"
     }
    ],
    "relation_to_headline": "inside_headline",
@@ -841,14 +841,14 @@
      "value": 62,
      "unit": "$/standardized person/year",
      "se": "at most 725",
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:153-154"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:154-155"
     },
     {
      "label": "third-plus better than first",
      "value": 1389,
      "unit": "$/standardized person/year",
      "se": "at least 2.3 standard errors",
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:155"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:156"
     }
    ],
    "relation_to_headline": "outside_not_addable",
@@ -1063,7 +1063,7 @@
      "value": "about -6,700",
      "unit": "$/person/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:183-184"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:195-196"
     }
    ],
    "relation_to_headline": "different_object",
@@ -1686,7 +1686,7 @@
      "value": "about 31: 28.9 (15-45) plus 2.0; 28.6",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-objections-faq-2026-09-21.md:276-283"
+     "file_line": "research/immigration-objections-faq-2026-09-21.md:290-296"
     }
    ],
    "relation_to_headline": "inside_headline",
@@ -2602,17 +2602,17 @@
  "combining_rules": [
   {
    "id": "cr_two_anchors",
-   "file_line": "research/immigration-objections-faq-2026-09-21.md:18-25",
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:18-26",
    "text": "**The two anchors are different objects.** The generation gaps and the age structures (entries 1, 3, 5, 10) come from the generation ledger pinned on September 19: per-person balances against a reference group, or the group's own balance re-weighted by age. Entries 7 and 9 rest on separate partial accounts. The $201–246bn (entries 2, 4, 11) is the complete account's change for all other residents in the main case adopted September 24 ($203–250bn on September 23; $165–197bn as published September 20), under a stated service-response assumption, with no reference group; it carries later corrections that were not propagated to the ledger (ladder 161) and has no generation dimension yet. They agree in direction. One is not a decomposition of the other, and the generation split must not be scaled onto the complete-account total."
   },
   {
    "id": "cr_offsets_do_not_add",
-   "file_line": "research/immigration-objections-faq-2026-09-21.md:27-39",
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:28-40",
    "text": "**Offsets do not add unless an entry says so.** The production gain ($8.8–13.3bn) is already inside the headline, and cheaper services ($21.8bn to consumers) overlap it. Two care items that the account had omitted used to be added beside it; since September 24 they sit inside the main case: taxes on native women's extra hours ($2.7bn) and the net elder-care Medicaid saving ($1.5bn), $4.1bn together (entries 4 and 13, ladders 198 and 219). The net of city size and schooling mix (+$13.9bn, ladder 201) would add the same way, through the production term and induced receipts, but it is proposed, not adopted. Mobility insurance ($0.65bn, ladder 203) sits beside the account with the social items. The complementarity figure ($26.8–80.4bn) covers half of all unauthorized workers of every origin and is matched by other immigrants' losses. The account's own nest is a different object: at the elasticities its job distribution supports, it moves the production term by about $4–8bn at the job-overlap reading and $2–5bn at the direct low-skill estimates (entry 14). No ratio of \"offsets to cost\" can be formed from these."
   },
   {
    "id": "cr_match_population_horizon_outcome",
-   "file_line": "research/immigration-objections-faq-2026-09-21.md:41-44",
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:42-45",
    "text": "**A result refutes a claim only when population, horizon and outcome match.** Entry 5 compares Mexican-origin generations alive in 2024 with whites at common ages. The National Academies results it is usually set against are all origins, followed from arrival, with descendants, discounted, under a budget rule. Neither refutes the other."
   },
   {
@@ -2622,12 +2622,12 @@
   },
   {
    "id": "cr_instrument_ranking_warning",
-   "file_line": "research/immigration-objections-faq-2026-09-21.md:447-450",
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:459-462",
    "text": "A summary that ranks findings by how much they surprise the model selects for results that contradict its prior, which is also where errors concentrate; surprising results need more checking before they get more prominence."
   },
   {
    "id": "cr_california_texas_shared_ledger",
-   "file_line": "research/immigration-objections-faq-2026-09-21.md:46-53",
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:47-54",
    "text": "**California and Texas per-person gaps are the shared all-age ledger.** The −$12,133 / −$7,479 (CA/TX vs local third-plus NH whites) and metro figures (Los Angeles −$17,196, Houston −$7,493) are from the September 17 stress and metro-match tables (entry 15). They are not a split of the $201–246bn complete account and not the generation-ledger −$6k to −$8k. The superseded $8,498 / $5,177 per native-headed household in California and Texas is a financing allocation of a later complete-account total; do not mix it with those per-person gaps. [SOURCE: [CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md); [who pays](immigration-fiscal-gap-incidence-who-pays-2026-09-18.md)]"
   }
  ]

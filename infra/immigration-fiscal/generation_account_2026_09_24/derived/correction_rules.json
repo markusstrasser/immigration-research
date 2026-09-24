@@ -1,0 +1,7466 @@
+{
+ "meta": {
+  "layout": "lane -> item -> union | a | b -> generation -> allocation, $bn of the group's target before the package's stack scaling"
+ },
+ "rules": {
+  "benefits": {
+   "family_and_general_assistance": {
+    "a": {
+     "G1": {
+      "personal": 0.302569078481441,
+      "shared": 0.2111247095666103
+     },
+     "G2": {
+      "personal": 0.43329189301554755,
+      "shared": 0.467684087941369
+     },
+     "G3plus": {
+      "personal": 0.4026546159335546,
+      "shared": 0.5278648296217886
+     }
+    },
+    "alt_g1_a": {
+     "G1": {
+      "personal": 1.1385155874305433,
+      "shared": 1.206673627129768
+     },
+     "G2": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G3plus": {
+      "personal": 0.0,
+      "shared": 0.0
+     }
+    },
+    "alt_g1_b": {
+     "G1": {
+      "personal": 1.1385155874305433,
+      "shared": 1.206673627129768
+     },
+     "G2": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G3plus": {
+      "personal": 0.0,
+      "shared": 0.0
+     }
+    },
+    "alt_usborn_a": {
+     "G1": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G2": {
+      "personal": 0.5901209812164239,
+      "shared": 0.5668652185655029
+     },
+     "G3plus": {
+      "personal": 0.5483946062141194,
+      "shared": 0.6398084085642651
+     }
+    },
+    "alt_usborn_b": {
+     "G1": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G2": {
+      "personal": 0.6514288254714626,
+      "shared": 0.7055535607481435
+     },
+     "G3plus": {
+      "personal": 0.4870867619590806,
+      "shared": 0.5011200663816248
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": 0.40426412913261844,
+      "shared": 0.39367534222306944
+     },
+     "G2": {
+      "personal": 0.42011946991363075,
+      "shared": 0.4753678392412294
+     },
+     "G3plus": {
+      "personal": 0.314131988384294,
+      "shared": 0.33763044566546924
+     }
+    },
+    "flag": "uniform factor on the union's key share (the lane's construction)",
+    "key": "cash_assistance",
+    "union": {
+     "personal": 1.1385155874305433,
+     "shared": 1.206673627129768
+    }
+   },
+   "housing_subsidies": {
+    "a": {
+     "G1": {
+      "personal": -0.5584730886053583,
+      "shared": -0.5584730886053583
+     },
+     "G2": {
+      "personal": -0.7657580193813237,
+      "shared": -0.7657580193813237
+     },
+     "G3plus": {
+      "personal": -1.1241653013284085,
+      "shared": -1.1241653013284085
+     }
+    },
+    "alt_g1_a": {
+     "G1": {
+      "personal": -2.448396409315091,
+      "shared": -2.448396409315091
+     },
+     "G2": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G3plus": {
+      "personal": 0.0,
+      "shared": 0.0
+     }
+    },
+    "alt_g1_b": {
+     "G1": {
+      "personal": -2.448396409315091,
+      "shared": -2.448396409315091
+     },
+     "G2": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G3plus": {
+      "personal": 0.0,
+      "shared": 0.0
+     }
+    },
+    "alt_usborn_a": {
+     "G1": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G2": {
+      "personal": -0.992039816913517,
+      "shared": -0.992039816913517
+     },
+     "G3plus": {
+      "personal": -1.4563565924015738,
+      "shared": -1.4563565924015738
+     }
+    },
+    "alt_usborn_b": {
+     "G1": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G2": {
+      "personal": -1.0129312997258664,
+      "shared": -1.0129312997258664
+     },
+     "G3plus": {
+      "personal": -1.4354651095892248,
+      "shared": -1.4354651095892248
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -0.8254006623636959,
+      "shared": -0.8254006623636959
+     },
+     "G2": {
+      "personal": -0.6714530315247904,
+      "shared": -0.6714530315247904
+     },
+     "G3plus": {
+      "personal": -0.9515427154266044,
+      "shared": -0.9515427154266044
+     }
+    },
+    "flag": "uniform factor on the union's key share (the lane's construction)",
+    "key": "housing_support",
+    "union": {
+     "personal": -2.448396409315091,
+     "shared": -2.448396409315091
+    }
+   },
+   "other_state_welfare": {
+    "a": {
+     "G1": {
+      "personal": 0.026218954068340402,
+      "shared": 0.026218954068340402
+     },
+     "G2": {
+      "personal": 0.05302328831959575,
+      "shared": 0.05302328831959575
+     },
+     "G3plus": {
+      "personal": 0.06123889646415732,
+      "shared": 0.06123889646415732
+     }
+    },
+    "alt_g1_a": {
+     "G1": {
+      "personal": 0.14048113885209346,
+      "shared": 0.14048113885209346
+     },
+     "G2": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G3plus": {
+      "personal": 0.0,
+      "shared": 0.0
+     }
+    },
+    "alt_g1_b": {
+     "G1": {
+      "personal": 0.14048113885209346,
+      "shared": 0.14048113885209346
+     },
+     "G2": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G3plus": {
+      "personal": 0.0,
+      "shared": 0.0
+     }
+    },
+    "alt_usborn_a": {
+     "G1": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G2": {
+      "personal": 0.0651901759354321,
+      "shared": 0.0651901759354321
+     },
+     "G3plus": {
+      "personal": 0.07529096291666135,
+      "shared": 0.07529096291666135
+     }
+    },
+    "alt_usborn_b": {
+     "G1": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G2": {
+      "personal": 0.07578327706567121,
+      "shared": 0.07578327706567121
+     },
+     "G3plus": {
+      "personal": 0.06469786178642226,
+      "shared": 0.06469786178642226
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": 0.049953450988197194,
+      "shared": 0.049953450988197194
+     },
+     "G2": {
+      "personal": 0.04883562951982728,
+      "shared": 0.04883562951982728
+     },
+     "G3plus": {
+      "personal": 0.04169205834406897,
+      "shared": 0.04169205834406897
+     }
+    },
+    "flag": "uniform factor on the union's key share (the lane's construction)",
+    "key": "wic",
+    "union": {
+     "personal": 0.14048113885209346,
+     "shared": 0.14048113885209346
+    }
+   },
+   "snap": {
+    "a": {
+     "G1": {
+      "personal": -0.1103411913062806,
+      "shared": -0.1103411913062806
+     },
+     "G2": {
+      "personal": -0.17520565385181183,
+      "shared": -0.17520565385181183
+     },
+     "G3plus": {
+      "personal": -0.19054821034584227,
+      "shared": -0.19054821034584227
+     }
+    },
+    "alt_g1_a": {
+     "G1": {
+      "personal": -0.4760950555039347,
+      "shared": -0.4760950555039347
+     },
+     "G2": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G3plus": {
+      "personal": 0.0,
+      "shared": 0.0
+     }
+    },
+    "alt_g1_b": {
+     "G1": {
+      "personal": -0.4760950555039347,
+      "shared": -0.4760950555039347
+     },
+     "G2": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G3plus": {
+      "personal": 0.0,
+      "shared": 0.0
+     }
+    },
+    "alt_usborn_a": {
+     "G1": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G2": {
+      "personal": -0.2280619664215062,
+      "shared": -0.2280619664215062
+     },
+     "G3plus": {
+      "personal": -0.24803308908242852,
+      "shared": -0.24803308908242852
+     }
+    },
+    "alt_usborn_b": {
+     "G1": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G2": {
+      "personal": -0.24618638047910657,
+      "shared": -0.24618638047910657
+     },
+     "G3plus": {
+      "personal": -0.2299086750248282,
+      "shared": -0.2299086750248282
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -0.17594113642616724,
+      "shared": -0.17594113642616724
+     },
+     "G2": {
+      "personal": -0.15520809567358232,
+      "shared": -0.15520809567358232
+     },
+     "G3plus": {
+      "personal": -0.14494582340418502,
+      "shared": -0.14494582340418502
+     }
+    },
+    "flag": "uniform factor on the union's key share (the lane's construction)",
+    "key": "snap",
+    "union": {
+     "personal": -0.4760950555039347,
+     "shared": -0.4760950555039347
+    }
+   },
+   "unemployment": {
+    "a": {
+     "G1": {
+      "personal": 0.5857389952721131,
+      "shared": 0.37825851691960843
+     },
+     "G2": {
+      "personal": 0.4491735651199001,
+      "shared": 0.5965112371109609
+     },
+     "G3plus": {
+      "personal": 0.3295482243763156,
+      "shared": 0.42198237884258605
+     }
+    },
+    "alt_g1_a": {
+     "G1": {
+      "personal": 1.3644607847683288,
+      "shared": 1.3967521328731554
+     },
+     "G2": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G3plus": {
+      "personal": 0.0,
+      "shared": 0.0
+     }
+    },
+    "alt_g1_b": {
+     "G1": {
+      "personal": 1.3644607847683288,
+      "shared": 1.3967521328731554
+     },
+     "G2": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G3plus": {
+      "personal": 0.0,
+      "shared": 0.0
+     }
+    },
+    "alt_usborn_a": {
+     "G1": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G2": {
+      "personal": 0.7870329602015911,
+      "shared": 0.8180496467201618
+     },
+     "G3plus": {
+      "personal": 0.5774278245667377,
+      "shared": 0.5787024861529937
+     }
+    },
+    "alt_usborn_b": {
+     "G1": {
+      "personal": 0.0,
+      "shared": 0.0
+     },
+     "G2": {
+      "personal": 0.7870329602015911,
+      "shared": 0.8542852010792674
+     },
+     "G3plus": {
+      "personal": 0.5774278245667377,
+      "shared": 0.5424669317938878
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": 0.5857389952721131,
+      "shared": 0.5303086022437498
+     },
+     "G2": {
+      "personal": 0.4491735651199001,
+      "shared": 0.5299364635763845
+     },
+     "G3plus": {
+      "personal": 0.3295482243763156,
+      "shared": 0.33650706705302114
+     }
+    },
+    "flag": "uniform factor on the union's key share (the lane's construction)",
+    "key": "unemployment",
+    "union": {
+     "personal": 1.3644607847683288,
+     "shared": 1.3967521328731554
+    }
+   }
+  },
+  "constants": {
+   "care": {
+    "a": {
+     "G1": {
+      "personal": -2.519812202692719,
+      "shared": -2.519812202692719
+     },
+     "G2": {
+      "personal": -0.7559582020874611,
+      "shared": -0.7559582020874611
+     },
+     "G3plus": {
+      "personal": -0.87422959521982,
+      "shared": -0.87422959521982
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -2.5358529393668547,
+      "shared": -2.5358529393668547
+     },
+     "G2": {
+      "personal": -0.7399174654133249,
+      "shared": -0.7399174654133249
+     },
+     "G3plus": {
+      "personal": -0.87422959521982,
+      "shared": -0.87422959521982
+     }
+    },
+    "rule": "workers' generation: ACS Mexico-born share of the union's hours; US-born split by CPS union workers",
+    "union": {
+     "personal": -4.15,
+     "shared": -4.15
+    },
+    "workers": {
+     "elder_care": {
+      "a": [
+       0.5246356970924886,
+       0.2140095665277666,
+       0.26135473637974477
+      ],
+      "b": [
+       0.5246356970924886,
+       0.2140095665277666,
+       0.26135473637974477
+      ]
+     },
+     "hours_tax": {
+      "a": [
+       0.6533292011559847,
+       0.16435344168572646,
+       0.18231735715828887
+      ],
+      "b": [
+       0.6593551641603269,
+       0.15832747868138417,
+       0.18231735715828887
+      ]
+     },
+     "output": {
+      "a": [
+       0.6533292011559847,
+       0.16435344168572646,
+       0.18231735715828887
+      ],
+      "b": [
+       0.6593551641603269,
+       0.15832747868138417,
+       0.18231735715828887
+      ]
+     }
+    }
+   },
+   "row10": {
+    "a": {
+     "G1": {
+      "personal": -0.27995524113680353,
+      "shared": -0.27995524113680353
+     },
+     "G2": {
+      "personal": -0.566160931846748,
+      "shared": -0.566160931846748
+     },
+     "G3plus": {
+      "personal": -0.6538838270164486,
+      "shared": -0.6538838270164486
+     }
+    },
+    "alt_children_a": {
+     "G1": {
+      "personal": -0.06755250684597743,
+      "shared": -0.06755250684597743
+     },
+     "G2": {
+      "personal": -0.6703910847176847,
+      "shared": -0.6703910847176847
+     },
+     "G3plus": {
+      "personal": -0.7620564084363378,
+      "shared": -0.7620564084363378
+     }
+    },
+    "alt_children_b": {
+     "G1": {
+      "personal": -0.641026919108166,
+      "shared": -0.641026919108166
+     },
+     "G2": {
+      "personal": -0.4075390144366621,
+      "shared": -0.4075390144366621
+     },
+     "G3plus": {
+      "personal": -0.4514340664551719,
+      "shared": -0.4514340664551719
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -0.5333824675295845,
+      "shared": -0.5333824675295845
+     },
+     "G2": {
+      "personal": -0.5214468282241527,
+      "shared": -0.5214468282241527
+     },
+     "G3plus": {
+      "personal": -0.4451707042462627,
+      "shared": -0.4451707042462627
+     }
+    },
+    "flag": "bounded constant; split as the WIC key it corrects; alternative: the union's children",
+    "union": {
+     "personal": -1.5,
+     "shared": -1.5
+    }
+   },
+   "row8": {
+    "a": {
+     "G1": {
+      "personal": 0.5976433056240783,
+      "shared": 0.5976433056240783
+     },
+     "G2": {
+      "personal": 0.7009495519172275,
+      "shared": 0.7009495519172275
+     },
+     "G3plus": {
+      "personal": 0.7014071424586943,
+      "shared": 0.7014071424586943
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": 0.8243136536588193,
+      "shared": 0.8243136536588193
+     },
+     "G2": {
+      "personal": 0.5970551688754051,
+      "shared": 0.5970551688754051
+     },
+     "G3plus": {
+      "personal": 0.5786311774657753,
+      "shared": 0.5786311774657753
+     }
+    },
+    "union": {
+     "personal": 2.0,
+     "shared": 2.0
+    }
+   },
+   "row9": {
+    "a": {
+     "G1": {
+      "personal": -0.2508712333120113,
+      "shared": -0.2508712333120113
+     },
+     "G2": {
+      "personal": -0.2527519415076601,
+      "shared": -0.2527519415076601
+     },
+     "G3plus": {
+      "personal": -0.2963768251803285,
+      "shared": -0.2963768251803285
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -0.3310504678433887,
+      "shared": -0.3310504678433887
+     },
+     "G2": {
+      "personal": -0.21611671529590396,
+      "shared": -0.21611671529590396
+     },
+     "G3plus": {
+      "personal": -0.25283281686070735,
+      "shared": -0.25283281686070735
+     }
+    },
+    "flag": "bounded constant; split as the Medicaid and Medicare keys it acts on",
+    "union": {
+     "personal": -0.8,
+     "shared": -0.8
+    }
+   },
+   "shelter": {
+    "a": {
+     "G1": {
+      "personal": -0.13945075230649567,
+      "shared": -0.12858073602064063
+     },
+     "G2": {
+      "personal": -0.2069401523605796,
+      "shared": -0.19148009139370484
+     },
+     "G3plus": {
+      "personal": -0.20340909533292467,
+      "shared": -0.1879391725856545
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -0.19831754962999493,
+      "shared": -0.18244862569287829
+     },
+     "G2": {
+      "personal": -0.18597448830864652,
+      "shared": -0.17280529860253196
+     },
+     "G3plus": {
+      "personal": -0.16550796206135848,
+      "shared": -0.1527460757045898
+     }
+    },
+    "rule": "use-based charge to G1 (recent arrivals); the account's keyed charge leaves every generation",
+    "union": {
+     "personal": -0.5498,
+     "shared": -0.508
+    }
+   },
+   "small": {
+    "a": {
+     "G1": {
+      "personal": -0.029882165281203917,
+      "shared": -0.029882165281203917
+     },
+     "G2": {
+      "personal": -0.035047477595861375,
+      "shared": -0.035047477595861375
+     },
+     "G3plus": {
+      "personal": -0.035070357122934714,
+      "shared": -0.035070357122934714
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -0.04121568268294097,
+      "shared": -0.04121568268294097
+     },
+     "G2": {
+      "personal": -0.029852758443770264,
+      "shared": -0.029852758443770264
+     },
+     "G3plus": {
+      "personal": -0.02893155887328877,
+      "shared": -0.02893155887328877
+     }
+    },
+    "flag": "mixed small items; split by population",
+    "union": {
+     "personal": -0.1,
+     "shared": -0.1
+    }
+   }
+  },
+  "education": {
+   "college|0.77": {
+    "a": {
+     "G1": {
+      "personal": 6.164889676757253,
+      "shared": 0.5333266672446229
+     },
+     "G2": {
+      "personal": -6.492404752067074,
+      "shared": -3.0980799188842383
+     },
+     "G3plus": {
+      "personal": -4.560672583228282,
+      "shared": -1.2306136535043635
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -3.8945501878461073,
+      "shared": -3.0475925083160007
+     },
+     "G2": {
+      "personal": -0.4602999744365732,
+      "shared": -0.9529494990644167
+     },
+     "G3plus": {
+      "personal": -0.5333374962553634,
+      "shared": 0.20517510223646696
+     }
+    },
+    "k": {
+     "personal": 1.0,
+     "shared": 1.0
+    },
+    "union": {
+     "personal": -4.888187658538101,
+     "shared": -3.795366905143993
+    }
+   },
+   "college|0.82": {
+    "a": {
+     "G1": {
+      "personal": 4.251086869302226,
+      "shared": 0.3667355158536765
+     },
+     "G2": {
+      "personal": -4.4769294506284325,
+      "shared": -2.1303562867837087
+     },
+     "G3plus": {
+      "personal": -3.1448762203746554,
+      "shared": -0.8462162130653894
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -2.6855421009794895,
+      "shared": -2.0956392379111293
+     },
+     "G2": {
+      "personal": -0.31740632232050814,
+      "shared": -0.655283899412332
+     },
+     "G3plus": {
+      "personal": -0.36777037840078464,
+      "shared": 0.14108615332806806
+     }
+    },
+    "k": {
+     "personal": 1.0,
+     "shared": 1.0
+    },
+    "union": {
+     "personal": -3.3707188017008605,
+     "shared": -2.6098369839954216
+    }
+   },
+   "school|0.77": {
+    "a": {
+     "G1": {
+      "personal": 6.464863178974584,
+      "shared": 1.753299384896053
+     },
+     "G2": {
+      "personal": -3.8672729767521616,
+      "shared": -1.0246447342000664
+     },
+     "G3plus": {
+      "personal": -2.1764850264965503,
+      "shared": 0.6104878975177712
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -1.4612681422104714,
+      "shared": -0.7496633998288615
+     },
+     "G2": {
+      "personal": 0.977597719591877,
+      "shared": 0.5664437995807603
+     },
+     "G3plus": {
+      "personal": 0.9047755983445285,
+      "shared": 1.5223621484618732
+     }
+    },
+    "k": {
+     "personal": 1.034191741216401,
+     "shared": 1.034191741216401
+    },
+    "union": {
+     "personal": 0.42110517572587014,
+     "shared": 1.339142548213772
+    }
+   },
+   "school|0.82": {
+    "a": {
+     "G1": {
+      "personal": 4.570539170364841,
+      "shared": 1.6659272411448072
+     },
+     "G2": {
+      "personal": -1.681334573020365,
+      "shared": 0.07771754625655092
+     },
+     "G3plus": {
+      "personal": -0.6058712898291674,
+      "shared": 1.1144373867244042
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -0.09425472770517729,
+      "shared": 0.3515060464517745
+     },
+     "G2": {
+      "personal": 1.213861351839661,
+      "shared": 0.962771301742265
+     },
+     "G3plus": {
+      "personal": 1.1637266833809008,
+      "shared": 1.5438048259317512
+     }
+    },
+    "k": {
+     "personal": 1.034191741216401,
+     "shared": 1.0341917412164008
+    },
+    "union": {
+     "personal": 2.2833333075153064,
+     "shared": 2.858082174125798
+    }
+   }
+  },
+  "fill_in_literal": {
+   "D_b_hotdeck_union_matched": {
+    "a": {
+     "G1": {
+      "receipts": {
+       "business_current_transfers": {
+        "personal": -0.19851018504059395,
+        "shared": -0.14385760413882134
+       },
+       "corporate_capital": {
+        "personal": -0.7059151148696915,
+        "shared": -0.5115669864987944
+       },
+       "corporate_labor": {
+        "personal": -0.06260400512103372,
+        "shared": -0.02611207644921108
+       },
+       "customs_duties": {
+        "personal": -0.046470724597567466,
+        "shared": -0.046470724597567466
+       },
+       "employee_hi": {
+        "personal": -0.07423567146196319,
+        "shared": -0.03096363443082683
+       },
+       "employee_oasdi": {
+        "personal": -0.18536025573494774,
+        "shared": -0.14981550266129665
+       },
+       "employer_hi": {
+        "personal": -0.06603367284321465,
+        "shared": -0.02754258789306906
+       },
+       "employer_oasdi": {
+        "personal": -0.18696090368486043,
+        "shared": -0.15110920975211395
+       },
+       "excise_selective_sales": {
+        "personal": -0.2064054716109214,
+        "shared": -0.2064054716109214
+       },
+       "federal_income_tax": {
+        "personal": -1.6500521399842043,
+        "shared": -1.1421259297126236
+       },
+       "general_sales_tax": {
+        "personal": -0.33492479236379535,
+        "shared": -0.33492479236379535
+       },
+       "medicare_supplementary_premiums": {
+        "personal": -0.013281742859818412,
+        "shared": -0.016572080279587467
+       },
+       "other_domestic_social_contributions": {
+        "personal": -0.016065418788701068,
+        "shared": -0.00767504290018423
+       },
+       "other_personal_tax": {
+        "personal": -0.003896011441928862,
+        "shared": -0.0023151826914742865
+       },
+       "other_production_taxes": {
+        "personal": -0.20600097487159655,
+        "shared": -0.1492860766273998
+       },
+       "personal_current_transfers": {
+        "personal": -0.07842598448749032,
+        "shared": -0.07842598448749032
+       },
+       "personal_motor_vehicle": {
+        "personal": -1.46405398484682e-16,
+        "shared": 0.0
+       },
+       "personal_property_tax": {
+        "personal": -0.018419231034657615,
+        "shared": -0.013348163703456392
+       },
+       "remaining_production_property": {
+        "personal": -0.5066926837077014,
+        "shared": -0.3671932273800143
+       },
+       "self_employment_oasdi_hi": {
+        "personal": -0.7560747266931925,
+        "shared": -0.4716787451587204
+       },
+       "source_rounding": {
+        "personal": -8.35268891439784e-21,
+        "shared": -8.35268891439784e-21
+       },
+       "state_local_income_tax": {
+        "personal": -0.2148866131863669,
+        "shared": -0.12769515051329033
+       }
+      },
+      "spending": {
+       "agricultural_subsidies": {
+        "resources": {
+         "personal": -0.004531658089075227,
+         "shared": -0.004531658089075227
+        },
+        "wages": {
+         "personal": -0.004296050662649296,
+         "shared": -0.002246878523133182
+        }
+       },
+       "black_lung": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "workers_comp": {
+         "personal": -0.001176228304045642,
+         "shared": -0.001680751093741794
+        }
+       },
+       "defense": {
+        "population": {
+         "personal": -3.582993735451485e-15,
+         "shared": -3.582993735451485e-15
+        }
+       },
+       "domestic_interest": {
+        "population": {
+         "personal": -4.511918037235203e-15,
+         "shared": -4.511918037235203e-15
+        }
+       },
+       "economic_affairs_services": {
+        "population": {
+         "personal": -1.8578486035674367e-15,
+         "shared": -1.8578486035674367e-15
+        },
+        "resources": {
+         "personal": -0.24875681993030646,
+         "shared": -0.24875681993030646
+        },
+        "wages": {
+         "personal": -0.23582359482866624,
+         "shared": -0.12333815685074631
+        }
+       },
+       "education_benefits": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "postsecondary": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "education_services": {
+        "age5_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "education_mix": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "school_operating": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "employment_training": {
+        "unemployment": {
+         "personal": -0.006172989489330913,
+         "shared": -0.0020123427170915635
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "energy_assistance": {
+        "cash_assistance": {
+         "personal": -0.005621189926508391,
+         "shared": -0.007891945988034572
+        },
+        "energy": {
+         "personal": -0.0020768836576784437,
+         "shared": -0.0020768836576784437
+        }
+       },
+       "family_and_general_assistance": {
+        "all_cash": {
+         "personal": -0.05573709546945002,
+         "shared": -0.035798879621937466
+        },
+        "cash_assistance": {
+         "personal": -0.06793797292358214,
+         "shared": -0.09538244034791113
+        }
+       },
+       "general_public_services": {
+        "population": {
+         "personal": -1.59244166020066e-15,
+         "shared": -1.59244166020066e-15
+        },
+        "wages": {
+         "personal": -0.2095625306115946,
+         "shared": -0.10960335113791704
+        }
+       },
+       "health_services": {
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": -1.260682980992189e-15,
+         "shared": -1.260682980992189e-15
+        },
+        "veterans": {
+         "personal": 0.0754863933417541,
+         "shared": -0.016449036501512547
+        }
+       },
+       "housing_community_services": {
+        "population": {
+         "personal": -6.013126060653534e-17,
+         "shared": -6.013126060653534e-17
+        },
+        "resources": {
+         "personal": -0.008001544229428711,
+         "shared": -0.008001544229428711
+        }
+       },
+       "housing_subsidies": {
+        "housing_support": {
+         "personal": -0.3268337520469206,
+         "shared": -0.3268337520469206
+        },
+        "resources": {
+         "personal": -0.033169227269010365,
+         "shared": -0.033169227269010365
+        },
+        "wages": {
+         "personal": -0.0314447114031227,
+         "shared": -0.016445906313923068
+        }
+       },
+       "income_security_services": {
+        "all_cash": {
+         "personal": -0.14831820958522424,
+         "shared": -0.09526197384277017
+        },
+        "cash_assistance": {
+         "personal": -0.18078513819217812,
+         "shared": -0.253815751594478
+        },
+        "population": {
+         "personal": -6.966932263377888e-16,
+         "shared": -6.966932263377888e-16
+        }
+       },
+       "medicaid_and_chip_other_medical": {
+        "medicaid": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicaid_covered": {
+         "personal": 1.2851779571536772,
+         "shared": 1.244538578853078
+        }
+       },
+       "medicare": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicare": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "military_medical": {
+        "population": {
+         "personal": -2.90288844307412e-17,
+         "shared": -2.90288844307412e-17
+        },
+        "tricare": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0017624384406125617,
+         "shared": -0.00038404820998739244
+        }
+       },
+       "other_federal_benefits": {
+        "all_cash": {
+         "personal": -0.07638275550538678,
+         "shared": -0.04905919561287474
+        },
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": -3.483466131688944e-16,
+         "shared": -3.483466131688944e-16
+        }
+       },
+       "other_state_benefits": {
+        "population": {
+         "personal": -1.192257753405442e-17,
+         "shared": -1.192257753405442e-17
+        },
+        "veterans": {
+         "personal": 0.0007079796725948183,
+         "shared": -0.0001542739421145387
+        }
+       },
+       "other_state_welfare": {
+        "cash_assistance": {
+         "personal": -0.024114667785529006,
+         "shared": -0.03385611555043195
+        },
+        "wic": {
+         "personal": 0.03190365054420281,
+         "shared": 0.03190365054420281
+        }
+       },
+       "other_subsidies": {
+        "population": {
+         "personal": -1.0367458725264713e-16,
+         "shared": -1.0367458725264713e-16
+        },
+        "resources": {
+         "personal": -0.013947797397931042,
+         "shared": -0.013947797397931042
+        },
+        "wages": {
+         "personal": -0.013222631336272696,
+         "shared": -0.006915571696367643
+        }
+       },
+       "pension_guaranty": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.0008288565355483665,
+         "shared": -0.0005194367149221576
+        }
+       },
+       "public_order_safety": {
+        "adults": {
+         "personal": -2.8830601547752763e-15,
+         "shared": -2.8830601547752763e-15
+        },
+        "population": {
+         "personal": -9.952760376254125e-16,
+         "shared": -9.952760376254125e-16
+        }
+       },
+       "railroad_retirement": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.015580567794685439,
+         "shared": -0.009764197547816898
+        }
+       },
+       "recreation_culture": {
+        "population": {
+         "personal": -2.2393710846571782e-16,
+         "shared": -2.2393710846571782e-16
+        },
+        "resources": {
+         "personal": -0.02990520049041008,
+         "shared": -0.02990520049041008
+        }
+       },
+       "refundable_tax_credits": {
+        "refundable_credits": {
+         "personal": 0.041952217015910745,
+         "shared": 0.006169366370363397
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "snap": {
+        "cash_assistance": {
+         "personal": -0.10491631048918719,
+         "shared": -0.14729867990047435
+        },
+        "snap": {
+         "personal": 0.11653705964285654,
+         "shared": 0.11653705964285654
+        }
+       },
+       "social_security": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -1.5566215998641897,
+         "shared": -0.9755203410146066
+        }
+       },
+       "ssi": {
+        "all_cash": {
+         "personal": -0.05756568582109185,
+         "shared": -0.036973348533977234
+        },
+        "population": {
+         "personal": -2.6540694336677666e-16,
+         "shared": -2.6540694336677666e-16
+        },
+        "ssi": {
+         "personal": -0.03878424438616278,
+         "shared": -0.00908308317399266
+        }
+       },
+       "temporary_disability": {
+        "workers_comp": {
+         "personal": -0.08932536103209043,
+         "shared": -0.12763992988196352
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "transport_subsidies": {
+        "population": {
+         "personal": -1.6847120428555159e-18,
+         "shared": -1.6847120428555159e-18
+        },
+        "resources": {
+         "personal": -0.00022292257088248117,
+         "shared": -0.00022292257088248117
+        },
+        "wages": {
+         "personal": -0.0002113325055718407,
+         "shared": -0.000110529066181093
+        }
+       },
+       "unemployment": {
+        "unemployment": {
+         "personal": -0.16348335562594027,
+         "shared": -0.05329420058598051
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "veterans_life_insurance": {
+        "adults": {
+         "personal": -2.4635523783480143e-18,
+         "shared": -2.4635523783480143e-18
+        },
+        "veterans": {
+         "personal": 0.00011056795582437337,
+         "shared": -2.4093565220670562e-05
+        }
+       },
+       "veterans_other": {
+        "va_medical": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.009240920067406316,
+         "shared": -0.0020136639832313663
+        }
+       },
+       "veterans_pension_disability": {
+        "adults": {
+         "personal": -9.910519282040012e-16,
+         "shared": -9.910519282040012e-16
+        },
+        "veterans": {
+         "personal": 0.04445496709397551,
+         "shared": -0.009687062052252903
+        }
+       },
+       "veterans_readjustment": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0028050770262704615,
+         "shared": -0.0006112467737832035
+        }
+       },
+       "workers_compensation": {
+        "wages": {
+         "personal": -0.006221524602303845,
+         "shared": -0.0032539211261164726
+        },
+        "workers_comp": {
+         "personal": -0.0810645668736196,
+         "shared": -0.11583581092880585
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       }
+      }
+     },
+     "G2": {
+      "receipts": {
+       "business_current_transfers": {
+        "personal": -0.19340097694475483,
+        "shared": -0.23050765505277315
+       },
+       "corporate_capital": {
+        "personal": -0.687746438944424,
+        "shared": -0.819700197053601
+       },
+       "corporate_labor": {
+        "personal": -0.04734911320647295,
+        "shared": -0.027260310024845896
+       },
+       "customs_duties": {
+        "personal": -0.053095516710653476,
+        "shared": -0.053095516710653476
+       },
+       "employee_hi": {
+        "personal": -0.05614645908381443,
+        "shared": -0.03232520691037707
+       },
+       "employee_oasdi": {
+        "personal": -0.145055667342422,
+        "shared": -0.16061812568213998
+       },
+       "employer_hi": {
+        "personal": -0.04994306426318531,
+        "shared": -0.028753725744944125
+       },
+       "employer_oasdi": {
+        "personal": -0.14630827165953555,
+        "shared": -0.16200511704429923
+       },
+       "excise_selective_sales": {
+        "personal": -0.2358303052511829,
+        "shared": -0.2358303052511829
+       },
+       "federal_income_tax": {
+        "personal": -1.8153814513658677,
+        "shared": -1.2786953976154682
+       },
+       "general_sales_tax": {
+        "personal": -0.3826711346501126,
+        "shared": -0.3826711346501126
+       },
+       "medicare_supplementary_premiums": {
+        "personal": -0.00584345338691558,
+        "shared": -0.01282836811714008
+       },
+       "other_domestic_social_contributions": {
+        "personal": -0.01281143107135878,
+        "shared": -0.007796656150387438
+       },
+       "other_personal_tax": {
+        "personal": -0.004302927844971514,
+        "shared": -0.0028352464948395283
+       },
+       "other_production_taxes": {
+        "personal": -0.20069897060239753,
+        "shared": -0.23920587070394733
+       },
+       "personal_current_transfers": {
+        "personal": -0.08960626729979938,
+        "shared": -0.08960626729979938
+       },
+       "personal_motor_vehicle": {
+        "personal": -1.1179524340122313e-16,
+        "shared": 0.0
+       },
+       "personal_property_tax": {
+        "personal": -0.017945161231628818,
+        "shared": -0.021388191002924918
+       },
+       "remaining_production_property": {
+        "personal": -0.49365154750014384,
+        "shared": -0.5883654903146389
+       },
+       "self_employment_oasdi_hi": {
+        "personal": -0.3079592201005932,
+        "shared": -0.40230757784745125
+       },
+       "source_rounding": {
+        "personal": -9.796501519811003e-21,
+        "shared": -9.796501519811003e-21
+       },
+       "state_local_income_tax": {
+        "personal": -0.2373303069493717,
+        "shared": -0.15637955019016844
+       }
+      },
+      "spending": {
+       "agricultural_subsidies": {
+        "resources": {
+         "personal": -0.005177684012442892,
+         "shared": -0.005177684012442892
+        },
+        "wages": {
+         "personal": -0.003249220058257606,
+         "shared": -0.0023456811352369103
+        }
+       },
+       "black_lung": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "workers_comp": {
+         "personal": -0.0004892767971844629,
+         "shared": -0.00101626908246619
+        }
+       },
+       "defense": {
+        "population": {
+         "personal": -4.20233579085164e-15,
+         "shared": -4.20233579085164e-15
+        }
+       },
+       "domestic_interest": {
+        "population": {
+         "personal": -5.29183025514651e-15,
+         "shared": -5.29183025514651e-15
+        }
+       },
+       "economic_affairs_services": {
+        "population": {
+         "personal": -2.1789889285897393e-15,
+         "shared": -2.1789889285897393e-15
+        },
+        "resources": {
+         "personal": -0.2842191939953089,
+         "shared": -0.2842191939953089
+        },
+        "wages": {
+         "personal": -0.1783598040846169,
+         "shared": -0.12876173980970396
+        }
+       },
+       "education_benefits": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "postsecondary": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "education_services": {
+        "age5_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "education_mix": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "school_operating": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "employment_training": {
+        "unemployment": {
+         "personal": -0.002986007391646253,
+         "shared": -0.002805894550898571
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "energy_assistance": {
+        "cash_assistance": {
+         "personal": -0.01099053376989228,
+         "shared": -0.016897082691530594
+        },
+        "energy": {
+         "personal": -0.0030090350884533403,
+         "shared": -0.0030090350884533403
+        }
+       },
+       "family_and_general_assistance": {
+        "all_cash": {
+         "personal": -0.027940478799571667,
+         "shared": -0.03053353481265654
+        },
+        "cash_assistance": {
+         "personal": -0.13283212192377475,
+         "shared": -0.20421895744372878
+        }
+       },
+       "general_public_services": {
+        "population": {
+         "personal": -1.8677047959340625e-15,
+         "shared": -1.8677047959340625e-15
+        },
+        "wages": {
+         "personal": -0.1584978463690903,
+         "shared": -0.11442296967815195
+        }
+       },
+       "health_services": {
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": -1.478599630114466e-15,
+         "shared": -1.478599630114466e-15
+        },
+        "veterans": {
+         "personal": 0.1459868664023103,
+         "shared": -0.03726960447860496
+        }
+       },
+       "housing_community_services": {
+        "population": {
+         "personal": -7.052531130480184e-17,
+         "shared": -7.052531130480184e-17
+        },
+        "resources": {
+         "personal": -0.009142231566729301,
+         "shared": -0.009142231566729301
+        }
+       },
+       "housing_subsidies": {
+        "housing_support": {
+         "personal": -0.22950915927134838,
+         "shared": -0.22950915927134838
+        },
+        "resources": {
+         "personal": -0.03789777921460235,
+         "shared": -0.03789777921460235
+        },
+        "wages": {
+         "personal": -0.023782491185553454,
+         "shared": -0.01716908671086012
+        }
+       },
+       "income_security_services": {
+        "all_cash": {
+         "personal": -0.07435051567726185,
+         "shared": -0.08125072140157606
+        },
+        "cash_assistance": {
+         "personal": -0.35347056270520955,
+         "shared": -0.5434332355552476
+        },
+        "population": {
+         "personal": -8.171208482211523e-16,
+         "shared": -8.171208482211523e-16
+        }
+       },
+       "medicaid_and_chip_other_medical": {
+        "medicaid": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicaid_covered": {
+         "personal": 2.014863164434973,
+         "shared": 2.036695510705304
+        }
+       },
+       "medicare": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicare": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "military_medical": {
+        "population": {
+         "personal": -3.4046702009214676e-17,
+         "shared": -3.4046702009214676e-17
+        },
+        "tricare": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0034084667948983158,
+         "shared": -0.0008701619019223513
+        }
+       },
+       "other_federal_benefits": {
+        "all_cash": {
+         "personal": -0.038289952909743616,
+         "shared": -0.041843506638925575
+        },
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": -4.0856042411057614e-16,
+         "shared": -4.0856042411057614e-16
+        }
+       },
+       "other_state_benefits": {
+        "population": {
+         "personal": -1.3983466896641742e-17,
+         "shared": -1.3983466896641742e-17
+        },
+        "veterans": {
+         "personal": 0.001369196875133807,
+         "shared": -0.00034954806036422526
+        }
+       },
+       "other_state_welfare": {
+        "cash_assistance": {
+         "personal": -0.047148926492724945,
+         "shared": -0.07248777233612731
+        },
+        "wic": {
+         "personal": 0.052273935987805845,
+         "shared": 0.052273935987805845
+        }
+       },
+       "other_subsidies": {
+        "population": {
+         "personal": -1.2159536431862385e-16,
+         "shared": -1.2159536431862385e-16
+        },
+        "resources": {
+         "personal": -0.015936173068784514,
+         "shared": -0.015936173068784514
+        },
+        "wages": {
+         "personal": -0.010000636010718777,
+         "shared": -0.007219672047480052
+        }
+       },
+       "pension_guaranty": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.0003418904694371518,
+         "shared": -0.00036562898055383713
+        }
+       },
+       "public_order_safety": {
+        "adults": {
+         "personal": -2.2015063315933172e-15,
+         "shared": -2.2015063315933172e-15
+        },
+        "population": {
+         "personal": -1.167315497458789e-15,
+         "shared": -1.167315497458789e-15
+        }
+       },
+       "railroad_retirement": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.006426742637552064,
+         "shared": -0.006872971225897226
+        }
+       },
+       "recreation_culture": {
+        "population": {
+         "personal": -2.626459869282275e-16,
+         "shared": -2.626459869282275e-16
+        },
+        "resources": {
+         "personal": -0.03416843800316225,
+         "shared": -0.03416843800316225
+        }
+       },
+       "refundable_tax_credits": {
+        "refundable_credits": {
+         "personal": 0.020060422609458343,
+         "shared": 0.008790590912041468
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "snap": {
+        "cash_assistance": {
+         "personal": -0.2051320571835146,
+         "shared": -0.315374430895143
+        },
+        "snap": {
+         "personal": 0.16322470072667447,
+         "shared": 0.16322470072667447
+        }
+       },
+       "social_security": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.642082274420967,
+         "shared": -0.6866640296078297
+        }
+       },
+       "ssi": {
+        "all_cash": {
+         "personal": -0.028857133848113864,
+         "shared": -0.031535261341275996
+        },
+        "population": {
+         "personal": -3.1128413265567706e-16,
+         "shared": -3.1128413265567706e-16
+        },
+        "ssi": {
+         "personal": -0.025156026690489313,
+         "shared": -0.012756625471716217
+        }
+       },
+       "temporary_disability": {
+        "workers_comp": {
+         "personal": -0.03715675469022818,
+         "shared": -0.07717770638983122
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "transport_subsidies": {
+        "population": {
+         "personal": -1.9759246701776378e-18,
+         "shared": -1.9759246701776378e-18
+        },
+        "resources": {
+         "personal": -0.00025470205575602717,
+         "shared": -0.00025470205575602717
+        },
+        "wages": {
+         "personal": -0.00015983652661172477,
+         "shared": -0.00011538939144551785
+        }
+       },
+       "unemployment": {
+        "unemployment": {
+         "personal": -0.07908040490817397,
+         "shared": -0.07431035764863406
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "veterans_life_insurance": {
+        "adults": {
+         "personal": -1.881169961078274e-18,
+         "shared": -1.881169961078274e-18
+        },
+        "veterans": {
+         "personal": 0.00021383283371654937,
+         "shared": -5.4590288383839e-05
+        }
+       },
+       "veterans_other": {
+        "va_medical": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.01787147197783348,
+         "shared": -0.004562483656774927
+        }
+       },
+       "veterans_pension_disability": {
+        "adults": {
+         "personal": -7.567678014852028e-16,
+         "shared": -7.567678014852028e-16
+        },
+        "veterans": {
+         "personal": 0.08597365769861932,
+         "shared": -0.02194857864252235
+        }
+       },
+       "veterans_readjustment": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.005424877079877982,
+         "shared": -0.0013849398106465702
+        }
+       },
+       "workers_compensation": {
+        "wages": {
+         "personal": -0.004705508411831099,
+         "shared": -0.003397006701740516
+        },
+        "workers_comp": {
+         "personal": -0.03372050435162054,
+         "shared": -0.07004032526152823
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       }
+      }
+     },
+     "G3plus": {
+      "receipts": {
+       "business_current_transfers": {
+        "personal": -0.23515958116387375,
+        "shared": -0.3260761103225984
+       },
+       "corporate_capital": {
+        "personal": -0.8362427485323137,
+        "shared": -1.1595478329112872
+       },
+       "corporate_labor": {
+        "personal": -0.0515950433855137,
+        "shared": -0.03380402544936921
+       },
+       "customs_duties": {
+        "personal": -0.06702756704372712,
+        "shared": -0.06702756704372712
+       },
+       "employee_hi": {
+        "personal": -0.061181272387089855,
+        "shared": -0.040084728165548034
+       },
+       "employee_oasdi": {
+        "personal": -0.15491658735752073,
+        "shared": -0.19012615689588303
+       },
+       "employer_hi": {
+        "personal": -0.05442160144009363,
+        "shared": -0.03565592892965525
+       },
+       "employer_oasdi": {
+        "personal": -0.15625434402481764,
+        "shared": -0.1917679600000793
+       },
+       "excise_selective_sales": {
+        "personal": -0.29771123016483675,
+        "shared": -0.29771123016483675
+       },
+       "federal_income_tax": {
+        "personal": -1.9199064419875052,
+        "shared": -2.0149998090848302
+       },
+       "general_sales_tax": {
+        "personal": -0.4830825034293911,
+        "shared": -0.4830825034293911
+       },
+       "medicare_supplementary_premiums": {
+        "personal": -0.010771649226453727,
+        "shared": -0.021319638664095576
+       },
+       "other_domestic_social_contributions": {
+        "personal": -0.011515612674038712,
+        "shared": -0.0074700215058152095
+       },
+       "other_personal_tax": {
+        "personal": -0.0037774473215610865,
+        "shared": -0.0034380974721630814
+       },
+       "other_production_taxes": {
+        "personal": -0.24403333743428854,
+        "shared": -0.33838060548408305
+       },
+       "personal_current_transfers": {
+        "personal": -0.11311859194639552,
+        "shared": -0.11311859194639552
+       },
+       "personal_motor_vehicle": {
+        "personal": -1.0262184111727082e-16,
+        "shared": 0.0
+       },
+       "personal_property_tax": {
+        "personal": -0.021819830829259243,
+        "shared": -0.030255733274775026
+       },
+       "remaining_production_property": {
+        "personal": -0.6002394247687398,
+        "shared": -0.8323017753398372
+       },
+       "self_employment_oasdi_hi": {
+        "personal": -0.32631343505523136,
+        "shared": -0.40369843791596777
+       },
+       "source_rounding": {
+        "personal": -9.802896825183077e-21,
+        "shared": -9.802896825183077e-21
+       },
+       "state_local_income_tax": {
+        "personal": -0.20834714515579092,
+        "shared": -0.1896301211148303
+       }
+      },
+      "spending": {
+       "agricultural_subsidies": {
+        "resources": {
+         "personal": -0.006536287501758426,
+         "shared": -0.006536287501758426
+        },
+        "wages": {
+         "personal": -0.0035405868985095264,
+         "shared": -0.002908751394220507
+        }
+       },
+       "black_lung": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "workers_comp": {
+         "personal": -0.00016147573578732677,
+         "shared": -0.0003109270582665425
+        }
+       },
+       "defense": {
+        "population": {
+         "personal": -4.205079139648569e-15,
+         "shared": -4.205079139648569e-15
+        }
+       },
+       "domestic_interest": {
+        "population": {
+         "personal": -5.29528484252042e-15,
+         "shared": -5.29528484252042e-15
+        }
+       },
+       "economic_affairs_services": {
+        "population": {
+         "personal": -2.1804114057437026e-15,
+         "shared": -2.1804114057437026e-15
+        },
+        "resources": {
+         "personal": -0.35879716896722874,
+         "shared": -0.35879716896722874
+        },
+        "wages": {
+         "personal": -0.1943538369947653,
+         "shared": -0.15967041920892075
+        }
+       },
+       "education_benefits": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "postsecondary": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "education_services": {
+        "age5_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "education_mix": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "school_operating": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "employment_training": {
+        "unemployment": {
+         "personal": -0.0021932081050343717,
+         "shared": -0.0015965204290632196
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "energy_assistance": {
+        "cash_assistance": {
+         "personal": -0.005665735521397205,
+         "shared": -0.016501077647091935
+        },
+        "energy": {
+         "personal": -0.0026717313393032098,
+         "shared": -0.0026717313393032098
+        }
+       },
+       "family_and_general_assistance": {
+        "all_cash": {
+         "personal": -0.04772055801571755,
+         "shared": -0.048003655267990844
+        },
+        "cash_assistance": {
+         "personal": -0.0684763531347096,
+         "shared": -0.19943282135183074
+        }
+       },
+       "general_public_services": {
+        "population": {
+         "personal": -1.8689240620660307e-15,
+         "shared": -1.8689240620660307e-15
+        },
+        "wages": {
+         "personal": -0.17271080081824533,
+         "shared": -0.14188969147699618
+        }
+       },
+       "health_services": {
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": -1.479564882468941e-15,
+         "shared": -1.479564882468941e-15
+        },
+        "veterans": {
+         "personal": 0.20655193777780864,
+         "shared": -0.06789889545234573
+        }
+       },
+       "housing_community_services": {
+        "population": {
+         "personal": -7.057135130197252e-17,
+         "shared": -7.057135130197252e-17
+        },
+        "resources": {
+         "personal": -0.01154111641115781,
+         "shared": -0.01154111641115781
+        }
+       },
+       "housing_subsidies": {
+        "housing_support": {
+         "personal": -0.2870851915862745,
+         "shared": -0.2870851915862745
+        },
+        "resources": {
+         "personal": -0.04784200426860981,
+         "shared": -0.04784200426860981
+        },
+        "wages": {
+         "personal": -0.02591513507726012,
+         "shared": -0.021290449139696577
+        }
+       },
+       "income_security_services": {
+        "all_cash": {
+         "personal": -0.12698594474084976,
+         "shared": -0.12773927566421447
+        },
+        "cash_assistance": {
+         "personal": -0.18221778530659954,
+         "shared": -0.5306971729742574
+        },
+        "population": {
+         "personal": -8.176542771538885e-16,
+         "shared": -8.176542771538885e-16
+        }
+       },
+       "medicaid_and_chip_other_medical": {
+        "medicaid": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicaid_covered": {
+         "personal": 1.8696230037008965,
+         "shared": 1.8884300357311632
+        }
+       },
+       "medicare": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicare": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "military_medical": {
+        "population": {
+         "personal": -3.406892821474535e-17,
+         "shared": -3.406892821474535e-17
+        },
+        "tricare": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.004822525742811768,
+         "shared": -0.001585287336203349
+        }
+       },
+       "other_federal_benefits": {
+        "all_cash": {
+         "personal": -0.06539680054718765,
+         "shared": -0.06578476027172137
+        },
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": -4.0882713857694423e-16,
+         "shared": -4.0882713857694423e-16
+        }
+       },
+       "other_state_benefits": {
+        "population": {
+         "personal": -1.3992595516770414e-17,
+         "shared": -1.3992595516770414e-17
+        },
+        "veterans": {
+         "personal": 0.0019372308943110008,
+         "shared": -0.000636817254657626
+        }
+       },
+       "other_state_welfare": {
+        "cash_assistance": {
+         "personal": -0.02430576650948188,
+         "shared": -0.07078892739175029
+        },
+        "wic": {
+         "personal": 0.10781623818513966,
+         "shared": 0.10781623818513966
+        }
+       },
+       "other_subsidies": {
+        "population": {
+         "personal": -1.2167474362409055e-16,
+         "shared": -1.2167474362409055e-16
+        },
+        "resources": {
+         "personal": -0.020117760876297647,
+         "shared": -0.020117760876297647
+        },
+        "wages": {
+         "personal": -0.010897421597015833,
+         "shared": -0.008952722012577142
+        }
+       },
+       "pension_guaranty": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.0005923090194281062,
+         "shared": -0.0005803677728844569
+        }
+       },
+       "public_order_safety": {
+        "adults": {
+         "personal": -2.02086087123241e-15,
+         "shared": -2.02086087123241e-15
+        },
+        "population": {
+         "personal": -1.1680775387912693e-15,
+         "shared": -1.1680775387912693e-15
+        }
+       },
+       "railroad_retirement": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.011134026742634945,
+         "shared": -0.010909559186010939
+        }
+       },
+       "recreation_culture": {
+        "population": {
+         "personal": -2.6281744622803556e-16,
+         "shared": -2.6281744622803556e-16
+        },
+        "resources": {
+         "personal": -0.04313409890174141,
+         "shared": -0.04313409890174141
+        }
+       },
+       "refundable_tax_credits": {
+        "refundable_credits": {
+         "personal": 0.013910544919105245,
+         "shared": 0.006123130499673598
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "snap": {
+        "cash_assistance": {
+         "personal": -0.10574772866316504,
+         "shared": -0.3079832221402704
+        },
+        "snap": {
+         "personal": 0.1495290196324517,
+         "shared": 0.1495290196324517
+        }
+       },
+       "social_security": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -1.1123770808251852,
+         "shared": -1.0899510016402627
+        }
+       },
+       "ssi": {
+        "all_cash": {
+         "personal": -0.049286146448834486,
+         "shared": -0.04957853139182296
+        },
+        "population": {
+         "personal": -3.114873436776718e-16,
+         "shared": -3.114873436776718e-16
+        },
+        "ssi": {
+         "personal": -0.0863911233074194,
+         "shared": -0.03005729821284216
+        }
+       },
+       "temporary_disability": {
+        "workers_comp": {
+         "personal": -0.012262822062276874,
+         "shared": -0.023612483765929684
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "transport_subsidies": {
+        "population": {
+         "personal": -1.9772145838914715e-18,
+         "shared": -1.9772145838914715e-18
+        },
+        "resources": {
+         "personal": -0.00032153485220602006,
+         "shared": -0.00032153485220602006
+        },
+        "wages": {
+         "personal": -0.00017416952434062407,
+         "shared": -0.0001430880984646308
+        }
+       },
+       "unemployment": {
+        "unemployment": {
+         "personal": -0.05808417804966846,
+         "shared": -0.042281704435059915
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "veterans_life_insurance": {
+        "adults": {
+         "personal": -1.7268098264925376e-18,
+         "shared": -1.7268098264925376e-18
+        },
+        "veterans": {
+         "personal": 0.0003025449292332659,
+         "shared": -9.945424255348661e-05
+        }
+       },
+       "veterans_other": {
+        "va_medical": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.025285748361709437,
+         "shared": -0.008312071060272024
+        }
+       },
+       "veterans_pension_disability": {
+        "adults": {
+         "personal": -6.946709244861409e-16,
+         "shared": -6.946709244861409e-16
+        },
+        "veterans": {
+         "personal": 0.12164125467669337,
+         "shared": -0.03998658605115405
+        }
+       },
+       "veterans_readjustment": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0076754772581205605,
+         "shared": -0.0025231253383669622
+        }
+       },
+       "workers_compensation": {
+        "wages": {
+         "personal": -0.005127464786946324,
+         "shared": -0.004212442958009364
+        },
+        "workers_comp": {
+         "personal": -0.011128758368741602,
+         "shared": -0.02142880529313287
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       }
+      }
+     }
+    },
+    "b": {
+     "G1": {
+      "receipts": {
+       "business_current_transfers": {
+        "personal": -0.19851514875851559,
+        "shared": -0.17639623587501044
+       },
+       "corporate_capital": {
+        "personal": -0.7059327661731051,
+        "shared": -0.6272764749316293
+       },
+       "corporate_labor": {
+        "personal": -0.06274256634511872,
+        "shared": -0.03169830512439581
+       },
+       "customs_duties": {
+        "personal": -0.058092711526721436,
+        "shared": -0.058092711526721436
+       },
+       "employee_hi": {
+        "personal": -0.07439997701220163,
+        "shared": -0.03758777031223997
+       },
+       "employee_oasdi": {
+        "personal": -0.18580291714094888,
+        "shared": -0.1834004467582819
+       },
+       "employer_hi": {
+        "personal": -0.06617982493879217,
+        "shared": -0.03343484983463927
+       },
+       "employer_oasdi": {
+        "personal": -0.1874073876205037,
+        "shared": -0.1849841711006596
+       },
+       "excise_selective_sales": {
+        "personal": -0.2580259641670792,
+        "shared": -0.2580259641670792
+       },
+       "federal_income_tax": {
+        "personal": -1.6503607865626106,
+        "shared": -1.299048608588215
+       },
+       "general_sales_tax": {
+        "personal": -0.41868702316200823,
+        "shared": -0.41868702316200823
+       },
+       "medicare_supplementary_premiums": {
+        "personal": -0.013757190182132404,
+        "shared": -0.018866808371842996
+       },
+       "other_domestic_social_contributions": {
+        "personal": -0.01629606399030125,
+        "shared": -0.00946774580174466
+       },
+       "other_personal_tax": {
+        "personal": -0.0038974363503987332,
+        "shared": -0.0027831337355502003
+       },
+       "other_production_taxes": {
+        "personal": -0.20600612589561393,
+        "shared": -0.18305255494322079
+       },
+       "personal_current_transfers": {
+        "personal": -0.09803974722764254,
+        "shared": -0.09803974722764254
+       },
+       "personal_motor_vehicle": {
+        "personal": -1.46405398484682e-16,
+        "shared": 0.0
+       },
+       "personal_property_tax": {
+        "personal": -0.018419691604815113,
+        "shared": -0.016367336625883265
+       },
+       "remaining_production_property": {
+        "personal": -0.506705353483584,
+        "shared": -0.45024733684656254
+       },
+       "self_employment_oasdi_hi": {
+        "personal": -0.7560747266931925,
+        "shared": -0.5810096355450656
+       },
+       "source_rounding": {
+        "personal": -1.1520643588089759e-20,
+        "shared": -1.1520643588089759e-20
+       },
+       "state_local_income_tax": {
+        "personal": -0.2149652047818371,
+        "shared": -0.1535052428339416
+       }
+      },
+      "spending": {
+       "agricultural_subsidies": {
+        "resources": {
+         "personal": -0.005664992495515363,
+         "shared": -0.005664992495515363
+        },
+        "wages": {
+         "personal": -0.004305559096453124,
+         "shared": -0.002727559454808477
+        }
+       },
+       "black_lung": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "workers_comp": {
+         "personal": -0.001176228304045642,
+         "shared": -0.0018446061926930813
+        }
+       },
+       "defense": {
+        "population": {
+         "personal": -4.941928788146512e-15,
+         "shared": -4.941928788146512e-15
+        }
+       },
+       "domestic_interest": {
+        "population": {
+         "personal": -6.223169585073386e-15,
+         "shared": -6.223169585073386e-15
+        }
+       },
+       "economic_affairs_services": {
+        "population": {
+         "personal": -2.562481593853747e-15,
+         "shared": -2.562481593853747e-15
+        },
+        "resources": {
+         "personal": -0.31096907366218096,
+         "shared": -0.31096907366218096
+        },
+        "wages": {
+         "personal": -0.23634554236068775,
+         "shared": -0.14972422958931964
+        }
+       },
+       "education_benefits": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "postsecondary": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "education_services": {
+        "age5_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "education_mix": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "school_operating": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "employment_training": {
+        "unemployment": {
+         "personal": -0.006172989489330913,
+         "shared": -0.0028365670773478784
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "energy_assistance": {
+        "cash_assistance": {
+         "personal": -0.007180961907023032,
+         "shared": -0.010884118605095675
+        },
+        "energy": {
+         "personal": -0.0025955014060816545,
+         "shared": -0.0025955014060816545
+        }
+       },
+       "family_and_general_assistance": {
+        "all_cash": {
+         "personal": -0.056531894403641376,
+         "shared": -0.04001800452810172
+        },
+        "cash_assistance": {
+         "personal": -0.08678945240828047,
+         "shared": -0.1315459831027901
+        }
+       },
+       "general_public_services": {
+        "population": {
+         "personal": -2.1964127947317834e-15,
+         "shared": -2.1964127947317834e-15
+        },
+        "wages": {
+         "personal": -0.21002635462265834,
+         "shared": -0.13305109893437664
+        }
+       },
+       "health_services": {
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": -1.7388267958293284e-15,
+         "shared": -1.7388267958293284e-15
+        },
+        "veterans": {
+         "personal": 0.0754863933417541,
+         "shared": -0.020054697472226025
+        }
+       },
+       "housing_community_services": {
+        "population": {
+         "personal": -8.293746230106994e-17,
+         "shared": -8.293746230106994e-17
+        },
+        "resources": {
+         "personal": -0.010002671675854105,
+         "shared": -0.010002671675854105
+        }
+       },
+       "housing_subsidies": {
+        "housing_support": {
+         "personal": -0.46053744427015314,
+         "shared": -0.46053744427015314
+        },
+        "resources": {
+         "personal": -0.04146460740583643,
+         "shared": -0.04146460740583643
+        },
+        "wages": {
+         "personal": -0.031514307872144015,
+         "shared": -0.019964224499722284
+        }
+       },
+       "income_security_services": {
+        "all_cash": {
+         "personal": -0.15043319519591358,
+         "shared": -0.10648920136203874
+        },
+        "cash_assistance": {
+         "personal": -0.23094953340605434,
+         "shared": -0.35004810580106294
+        },
+        "population": {
+         "personal": -9.609305976951552e-16,
+         "shared": -9.609305976951552e-16
+        }
+       },
+       "medicaid_and_chip_other_medical": {
+        "medicaid": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicaid_covered": {
+         "personal": 2.2461916741106522,
+         "shared": 2.2119980043674237
+        }
+       },
+       "medicare": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicare": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "military_medical": {
+        "population": {
+         "personal": -4.00387749039648e-17,
+         "shared": -4.00387749039648e-17
+        },
+        "tricare": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0017624384406125617,
+         "shared": -0.0004682323287044117
+        }
+       },
+       "other_federal_benefits": {
+        "all_cash": {
+         "personal": -0.07747195708926831,
+         "shared": -0.054841132820759385
+        },
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": -4.804652988475776e-16,
+         "shared": -4.804652988475776e-16
+        }
+       },
+       "other_state_benefits": {
+        "population": {
+         "personal": -1.644449683555697e-17,
+         "shared": -1.644449683555697e-17
+        },
+        "veterans": {
+         "personal": 0.0007079796725948183,
+         "shared": -0.0001880910919414816
+        }
+       },
+       "other_state_welfare": {
+        "cash_assistance": {
+         "personal": -0.030806023819223954,
+         "shared": -0.04669240992239684
+        },
+        "wic": {
+         "personal": 0.05716623997711892,
+         "shared": 0.05716623997711892
+        }
+       },
+       "other_subsidies": {
+        "population": {
+         "personal": -1.4299562465701714e-16,
+         "shared": -1.4299562465701714e-16
+        },
+        "resources": {
+         "personal": -0.017436039091018984,
+         "shared": -0.017436039091018984
+        },
+        "wages": {
+         "personal": -0.013251896939648015,
+         "shared": -0.008395039060469667
+        }
+       },
+       "pension_guaranty": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.0008399251157799036,
+         "shared": -0.00056636995509039
+        }
+       },
+       "public_order_safety": {
+        "adults": {
+         "personal": -2.8830601547752763e-15,
+         "shared": -2.8830601547752763e-15
+        },
+        "population": {
+         "personal": -1.3727579967073644e-15,
+         "shared": -1.3727579967073644e-15
+        }
+       },
+       "railroad_retirement": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.015788631261994996,
+         "shared": -0.010646432891212738
+        }
+       },
+       "recreation_culture": {
+        "population": {
+         "personal": -3.08870549259157e-16,
+         "shared": -3.08870549259157e-16
+        },
+        "resources": {
+         "personal": -0.0373842715017424,
+         "shared": -0.0373842715017424
+        }
+       },
+       "refundable_tax_credits": {
+        "refundable_credits": {
+         "personal": 0.041952217015910745,
+         "shared": 0.010417842660658346
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "snap": {
+        "cash_assistance": {
+         "personal": -0.1340285667088693,
+         "shared": -0.20314587870235204
+        },
+        "snap": {
+         "personal": 0.1816332027371229,
+         "shared": 0.1816332027371229
+        }
+       },
+       "social_security": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -1.5774087811546667,
+         "shared": -1.0636626096270512
+        }
+       },
+       "ssi": {
+        "all_cash": {
+         "personal": -0.05838656005845996,
+         "shared": -0.04133089204683067
+        },
+        "population": {
+         "personal": -3.6606879912196386e-16,
+         "shared": -3.6606879912196386e-16
+        },
+        "ssi": {
+         "personal": -0.039226067170086434,
+         "shared": -0.01116090148717901
+        }
+       },
+       "temporary_disability": {
+        "workers_comp": {
+         "personal": -0.08932536103209043,
+         "shared": -0.14008344600925837
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "transport_subsidies": {
+        "population": {
+         "personal": -2.3236789006765284e-18,
+         "shared": -2.3236789006765284e-18
+        },
+        "resources": {
+         "personal": -0.0002786738686607218,
+         "shared": -0.0002786738686607218
+        },
+        "wages": {
+         "personal": -0.00021180024706225127,
+         "shared": -0.00013417485475494145
+        }
+       },
+       "unemployment": {
+        "unemployment": {
+         "personal": -0.16348335562594027,
+         "shared": -0.07512267841446801
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "veterans_life_insurance": {
+        "adults": {
+         "personal": -2.4635523783480143e-18,
+         "shared": -2.4635523783480143e-18
+        },
+        "veterans": {
+         "personal": 0.00011056795582437337,
+         "shared": -2.9374921837121818e-05
+        }
+       },
+       "veterans_other": {
+        "va_medical": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.009240920067406316,
+         "shared": -0.0024550630665029693
+        }
+       },
+       "veterans_pension_disability": {
+        "adults": {
+         "personal": -9.910519282040012e-16,
+         "shared": -9.910519282040012e-16
+        },
+        "veterans": {
+         "personal": 0.04445496709397551,
+         "shared": -0.011810484999212507
+        }
+       },
+       "veterans_readjustment": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0028050770262704615,
+         "shared": -0.0007452332620192753
+        }
+       },
+       "workers_compensation": {
+        "wages": {
+         "personal": -0.006235294680798081,
+         "shared": -0.003950041464797942
+        },
+        "workers_comp": {
+         "personal": -0.0810645668736196,
+         "shared": -0.12712855280624052
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       }
+      }
+     },
+     "G2": {
+      "receipts": {
+       "business_current_transfers": {
+        "personal": -0.19345210489163567,
+        "shared": -0.24245916393837472
+       },
+       "corporate_capital": {
+        "personal": -0.6879282532452271,
+        "shared": -0.8622005391197791
+       },
+       "corporate_labor": {
+        "personal": -0.04730582368465318,
+        "shared": -0.025810638425498886
+       },
+       "customs_duties": {
+        "personal": -0.05079173336611843,
+        "shared": -0.05079173336611843
+       },
+       "employee_hi": {
+        "personal": -0.05609512647796366,
+        "shared": -0.03060618998216609
+       },
+       "employee_oasdi": {
+        "personal": -0.144917370349736,
+        "shared": -0.1491974160288286
+       },
+       "employer_hi": {
+        "personal": -0.04989740318901187,
+        "shared": -0.027224636033570084
+       },
+       "employer_oasdi": {
+        "personal": -0.1461687804259539,
+        "shared": -0.15048578573436228
+       },
+       "excise_selective_sales": {
+        "personal": -0.22559776655427108,
+        "shared": -0.22559776655427108
+       },
+       "federal_income_tax": {
+        "personal": -1.8162759156232675,
+        "shared": -1.4144105222518892
+       },
+       "general_sales_tax": {
+        "personal": -0.36606725844629806,
+        "shared": -0.36606725844629806
+       },
+       "medicare_supplementary_premiums": {
+        "personal": -0.00536800606460159,
+        "shared": -0.011391053438467202
+       },
+       "other_domestic_social_contributions": {
+        "personal": -0.012666288711876084,
+        "shared": -0.00696816032561752
+       },
+       "other_personal_tax": {
+        "personal": -0.0043015029365016414,
+        "shared": -0.0029518546484703853
+       },
+       "other_production_taxes": {
+        "personal": -0.200752027864414,
+        "shared": -0.2516083702589047
+       },
+       "personal_current_transfers": {
+        "personal": -0.0857183038904554,
+        "shared": -0.0857183038904554
+       },
+       "personal_motor_vehicle": {
+        "personal": -1.1179524340122313e-16,
+        "shared": 0.0
+       },
+       "personal_property_tax": {
+        "personal": -0.017949905257562467,
+        "shared": -0.02249713966131059
+       },
+       "remaining_production_property": {
+        "personal": -0.49378205040916195,
+        "shared": -0.6188714419884209
+       },
+       "self_employment_oasdi_hi": {
+        "personal": -0.3079592201005932,
+        "shared": -0.38142622084282596
+       },
+       "source_rounding": {
+        "personal": -8.344469089538155e-21,
+        "shared": -8.344469089538155e-21
+       },
+       "state_local_income_tax": {
+        "personal": -0.2372517153539015,
+        "shared": -0.16281113582002088
+       }
+      },
+      "spending": {
+       "agricultural_subsidies": {
+        "resources": {
+         "personal": -0.0049530273383938395,
+         "shared": -0.0049530273383938395
+        },
+        "wages": {
+         "personal": -0.0032462494179840316,
+         "shared": -0.0022209405391183145
+        }
+       },
+       "black_lung": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "workers_comp": {
+         "personal": -0.0004892767971844629,
+         "shared": -0.0008579088241238362
+        }
+       },
+       "defense": {
+        "population": {
+         "personal": -3.579467735467456e-15,
+         "shared": -3.579467735467456e-15
+        }
+       },
+       "domestic_interest": {
+        "population": {
+         "personal": -4.507477889107167e-15,
+         "shared": -4.507477889107167e-15
+        }
+       },
+       "economic_affairs_services": {
+        "population": {
+         "personal": -1.856020307279422e-15,
+         "shared": -1.856020307279422e-15
+        },
+        "resources": {
+         "personal": -0.2718870897822203,
+         "shared": -0.2718870897822203
+        },
+        "wages": {
+         "personal": -0.17819673639215514,
+         "shared": -0.12191434016111201
+        }
+       },
+       "education_benefits": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "postsecondary": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "education_services": {
+        "age5_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "education_mix": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "school_operating": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "employment_training": {
+        "unemployment": {
+         "personal": -0.002986007391646253,
+         "shared": -0.0024161958098787802
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "energy_assistance": {
+        "cash_assistance": {
+         "personal": -0.009595426654255019,
+         "shared": -0.019010930586222864
+        },
+        "energy": {
+         "personal": -0.003107763075026186,
+         "shared": -0.003107763075026186
+        }
+       },
+       "family_and_general_assistance": {
+        "all_cash": {
+         "personal": -0.027748620591624328,
+         "shared": -0.029430781561896154
+        },
+        "cash_assistance": {
+         "personal": -0.11597078994836962,
+         "shared": -0.22976702518592274
+        }
+       },
+       "general_public_services": {
+        "population": {
+         "personal": -1.5908745490966473e-15,
+         "shared": -1.5908745490966473e-15
+        },
+        "wages": {
+         "personal": -0.15835293772108963,
+         "shared": -0.10833808915756445
+        }
+       },
+       "health_services": {
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": -1.259442351368179e-15,
+         "shared": -1.259442351368179e-15
+        },
+        "veterans": {
+         "personal": 0.15360621118288,
+         "shared": -0.04132350244292568
+        }
+       },
+       "housing_community_services": {
+        "population": {
+         "personal": -6.007208583828486e-17,
+         "shared": -6.007208583828486e-17
+        },
+        "resources": {
+         "personal": -0.008745555498388347,
+         "shared": -0.008745555498388347
+        }
+       },
+       "housing_subsidies": {
+        "housing_support": {
+         "personal": -0.2343842262250126,
+         "shared": -0.2343842262250126
+        },
+        "resources": {
+         "personal": -0.0362534167908358,
+         "shared": -0.0362534167908358
+        },
+        "wages": {
+         "personal": -0.023760747744095194,
+         "shared": -0.016256054637168553
+        }
+       },
+       "income_security_services": {
+        "all_cash": {
+         "personal": -0.07383997479497681,
+         "shared": -0.0783162594173359
+        },
+        "cash_assistance": {
+         "personal": -0.30860201423222866,
+         "shared": -0.6114174682098025
+        },
+        "population": {
+         "personal": -6.960076152297832e-16,
+         "shared": -6.960076152297832e-16
+        }
+       },
+       "medicaid_and_chip_other_medical": {
+        "medicaid": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicaid_covered": {
+         "personal": 1.6040641580702766,
+         "shared": 1.6644010301186343
+        }
+       },
+       "medicare": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicare": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "military_medical": {
+        "population": {
+         "personal": -2.900031730124097e-17,
+         "shared": -2.900031730124097e-17
+        },
+        "tricare": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0035863614529827274,
+         "shared": -0.0009648113518476249
+        }
+       },
+       "other_federal_benefits": {
+        "all_cash": {
+         "personal": -0.03802702821899837,
+         "shared": -0.040332280924234916
+        },
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": -3.480038076148916e-16,
+         "shared": -3.480038076148916e-16
+        }
+       },
+       "other_state_benefits": {
+        "population": {
+         "personal": -1.1910844605866826e-17,
+         "shared": -1.1910844605866826e-17
+        },
+        "veterans": {
+         "personal": 0.001440657982021146,
+         "shared": -0.00038756918213803576
+        }
+       },
+       "other_state_welfare": {
+        "cash_assistance": {
+         "personal": -0.04116397578679545,
+         "shared": -0.08155609068083536
+        },
+        "wic": {
+         "personal": 0.05894774270931283,
+         "shared": 0.05894774270931283
+        }
+       },
+       "other_subsidies": {
+        "population": {
+         "personal": -1.0357256179014631e-16,
+         "shared": -1.0357256179014631e-16
+        },
+        "resources": {
+         "personal": -0.015244711861399234,
+         "shared": -0.015244711861399234
+        },
+        "wages": {
+         "personal": -0.00999149280356071,
+         "shared": -0.006835738280245118
+        }
+       },
+       "pension_guaranty": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.00033228203172168196,
+         "shared": -0.000342435377472771
+        }
+       },
+       "public_order_safety": {
+        "adults": {
+         "personal": -2.2015063315933172e-15,
+         "shared": -2.2015063315933172e-15
+        },
+        "population": {
+         "personal": -9.942965931854046e-16,
+         "shared": -9.942965931854046e-16
+        }
+       },
+       "railroad_retirement": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.006246126440651539,
+         "shared": -0.006436985636462866
+        }
+       },
+       "recreation_culture": {
+        "population": {
+         "personal": -2.23716733466716e-16,
+         "shared": -2.23716733466716e-16
+        },
+        "resources": {
+         "personal": -0.03268588950835366,
+         "shared": -0.03268588950835366
+        }
+       },
+       "refundable_tax_credits": {
+        "refundable_credits": {
+         "personal": 0.020060422609458343,
+         "shared": 0.006328526360164995
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "snap": {
+        "cash_assistance": {
+         "personal": -0.17909317694222893,
+         "shared": -0.35482819868202975
+        },
+        "snap": {
+         "personal": 0.14126259801228955,
+         "shared": 0.14126259801228955
+        }
+       },
+       "social_security": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.6240372919090599,
+         "shared": -0.6431056307942422
+        }
+       },
+       "ssi": {
+        "all_cash": {
+         "personal": -0.028658981267182415,
+         "shared": -0.030396329600452607
+        },
+        "population": {
+         "personal": -2.6514575818277455e-16,
+         "shared": -2.6514575818277455e-16
+        },
+        "ssi": {
+         "personal": -0.027472636516842588,
+         "shared": -0.013458774796833781
+        }
+       },
+       "temporary_disability": {
+        "workers_comp": {
+         "personal": -0.03715675469022818,
+         "shared": -0.06515148052797087
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "transport_subsidies": {
+        "population": {
+         "personal": -1.6830541290898775e-18,
+         "shared": -1.6830541290898775e-18
+        },
+        "resources": {
+         "personal": -0.00024365068286766737,
+         "shared": -0.00024365068286766737
+        },
+        "wages": {
+         "personal": -0.00015969039405848808,
+         "shared": -0.00010925311773872431
+        }
+       },
+       "unemployment": {
+        "unemployment": {
+         "personal": -0.07908040490817397,
+         "shared": -0.06398970863809686
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "veterans_life_insurance": {
+        "adults": {
+         "personal": -1.881169961078274e-18,
+         "shared": -1.881169961078274e-18
+        },
+        "veterans": {
+         "personal": 0.00022499319440956334,
+         "shared": -6.0528195749557575e-05
+        }
+       },
+       "veterans_other": {
+        "va_medical": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.018804219628982793,
+         "shared": -0.005058755175273714
+        }
+       },
+       "veterans_pension_disability": {
+        "adults": {
+         "personal": -7.567678014852028e-16,
+         "shared": -7.567678014852028e-16
+        },
+        "veterans": {
+         "personal": 0.09046079381021474,
+         "shared": -0.02433597447146744
+        }
+       },
+       "veterans_readjustment": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.005708012199374913,
+         "shared": -0.0015355828012989093
+        }
+       },
+       "workers_compensation": {
+        "wages": {
+         "personal": -0.004701206341628035,
+         "shared": -0.003216357834071135
+        },
+        "workers_comp": {
+         "personal": -0.03372050435162054,
+         "shared": -0.05912628271692775
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       }
+      }
+     },
+     "G3plus": {
+      "receipts": {
+       "business_current_transfers": {
+        "personal": -0.23510348949907126,
+        "shared": -0.28158596970080796
+       },
+       "corporate_capital": {
+        "personal": -0.8360432829280972,
+        "shared": -1.0013380024122747
+       },
+       "corporate_labor": {
+        "personal": -0.05149977168324845,
+        "shared": -0.029667468373531455
+       },
+       "customs_duties": {
+        "personal": -0.05770936345910821,
+        "shared": -0.05770936345910821
+       },
+       "employee_hi": {
+        "personal": -0.06106829944270217,
+        "shared": -0.03517960921234583
+       },
+       "employee_oasdi": {
+        "personal": -0.15461222294420568,
+        "shared": -0.16796192245220903
+       },
+       "employer_hi": {
+        "personal": -0.05432111041868954,
+        "shared": -0.031292756699459044
+       },
+       "employer_oasdi": {
+        "personal": -0.15594735132275606,
+        "shared": -0.16941232996147051
+       },
+       "excise_selective_sales": {
+        "personal": -0.2563232763055909,
+        "shared": -0.2563232763055909
+       },
+       "federal_income_tax": {
+        "personal": -1.9187033311516988,
+        "shared": -1.7223620055728184
+       },
+       "general_sales_tax": {
+        "personal": -0.41592414883499285,
+        "shared": -0.41592414883499285
+       },
+       "medicare_supplementary_premiums": {
+        "personal": -0.010771649226453727,
+        "shared": -0.02046222525051292
+       },
+       "other_domestic_social_contributions": {
+        "personal": -0.011430109831921225,
+        "shared": -0.0065058144290247024
+       },
+       "other_personal_tax": {
+        "personal": -0.0037774473215610865,
+        "shared": -0.002853538274456312
+       },
+       "other_production_taxes": {
+        "personal": -0.24397512914825464,
+        "shared": -0.2922116276133049
+       },
+       "personal_current_transfers": {
+        "personal": -0.09739279261558732,
+        "shared": -0.09739279261558732
+       },
+       "personal_motor_vehicle": {
+        "personal": -1.0262184111727082e-16,
+        "shared": 0.0
+       },
+       "personal_property_tax": {
+        "personal": -0.021814626233168096,
+        "shared": -0.026127611693962494
+       },
+       "remaining_production_property": {
+        "personal": -0.6000962520838391,
+        "shared": -0.7187417141995073
+       },
+       "self_employment_oasdi_hi": {
+        "personal": -0.32631343505523136,
+        "shared": -0.3152489045342477
+       },
+       "source_rounding": {
+        "personal": -8.086974581764024e-21,
+        "shared": -8.086974581764024e-21
+       },
+       "state_local_income_tax": {
+        "personal": -0.20834714515579092,
+        "shared": -0.15738844316432665
+       }
+      },
+      "spending": {
+       "agricultural_subsidies": {
+        "resources": {
+         "personal": -0.005627609769367345,
+         "shared": -0.005627609769367345
+        },
+        "wages": {
+         "personal": -0.0035340491049792714,
+         "shared": -0.002552811058663805
+        }
+       },
+       "black_lung": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "workers_comp": {
+         "personal": -0.00016147573578732677,
+         "shared": -0.000305432217657609
+        }
+       },
+       "defense": {
+        "population": {
+         "personal": -3.4690121423377332e-15,
+         "shared": -3.4690121423377332e-15
+        }
+       },
+       "domestic_interest": {
+        "population": {
+         "personal": -4.36838566072159e-15,
+         "shared": -4.36838566072159e-15
+        }
+       },
+       "economic_affairs_services": {
+        "population": {
+         "personal": -1.7987470367677135e-15,
+         "shared": -1.7987470367677135e-15
+        },
+        "resources": {
+         "personal": -0.30891701944844296,
+         "shared": -0.30891701944844296
+        },
+        "wages": {
+         "personal": -0.19399495715520548,
+         "shared": -0.1401317461189392
+        }
+       },
+       "education_benefits": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "postsecondary": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "education_services": {
+        "age5_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "education_mix": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "school_operating": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "employment_training": {
+        "unemployment": {
+         "personal": -0.0021932081050343717,
+         "shared": -0.0011619948098266952
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "energy_assistance": {
+        "cash_assistance": {
+         "personal": -0.0055010706565198275,
+         "shared": -0.011395057135338565
+        },
+        "energy": {
+         "personal": -0.0020543856043271544,
+         "shared": -0.0020543856043271544
+        }
+       },
+       "family_and_general_assistance": {
+        "all_cash": {
+         "personal": -0.04711761728947353,
+         "shared": -0.044887283612586974
+        },
+        "cash_assistance": {
+         "personal": -0.06648620562541643,
+         "shared": -0.13772121085475786
+        }
+       },
+       "general_public_services": {
+        "population": {
+         "personal": -1.541783174372326e-15,
+         "shared": -1.541783174372326e-15
+        },
+        "wages": {
+         "personal": -0.17239188545518222,
+         "shared": -0.12452682420112395
+        }
+       },
+       "health_services": {
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": -1.2205783463780914e-15,
+         "shared": -1.2205783463780914e-15
+        },
+        "veterans": {
+         "personal": 0.19893259299723895,
+         "shared": -0.060239336517311545
+        }
+       },
+       "housing_community_services": {
+        "population": {
+         "personal": -5.821837507395502e-17,
+         "shared": -5.821837507395502e-17
+        },
+        "resources": {
+         "personal": -0.009936665033073375,
+         "shared": -0.009936665033073375
+        }
+       },
+       "housing_subsidies": {
+        "housing_support": {
+         "personal": -0.14850643240937786,
+         "shared": -0.14850643240937786
+        },
+        "resources": {
+         "personal": -0.0411909865555503,
+         "shared": -0.0411909865555503
+        },
+        "wages": {
+         "personal": -0.025867282049697057,
+         "shared": -0.018685163027588908
+        }
+       },
+       "income_security_services": {
+        "all_cash": {
+         "personal": -0.12538150001244544,
+         "shared": -0.11944651012918608
+        },
+        "cash_assistance": {
+         "personal": -0.17692193856570426,
+         "shared": -0.3664805861131176
+        },
+        "population": {
+         "personal": -6.7453013878789265e-16,
+         "shared": -6.7453013878789265e-16
+        }
+       },
+       "medicaid_and_chip_other_medical": {
+        "medicaid": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicaid_covered": {
+         "personal": 1.3194082931086175,
+         "shared": 1.293265090803487
+        }
+       },
+       "medicare": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicare": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "military_medical": {
+        "population": {
+         "personal": -2.810542244949552e-17,
+         "shared": -2.810542244949552e-17
+        },
+        "tricare": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.004644631084727357,
+         "shared": -0.0014064537675610564
+        }
+       },
+       "other_federal_benefits": {
+        "all_cash": {
+         "personal": -0.06457052365405137,
+         "shared": -0.061514048778527376
+        },
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": -3.3726506939394632e-16,
+         "shared": -3.3726506939394632e-16
+        }
+       },
+       "other_state_benefits": {
+        "population": {
+         "personal": -1.1543298506042805e-17,
+         "shared": -1.1543298506042805e-17
+        },
+        "veterans": {
+         "personal": 0.0018657697874236623,
+         "shared": -0.0005649789830568727
+        }
+       },
+       "other_state_welfare": {
+        "cash_assistance": {
+         "personal": -0.023599361181716436,
+         "shared": -0.04888431467507738
+        },
+        "wic": {
+         "personal": 0.0758798420307166,
+         "shared": 0.0758798420307166
+        }
+       },
+       "other_subsidies": {
+        "population": {
+         "personal": -1.0037650874819831e-16,
+         "shared": -1.0037650874819831e-16
+        },
+        "resources": {
+         "personal": -0.017320980390594987,
+         "shared": -0.017320980390594987
+        },
+        "wages": {
+         "personal": -0.010877299200798577,
+         "shared": -0.007857188415710042
+        }
+       },
+       "pension_guaranty": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.0005908488769120389,
+         "shared": -0.0005566281357972908
+        }
+       },
+       "public_order_safety": {
+        "adults": {
+         "personal": -2.02086087123241e-15,
+         "shared": -2.02086087123241e-15
+        },
+        "population": {
+         "personal": -9.636144839827038e-16,
+         "shared": -9.636144839827038e-16
+        }
+       },
+       "railroad_retirement": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.011106579472225913,
+         "shared": -0.010463309432049461
+        }
+       },
+       "recreation_culture": {
+        "population": {
+         "personal": -2.1681325889610833e-16,
+         "shared": -2.1681325889610833e-16
+        },
+        "resources": {
+         "personal": -0.03713757638521769,
+         "shared": -0.03713757638521769
+        }
+       },
+       "refundable_tax_credits": {
+        "refundable_credits": {
+         "personal": 0.013910544919105245,
+         "shared": 0.004336718761255108
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "snap": {
+        "cash_assistance": {
+         "personal": -0.1026743526847686,
+         "shared": -0.212682255551506
+        },
+        "snap": {
+         "personal": 0.10639497925257015,
+         "shared": 0.10639497925257015
+        }
+       },
+       "social_security": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -1.1096348820466153,
+         "shared": -1.045367131841406
+        }
+       },
+       "ssi": {
+        "all_cash": {
+         "personal": -0.04866342479239783,
+         "shared": -0.0463599196197929
+        },
+        "population": {
+         "personal": -2.5696386239538766e-16,
+         "shared": -2.5696386239538766e-16
+        },
+        "ssi": {
+         "personal": -0.08363269069714246,
+         "shared": -0.027277330574538242
+        }
+       },
+       "temporary_disability": {
+        "workers_comp": {
+         "personal": -0.012262822062276874,
+         "shared": -0.02319519350049519
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "transport_subsidies": {
+        "population": {
+         "personal": -1.6311182671582224e-18,
+         "shared": -1.6311182671582224e-18
+        },
+        "resources": {
+         "personal": -0.00027683492731613935,
+         "shared": -0.00027683492731613935
+        },
+        "wages": {
+         "personal": -0.0001738479154034501,
+         "shared": -0.00012557858359757572
+        }
+       },
+       "unemployment": {
+        "unemployment": {
+         "personal": -0.05808417804966846,
+         "shared": -0.03077387561710961
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "veterans_life_insurance": {
+        "adults": {
+         "personal": -1.7268098264925376e-18,
+         "shared": -1.7268098264925376e-18
+        },
+        "veterans": {
+         "personal": 0.000291384568540252,
+         "shared": -8.82349785713168e-05
+        }
+       },
+       "veterans_other": {
+        "va_medical": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.024353000710560124,
+         "shared": -0.007374400458501635
+        }
+       },
+       "veterans_pension_disability": {
+        "adults": {
+         "personal": -6.946709244861409e-16,
+         "shared": -6.946709244861409e-16
+        },
+        "veterans": {
+         "personal": 0.11715411856509797,
+         "shared": -0.03547576727524936
+        }
+       },
+       "veterans_readjustment": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0073923421386236305,
+         "shared": -0.0022384958594785518
+        }
+       },
+       "workers_compensation": {
+        "wages": {
+         "personal": -0.00511799677865515,
+         "shared": -0.0036969714869972714
+        },
+        "workers_comp": {
+         "personal": -0.011128758368741602,
+         "shared": -0.021050105960298687
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       }
+      }
+     }
+    }
+   },
+   "D_b_matched_over_pooled": {
+    "a": {
+     "G1": {
+      "receipts": {
+       "business_current_transfers": {
+        "personal": -0.23311140174493045,
+        "shared": -0.15273714871605598
+       },
+       "corporate_capital": {
+        "personal": -0.8289592894518569,
+        "shared": -0.5431432239041816
+       },
+       "corporate_labor": {
+        "personal": -0.07969622805865952,
+        "shared": -0.05321112741273004
+       },
+       "customs_duties": {
+        "personal": -0.05449172850495282,
+        "shared": -0.05449172850495282
+       },
+       "employee_hi": {
+        "personal": -0.09450358633576585,
+        "shared": -0.06309762075278016
+       },
+       "employee_oasdi": {
+        "personal": -0.176424641908354,
+        "shared": -0.14154792213473832
+       },
+       "employer_hi": {
+        "personal": -0.08406226790585326,
+        "shared": -0.05612622023778934
+       },
+       "employer_oasdi": {
+        "personal": -0.1779481278372283,
+        "shared": -0.14277023589601945
+       },
+       "excise_selective_sales": {
+        "personal": -0.24203175264342297,
+        "shared": -0.24203175264342297
+       },
+       "federal_income_tax": {
+        "personal": -2.1526982258110694,
+        "shared": -1.8424689276560957
+       },
+       "general_sales_tax": {
+        "personal": -0.3927339419196613,
+        "shared": -0.3927339419196613
+       },
+       "medicare_supplementary_premiums": {
+        "personal": -0.06690072865315598,
+        "shared": -0.0491369192080009
+       },
+       "other_domestic_social_contributions": {
+        "personal": -0.004480919445964783,
+        "shared": -0.0007834224735890149
+       },
+       "other_personal_tax": {
+        "personal": -0.004651248027800284,
+        "shared": -0.00356023271692575
+       },
+       "other_production_taxes": {
+        "personal": -0.24190786988244495,
+        "shared": -0.1585006911770365
+       },
+       "personal_current_transfers": {
+        "personal": -0.09196257410304437,
+        "shared": -0.09196257410304437
+       },
+       "personal_motor_vehicle": {
+        "personal": 0.0,
+        "shared": 0.0
+       },
+       "personal_property_tax": {
+        "personal": -0.021629785719431596,
+        "shared": -0.014172072980540485
+       },
+       "remaining_production_property": {
+        "personal": -0.5950114938880798,
+        "shared": -0.3898580607789713
+       },
+       "self_employment_oasdi_hi": {
+        "personal": -0.46191298586983365,
+        "shared": -0.2546998487499317
+       },
+       "source_rounding": {
+        "personal": 0.0,
+        "shared": 0.0
+       },
+       "state_local_income_tax": {
+        "personal": -0.2565420945706815,
+        "shared": -0.19636655643821924
+       }
+      },
+      "spending": {
+       "agricultural_subsidies": {
+        "resources": {
+         "personal": -0.005313837569902811,
+         "shared": -0.005313837569902811
+        },
+        "wages": {
+         "personal": -0.005078080193127304,
+         "shared": -0.0035510491632081928
+        }
+       },
+       "black_lung": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "workers_comp": {
+         "personal": 0.0020215126663926976,
+         "shared": 0.0016970470890402818
+        }
+       },
+       "defense": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "domestic_interest": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "economic_affairs_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.29169308662140486,
+         "shared": -0.29169308662140486
+        },
+        "wages": {
+         "personal": -0.27875163027826894,
+         "shared": -0.19492814327395783
+        }
+       },
+       "education_benefits": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "postsecondary": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "education_services": {
+        "age5_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "education_mix": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "school_operating": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "employment_training": {
+        "unemployment": {
+         "personal": -0.00906716650664177,
+         "shared": -0.005200702313951435
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "energy_assistance": {
+        "cash_assistance": {
+         "personal": 0.016865126377746523,
+         "shared": 0.01391247328645707
+        },
+        "energy": {
+         "personal": -0.00234848976319734,
+         "shared": -0.00234848976319734
+        }
+       },
+       "family_and_general_assistance": {
+        "all_cash": {
+         "personal": -0.06616697097864023,
+         "shared": -0.050198541801532034
+        },
+        "cash_assistance": {
+         "personal": 0.2038327318920246,
+         "shared": 0.16814682403419223
+        }
+       },
+       "general_public_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "wages": {
+         "personal": -0.24771014577935987,
+         "shared": -0.17322115296219068
+        }
+       },
+       "health_services": {
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.009737724612971694,
+         "shared": -0.037932526880045225
+        }
+       },
+       "housing_community_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.009382637769182214,
+         "shared": -0.009382637769182214
+        }
+       },
+       "housing_subsidies": {
+        "housing_support": {
+         "personal": -0.24266272518795914,
+         "shared": -0.24266272518795914
+        },
+        "resources": {
+         "personal": -0.03889434784403173,
+         "shared": -0.03889434784403173
+        },
+        "wages": {
+         "personal": -0.03716873442463797,
+         "shared": -0.025991713060134685
+        }
+       },
+       "income_security_services": {
+        "all_cash": {
+         "personal": -0.17607244486947513,
+         "shared": -0.13357993955521297
+        },
+        "cash_assistance": {
+         "personal": 0.5424054768993227,
+         "shared": 0.44744412456624244
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "medicaid_and_chip_other_medical": {
+        "medicaid": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicaid_covered": {
+         "personal": 2.6763361960868215,
+         "shared": 2.5917061738187432
+        }
+       },
+       "medicare": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicare": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "military_medical": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "tricare": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0002273540888925665,
+         "shared": -0.0008856396572066969
+        }
+       },
+       "other_federal_benefits": {
+        "all_cash": {
+         "personal": -0.09067597664043417,
+         "shared": -0.06879265797506393
+        },
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "other_state_benefits": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 9.132918898506756e-05,
+         "shared": -0.0003557655462441321
+        }
+       },
+       "other_state_welfare": {
+        "cash_assistance": {
+         "personal": 0.07235068109732769,
+         "shared": 0.059683923824710904
+        },
+        "wic": {
+         "personal": -0.001566096238771001,
+         "shared": -0.001566096238771001
+        }
+       },
+       "other_subsidies": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.01635523430357551,
+         "shared": -0.01635523430357551
+        },
+        "wages": {
+         "personal": -0.01562960671612363,
+         "shared": -0.010929622955872171
+        }
+       },
+       "pension_guaranty": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.0009852814440403101,
+         "shared": -0.0007368695245756603
+        }
+       },
+       "public_order_safety": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "railroad_retirement": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.01852099087999509,
+         "shared": -0.013851426744066206
+        }
+       },
+       "recreation_culture": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.03506693902713343,
+         "shared": -0.03506693902713343
+        }
+       },
+       "refundable_tax_credits": {
+        "refundable_credits": {
+         "personal": 0.040125479463732835,
+         "shared": 0.040837664510990655
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "snap": {
+        "cash_assistance": {
+         "personal": 0.3147779844873728,
+         "shared": 0.2596683951401572
+        },
+        "snap": {
+         "personal": -0.0971647430668228,
+         "shared": -0.0971647430668228
+        }
+       },
+       "social_security": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -1.850393055927143,
+         "shared": -1.383866771922433
+        }
+       },
+       "ssi": {
+        "all_cash": {
+         "personal": -0.06833773864620238,
+         "shared": -0.05184542649173056
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "ssi": {
+         "personal": -0.0015558210823820046,
+         "shared": 0.004851454138469986
+        }
+       },
+       "temporary_disability": {
+        "workers_comp": {
+         "personal": 0.15351811220270095,
+         "shared": 0.12887748355960246
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "transport_subsidies": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.0002613997589955834,
+         "shared": -0.0002613997589955834
+        },
+        "wages": {
+         "personal": -0.0002498023172861117,
+         "shared": -0.0001746841869427084
+        }
+       },
+       "unemployment": {
+        "unemployment": {
+         "personal": -0.24013175611053894,
+         "shared": -0.13773363252373347
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "veterans_life_insurance": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 1.4263236818885335e-05,
+         "shared": -5.556129748299663e-05
+        }
+       },
+       "veterans_other": {
+        "va_medical": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0011920762246447462,
+         "shared": -0.00464363752638515
+        }
+       },
+       "veterans_pension_disability": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.005734678901401502,
+         "shared": -0.0223389826906859
+        }
+       },
+       "veterans_readjustment": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.00036185418842744503,
+         "shared": -0.0014095740303537074
+        }
+       },
+       "workers_compensation": {
+        "wages": {
+         "personal": -0.0073540568617340984,
+         "shared": -0.005142616199797314
+        },
+        "workers_comp": {
+         "personal": 0.13932078336069445,
+         "shared": 0.1169589158533369
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       }
+      }
+     },
+     "G2": {
+      "receipts": {
+       "business_current_transfers": {
+        "personal": -0.2271116357340124,
+        "shared": -0.24473563424572412
+       },
+       "corporate_capital": {
+        "personal": -0.8076237317225526,
+        "shared": -0.8702958154310744
+       },
+       "corporate_labor": {
+        "personal": -0.060276426678818315,
+        "shared": -0.05555099506789405
+       },
+       "customs_duties": {
+        "personal": -0.062259982095879865,
+        "shared": -0.062259982095879865
+       },
+       "employee_hi": {
+        "personal": -0.07147563481248373,
+        "shared": -0.06587222991999572
+       },
+       "employee_oasdi": {
+        "personal": -0.13806300636668323,
+        "shared": -0.151754401538023
+       },
+       "employer_hi": {
+        "personal": -0.0635785814625111,
+        "shared": -0.05859427407777614
+       },
+       "employer_oasdi": {
+        "personal": -0.13925522671199636,
+        "shared": -0.15306485167065256
+       },
+       "excise_selective_sales": {
+        "personal": -0.2765354118808015,
+        "shared": -0.2765354118808015
+       },
+       "federal_income_tax": {
+        "personal": -2.3683908737350796,
+        "shared": -2.062781762284437
+       },
+       "general_sales_tax": {
+        "personal": -0.44872146403173835,
+        "shared": -0.44872146403173835
+       },
+       "medicare_supplementary_premiums": {
+        "personal": -0.029433734229119785,
+        "shared": -0.03803665424665069
+       },
+       "other_domestic_social_contributions": {
+        "personal": -0.003573326744439664,
+        "shared": -0.0007958360267814159
+       },
+       "other_personal_tax": {
+        "personal": -0.005137044629104588,
+        "shared": -0.004359974428216243
+       },
+       "other_production_taxes": {
+        "personal": -0.2356817024593586,
+        "shared": -0.25397074326502683
+       },
+       "personal_current_transfers": {
+        "personal": -0.10507261146297024,
+        "shared": -0.10507261146297024
+       },
+       "personal_motor_vehicle": {
+        "personal": 0.0,
+        "shared": 0.0
+       },
+       "personal_property_tax": {
+        "personal": -0.021073083420824666,
+        "shared": -0.022708367274271765
+       },
+       "remaining_production_property": {
+        "personal": -0.5796972290755784,
+        "shared": -0.6246820801134918
+       },
+       "self_employment_oasdi_hi": {
+        "personal": -0.1881432586762473,
+        "shared": -0.2172403999129041
+       },
+       "source_rounding": {
+        "personal": 0.0,
+        "shared": 0.0
+       },
+       "state_local_income_tax": {
+        "personal": -0.28333646822889824,
+        "shared": -0.2404767420279209
+       }
+      },
+      "spending": {
+       "agricultural_subsidies": {
+        "resources": {
+         "personal": -0.006071369748025013,
+         "shared": -0.006071369748025013
+        },
+        "wages": {
+         "personal": -0.003840690279656704,
+         "shared": -0.0037072004323673623
+        }
+       },
+       "black_lung": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "workers_comp": {
+         "personal": 0.0008408905307570824,
+         "shared": 0.0010261224844669574
+        }
+       },
+       "defense": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "domestic_interest": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "economic_affairs_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.3332763861379428,
+         "shared": -0.3332763861379428
+        },
+        "wages": {
+         "personal": -0.2108274458322182,
+         "shared": -0.20349977254973206
+        }
+       },
+       "education_benefits": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "postsecondary": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "education_services": {
+        "age5_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "education_mix": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "school_operating": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "employment_training": {
+        "unemployment": {
+         "personal": -0.004385982878622115,
+         "shared": -0.007251559170126159
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "energy_assistance": {
+        "cash_assistance": {
+         "personal": 0.03297464476587412,
+         "shared": 0.029787356872613416
+        },
+        "energy": {
+         "personal": -0.003402544035727774,
+         "shared": -0.003402544035727774
+        }
+       },
+       "family_and_general_assistance": {
+        "all_cash": {
+         "personal": -0.03316887674697508,
+         "shared": -0.04281527633905097
+        },
+        "cash_assistance": {
+         "personal": 0.39853314912990634,
+         "shared": 0.36001143372391053
+        }
+       },
+       "general_public_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "wages": {
+         "personal": -0.18734992613049548,
+         "shared": -0.18083825473608545
+        }
+       },
+       "health_services": {
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.01883226683914256,
+         "shared": -0.08594608404956355
+        }
+       },
+       "housing_community_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.010720211590797961,
+         "shared": -0.010720211590797961
+        }
+       },
+       "housing_subsidies": {
+        "housing_support": {
+         "personal": -0.17040259060021243,
+         "shared": -0.17040259060021243
+        },
+        "resources": {
+         "personal": -0.04443906381461621,
+         "shared": -0.04443906381461621
+        },
+        "wages": {
+         "personal": -0.028111725609424588,
+         "shared": -0.027134653863098455
+        }
+       },
+       "income_security_services": {
+        "all_cash": {
+         "personal": -0.08826345132678769,
+         "shared": -0.11393283191416566
+        },
+        "cash_assistance": {
+         "personal": 1.0605095698197515,
+         "shared": 0.9580020420943349
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "medicaid_and_chip_other_medical": {
+        "medicaid": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicaid_covered": {
+         "personal": 4.195879012025834,
+         "shared": 4.241344076411313
+        }
+       },
+       "medicare": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicare": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "military_medical": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "tricare": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.000439691307689212,
+         "shared": -0.0020066488229645374
+        }
+       },
+       "other_federal_benefits": {
+        "all_cash": {
+         "personal": -0.04545500948001778,
+         "shared": -0.058674546223776734
+        },
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "other_state_benefits": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.00017662603180193995,
+         "shared": -0.0008060801126202381
+        }
+       },
+       "other_state_welfare": {
+        "cash_assistance": {
+         "personal": 0.14145983577694368,
+         "shared": 0.12778650509648357
+        },
+        "wic": {
+         "personal": -0.0025660390939536105,
+         "shared": -0.0025660390939536105
+        }
+       },
+       "other_subsidies": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.01868681032612095,
+         "shared": -0.01868681032612095
+        },
+        "wages": {
+         "personal": -0.01182109701038514,
+         "shared": -0.01141023429566245
+        }
+       },
+       "pension_guaranty": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.00040641331881131036,
+         "shared": -0.0005186788791242154
+        }
+       },
+       "public_order_safety": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "railroad_retirement": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.0076396215687838135,
+         "shared": -0.009749952004082041
+        }
+       },
+       "recreation_culture": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.04006602572330219,
+         "shared": -0.04006602572330219
+        }
+       },
+       "refundable_tax_credits": {
+        "refundable_credits": {
+         "personal": 0.01918692581000771,
+         "shared": 0.058188666545048645
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "snap": {
+        "cash_assistance": {
+         "personal": 0.6154529759281805,
+         "shared": 0.5559640615524517
+        },
+        "snap": {
+         "personal": -0.13609135288697435,
+         "shared": -0.13609135288697435
+        }
+       },
+       "social_security": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.7632584451006731,
+         "shared": -0.9740970988470744
+        }
+       },
+       "ssi": {
+        "all_cash": {
+         "personal": -0.0342570620476885,
+         "shared": -0.04421993513149522
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "ssi": {
+         "personal": -0.0010091282502332627,
+         "shared": 0.006813565641991699
+        }
+       },
+       "temporary_disability": {
+        "workers_comp": {
+         "personal": 0.06385907394847717,
+         "shared": 0.07792599538108028
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "transport_subsidies": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.0002986644902162189,
+         "shared": -0.0002986644902162189
+        },
+        "wages": {
+         "personal": -0.000188932292391712,
+         "shared": -0.0001823656231153628
+        }
+       },
+       "unemployment": {
+        "unemployment": {
+         "personal": -0.11615687989658048,
+         "shared": -0.19204782847941962
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "veterans_life_insurance": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 2.7584378531850798e-05,
+         "shared": -0.00012588868541443023
+        }
+       },
+       "veterans_other": {
+        "va_medical": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.002305415119791165,
+         "shared": -0.010521378193456372
+        }
+       },
+       "veterans_pension_disability": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.01109057891862442,
+         "shared": -0.05061482168026732
+        }
+       },
+       "veterans_readjustment": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0006998076967846601,
+         "shared": -0.0031937595001242203
+        }
+       },
+       "workers_compensation": {
+        "wages": {
+         "personal": -0.005562073388114524,
+         "shared": -0.005368753887418446
+        },
+        "workers_comp": {
+         "personal": 0.057953397677553156,
+         "shared": 0.07071941261444818
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       }
+      }
+     },
+     "G3plus": {
+      "receipts": {
+       "business_current_transfers": {
+        "personal": -0.2761489521943238,
+        "shared": -0.3462030085461136
+       },
+       "corporate_capital": {
+        "personal": -0.9820036149255397,
+        "shared": -1.231120390604072
+       },
+       "corporate_labor": {
+        "personal": -0.06568158596879936,
+        "shared": -0.06888576282886531
+       },
+       "customs_duties": {
+        "personal": -0.07859675133805617,
+        "shared": -0.07859675133805617
+       },
+       "employee_hi": {
+        "personal": -0.07788505907335737,
+        "shared": -0.08168456391701742
+       },
+       "employee_oasdi": {
+        "personal": -0.1474485635653007,
+        "shared": -0.17963402968328412
+       },
+       "employer_hi": {
+        "personal": -0.06927985440072047,
+        "shared": -0.07265956734560859
+       },
+       "employer_oasdi": {
+        "personal": -0.1487218313435125,
+        "shared": -0.1811852297515356
+       },
+       "excise_selective_sales": {
+        "personal": -0.3490971932868677,
+        "shared": -0.3490971932868677
+       },
+       "federal_income_tax": {
+        "personal": -2.5047567232810652,
+        "shared": -3.250582480345145
+       },
+       "general_sales_tax": {
+        "personal": -0.5664641739574956,
+        "shared": -0.5664641739574956
+       },
+       "medicare_supplementary_premiums": {
+        "personal": -0.054257275543716614,
+        "shared": -0.06321363069136147
+       },
+       "other_domestic_social_contributions": {
+        "personal": -0.0032119008811391605,
+        "shared": -0.0007624951159176471
+       },
+       "other_personal_tax": {
+        "personal": -0.004509700411924838,
+        "shared": -0.005287024280826898
+       },
+       "other_production_taxes": {
+        "personal": -0.2865694440321419,
+        "shared": -0.35926699302302806
+       },
+       "personal_current_transfers": {
+        "personal": -0.1326432426992582,
+        "shared": -0.1326432426992582
+       },
+       "personal_motor_vehicle": {
+        "personal": 0.0,
+        "shared": 0.0
+       },
+       "personal_property_tax": {
+        "personal": -0.0256231253293413,
+        "shared": -0.03212325452218183
+       },
+       "remaining_production_property": {
+        "personal": -0.7048638520073843,
+        "shared": -0.883675220352239
+       },
+       "self_employment_oasdi_hi": {
+        "personal": -0.19935650246509037,
+        "shared": -0.21799144467105677
+       },
+       "source_rounding": {
+        "personal": 0.0,
+        "shared": 0.0
+       },
+       "state_local_income_tax": {
+        "personal": -0.24873495944455348,
+        "shared": -0.29160867684169495
+       }
+      },
+      "spending": {
+       "agricultural_subsidies": {
+        "resources": {
+         "personal": -0.007664472784975267,
+         "shared": -0.007664472784975267
+        },
+        "wages": {
+         "personal": -0.004185095943510056,
+         "shared": -0.0045970973054759775
+        }
+       },
+       "black_lung": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "workers_comp": {
+         "personal": 0.000277518611043809,
+         "shared": 0.0003139417020758195
+        }
+       },
+       "defense": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "domestic_interest": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "economic_affairs_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.42072677129573627,
+         "shared": -0.42072677129573627
+        },
+        "wages": {
+         "personal": -0.2297329448840298,
+         "shared": -0.2523489822361577
+        }
+       },
+       "education_benefits": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "postsecondary": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "education_services": {
+        "age5_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "education_mix": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "school_operating": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "employment_training": {
+        "unemployment": {
+         "personal": -0.0032214833844174213,
+         "shared": -0.004126050408401695
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "energy_assistance": {
+        "cash_assistance": {
+         "personal": 0.01699877549780719,
+         "shared": 0.029089251537071564
+        },
+        "energy": {
+         "personal": -0.003021129121590195,
+         "shared": -0.003021129121590195
+        }
+       },
+       "family_and_general_assistance": {
+        "all_cash": {
+         "personal": -0.056650328667398296,
+         "shared": -0.06731253941589573
+        },
+        "cash_assistance": {
+         "personal": 0.20544802161157733,
+         "shared": 0.3515740989239973
+        }
+       },
+       "general_public_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "wages": {
+         "personal": -0.20415012895435278,
+         "shared": -0.22424766848750108
+        }
+       },
+       "health_services": {
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.026645144897172103,
+         "shared": -0.1565791818040316
+        }
+       },
+       "housing_community_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.013533152055773772,
+         "shared": -0.013533152055773772
+        }
+       },
+       "housing_subsidies": {
+        "housing_support": {
+         "personal": -0.21315079766128792,
+         "shared": -0.21315079766128792
+        },
+        "resources": {
+         "personal": -0.056099695675378904,
+         "shared": -0.056099695675378904
+        },
+        "wages": {
+         "personal": -0.030632584313355946,
+         "shared": -0.033648206088338135
+        }
+       },
+       "income_security_services": {
+        "all_cash": {
+         "personal": -0.1507483525934425,
+         "shared": -0.17912083944655185
+        },
+        "cash_assistance": {
+         "personal": 0.5467038149656971,
+         "shared": 0.9355500219333609
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "medicaid_and_chip_other_medical": {
+        "medicaid": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicaid_covered": {
+         "personal": 3.8934216775108794,
+         "shared": 3.932586635393477
+        }
+       },
+       "medicare": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicare": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "military_medical": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "tricare": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0006221045349174519,
+         "shared": -0.003655773667205328
+        }
+       },
+       "other_federal_benefits": {
+        "all_cash": {
+         "personal": -0.07763426076397206,
+         "shared": -0.09224587677822545
+        },
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "other_state_benefits": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.00024990226881202655,
+         "shared": -0.0014685411894949443
+        }
+       },
+       "other_state_welfare": {
+        "cash_assistance": {
+         "personal": 0.07292403018750745,
+         "shared": 0.12479166264035012
+        },
+        "wic": {
+         "personal": -0.005292516756546135,
+         "shared": -0.005292516756546135
+        }
+       },
+       "other_subsidies": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.02359015430235312,
+         "shared": -0.02359015430235312
+        },
+        "wages": {
+         "personal": -0.012881128532557367,
+         "shared": -0.01414920997458536
+        }
+       },
+       "pension_guaranty": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.0007040917950826366,
+         "shared": -0.0008233059246659003
+        }
+       },
+       "public_order_safety": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "railroad_retirement": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.013235281953479444,
+         "shared": -0.015476229268719706
+        }
+       },
+       "recreation_culture": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.05057918995268933,
+         "shared": -0.05057918995268933
+        }
+       },
+       "refundable_tax_credits": {
+        "refundable_credits": {
+         "personal": 0.013304834027465125,
+         "shared": 0.04053160958374983
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "snap": {
+        "cash_assistance": {
+         "personal": 0.31727246924241853,
+         "shared": 0.5429343228146678
+        },
+        "snap": {
+         "personal": -0.12467234730434233,
+         "shared": -0.12467234730434233
+        }
+       },
+       "social_security": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -1.3223090480763033,
+         "shared": -1.5461973582475488
+        }
+       },
+       "ssi": {
+        "all_cash": {
+         "personal": -0.058508879844958714,
+         "shared": -0.06952089022936578
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "ssi": {
+         "personal": -0.0034655601288522252,
+         "shared": 0.01605419668768933
+        }
+       },
+       "temporary_disability": {
+        "workers_comp": {
+         "personal": 0.021075372901118865,
+         "shared": 0.02384142243856715
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "transport_subsidies": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.0003770328528986983,
+         "shared": -0.0003770328528986983
+        },
+        "wages": {
+         "personal": -0.00020587439051640625,
+         "shared": -0.00022614167481085527
+        }
+       },
+       "unemployment": {
+        "unemployment": {
+         "personal": -0.08531667106966925,
+         "shared": -0.10927291669832466
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "veterans_life_insurance": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 3.9028215198817364e-05,
+         "shared": -0.0002293478240289496
+        }
+       },
+       "veterans_other": {
+        "va_medical": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.003261854796326994,
+         "shared": -0.019168165800691236
+        }
+       },
+       "veterans_pension_disability": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.015691689418188205,
+         "shared": -0.09221161677689561
+        }
+       },
+       "veterans_readjustment": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0009901345196653196,
+         "shared": -0.005818487892012839
+        }
+       },
+       "workers_compensation": {
+        "wages": {
+         "personal": -0.006060840390437312,
+         "shared": -0.006657499231530438
+        },
+        "workers_comp": {
+         "personal": 0.01912632600852795,
+         "shared": 0.02163657175635836
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       }
+      }
+     }
+    },
+    "b": {
+     "G1": {
+      "receipts": {
+       "business_current_transfers": {
+        "personal": -0.23311723066117643,
+        "shared": -0.18728421255921177
+       },
+       "corporate_capital": {
+        "personal": -0.8289800174567223,
+        "shared": -0.66599482739377
+       },
+       "corporate_labor": {
+        "personal": -0.079872619439585,
+        "shared": -0.06459473094843743
+       },
+       "customs_duties": {
+        "personal": -0.06811970960307236,
+        "shared": -0.06811970960307236
+       },
+       "employee_hi": {
+        "personal": -0.09471275079062445,
+        "shared": -0.07659626912992833
+       },
+       "employee_oasdi": {
+        "personal": -0.17684596405063713,
+        "shared": -0.1732794783988934
+       },
+       "employer_hi": {
+        "personal": -0.08424832262739827,
+        "shared": -0.06813345763738517
+       },
+       "employer_oasdi": {
+        "personal": -0.17837308823745743,
+        "shared": -0.174775804786454
+       },
+       "excise_selective_sales": {
+        "personal": -0.3025621164374347,
+        "shared": -0.3025621164374347
+       },
+       "federal_income_tax": {
+        "personal": -2.1531008936575198,
+        "shared": -2.095615408574869
+       },
+       "general_sales_tax": {
+        "personal": -0.490953816456852,
+        "shared": -0.490953816456852
+       },
+       "medicare_supplementary_premiums": {
+        "personal": -0.06929557793119967,
+        "shared": -0.055940885093465266
+       },
+       "other_domestic_social_contributions": {
+        "personal": -0.00454525032849961,
+        "shared": -0.0009664108633369033
+       },
+       "other_personal_tax": {
+        "personal": -0.004652949152863461,
+        "shared": -0.00427983667007112
+       },
+       "other_production_taxes": {
+        "personal": -0.24191391875308033,
+        "shared": -0.19435138986630554
+       },
+       "personal_current_transfers": {
+        "personal": -0.1149617384899255,
+        "shared": -0.1149617384899255
+       },
+       "personal_motor_vehicle": {
+        "personal": 0.0,
+        "shared": 0.0
+       },
+       "personal_property_tax": {
+        "personal": -0.021630326569035834,
+        "shared": -0.017377602965644414
+       },
+       "remaining_production_property": {
+        "personal": -0.5950263720627951,
+        "shared": -0.4780386470261218
+       },
+       "self_employment_oasdi_hi": {
+        "personal": -0.46191298586983365,
+        "shared": -0.3137369826698141
+       },
+       "source_rounding": {
+        "personal": 0.0,
+        "shared": 0.0
+       },
+       "state_local_income_tax": {
+        "personal": -0.25663592104138905,
+        "shared": -0.2360567007388152
+       }
+      },
+      "spending": {
+       "agricultural_subsidies": {
+        "resources": {
+         "personal": -0.006642789319974951,
+         "shared": -0.006642789319974951
+        },
+        "wages": {
+         "personal": -0.005089319490137154,
+         "shared": -0.004310734923974403
+        }
+       },
+       "black_lung": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "workers_comp": {
+         "personal": 0.0020215126663926976,
+         "shared": 0.0018624908717247439
+        }
+       },
+       "defense": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "domestic_interest": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "economic_affairs_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.36464338531797386,
+         "shared": -0.36464338531797386
+        },
+        "wages": {
+         "personal": -0.27936859027998723,
+         "shared": -0.23662965964610372
+        }
+       },
+       "education_benefits": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "postsecondary": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "education_services": {
+        "age5_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "education_mix": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "school_operating": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "employment_training": {
+        "unemployment": {
+         "personal": -0.00906716650664177,
+         "shared": -0.007330829305339609
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "energy_assistance": {
+        "cash_assistance": {
+         "personal": 0.02154487424532787,
+         "shared": 0.019187284044975474
+        },
+        "energy": {
+         "personal": -0.0029349301584666873,
+         "shared": -0.0029349301584666873
+        }
+       },
+       "family_and_general_assistance": {
+        "all_cash": {
+         "personal": -0.06711049768324431,
+         "shared": -0.05611475818049895
+        },
+        "cash_assistance": {
+         "personal": 0.26039239062506747,
+         "shared": 0.23189844160528522
+        }
+       },
+       "general_public_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "wages": {
+         "personal": -0.24825840177274408,
+         "shared": -0.21027883290993707
+        }
+       },
+       "health_services": {
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.009737724612971694,
+         "shared": -0.04624741095725803
+        }
+       },
+       "housing_community_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.011729166566801393,
+         "shared": -0.011729166566801393
+        }
+       },
+       "housing_subsidies": {
+        "housing_support": {
+         "personal": -0.34193307936461076,
+         "shared": -0.34193307936461076
+        },
+        "resources": {
+         "personal": -0.04862153858994418,
+         "shared": -0.04862153858994418
+        },
+        "wages": {
+         "personal": -0.03725099985365663,
+         "shared": -0.03155219206287155
+        }
+       },
+       "income_security_services": {
+        "all_cash": {
+         "personal": -0.1785831998764243,
+         "shared": -0.14932318224585706
+        },
+        "cash_assistance": {
+         "personal": 0.6929125538716813,
+         "shared": 0.617089236078899
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "medicaid_and_chip_other_medical": {
+        "medicaid": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicaid_covered": {
+         "personal": 4.677612191610558,
+         "shared": 4.606405122191534
+        }
+       },
+       "medicare": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicare": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "military_medical": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "tricare": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0002273540888925665,
+         "shared": -0.0010797736021227176
+        }
+       },
+       "other_federal_benefits": {
+        "all_cash": {
+         "personal": -0.09196899646831665,
+         "shared": -0.0769003088202588
+        },
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "other_state_benefits": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 9.132918898506756e-05,
+         "shared": -0.0004337500497558771
+        }
+       },
+       "other_state_welfare": {
+        "cash_assistance": {
+         "personal": 0.09242660214290233,
+         "shared": 0.08231263958351398
+        },
+        "wic": {
+         "personal": -0.0028061940212391902,
+         "shared": -0.0028061940212391902
+        }
+       },
+       "other_subsidies": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.020445558285942574,
+         "shared": -0.020445558285942574
+        },
+        "wages": {
+         "personal": -0.015664199669631416,
+         "shared": -0.01326782739870173
+        }
+       },
+       "pension_guaranty": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.0009984389281720962,
+         "shared": -0.0008034487119454699
+        }
+       },
+       "public_order_safety": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "railroad_retirement": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.018768320863810882,
+         "shared": -0.015102960028827103
+        }
+       },
+       "recreation_culture": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.043836922937393295,
+         "shared": -0.043836922937393295
+        }
+       },
+       "refundable_tax_credits": {
+        "refundable_credits": {
+         "personal": 0.040125479463732835,
+         "shared": 0.06896013917215163
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "snap": {
+        "cash_assistance": {
+         "personal": 0.40212281480006257,
+         "shared": 0.3581197356121515
+        },
+        "snap": {
+         "personal": -0.15143975255976425,
+         "shared": -0.15143975255976425
+        }
+       },
+       "social_security": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -1.8751032718945644,
+         "shared": -1.5089048173698083
+        }
+       },
+       "ssi": {
+        "all_cash": {
+         "personal": -0.06931222002854888,
+         "shared": -0.057955738671666035
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "ssi": {
+         "personal": -0.001573544702186504,
+         "shared": 0.005961257942024236
+        }
+       },
+       "temporary_disability": {
+        "workers_comp": {
+         "personal": 0.15351811220270095,
+         "shared": 0.14144164781918894
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "transport_subsidies": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.00032677391893475705,
+         "shared": -0.00032677391893475705
+        },
+        "wages": {
+         "personal": -0.00025035520387532457,
+         "shared": -0.00021205485779298355
+        }
+       },
+       "unemployment": {
+        "unemployment": {
+         "personal": -0.24013175611053894,
+         "shared": -0.19414719179892878
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "veterans_life_insurance": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 1.4263236818885335e-05,
+         "shared": -6.774044255317873e-05
+        }
+       },
+       "veterans_other": {
+        "va_medical": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0011920762246447462,
+         "shared": -0.005661531953787496
+        }
+       },
+       "veterans_pension_disability": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.005734678901401502,
+         "shared": -0.027235731385105995
+        }
+       },
+       "veterans_readjustment": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.00036185418842744503,
+         "shared": -0.0017185554145284162
+        }
+       },
+       "workers_compensation": {
+        "wages": {
+         "personal": -0.007370333569890111,
+         "shared": -0.006242790294977142
+        },
+        "workers_comp": {
+         "personal": 0.13932078336069445,
+         "shared": 0.1283611483443591
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       }
+      }
+     },
+     "G2": {
+      "receipts": {
+       "business_current_transfers": {
+        "personal": -0.2271716755116354,
+        "shared": -0.25742484453091596
+       },
+       "corporate_capital": {
+        "personal": -0.807837237072461,
+        "shared": -0.9154194716013869
+       },
+       "corporate_labor": {
+        "personal": -0.060221318198189495,
+        "shared": -0.05259685772345469
+       },
+       "customs_duties": {
+        "personal": -0.05955855797065314,
+        "shared": -0.05955855797065314
+       },
+       "employee_hi": {
+        "personal": -0.07141028731507011,
+        "shared": -0.06236922130367262
+       },
+       "employee_oasdi": {
+        "personal": -0.13793137622129475,
+        "shared": -0.14096394466264117
+       },
+       "employer_hi": {
+        "personal": -0.0635204539453707,
+        "shared": -0.0554782986931423
+       },
+       "employer_oasdi": {
+        "personal": -0.13912245989617375,
+        "shared": -0.1421812155826735
+       },
+       "excise_selective_sales": {
+        "personal": -0.264536702469291,
+        "shared": -0.264536702469291
+       },
+       "federal_income_tax": {
+        "personal": -2.3695578135991586,
+        "shared": -2.281716376805006
+       },
+       "general_sales_tax": {
+        "personal": -0.4292517027559378,
+        "shared": -0.4292517027559378
+       },
+       "medicare_supplementary_premiums": {
+        "personal": -0.027038884951076116,
+        "shared": -0.03377495541036065
+       },
+       "other_domestic_social_contributions": {
+        "personal": -0.00353284406362112,
+        "shared": -0.0007112681283552273
+       },
+       "other_personal_tax": {
+        "personal": -0.005135343504041412,
+        "shared": -0.004539291665316229
+       },
+       "other_production_taxes": {
+        "personal": -0.23574400784040936,
+        "shared": -0.26713878141161196
+       },
+       "personal_current_transfers": {
+        "personal": -0.10051357244703346,
+        "shared": -0.10051357244703346
+       },
+       "personal_motor_vehicle": {
+        "personal": 0.0,
+        "shared": 0.0
+       },
+       "personal_property_tax": {
+        "personal": -0.0210786543517826,
+        "shared": -0.023885765279530322
+       },
+       "remaining_production_property": {
+        "personal": -0.5798504792276892,
+        "shared": -0.6570709976504959
+       },
+       "self_employment_oasdi_hi": {
+        "personal": -0.1881432586762473,
+        "shared": -0.20596476257422835
+       },
+       "source_rounding": {
+        "personal": 0.0,
+        "shared": 0.0
+       },
+       "state_local_income_tax": {
+        "personal": -0.28324264175819064,
+        "shared": -0.2503670809914214
+       }
+      },
+      "spending": {
+       "agricultural_subsidies": {
+        "resources": {
+         "personal": -0.005807936573803591,
+         "shared": -0.005807936573803591
+        },
+        "wages": {
+         "personal": -0.003837178880299779,
+         "shared": -0.0035100558226768747
+        }
+       },
+       "black_lung": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "workers_comp": {
+         "personal": 0.0008408905307570824,
+         "shared": 0.0008662268185112913
+        }
+       },
+       "defense": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "domestic_interest": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "economic_affairs_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.31881571911598755,
+         "shared": -0.31881571911598755
+        },
+        "wages": {
+         "personal": -0.21063469419024422,
+         "shared": -0.1926778911965837
+        }
+       },
+       "education_benefits": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "postsecondary": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "education_services": {
+        "age5_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "education_mix": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "school_operating": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "employment_training": {
+        "unemployment": {
+         "personal": -0.004385982878622115,
+         "shared": -0.006244421008742404
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "energy_assistance": {
+        "cash_assistance": {
+         "personal": 0.028788937091283818,
+         "shared": 0.03351379549892031
+        },
+        "energy": {
+         "personal": -0.0035141832529512317,
+         "shared": -0.0035141832529512317
+        }
+       },
+       "family_and_general_assistance": {
+        "all_cash": {
+         "personal": -0.03294111682568131,
+         "shared": -0.04126895405914509
+        },
+        "cash_assistance": {
+         "personal": 0.347944484028711,
+         "shared": 0.40504935092744526
+        }
+       },
+       "general_public_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "wages": {
+         "personal": -0.18717863910596785,
+         "shared": -0.17122148655819439
+        }
+       },
+       "health_services": {
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.019815160284171303,
+         "shared": -0.09529463121136336
+        }
+       },
+       "housing_community_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.010255067894252741,
+         "shared": -0.010255067894252741
+        }
+       },
+       "housing_subsidies": {
+        "housing_support": {
+         "personal": -0.17402215872939417,
+         "shared": -0.17402215872939417
+        },
+        "resources": {
+         "personal": -0.042510878886672925,
+         "shared": -0.042510878886672925
+        },
+        "wages": {
+         "personal": -0.028086024110985666,
+         "shared": -0.025691664512368654
+        }
+       },
+       "income_security_services": {
+        "all_cash": {
+         "personal": -0.08765737482680071,
+         "shared": -0.10981801843015321
+        },
+        "cash_assistance": {
+         "personal": 0.925891499575521,
+         "shared": 1.0778493930697222
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "medicaid_and_chip_other_medical": {
+        "medicaid": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicaid_covered": {
+         "personal": 3.3404050724592924,
+         "shared": 3.466054406641243
+        }
+       },
+       "medicare": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicare": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "military_medical": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "tricare": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.00046263967114727343,
+         "shared": -0.0022249164888634974
+        }
+       },
+       "other_federal_benefits": {
+        "all_cash": {
+         "personal": -0.045142884669143055,
+         "shared": -0.056555448419275574
+        },
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "other_state_benefits": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.000185844495535617,
+         "shared": -0.0008937592434654959
+        }
+       },
+       "other_state_welfare": {
+        "cash_assistance": {
+         "personal": 0.12350332632970261,
+         "shared": 0.1437727696901746
+        },
+        "wic": {
+         "personal": -0.00289364497687148,
+         "shared": -0.00289364497687148
+        }
+       },
+       "other_subsidies": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.017876000580612533,
+         "shared": -0.017876000580612533
+        },
+        "wages": {
+         "personal": -0.011810289423879069,
+         "shared": -0.010803451299238674
+        }
+       },
+       "pension_guaranty": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.0003949915407577583,
+         "shared": -0.0004857765855732042
+        }
+       },
+       "public_order_safety": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "railroad_retirement": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.007424918807006732,
+         "shared": -0.009131465700016146
+        }
+       },
+       "recreation_culture": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.03832758435458799,
+         "shared": -0.03832758435458799
+        }
+       },
+       "refundable_tax_credits": {
+        "refundable_credits": {
+         "personal": 0.01918692581000771,
+         "shared": 0.041891212294813955
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "snap": {
+        "cash_assistance": {
+         "personal": 0.5373291246180955,
+         "shared": 0.6255159174847351
+        },
+        "snap": {
+         "personal": -0.11778007856797117,
+         "shared": -0.11778007856797117
+        }
+       },
+       "social_security": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.7418079459316569,
+         "shared": -0.9123054393378787
+        }
+       },
+       "ssi": {
+        "all_cash": {
+         "personal": -0.03402182991078929,
+         "shared": -0.04262288200568233
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "ssi": {
+         "personal": -0.0011020585229390431,
+         "shared": 0.007188597465868319
+        }
+       },
+       "temporary_disability": {
+        "workers_comp": {
+         "personal": 0.06385907394847717,
+         "shared": 0.06578316729249334
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "transport_subsidies": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.0002857056130681956,
+         "shared": -0.0002857056130681956
+        },
+        "wages": {
+         "personal": -0.00018875955866894331,
+         "shared": -0.0001726676312624966
+        }
+       },
+       "unemployment": {
+        "unemployment": {
+         "personal": -0.11615687989658048,
+         "shared": -0.1653751237086551
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "veterans_life_insurance": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 2.9024062085388536e-05,
+         "shared": -0.00013958187837078526
+        }
+       },
+       "veterans_other": {
+        "va_medical": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.00242573931807637,
+         "shared": -0.01166581195488216
+        }
+       },
+       "veterans_pension_disability": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.011669418280545131,
+         "shared": -0.05612030867012476
+        }
+       },
+       "veterans_readjustment": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0007363320517030306,
+         "shared": -0.0035411518408053786
+        }
+       },
+       "workers_compensation": {
+        "wages": {
+         "personal": -0.005556988192616818,
+         "shared": -0.005083249796401844
+        },
+        "workers_comp": {
+         "personal": 0.057953397677553156,
+         "shared": 0.059699551197168375
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       }
+      }
+     },
+     "G3plus": {
+      "receipts": {
+       "business_current_transfers": {
+        "personal": -0.2760830835004548,
+        "shared": -0.2989667344177661
+       },
+       "corporate_capital": {
+        "personal": -0.9817693815707659,
+        "shared": -1.0631451309441715
+       },
+       "corporate_labor": {
+        "personal": -0.06556030306850266,
+        "shared": -0.06045629663759721
+       },
+       "customs_duties": {
+        "personal": -0.06767019436516337,
+        "shared": -0.06767019436516337
+       },
+       "employee_hi": {
+        "personal": -0.07774124211591235,
+        "shared": -0.07168892415619228
+       },
+       "employee_oasdi": {
+        "personal": -0.14715887156840607,
+        "shared": -0.1586929302945108
+       },
+       "employer_hi": {
+        "personal": -0.06915192719631583,
+        "shared": -0.06376830533064652
+       },
+       "employer_oasdi": {
+        "personal": -0.14842963775910606,
+        "shared": -0.16006329694908
+       },
+       "excise_selective_sales": {
+        "personal": -0.3005655389043666,
+        "shared": -0.3005655389043666
+       },
+       "federal_income_tax": {
+        "personal": -2.5031871155705363,
+        "shared": -2.7785013849058036
+       },
+       "general_sales_tax": {
+        "personal": -0.48771406069610557,
+        "shared": -0.48771406069610557
+       },
+       "medicare_supplementary_premiums": {
+        "personal": -0.054257275543716614,
+        "shared": -0.06067136364218713
+       },
+       "other_domestic_social_contributions": {
+        "personal": -0.003188052679422878,
+        "shared": -0.0006640746245959478
+       },
+       "other_personal_tax": {
+        "personal": -0.004509700411924838,
+        "shared": -0.004388103090581544
+       },
+       "other_production_taxes": {
+        "personal": -0.28650108978045574,
+        "shared": -0.31024825618717405
+       },
+       "personal_current_transfers": {
+        "personal": -0.11420311732831388,
+        "shared": -0.11420311732831388
+       },
+       "personal_motor_vehicle": {
+        "personal": 0.0,
+        "shared": 0.0
+       },
+       "personal_property_tax": {
+        "personal": -0.02561701354877913,
+        "shared": -0.02774032653181936
+       },
+       "remaining_production_property": {
+        "personal": -0.7046957236805583,
+        "shared": -0.7631057165680848
+       },
+       "self_employment_oasdi_hi": {
+        "personal": -0.19935650246509037,
+        "shared": -0.17022994808984995
+       },
+       "source_rounding": {
+        "personal": 0.0,
+        "shared": 0.0
+       },
+       "state_local_income_tax": {
+        "personal": -0.24873495944455348,
+        "shared": -0.24202819357759853
+       }
+      },
+      "spending": {
+       "agricultural_subsidies": {
+        "resources": {
+         "personal": -0.00659895420912455,
+         "shared": -0.00659895420912455
+        },
+        "wages": {
+         "personal": -0.004177368045857129,
+         "shared": -0.00403455615440025
+        }
+       },
+       "black_lung": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "workers_comp": {
+         "personal": 0.000277518611043809,
+         "shared": 0.0003083935853470236
+        }
+       },
+       "defense": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "domestic_interest": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "economic_affairs_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.36223713962112264,
+         "shared": -0.36223713962112264
+        },
+        "wages": {
+         "personal": -0.22930873652428538,
+         "shared": -0.22146934721715988
+        }
+       },
+       "education_benefits": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "postsecondary": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "education_services": {
+        "age5_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "education_mix": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "school_operating": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "employment_training": {
+        "unemployment": {
+         "personal": -0.0032214833844174213,
+         "shared": -0.003003061578397275
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "energy_assistance": {
+        "cash_assistance": {
+         "personal": 0.016504735304816148,
+         "shared": 0.02008800215224627
+        },
+        "energy": {
+         "personal": -0.0023230495090973916,
+         "shared": -0.0023230495090973916
+        }
+       },
+       "family_and_general_assistance": {
+        "all_cash": {
+         "personal": -0.055934561884087984,
+         "shared": -0.0629426453168347
+        },
+        "cash_assistance": {
+         "personal": 0.19947702797972985,
+         "shared": 0.2427845641493697
+        }
+       },
+       "general_public_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "wages": {
+         "personal": -0.2037731599854961,
+         "shared": -0.19680675671764553
+        }
+       },
+       "health_services": {
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.025662251452143365,
+         "shared": -0.138915750565019
+        }
+       },
+       "housing_community_services": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.011651766954699817,
+         "shared": -0.011651766954699817
+        }
+       },
+       "housing_subsidies": {
+        "housing_support": {
+         "personal": -0.11026087535545465,
+         "shared": -0.11026087535545465
+        },
+        "resources": {
+         "personal": -0.04830068985740975,
+         "shared": -0.04830068985740975
+        },
+        "wages": {
+         "personal": -0.0305760203827762,
+         "shared": -0.02953071643633104
+        }
+       },
+       "income_security_services": {
+        "all_cash": {
+         "personal": -0.1488436740864803,
+         "shared": -0.1674924102399202
+        },
+        "cash_assistance": {
+         "personal": 0.5308148082375693,
+         "shared": 0.6460575594453172
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "medicaid_and_chip_other_medical": {
+        "medicaid": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicaid_covered": {
+         "personal": 2.7476196215536843,
+         "shared": 2.693177356790755
+        }
+       },
+       "medicare": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "medicare": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "military_medical": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "tricare": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0005991561714593905,
+         "shared": -0.003243372056390348
+        }
+       },
+       "other_federal_benefits": {
+        "all_cash": {
+         "personal": -0.0766533657469643,
+         "shared": -0.08625732373753173
+        },
+        "health_other": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "other_state_benefits": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.00024068380507834953,
+         "shared": -0.001302877555137942
+        }
+       },
+       "other_state_welfare": {
+        "cash_assistance": {
+         "personal": 0.0708046185891739,
+         "shared": 0.08617668228785602
+        },
+        "wic": {
+         "personal": -0.0037248130911600777,
+         "shared": -0.0037248130911600777
+        }
+       },
+       "other_subsidies": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.020310640065494483,
+         "shared": -0.020310640065494483
+        },
+        "wages": {
+         "personal": -0.012857343165555644,
+         "shared": -0.012417788528179562
+        }
+       },
+       "pension_guaranty": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.0007023560890044024,
+         "shared": -0.000789629030847102
+        }
+       },
+       "public_order_safety": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "railroad_retirement": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -0.01320265473144073,
+         "shared": -0.01484318228802471
+        }
+       },
+       "recreation_culture": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.043547647411143676,
+         "shared": -0.043547647411143676
+        }
+       },
+       "refundable_tax_credits": {
+        "refundable_credits": {
+         "personal": 0.013304834027465125,
+         "shared": 0.028706589172823465
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "snap": {
+        "cash_assistance": {
+         "personal": 0.308051490239814,
+         "shared": 0.3749311264103903
+        },
+        "snap": {
+         "personal": -0.08870861213040401,
+         "shared": -0.08870861213040401
+        }
+       },
+       "social_security": {
+        "age65plus": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "social_security": {
+         "personal": -1.3190493312778981,
+         "shared": -1.4829509723093697
+        }
+       },
+       "ssi": {
+        "all_cash": {
+         "personal": -0.05776963059951141,
+         "shared": -0.06500763117524318
+        },
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "ssi": {
+         "personal": -0.0033549062363419455,
+         "shared": 0.014569361060258459
+        }
+       },
+       "temporary_disability": {
+        "workers_comp": {
+         "personal": 0.021075372901118865,
+         "shared": 0.02342008626756761
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "transport_subsidies": {
+        "population": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "resources": {
+         "personal": -0.000324617570107548,
+         "shared": -0.000324617570107548
+        },
+        "wages": {
+         "personal": -0.000205494237649962,
+         "shared": -0.0001984689958134461
+        }
+       },
+       "unemployment": {
+        "unemployment": {
+         "personal": -0.08531667106966925,
+         "shared": -0.07953206219389386
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       },
+       "veterans_life_insurance": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 3.758853164527963e-05,
+         "shared": -0.0002034754860024125
+        }
+       },
+       "veterans_other": {
+        "va_medical": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0031415305980417897,
+         "shared": -0.017005837611863105
+        }
+       },
+       "veterans_pension_disability": {
+        "adults": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.015112850056267493,
+         "shared": -0.0818093810926181
+        }
+       },
+       "veterans_readjustment": {
+        "age18_24": {
+         "personal": 0.0,
+         "shared": 0.0
+        },
+        "veterans": {
+         "personal": 0.0009536101647469492,
+         "shared": -0.005162114167156973
+        }
+       },
+       "workers_compensation": {
+        "wages": {
+         "personal": -0.006049648877779004,
+         "shared": -0.005842829227367204
+        },
+        "workers_comp": {
+         "personal": 0.01912632600852795,
+         "shared": 0.02125420068261597
+        },
+        "working_age": {
+         "personal": 0.0,
+         "shared": 0.0
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "justice": {
+   "a": {
+    "arrest_like_custody": [
+     0.26208946069355954,
+     0.3975832507601875,
+     0.340327288546253
+    ],
+    "arrest_per_adult": [
+     0.40575464496039537,
+     0.3098344717067953,
+     0.28441088333280934
+    ]
+   },
+   "b": {
+    "arrest_like_custody": [
+     0.26208946069355954,
+     0.3975832507601875,
+     0.340327288546253
+    ],
+    "arrest_per_adult": [
+     0.40575464496039537,
+     0.3098344717067953,
+     0.28441088333280934
+    ]
+   }
+  },
+  "ltss": {
+   "HCBS": {
+    "a": {
+     "G1": {
+      "personal": 0.2246534214519329,
+      "shared": 0.2246534214519329
+     },
+     "G2": {
+      "personal": -2.7757063674595184,
+      "shared": -2.7757063674595184
+     },
+     "G3plus": {
+      "personal": -3.7454119030009574,
+      "shared": -3.7454119030009574
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -1.8307556573075559,
+      "shared": -1.8307556573075559
+     },
+     "G2": {
+      "personal": -1.9976761328725106,
+      "shared": -1.9976761328725106
+     },
+     "G3plus": {
+      "personal": -2.46803305882848,
+      "shared": -2.46803305882848
+     }
+    },
+    "union": {
+     "personal": -6.296464849008547,
+     "shared": -6.296464849008547
+    }
+   },
+   "ICF": {
+    "a": {
+     "G1": {
+      "personal": -0.18275737044268675,
+      "shared": -0.18275737044268675
+     },
+     "G2": {
+      "personal": -0.3934912468287657,
+      "shared": -0.3934912468287657
+     },
+     "G3plus": {
+      "personal": -0.4267565812621479,
+      "shared": -0.4267565812621479
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -0.3796726729756502,
+      "shared": -0.3796726729756502
+     },
+     "G2": {
+      "personal": -0.3059080612031343,
+      "shared": -0.3059080612031343
+     },
+     "G3plus": {
+      "personal": -0.31742446435481625,
+      "shared": -0.31742446435481625
+     }
+    },
+    "union": {
+     "personal": -1.0030051985336008,
+     "shared": -1.0030051985336008
+    }
+   },
+   "MHF": {
+    "a": {
+     "G1": {
+      "personal": -0.06794292303924067,
+      "shared": -0.06794292303924067
+     },
+     "G2": {
+      "personal": -0.07673862278239627,
+      "shared": -0.07673862278239627
+     },
+     "G3plus": {
+      "personal": -0.10243776792443032,
+      "shared": -0.10243776792443032
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -0.07675465897255056,
+      "shared": -0.07675465897255056
+     },
+     "G2": {
+      "personal": -0.07976517881316314,
+      "shared": -0.07976517881316314
+     },
+     "G3plus": {
+      "personal": -0.09059947596035368,
+      "shared": -0.09059947596035368
+     }
+    },
+    "union": {
+     "personal": -0.24711931374606738,
+     "shared": -0.24711931374606738
+    }
+   },
+   "NF": {
+    "a": {
+     "G1": {
+      "personal": -0.6070685258824164,
+      "shared": -0.6070685258824164
+     },
+     "G2": {
+      "personal": -2.479054887393275,
+      "shared": -2.479054887393275
+     },
+     "G3plus": {
+      "personal": -2.239333852408266,
+      "shared": -2.239333852408266
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -1.9628565763552173,
+      "shared": -1.9628565763552173
+     },
+     "G2": {
+      "personal": -1.8647396889931591,
+      "shared": -1.8647396889931591
+     },
+     "G3plus": {
+      "personal": -1.4978610003355828,
+      "shared": -1.4978610003355828
+     }
+    },
+    "union": {
+     "personal": -5.325457265683959,
+     "shared": -5.325457265683959
+    }
+   },
+   "remainder_key": {
+    "a": {
+     "G1": {
+      "personal": 0.10786890946979573,
+      "shared": 0.10786890946979573
+     },
+     "G2": {
+      "personal": 0.7461283766151068,
+      "shared": 0.7461283766151068
+     },
+     "G3plus": {
+      "personal": 0.9258569749060299,
+      "shared": 0.9258569749060299
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": 0.8208048203405341,
+      "shared": 0.8208048203405341
+     },
+     "G2": {
+      "personal": 0.41844597763173713,
+      "shared": 0.41844597763173713
+     },
+     "G3plus": {
+      "personal": 0.540603463018692,
+      "shared": 0.540603463018692
+     }
+    },
+    "union": {
+     "personal": 1.7798542609908639,
+     "shared": 1.7798542609908639
+    }
+   },
+   "users_generation": {
+    "HCBS": {
+     "a": [
+      0.3166664579737662,
+      0.3636742893906703,
+      0.3196592526355635
+     ],
+     "b": [
+      0.40082804542720146,
+      0.31468764224045837,
+      0.2844843123323402
+     ]
+    },
+    "ICF": {
+     "a": [
+      0.295010383265357,
+      0.3704794822897166,
+      0.3345101344449265
+     ],
+     "b": [
+      0.34369438014944886,
+      0.34214273331213196,
+      0.3141628865384192
+     ]
+    },
+    "MHF": {
+     "a": [
+      0.12724133052621242,
+      0.4936631735796066,
+      0.37909549589418107
+     ],
+     "b": [
+      0.4513572061241062,
+      0.305010006331774,
+      0.24363278754411985
+     ]
+    },
+    "NF": {
+     "a": [
+      0.3577945034693723,
+      0.27196937048165803,
+      0.3702361260489697
+     ],
+     "b": [
+      0.36896074653762173,
+      0.2654700062737232,
+      0.36556924718865513
+     ]
+    }
+   }
+  },
+  "medical": {
+   "health_services": {
+    "a": {
+     "G1": {
+      "personal": -3.423148221149696,
+      "shared": -3.423148221149696
+     },
+     "G2": {
+      "personal": -1.2436701351485735,
+      "shared": -1.2436701351485735
+     },
+     "G3plus": {
+      "personal": -1.0046753016286003,
+      "shared": -1.0046753016286003
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -3.769079310782042,
+      "shared": -3.769079310782042
+     },
+     "G2": {
+      "personal": -1.0839273316420974,
+      "shared": -1.0839273316420974
+     },
+     "G3plus": {
+      "personal": -0.8184870155027322,
+      "shared": -0.8184870155027322
+     }
+    },
+    "union": {
+     "personal": -5.671493657926871,
+     "shared": -5.671493657926871
+    }
+   },
+   "medicaid_and_chip_other_medical": {
+    "a": {
+     "G1": {
+      "personal": 1.6607817633901447,
+      "shared": 1.6607817633901447
+     },
+     "G2": {
+      "personal": 5.286824173495571,
+      "shared": 5.286824173495571
+     },
+     "G3plus": {
+      "personal": 6.691138034601296,
+      "shared": 6.691138034601296
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": 4.891549453158105,
+      "shared": 4.891549453158105
+     },
+     "G2": {
+      "personal": 3.8077762173742062,
+      "shared": 3.8077762173742062
+     },
+     "G3plus": {
+      "personal": 4.93941830095469,
+      "shared": 4.93941830095469
+     }
+    },
+    "union": {
+     "personal": 13.638743971487008,
+     "shared": 13.638743971487008
+    }
+   },
+   "medicare": {
+    "a": {
+     "G1": {
+      "personal": -3.205335240724937,
+      "shared": -3.205335240724937
+     },
+     "G2": {
+      "personal": -2.673976723483168,
+      "shared": -2.673976723483168
+     },
+     "G3plus": {
+      "personal": -4.032901978898663,
+      "shared": -4.032901978898663
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -3.2024300987376346,
+      "shared": -3.2024300987376346
+     },
+     "G2": {
+      "personal": -2.6753006943368436,
+      "shared": -2.6753006943368436
+     },
+     "G3plus": {
+      "personal": -4.03448315003229,
+      "shared": -4.03448315003229
+     }
+    },
+    "union": {
+     "personal": -9.912213943106774,
+     "shared": -9.912213943106774
+    }
+   },
+   "military_medical": {
+    "a": {
+     "G1": {
+      "personal": -0.1473373238064161,
+      "shared": -0.1473373238064161
+     },
+     "G2": {
+      "personal": -0.08613174735416021,
+      "shared": -0.08613174735416021
+     },
+     "G3plus": {
+      "personal": -0.09455399224308204,
+      "shared": -0.09455399224308204
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -0.17582633812616924,
+      "shared": -0.17582633812616924
+     },
+     "G2": {
+      "personal": -0.07300555226481101,
+      "shared": -0.07300555226481101
+     },
+     "G3plus": {
+      "personal": -0.07919117301267838,
+      "shared": -0.07919117301267838
+     }
+    },
+    "union": {
+     "personal": -0.32802306340365833,
+     "shared": -0.32802306340365833
+    }
+   },
+   "ratio_part_weights": {
+    "a": [
+     0.14242500130289434,
+     0.3856465528801937,
+     0.47192844581691196
+    ],
+    "b": [
+     0.3960997047860194,
+     0.2694522804895446,
+     0.33444801472443597
+    ]
+   },
+   "veterans_other": {
+    "a": {
+     "G1": {
+      "personal": -0.6493749331790913,
+      "shared": -0.6493749331790913
+     },
+     "G2": {
+      "personal": -0.07859645089681823,
+      "shared": -0.07859645089681823
+     },
+     "G3plus": {
+      "personal": -0.0016185434733397455,
+      "shared": -0.0016185434733397455
+     }
+    },
+    "b": {
+     "G1": {
+      "personal": -0.6510446402675357,
+      "shared": -0.6510446402675357
+     },
+     "G2": {
+      "personal": -0.07783550925302231,
+      "shared": -0.07783550925302231
+     },
+     "G3plus": {
+      "personal": -0.0007097780286913055,
+      "shared": -0.0007097780286913055
+     }
+    },
+    "union": {
+     "personal": -0.7295899275492493,
+     "shared": -0.7295899275492493
+    }
+   }
+  }
+ }
+}
