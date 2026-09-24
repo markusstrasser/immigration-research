@@ -50,7 +50,18 @@ const MAIN_SPECS = product({
   school: [0.63, 0.66], gg: GG, uc: ["uninsured_use_low", "uninsured_use_high"], justice: ["use"],
 });
 const SYN = { school: "school_reprice", college: "college_rekey", constants: "lane_constants" };
-function cost(m, spec) {
+// Service profiles of main_case_2026_09_23 (main_case_translate.js PROFILES): the main case, its
+// variant with non-school education fixed, and the proportional reference.
+const PROFILES = {
+  cbo_category_lag_non_school_full: { other: 1, delayed: 0, school: null },
+  cbo_category_lag_non_school_fixed: { other: 0, delayed: 0, school: null },
+  proportional_reference: { other: 1, delayed: 1, school: 1 },
+};
+const MAIN_PROFILE = "cbo_category_lag_non_school_full";
+function cost(m, spec, profile) {
+  const pr = PROFILES[profile || MAIN_PROFILE];
+  if (!pr) throw new Error("unknown profile " + profile);
+  const school = pr.school === null ? spec.school : pr.school;
   const s = Engine.defaultState(m);
   s.allocation = spec.allocation;
   s.receipt_scenario = m.receipts.reference;
@@ -59,14 +70,14 @@ function cost(m, spec) {
   s.general_government_response = spec.gg;
   s.key_override = { public_order_safety: spec.justice, medicaid_and_chip_other_medical: spec.uc };
   s.response_override = {
-    education_services: spec.share * spec.school + (1 - spec.share) * 1,
+    education_services: spec.share * school + (1 - spec.share) * pr.other,
     public_order_safety: 1, health_services: 1, income_security_services: 1,
-    housing_community_services: 1, economic_affairs_services: 0, recreation_culture: 0,
-    [SYN.school]: spec.share * spec.school, [SYN.college]: (1 - spec.share) * 1, [SYN.constants]: 1,
+    housing_community_services: 1, economic_affairs_services: pr.delayed, recreation_culture: pr.delayed,
+    [SYN.school]: spec.share * school, [SYN.college]: (1 - spec.share) * pr.other, [SYN.constants]: 1,
   };
   return -Engine.evaluate(m, s).welfare_bn;
 }
-const band = (m) => span(MAIN_SPECS.map((spec) => cost(m, spec)));
+const band = (m, profile) => span(MAIN_SPECS.map((spec) => cost(m, spec, profile)));
 
 // A change is a list of shifts {side: "receipt" | "spending", line, key, by: {personal, shared}}.
 const MEDICAID = "medicaid_and_chip_other_medical";
@@ -310,12 +321,12 @@ function packageShifts(p, caseName, method, o) {
     justiceShifts(o.row7, o.booking), constantShifts(o.constants), extra);
 }
 const evalPackage = (caseName, method, o) =>
-  band(build(packageShifts(STACKS[`row4+status_state_aware|${caseName}|${method}`], caseName, method, o)));
+  band(build(packageShifts(STACKS[`row4+status_state_aware|${caseName}|${method}`], caseName, method, o)), o.profile);
 const mean2 = (a, b) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
 const central = (o) => mean2(...METHODS.map((m) => evalPackage("central", m, Object.assign({}, CENTRAL, o))));
 
 module.exports = {
-  Engine, MODEL, FISCAL, HERE, ALLOCS, SYN, MEDICAID, MAIN_SPECS, CASES, METHODS, STACKS, CENTRAL, CONSTANTS,
+  Engine, MODEL, FISCAL, HERE, ALLOCS, SYN, MEDICAID, MAIN_SPECS, PROFILES, MAIN_PROFILE, CASES, METHODS, STACKS, CENTRAL, CONSTANTS,
   BOOKING, LTSS_CENTRAL, LTSS_RANGE, gateState, gate, near, span, f2, csvRows, read, readJson, both, scale, plus,
   cost, band, build, stackShifts, stackFactor, cboShifts, row3Shifts, otaShifts, row1Shifts, medicalShifts,
   educationShifts, minusT0, benefitShifts, justiceShifts, constantShifts, bookingRow, packageShifts,

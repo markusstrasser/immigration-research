@@ -8,8 +8,8 @@ the linked memo before reuse. Narrative authorship remains operator-owned.
 Anchors: [complete annual account](immigration-complete-annual-account-2026-09-20.md)
 ($201–246bn conditional net cost to other residents in the
 [main case adopted September 24](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md);
-$203–250bn on September 23 and $165–197bn as published September 20; $308–341bn with fully
-proportional services on the September 23 case) and the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
+$203–250bn on September 23 and $165–197bn as published September 20; $303–336bn with fully
+proportional services) and the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
 (same-age gap against third-plus non-Hispanic whites: Mexico-born −$7,584, second generation
 −$7,521, third-plus −$6,195 per person, standard errors 384, 615 and 457).
 
@@ -106,8 +106,8 @@ Steel-man: cheaper services, complementary labour and capital returns never appe
 fiscal ledger. Finding: the account adds production gains and the induced taxes on them:
 $8.8bn (cash scaling) to $13.3bn (GDP scaling), $6–21bn across the parameter grid. Omitted
 benefits would have to reach $201–246bn a year to offset the main case. That threshold is
-conditional on the service-response share, which is assumed and unmeasured: on the September 23
-case it was $159–213bn if non-school education budgets were also held fixed, and it reaches zero
+conditional on the service-response share, which is assumed and unmeasured: it is $157–211bn
+if non-school education budgets are also held fixed, and it reaches zero
 where 4.8–16.0% of assigned service costs are incremental (entry 2), so the response share moves the result more
 than any offset listed here. Cheaper household services are worth $21.8bn a year to
 consumers, or $11.9bn net of native low-skill wage gains. That is the production gain seen from
