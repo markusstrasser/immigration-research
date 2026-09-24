@@ -1,0 +1,54 @@
+{
+ "inputs": {
+  "2021": {
+   "path": "local_spending_composition_2026_09_18/_cache/indunit_2021.zip",
+   "sha256": "dae63fdb3917de5195eb793c5401594c4c6dafb55ee099ca7075efcee96a7caa"
+  },
+  "2022": {
+   "path": "local_spending_composition_2026_09_18/_cache/indunit_2022.zip",
+   "sha256": "c8de889f6b3320d3be347e3880607346d6440eda82705b26db2fa410fe6e83a5"
+  },
+  "2023": {
+   "path": "local_spending_composition_2026_09_18/_cache/indunit_2023.zip",
+   "sha256": "42e0cc63e42d577d5777e509cc5f7bfa7fbae164770984009ca9a0df53373918"
+  },
+  "2024": {
+   "path": "detention_reconciliation_2026_09_20/_cache/census_2024_units.zip",
+   "sha256": "0967c4d30466593796acb26f2b30c1afb37b5b9a5de43766dc65e4ccc95bd89a"
+  },
+  "account_allocations": {
+   "path": "full_account_spending_2026_09_20/derived/allocations.csv",
+   "sha256": "fde600b9bf5eefc844b2b445b637cd21a265055f856734204af6cc51b568f89d"
+  },
+  "budget_figures": {
+   "path": "migrant_shelter_costs_2026_09_23/budget_figures.csv",
+   "sha256": "45d52b299b237d43f6b4bd38937cf88b5912cb18ddb9c2e373f96d04314cfb91"
+  },
+  "chicago_exits": {
+   "path": "migrant_shelter_costs_2026_09_23/_cache/src/chi_fk7i-xuiy.csv",
+   "sha256": "2fac75e4f144854112ef77ded7ea7e81177d6e3900a85309f4b0725877349fed"
+  },
+  "chicago_payments": {
+   "path": "migrant_shelter_costs_2026_09_23/_cache/src/chi_gxzc-43gg.csv",
+   "sha256": "7f690efaa3a763dad2141c181713fe7a0ea0a0d8d43fce51f55eb2134c9274e8"
+  },
+  "cy2024_outlays": {
+   "path": "migrant_shelter_costs_2026_09_23/cy2024_outlays.csv",
+   "sha256": "396ef310e6541fbd7095dee3a263f2a8378dcf9e5a368d8cb5caca08a9a37b60"
+  }
+ },
+ "outputs": {
+  "account_keying.csv": "40547f8f695f8f63625d1bba151633fec3830ff8998eb02a9e4fbd1198e77b9a",
+  "account_keying_parts.csv": "8b74c5010c54e50aa39184c1f800f83a8f3dda3fde7869630450d9f3082b8df3",
+  "census_e23_by_unit.csv": "efa2abbb74da58bfa127925b823b582300404412efd78b895dd56b54c187d37f",
+  "census_jump_test.csv": "e83a912e956367a1c3ede0abf485f96d55a34ab5f25966c4ece6b3b1a8b82fad",
+  "census_repeated_values.csv": "2b842f7c78208d78763b8eba3558f558728835cd1f64557a41cb407e3cc11d4c",
+  "census_target_items.csv": "1efbff1426ce51319224d0ff9b1fe5ef96d62ce01b77729b6c7d974ee292d257",
+  "census_unit_measures.csv": "fe8d455106d95921ffc158f7c686ce16fde07fed209cc2b4919112688ace8452",
+  "census_vs_budget.csv": "d4660ab7866847ccef2845101e57d6b320cb07735435c91e5b8c6a913227d11a",
+  "chicago_exits_by_country.csv": "2b3e95118e7b41da3d1f67709197b1bc0b5f6c64d24f456f4cae8d0ae0915b78",
+  "chicago_payments_by_year_fund.csv": "a69b694612ec63f28ea1d8526267a6d4b68e7ca2ee5b15d3cff09134bf7ba596"
+ },
+ "script": "census_unit_test.py",
+ "script_sha256": "73ab16a045cdcd975d09be4396b49ec7b4f1881a3c5745df0b1b765919a8ddbf"
+}

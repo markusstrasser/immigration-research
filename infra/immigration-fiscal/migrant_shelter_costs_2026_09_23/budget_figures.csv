@@ -1,0 +1,10 @@
+unit_id,survey_year,fiscal_period,budget_item,budget_thousands,source
+362061194805,2023,FY2023 (Jul 2022-Jun 2023),"asylum-seeker response, all city agencies, actual (city+state+federal funds)",1474000,"NYC Comptroller, Accounting for Asylum Seeker Services: Fiscal Impacts, Table 2 (NYC OMB, Adopted FY2026 Financial Plan); _cache/src/nyc_comptroller_fiscal_impacts.html"
+362061194805,2024,FY2024 (Jul 2023-Jun 2024),"asylum-seeker response, all city agencies, actual (city+state+federal funds)",3752000,"NYC Comptroller, Fiscal Impacts, Table 2; _cache/src/nyc_comptroller_fiscal_impacts.html"
+360000227535,2023,SFY2023 (Apr 2022-Mar 2023),"extraordinary state asylum-seeker funding, all uses (National Guard only)",27000,"NYS DOB FY2026 Enacted Budget Financial Plan, printed p.124 (PDF p.130); _cache/src/nys_dob_fy26_enacted_fp.pdf"
+360000227535,2024,SFY2024 (Apr 2023-Mar 2024),"extraordinary state asylum-seeker funding, all uses",895000,"NYS DOB FY2026 Enacted Budget Financial Plan, printed p.124 (PDF p.130)"
+360000227535,2024,SFY2024 (Apr 2023-Mar 2024),"of which support paid to NYC (original NYC support + HERRC sites)",519000,"NYS DOB FY2026 Enacted Budget Financial Plan, printed p.124: 500 + 19"
+250000227530,2024,FY2024 (Jul 2023-Jun 2024),"Emergency Assistance family shelter program, all families, total expended",894000,"MA A&F/EOHLC bi-weekly EA report, Sept 8 2025 (HD5125), Fiscal table; _cache/src/ma_af_ea_report_2025_09_firecrawl_excerpt.md"
+082031194647,2024,CY2023,"Border Crisis Response special revenue fund actual + state Migrant Response Program grant actual (partial: excludes General Fund agency spending)",14501,"Denver 2025 Adopted Budget, PDF pp.138 and 576 (11,001,278 + 3,500,000); _cache/src/den_budget_2025_adopted.pdf"
+112001124214,2023,FY2022 (Oct 2021-Sep 2022),"DHS Office of Migrant Services, actual",0,"DC FY2025 Approved Budget, DHS (JA0) schedule 30-PBB, PDF p.2 (FY2022 actual 0); _cache/src/dc_dhs_tables_fy25j.pdf"
+112001124214,2024,FY2023 (Oct 2022-Sep 2023),"DHS Office of Migrant Services, actual",52186,"DC FY2026 Proposed Budget, DHS (JA0) schedule 30-PBB, PDF p.2; _cache/src/dc_dhs_tables_fy26m.pdf"
