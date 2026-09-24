@@ -2,10 +2,11 @@
 
 For each method, every receipt line (cbo_collective) and spending line key that uses a
 perturbed CPS key moves by national_bn x (new share - published share); spending lines also
-carry the household pool fraction, as in the spending builder. Components follow the main
-case's formula: welfare = direct receipts - transfers - sum(response x services) + P + F, with
-transfers and income-security services at response 1, economic affairs at 0 (delayed) in the
-CBO-lag profiles, subsidies and capital-incidence receipts at 0.
+carry the household pool fraction, as in the spending builder. KEYS resolves each account key to
+the lane key that measures it; an account key missing there stops the translation. Components
+follow the main case's formula: welfare = direct receipts - transfers - sum(response x services)
++ P + F, with transfers and income-security services at response 1, economic affairs at 0
+(delayed) in the CBO-lag profiles, subsidies and capital-incidence receipts at 0.
 Writes derived/line_deltas.json (read by main_case_translate.js), derived/line_deltas.csv and
 derived/component_deltas.csv, then runs the Node translation.
 """
@@ -21,6 +22,40 @@ import pandas as pd
 import common as c
 
 MODEL = c.FISCAL / "assumption_explorer_2026_09_21/derived/model.json"
+
+HELD = None  # the lane never recomputes this key: its line keeps the published allocation
+# Account key -> lane key, per side, and per allocation where the two differ. The lane keeps receipt
+# and spending keys in one namespace in which the spending definitions win; the account keeps the two
+# apart. Two account keys therefore resolve to lane keys of another name: the Medicare spending line is
+# keyed by MEPS payer means (the lane's "medicare" is MCARE coverage, the premium receipt's key), and
+# the shared motor-vehicle receipt by unit-split adults (the lane's shared "adults" is the spending
+# builder's person count). A method that does not supply a lane key leaves that key at its published
+# share: the MEPS and school keys are supplied only by combine_onbooks_lane.py's weight arms.
+_SAME = ["adults", "age18_24", "age5_24", "age65plus", "all_cash", "cash_assistance", "energy", "housing_support",
+         "medicaid_covered", "population", "refundable_credits", "resources", "snap", "social_security", "ssi",
+         "unemployment", "veterans", "wages", "wic", "workers_comp", "working_age",
+         "medicaid", "health_other", "tricare", "va_medical", "education_mix", "school_operating", "postsecondary"]
+KEYS = {
+    "receipts": {"adults": {"personal": "adults", "shared": "receipt_adults"},
+                 **{k: k for k in ["capital", "consumption", "federal_liability", "medicare", "population",
+                                   "positive_fica_worker", "self_payroll", "state_liability", "wage", "wage_oasdi"]},
+                 **{k: HELD for k in ["modeled_owner_property", "none", "resident_population"]}},
+    "spending": {**{k: k for k in _SAME}, "medicare": "meps_medicare",
+                 **{k: HELD for k in ["external", "use", "use_raw_coding", "uninsured_use_07_high",
+                                      "uninsured_use_07_low", "uninsured_use_high", "uninsured_use_low"]}},
+}
+# Steps 5-5d as first run (2026-09-23) looked account keys up by name in the lane's namespace, so the
+# Medicare spending line followed MCARE coverage. Kept only to reproduce those figures.
+AS_PUBLISHED = {"receipts": {**KEYS["receipts"], "adults": "adults"},
+                "spending": {**KEYS["spending"], "medicare": "medicare"}}
+
+
+def lane_key(keys, side, key, allocation):
+    """The lane key that measures an account key (HELD when the lane never recomputes it)."""
+    if key not in keys[side]:
+        raise KeyError(f"account {side} key {key!r} has no entry in translate.KEYS")
+    lane = keys[side][key]
+    return lane[allocation] if isinstance(lane, dict) else lane
 
 
 def ipw_methods():
@@ -83,13 +118,14 @@ def hotdeck_seeds():
     return out
 
 
-def line_deltas(model, base, method, hf):
+def line_deltas(model, base, method, hf, keys=KEYS):
+    """Rows (named by the account key) for every account key whose lane key the method supplies."""
     rows = []
     for line in model["receipts"]["lines"]:
         for a in ["personal", "shared"]:
             cell = line["cells"]["cbo_collective"][a]
-            k = (a, cell["key"])
-            if k in method:
+            k = (a, lane_key(keys, "receipts", cell["key"], a))
+            if k[1] is not HELD and k in method:
                 d = line["national_bn"] * (method[k] - base[k])
                 rows.append(dict(side="receipts", line=line["id"], key=cell["key"], allocation=a,
                                  preferred=True, direct=bool(cell["direct"]), response_class=cell["response_class"],
@@ -97,8 +133,8 @@ def line_deltas(model, base, method, hf):
     for line in model["spending"]["lines"]:
         for key, cells in line["keys"].items():
             for a in ["personal", "shared"]:
-                k = (a, key)
-                if k in method:
+                k = (a, lane_key(keys, "spending", key, a))
+                if k[1] is not HELD and k in method:
                     d = line["national_bn"] * hf * (method[k] - base[k])
                     rows.append(dict(side="spending", line=line["id"], key=key, allocation=a,
                                      preferred=key == line["preferred_key"], direct=False,

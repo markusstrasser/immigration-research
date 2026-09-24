@@ -57,8 +57,6 @@ a_ipw_brief_cells,spending,income_security_services,cash_assistance,personal,Tru
 a_ipw_brief_cells,spending,income_security_services,cash_assistance,shared,True,False,service,29.344478442,2.3178933388042,2.8578981375930526
 a_ipw_brief_cells,spending,social_security,social_security,personal,True,False,household_transfer,59.918597812,-5.98182608143748,1.2776090351841025
 a_ipw_brief_cells,spending,social_security,social_security,shared,True,False,household_transfer,62.721969932,-6.58598998586517,1.2960054665829466
-a_ipw_brief_cells,spending,medicare,medicare,personal,True,False,household_transfer,63.964982366,0.09961544615646596,0.5028073705733515
-a_ipw_brief_cells,spending,medicare,medicare,shared,True,False,household_transfer,63.964982366,0.2544046995574647,0.6231817185836935
 a_ipw_brief_cells,spending,unemployment,unemployment,personal,True,False,household_transfer,4.089921396,-0.38493088852779445,0.3960503890622544
 a_ipw_brief_cells,spending,unemployment,unemployment,shared,True,False,household_transfer,4.186713533,-0.1525789156904433,0.36473893521072553
 a_ipw_brief_cells,spending,railroad_retirement,social_security,personal,True,False,household_transfer,0.599738418,-0.05987341227051303,0.01278786969776424
@@ -189,8 +187,6 @@ a_ipw_plus_labor_force,spending,income_security_services,cash_assistance,persona
 a_ipw_plus_labor_force,spending,income_security_services,cash_assistance,shared,True,False,service,29.344478442,2.684912177677547,2.874341241405393
 a_ipw_plus_labor_force,spending,social_security,social_security,personal,True,False,household_transfer,59.918597812,-5.935023642125694,1.293120572854657
 a_ipw_plus_labor_force,spending,social_security,social_security,shared,True,False,household_transfer,62.721969932,-6.906399762191428,1.3109344712979707
-a_ipw_plus_labor_force,spending,medicare,medicare,personal,True,False,household_transfer,63.964982366,-0.6345606466453544,0.4799517962096766
-a_ipw_plus_labor_force,spending,medicare,medicare,shared,True,False,household_transfer,63.964982366,-0.2533561910697741,0.6379192022111145
 a_ipw_plus_labor_force,spending,unemployment,unemployment,personal,True,False,household_transfer,4.089921396,-0.44755309604654553,0.3874540763794105
 a_ipw_plus_labor_force,spending,unemployment,unemployment,shared,True,False,household_transfer,4.186713533,-0.13861626858848655,0.3650811435939313
 a_ipw_plus_labor_force,spending,railroad_retirement,social_security,personal,True,False,household_transfer,0.599738418,-0.059404956366574946,0.012943128088304999
@@ -321,8 +317,6 @@ a_ipw_brief_cells_derived_material_1pct,spending,income_security_services,cash_a
 a_ipw_brief_cells_derived_material_1pct,spending,income_security_services,cash_assistance,shared,True,False,service,29.344478442,2.3178933388042,2.8578981375930526
 a_ipw_brief_cells_derived_material_1pct,spending,social_security,social_security,personal,True,False,household_transfer,59.918597812,-5.98182608143748,1.2776090351841025
 a_ipw_brief_cells_derived_material_1pct,spending,social_security,social_security,shared,True,False,household_transfer,62.721969932,-6.58598998586517,1.2960054665829466
-a_ipw_brief_cells_derived_material_1pct,spending,medicare,medicare,personal,True,False,household_transfer,63.964982366,0.09961544615646596,0.5028073705733515
-a_ipw_brief_cells_derived_material_1pct,spending,medicare,medicare,shared,True,False,household_transfer,63.964982366,0.2544046995574647,0.6231817185836935
 a_ipw_brief_cells_derived_material_1pct,spending,unemployment,unemployment,personal,True,False,household_transfer,4.089921396,-0.38493088852779445,0.3960503890622544
 a_ipw_brief_cells_derived_material_1pct,spending,unemployment,unemployment,shared,True,False,household_transfer,4.186713533,-0.1525789156904433,0.36473893521072553
 a_ipw_brief_cells_derived_material_1pct,spending,railroad_retirement,social_security,personal,True,False,household_transfer,0.599738418,-0.05987341227051303,0.01278786969776424
@@ -453,8 +447,6 @@ a_ipw_brief_cells_derived_any_flag,spending,income_security_services,cash_assist
 a_ipw_brief_cells_derived_any_flag,spending,income_security_services,cash_assistance,shared,True,False,service,29.344478442,2.3178933388042,2.8578981375930526
 a_ipw_brief_cells_derived_any_flag,spending,social_security,social_security,personal,True,False,household_transfer,59.918597812,-5.98182608143748,1.2776090351841025
 a_ipw_brief_cells_derived_any_flag,spending,social_security,social_security,shared,True,False,household_transfer,62.721969932,-6.58598998586517,1.2960054665829466
-a_ipw_brief_cells_derived_any_flag,spending,medicare,medicare,personal,True,False,household_transfer,63.964982366,0.09961544615646596,0.5028073705733515
-a_ipw_brief_cells_derived_any_flag,spending,medicare,medicare,shared,True,False,household_transfer,63.964982366,0.2544046995574647,0.6231817185836935
 a_ipw_brief_cells_derived_any_flag,spending,unemployment,unemployment,personal,True,False,household_transfer,4.089921396,-0.38493088852779445,0.3960503890622544
 a_ipw_brief_cells_derived_any_flag,spending,unemployment,unemployment,shared,True,False,household_transfer,4.186713533,-0.1525789156904433,0.36473893521072553
 a_ipw_brief_cells_derived_any_flag,spending,railroad_retirement,social_security,personal,True,False,household_transfer,0.599738418,-0.05987341227051303,0.01278786969776424
@@ -532,7 +524,6 @@ b_hotdeck_union_matched,receipts,federal_income_tax,federal_liability,shared,Tru
 b_hotdeck_union_matched,receipts,state_local_income_tax,state_liability,personal,True,True,personal_income,26.832079605,-1.0532875580937628,0.4392799262114109
 b_hotdeck_union_matched,receipts,state_local_income_tax,state_liability,shared,True,True,personal_income,28.783372481,-0.8272195606616596,0.3962394748616257
 b_hotdeck_union_matched,receipts,personal_motor_vehicle,adults,personal,True,True,household_direct,2.850033105,0.0,4.365766892041444e-16
-b_hotdeck_union_matched,receipts,personal_motor_vehicle,adults,shared,True,True,household_direct,2.927264756,0.0,4.365766892041444e-16
 b_hotdeck_union_matched,receipts,personal_property_tax,capital,personal,True,False,household_direct,0.404313967,-0.06199826572447403,0.016044910872834352
 b_hotdeck_union_matched,receipts,personal_property_tax,capital,shared,True,False,household_direct,0.482760064,-0.06789107422010708,0.016282798084598753
 b_hotdeck_union_matched,receipts,other_personal_tax,state_liability,personal,True,True,household_direct,0.486480231,-0.01909667762512327,0.007964384534484826
@@ -613,8 +604,6 @@ b_hotdeck_union_matched,spending,social_security,social_security,personal,True,F
 b_hotdeck_union_matched,spending,social_security,social_security,shared,True,False,household_transfer,62.721969932,-2.9549720135350497,0.9409431826173634
 b_hotdeck_union_matched,spending,medicare,age65plus,personal,False,False,household_transfer,56.131726055,-7.573056887200457e-15,1.706040129598733e-14
 b_hotdeck_union_matched,spending,medicare,age65plus,shared,False,False,household_transfer,56.131726055,-7.573056887200457e-15,1.706040129598733e-14
-b_hotdeck_union_matched,spending,medicare,medicare,personal,True,False,household_transfer,63.964982366,-0.24046023897944763,0.47562653912365976
-b_hotdeck_union_matched,spending,medicare,medicare,shared,True,False,household_transfer,63.964982366,-0.4042018670863065,0.4734461536332734
 b_hotdeck_union_matched,spending,unemployment,unemployment,personal,True,False,household_transfer,4.089921396,-0.35012421337457833,0.30475585037580305
 b_hotdeck_union_matched,spending,unemployment,unemployment,shared,True,False,household_transfer,4.186713533,-0.18014777672263665,0.24615871898832273
 b_hotdeck_union_matched,spending,unemployment,working_age,personal,False,False,household_transfer,4.571691823,0.0,0.0
@@ -730,7 +719,6 @@ b_control_pooled_donors,receipts,federal_income_tax,federal_liability,shared,Tru
 b_control_pooled_donors,receipts,state_local_income_tax,state_liability,personal,True,True,personal_income,26.832079605,0.01598852867506108,0.41619864445492977
 b_control_pooled_donors,receipts,state_local_income_tax,state_liability,shared,True,True,personal_income,28.783372481,0.16001423553871394,0.3495842539497578
 b_control_pooled_donors,receipts,personal_motor_vehicle,adults,personal,True,True,household_direct,2.850033105,0.0,4.365766892041444e-16
-b_control_pooled_donors,receipts,personal_motor_vehicle,adults,shared,True,True,household_direct,2.927264756,0.0,4.365766892041444e-16
 b_control_pooled_donors,receipts,personal_property_tax,capital,personal,True,False,household_direct,0.404313967,0.011606242253750853,0.022128254329648198
 b_control_pooled_donors,receipts,personal_property_tax,capital,shared,True,False,household_direct,0.482760064,0.004277373635289777,0.022804667590738483
 b_control_pooled_donors,receipts,other_personal_tax,state_liability,personal,True,True,household_direct,0.486480231,0.00028988074098232217,0.007545908313541065
@@ -811,8 +799,6 @@ b_control_pooled_donors,spending,social_security,social_security,personal,True,F
 b_control_pooled_donors,spending,social_security,social_security,shared,True,False,household_transfer,62.721969932,1.2068251049470844,0.9827462842243031
 b_control_pooled_donors,spending,medicare,age65plus,personal,False,False,household_transfer,56.131726055,-7.573056887200457e-15,1.706040129598733e-14
 b_control_pooled_donors,spending,medicare,age65plus,shared,False,False,household_transfer,56.131726055,-7.573056887200457e-15,1.706040129598733e-14
-b_control_pooled_donors,spending,medicare,medicare,personal,True,False,household_transfer,63.964982366,0.999413367465603,0.44230688687275405
-b_control_pooled_donors,spending,medicare,medicare,shared,True,False,household_transfer,63.964982366,0.796229813856237,0.43855967068228263
 b_control_pooled_donors,spending,unemployment,unemployment,personal,True,False,household_transfer,4.089921396,0.1525261314948864,0.370036925047692
 b_control_pooled_donors,spending,unemployment,unemployment,shared,True,False,household_transfer,4.186713533,0.32425567951445255,0.310873733482913
 b_control_pooled_donors,spending,unemployment,working_age,personal,False,False,household_transfer,4.571691823,0.0,0.0
@@ -928,7 +914,6 @@ b_matched_over_pooled,receipts,federal_income_tax,federal_liability,shared,True,
 b_matched_over_pooled,receipts,state_local_income_tax,state_liability,personal,True,True,personal_income,26.832079605,-1.0686393127823524,0.3043860859084514
 b_matched_over_pooled,receipts,state_local_income_tax,state_liability,shared,True,True,personal_income,28.783372481,-0.9817758495286818,0.29906176080695074
 b_matched_over_pooled,receipts,personal_motor_vehicle,adults,personal,True,True,household_direct,2.850033105,0.0,2.923029647138026e-16
-b_matched_over_pooled,receipts,personal_motor_vehicle,adults,shared,True,True,household_direct,2.927264756,0.0,2.923029647138026e-16
 b_matched_over_pooled,receipts,personal_property_tax,capital,personal,True,False,household_direct,0.404313967,-0.07155057616165558,0.015072882854628064
 b_matched_over_pooled,receipts,personal_property_tax,capital,shared,True,False,household_direct,0.482760064,-0.07153463330210628,0.0159773396361821
 b_matched_over_pooled,receipts,other_personal_tax,state_liability,personal,True,True,household_direct,0.486480231,-0.019375013306595235,0.00551868567277743
@@ -1009,8 +994,6 @@ b_matched_over_pooled,spending,social_security,social_security,personal,True,Fal
 b_matched_over_pooled,spending,social_security,social_security,shared,True,False,household_transfer,62.721969932,-4.083232189463669,0.5457902342937189
 b_matched_over_pooled,spending,medicare,age65plus,personal,False,False,household_transfer,56.131726055,0.0,6.448225585163545e-15
 b_matched_over_pooled,spending,medicare,age65plus,shared,False,False,household_transfer,56.131726055,0.0,6.448225585163545e-15
-b_matched_over_pooled,spending,medicare,medicare,personal,True,False,household_transfer,63.964982366,-1.2181213917665887,0.3028636834489429
-b_matched_over_pooled,spending,medicare,medicare,shared,True,False,household_transfer,63.964982366,-1.1844710076615823,0.28566842251336205
 b_matched_over_pooled,spending,unemployment,unemployment,personal,True,False,household_transfer,4.089921396,-0.48457886323104044,0.17107922372284992
 b_matched_over_pooled,spending,unemployment,unemployment,shared,True,False,household_transfer,4.186713533,-0.4681461293227993,0.15854371775469037
 b_matched_over_pooled,spending,unemployment,working_age,personal,False,False,household_transfer,4.571691823,0.0,0.0
@@ -1126,7 +1109,6 @@ b_hotdeck_union_matched_all_items,receipts,federal_income_tax,federal_liability,
 b_hotdeck_union_matched_all_items,receipts,state_local_income_tax,state_liability,personal,True,True,personal_income,26.832079605,-1.0688226125239746,0.4644293649495111
 b_hotdeck_union_matched_all_items,receipts,state_local_income_tax,state_liability,shared,True,True,personal_income,28.783372481,-0.7143193925023532,0.4434577029916041
 b_hotdeck_union_matched_all_items,receipts,personal_motor_vehicle,adults,personal,True,True,household_direct,2.850033105,0.0,3.6706119540100687e-16
-b_hotdeck_union_matched_all_items,receipts,personal_motor_vehicle,adults,shared,True,True,household_direct,2.927264756,0.0,3.6706119540100687e-16
 b_hotdeck_union_matched_all_items,receipts,personal_property_tax,capital,personal,True,False,household_direct,0.404313967,-0.08946527570604385,0.023844581625666397
 b_hotdeck_union_matched_all_items,receipts,personal_property_tax,capital,shared,True,False,household_direct,0.482760064,-0.09341303096571466,0.024534664228404134
 b_hotdeck_union_matched_all_items,receipts,other_personal_tax,state_liability,personal,True,True,household_direct,0.486480231,-0.01937833663083621,0.008420357568955563
@@ -1207,8 +1189,6 @@ b_hotdeck_union_matched_all_items,spending,social_security,social_security,perso
 b_hotdeck_union_matched_all_items,spending,social_security,social_security,shared,True,False,household_transfer,62.721969932,-3.3582431775699333,0.9551118018324922
 b_hotdeck_union_matched_all_items,spending,medicare,age65plus,personal,False,False,household_transfer,56.131726055,0.0,7.760074107095246e-15
 b_hotdeck_union_matched_all_items,spending,medicare,age65plus,shared,False,False,household_transfer,56.131726055,0.0,7.760074107095246e-15
-b_hotdeck_union_matched_all_items,spending,medicare,medicare,personal,True,False,household_transfer,63.964982366,-0.3606035473026281,0.5483970739296673
-b_hotdeck_union_matched_all_items,spending,medicare,medicare,shared,True,False,household_transfer,63.964982366,-0.3849568965805572,0.5206156200572674
 b_hotdeck_union_matched_all_items,spending,unemployment,unemployment,personal,True,False,household_transfer,4.089921396,-0.3992841968159312,0.28833799331784954
 b_hotdeck_union_matched_all_items,spending,unemployment,unemployment,shared,True,False,household_transfer,4.186713533,-0.24394607739395305,0.2369476915219938
 b_hotdeck_union_matched_all_items,spending,unemployment,working_age,personal,False,False,household_transfer,4.571691823,0.0,0.0
@@ -1324,7 +1304,6 @@ b_matched_over_pooled_all_items,receipts,federal_income_tax,federal_liability,sh
 b_matched_over_pooled_all_items,receipts,state_local_income_tax,state_liability,personal,True,True,personal_income,26.832079605,-1.4062252545189469,0.3554003276135531
 b_matched_over_pooled_all_items,receipts,state_local_income_tax,state_liability,shared,True,True,personal_income,28.783372481,-1.1665382139275946,0.3691588160983671
 b_matched_over_pooled_all_items,receipts,personal_motor_vehicle,adults,personal,True,True,household_direct,2.850033105,0.0,2.1449173594683882e-16
-b_matched_over_pooled_all_items,receipts,personal_motor_vehicle,adults,shared,True,True,household_direct,2.927264756,0.0,2.1449173594683882e-16
 b_matched_over_pooled_all_items,receipts,personal_property_tax,capital,personal,True,False,household_direct,0.404313967,-0.11673915848240836,0.018493307844939293
 b_matched_over_pooled_all_items,receipts,personal_property_tax,capital,shared,True,False,household_direct,0.482760064,-0.0995885308345705,0.020438662451308716
 b_matched_over_pooled_all_items,receipts,other_personal_tax,state_liability,personal,True,True,household_direct,0.486480231,-0.02549563046434913,0.006443601685167773
@@ -1405,8 +1384,6 @@ b_matched_over_pooled_all_items,spending,social_security,social_security,persona
 b_matched_over_pooled_all_items,spending,social_security,social_security,shared,True,False,household_transfer,62.721969932,-4.053146369058558,0.6494019278199163
 b_matched_over_pooled_all_items,spending,medicare,age65plus,personal,False,False,household_transfer,56.131726055,0.0,6.10559365671357e-15
 b_matched_over_pooled_all_items,spending,medicare,age65plus,shared,False,False,household_transfer,56.131726055,0.0,6.10559365671357e-15
-b_matched_over_pooled_all_items,spending,medicare,medicare,personal,True,False,household_transfer,63.964982366,-1.220367971636851,0.3976620368816101
-b_matched_over_pooled_all_items,spending,medicare,medicare,shared,True,False,household_transfer,63.964982366,-1.2716595883952357,0.3656820986181205
 b_matched_over_pooled_all_items,spending,unemployment,unemployment,personal,True,False,household_transfer,4.089921396,-0.38614886577024277,0.16342926353873072
 b_matched_over_pooled_all_items,spending,unemployment,unemployment,shared,True,False,household_transfer,4.186713533,-0.38130600551997984,0.1561187929918559
 b_matched_over_pooled_all_items,spending,unemployment,working_age,personal,False,False,household_transfer,4.571691823,0.0,0.0
