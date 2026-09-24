@@ -195,7 +195,10 @@ tax already inside the account. Covered establishments and employment grew no sl
 group's share grew, and the pre-registered E-Verify design fails its pre-trend test, so no
 displacement of compliant firms is measured. Beside the account: $0–2.2bn of workers' compensation
 premiums avoided and $0–2.3bn of underpayment, both transfers from off-books workers to their
-employers.
+employers. Street vending (ladder 223): after California legalized it in 2019,
+licensed restaurants did not lose ground where vending is common; street food is about 1.3% of the
+City of Los Angeles's restaurant sales, at most about $0.4bn a year statewide if all of it came
+from restaurants.
 
 [Outside checks on the account's shares](immigration-outside-checks-2026-09-24.md) (September 24)
 tests the keys against data built independently of the account. The BEA closure (−$2,053bn) cannot

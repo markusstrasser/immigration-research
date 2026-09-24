@@ -1,4 +1,4 @@
-# Do rule-breaking employers drive honest firms out?
+# Do rule-breaking businesses drive honest ones out?
 
 **Verdict:** Breaking labor and tax rules gives an employer a real cost edge, but its measured
 size is a few billion dollars a year, and nothing measured here shows it driving compliant firms
@@ -9,6 +9,12 @@ $6.4bn), and $4.5bn of the central figure is payroll tax that the adopted accoun
 Covered establishments and employment grew no slower where the group's share grew, and the one
 negative association disappears once state-wide shocks are removed. [CALCULATION:
 [compliance lane](../infra/immigration-fiscal/compliance_gap_2026_09_24/RESULT.md); ladder 220]
+
+Street vending points the same way. After California legalized it in 2019, licensed restaurants
+did not lose ground where vending is common, and street food is about 1.3% of restaurant sales in
+the City of Los Angeles; the one lean, fewer full-service restaurants in pre-law arrest hotspots,
+is not significant (§7). [CALCULATION:
+[vending lane](../infra/immigration-fiscal/vending_restaurants_2026_09_24/RESULT.md); ladder 223]
 
 The question is the operator's: whether illegal immigrants' businesses, "not needing the same
 scruples", drive honest businesses out. "Driving out" is measured here as covered firms'
@@ -170,16 +176,93 @@ or another mandate outside the housing cycle with flat pre-trends; an independen
 off-books workers by industry and state that settles the slope against the level check, which
 would move the edge anywhere in $0–15bn.
 
+## 7. Street vending and licensed restaurants after SB 946
+
+The operator's question also named food trucks and street vendors. California's SB 946 (in force
+1 January 2019) let cities regulate sidewalk vending only through permit programs, barred them from
+limiting vendors to protect competitors ("economic competition does not constitute an objective
+health, safety, or welfare concern", Gov. Code §51038(e)) and turned violations into administrative
+fines. Few vendors became licensed: the City of Los Angeles sold about 944 vending permits a year
+against an estimated 50,000 vendors, and by June 2021 "only 165 out of an estimated 10,000 sidewalk
+food vendors" held food permits. What changed was the penalty, and LAPD vending arrests had already
+fallen from 1,219 in 2013 to 4 in 2018. [SOURCE: chaptered SB 946; CAO fee study, CF 13-1493-S15,
+p. 3; UCLA Law et al., *Unfinished Business* (2021), p. 12; DATA: lane
+`derived/lapd_vending_arrests_year.csv`]
+
+**Licensed restaurants did not lose ground where vending is common.** In 2019, the one clean year
+after the law, per 10 points of Hispanic share:
+
+| Measure | 2019 | 2022–2023 |
+|---|---|---|
+| LA County ZIPs, full-service restaurant establishments | +0.1% (SE 0.3) | +1.4% |
+| LA County ZIPs, limited-service | +0.0% (SE 0.25) | +0.5% |
+| 80 LA County cities, food-service taxable sales | +0.2% (SE 0.15) | +0.5% |
+| California counties net of other states' gradient, full-service establishments | −1.0% (0.6) unweighted, −0.0% (0.3) weighted | +1.2% / +0.8% |
+
+Among six large Hispanic counties outside California, Los Angeles ranks second to fourth in 2019
+and near the top by 2022–2023. [CALCULATION: vending lane `analyze_zip.py`, `analyze_sales.py`,
+`analyze_county.py` → `derived/zip_event_summary.csv`, `sales_event_summary.csv`,
+`county_triple_summary.csv`]
+
+**The one lean.** Against the direct pre-law measure, LAPD vending arrests in 2010–2016 by City of
+Los Angeles ZIP, full-service restaurant counts fell −0.7% per log point of arrests in 2019 (SE 0.7),
+−1.1% (0.6) without downtown: 21–72 of the 3,344 full-service restaurants in those ZIPs, with a 95%
+bound of about 170. It is not significant, limited-service restaurants (the closer substitute) show
+nothing (+0.2%, SE 0.5), and all food-service establishments did not fall there. This is the
+result better data would move most. [CALCULATION: lane `analyze_zip_downtown.py` →
+`derived/zip_arrests_no_downtown.csv`]
+
+**California's slower restaurant growth is not vending.** Restaurant employment grew 0–1.6% slower
+than in comparable counties elsewhere in 2019 and 1.7–4.0% slower by 2022–2023. The gap began in
+2018, grocery shows it too, payroll rose while employment fell (the minimum-wage pattern), and
+other high-Hispanic states produce gaps as large (permutation p 0.48–0.96).
+
+**Size.** Street food sells about $150m a year in the City of Los Angeles (2024), 1.3% of its
+restaurant taxable sales (0.6–2.6%): 10,000 food vendors, an unsourced city estimate, times $10,098
+per vendor from one 2014 survey, restated by CPI. Even if every dollar came out of restaurants,
+owners statewide would lose about $0.4bn a year at the margin ($0–1.2bn). [CALCULATION: lane
+`size_rows.py` → `derived/size_by_year.csv`]
+
+**Literature.** No study estimates legalization's effect on restaurants (four searches, logged). The
+restaurant side rests on a 2004 Bogotá cross-section (shop sales elasticity to vendors on the block
+−0.044, p 0.08; retail, not restaurants; paid for by the chamber of commerce) and Ulyssea's model of
+Brazil (formal firms gain 7.4% if informal ones are shut down, while welfare falls 6.7%). A national
+county panel finds no drop in restaurants after food-truck growth (+1.8 restaurants per truck, SE 1.3;
+grade C−).
+
+**Dirt.** Licensed trucks and carts in LA County averaged fewer violations per inspection than
+restaurants (3.6 and 2.4 against 7.8, 2009–2012, with no adjustment for menu risk). Unpermitted
+vendors, the group the question is about, are not inspected at all, and over 73% of surveyed food
+vendors sell food the county classes as high-risk. The data cannot say whether that makes them
+dirtier. [SOURCE: Erickson, *Street Eats, Safe Eats* (2014), Table 5; UCLA Law (2021), p. 10]
+
+**Who wins and who loses.** The measured change is centered on a small gain to licensed restaurant
+owners (−$0.16bn to +$0.47bn) and workers (−$0.17bn to +$0.50bn); the bound answers a different
+question (every street-food dollar taken from restaurants: owners −$0.41bn, $0–1.17bn) and is never
+added to the measured rows. Vendors' net income in the City is about $43m. Unremitted sales tax
+($14m in the City) and the city program's net cost ($3.6m) are small; income and payroll taxes on
+vendors' earnings are inside the account's September 24 tax correction. These rows compare against
+the pre-2019 regime or against no street food, not against the group's absence, so the ledger keeps
+them in its role table. [FRAMING-SENSITIVE] Whether citation-only enforcement of mostly unlicensed
+vending is dishonest competition is a value judgment; the data speak only to whether restaurants
+lost business. [DATA: lane `derived/winners_losers_rows.csv`]
+
 ## Sources
 
 - Lane: [`compliance_gap_2026_09_24`](../infra/immigration-fiscal/compliance_gap_2026_09_24/RESULT.md)
   (BRIEF, scripts in run order, `derived/`, reading notes in `reads/`). IPUMS USA ACS 2005–2024
   (extracts 16 and 17), QCEW 2005–2024, DOL WHD and OSHA enforcement files, BLS ECEC June 2026,
   IRS Publications 1415 and 5869. [DATA]
+- §7: [`vending_restaurants_2026_09_24`](../infra/immigration-fiscal/vending_restaurants_2026_09_24/RESULT.md)
+  (CBP and ZIP Business Patterns 2012–2023, QCEW 2014–2023, CDTFA taxable sales 2015–2025, ACS
+  2013–2017, LAPD arrests 2010–2019; reading notes in `reads/`). Parent rerun, 2026-09-25: the ten
+  analysis scripts exit 0, and all 32 derived files and the assembled RESULT.md are byte-identical. [DATA]
 - Parent rerun, 2026-09-25: all twelve analysis scripts exit 0; 21 of 22 derived files
   byte-identical, and `everify_event_study.csv` differs in one t value's last printed digit
   (relative 1.6e-5). The QCEW, DOL and IPUMS downloads were not repeated. [CALCULATION]
 
 ## Revisions
 
-None yet.
+- 2026-09-25 (later): §7 added from the vending lane (ladder 223); the title now says
+  businesses, since vendors are self-employed. Concept affected: the same question, extended from
+  employers to street vendors; the verdict gains one paragraph and does not change.

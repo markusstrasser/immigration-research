@@ -1,0 +1,397 @@
+naics,exposure,outcome,note,n_zips,x_mean,x_sd,year,coef,se
+722511,hisp_share,log_estab,,258,4.1099,2.5931,2012,-0.0163389,0.00651284
+722511,hisp_share,log_estab,,258,4.1099,2.5931,2013,-0.0152959,0.00562766
+722511,hisp_share,log_estab,,258,4.1099,2.5931,2014,-0.0150896,0.00618522
+722511,hisp_share,log_estab,,258,4.1099,2.5931,2015,-0.0158115,0.00545325
+722511,hisp_share,log_estab,,258,4.1099,2.5931,2016,-0.00921707,0.00462958
+722511,hisp_share,log_estab,,258,4.1099,2.5931,2017,-0.00677946,0.00284609
+722511,hisp_share,log_estab,,258,4.1099,2.5931,2019,0.00138615,0.00304802
+722511,hisp_share,log_estab,,258,4.1099,2.5931,2020,0.00932587,0.00484353
+722511,hisp_share,log_estab,,258,4.1099,2.5931,2021,0.0156571,0.00495639
+722511,hisp_share,log_estab,,258,4.1099,2.5931,2022,0.0129314,0.00579639
+722511,hisp_share,log_estab,,258,4.1099,2.5931,2023,0.014732,0.00648053
+722511,hisp_share,estab_poisson,,258,4.1099,2.5931,2012,-0.0181819,0.00438169
+722511,hisp_share,estab_poisson,,258,4.1099,2.5931,2013,-0.0159092,0.00428174
+722511,hisp_share,estab_poisson,,258,4.1099,2.5931,2014,-0.0132487,0.0043592
+722511,hisp_share,estab_poisson,,258,4.1099,2.5931,2015,-0.0157204,0.00384294
+722511,hisp_share,estab_poisson,,258,4.1099,2.5931,2016,-0.00837574,0.00311637
+722511,hisp_share,estab_poisson,,258,4.1099,2.5931,2017,-0.00455958,0.00225843
+722511,hisp_share,estab_poisson,,258,4.1099,2.5931,2019,0.000582314,0.00238526
+722511,hisp_share,estab_poisson,,258,4.1099,2.5931,2020,0.00267182,0.00335474
+722511,hisp_share,estab_poisson,,258,4.1099,2.5931,2021,0.0101359,0.00346399
+722511,hisp_share,estab_poisson,,258,4.1099,2.5931,2022,0.00781798,0.00377425
+722511,hisp_share,estab_poisson,,258,4.1099,2.5931,2023,0.00791067,0.004174
+722511,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,4.1099,2.5931,2012,0.0441125,0.0207544
+722511,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,4.1099,2.5931,2013,0.0458766,0.0207099
+722511,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,4.1099,2.5931,2014,0.0456342,0.0202018
+722511,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,4.1099,2.5931,2015,0.0558012,0.0207027
+722511,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,4.1099,2.5931,2016,0.0561375,0.0203866
+722511,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,4.1099,2.5931,2017,-0.0101889,0.0184655
+722511,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,4.1099,2.5931,2019,0.0298709,0.01696
+722511,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,4.1099,2.5931,2020,0.0254436,0.0204157
+722511,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,4.1099,2.5931,2021,0.0895374,0.0223636
+722511,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,4.1099,2.5931,2022,0.0702673,0.0239278
+722511,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,4.1099,2.5931,2023,0.0684438,0.0239591
+722511,mexborn_share,log_estab,,258,1.0585,0.9445,2012,-0.0355194,0.0183552
+722511,mexborn_share,log_estab,,258,1.0585,0.9445,2013,-0.0329456,0.0148621
+722511,mexborn_share,log_estab,,258,1.0585,0.9445,2014,-0.0303851,0.0177843
+722511,mexborn_share,log_estab,,258,1.0585,0.9445,2015,-0.0344054,0.0159844
+722511,mexborn_share,log_estab,,258,1.0585,0.9445,2016,-0.0202869,0.0127612
+722511,mexborn_share,log_estab,,258,1.0585,0.9445,2017,-0.0177083,0.00780632
+722511,mexborn_share,log_estab,,258,1.0585,0.9445,2019,0.00521403,0.00899858
+722511,mexborn_share,log_estab,,258,1.0585,0.9445,2020,0.032195,0.015929
+722511,mexborn_share,log_estab,,258,1.0585,0.9445,2021,0.0454418,0.0149455
+722511,mexborn_share,log_estab,,258,1.0585,0.9445,2022,0.039052,0.0184233
+722511,mexborn_share,log_estab,,258,1.0585,0.9445,2023,0.0420836,0.0200041
+722511,mexborn_share,estab_poisson,,258,1.0585,0.9445,2012,-0.0486925,0.012783
+722511,mexborn_share,estab_poisson,,258,1.0585,0.9445,2013,-0.0426488,0.011628
+722511,mexborn_share,estab_poisson,,258,1.0585,0.9445,2014,-0.0339873,0.0118883
+722511,mexborn_share,estab_poisson,,258,1.0585,0.9445,2015,-0.039647,0.0106883
+722511,mexborn_share,estab_poisson,,258,1.0585,0.9445,2016,-0.0212441,0.00873562
+722511,mexborn_share,estab_poisson,,258,1.0585,0.9445,2017,-0.0129036,0.00663702
+722511,mexborn_share,estab_poisson,,258,1.0585,0.9445,2019,-0.000213385,0.0069005
+722511,mexborn_share,estab_poisson,,258,1.0585,0.9445,2020,0.00865543,0.0103545
+722511,mexborn_share,estab_poisson,,258,1.0585,0.9445,2021,0.0279125,0.0099926
+722511,mexborn_share,estab_poisson,,258,1.0585,0.9445,2022,0.0203719,0.0113008
+722511,mexborn_share,estab_poisson,,258,1.0585,0.9445,2023,0.0215116,0.0126153
+722511,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,1.0585,0.9445,2012,0.123741,0.0593693
+722511,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,1.0585,0.9445,2013,0.133102,0.0596868
+722511,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,1.0585,0.9445,2014,0.13853,0.0591143
+722511,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,1.0585,0.9445,2015,0.171247,0.0616429
+722511,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,1.0585,0.9445,2016,0.163674,0.058395
+722511,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,1.0585,0.9445,2017,-0.027072,0.0540706
+722511,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,1.0585,0.9445,2019,0.0773666,0.0446048
+722511,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,1.0585,0.9445,2020,0.0877729,0.0594821
+722511,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,1.0585,0.9445,2021,0.243172,0.0650941
+722511,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,1.0585,0.9445,2022,0.186742,0.0666597
+722511,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",258,1.0585,0.9445,2023,0.200647,0.067585
+722511,arrests,log_estab,,98,2.3344,1.661,2012,-0.0335168,0.0217918
+722511,arrests,log_estab,,98,2.3344,1.661,2013,-0.0301218,0.0209833
+722511,arrests,log_estab,,98,2.3344,1.661,2014,-0.0423374,0.0227285
+722511,arrests,log_estab,,98,2.3344,1.661,2015,-0.0312846,0.0134481
+722511,arrests,log_estab,,98,2.3344,1.661,2016,-0.0277435,0.0115248
+722511,arrests,log_estab,,98,2.3344,1.661,2017,-0.0138473,0.00715814
+722511,arrests,log_estab,,98,2.3344,1.661,2019,-0.00684717,0.00696965
+722511,arrests,log_estab,,98,2.3344,1.661,2020,-0.00849041,0.00803609
+722511,arrests,log_estab,,98,2.3344,1.661,2021,-0.00388215,0.0101919
+722511,arrests,log_estab,,98,2.3344,1.661,2022,-0.00214733,0.00947788
+722511,arrests,log_estab,,98,2.3344,1.661,2023,0.00307455,0.0120739
+722511,arrests,estab_poisson,,98,2.3344,1.661,2012,-0.023187,0.0161391
+722511,arrests,estab_poisson,,98,2.3344,1.661,2013,-0.0276529,0.0134936
+722511,arrests,estab_poisson,,98,2.3344,1.661,2014,-0.0311708,0.0119237
+722511,arrests,estab_poisson,,98,2.3344,1.661,2015,-0.0247219,0.0105984
+722511,arrests,estab_poisson,,98,2.3344,1.661,2016,-0.0154897,0.0069064
+722511,arrests,estab_poisson,,98,2.3344,1.661,2017,-0.00897185,0.00441302
+722511,arrests,estab_poisson,,98,2.3344,1.661,2019,-0.00252885,0.00612353
+722511,arrests,estab_poisson,,98,2.3344,1.661,2020,-0.00901642,0.00654911
+722511,arrests,estab_poisson,,98,2.3344,1.661,2021,-0.0118978,0.00656667
+722511,arrests,estab_poisson,,98,2.3344,1.661,2022,-0.0132667,0.0072792
+722511,arrests,estab_poisson,,98,2.3344,1.661,2023,-0.00738402,0.00743648
+722511,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3344,1.661,2012,-0.0824447,0.0458378
+722511,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3344,1.661,2013,-0.0415096,0.0504366
+722511,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3344,1.661,2014,-0.051723,0.043235
+722511,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3344,1.661,2015,-0.0383744,0.0446692
+722511,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3344,1.661,2016,-0.0419939,0.0390113
+722511,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3344,1.661,2017,0.0339324,0.0322647
+722511,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3344,1.661,2019,0.0624146,0.0418659
+722511,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3344,1.661,2020,0.0297809,0.0332021
+722511,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3344,1.661,2021,-0.0150257,0.0432005
+722511,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3344,1.661,2022,0.00941327,0.0365063
+722511,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3344,1.661,2023,0.0431767,0.0369941
+722513,hisp_share,log_estab,,262,4.1703,2.588,2012,0.00775848,0.00603198
+722513,hisp_share,log_estab,,262,4.1703,2.588,2013,0.0135241,0.00629803
+722513,hisp_share,log_estab,,262,4.1703,2.588,2014,0.00713697,0.00580272
+722513,hisp_share,log_estab,,262,4.1703,2.588,2015,0.00733832,0.00446035
+722513,hisp_share,log_estab,,262,4.1703,2.588,2016,0.00508728,0.00399491
+722513,hisp_share,log_estab,,262,4.1703,2.588,2017,0.0032575,0.00238699
+722513,hisp_share,log_estab,,262,4.1703,2.588,2019,0.000376133,0.00245489
+722513,hisp_share,log_estab,,262,4.1703,2.588,2020,0.0069997,0.00328018
+722513,hisp_share,log_estab,,262,4.1703,2.588,2021,0.0112717,0.00403669
+722513,hisp_share,log_estab,,262,4.1703,2.588,2022,0.00657048,0.00468699
+722513,hisp_share,log_estab,,262,4.1703,2.588,2023,0.00437981,0.00454792
+722513,hisp_share,estab_poisson,,262,4.1703,2.588,2012,0.00630777,0.00437031
+722513,hisp_share,estab_poisson,,262,4.1703,2.588,2013,0.0114137,0.00420561
+722513,hisp_share,estab_poisson,,262,4.1703,2.588,2014,0.00615637,0.00373319
+722513,hisp_share,estab_poisson,,262,4.1703,2.588,2015,0.00613067,0.00349391
+722513,hisp_share,estab_poisson,,262,4.1703,2.588,2016,0.00521608,0.00300464
+722513,hisp_share,estab_poisson,,262,4.1703,2.588,2017,0.00287892,0.00189155
+722513,hisp_share,estab_poisson,,262,4.1703,2.588,2019,0.00174649,0.00176647
+722513,hisp_share,estab_poisson,,262,4.1703,2.588,2020,0.00861262,0.00269681
+722513,hisp_share,estab_poisson,,262,4.1703,2.588,2021,0.0100379,0.00303717
+722513,hisp_share,estab_poisson,,262,4.1703,2.588,2022,0.00766847,0.0037244
+722513,hisp_share,estab_poisson,,262,4.1703,2.588,2023,0.00565582,0.00390844
+722513,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,4.1703,2.588,2012,-0.0277226,0.017208
+722513,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,4.1703,2.588,2013,-0.0298134,0.0182015
+722513,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,4.1703,2.588,2014,-0.0333053,0.017509
+722513,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,4.1703,2.588,2015,-0.0397186,0.0172273
+722513,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,4.1703,2.588,2016,-0.0467256,0.0182992
+722513,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,4.1703,2.588,2017,-0.0147127,0.0104553
+722513,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,4.1703,2.588,2019,-0.0156982,0.0134569
+722513,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,4.1703,2.588,2020,-0.00301807,0.0185121
+722513,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,4.1703,2.588,2021,0.0310849,0.0159747
+722513,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,4.1703,2.588,2022,0.00312546,0.0156433
+722513,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,4.1703,2.588,2023,-0.0184339,0.0177967
+722513,mexborn_share,log_estab,,262,1.0793,0.9445,2012,0.0262939,0.0149769
+722513,mexborn_share,log_estab,,262,1.0793,0.9445,2013,0.0429853,0.0158634
+722513,mexborn_share,log_estab,,262,1.0793,0.9445,2014,0.0251481,0.0142263
+722513,mexborn_share,log_estab,,262,1.0793,0.9445,2015,0.0284279,0.0112221
+722513,mexborn_share,log_estab,,262,1.0793,0.9445,2016,0.0212104,0.00972243
+722513,mexborn_share,log_estab,,262,1.0793,0.9445,2017,0.0135219,0.00606122
+722513,mexborn_share,log_estab,,262,1.0793,0.9445,2019,0.00409354,0.00645926
+722513,mexborn_share,log_estab,,262,1.0793,0.9445,2020,0.022167,0.00894644
+722513,mexborn_share,log_estab,,262,1.0793,0.9445,2021,0.0304538,0.0112853
+722513,mexborn_share,log_estab,,262,1.0793,0.9445,2022,0.0175875,0.0122595
+722513,mexborn_share,log_estab,,262,1.0793,0.9445,2023,0.00854662,0.0123404
+722513,mexborn_share,estab_poisson,,262,1.0793,0.9445,2012,0.0203358,0.0110279
+722513,mexborn_share,estab_poisson,,262,1.0793,0.9445,2013,0.0337771,0.0106148
+722513,mexborn_share,estab_poisson,,262,1.0793,0.9445,2014,0.01992,0.0093686
+722513,mexborn_share,estab_poisson,,262,1.0793,0.9445,2015,0.0216064,0.00879628
+722513,mexborn_share,estab_poisson,,262,1.0793,0.9445,2016,0.0182698,0.00730285
+722513,mexborn_share,estab_poisson,,262,1.0793,0.9445,2017,0.0111667,0.0046584
+722513,mexborn_share,estab_poisson,,262,1.0793,0.9445,2019,0.00639129,0.00460759
+722513,mexborn_share,estab_poisson,,262,1.0793,0.9445,2020,0.0247118,0.00692899
+722513,mexborn_share,estab_poisson,,262,1.0793,0.9445,2021,0.0242311,0.00811246
+722513,mexborn_share,estab_poisson,,262,1.0793,0.9445,2022,0.0180798,0.00957951
+722513,mexborn_share,estab_poisson,,262,1.0793,0.9445,2023,0.0102035,0.0103142
+722513,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,1.0793,0.9445,2012,-0.0671347,0.0425359
+722513,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,1.0793,0.9445,2013,-0.0651638,0.0450594
+722513,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,1.0793,0.9445,2014,-0.0775366,0.0430562
+722513,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,1.0793,0.9445,2015,-0.0887845,0.0422289
+722513,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,1.0793,0.9445,2016,-0.110743,0.0443688
+722513,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,1.0793,0.9445,2017,-0.0412654,0.0262795
+722513,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,1.0793,0.9445,2019,-0.0379186,0.0336464
+722513,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,1.0793,0.9445,2020,-0.00571878,0.044997
+722513,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,1.0793,0.9445,2021,0.0768931,0.0390913
+722513,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,1.0793,0.9445,2022,0.003721,0.0364827
+722513,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",262,1.0793,0.9445,2023,-0.0421246,0.0447469
+722513,arrests,log_estab,,98,2.3621,1.6442,2012,0.00753657,0.0105231
+722513,arrests,log_estab,,98,2.3621,1.6442,2013,0.00841206,0.0105668
+722513,arrests,log_estab,,98,2.3621,1.6442,2014,0.00873517,0.00966806
+722513,arrests,log_estab,,98,2.3621,1.6442,2015,0.00737926,0.00846046
+722513,arrests,log_estab,,98,2.3621,1.6442,2016,-0.00268255,0.00746492
+722513,arrests,log_estab,,98,2.3621,1.6442,2017,0.0080311,0.00423949
+722513,arrests,log_estab,,98,2.3621,1.6442,2019,0.00172708,0.00483053
+722513,arrests,log_estab,,98,2.3621,1.6442,2020,0.00439449,0.00758703
+722513,arrests,log_estab,,98,2.3621,1.6442,2021,-0.00871438,0.00927395
+722513,arrests,log_estab,,98,2.3621,1.6442,2022,-0.0014021,0.0103125
+722513,arrests,log_estab,,98,2.3621,1.6442,2023,0.000969683,0.0119964
+722513,arrests,estab_poisson,,98,2.3621,1.6442,2012,0.00626076,0.00969729
+722513,arrests,estab_poisson,,98,2.3621,1.6442,2013,0.0132474,0.00956079
+722513,arrests,estab_poisson,,98,2.3621,1.6442,2014,0.00937282,0.00818363
+722513,arrests,estab_poisson,,98,2.3621,1.6442,2015,0.00691766,0.00678159
+722513,arrests,estab_poisson,,98,2.3621,1.6442,2016,0.00174982,0.00604593
+722513,arrests,estab_poisson,,98,2.3621,1.6442,2017,0.00418392,0.00384568
+722513,arrests,estab_poisson,,98,2.3621,1.6442,2019,0.000290939,0.00391894
+722513,arrests,estab_poisson,,98,2.3621,1.6442,2020,0.00412893,0.00630123
+722513,arrests,estab_poisson,,98,2.3621,1.6442,2021,-0.0132891,0.00855883
+722513,arrests,estab_poisson,,98,2.3621,1.6442,2022,-0.00765018,0.00906102
+722513,arrests,estab_poisson,,98,2.3621,1.6442,2023,-0.00809861,0.0107205
+722513,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3621,1.6442,2012,-0.0522362,0.0392052
+722513,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3621,1.6442,2013,-0.0657099,0.0463324
+722513,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3621,1.6442,2014,-0.0704425,0.0467514
+722513,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3621,1.6442,2015,-0.0562904,0.0395944
+722513,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3621,1.6442,2016,-0.0724604,0.0458329
+722513,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3621,1.6442,2017,-0.0458114,0.038163
+722513,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3621,1.6442,2019,-0.0570294,0.0373194
+722513,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3621,1.6442,2020,-0.020734,0.0380483
+722513,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3621,1.6442,2021,-0.0303143,0.023971
+722513,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3621,1.6442,2022,-0.0578937,0.0363919
+722513,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",98,2.3621,1.6442,2023,-0.0501275,0.0419783
+722,hisp_share,log_estab,,271,4.1013,2.5935,2012,-0.00125616,0.00431594
+722,hisp_share,log_estab,,271,4.1013,2.5935,2013,0.000184319,0.00463292
+722,hisp_share,log_estab,,271,4.1013,2.5935,2014,-0.00305557,0.00394367
+722,hisp_share,log_estab,,271,4.1013,2.5935,2015,-0.000330304,0.00450877
+722,hisp_share,log_estab,,271,4.1013,2.5935,2016,-0.000515902,0.00284174
+722,hisp_share,log_estab,,271,4.1013,2.5935,2017,-0.00134603,0.00249436
+722,hisp_share,log_estab,,271,4.1013,2.5935,2019,-0.000689081,0.00169352
+722,hisp_share,log_estab,,271,4.1013,2.5935,2020,0.0057264,0.00271643
+722,hisp_share,log_estab,,271,4.1013,2.5935,2021,0.0120367,0.00334244
+722,hisp_share,log_estab,,271,4.1013,2.5935,2022,0.0107173,0.00390606
+722,hisp_share,log_estab,,271,4.1013,2.5935,2023,0.012021,0.00350331
+722,hisp_share,estab_poisson,,271,4.1013,2.5935,2012,-0.00316381,0.00293471
+722,hisp_share,estab_poisson,,271,4.1013,2.5935,2013,-0.0019755,0.00284343
+722,hisp_share,estab_poisson,,271,4.1013,2.5935,2014,-0.00441648,0.00252951
+722,hisp_share,estab_poisson,,271,4.1013,2.5935,2015,-0.00511157,0.00213609
+722,hisp_share,estab_poisson,,271,4.1013,2.5935,2016,-0.00254989,0.00187178
+722,hisp_share,estab_poisson,,271,4.1013,2.5935,2017,-0.00241945,0.00139164
+722,hisp_share,estab_poisson,,271,4.1013,2.5935,2019,0.000409666,0.00127812
+722,hisp_share,estab_poisson,,271,4.1013,2.5935,2020,0.00382809,0.0017355
+722,hisp_share,estab_poisson,,271,4.1013,2.5935,2021,0.010766,0.00203599
+722,hisp_share,estab_poisson,,271,4.1013,2.5935,2022,0.0107372,0.00241324
+722,hisp_share,estab_poisson,,271,4.1013,2.5935,2023,0.0109366,0.00247396
+722,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,4.1013,2.5935,2012,-0.00434175,0.0136211
+722,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,4.1013,2.5935,2013,-0.00768638,0.0133961
+722,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,4.1013,2.5935,2014,-0.0134719,0.0132762
+722,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,4.1013,2.5935,2015,-0.0194281,0.0135139
+722,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,4.1013,2.5935,2016,-0.0170136,0.0125583
+722,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,4.1013,2.5935,2017,0.0035707,0.00940211
+722,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,4.1013,2.5935,2019,0.00545397,0.00742099
+722,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,4.1013,2.5935,2020,0.0153213,0.00768676
+722,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,4.1013,2.5935,2021,0.0425027,0.012703
+722,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,4.1013,2.5935,2022,0.0208545,0.0101274
+722,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,4.1013,2.5935,2023,0.0186875,0.00831591
+722,mexborn_share,log_estab,,271,1.0539,0.9442,2012,0.00102425,0.0110358
+722,mexborn_share,log_estab,,271,1.0539,0.9442,2013,0.00854169,0.0126585
+722,mexborn_share,log_estab,,271,1.0539,0.9442,2014,0.00117427,0.0109381
+722,mexborn_share,log_estab,,271,1.0539,0.9442,2015,0.00811777,0.0124702
+722,mexborn_share,log_estab,,271,1.0539,0.9442,2016,0.00509925,0.00882385
+722,mexborn_share,log_estab,,271,1.0539,0.9442,2017,-0.00153411,0.00673644
+722,mexborn_share,log_estab,,271,1.0539,0.9442,2019,0.000845867,0.00447935
+722,mexborn_share,log_estab,,271,1.0539,0.9442,2020,0.0189023,0.00702789
+722,mexborn_share,log_estab,,271,1.0539,0.9442,2021,0.0318599,0.00913747
+722,mexborn_share,log_estab,,271,1.0539,0.9442,2022,0.0266624,0.0103633
+722,mexborn_share,log_estab,,271,1.0539,0.9442,2023,0.0305335,0.00980889
+722,mexborn_share,estab_poisson,,271,1.0539,0.9442,2012,-0.00636752,0.00742018
+722,mexborn_share,estab_poisson,,271,1.0539,0.9442,2013,-0.00247646,0.00712974
+722,mexborn_share,estab_poisson,,271,1.0539,0.9442,2014,-0.0074871,0.0062717
+722,mexborn_share,estab_poisson,,271,1.0539,0.9442,2015,-0.00914591,0.00564654
+722,mexborn_share,estab_poisson,,271,1.0539,0.9442,2016,-0.00393809,0.00496476
+722,mexborn_share,estab_poisson,,271,1.0539,0.9442,2017,-0.00482162,0.0038604
+722,mexborn_share,estab_poisson,,271,1.0539,0.9442,2019,0.00165056,0.00344589
+722,mexborn_share,estab_poisson,,271,1.0539,0.9442,2020,0.0123999,0.00459814
+722,mexborn_share,estab_poisson,,271,1.0539,0.9442,2021,0.0287611,0.00566012
+722,mexborn_share,estab_poisson,,271,1.0539,0.9442,2022,0.0274179,0.00669392
+722,mexborn_share,estab_poisson,,271,1.0539,0.9442,2023,0.0277442,0.00714248
+722,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,1.0539,0.9442,2012,-0.0155512,0.0349287
+722,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,1.0539,0.9442,2013,-0.0124522,0.0345822
+722,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,1.0539,0.9442,2014,-0.0266953,0.0340043
+722,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,1.0539,0.9442,2015,-0.0410496,0.0350644
+722,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,1.0539,0.9442,2016,-0.039355,0.0330958
+722,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,1.0539,0.9442,2017,0.00112911,0.025579
+722,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,1.0539,0.9442,2019,0.0236399,0.0229521
+722,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,1.0539,0.9442,2020,0.0475714,0.0254011
+722,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,1.0539,0.9442,2021,0.107461,0.0318149
+722,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,1.0539,0.9442,2022,0.0467131,0.0244607
+722,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",271,1.0539,0.9442,2023,0.0484025,0.0207426
+722,arrests,log_estab,,102,2.287,1.6612,2012,0.00476266,0.0119647
+722,arrests,log_estab,,102,2.287,1.6612,2013,0.0151509,0.0152687
+722,arrests,log_estab,,102,2.287,1.6612,2014,0.0134871,0.0150005
+722,arrests,log_estab,,102,2.287,1.6612,2015,0.010298,0.0130611
+722,arrests,log_estab,,102,2.287,1.6612,2016,0.00373741,0.0117416
+722,arrests,log_estab,,102,2.287,1.6612,2017,-0.000986789,0.00380655
+722,arrests,log_estab,,102,2.287,1.6612,2019,0.00593529,0.00432553
+722,arrests,log_estab,,102,2.287,1.6612,2020,0.00701122,0.00527095
+722,arrests,log_estab,,102,2.287,1.6612,2021,-0.00231827,0.00810452
+722,arrests,log_estab,,102,2.287,1.6612,2022,0.000250759,0.00775619
+722,arrests,log_estab,,102,2.287,1.6612,2023,0.00253985,0.00847459
+722,arrests,estab_poisson,,102,2.287,1.6612,2012,-0.00715008,0.00690862
+722,arrests,estab_poisson,,102,2.287,1.6612,2013,-0.00475584,0.00673802
+722,arrests,estab_poisson,,102,2.287,1.6612,2014,-0.00624482,0.00628265
+722,arrests,estab_poisson,,102,2.287,1.6612,2015,-0.00801073,0.0055566
+722,arrests,estab_poisson,,102,2.287,1.6612,2016,-0.00763295,0.00366132
+722,arrests,estab_poisson,,102,2.287,1.6612,2017,-0.00272263,0.00240398
+722,arrests,estab_poisson,,102,2.287,1.6612,2019,0.00146873,0.00313331
+722,arrests,estab_poisson,,102,2.287,1.6612,2020,0.000802119,0.00450259
+722,arrests,estab_poisson,,102,2.287,1.6612,2021,-0.00279191,0.00468994
+722,arrests,estab_poisson,,102,2.287,1.6612,2022,-0.00291298,0.00488982
+722,arrests,estab_poisson,,102,2.287,1.6612,2023,0.001111,0.00622018
+722,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",102,2.287,1.6612,2012,0.000767405,0.0214033
+722,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",102,2.287,1.6612,2013,0.0108394,0.0240408
+722,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",102,2.287,1.6612,2014,0.0104036,0.0231328
+722,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",102,2.287,1.6612,2015,0.0149556,0.0224775
+722,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",102,2.287,1.6612,2016,0.00823977,0.0192326
+722,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",102,2.287,1.6612,2017,0.0274117,0.015312
+722,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",102,2.287,1.6612,2019,0.047598,0.0349621
+722,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",102,2.287,1.6612,2020,0.045268,0.0360371
+722,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",102,2.287,1.6612,2021,0.0178614,0.019127
+722,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",102,2.287,1.6612,2022,0.00549185,0.0163054
+722,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",102,2.287,1.6612,2023,0.0204869,0.0193727
+445110,hisp_share,log_estab,,214,4.4319,2.6104,2012,0.0134427,0.00742352
+445110,hisp_share,log_estab,,214,4.4319,2.6104,2013,0.00679212,0.00734935
+445110,hisp_share,log_estab,,214,4.4319,2.6104,2014,0.00127281,0.007213
+445110,hisp_share,log_estab,,214,4.4319,2.6104,2015,-0.00192576,0.00757125
+445110,hisp_share,log_estab,,214,4.4319,2.6104,2016,0.00694187,0.00561347
+445110,hisp_share,log_estab,,214,4.4319,2.6104,2017,0.0029131,0.00318548
+445110,hisp_share,log_estab,,214,4.4319,2.6104,2019,-0.00257902,0.00339458
+445110,hisp_share,log_estab,,214,4.4319,2.6104,2020,-0.00499212,0.00401824
+445110,hisp_share,log_estab,,214,4.4319,2.6104,2021,-0.00700997,0.00541131
+445110,hisp_share,log_estab,,214,4.4319,2.6104,2022,-0.0110646,0.00628866
+445110,hisp_share,log_estab,,214,4.4319,2.6104,2023,-0.0118476,0.00751684
+445110,hisp_share,estab_poisson,,214,4.4319,2.6104,2012,0.0122148,0.00733322
+445110,hisp_share,estab_poisson,,214,4.4319,2.6104,2013,0.00610927,0.00739736
+445110,hisp_share,estab_poisson,,214,4.4319,2.6104,2014,0.0019712,0.00636316
+445110,hisp_share,estab_poisson,,214,4.4319,2.6104,2015,-0.00088728,0.00603653
+445110,hisp_share,estab_poisson,,214,4.4319,2.6104,2016,0.00688029,0.00483398
+445110,hisp_share,estab_poisson,,214,4.4319,2.6104,2017,0.00196845,0.00327556
+445110,hisp_share,estab_poisson,,214,4.4319,2.6104,2019,-0.00172546,0.00348366
+445110,hisp_share,estab_poisson,,214,4.4319,2.6104,2020,-0.00817164,0.00381208
+445110,hisp_share,estab_poisson,,214,4.4319,2.6104,2021,-0.00809473,0.00499554
+445110,hisp_share,estab_poisson,,214,4.4319,2.6104,2022,-0.0126004,0.00562797
+445110,hisp_share,estab_poisson,,214,4.4319,2.6104,2023,-0.0119211,0.00647615
+445110,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,4.4319,2.6104,2012,-0.0921092,0.056832
+445110,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,4.4319,2.6104,2013,-0.0914783,0.055813
+445110,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,4.4319,2.6104,2014,-0.0955382,0.055914
+445110,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,4.4319,2.6104,2015,-0.0880498,0.0558691
+445110,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,4.4319,2.6104,2016,-0.0858515,0.0559282
+445110,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,4.4319,2.6104,2017,-0.0176597,0.044093
+445110,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,4.4319,2.6104,2019,-0.104967,0.04711
+445110,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,4.4319,2.6104,2020,-0.0378053,0.0469626
+445110,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,4.4319,2.6104,2021,-0.119324,0.0532969
+445110,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,4.4319,2.6104,2022,-0.10396,0.0510165
+445110,hisp_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,4.4319,2.6104,2023,-0.139421,0.0542541
+445110,mexborn_share,log_estab,,214,1.1779,0.9702,2012,0.0411265,0.0207178
+445110,mexborn_share,log_estab,,214,1.1779,0.9702,2013,0.0244619,0.0199592
+445110,mexborn_share,log_estab,,214,1.1779,0.9702,2014,0.0161958,0.0186534
+445110,mexborn_share,log_estab,,214,1.1779,0.9702,2015,0.0100665,0.0180039
+445110,mexborn_share,log_estab,,214,1.1779,0.9702,2016,0.0268579,0.0140171
+445110,mexborn_share,log_estab,,214,1.1779,0.9702,2017,0.00885447,0.00862047
+445110,mexborn_share,log_estab,,214,1.1779,0.9702,2019,-0.00779753,0.00897336
+445110,mexborn_share,log_estab,,214,1.1779,0.9702,2020,-0.0140097,0.0107491
+445110,mexborn_share,log_estab,,214,1.1779,0.9702,2021,-0.0272973,0.0136665
+445110,mexborn_share,log_estab,,214,1.1779,0.9702,2022,-0.0339237,0.016511
+445110,mexborn_share,log_estab,,214,1.1779,0.9702,2023,-0.0357283,0.0194573
+445110,mexborn_share,estab_poisson,,214,1.1779,0.9702,2012,0.028765,0.0204093
+445110,mexborn_share,estab_poisson,,214,1.1779,0.9702,2013,0.0143642,0.0204514
+445110,mexborn_share,estab_poisson,,214,1.1779,0.9702,2014,0.00895064,0.0172323
+445110,mexborn_share,estab_poisson,,214,1.1779,0.9702,2015,0.00208297,0.0160179
+445110,mexborn_share,estab_poisson,,214,1.1779,0.9702,2016,0.0201624,0.0127811
+445110,mexborn_share,estab_poisson,,214,1.1779,0.9702,2017,0.00461526,0.00871784
+445110,mexborn_share,estab_poisson,,214,1.1779,0.9702,2019,-0.00596621,0.00902864
+445110,mexborn_share,estab_poisson,,214,1.1779,0.9702,2020,-0.0221848,0.00967008
+445110,mexborn_share,estab_poisson,,214,1.1779,0.9702,2021,-0.0293789,0.0129007
+445110,mexborn_share,estab_poisson,,214,1.1779,0.9702,2022,-0.0363614,0.015427
+445110,mexborn_share,estab_poisson,,214,1.1779,0.9702,2023,-0.0371314,0.0170112
+445110,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,1.1779,0.9702,2012,-0.264803,0.143282
+445110,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,1.1779,0.9702,2013,-0.259607,0.141848
+445110,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,1.1779,0.9702,2014,-0.276424,0.142078
+445110,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,1.1779,0.9702,2015,-0.247628,0.141949
+445110,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,1.1779,0.9702,2016,-0.248956,0.14117
+445110,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,1.1779,0.9702,2017,-0.0638252,0.109273
+445110,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,1.1779,0.9702,2019,-0.262609,0.120295
+445110,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,1.1779,0.9702,2020,-0.0809239,0.124903
+445110,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,1.1779,0.9702,2021,-0.298352,0.141452
+445110,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,1.1779,0.9702,2022,-0.228546,0.132344
+445110,mexborn_share,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",214,1.1779,0.9702,2023,-0.341501,0.146687
+445110,arrests,log_estab,,81,2.3849,1.6209,2012,0.0307692,0.0206205
+445110,arrests,log_estab,,81,2.3849,1.6209,2013,0.0206129,0.0199555
+445110,arrests,log_estab,,81,2.3849,1.6209,2014,0.0256775,0.0195959
+445110,arrests,log_estab,,81,2.3849,1.6209,2015,0.00898269,0.0185157
+445110,arrests,log_estab,,81,2.3849,1.6209,2016,0.0156272,0.01439
+445110,arrests,log_estab,,81,2.3849,1.6209,2017,0.00346703,0.00789659
+445110,arrests,log_estab,,81,2.3849,1.6209,2019,-0.00903655,0.00882972
+445110,arrests,log_estab,,81,2.3849,1.6209,2020,-0.00260229,0.0157808
+445110,arrests,log_estab,,81,2.3849,1.6209,2021,-0.00108894,0.0156113
+445110,arrests,log_estab,,81,2.3849,1.6209,2022,-0.0185362,0.016132
+445110,arrests,log_estab,,81,2.3849,1.6209,2023,-0.00195847,0.0213449
+445110,arrests,estab_poisson,,81,2.3849,1.6209,2012,0.0377988,0.0173838
+445110,arrests,estab_poisson,,81,2.3849,1.6209,2013,0.0274826,0.0167641
+445110,arrests,estab_poisson,,81,2.3849,1.6209,2014,0.024602,0.0162524
+445110,arrests,estab_poisson,,81,2.3849,1.6209,2015,0.0154787,0.0141547
+445110,arrests,estab_poisson,,81,2.3849,1.6209,2016,0.0194332,0.0103359
+445110,arrests,estab_poisson,,81,2.3849,1.6209,2017,0.00367977,0.00856948
+445110,arrests,estab_poisson,,81,2.3849,1.6209,2019,-0.00141552,0.00660248
+445110,arrests,estab_poisson,,81,2.3849,1.6209,2020,-0.00260413,0.012933
+445110,arrests,estab_poisson,,81,2.3849,1.6209,2021,-0.00272658,0.0159045
+445110,arrests,estab_poisson,,81,2.3849,1.6209,2022,-0.0203259,0.0163535
+445110,arrests,estab_poisson,,81,2.3849,1.6209,2023,-0.00293734,0.0222785
+445110,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",81,2.3849,1.6209,2012,-0.217277,0.143593
+445110,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",81,2.3849,1.6209,2013,-0.237864,0.14128
+445110,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",81,2.3849,1.6209,2014,-0.230045,0.143933
+445110,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",81,2.3849,1.6209,2015,-0.235945,0.139477
+445110,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",81,2.3849,1.6209,2016,-0.248148,0.139326
+445110,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",81,2.3849,1.6209,2017,-0.0354109,0.12692
+445110,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",81,2.3849,1.6209,2019,-0.300614,0.13031
+445110,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",81,2.3849,1.6209,2020,0.0283384,0.118028
+445110,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",81,2.3849,1.6209,2021,-0.326353,0.13832
+445110,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",81,2.3849,1.6209,2022,-0.204999,0.123881
+445110,arrests,log_emp_index,"invalid: from 2017 ZBP omits suppressed size classes, so the index breaks",81,2.3849,1.6209,2023,-0.179698,0.157657
