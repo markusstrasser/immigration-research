@@ -133,12 +133,6 @@
      "shared": -6.58598998586517
     }
    },
-   "medicare": {
-    "medicare": {
-     "personal": 0.09961544615646596,
-     "shared": 0.2544046995574647
-    }
-   },
    "unemployment": {
     "unemployment": {
      "personal": -0.38493088852779445,
@@ -467,12 +461,6 @@
     "social_security": {
      "personal": -5.935023642125694,
      "shared": -6.906399762191428
-    }
-   },
-   "medicare": {
-    "medicare": {
-     "personal": -0.6345606466453544,
-     "shared": -0.2533561910697741
     }
    },
    "unemployment": {
@@ -805,12 +793,6 @@
      "shared": -6.58598998586517
     }
    },
-   "medicare": {
-    "medicare": {
-     "personal": 0.09961544615646596,
-     "shared": 0.2544046995574647
-    }
-   },
    "unemployment": {
     "unemployment": {
      "personal": -0.38493088852779445,
@@ -1141,12 +1123,6 @@
      "shared": -6.58598998586517
     }
    },
-   "medicare": {
-    "medicare": {
-     "personal": 0.09961544615646596,
-     "shared": 0.2544046995574647
-    }
-   },
    "unemployment": {
     "unemployment": {
      "personal": -0.38493088852779445,
@@ -1354,8 +1330,7 @@
     "shared": -0.8272195606616596
    },
    "personal_motor_vehicle": {
-    "personal": 0.0,
-    "shared": 0.0
+    "personal": 0.0
    },
    "personal_property_tax": {
     "personal": -0.06199826572447403,
@@ -1539,10 +1514,6 @@
     "age65plus": {
      "personal": -7.573056887200457e-15,
      "shared": -7.573056887200457e-15
-    },
-    "medicare": {
-     "personal": -0.24046023897944763,
-     "shared": -0.4042018670863065
     }
    },
    "unemployment": {
@@ -1832,8 +1803,7 @@
     "shared": 0.16001423553871394
    },
    "personal_motor_vehicle": {
-    "personal": 0.0,
-    "shared": 0.0
+    "personal": 0.0
    },
    "personal_property_tax": {
     "personal": 0.011606242253750853,
@@ -2017,10 +1987,6 @@
     "age65plus": {
      "personal": -7.573056887200457e-15,
      "shared": -7.573056887200457e-15
-    },
-    "medicare": {
-     "personal": 0.999413367465603,
-     "shared": 0.796229813856237
     }
    },
    "unemployment": {
@@ -2310,8 +2276,7 @@
     "shared": -0.9817758495286818
    },
    "personal_motor_vehicle": {
-    "personal": 0.0,
-    "shared": 0.0
+    "personal": 0.0
    },
    "personal_property_tax": {
     "personal": -0.07155057616165558,
@@ -2495,10 +2460,6 @@
     "age65plus": {
      "personal": 0.0,
      "shared": 0.0
-    },
-    "medicare": {
-     "personal": -1.2181213917665887,
-     "shared": -1.1844710076615823
     }
    },
    "unemployment": {
@@ -2788,8 +2749,7 @@
     "shared": -0.7143193925023532
    },
    "personal_motor_vehicle": {
-    "personal": 0.0,
-    "shared": 0.0
+    "personal": 0.0
    },
    "personal_property_tax": {
     "personal": -0.08946527570604385,
@@ -2973,10 +2933,6 @@
     "age65plus": {
      "personal": 0.0,
      "shared": 0.0
-    },
-    "medicare": {
-     "personal": -0.3606035473026281,
-     "shared": -0.3849568965805572
     }
    },
    "unemployment": {
@@ -3266,8 +3222,7 @@
     "shared": -1.1665382139275946
    },
    "personal_motor_vehicle": {
-    "personal": 0.0,
-    "shared": 0.0
+    "personal": 0.0
    },
    "personal_property_tax": {
     "personal": -0.11673915848240836,
@@ -3451,10 +3406,6 @@
     "age65plus": {
      "personal": 0.0,
      "shared": 0.0
-    },
-    "medicare": {
-     "personal": -1.220367971636851,
-     "shared": -1.2716595883952357
     }
    },
    "unemployment": {
