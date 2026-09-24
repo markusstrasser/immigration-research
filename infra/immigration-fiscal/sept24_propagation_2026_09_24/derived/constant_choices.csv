@@ -1,0 +1,13 @@
+end,convention,item,amount_bn,federal_this_lane_bn,federal_ledger_lane_bn,federal_difference_bn,share_this_lane,share_ledger_lane,basis
+low,central,row 8,2.000000,0.028538,0.000000,0.028538,0.014269,0.000000,grant share of state-local general government vs 0
+low,central,row 10,-1.500000,-1.005502,-1.005502,-0.000000,0.670335,0.670334,other_state_welfare fraction vs family_and_general_assistance fraction
+low,low,row 8,2.000000,0.000000,0.000000,0.000000,0.000000,0.000000,grant share of state-local general government vs 0
+low,low,row 10,-1.500000,-0.674451,-0.674451,-0.000000,0.449634,0.449634,other_state_welfare fraction vs family_and_general_assistance fraction
+low,high,row 8,2.000000,0.028538,0.000000,0.028538,0.014269,0.000000,grant share of state-local general government vs 0
+low,high,row 10,-1.500000,-1.005502,-1.005502,-0.000000,0.670335,0.670334,other_state_welfare fraction vs family_and_general_assistance fraction
+high,central,row 8,2.000000,0.028538,0.000000,0.028538,0.014269,0.000000,grant share of state-local general government vs 0
+high,central,row 10,-1.500000,-1.005502,-1.005502,-0.000000,0.670335,0.670334,other_state_welfare fraction vs family_and_general_assistance fraction
+high,low,row 8,2.000000,0.000000,0.000000,0.000000,0.000000,0.000000,grant share of state-local general government vs 0
+high,low,row 10,-1.500000,-0.674451,-0.674451,-0.000000,0.449634,0.449634,other_state_welfare fraction vs family_and_general_assistance fraction
+high,high,row 8,2.000000,0.028538,0.000000,0.028538,0.014269,0.000000,grant share of state-local general government vs 0
+high,high,row 10,-1.500000,-1.005502,-1.005502,-0.000000,0.670335,0.670334,other_state_welfare fraction vs family_and_general_assistance fraction

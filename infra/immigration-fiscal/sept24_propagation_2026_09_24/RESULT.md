@@ -1,0 +1,381 @@
+**Verdict:** Every computation that still read an old main case now has a run on the adopted September 24 case ($200.9–246.3bn). The debt legacy and distribution lanes switched their defaults. Their old results stay behind `--case sept23`, which reproduces the committed files byte for byte. The uncertainty lane adds `--case sept24` and leaves its September 20 files unchanged. No sign or conclusion changes:
+
+- **Debt legacy.** The 2024 interest falls from $30.5–38.9bn to **$28.3–36.4bn**, because the corrections move cost from federal to state-local budgets. The federal share of the gap falls from 19.0–23.4% to 15.9–21.1%.
+- **Real costs.** On the adopted justice footing the total moves from $256–307bn to **$253–304bn**.
+- **Distribution.** The fiscal channel moves from $227.9bn to **$225.1bn**.
+- **Sampling error.** The per-case SE is **$10.8–10.9bn** and the 95% union is **$180–268bn**. This SE is a floor: most corrections carry their error as ranges, not SEs.
+
+The lifetime anchors read no main case, so they had nothing to switch. The parent still edits the memos, the ladder, INDEX, the explorer context and one figures-page gate (see "For the parent"). Nothing is committed.
+
+Date: 2026-09-24, finished after midnight (lane worker "propagate"). Status: [CALCULATION] unless marked. Model: claude-opus-5-5[1m] (Opus 5.5, 1M context).
+
+## What still read the September 23 case
+
+`inventory.py` writes `derived/inventory.csv`: 807 rows over 451 files. It searches infra/ and research/ with `rg --no-ignore` for the brief's eight tokens, plus 32 strings computed on the September 23 case. Three live computations read an old case:
+
+- `debt_legacy.py` read September 23;
+- `distribute.py` read September 23;
+- `propagate.py` read September 20 ($165.1–197.4bn) and carries no Sept 23 token.
+
+The real-costs totals are hand sums in the memo. The other hits fall into three groups:
+
+- correctly dated historical text;
+- frame inputs measured on the September 23 frame by design (package.cjs gates each one);
+- coincidental numbers.
+
+The main case RESULT lists "the ten-year and lifetime anchors" as not re-run:
+
+- **Ten-year.** This is the back-cast's ten-year total. Its whole-budget rules moved in da2b107 ($1.7–2.4tn). Its programme-by-programme version was never re-run (INDEX line 233). The debt legacy runs that version (its control reproduces the back-cast lane to 5e-5). On the adopted anchor, 2015–2024 comes to **$1.95–2.33tn** ($2.19–2.56tn income-adjusted; was $2.02–2.42tn).
+- **Lifetime.** These are the period-profile NPVs of the Sept 19 generation ledger (`ledger_absolute_2026_09_17/lifetime.py`). That object never reads a main case, so there is nothing to switch. It sits behind the fingerprint guard and was not run.
+
+## Debt legacy (ladder 207)
+
+`debt_legacy.py` now defaults to `--case sept24`. It applies `corrections.json` to the model with a port of `engine.js` `applyCorrections`. It then splits every correction into federal and state-local parts by the government level of the line it edits, with the shares the lane already uses for that line. The lane constants take these shares:
+
+- row 8: the federal-grant share of state-local general public services (zero under the low convention);
+- row 9: Medicare and Medicaid;
+- row 10: other state welfare (BEA 3.12 line 39, where foster care sits);
+- small items: the corner's federal share;
+- shelter: the shelter lane's mapping-A parts;
+- care: by channel (hours taxes at the labour share, elder care at Medicaid's).
+
+`export_package.cjs` rebuilds the package component by component (348 cells). It gates that the components sum to `corrections.json` in every cell.
+
+Gates:
+
+- The corrected model reproduces $200.8752–246.3184bn at every corner, and the uncorrected one $203.2070–249.6400bn (1e-6).
+- Federal plus state-local equals every correction (1e-12).
+- The corrections' parts add to the change in the whole split (1e-9).
+- `--case sept23 --out-dir <dir>` reproduces the 10 committed files byte for byte, and a Sept 24 rerun is byte-identical.
+
+The corrections cut the gap by $2.3–3.3bn but its federal part by $6.6bn. Premium credits (−$14.2bn) and the medical ratios (−$16.8bn) are almost all federal. The tax stack (+$21.2bn) is 81% federal. So less of the gap is borrowed. [CALCULATION: `debt_legacy_2026_09_23/derived/corrections_federal_by_component_2024.csv`, high end, central convention]
+
+`test_debt_legacy.py` makes the `--case sept23` reproduction a permanent gate. It rebuilds the Sept 23 run into a temporary directory and compares every file with the one committed at 96a5c3b (the last commit whose `derived/` held that run). That pin still works after the Sept 24 files are committed. The distribution lane has the same test (`test_distribute.py`, pinned at 5b8957e). Both pass.
+
+### Rows 8 and 10: the two constant splits that differ from the ledger lane
+
+The ledger lane now reads `corrections_federal_split_2024.csv` as the single definition, so these two choices are the ones that carry over. `constant_choices.py` evaluates both lanes' choices on the same Sept 24 split. It then re-runs `debt_legacy.py` with each of the ledger lane's choices in turn (its `constant_parts()` wrapped, nothing edited) to size the effect on the legacy stock. Gate: each re-run moves the 2024 federal part by exactly the direct difference.
+
+- **Row 8** (+$2.0bn, unallocable state-local general public services, audit spending.md #7). This is state-local spending. The only federal money in state-local general government is federal grants, so the federal part is the grant share of state-local general-government spending: federal grants for that function over state-local consumption plus benefits in it, 1.43% in 2024. The low payer convention counts grant-financed spending as state-local, so it gives 0. The ledger lane's 0 applies the low convention's rule to all three conventions.
+- **Row 10** (−$1.5bn, foster care and adoption keyed by WIC, audit spending.md #9). The audit re-keys dollars inside BEA Table 3.12 line 39, "Other" state welfare. Its footnote 11 lists WIC food, foster care, adoption assistance and payments to nonprofit welfare institutions. In the model that line is `other_state_welfare`. `family_and_general_assistance` is a different line (TANF and general assistance, keyed by cash assistance) that the audit row does not touch.
+  - Both lines carry the lane's state-welfare grant fraction (67.0% under the central and high conventions, 45.0% under the low), so the 2024 split is the same either way.
+  - The line matters only for the history that carries the constant back into the stock.
+  - [INFERENCE, not measured here] The line's fraction includes WIC food, which is all federal. Foster care's own federal share is probably lower.
+
+| Effect of the ledger lane's choice, minus this lane's, $bn | Row 8 (0 instead of the grant share) | Row 10 (family and general assistance) |
+|---|---:|---:|
+| Federal part of the 2024 gap, central and high conventions | −0.029 | 0.000 |
+| Federal part of the 2024 gap, low convention | 0 | 0.000 |
+| Legacy stock entering 2024 (central rule) | −0.37 | +2.03 |
+| Legacy interest, 2024 (central rule) | −0.012 | +0.066 |
+
+The effects are the same at both band ends. Neither choice moves the 2024 federal part or the 2024 interest by more than $0.07bn. Row 10's history moves the stock by $2.0bn, 0.2% of it. [CALCULATION: `derived/constant_choices.csv`, `derived/constant_choices_stock.csv`]
+
+## Distribution (ladder 194)
+
+`distribute.py` now defaults to `--case sept24`. It moves A at each band end by the package's change, and P and F do not move. `--case sept23 --out-dir <dir>` reproduces all 12 committed files (212 gates); the Sept 24 run passes 216. Only the fiscal channel and the totals built on it change:
+
+- fiscal cost: $227.9bn → $225.1bn;
+- central total: $262.6bn → $259.8bn;
+- at η = 1.3, equal-split equivalents: $182bn → $181bn (tax share) and $330bn → $327bn (per person).
+
+The top fifth still bears 62% under tax-share financing. Outside the budget nothing moves: the bottom four fifths lose $80.7bn and the top fifth gains $46.0bn.
+
+## Real-costs totals (memo §7 and §7b)
+
+`band_variants.cjs` evaluates the four fiscal variants the memo pairs with the social rows: raw ethnicity codes, the justice grid's two ends, and 0.7× uncompensated use. It uses the package's own evaluator on both cases, and the Sept 23 variants reproduce its bands file to 1e-4. `real_costs_totals.py` reads every social row from its lane and rebuilds the memo's sums.
+
+Every Sept 23 total the memo prints reproduces. Most match exactly. Three match only as sums of the memo's one-decimal rows: social high 57.8 and 57.2 (57.7 and 57.1 exact) and the scale-net fiscal low 185.2 (185.1 exact). The memo's 2026-09-24 revision note gives "$253–304bn"; the exact figure is $252.7–303.4bn, which rounds to 253–303.
+
+| $bn a year, central values | Sept 23 (memo) | Sept 24 |
+|---|---:|---:|
+| §7, custody ratio carried over (adopted justice key) | 256–307 | **253–304** |
+| §7, Mexican-origin rates = Hispanic, victims $28.9bn (memo definition) | 248–300 | 246–296 |
+| §7, same footing, victims $30.9bn (ladder 218; decision 4's figure) | — | 248–298 |
+| §7, full span (every low choice, then every high one) | 212–340 | 210–337 |
+| §7, full span also stacking the package's own range ($172–276bn) [INFERENCE: may double count the arrest ratio] | — | 182–367 |
+| §7b, costs only (Sept 24: care's $4.15bn added back) | 256–307 | 258–308 |
+| §7b, with care and mobility | 251–303 | 253–303 |
+| §7b, adding the proposed scale net | 237–289 | 239–289 |
+| Omitted benefits, without / with the scale net | 4.8 / 18.7 | 0.65 / 14.6 |
+
+On September 24 care sits inside the account, so the only omitted benefits left are mobility and the proposed scale net. The memo's verdict line "$248–307bn … (full span $212–340bn), $6.1–7.5k per member" becomes one of two versions:
+
+- with its victims definition: **$246–304bn** (full span $210–337bn), $6.0–7.4k;
+- with decision 4's victims figure: **$248–304bn**, $6.1–7.4k.
+
+Per-member figures are in the table below.
+
+**Disagreements with the sister ledger lane** (`winners_losers_2026_09_24/derived/channels.csv` at run time). Congestion (8.05 / 19.16 / 35.25), unreimbursed care (3.24 / 4.40 / 5.56), property crime (1.27–1.38), mobility (0.65), scale (13.93) and care (4.15) are the same. Five points differ:
+
+| Channel | This lane | winners_losers | Why |
+|---|---:|---:|---|
+| Victims' harm, custody footing, $bn | 32.34 | 34.58 | The sister scales the mixed-group figure (30.93) by the custody ratio (32.34 / 28.92). The victim lane has not computed that correction on this footing. With 34.58 the custody total is $255.6–306.3bn. |
+| Housing net gain, $bn | 0.71–3.51 (both geography arms; span −0.38 to 9.40) | 2.30 / 3.51 / 5.17 | The sister uses the metro-local arm's own low, central and high values. |
+| Debt legacy interest, $bn | 28.3–36.4 | 30.5–38.9 | The sister pins the Sept 23 files (git b42efdc). |
+| Federal part of the gap, central convention, $bn | 32.0–51.9 | 32.3–52.2 | The sister applies Sept 23 line fractions and approximates the corrections: row 8 at 0, row 10 at family and general assistance, care at the Sept 23 omitted-benefit fraction, schools and colleges at education's fraction. Per the parent, it now reads this lane's per-correction split, so the gap closes on its next run. |
+| Channels outside the memo's sums | — | preferences −3.96, school dilution (proposed), consumer prices (side view), debt legacy (beside, decision 4) | Not in the memo's definition. |
+
+## Sampling uncertainty (ladder 184)
+
+`sept24_specs.cjs` costs the 64 main specifications on both cases with the engine. `propagate.py --case sept24` then carries the lane's sources through them (CPS replicate keys, MEPS donor covariance, the school correction and the production term).
+
+The September 23 frame is each September 20 case plus three changes: general government at 0.59 or 0.84 on the per-head key, and the justice and uninsured-use key shifts. Every specification rebuilds this way to 1e-6. On the Sept 23 frame the CPS, MEPS and school errors of the Sept 20 cases reproduce to 1e-9. On September 24, each line's CPS replicate deviation and each MEPS payer gradient is scaled by the group's corrected over uncorrected target on the key the lane rebuilt. The Sept 20 outputs stay byte-identical, and the lane's 10 tests pass.
+
+| | Sept 20 (published) | Sept 23 case | Sept 24 case |
+|---|---:|---:|---:|
+| Per-case SE, sources independent, $bn | 12.2 | 12.2–12.3 | **10.8–10.9** |
+| 95% intervals of the band's cases, union, $bn | 141–221 | 179–274 | **180–268** |
+| Correlated upper bound, union, $bn | 127–235 | 165–288 | 166–280 |
+
+The SE falls because the corrections lower the group's dollars on the CPS- and MEPS-keyed lines, and first-order scaling shrinks their errors with them. The corrections' own sampling errors are not in this SE. The one exception is the benefit keys' published SE (1.15/1.17bn), which gives $10.9–11.0bn. The rest (CBO tables, pooled MEPS ratios, the tax stack's hot deck) sit in the package's $172–276bn range. Read $10.9bn as a floor.
+
+## For the parent
+
+Lines that carry numbers computed on the Sept 23 case (new values in the table below):
+
+- `research/immigration-real-fiscal-and-social-costs-2026-09-23.md`: lines 30–35, 220 (262.6), 287–290, 326–329 and 379.
+- `research/immigration-confidence-ladder.md`:
+  - 299 (141–221);
+  - 317 (4,969–6,104, 228–287);
+  - 319 (262.6);
+  - 321 (248–307, 212–340);
+  - 333 (189.3–235.7, now 186.9–232.4);
+  - 345 and 369 (debt legacy);
+  - 431.
+- `research/immigration-INDEX.md`:
+  - 76;
+  - 105;
+  - 123;
+  - 127–130;
+  - 154–155;
+  - 233 (the programme version is now computed; see above).
+- `assumption_explorer_2026_09_21/context.json`: lines 601 and 2483.
+- Figures page:
+  - `build_data.cjs` gate "fiscal cost total −227.9" fails on the next build; the value is now −225.10;
+  - `src/lib/WhoPays.svelte:83` text "$227.9bn".
+- Stale or undated labels:
+  - `research/immigration-outside-checks-2026-09-24.md` lines 54, 137 and 190;
+  - `research/immigration-status-benefits-sweep-2026-09-24.md` line 82 (shelter "proposed, not adopted").
+- `cps_imputation_keys_2026_09_23/distribution_check.py` adds the fill-in correction to the distribution lane's committed total. Re-run on the new files, it would count that correction twice. If it is re-run, read the Sept 23 file from git.
+- The lane texts of the debt legacy, distribution and uncertainty lanes still describe their old case.
+
+## Files and reruns
+
+Run order from the repository root; every step exits nonzero on a failed gate:
+
+```
+node infra/immigration-fiscal/sept24_propagation_2026_09_24/export_package.cjs
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/debt_legacy_2026_09_23/debt_legacy.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py
+node infra/immigration-fiscal/uncertainty_propagation_2026_09_22/sept24_specs.cjs
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/uncertainty_propagation_2026_09_22/propagate.py --case sept24
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/uncertainty_propagation_2026_09_22/audit.py
+node infra/immigration-fiscal/sept24_propagation_2026_09_24/band_variants.cjs
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/real_costs_totals.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/inventory.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/old_new.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/constant_choices.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/debt_legacy_2026_09_23/ infra/immigration-fiscal/distribution_weights_2026_09_23/ -q --import-mode=importlib
+```
+
+The old results come back with `debt_legacy.py --case sept23 --out-dir DIR` and `distribute.py --case sept23 --out-dir DIR`. The two tests keep that reproduction pinned to the committed Sept 23 files (2 passed, 59 s). `propagate.py` without `--case sept24` still writes only the Sept 20 files.
+
+Uncommitted changes:
+
+- **Debt legacy:** `debt_legacy.py`, new `test_debt_legacy.py`; its `derived/` has 8 files modified and 2 new (`corrections_federal_split_2024.csv`, `corrections_federal_by_component_2024.csv`).
+- **Distribution:** `distribute.py`, new `test_distribute.py`; 7 files modified in its `derived/`.
+- **Uncertainty:** `propagate.py`, new `sept24_specs.cjs`, and new `derived/sept24/` (`spec_costs.csv`, `line_targets.csv`, `case_uncertainty.csv`, `summary.json`).
+- **This lane:**
+  - scripts: `inventory.py`, `export_package.cjs`, `band_variants.cjs`, `real_costs_totals.py`, `old_new.py`, `constant_choices.py`;
+  - `derived/`: `inventory.csv`, `package_components.json`, `band_variants.csv` and `.json`, `real_costs_totals.csv` and `.json`, `old_new.csv`, `constant_choices.csv`, `constant_choices_stock.csv`.
+
+None of these paths is ignored. No memo, FAQ, INDEX, ladder, `engine.js`, `package.cjs`, `main_case.cjs` or fingerprint hash was edited.
+
+## Old → new (generated by `old_new.py` from the files named; `derived/old_new.csv`)
+
+Old values are the committed files (git HEAD). For the real-costs rows they are this lane's exact September 23 sums; for uncertainty they are the September 20 published band unless the row says otherwise. Negative values in the distribution rows are costs.
+
+**main case (reference)**
+
+| Quantity | Unit | Old | New | File |
+|---|---|---:|---:|---|
+| fiscal main case | $bn | 203.2 to 249.6 | 200.9 to 246.3 | `main_case_2026_09_24/derived/summary.json` |
+| fiscal main case per group member | $ | 4,969 to 6,104 | 4,912 to 6,023 | `main_case_2026_09_24/derived/summary.json` |
+
+**debt legacy**
+
+| Quantity | Unit | Old | New | File |
+|---|---|---:|---:|---|
+| federal part of the 2024 fiscal gap, central convention | $bn | 38.6 to 58.4 | 32.0 to 51.9 | `debt_legacy_2026_09_23/derived/federal_split_2024.csv` |
+| federal share of the 2024 gap, central convention | % | 19.0 to 23.4 | 15.9 to 21.1 | `debt_legacy_2026_09_23/derived/federal_split_2024.csv` |
+| federal share of the 2024 gap, low convention | % | 8.14 to 14.29 | 5.08 to 11.97 | `debt_legacy_2026_09_23/derived/federal_split_2024.csv` |
+| federal share of the 2024 gap, high convention | % | 23.9 to 29.0 | 21.2 to 27.0 | `debt_legacy_2026_09_23/derived/federal_split_2024.csv` |
+| legacy stock entering 2024 (central rule) | $bn | 942.6 to 1,202.1 | 876.5 to 1,126.8 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| stock, share of debt at end FY2023 (central rule) | % | 3.59 to 4.58 | 3.34 to 4.29 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| legacy interest, 2024 (central rule) | $bn | 30.5 to 38.9 | 28.3 to 36.4 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| interest per group member (central rule) | $ | 745 to 950 | 693 to 891 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| interest per other resident (central rule) | $ | 102 to 130 | 95 to 122 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| interest, share of FY2024 net interest (central rule) | % | 3.46 to 4.42 | 3.22 to 4.14 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| interest over the account's interest row allocation (central rule) | ratio | 0.23 to 0.29 | 0.22 to 0.28 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| legacy interest across back-cast rules, central convention | $bn | 7.66 to 42.82 | 6.28 to 37.25 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| legacy stock across back-cast rules, central convention | $tn | 0.24 to 1.32 | 0.19 to 1.15 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| legacy interest across rules and payer conventions | $bn | -1.94 to 48.23 | -3.15 to 42.88 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| legacy interest, every specification | $bn | -2.68 to 64.70 | -4.28 to 57.54 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| legacy interest, central rule, every specification | $bn | 6.36 to 59.43 | 5.98 to 56.45 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| legacy interest, low payer convention | $bn | 20.8 to 28.9 | 18.8 to 26.7 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| legacy interest, high payer convention | $bn | 34.2 to 44.3 | 32.4 to 42.1 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| legacy interest, constant 3.22% rate | $bn | 33.0 to 42.1 | 30.6 to 39.4 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| legacy interest, 10-year Treasury rate | $bn | 40.9 to 52.2 | 38.0 to 48.9 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| legacy interest, public securities rate | $bn | 33.5 to 42.7 | 31.1 to 40.1 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| legacy interest, window from 2010 | $bn | 27.8 to 34.3 | 25.8 to 32.1 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| legacy interest, window from 2015 | $bn | 17.6 to 22.2 | 16.8 to 21.2 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| legacy interest, half borrowed | $bn | 15.2 to 19.4 | 14.2 to 18.2 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| legacy interest, proportional benchmark | $bn | 41.1 to 49.1 | 38.5 to 46.2 | `debt_legacy_2026_09_23/derived/stocks.csv` |
+| omitted benefits care_and_mobility -> mobility: federal 2024 | $bn | 3.33 | 0.03 | `debt_legacy_2026_09_23/derived/benefit_sensitivity.csv` |
+| omitted benefits care_and_mobility -> mobility: stock reduction | $bn | 51.8 | 0.39 | `debt_legacy_2026_09_23/derived/benefit_sensitivity.csv` |
+| omitted benefits care_and_mobility -> mobility: interest reduction 2024 | $bn | 1.67 | 0.01 | `debt_legacy_2026_09_23/derived/benefit_sensitivity.csv` |
+| omitted benefits care_mobility_and_scale -> mobility_and_scale: federal 2024 | $bn | 8.60 | 5.29 | `debt_legacy_2026_09_23/derived/benefit_sensitivity.csv` |
+| omitted benefits care_mobility_and_scale -> mobility_and_scale: stock reduction | $bn | 133.7 | 82.3 | `debt_legacy_2026_09_23/derived/benefit_sensitivity.csv` |
+| omitted benefits care_mobility_and_scale -> mobility_and_scale: interest reduction 2024 | $bn | 4.32 | 2.66 | `debt_legacy_2026_09_23/derived/benefit_sensitivity.csv` |
+| forward federal debt from the 2024 gap, 10 years | $bn | 447.5 to 676.9 | 370.4 to 600.6 | `debt_legacy_2026_09_23/derived/forward_path.csv` |
+| forward federal debt from the 2024 gap, 20 years | $bn | 1,062 to 1,606 | 878.9 to 1,425.2 | `debt_legacy_2026_09_23/derived/forward_path.csv` |
+| forward federal debt from the 2024 gap, 30 years | $bn | 1,906 to 2,882 | 1,577 to 2,557 | `debt_legacy_2026_09_23/derived/forward_path.csv` |
+| forward debt if the whole gap were borrowed, 10 years | $tn | 2.35 to 2.89 | 2.32 to 2.85 | `debt_legacy_2026_09_23/derived/forward_path.csv` |
+| back-cast net cost, programme, 2015-2024 | $tn | 2.02 to 2.42 | 1.95 to 2.33 | `debt_legacy_2026_09_23/derived/adopted_backcast_windows.csv` |
+| back-cast net cost, programme, 2010-2024 | $tn | 2.82 to 3.39 | 2.75 to 3.30 | `debt_legacy_2026_09_23/derived/adopted_backcast_windows.csv` |
+| back-cast net cost, programme, 2005-2024 | $tn | 3.31 to 4.04 | 3.27 to 3.97 | `debt_legacy_2026_09_23/derived/adopted_backcast_windows.csv` |
+| back-cast net cost, programme_income, 2015-2024 | $tn | 2.29 to 2.68 | 2.19 to 2.56 | `debt_legacy_2026_09_23/derived/adopted_backcast_windows.csv` |
+| back-cast net cost, programme_income, 2010-2024 | $tn | 3.34 to 3.89 | 3.21 to 3.74 | `debt_legacy_2026_09_23/derived/adopted_backcast_windows.csv` |
+| back-cast net cost, programme_income, 2005-2024 | $tn | 4.04 to 4.73 | 3.92 to 4.58 | `debt_legacy_2026_09_23/derived/adopted_backcast_windows.csv` |
+
+**distribution (ladder 194)**
+
+| Quantity | Unit | Old | New | File |
+|---|---|---:|---:|---|
+| fiscal cost channel, A_mid + F_c (negative = cost) | $bn | -227.9 | -225.1 | `distribution_weights_2026_09_23/derived/channel_by_quintile.csv` |
+| fiscal cost, tax-share financing, fifth 1 | $bn | -6.91 | -6.83 | `distribution_weights_2026_09_23/derived/channel_by_quintile.csv` |
+| fiscal cost, tax-share financing, fifth 2 | $bn | -14.6 | -14.4 | `distribution_weights_2026_09_23/derived/channel_by_quintile.csv` |
+| fiscal cost, tax-share financing, fifth 3 | $bn | -24.6 | -24.3 | `distribution_weights_2026_09_23/derived/channel_by_quintile.csv` |
+| fiscal cost, tax-share financing, fifth 4 | $bn | -40.3 | -39.8 | `distribution_weights_2026_09_23/derived/channel_by_quintile.csv` |
+| fiscal cost, tax-share financing, fifth 5 | $bn | -141.6 | -139.8 | `distribution_weights_2026_09_23/derived/channel_by_quintile.csv` |
+| fiscal cost, per-person cuts, each fifth | $bn | -45.6 | -45.0 | `distribution_weights_2026_09_23/derived/channel_by_quintile.csv` |
+| fiscal cost, top fifth's part under tax-share financing | % | 62.1 | 62.1 | `distribution_weights_2026_09_23/derived/channel_by_quintile.csv` |
+| fiscal cost under per-person cuts, share of resources, bottom and top fifth | % | -8.03 to -0.85 | -7.93 to -0.84 | `distribution_weights_2026_09_23/derived/channel_by_quintile.csv` |
+| central total with the social items (TOTAL) | $bn | -262.6 | -259.8 | `distribution_weights_2026_09_23/derived/channel_by_quintile.csv` |
+| central total, share of resources, bottom and top fifth, tax-share | % | -5.24 to -1.78 | -5.23 to -1.75 | `distribution_weights_2026_09_23/derived/channel_by_quintile.csv` |
+| central total, share of resources, bottom and top fifth, per-person | % | -12.1 to 0.0 | -12.0 to 0.0 | `distribution_weights_2026_09_23/derived/channel_by_quintile.csv` |
+| central total at eta 1.3, equal-split equivalent, tax-share | $bn | -181.9 | -180.9 | `distribution_weights_2026_09_23/derived/weighted_totals.csv` |
+| central total at eta 1.3, mean-normalized, tax-share | $bn | -407.1 | -404.9 | `distribution_weights_2026_09_23/derived/weighted_totals.csv` |
+| central total at eta 1.3, equal-split equivalent, per-person | $bn | -329.9 | -327.1 | `distribution_weights_2026_09_23/derived/weighted_totals.csv` |
+| central total at eta 1.3, mean-normalized, per-person | $bn | -738.3 | -732.0 | `distribution_weights_2026_09_23/derived/weighted_totals.csv` |
+| outside the budget: bottom four fifths, top fifth (unchanged) | $bn | -80.7 to 46.0 | -80.7 to 46.0 | `distribution_weights_2026_09_23/derived/channel_by_quintile.csv` |
+
+**real-costs totals (memo §7, §7b)**
+
+| Quantity | Unit | Old | New | File |
+|---|---|---:|---:|---|
+| §7 hispanic: fiscal main case | $bn | 198.9 to 245.4 | 196.6 to 242.0 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 hispanic: total at central values | $bn | 248.0 to 299.7 | 245.7 to 296.4 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 hispanic: per group member | $k | 6.06 to 7.33 | 6.01 to 7.25 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 hispanic: victims' harm, full cost | $bn | 28.9 | 28.9 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 custody: fiscal main case | $bn | 203.2 to 249.6 | 200.9 to 246.3 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 custody: total at central values | $bn | 255.7 to 307.4 | 253.4 to 304.0 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 custody: per group member | $k | 6.25 to 7.52 | 6.20 to 7.43 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 custody: victims' harm, full cost | $bn | 32.3 | 32.3 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 hispanic_mixed_group: total at central values | $bn | — | 247.7 to 298.4 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 hispanic_mixed_group: per group member | $k | — | 6.06 to 7.30 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 custody_mixed_scaled: total at central values | $bn | — | 255.6 to 306.3 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 full_span: low end | $bn | 212.5 | 210.2 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 full_span: high end | $bn | 340.2 | 336.9 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 full_span: per group member, low | $k | 5.20 | 5.14 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 full_span: per group member, high | $k | 8.32 | 8.24 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 full_span_with_package_range: low end | $bn | — | 181.5 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7 full_span_with_package_range: high end | $bn | — | 366.8 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b costs_only: fiscal main case | $bn | 203.2 to 249.6 | 205.0 to 250.5 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b costs_only: social items beside the account | $bn | 52.5 to 57.7 | 52.5 to 57.7 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b costs_only: total at central values | $bn | 255.7 to 307.4 | 257.5 to 308.2 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b costs_only: per group member | $k | 6.25 to 7.52 | 6.30 to 7.54 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b with_care_and_mobility: fiscal main case | $bn | 199.1 to 245.5 | 200.9 to 246.3 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b with_care_and_mobility: social items beside the account | $bn | 51.9 to 57.1 | 51.9 to 57.1 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b with_care_and_mobility: total at central values | $bn | 250.9 to 302.6 | 252.7 to 303.4 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b with_care_and_mobility: per group member | $k | 6.14 to 7.40 | 6.18 to 7.42 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b adding_scale_net: fiscal main case | $bn | 185.1 to 231.6 | 186.9 to 232.4 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b adding_scale_net: social items beside the account | $bn | 51.9 to 57.1 | 51.9 to 57.1 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b adding_scale_net: total at central values | $bn | 237.0 to 288.6 | 238.8 to 289.5 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b adding_scale_net: per group member | $k | 5.79 to 7.06 | 5.84 to 7.08 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b omitted_benefits: without the scale net | $bn | 4.80 | 0.65 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b omitted_benefits: with the scale net | $bn | 18.7 | 14.6 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b omitted_benefits: share of main case, low (%) | % | 1.92 | 0.27 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §7b omitted_benefits: share of main case, high (%) | % | 9.22 | 7.26 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §revision_2026_09_24 with_care_and_mobility: total, low | $bn | — | 252.7 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+| §revision_2026_09_24 with_care_and_mobility: total, high | $bn | — | 303.4 | `sept24_propagation_2026_09_24/derived/real_costs_totals.csv` |
+
+**uncertainty (ladder 184)**
+
+| Quantity | Unit | Old | New | File |
+|---|---|---:|---:|---|
+| per-case SE, sources independent | $bn | 12.16 to 12.22 | 10.8 to 10.9 | `uncertainty_propagation_2026_09_22/derived/sept24/summary.json` |
+| per-case SE, all positively correlated | $bn | 19.1 to 19.7 | 17.2 to 17.8 | `uncertainty_propagation_2026_09_22/derived/sept24/summary.json` |
+| 95% intervals of the main band's cases, union | $bn | 141.2 to 221.3 | 179.5 to 267.6 | `uncertainty_propagation_2026_09_22/derived/sept24/summary.json` |
+| 95% intervals at the correlated upper bound, union | $bn | 127.0 to 235.3 | 166.4 to 280.4 | `uncertainty_propagation_2026_09_22/derived/sept24/summary.json` |
+| 95% intervals with the benefit keys' SE, union | $bn | — | 179.4 to 267.7 | `uncertainty_propagation_2026_09_22/derived/sept24/summary.json` |
+| per-case SE on the Sept 23 case (never published) -> Sept 24 | $bn | 12.2 to 12.3 | 10.8 to 10.9 | `uncertainty_propagation_2026_09_22/derived/sept24/summary.json` |
+| 95% union on the Sept 23 case (never published) -> Sept 24 | $bn | 179.3 to 273.6 | 179.5 to 267.6 | `uncertainty_propagation_2026_09_22/derived/sept24/summary.json` |
+
+
+## Progress log (appended as confirmed)
+
+- 2026-09-24 23:2x. Regression gate, debt legacy: `debt_legacy.py` on the September 23 input
+  exits 0 and reproduces all 10 tracked `derived/` files byte for byte. [CALCULATION]
+- Regression gate, uncertainty propagation: `propagate.py` then `audit.py` exit 0 and reproduce all
+  15 tracked `derived/` files byte for byte. Its input is the September 20 case ($165.1–197.4bn),
+  not September 23. [CALCULATION]
+- Regression gate, distribution lane (ladder 194): `distribute.py` exits 0 (212 gates) and
+  reproduces all 12 tracked `derived/` files byte for byte. [CALCULATION]
+- Inventory written: `inventory.py` → `derived/inventory.csv` (primary token search, a search
+  for numbers derived from the September 23 case, and explicit rows for the three items no token
+  reaches). Live computations that read an old case: `debt_legacy.py` (Sept 23),
+  `distribute.py` (Sept 23), `propagate.py` (Sept 20). The real-costs totals are hand sums in the
+  memo. The lifetime anchors are the Sept 19 generation ledger's NPVs and read no main case.
+- Debt legacy re-run on the adopted case (`debt_legacy.py`, default `--case sept24`; `--case sept23
+  --out-dir <dir>` reproduces the 10 committed files byte for byte). Gates pass: the corrected
+  model on the frame reproduces $200.8752–246.3184bn and the uncorrected one $203.2070–249.6400bn
+  (1e-6, all three profiles); every correction's federal plus state-local part equals it; the
+  corrections' parts add to the change in the whole split at each corner (1e-9). Central: stock
+  $877–1,127bn (was $943–1,202bn), 2024 interest **$28.3–36.4bn** (was $30.5–38.9bn), federal share
+  of the 2024 gap 15.9–21.1% (was 19.0–23.4%). Rerun is byte-identical. [CALCULATION]
+- Real-costs totals (`band_variants.cjs` then `real_costs_totals.py`). The four fiscal variants the
+  memo pairs with the social rows (raw ethnicity codes, justice grid ends, 0.7x uncompensated use)
+  reproduce the Sept 23 bands file to 1e-4 on the uncorrected model, then run on the corrected one
+  (raw coding $196.6–242.0bn, grid low with 0.7x use $192.4bn, grid high $249.0bn). Every Sept 23
+  total the memo prints reproduces: most exactly, three only as sums of its one-decimal rows
+  (social high 57.8 and 57.2, scale fiscal low 185.2; exact 57.7, 57.1, 185.1). Custody footing
+  $255.7–307.4bn → **$253.4–304.0bn**; Hispanic footing $248.0–299.7bn → $245.7–296.4bn; full span
+  $212.5–340.3bn → $210.2–336.9bn. §7b with care and mobility $250.9–302.6bn → $252.7–303.4bn;
+  costs only (care added back) → $257.5–308.2bn; omitted benefits $4.8bn → $0.65bn. [CALCULATION]
+- Distribution lane (ladder 194) re-run on the adopted case: `distribute.py` now defaults to
+  `--case sept24`, and `--case sept23 --out-dir <dir>` reproduces all 12 committed files byte for byte
+  (212 gates). The Sept 24 run passes 216 gates and moves A by the package's change at each band end.
+  Only the fiscal channel and totals move: fiscal cost $227.9bn → **$225.1bn** (top fifth still 62%
+  under tax-share financing; 8.0% → 7.9% of the bottom fifth's resources under per-person cuts);
+  central total $262.6bn → $259.8bn; at η = 1.3 its equal-split equivalents are $182bn → $181bn
+  (tax share) and $330bn → $327bn (per person). Outside the budget is unchanged (−$80.7bn / +$46.0bn).
+  The figures page's gate "fiscal cost total −227.9" (`figures_2026_09_22/build_data.cjs`) will fail
+  on its next build until the parent updates it. [CALCULATION]
+- Uncertainty propagation (ladder 184) carried to the adopted cases: `node sept24_specs.cjs` then
+  `propagate.py --case sept24` (Sept 20 outputs unchanged: all 15 tracked files byte-identical after
+  `propagate.py` and `audit.py`; 10 tests pass). Positive controls: on the Sept 23 frame every
+  specification rebuilds from its Sept 20 case to 1e-6, and the CPS, MEPS and school errors of the
+  Sept 20 cases reproduce to 1e-9. Per-case SE: Sept 23 case $12.2–12.3bn, 95% union $179.3–273.6bn;
+  Sept 24 case **$10.8–10.9bn**, 95% union **$179.5–267.6bn** (envelope $166.4–280.4bn). The drop is
+  mechanical: first-order ratio scaling shrinks the CPS and MEPS errors where the corrections lower the
+  group's dollars. The corrections' own sampling errors are not in this SE except the benefit keys'
+  (1.15/1.17bn, giving $10.9–11.0bn); the rest sit in the package's $172–276bn range. [CALCULATION]
+- 2026-09-25 (after the parent's follow-up). The two constant splits that differ from the ledger
+  lane are documented with their federal-dollar effect (`constant_choices.py`). Row 8 at 0 would move
+  the 2024 federal part by −$0.029bn and the stock by −$0.37bn. Row 10 on family and general
+  assistance leaves the 2024 split unchanged and moves the stock by +$2.03bn. The re-run gate
+  confirms each 2024 difference. The `--case sept23` reproduction is now a permanent test in the
+  debt legacy lane (pinned at 96a5c3b) and the distribution lane (pinned at 5b8957e); both pass.
+  [CALCULATION]
