@@ -96,6 +96,13 @@ set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
 
 - `--no-project` reuses the main checkout's `.venv`. In a worktree or fresh clone it fails with
   `ModuleNotFoundError`; drop the flag there (`uv run python3 …` builds from `uv.lock`).
+- Read a rerun's exit code before trusting an "outputs identical" check: a failed rerun (e.g. a
+  missing `--with lxml`) leaves the old files untouched and they still compare identical.
+- Python `csv.writer` defaults to CRLF; pass `lineterminator="\n"`. The repo stores LF
+  (`core.autocrlf=input`), so CRLF outputs never byte-match on rerun (cd96b04).
+- Before asserting that a line's key biases a result, read how the engine keys it (schools have
+  been state-priced since 2026-09-20, not national-average). The adopted case is one engine
+  run: `infra/immigration-fiscal/main_case_2026_09_24/main_case.cjs`.
 
 - Consumers of `ledger_absolute_2026_09_17` (the `lifetime.py` loaders, `age_normalizations.py`)
   verify stored source hashes, including upstream
