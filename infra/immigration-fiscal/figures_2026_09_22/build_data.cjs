@@ -1,7 +1,8 @@
 /* Builds src/generated/figures.json for the figures page.
  *
  * The complete-account figures run the explorer's evaluator (assumption_explorer_2026_09_21/
- * engine.js, gated there by test_engine.js) on its executed model; every response is set
+ * engine.js, gated there by test_engine.js) on its executed model and on that model with the
+ * corrections adopted on 2026-09-24 (main_case_2026_09_24/package.cjs); every response is set
  * explicitly per service line, so each step of the staircase and each cell of the matrix is one
  * evaluation of the account's own formula. The other figures read lane CSVs. Nothing is typed
  * in, and the gates reproduce published figures before the file is written.
@@ -18,6 +19,19 @@ const EXPLORER = path.join(FISCAL, "assumption_explorer_2026_09_21");
 const Engine = require(path.join(EXPLORER, "engine.js"));
 const model = JSON.parse(fs.readFileSync(path.join(EXPLORER, "derived", "model.json"), "utf8"));
 const scaling = JSON.parse(fs.readFileSync(path.join(EXPLORER, "derived", "scaling_check.json"), "utf8"));
+// The data corrections adopted on 2026-09-24 (dataset audit and outside checks) as model edits. The
+// two fill-in methods' shift lists are averaged into one model: the engine is linear, and the gates
+// check that the averaged model reproduces the published bands.
+const MAIN_CASE = path.join(FISCAL, "main_case_2026_09_24");
+const Pkg = require(path.join(MAIN_CASE, "package.cjs"));
+const pkgShifts = Pkg.METHODS.flatMap((meth) =>
+  Pkg.packageShifts(Pkg.STACKS[`row4+status_state_aware|central|${meth}`], "central", meth, Pkg.CENTRAL)
+    .map((x) => ({ ...x, by: Pkg.scale(x.by, Pkg.both(0.5)) })));
+const MODELS = {
+  base: model,
+  taxes: Pkg.build(pkgShifts.filter((x) => x.side === "receipt")),
+  adopted: Pkg.build(pkgShifts),
+};
 
 let failures = 0;
 function gate(label, ok, detail) {
@@ -69,9 +83,10 @@ gate("service lines are the seven the figures set", JSON.stringify(serviceLines)
   "income_security_services", "public_order_safety", "recreation_culture"]), serviceLines.join(" "));
 
 /* One evaluation. spec: allocation, normalization, share, school, gg, uc, justice, receipts,
- * production. r: responses by service family; schools may be "cbo" (take spec.school). */
-function cost(spec, r) {
-  const s = Engine.defaultState(model);
+ * production. r: responses by service family; schools may be "cbo" (take spec.school). m: one of
+ * MODELS. */
+function cost(spec, r, m = MODELS.base) {
+  const s = Engine.defaultState(m);
   s.allocation = spec.allocation;
   s.receipt_scenario = spec.receipts || model.receipts.reference;
   if (spec.production) Object.assign(s.production, spec.production);
@@ -90,18 +105,26 @@ function cost(spec, r) {
     housing_community_services: r.other,
     economic_affairs_services: r.delayed,
     recreation_culture: r.delayed,
+    // The corrections' own lines (package.cjs SYN; absent from the base model): the school price
+    // at the school response, the college re-key at the college response, lane constants in full.
+    [Pkg.SYN.school]: spec.share * schools,
+    [Pkg.SYN.college]: (1 - spec.share) * r.colleges,
+    [Pkg.SYN.constants]: 1,
   };
-  return -Engine.evaluate(model, s).welfare_bn; // positive = cost to other US residents
+  return -Engine.evaluate(m, s).welfare_bn; // positive = cost to other US residents
 }
 
-const bands = readCsv(path.join(FISCAL, "main_case_2026_09_23", "derived", "main_case_bands.csv"));
+const bands = readCsv(path.join(MAIN_CASE, "derived", "main_case_bands.csv"));
 const band = (profile, variant) => {
   const row = bands.find((b) => b.profile === profile && b.variant === variant);
+  if (!row) throw new Error(`no band ${profile} / ${variant}`);
   return [Number(row.cost_low_bn), Number(row.cost_high_bn)];
 };
 const MAIN = band("cbo_category_lag_non_school_full", "adopted");
 const FIXED_COLLEGES = band("cbo_category_lag_non_school_fixed", "adopted");
 const PROPORTIONAL = band("proportional_reference", "adopted");
+const BEFORE = band("cbo_category_lag_non_school_full", "adopted_2026_09_23");  // before the corrections
+const BY_SIDE = JSON.parse(fs.readFileSync(path.join(MAIN_CASE, "derived", "summary.json"), "utf8")).by_side;
 
 // The main case's unresolved dimensions: its published band is the envelope over these.
 const MAIN_DIMS = {
@@ -115,8 +138,11 @@ console.log("\n[positive controls]");
   const adopted = { schools: "cbo", colleges: 1, police: 1, health: 1, other: 1, delayed: 0, gg: "band", production: true };
   const got = span(mainSpecs.map((spec) => cost(spec, adopted)));
   // main_case_bands.csv carries four decimals.
-  gate("main case = main_case_bands.csv adopted", near(got[0], MAIN[0], 1e-4) && near(got[1], MAIN[1], 1e-4),
+  gate("base model = main case before the corrections (adopted_2026_09_23)", near(got[0], BEFORE[0], 1e-4) && near(got[1], BEFORE[1], 1e-4),
     `${got[0].toFixed(4)} to ${got[1].toFixed(4)}`);
+  const pkg = span(mainSpecs.map((spec) => cost(spec, adopted, MODELS.adopted)));
+  gate("corrected model = main case (adopted)", near(pkg[0], MAIN[0], 1e-4) && near(pkg[1], MAIN[1], 1e-4),
+    `${pkg[0].toFixed(4)} to ${pkg[1].toFixed(4)}`);
   // Same band through the engine's own band semantics (preset repo_central_gg).
   const st = Object.assign(Engine.defaultState(model), {
     school_response: 0.63, school_response_band: CBO_SCHOOLS, other_education_response: 1, delayed_response: 0,
@@ -140,16 +166,20 @@ const STEPS = [
   { id: "police", label: "Police, courts and prisons", note: "charged by use", r: { police: 1 } },
   { id: "health", label: "Public health services", r: { health: 1 } },
   { id: "other", label: "Welfare administration, housing, community", r: { other: 1 } },
-  { id: "gg", label: "General administration, 0.59–0.84", note: "cross-state scale of administration", r: { gg: "band" }, main: true },
+  { id: "gg", label: "General administration, 0.59–0.84", note: "cross-state scale of administration", r: { gg: "band" } },
+  { id: "taxes", label: "Data corrections: taxes", note: "legal status, survey fill-ins, CBO’s income shares", model: "taxes" },
+  { id: "benefits", label: "Data corrections: benefits, services", note: "credits, medical care, schools, care work",
+    model: "adopted", main: true },
   { id: "delayed", label: "Roads, transport, parks and culture", note: "held fixed in the main case", r: { delayed: 1 }, beyond: true },
   { id: "schools_full", label: "Schools at the full per-pupil cost", r: { schools: 1 }, beyond: true },
 ];
 const trajectories = mainSpecs.map(() => []);
 {
-  let r = { ...TALLY };
+  let r = { ...TALLY }, m = MODELS.base;
   for (const step of STEPS) {
-    r = { ...r, ...step.r };
-    mainSpecs.forEach((spec, i) => trajectories[i].push(cost(spec, r)));
+    r = { ...r, ...(step.r || {}) };
+    if (step.model) m = MODELS[step.model];
+    mainSpecs.forEach((spec, i) => trajectories[i].push(cost(spec, r, m)));
   }
 }
 const staircase = STEPS.map((step, k) => {
@@ -168,7 +198,13 @@ console.log("\n[staircase]");
   const t = staircase[0].total;
   gate("tally = explorer convention taxes_minus_benefits", near(t[0], Math.min(...conv), 1e-3) && near(t[1], Math.max(...conv), 1e-3),
     `${t[0].toFixed(2)} to ${t[1].toFixed(2)}`);
-  const m = staircase.find((s) => s.id === "gg").total;
+  const g = staircase.find((s) => s.id === "gg").total;
+  gate("general-administration step = main case before the corrections", near(g[0], BEFORE[0], 1e-4) && near(g[1], BEFORE[1], 1e-4),
+    `${g[0]} to ${g[1]}`);
+  const tx = staircase.find((s) => s.id === "taxes").total;
+  gate("tax corrections = summary.json by_side.receipts", near(tx[0] - g[0], BY_SIDE.receipts[0], 1e-3) &&
+    near(tx[1] - g[1], BY_SIDE.receipts[1], 1e-3), `${(tx[0] - g[0]).toFixed(3)} / ${(tx[1] - g[1]).toFixed(3)}`);
+  const m = staircase.find((s) => s.main).total;
   gate("main-case step = adopted band", near(m[0], MAIN[0], 1e-4) && near(m[1], MAIN[1], 1e-4), `${m[0]} to ${m[1]}`);
   const p = staircase.at(-1).total;
   gate("last step = proportional adopted band", near(p[0], PROPORTIONAL[0], 1e-4) && near(p[1], PROPORTIONAL[1], 1e-4), `${p[0]} to ${p[1]}`);
@@ -222,11 +258,13 @@ const matrix = ROWS.map((row) => {
     : { schools: row.schools, colleges: row.colleges, police: 1, health: 1, other: 1, delayed: row.delayed };
   const cells = GG_COLS.map((g) => {
     const r = { ...base, gg: g, production: true };
-    const inner = span(mainSpecs.map((spec) => cost(spec, r)));
+    const inner = span(mainSpecs.map((spec) => cost(spec, r, MODELS.adopted)));
     // Outer: fiscal part over every executed key, incidence and allocation choice, plus the
     // production span. welfare = P + F + direct, and P, F depend only on the production index,
     // so the envelope of the sum is the sum of the envelopes.
-    const direct = span(outerSpecs.map((spec) => cost(spec, { ...r, production: false })));
+    // The corrections are measured on the reference incidence rule; package.cjs build() carries
+    // them to the other rules as the same proportional change to the group's share of each line.
+    const direct = span(outerSpecs.map((spec) => cost(spec, { ...r, production: false }, MODELS.adopted)));
     const outer = [direct[0] - PROD_SPAN[1], direct[1] - PROD_SPAN[0]];
     return { gg: g, inner: inner.map((x) => round(x)), outer: outer.map((x) => round(x)) };
   });
@@ -246,10 +284,10 @@ const matrix = ROWS.map((row) => {
   for (const r of matrix) console.log(`    ${r.id.padEnd(12)} ${r.cells.map((c) => c.inner.map((x) => x.toFixed(0)).join("–")).join("   ")}`);
 }
 
-const signRows = readCsv(path.join(FISCAL, "main_case_2026_09_23", "derived", "sign_reversal.csv"))
+const signRows = readCsv(path.join(MAIN_CASE, "derived", "sign_reversal.csv"))
   .filter((r) => r.measure.startsWith("service_break_even"));
-const breakEven = [Math.min(...signRows.map((r) => Number(r.adopted_low))), Math.max(...signRows.map((r) => Number(r.adopted_high)))];
-gate("break-even read from sign_reversal.csv", near(breakEven[0], 0.0548, 1e-4) && near(breakEven[1], 0.1643, 1e-4),
+const breakEven = [Math.min(...signRows.map((r) => Number(r.sept24_low))), Math.max(...signRows.map((r) => Number(r.sept24_high)))];
+gate("break-even read from sign_reversal.csv", near(breakEven[0], 0.0476, 1e-4) && near(breakEven[1], 0.1602, 1e-4),
   breakEven.map((x) => (100 * x).toFixed(1) + "%").join(" to "));
 
 /* ---------------------------------------------------------------- who pays ------------------ */
@@ -350,12 +388,31 @@ const origins = screen.map((s) => {
 
 /* ---------------------------------------------------------------- back-cast ----------------- */
 
-const windows = readCsv(path.join(FISCAL, "historical_backcast_2026_09_20", "derived", "backcast_windows.csv"))
-  .filter((r) => r.concept.startsWith("net_cost_cbo_informed_adopted_"));
+// The whole-budget back-cast of the main case with the 2026-09-24 corrections: each year is the
+// envelope of the flat, ratio and income rules at the band's two ends; flat carries the 2024 level.
+// 2024 is the measured account; earlier years are a model.
+console.log("\n[back-cast]");
+const BACKCAST = path.join(FISCAL, "historical_backcast_2026_09_20", "derived");
+const CONCEPT = "net_cost_cbo_informed_corrected";
+const annual = readCsv(path.join(BACKCAST, "backcast_annual.csv"));
+const RULES = ["low", "high"].flatMap((end) => ["flat", "ratio", "income"].map((rule) => `${CONCEPT}_${end}__${rule}`));
+for (const c of RULES) if (!(c in annual[0])) throw new Error("no back-cast column " + c);
+const backcast = annual.map((row) => {
+  const v = RULES.map((c) => Number(row[c]));
+  return { year: Number(row.year), lo: round(Math.min(...v), 1), hi: round(Math.max(...v), 1),
+    flatLo: round(Number(row[`${CONCEPT}_low__flat`]), 1), flatHi: round(Number(row[`${CONCEPT}_high__flat`]), 1) };
+});
+{
+  const y24 = annual.find((r) => Number(r.year) === 2024);
+  const ends = [Number(y24[`${CONCEPT}_low__flat`]), Number(y24[`${CONCEPT}_high__flat`])];
+  gate("back-cast 2024 = adopted band", near(ends[0], MAIN[0], 1e-3) && near(ends[1], MAIN[1], 1e-3), ends.join(" to "));
+  gate("back-cast covers 2005–2024", backcast.length === 20 && backcast[0].year === 2005 && backcast.at(-1).year === 2024);
+}
+const windows = readCsv(path.join(BACKCAST, "backcast_windows.csv")).filter((r) => r.concept.startsWith(CONCEPT + "_"));
 const win = (col) => span(windows.map((r) => Number(r[col]))).map((x) => round(x, 3));
 const backcastWindows = { ten: win("10y_2015_2024"), fifteen: win("15y_2010_2024"), twenty: win("20y_2005_2024") };
-gate("back-cast windows $1.7–2.5tn over ten years", near(backcastWindows.ten[0], 1.7462, 1e-3) && near(backcastWindows.ten[1], 2.4882, 1e-3),
-  backcastWindows.ten.join(" to "));
+gate("back-cast windows $1.7–2.4tn over ten years", windows.length === 6 && near(backcastWindows.ten[0], 1.7317, 1e-3) &&
+  near(backcastWindows.ten[1], 2.4307, 1e-3), backcastWindows.ten.join(" to "));
 
 if (failures) {
   console.error(`\nFAIL: ${failures} gate(s); nothing written`);
@@ -363,13 +420,14 @@ if (failures) {
 }
 const out = {
   generatedBy: "build_data.cjs",
-  account: { main: MAIN, fixedColleges: FIXED_COLLEGES, proportional: PROPORTIONAL, gg: GG, breakEven },
+  account: { main: MAIN, before: BEFORE, bySide: BY_SIDE, fixedColleges: FIXED_COLLEGES, proportional: PROPORTIONAL, gg: GG, breakEven },
   staircase,
   matrix: { columns: GG_COLS, productionSpan: PROD_SPAN.map((x) => round(x, 2)), receipts: RECEIPTS,
     justiceKeys: JUSTICE_KEYS, ucKeys: UC_KEYS, rows: matrix },
   whoPays,
   crime,
   origins,
+  backcast,
   backcastWindows,
 };
 fs.mkdirSync(path.join(HERE, "src", "generated"), { recursive: true });

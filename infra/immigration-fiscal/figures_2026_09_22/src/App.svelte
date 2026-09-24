@@ -8,6 +8,9 @@
   import WhoPays from './lib/WhoPays.svelte'
   import Crime from './lib/Crime.svelte'
   import Sentences from './lib/Sentences.svelte'
+  import fig from './generated/figures.json'
+
+  const main = fig.account.main.map(Math.round)
 </script>
 
 <main>
@@ -21,7 +24,7 @@
     assumption at once; the rest show the people behind the totals.
   </p>
   <p class="rule-note">
-    The generation ledger, the −$217bn union balance and the $203–250bn complete account agree in
+    The generation ledger, the −$217bn union balance and the ${main[0]}–{main[1]}bn complete account agree in
     direction. None is a slice of another, and no figure puts two of them on one axis.
   </p>
   <nav>

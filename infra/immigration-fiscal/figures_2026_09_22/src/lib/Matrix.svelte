@@ -97,7 +97,8 @@
       The small figure adds all {m.receipts.length} executed tax-incidence rules, the
       {m.justiceKeys.length} justice keys, the {m.ucKeys.length} hospital-care keys and the production
       grid with private capital adjusted: a gain of ${m.productionSpan[0].toFixed(0)}–{m.productionSpan[1].toFixed(0)}bn
-      across 432 scenarios.
+      across 432 scenarios. The data corrections are measured on CBO’s incidence rules; each other
+      rule takes the same proportional change to the group’s share of each tax.
     </p>
     <p>
       Not in the grid: letting natives and immigrants be imperfect substitutes would lower every cell by

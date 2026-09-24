@@ -13,13 +13,20 @@ retired to sentences with inline sparklines (last section).
 
 - `build_data.cjs` writes `src/generated/figures.json`. The staircase and the matrix run the
   explorer’s evaluator (`../assumption_explorer_2026_09_21/engine.js`, gated by its
-  `test_engine.js`) on its executed model, one evaluation per step or cell. Who pays, crime,
-  birthplace and back-cast windows are read from the lanes’ CSVs. The gates reproduce the adopted,
-  non-school-fixed and proportional bands in `main_case_bands.csv`, the explorer’s
-  taxes-minus-benefits card, the $6–21bn production grid, ladder 194’s −$80.7bn / +$46.0bn, the
-  NIBRS murder and robbery ratios and the origin screen’s Mexico and India rows. Nothing is written
-  if a gate fails. Re-run it after any upstream lane changes.
-- `src/data.js` holds numbers copied from the executed tables named beside each export.
+  `test_engine.js`) on its executed model and on that model with the data corrections adopted on
+  2026-09-24 (`../main_case_2026_09_24/package.cjs`), one evaluation per step or cell. The
+  staircase adds the corrections as its last two main-case rows (taxes, then benefits and
+  services); the matrix runs on the corrected model, with the tax corrections carried to each
+  incidence rule as the same proportional change. Who pays, crime, birthplace and the back-cast
+  series and windows (the corrected concept) are read from the lanes’ CSVs. The gates reproduce
+  `main_case_2026_09_24/derived/main_case_bands.csv` (the case before the corrections, the adopted
+  case and its non-school-fixed and proportional bands) and its receipts-side change, the
+  explorer’s taxes-minus-benefits card, the $6–21bn production grid, ladder 194’s −$80.7bn /
+  +$46.0bn, the NIBRS murder and robbery ratios, the origin screen’s Mexico and India rows and the
+  back-cast’s 2024 anchor. Nothing is written if a gate fails. Re-run it after any upstream lane
+  changes.
+- `src/data.js` holds numbers copied from the executed tables named beside each export; move an
+  array into `build_data.cjs` whenever its figure is touched.
 
 ## Run
 

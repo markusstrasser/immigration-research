@@ -3,6 +3,8 @@
 
   const steps = fig.staircase
   const breakEven = fig.account.breakEven.map((v) => (100 * v).toFixed(1))
+  const taxes = fig.account.bySide.receipts.map(Math.round)
+  const benefits = fig.account.bySide.spending.map((v) => Math.round(-v))
 
   // Columns: label | step size | plot | running total.
   const stepX = 336
@@ -58,11 +60,13 @@
     <p class="lede">
       Count only taxes paid and benefits received and the Mexican-origin population leaves other
       residents better off. Each row then charges one more public service, at the share of its cost
-      that grows with the population. Schools alone are enough to turn the sign.
+      that grows with the population. Schools alone are enough to turn the sign. The last two rows
+      replace the survey-based shares of taxes and benefits with outside records; the two corrections
+      nearly cancel.
     </p>
 
     <div class="scroll">
-    <svg class="wide" viewBox="0 0 760 {height}" role="img" aria-label="Running total from taxes minus benefits to the main case, one service at a time">
+    <svg class="wide" viewBox="0 0 760 {height + 14}" role="img" aria-label="Running total from taxes minus benefits to the main case, one service at a time">
       {#each [100, 200, 300] as t}
         <line x1={x(t)} x2={x(t)} y1="30" y2={height - 26} stroke="#efece2" />
       {/each}
@@ -123,6 +127,14 @@
       63% or 66%, and general administration at 0.59 or 0.84.
     </p>
     <p>
+      The corrections come from a dataset audit and four outside checks, run together through the
+      engine. The tax row adds ${taxes[0]}–{taxes[1]}bn: legal status, fill-ins for survey
+      nonrespondents and CBO’s income shares lower what the group pays. The benefit row takes off
+      ${benefits[0]}–{benefits[1]}bn, mostly because the same status and income corrections lower the
+      benefits keyed to the group, medical care is charged by use, and premium tax credits had been
+      keyed as the EITC.
+    </p>
+    <p>
       With every other service budget fixed, the sign turns once {breakEven[0]}–{breakEven[1]}% of
       the service costs charged to the group grow with the population.
     </p>
@@ -131,9 +143,9 @@
       per head is an average-cost convention, not a marginal cost.
     </p>
     <p>
-      build_data.cjs runs the explorer’s engine on its executed model; the main-case row reproduces
-      main_case_bands.csv and the last row the proportional benchmark. Break-even:
-      sign_reversal.csv.
+      build_data.cjs runs the explorer’s engine on its executed model, then with the corrections of
+      main_case_2026_09_24/package.cjs; the main-case row reproduces main_case_bands.csv and the last
+      row the proportional benchmark. Break-even: sign_reversal.csv.
     </p>
   </aside>
 </section>
