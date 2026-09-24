@@ -1,0 +1,1337 @@
+{
+ "generatedBy": "build_data.cjs",
+ "account": {
+  "main": [
+   203.207,
+   249.64
+  ],
+  "fixedColleges": [
+   158.8811,
+   212.5633
+  ],
+  "proportional": [
+   307.8989,
+   340.9715
+  ],
+  "gg": [
+   0.59,
+   0.84
+  ],
+  "breakEven": [
+   0.0548,
+   0.1643
+  ]
+ },
+ "staircase": [
+  {
+   "id": "tally",
+   "label": "Taxes paid minus benefits received",
+   "note": "no services, no gain from their work",
+   "main": false,
+   "beyond": false,
+   "total": [
+    -70.0777,
+    -60.2531
+   ],
+   "step": null
+  },
+  {
+   "id": "production",
+   "label": "Gain from their work",
+   "note": "wages, profits and the taxes on them",
+   "main": false,
+   "beyond": false,
+   "total": [
+    -83.4002,
+    -69.0437
+   ],
+   "step": [
+    -13.3226,
+    -8.7906
+   ]
+  },
+  {
+   "id": "uc",
+   "label": "Unpaid hospital care",
+   "note": "keyed to uninsured use",
+   "main": false,
+   "beyond": false,
+   "total": [
+    -79.7487,
+    -63.2961
+   ],
+   "step": [
+    3.6516,
+    5.7476
+   ]
+  },
+  {
+   "id": "schools",
+   "label": "Schools, 63–66% of per-pupil cost",
+   "note": "from CBO’s coefficients",
+   "main": false,
+   "beyond": false,
+   "total": [
+    7.3927,
+    50.6597
+   ],
+   "step": [
+    87.1414,
+    113.9558
+   ]
+  },
+  {
+   "id": "colleges",
+   "label": "Colleges and other education",
+   "note": null,
+   "main": false,
+   "beyond": false,
+   "total": [
+    51.7187,
+    87.7363
+   ],
+   "step": [
+    26.0732,
+    56.8121
+   ]
+  },
+  {
+   "id": "police",
+   "label": "Police, courts and prisons",
+   "note": "charged by use",
+   "main": false,
+   "beyond": false,
+   "total": [
+    120.0877,
+    156.1053
+   ],
+   "step": [
+    68.369,
+    68.369
+   ]
+  },
+  {
+   "id": "health",
+   "label": "Public health services",
+   "note": null,
+   "main": false,
+   "beyond": false,
+   "total": [
+    143.6227,
+    179.6403
+   ],
+   "step": [
+    23.535,
+    23.535
+   ]
+  },
+  {
+   "id": "other",
+   "label": "Welfare administration, housing, community",
+   "note": null,
+   "main": false,
+   "beyond": false,
+   "total": [
+    174.7152,
+    209.0753
+   ],
+   "step": [
+    29.435,
+    31.0925
+   ]
+  },
+  {
+   "id": "gg",
+   "label": "General administration, 0.59–0.84",
+   "note": "cross-state scale of administration",
+   "main": true,
+   "beyond": false,
+   "total": [
+    203.207,
+    249.64
+   ],
+   "step": [
+    28.4918,
+    40.5647
+   ]
+  },
+  {
+   "id": "delayed",
+   "label": "Roads, transport, parks and culture",
+   "note": "held fixed in the main case",
+   "main": false,
+   "beyond": true,
+   "total": [
+    246.0008,
+    292.4337
+   ],
+   "step": [
+    42.7938,
+    42.7938
+   ]
+  },
+  {
+   "id": "schools_full",
+   "label": "Schools at the full per-pupil cost",
+   "note": null,
+   "main": false,
+   "beyond": true,
+   "total": [
+    307.8989,
+    340.9715
+   ],
+   "step": [
+    47.0287,
+    63.8843
+   ]
+  }
+ ],
+ "matrix": {
+  "columns": [
+   0,
+   0.59,
+   0.84,
+   1
+  ],
+  "productionSpan": [
+   5.98,
+   21.08
+  ],
+  "receipts": [
+   "cbo_collective",
+   "corporate_all_capital",
+   "federal_gap_high_agi",
+   "medicare_income_weighted",
+   "nas_80",
+   "property_residual_consumption",
+   "public_assets_tax_base",
+   "treasury_815"
+  ],
+  "justiceKeys": [
+   "adults",
+   "population",
+   "use",
+   "use_raw_coding"
+  ],
+  "ucKeys": [
+   "medicaid",
+   "uninsured_use_07_high",
+   "uninsured_use_07_low",
+   "uninsured_use_high",
+   "uninsured_use_low"
+  ],
+  "rows": [
+   {
+    "id": "frozen",
+    "schools": 0,
+    "colleges": 0,
+    "delayed": 0,
+    "frozen": true,
+    "cells": [
+     {
+      "gg": 0,
+      "inner": [
+       -79.7487,
+       -63.2961
+      ],
+      "outer": [
+       -91.1584,
+       -50.8997
+      ]
+     },
+     {
+      "gg": 0.59,
+      "inner": [
+       -51.2568,
+       -34.8043
+      ],
+      "outer": [
+       -62.6665,
+       -22.4079
+      ]
+     },
+     {
+      "gg": 0.84,
+      "inner": [
+       -39.184,
+       -22.7314
+      ],
+      "outer": [
+       -50.5937,
+       -10.335
+      ]
+     },
+     {
+      "gg": 1,
+      "inner": [
+       -31.4574,
+       -15.0048
+      ],
+      "outer": [
+       -42.8671,
+       -2.6084
+      ]
+     }
+    ]
+   },
+   {
+    "id": "scbo_c0_d0",
+    "schools": "cbo",
+    "colleges": 0,
+    "delayed": 0,
+    "cells": [
+     {
+      "gg": 0,
+      "inner": [
+       130.3892,
+       171.9987
+      ],
+      "outer": [
+       106.6827,
+       184.3951
+      ]
+     },
+     {
+      "gg": 0.59,
+      "inner": [
+       158.8811,
+       200.4905
+      ],
+      "outer": [
+       135.1745,
+       212.8869
+      ]
+     },
+     {
+      "gg": 0.84,
+      "inner": [
+       170.9539,
+       212.5633
+      ],
+      "outer": [
+       147.2473,
+       224.9598
+      ]
+     },
+     {
+      "gg": 1,
+      "inner": [
+       178.6805,
+       220.2899
+      ],
+      "outer": [
+       154.9739,
+       232.6864
+      ]
+     }
+    ]
+   },
+   {
+    "id": "scbo_c0_d1",
+    "schools": "cbo",
+    "colleges": 0,
+    "delayed": 1,
+    "cells": [
+     {
+      "gg": 0,
+      "inner": [
+       173.183,
+       214.7925
+      ],
+      "outer": [
+       149.4765,
+       227.1889
+      ]
+     },
+     {
+      "gg": 0.59,
+      "inner": [
+       201.6749,
+       243.2843
+      ],
+      "outer": [
+       177.9683,
+       255.6807
+      ]
+     },
+     {
+      "gg": 0.84,
+      "inner": [
+       213.7477,
+       255.3571
+      ],
+      "outer": [
+       190.0411,
+       267.7535
+      ]
+     },
+     {
+      "gg": 1,
+      "inner": [
+       221.4743,
+       263.0837
+      ],
+      "outer": [
+       197.7677,
+       275.4801
+      ]
+     }
+    ]
+   },
+   {
+    "id": "scbo_c1_d0",
+    "schools": "cbo",
+    "colleges": 1,
+    "delayed": 0,
+    "cells": [
+     {
+      "gg": 0,
+      "inner": [
+       174.7152,
+       209.0753
+      ],
+      "outer": [
+       151.0086,
+       221.4717
+      ]
+     },
+     {
+      "gg": 0.59,
+      "inner": [
+       203.207,
+       237.5671
+      ],
+      "outer": [
+       179.5004,
+       249.9636
+      ]
+     },
+     {
+      "gg": 0.84,
+      "inner": [
+       215.2798,
+       249.64
+      ],
+      "outer": [
+       191.5733,
+       262.0364
+      ]
+     },
+     {
+      "gg": 1,
+      "inner": [
+       223.0064,
+       257.3666
+      ],
+      "outer": [
+       199.2999,
+       269.763
+      ]
+     }
+    ]
+   },
+   {
+    "id": "scbo_c1_d1",
+    "schools": "cbo",
+    "colleges": 1,
+    "delayed": 1,
+    "cells": [
+     {
+      "gg": 0,
+      "inner": [
+       217.509,
+       251.8691
+      ],
+      "outer": [
+       193.8024,
+       264.2655
+      ]
+     },
+     {
+      "gg": 0.59,
+      "inner": [
+       246.0008,
+       280.3609
+      ],
+      "outer": [
+       222.2942,
+       292.7573
+      ]
+     },
+     {
+      "gg": 0.84,
+      "inner": [
+       258.0736,
+       292.4337
+      ],
+      "outer": [
+       234.367,
+       304.8302
+      ]
+     },
+     {
+      "gg": 1,
+      "inner": [
+       265.8002,
+       300.1603
+      ],
+      "outer": [
+       242.0936,
+       312.5568
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s1_c0_d0",
+    "schools": 1,
+    "colleges": 0,
+    "delayed": 0,
+    "cells": [
+     {
+      "gg": 0,
+      "inner": [
+       181.5675,
+       230.7032
+      ],
+      "outer": [
+       157.861,
+       243.0996
+      ]
+     },
+     {
+      "gg": 0.59,
+      "inner": [
+       210.0594,
+       259.195
+      ],
+      "outer": [
+       186.3528,
+       271.5914
+      ]
+     },
+     {
+      "gg": 0.84,
+      "inner": [
+       222.1322,
+       271.2678
+      ],
+      "outer": [
+       198.4256,
+       283.6643
+      ]
+     },
+     {
+      "gg": 1,
+      "inner": [
+       229.8588,
+       278.9944
+      ],
+      "outer": [
+       206.1522,
+       291.3909
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s1_c0_d1",
+    "schools": 1,
+    "colleges": 0,
+    "delayed": 1,
+    "cells": [
+     {
+      "gg": 0,
+      "inner": [
+       224.3613,
+       273.497
+      ],
+      "outer": [
+       200.6547,
+       285.8934
+      ]
+     },
+     {
+      "gg": 0.59,
+      "inner": [
+       252.8532,
+       301.9888
+      ],
+      "outer": [
+       229.1466,
+       314.3852
+      ]
+     },
+     {
+      "gg": 0.84,
+      "inner": [
+       264.926,
+       314.0616
+      ],
+      "outer": [
+       241.2194,
+       326.458
+      ]
+     },
+     {
+      "gg": 1,
+      "inner": [
+       272.6526,
+       321.7882
+      ],
+      "outer": [
+       248.946,
+       334.1846
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s1_c1_d0",
+    "schools": 1,
+    "colleges": 1,
+    "delayed": 0,
+    "cells": [
+     {
+      "gg": 0,
+      "inner": [
+       236.6133,
+       257.613
+      ],
+      "outer": [
+       212.9067,
+       270.0094
+      ]
+     },
+     {
+      "gg": 0.59,
+      "inner": [
+       265.1051,
+       286.1049
+      ],
+      "outer": [
+       241.3986,
+       298.5013
+      ]
+     },
+     {
+      "gg": 0.84,
+      "inner": [
+       277.178,
+       298.1777
+      ],
+      "outer": [
+       253.4714,
+       310.5741
+      ]
+     },
+     {
+      "gg": 1,
+      "inner": [
+       284.9046,
+       305.9043
+      ],
+      "outer": [
+       261.198,
+       318.3007
+      ]
+     }
+    ]
+   },
+   {
+    "id": "s1_c1_d1",
+    "schools": 1,
+    "colleges": 1,
+    "delayed": 1,
+    "cells": [
+     {
+      "gg": 0,
+      "inner": [
+       279.4071,
+       300.4068
+      ],
+      "outer": [
+       255.7005,
+       312.8032
+      ]
+     },
+     {
+      "gg": 0.59,
+      "inner": [
+       307.8989,
+       328.8987
+      ],
+      "outer": [
+       284.1924,
+       341.2951
+      ]
+     },
+     {
+      "gg": 0.84,
+      "inner": [
+       319.9717,
+       340.9715
+      ],
+      "outer": [
+       296.2652,
+       353.3679
+      ]
+     },
+     {
+      "gg": 1,
+      "inner": [
+       327.6983,
+       348.6981
+      ],
+      "outer": [
+       303.9918,
+       361.0945
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "whoPays": [
+  {
+   "id": "fiscal_a",
+   "label": "Fiscal cost, paid in proportion to taxes",
+   "quintiles": [
+    {
+     "bn": -6.911,
+     "pct": -1.218,
+     "perPerson": -117
+    },
+    {
+     "bn": -14.575,
+     "pct": -1.283,
+     "perPerson": -246
+    },
+    {
+     "bn": -24.57,
+     "pct": -1.439,
+     "perPerson": -415
+    },
+    {
+     "bn": -40.292,
+     "pct": -1.59,
+     "perPerson": -681
+    },
+    {
+     "bn": -141.576,
+     "pct": -2.638,
+     "perPerson": -2393
+    }
+   ],
+   "totalBn": -227.92
+  },
+  {
+   "id": "fiscal_b",
+   "label": "Fiscal cost, paid as equal cuts per person",
+   "quintiles": [
+    {
+     "bn": -45.586,
+     "pct": -8.034,
+     "perPerson": -770
+    },
+    {
+     "bn": -45.583,
+     "pct": -4.013,
+     "perPerson": -770
+    },
+    {
+     "bn": -45.585,
+     "pct": -2.67,
+     "perPerson": -770
+    },
+    {
+     "bn": -45.585,
+     "pct": -1.799,
+     "perPerson": -770
+    },
+    {
+     "bn": -45.585,
+     "pct": -0.849,
+     "perPerson": -770
+    }
+   ],
+   "totalBn": -227.92
+  },
+  {
+   "id": "wages",
+   "label": "Wages, after tax",
+   "quintiles": [
+    {
+     "bn": -4.79,
+     "pct": -0.844,
+     "perPerson": -81
+    },
+    {
+     "bn": -11.058,
+     "pct": -0.974,
+     "perPerson": -187
+    },
+    {
+     "bn": -11.829,
+     "pct": -0.693,
+     "perPerson": -200
+    },
+    {
+     "bn": -4.191,
+     "pct": -0.165,
+     "perPerson": -71
+    },
+    {
+     "bn": 30.399,
+     "pct": 0.566,
+     "perPerson": 514
+    }
+   ],
+   "totalBn": -1.47
+  },
+  {
+   "id": "housing_net",
+   "label": "Housing: renters pay, landlords receive",
+   "quintiles": [
+    {
+     "bn": -7.188,
+     "pct": -1.267,
+     "perPerson": -121
+    },
+    {
+     "bn": -5.277,
+     "pct": -0.465,
+     "perPerson": -89
+    },
+    {
+     "bn": -3.78,
+     "pct": -0.221,
+     "perPerson": -64
+    },
+    {
+     "bn": -1.907,
+     "pct": -0.075,
+     "perPerson": -32
+    },
+    {
+     "bn": 21.659,
+     "pct": 0.404,
+     "perPerson": 366
+    }
+   ],
+   "totalBn": 3.51
+  },
+  {
+   "id": "crime",
+   "label": "Crime victims’ harm",
+   "quintiles": [
+    {
+     "bn": -10.412,
+     "pct": -1.835,
+     "perPerson": -176
+    },
+    {
+     "bn": -6.48,
+     "pct": -0.571,
+     "perPerson": -110
+    },
+    {
+     "bn": -5.52,
+     "pct": -0.323,
+     "perPerson": -93
+    },
+    {
+     "bn": -5.038,
+     "pct": -0.199,
+     "perPerson": -85
+    },
+    {
+     "bn": -4.888,
+     "pct": -0.091,
+     "perPerson": -83
+    }
+   ],
+   "totalBn": -32.34
+  },
+  {
+   "id": "unreimbursed_care",
+   "label": "Unpaid hospital care",
+   "quintiles": [
+    {
+     "bn": -0.451,
+     "pct": -0.079,
+     "perPerson": -8
+    },
+    {
+     "bn": -0.724,
+     "pct": -0.064,
+     "perPerson": -12
+    },
+    {
+     "bn": -0.967,
+     "pct": -0.057,
+     "perPerson": -16
+    },
+    {
+     "bn": -1.103,
+     "pct": -0.044,
+     "perPerson": -19
+    },
+    {
+     "bn": -1.155,
+     "pct": -0.022,
+     "perPerson": -20
+    }
+   ],
+   "totalBn": -4.4
+  }
+ ],
+ "crime": [
+  {
+   "offence": "Murder",
+   "victimisations": 3810,
+   "per100k": {
+    "hispanic": 7.25,
+    "white": 3.15,
+    "all": 7.24
+   },
+   "hispanicBounds": [
+    5.65,
+    10.19
+   ],
+   "vsWhite": [
+    1.531,
+    2.303,
+    3.928
+   ],
+   "vsAll": [
+    0.781,
+    1.002,
+    1.407
+   ]
+  },
+  {
+   "offence": "Rape/sexual assault",
+   "victimisations": 36730,
+   "per100k": {
+    "hispanic": 82.44,
+    "white": 47.23,
+    "all": 69.81
+   },
+   "hispanicBounds": [
+    68.5,
+    104.99
+   ],
+   "vsWhite": [
+    1.249,
+    1.746,
+    2.787
+   ],
+   "vsAll": [
+    0.981,
+    1.181,
+    1.504
+   ]
+  },
+  {
+   "offence": "Robbery",
+   "victimisations": 49966,
+   "per100k": {
+    "hispanic": 87.1,
+    "white": 20.64,
+    "all": 94.97
+   },
+   "hispanicBounds": [
+    63.03,
+    142.58
+   ],
+   "vsWhite": [
+    2.364,
+    4.219,
+    9.747
+   ],
+   "vsAll": [
+    0.664,
+    0.917,
+    1.501
+   ]
+  },
+  {
+   "offence": "Aggravated assault",
+   "victimisations": 170185,
+   "per100k": {
+    "hispanic": 352.21,
+    "white": 157.61,
+    "all": 323.46
+   },
+   "hispanicBounds": [
+    273.18,
+    469.51
+   ],
+   "vsWhite": [
+    1.424,
+    2.235,
+    3.753
+   ],
+   "vsAll": [
+    0.845,
+    1.089,
+    1.452
+   ]
+  },
+  {
+   "offence": "Simple assault",
+   "victimisations": 533367,
+   "per100k": {
+    "hispanic": 1111.82,
+    "white": 638.19,
+    "all": 1013.74
+   },
+   "hispanicBounds": [
+    1013.33,
+    1280.05
+   ],
+   "vsWhite": [
+    1.457,
+    1.742,
+    2.24
+   ],
+   "vsAll": [
+    1,
+    1.097,
+    1.263
+   ]
+  }
+ ],
+ "origins": [
+  {
+   "id": "mexico_born",
+   "name": "Mexico",
+   "n": 4318,
+   "ba": 0.1149,
+   "reference": false,
+   "personal": {
+    "v": -5684,
+    "se": 642
+   },
+   "shared": {
+    "v": -7903,
+    "se": 611
+   }
+  },
+  {
+   "id": "germany",
+   "name": "Germany",
+   "n": 59,
+   "ba": 0.5558,
+   "reference": false,
+   "personal": {
+    "v": 10798,
+    "se": 4701
+   },
+   "shared": {
+    "v": 8310,
+    "se": 4157
+   }
+  },
+  {
+   "id": "philippines",
+   "name": "Philippines",
+   "n": 669,
+   "ba": 0.5564,
+   "reference": false,
+   "personal": {
+    "v": 2895,
+    "se": 1568
+   },
+   "shared": {
+    "v": -760,
+    "se": 1406
+   }
+  },
+  {
+   "id": "all_native",
+   "name": "All natives",
+   "n": 55652,
+   "ba": 0.4114,
+   "reference": true,
+   "personal": {
+    "v": 2785,
+    "se": 330
+   },
+   "shared": {
+    "v": -1657,
+    "se": 317
+   }
+  },
+  {
+   "id": "poland",
+   "name": "Poland",
+   "n": 78,
+   "ba": 0.5246,
+   "reference": false,
+   "personal": {
+    "v": 9150,
+    "se": 3215
+   },
+   "shared": {
+    "v": 2357,
+    "se": 2533
+   }
+  },
+  {
+   "id": "third_plus_nh_white",
+   "name": "Third-plus whites",
+   "n": 36287,
+   "ba": 0.4438,
+   "reference": true,
+   "personal": {
+    "v": 4861,
+    "se": 387
+   },
+   "shared": {
+    "v": 0,
+    "se": 363
+   }
+  },
+  {
+   "id": "venezuela",
+   "name": "Venezuela",
+   "n": 338,
+   "ba": 0.4947,
+   "reference": false,
+   "personal": {
+    "v": -877,
+    "se": 1436
+   },
+   "shared": {
+    "v": -2329,
+    "se": 1662
+   }
+  },
+  {
+   "id": "pakistan_bangladesh",
+   "name": "Pakistan, Bangladesh",
+   "n": 209,
+   "ba": 0.5968,
+   "reference": false,
+   "personal": {
+    "v": 2329,
+    "se": 3287
+   },
+   "shared": {
+    "v": -1709,
+    "se": 2674
+   }
+  },
+  {
+   "id": "japan",
+   "name": "Japan",
+   "n": 101,
+   "ba": 0.7659,
+   "reference": false,
+   "personal": {
+    "v": 9323,
+    "se": 5493
+   },
+   "shared": {
+    "v": 3524,
+    "se": 3326
+   }
+  },
+  {
+   "id": "former_ussr",
+   "name": "Former USSR",
+   "n": 340,
+   "ba": 0.6328,
+   "reference": false,
+   "personal": {
+    "v": 5367,
+    "se": 2014
+   },
+   "shared": {
+    "v": -270,
+    "se": 1667
+   }
+  },
+  {
+   "id": "russia_ukraine_ussr",
+   "name": "Russia, Ukraine",
+   "n": 217,
+   "ba": 0.6435,
+   "reference": false,
+   "personal": {
+    "v": 6629,
+    "se": 2059
+   },
+   "shared": {
+    "v": 1423,
+    "se": 1850
+   }
+  },
+  {
+   "id": "korea",
+   "name": "Korea",
+   "n": 275,
+   "ba": 0.7434,
+   "reference": false,
+   "personal": {
+    "v": 8955,
+    "se": 2311
+   },
+   "shared": {
+    "v": 4270,
+    "se": 2044
+   }
+  },
+  {
+   "id": "nigeria",
+   "name": "Nigeria",
+   "n": 114,
+   "ba": 0.7162,
+   "reference": false,
+   "personal": {
+    "v": 8866,
+    "se": 5223
+   },
+   "shared": {
+    "v": 662,
+    "se": 2530
+   }
+  },
+  {
+   "id": "united_kingdom",
+   "name": "United Kingdom",
+   "n": 146,
+   "ba": 0.685,
+   "reference": false,
+   "personal": {
+    "v": 21798,
+    "se": 4831
+   },
+   "shared": {
+    "v": 14158,
+    "se": 3888
+   }
+  },
+  {
+   "id": "china_mainland",
+   "name": "China",
+   "n": 628,
+   "ba": 0.6847,
+   "reference": false,
+   "personal": {
+    "v": 15966,
+    "se": 2704
+   },
+   "shared": {
+    "v": 9779,
+    "se": 2332
+   }
+  },
+  {
+   "id": "brazil",
+   "name": "Brazil",
+   "n": 193,
+   "ba": 0.506,
+   "reference": false,
+   "personal": {
+    "v": 10128,
+    "se": 3228
+   },
+   "shared": {
+    "v": 4980,
+    "se": 2694
+   }
+  },
+  {
+   "id": "egypt",
+   "name": "Egypt",
+   "n": 43,
+   "ba": 0.7331,
+   "reference": false,
+   "personal": {
+    "v": 14881,
+    "se": 6750
+   },
+   "shared": {
+    "v": 6602,
+    "se": 3828
+   }
+  },
+  {
+   "id": "taiwan_hong_kong",
+   "name": "Taiwan, Hong Kong",
+   "n": 141,
+   "ba": 0.7961,
+   "reference": false,
+   "personal": {
+    "v": 22812,
+    "se": 3845
+   },
+   "shared": {
+    "v": 14451,
+    "se": 3346
+   }
+  },
+  {
+   "id": "iran",
+   "name": "Iran",
+   "n": 81,
+   "ba": 0.7366,
+   "reference": false,
+   "personal": {
+    "v": 22292,
+    "se": 6380
+   },
+   "shared": {
+    "v": 12768,
+    "se": 3627
+   }
+  },
+  {
+   "id": "canada",
+   "name": "Canada",
+   "n": 165,
+   "ba": 0.7299,
+   "reference": false,
+   "personal": {
+    "v": 29520,
+    "se": 8072
+   },
+   "shared": {
+    "v": 20756,
+    "se": 5629
+   }
+  },
+  {
+   "id": "india",
+   "name": "India",
+   "n": 1232,
+   "ba": 0.9048,
+   "reference": false,
+   "personal": {
+    "v": 21832,
+    "se": 1795
+   },
+   "shared": {
+    "v": 13452,
+    "se": 1434
+   }
+  }
+ ],
+ "backcastWindows": {
+  "ten": [
+   1.746,
+   2.488
+  ],
+  "fifteen": [
+   2.516,
+   3.743
+  ],
+  "twenty": [
+   2.999,
+   4.616
+  ]
+ }
+}
