@@ -16,7 +16,7 @@ account.
 |---|---|---|
 | School cost where the group's pupils enroll | [school_cost_where_enrolled_2026_09_24](../infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/RESULT.md) | done, ladder 215 |
 | Benefit keys against administrative records by ethnicity | `admin_benefit_keys_2026_09_24` | running |
-| Taxes and transfers against CBO, Treasury, IRS and state hospital records | `external_benchmarks_2026_09_24` | running |
+| Taxes and transfers against CBO, Treasury, tax anchors and state hospital records | [external_benchmarks_2026_09_24](../infra/immigration-fiscal/external_benchmarks_2026_09_24/RESULT.md) | done, ladder 216 |
 | Direction of the errors in the crime ratios | `crime_ratio_direction_2026_09_24` | running |
 
 ## Schools: priced where the pupils enroll
@@ -77,3 +77,68 @@ Limits: time frames are mixed (ACS 2020–2024 shares, CCD 2023–24 counts, F-3
 FY2022, English-learner counts 2018–19). The 0.68m group pupils in charters run by nongovernmental
 bodies take their state's group mean. District Mexican shares cover residents of all ages and are
 scaled to children by a state ratio. The 63–66% response and the education line are untouched.
+
+## Taxes and transfers against outside distributions
+
+Each key splits 100% of its line, so the only test of a key is an independent distribution of the
+same dollars over groups the key can be tabulated on: income groups (CBO), ethnicity (Treasury),
+legal status (tax anchors) and state by status (hospital reports). The lane reproduces all 28
+published receipt-key shares and 52 spending-key shares before any comparison [CALCULATION:
+`test_benchmarks.py`, 9 tests pass; the parent's re-run left all 18 derived files byte-identical].
+
+**CBO's income distribution corroborates most transfer and payroll keys.** On CBO's *Distribution of
+Household Income, 2022* (January 2026), the keys' income gradients for payroll taxes, federal
+excise, Social Security, Medicare, SNAP, SSI and other means-tested transfers each move the main case
+by $2.1bn or less, −$3.5bn / −$3.7bn together [SOURCE: CBO publication 61911, researcher tables;
+CALCULATION: `cbo_arm.py` → `derived/cbo_main_case.csv`].
+
+**The federal income tax key is too flat at the top.** It puts 19.2% of income tax before refundable
+credits on the top 1% of households, where CBO puts 36.1%, because the CPS top-codes high incomes.
+The group sits low in the distribution (57% in the bottom two fifths, 0.3% in the top 1%), so its
+share of the line falls from 5.33% to 4.79%. That adds **+$14.1bn / +$13.2bn** of cost (SE 3.7 /
+3.5; +$12.1–14.6bn on CBO's 2018 and 2019 data). Audit row 3 already takes +$9.5bn / +$9.6bn for the
+same defect, so the increment over the audit package is at most +$4.6bn / +$3.6bn [CALCULATION:
+`derived/cbo_translation.csv`, `cbo_spec_totals.csv`]. The finding holds the group's position inside
+each income group fixed; no published income tax by ethnicity tests that.
+
+**Treasury's EITC shares confirm the audit's rule and contradict the raw key.** Treasury's Office of
+Tax Analysis finds that "Hispanic families are 15 percent of all families but receive 22 percent of
+the benefits of the child tax credit (CTC) and 28 percent of the benefits of the Earned Income Tax
+Credit" [SOURCE: OTA Working Paper 122, January 2023, Table 5 and text]. The account's raw CPS key
+gives Hispanic tax units 37.7% of the EITC, the audit's SSN rule 30.2%, and 22.0% of child credits.
+At Treasury's shares the adopted main case falls −$4.6bn / −$4.3bn; the audit package moves only
+−$0.4bn / −$0.3bn [CALCULATION: `ota_arm.py` → `derived/ota_main_case.csv`].
+
+**Other results.**
+- Medicaid: the key has no income gradient (each of the bottom four fifths holds about 20% of the
+  dollars; CBO puts 44.8% in the bottom fifth). CBO's gradient implies +$22.5bn, which corroborates
+  the pooled-MEPS Medicaid line in pending decision 2 (+$12.2–21.3bn) and must not be added to it.
+- Corporate tax: the key puts 11% on the top 1% against CBO's 48%, but the main case gives
+  indirect receipts no response, so the effect is zero.
+- Consumption: the largest receipt key without an outside test. CBO's federal excise gradient,
+  spread over all consumption-keyed lines, would give −$15.2bn; general sales taxes are less
+  regressive than fuel, tobacco and alcohol excises, so that is a sensitivity only.
+- Unauthorized taxes: the outside figures are models. SSA's Actuarial Note 151 and Penn Wharton
+  share their compliance input with the audit's on-books share, and ITEP assumes its own. Under the
+  raw keys the group's imputed-unauthorized members pay 1.4–1.8 times the anchors' payroll taxes
+  per person; at the audit's 0.524 on-books share they pay at or below them. The anchors support
+  the direction of audit row 2, not its size; ITEP favors the upper half of the on-books range.
+- Hospital reports: Florida's status reports (AHCA, under s. 395.3027) and Texas's (HHSC, under
+  executive order GA-46), taken at face value, put the unauthorized uninsured's hospital use at
+  0.39–1.06 times other uninsured people's. That moves uncompensated care by −$1.0bn to +$0.1bn,
+  inside the adopted sensitivity.
+
+| Package | Total, $bn | Change, $bn |
+|---|---|---|
+| Adopted main case | 203.21–249.64 | — |
+| With the CBO keys (Medicaid excluded) and Treasury's credit shares | 209.2–254.8 | +6.0 / +5.1 (SE about 3.8 / 3.5) |
+| Audit package with the same | 203.6–250.6 | +0.7 / −0.5, before rows 2 and 13 shrink the income-tax increment |
+
+[CALCULATION: `derived/cbo_main_case.csv`, `ota_main_case.csv`; 203.207 + 10.560 − 4.554 and
+249.640 + 9.444 − 4.313.] These changes are relative to the adopted main case and are not combined
+with the school correction above. Combining them needs one engine run over the adopted set.
+
+Still without an outside test: the state and local income and property tax keys, the consumption
+key, unemployment insurance and workers' compensation (CBO rounds them too coarsely), income tax by
+ethnicity, and any tax figure for the Mexico-born. Blocked: an AEA 2024 paper on credits by
+ethnicity (paywall), Florida's 2024 report PDF and Texas's counts of patients who declined to answer.

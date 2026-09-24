@@ -1,0 +1,24 @@
+{
+ "vs_adopted_raw_keys": {
+  "receipts": {},
+  "spending": {
+   "refundable_tax_credits": {
+    "refundable_credits": {
+     "personal": -4.313492323149511,
+     "shared": -4.554240576146455
+    }
+   }
+  }
+ },
+ "vs_audit_package_ssn_rule": {
+  "receipts": {},
+  "spending": {
+   "refundable_tax_credits": {
+    "refundable_credits": {
+     "personal": -0.34174928980722263,
+     "shared": -0.363830237497653
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,20 @@
+item,cps_hispanic_share,ota_hispanic_share,ota_source,ratio_ota_to_cps,note
+tax_units_heads,0.1890447195590413,0.15,"WP-122 Table 5: Total Number of Families 100 / 67 / 15; 186m, Hispanic 28m",0.7934630512287485,"CPS tax units incl. nonfilers, head's ethnicity; OTA FY2023 families incl. nonfilers with information returns"
+tax_units_heads_2024,0.1890447195590413,0.15121951219512195,"OTA 2024 family counts (Jan 14, 2025): All RH 184.5m, Hispanic 27.9m",0.7999139703444295,OTA 2024 count table
+eitc_raw,0.37669155672854854,0.28,"WP-122 Table 5: Earned income tax credit (including outlay) 100 / 49 / 28; $67bn, Hispanic $19bn",0.7433137138291995,CPS tax model: every eligible unit claims; no SSN rule
+ctc_incl_refundable_raw,0.21950973527111706,0.22,"WP-122 Table 5: Child credit (including outlay) 100 / 66 / 22; $113bn, Hispanic $24bn",1.002233453237404,CTC_CRD (nonrefundable incl. other-dependent credit) + ACTC_CRD
+actc_raw,0.3609719011104388,,,,refundable part only; OTA does not split
+eitc_ssn_rule,0.3017276141137041,0.28,"WP-122 Table 5: Earned income tax credit (including outlay) 100 / 49 / 28; $67bn, Hispanic $19bn",0.927989308577119,EITC zeroed for Latin-American-born imputed unauthorized (audit row 2 rule)
+ctc_on_books_central,0.20402483637221647,0.22,"WP-122 Table 5: Child credit (including outlay) 100 / 66 / 22; $113bn, Hispanic $24bn",1.078300092831046,child credits of imputed unauthorized scaled by on-books share 0.524
+ctc_on_books_low,0.20041919946257397,0.22,"WP-122 Table 5: Child credit (including outlay) 100 / 66 / 22; $113bn, Hispanic $24bn",1.0976992253732782,child credits of imputed unauthorized scaled by on-books share 0.416
+ctc_on_books_high,0.20756288499537623,0.22,"WP-122 Table 5: Child credit (including outlay) 100 / 66 / 22; $113bn, Hispanic $24bn",1.0599197443459163,child credits of imputed unauthorized scaled by on-books share 0.631
+subsidized_marketplace_persons,0.28265214039418135,0.18,"WP-122 Table 5: Premium assistance tax credit (including outlays) 100 / 66 / 18; $36bn, Hispanic $6bn",0.6368251793493422,CPS persons with subsidized Marketplace coverage last year; OTA premium credit dollars
+dividends_plus_capital_gains,0.04795214854367914,0.03,WP-122 Table 5: Preferential rates capital gains and dividends 100 / 92 / 3,0.6256236875950051,CPS dividends + capital gains; OTA tax expenditure of preferential rates
+account_key_federal_liability,0.1070561716810137,,,,"account key, civilian universe"
+account_key_state_liability,0.09815802227690536,,,,"account key, civilian universe"
+account_key_wage,0.14823786905824862,,,,"account key, civilian universe"
+account_key_consumption,0.14496212484389004,,,,"account key, civilian universe"
+account_key_refundable_credits,0.3731007007682943,,,,EIT_CRED + ACTC_CRD
+mexican_origin_share_of_hispanic_persons,0.5894883386913948,,,,union members among civilian Hispanics
+mfj_avg_tax_after_refundable,0.4774617514584532,0.33062377895618195,"WP-124 Table 3 Total rows: Hispanic 9,477, White 28,664 (TY2023)",0.692461287100505,"ratio of means; CPS 2024 means Hispanic 11,010, white 23,059, all 20,991"
+mfj_avg_tax_before_refundable,0.5248469131819582,,"WP-124 Table 3 Total rows: Hispanic 9,477, White 28,664 (TY2023)",0.6299432666026914,"ratio of means; CPS 2024 means Hispanic 12,222, white 23,287, all 21,425"
