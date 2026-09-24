@@ -1,0 +1,12 @@
+{
+ "target_pupils": 8487011.218792627,
+ "national_pupils": 48551028.65090133,
+ "target_price_personal": 16859.5777244098,
+ "national_price_personal": 17668.872062361115,
+ "r_embedded_personal": 0.9541966043392603,
+ "target_school_personal_bn": 143.08742529117225,
+ "target_school_shared_bn": 136.26572186969972,
+ "national_school_personal_bn": 857.8419137288047,
+ "national_school_shared_bn": 844.7537643662366,
+ "note": "school component of the education_mix key; pupils are transported October-2024 rates on March-2025 CPS"
+}

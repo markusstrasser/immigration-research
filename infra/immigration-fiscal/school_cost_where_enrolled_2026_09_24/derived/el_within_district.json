@@ -1,0 +1,15 @@
+{
+ "el_share_all_pupils_weighted": 0.0989116173420295,
+ "el_share_of_groups_districts": 0.1768518283549437,
+ "acs_eng_lt_very_well_mexican": 0.112354,
+ "acs_eng_lt_very_well_all": 0.053681,
+ "group_el_rate_scaled": 0.2070214015172292,
+ "coverage_all": 0.8904973383100206,
+ "coverage_group": 0.9020140822293617,
+ "coef_fy2024": 7317.262215438174,
+ "se_fy2024": 1862.328277275006,
+ "coef_fy2019": 3807.2454998062744,
+ "se_fy2019": 1286.5351248123466,
+ "within_district_el_premium_per_group_pupil_fy2024": 220.75867775628925,
+ "note": "Upper-bound style: assumes the whole revealed EL coefficient is spent on EL pupils themselves; the district weighting already carries the between-district part."
+}

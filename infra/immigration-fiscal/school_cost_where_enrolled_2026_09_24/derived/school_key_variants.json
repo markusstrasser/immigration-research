@@ -1,0 +1,588 @@
+{
+ "published": {
+  "school_target_bn": {
+   "personal": 199.5701408118289,
+   "shared": 193.3654604361026
+  }
+ },
+ "school_key_only": {
+  "school_target_bn": {
+   "personal": 201.66230948591326,
+   "shared": 195.02353077213934
+  }
+ },
+ "A_current_hispanic|blend": {
+  "school_target_bn": {
+   "personal": 204.4387703139533,
+   "shared": 198.06878988470777
+  }
+ },
+ "A_current_hispanic|school": {
+  "school_target_bn": {
+   "personal": 206.89141317088297,
+   "shared": 200.0804909250609
+  }
+ },
+ "B_current_hispanic|blend": {
+  "school_target_bn": {
+   "personal": 216.354802042562,
+   "shared": 209.58024766049942
+  }
+ },
+ "B_current_hispanic|school": {
+  "school_target_bn": {
+   "personal": 219.68970998009692,
+   "shared": 212.45746428198393
+  }
+ },
+ "C_current_hispanic|blend": {
+  "school_target_bn": {
+   "personal": 216.20252828528382,
+   "shared": 209.43314391260824
+  }
+ },
+ "C_current_hispanic|school": {
+  "school_target_bn": {
+   "personal": 219.52616184710388,
+   "shared": 212.29930019852773
+  }
+ },
+ "A_current_mexican_state_share|blend": {
+  "school_target_bn": {
+   "personal": 204.4387703139533,
+   "shared": 198.06878988470777
+  }
+ },
+ "A_current_mexican_state_share|school": {
+  "school_target_bn": {
+   "personal": 206.89141317088297,
+   "shared": 200.0804909250609
+  }
+ },
+ "B_current_mexican_state_share|blend": {
+  "school_target_bn": {
+   "personal": 205.1999513398543,
+   "shared": 198.80412723853135
+  }
+ },
+ "B_current_mexican_state_share|school": {
+  "school_target_bn": {
+   "personal": 207.70895217353885,
+   "shared": 200.87111631881115
+  }
+ },
+ "C_current_mexican_state_share|blend": {
+  "school_target_bn": {
+   "personal": 202.3397957977848,
+   "shared": 196.0410798999042
+  }
+ },
+ "C_current_mexican_state_share|school": {
+  "school_target_bn": {
+   "personal": 204.63703021313992,
+   "shared": 197.90032287455912
+  }
+ },
+ "A_current_mexican_state_share_broad|blend": {
+  "school_target_bn": {
+   "personal": 204.4387703139533,
+   "shared": 198.06878988470777
+  }
+ },
+ "A_current_mexican_state_share_broad|school": {
+  "school_target_bn": {
+   "personal": 206.89141317088297,
+   "shared": 200.0804909250609
+  }
+ },
+ "B_current_mexican_state_share_broad|blend": {
+  "school_target_bn": {
+   "personal": 205.16728101461825,
+   "shared": 198.7725661384906
+  }
+ },
+ "B_current_mexican_state_share_broad|school": {
+  "school_target_bn": {
+   "personal": 207.6738629316883,
+   "shared": 200.8371822244568
+  }
+ },
+ "C_current_mexican_state_share_broad|blend": {
+  "school_target_bn": {
+   "personal": 202.3135093292041,
+   "shared": 196.01568591136558
+  }
+ },
+ "C_current_mexican_state_share_broad|school": {
+  "school_target_bn": {
+   "personal": 204.6087974898119,
+   "shared": 197.87301958025105
+  }
+ },
+ "A_current_mexican_district_share|blend": {
+  "school_target_bn": {
+   "personal": 204.10868737277573,
+   "shared": 197.74991394291652
+  }
+ },
+ "A_current_mexican_district_share|school": {
+  "school_target_bn": {
+   "personal": 206.53689083080675,
+   "shared": 199.73763955796352
+  }
+ },
+ "B_current_mexican_district_share|blend": {
+  "school_target_bn": {
+   "personal": 204.89333845990944,
+   "shared": 198.50792450079237
+  }
+ },
+ "B_current_mexican_district_share|school": {
+  "school_target_bn": {
+   "personal": 207.37963762214835,
+   "shared": 200.55264289306024
+  }
+ },
+ "C_current_mexican_district_share|blend": {
+  "school_target_bn": {
+   "personal": 202.0476404755594,
+   "shared": 195.7588438558614
+  }
+ },
+ "C_current_mexican_district_share|school": {
+  "school_target_bn": {
+   "personal": 204.32324365957984,
+   "shared": 197.5968662606777
+  }
+ },
+ "A_current_mexican_district_share_unraked|blend": {
+  "school_target_bn": {
+   "personal": 204.10831185179603,
+   "shared": 197.74955117165163
+  }
+ },
+ "A_current_mexican_district_share_unraked|school": {
+  "school_target_bn": {
+   "personal": 206.53648750618777,
+   "shared": 199.73724951090193
+  }
+ },
+ "B_current_mexican_district_share_unraked|blend": {
+  "school_target_bn": {
+   "personal": 204.63084929508224,
+   "shared": 198.25434738667167
+  }
+ },
+ "B_current_mexican_district_share_unraked|school": {
+  "school_target_bn": {
+   "personal": 207.09771371348708,
+   "shared": 200.27999999704085
+  }
+ },
+ "C_current_mexican_district_share_unraked|blend": {
+  "school_target_bn": {
+   "personal": 201.76599974076623,
+   "shared": 195.48676540723403
+  }
+ },
+ "C_current_mexican_district_share_unraked|school": {
+  "school_target_bn": {
+   "personal": 204.020750195351,
+   "shared": 197.3043309645195
+  }
+ },
+ "A_current_mexican_district_share_all_ages|blend": {
+  "school_target_bn": {
+   "personal": 204.10887513326563,
+   "shared": 197.75009532854892
+  }
+ },
+ "A_current_mexican_district_share_all_ages|school": {
+  "school_target_bn": {
+   "personal": 206.53709249311623,
+   "shared": 199.73783458149424
+  }
+ },
+ "B_current_mexican_district_share_all_ages|blend": {
+  "school_target_bn": {
+   "personal": 204.48702475984786,
+   "shared": 198.11540599223926
+  }
+ },
+ "B_current_mexican_district_share_all_ages|school": {
+  "school_target_bn": {
+   "personal": 206.94324038442082,
+   "shared": 200.13061197246935
+  }
+ },
+ "C_current_mexican_district_share_all_ages|blend": {
+  "school_target_bn": {
+   "personal": 201.51158427700307,
+   "shared": 195.2409878753073
+  }
+ },
+ "C_current_mexican_district_share_all_ages|school": {
+  "school_target_bn": {
+   "personal": 203.7474977659976,
+   "shared": 197.04007408032328
+  }
+ },
+ "A_current_ex_covid_relief_hispanic|blend": {
+  "school_target_bn": {
+   "personal": 203.18002398991777,
+   "shared": 196.85278060497583
+  }
+ },
+ "A_current_ex_covid_relief_hispanic|school": {
+  "school_target_bn": {
+   "personal": 205.5394690480894,
+   "shared": 198.77305317476444
+  }
+ },
+ "B_current_ex_covid_relief_hispanic|blend": {
+  "school_target_bn": {
+   "personal": 216.04030322204298,
+   "shared": 209.2764267261989
+  }
+ },
+ "B_current_ex_covid_relief_hispanic|school": {
+  "school_target_bn": {
+   "personal": 219.35192561170808,
+   "shared": 212.13079986794065
+  }
+ },
+ "A_current_within_state_factor_fy2019_hispanic|blend": {
+  "school_target_bn": {
+   "personal": 202.1809504233615,
+   "shared": 195.88762765487837
+  }
+ },
+ "A_current_within_state_factor_fy2019_hispanic|school": {
+  "school_target_bn": {
+   "personal": 204.4664238993149,
+   "shared": 197.73533296752595
+  }
+ },
+ "B_current_within_state_factor_fy2019_hispanic|blend": {
+  "school_target_bn": {
+   "personal": 213.80632891366363,
+   "shared": 207.11830047168655
+  }
+ },
+ "B_current_within_state_factor_fy2019_hispanic|school": {
+  "school_target_bn": {
+   "personal": 216.9525474534446,
+   "shared": 209.81040989881367
+  }
+ },
+ "A_current_ex_covid_relief_mexican_state_share|blend": {
+  "school_target_bn": {
+   "personal": 203.18002398991777,
+   "shared": 196.85278060497583
+  }
+ },
+ "A_current_ex_covid_relief_mexican_state_share|school": {
+  "school_target_bn": {
+   "personal": 205.5394690480894,
+   "shared": 198.77305317476444
+  }
+ },
+ "B_current_ex_covid_relief_mexican_state_share|blend": {
+  "school_target_bn": {
+   "personal": 203.94965423786252,
+   "shared": 197.59628031225822
+  }
+ },
+ "B_current_ex_covid_relief_mexican_state_share|school": {
+  "school_target_bn": {
+   "personal": 206.36608285467216,
+   "shared": 199.57245462739948
+  }
+ },
+ "A_current_within_state_factor_fy2019_mexican_state_share|blend": {
+  "school_target_bn": {
+   "personal": 202.1809504233615,
+   "shared": 195.88762765487837
+  }
+ },
+ "A_current_within_state_factor_fy2019_mexican_state_share|school": {
+  "school_target_bn": {
+   "personal": 204.4664238993149,
+   "shared": 197.73533296752595
+  }
+ },
+ "B_current_within_state_factor_fy2019_mexican_state_share|blend": {
+  "school_target_bn": {
+   "personal": 202.88035824809782,
+   "shared": 196.56328913563632
+  }
+ },
+ "B_current_within_state_factor_fy2019_mexican_state_share|school": {
+  "school_target_bn": {
+   "personal": 205.21761600214987,
+   "shared": 198.46179561965215
+  }
+ },
+ "A_current_ex_covid_relief_mexican_district_share|blend": {
+  "school_target_bn": {
+   "personal": 202.86777829527708,
+   "shared": 196.5511362982643
+  }
+ },
+ "A_current_ex_covid_relief_mexican_district_share|school": {
+  "school_target_bn": {
+   "personal": 205.20410462741432,
+   "shared": 198.4487290430904
+  }
+ },
+ "B_current_ex_covid_relief_mexican_district_share|blend": {
+  "school_target_bn": {
+   "personal": 203.65881323906615,
+   "shared": 197.31531396764237
+  }
+ },
+ "B_current_ex_covid_relief_mexican_district_share|school": {
+  "school_target_bn": {
+   "personal": 206.0537079372785,
+   "shared": 199.27036317823345
+  }
+ },
+ "A_current_within_state_factor_fy2019_mexican_district_share|blend": {
+  "school_target_bn": {
+   "personal": 201.7746367232999,
+   "shared": 195.4951091463253
+  }
+ },
+ "A_current_within_state_factor_fy2019_mexican_district_share|school": {
+  "school_target_bn": {
+   "personal": 204.03002666158736,
+   "shared": 197.31330204693504
+  }
+ },
+ "B_current_within_state_factor_fy2019_mexican_district_share|blend": {
+  "school_target_bn": {
+   "personal": 202.50990680159993,
+   "shared": 196.20541528287515
+  }
+ },
+ "B_current_within_state_factor_fy2019_mexican_district_share|school": {
+  "school_target_bn": {
+   "personal": 204.81973626553415,
+   "shared": 198.0770141934387
+  }
+ },
+ "preferred_district_and_school_level|blend": {
+  "school_target_bn": {
+   "personal": 205.9899988918587,
+   "shared": 199.56735104012057
+  }
+ },
+ "preferred_district_and_school_level|school": {
+  "school_target_bn": {
+   "personal": 208.55749498495734,
+   "shared": 201.69172486740914
+  }
+ },
+ "low_fy2019_factor_state_local_school_level|blend": {
+  "school_target_bn": {
+   "personal": 203.2767934247565,
+   "shared": 196.9462645171124
+  }
+ },
+ "low_fy2019_factor_state_local_school_level|school": {
+  "school_target_bn": {
+   "personal": 205.64340330886793,
+   "shared": 198.87356589108163
+  }
+ },
+ "high_preferred_plus_el_upper_bound|blend": {
+  "school_target_bn": {
+   "personal": 208.46502820602376,
+   "shared": 201.9583479837972
+  }
+ },
+ "high_preferred_plus_el_upper_bound|school": {
+  "school_target_bn": {
+   "personal": 211.2157759039431,
+   "shared": 204.26249444714074
+  }
+ },
+ "preferred_bea_depreciation_by_capital_outlay|blend": {
+  "school_target_bn": {
+   "personal": 208.46235433245195,
+   "shared": 201.9557648937702
+  }
+ },
+ "preferred_bea_depreciation_by_capital_outlay|school": {
+  "school_target_bn": {
+   "personal": 211.21290405630273,
+   "shared": 204.2597171415149
+  }
+ },
+ "preferred_bea_depreciation_by_interest|blend": {
+  "school_target_bn": {
+   "personal": 213.1693311550436,
+   "shared": 206.50293010606194
+  }
+ },
+ "preferred_bea_depreciation_by_interest|school": {
+  "school_target_bn": {
+   "personal": 216.26838626897498,
+   "shared": 209.14877148877733
+  }
+ },
+ "preferred_instruction_support_only|blend": {
+  "school_target_bn": {
+   "personal": 204.93050980490816,
+   "shared": 198.5438338016542
+  }
+ },
+ "preferred_instruction_support_only|school": {
+  "school_target_bn": {
+   "personal": 207.41956114005478,
+   "shared": 200.59125211777263
+  }
+ },
+ "preferred_admin_pupil_count|blend": {
+  "school_target_bn": {
+   "personal": 209.55113722805896,
+   "shared": 203.00758135542773
+  }
+ },
+ "preferred_admin_pupil_count|school": {
+  "school_target_bn": {
+   "personal": 212.38230062859608,
+   "shared": 205.3906168568998
+  }
+ },
+ "literal_R_times_line|B_current_mexican_district_share": {
+  "school_target_bn": {
+   "personal": 195.82800070030336,
+   "shared": 189.73966429878996
+  }
+ },
+ "literal_R_times_line|C_current_mexican_district_share": {
+  "school_target_bn": {
+   "personal": 192.94201689993557,
+   "shared": 186.9434063811515
+  }
+ },
+ "split_both_keys": {
+  "school_target_bn": {
+   "personal": 201.66230948591326,
+   "shared": 195.02353077213934
+  },
+  "college_target_bn": {
+   "personal": 171.31293234916836,
+   "shared": 171.31293234916836
+  }
+ },
+ "split_both_keys|preferred": {
+  "school_target_bn": {
+   "personal": 208.55749498495734,
+   "shared": 201.69172486740914
+  },
+  "college_target_bn": {
+   "personal": 171.31293234916836,
+   "shared": 171.31293234916836
+  }
+ },
+ "blend_whole_line|preferred": {
+  "school_target_bn": {
+   "personal": 205.9899988918587,
+   "shared": 199.56735104012057
+  },
+  "college_target_bn": {
+   "personal": 205.9899988918587,
+   "shared": 199.56735104012057
+  }
+ },
+ "row6_w0.77": {
+  "school_target_bn": {
+   "personal": 194.6819527444619,
+   "shared": 189.570093134856
+  }
+ },
+ "row6_w0.77|preferred": {
+  "school_target_bn": {
+   "personal": 199.99124557872588,
+   "shared": 194.70460258821376
+  }
+ },
+ "row6_w0.77|low": {
+  "school_target_bn": {
+   "personal": 197.747394988137,
+   "shared": 192.53462017644156
+  }
+ },
+ "row6_w0.77|high": {
+  "school_target_bn": {
+   "personal": 202.0381218863449,
+   "shared": 196.6840951646071
+  }
+ },
+ "row6_w0.77_whole_line": {
+  "school_target_bn": {
+   "personal": 194.6819527444619,
+   "shared": 189.570093134856
+  },
+  "college_target_bn": {
+   "personal": 194.6819527444619,
+   "shared": 189.570093134856
+  }
+ },
+ "row6_w0.77_whole_line|preferred": {
+  "school_target_bn": {
+   "personal": 199.99124557872588,
+   "shared": 194.70460258821376
+  },
+  "college_target_bn": {
+   "personal": 199.99124557872588,
+   "shared": 194.70460258821376
+  }
+ },
+ "row6_w0.82": {
+  "school_target_bn": {
+   "personal": 196.19942160129915,
+   "shared": 190.75562305600457
+  }
+ },
+ "row6_w0.82|preferred": {
+  "school_target_bn": {
+   "personal": 201.85347371051532,
+   "shared": 196.22354221412579
+  }
+ },
+ "row6_w0.82|low": {
+  "school_target_bn": {
+   "personal": 199.463918536122,
+   "shared": 193.91265185353723
+  }
+ },
+ "row6_w0.82|high": {
+  "school_target_bn": {
+   "personal": 204.03326406408365,
+   "shared": 198.33157326950572
+  }
+ },
+ "row6_w0.82_whole_line": {
+  "school_target_bn": {
+   "personal": 196.19942160129915,
+   "shared": 190.75562305600457
+  },
+  "college_target_bn": {
+   "personal": 196.19942160129915,
+   "shared": 190.75562305600457
+  }
+ },
+ "row6_w0.82_whole_line|preferred": {
+  "school_target_bn": {
+   "personal": 201.85347371051532,
+   "shared": 196.22354221412579
+  },
+  "college_target_bn": {
+   "personal": 201.85347371051532,
+   "shared": 196.22354221412579
+  }
+ }
+}

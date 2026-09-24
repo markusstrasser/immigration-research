@@ -1,0 +1,30 @@
+{
+ "f33_rows": 14077,
+ "ccd_leas_50_states_dc": 18298,
+ "ccd_leas_matched_to_f33": 13639,
+ "ccd_leas_valid": 13148,
+ "f33_rows_matched": 13639,
+ "k12_all": 47938716.0,
+ "k12_hisp": 14092707.0,
+ "group_pupils_admin": 8642657.355650976,
+ "coverage_all": 0.9359950733766003,
+ "coverage_hisp": 0.9204543882165435,
+ "coverage_group": 0.9142860552316896,
+ "uncovered_group_pupils_by_lea_type": {
+  "1": 19614.0,
+  "2": 30064.0,
+  "4": 287.0,
+  "5": 2502.0,
+  "6": 6.0,
+  "7": 683786.0,
+  "8": 1386.0,
+  "9": 3152.0
+ },
+ "uncovered_group_pupils_charter_leas": 683786.0187308954,
+ "group_share_source": {
+  "county": 57104.0,
+  "district": 7893515.0,
+  "state": 692038.0
+ },
+ "dropped_matched_invalid": 491
+}
