@@ -1,0 +1,9 @@
+check,family,weighting,concept,state_mix,R,R_embedded_same_concept,group_price,k_state_mix_only,k_within_state_only,k,k_minus_baseline
+baseline,B,mexican_district_share,current,CCD (admin),0.981249,0.954197,17319.793593,1.002577,1.024656,1.028351,0.000000
+drop Los Angeles Unified,B,mexican_district_share,current,CCD (admin),0.981744,0.954197,17328.521546,1.002577,1.025172,1.028869,0.000518
+drop five largest group districts,B,mexican_district_share,current,CCD (admin),0.981386,0.954197,17322.206509,1.002577,1.024799,1.028494,0.000143
+spending over CCD fall-2023 membership,B,mexican_district_share,current,CCD (admin),0.981279,0.954197,17320.314184,1.002577,1.024687,1.028382,0.000031
+"per-pupil band 5,000-50,000",B,mexican_district_share,current,CCD (admin),0.981204,0.954197,17318.990136,1.002577,1.024609,1.028303,-0.000048
+uncovered pupils at 0.85 x state all-pupil mean,B,mexican_district_share,current,CCD (admin),0.979165,0.954197,17283.010261,1.002577,1.022480,1.026167,-0.002184
+uncovered pupils at 1.00 x state all-pupil mean,B,mexican_district_share,current,CCD (admin),0.979194,0.954197,17283.523475,1.002577,1.022510,1.026198,-0.002154
+state share where no own district geography,B,mexican_district_share,current,CCD (admin),0.981109,0.954197,17317.315433,1.002511,1.024577,1.028204,-0.000147

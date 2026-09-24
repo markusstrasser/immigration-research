@@ -167,6 +167,14 @@ ladder 213) prices what race- and ethnicity-based preferences cost non-Hispanic 
 set-asides. About 28% of it is tied to Hispanic beneficiaries. It is a transfer beside ladder 194 and
 is not in the account.
 
+[Outside checks on the account's shares](immigration-outside-checks-2026-09-24.md) (September 24)
+tests the keys against data built independently of the account. The BEA closure (−$2,053bn) cannot
+catch a wrong key, because a wrong key only moves dollars between groups. Schools (ladder 215): the
+key already prices pupils at their state's average, but the group's districts and schools spend
+about 3.4% more than their states', so the main case would rise to **$206.6–252.7bn** (proposed).
+The same lane finds the audit's row 6 smaller through the engine than the audit states. Benefit keys,
+tax and transfer benchmarks and the direction of the crime-ratio errors are still running.
+
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
 second generation, reference group, education, single year, legacy cohorts, ageing,

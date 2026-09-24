@@ -1,0 +1,43 @@
+{
+ "slfs22_data_2025047_4_0_1.zip": {
+  "url": "https://ies.ed.gov/sites/default/files/data-asset/study-program-not-applicable/2025/08/documentation-nces-common-core-data-school-level-finance-survey-slfs-school-year-2021-22-fiscal-year/2025047_4_0_1.zip",
+  "bytes": 59457590,
+  "sha256": "03ab51988840bd09657f738dd94fc6b7e8f4d3ea0340e53a10ebc2466adcbb0f"
+ },
+ "slfs_fy22_2025047r.zip": {
+  "url": "https://ies.ed.gov/sites/default/files/data-asset/ccd-common-core-data/2025/09/documentation-nces-common-core-data-school-level-finance-survey-slfs-school-year-2021-22-fiscal-year/2025047r.zip",
+  "bytes": 2121089,
+  "sha256": "fbc96f0756be9745e12868f523d33abf25bdd25f2a54719aa01171dab8faad9d"
+ },
+ "elsec19t.txt": {
+  "url": "https://www2.census.gov/programs-surveys/school-finances/tables/2019/secondary-education-finance/elsec19t.txt",
+  "bytes": 4609961,
+  "sha256": "e2f65e2444dff7e81ab5c5f54efeda1642269dbb6ca0dc41e785deb3a3478876"
+ },
+ "acs5_2024_B03001_unified.json": {
+  "url": "Census API https://api.census.gov/data/2024/acs/acs5",
+  "bytes": 1071805,
+  "sha256": "0e77c3d05715932c926cf22496d3d5ec7676aaab2a96b5312003263df55c03cc"
+ },
+ "acs5_2024_B03001_elementary.json": {
+  "url": "Census API https://api.census.gov/data/2024/acs/acs5",
+  "bytes": 199291,
+  "sha256": "7a9cd1c61091167d8a31b049a3078492e41f6993456cf2d4ed68a1f627b7d68c"
+ },
+ "acs5_2024_B03001_secondary.json": {
+  "url": "Census API https://api.census.gov/data/2024/acs/acs5",
+  "bytes": 53126,
+  "sha256": "722de7f73f5b424c2236d34407d0b401058f6002b9363eb325bddc433d3f2a08"
+ },
+ "acs5_2024_B03001_county.json": {
+  "url": "Census API https://api.census.gov/data/2024/acs/acs5",
+  "bytes": 273636,
+  "sha256": "47676895c6c7ed8d6638a80ace2eecbc6070b7e398474e9780808328c7574553"
+ },
+ "_acs_rows": {
+  "unified": 10900,
+  "elementary": 1978,
+  "secondary": 501,
+  "county": 3144
+ }
+}

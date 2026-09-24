@@ -1,0 +1,22 @@
+{
+ "TCURELSCS": {
+  "districts_with_factor": 11230,
+  "group_pupil_coverage": 0.9354166780593074,
+  "factor_covered_districts": 1.006071856246165,
+  "factor_all_districts": 1.0056797155994412,
+  "schools_used": 86591,
+  "hispanic_share_of_ccd_members_matched": 0.28396854293668317
+ },
+ "TCURELSCSE": {
+  "districts_with_factor": 9839,
+  "group_pupil_coverage": 0.8736282357077978,
+  "factor_covered_districts": 1.004603129834988,
+  "factor_all_districts": 1.0040214241964744,
+  "schools_used": 76081,
+  "hispanic_share_of_ccd_members_matched": 0.28396854293668317
+ },
+ "slfs_records": 106961,
+ "slfs_districtwide_records": 5460,
+ "ccd_match_share_of_school_records": 0.9443453759076266,
+ "note": "School-level current expenditure, FY2022; Hispanic school weights from CCD 2021-22; districts weighted by the group's 2023-24 pupils; uncovered districts count as 1."
+}

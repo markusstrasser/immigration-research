@@ -1,0 +1,56 @@
+{
+ "household_fraction": 0.9900527050616406,
+ "education_national_bn": 1221.159,
+ "school_share_bounds": [
+  0.7153278156243373,
+  0.8651608840454027
+ ],
+ "keys": {
+  "age5_24": {
+   "personal": {
+    "other_bn": 1022.401739059,
+    "share": 0.164396465,
+    "target_bn": 198.757260941
+   },
+   "shared": {
+    "other_bn": 1022.401739059,
+    "share": 0.164396465,
+    "target_bn": 198.757260941
+   }
+  },
+  "education_mix": {
+   "personal": {
+    "other_bn": 1021.588859597,
+    "share": 0.165068815,
+    "target_bn": 199.570140403
+   },
+   "shared": {
+    "other_bn": 1027.79353996,
+    "share": 0.159936789,
+    "target_bn": 193.36546004
+   }
+  },
+  "school_operating": {
+   "personal": {
+    "other_bn": 1019.496690928,
+    "share": 0.166799294,
+    "target_bn": 201.662309072
+   },
+   "shared": {
+    "other_bn": 1026.135469628,
+    "share": 0.161308215,
+    "target_bn": 195.023530372
+   }
+  }
+ },
+ "base": {
+  "step": [
+   87.14140605299312,
+   113.9557842060821
+  ],
+  "main": [
+   203.20701712400069,
+   249.63995572733106
+  ]
+ }
+}
