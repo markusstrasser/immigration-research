@@ -2,8 +2,7 @@
   import { bands, mexican, white, categories } from '../data.js'
   import { dollars, billions } from '../format.js'
 
-  let t = $state(0)
-  let w = $derived(Number(t))
+  let w = $state(0)
 
   const sum = (xs) => xs.reduce((s, x) => s + x, 0)
   const share = (pop) => {
@@ -13,6 +12,8 @@
   const shM = share(mexican.pop)
   const shW = share(white.pop)
   const pop = sum(mexican.pop)
+  const old = (sh) => sh[6] + sh[7]
+  const pct = (x) => Math.round(100 * x) + '%'
 
   let blend = $derived(shM.map((m, i) => (1 - w) * m + w * shW[i]))
   let balance = $derived(sum(mexican.rate.map((r, i) => r * blend[i])))
@@ -25,115 +26,125 @@
     .sort((a, b) => Math.abs(b.move) - Math.abs(a.move))
   const maxMove = Math.max(...movers.map((c) => Math.abs(c.move)))
 
-  const maxShare = 0.32
-  const y0 = 28
-  const dy = 28
-  const barX = 52
-  const barW = 210
-  const rateX = 390
-  const rateW = 430
+  // Left panel: weights. Right panel: net dollars per person at today's rates.
+  const y0 = 46
+  const dy = 29
+  const barX = 58
+  const barW = 190
+  const maxShare = 0.3
+  const rateX = 330
+  const rateW = 400
   const rateLo = -36000
   const rateHi = 14000
   const rx = (v) => rateX + ((v - rateLo) / (rateHi - rateLo)) * rateW
-
-  function path(rates) {
-    return rates
-      .map((r, i) => `${i ? 'L' : 'M'} ${rx(r).toFixed(1)} ${y0 + i * dy}`)
-      .join(' ')
-  }
+  const k = (v) => (v === 0 ? '0' : (v < 0 ? '−' : '+') + Math.abs(v / 1000) + 'k')
 </script>
 
 <section class="fig" id="age">
-  <p class="kicker">Fig. 2 · Generation ledger, shared</p>
-  <h2>Age is a weight, and it is working in their favor</h2>
-  <p class="object">
-    Drag the weights from the Mexican-origin age structure to the white one.
-    Rates stay at today’s values. Each group at its own ages, the gap is −$4,093.
-    On a common structure it is wider.
-  </p>
+  <div class="body">
+    <p class="kicker">Generation ledger · shared allocation · 2024</p>
+    <h2>Youth hides the gap</h2>
+    <p class="lede">
+      At every working age the group’s net balance sits below the white one. The raw gap looks smaller
+      because few of the group are old: {pct(old(shM))} are 65 or older, against {pct(old(shW))} of whites,
+      and old age is where both cost the most. Slide the population to the white age structure, rates
+      held at today’s values.
+    </p>
 
-  <div class="slider">
-    <button class:on={w < 0.05} onclick={() => (t = 0)}>Their ages</button>
-    <input type="range" min="0" max="1" step="0.005" value={w} oninput={(e) => (t = +e.currentTarget.value)} aria-label="Age weights" />
-    <button class:on={w > 0.95} onclick={() => (t = 1)}>White ages</button>
-  </div>
-
-  <div class="live">
-    <div>
-      <span class="n">{dollars(balance)}</span>
-      <span class="l">Mexican-origin, per person, these weights</span>
+    <div class="slider">
+      <span>Their ages</span>
+      <input type="range" min="0" max="1" step="0.01" bind:value={w} aria-label="Age weights, from the group's own to the white structure" />
+      <span>White ages</span>
     </div>
-    <div>
-      <span class="n">{billions(total, 0)}</span>
-      <span class="l">Same rates, all { (pop / 1e6).toFixed(1) } million</span>
+    <p class="note">
+      On these weights the group runs <b class="num">{dollars(balance)}</b> per person, or
+      <span class="num">{billions(total, 0)}</span> for all {(pop / 1e6).toFixed(1)} million. Whites on the same
+      weights run <span class="num">{dollars(whiteHere)}</span>, a gap of <b class="num">{dollars(gap)}</b>.
+    </p>
+
+    <div class="scroll">
+    <svg class="wide" viewBox="0 0 760 300" role="img" aria-label="Age weights, and net dollars per person by age for each group">
+      <text class="faint it" x={barX} y="12" font-size="11.5">share of the population</text>
+      <text class="faint it" x={rateX} y="12" font-size="11.5">net $ per person a year, today’s rates</text>
+      {#each [-30000, -20000, -10000, 0, 10000] as t}
+        <line x1={rx(t)} x2={rx(t)} y1="20" y2="262" stroke={t === 0 ? '#111' : '#efece2'} />
+        <text class="faint num" x={rx(t)} y="278" text-anchor="middle" font-size="11">{k(t)}</text>
+      {/each}
+
+      {#each bands as band, i}
+        {@const y = y0 + i * dy}
+        <text class="muted num" x="0" y={y + 4} font-size="12">{band}</text>
+        <rect x={barX} y={y - 6} width={(blend[i] / maxShare) * barW} height="12" fill="#e4e1d6" />
+        <line x1={barX + (shM[i] / maxShare) * barW} x2={barX + (shM[i] / maxShare) * barW} y1={y - 9} y2={y + 9} stroke="#ca7a5e" stroke-width="2" />
+        <line x1={barX + (shW[i] / maxShare) * barW} x2={barX + (shW[i] / maxShare) * barW} y1={y - 9} y2={y + 9} stroke="#5c97d2" stroke-width="2" />
+
+        <line x1={rx(mexican.rate[i])} x2={rx(white.rate[i])} y1={y} y2={y} stroke="#b9b5a8" />
+        <circle cx={rx(white.rate[i])} cy={y} r="4.2" fill="#bbd4ee" stroke="#5c97d2" />
+        <circle cx={rx(mexican.rate[i])} cy={y} r="4.2" fill="#f2cabc" stroke="#ca7a5e" />
+      {/each}
+      <text class="muted it halo" x={rx(mexican.rate[0]) - 9} y={y0 + 4} text-anchor="end" font-size="11.5">Mexican-origin</text>
+      <text class="muted it halo" x={rx(white.rate[0]) + 9} y={y0 + 4} font-size="11.5">third-plus white</text>
+    </svg>
     </div>
-    <div>
-      <span class="n">{dollars(gap)}</span>
-      <span class="l">Gap vs whites on these same weights</span>
-    </div>
-  </div>
-  <p class="object">Whites on these weights: {dollars(whiteHere)} per person.</p>
 
-  <svg viewBox="0 0 860 270" role="img" aria-label="Age weights and net fiscal rate by age">
-    <text class="faint" x={barX} y="14" font-size="11">share of the group</text>
-    <text class="faint" x={rateX} y="14" font-size="11">net $ per person, today’s rates</text>
-    <line x1={rx(0)} y1="20" x2={rx(0)} y2="250" stroke="#1c1917" stroke-width="1" />
-
-    {#each bands as band, i}
-      {@const y = y0 + i * dy}
-      <text class="muted" x="0" y={y + 3} font-size="11">{band}</text>
-      <rect x={barX} y={y - 7} width={(blend[i] / maxShare) * barW} height="10" fill="#8c2f16" />
-      <line
-        x1={barX + (shM[i] / maxShare) * barW}
-        x2={barX + (shM[i] / maxShare) * barW}
-        y1={y - 9}
-        y2={y + 5}
-        stroke="#8c2f16"
-        stroke-width="1"
-        stroke-dasharray="1 2"
-      />
-      <line
-        x1={barX + (shW[i] / maxShare) * barW}
-        x2={barX + (shW[i] / maxShare) * barW}
-        y1={y - 9}
-        y2={y + 5}
-        stroke="#24384a"
-        stroke-width="1.4"
-      />
-      <circle cx={rx(mexican.rate[i])} cy={y} r="3.2" fill="#8c2f16" />
-      <circle cx={rx(white.rate[i])} cy={y} r="3.2" fill="#24384a" />
-    {/each}
-    <path d={path(mexican.rate)} fill="none" stroke="#8c2f16" stroke-width="1.25" />
-    <path d={path(white.rate)} fill="none" stroke="#24384a" stroke-width="1.25" />
-    <text class="muted" x={rx(-28000)} y="262" font-size="11">rust, Mexican-origin rates</text>
-    <text class="muted" x={rx(2000)} y="262" font-size="11">slate, white rates</text>
-  </svg>
-
-  <div class="cats">
-    {#each movers as c}
-      {@const full = c.move}
-      {@const shown = w * full}
-      {@const px = (v) => (Math.abs(v) / maxMove) * 50}
-      <div class="cat">
-        <span>{c.label}</span>
-        <div class="track">
+    <h3>What moves when the ages move</h3>
+    <p class="note">Each category’s change between their ages and white ages; the fill follows the slider.</p>
+    <div class="movers">
+      {#each movers as c}
+        {@const full = c.move}
+        {@const shown = w * full}
+        {@const px = (v) => (Math.abs(v) / maxMove) * 50}
+        <span class="lab">{c.label}</span>
+        <span class="track">
+          <i class="mid"></i>
           {#if full < 0}
             <i class="ghost" style="right:50%; width:{px(full)}%"></i>
             <i class="bar cost" style="right:50%; width:{px(shown)}%"></i>
           {:else}
             <i class="ghost" style="left:50%; width:{px(full)}%"></i>
-            <i class="bar save" style="left:50%; width:{px(shown)}%"></i>
+            <i class="bar gain" style="left:50%; width:{px(shown)}%"></i>
           {/if}
-        </div>
-        <span class="num">{billions(shown, 1)}</span>
-      </div>
-    {/each}
+        </span>
+        <span class="num val">{billions(full, 1)}</span>
+      {/each}
+    </div>
   </div>
 
-  <p class="src">
-    Age profiles and category totals, shared expanded ledger. The bars under the chart are the
-    change in each category as the weights move; at the right-hand end they sum to the
-    −$217bn → −$340bn composition. Schools fall. Cash and medical rise. This is not a forecast.
-    Dashed ticks are Mexican-origin shares; solid ticks are white shares.
-  </p>
+  <aside class="side">
+    <p>
+      Each group at its own ages, the gap is −$4,093 per person. On any common age structure it is
+      −$7,049 to −$8,716: the young structure is worth about $4,600 a year per person.
+    </p>
+    <p>
+      The bars under the chart are each category’s change as the weights move; at the white end they
+      sum to the −$217bn → −$340bn composition. Schools fall; pensions and medical care rise. A
+      composition exercise at today’s rates, not a forecast.
+    </p>
+    <p>
+      Ticks: terracotta, the group’s own shares; blue, the white shares; grey bar, the weights in use.
+      Sources: ledger_absolute_2026_09_17 age_profiles.csv and age_normalizations_by_category.csv.
+    </p>
+  </aside>
 </section>
+
+<style>
+  .movers {
+    margin-top: 0.6rem;
+    display: grid;
+    grid-template-columns: 15rem 1fr 5rem;
+    gap: 0.22rem 0.8rem;
+    align-items: center;
+    font-size: 0.86rem;
+  }
+  .movers .track { position: relative; height: 9px; }
+  .movers .mid { position: absolute; left: 50%; top: -3px; bottom: -3px; width: 1px; background: var(--ink); }
+  .movers .ghost { position: absolute; top: 3px; height: 3px; background: var(--hair); }
+  .movers .bar { position: absolute; top: 0; height: 9px; }
+  .movers .bar.cost { background: var(--cost-fill); box-shadow: inset 0 0 0 0.8px var(--cost); }
+  .movers .bar.gain { background: var(--gain-fill); box-shadow: inset 0 0 0 0.8px var(--gain); }
+  .movers .val { text-align: right; }
+  @media (max-width: 720px) {
+    .movers { grid-template-columns: 1fr 4.5rem; }
+    .movers .track { grid-column: 1 / -1; }
+  }
+</style>
