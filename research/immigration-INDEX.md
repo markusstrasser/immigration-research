@@ -200,11 +200,12 @@ Run together through the engine, the proposals give **$216.4–261.8bn** on the 
 they overlap the audit package's rows 3, 6 and 13 and do not add to it. Adopted September 24 together
 with the audit in one engine run (ladder 219).
 
-[Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
+[Objections and answers](immigration-objections-faq-2026-09-21.md): seventeen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
 second generation, reference group, education, single year, legacy cohorts, ageing,
-policy reading, crime, elder care, native–immigrant complementarity, California vs Texas),
-each steel-manned and routed to its executed table.
+policy reading, crime, elder care, native–immigrant complementarity, California vs Texas,
+CBO's surge projection, survey reliability), each steel-manned and routed to its executed
+table.
 
 [California vs Texas](immigration-california-texas-fiscal-geography-2026-09-21.md):
 same Mexican-origin share (~32%); common-age gap vs **local** whites **−$12,133** (CA) vs
