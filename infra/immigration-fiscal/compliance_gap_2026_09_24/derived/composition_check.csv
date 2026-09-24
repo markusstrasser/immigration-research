@@ -1,0 +1,9 @@
+cell,industry,m_unauth,pay_ratio,b_offbooks,composition_slope,ws_m,ld_coef,ld_se,ld_states
+c111,Crop production,0.26641,0.67686,0,-0.35605,0.73856,0.038838,0.2125,30
+c112,Animal production,0.18467,0.89711,0,-0.10555,0.30563,0.030894,0.15515,20
+c23,Construction,0.13642,0.64033,0.5997,-0.17487,7.3639,0.41283,0.45085,51
+c56173,Landscaping services,0.24229,0.84348,0.58857,-0.090595,0.80636,-0.012446,0.098978,28
+c5617z,Services to buildings except landscaping (janitorial),0.1895,0.75015,0.73854,-0.089692,1.0354,0.37283,0.19988,31
+c722z,Restaurants and other food services,0.093208,1.1335,0.00762,0.13105,8.7683,0.27175,0.13736,48
+c814,Private households,0.17105,0.83146,0.34364,-0.12724,0.30551,,,12
+focus (worker-weighted),all focus cells,0.13035,0.88695,,-0.03305,19.324,,,

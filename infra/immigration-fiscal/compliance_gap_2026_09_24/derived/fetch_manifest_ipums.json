@@ -1,0 +1,70 @@
+{
+  "workers": {
+    "duplicate_person_keys": 0,
+    "expected_keys_present": true,
+    "parquet": "workers.parquet",
+    "rows": 19103402,
+    "rows_by_year": {
+      "2012": 1380083,
+      "2013": 1411741,
+      "2014": 1422106,
+      "2015": 1442336,
+      "2016": 1459560,
+      "2017": 1488986,
+      "2018": 1509092,
+      "2019": 1533286,
+      "2020": 1194039,
+      "2021": 1479894,
+      "2022": 1575420,
+      "2023": 1598838,
+      "2024": 1608021
+    },
+    "rows_not_employed": 0,
+    "source": "workers.csv.gz",
+    "source_sha256": "226c031ea1f5ccae07bc8a1b7bcb809401d89eaa86cf352b6aaa12e29ea323ca",
+    "years_expected": [
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "years_ok": true
+  },
+  "workers_pre": {
+    "duplicate_person_keys": 0,
+    "expected_keys_present": true,
+    "parquet": "workers_pre.parquet",
+    "rows": 9683631,
+    "rows_by_year": {
+      "2005": 1336487,
+      "2006": 1390898,
+      "2007": 1399724,
+      "2008": 1434979,
+      "2009": 1385319,
+      "2010": 1373821,
+      "2011": 1362403
+    },
+    "rows_not_employed": 0,
+    "source": "workers_pre.csv.gz",
+    "source_sha256": "cd093e2ee5f9dcbba6020c0864aba245f55c4bdce31089ea1219267934ff5a91",
+    "years_expected": [
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011
+    ],
+    "years_ok": true
+  }
+}

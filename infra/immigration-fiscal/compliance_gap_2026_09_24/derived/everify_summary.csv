@@ -1,0 +1,31 @@
+variant,outcome,label,cells,post_avg,post_se,post_ci_low,post_ci_high,pre_joint_p,n,clusters,pre_terms,post_terms
+main,U,uncovered share,focus vs low-exposure cells,0.00052,0.01384,-0.02660,0.02764,0.09313,22474,47,3,6
+main,ln_estabs,ln QCEW establishments,focus vs low-exposure cells,-0.01792,0.01529,-0.04788,0.01204,0.00000,22474,47,3,6
+main,ln_emp,ln QCEW employment,focus vs low-exposure cells,-0.06038,0.03424,-0.12750,0.00673,0.00047,22474,47,3,6
+main,ln_wkwage,ln QCEW average weekly wage,focus vs low-exposure cells,-0.00897,0.00674,-0.02217,0.00424,0.01114,22474,47,3,6
+main,m_mexnc,Mexico-born noncitizen share of ACS workers,focus vs low-exposure cells,-0.02754,0.01489,-0.05672,0.00164,0.01419,22474,47,3,6
+main,se_mexnc_per_ws,Mexico-born noncitizen unincorporated self-employed per ACS worker,focus vs low-exposure cells,0.00171,0.00244,-0.00307,0.00650,0.52788,22474,47,3,6
+"MS 2011, GA 2013",U,uncovered share,focus vs low-exposure cells,0.00963,0.01686,-0.02342,0.04268,0.90201,22853,47,3,6
+"MS 2011, GA 2013",ln_estabs,ln QCEW establishments,focus vs low-exposure cells,-0.01485,0.01731,-0.04878,0.01907,0.00701,22853,47,3,6
+"MS 2011, GA 2013",ln_emp,ln QCEW employment,focus vs low-exposure cells,-0.05517,0.03720,-0.12808,0.01773,0.00002,22853,47,3,6
+"MS 2011, GA 2013",ln_wkwage,ln QCEW average weekly wage,focus vs low-exposure cells,-0.01018,0.00599,-0.02192,0.00155,0.36050,22853,47,3,6
+"MS 2011, GA 2013",m_mexnc,Mexico-born noncitizen share of ACS workers,focus vs low-exposure cells,-0.02658,0.01489,-0.05576,0.00260,0.07519,22853,47,3,6
+"MS 2011, GA 2013",se_mexnc_per_ws,Mexico-born noncitizen unincorporated self-employed per ACS worker,focus vs low-exposure cells,0.00338,0.00217,-0.00087,0.00763,0.83850,22853,47,3,6
+with Utah 2010,U,uncovered share,focus vs low-exposure cells,-0.00086,0.01275,-0.02586,0.02414,0.39366,26330,48,3,6
+with Utah 2010,ln_estabs,ln QCEW establishments,focus vs low-exposure cells,-0.02180,0.01516,-0.05150,0.00791,0.00000,26330,48,3,6
+with Utah 2010,ln_emp,ln QCEW employment,focus vs low-exposure cells,-0.05874,0.03193,-0.12133,0.00385,0.00083,26330,48,3,6
+with Utah 2010,ln_wkwage,ln QCEW average weekly wage,focus vs low-exposure cells,-0.00788,0.00694,-0.02150,0.00573,0.01171,26330,48,3,6
+with Utah 2010,m_mexnc,Mexico-born noncitizen share of ACS workers,focus vs low-exposure cells,-0.02371,0.01446,-0.05205,0.00463,0.07667,26330,48,3,6
+with Utah 2010,se_mexnc_per_ws,Mexico-born noncitizen unincorporated self-employed per ACS worker,focus vs low-exposure cells,0.00181,0.00227,-0.00265,0.00627,0.50476,26330,48,3,6
+unweighted,U,uncovered share,focus vs low-exposure cells,-0.06841,0.03346,-0.13398,-0.00283,0.00120,22474,47,3,6
+unweighted,ln_estabs,ln QCEW establishments,focus vs low-exposure cells,-0.01833,0.02306,-0.06352,0.02686,0.01474,22474,47,3,6
+unweighted,ln_emp,ln QCEW employment,focus vs low-exposure cells,-0.05234,0.03060,-0.11232,0.00764,0.08073,22474,47,3,6
+unweighted,ln_wkwage,ln QCEW average weekly wage,focus vs low-exposure cells,-0.01582,0.00871,-0.03288,0.00125,0.19040,22474,47,3,6
+unweighted,m_mexnc,Mexico-born noncitizen share of ACS workers,focus vs low-exposure cells,-0.04558,0.01370,-0.07242,-0.01873,0.00082,22474,47,3,6
+unweighted,se_mexnc_per_ws,Mexico-born noncitizen unincorporated self-employed per ACS worker,focus vs low-exposure cells,0.01195,0.00929,-0.00626,0.03015,0.54423,22474,47,3,6
+main,ln_estabs,ln QCEW establishments,detail series vs low-exposure cells,-0.04767,0.01081,-0.06886,-0.02649,0.00000,27708,47,3,6
+main,ln_emp,ln QCEW employment,detail series vs low-exposure cells,-0.12219,0.05116,-0.22246,-0.02193,0.00000,27708,47,3,6
+main,ln_wkwage,ln QCEW average weekly wage,detail series vs low-exposure cells,0.01090,0.01051,-0.00971,0.03150,0.00840,27708,47,3,6
+unweighted,ln_estabs,ln QCEW establishments,detail series vs low-exposure cells,-0.03184,0.01103,-0.05345,-0.01022,0.00005,27846,47,3,6
+unweighted,ln_emp,ln QCEW employment,detail series vs low-exposure cells,-0.07845,0.04340,-0.16352,0.00662,0.00000,27846,47,3,6
+unweighted,ln_wkwage,ln QCEW average weekly wage,detail series vs low-exposure cells,0.00300,0.00725,-0.01121,0.01721,0.00001,27846,47,3,6

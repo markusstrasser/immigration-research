@@ -1,0 +1,7 @@
+gate,year,n,pass,detail
+sector_totals_equal_published_table2_source,2019,20,True,20 sectors compared; differing: []
+private_total_equals_publication_text,2019,1,True,"file 126.359m employees, 9.932m establishments; printed 126.4m and 9.9m"
+sector_totals_equal_published_table2_source,2023,20,True,20 sectors compared; differing: []
+private_total_equals_publication_text,2023,1,True,"file 131.290m employees, 11.561m establishments; printed 131.3m and 11.6m"
+cells_partition_national_private_total,2005-2024,20,True,20 of 20 years within 0.1%; ratio 1.00000-1.00000
+state_employment_in_suppressed_cells,2005-2024,1020,True,"share of state private employment in a cell with a suppressed component: median 0.0003, p90 0.0051, max 0.1066 (informational)"

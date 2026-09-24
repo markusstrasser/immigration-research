@@ -1,0 +1,20 @@
+cell,ws,ws_mexnc,share,low_exposure,label
+c54,19446784.00000,107927.00000,0.00555,True,Professional and technical services
+c52,19271470.00000,111736.00000,0.00580,True,Finance and insurance
+c61,10904694.00000,75584.00000,0.00693,True,Educational services (private)
+c55,480583.00000,3535.00000,0.00736,True,Management of companies
+c22,2421326.00000,20563.00000,0.00849,True,Utilities
+c51,9208806.00000,83487.00000,0.00907,True,Information
+c62,41989731.00000,390363.00000,0.00930,False,Health care and social assistance (private)
+c53,6365163.00000,144394.00000,0.02269,False,Real estate and rental
+c44,44163319.00000,1012934.00000,0.02294,False,Retail trade
+c48,12703371.00000,303294.00000,0.02388,False,Transportation and warehousing
+c21,1774036.00000,44499.00000,0.02508,False,Mining
+c71,5870663.00000,162911.00000,0.02775,False,"Arts, entertainment and recreation"
+c7224,641334.00000,20819.00000,0.03246,False,Drinking places
+c56r,8197098.00000,298604.00000,0.03643,False,"Other administrative, support and waste services"
+c11r,298960.00000,12038.00000,0.04027,False,"Forestry, logging, fishing"
+c81r,13993470.00000,587130.00000,0.04196,False,"Repair, personal and membership services"
+c42,12757103.00000,570114.00000,0.04469,False,Wholesale trade
+c31,46761751.00000,2491284.00000,0.05328,False,Manufacturing
+c721,4306792.00000,321598.00000,0.07467,False,Accommodation
