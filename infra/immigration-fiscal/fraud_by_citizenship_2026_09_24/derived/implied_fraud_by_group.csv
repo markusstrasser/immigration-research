@@ -1,0 +1,5 @@
+group,offenders,offenders_loss_positive,loss_musd,share_offenders,share_loss_positive_offenders,share_loss,adult_pop_share,implied_bn_loss_share_low,implied_bn_loss_share_high,implied_bn_offender_share_low,implied_bn_offender_share_high
+us_citizen,3681,3626,11159.908,0.8543,0.8982,0.9154,0.9231,213.3,476.9,209.3,468.0
+legal_alien,205,197,556.893,0.0476,0.0488,0.0457,0.0384,10.6,23.8,11.4,25.4
+illegal_alien,389,189,433.817,0.0903,0.0468,0.0356,0.0384,8.3,18.5,10.9,24.4
+unknown_or_extradited,34,25,40.854,0.0079,0.0062,0.0034,0.0,0.8,1.7,1.4,3.2

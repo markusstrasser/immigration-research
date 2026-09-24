@@ -1,0 +1,178 @@
+{
+  "all_pass": true,
+  "coverage": {
+    "2015": {
+      "econ_classified": 7722,
+      "fraud_laundering_2S1": 202,
+      "gdlinehi_2B1.1": 7858,
+      "no_guideline": 6381,
+      "offguide_16": 0,
+      "offguide_16_not_2B1.1": 0,
+      "records": 71003
+    },
+    "2016": {
+      "econ_classified": 6986,
+      "fraud_laundering_2S1": 187,
+      "gdlinehi_2B1.1": 7104,
+      "no_guideline": 4921,
+      "offguide_16": 0,
+      "offguide_16_not_2B1.1": 0,
+      "records": 67742
+    },
+    "2017": {
+      "econ_classified": 6235,
+      "fraud_laundering_2S1": 193,
+      "gdlinehi_2B1.1": 6358,
+      "no_guideline": 4116,
+      "offguide_16": 0,
+      "offguide_16_not_2B1.1": 0,
+      "records": 66873
+    },
+    "2018": {
+      "econ_classified": 5863,
+      "fraud_laundering_2S1": 220,
+      "gdlinehi_2B1.1": 5948,
+      "no_guideline": 4433,
+      "offguide_16": 6620,
+      "offguide_16_not_2B1.1": 672,
+      "records": 69425
+    },
+    "2019": {
+      "econ_classified": 5632,
+      "fraud_laundering_2S1": 143,
+      "gdlinehi_2B1.1": 5707,
+      "no_guideline": 5206,
+      "offguide_16": 6390,
+      "offguide_16_not_2B1.1": 683,
+      "records": 76538
+    },
+    "2020": {
+      "econ_classified": 4297,
+      "fraud_laundering_2S1": 131,
+      "gdlinehi_2B1.1": 4356,
+      "no_guideline": 4719,
+      "offguide_16": 4823,
+      "offguide_16_not_2B1.1": 467,
+      "records": 64565
+    },
+    "2021": {
+      "econ_classified": 4183,
+      "fraud_laundering_2S1": 131,
+      "gdlinehi_2B1.1": 4235,
+      "no_guideline": 2919,
+      "offguide_16": 4571,
+      "offguide_16_not_2B1.1": 336,
+      "records": 57287
+    },
+    "2022": {
+      "econ_classified": 5147,
+      "fraud_laundering_2S1": 200,
+      "gdlinehi_2B1.1": 5208,
+      "no_guideline": 2519,
+      "offguide_16": 5520,
+      "offguide_16_not_2B1.1": 312,
+      "records": 64142
+    },
+    "2023": {
+      "econ_classified": 4855,
+      "fraud_laundering_2S1": 193,
+      "gdlinehi_2B1.1": 4904,
+      "no_guideline": 2649,
+      "offguide_16": 5205,
+      "offguide_16_not_2B1.1": 301,
+      "records": 64124
+    },
+    "2024": {
+      "econ_classified": 4947,
+      "fraud_laundering_2S1": 214,
+      "gdlinehi_2B1.1": 5015,
+      "no_guideline": 2703,
+      "offguide_16": 5312,
+      "offguide_16_not_2B1.1": 297,
+      "records": 61678
+    }
+  },
+  "sourcebook_table9": {
+    "2019": {
+      "citizen": {
+        "got": 5116,
+        "pass": true,
+        "want": 5116
+      },
+      "fraud": {
+        "got": 6328,
+        "pass": true,
+        "want": 6328
+      },
+      "known": {
+        "got": 76110,
+        "pass": true,
+        "want": 76110
+      },
+      "non": {
+        "got": 1212,
+        "pass": true,
+        "want": 1212
+      },
+      "records": {
+        "got": 76538,
+        "pass": true,
+        "want": 76538
+      }
+    },
+    "2022": {
+      "citizen": {
+        "got": 4645,
+        "pass": true,
+        "want": 4645
+      },
+      "fraud": {
+        "got": 5489,
+        "pass": true,
+        "want": 5489
+      },
+      "known": {
+        "got": 63841,
+        "pass": true,
+        "want": 63841
+      },
+      "non": {
+        "got": 844,
+        "pass": true,
+        "want": 844
+      },
+      "records": {
+        "got": 64142,
+        "pass": true,
+        "want": 64142
+      }
+    },
+    "2024": {
+      "citizen": {
+        "got": 4569,
+        "pass": true,
+        "want": 4569
+      },
+      "fraud": {
+        "got": 5287,
+        "pass": true,
+        "want": 5287
+      },
+      "known": {
+        "got": 61342,
+        "pass": true,
+        "want": 61342
+      },
+      "non": {
+        "got": 718,
+        "pass": true,
+        "want": 718
+      },
+      "records": {
+        "got": 61678,
+        "pass": true,
+        "want": 61678
+      }
+    }
+  }
+}
