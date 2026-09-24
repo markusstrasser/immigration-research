@@ -742,64 +742,64 @@
    "label": "Fiscal cost, paid in proportion to taxes",
    "quintiles": [
     {
-     "bn": -6.911,
-     "pct": -1.218,
-     "perPerson": -117
+     "bn": -6.825,
+     "pct": -1.203,
+     "perPerson": -115
     },
     {
-     "bn": -14.575,
-     "pct": -1.283,
-     "perPerson": -246
+     "bn": -14.394,
+     "pct": -1.267,
+     "perPerson": -243
     },
     {
-     "bn": -24.57,
-     "pct": -1.439,
-     "perPerson": -415
+     "bn": -24.266,
+     "pct": -1.422,
+     "perPerson": -410
     },
     {
-     "bn": -40.292,
-     "pct": -1.59,
-     "perPerson": -681
+     "bn": -39.793,
+     "pct": -1.57,
+     "perPerson": -673
     },
     {
-     "bn": -141.576,
-     "pct": -2.638,
-     "perPerson": -2393
+     "bn": -139.82,
+     "pct": -2.605,
+     "perPerson": -2363
     }
    ],
-   "totalBn": -227.92
+   "totalBn": -225.1
   },
   {
    "id": "fiscal_b",
    "label": "Fiscal cost, paid as equal cuts per person",
    "quintiles": [
     {
-     "bn": -45.586,
-     "pct": -8.034,
-     "perPerson": -770
+     "bn": -45.021,
+     "pct": -7.934,
+     "perPerson": -761
     },
     {
-     "bn": -45.583,
-     "pct": -4.013,
-     "perPerson": -770
+     "bn": -45.018,
+     "pct": -3.964,
+     "perPerson": -761
     },
     {
-     "bn": -45.585,
-     "pct": -2.67,
-     "perPerson": -770
+     "bn": -45.019,
+     "pct": -2.637,
+     "perPerson": -761
     },
     {
-     "bn": -45.585,
-     "pct": -1.799,
-     "perPerson": -770
+     "bn": -45.02,
+     "pct": -1.776,
+     "perPerson": -761
     },
     {
-     "bn": -45.585,
-     "pct": -0.849,
-     "perPerson": -770
+     "bn": -45.019,
+     "pct": -0.839,
+     "perPerson": -761
     }
    ],
-   "totalBn": -227.92
+   "totalBn": -225.1
   },
   {
    "id": "wages",

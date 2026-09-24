@@ -21,8 +21,11 @@ Run from the repository root:
 """
 from __future__ import annotations
 
+import argparse
 import importlib.util
+import json
 import sys
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -78,10 +81,22 @@ def with_hotdeck(dd, d, new):
 
 
 def main():
+    ap = argparse.ArgumentParser(description="Imputation correction against the distribution lane's inputs.")
+    ap.add_argument("--dist-derived", type=Path, default=DIST_DIR / "derived",
+                    help="distribution lane outputs on the September 23 case "
+                         "(a `distribute.py --case sept23 --out-dir DIR` rebuild)")
+    args = ap.parse_args()
+    # Since 2026-09-24 the distribution lane's committed outputs carry the adopted package, which
+    # already contains the fill-in correction; adding it again here would count it twice.
+    case = json.loads((args.dist_derived / "inputs.json").read_text())["fiscal"].get("case", "sept23")
+    if case != "sept23":
+        raise SystemExit(f"[BLOCKED] {args.dist_derived} holds the {case} case, which already includes the "
+                         "fill-in correction. Rebuild the September 23 case with `distribute.py --case sept23 "
+                         "--out-dir DIR` and pass --dist-derived DIR.")
     dist = load_dist()
     dd = dist.load_cps()
     F, S = dist.bea_totals()
-    pub = pd.read_csv(DIST_DIR / "derived/channel_by_quintile.csv").query("measure == 'spm'")
+    pub = pd.read_csv(args.dist_derived / "channel_by_quintile.csv").query("measure == 'spm'")
     pub = {ch: g.set_index("quintile").bn for ch, g in pub.groupby("channel")}
     total = float(pub["fiscal_a"].loc[0])
     base = split(dist, dd, total, F, S)
