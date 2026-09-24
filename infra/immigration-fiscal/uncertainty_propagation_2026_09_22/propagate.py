@@ -16,9 +16,15 @@ Other error sources are added from what upstream lanes already publish (or, for
 the MEPS donor means, from the same stratified-PSU Taylor estimator the build
 helper uses), under an explicit independence assumption with a
 perfect-positive-correlation envelope alongside.
+
+--case sept24 (added 2026-09-24) also carries these sources to the adopted main
+cases of September 23 and 24, specification by specification, after
+`node sept24_specs.cjs` has written derived/sept24/ (see sept24_cases). The
+September 20 outputs are written as before and do not change.
 """
 from __future__ import annotations
 
+import argparse
 import importlib.util
 import json
 import sys
@@ -213,7 +219,153 @@ def account_inputs():
     return receipts.loc[direct], spending
 
 
+# --------------------------------------------------------------------------
+# The adopted main cases of September 23 and 24 (--case sept24)
+# --------------------------------------------------------------------------
+MAIN_PROFILE = "cbo_category_lag_non_school_full"
+MEDICAID = "medicaid_and_chip_other_medical"
+
+
+def sept24_cases(ctx):
+    """The lane's error sources on the adopted main cases, specification by specification.
+
+    Point costs are the engine's (sept24_specs.cjs -> derived/sept24/spec_costs.csv). The September 23
+    frame is the September 20 case plus general government at response 0.59 or 0.84 on the per-head
+    key, and justice by use and uninsured use as fixed target shifts on the per-head and Medicaid keys
+    (gate: every specification rebuilds to 1e-6). Its CPS error adds general government's per-head
+    replicate spread times that response; the shifts carry none here. On September 24 each line's CPS
+    replicate deviation and each MEPS payer gradient is scaled, to first order, by the ratio of the
+    group's corrected to uncorrected target on the key this lane rebuilt: ratio-type corrections
+    rescale that key, and replacement dollars are treated the same way. The synthetic correction
+    lines carry no sampling error here; their spreads are the package's ranges. The benefit keys'
+    published SE (admin_benefit_keys_2026_09_24/derived/package_se.csv) is added in separate columns;
+    its overlap with the CPS error of the lines it re-keys is unknown.
+    """
+    sub = OUT / "sept24"
+    specs = pd.read_csv(sub / "spec_costs.csv")
+    lt = pd.read_csv(sub / "line_targets.csv").set_index(["side", "line", "key", "allocation"])
+    main24 = json.loads((FISCAL / "main_case_2026_09_24/derived/summary.json").read_text())
+    ben_se = pd.read_csv(FISCAL / "admin_benefit_keys_2026_09_24/derived/package_se.csv").query(
+        "package == 'central'").set_index("allocation").se_bn
+    for case, want in (("sept23", main24["adopted_2026_09_23"]), ("sept24", main24["main_case"])):
+        got = [specs[f"cost_{case}_bn"].min(), specs[f"cost_{case}_bn"].max()]
+        if not np.allclose(got, want, rtol=0, atol=1e-9):
+            raise ValueError(f"{case} specifications do not span the published band: {got} vs {want}")
+
+    def target(case, side, line, key, a):
+        v = lt.loc[(side, line, key, a), f"target_{case}_bn"]
+        return 0.0 if pd.isna(v) else float(v)
+
+    def ratio(case, kind, line, a):
+        if case == "sept23":
+            return 1.0
+        side, key = ("receipt", "cbo_collective") if kind == "receipt" else ("spending", ctx["lane_keys"][(a, line)])
+        t0 = target("sept23", side, line, key, a)
+        return target("sept24", side, line, key, a) / t0 if t0 else 1.0
+
+    sp, hf, skeys, ncell = ctx["spending"], ctx["hf"], ctx["skeys"], ctx["ncell"]
+    gps = {}
+    for a in ["personal", "shared"]:
+        g = sp.query("allocation == @a and category == 'general_public_services'").iloc[0]
+        gps[a] = g.national_bn * hf * skeys[a][g.allocation_key]
+        ctx["lane_keys"][(a, "general_public_services")] = g.allocation_key
+    # Every rebuilt line equals the engine model's target on the same key at replicate 0 (model.json
+    # stores targets to 1e-8 bn).
+    for (a, kind, line), rep in list(ctx["line_reps"].items()) + [((a, "service", "general_public_services"), gps[a])
+                                                                 for a in gps]:
+        side, key = ("receipt", "cbo_collective") if kind == "receipt" else ("spending", ctx["lane_keys"][(a, line)])
+        if not np.isclose(rep[0], target("sept23", side, line, key, a), rtol=0, atol=1e-8):
+            raise ValueError(f"{line}/{key}/{a} differs from the engine model at replicate 0")
+
+    cases = ctx["cases"].query("profile == @MAIN_PROFILE")
+    lane = ctx["case_frame"].query("profile == @MAIN_PROFILE")
+    comps, pf, school_rel = ctx["comps"], ctx["pf"], ctx["school_rel"]
+    rows = []
+    for s in specs.itertuples():
+        a = s.allocation
+        pick = ((cases.allocation == a) & (cases.normalization == s.normalization)
+                & np.isclose(cases.school_share, s.share, rtol=0, atol=1e-6)
+                & np.isclose(cases.school_response, s.school, rtol=0, atol=1e-12))
+        if pick.sum() != 1:
+            raise ValueError(f"no unique September 20 case for {s}")
+        c = cases[pick].iloc[0]
+        ref = lane[(lane.case_id == c.case_id) & (lane.normalization == s.normalization)].iloc[0]
+        rebuilt = (-c.welfare_bn + s.gg * target("sept23", "spending", "general_public_services", "population", a)
+                   + target("sept23", "spending", "public_order_safety", s.justice, a)
+                   - target("sept23", "spending", "public_order_safety", "population", a)
+                   + target("sept23", "spending", MEDICAID, s.uc, a) - target("sept23", "spending", MEDICAID, "medicaid", a))
+        if not np.isclose(rebuilt, s.cost_sept23_bn, rtol=0, atol=1e-6):
+            raise ValueError(f"September 23 specification not rebuilt from case {c.case_id}: {rebuilt} vs {s.cost_sept23_bn}")
+        cc = comps.query("case_id == @c.case_id")
+        edu = cc.query("component in ['school_current', 'other_education_current']")
+        resp = {r.component: r.response for r in cc.itertuples() if r.component in SERVICE_CATEGORIES}
+        resp["education_services"] = edu.responsive_bn.sum() / edu.assigned_bn.sum()
+        se_pf = float(pf.loc[s.normalization].private_plus_receipts_se_sampling_bn)
+        for case in ("sept23", "sept24"):
+            dev = np.zeros(161)
+            for (al, kind, line), rep in ctx["line_reps"].items():
+                if al == a:
+                    sign, weight = (1.0, 1.0) if kind == "receipt" else (-1.0, 1.0 if kind == "transfer" else resp[line])
+                    dev += sign * weight * ratio(case, kind, line, a) * (rep - rep[0])
+            if case == "sept23" and not np.isclose(sdr(dev), ref.se_cps_fiscal_keys_bn, rtol=1e-9, atol=0):
+                raise ValueError("CPS error of the September 20 case not reproduced")
+            dev_gg = -s.gg * ratio(case, "service", "general_public_services", a) * (gps[a] - gps[a][0])
+            se_cps = sdr(dev + dev_gg)
+            grad = np.zeros(len(MEDICAL) * ncell)
+            for p, key in enumerate(MEDICAL):
+                dshare, cats = ctx["meps_parts"][(a, key)]
+                for cat in cats.itertuples():
+                    grad[p * ncell:(p + 1) * ncell] += -cat.national_bn * hf[0] * dshare * ratio(case, "transfer", cat.category, a)
+            se_m = float(np.sqrt(grad @ ctx["cov"] @ grad))
+            edu_key = ctx["lane_keys"][(a, "education_services")]
+            edu_dollars = (resp["education_services"] * target(case, "spending", "education_services", edu_key, a)
+                           + s.share * s.school * target(case, "spending", "school_reprice", "k", a)
+                           + (1 - s.share) * target(case, "spending", "college_rekey", "k", a))
+            se_school = edu_dollars * school_rel[a]["indep"]
+            se_school_up = edu_dollars * school_rel[a]["upper"]
+            if case == "sept23" and not (np.isclose(se_m, ref.se_meps_donor_bn, rtol=1e-9, atol=0)
+                                         and np.isclose(se_school, ref.se_school_correction_bn, rtol=1e-9, atol=0)):
+                raise ValueError("MEPS or school error of the September 20 case not reproduced")
+            indep = np.sqrt(se_cps ** 2 + se_pf ** 2 + se_school ** 2 + se_m ** 2)
+            envelope = se_cps + se_pf + se_school_up + se_m
+            ben = float(ben_se[a]) if case == "sept24" else 0.0
+            cost = getattr(s, f"cost_{case}_bn")
+            rows.append(dict(case=case, allocation=a, normalization=s.normalization, school_share=s.share,
+                             school_response=s.school, general_government_response=s.gg, medicaid_key=s.uc,
+                             justice_key=s.justice, sept20_case_id=c.case_id, net_cost_bn=cost,
+                             se_cps_fiscal_keys_bn=se_cps, se_cps_general_government_part_bn=sdr(dev_gg),
+                             se_production_term_bn=se_pf, se_school_correction_bn=se_school, se_meps_donor_bn=se_m,
+                             se_combined_independent_bn=indep, se_all_positive_correlation_bn=envelope,
+                             ci95_low_bn=cost - 1.96 * indep, ci95_high_bn=cost + 1.96 * indep,
+                             ci95_envelope_low_bn=cost - 1.96 * envelope, ci95_envelope_high_bn=cost + 1.96 * envelope,
+                             se_benefit_keys_package_bn=ben, se_with_benefit_keys_bn=np.sqrt(indep ** 2 + ben ** 2),
+                             ci95_with_benefit_keys_low_bn=cost - 1.96 * np.sqrt(indep ** 2 + ben ** 2),
+                             ci95_with_benefit_keys_high_bn=cost + 1.96 * np.sqrt(indep ** 2 + ben ** 2)))
+    frame = pd.DataFrame(rows)
+    frame.to_csv(sub / "case_uncertainty.csv", index=False)
+    summary = {}
+    for case, f in frame.groupby("case"):
+        summary[case] = dict(
+            net_cost_band_bn=[f.net_cost_bn.min(), f.net_cost_bn.max()],
+            se_independent_bn=[f.se_combined_independent_bn.min(), f.se_combined_independent_bn.max()],
+            se_positive_correlation_bn=[f.se_all_positive_correlation_bn.min(), f.se_all_positive_correlation_bn.max()],
+            se_cps_bn=[f.se_cps_fiscal_keys_bn.min(), f.se_cps_fiscal_keys_bn.max()],
+            ci95_union_bn=[f.ci95_low_bn.min(), f.ci95_high_bn.max()],
+            ci95_envelope_union_bn=[f.ci95_envelope_low_bn.min(), f.ci95_envelope_high_bn.max()],
+            ci95_with_benefit_keys_union_bn=[f.ci95_with_benefit_keys_low_bn.min(), f.ci95_with_benefit_keys_high_bn.max()],
+            specifications=int(len(f)))
+    (sub / "summary.json").write_text(json.dumps(summary, indent=2, default=float) + "\n")
+    for case, v in summary.items():
+        print(f"[{case}] cost {v['net_cost_band_bn'][0]:.1f}-{v['net_cost_band_bn'][1]:.1f}  "
+              f"SE {v['se_independent_bn'][0]:.2f}-{v['se_independent_bn'][1]:.2f}  "
+              f"95% union {v['ci95_union_bn'][0]:.1f}-{v['ci95_union_bn'][1]:.1f}  "
+              f"envelope {v['ci95_envelope_union_bn'][0]:.1f}-{v['ci95_envelope_union_bn'][1]:.1f}", flush=True)
+
+
 def main():
+    ap = argparse.ArgumentParser(description="Propagate sampling and donor errors onto the account's cases.")
+    ap.add_argument("--case", choices=("sept20", "sept24"), default="sept20")
+    args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
     print("[stage] CPS load", flush=True)
     d = load_cps()
@@ -271,11 +423,14 @@ def main():
     # ---- per-replicate account components -------------------------------
     direct, spending = account_inputs()
     comp_rows, comp_reps = [], {}
+    line_reps, lane_keys = {}, {}          # per line, for --case sept24
     for allocation in ["personal", "shared"]:
         dr = direct.query("allocation == @allocation")
         rep = np.zeros(161)
         for r in dr.itertuples():
-            rep += r.national_bn * rkeys[allocation][r.allocation_key]
+            line = r.national_bn * rkeys[allocation][r.allocation_key]
+            rep += line
+            line_reps[(allocation, "receipt", r.category)] = line_reps.get((allocation, "receipt", r.category), 0) + line
         if not np.isclose(rep[0], dr.target_bn.sum(), rtol=1e-12):
             raise ValueError("Direct receipts not reproduced at replicate 0")
         comp_reps[(allocation, "direct_receipts")] = rep
@@ -292,6 +447,9 @@ def main():
                     raise ValueError(f"Spending {r.category} not reproduced at replicate 0")
                 name = "transfers" if cls == "household_transfer" else r.category
                 comp_reps[(allocation, name)] = comp_reps.get((allocation, name), 0) + vals
+                kind = "transfer" if cls == "household_transfer" else "service"
+                line_reps[(allocation, kind, r.category)] = line_reps.get((allocation, kind, r.category), 0) + vals
+                lane_keys[(allocation, r.category)] = r.allocation_key
     for (allocation, name), rep in comp_reps.items():
         comp_rows.append(dict(allocation=allocation, component=name, point_bn=rep[0], se_cps_bn=sdr(rep)))
     pd.DataFrame(comp_rows).to_csv(OUT / "component_sampling.csv", index=False)
@@ -305,7 +463,7 @@ def main():
         raise ValueError("Payer covariance estimator does not reproduce donor_model")
     w0 = W[:, 0]
     ncell = len(cells)
-    meps_rows = []
+    meps_rows, meps_parts = [], {}
     for allocation in ["personal", "shared"]:
         g = np.zeros(len(MEDICAL) * ncell)
         sp = spending.query("allocation == @allocation")
@@ -320,6 +478,7 @@ def main():
             national = cats.national_bn.sum()
             # All medical-key categories respond fully in every headline case: welfare falls by target spending.
             g[p * ncell:(p + 1) * ncell] += -national * hf[0] * dshare
+            meps_parts[(allocation, key)] = (dshare, cats[["category", "national_bn"]].copy())
             meps_rows.append(dict(allocation=allocation, key=key, categories=";".join(cats.category),
                                   target_bn=float((cats.national_bn * hf[0] * share).sum()),
                                   se_meps_key_only_bn=float(np.sqrt(
@@ -389,6 +548,10 @@ def main():
     (OUT / "propagation_meta.json").write_text(json.dumps(meta, indent=2) + "\n")
     print(case_frame.groupby("profile")[["net_cost_bn", "se_cps_fiscal_keys_bn", "se_combined_independent_bn",
                                          "se_all_positive_correlation_bn"]].agg(["min", "max"]).to_string())
+    if args.case == "sept24":
+        sept24_cases(dict(line_reps=line_reps, lane_keys=lane_keys, meps_parts=meps_parts, cov=cov, ncell=ncell,
+                          hf=hf, spending=spending, skeys=skeys, cases=cases, comps=comps, pf=pf,
+                          school_rel=school_rel, case_frame=case_frame))
 
 
 if __name__ == "__main__":
