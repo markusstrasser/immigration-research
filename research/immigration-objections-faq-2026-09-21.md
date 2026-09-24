@@ -25,8 +25,8 @@ $165–197bn as published September 20), under a stated service-response assumpt
 of the other, and the generation split must not be scaled onto the complete-account total.
 
 **Offsets do not add unless an entry says so.** The production gain ($8.8–13.3bn) is already
-inside the headline, and cheaper services ($21.8bn to consumers) overlap it. Two care items add, because
-the account omitted them, and since September 24 they sit inside the main case: taxes on native
+inside the headline, and cheaper services ($21.8bn to consumers) overlap it. Two care items that the
+account had omitted used to be added beside it; since September 24 they sit inside the main case: taxes on native
 women's extra hours ($2.7bn) and the net elder-care Medicaid saving ($1.5bn), $4.1bn together
 (entries 4 and 13, ladders 198 and 219). The net of city size and schooling mix (+$13.9bn,
 ladder 201) would add the same way, through the production term and induced receipts, but it is
@@ -70,7 +70,8 @@ group's cost. Finding: the headline holds defense, existing interest and busines
 the tax-incidence rule set (`cbo_collective`: corporate tax 75% to capital income, 25% to
 wages) and the 63–66% school-spending response with economic-affairs and recreation budgets
 held fixed. General public services were also held at zero until September 23. The main case
-now lets them grow at 0.59–0.84 of the population, which adds $28.5–40.6bn. That range is the
+now lets them grow at 0.59–0.84 of the population, which adds $27.8–39.5bn on the corrected data
+of September 24 ($28.5–40.6bn before the corrections). That range is the
 cross-state scale of administration spending: 0.842 (SE 0.039) for state administration and
 0.789 for financial administration, with the low end holding the federal executive and
 legislature fixed. The only within-state test gave 0.47 with a 95% interval of −0.72 to 1.66,
@@ -481,6 +482,12 @@ they get more prominence.
 - 2026-09-24 (custody rounding): entry 12's reallocated custody ratio read 2.1–2.3×; the series is
   2.10 (2019), 2.11 (2023) and 2.23 (2024), so it now reads 2.10–2.23×. Concept affected: the
   reallocated custody ratio.
+
+- 2026-09-24 (general government and care wording): entry 2's general-government addition is now
+  quoted on the corrected data, $27.8–39.5bn (the corrections lower the group's population-keyed
+  share of that line from $48.3bn to $47.1bn). The combining rule no longer says the care items
+  "add", since they sit inside the main case. Concept affected: the general-government response's
+  dollar effect.
 
 - 2026-09-24 (back-cast on the corrected case): the cumulative figures now quote the September 24
   anchor, $1.7–2.4tn, $2.5–3.6tn and $3.0–4.5tn, with the September 23 values beside them. Concept
