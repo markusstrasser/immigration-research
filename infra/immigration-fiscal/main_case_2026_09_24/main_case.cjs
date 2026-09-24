@@ -46,7 +46,7 @@
 const fs = require("fs");
 const path = require("path");
 const {
-  Engine, MODEL, FISCAL, HERE, ALLOCS, SYN, MEDICAID, MAIN_SPECS, CASES, METHODS, STACKS, CENTRAL, CONSTANTS, BOOKING, LTSS_CENTRAL, LTSS_RANGE, gateState, gate, near, span, f2, csvRows, read, readJson, both, scale, plus, cost, band, build, stackShifts, stackFactor, cboShifts, row3Shifts, otaShifts, row1Shifts, medicalShifts, educationShifts, minusT0, benefitShifts, justiceShifts, constantShifts, bookingRow, packageShifts, evalPackage, mean2, central, mts, schoolV, schoolLines, ltssMain, benefitSe,
+  Engine, MODEL, FISCAL, HERE, ALLOCS, SYN, MEDICAID, MAIN_SPECS, PROFILES, MAIN_PROFILE, CASES, METHODS, STACKS, CENTRAL, CONSTANTS, BOOKING, LTSS_CENTRAL, LTSS_RANGE, gateState, gate, near, span, f2, csvRows, read, readJson, both, scale, plus, cost, band, build, stackShifts, stackFactor, cboShifts, row3Shifts, otaShifts, row1Shifts, medicalShifts, educationShifts, minusT0, benefitShifts, justiceShifts, constantShifts, bookingRow, packageShifts, evalPackage, mean2, central, mts, schoolV, schoolLines, ltssMain, benefitSe,
 } = require("./package.cjs");
 
 // ---------------------------------------------------------------------------------------------------
@@ -144,6 +144,15 @@ const quadrature = [C[0] - rss(components.map((x) => x.lo[0])), C[1] + rss(compo
 
 // Comparisons: the audit's own row 3 in place of CBO's income tax; lane figures simply added.
 const withRow3 = central({ incomeTax: "row3" });
+// The other two service profiles of the September 23 lane, on the new case (central only).
+const otherProfiles = {};
+for (const profile of Object.keys(PROFILES).filter((x) => x !== MAIN_PROFILE)) {
+  const b0 = band(build([]), profile);
+  const want = published[profile];
+  gate(`${profile}: no change reproduces the September 23 band`, near(b0[0], want[0], 1e-4) && near(b0[1], want[1], 1e-4),
+    `${b0[0].toFixed(4)}–${b0[1].toFixed(4)}`);
+  otherProfiles[profile] = { sept23: b0, adopted: central({ profile }) };
+}
 // Sensitivity: no fill-in correction (audit row 13 at zero), the audit's rules alone in the stack.
 const noFillIn = evalPackage("central", "audit_rules_alone", CENTRAL);
 const stackCentral = mean2(...METHODS.map((m) => { const s = check(`stack central/${m} (again)`, stackShifts(STACKS[`row4+status_state_aware|central|${m}`]),
@@ -177,7 +186,10 @@ const bandsCsv = ["profile,variant,cost_low_bn,cost_high_bn,range_low_bn,range_h
   `cbo_category_lag_non_school_full,adopted,${C[0].toFixed(4)},${C[1].toFixed(4)},${rangeLowEnd[0].toFixed(4)},${rangeHighEnd[1].toFixed(4)}`,
   `cbo_category_lag_non_school_full,audit_row3_instead_of_cbo_income_tax,${withRow3[0].toFixed(4)},${withRow3[1].toFixed(4)},,`,
   `cbo_category_lag_non_school_full,no_fill_in_correction,${noFillIn[0].toFixed(4)},${noFillIn[1].toFixed(4)},,`,
-  `cbo_category_lag_non_school_full,lane_figures_added,${added[0].toFixed(4)},${added[1].toFixed(4)},,`];
+  `cbo_category_lag_non_school_full,lane_figures_added,${added[0].toFixed(4)},${added[1].toFixed(4)},,`]
+  .concat(Object.entries(otherProfiles).flatMap(([pf, v]) => [
+    `${pf},adopted_2026_09_23,${v.sept23[0].toFixed(4)},${v.sept23[1].toFixed(4)},,`,
+    `${pf},adopted,${v.adopted[0].toFixed(4)},${v.adopted[1].toFixed(4)},,`]));
 fs.writeFileSync(path.join(HERE, "derived", "main_case_bands.csv"), bandsCsv.join("\n") + "\n");
 const compCsv = ["component,label,range_dev_low_end_lo,range_dev_low_end_hi,range_dev_high_end_lo,range_dev_high_end_hi"]
   .concat(components.map((x) => [x.name, `"${x.label}"`, x.lo[0].toFixed(4), x.hi[0].toFixed(4), x.lo[1].toFixed(4), x.hi[1].toFixed(4)].join(",")));
@@ -188,6 +200,7 @@ fs.writeFileSync(path.join(HERE, "derived", "alone_on_adopted.csv"), aloneCsv.jo
 const summary = {
   adopted_2026_09_23: base, main_case: C, change: [C[0] - base[0], C[1] - base[1]],
   range: { low_end: rangeLowEnd, high_end: rangeHighEnd, overall: [rangeLowEnd[0], rangeHighEnd[1]], quadrature },
+  other_profiles: otherProfiles,
   audit_row3_instead_of_cbo_income_tax: withRow3, no_fill_in_correction: noFillIn, lane_figures_added: added,
   interaction_total: [C[0] - added[0], C[1] - added[1]],
   by_side: sides,
@@ -203,6 +216,7 @@ console.log(`  adopted 2026-09-24          ${C[0].toFixed(2)}–${C[1].toFixed(2
 console.log(`  range, low end              ${rangeLowEnd[0].toFixed(1)}–${rangeLowEnd[1].toFixed(1)}`);
 console.log(`  range, high end             ${rangeHighEnd[0].toFixed(1)}–${rangeHighEnd[1].toFixed(1)}`);
 console.log(`  spreads in quadrature       ${quadrature[0].toFixed(1)}–${quadrature[1].toFixed(1)}`);
+for (const [pf, v] of Object.entries(otherProfiles)) console.log(`  ${pf.padEnd(34)} ${v.sept23.map((x) => x.toFixed(2)).join("–")} -> ${v.adopted.map((x) => x.toFixed(2)).join("–")}`);
 console.log(`  no fill-in correction       ${noFillIn[0].toFixed(2)}–${noFillIn[1].toFixed(2)}`);
 console.log(`  with audit row 3 instead    ${withRow3[0].toFixed(2)}–${withRow3[1].toFixed(2)}`);
 console.log(`  taxes ${f2(sides.receipts)}   keyed spending ${f2(sides.spending)}`);

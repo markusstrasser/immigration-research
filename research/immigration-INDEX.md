@@ -59,7 +59,8 @@ The September 23 case, **$203–250bn**, added three changes to the September 20
 - the under-charged part of uncompensated hospital care is keyed to uninsured use.
 
 On that case, with non-school education budgets fixed as well, the cost is $159–213bn, and the
-proportional-service benchmark is $308–341bn ([main-case lane](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md),
+proportional-service benchmark is $308–341bn; on the September 24 case they are $157–211bn and
+$303–336bn ([main-case lane](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md),
 [decision](../decisions/2026-09-23-main-case-general-government-and-use-keys.md)). The September 20
 versions were **$165–197bn**, **$121–160bn** and **$270–289bn**; the notes below quote them where
 they were computed on them. Production is held fully adjusted while service responses vary;

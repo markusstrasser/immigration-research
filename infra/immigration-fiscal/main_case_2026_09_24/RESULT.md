@@ -45,6 +45,11 @@ version adds $4.7bn / $3.2bn more [DATA: `derived/main_case_bands.csv`]. The aud
 treats the CPS fill-ins as carrying no group bias (audit row 13 at zero). On that reading the case is
 $193.1–237.6bn [DATA: same file, `no_fill_in_correction`].
 
+The September 23 lane's two other service profiles move with the package. With non-school education
+budgets fixed as well, the case is $157.1–210.8bn (was $158.9–212.6bn). With every service fully
+proportional it is $303.0–336.4bn (was $307.9–341.0bn). With no change, both reproduce their September
+23 bands (gates) [DATA: `derived/main_case_bands.csv`].
+
 **The constants.** One synthetic line at response 1 carries the lane figures that share no line with
 any other change:
 
