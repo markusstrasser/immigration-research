@@ -1652,7 +1652,8 @@
     "control:data_corrections",
     "preset:repo_central_gg",
     "preset:proportional",
-    "card:headline_cbo_informed_net_cost"
+    "card:headline_cbo_informed_net_cost",
+    "card:e17_survey_errors_nearly_cancel"
    ]
   },
   {
@@ -1674,7 +1675,8 @@
     "card:e4_care_channels_add",
     "card:e11_not_a_policy_saving",
     "card:e12_no_group_crime_cost_in_headline",
-    "card:e16_cbo_surge_projection"
+    "card:e16_cbo_surge_projection",
+    "card:e17_survey_errors_nearly_cancel"
    ]
   },
   {
@@ -1949,6 +1951,19 @@
    "path": "infra/immigration-fiscal/dataset_integrity_2026_09_23/crime.md",
    "supports": [
     "card:e12_no_group_crime_cost_in_headline"
+   ]
+  },
+  {
+   "key": "repo_outside_checks_2026_09_24",
+   "short": "Outside checks, 2026-09-24",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "The account's keys against CBO and Treasury distributions and administrative benefit records",
+   "venue": "Research memo",
+   "path": "research/immigration-outside-checks-2026-09-24.md",
+   "supports": [
+    "card:e17_survey_errors_nearly_cancel"
    ]
   }
  ]
