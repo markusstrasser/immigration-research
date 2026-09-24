@@ -22,6 +22,7 @@ account.
 | Benefit keys against administrative records by ethnicity | [admin_benefit_keys_2026_09_24](../infra/immigration-fiscal/admin_benefit_keys_2026_09_24/RESULT.md) | done, ladder 217 |
 | Taxes and transfers against CBO, Treasury, tax anchors and state hospital records | [external_benchmarks_2026_09_24](../infra/immigration-fiscal/external_benchmarks_2026_09_24/RESULT.md) | done, ladder 216 |
 | Direction of the errors in the crime ratios | [crime_ratio_direction_2026_09_24](../infra/immigration-fiscal/crime_ratio_direction_2026_09_24/RESULT.md) | done, ladder 218 |
+| Consumption taxes keyed on spending, net of remittances (2026-09-25) | [consumption_key_2026_09_24](../infra/immigration-fiscal/consumption_key_2026_09_24/RESULT.md) | done, ladder 225; proposed, not adopted |
 
 ## Schools: priced where the pupils enroll
 
@@ -142,6 +143,7 @@ At Treasury's shares the adopted main case falls −$4.6bn / −$4.3bn; the audi
 249.640 + 9.444 − 4.313.] These changes are relative to the adopted main case and are not combined
 with the school correction above. Combining them needs one engine run over the adopted set.
 
+[2026-09-25: the consumption key now has one; see [Consumption taxes](#consumption-taxes-keyed-on-spending-2026-09-25).]
 Still without an outside test: the state and local income and property tax keys, the consumption
 key, unemployment insurance and workers' compensation (CBO rounds them too coarsely), income tax by
 ethnicity, and any tax figure for the Mexico-born. Blocked: an AEA 2024 paper on credits by
@@ -274,6 +276,90 @@ and credit corrections (its row 3 and SSN rule), and its rows 3, 6 and 13 overla
 so the two cannot be combined by addition; that needs the audit's rows in the engine. Victims' harm
 (+$2.0bn, to $30.9bn) sits beside the account and is not in these figures. None of this is adopted.
 
+## Consumption taxes: keyed on spending (2026-09-25)
+
+The account splits four lines by each person's SPM resources per unit member: general sales tax
+($602.4bn), selective excise ($371.3bn, of which $100.0bn federal), customs ($83.6bn) and personal
+current transfers ($141.1bn), $1,198.3bn in all. The group holds 8.104% of that key, and one point
+of it is worth about $12bn [CALCULATION: lane `cps_frame.py` reproduces the stored share]. The key
+treats every resource dollar as spent in the United States. Richer households save more, and the
+group sits low in the distribution, so the key hands other residents too large a share of these
+taxes. Money sent abroad pulls the other way. The main case adopted September 24 is the base here
+([lane](../infra/immigration-fiscal/consumption_key_2026_09_24/RESULT.md); its engine run with no
+edits reproduces $200.875–246.318bn).
+
+**Saving.** Each unit's resources are replaced by its consumption at the same income rank. The BLS
+Consumer Expenditure Survey gives consumption per dollar of pre-tax income by decile: 3.18 in the
+bottom decile, 0.73 in the sixth and 0.40 in the top [SOURCE: BLS CE Table 1110, 2024]. The 2024
+Interview microdata shape the ratio within deciles, and the CPS converts it to a ratio to resources.
+The group's share rises to 8.894% (SE 0.098) and the main case falls **$7.7bn** (SE 0.5). Nine
+variants (published decile steps, level transport, total spending, taxable-type spending, a capped
+bottom decile, family-size and age cells, the CE Mexican-origin residual) give −$6.1bn to −$11.0bn.
+Raising the top decile's ratio by 25% or 50%, for CE's known shortfall at the top, gives −$5.6bn and
+−$3.8bn [CALCULATION: `consumption_key.py` → `derived/key_specs.csv`].
+
+**Remittances.** Each unit's outflow is its measured sending rate times its earnings, scaled to a
+national flow. The rates come from the CPS Unbanked/Underbanked supplement (June 2015 and 2017):
+37.3% of Mexico-born householders send money abroad, 11.8% of the second generation, 2.0% of the
+third-plus and 1.3% of other natives with no foreign-born member [CALCULATION: `sender_rates.py` →
+`derived/sender_rates_pooled.csv`]. Two calibrations bracket the flow:
+- Banxico's US corridor less H-2 workers' pay, $58.8bn, cuts the share to 7.845% (+$3.3bn)
+  [SOURCE: Banxico SIE CE167, 2024]. To reach it, each expected sending unit must send $20,203 a
+  year, 28% of its earnings and 3.3 times the surveyed amount. The corridor therefore carries money
+  that the CPS households do not generate at surveyed amounts: from migrants the CPS misses,
+  temporary workers outside H-2, business and illicit flows, or under-reported sending. It is the
+  upper bound on the group's outflow.
+- Surveyed amounts (CEMLA's $380 a month per sender, at FDIC sending rates) give the group's units
+  $18.4bn and +$0.9bn; BEA's modelled personal transfers give the same +$0.9bn. This is the lower
+  bound.
+
+**Together.** Consumption out of resources net of remittances, calibrated to the corridor as the
+brief asked, gives a share of 8.599% and a main case of **$196.8–242.3bn (−$4.1bn)**. With surveyed
+remittances the change is −$6.7bn; across the combined variants it runs from −$2.6bn to −$8.4bn.
+Both ends move by the same amount, because the four lines carry one target in both allocations
+[CALCULATION: `engine_run.cjs` → `derived/engine_summary.json`].
+
+**Outside checks.** Three distributions built without the account agree on the direction:
+- **CBO's federal excise by income group (2022).** The current key puts 5.6% of the line on the
+  lowest fifth, where CBO puts 10.7%; the corrected key puts 11.1%, and it is within a point of CBO
+  in every group except the top 1%. On the $100bn federal part the gap to CBO closes from −$1.3bn to
+  +$0.1bn [SOURCE: CBO 61911, researcher Table 12; CALCULATION: `outside.py` →
+  `derived/cbo_check.csv`]. Ladder 216's match on federal excise held only because that line is
+  small.
+- **ITEP, *Who Pays?* 7th edition.** Relative to the middle fifth, the corrected key is within 0.04 of
+  ITEP's sales-and-excise gradient in the fourth fifth and the next 15%. It stays flatter at the top
+  (0.44 against 0.21 for the top 1%) and steeper below the middle (2.61 against 1.46 in the lowest
+  fifth), where resources exceed money income and CE's bottom decile spends 3.2 times its reported
+  income. ITEP's rates applied to the account's own base give 9.133% and −$10.3bn [CALCULATION:
+  `derived/itep_check.csv`, `itep_keyed_shares.csv`].
+- **CE by Hispanic origin.** In the 2024 Interview files, Mexican-origin units consume 1.036 times
+  what their income position predicts (SE 0.020), 0.984 with family size and 0.993 with size and
+  age. The income-rank model fits them within two standard errors [CALCULATION: `saving.py` →
+  `derived/ce_microdata_check.csv`].
+
+CBO's excise gradient spread over all four lines, the September 24 sensitivity above (−$15.2bn),
+lies beyond all three, as expected for fuel, tobacco and alcohol taxes.
+
+**What else it touches.** Seven spending lines are keyed partly on resources (economic affairs,
+subsidies, housing and community services, recreation). They have zero response in the main case, so
+they do not move. Where those services respond (the proportional-reference profile), the same key
+change adds $3.4bn of cost and offsets 44% of the saving correction. The September 19 generation
+ledger keys sales and excise tax on a flat share of resources and carries the same error; it is named
+here, not rerun. If adopted, the account's generation split (ladder 224) and the winners-and-losers
+count move with the main case.
+
+**Limits.** The CE-to-CPS transport rests on income rank. The Mexican-origin check classifies units
+by the reference person and cannot separate the first generation. The FDIC sending rates date from
+2015 and 2017. No source measures what US-born-only sending units send; from a quarter to all of what
+other sending units send, it moves the result by less than $0.1bn. The account keys personal current
+transfers (fines, fees, donations) on consumption, and the lane corrects that line like the others
+without testing the keying.
+
+**Status.** Proposed, not adopted. The choice is the operator's: the combined correction at the
+corridor (−$4.1bn), the combined correction at surveyed remittances (−$6.7bn), or the current key.
+[CALCULATION: the parent's rerun of `consumption_key.py`, `engine_run.cjs` and the lane's 8 tests
+left all 19 derived files byte-identical; shared lanes untouched.]
+
 ## Revisions
 
 - 2026-09-24 (later): the operator adopted all four checks with the dataset audit. In one engine run
@@ -282,3 +368,6 @@ so the two cannot be combined by addition; that needs the audit's rows in the en
   the 2024 arrest ratio. The main case is $200.9–246.3bn ([decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md), ladder 219). The
   figures above stay as computed on the September 23 case. Concept affected: the status of these
   corrections.
+- 2026-09-25: added the consumption-key section and table row. The key the September 24 memo listed
+  as untested now has an outside test; the saving correction net of remittances would lower the main
+  case by $4.1bn (proposed, ladder 225). Concept affected: the consumption tax key.

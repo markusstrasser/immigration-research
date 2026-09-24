@@ -228,6 +228,11 @@ Run together through the engine, the proposals give **$216.4–261.8bn** on the 
 (+$13.2bn / +$12.2bn; [combined run](../infra/immigration-fiscal/outside_checks_combined_2026_09_24/README.md));
 they overlap the audit package's rows 3, 6 and 13 and do not add to it. Adopted September 24 together
 with the audit in one engine run (ladder 219).
+Consumption (ladder 225, September 25): the key treats every resource dollar as spent. Keyed on what
+households at each income rank spend (CE 2024), net of remittances, the group pays more of the
+$1,198bn of consumption-keyed receipts, and the main case would be **$196.8–242.3bn** (−$4.1bn;
+−$2.6bn to −$8.4bn across variants; proposed). CBO's excise distribution, ITEP's gradient and
+Mexican-origin CE units all support the direction.
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): seventeen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,

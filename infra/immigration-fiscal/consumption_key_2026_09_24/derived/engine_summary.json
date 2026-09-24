@@ -1,0 +1,1478 @@
+{
+ "adopted_band": [
+  200.8752025157867,
+  246.3184360862005
+ ],
+ "specs": {
+  "raw": {
+   "family": "raw",
+   "band": [
+    200.87520251579954,
+    246.31843608621335
+   ],
+   "change": [
+    1.2846612662542611e-11,
+    1.2846612662542611e-11
+   ],
+   "shared": [
+    200.87520251579954,
+    233.39334203603806
+   ],
+   "personal": [
+    213.41066535920055,
+    246.31843608621335
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    0,
+    0
+   ],
+   "proportional_reference_change": [
+    1.2846612662542611e-11,
+    1.2846612662542611e-11
+   ],
+   "scenario_change_spread": [
+    0,
+    0
+   ]
+  },
+  "saving_central": {
+   "family": "saving",
+   "band": [
+    193.17637117900657,
+    238.6196047494204
+   ],
+   "change": [
+    -7.698831336780131,
+    -7.698831336780103
+   ],
+   "shared": [
+    193.17637117900657,
+    225.6945106992451
+   ],
+   "personal": [
+    205.71183402240757,
+    238.6196047494204
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    3.35572534393998,
+    3.35572534393998
+   ],
+   "proportional_reference_change": [
+    -4.343105992840151,
+    -4.343105992840151
+   ],
+   "scenario_change_spread": [
+    0,
+    0
+   ]
+  },
+  "saving_step_deciles": {
+   "family": "saving",
+   "band": [
+    193.7931632216311,
+    239.23639679204493
+   ],
+   "change": [
+    -7.0820392941556065,
+    -7.082039294155578
+   ],
+   "shared": [
+    193.7931632216311,
+    226.3113027418696
+   ],
+   "personal": [
+    206.3286260650321,
+    239.23639679204493
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    3.106695158822049,
+    3.106695158822049
+   ],
+   "proportional_reference_change": [
+    -3.9753441353335575,
+    -3.9753441353335575
+   ],
+   "scenario_change_spread": [
+    0,
+    0
+   ]
+  },
+  "saving_level_transport": {
+   "family": "saving",
+   "band": [
+    191.95608125087645,
+    237.3993148212903
+   ],
+   "change": [
+    -8.919121264910245,
+    -8.919121264910217
+   ],
+   "shared": [
+    191.95608125087645,
+    224.47422077111497
+   ],
+   "personal": [
+    204.49154409427746,
+    237.3993148212903
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    3.87433222256044,
+    3.87433222256044
+   ],
+   "proportional_reference_change": [
+    -5.044789042349805,
+    -5.044789042349805
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "saving_total_expenditure": {
+   "family": "saving",
+   "band": [
+    194.77647540036784,
+    240.21970897078168
+   ],
+   "change": [
+    -6.098727115418853,
+    -6.098727115418825
+   ],
+   "shared": [
+    194.77647540036784,
+    227.29461492060636
+   ],
+   "personal": [
+    207.31193824376885,
+    240.21970897078168
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    2.6681249424964335,
+    2.6681249424963767
+   ],
+   "proportional_reference_change": [
+    -3.4306021729224767,
+    -3.4306021729224767
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "saving_taxable_broad": {
+   "family": "saving",
+   "band": [
+    193.36020016073914,
+    238.80343373115298
+   ],
+   "change": [
+    -7.515002355047557,
+    -7.515002355047528
+   ],
+   "shared": [
+    193.36020016073914,
+    225.87833968097766
+   ],
+   "personal": [
+    205.89566300414015,
+    238.80343373115298
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    3.2644935911789617,
+    3.264493591178905
+   ],
+   "proportional_reference_change": [
+    -4.250508763868652,
+    -4.250508763868652
+   ],
+   "scenario_change_spread": [
+    0,
+    0
+   ]
+  },
+  "saving_bottom_capped": {
+   "family": "saving",
+   "band": [
+    193.20591599623978,
+    238.64914956665362
+   ],
+   "change": [
+    -7.669286519546915,
+    -7.669286519546887
+   ],
+   "shared": [
+    193.20591599623978,
+    225.7240555164783
+   ],
+   "personal": [
+    205.7413788396408,
+    238.64914956665362
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    3.2673702098053354,
+    3.2673702098053354
+   ],
+   "proportional_reference_change": [
+    -4.401916309741637,
+    -4.40191630974158
+   ],
+   "scenario_change_spread": [
+    5.684341886080802e-14,
+    5.684341886080802e-14
+   ]
+  },
+  "saving_rank_x_size": {
+   "family": "saving",
+   "band": [
+    191.3911673146608,
+    236.83440088507464
+   ],
+   "change": [
+    -9.484035201125891,
+    -9.484035201125863
+   ],
+   "shared": [
+    191.3911673146608,
+    223.90930683489933
+   ],
+   "personal": [
+    203.9266301580618,
+    236.83440088507464
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    4.033218466663357,
+    4.0332184666633
+   ],
+   "proportional_reference_change": [
+    -5.450816734462592,
+    -5.450816734462592
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "saving_rank_x_size_x_age": {
+   "family": "saving",
+   "band": [
+    191.86927344065637,
+    237.3125070110702
+   ],
+   "change": [
+    -9.005929075130325,
+    -9.005929075130297
+   ],
+   "shared": [
+    191.86927344065637,
+    224.3874129608949
+   ],
+   "personal": [
+    204.40473628405738,
+    237.3125070110702
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    3.855542568220301,
+    3.855542568220301
+   ],
+   "proportional_reference_change": [
+    -5.150386506910024,
+    -5.150386506910024
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "saving_top_decile_x1.25": {
+   "family": "saving",
+   "band": [
+    195.22882175554403,
+    240.67205532595787
+   ],
+   "change": [
+    -5.646380760242664,
+    -5.646380760242636
+   ],
+   "shared": [
+    195.22882175554403,
+    227.74696127578255
+   ],
+   "personal": [
+    207.76428459894504,
+    240.67205532595787
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    2.5022296108180058,
+    2.5022296108180058
+   ],
+   "proportional_reference_change": [
+    -3.1441511494246583,
+    -3.1441511494246583
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "saving_top_decile_x1.5": {
+   "family": "saving",
+   "band": [
+    197.07297449064887,
+    242.51620806106268
+   ],
+   "change": [
+    -3.802228025137822,
+    -3.802228025137822
+   ],
+   "shared": [
+    197.07297449064887,
+    229.5911140108874
+   ],
+   "personal": [
+    209.60843733404988,
+    242.51620806106268
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    1.7355315145370582,
+    1.7355315145370014
+   ],
+   "proportional_reference_change": [
+    -2.0666965106008206,
+    -2.0666965106008206
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "outside_itep_gradient": {
+   "family": "outside",
+   "band": [
+    190.5291297144216,
+    235.97236328483544
+   ],
+   "change": [
+    -10.346072801365096,
+    -10.346072801365068
+   ],
+   "shared": [
+    190.5291297144216,
+    223.04726923466012
+   ],
+   "personal": [
+    203.0645925578226,
+    235.97236328483544
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    4.3710744262292565,
+    4.3710744262292
+   ],
+   "proportional_reference_change": [
+    -5.974998375135897,
+    -5.974998375135897
+   ],
+   "scenario_change_spread": [
+    5.684341886080802e-14,
+    2.842170943040401e-14
+   ]
+  },
+  "saving_ce_mexican_rank": {
+   "family": "saving",
+   "band": [
+    189.85628409808473,
+    235.29951766849857
+   ],
+   "change": [
+    -11.018918417701968,
+    -11.01891841770194
+   ],
+   "shared": [
+    189.85628409808473,
+    222.37442361832325
+   ],
+   "personal": [
+    202.39174694148574,
+    235.29951766849857
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    4.598564665282424,
+    4.598564665282424
+   ],
+   "proportional_reference_change": [
+    -6.420353752419601,
+    -6.420353752419544
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "saving_ce_mexican_rank_x_size": {
+   "family": "saving",
+   "band": [
+    192.92077776223894,
+    238.36401133265278
+   ],
+   "change": [
+    -7.954424753547755,
+    -7.954424753547727
+   ],
+   "shared": [
+    192.92077776223894,
+    225.43891728247746
+   ],
+   "personal": [
+    205.45624060563995,
+    238.36401133265278
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    3.4605320763987493,
+    3.4605320763987493
+   ],
+   "proportional_reference_change": [
+    -4.493892677149006,
+    -4.493892677149006
+   ],
+   "scenario_change_spread": [
+    5.684341886080802e-14,
+    5.684341886080802e-14
+   ]
+  },
+  "remit_survey_cemla": {
+   "family": "remittances",
+   "band": [
+    201.8014582258223,
+    247.24469179623608
+   ],
+   "change": [
+    0.9262557100356048,
+    0.9262557100355764
+   ],
+   "shared": [
+    201.8014582258223,
+    234.31959774606082
+   ],
+   "personal": [
+    214.3369210692233,
+    247.24469179623608
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -0.33972600148274523,
+    -0.3397260014828021
+   ],
+   "proportional_reference_change": [
+    0.5865297085528027,
+    0.5865297085528027
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "remit_bea": {
+   "family": "remittances",
+   "band": [
+    201.73963211783305,
+    247.18286568824686
+   ],
+   "change": [
+    0.8644296020463571,
+    0.8644296020463571
+   ],
+   "shared": [
+    201.73963211783305,
+    234.25777163807157
+   ],
+   "personal": [
+    214.27509496123406,
+    247.18286568824686
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -0.3170497043084879,
+    -0.3170497043084879
+   ],
+   "proportional_reference_change": [
+    0.5473798977378692,
+    0.5473798977378692
+   ],
+   "scenario_change_spread": [
+    0,
+    0
+   ]
+  },
+  "remit_corridor_net_h2_low": {
+   "family": "remittances",
+   "band": [
+    204.23134346619756,
+    249.67457703661134
+   ],
+   "change": [
+    3.356140950410861,
+    3.3561409504108326
+   ],
+   "shared": [
+    204.23134346619756,
+    236.74948298643608
+   ],
+   "personal": [
+    216.76680630959856,
+    249.67457703661134
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -1.2314713493415184,
+    -1.2314713493415184
+   ],
+   "proportional_reference_change": [
+    2.124669601069286,
+    2.1246696010693427
+   ],
+   "scenario_change_spread": [
+    5.684341886080802e-14,
+    8.526512829121202e-14
+   ]
+  },
+  "remit_corridor_net_h2": {
+   "family": "remittances",
+   "band": [
+    204.14601240041375,
+    249.58924597082753
+   ],
+   "change": [
+    3.270809884627056,
+    3.2708098846270275
+   ],
+   "shared": [
+    204.14601240041375,
+    236.66415192065227
+   ],
+   "personal": [
+    216.68147524381476,
+    249.58924597082753
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -1.2001598006628456,
+    -1.2001598006627887
+   ],
+   "proportional_reference_change": [
+    2.0706500839642104,
+    2.070650083964267
+   ],
+   "scenario_change_spread": [
+    0,
+    5.684341886080802e-14
+   ]
+  },
+  "remit_corridor_net_h2_high": {
+   "family": "remittances",
+   "band": [
+    204.06077708009164,
+    249.50401065050542
+   ],
+   "change": [
+    3.185574564304943,
+    3.1855745643049147
+   ],
+   "shared": [
+    204.06077708009164,
+    236.57891660033016
+   ],
+   "personal": [
+    216.59623992349265,
+    249.50401065050542
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -1.1688834349870945,
+    -1.1688834349870376
+   ],
+   "proportional_reference_change": [
+    2.0166911293178487,
+    2.0166911293179055
+   ],
+   "scenario_change_spread": [
+    0,
+    5.684341886080802e-14
+   ]
+  },
+  "remit_survey_cemla_rho0.25": {
+   "family": "remittances",
+   "band": [
+    201.7870345353734,
+    247.2302681057872
+   ],
+   "change": [
+    0.9118320195867113,
+    0.9118320195866829
+   ],
+   "shared": [
+    201.7870345353734,
+    234.30517405561193
+   ],
+   "personal": [
+    214.32249737877441,
+    247.2302681057872
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -0.33438128665380873,
+    -0.3343812866538656
+   ],
+   "proportional_reference_change": [
+    0.5774507329328458,
+    0.5774507329328458
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "remit_bea_rho0.25": {
+   "family": "remittances",
+   "band": [
+    201.72618449500354,
+    247.16941806541735
+   ],
+   "change": [
+    0.85098197921684,
+    0.85098197921684
+   ],
+   "shared": [
+    201.72618449500354,
+    234.24432401524206
+   ],
+   "personal": [
+    214.26164733840454,
+    247.16941806541735
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -0.3120666759526216,
+    -0.3120666759526216
+   ],
+   "proportional_reference_change": [
+    0.5389153032642184,
+    0.5389153032642184
+   ],
+   "scenario_change_spread": [
+    0,
+    0
+   ]
+  },
+  "remit_corridor_net_h2_rho0.25": {
+   "family": "remittances",
+   "band": [
+    204.1778654664358,
+    249.62109903684959
+   ],
+   "change": [
+    3.3026629506491076,
+    3.302662950649079
+   ],
+   "shared": [
+    204.1778654664358,
+    236.69600498667432
+   ],
+   "personal": [
+    216.7133283098368,
+    249.62109903684959
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -1.2116572227964184,
+    -1.2116572227964184
+   ],
+   "proportional_reference_change": [
+    2.0910057278526324,
+    2.0910057278526892
+   ],
+   "scenario_change_spread": [
+    0,
+    5.684341886080802e-14
+   ]
+  },
+  "remit_survey_cemla_rho1": {
+   "family": "remittances",
+   "band": [
+    201.83032608322233,
+    247.2735596536361
+   ],
+   "change": [
+    0.9551235674356349,
+    0.9551235674356064
+   ],
+   "shared": [
+    201.83032608322233,
+    234.34846560346085
+   ],
+   "personal": [
+    214.36578892662334,
+    247.2735596536361
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -0.3504230315513155,
+    -0.3504230315513155
+   ],
+   "proportional_reference_change": [
+    0.6047005358843194,
+    0.6047005358843194
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "remit_bea_rho1": {
+   "family": "remittances",
+   "band": [
+    201.76654517957766,
+    247.20977874999144
+   ],
+   "change": [
+    0.8913426637909652,
+    0.8913426637909367
+   ],
+   "shared": [
+    201.76654517957766,
+    234.28468469981618
+   ],
+   "personal": [
+    214.30200802297867,
+    247.20977874999144
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -0.32702237390122946,
+    -0.32702237390122946
+   ],
+   "proportional_reference_change": [
+    0.5643202898897357,
+    0.5643202898897357
+   ],
+   "scenario_change_spread": [
+    5.684341886080802e-14,
+    8.526512829121202e-14
+   ]
+  },
+  "remit_corridor_net_h2_rho1": {
+   "family": "remittances",
+   "band": [
+    204.0869435190115,
+    249.53017708942528
+   ],
+   "change": [
+    3.2117410032248017,
+    3.2117410032247733
+   ],
+   "shared": [
+    204.0869435190115,
+    236.60508303925002
+   ],
+   "personal": [
+    216.6224063624125,
+    249.53017708942528
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -1.178837671117435,
+    -1.178837671117435
+   ],
+   "proportional_reference_change": [
+    2.0329033321073666,
+    2.0329033321073666
+   ],
+   "scenario_change_spread": [
+    0,
+    5.684341886080802e-14
+   ]
+  },
+  "remit_survey_nis": {
+   "family": "remittances",
+   "band": [
+    201.70984568768657,
+    247.15307925810038
+   ],
+   "change": [
+    0.8346431718998701,
+    0.8346431718998701
+   ],
+   "shared": [
+    201.70984568768657,
+    234.2279852079251
+   ],
+   "personal": [
+    214.24530853108757,
+    247.15307925810038
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -0.3061247799592479,
+    -0.3061247799591911
+   ],
+   "proportional_reference_change": [
+    0.5285183919406791,
+    0.5285183919406791
+   ],
+   "scenario_change_spread": [
+    0,
+    0
+   ]
+  },
+  "remit_corridor_full": {
+   "family": "remittances",
+   "band": [
+    204.37376681057455,
+    249.81700038098833
+   ],
+   "change": [
+    3.4985642947878546,
+    3.498564294787826
+   ],
+   "shared": [
+    204.37376681057455,
+    236.89190633081307
+   ],
+   "personal": [
+    216.90922965397556,
+    249.81700038098833
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -1.283732678801755,
+    -1.283732678801755
+   ],
+   "proportional_reference_change": [
+    2.214831615986043,
+    2.2148316159860997
+   ],
+   "scenario_change_spread": [
+    0,
+    5.684341886080802e-14
+   ]
+  },
+  "remit_corridor_net_h2_illicit": {
+   "family": "remittances",
+   "band": [
+    203.8787185990275,
+    249.3219521694413
+   ],
+   "change": [
+    3.003516083240811,
+    3.0035160832407826
+   ],
+   "shared": [
+    203.8787185990275,
+    236.39685811926603
+   ],
+   "personal": [
+    216.41418144242851,
+    249.3219521694413
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -1.102078812784839,
+    -1.1020788127847823
+   ],
+   "proportional_reference_change": [
+    1.9014372704559719,
+    1.9014372704560287
+   ],
+   "scenario_change_spread": [
+    0,
+    5.684341886080802e-14
+   ]
+  },
+  "remit_corridor_net_h2_others_bea": {
+   "family": "remittances",
+   "band": [
+    205.21342576297755,
+    250.65665933339133
+   ],
+   "change": [
+    4.338223247190854,
+    4.338223247190825
+   ],
+   "shared": [
+    205.21342576297755,
+    237.73156528321607
+   ],
+   "personal": [
+    217.74888860637856,
+    250.65665933339133
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -1.599141621993681,
+    -1.599141621993624
+   ],
+   "proportional_reference_change": [
+    2.739081625197173,
+    2.7390816251972296
+   ],
+   "scenario_change_spread": [
+    0,
+    5.684341886080802e-14
+   ]
+  },
+  "remit_corridor_net_h2_others_zero": {
+   "family": "remittances",
+   "band": [
+    205.64690841669815,
+    251.09014198711193
+   ],
+   "change": [
+    4.771705900911456,
+    4.771705900911428
+   ],
+   "shared": [
+    205.64690841669815,
+    238.16504793693667
+   ],
+   "personal": [
+    218.18237126009913,
+    251.09014198711193
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    -1.7611451726914424,
+    -1.7611451726913856
+   ],
+   "proportional_reference_change": [
+    3.010560728220014,
+    3.010560728220071
+   ],
+   "scenario_change_spread": [
+    0,
+    5.684341886080802e-14
+   ]
+  },
+  "both_corridor_net_h2": {
+   "family": "both",
+   "band": [
+    196.8234801243996,
+    242.2667136948134
+   ],
+   "change": [
+    -4.051722391387102,
+    -4.051722391387102
+   ],
+   "shared": [
+    196.8234801243996,
+    229.34161964463812
+   ],
+   "personal": [
+    209.3589429678006,
+    242.2667136948134
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    1.993880111037015,
+    1.993880111037015
+   ],
+   "proportional_reference_change": [
+    -2.057842280350087,
+    -2.057842280350087
+   ],
+   "scenario_change_spread": [
+    5.684341886080802e-14,
+    2.842170943040401e-14
+   ]
+  },
+  "both_corridor_net_h2_dollar_for_dollar": {
+   "family": "both",
+   "band": [
+    196.77876601508976,
+    242.22199958550357
+   ],
+   "change": [
+    -4.096436500696939,
+    -4.096436500696939
+   ],
+   "shared": [
+    196.77876601508976,
+    229.29690553532828
+   ],
+   "personal": [
+    209.31422885849076,
+    242.22199958550357
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    2.021038309367725,
+    2.0210383093676683
+   ],
+   "proportional_reference_change": [
+    -2.0753981913292705,
+    -2.0753981913292705
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "both_survey_cemla": {
+   "family": "both",
+   "band": [
+    194.21354036707297,
+    239.6567739374868
+   ],
+   "change": [
+    -6.661662148713731,
+    -6.661662148713702
+   ],
+   "shared": [
+    194.21354036707297,
+    226.7316798873115
+   ],
+   "personal": [
+    206.74900321047397,
+    239.6567739374868
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    2.9684833284836145,
+    2.9684833284836145
+   ],
+   "proportional_reference_change": [
+    -3.6931788202301163,
+    -3.6931788202301163
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "both_bea": {
+   "family": "both",
+   "band": [
+    194.14434167123292,
+    239.58757524164676
+   ],
+   "change": [
+    -6.730860844553774,
+    -6.730860844553746
+   ],
+   "shared": [
+    194.14434167123292,
+    226.66248119147144
+   ],
+   "personal": [
+    206.67980451463393,
+    239.58757524164676
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    2.994320030307051,
+    2.9943200303069943
+   ],
+   "proportional_reference_change": [
+    -3.73654081424678,
+    -3.73654081424678
+   ],
+   "scenario_change_spread": [
+    0,
+    0
+   ]
+  },
+  "both_corridor_full": {
+   "family": "both",
+   "band": [
+    197.07700392971518,
+    242.52023750012899
+   ],
+   "change": [
+    -3.7981985860715213,
+    -3.7981985860715213
+   ],
+   "shared": [
+    197.07700392971518,
+    229.5951434499537
+   ],
+   "personal": [
+    209.61246677311618,
+    242.52023750012899
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    1.8992084699319207,
+    1.8992084699319207
+   ],
+   "proportional_reference_change": [
+    -1.8989901161396006,
+    -1.8989901161396006
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "both_corridor_net_h2_illicit": {
+   "family": "both",
+   "band": [
+    196.5258529943268,
+    241.9690865647406
+   ],
+   "change": [
+    -4.349349521459885,
+    -4.349349521459914
+   ],
+   "shared": [
+    196.5258529943268,
+    229.04399251456533
+   ],
+   "personal": [
+    209.06131583772782,
+    241.9690865647406
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    2.1050202420912,
+    2.1050202420912
+   ],
+   "proportional_reference_change": [
+    -2.244329279368685,
+    -2.244329279368685
+   ],
+   "scenario_change_spread": [
+    0,
+    5.684341886080802e-14
+   ]
+  },
+  "both_corridor_net_h2_others_bea": {
+   "family": "both",
+   "band": [
+    197.85627559195845,
+    243.29950916237226
+   ],
+   "change": [
+    -3.0189269238282463,
+    -3.0189269238282463
+   ],
+   "shared": [
+    197.85627559195845,
+    230.37441511219697
+   ],
+   "personal": [
+    210.39173843535946,
+    243.29950916237226
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    1.6046687615720998,
+    1.604668761572043
+   ],
+   "proportional_reference_change": [
+    -1.4142581622562034,
+    -1.4142581622562034
+   ],
+   "scenario_change_spread": [
+    5.684341886080802e-14,
+    2.842170943040401e-14
+   ]
+  },
+  "both_corridor_net_h2_others_zero": {
+   "family": "both",
+   "band": [
+    198.27644685713366,
+    243.71968042754747
+   ],
+   "change": [
+    -2.598755658653033,
+    -2.598755658653033
+   ],
+   "shared": [
+    198.27644685713366,
+    230.79458637737218
+   ],
+   "personal": [
+    210.81190970053467,
+    243.71968042754747
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    1.44633474185963,
+    1.4463347418595731
+   ],
+   "proportional_reference_change": [
+    -1.15242091679346,
+    -1.15242091679346
+   ],
+   "scenario_change_spread": [
+    0,
+    0
+   ]
+  },
+  "both_rank_x_size_corridor_net_h2": {
+   "family": "both",
+   "band": [
+    195.09003207054215,
+    240.533265640956
+   ],
+   "change": [
+    -5.785170445244546,
+    -5.785170445244518
+   ],
+   "shared": [
+    195.09003207054215,
+    227.60817159078067
+   ],
+   "personal": [
+    207.62549491394316,
+    240.533265640956
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    2.6516925360355117,
+    2.651692536035455
+   ],
+   "proportional_reference_change": [
+    -3.133477909209091,
+    -3.133477909209091
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "both_rank_x_size_survey_cemla": {
+   "family": "both",
+   "band": [
+    192.44218963434068,
+    237.88542320475452
+   ],
+   "change": [
+    -8.433012881446018,
+    -8.43301288144599
+   ],
+   "shared": [
+    192.44218963434068,
+    224.9603291545792
+   ],
+   "personal": [
+    204.97765247774169,
+    237.88542320475452
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    3.6407057142051826,
+    3.640705714205126
+   ],
+   "proportional_reference_change": [
+    -4.792307167240892,
+    -4.792307167240892
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "both_rank_x_size_x_age_corridor_net_h2": {
+   "family": "both",
+   "band": [
+    195.56144587718072,
+    241.00467944759455
+   ],
+   "change": [
+    -5.31375663860598,
+    -5.313756638605952
+   ],
+   "shared": [
+    195.56144587718072,
+    228.07958539741924
+   ],
+   "personal": [
+    208.09690872058172,
+    241.00467944759455
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    2.476345243882122,
+    2.476345243882065
+   ],
+   "proportional_reference_change": [
+    -2.8374113947239152,
+    -2.8374113947239152
+   ],
+   "scenario_change_spread": [
+    0,
+    2.842170943040401e-14
+   ]
+  },
+  "both_rank_x_size_x_age_survey_cemla": {
+   "family": "both",
+   "band": [
+    192.9186908534987,
+    238.36192442391254
+   ],
+   "change": [
+    -7.956511662287994,
+    -7.956511662287966
+   ],
+   "shared": [
+    192.9186908534987,
+    225.43683037373722
+   ],
+   "personal": [
+    205.4541536968997,
+    238.36192442391254
+   ],
+   "spending_resource_edits_main_case": [
+    0,
+    0
+   ],
+   "spending_resource_edits_proportional_reference": [
+    3.4635753484834595,
+    3.4635753484834595
+   ],
+   "proportional_reference_change": [
+    -4.492936313804535,
+    -4.492936313804535
+   ],
+   "scenario_change_spread": [
+    0,
+    0
+   ]
+  }
+ }
+}
