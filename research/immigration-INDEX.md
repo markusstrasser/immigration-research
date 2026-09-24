@@ -139,6 +139,19 @@ answers a historical question; the main case's static comparison treats existing
 sunk. The line is proposed as the interest row's response, not adopted, and must never be added
 to the assigned balance or the stock to an annual figure.
 
+The [status-benefits sweep](immigration-status-benefits-sweep-2026-09-24.md) (September 24) follows
+the City Journal article on California. It covers benefits paid regardless of status, improper
+payments, ITIN credits and migrant shelters in one table.
+- California's Medi-Cal for undocumented residents costs **$10.8bn** a year from the General Fund.
+  That is lawful spending, already inside BEA Medicaid.
+- Other states add $1.0–1.4bn.
+- Shelters cost five places $4.7bn in 2024.
+- About $1.1bn of federal money was claimed improperly and repaid.
+- No charged fraud tied to status was found.
+
+The one keying mismatch is shelters. The account over-charges the group about $0.5bn, because
+Mexican nationals were 0.50–0.84% of the people served.
+
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
 second generation, reference group, education, single year, legacy cohorts, ageing,
