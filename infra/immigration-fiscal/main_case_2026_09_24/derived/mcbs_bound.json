@@ -1,0 +1,29 @@
+{
+ "spec": "winsor_p995",
+ "meps_65plus_on_mcbs_definitions": [
+  1.005,
+  0.056
+ ],
+ "mcbs_2023": [
+  1.265,
+  0.152
+ ],
+ "precision_weighted_ratio": 1.0360731707317072,
+ "cases": {
+  "published": {
+   "k": 1.0,
+   "medicare": -9.91221394310678,
+   "medicaid_and_chip_other_medical": 13.638743971487003
+  },
+  "precision_weighted": {
+   "k": 1.030918577842495,
+   "medicare": -8.70076461161706,
+   "medicaid_and_chip_other_medical": 13.915857351583186
+  },
+  "mcbs_as_truth": {
+   "k": 1.2587064676616915,
+   "medicare": 0.22440291221531164,
+   "medicaid_and_chip_other_medical": 15.957447764128641
+  }
+ }
+}

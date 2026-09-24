@@ -1,0 +1,6 @@
+profile,variant,cost_low_bn,cost_high_bn,range_low_bn,range_high_bn
+cbo_category_lag_non_school_full,adopted_2026_09_23,203.2070,249.6400,,
+cbo_category_lag_non_school_full,adopted,200.8752,246.3184,172.2655,276.1463
+cbo_category_lag_non_school_full,audit_row3_instead_of_cbo_income_tax,196.2156,243.1180,,
+cbo_category_lag_non_school_full,no_fill_in_correction,193.1186,237.6324,,
+cbo_category_lag_non_school_full,lane_figures_added,201.3371,246.8762,,
