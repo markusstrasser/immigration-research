@@ -263,6 +263,15 @@
   "url": "https://www.cbo.gov/publication/60706",
   "date": "2026-09-21"
  },
+ "census_2020_ddhca_api": {
+  "ok": true,
+  "status": 200,
+  "final_url": "https://api.census.gov/data/2020/dec/ddhca.html",
+  "content_type": "text/html",
+  "title": "Census Data API: /data/2020/dec/ddhca",
+  "url": "https://api.census.gov/data/2020/dec/ddhca.html",
+  "date": "2026-09-24"
+ },
  "census_2024_asec_generation_table4": {
   "ok": true,
   "status": 200,

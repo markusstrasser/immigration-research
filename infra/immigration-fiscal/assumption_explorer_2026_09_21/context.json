@@ -1658,7 +1658,7 @@
    "id": "e12_no_group_crime_cost_in_headline",
    "faq_entry": 12,
    "objection": "\"What about crime?\"",
-   "finding": "Since September 23 the main case charges police, courts and prisons by use: prisons by custody, police half by arrests, courts by their criminal share, border enforcement per head. That adds $5.9bn to the fiscal headline ($1.7bn with census ethnicity codes as recorded). It adds little because the account compares the group with the average other resident: Hispanic residents are 20.2% of people in prisons and jails against 20.7% of residents aged 18–64, while Hispanic adults are imprisoned at 1.3 times the all-adult rate and 2.6 times the non-Hispanic white rate (BJS, 2023). Victim harm sits outside the fiscal account: crimes by group members against other residents cost the victims about $29bn a year ($15–45bn), a social cost reported beside the headline. Police records agree: on Texas and Arizona NIBRS offender rates the cost is $28.6bn, and the $43bn arrest-share arm fails a check against victims' own reported ethnicity.",
+   "finding": "Since September 23 the main case charges police, courts and prisons by use: prisons by custody, police half by arrests, courts by their criminal share, border enforcement per head. That adds $5.9bn to the fiscal headline ($1.7bn with census ethnicity codes as recorded). It adds little because the account compares the group with the average other resident: Hispanic residents are 20.2% of people in prisons and jails against 20.7% of residents aged 18–64, while Hispanic adults are imprisoned at 1.3 times the all-adult rate and 2.6 times the non-Hispanic white rate (BJS, 2023). The jail part of that BJS figure is probably under-recorded: jail counts put Hispanics at 14.4% of inmates against 22.1% of adult arrests and, unlike the prisoner series, are not adjusted for ethnicity. With jails at the arrest share, prisons and jails together are 22.9% Hispanic. The main case's custody key comes from the ACS and does not change. Victim harm sits outside the fiscal account: crimes by group members against other residents cost the victims about $29bn a year ($15–45bn), a social cost reported beside the headline. Police records agree: on Texas and Arizona NIBRS offender rates the cost is $28.6bn, and the $43bn arrest-share arm fails a check against victims' own reported ethnicity.",
    "values": [
     {
      "label": "public order and safety keyed by use, change to the main case",
@@ -1668,13 +1668,6 @@
      "file_line": "infra/immigration-fiscal/main_case_2026_09_23/RESULT.md:9"
     },
     {
-     "label": "same with census ethnicity codes as recorded",
-     "value": "+1.67",
-     "unit": "$bn/year",
-     "se": null,
-     "file_line": "infra/immigration-fiscal/main_case_2026_09_23/RESULT.md:52"
-    },
-    {
      "label": "group's public order and safety allocation, per head → by use",
      "value": "62.4 → 68.4",
      "unit": "$bn/year",
@@ -1682,11 +1675,18 @@
      "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:70"
     },
     {
-     "label": "Hispanic share of people in prisons and jails / of residents aged 18-64",
+     "label": "Hispanic share of people in prisons and jails (BJS 2023; the jail part probably under-recorded) / of residents aged 18-64",
      "value": "20.2% / 20.7%",
      "unit": "share",
      "se": null,
      "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:7-8"
+    },
+    {
+     "label": "Hispanic share of jail inmates, 2023 (BJS, no ethnicity adjustment) / of adult arrests",
+     "value": "14.4% / 22.1%",
+     "unit": "share",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/dataset_integrity_2026_09_23/crime.md:36"
     },
     {
      "label": "victims' harm from crimes by group members against other residents (social cost, outside the fiscal account)",
@@ -1698,7 +1698,7 @@
    ],
    "relation_to_headline": "inside_headline",
    "combining_rule": "Victim harm is reported beside the fiscal headline as a social item, never inside it; the $203–250bn already carries the use-keyed justice charge.",
-   "memo": "research/immigration-objections-faq-2026-09-21.md § 12; research/immigration-real-fiscal-and-social-costs-2026-09-23.md §2–3; infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/RESULT.md; research/immigration-detention-crime-and-fiscal-scope-2026-09-20.md (measurement rule)",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 12; research/immigration-real-fiscal-and-social-costs-2026-09-23.md §2–3; infra/immigration-fiscal/offender_ethnicity_nibrs_2026_09_23/RESULT.md; infra/immigration-fiscal/dataset_integrity_2026_09_23/crime.md row 3; research/immigration-detention-crime-and-fiscal-scope-2026-09-20.md (measurement rule)",
    "population": "the Mexican-origin union's share of public order and safety spending; victims among other residents",
    "comparator": "the average other resident (the account's comparison), not whites",
    "horizon": "annual 2024",
@@ -1903,6 +1903,156 @@
    "comparator": "the account's production term, which credits $8.8–13.3bn",
    "horizon": "long-run, capital adjusts, no scale effects, no tax/transfer/public-service block",
    "evidence_level": "[SOURCE: notes] + [CALCULATION] + [INFERENCE]"
+  },
+  {
+   "id": "e15_same_share_different_gap",
+   "faq_entry": 15,
+   "objection": "California's white-reference gap is a coastal-price, high-service artifact. Texas already has about 32% Mexican-origin residents, the same share as California, and is the relevant picture for the rest of the country.",
+   "finding": "The two states have the same Mexican-origin share but not the same gap. On the shared all-age ledger, matched to local third-plus non-Hispanic whites at common ages, California is −$12,133 per person a year and Texas −$7,479; Los Angeles is −$17,196 and Houston −$7,493. Every interval is adverse, so Texas is smaller than California, not zero. Against all local natives the two states are −$7,219 and −$4,525: the difference narrows but remains, so part of California's larger gap is a richer white comparison. Nominal dollars, with no regional price parity.",
+   "values": [
+    {
+     "label": "California vs local third-plus NH whites (95% interval)",
+     "value": "-12,133 (-14,068 to -10,198)",
+     "unit": "$/standardized person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_stress_2026_09_17/RESULT.md:61"
+    },
+    {
+     "label": "Texas, same",
+     "value": "-7,479 (-9,253 to -5,705)",
+     "unit": "$/standardized person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_stress_2026_09_17/RESULT.md:65"
+    },
+    {
+     "label": "Los Angeles, same",
+     "value": "-17,196 (-21,144 to -13,249)",
+     "unit": "$/standardized person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/metro_match_2026_09_17/RESULT.md:116"
+    },
+    {
+     "label": "Houston, same",
+     "value": "-7,493 (-10,939 to -4,048)",
+     "unit": "$/standardized person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/metro_match_2026_09_17/RESULT.md:120"
+    },
+    {
+     "label": "California / Texas vs all local natives",
+     "value": "-7,219 / -4,525",
+     "unit": "$/standardized person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/ledger_stress_2026_09_17/RESULT.md:61,65"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The California and Texas per-person gaps are the shared all-age ledger. They are not a split of the $203–250bn complete account and not the generation-ledger −$6k to −$8k.",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 15; research/immigration-california-texas-fiscal-geography-2026-09-21.md; infra/immigration-fiscal/ledger_stress_2026_09_17/RESULT.md § CA-only and TX-only common-age per-person gaps; infra/immigration-fiscal/metro_match_2026_09_17/RESULT.md § 5. Single-metro common-age gaps",
+   "population": "the Mexican-origin union (three generations) in each state or metro, CPS ASEC 2025",
+   "comparator": "local third-plus non-Hispanic whites at common ages (each place's own white age shares); all local natives",
+   "horizon": "income year 2024, nominal dollars, no regional price parity",
+   "evidence_level": "[CALCULATION: stress and metro-match lanes, shared all-age partial ledger] + [DATA: CPS ASEC 2025]"
+  },
+  {
+   "id": "e15_shares_and_metro_match",
+   "faq_entry": 15,
+   "objection": "California's white-reference gap is a coastal-price, high-service artifact. Texas already has about 32% Mexican-origin residents, the same share as California, and is the relevant picture for the rest of the country.",
+   "finding": "The shares match: 31.7–33.5% Mexican-origin in Texas and 31.8–32.5% in California in the ACS state series, 31.0% and 30.8% in the 2020 Census. Matching on metro does not shrink the national per-person gap against whites (−$5,734 at age only, −$5,797 by metro and age); it widens the national total from −$291.3bn to −$412.6bn, because the group lives where the local white benchmark is higher. Share catch-up toward 32% is already realized in Texas and does not produce Los Angeles–sized dollars. New York holds 1.4% of the US Mexican-origin population, and San Francisco has no published single-metro gap.",
+   "values": [
+    {
+     "label": "national per-person gap vs third-plus NH whites, age only → metro × age",
+     "value": "-5,734 → -5,797",
+     "unit": "$/standardized person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/metro_match_2026_09_17/RESULT.md:36"
+    },
+    {
+     "label": "national total gap vs third-plus NH whites, age only → metro × age",
+     "value": "-291.29 → -412.59",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/metro_match_2026_09_17/RESULT.md:75"
+    },
+    {
+     "label": "Mexican-origin share of residents, ACS state series, Texas / California",
+     "value": "31.7-33.5% / 31.8-32.5%",
+     "unit": "share",
+     "se": null,
+     "file_line": "research/immigration-native-sorting-tiebout-2026-09-18.md:15-16"
+    },
+    {
+     "label": "2020 Census Mexican-origin residents of all residents, Texas / California (31.0% / 30.8%)",
+     "value": "9,031,289 of 29,183,290 / 12,202,347 of 39,576,757",
+     "unit": "people",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/apportionment_2026_09_18/derived/arm_2020_mexican_origin.csv:6,44"
+    },
+    {
+     "label": "2020 Census Mexican-origin residents of New York (1.4% of the US total)",
+     "value": "496,747",
+     "unit": "people",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/apportionment_2026_09_18/derived/arm_2020_mexican_origin.csv:33"
+    }
+   ],
+   "relation_to_headline": "outside_not_addable",
+   "combining_rule": "The California and Texas per-person gaps are the shared all-age ledger. They are not a split of the $203–250bn complete account and not the generation-ledger −$6k to −$8k.",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 15; research/immigration-california-texas-fiscal-geography-2026-09-21.md; infra/immigration-fiscal/metro_match_2026_09_17/RESULT.md § 1 and § 3; research/immigration-native-sorting-tiebout-2026-09-18.md; infra/immigration-fiscal/apportionment_2026_09_18/derived/arm_2020_mexican_origin.csv",
+   "population": "the Mexican-origin union nationally and by state; 2020 Census Mexican-origin counts",
+   "comparator": "third-plus non-Hispanic whites, standardized by age only, state and age, or metro and age",
+   "horizon": "income year 2024 (ledger); 2020 Census; ACS state series",
+   "evidence_level": "[CALCULATION: metro-match lane] + [DATA: 2020 Census Detailed DHC-A, ACS]"
+  },
+  {
+   "id": "e16_cbo_surge_projection",
+   "faq_entry": 16,
+   "objection": "The Congressional Budget Office projected in July 2024 that the 2021–2026 surge lowers federal deficits by about $0.9tn over 2024–2034, so immigration is a fiscal gain and any ledger that says otherwise is measuring the wrong thing.",
+   "finding": "The two numbers are different objects and both can hold. CBO's figure is a ten-year projection for one recent inflow of every origin, mostly working-age adults in their first years, and it covers federal revenue, mandatory spending and net interest only. Discretionary appropriations are excluded (CBO's proportional illustration adds about $0.2tn of spending), and so are state and local budgets; CBO's June 2025 companion puts the surge's 2023 state and local account at a $9.2bn net cost. This account is one year of the resident Mexican-origin population of all ages and generations, state and local services included: −$203.2bn to −$249.6bn in the main case. Where the two overlap they agree: Mexico-born arrivals of 2016–2025 are +$3,495 per person on the partial account and about break-even (−$2,318) once four flat per-head items are added.",
+   "values": [
+    {
+     "label": "CBO, July 2024: lower covered federal deficits, 2024–2034 (revenue, mandatory spending, net interest)",
+     "value": "about 897",
+     "unit": "$bn over ten years",
+     "se": null,
+     "file_line": "research/immigration-bryan-caplan-claims-audit-2026-04-21.md:128"
+    },
+    {
+     "label": "CBO, June 2025: the surge's 2023 state and local net cost (broader alternative)",
+     "value": "9.2 (9.8)",
+     "unit": "$bn, 2023",
+     "se": null,
+     "file_line": "research/immigration-second-order-effects-2026-09-05.md:22"
+    },
+    {
+     "label": "this account, adopted main case: net effect on other residents",
+     "value": "-203.2 to -249.6",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/main_case_2026_09_23/RESULT.md:4"
+    },
+    {
+     "label": "Mexico-born arrivals 2016–2025, partial account",
+     "value": "+3,495",
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/RESULT.md:96"
+    },
+    {
+     "label": "same arrivals, partial account plus four flat per-head items",
+     "value": "-2,318",
+     "unit": "$/person/year",
+     "se": null,
+     "file_line": "infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/RESULT.md:217"
+    }
+   ],
+   "relation_to_headline": "different_object",
+   "combining_rule": "A decade of a cohort's cheapest years cannot be netted against one year of a whole population, and a federal-only projection cannot be set against an account that includes state and local services. Neither refutes the other.",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 16; research/immigration-bryan-caplan-claims-audit-2026-04-21.md (federal-ledger rows); research/immigration-second-order-effects-2026-09-05.md (federal-finances row); infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/RESULT.md § 3 and the complete-balance table; research/immigration-confidence-ladder.md entry 134",
+   "population": "CBO: the 2021–2026 surge inflow of every origin; this account: the resident Mexican-origin population of all ages and generations",
+   "comparator": "CBO: a no-surge baseline; this account: other US residents with and without the group",
+   "horizon": "CBO: ten years, 2024–2034, federal budget only; this account: income year 2024, federal, state and local",
+   "evidence_level": "[SOURCE: CBO projections as recorded in the repo] + [CALCULATION: main case; arrival-window lane]"
   },
   {
    "id": "complete_account_356_endpoint",
@@ -2436,8 +2586,13 @@
   },
   {
    "id": "cr_instrument_ranking_warning",
-   "file_line": "research/immigration-objections-faq-2026-09-21.md:388-391",
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:392-395",
    "text": "A summary that ranks findings by how much they surprise the model selects for results that contradict its prior, which is also where errors concentrate; surprising results need more checking before they get more prominence."
+  },
+  {
+   "id": "cr_california_texas_shared_ledger",
+   "file_line": "research/immigration-objections-faq-2026-09-21.md:44-51",
+   "text": "**California and Texas per-person gaps are the shared all-age ledger.** The −$12,133 / −$7,479 (CA/TX vs local third-plus NH whites) and metro figures (Los Angeles −$17,196, Houston −$7,493) are from the September 17 stress and metro-match tables (entry 15). They are not a split of the $203–250bn complete account and not the generation-ledger −$6k to −$8k. The superseded $8,498 / $5,177 per native-headed household in California and Texas is a financing allocation of a later complete-account total; do not mix it with those per-person gaps. [SOURCE: [CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md); [who pays](immigration-fiscal-gap-incidence-who-pays-2026-09-18.md)]"
   }
  ]
 }
