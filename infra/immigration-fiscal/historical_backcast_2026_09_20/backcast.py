@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 from pathlib import Path
 
 import numpy as np
@@ -39,7 +40,8 @@ def response_anchors() -> dict[str, float]:
     """2024 conditional net cost to other residents, $bn; the range spans allocation and scaling cases.
 
     The September 20 bands, then the main case adopted on 2026-09-23 (general government at
-    0.59-0.84, justice and uncompensated care keyed by use; main_case_2026_09_23).
+    0.59-0.84, justice and uncompensated care keyed by use; main_case_2026_09_23), then that case
+    with the data corrections adopted on 2026-09-24 (main_case_2026_09_24, variant "adopted").
     """
     summary = pd.read_csv(FISCAL / "full_account_2026_09_20/derived/service_response_summary.csv").set_index("profile")
     adopted = pd.read_csv(FISCAL / "main_case_2026_09_23/derived/main_case_bands.csv")
@@ -51,6 +53,11 @@ def response_anchors() -> dict[str, float]:
     for name, profile in PROFILES.items():
         out[f"{name}_adopted_low"] = float(adopted.loc[profile, "cost_low_bn"])
         out[f"{name}_adopted_high"] = float(adopted.loc[profile, "cost_high_bn"])
+    corrected = pd.read_csv(FISCAL / "main_case_2026_09_24/derived/main_case_bands.csv")
+    corrected = corrected[corrected.variant == "adopted"].set_index("profile")
+    for name, profile in PROFILES.items():
+        out[f"{name}_corrected_low"] = float(corrected.loc[profile, "cost_low_bn"])
+        out[f"{name}_corrected_high"] = float(corrected.loc[profile, "cost_high_bn"])
     return out
 
 
@@ -117,12 +124,18 @@ def main() -> None:
     annual = pd.DataFrame(dict(group_millions=group, relative_per_capita_income=relative,
                                national_receipts_per_capita=r, national_spending_per_capita=s))
     concepts = response_anchors()
+    # The 2026-09-24 corrections lower the group's receipts; their concepts split on the corrected total.
+    after = json.loads((FISCAL / "main_case_2026_09_24/derived/summary.json").read_text())["group_receipts_bn"]
+    if abs(after["adopted_2026_09_23"]["shared"] - group_receipts) > 1e-6:
+        raise ValueError("[BLOCKED] main_case_2026_09_24 receipts do not start from the complete account's")
     for name, value in concepts.items():
         # cost = spending charged to the group under this response case, less its receipts
-        sigma = (value + group_receipts) * 1e9 / (group_2024 * 1e6) / s[2024]
+        g_receipts = after["adopted"]["shared"] if "_corrected_" in name else group_receipts
+        rho_c = g_receipts * 1e9 / (group_2024 * 1e6) / r[2024]
+        sigma = (value + g_receipts) * 1e9 / (group_2024 * 1e6) / s[2024]
         annual[f"{name}__flat"] = group / group_2024 * value
-        annual[f"{name}__ratio"] = group * 1e6 * (sigma * s - rho * r) / 1e9
-        annual[f"{name}__income"] = group * 1e6 * (sigma * s - rho * income * r) / 1e9
+        annual[f"{name}__ratio"] = group * 1e6 * (sigma * s - rho_c * r) / 1e9
+        annual[f"{name}__income"] = group * 1e6 * (sigma * s - rho_c * income * r) / 1e9
     # Gap against the average resident: a receipts shortfall less a spending shortfall, so a
     # national deficit shared by everyone cancels. Domestic shares of the BEA totals stay at 2024.
     name, value = "gap_vs_average_resident", base["gap"]

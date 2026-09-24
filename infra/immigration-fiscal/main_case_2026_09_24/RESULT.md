@@ -182,7 +182,6 @@ receipt changes exist only for CBO's rules, so that row is not recomputed across
 - **The range sums independent bounds.** It is wide by construction. The quadrature figure,
   $189–260bn, is context only.
 - **Not re-run on the new case.** These were computed on September 23:
-  - the back-cast;
   - the ten-year and lifetime anchors;
   - the uncertainty propagation;
   - the real-costs totals.

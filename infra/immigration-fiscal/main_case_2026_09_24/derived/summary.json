@@ -77,6 +77,16 @@
    -53.58126795863282
   ]
  },
+ "group_receipts_bn": {
+  "adopted_2026_09_23": {
+   "personal": 517.100247895,
+   "shared": 545.118771322
+  },
+  "adopted": {
+   "personal": 458.90626374089607,
+   "shared": 488.46380102013654
+  }
+ },
  "components": [
   {
    "name": "tax_block",
