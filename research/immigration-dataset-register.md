@@ -416,7 +416,11 @@ These categories are high-risk for bad inference:
 6. `Census government finance, financial administration (E23), FY2022 on`. National current
    operations run $53.6bn in 2021, $97.3bn in 2022 and $96.3bn in 2023: the July 2026 re-release
    of the 2022 unit file and the 2023 state-by-level file carry a new level (NYC alone +$9.4bn;
-   Wisconsin, New York and California ×3–5). The published 2022 Table 1 shows $70.7bn. Windows
+   Wisconsin, New York and California ×3–5). The 2024 unit file keeps the new level: NYC $9.8bn,
+   and Chicago up from $0.16bn in 2021 to $4.5bn, 30% of its total. Cook County government and
+   Massachusetts show no break [DATA:
+   `infra/immigration-fiscal/migrant_shelter_costs_2026_09_23/derived/census_e23_by_unit.csv`].
+   The published 2022 Table 1 shows $70.7bn. Windows
    ending in 2022 or later need an ex-administration check; see
    `infra/immigration-fiscal/gg_response_county_iv_2026_09_23/e23_other_lanes.py`. BEA NIPA
    Table 3.17, which the main case uses, shows no break of that size. BEA's state and local tax
