@@ -25,14 +25,22 @@ it, with unfloored and floored bin means, and each weighted sum is also given re
 median and as an equal-split equivalent (divided by the mean weight). Signs are from other
 residents' point of view: a cost is negative.
 
+Cases: the fiscal channel is the adopted main case's direct response A plus the central induced
+receipts F. --case sept24 (the default since 2026-09-24) moves A at each band end by the change
+from the September 23 to the September 24 case (main_case_2026_09_24/derived/main_case_bands.csv);
+the package edits receipts and keyed spending only, so P and F do not move. --case sept23 with
+--out-dir <dir> reproduces the files committed before the switch byte for byte. Every channel
+outside the budget is the same in both cases.
+
 Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 \
-    infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py
+    infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py [--case sept23 --out-dir DIR]
 The first run reads the ACS PUMS ZIPs in chunks (about two minutes) and caches the needed
 columns in _cache/; later runs take seconds.
 """
 from __future__ import annotations
 
+import argparse
 import hashlib
 import importlib.util
 import io
@@ -121,6 +129,8 @@ PATHS = dict(
     cex=FISCAL / "consumer_price_benefit_2026_09_18/derived/partA_price_results.csv",
     main_case_bands=FISCAL / "main_case_2026_09_23/derived/main_case_bands.csv",
     main_case_inputs=FISCAL / "main_case_2026_09_23/derived/inputs.json",
+    main_case24_bands=FISCAL / "main_case_2026_09_24/derived/main_case_bands.csv",
+    main_case24_summary=FISCAL / "main_case_2026_09_24/derived/summary.json",
 )
 GATES: dict[str, dict] = {}
 
@@ -252,10 +262,11 @@ def per_person(d, key, total_bn, mask=None):
 
 
 # ------------------------------------------------------------------------- channel totals
-def fiscal_totals():
+def fiscal_totals(case="sept23"):
     """Direct fiscal response A of the published main case and of the adopted main case.
     A = welfare - (P + F); the adopted case adds general government (0.59-0.84), justice by use
-    and the under-charged part of uncompensated care to A (main_case_2026_09_23)."""
+    and the under-charged part of uncompensated care to A (main_case_2026_09_23). With case
+    "sept24" the adopted case is the September 24 one and the September 23 one is kept beside it."""
     cases = pd.read_csv(PATHS["service_cases"])
     main = cases[cases.profile == "cbo_category_lag_non_school_full"].copy()
     heads = pd.read_csv(PATHS["headline_cases"])
@@ -286,8 +297,29 @@ def fiscal_totals():
                band=[float(bands.loc["adopted", "cost_low_bn"]), float(bands.loc["adopted", "cost_high_bn"])],
                general_government=[float(gg_lo), float(gg_hi)], justice=float(just))
     ado["A_mid"] = (ado["A_low_cost"] + ado["A_high_cost"]) / 2
-    return dict(published=pub, adopted=ado, uncomp_inside=list(unc),
-                PF_cash=float(pf.loc["cash", "min"]), PF_gdp=float(pf.loc["gdp", "min"]))
+    out = dict(published=pub, adopted=ado, uncomp_inside=list(unc),
+               PF_cash=float(pf.loc["cash", "min"]), PF_gdp=float(pf.loc["gdp", "min"]))
+    if case == "sept23":
+        return out
+    # September 24: the package edits receipts and keyed spending, never P or F, so its change at
+    # each band end moves A at that end.
+    b24 = pd.read_csv(PATHS["main_case24_bands"])
+    b24 = b24[b24.profile == "cbo_category_lag_non_school_full"].set_index("variant")
+    s24 = json.loads(PATHS["main_case24_summary"].read_text())
+    base24 = [float(b24.loc["adopted_2026_09_23", "cost_low_bn"]), float(b24.loc["adopted_2026_09_23", "cost_high_bn"])]
+    band24 = [float(x) for x in s24["main_case"]]
+    gate("sept24_base_is_sept23_adopted", np.allclose(base24, ado["band"], atol=1e-4), sept24_file=base24, sept23_file=ado["band"])
+    gate("sept24_summary_matches_bands", np.allclose(band24, [b24.loc["adopted", "cost_low_bn"], b24.loc["adopted", "cost_high_bn"]],
+                                                     atol=1e-4), summary=band24)
+    change = [band24[0] - s24["adopted_2026_09_23"][0], band24[1] - s24["adopted_2026_09_23"][1]]
+    gate("sept24_change_matches_summary", np.allclose(change, s24["change"], atol=1e-12), change=change)
+    rebuilt = [pub["band"][0] + d_lo + change[0], pub["band"][1] + d_hi + change[1]]
+    gate("sept24_band_rebuilt_from_A", np.allclose(rebuilt, band24, atol=1e-3), rebuilt=rebuilt, band=band24)
+    a24 = dict(A_low_cost=ado["A_low_cost"] - change[0], A_high_cost=ado["A_high_cost"] - change[1], band=band24,
+               general_government=ado["general_government"], justice=ado["justice"], sept24_change=change)
+    a24["A_mid"] = (a24["A_low_cost"] + a24["A_high_cost"]) / 2
+    out.update(adopted=a24, adopted_2026_09_23=ado, case=case)
+    return out
 
 
 def nest_rows():
@@ -646,12 +678,17 @@ def by_bin(delta, d, R, nbin=5):
 
 
 def main():
-    DERIVED.mkdir(exist_ok=True)
+    ap = argparse.ArgumentParser(description="Distribution of the account's channels among other residents.")
+    ap.add_argument("--case", choices=("sept24", "sept23"), default="sept24")
+    ap.add_argument("--out-dir", type=Path, default=DERIVED)
+    args = ap.parse_args()
+    out_dir = args.out_dir
+    out_dir.mkdir(parents=True, exist_ok=True)
     verify_published_text()
     ncvs_verified = verify_ncvs_text()
     d = load_cps()
     pw, other = d.pw.to_numpy(), d.other.to_numpy()
-    fiscal = fiscal_totals()
+    fiscal = fiscal_totals(args.case)
     F_total, S_total = bea_totals()
     rates = ncvs_rates()
 
@@ -992,13 +1029,13 @@ def main():
                                              least_costly_equal_split=hi / mean_w[(eta, CENTRAL_FLOOR)]))
 
     fr = pd.DataFrame(tables["frame"])
-    fr.to_csv(DERIVED / "income_frame.csv", index=False)
-    pd.DataFrame(tables["quintile"]).to_csv(DERIVED / "channel_by_quintile.csv", index=False)
-    pd.DataFrame(tables["decile"]).to_csv(DERIVED / "channel_by_decile.csv", index=False)
-    pd.DataFrame(tables["weighted"]).to_csv(DERIVED / "weighted_totals.csv", index=False)
-    pd.DataFrame(tables["regress"]).to_csv(DERIVED / "regressivity.csv", index=False)
-    pd.DataFrame(tables["weights"]).to_csv(DERIVED / "weights.csv", index=False)
-    pd.DataFrame(tables["ranges"]).to_csv(DERIVED / "ranges_weighted.csv", index=False)
+    fr.to_csv(out_dir / "income_frame.csv", index=False)
+    pd.DataFrame(tables["quintile"]).to_csv(out_dir / "channel_by_quintile.csv", index=False)
+    pd.DataFrame(tables["decile"]).to_csv(out_dir / "channel_by_decile.csv", index=False)
+    pd.DataFrame(tables["weighted"]).to_csv(out_dir / "weighted_totals.csv", index=False)
+    pd.DataFrame(tables["regress"]).to_csv(out_dir / "regressivity.csv", index=False)
+    pd.DataFrame(tables["weights"]).to_csv(out_dir / "weights.csv", index=False)
+    pd.DataFrame(tables["ranges"]).to_csv(out_dir / "ranges_weighted.csv", index=False)
     rq = []
     for (level, geo) in arms:
         a = acs[(level, geo)]
@@ -1006,7 +1043,7 @@ def main():
             rq.append(dict(level=level, geography=geo, acs_quintile=k + 1, extra_rent_bn=a["rent_q5"][k] / 1e9,
                            renter_households_m=a["renter_households_q5"][k] / 1e6,
                            usd_per_renter_household=a["rent_q5"][k] / a["renter_households_q5"][k]))
-    pd.DataFrame(rq).to_csv(DERIVED / "rent_per_renter_household_acs.csv", index=False)
+    pd.DataFrame(rq).to_csv(out_dir / "rent_per_renter_household_acs.csv", index=False)
     wages = []
     for lab, (s, r) in scen.items():
         wages.append(dict(scenario=lab, split=s, sigma=float(r.sigma), eps=float(r.sigma_NI),
@@ -1017,7 +1054,7 @@ def main():
     wages.append(dict(scenario="short_run_below_ba_s2.0", split="below_ba", sigma=2.0, eps=np.inf,
                       pretax_bn=float((pw * wage_delta(basis["below_ba"], short, False)).sum() / 1e9),
                       capital_gain_bn=float(short.capital_gain_bn)))
-    pd.DataFrame(wages).to_csv(DERIVED / "wage_scenarios.csv", index=False)
+    pd.DataFrame(wages).to_csv(out_dir / "wage_scenarios.csv", index=False)
 
     inputs = dict(
         fiscal=fiscal, federal_taxes_2024_bn=F_total, state_local_taxes_2024_bn=S_total,
@@ -1037,11 +1074,11 @@ def main():
                                         net=v["net_other_residents_welfare_bn"],
                                         owners_stock=v["other_owner_value_gain_stock_bn"])
                  for k, v in arms.items()})
-    (DERIVED / "inputs.json").write_text(json.dumps(inputs, indent=1, default=float))
-    (DERIVED / "gates.json").write_text(json.dumps(GATES, indent=1, default=float))
+    (out_dir / "inputs.json").write_text(json.dumps(inputs, indent=1, default=float))
+    (out_dir / "gates.json").write_text(json.dumps(GATES, indent=1, default=float))
     manifest = [dict(file=str(p.relative_to(HERE)), bytes=p.stat().st_size, sha256=sha(p))
                 for p in sorted(SOURCES.glob("*")) if p.is_file() and p.suffix in (".pdf", ".txt", ".zip", ".html")]
-    pd.DataFrame(manifest).to_csv(DERIVED / "sources_manifest.csv", index=False)
+    pd.DataFrame(manifest).to_csv(out_dir / "sources_manifest.csv", index=False)
     print(f"{sum(g['passed'] for g in GATES.values())} gates passed")
 
 

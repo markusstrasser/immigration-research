@@ -1,4 +1,4 @@
-**Verdict:** Relative to income, every channel except tax-financed fiscal cost falls hardest on
+**Verdict:** [2026-09-25: the script now defaults to the main case adopted September 24: fiscal channel $225.1bn (text below: $227.9bn), central total $259.8bn (below: $262.6bn); the channels outside the budget do not move. `distribute.py --case sept23 --out-dir DIR` reproduces the run this text describes, byte for byte (`test_distribute.py`). See `../sept24_propagation_2026_09_24/RESULT.md`.] Relative to income, every channel except tax-financed fiscal cost falls hardest on
 the bottom of the income distribution. Outside the budget the channels nearly cancel in dollars
 but move money up the income scale. The bottom four fifths of other residents lose $80.7bn a year
 and the top fifth gains $46.0bn, for a net of −$34.7bn. Weighted by income, those channels are

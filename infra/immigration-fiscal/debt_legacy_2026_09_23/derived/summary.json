@@ -1,31 +1,86 @@
 {
- "account_interest_allocation_bn": 134.538287607,
+ "account_interest_allocation_bn": 131.10401146429427,
  "account_interest_row_bn": 1118.87,
  "anchors": {
   "high": {
    "allocation": "personal",
    "delayed": 0.0,
    "gg": 0.84,
+   "gg_end": "high",
    "justice": 5.943591614299166,
+   "keys": {
+    "medicaid_and_chip_other_medical": "uninsured_use_high",
+    "public_order_safety": "use"
+   },
    "normalization": "cash",
    "other_edu": 1.0,
    "profile": "cbo_category_lag_non_school_full",
    "school_response": 0.66,
    "school_share": 0.7153278156243373,
-   "uc": 5.747597015128038
+   "uc": 5.747597015128038,
+   "uc_arm": "equal_high",
+   "uc_key": "uninsured_use_high"
   },
   "low": {
    "allocation": "shared",
    "delayed": 0.0,
    "gg": 0.59,
+   "gg_end": "low",
    "justice": 5.943591614299166,
+   "keys": {
+    "medicaid_and_chip_other_medical": "uninsured_use_low",
+    "public_order_safety": "use"
+   },
    "normalization": "gdp",
    "other_edu": 1.0,
    "profile": "cbo_category_lag_non_school_full",
    "school_response": 0.63,
    "school_share": 0.8651608840454027,
-   "uc": 3.6515760054649666
+   "uc": 3.6515760054649666,
+   "uc_arm": "equal_low",
+   "uc_key": "uninsured_use_low"
   }
+ },
+ "case": {
+  "band": [
+   200.8752025157866,
+   246.31843608620045
+  ],
+  "bands_source": "infra/immigration-fiscal/main_case_2026_09_24/derived/summary.json",
+  "corrections_2024": {
+   "high|central": {
+    "effect_bn": -3.3215196411306227,
+    "federal_bn": -6.591337214860558
+   },
+   "high|high": {
+    "effect_bn": -3.3215196411306227,
+    "federal_bn": -5.938870670574143
+   },
+   "high|low": {
+    "effect_bn": -3.3215196411306227,
+    "federal_bn": -6.175231296256773
+   },
+   "low|central": {
+    "effect_bn": -2.3318146082140245,
+    "federal_bn": -6.663751446678085
+   },
+   "low|high": {
+    "effect_bn": -2.3318146082140245,
+    "federal_bn": -5.851041986271333
+   },
+   "low|low": {
+    "effect_bn": -2.3318146082140245,
+    "federal_bn": -6.324533867829184
+   }
+  },
+  "corrections_sha256": "6413411e9b39f469e37bb50d81aa3ba1c5f2df2e09358b941dc20783b0328f80",
+  "lane_sha256": {
+   "infra/immigration-fiscal/care_household_services_2026_09_23/derived/summary.csv": "ea351ee9aac908ba97599fdfb59e7b2d642ab5e6acb65e86ce48a9a016a2ceef",
+   "infra/immigration-fiscal/migrant_shelter_costs_2026_09_23/derived/account_keying.csv": "5812533042c44c996e4a1f89b5517a99301a5710c77a0b87535dd54411c144ba",
+   "infra/immigration-fiscal/migrant_shelter_costs_2026_09_23/derived/account_keying_parts.csv": "311bd255621576dd017d6e93dcfb727826ecbd040e834127e7d93f0a8a58f93c"
+  },
+  "name": "main case adopted 2026-09-24",
+  "package_components_sha256": "352200b2273870cece5222885e89d4fb9254b802f666d723da92cdf775653303"
  },
  "debt_increase_fy2005_2023_bn": 21940.048000000003,
  "gps_federal_fraction_2024": {
@@ -86,10 +141,11 @@
  "programme_control_max_abs_diff_bn": 4.973758797177652e-05,
  "proposed_benefits": {
   "care_elder_medicaid_bn": 1.4871944918978677,
+  "care_inside_account": true,
   "care_output_receipts_bn": -0.0282383467048764,
   "care_taxes_bn": 2.688622998456876,
-  "federal_omitted_bn": 3.329534513191499,
-  "federal_with_scale_bn": 8.598233787880048,
+  "federal_omitted_bn": 0.0251613116888487,
+  "federal_with_scale_bn": 5.293860586377397,
   "mobility_tax_bn": 0.028461436251836128,
   "scale_induced_receipts_bn": 5.959734945102332,
   "source_sha256": {
@@ -97,8 +153,8 @@
    "infra/immigration-fiscal/labor_mobility_insurance_2026_09_23/derived/insurance_summary.json": "63ae37b4b8e65f48257bb586d360c8a9673b08f05203c2701b4917424760388b",
    "infra/immigration-fiscal/scale_spillovers_2026_09_23/derived/summary.csv": "385c45e73ab523c28ef38ff24b0b05704aa32c1a2630c11fb89d8443c56b54c0"
   },
-  "total_omitted_bn": 4.176040579901704,
-  "total_with_scale_bn": 10.135775525004036
+  "total_omitted_bn": 0.028461436251836128,
+  "total_with_scale_bn": 5.988196381354168
  },
  "rate_2024": {
   "ladder137": 0.03220790586972007,
@@ -106,10 +162,10 @@
   "public_securities_interest_over_average_debt": 0.034877473885556606
  },
  "refundable_credit_key_share_2024": {
-  "main_high": 0.22788323646360065,
-  "main_low": 0.24214181544432256,
-  "proportional_high": 0.22788323646360065,
-  "proportional_low": 0.24214181544432256
+  "main_high": 0.14259940411253627,
+  "main_low": 0.15878458613495286,
+  "proportional_high": 0.14259940411253627,
+  "proportional_low": 0.15878458613495286
  },
  "uncompensated_federal": {
   "equal_high": {

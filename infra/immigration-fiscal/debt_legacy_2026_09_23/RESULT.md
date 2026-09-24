@@ -1,4 +1,4 @@
-**Verdict:** If the federal part of the group's 2005–2023 fiscal gaps was borrowed, the debt it left
+**Verdict:** [2026-09-25: the script now defaults to the main case adopted September 24: stock $0.88–1.13tn, 2024 interest **$28.3–36.4bn** ($693–891 per member), federal share of the 2024 gap 15.9–21.1%; the programme back-cast gives $1.95–2.33tn over 2015–2024. `debt_legacy.py --case sept23 --out-dir DIR` reproduces the September 23 run this text describes, byte for byte (`test_debt_legacy.py`); per-correction federal parts are in `derived/corrections_federal_split_2024.csv`. See `../sept24_propagation_2026_09_24/RESULT.md`.] If the federal part of the group's 2005–2023 fiscal gaps was borrowed, the debt it left
 entering FY2024 is **$0.94–1.20tn**, 3.6–4.6% of debt held by the public. On that debt, 2024
 taxpayers pay **$30.5–38.9bn** in interest: **$745–950 per member** of the 40.9m Mexican-origin
 union, and $102–130 per other resident. That is 3.5–4.4% of FY2024 federal net interest. These are

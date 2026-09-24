@@ -28,12 +28,23 @@ Sensitivities beside the rules: the 2020-2022 refundable-credit excess attribute
 proposed fiscal benefits of the symmetry lanes carried back by group size, and an audit of the
 September 20 grouped-receipt method on the adopted anchor.
 
+Cases (--case). sept24, the default, is the main case adopted 2026-09-24: the explorer model with
+main_case_2026_09_24/derived/corrections.json applied, on that case's frame (justice on the use key,
+Medicaid on the two uninsured-use keys, general government 0.59/0.84), gated to its bands. Every
+correction is split by the government level of the line it edits, component by component, from
+sept24_propagation_2026_09_24/derived/package_components.json (gate: the parts add to the whole
+account's split). sept23 reproduces this lane's September 23 outputs byte for byte.
+
 Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/debt_legacy_2026_09_23/debt_legacy.py
+  ... debt_legacy.py --case sept23 --out-dir <dir>      # the September 23 result
 """
 from __future__ import annotations
 
+import argparse
+import copy
 import hashlib
+import io
 import json
 from itertools import product
 from pathlib import Path
@@ -235,6 +246,48 @@ def nhea_medicaid_federal_share() -> pd.Series:
 MODEL = json.loads((FISCAL / "assumption_explorer_2026_09_21/derived/model.json").read_text())
 INPUTS = json.loads((FISCAL / "main_case_2026_09_23/derived/inputs.json").read_text())
 BANDS = pd.read_csv(FISCAL / "main_case_2026_09_23/derived/main_case_bands.csv")
+# The September 24 case: the engine's corrections payload, the adopted bands, and the package's
+# corrections by component (exported by sept24_propagation_2026_09_24/export_package.cjs).
+CORRECTIONS_FILE = FISCAL / "main_case_2026_09_24/derived/corrections.json"
+MAIN24_SUMMARY = FISCAL / "main_case_2026_09_24/derived/summary.json"
+COMPONENTS_FILE = FISCAL / "sept24_propagation_2026_09_24/derived/package_components.json"
+SHELTER_PARTS = FISCAL / "migrant_shelter_costs_2026_09_23/derived/account_keying_parts.csv"
+SHELTER_KEYING = FISCAL / "migrant_shelter_costs_2026_09_23/derived/account_keying.csv"
+CARE_SUMMARY = FISCAL / "care_household_services_2026_09_23/derived/summary.csv"
+UC_KEYS = {"uninsured_use_low": "equal_low", "uninsured_use_high": "equal_high"}
+SYNTHETIC_CARRY = {"school_reprice": "education_services", "college_rekey": "education_services"}
+
+
+def apply_corrections(model: dict, payload: dict) -> dict:
+    """engine.js applyCorrections(): add the synthetic lines, then move each edit's dollars into the
+    group's target (other residents' share moves the other way, so national totals hold)."""
+    m = copy.deepcopy(model)
+    zero = lambda: dict(target_bn=0.0, other_bn=0.0, share=0.0)
+    for line in payload["lines"]:
+        if any(x["id"] == line["id"] for x in m["spending"]["lines"]):
+            raise SystemExit(f"[BLOCKED] correction line exists already: {line['id']}")
+        m["spending"]["lines"].append(dict(id=line["id"], family=line["family"], national_bn=0.0,
+                                           response_class=line["response_class"], label=line["label"],
+                                           preferred_key="k", alternative_key="k",
+                                           keys={"k": {"personal": zero(), "shared": zero()}}))
+    for e in payload["edits"]:
+        if e["side"] == "receipt":
+            line = next((x for x in m["receipts"]["lines"] if x["id"] == e["line"]), None)
+            if line is None or e["scenario"] not in line["cells"]:
+                raise SystemExit(f"[BLOCKED] not an executed receipt cell: {e['line']}/{e['scenario']}")
+            cell = line["cells"][e["scenario"]]
+        else:
+            line = next((x for x in m["spending"]["lines"] if x["id"] == e["line"]), None)
+            if line is None or e["key"] not in line["keys"]:
+                raise SystemExit(f"[BLOCKED] not an executed allocation rule: {e['line']}/{e['key']}")
+            cell = line["keys"][e["key"]]
+        for a in ("personal", "shared"):
+            t, nxt = cell[a]["target_bn"], cell[a]["target_bn"] + e["by"][a]
+            if t != 0:
+                cell[a]["share"] *= nxt / t
+            cell[a]["target_bn"] = nxt
+            cell[a]["other_bn"] -= e["by"][a]
+    return m
 PROD_DIMS = ["proxy", "split", "normalization", "labor_share", "sigma", "capital_adjustment",
              "labor_supply_elasticity", "capital_tax_retention", "excluded_capital_owner_share"]
 PROFILES = {"cbo_category_lag_non_school_full": dict(other_edu=1.0, delayed=0.0, school=(0.63, 0.66)),
@@ -263,29 +316,39 @@ SCHOOL_SHARES = [SCHOOL_SHARES[0], SCHOOL_SHARES[-1]]
 
 
 def lines_at(corner: dict) -> pd.DataFrame:
-    """Every account line at one corner: target amount, response, responsive amount ($bn, 2024)."""
+    """Every account line at one corner: target amount, response, responsive amount ($bn, 2024).
+
+    A corner may carry its own model (the corrected one) and key overrides (the September 24 frame);
+    without them it is the September 23 corner: preferred keys plus explicit shifts."""
+    model, keys = corner.get("model", MODEL), corner.get("keys", {})
     alloc, rows = corner["allocation"], []
-    for line in MODEL["receipts"]["lines"]:
-        cell = line["cells"][MODEL["receipts"]["reference"]][alloc]
+    for line in model["receipts"]["lines"]:
+        cell = line["cells"][model["receipts"]["reference"]][alloc]
         response = 1.0 if cell["direct"] else 0.0
         rows.append(dict(side="receipt", id=line["id"], national_bn=line["national_bn"],
                          amount_bn=cell["target_bn"], response=response))
-    for line in MODEL["spending"]["lines"]:
-        cell = line["keys"][line["preferred_key"]][alloc]
+    for line in model["spending"]["lines"]:
+        cell = line["keys"][keys.get(line["id"], line["preferred_key"])][alloc]
         amount = cell["target_bn"] + corner["shift"].get(line["id"], 0.0)
         c = line["response_class"]
+        s = corner["school_share"]
         if c == "household_transfer":
             response = 1.0
         elif c == "public_goods":
             response = corner["gg"] if line["id"] == "general_public_services" else 0.0
         elif c == "service":
             if line["id"] == "education_services":
-                s = corner["school_share"]
                 response = s * corner["school_response"] + (1 - s) * corner["other_edu"]
-            elif line["id"] in MODEL["service"]["delayed"]:
+            elif line["id"] in model["service"]["delayed"]:
                 response = corner["delayed"]
             else:
                 response = 1.0
+        elif c == "education_school_part":      # correction lines (engine.js spendingResponse)
+            response = s * corner["school_response"]
+        elif c == "education_other_part":
+            response = (1 - s) * corner["other_edu"]
+        elif c == "correction_constant":
+            response = 1.0
         else:
             response = 0.0                       # defense, interest, subsidies, foreign, rounding
         rows.append(dict(side="spending", id=line["id"], national_bn=line["national_bn"],
@@ -332,6 +395,53 @@ def adopted_anchors(profile: str) -> dict[str, dict]:
     if abs(min(base) - pub["min_welfare_bn"]) > 1e-6 or abs(max(base) - pub["max_welfare_bn"]) > 1e-6:
         raise SystemExit(f"[BLOCKED] published {profile} band not reproduced")
     return {"low": lo, "high": hi}
+
+
+MEDICAID = "medicaid_and_chip_other_medical"
+
+
+def frame_corners(profile: str, model: dict) -> list[dict]:
+    """The September 24 frame (package.cjs MAIN_SPECS): 64 specifications for the main profile, justice
+    on the use key, Medicaid on the two uninsured-use keys, general government 0.59 or 0.84. The Sept 23
+    changes sit in those keys; `justice` and `uc` record how much, for the federal split."""
+    spec, gg = PROFILES[profile], INPUTS["general_government_response"]
+    out = []
+    for alloc, norm, share, school, g, uc in product(("personal", "shared"), ("cash", "gdp"), SCHOOL_SHARES,
+                                                    spec["school"], (gg["low"], gg["high"]), tuple(UC_KEYS)):
+        out.append(dict(profile=profile, allocation=alloc, normalization=norm, school_share=share,
+                        school_response=school, other_edu=spec["other_edu"], delayed=spec["delayed"], gg=g,
+                        gg_end="low" if g == gg["low"] else "high", uc_key=uc, uc_arm=UC_KEYS[uc],
+                        justice=INPUTS["justice_change_bn"]["central"], uc=INPUTS["uncompensated_inside_bn"][UC_KEYS[uc]],
+                        shift={}, keys={"public_order_safety": "use", MEDICAID: uc}, model=model))
+    return out
+
+
+def sept24_anchors(profile: str, corrected: dict, main24: dict) -> dict[str, dict]:
+    """Corners that set the September 24 band. Gates: the uncorrected model on the frame reproduces the
+    September 23 band and the corrected model the adopted September 24 band (summary.json, 1e-6); the
+    use and uninsured-use keys carry exactly the adopted justice and uncompensated-care changes."""
+    lines = {l["id"]: l for l in MODEL["spending"]["lines"]}
+    for a in ("personal", "shared"):
+        pos, med = lines["public_order_safety"]["keys"], lines[MEDICAID]["keys"]
+        if abs(pos["use"][a]["target_bn"] - pos["population"][a]["target_bn"]
+               - INPUTS["justice_change_bn"]["central"]) > 1e-9:
+            raise SystemExit("[BLOCKED] the use key does not carry the adopted justice change")
+        for uc, arm in UC_KEYS.items():
+            if abs(med[uc][a]["target_bn"] - med["medicaid"][a]["target_bn"] - INPUTS["uncompensated_inside_bn"][arm]) > 1e-9:
+                raise SystemExit(f"[BLOCKED] {uc} does not carry the adopted uncompensated care")
+    want = {"corrected": main24["main_case"], "uncorrected": main24["adopted_2026_09_23"]}
+    if profile != MAIN:
+        other = main24["other_profiles"][profile]
+        want = {"corrected": other["adopted"], "uncorrected": other["sept23"]}
+    out = {}
+    for name, model in (("uncorrected", MODEL), ("corrected", corrected)):
+        cs = frame_corners(profile, model)
+        lo, hi = max(cs, key=welfare), min(cs, key=welfare)
+        got = [-welfare(lo), -welfare(hi)]
+        if max(abs(g - w) for g, w in zip(got, want[name])) > 1e-6:
+            raise SystemExit(f"[BLOCKED] {profile} {name} band {got} != published {want[name]}")
+        out[name] = {"low": lo, "high": hi}
+    return out["corrected"]
 
 
 # ---------------------------------------------------------------- federal shares by line and year
@@ -479,7 +589,7 @@ def federal_shares(wb: Workbook, grants: Grants) -> dict:
     extras = dict(nhea_share=nhea_share, resid_health=resid_health, block_health=block_health,
                   matching_fraction=matching_fraction, liheap=liheap,
                   is_resid=is_resid, is_base=is_base, gps=gps, k12_ratio=k12_ratio, labour_share=labour_share,
-                  odsc_total=odsc_fed + odsc_sl)
+                  odsc_total=odsc_fed + odsc_sl, sl_gps_grant_share=pro_rata("gps"))
     return out, extras
 
 
@@ -542,7 +652,7 @@ def uncompensated_federal(medicaid_share: float) -> dict[str, dict[str, float]]:
 # ---------------------------------------------------------------- the federal split of one corner
 
 def split_corner(corner: dict, shares: pd.DataFrame, extras: dict, conv: str, year: int,
-                 jf: dict, ucf: dict, end: str) -> pd.DataFrame:
+                 jf: dict, ucf: dict, end: str, parts: list | None = None) -> pd.DataFrame:
     t = lines_at(corner)
     phi = shares.loc[year]
     rows = []
@@ -553,16 +663,24 @@ def split_corner(corner: dict, shares: pd.DataFrame, extras: dict, conv: str, ye
         amount = r.responsive_bn
         if r.id == "general_public_services":
             lo, hi = extras["gps"][conv]
-            frac = lo[year] if end == "low" else hi[year]
+            frac = lo[year] if corner.get("gg_end", end) == "low" else hi[year]
             fed = amount * frac
         elif r.id == "public_order_safety":
             fed = (amount - corner["justice"] * r.response) * phi[r.id] + jf[conv] * r.response
         elif r.id == "medicaid_and_chip_other_medical":
-            uc_name = "equal_low" if end == "low" else "equal_high"
+            uc_name = corner.get("uc_arm", "equal_low" if end == "low" else "equal_high")
             fed = (amount - corner["uc"] * r.response) * phi[r.id] + ucf[uc_name][conv] * r.response
         elif r.id == "education_services" and conv == "high":
             school = r.amount_bn * corner["school_share"] * corner["school_response"]
             fed = school * phi["_school_high"] + (amount - school) * shares.loc[year, "education_services"]
+        elif r.id == "school_reprice":
+            fed = amount * (phi["_school_high"] if conv == "high" else phi["education_services"])
+        elif r.id == "college_rekey":
+            fed = amount * phi["education_services"]
+        elif r.id == "lane_constants":
+            if parts is None or abs(sum(p["amount"] for p in parts) - amount) > 1e-9:
+                raise SystemExit("[BLOCKED] the constant line's parts do not add to the line")
+            fed = sum(p["amount"] * p["share"][year] for p in parts)
         else:
             if r.id not in phi.index:
                 raise SystemExit(f"[BLOCKED] no federal share for responsive line {r.id}")
@@ -573,6 +691,131 @@ def split_corner(corner: dict, shares: pd.DataFrame, extras: dict, conv: str, ye
                      federal_bn=-f * phi["_induced_receipts"]))
     out = pd.DataFrame(rows)
     out["state_local_bn"] = out.responsive_bn - out.federal_bn
+    return out
+
+
+# ---------------------------------------------------------------- September 24: the corrections by government
+
+def two_tables(path: Path) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """account_keying_parts.csv holds two CSV tables separated by a blank line."""
+    first, second = path.read_text().strip().split("\n\n")
+    return pd.read_csv(io.StringIO(first)), pd.read_csv(io.StringIO(second))
+
+
+def constant_parts(corner: dict, conv: str, shares: dict, extras: dict, base_share: float) -> list[dict]:
+    """The constant correction line's parts at one corner: amount ($bn, the corner's allocation), the
+    federal share by year, and the account line whose national series carries it back (None: group size).
+
+    row 8   unallocable state-local general public services (audit spending.md #7): federal only
+            through grants, at their share of state-local general-government spending; 0 under the
+            low convention, which counts such grants as state-local.
+    row 9   the MEPS donor filter dropped 3.0% of Medicare and 3.7% of Medicaid dollars (spending.md
+            #4): split by those shares of the group's two lines [INFERENCE: the audit gives no split].
+    row 10  foster care and adoption in BEA 3.12 line 39, the "Other" state welfare line.
+    small   origin allocation, grants, top-codes, flags: at the corner's own 2024 federal share.
+    shelter mapping A's four parts (account_keying_parts.csv) at the general-government response the
+            package priced them at (shared 0.59, personal 0.84), each at its line's federal share.
+    care    hours taxes and the output term's receipts at the labour-tax federal share, the elder-care
+            Medicaid saving at Medicaid's; the package's -4.15 in proportion to the lane's channels.
+    """
+    comp = json.loads(COMPONENTS_FILE.read_text())["constants"]
+    a, phi = corner["allocation"], shares[conv]
+    const = lambda v: pd.Series(float(v), index=phi.index)
+    lines = {l["id"]: l for l in MODEL["spending"]["lines"]}
+    target = lambda i: lines[i]["keys"][lines[i]["preferred_key"]][a]["target_bn"]
+    parts = [dict(part="row8", sub="state_local_general_public_services", amount=comp["row8"]["by"][a],
+                  share=const(0.0) if conv == "low" else extras["sl_gps_grant_share"], carry="general_public_services")]
+    mcr, mcd = 0.030 * target("medicare"), 0.037 * target(MEDICAID)
+    for line, w in (("medicare", mcr / (mcr + mcd)), (MEDICAID, mcd / (mcr + mcd))):
+        parts.append(dict(part="row9", sub=line, amount=comp["row9"]["by"][a] * w, share=phi[line], carry=line))
+    parts.append(dict(part="row10", sub="other_state_welfare", amount=comp["row10"]["by"][a],
+                      share=phi["other_state_welfare"], carry="other_state_welfare"))
+    parts.append(dict(part="small", sub="corner_average", amount=comp["small"]["by"][a], share=const(base_share),
+                      carry=None))
+    weights, keyshare = two_tables(SHELTER_PARTS)
+    keying = pd.read_csv(SHELTER_KEYING)
+    gg_used = 0.59 if a == "shared" else 0.84
+    row = keying[(keying.outlays_case == "central") & (keying.mapping == "A_nyc_codes_consumption")
+                 & (keying.served_case == "nyc_jun2025") & np.isclose(keying.general_govt_response, gg_used)]
+    if len(row) != 1:
+        raise SystemExit("[BLOCKED] shelter keying row not unique")
+    row = row.iloc[0]
+    ks = keyshare.set_index("category").target_share_national
+    pieces = {}
+    for w in weights.itertuples():
+        line = w.A_nyc_codes_consumption_category
+        resp = gg_used if line == "general_public_services" else 1.0
+        pieces[line] = pieces.get(line, 0.0) + row.cy2024_outlays_musd * w.weight * resp * (ks[line] - row.served_share)
+    if abs(sum(pieces.values()) - row.overcharge_musd) > 0.1 or abs(row.overcharge_musd / 1e3 + comp["shelter"]["by"][a]) > 1e-9:
+        raise SystemExit("[BLOCKED] shelter parts do not rebuild the lane's overcharge or the package's figure")
+    gps_lo, gps_hi = extras["gps"][conv]
+    for line, v in pieces.items():
+        share = (gps_lo if gg_used == 0.59 else gps_hi) if line == "general_public_services" else phi[line]
+        parts.append(dict(part="shelter", sub=line, amount=comp["shelter"]["by"][a] * v / sum(pieces.values()),
+                          share=share, carry=line))
+    care = pd.read_csv(CARE_SUMMARY)
+    pick = lambda text: float(care.loc[care.channel.str.startswith(text), "central_bn"].iloc[0])
+    channels = {"hours_taxes": pick("taxes on native women"), "output_receipts": pick("output gain"),
+                "elder_care_medicaid": pick("elder care")}
+    if abs(sum(channels.values()) - pick("TOTAL")) > 1e-9:
+        raise SystemExit("[BLOCKED] care channels do not add to the lane's total")
+    for name, v in channels.items():
+        medicaid = name == "elder_care_medicaid"
+        parts.append(dict(part="care", sub=name, amount=comp["care"]["by"][a] * v / sum(channels.values()),
+                          share=phi[MEDICAID] if medicaid else extras["labour_share"], carry=MEDICAID if medicaid else None))
+    return parts
+
+
+def correction_split(corner: dict, shares: pd.DataFrame, extras: dict, conv: str, year: int,
+                     parts: list) -> pd.DataFrame:
+    """Each correction's effect on the gap at one corner, split by the government level of its line.
+
+    Effect = the line's response at the corner x the edit in the evaluated cell (receipts: the
+    reference incidence rule; spending: the key the frame evaluates). The share is the one
+    split_corner() applies to that line, so the parts add to the change in the whole split."""
+    comp = json.loads(COMPONENTS_FILE.read_text())
+    t = lines_at(corner).set_index("id")
+    model, keys, a = corner["model"], corner["keys"], corner["allocation"]
+    phi = shares.loc[year]
+    evaluated = {l["id"]: keys.get(l["id"], l["preferred_key"]) for l in model["spending"]["lines"]}
+    rows = []
+    for e in comp["edits"]:
+        if e["side"] == "receipt":
+            if e["scenario"] != model["receipts"]["reference"]:
+                continue
+            resp = t.loc[t.side == "receipt", "response"][e["line"]]
+            sign = -1.0
+        else:
+            if e["key"] != evaluated[e["line"]]:
+                continue
+            resp = t.loc[t.side == "spending", "response"][e["line"]]
+            sign = 1.0
+        effect = sign * resp * e["by"][a]
+        if effect == 0:
+            continue
+        line = e["line"]
+        if line == "general_public_services":
+            lo, hi = extras["gps"][conv]
+            share = lo[year] if corner["gg_end"] == "low" else hi[year]
+        elif line == "education_services" and conv == "high":
+            school = corner["school_share"] * corner["school_response"] / resp
+            share = school * phi["_school_high"] + (1 - school) * phi["education_services"]
+        elif line == "school_reprice":
+            share = phi["_school_high"] if conv == "high" else phi["education_services"]
+        elif line == "college_rekey":
+            share = phi["education_services"]
+        elif line == "lane_constants":
+            continue                                   # its parts follow
+        else:
+            share = phi[line]
+        rows.append(dict(component=e["component"], side=e["side"], line=line,
+                         cell=e["scenario"] if e["side"] == "receipt" else e["key"],
+                         effect_bn=effect, federal_bn=effect * share))
+    for p in parts:
+        rows.append(dict(component=f"lane_constants:{p['part']}", side="spending", line=p["sub"], cell="k",
+                         effect_bn=p["amount"], federal_bn=p["amount"] * p["share"][year]))
+    out = pd.DataFrame(rows)
+    out["state_local_bn"] = out.effect_bn - out.federal_bn
     return out
 
 
@@ -670,11 +913,13 @@ def programme_control(hist: History) -> float:
 
 
 def programme_federal(hist: History, corner: dict, end: str, conv: str, shares: dict, extras: dict,
-                      jf: dict, ucf: dict) -> pd.DataFrame:
+                      jf: dict, ucf: dict, parts: list | None = None) -> pd.DataFrame:
     """Programme rule on the adopted anchor, split by government, real 2024 $bn by year.
 
     Spending lines carry their own BEA cells (categories.csv) and each year's federal share; receipts
     carry their own federal or state-local series; induced receipts F scale with the group. P is excluded.
+    September 24 correction lines: the school and college parts carry with the education line; each part
+    of the constant line carries with the line it corrects, or with the group's size where it has none.
     """
     categories = pd.read_csv(FISCAL / "full_account_spending_2026_09_20/derived/categories.csv").set_index("category")
     phi = shares[conv]
@@ -683,20 +928,33 @@ def programme_federal(hist: History, corner: dict, end: str, conv: str, shares: 
     spending, spending_fed, receipts, receipts_fed = zero.copy(), zero.copy(), zero.copy(), zero.copy()
     for i in t.index[(t.side == "spending") & (t.responsive_bn != 0)]:
         amount = t.responsive_bn[i]
-        carried = amount * hist.index(categories.loc[i, "source_cells"]) * hist.share
+        if i == "lane_constants":
+            if parts is None or abs(sum(p["amount"] for p in parts) - amount) > 1e-9:
+                raise SystemExit("[BLOCKED] the constant line's parts do not add to the line")
+            for p in parts:
+                path = (hist.index(categories.loc[p["carry"], "source_cells"]) * hist.share if p["carry"]
+                        else hist.group / hist.group[LAST])
+                spending += p["amount"] * path
+                spending_fed += p["amount"] * path * p["share"].reindex(YEARS)
+            continue
+        carried = amount * hist.index(categories.loc[SYNTHETIC_CARRY.get(i, i), "source_cells"]) * hist.share
         if i == "general_public_services":
             lo, hi = extras["gps"][conv]
-            fed = carried * (lo if end == "low" else hi)
+            fed = carried * (lo if corner.get("gg_end", end) == "low" else hi)
         elif i == "public_order_safety":
             j = corner["justice"] * t.response[i]
             fed = carried * ((amount - j) / amount * phi[i] + jf[conv] * t.response[i] / amount)
         elif i == "medicaid_and_chip_other_medical":
             u = corner["uc"] * t.response[i]
-            uc_name = "equal_low" if end == "low" else "equal_high"
+            uc_name = corner.get("uc_arm", "equal_low" if end == "low" else "equal_high")
             fed = carried * ((amount - u) / amount * phi[i] + ucf[uc_name][conv] * t.response[i] / amount)
         elif i == "education_services" and conv == "high":
             school = t.amount_bn[i] * corner["school_share"] * corner["school_response"] / amount
             fed = carried * (school * phi["_school_high"] + (1 - school) * phi[i])
+        elif i == "school_reprice":
+            fed = carried * (phi["_school_high"] if conv == "high" else phi["education_services"])
+        elif i == "college_rekey":
+            fed = carried * phi["education_services"]
         else:
             fed = carried * phi[i]
         spending += carried
@@ -771,13 +1029,15 @@ def rate_paths() -> pd.DataFrame:
                              debt_held_by_public_bn=debt.reindex(fy)))
 
 
-def proposed_benefits(labour_share: float, medicaid_share: float) -> dict:
+def proposed_benefits(labour_share: float, medicaid_share: float, include_care: bool = True) -> dict:
     """Federal part of the fiscal benefits the symmetry lanes priced but the adopted case omits ($bn, 2024).
 
     Care lane: taxes on native women's extra hours, the output term's receipts, and the elder-care
     Medicaid saving; mobility lane: the tax on today's net earnings change; scale lane (proposed, not
     adopted): induced receipts on the joint scale-and-schooling net. Taxes are split at the account's
     induced-receipt federal share, the Medicaid saving at the Medicaid line's federal share.
+    With include_care False (the September 24 case, which carries care inside the account) the care
+    channels are reported but left out of the omitted totals, which would otherwise count them twice.
     """
     care = pd.read_csv(FISCAL / "care_household_services_2026_09_23/derived/summary.csv")
     pick = lambda text: float(care.loc[care.channel.str.startswith(text), "central_bn"].iloc[0])
@@ -789,17 +1049,21 @@ def proposed_benefits(labour_share: float, medicaid_share: float) -> dict:
                     * mobility["present_day"]["factor_central"])
     scale = pd.read_csv(FISCAL / "scale_spillovers_2026_09_23/derived/summary.csv")
     joint = scale[(scale.table == "joint_grid") & (scale.geography == "CZ 1990")].iloc[0]
-    omitted = labour_share * (taxes + output + mobility_tax) + medicaid_share * elder
+    care_taxes, care_elder = (taxes + output, elder) if include_care else (0.0, 0.0)
+    omitted = labour_share * (care_taxes + mobility_tax) + medicaid_share * care_elder
     with_scale = omitted + labour_share * float(joint.induced_receipts_bn)
     sources = [FISCAL / "care_household_services_2026_09_23/derived/summary.csv",
                FISCAL / "labor_mobility_insurance_2026_09_23/derived/insurance_summary.json",
                FISCAL / "scale_spillovers_2026_09_23/derived/summary.csv"]
-    return dict(care_taxes_bn=taxes, care_output_receipts_bn=output, care_elder_medicaid_bn=elder,
-                mobility_tax_bn=mobility_tax, scale_induced_receipts_bn=float(joint.induced_receipts_bn),
-                federal_omitted_bn=omitted, federal_with_scale_bn=with_scale,
-                total_omitted_bn=taxes + output + elder + mobility_tax,
-                total_with_scale_bn=taxes + output + elder + mobility_tax + float(joint.induced_receipts_bn),
-                source_sha256={str(p.relative_to(ROOT)): sha(p) for p in sources})
+    out = dict(care_taxes_bn=taxes, care_output_receipts_bn=output, care_elder_medicaid_bn=elder,
+               mobility_tax_bn=mobility_tax, scale_induced_receipts_bn=float(joint.induced_receipts_bn),
+               federal_omitted_bn=omitted, federal_with_scale_bn=with_scale,
+               total_omitted_bn=care_taxes + care_elder + mobility_tax,
+               total_with_scale_bn=care_taxes + care_elder + mobility_tax + float(joint.induced_receipts_bn),
+               source_sha256={str(p.relative_to(ROOT)): sha(p) for p in sources})
+    if not include_care:
+        out["care_inside_account"] = True
+    return out
 
 
 def stock(federal_nominal: pd.Series, rates: pd.Series, start: int, borrowed: float) -> dict:
@@ -818,6 +1082,12 @@ def stock(federal_nominal: pd.Series, rates: pd.Series, start: int, borrowed: fl
 # ---------------------------------------------------------------- main
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Debt legacy of past federal gaps on an adopted main case.")
+    parser.add_argument("--case", choices=("sept24", "sept23"), default="sept24",
+                        help="sept24: the main case adopted 2026-09-24 (default); sept23: this lane's first result")
+    parser.add_argument("--out-dir", type=Path, default=HERE / "derived")
+    args = parser.parse_args()
+    sept24 = args.case == "sept24"
     pins = check_pins()
     wb = Workbook(BEA / "Section3All_xls.xlsx")
     shares, extras = federal_shares(wb, Grants())
@@ -826,22 +1096,48 @@ def main() -> None:
     hist = History(wb)
     control_gap = programme_control(hist)
     rates = rate_paths()
-    out = HERE / "derived"
-    out.mkdir(exist_ok=True)
+    out = args.out_dir
+    out.mkdir(parents=True, exist_ok=True)
 
-    # 1. The 2024 split of the adopted fiscal gap, at the corners that set each band.
-    anchors = {prof: adopted_anchors(prof) for prof in PROFILES}
+    # 1. The 2024 split of the adopted fiscal gap, at the corners that set each band. On September 24
+    # each correction is split by its line's government level too, and the parts must add to the
+    # change in the whole split at the same specification.
+    if sept24:
+        corrected = apply_corrections(MODEL, json.loads(CORRECTIONS_FILE.read_text()))
+        main24 = json.loads(MAIN24_SUMMARY.read_text())
+        anchors = {prof: sept24_anchors(prof, corrected, main24) for prof in PROFILES}
+    else:
+        anchors = {prof: adopted_anchors(prof) for prof in PROFILES}
+    parts, correction_rows = {}, []
     split_rows, line_rows = [], []
     for prof, ends in anchors.items():
         for end, corner in ends.items():
             p, _ = production(corner["normalization"])
             cost = -welfare(corner)
             for conv in CONVENTIONS:
-                table = split_corner(corner, shares[conv], extras, conv, LAST, jf, ucf, end)
+                if sept24:
+                    before = split_corner(dict(corner, model=MODEL), shares[conv], extras, conv, LAST, jf, ucf, end)
+                    parts[(prof, end, conv)] = constant_parts(
+                        corner, conv, shares, extras, before.federal_bn.sum() / before.responsive_bn.sum())
+                table = split_corner(corner, shares[conv], extras, conv, LAST, jf, ucf, end, parts.get((prof, end, conv)))
                 gap = table.responsive_bn.sum()
                 if abs(gap - (cost + p)) > 1e-6:
                     raise SystemExit(f"[BLOCKED] {prof} {end}: fiscal gap {gap} != cost + P {cost + p}")
                 fed = table.federal_bn.sum()
+                if sept24 and prof == MAIN:
+                    cs = correction_split(corner, shares[conv], extras, conv, LAST, parts[(prof, end, conv)])
+                    if (cs.federal_bn + cs.state_local_bn - cs.effect_bn).abs().max() > 1e-12:
+                        raise SystemExit("[BLOCKED] a correction's federal and state-local parts do not add to it")
+                    d_gap = gap - before.responsive_bn.sum()
+                    d_fed = fed - before.federal_bn.sum()
+                    if abs(cs.effect_bn.sum() - d_gap) > 1e-9 or abs(cs.federal_bn.sum() - d_fed) > 1e-9:
+                        raise SystemExit(f"[BLOCKED] {end}/{conv}: corrections add to {cs.effect_bn.sum():.6f} "
+                                         f"(federal {cs.federal_bn.sum():.6f}), the split moved {d_gap:.6f} ({d_fed:.6f})")
+                    for r in cs.itertuples():
+                        correction_rows.append(dict(end=end, convention=conv, allocation=corner["allocation"],
+                                                    component=r.component, side=r.side, line=r.line, cell=r.cell,
+                                                    effect_bn=r.effect_bn, federal_bn=r.federal_bn,
+                                                    state_local_bn=r.state_local_bn))
                 split_rows.append(dict(profile=prof, end=end, convention=conv, allocation=corner["allocation"],
                                        normalization=corner["normalization"], school_share=corner["school_share"],
                                        school_response=corner["school_response"],
@@ -857,6 +1153,13 @@ def main() -> None:
     split = pd.DataFrame(split_rows)
     split.round(6).to_csv(out / "federal_split_2024.csv", index=False)
     pd.DataFrame(line_rows).round(6).to_csv(out / "federal_split_2024_lines.csv", index=False)
+    if sept24:
+        corrections = pd.DataFrame(correction_rows)
+        corrections.round(6).to_csv(out / "corrections_federal_split_2024.csv", index=False)
+        by_component = corrections.assign(component=corrections.component.str.split(":").str[0]).groupby(
+            ["end", "convention", "component"], sort=True)[["effect_bn", "federal_bn", "state_local_bn"]].sum()
+        by_component["federal_share"] = by_component.federal_bn / by_component.effect_bn
+        by_component.round(6).to_csv(out / "corrections_federal_by_component_2024.csv")
 
     # 2. Annual federal gaps by benchmark, rule, anchor and convention (real 2024 $bn and nominal). The
     # every-service-proportional benchmark charges no interest either, so it gets its own legacy line.
@@ -884,7 +1187,10 @@ def main() -> None:
     s_f = fed_exp * 1e9 * hist.real / residents
     indirect = indirect_receipt_shares(wb)
     n = hist.group
-    for bench, (prof, column) in BENCHMARKS.items():
+    benchmarks = ({"main": (MAIN, "net_cost_cbo_informed_corrected"),       # back-cast re-run on Sept 24 (da2b107)
+                   "proportional": ("proportional_reference", "net_cost_full_proportional_corrected")}
+                  if sept24 else BENCHMARKS)
+    for bench, (prof, column) in benchmarks.items():
         bench_split = split[split.profile == prof].set_index(["end", "convention"])
         for end, corner in anchors[prof].items():
             p, _ = production(corner["normalization"])
@@ -892,7 +1198,7 @@ def main() -> None:
             shared_receipts = lines_at(dict(corner, allocation="shared"))
             shared_receipts = shared_receipts[shared_receipts.side == "receipt"].set_index("id").amount_bn
             for conv in CONVENTIONS:
-                prog = programme_federal(hist, corner, end, conv, shares, extras, jf, ucf)
+                prog = programme_federal(hist, corner, end, conv, shares, extras, jf, ucf, parts.get((prof, end, conv)))
                 if abs(prog.loc[LAST, "gap_programme"] - bench_split.loc[(end, conv), "fiscal_gap_bn"]) > 1e-6 or \
                         abs(prog.loc[LAST, "federal_programme"] - bench_split.loc[(end, conv), "federal_bn"]) > 1e-6:
                     raise SystemExit(f"[BLOCKED] {bench} programme back-cast {end}/{conv} does not reproduce 2024")
@@ -944,7 +1250,7 @@ def main() -> None:
     # 3. Stocks and 2024 legacy interest for every specification. The account's interest row (BEA
     # domestic interest, per head, zero response) and the group's per-head share of OMB net interest
     # are the two benchmarks the legacy line is compared with, never added to.
-    interest_row = next(l for l in MODEL["spending"]["lines"] if l["id"] == "domestic_interest")
+    interest_row = next(l for l in (corrected if sept24 else MODEL)["spending"]["lines"] if l["id"] == "domestic_interest")
     row_allocation = interest_row["keys"][interest_row["preferred_key"]]["personal"]["target_bn"]
     per_head_net_interest = rates.loc[LAST, "net_interest_bn"] * TARGET_M / RESIDENTS_M
     # Scale reference only: the group's per-head share of each year's increase in debt held by the public.
@@ -975,10 +1281,12 @@ def main() -> None:
     # 3b. Rule 5 sensitivity: omitted and proposed fiscal benefits would reduce F_t. Carried back by
     # group size in real terms; the stock is linear, so these rows subtract from any rule's stock.
     benefits = proposed_benefits(float(extras["labour_share"][LAST]),
-                                 float(shares["central"].loc[LAST, "medicaid_and_chip_other_medical"]))
+                                 float(shares["central"].loc[LAST, "medicaid_and_chip_other_medical"]),
+                                 include_care=not sept24)   # since September 24 care is inside the account
     benefit_rows = []
-    for name, fed_2024 in (("care_and_mobility", benefits["federal_omitted_bn"]),
-                           ("care_mobility_and_scale", benefits["federal_with_scale_bn"])):
+    names = ("mobility", "mobility_and_scale") if sept24 else ("care_and_mobility", "care_mobility_and_scale")
+    for name, fed_2024 in ((names[0], benefits["federal_omitted_bn"]),
+                           (names[1], benefits["federal_with_scale_bn"])):
         nominal = hist.nominal(fed_2024 * hist.group / hist.group[LAST])
         for start in WINDOW_STARTS:
             st = stock(nominal, rates["effective"], start, 1.0)
@@ -1025,7 +1333,7 @@ def main() -> None:
 
     summary = dict(inputs=pins, programme_control_max_abs_diff_bn=control_gap, justice_federal=plain(jf),
                    uncompensated_federal=plain(ucf),
-                   anchors={end: plain({k: v for k, v in c.items() if k != "shift"})
+                   anchors={end: plain({k: v for k, v in c.items() if k not in ("shift", "model")})
                             for end, c in anchors[MAIN].items()},
                    medicaid_federal_share_nhea_2024=float(extras["nhea_share"][LAST]),
                    income_security_matching_fraction_2024=float(extras["matching_fraction"][LAST]),
@@ -1042,6 +1350,14 @@ def main() -> None:
                               "public_securities_interest_over_average_debt":
                                   float(rates.loc[LAST, "gross_public_securities"]),
                               "ladder137": LADDER137_RATE})
+    if sept24:
+        summary["case"] = dict(
+            name="main case adopted 2026-09-24", bands_source=str(MAIN24_SUMMARY.relative_to(ROOT)),
+            corrections_sha256=sha(CORRECTIONS_FILE), package_components_sha256=sha(COMPONENTS_FILE),
+            lane_sha256={str(p.relative_to(ROOT)): sha(p) for p in (SHELTER_PARTS, SHELTER_KEYING, CARE_SUMMARY)},
+            band=main24["main_case"],
+            corrections_2024=plain({f"{e}|{c}": dict(effect_bn=float(g.effect_bn.sum()), federal_bn=float(g.federal_bn.sum()))
+                                    for (e, c), g in corrections.groupby(["end", "convention"])}))
     (out / "summary.json").write_text(json.dumps(summary, indent=1, sort_keys=True) + "\n")
     print(split[split.profile == MAIN].round(3).to_string(index=False))
     print(f"programme control max |diff| {control_gap:.6f}bn")
