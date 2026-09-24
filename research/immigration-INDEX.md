@@ -158,6 +158,12 @@ payments, ITIN credits and migrant shelters in one table.
 The one keying mismatch is shelters. The account over-charges the group about $0.5bn, because
 Mexican nationals were 0.50–0.84% of the people served.
 
+The [preferences lane](../infra/immigration-fiscal/affirmative_action_cost_2026_09_24/RESULT.md) (September 24,
+ladder 213) prices what race- and ethnicity-based preferences cost non-Hispanic white natives: about
+**$4bn a year** ($0.2–18.7bn), or $41 per white native worker, through admissions, contractor hiring and
+set-asides. About 28% of it is tied to Hispanic beneficiaries. It is a transfer beside ladder 194 and
+is not in the account.
+
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
 second generation, reference group, education, single year, legacy cohorts, ageing,
