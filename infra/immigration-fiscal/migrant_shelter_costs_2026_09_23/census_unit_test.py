@@ -280,7 +280,7 @@ def main():
                     "unit_items_other_flag": sum(v for k, v in flags[uid].items() if k not in "RI"),
                 })
     with open(os.path.join(DERIVED, "census_unit_measures.csv"), "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=list(rows[0]))
+        w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         w.writeheader()
         for r in rows:
             w.writerow({k: (int(v) if isinstance(v, float) else v) for k, v in r.items()})
@@ -310,14 +310,14 @@ def main():
                 rec[f"excess_{y}_k"] = chg - base * statistics.median(pp) / 100.0 if ok else None
             jump.append(rec)
     with open(os.path.join(DERIVED, "census_jump_test.csv"), "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=list(jump[0]))
+        w = csv.DictWriter(f, fieldnames=list(jump[0]), lineterminator="\n")
         w.writeheader()
         for r in jump:
             w.writerow({k: (fmt(v) if isinstance(v, float) or v is None else v) for k, v in r.items()})
 
     # 2b. every item code of every target, by year (2021 uses the finer code set)
     with open(os.path.join(DERIVED, "census_target_items.csv"), "w", newline="") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["unit", "item", "y2021_k", "y2022_k", "y2023_k", "y2024_k", "chg_2022_2024_k"])
         for uid, (label, _, role) in sorted(UNITS.items(), key=lambda kv: kv[1][0]):
             if role != "target":
@@ -330,7 +330,7 @@ def main():
     # 2c. repeated values: a nonzero item identical to the thousand dollars in two of the
     #     2022-2024 files suggests a carried-forward figure rather than a new report
     with open(os.path.join(DERIVED, "census_repeated_values.csv"), "w", newline="") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["unit", "item", "year_a", "year_b", "amount_k"])
         for uid, (label, _, role) in sorted(UNITS.items(), key=lambda kv: kv[1][0]):
             if role != "target":
@@ -344,7 +344,7 @@ def main():
     #     carries a reporting break in this item, so it is shown apart and kept out of the
     #     candidate functions and the part weights
     with open(os.path.join(DERIVED, "census_e23_by_unit.csv"), "w", newline="") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["group", "role", "unit", "y2021_k", "y2022_k", "y2023_k", "y2024_k",
                     "chg_2021_2022_k", "chg_2022_2024_k", "e23_share_of_total_2024_pct"])
         for uid, (label, group, role) in sorted(UNITS.items(), key=lambda kv: (kv[1][1], kv[1][2] != "target", kv[1][0])):
@@ -380,7 +380,7 @@ def main():
     sources = ["city_corporate", "state_own", "cook_county", "federal_fema_direct",
                "federal_fema_via_state", "federal_arpa_slfrf", "federal_health"]
     with open(os.path.join(DERIVED, "chicago_payments_by_year_fund.csv"), "w", newline="") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["invoice_year"] + [s + "_usd" for s in sources] + ["total_usd"])
         for year in sorted({k[0] for k in pay}):
             vals = [pay.get((year, s), 0.0) for s in sources]
@@ -397,7 +397,7 @@ def main():
             weeks.add(r["Week End"])
     n_exits = sum(exits.values())
     with open(os.path.join(DERIVED, "chicago_exits_by_country.csv"), "w", newline="") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["country", "exits", "share_pct", "weeks", "first_week_end", "last_week_end"])
         ends = sorted(weeks, key=lambda d: (d[6:], d[:5]))
         for c, n in sorted(exits.items(), key=lambda kv: (-kv[1], kv[0])):
@@ -429,7 +429,7 @@ def main():
         rec["budget_source"] = b["source"]
         budget.append(rec)
     with open(os.path.join(DERIVED, "census_vs_budget.csv"), "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=list(budget[0]))
+        w = csv.DictWriter(f, fieldnames=list(budget[0]), lineterminator="\n")
         w.writeheader()
         w.writerows(budget)
 
@@ -483,11 +483,11 @@ def main():
                                  "overcharge_musd": f"{charged - used:.1f}",
                                  "charge_to_use_ratio": f"{charged / used:.1f}"})
     with open(os.path.join(DERIVED, "account_keying.csv"), "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=list(grid[0]))
+        w = csv.DictWriter(f, fieldnames=list(grid[0]), lineterminator="\n")
         w.writeheader()
         w.writerows(grid)
     with open(os.path.join(DERIVED, "account_keying_parts.csv"), "w", newline="") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["part", "nyc_item", "nyc_increase_fy2022_fy2024_k", "weight"]
                    + [f"{m}_category" for m in mappings])
         for k, it in parts.items():
