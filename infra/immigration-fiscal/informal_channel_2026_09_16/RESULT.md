@@ -119,7 +119,7 @@ low-wage-labor-market phenomenon that immigrants are over-exposed to by status.
 
 ### 2a. The one clean effect size (construction misclassification)
 
-**Ormiston, Belman, Hinkel + a professional cost estimator (ICERES, June 2025).** Real architectural
+**Ormiston, Belman, Hinkel + a professional cost estimator (ICERES, June 2025).** [Corrected 2026-09-25: the brief's authors are Dale Belman, Cihan Bilginsoy, Russell Ormiston and Ed Wenz (the cost estimator); Hinkel appears only in its references (Hinkel & Belman 2022). The figures below are unchanged. SOURCE: the brief's title page, quoted in `../compliance_gap_2026_09_24/reads/LIT_COMPLIANCE_COSTS.md`.] Real architectural
 plans, 67-unit multi-story residential, Ann Arbor MI, costed in RSMeans:
 
 | | Value | Source |
