@@ -39,7 +39,7 @@ reproduces the upstream white-reference figures to four decimals]
 | India-born | 1,232 | +24,163 | +10,732 (se 1,351) |
 | Second generation (India-born parent) | 209 | +34,003 | +20,572 (se 3,872) |
 | White reference (third-plus generation) | 36,287 | +13,431 | — |
-| Mexico-born | — | −10,794 (se 405) | — |
+| Mexico-born | — | +2,637 | −10,794 (se 405) |
 
 Arms that could have reversed the sign and did not: age-standardised +10,955; household
 weighted +10,422; top 1 percent excluded +10,488; recent noncitizens (the temporary-visa proxy,
@@ -215,3 +215,11 @@ Corrected the interpretation for the reasons above; see the [decision](../decisi
 ## Revisions — September 21, 2026
 
 Third-plus Indian (US-born, both parents US-born, Asian Indian race) is now on the same 2025 ledger: n=49 adults 25–64, age-standardised gap **+$11,806 (se 8,150)** vs 3rd+ NH whites, which does not reject parity. G2 age-standardised **+$23,692 (se 5,482)** is unchanged. The G3 cell is an identified-race remainder, not observed grandparents. [DATA: `infra/immigration-fiscal/indian_generation_2026_09_21/RESULT.md`]
+
+## Revisions — September 24, 2026
+
+The Mexico-born row of the treasury table had its gap (−$10,794) in the net column. The lane's
+[after-health row](../infra/immigration-fiscal/indian_ledger_2026_09_18/RESULT.md) gives a net of
++$2,637 per adult-year and a gap of −$10,794 against the white reference's +$13,431. Concept
+affected: the Mexico-born comparator's net level. The gap and every Indian-origin figure are
+unchanged.
