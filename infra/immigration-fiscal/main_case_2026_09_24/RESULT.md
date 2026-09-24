@@ -108,6 +108,13 @@ sums the audit's rows [DATA: `derived/components.csv`].
     public-order population shift, which that lane scaled to the use key's per-head part, moves the
     use key.
   - Each of the six stacks alone reproduces that lane's published change to 2e-3.
+- **Other keys and incidence rules.** The main case evaluates only the keys above and CBO's
+  incidence rules. For consumers that range over every executed alternative (the figures page's
+  outer envelope), `package.cjs` gives the explorer's 0.7×-use and raw-coding keys the same dollar
+  change as the keys they are built on. Every other incidence rule gets the same proportional change
+  to the group's share of each tax. This is the same dollar change wherever the rules agree, and it
+  differs only on federal income tax, Medicare premiums, the corporate split and residual property
+  tax. The main-case outputs are byte-identical with and without these rules.
 - **Ratio corrections.** These rescale the group's key dollars on a line: CBO's gradients, the
   benefit keys, the medical-ethnicity ratios, and the school price and re-blend. On top of the tax
   records each is multiplied by its key's stack factor, the group's target after the stack over its

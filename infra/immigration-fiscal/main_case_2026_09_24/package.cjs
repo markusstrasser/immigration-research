@@ -81,7 +81,14 @@ const band = (m, profile) => span(MAIN_SPECS.map((spec) => cost(m, spec, profile
 
 // A change is a list of shifts {side: "receipt" | "spending", line, key, by: {personal, shared}}.
 const MEDICAID = "medicaid_and_chip_other_medical";
-const MEDICAID_KEYS = ["medicaid", "uninsured_use_low", "uninsured_use_high"];
+// Keys built on the key a change was measured on take the same dollar change: the uninsured-use keys
+// add uncompensated care to the Medicaid key, and raw ethnicity coding is a variant of the use key.
+// The main case evaluates only uninsured_use_low/high and use; the 0.7x-use and raw-coding variants
+// matter to consumers that range over every executed key (the figures page's outer envelope).
+const KEY_FAMILIES = {
+  [MEDICAID]: { medicaid: ["medicaid", "uninsured_use_low", "uninsured_use_high", "uninsured_use_07_low", "uninsured_use_07_high"] },
+  public_order_safety: { use: ["use", "use_raw_coding"] },
+};
 function build(shifts) {
   const m = JSON.parse(JSON.stringify(MODEL));
   const cell = () => ({ target_bn: 0, other_bn: 0, share: 0 });
@@ -90,18 +97,28 @@ function build(shifts) {
       preferred_key: "k", alternative_key: "k", keys: { k: { personal: cell(), shared: cell() } } });
   }
   for (const s of shifts) {
-    let cells;
     if (s.side === "receipt") {
+      // Receipt changes are measured on the reference incidence rule. Every other executed rule takes
+      // the same proportional change to the group's share of the line, so the rules keep their ratio;
+      // on the lines where the rules agree that is the same dollar change.
       const line = m.receipts.lines.find((l) => l.id === s.line);
       if (!line) throw new Error("no receipt line " + s.line);
-      cells = [line.cells[m.receipts.reference]];
-    } else {
-      const line = m.spending.lines.find((l) => l.id === s.line);
-      if (!line) throw new Error("no spending line " + s.line);
-      const keys = s.line === MEDICAID && s.key === "medicaid" ? MEDICAID_KEYS : [s.key || line.preferred_key];
-      cells = keys.map((k) => { if (!line.keys[k]) throw new Error(`no key ${s.line}/${k}`); return line.keys[k]; });
+      const orig = MODEL.receipts.lines.find((l) => l.id === s.line).cells;
+      for (const sc of m.receipts.scenarios) for (const a of ALLOCS) {
+        const t0 = orig[m.receipts.reference][a].target_bn;
+        const d = s.by[a] * (t0 === 0 ? 1 : orig[sc][a].target_bn / t0);
+        line.cells[sc][a].target_bn += d; line.cells[sc][a].other_bn -= d;
+      }
+      continue;
     }
-    for (const c of cells) for (const a of ALLOCS) { c[a].target_bn += s.by[a]; c[a].other_bn -= s.by[a]; }
+    const line = m.spending.lines.find((l) => l.id === s.line);
+    if (!line) throw new Error("no spending line " + s.line);
+    const key = s.key || line.preferred_key;
+    const keys = (KEY_FAMILIES[s.line] && KEY_FAMILIES[s.line][key]) || [key];
+    for (const k of keys) {
+      if (!line.keys[k]) throw new Error(`no key ${s.line}/${k}`);
+      for (const a of ALLOCS) { line.keys[k][a].target_bn += s.by[a]; line.keys[k][a].other_bn -= s.by[a]; }
+    }
   }
   return m;
 }
