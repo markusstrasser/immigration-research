@@ -2048,6 +2048,56 @@
    "evidence_level": "[SOURCE: CBO projections as recorded in the repo] + [CALCULATION: main case; arrival-window lane]"
   },
   {
+   "id": "e17_survey_errors_nearly_cancel",
+   "faq_entry": 17,
+   "objection": "Survey data are unreliable. Immigrants hide income and benefits, and surveys miss the unauthorized.",
+   "finding": "The survey errors are real and large, but they run both ways and nearly cancel. The group's taxes were overstated: the survey's tax model treats every respondent as a compliant resident filer, and Census's fill-ins keep only 9% of the group's own wage gap. Correcting them adds $48.7–50.3bn of cost. Fixing spending keys, with care moved into the account, removes $51.0–53.6bn. The main case moved from $203.2–249.6bn to $200.9–246.3bn, and every correction at its extreme in one direction spans $172–276bn without a sign change. Administrative records show no fear-driven benefit under-reporting where the group's dollars are: California's SNAP records give Hispanic participants 44.0% of benefit dollars against the survey's 44.1%. The count error runs the other way: the CPS puts the Mexico-born 9–13% above the ACS, and the adopted case corrects to the ACS level.",
+   "values": [
+    {
+     "label": "cost added by correcting the group's overstated taxes / charge removed by fixing spending keys (with care)",
+     "value": "+48.7 / +50.3; -51.0 / -53.6",
+     "unit": "$bn/year (low / high end)",
+     "se": null,
+     "file_line": "research/immigration-confidence-ladder.md:369"
+    },
+    {
+     "label": "main case before and after the corrections",
+     "value": "203.2-249.6 -> 200.9-246.3",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-confidence-ladder.md:369"
+    },
+    {
+     "label": "every correction at its extreme in one direction",
+     "value": "172-276",
+     "unit": "$bn/year",
+     "se": null,
+     "file_line": "research/immigration-confidence-ladder.md:369"
+    },
+    {
+     "label": "Hispanic share of California SNAP benefit dollars: administrative records / CPS",
+     "value": "44.0% / 44.1%",
+     "unit": "share of dollars",
+     "se": null,
+     "file_line": "research/immigration-confidence-ladder.md:365"
+    },
+    {
+     "label": "CPS Mexico-born count above the ACS since 2019; early-2025 level, CPS / ACS-based",
+     "value": "9-13%; 12.2M / 11.1M",
+     "unit": "percent; persons",
+     "se": null,
+     "file_line": "research/immigration-confidence-ladder.md:349"
+    }
+   ],
+   "relation_to_headline": "inside_headline",
+   "combining_rule": "The corrections are inside the main case; do not add them to it again.",
+   "memo": "research/immigration-objections-faq-2026-09-21.md § 17; infra/immigration-fiscal/main_case_2026_09_24/RESULT.md; research/immigration-outside-checks-2026-09-24.md; research/immigration-confidence-ladder.md entries 204, 208–210, 216–217, 219",
+   "population": "Mexican-origin union, CPS ASEC 2025 (income year 2024)",
+   "comparator": "administrative records (Treasury, CMS T-MSIS, SNAP quality control, CBO and Treasury distributions) and the ACS count",
+   "horizon": "annual, income year 2024",
+   "evidence_level": "[CALCULATION: lane outputs] + [SOURCE: administrative records]"
+  },
+  {
    "id": "complete_account_356_endpoint",
    "faq_entry": null,
    "objection": null,
