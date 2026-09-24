@@ -183,6 +183,16 @@ ladder 213) prices what race- and ethnicity-based preferences cost non-Hispanic 
 set-asides. About 28% of it is tied to Hispanic beneficiaries. It is a transfer beside ladder 194 and
 is not in the account.
 
+[Rule-breaking competition](immigration-rule-breaking-competition-2026-09-25.md) (September 25,
+ladder 220) asks whether employers who break labor and tax rules drive honest firms out. Paying a
+worker off the books saves 11–24% of the wage; in construction, landscaping, janitorial services and
+restaurants the edge is **$0–14.8bn a year** in 2024 (central $6.4bn), and $4.5bn of it is payroll
+tax already inside the account. Covered establishments and employment grew no slower where the
+group's share grew, and the pre-registered E-Verify design fails its pre-trend test, so no
+displacement of compliant firms is measured. Beside the account: $0–2.2bn of workers' compensation
+premiums avoided and $0–2.3bn of underpayment, both transfers from off-books workers to their
+employers.
+
 [Outside checks on the account's shares](immigration-outside-checks-2026-09-24.md) (September 24)
 tests the keys against data built independently of the account. The BEA closure (−$2,053bn) cannot
 catch a wrong key, because a wrong key only moves dollars between groups. Schools (ladder 215): the

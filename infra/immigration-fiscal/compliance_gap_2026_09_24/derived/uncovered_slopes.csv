@@ -1,0 +1,69 @@
+spec,sample,y,x,coef,se,ci_low,ci_high,n,clusters
+raw U on Mexico-born noncitizen share,all cells 2012-2023,U,m_mexnc,0.09618,0.18640,-0.27822,0.47057,12216,51
+raw U on imputed unauthorized share,all cells 2012-2023,U,m_unauth,0.27338,0.14651,-0.02089,0.56765,12216,51
+raw U on imputed unauthorized share without a bachelor's degree,all cells 2012-2023,U,m_unauth_noba,0.19741,0.16247,-0.12893,0.52374,12216,51
+raw U on foreign-born noncitizen share,all cells 2012-2023,U,m_fbnc,0.21783,0.11893,-0.02104,0.45670,12216,51
+U with incorporated self-employed on Mexico-born noncitizen share,all cells 2012-2023,U_inc,m_mexnc,-0.05370,0.17429,-0.40378,0.29638,12216,51
+split-sample U on Mexico-born noncitizen share,all cells 2012-2023,U_split,m_mexnc_split,0.07513,0.18341,-0.29325,0.44351,24432,51
+split-sample U on imputed unauthorized share,all cells 2012-2023,U_split,m_unauth_split,0.18776,0.13143,-0.07621,0.45174,24432,51
+"Construction: U on m_mexnc, across states",c23,U,m_mexnc,0.37059,0.10900,0.15165,0.58953,610,51
+"Construction: U on m_mexnc, within state over time",c23,U,m_mexnc,0.60818,0.24043,0.12527,1.09108,610,51
+"Construction: U on m_mexnc, across states, without California and Texas",c23,U,m_mexnc,0.27953,0.18438,-0.09119,0.65025,586,49
+"Construction: U on m_mexnc, across states, unweighted",c23,U,m_mexnc,0.32422,0.16241,-0.00199,0.65043,610,51
+"Construction: U on m_unauth, across states",c23,U,m_unauth,0.59970,0.09908,0.40069,0.79871,610,51
+"Construction: U on m_unauth, within state over time",c23,U,m_unauth,0.88433,0.15386,0.57530,1.19337,610,51
+"Construction: U on m_unauth, across states, without California and Texas",c23,U,m_unauth,0.54178,0.15750,0.22511,0.85845,586,49
+"Construction: U on m_unauth, across states, unweighted",c23,U,m_unauth,0.84728,0.22131,0.40276,1.29179,610,51
+"Landscaping services: U on m_mexnc, across states",c56173,U,m_mexnc,0.53193,0.08585,0.35764,0.70623,372,36
+"Landscaping services: U on m_mexnc, within state over time",c56173,U,m_mexnc,0.16844,0.15079,-0.13834,0.47523,370,36
+"Landscaping services: U on m_mexnc, across states, without California and Texas",c56173,U,m_mexnc,0.38134,0.19873,-0.02297,0.78565,348,34
+"Landscaping services: U on m_mexnc, across states, unweighted",c56173,U,m_mexnc,0.34787,0.17279,-0.00292,0.69866,372,36
+"Landscaping services: U on m_unauth, across states",c56173,U,m_unauth,0.58857,0.15391,0.27611,0.90103,372,36
+"Landscaping services: U on m_unauth, within state over time",c56173,U,m_unauth,0.43229,0.13593,0.15574,0.70883,370,36
+"Landscaping services: U on m_unauth, across states, without California and Texas",c56173,U,m_unauth,0.30445,0.19608,-0.09448,0.70338,348,34
+"Landscaping services: U on m_unauth, across states, unweighted",c56173,U,m_unauth,0.29297,0.19291,-0.09866,0.68459,372,36
+"Services to buildings except landscaping (janitorial): U on m_mexnc, across states",c5617z,U,m_mexnc,0.82274,0.21273,0.39210,1.25338,419,39
+"Services to buildings except landscaping (janitorial): U on m_mexnc, within state over time",c5617z,U,m_mexnc,0.48643,0.25815,-0.03712,1.00998,417,39
+"Services to buildings except landscaping (janitorial): U on m_mexnc, across states, without California and Texas",c5617z,U,m_mexnc,0.44234,0.35800,-0.28372,1.16840,395,37
+"Services to buildings except landscaping (janitorial): U on m_mexnc, across states, unweighted",c5617z,U,m_mexnc,0.74760,0.25446,0.23247,1.26274,419,39
+"Services to buildings except landscaping (janitorial): U on m_unauth, across states",c5617z,U,m_unauth,0.73854,0.26866,0.19467,1.28241,419,39
+"Services to buildings except landscaping (janitorial): U on m_unauth, within state over time",c5617z,U,m_unauth,0.48657,0.18174,0.11798,0.85517,417,39
+"Services to buildings except landscaping (janitorial): U on m_unauth, across states, without California and Texas",c5617z,U,m_unauth,0.31464,0.22900,-0.14979,0.77908,395,37
+"Services to buildings except landscaping (janitorial): U on m_unauth, across states, unweighted",c5617z,U,m_unauth,0.62316,0.23140,0.15472,1.09161,419,39
+"Restaurants and other food services: U on m_mexnc, across states",c722z,U,m_mexnc,0.15978,0.13353,-0.10842,0.42798,609,51
+"Restaurants and other food services: U on m_mexnc, within state over time",c722z,U,m_mexnc,0.54784,0.20372,0.13867,0.95702,609,51
+"Restaurants and other food services: U on m_mexnc, across states, without California and Texas",c722z,U,m_mexnc,0.30810,0.23564,-0.16568,0.78188,585,49
+"Restaurants and other food services: U on m_mexnc, across states, unweighted",c722z,U,m_mexnc,0.49370,0.14414,0.20418,0.78321,609,51
+"Restaurants and other food services: U on m_unauth, across states",c722z,U,m_unauth,0.00762,0.16862,-0.33106,0.34630,609,51
+"Restaurants and other food services: U on m_unauth, within state over time",c722z,U,m_unauth,0.58738,0.23120,0.12299,1.05177,609,51
+"Restaurants and other food services: U on m_unauth, across states, without California and Texas",c722z,U,m_unauth,-0.04048,0.23459,-0.51216,0.43119,585,49
+"Restaurants and other food services: U on m_unauth, across states, unweighted",c722z,U,m_unauth,-0.14099,0.35779,-0.85963,0.57764,609,51
+"Private households: U on m_mexnc, across states",c814,U,m_mexnc,-0.15566,0.71614,-1.64495,1.33363,192,22
+"Private households: U on m_mexnc, within state over time",c814,U,m_mexnc,2.03349,1.13305,-0.33800,4.40498,190,22
+"Private households: U on m_mexnc, across states, without California and Texas",c814,U,m_mexnc,2.03077,0.97987,-0.02011,4.08166,168,20
+"Private households: U on m_mexnc, across states, unweighted",c814,U,m_mexnc,0.81011,0.71664,-0.68022,2.30043,192,22
+"Private households: U on m_unauth, across states",c814,U,m_unauth,0.34364,0.81359,-1.34832,2.03560,192,22
+"Private households: U on m_unauth, within state over time",c814,U,m_unauth,1.25755,0.74823,-0.30850,2.82361,190,22
+"Private households: U on m_unauth, across states, without California and Texas",c814,U,m_unauth,0.81561,0.71733,-0.68579,2.31700,168,20
+"Private households: U on m_unauth, across states, unweighted",c814,U,m_unauth,0.48635,0.66265,-0.89169,1.86440,192,22
+"Crop production: U on m_mexnc, across states",c111,U,m_mexnc,-0.34960,0.28556,-0.92768,0.22848,395,39
+"Crop production: U on m_mexnc, within state over time",c111,U,m_mexnc,0.44842,0.10118,0.24342,0.65343,394,39
+"Crop production: U on m_mexnc, across states, without California and Texas",c111,U,m_mexnc,-1.12680,0.19472,-1.52171,-0.73188,371,37
+"Crop production: U on m_mexnc, across states, unweighted",c111,U,m_mexnc,-0.69941,0.24401,-1.19338,-0.20544,395,39
+"Crop production: U on m_unauth, across states",c111,U,m_unauth,-0.71566,0.32814,-1.37995,-0.05138,395,39
+"Crop production: U on m_unauth, within state over time",c111,U,m_unauth,0.55871,0.13630,0.28253,0.83489,394,39
+"Crop production: U on m_unauth, across states, without California and Texas",c111,U,m_unauth,-1.14232,0.25323,-1.65589,-0.62875,371,37
+"Crop production: U on m_unauth, across states, unweighted",c111,U,m_unauth,-0.87030,0.24419,-1.36465,-0.37595,395,39
+"Animal production: U on m_mexnc, across states",c112,U,m_mexnc,-0.07809,0.22262,-0.53274,0.37655,292,31
+"Animal production: U on m_mexnc, within state over time",c112,U,m_mexnc,-0.13185,0.17304,-0.48632,0.22261,290,31
+"Animal production: U on m_mexnc, across states, without California and Texas",c112,U,m_mexnc,-0.52223,0.24684,-1.02787,-0.01660,268,29
+"Animal production: U on m_mexnc, across states, unweighted",c112,U,m_mexnc,-0.30602,0.24907,-0.81469,0.20265,292,31
+"Animal production: U on m_unauth, across states",c112,U,m_unauth,-0.21741,0.28437,-0.79817,0.36335,292,31
+"Animal production: U on m_unauth, within state over time",c112,U,m_unauth,0.05980,0.14669,-0.24067,0.36028,290,31
+"Animal production: U on m_unauth, across states, without California and Texas",c112,U,m_unauth,-0.46056,0.29174,-1.05817,0.13704,268,29
+"Animal production: U on m_unauth, across states, unweighted",c112,U,m_unauth,-0.34250,0.30745,-0.97039,0.28540,292,31
+placebo: low-exposure cells only,low-exposure cells 2012-2023,U,m_mexnc,-2.24145,2.64888,-7.56188,3.07899,2970,51
+"raw U on imputed unauthorized share, agriculture excluded (own UI coverage rules)",all cells except agriculture 2012-2023,U,m_unauth,0.61617,0.15287,0.30913,0.92321,11446,51
+"raw U on Mexico-born noncitizen share, agriculture excluded",all cells except agriculture 2012-2023,U,m_mexnc,0.47293,0.17461,0.12222,0.82364,11446,51
+"raw U on imputed unauthorized share without a bachelor's degree, agriculture excluded",all cells except agriculture 2012-2023,U,m_unauth_noba,0.56190,0.16622,0.22804,0.89576,11446,51
+check: U of other admin and support (temp help) on construction's unauthorized share,c56r,U,m_unauth of c23,-0.17671,0.50605,-1.19474,0.84133,553,48

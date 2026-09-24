@@ -1,0 +1,175 @@
+design,sample,y,note,x,coef,se,ci_low,ci_high,p,n
+first differences,focus cells,d_ln_estabs,,d_U,-0.25342,0.08109,-0.41629,-0.09054,0.00296,2799
+first differences,focus cells,d_ln_estabs,,d_U_lag,0.04697,0.03767,-0.02868,0.12263,0.21816,2499
+first differences,focus cells,d_ln_estabs,,d_m_mexnc,-0.01856,0.02168,-0.06210,0.02497,0.39586,2799
+first differences,focus cells,d_ln_estabs,,d_m_mexnc_lag,0.04699,0.04514,-0.04367,0.13765,0.30288,2499
+first differences,focus cells,d_ln_estabs,,d_m_unauth,0.00478,0.02136,-0.03813,0.04768,0.82394,2799
+first differences,focus cells,d_ln_estabs,,d_m_unauth_lag,0.09226,0.06990,-0.04814,0.23265,0.19289,2499
+first differences,focus cells,d_ln_emp,mechanical: U contains QCEW employment,d_U,-0.23490,0.06894,-0.37338,-0.09642,0.00130,2799
+first differences,focus cells,d_ln_emp,,d_U_lag,0.03770,0.03365,-0.02988,0.10529,0.26784,2499
+first differences,focus cells,d_ln_emp,,d_m_mexnc,-0.03176,0.02372,-0.07941,0.01589,0.18672,2799
+first differences,focus cells,d_ln_emp,,d_m_mexnc_lag,0.05759,0.03672,-0.01616,0.13133,0.12308,2499
+first differences,focus cells,d_ln_emp,,d_m_unauth,-0.00778,0.01688,-0.04168,0.02613,0.64702,2799
+first differences,focus cells,d_ln_emp,,d_m_unauth_lag,0.08976,0.05612,-0.02296,0.20248,0.11602,2499
+first differences,focus cells,d_ln_wkwage,,d_U,0.08115,0.02789,0.02513,0.13717,0.00539,2799
+first differences,focus cells,d_ln_wkwage,,d_U_lag,-0.01330,0.01104,-0.03548,0.00888,0.23418,2499
+first differences,focus cells,d_ln_wkwage,,d_m_mexnc,0.00353,0.01068,-0.01793,0.02498,0.74278,2799
+first differences,focus cells,d_ln_wkwage,,d_m_mexnc_lag,-0.03193,0.01716,-0.06641,0.00254,0.06868,2499
+first differences,focus cells,d_ln_wkwage,,d_m_unauth,0.00958,0.01281,-0.01615,0.03532,0.45801,2799
+first differences,focus cells,d_ln_wkwage,,d_m_unauth_lag,-0.04088,0.02486,-0.09082,0.00905,0.10631,2499
+first differences,low-exposure placebo cells,d_ln_estabs,,d_U,-0.00221,0.00118,-0.00458,0.00015,0.06583,2906
+first differences,low-exposure placebo cells,d_ln_estabs,,d_U_lag,0.00066,0.00174,-0.00285,0.00416,0.70865,2638
+first differences,low-exposure placebo cells,d_ln_estabs,,d_m_mexnc,-0.05549,0.07605,-0.20832,0.09735,0.46911,2906
+first differences,low-exposure placebo cells,d_ln_estabs,,d_m_mexnc_lag,0.07354,0.09687,-0.12113,0.26820,0.45142,2638
+first differences,low-exposure placebo cells,d_ln_estabs,,d_m_unauth,-0.03518,0.02806,-0.09157,0.02122,0.21600,2906
+first differences,low-exposure placebo cells,d_ln_estabs,,d_m_unauth_lag,-0.00959,0.02688,-0.06361,0.04443,0.72270,2638
+first differences,low-exposure placebo cells,d_ln_emp,mechanical: U contains QCEW employment,d_U,-0.00757,0.00204,-0.01166,-0.00348,0.00051,2906
+first differences,low-exposure placebo cells,d_ln_emp,,d_U_lag,-0.00083,0.00136,-0.00357,0.00191,0.54488,2638
+first differences,low-exposure placebo cells,d_ln_emp,,d_m_mexnc,0.09690,0.07893,-0.06171,0.25551,0.22544,2906
+first differences,low-exposure placebo cells,d_ln_emp,,d_m_mexnc_lag,0.13441,0.08148,-0.02933,0.29815,0.10542,2638
+first differences,low-exposure placebo cells,d_ln_emp,,d_m_unauth,0.01530,0.02358,-0.03209,0.06269,0.51956,2906
+first differences,low-exposure placebo cells,d_ln_emp,,d_m_unauth_lag,0.03154,0.03354,-0.03587,0.09895,0.35167,2638
+first differences,low-exposure placebo cells,d_ln_wkwage,,d_U,-0.00065,0.00121,-0.00309,0.00179,0.59647,2906
+first differences,low-exposure placebo cells,d_ln_wkwage,,d_U_lag,-0.00029,0.00208,-0.00447,0.00389,0.88834,2638
+first differences,low-exposure placebo cells,d_ln_wkwage,,d_m_mexnc,0.17050,0.14671,-0.12432,0.46532,0.25079,2906
+first differences,low-exposure placebo cells,d_ln_wkwage,,d_m_mexnc_lag,-0.04924,0.08544,-0.22094,0.12246,0.56703,2638
+first differences,low-exposure placebo cells,d_ln_wkwage,,d_m_unauth,0.02699,0.04123,-0.05586,0.10984,0.51579,2906
+first differences,low-exposure placebo cells,d_ln_wkwage,,d_m_unauth_lag,0.04457,0.05312,-0.06218,0.15132,0.40556,2638
+first differences,all cells,d_ln_estabs,,d_U,-0.07843,0.04045,-0.15967,0.00282,0.05817,11922
+first differences,all cells,d_ln_estabs,,d_U_lag,0.01234,0.00564,0.00101,0.02368,0.03345,10787
+first differences,all cells,d_ln_estabs,,d_m_mexnc,0.01052,0.03837,-0.06655,0.08760,0.78504,11922
+first differences,all cells,d_ln_estabs,,d_m_mexnc_lag,0.00527,0.02168,-0.03829,0.04882,0.80911,10787
+first differences,all cells,d_ln_estabs,,d_m_unauth,-0.02861,0.04511,-0.11922,0.06201,0.52890,11922
+first differences,all cells,d_ln_estabs,,d_m_unauth_lag,0.04335,0.06156,-0.08029,0.16699,0.48454,10787
+first differences,all cells,d_ln_emp,mechanical: U contains QCEW employment,d_U,-0.05867,0.02057,-0.09999,-0.01734,0.00631,11922
+first differences,all cells,d_ln_emp,,d_U_lag,0.00476,0.00572,-0.00672,0.01624,0.40885,10787
+first differences,all cells,d_ln_emp,,d_m_mexnc,-0.02654,0.01489,-0.05645,0.00337,0.08083,11922
+first differences,all cells,d_ln_emp,,d_m_mexnc_lag,0.05659,0.02349,0.00941,0.10378,0.01971,10787
+first differences,all cells,d_ln_emp,,d_m_unauth,-0.02135,0.01779,-0.05709,0.01439,0.23591,11922
+first differences,all cells,d_ln_emp,,d_m_unauth_lag,0.04713,0.02552,-0.00413,0.09839,0.07073,10787
+first differences,all cells,d_ln_wkwage,,d_U,0.01436,0.01022,-0.00618,0.03489,0.16639,11922
+first differences,all cells,d_ln_wkwage,,d_U_lag,-0.00327,0.00278,-0.00886,0.00232,0.24609,10787
+first differences,all cells,d_ln_wkwage,,d_m_mexnc,-0.00992,0.00986,-0.02972,0.00988,0.31910,11922
+first differences,all cells,d_ln_wkwage,,d_m_mexnc_lag,-0.00101,0.01346,-0.02805,0.02603,0.94052,10787
+first differences,all cells,d_ln_wkwage,,d_m_unauth,0.01206,0.01455,-0.01716,0.04128,0.41113,11922
+first differences,all cells,d_ln_wkwage,,d_m_unauth_lag,-0.01434,0.01665,-0.04779,0.01911,0.39328,10787
+"first differences, focus interaction",all cells,d_ln_estabs,"difference focus minus other cells, regressor d_U_lag",x_focus,0.05005,0.04017,-0.03063,0.13073,0.21853,10787
+"first differences, focus interaction",all cells,d_ln_estabs,"difference focus minus other cells, regressor d_m_mexnc_lag",x_focus,0.24229,0.21695,-0.19346,0.67805,0.26941,10787
+"first differences, focus interaction",all cells,d_ln_estabs,"difference focus minus other cells, regressor d_m_unauth_lag",x_focus,0.09564,0.06673,-0.03840,0.22968,0.15804,10787
+"first differences, focus interaction",all cells,d_ln_emp,"difference focus minus other cells, regressor d_U_lag",x_focus,0.03754,0.03246,-0.02766,0.10274,0.25297,10787
+"first differences, focus interaction",all cells,d_ln_emp,"difference focus minus other cells, regressor d_m_mexnc_lag",x_focus,0.02748,0.05474,-0.08246,0.13743,0.61783,10787
+"first differences, focus interaction",all cells,d_ln_emp,"difference focus minus other cells, regressor d_m_unauth_lag",x_focus,0.04793,0.04985,-0.05220,0.14806,0.34093,10787
+"first differences, focus interaction",all cells,d_ln_wkwage,"difference focus minus other cells, regressor d_U_lag",x_focus,-0.01047,0.01089,-0.03235,0.01140,0.34083,10787
+"first differences, focus interaction",all cells,d_ln_wkwage,"difference focus minus other cells, regressor d_m_mexnc_lag",x_focus,-0.09279,0.05738,-0.20805,0.02247,0.11217,10787
+"first differences, focus interaction",all cells,d_ln_wkwage,"difference focus minus other cells, regressor d_m_unauth_lag",x_focus,-0.07224,0.03554,-0.14362,-0.00085,0.04742,10787
+long difference 2012-13 to 2022-23,focus cells,dy_estabs,,dU,-0.67828,0.14653,-0.97290,-0.38366,0.00003,220
+long difference 2012-13 to 2022-23,focus cells,dy_estabs,,dm_mexnc,0.23868,0.38021,-0.52579,1.00315,0.53314,220
+long difference 2012-13 to 2022-23,focus cells,dy_estabs,,dm_unauth,0.37049,0.43653,-0.50721,1.24819,0.40025,220
+long difference 2012-13 to 2022-23,focus cells,dy_emp,mechanical: U contains QCEW employment,dU,-0.58142,0.09036,-0.76309,-0.39974,0.00000,220
+long difference 2012-13 to 2022-23,focus cells,dy_emp,,dm_mexnc,0.61434,0.31076,-0.01048,1.23915,0.05381,220
+long difference 2012-13 to 2022-23,focus cells,dy_emp,,dm_unauth,0.46108,0.37647,-0.29587,1.21802,0.22665,220
+long difference 2012-13 to 2022-23,focus cells,dy_wkwage,,dU,0.20824,0.05977,0.08806,0.32843,0.00107,220
+long difference 2012-13 to 2022-23,focus cells,dy_wkwage,,dm_mexnc,-0.57979,0.13371,-0.84863,-0.31096,0.00007,220
+long difference 2012-13 to 2022-23,focus cells,dy_wkwage,,dm_unauth,-0.29148,0.10060,-0.49374,-0.08922,0.00565,220
+long difference 2012-13 to 2022-23,low-exposure placebo cells,dy_estabs,,dU,-0.05770,0.04011,-0.13831,0.02291,0.15664,238
+long difference 2012-13 to 2022-23,low-exposure placebo cells,dy_estabs,,dm_mexnc,0.51329,1.78713,-3.07809,4.10467,0.77516,238
+long difference 2012-13 to 2022-23,low-exposure placebo cells,dy_estabs,,dm_unauth,0.06791,0.95568,-1.85260,1.98841,0.94364,238
+long difference 2012-13 to 2022-23,low-exposure placebo cells,dy_emp,mechanical: U contains QCEW employment,dU,-0.10636,0.04708,-0.20096,-0.01175,0.02835,238
+long difference 2012-13 to 2022-23,low-exposure placebo cells,dy_emp,,dm_mexnc,-0.85583,2.39290,-5.66455,3.95288,0.72214,238
+long difference 2012-13 to 2022-23,low-exposure placebo cells,dy_emp,,dm_unauth,2.41430,0.98916,0.42650,4.40209,0.01832,238
+long difference 2012-13 to 2022-23,low-exposure placebo cells,dy_wkwage,,dU,-0.01760,0.01147,-0.04065,0.00544,0.13118,238
+long difference 2012-13 to 2022-23,low-exposure placebo cells,dy_wkwage,,dm_mexnc,-1.55555,1.26033,-4.08827,0.97717,0.22300,238
+long difference 2012-13 to 2022-23,low-exposure placebo cells,dy_wkwage,,dm_unauth,0.66272,0.27722,0.10563,1.21981,0.02071,238
+long difference 2012-13 to 2022-23,all cells,dy_estabs,,dU,-0.37314,0.16888,-0.71235,-0.03393,0.03175,969
+long difference 2012-13 to 2022-23,all cells,dy_estabs,,dm_mexnc,0.24247,0.65997,-1.08312,1.56806,0.71488,969
+long difference 2012-13 to 2022-23,all cells,dy_estabs,,dm_unauth,0.26229,0.35920,-0.45919,0.98377,0.46868,969
+long difference 2012-13 to 2022-23,all cells,dy_emp,mechanical: U contains QCEW employment,dU,-0.37812,0.09137,-0.56163,-0.19460,0.00013,969
+long difference 2012-13 to 2022-23,all cells,dy_emp,,dm_mexnc,0.75639,0.18425,0.38631,1.12647,0.00015,969
+long difference 2012-13 to 2022-23,all cells,dy_emp,,dm_unauth,0.63544,0.12793,0.37850,0.89239,0.00001,969
+long difference 2012-13 to 2022-23,all cells,dy_wkwage,,dU,0.08678,0.05881,-0.03135,0.20491,0.14634,969
+long difference 2012-13 to 2022-23,all cells,dy_wkwage,,dm_mexnc,-0.63914,0.24404,-1.12931,-0.14897,0.01164,969
+long difference 2012-13 to 2022-23,all cells,dy_wkwage,,dm_unauth,-0.15044,0.09166,-0.33455,0.03367,0.10703,969
+"first differences, detail series (year FE only)",q238,d_ln_estabs,,d_U_lag,-0.01482,0.01295,-0.04083,0.01119,0.25780,557
+"first differences, detail series net of the state's low-exposure cells",q238,d_ln_estabs,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,-0.00375,0.01039,-0.02462,0.01712,0.71964,557
+"first differences, detail series (year FE only)",q238,d_ln_estabs,,d_m_mexnc_lag,-0.18930,0.05564,-0.30106,-0.07754,0.00132,557
+"first differences, detail series net of the state's low-exposure cells",q238,d_ln_estabs,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,-0.02399,0.03730,-0.09891,0.05092,0.52298,557
+"first differences, detail series (year FE only)",q238,d_ln_emp,,d_U_lag,-0.01362,0.01781,-0.04939,0.02215,0.44797,557
+"first differences, detail series net of the state's low-exposure cells",q238,d_ln_emp,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,-0.01548,0.01711,-0.04985,0.01888,0.36973,557
+"first differences, detail series (year FE only)",q238,d_ln_emp,,d_m_mexnc_lag,-0.06859,0.06759,-0.20435,0.06718,0.31515,557
+"first differences, detail series net of the state's low-exposure cells",q238,d_ln_emp,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,0.08277,0.06972,-0.05726,0.22280,0.24075,557
+"first differences, detail series (year FE only)",q238,d_ln_wkwage,,d_U_lag,-0.01118,0.00685,-0.02494,0.00257,0.10867,557
+"first differences, detail series net of the state's low-exposure cells",q238,d_ln_wkwage,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,0.01012,0.01321,-0.01642,0.03666,0.44747,557
+"first differences, detail series (year FE only)",q238,d_ln_wkwage,,d_m_mexnc_lag,-0.04489,0.03560,-0.11639,0.02661,0.21312,557
+"first differences, detail series net of the state's low-exposure cells",q238,d_ln_wkwage,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,-0.02208,0.04291,-0.10826,0.06411,0.60917,557
+"first differences, detail series (year FE only)",q2381,d_ln_estabs,,d_U_lag,-0.00696,0.01564,-0.03837,0.02444,0.65805,557
+"first differences, detail series net of the state's low-exposure cells",q2381,d_ln_estabs,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,0.00411,0.01405,-0.02411,0.03233,0.77119,557
+"first differences, detail series (year FE only)",q2381,d_ln_estabs,,d_m_mexnc_lag,-0.25812,0.08526,-0.42936,-0.08688,0.00389,557
+"first differences, detail series net of the state's low-exposure cells",q2381,d_ln_estabs,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,-0.09281,0.07601,-0.24548,0.05986,0.22778,557
+"first differences, detail series (year FE only)",q2381,d_ln_emp,,d_U_lag,-0.01452,0.02976,-0.07431,0.04526,0.62773,557
+"first differences, detail series net of the state's low-exposure cells",q2381,d_ln_emp,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,-0.01639,0.02985,-0.07634,0.04357,0.58546,557
+"first differences, detail series (year FE only)",q2381,d_ln_emp,,d_m_mexnc_lag,-0.16118,0.08354,-0.32898,0.00662,0.05937,557
+"first differences, detail series net of the state's low-exposure cells",q2381,d_ln_emp,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,-0.00983,0.07568,-0.16184,0.14218,0.89721,557
+"first differences, detail series (year FE only)",q2381,d_ln_wkwage,,d_U_lag,-0.00164,0.01296,-0.02767,0.02439,0.89992,557
+"first differences, detail series net of the state's low-exposure cells",q2381,d_ln_wkwage,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,0.01966,0.01962,-0.01975,0.05908,0.32110,557
+"first differences, detail series (year FE only)",q2381,d_ln_wkwage,,d_m_mexnc_lag,-0.02873,0.07518,-0.17974,0.12229,0.70402,557
+"first differences, detail series net of the state's low-exposure cells",q2381,d_ln_wkwage,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,-0.00591,0.07638,-0.15933,0.14751,0.93861,557
+"first differences, detail series (year FE only)",q2382,d_ln_estabs,,d_U_lag,-0.01330,0.01312,-0.03966,0.01306,0.31564,557
+"first differences, detail series net of the state's low-exposure cells",q2382,d_ln_estabs,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,-0.00223,0.01254,-0.02742,0.02296,0.85942,557
+"first differences, detail series (year FE only)",q2382,d_ln_estabs,,d_m_mexnc_lag,-0.16848,0.05624,-0.28145,-0.05551,0.00425,557
+"first differences, detail series net of the state's low-exposure cells",q2382,d_ln_estabs,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,-0.00317,0.04711,-0.09779,0.09145,0.94662,557
+"first differences, detail series (year FE only)",q2382,d_ln_emp,,d_U_lag,-0.01505,0.01954,-0.05430,0.02420,0.44475,557
+"first differences, detail series net of the state's low-exposure cells",q2382,d_ln_emp,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,-0.01692,0.01881,-0.05469,0.02086,0.37271,557
+"first differences, detail series (year FE only)",q2382,d_ln_emp,,d_m_mexnc_lag,-0.06203,0.06990,-0.20242,0.07837,0.37911,557
+"first differences, detail series net of the state's low-exposure cells",q2382,d_ln_emp,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,0.08933,0.07113,-0.05354,0.23219,0.21500,557
+"first differences, detail series (year FE only)",q2382,d_ln_wkwage,,d_U_lag,-0.02411,0.00926,-0.04271,-0.00552,0.01206,557
+"first differences, detail series net of the state's low-exposure cells",q2382,d_ln_wkwage,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,-0.00281,0.01373,-0.03038,0.02476,0.83851,557
+"first differences, detail series (year FE only)",q2382,d_ln_wkwage,,d_m_mexnc_lag,-0.04813,0.03333,-0.11507,0.01881,0.15496,557
+"first differences, detail series net of the state's low-exposure cells",q2382,d_ln_wkwage,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,-0.02532,0.04262,-0.11092,0.06029,0.55519,557
+"first differences, detail series (year FE only)",q2383,d_ln_estabs,,d_U_lag,-0.02272,0.01643,-0.05573,0.01029,0.17294,557
+"first differences, detail series net of the state's low-exposure cells",q2383,d_ln_estabs,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,-0.01165,0.01349,-0.03875,0.01545,0.39208,557
+"first differences, detail series (year FE only)",q2383,d_ln_estabs,,d_m_mexnc_lag,-0.23644,0.07371,-0.38449,-0.08838,0.00234,557
+"first differences, detail series net of the state's low-exposure cells",q2383,d_ln_estabs,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,-0.07113,0.05165,-0.17487,0.03261,0.17458,557
+"first differences, detail series (year FE only)",q2383,d_ln_emp,,d_U_lag,0.01878,0.03442,-0.05035,0.08792,0.58772,557
+"first differences, detail series net of the state's low-exposure cells",q2383,d_ln_emp,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,0.01692,0.03310,-0.04957,0.08341,0.61153,557
+"first differences, detail series (year FE only)",q2383,d_ln_emp,,d_m_mexnc_lag,0.02304,0.11335,-0.20463,0.25071,0.83976,557
+"first differences, detail series net of the state's low-exposure cells",q2383,d_ln_emp,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,0.17439,0.12414,-0.07495,0.42373,0.16625,557
+"first differences, detail series (year FE only)",q2383,d_ln_wkwage,,d_U_lag,-0.00985,0.01039,-0.03072,0.01101,0.34738,557
+"first differences, detail series net of the state's low-exposure cells",q2383,d_ln_wkwage,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,0.01145,0.01514,-0.01896,0.04186,0.45309,557
+"first differences, detail series (year FE only)",q2383,d_ln_wkwage,,d_m_mexnc_lag,-0.00335,0.04815,-0.10006,0.09336,0.94477,557
+"first differences, detail series net of the state's low-exposure cells",q2383,d_ln_wkwage,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,0.01946,0.05087,-0.08271,0.12163,0.70364,557
+"first differences, detail series (year FE only)",q2389,d_ln_estabs,,d_U_lag,-0.00432,0.01646,-0.03738,0.02873,0.79387,557
+"first differences, detail series net of the state's low-exposure cells",q2389,d_ln_estabs,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,0.00675,0.01290,-0.01916,0.03266,0.60325,557
+"first differences, detail series (year FE only)",q2389,d_ln_estabs,,d_m_mexnc_lag,-0.05313,0.06923,-0.19219,0.08593,0.44643,557
+"first differences, detail series net of the state's low-exposure cells",q2389,d_ln_estabs,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,0.11218,0.06043,-0.00921,0.23356,0.06933,557
+"first differences, detail series (year FE only)",q2389,d_ln_emp,,d_U_lag,-0.02481,0.02312,-0.07124,0.02163,0.28839,557
+"first differences, detail series net of the state's low-exposure cells",q2389,d_ln_emp,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,-0.02667,0.02323,-0.07334,0.01999,0.25643,557
+"first differences, detail series (year FE only)",q2389,d_ln_emp,,d_m_mexnc_lag,-0.01576,0.06671,-0.14976,0.11824,0.81423,557
+"first differences, detail series net of the state's low-exposure cells",q2389,d_ln_emp,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,0.13559,0.07274,-0.01051,0.28170,0.06819,557
+"first differences, detail series (year FE only)",q2389,d_ln_wkwage,,d_U_lag,0.02192,0.01197,-0.00212,0.04595,0.07300,557
+"first differences, detail series net of the state's low-exposure cells",q2389,d_ln_wkwage,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,0.04322,0.01653,0.01002,0.07642,0.01178,557
+"first differences, detail series (year FE only)",q2389,d_ln_wkwage,,d_m_mexnc_lag,-0.10551,0.06052,-0.22706,0.01604,0.08740,557
+"first differences, detail series net of the state's low-exposure cells",q2389,d_ln_wkwage,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,-0.08269,0.06729,-0.21786,0.05247,0.22488,557
+"first differences, detail series (year FE only)",q561720,d_ln_estabs,,d_U_lag,-0.00571,0.01059,-0.02722,0.01580,0.59331,368
+"first differences, detail series net of the state's low-exposure cells",q561720,d_ln_estabs,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,0.00149,0.00811,-0.01497,0.01796,0.85503,368
+"first differences, detail series (year FE only)",q561720,d_ln_estabs,,d_m_mexnc_lag,-0.06166,0.02961,-0.12178,-0.00155,0.04468,368
+"first differences, detail series net of the state's low-exposure cells",q561720,d_ln_estabs,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,-0.02417,0.02535,-0.07564,0.02729,0.34688,368
+"first differences, detail series (year FE only)",q561720,d_ln_emp,,d_U_lag,-0.00270,0.00359,-0.00999,0.00459,0.45698,368
+"first differences, detail series net of the state's low-exposure cells",q561720,d_ln_emp,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,-0.00189,0.00400,-0.01002,0.00623,0.63908,368
+"first differences, detail series (year FE only)",q561720,d_ln_emp,,d_m_mexnc_lag,-0.01700,0.02572,-0.06922,0.03521,0.51294,368
+"first differences, detail series net of the state's low-exposure cells",q561720,d_ln_emp,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,-0.00899,0.02681,-0.06341,0.04543,0.73926,368
+"first differences, detail series (year FE only)",q561720,d_ln_wkwage,,d_U_lag,-0.00080,0.00342,-0.00775,0.00615,0.81665,368
+"first differences, detail series net of the state's low-exposure cells",q561720,d_ln_wkwage,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,-0.00382,0.00462,-0.01320,0.00556,0.41373,368
+"first differences, detail series (year FE only)",q561720,d_ln_wkwage,,d_m_mexnc_lag,-0.02065,0.01246,-0.04594,0.00464,0.10630,368
+"first differences, detail series net of the state's low-exposure cells",q561720,d_ln_wkwage,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,-0.00008,0.01398,-0.02847,0.02830,0.99542,368
+"first differences, detail series (year FE only)",q7225,d_ln_estabs,,d_U_lag,0.00283,0.01008,-0.01741,0.02307,0.78000,552
+"first differences, detail series net of the state's low-exposure cells",q7225,d_ln_estabs,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,-0.00813,0.00927,-0.02675,0.01048,0.38447,552
+"first differences, detail series (year FE only)",q7225,d_ln_estabs,,d_m_mexnc_lag,-0.11954,0.10305,-0.32651,0.08744,0.25154,552
+"first differences, detail series net of the state's low-exposure cells",q7225,d_ln_estabs,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,-0.04093,0.07241,-0.18638,0.10451,0.57440,552
+"first differences, detail series (year FE only)",q7225,d_ln_emp,,d_U_lag,-0.00902,0.01296,-0.03504,0.01700,0.48960,552
+"first differences, detail series net of the state's low-exposure cells",q7225,d_ln_emp,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,-0.00135,0.01389,-0.02924,0.02654,0.92272,552
+"first differences, detail series (year FE only)",q7225,d_ln_emp,,d_m_mexnc_lag,-0.11000,0.07462,-0.25987,0.03987,0.14670,552
+"first differences, detail series net of the state's low-exposure cells",q7225,d_ln_emp,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,-0.00341,0.05094,-0.10573,0.09891,0.94692,552
+"first differences, detail series (year FE only)",q7225,d_ln_wkwage,,d_U_lag,0.01175,0.00620,-0.00071,0.02421,0.06397,552
+"first differences, detail series net of the state's low-exposure cells",q7225,d_ln_wkwage,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_U_lag,-0.00549,0.01192,-0.02943,0.01845,0.64718,552
+"first differences, detail series (year FE only)",q7225,d_ln_wkwage,,d_m_mexnc_lag,0.00652,0.05885,-0.11169,0.12472,0.91228,552
+"first differences, detail series net of the state's low-exposure cells",q7225,d_ln_wkwage,outcome minus the weighted mean change of the state's low-exposure cells that year; added after the year-FE results,d_m_mexnc_lag,0.01083,0.06523,-0.12020,0.14186,0.86880,552

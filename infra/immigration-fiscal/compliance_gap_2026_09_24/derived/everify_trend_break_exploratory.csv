@@ -1,0 +1,10 @@
+cells,outcome,pre_trend,pre_trend_se,level_shift,level_shift_se,slope_change,slope_change_se,n
+focus vs low-exposure cells,U,0.00919,0.00447,-0.01777,0.01469,-0.00666,0.00921,22474
+focus vs low-exposure cells,ln_estabs,-0.02171,0.00552,0.02461,0.00684,0.01618,0.00746,22474
+focus vs low-exposure cells,ln_emp,-0.01199,0.00700,-0.02543,0.03455,0.00154,0.01215,22474
+focus vs low-exposure cells,ln_wkwage,0.00677,0.00391,-0.00781,0.00331,-0.00982,0.00401,22474
+focus vs low-exposure cells,m_mexnc,0.00914,0.00377,-0.02465,0.01480,-0.01377,0.00487,22474
+focus vs low-exposure cells,se_mexnc_per_ws,0.00085,0.00083,0.00024,0.00298,-0.00065,0.00101,22474
+detail series vs low-exposure cells,ln_estabs,-0.03411,0.00709,0.02276,0.00970,0.02395,0.01106,27708
+detail series vs low-exposure cells,ln_emp,-0.02695,0.01102,-0.05936,0.05215,0.00946,0.01849,27708
+detail series vs low-exposure cells,ln_wkwage,0.00651,0.00448,-0.01003,0.00569,-0.00154,0.00474,27708

@@ -1,0 +1,329 @@
+file,line,status,matched_file,candidates,quote
+LIT_COMPLIANCE_COSTS.md,19,found,irs_taxgap_page.txt,irs_taxgap_page.txt,Fall of calendar year 2025—new tax gap estimates and projections (delayed)
+LIT_COMPLIANCE_COSTS.md,20,found,irs_taxgap_page.txt,irs_taxgap_page.txt,Page Last Reviewed or Updated: 14-Apr-2026
+LIT_COMPLIANCE_COSTS.md,21,found,irs_p5869.txt,irs_p5869.txt,"reporting compliance behavior has not changed since the TY 2014–2016 time frame. However, the TY"
+LIT_COMPLIANCE_COSTS.md,24,found,irs_p5784.txt,irs_p5784.txt,"estimate, TY 2016 is only reflected for certain credits and other taxes. All other lines for TY 2014-2016 reflect TY"
+LIT_COMPLIANCE_COSTS.md,25,found,irs_p1415.txt,irs_p1415.txt,Program (NRP) Employment Tax Study for TYs 2008-2010. The NRP data are used to estimate compliance
+LIT_COMPLIANCE_COSTS.md,26,found,irs_p1415.txt,irs_p1415.txt,"workers are also excluded from the estimates due to lack of compliance data. Therefore, the estimate of the"
+LIT_COMPLIANCE_COSTS.md,27,found,irs_p1415.txt,irs_p1415.txt,"Because no new NRP employment tax study has been undertaken, no new data are available."
+LIT_COMPLIANCE_COSTS.md,43,found,irs_p1415.txt,irs_p1415.txt,"Wages, salaries, tips                                                            $7              1%                  2%                      1%"
+LIT_COMPLIANCE_COSTS.md,44,found,irs_p1415.txt,irs_p1415.txt,Items Subject to Substantial Information Reporting                                $15              3%                  5%                      6%
+LIT_COMPLIANCE_COSTS.md,45,found,irs_p1415.txt,irs_p1415.txt,Items Subject to Some Information Reporting                                       $43              9%                 15%                     15%
+LIT_COMPLIANCE_COSTS.md,46,found,irs_p1415.txt,irs_p1415.txt,Items Subject to Little or No Information Reporting                            $126              25%                 45%                       55%
+LIT_COMPLIANCE_COSTS.md,47,found,irs_p1415.txt,irs_p1415.txt,Nonfarm proprietor income                                                     $80              16%                 29%                      57%
+LIT_COMPLIANCE_COSTS.md,48,found,irs_p1415.txt,irs_p1415.txt,Farm income                                                                    $5               1%                  2%                      64%
+LIT_COMPLIANCE_COSTS.md,49,found,irs_p1415.txt,irs_p1415.txt,Rents & royalties                                                             $21               4%                  7%                      53%
+LIT_COMPLIANCE_COSTS.md,50,found,irs_p1415.txt,irs_p1415.txt,The net misreporting percentage is the net misreported amount divided by the sum of the absolute values of the amounts that should have been
+LIT_COMPLIANCE_COSTS.md,51,found,irs_p1415.txt,irs_p1415.txt,substantial information reporting and withholding is 1 percent; for income amounts subject to substantial
+LIT_COMPLIANCE_COSTS.md,52,found,irs_p1415.txt,irs_p1415.txt,"information reporting but not withholding, the NMP is 6 percent; and for income amounts subject to little"
+LIT_COMPLIANCE_COSTS.md,53,found,irs_p1415.txt,irs_p1415.txt,"or no information reporting, such as nonfarm proprietor income, the NMP is 55 percent."
+LIT_COMPLIANCE_COSTS.md,54,found,irs_p5784.txt,irs_p5784.txt,Little or No Information Reporting                                   55%           55%          63%
+LIT_COMPLIANCE_COSTS.md,55,found,irs_p5784.txt,irs_p5784.txt,Nonfarm proprietor income                                              $80                  29%                 57%
+LIT_COMPLIANCE_COSTS.md,56,found,irs_p5784.txt,irs_p5784.txt,Self-Employment Tax3                                     $ 53               50%
+LIT_COMPLIANCE_COSTS.md,59,found,irs_p5869.txt,irs_p5869.txt,percent compared to 55 percent for
+LIT_COMPLIANCE_COSTS.md,60,found,irs_p5869.txt,irs_p5869.txt,"non-farm proprietor income, which is"
+LIT_COMPLIANCE_COSTS.md,75,found,irs_p1415.txt,irs_p1415.txt,"2016 is a combined $29 billion, with $28 billion from underreported FICA taxes and $1 billion from"
+LIT_COMPLIANCE_COSTS.md,76,found,irs_p1415.txt,irs_p1415.txt,employment tax underreporting tax gap estimate is $53 billion.
+LIT_COMPLIANCE_COSTS.md,77,found,irs_p1415.txt,irs_p1415.txt,Employment Tax                                91%                  91%                  92%                  34%                  34%               34%
+LIT_COMPLIANCE_COSTS.md,78,found,irs_p5869.txt,irs_p5869.txt,Employment Tax                                                    $93           16%           $105           15%           $111           16%
+LIT_COMPLIANCE_COSTS.md,79,found,irs_p5869.txt,irs_p5869.txt,Self-Employment Tax                                             $59           10%            $68           10%           $71            10%
+LIT_COMPLIANCE_COSTS.md,80,found,irs_p5869.txt,irs_p5869.txt,FICA and FUTA Tax                                               $34            6%            $37           5%            $40             6%
+LIT_COMPLIANCE_COSTS.md,81,found,irs_p5869.txt,irs_p5869.txt,Items Subject to Little or No Information Reporting                                  $179      26%            47%
+LIT_COMPLIANCE_COSTS.md,82,found,irs_p5869.txt,irs_p5869.txt,Nonfarm proprietor income                                                         $117      17%            31%
+LIT_COMPLIANCE_COSTS.md,83,found,irs_p5869.txt,irs_p5869.txt,Employment Tax                     92%             92%           92%      92%            35%            35%        31%      34%
+LIT_COMPLIANCE_COSTS.md,87,missing,,irs_p1415.txt irs_p5784.txt irs_p5869.txt irs_taxgap_page.txt,", which is correct, and the 57% as "
+LIT_COMPLIANCE_COSTS.md,96,missing,,whd_all_acts.txt,All Acts: WHD Enforcement Statistics
+LIT_COMPLIANCE_COSTS.md,97,found,whd_lwhv_industries.txt,whd_lwhv_industries.txt,"Low Wage, High Violation Industries"
+LIT_COMPLIANCE_COSTS.md,98,found,whd_data_fy2025.txt,whd_data_fy2025.txt,Fiscal Year Data for WHD
+LIT_COMPLIANCE_COSTS.md,102,found,whd_data_fy2025.txt,whd_data_fy2025.txt,WHD investigations often involve the concurrent application of multiple laws on a single compliance action
+LIT_COMPLIANCE_COSTS.md,114,found,whd_all_acts.txt,whd_all_acts.txt,| Category | FY 2025 | FY 2024 | FY 2023 | FY 2022 | FY 2021 | FY 2020 | FY 2019 | FY 2018 | FY 2017 | FY 2016 | FY 2015 | FY 2014 | FY 2013 |
+LIT_COMPLIANCE_COSTS.md,115,found,whd_all_acts.txt,whd_all_acts.txt,"| Concluded Compliance Actions | 16,924 | 17,300 | 20,215 | 20,422 | 24,746 | 26,096 | 26,876 | 28,397 | 28,771 | 28,589 | 27,914 | 29,483 | 33,146 |"
+LIT_COMPLIANCE_COSTS.md,116,found,whd_all_acts.txt,whd_all_acts.txt,"| Back Wages | $259,294,764 | $202,676,115 | $212,325,391 | $213,161,638 | $234,362,486 | $257,829,604 | $322,490,774 | $304,914,114 | $270,403,906 | $266,566,178 | $246,780,891 | $240,831,606 | $249,954,412 |"
+LIT_COMPLIANCE_COSTS.md,117,found,whd_all_acts.txt,whd_all_acts.txt,"| Employees Receiving Back Wages | 176,957 | 151,989 | 163,768 | 152,970 | 193,796 | 229,934 | 313,941 | 265,027 | 240,608 | 283,677 | 240,340 | 270,570 | 269,250 |"
+LIT_COMPLIANCE_COSTS.md,118,found,whd_all_acts.txt,whd_all_acts.txt,"| Civil Money Penalties Assessed | $58,699,936 | $35,920,310 | $25,834,687 | $21,613,896 | $20,399,042 | $17,871,969 | $19,522,169 | $15,741,194 | $13,810,028 | $14,761,891 | $12,231,179 | $12,416,855 | $16,169,087 |"
+LIT_COMPLIANCE_COSTS.md,119,found,whd_data_fy2025.txt,whd_data_fy2025.txt,"WHD recovered more than $259 million in back wages for 176,957 employees nationwide in fiscal year 2025."
+LIT_COMPLIANCE_COSTS.md,120,found,whd_data_fy2025.txt,whd_data_fy2025.txt,"The impact of our wage recoveries averaged $1,465 per worker."
+LIT_COMPLIANCE_COSTS.md,134,found,whd_lwhv_industries.txt,whd_lwhv_industries.txt,"| Construction | 1,802 | $43,420,356 | 18,340 | $4,819,567 | 1,966 | $32,092,812 | 18,035 | $1,843,087 | 2,134 | $35,558,598 | 17,944 | $1,784,916 |"
+LIT_COMPLIANCE_COSTS.md,135,found,whd_lwhv_industries.txt,whd_lwhv_industries.txt,"| Food Services | 4,088 | $42,663,929 | 30,029 | $23,057,822 | 3,827 | $35,141,615 | 27,537 | $13,612,532 | 4,095 | $29,648,592 | 25,908 | $6,121,334 |"
+LIT_COMPLIANCE_COSTS.md,136,found,whd_lwhv_industries.txt,whd_lwhv_industries.txt,"| Janitorial Services | 299 | $4,715,195 | 2,231 | $1,526,683 | 325 | $3,473,597 | 3,612 | $464,161 | 408 | $3,755,640 | 5,066 | $1,620,032 |"
+LIT_COMPLIANCE_COSTS.md,137,found,whd_lwhv_industries.txt,whd_lwhv_industries.txt,"| Landscaping Services | 207 | $3,115,696 | 1,595 | $451,922 | 197 | $4,014,501 | 2,142 | $678,358 | 207 | $3,063,867 | 1,894 | $840,388 |"
+LIT_COMPLIANCE_COSTS.md,138,found,whd_lwhv_industries.txt,whd_lwhv_industries.txt,"| Agriculture | 649 | $6,830,766 | 8,602 | $8,309,943 | 659 | $6,871,957 | 9,581 | $7,740,266 | 831 | $6,892,220 | 7,341 | $6,615,582 |"
+LIT_COMPLIANCE_COSTS.md,140,found,whd_all_acts.txt,whd_all_acts.txt whd_data_fy2025.txt whd_lwhv_industries.txt,Concluded Compliance Actions
+LIT_COMPLIANCE_COSTS.md,151,found,iceres_2025_misclassification_brief.txt,iceres_2025_misclassification_brief.txt,"Worker Misclassification Disadvantages Honest, Law-Abiding Contractors: A Project-Based Analysis"
+LIT_COMPLIANCE_COSTS.md,153,missing,,iceres_2025_misclassification_brief.txt,"Ormiston, Belman, Hinkel + a professional cost estimator"
+LIT_COMPLIANCE_COSTS.md,154,found,iceres_2025_misclassification_brief.txt,iceres_2025_misclassification_brief.txt,"Dale Belman, Michigan State University"
+LIT_COMPLIANCE_COSTS.md,155,found,iceres_2025_misclassification_brief.txt,iceres_2025_misclassification_brief.txt,"Cihan Bilginsoy, University of Utah"
+LIT_COMPLIANCE_COSTS.md,168,found,iceres_2025_misclassification_brief.txt,iceres_2025_misclassification_brief.txt,"estimated that the project would cost $13,449,363 if completed by non-union contractors"
+LIT_COMPLIANCE_COSTS.md,169,found,iceres_2025_misclassification_brief.txt,iceres_2025_misclassification_brief.txt,"project would cost $12,795,020 if completed by non-union contractors that were illegally"
+LIT_COMPLIANCE_COSTS.md,173,found,iceres_2025_misclassification_brief.txt,iceres_2025_misclassification_brief.txt,"misclassifying their entire workforce, thus evading their legal responsibilities to provide"
+LIT_COMPLIANCE_COSTS.md,174,found,iceres_2025_misclassification_brief.txt,iceres_2025_misclassification_brief.txt,workers compensation insurance and the employer share of Social Security and Medicare.
+LIT_COMPLIANCE_COSTS.md,175,found,iceres_2025_misclassification_brief.txt,iceres_2025_misclassification_brief.txt,theft which extends beyond tax evasion and is more common on projects where workers are
+LIT_COMPLIANCE_COSTS.md,182,found,iceres_2025_misclassification_brief.txt,iceres_2025_misclassification_brief.txt,"research, however, is that the data-building methodology applied by RSMeans substantially"
+LIT_COMPLIANCE_COSTS.md,192,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,"In 2008, we conducted a landmark survey of 4,387 workers in low-wage industries in the three largest"
+LIT_COMPLIANCE_COSTS.md,193,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,"wage industries in the three cities—a population of about 1.64 million workers, or 15 percent of the"
+LIT_COMPLIANCE_COSTS.md,194,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Nativity and legal status    U.S.-born citizen                                                        30.0
+LIT_COMPLIANCE_COSTS.md,195,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Foreign-born authorized                                                   31.2
+LIT_COMPLIANCE_COSTS.md,196,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Foreign-born unauthorized                                                38.8
+LIT_COMPLIANCE_COSTS.md,207,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Fully 26 percent of workers in our sample were paid less than the legally required minimum wage
+LIT_COMPLIANCE_COSTS.md,208,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,"those, 76 percent were not paid the legally required overtime rate by their employers."
+LIT_COMPLIANCE_COSTS.md,209,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,"violation in the previous work week. The average worker lost $51, out of average weekly earnings"
+LIT_COMPLIANCE_COSTS.md,210,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,"of $339. Assuming a full-time, full-year work schedule, we estimate that these workers lost an"
+LIT_COMPLIANCE_COSTS.md,211,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,translates into wage theft of 15 percent of earnings.
+LIT_COMPLIANCE_COSTS.md,213,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,More than two-thirds (68 percent) of our sample experienced at least one pay-related violation
+LIT_COMPLIANCE_COSTS.md,216,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,All respondents                                                                         25.9                     15.6                     31.1
+LIT_COMPLIANCE_COSTS.md,217,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Legal status                    Authorized                                                                                                21.3
+LIT_COMPLIANCE_COSTS.md,218,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Unauthorized                                                                                              37.1
+LIT_COMPLIANCE_COSTS.md,219,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Legal status                         Authorized                                                                                         67.2
+LIT_COMPLIANCE_COSTS.md,220,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Unauthorized                                                                                       84.9
+LIT_COMPLIANCE_COSTS.md,221,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Legal status                         Authorized                                                                                                   68.9
+LIT_COMPLIANCE_COSTS.md,222,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Unauthorized                                                                                                 76.3
+LIT_COMPLIANCE_COSTS.md,223,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,especially among unauthorized immigrants: nearly half (47 percent) of female unauthorized immigrants
+LIT_COMPLIANCE_COSTS.md,236,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Apparel & textile manufacturing                                                              42.6%
+LIT_COMPLIANCE_COSTS.md,237,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Private households                                                             41.5%
+LIT_COMPLIANCE_COSTS.md,238,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,"Security, building & grounds services                                   22.3%"
+LIT_COMPLIANCE_COSTS.md,239,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Restaurants & hotels                               18.2%
+LIT_COMPLIANCE_COSTS.md,240,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Residential construction                       12.7%
+LIT_COMPLIANCE_COSTS.md,243,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Nor are these abuses limited to unauthorized immigrants or other especially vulnerable workers.
+LIT_COMPLIANCE_COSTS.md,250,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,An Empirical Methodology to Estimate the Incidence and Costs of Payroll Fraud in the Construction Industry
+LIT_COMPLIANCE_COSTS.md,253,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,"In an average month of 2017, between 12.4% and 20.5% of the construction industry"
+LIT_COMPLIANCE_COSTS.md,254,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,"states and regions. Overall, these results suggest that between 1.30 and 2.16 million"
+LIT_COMPLIANCE_COSTS.md,255,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,"10,494,616      3,367,616       1,299,900          12.4%"
+LIT_COMPLIANCE_COSTS.md,256,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,"IRS (2016)                          10,494,616      3,367,616       2,155,274          20.5%"
+LIT_COMPLIANCE_COSTS.md,271,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,"If Workers Hired Legally                                $49,928.9       $59,092.6       $68,247.0"
+LIT_COMPLIANCE_COSTS.md,272,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,"Workers Compensation Fund Shortfall                      $1,738.1        $2,027.7        $2,317.4"
+LIT_COMPLIANCE_COSTS.md,273,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,Unemployment Insurance Fund Shortfall                     $701.4          $717.3          $725.1
+LIT_COMPLIANCE_COSTS.md,274,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,"Employer Share of FICA Offloaded onto Workers            $2,983.3        $3,480.5        $3,977.7"
+LIT_COMPLIANCE_COSTS.md,275,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,"Overtime and Premium Pay Not Received                     $811.1          $946.3         $1,081.5"
+LIT_COMPLIANCE_COSTS.md,276,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,"paid between $38.19 billion and $43.70 billion, savings of $11.74 billion and $6.23 billion,"
+LIT_COMPLIANCE_COSTS.md,291,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,"increased employer access to undocumented labor pools than many parts of the country,"
+LIT_COMPLIANCE_COSTS.md,292,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,"leverage in the labor market (e.g., undocumented laborers). But industry stakeholders have"
+LIT_COMPLIANCE_COSTS.md,293,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,"reported that payroll fraud is prevalent in all parts of the construction sector, including"
+LIT_COMPLIANCE_COSTS.md,294,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,"However, while anecdotal reports are plentiful, there are no known estimates for"
+LIT_COMPLIANCE_COSTS.md,295,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,"Immigration and Informal Labor,"
+LIT_COMPLIANCE_COSTS.md,297,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,Immigration and Informal Labor
+LIT_COMPLIANCE_COSTS.md,317,missing,,bloomberg_2016_whd_stats_excerpt.txt dol_oig_2021_19-21-008-15-001_excerpt.txt gao_08_962t_excerpt.txt gao_21_13_excerpt.txt, (WHD fact sheet via Bloomberg; secondary) | – | 
+LIT_COMPLIANCE_COSTS.md,319,found,gao_21_13_excerpt.txt,gao_21_13_excerpt.txt,"In fiscal year 2019, according to WHD data, 64 percent of FLSA cases were initiated in response to complaints and 36 percent were initiated by WHD."
+LIT_COMPLIANCE_COSTS.md,320,found,gao_21_13_excerpt.txt,gao_21_13_excerpt.txt,"In fiscal years 2010 and 2011, about one in five FLSA cases was directed; from fiscal years 2012 through 2019, about one in three was directed"
+LIT_COMPLIANCE_COSTS.md,321,found,gao_21_13_excerpt.txt,gao_21_13_excerpt.txt,WHD found minimum wage and/or overtime pay violations in 80 percent of FLSA cases concluded in fiscal year 2019.
+LIT_COMPLIANCE_COSTS.md,322,found,gao_21_13_excerpt.txt,gao_21_13_excerpt.txt,"low-wage, high violation industries that employ workers who are unlikely to file wage or overtime complaints, such as food services"
+LIT_COMPLIANCE_COSTS.md,323,found,gao_21_13_excerpt.txt,gao_21_13_excerpt.txt,The percentage of FLSA compliance actions involving the priority industries increased from 75 to 80 percent from fiscal years 2014 through 2019
+LIT_COMPLIANCE_COSTS.md,324,found,gao_21_13_excerpt.txt,gao_21_13_excerpt.txt,the percentage of FLSA compliance actions with no violations declined from about 21 percent to 18 percent from fiscal years 2014 through 2019
+LIT_COMPLIANCE_COSTS.md,325,found,gao_21_13_excerpt.txt,gao_21_13_excerpt.txt,Note: FLSA cases refers to cases closed during a fiscal year in w hich WHD reached a determination on employer compliance w ith the FLSA
+LIT_COMPLIANCE_COSTS.md,326,found,gao_21_13_excerpt.txt,gao_21_13_excerpt.txt,Although the number of WHD investigators decreased by 25 percent from 2010 to 2019
+LIT_COMPLIANCE_COSTS.md,327,found,dol_oig_2021_19-21-008-15-001_excerpt.txt,dol_oig_2021_19-21-008-15-001_excerpt.txt,"Agency-Initiated Complaint-Based Total* FY 2019 10,025 19,127 29,152 FY 2020 7,964 18,333 26,297"
+LIT_COMPLIANCE_COSTS.md,328,found,gao_08_962t_excerpt.txt,gao_08_962t_excerpt.txt,The majority (72 percent) of WHD’s enforcement actions were initiated in response to complaints from workers.
+LIT_COMPLIANCE_COSTS.md,329,found,gao_08_962t_excerpt.txt,gao_08_962t_excerpt.txt,from 28 percent of all actions in 1997 to 24 percent in 2007.
+LIT_COMPLIANCE_COSTS.md,330,found,bloomberg_2016_whd_stats_excerpt.txt,bloomberg_2016_whd_stats_excerpt.txt,"In fiscal year 2015, more than 42% of our investigations were agency-initiated, up from 35% just 6 years ago."
+LIT_COMPLIANCE_COSTS.md,341,found,osha_commonstats.txt,osha_enforcement_summaries.txt osha_commonstats.txt,Commonly Used Statistics
+LIT_COMPLIANCE_COSTS.md,349,found,osha_enforcement_summaries.txt,osha_enforcement_summaries.txt,"In FY 2024, OSHA conducted 34,625 inspections comprising 17,455 unprogrammed and 17,170 programmed inspections."
+LIT_COMPLIANCE_COSTS.md,350,found,osha_enforcement_summaries.txt,osha_enforcement_summaries.txt,"Unprogrammed inspections include those initiated by employee complaints, injuries/fatalities, and referrals."
+LIT_COMPLIANCE_COSTS.md,351,found,osha_enforcement_summaries.txt,osha_enforcement_summaries.txt,"| Total Inspections | 33,393 | 21,710 | 24,333 | 31,820 | 34,221 | 34,625 |"
+LIT_COMPLIANCE_COSTS.md,352,found,osha_enforcement_summaries.txt,osha_enforcement_summaries.txt,"In FY 2023, OSHA conducted 34,221 inspections, including 18,377 (about 54 percent) unprogrammed inspections"
+LIT_COMPLIANCE_COSTS.md,353,found,osha_enforcement_summaries.txt,osha_enforcement_summaries.txt,"In FY 2025, OSHA conducted 30,273 inspections comprising 16,311 unprogrammed and 13,962 programmed inspections."
+LIT_COMPLIANCE_COSTS.md,354,found,osha_commonstats.txt,osha_commonstats.txt,"FY 2024 total federal inspections: 34,696"
+LIT_COMPLIANCE_COSTS.md,355,found,osha_commonstats.txt,osha_commonstats.txt,"approximately 1,850 inspectors responsible for the health and safety of 130 million workers, employed at more than 8 million worksites around the nation"
+LIT_COMPLIANCE_COSTS.md,356,found,osha_commonstats.txt,osha_commonstats.txt,"fiscal year 2024 (October 1, 2023, through September 30, 2024)"
+LIT_COMPLIANCE_COSTS.md,378,missing,,,not limited to unauthorized immigrants
+LIT_COMPLIANCE_COSTS.md,379,found_in_other_file,obe_2020_payroll_fraud_methodology.txt,,prevalent in all parts of the construction sector
+LIT_COMPLIANCE_COSTS.md,383,found_in_other_file,obe_2020_payroll_fraud_methodology.txt,,undocumented laborers
+LIT_COMPLIANCE_COSTS.md,391,missing,,,Employers steal billions from workers' paychecks each year
+LIT_COMPLIANCE_COSTS.md,394,missing,,,several hundred dollars per worker
+LIT_COMPLIANCE_COSTS.md,395,missing,,,Up to 2.1 million U.S. construction workers are illegally misclassified or paid off the books
+LIT_COMPLIANCE_COSTS.md,396,found_in_other_file,bohn_lofstrom_iza6598.txt,,Immigration and Informal Labor
+LIT_COMPLIANCE_COSTS.md,398,missing,,,Improving Workplace Conditions Through Strategic Enforcement
+LIT_FIRMS_EVERIFY.md,6,missing,,,not needing the same scruples
+LIT_FIRMS_EVERIFY.md,12,missing,,ayromloo_nber_w26676.txt," means statute text I fetched and saved under `_cache/papers/statute_*.txt` (official legislature sites for AZ, FL, SC, NC; Justia captures via Exa for MS, AL, TN, LA). Secondary cross-checks are Orrenius and Zavodny's Appendix Table 1 (`orrenius_zavodny_iza7992.txt`, "
+LIT_FIRMS_EVERIFY.md,16,found,statute_az_ars_23-214.txt,statute_az_ars_23-214.txt,"A. After December 31, 2007, every employer, after hiring an employee, shall verify the employment eligibility of the employee through the e-verify program"
+LIT_FIRMS_EVERIFY.md,16,found_in_other_file,orrenius_zavodny_impact_iza2014.txt,statute_az_ars_23-214.txt,Arizona July 2007 January 2008
+LIT_FIRMS_EVERIFY.md,17,found,statute_ms_71-11-3.txt,statute_ms_71-11-3.txt,"private employers with two hundred fifty (250) or more employees shall meet verification requirements not later than July 1, 2008."
+LIT_FIRMS_EVERIFY.md,17,found,statute_ms_71-11-3.txt,statute_ms_71-11-3.txt,"Employers with at least one hundred (100) but less than two hundred fifty (250) employees shall meet verification requirements not later than July 1, 2009."
+LIT_FIRMS_EVERIFY.md,17,found,statute_ms_71-11-3.txt,statute_ms_71-11-3.txt,"Employers with at least thirty (30) but less than one hundred (100) employees shall meet verification requirements not later than July 1, 2010."
+LIT_FIRMS_EVERIFY.md,17,found,statute_ms_71-11-3.txt,statute_ms_71-11-3.txt,"All employers shall meet verification requirements not later than July 1, 2011."
+LIT_FIRMS_EVERIFY.md,17,found_in_other_file,orrenius_zavodny_impact_iza2014.txt,statute_ms_71-11-3.txt,Mississippi March 2008 July 2008 Size phase in
+LIT_FIRMS_EVERIFY.md,18,missing,,statute_sc_code_t41c008.txt,); pure E-Verify mandate 1 Jan 2012 | 2008: no (option); 2012: yes | 
+LIT_FIRMS_EVERIFY.md,18,found,statute_sc_code_t41c008.txt,statute_sc_code_t41c008.txt,"2011 Act No. 69, SECTION 9, eff January 1, 2012."
+LIT_FIRMS_EVERIFY.md,18,found_in_other_file,orrenius_zavodny_impact_iza2014.txt,statute_sc_code_t41c008.txt,South Carolina June 2011 January 2012 Size phase in
+LIT_FIRMS_EVERIFY.md,18,found_in_other_file,bohn_lofstrom_iza6598.txt,statute_sc_code_t41c008.txt,"In South Carolina, employers of all sizes were required to use E-Verify by July"
+LIT_FIRMS_EVERIFY.md,19,missing,,ayromloo_nber_w26676.txt orrenius_zavodny_iza7992.txt statute_al_31-13-15.txt statute_az_ars_23-214.txt statute_fl_448-095.txt statute_la_23-995.txt statute_ms_71-11-3.txt statute_nc_gs_64-26.txt statute_sc_code_t41c008.txt statute_tn_50-1-703.txt, to curl and Exa | OZ: 
+LIT_FIRMS_EVERIFY.md,19,missing,,ayromloo_nber_w26676.txt orrenius_zavodny_iza7992.txt statute_al_31-13-15.txt statute_az_ars_23-214.txt statute_fl_448-095.txt statute_la_23-995.txt statute_ms_71-11-3.txt statute_nc_gs_64-26.txt statute_sc_code_t41c008.txt statute_tn_50-1-703.txt,; Ayromloo: Utah excludes firms 
+LIT_FIRMS_EVERIFY.md,19,found_in_other_file,bohn_lofstrom_iza6598.txt,ayromloo_nber_w26676.txt orrenius_zavodny_iza7992.txt statute_al_31-13-15.txt statute_az_ars_23-214.txt statute_fl_448-095.txt statute_la_23-995.txt statute_ms_71-11-3.txt statute_nc_gs_64-26.txt statute_sc_code_t41c008.txt statute_tn_50-1-703.txt,Utah’s mandate covers all employers with 15 or
+LIT_FIRMS_EVERIFY.md,20,found,statute_al_31-13-15.txt,statute_al_31-13-15.txt,"(b) Effective April 1, 2012, every business entity or employer in this state shall enroll in E-Verify"
+LIT_FIRMS_EVERIFY.md,20,found_in_other_file,orrenius_zavodny_impact_iza2014.txt,statute_al_31-13-15.txt,Alabama June 2011 April 2012 Government contractors only in Jan-
+LIT_FIRMS_EVERIFY.md,21,found,orrenius_zavodny_iza7992.txt,ayromloo_nber_w26676.txt orrenius_zavodny_iza7992.txt statute_al_31-13-15.txt statute_az_ars_23-214.txt statute_fl_448-095.txt statute_la_23-995.txt statute_ms_71-11-3.txt statute_nc_gs_64-26.txt statute_sc_code_t41c008.txt statute_tn_50-1-703.txt,Georgia May 2011 January 2012 Size phase in
+LIT_FIRMS_EVERIFY.md,22,found,statute_nc_gs_64-26.txt,statute_nc_gs_64-26.txt,"(a) Employers Must Use E-Verify. - Each employer, after hiring an employee to work in the United States, shall verify the work authorization of the employee through E-Verify."
+LIT_FIRMS_EVERIFY.md,22,found_in_other_file,orrenius_zavodny_impact_iza2014.txt,statute_nc_gs_64-26.txt,North Carolina June 2011 October 2012 Size phase in
+LIT_FIRMS_EVERIFY.md,23,found,statute_tn_50-1-703.txt,statute_tn_50-1-703.txt,"(i) Request and maintain a copy, pursuant to subdivision (a)(4), of any one (1) of the documents"
+LIT_FIRMS_EVERIFY.md,23,found,statute_tn_50-1-703.txt,statute_tn_50-1-703.txt,"private employers with thirty-five (35) or more full-time equivalent employees, on or after January 1, 2023, shall comply with the requirements in subdivision (a)(1)(B)(ii)"
+LIT_FIRMS_EVERIFY.md,23,found_in_other_file,orrenius_zavodny_iza7992.txt,statute_tn_50-1-703.txt,Tennessee June 2011 January 2012
+LIT_FIRMS_EVERIFY.md,24,found,statute_la_23-995.txt,statute_la_23-995.txt,(1) The citizenship or work authorization status of every employee has been verified by the United States Citizenship and Immigration Services E-Verify system
+LIT_FIRMS_EVERIFY.md,24,found,statute_la_23-995.txt,statute_la_23-995.txt,(2) Each employee has provided a picture identification and one of the following documents of which the employer has retained a copy for his records:
+LIT_FIRMS_EVERIFY.md,25,found,statute_fl_448-095.txt,statute_fl_448-095.txt,"2. Beginning on July 1, 2023, a private employer with 25 or more employees shall use the E-Verify system to verify a new employee’s employment eligibility as required under paragraph (a)."
+LIT_FIRMS_EVERIFY.md,25,found,statute_fl_448-095.txt,statute_fl_448-095.txt,"beginning on July 1, 2024, if the Department of Commerce determines that an employer failed to use the E-Verify system"
+LIT_FIRMS_EVERIFY.md,28,found,orrenius_zavodny_iza7992.txt,ayromloo_nber_w26676.txt orrenius_zavodny_iza7992.txt statute_al_31-13-15.txt statute_az_ars_23-214.txt statute_fl_448-095.txt statute_la_23-995.txt statute_ms_71-11-3.txt statute_nc_gs_64-26.txt statute_sc_code_t41c008.txt statute_tn_50-1-703.txt,"Only laws that require use of E-Verify and do not offer another option, such as certifying or affirming employment eligibility, are listed here."
+LIT_FIRMS_EVERIFY.md,29,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,The coverage rate rises from zero in 2007 to 12.3 percent in 2015.
+LIT_FIRMS_EVERIFY.md,30,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,mandate passage sharply increases E-Verify usage by larger firms while smaller firms experience a more marginal increase in usage.
+LIT_FIRMS_EVERIFY.md,31,missing,,ayromloo_nber_w26676.txt orrenius_zavodny_iza7992.txt statute_al_31-13-15.txt statute_az_ars_23-214.txt statute_fl_448-095.txt statute_la_23-995.txt statute_ms_71-11-3.txt statute_nc_gs_64-26.txt statute_sc_code_t41c008.txt statute_tn_50-1-703.txt,State E-Verify Action
+LIT_FIRMS_EVERIFY.md,41,found,bhq_iza3936.txt,bhq_iza3936.txt,The Employer File provides an almost complete census of firms.
+LIT_FIRMS_EVERIFY.md,41,found,bhq_iza3936.txt,bhq_iza3936.txt,"Certain jobs in agriculture, domestic services, and non-profit organizations are excluded from UI coverage"
+LIT_FIRMS_EVERIFY.md,42,found,bhq_iza3936.txt,bhq_iza3936.txt,analysis below takes the conservative tack by considering as undocumented only those workers whose SSNs are classified as invalid because the area number is too high or the group number is assigned out of sequence.
+LIT_FIRMS_EVERIFY.md,42,found,bhq_iza3936.txt,bhq_iza3936.txt,In our sample 1.2 percent of workers are classified as undocumented in 2004. The implication is that the sample used for the analysis in this paper is capturing about 26 percent of all undocumented workers in the state of Georgia.
+LIT_FIRMS_EVERIFY.md,43,missing,,bhq_iza3936.txt,using undocumented workers
+LIT_FIRMS_EVERIFY.md,43,found,bhq_iza3936.txt,bhq_iza3936.txt,"Technically, what equation (3) is describing is the probability of the joint decision by the firm to employ and report the employment of undocumented workers."
+LIT_FIRMS_EVERIFY.md,44,found,bhq_iza3936.txt,bhq_iza3936.txt,A firm is considered to have exited when a quarter of positive employment is followed by four quarters of zero employment.
+LIT_FIRMS_EVERIFY.md,44,found,bhq_iza3936.txt,bhq_iza3936.txt,we include a variable measuring the proportion of other firms in the firm’s 6-digit NAICS industry that employ undocumented workers: IndUNDOC.
+LIT_FIRMS_EVERIFY.md,45,found,bhq_iza3936.txt,bhq_iza3936.txt,"Rivals’ undocumented employment harms firms’ ability to survive, while firms’ own undocumented employment strongly enhances their survival prospects."
+LIT_FIRMS_EVERIFY.md,45,found,bhq_iza3936.txt,bhq_iza3936.txt,"Firms are found to engage in herding behavior, being more likely to employ undocumented workers if competitors do."
+LIT_FIRMS_EVERIFY.md,45,found,bhq_iza3936.txt,bhq_iza3936.txt,The herding behavior and competitive effects are found to be much weaker in geographically broad product markets
+LIT_FIRMS_EVERIFY.md,46,found,bhq_iza3936.txt,bhq_iza3936.txt,The marginal effects indicate that employing undocumented workers reduces the probability of a firm exiting between 0.2 of a percentage point (in education and health) to 1.3 percentage points (in other services).
+LIT_FIRMS_EVERIFY.md,46,found,bhq_iza3936.txt,bhq_iza3936.txt,Employing undocumented workers reduces a firm's probability of exiting by 0.8 of a percentage point in construction and professional and business services
+LIT_FIRMS_EVERIFY.md,46,found,bhq_iza3936.txt,bhq_iza3936.txt,"Given that the predicted probability of a firm exiting in any sector is roughly two percent, employing undocumented workers could halve a firm's probability of exiting."
+LIT_FIRMS_EVERIFY.md,46,found,bhq_iza3936.txt,bhq_iza3936.txt,Number of firm-quarter obs.
+LIT_FIRMS_EVERIFY.md,47,found,bhq_iza3936.txt,bhq_iza3936.txt,a firm's exit probability is almost uniformly increased across sectors when
+LIT_FIRMS_EVERIFY.md,47,found,bhq_iza3936.txt,bhq_iza3936.txt,The fact that the IndUNDOC marginal effect is significantly larger than that of UNDOC in most sectors implies that firms would be better off if they could all commit to not employing undocumented workers.
+LIT_FIRMS_EVERIFY.md,49,found,bhq_iza3936.txt,bhq_iza3936.txt,* = significant at 1-percent level
+LIT_FIRMS_EVERIFY.md,49,found,bhq_iza3936.txt,bhq_iza3936.txt,"levels of marginal effects are derived from bootstrapped standard errors, 500 repetitions."
+LIT_FIRMS_EVERIFY.md,53,found,bhq_iza3936.txt,bhq_iza3936.txt,UNDOC -0.227* -0.209* -0.163*
+LIT_FIRMS_EVERIFY.md,53,found,bhq_iza3936.txt,bhq_iza3936.txt,IndUNDOC 6.345* -0.638 6.908* 0.492 7.619* 1.290*
+LIT_FIRMS_EVERIFY.md,54,found,bhq_iza3936.txt,bhq_iza3936.txt,(0.924) (0.666) (0.868) (0.516) (0.743) (0.462)
+LIT_FIRMS_EVERIFY.md,54,found,bhq_iza3936.txt,bhq_iza3936.txt,[0.31678]* [0.00075] [0.48472]* [0.01666]* [0.24958]* [0.01424]*
+LIT_FIRMS_EVERIFY.md,55,found,bhq_iza3936.txt,bhq_iza3936.txt,[-0.00676]* [-0.00758]* [-0.00493]*
+LIT_FIRMS_EVERIFY.md,56,found,bhq_iza3936.txt,bhq_iza3936.txt,UNDOC -0.126* -0.156* -0.153*
+LIT_FIRMS_EVERIFY.md,56,found,bhq_iza3936.txt,bhq_iza3936.txt,IndUNDOC 12.766* -0.924 6.660* 1.308 5.650* -0.140
+LIT_FIRMS_EVERIFY.md,57,found,bhq_iza3936.txt,bhq_iza3936.txt,(3.072) (1.595) (2.259) (1.261) (0.876) (0.458)
+LIT_FIRMS_EVERIFY.md,58,found,bhq_iza3936.txt,bhq_iza3936.txt,[0.38416]* [-0.01111]* [0.30496]* [0.00953]* [0.19462]* [0.00524]*
+LIT_FIRMS_EVERIFY.md,59,found,bhq_iza3936.txt,bhq_iza3936.txt,UNDOC -0.175* -0.219* -0.207*
+LIT_FIRMS_EVERIFY.md,59,found,bhq_iza3936.txt,bhq_iza3936.txt,IndUNDOC 13.892* 12.586* -4.543 2.709 24.558* 1.990*
+LIT_FIRMS_EVERIFY.md,60,found,bhq_iza3936.txt,bhq_iza3936.txt,(3.018) (1.837) (4.649) (3.425) (0.864) (0.436)
+LIT_FIRMS_EVERIFY.md,61,found,bhq_iza3936.txt,bhq_iza3936.txt,[0.21576]* [0.11117]* [-0.02934]* [-0.00871]* [0.26143]* [0.01533]*
+LIT_FIRMS_EVERIFY.md,62,found,bhq_iza3936.txt,bhq_iza3936.txt,UNDOC -0.051 -0.122* -0.346*
+LIT_FIRMS_EVERIFY.md,62,found,bhq_iza3936.txt,bhq_iza3936.txt,IndUNDOC 1.322 4.131* 6.933* 0.045 13.048* 1.007
+LIT_FIRMS_EVERIFY.md,63,found,bhq_iza3936.txt,bhq_iza3936.txt,(1.052) (0.782) (0.760) (0.501) (1.459) (0.913)
+LIT_FIRMS_EVERIFY.md,63,found,bhq_iza3936.txt,bhq_iza3936.txt,[0.08641]* [0.03680]* [0.59774]* [0.01920]* [0.27463]* [0.02377]*
+LIT_FIRMS_EVERIFY.md,64,found,bhq_iza3936.txt,bhq_iza3936.txt,[-0.00156]* [-0.00524]* [-0.01342]*
+LIT_FIRMS_EVERIFY.md,66,found,bhq_iza3936.txt,bhq_iza3936.txt,Percent of firms exiting 1.77% 1.80% 1.06% 2.12% 2.21% 1.18%
+LIT_FIRMS_EVERIFY.md,66,found,bhq_iza3936.txt,bhq_iza3936.txt,Percent of firms employing 4.33% -- 100% 8.48% -- 100%
+LIT_FIRMS_EVERIFY.md,71,found,bhq_iza3936.txt,bhq_iza3936.txt,firms would be better off if they could all commit
+LIT_FIRMS_EVERIFY.md,75,found,bhq_iza3936.txt,bhq_iza3936.txt,"Unfortunately, data limitations preclude us from instrumenting the social effect of interest"
+LIT_FIRMS_EVERIFY.md,77,found,bhq_iza3936.txt,bhq_iza3936.txt,"they do not contain profit, value added, or sales"
+LIT_FIRMS_EVERIFY.md,85,missing,,,Could not download PDF
+LIT_FIRMS_EVERIFY.md,85,missing,,,DOES EMPLOYING UNDOCUMENTED WORKERS GIVE FIRMS A COMPETITIVE ADVANTAGE?*
+LIT_FIRMS_EVERIFY.md,85,missing,,,Does employing undocumented workers give firms a competitive advantage
+LIT_FIRMS_EVERIFY.md,95,found,hqr_frbatl_wp2012-4.txt,hqr_frbatl_wp2012-4.txt hqr_solejole_2013.txt hqr_ucr_seminar_2011.txt,State administrative data are used to identify invalid social security numbers used by
+LIT_FIRMS_EVERIFY.md,101,found,hqr_solejole_2013.txt,hqr_frbatl_wp2012-4.txt hqr_solejole_2013.txt hqr_ucr_seminar_2011.txt,A one-percentage point increase in the share of undocumented workers in a documented worker's county/industry results in an average wage boost of 0.44 percent.
+LIT_FIRMS_EVERIFY.md,101,found,hqr_solejole_2013.txt,hqr_frbatl_wp2012-4.txt hqr_solejole_2013.txt hqr_ucr_seminar_2011.txt,% undoc in the county/industry (c/i) -0.0076* -0.0008* 0.0050* 0.0044*
+LIT_FIRMS_EVERIFY.md,102,found,hqr_solejole_2013.txt,hqr_frbatl_wp2012-4.txt hqr_solejole_2013.txt hqr_ucr_seminar_2011.txt,"Within the firm, a one-percentage point increase in the percent of undocumented workers employed by the firm boosts wages by 0.09 percent (0.12, 0.11, and 0.04 in low,"
+LIT_FIRMS_EVERIFY.md,102,found,hqr_solejole_2013.txt,hqr_frbatl_wp2012-4.txt hqr_solejole_2013.txt hqr_ucr_seminar_2011.txt,% undoc employed in the firm -0.0097* -0.0040* 0.0022* 0.0009*
+LIT_FIRMS_EVERIFY.md,103,found,hqr_frbatl_wp2012-4.txt,hqr_frbatl_wp2012-4.txt hqr_solejole_2013.txt hqr_ucr_seminar_2011.txt,average undocumented workforce share (3.24%) suffers a 0.15 percent wage penalty compared
+LIT_FIRMS_EVERIFY.md,103,found,hqr_frbatl_wp2012-4.txt,hqr_frbatl_wp2012-4.txt hqr_solejole_2013.txt hqr_ucr_seminar_2011.txt,"Full Sample -0.0015** 0.0035*** 0.0027*** 0.0003 -0.0012* 0.0095*** $9,272"
+LIT_FIRMS_EVERIFY.md,104,found,hqr_frbatl_wp2012-4.txt,hqr_frbatl_wp2012-4.txt hqr_solejole_2013.txt hqr_ucr_seminar_2011.txt,Documented workers in these firms earn roughly three percent less than they would if employed in an agricultural firm that does not hire undocumented workers.
+LIT_FIRMS_EVERIFY.md,104,found,hqr_frbatl_wp2012-4.txt,hqr_frbatl_wp2012-4.txt hqr_solejole_2013.txt hqr_ucr_seminar_2011.txt,amounts to less than $300 per quarter.
+LIT_FIRMS_EVERIFY.md,104,found,hqr_frbatl_wp2012-4.txt,hqr_frbatl_wp2012-4.txt hqr_solejole_2013.txt hqr_ucr_seminar_2011.txt,"Ag and Natural Resources -0.0152** 0.0204*** -0.0103** -0.0163*** -0.0151** -0.0298*** $7,121"
+LIT_FIRMS_EVERIFY.md,105,found,hqr_frbatl_wp2012-4.txt,hqr_frbatl_wp2012-4.txt hqr_solejole_2013.txt hqr_ucr_seminar_2011.txt,The largest penalty for working at a firm that hires undocumented workers is 1.7
+LIT_FIRMS_EVERIFY.md,105,found,hqr_frbatl_wp2012-4.txt,hqr_frbatl_wp2012-4.txt hqr_solejole_2013.txt hqr_ucr_seminar_2011.txt,This amounts to about $192 per quarter
+LIT_FIRMS_EVERIFY.md,107,found,hqr_ucr_seminar_2011.txt,hqr_ucr_seminar_2011.txt,wage premium of about 0.7 percent
+LIT_FIRMS_EVERIFY.md,107,found,hqr_ucr_seminar_2011.txt,hqr_ucr_seminar_2011.txt,This amounts to approximately $185 per year; arguably a negligible
+LIT_FIRMS_EVERIFY.md,109,found,hqr_frbatl_wp2012-4.txt,hqr_frbatl_wp2012-4.txt hqr_solejole_2013.txt hqr_ucr_seminar_2011.txt,Construction -0.0031** -0.0027* -0.0027** -0.0029** -0.0033* -0.0038 $8209
+LIT_FIRMS_EVERIFY.md,111,found,hqr_frbatl_wp2012-4.txt,hqr_frbatl_wp2012-4.txt hqr_solejole_2013.txt hqr_ucr_seminar_2011.txt,-0.0063*** 0.0088*** 0.0068*** -0.0005 -0.0054*** 0.0174***
+LIT_FIRMS_EVERIFY.md,123,found,bohn_lofstrom_iza6598.txt,bohn_lofstrom_iza6598.txt,"Using the synthetic control method developed by Abadie, Diamond and Hainmueller (2010),"
+LIT_FIRMS_EVERIFY.md,123,found,bohn_lofstrom_iza6598.txt,bohn_lofstrom_iza6598.txt,we replicate the synthetic control method on each state in the donor pool and obtain a distribution of difference-in-difference estimates.
+LIT_FIRMS_EVERIFY.md,123,found,bohn_lofstrom_iza6598.txt,bohn_lofstrom_iza6598.txt,non-citizen Hispanic men with at most a high school education
+LIT_FIRMS_EVERIFY.md,124,found,bohn_lofstrom_iza6598.txt,bohn_lofstrom_iza6598.txt,"Following LAWA, the employment rate of non-citizen Hispanic men with lower levels of educational attainment fell slightly more than 11 percentage points relative to the synthetic control."
+LIT_FIRMS_EVERIFY.md,124,found,bohn_lofstrom_iza6598.txt,bohn_lofstrom_iza6598.txt,do we observe a statistically significant relative decline in the probability of wage and salary employment.
+LIT_FIRMS_EVERIFY.md,124,found,bohn_lofstrom_iza6598.txt,bohn_lofstrom_iza6598.txt,we find no statistically significant pre-post LAWA differences in wage and salary employment rate for the vast majority of workers in Arizona.
+LIT_FIRMS_EVERIFY.md,125,found,bohn_lofstrom_iza6598.txt,bohn_lofstrom_iza6598.txt,the self-employment rate for likely unauthorized men in Arizona rose 8.3 percentage points higher relative to the synthetic control group.
+LIT_FIRMS_EVERIFY.md,125,found,bohn_lofstrom_iza6598.txt,bohn_lofstrom_iza6598.txt,The 8.3 percentage point relative increase is statistically significant at the 5% level.
+LIT_FIRMS_EVERIFY.md,125,found,bohn_lofstrom_iza6598.txt,bohn_lofstrom_iza6598.txt,roughly a doubling of the self-employment rate
+LIT_FIRMS_EVERIFY.md,125,found,bohn_lofstrom_iza6598.txt,bohn_lofstrom_iza6598.txt,"unauthorized, less-skilled men, from 8 to 16 percent."
+LIT_FIRMS_EVERIFY.md,125,found,bohn_lofstrom_iza6598.txt,bohn_lofstrom_iza6598.txt,"Using the base of 308,000 workers in 2006, this translates to an increase of"
+LIT_FIRMS_EVERIFY.md,131,missing,,bohn_lofstrom_raphael_2014wp_natives.txt,LAWA_Impacts on Natives_2014 RR to SEJ v3.docx
+LIT_FIRMS_EVERIFY.md,133,found,bohn_lofstrom_raphael_2014wp_natives.txt,bohn_lofstrom_raphael_2014wp_natives.txt,"Following LAWA, the employment rate of non-Hispanic native-born white men with lower levels of educational attainment fell 4.4 percentage points relative to the synthetic control."
+LIT_FIRMS_EVERIFY.md,133,found,bohn_lofstrom_raphael_2014wp_natives.txt,bohn_lofstrom_raphael_2014wp_natives.txt,"Our results suggest that contrary to its intent, the Legal Arizona Workers Act does not appear to have improved labor market outcomes of competing legal low-skilled workers."
+LIT_FIRMS_EVERIFY.md,133,found,bohn_lofstrom_raphael_2014wp_natives.txt,bohn_lofstrom_raphael_2014wp_natives.txt,we find some evidence of diminished employment and increased unemployment among legal low-skilled workers in Arizona.
+LIT_FIRMS_EVERIFY.md,133,found,bohn_lofstrom_raphael_2014wp_natives.txt,bohn_lofstrom_raphael_2014wp_natives.txt,"declined relatively less in Arizona, by about $150."
+LIT_FIRMS_EVERIFY.md,133,found,bohn_lofstrom_raphael_2014wp_natives.txt,bohn_lofstrom_raphael_2014wp_natives.txt,The pattern of results points to a labor supply contraction as the primary mechanism at work.
+LIT_FIRMS_EVERIFY.md,139,missing,,orrenius_zavodny_impact_iza2014.txt,Orrenius & Zavodny IZA 2014.docx
+LIT_FIRMS_EVERIFY.md,140,found,orrenius_zavodny_impact_iza2014.txt,orrenius_zavodny_impact_iza2014.txt,"The regressions include controls for individual characteristics, the state business cycle, state and time fixed effects, and state-specific linear time trends. Standard errors are clustered on the state."
+LIT_FIRMS_EVERIFY.md,141,found,orrenius_zavodny_impact_iza2014.txt,orrenius_zavodny_impact_iza2014.txt,Real hourly earnings -0.075*** -0.005
+LIT_FIRMS_EVERIFY.md,141,found,orrenius_zavodny_impact_iza2014.txt,orrenius_zavodny_impact_iza2014.txt,Employed 0.006 0.024
+LIT_FIRMS_EVERIFY.md,141,found,orrenius_zavodny_impact_iza2014.txt,orrenius_zavodny_impact_iza2014.txt,Self employed -0.008 0.009
+LIT_FIRMS_EVERIFY.md,141,found,orrenius_zavodny_impact_iza2014.txt,orrenius_zavodny_impact_iza2014.txt,In labor force -0.001 0.025*
+LIT_FIRMS_EVERIFY.md,141,found,orrenius_zavodny_impact_iza2014.txt,orrenius_zavodny_impact_iza2014.txt,"Among men, E-Verify mandates appear to reduce hourly earnings by about 8 percent."
+LIT_FIRMS_EVERIFY.md,141,found,orrenius_zavodny_impact_iza2014.txt,orrenius_zavodny_impact_iza2014.txt,"Among women, E-Verify mandates raise labor force participation by about 2.5 percentage points."
+LIT_FIRMS_EVERIFY.md,142,found,orrenius_zavodny_impact_iza2014.txt,orrenius_zavodny_impact_iza2014.txt,earnings rise among U.S.-born Hispanic men. There is no evidence of significant effects among U.S.-born non-Hispanic whites.
+LIT_FIRMS_EVERIFY.md,143,found,orrenius_zavodny_impact_iza2014.txt,orrenius_zavodny_impact_iza2014.txt,less than 4 percent of likely unauthorized immigrants in the
+LIT_FIRMS_EVERIFY.md,150,found,orrenius_zavodny_iza7992.txt,orrenius_zavodny_iza7992.txt,"Among women, E-Verify mandates raise employment and labor force participation by about 3.5 percentage points."
+LIT_FIRMS_EVERIFY.md,150,found,orrenius_zavodny_iza7992.txt,orrenius_zavodny_iza7992.txt,Employment and earnings rise among male Mexican immigrants who are naturalized citizens in states that adopt E-Verify mandates
+LIT_FIRMS_EVERIFY.md,150,found,orrenius_zavodny_iza7992.txt,orrenius_zavodny_iza7992.txt,"Among men, E-Verify mandates appear to reduce hourly earnings by about 8 percent."
+LIT_FIRMS_EVERIFY.md,157,found,amuedo_bansak_iza7419.txt,amuedo_bansak_iza7419.txt,the enactment of universal mandates appears to reduce the employment likelihood of likely unauthorized workers by approximately 4.6 percentage points.
+LIT_FIRMS_EVERIFY.md,157,found,amuedo_bansak_iza7419.txt,amuedo_bansak_iza7419.txt,"drops by 5.5 percentage points, compared to women who undergo an estimated 2.4 percentage-point reduction"
+LIT_FIRMS_EVERIFY.md,157,found,amuedo_bansak_iza7419.txt,amuedo_bansak_iza7419.txt,The enactment of universal employment verification mandates raises the employment likelihood of both male and female native workers by approximately 2 percentage points.
+LIT_FIRMS_EVERIFY.md,157,found,amuedo_bansak_iza7419.txt,amuedo_bansak_iza7419.txt,"In the case of likely unauthorized workers, wages increase by approximately 6 percent following the enactment of universal mandates."
+LIT_FIRMS_EVERIFY.md,165,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,"statistically significant 8.7 percent decline in Hispanic employment, a 13.3 percent decline in separations, and a 13.9 percent decline in hires."
+LIT_FIRMS_EVERIFY.md,165,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,We find no evidence that work-ineligible populations relocate or that native-born workers’ labor market outcomes improve in response to mandates.
+LIT_FIRMS_EVERIFY.md,165,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,"we find significant employment declines among young, male, and less-educated native-born workers."
+LIT_FIRMS_EVERIFY.md,166,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,Covered x Large Firms -0.092∗∗∗ -0.158∗∗∗ -0.165∗∗∗
+LIT_FIRMS_EVERIFY.md,166,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,(Passage) (0.030) (0.036) (0.038)
+LIT_FIRMS_EVERIFY.md,166,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,Covered x Small Firms -0.019 -0.113∗∗∗ -0.121∗∗∗
+LIT_FIRMS_EVERIFY.md,166,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,(Passage) (0.023) (0.036) (0.038)
+LIT_FIRMS_EVERIFY.md,167,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,Covered x Big Firms -0.027∗∗ -0.054∗∗
+LIT_FIRMS_EVERIFY.md,167,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,(Passage) (0.013) (0.020)
+LIT_FIRMS_EVERIFY.md,167,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,Covered x Small Firms -0.008 -0.016
+LIT_FIRMS_EVERIFY.md,167,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,(Passage) (0.009) (0.011)
+LIT_FIRMS_EVERIFY.md,167,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,Any Private Firm -0.004 -0.024∗∗
+LIT_FIRMS_EVERIFY.md,167,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,(Passage) (0.014) (0.011)
+LIT_FIRMS_EVERIFY.md,167,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,identify a small and statistically insignificant 0.4 percent decline in the total number of establishments.
+LIT_FIRMS_EVERIFY.md,167,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,the point estimate would imply that roughly 60 percent of total job losses are due to the reduced number of establishments in operation
+LIT_FIRMS_EVERIFY.md,167,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,a substantial fraction of the employment decline is associated with a reduction in the number of large firms that locate in an area following passage of a mandate.
+LIT_FIRMS_EVERIFY.md,168,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,Predicted Coverage -0.026 -0.027 0.353∗∗∗ -0.032∗∗∗ -0.034∗∗∗ 0.069∗
+LIT_FIRMS_EVERIFY.md,168,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,(0.026) (0.019) (0.116) (0.011) (0.010) (0.040)
+LIT_FIRMS_EVERIFY.md,168,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,"Heterogeneity in adherence leads to substantial within-state employment spillovers from larger to smaller firms, as well as a reduction in the number of large firms."
+LIT_FIRMS_EVERIFY.md,168,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,we also find no evidence of heterogeneity in employment effects across industries as a function of likely undocumented employment shares.
+LIT_FIRMS_EVERIFY.md,169,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,E-Verify enforcement is associated with a (insignifi-
+LIT_FIRMS_EVERIFY.md,174,missing,,,"economics paper estimating effects of state E-Verify mandates or immigration enforcement (287(g), Secure Communities) on business establishments, firm entry, firm exit, business formation or establishment counts using County Business Patterns, QCEW or Business Dynamics Statistics"
+LIT_FIRMS_EVERIFY.md,174,missing,,,"study of Florida SB 1718 (2023) E-Verify law effects on employment, construction or agriculture workforce, businesses, or Hispanic workers, with data analysis"
+LIT_FIRMS_EVERIFY.md,180,found,sc_business_dynamics_samyam.txt,sc_business_dynamics_samyam.txt,we use county-sector-year Census administrative data
+LIT_FIRMS_EVERIFY.md,180,found,sc_business_dynamics_samyam.txt,sc_business_dynamics_samyam.txt,"The Hispanic non-citizen share falls by 0.211 percentage points, a 3.6% reduction significant at the 5% level."
+LIT_FIRMS_EVERIFY.md,181,found,sc_business_dynamics_samyam.txt,sc_business_dynamics_samyam.txt,The number of firms falls by 3.4%. Both estimates are significant at the 1% level.
+LIT_FIRMS_EVERIFY.md,181,found,sc_business_dynamics_samyam.txt,sc_business_dynamics_samyam.txt,"9.5% relative to the pre-treatment mean, significant at the 5% level."
+LIT_FIRMS_EVERIFY.md,181,found,sc_business_dynamics_samyam.txt,sc_business_dynamics_samyam.txt,toward fewer exits (1.3% of the pre-treatment mean).
+LIT_FIRMS_EVERIFY.md,181,found,sc_business_dynamics_samyam.txt,sc_business_dynamics_samyam.txt,with no significant effect on establishment exit.
+LIT_FIRMS_EVERIFY.md,181,found,sc_business_dynamics_samyam.txt,sc_business_dynamics_samyam.txt,"These effects are concentrated in high-immigrant counties and in immigrant-intensive, high-turnover, and non-tradable sectors"
+LIT_FIRMS_EVERIFY.md,181,found,sc_business_dynamics_samyam.txt,sc_business_dynamics_samyam.txt,declines of 3.4% for firms and 2.9% for establishments imply elasticities of approximately 0.68
+LIT_FIRMS_EVERIFY.md,189,found,business_creation_287g_jaae2024.txt,business_creation_287g_jaae2024.txt,counties with 287(g) agreements experienced a 6 percent decrease in the total number of businesses per 1000 county population and this negative effect appeared to be more prominent in businesses with a higher number of employees.
+LIT_FIRMS_EVERIFY.md,189,found,business_creation_287g_jaae2024.txt,business_creation_287g_jaae2024.txt,the total number of business experienced a decrease of 1.379 businesses per 1000 county population which amounts to a 6 percent decrease
+LIT_FIRMS_EVERIFY.md,189,found,business_creation_287g_jaae2024.txt,business_creation_287g_jaae2024.txt,which indicates a pre-trend at above the 95 percent statistical significance level
+LIT_FIRMS_EVERIFY.md,189,found,business_creation_287g_jaae2024.txt,business_creation_287g_jaae2024.txt,Only 2 panels (panel b and c) show pre-trends which are significant at above the 95 percent significance level.
+LIT_FIRMS_EVERIFY.md,195,found,orrenius_zavodny_2026_rle_abstract.txt,orrenius_zavodny_2026_rle_abstract.txt,The results indicate that employment eligibility verification requirements dampen most measures of business and job dynamism whereas police-based immigration enforcement raises business exits and job destruction while reducing job creation.
+RESULT.md,696,found,irs_p1415.txt,irs_p1415.txt,Nonfarm proprietor income $80 16% 29% 57%
+RESULT.md,697,found,irs_p1415.txt,irs_p1415.txt,"Wages, salaries, tips $7 1% 2% 1%"
+RESULT.md,698,found,irs_p1415.txt,irs_p1415.txt,"2016 is a combined $29 billion, with $28 billion from underreported FICA taxes and $1 billion from"
+RESULT.md,699,found,irs_p1415.txt,irs_p1415.txt,"workers are also excluded from the estimates due to lack of compliance data. Therefore, the estimate of the"
+RESULT.md,700,found,irs_p5869.txt,irs_p5869.txt,FICA and FUTA Tax $34 6% $37 5% $40 6%
+RESULT.md,701,found,whd_all_acts.txt,whd_all_acts.txt,"| Concluded Compliance Actions | 16,924 | 17,300 | 20,215 | 20,422 | 24,746 |"
+RESULT.md,702,found,whd_all_acts.txt,whd_all_acts.txt,"| Back Wages | $259,294,764 | $202,676,115 | $212,325,391 | $213,161,638 | $234,362,486 |"
+RESULT.md,703,found,dol_whd_enforcement_metadata.txt,dol_whd_enforcement_metadata.txt,The dataset contains all concluded WHD compliance actions since FY 2005.
+RESULT.md,704,found,dol_whd_enforcement_metadata.txt,dol_whd_enforcement_metadata.txt,"Findings Start Date and Findings End Date are not equal to Case Open Date and Case Close Date, which are not included in the dataset."
+RESULT.md,705,found,gao_21_13_excerpt.txt,gao_21_13_excerpt.txt,"In fiscal year 2019, according to WHD data, 64 percent of FLSA cases were initiated in response to complaints and 36 percent were initiated by WHD."
+RESULT.md,706,found,gao_21_13_excerpt.txt,gao_21_13_excerpt.txt,WHD found minimum wage and/or overtime pay violations in 80 percent of FLSA cases concluded in fiscal year 2019.
+RESULT.md,707,found,osha_enforcement_summaries.txt,osha_enforcement_summaries.txt,"In FY 2024, OSHA conducted 34,625 inspections comprising 17,455 unprogrammed and 17,170 programmed inspections."
+RESULT.md,708,found,bls_ewaa_2023.txt,bls_ewaa_2023.txt,UI and UCFE programs covered 153.1 million jobs. The estimated 147.3 million workers in these jobs (after adjustment for multiple jobholders) represented 97.4 percent of civilian wage and salary employment.
+RESULT.md,709,found,irs_p15_2024.txt,irs_p15_2024.txt,social security tax on taxable wages is 6.2% each for the
+RESULT.md,710,found,irs_p15_2024.txt,irs_p15_2024.txt,The Medicare tax rate is 1.45% each for the employee
+RESULT.md,711,found,iceres_2025_misclassification_brief.txt,iceres_2025_misclassification_brief.txt,workers compensation insurance and the employer share of Social Security and Medicare.
+RESULT.md,712,found,obe_2020_payroll_fraud_methodology.txt,obe_2020_payroll_fraud_methodology.txt,"In an average month of 2017, between 12.4% and 20.5% of the construction industry"
+RESULT.md,713,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,translates into wage theft of 15 percent of earnings.
+RESULT.md,714,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,All respondents 25.9 15.6 31.1
+RESULT.md,715,found,bernhardt_2009_broken_laws.txt,bernhardt_2009_broken_laws.txt,Nor are these abuses limited to unauthorized immigrants or other especially vulnerable workers.
+RESULT.md,716,found,bhq_iza3936.txt,bhq_iza3936.txt,Employing undocumented workers reduces a firm's probability of exiting by 0.8 of a percentage point in construction and professional and business services
+RESULT.md,717,found,bhq_iza3936.txt,bhq_iza3936.txt,"Technically, what equation (3) is describing is the probability of the joint decision by the firm to employ and report the employment of undocumented workers."
+RESULT.md,718,found,hqr_solejole_2013.txt,hqr_solejole_2013.txt,A one-percentage point increase in the share of undocumented workers in a documented worker's county/industry results in an average wage boost of 0.44 percent.
+RESULT.md,719,found,bohn_lofstrom_iza6598.txt,bohn_lofstrom_iza6598.txt,the self-employment rate for likely unauthorized men in Arizona rose 8.3 percentage points higher relative to the synthetic control group.
+RESULT.md,720,found,orrenius_zavodny_impact_iza2014.txt,orrenius_zavodny_impact_iza2014.txt,"Among men, E-Verify mandates appear to reduce hourly earnings by about 8 percent."
+RESULT.md,721,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,identify a small and statistically insignificant 0.4 percent decline in the total number of establishments.
+RESULT.md,722,found,ayromloo_nber_w26676.txt,ayromloo_nber_w26676.txt,The coverage rate rises from zero in 2007 to 12.3 percent in 2015.
+RESULT.md,723,found,sc_business_dynamics_samyam.txt,sc_business_dynamics_samyam.txt,The number of firms falls by 3.4%. Both estimates are significant at the 1% level.
+RESULT.md,724,found,business_creation_287g_jaae2024.txt,business_creation_287g_jaae2024.txt,counties with 287(g) agreements experienced a 6 percent decrease in the total number of businesses per 1000 county population
+RESULT.md,725,found,statute_az_ars_23-214.txt,statute_az_ars_23-214.txt,"A. After December 31, 2007, every employer, after hiring an employee, shall verify the employment eligibility of the employee through the e-verify program"
+RESULT.md,726,found,statute_ms_71-11-3.txt,statute_ms_71-11-3.txt,"All employers shall meet verification requirements not later than July 1, 2011."
+RESULT.md,727,found,statute_al_31-13-15.txt,statute_al_31-13-15.txt,"(b) Effective April 1, 2012, every business entity or employer in this state shall enroll in E-Verify"
+RESULT.md,728,found,statute_sc_code_t41c008.txt,statute_sc_code_t41c008.txt,"2011 Act No. 69, SECTION 9, eff January 1, 2012."
