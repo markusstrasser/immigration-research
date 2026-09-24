@@ -7,6 +7,9 @@ const Engine = require("./engine.js");
 
 const derived = path.join(__dirname, "derived");
 const model = JSON.parse(fs.readFileSync(path.join(derived, "model.json"), "utf8"));
+// The data corrections adopted on 2026-09-24, as the page loads them.
+const CORRECTED = path.join(__dirname, "..", "main_case_2026_09_24", "derived");
+model.corrected = Engine.applyCorrections(model, JSON.parse(fs.readFileSync(path.join(CORRECTED, "corrections.json"), "utf8")));
 const vectors = JSON.parse(fs.readFileSync(path.join(derived, "test_vectors.json"), "utf8"));
 const TOLERANCE = 1e-6;  // billions; the exports are rounded at 1e-9
 let failures = 0, worst = 0;
@@ -92,8 +95,8 @@ function costBand(state) {  // welfare sign flipped: the main-case lane reports 
   return [-range[1], -range[0]];
 }
 
-// September 20 conventions still reproduce the published bands.
-const sept20 = costBand(presetState("repo_central"));
+// September 20 conventions still reproduce the published bands, on the data as they stood.
+const sept20 = costBand(presetState("repo_central", { data_corrections: false }));
 check("September 20 central low", sept20[0], -headline.cbo_category_lag_non_school_full.max_welfare_bn);
 check("September 20 central high", sept20[1], -headline.cbo_category_lag_non_school_full.min_welfare_bn);
 
@@ -119,10 +122,28 @@ function checkAdopted(label, band, profile) {
   check(`${label} high vs lane identity`, band[1], -published.min_welfare_bn + gg.high * ggBn + j + uc.equal_high);
   adoptedChecks += 1;
 }
-const adopted = costBand(presetState("repo_central_gg"));
-checkAdopted("adopted central", adopted, "cbo_category_lag_non_school_full");
-checkAdopted("adopted, non-school education fixed", costBand(presetState("repo_central_gg", { other_education_response: 0 })), "cbo_category_lag_non_school_fixed");
-checkAdopted("adopted proportional", costBand(presetState("proportional")), "proportional_reference");
+const OFF = { data_corrections: false };
+const sept23 = costBand(presetState("repo_central_gg", OFF));
+checkAdopted("September 23 central", sept23, "cbo_category_lag_non_school_full");
+checkAdopted("September 23, non-school education fixed", costBand(presetState("repo_central_gg", { ...OFF, other_education_response: 0 })), "cbo_category_lag_non_school_fixed");
+checkAdopted("September 23 proportional", costBand(presetState("proportional", OFF)), "proportional_reference");
+
+// With the data corrections the same conventions reproduce main_case_2026_09_24 (printed to four decimals).
+const bands24 = {};
+fs.readFileSync(path.join(CORRECTED, "main_case_bands.csv"), "utf8").trim().split("\n").slice(1).forEach((line) => {
+  const [profile, variant, low, high] = line.split(",");
+  if (variant === "adopted") bands24[profile] = [Number(low), Number(high)];
+});
+const ON = { data_corrections: true };
+function checkCorrected(label, band, profile) {
+  check(`${label} low vs main_case_2026_09_24`, band[0], bands24[profile][0], PRINTED);
+  check(`${label} high vs main_case_2026_09_24`, band[1], bands24[profile][1], PRINTED);
+  adoptedChecks += 1;
+}
+const adopted = costBand(presetState("repo_central_gg", ON));
+checkCorrected("adopted central", adopted, "cbo_category_lag_non_school_full");
+checkCorrected("adopted, non-school education fixed", costBand(presetState("repo_central_gg", { ...ON, other_education_response: 0 })), "cbo_category_lag_non_school_fixed");
+checkCorrected("adopted proportional", costBand(presetState("proportional", ON)), "proportional_reference");
 
 // Attribution must be exhaustive: Shapley effects sum to the total difference.
 const from = Engine.defaultState(model);
@@ -132,8 +153,14 @@ const paths = ["service_response", "public_goods_response", "count_production", 
 const parts = Engine.attribute(model, from, to, paths, "welfare_bn");
 check("attribution closure", parts.reduce((s, p) => s + p.effect_bn, 0),
   Engine.evaluate(model, to).welfare_bn - Engine.evaluate(model, from).welfare_bn);
+// The data switch attributes like any other control.
+const on = presetState("repo_central_gg", ON), off = presetState("repo_central_gg", { ...OFF, general_government_response: 0.84 });
+const dataParts = Engine.attribute(model, on, off, ["data_corrections", "general_government_response"], "welfare_bn");
+check("attribution closure with the data switch", dataParts.reduce((s, p) => s + p.effect_bn, 0),
+  Engine.evaluate(model, off).welfare_bn - Engine.evaluate(model, on).welfare_bn);
 
 const counts = `${vectors.grid.length} grid rows, ${vectors.service.length} service cases, ${vectors.accounts.length} accounting cases`;
 if (failures) { console.error(`FAIL: ${failures} mismatches over ${counts}; worst gap ${worst}`); process.exit(1); }
 console.log(`PASS: ${counts}, 4 headline bounds, September 20 central preset, ${adoptedChecks} adopted bands ` +
-  `(central ${adopted[0].toFixed(4)} to ${adopted[1].toFixed(4)} bn), attribution closure; worst gap ${worst.toExponential(2)} bn`);
+  `(September 23 ${sept23[0].toFixed(4)} to ${sept23[1].toFixed(4)} bn; with the data corrections ${adopted[0].toFixed(4)} to ` +
+  `${adopted[1].toFixed(4)} bn), attribution closure; worst gap ${worst.toExponential(2)} bn`);

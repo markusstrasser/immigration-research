@@ -210,3 +210,11 @@ node infra/immigration-fiscal/main_case_2026_09_24/sign_reversal.cjs            
 rules; `main_case.cjs` and `sign_reversal.cjs` import it, so there is one definition of the package.
 The script reads each lane's committed `derived/` files. It needs the CPS lane's ignored cache
 only to refresh the vendored stacks.
+
+The model edits themselves run in the explorer engine (`engine.js`, `applyCorrections`).
+`main_case.cjs` also writes `derived/corrections.json`, but only when every gate passes. That file is
+the central case as the engine's cell edits: the two fill-in methods averaged, one net edit per
+cell, and three correction lines that the engine responds to by class. The explorer and the figures page load it.
+With `data_corrections` set, a state evaluates the corrected model. The explorer's `test_engine.js`
+checks the three September 24 bands both ways, through the page's presets and with no per-line
+overrides.

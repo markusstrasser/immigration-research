@@ -7,6 +7,10 @@
  * P and F are looked up in the 3,888 executed production scenarios; every receipt and
  * spending amount is an executed allocation. Nothing is estimated here. The same file runs
  * in the page and under node (test_engine.js gates it against the executed exports).
+ *
+ * Data corrections (main_case_2026_09_24/derived/corrections.json) are edits to executed
+ * allocations. applyCorrections() makes the corrected model; a state with data_corrections set
+ * evaluates model.corrected, so one state can move between the two data sets.
  */
 (function (root) {
   "use strict";
@@ -38,11 +42,42 @@
       subsidy_response: 0,
       direct_receipt_response: 1,
       indirect_receipt_response: 0,
+      data_corrections: false,
       response_override: {}
     };
   }
 
   function clone(state) { return JSON.parse(JSON.stringify(state)); }
+
+  /* A copy of the model with a corrections payload applied: {lines: [{id, family, response_class,
+   * label}], edits: [{side: "receipt", line, scenario, by} | {side: "spending", line, key, by}]},
+   * by = {personal, shared} in $bn of the group's target. Each edit moves the same amount out of
+   * other residents' share, so national totals hold. Unknown lines, keys or rules fail loudly. */
+  function applyCorrections(model, payload) {
+    var m = clone(model), allocations = ["personal", "shared"];
+    delete m.corrected;
+    function zero() { return { target_bn: 0, other_bn: 0, share: 0 }; }
+    (payload.lines || []).forEach(function (l) {
+      if (m.spending.lines.some(function (x) { return x.id === l.id; })) throw new Error("Correction line exists already: " + l.id);
+      m.spending.lines.push({ id: l.id, family: l.family, national_bn: 0, response_class: l.response_class, label: l.label,
+        preferred_key: "k", alternative_key: "k", keys: { k: { personal: zero(), shared: zero() } } });
+    });
+    payload.edits.forEach(function (e) {
+      var cell;
+      if (e.side === "receipt") {
+        var r = m.receipts.lines.filter(function (x) { return x.id === e.line; })[0];
+        if (!r || !r.cells[e.scenario]) throw new Error("Not an executed receipt cell: " + e.line + "/" + e.scenario);
+        cell = r.cells[e.scenario];
+      } else {
+        var sp = m.spending.lines.filter(function (x) { return x.id === e.line; })[0];
+        if (!sp || !sp.keys[e.key]) throw new Error("Not an executed allocation rule: " + e.line + "/" + e.key);
+        cell = sp.keys[e.key];
+      }
+      allocations.forEach(function (a) { cell[a].target_bn += e.by[a]; cell[a].other_bn -= e.by[a]; });
+    });
+    m.corrections = payload.meta || {};
+    return m;
+  }
 
   function schoolShareBounds(model) {
     var shares = model.service.profiles.map(function (p) { return p.school_share; })
@@ -82,6 +117,11 @@
         return line.id === "general_public_services" ? state.general_government_response : state.public_goods_response;
       case "interest": return state.interest_response;
       case "subsidy": return state.subsidy_response;
+      // Lines added by data corrections: the school and college parts of the education line's
+      // correction respond as those parts of the line do; correction constants count in full.
+      case "education_school_part": return state.service_response * state.school_share * state.school_response;
+      case "education_other_part": return state.service_response * (1 - state.school_share) * state.other_education_response;
+      case "correction_constant": return 1;
       case "service":
         if (line.id === "education_services") {
           return state.service_response * (state.school_share * state.school_response +
@@ -94,6 +134,10 @@
   }
 
   function evaluate(model, state) {
+    if (state.data_corrections) {
+      if (!model.corrected) throw new Error("No data corrections are loaded for this model");
+      model = model.corrected;
+    }
     var receipts = [], spending = [], classes = {};
     var direct = 0, targetBalance = 0, otherBalance = 0;
     function add(bucket, name, assigned, responsive) {
@@ -213,6 +257,7 @@
   }
 
   var api = { PRODUCTION_DIMS: PRODUCTION_DIMS, defaultState: defaultState, clone: clone, evaluate: evaluate,
+    applyCorrections: applyCorrections,
     unresolvedRange: unresolvedRange, attribute: attribute, schoolShareBounds: schoolShareBounds,
     spendingKey: spendingKey, productionIndex: productionIndex };
   if (typeof module !== "undefined" && module.exports) module.exports = api; else root.Engine = api;
