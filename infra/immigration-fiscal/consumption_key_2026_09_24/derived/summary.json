@@ -1,0 +1,431 @@
+{
+ "gate_key": {
+  "reproduced": 0.08104060733729859,
+  "stored": 0.0810406073372985,
+  "se": 0.0011554357109943238,
+  "ok": true,
+  "target_key_total": 998526876629.2747,
+  "national_key_total": 12321315318792.217
+ },
+ "phi": 0.9496943590430555,
+ "ce_bootstrap": {
+  "reps": 200,
+  "se": 0.00021114109488665417,
+  "mean": 0.08972592439718184
+ },
+ "amounts_2024_dollars": {
+  "cemla_2024_dollars": 6035.102292240642,
+  "nis_2024_dollars": 5441.822217391305
+ },
+ "cpi": {
+  "2003": 184.0,
+  "2024": 313.689,
+  "2015": 237.017
+ },
+ "published_hispanic_check": [
+  {
+   "item": "income_before_taxes",
+   "predicted": 87422.34930670535,
+   "actual": 85710.0,
+   "actual_over_predicted": 0.9804129113403498
+  },
+  {
+   "item": "consumption",
+   "predicted": 61280.86588949066,
+   "actual": 60961.0,
+   "actual_over_predicted": 0.9947803301267399
+  },
+  {
+   "item": "consumption_over_income",
+   "predicted": 0.7009748236632023,
+   "actual": 0.7112472290281181,
+   "actual_over_predicted": 1.014654456933608
+  },
+  {
+   "item": "total",
+   "predicted": 71290.52340283101,
+   "actual": 69600.0,
+   "actual_over_predicted": 0.9762868425964751
+  },
+  {
+   "item": "total_over_income",
+   "predicted": 0.8154725189633285,
+   "actual": 0.8120406020301015,
+   "actual_over_predicted": 0.995791498973393
+  },
+  {
+   "item": "taxable_broad",
+   "predicted": 38975.004927257694,
+   "actual": 39213.0,
+   "actual_over_predicted": 1.0061063513189157
+  },
+  {
+   "item": "taxable_broad_over_income",
+   "predicted": 0.44582426846619055,
+   "actual": 0.4575078753937697,
+   "actual_over_predicted": 1.0262067539924986
+  },
+  {
+   "item": "cash_contributions",
+   "predicted": 2041.8722053562335,
+   "actual": 911.0,
+   "actual_over_predicted": 0.4461591658921001
+  },
+  {
+   "item": "hispanic_vs_all_consumption_over_income",
+   "predicted": NaN,
+   "actual": 1.1154462269411718,
+   "actual_over_predicted": NaN
+  }
+ ],
+ "ce_consumption_over_income": {
+  "all": 0.6268454113077868,
+  "hispanic": 0.7207925415791228,
+  "mexican_origin": 0.7389541970624455
+ },
+ "cps_predicted_consumption_over_income": {
+  "union": 0.6940469563233836,
+  "all_civilians": 0.6211965767413989,
+  "union_over_all": 1.1172742772732824
+ },
+ "itep_keyed_union_share": {
+  "resources|all_civilians|sales_excise": {
+   "share": 0.09132716470786273,
+   "se": 0.0009796437041240582
+  },
+  "resources|all_civilians|general_sales_individuals": {
+   "share": 0.09151670033048685,
+   "se": 0.0010026876919518412
+  },
+  "resources|all_civilians|other_sales_excise_individuals": {
+   "share": 0.09718590955850777,
+   "se": 0.0009931223512672635
+  },
+  "resources|non_elderly|sales_excise": {
+   "share": 0.10753156953896742,
+   "se": 0.0011770624373396849
+  },
+  "money_income|all_civilians|sales_excise": {
+   "share": 0.08707624005940473,
+   "se": 0.0009799225890983205
+  },
+  "money_income|all_civilians|general_sales_individuals": {
+   "share": 0.08743980781605037,
+   "se": 0.0010024821558534752
+  },
+  "money_income|all_civilians|other_sales_excise_individuals": {
+   "share": 0.09253797186111012,
+   "se": 0.0009599713837048149
+  },
+  "money_income|non_elderly|sales_excise": {
+   "share": 0.10130327232219885,
+   "se": 0.0011861745524501782
+  }
+ },
+ "key_union_share_non_elderly": {
+  "raw": 0.0929773799475413,
+  "saving_central": 0.10413017821958233,
+  "saving_step_deciles": 0.10328223285411908,
+  "saving_total_expenditure": 0.10177917694804571,
+  "saving_taxable_broad": 0.10381516361893962,
+  "saving_rank_x_size": 0.10544506053471561,
+  "saving_rank_x_size_x_age": 0.1049509695706078,
+  "saving_top_decile_x1.25": 0.1012470238232751
+ },
+ "specs": {
+  "raw": {
+   "key_share": 0.08104060733729859,
+   "key_share_se_cps": 0.0011554357109943238,
+   "adopted_basis_share": 0.07696380764165574,
+   "receipts_change_bn": -1.284128359202441e-11,
+   "receipts_change_se_bn": 0.0
+  },
+  "saving_central": {
+   "key_share": 0.0889377186431963,
+   "key_share_se_cps": 0.0009751455244302837,
+   "adopted_basis_share": 0.08446364970160192,
+   "receipts_change_bn": 7.698831336780172,
+   "receipts_change_se_bn": 0.5060689930914121
+  },
+  "saving_step_deciles": {
+   "key_share": 0.08835166975991794,
+   "key_share_se_cps": 0.001002639658454237,
+   "adopted_basis_share": 0.08390708238302898,
+   "receipts_change_bn": 7.082039294155621,
+   "receipts_change_se_bn": 0.48036272503569005
+  },
+  "saving_level_transport": {
+   "key_share": 0.09015816901523457,
+   "key_share_se_cps": 0.0009574331756086996,
+   "adopted_basis_share": 0.08562270453541868,
+   "receipts_change_bn": 8.919121264910203,
+   "receipts_change_se_bn": 0.602584005650655
+  },
+  "saving_total_expenditure": {
+   "key_share": 0.08731957164139047,
+   "key_share_se_cps": 0.0009970896678143746,
+   "adopted_basis_share": 0.08292690462188448,
+   "receipts_change_bn": 6.0987271154188845,
+   "receipts_change_se_bn": 0.40772958675528437
+  },
+  "saving_taxable_broad": {
+   "key_share": 0.08872302070688051,
+   "key_share_se_cps": 0.0009786994545152082,
+   "adopted_basis_share": 0.08425975228258463,
+   "receipts_change_bn": 7.515002355047589,
+   "receipts_change_se_bn": 0.49457858126738613
+  },
+  "saving_bottom_capped": {
+   "key_share": 0.08872979032451873,
+   "key_share_se_cps": 0.0009964283407389056,
+   "adopted_basis_share": 0.08426618135026853,
+   "receipts_change_bn": 7.669286519546863,
+   "receipts_change_se_bn": 0.4678199739841172
+  },
+  "saving_rank_x_size": {
+   "key_share": 0.09053207993643735,
+   "key_share_se_cps": 0.0010114124097865558,
+   "adopted_basis_share": 0.08597780562806953,
+   "receipts_change_bn": 9.484035201125895,
+   "receipts_change_se_bn": 0.4655092275975044
+  },
+  "saving_rank_x_size_x_age": {
+   "key_share": 0.09011395085775298,
+   "key_share_se_cps": 0.001011044672870568,
+   "adopted_basis_share": 0.08558071080069111,
+   "receipts_change_bn": 9.005929075130322,
+   "receipts_change_se_bn": 0.4907970794450588
+  },
+  "saving_top_decile_x1.25": {
+   "key_share": 0.08692916606133945,
+   "key_share_se_cps": 0.0010056026617698138,
+   "adopted_basis_share": 0.08255613864477111,
+   "receipts_change_bn": 5.646380760242687,
+   "receipts_change_se_bn": 0.40619446928131253
+  },
+  "saving_top_decile_x1.5": {
+   "key_share": 0.08512487650132385,
+   "key_share_se_cps": 0.001048397147319889,
+   "adopted_basis_share": 0.08084261502754402,
+   "receipts_change_bn": 3.802228025137854,
+   "receipts_change_se_bn": 0.3519537190993716
+  },
+  "outside_itep_gradient": {
+   "key_share": 0.09132716470786273,
+   "key_share_se_cps": 0.0009796437041240595,
+   "adopted_basis_share": 0.08673289315045325,
+   "receipts_change_bn": 10.34607280136511,
+   "receipts_change_se_bn": 0.636300162511457
+  },
+  "saving_ce_mexican_rank": {
+   "key_share": 0.09186252310423826,
+   "key_share_se_cps": 0.0010039816344804473,
+   "adopted_basis_share": 0.08724131999955743,
+   "receipts_change_bn": 11.01891841770199,
+   "receipts_change_se_bn": 0.5010430920154597
+  },
+  "saving_ce_mexican_rank_x_size": {
+   "key_share": 0.0891843629144055,
+   "key_share_se_cps": 0.0009978319475424603,
+   "adopted_basis_share": 0.08469788637465958,
+   "receipts_change_bn": 7.954424753547771,
+   "receipts_change_se_bn": 0.4679586279303455
+  },
+  "remit_survey_cemla": {
+   "key_share": 0.08024112175005825,
+   "key_share_se_cps": 0.0011537363087816318,
+   "adopted_basis_share": 0.07620454068931735,
+   "receipts_change_bn": -0.9262557100356466,
+   "receipts_change_se_bn": 0.029194572058299683
+  },
+  "remit_bea": {
+   "key_share": 0.08029448644008406,
+   "key_share_se_cps": 0.0011442973814912224,
+   "adopted_basis_share": 0.07625522083440694,
+   "receipts_change_bn": -0.864429602046294,
+   "receipts_change_se_bn": 0.029972555095410407
+  },
+  "remit_corridor_net_h2_low": {
+   "key_share": 0.07838051413039791,
+   "key_share_se_cps": 0.001152080161457476,
+   "adopted_basis_share": 0.0742115440697609,
+   "receipts_change_bn": -3.3561409504108095,
+   "receipts_change_se_bn": 0.05023299814808291
+  },
+  "remit_corridor_net_h2": {
+   "key_share": 0.0784481500037414,
+   "key_share_se_cps": 0.0011521301452832543,
+   "adopted_basis_share": 0.07428152347679641,
+   "receipts_change_bn": -3.2708098846270515,
+   "receipts_change_se_bn": 0.048978767437949856
+  },
+  "remit_corridor_net_h2_high": {
+   "key_share": 0.07851570987850813,
+   "key_share_se_cps": 0.00115218123976859,
+   "adopted_basis_share": 0.07435142425195991,
+   "receipts_change_bn": -3.185574564304872,
+   "receipts_change_se_bn": 0.047725380803682285
+  },
+  "remit_survey_cemla_rho0.25": {
+   "key_share": 0.08025369959942809,
+   "key_share_se_cps": 0.0011537668278429742,
+   "adopted_basis_share": 0.07621648580191279,
+   "receipts_change_bn": -0.9118320195867806,
+   "receipts_change_se_bn": 0.02946170046581429
+  },
+  "remit_bea_rho0.25": {
+   "key_share": 0.08030621312374661,
+   "key_share_se_cps": 0.0011444811427663631,
+   "adopted_basis_share": 0.07626635759973155,
+   "receipts_change_bn": -0.8509819792167983,
+   "receipts_change_se_bn": 0.030239825971655712
+  },
+  "remit_corridor_net_h2_rho0.25": {
+   "key_share": 0.07842158936582021,
+   "key_share_se_cps": 0.0011520642624775043,
+   "adopted_basis_share": 0.07425582743756166,
+   "receipts_change_bn": -3.3026629506491476,
+   "receipts_change_se_bn": 0.05043363021729181
+  },
+  "remit_survey_cemla_rho1": {
+   "key_share": 0.08021594816508473,
+   "key_share_se_cps": 0.0011536779161946307,
+   "adopted_basis_share": 0.07618063347767111,
+   "receipts_change_bn": -0.9551235674356278,
+   "receipts_change_se_bn": 0.028777891273276172
+  },
+  "remit_bea_rho1": {
+   "key_share": 0.08027101751050289,
+   "key_share_se_cps": 0.0011439314868372805,
+   "adopted_basis_share": 0.07623293252437092,
+   "receipts_change_bn": -0.8913426637909678,
+   "receipts_change_se_bn": 0.029528138537674012
+  },
+  "remit_corridor_net_h2_rho1": {
+   "key_share": 0.07849740707684699,
+   "key_share_se_cps": 0.0011522520629400994,
+   "adopted_basis_share": 0.07432917713959117,
+   "receipts_change_bn": -3.211741003224833,
+   "receipts_change_se_bn": 0.04631588657495074
+  },
+  "remit_survey_nis": {
+   "key_share": 0.08032019633429538,
+   "key_share_se_cps": 0.0011538721120196902,
+   "adopted_basis_share": 0.07627963737591104,
+   "receipts_change_bn": -0.8346431718998639,
+   "receipts_change_se_bn": 0.026302979237774672
+  },
+  "remit_corridor_full": {
+   "key_share": 0.07826762496122265,
+   "key_share_se_cps": 0.001152000250473987,
+   "adopted_basis_share": 0.07409474317677289,
+   "receipts_change_bn": -3.498564294787852,
+   "receipts_change_se_bn": 0.05232427222422882
+  },
+  "remit_corridor_net_h2_illicit": {
+   "key_share": 0.07866001410990807,
+   "key_share_se_cps": 0.001152296527973422,
+   "adopted_basis_share": 0.07450072851975287,
+   "receipts_change_bn": -3.003516083240804,
+   "receipts_change_se_bn": 0.04504419964675675
+  },
+  "remit_corridor_net_h2_others_bea": {
+   "key_share": 0.07750643232757227,
+   "key_share_se_cps": 0.00115863879592479,
+   "adopted_basis_share": 0.07338982337083427,
+   "receipts_change_bn": -4.338223247190864,
+   "receipts_change_se_bn": 0.03528945407004178
+  },
+  "remit_corridor_net_h2_others_zero": {
+   "key_share": 0.07712405498821044,
+   "key_share_se_cps": 0.001153990198192673,
+   "adopted_basis_share": 0.0730277552875277,
+   "receipts_change_bn": -4.771705900911518,
+   "receipts_change_se_bn": 0.03664768942635291
+  },
+  "both_corridor_net_h2": {
+   "key_share": 0.08598575001754469,
+   "key_share_se_cps": 0.0009796685348678305,
+   "adopted_basis_share": 0.08142000842884183,
+   "receipts_change_bn": 4.051722391387129,
+   "receipts_change_se_bn": 0.48829549053672
+  },
+  "both_corridor_net_h2_dollar_for_dollar": {
+   "key_share": 0.08607160194482255,
+   "key_share_se_cps": 0.0009660444910599982,
+   "adopted_basis_share": 0.08148070535044193,
+   "receipts_change_bn": 4.096436500696947,
+   "receipts_change_se_bn": 0.5213340204312711
+  },
+  "both_survey_cemla": {
+   "key_share": 0.08802641244708537,
+   "key_share_se_cps": 0.0009715730658140104,
+   "adopted_basis_share": 0.08359818734779438,
+   "receipts_change_bn": 6.661662148713756,
+   "receipts_change_se_bn": 0.4925185853440788
+  },
+  "both_bea": {
+   "key_share": 0.0880872145954033,
+   "key_share_se_cps": 0.0009650405982539021,
+   "adopted_basis_share": 0.08365593080506961,
+   "receipts_change_bn": 6.73086084455378,
+   "receipts_change_se_bn": 0.5068847270509139
+  },
+  "both_corridor_full": {
+   "key_share": 0.08578053804361883,
+   "key_share_se_cps": 0.0009801062033150646,
+   "adopted_basis_share": 0.08120842306857796,
+   "receipts_change_bn": 3.7981985860715586,
+   "receipts_change_se_bn": 0.48721808461541466
+  },
+  "both_corridor_net_h2_illicit": {
+   "key_share": 0.08622666007274253,
+   "key_share_se_cps": 0.0009791673018395316,
+   "adopted_basis_share": 0.08166839986258456,
+   "receipts_change_bn": 4.349349521459892,
+   "receipts_change_se_bn": 0.48959382798911993
+  },
+  "both_corridor_net_h2_others_bea": {
+   "key_share": 0.08506710749074924,
+   "key_share_se_cps": 0.0009889824806205852,
+   "adopted_basis_share": 0.08055014473329324,
+   "receipts_change_bn": 3.018926923828296,
+   "receipts_change_se_bn": 0.48176797825552664
+  },
+  "both_corridor_net_h2_others_zero": {
+   "key_share": 0.08469339700120077,
+   "key_share_se_cps": 0.0009857036450698362,
+   "adopted_basis_share": 0.08019627782857038,
+   "receipts_change_bn": 2.598755658653035,
+   "receipts_change_se_bn": 0.48260424070083513
+  },
+  "both_rank_x_size_corridor_net_h2": {
+   "key_share": 0.08753926653254201,
+   "key_share_se_cps": 0.0010153404741035715,
+   "adopted_basis_share": 0.08289017919280726,
+   "receipts_change_bn": 5.785170445244571,
+   "receipts_change_se_bn": 0.45065752833662814
+  },
+  "both_rank_x_size_survey_cemla": {
+   "key_share": 0.08960836998480377,
+   "key_share_se_cps": 0.0010080248399786977,
+   "adopted_basis_share": 0.08510056349761119,
+   "receipts_change_bn": 8.433012881446018,
+   "receipts_change_se_bn": 0.4525574510122792
+  },
+  "both_rank_x_size_x_age_corridor_net_h2": {
+   "key_share": 0.08712548396711438,
+   "key_share_se_cps": 0.0010145912357741279,
+   "adopted_basis_share": 0.08249828865886814,
+   "receipts_change_bn": 5.3137566386059945,
+   "receipts_change_se_bn": 0.47448441050101964
+  },
+  "both_rank_x_size_x_age_survey_cemla": {
+   "key_share": 0.08919152472174181,
+   "key_share_se_cps": 0.0010075373650222385,
+   "adopted_basis_share": 0.08470468790268744,
+   "receipts_change_bn": 7.956511662287987,
+   "receipts_change_se_bn": 0.47792478140528794
+  }
+ }
+}
