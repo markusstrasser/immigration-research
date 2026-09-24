@@ -17,8 +17,8 @@ from the central case, and the last-touched setting beside its central value and
 alone), convention cards, an exact Shapley split of the distance from the central case, a bridge
 with uncounted-but-assigned amounts, a sensitivity ranking, and the full receipt and spending
 ledger with per-line allocation rule and response. Below the ledger: whose welfare the ledger
-counts, what four commentators argue (text, no number under any name), the 49 FAQ-routed
-objection cards, the whole confidence ladder, searchable and linked to ledger lines, and a
+counts, what four commentators argue (text, no number under any name), the FAQ-routed
+objection cards (56 on 2026-09-24), the whole confidence ladder, searchable and linked to ledger lines, and a
 Sources section. Every assumption, card, convention and author statement carries short source
 labels that open the paper, report or dataset directly.
 
@@ -44,7 +44,7 @@ lane's own identity (published band plus the three changes, from `inputs.json`) 
 number in it equals, at its printed precision, a number within two lines of the cited file:line
 (49 of 50 items and all 255 values on 2026-09-21, the dropped item a caveat with no number;
 49 cards and 211 values on 2026-09-23 after the adoption; 53 cards and 231 values later that day,
-after the benefit lanes).
+after the benefit lanes; 56 cards and 246 values on 2026-09-24, with FAQ 15 and 16 carded).
 Fabricated numbers at real locations are rejected in memo and CSV files alike.
 
 `ladder.py` parses `research/immigration-confidence-ladder.md` at build time, so the page carries
@@ -65,9 +65,10 @@ Census API template instantiated for 2024, a corrected host). Bibliographic deta
 against Crossref or the publisher's `citation_*` tags where the repo's note and the record
 disagreed (Duncan and Trejo 2017 is ILR Review 70(5), not 71(5)). [SOURCE: sources.json]
 
-Since 2026-09-23 the registry also lists four documents of this repo (`kind: repo`, with the
+Since 2026-09-23 the registry also lists documents of this repo (`kind: repo`, with the
 `path` of the file instead of a link): the adoption decision, the main-case lane and the justice
-and uncompensated-care lanes. The page opens them locally and lists them after the external
+and uncompensated-care lanes, then the lanes and memos the refreshed cards cite (15 documents on
+2026-09-24). The page opens them locally and lists them after the external
 sources; `check_sources.py` skips them.
 
 `build_ui.py` refuses to build when a source lacks a link or a repo reference (for a repo
@@ -186,8 +187,8 @@ Adopting this changed the analysis protocol, so it waited for the operator; he a
   cards, 211 values, none dropped. Cards lead with the adopted main case and name September 20
   values as such. The numeric gate confirms that a number is printed at its cited line, not that
   the source still stands behind it: values a source stamps STALE, or that the FAQ has since
-  corrected, pass it and must be replaced by hand. FAQ 15, FAQ 16 and entry 14's executed nest
-  have no cards yet. The id `e12_no_group_crime_cost_in_headline` is kept because `sources.json`
+  corrected, pass it and must be replaced by hand. Entry 14's executed nest has no card yet.
+  The id `e12_no_group_crime_cost_in_headline` is kept because `sources.json`
   keys on it, although the card now describes justice charged by use.
 - A second pass the same day (inventory kept locally in the ignored `_cache/`) followed the care,
   construction, scale, mobility and NIBRS lanes: the FAQ 4, 12 and 13 cards were rewritten, four
@@ -197,6 +198,11 @@ Adopting this changed the analysis protocol, so it waited for the operator; he a
   cheaper services and construction; the hours tax it once carried moved to `e4_care_channels_add`.
   Numeric values the page would have rounded past their printed digits (13.32 shown as 13,
   −0.00252 as 0.00) are now stored as text, so each card shows its source's digits.
+- A third pass on 2026-09-24 added the FAQ revision's caveat to `e12_no_group_crime_cost_in_headline`
+  (BJS jail counts carry no ethnicity adjustment; with jails at the arrest share the prison-and-jail
+  figure is 22.9% Hispanic, and the ACS custody key does not change) and three cards:
+  `e15_same_share_different_gap`, `e15_shares_and_metro_match` (the shared all-age ledger's
+  state and metro tables) and `e16_cbo_surge_projection`.
 - The production block is CES; increasing-returns arguments are outside it.
 - Compiled through an LLM (notes/llm-bias-caveat.md): the ledger numbers are gated, the readings
   of authors and the ladder's keyword links are not.

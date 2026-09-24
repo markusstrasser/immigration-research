@@ -23,7 +23,8 @@
     "argue:caplan:1",
     "preset:no_services",
     "preset:repo_central",
-    "preset:repo_central_gg"
+    "preset:repo_central_gg",
+    "card:e16_cbo_surge_projection"
    ],
    "pdf": "https://www.cbo.gov/system/files/2025-06/61256-immigration-state-local.pdf"
   },
@@ -52,7 +53,8 @@
    "url": "https://www.cbo.gov/system/files/2024-07/60165-Immigration.pdf",
    "repo_ref": "research/immigration-dismantle-noah-smith-2026-06-25.md:47",
    "supports": [
-    "argue:smith:0"
+    "argue:smith:0",
+    "card:e16_cbo_surge_projection"
    ]
   },
   {
@@ -301,7 +303,10 @@
     "card:interest_on_gap_lane",
     "card:ledger_absolute_uncertainty_scope",
     "card:ledger_absolute_waterfall_and_arms",
-    "card:service_scaling_test"
+    "card:service_scaling_test",
+    "card:e15_same_share_different_gap",
+    "card:e15_shares_and_metro_match",
+    "card:e16_cbo_surge_projection"
    ]
   },
   {
@@ -1630,7 +1635,8 @@
    "supports": [
     "preset:repo_central_gg",
     "preset:proportional",
-    "card:real_costs_and_benefits_totals"
+    "card:real_costs_and_benefits_totals",
+    "card:e16_cbo_surge_projection"
    ]
   },
   {
@@ -1821,6 +1827,89 @@
    "path": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md",
    "supports": [
     "card:real_costs_and_benefits_totals",
+    "card:e12_no_group_crime_cost_in_headline"
+   ]
+  },
+  {
+   "key": "census_2020_ddhca_api",
+   "short": "2020 Census Detailed DHC-A",
+   "kind": "dataset",
+   "authors": "U.S. Census Bureau",
+   "year": 2020,
+   "title": "2020 Census Detailed DHC-A, table T01001, POPGROUP 4015 \"Mexican\", by state",
+   "venue": "Census Data API",
+   "url": "https://api.census.gov/data/2020/dec/ddhca.html",
+   "repo_ref": "infra/immigration-fiscal/apportionment_2026_09_18/fetch_counts.py:50",
+   "resolved": "2026-09-24",
+   "resolved_from": "the repo's API call with the query and key removed",
+   "supports": [
+    "card:e15_shares_and_metro_match"
+   ]
+  },
+  {
+   "key": "repo_ledger_stress_2026_09_17",
+   "short": "Stress lane, 2026-09-17",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "Ledger stress tests, including within-state matched gaps",
+   "venue": "Analysis lane ledger_stress_2026_09_17",
+   "path": "infra/immigration-fiscal/ledger_stress_2026_09_17/RESULT.md",
+   "supports": [
+    "card:e15_same_share_different_gap"
+   ]
+  },
+  {
+   "key": "repo_metro_match_2026_09_17",
+   "short": "Metro-match lane, 2026-09-17",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "Metro-level matched fiscal gaps",
+   "venue": "Analysis lane metro_match_2026_09_17",
+   "path": "infra/immigration-fiscal/metro_match_2026_09_17/RESULT.md",
+   "supports": [
+    "card:e15_same_share_different_gap",
+    "card:e15_shares_and_metro_match"
+   ]
+  },
+  {
+   "key": "repo_california_texas_geography_2026_09_21",
+   "short": "California and Texas memo, 2026-09-21",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "California and Texas: same Mexican-origin share, different white-reference gaps",
+   "venue": "Research memo",
+   "path": "research/immigration-california-texas-fiscal-geography-2026-09-21.md",
+   "supports": [
+    "card:e15_same_share_different_gap",
+    "card:e15_shares_and_metro_match"
+   ]
+  },
+  {
+   "key": "repo_arrival_window_fiscal_2026_09_18",
+   "short": "Arrival-window lane, 2026-09-18",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "Mexico-born fiscal balance by arrival window",
+   "venue": "Analysis lane arrival_window_fiscal_2026_09_18",
+   "path": "infra/immigration-fiscal/arrival_window_fiscal_2026_09_18/RESULT.md",
+   "supports": [
+    "card:e16_cbo_surge_projection"
+   ]
+  },
+  {
+   "key": "repo_dataset_integrity_crime_2026_09_23",
+   "short": "Dataset audit, crime, 2026-09-23",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "Dataset integrity audit: crime inputs",
+   "venue": "Analysis lane dataset_integrity_2026_09_23",
+   "path": "infra/immigration-fiscal/dataset_integrity_2026_09_23/crime.md",
+   "supports": [
     "card:e12_no_group_crime_cost_in_headline"
    ]
   }
