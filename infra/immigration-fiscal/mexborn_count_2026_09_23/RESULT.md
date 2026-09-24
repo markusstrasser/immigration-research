@@ -9,6 +9,18 @@ unauthorized lane's 4.567M Mexico-born falls to about **4.07M (range 3.96–4.16
 0.4–0.6M. The 2025→2026 CPS drop is mostly nonresponse among newly contacted households, not
 outflow, so ASEC 2026's 11.1M is not an independent confirmation.
 
+**[2026-09-24: the pricing is superseded; the count stands.]** The −$6.4bn to −$7.9bn formula
+charges each removed person the first generation's average net cost. That scales the ledger's
+generation split flat onto the complete account, which the routing rules forbid.
+`cps_imputation_keys_2026_09_23` step 5e reweights the overcounted Mexico-born on the account's
+own keys instead:
+- alone, the correction gives +$0.2 / +0.5bn: the 1.185M people removed pay about what they are
+  charged;
+- stacked after the tax-compliance and fill-in corrections, it gives −$2.2 / −2.5bn, which is the
+  figure the dataset audit carries (`dataset_integrity_2026_09_23/README.md`).
+
+The reweighted Mexico-born unauthorized come to 3.96M, the low end of the range above.
+
 # Mexico-born count adjudication (audit row 4)
 
 Lane `mexborn_count_2026_09_23`, 2026-09-23. It answers `BRIEF.md`, adjudicating
@@ -176,6 +188,8 @@ among the naturalized (1.02–1.11). [CALCULATION]
    The gap persists in every monthly file of 2024 and in every ASEC since 2019.
 
 ## Pricing
+
+Superseded for the account on 2026-09-24; see the note under the verdict.
 
 `price_row4.py` → `derived/pricing.csv`. The formula is the audit's: effect = −(12.231 − level) ÷
 12.231 × G1 share × main case. The G1 share of the union net at ledger waterfall step 14 is −72.458 ÷
