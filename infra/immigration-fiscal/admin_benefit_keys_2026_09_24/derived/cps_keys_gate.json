@@ -1,0 +1,168 @@
+{
+ "cps_sha256": "318845a2b5e0034eb2973898de1738f4df0025727de38499e7669cb9c0deef0b",
+ "union_population": 40896574.152351856,
+ "gates": [
+  {
+   "programme": "snap",
+   "measure": "key",
+   "allocation": "personal",
+   "key": "snap",
+   "published_target_share": 0.1481498396937705,
+   "rebuilt_target_share": 0.14814983969377093,
+   "ok": true
+  },
+  {
+   "programme": "snap",
+   "measure": "key",
+   "allocation": "shared",
+   "key": "snap",
+   "published_target_share": 0.1481498396937705,
+   "rebuilt_target_share": 0.14814983969377093,
+   "ok": true
+  },
+  {
+   "programme": "wic",
+   "measure": "key",
+   "allocation": "personal",
+   "key": "wic",
+   "published_target_share": 0.2287592017148547,
+   "rebuilt_target_share": 0.22875920171485437,
+   "ok": true
+  },
+  {
+   "programme": "wic",
+   "measure": "key",
+   "allocation": "shared",
+   "key": "wic",
+   "published_target_share": 0.2287592017148547,
+   "rebuilt_target_share": 0.22875920171485437,
+   "ok": true
+  },
+  {
+   "programme": "housing",
+   "measure": "key",
+   "allocation": "personal",
+   "key": "housing_support",
+   "published_target_share": 0.1264099071207035,
+   "rebuilt_target_share": 0.12640990712070327,
+   "ok": true
+  },
+  {
+   "programme": "housing",
+   "measure": "key",
+   "allocation": "shared",
+   "key": "housing_support",
+   "published_target_share": 0.1264099071207035,
+   "rebuilt_target_share": 0.12640990712070327,
+   "ok": true
+  },
+  {
+   "programme": "cash",
+   "measure": "key",
+   "allocation": "personal",
+   "key": "cash_assistance",
+   "published_target_share": 0.1666397863256528,
+   "rebuilt_target_share": 0.16663978632565296,
+   "ok": true
+  },
+  {
+   "programme": "cash",
+   "measure": "key",
+   "allocation": "shared",
+   "key": "cash_assistance",
+   "published_target_share": 0.1766157948206153,
+   "rebuilt_target_share": 0.1766157948206155,
+   "ok": true
+  },
+  {
+   "programme": "ui",
+   "measure": "key",
+   "allocation": "personal",
+   "key": "unemployment",
+   "published_target_share": 0.1132777727694642,
+   "rebuilt_target_share": 0.1132777727694642,
+   "ok": true
+  },
+  {
+   "programme": "ui",
+   "measure": "key",
+   "allocation": "shared",
+   "key": "unemployment",
+   "published_target_share": 0.1159586061315306,
+   "rebuilt_target_share": 0.11595860613153035,
+   "ok": true
+  },
+  {
+   "programme": "ssi",
+   "measure": "key",
+   "allocation": "personal",
+   "key": "ssi",
+   "published_target_share": 0.0822426056638997,
+   "rebuilt_target_share": 0.08224260566389947,
+   "ok": true
+  },
+  {
+   "programme": "ssi",
+   "measure": "key",
+   "allocation": "shared",
+   "key": "ssi",
+   "published_target_share": 0.0823404698560612,
+   "rebuilt_target_share": 0.08234046985606125,
+   "ok": true
+  },
+  {
+   "programme": "medicaid",
+   "measure": "key",
+   "allocation": "personal",
+   "key": "medicaid",
+   "published_target_share": 0.123756310026951,
+   "rebuilt_target_share": 0.1237563100269537,
+   "ok": true
+  },
+  {
+   "programme": "medicaid",
+   "measure": "key",
+   "allocation": "shared",
+   "key": "medicaid",
+   "published_target_share": 0.123756310026951,
+   "rebuilt_target_share": 0.1237563100269537,
+   "ok": true
+  },
+  {
+   "programme": "medicaid",
+   "measure": "covered",
+   "allocation": "personal",
+   "key": "medicaid_covered",
+   "published_target_share": 0.1964748689730911,
+   "rebuilt_target_share": 0.19647486897309102,
+   "ok": true
+  },
+  {
+   "programme": "medicaid",
+   "measure": "covered",
+   "allocation": "shared",
+   "key": "medicaid_covered",
+   "published_target_share": 0.1964748689730911,
+   "rebuilt_target_share": 0.19647486897309102,
+   "ok": true
+  },
+  {
+   "programme": "population",
+   "measure": "all",
+   "allocation": "personal",
+   "key": "population",
+   "published_target_share": 0.1214529177216476,
+   "rebuilt_target_share": 0.12145291772164984,
+   "ok": true
+  },
+  {
+   "programme": "population",
+   "measure": "all",
+   "allocation": "shared",
+   "key": "population",
+   "published_target_share": 0.1214529177216476,
+   "rebuilt_target_share": 0.12145291772164984,
+   "ok": true
+  }
+ ]
+}
