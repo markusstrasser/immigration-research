@@ -156,7 +156,10 @@ payments, ITIN credits and migrant shelters in one table.
 - No charged fraud tied to status was found.
 
 The one keying mismatch is shelters. The account over-charges the group about $0.5bn, because
-Mexican nationals were 0.50–0.84% of the people served.
+Mexican nationals were 0.50–0.84% of the people served. Federal fraud sentencing by citizenship
+(ladder 214) puts noncitizens at 1.8–2.0 times the citizen rate per adult, the same as for their
+other non-immigration federal crime. They hold 8.5% of government-program fraud loss, against 7.7%
+of adults.
 
 The [preferences lane](../infra/immigration-fiscal/affirmative_action_cost_2026_09_24/RESULT.md) (September 24,
 ladder 213) prices what race- and ethnicity-based preferences cost non-Hispanic white natives: about

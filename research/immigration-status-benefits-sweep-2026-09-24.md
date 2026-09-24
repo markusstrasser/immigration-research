@@ -10,8 +10,8 @@ Five lanes answer it:
 - [state programs outside California](../infra/immigration-fiscal/state_programs_unauthorized_2026_09_23/RESULT.md);
 - [migrant shelters](../infra/immigration-fiscal/migrant_shelter_costs_2026_09_23/RESULT.md).
 
-A sixth lane, on federal fraud by offender citizenship and the Minnesota cases, is running
-(`infra/immigration-fiscal/fraud_by_citizenship_2026_09_24/`).
+A sixth lane, [fraud by offender citizenship](../infra/immigration-fiscal/fraud_by_citizenship_2026_09_24/RESULT.md),
+covers federal fraud sentencing and the Minnesota cases (section below; ladder 214).
 
 **Verdict:** Money paid on account of immigration status is real, mostly lawful and concentrated in
 California.
@@ -95,6 +95,27 @@ CALCULATION: calendar-2024 blends and keying in
 - **Fraud outside status programs**, for example provider networks billing Medicaid or child
   nutrition, is not in this table. It is the running lane's question.
 
+## Fraud by offender citizenship (added 2026-09-24)
+
+The sixth lane measures fraud by who commits it, not by who receives the benefit.
+- **Sentencing rates.** Per adult, federal courts sentence noncitizens for fraud at 1.8–2.0 times
+  the citizen rate. That is the same ratio as for all non-immigration federal crime (1.84). Legal
+  noncitizens lean toward fraud (1.7×, 2.0× for health care). Unauthorized immigrants' excess
+  "benefits fraud" is false-SSN cases with a median loss of $0.
+- **Government-program fraud, FY2018–22.** Noncitizens are 14.6% of those sentenced and hold 8.5%
+  of the loss, against 7.7% of adults. On GAO's $233–521bn a year of federal fraud, that implies
+  about $20–44bn a year by noncitizens [CALCULATION; assumes sentenced cases represent all fraud].
+- **Minnesota.**
+  - Feeding Our Future: $250m alleged and 65 convicted. No document gives aggregate proven loss,
+    restitution or recovery for any scheme.
+  - The "$9 billion" is a prosecutor's spoken "very possible" about half of $18bn of spending.
+  - No court or DOJ fraud document states a defendant's origin. "85 of 98 of Somali descent" comes
+    from DOJ social-media posts that give no method.
+- **In the account.** Fraud dollars sit inside BEA program lines charged by use. Each point of
+  Medicaid fraud puts $1.17bn on the Mexican-origin group. A perpetrator key at a 5.6% share would
+  move $0.64bn per point off it. That would be a framing choice, not a correction
+  [FRAMING-SENSITIVE].
+
 ## Frame
 
 The account asks what the Mexican-origin group costs other US residents. The operator's question
@@ -105,4 +126,7 @@ only correction the sweep finds is the shelter keying, and it lowers the charge.
 
 ## Revisions
 
-None yet.
+- 2026-09-24: the fraud-by-citizenship lane reported; its section and ladder 214 were added. The
+  claim changes: the sweep had found no charged fraud tied to status, and the sentencing data now
+  give a rate by citizenship. Noncitizens' fraud ratio matches their ratio for other federal crime,
+  and their share of program-fraud loss is close to their share of adults.
