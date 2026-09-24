@@ -78,9 +78,10 @@ which cannot tell zero from one; zero is a budget-scoring convention
 ([decision](../decisions/2026-09-23-main-case-general-government-and-use-keys.md)). Charging
 all three functions per capita moves the *assigned balance* by $286bn but is not part of the
 net-cost headline. The sign still turns on ordinary service budgets. With all of them fixed and
-general government at its adopted response, the result runs from −$87.8bn to +$80.5bn, and
-break-even needs 5.5–16.4% of assigned service costs to be incremental (computed on the
-September 23 case, not re-run on the September 24 case). With general government
+general government at its adopted response, the result ran from −$87.8bn to +$80.5bn across all
+incidence rules on the September 23 case. Break-even now needs 4.8–16.0% of assigned service costs
+to be incremental, against 5.5–16.4% on September 23. On CBO's incidence rules the frozen-services
+row moves from −$22.3–80.5bn to −$25.3–77.8bn ([September 24 sign reversal](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md#sign-reversal-on-the-new-case)). With general government
 fixed as well, as published September 20, the figures were −$41.5bn to +$112.7bn and
 18.5–25.8% ([sign reversal](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md#sign-reversal-under-the-adopted-case)). A 2025 municipal-bond paper
 sometimes cited for "local spending rises and revenue does not" cannot settle the response
@@ -106,8 +107,8 @@ fiscal ledger. Finding: the account adds production gains and the induced taxes 
 $8.8bn (cash scaling) to $13.3bn (GDP scaling), $6–21bn across the parameter grid. Omitted
 benefits would have to reach $201–246bn a year to offset the main case. That threshold is
 conditional on the service-response share, which is assumed and unmeasured: on the September 23
-case it was $159–213bn if non-school education budgets were also held fixed and reached zero
-where 5.5–16.4% of assigned service costs are incremental (entry 2), so the response share moves the result more
+case it was $159–213bn if non-school education budgets were also held fixed, and it reaches zero
+where 4.8–16.0% of assigned service costs are incremental (entry 2), so the response share moves the result more
 than any offset listed here. Cheaper household services are worth $21.8bn a year to
 consumers, or $11.9bn net of native low-skill wage gains. That is the production gain seen from
 the spending side, so it is not added. The taxes that native women pay on the extra hours

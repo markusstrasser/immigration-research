@@ -139,6 +139,26 @@ alone reproduces its lane's own figure:
 A unit synthetic line moves both ends by exactly 1, and the tax and spending sides add to the
 package. The MCBS helper reproduces the pooled lane's p99.5 Medicare and Medicaid changes at k = 1.
 
+## Sign reversal on the new case
+
+The sign still turns only on ordinary service budgets. The September 23 lane's definition holds:
+services respond at a common share s, general government at its adopted 0.59–0.84, defense and
+existing interest are fixed, and transfers and direct receipts respond fully. `sign_reversal.cjs`
+first reproduces that lane's break-even rows exactly (gates, 1e-4). It then adds the package, as
+the mean of the two fill-in methods' shifts, on CBO's incidence rules and preferred keys
+[CALCULATION: `sign_reversal.cjs` → `derived/sign_reversal.csv`].
+
+| Row | September 23 | September 24 |
+|---|---:|---:|
+| Break-even share of assigned service costs, personal allocation | 5.5–13.5% | **4.8–12.9%** |
+| Break-even share, shared allocation | 8.3–16.4% | **7.8–16.0%** |
+| Services fixed, capital fixed, CBO rules and preferred keys ($bn welfare) | −22.3 to +80.5 | −25.3 to +77.8 |
+
+The package makes the sign slightly easier to keep. At frozen services the tax corrections weigh
+more than the transfer re-keys, which lowers the break-even by 0.4–0.7 points. The September 23
+lane's frozen-services row, −$87.8bn to +$80.5bn, ranges over every incidence rule. The package's
+receipt changes exist only for CBO's rules, so that row is not recomputed across rules.
+
 ## Limits
 
 - **Interactions are first-order.** A ratio correction on top of the tax records is scaled by the
@@ -150,7 +170,6 @@ package. The MCBS helper reproduces the pooled lane's p99.5 Medicare and Medicai
 - **The range sums independent bounds.** It is wide by construction. The quadrature figure,
   $189–260bn, is context only.
 - **Not re-run on the new case.** These were computed on September 23:
-  - the service-response break-even (5.5–16.4%);
   - the back-cast;
   - the ten-year and lifetime anchors;
   - the uncertainty propagation;
@@ -173,7 +192,10 @@ From the repository root:
 ```sh
 uv run --no-project python3 infra/immigration-fiscal/main_case_2026_09_24/mcbs_bound.py   # derived/mcbs_bound.json
 node infra/immigration-fiscal/main_case_2026_09_24/main_case.cjs                         # all gates must pass
+node infra/immigration-fiscal/main_case_2026_09_24/sign_reversal.cjs                     # break-even on the new case
 ```
 
+`package.cjs` holds the frame, each lane's edits and `packageShifts()`, which applies the combining
+rules; `main_case.cjs` and `sign_reversal.cjs` import it, so there is one definition of the package.
 The script reads each lane's committed `derived/` files. It needs the CPS lane's ignored cache
 only to refresh the vendored stacks.
