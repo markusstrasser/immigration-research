@@ -1,0 +1,71 @@
+population,window,variant,reason,share_pct,se_pp,n,n_citing,weighted_persons_per_year
+US-born adults leaving California,2005-2025,all records,housing,18.98,1.19,3586,686,286526
+US-born adults leaving California,2005-2025,all records,jobs,38.11,1.29,3586,1358,286526
+US-born adults leaving California,2005-2025,all records,family,27.22,1.26,3586,935,286526
+US-born adults leaving California,2005-2025,all records,neighborhood_crime,1.47,0.25,3586,72,286526
+US-born adults leaving California,2005-2025,all records,climate,0.9,0.2,3586,40,286526
+US-born adults leaving California,2005-2025,all records,retirement,2.29,0.29,3586,101,286526
+US-born adults leaving California,2005-2025,all records,other,11.02,0.84,3586,394,286526
+US-born adults leaving California,2005-2025,all records,cheaper_housing,7.73,0.79,3586,266,286526
+US-born adults leaving California,2005-2025,all records,better_housing,3.18,0.48,3586,108,286526
+US-born adults leaving California,2005-2025,all records,own_home,2.44,0.43,3586,95,286526
+US-born adults leaving California,1999-2025,all records,housing,18.97,0.99,5092,964,296571
+US-born adults leaving California,1999-2025,all records,jobs,37.68,1.1,5092,1876,296571
+US-born adults leaving California,1999-2025,all records,family,27.36,1.05,5092,1382,296571
+US-born adults leaving California,1999-2025,all records,neighborhood_crime,1.62,0.24,5092,114,296571
+US-born adults leaving California,1999-2025,all records,climate,1.0,0.19,5092,58,296571
+US-born adults leaving California,1999-2025,all records,retirement,2.16,0.26,5092,129,296571
+US-born adults leaving California,1999-2025,all records,other,11.2,0.72,5092,569,296571
+US-born adults leaving California,1999-2025,all records,cheaper_housing,7.07,0.65,5092,336,296571
+US-born adults leaving California,1999-2025,all records,better_housing,3.77,0.43,5092,197,296571
+US-born adults leaving California,1999-2025,all records,own_home,2.74,0.39,5092,149,296571
+US-born adults leaving California,1999-2004,all records,housing,18.94,1.74,1506,278,331730
+US-born adults leaving California,1999-2004,all records,jobs,36.38,2.07,1506,518,331730
+US-born adults leaving California,1999-2004,all records,family,27.77,1.83,1506,447,331730
+US-born adults leaving California,1999-2004,all records,neighborhood_crime,2.08,0.59,1506,42,331730
+US-born adults leaving California,1999-2004,all records,climate,1.28,0.46,1506,18,331730
+US-born adults leaving California,1999-2004,all records,retirement,1.78,0.55,1506,28,331730
+US-born adults leaving California,1999-2004,all records,other,11.76,1.37,1506,175,331730
+US-born adults leaving California,1999-2004,all records,cheaper_housing,5.05,1.03,1506,70,331730
+US-born adults leaving California,1999-2004,all records,better_housing,5.56,0.93,1506,89,331730
+US-born adults leaving California,1999-2004,all records,own_home,3.62,0.86,1506,54,331730
+US-born adults leaving California,2005-2025,excluding ASEC 2012-2015 (code anomaly),housing,17.94,1.41,2875,519,285828
+US-born adults leaving California,2005-2025,excluding ASEC 2012-2015 (code anomaly),jobs,36.34,1.56,2875,1030,285828
+US-born adults leaving California,2005-2025,excluding ASEC 2012-2015 (code anomaly),family,27.84,1.43,2875,774,285828
+US-born adults leaving California,2005-2025,excluding ASEC 2012-2015 (code anomaly),neighborhood_crime,1.58,0.29,2875,57,285828
+US-born adults leaving California,2005-2025,excluding ASEC 2012-2015 (code anomaly),climate,1.12,0.24,2875,40,285828
+US-born adults leaving California,2005-2025,excluding ASEC 2012-2015 (code anomaly),retirement,2.25,0.31,2875,87,285828
+US-born adults leaving California,2005-2025,excluding ASEC 2012-2015 (code anomaly),other,12.94,1.01,2875,368,285828
+US-born adults leaving California,2005-2025,excluding ASEC 2012-2015 (code anomaly),cheaper_housing,8.66,0.94,2875,237,285828
+US-born adults leaving California,2005-2025,excluding ASEC 2012-2015 (code anomaly),better_housing,3.53,0.57,2875,97,285828
+US-born adults leaving California,2005-2025,excluding ASEC 2012-2015 (code anomaly),own_home,2.42,0.47,2875,79,285828
+US-born adults leaving California,2005-2025,excluding allocated migration status or origin state,housing,17.06,1.25,2901,485,231104
+US-born adults leaving California,2005-2025,excluding allocated migration status or origin state,jobs,40.36,1.32,2901,1162,231104
+US-born adults leaving California,2005-2025,excluding allocated migration status or origin state,family,27.03,1.37,2901,757,231104
+US-born adults leaving California,2005-2025,excluding allocated migration status or origin state,neighborhood_crime,1.52,0.28,2901,63,231104
+US-born adults leaving California,2005-2025,excluding allocated migration status or origin state,climate,1.04,0.25,2901,35,231104
+US-born adults leaving California,2005-2025,excluding allocated migration status or origin state,retirement,2.57,0.37,2901,88,231104
+US-born adults leaving California,2005-2025,excluding allocated migration status or origin state,other,10.41,0.87,2901,311,231104
+US-born adults leaving California,2005-2025,excluding allocated migration status or origin state,cheaper_housing,8.27,0.88,2901,226,231104
+US-born adults leaving California,2005-2025,excluding allocated migration status or origin state,better_housing,2.01,0.39,2901,55,231104
+US-born adults leaving California,2005-2025,excluding allocated migration status or origin state,own_home,2.22,0.46,2901,66,231104
+US-born adults leaving California,2005-2025,detailed code,01 change in marital status,3.9,0.54,3586,121,286526
+US-born adults leaving California,2005-2025,detailed code,02 establish own household,4.24,0.55,3586,150,286526
+US-born adults leaving California,2005-2025,detailed code,03 other family reason,18.05,1.08,3586,632,286526
+US-born adults leaving California,2005-2025,detailed code,20 relationship with unmarried partner,1.03,0.24,3586,32,286526
+US-born adults leaving California,2005-2025,detailed code,04 new job or transfer,27.93,1.19,3586,997,286526
+US-born adults leaving California,2005-2025,detailed code,05 look for work or lost job,4.97,0.59,3586,172,286526
+US-born adults leaving California,2005-2025,detailed code,06 easier commute,1.93,0.37,3586,59,286526
+US-born adults leaving California,2005-2025,detailed code,08 other job-related,3.29,0.53,3586,130,286526
+US-born adults leaving California,2005-2025,detailed code,07 retired,2.29,0.29,3586,101,286526
+US-born adults leaving California,2005-2025,detailed code,"09 own home, not rent",2.44,0.43,3586,95,286526
+US-born adults leaving California,2005-2025,detailed code,10 new or better housing,3.18,0.48,3586,108,286526
+US-born adults leaving California,2005-2025,detailed code,12 cheaper housing,7.73,0.79,3586,266,286526
+US-born adults leaving California,2005-2025,detailed code,13 other housing reason,5.53,0.59,3586,212,286526
+US-born adults leaving California,2005-2025,detailed code,19 foreclosure or eviction,0.1,0.07,3586,5,286526
+US-born adults leaving California,2005-2025,detailed code,11 better neighborhood/less crime,1.47,0.25,3586,72,286526
+US-born adults leaving California,2005-2025,detailed code,15 change of climate,0.9,0.2,3586,40,286526
+US-born adults leaving California,2005-2025,detailed code,14 attend or leave college,4.85,0.52,3586,174,286526
+US-born adults leaving California,2005-2025,detailed code,16 health,1.71,0.34,3586,50,286526
+US-born adults leaving California,2005-2025,detailed code,17 other reason,4.44,0.57,3586,167,286526
+US-born adults leaving California,2005-2025,detailed code,18 natural disaster,0.03,0.03,3586,3,286526

@@ -1,0 +1,125 @@
+design,spec,outcome,term,coef_pp,se_pp,t,n,clusters,mean_outcome_pct
+"A origin state, US-born adult interstate movers 2006-2025","A1 origin Mexican share, year FE",neighborhood_crime,mex10,-0.283,0.102,-2.79,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025","A2 + origin rent, home value, income",neighborhood_crime,mex10,-0.332,0.107,-3.11,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025","A2 + origin rent, home value, income",neighborhood_crime,ln_rent,0.593,1.564,0.38,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025","A2 + origin rent, home value, income",neighborhood_crime,ln_value,0.377,0.765,0.49,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025","A2 + origin rent, home value, income",neighborhood_crime,ln_inc,-1.494,1.887,-0.79,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A3 + individual controls,neighborhood_crime,mex10,-0.323,0.113,-2.86,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A3 + individual controls,neighborhood_crime,ln_rent,0.027,1.502,0.02,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A3 + individual controls,neighborhood_crime,ln_value,0.588,0.79,0.74,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A3 + individual controls,neighborhood_crime,ln_inc,-0.832,1.83,-0.45,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A3 + individual controls,neighborhood_crime,ln_hhinc,-0.009,0.09,-0.1,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A3 + individual controls,neighborhood_crime,female,0.057,0.118,0.48,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A4 A3 + origin-state FE (within-state change),neighborhood_crime,mex10,0.953,2.523,0.38,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A4 A3 + origin-state FE (within-state change),neighborhood_crime,ln_rent,-0.496,4.403,-0.11,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A4 A3 + origin-state FE (within-state change),neighborhood_crime,ln_value,1.517,1.886,0.8,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A4 A3 + origin-state FE (within-state change),neighborhood_crime,ln_inc,0.101,5.054,0.02,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A4 A3 + origin-state FE (within-state change),neighborhood_crime,ln_hhinc,-0.01,0.091,-0.11,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A4 A3 + origin-state FE (within-state change),neighborhood_crime,female,0.056,0.116,0.49,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025","A5 A3, non-Hispanic white only",neighborhood_crime,mex10,-0.138,0.098,-1.41,25191,51,1.666
+"A origin state, US-born adult interstate movers 2006-2025","A5 A3, non-Hispanic white only",neighborhood_crime,ln_rent,1.032,1.326,0.78,25191,51,1.666
+"A origin state, US-born adult interstate movers 2006-2025","A5 A3, non-Hispanic white only",neighborhood_crime,ln_value,0.002,0.851,0.0,25191,51,1.666
+"A origin state, US-born adult interstate movers 2006-2025","A5 A3, non-Hispanic white only",neighborhood_crime,ln_inc,-0.888,1.58,-0.56,25191,51,1.666
+"A origin state, US-born adult interstate movers 2006-2025","A5 A3, non-Hispanic white only",neighborhood_crime,ln_hhinc,0.061,0.1,0.61,25191,51,1.666
+"A origin state, US-born adult interstate movers 2006-2025","A5 A3, non-Hispanic white only",neighborhood_crime,female,0.054,0.121,0.44,25191,51,1.666
+"A origin state, US-born adult interstate movers 2006-2025","A6 A3, Hispanic only",neighborhood_crime,mex10,-0.631,0.44,-1.44,2982,51,1.778
+"A origin state, US-born adult interstate movers 2006-2025","A6 A3, Hispanic only",neighborhood_crime,ln_rent,2.106,7.315,0.29,2982,51,1.778
+"A origin state, US-born adult interstate movers 2006-2025","A6 A3, Hispanic only",neighborhood_crime,ln_value,0.313,2.095,0.15,2982,51,1.778
+"A origin state, US-born adult interstate movers 2006-2025","A6 A3, Hispanic only",neighborhood_crime,ln_inc,-3.211,6.326,-0.51,2982,51,1.778
+"A origin state, US-born adult interstate movers 2006-2025","A6 A3, Hispanic only",neighborhood_crime,ln_hhinc,-0.574,0.394,-1.46,2982,51,1.778
+"A origin state, US-born adult interstate movers 2006-2025","A6 A3, Hispanic only",neighborhood_crime,female,0.046,0.392,0.12,2982,51,1.778
+"A origin state, US-born adult interstate movers 2006-2025",A7 A3 with Hispanic share,neighborhood_crime,hisp10,-0.39,0.125,-3.12,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A7 A3 with Hispanic share,neighborhood_crime,ln_rent,1.638,1.615,1.01,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A7 A3 with Hispanic share,neighborhood_crime,ln_value,0.321,0.802,0.4,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A7 A3 with Hispanic share,neighborhood_crime,ln_inc,-1.578,1.794,-0.88,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A7 A3 with Hispanic share,neighborhood_crime,ln_hhinc,-0.008,0.09,-0.09,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A7 A3 with Hispanic share,neighborhood_crime,female,0.061,0.119,0.51,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A8 A3 excluding allocated records,neighborhood_crime,mex10,-0.363,0.102,-3.55,27463,51,1.62
+"A origin state, US-born adult interstate movers 2006-2025",A8 A3 excluding allocated records,neighborhood_crime,ln_rent,1.329,1.314,1.01,27463,51,1.62
+"A origin state, US-born adult interstate movers 2006-2025",A8 A3 excluding allocated records,neighborhood_crime,ln_value,0.839,0.66,1.27,27463,51,1.62
+"A origin state, US-born adult interstate movers 2006-2025",A8 A3 excluding allocated records,neighborhood_crime,ln_inc,-2.328,1.687,-1.38,27463,51,1.62
+"A origin state, US-born adult interstate movers 2006-2025",A8 A3 excluding allocated records,neighborhood_crime,ln_hhinc,0.076,0.059,1.29,27463,51,1.62
+"A origin state, US-born adult interstate movers 2006-2025",A8 A3 excluding allocated records,neighborhood_crime,female,0.061,0.115,0.53,27463,51,1.62
+"A origin state, US-born adult interstate movers 2006-2025",A9 A3 + California-origin indicator,neighborhood_crime,mex10,-0.255,0.155,-1.65,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A9 A3 + California-origin indicator,neighborhood_crime,ca_origin,-0.523,0.529,-0.99,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A9 A3 + California-origin indicator,neighborhood_crime,ln_rent,-0.126,1.511,-0.08,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A9 A3 + California-origin indicator,neighborhood_crime,ln_value,0.91,0.954,0.95,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A9 A3 + California-origin indicator,neighborhood_crime,ln_inc,-1.16,1.952,-0.59,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A9 A3 + California-origin indicator,neighborhood_crime,ln_hhinc,-0.009,0.09,-0.1,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A9 A3 + California-origin indicator,neighborhood_crime,female,0.055,0.119,0.46,33951,51,1.848
+"A origin state, US-born adult interstate movers 2006-2025",A10 A3 excluding California origin,neighborhood_crime,mex10,-0.253,0.157,-1.61,30647,50,1.903
+"A origin state, US-born adult interstate movers 2006-2025",A10 A3 excluding California origin,neighborhood_crime,ln_rent,-0.142,1.539,-0.09,30647,50,1.903
+"A origin state, US-born adult interstate movers 2006-2025",A10 A3 excluding California origin,neighborhood_crime,ln_value,0.882,1.021,0.86,30647,50,1.903
+"A origin state, US-born adult interstate movers 2006-2025",A10 A3 excluding California origin,neighborhood_crime,ln_inc,-1.035,1.987,-0.52,30647,50,1.903
+"A origin state, US-born adult interstate movers 2006-2025",A10 A3 excluding California origin,neighborhood_crime,ln_hhinc,-0.025,0.099,-0.26,30647,50,1.903
+"A origin state, US-born adult interstate movers 2006-2025",A10 A3 excluding California origin,neighborhood_crime,female,0.07,0.13,0.54,30647,50,1.903
+"A origin state, US-born adult interstate movers 2006-2025",A11 positive control: cheaper housing,cheaper_housing,mex10,0.077,0.217,0.36,33951,51,3.939
+"A origin state, US-born adult interstate movers 2006-2025",A11 positive control: cheaper housing,cheaper_housing,ln_rent,4.017,2.417,1.66,33951,51,3.939
+"A origin state, US-born adult interstate movers 2006-2025",A11 positive control: cheaper housing,cheaper_housing,ln_value,2.043,1.266,1.61,33951,51,3.939
+"A origin state, US-born adult interstate movers 2006-2025",A11 positive control: cheaper housing,cheaper_housing,ln_inc,-2.115,2.034,-1.04,33951,51,3.939
+"A origin state, US-born adult interstate movers 2006-2025",A11 positive control: cheaper housing,cheaper_housing,ln_hhinc,-0.336,0.155,-2.16,33951,51,3.939
+"A origin state, US-born adult interstate movers 2006-2025",A11 positive control: cheaper housing,cheaper_housing,female,0.144,0.208,0.69,33951,51,3.939
+"A origin state, US-born adult interstate movers 2006-2025",A12 placebo outcome: jobs,jobs,mex10,0.619,0.495,1.25,33951,51,40.877
+"A origin state, US-born adult interstate movers 2006-2025",A12 placebo outcome: jobs,jobs,ln_rent,3.29,5.82,0.57,33951,51,40.877
+"A origin state, US-born adult interstate movers 2006-2025",A12 placebo outcome: jobs,jobs,ln_value,-4.821,2.506,-1.92,33951,51,40.877
+"A origin state, US-born adult interstate movers 2006-2025",A12 placebo outcome: jobs,jobs,ln_inc,-7.665,6.603,-1.16,33951,51,40.877
+"A origin state, US-born adult interstate movers 2006-2025",A12 placebo outcome: jobs,jobs,ln_hhinc,3.105,0.381,8.14,33951,51,40.877
+"A origin state, US-born adult interstate movers 2006-2025",A12 placebo outcome: jobs,jobs,female,-4.377,0.587,-7.46,33951,51,40.877
+"A origin state, US-born adult interstate movers 2006-2025",A13 positive control: cheaper housing on origin rent alone,cheaper_housing,ln_rent,6.429,1.513,4.25,33951,51,3.939
+"A origin state, US-born adult interstate movers 2006-2025",A14 positive control: climate on cold-region origin,climate,cold_origin,2.045,0.399,5.13,33951,51,2.2
+"A origin state, US-born adult interstate movers 2006-2025",A14 positive control: climate on cold-region origin,climate,ln_hhinc,0.149,0.099,1.51,33951,51,2.2
+"A origin state, US-born adult interstate movers 2006-2025",A14 positive control: climate on cold-region origin,climate,female,-0.15,0.135,-1.11,33951,51,2.2
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B1 county Mexican share, year and state FE",neighborhood_crime,mex10,0.246,0.176,1.4,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B2 + county rent, home value, income",neighborhood_crime,mex10,0.149,0.182,0.82,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B2 + county rent, home value, income",neighborhood_crime,ln_rent,1.491,2.567,0.58,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B2 + county rent, home value, income",neighborhood_crime,ln_value,1.161,0.909,1.28,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B2 + county rent, home value, income",neighborhood_crime,ln_inc,-3.975,1.169,-3.4,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B3 + individual controls,neighborhood_crime,mex10,0.155,0.181,0.86,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B3 + individual controls,neighborhood_crime,ln_rent,1.049,2.569,0.41,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B3 + individual controls,neighborhood_crime,ln_value,1.252,0.877,1.43,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B3 + individual controls,neighborhood_crime,ln_inc,-3.861,1.201,-3.21,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B3 + individual controls,neighborhood_crime,ln_hhinc,0.126,0.128,0.99,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B3 + individual controls,neighborhood_crime,female,0.28,0.183,1.53,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B4 B3 with county FE (within-county change),neighborhood_crime,mex10,0.792,2.253,0.35,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B4 B3 with county FE (within-county change),neighborhood_crime,ln_rent,2.375,6.817,0.35,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B4 B3 with county FE (within-county change),neighborhood_crime,ln_value,1.572,2.522,0.62,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B4 B3 with county FE (within-county change),neighborhood_crime,ln_inc,0.654,7.668,0.09,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B4 B3 with county FE (within-county change),neighborhood_crime,ln_hhinc,0.087,0.13,0.67,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B4 B3 with county FE (within-county change),neighborhood_crime,female,0.259,0.183,1.41,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B5 B3, non-Hispanic white only",neighborhood_crime,mex10,0.434,0.24,1.81,30386,368,4.183
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B5 B3, non-Hispanic white only",neighborhood_crime,ln_rent,2.474,3.543,0.7,30386,368,4.183
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B5 B3, non-Hispanic white only",neighborhood_crime,ln_value,1.386,1.205,1.15,30386,368,4.183
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B5 B3, non-Hispanic white only",neighborhood_crime,ln_inc,-5.403,1.777,-3.04,30386,368,4.183
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B5 B3, non-Hispanic white only",neighborhood_crime,ln_hhinc,0.085,0.175,0.49,30386,368,4.183
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B5 B3, non-Hispanic white only",neighborhood_crime,female,0.446,0.222,2.01,30386,368,4.183
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B6 B3, Hispanic only",neighborhood_crime,mex10,0.582,0.253,2.3,8471,306,4.555
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B6 B3, Hispanic only",neighborhood_crime,ln_rent,6.204,5.233,1.19,8471,306,4.555
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B6 B3, Hispanic only",neighborhood_crime,ln_value,0.323,2.087,0.15,8471,306,4.555
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B6 B3, Hispanic only",neighborhood_crime,ln_inc,-1.935,3.313,-0.58,8471,306,4.555
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B6 B3, Hispanic only",neighborhood_crime,ln_hhinc,0.177,0.268,0.66,8471,306,4.555
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B6 B3, Hispanic only",neighborhood_crime,female,0.192,0.611,0.31,8471,306,4.555
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B7 B3 with Hispanic share,neighborhood_crime,hisp10,0.135,0.14,0.97,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B7 B3 with Hispanic share,neighborhood_crime,ln_rent,0.865,2.564,0.34,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B7 B3 with Hispanic share,neighborhood_crime,ln_value,1.144,0.893,1.28,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B7 B3 with Hispanic share,neighborhood_crime,ln_inc,-3.602,1.274,-2.83,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B7 B3 with Hispanic share,neighborhood_crime,ln_hhinc,0.126,0.128,0.98,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B7 B3 with Hispanic share,neighborhood_crime,female,0.28,0.183,1.53,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B8 B3, California counties only",neighborhood_crime,mex10,0.482,0.279,1.73,9066,31,4.819
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B8 B3, California counties only",neighborhood_crime,ln_rent,-1.23,7.577,-0.16,9066,31,4.819
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B8 B3, California counties only",neighborhood_crime,ln_value,0.782,2.421,0.32,9066,31,4.819
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B8 B3, California counties only",neighborhood_crime,ln_inc,-2.853,4.804,-0.59,9066,31,4.819
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B8 B3, California counties only",neighborhood_crime,ln_hhinc,0.104,0.197,0.53,9066,31,4.819
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties","B8 B3, California counties only",neighborhood_crime,female,0.252,0.308,0.82,9066,31,4.819
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B9 positive control: cheaper housing,cheaper_housing,mex10,-0.304,0.332,-0.92,51016,368,10.226
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B9 positive control: cheaper housing,cheaper_housing,ln_rent,-0.197,3.697,-0.05,51016,368,10.226
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B9 positive control: cheaper housing,cheaper_housing,ln_value,0.8,1.609,0.5,51016,368,10.226
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B9 positive control: cheaper housing,cheaper_housing,ln_inc,-0.124,2.28,-0.05,51016,368,10.226
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B9 positive control: cheaper housing,cheaper_housing,ln_hhinc,-1.404,0.195,-7.18,51016,368,10.226
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B9 positive control: cheaper housing,cheaper_housing,female,0.08,0.293,0.27,51016,368,10.226
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B10 B3 without state FE,neighborhood_crime,mex10,0.164,0.106,1.54,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B10 B3 without state FE,neighborhood_crime,ln_rent,0.78,2.001,0.39,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B10 B3 without state FE,neighborhood_crime,ln_value,0.71,0.757,0.94,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B10 B3 without state FE,neighborhood_crime,ln_inc,-3.416,1.035,-3.3,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B10 B3 without state FE,neighborhood_crime,ln_hhinc,0.127,0.127,1.0,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B10 B3 without state FE,neighborhood_crime,female,0.277,0.183,1.51,51016,368,4.4
+"B same-county movers, US-born adults 2006-2025, CPS-identified counties",B11 positive control: cheaper housing on county rent alone,cheaper_housing,ln_rent,-0.5,0.979,-0.51,51016,368,10.226

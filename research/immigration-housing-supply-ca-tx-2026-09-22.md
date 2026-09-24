@@ -149,7 +149,7 @@ This is one year of gross flows with a one-year lookback; it counts moves, not m
 consistent with the Ganong–Shoag mechanism, non-degree natives no longer moving toward
 high-wage, high-rent places, and with the AGI outflow the
 [Tiebout memo](immigration-native-sorting-tiebout-2026-09-18.md) measured (ladder 139), but it
-does not attribute the moves to rents, to the Mexican-origin population or to anything else.
+does not attribute the moves to rents, to the Mexican-origin population or to anything else. §8 reads the movers' stated reasons.
 
 ## 6. How to model it, and what cannot be modelled with what we hold
 
@@ -202,6 +202,56 @@ rather than leaning on the one specification where the bare product is significa
 lane's and this model's, and a reader should check the tables rather than the prose
 (`notes/llm-bias-caveat.md`).
 
+## 8. Why US-born adults leave California: stated reasons (2026-09-25)
+
+`[DATA: IPUMS-CPS ASEC 1999–2025, WHYMOVE, 160 replicate weights; IRS SOI state and county migration files 2011–12 to 2022–23]`
+`[CALCULATION: [movers lane](../infra/immigration-fiscal/movers_reasons_2026_09_24/RESULT.md), ladder 221]`
+
+§5 counts moves. The CPS also asks each mover for one main reason. Among US-born adults who left
+California, ASEC 2005–2025 (n = 3,586), shares in %, SE in points:
+
+| Main reason | California leavers | Leavers of all other states | California minus others |
+|---|---|---|---|
+| Jobs | 38.11 (1.29) | 40.41 (0.47) | −2.30 (1.34) |
+| Family | 27.22 (1.26) | 26.37 (0.39) | |
+| Housing | 18.98 (1.19) | 14.70 (0.32) | +4.28 (1.24) |
+| of which cheaper housing | 7.73 (0.79) | 3.51 (0.17) | +4.22 (0.83) |
+| Better neighborhood/less crime | 1.47 (0.25) | 1.90 (0.12) | −0.43 (0.26) |
+| Climate | 0.90 (0.20) | 2.39 (0.15) | −1.49 (0.24) |
+
+The neighborhood/crime answer is the only one that could carry a composition motive, and the
+Census category mixes crime, schools, disorder and neighbors. About 4,200 US-born adults a year
+give it at the CPS level, 3,600–7,000 at the ACS level (the CPS finds 0.62–0.87 of the ACS count
+of California leavers), or 0.2–0.3 per 1,000 US-born adults living in California. Against §5's
+net loss of 11.73 per 1,000 native non-Hispanic white adults, that is small, but the two are not
+comparable as a ratio: one is a net rate for one group, the other a gross rate for one reason.
+
+The test that could have favored a composition reading does not. California's non-Hispanic white
+leavers and its US-born Mexican-origin leavers differ from other states' leavers by the same
+amount on neighborhood/crime (−0.17, SE 0.35, and −0.14, SE 0.89), and both show the housing
+excess, larger for Mexican-origin (+6.2) and Black (+8.3) leavers than for white ones (+3.1).
+Across origin states the neighborhood/crime share falls as the origin's Mexican-origin share
+rises (−0.28 to −0.36 points per 10 points, t −2.8 to −3.6). The same design detects both
+positive controls (origin rent predicts cheaper-housing moves, t 4.3; a cold origin predicts
+climate moves, t 5.1), so the null-or-negative gradient is informative about stated reasons; it
+weakens for whites alone and without California, and within a state over time it cannot be
+estimated precisely.
+
+**The Texas flow.** California-to-Texas tax filers had lower AGI per return than California
+stayers from 2011–12 to 2018–19 (0.82–0.96 times), higher in 2019–20 to 2021–22 (1.04–1.32) and
+lower again in 2022–23 (0.93). Returns moving to the Austin–Round Rock counties are the high end,
+$144–237k per return. Each year's net cohort to all states takes $0.63–1.05bn of California
+state and local tax with it ($0.13–0.22bn to Texas, where $0.06–0.17bn is collected), gross of
+the spending that moves with the people; neither state's net budget sign is known from this.
+
+**Limits.** One self-reported main reason per mover, with no second reason; social desirability
+could push a composition motive into "cheaper housing", "family" or "other"; origin is known only
+to the state; every model is descriptive. The literature shows minority and foreign-born shares
+predicting neighborhood exits within metros (Card, Mas & Rothstein; Crowder, Hall & Tolnay),
+while studies that separate the Hispanic share find it adds little (Hall & Crowder; Pais, South &
+Crowder); none links California's interstate out-migration to its Hispanic share. A MIGPUMA
+design on ACS PUMS (revealed moves, no reasons) is the next test.
+
 ## Sources
 
 - Lane: [`housing_supply_ca_tx_2026_09_22`](../infra/immigration-fiscal/housing_supply_ca_tx_2026_09_22/RESULT.md),
@@ -211,6 +261,9 @@ lane's and this model's, and a reader should check the tables rather than the pr
 - Census Building Permits Survey state files; FRED `CABPPRIV`, `TXBPPRIV`; Census population
   estimates 2000–2024; ACS 1-year B25001, B01003, B05003H; ACS 5-year B03001 by CBSA (2010,
   2023); ACS 2024 1-year PUMS; Zillow ZORI metro file; Saiz (2010) elasticity file. [SOURCE]
+- §8: [`movers_reasons_2026_09_24`](../infra/immigration-fiscal/movers_reasons_2026_09_24/RESULT.md),
+  `derived/reasons_ca_leavers.csv`, `reasons_compare.csv`, `reasons_ca_by_subgroup.csv`,
+  `q2_regressions.csv`, `irs_ca_tx.csv`, `tax_transfer.csv`, `q4_counts.csv`; reading notes in `lit/`. [CALCULATION]
 - Repo context: [FAQ](immigration-objections-faq-2026-09-21.md) entries 4 and 15;
   [Tiebout memo](immigration-native-sorting-tiebout-2026-09-18.md); [September 16 housing lane](../infra/immigration-fiscal/housing_deport_2026_09_16/RESULT.md);
   [MSA rent panel](immigration-msa-rent-elasticity-panel-2026-06-25.md);
@@ -232,3 +285,9 @@ lane's and this model's, and a reader should check the tables rather than the pr
   for rents: the two-to-three-fold coastal amplification it implies is outside the interval
   at the decade horizon. Native migration by education was not built. Nothing in §1–5
   changes.
+- **2026-09-25 (movers' reasons).** §8 added from the
+  [movers lane](../infra/immigration-fiscal/movers_reasons_2026_09_24/RESULT.md) (ladder 221):
+  California's US-born leavers cite cheaper housing 2.2 times as often as other states' leavers
+  and neighborhood/crime slightly less often (1.47% against 1.90%). Concept affected: the motive
+  behind §5's native out-migration, previously unattributed. Nothing in §1–7 changes; 25 derived
+  files byte-identical on the parent's rerun.

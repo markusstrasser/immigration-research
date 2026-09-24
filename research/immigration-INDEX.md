@@ -227,6 +227,14 @@ same Mexican-origin share (~32%); common-age gap vs **local** whites **−$12,13
 does not produce the coastal dollar gap. Not the $165–197bn account. NY is 1.4% of US
 Mexican-origin; SF has no single-metro gap.
 
+[Why US-born adults leave California](immigration-housing-supply-ca-tx-2026-09-22.md) §8
+(September 25, ladder 221): they name jobs (38%), family (27%) and housing (19%) as the main
+reason, and cheaper housing 2.2 times as often as other states' leavers, in every race,
+education, income and age group. "Better neighborhood/less crime" is **1.47%** (other states
+1.90%), and white and Mexican-origin leavers differ from other states' leavers by the same
+amount. Each year's net cohort takes $0.63–1.05bn of California state and local tax to other
+states, gross of the spending that moves with it.
+
 [Seven papers from the Marginal Revolution archive, read in full](immigration-marginal-revolution-leads-read-2026-09-21.md):
 headline unchanged. The nursing-home channel is bounded at **$2.3–14.6bn a year** of Medicaid
 spending for the Mexico-born ($5.6bn preferred); it transfers weakly because 1.2% of Mexican
