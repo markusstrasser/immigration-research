@@ -1,0 +1,58 @@
+-- 1. Offender vs arrestee ethnicity, by agency --
+single-offender, single-arrestee incidents with both ethnicities recorded: 213,452; offender Hispanic, arrestee non-Hispanic 3,442; offender non-Hispanic, arrestee Hispanic 252
+   offender-segment Hispanic share 0.3876; arrestee-segment 0.3727
+                                    single_pairs  offender_H  off_H_arr_NH  off_NH_arr_H  share_of_offender_H_booked_NH
+state pub_agency_name                                                                                                  
+TX    Harris                               13233        4389          1681            56                          0.383
+      Midland                               1902         865           337             5                          0.390
+      Laredo                                1736        1683           183             4                          0.109
+      Brazoria                               805         224           130             3                          0.580
+      Grand Prairie                         1211         406           101            12                          0.249
+      Round Rock                             857         325            93             2                          0.286
+      Pasadena                              1064         729            65             4                          0.089
+      Independent School District:          2921        1475            65            15                          0.044
+      Sherman                                493         114            56             0                          0.491
+      Taylor                                 241          91            55             0                          0.604
+      Williamson                             723         190            49             3                          0.258
+      Tyler                                  742         160            36             1                          0.225
+agencies booking > 5% of offender-recorded Hispanics as non-Hispanic (>= 50 pairs): ['Alvin', 'Angleton', 'Brazoria', 'Cedar Park', 'Cleburne', 'Comal', 'Galveston', 'Georgetown', 'Grand Prairie', 'Harris', 'Humble', 'Hurst', 'Hutto', 'Johnson', 'La Porte', 'Lancaster', 'Laredo', 'League City', 'Leander', 'Mansfield', 'McKinney', 'Midland', 'Pasadena', 'Pearland', 'Round Rock', 'Sherman', 'Sugar Land', 'Tarrant', 'Taylor', 'Texas City', 'Tyler', 'Universal City', 'University of Texas:', 'Williamson', 'Wilson']
+offence                                                    Aggravated assault  Murder  Rape/sexual assault  Robbery  Simple assault
+arrestees  universe                                                                                                                
+all ages   all central agencies (lane)                                  1.652   2.279                1.756    2.946           1.488
+           without agencies with booking discordance > 5%               1.828   2.527                1.936    3.381           1.693
+           without Harris County Sheriff only                           1.788   2.456                1.838    3.254           1.585
+adults 18+ all central agencies (lane)                                  1.706   2.181                1.998    2.741           1.522
+           without agencies with booking discordance > 5%               1.888   2.380                2.207    3.134           1.730
+           without Harris County Sheriff only                           1.847   2.343                2.099    3.040           1.622
+
+-- 2. Validation-adjusted allocation of offenders recorded without ethnicity --
+   all agencies: n 1,267; arrestees Hispanic 0.205; central imputes 0.329; factor 0.623
+   without booking-discordant agencies: n 1,093; arrestees Hispanic 0.213; central imputes 0.316; factor 0.672
+   without booking-discordant agencies and Lake Havasu City: n 805; arrestees Hispanic 0.280; central imputes 0.323; factor 0.869
+offence                                                                                      Murder  Rape/sexual assault  Robbery  Aggravated assault  Simple assault
+method                                                                                                                                                               
+central                                                                                       2.303                1.746    4.219               2.235           1.742
+validation-adjusted (all agencies, factor 0.62)                                               2.121                1.598    3.710               2.070           1.668
+validation-adjusted (without booking-discordant agencies, factor 0.67)                        2.144                1.616    3.772               2.090           1.678
+validation-adjusted (without booking-discordant agencies and Lake Havasu City, factor 0.87)   2.238                1.693    4.033               2.176           1.716
+
+-- 3. Recording threshold: bands of agencies, allocations a, k, b, c --
+allocation               a     k     b      c
+offence band                                 
+Murder  [0.50, 0.80) 3.048 2.929 1.796  6.084
+        [0.80, 0.95) 1.861 1.791 1.404  2.775
+        [0.95, 1.00] 1.785 1.731 1.298  2.569
+        [0.50, 1.00] 2.303 2.180 1.531  3.928
+Robbery [0.50, 0.80) 5.176 5.295 2.880 11.082
+        [0.80, 0.95) 3.342 3.348 1.816  8.043
+        [0.95, 1.00] 2.563 2.563 1.087  7.952
+        [0.50, 1.00] 4.219 4.309 2.364  9.747
+offence         band  RR_H_all  rate_H  rate_NHW      pop_H    pop_NHW  share_noinfo  share_eth_unknown
+ Murder [0.50, 0.80)     0.986   0.094     0.031  7,729,070  8,424,417         0.082              0.199
+Robbery [0.50, 0.80)     0.866   1.284     0.248  7,729,070  8,424,417         0.051              0.211
+ Murder [0.80, 0.95)     1.029   0.064     0.035  6,976,299  9,559,520         0.103              0.060
+Robbery [0.80, 0.95)     1.009   0.681     0.204  6,976,299  9,559,520         0.215              0.118
+ Murder [0.95, 1.00]     0.985   0.047     0.026  4,065,975  5,205,403         0.129              0.018
+Robbery [0.95, 1.00]     1.034   0.437     0.171  4,065,975  5,205,403         0.432              0.015
+ Murder [0.50, 1.00]     1.002   0.073     0.031 18,771,345 23,189,341         0.095              0.128
+Robbery [0.50, 1.00]     0.917   0.871     0.206 18,771,345 23,189,341         0.132              0.167

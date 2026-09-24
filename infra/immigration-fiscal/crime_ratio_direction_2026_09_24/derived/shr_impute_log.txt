@@ -1,0 +1,95 @@
+[gate] SHR76_25a.csv sha256 equals the homicide lane's pin: PASS - eeedbf5e58a4
+[gate] 2024 P(offender Hispanic | victim hispanic), cleared ethnicity-known, equals the victim lane: PASS - 0.719019
+[gate] 2024 P(offender Hispanic | victim nh_white), cleared ethnicity-known, equals the victim lane: PASS - 0.102000
+[gate] 2024 P(offender Hispanic | victim nh_black), cleared ethnicity-known, equals the victim lane: PASS - 0.048795
+[gate] 2024 P(offender Hispanic | victim nh_other), cleared ethnicity-known, equals the victim lane: PASS - 0.108808
+[gate] victim lane's Hispanic / NH-white homicide offending ratio 2.7379: PASS - 2.7379
+[2024] SHR victims of known ethnicity 11,653; solved 0.750; offender ethnicity known 0.599; solved, race known, ethnicity missing 0.131
+   [2024] victims hispanic: 2,376; solved 0.772; offender ethnicity known 0.635
+   [2024] victims nh_white: 2,890; solved 0.880; offender ethnicity known 0.692
+   [2024] victims nh_black: 6,103; solved 0.677; offender ethnicity known 0.537
+   [2024] victims nh_other: 284; solved 0.824; offender ethnicity known 0.680
+[gate] 2022_2024 P(offender Hispanic | victim hispanic), cleared ethnicity-known, equals the victim lane: PASS - 0.702239
+[gate] 2022_2024 P(offender Hispanic | victim nh_white), cleared ethnicity-known, equals the victim lane: PASS - 0.105329
+[gate] 2022_2024 P(offender Hispanic | victim nh_black), cleared ethnicity-known, equals the victim lane: PASS - 0.052293
+[gate] 2022_2024 P(offender Hispanic | victim nh_other), cleared ethnicity-known, equals the victim lane: PASS - 0.132312
+[2022_2024] SHR victims of known ethnicity 39,887; solved 0.715; offender ethnicity known 0.575; solved, race known, ethnicity missing 0.123
+   [2022_2024] victims hispanic: 8,175; solved 0.725; offender ethnicity known 0.606
+   [2022_2024] victims nh_white: 9,426; solved 0.868; offender ethnicity known 0.677
+   [2022_2024] victims nh_black: 21,195; solved 0.639; offender ethnicity known 0.513
+   [2022_2024] victims nh_other: 1,091; solved 0.793; offender ethnicity known 0.658
+   window                                                                            method  p_H_given_vH  p_H_given_vNHW  share_H  hispanic_offender_killings  RR_H_NHW  RR_H_all  dRR_H_NHW_vs_lane
+     2024                             victim lane: cleared ethnicity-known, by victim group        0.7190          0.1020   0.1911                       3,852    2.7379    1.0219             0.0000
+     2024 victim group only, race-known splits (ethnicity-missing solved split within race)        0.7068          0.1014   0.1892                       3,815    2.7177    1.0121            -0.0074
+     2024                                                                            +state        0.7063          0.1033   0.1888                       3,807    2.7354    1.0098            -0.0009
+     2024                                                                           +weapon        0.7073          0.1011   0.1891                       3,813    2.7244    1.0114            -0.0050
+     2024                                                               +victim age and sex        0.7075          0.1028   0.1907                       3,845    2.7611    1.0200             0.0085
+     2024                                                               +circumstance class        0.7112          0.1043   0.1903                       3,837    2.7756    1.0180             0.0138
+     2024                                                     +situation (multiple victims)        0.7058          0.1008   0.1889                       3,808    2.7107    1.0102            -0.0100
+     2024                               chain state>weapon>victim age-sex>agency (kappa 20)        0.7071          0.1030   0.1893                       3,817    2.7720    1.0125             0.0125
+     2024                               chain state>agency>weapon>victim age-sex (kappa 20)        0.7079          0.1038   0.1892                       3,814    2.7893    1.0119             0.0188
+     2024                         chain state>circumstance>weapon>victim age-sex (kappa 20)        0.7084          0.1042   0.1888                       3,806    2.7691    1.0097             0.0114
+     2024                                chain state>weapon>victim age-sex>agency (kappa 5)        0.7052          0.1022   0.1890                       3,810    2.7757    1.0107             0.0138
+     2024                              chain state>weapon>victim age-sex>agency (kappa 100)        0.7088          0.1027   0.1890                       3,810    2.7483    1.0107             0.0038
+     2024                    multinomial logit, all covariates incl. state and agency (C=1)        0.7091          0.1096   0.1914                       3,859    2.8639    1.0236             0.0460
+     2024                  multinomial logit, all covariates incl. state and agency (C=0.1)        0.7061          0.1103   0.1916                       3,863    2.8627    1.0249             0.0456
+     2024                                      multinomial logit without circumstance (C=1)        0.7061          0.1084   0.1903                       3,836    2.8257    1.0176             0.0320
+     2024                            multinomial logit without circumstance or agency (C=1)        0.7041          0.1024   0.1882                       3,795    2.7163    1.0068            -0.0079
+     2024           multinomial logit without circumstance, victim-group interactions (C=1)        0.7073          0.1128   0.1928                       3,887    2.9127    1.0311             0.0638
+     2024           solved only, ethnicity-missing split within race by state (no unsolved)        0.7027          0.1023   0.1888                       3,808    2.7190    1.0101            -0.0069
+2022_2024                             victim lane: cleared ethnicity-known, by victim group        0.7022          0.1053   0.1916                       3,864    2.7691    1.0250             0.0000
+2022_2024 victim group only, race-known splits (ethnicity-missing solved split within race)        0.6933          0.1049   0.1901                       3,833    2.7461    1.0170            -0.0083
+2022_2024                                                                            +state        0.6948          0.1084   0.1906                       3,844    2.7840    1.0197             0.0054
+2022_2024                                                                           +weapon        0.6914          0.1049   0.1894                       3,818    2.7420    1.0128            -0.0098
+2022_2024                                                               +victim age and sex        0.6925          0.1073   0.1915                       3,861    2.7852    1.0242             0.0058
+2022_2024                                                               +circumstance class        0.6932          0.1070   0.1903                       3,837    2.7938    1.0180             0.0089
+2022_2024                                                     +situation (multiple victims)        0.6931          0.1048   0.1900                       3,831    2.7430    1.0164            -0.0094
+2022_2024                               chain state>weapon>victim age-sex>agency (kappa 20)        0.6933          0.1093   0.1911                       3,852    2.8289    1.0220             0.0216
+2022_2024                               chain state>agency>weapon>victim age-sex (kappa 20)        0.6969          0.1104   0.1916                       3,862    2.8747    1.0247             0.0381
+2022_2024                         chain state>circumstance>weapon>victim age-sex (kappa 20)        0.6910          0.1099   0.1906                       3,843    2.8378    1.0194             0.0248
+2022_2024                                chain state>weapon>victim age-sex>agency (kappa 5)        0.6941          0.1110   0.1914                       3,858    2.8408    1.0236             0.0259
+2022_2024                              chain state>weapon>victim age-sex>agency (kappa 100)        0.6948          0.1082   0.1910                       3,850    2.8150    1.0215             0.0166
+2022_2024                    multinomial logit, all covariates incl. state and agency (C=1)        0.6975          0.1139   0.1924                       3,880    2.9069    1.0293             0.0498
+2022_2024                  multinomial logit, all covariates incl. state and agency (C=0.1)        0.6961          0.1123   0.1919                       3,869    2.8825    1.0265             0.0410
+2022_2024                                      multinomial logit without circumstance (C=1)        0.6971          0.1132   0.1924                       3,879    2.8853    1.0292             0.0420
+2022_2024                            multinomial logit without circumstance or agency (C=1)        0.6941          0.1073   0.1902                       3,835    2.7798    1.0174             0.0039
+2022_2024           multinomial logit without circumstance, victim-group interactions (C=1)        0.6938          0.1125   0.1919                       3,869    2.8729    1.0263             0.0375
+2022_2024           solved only, ethnicity-missing split within race by state (no unsolved)        0.6897          0.1072   0.1900                       3,832    2.7549    1.0165            -0.0051
+
+-- 5-fold cross-validation on ethnicity-known offenders, 2022-2024 (predicted vs actual Hispanic share) --
+                                                model                   stratum     n  actual_H  predicted_H  log_loss
+                                    victim group only                 all known 22936    0.2100       0.2100    0.6718
+                                    victim group only circumstance undetermined  7856    0.2048       0.2027    0.6373
+                                    victim group only            weapon unknown  1450    0.2248       0.2256    0.8003
+                                    victim group only           victim Hispanic  4957    0.7022       0.7022    0.8485
+                                    victim group only           victim NH white  6380    0.1053       0.1054    0.8903
+                                    victim group only                California  1866    0.4748       0.3731    0.8809
+                                    victim group only                     Texas  3824    0.3559       0.3118    0.7744
+             chain state>weapon>victim age-sex>agency                 all known 22936    0.2100       0.2119    0.6460
+             chain state>weapon>victim age-sex>agency circumstance undetermined  7856    0.2048       0.2029    0.6089
+             chain state>weapon>victim age-sex>agency            weapon unknown  1450    0.2248       0.2301    0.7844
+             chain state>weapon>victim age-sex>agency           victim Hispanic  4957    0.7022       0.7051    0.8329
+             chain state>weapon>victim age-sex>agency           victim NH white  6380    0.1053       0.1080    0.8515
+             chain state>weapon>victim age-sex>agency                California  1866    0.4748       0.4753    0.8279
+             chain state>weapon>victim age-sex>agency                     Texas  3824    0.3559       0.3554    0.7620
+                                 logit all covariates                 all known 22936    0.2100       0.2109    0.6154
+                                 logit all covariates circumstance undetermined  7856    0.2048       0.2050    0.5805
+                                 logit all covariates            weapon unknown  1450    0.2248       0.2272    0.7521
+                                 logit all covariates           victim Hispanic  4957    0.7022       0.7011    0.8108
+                                 logit all covariates           victim NH white  6380    0.1053       0.1092    0.7928
+                                 logit all covariates                California  1866    0.4748       0.4726    0.8127
+                                 logit all covariates                     Texas  3824    0.3559       0.3588    0.7334
+                           logit without circumstance                 all known 22936    0.2100       0.2110    0.6177
+                           logit without circumstance circumstance undetermined  7856    0.2048       0.2029    0.5803
+                           logit without circumstance            weapon unknown  1450    0.2248       0.2272    0.7546
+                           logit without circumstance           victim Hispanic  4957    0.7022       0.7012    0.8163
+                           logit without circumstance           victim NH white  6380    0.1053       0.1092    0.7982
+                           logit without circumstance                California  1866    0.4748       0.4725    0.8198
+                           logit without circumstance                     Texas  3824    0.3559       0.3588    0.7342
+logit without circumstance, victim-group interactions                 all known 22936    0.2100       0.2120    0.6177
+logit without circumstance, victim-group interactions circumstance undetermined  7856    0.2048       0.2053    0.5778
+logit without circumstance, victim-group interactions            weapon unknown  1450    0.2248       0.2307    0.7687
+logit without circumstance, victim-group interactions           victim Hispanic  4957    0.7022       0.7052    0.8133
+logit without circumstance, victim-group interactions           victim NH white  6380    0.1053       0.1102    0.8021
+logit without circumstance, victim-group interactions                California  1866    0.4748       0.4724    0.8305
+logit without circumstance, victim-group interactions                     Texas  3824    0.3559       0.3599    0.7319

@@ -1,0 +1,3196 @@
+level,geo,NAME,adult_correctional,hispanic_adult_correctional,federal_detention,federal_prisons,state_prisons,local_jails,correctional_residential,military_disciplinary
+us,us,United States,1967297,397733,92584,150957,1151623,501417,69053,1663
+state,09,Connecticut,13581,3569,84,1057,11342,0,1010,88
+state,10,Delaware,4801,283,0,0,4375,88,338,0
+state,11,District of Columbia,2278,187,808,0,0,1458,12,0
+state,12,Florida,149333,23836,4909,9244,87143,43763,4259,15
+state,13,Georgia,91932,9182,4178,5582,49419,28366,4387,0
+state,15,Hawaii,3752,167,280,0,1804,0,1640,28
+state,16,Idaho,10931,1801,222,0,6877,3323,509,0
+state,17,Illinois,59075,9219,1928,5377,39463,11518,789,0
+state,18,Indiana,41962,2202,462,2503,25339,12810,848,0
+state,19,Iowa,13064,1012,304,0,8284,3324,1152,0
+state,20,Kansas,18204,2344,1058,2010,8895,5141,408,692
+state,21,Kentucky,38346,2248,2660,5031,11709,17742,1204,0
+state,22,Louisiana,51241,10190,5323,4565,18868,21260,1225,0
+state,23,Maine,3360,231,121,0,1560,1285,394,0
+state,24,Maryland,27040,1524,265,1692,19663,5289,131,0
+state,25,Massachusetts,17969,5584,476,899,8398,7703,493,0
+state,26,Michigan,54748,3669,2018,1292,42663,8325,450,0
+state,27,Minnesota,16672,1557,743,2965,8922,3488,554,0
+state,28,Mississippi,30745,2605,1114,4782,16803,6190,1856,0
+state,29,Missouri,37079,1651,1242,1020,25601,8146,1070,0
+state,30,Montana,5774,255,180,0,2770,1817,1007,0
+state,31,Nebraska,8998,1454,346,0,4832,2932,888,0
+state,32,Nevada,19575,4367,922,0,12373,5988,292,0
+state,33,New Hampshire,4395,540,252,692,2063,952,436,0
+state,34,New Jersey,36851,10725,1309,4032,21495,6510,3505,0
+state,35,New Mexico,14807,7376,1752,0,7749,4466,700,140
+state,36,New York,62707,14966,4242,1415,44222,11455,1373,0
+state,37,North Carolina,59099,4799,1036,5630,37994,14023,416,0
+state,38,North Dakota,2571,173,291,0,1341,682,257,0
+state,39,Ohio,67080,2500,1312,2599,47831,11998,3340,0
+state,40,Oklahoma,38455,5686,1222,4038,22374,7178,3643,0
+state,41,Oregon,20434,2937,455,1538,14302,3694,445,0
+state,42,Pennsylvania,81297,11392,2142,9823,45098,20391,3843,0
+state,44,Rhode Island,3082,979,654,0,2428,0,0,0
+state,45,South Carolina,31693,2045,605,5440,18137,7138,253,120
+state,46,South Dakota,6709,359,683,489,3096,1870,571,0
+state,47,Tennessee,47728,2079,859,1412,21358,22150,1949,0
+state,48,Texas,248764,93487,22441,24836,141193,53448,6561,285
+state,49,Utah,10680,2232,290,0,4774,5064,552,0
+state,50,Vermont,1219,57,64,0,1132,0,23,0
+state,51,Virginia,57014,3565,1556,4021,28961,20093,2333,50
+state,53,Washington,26677,4715,1755,193,16224,7298,1207,0
+state,54,West Virginia,19669,1242,360,8773,9115,759,662,0
+state,55,Wisconsin,32853,2945,294,1060,22539,8719,241,0
+state,56,Wyoming,3352,405,109,0,2128,800,315,0
+state,01,Alabama,39749,2101,766,3281,18765,13785,3152,0
+state,02,Alaska,4842,253,571,0,3559,91,621,0
+state,04,Arizona,64154,24180,8060,4080,40554,10755,626,79
+state,05,Arkansas,27079,2121,563,3369,15844,5626,1672,5
+state,06,California,201570,94941,8247,12866,123109,54006,3181,161
+state,08,Colorado,32307,9796,1051,3351,17135,8510,2260,0
+county,06039,"Madera County, California",6130,2397,0,0,5798,332,0,0
+county,06041,"Marin County, California",4148,943,22,0,3972,144,10,0
+county,06043,"Mariposa County, California",110,35,0,0,90,20,0,0
+county,06045,"Mendocino County, California",387,110,0,0,163,224,0,0
+county,06047,"Merced County, California",1582,602,0,1101,0,481,0,0
+county,06049,"Modoc County, California",82,32,0,0,66,16,0,0
+county,06051,"Mono County, California",19,6,0,0,0,19,0,0
+county,06053,"Monterey County, California",6645,3017,0,0,5912,733,0,0
+county,06055,"Napa County, California",196,83,0,0,0,196,0,0
+county,06057,"Nevada County, California",268,109,33,0,83,152,0,0
+county,06059,"Orange County, California",5766,3181,494,0,51,5157,64,0
+county,06061,"Placer County, California",613,76,0,0,0,613,0,0
+county,06063,"Plumas County, California",26,15,0,0,0,26,0,0
+county,06065,"Riverside County, California",12250,6704,0,0,10499,1693,58,0
+county,06067,"Sacramento County, California",9670,3196,123,180,6520,2732,115,0
+county,06069,"San Benito County, California",0,0,0,0,0,0,0,0
+county,06071,"San Bernardino County, California",16264,7924,2161,3382,5236,5485,0,0
+county,12001,"Alachua County, Florida",1211,356,0,0,287,607,317,0
+county,10003,"New Castle County, Delaware",3390,203,0,0,3163,0,227,0
+county,10005,"Sussex County, Delaware",1300,74,0,0,1212,88,0,0
+county,11001,"District of Columbia, District of Columbia",2278,187,808,0,0,1458,12,0
+county,12003,"Baker County, Florida",2289,267,71,0,1784,434,0,0
+county,12005,"Bay County, Florida",1744,132,0,0,779,895,70,0
+county,12007,"Bradford County, Florida",4010,552,41,0,3412,158,399,0
+county,12009,"Brevard County, Florida",1054,53,0,0,0,979,75,0
+county,12011,"Broward County, Florida",3282,2497,721,0,142,2228,191,0
+county,12013,"Calhoun County, Florida",1562,202,0,0,1562,0,0,0
+county,12015,"Charlotte County, Florida",1871,218,114,0,1230,527,0,0
+county,12017,"Citrus County, Florida",629,64,161,0,0,468,0,0
+county,12019,"Clay County, Florida",427,70,0,0,0,427,0,0
+county,51685,"Manassas Park city, Virginia",0,0,0,0,0,0,0,0
+county,51690,"Martinsville city, Virginia",138,6,0,0,0,138,0,0
+county,51700,"Newport News city, Virginia",460,23,0,0,0,382,78,0
+county,51710,"Norfolk city, Virginia",873,28,50,0,0,738,35,50
+county,51720,"Norton city, Virginia",0,0,0,0,0,0,0,0
+county,51730,"Petersburg city, Virginia",0,0,0,0,0,0,0,0
+county,51735,"Poquoson city, Virginia",0,0,0,0,0,0,0,0
+county,51740,"Portsmouth city, Virginia",1119,33,0,0,0,1119,0,0
+county,51750,"Radford city, Virginia",0,0,0,0,0,0,0,0
+county,51760,"Richmond city, Virginia",771,0,0,0,20,736,15,0
+county,51770,"Roanoke city, Virginia",419,19,25,0,0,394,0,0
+county,51775,"Salem city, Virginia",132,10,0,0,0,132,0,0
+county,51790,"Staunton city, Virginia",0,0,0,0,0,0,0,0
+county,51800,"Suffolk city, Virginia",900,37,216,0,0,684,0,0
+county,06073,"San Diego County, California",12449,5431,2697,0,4307,5115,190,140
+county,06075,"San Francisco County, California",1165,224,59,0,340,766,0,0
+county,06077,"San Joaquin County, California",6148,2099,0,0,6079,0,69,0
+county,06079,"San Luis Obispo County, California",4272,1342,0,0,3857,415,0,0
+county,06081,"San Mateo County, California",1416,974,72,0,0,1339,5,0
+county,06083,"Santa Barbara County, California",3045,1392,37,2694,0,299,0,15
+county,06085,"Santa Clara County, California",2205,1343,0,0,68,2131,0,6
+county,06087,"Santa Cruz County, California",395,161,0,0,62,313,20,0
+county,06089,"Shasta County, California",394,164,0,0,82,312,0,0
+county,06091,"Sierra County, California",0,0,0,0,0,0,0,0
+county,06093,"Siskiyou County, California",81,43,0,0,81,0,0,0
+county,06095,"Solano County, California",6899,2168,0,0,6699,200,0,0
+county,06097,"Sonoma County, California",818,291,0,0,0,818,0,0
+county,06099,"Stanislaus County, California",377,161,0,0,0,377,0,0
+county,06101,"Sutter County, California",161,54,0,0,0,161,0,0
+county,06103,"Tehama County, California",287,95,0,0,223,64,0,0
+county,06105,"Trinity County, California",107,32,0,0,74,33,0,0
+county,06107,"Tulare County, California",1215,827,0,0,82,1109,24,0
+county,06109,"Tuolumne County, California",2841,1166,0,0,2841,0,0,0
+county,06111,"Ventura County, California",584,317,0,0,182,402,0,0
+county,06113,"Yolo County, California",213,72,0,0,0,213,0,0
+county,06115,"Yuba County, California",368,177,156,0,0,212,0,0
+county,08001,"Adams County, Colorado",1485,785,588,0,0,645,252,0
+county,08003,"Alamosa County, Colorado",136,73,0,0,0,37,99,0
+county,08005,"Arapahoe County, Colorado",1118,85,0,0,0,787,331,0
+county,08007,"Archuleta County, Colorado",15,0,0,0,0,15,0,0
+county,08009,"Baca County, Colorado",1,0,0,0,0,1,0,0
+county,08011,"Bent County, Colorado",1395,487,0,0,1349,46,0,0
+county,08013,"Boulder County, Colorado",349,75,0,0,0,295,54,0
+county,08014,"Broomfield County, Colorado",87,31,0,0,0,87,0,0
+county,08015,"Chaffee County, Colorado",1209,395,0,0,1190,19,0,0
+county,08017,"Cheyenne County, Colorado",0,0,0,0,0,0,0,0
+county,08019,"Clear Creek County, Colorado",36,12,6,0,0,30,0,0
+county,08021,"Conejos County, Colorado",10,8,0,0,0,10,0,0
+county,08023,"Costilla County, Colorado",5,2,0,0,0,5,0,0
+county,08025,"Crowley County, Colorado",2850,881,0,0,2839,11,0,0
+county,08027,"Custer County, Colorado",11,8,0,0,0,11,0,0
+county,08029,"Delta County, Colorado",515,193,0,0,477,38,0,0
+county,08031,"Denver County, Colorado",3236,985,40,0,1369,1241,586,0
+county,30063,"Missoula County, Montana",317,18,0,0,107,210,0,0
+county,30057,"Madison County, Montana",0,0,0,0,0,0,0,0
+county,30059,"Meagher County, Montana",0,0,0,0,0,0,0,0
+county,30061,"Mineral County, Montana",0,0,0,0,0,0,0,0
+county,30065,"Musselshell County, Montana",2,0,0,0,0,2,0,0
+county,30067,"Park County, Montana",10,0,0,0,0,10,0,0
+county,30069,"Petroleum County, Montana",0,0,0,0,0,0,0,0
+county,30071,"Phillips County, Montana",0,0,0,0,0,0,0,0
+county,30073,"Pondera County, Montana",6,3,0,0,0,6,0,0
+county,30075,"Powder River County, Montana",0,0,0,0,0,0,0,0
+county,30077,"Powell County, Montana",1614,23,0,0,1607,7,0,0
+county,30079,"Prairie County, Montana",0,0,0,0,0,0,0,0
+county,30081,"Ravalli County, Montana",33,0,0,0,0,33,0,0
+county,30083,"Richland County, Montana",0,0,0,0,0,0,0,0
+county,30085,"Roosevelt County, Montana",87,0,0,0,0,83,4,0
+county,30087,"Rosebud County, Montana",7,6,0,0,0,7,0,0
+county,30089,"Sanders County, Montana",18,1,0,0,0,18,0,0
+county,30091,"Sheridan County, Montana",0,0,0,0,0,0,0,0
+county,30093,"Silver Bow County, Montana",100,20,0,0,0,100,0,0
+county,30095,"Stillwater County, Montana",0,0,0,0,0,0,0,0
+county,30097,"Sweet Grass County, Montana",0,0,0,0,0,0,0,0
+county,30099,"Teton County, Montana",0,0,0,0,0,0,0,0
+county,12021,"Collier County, Florida",585,176,0,0,0,585,0,0
+county,12023,"Columbia County, Florida",2788,369,0,0,2328,210,250,0
+county,12027,"DeSoto County, Florida",2482,339,0,0,2317,165,0,0
+county,12029,"Dixie County, Florida",1823,208,22,0,1704,87,10,0
+county,51640,"Galax city, Virginia",0,0,0,0,0,0,0,0
+county,51610,"Falls Church city, Virginia",0,0,0,0,0,0,0,0
+county,51620,"Franklin city, Virginia",0,0,0,0,0,0,0,0
+county,51630,"Fredericksburg city, Virginia",0,0,0,0,0,0,0,0
+county,51650,"Hampton city, Virginia",241,10,0,0,0,241,0,0
+county,51660,"Harrisonburg city, Virginia",145,11,19,0,0,126,0,0
+county,51670,"Hopewell city, Virginia",0,0,0,0,0,0,0,0
+county,51678,"Lexington city, Virginia",0,0,0,0,0,0,0,0
+county,51680,"Lynchburg city, Virginia",32,3,4,0,0,0,28,0
+county,51683,"Manassas city, Virginia",0,0,0,0,0,0,0,0
+county,48239,"Jackson County, Texas",45,17,0,0,0,45,0,0
+county,48233,"Hutchinson County, Texas",45,15,0,0,0,45,0,0
+county,48235,"Irion County, Texas",0,0,0,0,0,0,0,0
+county,48237,"Jack County, Texas",1042,308,0,0,1013,29,0,0
+county,48241,"Jasper County, Texas",587,191,0,0,481,106,0,0
+county,48243,"Jeff Davis County, Texas",0,0,0,0,0,0,0,0
+county,48245,"Jefferson County, Texas",11365,3494,379,4771,5753,386,76,0
+county,48247,"Jim Hogg County, Texas",34,0,0,0,0,34,0,0
+county,48249,"Jim Wells County, Texas",59,35,0,0,0,59,0,0
+county,35035,"Otero County, New Mexico",1681,958,865,0,659,143,14,0
+county,35037,"Quay County, New Mexico",32,28,0,0,0,32,0,0
+county,35039,"Rio Arriba County, New Mexico",41,30,0,0,0,41,0,0
+county,35041,"Roosevelt County, New Mexico",58,41,0,0,0,58,0,0
+county,35043,"Sandoval County, New Mexico",106,57,0,0,0,106,0,0
+county,35045,"San Juan County, New Mexico",385,77,0,0,0,385,0,0
+county,35047,"San Miguel County, New Mexico",74,61,0,0,0,74,0,0
+county,35049,"Santa Fe County, New Mexico",1294,854,98,0,1196,0,0,0
+county,35051,"Sierra County, New Mexico",0,0,0,0,0,0,0,0
+county,35053,"Socorro County, New Mexico",77,43,0,0,0,77,0,0
+county,35055,"Taos County, New Mexico",55,25,0,0,0,10,45,0
+county,35057,"Torrance County, New Mexico",262,223,37,0,0,0,225,0
+county,35059,"Union County, New Mexico",409,235,0,0,409,0,0,0
+county,35061,"Valencia County, New Mexico",942,517,0,0,767,156,19,0
+county,35007,"Colfax County, New Mexico",477,273,0,0,275,195,7,0
+county,35003,"Catron County, New Mexico",1,1,0,0,0,1,0,0
+county,35005,"Chaves County, New Mexico",988,474,0,0,739,249,0,0
+county,35006,"Cibola County, New Mexico",1964,949,470,0,1232,131,131,0
+county,35009,"Curry County, New Mexico",160,90,0,0,0,144,0,16
+county,35011,"De Baca County, New Mexico",15,6,0,0,0,15,0,0
+county,35013,"Doña Ana County, New Mexico",1167,19,29,0,640,498,0,0
+county,35015,"Eddy County, New Mexico",373,147,0,0,0,249,0,124
+county,35017,"Grant County, New Mexico",89,68,0,0,0,89,0,0
+county,35019,"Guadalupe County, New Mexico",585,371,0,0,585,0,0,0
+county,35021,"Harding County, New Mexico",0,0,0,0,0,0,0,0
+county,35023,"Hidalgo County, New Mexico",67,20,57,0,0,10,0,0
+county,35025,"Lea County, New Mexico",1426,831,31,0,1247,148,0,0
+county,35027,"Lincoln County, New Mexico",64,28,0,0,0,64,0,0
+county,35028,"Los Alamos County, New Mexico",7,1,0,0,0,7,0,0
+county,35029,"Luna County, New Mexico",288,127,165,0,0,123,0,0
+county,35031,"McKinley County, New Mexico",180,27,0,0,0,164,16,0
+county,35033,"Mora County, New Mexico",0,0,0,0,0,0,0,0
+county,13213,"Murray County, Georgia",131,0,0,0,0,131,0,0
+county,13207,"Monroe County, Georgia",998,34,0,0,891,107,0,0
+county,13209,"Montgomery County, Georgia",372,0,0,0,372,0,0,0
+county,13211,"Morgan County, Georgia",80,3,0,0,0,80,0,0
+county,13215,"Muscogee County, Georgia",1472,31,21,0,739,593,119,0
+county,13217,"Newton County, Georgia",232,5,0,0,0,232,0,0
+county,13219,"Oconee County, Georgia",20,7,0,0,0,20,0,0
+county,13221,"Oglethorpe County, Georgia",16,5,0,0,0,16,0,0
+county,13223,"Paulding County, Georgia",379,13,0,0,219,160,0,0
+county,13225,"Peach County, Georgia",0,0,0,0,0,0,0,0
+county,13227,"Pickens County, Georgia",55,8,0,0,0,55,0,0
+county,13229,"Pierce County, Georgia",26,0,0,0,0,26,0,0
+county,13231,"Pike County, Georgia",195,2,0,0,114,23,58,0
+county,13233,"Polk County, Georgia",131,3,0,0,0,131,0,0
+county,13235,"Pulaski County, Georgia",1209,27,0,0,1209,0,0,0
+county,13237,"Putnam County, Georgia",17,6,0,0,0,17,0,0
+county,13239,"Quitman County, Georgia",0,0,0,0,0,0,0,0
+county,20013,"Brown County, Kansas",0,0,0,0,0,0,0,0
+county,20007,"Barber County, Kansas",0,0,0,0,0,0,0,0
+county,20009,"Barton County, Kansas",70,11,0,0,0,70,0,0
+county,20011,"Bourbon County, Kansas",35,1,0,0,0,35,0,0
+county,20015,"Butler County, Kansas",1649,221,73,0,1463,113,0,0
+county,20017,"Chase County, Kansas",143,122,69,0,0,74,0,0
+county,20019,"Chautauqua County, Kansas",0,0,0,0,0,0,0,0
+county,20021,"Cherokee County, Kansas",0,0,0,0,0,0,0,0
+county,20023,"Cheyenne County, Kansas",0,0,0,0,0,0,0,0
+county,20025,"Clark County, Kansas",0,0,0,0,0,0,0,0
+county,20027,"Clay County, Kansas",67,2,0,0,0,67,0,0
+county,20029,"Cloud County, Kansas",75,16,0,0,0,75,0,0
+county,20031,"Coffey County, Kansas",2,0,0,0,0,2,0,0
+county,20033,"Comanche County, Kansas",0,0,0,0,0,0,0,0
+county,12031,"Duval County, Florida",3533,200,1130,0,0,2388,0,15
+county,12033,"Escambia County, Florida",3282,406,0,561,1546,1091,84,0
+county,12035,"Flagler County, Florida",154,7,0,0,0,154,0,0
+county,12037,"Franklin County, Florida",1287,205,0,0,1239,48,0,0
+county,12039,"Gadsden County, Florida",991,73,0,0,403,65,523,0
+county,12041,"Gilchrist County, Florida",818,96,0,0,633,167,18,0
+county,12043,"Glades County, Florida",1640,450,92,0,1092,456,0,0
+county,12045,"Gulf County, Florida",1129,143,0,0,858,44,227,0
+county,12047,"Hamilton County, Florida",2323,303,0,0,2274,49,0,0
+county,12049,"Hardee County, Florida",1672,267,0,0,1672,0,0,0
+county,12051,"Hendry County, Florida",218,69,0,0,0,218,0,0
+county,12053,"Hernando County, Florida",1097,150,7,0,415,675,0,0
+county,12055,"Highlands County, Florida",365,57,0,0,0,365,0,0
+county,12057,"Hillsborough County, Florida",2959,474,0,0,0,2775,184,0
+county,12059,"Holmes County, Florida",1619,207,0,0,1492,127,0,0
+county,12061,"Indian River County, Florida",490,48,0,0,0,490,0,0
+county,12063,"Jackson County, Florida",5482,614,23,120,5172,167,0,0
+county,12065,"Jefferson County, Florida",888,84,0,0,831,57,0,0
+county,12067,"Lafayette County, Florida",1406,190,0,0,1386,20,0,0
+county,12069,"Lake County, Florida",1734,202,0,0,1018,697,19,0
+county,12071,"Lee County, Florida",1484,218,0,0,107,1362,15,0
+county,12073,"Leon County, Florida",1944,191,130,711,126,915,62,0
+county,12075,"Levy County, Florida",132,18,0,0,0,132,0,0
+county,12077,"Liberty County, Florida",1785,226,0,0,1739,46,0,0
+county,12079,"Madison County, Florida",1366,197,0,0,1288,78,0,0
+county,12081,"Manatee County, Florida",1943,408,0,0,0,1790,153,0
+county,12083,"Marion County, Florida",6636,459,32,0,5025,1579,0,0
+county,12085,"Martin County, Florida",2343,342,0,0,1742,434,167,0
+county,12086,"Miami-Dade County, Florida",11692,3673,1729,1567,5887,2168,341,0
+county,12087,"Monroe County, Florida",294,105,52,0,0,242,0,0
+county,12089,"Nassau County, Florida",257,9,49,0,0,208,0,0
+county,12091,"Okaloosa County, Florida",1715,190,0,0,1102,538,75,0
+county,12093,"Okeechobee County, Florida",2208,335,0,0,2201,7,0,0
+county,12095,"Orange County, Florida",4685,750,43,0,2550,2092,0,0
+county,12097,"Osceola County, Florida",790,276,0,0,141,649,0,0
+county,12099,"Palm Beach County, Florida",4028,663,80,0,1798,1508,642,0
+county,12101,"Pasco County, Florida",1991,163,0,0,599,1392,0,0
+county,12103,"Pinellas County, Florida",2871,261,183,0,144,2391,153,0
+county,12105,"Polk County, Florida",5393,618,0,0,2986,2359,48,0
+county,12107,"Putnam County, Florida",747,46,0,0,458,289,0,0
+county,51810,"Virginia Beach city, Virginia",1212,38,0,0,0,1212,0,0
+county,51820,"Waynesboro city, Virginia",0,0,0,0,0,0,0,0
+county,51830,"Williamsburg city, Virginia",0,0,0,0,0,0,0,0
+county,51840,"Winchester city, Virginia",0,0,0,0,0,0,0,0
+county,53001,"Adams County, Washington",29,19,0,0,0,29,0,0
+county,53003,"Asotin County, Washington",24,0,0,0,0,24,0,0
+county,53005,"Benton County, Washington",338,90,57,0,0,229,52,0
+county,53007,"Chelan County, Washington",247,95,0,0,0,247,0,0
+county,53009,"Clallam County, Washington",872,167,0,0,782,80,10,0
+county,53011,"Clark County, Washington",769,83,0,0,471,298,0,0
+county,53013,"Columbia County, Washington",0,0,0,0,0,0,0,0
+county,53015,"Cowlitz County, Washington",192,8,14,0,0,146,32,0
+county,53017,"Douglas County, Washington",0,0,0,0,0,0,0,0
+county,53019,"Ferry County, Washington",23,3,0,0,0,23,0,0
+county,53021,"Franklin County, Washington",2536,378,0,0,2403,133,0,0
+county,53023,"Garfield County, Washington",7,1,0,0,0,0,7,0
+county,53025,"Grant County, Washington",152,48,0,0,0,152,0,0
+county,53027,"Grays Harbor County, Washington",2087,224,40,0,1937,110,0,0
+county,53029,"Island County, Washington",59,8,0,0,0,59,0,0
+county,53031,"Jefferson County, Washington",376,23,0,0,354,22,0,0
+county,53033,"King County, Washington",2734,397,591,193,87,1647,216,0
+county,53035,"Kitsap County, Washington",224,23,0,0,0,174,50,0
+county,53037,"Kittitas County, Washington",64,6,17,0,0,47,0,0
+county,53039,"Klickitat County, Washington",30,5,0,0,0,30,0,0
+county,53041,"Lewis County, Washington",56,17,0,0,0,56,0,0
+county,53043,"Lincoln County, Washington",7,1,3,0,0,4,0,0
+county,53045,"Mason County, Washington",2020,318,0,0,1962,58,0,0
+county,53047,"Okanogan County, Washington",114,13,35,0,0,79,0,0
+county,53049,"Pacific County, Washington",52,21,0,0,0,52,0,0
+county,53051,"Pend Oreille County, Washington",13,0,0,0,0,13,0,0
+county,53053,"Pierce County, Washington",3448,1035,781,0,868,1374,425,0
+county,53055,"San Juan County, Washington",6,0,0,0,0,0,6,0
+county,22023,"Cameron Parish, Louisiana",24,0,0,0,0,24,0,0
+county,22017,"Caddo Parish, Louisiana",1214,28,69,0,0,1145,0,0
+county,22019,"Calcasieu Parish, Louisiana",1018,63,58,0,0,951,9,0
+county,22021,"Caldwell Parish, Louisiana",586,9,0,0,0,0,586,0
+county,22025,"Catahoula Parish, Louisiana",493,477,473,0,0,20,0,0
+county,22027,"Claiborne Parish, Louisiana",1635,273,0,0,1166,469,0,0
+county,22029,"Concordia Parish, Louisiana",746,88,121,0,72,553,0,0
+county,22031,"De Soto Parish, Louisiana",89,13,0,0,0,89,0,0
+county,22033,"East Baton Rouge Parish, Louisiana",2008,252,52,0,707,1249,0,0
+county,22035,"East Carroll Parish, Louisiana",1595,7,0,0,1590,5,0,0
+county,22037,"East Feliciana Parish, Louisiana",1750,116,0,0,1750,0,0,0
+county,22039,"Evangeline Parish, Louisiana",967,670,484,0,0,483,0,0
+county,22041,"Franklin Parish, Louisiana",0,0,0,0,0,0,0,0
+county,22043,"Grant Parish, Louisiana",2778,958,0,2715,0,63,0,0
+county,22045,"Iberia Parish, Louisiana",374,2,0,0,0,374,0,0
+county,22047,"Iberville Parish, Louisiana",2225,506,0,0,2114,111,0,0
+county,22049,"Jackson Parish, Louisiana",499,201,359,0,140,0,0,0
+county,22051,"Jefferson Parish, Louisiana",930,67,0,0,0,930,0,0
+county,22053,"Jefferson Davis Parish, Louisiana",244,1,0,0,0,244,0,0
+county,22055,"Lafayette Parish, Louisiana",1339,7,79,0,0,1260,0,0
+county,22057,"Lafourche Parish, Louisiana",543,65,0,0,0,543,0,0
+county,22059,"LaSalle Parish, Louisiana",1819,1203,1590,0,88,141,0,0
+county,22061,"Lincoln Parish, Louisiana",243,19,0,0,243,0,0,0
+county,22063,"Livingston Parish, Louisiana",541,19,0,0,0,541,0,0
+county,22065,"Madison Parish, Louisiana",600,14,0,0,541,59,0,0
+county,22067,"Morehouse Parish, Louisiana",864,75,0,0,0,864,0,0
+county,22069,"Natchitoches Parish, Louisiana",617,101,10,0,0,329,278,0
+county,22071,"Orleans Parish, Louisiana",1721,144,0,0,776,822,123,0
+county,22073,"Ouachita Parish, Louisiana",2503,772,281,0,136,2030,56,0
+county,22075,"Plaquemines Parish, Louisiana",500,9,105,0,0,395,0,0
+county,22077,"Pointe Coupee Parish, Louisiana",0,0,0,0,0,0,0,0
+county,22079,"Rapides Parish, Louisiana",758,268,332,0,0,426,0,0
+county,22081,"Red River Parish, Louisiana",37,9,0,0,0,37,0,0
+county,22083,"Richland Parish, Louisiana",651,18,0,0,0,651,0,0
+county,22085,"Sabine Parish, Louisiana",120,2,0,0,0,120,0,0
+county,22087,"St. Bernard Parish, Louisiana",155,7,19,0,0,136,0,0
+county,22089,"St. Charles Parish, Louisiana",432,16,36,0,0,396,0,0
+county,22091,"St. Helena Parish, Louisiana",36,0,0,0,0,36,0,0
+county,13097,"Douglas County, Georgia",474,33,0,0,0,474,0,0
+county,13091,"Dodge County, Georgia",1269,26,0,0,1131,138,0,0
+county,13093,"Dooly County, Georgia",1671,40,0,0,1614,57,0,0
+county,13095,"Dougherty County, Georgia",470,4,0,0,0,470,0,0
+county,13099,"Early County, Georgia",42,3,0,0,0,42,0,0
+county,13101,"Echols County, Georgia",0,0,0,0,0,0,0,0
+county,13103,"Effingham County, Georgia",189,5,0,0,0,189,0,0
+county,13105,"Elbert County, Georgia",29,1,0,0,0,29,0,0
+county,13107,"Emanuel County, Georgia",842,10,67,0,290,88,397,0
+county,13109,"Evans County, Georgia",381,0,0,0,185,0,196,0
+county,13111,"Fannin County, Georgia",32,0,0,0,0,32,0,0
+county,13113,"Fayette County, Georgia",133,11,0,0,0,133,0,0
+county,13115,"Floyd County, Georgia",1079,122,10,0,0,1062,7,0
+county,13117,"Forsyth County, Georgia",349,34,0,0,0,349,0,0
+county,13119,"Franklin County, Georgia",94,4,0,0,0,94,0,0
+county,13121,"Fulton County, Georgia",7475,974,121,2172,252,4823,107,0
+county,13123,"Gilmer County, Georgia",74,0,0,0,0,74,0,0
+county,13125,"Glascock County, Georgia",0,0,0,0,0,0,0,0
+county,13127,"Glynn County, Georgia",358,22,40,0,0,318,0,0
+county,13129,"Gordon County, Georgia",218,14,0,0,0,218,0,0
+county,13131,"Grady County, Georgia",82,8,0,0,0,82,0,0
+county,13133,"Greene County, Georgia",0,0,0,0,0,0,0,0
+county,13135,"Gwinnett County, Georgia",2739,241,0,0,1096,1458,185,0
+county,13137,"Habersham County, Georgia",1785,12,0,0,1676,109,0,0
+county,30101,"Toole County, Montana",702,45,93,0,608,1,0,0
+county,30103,"Treasure County, Montana",0,0,0,0,0,0,0,0
+county,30105,"Valley County, Montana",22,0,0,0,0,22,0,0
+county,30107,"Wheatland County, Montana",5,1,0,0,0,5,0,0
+county,30109,"Wibaux County, Montana",0,0,0,0,0,0,0,0
+county,30111,"Yellowstone County, Montana",962,69,50,0,217,325,370,0
+county,31001,"Adams County, Nebraska",28,4,0,0,0,28,0,0
+county,31003,"Antelope County, Nebraska",20,0,0,0,0,20,0,0
+county,31005,"Arthur County, Nebraska",0,0,0,0,0,0,0,0
+county,31007,"Banner County, Nebraska",0,0,0,0,0,0,0,0
+county,31009,"Blaine County, Nebraska",0,0,0,0,0,0,0,0
+county,31011,"Boone County, Nebraska",5,3,0,0,0,5,0,0
+county,31013,"Box Butte County, Nebraska",18,8,0,0,0,18,0,0
+county,31015,"Boyd County, Nebraska",0,0,0,0,0,0,0,0
+county,31017,"Brown County, Nebraska",5,3,0,0,0,5,0,0
+county,31019,"Buffalo County, Nebraska",216,36,0,0,0,146,70,0
+county,31021,"Burt County, Nebraska",0,0,0,0,0,0,0,0
+county,31023,"Butler County, Nebraska",14,2,0,0,0,14,0,0
+county,31025,"Cass County, Nebraska",71,31,12,0,0,59,0,0
+county,31027,"Cedar County, Nebraska",9,0,0,0,0,9,0,0
+county,31029,"Chase County, Nebraska",0,0,0,0,0,0,0,0
+county,31031,"Cherry County, Nebraska",8,0,0,0,0,8,0,0
+county,31033,"Cheyenne County, Nebraska",11,8,0,0,0,11,0,0
+county,31035,"Clay County, Nebraska",12,0,0,0,0,12,0,0
+county,31037,"Colfax County, Nebraska",0,0,0,0,0,0,0,0
+county,31039,"Cuming County, Nebraska",0,0,0,0,0,0,0,0
+county,31041,"Custer County, Nebraska",4,0,0,0,0,4,0,0
+county,31043,"Dakota County, Nebraska",80,12,11,0,0,69,0,0
+county,31045,"Dawes County, Nebraska",30,3,0,0,0,30,0,0
+county,31047,"Dawson County, Nebraska",79,25,18,0,0,61,0,0
+county,31049,"Deuel County, Nebraska",0,0,0,0,0,0,0,0
+county,31051,"Dixon County, Nebraska",17,9,0,0,0,17,0,0
+county,31053,"Dodge County, Nebraska",0,0,0,0,0,0,0,0
+county,31055,"Douglas County, Nebraska",2115,313,52,0,994,1016,53,0
+county,31057,"Dundy County, Nebraska",0,0,0,0,0,0,0,0
+county,08061,"Kiowa County, Colorado",0,0,0,0,0,0,0,0
+county,08063,"Kit Carson County, Colorado",13,7,0,0,0,13,0,0
+county,08065,"Lake County, Colorado",0,0,0,0,0,0,0,0
+county,08067,"La Plata County, Colorado",110,28,37,0,0,73,0,0
+county,08069,"Larimer County, Colorado",743,171,0,0,0,460,283,0
+county,08071,"Las Animas County, Colorado",522,198,0,0,493,29,0,0
+county,08073,"Lincoln County, Colorado",918,333,0,0,904,14,0,0
+county,08075,"Logan County, Colorado",2436,769,0,0,2436,0,0,0
+county,08077,"Mesa County, Colorado",580,148,25,0,0,366,189,0
+county,08079,"Mineral County, Colorado",0,0,0,0,0,0,0,0
+county,08081,"Moffat County, Colorado",48,15,0,0,0,23,25,0
+county,08083,"Montezuma County, Colorado",121,11,0,0,0,105,16,0
+county,08085,"Montrose County, Colorado",72,17,0,0,0,56,16,0
+county,08087,"Morgan County, Colorado",57,18,0,0,0,57,0,0
+county,08089,"Otero County, Colorado",8,8,0,0,0,8,0,0
+county,08091,"Ouray County, Colorado",0,0,0,0,0,0,0,0
+county,08093,"Park County, Colorado",19,3,5,0,0,14,0,0
+county,08095,"Phillips County, Colorado",0,0,0,0,0,0,0,0
+county,08097,"Pitkin County, Colorado",23,7,0,0,0,23,0,0
+county,08099,"Prowers County, Colorado",61,29,0,0,0,37,24,0
+county,08101,"Pueblo County, Colorado",1085,399,0,0,862,223,0,0
+county,08103,"Rio Blanco County, Colorado",9,5,0,0,0,9,0,0
+county,08105,"Rio Grande County, Colorado",11,8,0,0,0,11,0,0
+county,08107,"Routt County, Colorado",25,6,0,0,0,25,0,0
+county,08109,"Saguache County, Colorado",18,5,0,0,0,18,0,0
+county,08111,"San Juan County, Colorado",0,0,0,0,0,0,0,0
+county,08113,"San Miguel County, Colorado",9,0,0,0,0,9,0,0
+county,08115,"Sedgwick County, Colorado",0,0,0,0,0,0,0,0
+county,08117,"Summit County, Colorado",20,5,0,0,0,20,0,0
+county,08119,"Teller County, Colorado",20,2,0,0,0,20,0,0
+county,53063,"Spokane County, Washington",2885,489,87,0,2131,491,176,0
+county,53057,"Skagit County, Washington",118,26,0,0,0,118,0,0
+county,53059,"Skamania County, Washington",14,2,0,0,0,14,0,0
+county,53061,"Snohomish County, Washington",2863,394,0,0,2458,405,0,0
+county,53065,"Stevens County, Washington",10,0,10,0,0,0,0,0
+county,53067,"Thurston County, Washington",858,72,0,0,453,360,45,0
+county,53069,"Wahkiakum County, Washington",7,4,0,0,0,7,0,0
+county,53071,"Walla Walla County, Washington",2382,365,0,0,2318,64,0,0
+county,53073,"Whatcom County, Washington",216,22,0,0,0,160,56,0
+county,53075,"Whitman County, Washington",30,10,0,0,0,30,0,0
+county,53077,"Yakima County, Washington",815,348,120,0,0,563,132,0
+county,54001,"Barbour County, West Virginia",0,0,0,0,0,0,0,0
+county,54003,"Berkeley County, West Virginia",515,18,8,0,385,122,0,0
+county,54005,"Boone County, West Virginia",0,0,0,0,0,0,0,0
+county,54007,"Braxton County, West Virginia",370,3,69,0,301,0,0,0
+county,54009,"Brooke County, West Virginia",0,0,0,0,0,0,0,0
+county,54011,"Cabell County, West Virginia",621,4,0,0,621,0,0,0
+county,54013,"Calhoun County, West Virginia",0,0,0,0,0,0,0,0
+county,54015,"Clay County, West Virginia",0,0,0,0,0,0,0,0
+county,54017,"Doddridge County, West Virginia",1127,11,30,0,1097,0,0,0
+county,54019,"Fayette County, West Virginia",1058,14,0,0,989,0,69,0
+county,54021,"Gilmer County, West Virginia",1440,170,0,1440,0,0,0,0
+county,54023,"Grant County, West Virginia",0,0,0,0,0,0,0,0
+county,54025,"Greenbrier County, West Virginia",0,0,0,0,0,0,0,0
+county,54027,"Hampshire County, West Virginia",251,7,23,0,228,0,0,0
+county,54029,"Hancock County, West Virginia",0,0,0,0,0,0,0,0
+county,54031,"Hardy County, West Virginia",0,0,0,0,0,0,0,0
+county,54033,"Harrison County, West Virginia",0,0,0,0,0,0,0,0
+county,54035,"Jackson County, West Virginia",0,0,0,0,0,0,0,0
+county,54037,"Jefferson County, West Virginia",0,0,0,0,0,0,0,0
+county,54039,"Kanawha County, West Virginia",547,20,84,0,0,350,113,0
+county,54041,"Lewis County, West Virginia",0,0,0,0,0,0,0,0
+county,54043,"Lincoln County, West Virginia",0,0,0,0,0,0,0,0
+county,54045,"Logan County, West Virginia",449,4,0,0,449,0,0,0
+county,54047,"McDowell County, West Virginia",1881,299,0,1134,460,287,0,0
+county,54049,"Marion County, West Virginia",0,0,0,0,0,0,0,0
+county,54051,"Marshall County, West Virginia",582,0,34,0,548,0,0,0
+county,54053,"Mason County, West Virginia",562,1,0,0,562,0,0,0
+county,54055,"Mercer County, West Virginia",0,0,0,0,0,0,0,0
+county,54057,"Mineral County, West Virginia",0,0,0,0,0,0,0,0
+county,54059,"Mingo County, West Virginia",0,0,0,0,0,0,0,0
+county,54061,"Monongalia County, West Virginia",682,64,0,682,0,0,0,0
+county,54063,"Monroe County, West Virginia",0,0,0,0,0,0,0,0
+county,12115,"Sarasota County, Florida",830,61,0,0,0,830,0,0
+county,12109,"St. Johns County, Florida",439,29,0,0,0,439,0,0
+county,12111,"St. Lucie County, Florida",1196,71,40,0,75,1081,0,0
+county,12113,"Santa Rosa County, Florida",5520,824,24,0,5192,304,0,0
+county,12117,"Seminole County, Florida",770,106,63,0,0,707,0,0
+county,12119,"Sumter County, Florida",8104,1673,0,6285,1513,306,0,0
+county,12121,"Suwannee County, Florida",2116,259,0,0,1979,137,0,0
+county,12123,"Taylor County, Florida",2353,364,0,0,2271,82,0,0
+county,12125,"Union County, Florida",4755,354,0,0,4652,45,58,0
+county,12127,"Volusia County, Florida",2916,269,0,0,1521,1217,178,0
+county,12129,"Wakulla County, Florida",3264,565,80,0,2958,226,0,0
+county,12131,"Walton County, Florida",1835,173,0,0,1553,282,0,0
+county,12133,"Washington County, Florida",2087,192,22,0,1960,105,0,0
+county,13001,"Appling County, Georgia",270,12,0,0,197,73,0,0
+county,13003,"Atkinson County, Georgia",14,3,0,0,0,14,0,0
+county,13005,"Bacon County, Georgia",186,0,0,0,149,0,37,0
+county,13007,"Baker County, Georgia",0,0,0,0,0,0,0,0
+county,13009,"Baldwin County, Georgia",2470,33,0,0,2274,196,0,0
+county,13011,"Banks County, Georgia",0,0,0,0,0,0,0,0
+county,13013,"Barrow County, Georgia",235,20,0,0,0,235,0,0
+county,13015,"Bartow County, Georgia",502,18,0,0,0,502,0,0
+county,13017,"Ben Hill County, Georgia",77,4,0,0,0,77,0,0
+county,13019,"Berrien County, Georgia",64,25,0,0,0,64,0,0
+county,13021,"Bibb County, Georgia",2125,20,13,0,1094,838,180,0
+county,13023,"Bleckley County, Georgia",207,7,0,0,174,33,0,0
+county,13025,"Brantley County, Georgia",0,0,0,0,0,0,0,0
+county,13027,"Brooks County, Georgia",25,0,0,0,0,25,0,0
+county,13029,"Bryan County, Georgia",0,0,0,0,0,0,0,0
+county,13031,"Bulloch County, Georgia",1883,55,0,0,1455,428,0,0
+county,13033,"Burke County, Georgia",101,2,0,0,0,101,0,0
+county,13035,"Butts County, Georgia",2680,61,74,0,2486,120,0,0
+county,13037,"Calhoun County, Georgia",1538,36,0,0,1499,39,0,0
+county,48251,"Johnson County, Texas",2265,1051,533,0,1026,706,0,0
+county,48253,"Jones County, Texas",5073,2107,237,0,4798,38,0,0
+county,48255,"Karnes County, Texas",2929,1213,881,0,2036,12,0,0
+county,48257,"Kaufman County, Texas",416,65,38,0,0,378,0,0
+county,48259,"Kendall County, Texas",119,59,0,0,0,119,0,0
+county,48261,"Kenedy County, Texas",0,0,0,0,0,0,0,0
+county,48263,"Kent County, Texas",0,0,0,0,0,0,0,0
+county,48265,"Kerr County, Texas",200,73,0,0,0,200,0,0
+county,48267,"Kimble County, Texas",9,7,0,0,0,9,0,0
+county,48269,"King County, Texas",0,0,0,0,0,0,0,0
+county,48271,"Kinney County, Texas",389,88,389,0,0,0,0,0
+county,48273,"Kleberg County, Texas",0,0,0,0,0,0,0,0
+county,48275,"Knox County, Texas",3,3,0,0,0,3,0,0
+county,48277,"Lamar County, Texas",120,12,0,0,0,120,0,0
+county,48279,"Lamb County, Texas",31,24,0,0,0,31,0,0
+county,48281,"Lampasas County, Texas",44,14,0,0,0,44,0,0
+county,48283,"La Salle County, Texas",1338,461,289,0,552,497,0,0
+county,48285,"Lavaca County, Texas",22,2,0,0,0,22,0,0
+county,48287,"Lee County, Texas",22,4,0,0,0,22,0,0
+county,48289,"Leon County, Texas",39,7,0,0,0,39,0,0
+county,48291,"Liberty County, Texas",4573,1324,0,0,4350,223,0,0
+county,48293,"Limestone County, Texas",611,236,491,0,0,120,0,0
+county,48295,"Lipscomb County, Texas",9,0,0,0,0,9,0,0
+county,48297,"Live Oak County, Texas",1350,1019,0,1273,0,77,0,0
+county,48299,"Llano County, Texas",0,0,0,0,0,0,0,0
+county,48301,"Loving County, Texas",0,0,0,0,0,0,0,0
+county,48303,"Lubbock County, Texas",2003,801,61,0,804,1138,0,0
+county,48305,"Lynn County, Texas",35,17,0,0,0,35,0,0
+county,48307,"McCulloch County, Texas",23,0,0,0,0,23,0,0
+county,48309,"McLennan County, Texas",1150,270,270,0,0,880,0,0
+county,48311,"McMullen County, Texas",0,0,0,0,0,0,0,0
+county,48313,"Madison County, Texas",2306,866,0,0,2306,0,0,0
+county,48315,"Marion County, Texas",16,0,0,0,0,16,0,0
+county,48317,"Martin County, Texas",5,0,0,0,0,5,0,0
+county,48319,"Mason County, Texas",7,2,0,0,0,7,0,0
+county,48321,"Matagorda County, Texas",51,12,0,0,0,51,0,0
+county,48323,"Maverick County, Texas",316,170,94,0,0,222,0,0
+county,48325,"Medina County, Texas",1805,794,0,0,1746,59,0,0
+county,48327,"Menard County, Texas",6,1,0,0,0,6,0,0
+county,48329,"Midland County, Texas",318,105,69,0,0,167,82,0
+county,48331,"Milam County, Texas",117,15,0,0,0,117,0,0
+county,48333,"Mills County, Texas",31,10,0,0,0,31,0,0
+county,48335,"Mitchell County, Texas",2113,899,0,0,2078,35,0,0
+county,48337,"Montague County, Texas",41,1,0,0,0,41,0,0
+county,48339,"Montgomery County, Texas",2502,1285,1870,0,0,619,13,0
+county,48341,"Moore County, Texas",42,20,0,0,0,42,0,0
+county,48343,"Morris County, Texas",20,2,0,0,0,20,0,0
+county,48345,"Motley County, Texas",0,0,0,0,0,0,0,0
+county,48347,"Nacogdoches County, Texas",222,3,0,0,0,222,0,0
+county,08039,"Elbert County, Colorado",26,3,0,0,0,26,0,0
+county,08033,"Dolores County, Colorado",0,0,0,0,0,0,0,0
+county,08035,"Douglas County, Colorado",283,68,0,0,0,283,0,0
+county,08037,"Eagle County, Colorado",36,14,0,0,0,36,0,0
+county,08041,"El Paso County, Colorado",1512,339,0,0,0,1488,24,0
+county,08043,"Fremont County, Colorado",7503,2153,73,2459,4901,70,0,0
+county,08045,"Garfield County, Colorado",262,78,0,0,187,38,37,0
+county,08047,"Gilpin County, Colorado",24,3,0,0,0,24,0,0
+county,08049,"Grand County, Colorado",9,1,0,0,0,9,0,0
+county,08051,"Gunnison County, Colorado",17,3,0,0,0,17,0,0
+county,08053,"Hinsdale County, Colorado",0,0,0,0,0,0,0,0
+county,08055,"Huerfano County, Colorado",10,7,0,0,0,10,0,0
+county,08057,"Jackson County, Colorado",2,2,0,0,0,2,0,0
+county,08059,"Jefferson County, Colorado",2274,565,243,892,128,687,324,0
+county,51107,"Loudoun County, Virginia",0,0,0,0,0,0,0,0
+county,51101,"King William County, Virginia",0,0,0,0,0,0,0,0
+county,51103,"Lancaster County, Virginia",18,4,0,0,0,18,0,0
+county,51105,"Lee County, Virginia",1352,307,0,1352,0,0,0,0
+county,51109,"Louisa County, Virginia",0,0,0,0,0,0,0,0
+county,51111,"Lunenburg County, Virginia",953,19,0,0,953,0,0,0
+county,51113,"Madison County, Virginia",0,0,0,0,0,0,0,0
+county,51115,"Mathews County, Virginia",0,0,0,0,0,0,0,0
+county,51117,"Mecklenburg County, Virginia",431,11,0,0,423,8,0,0
+county,51119,"Middlesex County, Virginia",162,4,0,0,0,162,0,0
+county,51121,"Montgomery County, Virginia",71,2,0,0,0,71,0,0
+county,51125,"Nelson County, Virginia",0,0,0,0,0,0,0,0
+county,51127,"New Kent County, Virginia",526,12,0,0,0,526,0,0
+county,51131,"Northampton County, Virginia",58,2,0,0,0,58,0,0
+county,51133,"Northumberland County, Virginia",0,0,0,0,0,0,0,0
+county,51135,"Nottoway County, Virginia",1579,83,0,0,1579,0,0,0
+county,51137,"Orange County, Virginia",98,19,98,0,0,0,0,0
+county,51139,"Page County, Virginia",58,5,0,0,0,58,0,0
+county,51141,"Patrick County, Virginia",126,3,0,0,0,126,0,0
+county,51143,"Pittsylvania County, Virginia",1078,28,0,0,1014,64,0,0
+county,51145,"Powhatan County, Virginia",1008,39,0,0,1008,0,0,0
+county,51147,"Prince Edward County, Virginia",1031,529,598,0,0,433,0,0
+county,51149,"Prince George County, Virginia",3914,243,0,2669,0,0,1245,0
+county,51153,"Prince William County, Virginia",536,134,0,0,0,0,536,0
+county,51155,"Pulaski County, Virginia",860,4,0,0,0,860,0,0
+county,51157,"Rappahannock County, Virginia",0,0,0,0,0,0,0,0
+county,51159,"Richmond County, Virginia",1398,94,124,0,1023,251,0,0
+county,51161,"Roanoke County, Virginia",885,23,22,0,0,863,0,0
+county,51163,"Rockbridge County, Virginia",98,0,0,0,0,98,0,0
+county,51165,"Rockingham County, Virginia",67,15,0,0,0,0,67,0
+county,51167,"Russell County, Virginia",62,3,0,0,0,0,62,0
+county,51169,"Scott County, Virginia",579,3,0,0,0,579,0,0
+county,51171,"Shenandoah County, Virginia",0,0,0,0,0,0,0,0
+county,51173,"Smyth County, Virginia",253,7,0,0,253,0,0,0
+county,51175,"Southampton County, Virginia",1358,25,0,0,1305,53,0,0
+county,51177,"Spotsylvania County, Virginia",0,0,0,0,0,0,0,0
+county,51179,"Stafford County, Virginia",1287,59,37,0,0,1191,59,0
+county,51181,"Surry County, Virginia",5,3,0,0,0,0,5,0
+county,51183,"Sussex County, Virginia",2035,84,0,0,1993,42,0,0
+county,51185,"Tazewell County, Virginia",1170,28,0,0,1015,155,0,0
+county,51187,"Warren County, Virginia",418,16,0,0,0,418,0,0
+county,51191,"Washington County, Virginia",849,4,91,0,0,758,0,0
+county,51193,"Westmoreland County, Virginia",0,0,0,0,0,0,0,0
+county,51195,"Wise County, Virginia",1942,92,0,0,1942,0,0,0
+county,51197,"Wythe County, Virginia",0,0,0,0,0,0,0,0
+county,51199,"York County, Virginia",0,0,0,0,0,0,0,0
+county,51510,"Alexandria city, Virginia",202,43,104,0,0,98,0,0
+county,51520,"Bristol city, Virginia",138,3,0,0,0,138,0,0
+county,51530,"Buena Vista city, Virginia",0,0,0,0,0,0,0,0
+county,51540,"Charlottesville city, Virginia",0,0,0,0,0,0,0,0
+county,51550,"Chesapeake city, Virginia",3091,77,34,0,2114,943,0,0
+county,51570,"Colonial Heights city, Virginia",0,0,0,0,0,0,0,0
+county,27069,"Kittson County, Minnesota",0,0,0,0,0,0,0,0
+county,27063,"Jackson County, Minnesota",0,0,0,0,0,0,0,0
+county,27065,"Kanabec County, Minnesota",22,12,0,0,0,22,0,0
+county,21149,"McLean County, Kentucky",0,0,0,0,0,0,0,0
+county,21143,"Lyon County, Kentucky",1484,35,0,0,1484,0,0,0
+county,21145,"McCracken County, Kentucky",577,11,14,0,0,498,65,0
+county,21035,"Calloway County, Kentucky",137,1,0,0,0,137,0,0
+county,21029,"Bullitt County, Kentucky",0,0,0,0,0,0,0,0
+county,21031,"Butler County, Kentucky",35,3,0,0,0,35,0,0
+county,21033,"Caldwell County, Kentucky",34,11,0,0,0,34,0,0
+county,21037,"Campbell County, Kentucky",540,12,0,0,0,540,0,0
+county,21039,"Carlisle County, Kentucky",0,0,0,0,0,0,0,0
+county,21041,"Carroll County, Kentucky",113,6,0,0,0,113,0,0
+county,21043,"Carter County, Kentucky",165,6,35,0,0,130,0,0
+county,21045,"Casey County, Kentucky",294,2,0,0,0,294,0,0
+county,21047,"Christian County, Kentucky",526,2,0,0,0,526,0,0
+county,21049,"Clark County, Kentucky",215,0,0,0,0,215,0,0
+county,21051,"Clay County, Kentucky",1320,137,0,1044,0,276,0,0
+county,21053,"Clinton County, Kentucky",34,0,0,0,0,34,0,0
+county,21055,"Crittenden County, Kentucky",189,7,48,0,0,141,0,0
+county,21057,"Cumberland County, Kentucky",0,0,0,0,0,0,0,0
+county,21059,"Daviess County, Kentucky",766,19,0,0,0,626,140,0
+county,21061,"Edmonson County, Kentucky",0,0,0,0,0,0,0,0
+county,21063,"Elliott County, Kentucky",1041,24,0,0,1041,0,0,0
+county,21065,"Estill County, Kentucky",0,0,0,0,0,0,0,0
+county,21067,"Fayette County, Kentucky",2434,166,50,1449,312,556,67,0
+county,21069,"Fleming County, Kentucky",0,0,0,0,0,0,0,0
+county,21071,"Floyd County, Kentucky",41,1,0,0,0,41,0,0
+county,21073,"Franklin County, Kentucky",211,4,10,0,0,201,0,0
+county,21075,"Fulton County, Kentucky",471,12,0,0,0,471,0,0
+county,21077,"Gallatin County, Kentucky",0,0,0,0,0,0,0,0
+county,21079,"Garrard County, Kentucky",0,0,0,0,0,0,0,0
+county,21081,"Grant County, Kentucky",208,6,0,0,0,208,0,0
+county,21083,"Graves County, Kentucky",107,5,0,0,0,107,0,0
+county,21085,"Grayson County, Kentucky",584,25,368,0,0,216,0,0
+county,21087,"Green County, Kentucky",0,0,0,0,0,0,0,0
+county,21089,"Greenup County, Kentucky",119,3,0,0,0,119,0,0
+county,21091,"Hancock County, Kentucky",0,0,0,0,0,0,0,0
+county,21093,"Hardin County, Kentucky",577,15,0,0,0,577,0,0
+county,21095,"Harlan County, Kentucky",213,0,0,0,0,213,0,0
+county,36001,"Albany County, New York",303,54,48,0,0,237,18,0
+county,36003,"Allegany County, New York",78,9,8,0,0,70,0,0
+county,36005,"Bronx County, New York",3815,1275,0,0,500,3245,70,0
+county,36007,"Broome County, New York",313,49,36,0,0,254,23,0
+county,36009,"Cattaraugus County, New York",113,6,28,0,0,85,0,0
+county,36011,"Cayuga County, New York",2049,377,28,0,1917,104,0,0
+county,36013,"Chautauqua County, New York",812,156,45,0,617,150,0,0
+county,36015,"Chemung County, New York",1964,413,0,0,1871,93,0,0
+county,36017,"Chenango County, New York",59,4,0,0,0,59,0,0
+county,36019,"Clinton County, New York",2653,666,20,0,2567,66,0,0
+county,36021,"Columbia County, New York",101,13,14,0,64,23,0,0
+county,36023,"Cortland County, New York",50,4,0,0,0,50,0,0
+county,36025,"Delaware County, New York",77,4,7,0,0,70,0,0
+county,36027,"Dutchess County, New York",4370,1146,0,0,4171,176,23,0
+county,36029,"Erie County, New York",3409,618,0,0,2806,603,0,0
+county,36031,"Essex County, New York",830,253,22,591,183,34,0,0
+county,36033,"Franklin County, New York",2829,660,0,0,2778,51,0,0
+county,36035,"Fulton County, New York",469,126,0,0,413,56,0,0
+county,36037,"Genesee County, New York",406,166,368,0,0,38,0,0
+county,36039,"Greene County, New York",2140,527,0,0,2140,0,0,0
+county,36041,"Hamilton County, New York",4,0,0,0,0,4,0,0
+county,36043,"Herkimer County, New York",40,11,0,0,0,40,0,0
+county,36045,"Jefferson County, New York",1185,290,0,0,1084,101,0,0
+county,36047,"Kings County, New York",2562,734,1803,153,606,0,0,0
+county,20129,"Morton County, Kansas",15,0,0,0,0,15,0,0
+county,20123,"Mitchell County, Kansas",0,0,0,0,0,0,0,0
+county,20125,"Montgomery County, Kansas",45,6,0,0,0,45,0,0
+county,20127,"Morris County, Kansas",7,0,0,0,0,7,0,0
+county,20131,"Nemaha County, Kansas",9,7,0,0,0,9,0,0
+county,20133,"Neosho County, Kansas",33,0,0,0,0,33,0,0
+county,20135,"Ness County, Kansas",20,1,0,0,0,20,0,0
+county,20137,"Norton County, Kansas",862,105,0,0,861,1,0,0
+county,20139,"Osage County, Kansas",0,0,0,0,0,0,0,0
+county,20141,"Osborne County, Kansas",8,2,0,0,0,8,0,0
+county,20143,"Ottawa County, Kansas",57,6,0,0,0,57,0,0
+county,20145,"Pawnee County, Kansas",624,80,0,0,571,0,53,0
+county,20147,"Phillips County, Kansas",3,0,0,0,0,3,0,0
+county,20149,"Pottawatomie County, Kansas",24,2,0,0,0,24,0,0
+county,20151,"Pratt County, Kansas",8,4,0,0,0,8,0,0
+county,20153,"Rawlins County, Kansas",0,0,0,0,0,0,0,0
+county,20155,"Reno County, Kansas",1668,262,0,0,1551,117,0,0
+county,20157,"Republic County, Kansas",0,0,0,0,0,0,0,0
+county,20159,"Rice County, Kansas",19,0,0,0,0,19,0,0
+county,20161,"Riley County, Kansas",65,4,0,0,0,65,0,0
+county,20163,"Rooks County, Kansas",136,17,0,0,126,10,0,0
+county,20165,"Rush County, Kansas",0,0,0,0,0,0,0,0
+county,20167,"Russell County, Kansas",26,1,0,0,0,26,0,0
+county,20169,"Saline County, Kansas",276,25,0,0,0,276,0,0
+county,20171,"Scott County, Kansas",14,6,0,0,0,14,0,0
+county,28117,"Prentiss County, Mississippi",84,6,0,0,0,84,0,0
+county,28111,"Perry County, Mississippi",0,0,0,0,0,0,0,0
+county,28113,"Pike County, Mississippi",88,6,0,0,0,0,88,0
+county,28115,"Pontotoc County, Mississippi",56,2,0,0,0,56,0,0
+county,28119,"Quitman County, Mississippi",66,4,0,0,0,12,54,0
+county,28121,"Rankin County, Mississippi",4084,44,0,0,3610,272,202,0
+county,28123,"Scott County, Mississippi",0,0,0,0,0,0,0,0
+county,28125,"Sharkey County, Mississippi",0,0,0,0,0,0,0,0
+county,28127,"Simpson County, Mississippi",70,5,0,0,0,7,63,0
+county,28129,"Smith County, Mississippi",28,3,0,0,0,28,0,0
+county,28131,"Stone County, Mississippi",356,1,73,0,283,0,0,0
+county,28133,"Sunflower County, Mississippi",3277,196,0,0,3094,29,154,0
+county,28135,"Tallahatchie County, Mississippi",1547,344,654,0,878,0,15,0
+county,28137,"Tate County, Mississippi",51,3,0,0,0,51,0,0
+county,28139,"Tippah County, Mississippi",0,0,0,0,0,0,0,0
+county,28141,"Tishomingo County, Mississippi",55,0,0,0,0,55,0,0
+county,28143,"Tunica County, Mississippi",40,4,0,0,0,40,0,0
+county,28145,"Union County, Mississippi",50,0,0,0,0,50,0,0
+county,28147,"Walthall County, Mississippi",35,0,0,0,0,35,0,0
+county,28149,"Warren County, Mississippi",86,4,0,0,0,80,6,0
+county,28151,"Washington County, Mississippi",367,22,0,0,154,213,0,0
+county,28153,"Wayne County, Mississippi",0,0,0,0,0,0,0,0
+county,28155,"Webster County, Mississippi",0,0,0,0,0,0,0,0
+county,28157,"Wilkinson County, Mississippi",875,3,0,0,854,21,0,0
+county,28159,"Winston County, Mississippi",265,8,0,0,265,0,0,0
+county,28161,"Yalobusha County, Mississippi",121,2,0,0,0,121,0,0
+county,28163,"Yazoo County, Mississippi",4187,854,0,3907,280,0,0,0
+county,29001,"Adair County, Missouri",50,0,0,0,0,50,0,0
+county,29003,"Andrew County, Missouri",0,0,0,0,0,0,0,0
+county,29005,"Atchison County, Missouri",9,0,0,0,0,9,0,0
+county,29007,"Audrain County, Missouri",1242,38,0,0,1201,41,0,0
+county,29009,"Barry County, Missouri",44,2,0,0,0,44,0,0
+county,29011,"Barton County, Missouri",10,0,0,0,0,10,0,0
+county,29013,"Bates County, Missouri",159,27,23,0,0,136,0,0
+county,29015,"Benton County, Missouri",16,11,0,0,0,0,16,0
+county,29017,"Bollinger County, Missouri",24,0,0,0,0,24,0,0
+county,29019,"Boone County, Missouri",223,0,0,0,0,190,33,0
+county,29021,"Buchanan County, Missouri",1782,42,0,0,1609,154,19,0
+county,29023,"Butler County, Missouri",30,0,0,0,0,0,30,0
+county,13191,"McIntosh County, Georgia",44,0,2,0,0,42,0,0
+county,13193,"Macon County, Georgia",1628,33,0,0,1615,13,0,0
+county,13195,"Madison County, Georgia",0,0,0,0,0,0,0,0
+county,13197,"Marion County, Georgia",22,0,0,0,0,22,0,0
+county,13199,"Meriwether County, Georgia",0,0,0,0,0,0,0,0
+county,13201,"Miller County, Georgia",21,2,0,0,0,21,0,0
+county,13205,"Mitchell County, Georgia",1491,39,0,0,1425,66,0,0
+county,18047,"Franklin County, Indiana",0,0,0,0,0,0,0,0
+county,18041,"Fayette County, Indiana",28,2,0,0,0,28,0,0
+county,18043,"Floyd County, Indiana",235,5,31,0,0,204,0,0
+county,18045,"Fountain County, Indiana",0,0,0,0,0,0,0,0
+county,18049,"Fulton County, Indiana",54,0,0,0,0,54,0,0
+county,18051,"Gibson County, Indiana",68,2,0,0,0,68,0,0
+county,18053,"Grant County, Indiana",284,12,0,0,0,284,0,0
+county,18055,"Greene County, Indiana",135,0,0,0,0,109,26,0
+county,18057,"Hamilton County, Indiana",289,25,37,0,0,252,0,0
+county,18059,"Hancock County, Indiana",223,6,0,0,0,223,0,0
+county,18061,"Harrison County, Indiana",91,1,0,0,0,91,0,0
+county,18063,"Hendricks County, Indiana",2507,68,0,0,2507,0,0,0
+county,18065,"Henry County, Indiana",3198,177,0,0,3016,182,0,0
+county,18067,"Howard County, Indiana",354,5,0,0,0,354,0,0
+county,18069,"Huntington County, Indiana",121,26,0,0,0,121,0,0
+county,18071,"Jackson County, Indiana",217,1,0,0,0,217,0,0
+county,18073,"Jasper County, Indiana",84,7,0,0,0,75,9,0
+county,18075,"Jay County, Indiana",69,0,0,0,0,69,0,0
+county,18077,"Jefferson County, Indiana",927,14,0,0,744,183,0,0
+county,18079,"Jennings County, Indiana",134,1,0,0,0,134,0,0
+county,18081,"Johnson County, Indiana",640,13,0,0,310,330,0,0
+county,18083,"Knox County, Indiana",258,6,29,0,0,229,0,0
+county,18085,"Kosciusko County, Indiana",54,5,0,0,0,0,54,0
+county,18087,"LaGrange County, Indiana",0,0,0,0,0,0,0,0
+county,18089,"Lake County, Indiana",800,108,32,0,0,637,131,0
+county,18091,"LaPorte County, Indiana",5483,332,0,0,5197,286,0,0
+county,18093,"Lawrence County, Indiana",134,2,0,0,0,134,0,0
+county,18095,"Madison County, Indiana",3702,170,0,0,3225,340,137,0
+county,13241,"Rabun County, Georgia",60,9,0,0,0,60,0,0
+county,13243,"Randolph County, Georgia",0,0,0,0,0,0,0,0
+county,13245,"Richmond County, Georgia",2134,39,0,0,1155,753,226,0
+county,13247,"Rockdale County, Georgia",220,18,0,0,0,220,0,0
+county,13249,"Schley County, Georgia",0,0,0,0,0,0,0,0
+county,13251,"Screven County, Georgia",128,0,0,0,0,128,0,0
+county,13253,"Seminole County, Georgia",17,7,0,0,0,17,0,0
+county,13255,"Spalding County, Georgia",388,4,0,0,388,0,0,0
+county,13257,"Stephens County, Georgia",133,3,0,0,0,133,0,0
+county,13259,"Stewart County, Georgia",1499,1152,1499,0,0,0,0,0
+county,13261,"Sumter County, Georgia",396,10,24,0,0,95,277,0
+county,13263,"Talbot County, Georgia",0,0,0,0,0,0,0,0
+county,13265,"Taliaferro County, Georgia",0,0,0,0,0,0,0,0
+county,13267,"Tattnall County, Georgia",2713,47,0,0,2713,0,0,0
+county,13269,"Taylor County, Georgia",14,2,0,0,0,14,0,0
+county,13271,"Telfair County, Georgia",2860,1535,0,224,2615,21,0,0
+county,13273,"Terrell County, Georgia",174,9,0,0,0,174,0,0
+county,13275,"Thomas County, Georgia",0,0,0,0,0,0,0,0
+county,13277,"Tift County, Georgia",187,14,72,0,0,115,0,0
+county,13279,"Toombs County, Georgia",0,0,0,0,0,0,0,0
+county,13281,"Towns County, Georgia",49,10,0,0,0,49,0,0
+county,13283,"Treutlen County, Georgia",278,5,0,0,250,28,0,0
+county,13285,"Troup County, Georgia",612,2,0,0,0,450,162,0
+county,13287,"Turner County, Georgia",62,9,0,0,0,62,0,0
+county,13289,"Twiggs County, Georgia",0,0,0,0,0,0,0,0
+county,13291,"Union County, Georgia",245,2,0,0,33,25,187,0
+county,13293,"Upson County, Georgia",71,1,0,0,0,71,0,0
+county,13295,"Walker County, Georgia",777,25,0,0,501,145,131,0
+county,13297,"Walton County, Georgia",284,13,0,0,0,284,0,0
+county,13299,"Ware County, Georgia",1818,36,63,0,1455,300,0,0
+county,13301,"Warren County, Georgia",0,0,0,0,0,0,0,0
+county,13303,"Washington County, Georgia",1503,48,0,0,1430,73,0,0
+county,13305,"Wayne County, Georgia",1662,222,0,1553,0,109,0,0
+county,13307,"Webster County, Georgia",0,0,0,0,0,0,0,0
+county,13309,"Wheeler County, Georgia",2362,53,0,0,2362,0,0,0
+county,13311,"White County, Georgia",51,2,0,0,0,51,0,0
+county,13313,"Whitfield County, Georgia",394,25,0,0,0,394,0,0
+county,13315,"Wilcox County, Georgia",1721,51,0,0,1696,25,0,0
+county,13317,"Wilkes County, Georgia",6,0,0,0,0,6,0,0
+county,13319,"Wilkinson County, Georgia",37,2,0,0,0,37,0,0
+county,18161,"Union County, Indiana",5,1,0,0,0,5,0,0
+county,18155,"Switzerland County, Indiana",54,0,0,0,0,54,0,0
+county,18157,"Tippecanoe County, Indiana",471,21,0,0,0,410,61,0
+county,18159,"Tipton County, Indiana",24,0,0,0,0,24,0,0
+county,18163,"Vanderburgh County, Indiana",561,9,0,0,0,532,29,0
+county,18165,"Vermillion County, Indiana",37,4,0,0,0,37,0,0
+county,18167,"Vigo County, Indiana",2916,407,83,2503,0,303,27,0
+county,18169,"Wabash County, Indiana",93,6,0,0,0,93,0,0
+county,18171,"Warren County, Indiana",27,1,0,0,0,27,0,0
+county,18173,"Warrick County, Indiana",78,0,0,0,0,78,0,0
+county,18175,"Washington County, Indiana",139,1,0,0,0,139,0,0
+county,18177,"Wayne County, Indiana",270,16,0,0,0,270,0,0
+county,18179,"Wells County, Indiana",71,3,5,0,0,66,0,0
+county,18181,"White County, Indiana",31,2,0,0,0,31,0,0
+county,18183,"Whitley County, Indiana",159,4,0,0,0,133,26,0
+county,19001,"Adair County, Iowa",0,0,0,0,0,0,0,0
+county,19003,"Adams County, Iowa",0,0,0,0,0,0,0,0
+county,19005,"Allamakee County, Iowa",4,3,0,0,0,4,0,0
+county,19007,"Appanoose County, Iowa",5,5,0,0,0,5,0,0
+county,19009,"Audubon County, Iowa",5,0,0,0,0,5,0,0
+county,19011,"Benton County, Iowa",12,3,0,0,0,12,0,0
+county,19013,"Black Hawk County, Iowa",302,13,0,0,0,152,150,0
+county,20035,"Cowley County, Kansas",674,39,0,0,605,69,0,0
+county,20037,"Crawford County, Kansas",29,2,0,0,0,29,0,0
+county,20039,"Decatur County, Kansas",6,1,0,0,0,6,0,0
+county,20041,"Dickinson County, Kansas",19,0,0,0,0,19,0,0
+county,20043,"Doniphan County, Kansas",18,2,0,0,0,18,0,0
+county,20045,"Douglas County, Kansas",144,11,0,0,0,144,0,0
+county,20047,"Edwards County, Kansas",0,0,0,0,0,0,0,0
+county,20049,"Elk County, Kansas",1,0,0,0,0,1,0,0
+county,20051,"Ellis County, Kansas",31,4,0,0,0,31,0,0
+county,20053,"Ellsworth County, Kansas",882,105,0,0,876,6,0,0
+county,20055,"Finney County, Kansas",78,49,0,0,0,78,0,0
+county,20057,"Ford County, Kansas",97,44,0,0,0,97,0,0
+county,20059,"Franklin County, Kansas",44,0,0,0,0,44,0,0
+county,20061,"Geary County, Kansas",81,5,0,0,0,81,0,0
+county,20063,"Gove County, Kansas",0,0,0,0,0,0,0,0
+county,20065,"Graham County, Kansas",0,0,0,0,0,0,0,0
+county,20067,"Grant County, Kansas",19,7,0,0,0,19,0,0
+county,20069,"Gray County, Kansas",0,0,0,0,0,0,0,0
+county,20071,"Greeley County, Kansas",0,0,0,0,0,0,0,0
+county,20073,"Greenwood County, Kansas",26,2,0,0,0,26,0,0
+county,20075,"Hamilton County, Kansas",0,0,0,0,0,0,0,0
+county,20077,"Harper County, Kansas",12,0,0,0,0,0,0,12
+county,20079,"Harvey County, Kansas",88,0,24,0,0,64,0,0
+county,20081,"Haskell County, Kansas",7,3,0,0,0,7,0,0
+county,20083,"Hodgeman County, Kansas",0,0,0,0,0,0,0,0
+county,20085,"Jackson County, Kansas",61,13,6,0,0,55,0,0
+county,20087,"Jefferson County, Kansas",34,6,0,0,0,34,0,0
+county,20089,"Jewell County, Kansas",5,0,0,0,0,5,0,0
+county,20091,"Johnson County, Kansas",882,107,0,0,0,654,228,0
+county,20093,"Kearny County, Kansas",5,2,0,0,0,5,0,0
+county,20095,"Kingman County, Kansas",10,0,0,0,0,10,0,0
+county,20097,"Kiowa County, Kansas",0,0,0,0,0,0,0,0
+county,20099,"Labette County, Kansas",31,1,0,0,0,31,0,0
+county,20101,"Lane County, Kansas",0,0,0,0,0,0,0,0
+county,20103,"Leavenworth County, Kansas",5015,552,880,1724,1649,0,82,680
+county,20105,"Lincoln County, Kansas",7,0,0,0,0,7,0,0
+county,20107,"Linn County, Kansas",0,0,0,0,0,0,0,0
+county,20109,"Logan County, Kansas",0,0,0,0,0,0,0,0
+county,20111,"Lyon County, Kansas",83,3,0,0,0,83,0,0
+county,20113,"McPherson County, Kansas",0,0,0,0,0,0,0,0
+county,20115,"Marion County, Kansas",0,0,0,0,0,0,0,0
+county,20117,"Marshall County, Kansas",9,4,0,0,0,9,0,0
+county,20119,"Meade County, Kansas",36,14,0,0,0,36,0,0
+county,20121,"Miami County, Kansas",0,0,0,0,0,0,0,0
+county,17023,"Clark County, Illinois",101,20,0,0,0,101,0,0
+county,17017,"Cass County, Illinois",0,0,0,0,0,0,0,0
+county,17019,"Champaign County, Illinois",164,26,0,0,0,164,0,0
+county,17021,"Christian County, Illinois",2596,704,14,0,2554,28,0,0
+county,17025,"Clay County, Illinois",8,1,0,0,0,8,0,0
+county,17027,"Clinton County, Illinois",1294,198,21,0,1240,33,0,0
+county,17029,"Coles County, Illinois",195,50,0,0,146,49,0,0
+county,17031,"Cook County, Illinois",5964,932,632,0,497,4678,157,0
+county,17033,"Crawford County, Illinois",1069,156,0,0,1037,32,0,0
+county,17035,"Cumberland County, Illinois",10,6,0,0,0,10,0,0
+county,17037,"DeKalb County, Illinois",0,0,0,0,0,0,0,0
+county,17039,"De Witt County, Illinois",19,0,0,0,0,19,0,0
+county,17041,"Douglas County, Illinois",18,5,0,0,0,18,0,0
+county,17043,"DuPage County, Illinois",693,145,0,288,0,405,0,0
+county,17045,"Edgar County, Illinois",18,0,0,0,0,18,0,0
+county,17047,"Edwards County, Illinois",0,0,0,0,0,0,0,0
+county,17049,"Effingham County, Illinois",29,1,0,0,0,29,0,0
+county,22093,"St. James Parish, Louisiana",45,0,0,0,0,45,0,0
+county,22095,"St. John the Baptist Parish, Louisiana",155,10,0,0,0,155,0,0
+county,22097,"St. Landry Parish, Louisiana",307,1,0,0,0,307,0,0
+county,22099,"St. Martin Parish, Louisiana",29,4,10,0,0,19,0,0
+county,22101,"St. Mary Parish, Louisiana",282,5,0,0,0,282,0,0
+county,22103,"St. Tammany Parish, Louisiana",319,30,65,0,0,254,0,0
+county,22105,"Tangipahoa Parish, Louisiana",904,33,0,0,0,904,0,0
+county,22107,"Tensas Parish, Louisiana",0,0,0,0,0,0,0,0
+county,22109,"Terrebonne Parish, Louisiana",505,21,0,0,0,505,0,0
+county,22111,"Union Parish, Louisiana",150,2,0,0,150,0,0,0
+county,22113,"Vermilion Parish, Louisiana",0,0,0,0,0,0,0,0
+county,22115,"Vernon Parish, Louisiana",103,21,0,0,0,103,0,0
+county,22117,"Washington Parish, Louisiana",1454,89,0,0,1294,160,0,0
+county,22119,"Webster Parish, Louisiana",0,0,0,0,0,0,0,0
+county,22121,"West Baton Rouge Parish, Louisiana",517,0,44,0,0,300,173,0
+county,22123,"West Carroll Parish, Louisiana",0,0,0,0,0,0,0,0
+county,22125,"West Feliciana Parish, Louisiana",5284,424,0,0,5265,19,0,0
+county,48123,"DeWitt County, Texas",1264,648,71,0,1130,0,63,0
+county,48117,"Deaf Smith County, Texas",64,25,0,0,0,64,0,0
+county,48119,"Delta County, Texas",0,0,0,0,0,0,0,0
+county,48121,"Denton County, Texas",529,95,35,0,0,494,0,0
+county,48125,"Dickens County, Texas",2,2,0,0,0,2,0,0
+county,48127,"Dimmit County, Texas",128,40,32,0,0,96,0,0
+county,48129,"Donley County, Texas",5,0,0,0,0,5,0,0
+county,48131,"Duval County, Texas",588,280,0,0,588,0,0,0
+county,48133,"Eastland County, Texas",34,1,0,0,0,34,0,0
+county,48135,"Ector County, Texas",782,404,0,0,0,782,0,0
+county,48137,"Edwards County, Texas",16,0,0,0,0,16,0,0
+county,48139,"Ellis County, Texas",275,73,0,0,0,275,0,0
+county,48141,"El Paso County, Texas",5136,2680,1140,849,952,1577,445,173
+county,48143,"Erath County, Texas",58,18,0,0,0,58,0,0
+county,48145,"Falls County, Texas",1959,550,0,0,1908,51,0,0
+county,48147,"Fannin County, Texas",2533,547,250,0,2076,207,0,0
+county,48149,"Fayette County, Texas",12,2,0,0,0,12,0,0
+county,48151,"Fisher County, Texas",0,0,0,0,0,0,0,0
+county,48153,"Floyd County, Texas",0,0,0,0,0,0,0,0
+county,48155,"Foard County, Texas",0,0,0,0,0,0,0,0
+county,48157,"Fort Bend County, Texas",2923,779,75,0,2167,681,0,0
+county,48159,"Franklin County, Texas",48,5,0,0,0,48,0,0
+county,48161,"Freestone County, Texas",1330,405,0,0,1302,28,0,0
+county,48163,"Frio County, Texas",2824,1871,1433,0,1375,16,0,0
+county,48165,"Gaines County, Texas",40,24,0,0,0,40,0,0
+county,48167,"Galveston County, Texas",2443,191,0,0,589,1854,0,0
+county,48169,"Garza County, Texas",1731,1599,0,1661,0,70,0,0
+county,48171,"Gillespie County, Texas",45,20,0,0,0,0,45,0
+county,48173,"Glasscock County, Texas",0,0,0,0,0,0,0,0
+county,48175,"Goliad County, Texas",14,12,0,0,0,14,0,0
+county,48177,"Gonzales County, Texas",78,41,0,0,0,58,20,0
+county,48179,"Gray County, Texas",1388,548,0,0,1333,55,0,0
+county,48181,"Grayson County, Texas",328,20,0,0,0,328,0,0
+county,48183,"Gregg County, Texas",542,44,15,0,0,491,36,0
+county,48185,"Grimes County, Texas",2515,658,0,0,2515,0,0,0
+county,48187,"Guadalupe County, Texas",359,14,35,0,0,324,0,0
+county,48189,"Hale County, Texas",1564,775,0,0,1480,84,0,0
+county,48191,"Hall County, Texas",5,1,0,0,0,5,0,0
+county,48193,"Hamilton County, Texas",0,0,0,0,0,0,0,0
+county,48195,"Hansford County, Texas",11,6,0,0,0,11,0,0
+county,48197,"Hardeman County, Texas",6,3,0,0,0,6,0,0
+county,48199,"Hardin County, Texas",8,0,0,0,0,0,8,0
+county,48201,"Harris County, Texas",12310,3986,1594,141,2609,7578,388,0
+county,48203,"Harrison County, Texas",210,23,24,0,0,160,26,0
+county,48205,"Hartley County, Texas",771,374,0,0,771,0,0,0
+county,01083,"Limestone County, Alabama",2567,16,0,0,2308,259,0,0
+county,01077,"Lauderdale County, Alabama",261,62,0,0,0,261,0,0
+county,01079,"Lawrence County, Alabama",111,2,0,0,0,111,0,0
+county,01081,"Lee County, Alabama",336,3,33,0,0,303,0,0
+county,01085,"Lowndes County, Alabama",125,20,0,0,0,125,0,0
+county,01087,"Macon County, Alabama",42,0,0,0,0,42,0,0
+county,01089,"Madison County, Alabama",847,33,0,0,0,847,0,0
+county,01091,"Marengo County, Alabama",46,0,0,0,0,46,0,0
+county,01093,"Marion County, Alabama",398,0,0,0,290,108,0,0
+county,01095,"Marshall County, Alabama",289,32,0,0,0,277,12,0
+county,01097,"Mobile County, Alabama",1759,4,0,0,269,1292,198,0
+county,01099,"Monroe County, Alabama",76,2,14,0,0,62,0,0
+county,01101,"Montgomery County, Alabama",3196,127,50,866,1356,510,414,0
+county,01103,"Morgan County, Alabama",1332,244,92,0,683,557,0,0
+county,01105,"Perry County, Alabama",0,0,0,0,0,0,0,0
+county,01107,"Pickens County, Alabama",1612,658,39,1467,0,106,0,0
+county,01109,"Pike County, Alabama",0,0,0,0,0,0,0,0
+county,01111,"Randolph County, Alabama",57,0,0,0,0,57,0,0
+county,01113,"Russell County, Alabama",190,12,0,0,0,190,0,0
+county,01115,"St. Clair County, Alabama",1300,7,0,0,1109,191,0,0
+county,01117,"Shelby County, Alabama",1233,27,39,0,61,489,644,0
+county,01119,"Sumter County, Alabama",0,0,0,0,0,0,0,0
+county,01121,"Talladega County, Alabama",1627,113,85,948,193,185,216,0
+county,01123,"Tallapoosa County, Alabama",113,1,0,0,0,113,0,0
+county,01125,"Tuscaloosa County, Alabama",600,10,0,0,0,600,0,0
+county,01127,"Walker County, Alabama",297,158,42,0,0,255,0,0
+county,01129,"Washington County, Alabama",47,7,0,0,0,47,0,0
+county,01131,"Wilcox County, Alabama",103,0,0,0,0,37,66,0
+county,01133,"Winston County, Alabama",70,6,0,0,0,70,0,0
+county,02013,"Aleutians East Borough, Alaska",0,0,0,0,0,0,0,0
+county,02016,"Aleutians West Census Area, Alaska",0,0,0,0,0,0,0,0
+county,02020,"Anchorage Municipality, Alaska",1253,90,501,0,561,0,191,0
+county,02050,"Bethel Census Area, Alaska",222,2,0,0,178,0,44,0
+county,02060,"Bristol Bay Borough, Alaska",0,0,0,0,0,0,0,0
+county,02063,"Chugach Census Area, Alaska",4,4,0,0,0,4,0,0
+county,02066,"Copper River Census Area, Alaska",0,0,0,0,0,0,0,0
+county,02068,"Denali Borough, Alaska",0,0,0,0,0,0,0,0
+county,02070,"Dillingham Census Area, Alaska",16,8,0,0,0,15,1,0
+county,02090,"Fairbanks North Star Borough, Alaska",332,16,36,0,167,0,129,0
+county,02100,"Haines Borough, Alaska",0,0,0,0,0,0,0,0
+county,02105,"Hoonah-Angoon Census Area, Alaska",0,0,0,0,0,0,0,0
+county,02110,"Juneau City and Borough, Alaska",255,9,21,0,188,0,46,0
+county,02122,"Kenai Peninsula Borough, Alaska",954,41,0,0,852,18,84,0
+county,02130,"Ketchikan Gateway Borough, Alaska",63,10,0,0,63,0,0,0
+county,02150,"Kodiak Island Borough, Alaska",35,7,0,0,0,35,0,0
+county,13139,"Hall County, Georgia",660,66,26,0,0,596,38,0
+county,13141,"Hancock County, Georgia",1153,9,0,0,1128,25,0,0
+county,13143,"Haralson County, Georgia",0,0,0,0,0,0,0,0
+county,13145,"Harris County, Georgia",175,2,10,0,141,24,0,0
+county,13147,"Hart County, Georgia",464,6,0,0,418,46,0,0
+county,13149,"Heard County, Georgia",26,1,0,0,0,26,0,0
+county,13151,"Henry County, Georgia",317,7,0,0,0,317,0,0
+county,13153,"Houston County, Georgia",482,2,0,0,192,290,0,0
+county,13155,"Irwin County, Georgia",687,342,670,0,17,0,0,0
+county,13157,"Jackson County, Georgia",242,11,0,0,45,98,99,0
+county,13159,"Jasper County, Georgia",13,0,0,0,0,13,0,0
+county,13161,"Jeff Davis County, Georgia",45,1,0,0,0,45,0,0
+county,13163,"Jefferson County, Georgia",287,8,48,0,185,54,0,0
+county,13165,"Jenkins County, Georgia",1052,25,0,0,1052,0,0,0
+county,13167,"Johnson County, Georgia",1535,18,0,0,1462,73,0,0
+county,13169,"Jones County, Georgia",127,12,18,0,0,109,0,0
+county,13171,"Lamar County, Georgia",40,3,0,0,0,40,0,0
+county,13173,"Lanier County, Georgia",196,0,0,0,196,0,0,0
+county,13175,"Laurens County, Georgia",132,7,16,0,0,116,0,0
+county,13177,"Lee County, Georgia",762,5,0,0,694,68,0,0
+county,13179,"Liberty County, Georgia",183,9,32,0,0,151,0,0
+county,13181,"Lincoln County, Georgia",51,5,16,0,0,35,0,0
+county,13183,"Long County, Georgia",216,9,0,0,216,0,0,0
+county,13185,"Lowndes County, Georgia",1617,30,0,0,845,764,8,0
+county,13187,"Lumpkin County, Georgia",44,44,0,0,0,44,0,0
+county,13189,"McDuffie County, Georgia",6,5,6,0,0,0,0,0
+county,15005,"Kalawao County, Hawaii",0,0,0,0,0,0,0,0
+county,13321,"Worth County, Georgia",68,11,0,0,0,68,0,0
+county,15001,"Hawaii County, Hawaii",514,31,0,0,172,0,342,0
+county,15003,"Honolulu County, Hawaii",2756,107,280,0,1632,0,816,28
+county,15007,"Kauai County, Hawaii",127,16,0,0,0,0,127,0
+county,15009,"Maui County, Hawaii",355,13,0,0,0,0,355,0
+county,16001,"Ada County, Idaho",6357,1049,53,0,5312,798,194,0
+county,16003,"Adams County, Idaho",24,5,0,0,0,24,0,0
+county,16005,"Bannock County, Idaho",556,70,0,0,334,222,0,0
+county,16007,"Bear Lake County, Idaho",0,0,0,0,0,0,0,0
+county,16009,"Benewah County, Idaho",8,0,0,0,0,8,0,0
+county,16011,"Bingham County, Idaho",138,28,75,0,0,63,0,0
+county,16013,"Blaine County, Idaho",56,18,0,0,0,56,0,0
+county,16015,"Boise County, Idaho",0,0,0,0,0,0,0,0
+county,16017,"Bonner County, Idaho",89,5,19,0,0,70,0,0
+county,16019,"Bonneville County, Idaho",514,84,0,0,0,403,111,0
+county,16021,"Boundary County, Idaho",10,4,0,0,0,10,0,0
+county,16023,"Butte County, Idaho",4,2,0,0,0,4,0,0
+county,16025,"Camas County, Idaho",0,0,0,0,0,0,0,0
+county,16027,"Canyon County, Idaho",430,74,0,0,0,316,114,0
+county,16029,"Caribou County, Idaho",47,8,0,0,0,47,0,0
+county,16031,"Cassia County, Idaho",128,52,12,0,0,116,0,0
+county,16033,"Clark County, Idaho",1,0,0,0,0,1,0,0
+county,16035,"Clearwater County, Idaho",582,49,0,0,560,22,0,0
+county,16037,"Custer County, Idaho",1,0,0,0,0,1,0,0
+county,16039,"Elmore County, Idaho",106,7,0,0,0,106,0,0
+county,16041,"Franklin County, Idaho",0,0,0,0,0,0,0,0
+county,16043,"Fremont County, Idaho",278,45,0,0,261,17,0,0
+county,16045,"Gem County, Idaho",37,5,0,0,0,37,0,0
+county,16047,"Gooding County, Idaho",18,9,0,0,0,18,0,0
+county,16049,"Idaho County, Idaho",410,46,0,0,410,0,0,0
+county,16051,"Jefferson County, Idaho",104,31,17,0,0,87,0,0
+county,16053,"Jerome County, Idaho",99,45,29,0,0,70,0,0
+county,16055,"Kootenai County, Idaho",287,25,0,0,0,231,56,0
+county,16057,"Latah County, Idaho",11,0,0,0,0,11,0,0
+county,16059,"Lemhi County, Idaho",2,0,0,0,0,2,0,0
+county,16061,"Lewis County, Idaho",4,2,0,0,0,4,0,0
+county,16063,"Lincoln County, Idaho",0,0,0,0,0,0,0,0
+county,16065,"Madison County, Idaho",76,11,11,0,0,65,0,0
+county,37151,"Randolph County, North Carolina",448,25,0,0,238,210,0,0
+county,37145,"Person County, North Carolina",44,0,0,0,0,44,0,0
+county,37147,"Pitt County, North Carolina",357,24,27,0,0,330,0,0
+county,54065,"Morgan County, West Virginia",0,0,0,0,0,0,0,0
+county,54067,"Nicholas County, West Virginia",0,0,0,0,0,0,0,0
+county,54069,"Ohio County, West Virginia",71,4,0,0,71,0,0,0
+county,54071,"Pendleton County, West Virginia",0,0,0,0,0,0,0,0
+county,54073,"Pleasants County, West Virginia",678,0,0,0,678,0,0,0
+county,54075,"Pocahontas County, West Virginia",220,3,0,0,220,0,0,0
+county,54077,"Preston County, West Virginia",3158,406,95,3063,0,0,0,0
+county,54079,"Putnam County, West Virginia",0,0,0,0,0,0,0,0
+county,54081,"Raleigh County, West Virginia",2298,119,0,1616,587,0,95,0
+county,54083,"Randolph County, West Virginia",1636,24,17,0,1567,0,52,0
+county,54085,"Ritchie County, West Virginia",0,0,0,0,0,0,0,0
+county,54087,"Roane County, West Virginia",0,0,0,0,0,0,0,0
+county,13039,"Camden County, Georgia",0,0,0,0,0,0,0,0
+county,13043,"Candler County, Georgia",13,0,0,0,0,13,0,0
+county,13045,"Carroll County, Georgia",541,15,0,0,240,301,0,0
+county,13047,"Catoosa County, Georgia",142,0,0,0,0,142,0,0
+county,13049,"Charlton County, Georgia",2325,1839,692,1633,0,0,0,0
+county,13051,"Chatham County, Georgia",3336,85,62,0,1889,1385,0,0
+county,13053,"Chattahoochee County, Georgia",0,0,0,0,0,0,0,0
+county,13055,"Chattooga County, Georgia",1061,17,0,0,1000,61,0,0
+county,13057,"Cherokee County, Georgia",483,64,0,0,0,483,0,0
+county,13059,"Clarke County, Georgia",191,12,0,0,128,42,21,0
+county,13061,"Clay County, Georgia",0,0,0,0,0,0,0,0
+county,13063,"Clayton County, Georgia",1827,185,489,0,551,409,378,0
+county,13065,"Clinch County, Georgia",0,0,0,0,0,0,0,0
+county,13067,"Cobb County, Georgia",1238,111,0,0,0,1223,15,0
+county,13069,"Coffee County, Georgia",2668,52,9,0,1631,277,751,0
+county,13071,"Colquitt County, Georgia",320,17,0,0,0,130,190,0
+county,13073,"Columbia County, Georgia",227,5,0,0,0,227,0,0
+county,13075,"Cook County, Georgia",66,1,0,0,0,66,0,0
+county,13077,"Coweta County, Georgia",370,22,0,0,229,141,0,0
+county,13079,"Crawford County, Georgia",29,2,0,0,0,29,0,0
+county,13081,"Crisp County, Georgia",247,22,78,0,0,169,0,0
+county,13083,"Dade County, Georgia",44,4,0,0,0,44,0,0
+county,13085,"Dawson County, Georgia",82,0,0,0,0,82,0,0
+county,13087,"Decatur County, Georgia",603,8,0,0,38,201,364,0
+county,13089,"DeKalb County, Georgia",1983,650,0,0,368,1361,254,0
+county,48355,"Nueces County, Texas",1899,709,962,0,0,875,62,0
+county,48349,"Navarro County, Texas",197,37,0,0,0,197,0,0
+county,48351,"Newton County, Texas",15,4,0,0,0,15,0,0
+county,48353,"Nolan County, Texas",82,28,0,0,0,82,0,0
+county,48357,"Ochiltree County, Texas",10,7,0,0,0,10,0,0
+county,48359,"Oldham County, Texas",17,8,0,0,0,17,0,0
+county,48361,"Orange County, Texas",123,3,0,0,0,123,0,0
+county,48363,"Palo Pinto County, Texas",80,16,0,0,0,80,0,0
+county,48365,"Panola County, Texas",42,3,0,0,0,42,0,0
+county,48367,"Parker County, Texas",263,44,28,0,0,235,0,0
+county,48369,"Parmer County, Texas",20,8,0,0,0,20,0,0
+county,48371,"Pecos County, Texas",1734,823,0,0,1734,0,0,0
+county,48373,"Polk County, Texas",3522,1181,83,0,2966,153,320,0
+county,48375,"Potter County, Texas",5630,2013,4,0,5373,253,0,0
+county,48377,"Presidio County, Texas",43,6,43,0,0,0,0,0
+county,48379,"Rains County, Texas",28,3,0,0,0,28,0,0
+county,48381,"Randall County, Texas",390,150,62,0,0,328,0,0
+county,48383,"Reagan County, Texas",0,0,0,0,0,0,0,0
+county,48385,"Real County, Texas",0,0,0,0,0,0,0,0
+county,48387,"Red River County, Texas",39,1,0,0,0,39,0,0
+county,48389,"Reeves County, Texas",2981,2750,110,2871,0,0,0,0
+county,48391,"Refugio County, Texas",26,3,0,0,0,26,0,0
+county,48393,"Roberts County, Texas",0,0,0,0,0,0,0,0
+county,48395,"Robertson County, Texas",26,6,0,0,0,26,0,0
+county,48397,"Rockwall County, Texas",204,31,0,0,0,204,0,0
+county,48399,"Runnels County, Texas",33,2,0,0,0,33,0,0
+county,48401,"Rusk County, Texas",4622,1231,0,0,4622,0,0,0
+county,48403,"Sabine County, Texas",0,0,0,0,0,0,0,0
+county,48405,"San Augustine County, Texas",0,0,0,0,0,0,0,0
+county,48407,"San Jacinto County, Texas",81,11,0,0,0,81,0,0
+county,48409,"San Patricio County, Texas",219,121,0,0,0,187,32,0
+county,48411,"San Saba County, Texas",568,175,0,0,561,7,0,0
+county,48413,"Schleicher County, Texas",0,0,0,0,0,0,0,0
+county,48415,"Scurry County, Texas",1026,383,0,0,945,81,0,0
+county,48417,"Shackelford County, Texas",3,0,0,0,0,3,0,0
+county,48419,"Shelby County, Texas",0,0,0,0,0,0,0,0
+county,48421,"Sherman County, Texas",6,5,0,0,0,6,0,0
+county,48423,"Smith County, Texas",962,148,99,0,0,801,62,0
+county,48425,"Somervell County, Texas",0,0,0,0,0,0,0,0
+county,48427,"Starr County, Texas",134,114,34,0,0,100,0,0
+county,48429,"Stephens County, Texas",596,162,0,0,574,22,0,0
+county,48431,"Sterling County, Texas",0,0,0,0,0,0,0,0
+county,48433,"Stonewall County, Texas",6,1,0,0,0,6,0,0
+county,48435,"Sutton County, Texas",6,0,0,0,0,6,0,0
+county,48437,"Swisher County, Texas",581,279,0,0,568,13,0,0
+county,48439,"Tarrant County, Texas",7655,1898,397,2927,189,4142,0,0
+county,16067,"Minidoka County, Idaho",0,0,0,0,0,0,0,0
+county,16069,"Nez Perce County, Idaho",87,16,0,0,0,87,0,0
+county,16071,"Oneida County, Idaho",0,0,0,0,0,0,0,0
+county,16073,"Owyhee County, Idaho",28,19,0,0,0,28,0,0
+county,16075,"Payette County, Idaho",37,1,0,0,0,37,0,0
+county,16077,"Power County, Idaho",11,4,0,0,0,11,0,0
+county,08121,"Washington County, Colorado",127,34,34,0,0,93,0,0
+county,08123,"Weld County, Colorado",737,312,0,0,0,737,0,0
+county,08125,"Yuma County, Colorado",99,2,0,0,0,99,0,0
+county,09001,"Fairfield County, Connecticut",2492,622,26,1057,1173,0,236,0
+county,09003,"Hartford County, Connecticut",5040,1458,24,0,4872,0,144,0
+county,09005,"Litchfield County, Connecticut",21,3,0,0,0,0,21,0
+county,09007,"Middlesex County, Connecticut",28,7,0,0,0,0,28,0
+county,09009,"New Haven County, Connecticut",2239,602,8,0,1752,0,479,0
+county,09011,"New London County, Connecticut",2023,441,26,0,1838,0,71,88
+county,09013,"Tolland County, Connecticut",1300,308,0,0,1300,0,0,0
+county,09015,"Windham County, Connecticut",438,128,0,0,407,0,31,0
+county,10001,"Kent County, Delaware",111,6,0,0,0,0,111,0
+county,27135,"Roseau County, Minnesota",13,0,0,0,0,12,1,0
+county,27137,"St. Louis County, Minnesota",667,55,0,461,0,92,114,0
+county,27139,"Scott County, Minnesota",622,30,0,0,567,55,0,0
+county,27141,"Sherburne County, Minnesota",1623,269,418,0,735,470,0,0
+county,27143,"Sibley County, Minnesota",0,0,0,0,0,0,0,0
+county,27145,"Stearns County, Minnesota",93,8,0,0,0,93,0,0
+county,27147,"Steele County, Minnesota",69,19,0,0,0,69,0,0
+county,27149,"Stevens County, Minnesota",0,0,0,0,0,0,0,0
+county,27151,"Swift County, Minnesota",1,0,0,0,0,1,0,0
+county,27153,"Todd County, Minnesota",10,1,0,0,0,10,0,0
+county,27155,"Traverse County, Minnesota",14,2,0,0,0,14,0,0
+county,27157,"Wabasha County, Minnesota",10,2,0,0,0,10,0,0
+county,27159,"Wadena County, Minnesota",4,0,0,0,0,4,0,0
+county,27161,"Waseca County, Minnesota",680,156,0,674,0,6,0,0
+county,27163,"Washington County, Minnesota",1966,114,19,0,1883,64,0,0
+county,27165,"Watonwan County, Minnesota",23,6,0,0,0,23,0,0
+county,27167,"Wilkin County, Minnesota",3,0,0,0,0,3,0,0
+county,27169,"Winona County, Minnesota",9,1,0,0,0,9,0,0
+county,27171,"Wright County, Minnesota",65,0,0,0,0,65,0,0
+county,27173,"Yellow Medicine County, Minnesota",10,3,0,0,0,10,0,0
+county,51580,"Covington city, Virginia",65,0,0,0,0,65,0,0
+county,51590,"Danville city, Virginia",308,10,0,0,0,308,0,0
+county,51595,"Emporia city, Virginia",0,0,0,0,0,0,0,0
+county,51600,"Fairfax city, Virginia",0,0,0,0,0,0,0,0
+county,40125,"Pottawatomie County, Oklahoma",1431,149,0,0,1185,246,0,0
+county,40119,"Payne County, Oklahoma",1702,169,37,0,1283,382,0,0
+county,40121,"Pittsburg County, Oklahoma",1475,124,29,0,1383,63,0,0
+county,40123,"Pontotoc County, Oklahoma",51,10,0,0,0,51,0,0
+county,40127,"Pushmataha County, Oklahoma",53,2,0,0,0,53,0,0
+county,40129,"Roger Mills County, Oklahoma",9,2,0,0,0,9,0,0
+county,40131,"Rogers County, Oklahoma",216,29,0,0,0,216,0,0
+county,40133,"Seminole County, Oklahoma",92,2,0,0,0,92,0,0
+county,40135,"Sequoyah County, Oklahoma",64,9,0,0,0,64,0,0
+county,40137,"Stephens County, Oklahoma",148,19,0,0,0,148,0,0
+county,40139,"Texas County, Oklahoma",12,5,0,0,0,12,0,0
+county,40141,"Tillman County, Oklahoma",23,13,0,0,0,23,0,0
+county,40143,"Tulsa County, Oklahoma",1177,167,69,0,0,925,183,0
+county,40145,"Wagoner County, Oklahoma",81,0,0,0,0,81,0,0
+county,40147,"Washington County, Oklahoma",130,4,0,0,0,130,0,0
+county,40149,"Washita County, Oklahoma",27,3,0,0,0,27,0,0
+county,40151,"Woods County, Oklahoma",454,47,0,0,449,5,0,0
+county,40153,"Woodward County, Oklahoma",1036,89,0,0,0,113,923,0
+county,41001,"Baker County, Oregon",373,33,0,0,336,37,0,0
+county,41003,"Benton County, Oregon",28,6,0,0,0,23,5,0
+county,41005,"Clackamas County, Oregon",270,8,0,0,0,257,13,0
+county,41007,"Clatsop County, Oregon",49,6,0,0,0,49,0,0
+county,41009,"Columbia County, Oregon",136,16,21,0,0,115,0,0
+county,41011,"Coos County, Oregon",328,7,0,0,280,48,0,0
+county,41013,"Crook County, Oregon",40,2,0,0,0,40,0,0
+county,41015,"Curry County, Oregon",14,4,0,0,0,14,0,0
+county,41017,"Deschutes County, Oregon",164,21,0,0,0,164,0,0
+county,41019,"Douglas County, Oregon",166,22,0,0,0,166,0,0
+county,41021,"Gilliam County, Oregon",0,0,0,0,0,0,0,0
+county,41023,"Grant County, Oregon",7,0,0,0,0,7,0,0
+county,41025,"Harney County, Oregon",35,5,0,0,0,13,22,0
+county,41027,"Hood River County, Oregon",0,0,0,0,0,0,0,0
+county,41029,"Jackson County, Oregon",285,27,14,0,0,201,70,0
+county,41031,"Jefferson County, Oregon",997,78,0,0,939,58,0,0
+county,41033,"Josephine County, Oregon",234,24,0,0,0,151,83,0
+county,41035,"Klamath County, Oregon",82,17,0,0,0,82,0,0
+county,41037,"Lake County, Oregon",481,63,0,0,480,1,0,0
+county,41039,"Lane County, Oregon",294,18,4,0,0,290,0,0
+county,41041,"Lincoln County, Oregon",94,4,0,0,0,89,5,0
+county,41043,"Linn County, Oregon",196,19,0,0,0,142,54,0
+county,41045,"Malheur County, Oregon",2922,434,0,0,2856,54,12,0
+county,41047,"Marion County, Oregon",3955,521,62,0,3633,241,19,0
+county,41049,"Morrow County, Oregon",0,0,0,0,0,0,0,0
+county,41051,"Multnomah County, Oregon",1448,163,76,0,542,700,130,0
+county,41053,"Polk County, Oregon",35,3,13,0,0,22,0,0
+county,41055,"Sherman County, Oregon",0,0,0,0,0,0,0,0
+county,41057,"Tillamook County, Oregon",225,22,0,0,195,30,0,0
+county,41059,"Umatilla County, Oregon",3691,778,0,0,3511,148,32,0
+county,41061,"Union County, Oregon",18,1,0,0,0,18,0,0
+county,41063,"Wallowa County, Oregon",0,0,0,0,0,0,0,0
+county,41065,"Wasco County, Oregon",96,7,13,0,0,83,0,0
+county,41067,"Washington County, Oregon",1917,211,0,0,1530,387,0,0
+county,41069,"Wheeler County, Oregon",0,0,0,0,0,0,0,0
+county,41071,"Yamhill County, Oregon",1854,417,252,1538,0,64,0,0
+county,42001,"Adams County, Pennsylvania",248,59,46,0,0,202,0,0
+county,42003,"Allegheny County, Pennsylvania",2151,62,92,102,0,1807,150,0
+county,42005,"Armstrong County, Pennsylvania",127,1,0,0,0,127,0,0
+county,29179,"Reynolds County, Missouri",11,0,0,0,0,11,0,0
+county,29173,"Ralls County, Missouri",0,0,0,0,0,0,0,0
+county,29175,"Randolph County, Missouri",1611,25,0,0,1611,0,0,0
+county,29177,"Ray County, Missouri",36,0,0,0,0,36,0,0
+county,29181,"Ripley County, Missouri",0,0,0,0,0,0,0,0
+county,29183,"St. Charles County, Missouri",122,17,105,0,0,0,17,0
+county,29185,"St. Clair County, Missouri",101,0,63,0,0,38,0,0
+county,29186,"Ste. Genevieve County, Missouri",466,22,201,0,0,265,0,0
+county,29187,"St. Francois County, Missouri",5111,115,0,0,4993,65,53,0
+county,29189,"St. Louis County, Missouri",1930,52,136,0,1074,720,0,0
+county,29195,"Saline County, Missouri",46,3,0,0,0,46,0,0
+county,29197,"Schuyler County, Missouri",0,0,0,0,0,0,0,0
+county,29199,"Scotland County, Missouri",0,0,0,0,0,0,0,0
+county,29201,"Scott County, Missouri",114,28,0,0,0,114,0,0
+county,29203,"Shannon County, Missouri",11,0,0,0,0,11,0,0
+county,29205,"Shelby County, Missouri",2,2,0,0,0,2,0,0
+county,29207,"Stoddard County, Missouri",39,0,0,0,0,39,0,0
+county,29209,"Stone County, Missouri",0,0,0,0,0,0,0,0
+county,29211,"Sullivan County, Missouri",0,0,0,0,0,0,0,0
+county,29213,"Taney County, Missouri",118,1,0,0,0,118,0,0
+county,29215,"Texas County, Missouri",1505,30,0,0,1446,59,0,0
+county,29217,"Vernon County, Missouri",91,32,0,0,0,91,0,0
+county,29219,"Warren County, Missouri",87,4,5,0,0,82,0,0
+county,29221,"Washington County, Missouri",927,11,0,0,900,27,0,0
+county,29223,"Wayne County, Missouri",46,0,0,0,0,46,0,0
+county,29225,"Webster County, Missouri",604,2,0,0,353,3,248,0
+county,29227,"Worth County, Missouri",0,0,0,0,0,0,0,0
+county,29229,"Wright County, Missouri",64,8,0,0,0,64,0,0
+county,29510,"St. Louis city, Missouri",1213,36,203,209,0,580,221,0
+county,30001,"Beaverhead County, Montana",5,0,0,0,0,5,0,0
+county,30003,"Big Horn County, Montana",110,15,0,0,0,110,0,0
+county,30005,"Blaine County, Montana",12,0,0,0,0,12,0,0
+county,30007,"Broadwater County, Montana",24,0,0,0,0,24,0,0
+county,30009,"Carbon County, Montana",0,0,0,0,0,0,0,0
+county,30011,"Carter County, Montana",0,0,0,0,0,0,0,0
+county,30013,"Cascade County, Montana",560,18,16,0,0,384,160,0
+county,30015,"Chouteau County, Montana",9,1,1,0,0,8,0,0
+county,30017,"Custer County, Montana",109,1,0,0,83,26,0,0
+county,30019,"Daniels County, Montana",0,0,0,0,0,0,0,0
+county,30021,"Dawson County, Montana",215,8,18,0,129,27,41,0
+county,30023,"Deer Lodge County, Montana",231,0,0,0,0,4,227,0
+county,30025,"Fallon County, Montana",1,0,0,0,0,1,0,0
+county,30027,"Fergus County, Montana",82,2,0,0,0,15,67,0
+county,30029,"Flathead County, Montana",99,3,0,0,0,99,0,0
+county,30031,"Gallatin County, Montana",104,9,0,0,0,104,0,0
+county,30033,"Garfield County, Montana",0,0,0,0,0,0,0,0
+county,27067,"Kandiyohi County, Minnesota",68,39,68,0,0,0,0,0
+county,27071,"Koochiching County, Minnesota",8,0,0,0,0,8,0,0
+county,27073,"Lac qui Parle County, Minnesota",2,1,0,0,0,2,0,0
+county,27075,"Lake County, Minnesota",1,0,0,0,0,1,0,0
+county,27077,"Lake of the Woods County, Minnesota",6,0,0,0,0,6,0,0
+county,27079,"Le Sueur County, Minnesota",2,2,0,0,0,2,0,0
+county,27081,"Lincoln County, Minnesota",14,0,0,0,0,14,0,0
+county,27083,"Lyon County, Minnesota",30,4,0,0,0,30,0,0
+county,27085,"McLeod County, Minnesota",6,0,0,0,0,6,0,0
+county,27087,"Mahnomen County, Minnesota",0,0,0,0,0,0,0,0
+county,27089,"Marshall County, Minnesota",9,0,0,0,0,9,0,0
+county,27091,"Martin County, Minnesota",13,1,0,0,0,13,0,0
+county,27093,"Meeker County, Minnesota",32,1,0,0,0,32,0,0
+county,27095,"Mille Lacs County, Minnesota",35,1,0,0,0,35,0,0
+county,27097,"Morrison County, Minnesota",14,2,0,0,0,14,0,0
+county,27099,"Mower County, Minnesota",49,2,0,0,0,49,0,0
+county,27101,"Murray County, Minnesota",0,0,0,0,0,0,0,0
+county,27103,"Nicollet County, Minnesota",12,4,0,0,0,12,0,0
+county,27105,"Nobles County, Minnesota",33,13,0,0,0,33,0,0
+county,27107,"Norman County, Minnesota",0,0,0,0,0,0,0,0
+county,27109,"Olmsted County, Minnesota",733,87,0,610,0,93,30,0
+county,27111,"Otter Tail County, Minnesota",41,0,0,0,0,41,0,0
+county,27113,"Pennington County, Minnesota",29,1,0,0,0,29,0,0
+county,27115,"Pine County, Minnesota",1306,161,0,1072,174,60,0,0
+county,27117,"Pipestone County, Minnesota",0,0,0,0,0,0,0,0
+county,27119,"Polk County, Minnesota",134,18,12,0,0,122,0,0
+county,27121,"Pope County, Minnesota",0,0,0,0,0,0,0,0
+county,27123,"Ramsey County, Minnesota",410,40,0,0,0,202,208,0
+county,27125,"Red Lake County, Minnesota",0,0,0,0,0,0,0,0
+county,27127,"Redwood County, Minnesota",16,0,0,0,0,16,0,0
+county,27129,"Renville County, Minnesota",27,0,0,0,0,27,0,0
+county,27131,"Rice County, Minnesota",1998,108,0,0,1981,17,0,0
+county,27133,"Rock County, Minnesota",0,0,0,0,0,0,0,0
+county,21147,"McCreary County, Kentucky",1445,200,1445,0,0,0,0,0
+county,21151,"Madison County, Kentucky",314,3,0,0,73,241,0,0
+county,21153,"Magoffin County, Kentucky",0,0,0,0,0,0,0,0
+county,21155,"Marion County, Kentucky",264,5,0,0,0,264,0,0
+county,21157,"Marshall County, Kentucky",216,3,0,0,0,216,0,0
+county,21159,"Martin County, Kentucky",1321,249,0,1321,0,0,0,0
+county,21161,"Mason County, Kentucky",121,2,0,0,0,121,0,0
+county,21163,"Meade County, Kentucky",152,5,0,0,0,152,0,0
+county,21165,"Menifee County, Kentucky",0,0,0,0,0,0,0,0
+county,21167,"Mercer County, Kentucky",0,0,0,0,0,0,0,0
+county,21169,"Metcalfe County, Kentucky",0,0,0,0,0,0,0,0
+county,21171,"Monroe County, Kentucky",0,0,0,0,0,0,0,0
+county,21173,"Montgomery County, Kentucky",164,7,0,0,0,164,0,0
+county,21175,"Morgan County, Kentucky",1726,324,0,0,1726,0,0,0
+county,21177,"Muhlenberg County, Kentucky",1180,63,0,0,944,236,0,0
+county,21179,"Nelson County, Kentucky",122,10,0,0,0,122,0,0
+county,21181,"Nicholas County, Kentucky",0,0,0,0,0,0,0,0
+county,21183,"Ohio County, Kentucky",23,3,0,0,0,23,0,0
+county,21185,"Oldham County, Kentucky",3570,217,160,0,3287,123,0,0
+county,21187,"Owen County, Kentucky",0,0,0,0,0,0,0,0
+county,21189,"Owsley County, Kentucky",0,0,0,0,0,0,0,0
+county,21191,"Pendleton County, Kentucky",0,0,0,0,0,0,0,0
+county,21193,"Perry County, Kentucky",192,1,0,0,0,192,0,0
+county,21195,"Pike County, Kentucky",415,16,24,0,0,391,0,0
+county,21197,"Powell County, Kentucky",219,2,0,0,0,219,0,0
+county,21199,"Pulaski County, Kentucky",397,10,0,0,0,397,0,0
+county,21201,"Robertson County, Kentucky",0,0,0,0,0,0,0,0
+county,21203,"Rockcastle County, Kentucky",78,0,0,0,0,78,0,0
+county,21205,"Rowan County, Kentucky",282,6,0,0,0,282,0,0
+county,21207,"Russell County, Kentucky",105,0,0,0,0,105,0,0
+county,21209,"Scott County, Kentucky",89,2,0,0,0,89,0,0
+county,21211,"Shelby County, Kentucky",895,6,0,0,702,193,0,0
+county,21213,"Simpson County, Kentucky",425,8,0,0,0,425,0,0
+county,21215,"Spencer County, Kentucky",0,0,0,0,0,0,0,0
+county,21217,"Taylor County, Kentucky",194,0,0,0,0,194,0,0
+county,21219,"Todd County, Kentucky",78,2,0,0,0,78,0,0
+county,21221,"Trigg County, Kentucky",0,0,0,0,0,0,0,0
+county,21223,"Trimble County, Kentucky",0,0,0,0,0,0,0,0
+county,21225,"Union County, Kentucky",53,4,0,0,0,53,0,0
+county,21227,"Warren County, Kentucky",544,19,48,0,102,367,27,0
+county,21229,"Washington County, Kentucky",0,0,0,0,0,0,0,0
+county,21231,"Wayne County, Kentucky",177,13,0,0,0,177,0,0
+county,21233,"Webster County, Kentucky",257,4,0,0,0,257,0,0
+county,21235,"Whitley County, Kentucky",275,10,0,0,0,275,0,0
+county,21237,"Wolfe County, Kentucky",0,0,0,0,0,0,0,0
+county,21239,"Woodford County, Kentucky",111,1,42,0,0,69,0,0
+county,22001,"Acadia Parish, Louisiana",49,5,0,0,0,49,0,0
+county,22003,"Allen Parish, Louisiana",2747,1470,84,1850,813,0,0,0
+county,22005,"Ascension Parish, Louisiana",311,15,5,0,0,306,0,0
+county,22007,"Assumption Parish, Louisiana",85,0,0,0,0,85,0,0
+county,22009,"Avoyelles Parish, Louisiana",2101,770,8,0,1713,380,0,0
+county,22011,"Beauregard Parish, Louisiana",904,27,0,0,0,904,0,0
+county,22013,"Bienville Parish, Louisiana",35,0,0,0,0,35,0,0
+county,22015,"Bossier Parish, Louisiana",979,9,27,0,0,952,0,0
+county,21097,"Harrison County, Kentucky",0,0,0,0,0,0,0,0
+county,21099,"Hart County, Kentucky",138,0,0,0,0,138,0,0
+county,21101,"Henderson County, Kentucky",602,4,192,0,0,410,0,0
+county,21103,"Henry County, Kentucky",0,0,0,0,0,0,0,0
+county,21105,"Hickman County, Kentucky",0,0,0,0,0,0,0,0
+county,21107,"Hopkins County, Kentucky",352,1,0,0,0,352,0,0
+county,21109,"Jackson County, Kentucky",17,6,0,0,0,17,0,0
+county,21111,"Jefferson County, Kentucky",2134,57,0,0,0,1548,586,0
+county,21113,"Jessamine County, Kentucky",107,0,0,0,0,107,0,0
+county,21115,"Johnson County, Kentucky",159,0,0,0,0,159,0,0
+county,02290,"Yukon-Koyukuk Census Area, Alaska",0,0,0,0,0,0,0,0
+county,02275,"Wrangell City and Borough, Alaska",0,0,0,0,0,0,0,0
+county,02282,"Yakutat City and Borough, Alaska",0,0,0,0,0,0,0,0
+county,04001,"Apache County, Arizona",379,148,0,0,285,94,0,0
+county,04003,"Cochise County, Arizona",2265,933,0,0,2073,192,0,0
+county,04005,"Coconino County, Arizona",369,67,84,0,0,285,0,0
+county,04007,"Gila County, Arizona",408,61,0,0,316,92,0,0
+county,04009,"Graham County, Arizona",2474,1031,38,847,1521,68,0,0
+county,04011,"Greenlee County, Arizona",18,15,0,0,0,18,0,0
+county,04012,"La Paz County, Arizona",133,18,81,0,0,52,0,0
+county,04013,"Maricopa County, Arizona",16949,5184,231,1540,8859,5863,392,64
+county,04015,"Mohave County, Arizona",3065,1137,0,0,2688,377,0,0
+county,04017,"Navajo County, Arizona",1355,644,20,0,1032,303,0,0
+county,04019,"Pima County, Arizona",8945,3384,229,1693,5241,1743,39,0
+county,04021,"Pinal County, Arizona",21631,9007,6848,0,13833,755,195,0
+county,04023,"Santa Cruz County, Arizona",65,55,0,0,0,65,0,0
+county,04025,"Yavapai County, Arizona",453,89,0,0,0,453,0,0
+county,04027,"Yuma County, Arizona",5645,2407,529,0,4706,395,0,15
+county,05001,"Arkansas County, Arkansas",93,3,0,0,0,93,0,0
+county,05003,"Ashley County, Arkansas",0,0,0,0,0,0,0,0
+county,05005,"Baxter County, Arkansas",83,6,0,0,0,83,0,0
+county,05007,"Benton County, Arkansas",393,16,0,0,0,380,13,0
+county,05009,"Boone County, Arkansas",93,6,0,0,0,93,0,0
+county,05011,"Bradley County, Arkansas",0,0,0,0,0,0,0,0
+county,05013,"Calhoun County, Arkansas",19,0,0,0,0,0,19,0
+county,05015,"Carroll County, Arkansas",48,4,0,0,0,48,0,0
+county,05017,"Chicot County, Arkansas",632,31,0,0,632,0,0,0
+county,05019,"Clark County, Arkansas",28,0,0,0,0,28,0,0
+county,05021,"Clay County, Arkansas",25,3,0,0,0,25,0,0
+county,05023,"Cleburne County, Arkansas",19,0,0,0,0,19,0,0
+county,05025,"Cleveland County, Arkansas",0,0,0,0,0,0,0,0
+county,05027,"Columbia County, Arkansas",81,0,0,0,0,81,0,0
+county,05029,"Conway County, Arkansas",26,6,26,0,0,0,0,0
+county,05031,"Craighead County, Arkansas",209,11,0,0,0,209,0,0
+county,05033,"Crawford County, Arkansas",152,7,0,0,0,152,0,0
+county,05035,"Crittenden County, Arkansas",105,4,0,0,0,105,0,0
+county,05037,"Cross County, Arkansas",27,0,0,0,0,27,0,0
+county,05039,"Dallas County, Arkansas",85,3,26,0,0,59,0,0
+county,05041,"Desha County, Arkansas",0,0,0,0,0,0,0,0
+county,05043,"Drew County, Arkansas",26,2,0,0,0,26,0,0
+county,05045,"Faulkner County, Arkansas",72,10,0,0,0,72,0,0
+county,05047,"Franklin County, Arkansas",16,0,0,0,0,16,0,0
+county,05049,"Fulton County, Arkansas",3,0,0,0,0,3,0,0
+county,05051,"Garland County, Arkansas",241,12,0,0,0,241,0,0
+county,05053,"Grant County, Arkansas",76,5,31,0,0,45,0,0
+county,05055,"Greene County, Arkansas",245,16,84,0,0,161,0,0
+county,01001,"Autauga County, Alabama",142,13,0,0,0,142,0,0
+county,01003,"Baldwin County, Alabama",1229,68,76,0,0,404,749,0
+county,01005,"Barbour County, Alabama",2517,25,0,0,2473,44,0,0
+county,01007,"Bibb County, Alabama",1856,14,0,0,1788,68,0,0
+county,01009,"Blount County, Alabama",91,2,0,0,0,91,0,0
+county,01011,"Bullock County, Alabama",1580,6,0,0,1567,13,0,0
+county,01013,"Butler County, Alabama",54,6,0,0,0,54,0,0
+county,01015,"Calhoun County, Alabama",1024,49,0,0,0,1024,0,0
+county,01017,"Chambers County, Alabama",126,0,0,0,0,126,0,0
+county,01019,"Cherokee County, Alabama",115,6,0,0,0,115,0,0
+county,01021,"Chilton County, Alabama",148,2,0,0,0,148,0,0
+county,01023,"Choctaw County, Alabama",0,0,0,0,0,0,0,0
+county,01025,"Clarke County, Alabama",88,2,0,0,0,86,2,0
+county,01027,"Clay County, Alabama",83,0,20,0,0,63,0,0
+county,01029,"Cleburne County, Alabama",90,3,0,0,0,90,0,0
+county,01031,"Coffee County, Alabama",305,8,0,0,0,62,243,0
+county,01033,"Colbert County, Alabama",21,4,0,0,0,21,0,0
+county,01035,"Conecuh County, Alabama",46,0,46,0,0,0,0,0
+county,01037,"Coosa County, Alabama",250,5,0,0,235,15,0,0
+county,01039,"Covington County, Alabama",72,1,0,0,0,72,0,0
+county,01041,"Crenshaw County, Alabama",0,0,0,0,0,0,0,0
+county,01043,"Cullman County, Alabama",258,11,27,0,0,231,0,0
+county,01045,"Dale County, Alabama",62,3,0,0,0,62,0,0
+county,01047,"Dallas County, Alabama",6,0,0,0,0,6,0,0
+county,01049,"DeKalb County, Alabama",277,20,49,0,0,228,0,0
+county,01051,"Elmore County, Alabama",5286,115,0,0,3344,1649,293,0
+county,01053,"Escambia County, Alabama",1826,5,36,0,1575,207,8,0
+county,01055,"Etowah County, Alabama",446,76,118,0,0,328,0,0
+county,01057,"Fayette County, Alabama",80,50,0,0,0,80,0,0
+county,01059,"Franklin County, Alabama",86,7,0,0,0,86,0,0
+county,01061,"Geneva County, Alabama",74,3,0,0,0,74,0,0
+county,01063,"Greene County, Alabama",23,8,0,0,0,23,0,0
+county,01065,"Hale County, Alabama",18,0,0,0,0,18,0,0
+county,01067,"Henry County, Alabama",22,0,0,0,0,22,0,0
+county,01069,"Houston County, Alabama",152,6,0,0,0,152,0,0
+county,01071,"Jackson County, Alabama",142,2,0,0,0,142,0,0
+county,01073,"Jefferson County, Alabama",2499,37,0,0,1514,678,307,0
+county,01075,"Lamar County, Alabama",21,0,0,0,0,21,0,0
+county,50021,"Rutland County, Vermont",124,11,3,0,107,0,14,0
+county,50015,"Lamoille County, Vermont",0,0,0,0,0,0,0,0
+county,50017,"Orange County, Vermont",0,0,0,0,0,0,0,0
+county,50019,"Orleans County, Vermont",360,15,0,0,360,0,0,0
+county,50023,"Washington County, Vermont",9,2,0,0,0,0,9,0
+county,50025,"Windham County, Vermont",0,0,0,0,0,0,0,0
+county,50027,"Windsor County, Vermont",312,12,0,0,312,0,0,0
+county,51001,"Accomack County, Virginia",122,9,0,0,0,122,0,0
+county,51003,"Albemarle County, Virginia",319,23,32,0,0,287,0,0
+county,51005,"Alleghany County, Virginia",0,0,0,0,0,0,0,0
+county,51007,"Amelia County, Virginia",0,0,0,0,0,0,0,0
+county,51009,"Amherst County, Virginia",0,0,0,0,0,0,0,0
+county,51011,"Appomattox County, Virginia",0,0,0,0,0,0,0,0
+county,51013,"Arlington County, Virginia",247,37,0,0,0,247,0,0
+county,51015,"Augusta County, Virginia",2371,148,0,0,1484,801,86,0
+county,51017,"Bath County, Virginia",0,0,0,0,0,0,0,0
+county,51019,"Bedford County, Virginia",81,9,0,0,0,81,0,0
+county,51021,"Bland County, Virginia",623,2,0,0,586,0,37,0
+county,51023,"Botetourt County, Virginia",109,5,0,0,0,109,0,0
+county,51025,"Brunswick County, Virginia",1935,81,29,0,1543,328,35,0
+county,51027,"Buchanan County, Virginia",948,44,0,0,948,0,0,0
+county,51029,"Buckingham County, Virginia",2036,109,0,0,2036,0,0,0
+county,51031,"Campbell County, Virginia",277,1,0,0,150,127,0,0
+county,51033,"Caroline County, Virginia",415,251,30,0,134,251,0,0
+county,51035,"Carroll County, Virginia",0,0,0,0,0,0,0,0
+county,51036,"Charles City County, Virginia",0,0,0,0,0,0,0,0
+county,51037,"Charlotte County, Virginia",74,11,0,0,0,74,0,0
+county,51041,"Chesterfield County, Virginia",525,32,0,0,180,345,0,0
+county,51043,"Clarke County, Virginia",0,0,0,0,0,0,0,0
+county,51045,"Craig County, Virginia",0,0,0,0,0,0,0,0
+county,51047,"Culpeper County, Virginia",1023,146,0,0,975,48,0,0
+county,51049,"Cumberland County, Virginia",0,0,0,0,0,0,0,0
+county,51051,"Dickenson County, Virginia",314,1,0,0,23,291,0,0
+county,51053,"Dinwiddie County, Virginia",0,0,0,0,0,0,0,0
+county,51057,"Essex County, Virginia",0,0,0,0,0,0,0,0
+county,51059,"Fairfax County, Virginia",667,103,26,0,72,569,0,0
+county,20173,"Sedgwick County, Kansas",1631,212,0,0,259,1327,45,0
+county,20175,"Seward County, Kansas",54,20,0,0,0,54,0,0
+county,20177,"Shawnee County, Kansas",1327,162,0,0,934,393,0,0
+county,20179,"Sheridan County, Kansas",0,0,0,0,0,0,0,0
+county,20181,"Sherman County, Kansas",0,0,0,0,0,0,0,0
+county,20183,"Smith County, Kansas",4,1,0,0,0,4,0,0
+county,20185,"Stafford County, Kansas",0,0,0,0,0,0,0,0
+county,20187,"Stanton County, Kansas",9,0,0,0,0,9,0,0
+county,20189,"Stevens County, Kansas",1,1,0,0,0,1,0,0
+county,20191,"Sumner County, Kansas",66,6,0,0,0,66,0,0
+county,20193,"Thomas County, Kansas",18,5,0,0,0,18,0,0
+county,20195,"Trego County, Kansas",0,0,0,0,0,0,0,0
+county,20197,"Wabaunsee County, Kansas",0,0,0,0,0,0,0,0
+county,20199,"Wallace County, Kansas",0,0,0,0,0,0,0,0
+county,20201,"Washington County, Kansas",0,0,0,0,0,0,0,0
+county,20203,"Wichita County, Kansas",0,0,0,0,0,0,0,0
+county,20205,"Wilson County, Kansas",33,0,0,0,0,33,0,0
+county,20207,"Woodson County, Kansas",9,2,0,0,0,9,0,0
+county,20209,"Wyandotte County, Kansas",576,56,0,286,0,290,0,0
+county,21001,"Adair County, Kentucky",68,5,0,0,0,68,0,0
+county,21003,"Allen County, Kentucky",37,5,0,0,0,37,0,0
+county,21005,"Anderson County, Kentucky",0,0,0,0,0,0,0,0
+county,21007,"Ballard County, Kentucky",68,2,0,0,0,68,0,0
+county,21009,"Barren County, Kentucky",161,7,0,0,0,161,0,0
+county,21011,"Bath County, Kentucky",0,0,0,0,0,0,0,0
+county,21013,"Bell County, Kentucky",386,0,0,0,0,92,294,0
+county,21015,"Boone County, Kentucky",479,104,76,0,0,378,25,0
+county,21017,"Bourbon County, Kentucky",4,0,0,0,0,4,0,0
+county,21019,"Boyd County, Kentucky",1452,69,0,1217,0,235,0,0
+county,21021,"Boyle County, Kentucky",1411,234,0,0,1244,167,0,0
+county,21023,"Bracken County, Kentucky",0,0,0,0,0,0,0,0
+county,21025,"Breathitt County, Kentucky",0,0,0,0,0,0,0,0
+county,21027,"Breckinridge County, Kentucky",207,3,0,0,0,207,0,0
+county,38061,"Mountrail County, North Dakota",9,6,0,0,0,9,0,0
+county,38055,"McLean County, North Dakota",19,2,9,0,0,10,0,0
+county,38057,"Mercer County, North Dakota",11,3,0,0,0,11,0,0
+county,38059,"Morton County, North Dakota",65,0,0,0,0,0,65,0
+county,38063,"Nelson County, North Dakota",0,0,0,0,0,0,0,0
+county,38065,"Oliver County, North Dakota",0,0,0,0,0,0,0,0
+county,38067,"Pembina County, North Dakota",2,0,0,0,0,2,0,0
+county,38069,"Pierce County, North Dakota",78,12,50,0,0,28,0,0
+county,38071,"Ramsey County, North Dakota",64,0,16,0,0,16,32,0
+county,38073,"Ransom County, North Dakota",0,0,0,0,0,0,0,0
+county,38075,"Renville County, North Dakota",0,0,0,0,0,0,0,0
+county,38077,"Richland County, North Dakota",8,0,1,0,0,7,0,0
+county,38079,"Rolette County, North Dakota",3,0,0,0,0,3,0,0
+county,38081,"Sargent County, North Dakota",0,0,0,0,0,0,0,0
+county,38083,"Sheridan County, North Dakota",0,0,0,0,0,0,0,0
+county,38085,"Sioux County, North Dakota",56,0,56,0,0,0,0,0
+county,38087,"Slope County, North Dakota",0,0,0,0,0,0,0,0
+county,38089,"Stark County, North Dakota",41,3,0,0,0,41,0,0
+county,38091,"Steele County, North Dakota",0,0,0,0,0,0,0,0
+county,38093,"Stutsman County, North Dakota",460,21,12,0,428,20,0,0
+county,38095,"Towner County, North Dakota",0,0,0,0,0,0,0,0
+county,38097,"Traill County, North Dakota",0,0,0,0,0,0,0,0
+county,38099,"Walsh County, North Dakota",17,5,0,0,0,17,0,0
+county,38101,"Ward County, North Dakota",121,7,32,0,0,89,0,0
+county,38103,"Wells County, North Dakota",0,0,0,0,0,0,0,0
+county,38105,"Williams County, North Dakota",99,9,0,0,0,99,0,0
+county,39001,"Adams County, Ohio",19,0,0,0,0,19,0,0
+county,39003,"Allen County, Ohio",1513,42,0,0,1513,0,0,0
+county,39005,"Ashland County, Ohio",91,0,0,0,0,91,0,0
+county,39007,"Ashtabula County, Ohio",1871,52,0,0,1770,101,0,0
+county,39009,"Athens County, Ohio",123,11,0,0,0,42,81,0
+county,39011,"Auglaize County, Ohio",36,0,0,0,0,36,0,0
+county,39013,"Belmont County, Ohio",2771,82,0,0,2744,27,0,0
+county,39015,"Brown County, Ohio",56,2,0,0,0,56,0,0
+county,39017,"Butler County, Ohio",1071,182,300,0,0,715,56,0
+county,39019,"Carroll County, Ohio",36,0,0,0,0,36,0,0
+county,39021,"Champaign County, Ohio",110,7,0,0,0,110,0,0
+county,39023,"Clark County, Ohio",186,23,0,0,0,186,0,0
+county,39025,"Clermont County, Ohio",226,1,0,0,0,226,0,0
+county,39027,"Clinton County, Ohio",51,4,0,0,0,51,0,0
+county,39029,"Columbiana County, Ohio",2531,165,0,2411,0,80,40,0
+county,39031,"Coshocton County, Ohio",59,0,0,0,0,59,0,0
+county,39033,"Crawford County, Ohio",61,0,0,0,0,61,0,0
+county,39035,"Cuyahoga County, Ohio",1807,89,0,0,613,1107,87,0
+county,39037,"Darke County, Ohio",20,1,0,0,0,20,0,0
+county,39039,"Defiance County, Ohio",0,0,0,0,0,0,0,0
+county,39041,"Delaware County, Ohio",123,0,19,0,0,94,10,0
+county,39043,"Erie County, Ohio",104,7,0,0,0,72,32,0
+county,39045,"Fairfield County, Ohio",1833,28,0,0,1553,196,84,0
+county,29025,"Caldwell County, Missouri",111,6,59,0,0,52,0,0
+county,29027,"Callaway County, Missouri",1472,32,0,0,1408,64,0,0
+county,29029,"Camden County, Missouri",6,3,0,0,0,6,0,0
+county,29031,"Cape Girardeau County, Missouri",290,17,71,0,0,219,0,0
+county,29033,"Carroll County, Missouri",0,0,0,0,0,0,0,0
+county,29035,"Carter County, Missouri",0,0,0,0,0,0,0,0
+county,29037,"Cass County, Missouri",102,16,0,0,0,102,0,0
+county,29039,"Cedar County, Missouri",0,0,0,0,0,0,0,0
+county,29041,"Chariton County, Missouri",22,6,0,0,0,22,0,0
+county,29043,"Christian County, Missouri",93,79,17,0,0,76,0,0
+county,29045,"Clark County, Missouri",16,4,0,0,0,16,0,0
+county,29047,"Clay County, Missouri",229,4,0,0,0,229,0,0
+county,29049,"Clinton County, Missouri",0,0,0,0,0,0,0,0
+county,29051,"Cole County, Missouri",3410,105,52,0,3076,114,168,0
+county,29053,"Cooper County, Missouri",864,5,0,0,864,0,0,0
+county,29055,"Crawford County, Missouri",89,0,25,0,0,64,0,0
+county,29057,"Dade County, Missouri",5,0,0,0,0,5,0,0
+county,21117,"Kenton County, Kentucky",20,0,19,0,0,1,0,0
+county,21119,"Knott County, Kentucky",0,0,0,0,0,0,0,0
+county,21121,"Knox County, Kentucky",324,2,0,0,0,324,0,0
+county,21123,"Larue County, Kentucky",117,2,0,0,0,117,0,0
+county,21125,"Laurel County, Kentucky",645,13,129,0,0,516,0,0
+county,21127,"Lawrence County, Kentucky",0,0,0,0,0,0,0,0
+county,21129,"Lee County, Kentucky",1007,9,0,0,794,213,0,0
+county,21131,"Leslie County, Kentucky",234,5,0,0,0,234,0,0
+county,21133,"Letcher County, Kentucky",96,2,0,0,0,96,0,0
+county,21135,"Lewis County, Kentucky",50,0,0,0,0,50,0,0
+county,21137,"Lincoln County, Kentucky",95,6,0,0,0,95,0,0
+county,21139,"Livingston County, Kentucky",0,0,0,0,0,0,0,0
+county,21141,"Logan County, Kentucky",137,4,0,0,0,137,0,0
+county,18141,"St. Joseph County, Indiana",645,31,31,0,142,472,0,0
+county,18143,"Scott County, Indiana",119,7,0,0,0,119,0,0
+county,18145,"Shelby County, Indiana",159,0,0,0,0,159,0,0
+county,18147,"Spencer County, Indiana",47,1,0,0,0,47,0,0
+county,18149,"Starke County, Indiana",0,0,0,0,0,0,0,0
+county,18151,"Steuben County, Indiana",66,8,0,0,0,66,0,0
+county,18153,"Sullivan County, Indiana",2064,73,0,0,2064,0,0,0
+county,26009,"Antrim County, Michigan",34,3,0,0,0,34,0,0
+county,26003,"Alger County, Michigan",899,10,0,0,862,37,0,0
+county,26005,"Allegan County, Michigan",169,5,0,0,0,158,11,0
+county,26007,"Alpena County, Michigan",16,0,0,0,0,16,0,0
+county,26011,"Arenac County, Michigan",9,0,0,0,0,9,0,0
+county,26013,"Baraga County, Michigan",806,7,0,0,800,6,0,0
+county,26015,"Barry County, Michigan",38,3,0,0,0,38,0,0
+county,26017,"Bay County, Michigan",116,38,29,0,0,87,0,0
+county,26019,"Benzie County, Michigan",7,4,0,0,0,7,0,0
+county,26021,"Berrien County, Michigan",0,0,0,0,0,0,0,0
+county,26023,"Branch County, Michigan",1423,17,0,0,1423,0,0,0
+county,26025,"Calhoun County, Michigan",359,93,120,0,0,239,0,0
+county,26027,"Cass County, Michigan",44,2,0,0,0,0,44,0
+county,26029,"Charlevoix County, Michigan",9,0,0,0,0,9,0,0
+county,26031,"Cheboygan County, Michigan",41,3,0,0,0,41,0,0
+county,26033,"Chippewa County, Michigan",3950,89,34,0,3851,65,0,0
+county,26035,"Clare County, Michigan",120,13,18,0,0,102,0,0
+county,26037,"Clinton County, Michigan",57,5,0,0,0,57,0,0
+county,26039,"Crawford County, Michigan",36,3,0,0,0,36,0,0
+county,26041,"Delta County, Michigan",41,7,0,0,0,41,0,0
+county,26043,"Dickinson County, Michigan",40,3,0,0,0,40,0,0
+county,26045,"Eaton County, Michigan",174,11,0,0,0,174,0,0
+county,26047,"Emmet County, Michigan",36,3,0,0,0,36,0,0
+county,26049,"Genesee County, Michigan",507,16,0,0,0,471,36,0
+county,26051,"Gladwin County, Michigan",26,0,0,0,0,26,0,0
+county,26053,"Gogebic County, Michigan",19,7,0,0,0,19,0,0
+county,26055,"Grand Traverse County, Michigan",125,9,0,0,0,125,0,0
+county,26057,"Gratiot County, Michigan",3678,166,0,0,3594,30,54,0
+county,26059,"Hillsdale County, Michigan",46,4,0,0,0,46,0,0
+county,26061,"Houghton County, Michigan",34,5,0,0,0,34,0,0
+county,26063,"Huron County, Michigan",40,3,4,0,0,36,0,0
+county,26065,"Ingham County, Michigan",239,26,0,0,0,239,0,0
+county,19015,"Boone County, Iowa",32,10,0,0,0,32,0,0
+county,19017,"Bremer County, Iowa",65,4,15,0,0,50,0,0
+county,19019,"Buchanan County, Iowa",23,0,0,0,0,23,0,0
+county,19021,"Buena Vista County, Iowa",21,6,1,0,0,20,0,0
+county,19023,"Butler County, Iowa",1,1,0,0,0,1,0,0
+county,19025,"Calhoun County, Iowa",478,33,0,0,478,0,0,0
+county,19027,"Carroll County, Iowa",1,0,0,0,0,1,0,0
+county,19029,"Cass County, Iowa",0,0,0,0,0,0,0,0
+county,19031,"Cedar County, Iowa",6,2,0,0,0,6,0,0
+county,19033,"Cerro Gordo County, Iowa",86,2,0,0,0,51,35,0
+county,19035,"Cherokee County, Iowa",11,2,0,0,0,11,0,0
+county,19037,"Chickasaw County, Iowa",1,1,0,0,0,1,0,0
+county,19039,"Clarke County, Iowa",8,0,0,0,0,8,0,0
+county,19041,"Clay County, Iowa",13,3,0,0,0,13,0,0
+county,19043,"Clayton County, Iowa",8,0,0,0,0,8,0,0
+county,19045,"Clinton County, Iowa",23,1,0,0,0,23,0,0
+county,19047,"Crawford County, Iowa",14,0,0,0,0,14,0,0
+county,19049,"Dallas County, Iowa",27,0,0,0,0,27,0,0
+county,19051,"Davis County, Iowa",0,0,0,0,0,0,0,0
+county,19053,"Decatur County, Iowa",2,1,0,0,0,2,0,0
+county,19055,"Delaware County, Iowa",0,0,0,0,0,0,0,0
+county,19057,"Des Moines County, Iowa",75,0,0,0,0,41,34,0
+county,19059,"Dickinson County, Iowa",5,0,0,0,0,5,0,0
+county,19061,"Dubuque County, Iowa",194,2,0,0,0,136,58,0
+county,19063,"Emmet County, Iowa",5,0,0,0,0,5,0,0
+county,19065,"Fayette County, Iowa",85,0,16,0,0,29,40,0
+county,19067,"Floyd County, Iowa",0,0,0,0,0,0,0,0
+county,19069,"Franklin County, Iowa",0,0,0,0,0,0,0,0
+county,19071,"Fremont County, Iowa",15,2,0,0,0,15,0,0
+county,19073,"Greene County, Iowa",11,0,0,0,0,11,0,0
+county,19075,"Grundy County, Iowa",0,0,0,0,0,0,0,0
+county,19077,"Guthrie County, Iowa",11,4,0,0,0,11,0,0
+county,19079,"Hamilton County, Iowa",15,3,0,0,0,15,0,0
+county,19081,"Hancock County, Iowa",0,0,0,0,0,0,0,0
+county,19083,"Hardin County, Iowa",49,11,24,0,0,25,0,0
+county,19085,"Harrison County, Iowa",1,0,0,0,0,1,0,0
+county,48471,"Walker County, Texas",14881,4713,0,0,12969,194,1718,0
+county,48465,"Val Verde County, Texas",1223,436,999,0,0,224,0,0
+county,48467,"Van Zandt County, Texas",149,8,0,0,0,149,0,0
+county,48469,"Victoria County, Texas",263,119,42,0,0,221,0,0
+county,48473,"Waller County, Texas",53,6,0,0,0,53,0,0
+county,48475,"Ward County, Texas",64,32,0,0,0,64,0,0
+county,48477,"Washington County, Texas",70,23,0,0,0,70,0,0
+county,48479,"Webb County, Texas",1783,886,1783,0,0,0,0,0
+county,48481,"Wharton County, Texas",51,23,0,0,0,51,0,0
+county,48483,"Wheeler County, Texas",24,8,0,0,0,24,0,0
+county,48485,"Wichita County, Texas",4049,1272,46,0,3662,341,0,0
+county,48487,"Wilbarger County, Texas",15,0,0,0,0,15,0,0
+county,48489,"Willacy County, Texas",2457,1675,947,0,885,625,0,0
+county,48491,"Williamson County, Texas",633,290,259,0,0,374,0,0
+county,48493,"Wilson County, Texas",51,23,51,0,0,0,0,0
+county,48495,"Winkler County, Texas",98,49,39,0,0,59,0,0
+county,48497,"Wise County, Texas",508,213,0,0,508,0,0,0
+county,48499,"Wood County, Texas",683,160,0,0,569,114,0,0
+county,48501,"Yoakum County, Texas",0,0,0,0,0,0,0,0
+county,48503,"Young County, Texas",24,9,0,0,0,24,0,0
+county,48505,"Zapata County, Texas",73,18,73,0,0,0,0,0
+county,48507,"Zavala County, Texas",29,25,0,0,0,29,0,0
+county,49001,"Beaver County, Utah",344,72,0,0,0,344,0,0
+county,49003,"Box Elder County, Utah",88,9,0,0,0,88,0,0
+county,49005,"Cache County, Utah",201,79,10,0,0,191,0,0
+county,49007,"Carbon County, Utah",58,7,0,0,0,58,0,0
+county,17051,"Fayette County, Illinois",2200,397,0,0,2137,63,0,0
+county,17053,"Ford County, Illinois",19,0,2,0,0,17,0,0
+county,17055,"Franklin County, Illinois",20,1,6,0,0,14,0,0
+county,17057,"Fulton County, Illinois",1652,335,9,0,1618,25,0,0
+county,17059,"Gallatin County, Illinois",0,0,0,0,0,0,0,0
+county,17061,"Greene County, Illinois",22,7,0,0,0,22,0,0
+county,17063,"Grundy County, Illinois",23,4,0,0,0,23,0,0
+county,17065,"Hamilton County, Illinois",0,0,0,0,0,0,0,0
+county,17067,"Hancock County, Illinois",6,0,0,0,0,6,0,0
+county,17069,"Hardin County, Illinois",0,0,0,0,0,0,0,0
+county,17071,"Henderson County, Illinois",1,0,0,0,0,1,0,0
+county,17073,"Henry County, Illinois",328,60,15,0,264,49,0,0
+county,17075,"Iroquois County, Illinois",19,0,0,0,0,19,0,0
+county,17077,"Jackson County, Illinois",246,24,36,0,159,51,0,0
+county,17079,"Jasper County, Illinois",3,1,0,0,0,3,0,0
+county,17081,"Jefferson County, Illinois",1313,133,0,0,1175,138,0,0
+county,17083,"Jersey County, Illinois",13,2,0,0,0,13,0,0
+county,17085,"Jo Daviess County, Illinois",18,3,0,0,0,18,0,0
+county,17087,"Johnson County, Illinois",2388,365,0,0,2388,0,0,0
+county,17089,"Kane County, Illinois",482,136,0,0,0,413,69,0
+county,17091,"Kankakee County, Illinois",332,127,247,0,0,85,0,0
+county,17093,"Kendall County, Illinois",130,43,30,0,0,100,0,0
+county,17095,"Knox County, Illinois",1704,261,24,0,1589,91,0,0
+county,17097,"Lake County, Illinois",623,190,0,0,0,623,0,0
+county,17099,"LaSalle County, Illinois",1731,230,0,0,1653,78,0,0
+county,17101,"Lawrence County, Illinois",1995,300,0,0,1995,0,0,0
+county,17103,"Lee County, Illinois",2206,390,0,0,2179,27,0,0
+county,17105,"Livingston County, Illinois",1309,247,48,0,1165,96,0,0
+county,17107,"Logan County, Illinois",2552,273,0,0,2518,34,0,0
+county,17109,"McDonough County, Illinois",0,0,0,0,0,0,0,0
+county,17111,"McHenry County, Illinois",288,205,174,0,0,114,0,0
+county,17113,"McLean County, Illinois",165,15,0,0,0,165,0,0
+county,17115,"Macon County, Illinois",707,43,28,0,443,236,0,0
+county,17117,"Macoupin County, Illinois",86,9,16,0,0,70,0,0
+county,17119,"Madison County, Illinois",203,12,9,0,0,181,13,0
+county,17121,"Marion County, Illinois",125,10,33,0,0,92,0,0
+county,17123,"Marshall County, Illinois",2,0,0,0,0,2,0,0
+county,17125,"Mason County, Illinois",22,2,6,0,0,16,0,0
+county,17127,"Massac County, Illinois",0,0,0,0,0,0,0,0
+county,17129,"Menard County, Illinois",7,0,0,0,0,7,0,0
+county,37043,"Clay County, North Carolina",0,0,0,0,0,0,0,0
+county,37037,"Chatham County, North Carolina",66,12,0,0,0,66,0,0
+county,37039,"Cherokee County, North Carolina",117,0,8,0,0,109,0,0
+county,37041,"Chowan County, North Carolina",22,1,0,0,0,22,0,0
+county,37045,"Cleveland County, North Carolina",255,34,0,0,0,255,0,0
+county,37047,"Columbus County, North Carolina",2187,162,0,0,2052,135,0,0
+county,37049,"Craven County, North Carolina",818,24,0,0,818,0,0,0
+county,37051,"Cumberland County, North Carolina",535,14,14,0,0,521,0,0
+county,37053,"Currituck County, North Carolina",23,0,0,0,0,23,0,0
+county,37055,"Dare County, North Carolina",55,5,0,0,0,55,0,0
+county,37057,"Davidson County, North Carolina",647,7,0,0,618,0,29,0
+county,37059,"Davie County, North Carolina",53,6,0,0,0,53,0,0
+county,37061,"Duplin County, North Carolina",0,0,0,0,0,0,0,0
+county,37063,"Durham County, North Carolina",2758,285,14,2467,0,277,0,0
+county,37065,"Edgecombe County, North Carolina",124,13,17,0,0,107,0,0
+county,37067,"Forsyth County, North Carolina",913,65,46,0,235,632,0,0
+county,37069,"Franklin County, North Carolina",764,67,33,0,568,163,0,0
+county,37071,"Gaston County, North Carolina",686,36,29,0,238,419,0,0
+county,37073,"Gates County, North Carolina",0,0,0,0,0,0,0,0
+county,37075,"Graham County, North Carolina",23,5,0,0,0,23,0,0
+county,37077,"Granville County, North Carolina",3119,368,75,1948,1045,51,0,0
+county,48207,"Haskell County, Texas",463,218,386,0,0,77,0,0
+county,48209,"Hays County, Texas",776,295,0,0,522,254,0,0
+county,48211,"Hemphill County, Texas",13,7,0,0,0,13,0,0
+county,48213,"Henderson County, Texas",337,13,0,0,0,337,0,0
+county,48215,"Hidalgo County, Texas",4492,2746,1187,0,2070,1108,127,0
+county,48217,"Hill County, Texas",110,21,0,0,0,110,0,0
+county,48219,"Hockley County, Texas",39,22,0,0,0,39,0,0
+county,48221,"Hood County, Texas",159,21,0,0,0,159,0,0
+county,48223,"Hopkins County, Texas",132,15,0,0,0,132,0,0
+county,48225,"Houston County, Texas",2499,786,0,0,2433,66,0,0
+county,48227,"Howard County, Texas",4490,3688,0,4422,0,68,0,0
+county,48229,"Hudspeth County, Texas",996,357,996,0,0,0,0,0
+county,48231,"Hunt County, Texas",193,37,0,0,0,193,0,0
+county,02158,"Kusilvak Census Area, Alaska",0,0,0,0,0,0,0,0
+county,02164,"Lake and Peninsula Borough, Alaska",0,0,0,0,0,0,0,0
+county,02170,"Matanuska-Susitna Borough, Alaska",1557,65,13,0,1433,0,111,0
+county,02180,"Nome Census Area, Alaska",132,0,0,0,117,0,15,0
+county,02185,"North Slope Borough, Alaska",7,0,0,0,0,7,0,0
+county,02188,"Northwest Arctic Borough, Alaska",0,0,0,0,0,0,0,0
+county,02195,"Petersburg Borough, Alaska",0,0,0,0,0,0,0,0
+county,02198,"Prince of Wales-Hyder Census Area, Alaska",5,0,0,0,0,5,0,0
+county,02220,"Sitka City and Borough, Alaska",7,1,0,0,0,7,0,0
+county,02230,"Skagway Municipality, Alaska",0,0,0,0,0,0,0,0
+county,02240,"Southeast Fairbanks Census Area, Alaska",0,0,0,0,0,0,0,0
+county,18097,"Marion County, Indiana",1629,39,20,0,564,834,211,0
+county,18099,"Marshall County, Indiana",177,1,0,0,0,177,0,0
+county,18101,"Martin County, Indiana",66,0,0,0,0,66,0,0
+county,18103,"Miami County, Indiana",3155,155,0,0,3033,122,0,0
+county,18105,"Monroe County, Indiana",192,5,0,0,0,192,0,0
+county,18107,"Montgomery County, Indiana",0,0,0,0,0,0,0,0
+county,18109,"Morgan County, Indiana",261,27,0,0,0,261,0,0
+county,18111,"Newton County, Indiana",38,2,0,0,0,38,0,0
+county,18113,"Noble County, Indiana",227,12,9,0,135,83,0,0
+county,18115,"Ohio County, Indiana",0,0,0,0,0,0,0,0
+county,18117,"Orange County, Indiana",79,1,0,0,0,79,0,0
+county,18119,"Owen County, Indiana",63,0,0,0,0,63,0,0
+county,18121,"Parke County, Indiana",998,29,0,0,998,0,0,0
+county,18123,"Perry County, Indiana",1412,16,0,0,1373,39,0,0
+county,18125,"Pike County, Indiana",30,4,0,0,0,30,0,0
+county,18127,"Porter County, Indiana",258,17,35,0,0,215,8,0
+county,18129,"Posey County, Indiana",92,10,0,0,0,92,0,0
+county,18131,"Pulaski County, Indiana",8,3,8,0,0,0,0,0
+county,18133,"Putnam County, Indiana",2098,68,0,0,2031,67,0,0
+county,18135,"Randolph County, Indiana",45,1,0,0,0,45,0,0
+county,18137,"Ripley County, Indiana",120,3,0,0,0,120,0,0
+county,18139,"Rush County, Indiana",9,0,0,0,0,9,0,0
+county,16079,"Shoshone County, Idaho",21,1,3,0,0,18,0,0
+county,16081,"Teton County, Idaho",0,0,0,0,0,0,0,0
+county,16083,"Twin Falls County, Idaho",288,76,0,0,0,254,34,0
+county,16085,"Valley County, Idaho",59,9,0,0,0,59,0,0
+county,16087,"Washington County, Idaho",23,1,3,0,0,20,0,0
+county,17001,"Adams County, Illinois",76,33,0,0,0,76,0,0
+county,17003,"Alexander County, Illinois",0,0,0,0,0,0,0,0
+county,17005,"Bond County, Illinois",1363,97,0,1363,0,0,0,0
+county,17007,"Boone County, Illinois",50,10,13,0,0,37,0,0
+county,17009,"Brown County, Illinois",1607,235,0,0,1607,0,0,0
+county,17011,"Bureau County, Illinois",25,5,0,0,0,25,0,0
+county,17013,"Calhoun County, Illinois",0,0,0,0,0,0,0,0
+county,17015,"Carroll County, Illinois",1085,192,0,1082,0,3,0,0
+county,39069,"Henry County, Ohio",0,0,0,0,0,0,0,0
+county,39063,"Hancock County, Ohio",0,0,0,0,0,0,0,0
+county,39065,"Hardin County, Ohio",0,0,0,0,0,0,0,0
+county,39067,"Harrison County, Ohio",0,0,0,0,0,0,0,0
+county,39071,"Highland County, Ohio",28,2,0,0,0,28,0,0
+county,39073,"Hocking County, Ohio",0,0,0,0,0,0,0,0
+county,39075,"Holmes County, Ohio",24,2,0,0,0,24,0,0
+county,39077,"Huron County, Ohio",61,7,0,0,0,61,0,0
+county,39079,"Jackson County, Ohio",36,1,0,0,0,36,0,0
+county,39081,"Jefferson County, Ohio",210,9,36,0,0,125,49,0
+county,39083,"Knox County, Ohio",86,5,0,0,0,86,0,0
+county,39085,"Lake County, Ohio",257,6,1,0,0,256,0,0
+county,39087,"Lawrence County, Ohio",44,5,0,0,0,44,0,0
+county,39089,"Licking County, Ohio",214,11,0,0,0,195,19,0
+county,39091,"Logan County, Ohio",0,0,0,0,0,0,0,0
+county,39093,"Lorain County, Ohio",3542,154,0,0,3326,216,0,0
+county,39095,"Lucas County, Ohio",1310,47,0,0,924,291,95,0
+county,39097,"Madison County, Ohio",4563,130,0,0,4563,0,0,0
+county,39099,"Mahoning County, Ohio",2608,140,693,0,940,330,645,0
+county,39101,"Marion County, Ohio",5117,198,0,0,4949,168,0,0
+county,39103,"Medina County, Ohio",128,14,0,0,0,128,0,0
+county,39105,"Meigs County, Ohio",5,0,0,0,0,5,0,0
+county,39107,"Mercer County, Ohio",37,0,0,0,0,37,0,0
+county,39109,"Miami County, Ohio",128,0,13,0,0,115,0,0
+county,39111,"Monroe County, Ohio",0,0,0,0,0,0,0,0
+county,39113,"Montgomery County, Ohio",1393,29,29,0,845,505,14,0
+county,39115,"Morgan County, Ohio",0,0,0,0,0,0,0,0
+county,39117,"Morrow County, Ohio",84,27,10,0,0,74,0,0
+county,39119,"Muskingum County, Ohio",151,8,0,0,0,151,0,0
+county,39121,"Noble County, Ohio",2478,85,0,0,2458,20,0,0
+county,39123,"Ottawa County, Ohio",56,2,0,0,0,56,0,0
+county,39125,"Paulding County, Ohio",0,0,0,0,0,0,0,0
+county,39127,"Perry County, Ohio",0,0,0,0,0,0,0,0
+county,39129,"Pickaway County, Ohio",3505,51,1,0,3494,10,0,0
+county,39131,"Pike County, Ohio",0,0,0,0,0,0,0,0
+county,39133,"Portage County, Ohio",178,3,0,0,0,178,0,0
+county,39135,"Preble County, Ohio",21,1,0,0,0,21,0,0
+county,39137,"Putnam County, Ohio",0,0,0,0,0,0,0,0
+county,39139,"Richland County, Ohio",5383,182,0,0,5059,175,149,0
+county,39141,"Ross County, Ohio",4692,106,0,0,4370,97,225,0
+county,39143,"Sandusky County, Ohio",67,15,0,0,0,67,0,0
+county,39145,"Scioto County, Ohio",1538,18,0,0,1223,83,232,0
+county,39147,"Seneca County, Ohio",202,38,33,0,0,111,58,0
+county,39149,"Shelby County, Ohio",67,7,19,0,0,48,0,0
+county,39151,"Stark County, Ohio",481,13,0,0,0,335,146,0
+county,39153,"Summit County, Ohio",829,12,0,0,35,455,339,0
+county,37149,"Polk County, North Carolina",52,1,0,0,0,52,0,0
+county,37153,"Richmond County, North Carolina",716,64,0,0,620,96,0,0
+county,37155,"Robeson County, North Carolina",1060,127,0,0,789,271,0,0
+county,37157,"Rockingham County, North Carolina",173,8,0,0,0,173,0,0
+county,37159,"Rowan County, North Carolina",1174,50,23,0,898,253,0,0
+county,37161,"Rutherford County, North Carolina",458,7,0,0,330,0,128,0
+county,37163,"Sampson County, North Carolina",582,103,0,0,394,188,0,0
+county,37165,"Scotland County, North Carolina",2613,294,0,0,2515,98,0,0
+county,37167,"Stanly County, North Carolina",943,109,0,0,806,137,0,0
+county,37169,"Stokes County, North Carolina",103,6,0,0,0,0,103,0
+county,37171,"Surry County, North Carolina",150,2,0,0,17,133,0,0
+county,37173,"Swain County, North Carolina",112,6,103,0,0,0,9,0
+county,37175,"Transylvania County, North Carolina",13,12,0,0,0,13,0,0
+county,37177,"Tyrrell County, North Carolina",0,0,0,0,0,0,0,0
+county,37179,"Union County, North Carolina",204,40,0,0,0,204,0,0
+county,37181,"Vance County, North Carolina",116,3,0,0,0,116,0,0
+county,37183,"Wake County, North Carolina",4032,158,30,0,2873,1063,66,0
+county,37185,"Warren County, North Carolina",654,19,0,0,633,21,0,0
+county,37187,"Washington County, North Carolina",18,1,0,0,0,18,0,0
+county,37189,"Watauga County, North Carolina",59,0,0,0,0,59,0,0
+county,37191,"Wayne County, North Carolina",1388,69,0,0,954,434,0,0
+county,37193,"Wilkes County, North Carolina",416,14,0,0,281,135,0,0
+county,37195,"Wilson County, North Carolina",154,4,0,0,0,154,0,0
+county,37197,"Yadkin County, North Carolina",83,13,0,0,0,83,0,0
+county,37199,"Yancey County, North Carolina",37,2,0,0,0,37,0,0
+county,38001,"Adams County, North Dakota",0,0,0,0,0,0,0,0
+county,38003,"Barnes County, North Dakota",1,0,0,0,0,1,0,0
+county,38005,"Benson County, North Dakota",33,0,33,0,0,0,0,0
+county,38007,"Billings County, North Dakota",0,0,0,0,0,0,0,0
+county,38009,"Bottineau County, North Dakota",2,0,0,0,0,2,0,0
+county,38011,"Bowman County, North Dakota",0,0,0,0,0,0,0,0
+county,38013,"Burke County, North Dakota",0,0,0,0,0,0,0,0
+county,38015,"Burleigh County, North Dakota",1051,67,29,0,843,149,30,0
+county,38017,"Cass County, North Dakota",169,6,39,0,0,0,130,0
+county,38019,"Cavalier County, North Dakota",0,0,0,0,0,0,0,0
+county,38021,"Dickey County, North Dakota",0,0,0,0,0,0,0,0
+county,38023,"Divide County, North Dakota",0,0,0,0,0,0,0,0
+county,38025,"Dunn County, North Dakota",0,0,0,0,0,0,0,0
+county,38027,"Eddy County, North Dakota",0,0,0,0,0,0,0,0
+county,38029,"Emmons County, North Dakota",0,0,0,0,0,0,0,0
+county,38031,"Foster County, North Dakota",0,0,0,0,0,0,0,0
+county,38033,"Golden Valley County, North Dakota",0,0,0,0,0,0,0,0
+county,38035,"Grand Forks County, North Dakota",163,25,14,0,0,149,0,0
+county,38037,"Grant County, North Dakota",0,0,0,0,0,0,0,0
+county,38039,"Griggs County, North Dakota",0,0,0,0,0,0,0,0
+county,38041,"Hettinger County, North Dakota",70,2,0,0,70,0,0,0
+county,38043,"Kidder County, North Dakota",0,0,0,0,0,0,0,0
+county,38045,"LaMoure County, North Dakota",0,0,0,0,0,0,0,0
+county,38047,"Logan County, North Dakota",0,0,0,0,0,0,0,0
+county,38049,"McHenry County, North Dakota",0,0,0,0,0,0,0,0
+county,38051,"McIntosh County, North Dakota",0,0,0,0,0,0,0,0
+county,38053,"McKenzie County, North Dakota",29,5,0,0,0,29,0,0
+county,48441,"Taylor County, Texas",647,151,74,0,0,573,0,0
+county,48443,"Terrell County, Texas",0,0,0,0,0,0,0,0
+county,48445,"Terry County, Texas",597,279,12,0,492,65,28,0
+county,48447,"Throckmorton County, Texas",0,0,0,0,0,0,0,0
+county,48449,"Titus County, Texas",6,2,6,0,0,0,0,0
+county,48451,"Tom Green County, Texas",459,217,80,0,39,301,39,0
+county,48453,"Travis County, Texas",3051,1015,0,0,1026,1881,144,0
+county,48455,"Trinity County, Texas",13,6,0,0,0,13,0,0
+county,48457,"Tyler County, Texas",1892,574,0,0,1869,23,0,0
+county,48459,"Upshur County, Texas",120,10,17,0,0,103,0,0
+county,48461,"Upton County, Texas",42,27,0,0,0,42,0,0
+county,48463,"Uvalde County, Texas",256,43,76,0,0,180,0,0
+county,39155,"Trumbull County, Ohio",1819,64,0,0,1465,205,149,0
+county,39157,"Tuscarawas County, Ohio",69,11,0,0,0,69,0,0
+county,39159,"Union County, Ohio",2612,22,0,0,2486,0,126,0
+county,40011,"Blaine County, Oklahoma",5,5,0,0,0,5,0,0
+county,40005,"Atoka County, Oklahoma",1529,138,0,0,1457,0,72,0
+county,40007,"Beaver County, Oklahoma",9,2,0,0,0,9,0,0
+county,40009,"Beckham County, Oklahoma",2223,221,0,0,2223,0,0,0
+county,40013,"Bryan County, Oklahoma",77,1,0,0,0,77,0,0
+county,40015,"Caddo County, Oklahoma",3410,1960,0,1717,1612,81,0,0
+county,40017,"Canadian County, Oklahoma",1518,284,0,1190,0,130,198,0
+county,40019,"Carter County, Oklahoma",24,4,0,0,0,0,24,0
+county,40021,"Cherokee County, Oklahoma",90,5,0,0,0,90,0,0
+county,40023,"Choctaw County, Oklahoma",25,4,0,0,0,25,0,0
+county,40025,"Cimarron County, Oklahoma",8,5,0,0,0,8,0,0
+county,40027,"Cleveland County, Oklahoma",2605,186,0,0,2373,232,0,0
+county,40029,"Coal County, Oklahoma",0,0,0,0,0,0,0,0
+county,40031,"Comanche County, Oklahoma",3008,352,33,0,2410,307,258,0
+county,40033,"Cotton County, Oklahoma",0,0,0,0,0,0,0,0
+county,40035,"Craig County, Oklahoma",486,23,0,0,434,52,0,0
+county,40037,"Creek County, Oklahoma",188,1,31,0,0,157,0,0
+county,40039,"Custer County, Oklahoma",67,14,0,0,0,67,0,0
+county,40041,"Delaware County, Oklahoma",44,0,0,0,0,44,0,0
+county,40043,"Dewey County, Oklahoma",0,0,0,0,0,0,0,0
+county,40045,"Ellis County, Oklahoma",6,3,0,0,0,6,0,0
+county,40047,"Garfield County, Oklahoma",250,35,0,0,0,160,90,0
+county,40049,"Garvin County, Oklahoma",11,1,3,0,0,8,0,0
+county,40051,"Grady County, Oklahoma",681,95,537,0,0,144,0,0
+county,40053,"Grant County, Oklahoma",18,3,0,0,0,18,0,0
+county,40055,"Greer County, Oklahoma",832,33,0,0,0,57,775,0
+county,40057,"Harmon County, Oklahoma",9,2,0,0,0,9,0,0
+county,40059,"Harper County, Oklahoma",6,3,0,0,0,6,0,0
+county,40061,"Haskell County, Oklahoma",0,0,0,0,0,0,0,0
+county,40063,"Hughes County, Oklahoma",1579,149,0,0,1533,46,0,0
+county,40065,"Jackson County, Oklahoma",27,13,0,0,0,27,0,0
+county,40067,"Jefferson County, Oklahoma",27,1,0,0,0,27,0,0
+county,40069,"Johnston County, Oklahoma",38,9,0,0,0,38,0,0
+county,40071,"Kay County, Oklahoma",336,82,76,0,0,169,91,0
+county,40073,"Kingfisher County, Oklahoma",118,0,0,0,0,118,0,0
+county,40075,"Kiowa County, Oklahoma",8,3,0,0,0,8,0,0
+county,40077,"Latimer County, Oklahoma",22,1,0,0,0,22,0,0
+county,40079,"Le Flore County, Oklahoma",1033,57,0,0,883,150,0,0
+county,40081,"Lincoln County, Oklahoma",70,0,0,0,0,70,0,0
+county,40083,"Logan County, Oklahoma",37,9,37,0,0,0,0,0
+county,40085,"Love County, Oklahoma",17,3,0,0,0,17,0,0
+county,40087,"McClain County, Oklahoma",71,22,0,0,0,71,0,0
+county,40089,"McCurtain County, Oklahoma",74,6,0,0,0,74,0,0
+county,40091,"McIntosh County, Oklahoma",69,0,0,0,0,69,0,0
+county,40093,"Major County, Oklahoma",5,4,0,0,0,5,0,0
+county,40095,"Marshall County, Oklahoma",65,9,0,0,0,65,0,0
+county,40097,"Mayes County, Oklahoma",79,6,0,0,0,79,0,0
+county,40099,"Murray County, Oklahoma",18,1,0,0,0,18,0,0
+county,40101,"Muskogee County, Oklahoma",2161,138,25,0,1945,191,0,0
+county,40103,"Noble County, Oklahoma",22,5,0,0,0,22,0,0
+county,24009,"Calvert County, Maryland",130,5,0,0,0,130,0,0
+county,24011,"Caroline County, Maryland",45,0,10,0,0,35,0,0
+county,24013,"Carroll County, Maryland",519,23,0,0,453,66,0,0
+county,24015,"Cecil County, Maryland",263,13,0,0,0,243,20,0
+county,24017,"Charles County, Maryland",244,2,0,0,111,133,0,0
+county,24019,"Dorchester County, Maryland",94,0,0,0,0,94,0,0
+county,24021,"Frederick County, Maryland",285,50,27,0,0,258,0,0
+county,24023,"Garrett County, Maryland",43,1,0,0,0,43,0,0
+county,24025,"Harford County, Maryland",303,8,0,0,0,303,0,0
+county,24027,"Howard County, Maryland",1123,90,47,0,869,197,10,0
+county,24029,"Kent County, Maryland",27,1,9,0,0,18,0,0
+county,24031,"Montgomery County, Maryland",631,158,0,0,0,631,0,0
+county,24033,"Prince George's County, Maryland",681,69,15,0,0,607,59,0
+county,24035,"Queen Anne's County, Maryland",175,13,0,0,109,46,20,0
+county,24037,"St. Mary's County, Maryland",175,3,0,0,0,175,0,0
+county,24039,"Somerset County, Maryland",3294,113,0,0,3255,39,0,0
+county,54095,"Tyler County, West Virginia",0,0,0,0,0,0,0,0
+county,54089,"Summers County, West Virginia",838,65,0,838,0,0,0,0
+county,54091,"Taylor County, West Virginia",352,5,0,0,352,0,0,0
+county,54093,"Tucker County, West Virginia",0,0,0,0,0,0,0,0
+county,54097,"Upshur County, West Virginia",0,0,0,0,0,0,0,0
+county,54099,"Wayne County, West Virginia",0,0,0,0,0,0,0,0
+county,54101,"Webster County, West Virginia",0,0,0,0,0,0,0,0
+county,54103,"Wetzel County, West Virginia",0,0,0,0,0,0,0,0
+county,54105,"Wirt County, West Virginia",0,0,0,0,0,0,0,0
+county,54107,"Wood County, West Virginia",333,1,0,0,0,0,333,0
+county,54109,"Wyoming County, West Virginia",0,0,0,0,0,0,0,0
+county,55001,"Adams County, Wisconsin",1062,100,0,1010,0,52,0,0
+county,55003,"Ashland County, Wisconsin",43,0,0,0,0,43,0,0
+county,55005,"Barron County, Wisconsin",90,0,0,0,0,90,0,0
+county,55007,"Bayfield County, Wisconsin",55,13,0,0,0,55,0,0
+county,55009,"Brown County, Wisconsin",1841,139,20,0,1062,746,13,0
+county,55011,"Buffalo County, Wisconsin",19,3,0,0,0,19,0,0
+county,55013,"Burnett County, Wisconsin",31,1,0,0,0,31,0,0
+county,55015,"Calumet County, Wisconsin",16,0,0,0,0,16,0,0
+county,55017,"Chippewa County, Wisconsin",2012,151,0,0,1956,56,0,0
+county,55019,"Clark County, Wisconsin",29,2,0,0,0,29,0,0
+county,55021,"Columbia County, Wisconsin",891,66,0,0,810,81,0,0
+county,55023,"Crawford County, Wisconsin",514,44,0,0,499,15,0,0
+county,55025,"Dane County, Wisconsin",1541,93,17,0,993,476,55,0
+county,55027,"Dodge County, Wisconsin",4669,390,141,0,4403,125,0,0
+county,19093,"Ida County, Iowa",3,0,0,0,0,3,0,0
+county,19087,"Henry County, Iowa",1044,35,0,0,1028,16,0,0
+county,19089,"Howard County, Iowa",1,1,0,0,0,1,0,0
+county,19091,"Humboldt County, Iowa",3,3,0,0,0,3,0,0
+county,19095,"Iowa County, Iowa",16,1,10,0,0,6,0,0
+county,19097,"Jackson County, Iowa",10,0,0,0,0,10,0,0
+county,19099,"Jasper County, Iowa",1398,109,0,0,1340,58,0,0
+county,19101,"Jefferson County, Iowa",0,0,0,0,0,0,0,0
+county,19103,"Johnson County, Iowa",875,60,40,0,806,0,29,0
+county,19105,"Jones County, Iowa",993,102,0,0,979,14,0,0
+county,19107,"Keokuk County, Iowa",5,4,0,0,0,5,0,0
+county,19109,"Kossuth County, Iowa",11,6,0,0,0,11,0,0
+county,19111,"Lee County, Iowa",677,57,0,0,623,54,0,0
+county,19113,"Linn County, Iowa",401,30,33,0,0,204,164,0
+county,19115,"Louisa County, Iowa",12,2,0,0,0,12,0,0
+county,19117,"Lucas County, Iowa",0,0,0,0,0,0,0,0
+county,19119,"Lyon County, Iowa",18,0,0,0,0,18,0,0
+county,19121,"Madison County, Iowa",23,0,0,0,0,23,0,0
+county,19123,"Mahaska County, Iowa",4,0,0,0,0,4,0,0
+county,19125,"Marion County, Iowa",21,2,0,0,0,21,0,0
+county,19127,"Marshall County, Iowa",140,8,0,0,0,103,37,0
+county,19129,"Mills County, Iowa",0,0,0,0,0,0,0,0
+county,19131,"Mitchell County, Iowa",0,0,0,0,0,0,0,0
+county,19133,"Monona County, Iowa",10,3,0,0,0,10,0,0
+county,19135,"Monroe County, Iowa",16,3,0,0,0,16,0,0
+county,19137,"Montgomery County, Iowa",14,0,0,0,0,14,0,0
+county,19139,"Muscatine County, Iowa",196,27,41,0,0,155,0,0
+county,19141,"O'Brien County, Iowa",45,4,12,0,0,33,0,0
+county,19143,"Osceola County, Iowa",0,0,0,0,0,0,0,0
+county,19145,"Page County, Iowa",997,48,0,0,990,7,0,0
+county,19147,"Palo Alto County, Iowa",10,2,0,0,0,10,0,0
+county,19149,"Plymouth County, Iowa",9,4,9,0,0,0,0,0
+county,19151,"Pocahontas County, Iowa",7,2,0,0,0,7,0,0
+county,19153,"Polk County, Iowa",1813,153,59,0,760,768,226,0
+county,19155,"Pottawattamie County, Iowa",295,25,0,0,0,204,91,0
+county,19157,"Poweshiek County, Iowa",13,2,0,0,0,13,0,0
+county,19159,"Ringgold County, Iowa",2,0,0,0,0,2,0,0
+county,19161,"Sac County, Iowa",1,0,0,0,0,1,0,0
+county,19163,"Scott County, Iowa",340,26,0,0,0,206,134,0
+county,19165,"Shelby County, Iowa",5,2,0,0,0,5,0,0
+county,19167,"Sioux County, Iowa",19,0,11,0,0,8,0,0
+county,19169,"Story County, Iowa",41,0,0,0,0,40,1,0
+county,19171,"Tama County, Iowa",40,2,0,0,0,10,30,0
+county,46105,"Perkins County, South Dakota",0,0,0,0,0,0,0,0
+county,46101,"Moody County, South Dakota",0,0,0,0,0,0,0,0
+county,46102,"Oglala Lakota County, South Dakota",239,10,118,0,0,121,0,0
+county,46103,"Pennington County, South Dakota",1390,42,149,0,0,970,271,0
+county,46107,"Potter County, South Dakota",0,0,0,0,0,0,0,0
+county,46109,"Roberts County, South Dakota",74,5,12,0,0,62,0,0
+county,46111,"Sanborn County, South Dakota",0,0,0,0,0,0,0,0
+county,46115,"Spink County, South Dakota",0,0,0,0,0,0,0,0
+county,46117,"Stanley County, South Dakota",0,0,0,0,0,0,0,0
+county,46119,"Sully County, South Dakota",0,0,0,0,0,0,0,0
+county,46121,"Todd County, South Dakota",49,1,0,0,0,0,49,0
+county,46123,"Tripp County, South Dakota",90,4,58,0,0,32,0,0
+county,46125,"Turner County, South Dakota",0,0,0,0,0,0,0,0
+county,46127,"Union County, South Dakota",14,0,0,0,0,14,0,0
+county,46129,"Walworth County, South Dakota",20,3,5,0,0,15,0,0
+county,46135,"Yankton County, South Dakota",782,117,24,489,0,18,251,0
+county,46137,"Ziebach County, South Dakota",0,0,0,0,0,0,0,0
+county,47001,"Anderson County, Tennessee",294,0,0,0,0,280,14,0
+county,47003,"Bedford County, Tennessee",592,6,0,0,0,592,0,0
+county,47005,"Benton County, Tennessee",95,4,0,0,0,95,0,0
+county,47007,"Bledsoe County, Tennessee",2481,32,0,0,2362,119,0,0
+county,47009,"Blount County, Tennessee",506,12,57,0,0,422,27,0
+county,47011,"Bradley County, Tennessee",344,8,5,0,0,339,0,0
+county,47013,"Campbell County, Tennessee",192,0,0,0,0,192,0,0
+county,47015,"Cannon County, Tennessee",42,1,0,0,0,42,0,0
+county,47017,"Carroll County, Tennessee",113,3,0,0,0,113,0,0
+county,47019,"Carter County, Tennessee",255,14,20,0,0,235,0,0
+county,47021,"Cheatham County, Tennessee",80,1,0,0,0,80,0,0
+county,47023,"Chester County, Tennessee",81,3,0,0,0,81,0,0
+county,47025,"Claiborne County, Tennessee",192,5,0,0,0,192,0,0
+county,47027,"Clay County, Tennessee",16,5,0,0,0,16,0,0
+county,47029,"Cocke County, Tennessee",93,0,0,0,0,93,0,0
+county,47031,"Coffee County, Tennessee",146,0,0,0,0,146,0,0
+county,47033,"Crockett County, Tennessee",55,2,0,0,0,55,0,0
+county,47035,"Cumberland County, Tennessee",148,0,0,0,0,148,0,0
+county,47037,"Davidson County, Tennessee",4378,156,52,242,2115,1928,41,0
+county,47039,"Decatur County, Tennessee",39,0,0,0,0,39,0,0
+county,47041,"DeKalb County, Tennessee",10,2,0,0,0,10,0,0
+county,47043,"Dickson County, Tennessee",294,17,0,0,0,294,0,0
+county,47045,"Dyer County, Tennessee",167,3,0,0,0,167,0,0
+county,47047,"Fayette County, Tennessee",129,8,0,0,0,94,35,0
+county,47049,"Fentress County, Tennessee",123,1,0,0,0,123,0,0
+county,47051,"Franklin County, Tennessee",159,11,0,0,0,159,0,0
+county,47053,"Gibson County, Tennessee",263,13,0,0,0,263,0,0
+county,47055,"Giles County, Tennessee",149,2,0,0,0,149,0,0
+county,47057,"Grainger County, Tennessee",50,0,0,0,0,50,0,0
+county,47059,"Greene County, Tennessee",272,3,19,0,0,253,0,0
+county,47061,"Grundy County, Tennessee",72,4,0,0,0,72,0,0
+county,47063,"Hamblen County, Tennessee",61,2,0,0,0,61,0,0
+county,47065,"Hamilton County, Tennessee",939,17,13,0,0,926,0,0
+county,47067,"Hancock County, Tennessee",95,0,0,0,0,95,0,0
+county,47069,"Hardeman County, Tennessee",3428,137,0,0,3428,0,0,0
+county,47071,"Hardin County, Tennessee",0,0,0,0,0,0,0,0
+county,47073,"Hawkins County, Tennessee",204,0,0,0,0,204,0,0
+county,47075,"Haywood County, Tennessee",99,2,0,0,0,99,0,0
+county,47077,"Henderson County, Tennessee",176,0,0,0,0,176,0,0
+county,30035,"Glacier County, Montana",32,0,0,0,0,32,0,0
+county,30037,"Golden Valley County, Montana",0,0,0,0,0,0,0,0
+county,30039,"Granite County, Montana",0,0,0,0,0,0,0,0
+county,30041,"Hill County, Montana",36,3,0,0,0,36,0,0
+county,30043,"Jefferson County, Montana",72,1,0,0,19,11,42,0
+county,30045,"Judith Basin County, Montana",0,0,0,0,0,0,0,0
+county,30047,"Lake County, Montana",39,0,2,0,0,37,0,0
+county,30049,"Lewis and Clark County, Montana",130,3,0,0,0,34,96,0
+county,30051,"Liberty County, Montana",0,0,0,0,0,0,0,0
+county,30053,"Lincoln County, Montana",19,5,0,0,0,19,0,0
+county,30055,"McCone County, Montana",0,0,0,0,0,0,0,0
+county,36055,"Monroe County, New York",1108,175,33,0,94,916,65,0
+county,36049,"Lewis County, New York",25,0,0,0,0,25,0,0
+county,36051,"Livingston County, New York",948,127,29,0,841,78,0,0
+county,36053,"Madison County, New York",80,2,16,0,0,64,0,0
+county,36057,"Montgomery County, New York",95,26,24,0,0,71,0,0
+county,36059,"Nassau County, New York",577,189,8,0,0,569,0,0
+county,36061,"New York County, New York",2273,680,770,0,1016,174,313,0
+county,36063,"Niagara County, New York",278,22,110,0,0,168,0,0
+county,36065,"Oneida County, New York",3981,791,32,0,3735,214,0,0
+county,36067,"Onondaga County, New York",576,38,42,0,0,534,0,0
+county,36069,"Ontario County, New York",99,4,0,0,0,99,0,0
+county,36071,"Orange County, New York",1883,572,229,597,583,453,21,0
+county,36073,"Orleans County, New York",1493,234,0,0,1456,37,0,0
+county,36075,"Oswego County, New York",88,12,0,0,0,88,0,0
+county,36077,"Otsego County, New York",0,0,0,0,0,0,0,0
+county,36079,"Putnam County, New York",56,27,16,0,0,40,0,0
+county,36081,"Queens County, New York",400,116,214,0,131,0,55,0
+county,36083,"Rensselaer County, New York",296,35,81,0,0,215,0,0
+county,36085,"Richmond County, New York",0,0,0,0,0,0,0,0
+county,36087,"Rockland County, New York",252,149,0,0,105,137,10,0
+county,36089,"St. Lawrence County, New York",1951,482,0,0,1884,67,0,0
+county,36091,"Saratoga County, New York",125,17,0,0,0,125,0,0
+county,36093,"Schenectady County, New York",138,7,0,0,0,138,0,0
+county,36095,"Schoharie County, New York",0,0,0,0,0,0,0,0
+county,36097,"Schuyler County, New York",1,0,0,0,0,1,0,0
+county,36099,"Seneca County, New York",1626,295,17,0,1584,25,0,0
+county,36101,"Steuben County, New York",107,1,24,0,0,83,0,0
+county,36103,"Suffolk County, New York",598,126,0,0,0,598,0,0
+county,36105,"Sullivan County, New York",2092,714,0,0,1250,83,759,0
+county,36107,"Tioga County, New York",191,47,39,0,0,152,0,0
+county,36109,"Tompkins County, New York",49,11,0,0,0,33,16,0
+county,36111,"Ulster County, New York",2601,711,0,74,2402,125,0,0
+county,36113,"Warren County, New York",68,14,24,0,0,44,0,0
+county,36115,"Washington County, New York",2193,487,0,0,2128,65,0,0
+county,36117,"Wayne County, New York",88,30,0,0,0,88,0,0
+county,36119,"Westchester County, New York",2603,628,101,0,2264,238,0,0
+county,36121,"Wyoming County, New York",3075,606,0,0,3032,43,0,0
+county,36123,"Yates County, New York",62,30,6,0,0,56,0,0
+county,37001,"Alamance County, North Carolina",397,66,72,0,0,325,0,0
+county,37003,"Alexander County, North Carolina",1274,25,0,0,1274,0,0,0
+county,37005,"Alleghany County, North Carolina",39,7,0,0,0,39,0,0
+county,37007,"Anson County, North Carolina",1394,48,0,0,1366,28,0,0
+county,37009,"Ashe County, North Carolina",127,0,0,0,0,127,0,0
+county,37011,"Avery County, North Carolina",1810,67,0,0,1771,39,0,0
+county,37013,"Beaufort County, North Carolina",0,0,0,0,0,0,0,0
+county,37015,"Bertie County, North Carolina",1367,58,0,0,1338,29,0,0
+county,37017,"Bladen County, North Carolina",112,4,65,0,0,47,0,0
+county,37019,"Brunswick County, North Carolina",241,15,0,0,0,241,0,0
+county,37021,"Buncombe County, North Carolina",1390,41,28,0,1021,341,0,0
+county,37023,"Burke County, North Carolina",1145,67,0,0,1032,113,0,0
+county,37025,"Cabarrus County, North Carolina",555,120,0,0,0,555,0,0
+county,37027,"Caldwell County, North Carolina",413,14,20,0,277,116,0,0
+county,37029,"Camden County, North Carolina",0,0,0,0,0,0,0,0
+county,37031,"Carteret County, North Carolina",424,4,0,0,327,97,0,0
+county,37033,"Caswell County, North Carolina",1232,91,15,0,1177,40,0,0
+county,37035,"Catawba County, North Carolina",443,9,29,0,253,161,0,0
+county,40105,"Nowata County, Oklahoma",11,1,0,0,0,11,0,0
+county,40107,"Okfuskee County, Oklahoma",842,42,0,0,620,21,201,0
+county,40109,"Oklahoma County, Oklahoma",3622,563,163,1131,240,1260,828,0
+county,40111,"Okmulgee County, Oklahoma",351,157,182,0,0,169,0,0
+county,40113,"Osage County, Oklahoma",1197,93,0,0,1197,0,0,0
+county,40115,"Ottawa County, Oklahoma",12,0,0,0,0,12,0,0
+county,40117,"Pawnee County, Oklahoma",48,0,0,0,0,48,0,0
+county,23005,"Cumberland County, Maine",748,99,64,0,468,216,0,0
+county,22127,"Winn Parish, Louisiana",1322,775,1012,0,310,0,0,0
+county,23001,"Androscoggin County, Maine",137,11,0,0,0,137,0,0
+county,23003,"Aroostook County, Maine",88,11,0,0,0,88,0,0
+county,23007,"Franklin County, Maine",22,3,0,0,0,22,0,0
+county,23009,"Hancock County, Maine",41,4,12,0,0,29,0,0
+county,23011,"Kennebec County, Maine",162,8,0,0,0,162,0,0
+county,23013,"Knox County, Maine",1015,38,0,0,961,54,0,0
+county,23015,"Lincoln County, Maine",70,0,8,0,0,62,0,0
+county,23017,"Oxford County, Maine",0,0,0,0,0,0,0,0
+county,23019,"Penobscot County, Maine",569,31,0,0,0,191,378,0
+county,23021,"Piscataquis County, Maine",15,0,3,0,0,12,0,0
+county,23023,"Sagadahoc County, Maine",0,0,0,0,0,0,0,0
+county,23025,"Somerset County, Maine",214,7,34,0,0,180,0,0
+county,23027,"Waldo County, Maine",30,0,0,0,14,0,16,0
+county,23029,"Washington County, Maine",117,2,0,0,117,0,0,0
+county,23031,"York County, Maine",132,17,0,0,0,132,0,0
+county,24001,"Allegany County, Maryland",4293,226,12,1244,2958,79,0,0
+county,24003,"Anne Arundel County, Maryland",4938,142,0,448,4138,352,0,0
+county,24005,"Baltimore County, Maryland",1059,72,0,0,0,1037,22,0
+county,05057,"Hempstead County, Arkansas",47,15,0,0,0,47,0,0
+county,05059,"Hot Spring County, Arkansas",2168,59,0,0,1781,11,376,0
+county,05061,"Howard County, Arkansas",5,0,0,0,0,5,0,0
+county,05063,"Independence County, Arkansas",69,9,0,0,0,69,0,0
+county,05065,"Izard County, Arkansas",827,32,0,0,809,18,0,0
+county,05067,"Jackson County, Arkansas",2142,48,0,0,2075,67,0,0
+county,05069,"Jefferson County, Arkansas",4001,151,48,0,3372,233,348,0
+county,05071,"Johnson County, Arkansas",41,0,0,0,0,41,0,0
+county,05073,"Lafayette County, Arkansas",14,8,0,0,0,14,0,0
+county,05075,"Lawrence County, Arkansas",0,0,0,0,0,0,0,0
+county,55095,"Polk County, Wisconsin",58,3,0,0,0,58,0,0
+county,55089,"Ozaukee County, Wisconsin",182,2,0,0,0,182,0,0
+county,55091,"Pepin County, Wisconsin",10,0,0,0,0,10,0,0
+county,55093,"Pierce County, Wisconsin",35,11,0,0,0,35,0,0
+county,55097,"Portage County, Wisconsin",40,8,0,0,0,20,20,0
+county,55099,"Price County, Wisconsin",6,0,0,0,0,6,0,0
+county,55101,"Racine County, Wisconsin",2273,202,0,0,2250,0,23,0
+county,55103,"Richland County, Wisconsin",30,2,0,0,0,30,0,0
+county,55105,"Rock County, Wisconsin",235,16,0,0,0,235,0,0
+county,55107,"Rusk County, Wisconsin",33,3,0,0,0,33,0,0
+county,55109,"St. Croix County, Wisconsin",183,17,0,0,105,75,3,0
+county,55111,"Sauk County, Wisconsin",122,16,0,0,0,122,0,0
+county,55113,"Sawyer County, Wisconsin",154,1,0,0,74,80,0,0
+county,51061,"Fauquier County, Virginia",40,0,0,0,0,40,0,0
+county,51063,"Floyd County, Virginia",0,0,0,0,0,0,0,0
+county,51065,"Fluvanna County, Virginia",1068,26,0,0,1068,0,0,0
+county,51067,"Franklin County, Virginia",0,0,0,0,0,0,0,0
+county,51069,"Frederick County, Virginia",475,15,0,0,0,475,0,0
+county,51071,"Giles County, Virginia",0,0,0,0,0,0,0,0
+county,51073,"Gloucester County, Virginia",28,1,0,0,0,28,0,0
+county,51075,"Goochland County, Virginia",748,22,0,0,748,0,0,0
+county,51077,"Grayson County, Virginia",913,47,0,0,913,0,0,0
+county,51079,"Greene County, Virginia",0,0,0,0,0,0,0,0
+county,51081,"Greensville County, Virginia",3273,145,0,0,3099,174,0,0
+county,51083,"Halifax County, Virginia",236,3,0,0,236,0,0,0
+county,51085,"Hanover County, Virginia",326,6,17,0,0,309,0,0
+county,51087,"Henrico County, Virginia",656,17,0,0,0,611,45,0
+county,51089,"Henry County, Virginia",283,3,0,0,124,159,0,0
+county,51091,"Highland County, Virginia",0,0,0,0,0,0,0,0
+county,51093,"Isle of Wight County, Virginia",0,0,0,0,0,0,0,0
+county,51095,"James City County, Virginia",371,13,0,0,0,371,0,0
+county,51097,"King and Queen County, Virginia",0,0,0,0,0,0,0,0
+county,51099,"King George County, Virginia",0,0,0,0,0,0,0,0
+county,39047,"Fayette County, Ohio",95,7,0,0,0,95,0,0
+county,39049,"Franklin County, Ohio",2067,109,46,0,514,1361,146,0
+county,39051,"Fulton County, Ohio",0,0,0,0,0,0,0,0
+county,39053,"Gallia County, Ohio",40,0,0,0,0,40,0,0
+county,39055,"Geauga County, Ohio",116,46,62,0,0,54,0,0
+county,39057,"Greene County, Ohio",202,4,0,0,0,202,0,0
+county,39059,"Guernsey County, Ohio",68,5,0,0,0,68,0,0
+county,39061,"Hamilton County, Ohio",1241,19,0,188,0,905,148,0
+county,29065,"Dent County, Missouri",12,0,0,0,0,12,0,0
+county,29059,"Dallas County, Missouri",34,0,0,0,0,34,0,0
+county,29061,"Daviess County, Missouri",70,0,0,0,0,70,0,0
+county,29063,"DeKalb County, Missouri",1723,57,0,0,1723,0,0,0
+county,29067,"Douglas County, Missouri",26,4,0,0,0,26,0,0
+county,29069,"Dunklin County, Missouri",94,8,0,0,0,82,12,0
+county,29071,"Franklin County, Missouri",102,10,0,0,0,0,102,0
+county,29073,"Gasconade County, Missouri",0,0,0,0,0,0,0,0
+county,29075,"Gentry County, Missouri",1,0,0,0,0,1,0,0
+county,29077,"Greene County, Missouri",1477,156,98,811,0,568,0,0
+county,29079,"Grundy County, Missouri",0,0,0,0,0,0,0,0
+county,29081,"Harrison County, Missouri",26,7,0,0,0,26,0,0
+county,29083,"Henry County, Missouri",0,0,0,0,0,0,0,0
+county,29085,"Hickory County, Missouri",1,1,0,0,0,1,0,0
+county,29087,"Holt County, Missouri",6,0,0,0,0,6,0,0
+county,29089,"Howard County, Missouri",15,4,0,0,0,15,0,0
+county,29091,"Howell County, Missouri",24,5,0,0,0,24,0,0
+county,29093,"Iron County, Missouri",18,7,0,0,0,18,0,0
+county,29095,"Jackson County, Missouri",1496,284,0,0,330,1057,109,0
+county,29097,"Jasper County, Missouri",196,9,0,0,0,184,12,0
+county,29099,"Jefferson County, Missouri",150,1,0,0,0,150,0,0
+county,29101,"Johnson County, Missouri",123,7,0,0,0,115,8,0
+county,29103,"Knox County, Missouri",0,0,0,0,0,0,0,0
+county,29105,"Laclede County, Missouri",76,18,0,0,0,76,0,0
+county,29107,"Lafayette County, Missouri",150,35,25,0,0,125,0,0
+county,29109,"Lawrence County, Missouri",73,8,0,0,0,73,0,0
+county,29111,"Lewis County, Missouri",1,1,0,0,0,1,0,0
+county,29113,"Lincoln County, Missouri",189,32,23,0,0,166,0,0
+county,29115,"Linn County, Missouri",0,0,0,0,0,0,0,0
+county,29117,"Livingston County, Missouri",1137,26,0,0,1137,0,0,0
+county,29119,"McDonald County, Missouri",25,0,0,0,0,25,0,0
+county,29121,"Macon County, Missouri",0,0,0,0,0,0,0,0
+county,29123,"Madison County, Missouri",153,6,0,0,0,153,0,0
+county,29125,"Maries County, Missouri",0,0,0,0,0,0,0,0
+county,29127,"Marion County, Missouri",121,10,25,0,0,74,22,0
+county,29129,"Mercer County, Missouri",0,0,0,0,0,0,0,0
+county,29131,"Miller County, Missouri",72,7,0,0,0,72,0,0
+county,29133,"Mississippi County, Missouri",1280,37,0,0,1189,91,0,0
+county,29135,"Moniteau County, Missouri",748,16,0,0,742,6,0,0
+county,29137,"Monroe County, Missouri",16,1,0,0,0,16,0,0
+county,29139,"Montgomery County, Missouri",29,15,0,0,0,29,0,0
+county,29141,"Morgan County, Missouri",96,20,20,0,0,76,0,0
+county,29143,"New Madrid County, Missouri",0,0,0,0,0,0,0,0
+county,29145,"Newton County, Missouri",98,1,0,0,0,98,0,0
+county,29147,"Nodaway County, Missouri",470,7,0,0,455,15,0,0
+county,29149,"Oregon County, Missouri",11,0,0,0,0,11,0,0
+county,29151,"Osage County, Missouri",0,0,0,0,0,0,0,0
+county,29153,"Ozark County, Missouri",0,0,0,0,0,0,0,0
+county,29155,"Pemiscot County, Missouri",82,7,26,0,0,56,0,0
+county,29157,"Perry County, Missouri",28,4,0,0,0,28,0,0
+county,29159,"Pettis County, Missouri",156,12,0,0,0,156,0,0
+county,29161,"Phelps County, Missouri",411,5,58,0,170,183,0,0
+county,29163,"Pike County, Missouri",1352,30,0,0,1320,32,0,0
+county,45087,"Union County, South Carolina",98,3,0,0,0,98,0,0
+county,45081,"Saluda County, South Carolina",0,0,0,0,0,0,0,0
+county,45083,"Spartanburg County, South Carolina",1971,89,36,0,1257,532,146,0
+county,45085,"Sumter County, South Carolina",703,15,37,0,657,0,9,0
+county,45089,"Williamsburg County, South Carolina",1320,226,1,1319,0,0,0,0
+county,45091,"York County, South Carolina",252,9,0,0,0,252,0,0
+county,46003,"Aurora County, South Dakota",0,0,0,0,0,0,0,0
+county,46005,"Beadle County, South Dakota",24,12,0,0,0,24,0,0
+county,46007,"Bennett County, South Dakota",0,0,0,0,0,0,0,0
+county,46009,"Bon Homme County, South Dakota",1234,44,0,0,1229,5,0,0
+county,46011,"Brookings County, South Dakota",32,0,0,0,0,32,0,0
+county,46013,"Brown County, South Dakota",24,3,0,0,0,24,0,0
+county,46015,"Brule County, South Dakota",0,0,0,0,0,0,0,0
+county,46017,"Buffalo County, South Dakota",0,0,0,0,0,0,0,0
+county,46019,"Butte County, South Dakota",0,0,0,0,0,0,0,0
+county,46021,"Campbell County, South Dakota",0,0,0,0,0,0,0,0
+county,46023,"Charles Mix County, South Dakota",57,0,43,0,0,14,0,0
+county,46025,"Clark County, South Dakota",0,0,0,0,0,0,0,0
+county,46027,"Clay County, South Dakota",16,0,0,0,0,16,0,0
+county,46029,"Codington County, South Dakota",39,0,0,0,0,39,0,0
+county,46031,"Corson County, South Dakota",0,0,0,0,0,0,0,0
+county,46033,"Custer County, South Dakota",0,0,0,0,0,0,0,0
+county,46035,"Davison County, South Dakota",23,7,12,0,0,11,0,0
+county,46037,"Day County, South Dakota",2,0,0,0,0,2,0,0
+county,46039,"Deuel County, South Dakota",0,0,0,0,0,0,0,0
+county,46041,"Dewey County, South Dakota",0,0,0,0,0,0,0,0
+county,46043,"Douglas County, South Dakota",0,0,0,0,0,0,0,0
+county,46045,"Edmunds County, South Dakota",0,0,0,0,0,0,0,0
+county,46047,"Fall River County, South Dakota",11,4,0,0,0,11,0,0
+county,46049,"Faulk County, South Dakota",33,4,11,0,0,22,0,0
+county,46051,"Grant County, South Dakota",7,0,0,0,0,7,0,0
+county,46053,"Gregory County, South Dakota",0,0,0,0,0,0,0,0
+county,46055,"Haakon County, South Dakota",0,0,0,0,0,0,0,0
+county,46057,"Hamlin County, South Dakota",0,0,0,0,0,0,0,0
+county,31179,"Wayne County, Nebraska",0,0,0,0,0,0,0,0
+county,31173,"Thurston County, Nebraska",31,2,0,0,0,31,0,0
+county,31175,"Valley County, Nebraska",0,0,0,0,0,0,0,0
+county,31177,"Washington County, Nebraska",8,3,0,0,0,8,0,0
+county,31181,"Webster County, Nebraska",0,0,0,0,0,0,0,0
+county,31183,"Wheeler County, Nebraska",0,0,0,0,0,0,0,0
+county,31185,"York County, Nebraska",304,34,0,0,293,11,0,0
+county,32001,"Churchill County, Nevada",69,10,0,0,0,69,0,0
+county,32003,"Clark County, Nevada",11232,2532,119,0,6240,4581,292,0
+county,32005,"Douglas County, Nevada",12,3,0,0,0,12,0,0
+county,32007,"Elko County, Nevada",367,88,0,0,252,115,0,0
+county,32009,"Esmeralda County, Nevada",1,0,0,0,0,1,0,0
+county,32011,"Eureka County, Nevada",0,0,0,0,0,0,0,0
+county,32013,"Humboldt County, Nevada",129,2,0,0,102,27,0,0
+county,32015,"Lander County, Nevada",0,0,0,0,0,0,0,0
+county,32017,"Lincoln County, Nevada",236,43,0,0,209,27,0,0
+county,32019,"Lyon County, Nevada",55,4,0,0,0,55,0,0
+county,32021,"Mineral County, Nevada",30,14,0,0,0,30,0,0
+county,32023,"Nye County, Nevada",953,289,708,0,94,151,0,0
+county,32027,"Pershing County, Nevada",1708,480,0,0,1693,15,0,0
+county,32029,"Storey County, Nevada",0,0,0,0,0,0,0,0
+county,49009,"Daggett County, Utah",0,0,0,0,0,0,0,0
+county,49011,"Davis County, Utah",324,72,56,0,0,268,0,0
+county,49013,"Duchesne County, Utah",91,13,0,0,0,91,0,0
+county,49015,"Emery County, Utah",0,0,0,0,0,0,0,0
+county,49017,"Garfield County, Utah",60,23,0,0,0,60,0,0
+county,49019,"Grand County, Utah",34,9,0,0,0,34,0,0
+county,49021,"Iron County, Utah",120,23,30,0,0,90,0,0
+county,49023,"Juab County, Utah",33,6,0,0,0,33,0,0
+county,49025,"Kane County, Utah",163,31,0,0,0,163,0,0
+county,49027,"Millard County, Utah",52,10,0,0,0,52,0,0
+county,49029,"Morgan County, Utah",0,0,0,0,0,0,0,0
+county,49031,"Piute County, Utah",0,0,0,0,0,0,0,0
+county,49033,"Rich County, Utah",4,0,0,0,0,4,0,0
+county,49035,"Salt Lake County, Utah",5128,1175,87,0,3136,1661,244,0
+county,49037,"San Juan County, Utah",73,32,0,0,0,73,0,0
+county,49039,"Sanpete County, Utah",1737,354,0,0,1638,99,0,0
+county,49041,"Sevier County, Utah",91,17,0,0,0,0,91,0
+county,49043,"Summit County, Utah",28,5,0,0,0,28,0,0
+county,49045,"Tooele County, Utah",199,45,60,0,0,139,0,0
+county,49047,"Uintah County, Utah",12,1,12,0,0,0,0,0
+county,49049,"Utah County, Utah",447,106,0,0,0,357,90,0
+county,49051,"Wasatch County, Utah",71,24,0,0,0,71,0,0
+county,49053,"Washington County, Utah",420,97,15,0,0,405,0,0
+county,49055,"Wayne County, Utah",0,0,0,0,0,0,0,0
+county,49057,"Weber County, Utah",902,22,20,0,0,755,127,0
+county,50001,"Addison County, Vermont",0,0,0,0,0,0,0,0
+county,50003,"Bennington County, Vermont",0,0,0,0,0,0,0,0
+county,50005,"Caledonia County, Vermont",122,3,0,0,122,0,0,0
+county,50007,"Chittenden County, Vermont",94,9,21,0,73,0,0,0
+county,50009,"Essex County, Vermont",0,0,0,0,0,0,0,0
+county,50011,"Franklin County, Vermont",198,5,40,0,158,0,0,0
+county,50013,"Grand Isle County, Vermont",0,0,0,0,0,0,0,0
+county,42013,"Blair County, Pennsylvania",272,5,0,0,0,272,0,0
+county,42007,"Beaver County, Pennsylvania",78,3,8,0,0,70,0,0
+county,42009,"Bedford County, Pennsylvania",48,4,0,0,0,48,0,0
+county,42011,"Berks County, Pennsylvania",859,289,72,0,40,689,58,0
+county,42015,"Bradford County, Pennsylvania",156,0,0,0,0,156,0,0
+county,42017,"Bucks County, Pennsylvania",792,64,0,0,0,640,152,0
+county,42019,"Butler County, Pennsylvania",243,8,25,0,0,218,0,0
+county,42021,"Cambria County, Pennsylvania",1409,185,39,967,0,361,42,0
+county,42023,"Cameron County, Pennsylvania",0,0,0,0,0,0,0,0
+county,42025,"Carbon County, Pennsylvania",208,12,0,0,0,208,0,0
+county,42027,"Centre County, Pennsylvania",4592,427,0,0,4376,216,0,0
+county,42029,"Chester County, Pennsylvania",554,117,0,0,0,38,516,0
+county,42031,"Clarion County, Pennsylvania",66,8,0,0,0,66,0,0
+county,42033,"Clearfield County, Pennsylvania",4805,1534,0,1745,2905,101,54,0
+county,42035,"Clinton County, Pennsylvania",157,40,39,0,0,118,0,0
+county,42037,"Columbia County, Pennsylvania",155,11,49,0,0,0,106,0
+county,42039,"Crawford County, Pennsylvania",1315,73,0,0,1149,166,0,0
+county,42041,"Cumberland County, Pennsylvania",3125,289,16,0,2873,225,11,0
+county,42043,"Dauphin County, Pennsylvania",1471,468,95,0,0,980,396,0
+county,42045,"Delaware County, Pennsylvania",2390,270,0,0,1110,0,1280,0
+county,42047,"Elk County, Pennsylvania",41,1,0,0,0,41,0,0
+county,42049,"Erie County, Pennsylvania",2876,188,32,0,2264,451,129,0
+county,42051,"Fayette County, Pennsylvania",2168,130,0,0,1997,171,0,0
+county,42053,"Forest County, Pennsylvania",2653,274,0,0,2653,0,0,0
+county,42055,"Franklin County, Pennsylvania",0,0,0,0,0,0,0,0
+county,42057,"Fulton County, Pennsylvania",0,0,0,0,0,0,0,0
+county,42059,"Greene County, Pennsylvania",1820,128,0,0,1773,47,0,0
+county,42061,"Huntingdon County, Pennsylvania",3336,307,0,0,3292,44,0,0
+county,42063,"Indiana County, Pennsylvania",1047,80,10,0,853,148,36,0
+county,37079,"Greene County, North Carolina",3129,154,0,0,3129,0,0,0
+county,37081,"Guilford County, North Carolina",892,51,10,0,0,831,51,0
+county,37083,"Halifax County, North Carolina",983,42,0,0,983,0,0,0
+county,37085,"Harnett County, North Carolina",966,153,26,0,940,0,0,0
+county,37087,"Haywood County, North Carolina",86,11,0,0,0,86,0,0
+county,37089,"Henderson County, North Carolina",155,2,0,0,0,155,0,0
+county,37091,"Hertford County, North Carolina",1288,859,0,1215,0,73,0,0
+county,37093,"Hoke County, North Carolina",142,15,38,0,0,104,0,0
+county,37095,"Hyde County, North Carolina",531,14,0,0,531,0,0,0
+county,37097,"Iredell County, North Carolina",324,4,0,0,0,324,0,0
+county,37099,"Jackson County, North Carolina",0,0,0,0,0,0,0,0
+county,37101,"Johnston County, North Carolina",865,36,0,0,634,231,0,0
+county,37103,"Jones County, North Carolina",6,0,0,0,0,6,0,0
+county,37105,"Lee County, North Carolina",416,19,0,0,318,98,0,0
+county,37107,"Lenoir County, North Carolina",94,12,0,0,0,94,0,0
+county,37109,"Lincoln County, North Carolina",218,8,0,0,218,0,0,0
+county,37111,"McDowell County, North Carolina",944,84,26,0,771,147,0,0
+county,37113,"Macon County, North Carolina",78,6,0,0,0,78,0,0
+county,37115,"Madison County, North Carolina",0,0,0,0,0,0,0,0
+county,37117,"Martin County, North Carolina",0,0,0,0,0,0,0,0
+county,37119,"Mecklenburg County, North Carolina",1584,166,90,0,10,1454,30,0
+county,37121,"Mitchell County, North Carolina",0,0,0,0,0,0,0,0
+county,37123,"Montgomery County, North Carolina",386,19,0,0,315,71,0,0
+county,37125,"Moore County, North Carolina",0,0,0,0,0,0,0,0
+county,37127,"Nash County, North Carolina",770,38,0,0,629,141,0,0
+county,37129,"New Hanover County, North Carolina",597,34,54,0,543,0,0,0
+county,37131,"Northampton County, North Carolina",21,0,0,0,0,21,0,0
+county,37133,"Onslow County, North Carolina",237,8,0,0,0,237,0,0
+county,37135,"Orange County, North Carolina",307,20,29,0,213,65,0,0
+county,37137,"Pamlico County, North Carolina",633,33,52,0,556,25,0,0
+county,37139,"Pasquotank County, North Carolina",1018,39,63,0,746,209,0,0
+county,37141,"Pender County, North Carolina",742,71,0,0,700,42,0,0
+county,37143,"Perquimans County, North Carolina",0,0,0,0,0,0,0,0
+county,26067,"Ionia County, Michigan",6796,443,0,0,6710,86,0,0
+county,26069,"Iosco County, Michigan",7,1,0,0,0,7,0,0
+county,26071,"Iron County, Michigan",20,3,0,0,0,20,0,0
+county,26073,"Isabella County, Michigan",127,7,38,0,0,89,0,0
+county,26075,"Jackson County, Michigan",6371,184,0,0,6133,238,0,0
+county,26077,"Kalamazoo County, Michigan",39,15,27,0,0,0,12,0
+county,26079,"Kalkaska County, Michigan",30,1,0,0,0,30,0,0
+county,26081,"Kent County, Michigan",819,71,0,0,0,674,145,0
+county,26083,"Keweenaw County, Michigan",0,0,0,0,0,0,0,0
+county,26085,"Lake County, Michigan",1125,945,1067,0,0,58,0,0
+county,26087,"Lapeer County, Michigan",997,22,0,0,951,46,0,0
+county,26089,"Leelanau County, Michigan",10,0,0,0,0,10,0,0
+county,26091,"Lenawee County, Michigan",2280,81,0,0,2146,134,0,0
+county,26093,"Livingston County, Michigan",540,14,38,0,331,171,0,0
+county,26095,"Luce County, Michigan",0,0,0,0,0,0,0,0
+county,26097,"Mackinac County, Michigan",12,3,4,0,0,8,0,0
+county,26099,"Macomb County, Michigan",1881,62,0,0,1345,536,0,0
+county,26101,"Manistee County, Michigan",1044,30,0,0,1023,21,0,0
+county,26103,"Marquette County, Michigan",952,22,20,0,873,59,0,0
+county,26105,"Mason County, Michigan",23,3,0,0,0,23,0,0
+county,26107,"Mecosta County, Michigan",44,2,0,0,0,44,0,0
+county,26109,"Menominee County, Michigan",49,11,0,0,0,49,0,0
+county,26111,"Midland County, Michigan",144,15,9,0,0,135,0,0
+county,26113,"Missaukee County, Michigan",0,0,0,0,0,0,0,0
+county,26115,"Monroe County, Michigan",430,55,49,0,0,364,17,0
+county,48007,"Aransas County, Texas",197,55,120,0,0,0,77,0
+county,48001,"Anderson County, Texas",13344,3742,0,0,13191,153,0,0
+county,48003,"Andrews County, Texas",0,0,0,0,0,0,0,0
+county,48005,"Angelina County, Texas",1104,385,0,0,933,171,0,0
+county,48009,"Archer County, Texas",26,11,0,0,0,26,0,0
+county,48011,"Armstrong County, Texas",3,3,0,0,0,3,0,0
+county,48013,"Atascosa County, Texas",0,0,0,0,0,0,0,0
+county,48015,"Austin County, Texas",40,11,0,0,0,40,0,0
+county,48017,"Bailey County, Texas",78,39,4,0,0,74,0,0
+county,48019,"Bandera County, Texas",62,32,0,0,0,62,0,0
+county,48021,"Bastrop County, Texas",1647,874,92,1394,0,161,0,0
+county,48023,"Baylor County, Texas",0,0,0,0,0,0,0,0
+county,48025,"Bee County, Texas",7242,4030,17,0,7126,99,0,0
+county,48027,"Bell County, Texas",971,196,12,0,0,776,80,103
+county,48029,"Bexar County, Texas",5919,3581,8,398,2069,3119,316,9
+county,48031,"Blanco County, Texas",16,3,0,0,0,16,0,0
+county,48033,"Borden County, Texas",0,0,0,0,0,0,0,0
+county,48035,"Bosque County, Texas",16,8,0,0,0,16,0,0
+county,48037,"Bowie County, Texas",4733,1217,8,1189,2836,700,0,0
+county,48039,"Brazoria County, Texas",8816,2764,0,0,8095,721,0,0
+county,48041,"Brazos County, Texas",2415,854,0,893,1025,497,0,0
+county,48043,"Brewster County, Texas",25,7,25,0,0,0,0,0
+county,48045,"Briscoe County, Texas",0,0,0,0,0,0,0,0
+county,48047,"Brooks County, Texas",412,138,283,0,0,129,0,0
+county,48049,"Brown County, Texas",572,222,0,0,572,0,0,0
+county,48051,"Burleson County, Texas",33,14,0,0,0,33,0,0
+county,48053,"Burnet County, Texas",680,186,98,0,379,203,0,0
+county,48055,"Caldwell County, Texas",1172,368,38,0,992,142,0,0
+county,48057,"Calhoun County, Texas",60,25,0,0,0,60,0,0
+county,48059,"Callahan County, Texas",13,0,0,0,0,13,0,0
+county,48061,"Cameron County, Texas",2033,1804,1028,0,0,930,75,0
+county,48063,"Camp County, Texas",0,0,0,0,0,0,0,0
+county,48065,"Carson County, Texas",18,5,0,0,0,18,0,0
+county,48067,"Cass County, Texas",50,6,0,0,0,50,0,0
+county,48069,"Castro County, Texas",30,16,0,0,0,30,0,0
+county,48071,"Chambers County, Texas",92,17,0,0,0,92,0,0
+county,48073,"Cherokee County, Texas",1554,378,0,0,1420,134,0,0
+county,17137,"Morgan County, Illinois",1065,106,0,0,1035,30,0,0
+county,17131,"Mercer County, Illinois",34,4,12,0,0,22,0,0
+county,17133,"Monroe County, Illinois",9,2,9,0,0,0,0,0
+county,39161,"Van Wert County, Ohio",41,3,0,0,0,41,0,0
+county,39163,"Vinton County, Ohio",0,0,0,0,0,0,0,0
+county,39165,"Warren County, Ohio",3512,75,0,0,2987,148,377,0
+county,39167,"Washington County, Ohio",74,6,10,0,0,64,0,0
+county,39169,"Wayne County, Ohio",115,6,0,0,0,115,0,0
+county,39171,"Williams County, Ohio",626,87,40,0,0,586,0,0
+county,39173,"Wood County, Ohio",156,11,0,0,0,123,33,0
+county,39175,"Wyandot County, Ohio",6,1,0,0,0,6,0,0
+county,40001,"Adair County, Oklahoma",34,2,0,0,0,34,0,0
+county,40003,"Alfalfa County, Oklahoma",1152,87,0,0,1147,5,0,0
+county,42123,"Warren County, Pennsylvania",120,2,0,0,0,120,0,0
+county,42117,"Tioga County, Pennsylvania",39,0,0,0,0,39,0,0
+county,42119,"Union County, Pennsylvania",3535,721,22,3480,0,33,0,0
+county,42121,"Venango County, Pennsylvania",51,0,0,0,0,51,0,0
+county,42125,"Washington County, Pennsylvania",303,2,0,0,0,303,0,0
+county,42127,"Wayne County, Pennsylvania",2750,442,10,1299,1359,82,0,0
+county,42129,"Westmoreland County, Pennsylvania",583,3,0,0,0,498,85,0
+county,42131,"Wyoming County, Pennsylvania",56,4,0,0,0,56,0,0
+county,42133,"York County, Pennsylvania",1686,579,304,0,0,1331,51,0
+county,44001,"Bristol County, Rhode Island",0,0,0,0,0,0,0,0
+county,44003,"Kent County, Rhode Island",0,0,0,0,0,0,0,0
+county,44005,"Newport County, Rhode Island",0,0,0,0,0,0,0,0
+county,44007,"Providence County, Rhode Island",3082,979,654,0,2428,0,0,0
+county,44009,"Washington County, Rhode Island",0,0,0,0,0,0,0,0
+county,45001,"Abbeville County, South Carolina",45,10,0,0,0,45,0,0
+county,45003,"Aiken County, South Carolina",383,19,0,0,0,383,0,0
+county,45005,"Allendale County, South Carolina",911,65,0,0,900,11,0,0
+county,45007,"Anderson County, South Carolina",91,1,41,0,0,50,0,0
+county,45009,"Bamberg County, South Carolina",14,0,0,0,0,14,0,0
+county,45011,"Barnwell County, South Carolina",281,1,43,0,0,238,0,0
+county,45013,"Beaufort County, South Carolina",0,0,0,0,0,0,0,0
+county,45015,"Berkeley County, South Carolina",1043,31,0,0,617,306,0,120
+county,45017,"Calhoun County, South Carolina",0,0,0,0,0,0,0,0
+county,45019,"Charleston County, South Carolina",942,80,50,0,0,892,0,0
+county,45021,"Cherokee County, South Carolina",220,5,0,0,0,220,0,0
+county,45023,"Chester County, South Carolina",49,1,0,0,0,49,0,0
+county,45025,"Chesterfield County, South Carolina",76,5,0,0,0,76,0,0
+county,45027,"Clarendon County, South Carolina",1034,28,0,0,1015,19,0,0
+county,45029,"Colleton County, South Carolina",0,0,0,0,0,0,0,0
+county,45031,"Darlington County, South Carolina",185,4,32,0,0,153,0,0
+county,45033,"Dillon County, South Carolina",95,41,30,0,0,65,0,0
+county,45035,"Dorchester County, South Carolina",1186,14,17,0,1088,81,0,0
+county,45037,"Edgefield County, South Carolina",2043,276,0,1603,440,0,0,0
+county,45039,"Fairfield County, South Carolina",55,7,0,0,0,55,0,0
+county,45041,"Florence County, South Carolina",549,2,29,0,274,246,0,0
+county,45043,"Georgetown County, South Carolina",108,6,25,0,0,83,0,0
+county,45045,"Greenville County, South Carolina",1830,83,47,0,818,965,0,0
+county,45047,"Greenwood County, South Carolina",552,17,0,0,552,0,0,0
+county,45049,"Hampton County, South Carolina",1202,294,0,1180,0,22,0,0
+county,19173,"Taylor County, Iowa",9,3,0,0,0,9,0,0
+county,19175,"Union County, Iowa",12,0,0,0,0,12,0,0
+county,19177,"Van Buren County, Iowa",9,6,0,0,0,9,0,0
+county,19179,"Wapello County, Iowa",128,7,0,0,0,71,57,0
+county,19181,"Warren County, Iowa",0,0,0,0,0,0,0,0
+county,19183,"Washington County, Iowa",17,1,0,0,0,17,0,0
+county,19185,"Wayne County, Iowa",11,0,0,0,0,11,0,0
+county,19187,"Webster County, Iowa",1356,86,0,0,1280,36,40,0
+county,19189,"Winnebago County, Iowa",15,8,0,0,0,15,0,0
+county,19191,"Winneshiek County, Iowa",0,0,0,0,0,0,0,0
+county,19193,"Woodbury County, Iowa",357,66,33,0,0,298,26,0
+county,19195,"Worth County, Iowa",1,0,0,0,0,1,0,0
+county,19197,"Wright County, Iowa",7,0,0,0,0,7,0,0
+county,20001,"Allen County, Kansas",28,0,0,0,0,28,0,0
+county,20003,"Anderson County, Kansas",15,2,0,0,0,15,0,0
+county,20005,"Atchison County, Kansas",39,0,6,0,0,33,0,0
+county,55029,"Door County, Wisconsin",37,6,0,0,0,30,7,0
+county,55031,"Douglas County, Wisconsin",199,10,8,0,88,103,0,0
+county,55033,"Dunn County, Wisconsin",71,3,0,0,0,71,0,0
+county,55035,"Eau Claire County, Wisconsin",147,3,0,0,0,147,0,0
+county,55037,"Florence County, Wisconsin",5,4,0,0,0,5,0,0
+county,55039,"Fond du Lac County, Wisconsin",1109,65,0,0,870,220,19,0
+county,55041,"Forest County, Wisconsin",43,5,0,0,0,43,0,0
+county,55043,"Grant County, Wisconsin",512,46,0,0,458,54,0,0
+county,55045,"Green County, Wisconsin",17,4,0,0,0,17,0,0
+county,55047,"Green Lake County, Wisconsin",71,18,0,0,0,71,0,0
+county,55049,"Iowa County, Wisconsin",14,5,0,0,0,14,0,0
+county,55051,"Iron County, Wisconsin",5,0,0,0,0,5,0,0
+county,55053,"Jackson County, Wisconsin",1121,78,0,0,1085,34,2,0
+county,55055,"Jefferson County, Wisconsin",106,8,0,0,0,106,0,0
+county,55057,"Juneau County, Wisconsin",1399,74,0,0,1021,378,0,0
+county,55059,"Kenosha County, Wisconsin",592,450,50,0,436,106,0,0
+county,55061,"Kewaunee County, Wisconsin",17,5,0,0,0,17,0,0
+county,55063,"La Crosse County, Wisconsin",59,11,0,0,0,59,0,0
+county,55065,"Lafayette County, Wisconsin",16,4,0,0,0,16,0,0
+county,55067,"Langlade County, Wisconsin",71,4,0,0,0,71,0,0
+county,55069,"Lincoln County, Wisconsin",69,0,0,0,0,69,0,0
+county,55071,"Manitowoc County, Wisconsin",183,4,24,0,0,159,0,0
+county,55073,"Marathon County, Wisconsin",262,15,0,0,0,262,0,0
+county,55075,"Marinette County, Wisconsin",113,9,0,0,0,113,0,0
+county,55077,"Marquette County, Wisconsin",26,3,0,0,0,26,0,0
+county,55078,"Menominee County, Wisconsin",0,0,0,0,0,0,0,0
+county,55079,"Milwaukee County, Wisconsin",2819,278,19,0,1126,1621,53,0
+county,55081,"Monroe County, Wisconsin",57,0,0,0,0,57,0,0
+county,55083,"Oconto County, Wisconsin",79,3,0,0,0,79,0,0
+county,55085,"Oneida County, Wisconsin",260,17,0,0,109,151,0,0
+county,55087,"Outagamie County, Wisconsin",434,28,0,0,116,291,27,0
+county,24041,"Talbot County, Maryland",42,0,10,0,0,32,0,0
+county,24043,"Washington County, Maryland",5643,382,0,0,5322,321,0,0
+county,24045,"Wicomico County, Maryland",247,16,0,0,0,247,0,0
+county,24047,"Worcester County, Maryland",218,62,15,0,0,203,0,0
+county,24510,"Baltimore city, Maryland",2568,75,120,0,2448,0,0,0
+county,25001,"Barnstable County, Massachusetts",213,8,42,0,0,0,171,0
+county,25003,"Berkshire County, Massachusetts",188,17,0,0,0,0,188,0
+county,25005,"Bristol County, Massachusetts",885,217,36,0,0,849,0,0
+county,25007,"Dukes County, Massachusetts",15,0,0,0,0,15,0,0
+county,25009,"Essex County, Massachusetts",2118,1273,0,0,0,2118,0,0
+county,25011,"Franklin County, Massachusetts",318,88,61,0,0,257,0,0
+county,25013,"Hampden County, Massachusetts",1031,473,58,0,0,973,0,0
+county,25015,"Hampshire County, Massachusetts",143,44,19,0,0,124,0,0
+county,25017,"Middlesex County, Massachusetts",3109,963,14,0,2364,708,23,0
+county,25019,"Nantucket County, Massachusetts",0,0,0,0,0,0,0,0
+county,25021,"Norfolk County, Massachusetts",2381,544,92,0,1951,338,0,0
+county,25023,"Plymouth County, Massachusetts",2667,547,81,0,1593,993,0,0
+county,25025,"Suffolk County, Massachusetts",915,271,0,0,86,760,69,0
+county,25027,"Worcester County, Massachusetts",3986,1139,73,899,2404,568,42,0
+county,26001,"Alcona County, Michigan",7,0,0,0,0,7,0,0
+county,55115,"Shawano County, Wisconsin",153,7,0,0,0,153,0,0
+county,55117,"Sheboygan County, Wisconsin",1431,121,0,0,1162,269,0,0
+county,55119,"Taylor County, Wisconsin",38,4,0,0,0,38,0,0
+county,55121,"Trempealeau County, Wisconsin",13,0,0,0,0,13,0,0
+county,55123,"Vernon County, Wisconsin",61,1,0,0,0,61,0,0
+county,55125,"Vilas County, Wisconsin",65,7,0,0,0,65,0,0
+county,55127,"Walworth County, Wisconsin",134,25,0,0,0,134,0,0
+county,55129,"Washburn County, Wisconsin",3,2,0,0,0,3,0,0
+county,55131,"Washington County, Wisconsin",128,24,0,0,0,128,0,0
+county,55133,"Waukesha County, Wisconsin",351,11,15,0,0,317,19,0
+county,55135,"Waupaca County, Wisconsin",207,8,0,0,0,207,0,0
+county,55137,"Waushara County, Wisconsin",1075,86,0,0,997,78,0,0
+county,55139,"Winnebago County, Wisconsin",3045,204,0,50,2919,76,0,0
+county,55141,"Wood County, Wisconsin",62,2,0,0,0,62,0,0
+county,56001,"Albany County, Wyoming",52,5,15,0,0,37,0,0
+county,56003,"Big Horn County, Wyoming",100,14,29,0,0,0,71,0
+county,56005,"Campbell County, Wyoming",223,17,0,0,0,110,113,0
+county,56007,"Carbon County, Wyoming",538,52,0,0,538,0,0,0
+county,56009,"Converse County, Wyoming",32,0,0,0,0,32,0,0
+county,56011,"Crook County, Wyoming",0,0,0,0,0,0,0,0
+county,56013,"Fremont County, Wyoming",339,31,0,0,326,13,0,0
+county,56015,"Goshen County, Wyoming",601,57,0,0,601,0,0,0
+county,56017,"Hot Springs County, Wyoming",11,0,0,0,0,11,0,0
+county,56019,"Johnson County, Wyoming",19,4,0,0,0,19,0,0
+county,56021,"Laramie County, Wyoming",258,38,0,0,0,195,63,0
+county,56023,"Lincoln County, Wyoming",0,0,0,0,0,0,0,0
+county,56025,"Natrona County, Wyoming",275,39,21,0,0,254,0,0
+county,56027,"Niobrara County, Wyoming",277,25,0,0,269,8,0,0
+county,56029,"Park County, Wyoming",0,0,0,0,0,0,0,0
+county,56031,"Platte County, Wyoming",44,2,44,0,0,0,0,0
+county,56033,"Sheridan County, Wyoming",0,0,0,0,0,0,0,0
+county,56035,"Sublette County, Wyoming",0,0,0,0,0,0,0,0
+county,56037,"Sweetwater County, Wyoming",74,5,0,0,0,74,0,0
+county,56039,"Teton County, Wyoming",0,0,0,0,0,0,0,0
+county,56041,"Uinta County, Wyoming",67,18,0,0,20,47,0,0
+county,56043,"Washakie County, Wyoming",0,0,0,0,0,0,0,0
+county,56045,"Weston County, Wyoming",442,98,0,0,374,0,68,0
+county,46059,"Hand County, South Dakota",0,0,0,0,0,0,0,0
+county,46061,"Hanson County, South Dakota",0,0,0,0,0,0,0,0
+county,46063,"Harding County, South Dakota",0,0,0,0,0,0,0,0
+county,46065,"Hughes County, South Dakota",571,8,81,0,440,50,0,0
+county,46067,"Hutchinson County, South Dakota",0,0,0,0,0,0,0,0
+county,29165,"Platte County, Missouri",58,3,7,0,0,51,0,0
+county,29167,"Polk County, Missouri",37,0,0,0,0,37,0,0
+county,29169,"Pulaski County, Missouri",63,5,0,0,0,63,0,0
+county,29171,"Putnam County, Missouri",0,0,0,0,0,0,0,0
+county,17135,"Montgomery County, Illinois",1866,147,0,0,1797,0,69,0
+county,17139,"Moultrie County, Illinois",46,5,18,0,0,28,0,0
+county,17141,"Ogle County, Illinois",20,10,5,0,0,15,0,0
+county,17143,"Peoria County, Illinois",522,99,55,15,0,255,197,0
+county,17145,"Perry County, Illinois",1993,296,0,0,1877,24,92,0
+county,17147,"Piatt County, Illinois",0,0,0,0,0,0,0,0
+county,17149,"Pike County, Illinois",125,20,14,0,0,28,83,0
+county,17151,"Pope County, Illinois",67,14,0,0,0,0,67,0
+county,17153,"Pulaski County, Illinois",132,126,132,0,0,0,0,0
+county,17155,"Putnam County, Illinois",11,5,0,0,0,11,0,0
+county,17157,"Randolph County, Illinois",2203,249,17,0,2186,0,0,0
+county,17159,"Richland County, Illinois",2,0,0,0,0,2,0,0
+county,17161,"Rock Island County, Illinois",1278,201,24,0,1090,164,0,0
+county,17163,"St. Clair County, Illinois",1053,131,64,0,589,400,0,0
+county,17165,"Saline County, Illinois",78,4,11,0,0,67,0,0
+county,17167,"Sangamon County, Illinois",307,8,0,0,0,265,42,0
+county,17169,"Schuyler County, Illinois",16,5,0,0,0,16,0,0
+county,17171,"Scott County, Illinois",0,0,0,0,0,0,0,0
+county,17173,"Shelby County, Illinois",16,0,0,0,0,16,0,0
+county,17175,"Stark County, Illinois",7,7,0,0,0,7,0,0
+county,17177,"Stephenson County, Illinois",4,1,4,0,0,0,0,0
+county,17179,"Tazewell County, Illinois",1286,121,8,1278,0,0,0,0
+county,17181,"Union County, Illinois",0,0,0,0,0,0,0,0
+county,17183,"Vermilion County, Illinois",1834,321,0,0,1606,228,0,0
+county,17185,"Wabash County, Illinois",0,0,0,0,0,0,0,0
+county,17187,"Warren County, Illinois",9,1,0,0,0,9,0,0
+county,17189,"Washington County, Illinois",45,15,29,0,0,16,0,0
+county,17191,"Wayne County, Illinois",0,0,0,0,0,0,0,0
+county,17193,"White County, Illinois",35,0,2,0,0,33,0,0
+county,17195,"Whiteside County, Illinois",80,29,0,0,0,80,0,0
+county,17197,"Will County, Illinois",3542,516,0,0,2919,623,0,0
+county,17199,"Williamson County, Illinois",1438,68,36,1351,0,51,0,0
+county,17201,"Winnebago County, Illinois",579,60,105,0,0,474,0,0
+county,17203,"Woodford County, Illinois",49,7,20,0,0,29,0,0
+county,18001,"Adams County, Indiana",107,21,25,0,0,82,0,0
+county,18003,"Allen County, Indiana",731,63,50,0,0,639,42,0
+county,18005,"Bartholomew County, Indiana",206,9,0,0,0,185,21,0
+county,18007,"Benton County, Indiana",27,1,0,0,0,27,0,0
+county,18009,"Blackford County, Indiana",44,0,0,0,0,44,0,0
+county,18011,"Boone County, Indiana",151,8,0,0,0,151,0,0
+county,18013,"Brown County, Indiana",37,2,0,0,0,37,0,0
+county,18015,"Carroll County, Indiana",0,0,0,0,0,0,0,0
+county,18017,"Cass County, Indiana",184,11,0,0,0,184,0,0
+county,18019,"Clark County, Indiana",221,18,15,0,0,206,0,0
+county,18021,"Clay County, Indiana",156,47,51,0,0,105,0,0
+county,18023,"Clinton County, Indiana",116,17,0,0,0,116,0,0
+county,18025,"Crawford County, Indiana",0,0,0,0,0,0,0,0
+county,18027,"Daviess County, Indiana",110,9,0,0,0,110,0,0
+county,18029,"Dearborn County, Indiana",190,1,0,0,0,190,0,0
+county,18031,"Decatur County, Indiana",100,0,0,0,0,100,0,0
+county,18033,"DeKalb County, Indiana",75,0,0,0,0,75,0,0
+county,18035,"Delaware County, Indiana",231,7,0,0,0,231,0,0
+county,18037,"Dubois County, Indiana",117,4,0,0,0,103,14,0
+county,18039,"Elkhart County, Indiana",77,8,1,0,0,24,52,0
+county,26123,"Newaygo County, Michigan",280,26,127,0,0,153,0,0
+county,26117,"Montcalm County, Michigan",5070,476,0,0,4966,104,0,0
+county,26119,"Montmorency County, Michigan",6,0,0,0,0,6,0,0
+county,26121,"Muskegon County, Michigan",3991,121,0,0,3579,383,29,0
+county,26125,"Oakland County, Michigan",1012,21,0,0,0,1012,0,0
+county,26127,"Oceana County, Michigan",29,2,0,0,0,29,0,0
+county,26129,"Ogemaw County, Michigan",69,7,0,0,0,65,4,0
+county,32031,"Washoe County, Nevada",966,197,95,0,109,762,0,0
+county,32033,"White Pine County, Nevada",1042,266,0,0,1029,13,0,0
+county,32510,"Carson City, Nevada",2775,439,0,0,2645,130,0,0
+county,33001,"Belknap County, New Hampshire",62,7,0,0,0,62,0,0
+county,33003,"Carroll County, New Hampshire",41,0,0,0,0,41,0,0
+county,33005,"Cheshire County, New Hampshire",99,6,45,0,0,54,0,0
+county,33007,"Coos County, New Hampshire",715,171,0,692,0,23,0,0
+county,33009,"Grafton County, New Hampshire",75,1,0,0,0,75,0,0
+county,33011,"Hillsborough County, New Hampshire",334,71,0,0,68,232,34,0
+county,33013,"Merrimack County, New Hampshire",2530,207,20,0,1995,156,359,0
+county,33015,"Rockingham County, New Hampshire",163,13,0,0,0,163,0,0
+county,33017,"Strafford County, New Hampshire",333,63,187,0,0,146,0,0
+county,33019,"Sullivan County, New Hampshire",43,1,0,0,0,0,43,0
+county,34001,"Atlantic County, New Jersey",394,53,0,0,0,394,0,0
+county,34003,"Bergen County, New Jersey",723,505,251,0,0,472,0,0
+county,34005,"Burlington County, New Jersey",7019,1518,0,2997,3652,370,0,0
+county,34007,"Camden County, New Jersey",567,125,0,0,0,567,0,0
+county,34009,"Cape May County, New Jersey",137,27,0,0,0,137,0,0
+county,34011,"Cumberland County, New Jersey",8447,3451,0,1035,6947,53,412,0
+county,34013,"Essex County, New Jersey",9263,2267,422,0,5642,1636,1563,0
+county,34015,"Gloucester County, New Jersey",0,0,0,0,0,0,0,0
+county,34017,"Hudson County, New Jersey",1326,456,354,0,155,817,0,0
+county,34019,"Hunterdon County, New Jersey",2040,498,0,0,2040,0,0,0
+county,34021,"Mercer County, New Jersey",3414,783,0,0,1994,318,1102,0
+county,34023,"Middlesex County, New Jersey",1883,553,0,0,1065,390,428,0
+county,34025,"Monmouth County, New Jersey",410,62,25,0,0,385,0,0
+county,34027,"Morris County, New Jersey",33,10,0,0,0,33,0,0
+county,34029,"Ocean County, New Jersey",206,37,0,0,0,206,0,0
+county,34031,"Passaic County, New Jersey",348,139,0,0,0,348,0,0
+county,34033,"Salem County, New Jersey",88,24,88,0,0,0,0,0
+county,34035,"Somerset County, New Jersey",120,54,0,0,0,120,0,0
+county,34037,"Sussex County, New Jersey",0,0,0,0,0,0,0,0
+county,34039,"Union County, New Jersey",362,152,169,0,0,193,0,0
+county,34041,"Warren County, New Jersey",71,11,0,0,0,71,0,0
+county,35001,"Bernalillo County, New Mexico",1540,795,0,0,0,1297,243,0
+county,31065,"Furnas County, Nebraska",4,0,0,0,0,4,0,0
+county,31059,"Fillmore County, Nebraska",1,1,0,0,0,1,0,0
+county,31061,"Franklin County, Nebraska",0,0,0,0,0,0,0,0
+county,31063,"Frontier County, Nebraska",3,0,0,0,0,3,0,0
+county,31067,"Gage County, Nebraska",17,3,0,0,0,17,0,0
+county,31069,"Garden County, Nebraska",0,0,0,0,0,0,0,0
+county,31071,"Garfield County, Nebraska",0,0,0,0,0,0,0,0
+county,31073,"Gosper County, Nebraska",0,0,0,0,0,0,0,0
+county,31075,"Grant County, Nebraska",0,0,0,0,0,0,0,0
+county,31077,"Greeley County, Nebraska",0,0,0,0,0,0,0,0
+county,31079,"Hall County, Nebraska",226,100,103,0,0,123,0,0
+county,31081,"Hamilton County, Nebraska",10,1,0,0,0,10,0,0
+county,31083,"Harlan County, Nebraska",7,3,0,0,0,7,0,0
+county,31085,"Hayes County, Nebraska",0,0,0,0,0,0,0,0
+county,31087,"Hitchcock County, Nebraska",7,1,0,0,0,7,0,0
+county,31089,"Holt County, Nebraska",3,0,0,0,0,3,0,0
+county,31091,"Hooker County, Nebraska",0,0,0,0,0,0,0,0
+county,42065,"Jefferson County, Pennsylvania",131,0,0,0,0,131,0,0
+county,42067,"Juniata County, Pennsylvania",0,0,0,0,0,0,0,0
+county,42069,"Lackawanna County, Pennsylvania",1019,150,129,0,0,763,127,0
+county,42071,"Lancaster County, Pennsylvania",696,157,0,0,0,696,0,0
+county,42073,"Lawrence County, Pennsylvania",107,49,0,0,0,107,0,0
+county,42075,"Lebanon County, Pennsylvania",52,27,0,0,0,52,0,0
+county,42077,"Lehigh County, Pennsylvania",687,183,73,0,0,614,0,0
+county,42079,"Luzerne County, Pennsylvania",3512,525,0,0,2836,395,281,0
+county,42081,"Lycoming County, Pennsylvania",1562,86,15,0,1337,210,0,0
+county,42083,"McKean County, Pennsylvania",890,156,0,837,0,0,53,0
+county,42085,"Mercer County, Pennsylvania",1559,63,0,0,1348,211,0,0
+county,42087,"Mifflin County, Pennsylvania",136,17,0,0,0,136,0,0
+county,42089,"Monroe County, Pennsylvania",333,58,0,0,0,333,0,0
+county,42091,"Montgomery County, Pennsylvania",4393,521,0,0,3157,1236,0,0
+county,42093,"Montour County, Pennsylvania",27,10,0,0,0,27,0,0
+county,42095,"Northampton County, Pennsylvania",556,129,0,0,0,556,0,0
+county,42097,"Northumberland County, Pennsylvania",2471,298,0,0,2122,349,0,0
+county,42099,"Perry County, Pennsylvania",106,7,25,0,0,81,0,0
+county,42101,"Philadelphia County, Pennsylvania",5616,977,1004,245,365,3686,316,0
+county,42103,"Pike County, Pennsylvania",250,114,37,0,0,213,0,0
+county,42105,"Potter County, Pennsylvania",39,2,0,0,0,39,0,0
+county,42107,"Schuylkill County, Pennsylvania",4899,738,0,1148,3535,216,0,0
+county,42109,"Snyder County, Pennsylvania",89,20,0,0,0,89,0,0
+county,42111,"Somerset County, Pennsylvania",3834,315,0,0,3754,80,0,0
+county,42113,"Sullivan County, Pennsylvania",0,0,0,0,0,0,0,0
+county,42115,"Susquehanna County, Pennsylvania",48,0,0,0,0,48,0,0
+county,47085,"Humphreys County, Tennessee",78,2,0,0,0,78,0,0
+county,47079,"Henry County, Tennessee",54,0,0,0,0,54,0,0
+county,47081,"Hickman County, Tennessee",1237,61,0,0,1202,35,0,0
+county,47083,"Houston County, Tennessee",33,0,0,0,0,33,0,0
+county,47087,"Jackson County, Tennessee",93,0,0,0,0,93,0,0
+county,47089,"Jefferson County, Tennessee",201,5,0,0,0,201,0,0
+county,47091,"Johnson County, Tennessee",1679,52,0,0,1597,82,0,0
+county,47093,"Knox County, Tennessee",1115,27,1,0,0,1074,40,0
+county,47095,"Lake County, Tennessee",2062,69,0,0,2038,24,0,0
+county,47097,"Lauderdale County, Tennessee",1919,38,0,0,1840,79,0,0
+county,47099,"Lawrence County, Tennessee",223,2,0,0,0,223,0,0
+county,47101,"Lewis County, Tennessee",39,0,0,0,0,39,0,0
+county,47103,"Lincoln County, Tennessee",107,2,0,0,0,107,0,0
+county,47105,"Loudon County, Tennessee",72,2,0,0,0,72,0,0
+county,47107,"McMinn County, Tennessee",209,0,0,0,0,209,0,0
+county,47109,"McNairy County, Tennessee",71,0,0,0,0,71,0,0
+county,47111,"Macon County, Tennessee",182,5,0,0,0,182,0,0
+county,47113,"Madison County, Tennessee",1519,72,4,0,0,1515,0,0
+county,47115,"Marion County, Tennessee",45,0,0,0,0,45,0,0
+county,47117,"Marshall County, Tennessee",129,0,0,0,0,129,0,0
+county,47119,"Maury County, Tennessee",298,0,0,0,0,298,0,0
+county,47121,"Meigs County, Tennessee",70,2,0,0,0,70,0,0
+county,47123,"Monroe County, Tennessee",171,0,0,0,0,171,0,0
+county,47125,"Montgomery County, Tennessee",1084,89,0,0,0,1084,0,0
+county,47127,"Moore County, Tennessee",8,0,0,0,0,8,0,0
+county,47129,"Morgan County, Tennessee",2092,57,0,0,2046,46,0,0
+county,47131,"Obion County, Tennessee",101,7,14,0,0,87,0,0
+county,47133,"Overton County, Tennessee",109,0,0,0,0,109,0,0
+county,47135,"Perry County, Tennessee",50,8,0,0,0,50,0,0
+county,47137,"Pickett County, Tennessee",0,0,0,0,0,0,0,0
+county,47139,"Polk County, Tennessee",141,3,0,0,0,141,0,0
+county,47141,"Putnam County, Tennessee",257,4,0,0,0,257,0,0
+county,47143,"Rhea County, Tennessee",1,0,0,0,0,1,0,0
+county,47145,"Roane County, Tennessee",0,0,0,0,0,0,0,0
+county,48075,"Childress County, Texas",1192,532,0,0,1131,61,0,0
+county,48077,"Clay County, Texas",16,0,0,0,0,16,0,0
+county,48079,"Cochran County, Texas",14,12,0,0,0,14,0,0
+county,48081,"Coke County, Texas",0,0,0,0,0,0,0,0
+county,48083,"Coleman County, Texas",0,0,0,0,0,0,0,0
+county,48085,"Collin County, Texas",900,166,89,0,0,811,0,0
+county,48087,"Collingsworth County, Texas",14,2,0,0,0,14,0,0
+county,48089,"Colorado County, Texas",140,44,0,0,0,140,0,0
+county,48091,"Comal County, Texas",225,72,0,0,0,225,0,0
+county,48093,"Comanche County, Texas",42,4,0,0,0,42,0,0
+county,48095,"Concho County, Texas",1012,372,1012,0,0,0,0,0
+county,48097,"Cooke County, Texas",138,16,0,0,0,138,0,0
+county,48099,"Coryell County, Texas",7590,2039,0,0,7550,40,0,0
+county,48101,"Cottle County, Texas",0,0,0,0,0,0,0,0
+county,48103,"Crane County, Texas",14,6,0,0,0,14,0,0
+county,48105,"Crockett County, Texas",12,7,0,0,0,12,0,0
+county,48107,"Crosby County, Texas",14,14,0,0,0,14,0,0
+county,48109,"Culberson County, Texas",9,8,0,0,0,9,0,0
+county,48111,"Dallam County, Texas",23,18,0,0,0,23,0,0
+county,48113,"Dallas County, Texas",8935,1927,407,2047,37,4165,2279,0
+county,48115,"Dawson County, Texas",1523,489,0,0,1523,0,0,0
+county,31093,"Howard County, Nebraska",0,0,0,0,0,0,0,0
+county,31095,"Jefferson County, Nebraska",7,0,0,0,0,7,0,0
+county,31097,"Johnson County, Nebraska",1031,197,0,0,1031,0,0,0
+county,31099,"Kearney County, Nebraska",2,0,0,0,0,2,0,0
+county,31101,"Keith County, Nebraska",24,0,0,0,0,24,0,0
+county,31103,"Keya Paha County, Nebraska",0,0,0,0,0,0,0,0
+county,31105,"Kimball County, Nebraska",9,2,0,0,0,9,0,0
+county,31107,"Knox County, Nebraska",7,4,0,0,0,7,0,0
+county,31109,"Lancaster County, Nebraska",3472,473,0,0,2335,495,642,0
+county,46069,"Hyde County, South Dakota",0,0,0,0,0,0,0,0
+county,46071,"Jackson County, South Dakota",0,0,0,0,0,0,0,0
+county,46073,"Jerauld County, South Dakota",0,0,0,0,0,0,0,0
+county,46075,"Jones County, South Dakota",0,0,0,0,0,0,0,0
+county,46077,"Kingsbury County, South Dakota",0,0,0,0,0,0,0,0
+county,46079,"Lake County, South Dakota",12,0,0,0,0,12,0,0
+county,46081,"Lawrence County, South Dakota",24,3,0,0,0,24,0,0
+county,46083,"Lincoln County, South Dakota",0,0,0,0,0,0,0,0
+county,46085,"Lyman County, South Dakota",31,1,31,0,0,0,0,0
+county,46087,"McCook County, South Dakota",0,0,0,0,0,0,0,0
+county,46089,"McPherson County, South Dakota",0,0,0,0,0,0,0,0
+county,46091,"Marshall County, South Dakota",1,0,0,0,0,1,0,0
+county,46093,"Meade County, South Dakota",24,6,0,0,0,24,0,0
+county,46095,"Mellette County, South Dakota",0,0,0,0,0,0,0,0
+county,46097,"Miner County, South Dakota",0,0,0,0,0,0,0,0
+county,46099,"Minnehaha County, South Dakota",1886,85,139,0,1427,320,0,0
+county,45051,"Horry County, South Carolina",458,27,56,0,0,402,0,0
+county,45053,"Jasper County, South Carolina",977,39,0,0,927,50,0,0
+county,45055,"Kershaw County, South Carolina",0,0,0,0,0,0,0,0
+county,45057,"Lancaster County, South Carolina",1407,67,0,0,1311,96,0,0
+county,45059,"Laurens County, South Carolina",213,5,0,0,0,213,0,0
+county,45061,"Lee County, South Carolina",1254,53,0,0,1254,0,0,0
+county,45063,"Lexington County, South Carolina",151,15,100,0,0,0,51,0
+county,45065,"McCormick County, South Carolina",899,19,0,0,899,0,0,0
+county,45067,"Marion County, South Carolina",62,0,0,0,0,62,0,0
+county,45069,"Marlboro County, South Carolina",2619,295,0,1338,1220,61,0,0
+county,45071,"Newberry County, South Carolina",68,3,0,0,0,68,0,0
+county,45073,"Oconee County, South Carolina",139,12,0,0,0,139,0,0
+county,45075,"Orangeburg County, South Carolina",246,5,0,0,0,246,0,0
+county,45077,"Pickens County, South Carolina",263,9,0,0,0,263,0,0
+county,45079,"Richland County, South Carolina",5699,164,61,0,4908,683,47,0
+county,26131,"Ontonagon County, Michigan",0,0,0,0,0,0,0,0
+county,26133,"Osceola County, Michigan",48,1,0,0,0,48,0,0
+county,26135,"Oscoda County, Michigan",0,0,0,0,0,0,0,0
+county,26137,"Otsego County, Michigan",34,3,0,0,0,34,0,0
+county,26139,"Ottawa County, Michigan",0,0,0,0,0,0,0,0
+county,26141,"Presque Isle County, Michigan",20,0,0,0,0,20,0,0
+county,26143,"Roscommon County, Michigan",37,0,9,0,0,28,0,0
+county,26145,"Saginaw County, Michigan",1472,48,30,0,1442,0,0,0
+county,26147,"St. Clair County, Michigan",296,43,68,0,0,228,0,0
+county,26149,"St. Joseph County, Michigan",40,1,0,0,0,40,0,0
+county,26151,"Sanilac County, Michigan",109,5,46,0,0,63,0,0
+county,26153,"Schoolcraft County, Michigan",20,0,0,0,0,20,0,0
+county,26155,"Shiawassee County, Michigan",85,3,0,0,0,71,14,0
+county,26157,"Tuscola County, Michigan",58,5,0,0,0,58,0,0
+county,26159,"Van Buren County, Michigan",0,0,0,0,0,0,0,0
+county,26161,"Washtenaw County, Michigan",3938,208,281,1292,2116,231,18,0
+county,26163,"Wayne County, Michigan",1149,110,0,0,518,575,56,0
+county,26165,"Wexford County, Michigan",100,44,0,0,0,90,10,0
+county,27001,"Aitkin County, Minnesota",30,0,0,0,0,30,0,0
+county,27003,"Anoka County, Minnesota",1420,65,20,0,1311,77,12,0
+county,27005,"Becker County, Minnesota",55,4,0,0,0,55,0,0
+county,27007,"Beltrami County, Minnesota",163,3,83,0,0,80,0,0
+county,27009,"Benton County, Minnesota",29,4,0,0,0,29,0,0
+county,27011,"Big Stone County, Minnesota",0,0,0,0,0,0,0,0
+county,27013,"Blue Earth County, Minnesota",84,10,0,0,0,84,0,0
+county,27015,"Brown County, Minnesota",18,0,0,0,0,18,0,0
+county,27017,"Carlton County, Minnesota",1046,61,0,0,1032,14,0,0
+county,27019,"Carver County, Minnesota",46,5,13,0,0,33,0,0
+county,27021,"Cass County, Minnesota",0,0,0,0,0,0,0,0
+county,27023,"Chippewa County, Minnesota",3,2,0,0,0,3,0,0
+county,27025,"Chisago County, Minnesota",1029,70,0,0,997,32,0,0
+county,27027,"Clay County, Minnesota",76,6,16,0,0,53,7,0
+county,27029,"Clearwater County, Minnesota",17,4,0,0,0,17,0,0
+county,27031,"Cook County, Minnesota",0,0,0,0,0,0,0,0
+county,27033,"Cottonwood County, Minnesota",13,0,0,0,0,13,0,0
+county,47147,"Robertson County, Tennessee",477,15,0,0,0,477,0,0
+county,47149,"Rutherford County, Tennessee",774,65,0,0,0,774,0,0
+county,47151,"Scott County, Tennessee",130,0,0,0,0,130,0,0
+county,47153,"Sequatchie County, Tennessee",222,1,0,0,0,222,0,0
+county,47155,"Sevier County, Tennessee",176,1,0,0,0,176,0,0
+county,47157,"Shelby County, Tennessee",5391,728,106,1170,272,2051,1792,0
+county,47159,"Smith County, Tennessee",85,7,0,0,0,85,0,0
+county,47161,"Stewart County, Tennessee",167,19,0,0,0,167,0,0
+county,47163,"Sullivan County, Tennessee",636,4,0,0,0,636,0,0
+county,47165,"Sumner County, Tennessee",572,13,0,0,0,572,0,0
+county,47167,"Tipton County, Tennessee",667,35,543,0,0,124,0,0
+county,47169,"Trousdale County, Tennessee",2505,92,0,0,2479,26,0,0
+county,47171,"Unicoi County, Tennessee",93,2,0,0,0,93,0,0
+county,47173,"Union County, Tennessee",55,3,0,0,0,55,0,0
+county,47175,"Van Buren County, Tennessee",0,0,0,0,0,0,0,0
+county,47177,"Warren County, Tennessee",131,7,0,0,0,131,0,0
+county,47179,"Washington County, Tennessee",535,5,25,0,70,440,0,0
+county,47181,"Wayne County, Tennessee",2038,78,0,0,1909,129,0,0
+county,47183,"Weakley County, Tennessee",89,1,0,0,0,89,0,0
+county,47185,"White County, Tennessee",134,7,0,0,0,134,0,0
+county,47187,"Williamson County, Tennessee",189,9,0,0,0,189,0,0
+county,47189,"Wilson County, Tennessee",381,6,0,0,0,381,0,0
+county,27035,"Crow Wing County, Minnesota",107,2,0,0,0,107,0,0
+county,27037,"Dakota County, Minnesota",110,8,0,0,0,89,21,0
+county,27039,"Dodge County, Minnesota",0,0,0,0,0,0,0,0
+county,27041,"Douglas County, Minnesota",39,0,0,0,0,29,10,0
+county,27043,"Faribault County, Minnesota",10,1,0,0,0,10,0,0
+county,27045,"Fillmore County, Minnesota",9,0,0,0,0,9,0,0
+county,27047,"Freeborn County, Minnesota",105,55,71,0,0,34,0,0
+county,27049,"Goodhue County, Minnesota",85,5,0,0,0,85,0,0
+county,27051,"Grant County, Minnesota",0,0,0,0,0,0,0,0
+county,27053,"Hennepin County, Minnesota",1025,75,23,148,151,562,141,0
+county,27055,"Houston County, Minnesota",12,0,0,0,0,12,0,0
+county,27057,"Hubbard County, Minnesota",33,0,0,0,0,33,0,0
+county,27059,"Isanti County, Minnesota",36,0,0,0,0,30,6,0
+county,27061,"Itasca County, Minnesota",140,14,0,0,91,45,4,0
+county,28007,"Attala County, Mississippi",0,0,0,0,0,0,0,0
+county,28001,"Adams County, Mississippi",1011,598,79,875,0,57,0,0
+county,28003,"Alcorn County, Mississippi",360,5,0,0,0,360,0,0
+county,28005,"Amite County, Mississippi",11,3,0,0,0,11,0,0
+county,28009,"Benton County, Mississippi",8,0,0,0,0,8,0,0
+county,28011,"Bolivar County, Mississippi",578,100,53,0,257,268,0,0
+county,28013,"Calhoun County, Mississippi",27,5,0,0,0,27,0,0
+county,28015,"Carroll County, Mississippi",543,22,0,0,334,209,0,0
+county,28017,"Chickasaw County, Mississippi",343,7,0,0,278,65,0,0
+county,28019,"Choctaw County, Mississippi",11,0,0,0,0,11,0,0
+county,28021,"Claiborne County, Mississippi",0,0,0,0,0,0,0,0
+county,28023,"Clarke County, Mississippi",0,0,0,0,0,0,0,0
+county,31111,"Lincoln County, Nebraska",155,23,0,0,0,155,0,0
+county,31113,"Logan County, Nebraska",0,0,0,0,0,0,0,0
+county,31115,"Loup County, Nebraska",0,0,0,0,0,0,0,0
+county,31117,"McPherson County, Nebraska",0,0,0,0,0,0,0,0
+county,31119,"Madison County, Nebraska",58,11,0,0,0,58,0,0
+county,31121,"Merrick County, Nebraska",9,4,0,0,0,9,0,0
+county,31123,"Morrill County, Nebraska",2,1,0,0,0,2,0,0
+county,31125,"Nance County, Nebraska",0,0,0,0,0,0,0,0
+county,31127,"Nemaha County, Nebraska",13,0,0,0,0,13,0,0
+county,31129,"Nuckolls County, Nebraska",0,0,0,0,0,0,0,0
+county,31131,"Otoe County, Nebraska",20,4,0,0,0,20,0,0
+county,31133,"Pawnee County, Nebraska",0,0,0,0,0,0,0,0
+county,31135,"Perkins County, Nebraska",0,0,0,0,0,0,0,0
+county,31137,"Phelps County, Nebraska",25,18,18,0,0,7,0,0
+county,31139,"Pierce County, Nebraska",6,1,0,0,0,6,0,0
+county,31141,"Platte County, Nebraska",66,18,0,0,0,66,0,0
+county,31143,"Polk County, Nebraska",2,0,0,0,0,2,0,0
+county,31145,"Red Willow County, Nebraska",197,14,0,0,179,18,0,0
+county,31147,"Richardson County, Nebraska",16,0,0,0,0,16,0,0
+county,31149,"Rock County, Nebraska",0,0,0,0,0,0,0,0
+county,31151,"Saline County, Nebraska",64,5,40,0,0,24,0,0
+county,31153,"Sarpy County, Nebraska",123,18,0,0,0,0,123,0
+county,31155,"Saunders County, Nebraska",63,6,19,0,0,44,0,0
+county,31157,"Scotts Bluff County, Nebraska",225,42,73,0,0,152,0,0
+county,31159,"Seward County, Nebraska",26,3,0,0,0,26,0,0
+county,31161,"Sheridan County, Nebraska",13,5,0,0,0,13,0,0
+county,31163,"Sherman County, Nebraska",0,0,0,0,0,0,0,0
+county,31165,"Sioux County, Nebraska",0,0,0,0,0,0,0,0
+county,31167,"Stanton County, Nebraska",0,0,0,0,0,0,0,0
+county,31169,"Thayer County, Nebraska",0,0,0,0,0,0,0,0
+county,31171,"Thomas County, Nebraska",0,0,0,0,0,0,0,0
+county,28025,"Clay County, Mississippi",72,2,0,0,0,72,0,0
+county,28027,"Coahoma County, Mississippi",43,0,0,0,0,43,0,0
+county,28029,"Copiah County, Mississippi",43,0,0,0,0,43,0,0
+county,28031,"Covington County, Mississippi",0,0,0,0,0,0,0,0
+county,28033,"DeSoto County, Mississippi",416,17,0,0,0,399,17,0
+county,28035,"Forrest County, Mississippi",271,2,0,0,0,183,88,0
+county,28037,"Franklin County, Mississippi",4,0,0,0,0,4,0,0
+county,28039,"George County, Mississippi",342,15,0,0,342,0,0,0
+county,28041,"Greene County, Mississippi",2615,22,0,0,2610,0,5,0
+county,28043,"Grenada County, Mississippi",105,7,0,0,0,105,0,0
+county,28045,"Hancock County, Mississippi",0,0,0,0,0,0,0,0
+county,28047,"Harrison County, Mississippi",762,27,83,0,0,648,31,0
+county,28049,"Hinds County, Mississippi",686,32,0,0,15,521,150,0
+county,28051,"Holmes County, Mississippi",336,0,0,0,266,70,0,0
+county,28053,"Humphreys County, Mississippi",21,0,0,0,0,21,0,0
+county,28055,"Issaquena County, Mississippi",493,104,0,0,311,182,0,0
+county,28057,"Itawamba County, Mississippi",21,2,0,0,0,21,0,0
+county,28059,"Jackson County, Mississippi",364,7,0,0,0,304,60,0
+county,28061,"Jasper County, Mississippi",15,3,0,0,0,0,15,0
+county,28063,"Jefferson County, Mississippi",292,4,0,0,249,43,0,0
+county,28065,"Jefferson Davis County, Mississippi",25,2,0,0,0,25,0,0
+county,28067,"Jones County, Mississippi",153,6,0,0,0,153,0,0
+county,28069,"Kemper County, Mississippi",349,1,0,0,28,0,321,0
+county,28071,"Lafayette County, Mississippi",129,11,19,0,0,99,11,0
+county,28073,"Lamar County, Mississippi",92,6,0,0,0,92,0,0
+county,28075,"Lauderdale County, Mississippi",1384,10,0,0,1199,139,46,0
+county,28077,"Lawrence County, Mississippi",0,0,0,0,0,0,0,0
+county,28079,"Leake County, Mississippi",291,15,0,0,66,0,225,0
+county,28081,"Lee County, Mississippi",190,0,0,0,0,190,0,0
+county,28083,"Leflore County, Mississippi",145,0,0,0,71,54,20,0
+county,28085,"Lincoln County, Mississippi",53,4,0,0,0,53,0,0
+county,28087,"Lowndes County, Mississippi",165,12,0,0,0,165,0,0
+county,28089,"Madison County, Mississippi",262,0,116,0,0,63,83,0
+county,28091,"Marion County, Mississippi",387,0,0,0,387,0,0,0
+county,28093,"Marshall County, Mississippi",1067,6,0,0,972,53,42,0
+county,28095,"Monroe County, Mississippi",80,19,22,0,0,58,0,0
+county,28097,"Montgomery County, Mississippi",0,0,0,0,0,0,0,0
+county,28099,"Neshoba County, Mississippi",120,7,0,0,0,58,62,0
+county,28101,"Newton County, Mississippi",39,5,0,0,0,0,39,0
+county,28103,"Noxubee County, Mississippi",59,1,0,0,0,0,59,0
+county,28105,"Oktibbeha County, Mississippi",101,5,0,0,0,101,0,0
+county,28107,"Panola County, Mississippi",65,0,15,0,0,50,0,0
+county,28109,"Pearl River County, Mississippi",8,0,0,0,0,8,0,0
+county,05083,"Logan County, Arkansas",24,0,0,0,0,24,0,0
+county,05077,"Lee County, Arkansas",1556,42,0,0,1543,13,0,0
+county,05079,"Lincoln County, Arkansas",3600,125,0,0,3584,16,0,0
+county,05081,"Little River County, Arkansas",20,0,0,0,0,20,0,0
+county,05085,"Lonoke County, Arkansas",203,28,26,0,0,177,0,0
+county,05087,"Madison County, Arkansas",0,0,0,0,0,0,0,0
+county,05089,"Marion County, Arkansas",22,3,0,0,0,22,0,0
+county,05091,"Miller County, Arkansas",888,39,28,0,159,225,476,0
+county,05093,"Mississippi County, Arkansas",519,12,0,0,293,155,71,0
+county,05095,"Monroe County, Arkansas",14,0,0,0,0,14,0,0
+county,05097,"Montgomery County, Arkansas",10,0,0,0,0,10,0,0
+county,05099,"Nevada County, Arkansas",38,7,0,0,0,38,0,0
+county,05101,"Newton County, Arkansas",4,1,0,0,0,4,0,0
+county,05103,"Ouachita County, Arkansas",135,3,26,0,0,109,0,0
+county,05105,"Perry County, Arkansas",8,0,0,0,0,8,0,0
+county,05107,"Phillips County, Arkansas",27,6,0,0,0,27,0,0
+county,05109,"Pike County, Arkansas",55,9,0,0,0,55,0,0
+county,05111,"Poinsett County, Arkansas",20,0,0,0,0,20,0,0
+county,05113,"Polk County, Arkansas",11,2,0,0,0,11,0,0
+county,05115,"Pope County, Arkansas",145,11,0,0,0,145,0,0
+county,05117,"Prairie County, Arkansas",44,0,19,0,0,25,0,0
+county,05119,"Pulaski County, Arkansas",2598,936,96,0,1362,922,213,5
+county,05121,"Randolph County, Arkansas",48,4,0,0,0,48,0,0
+county,05123,"St. Francis County, Arkansas",3232,276,0,3204,0,28,0,0
+county,05125,"Saline County, Arkansas",486,9,41,165,130,115,35,0
+county,05127,"Scott County, Arkansas",33,4,8,0,0,25,0,0
+county,05129,"Searcy County, Arkansas",14,2,0,0,0,14,0,0
+county,05131,"Sebastian County, Arkansas",256,20,30,0,0,226,0,0
+county,05133,"Sevier County, Arkansas",56,14,0,0,0,56,0,0
+county,05135,"Sharp County, Arkansas",21,0,0,0,0,21,0,0
+county,05137,"Stone County, Arkansas",30,0,0,0,0,30,0,0
+county,05139,"Union County, Arkansas",156,9,30,0,0,126,0,0
+county,05141,"Van Buren County, Arkansas",20,0,6,0,0,14,0,0
+county,05143,"Washington County, Arkansas",653,84,38,0,104,390,121,0
+county,05145,"White County, Arkansas",0,0,0,0,0,0,0,0
+county,05147,"Woodruff County, Arkansas",22,8,0,0,0,22,0,0
+county,05149,"Yell County, Arkansas",0,0,0,0,0,0,0,0
+county,06001,"Alameda County, California",3406,1705,417,1143,197,1598,51,0
+county,06003,"Alpine County, California",1,0,0,0,0,0,1,0
+county,06005,"Amador County, California",4045,1378,0,0,3974,71,0,0
+county,06007,"Butte County, California",496,393,0,0,0,496,0,0
+county,06009,"Calaveras County, California",170,47,0,0,74,96,0,0
+county,06011,"Colusa County, California",68,28,19,0,0,49,0,0
+county,06013,"Contra Costa County, California",1122,388,48,0,0,1074,0,0
+county,06015,"Del Norte County, California",2789,1551,0,0,2722,67,0,0
+county,06017,"El Dorado County, California",432,95,10,0,101,321,0,0
+county,06019,"Fresno County, California",6885,4319,191,793,3258,2602,41,0
+county,06021,"Glenn County, California",143,68,0,0,84,59,0,0
+county,06023,"Humboldt County, California",270,107,0,0,124,146,0,0
+county,06025,"Imperial County, California",7353,4163,663,0,6428,262,0,0
+county,06027,"Inyo County, California",129,44,0,0,97,32,0,0
+county,06029,"Kern County, California",22474,12425,418,988,17706,1378,1984,0
+county,06031,"Kings County, California",13700,7305,0,0,13099,601,0,0
+county,06033,"Lake County, California",294,66,0,0,80,204,10,0
+county,06035,"Lassen County, California",8679,4127,0,1029,7560,90,0,0
+county,06037,"Los Angeles County, California",19518,9769,627,1556,4238,12558,539,0

@@ -17,7 +17,7 @@ account.
 | School cost where the group's pupils enroll | [school_cost_where_enrolled_2026_09_24](../infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/RESULT.md) | done, ladder 215 |
 | Benefit keys against administrative records by ethnicity | [admin_benefit_keys_2026_09_24](../infra/immigration-fiscal/admin_benefit_keys_2026_09_24/RESULT.md) | done, ladder 217 |
 | Taxes and transfers against CBO, Treasury, tax anchors and state hospital records | [external_benchmarks_2026_09_24](../infra/immigration-fiscal/external_benchmarks_2026_09_24/RESULT.md) | done, ladder 216 |
-| Direction of the errors in the crime ratios | `crime_ratio_direction_2026_09_24` | running |
+| Direction of the errors in the crime ratios | [crime_ratio_direction_2026_09_24](../infra/immigration-fiscal/crime_ratio_direction_2026_09_24/RESULT.md) | done, ladder 218 |
 
 ## Schools: priced where the pupils enroll
 
@@ -205,18 +205,67 @@ figure built on this file (a national route gives −$2.8bn here) is an artefact
 Blocked: SSI (SSA publishes no ethnicity), SNAP ethnicity in Texas and New Mexico (64–66% unknown),
 Medicaid spending by ethnicity (no administrative publication). School meals were not done.
 
-## The three proposals together
+## Crime: which way the errors lean
+
+Four known problems seemed to push the police-based ratios down: offenders of unknown ethnicity,
+lower clearance of homicides with Hispanic victims, jails that under-record Hispanic inmates, and
+victims who may not report. One pushed up: subtracting all Hispanics from "White" in arrest tables.
+The lane tested each on the NIBRS offending ratios, Hispanic ÷ non-Hispanic white, for Texas and
+Arizona in 2022–23: murder 2.30 (1.53 to 3.93 with every unknown offender assigned to one side) and
+robbery 4.22. Its positive control reproduces both [CALCULATION: `nibrs_base.py`; all figures here
+from `ratio_adjustments.py` → `derived/ratio_adjustments.csv` and `dollar_effects.py` →
+`derived/dollar_effects.csv`].
+
+**The offending ratios barely move.**
+- Murder stays at 2.30. Allocating unknown offenders by the victim's ethnicity and the incident's
+  details (18 methods) gives 2.12–2.42. The low end comes from checking the imputation against arrestees.
+  The national homicide reports (SHR) give 2.71–2.91 against their own 2.74.
+- Robbery moves from 4.22 to 4.15 once reporting to police is weighed, which cannot be told from
+  zero (band 3.65–4.29).
+- The reporting hypothesis is false. In the victim survey (NCVS 2012–24), crimes by Hispanic
+  offenders are reported to police more often than crimes by non-Hispanic whites (47.7% against
+  43.8%), so police data slightly over-show the Hispanic ÷ white ratio.
+- The victim survey gives a much lower robbery ratio (1.80). The difference lies in the white
+  reference group, not the Hispanic count: police-recorded robbery by non-Hispanic whites in Texas and
+  Arizona is low relative to every other group, and NCVS's Hispanic ÷ all-residents ratio (1.11) is
+  above NIBRS's (0.92).
+- Against all residents, Hispanic offending is at parity for murder (1.00; 0.96–1.02) and 0.92–0.96
+  for robbery.
+- If the 2020 census undercount of Hispanics (4.99%) carries into the population denominators, both
+  ratios fall another 6.5% (murder 2.15, robbery 3.88). Whether it carries was not verified.
+
+**The lean is real in custody and arrest records and in the victim-harm count.**
+- Jails: BJS's 2023 jail count records 14.4% Hispanic. Five inmate self-report surveys against same-year
+  jail counts imply 19.1% (17.1–20.9%) [SOURCE: BJS *Jail Inmates in 2023*, table 5; survey tables
+  saved in the lane]. That moves only the account's BJS check arm (+$1.54bn), not the main case.
+- Booking: in Texas and Arizona, 3.8% of offenders recorded as Hispanic in the incident are booked
+  as non-Hispanic. Harris County books 38% of them that way; Arizona shows no gap. Carried to the
+  national arrest key, which is an inference, the justice line rises **+$0.87bn** (+$0.33–0.95bn).
+- Victims' harm, beside the account: BJS's table of offender ethnicity gives Hispanic members of
+  mixed offender groups no share [SOURCE: *Criminal Victimization, 2024*, table 13, footnotes b and c].
+  At the NIBRS mixed-group fraction (0.498), victims' harm rises from $28.9bn to **$30.9bn**
+  (+$2.0bn; 0 to +$4.0bn).
+- A sensitivity for how facilities record Hispanic origin in the ACS (+$1.99bn on the prisons key) is
+  left as the operator's call.
+
+Everything in this section is Hispanic of any origin, not Mexican origin. NIBRS covers Texas and
+Arizona agencies that record offender ethnicity; NCVS is national or regional. The parent's re-run
+reproduced the lane's derived files [see ladder 218].
+
+## The proposals together
 
 Run once through the explorer engine on the adopted main case, the school, tax-and-transfer and benefit
-proposals give **$215.6–261.0bn** (+$12.35bn / +$11.32bn) [CALCULATION:
+proposals give **$215.6–261.0bn** (+$12.35bn / +$11.32bn). Adding the crime lane's booking correction
+on the justice key gives **$216.4–261.8bn** (+$13.22bn / +$12.18bn) [CALCULATION:
 [`outside_checks_combined_2026_09_24/combine.cjs`](../infra/immigration-fiscal/outside_checks_combined_2026_09_24/README.md)
 → `derived/combined_bands.csv`]. Each change alone reproduces its lane's figure, and the changes add
 without interaction. The income-tax gradient is the largest piece (+$13.2–14.1bn), then schools
-(+$3.0–3.4bn) and benefits (+$2.2bn), while Treasury's credit shares take off $4.3–4.6bn. Where the
-benefit lane and CBO's bundle re-key the same lines (SNAP, WIC, cash assistance), the combination keeps
-the administrative-records change; applying both would give $214.9–260.0bn.
+(+$3.0–3.4bn), benefits (+$2.2bn) and booking (+$0.87bn, a national transfer of a Texas and Arizona
+factor), while Treasury's credit shares take off $4.3–4.6bn. Where the benefit lane and CBO's bundle
+re-key the same lines (SNAP, WIC, cash assistance), the combination keeps the administrative-records
+change; applying both would give $214.9–260.0bn without the booking correction.
 
 This is relative to the adopted main case. The audit package already takes most of the income-tax
-and credit corrections (its row 3 and SSN rule), and its rows 3, 6 and 13 overlap all three
-proposals, so the two cannot be combined by addition; that needs the audit's rows in the engine.
-None of this is adopted.
+and credit corrections (its row 3 and SSN rule), and its rows 3, 6 and 13 overlap these proposals,
+so the two cannot be combined by addition; that needs the audit's rows in the engine. Victims' harm
+(+$2.0bn, to $30.9bn) sits beside the account and is not in these figures. None of this is adopted.

@@ -1,0 +1,441 @@
+years,offence,dimension,group,pct_reported,se,records,victimizations
+2012-2024,Rape/sexual assault,victim,H,28.899,3.932,278,822916.594
+2012-2024,Rape/sexual assault,victim,NHW,30.350,2.867,1141,3417524.077
+2012-2024,Rape/sexual assault,victim,NHB,35.598,8.118,162,557360.830
+2012-2024,Rape/sexual assault,victim,NHO,21.179,5.776,158,669856.418
+2012-2024,Rape/sexual assault,offender,H,36.767,5.537,293,876344.651
+2012-2024,Rape/sexual assault,offender,NHW,26.634,3.285,790,2430448.388
+2012-2024,Rape/sexual assault,offender,NHB,36.532,5.111,311,967436.737
+2012-2024,Rape/sexual assault,offender,NHO,21.852,7.071,81,238067.923
+2012-2024,Rape/sexual assault,offender,U,25.828,5.621,256,854999.607
+2012-2024,Rape/sexual assault,offender,MIX,19.432,19.543,8,100360.613
+2012-2024,Rape/sexual assault,pair,victim H / offender H,36.757,6.315,127,356263.330
+2012-2024,Rape/sexual assault,pair,victim H / offender NHW,22.670,6.607,73,198444.143
+2012-2024,Rape/sexual assault,pair,victim H / offender NHB,14.629,8.243,29,113050.288
+2012-2024,Rape/sexual assault,pair,victim H / offender NHO,2.135,2.468,14,33977.526
+2012-2024,Rape/sexual assault,pair,victim NHW / offender H,43.278,9.411,139,407112.965
+2012-2024,Rape/sexual assault,pair,victim NHW / offender NHW,26.693,3.748,636,1946735.017
+2012-2024,Rape/sexual assault,pair,victim NHW / offender NHB,47.944,7.844,143,387997.750
+2012-2024,Rape/sexual assault,pair,victim NHW / offender NHO,30.071,10.342,44,106221.619
+2012-2024,Rape/sexual assault,pair,victim NHB / offender NHW,18.300,9.306,20,58260.362
+2012-2024,Rape/sexual assault,pair,victim NHB / offender NHB,33.710,8.642,112,359364.209
+2012-2024,Rape/sexual assault,pair,victim NHO / offender H,10.673,8.496,18,68974.908
+2012-2024,Rape/sexual assault,pair,victim NHO / offender NHW,31.736,12.432,61,227008.867
+2012-2024,Rape/sexual assault,pair,victim NHO / offender NHB,27.769,11.189,27,107024.490
+2012-2024,Rape/sexual assault,pair,victim NHO / offender NHO,17.752,11.781,21,92409.345
+2012-2024,Robbery,victim,H,58.053,4.104,480,1702851.356
+2012-2024,Robbery,victim,NHW,56.803,2.638,1272,3979115.457
+2012-2024,Robbery,victim,NHB,66.208,4.094,405,1397415.678
+2012-2024,Robbery,victim,NHO,50.734,6.059,222,701126.473
+2012-2024,Robbery,offender,H,56.646,4.990,342,1261199.304
+2012-2024,Robbery,offender,NHW,55.727,3.717,754,2602452.016
+2012-2024,Robbery,offender,NHB,65.298,2.605,845,2599393.813
+2012-2024,Robbery,offender,NHO,54.299,11.262,71,247188.221
+2012-2024,Robbery,offender,U,49.592,4.593,314,916867.447
+2012-2024,Robbery,offender,MIX,51.366,10.562,53,153408.164
+2012-2024,Robbery,pair,victim H / offender H,55.764,6.740,165,621201.069
+2012-2024,Robbery,pair,victim H / offender NHW,44.797,13.068,71,276196.942
+2012-2024,Robbery,pair,victim H / offender NHB,69.892,4.714,157,512255.615
+2012-2024,Robbery,pair,victim NHW / offender H,55.831,9.439,122,471000.684
+2012-2024,Robbery,pair,victim NHW / offender NHW,58.696,3.969,611,2038918.864
+2012-2024,Robbery,pair,victim NHW / offender NHB,59.621,3.753,325,857794.667
+2012-2024,Robbery,pair,victim NHW / offender NHO,48.948,15.482,33,108624.777
+2012-2024,Robbery,pair,victim NHB / offender H,73.948,10.980,28,106911.584
+2012-2024,Robbery,pair,victim NHB / offender NHW,59.716,15.322,24,96579.442
+2012-2024,Robbery,pair,victim NHB / offender NHB,66.430,5.244,281,990678.796
+2012-2024,Robbery,pair,victim NHB / offender NHO,89.623,11.237,10,33284.223
+2012-2024,Robbery,pair,victim NHO / offender H,41.856,11.279,27,62085.967
+2012-2024,Robbery,pair,victim NHO / offender NHW,37.799,13.047,48,190756.767
+2012-2024,Robbery,pair,victim NHO / offender NHB,71.143,6.723,82,238664.735
+2012-2024,Robbery,pair,victim NHO / offender NHO,60.328,14.206,19,55023.669
+2012-2024,Aggravated assault,victim,H,62.513,3.214,756,2427605.524
+2012-2024,Aggravated assault,victim,NHW,57.569,1.820,2823,8292837.776
+2012-2024,Aggravated assault,victim,NHB,68.434,3.278,569,2035502.844
+2012-2024,Aggravated assault,victim,NHO,43.535,4.320,336,988287.869
+2012-2024,Aggravated assault,offender,H,59.678,3.787,598,2301611.479
+2012-2024,Aggravated assault,offender,NHW,57.067,2.114,2078,5975031.184
+2012-2024,Aggravated assault,offender,NHB,62.961,2.953,990,3137085.992
+2012-2024,Aggravated assault,offender,NHO,51.906,5.269,168,418106.676
+2012-2024,Aggravated assault,offender,U,58.426,3.565,604,1793751.683
+2012-2024,Aggravated assault,offender,MIX,77.028,8.200,46,118646.998
+2012-2024,Aggravated assault,pair,victim H / offender H,67.539,5.380,254,953581.765
+2012-2024,Aggravated assault,pair,victim H / offender NHW,64.936,4.301,221,595821.490
+2012-2024,Aggravated assault,pair,victim H / offender NHB,51.432,8.978,137,435770.719
+2012-2024,Aggravated assault,pair,victim H / offender NHO,52.137,16.518,21,50709.201
+2012-2024,Aggravated assault,pair,victim NHW / offender H,54.935,5.835,271,1093320.706
+2012-2024,Aggravated assault,pair,victim NHW / offender NHW,58.024,2.418,1663,4726859.192
+2012-2024,Aggravated assault,pair,victim NHW / offender NHB,60.073,4.463,427,1288462.251
+2012-2024,Aggravated assault,pair,victim NHW / offender NHO,54.751,7.242,88,197312.093
+2012-2024,Aggravated assault,pair,victim NHB / offender H,55.154,10.929,41,164788.016
+2012-2024,Aggravated assault,pair,victim NHB / offender NHW,51.990,11.118,63,241899.917
+2012-2024,Aggravated assault,pair,victim NHB / offender NHB,72.529,3.943,355,1213548.875
+2012-2024,Aggravated assault,pair,victim NHB / offender NHO,55.719,18.775,10,42736.016
+2012-2024,Aggravated assault,pair,victim NHO / offender H,42.271,11.601,32,89920.993
+2012-2024,Aggravated assault,pair,victim NHO / offender NHW,37.615,6.967,131,410450.586
+2012-2024,Aggravated assault,pair,victim NHO / offender NHB,48.576,8.146,71,199304.148
+2012-2024,Aggravated assault,pair,victim NHO / offender NHO,46.128,9.335,49,127349.365
+2012-2024,Simple assault,victim,H,40.031,2.265,2000,7150086.246
+2012-2024,Simple assault,victim,NHW,39.404,1.026,9917,31096513.850
+2012-2024,Simple assault,victim,NHB,40.351,2.393,1593,5898765.313
+2012-2024,Simple assault,victim,NHO,36.962,3.576,1063,4234953.719
+2012-2024,Simple assault,offender,H,42.958,2.544,1644,6128754.725
+2012-2024,Simple assault,offender,NHW,40.620,1.244,7031,21791393.644
+2012-2024,Simple assault,offender,NHB,39.579,1.839,2989,9857639.301
+2012-2024,Simple assault,offender,NHO,43.246,5.031,532,2018148.725
+2012-2024,Simple assault,offender,U,32.225,1.981,2280,8092277.685
+2012-2024,Simple assault,offender,MIX,39.514,11.293,97,492105.047
+2012-2024,Simple assault,pair,victim H / offender H,41.670,3.206,678,2413927.476
+2012-2024,Simple assault,pair,victim H / offender NHW,37.921,4.082,565,1938113.813
+2012-2024,Simple assault,pair,victim H / offender NHB,45.478,6.681,352,1293307.477
+2012-2024,Simple assault,pair,victim H / offender NHO,47.276,18.537,58,191247.680
+2012-2024,Simple assault,pair,victim NHW / offender H,39.613,3.724,780,2845798.691
+2012-2024,Simple assault,pair,victim NHW / offender NHW,41.362,1.324,5816,17278435.384
+2012-2024,Simple assault,pair,victim NHW / offender NHB,37.215,2.605,1459,4396528.299
+2012-2024,Simple assault,pair,victim NHW / offender NHO,41.673,6.507,298,1200274.821
+2012-2024,Simple assault,pair,victim NHB / offender H,60.583,9.034,103,467102.848
+2012-2024,Simple assault,pair,victim NHB / offender NHW,41.359,7.010,211,766877.873
+2012-2024,Simple assault,pair,victim NHB / offender NHB,41.814,2.789,966,3402902.836
+2012-2024,Simple assault,pair,victim NHB / offender NHO,13.148,7.143,32,145373.629
+2012-2024,Simple assault,pair,victim NHO / offender H,53.893,13.431,83,401925.711
+2012-2024,Simple assault,pair,victim NHO / offender NHW,36.111,6.054,439,1807966.575
+2012-2024,Simple assault,pair,victim NHO / offender NHB,33.240,6.068,212,764900.689
+2012-2024,Simple assault,pair,victim NHO / offender NHO,54.661,9.188,144,481252.595
+2012-2024,Violent excl. simple assault,victim,H,55.395,2.260,1514,4953373.475
+2012-2024,Violent excl. simple assault,victim,NHW,51.446,1.338,5236,15689477.310
+2012-2024,Violent excl. simple assault,victim,NHB,63.068,2.454,1136,3990279.352
+2012-2024,Violent excl. simple assault,victim,NHO,39.327,3.154,716,2359270.759
+2012-2024,Violent excl. simple assault,offender,H,54.294,2.644,1233,4439155.434
+2012-2024,Violent excl. simple assault,offender,NHW,50.031,1.644,3622,11007931.588
+2012-2024,Violent excl. simple assault,offender,NHB,60.053,1.849,2146,6703916.543
+2012-2024,Violent excl. simple assault,offender,NHO,44.641,4.602,320,903362.820
+2012-2024,Violent excl. simple assault,offender,U,48.337,2.607,1174,3565618.737
+2012-2024,Violent excl. simple assault,offender,MIX,50.936,10.776,107,372415.775
+2012-2024,Violent excl. simple assault,pair,victim H / offender H,58.072,3.861,546,1931046.164
+2012-2024,Violent excl. simple assault,pair,victim H / offender NHW,51.904,4.719,365,1070462.575
+2012-2024,Violent excl. simple assault,pair,victim H / offender NHB,56.423,4.929,323,1061076.622
+2012-2024,Violent excl. simple assault,pair,victim H / offender NHO,33.489,11.437,44,134942.279
+2012-2024,Violent excl. simple assault,pair,victim NHW / offender H,52.742,4.317,532,1971434.355
+2012-2024,Violent excl. simple assault,pair,victim NHW / offender NHW,51.181,1.861,2910,8712513.073
+2012-2024,Violent excl. simple assault,pair,victim NHW / offender NHB,58.063,2.815,895,2534254.669
+2012-2024,Violent excl. simple assault,pair,victim NHW / offender NHO,46.861,6.062,165,412158.490
+2012-2024,Violent excl. simple assault,pair,victim NHB / offender H,56.274,7.908,78,315693.047
+2012-2024,Violent excl. simple assault,pair,victim NHB / offender NHW,48.923,8.288,107,396739.721
+2012-2024,Violent excl. simple assault,pair,victim NHB / offender NHB,64.731,3.066,748,2563591.880
+2012-2024,Violent excl. simple assault,pair,victim NHB / offender NHO,69.458,11.829,22,81479.672
+2012-2024,Violent excl. simple assault,pair,victim NHO / offender H,32.292,6.779,77,220981.868
+2012-2024,Violent excl. simple assault,pair,victim NHO / offender NHW,36.046,5.622,240,828216.220
+2012-2024,Violent excl. simple assault,pair,victim NHO / offender NHB,54.372,5.454,180,544993.372
+2012-2024,Violent excl. simple assault,pair,victim NHO / offender NHO,39.429,8.661,89,274782.379
+2012-2024,All violent,victim,H,46.319,1.617,3514,12103459.720
+2012-2024,All violent,victim,NHW,43.442,0.830,15153,46785991.160
+2012-2024,All violent,victim,NHB,49.517,1.855,2729,9889044.665
+2012-2024,All violent,victim,NHO,37.808,2.549,1779,6594224.478
+2012-2024,All violent,offender,H,47.720,1.890,2877,10567910.159
+2012-2024,All violent,offender,NHW,43.779,1.003,10653,32799325.232
+2012-2024,All violent,offender,NHB,47.866,1.346,5135,16561555.844
+2012-2024,All violent,offender,NHO,43.677,3.749,852,2921511.544
+2012-2024,All violent,offender,U,37.153,1.619,3454,11657896.422
+2012-2024,All violent,offender,MIX,44.434,7.766,204,864520.823
+2012-2024,All violent,pair,victim H / offender H,48.960,2.589,1224,4344973.640
+2012-2024,All violent,pair,victim H / offender NHW,42.896,3.139,930,3008576.388
+2012-2024,All violent,pair,victim H / offender NHB,50.411,4.058,675,2354384.099
+2012-2024,All violent,pair,victim H / offender NHO,41.572,13.023,102,326189.959
+2012-2024,All violent,pair,victim NHW / offender H,44.986,2.950,1312,4817233.046
+2012-2024,All violent,pair,victim NHW / offender NHW,44.653,1.092,8726,25990948.456
+2012-2024,All violent,pair,victim NHW / offender NHB,44.838,2.004,2354,6930782.968
+2012-2024,All violent,pair,victim NHW / offender NHO,42.999,5.094,463,1612433.310
+2012-2024,All violent,pair,victim NHB / offender H,58.845,6.375,181,782795.895
+2012-2024,All violent,pair,victim NHB / offender NHW,43.938,5.483,318,1163617.593
+2012-2024,All violent,pair,victim NHB / offender NHB,51.661,2.224,1714,5966494.716
+2012-2024,All violent,pair,victim NHB / offender NHO,33.373,9.018,54,226853.301
+2012-2024,All violent,pair,victim NHO / offender H,46.230,9.409,160,622907.579
+2012-2024,All violent,pair,victim NHO / offender NHW,36.090,4.513,679,2636182.795
+2012-2024,All violent,pair,victim NHO / offender NHB,42.032,4.220,392,1309894.062
+2012-2024,All violent,pair,victim NHO / offender NHO,49.125,7.057,233,756034.974
+2017-2024,Rape/sexual assault,victim,H,26.240,4.167,211,594306.469
+2017-2024,Rape/sexual assault,victim,NHW,30.527,3.458,841,2335500.947
+2017-2024,Rape/sexual assault,victim,NHB,34.395,10.478,120,419700.077
+2017-2024,Rape/sexual assault,victim,NHO,20.715,6.423,118,456566.916
+2017-2024,Rape/sexual assault,offender,H,34.999,7.120,214,631677.626
+2017-2024,Rape/sexual assault,offender,NHW,27.953,3.988,581,1633111.344
+2017-2024,Rape/sexual assault,offender,NHB,31.683,5.886,225,660536.945
+2017-2024,Rape/sexual assault,offender,NHO,25.040,8.250,60,143234.540
+2017-2024,Rape/sexual assault,offender,U,25.541,6.650,205,648384.998
+2017-2024,Rape/sexual assault,offender,MIX,21.881,22.808,5,89128.955
+2017-2024,Rape/sexual assault,pair,victim H / offender H,33.415,6.616,91,240115.768
+2017-2024,Rape/sexual assault,pair,victim H / offender NHW,26.324,8.022,59,159802.494
+2017-2024,Rape/sexual assault,pair,victim H / offender NHB,13.891,9.904,22,81249.539
+2017-2024,Rape/sexual assault,pair,victim H / offender NHO,2.954,3.431,11,24555.037
+2017-2024,Rape/sexual assault,pair,victim NHW / offender H,44.957,12.365,99,289856.346
+2017-2024,Rape/sexual assault,pair,victim NHW / offender NHW,28.137,4.705,460,1287804.199
+2017-2024,Rape/sexual assault,pair,victim NHW / offender NHB,39.556,7.897,103,251897.953
+2017-2024,Rape/sexual assault,pair,victim NHW / offender NHO,30.474,11.911,35,85232.953
+2017-2024,Rape/sexual assault,pair,victim NHB / offender NHW,18.300,9.306,20,58260.362
+2017-2024,Rape/sexual assault,pair,victim NHB / offender NHB,29.693,12.015,79,247662.030
+2017-2024,Rape/sexual assault,pair,victim NHO / offender H,4.905,5.565,15,57712.064
+2017-2024,Rape/sexual assault,pair,victim NHO / offender NHW,32.553,14.196,42,127244.289
+2017-2024,Rape/sexual assault,pair,victim NHO / offender NHB,31.126,14.056,21,79727.423
+2017-2024,Rape/sexual assault,pair,victim NHO / offender NHO,27.407,16.665,14,33446.550
+2017-2024,Robbery,victim,H,55.914,5.670,289,1076372.354
+2017-2024,Robbery,victim,NHW,54.447,3.316,849,2407722.637
+2017-2024,Robbery,victim,NHB,64.221,6.119,247,808261.612
+2017-2024,Robbery,victim,NHO,54.941,7.388,134,399157.684
+2017-2024,Robbery,offender,H,56.634,6.527,217,800934.815
+2017-2024,Robbery,offender,NHW,51.548,4.604,506,1620524.641
+2017-2024,Robbery,offender,NHB,65.450,3.923,498,1456938.838
+2017-2024,Robbery,offender,NHO,59.350,12.272,54,164703.324
+2017-2024,Robbery,offender,U,46.073,5.473,211,578316.615
+2017-2024,Robbery,offender,MIX,63.399,11.980,33,70096.055
+2017-2024,Robbery,pair,victim H / offender H,50.843,9.245,97,413727.043
+2017-2024,Robbery,pair,victim H / offender NHW,43.904,16.122,48,216956.121
+2017-2024,Robbery,pair,victim H / offender NHB,69.698,6.765,85,264628.441
+2017-2024,Robbery,pair,victim NHW / offender H,59.333,11.250,82,278914.724
+2017-2024,Robbery,pair,victim NHW / offender NHW,53.969,4.960,412,1262473.836
+2017-2024,Robbery,pair,victim NHW / offender NHB,61.473,5.221,199,470278.168
+2017-2024,Robbery,pair,victim NHW / offender NHO,44.558,17.722,26,85865.433
+2017-2024,Robbery,pair,victim NHB / offender H,89.399,6.361,21,71904.051
+2017-2024,Robbery,pair,victim NHB / offender NHW,38.974,14.841,19,57882.056
+2017-2024,Robbery,pair,victim NHB / offender NHB,63.565,8.062,163,571974.976
+2017-2024,Robbery,pair,victim NHO / offender H,37.047,13.885,17,36388.997
+2017-2024,Robbery,pair,victim NHO / offender NHW,43.490,13.255,27,83212.627
+2017-2024,Robbery,pair,victim NHO / offender NHB,77.602,7.353,51,150057.252
+2017-2024,Robbery,pair,victim NHO / offender NHO,65.038,16.727,14,38815.534
+2017-2024,Aggravated assault,victim,H,60.645,4.156,507,1600564.307
+2017-2024,Aggravated assault,victim,NHW,56.685,2.284,1978,5321083.868
+2017-2024,Aggravated assault,victim,NHB,66.486,4.510,366,1243487.146
+2017-2024,Aggravated assault,victim,NHO,43.022,5.321,233,639345.432
+2017-2024,Aggravated assault,offender,H,61.466,4.603,397,1393249.802
+2017-2024,Aggravated assault,offender,NHW,55.848,2.708,1436,3872506.908
+2017-2024,Aggravated assault,offender,NHB,62.094,4.140,641,1907288.052
+2017-2024,Aggravated assault,offender,NHO,43.088,6.307,122,276039.221
+2017-2024,Aggravated assault,offender,U,55.415,4.091,461,1302753.907
+2017-2024,Aggravated assault,offender,MIX,84.439,8.216,27,52642.863
+2017-2024,Aggravated assault,pair,victim H / offender H,70.561,6.157,169,609216.261
+2017-2024,Aggravated assault,pair,victim H / offender NHW,66.445,5.399,149,390937.167
+2017-2024,Aggravated assault,pair,victim H / offender NHB,41.556,10.971,87,286197.095
+2017-2024,Aggravated assault,pair,victim H / offender NHO,36.449,16.431,16,38191.389
+2017-2024,Aggravated assault,pair,victim NHW / offender H,55.046,7.022,180,619935.432
+2017-2024,Aggravated assault,pair,victim NHW / offender NHW,56.906,3.113,1149,3049094.859
+2017-2024,Aggravated assault,pair,victim NHW / offender NHB,61.979,5.786,295,797507.018
+2017-2024,Aggravated assault,pair,victim NHW / offender NHO,50.126,8.917,66,135111.597
+2017-2024,Aggravated assault,pair,victim NHB / offender H,53.978,14.197,27,108421.051
+2017-2024,Aggravated assault,pair,victim NHB / offender NHW,46.990,11.745,44,153702.581
+2017-2024,Aggravated assault,pair,victim NHB / offender NHB,72.170,5.667,215,697638.867
+2017-2024,Aggravated assault,pair,victim NHO / offender H,48.016,15.428,21,55677.058
+2017-2024,Aggravated assault,pair,victim NHO / offender NHW,34.296,8.244,94,278772.301
+2017-2024,Aggravated assault,pair,victim NHO / offender NHB,53.674,10.193,44,125945.071
+2017-2024,Aggravated assault,pair,victim NHO / offender NHO,34.236,10.213,36,85553.715
+2017-2024,Simple assault,victim,H,38.771,2.911,1311,4636030.764
+2017-2024,Simple assault,victim,NHW,39.277,1.354,6538,18612493.497
+2017-2024,Simple assault,victim,NHB,41.969,2.886,1006,3264902.537
+2017-2024,Simple assault,victim,NHO,36.006,4.520,718,2868206.219
+2017-2024,Simple assault,offender,H,41.992,3.416,1018,3670123.997
+2017-2024,Simple assault,offender,NHW,40.698,1.667,4600,13036121.993
+2017-2024,Simple assault,offender,NHB,38.579,2.458,1929,5920357.315
+2017-2024,Simple assault,offender,NHO,43.294,6.437,361,1301916.301
+2017-2024,Simple assault,offender,U,32.397,2.341,1607,5243632.264
+2017-2024,Simple assault,offender,MIX,56.306,14.058,58,209481.146
+2017-2024,Simple assault,pair,victim H / offender H,38.142,3.877,393,1396804.027
+2017-2024,Simple assault,pair,victim H / offender NHW,38.650,5.403,392,1348331.496
+2017-2024,Simple assault,pair,victim H / offender NHB,47.462,8.864,232,867812.897
+2017-2024,Simple assault,pair,victim H / offender NHO,22.099,7.492,44,103097.424
+2017-2024,Simple assault,pair,victim NHW / offender H,38.559,4.685,516,1681115.738
+2017-2024,Simple assault,pair,victim NHW / offender NHW,41.718,1.799,3758,10094791.137
+2017-2024,Simple assault,pair,victim NHW / offender NHB,35.511,3.420,961,2696691.924
+2017-2024,Simple assault,pair,victim NHW / offender NHO,42.597,8.661,201,764427.838
+2017-2024,Simple assault,pair,victim NHB / offender H,68.761,10.727,60,291867.458
+2017-2024,Simple assault,pair,victim NHB / offender NHW,40.913,5.696,151,412915.785
+2017-2024,Simple assault,pair,victim NHB / offender NHB,42.385,3.417,589,1826076.260
+2017-2024,Simple assault,pair,victim NHB / offender NHO,13.426,9.308,22,100234.645
+2017-2024,Simple assault,pair,victim NHO / offender H,53.096,17.542,49,300336.774
+2017-2024,Simple assault,pair,victim NHO / offender NHW,34.233,7.656,299,1180083.574
+2017-2024,Simple assault,pair,victim NHO / offender NHB,26.522,5.015,147,529776.234
+2017-2024,Simple assault,pair,victim NHO / offender NHO,60.388,12.184,94,334156.394
+2017-2024,Violent excl. simple assault,victim,H,52.838,2.895,1007,3271243.130
+2017-2024,Violent excl. simple assault,victim,NHW,50.079,1.639,3668,10064307.452
+2017-2024,Violent excl. simple assault,victim,NHB,60.296,3.428,733,2471448.835
+2017-2024,Violent excl. simple assault,victim,NHO,39.392,3.823,485,1495070.031
+2017-2024,Violent excl. simple assault,offender,H,54.180,3.264,828,2825862.243
+2017-2024,Violent excl. simple assault,offender,NHW,48.477,2.024,2523,7126142.893
+2017-2024,Violent excl. simple assault,offender,NHB,58.318,2.597,1364,4024763.835
+2017-2024,Violent excl. simple assault,offender,NHO,43.248,4.837,236,583977.086
+2017-2024,Violent excl. simple assault,offender,U,45.622,2.958,877,2529455.520
+2017-2024,Violent excl. simple assault,offender,MIX,51.161,17.193,65,211867.872
+2017-2024,Violent excl. simple assault,pair,victim H / offender H,57.041,4.823,357,1263059.072
+2017-2024,Violent excl. simple assault,pair,victim H / offender NHW,51.723,6.129,256,767695.782
+2017-2024,Violent excl. simple assault,pair,victim H / offender NHB,49.782,6.864,194,632075.076
+2017-2024,Violent excl. simple assault,pair,victim H / offender NHO,36.139,11.343,33,78957.179
+2017-2024,Violent excl. simple assault,pair,victim NHW / offender H,53.592,5.348,361,1188706.503
+2017-2024,Violent excl. simple assault,pair,victim NHW / offender NHW,49.627,2.316,2021,5599372.894
+2017-2024,Violent excl. simple assault,pair,victim NHW / offender NHB,58.106,3.636,597,1519683.140
+2017-2024,Violent excl. simple assault,pair,victim NHW / offender NHO,43.095,7.231,127,306209.983
+2017-2024,Violent excl. simple assault,pair,victim NHB / offender H,58.182,9.698,57,224318.549
+2017-2024,Violent excl. simple assault,pair,victim NHB / offender NHW,39.076,7.694,83,269844.999
+2017-2024,Violent excl. simple assault,pair,victim NHB / offender NHB,61.993,4.561,457,1517275.873
+2017-2024,Violent excl. simple assault,pair,victim NHB / offender NHO,69.181,16.661,12,40994.124
+2017-2024,Violent excl. simple assault,pair,victim NHO / offender H,28.740,8.306,53,149778.119
+2017-2024,Violent excl. simple assault,pair,victim NHO / offender NHW,35.407,6.400,163,489229.218
+2017-2024,Violent excl. simple assault,pair,victim NHO / offender NHB,58.714,7.056,116,355729.746
+2017-2024,Violent excl. simple assault,pair,victim NHO / offender NHO,40.364,8.024,64,157815.800
+2017-2024,All violent,victim,H,44.591,2.068,2318,7907273.893
+2017-2024,All violent,victim,NHW,43.068,1.069,10206,28676800.949
+2017-2024,All violent,victim,NHB,49.865,2.276,1739,5736351.372
+2017-2024,All violent,victim,NHO,37.167,3.233,1203,4363276.250
+2017-2024,All violent,offender,H,47.294,2.472,1846,6495986.240
+2017-2024,All violent,offender,NHW,43.447,1.306,7123,20162264.886
+2017-2024,All violent,offender,NHB,46.567,1.808,3293,9945121.150
+2017-2024,All violent,offender,NHO,43.280,4.689,597,1885893.386
+2017-2024,All violent,offender,U,36.701,1.868,2484,7773087.784
+2017-2024,All violent,offender,MIX,53.719,11.557,123,421349.018
+2017-2024,All violent,pair,victim H / offender H,47.116,3.290,750,2659863.099
+2017-2024,All violent,pair,victim H / offender NHW,43.393,4.114,648,2116027.278
+2017-2024,All violent,pair,victim H / offender NHB,48.440,5.803,426,1499887.973
+2017-2024,All violent,pair,victim H / offender NHO,28.188,6.578,77,182054.602
+2017-2024,All violent,pair,victim NHW / offender H,44.786,3.809,877,2869822.241
+2017-2024,All violent,pair,victim NHW / offender NHW,44.540,1.440,5779,15694164.031
+2017-2024,All violent,pair,victim NHW / offender NHB,43.655,2.636,1558,4216375.064
+2017-2024,All violent,pair,victim NHW / offender NHO,42.739,6.523,328,1070637.821
+2017-2024,All violent,pair,victim NHB / offender H,64.163,7.873,117,516186.008
+2017-2024,All violent,pair,victim NHB / offender NHW,40.187,4.603,234,682760.784
+2017-2024,All violent,pair,victim NHB / offender NHB,51.283,2.950,1046,3343352.133
+2017-2024,All violent,pair,victim NHB / offender NHO,29.610,11.383,34,141228.769
+2017-2024,All violent,pair,victim NHO / offender H,44.991,12.621,102,450114.893
+2017-2024,All violent,pair,victim NHO / offender NHW,34.577,5.727,462,1669312.792
+2017-2024,All violent,pair,victim NHO / offender NHB,39.454,4.554,263,885505.980
+2017-2024,All violent,pair,victim NHO / offender NHO,53.965,9.046,158,491972.194
+2022-2024,Rape/sexual assault,victim,H,29.295,6.857,74,248947.815
+2022-2024,Rape/sexual assault,victim,NHW,30.626,5.983,273,904867.771
+2022-2024,Rape/sexual assault,victim,NHB,33.371,15.374,40,184024.420
+2022-2024,Rape/sexual assault,victim,NHO,23.647,11.582,36,235873.545
+2022-2024,Rape/sexual assault,offender,H,38.784,7.374,73,253468.255
+2022-2024,Rape/sexual assault,offender,NHW,37.179,8.305,181,592424.718
+2022-2024,Rape/sexual assault,offender,NHB,28.354,10.924,66,300392.721
+2022-2024,Rape/sexual assault,offender,NHO,17.071,12.422,23,69401.154
+2022-2024,Rape/sexual assault,offender,U,16.836,5.595,76,284664.650
+2022-2024,Rape/sexual assault,offender,MIX,5.092,7.133,4,73362.053
+2022-2024,Rape/sexual assault,pair,victim H / offender H,42.972,10.268,36,117692.427
+2022-2024,Rape/sexual assault,pair,victim H / offender NHW,23.046,12.465,16,47009.994
+2022-2024,Rape/sexual assault,pair,victim NHW / offender H,45.487,12.614,27,87985.242
+2022-2024,Rape/sexual assault,pair,victim NHW / offender NHW,36.030,10.184,142,454225.109
+2022-2024,Rape/sexual assault,pair,victim NHW / offender NHB,30.076,11.658,33,101023.141
+2022-2024,Rape/sexual assault,pair,victim NHW / offender NHO,22.896,17.277,13,48576.102
+2022-2024,Rape/sexual assault,pair,victim NHB / offender NHW,28.633,15.810,10,30146.123
+2022-2024,Rape/sexual assault,pair,victim NHB / offender NHB,38.081,21.722,20,118355.698
+2022-2024,Rape/sexual assault,pair,victim NHO / offender NHW,60.835,18.963,13,61043.491
+2022-2024,Robbery,victim,H,58.490,9.938,99,487837.546
+2022-2024,Robbery,victim,NHW,59.389,5.271,294,1069817.799
+2022-2024,Robbery,victim,NHB,59.256,11.514,80,344555.659
+2022-2024,Robbery,victim,NHO,60.760,8.669,56,166411.838
+2022-2024,Robbery,offender,H,64.163,9.098,84,378822.291
+2022-2024,Robbery,offender,NHW,54.817,7.793,171,748717.572
+2022-2024,Robbery,offender,NHB,65.497,7.654,163,608866.035
+2022-2024,Robbery,offender,NHO,74.209,11.616,21,70605.850
+2022-2024,Robbery,offender,U,46.310,8.089,78,234299.305
+2022-2024,Robbery,offender,MIX,46.848,18.462,12,27311.788
+2022-2024,Robbery,pair,victim H / offender H,63.988,13.687,31,137928.060
+2022-2024,Robbery,pair,victim H / offender NHW,38.969,21.252,15,154111.935
+2022-2024,Robbery,pair,victim H / offender NHB,81.195,9.584,32,119620.706
+2022-2024,Robbery,pair,victim NHW / offender H,58.350,15.952,40,190155.899
+2022-2024,Robbery,pair,victim NHW / offender NHW,62.188,7.441,140,551250.949
+2022-2024,Robbery,pair,victim NHW / offender NHB,62.663,9.715,57,164380.035
+2022-2024,Robbery,pair,victim NHB / offender NHB,56.251,14.275,53,256694.955
+2022-2024,Robbery,pair,victim NHO / offender NHB,79.606,12.181,21,68170.339
+2022-2024,Aggravated assault,victim,H,64.274,5.800,194,683916.600
+2022-2024,Aggravated assault,victim,NHW,55.143,3.967,717,2565421.352
+2022-2024,Aggravated assault,victim,NHB,71.909,6.913,139,602401.836
+2022-2024,Aggravated assault,victim,NHO,44.710,9.634,91,303520.811
+2022-2024,Aggravated assault,offender,H,67.670,7.123,159,656281.634
+2022-2024,Aggravated assault,offender,NHW,53.934,4.840,518,1871768.951
+2022-2024,Aggravated assault,offender,NHB,64.311,6.262,243,929367.656
+2022-2024,Aggravated assault,offender,NHO,47.555,11.648,33,94616.249
+2022-2024,Aggravated assault,offender,U,53.091,7.164,180,587667.423
+2022-2024,Aggravated assault,offender,MIX,95.222,5.611,8,15558.687
+2022-2024,Aggravated assault,pair,victim H / offender H,77.924,7.642,68,291702.198
+2022-2024,Aggravated assault,pair,victim H / offender NHW,65.366,9.335,55,155997.949
+2022-2024,Aggravated assault,pair,victim H / offender NHB,36.477,12.344,29,98406.381
+2022-2024,Aggravated assault,pair,victim NHW / offender H,56.651,11.012,69,294074.755
+2022-2024,Aggravated assault,pair,victim NHW / offender NHW,55.308,5.553,410,1493866.331
+2022-2024,Aggravated assault,pair,victim NHW / offender NHB,60.473,9.374,114,416481.731
+2022-2024,Aggravated assault,pair,victim NHW / offender NHO,56.430,15.360,19,57277.174
+2022-2024,Aggravated assault,pair,victim NHB / offender H,89.158,9.287,10,34002.779
+2022-2024,Aggravated assault,pair,victim NHB / offender NHW,45.309,15.152,20,85679.546
+2022-2024,Aggravated assault,pair,victim NHB / offender NHB,76.443,9.033,80,352062.545
+2022-2024,Aggravated assault,pair,victim NHO / offender H,54.477,20.288,12,36501.903
+2022-2024,Aggravated assault,pair,victim NHO / offender NHW,31.193,13.808,33,136225.125
+2022-2024,Aggravated assault,pair,victim NHO / offender NHB,65.371,13.191,20,62416.998
+2022-2024,Simple assault,victim,H,41.039,5.415,461,2097215.030
+2022-2024,Simple assault,victim,NHW,39.044,2.251,2102,7214530.674
+2022-2024,Simple assault,victim,NHB,42.405,5.170,342,1375704.476
+2022-2024,Simple assault,victim,NHO,35.353,7.906,277,1230605.623
+2022-2024,Simple assault,offender,H,45.412,5.656,362,1507871.854
+2022-2024,Simple assault,offender,NHW,40.550,3.045,1420,5084411.577
+2022-2024,Simple assault,offender,NHB,35.333,4.713,643,2341103.764
+2022-2024,Simple assault,offender,NHO,51.766,8.330,126,477464.795
+2022-2024,Simple assault,offender,U,32.952,3.538,612,2381449.203
+2022-2024,Simple assault,offender,MIX,71.881,16.311,19,125754.611
+2022-2024,Simple assault,pair,victim H / offender H,33.592,5.786,143,546746.468
+2022-2024,Simple assault,pair,victim H / offender NHW,42.745,9.596,144,678577.840
+2022-2024,Simple assault,pair,victim H / offender NHB,57.450,14.091,83,419181.639
+2022-2024,Simple assault,pair,victim H / offender NHO,11.671,9.809,11,41196.626
+2022-2024,Simple assault,pair,victim NHW / offender H,41.718,6.673,177,640937.013
+2022-2024,Simple assault,pair,victim NHW / offender NHW,40.495,3.134,1134,3767423.106
+2022-2024,Simple assault,pair,victim NHW / offender NHB,27.665,4.900,313,995046.171
+2022-2024,Simple assault,pair,victim NHW / offender NHO,61.855,9.697,76,309222.376
+2022-2024,Simple assault,pair,victim NHB / offender H,81.016,12.944,19,134293.041
+2022-2024,Simple assault,pair,victim NHB / offender NHW,47.523,10.641,45,148579.220
+2022-2024,Simple assault,pair,victim NHB / offender NHB,38.152,5.498,187,669972.073
+2022-2024,Simple assault,pair,victim NHO / offender H,67.189,17.241,23,185895.331
+2022-2024,Simple assault,pair,victim NHO / offender NHW,35.818,15.360,97,489831.412
+2022-2024,Simple assault,pair,victim NHO / offender NHB,21.595,6.947,60,256903.881
+2022-2024,Simple assault,pair,victim NHO / offender NHO,51.796,13.138,33,81011.374
+2022-2024,Violent excl. simple assault,victim,H,56.158,4.806,367,1420701.961
+2022-2024,Violent excl. simple assault,victim,NHW,51.257,2.840,1284,4540106.921
+2022-2024,Violent excl. simple assault,victim,NHB,61.784,6.004,259,1130981.916
+2022-2024,Violent excl. simple assault,victim,NHO,41.455,6.818,183,705806.194
+2022-2024,Violent excl. simple assault,offender,H,60.957,4.959,316,1288572.179
+2022-2024,Violent excl. simple assault,offender,NHW,51.050,3.643,870,3212911.242
+2022-2024,Violent excl. simple assault,offender,NHB,58.829,4.416,472,1838626.412
+2022-2024,Violent excl. simple assault,offender,NHO,46.559,7.823,77,234623.253
+2022-2024,Violent excl. simple assault,offender,U,42.329,4.731,334,1106631.378
+2022-2024,Violent excl. simple assault,offender,MIX,26.968,16.749,24,116232.529
+2022-2024,Violent excl. simple assault,pair,victim H / offender H,66.896,6.689,135,547322.684
+2022-2024,Violent excl. simple assault,pair,victim H / offender NHW,48.404,11.054,86,357119.879
+2022-2024,Violent excl. simple assault,pair,victim H / offender NHB,52.632,8.984,66,252740.694
+2022-2024,Violent excl. simple assault,pair,victim H / offender NHO,28.047,17.047,12,29532.046
+2022-2024,Violent excl. simple assault,pair,victim NHW / offender H,55.499,8.123,136,572215.897
+2022-2024,Violent excl. simple assault,pair,victim NHW / offender NHW,53.322,4.112,692,2499342.389
+2022-2024,Violent excl. simple assault,pair,victim NHW / offender NHB,56.498,6.369,204,681884.907
+2022-2024,Violent excl. simple assault,pair,victim NHW / offender NHO,48.967,11.234,41,131383.551
+2022-2024,Violent excl. simple assault,pair,victim NHB / offender H,72.508,12.746,23,101063.107
+2022-2024,Violent excl. simple assault,pair,victim NHB / offender NHW,36.838,10.617,39,141724.096
+2022-2024,Violent excl. simple assault,pair,victim NHB / offender NHB,63.070,8.258,153,727113.198
+2022-2024,Violent excl. simple assault,pair,victim NHO / offender H,41.900,15.599,22,67970.492
+2022-2024,Violent excl. simple assault,pair,victim NHO / offender NHW,38.388,12.660,53,214724.878
+2022-2024,Violent excl. simple assault,pair,victim NHO / offender NHB,59.240,11.387,49,176887.612
+2022-2024,Violent excl. simple assault,pair,victim NHO / offender NHO,43.285,15.091,18,49206.062
+2022-2024,All violent,victim,H,47.145,3.761,828,3517916.991
+2022-2024,All violent,victim,NHW,43.761,1.814,3386,11754637.596
+2022-2024,All violent,victim,NHB,51.148,3.998,601,2506686.392
+2022-2024,All violent,victim,NHO,37.577,5.519,460,1936411.818
+2022-2024,All violent,offender,H,52.575,3.862,678,2796444.033
+2022-2024,All violent,offender,NHW,44.616,2.393,2290,8297322.819
+2022-2024,All violent,offender,NHB,45.669,3.315,1115,4179730.176
+2022-2024,All violent,offender,NHO,50.051,6.234,203,712088.048
+2022-2024,All violent,offender,U,35.927,2.849,946,3488080.581
+2022-2024,All violent,offender,MIX,50.308,18.946,43,241987.139
+2022-2024,All violent,pair,victim H / offender H,50.253,5.654,278,1094069.152
+2022-2024,All violent,pair,victim H / offender NHW,44.696,7.365,230,1035697.719
+2022-2024,All violent,pair,victim H / offender NHB,55.637,9.709,149,671922.333
+2022-2024,All violent,pair,victim H / offender NHO,18.509,9.620,23,70728.673
+2022-2024,All violent,pair,victim NHW / offender H,48.218,5.443,313,1213152.910
+2022-2024,All violent,pair,victim NHW / offender NHW,45.610,2.602,1826,6266765.495
+2022-2024,All violent,pair,victim NHW / offender NHB,39.389,4.450,517,1676931.078
+2022-2024,All violent,pair,victim NHW / offender NHO,58.012,7.956,117,440605.927
+2022-2024,All violent,pair,victim NHB / offender H,77.362,9.977,42,235356.149
+2022-2024,All violent,pair,victim NHB / offender NHW,42.307,7.511,84,290303.316
+2022-2024,All violent,pair,victim NHB / offender NHB,51.121,5.435,340,1397085.271
+2022-2024,All violent,pair,victim NHB / offender NHO,34.664,17.580,12,70536.013
+2022-2024,All violent,pair,victim NHO / offender H,60.418,15.056,45,253865.822
+2022-2024,All violent,pair,victim NHO / offender NHW,36.602,11.327,150,704556.290
+2022-2024,All violent,pair,victim NHO / offender NHB,36.946,6.698,109,433791.493
+2022-2024,All violent,pair,victim NHO / offender NHO,48.580,10.186,51,130217.435

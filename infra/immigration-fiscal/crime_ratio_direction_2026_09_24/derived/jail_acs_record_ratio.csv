@@ -1,0 +1,35 @@
+instrument,jail_method,jail_H_share,universe,recorded_share,self_id_share,record_ratio_f
+ACS acs1 2023 S2603 adult correctional,bjs_published_2023,0.144083,bjs_universe,0.203000,0.201403,1.007931
+ACS acs1 2023 S2603 adult correctional,bjs_published_2023,0.144083,fed_detention_central,0.203000,0.210317,0.965211
+ACS acs1 2023 S2603 adult correctional,bjs_published_2023,0.144083,fed_detention_low,0.203000,0.203939,0.995398
+ACS acs1 2023 S2603 adult correctional,bjs_published_2023,0.144083,fed_detention_high,0.203000,0.219615,0.924347
+ACS acs1 2023 S2603 adult correctional,survey_min,0.171317,bjs_universe,0.203000,0.211194,0.961202
+ACS acs1 2023 S2603 adult correctional,survey_min,0.171317,fed_detention_central,0.203000,0.219605,0.924387
+ACS acs1 2023 S2603 adult correctional,survey_min,0.171317,fed_detention_low,0.203000,0.213323,0.951607
+ACS acs1 2023 S2603 adult correctional,survey_min,0.171317,fed_detention_high,0.203000,0.228808,0.887205
+ACS acs1 2023 S2603 adult correctional,survey_or_mean_post2000,0.191303,bjs_universe,0.203000,0.218379,0.929576
+ACS acs1 2023 S2603 adult correctional,survey_or_mean_post2000,0.191303,fed_detention_central,0.203000,0.226421,0.896559
+ACS acs1 2023 S2603 adult correctional,survey_or_mean_post2000,0.191303,fed_detention_low,0.203000,0.220210,0.921846
+ACS acs1 2023 S2603 adult correctional,survey_or_mean_post2000,0.191303,fed_detention_high,0.203000,0.235555,0.861793
+ACS acs1 2023 S2603 adult correctional,survey_max,0.209319,bjs_universe,0.203000,0.224856,0.902800
+ACS acs1 2023 S2603 adult correctional,survey_max,0.209319,fed_detention_central,0.203000,0.232566,0.872872
+ACS acs1 2023 S2603 adult correctional,survey_max,0.209319,fed_detention_low,0.203000,0.226418,0.896570
+ACS acs1 2023 S2603 adult correctional,survey_max,0.209319,fed_detention_high,0.203000,0.241637,0.840102
+ACS acs5 2023 S2603 adult correctional,bjs_published_2023,0.144083,bjs_universe,0.198000,0.201403,0.983105
+ACS acs5 2023 S2603 adult correctional,bjs_published_2023,0.144083,fed_detention_central,0.198000,0.210317,0.941438
+ACS acs5 2023 S2603 adult correctional,bjs_published_2023,0.144083,fed_detention_low,0.198000,0.203939,0.970881
+ACS acs5 2023 S2603 adult correctional,bjs_published_2023,0.144083,fed_detention_high,0.198000,0.219615,0.901580
+ACS acs5 2023 S2603 adult correctional,survey_min,0.171317,bjs_universe,0.198000,0.211194,0.937527
+ACS acs5 2023 S2603 adult correctional,survey_min,0.171317,fed_detention_central,0.198000,0.219605,0.901619
+ACS acs5 2023 S2603 adult correctional,survey_min,0.171317,fed_detention_low,0.198000,0.213323,0.928169
+ACS acs5 2023 S2603 adult correctional,survey_min,0.171317,fed_detention_high,0.198000,0.228808,0.865353
+ACS acs5 2023 S2603 adult correctional,survey_or_mean_post2000,0.191303,bjs_universe,0.198000,0.218379,0.906680
+ACS acs5 2023 S2603 adult correctional,survey_or_mean_post2000,0.191303,fed_detention_central,0.198000,0.226421,0.874476
+ACS acs5 2023 S2603 adult correctional,survey_or_mean_post2000,0.191303,fed_detention_low,0.198000,0.220210,0.899141
+ACS acs5 2023 S2603 adult correctional,survey_or_mean_post2000,0.191303,fed_detention_high,0.198000,0.235555,0.840567
+ACS acs5 2023 S2603 adult correctional,survey_max,0.209319,bjs_universe,0.198000,0.224856,0.880564
+ACS acs5 2023 S2603 adult correctional,survey_max,0.209319,fed_detention_central,0.198000,0.232566,0.851373
+ACS acs5 2023 S2603 adult correctional,survey_max,0.209319,fed_detention_low,0.198000,0.226418,0.874487
+ACS acs5 2023 S2603 adult correctional,survey_max,0.209319,fed_detention_high,0.198000,0.241637,0.819410
+Census 2010 SF1 PCT20H state+federal prisons,,,prisons only; BJS sentenced yearend 2010 (SISFCF/NIS-adjusted),0.177506,0.223075,0.795725
+"reference: all components administratively coded (NPS appendix, ASJ)",survey_or_mean_post2000,0.191303,fed_detention_central,0.176926,0.226421,0.781404

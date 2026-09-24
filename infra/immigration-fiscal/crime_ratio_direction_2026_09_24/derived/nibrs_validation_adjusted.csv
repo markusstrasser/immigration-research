@@ -1,0 +1,21 @@
+method,offence,RR_H_NHW,RR_H_all,local_share_H,national_share_H,V_H,V_NHW,V_total,dRR_H_NHW_vs_central
+central,Murder,2.303384,1.001527,0.357320,0.202229,1361.387328,730.143786,3810.000000,0.000000
+central,Rape/sexual assault,1.745597,1.180911,0.421319,0.239284,15475.053942,10951.691482,36730.000000,0.000000
+central,Robbery,4.219279,0.917179,0.327227,0.187618,16350.203428,4787.160163,49966.000000,0.000000
+central,Aggravated assault,2.234725,1.088882,0.388486,0.222279,66114.469725,36548.153755,170185.000000,0.000000
+central,Simple assault,1.742153,1.096754,0.391294,0.219832,208703.504892,147991.355406,533367.000000,0.000000
+"validation-adjusted (all agencies, factor 0.62)",Murder,2.121000,0.958498,0.341968,0.191378,1302.898378,758.862071,3810.000000,-0.079181
+"validation-adjusted (all agencies, factor 0.62)",Rape/sexual assault,1.597966,1.129447,0.402958,0.225489,14800.660682,11442.121547,36730.000000,-0.084573
+"validation-adjusted (all agencies, factor 0.62)",Robbery,3.710212,0.869823,0.310331,0.175761,15505.993180,5162.901542,49966.000000,-0.120652
+"validation-adjusted (all agencies, factor 0.62)",Aggravated assault,2.069798,1.050024,0.374622,0.212023,63755.080277,38052.198180,170185.000000,-0.073802
+"validation-adjusted (all agencies, factor 0.62)",Simple assault,1.668353,1.074984,0.383527,0.214072,204560.875414,151470.390152,533367.000000,-0.042362
+"validation-adjusted (without booking-discordant agencies, factor 0.67)",Murder,2.143874,0.964079,0.343959,0.192772,1310.484765,755.137127,3810.000000,-0.069250
+"validation-adjusted (without booking-discordant agencies, factor 0.67)",Rape/sexual assault,1.616396,1.136122,0.405340,0.227255,14888.133753,11378.509666,36730.000000,-0.074015
+"validation-adjusted (without booking-discordant agencies, factor 0.67)",Robbery,3.772020,0.875965,0.312522,0.177283,15615.492588,5114.165509,49966.000000,-0.106004
+"validation-adjusted (without booking-discordant agencies, factor 0.67)",Aggravated assault,2.090451,1.055064,0.376420,0.213340,64061.108011,37857.114105,170185.000000,-0.064560
+"validation-adjusted (without booking-discordant agencies, factor 0.67)",Simple assault,1.677733,1.077808,0.384535,0.214815,205098.200658,151019.137342,533367.000000,-0.036977
+"validation-adjusted (without booking-discordant agencies and Lake Havasu City, factor 0.87)",Murder,2.238140,0.986513,0.351963,0.198416,1340.979573,740.164067,3810.000000,-0.028325
+"validation-adjusted (without booking-discordant agencies and Lake Havasu City, factor 0.87)",Rape/sexual assault,1.692607,1.162954,0.414913,0.234424,15239.747059,11122.810585,36730.000000,-0.030356
+"validation-adjusted (without booking-discordant agencies and Lake Havasu City, factor 0.87)",Robbery,4.032822,0.900656,0.321331,0.183448,16055.644609,4918.262500,49966.000000,-0.044192
+"validation-adjusted (without booking-discordant agencies and Lake Havasu City, factor 0.87)",Aggravated assault,2.175659,1.075324,0.383649,0.218675,65291.240000,37072.939555,170185.000000,-0.026431
+"validation-adjusted (without booking-discordant agencies and Lake Havasu City, factor 0.87)",Simple assault,1.716012,1.089158,0.388584,0.217814,207258.073436,149205.247762,533367.000000,-0.015005

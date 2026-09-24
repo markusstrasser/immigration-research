@@ -1,0 +1,16 @@
+{
+ "acs_implied_record_ratio_at_survey_central": 0.8965591498069249,
+ "true_correctional_share_at_central": 0.22642120159469267,
+ "acs_universe_bound_range_2023": [
+  0.09486738112940671,
+  0.14135940160516702
+ ],
+ "state": {
+  "coj_nat": 0.14782941905267602,
+  "raw_nat": 0.16170629803533174,
+  "adj_nat": 0.17762523631528493,
+  "par_nat": 0.14979224343026298
+ },
+ "survey_mean_or": 1.4052566338358947,
+ "nis3_house_or": 1.0752300622021902
+}

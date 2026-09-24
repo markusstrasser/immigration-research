@@ -1,0 +1,885 @@
+state,pub_agency_name,single_pairs,offender_H,off_H_arr_NH,off_NH_arr_H,share_of_offender_H_booked_NH
+TX,Harris,13233,4389,1681,56,0.3830
+TX,Midland,1902,865,337,5,0.3896
+TX,Laredo,1736,1683,183,4,0.1087
+TX,Brazoria,805,224,130,3,0.5804
+TX,Grand Prairie,1211,406,101,12,0.2488
+TX,Round Rock,857,325,93,2,0.2862
+TX,Pasadena,1064,729,65,4,0.0892
+TX,Independent School District:,2921,1475,65,15,0.0441
+TX,Sherman,493,114,56,0,0.4912
+TX,Taylor,241,91,55,0,0.6044
+TX,Williamson,723,190,49,3,0.2579
+TX,Tyler,742,160,36,1,0.2250
+TX,League City,567,100,31,3,0.3100
+TX,Missouri City,296,46,25,2,0.5435
+TX,McKinney,989,187,23,3,0.1230
+TX,Lake Jackson,211,33,22,1,0.6667
+TX,Pearland,1019,293,22,4,0.0751
+TX,Mansfield,351,67,22,0,0.3284
+TX,Cedar Park,332,74,20,1,0.2703
+TX,Galveston,1088,282,20,4,0.0709
+TX,Texas City,537,118,18,2,0.1525
+TX,University of Texas:,231,65,17,0,0.2615
+TX,Georgetown,452,126,17,1,0.1349
+TX,Cleburne,193,55,16,0,0.2909
+TX,Parker,319,49,15,4,0.3061
+TX,Fort Worth,7850,2421,15,15,0.0062
+TX,Montgomery,3882,993,15,7,0.0151
+TX,Lancaster,436,61,14,2,0.2295
+TX,Hurst,286,78,13,1,0.1667
+TX,Hutto,177,52,12,1,0.2308
+TX,Ellis,56,15,11,4,0.7333
+TX,Angleton,189,60,11,1,0.1833
+TX,Leander,265,63,10,1,0.1587
+TX,Humble,193,57,10,1,0.1754
+TX,Deer Park,155,38,9,1,0.2368
+TX,Alvin,227,57,8,3,0.1404
+TX,La Porte,180,50,8,0,0.1600
+TX,Tarrant,324,60,8,2,0.1333
+TX,Seabrook,113,18,7,0,0.3889
+TX,Sugar Land,417,76,7,3,0.0921
+TX,Universal City,178,76,6,4,0.0789
+TX,Denton,1146,275,6,1,0.0218
+TX,Alvarado,69,20,6,4,0.3000
+TX,Kennedale,54,10,6,0,0.6000
+TX,Victoria,729,449,6,3,0.0134
+TX,Johnson,312,78,5,2,0.0641
+TX,Dickinson,114,21,5,0,0.2381
+TX,Richwood,19,4,4,0,1.0000
+TX,Lake Dallas,32,6,4,0,0.6667
+TX,Friendswood,108,22,4,0,0.1818
+TX,Wilson,192,78,4,5,0.0513
+TX,San Antonio,11101,7701,4,5,0.0005
+TX,Zapata,9,9,3,0,0.3333
+TX,Liberty Hill,32,5,3,0,0.6000
+TX,Comal,148,50,3,2,0.0600
+TX,Plano,1607,343,3,0,0.0087
+TX,Corinth,129,23,3,0,0.1304
+TX,North Richland Hills,418,80,3,1,0.0375
+TX,Burleson,585,94,3,2,0.0319
+TX,New Braunfels,572,249,3,1,0.0120
+AZ,Lake Havasu City,495,91,3,1,0.0330
+TX,Hitchcock,79,14,3,1,0.2143
+TX,Iowa Colony,54,14,3,0,0.2143
+TX,University Park,18,2,2,0,1.0000
+TX,Robertson,45,5,2,0,0.4000
+TX,Richardson,591,175,2,0,0.0114
+TX,Kilgore,145,33,2,0,0.0606
+TX,Navarro,174,51,2,0,0.0392
+TX,Leon,24,4,2,0,0.5000
+TX,Terrell,221,41,2,0,0.0488
+TX,South Houston,122,92,2,3,0.0217
+TX,Hickory Creek,11,3,2,0,0.6667
+TX,Beaumont,1014,130,2,7,0.0154
+TX,Webster,100,29,2,1,0.0690
+TX,Dawson,6,3,2,0,0.6667
+TX,Lampasas,152,40,2,0,0.0500
+TX,Pilot Point,12,6,2,0,0.3333
+TX,Baylor Health Care System,71,9,2,0,0.2222
+TX,Abilene,1248,401,2,0,0.0050
+TX,Vernon,61,21,2,0,0.0952
+TX,Granbury,66,11,2,0,0.1818
+TX,Kemah,29,7,2,0,0.2857
+TX,Comanche,48,17,1,0,0.0588
+TX,Rosenberg,478,248,1,0,0.0040
+TX,San Angelo,794,385,1,0,0.0026
+TX,College Station,620,141,1,0,0.0071
+TX,Forney,114,13,1,0,0.0769
+TX,Beeville,106,84,1,0,0.0119
+TX,San Marcos,769,386,1,2,0.0026
+TX,Roman Forest,11,5,1,0,0.2000
+TX,Hood,232,43,1,1,0.0233
+TX,Orange,126,6,1,0,0.1667
+TX,Hill,140,21,1,0,0.0476
+TX,Eagle Pass,171,165,1,0,0.0061
+TX,Santa Fe,44,1,1,0,1.0000
+TX,Jarrell,20,8,1,0,0.1250
+TX,Goliad,30,16,1,0,0.0625
+TX,La Marque,154,25,1,2,0.0400
+TX,Polk,317,14,1,1,0.0714
+TX,Carrollton,598,266,1,1,0.0038
+TX,Kaufman,795,160,1,1,0.0063
+TX,Del Rio,158,136,1,1,0.0074
+TX,Decatur,88,24,1,1,0.0417
+TX,Carthage,47,2,1,0,0.5000
+TX,Wharton,247,104,1,2,0.0096
+TX,Splendora,6,2,1,0,0.5000
+TX,Jeff Davis,7,2,1,0,0.5000
+TX,Lockhart,94,62,1,0,0.0161
+TX,Walker,172,34,1,0,0.0294
+TX,Live Oak,65,30,1,1,0.0333
+TX,Venus,39,7,1,0,0.1429
+TX,Uvalde,213,181,1,1,0.0055
+TX,Arlington,4612,1237,1,2,0.0008
+TX,Allen,190,24,1,0,0.0417
+TX,Paris,231,30,1,1,0.0333
+TX,Chambers,277,65,1,0,0.0154
+TX,Nederland,39,4,0,0,0.0000
+TX,Navasota,116,27,0,0,0.0000
+TX,Northeast,1,0,0,0,
+TX,Odem,3,3,0,0,0.0000
+TX,Ochiltree,4,0,0,0,
+TX,Nixon,2,1,0,0,0.0000
+TX,Nolanville,20,6,0,0,0.0000
+TX,Newton,18,0,0,0,
+TX,Needville,4,3,0,0,0.0000
+TX,Oak Ridge North,11,1,0,0,0.0000
+TX,Northlake,41,3,0,0,0.0000
+TX,New Boston,28,2,0,0,0.0000
+TX,Nolan,2,0,0,0,
+TX,Pantego,3,0,0,0,
+TX,Odessa,1083,654,0,0,0.0000
+TX,Pittsburg,33,6,0,0,0.0000
+TX,Penitas,7,6,0,0,0.0000
+TX,Perryton,55,39,0,0,0.0000
+TX,Pewitt Consolidated Independent School District,1,0,0,0,
+TX,Pflugerville,290,102,0,0,0.0000
+TX,Pharr,286,276,0,0,0.0000
+TX,Pinehurst,1,0,0,0,
+TX,Pineland,3,0,0,0,
+TX,Plainview,157,120,0,0,0.0000
+TX,Olmos Park,3,2,0,0,0.0000
+TX,Pleasanton,207,149,0,1,0.0000
+TX,Point Comfort,5,1,0,0,0.0000
+TX,Port Aransas,78,24,0,1,0.0000
+TX,Port Arthur,286,56,0,0,0.0000
+TX,Port Isabel,88,74,0,0,0.0000
+TX,Port Lavaca,36,28,0,0,0.0000
+TX,Port Neches,27,2,0,0,0.0000
+TX,Pelican Bay,1,0,0,0,
+TX,Pecos,77,65,0,0,0.0000
+TX,Pearsall,26,26,0,0,0.0000
+TX,Patton Village,9,1,0,0,0.0000
+TX,Olney,22,5,0,0,0.0000
+TX,Onalaska,41,3,0,0,0.0000
+TX,Ore City,5,0,0,0,
+TX,Overton,12,0,0,0,
+TX,Ovilla,7,1,0,0,0.0000
+TX,Oyster Creek,34,9,0,0,0.0000
+TX,Palacios,8,4,0,0,0.0000
+TX,Palestine,136,22,0,0,0.0000
+TX,Palmer,7,4,0,0,0.0000
+TX,Palmhurst,4,4,0,0,0.0000
+TX,Palmview,62,60,0,0,0.0000
+TX,Palo Pinto,53,6,0,0,0.0000
+TX,Pampa,136,44,0,0,0.0000
+TX,Panola,86,7,0,0,0.0000
+TX,Parmer,3,1,0,0,0.0000
+TX,Navarro College,2,0,0,0,
+AZ,Apache Junction,283,50,0,0,0.0000
+TX,Natalia,2,0,0,0,
+TX,Longview,608,80,0,0,0.0000
+TX,Limestone,42,4,0,0,0.0000
+TX,Linden,6,0,0,0,
+TX,Lipscomb,6,2,0,0,0.0000
+TX,Little Elm,211,55,0,0,0.0000
+TX,Littlefield,7,4,0,0,0.0000
+TX,Livingston,150,18,0,0,0.0000
+TX,Llano,130,31,0,0,0.0000
+TX,Log Cabin,3,1,0,0,0.0000
+TX,Lone Star,15,1,0,0,0.0000
+TX,Lorena,10,1,0,0,0.0000
+TX,Lexington,1,0,0,0,
+TX,Los Fresnos,43,38,0,0,0.0000
+TX,Lubbock,2680,1384,0,0,0.0000
+TX,Lufkin,446,72,0,0,0.0000
+TX,Luling,40,18,0,0,0.0000
+TX,Lumberton,74,3,0,0,0.0000
+TX,Lynn,3,2,0,0,0.0000
+TX,Lytle,20,13,0,0,0.0000
+TX,Madison,14,3,0,0,0.0000
+TX,Madisonville,30,8,0,0,0.0000
+TX,Liberty,256,89,0,0,0.0000
+TX,Lewisville,889,308,0,1,0.0000
+TX,Manor,102,40,0,0,0.0000
+TX,Lake Worth,19,7,0,0,0.0000
+TX,La Grange,36,10,0,0,0.0000
+TX,La Grulla,7,7,0,0,0.0000
+TX,La Joya,19,19,0,0,0.0000
+TX,La Salle,6,6,0,0,0.0000
+TX,La Vernia,9,3,0,0,0.0000
+TX,La Villa,1,1,0,0,0.0000
+TX,Lacy-Lakeview,78,11,0,0,0.0000
+TX,Lago Vista,16,0,0,0,
+TX,Laguna Vista,16,11,0,0,0.0000
+TX,Lakeport,1,0,0,0,
+TX,Levelland,66,43,0,0,0.0000
+TX,"Lakeview, Harrison County",2,0,0,0,
+TX,Lakeway,35,2,0,0,0.0000
+TX,Lamar,55,1,0,0,0.0000
+TX,Lamb,2,1,0,0,0.0000
+TX,Lamesa,70,48,0,0,0.0000
+TX,Lavaca,22,1,0,0,0.0000
+TX,Lavon,19,2,0,0,0.0000
+TX,Leon Valley,128,84,0,0,0.0000
+TX,Leonard,1,0,0,0,
+TX,Magnolia,10,2,0,0,0.0000
+TX,Manvel,46,6,0,2,0.0000
+TX,Nassau Bay,12,4,0,0,0.0000
+TX,Montgomery County Constable:,60,10,0,0,0.0000
+TX,Milam,6,0,0,0,
+TX,Milford,4,1,0,0,0.0000
+TX,Mineola,24,3,0,0,0.0000
+TX,Mineral Wells,135,31,0,1,0.0000
+TX,Mission,449,427,0,0,0.0000
+TX,Monahans,48,27,0,0,0.0000
+TX,Mont Belvieu,35,3,0,0,0.0000
+TX,Montague,9,0,0,0,
+TX,Montgomery County Constable's Office,2,0,0,0,
+TX,Montgomery County Constable: ,6,2,0,0,0.0000
+TX,Midlothian,146,23,0,0,0.0000
+TX,Moore,24,19,0,0,0.0000
+TX,Morgans Point Resort,9,3,0,0,0.0000
+TX,Morris,32,6,0,0,0.0000
+TX,Mount Pleasant,106,39,0,0,0.0000
+TX,Mount Vernon,15,1,0,0,0.0000
+TX,Muleshoe,18,13,0,0,0.0000
+TX,Murphy,70,12,0,0,0.0000
+TX,Nacogdoches,395,50,0,0,0.0000
+TX,Nash,15,5,0,0,0.0000
+TX,Midwestern State University,1,0,0,0,
+TX,Port of Houston Authority,2,0,0,0,
+TX,Marble Falls,4,1,0,0,0.0000
+TX,McAllen,1245,1158,0,0,0.0000
+TX,Marfa,2,1,0,0,0.0000
+TX,Marion,34,0,0,0,
+TX,Marlin,33,6,0,0,0.0000
+TX,Marshall,159,17,0,0,0.0000
+TX,Mason,5,0,0,0,
+TX,Matagorda,45,11,0,0,0.0000
+TX,Mathis,33,28,0,0,0.0000
+TX,Maverick,69,65,0,0,0.0000
+TX,Maypearl,1,0,0,0,
+TX,McLennan,193,28,0,0,0.0000
+TX,Mesquite,2344,757,0,1,0.0000
+TX,Meadows Place,3,1,0,0,0.0000
+TX,Medina,121,81,0,0,0.0000
+TX,Melissa,42,6,0,0,0.0000
+TX,Memorial Villages,3,1,0,0,0.0000
+TX,Memphis,4,1,0,0,0.0000
+TX,Menard,1,0,0,0,
+TX,Mercedes,254,243,0,0,0.0000
+TX,Meridian,8,2,0,0,0.0000
+TX,Merkel,7,3,0,0,0.0000
+TX,Mexia,47,19,0,0,0.0000
+TX,"Reno, Parker County",10,3,0,0,0.0000
+TX,Portland,242,130,0,0,0.0000
+TX,Tulia,43,21,0,0,0.0000
+TX,The Colony,236,34,0,0,0.0000
+TX,Three Rivers,4,1,0,0,0.0000
+TX,Tioga,1,1,0,0,0.0000
+TX,Titus,110,35,0,0,0.0000
+TX,Tom Bean,3,1,0,0,0.0000
+TX,Tom Green,82,31,0,0,0.0000
+TX,Tomball,75,27,0,0,0.0000
+TX,Tool,5,0,0,0,
+TX,Trinity,76,3,0,0,0.0000
+TX,Trophy Club,23,1,0,0,0.0000
+TX,Tye,9,3,0,0,0.0000
+TX,Texas State University:,10,2,0,1,0.0000
+TX,Tyler Junior College,3,0,0,0,
+TX,University Medical Center,7,4,0,0,0.0000
+TX,University of Houston:,13,2,0,0,0.0000
+TX,Upshur,81,4,0,0,0.0000
+TX,Upshur County Constable:,1,0,0,0,
+TX,Upton,18,7,0,0,0.0000
+TX,Val Verde,39,36,0,0,0.0000
+TX,Valley Mills,1,0,0,0,
+TX,Van,13,0,0,0,
+TX,Van Alstyne,31,2,0,0,0.0000
+TX,Texas Tech University:,26,6,0,0,0.0000
+TX,Texas State Technical College:,10,0,0,0,
+TX,Poteet,10,10,0,0,0.0000
+TX,Sweetwater,55,34,0,0,0.0000
+TX,Sudan,1,1,0,0,0.0000
+TX,Sul Ross State University,1,0,0,0,
+TX,Sullivan City,12,12,0,0,0.0000
+TX,Sulphur Springs,69,9,0,0,0.0000
+TX,Sunnyvale,10,1,0,0,0.0000
+TX,Sunray,5,2,0,0,0.0000
+TX,Sunset Valley,2,0,0,0,
+TX,Surfside Beach,4,0,0,0,
+TX,Sutton,2,1,0,0,0.0000
+TX,Sweeny,36,4,0,0,0.0000
+TX,Swisher,5,3,0,0,0.0000
+TX,Texas Medical Center,4,0,0,0,
+TX,Taft,3,3,0,0,0.0000
+TX,Tahoka,17,7,0,0,0.0000
+TX,Tarleton State University,2,0,0,0,
+TX,Tarrant County College District,2,0,0,0,
+TX,Teague,25,4,0,0,0.0000
+TX,Terrell Hills,5,2,0,0,0.0000
+TX,Texarkana,182,7,0,0,0.0000
+TX,Texas A&M International University,2,2,0,0,0.0000
+TX,Texas A&M University:,19,0,0,0,
+TX,"Texas Department of Criminal Justice, Office of Inspector General",1,0,0,0,
+TX,Van Zandt,89,8,0,1,0.0000
+TX,Vidor,17,2,0,0,0.0000
+TX,Waco,1556,425,0,0,0.0000
+TX,Winters,1,1,0,0,0.0000
+TX,Wichita Falls,871,225,0,0,0.0000
+TX,Willacy,46,43,0,0,0.0000
+TX,Willis,53,20,0,0,0.0000
+TX,Willow Park,31,7,0,0,0.0000
+TX,Wills Point,6,0,0,0,
+TX,Wilmer,49,17,0,0,0.0000
+TX,Windcrest,73,31,0,0,0.0000
+TX,Wink,1,1,0,0,0.0000
+TX,Winkler,3,1,0,0,0.0000
+TX,Winnsboro,8,0,0,0,
+TX,Wise,272,31,0,0,0.0000
+TX,Waelder,10,6,0,0,0.0000
+TX,Wolfforth,32,12,0,0,0.0000
+TX,Wood,163,10,0,0,0.0000
+TX,Woodsboro,2,1,0,0,0.0000
+TX,Woodville,7,1,0,0,0.0000
+TX,Woodway,13,1,0,0,0.0000
+TX,Wortham,1,0,0,0,
+TX,Wylie,344,86,0,0,0.0000
+TX,Yoakum,16,13,0,0,0.0000
+TX,Young,18,6,0,0,0.0000
+TX,Zavala,15,14,0,0,0.0000
+TX,Wichita,90,15,0,0,0.0000
+TX,Whitney,5,0,0,0,
+TX,Whitesboro,5,0,0,0,
+TX,Whitehouse,15,0,0,0,
+TX,Wake Village,50,0,0,0,
+TX,Waller,120,30,0,0,0.0000
+TX,Wallis,4,1,0,0,0.0000
+TX,Ward,18,10,0,0,0.0000
+TX,Washington,46,10,0,0,0.0000
+TX,Watauga,138,27,0,0,0.0000
+TX,Waxahachie,178,49,0,0,0.0000
+TX,Weatherford,213,30,0,0,0.0000
+TX,Webb,115,112,0,0,0.0000
+TX,Weimar,11,4,0,0,0.0000
+TX,Weslaco,374,356,0,0,0.0000
+TX,West,6,1,0,0,0.0000
+TX,West Columbia,17,5,0,0,0.0000
+TX,West Lake Hills,9,1,0,0,0.0000
+TX,West Orange,11,0,0,0,
+TX,West Texas A&M University,3,1,0,0,0.0000
+TX,West University Place,12,6,0,0,0.0000
+TX,Westworth,20,8,0,0,0.0000
+TX,Wheeler,7,1,0,0,0.0000
+TX,White Oak,22,3,0,0,0.0000
+TX,White Settlement,80,26,0,0,0.0000
+TX,Stratford,1,1,0,0,0.0000
+TX,Sterling,3,1,0,0,0.0000
+TX,Stephenville,95,23,0,0,0.0000
+TX,Robstown,122,108,0,0,0.0000
+TX,Rice University,2,0,0,0,
+TX,Richland,1,0,0,0,
+TX,Richland Hills,77,20,0,0,0.0000
+TX,Richmond,89,40,0,0,0.0000
+TX,Rio Grande City,17,17,0,0,0.0000
+TX,Rio Hondo,23,14,0,0,0.0000
+TX,River Oaks,22,12,0,0,0.0000
+TX,Roanoke,31,12,0,0,0.0000
+TX,Roberts,1,0,0,0,
+TX,Robinson,47,17,0,0,0.0000
+TX,Rockdale,51,11,0,0,0.0000
+TX,Sam Houston State University,12,1,0,0,0.0000
+TX,Rockwall,337,68,0,0,0.0000
+TX,Roma,114,113,0,1,0.0000
+TX,Rowlett,512,91,0,0,0.0000
+TX,Royse City,190,52,0,0,0.0000
+TX,Runaway Bay,5,0,0,0,
+TX,Rusk,170,20,0,0,0.0000
+TX,Sabinal,3,3,0,0,0.0000
+TX,Sabine,9,0,0,0,
+TX,Sabine County Constable:,2,0,0,0,
+TX,Sachse,143,29,0,0,0.0000
+TX,Rice,5,4,0,0,0.0000
+TX,Rhome,14,6,0,0,0.0000
+TX,Kyle,320,146,0,0,0.0000
+TX,"Reno, Lamar County",13,0,0,0,
+TX,Poth,4,4,0,0,0.0000
+TX,Potter,72,28,0,0,0.0000
+TX,Pottsboro,5,0,0,0,
+TX,Prairie View ,12,0,0,0,
+TX,Prairie View A&M University,29,0,0,0,
+TX,Premont,12,11,0,0,0.0000
+TX,Presidio,3,3,0,0,0.0000
+TX,Primera,11,11,0,0,0.0000
+TX,Princeton,149,36,0,0,0.0000
+TX,Prosper,74,12,0,0,0.0000
+TX,Quinlan,1,0,0,0,
+TX,Quitman,5,0,0,0,
+TX,Randall,70,18,0,0,0.0000
+TX,Ranger,12,2,0,0,0.0000
+TX,Raymondville,118,114,0,0,0.0000
+TX,Reagan,1,1,0,0,0.0000
+TX,Real,6,2,0,0,0.0000
+TX,Red Oak,86,11,0,0,0.0000
+TX,Red River,28,1,0,0,0.0000
+TX,Reeves,9,9,0,0,0.0000
+TX,Refugio,29,18,0,0,0.0000
+TX,Saginaw,123,23,0,0,0.0000
+TX,San Augustine,34,1,0,0,0.0000
+TX,Stephens,7,2,0,0,0.0000
+TX,South Padre Island,195,137,0,0,0.0000
+TX,Slaton,29,22,0,0,0.0000
+TX,Smith,664,134,0,0,0.0000
+TX,Smithville,27,2,0,0,0.0000
+TX,Snyder,97,60,0,0,0.0000
+TX,Socorro,102,97,0,0,0.0000
+TX,Somerset,1,1,0,0,0.0000
+TX,Somervell,46,10,0,0,0.0000
+TX,Somerville,13,0,0,0,
+TX,Sonora,5,3,0,0,0.0000
+TX,Sour Lake,21,1,0,0,0.0000
+TX,South Plains College,2,0,0,0,
+TX,San Benito,151,148,0,0,0.0000
+TX,Southern Methodist University,5,0,0,0,
+TX,Southlake,43,4,0,0,0.0000
+TX,Spring Valley,3,0,0,0,
+TX,Springtown,13,6,0,0,0.0000
+TX,St. Thomas University,1,0,0,0,
+TX,Stafford,138,39,0,0,0.0000
+TX,Stamford,11,3,0,1,0.0000
+TX,Stanton,14,9,0,0,0.0000
+TX,Starr,45,45,0,0,0.0000
+TX,Stephen F. Austin State University,1,0,0,0,
+TX,Sinton,23,18,0,0,0.0000
+TX,Silsbee,63,0,0,0,
+TX,Shiner,12,1,0,0,0.0000
+TX,Shenandoah,18,3,0,0,0.0000
+TX,San Elizario,1,1,0,0,0.0000
+TX,San Jacinto,28,5,0,0,0.0000
+TX,San Juan,189,187,0,0,0.0000
+TX,Sanger,63,11,0,1,0.0000
+TX,Sansom Park Village,28,9,0,0,0.0000
+TX,Schertz,92,23,0,0,0.0000
+TX,Schleicher,4,4,0,0,0.0000
+TX,Schulenburg,11,7,0,0,0.0000
+TX,Scurry,4,4,0,0,0.0000
+TX,Seadrift,2,0,0,0,
+TX,Seagoville,97,24,0,0,0.0000
+TX,Sealy,22,6,0,0,0.0000
+TX,Seguin,231,134,0,0,0.0000
+TX,Selma,88,46,0,0,0.0000
+TX,Seminole,60,32,0,0,0.0000
+TX,Seven Points,7,1,0,0,0.0000
+TX,Seymour,10,2,0,0,0.0000
+TX,Shackelford,1,0,0,0,
+TX,Shallowater,3,3,0,0,0.0000
+TX,Shavano Park,6,3,0,0,0.0000
+TX,Shelby,61,7,0,0,0.0000
+TX,La Feria,79,73,0,0,0.0000
+TX,Junction,15,9,0,0,0.0000
+TX,Kountze,1,0,0,0,
+TX,Brownwood,157,66,0,0,0.0000
+TX,Brenham,102,32,0,0,0.0000
+TX,Brewster,16,7,0,0,0.0000
+TX,Bridge City,21,3,0,0,0.0000
+TX,Bridgeport,36,13,0,0,0.0000
+TX,Briscoe,2,1,0,0,0.0000
+TX,Brooks,3,2,0,0,0.0000
+TX,Brookshire,52,15,0,0,0.0000
+TX,Brown,80,12,0,0,0.0000
+TX,Brownfield,73,58,0,0,0.0000
+TX,Brownsville,1381,1312,0,0,0.0000
+TX,Bruceville-Eddy,11,3,0,0,0.0000
+TX,Breckenridge,32,8,0,0,0.0000
+TX,Bryan,76,21,0,0,0.0000
+TX,Buda,57,35,0,0,0.0000
+TX,Buffalo,6,0,0,0,
+TX,Bullard,4,0,0,0,
+TX,Bulverde,15,4,0,0,0.0000
+TX,Burkburnett,57,6,0,0,0.0000
+TX,Burnet,290,77,0,0,0.0000
+TX,Cactus,52,28,0,0,0.0000
+TX,Caddo Mills,7,2,0,0,0.0000
+TX,Caldwell,146,86,0,0,0.0000
+TX,Bremond,15,8,0,0,0.0000
+TX,Brazosport College,1,0,0,0,
+TX,Callahan,3,1,0,0,0.0000
+TX,Bishop,1,1,0,0,0.0000
+TX,Bellmead,206,70,0,0,0.0000
+TX,Bells,3,1,0,0,0.0000
+TX,Bellville,25,2,0,0,0.0000
+TX,Belton,239,76,0,0,0.0000
+TX,Benbrook,153,15,0,0,0.0000
+TX,Bertram,6,1,0,0,0.0000
+TX,Beverly Hills,29,6,0,0,0.0000
+TX,Bexar,2254,1286,0,0,0.0000
+TX,Big Sandy,4,0,0,0,
+TX,Big Spring,180,92,0,0,0.0000
+TX,Blanco,40,12,0,0,0.0000
+TX,Brazos,80,29,0,0,0.0000
+TX,Blinn College:,2,0,0,0,
+TX,Blue Mound,2,1,0,0,0.0000
+TX,Boerne,86,22,0,0,0.0000
+TX,Bogata,1,0,0,0,
+TX,Borger,88,27,0,0,0.0000
+TX,Bosque,16,4,0,0,0.0000
+TX,Bovina,1,1,0,0,0.0000
+TX,Bowie,55,2,0,0,0.0000
+TX,Boyd,13,2,0,0,0.0000
+TX,Brady,10,3,0,0,0.0000
+TX,Calhoun,54,15,0,0,0.0000
+TX,Calvert,13,2,0,0,0.0000
+TX,Bell,350,53,0,0,0.0000
+TX,Commerce,67,8,0,0,0.0000
+TX,Coke,2,0,0,0,
+TX,Coleman,11,2,0,0,0.0000
+TX,Colleyville,48,4,0,0,0.0000
+TX,Collin,414,98,0,0,0.0000
+TX,Collin County Community College District,1,0,0,0,
+TX,Collingsworth,1,0,0,0,
+TX,Collinsville,5,4,0,0,0.0000
+TX,Colorado,57,19,0,0,0.0000
+TX,Colorado City,8,5,0,0,0.0000
+TX,Columbus,31,11,0,0,0.0000
+TX,Concho,2,0,0,0,
+TX,Cochran,6,2,0,0,0.0000
+TX,Conroe,575,158,0,0,0.0000
+TX,Converse,102,28,0,0,0.0000
+TX,Cooke,56,21,0,0,0.0000
+TX,Corrigan,8,0,0,0,
+TX,Corsicana,230,58,0,0,0.0000
+TX,Coryell,57,3,0,0,0.0000
+TX,Crandall,117,21,0,0,0.0000
+TX,Crane,26,19,0,0,0.0000
+TX,Crockett,80,12,0,0,0.0000
+TX,Crosby,14,10,0,0,0.0000
+TX,Cockrell Hill,3,3,0,0,0.0000
+TX,Clyde,16,2,0,0,0.0000
+TX,Cameron,766,714,0,0,0.0000
+TX,Center,40,9,0,0,0.0000
+TX,Camp,42,12,0,0,0.0000
+TX,Canton,27,3,0,0,0.0000
+TX,Canyon,78,18,0,0,0.0000
+TX,Carson,16,7,0,0,0.0000
+TX,Cass,20,1,0,0,0.0000
+TX,Castle Hills,25,17,0,0,0.0000
+TX,Castro,8,6,0,0,0.0000
+TX,Castroville,10,8,0,0,0.0000
+TX,Cedar Hill,361,76,0,0,0.0000
+TX,Celina,62,3,0,0,0.0000
+TX,Charlotte ,4,4,0,0,0.0000
+TX,Clute,143,63,0,0,0.0000
+TX,Cherokee,165,23,0,0,0.0000
+TX,Childress,37,16,0,0,0.0000
+TX,China Grove,1,1,0,0,0.0000
+TX,Cibolo,115,28,0,0,0.0000
+TX,Cisco,22,3,0,0,0.0000
+TX,Cisco College,2,0,0,0,
+TX,Clarksville,2,0,0,0,
+TX,Clay,33,2,0,0,0.0000
+TX,Clifton,12,4,0,0,0.0000
+TX,Clint,1,1,0,0,0.0000
+TX,Bellaire,37,13,0,0,0.0000
+TX,Bee Cave,23,13,0,0,0.0000
+TX,Knox City,8,4,0,0,0.0000
+AZ,Pinetop-Lakeside,78,13,0,0,0.0000
+AZ,Litchfield Park,23,10,0,0,0.0000
+AZ,Mesa,4014,1202,0,0,0.0000
+AZ,Miami,9,3,0,0,0.0000
+AZ,Mohave,779,118,0,0,0.0000
+AZ,Navajo,253,29,0,0,0.0000
+AZ,Northern Arizona University,21,1,0,0,0.0000
+AZ,Oro Valley,53,9,0,0,0.0000
+AZ,Page,307,7,0,0,0.0000
+AZ,Parker,35,13,0,0,0.0000
+AZ,Pinal,720,242,0,0,0.0000
+AZ,Prescott,360,50,0,0,0.0000
+AZ,Kingman,454,63,0,0,0.0000
+AZ,Prescott Valley,404,106,0,0,0.0000
+AZ,Quartzsite,16,1,0,0,0.0000
+AZ,Queen Creek,211,51,0,0,0.0000
+AZ,Roundvalley,1,0,0,0,
+AZ,Sahuarita,222,102,0,0,0.0000
+AZ,San Luis,67,67,0,0,0.0000
+AZ,Santa Cruz,11,7,0,0,0.0000
+AZ,Scottsdale,354,67,0,0,0.0000
+AZ,Show Low,233,22,0,0,0.0000
+AZ,Sierra Vista,404,110,0,0,0.0000
+AZ,La Paz,60,20,0,0,0.0000
+AZ,Greenlee,10,2,0,0,0.0000
+AZ,Somerton,69,59,0,0,0.0000
+AZ,Coconino,331,45,0,0,0.0000
+AZ,Avondale,760,447,0,0,0.0000
+AZ,Bisbee,15,6,0,0,0.0000
+AZ,Buckeye,641,265,0,0,0.0000
+AZ,Bullhead City,234,65,0,0,0.0000
+AZ,Camp Verde,94,11,0,0,0.0000
+AZ,Central Arizona College,1,0,0,0,
+AZ,Chandler,1186,341,0,0,0.0000
+AZ,Chino Valley,69,8,0,0,0.0000
+AZ,Clarkdale,21,2,0,0,0.0000
+AZ,Cochise,275,84,0,0,0.0000
+AZ,Colorado City,13,0,0,0,
+AZ,Globe,40,17,0,0,0.0000
+AZ,Coolidge,69,13,0,0,0.0000
+AZ,Douglas,75,67,0,0,0.0000
+AZ,Eagar,16,5,0,0,0.0000
+AZ,El Mirage,332,169,0,0,0.0000
+AZ,Eloy,171,100,0,0,0.0000
+AZ,Flagstaff,1167,149,0,0,0.0000
+AZ,Fredonia,1,0,0,0,
+AZ,Gila,56,10,0,0,0.0000
+AZ,Gilbert,1038,203,0,0,0.0000
+AZ,Glendale,1759,751,0,0,0.0000
+AZ,Snowflake-Taylor,110,15,0,0,0.0000
+AZ,Springerville,12,5,0,0,0.0000
+TX,Bee,45,37,0,0,0.0000
+TX,Baird,6,2,0,0,0.0000
+TX,Argyle,13,0,0,0,
+TX,Armstrong,3,0,0,0,
+TX,Arp,7,0,0,0,
+TX,Atascosa,145,105,0,2,0.0000
+TX,Athens,108,25,0,0,0.0000
+TX,Atlanta,43,1,0,0,0.0000
+TX,Aubrey,142,16,0,0,0.0000
+TX,Austin,9777,4148,0,0,0.0000
+TX,Azle,111,14,0,0,0.0000
+TX,Bailey,1,0,0,0,
+TX,Balch Springs,157,68,0,0,0.0000
+TX,Archer City,1,0,0,0,
+TX,Balcones Heights,73,43,0,0,0.0000
+TX,Ballinger,2,0,0,0,
+TX,Bandera,25,6,0,1,0.0000
+TX,Bangs,7,1,0,0,0.0000
+TX,Bartonville,1,0,0,0,
+TX,Bastrop,398,185,0,0,0.0000
+TX,Bay City,199,82,0,0,0.0000
+TX,Bayou Vista,2,1,0,0,0.0000
+TX,Baytown,595,235,0,0,0.0000
+TX,Bedford,511,81,0,0,0.0000
+TX,Arcola,6,4,0,0,0.0000
+TX,Archer,2,0,0,0,
+AZ,Superior,36,23,0,0,0.0000
+TX,Abernathy,3,2,0,0,0.0000
+AZ,Surprise,850,256,0,0,0.0000
+AZ,Tempe,2426,617,0,0,0.0000
+AZ,Tolleson,25,14,0,0,0.0000
+AZ,Tombstone,24,5,0,0,0.0000
+AZ,Tucson Airport Authority,1,0,0,0,
+AZ,Wellton,14,6,0,0,0.0000
+AZ,Willcox,40,19,0,0,0.0000
+AZ,Williams,49,11,0,0,0.0000
+AZ,Yavapai,594,95,0,0,0.0000
+AZ,Yuma,961,571,0,0,0.0000
+TX,Addison,197,59,0,0,0.0000
+TX,Aransas Pass,111,34,0,0,0.0000
+TX,Alamo,77,75,0,0,0.0000
+TX,Alamo Heights,26,16,0,0,0.0000
+TX,Alpine,11,7,0,0,0.0000
+TX,Alton,78,74,0,0,0.0000
+TX,Amarillo,1553,633,0,0,0.0000
+TX,Andrews,76,37,0,0,0.0000
+TX,Angelina,74,9,0,0,0.0000
+TX,Anna,91,11,0,0,0.0000
+TX,Anson,3,1,0,0,0.0000
+TX,Anthony,16,13,0,0,0.0000
+TX,Crosbyton,1,0,0,0,
+TX,Crowley,125,12,0,0,0.0000
+TX,Crystal City,9,9,0,0,0.0000
+TX,Hill Country Village,1,0,0,0,
+TX,Hedwig Village,7,2,0,0,0.0000
+TX,Helotes,17,6,0,0,0.0000
+TX,Hemphill,3,0,0,0,
+TX,Hempstead,50,18,0,0,0.0000
+TX,Henderson,273,24,0,0,0.0000
+TX,Hereford,92,80,0,1,0.0000
+TX,Hewitt,72,13,0,0,0.0000
+TX,Hidalgo,1707,1681,0,0,0.0000
+TX,Highland Park,8,1,0,0,0.0000
+TX,Highland Village,36,3,0,0,0.0000
+TX,Hillsboro,114,44,0,0,0.0000
+TX,Hearne,28,9,0,0,0.0000
+TX,Hockley,5,4,0,0,0.0000
+TX,Hondo,70,62,0,0,0.0000
+TX,Honey Grove,6,1,0,0,0.0000
+TX,Hooks,6,0,0,0,
+TX,Hopkins,38,12,0,0,0.0000
+TX,Horizon City,20,20,0,0,0.0000
+TX,Hospital District:,292,39,0,0,0.0000
+TX,Houston,17449,6518,0,0,0.0000
+TX,Houston Community College,1,1,0,0,0.0000
+TX,Houston Metropolitan Transit Authority,4,2,0,0,0.0000
+TX,Heath,61,7,0,0,0.0000
+TX,Hays,624,292,0,0,0.0000
+TX,Howe,21,2,0,0,0.0000
+TX,Haltom City,177,91,0,0,0.0000
+TX,Gregg,151,19,0,0,0.0000
+TX,Gregory,2,1,0,0,0.0000
+TX,Grimes,63,12,0,0,0.0000
+TX,Groesbeck,25,5,0,0,0.0000
+TX,Groves,45,6,0,0,0.0000
+TX,Gun Barrel City,14,1,0,0,0.0000
+TX,Gunter,2,0,0,0,
+TX,Hale Center,3,1,0,0,0.0000
+TX,Hallettsville,28,6,0,0,0.0000
+TX,Hallsville,4,1,0,0,0.0000
+TX,Hamilton,39,3,0,0,0.0000
+TX,Hawkins,4,0,0,0,
+TX,Hamlin,17,2,0,0,0.0000
+TX,Hansford,1,1,0,0,0.0000
+TX,Hardeman,5,1,0,0,0.0000
+TX,Hardin,216,5,0,0,0.0000
+TX,Hardin-Simmons University,1,0,0,0,
+TX,Harker Heights,189,20,0,0,0.0000
+TX,Harlingen,822,761,0,0,0.0000
+TX,Harrison,146,19,0,0,0.0000
+TX,Hartley,5,2,0,0,0.0000
+TX,Haskell,4,0,0,0,
+TX,Howard,111,47,0,0,0.0000
+TX,Hudson,5,1,0,0,0.0000
+TX,Cuero,65,28,0,0,0.0000
+TX,Kendall,50,15,0,0,0.0000
+TX,Jourdanton,45,31,0,1,0.0000
+AZ,Arizona State University:,102,16,0,0,0.0000
+TX,Justin,4,0,0,0,
+TX,Karnes,2,2,0,0,0.0000
+TX,Karnes City,22,13,0,0,0.0000
+TX,Katy,75,25,0,1,0.0000
+TX,Kaufman County Constable:,144,24,0,0,0.0000
+TX,Keene,2,1,0,0,0.0000
+TX,Keller,92,11,0,0,0.0000
+TX,Kemp,6,0,0,0,
+TX,Kenedy,12,12,0,0,0.0000
+TX,Josephine,17,5,0,0,0.0000
+TX,Kerens,18,3,0,0,0.0000
+TX,Kermit,26,16,0,0,0.0000
+TX,Kerr,93,23,0,0,0.0000
+TX,Kerrville,192,58,0,0,0.0000
+TX,Killeen,1574,311,0,0,0.0000
+TX,Kimble,2,0,0,0,
+TX,Kingsville,144,114,0,0,0.0000
+TX,Kinney,2,1,0,0,0.0000
+TX,Kirby,33,16,0,0,0.0000
+TX,Kleberg,27,24,0,0,0.0000
+TX,Joshua,33,5,0,0,0.0000
+TX,Jonestown,10,0,0,1,
+TX,Hudspeth,7,6,0,0,0.0000
+TX,Iowa Park,26,2,0,0,0.0000
+TX,Hunt,193,42,0,0,0.0000
+TX,Huntington,15,1,0,0,0.0000
+TX,Huntsville,355,47,0,0,0.0000
+TX,Hutchins,122,17,0,0,0.0000
+TX,Hutchinson,17,3,0,0,0.0000
+TX,Idalou,4,4,0,0,0.0000
+TX,Independent School District: ,77,30,0,0,0.0000
+TX,Independent School System:,4,0,0,0,
+TX,Ingleside,82,24,0,0,0.0000
+TX,Ingram,13,3,0,0,0.0000
+TX,Irving,1751,785,0,0,0.0000
+TX,Jones,3,1,0,0,0.0000
+TX,Italy,4,0,0,0,
+TX,Itasca,1,0,0,0,
+TX,Jacinto City,84,65,0,0,0.0000
+TX,Jack,11,0,0,0,
+TX,Jackson,32,11,0,0,0.0000
+TX,Jacksonville,116,26,0,0,0.0000
+TX,Jasper,68,3,0,0,0.0000
+TX,Jefferson,94,7,0,0,0.0000
+TX,Jersey Village,56,14,0,0,0.0000
+TX,Jim Hogg,12,12,0,0,0.0000
+TX,Greenville,181,38,0,0,0.0000
+TX,Grayson,126,12,0,0,0.0000
+TX,Gray,12,6,0,0,0.0000
+TX,Edna,62,31,0,0,0.0000
+TX,Dublin,10,4,0,0,0.0000
+TX,Dumas,136,78,0,0,0.0000
+TX,Duncanville,344,115,0,0,0.0000
+TX,Early,40,12,0,0,0.0000
+TX,East Mountain,1,0,0,0,
+TX,Eastland,48,7,0,0,0.0000
+TX,Ector,253,156,0,0,0.0000
+TX,Ector County Hospital District,1,1,0,0,0.0000
+TX,Edcouch,3,3,0,0,0.0000
+TX,Edinburg,721,663,0,0,0.0000
+TX,Edwards,1,1,0,0,0.0000
+TX,Donna,105,105,0,0,0.0000
+TX,El Campo,119,75,0,0,0.0000
+TX,El Paso,3508,2845,0,0,0.0000
+TX,Electra,20,4,0,0,0.0000
+TX,Elgin,95,43,0,1,0.0000
+TX,Elm Ridge ,58,4,0,0,0.0000
+TX,Elmendorf,4,4,0,0,0.0000
+TX,Elsa,53,51,0,0,0.0000
+TX,Emory,3,0,0,0,
+TX,Ennis,90,32,0,0,0.0000
+TX,Erath,30,11,0,0,0.0000
+TX,Double Oak,3,0,0,0,
+TX,Donley,16,1,0,0,0.0000
+TX,Grapevine,312,76,0,0,0.0000
+TX,De Kalb,1,0,0,0,
+TX,Cuney,1,0,0,0,
+TX,Daingerfield,15,1,0,0,0.0000
+TX,Dalhart,53,26,0,0,0.0000
+TX,Dallam,1,1,0,0,0.0000
+TX,Dallas,13102,4295,0,0,0.0000
+TX,Dallas County Community College District,1,0,0,0,
+TX,Dallas-Fort Worth International Airport,65,6,0,0,0.0000
+TX,Dalworthington Gardens,6,0,0,0,
+TX,Danbury,1,1,0,0,0.0000
+TX,Dayton,70,10,0,0,0.0000
+TX,De Leon,10,4,0,0,0.0000
+TX,Dimmitt,16,11,0,0,0.0000
+TX,DeSoto,448,78,0,0,0.0000
+TX,DeWitt,28,7,0,0,0.0000
+TX,Deaf Smith,9,5,0,0,0.0000
+TX,Delta,26,3,0,0,0.0000
+TX,Denison,94,8,0,0,0.0000
+TX,Denver City,9,8,0,0,0.0000
+TX,Devine,30,25,0,0,0.0000
+TX,Diboll,12,5,0,0,0.0000
+TX,Dilley,20,20,0,0,0.0000
+TX,Dimmit,29,26,0,0,0.0000
+TX,Euless,379,57,0,0,0.0000
+TX,Eustace,2,0,0,0,
+TX,Everman,19,4,0,0,0.0000
+TX,Gatesville,109,19,0,0,0.0000
+TX,Frio,7,7,0,0,0.0000
+TX,Friona,8,8,0,0,0.0000
+TX,Frisco,826,141,0,0,0.0000
+TX,Fulshear,18,4,0,0,0.0000
+TX,Gaines,20,16,0,0,0.0000
+TX,Gainesville,139,44,0,0,0.0000
+TX,Galena Park,48,36,0,0,0.0000
+TX,Ganado,7,3,0,0,0.0000
+TX,Garden Ridge,3,0,0,0,
+TX,Garrett,1,1,0,0,0.0000
+TX,George West,25,19,0,0,0.0000
+TX,Fair Oaks Ranch,13,1,0,0,0.0000
+TX,Giddings,21,7,0,0,0.0000
+TX,Gillespie,35,20,0,0,0.0000
+TX,Gilmer,45,1,0,0,0.0000
+TX,Gladewater,22,5,0,0,0.0000
+TX,Glenn Heights,158,26,0,0,0.0000
+TX,Godley,6,1,0,0,0.0000
+TX,Gonzales,127,66,0,0,0.0000
+TX,Graham,38,10,0,0,0.0000
+TX,Grand Saline,6,1,0,0,0.0000
+TX,Grapeland,7,0,0,0,
+TX,Freestone,50,2,0,0,0.0000
+TX,Freer,14,13,0,0,0.0000
+TX,Freeport,97,42,0,0,0.0000
+TX,Fredericksburg,48,19,0,0,0.0000
+TX,Fairfield,3,0,0,0,
+TX,Fairview,3,0,0,0,
+TX,Falfurrias,15,15,0,0,0.0000
+TX,Falls,9,1,0,0,0.0000
+TX,Fannin,14,2,0,0,0.0000
+TX,Farmers Branch,245,88,0,0,0.0000
+TX,Farmersville,16,4,0,0,0.0000
+TX,Fate,61,11,0,0,0.0000
+TX,Fayette,22,9,0,0,0.0000
+TX,Ferris,9,0,0,0,
+TX,Fisher,4,0,0,0,
+TX,Flatonia,4,1,0,0,0.0000
+TX,Floresville,35,23,0,0,0.0000
+TX,Flower Mound,77,10,0,0,0.0000
+TX,Floyd,6,3,0,0,0.0000
+TX,Floydada,14,10,0,0,0.0000
+TX,Forest Hill,52,10,0,0,0.0000
+TX,Fort Bend,1620,478,0,0,0.0000
+TX,Fort Stockton,36,25,0,0,0.0000
+TX,Franklin,30,6,0,0,0.0000
+TX,Frankston,4,0,0,0,
+TX,Zavalla,1,0,0,0,

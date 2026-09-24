@@ -1,0 +1,10 @@
+victim,offender,published_pct,microdata_pct,published_avg_annual,microdata_avg_annual,records
+White,White,45.900,45.636,2081520,2095095.116,2220
+White,Black,47.200,47.195,540350,542215.699,597
+White,Hispanic,45.100,45.121,406450,406452.873,332
+Black,White,57.400,57.848,92810,93896.748,66
+Black,Black,51.700,51.700,537470,537472.245,526
+Black,Hispanic,47.000,47.012,55790,55791.309,48
+Hispanic,White,42.600,42.406,169040,169968.954,209
+Hispanic,Black,55.000,55.049,173120,173122.413,194
+Hispanic,Hispanic,48.200,48.230,341420,341422.285,365

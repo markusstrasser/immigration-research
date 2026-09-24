@@ -1,0 +1,28 @@
+[gate] lane arrestee Hispanic / NH-white, central, all ages: murder 2.279, robbery 2.946 (nibrs_checks.py: 2.279, 2.946)
+                                 universe  arrestees  offence  hispanic  hispanic_white_coded  over_route_b  over_no_rescale  RR_H_NHW_lane_central  RR_H_NHW_lane_route_b
+central: TX+AZ, agencies recording >= 50%   all ages   Murder       715                0.9664        0.0682           0.0667                 2.2789                 2.4345
+central: TX+AZ, agencies recording >= 50%   all ages  Robbery     3,339                0.9461        0.1397           0.1484                 2.9455                 3.3571
+central: TX+AZ, agencies recording >= 50%   all ages All five    85,938                0.9660        0.0381           0.0452                    NaN                    NaN
+central: TX+AZ, agencies recording >= 50% adults 18+   Murder       598                0.9649        0.0641           0.0621                 2.1812                 2.3210
+central: TX+AZ, agencies recording >= 50% adults 18+  Robbery     2,524                0.9477        0.1161           0.1222                 2.7414                 3.0598
+central: TX+AZ, agencies recording >= 50% adults 18+ All five    73,269                0.9667        0.0352           0.0421                    NaN                    NaN
+                         TX, all agencies   all ages   Murder       710                0.9704        0.0743           0.0722                    NaN                    NaN
+                         TX, all agencies   all ages  Robbery     3,387                0.9507        0.1527           0.1535                    NaN                    NaN
+                         TX, all agencies   all ages All five    86,553                0.9685        0.0419           0.0481                    NaN                    NaN
+                         TX, all agencies adults 18+   Murder       591                0.9695        0.0715           0.0655                    NaN                    NaN
+                         TX, all agencies adults 18+  Robbery     2,559                0.9519        0.1204           0.1247                    NaN                    NaN
+                         TX, all agencies adults 18+ All five    73,834                0.9696        0.0373           0.0438                    NaN                    NaN
+                         AZ, all agencies   all ages   Murder   89.0000                0.9663        0.0329           0.0341                    NaN                    NaN
+                         AZ, all agencies   all ages  Robbery       312                0.9327        0.1078           0.0847                    NaN                    NaN
+                         AZ, all agencies   all ages All five     9,907                0.9543        0.0359           0.0329                    NaN                    NaN
+                         AZ, all agencies adults 18+   Murder   77.0000                0.9610        0.0314           0.0366                    NaN                    NaN
+                         AZ, all agencies adults 18+  Robbery       230                0.9435        0.0890           0.0622                    NaN                    NaN
+                         AZ, all agencies adults 18+ All five     8,265                0.9546        0.0323           0.0317                    NaN                    NaN
+                         CA, all agencies   all ages   Murder       405                0.9901       -0.0172           0.0282                    NaN                    NaN
+                         CA, all agencies   all ages  Robbery     5,039                0.9829        0.0278           0.0367                    NaN                    NaN
+                         CA, all agencies   all ages All five    58,543                0.9854       -0.0204           0.0227                    NaN                    NaN
+                         CA, all agencies adults 18+   Murder       341                0.9912       -0.0296           0.0233                    NaN                    NaN
+                         CA, all agencies adults 18+  Robbery     3,992                0.9825        0.0264           0.0324                    NaN                    NaN
+                         CA, all agencies adults 18+ All five    52,846                0.9857       -0.0189           0.0210                    NaN                    NaN
+
+The NIBRS lane's offender ratios (central 2.30 murder, 4.22 robbery) use disjoint race-ethnicity classes: the construction is absent there, so Arm 5 changes them by 0.
