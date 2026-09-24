@@ -1,0 +1,9 @@
+spec,cost_low_bn,cost_high_bn,change_low_bn,change_high_bn
+adopted,203.2070,249.6400,0.0000,0.0000
+schools_alone,206.5874,252.6709,3.3803,3.0309
+benefits_alone,205.4748,251.8073,2.2678,2.1674
+cbo_alone,213.7674,259.0842,10.5604,9.4442
+ota_alone,198.6528,245.3265,-4.5542,-4.3135
+combined_benefits_on_overlap,215.5601,260.9549,12.3530,11.3150
+combined_cbo_also_on_overlap,214.8614,259.9690,11.6543,10.3290
+cbo_without_overlap_plus_ota,209.9119,255.7566,6.7049,6.1167
