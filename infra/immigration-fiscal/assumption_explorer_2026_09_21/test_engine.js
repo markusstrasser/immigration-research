@@ -145,6 +145,19 @@ checkCorrected("adopted central", adopted, "cbo_category_lag_non_school_full");
 checkCorrected("adopted, non-school education fixed", costBand(presetState("repo_central_gg", { ...ON, other_education_response: 0 })), "cbo_category_lag_non_school_fixed");
 checkCorrected("adopted proportional", costBand(presetState("proportional", ON)), "proportional_reference");
 
+// Presets as loaded, with no override: the page's central case and the proportional benchmark carry the
+// corrections and reproduce main_case_2026_09_24; the September 20 case has them off; every other convention runs
+// on the corrected data.
+function checkSwitch(label, got, want) {
+  if (got !== want) { failures += 1; console.error(`MISMATCH ${label}: data_corrections is ${got}, expected ${want}`); }
+}
+const central = presets.filter((p) => p.central);
+checkSwitch("exactly one central preset", central.length, 1);
+const loaded = costBand(presetState(central[0].id));
+checkCorrected(`central preset ${central[0].id} as loaded`, loaded, "cbo_category_lag_non_school_full");
+checkCorrected("proportional preset as loaded", costBand(presetState("proportional")), "proportional_reference");
+for (const p of presets) checkSwitch(`preset ${p.id} as loaded`, presetState(p.id).data_corrections, p.id !== "repo_central");
+
 // Attribution must be exhaustive: Shapley effects sum to the total difference.
 const from = Engine.defaultState(model);
 const to = Object.assign(Engine.defaultState(model), { service_response: 0.5, public_goods_response: 1, count_production: false });
@@ -159,8 +172,26 @@ const dataParts = Engine.attribute(model, on, off, ["data_corrections", "general
 check("attribution closure with the data switch", dataParts.reduce((s, p) => s + p.effect_bn, 0),
   Engine.evaluate(model, off).welfare_bn - Engine.evaluate(model, on).welfare_bn);
 
+// applyCorrections keeps every edited cell's base: target / share is the same before and after.
+let baseChecks = 0;
+for (const side of ["receipts", "spending"]) {
+  model[side].lines.forEach((line) => {
+    const fixed = model.corrected[side].lines.find((l) => l.id === line.id);
+    for (const [k, cell] of Object.entries(side === "receipts" ? line.cells : line.keys)) {
+      const after = (side === "receipts" ? fixed.cells : fixed.keys)[k];
+      for (const a of ["personal", "shared"]) {
+        if (!cell[a].share || after[a].target_bn === cell[a].target_bn) continue;
+        check(`share base ${line.id}/${k}/${a}`, after[a].target_bn / after[a].share, cell[a].target_bn / cell[a].share, 1e-6);
+        baseChecks += 1;
+      }
+    }
+  });
+}
+if (baseChecks < 400) { failures += 1; console.error(`MISMATCH share-base checks: only ${baseChecks} edited cells`); }
+
 const counts = `${vectors.grid.length} grid rows, ${vectors.service.length} service cases, ${vectors.accounts.length} accounting cases`;
 if (failures) { console.error(`FAIL: ${failures} mismatches over ${counts}; worst gap ${worst}`); process.exit(1); }
 console.log(`PASS: ${counts}, 4 headline bounds, September 20 central preset, ${adoptedChecks} adopted bands ` +
   `(September 23 ${sept23[0].toFixed(4)} to ${sept23[1].toFixed(4)} bn; with the data corrections ${adopted[0].toFixed(4)} to ` +
-  `${adopted[1].toFixed(4)} bn), attribution closure; worst gap ${worst.toExponential(2)} bn`);
+  `${adopted[1].toFixed(4)} bn; central preset as loaded ${loaded[0].toFixed(4)} to ${loaded[1].toFixed(4)} bn), ` +
+  `data switch on every preset as loaded (off only for repo_central), attribution closure, ${baseChecks} corrected shares on their base; worst gap ${worst.toExponential(2)} bn`);

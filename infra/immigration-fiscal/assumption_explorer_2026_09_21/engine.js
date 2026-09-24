@@ -52,7 +52,8 @@
   /* A copy of the model with a corrections payload applied: {lines: [{id, family, response_class,
    * label}], edits: [{side: "receipt", line, scenario, by} | {side: "spending", line, key, by}]},
    * by = {personal, shared} in $bn of the group's target. Each edit moves the same amount out of
-   * other residents' share, so national totals hold. Unknown lines, keys or rules fail loudly. */
+   * other residents' share, so national totals hold, and rescales the cell's share of its fixed base
+   * (target / share is unchanged). Unknown lines, keys or rules fail loudly. */
   function applyCorrections(model, payload) {
     var m = clone(model), allocations = ["personal", "shared"];
     delete m.corrected;
@@ -73,7 +74,11 @@
         if (!sp || !sp.keys[e.key]) throw new Error("Not an executed allocation rule: " + e.line + "/" + e.key);
         cell = sp.keys[e.key];
       }
-      allocations.forEach(function (a) { cell[a].target_bn += e.by[a]; cell[a].other_bn -= e.by[a]; });
+      allocations.forEach(function (a) {
+        var t = cell[a].target_bn, next = t + e.by[a];
+        if (t !== 0) cell[a].share *= next / t;
+        cell[a].target_bn = next; cell[a].other_bn -= e.by[a];
+      });
     });
     m.corrections = payload.meta || {};
     return m;

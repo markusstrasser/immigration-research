@@ -6,6 +6,11 @@ Build-time checks, so a typo cannot silently do nothing:
   derived/scaling_check.json rather than typed, a per-line allocation rule names a line and rule the
   model holds, a band contains its point value, and exactly one preset is the central case;
 - a `{published:<profile>}` token in preset text becomes the September 20 account's published band;
+  an `{assigned:<name>}` token stays in the text and the page fills it from the ledger when it draws,
+  so it must name an amount ui.js defines;
+- the data corrections (main_case_2026_09_24/derived/corrections.json) are inlined for the engine,
+  and the build refuses when the payload is missing or a correction line has a class the engine
+  does not respond to;
 - every id a source claims to support exists on the page (a setting, a card, a convention, an author
   statement), and every source carries a short label and either a link or a file in this checkout;
 - a file named in a reference becomes a local link only when it exists in this checkout;
@@ -24,9 +29,11 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 LANES = ROOT/"infra/immigration-fiscal"
 OUT = HERE/"derived"
+CORRECTIONS = LANES/"main_case_2026_09_24/derived/corrections.json"  # written by main_case.cjs when its gates pass
 STATE_PATHS = re.compile(r"^((production|key_override|key_band)\.[a-z_]+|[a-z_]+)$")
 BANDS = {"school_response_band": "school_response", "general_government_response_band": "general_government_response"}
 PUBLISHED = re.compile(r"\{published:([a-z_]+)\}")
+ASSIGNED = re.compile(r"\{assigned:([a-z_]+)\}")
 FILE_TOKEN = re.compile(r"[A-Za-z0-9_][A-Za-z0-9_./-]*\.(?:md|py|csv|json|js|sql|html)\b")  # same pattern as ui.js repoLinks
 FIXED_PLACES = {"ledger", "production", "standing"}
 
@@ -133,9 +140,31 @@ def resolve_published(node, bands):
         b = bands[match.group(1)]
         return f"{-b['max_welfare_bn']:.0f}–{-b['min_welfare_bn']:.0f}"
     text = PUBLISHED.sub(band, node)
-    if re.search(r"\{[a-z_]+:[^}]*\}", text):
+    if re.search(r"\{(?!assigned:)[a-z_]+:[^}]*\}", text):  # {assigned:...} is filled when the page draws
         raise ValueError(f"Unresolved token in preset text: {text[:100]}")
     return text
+
+
+def check_assigned(presets, ui):
+    """Every {assigned:<name>} token names an amount the page computes (ui.js ASSIGNED)."""
+    block = re.search(r"var ASSIGNED = \{(.*?)\n  \};", ui, flags=re.S)
+    if not block:
+        raise ValueError("ui.js no longer defines the ASSIGNED amounts")
+    named = set(re.findall(r"^\s+([a-z_]+): function", block.group(1), flags=re.M))
+    for text in strings(presets):
+        unknown = set(ASSIGNED.findall(text))-named
+        if unknown:
+            raise ValueError(f"Preset text names amounts the page does not compute: {sorted(unknown)} in {text[:80]}")
+
+
+def check_corrections(payload, engine):
+    """The payload the engine applies: correction lines with a label and a response class engine.js answers."""
+    classes = set(re.findall(r'case "([a-z_]+)":', engine))
+    if not payload.get("edits") or not payload.get("lines") or not payload.get("meta", {}).get("adopted"):
+        raise ValueError(f"{CORRECTIONS} lacks edits, lines or meta.adopted")
+    for line in payload["lines"]:
+        if not line.get("label") or line.get("response_class") not in classes:
+            raise ValueError(f"Correction line {line.get('id')} lacks a label or a response class engine.js answers")
 
 
 def check_key_names(model, ui):
@@ -162,6 +191,10 @@ def main():
     checks = json.loads(checks_path.read_text()) if checks_path.exists() else {}
     engine = (HERE/"engine.js").read_text()
     ui = (HERE/"ui.js").read_text()
+    if not CORRECTIONS.is_file():
+        raise ValueError(f"Missing {CORRECTIONS}: run node ../main_case_2026_09_24/main_case.cjs first")
+    corrections = json.loads(CORRECTIONS.read_text())
+    check_corrections(corrections, engine)
     known = set(re.findall(r"^\s{6}([a-z_]+):", engine, flags=re.M)) | set(BANDS)
     ids = {p["id"] for p in presets["presets"]}
     check_presets(presets, model, evidence, known)
@@ -172,6 +205,7 @@ def main():
             raise ValueError(f"Author {author['id']} points at an unknown convention")
     control_ids = re.findall(r"\{ group: \"[^\"]+\", id: \"([^\"]+)\"", ui)
     check_key_names(model, ui)
+    check_assigned(presets, ui)
     uncited = check_sources(sources, presets, context, control_ids)
     for source in sources["sources"]:
         if source["key"] in checks:
@@ -182,7 +216,8 @@ def main():
         raise ValueError("template.html must open with <!doctype html>: in quirks mode tables stop inheriting the text colour")
     sources_block = dict(sources=sources["sources"], repo_prefix=os.path.relpath(ROOT, OUT),
                          paths=existing_paths(presets, context, sources, parsed_ladder["source"], template))
-    blocks = {"/*MODEL*/": json.dumps(model, separators=(",", ":")), "/*PRESETS*/": json.dumps(presets, separators=(",", ":")),
+    blocks = {"/*MODEL*/": json.dumps(model, separators=(",", ":")), "/*CORRECTIONS*/": json.dumps(corrections, separators=(",", ":")),
+              "/*PRESETS*/": json.dumps(presets, separators=(",", ":")),
               "/*CONTEXT*/": json.dumps(context, separators=(",", ":")), "/*EVIDENCE*/": json.dumps(evidence, separators=(",", ":")),
               "/*LADDER*/": json.dumps(parsed_ladder, separators=(",", ":")), "/*SOURCES*/": json.dumps(sources_block, separators=(",", ":")),
               "/*ENGINE*/": engine, "/*UI*/": ui}
@@ -199,7 +234,8 @@ def main():
     print(f"explorer.html: {len(page)/1e6:.2f} MB, {len(presets['presets'])} conventions, {len(presets['authors'])} authors, "
           f"{len(context['items'])} objection cards, {len(parsed_ladder['cards'])} ladder entries, "
           f"{len(sources['sources'])-repo_docs} sources ({answered} links answered) and {repo_docs} repo documents, "
-          f"{len(sources_block['paths'])} local file links")
+          f"{len(sources_block['paths'])} local file links, data corrections of {corrections['meta']['adopted']} "
+          f"({len(corrections['edits'])} cell edits, {len(corrections['lines'])} lines of their own)")
     if uncited:
         print(f"  ! {len(uncited)} places carry no external source: {', '.join(uncited[:12])}{' ...' if len(uncited) > 12 else ''}")
 
