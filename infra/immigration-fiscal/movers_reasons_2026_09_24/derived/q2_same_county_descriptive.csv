@@ -1,0 +1,14 @@
+group,n,counties,mean_mex_share,nbhd_crime_pct,se_pp
+California counties,9066,31,31.49,4.82,0.39
+Texas counties,1929,21,43.45,4.57,0.68
+all other identified counties,40021,316,6.87,4.27,0.2
+"county Mexican-origin share under 2%, all",12654,161,1.15,4.06,0.34
+"county Mexican-origin share under 2%, non-Hispanic white",8796,159,1.11,3.72,0.36
+"county Mexican-origin share 2-5%, all",14164,153,3.16,4.35,0.32
+"county Mexican-origin share 2-5%, non-Hispanic white",8348,152,3.13,4.27,0.4
+"county Mexican-origin share 5-10%, all",5797,68,6.69,4.11,0.53
+"county Mexican-origin share 5-10%, non-Hispanic white",4011,67,6.71,4.06,0.57
+"county Mexican-origin share 10-20%, all",3037,37,14.55,3.13,0.52
+"county Mexican-origin share 10-20%, non-Hispanic white",1835,36,14.24,1.93,0.42
+"county Mexican-origin share 20% or more, all",15364,52,34.36,5.07,0.28
+"county Mexican-origin share 20% or more, non-Hispanic white",7396,52,31.43,5.2,0.35

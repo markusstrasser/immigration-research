@@ -1,0 +1,6 @@
+pair,ca_counties_to_austin_returns,individuals,agi_bn,agi_per_return,ca_county_rows,ca_to_all_tx_counties_returns_unsuppressed,austin_share_of_unsuppressed_county_rows,austin_share_of_state_file_ca_to_tx
+2018-2019,6707,12510,0.965,143932,47,27891,0.24,0.186
+2019-2020,8373,15802,1.402,167438,46,34116,0.245,0.195
+2020-2021,10524,19304,2.491,236676,60,43541,0.242,0.199
+2021-2022,9380,16489,1.906,203187,57,44415,0.211,0.173
+2022-2023,7126,11932,1.213,170170,50,35801,0.199,0.16

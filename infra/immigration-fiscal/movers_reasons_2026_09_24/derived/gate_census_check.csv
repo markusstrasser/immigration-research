@@ -1,0 +1,19 @@
+year,group,records_census,records_ipums,max_code_count_diff,census_weighted,ipums_weighted,max_abs_code_diff_weighted,max_share_diff_pp,codes,pass
+2014,interstate movers,805,805,0,4363386,4363011,126.7,0.0,18,True
+2014,California leavers,71,71,0,367829,367798,8.7,0.0,18,True
+2015,interstate movers,3182,3182,0,5092920,5092920,0.0,0.0,18,True
+2015,California leavers,337,337,0,541194,541194,0.0,0.0,18,True
+2019,interstate movers,2569,2569,0,4737587,4737587,0.0,0.0,19,True
+2019,California leavers,265,265,0,453201,453201,0.0,0.0,19,True
+2020,interstate movers,2139,2139,0,4233275,4260725,8969.1,0.104,19,True
+2020,California leavers,232,232,0,442046,447722,3158.6,0.556,19,True
+2021,interstate movers,2089,2089,0,4373681,4382051,2566.6,0.092,20,True
+2021,California leavers,263,263,0,515677,513490,1212.6,0.268,20,True
+2022,interstate movers,2266,2266,0,4884302,4884302,0.0,0.0,20,True
+2022,California leavers,280,280,0,561436,561436,0.0,0.0,20,True
+2023,interstate movers,1925,1925,0,4492619,4492619,0.0,0.0,20,True
+2023,California leavers,258,258,0,508127,508127,0.0,0.0,20,True
+2024,interstate movers,1835,1835,0,4186252,4186252,0.0,0.0,19,True
+2024,California leavers,173,173,0,430050,430050,0.0,0.0,19,True
+2025,interstate movers,1709,1709,0,4314620,4314620,0.0,0.0,20,True
+2025,California leavers,126,126,0,342744,342744,0.0,0.0,20,True

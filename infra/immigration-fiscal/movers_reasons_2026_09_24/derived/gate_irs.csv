@@ -1,0 +1,14 @@
+pair,ca_to_tx_equals_tx_from_ca,ca_total_us_returns,sum_destination_rows,diff_returns,sum_other_inflow_files,diff_inflow_side,suppressed_cells,pass,note
+1112,True,252373,252373.0,0.0,252373.0,0.0,0.0,True,
+1213,True,266937,266937.0,0.0,266937.0,0.0,0.0,True,
+1314,True,256157,256157.0,0.0,256157.0,0.0,0.0,True,
+1415,True,200440,200440.0,0.0,200440.0,0.0,0.0,True,
+1516,True,275989,275989.0,0.0,275989.0,0.0,0.0,True,
+1617,True,387080,387080.0,0.0,387080.0,0.0,0.0,True,
+1718,True,317449,317449.0,0.0,317449.0,0.0,0.0,True,
+1819,True,319650,319650.0,0.0,319650.0,0.0,0.0,True,
+1920,True,365922,365922.0,0.0,365922.0,0.0,0.0,True,
+2021,True,399436,399436.0,0.0,399436.0,0.0,0.0,True,
+2122,True,399138,399138.0,0.0,399138.0,0.0,0.0,True,
+2223,True,353260,353260.0,0.0,353260.0,0.0,0.0,True,
+2223 vs 2223ca.xlsx,,353260,,0.0,,,,True,"published workbook rows 56, CSV rows 56, all identical: True; Texas (44417, 82481, 4764727)"

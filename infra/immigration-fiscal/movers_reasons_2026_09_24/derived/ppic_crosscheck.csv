@@ -1,0 +1,21 @@
+population,window,reason,share_pct,se_pp,n,n_citing,weighted_persons_per_year
+adults of any nativity leaving California,ASEC 2011-2020,housing,19.15,1.19,2055,403,349470
+adults of any nativity leaving California,ASEC 2011-2020,jobs,45.99,1.47,2055,918,349470
+adults of any nativity leaving California,ASEC 2011-2020,family,23.12,1.5,2055,453,349470
+adults of any nativity leaving California,ASEC 2011-2020,neighborhood_crime,0.94,0.26,2055,31,349470
+adults of any nativity leaving California,ASEC 2011-2020,climate,0.73,0.23,2055,23,349470
+adults of any nativity leaving California,ASEC 2011-2020,retirement,2.35,0.54,2055,51,349470
+adults of any nativity leaving California,ASEC 2011-2020,other,7.72,0.94,2055,176,349470
+adults of any nativity leaving California,ASEC 2011-2020,cheaper_housing,6.67,0.96,2055,132,349470
+adults of any nativity leaving California,ASEC 2011-2020,better_housing,3.4,0.65,2055,66,349470
+adults of any nativity leaving California,ASEC 2011-2020,own_home,1.9,0.41,2055,36,349470
+adults of any nativity leaving California,ASEC 2010-2019,housing,18.55,1.2,2105,399,348121
+adults of any nativity leaving California,ASEC 2010-2019,jobs,45.12,1.49,2105,930,348121
+adults of any nativity leaving California,ASEC 2010-2019,family,24.19,1.45,2105,488,348121
+adults of any nativity leaving California,ASEC 2010-2019,neighborhood_crime,0.86,0.25,2105,28,348121
+adults of any nativity leaving California,ASEC 2010-2019,climate,0.76,0.24,2105,23,348121
+adults of any nativity leaving California,ASEC 2010-2019,retirement,2.45,0.53,2105,51,348121
+adults of any nativity leaving California,ASEC 2010-2019,other,8.08,0.97,2105,186,348121
+adults of any nativity leaving California,ASEC 2010-2019,cheaper_housing,6.24,0.91,2105,131,348121
+adults of any nativity leaving California,ASEC 2010-2019,better_housing,3.33,0.62,2105,64,348121
+adults of any nativity leaving California,ASEC 2010-2019,own_home,1.55,0.35,2105,30,348121

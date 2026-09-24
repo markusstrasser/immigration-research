@@ -1,0 +1,13 @@
+case,households_per_year,persons_per_year,count_basis,cost_per_household_usd,cost_basis,total_musd_per_year
+low,2625,3622,"ACS-scaled, 2005-2025 years with a published ACS ratio only",4137,"IRS SOI Table 1.4 moving-expense adjustment, TY2014-2017 mean per return, 2024$",10.86
+central,4009,5957,"ACS-scaled one year at a time, 2005-2025",6292,"AMSA average interstate household move $4,300 (2009), 2024$",25.22
+high,4891,6981,"ACS-scaled one year at a time, 2020-2025",18285,"Bayer & Juessen (2008) structural migration cost US$18,285, dollar year not stated",89.43
+grid cost=low count=low,2625,3622,"ACS-scaled, 2005-2025 years with a published ACS ratio only",4137,"IRS SOI Table 1.4 moving-expense adjustment, TY2014-2017 mean per return, 2024$",10.86
+grid cost=low count=central,4009,5957,"ACS-scaled one year at a time, 2005-2025",4137,"IRS SOI Table 1.4 moving-expense adjustment, TY2014-2017 mean per return, 2024$",16.59
+grid cost=low count=high,4891,6981,"ACS-scaled one year at a time, 2020-2025",4137,"IRS SOI Table 1.4 moving-expense adjustment, TY2014-2017 mean per return, 2024$",20.24
+grid cost=central count=low,2625,3622,"ACS-scaled, 2005-2025 years with a published ACS ratio only",6292,"AMSA average interstate household move $4,300 (2009), 2024$",16.52
+grid cost=central count=central,4009,5957,"ACS-scaled one year at a time, 2005-2025",6292,"AMSA average interstate household move $4,300 (2009), 2024$",25.22
+grid cost=central count=high,4891,6981,"ACS-scaled one year at a time, 2020-2025",6292,"AMSA average interstate household move $4,300 (2009), 2024$",30.77
+grid cost=high count=low,2625,3622,"ACS-scaled, 2005-2025 years with a published ACS ratio only",18285,"Bayer & Juessen (2008) structural migration cost US$18,285, dollar year not stated",48.0
+grid cost=high count=central,4009,5957,"ACS-scaled one year at a time, 2005-2025",18285,"Bayer & Juessen (2008) structural migration cost US$18,285, dollar year not stated",73.3
+grid cost=high count=high,4891,6981,"ACS-scaled one year at a time, 2020-2025",18285,"Bayer & Juessen (2008) structural migration cost US$18,285, dollar year not stated",89.43

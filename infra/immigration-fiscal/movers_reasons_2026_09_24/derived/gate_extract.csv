@@ -1,0 +1,8 @@
+gate,file,detail,value,pass
+G1a codebook = header,cps_main.csv.gz,"35 codebook vars, 35 header columns",identical,True
+G1a codebook = header,cps_repwt.csv.gz,"178 codebook vars, 178 header columns",identical,True
+G1b MIGRATE1 counts = IPUMS published,cps_main.csv.gz,"96 year-code cells over 16 samples published by IPUMS (2009-2025, no 2021 on the page)",all equal,True
+G1b rows per sample = IPUMS published,cps_main.csv.gz,"16 samples; total rows 5,027,101 over 27 samples",all equal,True
+G1b WHYMOVE counts = IPUMS published,cps_main.csv.gz,"322 year-code cells over 16 samples published by IPUMS (2009-2025, no 2021 on the page)",all equal,True
+2014 split files,cps_main.csv.gz,weight factors by HFLAG (share of 2014 records),"HFLAG0 0.6986, HFLAG1 0.3014",True
+G1c replicate extract = interstate movers of main extract,cps_repwt.csv.gz,"rows 59,734; main MIGRATE1=5 2005+ 59,734; joined 59,734; duplicate keys 0; max ASECWT diff 0.0000",consistent,True

@@ -1,0 +1,6 @@
+window,years,population,all_leavers_per_year_cps,all_leavers_se,nbhd_crime_persons_per_year_cps,nbhd_crime_se,nbhd_crime_households_per_year_cps,acs_scale_mean_published_years,years_with_own_acs_ratio,nbhd_crime_persons_per_year_acs_scaled,nbhd_crime_households_per_year_acs_scaled,nbhd_crime_persons_per_year_acs_own_years_only,nbhd_crime_households_per_year_acs_own_years_only,nbhd_crime_per_1000_cps,nbhd_crime_per_1000_acs_scaled,all_leavers_per_1000_cps
+2005-2025,21,US-born adults leaving California,286526,7719.0,4221,720,2816,1.436,12.0,5957.0,4009.0,3622.0,2625.0,0.226,0.319,15.15
+2016-2025,10,US-born adults leaving California,291645,13722.0,4010,1051,2876,1.436,7.0,5749.0,4159.0,4033.0,3248.0,0.198,0.284,14.54
+2020-2025,6,US-born adults leaving California,297036,18743.0,4802,1456,3361,1.436,3.0,6981.0,4891.0,4210.0,3496.0,0.236,0.343,14.78
+2005-2025,21,"US-born adult interstate movers, all states",3155358,,58813,3718,36800,,,,,,,,,
+2005-2025,21,US-born adults moving into California,190067,,1725,637,1402,,,,,,,,,
