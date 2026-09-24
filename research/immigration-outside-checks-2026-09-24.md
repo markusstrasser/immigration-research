@@ -171,7 +171,11 @@ all 18 derived files byte-identical].
 - **WIC**: modestly under-reported, ρ 0.77–0.84 against the FNS participant census. +$0.14bn.
 - **TANF**: reported at about the administrative rate within states, but the CPS puts 27% of TANF-type
   dollars in California, where 48% of basic assistance is paid (New York 8% against 19%). +$1.14bn
-  (SE 0.58) [SOURCE: ACF TANF characteristics and financial data FY2024; DOL ETA 203 and 5159; FNS WIC
+  (SE 0.58). The literature points the other way on amounts: in seven states outside California,
+  Hispanic recipients who report TANF state about twice their administrative amount, a dollar
+  capture near 1.6 against whites from small cells [SOURCE: Census SEHSD Working Paper 2018-30,
+  Tables 5–6]. If that held in the states used here, the TANF term would shrink; it does not touch
+  the California share [SOURCE: ACF TANF characteristics and financial data FY2024; DOL ETA 203 and 5159; FNS WIC
   Participant and Program Characteristics 2022; HUD Picture of Subsidized Households 2024].
 - The literature agrees on citizenship: in linked SNAP records, noncitizens under-report no more than
   natives (49% against 49%, net) [SOURCE: Census SEHSD Working Paper 2017-49, Table 3, p. 25].
