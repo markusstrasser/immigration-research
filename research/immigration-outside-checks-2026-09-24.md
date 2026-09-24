@@ -204,3 +204,19 @@ figure built on this file (a national route gives −$2.8bn here) is an artefact
 
 Blocked: SSI (SSA publishes no ethnicity), SNAP ethnicity in Texas and New Mexico (64–66% unknown),
 Medicaid spending by ethnicity (no administrative publication). School meals were not done.
+
+## The three proposals together
+
+Run once through the explorer engine on the adopted main case, the school, tax-and-transfer and benefit
+proposals give **$215.6–261.0bn** (+$12.35bn / +$11.32bn) [CALCULATION:
+[`outside_checks_combined_2026_09_24/combine.cjs`](../infra/immigration-fiscal/outside_checks_combined_2026_09_24/README.md)
+→ `derived/combined_bands.csv`]. Each change alone reproduces its lane's figure, and the changes add
+without interaction. The income-tax gradient is the largest piece (+$13.2–14.1bn), then schools
+(+$3.0–3.4bn) and benefits (+$2.2bn), while Treasury's credit shares take off $4.3–4.6bn. Where the
+benefit lane and CBO's bundle re-key the same lines (SNAP, WIC, cash assistance), the combination keeps
+the administrative-records change; applying both would give $214.9–260.0bn.
+
+This is relative to the adopted main case. The audit package already takes most of the income-tax
+and credit corrections (its row 3 and SSN rule), and its rows 3, 6 and 13 overlap all three
+proposals, so the two cannot be combined by addition; that needs the audit's rows in the engine.
+None of this is adopted.

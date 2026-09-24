@@ -179,8 +179,11 @@ audit row 3), so the main case would be **$209.2–254.8bn** (proposed; not comb
 Benefits (ladder 217): administrative records by ethnicity show no fear-driven under-reporting of SNAP
 or Medicaid; unemployment insurance, WIC and TANF's California share are under-reported, adding
 $2.2bn (main case **$205.5–251.8bn**, proposed). SNAP's quality-control file miscodes Hispanic
-ethnicity in 25 states and cannot support national SNAP-by-ethnicity figures. The direction of the
-crime-ratio errors is still running.
+ethnicity in 25 states and cannot support national SNAP-by-ethnicity figures. Run together through
+the engine, the three proposals give **$215.6–261.0bn** on the adopted main case (+$12.4bn / +$11.3bn;
+[combined run](../infra/immigration-fiscal/outside_checks_combined_2026_09_24/README.md)); they
+overlap the audit package's rows 3, 6 and 13 and do not add to it. The direction of the crime-ratio
+errors is still running.
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
