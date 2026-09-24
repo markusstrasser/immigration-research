@@ -135,9 +135,11 @@ substituting a web summary or declaring a measurement unavailable:
   a chat answer.
 - Fiscal results **by generation against a white reference** exist only in
   `infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/` (`complete_gaps.csv`,
-  `age_profile_components.csv`, `age_normalizations*.csv`). The later finance-refresh,
-  enrollment and complete accounts carry the all-generation union only; do not flat-scale
-  the split onto their totals.
+  `age_profile_components.csv`, `age_normalizations*.csv`). The finance-refresh and
+  enrollment accounts carry the all-generation union only; do not flat-scale the ledger's split
+  onto any account total. The adopted main case has its own split, computed on the account with
+  no reference group: `infra/immigration-fiscal/generation_account_2026_09_24/derived/generation_results.csv`
+  (ladder 224).
 - Only income-year 2024 is a measured account. Earlier years are a
   [model back-cast](research/immigration-historical-backcast-2026-09-20.md).
 - The headline's "CBO-informed" label covers two inputs only: CBO's tax-incidence rules and
