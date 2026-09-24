@@ -321,8 +321,18 @@ const whoPays = CHANNELS.map((c) => {
   const bottom = sumQ([1, 2, 3, 4]), top = sumQ([5]);
   gate("outside the budget: bottom four fifths −80.7, top fifth +46.0 (ladder 194)",
     near(bottom, -80.7, 0.05) && near(top, 46.0, 0.05), `${bottom.toFixed(2)} / ${top.toFixed(2)}`);
+  // The fiscal channel is the distribution lane's A_mid + central F on the case it ran; that case
+  // must be the page's main case, so the two figures never quote different cases.
   const fa = whoPays.find((c) => c.id === "fiscal_a");
-  gate("fiscal cost total −227.9", near(fa.totalBn, -227.92, 0.01), String(fa.totalBn));
+  const distInputs = JSON.parse(fs.readFileSync(
+    path.join(FISCAL, "distribution_weights_2026_09_23", "derived", "inputs.json"), "utf8"));
+  const distBand = distInputs.fiscal.adopted.band;
+  gate("who-pays runs on the page's main case", distInputs.fiscal.case === "sept24" &&
+    near(distBand[0], MAIN[0], 1e-3) && near(distBand[1], MAIN[1], 1e-3),
+    `${distInputs.fiscal.case}: ${distBand.map((v) => v.toFixed(3)).join("–")}`);
+  const faExpected = distInputs.fiscal.adopted.A_mid + distInputs.production.central_F;
+  gate("fiscal cost total = the lane's A_mid + F", near(fa.totalBn, faExpected, 0.01),
+    `${fa.totalBn} vs ${faExpected.toFixed(2)}`);
 }
 
 /* ---------------------------------------------------------------- crime --------------------- */

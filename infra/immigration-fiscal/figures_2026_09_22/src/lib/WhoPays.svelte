@@ -80,7 +80,7 @@
       crime victims sit lower down.
     </p>
     <p>
-      The fiscal cost here is the lane’s central $227.9bn, inside the main case. Which financing rule
+      The fiscal cost here is the lane’s central ${Math.abs(byId.fiscal_a.totalBn).toFixed(1)}bn, inside the main case. Which financing rule
       applies is a value choice; both are shown (ladder 194).
     </p>
     <p>distribution_weights_2026_09_23/derived/channel_by_quintile.csv, measure spm.</p>
