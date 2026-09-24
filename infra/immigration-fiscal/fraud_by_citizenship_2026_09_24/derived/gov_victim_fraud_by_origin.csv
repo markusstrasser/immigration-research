@@ -1,0 +1,7 @@
+scope,group,offenders,share_offenders,share_loss_positive_offenders,share_loss,adult_pop_share
+all_districts,hispanic,1036,0.2404,0.2039,0.1805,0.1667
+all_districts,non_hispanic,3198,0.7422,0.7781,0.8017,0.8333
+all_districts,hispanic_unknown,75,0.0174,0.0181,0.0179,
+all_districts,mexican_citizen_noncitizen,150,0.0348,0.0151,0.0005,
+all_districts,southern_district_florida,545,0.1265,0.1348,0.232,
+excluding_southern_district_florida,hispanic,672,0.1785,0.1314,0.0558,

@@ -1,0 +1,94 @@
+DISTRICT,district,offenders,health_care,gov_benefits,gov_procurement,loss_sum_musd,noncitizen_share,noncitizen_loss_share,hispanic_share,top_noncitizen_country,top_noncitizen_country_n
+31,Florida South,1260,902,329,29,7551.973,0.2183,0.1185,0.6659,Cuba,232
+39,Texas North,230,140,78,12,2522.241,0.0652,0.0866,0.0913,Nigeria,7
+41,Texas South,325,229,91,5,2232.016,0.0985,0.0456,0.2462,Mexico,11
+73,California Central,356,199,148,9,1387.492,0.1292,0.2376,0.2191,Armenia,12
+74,California South,130,50,68,12,1369.271,0.1923,0.0386,0.2846,Mexico,15
+45,Michigan East,394,242,146,6,1362.61,0.1244,0.0682,0.0228,India,14
+30,Florida Mid,274,97,163,14,1083.984,0.0839,0.0372,0.1715,Cuba,4
+38,Mississippi South,54,29,23,2,772.352,0.0926,0.0,0.0926,Guatemala,3
+8,New York South,316,172,113,31,765.819,0.1297,0.1289,0.231,Dominican Republic,14
+34,Georgia South,144,25,115,4,765.764,0.0139,0.0044,0.0139,Canada,1
+7,New York East,198,109,76,13,591.601,0.1414,0.1158,0.1364,Pakistan,5
+22,Virginia East,233,70,128,35,576.113,0.0515,0.036,0.0601,Guatemala,2
+20,South Carolina,162,58,89,15,568.912,0.1173,0.0034,0.1358,Guatemala,7
+26,Alabama North,96,56,37,3,490.987,0.0312,0.0,0.0417,Guatemala,2
+71,California North,69,29,39,1,459.566,0.1159,0.4366,0.0725,Mexico,5
+35,Louisiana East,157,66,91,0,452.099,0.2484,0.0,0.2994,Honduras,16
+52,Illinois North,206,119,68,19,428.444,0.1117,0.1983,0.0922,Philippines,10
+12,New Jersey,223,128,71,24,424.074,0.0897,0.0532,0.1749,Dominican Republic,4
+1,Massachusetts,220,46,163,11,349.954,0.5045,0.0444,0.5455,Dominican Republic,90
+64,Minnesota,70,30,33,7,331.683,0.1857,0.0193,0.0714,Somalia,5
+32,Georgia North,157,31,108,18,327.924,0.0764,0.0481,0.0573,Korea,5
+96,Louisiana Middle,89,27,62,0,320.943,0.4045,0.0014,0.3933,Mexico,27
+47,Ohio North,186,72,104,10,279.305,0.0538,0.0483,0.0323,Somalia,3
+90,Dist of Columbia,83,42,19,22,243.958,0.1687,0.038,0.0,Cameroon,6
+46,Michigan West,129,25,103,1,231.375,0.155,0.0035,0.2636,Mexico,10
+15,Penn. West,142,48,84,10,201.749,0.0423,0.0015,0.0282,Iraq,3
+49,Tennessee East,89,23,60,6,163.543,0.191,0.004,0.1798,Guatemala,9
+42,Texas West,100,40,47,13,159.299,0.08,0.003,0.38,Mexico,5
+66,Missouri West,83,23,55,5,155.026,0.012,0.7709,0.0361,China,1
+13,Penn. East,202,53,136,13,154.82,0.0842,0.0402,0.1337,Dominican Republic,7
+43,Kentucky East,105,57,47,1,138.87,0.0286,0.0004,0.0286,Bhutan,1
+72,California East,98,23,64,11,137.292,0.1531,0.2599,0.1327,Jamaica,3
+65,Missouri East,183,83,92,8,136.203,0.0109,0.0157,0.0109,Canada,1
+5,Connecticut,56,32,18,6,121.05,0.1429,0.0532,0.0357,Morocco,2
+17,N Carolina East,130,38,87,5,110.13,0.0923,0.0042,0.1538,Mexico,4
+48,Ohio South,210,55,133,22,109.549,0.0571,0.0731,0.0333,Ghana,2
+40,Texas East,141,22,112,7,104.7,0.3972,0.0152,0.4113,Mexico,43
+70,Arizona,99,21,73,5,104.024,0.0101,0.0,0.1818,Mexico,1
+33,Georgia Mid,50,5,41,4,100.845,0.0,0.0,0.0,,0
+37,Mississippi North,65,15,50,0,90.303,0.0,0.0,0.0154,,0
+83,Kansas,70,6,57,7,87.897,0.1714,0.0019,0.2286,Mexico,9
+82,Colorado,62,9,51,2,87.423,0.0484,0.0092,0.2419,Mexico,2
+79,Oregon,44,7,27,10,86.437,0.0455,0.0,0.1136,Guatemala,1
+63,Iowa South,62,8,50,4,86.384,0.1452,0.0004,0.1613,Mexico,7
+50,Tennessee Mid,37,20,17,0,85.897,0.1081,0.022,0.0811,Mexico,3
+19,N Carolina West,75,29,39,7,84.227,0.04,0.0028,0.04,Mexico,2
+16,Maryland,103,17,72,14,80.762,0.165,0.1692,0.0971,Pakistan,4
+29,Florida North,46,11,32,3,70.068,0.0217,0.0,0.0652,Honduras,1
+36,Louisiana West,72,8,57,7,63.359,0.0972,0.0,0.0833,Mexico,3
+57,Wisconsin East,59,4,44,11,59.236,0.0,0.0,0.0339,,0
+53,Illinois Cent,83,32,46,5,54.782,0.0,0.0,0.0482,,0
+9,New York West,67,24,38,5,45.122,0.1343,0.0382,0.0299,Yemen,3
+55,Indiana North,58,24,32,2,42.354,0.0517,0.0035,0.069,Honduras,1
+51,Tennessee West,64,22,38,4,42.023,0.0156,0.0,0.0312,Mexico,1
+18,N Carolina Mid,39,5,25,9,40.973,0.1026,0.0,0.1282,Mexico,2
+4,Puerto Rico,200,101,82,17,37.12,0.02,0.0019,0.895,Dominican Republic,4
+67,Nebraska,179,18,158,3,33.615,0.6313,0.0187,0.6201,Mexico,64
+6,New York North,107,17,83,7,27.799,0.0654,0.2641,0.0467,Mexico,2
+60,Arkansas East,113,5,105,3,27.571,0.0442,0.0,0.0619,Mexico,3
+56,Indiana South,68,23,35,10,24.732,0.0147,0.0325,0.0,Nigeria,1
+78,Nevada,57,18,38,1,23.37,0.1754,0.2507,0.0877,Belize,4
+14,Penn. Mid,86,39,43,4,23.355,0.0349,0.0027,0.1395,Mexico,2
+93,Guam,16,2,13,1,22.787,0.375,0.0362,0.0,Micronesia,3
+85,Oklahoma North,34,0,31,3,22.751,0.1471,0.3101,0.1176,Mexico,2
+23,Virginia West,103,35,66,2,22.364,0.0097,0.0903,0.0194,Great Britain,1
+61,Arkansas West,38,5,31,2,20.568,0.0526,0.0,0.1316,Mexico,2
+27,Alabama Mid,15,4,10,1,20.448,0.0667,0.0,0.0667,Mexico,1
+58,Wisconsin West,19,5,12,2,18.442,0.0,0.0,0.0526,,0
+3,Rhode Island,31,7,21,3,17.206,0.2258,0.0293,0.2258,Dominican Republic,4
+88,Utah,47,9,30,8,15.736,0.1064,0.0019,0.0213,Sudan,2
+89,Wyoming,19,8,11,0,15.521,0.0,0.0,0.0526,,0
+2,New Hampshire,50,5,44,1,14.077,0.14,0.0,0.18,Dominican Republic,6
+77,Montana,32,11,20,1,13.251,0.0625,0.0004,0.0938,Mexico,2
+80,Washington East,37,16,21,0,13.23,0.2973,0.0853,0.2973,Mexico,6
+87,Oklahoma West,39,16,20,3,13.063,0.0,0.0,0.0256,,0
+44,Kentucky West,52,23,28,1,12.851,0.1346,0.0868,0.0962,Cuba,2
+84,New Mexico,33,4,23,6,9.92,0.1515,0.0057,0.5758,Mexico,4
+0,Maine,57,18,38,1,9.526,0.1053,0.159,0.0702,Dominican Republic,2
+75,Hawaii,16,7,7,2,9.237,0.0625,0.0185,0.0,Korea,1
+28,Alabama South,70,3,64,3,8.146,0.0429,0.0732,0.0286,Guatemala,2
+69,South Dakota,34,9,23,2,7.885,0.0294,0.0,0.0294,Guatemala,1
+81,Washington West,38,3,33,2,7.4,0.0789,0.0128,0.0789,Fiji,1
+76,Idaho,49,4,42,3,7.139,0.3265,0.0,0.4694,Mexico,14
+68,North Dakota,20,10,9,1,6.513,0.15,0.0856,0.0,Canada,1
+25,W Virginia South,24,8,16,0,4.272,0.0,0.0,0.0,,0
+11,Delaware,12,1,9,2,4.169,0.1667,0.3091,0.1667,Dominican Republic,1
+62,Iowa North,86,6,78,2,3.922,0.6279,0.1652,0.6395,Guatemala,24
+54,Illinois South,59,43,16,0,3.147,0.0508,0.0003,0.0,Egypt,1
+10,Vermont,15,6,9,0,2.469,0.0667,0.5266,0.0,India,1
+86,Oklahoma East,10,2,8,0,2.031,0.0,0.0,0.1,,0
+95,Alaska,17,9,8,0,1.955,0.2941,0.029,0.3529,Dominican Republic,3
+24,W Virginia North,22,2,16,4,1.386,0.1364,0.0,0.0909,Mexico,2
+91,Virgin Islands,3,0,2,1,0.695,0.0,0.0,0.0,,0
