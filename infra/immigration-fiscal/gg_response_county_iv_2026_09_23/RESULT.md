@@ -82,7 +82,9 @@ In the county build, the 2017→2022 rise of $16.7bn in 2022 dollars sits almost
 places:
 - NYC: +$9.4bn. Its reported E23 went from $566m to $10.1bn (record flag "R") with no offsetting
   fall in its other items;
-- Cook County: +$2.0bn;
+- Cook County area: +$2.0bn, almost all of it the City of Chicago (+$2.06bn from 2021 to 2022);
+  the county government's own E23 shows no break
+  [DATA: `../migrant_shelter_costs_2026_09_23/derived/census_e23_by_unit.csv`];
 - Philadelphia: +$0.9bn;
 - Florida counties: +$3.9bn.
 
