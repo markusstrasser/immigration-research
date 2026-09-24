@@ -1,16 +1,39 @@
-row,item,low_bn,central_bn,high_bn,measured,source
-1,premium tax credits keyed as EITC+ACTC,-14.23,-14.23,-14.23,True,spending.md #1; spending_mts_credits.py
-2,"tax model assumes resident, compliant filers",5.00,10.60,17.00,False,cps.md row 1: 75% / 60% / 44% on-books
-3,federal gap keyed by CPS liability,9.48,9.48,9.48,True,cps.md row 2 (federal_gap_high_agi arm)
-4,ASEC 2025 Mexico-born count above ACS,-8.30,-7.10,-6.00,False,"cps.md row 3, if the ACS level is right"
-5,Medicaid long-term care keyed by MEPS community key,-15.00,-9.30,-3.60,False,spending.md #3 (bound; central = midpoint)
-6,education key 93% K-12,-4.80,-3.50,-2.20,True,spending.md #5
-7,justice key on FBI 2019 arrests,1.12,1.12,1.12,True,crime.md #1 (2024 Table 43C)
-8,unallocable S&L spending given the administration elasticity,2.00,2.00,2.00,True,spending.md #7
-9,MEPS donor filter,-2.00,-1.00,0.00,False,spending.md #4 (bound)
-10,foster care keyed by WIC,-2.00,-1.50,-1.00,False,spending.md #9 (bound)
-small,"origin allocation, grants, top-codes, flags",-0.50,-0.10,0.40,False,"cps.md rows 4-6, 12; spending.md #8, #11"
-net,rows 1-10 + small,-29.23,-13.53,2.97,,
-measured,"rows 1,3,6,7,8",-6.43,-5.13,-3.83,,
-11,household rental assistance held fixed,0.00,,7.50,choice,"spending.md #6: 0 now, +7.5 if it responded fully"
-12,income-security consumption keyed by public assistance,-20.00,,-7.50,choice,"spending.md #12: -7.5 population key, -20 all-cash key"
+band_end,row,item,low_bn,central_bn,high_bn,status,source
+shared,block:central:b_hotdeck_union_matched,rows 2+3+13+4+status stack,,24.12,,stack,row4+status 16.62 + row3 7.50
+shared,block:central:b_matched_over_pooled,rows 2+3+13+4+status stack,,31.59,,stack,row4+status 23.19 + row3 8.40
+shared,block:high:b_hotdeck_union_matched,rows 2+3+13+4+status stack,,21.51,,stack,row4+status 13.87 + row3 7.64
+shared,block:high:b_matched_over_pooled,rows 2+3+13+4+status stack,,28.90,,stack,row4+status 20.34 + row3 8.55
+shared,block:low:b_hotdeck_union_matched,rows 2+3+13+4+status stack,,26.77,,stack,row4+status 19.41 + row3 7.36
+shared,block:low:b_matched_over_pooled,rows 2+3+13+4+status stack,,34.33,,stack,row4+status 26.09 + row3 8.25
+shared,tax block,"rows 2, 3, 13, 4 and the status flag, stacked",21.51,27.86,34.33,B stacked,cps_imputation_keys_2026_09_23/derived/status_combination_onbooks_lane.csv
+shared,1,premium tax credits keyed as EITC+ACTC,-14.23,-14.23,-14.23,A measured,spending.md #1; spending_mts_credits.py
+shared,5,Medicaid long-term care keyed by the MEPS community key,-12.50,-11.10,-8.10,B measured,"ltss_share_2026_09_23 RESULT (T-MSIS/TAF, CMS-64 IHSS)"
+shared,6,education key 93% K-12,-4.80,-3.50,-2.20,B measured,spending.md #5
+shared,7,justice key on FBI 2019 arrests,1.12,1.12,1.12,B measured,crime.md #1 (2024 Table 43C)
+shared,8,unallocable S&L spending given the administration elasticity,2.00,2.00,2.00,C measured,spending.md #7
+shared,9,MEPS donor filter (non-LTSS remainder),-1.60,-0.80,0.00,C bound,"spending.md #4, scaled for row 5"
+shared,10,foster care keyed by WIC,-2.00,-1.50,-1.00,C bound,spending.md #9
+shared,small,"origin allocation, grants, top-codes, flags",-0.50,-0.10,0.40,D,"cps.md rows 4-6, 12; spending.md #8, #11"
+shared,net,"tax block + rows 1, 5-10, small",-11.00,-0.25,12.32,,
+shared,"net, no fill-in correction",row 13 = 0: rules alone in the stack,-15.40,-7.91,1.34,sensitivity,RESULT step 6
+shared,"net, decision 2",row 5 replaced by the joint LTSS + medical figure,-19.60,-6.85,11.72,,"ltss_share_2026_09_23 RESULT, combining rule"
+personal,block:central:b_hotdeck_union_matched,rows 2+3+13+4+status stack,,27.39,,stack,row4+status 18.93 + row3 8.47
+personal,block:central:b_matched_over_pooled,rows 2+3+13+4+status stack,,31.86,,stack,row4+status 23.49 + row3 8.37
+personal,block:high:b_hotdeck_union_matched,rows 2+3+13+4+status stack,,24.82,,stack,row4+status 16.19 + row3 8.62
+personal,block:high:b_matched_over_pooled,rows 2+3+13+4+status stack,,29.20,,stack,row4+status 20.65 + row3 8.55
+personal,block:low:b_hotdeck_union_matched,rows 2+3+13+4+status stack,,30.01,,stack,row4+status 21.70 + row3 8.31
+personal,block:low:b_matched_over_pooled,rows 2+3+13+4+status stack,,34.56,,stack,row4+status 26.37 + row3 8.18
+personal,tax block,"rows 2, 3, 13, 4 and the status flag, stacked",24.82,29.63,34.56,B stacked,cps_imputation_keys_2026_09_23/derived/status_combination_onbooks_lane.csv
+personal,1,premium tax credits keyed as EITC+ACTC,-14.23,-14.23,-14.23,A measured,spending.md #1; spending_mts_credits.py
+personal,5,Medicaid long-term care keyed by the MEPS community key,-12.50,-11.10,-8.10,B measured,"ltss_share_2026_09_23 RESULT (T-MSIS/TAF, CMS-64 IHSS)"
+personal,6,education key 93% K-12,-4.80,-3.50,-2.20,B measured,spending.md #5
+personal,7,justice key on FBI 2019 arrests,1.12,1.12,1.12,B measured,crime.md #1 (2024 Table 43C)
+personal,8,unallocable S&L spending given the administration elasticity,2.00,2.00,2.00,C measured,spending.md #7
+personal,9,MEPS donor filter (non-LTSS remainder),-1.60,-0.80,0.00,C bound,"spending.md #4, scaled for row 5"
+personal,10,foster care keyed by WIC,-2.00,-1.50,-1.00,C bound,spending.md #9
+personal,small,"origin allocation, grants, top-codes, flags",-0.50,-0.10,0.40,D,"cps.md rows 4-6, 12; spending.md #8, #11"
+personal,net,"tax block + rows 1, 5-10, small",-7.69,1.52,12.55,,
+personal,"net, no fill-in correction",row 13 = 0: rules alone in the stack,-15.06,-7.62,1.57,sensitivity,RESULT step 6
+personal,"net, decision 2",row 5 replaced by the joint LTSS + medical figure,-16.29,-5.08,11.95,,"ltss_share_2026_09_23 RESULT, combining rule"
+both,11,household rental assistance held fixed,0.00,,7.50,choice,"spending.md #6: 0 now, +7.5 if it responded fully"
+both,12,income-security consumption keyed by public assistance,-20.00,,-7.50,choice,"spending.md #12: -7.5 population key, -20 all-cash key"
