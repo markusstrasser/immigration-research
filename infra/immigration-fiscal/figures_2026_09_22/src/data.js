@@ -70,32 +70,6 @@ export const incomeRatios = {
   men: [0.6413, 0.6291, 0.6358, 0.6411, 0.6397, 0.6446, 0.6346, 0.6413, 0.6971, 0.7092, 0.7352, 0.7033, 0.7341, 0.7557, 0.7541],
 }
 
-// CBO-informed back-cast of the adopted main case, $bn cost. Envelope of flat / ratio / income
-// × low / high: backcast_annual.csv, net_cost_cbo_informed_adopted_* columns.
-// Flat is the carry of the 2024 level. 2024 is the measured account; earlier years are not.
-export const backcast = [
-  { year: 2005, lo: 64.0, hi: 171.5, flatLo: 139.6, flatHi: 171.5 },
-  { year: 2006, lo: 59.5, hi: 181.4, flatLo: 147.7, flatHi: 181.4 },
-  { year: 2007, lo: 68.0, hi: 186.7, flatLo: 152.0, flatHi: 186.7 },
-  { year: 2008, lo: 111.7, hi: 196.8, flatLo: 160.2, flatHi: 196.8 },
-  { year: 2009, lo: 165.2, hi: 264.8, flatLo: 165.2, flatHi: 202.9 },
-  { year: 2010, lo: 171.6, hi: 281.4, flatLo: 171.6, flatHi: 210.8 },
-  { year: 2011, lo: 174.9, hi: 273.4, flatLo: 174.9, flatHi: 214.9 },
-  { year: 2012, lo: 162.7, hi: 257.5, flatLo: 177.4, flatHi: 217.9 },
-  { year: 2013, lo: 122.6, hi: 225.3, flatLo: 180.3, flatHi: 221.4 },
-  { year: 2014, lo: 117.5, hi: 226.1, flatLo: 184.1, flatHi: 226.1 },
-  { year: 2015, lo: 113.6, hi: 229.2, flatLo: 186.6, flatHi: 229.2 },
-  { year: 2016, lo: 125.9, hi: 232.1, flatLo: 189.0, flatHi: 232.1 },
-  { year: 2017, lo: 130.0, hi: 234.8, flatLo: 191.1, flatHi: 234.8 },
-  { year: 2018, lo: 141.8, hi: 236.8, flatLo: 192.8, flatHi: 236.8 },
-  { year: 2019, lo: 153.9, hi: 238.1, flatLo: 193.8, flatHi: 238.1 },
-  { year: 2020, lo: 193.9, hi: 380.6, flatLo: 193.9, flatHi: 238.3 },
-  { year: 2021, lo: 194.1, hi: 336.4, flatLo: 194.1, flatHi: 238.4 },
-  { year: 2022, lo: 123.6, hi: 239.6, flatLo: 195.0, flatHi: 239.6 },
-  { year: 2023, lo: 186.0, hi: 243.2, flatLo: 198.0, flatHi: 243.2 },
-  { year: 2024, lo: 203.2, hi: 249.6, flatLo: 203.2, flatHi: 249.6 },
-]
-
 // Shared all-age ledger vs local third-plus NH whites. Not the complete account.
 export const places = [
   { name: 'Los Angeles', v: -17196, lo: -21144, hi: -13249, people: '4.50m' },

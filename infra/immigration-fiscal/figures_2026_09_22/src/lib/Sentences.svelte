@@ -1,10 +1,11 @@
 <script>
   import fig from '../generated/figures.json'
-  import { backcast, schooling, fiscalWindows, incomeRatios, kitagawa, hulls, programmes, programmeYears } from '../data.js'
+  import { schooling, fiscalWindows, incomeRatios, kitagawa, hulls, programmes, programmeYears } from '../data.js'
   import { dollars } from '../format.js'
 
   const tn = (r) => `$${r[0].toFixed(1)}–${r[1].toFixed(1)}tn`
   const w = fig.backcastWindows
+  const backcast = fig.backcast
 
   // Back-cast band, 2005–2023 modelled, 2024 measured.
   const bx = (year) => 3 + ((year - 2005) / 19) * 94
@@ -114,7 +115,8 @@
       graphics keep their shape.
     </p>
     <p>
-      historical_backcast_2026_09_20 (backcast_windows.csv, national_programme_index.csv); arrival-cohort
+      historical_backcast_2026_09_20 (backcast_annual.csv and backcast_windows.csv, with the September 24
+      corrections; national_programme_index.csv); arrival-cohort
       memo; back-cast ACS income input; indian_generation_2026_09_21 occ_kitagawa.csv;
       ledger_recut_2026_09_22 hulls.csv.
     </p>

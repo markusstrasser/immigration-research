@@ -1,6 +1,9 @@
 <script>
+  import fig from '../generated/figures.json'
   import { places } from '../data.js'
   import { dollars } from '../format.js'
+
+  const account = fig.account.main.map(Math.round)
 
   const ranked = places.filter((p) => !p.national).slice().sort((a, b) => a.v - b.v)
   const national = places.find((p) => p.national)
@@ -68,7 +71,7 @@
       against whites is a richer white comparison. National, age only, is the last row and not a place.
     </p>
     <p>
-      Not a slice of the $203–250bn complete account. ledger_stress_2026_09_17 and
+      Not a slice of the ${account[0]}–{account[1]}bn complete account. ledger_stress_2026_09_17 and
       metro_match_2026_09_17.
     </p>
   </aside>
