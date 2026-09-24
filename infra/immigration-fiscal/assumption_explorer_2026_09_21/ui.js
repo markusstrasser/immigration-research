@@ -3,6 +3,12 @@
   "use strict";
   var M = window.MODEL, P = window.PRESETS, PRESETS = P.presets, CONTEXT = window.CONTEXT.items || [], EV = window.EVIDENCE, LAD = window.LADDER, SRC = window.SOURCES;
   var E = window.Engine, $ = function (id) { return document.getElementById(id); };
+  // The data corrections (main_case_2026_09_24/derived/corrections.json), attached once before anything is
+  // evaluated: a state with data_corrections set evaluates this corrected copy of the model.
+  var CX = window.CORRECTIONS, ADOPTED = CX.meta.adopted, CORR = {}, CORR_LINE = {};
+  M.corrected = E.applyCorrections(M, CX);
+  CX.lines.forEach(function (l) { CORR[l.response_class] = l.id; CORR_LINE[l.id] = l; });  // line id by response class, as figures_2026_09_22 reads them
+  if (!CORR.education_school_part || !CORR.education_other_part || !CORR.correction_constant) throw new Error("corrections.json lacks a correction line class");
   var state, lens = "welfare_bn", activePreset = null, activeControl = null, history = [];
   var ladder = { q: "", topics: {}, all: false, token: null };
   var SMOOTH = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
@@ -29,19 +35,23 @@
     social_security: "Social Security", veterans_pension_disability: "Veterans' pensions and disability", rest_world_tax_contributions: "Taxes and contributions from abroad",
     rest_world_current_transfers: "Transfers from abroad", source_rounding: "Rounding in the source tables"
   };
+  CX.lines.forEach(function (l) { LABEL[l.id] = l.label; });  // the correction lines carry their payload labels
   function label(id) { return LABEL[id] || id.replace(/_/g, " ").replace(/^./, function (c) { return c.toUpperCase(); }); }
   var CLASS_LABEL = { direct_receipts: "Taxes the group pays", incidence_receipts: "Corporate, property and asset receipts",
     household_transfer: "Cash and in-kind benefits", service: "Public services", public_goods: "Defense and general government",
-    interest: "Interest on existing debt", subsidy: "Business and housing subsidies", foreign: "Foreign flows", rounding: "Rounding" };
+    interest: "Interest on existing debt", subsidy: "Business and housing subsidies", foreign: "Foreign flows", rounding: "Rounding",
+    data_corrections: "Data corrections on lines of their own" };
 
   function elasticity(name) { var r = EV.elasticities.filter(function (x) { return x.scope === "50 states" && x.function.indexOf(name) === 0; })[0]; return r ? r.elasticity : null; }
   var gps = EV.general_public_service_2024_bn;
-  var GG_HELP = "The account published on September 20 held this at zero by assumption; the central case adopted on 2026-09-23 lets it grow. " + Math.round(EV.state_local_share * 100) + "% of general government outside interest is state and local. Across the 50 states, administration spending rises " +
+  var GG_HELP = "The account published on September 20 held this at zero by assumption; since 2026-09-23 the central case lets it grow. " + Math.round(EV.state_local_share * 100) + "% of general government outside interest is state and local. Across the 50 states, administration spending rises " +
     (elasticity("Governmental administration") * 10).toFixed(1) + "% for every 10% more residents (police " + (elasticity("Police") * 10).toFixed(1) + "%, schools " + (elasticity("Elementary") * 10).toFixed(1) + "%). Federal tax collection costs $" + gps.federal_tax_financial.toFixed(1) +
     "bn; the federal executive and legislature $" + gps.federal_executive_legislative.toFixed(1) + "bn. Together that implies a share between " + EV.composite_low + " and " + EV.composite_high + "; the central case enters both. Federal police, courts and prisons, the FBI among them, are charged under police, courts, prisons.";
 
   var levels = function (d) { return M.production.dims[d]; };
   var CONTROLS = [
+    { group: "Input data", id: "data_corrections", label: "Apply the data corrections adopted on " + ADOPTED, type: "levels", levels: [true, false], affects: ["all"],
+      help: "A dataset audit and four outside checks, adopted on " + ADOPTED + ". Tax records by legal status and survey fill-ins, and CBO's income shares, lower the taxes assigned to the group. Treasury's credit shares, program records for benefits and medical care charged by use lower the spending keyed to it. Without them every line is as the account published it." },
     { group: "What counts as a cost", id: "service_response", label: "Public services grow with the population", type: "slider", marks: [0, 0.5, 1],
       help: "How much of schools, police, health and other services would not be needed if the group were absent. 1 charges the average cost per person; 0 treats services as free to add people to. The account was run at 0, 0.5 and 1.", affects: ["service"] },
     { group: "What counts as a cost", id: "school_response", label: "School spending grows with enrollment", type: "slider", marks: [0.63, 0.66],
@@ -169,11 +179,31 @@
     return { out: out, value: out[key || lens], range: range };
   }
 
+  // Amounts that preset and author text name as {assigned:<name>}: read from the ledger of the state the text
+  // describes when it is drawn, never typed (build_ui.py refuses a name not defined here).
+  function lineSum(o, ids) { return o.spending.filter(function (l) { return ids.indexOf(l.id) >= 0; }).reduce(function (a, l) { return a + l.amount_bn; }, 0); }
+  function classSum(o, cls) { return (o.classes[cls] || { assigned_bn: 0 }).assigned_bn; }
+  var ASSIGNED = {
+    education: function (o) { return lineSum(o, ["education_services", CORR.education_school_part, CORR.education_other_part]); },
+    services: function (o) { return classSum(o, "service") + classSum(o, "education_school_part") + classSum(o, "education_other_part"); },
+    other_services: function (o) { return classSum(o, "service") - lineSum(o, ["education_services"]); },
+    benefits: function (o) { return classSum(o, "household_transfer"); },
+    defense_and_interest: function (o) { return lineSum(o, ["defense", "domestic_interest"]); }
+  };
+  function liveText(text, s) {
+    var o = null;
+    return String(text == null ? "" : text).replace(/\{assigned:([a-z_]+)\}/g, function (m, name) { o = o || E.evaluate(M, s); return fmt(ASSIGNED[name](o), 0); });
+  }
+
   function executedStatus(s) {
     var d = E.defaultState(M), contract = ["transfer_response", "interest_response", "subsidy_response", "direct_receipt_response", "indirect_receipt_response"]
       .every(function (k) { return s[k] === d[k]; }) && !Object.keys(s.response_override).length && s.count_production;
     if (!contract) return ["own", "Your own assumptions: the account's formula, with settings the account never uses"];
     if (same(s, CENTRAL)) return ["formula", "The central case (" + CENTRAL_PRESET.kind_label + "), computed with the account's formula"];
+    // The account's executed runs predate the data corrections, so with them on no state is one of its rows.
+    if (CENTRAL.data_corrections && same(s, Object.assign(E.clone(CENTRAL), { data_corrections: false })))
+      return ["formula", "The central case without the data corrections, as adopted on 2026-09-23, computed with the account's formula"];
+    if (s.data_corrections) return ["formula", "Computed with the account's formula, on the corrected data"];
     // Every rule in the ledger was executed, but the account ran whole sets of rules, never a mix per line.
     var mixed = Object.keys(s.key_override).length || Object.keys(s.key_band || {}).length;
     var flat = s.school_response === 1 && s.other_education_response === 1 && s.delayed_response === 1 && !s.school_response_band;
@@ -252,14 +282,21 @@
     $("h-status").textContent = st[1]; $("h-status").className = "status " + st[0];
   }
 
+  // Each step: [label, counted, assigned but not counted, tokens it touches, optional]. An optional step is drawn
+  // only when it is non-zero here or in the central case.
   function bridgeSteps(out, s) {
     var w = s.fiscal_weight, c = out.classes, g = function (k) { return c[k] || { assigned_bn: 0, responsive_bn: 0 }; };
-    var edu = out.spending.filter(function (l) { return l.id === "education_services"; })[0], PG = "public_goods defense general_public_services";
+    var line = out.spending.filter(function (l) { return l.id === "education_services"; })[0], PG = "public_goods defense general_public_services";
+    // Education carries the two correction lines that respond as its school and college parts; fixed is the
+    // correction line counted in full. All three are zero with the data corrections off.
+    var parts = [g("education_school_part"), g("education_other_part")], fixed = g("correction_constant");
+    var edu = { amount_bn: line.amount_bn + parts[0].assigned_bn + parts[1].assigned_bn, effect_bn: line.effect_bn - parts[0].responsive_bn - parts[1].responsive_bn };
+    var EDU = ["education_services", CORR.education_school_part, CORR.education_other_part].join(" "), FIXED = "Care, shelter and audit items";
     if (lens !== "welfare_bn") {
       var steps = [["Taxes the group pays", g("direct_receipts").assigned_bn, 0, "direct_receipts"], ["Corporate, property and asset receipts", g("incidence_receipts").assigned_bn, 0, "incidence_receipts"],
-        ["Benefits paid to the group", -g("household_transfer").assigned_bn, 0, "household_transfer"], ["Education", -edu.amount_bn, 0, "education_services"],
-        ["Other public services", -(g("service").assigned_bn - edu.amount_bn), 0, "service"], ["Defense and general government", -g("public_goods").assigned_bn, 0, PG],
-        ["Interest and subsidies", -(g("interest").assigned_bn + g("subsidy").assigned_bn), 0, "interest subsidy"]];
+        ["Benefits paid to the group", -g("household_transfer").assigned_bn, 0, "household_transfer"], ["Education", -edu.amount_bn, 0, EDU],
+        ["Other public services", -(g("service").assigned_bn - line.amount_bn), 0, "service"], ["Defense and general government", -g("public_goods").assigned_bn, 0, PG],
+        ["Interest and subsidies", -(g("interest").assigned_bn + g("subsidy").assigned_bn), 0, "interest subsidy"], [FIXED, -fixed.assigned_bn, 0, CORR.correction_constant, true]];
       if (lens === "normalized_gap_bn") steps.push(["Less an equal per-head share of the national balance", out.normalized_gap_bn - out.target_balance_bn, 0, "all"]);
       return steps;
     }
@@ -267,14 +304,17 @@
       ["Corporate, property and asset receipts", w * g("incidence_receipts").responsive_bn, g("incidence_receipts").assigned_bn - g("incidence_receipts").responsive_bn, "incidence_receipts"],
       ["Benefits paid to the group", -w * g("household_transfer").responsive_bn, -(g("household_transfer").assigned_bn - g("household_transfer").responsive_bn), "household_transfer"],
       ["Gain to other residents from the group's work", out.private_wtp_bn + w * out.induced_receipts_bn, 0, "production"],
-      ["Education", w * edu.effect_bn, -(edu.amount_bn + edu.effect_bn), "education_services"],
-      ["Other public services", -w * (g("service").responsive_bn + edu.effect_bn), -((g("service").assigned_bn - edu.amount_bn) - (g("service").responsive_bn + edu.effect_bn)), "service"],
+      ["Education", w * edu.effect_bn, -(edu.amount_bn + edu.effect_bn), EDU],
+      ["Other public services", -w * (g("service").responsive_bn + line.effect_bn), -((g("service").assigned_bn - line.amount_bn) - (g("service").responsive_bn + line.effect_bn)), "service"],
       ["Defense and general government", -w * g("public_goods").responsive_bn, -(g("public_goods").assigned_bn - g("public_goods").responsive_bn), PG],
-      ["Interest and subsidies", -w * (g("interest").responsive_bn + g("subsidy").responsive_bn), -((g("interest").assigned_bn + g("subsidy").assigned_bn) - (g("interest").responsive_bn + g("subsidy").responsive_bn)), "interest subsidy"]];
+      ["Interest and subsidies", -w * (g("interest").responsive_bn + g("subsidy").responsive_bn), -((g("interest").assigned_bn + g("subsidy").assigned_bn) - (g("interest").responsive_bn + g("subsidy").responsive_bn)), "interest subsidy"],
+      [FIXED, -w * fixed.responsive_bn, -(fixed.assigned_bn - fixed.responsive_bn), CORR.correction_constant, true]];
   }
 
   function drawBridge() {
     var out = E.evaluate(M, state), steps = bridgeSteps(out, state), cSteps = bridgeSteps(E.evaluate(M, CENTRAL), CENTRAL);
+    var keep = steps.map(function (s, i) { return !s[4] || Math.abs(s[1]) + Math.abs(s[2]) + Math.abs(cSteps[i][1]) > 0.005; });
+    steps = steps.filter(function (s, i) { return keep[i]; }); cSteps = cSteps.filter(function (s, i) { return keep[i]; });
     var run = 0, lo = 0, hi = 0;
     steps.forEach(function (s) { var ghost = run + s[1] + s[2]; run += s[1]; lo = Math.min(lo, run, ghost); hi = Math.max(hi, run, ghost); });
     var W = 830, rowH = 30, left = 340, right = 150, H = (steps.length + 1) * rowH + 26, x = function (v) { return left + (v - lo) / (hi - lo || 1) * (W - left - right); };
@@ -340,20 +380,33 @@
   function findButton(token) { var n = findings(token); return n ? '<button type="button" class="find" data-find="' + token + '">' + n + ' ladder entr' + (n === 1 ? "y" : "ies") + '</button>' : ""; }
 
   function drawLedger() {
-    var out = E.evaluate(M, state);
+    var out = E.evaluate(M, state), before = {}, beforeShare = {};
+    // With the corrections on, each line's correction: its amount here less the published one under the same rule.
+    if (state.data_corrections) {
+      var raw = E.evaluate(M, Object.assign(E.clone(state), { data_corrections: false }));
+      raw.receipts.forEach(function (l) { before["receipt:" + l.id] = l.amount_bn; beforeShare["receipt:" + l.id] = l.share; });
+      raw.spending.forEach(function (l) { before[l.id] = l.amount_bn; beforeShare[l.id] = l.share; });
+    }
+    $("ledger-corr").textContent = state.data_corrections
+      ? "Amounts include the data corrections adopted on " + ADOPTED + ". The small signed figure under an amount is that line's correction; the last spending group holds the corrections that have no line of their own."
+      : "The data corrections adopted on " + ADOPTED + " are off, so every amount is as the account published it.";
     function table(lines, side) {
-      var groups = {}; lines.forEach(function (l) { (groups[l.group] = groups[l.group] || []).push(l); });
+      var groups = {}; lines.forEach(function (l) { var g = CORR_LINE[l.id] ? "data_corrections" : l.group; (groups[g] = groups[g] || []).push(l); });
       var max = Math.max.apply(null, lines.map(function (l) { return Math.abs(l.amount_bn); }));
       return Object.keys(groups).map(function (g) {
         var rows = groups[g].filter(function (l) { return Math.abs(l.amount_bn) > 0.005; }).sort(function (a, b) { return Math.abs(b.amount_bn) - Math.abs(a.amount_bn); });
         var sum = rows.reduce(function (s, l) { return s + l.amount_bn; }, 0), counted = rows.reduce(function (s, l) { return s + Math.abs(l.effect_bn); }, 0);
         if (!rows.length) return "";
         return '<tbody data-affects="' + g + '"><tr class="grp"><th colspan="3">' + esc(CLASS_LABEL[g] || g) + findButton(g) + '</th><td class="num">' + fmt(sum, 1) + '</td><td class="num">' + fmt(counted, 1) + '</td><td></td></tr>' + rows.map(function (l) {
-          var oid = (side === "receipts" ? "receipt:" : "") + l.id, overridden = typeof state.response_override[oid] === "number";
-          var keyCell = side === "spending" && l.keys.length > 1 ? '<select data-key="' + l.id + '" id="k-' + l.id + '" aria-label="Allocation rule for ' + esc(label(l.id)) + '">' + l.keys.map(function (k) { return '<option value="' + esc(k) + '" title="rule id: ' + esc(k) + '"' + (k === l.key ? " selected" : "") + '>' + esc(keyName(side, k)) + '</option>'; }).join("") + '</select>' : '<span title="rule id: ' + esc(l.key) + '">' + esc(keyName(side, l.key)) + '</span>';
+          var oid = (side === "receipts" ? "receipt:" : "") + l.id, overridden = typeof state.response_override[oid] === "number", own = !!CORR_LINE[l.id];
+          var keyCell = own ? "The correction's own figure" : side === "spending" && l.keys.length > 1 ? '<select data-key="' + l.id + '" id="k-' + l.id + '" aria-label="Allocation rule for ' + esc(label(l.id)) + '">' + l.keys.map(function (k) { return '<option value="' + esc(k) + '" title="rule id: ' + esc(k) + '"' + (k === l.key ? " selected" : "") + '>' + esc(keyName(side, k)) + '</option>'; }).join("") + '</select>' : '<span title="rule id: ' + esc(l.key) + '">' + esc(keyName(side, l.key)) + '</span>';
           var band = side === "spending" && (state.key_band || {})[l.id];
           if (band) keyCell += '<small title="' + esc(band.map(function (k) { return keyName(side, k); }).join(" and ")) + '">Both ends of this rule enter the range.</small>';
-          return '<tr data-affects="' + l.id + " " + g + '"><td>' + esc(label(l.id)) + findButton(l.id) + '</td><td class="key">' + keyCell + '</td><td class="num">' + (l.share * 100).toFixed(1) + '%</td><td class="num">' + fmt(l.amount_bn, 1) + '</td>' +
+          var fix = before[oid] === undefined ? 0 : l.amount_bn - before[oid];
+          // applyCorrections rescales an edited cell's share with its amount; the published share is the title.
+          var shareCell = own ? "" : Math.abs(fix) >= 0.05 ? '<span title="' + (beforeShare[oid] * 100).toFixed(1) + '% as published">' + (l.share * 100).toFixed(1) + "%</span>" : (l.share * 100).toFixed(1) + "%";
+          return '<tr data-affects="' + l.id + " " + g + '"><td>' + esc(label(l.id)) + findButton(l.id) + '</td><td class="key">' + keyCell + '</td><td class="num">' + shareCell + '</td><td class="num">' + fmt(l.amount_bn, 1) +
+            (Math.abs(fix) >= 0.05 ? '<small class="corr" title="Correction: ' + fmt(before[oid], 1) + ' bn as published, ' + fmt(l.amount_bn, 1) + ' bn corrected">' + signed(fix, 1) + '</small>' : "") + '</td>' +
             '<td class="num">' + fmt(Math.abs(l.effect_bn), 1) + '</td><td class="resp"><div><input type="number" min="0" max="1" step="0.05" id="r-' + oid + '" data-resp="' + oid + '" aria-label="Share counted for ' + esc(label(l.id)) + '" value="' + (Math.round(l.response * 1000) / 1000) + '"' + (overridden ? ' class="ov"' : "") + '><span class="mini"><i style="width:' + Math.abs(l.amount_bn) / max * 100 + '%"></i><b style="width:' + Math.abs(l.effect_bn) / max * 100 + '%"></b></span></div></td></tr>';
         }).join("") + '</tbody>';
       }).join("");
@@ -368,11 +421,12 @@
     var p = PRESETS.filter(function (q) { return q.id === activePreset; })[0];
     if (!p) { $("preset-note").hidden = true; return; }
     $("preset-note").hidden = false;
-    $("preset-note").innerHTML = '<h3>' + esc(p.label) + '</h3><p>' + repoLinks(p.summary) + '</p>' + (p.scope_note ? '<p class="scope">' + repoLinks(p.scope_note) + '</p>' : "") +
+    var ps = presetState(p), live = function (t) { return liveText(t, ps); };
+    $("preset-note").innerHTML = '<h3>' + esc(p.label) + '</h3><p>' + repoLinks(live(p.summary)) + '</p>' + (p.scope_note ? '<p class="scope">' + repoLinks(live(p.scope_note)) + '</p>' : "") +
       '<div class="scroll"><table class="basis"><thead><tr><th>Assumption</th><th>Where it comes from</th><th>Why</th></tr></thead><tbody>' + (p.settings || []).map(function (s) {
         var value = /^key_(override|band)\./.test(s.path || "") ? [].concat(s.value).map(function (k) { return keyName("spending", k); }).join(" and ") : show(s.value);
-        return '<tr><td>' + esc(s.label || s.path) + (s.path ? ": " + esc(value) : "") + '</td><td><span class="tag ' + esc(s.basis) + '">' + esc(BASIS[s.basis] || s.basis) + '</span></td><td>' + esc(s.note) + (s.ref ? ' <span class="path">' + repoLinks(s.ref) + '</span>' : "") + '</td></tr>'; }).join("") + '</tbody></table></div>' +
-      (p.misses && p.misses.length ? '<h4>Left out of this set of assumptions</h4><ul>' + p.misses.map(function (m) { return '<li>' + repoLinks(m) + '</li>'; }).join("") + '</ul>' : "") + cites("preset:" + p.id);
+        return '<tr><td>' + esc(s.label || s.path) + (s.path ? ": " + esc(value) : "") + '</td><td><span class="tag ' + esc(s.basis) + '">' + esc(BASIS[s.basis] || s.basis) + '</span></td><td>' + esc(live(s.note)) + (s.ref ? ' <span class="path">' + repoLinks(s.ref) + '</span>' : "") + '</td></tr>'; }).join("") + '</tbody></table></div>' +
+      (p.misses && p.misses.length ? '<h4>Left out of this set of assumptions</h4><ul>' + p.misses.map(function (m) { return '<li>' + repoLinks(live(m)) + '</li>'; }).join("") + '</ul>' : "") + cites("preset:" + p.id);
   }
 
   function drawStanding() {
@@ -383,13 +437,14 @@
   }
 
   function drawAuthors() {
+    var live = function (t) { return liveText(t, CENTRAL); };  // "this ledger" is the central case
     $("authors").innerHTML = P.authors.map(function (a) {
       var target = PRESETS.filter(function (p) { return p.id === a.closest.preset; })[0];
       return '<article><h3>' + esc(a.name) + '</h3>' + a.argues.map(function (x, i) {
-        return '<p class="q">' + esc(x[0]) + cites("argue:" + a.id + ":" + i, "Original: ") + '<span class="cites">This repo\'s audit: ' + repoLinks(x[1]) + '</span></p>'; }).join("") +
-        '<p><b>What the claim is about:</b> ' + esc(a.object) + '</p><p><b>Closest convention in this ledger:</b> ' +
-        (target ? '<button type="button" class="link" data-preset="' + target.id + '">' + esc(target.label) + '</button>. ' : '<span class="tag not_addressed">none</span> ') + esc(a.closest.why) + '</p>' +
-        '<h4>The argument leaves out</h4><ul>' + a.leaves_out.map(function (m) { return '<li>' + esc(m) + '</li>'; }).join("") + '</ul>' + cites("author:" + a.id, "Also cited: ") + '</article>';
+        return '<p class="q">' + esc(live(x[0])) + cites("argue:" + a.id + ":" + i, "Original: ") + '<span class="cites">This repo\'s audit: ' + repoLinks(x[1]) + '</span></p>'; }).join("") +
+        '<p><b>What the claim is about:</b> ' + esc(live(a.object)) + '</p><p><b>Closest convention in this ledger:</b> ' +
+        (target ? '<button type="button" class="link" data-preset="' + target.id + '">' + esc(target.label) + '</button>. ' : '<span class="tag not_addressed">none</span> ') + esc(live(a.closest.why)) + '</p>' +
+        '<h4>The argument leaves out</h4><ul>' + a.leaves_out.map(function (m) { return '<li>' + esc(live(m)) + '</li>'; }).join("") + '</ul>' + cites("author:" + a.id, "Also cited: ") + '</article>';
     }).join("");
   }
 

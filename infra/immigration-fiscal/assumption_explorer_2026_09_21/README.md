@@ -7,14 +7,16 @@ allocations and the 3,888 executed production scenarios. `test_engine.js` gates 
 2,629 rows of the 497,664-row grid (every level of every dimension), all 60 category
 service-response cases, all 32 complete accounting cases and the four published headline
 bounds (165.1-197.4 and 269.8-288.7 bn); worst gap 4e-9 bn. [CALCULATION: test_engine.js]
-Since 2026-09-23 the page's central case is the adopted main case (see "Adopted 2026-09-23"
-below). The same gate checks the adopted presets against the main-case lane: central
-203.2-249.6 bn, with non-school education fixed 158.9-212.6 bn, and proportional 307.9-341.0 bn.
-[CALCULATION: test_engine.js against main_case_2026_09_23/derived/main_case_bands.csv]
+Since 2026-09-24 the page's central case is the main case with the data corrections (see
+"Adopted 2026-09-24: data corrections" below): **200.9-246.3 bn**, with non-school education fixed
+157.1-210.8 bn, and proportional 303.0-336.4 bn. The presets reproduce these bands as loaded, with
+no override. With the corrections switched off, the September 23 bands reproduce: 203.2-249.6,
+158.9-212.6 and 307.9-341.0 bn. [CALCULATION: test_engine.js against
+main_case_2026_09_24/derived/main_case_bands.csv and main_case_2026_09_23/derived/main_case_bands.csv]
 
 The page has a pinned result bar (the live number, its unresolved-convention span, the distance
 from the central case, and the last-touched setting beside its central value and its effect
-alone), convention cards, an exact Shapley split of the distance from the central case, a bridge
+alone), a switch for the data corrections, convention cards, an exact Shapley split of the distance from the central case, a bridge
 with uncounted-but-assigned amounts, a sensitivity ranking, and the full receipt and spending
 ledger with per-line allocation rule and response. Below the ledger: whose welfare the ledger
 counts, what four commentators argue (text, no number under any name), the FAQ-routed
@@ -29,6 +31,7 @@ cd infra/immigration-fiscal/assumption_explorer_2026_09_21
 uv run --no-project --with duckdb --with pandas --with numpy python3 build_model.py   # hash-guards upstream
 OPENBLAS_NUM_THREADS=1 uv run --no-project --with openpyxl --with numpy python3 scaling_check.py
 node ../main_case_2026_09_23/main_case.js           # reads model.json; its tracked outputs must not change
+node ../main_case_2026_09_24/main_case.cjs          # writes derived/corrections.json, only when its gates pass
 node test_engine.js
 uv run --no-project python3 build_ui.py && open derived/explorer.html
 uv run --no-project python3 check_sources.py        # optional: re-fetch every link, rewrite sources_check.json
@@ -39,12 +42,15 @@ rules (`spending.added_keys` in `model.json` records each rule's base, change an
 `test_engine.js` reads `main_case_2026_09_23/derived/main_case_bands.csv` and `inputs.json`. The
 CSV prints four decimals, so the gate checks it to half a unit of the last digit and checks the
 lane's own identity (published band plus the three changes, from `inputs.json`) to 1e-6 bn.
+It also applies `main_case_2026_09_24/derived/corrections.json` and checks that lane's three bands.
+`build_ui.py` inlines the same payload and refuses to build without it.
 
 `context.json` is rebuilt with `build_context.py <inventory.json>`; it keeps a value only when every
 number in it equals, at its printed precision, a number within two lines of the cited file:line
 (49 of 50 items and all 255 values on 2026-09-21, the dropped item a caveat with no number;
 49 cards and 211 values on 2026-09-23 after the adoption; 53 cards and 231 values later that day,
-after the benefit lanes; 56 cards and 246 values on 2026-09-24, with FAQ 15 and 16 carded).
+after the benefit lanes; 56 cards and 246 values on 2026-09-24, with FAQ 15 and 16 carded; 56 cards
+and 243 values that evening, after the data corrections).
 Fabricated numbers at real locations are rejected in memo and CSV files alike.
 
 `ladder.py` parses `research/immigration-confidence-ladder.md` at build time, so the page carries
@@ -67,8 +73,8 @@ disagreed (Duncan and Trejo 2017 is ILR Review 70(5), not 71(5)). [SOURCE: sourc
 
 Since 2026-09-23 the registry also lists documents of this repo (`kind: repo`, with the
 `path` of the file instead of a link): the adoption decision, the main-case lane and the justice
-and uncompensated-care lanes, then the lanes and memos the refreshed cards cite (15 documents on
-2026-09-24). The page opens them locally and lists them after the external
+and uncompensated-care lanes, then the lanes and memos the refreshed cards cite, then the decision
+and main-case lane of the data corrections (17 documents on 2026-09-24). The page opens them locally and lists them after the external
 sources; `check_sources.py` skips them.
 
 `build_ui.py` refuses to build when a source lacks a link or a repo reference (for a repo
@@ -102,6 +108,56 @@ language. Options, allocation rules (47, named from the two upstream builders an
 time), statuses and card labels now use reader words; `context.json` prose was edited directly in
 two passes that compare the multiset of numbers in every string before writing, so no value moved.
 
+## Adopted 2026-09-24: data corrections
+
+The operator adopted a package of data corrections on 2026-09-24
+([decision](../../../decisions/2026-09-24-main-case-audit-and-outside-checks.md);
+[main-case lane](../main_case_2026_09_24/RESULT.md)): the dataset audit, the pooled-MEPS medical
+figure with long-term care by use, care and household services, shelter keying and the four
+outside checks. The group's taxes were overstated (+48.7 / +50.3 bn of cost) and so was its keyed
+spending (−51.0 / −53.6 bn), so the main case moves from 203.2-249.6 to 200.9-246.3 bn.
+[CALCULATION: main_case_2026_09_24/main_case.cjs]
+
+- **Payload.** `main_case.cjs` writes `../main_case_2026_09_24/derived/corrections.json` only when
+  its gates pass. It holds 270 cell edits to executed allocations: 176 on 22 receipt lines under
+  all 8 incidence rules, and 94 on 41 spending lines, one per allocation rule. Three lines have no
+  counterpart in the account and stand on their own: schools priced where the group enrolls
+  (responds as the school part of education), colleges and other education re-keyed (responds as
+  the other part), and care work, shelter and audit rows 8-10 (counted in full). Each edit moves
+  the same amount out of other residents' share, so national totals hold.
+- **Engine.** `engine.js` `applyCorrections(model, payload)` returns the corrected copy of the
+  model, and a state with `data_corrections: true` evaluates it. `ui.js` attaches it once, as
+  `MODEL.corrected`, before anything is evaluated. `build_ui.py` inlines the payload as
+  `window.CORRECTIONS` and refuses to build when it is missing or a correction line has a class
+  the engine does not answer.
+- **Switch.** "Apply the data corrections adopted on 2026-09-24" heads the rail, as two native
+  radios. It is a control like any other: the Shapley split, the sensitivity ranking, the
+  last-touched effect, undo and reset all include it. Every preset except `repo_central` turns it
+  on. `repo_central` turns it off, because the September 20 figure predates the corrections.
+- **Ledger and bridge.** With the switch on, every amount is the corrected one. A small signed
+  figure under an amount is that line's correction: the corrected amount minus the published one,
+  at the same allocation, incidence rule and allocation rule. `applyCorrections` rescales an edited
+  cell's share with its amount, keeping the cell's base (target / share) fixed; `test_engine.js`
+  checks that for all 532 edited cells. The ledger shows the corrected share with the published one
+  as its title (federal income tax 4.2% corrected, 5.3% as published). The three lines of their own
+  form the last spending group, under their payload labels.
+  The bridge counts the two education lines under "Education" and the third as "Care, shelter and
+  audit items".
+- **Status.** The account's executed runs predate the corrections, so with the switch on the page
+  never says "the account ran this exact case". The central case with the switch off is named as
+  the case adopted on 2026-09-23.
+- **Amounts in preset text.** Five ledger amounts that preset and author text had typed by hand
+  moved with the corrections: education, other services, all services, defense with interest, and
+  benefits. They are now `{assigned:<name>}` tokens. The page fills each from the ledger of the
+  state the text describes (`ASSIGNED` in `ui.js`), and `build_ui.py` refuses an unknown name.
+- **Gates.** `test_engine.js` checks the three September 24 bands against
+  `main_case_2026_09_24/derived/main_case_bands.csv` to half a unit of the fourth decimal, with
+  the switch set explicitly and with the central and proportional presets as loaded. It also
+  checks that `repo_central` loads with the switch off and every other preset with it on, that the
+  September 20 and 23 bands reproduce with the switch off, and that the Shapley split closes over
+  the switch. A copy of the presets with the switch removed from the central case fails three of
+  these checks (negative control, 2026-09-24).
+
 ## Adopted 2026-09-23: general government grows, justice and uncompensated care by use
 
 The operator adopted three changes to the main case on 2026-09-23
@@ -127,7 +183,7 @@ benchmark carries them too, and the September 20 central case stays as a convent
    `uninsured_use_07_high` are the 0.7x-use arm (2.12-3.51 bn), selectable in the ledger.
 
 Both added rules sit on lines that count in full in every published profile, so they move the
-result one for one. The result is 203.2-249.6 bn for the central case, 158.9-212.6 bn with
+result one for one. On 2026-09-23, before the data corrections, the result was 203.2-249.6 bn for the central case, 158.9-212.6 bn with
 non-school education fixed and 307.9-341.0 bn for the proportional benchmark (September 20:
 165.1-197.4, 120.8-160.3 and 269.8-288.7 bn). [CALCULATION: main_case_2026_09_23/main_case.js;
 test_engine.js reproduces it]
@@ -169,17 +225,20 @@ Adopting this changed the analysis protocol, so it waited for the operator; he a
   produced a number for this population. The authors section is text with audit references, the
   object each claim is about, and the closest convention where one exists. Caplan has none: his
   gains accrue mainly to migrants and his keyhole remedy applies to future entrants, so switching
-  benefits off here would only stop counting 364 bn of costs.
+  benefits off here would only stop counting the benefits the central case assigns (364 bn before
+  the data corrections; the page fills in the current amount).
 - The ledger counts other US residents only. Gains to the group's own members (the place premium,
   where most of any world-GDP gain sits) and origin-country effects are not computed in this repo;
   the page says so rather than netting them.
 - Settings off the executed grid are exact evaluations of the same linear formula. The page says
   whether the account ran the exact case, only its formula applies (any mix of executed rules per
-  line, since 2026-09-23), or a setting is one the account never uses (the reader's own).
+  line, since 2026-09-23, and any state on the corrected data, since 2026-09-24), or a setting is
+  one the account never uses (the reader's own).
 - One income year of a resident stock. No generation split, lifetime value or policy effect; the
-  cards say which outside results overlap. Only the two care items the account omits (native
-  women's hours taxes and the net elder-care Medicaid saving, FAQ 4 and 13) may be added, each
-  once. Since 2026-09-23 police, courts and prisons are charged by use. Crime victims' harm, free
+  cards say which outside results overlap. The two care items the account used to omit (native
+  women's hours taxes and the net elder-care Medicaid saving, FAQ 4 and 13) are inside the central
+  case since the data corrections of 2026-09-24, so no card adds to it any more (with the switch
+  off they are out again). Since 2026-09-23 police, courts and prisons are charged by use. Crime victims' harm, free
   hospital care absorbed outside government budgets, rent transfers and mobility insurance are
   priced beside the account (research/immigration-real-fiscal-and-social-costs-2026-09-23.md),
   never inside it; the scale-and-schooling net is proposed there, not adopted.
@@ -203,6 +262,21 @@ Adopting this changed the analysis protocol, so it waited for the operator; he a
   figure is 22.9% Hispanic, and the ACS custody key does not change) and three cards:
   `e15_same_share_different_gap`, `e15_shares_and_metro_match` (the shared all-age ledger's
   state and metro tables) and `e16_cbo_surge_projection`.
+- A fourth pass that evening followed the data corrections (inventory `_cache/inventory_2026_09_24b.json`,
+  written from the cards as they stood): 56 cards and 243 values, none dropped by the gate. 25
+  cards were rewritten or relabelled from the current FAQ, the September 24 lane and the memos,
+  with the September 24 figure first and the September 23 one named as such: the headline, cards
+  under entries 2, 4, 5, 6, 8, 11, 12, 13, 15 and 16, three account and ledger cards and the
+  real-costs totals; the combining rules were re-read from the FAQ. The
+  two care cards moved from `adds_to_headline` to `inside_headline`; the ids
+  `e4_care_channels_add` and `e13_elder_care_medicaid_bound` are kept because `sources.json` keys
+  on them. 29 citations whose files had shifted were re-anchored to the closest line that prints
+  the value. The source check found two qualifications the gate passes: ladder 209 lowers every
+  Mexican-origin population total by about 1.1-1.2M on the ACS count (`e5_ethnic_attrition_narrows_gap`),
+  and pooled MEPS rejects the headcount key behind the 356.84 bn stress test's largest move
+  (`complete_account_356_endpoint`). Both cards now say so. Values computed only on the September
+  23 case (the general-government addition of 28.5-40.6 bn, the scale net's 189.3-235.7 bn, the
+  409.1 bn stress test) are labelled with that date.
 - The production block is CES; increasing-returns arguments are outside it.
 - Compiled through an LLM (notes/llm-bias-caveat.md): the ledger numbers are gated, the readings
   of authors and the ladder's keyword links are not.
