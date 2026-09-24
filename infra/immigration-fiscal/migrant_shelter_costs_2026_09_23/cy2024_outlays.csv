@@ -1,0 +1,8 @@
+jurisdiction,low_musd,central_musd,high_musd,derivation,source
+New York City,3386,3386,3386,"0.5 x FY2024 3,752 + 0.5 x FY2025 3,020 (city fiscal years July-June; all funds)","NYC Comptroller Fiscal Impacts Table 2 (NYC OMB)"
+New York State direct uses,399,399,399,"0.25 x SFY2024 376 + 0.75 x SFY2025 407; direct = National Guard + Medicaid/vaccines/testing + Safety Net Assistance + resettlement + case management/legal (support paid to NYC excluded: it is inside the NYC figure)","NYS DOB FY2026 Enacted Budget Financial Plan printed p.124"
+Massachusetts EA migrant share,374,445,468,"CY2024 EA total = 0.5 x FY2024 894.0 + 0.5 x FY2025 978.2 = 936.1; x migrant share of EA families 0.40 / 0.475 (3,265 of 6,878 on 12/12/2024) / 0.50 (Special Commission: approximately half)","MA A&F EA reports 12/16/2024 p.2 and 9/8/2025; Special Commission draft 11/2024"
+Chicago city,366,366,366,"New Arrivals vendor payments with invoice dates in 2024, all funding sources","City of Chicago data portal gxzc-43gg (derived/chicago_payments_by_year_fund.csv)"
+Denver,45,45,68,"Border Crisis Response fund 2024 estimate 45.4; high = 90 budgeted less 22.5 returned [SECONDARY]","Denver 2025 Adopted Budget PDF p.138; high end Colorado Springs Gazette 2025-03-06"
+District of Columbia,57,57,57,"0.75 x FY2024 63.1 + 0.25 x FY2025 39.9 (fiscal years October-September)","DC FY2026 Proposed Budget DHS schedule 30-PBB p.2"
+"Illinois state, Cook County and places not covered",0,0,500,"allowance only: Illinois state programs outside Chicago's payments, Cook County Health, other cities and border NGOs [INFERENCE]","none; see RESULT.md gaps"
