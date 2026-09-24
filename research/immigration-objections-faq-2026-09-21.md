@@ -6,9 +6,10 @@ year unless stated. Entries marked *(routed)* quote the topic index and must be 
 the linked memo before reuse. Narrative authorship remains operator-owned.
 
 Anchors: [complete annual account](immigration-complete-annual-account-2026-09-20.md)
-($203–250bn conditional net cost to other residents in the
-[main case adopted September 23](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md),
-$165–197bn as published September 20; $308–341bn with fully proportional services) and the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
+($201–246bn conditional net cost to other residents in the
+[main case adopted September 24](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md);
+$203–250bn on September 23 and $165–197bn as published September 20; $308–341bn with fully
+proportional services on the September 23 case) and the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
 (same-age gap against third-plus non-Hispanic whites: Mexico-born −$7,584, second generation
 −$7,521, third-plus −$6,195 per person, standard errors 384, 615 and 457).
 
@@ -17,16 +18,17 @@ $165–197bn as published September 20; $308–341bn with fully proportional ser
 **The two anchors are different objects.** The generation gaps and the age structures (entries
 1, 3, 5, 10) come from the generation ledger pinned on September 19: per-person balances against
 a reference group, or the group's own balance re-weighted by age. Entries 7 and 9 rest on
-separate partial accounts. The $203–250bn (entries 2, 4, 11) is the complete account's change
-for all other residents in the main case adopted September 23 ($165–197bn as published September
-20), under a stated service-response assumption, with no reference group; it carries later corrections that were not propagated to the ledger (ladder
+separate partial accounts. The $201–246bn (entries 2, 4, 11) is the complete account's change
+for all other residents in the main case adopted September 24 ($203–250bn on September 23;
+$165–197bn as published September 20), under a stated service-response assumption, with no reference group; it carries later corrections that were not propagated to the ledger (ladder
 161) and has no generation dimension yet. They agree in direction. One is not a decomposition
 of the other, and the generation split must not be scaled onto the complete-account total.
 
 **Offsets do not add unless an entry says so.** The production gain ($8.8–13.3bn) is already
-inside the headline, and cheaper services ($21.8bn to consumers) overlap it. Two care items do
-add, because the account omits them: taxes on native women's extra hours ($2.7bn) and the net
-elder-care Medicaid saving ($1.5bn), $4.1bn together (entries 4 and 13, ladder 198). The net of city size and schooling mix (+$13.9bn,
+inside the headline, and cheaper services ($21.8bn to consumers) overlap it. Two care items add, because
+the account omitted them, and since September 24 they sit inside the main case: taxes on native
+women's extra hours ($2.7bn) and the net elder-care Medicaid saving ($1.5bn), $4.1bn together
+(entries 4 and 13, ladders 198 and 219). The net of city size and schooling mix (+$13.9bn,
 ladder 201) would add the same way, through the production term and induced receipts, but it is
 proposed, not adopted. Mobility insurance ($0.65bn, ladder 203) sits beside the account with the
 social items. The complementarity figure ($26.8–80.4bn) covers half of all unauthorized
@@ -44,7 +46,7 @@ discounted, under a budget rule. Neither refutes the other.
 **California and Texas per-person gaps are the shared all-age ledger.** The −$12,133 /
 −$7,479 (CA/TX vs local third-plus NH whites) and metro figures (Los Angeles −$17,196,
 Houston −$7,493) are from the September 17 stress and metro-match tables (entry 15). They
-are not a split of the $203–250bn complete account and not the generation-ledger −$6k to
+are not a split of the $201–246bn complete account and not the generation-ledger −$6k to
 −$8k. The superseded $8,498 / $5,177 per native-headed household in California and Texas
 is a financing allocation of a later complete-account total; do not mix it with those
 per-person gaps. [SOURCE: [CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md);
@@ -77,7 +79,8 @@ which cannot tell zero from one; zero is a budget-scoring convention
 all three functions per capita moves the *assigned balance* by $286bn but is not part of the
 net-cost headline. The sign still turns on ordinary service budgets. With all of them fixed and
 general government at its adopted response, the result runs from −$87.8bn to +$80.5bn, and
-break-even needs 5.5–16.4% of assigned service costs to be incremental. With general government
+break-even needs 5.5–16.4% of assigned service costs to be incremental (computed on the
+September 23 case, not re-run on the September 24 case). With general government
 fixed as well, as published September 20, the figures were −$41.5bn to +$112.7bn and
 18.5–25.8% ([sign reversal](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md#sign-reversal-under-the-adopted-case)). A 2025 municipal-bond paper
 sometimes cited for "local spending rises and revenue does not" cannot settle the response
@@ -101,23 +104,25 @@ for the union, $2,653 of lower spending against $9,735 of lower receipts. [SOURC
 Steel-man: cheaper services, complementary labour and capital returns never appear in a
 fiscal ledger. Finding: the account adds production gains and the induced taxes on them:
 $8.8bn (cash scaling) to $13.3bn (GDP scaling), $6–21bn across the parameter grid. Omitted
-benefits would have to reach $203–250bn a year to offset the main case. That threshold is
-conditional on the service-response share, which is assumed and unmeasured: it is $159–213bn
-if non-school education budgets are also held fixed and reaches zero where 5.5–16.4% of
-assigned service costs are incremental (entry 2), so the response share moves the result more
+benefits would have to reach $201–246bn a year to offset the main case. That threshold is
+conditional on the service-response share, which is assumed and unmeasured: on the September 23
+case it was $159–213bn if non-school education budgets were also held fixed and reached zero
+where 5.5–16.4% of assigned service costs are incremental (entry 2), so the response share moves the result more
 than any offset listed here. Cheaper household services are worth $21.8bn a year to
 consumers, or $11.9bn net of native low-skill wage gains. That is the production gain seen from
 the spending side, so it is not added. The taxes that native women pay on the extra hours
 cheaper services let them work do add: $2.7bn a year ($1.8–5.8bn). With the net Medicaid
 saving on elder care (entry 13), the care channels add $4.1bn ($2.6–13.3bn), about 2% of the
-main case (ladder 198). Cheaper construction is inside the production gain and adds nothing
+main case; since September 24 they are inside it (ladders 198 and 219). Cheaper construction is inside the production gain and adds nothing
 (ladder 200). City size and the group's schooling mix, measured in one regression, net to
 +$13.9bn a year (95% −$57bn to +$84bn; ladder 201). Bigger cities add $38.6bn to other
 residents' earnings, and lower average schooling takes back $24.9bn. That net is proposed, not
 adopted, and the 1970–2000 college-share studies would make it a $109–677bn cost instead.
 Mobility across local labour markets is worth $0.65bn beside the account (ladder 203). Priced to
-the same standard, the omitted benefits come to $4.8bn, or $18.7bn with the scale net. Crime and housing are now priced beside the account. Crimes by group
-members against other residents cost the victims about $29bn a year ($15–45bn). Hospitals,
+the same standard, the omitted benefits came to $4.8bn, or $18.7bn with the scale net; with care
+now inside the account, $0.65bn remains beside it, or $14.6bn with the scale net. Crime and housing are now priced beside the account. Crimes by group
+members against other residents cost the victims about $31bn a year: $28.9bn ($15–45bn) plus
+$2.0bn for Hispanic members of mixed offender groups (ladder 218). Hospitals,
 physicians and private payers bear $3.2–5.6bn of the group's unreimbursed care. Housing nets
 other residents a small gain (+$0.7–3.5bn), while their renters pay $22–58bn more to landlords.
 With road budgets fixed, the group's traffic costs other residents about $19bn a year in time
@@ -243,7 +248,7 @@ higher covered earnings than the 0.5m second-generation and 1.0m third-plus resi
 before about 1960 whose rates fill the 65+ cells today (ladder 161). The sign of the
 composition effect at today's rates is solid; its size for future cohorts is not measured.
 
-## 11. "So ending this migration would save $203–250bn?"
+## 11. "So ending this migration would save $201–246bn?"
 
 No. The account describes a resident stock in a stationary comparison. It is not the effect
 of an admission rule, a removal policy or one more arrival, it contains no transition costs,
@@ -254,7 +259,10 @@ future profiles; see the [projection back-tests](immigration-projection-backtest
 
 Since September 23 the main case charges police, courts and prisons by use: prisons by
 custody, police half by arrests, courts by their criminal share, border enforcement per head.
-That adds $5.9bn to the fiscal headline ($1.7bn with census ethnicity codes as recorded). The
+That adds $5.9bn to the fiscal headline ($1.7bn with census ethnicity codes as recorded).
+Since September 24 the arrest part uses FBI 2024 arrests (the Hispanic rate 1.205 times the adult
+rate, not 2019's 1.145). It also corrects bookings in Texas and Arizona, which record 3.8% fewer
+Hispanic arrestees than the incident reports; together these add $2.0bn (ladders 218 and 219). The
 use key adds little because the account compares the group with the average other resident:
 Hispanic residents are 20.2% of people in prisons and jails against 20.7% of residents aged
 18–64. [2026-09-23: the jail part of that figure is probably under-recorded. BJS jail counts put
@@ -265,7 +273,8 @@ sentenced prisoners and jail inmates (ladder 204; counts gated in
 `infra/immigration-fiscal/cj_use_allocation_2026_09_23/allocate.py`). The main case's custody key
 comes from the ACS, not from this figure.] Hispanic adults are imprisoned at 1.3 times the all-adult rate and 2.6 times the
 non-Hispanic white rate (BJS, 2023). Victim costs are outside a fiscal account. Crimes by group members against
-other residents cost the victims about $29bn a year ($15–45bn), a social cost beside the fiscal
+other residents cost the victims about $31bn a year ($28.9bn, range $15–45bn, plus $2.0bn for
+Hispanic members of mixed offender groups; ladder 218), a social cost beside the fiscal
 headline ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §2–3). Police
 records agree. In Texas and Arizona (NIBRS 2022–2023), Hispanic residents offend at 1.7–2.3
 times the non-Hispanic white rate for murder, rape and assault and 4.2 times for robbery, but at
@@ -355,7 +364,7 @@ national total because Mexican-origin residents live where the local white bench
 higher. Share catch-up toward 32% is already realized in Texas and does not produce
 Los Angeles–sized dollars. Nominal dollars; no regional price parity. New York is 1.4%
 of US Mexican-origin (0.50m); San Francisco has no published single-metro gap. These
-figures are not the $203–250bn complete account. [SOURCE:
+figures are not the $201–246bn complete account. [SOURCE:
 [CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md);
 [stress RESULT](../infra/immigration-fiscal/ledger_stress_2026_09_17/RESULT.md);
 [metro RESULT](../infra/immigration-fiscal/metro_match_2026_09_17/RESULT.md)]
@@ -376,8 +385,9 @@ revenue, mandatory spending and net interest only: discretionary appropriations 
 (CBO's proportional illustration adds about $0.2tn of spending) and state and local budgets
 are excluded entirely. CBO's June 2025 companion puts the surge's 2023 state and local account
 in deficit. Our account is the annual position of the resident Mexican-origin population of
-all ages and generations in income-year 2024, state and local services included, −$203 to
-−250bn in the main case adopted September 23 (−$165 to −197bn as published September 20; entry 2). Where the two overlap they agree: a young
+all ages and generations in income-year 2024, state and local services included, −$201 to
+−246bn in the main case adopted September 24 (−$203 to −250bn on September 23 and −$165 to −197bn
+as published September 20; entry 2). Where the two overlap they agree: a young
 recent inflow is net positive on the measured items here too, +$3,495 per person for
 Mexico-born arrivals of 2016–2025 on the partial account and about break-even on the complete
 account (−$2,318; ladder 134; entry 9). A decade of a cohort's cheapest years cannot be netted
@@ -397,6 +407,14 @@ prior, which is also where errors concentrate; surprising results need more chec
 they get more prominence.
 
 ## Revisions
+
+- 2026-09-24 (main case adopted): the operator adopted the dataset audit, the pooled medical figure,
+  care, shelter and the outside checks. One engine run gives $201–246bn, from $203–250bn (ladder 219,
+  [decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md)). The anchors, the combining rules and entries 4, 11, 15
+  and 16 quote it. Entry 2's sign-reversal figures and entry 4's thresholds are marked as computed
+  on the September 23 case. Care ($4.1bn) is now inside the account. Entry 12 adds the 2024 arrests
+  and the booking correction (+$2.0bn), and victims' harm rises to about $31bn with the
+  mixed-group correction. Concept affected: the complete account's main case.
 
 - 2026-09-21 (scope pass). A second agent's ranked summary of this repo set the two anchors
   side by side as one picture, read entry 5 as refuting the National Academies result, formed
