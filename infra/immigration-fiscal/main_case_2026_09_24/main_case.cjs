@@ -176,6 +176,13 @@ const bySide = (keep) => mean2(...METHODS.map((m) => {
   return [b[0] - base[0], b[1] - base[1]];
 }));
 const sides = { receipts: bySide((x) => x.side === "receipt"), spending: bySide((x) => x.side !== "receipt") };
+// The group's receipts on the reference incidence rule, all lines, before and after the package: the
+// back-cast (historical_backcast_2026_09_20) splits each 2024 anchor into receipts and charged spending.
+const receiptsTotal = (m) => Object.fromEntries(ALLOCS.map((a) =>
+  [a, m.receipts.lines.reduce((s, l) => s + l.cells[m.receipts.reference][a].target_bn, 0)]));
+const receiptsAfter = METHODS.map((meth) => receiptsTotal(build(packageShifts(STACKS[`row4+status_state_aware|central|${meth}`],
+  "central", meth, CENTRAL)))).reduce((a, b) => ({ personal: (a.personal + b.personal) / 2, shared: (a.shared + b.shared) / 2 }));
+const groupReceipts = { adopted_2026_09_23: receiptsTotal(MODEL), adopted: receiptsAfter };
 gate("the two sides add to the package", near(sides.receipts[0] + sides.spending[0], C[0] - base[0], 1e-6)
   && near(sides.receipts[1] + sides.spending[1], C[1] - base[1], 1e-6), `${f2(sides.receipts)} + ${f2(sides.spending)}`);
 
@@ -204,6 +211,7 @@ const summary = {
   audit_row3_instead_of_cbo_income_tax: withRow3, no_fill_in_correction: noFillIn, lane_figures_added: added,
   interaction_total: [C[0] - added[0], C[1] - added[1]],
   by_side: sides,
+  group_receipts_bn: groupReceipts,
   components: components.map((x) => ({ name: x.name, label: x.label, lo: x.lo, hi: x.hi,
     variants: Object.fromEntries(x.devs.map((d) => [d.v, d.d])) })),
   alone_on_adopted: aloneParts,

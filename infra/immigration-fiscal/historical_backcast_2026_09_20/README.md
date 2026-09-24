@@ -38,8 +38,11 @@ every anchor reconstructs the account's 2024 value. It writes `backcast_categori
 `backcast.py` refuses any BEA workbook whose hash differs and checks that the 2024
 totals equal the complete account's $8,008.290bn and $10,061.458bn. Since 2026-09-23 it also
 carries back the adopted main case (`*_adopted_*` concepts, read from
-`main_case_2026_09_23/derived/main_case_bands.csv`); `backcast_categories.py` still covers the
-September 20 anchors only.
+`main_case_2026_09_23/derived/main_case_bands.csv`). Since 2026-09-24 it also carries back that case
+with the data corrections (`*_corrected_*` concepts, read from
+`main_case_2026_09_24/derived/main_case_bands.csv`), split on the corrected receipts in that lane's
+`summary.json` (`group_receipts_bn`); a guard stops the run if that file's starting receipts differ
+from the complete account's. `backcast_categories.py` still covers the September 20 anchors only.
 
 ## Rules
 

@@ -2,6 +2,12 @@
 
 Date: 2026-09-20. [MODEL / FRAMING-SENSITIVE] Calculation record; narrative authorship remains operator-owned.
 
+**Adopted main case (2026-09-24):** on the $201–246bn anchor, with the data corrections that lower the
+group's receipts to $488.5bn (shared allocation; before them $545.1bn), the whole-budget rules give
+**$1.7–2.4tn over 2015–2024, $2.5–3.6tn over 2010–2024 and $3.0–4.5tn over 2005–2024**. The
+programme-by-programme version has not been re-run on this anchor either.
+[CALCULATION: `backcast.py` → `derived/backcast_windows.csv`, concepts `*_corrected_*`]
+
 **Adopted main case (2026-09-23):** on the $203–250bn anchor the operator adopted on September 23,
 the whole-budget rules give **$1.7–2.5tn over 2015–2024, $2.5–3.7tn over 2010–2024 and $3.0–4.6tn
 over 2005–2024**. The programme-by-programme version has not been re-run on that anchor. The
@@ -175,3 +181,13 @@ suffix. Every September 20 row and column is unchanged, checked value by value. 
 anchor the whole-budget rules give $1.75–2.49tn (10 years), $2.52–3.74tn (15) and $3.00–4.62tn (20);
 with full proportional services, $2.68–3.30tn, $3.82–4.88tn and $4.61–6.02tn. Concept affected: the
 back-cast's 2024 anchor. [Decision](../decisions/2026-09-23-main-case-general-government-and-use-keys.md).
+
+2026-09-24, data corrections: `backcast.py` adds the main case with the September 24 corrections as
+concepts with a `_corrected` suffix, anchored on `main_case_2026_09_24/derived/main_case_bands.csv`.
+The corrections lower the group's receipts, so these concepts split each 2024 anchor on the corrected
+receipts ($488.5bn, shared allocation, from that lane's `summary.json`; before them $545.1bn).
+Every earlier row and column is unchanged, checked value by value. The whole-budget rules give
+$1.73–2.43tn (10 years), $2.49–3.64tn (15) and $2.98–4.48tn (20); with full proportional services,
+$2.64–3.23tn, $3.76–4.76tn and $4.54–5.94tn. Under the ratio and income rules 2020–2021 supply 28–32%
+of the ten-year total. Concept affected: the back-cast's 2024 anchor and its split between receipts
+and spending. [Decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md).

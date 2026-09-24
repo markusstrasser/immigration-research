@@ -217,8 +217,8 @@ National spending per resident on each programme is measured for every year: Med
 Medicare were 42–47% smaller in 2005, refundable credits were 4.4 times their 2024 level in
 2021, police, courts and prisons were flat. Carrying the 2024 position back on those series
 gives about $1.3–2.2tn over ten years, $2.0–3.3tn over fifteen and $2.4–3.9tn over twenty on
-the September 20 anchor, and $1.7–2.5tn, $2.5–3.7tn and $3.0–4.6tn on the adopted one (whole-budget
-rules only);
+the September 20 anchor, and $1.7–2.4tn, $2.5–3.6tn and $3.0–4.5tn on the adopted September 24 one
+(whole-budget rules only; September 23: $1.7–2.5tn, $2.5–3.7tn and $3.0–4.6tn);
 2020–2021 supply 29–39% of the ten-year figure where the rules follow the benefit spike, and are probably over-attributed. The
 group's own programme use in earlier years is unmeasured. [SOURCE: [back-cast](immigration-historical-backcast-2026-09-20.md)]
 
@@ -481,3 +481,7 @@ they get more prominence.
 - 2026-09-24 (custody rounding): entry 12's reallocated custody ratio read 2.1–2.3×; the series is
   2.10 (2019), 2.11 (2023) and 2.23 (2024), so it now reads 2.10–2.23×. Concept affected: the
   reallocated custody ratio.
+
+- 2026-09-24 (back-cast on the corrected case): the cumulative figures now quote the September 24
+  anchor, $1.7–2.4tn, $2.5–3.6tn and $3.0–4.5tn, with the September 23 values beside them. Concept
+  affected: the back-cast's 2024 anchor.
