@@ -176,7 +176,11 @@ The same lane finds the audit's row 6 smaller through the engine than the audit 
 transfers (ladder 216): CBO's 2022 income distribution and Treasury's EITC shares by ethnicity
 corroborate most keys; the income-tax key is too flat at the top (+$13.2–14.1bn, about $4bn beyond
 audit row 3), so the main case would be **$209.2–254.8bn** (proposed; not combined with schools).
-Benefit keys and the direction of the crime-ratio errors are still running.
+Benefits (ladder 217): administrative records by ethnicity show no fear-driven under-reporting of SNAP
+or Medicaid; unemployment insurance, WIC and TANF's California share are under-reported, adding
+$2.2bn (main case **$205.5–251.8bn**, proposed). SNAP's quality-control file miscodes Hispanic
+ethnicity in 25 states and cannot support national SNAP-by-ethnicity figures. The direction of the
+crime-ratio errors is still running.
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): fifteen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,

@@ -1,0 +1,33 @@
+package,allocation,change_bn_transfer_lines,se_bn,members
+central,personal,2.167362455547031,1.1493579880237286,snap_BV wic_BV tanf_BV ui_BV housing_BV
+central,shared,2.2678118433510823,1.1748632504634315,snap_BV wic_BV tanf_BV ui_BV housing_BV
+route_A,personal,-0.041663241377065674,1.8610871591084661,snap_A wic_A tanf_A ui_A housing_A
+route_A,shared,0.006362109050483511,1.8971607556526475,snap_A wic_A tanf_A ui_A housing_A
+route_B,personal,0.20981795335523845,0.9344774753808993,snap_B wic_B tanf_B ui_B housing_B
+route_B,shared,0.26319462893789236,0.9439861482264402,snap_B wic_B tanf_B ui_B housing_B
+route_B_screened,personal,1.2659120392257044,1.028444266508395,snap_B_screened wic_B_screened tanf_B_screened ui_B_screened housing_B_screened
+route_B_screened,shared,1.294109840967076,1.0405317418758282,snap_B_screened wic_B_screened tanf_B_screened ui_B_screened housing_B_screened
+admin_state_keys_unscreened,personal,0.0868865099591547,0.9760469667319571,snap_BS wic_BS tanf_BS ui_BS housing_BS
+admin_state_keys_unscreened,shared,0.18705554439035676,1.0054719393654115,snap_BS wic_BS tanf_BS ui_BS housing_BS
+geography_only,personal,2.2174074596828954,0.7931927196648357,snap_G wic_G tanf_G ui_G housing_G
+geography_only,shared,2.2743598053653504,0.8199555233056652,snap_G wic_G tanf_G ui_G housing_G
+survey_shares_route_A_rho,personal,2.1859552589600506,1.2835664081916534,snap_GA wic_GA tanf_GA ui_GA housing_GA
+survey_shares_route_A_rho,shared,2.285756423123673,1.3093092799095414,snap_GA wic_GA tanf_GA ui_GA housing_GA
+central_strict_screen,personal,3.3927149526567986,1.2628949594118664,snap_BV_strict wic_BV_strict tanf_BV_strict ui_BV_strict housing_BV_strict
+central_strict_screen,shared,3.4939785660507985,1.2888198316966821,snap_BV_strict wic_BV_strict tanf_BV_strict ui_BV_strict housing_BV_strict
+central_snap_noAZ,personal,3.049062792867111,1.2166170484628183,snap_BV_noAZ wic_BV tanf_BV ui_BV housing_BV
+central_snap_noAZ,shared,3.149512180671162,1.2433078619062845,snap_BV_noAZ wic_BV tanf_BV ui_BV housing_BV
+central_people_weights,personal,2.2282098056227437,1.1539508280029727,snap_BV wic_BV_participants tanf_BV_recipients ui_BV_claims housing_BV
+central_people_weights,shared,2.323468083031394,1.1777627142032676,snap_BV wic_BV_participants tanf_BV_recipients ui_BV_claims housing_BV
+central_tanf_only,personal,1.9586152759015512,1.1363464428637349,snap_BV wic_BV tanf_BV_tanf_only ui_BV housing_BV
+central_tanf_only,shared,2.0465678663719027,1.1606657633054314,snap_BV wic_BV tanf_BV_tanf_only ui_BV housing_BV
+central_tanf_full_line,personal,3.964511498147856,1.8240686132985584,snap_BV wic_BV tanf_BV_fullline ui_BV housing_BV
+central_tanf_full_line,shared,4.172548482593822,1.9040457649375662,snap_BV wic_BV tanf_BV_fullline ui_BV housing_BV
+central_plus_income_security_services,personal,9.979260764951679,4.713412148701117,snap_BV wic_BV tanf_BV ui_BV housing_BV tanf_BV_income_security_services
+central_plus_income_security_services,shared,10.54737496207148,4.981489563674833,snap_BV wic_BV tanf_BV ui_BV housing_BV tanf_BV_income_security_services
+central_unknown_low,personal,0.3669290896916786,1.0854484699933087,snap_BV_low wic_BV tanf_BV_low ui_BV_low housing_BV
+central_unknown_low,shared,0.4549986838982114,1.111021574955469,snap_BV_low wic_BV tanf_BV_low ui_BV_low housing_BV
+central_unknown_high,personal,6.171049713910164,1.2919452653764645,snap_BV_high wic_BV tanf_BV_high ui_BV_high housing_BV
+central_unknown_high,shared,6.301919880532137,1.3178540851321399,snap_BV_high wic_BV tanf_BV_high ui_BV_high housing_BV
+first_pass_central,personal,3.149053583315594,1.3150557752204965,snap_GA_firstpass wic_BS_participants tanf_BS_recipients ui_BS_claims housing_BS
+first_pass_central,shared,3.2433214516903823,1.337835434267769,snap_GA_firstpass wic_BS_participants tanf_BS_recipients ui_BS_claims housing_BS

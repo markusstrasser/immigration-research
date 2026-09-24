@@ -1,0 +1,1059 @@
+{
+ "partial_shares": {
+  "tanf_share": 0.387822088321573,
+  "tanf_bn": 24.458,
+  "ga_bn": 38.607,
+  "wic_food_cy2024_bn": 5.05658019,
+  "line39_bn": 22.385,
+  "wic_share": 0.2258914536519991
+ },
+ "packages": {
+  "central": [
+   "snap_BV",
+   "wic_BV",
+   "tanf_BV",
+   "ui_BV",
+   "housing_BV"
+  ],
+  "route_A": [
+   "snap_A",
+   "wic_A",
+   "tanf_A",
+   "ui_A",
+   "housing_A"
+  ],
+  "route_B": [
+   "snap_B",
+   "wic_B",
+   "tanf_B",
+   "ui_B",
+   "housing_B"
+  ],
+  "route_B_screened": [
+   "snap_B_screened",
+   "wic_B_screened",
+   "tanf_B_screened",
+   "ui_B_screened",
+   "housing_B_screened"
+  ],
+  "admin_state_keys_unscreened": [
+   "snap_BS",
+   "wic_BS",
+   "tanf_BS",
+   "ui_BS",
+   "housing_BS"
+  ],
+  "geography_only": [
+   "snap_G",
+   "wic_G",
+   "tanf_G",
+   "ui_G",
+   "housing_G"
+  ],
+  "survey_shares_route_A_rho": [
+   "snap_GA",
+   "wic_GA",
+   "tanf_GA",
+   "ui_GA",
+   "housing_GA"
+  ],
+  "central_strict_screen": [
+   "snap_BV_strict",
+   "wic_BV_strict",
+   "tanf_BV_strict",
+   "ui_BV_strict",
+   "housing_BV_strict"
+  ],
+  "central_snap_noAZ": [
+   "snap_BV_noAZ",
+   "wic_BV",
+   "tanf_BV",
+   "ui_BV",
+   "housing_BV"
+  ],
+  "central_people_weights": [
+   "snap_BV",
+   "wic_BV_participants",
+   "tanf_BV_recipients",
+   "ui_BV_claims",
+   "housing_BV"
+  ],
+  "central_tanf_only": [
+   "snap_BV",
+   "wic_BV",
+   "tanf_BV_tanf_only",
+   "ui_BV",
+   "housing_BV"
+  ],
+  "central_tanf_full_line": [
+   "snap_BV",
+   "wic_BV",
+   "tanf_BV_fullline",
+   "ui_BV",
+   "housing_BV"
+  ],
+  "central_plus_income_security_services": [
+   "snap_BV",
+   "wic_BV",
+   "tanf_BV",
+   "ui_BV",
+   "housing_BV",
+   "tanf_BV_income_security_services"
+  ],
+  "central_unknown_low": [
+   "snap_BV_low",
+   "wic_BV",
+   "tanf_BV_low",
+   "ui_BV_low",
+   "housing_BV"
+  ],
+  "central_unknown_high": [
+   "snap_BV_high",
+   "wic_BV",
+   "tanf_BV_high",
+   "ui_BV_high",
+   "housing_BV"
+  ],
+  "first_pass_central": [
+   "snap_GA_firstpass",
+   "wic_BS_participants",
+   "tanf_BS_recipients",
+   "ui_BS_claims",
+   "housing_BS"
+  ]
+ },
+ "deltas": {
+  "snap_B": {
+   "snap": {
+    "personal": -2.826170643388272,
+    "shared": -2.826170643388272
+   }
+  },
+  "snap_A": {
+   "snap": {
+    "personal": -2.1431203446141645,
+    "shared": -2.1431203446141645
+   }
+  },
+  "snap_G": {
+   "snap": {
+    "personal": 0.9439012203813029,
+    "shared": 0.9439012203813029
+   }
+  },
+  "snap_BS": {
+   "snap": {
+    "personal": -2.5402853423005283,
+    "shared": -2.5402853423005283
+   }
+  },
+  "snap_GA": {
+   "snap": {
+    "personal": -0.6186151766309109,
+    "shared": -0.6186151766309109
+   }
+  },
+  "snap_B_screened": {
+   "snap": {
+    "personal": -0.5380753550950637,
+    "shared": -0.5380753550950637
+   }
+  },
+  "snap_BV": {
+   "snap": {
+    "personal": -0.4760950555039347,
+    "shared": -0.4760950555039347
+   }
+  },
+  "snap_B_known": {
+   "snap": {
+    "personal": -2.885951656407169,
+    "shared": -2.885951656407169
+   }
+  },
+  "snap_BS_known": {
+   "snap": {
+    "personal": -2.616535514248575,
+    "shared": -2.616535514248575
+   }
+  },
+  "snap_BV_known": {
+   "snap": {
+    "personal": -0.3145732099605816,
+    "shared": -0.3145732099605816
+   }
+  },
+  "snap_B_low": {
+   "snap": {
+    "personal": -5.133214906682809,
+    "shared": -5.133214906682809
+   }
+  },
+  "snap_BS_low": {
+   "snap": {
+    "personal": -5.749461613477681,
+    "shared": -5.749461613477681
+   }
+  },
+  "snap_BV_low": {
+   "snap": {
+    "personal": -1.7831162993492864,
+    "shared": -1.7831162993492864
+   }
+  },
+  "snap_B_high": {
+   "snap": {
+    "personal": 3.6576914230631914,
+    "shared": 3.6576914230631914
+   }
+  },
+  "snap_BS_high": {
+   "snap": {
+    "personal": 5.365175564587641,
+    "shared": 5.365175564587641
+   }
+  },
+  "snap_BV_high": {
+   "snap": {
+    "personal": 2.324935372300235,
+    "shared": 2.324935372300235
+   }
+  },
+  "snap_BV_strict": {
+   "snap": {
+    "personal": 0.7231220178342319,
+    "shared": 0.7231220178342319
+   }
+  },
+  "snap_A_noAZ": {
+   "snap": {
+    "personal": -0.6646525363359093,
+    "shared": -0.6646525363359093
+   }
+  },
+  "snap_GA_noAZ": {
+   "snap": {
+    "personal": 0.47350867412207975,
+    "shared": 0.47350867412207975
+   }
+  },
+  "snap_BV_noAZ": {
+   "snap": {
+    "personal": 0.4056052818161451,
+    "shared": 0.4056052818161451
+   }
+  },
+  "wic_B": {
+   "other_state_welfare": {
+    "personal": 0.16520088174416103,
+    "shared": 0.16520088174416103
+   }
+  },
+  "wic_A": {
+   "other_state_welfare": {
+    "personal": 0.2486033065385289,
+    "shared": 0.2486033065385289
+   }
+  },
+  "wic_G": {
+   "other_state_welfare": {
+    "personal": 0.05808807860096321,
+    "shared": 0.05808807860096321
+   }
+  },
+  "wic_BS": {
+   "other_state_welfare": {
+    "personal": 0.14048113885209346,
+    "shared": 0.14048113885209346
+   }
+  },
+  "wic_GA": {
+   "other_state_welfare": {
+    "personal": 0.19165012118790492,
+    "shared": 0.19165012118790492
+   }
+  },
+  "wic_B_screened": {
+   "other_state_welfare": {
+    "personal": 0.12504549072063287,
+    "shared": 0.12504549072063287
+   }
+  },
+  "wic_BV": {
+   "other_state_welfare": {
+    "personal": 0.14048113885209346,
+    "shared": 0.14048113885209346
+   }
+  },
+  "wic_BV_strict": {
+   "other_state_welfare": {
+    "personal": 0.14048113885209346,
+    "shared": 0.14048113885209346
+   }
+  },
+  "wic_B_keydollars": {
+   "other_state_welfare": {
+    "personal": 0.1974257128485255,
+    "shared": 0.1974257128485255
+   }
+  },
+  "wic_BS_keydollars": {
+   "other_state_welfare": {
+    "personal": 0.17857774241010693,
+    "shared": 0.17857774241010693
+   }
+  },
+  "wic_A_keydollars": {
+   "other_state_welfare": {
+    "personal": 0.3527610049608396,
+    "shared": 0.3527610049608396
+   }
+  },
+  "wic_BV_keydollars": {
+   "other_state_welfare": {
+    "personal": 0.17857774241010693,
+    "shared": 0.17857774241010693
+   }
+  },
+  "wic_B_participants": {
+   "other_state_welfare": {
+    "personal": 0.14024526491254385,
+    "shared": 0.14024526491254385
+   }
+  },
+  "wic_BS_participants": {
+   "other_state_welfare": {
+    "personal": 0.10417053144628818,
+    "shared": 0.10417053144628818
+   }
+  },
+  "wic_A_participants": {
+   "other_state_welfare": {
+    "personal": 0.2559097393462251,
+    "shared": 0.2559097393462251
+   }
+  },
+  "wic_BV_participants": {
+   "other_state_welfare": {
+    "personal": 0.10417053144628818,
+    "shared": 0.10417053144628818
+   }
+  },
+  "tanf_B": {
+   "family_and_general_assistance": {
+    "personal": 1.8362109142144076,
+    "shared": 1.893253821826276
+   }
+  },
+  "tanf_A": {
+   "family_and_general_assistance": {
+    "personal": 0.45185997651701193,
+    "shared": 0.4725444846120004
+   }
+  },
+  "tanf_G": {
+   "family_and_general_assistance": {
+    "personal": 0.7786873510227377,
+    "shared": 0.8253040192267029
+   }
+  },
+  "tanf_BS": {
+   "family_and_general_assistance": {
+    "personal": 1.141417912025247,
+    "shared": 1.2097497014360519
+   }
+  },
+  "tanf_GA": {
+   "family_and_general_assistance": {
+    "personal": 1.0487314394011031,
+    "shared": 1.111514487669985
+   }
+  },
+  "tanf_B_screened": {
+   "family_and_general_assistance": {
+    "personal": 0.9017677556590877,
+    "shared": 0.9319276229376738
+   }
+  },
+  "tanf_BV": {
+   "family_and_general_assistance": {
+    "personal": 1.1385155874305433,
+    "shared": 1.206673627129768
+   }
+  },
+  "tanf_B_low": {
+   "family_and_general_assistance": {
+    "personal": 1.780709004908279,
+    "shared": 1.8362788641724572
+   }
+  },
+  "tanf_BS_low": {
+   "family_and_general_assistance": {
+    "personal": 1.11315509900298,
+    "shared": 1.1797949151520664
+   }
+  },
+  "tanf_BV_low": {
+   "family_and_general_assistance": {
+    "personal": 1.1191039476465594,
+    "shared": 1.186099895820968
+   }
+  },
+  "tanf_B_high": {
+   "family_and_general_assistance": {
+    "personal": 2.041810609416295,
+    "shared": 2.104174506256249
+   }
+  },
+  "tanf_BS_high": {
+   "family_and_general_assistance": {
+    "personal": 1.2422897419877819,
+    "shared": 1.3166602947383463
+   }
+  },
+  "tanf_BV_high": {
+   "family_and_general_assistance": {
+    "personal": 1.192623378102554,
+    "shared": 1.2640206189030865
+   }
+  },
+  "tanf_BV_strict": {
+   "family_and_general_assistance": {
+    "personal": 1.1439218290844,
+    "shared": 1.212403517258302
+   }
+  },
+  "tanf_BV_fullline": {
+   "family_and_general_assistance": {
+    "personal": 2.9356646300313685,
+    "shared": 3.1114102663725074
+   }
+  },
+  "tanf_BV_income_security_services": {
+   "income_security_services": {
+    "personal": 7.811898309404647,
+    "shared": 8.279563118720397
+   }
+  },
+  "tanf_B_tanf_only": {
+   "family_and_general_assistance": {
+    "personal": 1.638302655222314,
+    "shared": 1.690021649916586
+   }
+  },
+  "tanf_BS_tanf_only": {
+   "family_and_general_assistance": {
+    "personal": 0.9343347219215712,
+    "shared": 0.9902693299077612
+   }
+  },
+  "tanf_A_tanf_only": {
+   "family_and_general_assistance": {
+    "personal": 0.08419297395398129,
+    "shared": 0.08814303474358276
+   }
+  },
+  "tanf_BV_tanf_only": {
+   "family_and_general_assistance": {
+    "personal": 0.9297684077850636,
+    "shared": 0.9854296501505884
+   }
+  },
+  "tanf_B_all_paw": {
+   "family_and_general_assistance": {
+    "personal": 1.9498661558038703,
+    "shared": 2.009876909692972
+   }
+  },
+  "tanf_BS_all_paw": {
+   "family_and_general_assistance": {
+    "personal": 1.8437051296923999,
+    "shared": 1.954079839367516
+   }
+  },
+  "tanf_BV_all_paw": {
+   "family_and_general_assistance": {
+    "personal": 1.8756213855719155,
+    "shared": 1.9879067844455838
+   }
+  },
+  "tanf_B_recipients": {
+   "family_and_general_assistance": {
+    "personal": 1.4896106256910393,
+    "shared": 1.5371991416708664
+   }
+  },
+  "tanf_BS_recipients": {
+   "family_and_general_assistance": {
+    "personal": 0.9230378549009348,
+    "shared": 0.97829616796471
+   }
+  },
+  "tanf_A_recipients": {
+   "family_and_general_assistance": {
+    "personal": 0.3789736267385777,
+    "shared": 0.3964072622143746
+   }
+  },
+  "tanf_BV_recipients": {
+   "family_and_general_assistance": {
+    "personal": 0.9315952648849208,
+    "shared": 0.9873658733409165
+   }
+  },
+  "ui_B": {
+   "unemployment": {
+    "personal": 1.0345768007849419,
+    "shared": 1.0309105687557274
+   }
+  },
+  "ui_A": {
+   "unemployment": {
+    "personal": 1.400993820181558,
+    "shared": 1.4283346625141187
+   }
+  },
+  "ui_G": {
+   "unemployment": {
+    "personal": 0.4367308096778917,
+    "shared": 0.4470664871563814
+   }
+  },
+  "ui_BS": {
+   "unemployment": {
+    "personal": 1.3452728013823423,
+    "shared": 1.3771100464027395
+   }
+  },
+  "ui_GA": {
+   "unemployment": {
+    "personal": 1.5641888750019532,
+    "shared": 1.601206990896694
+   }
+  },
+  "ui_B_screened": {
+   "unemployment": {
+    "personal": 0.7771741479410474,
+    "shared": 0.7752120824038329
+   }
+  },
+  "ui_BV": {
+   "unemployment": {
+    "personal": 1.3644607847683288,
+    "shared": 1.3967521328731554
+   }
+  },
+  "ui_B_low": {
+   "unemployment": {
+    "personal": 0.5873988365514382,
+    "shared": 0.5863580031056115
+   }
+  },
+  "ui_BS_low": {
+   "unemployment": {
+    "personal": 0.8662691821861719,
+    "shared": 0.886770320824029
+   }
+  },
+  "ui_BV_low": {
+   "unemployment": {
+    "personal": 0.8904603025423121,
+    "shared": 0.9115339485744363
+   }
+  },
+  "ui_B_high": {
+   "unemployment": {
+    "personal": 2.4707670650257683,
+    "shared": 2.4480564133042666
+   }
+  },
+  "ui_BS_high": {
+   "unemployment": {
+    "personal": 2.6278639816813483,
+    "shared": 2.6900550475968226
+   }
+  },
+  "ui_BV_high": {
+   "unemployment": {
+    "personal": 2.513009824655281,
+    "shared": 2.5724827504767216
+   }
+  },
+  "ui_BV_strict": {
+   "unemployment": {
+    "personal": 1.385189966886073,
+    "shared": 1.4179718921061708
+   }
+  },
+  "ui_B_cpsrecipients": {
+   "unemployment": {
+    "personal": 1.076597894665177,
+    "shared": 1.0726038554969373
+   }
+  },
+  "ui_BS_cpsrecipients": {
+   "unemployment": {
+    "personal": 1.1783967438001657,
+    "shared": 1.2062846976969892
+   }
+  },
+  "ui_A_cpsrecipients": {
+   "unemployment": {
+    "personal": 1.196403391312276,
+    "shared": 1.2199358922576868
+   }
+  },
+  "ui_BV_cpsrecipients": {
+   "unemployment": {
+    "personal": 1.2017220380515932,
+    "shared": 1.2301620086899234
+   }
+  },
+  "ui_B_claims": {
+   "unemployment": {
+    "personal": 1.0826646681122236,
+    "shared": 1.0786221532632831
+   }
+  },
+  "ui_BS_claims": {
+   "unemployment": {
+    "personal": 1.6483365228462912,
+    "shared": 1.6873460781573044
+   }
+  },
+  "ui_A_claims": {
+   "unemployment": {
+    "personal": 1.4972962341756375,
+    "shared": 1.5264078999873743
+   }
+  },
+  "ui_BV_claims": {
+   "unemployment": {
+    "personal": 1.6685390647954694,
+    "shared": 1.7080267337481239
+   }
+  },
+  "housing_B": {
+   "housing_subsidies": {
+    "personal": -1.6228462093484648,
+    "shared": -1.6228462093484648
+   }
+  },
+  "housing_A": {
+   "housing_subsidies": {
+    "personal": -2.6473557729876465,
+    "shared": -2.6473557729876465
+   }
+  },
+  "housing_G": {
+   "housing_subsidies": {
+    "personal": -0.8476266314110665,
+    "shared": -0.8476266314110665
+   }
+  },
+  "housing_BS": {
+   "housing_subsidies": {
+    "personal": -2.6746808156011657,
+    "shared": -2.6746808156011657
+   }
+  },
+  "housing_GA": {
+   "housing_subsidies": {
+    "personal": -2.6096191346751354,
+    "shared": -2.6096191346751354
+   }
+  },
+  "housing_B_screened": {
+   "housing_subsidies": {
+    "personal": -1.0345810209539614,
+    "shared": -1.0345810209539614
+   }
+  },
+  "housing_BV": {
+   "housing_subsidies": {
+    "personal": -2.448396409315091,
+    "shared": -2.448396409315091
+   }
+  },
+  "housing_BV_strict": {
+   "housing_subsidies": {
+    "personal": -2.105928090013638,
+    "shared": -2.105928090013638
+   }
+  },
+  "housing_B_households": {
+   "housing_subsidies": {
+    "personal": -0.5700800178296586,
+    "shared": -0.5700800178296586
+   }
+  },
+  "housing_BS_households": {
+   "housing_subsidies": {
+    "personal": -1.800833062299862,
+    "shared": -1.800833062299862
+   }
+  },
+  "snap_GA_firstpass": {
+   "snap": {
+    "personal": 0.47350867412207975,
+    "shared": 0.47350867412207975
+   }
+  },
+  "package_central": {
+   "snap": {
+    "personal": -0.4760950555039347,
+    "shared": -0.4760950555039347
+   },
+   "other_state_welfare": {
+    "personal": 0.14048113885209346,
+    "shared": 0.14048113885209346
+   },
+   "family_and_general_assistance": {
+    "personal": 1.1385155874305433,
+    "shared": 1.206673627129768
+   },
+   "unemployment": {
+    "personal": 1.3644607847683288,
+    "shared": 1.3967521328731554
+   },
+   "housing_subsidies": {
+    "personal": -2.448396409315091,
+    "shared": -2.448396409315091
+   }
+  },
+  "package_route_A": {
+   "snap": {
+    "personal": -2.1431203446141645,
+    "shared": -2.1431203446141645
+   },
+   "other_state_welfare": {
+    "personal": 0.2486033065385289,
+    "shared": 0.2486033065385289
+   },
+   "family_and_general_assistance": {
+    "personal": 0.45185997651701193,
+    "shared": 0.4725444846120004
+   },
+   "unemployment": {
+    "personal": 1.400993820181558,
+    "shared": 1.4283346625141187
+   },
+   "housing_subsidies": {
+    "personal": -2.6473557729876465,
+    "shared": -2.6473557729876465
+   }
+  },
+  "package_route_B": {
+   "snap": {
+    "personal": -2.826170643388272,
+    "shared": -2.826170643388272
+   },
+   "other_state_welfare": {
+    "personal": 0.16520088174416103,
+    "shared": 0.16520088174416103
+   },
+   "family_and_general_assistance": {
+    "personal": 1.8362109142144076,
+    "shared": 1.893253821826276
+   },
+   "unemployment": {
+    "personal": 1.0345768007849419,
+    "shared": 1.0309105687557274
+   },
+   "housing_subsidies": {
+    "personal": -1.6228462093484648,
+    "shared": -1.6228462093484648
+   }
+  },
+  "package_route_B_screened": {
+   "snap": {
+    "personal": -0.5380753550950637,
+    "shared": -0.5380753550950637
+   },
+   "other_state_welfare": {
+    "personal": 0.12504549072063287,
+    "shared": 0.12504549072063287
+   },
+   "family_and_general_assistance": {
+    "personal": 0.9017677556590877,
+    "shared": 0.9319276229376738
+   },
+   "unemployment": {
+    "personal": 0.7771741479410474,
+    "shared": 0.7752120824038329
+   },
+   "housing_subsidies": {
+    "personal": -1.0345810209539614,
+    "shared": -1.0345810209539614
+   }
+  },
+  "package_admin_state_keys_unscreened": {
+   "snap": {
+    "personal": -2.5402853423005283,
+    "shared": -2.5402853423005283
+   },
+   "other_state_welfare": {
+    "personal": 0.14048113885209346,
+    "shared": 0.14048113885209346
+   },
+   "family_and_general_assistance": {
+    "personal": 1.141417912025247,
+    "shared": 1.2097497014360519
+   },
+   "unemployment": {
+    "personal": 1.3452728013823423,
+    "shared": 1.3771100464027395
+   },
+   "housing_subsidies": {
+    "personal": -2.6746808156011657,
+    "shared": -2.6746808156011657
+   }
+  },
+  "package_geography_only": {
+   "snap": {
+    "personal": 0.9439012203813029,
+    "shared": 0.9439012203813029
+   },
+   "other_state_welfare": {
+    "personal": 0.05808807860096321,
+    "shared": 0.05808807860096321
+   },
+   "family_and_general_assistance": {
+    "personal": 0.7786873510227377,
+    "shared": 0.8253040192267029
+   },
+   "unemployment": {
+    "personal": 0.4367308096778917,
+    "shared": 0.4470664871563814
+   },
+   "housing_subsidies": {
+    "personal": -0.8476266314110665,
+    "shared": -0.8476266314110665
+   }
+  },
+  "package_survey_shares_route_A_rho": {
+   "snap": {
+    "personal": -0.6186151766309109,
+    "shared": -0.6186151766309109
+   },
+   "other_state_welfare": {
+    "personal": 0.19165012118790492,
+    "shared": 0.19165012118790492
+   },
+   "family_and_general_assistance": {
+    "personal": 1.0487314394011031,
+    "shared": 1.111514487669985
+   },
+   "unemployment": {
+    "personal": 1.5641888750019532,
+    "shared": 1.601206990896694
+   },
+   "housing_subsidies": {
+    "personal": -2.6096191346751354,
+    "shared": -2.6096191346751354
+   }
+  },
+  "package_central_strict_screen": {
+   "snap": {
+    "personal": 0.7231220178342319,
+    "shared": 0.7231220178342319
+   },
+   "other_state_welfare": {
+    "personal": 0.14048113885209346,
+    "shared": 0.14048113885209346
+   },
+   "family_and_general_assistance": {
+    "personal": 1.1439218290844,
+    "shared": 1.212403517258302
+   },
+   "unemployment": {
+    "personal": 1.385189966886073,
+    "shared": 1.4179718921061708
+   },
+   "housing_subsidies": {
+    "personal": -2.105928090013638,
+    "shared": -2.105928090013638
+   }
+  },
+  "package_central_snap_noAZ": {
+   "snap": {
+    "personal": 0.4056052818161451,
+    "shared": 0.4056052818161451
+   },
+   "other_state_welfare": {
+    "personal": 0.14048113885209346,
+    "shared": 0.14048113885209346
+   },
+   "family_and_general_assistance": {
+    "personal": 1.1385155874305433,
+    "shared": 1.206673627129768
+   },
+   "unemployment": {
+    "personal": 1.3644607847683288,
+    "shared": 1.3967521328731554
+   },
+   "housing_subsidies": {
+    "personal": -2.448396409315091,
+    "shared": -2.448396409315091
+   }
+  },
+  "package_central_people_weights": {
+   "snap": {
+    "personal": -0.4760950555039347,
+    "shared": -0.4760950555039347
+   },
+   "other_state_welfare": {
+    "personal": 0.10417053144628818,
+    "shared": 0.10417053144628818
+   },
+   "family_and_general_assistance": {
+    "personal": 0.9315952648849208,
+    "shared": 0.9873658733409165
+   },
+   "unemployment": {
+    "personal": 1.6685390647954694,
+    "shared": 1.7080267337481239
+   },
+   "housing_subsidies": {
+    "personal": -2.448396409315091,
+    "shared": -2.448396409315091
+   }
+  },
+  "package_central_tanf_only": {
+   "snap": {
+    "personal": -0.4760950555039347,
+    "shared": -0.4760950555039347
+   },
+   "other_state_welfare": {
+    "personal": 0.14048113885209346,
+    "shared": 0.14048113885209346
+   },
+   "family_and_general_assistance": {
+    "personal": 0.9297684077850636,
+    "shared": 0.9854296501505884
+   },
+   "unemployment": {
+    "personal": 1.3644607847683288,
+    "shared": 1.3967521328731554
+   },
+   "housing_subsidies": {
+    "personal": -2.448396409315091,
+    "shared": -2.448396409315091
+   }
+  },
+  "package_central_tanf_full_line": {
+   "snap": {
+    "personal": -0.4760950555039347,
+    "shared": -0.4760950555039347
+   },
+   "other_state_welfare": {
+    "personal": 0.14048113885209346,
+    "shared": 0.14048113885209346
+   },
+   "family_and_general_assistance": {
+    "personal": 2.9356646300313685,
+    "shared": 3.1114102663725074
+   },
+   "unemployment": {
+    "personal": 1.3644607847683288,
+    "shared": 1.3967521328731554
+   },
+   "housing_subsidies": {
+    "personal": -2.448396409315091,
+    "shared": -2.448396409315091
+   }
+  },
+  "package_central_plus_income_security_services": {
+   "snap": {
+    "personal": -0.4760950555039347,
+    "shared": -0.4760950555039347
+   },
+   "other_state_welfare": {
+    "personal": 0.14048113885209346,
+    "shared": 0.14048113885209346
+   },
+   "family_and_general_assistance": {
+    "personal": 1.1385155874305433,
+    "shared": 1.206673627129768
+   },
+   "unemployment": {
+    "personal": 1.3644607847683288,
+    "shared": 1.3967521328731554
+   },
+   "housing_subsidies": {
+    "personal": -2.448396409315091,
+    "shared": -2.448396409315091
+   },
+   "income_security_services": {
+    "personal": 7.811898309404647,
+    "shared": 8.279563118720397
+   }
+  },
+  "package_central_unknown_low": {
+   "snap": {
+    "personal": -1.7831162993492864,
+    "shared": -1.7831162993492864
+   },
+   "other_state_welfare": {
+    "personal": 0.14048113885209346,
+    "shared": 0.14048113885209346
+   },
+   "family_and_general_assistance": {
+    "personal": 1.1191039476465594,
+    "shared": 1.186099895820968
+   },
+   "unemployment": {
+    "personal": 0.8904603025423121,
+    "shared": 0.9115339485744363
+   },
+   "housing_subsidies": {
+    "personal": -2.448396409315091,
+    "shared": -2.448396409315091
+   }
+  },
+  "package_central_unknown_high": {
+   "snap": {
+    "personal": 2.324935372300235,
+    "shared": 2.324935372300235
+   },
+   "other_state_welfare": {
+    "personal": 0.14048113885209346,
+    "shared": 0.14048113885209346
+   },
+   "family_and_general_assistance": {
+    "personal": 1.192623378102554,
+    "shared": 1.2640206189030865
+   },
+   "unemployment": {
+    "personal": 2.513009824655281,
+    "shared": 2.5724827504767216
+   },
+   "housing_subsidies": {
+    "personal": -2.448396409315091,
+    "shared": -2.448396409315091
+   }
+  },
+  "package_first_pass_central": {
+   "snap": {
+    "personal": 0.47350867412207975,
+    "shared": 0.47350867412207975
+   },
+   "other_state_welfare": {
+    "personal": 0.10417053144628818,
+    "shared": 0.10417053144628818
+   },
+   "family_and_general_assistance": {
+    "personal": 0.9230378549009348,
+    "shared": 0.97829616796471
+   },
+   "unemployment": {
+    "personal": 1.6483365228462912,
+    "shared": 1.6873460781573044
+   },
+   "housing_subsidies": {
+    "personal": -2.6746808156011657,
+    "shared": -2.6746808156011657
+   }
+  }
+ }
+}

@@ -15,7 +15,7 @@ account.
 | Check | Lane | Status |
 |---|---|---|
 | School cost where the group's pupils enroll | [school_cost_where_enrolled_2026_09_24](../infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/RESULT.md) | done, ladder 215 |
-| Benefit keys against administrative records by ethnicity | `admin_benefit_keys_2026_09_24` | running |
+| Benefit keys against administrative records by ethnicity | [admin_benefit_keys_2026_09_24](../infra/immigration-fiscal/admin_benefit_keys_2026_09_24/RESULT.md) | done, ladder 217 |
 | Taxes and transfers against CBO, Treasury, tax anchors and state hospital records | [external_benchmarks_2026_09_24](../infra/immigration-fiscal/external_benchmarks_2026_09_24/RESULT.md) | done, ladder 216 |
 | Direction of the errors in the crime ratios | `crime_ratio_direction_2026_09_24` | running |
 
@@ -142,3 +142,61 @@ Still without an outside test: the state and local income and property tax keys,
 key, unemployment insurance and workers' compensation (CBO rounds them too coarsely), income tax by
 ethnicity, and any tax figure for the Mexico-born. Blocked: an AEA 2024 paper on credits by
 ethnicity (paywall), Florida's 2024 report PDF and Texas's counts of patients who declined to answer.
+
+## Benefits: survey keys against administrative records by ethnicity
+
+The account splits each benefit programme's national dollars by what people report in CPS ASEC 2025.
+Under-reporting across the whole survey washes out, because BEA totals are split by shares; under-reporting
+by one group does not. The hypothesis tested: people with immigration exposure hide receipt out of
+fear, so the keys under-charge the group. Administrative systems record Hispanic ethnicity, not
+Mexican origin. The sharpest test (route A) therefore uses the states where most Hispanics are of Mexican origin
+(California, Nevada, Arizona, and Texas and New Mexico where usable). There, the survey's reporting rate for Hispanic receipt
+relative to other receipt, ρ, applies almost directly to the group. Route B uses national shares;
+route C is the linked survey-to-records literature [CALCULATION: `compare.py` → `derived/program_keys.csv`;
+positive control reproduces the account's SNAP key share 0.148150; 4 tests pass; the parent's re-run left
+all 18 derived files byte-identical].
+
+**Fear-driven under-reporting fails where the dollars are.**
+- **SNAP** ($14.3bn charged to the group): no under-reporting. In California, SNAP's quality-control
+  records show 44.0% of benefit dollars going to Hispanic participants, against 44.1% in the CPS; over
+  the three route-A states ρ is 1.21 (SE 0.13), and 1.05 (0.06) over the 26 states whose records
+  pass a validity screen [SOURCE: SNAP QC FY2024 public-use file, snapqcdata.net; CALCULATION:
+  `snap_qc.py`, `derived/share_comparisons.csv`].
+- **Medicaid coverage** ($116.9bn charged, through a medical-spending key): the CPS reports Hispanic
+  coverage at the administrative rate (ρ 1.03 against T-MSIS enrollment in the route-A states).
+- **Housing assistance**: over-reported (ρ 1.42–1.62 against HUD's Picture of Subsidized Households);
+  the line is a subsidy with zero response, so the main case does not move.
+- **Unemployment insurance**: under-reported, ρ 0.71–0.80 against DOL claimant records, matching the
+  linked-record literature's 0.72–0.77. +$1.36bn (SE 0.55).
+- **WIC**: modestly under-reported, ρ 0.77–0.84 against the FNS participant census. +$0.14bn.
+- **TANF**: reported at about the administrative rate within states, but the CPS puts 27% of TANF-type
+  dollars in California, where 48% of basic assistance is paid (New York 8% against 19%). +$1.14bn
+  (SE 0.58) [SOURCE: ACF TANF characteristics and financial data FY2024; DOL ETA 203 and 5159; FNS WIC
+  Participant and Program Characteristics 2022; HUD Picture of Subsidized Households 2024].
+- The literature agrees on citizenship: in linked SNAP records, noncitizens under-report no more than
+  natives (49% against 49%, net) [SOURCE: Census SEHSD Working Paper 2017-49, Table 3, p. 25].
+
+| Package | Change, $bn | Main case, $bn |
+|---|---|---|
+| Central: administrative state dollars and validated state ethnicity | +2.27 / +2.17 (SE about 1.1) | 205.5–251.8 |
+| Route A (Hispanic ≈ Mexican states, ρ applied to the group) | +0.01 / −0.04 | 203.2–249.6 |
+| Route B over the states passing the screen | +1.29 / +1.27 | 204.5–250.9 |
+| Unknown ethnicity all non-Hispanic / all Hispanic | +0.46 / +0.37 to +6.30 / +6.17 | 203.7–250.0 to 209.5–255.8 |
+| Audit package with the central change | +1.8 to +2.3 | about 205–253 |
+
+[CALCULATION: `compare.py` → `derived/line_deltas.json`, `package_se.csv`; `translate.js` →
+`derived/main_case_translation.csv`.] Audit row 13 re-imputes the same survey keys; the overlap is
+at most $0.4bn. As above, these changes are relative to the adopted main case and are not combined
+with the other checks.
+
+**A data defect found on the way.** SNAP's quality-control file cannot be used for national
+tabulations by ethnicity; its own codebook "recommend[s] against using RACETHi for national
+tabulations" (printed p. 82). Worse than missing codes, some states record Hispanic participants as
+not Hispanic. In New Jersey, 2.4% of participants are coded Hispanic against 47% of people in SNAP
+households in the ACS, and 0% of participants who live with an undocumented member (77.9% nationally).
+Twenty-five states holding 38.6% of SNAP dollars fail the lane's screen. Any national SNAP-by-ethnicity
+figure built on this file (a national route gives −$2.8bn here) is an artefact [CALCULATION:
+`derived/admin_snap_qc_validity.csv`, `admin_validity.csv`].
+
+Blocked: SSI (SSA publishes no ethnicity), SNAP ethnicity in Texas and New Mexico (64–66% unknown),
+Medicaid spending by ethnicity (no administrative publication). School meals were not done.
