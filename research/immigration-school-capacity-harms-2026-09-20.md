@@ -7,6 +7,16 @@ white children. The earlier **$0 classroom-harm conclusion is withdrawn**; the
 channel is **unpriced**. Small within-school peer estimates do not rule out a
 schoolwide capacity effect. [SOURCE/INFERENCE: evidence below]
 
+**Update, 2026-09-25: priced from the account's own response (proposed).** The adopted account
+charges the group's pupils 63–66% of average spending, so $51–59bn a year of school spending
+follows no one. The [dilution lane](../infra/immigration-fiscal/school_dilution_2026_09_24/RESULT.md)
+(ladder 222) finds most of it is instruction that did not keep pace, and prices that shortfall at
+about **$16bn a year** of other residents' pupils' present-value lifetime earnings (−$2bn to
++$36bn across JM's contexts). It sits beside the account, is not added to any total, and changes
+the September 20 label only if the operator adopts the
+[proposed decision](../decisions/2026-09-25-school-dilution-priced-beside.md). Peer effects stay
+unpriced. Section "Priced from the account's own response" below gives the detail.
+
 ## Conditional estimate of resource dilution
 
 **Observed-data follow-up:** [measured enrollment and pupil-level checks](immigration-school-peer-checks-2026-09-20.md)
@@ -117,6 +127,67 @@ verified both spending calibrations.
 Contrary/null/adverse findings are retained together; LLM source selection remains
 an instrument limitation. This is an evidence note, not essay narrative.
 
+## Priced from the account's own response (2026-09-25)
+
+The conditional scenario above asks what a given funding response would cost. The account already
+assumes one: CBO's 63–66%, under which the group's 8.487m pupils leave $51.2–58.7bn a year of
+average spending charged to no one. [CALCULATION: lane `price.py`, 87.14 × 0.37/0.63 and
+113.96 × 0.34/0.66]
+
+**What the free part is.** Census F-33 splits current spending by function. Within districts,
+pupil-weighted, with district-spell and state-by-year effects over FY2000–2019, spending follows
+enrollment at 0.45 in one year, 0.70 over three, 0.76 over four to five and 0.87 over 19 years.
+At the one-to-five-year horizons that match the account's response, instruction carries 50–58% of
+the shortfall, pupil and staff support about 11% and fixed costs (administration, buildings,
+transport) 31–38%. Over two decades districts close most of the instruction gap. Spending is sticky
+downward (0.57 on growth, 0.34 on decline in one year). [CALCULATION: lane `estimate_functions.py`,
+`decompose.py` → `derived/function_elasticities.csv`, `nonresponse_summary.csv`]
+
+**The price.** With JM's pooled effect ($1,000 per pupil for four years raises scores 0.0316 SD,
+divided by four for one year of exposure) and CFR's 12% of lifetime earnings per SD, one dollar of
+instruction lost for one pupil-year costs $0.570 of lifetime earnings in present value (JM's range
+−$0.072 to $1.208). At the account's response the instruction response is 0.650–0.678, and the
+shortfall across the 39.45m other pupils is:
+
+| Other residents' pupils, $bn a year (PV of lifetime earnings) | Low | Central | High | Relation |
+|---|---:|---:|---:|---|
+| Instruction, account's response | −2.1 | **16.1** | 35.5 | beside |
+| Pupil and staff support, account's response | −0.5 | 4.0 | 8.8 | beside |
+| Instruction, constant-elasticity form | −1.5 | 12.6 | 28.0 | overlaps |
+| Instruction, full-funding split (other pupils' share) | −1.1 | 9.2 | 20.2 | overlaps |
+| Instruction, 19-year within-district response | −0.5 | 3.6 | 7.7 | overlaps |
+| Class size, the same resource in teachers | | 2.6 | 8.8 | overlaps, never added |
+| Peer effects | unpriced | | | |
+
+[CALCULATION: lane `price.py` → `derived/winners_losers_rows.csv`, `pricing_by_horizon.csv`]
+
+The West bears half ($8.3bn, $1,097 per other pupil a year); the poorest fifth of districts
+$613 per other pupil against $153 in the least poor, and those pupils are themselves
+disproportionately Hispanic and low-income. [DATA: lane `derived/pricing_by_region_income.csv`]
+
+**The consistency condition.** If the 19-year within-district response held nationally, the free
+part would shrink to $18–23bn and the price to $3.6bn, but the account's school step would rise
+from $87–114bn to $120–150bn. The smaller the account's school charge, the larger the loss to
+other pupils; it cannot have both a low response and no dilution. Between states the lag lasts:
+CBO's design on F-33 state totals gives 0.65–0.79 unweighted, and the pupil-weighted and
+long-difference designs 0.27–0.56, all correlations. [FRAMING-SENSITIVE] Which horizon applies to
+a stock of pupils present for decades is a judgment, not an estimate.
+
+**Compensatory money.** Within districts over FY2001–2020, state formula aid (+$3,142 per pupil per
+unit Hispanic share) and Title I (+$501) rise with the group's share, but local revenue falls
+by more (−$6,215), and instruction per pupil does not change measurably (−$1,175, SE 1,459).
+The dilution comes through enrollment, not composition. [CALCULATION: lane `compensatory.py` →
+`derived/compensatory_estimates.csv`]
+
+**Limits.** The pricing is linear; 39% of the central figure sits in districts where the group is
+a majority, beyond JM's $1,000 range, which the two bounded forms ($9–13bn) avoid. JM's effect is
+per dollar of total spending applied to instruction, and test-score pricing omits attainment
+effects JM find at least twice as large. CFR's 12% is a conditional association in one large
+district. Group pupils by district are modelled weights. A shift-share instrument is weak (F ≤ 3.6)
+and unused. The contrary literature is mixed: Miami-Dade after Mariel (St. Clair 2024) and New
+York City's weighted funding in 2022–24 kept spending up with arrivals; IRCA-era panels (Sabet
+2023; Bernini & Sabet 2025) and a calibrated California model (Coen-Pirani) point to dilution.
+
 ## Revisions
 
 - 2026-09-20, pupil-level follow-up: actual state enrollment/staffing and ECLS-K
@@ -127,3 +198,9 @@ an instrument limitation. This is an evidence note, not essay narrative.
   second-generation exclusion, and the corresponding ladder81 and §13 summaries.
   The decisive distinction is peer exposure versus total resource capacity;
   [decision record](../decisions/2026-09-20-school-quality-unpriced.md).
+- 2026-09-25, priced from the account's own response: the dilution lane (ladder 222) splits the
+  school spending the account charges to no one ($51–59bn) and prices its instruction part at
+  about $16bn a year beside the account (−$2bn to +$36bn). Concept affected: the national
+  school-quality channel, from unpriced to a conditional price, pending the operator
+  ([proposed decision](../decisions/2026-09-25-school-dilution-priced-beside.md)). The $0
+  withdrawal and the peer-effect evidence above stand.

@@ -1,0 +1,25 @@
+{
+ "pv_per_dollar": {
+  "low": -0.0721255922663106,
+  "central": 0.5697921789038539,
+  "high": 1.2081036704607029
+ },
+ "pv_per_dollar_cfr_va": 0.4894368716225412,
+ "cpi": {
+  "2010": 218.0761666666667,
+  "2018": 251.0995,
+  "2024": 313.6981666666667
+ },
+ "pv_lifetime_earnings_2024usd": 750886.4700941643,
+ "group_pupils_m": 8.487,
+ "all_pupils_m": 47.938716,
+ "other_pupils_m": 39.451716,
+ "group_weighted_instruction_pp_fy2024": 9901.967217677782,
+ "group_weighted_current_pp_fy2024": 16965.689987487065,
+ "group_pupils_imputed_price_share": 0.08538723622407825,
+ "gamma": {
+  "central": -1174.960377,
+  "low": -4034.27241,
+  "high": 1684.351655
+ }
+}

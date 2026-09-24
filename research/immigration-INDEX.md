@@ -102,6 +102,10 @@ Beside the fiscal headline, as social costs:
   central once cheaper construction is counted, ladder 200);
 - road congestion costs other residents **$19bn** a year in time and fuel ($8–35bn), with road
   budgets fixed as in the main case.
+- diluted instruction costs other residents' pupils about **$16bn** a year in present-value
+  lifetime earnings (−$2bn to +$36bn), conditional on the account's own school response (ladder
+  222; [proposed](../decisions/2026-09-25-school-dilution-priced-beside.md)); it is not in the
+  totals below.
 
 Wages move **$66–166bn** from less- to more-educated natives. Fiscal plus social costs come to
 **$248–304bn a year** at central values ($210–337bn full span) on the September 24 case
