@@ -15,8 +15,8 @@ Resolution: channels measured on the CPS are carried per person. Channels whose 
 survey (ACS rents and capital income, SCF rental holdings) are placed in 1,000 percentile cells
 of that survey's own other-resident ranking and spread over the CPS persons in the same cell.
 Binned inputs (NCVS income brackets, CBO and ITEP tax groups, CEX quintiles) are spread within
-each bin by the microdata's distribution of the channel's base. Quintiles and deciles are for
-display only.
+each bin by the microdata's distribution of the channel's base. Quintiles, deciles and the
+percentile table (derived/channel_by_percentile.csv, central channels only) are for display only.
 
 Weights: (max(y_i, y_floor) / ybar)^(-eta), eta in {0, 1, 1.3, 1.4, 2}, ybar the unfloored
 person-weighted mean over other residents, y_floor the 5th percentile (1st and 10th as
@@ -65,6 +65,10 @@ FLOORS = {"p1": 0.01, "p2": 0.02, "p3": 0.03, "p5": 0.05, "p10": 0.10}
 CENTRAL_FLOOR = "p5"
 CELLS = 1000
 MEASURES = ("spm", "money")
+# Channels in the percentile table: the central ones and their totals. Its checks raise instead of
+# calling gate(), so gates.json (and the September 23 byte-for-byte rebuild) does not change.
+PERCENTILE_CHANNELS = ("fiscal_a", "fiscal_b", "wages", "renters", "landlords", "housing_net", "crime",
+                       "unreimbursed_care", "TOTAL_a", "TOTAL_b")
 
 # ---------------------------------------------------------------- pinned inputs, with sources
 TARGET_TOTAL = 40_896_574.15235156
@@ -778,7 +782,8 @@ def main():
     priv = d.PRIV.eq(1).to_numpy()
     R_money = rank_frame(d, "money")
 
-    tables = {k: [] for k in ("frame", "quintile", "decile", "weighted", "regress", "weights", "ranges")}
+    tables = {k: [] for k in ("frame", "quintile", "decile", "weighted", "regress", "weights", "ranges",
+                              "percentile")}
     notes = {}
     for measure in MEASURES:
         R = R_money if measure == "money" else rank_frame(d, measure)
@@ -977,6 +982,26 @@ def main():
                     row[f"equal_split_{fl}"] = row[f"person_{fl}"] / mean_w[(eta, fl)]
                 row["median_normalized_p5"] = row[f"person_{CENTRAL_FLOOR}"] * (R["median"] / R["ybar"]) ** eta
                 tables["weighted"].append(row)
+        # ---- percentiles: 100 person-weighted cells of other residents on this measure's ranking.
+        # A binned input keeps the within-bin shape of its microdata key; it gains no resolution.
+        p100 = bins(np.nan_to_num(R["p_other"][other]), 100)
+        if not np.array_equal(p100 // 20, R["q5"][other]):
+            raise SystemExit(f"[BLOCKED] percentiles of {measure} do not nest in its quintiles")
+        wv = pw[other]
+        persons_p = np.bincount(p100, weights=wv, minlength=100)
+        resources_p = np.bincount(p100, weights=wv * d.resources_pc.to_numpy()[other], minlength=100) / 1e9
+        ybar_p = np.bincount(p100, weights=wv * R["y"][other], minlength=100) / persons_p
+        for name in PERCENTILE_CHANNELS:
+            x = (pw * ch[name])[other]
+            net = np.bincount(p100, weights=x, minlength=100) / 1e9
+            loss = np.bincount(p100, weights=np.minimum(x, 0), minlength=100) / 1e9
+            if not np.allclose(net.reshape(5, 20).sum(1), by_bin(ch[name], d, R)["net"], rtol=1e-9, atol=1e-9):
+                raise SystemExit(f"[BLOCKED] percentiles of {name} ({measure}) do not sum to its quintiles")
+            for k in range(100):
+                tables["percentile"].append(dict(
+                    measure=measure, channel=name, percentile=k + 1, persons_m=persons_p[k] / 1e6,
+                    ybar_bin=ybar_p[k], bn=net[k], loss_bn=loss[k], usd_per_person=net[k] * 1e9 / persons_p[k],
+                    pct_of_resources=100 * net[k] / resources_p[k]))
         # A-4 treatment of victims' harm: population-average values of life and quality of life
         # are already income-weighted, so only the tangible part carries a weight; the intangible
         # part enters at face value on every scale (mean-normalized, median-normalized, equal split).
@@ -1032,6 +1057,7 @@ def main():
     fr.to_csv(out_dir / "income_frame.csv", index=False)
     pd.DataFrame(tables["quintile"]).to_csv(out_dir / "channel_by_quintile.csv", index=False)
     pd.DataFrame(tables["decile"]).to_csv(out_dir / "channel_by_decile.csv", index=False)
+    pd.DataFrame(tables["percentile"]).to_csv(out_dir / "channel_by_percentile.csv", index=False)
     pd.DataFrame(tables["weighted"]).to_csv(out_dir / "weighted_totals.csv", index=False)
     pd.DataFrame(tables["regress"]).to_csv(out_dir / "regressivity.csv", index=False)
     pd.DataFrame(tables["weights"]).to_csv(out_dir / "weights.csv", index=False)
