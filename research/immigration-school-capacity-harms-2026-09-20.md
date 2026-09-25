@@ -7,7 +7,9 @@ white children. The earlier **$0 classroom-harm conclusion is withdrawn**; the
 channel is **unpriced**. Small within-school peer estimates do not rule out a
 schoolwide capacity effect. [SOURCE/INFERENCE: evidence below]
 
-**Update, 2026-09-25: priced from the account's own response (proposed).** The adopted account
+**Update, 2026-09-25: priced from the account's own response (adopted as priced beside).** [The
+operator adopted option 2 on 2026-09-25; option 3, adding it to the fiscal-plus-social total,
+stays open.] The adopted account
 charges the group's pupils 63–66% of average spending, so $51–59bn a year of school spending
 follows no one. The [dilution lane](../infra/immigration-fiscal/school_dilution_2026_09_24/RESULT.md)
 (ladder 222) finds most of it is instruction that did not keep pace, and prices that shortfall at
@@ -204,3 +206,7 @@ York City's weighted funding in 2022–24 kept spending up with arrivals; IRCA-e
   school-quality channel, from unpriced to a conditional price, pending the operator
   ([proposed decision](../decisions/2026-09-25-school-dilution-priced-beside.md)). The $0
   withdrawal and the peer-effect evidence above stand.
+- 2026-09-25 (later): the operator adopted the relabel (option 2): the resource channel is priced
+  beside the account at about $16bn and kept out of every total; adding it to the fiscal-plus-social
+  total (option 3) stays open ([decision](../decisions/2026-09-25-school-dilution-priced-beside.md)).
+  Concept affected: the school-quality channel's status, from proposed to adopted as priced beside.
