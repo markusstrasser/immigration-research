@@ -52,8 +52,8 @@
   function verdict(row) {
     if (row.id === 'production') return `turns at ${range(row.roots, 'bn')}`
     if (!row.flipsInRange) {
-      if (row.id === 'roads') return `only rises: ${range(row.atEnd, 'bn')} at 100%`
-      return `at ${fmt(row, row.axis[0])}: still ${range(row.atStart, 'bn')}`
+      if (row.id === 'roads') return `at 100%: ${range(row.atEnd, 'bn')} worse off`
+      return `at ${fmt(row, row.axis[0])}: still ${range(row.atStart, 'bn')} worse off`
     }
     return (row.direction > 0 ? 'turns below ' : 'turns above ') + range(row.roots, row.unit)
   }
@@ -76,7 +76,7 @@
       everyone else would still be <span class="num">{range(schools.atStart, 'bn')}</span> a year worse off.
     </p>
     <p class="lede">
-      Blue takes one of four large moves: every public service at once growing by less than
+      Turning the bar blue takes one of four large moves: every public service at once growing by less than
       <span class="num">{range(allRow.roots, 'pct')}</span> of its average cost; benefits
       <span class="num">{range([1 - ben.roots[1], 1 - ben.roots[0]], 'pct')}</span> below what records show; taxes
       <span class="num">{range([tax.roots[0] - 1, tax.roots[1] - 1], 'pct')}</span> above what records show; or a gain from their work of
@@ -85,12 +85,6 @@
 
     <div class="scroll">
     <svg class="wide" viewBox="0 0 {W} {H}" role="img" aria-label="For each assumption, where along its range the cost to everyone else turns into a gain">
-      <defs>
-        <pattern id="flip-mixed" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-          <rect width="5" height="5" fill="#bbd4ee" />
-          <rect width="2.5" height="5" fill="#f2cabc" />
-        </pattern>
-      </defs>
 
       {#each layout as g}
         <text class="it" x="0" y={g.head + 18} font-size="13">{g.title}</text>
@@ -104,7 +98,7 @@
             {@const seg = row.strip[k]}
             {#if seg && seg[1] > seg[0]}
               <rect x={tx(row, seg[0])} y={mid - 6} width={tx(row, seg[1]) - tx(row, seg[0])} height="11"
-                fill={k === 'cost' ? '#f2cabc' : k === 'gain' ? '#bbd4ee' : 'url(#flip-mixed)'} />
+                fill={k === 'cost' ? '#f2cabc' : k === 'gain' ? '#bbd4ee' : '#ecdcae'} />
             {/if}
           {/each}
           <rect x={t0} y={mid - 6} width={t1 - t0} height="11" fill="none" stroke="#dcd8c8" stroke-width="0.8" />
@@ -149,7 +143,7 @@
 
   <aside class="side">
     <p>
-      The black mark is the main case. Hatching means the answer depends on the main case’s open choices,
+      The black mark is the main case. Ochre means the answer depends on the main case’s open choices,
       such as how taxes are split and which share of education spending is schools.
     </p>
     <p>

@@ -12,14 +12,15 @@
   const rowH = 48
   const H = top + d.rows.length * rowH + 44
   const ticks = [-100, 0, 100, 200, 300, 400, 500, 600]
-  const tick = (v) => (v === 0 ? '0' : (v < 0 ? '−$' : '$') + Math.abs(v))
+  // Magnitudes only; the ends of the axis say which way is worse off.
+  const tick = (v) => (v === 0 ? '0' : '$' + Math.abs(v))
 
-  // "$201–246bn a year" for a cost, "a gain of $56–67bn" for a gain, "about $0" near zero.
+  // "$201–246bn worse off", "$56–67bn better off", "about $0": the direction in words, never a sign.
   const n = (v) => Math.round(Math.abs(v))
   function value(c) {
     if (c[0] > 0 && c[1] < 1) return 'about $0'
-    if (c[1] < 0) return `a gain of $${n(c[1])}–${n(c[0])}bn`
-    return `$${n(c[0])}–${n(c[1])}bn`
+    if (c[1] < 0) return `$${n(c[1])}–${n(c[0])}bn better off`
+    return `$${n(c[0])}–${n(c[1])}bn worse off`
   }
   const main = d.rows.find((r) => r.central)
   const gains = d.rows.filter((r) => r.cost[1] < 0)
@@ -45,8 +46,8 @@
         <line x1={x(t)} x2={x(t)} y1={top - 22} y2={H - 38} stroke={t === 0 ? '#111' : '#efece2'} stroke-width={t === 0 ? 0.9 : 1} />
         <text class="faint num" x={x(t)} y={H - 24} text-anchor="middle" font-size="11">{tick(t)}</text>
       {/each}
-      <text class="faint it" x={x(0) + 5} y={H - 6} font-size="11">cost to everyone else, $bn a year →</text>
-      <text class="faint it" x={x(0) - 5} y={H - 6} text-anchor="end" font-size="11">← gain</text>
+      <text class="faint it" x={x(0) + 5} y={H - 6} font-size="11">everyone else worse off, $bn a year →</text>
+      <text class="faint it" x={x(0) - 5} y={H - 6} text-anchor="end" font-size="11">← better off</text>
 
       <!-- Context: the matrix's two families. -->
       <rect x={x(d.matrix.frozen[0])} y={top - 14} width={x(d.matrix.frozen[1]) - x(d.matrix.frozen[0])} height="5" fill="#bbd4ee" />
