@@ -1,4 +1,114 @@
 {
  "generatedBy": "proto/conventions.cjs",
- "stub": true
+ "rows": [
+  {
+   "id": "no_services",
+   "label": "No public services charged",
+   "what": "Taxes, benefits and the gain from their work. No public service is charged.",
+   "central": false,
+   "cost": [
+    -79.99,
+    -65.02
+   ]
+  },
+  {
+   "id": "taxes_minus_benefits",
+   "label": "Taxes minus benefits",
+   "what": "Taxes paid against benefits received. No public services, no gain from their work.",
+   "central": false,
+   "cost": [
+    -66.67,
+    -56.23
+   ]
+  },
+  {
+   "id": "production_only",
+   "label": "Private gain from their work only",
+   "what": "Others' gain in wages and profits. Every budget line is left out, even taxes on it.",
+   "central": false,
+   "cost": [
+    0.16,
+    0.24
+   ]
+  },
+  {
+   "id": "repo_central",
+   "label": "Main case as published September 20",
+   "what": "As published September 20: general administration not charged, data not yet corrected.",
+   "central": false,
+   "cost": [
+    165.12,
+    197.38
+   ]
+  },
+  {
+   "id": "repo_central_gg",
+   "label": "Main case",
+   "what": "Schools add 63–66% of per-pupil cost, other services grow fully, administration 59–84%.",
+   "central": true,
+   "cost": [
+    200.88,
+    246.32
+   ],
+   "outer": [
+    172.27,
+    276.15
+   ]
+  },
+  {
+   "id": "proportional",
+   "label": "All services at average cost",
+   "what": "Every public service grows one for one with the population.",
+   "central": false,
+   "cost": [
+    302.97,
+    336.42
+   ]
+  },
+  {
+   "id": "average_cost_everything",
+   "label": "Everything at average cost",
+   "what": "A per-head share of everything, including defense and interest on debt already issued.",
+   "central": false,
+   "cost": [
+    562.4,
+    577.42
+   ]
+  }
+ ],
+ "matrix": {
+  "growing": [
+   102.4,
+   354.3
+  ],
+  "frozen": [
+   -87.7,
+   -1.8
+  ],
+  "combinations": 32
+ },
+ "staircase": {
+  "tally": [
+   -70.08,
+   -60.25
+  ]
+ },
+ "authors": [
+  {
+   "name": "Noah Smith",
+   "closest": "No public services charged"
+  },
+  {
+   "name": "Matthew Yglesias",
+   "closest": "No public services charged"
+  },
+  {
+   "name": "Bryan Caplan",
+   "closest": null
+  },
+  {
+   "name": "Nicholas Decker",
+   "closest": "Private gain from their work only"
+  }
+ ]
 }
