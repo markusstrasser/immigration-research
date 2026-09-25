@@ -34,18 +34,21 @@
     <p class="kicker">Complete account and the costs beside it · by income percentile</p>
     <h2>The top 1% pays most under one rule and gains most under the other</h2>
     <p class="lede">
-      Each point is one percentile of other US residents, poorest on the left, and its height their
-      average net dollars a person a year. Paid in proportion to taxes, every percentile loses:
-      <span class="num">{tens(s.aBelowTop[0])}</span> to <span class="num">{tens(s.aBelowTop[1])}</span> a person up to
-      the 99th, and <span class="num">{usd(s.aTop).slice(2)}</span> in the top 1%. Paid as equal cuts per person, the
-      bottom three fifths lose about <span class="num">{fifty(s.bBottom60)}</span> each, and from the
-      {s.bAheadFrom}th percentile up the average person comes out ahead, <span class="num">{usd(s.bTop)}</span> in the
-      top 1%.
+      Each point is one percentile of other US residents, poorest on the left. Its height is how much
+      better off (above zero) or worse off (below zero) the average person in it is, in dollars a year.
+      If taxes pay the bill, in proportion to what each person pays, every percentile is worse off: by
+      <span class="num">{tens(s.aBelowTop[0])}</span> to <span class="num">{tens(s.aBelowTop[1])}</span> a person up to the
+      99th, and by <span class="num">{usd(s.aTop).slice(2)}</span> in the top 1%. If equal cuts to public services pay
+      it, <span class="num">{usd(P.top1.b.fiscal).slice(2)}</span> for every person, the bottom three fifths are worse off by
+      about <span class="num">{fifty(s.bBottom60)}</span> each, and from the {s.bAheadFrom}th percentile up the
+      average person is better off, by <span class="num">{usd(s.bTop).slice(2)}</span> in the top 1%.
     </p>
 
     <div class="scroll">
     <svg class="wide" viewBox="0 0 {W} {H}" role="img" aria-label="Net dollars per person a year by income percentile, under two ways of paying the fiscal cost">
-      <text class="faint it" x={x0} y="10" font-size="11.5">net $ per person a year</text>
+      <text class="faint it" x={x0} y="10" font-size="11.5">better (+) or worse (−) off, $ per person a year</text>
+      <text class="faint it" x={x(64)} y={y(0) - 7} font-size="11">better off ↑</text>
+      <text class="faint it" x={x(64)} y={y(0) + 15} font-size="11">worse off ↓</text>
       {#each [-2000, -1000, 0, 1000, 2000, 3000] as t}
         <line x1={x0 - 6} x2={x1} y1={y(t)} y2={y(t)} stroke={t === 0 ? '#111' : '#efece2'} stroke-width={t === 0 ? 0.8 : 1} />
         <text class="faint num" x={x0 - 10} y={y(t) + 4} text-anchor="end" font-size="11">{k(t)}</text>
@@ -72,12 +75,12 @@
       {#if aOff}
         <line x1={x(99)} y1={y(a[98])} x2={x(100)} y2={bottom} stroke="#57544c" stroke-width="1.4" stroke-dasharray="3 2" />
         <path d="M {x(100) - 4} {bottom - 7} L {x(100)} {bottom} L {x(100) + 4} {bottom - 7}" fill="none" stroke="#57544c" stroke-width="1.2" />
-        <text class="muted num halo" x={x(100) - 8} y={bottom - 10} text-anchor="end" font-size="11.5">top 1%: {usd(a[99])}, off the scale</text>
+        <text class="muted num halo" x={x(100) - 8} y={bottom - 10} text-anchor="end" font-size="11.5">top 1%: {usd(a[99])} (off the scale)</text>
       {/if}
-      <text class="muted num halo" x={x(100) + 7} y={y(b[99]) + 4} font-size="11.5">{usd(b[99])}</text>
+      <text class="muted num halo" x={x(100) - 8} y={y(b[99]) + 4} text-anchor="end" font-size="11.5">top 1%: {usd(b[99])}</text>
 
-      <text class="muted it halo" x={x(24)} y={y(a[23]) - 12} font-size="11.5">paid in proportion to taxes</text>
-      <text class="muted it halo" x={x(24)} y={y(b[23]) + 20} font-size="11.5">paid as equal cuts per person</text>
+      <text class="muted it halo" x={x(24)} y={y(a[23]) - 12} font-size="11.5">if taxes pay the bill</text>
+      <text class="muted it halo" x={x(24)} y={y(b[23]) + 20} font-size="11.5">if equal service cuts pay the bill</text>
     </svg>
     </div>
     <p class="note">
@@ -93,9 +96,11 @@
       in four or five comes out ahead (ladder 226).
     </p>
     <p>
-      The top 1% under tax shares, per person: fiscal cost {usd(P.top1.a.fiscal)}, housing {usd(P.top1.a.housing_net)}
-      (landlords’ receipts less rent), wages {usd(P.top1.a.wages)}, crime {usd(P.top1.a.crime)}, hospital care
-      {usd(P.top1.a.unreimbursed_care)}. Its tax bill follows CBO’s published federal share for the top 1%.
+      The top 1%, per person a year. If taxes pay: the bill {usd(P.top1.a.fiscal)}, housing {usd(P.top1.a.housing_net)}
+      (landlords’ extra rent receipts less rent paid), wages {usd(P.top1.a.wages)}, crime {usd(P.top1.a.crime)},
+      hospital care {usd(P.top1.a.unreimbursed_care)}. If service cuts pay: the same except the bill,
+      {usd(P.top1.b.fiscal)}. Its tax share follows CBO’s published federal share for the top 1%: 27% of federal
+      taxes on 18% of income.
     </p>
     <p>
       Inputs published in bins (CBO and ITEP tax groups, NCVS income brackets) are spread inside each bin
