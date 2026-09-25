@@ -335,6 +335,57 @@ const whoPays = CHANNELS.map((c) => {
     `${fa.totalBn} vs ${faExpected.toFixed(2)}`);
 }
 
+/* ---------------------------------------------------------------- by percentile ------------- */
+
+console.log("\n[by percentile]");
+const pctRows = readCsv(path.join(FISCAL, "distribution_weights_2026_09_23", "derived", "channel_by_percentile.csv"))
+  .filter((r) => r.measure === "spm");
+const pctSeries = (channel) => {
+  const rows = pctRows.filter((r) => r.channel === channel).sort((x, y) => Number(x.percentile) - Number(y.percentile));
+  if (rows.length !== 100 || rows.some((r, i) => Number(r.percentile) !== i + 1)) {
+    throw new Error(`channel_by_percentile.csv: ${channel} lacks 100 percentiles`);
+  }
+  return rows;
+};
+const byPercentile = { totalBn: null, series: {}, top1: {} };
+for (const conv of ["a", "b"]) {
+  const rows = pctSeries(`TOTAL_${conv}`);
+  // The percentile table must reproduce the quintile table the who-pays panels read, fifth by fifth.
+  const quint = readCsv(path.join(FISCAL, "distribution_weights_2026_09_23", "derived", "channel_by_quintile.csv"))
+    .filter((r) => r.measure === "spm" && r.channel === `TOTAL_${conv}`);
+  const qBn = (k) => Number(quint.find((r) => r.quintile === String(k)).bn);
+  const sums = [0, 1, 2, 3, 4].map((k) => rows.slice(20 * k, 20 * k + 20).reduce((s, r) => s + Number(r.bn), 0));
+  gate(`percentiles sum to the quintiles, TOTAL_${conv}`, sums.every((s, k) => near(s, qBn(k + 1), 1e-6)),
+    sums.map((s) => s.toFixed(2)).join(" / "));
+  const total = sums.reduce((s, x) => s + x, 0);
+  gate(`percentiles sum to the total, TOTAL_${conv}`, near(total, qBn(0), 1e-6), total.toFixed(2));
+  byPercentile.totalBn = round(total, 2);
+  byPercentile.series[conv] = rows.map((r) => Math.round(Number(r.usd_per_person)));
+  byPercentile.top1[conv] = Object.fromEntries(["fiscal_" + conv, "wages", "housing_net", "crime", "unreimbursed_care"]
+    .map((ch) => [ch.startsWith("fiscal") ? "fiscal" : ch, Math.round(Number(pctSeries(ch)[99].usd_per_person))]));
+}
+{
+  const persons = pctSeries("TOTAL_a").reduce((s, r) => s + Number(r.persons_m), 0);
+  gate("percentiles hold the 295.83m other residents", near(persons, 295.83, 0.01), persons.toFixed(3) + "m");
+  const a = byPercentile.series.a, b = byPercentile.series.b;
+  const a99 = a.slice(0, 99);
+  // First percentile from which every higher percentile is ahead under per-person cuts.
+  let cross = 100;
+  while (cross > 1 && b[cross - 2] > 0) cross -= 1;
+  byPercentile.stats = {
+    aBelowTop: [Math.max(...a99), Math.min(...a99)],
+    aTop: a[99],
+    bBottom60: Math.round(b.slice(0, 60).reduce((s, x) => s + x, 0) / 60),
+    bAheadFrom: cross,
+    bTop: b[99],
+  };
+  gate("top 1% under tax shares sums its channels", near(Object.values(byPercentile.top1.a).reduce((s, x) => s + x, 0), a[99], 3),
+    JSON.stringify(byPercentile.top1.a));
+  gate("under per-person cuts, the ahead percentiles are the top ones only", b.slice(cross - 1).every((x) => x > 0) &&
+    b.slice(0, cross - 1).every((x) => x <= 0), `ahead from percentile ${cross}`);
+  console.log(`    tax shares: ${a99[0]} … ${a[98]}, top 1% ${a[99]}; per-person cuts: ${b[0]} … ahead from ${cross}, top 1% ${b[99]}`);
+}
+
 /* ---------------------------------------------------------------- crime --------------------- */
 
 console.log("\n[crime]");
@@ -437,6 +488,7 @@ const out = {
   matrix: { columns: GG_COLS, productionSpan: PROD_SPAN.map((x) => round(x, 2)), receipts: RECEIPTS,
     justiceKeys: JUSTICE_KEYS, ucKeys: UC_KEYS, rows: matrix },
   whoPays,
+  byPercentile,
   crime,
   origins,
   backcast,

@@ -6,6 +6,7 @@
   import Skills from './lib/Skills.svelte'
   import Places from './lib/Places.svelte'
   import WhoPays from './lib/WhoPays.svelte'
+  import Percentiles from './lib/Percentiles.svelte'
   import Crime from './lib/Crime.svelte'
   import Sentences from './lib/Sentences.svelte'
   import fig from './generated/figures.json'
@@ -35,6 +36,7 @@
     <a href="#skills">Schooling</a>
     <a href="#places">Places</a>
     <a href="#whopays">Who pays</a>
+    <a href="#percentiles">By percentile</a>
     <a href="#crime">Crime</a>
     <a href="#sentences">In a sentence</a>
   </nav>
@@ -46,6 +48,7 @@
   <Skills />
   <Places />
   <WhoPays />
+  <Percentiles />
   <Crime />
   <Sentences />
 </main>
