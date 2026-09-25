@@ -1,4 +1,476 @@
 {
  "generatedBy": "proto/flip.cjs",
- "stub": true
+ "main": [
+  200.88,
+  246.32
+ ],
+ "services": [
+  {
+   "id": "schools",
+   "label": "Schools",
+   "what": "share of the usual per-pupil cost added for their children",
+   "unit": "pct",
+   "axis": [
+    0,
+    1
+   ],
+   "direction": 1,
+   "main": [
+    0.63,
+    0.66
+   ],
+   "atStart": [
+    95.17,
+    152.2
+   ],
+   "atEnd": [
+    262.17,
+    295.62
+   ],
+   "roots": [
+    -1.0673,
+    -0.5672
+   ],
+   "flipsInRange": false,
+   "strip": {
+    "gain": [
+     0,
+     0
+    ],
+    "mixed": [
+     0,
+     0
+    ],
+    "cost": [
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "colleges",
+   "label": "Colleges and other education",
+   "what": "how much the budget grows for them",
+   "unit": "pct",
+   "axis": [
+    0,
+    1
+   ],
+   "direction": 1,
+   "main": [
+    1,
+    1
+   ],
+   "atStart": [
+    157.13,
+    210.83
+   ],
+   "atEnd": [
+    200.88,
+    246.32
+   ],
+   "roots": [
+    -8.0631,
+    -2.9254
+   ],
+   "flipsInRange": false,
+   "strip": {
+    "gain": [
+     0,
+     0
+    ],
+    "mixed": [
+     0,
+     0
+    ],
+    "cost": [
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "police",
+   "label": "Police, courts and prisons",
+   "what": "charged by how much the group uses them",
+   "unit": "pct",
+   "axis": [
+    0,
+    1
+   ],
+   "direction": 1,
+   "main": [
+    1,
+    1
+   ],
+   "atStart": [
+    131.22,
+    176.66
+   ],
+   "atEnd": [
+    200.88,
+    246.32
+   ],
+   "roots": [
+    -2.5362,
+    -1.8838
+   ],
+   "flipsInRange": false,
+   "strip": {
+    "gain": [
+     0,
+     0
+    ],
+    "mixed": [
+     0,
+     0
+    ],
+    "cost": [
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "health",
+   "label": "Public health services",
+   "what": "how much the budget grows for them",
+   "unit": "pct",
+   "axis": [
+    0,
+    1
+   ],
+   "direction": 1,
+   "main": [
+    1,
+    1
+   ],
+   "atStart": [
+    183.52,
+    228.97
+   ],
+   "atEnd": [
+    200.88,
+    246.32
+   ],
+   "roots": [
+    -13.196,
+    -10.577
+   ],
+   "flipsInRange": false,
+   "strip": {
+    "gain": [
+     0,
+     0
+    ],
+    "mixed": [
+     0,
+     0
+    ],
+    "cost": [
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "other",
+   "label": "Welfare offices, housing, community",
+   "what": "how much the budget grows for them",
+   "unit": "pct",
+   "axis": [
+    0,
+    1
+   ],
+   "direction": 1,
+   "main": [
+    1,
+    1
+   ],
+   "atStart": [
+    169.58,
+    216.58
+   ],
+   "atEnd": [
+    200.88,
+    246.32
+   ],
+   "roots": [
+    -7.2839,
+    -5.4193
+   ],
+   "flipsInRange": false,
+   "strip": {
+    "gain": [
+     0,
+     0
+    ],
+    "mixed": [
+     0,
+     0
+    ],
+    "cost": [
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "gg",
+   "label": "General administration",
+   "what": "how much it grows with the population",
+   "unit": "pct",
+   "axis": [
+    0,
+    1
+   ],
+   "direction": 1,
+   "main": [
+    0.59,
+    0.84
+   ],
+   "atStart": [
+    173.11,
+    206.79
+   ],
+   "atEnd": [
+    220.17,
+    253.85
+   ],
+   "roots": [
+    -4.3943,
+    -3.6786
+   ],
+   "flipsInRange": false,
+   "strip": {
+    "gain": [
+     0,
+     0
+    ],
+    "mixed": [
+     0,
+     0
+    ],
+    "cost": [
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "roads",
+   "label": "Roads, transport, parks, culture",
+   "what": "held fixed in the main case",
+   "unit": "pct",
+   "axis": [
+    0,
+    1
+   ],
+   "direction": 1,
+   "main": [
+    0,
+    0
+   ],
+   "atStart": [
+    200.88,
+    246.32
+   ],
+   "atEnd": [
+    241.68,
+    287.12
+   ],
+   "roots": [
+    -6.0368,
+    -4.9231
+   ],
+   "flipsInRange": false,
+   "strip": {
+    "gain": [
+     0,
+     0
+    ],
+    "mixed": [
+     0,
+     0
+    ],
+    "cost": [
+     0,
+     1
+    ]
+   }
+  }
+ ],
+ "together": {
+  "id": "all",
+  "label": "Every public service",
+  "what": "at one common share of its average cost",
+  "unit": "pct",
+  "axis": [
+   0,
+   1
+  ],
+  "direction": 1,
+  "main": null,
+  "atStart": [
+   -56.33,
+   -16.94
+  ],
+  "atEnd": [
+   295.21,
+   339.23
+  ],
+  "roots": [
+   0.0476,
+   0.1602
+  ],
+  "flipsInRange": true,
+  "strip": {
+   "gain": [
+    0,
+    0.0476
+   ],
+   "mixed": [
+    0.0476,
+    0.1602
+   ],
+   "cost": [
+    0.1602,
+    1
+   ]
+  }
+ },
+ "measured": [
+  {
+   "id": "benefits",
+   "label": "Benefits they draw",
+   "what": "as a multiple of what records show",
+   "unit": "times",
+   "axis": [
+    0,
+    2
+   ],
+   "direction": 1,
+   "main": [
+    1,
+    1
+   ],
+   "atStart": [
+    -137.27,
+    -82.56
+   ],
+   "atEnd": [
+    539.03,
+    575.2
+   ],
+   "roots": [
+    0.251,
+    0.406
+   ],
+   "flipsInRange": true,
+   "strip": {
+    "gain": [
+     0,
+     0.251
+    ],
+    "mixed": [
+     0.251,
+     0.406
+    ],
+    "cost": [
+     0.406,
+     2
+    ]
+   }
+  },
+  {
+   "id": "taxes",
+   "label": "Taxes they pay",
+   "what": "as a multiple of what records show",
+   "unit": "times",
+   "axis": [
+    0,
+    2
+   ],
+   "direction": -1,
+   "main": [
+    1,
+    1
+   ],
+   "atStart": [
+    587.67,
+    629.5
+   ],
+   "atEnd": [
+    -195.23,
+    -127.94
+   ],
+   "roots": [
+    1.5071,
+    1.6581
+   ],
+   "flipsInRange": true,
+   "strip": {
+    "cost": [
+     0,
+     1.5071
+    ],
+    "mixed": [
+     1.5071,
+     1.6581
+    ],
+    "gain": [
+     1.6581,
+     2
+    ]
+   }
+  },
+  {
+   "id": "production",
+   "label": "Gain from their work",
+   "what": "wages, profits and the taxes on them, $bn a year",
+   "unit": "bn",
+   "axis": [
+    0,
+    300
+   ],
+   "direction": -1,
+   "main": [
+    8.79,
+    13.32
+   ],
+   "executed": [
+    5.98,
+    21.08
+   ],
+   "roots": [
+    214.2,
+    255.1
+   ],
+   "flipsInRange": true,
+   "strip": {
+    "cost": [
+     0,
+     214.2
+    ],
+    "mixed": [
+     214.2,
+     255.1
+    ],
+    "gain": [
+     255.1,
+     300
+    ]
+   }
+  }
+ ],
+ "others": {
+  "range": [
+   173.9,
+   256.7
+  ],
+  "taxRules": 8,
+  "justiceKeys": 4,
+  "careKeys": 5,
+  "productionModels": 432
+ }
 }
