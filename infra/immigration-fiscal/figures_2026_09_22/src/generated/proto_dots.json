@@ -1,4 +1,2178 @@
 {
  "generatedBy": "proto/dots.cjs",
- "stub": true
+ "unitBn": 1,
+ "specCount": 64,
+ "constantsLabel": "Care work, shelter and audit rows 8–10 (corrections counted in full)",
+ "spec": {
+  "index": 56,
+  "allocation": "shared",
+  "normalization": "gdp",
+  "share": 0.8652,
+  "school": 0.63,
+  "gg": 0.59,
+  "uc": "uninsured_use_low",
+  "justice": "use",
+  "mainCost": 200.8752
+ },
+ "otherEnd": {
+  "index": 7,
+  "allocation": "personal",
+  "normalization": "cash",
+  "share": 0.7153,
+  "school": 0.66,
+  "gg": 0.84,
+  "uc": "uninsured_use_high",
+  "justice": "use",
+  "mainCost": 246.3184
+ },
+ "band": {
+  "main": [
+   200.8752,
+   246.3184
+  ],
+  "proportional": [
+   302.972,
+   336.4219
+  ]
+ },
+ "families": [
+  {
+   "id": "taxes",
+   "side": "in",
+   "label": "Taxes they pay",
+   "parts": [
+    "taxes"
+   ]
+  },
+  {
+   "id": "gain",
+   "side": "in",
+   "label": "Gain from their work",
+   "parts": [
+    "gain"
+   ]
+  },
+  {
+   "id": "benefits",
+   "side": "out",
+   "label": "Benefits",
+   "parts": [
+    "benefits",
+    "hospital"
+   ]
+  },
+  {
+   "id": "education",
+   "side": "out",
+   "label": "Schools and colleges",
+   "parts": [
+    "schools",
+    "colleges"
+   ]
+  },
+  {
+   "id": "police",
+   "side": "out",
+   "label": "Police, courts, prisons",
+   "parts": [
+    "police"
+   ]
+  },
+  {
+   "id": "services",
+   "side": "out",
+   "label": "Health, welfare offices, housing",
+   "parts": [
+    "health",
+    "welfare"
+   ]
+  },
+  {
+   "id": "admin",
+   "side": "out",
+   "label": "General administration",
+   "parts": [
+    "admin"
+   ]
+  },
+  {
+   "id": "roads",
+   "side": "out",
+   "label": "Roads, transport, parks",
+   "parts": [
+    "roads"
+   ]
+  }
+ ],
+ "parts": {
+  "taxes": {
+   "label": "taxes they pay",
+   "dial": null
+  },
+  "gain": {
+   "label": "gain from their work",
+   "dial": "production"
+  },
+  "benefits": {
+   "label": "benefit programmes",
+   "dial": null
+  },
+  "hospital": {
+   "label": "unpaid hospital care",
+   "dial": "uc"
+  },
+  "schools": {
+   "label": "schools",
+   "dial": "schools"
+  },
+  "colleges": {
+   "label": "colleges and other education",
+   "dial": "colleges"
+  },
+  "police": {
+   "label": "police, courts, prisons",
+   "dial": "police"
+  },
+  "health": {
+   "label": "public health",
+   "dial": "health"
+  },
+  "welfare": {
+   "label": "welfare offices, housing, community",
+   "dial": "other"
+  },
+  "admin": {
+   "label": "general administration",
+   "dial": "gg"
+  },
+  "roads": {
+   "label": "roads, transport, parks, culture",
+   "dial": "delayed"
+  }
+ },
+ "steps": [
+  {
+   "id": "tally",
+   "label": "Taxes paid minus benefits received",
+   "note": "no services, no gain from their work",
+   "main": false,
+   "beyond": false,
+   "model": "base",
+   "constants": 0,
+   "cost": -70.0777,
+   "band": [
+    -70.0777,
+    -60.2531
+   ],
+   "left": 444.8138,
+   "right": 374.7361,
+   "dots": {
+    "left": 445,
+    "right": 375,
+    "gap": -70,
+    "error": 0.0777,
+    "roundedMatch": true
+   },
+   "fam": {
+    "taxes": {
+     "counted": 444.8138,
+     "full": 444.8138,
+     "heap": 445,
+     "pool": 0,
+     "parts": {
+      "taxes": {
+       "counted": 444.8138,
+       "full": 444.8138,
+       "heap": 445,
+       "pool": 0
+      }
+     }
+    },
+    "gain": {
+     "counted": 0,
+     "full": 13.3226,
+     "heap": 0,
+     "pool": 13,
+     "parts": {
+      "gain": {
+       "counted": 0,
+       "full": 13.3226,
+       "heap": 0,
+       "pool": 13
+      }
+     }
+    },
+    "benefits": {
+     "counted": 374.7361,
+     "full": 378.3877,
+     "heap": 375,
+     "pool": 4,
+     "parts": {
+      "benefits": {
+       "counted": 374.7361,
+       "full": 374.7361,
+       "heap": 375,
+       "pool": 0
+      },
+      "hospital": {
+       "counted": 0,
+       "full": 3.6516,
+       "heap": 0,
+       "pool": 4
+      }
+     }
+    },
+    "education": {
+     "counted": 0,
+     "full": 193.3655,
+     "heap": 0,
+     "pool": 193,
+     "parts": {
+      "schools": {
+       "counted": 0,
+       "full": 167.2922,
+       "heap": 0,
+       "pool": 167
+      },
+      "colleges": {
+       "counted": 0,
+       "full": 26.0732,
+       "heap": 0,
+       "pool": 26
+      }
+     }
+    },
+    "police": {
+     "counted": 0,
+     "full": 68.369,
+     "heap": 0,
+     "pool": 68,
+     "parts": {
+      "police": {
+       "counted": 0,
+       "full": 68.369,
+       "heap": 0,
+       "pool": 68
+      }
+     }
+    },
+    "services": {
+     "counted": 0,
+     "full": 54.6275,
+     "heap": 0,
+     "pool": 55,
+     "parts": {
+      "health": {
+       "counted": 0,
+       "full": 23.535,
+       "heap": 0,
+       "pool": 24
+      },
+      "welfare": {
+       "counted": 0,
+       "full": 31.0925,
+       "heap": 0,
+       "pool": 31
+      }
+     }
+    },
+    "admin": {
+     "counted": 0,
+     "full": 48.2913,
+     "heap": 0,
+     "pool": 48,
+     "parts": {
+      "admin": {
+       "counted": 0,
+       "full": 48.2913,
+       "heap": 0,
+       "pool": 48
+      }
+     }
+    },
+    "roads": {
+     "counted": 0,
+     "full": 42.7938,
+     "heap": 0,
+     "pool": 43,
+     "parts": {
+      "roads": {
+       "counted": 0,
+       "full": 42.7938,
+       "heap": 0,
+       "pool": 43
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "production",
+   "label": "Gain from their work",
+   "note": "wages, profits and the taxes on them",
+   "main": false,
+   "beyond": false,
+   "model": "base",
+   "constants": 0,
+   "cost": -83.4002,
+   "band": [
+    -83.4002,
+    -69.0437
+   ],
+   "left": 458.1364,
+   "right": 374.7361,
+   "dots": {
+    "left": 458,
+    "right": 375,
+    "gap": -83,
+    "error": 0.4002,
+    "roundedMatch": true
+   },
+   "fam": {
+    "taxes": {
+     "counted": 444.8138,
+     "full": 444.8138,
+     "heap": 445,
+     "pool": 0,
+     "parts": {
+      "taxes": {
+       "counted": 444.8138,
+       "full": 444.8138,
+       "heap": 445,
+       "pool": 0
+      }
+     }
+    },
+    "gain": {
+     "counted": 13.3226,
+     "full": 13.3226,
+     "heap": 13,
+     "pool": 0,
+     "parts": {
+      "gain": {
+       "counted": 13.3226,
+       "full": 13.3226,
+       "heap": 13,
+       "pool": 0
+      }
+     }
+    },
+    "benefits": {
+     "counted": 374.7361,
+     "full": 378.3877,
+     "heap": 375,
+     "pool": 4,
+     "parts": {
+      "benefits": {
+       "counted": 374.7361,
+       "full": 374.7361,
+       "heap": 375,
+       "pool": 0
+      },
+      "hospital": {
+       "counted": 0,
+       "full": 3.6516,
+       "heap": 0,
+       "pool": 4
+      }
+     }
+    },
+    "education": {
+     "counted": 0,
+     "full": 193.3655,
+     "heap": 0,
+     "pool": 193,
+     "parts": {
+      "schools": {
+       "counted": 0,
+       "full": 167.2922,
+       "heap": 0,
+       "pool": 167
+      },
+      "colleges": {
+       "counted": 0,
+       "full": 26.0732,
+       "heap": 0,
+       "pool": 26
+      }
+     }
+    },
+    "police": {
+     "counted": 0,
+     "full": 68.369,
+     "heap": 0,
+     "pool": 68,
+     "parts": {
+      "police": {
+       "counted": 0,
+       "full": 68.369,
+       "heap": 0,
+       "pool": 68
+      }
+     }
+    },
+    "services": {
+     "counted": 0,
+     "full": 54.6275,
+     "heap": 0,
+     "pool": 55,
+     "parts": {
+      "health": {
+       "counted": 0,
+       "full": 23.535,
+       "heap": 0,
+       "pool": 24
+      },
+      "welfare": {
+       "counted": 0,
+       "full": 31.0925,
+       "heap": 0,
+       "pool": 31
+      }
+     }
+    },
+    "admin": {
+     "counted": 0,
+     "full": 48.2913,
+     "heap": 0,
+     "pool": 48,
+     "parts": {
+      "admin": {
+       "counted": 0,
+       "full": 48.2913,
+       "heap": 0,
+       "pool": 48
+      }
+     }
+    },
+    "roads": {
+     "counted": 0,
+     "full": 42.7938,
+     "heap": 0,
+     "pool": 43,
+     "parts": {
+      "roads": {
+       "counted": 0,
+       "full": 42.7938,
+       "heap": 0,
+       "pool": 43
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "uc",
+   "label": "Unpaid hospital care",
+   "note": "keyed to uninsured use",
+   "main": false,
+   "beyond": false,
+   "model": "base",
+   "constants": 0,
+   "cost": -79.7487,
+   "band": [
+    -79.7487,
+    -63.2961
+   ],
+   "left": 458.1364,
+   "right": 378.3877,
+   "dots": {
+    "left": 458,
+    "right": 379,
+    "gap": -79,
+    "error": 0.7487,
+    "roundedMatch": false
+   },
+   "fam": {
+    "taxes": {
+     "counted": 444.8138,
+     "full": 444.8138,
+     "heap": 445,
+     "pool": 0,
+     "parts": {
+      "taxes": {
+       "counted": 444.8138,
+       "full": 444.8138,
+       "heap": 445,
+       "pool": 0
+      }
+     }
+    },
+    "gain": {
+     "counted": 13.3226,
+     "full": 13.3226,
+     "heap": 13,
+     "pool": 0,
+     "parts": {
+      "gain": {
+       "counted": 13.3226,
+       "full": 13.3226,
+       "heap": 13,
+       "pool": 0
+      }
+     }
+    },
+    "benefits": {
+     "counted": 378.3877,
+     "full": 378.3877,
+     "heap": 379,
+     "pool": 0,
+     "parts": {
+      "benefits": {
+       "counted": 374.7361,
+       "full": 374.7361,
+       "heap": 375,
+       "pool": 0
+      },
+      "hospital": {
+       "counted": 3.6516,
+       "full": 3.6516,
+       "heap": 4,
+       "pool": 0
+      }
+     }
+    },
+    "education": {
+     "counted": 0,
+     "full": 193.3655,
+     "heap": 0,
+     "pool": 193,
+     "parts": {
+      "schools": {
+       "counted": 0,
+       "full": 167.2922,
+       "heap": 0,
+       "pool": 167
+      },
+      "colleges": {
+       "counted": 0,
+       "full": 26.0732,
+       "heap": 0,
+       "pool": 26
+      }
+     }
+    },
+    "police": {
+     "counted": 0,
+     "full": 68.369,
+     "heap": 0,
+     "pool": 68,
+     "parts": {
+      "police": {
+       "counted": 0,
+       "full": 68.369,
+       "heap": 0,
+       "pool": 68
+      }
+     }
+    },
+    "services": {
+     "counted": 0,
+     "full": 54.6275,
+     "heap": 0,
+     "pool": 55,
+     "parts": {
+      "health": {
+       "counted": 0,
+       "full": 23.535,
+       "heap": 0,
+       "pool": 24
+      },
+      "welfare": {
+       "counted": 0,
+       "full": 31.0925,
+       "heap": 0,
+       "pool": 31
+      }
+     }
+    },
+    "admin": {
+     "counted": 0,
+     "full": 48.2913,
+     "heap": 0,
+     "pool": 48,
+     "parts": {
+      "admin": {
+       "counted": 0,
+       "full": 48.2913,
+       "heap": 0,
+       "pool": 48
+      }
+     }
+    },
+    "roads": {
+     "counted": 0,
+     "full": 42.7938,
+     "heap": 0,
+     "pool": 43,
+     "parts": {
+      "roads": {
+       "counted": 0,
+       "full": 42.7938,
+       "heap": 0,
+       "pool": 43
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "schools",
+   "label": "Schools, 63–66% of per-pupil cost",
+   "note": "from CBO’s coefficients",
+   "main": false,
+   "beyond": false,
+   "model": "base",
+   "constants": 0,
+   "cost": 25.6454,
+   "band": [
+    7.3927,
+    50.6597
+   ],
+   "left": 458.1364,
+   "right": 483.7818,
+   "dots": {
+    "left": 458,
+    "right": 484,
+    "gap": 26,
+    "error": 0.3546,
+    "roundedMatch": true
+   },
+   "fam": {
+    "taxes": {
+     "counted": 444.8138,
+     "full": 444.8138,
+     "heap": 445,
+     "pool": 0,
+     "parts": {
+      "taxes": {
+       "counted": 444.8138,
+       "full": 444.8138,
+       "heap": 445,
+       "pool": 0
+      }
+     }
+    },
+    "gain": {
+     "counted": 13.3226,
+     "full": 13.3226,
+     "heap": 13,
+     "pool": 0,
+     "parts": {
+      "gain": {
+       "counted": 13.3226,
+       "full": 13.3226,
+       "heap": 13,
+       "pool": 0
+      }
+     }
+    },
+    "benefits": {
+     "counted": 378.3877,
+     "full": 378.3877,
+     "heap": 379,
+     "pool": 0,
+     "parts": {
+      "benefits": {
+       "counted": 374.7361,
+       "full": 374.7361,
+       "heap": 375,
+       "pool": 0
+      },
+      "hospital": {
+       "counted": 3.6516,
+       "full": 3.6516,
+       "heap": 4,
+       "pool": 0
+      }
+     }
+    },
+    "education": {
+     "counted": 105.3941,
+     "full": 193.3655,
+     "heap": 105,
+     "pool": 88,
+     "parts": {
+      "schools": {
+       "counted": 105.3941,
+       "full": 167.2922,
+       "heap": 105,
+       "pool": 62
+      },
+      "colleges": {
+       "counted": 0,
+       "full": 26.0732,
+       "heap": 0,
+       "pool": 26
+      }
+     }
+    },
+    "police": {
+     "counted": 0,
+     "full": 68.369,
+     "heap": 0,
+     "pool": 68,
+     "parts": {
+      "police": {
+       "counted": 0,
+       "full": 68.369,
+       "heap": 0,
+       "pool": 68
+      }
+     }
+    },
+    "services": {
+     "counted": 0,
+     "full": 54.6275,
+     "heap": 0,
+     "pool": 55,
+     "parts": {
+      "health": {
+       "counted": 0,
+       "full": 23.535,
+       "heap": 0,
+       "pool": 24
+      },
+      "welfare": {
+       "counted": 0,
+       "full": 31.0925,
+       "heap": 0,
+       "pool": 31
+      }
+     }
+    },
+    "admin": {
+     "counted": 0,
+     "full": 48.2913,
+     "heap": 0,
+     "pool": 48,
+     "parts": {
+      "admin": {
+       "counted": 0,
+       "full": 48.2913,
+       "heap": 0,
+       "pool": 48
+      }
+     }
+    },
+    "roads": {
+     "counted": 0,
+     "full": 42.7938,
+     "heap": 0,
+     "pool": 43,
+     "parts": {
+      "roads": {
+       "counted": 0,
+       "full": 42.7938,
+       "heap": 0,
+       "pool": 43
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "colleges",
+   "label": "Colleges and other education",
+   "note": null,
+   "main": false,
+   "beyond": false,
+   "model": "base",
+   "constants": 0,
+   "cost": 51.7187,
+   "band": [
+    51.7187,
+    87.7363
+   ],
+   "left": 458.1364,
+   "right": 509.855,
+   "dots": {
+    "left": 458,
+    "right": 510,
+    "gap": 52,
+    "error": 0.2813,
+    "roundedMatch": true
+   },
+   "fam": {
+    "taxes": {
+     "counted": 444.8138,
+     "full": 444.8138,
+     "heap": 445,
+     "pool": 0,
+     "parts": {
+      "taxes": {
+       "counted": 444.8138,
+       "full": 444.8138,
+       "heap": 445,
+       "pool": 0
+      }
+     }
+    },
+    "gain": {
+     "counted": 13.3226,
+     "full": 13.3226,
+     "heap": 13,
+     "pool": 0,
+     "parts": {
+      "gain": {
+       "counted": 13.3226,
+       "full": 13.3226,
+       "heap": 13,
+       "pool": 0
+      }
+     }
+    },
+    "benefits": {
+     "counted": 378.3877,
+     "full": 378.3877,
+     "heap": 379,
+     "pool": 0,
+     "parts": {
+      "benefits": {
+       "counted": 374.7361,
+       "full": 374.7361,
+       "heap": 375,
+       "pool": 0
+      },
+      "hospital": {
+       "counted": 3.6516,
+       "full": 3.6516,
+       "heap": 4,
+       "pool": 0
+      }
+     }
+    },
+    "education": {
+     "counted": 131.4673,
+     "full": 193.3655,
+     "heap": 131,
+     "pool": 62,
+     "parts": {
+      "schools": {
+       "counted": 105.3941,
+       "full": 167.2922,
+       "heap": 105,
+       "pool": 62
+      },
+      "colleges": {
+       "counted": 26.0732,
+       "full": 26.0732,
+       "heap": 26,
+       "pool": 0
+      }
+     }
+    },
+    "police": {
+     "counted": 0,
+     "full": 68.369,
+     "heap": 0,
+     "pool": 68,
+     "parts": {
+      "police": {
+       "counted": 0,
+       "full": 68.369,
+       "heap": 0,
+       "pool": 68
+      }
+     }
+    },
+    "services": {
+     "counted": 0,
+     "full": 54.6275,
+     "heap": 0,
+     "pool": 55,
+     "parts": {
+      "health": {
+       "counted": 0,
+       "full": 23.535,
+       "heap": 0,
+       "pool": 24
+      },
+      "welfare": {
+       "counted": 0,
+       "full": 31.0925,
+       "heap": 0,
+       "pool": 31
+      }
+     }
+    },
+    "admin": {
+     "counted": 0,
+     "full": 48.2913,
+     "heap": 0,
+     "pool": 48,
+     "parts": {
+      "admin": {
+       "counted": 0,
+       "full": 48.2913,
+       "heap": 0,
+       "pool": 48
+      }
+     }
+    },
+    "roads": {
+     "counted": 0,
+     "full": 42.7938,
+     "heap": 0,
+     "pool": 43,
+     "parts": {
+      "roads": {
+       "counted": 0,
+       "full": 42.7938,
+       "heap": 0,
+       "pool": 43
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "police",
+   "label": "Police, courts and prisons",
+   "note": "charged by use",
+   "main": false,
+   "beyond": false,
+   "model": "base",
+   "constants": 0,
+   "cost": 120.0877,
+   "band": [
+    120.0877,
+    156.1053
+   ],
+   "left": 458.1364,
+   "right": 578.224,
+   "dots": {
+    "left": 458,
+    "right": 578,
+    "gap": 120,
+    "error": -0.0877,
+    "roundedMatch": true
+   },
+   "fam": {
+    "taxes": {
+     "counted": 444.8138,
+     "full": 444.8138,
+     "heap": 445,
+     "pool": 0,
+     "parts": {
+      "taxes": {
+       "counted": 444.8138,
+       "full": 444.8138,
+       "heap": 445,
+       "pool": 0
+      }
+     }
+    },
+    "gain": {
+     "counted": 13.3226,
+     "full": 13.3226,
+     "heap": 13,
+     "pool": 0,
+     "parts": {
+      "gain": {
+       "counted": 13.3226,
+       "full": 13.3226,
+       "heap": 13,
+       "pool": 0
+      }
+     }
+    },
+    "benefits": {
+     "counted": 378.3877,
+     "full": 378.3877,
+     "heap": 379,
+     "pool": 0,
+     "parts": {
+      "benefits": {
+       "counted": 374.7361,
+       "full": 374.7361,
+       "heap": 375,
+       "pool": 0
+      },
+      "hospital": {
+       "counted": 3.6516,
+       "full": 3.6516,
+       "heap": 4,
+       "pool": 0
+      }
+     }
+    },
+    "education": {
+     "counted": 131.4673,
+     "full": 193.3655,
+     "heap": 131,
+     "pool": 62,
+     "parts": {
+      "schools": {
+       "counted": 105.3941,
+       "full": 167.2922,
+       "heap": 105,
+       "pool": 62
+      },
+      "colleges": {
+       "counted": 26.0732,
+       "full": 26.0732,
+       "heap": 26,
+       "pool": 0
+      }
+     }
+    },
+    "police": {
+     "counted": 68.369,
+     "full": 68.369,
+     "heap": 68,
+     "pool": 0,
+     "parts": {
+      "police": {
+       "counted": 68.369,
+       "full": 68.369,
+       "heap": 68,
+       "pool": 0
+      }
+     }
+    },
+    "services": {
+     "counted": 0,
+     "full": 54.6275,
+     "heap": 0,
+     "pool": 55,
+     "parts": {
+      "health": {
+       "counted": 0,
+       "full": 23.535,
+       "heap": 0,
+       "pool": 24
+      },
+      "welfare": {
+       "counted": 0,
+       "full": 31.0925,
+       "heap": 0,
+       "pool": 31
+      }
+     }
+    },
+    "admin": {
+     "counted": 0,
+     "full": 48.2913,
+     "heap": 0,
+     "pool": 48,
+     "parts": {
+      "admin": {
+       "counted": 0,
+       "full": 48.2913,
+       "heap": 0,
+       "pool": 48
+      }
+     }
+    },
+    "roads": {
+     "counted": 0,
+     "full": 42.7938,
+     "heap": 0,
+     "pool": 43,
+     "parts": {
+      "roads": {
+       "counted": 0,
+       "full": 42.7938,
+       "heap": 0,
+       "pool": 43
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "health",
+   "label": "Public health services",
+   "note": null,
+   "main": false,
+   "beyond": false,
+   "model": "base",
+   "constants": 0,
+   "cost": 143.6227,
+   "band": [
+    143.6227,
+    179.6403
+   ],
+   "left": 458.1364,
+   "right": 601.759,
+   "dots": {
+    "left": 458,
+    "right": 602,
+    "gap": 144,
+    "error": 0.3773,
+    "roundedMatch": true
+   },
+   "fam": {
+    "taxes": {
+     "counted": 444.8138,
+     "full": 444.8138,
+     "heap": 445,
+     "pool": 0,
+     "parts": {
+      "taxes": {
+       "counted": 444.8138,
+       "full": 444.8138,
+       "heap": 445,
+       "pool": 0
+      }
+     }
+    },
+    "gain": {
+     "counted": 13.3226,
+     "full": 13.3226,
+     "heap": 13,
+     "pool": 0,
+     "parts": {
+      "gain": {
+       "counted": 13.3226,
+       "full": 13.3226,
+       "heap": 13,
+       "pool": 0
+      }
+     }
+    },
+    "benefits": {
+     "counted": 378.3877,
+     "full": 378.3877,
+     "heap": 379,
+     "pool": 0,
+     "parts": {
+      "benefits": {
+       "counted": 374.7361,
+       "full": 374.7361,
+       "heap": 375,
+       "pool": 0
+      },
+      "hospital": {
+       "counted": 3.6516,
+       "full": 3.6516,
+       "heap": 4,
+       "pool": 0
+      }
+     }
+    },
+    "education": {
+     "counted": 131.4673,
+     "full": 193.3655,
+     "heap": 131,
+     "pool": 62,
+     "parts": {
+      "schools": {
+       "counted": 105.3941,
+       "full": 167.2922,
+       "heap": 105,
+       "pool": 62
+      },
+      "colleges": {
+       "counted": 26.0732,
+       "full": 26.0732,
+       "heap": 26,
+       "pool": 0
+      }
+     }
+    },
+    "police": {
+     "counted": 68.369,
+     "full": 68.369,
+     "heap": 68,
+     "pool": 0,
+     "parts": {
+      "police": {
+       "counted": 68.369,
+       "full": 68.369,
+       "heap": 68,
+       "pool": 0
+      }
+     }
+    },
+    "services": {
+     "counted": 23.535,
+     "full": 54.6275,
+     "heap": 24,
+     "pool": 31,
+     "parts": {
+      "health": {
+       "counted": 23.535,
+       "full": 23.535,
+       "heap": 24,
+       "pool": 0
+      },
+      "welfare": {
+       "counted": 0,
+       "full": 31.0925,
+       "heap": 0,
+       "pool": 31
+      }
+     }
+    },
+    "admin": {
+     "counted": 0,
+     "full": 48.2913,
+     "heap": 0,
+     "pool": 48,
+     "parts": {
+      "admin": {
+       "counted": 0,
+       "full": 48.2913,
+       "heap": 0,
+       "pool": 48
+      }
+     }
+    },
+    "roads": {
+     "counted": 0,
+     "full": 42.7938,
+     "heap": 0,
+     "pool": 43,
+     "parts": {
+      "roads": {
+       "counted": 0,
+       "full": 42.7938,
+       "heap": 0,
+       "pool": 43
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "other",
+   "label": "Welfare administration, housing, community",
+   "note": null,
+   "main": false,
+   "beyond": false,
+   "model": "base",
+   "constants": 0,
+   "cost": 174.7152,
+   "band": [
+    174.7152,
+    209.0753
+   ],
+   "left": 458.1364,
+   "right": 632.8515,
+   "dots": {
+    "left": 458,
+    "right": 633,
+    "gap": 175,
+    "error": 0.2848,
+    "roundedMatch": true
+   },
+   "fam": {
+    "taxes": {
+     "counted": 444.8138,
+     "full": 444.8138,
+     "heap": 445,
+     "pool": 0,
+     "parts": {
+      "taxes": {
+       "counted": 444.8138,
+       "full": 444.8138,
+       "heap": 445,
+       "pool": 0
+      }
+     }
+    },
+    "gain": {
+     "counted": 13.3226,
+     "full": 13.3226,
+     "heap": 13,
+     "pool": 0,
+     "parts": {
+      "gain": {
+       "counted": 13.3226,
+       "full": 13.3226,
+       "heap": 13,
+       "pool": 0
+      }
+     }
+    },
+    "benefits": {
+     "counted": 378.3877,
+     "full": 378.3877,
+     "heap": 379,
+     "pool": 0,
+     "parts": {
+      "benefits": {
+       "counted": 374.7361,
+       "full": 374.7361,
+       "heap": 375,
+       "pool": 0
+      },
+      "hospital": {
+       "counted": 3.6516,
+       "full": 3.6516,
+       "heap": 4,
+       "pool": 0
+      }
+     }
+    },
+    "education": {
+     "counted": 131.4673,
+     "full": 193.3655,
+     "heap": 131,
+     "pool": 62,
+     "parts": {
+      "schools": {
+       "counted": 105.3941,
+       "full": 167.2922,
+       "heap": 105,
+       "pool": 62
+      },
+      "colleges": {
+       "counted": 26.0732,
+       "full": 26.0732,
+       "heap": 26,
+       "pool": 0
+      }
+     }
+    },
+    "police": {
+     "counted": 68.369,
+     "full": 68.369,
+     "heap": 68,
+     "pool": 0,
+     "parts": {
+      "police": {
+       "counted": 68.369,
+       "full": 68.369,
+       "heap": 68,
+       "pool": 0
+      }
+     }
+    },
+    "services": {
+     "counted": 54.6275,
+     "full": 54.6275,
+     "heap": 55,
+     "pool": 0,
+     "parts": {
+      "health": {
+       "counted": 23.535,
+       "full": 23.535,
+       "heap": 24,
+       "pool": 0
+      },
+      "welfare": {
+       "counted": 31.0925,
+       "full": 31.0925,
+       "heap": 31,
+       "pool": 0
+      }
+     }
+    },
+    "admin": {
+     "counted": 0,
+     "full": 48.2913,
+     "heap": 0,
+     "pool": 48,
+     "parts": {
+      "admin": {
+       "counted": 0,
+       "full": 48.2913,
+       "heap": 0,
+       "pool": 48
+      }
+     }
+    },
+    "roads": {
+     "counted": 0,
+     "full": 42.7938,
+     "heap": 0,
+     "pool": 43,
+     "parts": {
+      "roads": {
+       "counted": 0,
+       "full": 42.7938,
+       "heap": 0,
+       "pool": 43
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "gg",
+   "label": "General administration, 0.59–0.84",
+   "note": "cross-state scale of administration",
+   "main": false,
+   "beyond": false,
+   "model": "base",
+   "constants": 0,
+   "cost": 203.207,
+   "band": [
+    203.207,
+    249.64
+   ],
+   "left": 458.1364,
+   "right": 661.3434,
+   "dots": {
+    "left": 458,
+    "right": 661,
+    "gap": 203,
+    "error": -0.207,
+    "roundedMatch": true
+   },
+   "fam": {
+    "taxes": {
+     "counted": 444.8138,
+     "full": 444.8138,
+     "heap": 445,
+     "pool": 0,
+     "parts": {
+      "taxes": {
+       "counted": 444.8138,
+       "full": 444.8138,
+       "heap": 445,
+       "pool": 0
+      }
+     }
+    },
+    "gain": {
+     "counted": 13.3226,
+     "full": 13.3226,
+     "heap": 13,
+     "pool": 0,
+     "parts": {
+      "gain": {
+       "counted": 13.3226,
+       "full": 13.3226,
+       "heap": 13,
+       "pool": 0
+      }
+     }
+    },
+    "benefits": {
+     "counted": 378.3877,
+     "full": 378.3877,
+     "heap": 379,
+     "pool": 0,
+     "parts": {
+      "benefits": {
+       "counted": 374.7361,
+       "full": 374.7361,
+       "heap": 375,
+       "pool": 0
+      },
+      "hospital": {
+       "counted": 3.6516,
+       "full": 3.6516,
+       "heap": 4,
+       "pool": 0
+      }
+     }
+    },
+    "education": {
+     "counted": 131.4673,
+     "full": 193.3655,
+     "heap": 131,
+     "pool": 62,
+     "parts": {
+      "schools": {
+       "counted": 105.3941,
+       "full": 167.2922,
+       "heap": 105,
+       "pool": 62
+      },
+      "colleges": {
+       "counted": 26.0732,
+       "full": 26.0732,
+       "heap": 26,
+       "pool": 0
+      }
+     }
+    },
+    "police": {
+     "counted": 68.369,
+     "full": 68.369,
+     "heap": 68,
+     "pool": 0,
+     "parts": {
+      "police": {
+       "counted": 68.369,
+       "full": 68.369,
+       "heap": 68,
+       "pool": 0
+      }
+     }
+    },
+    "services": {
+     "counted": 54.6275,
+     "full": 54.6275,
+     "heap": 55,
+     "pool": 0,
+     "parts": {
+      "health": {
+       "counted": 23.535,
+       "full": 23.535,
+       "heap": 24,
+       "pool": 0
+      },
+      "welfare": {
+       "counted": 31.0925,
+       "full": 31.0925,
+       "heap": 31,
+       "pool": 0
+      }
+     }
+    },
+    "admin": {
+     "counted": 28.4918,
+     "full": 48.2913,
+     "heap": 28,
+     "pool": 20,
+     "parts": {
+      "admin": {
+       "counted": 28.4918,
+       "full": 48.2913,
+       "heap": 28,
+       "pool": 20
+      }
+     }
+    },
+    "roads": {
+     "counted": 0,
+     "full": 42.7938,
+     "heap": 0,
+     "pool": 43,
+     "parts": {
+      "roads": {
+       "counted": 0,
+       "full": 42.7938,
+       "heap": 0,
+       "pool": 43
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "taxes",
+   "label": "Data corrections: taxes",
+   "note": "legal status, survey fill-ins, CBO’s income shares",
+   "main": false,
+   "beyond": false,
+   "model": "taxes",
+   "constants": 0,
+   "cost": 251.914,
+   "band": [
+    251.914,
+    299.8997
+   ],
+   "left": 409.4294,
+   "right": 661.3434,
+   "dots": {
+    "left": 409,
+    "right": 661,
+    "gap": 252,
+    "error": 0.086,
+    "roundedMatch": true
+   },
+   "fam": {
+    "taxes": {
+     "counted": 396.1068,
+     "full": 396.1068,
+     "heap": 396,
+     "pool": 0,
+     "parts": {
+      "taxes": {
+       "counted": 396.1068,
+       "full": 396.1068,
+       "heap": 396,
+       "pool": 0
+      }
+     }
+    },
+    "gain": {
+     "counted": 13.3226,
+     "full": 13.3226,
+     "heap": 13,
+     "pool": 0,
+     "parts": {
+      "gain": {
+       "counted": 13.3226,
+       "full": 13.3226,
+       "heap": 13,
+       "pool": 0
+      }
+     }
+    },
+    "benefits": {
+     "counted": 378.3877,
+     "full": 378.3877,
+     "heap": 379,
+     "pool": 0,
+     "parts": {
+      "benefits": {
+       "counted": 374.7361,
+       "full": 374.7361,
+       "heap": 375,
+       "pool": 0
+      },
+      "hospital": {
+       "counted": 3.6516,
+       "full": 3.6516,
+       "heap": 4,
+       "pool": 0
+      }
+     }
+    },
+    "education": {
+     "counted": 131.4673,
+     "full": 193.3655,
+     "heap": 131,
+     "pool": 62,
+     "parts": {
+      "schools": {
+       "counted": 105.3941,
+       "full": 167.2922,
+       "heap": 105,
+       "pool": 62
+      },
+      "colleges": {
+       "counted": 26.0732,
+       "full": 26.0732,
+       "heap": 26,
+       "pool": 0
+      }
+     }
+    },
+    "police": {
+     "counted": 68.369,
+     "full": 68.369,
+     "heap": 68,
+     "pool": 0,
+     "parts": {
+      "police": {
+       "counted": 68.369,
+       "full": 68.369,
+       "heap": 68,
+       "pool": 0
+      }
+     }
+    },
+    "services": {
+     "counted": 54.6275,
+     "full": 54.6275,
+     "heap": 55,
+     "pool": 0,
+     "parts": {
+      "health": {
+       "counted": 23.535,
+       "full": 23.535,
+       "heap": 24,
+       "pool": 0
+      },
+      "welfare": {
+       "counted": 31.0925,
+       "full": 31.0925,
+       "heap": 31,
+       "pool": 0
+      }
+     }
+    },
+    "admin": {
+     "counted": 28.4918,
+     "full": 48.2913,
+     "heap": 28,
+     "pool": 20,
+     "parts": {
+      "admin": {
+       "counted": 28.4918,
+       "full": 48.2913,
+       "heap": 28,
+       "pool": 20
+      }
+     }
+    },
+    "roads": {
+     "counted": 0,
+     "full": 42.7938,
+     "heap": 0,
+     "pool": 43,
+     "parts": {
+      "roads": {
+       "counted": 0,
+       "full": 42.7938,
+       "heap": 0,
+       "pool": 43
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "benefits",
+   "label": "Data corrections: benefits, services",
+   "note": "credits, medical care, schools, care work",
+   "main": true,
+   "beyond": false,
+   "model": "adopted",
+   "constants": -5.058,
+   "cost": 200.8752,
+   "band": [
+    200.8752,
+    246.3184
+   ],
+   "left": 409.4294,
+   "right": 610.3046,
+   "dots": {
+    "left": 409,
+    "right": 610,
+    "gap": 201,
+    "error": 0.1248,
+    "roundedMatch": true
+   },
+   "fam": {
+    "taxes": {
+     "counted": 396.1068,
+     "full": 396.1068,
+     "heap": 396,
+     "pool": 0,
+     "parts": {
+      "taxes": {
+       "counted": 396.1068,
+       "full": 396.1068,
+       "heap": 396,
+       "pool": 0
+      }
+     }
+    },
+    "gain": {
+     "counted": 13.3226,
+     "full": 13.3226,
+     "heap": 13,
+     "pool": 0,
+     "parts": {
+      "gain": {
+       "counted": 13.3226,
+       "full": 13.3226,
+       "heap": 13,
+       "pool": 0
+      }
+     }
+    },
+    "benefits": {
+     "counted": 333.0921,
+     "full": 333.0921,
+     "heap": 333,
+     "pool": 0,
+     "parts": {
+      "benefits": {
+       "counted": 329.4405,
+       "full": 329.4405,
+       "heap": 329,
+       "pool": 0
+      },
+      "hospital": {
+       "counted": 3.6516,
+       "full": 3.6516,
+       "heap": 4,
+       "pool": 0
+      }
+     }
+    },
+    "education": {
+     "counted": 131.1487,
+     "full": 193.2307,
+     "heap": 131,
+     "pool": 62,
+     "parts": {
+      "schools": {
+       "counted": 105.7072,
+       "full": 167.7893,
+       "heap": 106,
+       "pool": 62
+      },
+      "colleges": {
+       "counted": 25.4415,
+       "full": 25.4415,
+       "heap": 25,
+       "pool": 0
+      }
+     }
+    },
+    "police": {
+     "counted": 69.6554,
+     "full": 69.6554,
+     "heap": 70,
+     "pool": 0,
+     "parts": {
+      "police": {
+       "counted": 69.6554,
+       "full": 69.6554,
+       "heap": 70,
+       "pool": 0
+      }
+     }
+    },
+    "services": {
+     "counted": 48.6437,
+     "full": 48.6437,
+     "heap": 48,
+     "pool": 0,
+     "parts": {
+      "health": {
+       "counted": 17.3512,
+       "full": 17.3512,
+       "heap": 17,
+       "pool": 0
+      },
+      "welfare": {
+       "counted": 31.2925,
+       "full": 31.2925,
+       "heap": 31,
+       "pool": 0
+      }
+     }
+    },
+    "admin": {
+     "counted": 27.7646,
+     "full": 47.0586,
+     "heap": 28,
+     "pool": 19,
+     "parts": {
+      "admin": {
+       "counted": 27.7646,
+       "full": 47.0586,
+       "heap": 28,
+       "pool": 19
+      }
+     }
+    },
+    "roads": {
+     "counted": 0,
+     "full": 40.8029,
+     "heap": 0,
+     "pool": 41,
+     "parts": {
+      "roads": {
+       "counted": 0,
+       "full": 40.8029,
+       "heap": 0,
+       "pool": 41
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "delayed",
+   "label": "Roads, transport, parks and culture",
+   "note": "held fixed in the main case",
+   "main": false,
+   "beyond": true,
+   "model": "adopted",
+   "constants": -5.058,
+   "cost": 241.6781,
+   "band": [
+    241.6781,
+    287.1213
+   ],
+   "left": 409.4294,
+   "right": 651.1075,
+   "dots": {
+    "left": 409,
+    "right": 651,
+    "gap": 242,
+    "error": 0.3219,
+    "roundedMatch": true
+   },
+   "fam": {
+    "taxes": {
+     "counted": 396.1068,
+     "full": 396.1068,
+     "heap": 396,
+     "pool": 0,
+     "parts": {
+      "taxes": {
+       "counted": 396.1068,
+       "full": 396.1068,
+       "heap": 396,
+       "pool": 0
+      }
+     }
+    },
+    "gain": {
+     "counted": 13.3226,
+     "full": 13.3226,
+     "heap": 13,
+     "pool": 0,
+     "parts": {
+      "gain": {
+       "counted": 13.3226,
+       "full": 13.3226,
+       "heap": 13,
+       "pool": 0
+      }
+     }
+    },
+    "benefits": {
+     "counted": 333.0921,
+     "full": 333.0921,
+     "heap": 333,
+     "pool": 0,
+     "parts": {
+      "benefits": {
+       "counted": 329.4405,
+       "full": 329.4405,
+       "heap": 329,
+       "pool": 0
+      },
+      "hospital": {
+       "counted": 3.6516,
+       "full": 3.6516,
+       "heap": 4,
+       "pool": 0
+      }
+     }
+    },
+    "education": {
+     "counted": 131.1487,
+     "full": 193.2307,
+     "heap": 131,
+     "pool": 62,
+     "parts": {
+      "schools": {
+       "counted": 105.7072,
+       "full": 167.7893,
+       "heap": 106,
+       "pool": 62
+      },
+      "colleges": {
+       "counted": 25.4415,
+       "full": 25.4415,
+       "heap": 25,
+       "pool": 0
+      }
+     }
+    },
+    "police": {
+     "counted": 69.6554,
+     "full": 69.6554,
+     "heap": 70,
+     "pool": 0,
+     "parts": {
+      "police": {
+       "counted": 69.6554,
+       "full": 69.6554,
+       "heap": 70,
+       "pool": 0
+      }
+     }
+    },
+    "services": {
+     "counted": 48.6437,
+     "full": 48.6437,
+     "heap": 48,
+     "pool": 0,
+     "parts": {
+      "health": {
+       "counted": 17.3512,
+       "full": 17.3512,
+       "heap": 17,
+       "pool": 0
+      },
+      "welfare": {
+       "counted": 31.2925,
+       "full": 31.2925,
+       "heap": 31,
+       "pool": 0
+      }
+     }
+    },
+    "admin": {
+     "counted": 27.7646,
+     "full": 47.0586,
+     "heap": 28,
+     "pool": 19,
+     "parts": {
+      "admin": {
+       "counted": 27.7646,
+       "full": 47.0586,
+       "heap": 28,
+       "pool": 19
+      }
+     }
+    },
+    "roads": {
+     "counted": 40.8029,
+     "full": 40.8029,
+     "heap": 41,
+     "pool": 0,
+     "parts": {
+      "roads": {
+       "counted": 40.8029,
+       "full": 40.8029,
+       "heap": 41,
+       "pool": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "schools_full",
+   "label": "Schools at the full per-pupil cost",
+   "note": null,
+   "main": false,
+   "beyond": true,
+   "model": "adopted",
+   "constants": -5.058,
+   "cost": 303.7601,
+   "band": [
+    302.972,
+    336.4219
+   ],
+   "left": 409.4294,
+   "right": 713.1895,
+   "dots": {
+    "left": 409,
+    "right": 713,
+    "gap": 304,
+    "error": 0.2399,
+    "roundedMatch": true
+   },
+   "fam": {
+    "taxes": {
+     "counted": 396.1068,
+     "full": 396.1068,
+     "heap": 396,
+     "pool": 0,
+     "parts": {
+      "taxes": {
+       "counted": 396.1068,
+       "full": 396.1068,
+       "heap": 396,
+       "pool": 0
+      }
+     }
+    },
+    "gain": {
+     "counted": 13.3226,
+     "full": 13.3226,
+     "heap": 13,
+     "pool": 0,
+     "parts": {
+      "gain": {
+       "counted": 13.3226,
+       "full": 13.3226,
+       "heap": 13,
+       "pool": 0
+      }
+     }
+    },
+    "benefits": {
+     "counted": 333.0921,
+     "full": 333.0921,
+     "heap": 333,
+     "pool": 0,
+     "parts": {
+      "benefits": {
+       "counted": 329.4405,
+       "full": 329.4405,
+       "heap": 329,
+       "pool": 0
+      },
+      "hospital": {
+       "counted": 3.6516,
+       "full": 3.6516,
+       "heap": 4,
+       "pool": 0
+      }
+     }
+    },
+    "education": {
+     "counted": 193.2307,
+     "full": 193.2307,
+     "heap": 193,
+     "pool": 0,
+     "parts": {
+      "schools": {
+       "counted": 167.7893,
+       "full": 167.7893,
+       "heap": 168,
+       "pool": 0
+      },
+      "colleges": {
+       "counted": 25.4415,
+       "full": 25.4415,
+       "heap": 25,
+       "pool": 0
+      }
+     }
+    },
+    "police": {
+     "counted": 69.6554,
+     "full": 69.6554,
+     "heap": 70,
+     "pool": 0,
+     "parts": {
+      "police": {
+       "counted": 69.6554,
+       "full": 69.6554,
+       "heap": 70,
+       "pool": 0
+      }
+     }
+    },
+    "services": {
+     "counted": 48.6437,
+     "full": 48.6437,
+     "heap": 48,
+     "pool": 0,
+     "parts": {
+      "health": {
+       "counted": 17.3512,
+       "full": 17.3512,
+       "heap": 17,
+       "pool": 0
+      },
+      "welfare": {
+       "counted": 31.2925,
+       "full": 31.2925,
+       "heap": 31,
+       "pool": 0
+      }
+     }
+    },
+    "admin": {
+     "counted": 27.7646,
+     "full": 47.0586,
+     "heap": 28,
+     "pool": 19,
+     "parts": {
+      "admin": {
+       "counted": 27.7646,
+       "full": 47.0586,
+       "heap": 28,
+       "pool": 19
+      }
+     }
+    },
+    "roads": {
+     "counted": 40.8029,
+     "full": 40.8029,
+     "heap": 41,
+     "pool": 0,
+     "parts": {
+      "roads": {
+       "counted": 40.8029,
+       "full": 40.8029,
+       "heap": 41,
+       "pool": 0
+      }
+     }
+    }
+   }
+  }
+ ],
+ "maxDotError": 0.7487,
+ "never": {
+  "defense": 100.1569,
+  "generalAdminRest": 19.294,
+  "interest": 131.104,
+  "subsidies": 7.1824,
+  "corporateProperty": 92.357
+ }
 }
