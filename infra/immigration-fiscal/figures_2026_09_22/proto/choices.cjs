@@ -119,6 +119,70 @@ function build(A) {
   gate("no combination lands between the two", frozenNearest < 0 && growingNearest > 0);
   gate("the adopted main case lies inside the growing combinations", A.MAIN[0] >= growingNearest && A.MAIN[1] <= grHi);
 
+  /* The same combinations as a sum. Start from the least costly combination in which services grow,
+   * then switch one choice at a time to its most costly option, in order of how far it moves the
+   * average; every step is an engine difference, so the steps add to the end exactly. */
+  const evalState = (st) => {
+    const r = st.frozen ? { schools: 0, colleges: 0, police: 0, health: 0, other: 0, delayed: 0 }
+      : { schools: st.schools, colleges: st.colleges, police: 1, health: 1, other: 1, delayed: st.delayed };
+    const spec = { allocation: st.allocation, share: st.share, school: st.school, uc: st.uc, justice: st.justice, receipts: st.receipts };
+    return cost(spec, { ...r, gg: st.gg, production: false }, M) - st.P;
+  };
+  const growing = combos.filter((c) => !c.row.frozen);
+  const cheapest = growing.reduce((a, c) => (c.direct < a.direct ? c : a));
+  const dearest = growing.reduce((a, c) => (c.direct > a.direct ? c : a));
+  const pMin = Math.min(...P), pMax = Math.max(...P);
+  const s0 = { frozen: false, schools: cheapest.row.schools, colleges: cheapest.row.colleges, delayed: cheapest.row.delayed, gg: cheapest.gg,
+    ...cheapest.spec, P: pMax };
+  let st = { ...s0 };
+  const start = evalState(st);
+  gate("the sum starts at the least costly combination where services grow", near(start, growingNearest, 1e-9), start.toFixed(2));
+  const labelOf = (fid, id) => FAMILIES.find((f) => f.id === fid).levels.find((l) => l[0] === id)[1];
+  const SCHOOL_OPTS = [...A.CBO_SCHOOLS.map((s) => ({ set: { schools: "cbo", school: s }, label: `${pct(s)} of the usual cost` })),
+    { set: { schools: 1 }, label: "the full usual cost" }];
+  const CHOICES = {
+    schools: SCHOOL_OPTS,
+    gg: GG_COLS.map((g) => ({ set: { gg: g }, label: labelOf("gg", String(g)) })),
+    roads: [0, 1].map((v) => ({ set: { delayed: v }, label: labelOf("roads", String(v)) })),
+    colleges: [0, 1].map((v) => ({ set: { colleges: v }, label: labelOf("colleges", String(v)) })),
+    production: [pMax, pMin].map((p) => ({ set: { P: p }, label: `$${Math.round(p)}bn a year` })),
+    justice: FAMILIES.find((f) => f.id === "justice").levels.map(([id, label]) => ({ set: { justice: id }, label })),
+    allocation: FAMILIES.find((f) => f.id === "allocation").levels.map(([id, label]) => ({ set: { allocation: id }, label })),
+    share: FAMILIES.find((f) => f.id === "share").levels.map(([id, label]) => ({ set: { share: Number(id) }, label })),
+    receipts: FAMILIES.find((f) => f.id === "receipts").levels.map(([id, label]) => ({ set: { receipts: id }, label })),
+    uc: FAMILIES.find((f) => f.id === "uc").levels.map(([id, label]) => ({ set: { uc: id }, label })),
+  };
+  const matches = (o) => Object.entries(o.set).every(([k, v]) => (k === "school" && st.schools !== "cbo") || st[k] === v);
+  const order = fams.map((F) => F.f.id).filter((id) => CHOICES[id])
+    .sort((a, b) => effectOf(b) - effectOf(a));
+  function effectOf(id) {
+    const F = fams.find((G) => G.f.id === id), means = F.sum.map((s, i) => s / F.n[i]);
+    const ms = F.f.levels.map((l, i) => i).filter((i) => !(F.f.among === "growing" && F.f.levels[i][0] === "none")).map((i) => means[i]);
+    return Math.max(...ms) - Math.min(...ms);
+  }
+  const steps = [];
+  let now = start;
+  for (const id of order) {
+    const from = CHOICES[id].find(matches);
+    if (!from) throw new Error(`no option of ${id} matches the current combination`);
+    let best = null;
+    for (const o of CHOICES[id]) {
+      const v = evalState({ ...st, ...o.set });
+      if (!best || v > best.v) best = { o, v };
+    }
+    steps.push({ id, label: fams.find((F) => F.f.id === id).f.label, from: from.label, to: best.o.label, add: round(best.v - now, 2),
+      at: [round(now, 2), round(best.v, 2)] });
+    st = { ...st, ...best.o.set };
+    now = best.v;
+  }
+  gate("switching every choice to its most costly option reaches the most costly combination", near(now, dearest.direct - pMin, 1e-6),
+    `${now.toFixed(2)} vs ${(dearest.direct - pMin).toFixed(2)}`);
+  gate("every step adds cost", steps.every((s) => s.add >= 0));
+  const freeze = evalState({ ...s0, frozen: true });
+  gate("stopping services from growing at the least costly combination crosses zero", freeze < 0, freeze.toFixed(2));
+  gate("and lands inside the frozen combinations", freeze >= frozenLo - 1e-9 && freeze <= frozenNearest + 1e-9);
+  const waterfall = { start: round(start, 2), end: round(now, 2), steps, freeze: round(freeze, 2) };
+
   const r4 = (x) => round(x, 6);
   const families = fams.map((F) => {
     const means = F.sum.map((s, i) => s / F.n[i]);
@@ -136,6 +200,7 @@ function build(A) {
     all: { hist: Array.from(all, (v) => r4(v / total)), range: [round(lo, 1), round(hi, 1)] },
     gap: [round(frozenNearest, 1), round(growingNearest, 1)],
     main: A.MAIN.map((x) => round(x, 1)),
+    waterfall,
     families,
   };
 }
