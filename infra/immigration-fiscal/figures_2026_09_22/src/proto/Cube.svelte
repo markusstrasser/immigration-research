@@ -355,8 +355,12 @@
           {#if poly.length}<polygon points={pts(poly)} fill="#ecdcae" />{/if}
         {/each}
       </g>
+      <!-- The two ends of the band: the specification most favourable to the group solid, the least dotted. -->
       {#if sheets[d.lowEnd].length}
         <polygon points={pts(sheets[d.lowEnd])} fill="none" stroke="#b8913a" stroke-width="0.8" />
+      {/if}
+      {#if sheets[d.highEnd].length}
+        <polygon points={pts(sheets[d.highEnd])} fill="none" stroke="#b8913a" stroke-width="0.8" stroke-dasharray="1.5 2.5" />
       {/if}
 
       <!-- Where everyone else is better off under every specification. -->
@@ -440,6 +444,10 @@
       On a derived axis the main case sits at the one share that costs the same as its own mix. It charges colleges,
       police, health and welfare in full and roads not at all, which on “every other public service” comes to
       <span class="num">{rangeOf('others', span(d.specs.map((s) => mainAt(s, 'others'))))}</span>.
+    </p>
+    <p>
+      The ochre band holds the break-even sheet of every specification, drawn as one even tint: solid edge for the
+      specification most favourable to the group, dotted for the least.
     </p>
     <p>
       Black dots: the main case under each of its {d.specs.length} specifications. The dotted moves and the drop line
