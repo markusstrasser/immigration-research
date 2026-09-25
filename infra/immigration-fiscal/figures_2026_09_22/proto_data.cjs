@@ -11,7 +11,7 @@
 "use strict";
 const A = require("./account.cjs");
 
-const NAMES = ["flip", "conventions", "coastline", "dots", "nomogram", "plane"];
+const NAMES = ["flip", "conventions", "coastline", "dots", "nomogram", "plane", "cube"];
 const names = process.argv.length > 2 ? process.argv.slice(2) : NAMES;
 let bad = 0;
 for (const name of names) {
