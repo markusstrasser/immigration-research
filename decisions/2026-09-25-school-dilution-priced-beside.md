@@ -1,7 +1,7 @@
 ---
 date: 2026-09-25
 concepts: [school-quality-spillovers, school-costs]
-status: proposed
+status: adopted
 supersedes: []
 relations:
   - refines: decisions/2026-09-20-school-quality-unpriced.md
@@ -9,7 +9,7 @@ relations:
 evidence: infra/immigration-fiscal/school_dilution_2026_09_24/RESULT.md
 ---
 
-# 2026-09-25: Price school dilution beside the account from its own school response (proposed)
+# 2026-09-25: Price school dilution beside the account from its own school response (adopted)
 
 ## Context
 
@@ -46,6 +46,15 @@ response", quote $16bn (−$2bn to +$36bn) beside the fiscal figure, and keep it
 total until the operator decides on option 3. Peer effects stay unpriced in both directions,
 since no US estimate excludes zero on the harm side. Class size (the same resource, $2.6bn), the
 full-funding split and the long-run response are alternative measures and are never added.
+
+## Adoption (2026-09-25)
+
+The operator adopted option 2 on 2026-09-25 ("1 i guess"), adding that $16bn "seems not a lot
+given the deteriation of standards". The resource channel is now priced beside the account,
+conditional on its school response, and stays out of every total. Option 3, adding it to the
+fiscal-plus-social total, was not decided and stays open. The operator's doubt concerns what the
+price leaves out: peer effects and classroom standards. They stay unpriced in both directions
+until a US estimate separates them from zero.
 
 ## Evidence
 

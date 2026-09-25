@@ -196,8 +196,8 @@ person, the same under both counts; the share ahead is pooled.
 | Every choice least costly | 30.0% | 27.0% | 24.0% | 23.7% |
 | Every choice most costly | 13.9% | 13.8% | 14.0% | 14.1% |
 | Account only: fiscal and wages, no social items | 28.5% | 23.5% | 22.4% | 21.6% |
-| With the proposed items (§6), central | 20.8% | 20.3% | 20.6% | 20.5% |
-| With the proposed items, least / most costly | 36.6 / 6.1% | 35.7 / 8.2% | 31.6 / 10.7% | 30.8 / 10.8% |
+| With the items kept out of the totals (§6; the lane's "with proposed" net), central | 20.8% | 20.3% | 20.6% | 20.5% |
+| The same, least / most costly | 36.6 / 6.1% | 35.7 / 8.2% | 31.6 / 10.7% | 30.8 / 10.8% |
 | State and local cost charged nationally | — | — | 13.0% | 12.7% |
 | Housing at the national-uniform central (net +$0.71bn, not +$3.51bn) | — | — | 18.4% | 18.5% |
 | Victims' harm on the custody footing ($32.34bn, not $30.93bn) | — | — | 20.0% | 19.8% |
@@ -233,14 +233,15 @@ Notes on the table:
   and it has no reference group. It is in
   [the account by generation](immigration-adopted-account-by-generation-2026-09-25.md) (ladder 224).
 
-## 6. Proposed items, and rows on other counterfactuals
+## 6. Items out of the totals, and rows on other counterfactuals
 
-**Proposed items (not adopted)** enter only the "with proposed" net (§4), never the verdict:
+**Items kept out of every total** enter only the "with proposed" net (§4), never the verdict:
 - **School dilution, −$20.1bn.** Instruction and support together: a present value of other
-  residents' pupils' lifetime earnings, not annual cash
-  ([decision, proposed](../decisions/2026-09-25-school-dilution-priced-beside.md)).
-- **Preferences, the group's part, −$0.6bn.**
-- **City size and schooling mix, +$13.9bn** (ladder 201).
+  residents' pupils' lifetime earnings, not annual cash. The operator adopted it on 2026-09-25 as
+  priced beside the account; it stays out of every total unless option 3 is chosen
+  ([decision](../decisions/2026-09-25-school-dilution-priced-beside.md)).
+- **Preferences, the group's part, −$0.6bn** (proposed).
+- **City size and schooling mix, +$13.9bn** (ladder 201, proposed).
 
 The consumption-key correction (ladder 225, proposed) would lower the fiscal cost by $4.1bn. It is
 listed in the lane's registry and not allocated.
@@ -302,4 +303,6 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
 
 ## Revisions
 
-None yet.
+- 2026-09-25 (morning): the operator adopted the school-dilution relabel as priced beside the account
+  (decision option 2), so §6 lists it as kept out of every total rather than proposed. No figure
+  changes. Concept affected: the status of the dilution row.
