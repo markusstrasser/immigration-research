@@ -1,0 +1,30 @@
+net,stack,path,persons_m,share_of_persons,winners_share,mean_net_usd
+net_social_a,central,worker = not_worker & tenure = landlord,11.34605099,0.03835312126,0.2677638007,208.9845006
+net_social_a,central,worker = not_worker & tenure != landlord & age3 = 18_64,36.18376745,0.1223121967,0.004233386164,-738.6035707
+net_social_a,central,worker = not_worker & tenure != landlord & age3 != 18_64,95.20721459,0.3218294936,0.0001019273117,-659.3040667
+net_social_a,central,worker != not_worker & edu_nativity = high_school|us_born & tenure = owner_no_rental_income,16.54443675,0.05592525445,0,-3277.799399
+net_social_a,central,worker != not_worker & edu_nativity = high_school|us_born & tenure != owner_no_rental_income,9.866924588,0.03335322179,0.01046066971,-3107.890545
+net_social_a,central,worker != not_worker & edu_nativity != high_school|us_born & state3 = rest,105.0013079,0.3549365235,0.5266965753,-227.4616691
+net_social_a,central,worker != not_worker & edu_nativity != high_school|us_born & state3 != rest,21.68152657,0.07329018865,0.03382116761,-3136.134141
+net_social_b,central,industry5 = rest & edu_nativity = ba_plus|us_born & state3 = rest,40.30154129,0.1362315312,0.7210668934,550.4086276
+net_social_b,central,industry5 = rest & edu_nativity = ba_plus|us_born & state3 != rest,8.024828368,0.02712637337,0.09566197132,-1766.018995
+net_social_b,central,industry5 = rest & edu_nativity != ba_plus|us_born & edu_nativity = high_school|us_born,21.27457035,0.07191455219,0.002851871732,-3229.544629
+net_social_b,central,industry5 = rest & edu_nativity != ba_plus|us_born & edu_nativity != high_school|us_born,62.26042656,0.2104592771,0.344834317,-868.990904
+net_social_b,central,industry5 != rest & tenure = landlord & decile <= 7,6.598338232,0.02230440058,0.1938588286,-377.1321628
+net_social_b,central,industry5 != rest & tenure = landlord & decile > 7,6.380801297,0.02156905923,0.3802422289,1368.87826
+net_social_b,central,industry5 != rest & tenure != landlord & worker = not_worker,131.390982,0.4441416903,0.001028716755,-913.5974452
+net_social_b,central,industry5 != rest & tenure != landlord & worker != not_worker,19.59974071,0.06625311597,0.1835016087,-1801.373665
+net_account_a,central,worker = not_worker & age3 = 18_64 & edu_nativity = high_school|us_born,8.95467742,0.03026954745,0,-399.4398299
+net_account_a,central,worker = not_worker & age3 = 18_64 & edu_nativity != high_school|us_born,29.81184188,0.1007731401,0.007267718476,-535.2327717
+net_account_a,central,worker = not_worker & age3 != 18_64 & edu_nativity = some_college|us_born,10.82766938,0.03660083293,0.0007308159216,-550.289247
+net_account_a,central,worker = not_worker & age3 != 18_64 & edu_nativity != some_college|us_born,93.14284435,0.3148512911,5.776120838e-05,-538.7643668
+net_account_a,central,worker != not_worker & edu_nativity = high_school|us_born,26.41136134,0.08927847624,0,-2975.412842
+net_account_a,central,worker != not_worker & edu_nativity != high_school|us_born & state3 = rest,105.0013079,0.3549365235,0.6200510615,-92.30201059
+net_account_a,central,worker != not_worker & edu_nativity != high_school|us_born & state3 != rest,21.68152657,0.07329018865,0.03780448269,-2229.929732
+net_account_b,central,worker = not_worker & age3 = 18_64 & decile <= 3,20.84067183,0.07044784255,0.0009547988275,-688.665267
+net_account_b,central,worker = not_worker & age3 = 18_64 & decile > 3,17.92584747,0.06059484503,0.007683027189,-805.6215094
+net_account_b,central,worker = not_worker & age3 != 18_64 & edu_nativity = some_college|us_born,10.82766938,0.03660083293,0.0007308159216,-758.4725273
+net_account_b,central,worker = not_worker & age3 != 18_64 & edu_nativity != some_college|us_born,93.14284435,0.3148512911,1.270926317e-05,-703.4723171
+net_account_b,central,worker != not_worker & edu_nativity = high_school|us_born,26.41136134,0.08927847624,0,-3022.797637
+net_account_b,central,worker != not_worker & edu_nativity != high_school|us_born & state3 = rest,105.0013079,0.3549365235,0.5950719426,34.17335393
+net_account_b,central,worker != not_worker & edu_nativity != high_school|us_born & state3 != rest,21.68152657,0.07329018865,0.06088756191,-1546.053048
