@@ -15,6 +15,7 @@ const {
   fs, path, HERE, FISCAL, EXPLORER, MAIN_CASE, Engine, model, scaling, corrections, MODELS, CORR,
   gate, failures, near, round, readCsv, product, span, SHARES, GG, CBO_SCHOOLS, cost, band,
   MAIN, FIXED_COLLEGES, PROPORTIONAL, BEFORE, BY_SIDE, MAIN_DIMS, mainSpecs,
+  saneProduction, PROD_SPAN, JUSTICE_KEYS, UC_KEYS, RECEIPTS, outerSpecs,
 } = require("./account.cjs");
 
 console.log("\n[positive controls]");
@@ -99,43 +100,16 @@ console.log("\n[staircase]");
  * is the main case's own unresolved dimensions; the outer range adds every executed tax-incidence
  * scenario, every executed justice and uncompensated-care key, and the production grid with
  * private capital adjusted and no capital owners excluded (the $6–21bn of FAQ entry 4). */
-const PROD_DIMS = Engine.PRODUCTION_DIMS;
-function decode(index) {
-  const out = {};
-  for (let k = PROD_DIMS.length - 1; k >= 0; k--) {
-    const levels = model.production.dims[PROD_DIMS[k]];
-    out[PROD_DIMS[k]] = levels[index % levels.length];
-    index = Math.floor(index / levels.length);
-  }
-  return out;
-}
-const saneProduction = [];
-for (let i = 0; i < model.production.private_wtp_bn.length; i++) {
-  const d = decode(i);
-  if (Engine.productionIndex(model, d) !== i) throw new Error("production index decode mismatch at " + i);
-  if (d.capital_adjustment === 1 && d.excluded_capital_owner_share === 0) {
-    saneProduction.push(model.production.private_wtp_bn[i] + model.production.induced_receipts_bn[i]);
-  }
-}
-const PROD_SPAN = span(saneProduction);
 console.log("\n[matrix]");
 gate("sane production grid is 432 scenarios, $6–21bn", saneProduction.length === 432 &&
   near(PROD_SPAN[0], 5.98, 0.01) && near(PROD_SPAN[1], 21.08, 0.01), `${PROD_SPAN[0].toFixed(2)} to ${PROD_SPAN[1].toFixed(2)}`);
 
-const JUSTICE_KEYS = Object.keys(model.spending.lines.find((l) => l.id === "public_order_safety").keys);
-const UC_KEYS = Object.keys(model.spending.lines.find((l) => l.id === "medicaid_and_chip_other_medical").keys)
-  .filter((k) => k === "medicaid" || k.startsWith("uninsured_use"));
-const RECEIPTS = model.receipts.scenarios;
 const GG_COLS = [0, GG[0], GG[1], 1];
 const ROWS = [];
 ROWS.push({ id: "frozen", schools: 0, colleges: 0, delayed: 0, frozen: true });
 for (const schools of ["cbo", 1]) for (const colleges of [0, 1]) for (const delayed of [0, 1]) {
   ROWS.push({ id: `s${schools}_c${colleges}_d${delayed}`, schools, colleges, delayed });
 }
-const outerSpecs = product({
-  allocation: ["personal", "shared"], share: SHARES, school: CBO_SCHOOLS,
-  uc: UC_KEYS, justice: JUSTICE_KEYS, receipts: RECEIPTS,
-});
 const matrix = ROWS.map((row) => {
   const base = row.frozen
     ? { schools: 0, colleges: 0, police: 0, health: 0, other: 0, delayed: 0 }
