@@ -5,6 +5,7 @@
   import Coastline from './Coastline.svelte'
   import DotHeaps from './DotHeaps.svelte'
   import Nomogram from './Nomogram.svelte'
+  import Plane from './Plane.svelte'
 </script>
 
 <main>
@@ -18,6 +19,7 @@
     <a href="#coastline">Coastline</a>
     <a href="#dots">Heaps of dots</a>
     <a href="#nomogram">Nomogram</a>
+    <a href="#plane">Break-even plane</a>
   </nav>
 
   <Staircase />
@@ -26,4 +28,5 @@
   <Coastline />
   <DotHeaps />
   <Nomogram />
+  <Plane />
 </main>
