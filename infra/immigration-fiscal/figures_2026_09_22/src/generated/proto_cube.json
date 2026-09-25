@@ -1,0 +1,1761 @@
+{
+ "generatedBy": "proto/cube.cjs",
+ "main": [
+  200.88,
+  246.32
+ ],
+ "dials": [
+  {
+   "id": "taxes",
+   "label": "Taxes they pay",
+   "what": "× what records show",
+   "unit": "times",
+   "range": [
+    0,
+    2
+   ]
+  },
+  {
+   "id": "benefits",
+   "label": "Benefits they draw",
+   "what": "× what records show",
+   "unit": "times",
+   "range": [
+    0,
+    2
+   ]
+  },
+  {
+   "id": "schools",
+   "label": "Schools",
+   "what": "share of per-pupil cost",
+   "unit": "pct",
+   "range": [
+    0,
+    1
+   ]
+  },
+  {
+   "id": "colleges",
+   "label": "Colleges and other education",
+   "what": "share of average cost",
+   "unit": "pct",
+   "range": [
+    0,
+    1
+   ]
+  },
+  {
+   "id": "police",
+   "label": "Police, courts and prisons",
+   "what": "share of average cost",
+   "unit": "pct",
+   "range": [
+    0,
+    1
+   ]
+  },
+  {
+   "id": "health",
+   "label": "Public health services",
+   "what": "share of average cost",
+   "unit": "pct",
+   "range": [
+    0,
+    1
+   ]
+  },
+  {
+   "id": "other",
+   "label": "Welfare offices, housing, community",
+   "what": "share of average cost",
+   "unit": "pct",
+   "range": [
+    0,
+    1
+   ]
+  },
+  {
+   "id": "gg",
+   "label": "General administration",
+   "what": "share of average cost",
+   "unit": "pct",
+   "range": [
+    0,
+    1
+   ]
+  },
+  {
+   "id": "roads",
+   "label": "Roads, transport, parks, culture",
+   "what": "share of average cost",
+   "unit": "pct",
+   "range": [
+    0,
+    1
+   ]
+  }
+ ],
+ "composites": [
+  {
+   "id": "services",
+   "label": "Every public service",
+   "what": "one share of average cost",
+   "unit": "pct",
+   "range": [
+    0,
+    1
+   ],
+   "members": [
+    "schools",
+    "colleges",
+    "police",
+    "health",
+    "other",
+    "roads"
+   ]
+  },
+  {
+   "id": "others",
+   "label": "Every other public service",
+   "what": "one share of average cost",
+   "unit": "pct",
+   "range": [
+    0,
+    1
+   ],
+   "members": [
+    "colleges",
+    "police",
+    "health",
+    "other",
+    "roads"
+   ]
+  }
+ ],
+ "specs": [
+  {
+   "main": 228.179633,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 230.275654,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 239.944275,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 242.040296,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 232.457773,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 234.553794,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 244.222415,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 246.318436,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 217.942636,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 220.038657,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 229.707278,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 231.803299,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 223.116878,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 225.212899,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 234.88152,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 236.977541,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 223.647662,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 225.743683,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 235.412304,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 237.508325,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 227.925803,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 230.021824,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 239.690445,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 241.786466,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 142.604683,
+    "colleges": 55.202713,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 213.410665,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 215.506686,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 225.175307,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 227.271328,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 218.584908,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 220.680929,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 230.34955,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 326.783085,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 232.445571,
+   "slope": {
+    "taxes": -374.262589,
+    "benefits": 328.879106,
+    "schools": 172.47476,
+    "colleges": 26.147567,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 29.734676,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 215.370759,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 217.46678,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 227.135401,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 229.231422,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 219.532679,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 221.6287,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 231.297321,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 233.393342,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 205.407173,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 207.503194,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 217.171815,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 219.267836,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 210.440851,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 212.536872,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 222.205493,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 224.301514,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 210.838789,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 212.93481,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 222.603431,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 224.699452,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 215.000709,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 217.09673,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 226.765351,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 228.861372,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 138.730663,
+    "colleges": 53.711977,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 200.875203,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 202.971224,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 212.639844,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 214.735865,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.63,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 205.908881,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 208.004902,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.59,
+    "roads": 0
+   }
+  },
+  {
+   "main": 217.673523,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 338.150113,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  },
+  {
+   "main": 219.769544,
+   "slope": {
+    "taxes": -396.10676,
+    "benefits": 340.246134,
+    "schools": 167.789285,
+    "colleges": 25.441458,
+    "police": 69.655444,
+    "health": 17.351227,
+    "other": 31.292514,
+    "gg": 47.058568,
+    "roads": 40.8029
+   },
+   "mainAt": {
+    "taxes": 1,
+    "benefits": 1,
+    "schools": 0.66,
+    "colleges": 1,
+    "police": 1,
+    "health": 1,
+    "other": 1,
+    "gg": 0.84,
+    "roads": 0
+   }
+  }
+ ],
+ "lowEnd": 56,
+ "highEnd": 7,
+ "gatePoints": 2560,
+ "lowEndSpec": {
+  "allocation": "shared",
+  "normalization": "gdp",
+  "schoolShare": 0.8652,
+  "schools": 0.63,
+  "gg": 0.59,
+  "uninsured": "uninsured_use_low"
+ },
+ "together": [
+  0.2736,
+  0.3503
+ ],
+ "servicesRoot": [
+  0.0554,
+  0.1382
+ ],
+ "publishedBreakEven": [
+  0.0476,
+  0.1602
+ ]
+}

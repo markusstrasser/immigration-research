@@ -6,6 +6,7 @@
   import DotHeaps from './DotHeaps.svelte'
   import Nomogram from './Nomogram.svelte'
   import Plane from './Plane.svelte'
+  import Cube from './Cube.svelte'
 </script>
 
 <main>
@@ -20,6 +21,7 @@
     <a href="#dots">Heaps of dots</a>
     <a href="#nomogram">Nomogram</a>
     <a href="#plane">Break-even plane</a>
+    <a href="#cube">Cube</a>
   </nav>
 
   <Staircase />
@@ -29,4 +31,5 @@
   <DotHeaps />
   <Nomogram />
   <Plane />
+  <Cube />
 </main>
