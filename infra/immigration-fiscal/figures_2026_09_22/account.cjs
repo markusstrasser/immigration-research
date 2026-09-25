@@ -83,7 +83,7 @@ gate("service lines are the seven the figures set", JSON.stringify(serviceLines)
 /* One evaluation. spec: allocation, normalization, share, school, gg, uc, justice, receipts,
  * production. r: responses by service family; schools may be "cbo" (take spec.school). m: one of
  * MODELS. */
-function cost(spec, r, m = MODELS.base) {
+function stateFor(spec, r, m = MODELS.base, extra = {}) {
   const s = Engine.defaultState(m);
   s.allocation = spec.allocation;
   s.receipt_scenario = spec.receipts || model.receipts.reference;
@@ -109,7 +109,11 @@ function cost(spec, r, m = MODELS.base) {
     [CORR.education_other_part]: (1 - spec.share) * r.colleges,
     [CORR.correction_constant]: 1,
   };
-  return -Engine.evaluate(m, s).welfare_bn; // positive = cost to other US residents
+  // extra: engine state fields outside the service dials (e.g. transfer_response), set last.
+  return Object.assign(s, extra);
+}
+function cost(spec, r, m = MODELS.base, extra) {
+  return -Engine.evaluate(m, stateFor(spec, r, m, extra)).welfare_bn; // positive = cost to other US residents
 }
 
 const bands = readCsv(path.join(MAIN_CASE, "derived", "main_case_bands.csv"));
@@ -130,6 +134,37 @@ const MAIN_DIMS = {
   school: CBO_SCHOOLS, gg: GG, uc: ["uninsured_use_low", "uninsured_use_high"], justice: ["use"],
 };
 const mainSpecs = product(MAIN_DIMS);
+
+/* The production grid with private capital adjusted and no capital owners excluded (the $6–21bn of
+ * FAQ entry 4), and every executed key, incidence and allocation choice: the matrix's outer range. */
+const PROD_DIMS = Engine.PRODUCTION_DIMS;
+function decode(index) {
+  const out = {};
+  for (let k = PROD_DIMS.length - 1; k >= 0; k--) {
+    const levels = model.production.dims[PROD_DIMS[k]];
+    out[PROD_DIMS[k]] = levels[index % levels.length];
+    index = Math.floor(index / levels.length);
+  }
+  return out;
+}
+const saneProduction = [], saneProductionDims = [];
+for (let i = 0; i < model.production.private_wtp_bn.length; i++) {
+  const d = decode(i);
+  if (Engine.productionIndex(model, d) !== i) throw new Error("production index decode mismatch at " + i);
+  if (d.capital_adjustment === 1 && d.excluded_capital_owner_share === 0) {
+    saneProduction.push(model.production.private_wtp_bn[i] + model.production.induced_receipts_bn[i]);
+    saneProductionDims.push(d);
+  }
+}
+const PROD_SPAN = span(saneProduction);
+const JUSTICE_KEYS = Object.keys(model.spending.lines.find((l) => l.id === "public_order_safety").keys);
+const UC_KEYS = Object.keys(model.spending.lines.find((l) => l.id === "medicaid_and_chip_other_medical").keys)
+  .filter((k) => k === "medicaid" || k.startsWith("uninsured_use"));
+const RECEIPTS = model.receipts.scenarios;
+const outerSpecs = product({
+  allocation: ["personal", "shared"], share: SHARES, school: CBO_SCHOOLS,
+  uc: UC_KEYS, justice: JUSTICE_KEYS, receipts: RECEIPTS,
+});
 
 /* Explorer presets as its page and test_engine.js load them: value_from read from scaling_check.json,
  * dotted paths set in place. The model carries the corrected data for presets that switch them on. */
@@ -156,7 +191,7 @@ function presetCost(id, extra) {
 
 module.exports = {
   fs, path, HERE, FISCAL, EXPLORER, MAIN_CASE, Engine, model, scaling, corrections, MODELS, CORR,
-  gate, failures, near, round, readCsv, product, span, SHARES, GG, CBO_SCHOOLS, cost, band, MAIN,
+  gate, failures, near, round, readCsv, product, span, SHARES, GG, CBO_SCHOOLS, stateFor, cost, band, MAIN,
   FIXED_COLLEGES, PROPORTIONAL, BEFORE, BY_SIDE, MAIN_DIMS, mainSpecs, presets, presetModel, presetState,
-  presetCost,
+  presetCost, saneProduction, saneProductionDims, PROD_SPAN, JUSTICE_KEYS, UC_KEYS, RECEIPTS, outerSpecs,
 };
