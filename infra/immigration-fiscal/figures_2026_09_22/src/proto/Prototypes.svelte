@@ -20,6 +20,7 @@
     <a href="#coastline">Coastline</a>
     <a href="#dots">Heaps of dots</a>
     <a href="#nomogram">Nomogram</a>
+    <a href="#choices-sum">Choices as a sum</a>
     <a href="#choices">Every combination</a>
     <a href="#cube">Cube</a>
   </nav>

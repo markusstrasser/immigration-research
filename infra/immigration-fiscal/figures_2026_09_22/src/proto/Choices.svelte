@@ -94,7 +94,89 @@
     if (faded) return '#d6d2c4'
     return dot.worse ? '#ca7a5e' : '#5c97d2'
   }
+
+  /* The static sum: start at the least costly combination where services grow, add each choice. */
+  const wf = d.waterfall
+  const WX0 = 268
+  const WX1 = 652
+  const wx = (x) => WX0 + ((x - LO) / (HI - LO)) * (WX1 - WX0)
+  const WROW = 31
+  const WTOP = 34
+  const wRows = [
+    { kind: 'dot', label: 'Least costly option on every choice', sub: 'while public services grow', at: wf.start },
+    ...wf.steps.map((st) => ({ kind: 'step', label: st.label, sub: `${st.from} → ${st.to}`, from: st.at[0], to: st.at[1], add: st.add })),
+    { kind: 'dot', label: 'Most costly option on every choice', sub: 'the end of the sum', at: wf.end },
+  ].map((r, i) => ({ ...r, y: WTOP + i * WROW }))
+  const freezeY = WTOP + wRows.length * WROW + 20
+  const wBottom = freezeY + 24
+  const more = (x) => (x < 0.5 ? 'under $1bn' : '$' + Math.round(x) + 'bn')
 </script>
+
+<section class="fig" id="choices-sum">
+  <div class="body">
+    <p class="kicker">Complete account · every combination of its choices · read as a sum</p>
+    <h2>Every choice at its least costly still leaves everyone else {bn(wf.start)} a year worse off</h2>
+    <p class="lede">
+      The account adds up, so its choices can be read as a sum. Take the least costly option on every choice while
+      public services grow with the group: everyone else is <span class="num">{bn(wf.start)}</span> a year worse off.
+      Switching each choice to its most costly option adds the amounts below, up to <span class="num">{bn(wf.end)}</span>.
+      The one move that crosses zero is stopping public services from growing at all.
+    </p>
+    <div class="scroll">
+      <svg class="wide" viewBox="0 0 {W} {wBottom + 40}" role="img" aria-label="The account's choices as a sum, from the least costly to the most costly combination">
+        <line x1={wx(0)} x2={wx(0)} y1={WTOP - 22} y2={wBottom} stroke="#111" stroke-width="1" />
+        <!-- the adopted main case -->
+        <line x1={wx(d.main[0])} x2={wx(d.main[1])} y1={WTOP - 16} y2={WTOP - 16} stroke="#111" stroke-width="2" />
+        <text class="num" x={wx(d.main[0]) - 6} y={WTOP - 12} text-anchor="end" font-size="11">main case, {span(d.main)}</text>
+
+        {#each wRows as r, i}
+          <text x="0" y={r.y + 4} font-size="12.5">{r.label}</text>
+          <text class="faint it" x="0" y={r.y + 17} font-size="10.5">{r.sub}</text>
+          {#if r.kind === 'dot'}
+            <circle cx={wx(r.at)} cy={r.y + 6} r="4" fill="#111" />
+            <text class="num" x={wx(r.at) + 9} y={r.y + 10} font-size="11.5">{bn(r.at)} worse off</text>
+          {:else}
+            <!-- the connector from the previous row's end -->
+            <line x1={wx(r.from)} x2={wx(r.from)} y1={r.y - WROW + 12} y2={r.y} stroke="#8d897e" stroke-width="0.7" stroke-dasharray="2 2" />
+            <rect x={wx(r.from)} y={r.y} width={Math.max(1.5, wx(r.to) - wx(r.from))} height="12" fill="#f2cabc" stroke="#ca7a5e" stroke-width="0.8" />
+            <text class="num" x={wx(r.to) + 6} y={r.y + 10} font-size="11.5">{more(r.add)} more</text>
+          {/if}
+        {/each}
+        <line x1={wx(wf.end)} x2={wx(wf.end)} y1={wRows.at(-2).y + 12} y2={wRows.at(-1).y + 2} stroke="#8d897e" stroke-width="0.7" stroke-dasharray="2 2" />
+
+        <!-- the one move that crosses zero -->
+        <line x1="0" x2={W} y1={freezeY - 12} y2={freezeY - 12} stroke="#dcd8c8" stroke-width="0.8" />
+        <text x="0" y={freezeY + 4} font-size="12.5">Instead, stop public services growing</text>
+        <text class="faint it" x="0" y={freezeY + 17} font-size="10.5">from the least costly option on every choice</text>
+        <rect x={wx(wf.freeze)} y={freezeY} width={wx(wf.start) - wx(wf.freeze)} height="12" fill="#bbd4ee" stroke="#5c97d2" stroke-width="0.8" />
+        <line x1={wx(wf.start)} x2={wx(wf.start)} y1={WTOP + 10} y2={freezeY} stroke="#8d897e" stroke-width="0.7" stroke-dasharray="2 2" />
+        <text class="num" x={wx(wf.start) + 6} y={freezeY + 10} font-size="11.5" fill="#2f5f8f">{bn(wf.start - wf.freeze)} less: {bn(wf.freeze)} better off</text>
+
+        {#each [-100, 0, 100, 200, 300] as t}
+          <line x1={wx(t)} x2={wx(t)} y1={wBottom} y2={wBottom + 4} stroke="#8d897e" stroke-width="0.8" />
+          <text class="faint num" x={wx(t)} y={wBottom + 16} text-anchor="middle" font-size="11">{t === 0 ? '0' : bn(t)}</text>
+        {/each}
+        <text class="muted it" x={wx(-100)} y={wBottom + 32} font-size="11.5">← everyone else better off</text>
+        <text class="muted it" x={WX1} y={wBottom + 32} text-anchor="end" font-size="11.5">everyone else worse off →</text>
+      </svg>
+    </div>
+    <p class="note">
+      Nothing here is picked by hand: the start is the least costly of the combinations in which services grow, the end the
+      most costly, and each bar is the engine’s difference between one combination and the next.
+    </p>
+  </div>
+
+  <aside class="side">
+    <p>
+      The rows run in order of how far each choice moves the average across all combinations. A step can depend on the
+      ones before it: the schools’ share of education adds under $1bn here because schools and colleges already grow fully.
+    </p>
+    <p>
+      Stopping services from growing means schools, police, courts, health, welfare, colleges and roads all held still.
+    </p>
+    <p>proto/choices.cjs; gates check that the steps start and end at the least and most costly combinations.</p>
+  </aside>
+</section>
 
 <section class="fig" id="choices">
   <div class="body">

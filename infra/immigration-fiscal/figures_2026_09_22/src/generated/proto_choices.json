@@ -120,6 +120,123 @@
   200.9,
   246.3
  ],
+ "waterfall": {
+  "start": 102.44,
+  "end": 354.35,
+  "steps": [
+   {
+    "id": "schools",
+    "label": "school budgets for their children",
+    "from": "63% of the usual cost",
+    "to": "the full usual cost",
+    "add": 51.33,
+    "at": [
+     102.44,
+     153.77
+    ]
+   },
+   {
+    "id": "gg",
+    "label": "general administration",
+    "from": "held fixed",
+    "to": "grows fully",
+    "add": 47.06,
+    "at": [
+     153.77,
+     200.83
+    ]
+   },
+   {
+    "id": "roads",
+    "label": "roads, transport, parks, culture",
+    "from": "held fixed",
+    "to": "grow with the group",
+    "add": 40.8,
+    "at": [
+     200.83,
+     241.63
+    ]
+   },
+   {
+    "id": "colleges",
+    "label": "colleges and other education",
+    "from": "held fixed",
+    "to": "grow with the group",
+    "add": 53.71,
+    "at": [
+     241.63,
+     295.34
+    ]
+   },
+   {
+    "id": "justice",
+    "label": "how police, courts and prisons are charged",
+    "from": "per adult",
+    "to": "by use",
+    "add": 15.52,
+    "at": [
+     295.34,
+     310.86
+    ]
+   },
+   {
+    "id": "allocation",
+    "label": "household money",
+    "from": "pooled in the household",
+    "to": "each person’s own",
+    "add": 14.24,
+    "at": [
+     310.86,
+     325.1
+    ]
+   },
+   {
+    "id": "share",
+    "label": "schools’ share of education spending",
+    "from": "72%",
+    "to": "87%",
+    "add": 0.81,
+    "at": [
+     325.1,
+     325.91
+    ]
+   },
+   {
+    "id": "production",
+    "label": "the gain from their work",
+    "from": "$21bn a year",
+    "to": "$6bn a year",
+    "add": 15.1,
+    "at": [
+     325.91,
+     341.01
+    ]
+   },
+   {
+    "id": "receipts",
+    "label": "who bears each tax",
+    "from": "CBO rules",
+    "to": "tax gap on incomes over $500k",
+    "add": 7.59,
+    "at": [
+     341.01,
+     348.6
+    ]
+   },
+   {
+    "id": "uc",
+    "label": "how unpaid hospital care is charged",
+    "from": "like Medicaid",
+    "to": "by uninsured use, high end",
+    "add": 5.75,
+    "at": [
+     348.6,
+     354.35
+    ]
+   }
+  ],
+  "freeze": -87.75
+ },
  "families": [
   {
    "id": "services",
