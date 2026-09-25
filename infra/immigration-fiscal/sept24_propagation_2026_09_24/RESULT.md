@@ -116,6 +116,8 @@ Per-member figures are in the table below.
 | Federal part of the gap, central convention, $bn | 32.0–51.9 | 32.3–52.2 | The sister applies Sept 23 line fractions and approximates the corrections: row 8 at 0, row 10 at family and general assistance, care at the Sept 23 omitted-benefit fraction, schools and colleges at education's fraction. Per the parent, it now reads this lane's per-correction split, so the gap closes on its next run. |
 | Channels outside the memo's sums | — | preferences −3.96, school dilution (proposed), consumer prices (side view), debt legacy (beside, decision 4) | Not in the memo's definition. |
 
+[2026-09-25: all four disagreements are resolved on the ledger's final run. The ledger withdrew its $34.58bn victims hybrid (parent's ruling 1; it was never a lane arm) and now allocates decision 4's $30.93bn, with $28.92bn and $32.34bn as variants. It takes ladder 190's housing values, and it reads the September 24 debt split and interest at 7ec7144. The published pairing stays $248–304bn: equal footing $247.7–298.4bn, custody footing $253.4–304.0bn (`winners_losers_2026_09_24/derived/channels.csv`). The `custody_mixed_scaled` rows in `derived/real_costs_totals.csv` are kept as computed and are quoted nowhere.]
+
 ## Sampling uncertainty (ladder 184)
 
 `sept24_specs.cjs` costs the 64 main specifications on both cases with the engine. `propagate.py --case sept24` then carries the lane's sources through them (CPS replicate keys, MEPS donor covariance, the school correction and the production term).

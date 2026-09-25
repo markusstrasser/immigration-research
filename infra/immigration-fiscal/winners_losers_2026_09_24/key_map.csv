@@ -1,0 +1,27 @@
+lane,group_regex,channel_regex,key,default_state,note
+*,.,^bound\b|\bbound:,,,"a bound, not an estimate: role table only"
+*,future,,,,future taxpayers are not today's persons: role table only (brief step 5)
+school_dilution_2026_09_24,(low.income|poor|bottom).*(pupil|student)|(pupil|student).*(low.income|poor|bottom),,public_school_pupils:q1,,district income stands in as the SPM income quintile
+school_dilution_2026_09_24,(high.income|rich|affluent|top).*(pupil|student)|(pupil|student).*(high.income|rich|affluent|top),,public_school_pupils:q5,,district income stands in as the SPM income quintile
+school_dilution_2026_09_24,^(?!.*(group|mexican)).*(pupil|student),,public_school_pupils,,other residents' pupils aged 5-17
+school_dilution_2026_09_24,group|mexican,,,,"the group's own pupils are not other residents: group frame, role table only"
+vending_restaurants_2026_09_24,restaurant.*(owner|operator|firm|business|proprietor)|licensed restaurant(?!.*worker),,industry_owner:7225@<ST>,CA,restaurant owners' self-employment income; California unless the row names another state
+vending_restaurants_2026_09_24,restaurant.*(worker|employee|staff),,industry_worker:7225@<ST>,CA,restaurant wage earners
+vending_restaurants_2026_09_24,vendor,,,,vendors are mostly group members; role table only
+vending_restaurants_2026_09_24,resident.*near|neighbo|litter,,,,no geography below the state in CPS
+vending_restaurants_2026_09_24,budget,,state_local_taxes@<ST>,CA,local budgets: the state's state-local taxpayers (City of Los Angeles unless the row names another state)
+compliance_gap_2026_09_24,non.?compliant,,,,noncompliant employers cannot be identified in CPS
+compliance_gap_2026_09_24,informal|unauthori[sz]ed,,,,"a within-group item; group frame, role table only"
+compliance_gap_2026_09_24,compliant.*(owner|employer|firm|business),,industry_owner:<NAICS>,,NAICS from the row text (NAICS nnnn) or its industry words
+compliance_gap_2026_09_24,(compliant|their).*(worker|employee)|workers? of compliant,,industry_worker:<NAICS>,,NAICS from the row text or its industry words
+movers_reasons_2026_09_24,california.*budget|budget.*california|\bCA\b.*budget,,state_local_taxes@CA,,a tax base moved: California's taxpayers
+movers_reasons_2026_09_24,texas.*budget|budget.*texas|\bTX\b.*budget,,state_local_taxes@TX,,a tax base moved: Texas's taxpayers
+movers_reasons_2026_09_24,mover|leaving|left|moved out,,interstate_movers:<ST>,CA,"persons who left the origin state in the past year (CPS MIG_ST); the state named in the row, else California"
+movers_reasons_2026_09_24,stay,,renters@<ST>,CA,housing-cost relief to renters who stay
+*,federal taxpayer,,federal_taxes,,
+*,state.*taxpayer|local taxpayer,,state_local_taxes,,
+*,taxpayer,,taxes,,
+*,renter|tenant,,renters,,
+*,landlord,,landlords,,
+*,commuter|driver,,commuters,,
+*,home.?owner|owner.occupier,,owners,,
