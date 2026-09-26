@@ -81,7 +81,7 @@ He added "but we don't have to update all the uis ... we're still researching ..
   of 1 schools save 1 under any functional form.
 - **School dilution** ($16.1bn beside the account, decision 2026-09-25) no longer applies to the main
   case, since nothing is left unfunded. It applies to the lower-response scenarios. The unfunded
-  school cost is $46–58bn a year in the one-year scenario and $22–25bn at the low side.
+  school cost is $46–58bn a year in the one-year scenario and $22–25bn at the low side. [2026-09-26, later: read at each scenario's own end specifications, it is $45–58bn and $22–25bn; the first figures were band-end moves that include the switch of end specification (f1e4f5b).]
 - **The sign break-even is unchanged at 5.8–17.0%.** That test moves every service at one common
   share.
 - **The "CBO-informed" label** now covers CBO's tax-incidence rules and its category rule for which

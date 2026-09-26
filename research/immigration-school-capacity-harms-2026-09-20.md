@@ -13,7 +13,7 @@ stays open.] The adopted account
 charges the group's pupils 63–66% of average spending, so $51–59bn a year of school spending
 follows no one. [2026-09-26: the main case now charges them the full average cost (ladder 230), so
 nothing is left unfunded; the unfunded $46–58bn is the one-year scenario's and $22–25bn the low
-side's.] The [dilution lane](../infra/immigration-fiscal/school_dilution_2026_09_24/RESULT.md)
+side's. [2026-09-26, later: $45–58bn and $22–25bn, read at each scenario's own end specifications (f1e4f5b).]] The [dilution lane](../infra/immigration-fiscal/school_dilution_2026_09_24/RESULT.md)
 (ladder 222) finds most of it is instruction that did not keep pace, and prices that shortfall at
 about **$16bn a year** of other residents' pupils' present-value lifetime earnings (−$2bn to
 +$36bn across JM's contexts). [2026-09-25: conditional on an instructional dollar lost to enrollment
@@ -194,6 +194,11 @@ York City's weighted funding in 2022–24 kept spending up with arrivals; IRCA-e
 2023; Bernini & Sabet 2025) and a calibrated California model (Coen-Pirani) point to dilution.
 
 ## Revisions
+
+- 2026-09-26, later: read at each scenario's own end specifications, the one-year scenario leaves
+  $45–58bn of school cost unfunded, not $46–58bn. The earlier figure was a band-end move that
+  included a switch of specification (f1e4f5b). Concept affected: how much school cost follows no
+  one.
 
 - 2026-09-26: the main case charges schools at their full average cost (ladder 230,
   [decision](../decisions/2026-09-26-main-case-schools-full-cost.md)). The dilution price applies
