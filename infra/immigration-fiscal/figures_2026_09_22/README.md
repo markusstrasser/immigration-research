@@ -39,7 +39,10 @@ visual grammar ... what's negative / positive").
   staircase adds the corrections as its last two main-case rows (taxes, then benefits and
   services); the matrix runs on the corrected model, with the tax corrections carried to each
   incidence rule as the same proportional change. Who pays, crime, birthplace and the back-cast
-  series and windows (the corrected concept) are read from the lanes’ CSVs. The gates reproduce
+  series and windows (the corrected concept) are read from the lanes’ CSVs. Who pays and the
+  back-cast are read as they stood on the September 24 case, pinned by commit in `account.cjs`
+  (`PINS`: distribution 6e554a3, back-cast da2b107; the prototypes’ explorer presets d710a74). The
+  lanes move with each main case, and the pages stay on September 24 until the operator asks. The gates reproduce
   `main_case_2026_09_24/derived/main_case_bands.csv` (the case before the corrections, the adopted
   case and its non-school-fixed and proportional bands) and its receipts-side change, the
   explorer’s taxes-minus-benefits card, the $6–21bn production grid, ladder 194’s −$80.7bn /

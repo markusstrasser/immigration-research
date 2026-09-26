@@ -12,7 +12,7 @@
 "use strict";
 // The account, its engine, the gates and the shared helpers: account.cjs (also loaded by proto_data.cjs).
 const {
-  fs, path, HERE, FISCAL, EXPLORER, MAIN_CASE, Engine, model, scaling, corrections, MODELS, CORR,
+  fs, path, HERE, FISCAL, EXPLORER, pinned, MAIN_CASE, Engine, model, scaling, corrections, MODELS, CORR,
   gate, failures, near, round, readCsv, product, span, SHARES, GG, CBO_SCHOOLS, cost, band,
   MAIN, FIXED_COLLEGES, PROPORTIONAL, BEFORE, BY_SIDE, MAIN_DIMS, mainSpecs,
   saneProduction, PROD_SPAN, JUSTICE_KEYS, UC_KEYS, RECEIPTS, outerSpecs,
@@ -151,7 +151,7 @@ gate("break-even read from sign_reversal.csv", near(breakEven[0], 0.0476, 1e-4) 
 /* ---------------------------------------------------------------- who pays ------------------ */
 
 console.log("\n[who pays]");
-const channels = readCsv(path.join(FISCAL, "distribution_weights_2026_09_23", "derived", "channel_by_quintile.csv"))
+const channels = readCsv(path.join(FISCAL, "distribution_weights_2026_09_23", "derived", "channel_by_quintile.csv"), "distribution")
   .filter((r) => r.measure === "spm");
 const CHANNELS = [
   { id: "fiscal_a", label: "Fiscal cost, paid in proportion to taxes" },
@@ -180,8 +180,8 @@ const whoPays = CHANNELS.map((c) => {
   // The fiscal channel is the distribution lane's A_mid + central F on the case it ran; that case
   // must be the page's main case, so the two figures never quote different cases.
   const fa = whoPays.find((c) => c.id === "fiscal_a");
-  const distInputs = JSON.parse(fs.readFileSync(
-    path.join(FISCAL, "distribution_weights_2026_09_23", "derived", "inputs.json"), "utf8"));
+  const distInputs = JSON.parse(pinned("distribution",
+    path.join(FISCAL, "distribution_weights_2026_09_23", "derived", "inputs.json")));
   const distBand = distInputs.fiscal.adopted.band;
   gate("who-pays runs on the page's main case", distInputs.fiscal.case === "sept24" &&
     near(distBand[0], MAIN[0], 1e-3) && near(distBand[1], MAIN[1], 1e-3),
@@ -194,7 +194,7 @@ const whoPays = CHANNELS.map((c) => {
 /* ---------------------------------------------------------------- by percentile ------------- */
 
 console.log("\n[by percentile]");
-const pctRows = readCsv(path.join(FISCAL, "distribution_weights_2026_09_23", "derived", "channel_by_percentile.csv"))
+const pctRows = readCsv(path.join(FISCAL, "distribution_weights_2026_09_23", "derived", "channel_by_percentile.csv"), "distribution")
   .filter((r) => r.measure === "spm");
 const pctSeries = (channel) => {
   const rows = pctRows.filter((r) => r.channel === channel).sort((x, y) => Number(x.percentile) - Number(y.percentile));
@@ -207,7 +207,7 @@ const byPercentile = { totalBn: null, series: {}, top1: {} };
 for (const conv of ["a", "b"]) {
   const rows = pctSeries(`TOTAL_${conv}`);
   // The percentile table must reproduce the quintile table the who-pays panels read, fifth by fifth.
-  const quint = readCsv(path.join(FISCAL, "distribution_weights_2026_09_23", "derived", "channel_by_quintile.csv"))
+  const quint = readCsv(path.join(FISCAL, "distribution_weights_2026_09_23", "derived", "channel_by_quintile.csv"), "distribution")
     .filter((r) => r.measure === "spm" && r.channel === `TOTAL_${conv}`);
   const qBn = (k) => Number(quint.find((r) => r.quintile === String(k)).bn);
   const sums = [0, 1, 2, 3, 4].map((k) => rows.slice(20 * k, 20 * k + 20).reduce((s, r) => s + Number(r.bn), 0));
@@ -313,7 +313,7 @@ const origins = screen.map((s) => {
 console.log("\n[back-cast]");
 const BACKCAST = path.join(FISCAL, "historical_backcast_2026_09_20", "derived");
 const CONCEPT = "net_cost_cbo_informed_corrected";
-const annual = readCsv(path.join(BACKCAST, "backcast_annual.csv"));
+const annual = readCsv(path.join(BACKCAST, "backcast_annual.csv"), "backcast");
 const RULES = ["low", "high"].flatMap((end) => ["flat", "ratio", "income"].map((rule) => `${CONCEPT}_${end}__${rule}`));
 for (const c of RULES) if (!(c in annual[0])) throw new Error("no back-cast column " + c);
 const backcast = annual.map((row) => {
@@ -327,7 +327,7 @@ const backcast = annual.map((row) => {
   gate("back-cast 2024 = adopted band", near(ends[0], MAIN[0], 1e-3) && near(ends[1], MAIN[1], 1e-3), ends.join(" to "));
   gate("back-cast covers 2005–2024", backcast.length === 20 && backcast[0].year === 2005 && backcast.at(-1).year === 2024);
 }
-const windows = readCsv(path.join(BACKCAST, "backcast_windows.csv")).filter((r) => r.concept.startsWith(CONCEPT + "_"));
+const windows = readCsv(path.join(BACKCAST, "backcast_windows.csv"), "backcast").filter((r) => r.concept.startsWith(CONCEPT + "_"));
 const win = (col) => span(windows.map((r) => Number(r[col]))).map((x) => round(x, 3));
 const backcastWindows = { ten: win("10y_2015_2024"), fifteen: win("15y_2010_2024"), twenty: win("20y_2005_2024") };
 gate("back-cast windows $1.7–2.4tn over ten years", windows.length === 6 && near(backcastWindows.ten[0], 1.7317, 1e-3) &&
