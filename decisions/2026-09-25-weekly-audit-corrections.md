@@ -92,7 +92,9 @@ precision, and the transfer argument against the debt line).
 
 - Program-level eligibility for unauthorized seniors is priced, including emergency Medicaid,
   state coverage and uncompensated care.
-- Returnees are compared with US stayers on harmonized schooling.
+- Returnees are compared with US stayers on harmonized schooling. [2026-09-26: done, ladder 228.
+  Returnee men hold 6–8 points less tertiary schooling than male stayers; the stock moves 0.13–0.23
+  points per five-year window.]
 - Ladder 199's successor design (a pre-determined ancestry stock times 2000s national flows) or a
   native-specific 2000 outcome is built.
 - Detection rates for voter-roll citizenship checks are measured.

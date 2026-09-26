@@ -132,7 +132,10 @@ about a year less schooled than those who stay ([ENADID, ladder 174](immigration
 which raises the resident first generation's average without any individual improving. Their
 split is not measured here. [2026-09-25: the second mechanism is withdrawn: ENADID compares
 returnees with adults who never left Mexico, so it does not show that return migration raises the
-US first generation's average; see Revisions.] `[INFERENCE]` Income levels are nominal and not comparable across
+US first generation's average; see Revisions.] [2026-09-26: measured against Mexico-born people
+still in the US (ladder 228): returnee men do hold less schooling than male stayers, so the
+mechanism has the stated sign, but one five-year window's return raises the stock's tertiary share
+by only 0.13–0.23 points; its share of the change above is not measured.] `[INFERENCE]` Income levels are nominal and not comparable across
 periods; only the same-year gaps are.
 
 ## 4. Other origins: the ratio mostly does not apply
@@ -268,3 +271,7 @@ matched.
   returnees with Mexico non-migrants, so its sign against emigrants still in the US is not
   established and the mechanism is withdrawn; the arrival-cohort mechanism (ladder 133) is
   unaffected. [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).
+- **2026-09-26 (US-stayer comparison).** Ladder 228 compares ENADID returnees with ACS Mexico-born
+  people still in the US. Returnee men hold 6–8 points less tertiary schooling, so the withdrawn
+  mechanism has the stated sign; each window moves the stock by 0.13–0.23 points of tertiary
+  share, which is small beside the period change in §3.
