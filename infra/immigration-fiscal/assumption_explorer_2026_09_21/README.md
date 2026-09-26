@@ -341,17 +341,20 @@ Adopting this changed the analysis protocol, so it waited for the operator; he a
   23 case (the general-government addition of 28.5-40.6 bn, the scale net's 189.3-235.7 bn, the
   409.1 bn stress test) are labelled with that date.
 - A fifth pass on 2026-09-26 followed the finite-removal responses and the consumption key
-  (inventory `_cache/inventory_2026_09_26.json`, rebuilt from the committed cards by
-  `_cache/cards_2026_09_26/build_inventory.py`, which re-anchors each citation from the files as they
-  stood at ba12f3c): 57 cards and 250 values, none
+  (inventory `_cache/inventory_2026_09_26.json`, rebuilt from the cards as committed at ba12f3c by
+  `_cache/cards_2026_09_26/build_inventory.py`. It maps each citation's lines from the files at
+  ba12f3c, and its own edits' citations from those at 199582e, to the files as they stand, and it
+  finds the FAQ's combining rules by their opening words): 57 cards and 250 values, none
   dropped. Nine cards that quoted a changed September 24 number now lead with the September 26 case,
   citing `main_case_2026_09_26/RESULT.md` or FAQ entry 17: the headline, three cards under entry 2,
   entries 4, 11, 16 and 17, and the assigned balance (receipts 488.5 → 492.5 bn). The September 24
-  figure stays beside each as such. 29 citations that had drifted were re-anchored with no value
-  changed. Values computed only on the September 24 case keep that date: the back-cast, the scale
-  net, the real-costs totals, the justice change of 2.03 bn and the 356 bn endpoint. FAQ entry 2
-  still gives general government as 0.59-0.84 and entry 16 still names the September 24 case; the
-  cards take the September 26 figures from the main-case lane.
+  figure stays beside each as such. Values computed only on the September 24 case keep that date: the
+  back-cast, the scale net, the real-costs totals, the justice change of 2.03 bn and the 356 bn
+  endpoint. After schools were charged at full cost that evening, the cards call it the September 26
+  case, never the adopted main case, and the headline card says the explorer runs it as the one-year
+  scenario while the adopted main case ($258-292 bn) is not yet in the explorer. Every value
+  re-verified at its cited line at 20f68c1. Lines added to the documents later move the citations
+  again: rerun the two scripts, since `build_ui.py` does not recheck them.
 - The production block is CES; increasing-returns arguments are outside it.
 - Compiled through an LLM (notes/llm-bias-caveat.md): the ledger numbers are gated, the readings
   of authors and the ladder's keyword links are not.
