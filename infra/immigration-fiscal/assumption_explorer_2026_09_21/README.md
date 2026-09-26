@@ -7,12 +7,17 @@ allocations and the 3,888 executed production scenarios. `test_engine.js` gates 
 2,629 rows of the 497,664-row grid (every level of every dimension), all 60 category
 service-response cases, all 32 complete accounting cases and the four published headline
 bounds (165.1-197.4 and 269.8-288.7 bn); worst gap 4e-9 bn. [CALCULATION: test_engine.js]
-Since 2026-09-24 the page's central case is the main case with the data corrections (see
-"Adopted 2026-09-24: data corrections" below): **200.9-246.3 bn**, with non-school education fixed
-157.1-210.8 bn, and proportional 303.0-336.4 bn. The presets reproduce these bands as loaded, with
-no override. With the corrections switched off, the September 23 bands reproduce: 203.2-249.6,
-158.9-212.6 and 307.9-341.0 bn. [CALCULATION: test_engine.js against
-main_case_2026_09_24/derived/main_case_bands.csv and main_case_2026_09_23/derived/main_case_bands.csv]
+Since 2026-09-26 the page's central case is the finite-removal case adopted that day (see "Adopted
+2026-09-26" below): **200.9-245.7 bn**, with non-school education fixed 156.5-210.8 bn, and
+proportional 301.3-334.8 bn. Later the same evening the operator charged schools at full average
+cost, which makes the main case 258.5-292.0 bn and this case the one-year scenario
+([decision](../../../decisions/2026-09-26-main-case-schools-full-cost.md)); the page stays on the
+one-year scenario until the operator asks. The presets reproduce these bands as loaded, with no override. With
+the corrections switched off the presets keep the adopted responses, so the page shows the
+uncorrected data at those responses: 207.4-253.2, 162.4-216.7 and 308.4-341.5 bn. The test also
+reproduces the two earlier cases at the marginal rates: September 23 (203.2-249.6 bn, no
+corrections) and September 24 (200.9-246.3 bn, that day's payload). [CALCULATION: test_engine.js
+against main_case_2026_09_23, main_case_2026_09_24 and main_case_2026_09_26/derived/main_case_bands.csv]
 
 The page has a pinned result bar (the live number, its unresolved-convention span, the distance
 from the central case, and the last-touched setting beside its central value and its effect
@@ -20,7 +25,7 @@ alone), a switch for the data corrections, convention cards, an exact Shapley sp
 with uncounted-but-assigned amounts, a sensitivity ranking, and the full receipt and spending
 ledger with per-line allocation rule and response. Below the ledger: whose welfare the ledger
 counts, what four commentators argue (text, no number under any name), the FAQ-routed
-objection cards (56 on 2026-09-24), the whole confidence ladder, searchable and linked to ledger lines, and a
+objection cards (57 on 2026-09-26), the whole confidence ladder, searchable and linked to ledger lines, and a
 Sources section. Every assumption, card, convention and author statement carries short source
 labels that open the paper, report or dataset directly.
 
@@ -32,6 +37,7 @@ uv run --no-project --with duckdb --with pandas --with numpy python3 build_model
 OPENBLAS_NUM_THREADS=1 uv run --no-project --with openpyxl --with numpy python3 scaling_check.py
 node ../main_case_2026_09_23/main_case.js           # reads model.json; its tracked outputs must not change
 node ../main_case_2026_09_24/main_case.cjs          # writes derived/corrections.json, only when its gates pass
+node ../main_case_2026_09_26/main_case.cjs          # the adopted payload, with meta.responses
 node test_engine.js
 uv run --no-project python3 build_ui.py && open derived/explorer.html
 uv run --no-project python3 check_sources.py        # optional: re-fetch every link, rewrite sources_check.json
@@ -42,15 +48,18 @@ rules (`spending.added_keys` in `model.json` records each rule's base, change an
 `test_engine.js` reads `main_case_2026_09_23/derived/main_case_bands.csv` and `inputs.json`. The
 CSV prints four decimals, so the gate checks it to half a unit of the last digit and checks the
 lane's own identity (published band plus the three changes, from `inputs.json`) to 1e-6 bn.
-It also applies `main_case_2026_09_24/derived/corrections.json` and checks that lane's three bands.
-`build_ui.py` inlines the same payload and refuses to build without it.
+It applies `main_case_2026_09_26/derived/corrections.json`, as the page does, and checks that
+lane's bands; it also applies `main_case_2026_09_24/derived/corrections.json` to a copy of the model
+and checks the September 24 bands. `build_ui.py` inlines the September 26 payload and refuses to
+build without it or without its responses.
 
 `context.json` is rebuilt with `build_context.py <inventory.json>`; it keeps a value only when every
 number in it equals, at its printed precision, a number within two lines of the cited file:line
 (49 of 50 items and all 255 values on 2026-09-21, the dropped item a caveat with no number;
 49 cards and 211 values on 2026-09-23 after the adoption; 53 cards and 231 values later that day,
 after the benefit lanes; 56 cards and 246 values on 2026-09-24, with FAQ 15 and 16 carded; 56 cards
-and 243 values that evening, after the data corrections).
+and 243 values that evening, after the data corrections; 57 cards and 250 values on 2026-09-26,
+after the finite-removal responses and the consumption key).
 Fabricated numbers at real locations are rejected in memo and CSV files alike.
 
 `ladder.py` parses `research/immigration-confidence-ladder.md` at build time, so the page carries
@@ -74,8 +83,10 @@ disagreed (Duncan and Trejo 2017 is ILR Review 70(5), not 71(5)). [SOURCE: sourc
 Since 2026-09-23 the registry also lists documents of this repo (`kind: repo`, with the
 `path` of the file instead of a link): the adoption decision, the main-case lane and the justice
 and uncompensated-care lanes, then the lanes and memos the refreshed cards cite, then the decision
-and main-case lane of the data corrections (17 documents on 2026-09-24). The page opens them locally and lists them after the external
-sources; `check_sources.py` skips them.
+and main-case lane of the data corrections (17 documents on 2026-09-24), and since 2026-09-26 the
+decision, main-case lane, finite-response lane and consumption-key lane of that day's adoption (22
+documents). The page opens them locally and lists them after the external sources;
+`check_sources.py` skips them.
 
 `build_ui.py` refuses to build when a source lacks a link or a repo reference (for a repo
 document, when its file is missing from this checkout), or names a place that is not on the page,
@@ -107,6 +118,57 @@ A separate-context editing pass (`/de-slop`, 45 findings) found the page speakin
 language. Options, allocation rules (47, named from the two upstream builders and guarded at build
 time), statuses and card labels now use reader words; `context.json` prose was edited directly in
 two passes that compare the multiset of numbers in every string before writing, so no value moved.
+
+## Adopted 2026-09-26: finite-removal responses and the consumption key
+
+The operator adopted two corrections together on 2026-09-26
+([decision](../../../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md);
+[main-case lane](../main_case_2026_09_26/RESULT.md)). They move the central case from 200.9-246.3
+to 200.9-245.7 bn: the finite-removal responses add 4.09 / 3.43 bn and the consumption key takes off
+4.05 bn. [CALCULATION: main_case_2026_09_26/main_case.cjs; test_engine.js reproduces it]
+
+- **Payload.** `build_ui.py` and `test_engine.js` load `../main_case_2026_09_26/derived/corrections.json`:
+  the September 24 edits plus audit row 8's finite factor and the consumption key's edits, 270 cell
+  edits on the same cells as September 24, 41 of them changed. The switch applies it whole. Its label
+  and the ledger note name both adoption dates, read from the payload's `meta` and `meta.builds_on`.
+- **Responses.** The finite-removal responses are engine state, not cell edits. The payload carries
+  them in `meta.responses`, and presets read them through `value_from` paths:
+  `responses.general_government.low/high` (0.6000/0.8504) and `responses.school.growth/decline`
+  (0.6522/0.6813). `build_ui.py` resolves a path as it resolves a `scaling_check.json` name and
+  refuses a path that names no number, or a payload without the four responses. The central preset
+  and the proportional benchmark take general government from there, and the central preset takes
+  schools too (the proportional benchmark holds schools at 1). The September 20 preset keeps 0.63/0.66
+  and 0, as the account published them. Preset text prints the bands through a `{response:<name>}`
+  token (0.60-0.85, 65-68%), so no response is typed by hand.
+- **Switch.** Turning the corrections off leaves the responses where the preset set them, so the
+  central case with the switch off is the uncorrected model at the adopted responses, 207.4-253.2 bn,
+  which no decision adopted; the status line and the central preset's note say so. Until 2026-09-26
+  the switch-off state was the September 23 case, because the responses had not moved. That case is
+  now reproduced in `test_engine.js` only.
+- **Sliders.** The school and general-government sliders mark the marginal rates in grey (CBO's 0.63
+  and 0.66; the composite 0.59 and 0.84 from `scaling_check.json`) and the adopted responses in dark
+  ink, with the central tick on the band's first end. Each help text says why the response exceeds
+  the rate: the group is 17.5% of pupils and 12.0% of residents, and under a power-law cost a
+  removal of that size saves more than the marginal rate. Its numbers are read from `meta.responses`.
+- **Citations.** A preset setting can name sources by key (`cite`). The page shows them under the
+  note, and `build_ui.py` refuses a key that `sources.json` lacks or whose source does not list that
+  convention. The changed notes cite `repo_finite_response_2026_09_26`. Four repo documents were
+  registered: the decision, the main-case lane, the finite-response lane and the consumption-key lane.
+- **Gates.** `test_engine.js` checks each band to half a unit of the fourth printed decimal:
+  September 23 at the marginal rates with the switch off (and the lane identity to 1e-6 bn);
+  September 24 on that day's payload at the marginal rates; September 26 with the switch set
+  explicitly and with the presets as loaded; and the uncorrected model at the adopted responses
+  (`uncorrected_at_adopted_responses`), for the central case, non-school education fixed and the
+  proportional benchmark. It also checks that the loaded presets carry exactly the payload's
+  responses. A copy of the presets with the old typed responses fails 12 checks: it computes the
+  mixed case, 196.7-242.2 bn (negative control, 2026-09-26). The build refuses eight malformed
+  inputs (an unknown cite key, a cite whose source does not list the convention, a `value_from` path
+  to nothing or to an object, an unknown `{response:...}` token, a payload without responses or with
+  one end missing, a point value that is neither end of its band) and accepts a point value at the
+  band's other end.
+- **Not recomputed here.** The engine is unchanged. The shelter constant inside the payload stays
+  keyed to 0.59/0.84, and the school-dilution figure beside the account is priced at 0.63-0.66
+  (main_case_2026_09_26 RESULT, Limits).
 
 ## Adopted 2026-09-24: data corrections
 
@@ -145,7 +207,8 @@ spending (−51.0 / −53.6 bn), so the main case moves from 203.2-249.6 to 200.
   audit items".
 - **Status.** The account's executed runs predate the corrections, so with the switch on the page
   never says "the account ran this exact case". The central case with the switch off is named as
-  the case adopted on 2026-09-23.
+  the case adopted on 2026-09-23. [Until 2026-09-26: since then the switch-off state keeps the
+  adopted responses and is named as the central case's assumptions on the published data.]
 - **Amounts in preset text.** Five ledger amounts that preset and author text had typed by hand
   moved with the corrections: education, other services, all services, defense with interest, and
   benefits. They are now `{assigned:<name>}` tokens. The page fills each from the ledger of the
@@ -277,6 +340,18 @@ Adopting this changed the analysis protocol, so it waited for the operator; he a
   (`complete_account_356_endpoint`). Both cards now say so. Values computed only on the September
   23 case (the general-government addition of 28.5-40.6 bn, the scale net's 189.3-235.7 bn, the
   409.1 bn stress test) are labelled with that date.
+- A fifth pass on 2026-09-26 followed the finite-removal responses and the consumption key
+  (inventory `_cache/inventory_2026_09_26.json`, rebuilt from the committed cards by
+  `_cache/cards_2026_09_26/build_inventory.py`, which re-anchors each citation from the files as they
+  stood at ba12f3c): 57 cards and 250 values, none
+  dropped. Nine cards that quoted a changed September 24 number now lead with the September 26 case,
+  citing `main_case_2026_09_26/RESULT.md` or FAQ entry 17: the headline, three cards under entry 2,
+  entries 4, 11, 16 and 17, and the assigned balance (receipts 488.5 → 492.5 bn). The September 24
+  figure stays beside each as such. 29 citations that had drifted were re-anchored with no value
+  changed. Values computed only on the September 24 case keep that date: the back-cast, the scale
+  net, the real-costs totals, the justice change of 2.03 bn and the 356 bn endpoint. FAQ entry 2
+  still gives general government as 0.59-0.84 and entry 16 still names the September 24 case; the
+  cards take the September 26 figures from the main-case lane.
 - The production block is CES; increasing-returns arguments are outside it.
 - Compiled through an LLM (notes/llm-bias-caveat.md): the ledger numbers are gated, the readings
   of authors and the ladder's keyword links are not.
