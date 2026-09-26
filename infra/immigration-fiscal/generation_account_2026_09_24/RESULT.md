@@ -1,4 +1,162 @@
-**Verdict:** Split by generation, the adopted main case ($200.9–246.3bn a year) leaves all three
+**Verdict:** Split by generation, the main case with schools at full average cost ($258.5–292.0bn a
+year) leaves all three Mexican-origin generations as net costs to other US residents, at every one of
+its 64 specifications and under both ways of counting children. Counted in their own generation, the
+Mexico-born cost others $57–78bn a year ($4.7–6.4k per member), the second generation $105–117bn
+($7.3–8.2k) and the third-plus $76–118bn ($5.3–8.2k). Counted with their parents, as the National
+Academies count them, they cost $136–155bn ($11.6–13.3k per adult), $66–68bn ($7.4–7.6k) and
+$55–71bn ($6.7–8.6k). Against the September 24 split, schools at full cost add $62.1bn (low end) and
+$48.5bn (high end), and where the children are counted decides who carries it. Under (a) the second
+and third-plus generations carry 76–91% of it; under (b) the Mexico-born carry 43–44%.
+[FRAMING-SENSITIVE] [CALCULATION: `run_generations.cjs` → `derived/generation_summary.json`,
+`change_from_sept24`]
+
+## Schools at full average cost (2026-09-26)
+
+The operator adopted schools at full average cost per pupil as the main case
+(`main_case_schools_full_2026_09_26`, $258.4885–291.9548bn; decision
+`2026-09-26-main-case-schools-full-cost`). It is the September 26 case (finite-removal responses, row 8
+at 0.949, the consumption key) with the school response at 1. `derived/` holds this case.
+`--case sept26` reproduces the one-year scenario ($200.9180–245.6949bn), and `--case sept24`
+reproduces the September 24 record below byte for byte. Model self-report: claude-opus-5-5.
+Propagation report: [RESULT_generation.md](../sept26_propagation_2026_09_26/RESULT_generation.md).
+
+These figures are net costs to other US residents, $bn a year, 2024. Schools respond at 1 at both ends.
+The low end is the shared allocation with GDP normalization, school share 0.715 and general government
+at 0.6000. The high end is the personal allocation with cash normalization, school share 0.865 and
+general government at 0.8504. At a school response of 1 the school-share bound flips, so the ends are
+specifications 48 and 11, not September 24's 56 and 7.
+
+| (a) Children in their own generation | $bn, low end | $bn, high end | Own range, $bn | $ per member, low / high | $ per adult, low / high |
+|---|---|---|---|---|---|
+| G1, born in Mexico | 77.6 | 56.9 | 49.3–85.4 | 6,354 / 4,657 | 6,651 / 4,875 |
+| G2, US-born, a parent born in Mexico | 105.0 | 117.5 | 105.0–117.5 | 7,326 / 8,195 | 11,778 / 13,176 |
+| G3+, US-born of US-born parents | 75.8 | 117.6 | 75.8–117.6 | 5,288 / 8,198 | 9,268 / 14,369 |
+| All three (the main case) | 258.5 | 292.0 | 258.5–292.0 | 6,321 / 7,139 | 8,984 / 10,147 |
+
+| (b) Minors with their parents (NAS 2017) | $bn, low end | $bn, high end | Own range, $bn | $ per member, low / high | $ per adult, low / high |
+|---|---|---|---|---|---|
+| G1 | 135.6 | 155.4 | 135.6–155.4 | 8,043 / 9,218 | 11,612 / 13,309 |
+| G2 | 67.9 | 66.1 | 60.9–73.0 | 5,562 / 5,411 | 7,617 / 7,410 |
+| G3+ | 55.0 | 70.5 | 55.0–70.5 | 4,650 / 5,960 | 6,723 / 8,617 |
+
+Members and adults do not change with the case: 40.90m and 28.77m in all. [CALCULATION:
+`run_generations.cjs` → `derived/generation_results.csv`]
+
+**The move from September 24.** Each generation's move splits exactly into five parts, $bn a year at
+the low / high end. The responses act at September 24's band-end specification, and "band end" then
+moves the end to the new specification. The parts add to the move within 1.5e-13bn
+(`generation_summary.json` → `change_from_sept24`).
+
+| $bn, low / high | Sept 24 | Schools at 1 | General government | Band end | Row 8 at 0.949 | Consumption key | Schools case | Move |
+|---|---|---|---|---|---|---|---|---|
+| (a) G1 | 63.79 / 53.56 | +14.87 / +4.14 | +0.13 / +0.14 | −0.18 / +0.04 | −0.03 / −0.03 | −0.93 / −0.93 | 77.65 / 56.91 | +13.85 / +3.35 |
+| (a) G2 | 81.74 / 95.12 | +24.68 / +23.02 | +0.17 / +0.18 | −0.32 / +0.41 | −0.04 / −0.04 | −1.23 / −1.23 | 105.00 / 117.46 | +23.26 / +22.34 |
+| (a) G3+ | 55.34 / 97.64 | +22.54 / +21.32 | +0.17 / +0.18 | −0.29 / +0.37 | −0.04 / −0.04 | −1.89 / −1.89 | 75.84 / 117.58 | +20.50 / +19.95 |
+| (b) G1 | 110.22 / 134.76 | +26.91 / +21.46 | +0.19 / +0.19 | −0.35 / +0.37 | −0.04 / −0.04 | −1.36 / −1.36 | 135.56 / 155.38 | +25.34 / +20.62 |
+| (b) G2 | 50.18 / 52.96 | +18.62 / +13.53 | +0.15 / +0.15 | −0.24 / +0.22 | −0.03 / −0.03 | −0.77 / −0.77 | 67.90 / 66.06 | +17.72 / +13.10 |
+| (b) G3+ | 40.47 / 58.60 | +16.56 / +13.50 | +0.14 / +0.15 | −0.20 / +0.22 | −0.03 / −0.03 | −1.92 / −1.92 | 55.02 / 70.52 | +14.55 / +11.92 |
+| Union | 200.88 / 246.32 | +62.08 / +48.49 | +0.47 / +0.49 | −0.79 / +0.81 | −0.10 / −0.10 | −4.05 / −4.05 | 258.49 / 291.95 | +57.61 / +45.64 |
+
+The responses are engine state, so each generation's model responds on its own lines. They come from
+the package's `MAIN_SPECS`, gated against `corrections.json` → `meta.responses`. Row 8's change splits
+as the lane splits row 8, by population.
+
+The order decides how the move splits between schools and the band end, not their sum. At the case's
+own end specifications, schools add $51.3bn / $63.8bn to the union and the end move +$10.0bn /
+−$14.5bn. Either way the two together are +$61.3bn / +$49.3bn. The order above is the brief's:
+matched specifications first, then the range ends move.
+
+**The school line by generation.** The table gives what the case charges each generation for
+schools at the band end: its cost at a school response of 1 less its cost at 0
+(`school_line_at_case_bn`). A generation's share of this line is also its share of the "Schools at 1"
+column above, because both scale the same school costs under the same allocation.
+
+| $bn, low / high | School line | Share of the union's |
+|---|---|---|
+| (a) G1 | 33.22 / 14.74 | 24% / 9% |
+| (a) G2 | 55.15 / 81.90 | 40% / 47% |
+| (a) G3+ | 50.36 / 75.84 | 36% / 44% |
+| (b) G1 | 60.13 / 76.34 | 43% / 44% |
+| (b) G2 | 41.60 / 48.11 | 30% / 28% |
+| (b) G3+ | 37.00 / 48.02 | 27% / 28% |
+| Union | 138.73 / 172.47 | 100% |
+
+Under (a) the line falls on the generations that hold the pupils, the second and third-plus. At the
+shared low end, parents carry part of it through the SPM unit's equal split, so the Mexico-born take
+24% there against 9% at the personal high end. Under (b) minors count with their parents, and the
+first generation takes 43–44%. [FRAMING-SENSITIVE]
+
+**The consumption key, split exactly.** The consumption lane's CPS frame matches this one person for
+person: the same records, all 161 weights and the generation masks (gate). `consumption_split.py`
+recomputes each generation's key with the lane's saving ratio and corridor outflow. From the
+generation totals it rebuilds the lane's 40 union edits with a maximum difference of 0.0. At the
+union's stack factor, the group pays $9.30bn more from saving and $5.24bn less from remittances:
+
+| $bn of receipts, at the union's stack factor | Saving | Remittances | Net | Key share: old → corrected |
+|---|---|---|---|---|
+| (a) G1 | +4.37 | −3.03 | +1.34 | 2.204% → 2.377% |
+| (a) G2 | +2.91 | −1.87 | +1.04 | 2.654% → 2.798% |
+| (a) G3+ | +2.02 | −0.34 | +1.67 | 3.246% → 3.423% |
+
+The lane's rule for every ratio-type correction then applies. Each generation's saving part takes its
+own stack factor on the consumption key (0.85, 0.98 and 0.99 under (a), against the union's 0.9497).
+The corridor's dollars are not scaled, and the $0.31bn remainder goes to the generations in proportion
+to their consumption-tax cells after the stack. Cells with no main-case weight take the union's edit
+times the generation's share of the change in the key share. [CALCULATION: `consumption_split.py` →
+`derived/consumption_key_by_generation.json`]
+
+| Consumption key, $bn of cost | Own factor (central) | Union's factor | Old key's shares (brief's fallback) |
+|---|---|---|---|
+| (a) G1 / G2 / G3+ | −0.93 / −1.23 / −1.89 | −1.34 / −1.04 / −1.67 | −1.10 / −1.33 / −1.62 |
+| (b) G1 / G2 / G3+ | −1.36 / −0.77 / −1.92 | −1.72 / −0.61 / −1.72 | −1.39 / −1.25 / −1.40 |
+
+Both alternatives run as sensitivities: the union's factor inside `stack_scaling_by_union_factor`, and
+the old key's shares as `consumption_key_by_old_key_shares`. The saving ratio comes from income rank
+alone. CE has no parents' birthplace, so the ratio cannot differ by generation at the same income.
+
+**Other figures, updated** (September 24 in brackets):
+- Moving minors to their parents' generation shifts $58–98bn onto the first generation ($46–81bn).
+- Under (a), the household allocation rule shifts $28–36bn between the first and third-plus
+  generations ($19–32bn).
+- The eight alternative split rules (the seven below plus the old key's shares) move no generation by
+  more than $3.7bn, and none turns a cost negative. The largest is still the literal fill-in rule.
+- Under (b), a second-generation adult with their minor children costs others 56–66% of what a
+  Mexico-born adult does (51–60%).
+- Against the uncorrected model at the case's responses, the corrections move (a) G1 by +$4.8 / +4.1bn,
+  G2 by −$5.9 / −7.5bn and G3+ by −$6.1 / −3.4bn. They move (b) G1 by −$2.0 / −2.3bn, G2 by
+  −$3.5 / −3.6bn and G3+ by −$1.7 / −0.8bn.
+- At the shared end, the account now gives −$6,354, −$7,326 and −$5,288 per person, against the
+  September 19 ledger's own balances of −$5,929, −$5,881 and −$4,223. With schools and other
+  education at average cost, the main profile's marginal responses take off only the delayed
+  services (economic affairs, recreation and culture at zero response), $967–1,172 per person. So
+  the direct lines at the responses sit $751–2,025 below the ledger's balances; on September 24 they
+  were within $71–481. At the low end the corrections add $396 per person to the first generation
+  and take $411 and $422 from the second and third-plus. Under the personal allocation, G3+ and G2
+  are within $3 per person of each other. [CALCULATION: `compare_ledger.py` →
+  `derived/ledger_comparison.csv`]
+
+**Gates.** Both full runs pass every gate (186 gate lines each), and the second run is byte-identical
+to the first in all 20 derived files.
+- The corrected union reproduces $258.4885–291.9548bn, and the uncorrected union reproduces
+  $265.5903–298.6797bn.
+- The three generations add to the union in all 64 specifications under both conventions: 1.4e-12bn
+  corrected, 1.1e-13bn uncorrected.
+- The netted generation edits add to `corrections.json` in all 270 cells (1.4e-12bn).
+- `corrections.json` is the package's payload (deep-equal), and the specifications carry
+  `meta.responses`: general government 0.6000/0.8504, schools 1/1.
+- The move from September 24 splits exactly (1.5e-13bn), and the generations' school parts add to the
+  union's.
+- `--case sept24` reproduces the four case-dependent outputs of ba12f3c byte for byte. `--case sept26`
+  passes its 27 gates and reproduces $200.9180–245.6949bn.
+
+**Reproduce.** `bash run_all.sh` runs every step and ends with
+`main_case_schools_full_2026_09_26/main_case.cjs`. For the other cases, run
+`node run_generations.cjs --case sept26|sept24 --out-dir DIR`, then `compare_ledger.py --out-dir DIR`.
+Headline cell: `derived/generation_results.csv`, row `a,G1,low`, `cost_bn` 77.645780.
+
+## September 24 record (superseded 2026-09-26)
+
+**September 24 verdict:** Split by generation, the adopted main case ($200.9–246.3bn a year) leaves all three
 Mexican-origin generations as net costs to other US residents. That holds at every one of the main
 case's 64 specifications and under both ways of counting children. Where children are counted
 decides the order. Counted in their own generation, the Mexico-born cost others $54–64bn a year

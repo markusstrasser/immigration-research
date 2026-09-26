@@ -19,12 +19,15 @@ object in its own terms:
                                   average cost (the package's proportional reference), no production
                                   term, before corrections
             adopted_responses     the same lines at the adopted responses
-            sept23                plus the production term (the September 23 case at the same spec)
+            uncorrected           plus the production term: the uncorrected model at the same spec (the
+                                  September 23 case under the September 24 responses, column `sept23`
+                                  in a --case sept24 run)
             adopted               plus this generation's share of the 270 correction edits
 The account columns come from run_generations.cjs (summary.ledger_bridge_a); nothing is converted from
 one object to the other.
-Output: derived/ledger_comparison.csv. Run from the repository root:
-  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/generation_account_2026_09_24/compare_ledger.py
+Output: ledger_comparison.csv beside the summary it reads (derived/, or --out-dir DIR for a
+run_generations.cjs --out-dir run). Run from the repository root:
+  OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/generation_account_2026_09_24/compare_ledger.py [--out-dir DIR]
 """
 from __future__ import annotations
 
@@ -32,7 +35,9 @@ import sys
 
 sys.dont_write_bytecode = True  # read-only imports from other lanes: write nothing beside them
 
+import argparse  # noqa: E402
 import json  # noqa: E402
+from pathlib import Path  # noqa: E402
 
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
@@ -45,14 +50,18 @@ from lifetime import load_age_profiles  # noqa: E402
 
 GROUPS = {"G1": "mexico_born", "G2": "mexican_second_gen", "G3plus": "mexican_third_plus_selfid"}
 WHITE = "third_plus_nh_white"
-ACCOUNT = ["proportional", "adopted_responses", "sept23", "adopted"]
 
 
 def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--out-dir", type=Path, default=F.OUT)
+    out_dir = ap.parse_args().out_dir
     profiles, fingerprints = load_age_profiles(F.ROOT)
     gaps = pd.read_csv(LEDGER / "derived/complete_gaps.csv").query("reference == @WHITE").set_index("group")
-    summary = json.loads((F.OUT / "generation_summary.json").read_text())
+    summary = json.loads((out_dir / "generation_summary.json").read_text())
     ours, bridge = summary["conventions"]["a"], summary["ledger_bridge_a"]
+    stem = "uncorrected" if "uncorrected_bn" in bridge["G1"]["low"] else "sept23"
+    account = ["proportional", "adopted_responses", stem, "adopted"]
     ex = profiles[profiles.account == "expanded"]
     rows, fails = [], []
     for g, group in GROUPS.items():
@@ -64,8 +73,8 @@ def main():
                 fails.append(f"{g} {allocation}: ledger population {pop:.1f} vs lane {ours[g]['population']:.1f}")
             gap_by_band = block.net_per_person - white.net_per_person
             b = bridge[g][end]
-            parts = dict(proportional=b["proportional_fiscal_bn"], adopted_responses=b["adopted_responses_fiscal_bn"],
-                         sept23=b["sept23_bn"], adopted=b["adopted_bn"])
+            parts = {"proportional": b["proportional_fiscal_bn"], "adopted_responses": b["adopted_responses_fiscal_bn"],
+                     stem: b[f"{stem}_bn"], "adopted": b["adopted_bn"]}
             row = dict(generation=g, ledger_group=group, allocation=allocation, band_end=end, population=pop,
                        ledger_published_gap=float(gaps.loc[group, "complete_common_age_gap_per_person"])
                        if allocation == "shared" else np.nan,
@@ -83,10 +92,10 @@ def main():
         fails.append(f"eight-band white-age gaps leave the published gaps: {ratio.round(4).tolist()}")
     if fails:
         sys.exit("✗ " + "; ".join(fails))
-    out.to_csv(F.OUT / "ledger_comparison.csv", index=False, lineterminator="\n", float_format="%.6f")
+    out.to_csv(out_dir / "ledger_comparison.csv", index=False, lineterminator="\n", float_format="%.6f")
     show = out.set_index(["generation", "allocation"])[
         ["ledger_published_gap", "ledger_gap_white_ages", "ledger_gap_own_ages", "ledger_white_at_own_ages",
-         "ledger_own"] + [f"account_{k}" for k in ACCOUNT]].T.round(0)
+         "ledger_own"] + [f"account_{k}" for k in account]].T.round(0)
     print(show.to_string())
     print(f"  ✓ ledger read through lifetime.load_age_profiles ({len(fingerprints)} fingerprinted files)")
     print("  ✓ ledger group populations equal this lane's convention (a) populations (1e-9)")
