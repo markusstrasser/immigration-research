@@ -55,9 +55,13 @@ def discount(stream: np.ndarray, rate: float, growth: float) -> float:
 
 # --------------------------------------------------------------------- profiles
 def founder_profile(profiles, allocation, account, status, senior_rule, penalty,
-                    legalise_year=None):
+                    legalise_year=None, barred=None):
     """Mexico-born age profile, optionally carrying the imputed-unauthorized
-    level difference over the working ages."""
+    level difference over the working ages. From 65 the unauthorized founder keeps
+    the pooled profile (`senior_full`), has a zero balance (`senior_zero`), or loses
+    the programs federal law bars (`senior_statutory`, `barred` = their per-person
+    sum by age). A legalised founder takes the pooled profile from the switch age on,
+    so the legalised arm is the same under every senior rule."""
     base = I.age_vector(profiles, "mexico_born", account, allocation).copy()
     if status == "mexico_born_average":
         return base, None
@@ -66,6 +70,12 @@ def founder_profile(profiles, allocation, account, status, senior_rule, penalty,
     adj[lo:hi + 1] += penalty
     if senior_rule == "senior_zero":
         adj[65:] = 0.0
+    elif senior_rule == "senior_statutory":
+        if barred is None:
+            raise ValueError("[BLOCKED] senior_statutory needs the barred-program vector")
+        adj[65:] -= barred[65:]
+    elif senior_rule != "senior_full":
+        raise ValueError(f"unknown senior rule: {senior_rule}")
     if legalise_year is None:
         return adj, None
     # legalised at calendar year `legalise_year`: unauthorized profile until then
@@ -120,9 +130,11 @@ def lineage(profiles, tables, cfg) -> dict:
         table_f = tables[mort["white"]]
         cr_f = crime["white"]
     else:
+        barred = cfg.get("senior_barred")
         prof_founder, _ = founder_profile(profiles, alloc, acct, cfg["founder_status"],
                                           cfg["senior_rule"], cfg["penalty"],
-                                          cfg.get("legalise_year"))
+                                          cfg.get("legalise_year"),
+                                          barred[(alloc, acct)] if barred else None)
         table_f = tables[mort["mexican"]]
         cr_f = crime["founder"]
 
@@ -389,6 +401,24 @@ def main() -> None:
     sens("attribution: intermarried half", {"attribution": "intermarried_half"})
     sens("crime route A2 (ACS institutional stock)", {}, route="A2_acs_stock")
     sens("crime route: founder priced at Texas undocumented arrest rate", {}, route="status_founder")
+    # Added 2026-09-25 after the weekly conceptual audit (§4): legal status only matters
+    # at 65+ if eligibility differs there. Appended so earlier rows keep their positions.
+    comps = I.age_components()
+    # Expanded account only: the partial account does not carry U, I, M or N, and a
+    # statutory run on it fails on the missing key instead of dropping them silently.
+    barred = {(al, "expanded"): I.component_vector(comps, profiles, "mexico_born", "expanded", al,
+                                                   I.STATUTORY_BARRED)
+              for al in ("personal", "shared")}
+    statutory = {"senior_rule": "senior_statutory", "senior_barred": barred}
+    sens("senior rule: statutory bars from 65 (no cash transfers, public medical, "
+         "institutional care or noncash aid; taxes and services kept)", statutory)
+    sens("2b founder legalised at year 10, senior rule zero",
+         {"legalise_year": 10, "senior_rule": "senior_zero"})
+    sens("2b founder legalised at year 10, statutory bars", {"legalise_year": 10, **statutory})
+    legalised = [r["gap_lineage_fiscal"] for r in srows if r["sensitivity"].startswith("2b ")]
+    checks.append({"check": "legalised founder is the same under every senior rule",
+                   "max_abs_diff_usd": float(max(legalised) - min(legalised)),
+                   "pass": bool(max(legalised) - min(legalised) < 1e-6)})
     sd = pd.DataFrame(srows)
     front = ["sensitivity", "gap_lineage_fiscal", "mex_lineage_fiscal", "white_lineage_fiscal",
              "gap_founder_lifetime", "mex_persons", "white_persons",
