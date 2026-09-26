@@ -111,7 +111,8 @@ Beside the fiscal headline, as social costs:
 - road congestion costs other residents **$19bn** a year in time and fuel ($8–35bn), with road
   budgets fixed as in the main case.
 - diluted instruction costs other residents' pupils about **$16bn** a year in present-value
-  lifetime earnings (−$2bn to +$36bn), conditional on the account's own school response (ladder
+  lifetime earnings (−$2bn to +$36bn), conditional on the account's own school response and on a
+  lost instructional dollar costing as much learning as a spending cut (ladder
   222; [adopted 2026-09-25 as priced beside](../decisions/2026-09-25-school-dilution-priced-beside.md));
   it is not in the totals below.
 
