@@ -180,7 +180,9 @@ gaps leave $0.88–1.13tn of debt, on which 2024 taxpayers pay **$28.3–36.4bn*
 ($6.3–37.3bn across rules; September 23 case: $0.94–1.20tn and $30.5–38.9bn). That
 answers a historical question; the main case's static comparison treats existing interest as
 sunk. The line is proposed as the interest row's response, not adopted, and must never be added
-to the assigned balance or the stock to an annual figure.
+to the assigned balance or the stock to an annual figure. [2026-09-25: if adopted, it enters as its
+own history line, not the interest row's response: removing the group in 2024 leaves past debt in
+place.]
 
 The [status-benefits sweep](immigration-status-benefits-sweep-2026-09-24.md) (September 24) follows
 the City Journal article on California. It covers benefits paid regardless of status, improper
