@@ -8,7 +8,10 @@ Mexico; 11–21% of them fall in their cohort's bottom fifth and 15–25% in its
 [CALCULATION: `position.py`; DATA: `derived/position_main.csv`]. Men rank 0.49–0.55 and women
 0.53–0.59. On the main coding, arrivals through 2005–09 had fewer people than Mexico at both ends
 (less incomplete primary, less tertiary) and the 2015–19 and 2020–23 arrivals have more at both
-ends; that label is less robust than the rank. The 1980s and 1990s arrivals ranked no higher than
+ends; that label is less robust than the rank. [2026-09-26: the 2020–23 cohort is read in the 2024 ACS,
+after the 2020 no-schooling reporting step. Removing the step cuts its bottom-tail excess over
+Mexico from +0.048 to +0.027–0.029 and raises its rank from 0.540 to 0.543–0.545; "both tails"
+holds. See Revisions.] The 1980s and 1990s arrivals ranked no higher than
 the late-1970s arrivals (0.517–0.530 against 0.551), so the "increasingly positive selection" that
 Butcher and Piehl measured on institutionalization does not show up in schooling. The one change
 that recurs whenever the reference census is held fixed is that arrivals since 2010 rank
@@ -626,3 +629,23 @@ This analysis was produced through an LLM, whose post-training leans on politica
 questions like this one (`notes/llm-bias-caveat.md`); the numbers above are reproducible from the
 scripts regardless of framing, but the choice of which variants to run and how to word the verdict
 is [FRAMING-SENSITIVE].
+
+## Revisions
+
+- **2026-09-26 (ACS 2020 no-schooling step).** [`acs_schooling_break_2026_09_26`](../acs_schooling_break_2026_09_26/RESULT.md) re-ran this lane's own
+  `summarize` and `undercount` with the step removed, by two methods: the brief's level method and
+  flow rates. A positive control first reproduced every published statistic to five decimals.
+  - **2020–23 cohort in the 2024 ACS.** The rank moves from 0.540 to 0.543–0.545: men 0.518 to
+    0.521–0.523, women 0.569 to 0.574. The C1 gap against Mexico falls from +0.048 to
+    +0.027–0.029 (SE 0.005). C5 is unchanged at +0.026, so "both tails" holds pooled and for
+    each sex.
+  - **Table 4, 2024-ACS row.** Post-2010 minus 2000–09 moves from 0.049–0.068 to 0.046–0.063.
+  - **Survivor table.** The 2019→2024 change moves from −0.040…+0.018 to −0.021…+0.026, which
+    confirms that the fall there is the break.
+  - **Undercount factor for rank 0.5.** It moves from 1.77 to 2.03–2.08.
+  - **Alternative surveys.** The women's label turns "top" in the 2020 and 2021 ACS rows for
+    2015–19; those are alternative rows only.
+
+  F6 of the dataset integrity audit already noted that the break affects this lane; these are its
+  sizes. [CALCULATION: `acs_schooling_break_2026_09_26/derived/schooling_position_corrected.csv`,
+  `schooling_position_undercount_corrected.csv`] [Decision](../../../decisions/2026-09-26-acs-no-schooling-break.md).

@@ -139,7 +139,7 @@ Only tertiary schooling and mean years are read, because the middle bands are no
 surveys record much Mexican secundaria as a high-school diploma, so ACS stayers report exactly
 grade 9 at 6–8% against 26% in Mexico. The lane also found that ACS reports of no schooling
 among Mexico-born adults stepped up between 2019 and 2020 (5.55% to 8.45%, then 8.66% in 2021,
-while grade 8 or less stayed continuous). That is a reporting change, not a population change,
+while grade 8 or less stayed continuous [2026-09-26, later: in raw totals only; detrended, that band steps up 0.8–1.0 points, grade 9 feeds a quarter of the step, and the break was first reported as F6 of the dataset integrity audit on 2026-09-23; `acs_schooling_break_2026_09_26`]). That is a reporting change, not a population change,
 and it matters for any series that crosses that boundary [DATA: the lane's
 `derived/acs_no_schooling_break.csv`; the parent reproduced 2017–2024 from the Census PUMS files].
 [FRAMING-SENSITIVE: which comparison to foreground, all stayers or adult arrivals, per person or

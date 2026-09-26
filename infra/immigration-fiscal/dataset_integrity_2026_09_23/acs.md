@@ -133,6 +133,19 @@ Latin American immigrants about 0.25 years too low. Ladder 197 already prices it
 ACS comparison of years of schooling across 2019/2020, or a post-2020 comparison between Latin
 American and other immigrants, inherits it. Grade B (real, measured, already priced where used).
 Sign: makes the group look worse in 2020+ files.
+[2026-09-26: [`acs_schooling_break_2026_09_26`](../acs_schooling_break_2026_09_26/RESULT.md) refines F6 in four places.
+- **Natives.** Natives aged 20–64 are affected, +0.20 points on a 0.66% base; the 0.8–0.9% above
+  holds at 65+ only.
+- **Grade 9.** Grade 9 supplies about a quarter of the lost reports, so the step reaches the
+  lower-secondary line.
+- **Bands.** Once its own decline is removed, "grade 8 or less" steps up 0.8–1.0 points for the
+  Mexico-born. The below-diploma band (`SCHL` ≤ 15) moves +0.3–0.4 points because 12th grade
+  without a diploma also steps. Coarse bands stay within about 0.4 points.
+- **Cause.** The Census Bureau documents over-reporting of "No schooling completed" in mail and
+  internet responses (ACS Design and Methodology v4.0, §5.10). It changed the item for the 2025
+  ACS, a second break. No user note explains the 2020 step.
+
+Exposed lanes and their sizes are in that lane's table.]
 
 **F7. The 2020 race coding change moves 5m native non-Hispanic whites out of "white alone".**
 Native non-Hispanic white alone: 189.0m (2019), 185.1m (2021), 183.6m (2024); white in combination

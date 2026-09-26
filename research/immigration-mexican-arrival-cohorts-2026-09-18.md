@@ -18,6 +18,10 @@ two decades. So the large rise in absolute attainment among Mexican arrivals is 
 rise in Mexican attainment, and selection — position within the origin distribution — is flat.
 Anyone reading the education series as evidence that migration became more selective is reading a
 Mexican schooling expansion.
+[2026-09-26: the migrant series dropped no-schooling reports. Scored at zero, as INEGI does, and
+without the ACS 2020 no-schooling reporting step, migrants gained 2.53–2.69 years, 0.03–0.49 more
+than Mexico depending on the INEGI endpoint. The rise is mostly Mexico's; "just as fast" overstates
+the match. See §8 and Revisions.]
 
 Two further results. The 2020–24 cohort is the best-educated in the file and its short-duration wage
 residual is the worst, which is duration and not cohort: at matched duration the recent cohort is
@@ -393,6 +397,10 @@ Mexico-born aged 25–54 who arrived within the previous five years:
 
 `derived/origin_relative_mean_years.csv`
 
+[2026-09-26: this table drops no-schooling reports. Scored at zero, the migrant column reads 6.47,
+7.84, 8.64, 9.63 and 11.17 (n 11,972; 21,193; 46,781; 5,567; 4,913), and the differences +1.14,
++1.03 and +1.47. [DATA: the same file, rerun 2026-09-26]]
+
 **The slopes are the same.** Migrant entry cohorts gained 2.37 years of schooling between the 2000
 and 2023 surveys. The Mexican origin population gained 2.20 years between 2000 and 2020. The
 difference is +0.17 years over two decades. Extrapolating the INEGI series to 2023 at its own
@@ -400,6 +408,11 @@ difference is +0.17 years over two decades. Extrapolating the INEGI series to 20
 rather than +2.2, which moves the slope comparison to roughly −0.15 years. Either way the answer is
 the same: **the large rise in measured schooling among Mexican arrivals is almost entirely the rise
 in Mexican schooling, not a change in who selects into migrating.**
+[2026-09-26: on the zero-scored series the migrant gain is 2.53 years, or 2.67–2.69 without the ACS
+2020 reporting step. The difference is +0.33 to +0.49 against INEGI's 2000–2020 gain and +0.03 to
++0.19 against the 2023 extrapolation. That makes the rise mostly Mexico's schooling expansion, with
+the slopes within half a year, not equal. The schooling-position lane (ladder 197) finds arrivals
+since 2010 ranking 0.02–0.07 above the 2000–09 arrivals, which fits a modest rise.]
 
 That is the most important qualification in this memo, and it cuts against the natural reading of
 sections 2 and 3. Absolute skill of arrivals rose a great deal. Selection — position in the origin
@@ -640,6 +653,13 @@ male cohorts when duration is not held fixed, which is section 5's caveat.
 
 ## Revisions
 
+- 2026-09-26: §8's migrant mean years dropped every no-schooling report (`EDUC` 0 had no key in the
+  lane's years map). Scored at zero, as INEGI's grado promedio does, the 2000→2023 gain is 2.53
+  years, and 2.67–2.69 once the ACS 2020 no-schooling reporting step is removed. That is 0.03–0.49
+  years above Mexico's gain, depending on whether INEGI ends in 2020 or is carried to 2023. "The
+  slopes are the same" becomes "within half a year"; the reading that the rise is mostly Mexico's
+  schooling expansion stands. [CALCULATION: `arrival_cohorts_2026_09_18/RESULT.md` Revisions;
+  `acs_schooling_break_2026_09_26/RESULT.md` §4] [Decision](../decisions/2026-09-26-acs-no-schooling-break.md).
 - 2026-09-23: The gap left open in section 8 and flagged in section 11 is now filled. That gap
   was an origin attainment distribution by birth cohort. The
   [schooling-position lane](../infra/immigration-fiscal/schooling_selection_position_2026_09_23/RESULT.md)

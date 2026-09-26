@@ -41,7 +41,7 @@ Origin mean years of schooling on the same rows: 11.49 (25–29) down to 9.33 (5
 
 ## What this is not
 
-- Not a slope. The 15+ mean-years comparison (migrant +2.37 vs origin +2.20, 2000–2023/2020)
+- Not a slope. The 15+ mean-years comparison (migrant +2.37 vs origin +2.20, 2000–2023/2020) [2026-09-26: +2.53 with no-schooling reports scored at zero, +2.67–2.69 without the ACS 2020 reporting step; arrival-cohort memo, Revisions]
   stays in the parent memo. [DATA: `infra/immigration-fiscal/arrival_cohorts_2026_09_18/derived/origin_relative_mean_years.csv`]
 - Not Mexico-side emigrant identification. Fernández-Huertas Moraga’s negative-selection result
   used ENADID; this is ACS stayers against the origin census. The two can disagree without either

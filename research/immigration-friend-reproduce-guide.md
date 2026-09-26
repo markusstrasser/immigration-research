@@ -135,7 +135,7 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 
 | Surface | What | Memo · table |
 |---------|------|--------------|
-| Borjas supply-shock cells | <HS immigrant share 9.8% (1980) → 40.8% (2023), education×experience | `immigration-borjas-supply-shock-panel-2026-06-23.md` · `borjas_supply_shock_panel` |
+| Borjas supply-shock cells | <HS immigrant share 9.8% (1980) → 40.8% (2023) [2026-09-26: 10.2% → 44.1% with no-schooling records kept; see the Borjas memo], education×experience | `immigration-borjas-supply-shock-panel-2026-06-23.md` · `borjas_supply_shock_panel` |
 | Source-incentive re-grade | advocacy discounted on **both** sides; against-interest up-weighted | `immigration-source-incentive-regrade-2026-06-23.md` · `source_incentive_grades` |
 | Fiscal+welfare ledger map | "positive vs negative?" decomposed into 4 coordinates × the full ledger | `immigration-fiscal-welfare-ledger-map.md` |
 
