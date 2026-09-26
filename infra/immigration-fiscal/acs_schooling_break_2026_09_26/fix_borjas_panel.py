@@ -1,15 +1,17 @@
 """Size the 2020 ACS no-schooling step in build/build_borjas_supply_shock_panel.py's headline, the
 immigrant share of people aged 18-64 below high school (EDUC 1-5, 'HSD'), 1980 -> 2023.
 
-The builder keeps EDUC 1-11 only, so no-schooling reports (EDUC 0) leave the panel. In the 2023 ACS
-the step sends part of the HSD population to EDUC 0, where it is dropped. Break correction: the
-excess share phi of 2023 EDUC 0 records returns to HSD (its sources are all below grade 12).
+Until 2026-09-26 the builder kept EDUC 1-11 only, so no-schooling reports (EDUC 0) left the panel. In
+the 2023 ACS the step sends part of the HSD population to EDUC 0, where it was dropped. Break correction:
+the excess share phi of 2023 EDUC 0 records returns to HSD (its sources are all below grade 12).
   A  phi = 1 - share_2019 / share_2023 of no-schooling reports, 18-64, by nativity (Census PUMS,
      break_anatomy.py inputs)
   B  flow rates of break_anatomy.py (fixed population: foreign-born, US-born) on each nativity's
      own 2023 EDUCD mix
 Also shown: EDUC 0 kept in HSD in every year (an adjacent choice, not a break correction).
-A positive control first reproduces the builder's CSV.
+A positive control first reproduces the builder's CSV. Since 2026-09-26 the builder keeps EDUC 0 in HSD
+(this lane's finding), so the control reproduces the kept rule; rows labelled "as built (EDUC 0
+dropped)" record the builder before that date.
 Output: derived/borjas_panel_corrected.csv. Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/acs_schooling_break_2026_09_26/fix_borjas_panel.py
 """
@@ -54,10 +56,11 @@ def main() -> None:
     for y, g in d.groupby("YEAR"):
         h = g[g.EDUC.between(1, 5)]
         fb, nat = float(h.PERWT[h.fb].sum()), float(h.PERWT[~h.fb].sum())
-        B.gate(abs(fb - hsd.loc[y, "immigrant_weight"]) < 1 and abs(nat - hsd.loc[y, "native_weight"]) < 1,
-               f"[BLOCKED] control {y}: HSD weights differ from the builder's CSV")
         z = g[g.EDUC == 0]
         z_fb, z_nat = float(z.PERWT[z.fb].sum()), float(z.PERWT[~z.fb].sum())
+        B.gate(abs(fb + z_fb - hsd.loc[y, "immigrant_weight"]) < 1
+               and abs(nat + z_nat - hsd.loc[y, "native_weight"]) < 1,
+               f"[BLOCKED] control {y}: HSD weights differ from the builder's CSV")
         rows.append({"year": int(y), "rule": "as built (EDUC 0 dropped)", "method": "none", "phi_fb": 0.0,
                      "phi_native": 0.0, "hsd_immigrant_share": fb / (fb + nat)})
         rows.append({"year": int(y), "rule": "adjacent: EDUC 0 kept in HSD", "method": "none", "phi_fb": 1.0,

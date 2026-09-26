@@ -20,6 +20,8 @@ Design (documented deviations from the ACS male-only anchor):
   N/A codes dropped — DEFLATE (CPI) before any cross-year earnings comparison, and
   prefer INCWAGE for a pure wage analysis. Reported as a secondary outcome.
 - employment_rate = employed (EMPSTAT=1) / working-age population (emp-pop ratio).
+- Buckets use IPUMS general EDUC: HSD = 0-5 (no schooling through grade 11; EDUC 0 kept since
+  2026-09-26), HSG = 6 (grade 12, which includes 12th grade without a diploma), SMC = 7-9, COL = 10-11.
 
 Run: uv run --with duckdb python build_borjas_supply_shock_panel.py
 """
@@ -32,14 +34,17 @@ from paths import derived_root, duckdb_path, microdata_duckdb_path
 TABLE = "borjas_supply_shock_panel"
 SOURCE = "ipums_usa_5pct+acs_1980_2023_allsex_bpl"
 
-# IPUMS EDUC general -> 4 standard buckets; assumed years of schooling for potential experience
+# IPUMS EDUC general -> 4 standard buckets; assumed years of schooling for potential experience.
+# EDUC 0 is "N/A or no schooling"; at ages 18-64 it is no schooling, so it belongs to < high school.
+# Until 2026-09-26 the filter kept EDUC 1-11 and dropped everyone with no schooling in every year
+# (acs_schooling_break_2026_09_26/RESULT.md §4; decisions/2026-09-26-acs-no-schooling-break.md).
 EDUC_SQL = """
-  CASE WHEN EDUC BETWEEN 1 AND 5 THEN 'HSD'   -- < high school
+  CASE WHEN EDUC BETWEEN 0 AND 5 THEN 'HSD'   -- < high school, including no schooling
        WHEN EDUC = 6              THEN 'HSG'   -- high school grad
        WHEN EDUC BETWEEN 7 AND 9  THEN 'SMC'   -- some college
        WHEN EDUC BETWEEN 10 AND 11 THEN 'COL'  -- college+
   END"""
-EDUC_YEARS_SQL = "CASE WHEN EDUC BETWEEN 1 AND 5 THEN 10 WHEN EDUC=6 THEN 12 WHEN EDUC BETWEEN 7 AND 9 THEN 14 ELSE 16 END"
+EDUC_YEARS_SQL = "CASE WHEN EDUC BETWEEN 0 AND 5 THEN 10 WHEN EDUC=6 THEN 12 WHEN EDUC BETWEEN 7 AND 9 THEN 14 ELSE 16 END"
 
 
 def build() -> None:
@@ -73,7 +78,7 @@ def build() -> None:
                 INCTOT NOT IN (9999998, 9999999) AS inc_valid,
                 INCTOT, PERWT
             FROM md.ipums_usa_borjas_panel
-            WHERE AGE BETWEEN 18 AND 64 AND EDUC BETWEEN 1 AND 11
+            WHERE AGE BETWEEN 18 AND 64 AND EDUC BETWEEN 0 AND 11
         ),
         celled AS (
             SELECT *,

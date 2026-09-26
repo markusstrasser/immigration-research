@@ -267,6 +267,7 @@ OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/acs_
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/acs_schooling_break_2026_09_26/fix_arrival_mean_years.py
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/acs_schooling_break_2026_09_26/fix_borjas_panel.py
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/acs_schooling_break_2026_09_26/fix_scale_spillovers.py
+uv run --no-project python3 infra/immigration-fiscal/acs_schooling_break_2026_09_26/kept_bucket_step.py  # parent, after the rebuild
 ```
 
 On 2026-09-26 every script exited 0 and a second run wrote byte-identical `derived/` files (sha256
@@ -285,7 +286,11 @@ from the Census PUMS files for five nativity groups, and then acted on the findi
   was rerun. `fix_arrival_mean_years.py`'s positive control now reproduces that rule. Its output
   is unchanged, because it already reported both scorings.
 - **Borjas builder: deferred, not rebuilt.** It writes the release's context-warehouse table, and
-  no analysis lane reads it. The memo, INDEX and guide carry the corrected figures.
+  no analysis lane reads it. The memo, INDEX and guide carry the corrected figures. [Later
+  2026-09-26: rebuilt on the operator's approval. `fix_borjas_panel.py`'s control now reproduces
+  the kept rule, and its output is unchanged. `kept_bucket_step.py` sizes the step left on the
+  kept bucket from `break_steps.csv`: 2023 reads 44.1% as built and 43.7% without the step (43.2%
+  on self-reported schooling).]
 - **Documents.** The documents in §5 and the lanes in the table carry dated brackets, as do the
   register notes and ladder 228, which had presented the step as new. F6 of the dataset integrity
   audit reported it first, on 2026-09-23.

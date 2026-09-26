@@ -54,7 +54,8 @@ scripts also dropped no-schooling records in every year, which is a separate def
   every year, so its < HS immigrant share reads 40.8% in 2023 instead of 44.1%. It writes the
   context warehouse table that feeds the downloadable release. A rebuild changes a shared,
   released artifact, and no analysis lane reads the table, so the memo, INDEX and guide carry the
-  corrected figures until a deliberate release rebuild.
+  corrected figures until a deliberate release rebuild. [Later 2026-09-26: rebuilt on the
+  operator's approval; see Updates.]
 - **Register the step where readers look.** The dataset register's ACS 2024 and IPUMS USA cards
   describe it and cite F6 and the triage lane. Any lane that adds 2025 ACS data must handle the
   second break.
@@ -71,9 +72,22 @@ scripts also dropped no-schooling records in every year, which is a separate def
 
 - Census publishes a note on the 2020 change, or a mode variable becomes available.
 - A lane reads the 2025 ACS.
-- The context warehouse is rebuilt for a release: fix the builder's `EDUC` filter then.
+- The context warehouse is rebuilt for a release: fix the builder's `EDUC` filter then. [Done
+  2026-09-26; see Updates. The release itself still waits.]
 
 ## Supersedes
 
 None. It refines F6's "none on any category at or above the high-school line" and "natives 65+
 stay at 0.8–0.9%" as stated in that file's bracket.
+
+## Updates
+
+- **2026-09-26, later: Borjas panel rebuilt.** The operator approved the rebuild. The builder
+  keeps `EDUC` 0 in the < HS bucket, and the local context and unified warehouses were rebuilt.
+  Only the 40 < HS cells changed: 10.2%, 19.5%, 32.3%, 39.3% and 44.1%. The unified rebuild also
+  copied `cps_second_gen_by_origin`, a context table added after the last unified build on
+  2026-09-16. The downloadable release was not republished, because that is outward-facing and
+  stays with the operator. On the rebuilt bucket the no-schooling step moves reports within the
+  bucket. A smaller step into 12th grade without a diploma, which IPUMS files under grade 12,
+  lifts 2023 by about 0.4 points: 44.1% as built, 43.7% without the step
+  (`acs_schooling_break_2026_09_26/kept_bucket_step.py`).
