@@ -18,7 +18,9 @@ Three outside checks support the saving correction and suggest it is, if anythin
 - ITEP's incidence gradient, which gives −$10.3bn on the account's own base;
 - CE's own Mexican-origin consumer units.
 
-**This is a proposal. Nothing is adopted.**
+**This is a proposal. Nothing is adopted.** [2026-09-26: adopted together with finite-removal
+responses in `main_case_2026_09_26` ($200.9–245.7bn; ladder 229; decision
+`decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md`).]
 
 Model self-report: claude-opus-5-5[1m]. Lane `infra/immigration-fiscal/consumption_key_2026_09_24/`,
 brief [BRIEF.md](BRIEF.md), run 2026-09-24/25. Effects are $bn a year of cost to other residents.

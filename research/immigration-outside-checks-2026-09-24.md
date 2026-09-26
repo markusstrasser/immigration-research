@@ -22,7 +22,7 @@ account.
 | Benefit keys against administrative records by ethnicity | [admin_benefit_keys_2026_09_24](../infra/immigration-fiscal/admin_benefit_keys_2026_09_24/RESULT.md) | done, ladder 217 |
 | Taxes and transfers against CBO, Treasury, tax anchors and state hospital records | [external_benchmarks_2026_09_24](../infra/immigration-fiscal/external_benchmarks_2026_09_24/RESULT.md) | done, ladder 216 |
 | Direction of the errors in the crime ratios | [crime_ratio_direction_2026_09_24](../infra/immigration-fiscal/crime_ratio_direction_2026_09_24/RESULT.md) | done, ladder 218 |
-| Consumption taxes keyed on spending, net of remittances (2026-09-25) | [consumption_key_2026_09_24](../infra/immigration-fiscal/consumption_key_2026_09_24/RESULT.md) | done, ladder 225; proposed, not adopted |
+| Consumption taxes keyed on spending, net of remittances (2026-09-25) | [consumption_key_2026_09_24](../infra/immigration-fiscal/consumption_key_2026_09_24/RESULT.md) | done, ladder 225; proposed, not adopted [2026-09-26: adopted with finite-removal responses, ladder 229] |
 
 ## Schools: priced where the pupils enroll
 
@@ -277,6 +277,11 @@ so the two cannot be combined by addition; that needs the audit's rows in the en
 (+$2.0bn, to $30.9bn) sits beside the account and is not in these figures. None of this is adopted.
 
 ## Consumption taxes: keyed on spending (2026-09-25)
+
+[2026-09-26: adopted together with finite-removal responses; the main case is $200.9–245.7bn
+([lane](../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md),
+[decision](../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md), ladder 229).
+The figures below stay as computed on the September 24 case.]
 
 The account splits four lines by each person's SPM resources per unit member: general sales tax
 ($602.4bn), selective excise ($371.3bn, of which $100.0bn federal), customs ($83.6bn) and personal

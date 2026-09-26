@@ -1,4 +1,7 @@
-**Verdict:** The main case uses two sets of elasticities as the share of average cost a removal
+**Verdict:** [2026-09-26, later: adopted together with the consumption key in
+`main_case_2026_09_26` ($200.9–245.7bn; decision
+`decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md`). The text below is the
+proposal as sized.] The main case uses two sets of elasticities as the share of average cost a removal
 saves: general government at 0.59–0.84 (cross-state scale elasticities) and schools at 0.63–0.66
 (CBO's growth-rate coefficients, "to first order"). For a power-law cost, removing a group that is
 12% of residents and 17.5% of pupils saves more than the elasticity: r = [1 − (1 − s)^b] / s.

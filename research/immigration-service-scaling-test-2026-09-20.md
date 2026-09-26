@@ -186,4 +186,6 @@ weights and disconfirming prediction scores are retained.
   memo's power-law derivation gives r = [1 − (1 − s)^b] / s. Sized in
   [finite_response_2026_09_26](../infra/immigration-fiscal/finite_response_2026_09_26/RESULT.md)
   (ladder 227): $205.0–249.7bn against the adopted $200.9–246.3bn, mostly schools; proposed, not
-  adopted. [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).
+  adopted. [Decision](../decisions/2026-09-25-weekly-audit-corrections.md). [2026-09-26, later:
+  adopted together with the consumption key; the main case is $200.9–245.7bn (ladder 229,
+  [decision](../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md)).]
