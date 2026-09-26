@@ -150,7 +150,7 @@
         <text class="faint it" x="0" y={freezeY + 17} font-size="10.5">from the least costly option on every choice</text>
         <rect x={wx(wf.freeze)} y={freezeY} width={wx(wf.start) - wx(wf.freeze)} height="12" fill="#bbd4ee" stroke="#5c97d2" stroke-width="0.8" />
         <line x1={wx(wf.start)} x2={wx(wf.start)} y1={WTOP + 10} y2={freezeY} stroke="#8d897e" stroke-width="0.7" stroke-dasharray="2 2" />
-        <text class="num" x={wx(wf.start) + 6} y={freezeY + 10} font-size="11.5" fill="#2f5f8f">{bn(wf.start - wf.freeze)} less: {bn(wf.freeze)} better off</text>
+        <text class="num" x={wx(wf.start) + 6} y={freezeY + 10} font-size="11.5" style:fill="#2f5f8f">{bn(wf.start - wf.freeze)} less: {bn(wf.freeze)} better off</text>
 
         {#each [-100, 0, 100, 200, 300] as t}
           <line x1={wx(t)} x2={wx(t)} y1={wBottom} y2={wBottom + 4} stroke="#8d897e" stroke-width="0.8" />
