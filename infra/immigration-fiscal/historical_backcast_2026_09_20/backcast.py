@@ -14,6 +14,10 @@ Assumed: the group's 2024 per-person position relative to the nation. Three rule
 
 This is not a measured historical account. No year before 2024 has group taxes,
 benefits or services observed here.
+
+Cases (--case). sept26, the default, adds the main case adopted 2026-09-26 as the `*_sept26_*`
+concepts beside the earlier ones, which do not change value by value. sept24 with --out-dir DIR
+writes the files as they stood on the September 24 case, byte for byte.
 """
 from __future__ import annotations
 
@@ -36,12 +40,14 @@ PROFILES = {"net_cost_cbo_informed": "cbo_category_lag_non_school_full",
             "net_cost_full_proportional": "proportional_reference"}
 
 
-def response_anchors() -> dict[str, float]:
+def response_anchors(case: str) -> dict[str, float]:
     """2024 conditional net cost to other residents, $bn; the range spans allocation and scaling cases.
 
     The September 20 bands, then the main case adopted on 2026-09-23 (general government at
     0.59-0.84, justice and uncompensated care keyed by use; main_case_2026_09_23), then that case
-    with the data corrections adopted on 2026-09-24 (main_case_2026_09_24, variant "adopted").
+    with the data corrections adopted on 2026-09-24 (main_case_2026_09_24, variant "adopted"), then
+    with case "sept26" the case adopted on 2026-09-26 (finite-removal responses and the consumption
+    key; main_case_2026_09_26, variant "adopted").
     """
     summary = pd.read_csv(FISCAL / "full_account_2026_09_20/derived/service_response_summary.csv").set_index("profile")
     adopted = pd.read_csv(FISCAL / "main_case_2026_09_23/derived/main_case_bands.csv")
@@ -58,6 +64,23 @@ def response_anchors() -> dict[str, float]:
     for name, profile in PROFILES.items():
         out[f"{name}_corrected_low"] = float(corrected.loc[profile, "cost_low_bn"])
         out[f"{name}_corrected_high"] = float(corrected.loc[profile, "cost_high_bn"])
+    if case == "sept24":
+        return out
+    bands26 = pd.read_csv(FISCAL / "main_case_2026_09_26/derived/main_case_bands.csv")
+    summary26 = json.loads((FISCAL / "main_case_2026_09_26/derived/summary.json").read_text())
+    base = bands26[bands26.variant == "adopted_2026_09_24"].set_index("profile")
+    adopted = bands26[bands26.variant == "adopted"].set_index("profile")
+    published = {"cbo_category_lag_non_school_full": summary26["main_case"],
+                 "proportional_reference": summary26["other_profiles"]["proportional_reference"]["adopted"]}
+    for name, profile in PROFILES.items():
+        # The September 26 case starts from the one the *_corrected_* concepts carry.
+        if not np.allclose(base.loc[profile, ["cost_low_bn", "cost_high_bn"]].to_numpy(float),
+                           corrected.loc[profile, ["cost_low_bn", "cost_high_bn"]].to_numpy(float), rtol=0, atol=1e-9):
+            raise ValueError(f"[BLOCKED] main_case_2026_09_26 {profile} does not start from the September 24 band")
+        band = [float(adopted.loc[profile, "cost_low_bn"]), float(adopted.loc[profile, "cost_high_bn"])]
+        if not np.allclose(band, published[profile], rtol=0, atol=1e-4):
+            raise ValueError(f"[BLOCKED] main_case_2026_09_26 {profile} bands differ from its summary.json")
+        out[f"{name}_sept26_low"], out[f"{name}_sept26_high"] = band
     return out
 
 
@@ -98,6 +121,9 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--bea-dir", type=Path,
                         default=ROOT / "sources/immigration-fiscal/data/external/bea_nipa")
+    parser.add_argument("--case", choices=("sept26", "sept24"), default="sept26",
+                        help="sept26: add the main case adopted 2026-09-26 (default); sept24: the files as of 2026-09-24")
+    parser.add_argument("--out-dir", type=Path, default=HERE / "derived")
     args = parser.parse_args()
     section3 = workbook(args.bea_dir / "Section3All_xls.xlsx")
     receipts = series(section3, "T30100-A", "Current receipts")
@@ -123,14 +149,22 @@ def main() -> None:
 
     annual = pd.DataFrame(dict(group_millions=group, relative_per_capita_income=relative,
                                national_receipts_per_capita=r, national_spending_per_capita=s))
-    concepts = response_anchors()
+    concepts = response_anchors(args.case)
     # The 2026-09-24 corrections lower the group's receipts; their concepts split on the corrected total.
     after = json.loads((FISCAL / "main_case_2026_09_24/derived/summary.json").read_text())["group_receipts_bn"]
     if abs(after["adopted_2026_09_23"]["shared"] - group_receipts) > 1e-6:
         raise ValueError("[BLOCKED] main_case_2026_09_24 receipts do not start from the complete account's")
+    receipts_for = {"_corrected_": after["adopted"]["shared"]}
+    if args.case == "sept26":
+        # The consumption key raises them again (the finite-removal responses act on spending only).
+        after26 = json.loads((FISCAL / "main_case_2026_09_26/derived/summary.json").read_text())["group_receipts_bn"]
+        if abs(after26["adopted_2026_09_23"]["shared"] - group_receipts) > 1e-6 or \
+                abs(after26["adopted_2026_09_24"]["shared"] - after["adopted"]["shared"]) > 1e-9:
+            raise ValueError("[BLOCKED] main_case_2026_09_26 receipts do not start from the September 24 case's")
+        receipts_for["_sept26_"] = after26["adopted"]["shared"]
     for name, value in concepts.items():
         # cost = spending charged to the group under this response case, less its receipts
-        g_receipts = after["adopted"]["shared"] if "_corrected_" in name else group_receipts
+        g_receipts = next((v for tag, v in receipts_for.items() if tag in name), group_receipts)
         rho_c = g_receipts * 1e9 / (group_2024 * 1e6) / r[2024]
         sigma = (value + g_receipts) * 1e9 / (group_2024 * 1e6) / s[2024]
         annual[f"{name}__flat"] = group / group_2024 * value
@@ -152,8 +186,8 @@ def main() -> None:
             if not np.isclose(annual.loc[2024, f"{name}__{rule}"], value, rtol=1e-6):
                 raise ValueError(f"[BLOCKED] {name}/{rule} does not reproduce its 2024 anchor: "
                                  f"{annual.loc[2024, f'{name}__{rule}']} vs {value}")
-    (HERE / "derived").mkdir(exist_ok=True)
-    annual.round(4).to_csv(HERE / "derived/backcast_annual.csv", index_label="year")
+    args.out_dir.mkdir(parents=True, exist_ok=True)
+    annual.round(4).to_csv(args.out_dir / "backcast_annual.csv", index_label="year")
 
     windows = {"10y_2015_2024": range(2015, 2025), "15y_2010_2024": range(2010, 2025),
                "20y_2005_2024": range(2005, 2025)}
@@ -161,7 +195,7 @@ def main() -> None:
                                              for w, ys in windows.items()})
             for name in concepts for rule in ("flat", "ratio", "income")]
     table = pd.DataFrame(rows)
-    table.round(4).to_csv(HERE / "derived/backcast_windows.csv", index=False)
+    table.round(4).to_csv(args.out_dir / "backcast_windows.csv", index=False)
     print(f"receipts ratio {rho:.3f}; relative income {relative[2008]:.3f} (2008) -> {relative[2024]:.3f} (2024)")
     print(table.round(2).to_string(index=False))
 

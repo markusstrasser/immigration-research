@@ -42,7 +42,14 @@ carries back the adopted main case (`*_adopted_*` concepts, read from
 with the data corrections (`*_corrected_*` concepts, read from
 `main_case_2026_09_24/derived/main_case_bands.csv`), split on the corrected receipts in that lane's
 `summary.json` (`group_receipts_bn`); a guard stops the run if that file's starting receipts differ
-from the complete account's. `backcast_categories.py` still covers the September 20 anchors only.
+from the complete account's. Since 2026-09-26 the default run (`--case sept26`) also carries back the
+case adopted that day (`*_sept26_*` concepts, read from `main_case_2026_09_26/derived/main_case_bands.csv`
+and split on that lane's `summary.json` receipts, $492.5bn shared). Guards stop the run unless that
+case starts from the band and receipts the `*_corrected_*` concepts carry. The earlier concepts do not
+change value by value, and `backcast.py --case sept24 --out-dir DIR` writes the September 24 files byte
+for byte. The whole-budget rules give $1.7316–2.4271tn over 2015–2024 (September 24:
+$1.7317–2.4307tn), still $1.7–2.4tn. `backcast_categories.py` still covers the September 20 anchors
+only.
 
 ## Rules
 
