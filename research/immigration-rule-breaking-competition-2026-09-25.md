@@ -6,7 +6,10 @@ out of business. Paying a worker off the books saves 11–12% of the wage in leg
 or 11–24% once the worker's kept payroll tax and typical underpayment are counted. In construction,
 landscaping, janitorial services and restaurants the edge comes to $0–14.8bn in 2024 (central
 $6.4bn), and $4.5bn of the central figure is payroll tax that the adopted account already counts.
-Covered establishments and employment grew no slower where the group's share grew, and the one
+[2026-09-25: the edge is computed on imputed-unauthorized workers of every origin. Applying the
+same slopes to the Mexico-born among them gives $3.2bn of the edge and $2.3bn of the payroll tax;
+only that part is inside the group's account, and the rest belongs to other residents. See
+Revisions.] Covered establishments and employment grew no slower where the group's share grew, and the one
 negative association disappears once state-wide shocks are removed. [CALCULATION:
 [compliance lane](../infra/immigration-fiscal/compliance_gap_2026_09_24/RESULT.md); ladder 220]
 
@@ -146,7 +149,8 @@ Neither enters the ledger's nets (symmetry rule 5). [DATA: lane `derived/winners
 ## 5. What this changes
 
 Nothing in the adopted account. No displacement of compliant firms is measured, the edge's tax
-part is already inside the account, and the on-books share stays at 0.52. Beside the account sit
+part is already inside the account [2026-09-25: its Mexico-born half only; see Revisions], and
+the on-books share stays at 0.52. Beside the account sit
 $0–2.2bn of workers' compensation premiums avoided and $0–2.3bn of underpayment, transfers from
 off-books workers and insurance pools to their employers, within the group where both sides are
 group members.
@@ -263,6 +267,16 @@ lost business. [DATA: lane `derived/winners_losers_rows.csv`]
 
 ## Revisions
 
+- 2026-09-25 (weekly audit §5): the compliance lane's wage base, `acs_cells.py`, covers
+  imputed-unauthorized workers of every origin, and `edges.py` never narrows it to the group.
+  Re-tabulating the lane's own person query and applying its central slopes and rates to the
+  Mexico-born intersection gives $3.22bn of the $6.43bn edge, $2.27bn of the $4.53bn payroll tax,
+  $0.66bn of the $1.31bn workers' compensation and $0.29bn of the $0.59bn underpayment. "Already
+  inside the account" holds for that half; the other half's payroll tax is owed by and for other
+  residents, and its workers are not within-group. The adopted headline never included the edge,
+  so nothing is subtracted from it. [CALCULATION:
+  [audit probe](../infra/immigration-fiscal/conceptual_audit_2026_09_25/README.md#off-books-population-probe)]
+  [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).
 - 2026-09-25 (later): §7 added from the vending lane (ladder 223); the title now says
   businesses, since vendors are self-employed. Concept affected: the same question, extended from
   employers to street vendors; the verdict gains one paragraph and does not change.
