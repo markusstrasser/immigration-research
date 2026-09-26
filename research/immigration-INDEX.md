@@ -216,7 +216,8 @@ group's share grew, and the pre-registered E-Verify design fails its pre-trend t
 displacement of compliant firms is measured. Beside the account: $0–2.2bn of workers' compensation
 premiums avoided and $0–2.3bn of underpayment, both transfers from off-books workers to their
 employers. Street vending (ladder 223): after California legalized it in 2019,
-licensed restaurants did not lose ground where vending is common; street food is about 1.3% of the
+licensed restaurants did not lose ground where vending is common [2026-09-25: a result about the
+law, which changed enforcement little, not about the existing vendors]; street food is about 1.3% of the
 City of Los Angeles's restaurant sales, at most about $0.4bn a year statewide if all of it came
 from restaurants.
 
@@ -270,7 +271,8 @@ Mexican-origin; SF has no single-metro gap.
 reason, and cheaper housing 2.2 times as often as other states' leavers, in every race,
 education, income and age group. "Better neighborhood/less crime" is **1.47%** (other states
 1.90%), and white and Mexican-origin leavers differ from other states' leavers by the same
-amount. Each year's net cohort takes $0.63–1.05bn of California state and local tax to other
+amount [2026-09-25: reason shares among leavers, not leaving rates; a composition effect acting
+through housing costs or schools would be reported as housing or schools]. Each year's net cohort takes $0.63–1.05bn of California state and local tax to other
 states, gross of the spending that moves with it.
 
 [Seven papers from the Marginal Revolution archive, read in full](immigration-marginal-revolution-leads-read-2026-09-21.md):

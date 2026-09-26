@@ -13,7 +13,9 @@ Revisions.] Covered establishments and employment grew no slower where the group
 negative association disappears once state-wide shocks are removed. [CALCULATION:
 [compliance lane](../infra/immigration-fiscal/compliance_gap_2026_09_24/RESULT.md); ladder 220]
 
-Street vending points the same way. After California legalized it in 2019, licensed restaurants
+Street vending points the same way. [2026-09-25: for the law only; enforcement had collapsed
+before it and permit uptake stayed small, so this does not settle what existing vendors do to
+restaurants. See Revisions.] After California legalized it in 2019, licensed restaurants
 did not lose ground where vending is common, and street food is about 1.3% of restaurant sales in
 the City of Los Angeles; the one lean, fewer full-service restaurants in pre-law arrest hotspots,
 is not significant (§7). [CALCULATION:
@@ -267,6 +269,10 @@ lost business. [DATA: lane `derived/winners_losers_rows.csv`]
 
 ## Revisions
 
+- 2026-09-25 (weekly audit §9): §7's null is a result about SB 946. LAPD vending arrests had
+  fallen to 4 in 2018 and the city sold about 944 permits a year against an estimated 50,000
+  vendors, so the law barely changed competition and cannot show that existing vendors leave
+  restaurants unharmed. [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).
 - 2026-09-25 (weekly audit §5): the compliance lane's wage base, `acs_cells.py`, covers
   imputed-unauthorized workers of every origin, and `edges.py` never narrows it to the group.
   Re-tabulating the lane's own person query and applying its central slopes and rates to the

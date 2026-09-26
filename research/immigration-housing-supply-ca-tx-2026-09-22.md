@@ -295,3 +295,7 @@ design on ACS PUMS (revealed moves, no reasons) is the next test.
   same-decade pull (ladder 199), so ladder 183's rent and value coefficients are diagnostics,
   not causal effects, and they no longer bound §4's mechanical-response arithmetic.
   [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).
+- **2026-09-25 (movers reading narrowed).** §8's stated reasons are shares among leavers. They do
+  not measure leaving rates, and a composition effect acting through housing costs or schools
+  would be reported as housing or schools, so "housing, not neighbors" describes answers, not the
+  underlying cause. [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).
