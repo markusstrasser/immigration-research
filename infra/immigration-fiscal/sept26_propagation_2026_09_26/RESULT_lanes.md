@@ -2,16 +2,21 @@ claude-opus-5-5
 
 # W1 `lanes`: schools at full average cost as the default case
 
-**Verdict:** Done. The back-cast, distribution, uncertainty and debt-legacy lanes now run `sept26_schools`
-(`main_case_schools_full_2026_09_26`, $258.4885–291.9548bn) by default. `--case sept26` and `--case sept24`
+**Verdict:** Done. The back-cast, distribution, uncertainty and debt-legacy lanes run `sept26_schools`
+(`main_case_schools_full_2026_09_26`, $258.4885–291.9548bn) by default. The lead committed them in c0297e4,
+39b854b, eab844f and 1db19c8, and this file and the generator in a65bd7a. `--case sept26` and `--case sept24`
 rebuild the committed files byte for byte, as does `--case sept23` where a lane has it. Every gate the lead
 listed reproduces, two default runs are byte-identical, and all 23 tests pass. One premise in the brief does
 not hold in the debt lane: the school step is 1.0–12.9% federal, depending on the payer convention (8.2% under
-the central one), so it is not all state and local. Nothing is committed or staged.
+the central one), so it is not all state and local.
+
+**Since a65bd7a (committed by the parent in 90c4b23):** the debt bridge now splits the matched-specification step into
+two parts: the education lines, gated to their own federal share, and the constant line's federal share
+($0.0015–0.0024bn). The gate the lead asked for, federal + state-local = total, holds by construction in this
+lane, since state-local is always defined as total minus federal. So I gated the education share instead. Only
+the bridge file changes; every other file is byte-identical.
 
 Model self-report: claude-opus-5-5 (Opus 5.5), 2026-09-26. Numbers are [CALCULATION] from the files named.
-I re-verified everything after f1e4f5b changed the schools lane's `summary.json`. That commit changed the
-school line and the unfunded parts, and none of these lanes reads either field.
 
 ## Case switch
 
@@ -26,10 +31,9 @@ Each lane has one case table, and its default is the last entry. Adding a case t
 | old → new | `old_new_lanes.py` reads the back-cast's `LATER_CASES` | `--case` defaults to the last entry, `--middle` to `sept26` |
 
 Responses come from each case's `corrections.json` `meta.responses`: schools 1.0000/1.0000 and general
-government 0.6000/0.8504. Every lane that reads them stops if they differ from that lane's `summary.json`;
-the back-cast reads only the engine's bands. The strings
-0.63/0.66 now appear only in labels and docstrings. The distribution lane records the responses but does not
-compute with them: the band change moves A.
+government 0.6000/0.8504. Every lane that reads them stops if they differ from that lane's `summary.json`.
+The back-cast reads only the engine's bands. The strings 0.63/0.66 appear only in labels and docstrings. The
+distribution lane records the responses but does not compute with them: the band change moves A.
 
 ## Gates
 
@@ -38,21 +42,37 @@ compute with them: the band change moves A.
 | back-cast | `sept26` = f5b4aae, `sept24` = da2b107 (both derived files) | The lane's `adopted_2026_09_26` variant equals the back-cast's `_sept26_` 2024 anchors (1e-9). The band equals `summary.json` 258.4885–291.9548 (1e-4). Receipts at the base variant equal the `_sept26_` receipts. No concept tag contains another. | 3 |
 | distribution | `sept26` = f697514 (13 files), `sept24` = 6e554a3 (13), `sept23` = 5b8957e (12) | 224 gates. The base is the Sept 26 band (1e-4 bands, 1e-9 summary). The change equals the schools `summary.json` `change` +57.5705/+46.2599 (1e-12). The band is rebuilt from A (1e-3). | 4 |
 | uncertainty | `derived/sept24/` and `derived/sept26/` are unchanged in place | Payload responses equal `summary.json`'s. They replace Sept 24's one for one per `package.cjs` `MAIN_SPECS`. The 64 specifications span the uncorrected 265.5903–298.6797 and the adopted 258.4885–291.9548. | 12 |
-| debt legacy | `sept26` = e62fccb (13 files), `sept24` = ed1b623 (12), `sept23` = 96a5c3b (10) | Payload responses equal `summary.json`'s, and lines and edits equal Sept 26's. The corners reproduce the full band 258.4885/291.9548, non-school-fixed 204.7765/265.8072 and proportional 301.2853/334.7516. Bridge: at matched specifications only education lines move (1e-9). The gap move equals the change plus ΔP (1e-6), and the steps add (1e-9). The programme control's largest difference is $0.00005bn. | 4 |
+| debt legacy | `sept26` = e62fccb (13 files), `sept24` = ed1b623 (12), `sept23` = 96a5c3b (10) | Payload responses equal `summary.json`'s, and lines and edits equal Sept 26's. The corners reproduce the full band 258.4885/291.9548, non-school-fixed 204.7765/265.8072 and proportional 301.2853/334.7516. The programme control's largest difference is $0.00005bn. Bridge gates are listed below. | 4 |
 | old → new | none | The rebuilt default of distribution and debt legacy equals the working tree. | 2 runs identical |
 
-Determinism: a full rerun of all four lanes, with the defaults to scratch and the uncertainty lane in place,
-leaves the 59 working-tree derived files unchanged. Each default rebuild test compares against the working
-tree.
+Bridge gates in `response_bridge`:
+- The previous corner reproduces the previous split (1e-9).
+- At matched specifications only the education lines move (1e-9).
+- The education lines' federal part equals their move times the lane's school share: the education share, or
+  the high K-12 share under the high convention (1e-9). A negative control fires: pricing the high convention
+  at the education share gives $4.787bn against $7.528bn and blocks.
+- No federal part moves outside the education lines and the constant line.
+- The gap moves by the band change plus ΔP (1e-6), and the steps add to the new split (1e-9).
+
+Determinism: rerunning all four lanes leaves the working-tree derived files unchanged. The defaults went to
+scratch and the uncertainty lane ran in place. Each default rebuild test compares against the working tree.
 
 ## Findings for the lead
 
 1. **The school step is not all state and local.** Taken at Sept 26's end specifications (56/7), it adds
-   $58.36/45.44bn to the gap. Its federal part is $4.79/3.73bn under the central convention (8.2%),
-   $0.57/0.45bn under the low convention (1.0%) and $7.53/5.86bn under the high one (12.9%). The central
-   convention spreads federal education grants pro rata over state-local education consumption, the low
-   one keeps federal consumption only, and the high one uses the high federal K-12 share for the school
-   part (`debt_legacy.py` `federal_shares`). The claim holds under the low convention only. File:
+   $58.36/45.44bn to the gap. The lane prices it at its education shares:
+
+   | Convention | Federal part of the education lines | Share | Constant line's federal share |
+   |---|---|---|---|
+   | central | $4.787/3.728bn | 8.2033% | +$0.0023/0.0023bn |
+   | low | $0.571/0.445bn | 0.9789% | +$0.0015/0.0020bn |
+   | high | $7.528/5.862bn | 12.9000% | +$0.0024/0.0024bn |
+
+   The central convention spreads federal education grants pro rata over state-local education consumption.
+   The low one keeps federal consumption only. The high one uses the high federal K-12 share for the school
+   part (`debt_legacy.py` `federal_shares`). The constant line's small corrections carry the corner's
+   average federal share, which falls, for example from 0.188 to 0.165 (low end, central), when school
+   spending rises. The "8.2% federal" in 1db19c8 and f4b5cf0 holds either way. File:
    `debt_legacy_2026_09_23/derived/sept26_schools_bridge_2024.csv`.
 2. **The bridge from Sept 26 is ordered.** The matched-specification step is followed by a single "range
    ends move" of −$0.79/+0.81bn as the ends shift to 48/11. The step equals the schools lane's
@@ -63,31 +83,43 @@ tree.
    cash normalization, with school share 0.865 (was 0.715). Because the allocation at each end is
    unchanged, the distribution rule that the band-end change moves A still applies.
 
-## Files changed (uncommitted, none staged)
+## Files
 
-| Lane | Code | Derived |
+The lanes as committed:
+
+| Commit | Lane | Files |
 |---|---|---|
-| `historical_backcast_2026_09_20/` | `backcast.py`, `README.md` (case paragraph), `test_backcast.py` **new** | `backcast_annual.csv` and `backcast_windows.csv` gain the `_schools_full_` family; earlier columns are unchanged |
-| `distribution_weights_2026_09_23/` | `distribute.py`, `test_distribute.py` | `channel_by_decile.csv`, `channel_by_percentile.csv`, `channel_by_quintile.csv`, `gates.json`, `inputs.json`, `ranges_weighted.csv`, `regressivity.csv`, `weighted_totals.csv` |
-| `uncertainty_propagation_2026_09_22/` | `propagate.py`, `sept24_specs.cjs`, `test_uncertainty.py`, `later_cases.json` **new** | `sept26_schools/` **new**: `case_uncertainty.csv`, `line_targets.csv`, `spec_costs.csv`, `summary.json` |
-| `debt_legacy_2026_09_23/` | `debt_legacy.py`, `test_debt_legacy.py` | `adopted_backcast_windows.csv`, `corrections_federal_by_component_2024.csv`, `corrections_federal_split_2024.csv`, `federal_gap_annual.csv`, `federal_split_2024.csv`, `federal_split_2024_lines.csv`, `forward_path.csv`, `stocks.csv`, `summary.json`; `sept26_schools_bridge_2024.csv` **new** (`sept26_bridge_2024.csv` unchanged) |
-| `sept26_propagation_2026_09_26/` | `old_new_lanes.py` **new** | `derived/old_new_lanes.csv` **new**; this file |
+| c0297e4 | `historical_backcast_2026_09_20/` | `backcast.py`, `README.md`, `test_backcast.py`; `backcast_annual.csv` and `backcast_windows.csv` gain the `_schools_full_` family, and earlier columns are unchanged |
+| 39b854b | `distribution_weights_2026_09_23/` | `distribute.py`, `test_distribute.py`, 8 derived files |
+| eab844f | `uncertainty_propagation_2026_09_22/` | `propagate.py`, `sept24_specs.cjs`, `test_uncertainty.py`, `later_cases.json`, `derived/sept26_schools/` (4 files) |
+| 1db19c8 | `debt_legacy_2026_09_23/` | `debt_legacy.py`, `test_debt_legacy.py`, 9 derived files, `sept26_schools_bridge_2024.csv` |
+| a65bd7a | `sept26_propagation_2026_09_26/` | `old_new_lanes.py`, `derived/old_new_lanes.csv`, this file |
 
-The new files need a `git add` before a pathspec commit. W4 edited `band_variants.*`, `real_costs_totals.*`
-and `sept26/` in `sept26_propagation_2026_09_26/derived/`, along with its own lanes; none of those is mine.
+Since a65bd7a, committed by the parent in 90c4b23 (this file in the commit after it):
+
+| File | Change |
+|---|---|
+| `debt_legacy_2026_09_23/debt_legacy.py` | `response_bridge` splits the matched step and gates the education share |
+| `debt_legacy_2026_09_23/derived/sept26_schools_bridge_2024.csv` | 5 steps per end and convention instead of 4 |
+| `debt_legacy_2026_09_23/test_debt_legacy.py` | drops `NEW_FILES`, now that the bridge file is committed |
+| `sept26_propagation_2026_09_26/old_new_lanes.py` | reads the two new bridge steps (97 rows) |
+| `sept26_propagation_2026_09_26/derived/old_new_lanes.csv` | the six bridge rows; every other row is unchanged |
+| `sept26_propagation_2026_09_26/RESULT_lanes.md` | this revision |
+
+W4 wrote `band_variants.*`, `constant_choices*`, `real_costs_totals.*` and `sept26/` in
+`sept26_propagation_2026_09_26/derived/`; none of those is mine.
 
 ## Consumers outside these directories
 
 | Consumer | Reads | Effect |
 |---|---|---|
 | `figures_2026_09_22` | distribution and back-cast at 6e554a3 and da2b107 via `git show` (fef4d12) | none |
-| `winners_losers_2026_09_24` (W4) | distribution and debt legacy at pinned commits; debt `--case sept23` | none; the pins and `sept23` rebuild byte for byte |
+| `winners_losers_2026_09_24` (W4) | distribution and debt legacy at pinned commits (`PINNED`); debt `--case sept23` | none; the pins and `sept23` rebuild byte for byte |
 | `sept24_propagation_2026_09_24/constant_choices.py` (W4) | the debt legacy lane | W4's |
 | `cps_imputation_keys_2026_09_23/distribution_check.py` | a `--case sept23` rebuild; stops on any other case | none |
-| `school_capital_return_2026_09_26/capital_return.py` (untracked, not mine) | the debt legacy lane's `RESULT.md` text | none; unchanged |
+| `school_capital_return_2026_09_26/capital_return.py` | the debt legacy lane's `RESULT.md` text | none |
 
-Left for the lead: the `RESULT.md` verdict brackets in distribution, uncertainty and debt legacy still name
-Sept 24 as the default. I did not bracket them because the brief limits prose to this file.
+The bridge file has no reader outside the debt lane and the generator.
 
 ## Reproduce (repository root)
 
@@ -104,12 +136,13 @@ uv run --no-project python3 -m pytest infra/immigration-fiscal/historical_backca
   infra/immigration-fiscal/debt_legacy_2026_09_23/ -q --import-mode=importlib
 ```
 
-Pass `--case sept26` or `--case sept24` to any lane, or `--case sept23` to distribution and debt legacy, with
-`--out-dir DIR` to rebuild an earlier case. The uncertainty lane writes `derived/<case>/` for every case.
+To rebuild an earlier case, pass `--case sept26` or `--case sept24` to any lane, or `--case sept23` to
+distribution or debt legacy, with `--out-dir DIR`. The uncertainty lane writes `derived/<case>/` for every
+case.
 
 ## Old → new
 
-The table below is `old_new_lanes.py` output (`derived/old_new_lanes.csv`, 94 rows), pasted unedited. The
+The table below is `old_new_lanes.py` output (`derived/old_new_lanes.csv`, 97 rows), pasted unedited. The
 Sept 24 column is e5e23ec. A range reads low end to high end, and costs in the distribution rows are
 negative.
 
@@ -193,9 +226,12 @@ negative.
 | per-correction federal part, lane_constants, central convention | $bn | -5.11 to -5.14 | -5.11 to -5.14 | -5.11 to -5.14 | `debt_legacy_2026_09_23/derived/corrections_federal_by_component_2024.csv` |
 | per-correction federal part, finite_removal, central convention | $bn | — | -0.0015 to -0.0015 | -0.0015 to -0.0015 | `debt_legacy_2026_09_23/derived/corrections_federal_by_component_2024.csv` |
 | per-correction federal part, consumption_key, central convention | $bn | — | -0.58 to -0.58 | -0.58 to -0.58 | `debt_legacy_2026_09_23/derived/corrections_federal_by_component_2024.csv` |
-| federal part of the school-response step at matched specifications, central convention | $bn | — | — | 4.79 to 3.73 | `debt_legacy_2026_09_23/derived/<case>_bridge_2024.csv` |
-| federal part of the school-response step at matched specifications, low convention | $bn | — | — | 0.57 to 0.45 | `debt_legacy_2026_09_23/derived/<case>_bridge_2024.csv` |
-| federal part of the school-response step at matched specifications, high convention | $bn | — | — | 7.53 to 5.86 | `debt_legacy_2026_09_23/derived/<case>_bridge_2024.csv` |
+| bridge from the previous case at matched specifications: federal part, school response on the education lines, central convention | $bn | — | — | 4.79 to 3.73 | `debt_legacy_2026_09_23/derived/<case>_bridge_2024.csv` |
+| bridge from the previous case at matched specifications: federal part, school response on the education lines, low convention | $bn | — | — | 0.57 to 0.44 | `debt_legacy_2026_09_23/derived/<case>_bridge_2024.csv` |
+| bridge from the previous case at matched specifications: federal part, school response on the education lines, high convention | $bn | — | — | 7.53 to 5.86 | `debt_legacy_2026_09_23/derived/<case>_bridge_2024.csv` |
+| bridge from the previous case at matched specifications: federal part, constant line's federal share, central convention | $bn | — | — | 0.00233 to 0.00229 | `debt_legacy_2026_09_23/derived/<case>_bridge_2024.csv` |
+| bridge from the previous case at matched specifications: federal part, constant line's federal share, low convention | $bn | — | — | 0.0015 to 0.0020 | `debt_legacy_2026_09_23/derived/<case>_bridge_2024.csv` |
+| bridge from the previous case at matched specifications: federal part, constant line's federal share, high convention | $bn | — | — | 0.00236 to 0.00243 | `debt_legacy_2026_09_23/derived/<case>_bridge_2024.csv` |
 
 **distribution (ladder 194)**
 
@@ -248,3 +284,8 @@ named September 24 as the default now carry the schools-case figures, added by t
 
 The parent's premise that the school step is almost all state and local was wrong: it is 8.2%
 federal under the debt lane's central convention.
+
+Parent, 00:25: the bridge split is committed as 90c4b23. On the rerun sept23, sept24 and sept26
+reproduce 96a5c3b, ed1b623 and e62fccb, two default runs are byte-identical, only the bridge file
+differs from 1db19c8, 4 tests pass, and `old_new_lanes.py` rewrites its CSV byte for byte. This
+section was dropped in the worker's 00:20 revision and is restored here from a65bd7a.
