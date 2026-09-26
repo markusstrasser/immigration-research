@@ -2,23 +2,65 @@ claude-opus-5-5
 
 # W3 `explorer`: the assumption explorer on the September 26 case
 
-**Verdict:** The plumbing is done and passes its checks on the current tree; nothing is committed.
+**Verdict:** The plumbing is done and committed by the lead in b84629e, with the preset relabel.
 The explorer loads the September 26 payload, and its presets read the responses from
 `meta.responses` through `value_from`. `test_engine.js` passes on all three September 26 bands:
 **$200.9180–245.6949bn** central, both with the switch set explicitly and with the presets as loaded.
 It also passes the uncorrected gate ($207.4046–253.1859bn) and still reproduces the September 23
 and 24 cases.
 
-At 23:24 two rebuilds were byte-identical to the page the headless check read (sha256
-`9d19a39c…514b`). That page's central card reads "−246 to −201". The engine is unchanged.
-
-The lead's scope trim arrived after the work below was finished. "Scope trim" says which changes
-it covers and which go beyond it.
-
-Since the 22:39 adoption of schools at full cost, the page's central case is the one-year scenario,
-but its label still reads "adopted 2026-09-26". Relabelling is the lead's call (see "For the lead").
+The cards no longer call the September 26 case the adopted main case. That change and the README
+bullet describing it are uncommitted; see "Relabel follow-up". Every card value re-verifies at its
+cited line again. Two rebuilds are byte-identical (sha256 `635dc409…1f11`), and a headless check
+reads the new labels and the September 26 numbers. The engine is unchanged.
 
 Model self-report: claude-opus-5-5. Lane: `../assumption_explorer_2026_09_21/`.
+
+## Relabel follow-up (after b84629e; uncommitted)
+
+The lead asked that no text call the September 26 case the adopted main case. The README, `context.json` and any
+changed preset note should say that the explorer runs it as the one-year scenario, and that the
+adopted main case charges schools at full cost ($258–292bn) and is not yet in the explorer. The
+lead's commit had already done this for the preset kind label and scope note and for the README
+verdict. This follow-up covers the cards.
+
+- **`context.json`**, rebuilt through its generator. The inventory and `build_context.py` report 57
+  cards and 250 values, none dropped, and no value, unit or card changed.
+  - **New sentence** in the headline card: "The explorer runs the September 26 case, now the
+    one-year scenario; the adopted main case charges schools at their full average cost ($258–292bn)
+    and is not yet in the explorer." The card's memo adds the schools decision.
+  - **Wording:** "main case adopted September 26" becomes "September 26 case" in six findings, six
+    combining notes and seven value labels.
+  - **Kept:** "adopted September 26" stays where it names what the main case still holds: the
+    general-government response and the consumption key.
+  - **Dropped:** the shared combining note's "(entries 2, 4, 11)". Those FAQ entries now give
+    $258–292bn.
+  - **FAQ quotes:** the six combining rules are re-read from the FAQ as it stands. "Two anchors" and
+    "California and Texas" now carry the FAQ's schools-case wording.
+- **Citations re-anchored now, not after the docs pass as "Parent integration" planned.**
+  `build_context.py` drops any value that fails at its cited line, so rebuilding the cards for the
+  wording required re-anchoring. All 29 drifted citations re-verify. 39 citations were mapped by line
+  diff (32 from ba12f3c, 7 of this pass's own edits from 199582e), and no shift fallback was needed.
+  The script now finds the combining rules by their opening words; on the FAQ at d506671 this
+  reproduces the old hard-coded reads exactly. The probe gives 0 of 250 unconfirmed, against 29
+  on b84629e. The docs pass will move lines again. Rerunning `build_inventory.py` and
+  `build_context.py` re-anchors them.
+- **README:** the fifth card-pass bullet now describes this. It drops its claim that FAQ entries 2
+  and 16 were still on older wording; 58b7596 fixed entry 2.
+- **Checks:**
+  - `node test_engine.js` exits 0 with the same PASS line.
+  - `build_ui.py` exits 0 twice, with byte-identical output (`635dc409…1f11`, 99 local links).
+  - Headless check at 1400 px: standards mode, no console errors, no horizontal overflow.
+  - The central card reads "This repo, one-year scenario, 2026-09-26 CBO-informed central case
+    −246 to −201", and the result line reads "−246 to −201 bn".
+  - Other cards: proportional "−335 to −301", taxes minus benefits "60 to 71", no services
+    "69 to 84", point −223.1, −$5,456 per member. These are the September 26 values; September 24
+    would read −336 to −303, 56 to 67, 65 to 80, −223.6 and −$5,469.
+  - The headline card carries the new sentence. The only "main case adopted September 26" left in
+    the cards is the FAQ's own schools-case rule.
+  - Screenshot: `derived/screenshots/sept26_relabel_top.png`.
+- **Files:** `context.json` and `README.md` in the explorer, and this file. The ignored inputs are
+  `_cache/cards_2026_09_26/build_inventory.py` and `_cache/inventory_2026_09_26.json`.
 
 ## Scope trim (received after the work was finished)
 
@@ -222,6 +264,11 @@ row 8's −$0.10bn, which counts in full under every convention.
   356 bn endpoint.
 
 ## For the lead
+
+Status at 23:38: the parent resolved the central label in b84629e, and fef4d12 resolved the figures
+pin. The relabel follow-up re-anchored the cards; they need one more rerun after the docs pass. FAQ
+entries 2 and 16 now carry the Sept 26 and schools wording (58b7596, abf99ab). The memory note is
+still stale. The items below are kept as written at 23:24.
 
 - **Central label.** The card reads "This repo, adopted 2026-09-26, CBO-informed central case, −246
   to −201". Since 22:39 the main case adopted that day is $258.5–292.0bn.
