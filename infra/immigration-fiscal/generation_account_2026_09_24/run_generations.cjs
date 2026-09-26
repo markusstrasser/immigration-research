@@ -2,10 +2,10 @@
  *
  * --case picks the package lane (CASES below):
  *   sept26_schools  the default since 2026-09-26: main_case_schools_full_2026_09_26 ($258.4885-291.9548bn),
- *                 schools at their full average cost (response 1/1);
- *   sept26        main_case_2026_09_26 ($200.9180-245.6949bn), schools at 0.6522/0.6813, the one-year
- *                 scenario;
- *   sept24        main_case_2026_09_24, reproducing the September 24 run byte for byte.
+ *                   schools at their full average cost (response 1/1);
+ *   sept26          main_case_2026_09_26 ($200.9180-245.6949bn), schools at 0.6522/0.6813, the one-year
+ *                   scenario; reproduces its run of 2026-09-26 byte for byte;
+ *   sept24          main_case_2026_09_24, reproducing the September 24 run byte for byte.
  * Both later cases are the September 24 package with the finite-removal responses (engine state, carried by
  * the package's MAIN_SPECS and gated against corrections.json meta.responses), audit row 8 at its finite
  * factor (lane row8_finite, split as the lane splits row 8, by population) and the consumption key (lane
@@ -39,14 +39,18 @@
  * specification of MAIN_SPECS is evaluated with the package's cost().
  * Gates (exit 1): the lanes rebuild packageShifts for both methods; every split adds to its union shift
  * (1e-9 bn); the netted generation edits add to corrections.json cell by cell (1e-9 bn); the corrected
- * union reproduces the case's main case (1e-4) and the uncorrected union the uncorrected model at the
- * case's responses (sept26_schools $265.5903-298.6797bn, sept26 $207.4046-253.1859bn, sept24 the September 23
- * case); for every specification and both conventions the three generations' costs add to the union's
- * (linearity, 1e-9 bn; the brief's gate is $0.01bn), corrected and uncorrected. Cases after sept24 also
- * gate that corrections.json is the package's payload, that the specifications carry meta.responses, and
- * that each generation's move from the September 24 case splits exactly into the general-government and
- * school responses, the move of the band end to another specification, row 8 and the consumption key
- * (change_from_sept24).
+ * union reproduces the case's main case (1e-4; after sept24 its main_case_bands.csv row `adopted`) and the
+ * uncorrected union the uncorrected model at the case's responses (after sept24 the row
+ * `uncorrected_at_adopted_responses`: sept26_schools $265.5903-298.6797bn, sept26 $207.4046-253.1859bn;
+ * sept24 the September 23 case); for every specification and both conventions the three generations' costs
+ * add to the union's (linearity, 1e-9 bn; the brief's gate is $0.01bn), corrected and uncorrected. Cases after
+ * sept24 also gate that corrections.json is the package's payload and that the specifications carry
+ * meta.responses. The move from the September 24 case is a chain at matched specifications whose parts add
+ * exactly (1e-9) for every generation and the union: the general-government and school responses, row 8 and
+ * the consumption key reach the September 26 case at the September 24 ends (specifications 56 and 7); under
+ * sept26_schools, school_full_cost then sets schools to 1 at the same specifications, and band_end_specs
+ * moves to the case's own ends (48 and 11), whose union parts must add to that lane's summary `change`
+ * (change_from_sept24, change_from_sept26).
  * For step 6 (compare_ledger.py) it also splits each generation's cost at
  * the band ends into direct fiscal lines, production term and corrections, plus the direct lines at the
  * package's proportional reference (summary.ledger_bridge_a).
@@ -100,7 +104,19 @@ const adopted = mainSummary.main_case;
 const uncorrectedBand = ON26 ? mainSummary.uncorrected_at_adopted_responses : mainSummary.adopted_2026_09_23;
 const U = ON26 ? "uncorrected" : "sept23";  // name of the uncorrected model at the same specification
 console.log(`[case ${CASE}] ${MAIN}; outputs to ${path.relative(process.cwd(), OUT) || "."}`);
+// After sept24 the gates take the case's published bands (main_case_bands.csv, main profile, four decimals);
+// the summary keeps summary.json's full-precision figures, which must round to them.
+const bandRow = (variant) => {
+  const r = csvRows(`${MAIN}/derived/main_case_bands.csv`).find((x) => x.profile === P.MAIN_PROFILE && x.variant === variant);
+  if (!r) throw new Error(`[BLOCKED] ${MAIN}/derived/main_case_bands.csv lacks ${P.MAIN_PROFILE} ${variant}`);
+  return [Number(r.cost_low_bn), Number(r.cost_high_bn)];
+};
+const gateAdopted = ON26 ? bandRow("adopted") : adopted;
+const gateUncorrected = ON26 ? bandRow("uncorrected_at_adopted_responses") : uncorrectedBand;
 if (ON26) {
+  gate("summary.json's main case and uncorrected band round to main_case_bands.csv (adopted, uncorrected_at_adopted_responses)",
+    [0, 1].every((k) => Math.abs(adopted[k] - gateAdopted[k]) < 5.01e-5 && Math.abs(uncorrectedBand[k] - gateUncorrected[k]) < 5.01e-5),
+    `${gateAdopted.map((x) => x.toFixed(4)).join("–")}; ${gateUncorrected.map((x) => x.toFixed(4)).join("–")}`);
   gate(`corrections.json is the ${MAIN} package's payload`, JSON.stringify(P.correctionsPayload()) === JSON.stringify(corrections),
     "deep-equal");
   const r = corrections.meta.responses;
@@ -406,11 +422,11 @@ const unionModel = Engine.applyCorrections(MODEL, corrections);
 const uCost = MAIN_SPECS.map((s) => cost(unionModel, s));
 const u0Cost = MAIN_SPECS.map((s) => cost(MODEL, s));
 const lo = uCost.indexOf(Math.min(...uCost)), hi = uCost.indexOf(Math.max(...uCost));
-gate("the corrected union reproduces the adopted main case", near(uCost[lo], adopted[0], 1e-4) && near(uCost[hi], adopted[1], 1e-4),
-  `${uCost[lo].toFixed(4)}–${uCost[hi].toFixed(4)}`);
+gate(`the corrected union reproduces the adopted main case${ON26 ? " (main_case_bands.csv adopted)" : ""}`,
+  near(uCost[lo], gateAdopted[0], 1e-4) && near(uCost[hi], gateAdopted[1], 1e-4), `${uCost[lo].toFixed(4)}–${uCost[hi].toFixed(4)}`);
 const lo0 = u0Cost.indexOf(Math.min(...u0Cost)), hi0 = u0Cost.indexOf(Math.max(...u0Cost));
-gate(`the uncorrected union reproduces ${ON26 ? "the uncorrected model at the adopted responses" : "the September 23 case"}`,
-  near(u0Cost[lo0], uncorrectedBand[0], 1e-4) && near(u0Cost[hi0], uncorrectedBand[1], 1e-4),
+gate(`the uncorrected union reproduces ${ON26 ? "the uncorrected model at the adopted responses (main_case_bands.csv)" : "the September 23 case"}`,
+  near(u0Cost[lo0], gateUncorrected[0], 1e-4) && near(u0Cost[hi0], gateUncorrected[1], 1e-4),
   `${u0Cost[lo0].toFixed(4)}–${u0Cost[hi0].toFixed(4)}`);
 const res = {};
 for (const conv of CONVS) {
@@ -641,43 +657,67 @@ for (const conv of CONVS) {
   }));
 }
 
-// The move from the September 24 case (every case after sept24), exact at each band end:
-//   the responses acting on the September 24 corrected model at the September 24 end's specification
-//   (general government and schools, each with the specification otherwise held; they act on different
-//   lines, so they add), then the move of the band end to another specification at the new responses
-//   (zero when the end stays; schools at 1 flip the school share at both ends), then row 8 and the
-//   consumption key as cell edits at the new end. The engine is linear in cells (gate).
+// The move from the September 24 case, a chain at matched specifications whose parts add exactly (the engine
+// is linear in cells and responses). The September 24 ends (specifications 56 and 7) are also the September
+// 26 ends (gate).
+//   1-2  general_government_response, school_response: the finite-removal responses on the September 24
+//        corrected model at the September 24 end, each with the specification otherwise held (they act on
+//        different lines, so they add);
+//   3-4  row8, consumption_key: those lanes' cell edits at the September 26 specification. Parts 1-4 reach the
+//        September 26 case (sept26_bn).
+//   5    school_full_cost (sept26_schools): schools from 0.6522/0.6813 to 1 at the same specification;
+//   6    band_end_specs (sept26_schools): the case at its own end less the case at the September 24 end. The
+//        ends move because at a school response of 1 the school-share bound flips.
+// Under sept26 the summary keeps that run's format (parts 1-4 in change_from_sept24). Under sept26_schools,
+// change_from_sept24 carries all six and change_from_sept26 the last two.
 if (ON26) {
   console.log("[change from the September 24 case]");
-  const s24 = P.P24.MAIN_SPECS;  // the September 24 specifications; MAIN_SPECS replaces their responses value for value
+  const s24 = P.P24.MAIN_SPECS;  // the September 24 specifications; later cases replace their responses value for value
+  const s26 = CASE === "sept26" ? MAIN_SPECS : P.P26.MAIN_SPECS;
   const u24 = Engine.applyCorrections(MODEL, P.SEPT24);
   const c24 = s24.map((s) => cost(u24, s));
   const lo24 = c24.indexOf(Math.min(...c24)), hi24 = c24.indexOf(Math.max(...c24));
   const band24 = readJson("main_case_2026_09_24/derived/summary.json").main_case;
   gate("the September 24 corrections reproduce the September 24 case", near(c24[lo24], band24[0], 1e-4) && near(c24[hi24], band24[1], 1e-4),
     `${c24[lo24].toFixed(4)}–${c24[hi24].toFixed(4)}`);
+  if (CASE !== "sept26") {
+    gate("the case's payload edits are the September 26 payload's", JSON.stringify(P.P26.correctionsPayload().edits) === JSON.stringify(corrections.edits),
+      "deep-equal");
+  }
+  const c26 = s26.map((s) => cost(unionModel, s));
+  const band26 = readJson("main_case_2026_09_26/derived/summary.json").main_case;
+  gate("the September 26 case has the September 24 ends and reproduces its band", c26.indexOf(Math.min(...c26)) === lo24
+    && c26.indexOf(Math.max(...c26)) === hi24 && near(c26[lo24], band26[0], 1e-4) && near(c26[hi24], band26[1], 1e-4),
+    `specifications ${lo24} and ${hi24}, ${c26[lo24].toFixed(4)}–${c26[hi24].toFixed(4)}`);
   const ENDS = [["low", lo24, lo], ["high", hi24, hi]];
-  console.log(`  · band ends: specifications ${lo24} and ${hi24} on September 24, ${lo} and ${hi} in this case`);
+  console.log(`  · band ends: specifications ${lo24} and ${hi24} on September 24 and 26, ${lo} and ${hi} in this case`);
   const edits24 = new Map(P.SEPT24.edits.map((x) => [cid(x), x]));
-  const parts = (m, conv, g, i24, i, end) => {
-    const old = cost(m, s24[i24]);
-    const out = { sept24_bn: old, general_government_response_bn: cost(m, { ...s24[i24], gg: MAIN_SPECS[i24].gg }) - old,
-      school_response_bn: cost(m, { ...s24[i24], school: MAIN_SPECS[i24].school }) - old, responses_bn: cost(m, MAIN_SPECS[i24]) - old,
-      band_end_specification_bn: cost(m, MAIN_SPECS[i]) - cost(m, MAIN_SPECS[i24]) };
-    if (g) {
-      const lane = (l) => laneRows.find((r) => r.convention === conv && r.generation === g && r.lane === l)[`${end}_bn`];
-      Object.assign(out, { row8_bn: lane("row8_finite"), consumption_key_bn: lane("consumption_key") });
-    }
-    return out;
+  const laneModel = {};
+  const laneAt = (conv, g, lane, spec) => {
+    const k = `${conv}|${g}|${lane}`;
+    if (!laneModel[k]) laneModel[k] = Engine.applyCorrections(models[conv][g], payloadFor(GL[conv], g, [lane]));
+    return cost(laneModel[k], spec) - cost(models[conv][g], spec);
   };
-  const sum = (x) => x.sept24_bn + x.responses_bn + x.band_end_specification_bn + x.row8_bn + x.consumption_key_bn;
-  // The school line's own split: what the case charges each generation for schools at the band end, the
-  // cost at the case's school response less the cost at a response of 0 (cost is linear in the response).
-  const schoolLine = (m, i) => cost(m, MAIN_SPECS[i]) - cost(m, { ...MAIN_SPECS[i], school: 0 });
-  const change = { union: {} };
-  let worstCells = 0, worstAdd = 0, worstParts = 0;
+  // Parts 1-4 on a September 24 model m (lanes given for a generation, summed for the union).
+  const toSept26 = (m, i24, lanesOf) => {
+    const sept24 = cost(m, s24[i24]);
+    const x = { sept24_bn: sept24, general_government_response_bn: cost(m, { ...s24[i24], gg: s26[i24].gg }) - sept24,
+      school_response_bn: cost(m, { ...s24[i24], school: s26[i24].school }) - sept24, responses_bn: cost(m, s26[i24]) - sept24 };
+    return Object.assign(x, lanesOf(s26[i24]));
+  };
+  // Parts 5-6 on the case model m.
+  const fromSept26 = (m, i24, i) => {
+    const sept26 = cost(m, s26[i24]), atOldEnd = cost(m, MAIN_SPECS[i24]), atEnd = cost(m, MAIN_SPECS[i]);
+    return { sept26_bn: sept26, school_full_cost_bn: atOldEnd - sept26, band_end_specs_bn: atEnd - atOldEnd, sept26_schools_bn: atEnd,
+      change_bn: atEnd - sept26, school_line_bn: atEnd - cost(m, { ...MAIN_SPECS[i], school: 0 }) };
+  };
+  const PARTS24 = ["general_government_response_bn", "school_response_bn", "row8_bn", "consumption_key_bn"];
+  const PARTS26 = ["school_full_cost_bn", "band_end_specs_bn"];
+  const chain = { union: {} }, chain26 = { union: {} };
+  let worstCells = 0, worstAdd = 0, worstParts = 0, worstUnion = 0, worstCase = 0;
   for (const conv of CONVS) {
-    change[conv] = {};
+    chain[conv] = {};
+    chain26[conv] = {};
     const m24 = {};
     for (const g of GENS) m24[g] = Engine.applyCorrections(models[conv][g], payloadFor(GL[conv], g, LANES24));
     const p24 = Object.fromEntries(GENS.map((g) => [g, new Map(payloadFor(GL[conv], g, LANES24).edits.map((x) => [cid(x), x]))]));
@@ -687,42 +727,86 @@ if (ON26) {
         worstCells = Math.max(worstCells, Math.abs(s - (edits24.has(id) ? edits24.get(id).by[a] : 0)));
       }
     }
-    worstAdd = Math.max(worstAdd, ...s24.map((s, i) => Math.abs(GENS.reduce((t, g) => t + cost(m24[g], s), 0) - c24[i])));
+    worstAdd = Math.max(worstAdd, ...s24.map((s, k) => Math.abs(GENS.reduce((t, g) => t + cost(m24[g], s), 0) - c24[k])));
     for (const g of GENS) {
-      change[conv][g] = {};
+      chain[conv][g] = {};
+      chain26[conv][g] = {};
       for (const [end, i24, i] of ENDS) {
-        const x = parts(m24[g], conv, g, i24, i, end);
-        x.case_bn = res[conv][g].corrected[i];
-        x.change_bn = x.case_bn - x.sept24_bn;
-        x.school_line_at_case_bn = schoolLine(res[conv][g].model, i);
-        worstParts = Math.max(worstParts, Math.abs(sum(x) - x.case_bn),
-          Math.abs(x.responses_bn - x.general_government_response_bn - x.school_response_bn));
-        change[conv][g][end] = x;
+        const x = toSept26(m24[g], i24, (spec) => ({ row8_bn: laneAt(conv, g, "row8_finite", spec),
+          consumption_key_bn: laneAt(conv, g, "consumption_key", spec) }));
+        const y = fromSept26(res[conv][g].model, i24, i);
+        worstParts = Math.max(worstParts, Math.abs(x.responses_bn - x.general_government_response_bn - x.school_response_bn),
+          Math.abs(PARTS24.reduce((t, k) => t + x[k], x.sept24_bn) - y.sept26_bn),
+          Math.abs(PARTS26.reduce((t, k) => t + y[k], y.sept26_bn) - y.sept26_schools_bn));
+        worstCase = Math.max(worstCase, Math.abs(y.sept26_schools_bn - res[conv][g].corrected[i]));
+        chain[conv][g][end] = { x, y };
       }
     }
   }
   for (const [end, i24, i] of ENDS) {
-    const x = parts(u24, null, null, i24, i, end);
-    x.row8_bn = GENS.reduce((t, g) => t + change.a[g][end].row8_bn, 0);
-    x.consumption_key_bn = GENS.reduce((t, g) => t + change.a[g][end].consumption_key_bn, 0);
-    x.case_bn = uCost[i];
-    x.change_bn = x.case_bn - x.sept24_bn;
-    x.school_line_at_case_bn = schoolLine(unionModel, i);
-    worstParts = Math.max(worstParts, Math.abs(sum(x) - x.case_bn),
-      Math.abs(x.responses_bn - x.general_government_response_bn - x.school_response_bn));
+    const sumOf = (conv, k) => GENS.reduce((t, g) => t + chain[conv][g][end].x[k], 0);
+    const x = toSept26(u24, i24, () => ({ row8_bn: sumOf("a", "row8_bn"), consumption_key_bn: sumOf("a", "consumption_key_bn") }));
+    const y = fromSept26(unionModel, i24, i);
+    worstParts = Math.max(worstParts, Math.abs(x.responses_bn - x.general_government_response_bn - x.school_response_bn),
+      Math.abs(PARTS24.reduce((t, k) => t + x[k], x.sept24_bn) - y.sept26_bn),
+      Math.abs(PARTS26.reduce((t, k) => t + y[k], y.sept26_bn) - y.sept26_schools_bn));
+    worstCase = Math.max(worstCase, Math.abs(y.sept26_schools_bn - uCost[i]));
     for (const conv of CONVS) {
-      for (const k of ["school_response_bn", "school_line_at_case_bn"]) {
-        worstParts = Math.max(worstParts, Math.abs(GENS.reduce((t, g) => t + change[conv][g][end][k], 0) - x[k]));
+      for (const k of ["sept24_bn", ...PARTS24]) worstUnion = Math.max(worstUnion, Math.abs(sumOf(conv, k) - x[k]));
+      for (const k of ["sept26_bn", ...PARTS26, "sept26_schools_bn", "school_line_bn"]) {
+        worstUnion = Math.max(worstUnion, Math.abs(GENS.reduce((t, g) => t + chain[conv][g][end].y[k], 0) - y[k]));
       }
     }
-    change.union[end] = x;
+    chain.union[end] = { x, y };
   }
   gate("the generations' September 24 payloads (nine lanes) add to the September 24 corrections.json cell by cell", worstCells < 1e-9,
     `max |diff| ${e(worstCells)} bn`);
   gate("their September 24 costs add to the September 24 case in all 64 specifications", worstAdd < 1e-9, `max |diff| ${e(worstAdd)} bn`);
-  gate("each move from September 24 is general government + schools + band end + row 8 + consumption key, and the "
-    + "generations' school parts add to the union's", worstParts < 1e-9, `max |diff| ${e(worstParts)} bn`);
-  summary.change_from_sept24 = Object.assign({ specifications: { low: { sept24: lo24, case: lo }, high: { sept24: hi24, case: hi } } }, change);
+  gate(`the chain's parts add to each move (September 24 -> 26${CASE === "sept26" ? "" : " -> this case"}), every generation and the union, `
+    + "and end at the case's own cost", worstParts < 1e-9 && worstCase < 1e-9, `max |diff| ${e(Math.max(worstParts, worstCase))} bn`);
+  gate("the generations' parts add to the union's, part by part, both conventions", worstUnion < 1e-9, `max |diff| ${e(worstUnion)} bn`);
+  const ends = { low: { sept24: lo24, sept26: lo24, case: lo }, high: { sept24: hi24, sept26: hi24, case: hi } };
+  const pick = (fn) => Object.assign({ union: fn(chain.union) },
+    ...CONVS.map((conv) => ({ [conv]: Object.fromEntries(GENS.map((g) => [g, fn(chain[conv][g])])) })));
+  if (CASE === "sept26") {
+    // The September 26 run's format, field for field.
+    summary.change_from_sept24 = pick((c) => Object.fromEntries(ENDS.map(([end]) => {
+      const { x, y } = c[end];
+      return [end, { sept24_bn: x.sept24_bn, general_government_response_bn: x.general_government_response_bn,
+        school_response_bn: x.school_response_bn, responses_bn: x.responses_bn, row8_bn: x.row8_bn,
+        consumption_key_bn: x.consumption_key_bn, sept26_bn: y.sept26_bn, change_bn: y.sept26_bn - x.sept24_bn }];
+    })));
+  } else {
+    const lane = readJson(`${MAIN}/derived/summary.json`).change;  // that lane's own change from September 26
+    const worstLane = Math.max(...ENDS.map(([end], k) => Math.abs(chain.union[end].y.change_bn - lane[k])));
+    gate(`the union's school_full_cost + band_end_specs equal ${MAIN}'s change from September 26`, worstLane < 1e-9,
+      `${ENDS.map(([end]) => "+" + chain.union[end].y.change_bn.toFixed(4)).join(" / ")}; max |diff| ${e(worstLane)} bn`);
+    summary.change_from_sept24 = Object.assign({ specifications: ends }, pick((c) => Object.fromEntries(ENDS.map(([end]) => {
+      const { x, y } = c[end];
+      return [end, { sept24_bn: x.sept24_bn, general_government_response_bn: x.general_government_response_bn,
+        school_response_bn: x.school_response_bn, row8_bn: x.row8_bn, consumption_key_bn: x.consumption_key_bn, sept26_bn: y.sept26_bn,
+        school_full_cost_bn: y.school_full_cost_bn, band_end_specs_bn: y.band_end_specs_bn, sept26_schools_bn: y.sept26_schools_bn,
+        change_bn: y.sept26_schools_bn - x.sept24_bn }];
+    }))));
+    summary.change_from_sept26 = Object.assign({ specifications: ends }, pick((c) => Object.fromEntries(ENDS.map(([end]) => {
+      const { y } = c[end];
+      return [end, { sept26_bn: y.sept26_bn, school_full_cost_bn: y.school_full_cost_bn, band_end_specs_bn: y.band_end_specs_bn,
+        sept26_schools_bn: y.sept26_schools_bn, change_bn: y.change_bn, school_line_bn: y.school_line_bn }];
+    }))));
+    // At a school response of 1 the growth and decline specifications coincide, so each end is attained twice.
+    const rs = corrections.meta.responses.school;
+    if (rs.growth === rs.decline) {
+      const ties = (v) => uCost.map((x, k) => (x === v ? k : -1)).filter((k) => k >= 0);
+      const tLo = ties(uCost[lo]), tHi = ties(uCost[hi]);
+      const same = (t) => t.length === 2 && JSON.stringify(MAIN_SPECS[t[0]]) === JSON.stringify(MAIN_SPECS[t[1]])
+        && CONVS.every((conv) => GENS.every((g) => res[conv][g].corrected[t[0]] === res[conv][g].corrected[t[1]]));
+      gate(`the band ends tie exactly at one school response: low at specifications ${tLo.join(" and ")}, high at ${tHi.join(" and ")} `
+        + `(identical specifications; costs equal (===) for the union and every generation); indexOf takes the first, ${lo} and ${hi}`,
+      same(tLo) && same(tHi) && tLo[0] === lo && tHi[0] === hi);
+      summary.band_end_ties = { low: tLo, high: tHi, picked: { low: lo, high: hi },
+        rule: "at one school response the growth and decline specifications are identical; indexOf takes the first (growth)" };
+    }
+  }
 }
 
 // ---------------------------------------------------------------------------------------------------
@@ -747,13 +831,23 @@ for (const conv of CONVS) {
   }
 }
 if (ON26) {
-  console.log(`[change from the September 24 case to ${CASE}] $bn, low / high`);
   const f = (x, k) => ["low", "high"].map((end) => (x[end][k] >= 0 ? "+" : "") + x[end][k].toFixed(2)).join(" / ");
-  const show = (label, x) => console.log(`    ${label.padEnd(12)} ${f(x, "sept24_bn")} -> ${f(x, "case_bn")}: `
-    + `general government ${f(x, "general_government_response_bn")}, schools ${f(x, "school_response_bn")}, `
-    + `band end ${f(x, "band_end_specification_bn")}, row 8 ${f(x, "row8_bn")}, consumption key ${f(x, "consumption_key_bn")}`);
-  show("union", summary.change_from_sept24.union);
-  for (const conv of CONVS) for (const g of GENS) show(`(${conv}) ${g}`, summary.change_from_sept24[conv][g]);
+  const c = summary.change_from_sept24;
+  const rowsOf = [["union", c.union], ...CONVS.flatMap((conv) => GENS.map((g) => [`(${conv}) ${g}`, c[conv][g]]))];
+  if (CASE === "sept26") {
+    console.log("[change from the September 24 case] $bn, low / high");
+    for (const [label, x] of rowsOf) {
+      console.log(`    ${label.padEnd(12)} ${f(x, "sept24_bn")} -> ${f(x, "sept26_bn")}: general government ${f(x, "general_government_response_bn")}, `
+        + `schools ${f(x, "school_response_bn")}, row 8 ${f(x, "row8_bn")}, consumption key ${f(x, "consumption_key_bn")}`);
+    }
+  } else {
+    console.log("[change from the September 24 case: -> September 26 -> schools at 1 -> the case's ends] $bn, low / high");
+    for (const [label, x] of rowsOf) {
+      console.log(`    ${label.padEnd(12)} ${f(x, "sept24_bn")} -> ${f(x, "sept26_bn")} -> ${f(x, "sept26_schools_bn")}: general government `
+        + `${f(x, "general_government_response_bn")}, schools ${f(x, "school_response_bn")}, row 8 ${f(x, "row8_bn")}, consumption key `
+        + `${f(x, "consumption_key_bn")}, school full cost ${f(x, "school_full_cost_bn")}, band end ${f(x, "band_end_specs_bn")}`);
+    }
+  }
 }
 if (fails.length) {
   console.log(`✗ ${fails.length} gate(s) failed: ${fails.join("; ")}`);
