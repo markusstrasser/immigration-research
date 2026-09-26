@@ -190,6 +190,17 @@ person, the same under both counts; the share ahead is pooled.
 **Sensitivities.** Share of other residents ahead, social net, central values. [CALCULATION:
 `net_shares.csv`, columns `unit` and `stack`]
 
+[2026-09-25, weekly audit §2: the rows below move one choice at a time or stack choices by their
+dollars. The production nest's substitution elasticity alone moves the pooled share ahead from
+29.2% (σ 1.5) through 23.9% (σ 2, central) to 18.7% (σ 2.5) under tax shares, and 26.2%, 21.4% and
+17.7% under per-person cuts, while the net assigned to these people barely moves (−$260.1bn to
+−$266.1bn): the wage channel's gross gains ($95.8bn) and losses ($96.0bn) almost cancel, so a
+total that reconciles says little about who is ahead. The least- and most-costly rows stack dollar
+extremes; enumerating the existing channel choices gives 13.9–30.5% under tax shares and
+13.8–27.2% under per-person cuts. Pooling shares amounts among other-resident members only, and
+6.97m other residents live in households with a group member whose resources it leaves out. See
+Revisions.]
+
 | Variant | Pooled (a) | Pooled (b) | Person count (a) | Person count (b) |
 |---|---:|---:|---:|---:|
 | Central | 23.9% | 21.4% | 20.1% | 19.9% |
@@ -306,3 +317,10 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
 - 2026-09-25 (morning): the operator adopted the school-dilution relabel as priced beside the account
   (decision option 2), so §6 lists it as kept out of every total rather than proposed. No figure
   changes. Concept affected: the status of the dilution row.
+- 2026-09-25 (weekly audit §2): the elasticity sensitivity, the enumerated range and the
+  mixed-household boundary are added under the sensitivity table. "A minority comes out ahead"
+  holds in every variant computed; the precise share is conditional on the gross wage incidence,
+  the financing rule and where state and local costs fall. [CALCULATION:
+  [audit probe](../infra/immigration-fiscal/conceptual_audit_2026_09_25/README.md#distribution-probe),
+  `_cache/sensitivity.csv`, which reproduces the published central exactly]
+  [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).
