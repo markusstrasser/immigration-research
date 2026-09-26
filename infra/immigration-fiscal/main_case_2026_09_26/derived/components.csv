@@ -1,0 +1,16 @@
+component,label,range_dev_low_end_lo,range_dev_low_end_hi,range_dev_high_end_lo,range_dev_high_end_hi
+tax_block,"tax block: on-books share (low/central/high) x fill-in method",-5.8762,6.0173,-4.9069,5.0450
+income_tax,"CBO income gradients: 2018/2019/2022 data, scaled or not by the stack's factor",-1.9413,2.6623,-1.8676,2.6754
+medical,"decision 2: medical-ethnicity specifications and the MCBS 65+ bound",-3.2801,11.5091,-3.2832,11.5073
+ltss,"long-term-care carve-out: extremes of the lane's 960 combinations",-1.4078,2.9922,-1.4078,2.9922
+education,"audit row 6 weight w (0.77/0.82) x school price k (low/high)",-1.7194,1.6847,-1.7496,1.7186
+benefits,"benefit keys: central +/- 1.96 SE (package_se.csv)",-2.3027,2.3027,-2.2527,2.2527
+justice,"row 7 on 2023 arrests; booking factor Texas only or Arizona only",-0.9070,0.2288,-0.9070,0.2288
+row8,"audit row 8: unallocable S&L spending at the all-spending elasticity",0.0000,0.0000,0.0000,0.0000
+row9,"audit row 9: MEPS donor filter (non-LTSS remainder)",-0.8000,0.8000,-0.8000,0.8000
+row10,"audit row 10: foster care keyed by WIC",-0.5000,0.5000,-0.5000,0.5000
+small,"audit small items (origin allocation, grants, top-codes, flags)",-0.4000,0.5000,-0.4000,0.5000
+shelter,"shelter keying (mapping A, central outlays, NYC June 2025 share)",-0.3310,0.0630,-0.2892,0.1048
+care,"care and household services (hours taxes, elder-care Medicaid, output)",-9.2000,1.5500,-9.2000,1.5500
+finite_removal,"removal response: r = b (fixed plus constant marginal cost); engine-key population share; pupil share 0.16 or 0.18",-4.0945,0.1211,-3.4282,0.0987
+consumption_key,"consumption key: the lane's twelve saving-and-remittance specifications",-4.3813,1.4530,-4.3813,1.4530

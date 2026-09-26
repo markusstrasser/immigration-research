@@ -1,0 +1,17 @@
+profile,variant,cost_low_bn,cost_high_bn,range_low_bn,range_high_bn
+cbo_category_lag_non_school_full,adopted_2026_09_23,203.2070,249.6400,,
+cbo_category_lag_non_school_full,adopted_2026_09_24,200.8752,246.3184,,
+cbo_category_lag_non_school_full,uncorrected_at_adopted_responses,207.4046,253.1859,,
+cbo_category_lag_non_school_full,finite_removal_only,204.9697,249.7466,,
+cbo_category_lag_non_school_full,consumption_key_only,196.8235,242.2667,,
+cbo_category_lag_non_school_full,adopted,200.9180,245.6949,163.7767,277.1215
+cbo_category_lag_non_school_full,audit_row3_instead_of_cbo_income_tax,196.2584,242.4944,,
+cbo_category_lag_non_school_full,no_fill_in_correction,193.1614,237.0088,,
+cbo_category_lag_non_school_fixed,adopted_2026_09_23,158.8811,212.5633,,
+cbo_category_lag_non_school_fixed,adopted_2026_09_24,157.1268,210.8300,,
+cbo_category_lag_non_school_fixed,uncorrected_at_adopted_responses,162.4357,216.7469,,
+cbo_category_lag_non_school_fixed,adopted,156.5248,210.8433,,
+proportional_reference,adopted_2026_09_23,307.8989,340.9715,,
+proportional_reference,adopted_2026_09_24,302.9720,336.4219,,
+proportional_reference,uncorrected_at_adopted_responses,308.3841,341.4735,,
+proportional_reference,adopted,301.2853,334.7516,,
