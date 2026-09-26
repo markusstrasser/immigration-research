@@ -103,7 +103,8 @@ school-spending response with economic-affairs and recreation budgets fixed. [20
 are now charged at their full average cost; CBO's category rule still decides which budgets
 respond, and its 0.63–0.66 is the one-year scenario (ladder 230).] Since September 23
 general public services respond at **0.59–0.84**, from cross-state scale: administration spending
-rises 0.842% per 1% of population. Defense, existing interest and business subsidies stay at
+rises 0.842% per 1% of population. [2026-09-26: read as the removal of a group that is 12% of
+residents, those rates save 0.60–0.85 of average cost (ladder 227).] Defense, existing interest and business subsidies stay at
 **zero response by assumption**, not by a CBO estimate
 ([scope memo](immigration-education-administration-scope-2026-09-20.md)).
 
