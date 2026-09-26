@@ -1,9 +1,9 @@
-"""Permanent gates: `debt_legacy.py --case sept23` and `--case sept24` rebuild the files committed for
-those cases byte for byte, and the default September 26 run rebuilds the derived/ files.
+"""Permanent gates: `debt_legacy.py --case sept23`, `--case sept24` and `--case sept26` rebuild the files
+committed for those cases byte for byte, and the default run rebuilds the derived/ files.
 
-Since 2026-09-26 the default run is the adopted September 26 case. The September 23 files are the ones
-committed at SEPT23_COMMIT and the September 24 files the ones committed at SEPT24_COMMIT, the last
-commits whose derived/ held each run. The ledger lane (winners_losers_2026_09_24) rebuilds its
+Since the second decision of 2026-09-26 the default run is the main case with schools at full average
+cost (sept26_schools). The files of each earlier case are the ones committed at its commit below, the
+last commit whose derived/ held that run. The ledger lane (winners_losers_2026_09_24) rebuilds its
 September 23 reference this way, so this must keep passing.
 
 Run from the repository root:
@@ -22,7 +22,9 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 SEPT23_COMMIT = "96a5c3b"
 SEPT24_COMMIT = "ed1b623"
+SEPT26_COMMIT = "e62fccb"
 DERIVED = "infra/immigration-fiscal/debt_legacy_2026_09_23/derived"
+NEW_FILES = ("sept26_schools_bridge_2024.csv",)     # written by the default run, not yet committed
 
 
 def git(*args: str) -> bytes:
@@ -35,7 +37,8 @@ def rebuild(tmp_path: Path, *args: str) -> None:
     assert run.returncode == 0, run.stderr[-2000:]
 
 
-@pytest.mark.parametrize("case, commit, count", [("sept23", SEPT23_COMMIT, 10), ("sept24", SEPT24_COMMIT, 12)])
+@pytest.mark.parametrize("case, commit, count", [("sept23", SEPT23_COMMIT, 10), ("sept24", SEPT24_COMMIT, 12),
+                                                 ("sept26", SEPT26_COMMIT, 13)])
 def test_old_case_rebuilds_committed_files(tmp_path, case, commit, count):
     names = git("ls-tree", "--name-only", f"{commit}:{DERIVED}").decode().split()
     assert len(names) == count, names
@@ -44,9 +47,9 @@ def test_old_case_rebuilds_committed_files(tmp_path, case, commit, count):
     assert not differ, differ
 
 
-def test_sept26_rebuilds_derived(tmp_path):
+def test_default_rebuilds_derived(tmp_path):
     names = [Path(p).name for p in git("ls-files", DERIVED).decode().split()]
-    names += [n for n in ("sept26_bridge_2024.csv",) if n not in names]
+    names += [n for n in NEW_FILES if n not in names]
     rebuild(tmp_path)
     differ = [n for n in names if (tmp_path / n).read_bytes() != (HERE / "derived" / n).read_bytes()]
     assert not differ, differ
