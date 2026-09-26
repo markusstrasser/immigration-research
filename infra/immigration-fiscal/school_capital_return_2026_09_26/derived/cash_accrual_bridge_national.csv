@@ -1,0 +1,15 @@
+item,value_bn_or_ratio
+F-33 FY2024 capital outlay,113.087706
+  construction,90.159192
+  land and existing structures,5.418169
+  equipment,17.510345
+F-33 FY2024 interest on school debt,23.08828
+"F-33 debt outstanding, end FY2024",581.827914
+BEA-basis K-12 depreciation 2024 (central key),63.718401
+"BEA K-12 capital, average 2024 (central key)",2723.919498
+return at 2% on it,54.47839
+return at 3% on it,81.717585
+BEA K-12 structures investment 2024 (central key x FAAt705 l62),85.22182
+real growth of S&L educational structures stock 2024 (FAAt702 l62),0.013597
+school debt as share of K-12 capital,0.2136
+interest / average debt proxy (end-FY2024 debt),0.039682

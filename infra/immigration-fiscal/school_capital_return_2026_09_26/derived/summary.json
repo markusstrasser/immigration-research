@@ -1,0 +1,279 @@
+{
+ "context": {
+  "education_cfc_share_of_education_line": {
+   "all_assets_rd_in_education": 0.09874181535112668,
+   "all_assets_rd_spread": 0.09954272330364791,
+   "structures_only": 0.060033951352772244
+  },
+  "group_k12_capital_bn": 476.15747755179024,
+  "group_return_with_1990_anchor_bn": {
+   "A-4 2003 (3%)": 15.437939328184923,
+   "A-4 2023 (2%)": 10.291959552123283
+  },
+  "k12_capital_per_account_pupil_usd": 56104.25923527046,
+  "main_case_if_added_bn": {
+   "A-4 2003 (3%)": [
+    272.77321970228525,
+    306.2394976504063
+   ],
+   "A-4 2023 (2%)": [
+    268.01164492676736,
+    301.4779228748884
+   ]
+  },
+  "national_cash_per_pupil_usd": 2936.667258416739,
+  "return_share_of_school_line": {
+   "A-4 2003 (3%)": [
+    0.10296731853925507,
+    0.08282211433107692
+   ],
+   "A-4 2023 (2%)": [
+    0.06864487902617006,
+    0.05521474288738462
+   ]
+  },
+  "state_mix_uplift_on_cash": 1.1320762836713627,
+  "structures_share_of_k12_capital": 0.9779831852985529
+ },
+ "delta_educational_structures": 0.018284656999289692,
+ "depreciation_direct_k12_group_bn": 11.138358879171594,
+ "depreciation_in_school_line_bn": {
+  "all_assets_rd_in_education|high_end": [
+   18.235872128268436,
+   17.030470945910867
+  ],
+  "all_assets_rd_in_education|low_end": [
+   15.077688804565081,
+   13.6985174694685
+  ],
+  "all_assets_rd_spread|high_end": [
+   18.383785704262092,
+   17.168607353138732
+  ],
+  "all_assets_rd_spread|low_end": [
+   15.1999859370036,
+   13.809627960399162
+  ],
+  "structures_only|high_end": [
+   11.087212204179421,
+   10.354341376507294
+  ],
+  "structures_only|low_end": [
+   9.16707104266511,
+   8.328549849350011
+  ]
+ },
+ "education_cfc_bn": {
+  "all_assets_rd_in_education": 120.57945649236652,
+  "all_assets_rd_spread": 121.5574924467594,
+  "structures_only": 73.311
+ },
+ "education_share_of_sl_equipment_software_investment": {
+  "rd_in_education": 0.22721214739377008,
+  "rd_spread": 0.3934538581404744
+ },
+ "gates_failed": [],
+ "group_return_bn": {
+  "2pct": {
+   "central": 9.523149551035806,
+   "high": 9.81460812149695,
+   "low": 9.290216950651898
+  },
+  "3pct": {
+   "central": 14.284724326553706,
+   "high": 14.721912182245424,
+   "low": 13.935325425977846
+  },
+  "7pct_reported_only": 33.33102342862532,
+  "treasury_real_2024_mean_pct": {
+   "10 YR": 1.93712,
+   "20 YR": 2.0644400000000003,
+   "30 YR": 2.15044,
+   "days": 250
+  }
+ },
+ "inputs": {
+  "infra/immigration-fiscal/assumption_explorer_2026_09_21/derived/model.json": "c659b9d89a415c5794ee49422711bb7c6bb13c1fd0b345617ac42cd188fc14dd",
+  "infra/immigration-fiscal/assumption_explorer_2026_09_21/engine.js": "091ca31219c678ec84ee89b7c0837f4e9d43dcefc6bd1fe47d82337956a666e0",
+  "infra/immigration-fiscal/debt_legacy_2026_09_23/RESULT.md": "c01aabe3cc726d77199cc257a7c8c0f3fd661675291185aeac0e193c467c4748",
+  "infra/immigration-fiscal/gen_ledger_extension_2026_09_16/extend_ledger.py": "72bfd4162d55e9ab4bbcd5a65513084700ff62975385f2e67095e965a1226055",
+  "infra/immigration-fiscal/ledger_absolute_2026_09_17/absolute_ledger.py": "fc234ffe3321c69cb8d2bb6b18b29ca06f900eac6dd67b7a3fd32ef81fc9cddf",
+  "infra/immigration-fiscal/ledger_absolute_2026_09_17/derived/items_by_group.csv": "de29ac5d9ecb72bc329ef76a0f3a052853cfb647bcd35d81508aa4e0c04be9da",
+  "infra/immigration-fiscal/ledger_absolute_2026_09_17/params/params.json": "aa0f12aa4a0343d7973a604585f700b35d292266a79d411eace3654f51208922",
+  "infra/immigration-fiscal/main_case_2026_09_24/package.cjs": "c416f76707a83361f83a8530a3dc6e39015f25bb099fa3db9d30aa8fbe528534",
+  "infra/immigration-fiscal/main_case_2026_09_26/package.cjs": "2c2f13545f4241f5a632a14d5bb543ea03034c384b103a54d7e3a986e998541a",
+  "infra/immigration-fiscal/main_case_schools_full_2026_09_26/derived/summary.json": "864246c1da7c988040d76ed60816072036b5a89c37b8fd792b68f22a601c5ada",
+  "infra/immigration-fiscal/main_case_schools_full_2026_09_26/package.cjs": "d8c5b71d3887459e232442cca458b329b8ee60885ae1ae33bb2f2910b135deb4",
+  "infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/derived/account_embedded_price.json": "65fddd5d7660633e26a180fbdb66f50761c6aa0a58e1891abc8a8a747cb12f48",
+  "infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/derived/account_pupils_by_state.csv": "5f7d85c5e6a13c0069cf382bcc07b08d5ca3a987d8c14b2e79f0bdb9eeafa355",
+  "infra/immigration-fiscal/school_cost_where_enrolled_2026_09_24/derived/r_other_concepts.csv": "b43a8418b87ff9741f7d0a920b42c4699623e1dbbcbf3dc754f1e61408745d4b",
+  "sources/immigration-fiscal/data/external/bea_nipa/Section3All_xls.xlsx": "69b5c7aefb38675324887ce31d6feb4fcde7c903ab952db7328da0813096615e"
+ },
+ "interest": {
+  "domestic_interest_national_bn": 1118.87,
+  "f33_school_interest_bn": 23.08828,
+  "main_case_interest_response": 0,
+  "overlap_if_interest_charged_bn": 2.776245368086504,
+  "population_share": 0.12024478948135173
+ },
+ "item_k": {
+  "account_pupils_capital_outlay_bn": 22.65773722664319,
+  "account_pupils_cash_bn": 28.215334918053568,
+  "account_pupils_interest_bn": 5.557597691410377,
+  "accrual_group_bn": {
+   "A-4 2003 (3%)": [
+    15.077688804565081,
+    18.235872128268436,
+    29.362413131118785,
+    32.52059645482214
+   ],
+   "A-4 2023 (2%)": [
+    15.077688804565081,
+    18.235872128268436,
+    24.600838355600885,
+    27.75902167930424
+   ]
+  },
+  "accrual_group_direct_bn": {
+   "A-4 2003 (3%)": 25.4230832057253,
+   "A-4 2023 (2%)": 20.661508430207398
+  },
+  "ledger_k_at_mexico_born_ratio_bn": 25.6216130249747,
+  "ledger_pupil_equivalents_at_group_cash_per_pupil": 6837283.042354035,
+  "ledger_pupil_ratio_mexico_born": 0.9047871294560698,
+  "ledger_pupil_ratio_native": 0.8027012491036255,
+  "ledger_union_bn": 22.730761866120773,
+  "ledger_union_population": 40896574.152351856,
+  "national_accrual_bn": {
+   "A-4 2003 (3%)": 145.43598556607222,
+   "A-4 2023 (2%)": 118.19679059038012
+  },
+  "national_cash_bn": 136.175986,
+  "real_rate_equating_national_cash_and_accrual": 0.026600487064931348
+ },
+ "k12_equipment_software_key": {
+  "central": 0.15392303297835075,
+  "fy2019": 0.1469009571761285,
+  "fy2024": 0.160945108780573,
+  "high": 0.160945108780573,
+  "low": 0.1469009571761285
+ },
+ "k12_structures_key": {
+  "central": 0.6748318882415751,
+  "high": 0.695257184598385,
+  "high_with_1990_anchor": 0.730537972044822,
+  "low": 0.6586472398851518
+ },
+ "k12_structures_key_alternatives": {
+  "cog_fy2022_capital_outlay": 0.7181677223028891,
+  "nipa_3_15_5_gross_k12_share": 0.7579291397098338,
+  "vip_1993_2024_max": 0.744581955058743,
+  "vip_1993_2024_min": 0.581025204463227,
+  "vip_2024_only": 0.6688022109163997,
+  "vip_post1993_k12_over_k12_plus_higher": 0.697564940800131,
+  "vip_post1993_vintages_only": 0.6671864248917845
+ },
+ "land_return_per_10pct_land_to_structure_ratio_bn": {
+  "A-4 2003 (3%)": 1.397022019799472,
+  "A-4 2023 (2%)": 0.931348013199648
+ },
+ "main_case_bn": [
+  258.48849537573153,
+  291.9547733238526
+ ],
+ "national_k12_capital_bn": {
+  "central": {
+   "avg2024": 2723.9194975692117,
+   "depreciation_2024": 63.71840063899588,
+   "end2024": 2772.4330236277806,
+   "structures_avg2024": 2663.9474667295713
+  },
+  "high": {
+   "avg2024": 2807.2857913103835,
+   "depreciation_2024": 65.87742114150511,
+   "end2024": 2857.275300948418,
+   "structures_avg2024": 2744.577794719416
+  },
+  "low": {
+   "avg2024": 2657.293467136222,
+   "depreciation_2024": 61.86547010915455,
+   "end2024": 2704.6327529237924,
+   "structures_avg2024": 2600.0574020479085
+  }
+ },
+ "nces_1990_anchor_set_aside": 0.9101231848817659,
+ "nces_pre1993_anchors": {
+  "1950": 0.7748305112643757,
+  "1960": 0.768332136296291,
+  "1970": 0.6344408641013736,
+  "1980": 0.6860106332073972
+ },
+ "per_pupil": {
+  "group_state_weighted": {
+   "capital_outlay": 2669.695684679147,
+   "debt": 16534.356461454438,
+   "interest": 654.8356716086444
+  },
+  "national": {
+   "capital_outlay": 2438.7630542998836,
+   "debt": 12547.25620328323,
+   "interest": 497.9042041168553
+  },
+  "school_cost_lane_district_weighted_R": {
+   "capital_outlay": 1.067228,
+   "interest": 1.25845
+  }
+ },
+ "pre_1993_weight_in_2024_stock": 0.26077382095509183,
+ "proportional_split": {
+  "education_capital_avg2024_bn": 4242.284192110077,
+  "group_return_bn": {
+   "A-4 2003 (3%)": [
+    15.914114077934377,
+    19.247495628907096
+   ],
+   "A-4 2023 (2%)": [
+    10.609409385289585,
+    12.831663752604731
+   ]
+  },
+  "ratio_to_brief_depreciation": {
+   "A-4 2003 (3%)": 1.0554743690635167,
+   "A-4 2023 (2%)": 0.7036495793756777
+  }
+ },
+ "pupil_share_s": 0.17480600215120404,
+ "ratio_return_to_depreciation_brief_formula": {
+  "2pct": [
+   0.5222206804287383,
+   0.6316053922105406
+  ],
+  "3pct": [
+   0.7833310206431072,
+   0.9474080883158107
+  ]
+ },
+ "ratio_return_to_depreciation_direct_k12": {
+  "2pct": 0.854986776269511,
+  "3pct": 1.2824801644042663
+ },
+ "school_fraction_bounds": [
+  0.7153278156243373,
+  0.8651608840454027
+ ],
+ "school_line_at_full_cost_bn": [
+  138.73066259473217,
+  172.47476041786732
+ ],
+ "sl_cfc_2024_fa_minus_nipa_bn": {
+  "government_equipment": 12.911,
+  "state_local_all_assets": 13.009000000000015
+ },
+ "sl_educational_structures_bn": {
+  "average_age_end2024": 25.2,
+  "depreciation_2024": 72.18,
+  "end2023": 3876.417,
+  "end2024": 4018.727
+ },
+ "year": 2024
+}

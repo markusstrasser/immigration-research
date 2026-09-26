@@ -1,0 +1,16 @@
+measure,main_case_end,national_cfc_bn,multiplier,group_depreciation_bn,group_return_2pct_bn,group_return_3pct_bn,ratio_2pct,ratio_3pct
+brief formula: education CFC (structures_only) x school fraction x s,low_end,73.311,0.715328,9.167071,9.52315,14.284724,1.038843,1.558265
+CFC share of education consumption (structures_only) x school line at full cost,low_end,73.311,138.730663,8.32855,9.52315,14.284724,1.143434,1.715151
+brief formula: education CFC (structures_only) x school fraction x s,high_end,73.311,0.865161,11.087212,9.52315,14.284724,0.858931,1.288396
+CFC share of education consumption (structures_only) x school line at full cost,high_end,73.311,172.47476,10.354341,9.52315,14.284724,0.919725,1.379588
+brief formula: education CFC (all_assets_rd_in_education) x school fraction x s,low_end,120.579456,0.715328,15.077689,9.52315,14.284724,0.631605,0.947408
+CFC share of education consumption (all_assets_rd_in_education) x school line at full cost,low_end,120.579456,138.730663,13.698517,9.52315,14.284724,0.695196,1.042793
+brief formula: education CFC (all_assets_rd_in_education) x school fraction x s,high_end,120.579456,0.865161,18.235872,9.52315,14.284724,0.522221,0.783331
+CFC share of education consumption (all_assets_rd_in_education) x school line at full cost,high_end,120.579456,172.47476,17.030471,9.52315,14.284724,0.559183,0.838774
+brief formula: education CFC (all_assets_rd_spread) x school fraction x s,low_end,121.557492,0.715328,15.199986,9.52315,14.284724,0.626524,0.939785
+CFC share of education consumption (all_assets_rd_spread) x school line at full cost,low_end,121.557492,138.730663,13.809628,9.52315,14.284724,0.689602,1.034403
+brief formula: education CFC (all_assets_rd_spread) x school fraction x s,high_end,121.557492,0.865161,18.383786,9.52315,14.284724,0.518019,0.777028
+CFC share of education consumption (all_assets_rd_spread) x school line at full cost,high_end,121.557492,172.47476,17.168607,9.52315,14.284724,0.554684,0.832026
+direct: K-12 depreciation (central key) x s,both,63.718401,0.174806,11.138359,9.52315,14.284724,0.854987,1.28248
+"proportional split: return on school fraction x all education capital ($4242.3bn) x s, over the brief-formula depreciation",low_end,120.579456,0.715328,15.077689,10.609409,15.914114,0.70365,1.055474
+"proportional split: return on school fraction x all education capital ($4242.3bn) x s, over the brief-formula depreciation",high_end,120.579456,0.865161,18.235872,12.831664,19.247496,0.70365,1.055474

@@ -1,0 +1,12 @@
+basis,measure,group_bn,population_or_pupils
+cash,"ledger item K, Mexican-origin union (capital outlay + interest, F-33 FY2024 by state)",22.730762,40896574.152352
+cash,"same F-33 per-pupil amounts on the account's 8.49m pupils, by state",28.215335,8487011.218796
+cash,  of which capital outlay,22.657737,8487011.218796
+cash,  of which interest on school debt,5.557598,8487011.218796
+cash,national F-33 FY2024 x s,23.80438,8105916.539721
+accrual,"depreciation in school line (brief formula) + return at A-4 2023 (2%), low",24.600838,8487011.218793
+accrual,"depreciation in school line (brief formula) + return at A-4 2023 (2%), high",27.759022,8487011.218793
+accrual,direct K-12 depreciation x s + return at A-4 2023 (2%),20.661508,8487011.218793
+accrual,"depreciation in school line (brief formula) + return at A-4 2003 (3%), low",29.362413,8487011.218793
+accrual,"depreciation in school line (brief formula) + return at A-4 2003 (3%), high",32.520596,8487011.218793
+accrual,direct K-12 depreciation x s + return at A-4 2003 (3%),25.423083,8487011.218793

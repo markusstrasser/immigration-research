@@ -1,0 +1,6 @@
+function,bea_structure_types,stock_avg2024_bn,depreciation_2024_bn,national_return_2pct_bn,national_return_3pct_bn,group_key,group_share,group_return_2pct_bn,group_return_3pct_bn,note
+Public order and safety,S&L Public safety + Federal nondefense Public safety,399.673,7.298,7.99346,11.99019,population,0.120245,0.961172,1.441758,type maps to function; courthouses may sit in Office
+Public order and safety,S&L Public safety + Federal nondefense Public safety,399.673,7.298,7.99346,11.99019,use,0.131693,1.052686,1.579029,type maps to function; courthouses may sit in Office
+Health,S&L Health care + Federal nondefense Health care,471.998,8.563,9.43996,14.15994,health_other,0.076777,0.724767,1.087151,"the account's line is net of hospital sales (S&L gross $491.4bn, net $126.8bn, NIPA 3.17 l26-27); fee recovery not netted here"
+Housing and community services,S&L Residential + S&L Sewer systems + S&L Water systems,2561.2445,38.623,51.22489,76.837335,population,0.120245,6.159526,9.239289,largely fee-financed utilities and rented housing; the account's line is net of sales
+Income security,none,0,0,0.0,0.0,cash_assistance,0.164982,0.0,0.0,no structure type: offices sit in Office [GAP]
