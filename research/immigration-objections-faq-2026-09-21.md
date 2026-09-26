@@ -7,9 +7,9 @@ the linked memo before reuse. Narrative authorship remains operator-owned.
 
 Anchors: [complete annual account](immigration-complete-annual-account-2026-09-20.md)
 ($201–246bn conditional net cost to other residents in the
-[main case adopted September 24](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md);
-$203–250bn on September 23 and $165–197bn as published September 20; $303–336bn with fully
-proportional services) and the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
+[main case adopted September 26](../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md),
+the same at rounding on September 24; $203–250bn on September 23 and $165–197bn as published
+September 20; $301–335bn with fully proportional services) and the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
 (same-age gap against third-plus non-Hispanic whites: Mexico-born −$7,584, second generation
 −$7,521, third-plus −$6,195 per person, standard errors 384, 615 and 457).
 
@@ -19,7 +19,8 @@ proportional services) and the [generation ledger](immigration-yearly-lifetime-c
 1, 3, 5, 10) come from the generation ledger pinned on September 19: per-person balances against
 a reference group, or the group's own balance re-weighted by age. Entries 7 and 9 rest on
 separate partial accounts. The $201–246bn (entries 2, 4, 11) is the complete account's change
-for all other residents in the main case adopted September 24 ($203–250bn on September 23;
+for all other residents in the main case adopted September 26 (the same at rounding on September
+24; $203–250bn on September 23;
 $165–197bn as published September 20), under a stated service-response assumption, with no reference group; it carries later corrections that were not propagated to the ledger (ladder
 161). Since September 25 it has its own generation split, computed on the account with no
 reference group (ladder 224). They agree in direction. One is not a decomposition
@@ -81,9 +82,12 @@ which cannot tell zero from one; zero is a budget-scoring convention
 all three functions per capita moves the *assigned balance* by $286bn but is not part of the
 net-cost headline. The sign still turns on ordinary service budgets. With all of them fixed and
 general government at its adopted response, the result ran from −$87.8bn to +$80.5bn across all
-incidence rules on the September 23 case. Break-even now needs 4.8–16.0% of assigned service costs
-to be incremental, against 5.5–16.4% on September 23. On CBO's incidence rules the frozen-services
-row moves from −$22.3–80.5bn to −$25.3–77.8bn ([September 24 sign reversal](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md#sign-reversal-on-the-new-case)). With general government
+incidence rules on the September 23 case. Break-even now needs 5.8–17.0% of assigned service costs
+to be incremental, against 4.8–16.0% on September 24 and 5.5–16.4% on September 23: the consumption
+key adopted September 26 raises the group's taxes by $4.05bn, which frozen services leave standing.
+On CBO's incidence rules the frozen-services row moves from −$22.3–80.5bn to −$25.3–77.8bn
+([September 24 sign reversal](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md#sign-reversal-on-the-new-case))
+and then to −$21.6–81.5bn ([September 26](../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md#sign-reversal)). With general government
 fixed as well, as published September 20, the figures were −$41.5bn to +$112.7bn and
 18.5–25.8% ([sign reversal](../infra/immigration-fiscal/main_case_2026_09_23/RESULT.md#sign-reversal-under-the-adopted-case)). A 2025 municipal-bond paper
 sometimes cited for "local spending rises and revenue does not" cannot settle the response
@@ -110,7 +114,7 @@ $8.8bn (cash scaling) to $13.3bn (GDP scaling), $6–21bn across the parameter g
 benefits would have to reach $201–246bn a year to offset the main case. That threshold is
 conditional on the service-response share, which is assumed and unmeasured: it is $157–211bn
 if non-school education budgets are also held fixed, and it reaches zero
-where 4.8–16.0% of assigned service costs are incremental (entry 2), so the response share moves the result more
+where 5.8–17.0% of assigned service costs are incremental (entry 2), so the response share moves the result more
 than any offset listed here. Cheaper household services are worth $21.8bn a year to
 consumers, or $11.9bn net of native low-skill wage gains. That is the production gain seen from
 the spending side, so it is not added. The taxes that native women pay on the extra hours
@@ -429,8 +433,11 @@ corrections, with the care items moved into the account the same day, lowered th
 $51.0–53.6bn, mostly by fixing keys. ACA premium credits had been keyed as if they were the EITC
 (−$14.2bn). Long-term care had been charged at the group's share of community Medicaid, 12.25%,
 where CMS records give it 7.4% of those dollars. Together the corrections moved the main case
-from $203.2–249.6bn to $200.9–246.3bn. Set every correction to its extreme in the same direction
-and the range is $172–276bn; no combination changes the sign.
+from $203.2–249.6bn to $200.9–246.3bn. Two corrections adopted September 26 cancel: a finite
+removal saves more than the marginal elasticities (+$4.1 / +$3.4bn), and the consumption key
+had given the group too small a share of consumption taxes, because richer residents save more
+(−$4.1bn). The case is $200.9–245.7bn. Set every correction to its extreme in the same direction
+and the range is $164–277bn; no combination changes the sign.
 
 The hiding story does not show where the group's benefit dollars are. In the states where most
 Hispanics are of Mexican origin, the survey reports Hispanic SNAP receipt and Medicaid coverage
@@ -443,12 +450,15 @@ The count error runs the other way from the objection. Since 2019 the CPS has pu
 population 9–13% above the larger American Community Survey: 12.2M against about 11.1M. The
 adopted case corrects to the ACS level. The people in the excess are mostly working-age
 noncitizens who pay about what they are charged ($10.8–12.7bn of taxes against $10.5–12.2bn of
-spending), so an error in that count barely moves the net in either direction. The consumption,
-state and local income, and property tax keys have no outside benchmark yet.
-[SOURCE: ladders 204, 208, 209, 210, 216, 217 and 219;
+spending), so an error in that count barely moves the net in either direction. The consumption key was
+corrected on September 26, and CBO's excise distribution, ITEP's gradient and CE's
+Mexican-origin units all support the direction; the state and local income and property tax
+keys have no outside benchmark yet.
+[SOURCE: ladders 204, 208, 209, 210, 216, 217, 219, 225 and 229;
 [outside checks](immigration-outside-checks-2026-09-24.md);
-[adopted case](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md);
-[decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md)] Would change it:
+[adopted case](../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md);
+[decisions](../decisions/2026-09-24-main-case-audit-and-outside-checks.md) of September 24 and
+[26](../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md)] Would change it:
 linked tax and benefit records for the group (IRS, SSA and Census), evidence that its
 nonrespondents differ from respondents with the same characteristics, or an ACS 2025 count
 that confirms the CPS level.
@@ -462,6 +472,13 @@ prior, which is also where errors concentrate; surprising results need more chec
 they get more prominence.
 
 ## Revisions
+
+- 2026-09-26 (main case adopted with finite removal and the consumption key): the case is
+  $200.9–245.7bn, the same $201–246bn at rounding (ladder 229,
+  [decision](../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md)). The anchors
+  and combining rules name the new case; entries 2 and 4 carry its sign break-even (5.8–17.0%) and
+  entry 17 the two corrections, the range $164–277bn and the consumption key's outside checks.
+  Concept affected: the complete account's main case; no conclusion changes.
 
 - 2026-09-25 (generation split of the adopted account): entry 5 gains the account's own split by
   generation (ladder 224), and the combining rules now say the complete account has one, computed
