@@ -1,4 +1,8 @@
-**Verdict:** After California legalized street vending, licensed restaurants did not lose ground where
+**Verdict:** [2026-09-25: this answers what the 2019 law did. LAPD vending arrests had fallen from
+1,219 in 2013 to 4 in 2018, and the city sold about 944 permits a year against an estimated 50,000
+vendors, so the law changed competition little and cannot settle what the existing vendors do to
+restaurants; net establishment counts also let exits be offset by entrants. See Revisions.] After
+California legalized street vending, licensed restaurants did not lose ground where
 vending is common. The one exception is weak and not significant: full-service restaurant counts in
 2019.
 
@@ -1064,3 +1068,11 @@ Per 10 points of the share. l_c08 food services and drinking places; l_c04 food 
 | city | mexborn_share | l_diff | pop | 80 | +1.1 (0.6) | +7.9 | +2.0 | +1.8 | 0.00 |
 | city | mexborn_share | l_permits | none | 80 | +0.6 (0.4) | +2.1 | +3.9 | +4.0 | 0.09 |
 | city | mexborn_share | l_permits | pop | 80 | +0.6 (0.5) | +2.0 | +3.0 | +2.6 | 0.01 |
+
+## Revisions
+
+- 2026-09-25 (weekly conceptual audit §9): "no loss detected after the 2019 law" stands. Because
+  criminal enforcement had already collapsed (§2's arrest series) and permit uptake stayed near 944
+  a year, the law barely changed competition, so the null does not show that the existing stock of
+  vendors leaves restaurants unharmed. Vendor activity by place and incumbent revenue or exit
+  records would discriminate. [Decision](../../../decisions/2026-09-25-weekly-audit-corrections.md).

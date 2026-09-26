@@ -156,7 +156,7 @@ Samples run from 82 (2025) to 315 (2004) leavers a year. Single years are noisy.
 
 Family, climate and retirement by subgroup are in the CSV.
 
-These rows test the claim directly. If California's white natives left to get away from Mexican-origin neighbors, white leavers should differ from Mexican-origin leavers. They do not. On neighborhood/crime, California minus other states is −0.17 (0.35) for non-Hispanic whites and −0.14 (0.89) for Mexican-origin US-born adults. The housing excess is larger for Mexican-origin leavers (+6.2) and Black leavers (+8.3) than for white leavers (+3.1). [INFERENCE]
+These rows test the claim directly. [2026-09-25: they test whether stated reasons differ by group. Reason shares among leavers cannot measure leaving rates among residents, and a composition effect working through housing costs or schools would be reported as housing or schools by both groups; see Revisions.] If California's white natives left to get away from Mexican-origin neighbors, white leavers should differ from Mexican-origin leavers. They do not. On neighborhood/crime, California minus other states is −0.17 (0.35) for non-Hispanic whites and −0.14 (0.89) for Mexican-origin US-born adults. The housing excess is larger for Mexican-origin leavers (+6.2) and Black leavers (+8.3) than for white leavers (+3.1). [INFERENCE]
 
 **Income-weighted shares, ASEC 2005–2025.** Householders of any nativity are weighted by household income in 2024 dollars, to show where leavers' income goes. Shares in %. [DATA: `derived/income_weighted_shares.csv`]
 
@@ -462,3 +462,13 @@ This lane was run by an LLM. Post-training may dispose it toward findings that p
 - Every specification is reported, including the ones that point toward the hypothesis: B5, B6 and B8, and the Houston vignette.
 - The literature on both sides is graded on one scale.
 - The test that could have favored the hypothesis, white against Mexican-origin leavers, is reported whatever its result.
+
+## Revisions
+
+- 2026-09-25 (weekly conceptual audit §9): the descriptive finding stands: few leavers name
+  neighborhood or crime, and housing is California's distinctive reason. "These rows test the claim
+  directly" is narrowed. Reason shares among leavers cannot measure leaving rates, and if
+  immigration raises housing costs or changes schools, movers who answer "housing" are reporting
+  the channel, not ruling it out. The test that discriminates is reason-specific leaving rates per
+  origin population against an independent counterfactual.
+  [Decision](../../../decisions/2026-09-25-weekly-audit-corrections.md).
