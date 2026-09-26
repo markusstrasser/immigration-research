@@ -78,8 +78,8 @@
     </svg>
     </div>
     <p class="note">
-      Thick bars: the range the convention’s own open choices allow. The thin line on the main case adds every other choice
-      the account has run (<span class="num">${n(main.outer[0])}–{n(main.outer[1])}bn</span>).
+      Thick bars: the range the convention’s own open choices allow. The thin line on the main case pushes each of the
+      staircase’s data corrections to its extreme in the same direction (<span class="num">${n(main.outer[0])}–{n(main.outer[1])}bn</span>).
     </p>
   </div>
 

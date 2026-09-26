@@ -341,7 +341,7 @@
 <section class="fig" id="dots">
   <div class="body">
     <p class="kicker">Prototype · heaps of dots · one setting of the main case</p>
-    <h2>What they draw outweighs what they bring in: everyone else is {main.dots.gap} billion-dollar dots worse off</h2>
+    <h2>What they draw outweighs what they bring in by {main.dots.gap} dots of $1bn</h2>
     <p class="lede">
       Each dot is ${data.unitBn}bn a year. The left heap is what the Mexican-origin population brings in for
       everyone else: the taxes it pays that the account counts, and the gain from its work. The right

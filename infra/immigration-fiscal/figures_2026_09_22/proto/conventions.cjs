@@ -47,7 +47,8 @@ function build(A) {
   const tally = presetCost("taxes_minus_benefits");
   gate("the tally is a gain", tally[1] < 0, tally.map((x) => x.toFixed(2)).join(" to "));
 
-  // The main case with every executed alternative (main_case_bands.csv range columns).
+  // The main case with every data correction at its extreme in the same direction (main_case_bands.csv range
+  // columns); the alternative rules are the matrix's outer envelope, $174–257bn, quoted by the flip figure.
   const bands = A.readCsv(A.path.join(A.MAIN_CASE, "derived", "main_case_bands.csv"));
   const adopted = bands.find((b) => b.profile === "cbo_category_lag_non_school_full" && b.variant === "adopted");
   by.repo_central_gg.outer = [round(Number(adopted.range_low_bn), 2), round(Number(adopted.range_high_bn), 2)];
