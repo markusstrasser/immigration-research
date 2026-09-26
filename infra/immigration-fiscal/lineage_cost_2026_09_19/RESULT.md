@@ -366,6 +366,62 @@ its ledger, base and gross-or-net status.** [INFERENCE]
   lineage's cost unless those costs come close to the federal entitlements they replace. The
   other outputs are byte-identical; `audit.json` gains the check and the new input's hash.
 
+- **2026-09-26: the statutory rule priced with the care still open to a never-legalised senior.**
+  The rule above adds back nothing, so it favours the founder who never legalises. Twelve rows
+  appended to `derived/sensitivities.csv` add three things. Emergency Medicaid, which federal law
+  keeps open (42 U.S.C. 1396b(v)). State programs that cover people regardless of status.
+  Uncompensated hospital care, whose government-financed share is charged; the rest falls on
+  hospitals and private payers and is reported, not charged.
+
+  The founder lives in each state with the probability that unauthorized Mexico-born people aged
+  50–64 do: California 37.2%, Texas 21.0%, Illinois 6.2%, New York 2.2%, Washington 2.0%,
+  Oregon 1.2% [CALCULATION: `senior_states.py` → `derived/senior_state_shares.csv`, ACS 2024
+  residual without its Medicaid clause]. The four regimes are:
+  - **Federal floor:** no state program.
+  - **2026 rules for a new enrollee:** New York and Oregon cover new senior enrollees.
+    California froze new full-scope enrollment for everyone 19 and over on 1 January 2026, so a
+    new senior there gets restricted scope: emergency, pregnancy and nursing-home care. Illinois,
+    Washington and DC are closed.
+  - **Peak state coverage:** California, Illinois, New York, Oregon, Washington and DC each open,
+    as in 2020–2025.
+  - **Coverage everywhere:** a bound, not a regime.
+
+  Prices come from `senior_pricing_sources.md`:
+  - Full coverage at 65+: $14.3k–17.5k per enrollee-year, central $16.2k (California, LAO).
+  - California restricted scope: $5.4k per enrollee-year.
+  - Uncompensated care: $1,524 per uninsured person-year, scaled by MEPS ratios for age (1.03, 1.64
+    and 1.64 × 1.33), with governments financing 58–70%.
+
+  Two inputs are inference brackets, not measurements. Take-up in covering states is set at
+  0.5/0.75/1.0. Emergency Medicaid per uncovered senior outside restricted scope is set at
+  $150/$300/$600: North Carolina's $6,940 per elderly user in 2004 is the only cost per user, and no
+  source gives how many use it in a year [INFERENCE; parameters and sources in
+  `senior_pricing_inputs.json`].
+
+  | Senior rule for the never-legalised founder, 0% | Public care from 65, $ per year (low / central / high) | Lineage gap, central | Legalising at year 10 moves the gap, low–high |
+  |---|---:|---:|---:|
+  | Statutory bars, nothing added back | 0 | −$854,686 | −$417,886 (48.9% larger) |
+  | Federal floor | 1,065 / 1,903 / 2,936 | −$886,634 | −$368,602 to −$400,014 (41–46% larger) |
+  | 2026 rules for a new enrollee | 1,636 / 2,667 / 3,756 | −$899,451 | −$354,837 to −$390,420 (39–44% larger) |
+  | Peak state coverage | 4,291 / 7,132 / 10,024 | −$974,402 | −$249,620 to −$345,847 (24–37% larger) |
+  | Bound: coverage everywhere | 7,682 / 12,626 / 17,472 | −$1,066,631 | −$124,589 to −$288,925 (11–29% larger) |
+  | Pooled profile (`senior_full`) | — | −$1,297,150 | +$24,578 (1.9% smaller) |
+
+  [CALCULATION: `lineage.py` → `derived/sensitivities.csv`; each regime's parts in `audit.json`
+  `senior_pricing`; the check "priced senior rows lie between the statutory and pooled rules"
+  passes]
+
+  **Legalising widens the lineage gap in every regime and case.** Under the rules a new enrollee
+  faces in 2026 it widens by $355–390k. Even coverage everywhere at the highest price leaves
+  $125k. Social Security and the other cash programs, $10.7k a year at 65–74 and $11.6k at 75+ in
+  the absolute lane's components, have no counterpart for someone never legalised. State coverage
+  replaces at most the medical part.
+
+  The private part of uncompensated care, up to $1.0k a year from 65 (zero when everyone is
+  covered), falls on hospitals and other payers, outside the fiscal line. The regimes describe rules in force from 2020 to 2026. A founder
+  who turns 65 decades from now faces whatever rules hold then, which is why the table gives a
+  range and not a point. The other outputs are byte-identical.
+
 ---
 
 *Lane: `infra/immigration-fiscal/lineage_cost_2026_09_19/`. Not committed. No files

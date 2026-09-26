@@ -55,13 +55,15 @@ def discount(stream: np.ndarray, rate: float, growth: float) -> float:
 
 # --------------------------------------------------------------------- profiles
 def founder_profile(profiles, allocation, account, status, senior_rule, penalty,
-                    legalise_year=None, barred=None):
+                    legalise_year=None, barred=None, addback=None):
     """Mexico-born age profile, optionally carrying the imputed-unauthorized
     level difference over the working ages. From 65 the unauthorized founder keeps
     the pooled profile (`senior_full`), has a zero balance (`senior_zero`), or loses
     the programs federal law bars (`senior_statutory`, `barred` = their per-person
-    sum by age). A legalised founder takes the pooled profile from the switch age on,
-    so the legalised arm is the same under every senior rule."""
+    sum by age), optionally drawing the care still open to them (`addback`, a
+    negative per-person vector from `inputs.senior_addback`). A legalised founder
+    takes the pooled profile from the switch age on, so the legalised arm is the
+    same under every senior rule."""
     base = I.age_vector(profiles, "mexico_born", account, allocation).copy()
     if status == "mexico_born_average":
         return base, None
@@ -74,6 +76,8 @@ def founder_profile(profiles, allocation, account, status, senior_rule, penalty,
         if barred is None:
             raise ValueError("[BLOCKED] senior_statutory needs the barred-program vector")
         adj[65:] -= barred[65:]
+        if addback is not None:
+            adj[65:] += addback[65:]
     elif senior_rule != "senior_full":
         raise ValueError(f"unknown senior rule: {senior_rule}")
     if legalise_year is None:
@@ -134,7 +138,8 @@ def lineage(profiles, tables, cfg) -> dict:
         prof_founder, _ = founder_profile(profiles, alloc, acct, cfg["founder_status"],
                                           cfg["senior_rule"], cfg["penalty"],
                                           cfg.get("legalise_year"),
-                                          barred[(alloc, acct)] if barred else None)
+                                          barred[(alloc, acct)] if barred else None,
+                                          cfg.get("senior_addback"))
         table_f = tables[mort["mexican"]]
         cr_f = crime["founder"]
 
@@ -415,7 +420,27 @@ def main() -> None:
     sens("2b founder legalised at year 10, senior rule zero",
          {"legalise_year": 10, "senior_rule": "senior_zero"})
     sens("2b founder legalised at year 10, statutory bars", {"legalise_year": 10, **statutory})
+    # Added 2026-09-26: the statutory rule priced with what stays open to a never-legalised
+    # senior (emergency Medicaid, state programs, uncompensated care); `inputs.senior_addback`.
+    pricing = {}
+    for regime in ("federal_floor", "rules_2026_new_enrollee", "peak_state_coverage",
+                   "full_coverage_everywhere"):
+        for case in ("low", "central", "high"):
+            vec, parts = I.senior_addback(regime, case)
+            pricing[f"{regime}|{case}"] = {k: (round(v, 4) if isinstance(v, float) else v)
+                                           for k, v in parts.items()}
+            sens(f"senior rule: statutory bars plus priced care, {regime}, {case}",
+                 {**statutory, "senior_addback": vec})
     legalised = [r["gap_lineage_fiscal"] for r in srows if r["sensitivity"].startswith("2b ")]
+    by_name = {r["sensitivity"]: r["gap_lineage_fiscal"] for r in srows}
+    stat_gap = by_name["senior rule: statutory bars from 65 (no cash transfers, public medical, "
+                       "institutional care or noncash aid; taxes and services kept)"]
+    full_gap = by_name["central (personal/expanded, unauthorized, per-capita, low fertility, 0%)"]
+    priced = [g for n, g in by_name.items() if n.startswith("senior rule: statutory bars plus priced care")]
+    checks.append({"check": "priced senior rows lie between the statutory and pooled rules",
+                   "statutory_gap": float(stat_gap), "pooled_gap": float(full_gap),
+                   "priced_min": float(min(priced)), "priced_max": float(max(priced)),
+                   "pass": bool(all(full_gap <= g <= stat_gap for g in priced))})
     checks.append({"check": "legalised founder is the same under every senior rule",
                    "max_abs_diff_usd": float(max(legalised) - min(legalised)),
                    "pass": bool(max(legalised) - min(legalised) < 1e-6)})
@@ -434,6 +459,7 @@ def main() -> None:
             "inputs_sha256": I.manifest(),
             "fertility": fert, "unauthorized_penalty": I.unauthorized_penalty(),
             "crime_rates": crime, "attrition": attr, "checks": checks,
+            "senior_pricing": pricing,
             "interpretation": ("survival-weighted period-profile lineage scenario; not a cohort "
                                "projection, not an admission-policy counterfactual, no general "
                                "equilibrium, no behavioural response, no wage growth by default"),

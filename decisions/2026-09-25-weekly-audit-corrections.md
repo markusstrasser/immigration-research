@@ -91,7 +91,8 @@ precision, and the transfer argument against the debt line).
 ## Revisit if
 
 - Program-level eligibility for unauthorized seniors is priced, including emergency Medicaid,
-  state coverage and uncompensated care.
+  state coverage and uncompensated care. [2026-09-26: done in the lineage lane. Legalising still widens the gap, by
+  $355–390k under the 2026 rules for a new enrollee and $250–400k across 2020–2026.]
 - Returnees are compared with US stayers on harmonized schooling. [2026-09-26: done, ladder 228.
   Returnee men hold 6–8 points less tertiary schooling than male stayers; the stock moves 0.13–0.23
   points per five-year window.]

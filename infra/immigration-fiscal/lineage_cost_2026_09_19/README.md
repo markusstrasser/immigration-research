@@ -17,6 +17,20 @@ PYTHONUNBUFFERED=1 uv run --no-project --with "pandas>=2" --with "numpy>=2" pyth
 Pure arithmetic on stored lane outputs. No downloads, no API keys, no microdata, no
 writes outside `derived/`. Runs in about 20 seconds.
 
+The priced senior rule (added 2026-09-26) reads two tables built from microdata by helper
+scripts. They need rerunning only when their inputs change:
+
+```sh
+# from the repository root
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/lineage_cost_2026_09_19/senior_states.py
+uv run --no-project python3 infra/immigration-fiscal/lineage_cost_2026_09_19/senior_meps_gradient.py
+```
+
+- `senior_states.py` reads the ACS 2024 extract that
+  `unauthorized_population_size_2026_09_19` caches (`_cache/acs2024_person_subset.parquet`).
+- `senior_meps_gradient.py` reads MEPS HC-243 and HC-251, unzipped into `_cache/meps/` from
+  https://meps.ahrq.gov/data_files/pufs/h243dta.zip and `h251dta.zip`.
+
 Byte-identical re-run check:
 
 ```sh
@@ -31,6 +45,10 @@ diff -rq /tmp/lineage_rerun_ref derived      # must print nothing, rc 0
 |---|---|
 | `inputs.py` | Every input resolved, hashed and loaded. No constant is typed by hand; each is read from a named lane output and carries the row it came from. |
 | `lineage.py` | The model, the oracle checks, and all four output tables. |
+| `senior_states.py` | Where unauthorized Mexico-born people aged 45–64 and 65+ live, by state, on the ACS 2024 residual imputation (imported unmodified) with and without its Medicaid clause. |
+| `senior_meps_gradient.py` | MEPS 2022–23 age gradients of care received, for the uninsured and for everyone; gated to reproduce the researcher's figures. |
+| `senior_pricing_inputs.json` | Every parameter of the priced senior rule with its source or its inference, by regime and case. |
+| `senior_pricing_sources.md`, `SENIOR_SOURCES_BRIEF.md` | The researcher's sourcing record (quotes, URLs, pages; fetched documents in the ignored `_cache/`) and its brief. |
 | `scratch_lineage_cost_ORIGINAL.py` | The pre-lane scratch script, kept verbatim as the audit trail for what was corrected. Not executed by this lane. |
 
 ## Inputs (all read-only)
@@ -39,6 +57,7 @@ diff -rq /tmp/lineage_rerun_ref derived      # must print nothing, rc 0
 |---|---|
 | `ledger_absolute_2026_09_17/derived/age_profiles.csv` | Net balance per person-year by allocation (personal, shared) x account (partial, expanded) x group x age band. This is the complete account **by age**, which supersedes the flat per-person add-on in the scratch script. |
 | `ledger_absolute_2026_09_17/derived/age_profile_components.csv` | Signed components by age band. Used only by the statutory senior rule (added 2026-09-25) to remove, from 65, the programs federal law closes to an unauthorized founder; gated to reproduce `age_profiles.csv` from its components. |
+| `derived/senior_state_shares.csv`, `derived/senior_meps_gradient.csv`, `senior_pricing_inputs.json` | The priced senior rule (added 2026-09-26): state shares, MEPS ratios and sourced prices that `inputs.senior_addback` turns into public care per person-year from 65. A gate checks the uncompensated-care prices against $1,524 times the MEPS ratios. |
 | `ledger_absolute_2026_09_17/derived/lifetime/period_profiles.csv` | Oracle. 768 single-person survival-weighted NPVs this lane must reproduce. |
 | `ledger_absolute_2026_09_17/derived/waterfall.csv` | Only to measure how far the scratch script's flat add-on is from the true by-age add-on. |
 | `all_age_ledger_2026_09_17/derived/age_profiles.csv` | Cross-check that `shared`/`partial` equals the brief's `all_age_shared` scenario. |
@@ -57,10 +76,12 @@ diff -rq /tmp/lineage_rerun_ref derived      # must print nothing, rc 0
 | `derived/lineage_table.csv` | 96 rows: allocation x account x founder status x fertility x attribution x discount. |
 | `derived/generation_breakdown.csv` | Central case, both lineages, persons and dollars per generation. |
 | `derived/white_reference.csv` | The reference lineage on its own, across the same grid. |
-| `derived/sensitivities.csv` | 22 named arms including the three disconfirmation arms; the last three (added 2026-09-25) cross senior eligibility with legal status. |
+| `derived/sensitivities.csv` | 34 named arms including the three disconfirmation arms. Three arms added 2026-09-25 cross senior eligibility with legal status; the last twelve (added 2026-09-26) price the statutory rule in four regimes and three cases. |
+| `derived/senior_state_shares.csv` | `senior_states.py`: state shares by rule and age group, with replicate SEs. |
+| `derived/senior_meps_gradient.csv` | `senior_meps_gradient.py`: mean payments by coverage, group and age, and the five ratios the pricing uses. |
 | `derived/oracle_period_profiles.csv` | 768 stored-vs-recomputed NPVs. |
 | `derived/oracle_pronatal.csv` | 24 stored-vs-located pronatal lifetime balances. |
-| `derived/audit.json` | Input sha256s, every parameter with its source, and the check results. |
+| `derived/audit.json` | Input sha256s, every parameter with its source, the check results, and the priced senior rule's parts by regime and case (`senior_pricing`). |
 
 ## Model
 

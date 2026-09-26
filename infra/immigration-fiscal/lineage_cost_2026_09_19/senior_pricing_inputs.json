@@ -1,0 +1,70 @@
+{
+ "purpose": "Public health cost per person-year from 65 for a never-legalised founder under the statutory bars (senior_statutory): what federal law still allows (emergency Medicaid), what some states fund (full coverage regardless of status, or California's restricted scope), and the government-financed part of uncompensated hospital care. Values are 2024 dollars to within the few percent that separate 2021-22 to FY2026 price years; not deflated.",
+ "sources_file": "senior_pricing_sources.md (researcher, 2026-09-26) — every [SOURCE] below is quoted there with URL and page",
+ "state_shares": {
+  "rule": "no_medicaid_rule",
+  "age_group": "50-64",
+  "why": "the cohorts that reach 65 next; ages 65+ are unusable because the ACS edits Medicare onto 65+ Medicaid reporters (california_medical_status_2026_09_23 §3); no_medicaid_rule because status-blind Medi-Cal marks covered unauthorized people legal under the paper rules",
+  "source": "derived/senior_state_shares.csv from senior_states.py [CALCULATION]"
+ },
+ "regimes": {
+  "federal_floor": {
+   "full_coverage_states": [],
+   "restricted_scope_states": [],
+   "note": "no state program: emergency Medicaid and uncompensated care only"
+  },
+  "rules_2026_new_enrollee": {
+   "full_coverage_states": ["36", "41"],
+   "restricted_scope_states": ["6"],
+   "note": "a founder reaching 65 under the rules in force in 2026: New York 65+ Medicaid and Healthier Oregon open to new enrollees; California froze new full-scope enrollment at 19+ from 2026-01-01 (restricted scope, including nursing-home care, stays open); Illinois HBIS closed since 2023-11-06, Washington AHE closed, DC Alliance closed to 26+ since 2025-10-01 [SOURCE: senior_pricing_sources.md Q2c, Q3]"
+  },
+  "peak_state_coverage": {
+   "full_coverage_states": ["6", "17", "36", "41", "53", "11"],
+   "restricted_scope_states": [],
+   "note": "every state that covered unauthorized seniors at some point in 2020-2025, each as if open: California (50+ from 2022-05), Illinois HBIS (2020-12 to 2023-11), New York (2024-01), Oregon (2023-07), Washington (2024-07, capped), DC [SOURCE: senior_pricing_sources.md Q3; state_programs_unauthorized_2026_09_23]"
+  },
+  "full_coverage_everywhere": {
+   "full_coverage_states": "all",
+   "restricted_scope_states": [],
+   "note": "bound, not a regime: every state covers unauthorized seniors as California did before the freeze"
+  }
+ },
+ "cases": {
+  "low": {
+   "state_cost_per_enrollee": 14300,
+   "take_up": 0.5,
+   "restricted_scope_per_enrollee": 5400,
+   "restricted_scope_take_up_ratio": 0.483,
+   "emergency_medicaid_per_uncovered": 150,
+   "uncompensated_per_uninsured": 1577,
+   "government_share": 0.58
+  },
+  "central": {
+   "state_cost_per_enrollee": 16200,
+   "take_up": 0.75,
+   "restricted_scope_per_enrollee": 5400,
+   "restricted_scope_take_up_ratio": 0.483,
+   "emergency_medicaid_per_uncovered": 300,
+   "uncompensated_per_uninsured": 2505,
+   "government_share": 0.64
+  },
+  "high": {
+   "state_cost_per_enrollee": 17472,
+   "take_up": 1.0,
+   "restricted_scope_per_enrollee": 5400,
+   "restricted_scope_take_up_ratio": 0.483,
+   "emergency_medicaid_per_uncovered": 600,
+   "uncompensated_per_uninsured": 3337,
+   "government_share": 0.70
+  }
+ },
+ "sources": {
+  "state_cost_per_enrollee": "full-scope coverage per enrollee-year at 65+, total public funds. low $14.3k: Illinois HBIS FY2025, $132M / 9,253 average enrollment; central $16.2k: LAO Report 4423 Figure 3, California 65+ full scope $600M TF / 37,000 (2021-22 costs, includes IHSS); high $17,472: Illinois HBIS March 2026 tracking report, 65+ PMPM $1,456 x 12 [SOURCE: senior_pricing_sources.md Q2b, Q3; CALCULATION]",
+  "take_up": "share of unauthorized seniors in a covering state who enroll. Not measured anywhere found; 1.0 is the ceiling [INFERENCE bracket]. California's 50+ expansion held 450,917 at its July 2025 peak, about 77,000 of them 65+ at LAO's 17% [SOURCE: CHHS/DHCS; LAO Report 5010 p9], but no count of California's unauthorized 65+ exists to divide by",
+  "restricted_scope_per_enrollee": "California restricted scope (emergency, pregnancy and nursing-home care) at 65+, $200M TF / 37,000 = $5.4k per enrollee-year [SOURCE: LAO Report 4423 Figure 3; CALCULATION]",
+  "restricted_scope_take_up_ratio": "restricted-scope 65+ caseload before the expansion (LAO's 37,000) over 65+ full-scope enrollment at the peak (0.17 x 450,917 = 76,656): 0.483 [CALCULATION on an INFERENCE: applies the 2021-22 age mix to 2025 enrollment]",
+  "emergency_medicaid_per_uncovered": "emergency Medicaid per uncovered unauthorized senior per year outside California's restricted scope. The only cost per older user is North Carolina's $6,940 per elderly recipient in 2004 (nominal; DuBard and Massing, JAMA 2007, Table 2); no source gives the share of unauthorized seniors with a claim in a year (researcher gap 2). $150-$600 corresponds to roughly 1-5% a year at $12-13k per user in 2024 prices [INFERENCE bracket; the least-measured input, and it moves the result least]",
+  "uncompensated_per_uninsured": "$1,524 per uninsured person-year (uncompensated_care_2026_09_23: AHA 2020 $42.67bn at cost / 28.0M full-year uninsured) times a MEPS 2022-23 age ratio (derived/senior_meps_gradient.csv): low x1.035 (foreign-born Mexican uninsured 55-64 over all uninsured 0-64) = $1,577; central x1.644 (all uninsured 55-64 over 0-64) = $2,505; high x1.644 x1.332 (all persons 65+ over 55-64) = $3,337 [CALCULATION; the extension past 65 is an INFERENCE, since MEPS has 37 uninsured aged 65+]",
+  "government_share": "share of uncompensated care that governments finance, VA and IHS removed: 0.58 (2013) to 0.70 (2017) [SOURCE: Coughlin, Holahan, Caswell and McGrath, Health Affairs 33(5), 2014, as used in uncompensated_care_2026_09_23]; the rest falls on hospitals and private payers and is reported beside the fiscal line, not charged"
+ }
+}

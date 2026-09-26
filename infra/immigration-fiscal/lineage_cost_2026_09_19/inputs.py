@@ -33,9 +33,18 @@ P_ATTR_BOUNDS = FISCAL / "mexican_origin_population_total_2026_09_19/derived/arm
 P_ATTR_FISCAL = FISCAL / "mexican_origin_population_total_2026_09_19/derived/arm5_fiscal_implication.csv"
 P_PRONATAL = FISCAL / "pronatal_equivalence_2026_09_18/derived/lifetime_equivalence.csv"
 
+# Senior pricing (2026-09-26): this lane's own sourced parameters and state shares
+# (`senior_states.py`), hashed like the upstream inputs.
+P_SENIOR_PRICING = FISCAL / "lineage_cost_2026_09_19/senior_pricing_inputs.json"
+P_SENIOR_STATES = FISCAL / "lineage_cost_2026_09_19/derived/senior_state_shares.csv"
+P_SENIOR_MEPS = FISCAL / "lineage_cost_2026_09_19/derived/senior_meps_gradient.csv"
+# uncompensated_care_2026_09_23: AHA 2020 uncompensated care at cost / full-year uninsured.
+UNCOMPENSATED_PER_UNINSURED_ALL_AGES = 1524.0
+
 ALL_PATHS = [P_ABS_PROFILES, P_ABS_LIFETIME, P_ABS_WATERFALL, P_ALLAGE_PROFILES, P_SURVIVAL,
              P_FERT, P_CRIME_STOCK, P_CRIME_FIRSTGEN, P_CRIME_FIRSTGEN_AUDIT, P_STATUS,
-             P_ATTR_BOUNDS, P_ATTR_FISCAL, P_PRONATAL, P_ABS_COMPONENTS]
+             P_ATTR_BOUNDS, P_ATTR_FISCAL, P_PRONATAL, P_ABS_COMPONENTS,
+             P_SENIOR_PRICING, P_SENIOR_STATES, P_SENIOR_MEPS]
 
 # Single-age bands, copied from ledger_absolute_2026_09_17/lifetime.py BANDS so the
 # age vector is built exactly as the lane that produced the profiles builds it.
@@ -115,6 +124,83 @@ def component_vector(components: pd.DataFrame, profiles: pd.DataFrame, group: st
     if float(np.abs(whole - net).max()) > 1e-6:
         raise ValueError(f"[BLOCKED] components do not sum to the profile for {allocation}/{account}/{group}")
     return out
+
+
+def senior_pricing() -> dict:
+    """Sourced parameters for the public health cost of an unauthorized senior."""
+    spec = json.loads(P_SENIOR_PRICING.read_text())
+    for key in ("state_shares", "regimes", "cases", "sources"):
+        if key not in spec:
+            raise ValueError(f"[BLOCKED] senior pricing inputs lack {key!r}")
+    need = {"state_cost_per_enrollee", "take_up", "restricted_scope_per_enrollee",
+            "restricted_scope_take_up_ratio", "emergency_medicaid_per_uncovered",
+            "uncompensated_per_uninsured", "government_share"}
+    for name, case in spec["cases"].items():
+        if set(case) != need:
+            raise ValueError(f"[BLOCKED] senior pricing case {name!r} has {sorted(case)}")
+        if any(key not in spec["sources"] for key in need):
+            raise ValueError("[BLOCKED] a senior pricing parameter has no source entry")
+    # The uncompensated-care values are $1,524 times MEPS ratios; stop if either drifts.
+    meps = pd.read_csv(P_SENIOR_MEPS)
+    ratio = dict(zip(meps[meps.coverage == "ratio"].group, meps[meps.coverage == "ratio"].mean_payments))
+    base = UNCOMPENSATED_PER_UNINSURED_ALL_AGES
+    expect = {"low": base * ratio["uninsured_fb_mexican_55_64_over_all_0_64"],
+              "central": base * ratio["uninsured_55_64_over_0_64"],
+              "high": base * ratio["uninsured_55_64_over_0_64"] * ratio["everyone_65plus_over_55_64"]}
+    for name, value in expect.items():
+        if abs(spec["cases"][name]["uncompensated_per_uninsured"] - value) > 1.0:
+            raise ValueError(f"[BLOCKED] uncompensated care for case {name!r} is not $1,524 x the MEPS ratio "
+                             f"({value:.1f})")
+    return spec
+
+
+def senior_addback(regime: str, case: str) -> tuple[np.ndarray, dict]:
+    """Public health cost per person-year from 65 for a founder under the statutory bars,
+    as a negative per-person vector by single age (2024$), plus the parts that make it up.
+
+    The founder lives in each state with the probability that unauthorized Mexico-born
+    people aged 50-64 do. In a full-coverage state a share `take_up` enrolls at the
+    program's per-enrollee cost. In a restricted-scope state (California after its 2026
+    freeze) a smaller share enrolls in emergency, pregnancy and nursing-home coverage.
+    Everyone else draws emergency Medicaid when an emergency comes and uncompensated
+    hospital care, of which governments finance `government_share`; the remainder falls
+    on hospitals and private payers and is reported, not charged."""
+    spec = senior_pricing()
+    if regime not in spec["regimes"] or case not in spec["cases"]:
+        raise ValueError(f"[BLOCKED] unknown senior pricing regime/case {regime}/{case}")
+    shares = pd.read_csv(P_SENIOR_STATES, dtype={"state_fips": str})
+    sel = shares[(shares.rule == spec["state_shares"]["rule"])
+                 & (shares.age_group == spec["state_shares"]["age_group"])]
+    if abs(sel.share.sum() - 1.0) > 1e-5:
+        raise ValueError("[BLOCKED] state shares do not sum to one")
+    reg, c = spec["regimes"][regime], spec["cases"][case]
+    full = reg["full_coverage_states"]
+    rs = [str(s) for s in reg["restricted_scope_states"]]
+    named = set(rs) | (set() if full == "all" else {str(s) for s in full})
+    missing = named - set(sel.state_fips)
+    if missing:
+        raise ValueError(f"[BLOCKED] no state share for {sorted(missing)}")
+    s_full = 1.0 if full == "all" else float(sel[sel.state_fips.isin([str(s) for s in full])].share.sum())
+    s_rs = float(sel[sel.state_fips.isin(rs)].share.sum())
+    s_rest = 1.0 - s_full - s_rs
+    tau, tau_rs = c["take_up"], c["take_up"] * c["restricted_scope_take_up_ratio"]
+    unc = c["uncompensated_per_uninsured"]
+    g = c["government_share"]
+    # person-years with no coverage at all, and those drawing ad hoc emergency Medicaid
+    uninsured = s_full * (1 - tau) + s_rs * (1 - tau_rs) + s_rest
+    episodic = s_full * (1 - tau) + s_rest  # restricted-scope states route emergencies through enrollment
+    parts = {"regime": regime, "case": case, "share_full_coverage_states": s_full,
+             "share_restricted_scope_states": s_rs, "share_other_states": s_rest,
+             "state_full_coverage": s_full * tau * c["state_cost_per_enrollee"],
+             "restricted_scope": s_rs * tau_rs * c["restricted_scope_per_enrollee"],
+             "emergency_medicaid": episodic * c["emergency_medicaid_per_uncovered"],
+             "uncompensated_public": uninsured * unc * g,
+             "uncompensated_private_not_charged": uninsured * unc * (1 - g)}
+    parts["public_per_year"] = (parts["state_full_coverage"] + parts["restricted_scope"]
+                                + parts["emergency_medicaid"] + parts["uncompensated_public"])
+    vec = np.zeros(101)
+    vec[65:] = -parts["public_per_year"]
+    return vec, parts
 
 
 def check_shared_partial_equals_all_age_shared(profiles: pd.DataFrame) -> dict:
