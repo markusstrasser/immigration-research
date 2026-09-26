@@ -44,14 +44,19 @@ No exact national total is identified by the examined files; this is not a claim
 that such a total is impossible in principle.
 
 Latest complete annual account: [national reconciliation and conditional net effects](immigration-complete-annual-account-2026-09-20.md).
-**Adopted main case (September 24): $201–246bn/year conditional net cost to other US
-residents** ($200.9–246.3bn; [lane](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md),
-[decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md), ladder 219). One engine run builds in
-the dataset audit, the pooled-MEPS medical figure with long-term care by use, care and household
-services, shelter keying and the four outside checks. The group's taxes were overstated (+$48.7 /
-+$50.3bn) and so was its keyed spending (−$51.0 / −$53.6bn), so the headline barely moves. Every
-component at its extreme in one direction spans $172–276bn (about $189–260bn in quadrature); no
-combination changes the sign. With no fill-in correction for the CPS it is $193.1–237.6bn.
+**Adopted main case (September 26): $201–246bn/year conditional net cost to other US
+residents** ($200.9–245.7bn; [lane](../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md),
+[decision](../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md), ladder 229). It is the
+September 24 case ($200.9–246.3bn; [lane](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md),
+[decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md), ladder 219) with two corrections
+that cancel: general government and schools respond as finite removals (+$4.1 / +$3.4bn), and the
+consumption key is corrected for saving and remittances (−$4.1bn). The September 24 run built in the
+dataset audit, the pooled-MEPS medical figure with long-term care by use, care and household services,
+shelter keying and the four outside checks. The group's taxes were overstated (+$48.7 / +$50.3bn) and
+so was its keyed spending (−$51.0 / −$53.6bn), so the headline barely moved. Every component at its
+extreme in one direction spans $164–277bn (about $187–259bn in quadrature; $172–276bn before the two
+new corrections' own uncertainty entered); no combination changes the sign. With no fill-in
+correction for the CPS it is $193.2–237.0bn.
 
 [By generation](immigration-adopted-account-by-generation-2026-09-25.md) (September 25, ladder 224),
 all three Mexican-origin generations are net costs at every specification. Counted with their
@@ -247,7 +252,8 @@ Consumption (ladder 225, September 25): the key treats every resource dollar as 
 households at each income rank spend (CE 2024), net of remittances, the group pays more of the
 $1,198bn of consumption-keyed receipts, and the main case would be **$196.8–242.3bn** (−$4.1bn;
 −$2.6bn to −$8.4bn across variants; proposed). CBO's excise distribution, ITEP's gradient and
-Mexican-origin CE units all support the direction.
+Mexican-origin CE units all support the direction. [2026-09-26: adopted together with finite
+removal; see the adopted main case above.]
 Finite removal (ladder 227, September 26): the main case uses cross-state elasticities (general
 government 0.59–0.84) and CBO's first-order school coefficients (0.63–0.66) as the share of average
 cost a removal saves. Read as a power law over a removal of 12% of residents and 17.5% of pupils,
@@ -256,7 +262,8 @@ plus a constant marginal cost nothing changes
 ([lane](../infra/immigration-fiscal/finite_response_2026_09_26/RESULT.md)). Composed in one
 engine run with the consumption-key proposal (ladder 225), the two leave the main case at
 $200.9–245.7bn, the published $201–246bn at its rounding; adopting one without the other moves
-it by about $4bn.
+it by about $4bn. [2026-09-26: adopted together with the consumption key; see the adopted main case
+above.]
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): seventeen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,

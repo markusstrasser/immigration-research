@@ -3,7 +3,13 @@
 Date:2026-09-20. [MODEL / FRAMING-SENSITIVE] Evidence and calculations only;
 narrative authorship remains operator-owned.
 
-**Current main case (2026-09-24): $200.9–246.3bn/year.** The operator adopted the dataset audit,
+**Current main case (2026-09-26): $200.9–245.7bn/year.** The operator adopted two corrections
+together. General government and schools respond as finite removals, which saves more than the
+marginal elasticities (+$4.1 / +$3.4bn), and the consumption key is corrected for saving and
+remittances (−$4.1bn). The outer range is $164–277bn
+([main-case lane](../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md), [decision](../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md), ladder 229).
+
+**Main case of 2026-09-24 (superseded 2026-09-26): $200.9–246.3bn/year.** The operator adopted the dataset audit,
 the pooled-MEPS medical figure with long-term care by use, care and household services, shelter
 keying and the four outside checks, run once through the engine. The group's taxes and its keyed
 spending were both overstated by about $50bn, so the case moves by −$2.3bn / −$3.3bn
@@ -339,6 +345,11 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+2026-09-26, main case adopted (ladder 229): finite-removal responses (+$4.1 / +$3.4bn) and the
+corrected consumption key (−$4.1bn) move the main case from $200.9–246.3bn to $200.9–245.7bn; the
+range with every component at an extreme is $164–277bn. Concept affected: the complete account's
+main case ([decision](../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md)).
 
 2026-09-24, main case adopted (ladder 219): the operator adopted the dataset audit, the pooled
 medical figure, care, shelter and the four outside checks. One engine run moves the main case from
