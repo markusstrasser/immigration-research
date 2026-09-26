@@ -1,0 +1,655 @@
+{
+ "adopted_2026_09_23": [
+  203.20701712400069,
+  249.63995572733106
+ ],
+ "adopted_2026_09_24": [
+  200.8752025157866,
+  246.31843608620045
+ ],
+ "adopted_2026_09_26": [
+  200.91801681307095,
+  245.69489442324326
+ ],
+ "uncorrected_at_adopted_responses": [
+  265.5902847237095,
+  298.67972515718577
+ ],
+ "main_case": [
+  258.48849537573153,
+  291.9547733238526
+ ],
+ "change": [
+  57.57047856266058,
+  46.25987890060932
+ ],
+ "responses": {
+  "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
+  "general_government": {
+   "low": 0.6000461560720316,
+   "high": 0.8503957662020014,
+   "elasticity": [
+    0.5939193086359557,
+    0.842
+   ],
+   "s": 0.12024478903339636
+  },
+  "school": {
+   "growth": 1,
+   "decline": 1,
+   "elasticity": null,
+   "s": null,
+   "set_directly": true,
+   "rule": "full average cost per pupil (response 1): a school system sized for the group's pupils"
+  },
+  "row8_factor": 0.9491629658844111
+ },
+ "school": {
+  "rules": {
+   "average": "full average cost per pupil (response 1): a school system sized for the group's pupils",
+   "within_district": "within-district elasticity 0.836 read over a removal of the pupil share, r = [1 - (1 - s)^b] / s",
+   "within_district_as_response": "within-district elasticity 0.836 taken as the response (r = b)"
+  },
+  "one_year": [
+   200.91801681307095,
+   245.69489442324326
+  ],
+  "within_district": [
+   233.92072140998607,
+   269.5897950830812
+  ],
+  "within_district_as_response": [
+   231.75915647503564,
+   267.7526737053645
+  ],
+  "school_line_at_full_cost": [
+   167.00118112615354,
+   143.4196146130101
+  ],
+  "unfunded_by_rule": {
+   "one_year": [
+    57.57047856266058,
+    46.25987890060932
+   ],
+   "within_district": [
+    24.56777396574546,
+    22.364978240771393
+   ],
+   "within_district_as_response": [
+    26.729338900695893,
+    24.20209961848809
+   ]
+  },
+  "sign_break_even": "unchanged: main_case_2026_09_26/derived/sign_reversal.csv (schools move with the common share)"
+ },
+ "range": {
+  "low_end": [
+   197.81404364060475,
+   291.2715404864764
+  ],
+  "high_end": [
+   234.34243532554484,
+   324.33907790366555
+  ],
+  "overall": [
+   197.81404364060475,
+   324.33907790366555
+  ],
+  "quadrature": [
+   228.7933387724368,
+   305.8276582796459
+  ]
+ },
+ "other_profiles": {
+  "cbo_category_lag_non_school_fixed": {
+   "sept23": [
+    158.8811,
+    212.5633
+   ],
+   "sept24": [
+    157.1268,
+    210.83
+   ],
+   "sept26": [
+    156.5248,
+    210.8433
+   ],
+   "uncorrected_at_adopted_responses": [
+    210.54451683131794,
+    271.7698638543104
+   ],
+   "adopted": [
+    204.77651878351423,
+    265.8072064646528
+   ]
+  },
+  "proportional_reference": {
+   "sept23": [
+    307.8989,
+    340.9715
+   ],
+   "sept24": [
+    302.972,
+    336.4219
+   ],
+   "sept26": [
+    301.2853,
+    334.7516
+   ],
+   "uncorrected_at_adopted_responses": [
+    308.3840706417095,
+    341.4735110751858
+   ],
+   "adopted": [
+    301.28527594064883,
+    334.75155388877
+   ]
+  }
+ },
+ "audit_row3_instead_of_cbo_income_tax": [
+  253.8288910690347,
+  288.7543197656171
+ ],
+ "no_fill_in_correction": [
+  250.73190860287195,
+  283.26871462023945
+ ],
+ "by_side_vs_uncorrected_at_adopted_responses": {
+  "receipts": [
+   44.6552726586209,
+   46.208025926115226
+  ],
+  "spending": [
+   -51.75706200659866,
+   -52.932977759448335
+  ]
+ },
+ "group_receipts_bn": {
+  "adopted_2026_09_23": {
+   "personal": 517.100247895,
+   "shared": 545.118771322
+  },
+  "adopted_2026_09_24": {
+   "personal": 458.90626374089595,
+   "shared": 488.4638010201364
+  },
+  "adopted": {
+   "personal": 462.95798613228317,
+   "shared": 492.5155234115235
+  },
+  "adopted_2026_09_26": {
+   "personal": 462.95798613228317,
+   "shared": 492.5155234115235
+  }
+ },
+ "components": [
+  {
+   "name": "tax_block",
+   "label": "tax block: on-books share (low/central/high) x fill-in method",
+   "lo": [
+    -5.8762258096694495,
+    -4.906927865954799
+   ],
+   "hi": [
+    6.017261580832837,
+    5.045039803076065
+   ],
+   "variants": {
+    "low/b_hotdeck_union_matched": [
+     -0.502016505064887,
+     0.4322524714355609
+    ],
+    "low/b_matched_over_pooled": [
+     6.017261580832837,
+     5.045039803076065
+    ],
+    "central/b_hotdeck_union_matched": [
+     -3.2089092677106237,
+     -2.255023203801386
+    ],
+    "central/b_matched_over_pooled": [
+     3.208909267710567,
+     2.255023203801443
+    ],
+    "high/b_hotdeck_union_matched": [
+     -5.8762258096694495,
+     -4.906927865954799
+    ],
+    "high/b_matched_over_pooled": [
+     0.44468349565727294,
+     -0.49482912869717666
+    ]
+   }
+  },
+  {
+   "name": "income_tax",
+   "label": "CBO income gradients: 2018/2019/2022 data, scaled or not by the stack's factor",
+   "lo": [
+    -1.941281816584933,
+    -1.8675971196618093
+   ],
+   "hi": [
+    2.6623479126571397,
+    2.6754096072068023
+   ],
+   "variants": {
+    "2018": [
+     1.3184423521443023,
+     1.2280123053751595
+    ],
+    "2019": [
+     -1.941281816584933,
+     -1.8675971196618093
+    ],
+    "2022": [
+     0,
+     0
+    ],
+    "2018 unscaled": [
+     2.6623479126571397,
+     2.6754096072068023
+    ],
+    "2019 unscaled": [
+     -0.9389242736183405,
+     -0.797427259559754
+    ],
+    "2022 unscaled": [
+     1.2153625940388224,
+     1.3053586991529187
+    ]
+   }
+  },
+  {
+   "name": "medical",
+   "label": "decision 2: medical-ethnicity specifications and the MCBS 65+ bound",
+   "lo": [
+    -3.2800525988050424,
+    -3.283159635713048
+   ],
+   "hi": [
+    11.509135260862081,
+    11.507299287026058
+   ],
+   "variants": {
+    "plain": [
+     4.415072442770679,
+     4.4099636138221285
+    ],
+    "winsor_p999": [
+     0.2606562371131531,
+     0.26182874489109054
+    ],
+    "two_part_lognormal": [
+     -3.2800525988050424,
+     -3.283159635713048
+    ],
+    "pooled_excl_2020_2021": [
+     8.819505548109419,
+     8.813466281110436
+    ],
+    "pooled_cpi_all_items": [
+     3.671358162218553,
+     3.666962275288995
+    ],
+    "pooled_year_normalized": [
+     2.7722991293242103,
+     2.768774762213866
+    ],
+    "MCBS as truth": [
+     11.509135260862081,
+     11.507299287026058
+    ],
+    "MCBS precision-weighted": [
+     1.3754820189809607,
+     1.3752625977177786
+    ]
+   }
+  },
+  {
+   "name": "ltss",
+   "label": "long-term-care carve-out: extremes of the lane's 960 combinations",
+   "lo": [
+    -1.4078076340186954,
+    -1.4078076340186954
+   ],
+   "hi": [
+    2.992192365981282,
+    2.9921923659813388
+   ],
+   "variants": {
+    "-12.5": [
+     -1.4078076340186954,
+     -1.4078076340186954
+    ],
+    "-8.1": [
+     2.992192365981282,
+     2.9921923659813388
+    ]
+   }
+  },
+  {
+   "name": "education",
+   "label": "audit row 6 weight w (0.77/0.82) x school price k (low/high)",
+   "lo": [
+    -2.2466072251424976,
+    -2.826946536612809
+   ],
+   "hi": [
+    2.202637238150089,
+    2.771956270462397
+   ],
+   "variants": {
+    "w 0.77 k low": [
+     -2.2466072251424976,
+     -2.826946536612809
+    ],
+    "w 0.77 k preferred": [
+     -0.7064617953152492,
+     -0.9007916093571566
+    ],
+    "w 0.77 k high": [
+     0.698483437590653,
+     0.8562776455829635
+    ],
+    "w 0.82 k low": [
+     -0.9336930780071953,
+     -1.150438313174618
+    ],
+    "w 0.82 k preferred": [
+     0.7064617953152492,
+     0.9007916093572703
+    ],
+    "w 0.82 k high": [
+     2.202637238150089,
+     2.771956270462397
+    ]
+   }
+  },
+  {
+   "name": "benefits",
+   "label": "benefit keys: central +/- 1.96 SE (package_se.csv)",
+   "lo": [
+    -2.302731970908326,
+    -2.2527416565264957
+   ],
+   "hi": [
+    2.302731970908269,
+    2.2527416565264957
+   ],
+   "variants": {
+    "-1.96 SE": [
+     -2.302731970908326,
+     -2.2527416565264957
+    ],
+    "+1.96 SE": [
+     2.302731970908269,
+     2.2527416565264957
+    ]
+   }
+  },
+  {
+   "name": "justice",
+   "label": "row 7 on 2023 arrests; booking factor Texas only or Arizona only",
+   "lo": [
+    -0.9070316400952834,
+    -0.9070316400952834
+   ],
+   "hi": [
+    0.22880184698681205,
+    0.22880184698692574
+   ],
+   "variants": {
+    "row 7 2023": [
+     0.22880184698681205,
+     0.22880184698692574
+    ],
+    "booking Texas": [
+     0.0864721478840238,
+     0.08647214788413748
+    ],
+    "booking Arizona": [
+     -0.9070316400952834,
+     -0.9070316400952834
+    ]
+   }
+  },
+  {
+   "name": "row8",
+   "label": "audit row 8: unallocable S&L spending at the all-spending elasticity",
+   "lo": [
+    0,
+    0
+   ],
+   "hi": [
+    0,
+    0
+   ],
+   "variants": {
+    "lo": [
+     0,
+     0
+    ],
+    "hi": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "name": "row9",
+   "label": "audit row 9: MEPS donor filter (non-LTSS remainder)",
+   "lo": [
+    -0.7999999999999545,
+    -0.7999999999999545
+   ],
+   "hi": [
+    0.7999999999999545,
+    0.8000000000000682
+   ],
+   "variants": {
+    "lo": [
+     -0.7999999999999545,
+     -0.7999999999999545
+    ],
+    "hi": [
+     0.7999999999999545,
+     0.8000000000000682
+    ]
+   }
+  },
+  {
+   "name": "row10",
+   "label": "audit row 10: foster care keyed by WIC",
+   "lo": [
+    -0.5,
+    -0.5
+   ],
+   "hi": [
+    0.5,
+    0.5
+   ],
+   "variants": {
+    "lo": [
+     -0.5,
+     -0.5
+    ],
+    "hi": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "name": "small",
+   "label": "audit small items (origin allocation, grants, top-codes, flags)",
+   "lo": [
+    -0.39999999999997726,
+    -0.39999999999997726
+   ],
+   "hi": [
+    0.5,
+    0.5
+   ],
+   "variants": {
+    "lo": [
+     -0.39999999999997726,
+     -0.39999999999997726
+    ],
+    "hi": [
+     0.5,
+     0.5
+    ]
+   }
+  },
+  {
+   "name": "shelter",
+   "label": "shelter keying (mapping A, central outlays, NYC June 2025 share)",
+   "lo": [
+    -0.3310000000000173,
+    -0.28919999999993706
+   ],
+   "hi": [
+    0.06299999999998818,
+    0.1048000000000684
+   ],
+   "variants": {
+    "lo": [
+     -0.3310000000000173,
+     -0.28919999999993706
+    ],
+    "hi": [
+     0.06299999999998818,
+     0.1048000000000684
+    ]
+   }
+  },
+  {
+   "name": "care",
+   "label": "care and household services (hours taxes, elder-care Medicaid, output)",
+   "lo": [
+    -9.199999999999989,
+    -9.199999999999932
+   ],
+   "hi": [
+    1.5499999999999545,
+    1.5500000000000682
+   ],
+   "variants": {
+    "lo": [
+     -9.199999999999989,
+     -9.199999999999932
+    ],
+    "hi": [
+     1.5499999999999545,
+     1.5500000000000682
+    ]
+   }
+  },
+  {
+   "name": "finite_removal",
+   "label": "general government's removal response: r = b (fixed plus constant marginal cost); engine-key population share",
+   "lo": [
+    -0.3710836491478062,
+    -0.3875358011780463
+   ],
+   "hi": [
+    0.001970201632389035,
+    0.003097009812563556
+   ],
+   "variants": {
+    "r = b": [
+     -0.3710836491478062,
+     -0.3875358011780463
+    ],
+    "engine population key": [
+     0.001970201632389035,
+     0.003097009812563556
+    ]
+   }
+  },
+  {
+   "name": "consumption_key",
+   "label": "consumption key: the lane's twelve saving-and-remittance specifications",
+   "lo": [
+    -4.381290490058916,
+    -4.381290490058859
+   ],
+   "hi": [
+    1.452966732734069,
+    1.4529667327341258
+   ],
+   "variants": {
+    "both_corridor_net_h2": [
+     0,
+     0
+    ],
+    "both_corridor_net_h2_dollar_for_dollar": [
+     -0.04471410930983666,
+     -0.044714109309779815
+    ],
+    "both_survey_cemla": [
+     -2.6099397573266288,
+     -2.6099397573266288
+    ],
+    "both_bea": [
+     -2.679138453166644,
+     -2.6791384531666154
+    ],
+    "both_corridor_full": [
+     0.25352380531558083,
+     0.25352380531558083
+    ],
+    "both_corridor_net_h2_illicit": [
+     -0.2976271300728399,
+     -0.2976271300727831
+    ],
+    "both_corridor_net_h2_others_bea": [
+     1.032795467558799,
+     1.0327954675589126
+    ],
+    "both_corridor_net_h2_others_zero": [
+     1.452966732734069,
+     1.4529667327341258
+    ],
+    "both_rank_x_size_corridor_net_h2": [
+     -1.733448053857444,
+     -1.733448053857387
+    ],
+    "both_rank_x_size_survey_cemla": [
+     -4.381290490058916,
+     -4.381290490058859
+    ],
+    "both_rank_x_size_x_age_corridor_net_h2": [
+     -1.2620342472188781,
+     -1.2620342472188213
+    ],
+    "both_rank_x_size_x_age_survey_cemla": [
+     -3.9047892709009204,
+     -3.904789270900892
+    ]
+   }
+  },
+  {
+   "name": "school_response",
+   "label": "school response: within-district elasticity 0.836 read over the removal (0.8489) or taken as the response",
+   "lo": [
+    -26.729338900695893,
+    -24.20209961848809
+   ],
+   "hi": [
+    0,
+    0
+   ],
+   "variants": {
+    "within district, finite r": [
+     -24.56777396574546,
+     -22.364978240771393
+    ],
+    "within district, r = b": [
+     -26.729338900695893,
+     -24.20209961848809
+    ]
+   }
+  }
+ ]
+}
