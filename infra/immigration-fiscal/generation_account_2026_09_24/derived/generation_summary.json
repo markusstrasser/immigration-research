@@ -1087,10 +1087,12 @@
   "specifications": {
    "low": {
     "sept24": 56,
+    "sept26": 56,
     "case": 48
    },
    "high": {
     "sept24": 7,
+    "sept26": 7,
     "case": 11
    }
   },
@@ -1098,26 +1100,26 @@
    "low": {
     "sept24_bn": 200.8752025157867,
     "general_government_response_bn": 0.4727577173789541,
-    "school_response_bn": 62.082035434712026,
-    "responses_bn": 62.55479315209098,
-    "band_end_specification_bn": -0.7881038325277814,
+    "school_response_bn": 3.723453039523662,
     "row8_bn": -0.1016740682311763,
     "consumption_key_bn": -4.051722391387074,
-    "case_bn": 258.4884953757316,
-    "change_bn": 57.61329285994489,
-    "school_line_at_case_bn": 138.73066259473217
+    "sept26_bn": 200.91801681307103,
+    "school_full_cost_bn": 58.358582395188336,
+    "band_end_specs_bn": -0.7881038325277814,
+    "sept26_schools_bn": 258.4884953757316,
+    "change_bn": 57.61329285994489
    },
    "high": {
     "sept24_bn": 246.3184360862005,
     "general_government_response_bn": 0.48920986940925104,
-    "school_response_bn": 48.4855922226526,
-    "responses_bn": 48.97480209206185,
-    "band_end_specification_bn": 0.8149316052086419,
+    "school_response_bn": 3.0406449272518046,
     "row8_bn": -0.1016740682311763,
     "consumption_key_bn": -4.0517223913871305,
-    "case_bn": 291.95477332385275,
-    "change_bn": 45.63633723765224,
-    "school_line_at_case_bn": 172.47476041786734
+    "sept26_bn": 245.6948944232433,
+    "school_full_cost_bn": 45.444947295400794,
+    "band_end_specs_bn": 0.8149316052086419,
+    "sept26_schools_bn": 291.95477332385275,
+    "change_bn": 45.63633723765224
    }
   },
   "a": {
@@ -1125,78 +1127,78 @@
     "low": {
      "sept24_bn": 63.79378671772461,
      "general_government_response_bn": 0.13138650242038352,
-     "school_response_bn": 14.867356207805209,
-     "responses_bn": 14.998742710225592,
-     "band_end_specification_bn": -0.18148142589454608,
+     "school_response_bn": 0.8916895567937573,
      "row8_bn": -0.030382413116967655,
      "consumption_key_bn": -0.9348854571512675,
-     "case_bn": 77.64578013178742,
-     "change_bn": 13.851993414062811,
-     "school_line_at_case_bn": 33.22310815517299
+     "sept26_bn": 63.85159490667052,
+     "school_full_cost_bn": 13.975666651011444,
+     "band_end_specs_bn": -0.18148142589454608,
+     "sept26_schools_bn": 77.64578013178742,
+     "change_bn": 13.851993414062811
     },
     "high": {
      "sept24_bn": 53.55937718298183,
      "general_government_response_bn": 0.1359588036924464,
-     "school_response_bn": 4.142397940446678,
-     "responses_bn": 4.278356744139124,
-     "band_end_specification_bn": 0.04023043907109525,
+     "school_response_bn": 0.25977946657715734,
      "row8_bn": -0.030382413116967655,
      "consumption_key_bn": -0.9348854571513243,
-     "case_bn": 56.91269649592381,
-     "change_bn": 3.3533193129419843,
-     "school_line_at_case_bn": 14.735492742939229
+     "sept26_bn": 52.989847582983195,
+     "school_full_cost_bn": 3.8826184738695204,
+     "band_end_specs_bn": 0.04023043907109525,
+     "sept26_schools_bn": 56.91269649592381,
+     "change_bn": 3.3533193129419843
     }
    },
    "G2": {
     "low": {
      "sept24_bn": 81.73760619296046,
      "general_government_response_bn": 0.17062991257665772,
-     "school_response_bn": 24.67948956414085,
-     "responses_bn": 24.850119476717524,
-     "band_end_specification_bn": -0.32133639268059255,
+     "school_response_bn": 1.480185367442246,
      "row8_bn": -0.035634196284121344,
      "consumption_key_bn": -1.2314873543020326,
-     "case_bn": 104.99926772641116,
-     "change_bn": 23.261661533450706,
-     "school_line_at_case_bn": 55.1496405644374
+     "sept26_bn": 82.12129992239315,
+     "school_full_cost_bn": 23.199304196698606,
+     "band_end_specs_bn": -0.32133639268059255,
+     "sept26_schools_bn": 104.99926772641116,
+     "change_bn": 23.261661533450706
     },
     "high": {
      "sept24_bn": 95.12111839275724,
      "general_government_response_bn": 0.17656789975154652,
-     "school_response_bn": 23.02243812278698,
-     "responses_bn": 23.199006022538526,
-     "band_end_specification_bn": 0.4060138528804629,
+     "school_response_bn": 1.443790958962751,
      "row8_bn": -0.035634196284121344,
      "consumption_key_bn": -1.2314873543020326,
-     "case_bn": 117.45901671759002,
-     "change_bn": 22.33789832483278,
-     "school_line_at_case_bn": 81.89627717092637
+     "sept26_bn": 95.47435570088533,
+     "school_full_cost_bn": 21.57864716382423,
+     "band_end_specs_bn": 0.4060138528804629,
+     "sept26_schools_bn": 117.45901671759002,
+     "change_bn": 22.33789832483278
     }
    },
    "G3plus": {
     "low": {
      "sept24_bn": 55.34380960510012,
      "general_government_response_bn": 0.17074130238191287,
-     "school_response_bn": 22.535189662766058,
-     "responses_bn": 22.70593096514797,
-     "band_end_specification_bn": -0.28528601395262854,
+     "school_response_bn": 1.35157811528763,
      "row8_bn": -0.03565745883008731,
      "consumption_key_bn": -1.8853495799337736,
-     "case_bn": 75.84344751753163,
-     "change_bn": 20.49963791243151,
-     "school_line_at_case_bn": 50.357913875121795
+     "sept26_bn": 54.94512198400584,
+     "school_full_cost_bn": 21.18361154747842,
+     "band_end_specs_bn": -0.28528601395262854,
+     "sept26_schools_bn": 75.84344751753163,
+     "change_bn": 20.49963791243151
     },
     "high": {
      "sept24_bn": 97.63794051046274,
      "general_government_response_bn": 0.17668316596527234,
-     "school_response_bn": 21.32075615941882,
-     "responses_bn": 21.497439325384093,
-     "band_end_specification_bn": 0.368687313257098,
+     "school_response_bn": 1.3370745017118963,
      "row8_bn": -0.03565745883008731,
      "consumption_key_bn": -1.8853495799337736,
-     "case_bn": 117.58306011034009,
-     "change_bn": 19.945119599877344,
-     "school_line_at_case_bn": 75.84299050400162
+     "sept26_bn": 97.23069113937608,
+     "school_full_cost_bn": 19.98368165770691,
+     "band_end_specs_bn": 0.368687313257098,
+     "sept26_schools_bn": 117.58306011034009,
+     "change_bn": 19.945119599877344
     }
    }
   },
@@ -1205,80 +1207,239 @@
     "low": {
      "sept24_bn": 110.22175986339185,
      "general_government_response_bn": 0.18657753070363015,
-     "school_response_bn": 26.906603451866133,
-     "responses_bn": 27.093180982569734,
-     "band_end_specification_bn": -0.34851551327554375,
+     "school_response_bn": 1.6137594990980517,
      "row8_bn": -0.04190566133300422,
      "consumption_key_bn": -1.3600786721858071,
-     "case_bn": 135.5644409991673,
-     "change_bn": 25.342681135775436,
-     "school_line_at_case_bn": 60.126426250579655
+     "sept26_bn": 110.62011255967477,
+     "school_full_cost_bn": 25.292843952768067,
+     "band_end_specs_bn": -0.34851551327554375,
+     "sept26_schools_bn": 135.5644409991673,
+     "change_bn": 25.342681135775436
     },
     "high": {
      "sept24_bn": 134.76150543640688,
      "general_government_response_bn": 0.19307050117819813,
-     "school_response_bn": 21.45989679839039,
-     "responses_bn": 21.65296729956856,
-     "band_end_specification_bn": 0.3692143208392622,
+     "school_response_bn": 1.3458003367212257,
      "row8_bn": -0.04190566133300422,
-     "consumption_key_bn": -1.3600786721857787,
-     "case_bn": 155.38170272329594,
-     "change_bn": 20.620197286889066,
-     "school_line_at_case_bn": 76.33794678422618
+     "consumption_key_bn": -1.3600786721858071,
+     "sept26_bn": 134.89839194078752,
+     "school_full_cost_bn": 20.114096461669163,
+     "band_end_specs_bn": 0.3692143208392622,
+     "sept26_schools_bn": 155.38170272329594,
+     "change_bn": 20.620197286889066
     }
    },
    "G2": {
     "low": {
      "sept24_bn": 50.18296809343323,
      "general_government_response_bn": 0.14533206285027234,
-     "school_response_bn": 18.61570978381478,
-     "responses_bn": 18.76104184666505,
-     "band_end_specification_bn": -0.23547577770050054,
-     "row8_bn": -0.030352513989001295,
+     "school_response_bn": 1.1165020716875418,
+     "row8_bn": -0.0303525139890084,
      "consumption_key_bn": -0.7732204036278176,
-     "case_bn": 67.90496124478092,
-     "change_bn": 17.72199315134769,
-     "school_line_at_case_bn": 41.59930863890233
+     "sept26_bn": 50.64122931035419,
+     "school_full_cost_bn": 17.49920771212723,
+     "band_end_specs_bn": -0.23547577770050054,
+     "sept26_schools_bn": 67.90496124478092,
+     "change_bn": 17.72199315134769
     },
     "high": {
      "sept24_bn": 52.96158772291601,
      "general_government_response_bn": 0.15038967503721778,
-     "school_response_bn": 13.525557425683488,
-     "responses_bn": 13.675947100720705,
-     "band_end_specification_bn": 0.22288169676888003,
-     "row8_bn": -0.030352513989001295,
+     "school_response_bn": 0.8482193511383613,
+     "row8_bn": -0.0303525139890084,
      "consumption_key_bn": -0.7732204036278176,
-     "case_bn": 66.05684360278873,
-     "change_bn": 13.095255879872724,
-     "school_line_at_case_bn": 48.11361828479376
+     "sept26_bn": 53.15662383147473,
+     "school_full_cost_bn": 12.677338074545133,
+     "band_end_specs_bn": 0.22288169676886582,
+     "sept26_schools_bn": 66.05684360278873,
+     "change_bn": 13.095255879872724
     }
    },
    "G3plus": {
     "low": {
      "sept24_bn": 40.470474558960106,
      "general_government_response_bn": 0.14084812382509426,
-     "school_response_bn": 16.559722199031263,
-     "responses_bn": 16.700570322856358,
-     "band_end_specification_bn": -0.20411254155172287,
+     "school_response_bn": 0.9931914687380612,
      "row8_bn": -0.029415892909170793,
-     "consumption_key_bn": -1.9184233155735058,
-     "case_bn": 55.019093131782,
-     "change_bn": 14.548618572821894,
-     "school_line_at_case_bn": 37.00492770525022
+     "consumption_key_bn": -1.9184233155735129,
+     "sept26_bn": 39.65667494304053,
+     "school_full_cost_bn": 15.566530730293195,
+     "band_end_specs_bn": -0.20411254155172287,
+     "sept26_schools_bn": 55.019093131782,
+     "change_bn": 14.548618572821894
     },
     "high": {
      "sept24_bn": 58.595342926879056,
      "general_government_response_bn": 0.14574969319386355,
-     "school_response_bn": 13.500137998578609,
-     "responses_bn": 13.645887691772472,
-     "band_end_specification_bn": 0.22283558760051392,
+     "school_response_bn": 0.8466252393922389,
      "row8_bn": -0.029415892909170793,
      "consumption_key_bn": -1.9184233155735058,
-     "case_bn": 70.51622699776932,
-     "change_bn": 11.920884070890267,
-     "school_line_at_case_bn": 48.023195348847295
+     "sept26_bn": 57.63987865098243,
+     "school_full_cost_bn": 12.653512759186377,
+     "band_end_specs_bn": 0.22283558760051392,
+     "sept26_schools_bn": 70.51622699776932,
+     "change_bn": 11.920884070890267
     }
    }
   }
+ },
+ "change_from_sept26": {
+  "specifications": {
+   "low": {
+    "sept24": 56,
+    "sept26": 56,
+    "case": 48
+   },
+   "high": {
+    "sept24": 7,
+    "sept26": 7,
+    "case": 11
+   }
+  },
+  "union": {
+   "low": {
+    "sept26_bn": 200.91801681307103,
+    "school_full_cost_bn": 58.358582395188336,
+    "band_end_specs_bn": -0.7881038325277814,
+    "sept26_schools_bn": 258.4884953757316,
+    "change_bn": 57.570478562660554,
+    "school_line_bn": 138.73066259473217
+   },
+   "high": {
+    "sept26_bn": 245.6948944232433,
+    "school_full_cost_bn": 45.444947295400794,
+    "band_end_specs_bn": 0.8149316052086419,
+    "sept26_schools_bn": 291.95477332385275,
+    "change_bn": 46.259878900609436,
+    "school_line_bn": 172.47476041786734
+   }
+  },
+  "a": {
+   "G1": {
+    "low": {
+     "sept26_bn": 63.85159490667052,
+     "school_full_cost_bn": 13.975666651011444,
+     "band_end_specs_bn": -0.18148142589454608,
+     "sept26_schools_bn": 77.64578013178742,
+     "change_bn": 13.794185225116898,
+     "school_line_bn": 33.22310815517299
+    },
+    "high": {
+     "sept26_bn": 52.989847582983195,
+     "school_full_cost_bn": 3.8826184738695204,
+     "band_end_specs_bn": 0.04023043907109525,
+     "sept26_schools_bn": 56.91269649592381,
+     "change_bn": 3.9228489129406157,
+     "school_line_bn": 14.735492742939229
+    }
+   },
+   "G2": {
+    "low": {
+     "sept26_bn": 82.12129992239315,
+     "school_full_cost_bn": 23.199304196698606,
+     "band_end_specs_bn": -0.32133639268059255,
+     "sept26_schools_bn": 104.99926772641116,
+     "change_bn": 22.877967804018013,
+     "school_line_bn": 55.1496405644374
+    },
+    "high": {
+     "sept26_bn": 95.47435570088533,
+     "school_full_cost_bn": 21.57864716382423,
+     "band_end_specs_bn": 0.4060138528804629,
+     "sept26_schools_bn": 117.45901671759002,
+     "change_bn": 21.984661016704692,
+     "school_line_bn": 81.89627717092637
+    }
+   },
+   "G3plus": {
+    "low": {
+     "sept26_bn": 54.94512198400584,
+     "school_full_cost_bn": 21.18361154747842,
+     "band_end_specs_bn": -0.28528601395262854,
+     "sept26_schools_bn": 75.84344751753163,
+     "change_bn": 20.898325533525792,
+     "school_line_bn": 50.357913875121795
+    },
+    "high": {
+     "sept26_bn": 97.23069113937608,
+     "school_full_cost_bn": 19.98368165770691,
+     "band_end_specs_bn": 0.368687313257098,
+     "sept26_schools_bn": 117.58306011034009,
+     "change_bn": 20.352368970964008,
+     "school_line_bn": 75.84299050400162
+    }
+   }
+  },
+  "b": {
+   "G1": {
+    "low": {
+     "sept26_bn": 110.62011255967477,
+     "school_full_cost_bn": 25.292843952768067,
+     "band_end_specs_bn": -0.34851551327554375,
+     "sept26_schools_bn": 135.5644409991673,
+     "change_bn": 24.944328439492523,
+     "school_line_bn": 60.126426250579655
+    },
+    "high": {
+     "sept26_bn": 134.89839194078752,
+     "school_full_cost_bn": 20.114096461669163,
+     "band_end_specs_bn": 0.3692143208392622,
+     "sept26_schools_bn": 155.38170272329594,
+     "change_bn": 20.483310782508426,
+     "school_line_bn": 76.33794678422618
+    }
+   },
+   "G2": {
+    "low": {
+     "sept26_bn": 50.64122931035419,
+     "school_full_cost_bn": 17.49920771212723,
+     "band_end_specs_bn": -0.23547577770050054,
+     "sept26_schools_bn": 67.90496124478092,
+     "change_bn": 17.26373193442673,
+     "school_line_bn": 41.59930863890233
+    },
+    "high": {
+     "sept26_bn": 53.15662383147473,
+     "school_full_cost_bn": 12.677338074545133,
+     "band_end_specs_bn": 0.22288169676886582,
+     "sept26_schools_bn": 66.05684360278873,
+     "change_bn": 12.900219771314,
+     "school_line_bn": 48.11361828479376
+    }
+   },
+   "G3plus": {
+    "low": {
+     "sept26_bn": 39.65667494304053,
+     "school_full_cost_bn": 15.566530730293195,
+     "band_end_specs_bn": -0.20411254155172287,
+     "sept26_schools_bn": 55.019093131782,
+     "change_bn": 15.362418188741472,
+     "school_line_bn": 37.00492770525022
+    },
+    "high": {
+     "sept26_bn": 57.63987865098243,
+     "school_full_cost_bn": 12.653512759186377,
+     "band_end_specs_bn": 0.22283558760051392,
+     "sept26_schools_bn": 70.51622699776932,
+     "change_bn": 12.87634834678689,
+     "school_line_bn": 48.023195348847295
+    }
+   }
+  }
+ },
+ "band_end_ties": {
+  "low": [
+   48,
+   52
+  ],
+  "high": [
+   11,
+   15
+  ],
+  "picked": {
+   "low": 48,
+   "high": 11
+  },
+  "rule": "at one school response the growth and decline specifications are identical; indexOf takes the first (growth)"
  }
 }
