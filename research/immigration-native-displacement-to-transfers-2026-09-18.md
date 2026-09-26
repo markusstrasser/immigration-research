@@ -935,3 +935,12 @@ rather than two thirds. With it the household SSI response is −0.28 (SE 0.06) 
 the public-assistance association in the table above should be read as not surviving a cleaner
 instrument. Employment and participation were not testable at the 2000 endpoint. Ladder 182,
 [lane](../infra/immigration-fiscal/ancestry_instrument_2026_09_22/RESULT.md).
+
+## Revisions — September 25, 2026
+
+The September 22 entry calls the ancestry push-pull prediction a cleaner instrument. Ladder 199
+(September 23) showed it is a same-decade pull whose first stage is fragile to geography (F 29.6
+on fixed boundaries, 5.5 with Los Angeles), and its 2000–2010 outcomes are all-household rates:
+adding lower-receipt immigrants can lower them while native receipt rises. Its rows are
+diagnostics. This memo's negative claim rests on its own natives-only evidence, not on that
+window. [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).
