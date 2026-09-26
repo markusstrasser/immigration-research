@@ -243,6 +243,56 @@ def test_gate_stops_on_an_allocated_row_off_the_counterfactual():
         wl.check_sister_counterfactuals(bad)
 
 
+def test_role_only_lane_keeps_its_allocatable_rows_out_of_the_nets(tmp_path):
+    """Under a case with a school response of 1 the school dilution rows stay in the role table."""
+    d = frame()
+    lane = tmp_path / "school_lane"
+    write_rows(lane, [
+        row("other_residents_pupils", "dilution", "loss", 1.0, key="public_school_pupils",
+            cf="group's pupils absent; school spending responds at the account's 0.63-0.66"),
+        row("other_residents_pupils:region=West", "dilution", "loss", 1.0, relation="overlaps:dilution"),
+        row("taxpayers", "unfunded instruction", "gain", 2.0, relation="inside"),
+    ])
+    lanes = {str(lane): "t"}
+    tbl, amounts = wl.ingest_sisters(d, context(d), wl.load_key_map(), lanes)
+    assert list(tbl.status) == ["allocated", "role_only", "role_only"]
+    tbl, amounts = wl.ingest_sisters(d, context(d), wl.load_key_map(), lanes,
+                                     role_only={str(lane): wl.SCHOOL_DILUTION_ROLE_ONLY})
+    assert list(tbl.status) == ["role_only"] * 3 and amounts == {}
+    assert tbl.note.iloc[0] == wl.SCHOOL_DILUTION_ROLE_ONLY
+    assert "inside the account" in tbl.note.iloc[2]   # rows kept out for their own reason keep it
+
+
+def test_role_only_lanes_follow_the_school_response():
+    wl.configure("sept26_schools")
+    at = lambda school: {wl.CASE["model"]: dict(specs=pd.DataFrame(dict(school=school)))}  # noqa: E731
+    assert wl.role_only_lanes(at([1, 1, 1])) == {"school_dilution_2026_09_24": wl.SCHOOL_DILUTION_ROLE_ONLY}
+    assert wl.role_only_lanes(at([0.6522, 0.6813])) == {}
+    assert "lower-response scenarios only" in wl.SCHOOL_DILUTION_ROLE_ONLY
+
+
+def test_cases_chain_and_configure(tmp_path):
+    for case in wl.RUNNABLE:
+        c = wl.CASES[case]
+        assert c["prev"] in wl.CASES and wl.CASES[c["prev"]]["model"] != c["model"]
+        assert c["consumption_proposal"] == (case == "sept24")   # inside the fiscal channel from Sept 26 on
+    assert wl.DEFAULT_CASE == "sept26_schools" and wl.CASES["sept26_schools"]["prev"] == "sept26"
+    assert len({wl.CASES[c]["model"] for c in wl.CASES}) == len(wl.CASES)
+    # sept24 reads the paths it committed with; a later case its own lane, published totals and out-dir.
+    wl.configure("sept24")
+    assert wl.PATHS["bands"] == wl.FISCAL / "main_case_2026_09_24/derived/main_case_bands.csv"
+    assert wl.PATHS["real_costs"] == wl.FISCAL / "sept24_propagation_2026_09_24/derived/real_costs_totals.csv"
+    assert wl.PATHS["specs"] == wl.HERE / "derived" / "fiscal_specs.csv"
+    assert wl.PINNED == {"generations": wl.GEN24_COMMIT, "debt_corrections": wl.DEBT24_FILES_COMMIT}
+    assert wl.CASE["prev"]["case"] == "sept23" and wl.CASE["prev"]["base"] == wl.SEPT23_COMMIT
+    wl.configure("sept26_schools", tmp_path)
+    assert wl.PATHS["bands"] == wl.FISCAL / "main_case_schools_full_2026_09_26/derived/main_case_bands.csv"
+    assert wl.PATHS["real_costs"] == wl.FISCAL / "sept26_propagation_2026_09_26/derived/real_costs_totals.csv"
+    assert wl.PATHS["specs"] == tmp_path.resolve() / "fiscal_specs.csv" and wl.DERIVED == tmp_path.resolve()
+    assert wl.PINNED == {"generations": wl.GEN26S_COMMIT, "debt_corrections": wl.DEBT26S_COMMIT}
+    assert wl.CASE["prev"]["debt"] == wl.DEBT26_COMMIT and wl.CASE["prev"]["base"] == wl.BASE26_COMMIT
+
+
 def test_spm_pooling_keeps_totals_and_leaves_group_members_out():
     d = frame()
     d["target"] = ~d.other
