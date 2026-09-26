@@ -49,7 +49,7 @@ residents** ($258.5–292.0bn; [lane](../infra/immigration-fiscal/main_case_scho
 [decision](../decisions/2026-09-26-main-case-schools-full-cost.md), ladder 230). Schools are charged at
 their full average cost per pupil: across districts and states spending rises about 1% per 1% more
 pupils (1.004 pupil-weighted across 2019 districts, 0.973 across states). The within-district 0.836
-gives the low side, $233.9–269.6bn. CBO's year-to-year 0.63–0.66 is kept as the one-year budget
+gives the low side, $233.9–269.6bn. A return on the capital schools tie up, which BEA's line leaves out (it carries depreciation only), would add $9.5bn a year at a 2% real rate or $14.3bn at 3%, before land: $268.0–301.5bn or $272.8–306.2bn. That is proposed, not adopted ([lane](../infra/immigration-fiscal/school_capital_return_2026_09_26/RESULT.md), ladder 231). CBO's year-to-year 0.63–0.66 is kept as the one-year budget
 scenario, $200.9–245.7bn ([lane](../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md),
 [decision](../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md), ladder 229). That
 scenario is the September 24 case ($200.9–246.3bn; [lane](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md),
