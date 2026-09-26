@@ -115,3 +115,28 @@ My main judgment is that **the weakest links now sit between models**. A budget 
 The same discipline applies to absence claims. A mechanism the model does not permit to change cannot be found unimportant; an outcome that was not observed cannot be bounded by detected cases; a weak policy intervention cannot settle the effects of a large existing stock. Conversely, finding one such gap does not identify the opposite effect or justify filling it with a preferred number. [INFERENCE]
 
 Priority should follow the claims at risk: first repair the ancestry design and native outcome, correct the off-books population and return-selection interpretation, and withdraw the legal-status and voting overclaims. Next test school output and gross incidence directly. Keep debt financing separate until its welfare bridge exists. The most useful new research would discriminate among these mechanisms; another layer of arithmetic reconciliation would leave them unresolved. [RECOMMENDATION]
+
+## Revisions
+
+- 2026-09-25/26 (second review; [decision](../decisions/2026-09-25-weekly-audit-corrections.md)):
+  every confirmed finding held when traced to the code and text, and each is now carried into the
+  affected lane results, memos, ladder entries and index rows as a dated qualification. Amendments
+  to this memo:
+  - **§1 was not new.** Ladder 199 (September 23) diagnosed the same-decade pull and named the same
+    successor design. What was still open: the lane result, ladder 183 and the index carried the old
+    reading, and "no native take-up" rested on all-household outcomes.
+  - **§4 is understated.** Under statutory senior eligibility, a new arm in the lineage lane,
+    legalising at year ten widens the century gap by $417,886 (−$854,686 to −$1,272,572). The sign
+    of legalisation's effect reverses; it does not merely become uncertain.
+  - **§7 is understated.** Iowa's 2nd district in 2020 was decided by 6 of 394,625 votes
+    (0.0015%), below the voting note's own 0.006% ceiling; the note's revision lists the certified
+    margins.
+  - **§2's range point is minor.** The published 14–30% already spans the elasticity sensitivity;
+    the enumerated maximum is 30.5%.
+  - **§8.** The counterfactual mismatch is the reason to keep the debt line separate. The transfer
+    argument does not shrink it: displaced capital's lost return is at least the interest, and
+    foreign-held interest leaves the country. [INFERENCE]
+  - **Finite removal.** Sized at component level, general government moves to 0.600/0.850, not
+    0.605, and most of the correction comes from the school response, which this memo did not
+    flag: $205.0–249.7bn, +$4.1bn / +$3.4bn, proposed (ladder 227,
+    [lane](../infra/immigration-fiscal/finite_response_2026_09_26/RESULT.md)).
