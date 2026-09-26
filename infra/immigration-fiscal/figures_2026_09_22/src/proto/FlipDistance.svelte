@@ -127,7 +127,7 @@
             {/if}
           {/if}
 
-          <text class="num" x={t1 + 14} y={mid + 4} font-size="12" fill={row.flipsInRange ? '#2f5f8f' : '#111'}>{verdict(row)}</text>
+          <text class="num" x={t1 + 14} y={mid + 4} font-size="12" style:fill={row.flipsInRange ? '#2f5f8f' : '#111'}>{verdict(row)}</text>
         {/each}
       {/each}
       <text class="faint it" x={tx(d.services[0], d.services[0].main[1]) + 6} y={layout[0].rows[0].y + 5} font-size="10.5">main case</text>
