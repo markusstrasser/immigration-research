@@ -3,7 +3,9 @@
 Date: 2026-09-22. [DATA / CALCULATION] Calculation record on Mexico's national demographic
 survey; narrative authorship remains operator-owned.
 
-**Verdict:** Mexico-born adults aged 20–64 who lived in the United States five years before
+**Verdict:** [2026-09-25: "negatively selected" in the title is relative to adults who never left
+Mexico; relative to emigrants who stay in the US the sign is not measured. See §4 and Revisions.]
+Mexico-born adults aged 20–64 who lived in the United States five years before
 the survey and in Mexico at the survey hold about one year less schooling than Mexico-born
 adults who stayed in Mexico: **−1.22 ± 0.18 years in 2018 and −1.03 ± 0.20 in 2023**, with
 a tertiary deficit of **13.8 ± 1.5 and 12.3 ± 1.8 points**. The whole effect is male
@@ -61,6 +63,12 @@ departure 33.3 vs 30.6 in 2018, 35.9 vs 30.5 in 2023) and are more male (74% vs 
 
 ## 4. What it settles for the repo's assumptions
 
+[2026-09-25: all three bullets compare returnees with adults who never left Mexico. Whether exit
+raises or lowers the schooling of the Mexico-born who remain in the US depends on returnees against
+emigrants who stay, which ENADID does not observe; if stayers have less schooling than returnees,
+return migration lowers the US mean. The sign for the US resident stock is not established. See
+Revisions.]
+
 - **Return selection on education.** Supported for longer-stay returns, the movement a
   resident-stock account treats as exit: about one year of schooling, a 12–14 point
   tertiary deficit, men only. Not supported for short circular moves, where selection is
@@ -102,3 +110,11 @@ gates in `derived/audit.json`, `test_enadid_selectivity.py` (23 tests)]
 ## Revisions
 
 - 2026-09-22: created. Ladder 174.
+
+- 2026-09-25 (weekly audit §6): the comparison group is Mexico non-migrants, so the memo supports
+  "returnees have less schooling than people who never left" and nothing about returnees against
+  emigrants who stay in the US. §4's readings for the US resident stock, arrival-cohort education
+  and lifetime exit are withdrawn as stated; the descriptive result stands. The discriminating
+  test compares ENADID returnees with ACS Mexico-born men of the same ages and arrival windows who
+  are still in the US, on harmonized schooling.
+  [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).

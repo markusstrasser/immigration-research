@@ -182,7 +182,9 @@ between returnees and non-migrants.
 
 ## What this does and does not settle for the two assumptions
 
-**Assumption 1: return migration is negatively selected on education.** Supported for the
+**Assumption 1: return migration is negatively selected on education.** [2026-09-25: against
+adults who never left Mexico only; for the US resident stock the comparison is with emigrants who
+stay in the US, which ENADID does not observe. See Revisions.] Supported for the
 endpoint definition, which is the one the lineage and lifetime work implicitly uses when it
 treats attrition as a loss from the resident stock. The magnitude is roughly one year of
 schooling and a 12-to-14-point tertiary deficit, and it is a male result. It is not supported
@@ -192,7 +194,9 @@ wrong sign to one of them. [FRAMING-SENSITIVE]
 
 **Assumption 2: rising education of recent Mexico-born arrivals in US surveys is not an
 artefact of return selection.** ENADID cannot settle this, and the honest statement of what
-it contributes is narrow. The direction is as the concern supposes: because departers who
+it contributes is narrow. [2026-09-25: the next sentence is withdrawn: the lane compares
+returnees with Mexico non-migrants, not with emigrants who stay away, so the direction is not
+established.] The direction is as the concern supposes: because departers who
 come back are less educated than those who stay away, a US survey of people still present
 will over-state the education of an arrival cohort relative to the cohort as it departed.
 ENADID cannot size that bias, because the departure cohort's schooling is unmeasured. It
@@ -235,3 +239,12 @@ memo, not from ENADID]
 - **Instrument bias.** The measurement here is arithmetic on public microdata and is not
   subject to the model's dispositions in the way a synthesis would be; the framing of which
   comparison matters is not, and is flagged above [see notes/llm-bias-caveat.md].
+
+## Revisions
+
+- 2026-09-25 (weekly conceptual audit §6): every comparison here is returnees against Mexico
+  non-migrants. The lifetime and arrival-cohort questions need returnees against emigrants who
+  stay in the US, and if those stayers have less schooling than returnees, return migration
+  lowers the US mean. Assumption 1 holds only against non-migrants and the direction claimed under
+  Assumption 2 is withdrawn; the descriptive estimates stand.
+  [Decision](../../../decisions/2026-09-25-weekly-audit-corrections.md).
