@@ -2,6 +2,9 @@
 
 Date: 2026-09-20. [MODEL / FRAMING-SENSITIVE] Calculation record; narrative authorship remains operator-owned.
 
+**Adopted main case (2026-09-26, schools at full average cost):** on the $258–292bn anchor (group receipts $492.5bn, shared allocation, after the consumption key), the whole-budget rules give **$2.2–2.8tn over 2015–2024, $3.2–4.2tn over 2010–2024 and $3.9–5.2tn over 2005–2024**. The programme-by-programme version in the debt legacy lane gives $2.47–2.75tn, $3.50–3.89tn and $4.21–4.72tn. The one-year scenario ($201–246bn) gives $1.7–2.4tn, $2.5–3.6tn and $3.0–4.5tn, the September 24 figures at rounding.
+[CALCULATION: `backcast.py` → `derived/backcast_windows.csv`, concepts `*_schools_full_*`, c0297e4; `debt_legacy_2026_09_23/derived/adopted_backcast_windows.csv`, 1db19c8]
+
 **Adopted main case (2026-09-24):** on the $201–246bn anchor, with the data corrections that lower the
 group's receipts to $488.5bn (shared allocation; before them $545.1bn), the whole-budget rules give
 **$1.7–2.4tn over 2015–2024, $2.5–3.6tn over 2010–2024 and $3.0–4.5tn over 2005–2024**. The
@@ -165,6 +168,8 @@ income series. The repository holds 2022–2026 only.
 series and each assumption are separately inspectable.
 
 ## Revisions
+
+2026-09-26, later: the main case charges schools at their full average cost ([decision](../decisions/2026-09-26-main-case-schools-full-cost.md)). On that anchor the whole-budget rules give $2.2–2.8tn over ten years, up from $1.7–2.4tn, and the programme version gives $2.47–2.75tn. Concept affected: the cumulative figure's anchor.
 
 2026-09-21: added the programme-by-programme version and the 2020–2021 sensitivity. The
 coarse totals are unchanged; the combined range widens slightly to $1.3–2.2tn, $2.0–3.3tn

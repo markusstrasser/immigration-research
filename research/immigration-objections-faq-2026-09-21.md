@@ -251,7 +251,7 @@ Medicare were 42–47% smaller in 2005, refundable credits were 4.4 times their 
 2021, police, courts and prisons were flat. Carrying the 2024 position back on those series
 gives about $1.3–2.2tn over ten years, $2.0–3.3tn over fifteen and $2.4–3.9tn over twenty on
 the September 20 anchor, and $1.7–2.4tn, $2.5–3.6tn and $3.0–4.5tn on the adopted September 24 one
-(whole-budget rules only; September 23: $1.7–2.5tn, $2.5–3.7tn and $3.0–4.6tn);
+(whole-budget rules only; September 23: $1.7–2.5tn, $2.5–3.7tn and $3.0–4.6tn) [2026-09-26, later: $2.2–2.8tn, $3.2–4.2tn and $3.9–5.2tn on the main case with schools at full cost, $258–292bn; the one-year scenario matches September 24 at rounding];
 2020–2021 supply 29–39% of the ten-year figure where the rules follow the benefit spike, and are probably over-attributed. The
 group's own programme use in earlier years is unmeasured. [SOURCE: [back-cast](immigration-historical-backcast-2026-09-20.md)]
 
@@ -494,6 +494,8 @@ prior, which is also where errors concentrate; surprising results need more chec
 they get more prominence.
 
 ## Revisions
+
+- 2026-09-26, late (back-cast on the schools case): entry 8's cumulative figures gain the schools-case anchor, $2.2–2.8tn over ten years. Concept affected: the back-cast's 2024 anchor.
 
 - 2026-09-26, late (generation split on the schools case): entry 5 quotes the split on the main
   case with schools at full average cost. Every generation is still a net cost; the per-adult
