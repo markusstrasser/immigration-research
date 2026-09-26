@@ -123,3 +123,118 @@ real-costs totals depend on W1's and W2's outputs. They follow in a second round
 - RESULT style: lead with the outcome in plain words; short paragraphs; tables with units; a
   model self-report line with the exact model id.
 - Final message: the RESULT path and at most ten lines.
+
+## Round 2 (dispatched after W1 and W2 are committed)
+
+**W4, `ledger`**, in this order:
+
+1. `../sept24_propagation_2026_09_24/band_variants.cjs` and `real_costs_totals.py`. Add a case
+   parameter; do not copy the scripts. The September 24 outputs must reproduce byte for byte. Write
+   the September 26 outputs to this directory's `derived/`: `band_variants.*` from the September 26
+   payload and responses, then `real_costs_totals.*`.
+2. `../winners_losers_2026_09_24/` (`specs.cjs`, `winners_losers.py`), then the rows it reads from
+   `../compliance_gap_2026_09_24/` and `../vending_restaurants_2026_09_24/`.
+   - The lane pins its inputs at commits (`BASE_COMMIT`, `DEBT24_COMMIT`). Add September 26 pins at
+     the commits that hold W1's distribution and debt-legacy runs; the parent gives them in the
+     dispatch.
+   - `specs.cjs` copies the package's grid. Its import race is fixed (e5e23ec), so it may import
+     `../main_case_2026_09_26/package.cjs`.
+   - The consumption key is now inside the adopted case. Its channel moves from "proposed" to the
+     fiscal channel. Keep the September 24 run reproducible.
+
+**Update, 23:15: schools at full cost.** At 22:39 JST the operator adopted schools at full average
+cost (`../main_case_schools_full_2026_09_26/`, $258.4885–291.9548bn; decision
+`../../../decisions/2026-09-26-main-case-schools-full-cost.md`). The September 26 case above is now
+the one-year scenario.
+- Every consumer takes a case `sept26_schools` → that lane's `package.cjs`, `corrections.json` and
+  `derived/`, as its **default**, and keeps `sept26` and `sept24` reproducible.
+- The payload's edits equal September 26's; only `meta.responses.school` changes, to 1/1.
+- The uncorrected-model gate is that lane's `uncorrected_at_adopted_responses`
+  ($265.5903–298.6797bn).
+- The union's range ends move to specifications 48 and 11: the school-share bound flips when schools
+  respond at 1. A bridge from an earlier case runs at matched specifications first, then adds one
+  "range ends move" term.
+- W4 targets `sept26_schools`.
+- W5 is dropped: the operator said "we don't have to update all the uis ... we're still
+  researching", so the figures page, prototypes and explorer stay on earlier cases.
+
+**W5, `figures`** (dropped 23:15, see above): `../figures_2026_09_22/` (`build_data.cjs`,
+`account.cjs`, the Svelte sources, `dist/`).
+
+- `build_data.cjs` reads the September 26 payload and `meta.responses`; no hand-typed 0.59/0.84 or
+  0.63/0.66 stays in a computation.
+- Labels that print a response ("General administration, 0.59–0.84") show the adopted values.
+- The staircase gains the September 26 step in the existing grammar (README "Visual grammar"). The
+  number line's corrections range becomes $164–277bn.
+- Every gate passes. Rebuild, then screenshot every changed figure at 1400 and 390 px. Scroll each
+  section into a tall viewport; the `#id` crop blanks sections below the fold.
+
+## W4 `ledger`, dispatched 2026-09-26 23:35: work order
+
+Target case: **`sept26_schools`** (`../main_case_schools_full_2026_09_26/`: `package.cjs`,
+`derived/corrections.json` with school 1/1 in `meta.responses`, `derived/main_case_bands.csv`,
+`derived/summary.json`). Keep **`sept26`** (`../main_case_2026_09_26/`, the one-year scenario) and
+**`sept24`** runnable. `sept24` must reproduce the committed files byte for byte.
+
+Committed state to build on:
+- Sept 26 consumer runs: back-cast f5b4aae, distribution f697514, uncertainty 1d14940, debt legacy
+  e62fccb.
+- The explorer is on Sept 26 (b84629e).
+- Figures pages are pinned at Sept 24 (fef4d12); stay out of `../figures_2026_09_22/`.
+- W1 (`lanes`) and W2 (`generation`) are now adding `sept26_schools` as their default. The parent
+  commits them and sends you the commit hashes before your step 2 pins them.
+
+**Step 1: now.** In `../sept24_propagation_2026_09_24/`:
+- **`band_variants.cjs`.** Add a case parameter; do not copy the script. The case chooses the
+  package (`main_case_2026_09_24`, `main_case_2026_09_26` or `main_case_schools_full_2026_09_26`),
+  its payload and its responses. Every package already exposes `cost`, `MAIN_SPECS` and `specsFor`.
+- **`real_costs_totals.py`.** Add the same parameter. §7 pairs the fiscal band with the social rows;
+  §7b carries care and mobility. Under the schools case the fiscal row is $258.4885–291.9548bn.
+- **`constant_choices.py`.** Add `--case sept24` so it reproduces its committed outputs. Where it
+  zeroes `row8`, it must also zero the finite-removal row-8 piece (`row8_finite`, −$0.10bn) on the
+  Sept 26 cases.
+
+Default output paths: `sept24` → `../sept24_propagation_2026_09_24/derived/` (unchanged). The
+default `sept26_schools` → this directory's `derived/`. `sept26` → `--out-dir DIR` only.
+
+Gates:
+- the `sept24` rerun reproduces every committed file byte for byte;
+- the schools-case bands reproduce the lane's `main_case_bands.csv` (1e-4);
+- the variants gate against their own case;
+- two runs are byte-identical.
+
+**Step 2: after the parent's pin message.** `../winners_losers_2026_09_24/` (`specs.cjs`,
+`winners_losers.py`, `test_winners_losers.py`), then the rows it reads from
+`../compliance_gap_2026_09_24/` and `../vending_restaurants_2026_09_24/`.
+
+1. **First, fix the unpinned read.** `PATHS["debt_corrections"]` reads
+   `debt_legacy_2026_09_23/derived/corrections_federal_by_component_2024.csv` from the working tree.
+   Since e62fccb that file holds the Sept 26 case, so `per_correction_check` fails. Read it through
+   `git_show` at the pinned commit, as the other debt inputs are read. Then run the regression gate:
+   the `sept24` rerun reproduces every committed file.
+2. **Add `--case sept26_schools` as the default**, plus `sept24` (reproducible) and `sept26` if it
+   costs one row of pins. Add pins in the lane's style (`BASE26S_COMMIT`, `DEBT26S_COMMIT`,
+   `GEN26S_COMMIT`) at the hashes the parent sends. `specs.cjs` may import the case's `package.cjs`
+   now (import race fixed in e5e23ec); keep its band gates.
+3. **The consumption key** (ladder 225) is inside the adopted case from Sept 26 on. The
+   `consumption_proposal` registry row applies only to `sept24`; under the later cases the key sits
+   in the fiscal channel.
+4. **School dilution** (sister row `school_dilution`, $16.1bn beside) prices school cost left
+   unfunded at a response below 1. Under `sept26_schools` nothing is unfunded. The row leaves the
+   main case's nets and moves to the role table, labelled "applies to the lower-response scenarios
+   only" (decision `2026-09-26-main-case-schools-full-cost`, bullet "School dilution").
+5. **Compliance and vending rows.** Rerun each lane's row builder if it depends on the case. If it
+   doesn't, show that and leave its files alone.
+6. **Gates.**
+   - Under each case, the generations add to that case's band (1e-3).
+   - The fiscal channel's A is taken from the distribution lane's `fiscal_totals(<case>)` at the
+     pinned commit.
+   - The ledger's regression tests keep passing and gain the new case.
+   - Two runs are byte-identical.
+
+Report old → new for every published number (Sept 24 → schools case, and the one-year scenario where
+computed), with the file that holds each. Boundaries as in round 1:
+- edit only the directories named above plus `RESULT_ledger.md` here;
+- no git writes;
+- stub the RESULT first with `**Verdict:** pending`;
+- final message: the RESULT path and at most ten lines.
