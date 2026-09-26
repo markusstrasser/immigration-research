@@ -1,0 +1,45 @@
+{
+ "b_admin": 0.842,
+ "b_fin": 0.789,
+ "b_all": 0.962,
+ "composition_bn": {
+  "federal_executive_legislative": 137.887,
+  "federal_tax_financial": 36.588,
+  "federal_other": 0.0,
+  "state_local_executive_legislative": 54.93299999999999,
+  "state_local_tax_financial": 77.72899999999998,
+  "state_local_other": 168.676
+ },
+ "total_bn": 475.813,
+ "state_local_bn": 301.33799999999997,
+ "federal_tax_bn": 36.588,
+ "gg_low_b_unrounded": 0.5939193086359557,
+ "gg_high_b": 0.842,
+ "engine_gg_stored": [
+  0.59,
+  0.84
+ ],
+ "gps_line": {
+  "national_bn": 401.608,
+  "target_full_response_bn": 48.291269414
+ },
+ "s_national_memo": 0.12024478903339636,
+ "gg_low_r_national_memo": 0.6000461560720316,
+ "gg_high_r_national_memo": 0.8503957662020014,
+ "row8_factor_national_memo": 0.9491629658844111,
+ "s_engine_population_key": 0.121452918,
+ "gg_low_r_engine_population_key": 0.6001108876220853,
+ "gg_high_r_engine_population_key": 0.8504844425559689,
+ "row8_factor_engine_population_key": 0.9486249796797335,
+ "s_pupil": 0.17480600215120404,
+ "pupils": {
+  "target": 8487011.218792627,
+  "national": 48551028.65090133
+ },
+ "school_r_0.63": 0.6521912444554522,
+ "school_r_0.63_s0.16": 0.6501554980474826,
+ "school_r_0.63_s0.18": 0.6529130985648501,
+ "school_r_0.66": 0.6813221954785698,
+ "school_r_0.66_s0.16": 0.6793695835120502,
+ "school_r_0.66_s0.18": 0.6820144048194853
+}

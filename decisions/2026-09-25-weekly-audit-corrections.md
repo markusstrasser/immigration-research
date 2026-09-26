@@ -72,7 +72,9 @@ precision, and the transfer argument against the debt line).
   The published 14–30% stacks the dollar extremes; the enumerated maximum is 30.5%.
 - **Service response (general government 0.59–0.84):** cross-state elasticities are used as
   finite-removal responses. The correction is sized separately and proposed, not adopted; changes
-  to the headline stay with the operator.
+  to the headline stay with the operator. Sized on 2026-09-26 (ladder 227,
+  `finite_response_2026_09_26`): $205.0–249.7bn, +$4.1bn / +$3.4bn, mostly because CBO's school
+  coefficients are first-order elasticities too.
 
 ## Evidence
 

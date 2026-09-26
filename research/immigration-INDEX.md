@@ -242,6 +242,12 @@ households at each income rank spend (CE 2024), net of remittances, the group pa
 $1,198bn of consumption-keyed receipts, and the main case would be **$196.8–242.3bn** (−$4.1bn;
 −$2.6bn to −$8.4bn across variants; proposed). CBO's excise distribution, ITEP's gradient and
 Mexican-origin CE units all support the direction.
+Finite removal (ladder 227, September 26): the main case uses cross-state elasticities (general
+government 0.59–0.84) and CBO's first-order school coefficients (0.63–0.66) as the share of average
+cost a removal saves. Read as a power law over a removal of 12% of residents and 17.5% of pupils,
+they give **$205.0–249.7bn** (+$4.1bn / +$3.4bn, mostly schools; proposed). Under a fixed cost
+plus a constant marginal cost nothing changes
+([lane](../infra/immigration-fiscal/finite_response_2026_09_26/RESULT.md)).
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): seventeen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,

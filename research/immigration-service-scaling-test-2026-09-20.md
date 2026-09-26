@@ -178,3 +178,12 @@ scores are not all independently re-estimated by the second verifier. Raw inputs
 remain unchanged; generated outputs are ignored. [INSTRUMENT] LLM-assisted design
 and interpretation can favor a construction; all prespecified estimates, competing
 weights and disconfirming prediction scores are retained.
+
+## Revisions
+
+- 2026-09-26: the adopted main case applies the cross-state elasticities (general government
+  0.59–0.84) and CBO's first-order school coefficients (0.63–0.66) as removal responses, where this
+  memo's power-law derivation gives r = [1 − (1 − s)^b] / s. Sized in
+  [finite_response_2026_09_26](../infra/immigration-fiscal/finite_response_2026_09_26/RESULT.md)
+  (ladder 227): $205.0–249.7bn against the adopted $200.9–246.3bn, mostly schools; proposed, not
+  adopted. [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).
