@@ -37,7 +37,7 @@
     <p class="kicker">Complete account and the costs beside it · by income percentile</p>
     <h2>Paid by taxes, everyone loses. Paid by service cuts, the richest {aheadPct}% gain.</h2>
     <p class="lede">
-      Line up everyone else in the US, the 296 million people outside the Mexican-origin population,
+      Line up everyone else in the US, the 296 million people in households outside the Mexican-origin population,
       from poorest to richest, and split them into 100 equal groups. Each dot is one group: how many
       dollars a year its average member gains or loses, counting the cost to government and the costs we
       price outside it (wages, rents, crime, hospital care). The government cost has to be paid somehow,

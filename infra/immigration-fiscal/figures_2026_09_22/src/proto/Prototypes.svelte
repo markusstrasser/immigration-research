@@ -12,7 +12,7 @@
 <main>
   <p class="kicker">Prototypes · not linked from the figures page</p>
   <h1>Is it costly under every sane assumption?</h1>
-  <p class="subtitle">Five ways of showing it, with the staircase from the figures page first for comparison.</p>
+  <p class="subtitle">Eight ways of showing it, with the staircase from the figures page first for comparison.</p>
   <nav>
     <a href="#staircase">Staircase</a>
     <a href="#flip">Distance to flip</a>
