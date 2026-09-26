@@ -78,7 +78,10 @@ spending rises 1.004% per 1% more pupils (pupil-weighted) and across states 0.97
 year-to-year 63–66% is kept as a one-year budget scenario ($201–246bn), and the within-district
 0.836 gives the low side ($234–270bn) ([decision](../decisions/2026-09-26-main-case-schools-full-cost.md)). General public services were also held at zero until September 23. The main case
 now lets them grow at 0.59–0.84 of the population, which adds $27.8–39.5bn on the corrected data
-of September 24 ($28.5–40.6bn before the corrections). That range is the
+of September 24 ($28.5–40.6bn before the corrections). [2026-09-26: read as the removal of a group
+that is 12% of residents, those rates save 0.60–0.85 of average cost, so general government now adds
+$28.3–40.0bn (+$0.47bn / +$0.49bn; [finite removal](../infra/immigration-fiscal/finite_response_2026_09_26/RESULT.md),
+run C). The schools case leaves that figure unchanged.] That range is the
 cross-state scale of administration spending: 0.842 (SE 0.039) for state administration and
 0.789 for financial administration, with the low end holding the federal executive and
 legislature fixed. The only within-state test gave 0.47 with a 95% interval of −0.72 to 1.66,
@@ -413,7 +416,9 @@ are excluded entirely. CBO's June 2025 companion puts the surge's 2023 state and
 in deficit. Our account is the annual position of the resident Mexican-origin population of
 all ages and generations in income-year 2024, state and local services included, −$201 to
 −246bn in the main case adopted September 24 (−$203 to −250bn on September 23 and −$165 to −197bn
-as published September 20; entry 2). Where the two overlap they agree: a young
+as published September 20; entry 2). [2026-09-26: the main case is now −$258 to −292bn, with schools
+at full average cost per pupil. With CBO's year-to-year school response, the one-year scenario
+stays at −$201 to −246bn (entry 2).] Where the two overlap they agree: a young
 recent inflow is net positive on the measured items here too, +$3,495 per person for
 Mexico-born arrivals of 2016–2025 on the partial account and about break-even on the complete
 account (−$2,318; ladder 134; entry 9). A decade of a cohort's cheapest years cannot be netted
@@ -482,6 +487,12 @@ prior, which is also where errors concentrate; surprising results need more chec
 they get more prominence.
 
 ## Revisions
+
+- 2026-09-26, late (two entries still on earlier cases): entry 2 gives general government at the
+  adopted finite-removal responses, 0.60–0.85, adding $28.3–40.0bn instead of $27.8–39.5bn. Entry 16
+  compares CBO with the schools case, −$258 to −292bn, and names the one-year scenario. Concept
+  affected: the main case's general-government response and the CBO comparison; no conclusion
+  changes.
 
 - 2026-09-26, later (schools at full average cost): the main case is $258–292bn (ladder 230,
   [decision](../decisions/2026-09-26-main-case-schools-full-cost.md)). The anchors, the combining
