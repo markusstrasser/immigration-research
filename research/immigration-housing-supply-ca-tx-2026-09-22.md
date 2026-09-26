@@ -291,3 +291,7 @@ design on ACS PUMS (revealed moves, no reasons) is the next test.
   and neighborhood/crime slightly less often (1.47% against 1.90%). Concept affected: the motive
   behind §5's native out-migration, previously unattributed. Nothing in §1–7 changes; 25 derived
   files byte-identical on the parent's rerun.
+- **2026-09-25 (instrument qualified).** The causal leg's instrument (ladder 182) is a
+  same-decade pull (ladder 199), so ladder 183's rent and value coefficients are diagnostics,
+  not causal effects, and they no longer bound §4's mechanical-response arithmetic.
+  [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).

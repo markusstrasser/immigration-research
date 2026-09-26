@@ -125,3 +125,11 @@ displacement, ancestry-instrument and hedonic lanes' derived files and the Saiz 
 | `derived/county_housing_2000_2010.csv` | yes | 3,147 county rows, both endpoints |
 | `derived/metro_housing_panel.csv` | yes | 334 metros: outcomes, treatment, both instruments, Saiz elasticity where matched |
 | `derived/estimates.csv`, `derived/summary.json` | yes | every estimate; means and match counts |
+
+## Revisions
+
+- 2026-09-25: the instrument is ladder 182's same-decade pull, which ladder 199 diagnosed: it
+  allocates each origin's inflow by where immigrants from other continents settled in the same
+  decade, so a local boom that raises prices also raises the prediction. The rent and value rows
+  are diagnostics, not causal effects, and the inelastic-metro test inherits the same limit.
+  [Decision](../../../decisions/2026-09-25-weekly-audit-corrections.md).

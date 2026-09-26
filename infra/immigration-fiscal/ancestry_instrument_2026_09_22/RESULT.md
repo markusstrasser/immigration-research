@@ -1,6 +1,14 @@
 # A second instrument for the 2000–2010 inflow: the ancestry push-pull prediction
 
-**Verdict:** On the displacement lane's own 2000–2010 metro panel (334 metros of 100k+, all
+**Verdict:** [2026-09-25: qualified by ladder 199 (September 23) and the
+[weekly audit](../../../research/immigration-weekly-conceptual-audit-2026-09-25.md) §1.
+`predicted_inflow()` sums the file's same-decade push-pull terms, so the pull is each metro's
+2000s attraction for immigrants from other continents, which a local boom raises too. A strong
+first stage shows relevance, not exclusion, and on fixed geography the F is 29.6, or 5.5 with
+Los Angeles. "Stronger and cleaner" and "no native take-up" are withdrawn: the outcomes are
+all-household rates with no native split at 2000, and adding lower-receipt immigrants can lower
+them while native receipt rises. The coefficients stay as diagnostics; see Revisions.] On the
+displacement lane's own 2000–2010 metro panel (334 metros of 100k+, all
 foreign-born share, published ACS treatment, population weights), the public
 Burchardi–Chaney–Hassan predicted 2000–2010 arrivals aggregated to 2013 CBSAs are a
 **stronger and cleaner instrument than the pre-1990 settlement shift-share**: first-stage F
@@ -127,3 +135,11 @@ Gates: G1 reproduces the lane's 2000–2010 settlement first stage (n 334, 0.152
 | `derived/cbsa_predicted_inflow.csv` | yes | 2000s and 1990s predicted arrivals and 2010 predicted ancestry per CBSA, all origins and Mexico |
 | `derived/second_instrument.csv` | yes | 34 estimate rows, two outcomes |
 | `derived/summary.json` | yes | gate values and file counts |
+
+## Revisions
+
+- 2026-09-25: see the note under the verdict. Ladder 199 names the successor design: a
+  pre-determined ancestry stock (the file's pre-2000 waves) times 2000s national flows. A
+  native-specific outcome needs the PUMS 2000 build in Reading 4. Until both exist, no row here
+  identifies an effect of immigration on transfer receipt.
+  [Decision](../../../decisions/2026-09-25-weekly-audit-corrections.md).

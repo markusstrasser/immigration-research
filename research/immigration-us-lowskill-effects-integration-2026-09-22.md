@@ -318,3 +318,7 @@ tax, service or schooling line; the account remains the only stationary object i
   instead of proposing it; the displacement lane's public-assistance result is the one
   claim in the repo this reading changes, from a negative estimate to a null.
 - 2026-09-22 (evening): §3.3 and §7 record the executed 2000–2010 housing leg (ladder 183).
+- 2026-09-25: §2.3's second instrument is a same-decade pull (ladder 199) with all-household
+  outcomes, so "the displacement lane's negative claim stands at a smaller size" is withdrawn
+  as support from this run; ladder 183's housing leg carries the same limit.
+  [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).
