@@ -14,7 +14,8 @@ charges the group's pupils 63–66% of average spending, so $51–59bn a year of
 follows no one. The [dilution lane](../infra/immigration-fiscal/school_dilution_2026_09_24/RESULT.md)
 (ladder 222) finds most of it is instruction that did not keep pace, and prices that shortfall at
 about **$16bn a year** of other residents' pupils' present-value lifetime earnings (−$2bn to
-+$36bn across JM's contexts). It sits beside the account, is not added to any total, and changes
++$36bn across JM's contexts). [2026-09-25: conditional on an instructional dollar lost to enrollment
+growth costing as much learning as one removed by a spending cut; see Revisions.] It sits beside the account, is not added to any total, and changes
 the September 20 label only if the operator adopts the
 [proposed decision](../decisions/2026-09-25-school-dilution-priced-beside.md). Peer effects stay
 unpriced. Section "Priced from the account's own response" below gives the detail.
@@ -210,3 +211,9 @@ York City's weighted funding in 2022–24 kept spending up with arrivals; IRCA-e
   beside the account at about $16bn and kept out of every total; adding it to the fiscal-plus-social
   total (option 3) stays open ([decision](../decisions/2026-09-25-school-dilution-priced-beside.md)).
   Concept affected: the school-quality channel's status, from proposed to adopted as priced beside.
+- 2026-09-25 (weekly audit §3): the priced dilution is conditional on the resource-to-learning
+  step. The lane measures the shortfall in instructional dollars and prices it with spending
+  interventions; the teacher route ($2.6bn) and the 19-year response ($3.6bn, with a $33–36bn larger
+  school charge) remain alternatives, not corrections. Concept affected: the school-quality
+  channel's label, not its status beside the account.
+  [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).
