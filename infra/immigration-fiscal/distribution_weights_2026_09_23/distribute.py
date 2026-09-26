@@ -26,15 +26,18 @@ median and as an equal-split equivalent (divided by the mean weight). Signs are 
 residents' point of view: a cost is negative.
 
 Cases: the fiscal channel is the adopted main case's direct response A plus the central induced
-receipts F. --case sept24 (the default since 2026-09-24) moves A at each band end by the change
-from the September 23 to the September 24 case (main_case_2026_09_24/derived/main_case_bands.csv);
-the package edits receipts and keyed spending only, so P and F do not move. --case sept23 with
---out-dir <dir> reproduces the files committed before the switch byte for byte. Every channel
-outside the budget is the same in both cases.
+receipts F. --case sept24 moves A at each band end by the change from the September 23 to the
+September 24 case (main_case_2026_09_24/derived/main_case_bands.csv); the package edits receipts
+and keyed spending only, so P and F do not move. --case sept26 (the default since 2026-09-26) moves
+A again by the change from the September 24 to the September 26 case
+(main_case_2026_09_26/derived/summary.json): the consumption key edits receipts and the
+finite-removal responses act on general government and schools, so again only A moves. --case
+sept23 or sept24 with --out-dir <dir> reproduces the files committed before each switch byte for
+byte. Every channel outside the budget is the same in every case.
 
 Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 \
-    infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py [--case sept23 --out-dir DIR]
+    infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py [--case sept24 --out-dir DIR]
 The first run reads the ACS PUMS ZIPs in chunks (about two minutes) and caches the needed
 columns in _cache/; later runs take seconds.
 """
@@ -135,6 +138,8 @@ PATHS = dict(
     main_case_inputs=FISCAL / "main_case_2026_09_23/derived/inputs.json",
     main_case24_bands=FISCAL / "main_case_2026_09_24/derived/main_case_bands.csv",
     main_case24_summary=FISCAL / "main_case_2026_09_24/derived/summary.json",
+    main_case26_bands=FISCAL / "main_case_2026_09_26/derived/main_case_bands.csv",
+    main_case26_summary=FISCAL / "main_case_2026_09_26/derived/summary.json",
 )
 GATES: dict[str, dict] = {}
 
@@ -270,7 +275,8 @@ def fiscal_totals(case="sept23"):
     """Direct fiscal response A of the published main case and of the adopted main case.
     A = welfare - (P + F); the adopted case adds general government (0.59-0.84), justice by use
     and the under-charged part of uncompensated care to A (main_case_2026_09_23). With case
-    "sept24" the adopted case is the September 24 one and the September 23 one is kept beside it."""
+    "sept24" the adopted case is the September 24 one and the September 23 one is kept beside it;
+    with "sept26" it is the September 26 one, and the September 23 and 24 ones are kept beside it."""
     cases = pd.read_csv(PATHS["service_cases"])
     main = cases[cases.profile == "cbo_category_lag_non_school_full"].copy()
     heads = pd.read_csv(PATHS["headline_cases"])
@@ -322,7 +328,29 @@ def fiscal_totals(case="sept23"):
     a24 = dict(A_low_cost=ado["A_low_cost"] - change[0], A_high_cost=ado["A_high_cost"] - change[1], band=band24,
                general_government=ado["general_government"], justice=ado["justice"], sept24_change=change)
     a24["A_mid"] = (a24["A_low_cost"] + a24["A_high_cost"]) / 2
-    out.update(adopted=a24, adopted_2026_09_23=ado, case=case)
+    if case == "sept24":
+        out.update(adopted=a24, adopted_2026_09_23=ado, case=case)
+        return out
+    # September 26: the consumption key edits receipts and the finite-removal responses (engine state,
+    # corrections.json meta.responses) act on general government and schools, never on P or F, so the
+    # change at each band end again moves A at that end.
+    b26 = pd.read_csv(PATHS["main_case26_bands"])
+    b26 = b26[b26.profile == "cbo_category_lag_non_school_full"].set_index("variant")
+    s26 = json.loads(PATHS["main_case26_summary"].read_text())
+    base26 = [float(b26.loc["adopted_2026_09_24", "cost_low_bn"]), float(b26.loc["adopted_2026_09_24", "cost_high_bn"])]
+    band26 = [float(x) for x in s26["main_case"]]
+    gate("sept26_base_is_sept24_adopted", np.allclose(base26, band24, atol=1e-4)
+         and np.allclose(s26["adopted_2026_09_24"], band24, rtol=0, atol=1e-9), sept26_file=base26, sept24_file=band24)
+    gate("sept26_summary_matches_bands", np.allclose(band26, [b26.loc["adopted", "cost_low_bn"], b26.loc["adopted", "cost_high_bn"]],
+                                                     atol=1e-4), summary=band26)
+    change26 = [band26[0] - s26["adopted_2026_09_24"][0], band26[1] - s26["adopted_2026_09_24"][1]]
+    gate("sept26_change_matches_summary", np.allclose(change26, s26["change"], rtol=0, atol=1e-12), change=change26)
+    rebuilt26 = [rebuilt[0] + change26[0], rebuilt[1] + change26[1]]
+    gate("sept26_band_rebuilt_from_A", np.allclose(rebuilt26, band26, atol=1e-3), rebuilt=rebuilt26, band=band26)
+    a26 = dict(A_low_cost=a24["A_low_cost"] - change26[0], A_high_cost=a24["A_high_cost"] - change26[1], band=band26,
+               responses=s26["responses"], justice=ado["justice"], sept24_change=change, sept26_change=change26)
+    a26["A_mid"] = (a26["A_low_cost"] + a26["A_high_cost"]) / 2
+    out.update(adopted=a26, adopted_2026_09_23=ado, adopted_2026_09_24=a24, case=case)
     return out
 
 
@@ -683,7 +711,7 @@ def by_bin(delta, d, R, nbin=5):
 
 def main():
     ap = argparse.ArgumentParser(description="Distribution of the account's channels among other residents.")
-    ap.add_argument("--case", choices=("sept24", "sept23"), default="sept24")
+    ap.add_argument("--case", choices=("sept26", "sept24", "sept23"), default="sept26")
     ap.add_argument("--out-dir", type=Path, default=DERIVED)
     args = ap.parse_args()
     out_dir = args.out_dir

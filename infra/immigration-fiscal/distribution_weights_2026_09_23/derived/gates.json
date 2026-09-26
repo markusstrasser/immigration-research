@@ -83,6 +83,42 @@
    246.31843608620045
   ]
  },
+ "sept26_base_is_sept24_adopted": {
+  "passed": true,
+  "sept26_file": [
+   200.8752,
+   246.3184
+  ],
+  "sept24_file": [
+   200.8752025157866,
+   246.31843608620045
+  ]
+ },
+ "sept26_summary_matches_bands": {
+  "passed": true,
+  "summary": [
+   200.91801681307095,
+   245.69489442324326
+  ]
+ },
+ "sept26_change_matches_summary": {
+  "passed": true,
+  "change": [
+   0.0428142972843375,
+   -0.6235416629571944
+  ]
+ },
+ "sept26_band_rebuilt_from_A": {
+  "passed": true,
+  "rebuilt": [
+   200.9179678578129,
+   245.6949281154341
+  ],
+  "band": [
+   200.91801681307095,
+   245.69489442324326
+  ]
+ },
  "bea_2024_totals": {
   "passed": true,
   "federal_bn": 4976.3150000000005,
@@ -285,18 +321,18 @@
  },
  "sum_spm_fiscal_a": {
   "passed": true,
-  "split": -225.09759069290828,
-  "given": -225.09759069290826
+  "split": -224.8072270100718,
+  "given": -224.8072270100718
  },
  "sum_spm_fiscal_b": {
   "passed": true,
-  "split": -225.09759069290826,
-  "given": -225.09759069290826
+  "split": -224.80722701007184,
+  "given": -224.8072270100718
  },
  "sum_spm_fiscal_a_cps_tax_fields": {
   "passed": true,
-  "split": -225.09759069290826,
-  "given": -225.09759069290826
+  "split": -224.8072270100718,
+  "given": -224.8072270100718
  },
  "sum_spm_wages": {
   "passed": true,
@@ -360,13 +396,13 @@
  },
  "sum_spm_TOTAL_a": {
   "passed": true,
-  "split": -259.79800936890655,
-  "given": -259.79800936890626
+  "split": -259.50764568607013,
+  "given": -259.5076456860698
  },
  "sum_spm_TOTAL_b": {
   "passed": true,
-  "split": -259.79800936890655,
-  "given": -259.79800936890626
+  "split": -259.50764568607013,
+  "given": -259.5076456860698
  },
  "eta0_spm_fiscal_a": {
   "passed": true
@@ -565,18 +601,18 @@
  },
  "sum_money_fiscal_a": {
   "passed": true,
-  "split": -225.09759069290826,
-  "given": -225.09759069290826
+  "split": -224.80722701007178,
+  "given": -224.8072270100718
  },
  "sum_money_fiscal_b": {
   "passed": true,
-  "split": -225.09759069290826,
-  "given": -225.09759069290826
+  "split": -224.80722701007184,
+  "given": -224.8072270100718
  },
  "sum_money_fiscal_a_cps_tax_fields": {
   "passed": true,
-  "split": -225.09759069290826,
-  "given": -225.09759069290826
+  "split": -224.8072270100718,
+  "given": -224.8072270100718
  },
  "sum_money_wages": {
   "passed": true,
@@ -640,13 +676,13 @@
  },
  "sum_money_TOTAL_a": {
   "passed": true,
-  "split": -259.79800936890655,
-  "given": -259.79800936890626
+  "split": -259.5076456860701,
+  "given": -259.5076456860698
  },
  "sum_money_TOTAL_b": {
   "passed": true,
-  "split": -259.79800936890655,
-  "given": -259.79800936890626
+  "split": -259.50764568607013,
+  "given": -259.5076456860698
  },
  "eta0_money_fiscal_a": {
   "passed": true
