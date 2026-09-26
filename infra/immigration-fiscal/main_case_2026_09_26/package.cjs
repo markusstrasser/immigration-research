@@ -37,19 +37,26 @@ if (!P.MAIN_SPECS.every((s) => GG24.includes(s.gg) && SCHOOL24.includes(s.school
 // ---------------------------------------------------------------------------------------------------
 // Responses. o.finite: false (the September 24 elasticities), "all", "gg" or "school"; o.gg_s:
 // "national_memo" (adopted) or "engine_population_key"; o.school_s: "" (the pupil share, adopted),
-// "_s0.16" or "_s0.18".
+// "_s0.16" or "_s0.18". o.school_response: [growth, decline] responses set directly (for example
+// [1, 1] for full average cost), in place of the school part of o.finite; a lane building on this
+// package records its own rule in its payload's meta.
 function responsesFor(o) {
   const ggOn = o.finite === "all" || o.finite === "gg", schoolOn = o.finite === "all" || o.finite === "school";
   const gs = o.gg_s || "national_memo", ss = o.school_s || "";
+  const direct = o.school_response;
+  if (direct && !(Array.isArray(direct) && direct.length === 2 && direct.every(Number.isFinite))) {
+    throw new Error("school_response must be [growth, decline]");
+  }
   return {
     rule: o.finite ? "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)" : "elasticity as response",
     general_government: ggOn
       ? { low: R[`gg_low_r_${gs}`], high: R[`gg_high_r_${gs}`], elasticity: [R.gg_low_b_unrounded, R.gg_high_b], s: R[`s_${gs}`] }
       : { low: GG24[0], high: GG24[1], elasticity: GG24, s: null },
-    school: schoolOn
-      ? { growth: R[`school_r_0.63${ss}`], decline: R[`school_r_0.66${ss}`], elasticity: SCHOOL24,
-        s: ss ? Number(ss.slice(2)) : R.s_pupil }
-      : { growth: SCHOOL24[0], decline: SCHOOL24[1], elasticity: SCHOOL24, s: null },
+    school: direct ? { growth: direct[0], decline: direct[1], elasticity: null, s: null, set_directly: true }
+      : schoolOn
+        ? { growth: R[`school_r_0.63${ss}`], decline: R[`school_r_0.66${ss}`], elasticity: SCHOOL24,
+          s: ss ? Number(ss.slice(2)) : R.s_pupil }
+        : { growth: SCHOOL24[0], decline: SCHOOL24[1], elasticity: SCHOOL24, s: null },
     row8_factor: ggOn ? R[`row8_factor_${gs}`] : 1,
   };
 }
