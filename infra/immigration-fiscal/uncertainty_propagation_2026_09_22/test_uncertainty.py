@@ -115,3 +115,18 @@ def test_epsilon_rows_are_sensitivity_only():
     # Headline outputs of the full account are untouched by this lane.
     assert json.loads((FA / "headline_summary.json").read_text())["category_service_response_sensitivity"][
         "cbo_category_lag_non_school_full"]["max_welfare_bn"] == pytest.approx(-165.12, abs=0.01)
+
+
+def test_sept26_cases_span_the_adopted_bands_at_the_payload_responses():
+    u = pd.read_csv(OUT / "sept26" / "case_uncertainty.csv")
+    main = json.loads((HERE.parent / "main_case_2026_09_26/derived/summary.json").read_text())
+    for case, band in (("sept26", main["main_case"]),
+                       ("uncorrected_at_adopted_responses", main["uncorrected_at_adopted_responses"])):
+        c = u[u.case == case]
+        assert len(c) == 64
+        np.testing.assert_allclose([c.net_cost_bn.min(), c.net_cost_bn.max()], band, atol=1e-6)
+        assert (c.se_combined_independent_bn >= c.se_cps_fiscal_keys_bn).all()
+        assert (c.se_all_positive_correlation_bn >= c.se_combined_independent_bn).all()
+    gg, school = main["responses"]["general_government"], main["responses"]["school"]
+    assert set(u.general_government_response) == {gg["low"], gg["high"]}
+    assert set(u.school_response) == {school["growth"], school["decline"]}
