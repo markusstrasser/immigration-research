@@ -19,6 +19,9 @@ the central specification on the adopted low and high anchors.
   state services.
 - **How it relates to the annual account.** If adopted, the $30.5–38.9bn enters the main case as
   the response of its interest row, now held at zero. The stock is never added to an annual figure.
+  [2026-09-25: not as the interest row's response. The main case compares 2024 with and without
+  the group, and removing the group in 2024 does not remove debt borrowed in 2005–2023; the line
+  answers the historical question and, if adopted, enters as its own line. See Revisions.]
 
 Rate used, as the lead asked: OMB **net interest** of $879.879bn (Historical Table 3.1) divided by
 the average of end-FY2023 and end-FY2024 **debt held by the public** (Table 7.1: $26,235.6bn and
@@ -303,7 +306,8 @@ own concept: net cost to other residents without interest, $tn in 2024 dollars, 
 ## Overlap ruling
 
 1. **Main case.** Existing interest responds at zero, so the legacy line overlaps nothing in the
-   adopted $203.2–249.6bn. If adopted, it is the response of the account's interest row. That row
+   adopted $203.2–249.6bn. If adopted, it is the response of the account's interest row
+   [2026-09-25: withdrawn as the route in; see Revisions]. That row
    holds BEA domestic interest of $1,118.87bn, allocated per head as $134.54bn to the group.
    - The legacy line equals a response of 0.23–0.29 on that allocation.
    - It is 29–37% of the group's per-head share of OMB net interest, $105.8bn.
@@ -467,3 +471,15 @@ Raw pulls in `_cache/` (ignored) are OMB Tables 3.2, 7.1 and 12.3 (FY2027 editio
 choice. Every alternative is tabulated, and each input is inspectable.
 
 claude-opus-5-5[1m], lane agent, 2026-09-23.
+
+## Revisions
+
+- 2026-09-25 (weekly conceptual audit §8): the line stays beside the main case. Its proposed route,
+  the interest row's response, puts a historical counterfactual (the 2005–2023 gaps never
+  borrowed) inside a static one (2024 with and without the group), and removing the group in 2024
+  leaves past debt in place. If the operator chooses the historical question (ladder 207's
+  changelog), the line enters as its own history line. The audit's second objection, that domestic
+  interest is a transfer among other residents, does not shrink the figure: if the debt displaced
+  private capital, other residents lose the return on that capital, which is at least the interest;
+  if foreigners hold it, the interest leaves the country. The size of either effect is not
+  modelled. [INFERENCE] [Decision](../../../decisions/2026-09-25-weekly-audit-corrections.md).
