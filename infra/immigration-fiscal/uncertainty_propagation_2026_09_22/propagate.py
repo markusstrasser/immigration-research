@@ -19,11 +19,12 @@ perfect-positive-correlation envelope alongside.
 
 --case sept24 (added 2026-09-24) also carries these sources to the adopted main
 cases of September 23 and 24, specification by specification, after
-`node sept24_specs.cjs` has written derived/sept24/ (see adopted_cases). --case
-sept26 (the default since 2026-09-26) does the same for the main case adopted
-September 26 and the uncorrected model at its responses, from derived/sept26/
-(written by the same script). The September 20 outputs are written as before
-and do not change.
+`node sept24_specs.cjs` has written derived/sept24/ (see adopted_cases). Each
+later case in later_cases.json does the same for its main case and the
+uncorrected model at its responses, from derived/<case>/ (written by the same
+script): --case sept26 (CBO's one-year school response, 0.63-0.66) and --case
+sept26_schools (schools at full average cost; the default, as the last entry).
+The September 20 outputs are written as before and do not change.
 """
 from __future__ import annotations
 
@@ -223,18 +224,21 @@ def account_inputs():
 
 
 # --------------------------------------------------------------------------
-# The adopted main cases of September 23, 24 and 26 (--case sept24, sept26)
+# The adopted main cases of September 23, 24 and later (--case sept24, sept26, sept26_schools)
 # --------------------------------------------------------------------------
 MAIN_PROFILE = "cbo_category_lag_non_school_full"
 MEDICAID = "medicaid_and_chip_other_medical"
+# Later cases, case -> main-case lane, one line each; sept24_specs.cjs reads the same file.
+LATER_CASES = json.loads((HERE / "later_cases.json").read_text())
 # Per --case: the main case's summary, then (row label, band in that summary, column tag in
 # derived/<case>/) for the uncorrected frame and for the adopted case.
 ADOPTED = {
     "sept24": ("main_case_2026_09_24/derived/summary.json",
                (("sept23", "adopted_2026_09_23", "sept23"), ("sept24", "main_case", "sept24"))),
-    "sept26": ("main_case_2026_09_26/derived/summary.json",
-               (("uncorrected_at_adopted_responses", "uncorrected_at_adopted_responses", "uncorrected"),
-                ("sept26", "main_case", "sept26"))),
+    **{name: (f"{lane}/derived/summary.json",
+              (("uncorrected_at_adopted_responses", "uncorrected_at_adopted_responses", "uncorrected"),
+               (name, "main_case", name)))
+       for name, lane in LATER_CASES.items()},
 }
 
 
@@ -253,8 +257,9 @@ def adopted_cases(ctx, name):
     published SE (admin_benefit_keys_2026_09_24/derived/package_se.csv) is added in separate columns;
     its overlap with the CPS error of the lines it re-keys is unknown.
 
-    September 26 (name "sept26"): the same, at the adopted responses (the payload's meta.responses,
-    written into spec_costs.csv beside the September 24 values they replace). Each specification finds
+    Later cases (later_cases.json; "sept26", then "sept26_schools" with schools at full average cost):
+    the same, at the case's responses (the payload's meta.responses, written into spec_costs.csv beside
+    the September 24 values they replace). Each specification finds
     its September 20 case by the September 24 school response; general government enters at the new
     response, and the education line's response rises by school share x (new - old school response),
     in the rebuild (gate, 1e-6) and in the CPS and school-correction errors. The consumption key's
@@ -406,8 +411,10 @@ def adopted_cases(ctx, name):
 
 def main():
     ap = argparse.ArgumentParser(description="Propagate sampling and donor errors onto the account's cases.")
-    ap.add_argument("--case", choices=("sept26", "sept24", "sept20"), default="sept26",
-                    help="sept26 (default) or sept24: also the adopted case of that date; sept20: its files only")
+    ap.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24", "sept20"), default=list(LATER_CASES)[-1],
+                    help="a later case (default: the last in later_cases.json, sept26_schools: schools at full average "
+                         "cost; sept26: CBO's one-year school response, 0.63-0.66) or sept24: also that adopted case; "
+                         "sept20: its files only")
     args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
     print("[stage] CPS load", flush=True)
