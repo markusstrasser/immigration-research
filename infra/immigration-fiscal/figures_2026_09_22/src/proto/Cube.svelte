@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte'
   import d from '../generated/proto_cube.json'
 
   /* ------------------------------------------------------------ the account, per specification ---- */
@@ -7,7 +6,6 @@
   // A derived dial sets its members to one share: slopes summed, the main case at their slope-weighted mean.
   const COMP = Object.fromEntries(d.composites.map((c) => [c.id, c]))
   const DIAL = Object.fromEntries([...d.dials, ...d.composites].map((x) => [x.id, x]))
-  const OPTIONS = [...d.composites, ...d.dials]
   const members = (id) => (COMP[id] ? COMP[id].members : [id])
   const slope = (s, id) => members(id).reduce((t, k) => t + s.slope[k], 0)
   const mainAt = (s, id) => members(id).reduce((t, k) => t + s.slope[k] * s.mainAt[k], 0) / slope(s, id)
@@ -33,6 +31,7 @@
   const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]]
   const lerp = (a, b, t) => addv(a, mul(sub(b, a), t))
   const mean = (ps) => mul(ps.reduce(addv, [0, 0, 0]), 1 / ps.length)
+  const spanOf = (xs) => [Math.min(...xs), Math.max(...xs)]
 
   const V = [[0, 0, 0], [1, 0, 0], [1, 1, 0], [0, 1, 0], [0, 0, 1], [1, 0, 1], [1, 1, 1], [0, 1, 1]]
   const FACES = [[0, 3, 2, 1], [4, 5, 6, 7], [0, 1, 5, 4], [2, 3, 7, 6], [0, 4, 7, 3], [1, 2, 6, 5]]
@@ -86,221 +85,166 @@
     return out
   }
 
-  /* ------------------------------------------------------------ state ------------------------------- */
-  // Default: every public service budget in three parts, each counted once; taxes and benefits at records.
-  let axes = $state(['schools', 'others', 'gg']) // floor, floor, up
-  let yaw = $state(-51)
-  let pitch = $state(24)
+  /* ------------------------------------------------------------ words for numbers ------------------- */
+  const pctOne = (x) => { const v = 100 * x; return Math.abs(v) < 10 && Math.abs(v - Math.round(v)) > 0.05 ? v.toFixed(1) : String(Math.round(v)) }
+  const pct = (r) => (pctOne(r[0]) === pctOne(r[1]) ? pctOne(r[0]) : pctOne(r[0]) + '–' + pctOne(r[1])) + '%'
+  const times = (x) => Number(x.toFixed(2)) + '×'
+  const fmt = (id, x) => (DIAL[id].unit === 'times' ? times(x) : pctOne(x) + '%')
+  const bn = (r) => {
+    const a = Math.round(Math.min(Math.abs(r[0]), Math.abs(r[1]))), b = Math.round(Math.max(Math.abs(r[0]), Math.abs(r[1])))
+    return '$' + a + (a === b ? '' : '–' + b) + 'bn'
+  }
+  const mainRange = (id) => spanOf(d.specs.map((s) => mainAt(s, id)))
 
-  // An assumption can sit on one axis only, and a derived dial cannot share the cube with its parts.
-  const taken = (id, j) => axes.some((a, i) => i !== j && members(a).some((k) => members(id).includes(k)))
-
+  /* ------------------------------------------------------------ two fixed views --------------------- */
+  // The account is a straight-line sum of its assumptions, so the break-even is flat and one well-chosen
+  // view shows all of it; turning the cube would add motion, not information.
   const low = d.specs[d.lowEnd]
-  const lin = $derived(d.specs.map((s) => linear(s, axes)))
-  const sheets = $derived(lin.map(sheet))
-  const gainAll = $derived.by(() => {
+  const VIEWS = [
+    { id: 'split', axes: ['schools', 'others', 'gg'], yaw: -51, pitch: 24 },
+    { id: 'measured', axes: ['benefits', 'services', 'taxes'], yaw: -42, pitch: 22, moves: true, labelAt: [0.08, 0.55, 0.97] },
+  ]
+
+  let cw = $state(640)
+  const W = $derived(Math.max(400, Math.min(640, cw || 640)))
+  const views = $derived(VIEWS.map((v) => draw(v, W)))
+
+  function draw(v, W) {
+    const S = 0.306 * W, CX = W / 2, CY = 0.37 * W - 10, H = 0.7 * W + (W < 560 ? 40 : 0)
+    const rad = (x) => (x * Math.PI) / 180
+    const cy = Math.cos(rad(v.yaw)), sy = Math.sin(rad(v.yaw)), cp = Math.cos(rad(v.pitch)), sp = Math.sin(rad(v.pitch))
+    const P = (u) => {
+      const x = u[0] - 0.5, y = u[1] - 0.5, z = u[2] - 0.5
+      const x1 = x * cy - y * sy, y1 = x * sy + y * cy
+      return [CX + S * x1, CY - S * (y1 * sp + z * cp), y1 * cp - z * sp]
+    }
+    const facing = (n) => (n[0] * sy + n[1] * cy) * cp - n[2] * sp < 0
+    const pts = (poly) => poly.map((u) => P(u).slice(0, 2).map((q) => q.toFixed(1)).join(',')).join(' ')
+
+    const lin = d.specs.map((s) => linear(s, v.axes))
+    const sheets = lin.map(sheet)
     let faces = FACES.map((f) => f.map((i) => V[i]))
     for (const l of lin) {
       faces = keepGain(faces, l)
       if (!faces.length) break
     }
-    return faces
-  })
-  const anyGain = $derived(lin.some(({ k0, k }) => V.some((u) => k0 + dot(k, u) < 0)))
-  const mains = $derived(d.specs.map((s) => axes.map((id) => toU(id, mainAt(s, id)))))
-  const lowMain = $derived(axes.map((id) => toU(id, mainAt(low, id))))
-
-  // From the main case, one axis at a time, where the sheet is crossed (for every specification).
-  const alone = $derived(
-    axes.map((id, j) => {
-      const D = DIAL[id]
-      const ends = d.specs.map((s) => {
-        const a = slope(s, id), m = mainAt(s, id)
-        const end = a > 0 ? D.range[0] : D.range[1]
-        return { root: m - s.main / a, atEnd: s.main + a * (end - m), end }
-      })
-      const all = ends.every((e) => e.atEnd < 0), none = ends.every((e) => e.atEnd >= 0)
-      const roots = ends.map((e) => e.root)
-      return { id, D, all, none, roots: [Math.min(...roots), Math.max(...roots)], atEnd: [Math.min(...ends.map((e) => e.atEnd)), Math.max(...ends.map((e) => e.atEnd))], end: ends[0].end, j }
-    }),
-  )
-  // The low-end specification's moves, drawn as rays from its main point.
-  const rays = $derived.by(() => {
-    const { k0, k } = linear(low, axes)
-    return [0, 1, 2].map((j) => {
-      const rest = k0 + [0, 1, 2].reduce((t, i) => (i === j ? t : t + k[i] * lowMain[i]), 0)
-      const u = -rest / k[j]
-      if (!(u >= 0 && u <= 1)) return null
-      const to = [...lowMain]
-      to[j] = u
-      return { j, to, value: fromU(axes[j], u) }
-    }).filter(Boolean)
-  })
-
-  /* ------------------------------------------------------------ projection -------------------------- */
-  // The drawing takes the container's width (400–640 units), so labels keep their size on a phone.
-  let cw = $state(640)
-  const W = $derived(Math.max(400, Math.min(640, cw || 640)))
-  const S = $derived(0.306 * W)
-  const CX = $derived(W / 2)
-  const CY = $derived(0.37 * W + 26)
-  const H = $derived(0.75 * W + (W < 560 ? 40 : 0))
-  const rad = (x) => (x * Math.PI) / 180
-  const cam = $derived({ cy: Math.cos(rad(yaw)), sy: Math.sin(rad(yaw)), cp: Math.cos(rad(pitch)), sp: Math.sin(rad(pitch)) })
-  function P(u) {
-    const x = u[0] - 0.5, y = u[1] - 0.5, z = u[2] - 0.5
-    const x1 = x * cam.cy - y * cam.sy, y1 = x * cam.sy + y * cam.cy
-    return [CX + S * x1, CY - S * (y1 * cam.sp + z * cam.cp), y1 * cam.cp - z * cam.sp]
-  }
-  const facing = (n) => (n[0] * cam.sy + n[1] * cam.cy) * cam.cp - n[2] * cam.sp < 0
-  const pts = (poly) => poly.map((u) => P(u).slice(0, 2).map((v) => v.toFixed(1)).join(',')).join(' ')
-
-  const frontFace = $derived(NORMALS.map(facing))
-  const edges = $derived(EDGES.map(([a, b], i) => ({ a: P(V[a]), b: P(V[b]), front: EDGE_FACES[i].some((f) => frontFace[f]) })))
-
-  // Faces of the solid where everyone else is better off under every specification: back ones first.
-  const solid = $derived.by(() => {
-    if (!gainAll.length) return []
-    const c = mean(gainAll.flat())
-    return gainAll
+    const centre = faces.length ? mean(faces.flat()) : null
+    const solid = faces
       .map((face) => {
         let n = [0, 0, 0]
         for (let i = 0; i < face.length; i++) {
           const p = face[i], q = face[(i + 1) % face.length]
           n = addv(n, [(p[1] - q[1]) * (p[2] + q[2]), (p[2] - q[2]) * (p[0] + q[0]), (p[0] - q[0]) * (p[1] + q[1])])
         }
-        if (dot(n, sub(mean(face), c)) < 0) n = mul(n, -1)
-        return { face, front: facing(n) }
+        if (dot(n, sub(mean(face), centre)) < 0) n = mul(n, -1)
+        return { points: pts(face), front: facing(n) }
       })
       .sort((a, b) => a.front - b.front)
-  })
-  const solidLabel = $derived(gainAll.length ? P(mean(gainAll.flat())) : null)
-  const m = $derived(P(lowMain))
-  // One drop line from the highest main point to the floor, at the specifications' mean floor position.
-  const tops = $derived.by(() => {
-    const x = mean(mains)
-    const top = Math.max(...mains.map((u) => u[2]))
-    return [[P([x[0], x[1], top]), P([x[0], x[1], 0])]]
-  })
+    const frontFace = NORMALS.map(facing)
+    const edges = EDGES.map(([a, b], i) => ({ a: P(V[a]), b: P(V[b]), front: EDGE_FACES[i].some((f) => frontFace[f]) }))
 
-  /* Tick labels on the front edges: two floor edges nearest the reader, the leftmost upright edge. */
-  const fmt = (id, x) => {
-    const D = DIAL[id]
-    return D.unit === 'times' ? Number(x.toFixed(2)) + '×' : Math.round(100 * x) + '%'
-  }
-  const center = $derived(P([0.5, 0.5, 0.5]))
-  // Keep a two-line title inside the frame (about 6.3 units a character at 12.5).
-  function fit(t) {
-    const w = 6.3 * Math.max(t.label.length, 0.88 * t.what.length)
-    const left = t.anchor === 'start' ? t.x : t.anchor === 'end' ? t.x - w : t.x - w / 2
-    const shift = left < 4 ? 4 - left : left + w > W - 4 ? W - 4 - (left + w) : 0
-    return { ...t, x: t.x + shift }
-  }
-  const axisEdges = $derived.by(() => {
-    const out = []
+    // The main case: one dot per specification, one drop line to the floor.
+    const mains = d.specs.map((s) => v.axes.map((id) => toU(id, mainAt(s, id))))
+    const lowMain = v.axes.map((id) => toU(id, mainAt(low, id)))
+    const m = P(lowMain)
+    const mid = mean(mains)
+    const top = Math.max(...mains.map((u) => u[2]))
+    const drop = [P([mid[0], mid[1], top]), P([mid[0], mid[1], 0])]
+
+    // Moves from the main case to the sheet, for the specification most favourable to the group. Each label
+    // sits just past its end, along its own direction, so labels of moves that end close together fan out.
+    const beyond = (from, to) => {
+      const dx = to[0] - from[0], dy = to[1] - from[1], n = Math.hypot(dx, dy) || 1
+      const ux = dx / n, uy = dy / n
+      return { lx: to[0] + 9 * ux, ly: to[1] + 9 * uy + (uy > 0.3 ? 9 : uy < -0.3 ? -2 : 4),
+        anchor: ux < -0.3 ? 'end' : ux > 0.3 ? 'start' : 'middle' }
+    }
+    const moves = []
+    let diagonal = null
+    if (v.moves) {
+      const { k0, k } = linear(low, v.axes)
+      for (const j of [0, 1, 2]) {
+        const rest = k0 + [0, 1, 2].reduce((t, i) => (i === j ? t : t + k[i] * lowMain[i]), 0)
+        const u = -rest / k[j]
+        if (!(u >= 0 && u <= 1)) continue
+        const to = [...lowMain]
+        to[j] = u
+        moves.push({ to: P(to), label: fmt(v.axes[j], fromU(v.axes[j], u)), ...beyond(m, P(to)) })
+      }
+      // Taxes up and benefits down by the same share, at once.
+      const t = v.axes.indexOf('taxes'), b = v.axes.indexOf('benefits')
+      if (t >= 0 && b >= 0) {
+        const share = low.main / (slope(low, 'benefits') - slope(low, 'taxes'))
+        const to = [...lowMain]
+        to[t] = toU('taxes', 1 + share)
+        to[b] = toU('benefits', 1 - share)
+        diagonal = { to: P(to), label: `both ${Math.round(100 * share)}% off`, ...beyond(m, P(to)) }
+      }
+    }
+
+    // Tick labels on the two floor edges nearest the reader and the leftmost upright edge.
+    const center = P([0.5, 0.5, 0.5])
+    const picks = []
     for (const j of [0, 1]) {
-      const o = 1 - j
       let best = null
-      for (const v of [0, 1]) {
+      for (const o of [0, 1]) {
         const a = [0, 0, 0], b = [0, 0, 0]
-        a[o] = b[o] = v
+        a[1 - j] = b[1 - j] = o
         b[j] = 1
         const depth = P(lerp(a, b, 0.5))[2]
-        if (!best || depth < best.depth) best = { a, b, depth }
+        if (!best || depth < best.depth) best = { j, a, b, depth }
       }
-      out.push({ j, ...best })
+      picks.push(best)
     }
-    let best = null
+    let upright = null
     for (const [x, y] of [[0, 0], [1, 0], [0, 1], [1, 1]]) {
       const a = [x, y, 0], b = [x, y, 1]
       const sx = P(lerp(a, b, 0.5))[0]
-      if (!best || sx < best.sx) best = { a, b, sx }
+      if (!upright || sx < upright.sx) upright = { j: 2, a, b, sx }
     }
-    out.push({ j: 2, ...best })
-    return out
-  })
-  const labels = $derived.by(() => {
-    const placed = []
-    const out = { ticks: [], titles: [] }
-    for (const { j, a, b } of axisEdges) {
-      const mid = P(lerp(a, b, 0.5))
-      let dx = mid[0] - center[0], dy = mid[1] - center[1]
-      if (j === 2) { dx = -1; dy = 0 }
+    picks.push(upright)
+    const fit = (t) => {
+      const w = 6.3 * Math.max(t.label.length, 0.88 * t.what.length)
+      const left = t.anchor === 'start' ? t.x : t.anchor === 'end' ? t.x - w : t.x - w / 2
+      const shift = left < 4 ? 4 - left : left + w > W - 4 ? W - 4 - (left + w) : 0
+      return { ...t, x: t.x + shift }
+    }
+    const placed = [], ticks = [], titles = []
+    for (const { j, a, b } of picks) {
+      const e = P(lerp(a, b, 0.5))
+      let dx = j === 2 ? -1 : e[0] - center[0], dy = j === 2 ? 0 : e[1] - center[1]
       const len = Math.hypot(dx, dy) || 1
-      dx /= len; dy /= len
+      dx /= len
+      dy /= len
       const anchor = dx < -0.35 ? 'end' : dx > 0.35 ? 'start' : 'middle'
       for (const t of [0, 0.5, 1]) {
         const p = P(lerp(a, b, t))
         const x = p[0] + 11 * dx, y = p[1] + 11 * dy + (dy > 0.35 ? 8 : 4)
         if (placed.some((q) => Math.hypot(q[0] - x, q[1] - y) < 26)) continue
         placed.push([x, y])
-        out.ticks.push({ x, y, anchor, text: fmt(axes[j], fromU(axes[j], t)) })
+        ticks.push({ x, y, anchor, text: fmt(v.axes[j], fromU(v.axes[j], t)) })
       }
-      const D = DIAL[axes[j]]
-      // The upright axis is titled above its top end; the floor axes beside their edges, kept inside the frame.
+      const D = DIAL[v.axes[j]]
       if (j === 2) {
-        const top = P(b)
-        out.titles.push(fit({ x: top[0], y: top[1] - 30, anchor: 'middle', label: D.label, what: D.what }))
+        const tp = P(b)
+        titles.push(fit({ x: tp[0], y: tp[1] - 30, anchor: 'middle', label: D.label, what: D.what }))
       } else {
-        out.titles.push(fit({ x: mid[0] + 40 * dx, y: mid[1] + 40 * dy + (dy > 0.35 ? 10 : 0), anchor, label: D.label, what: D.what }))
+        titles.push(fit({ x: e[0] + 40 * dx, y: e[1] + 40 * dy + (dy > 0.35 ? 10 : 0), anchor, label: D.label, what: D.what }))
       }
     }
-    return out
-  })
 
-  /* ------------------------------------------------------------ interaction ------------------------- */
-  let drag = null
-  function down(e) {
-    drag = { x: e.clientX, y: e.clientY, yaw, pitch }
-    e.currentTarget.setPointerCapture(e.pointerId)
-  }
-  function move(e) {
-    if (!drag) return
-    yaw = ((drag.yaw - (e.clientX - drag.x) * 0.45 + 540) % 360) - 180
-    pitch = Math.max(4, Math.min(70, drag.pitch + (e.clientY - drag.y) * 0.3))
-  }
-  const up = () => (drag = null)
-
-  // One slow swing when the figure first comes into view, so the eye reads depth; none with reduced motion.
-  let figure
-  onMount(() => {
-    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    let raf
-    const io = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return
-      io.disconnect()
-      const from = yaw - 38, to = yaw, t0 = performance.now()
-      const step = (t) => {
-        if (drag) return
-        const k = Math.min(1, (t - t0) / 2600)
-        yaw = from + (to - from) * (1 - Math.pow(1 - k, 3))
-        if (k < 1) raf = requestAnimationFrame(step)
-      }
-      raf = requestAnimationFrame(step)
-    }, { threshold: 0.5 })
-    io.observe(figure)
-    return () => { io.disconnect(); cancelAnimationFrame(raf) }
-  })
-
-  /* ------------------------------------------------------------ words ------------------------------- */
-  const n0 = (x) => String(Math.round(x))
-  const rangeOf = (id, r) => {
-    const D = DIAL[id]
-    if (D.unit === 'times') {
-      const a = Number(r[0].toFixed(2)), b = Number(r[1].toFixed(2))
-      return a === b ? a + '×' : a + '–' + b + '×'
+    return {
+      id: v.id, W, H, edges, solid, ticks, titles, m, drop, moves, diagonal,
+      sheets: sheets.filter((s) => s.length).map(pts),
+      lowSheet: sheets[d.lowEnd].length ? pts(sheets[d.lowEnd]) : null,
+      highSheet: sheets[d.highEnd].length ? pts(sheets[d.highEnd]) : null,
+      label: v.labelAt ? P(v.labelAt) : centre ? P(centre) : null,
+      dots: mains.map(P),
     }
-    const f = (x) => { const v = 100 * x; return Math.abs(v) < 10 ? v.toFixed(1) : String(Math.round(v)) }
-    return f(r[0]) === f(r[1]) ? f(r[0]) + '%' : f(r[0]) + '–' + f(r[1]) + '%'
   }
-  const bn = (r) => '$' + n0(r[0]) + '–' + n0(r[1]) + 'bn'
-  const pct = (r) => Math.round(100 * r[0]) + '–' + Math.round(100 * r[1]) + '%'
-  const tb = d.dials.find((x) => x.id === 'taxes'), bb = d.dials.find((x) => x.id === 'benefits')
-  const lede = {
-    taxes: d.specs.map((s) => mainAt(s, 'taxes') - s.main / slope(s, 'taxes')),
-    benefits: d.specs.map((s) => 1 - (mainAt(s, 'benefits') - s.main / slope(s, 'benefits'))),
-  }
-  const span = (xs) => [Math.min(...xs), Math.max(...xs)]
+
+  const w = d.wedge
+  const ms = d.measured
 </script>
 
 <section class="fig" id="cube">
@@ -308,165 +252,150 @@
     <p class="kicker">Complete account · main case · three assumptions at once</p>
     <h2>Everyone else comes out ahead only where schools and the other services barely grow for them</h2>
     <p class="lede">
-      Each axis is one assumption, from its lowest setting to its highest; every assumption not on an axis stays
-      at the main case. The cost to everyone else is a straight-line sum of the assumptions, so the settings where it
-      is exactly zero form a flat sheet (ochre). The sheet has some thickness because the main case leaves a few
-      choices open, such as how taxes are split. Beyond it, in the blue corner, everyone else comes out ahead.
+      Each drawing is a cube of three of the account’s assumptions, each running from its lowest setting to its
+      highest; every other assumption stays at the main case. The cost to everyone else is a straight-line sum of the
+      assumptions, so the settings where it is exactly zero form a flat sheet (ochre). On one side everyone else is
+      worse off; on the other, shaded blue, they come out ahead. Because the sheet is flat, a fixed view shows all of
+      it.
     </p>
-    <p class="lede">
-      The axes start by splitting every public service budget into three parts, each counted once: schools, every
-      other public service, and general administration. Taxes and benefits stay at what records show. The blue corner
-      is where schools and the other services both barely grow for the added people; the main case sits far from it.
-    </p>
-    <p class="lede">
-      Put taxes or benefits on an axis and the blue corner grows, because each is larger than the whole cost. Taxes
-      <span class="num">{pct(span(lede.taxes).map((x) => x - 1))}</span> above what records show reach the sheet on
-      their own, as do benefits <span class="num">{pct(span(lede.benefits))}</span> below, or both
-      <span class="num">{pct(d.together)}</span> off at once. Both are measured, not assumed; the cube runs them from
-      zero to twice the records.
-    </p>
-
-    <div class="controls picks">
-      {#each ['Up', 'Floor', 'Floor'] as name, j}
-        {@const slot = [2, 0, 1][j]}
-        <label>
-          {name}
-          <select bind:value={axes[slot]}>
-            {#each OPTIONS as D}
-              <option value={D.id} disabled={taken(D.id, slot)}>{D.label}</option>
-            {/each}
-          </select>
-        </label>
-      {/each}
-    </div>
 
     <div bind:clientWidth={cw}>
-    <svg bind:this={figure} class="cube" viewBox="0 0 {W} {H}" role="img"
-      aria-label="A cube of three assumptions, cut by the flat sheet where the cost to everyone else is zero"
-      onpointerdown={down} onpointermove={move} onpointerup={up} onpointercancel={up}>
-      <!-- Hidden edges first, faint. -->
-      {#each edges.filter((e) => !e.front) as e}
-        <line x1={e.a[0]} y1={e.a[1]} x2={e.b[0]} y2={e.b[1]} stroke="#dcd8c8" stroke-width="0.8" stroke-dasharray="3 3" />
-      {/each}
+      {#each views as g}
+        <p class="view">
+          {#if g.id === 'split'}
+            <b>Every public service budget, in three parts.</b> Schools, every other public service and general
+            administration, each counted once. Taxes and benefits stay at what records show.
+          {:else}
+            <b>Taxes, benefits and every public service.</b> Taxes and benefits as multiples of what records show;
+            general administration as in the main case.
+          {/if}
+        </p>
+        <svg class="cube" viewBox="0 0 {g.W} {g.H}" role="img"
+          aria-label={g.id === 'split'
+            ? 'A cube of schools, every other public service and general administration, cut near one edge by the flat sheet where the cost to everyone else is zero'
+            : 'A cube of taxes, benefits and every public service, cut diagonally by the flat sheet where the cost to everyone else is zero'}>
+          <!-- Hidden edges first, faint. -->
+          {#each g.edges.filter((e) => !e.front) as e}
+            <line x1={e.a[0]} y1={e.a[1]} x2={e.b[0]} y2={e.b[1]} stroke="#dcd8c8" stroke-width="0.8" stroke-dasharray="3 3" />
+          {/each}
 
-      <!-- The break-even sheet for each of the 64 specifications, drawn as one shape. -->
-      <g opacity="0.55">
-        {#each sheets as poly}
-          {#if poly.length}<polygon points={pts(poly)} fill="#ecdcae" />{/if}
-        {/each}
-      </g>
-      <!-- The two ends of the band: the specification most favourable to the group solid, the least dotted. -->
-      {#if sheets[d.lowEnd].length}
-        <polygon points={pts(sheets[d.lowEnd])} fill="none" stroke="#b8913a" stroke-width="0.8" />
-      {/if}
-      {#if sheets[d.highEnd].length}
-        <polygon points={pts(sheets[d.highEnd])} fill="none" stroke="#b8913a" stroke-width="0.8" stroke-dasharray="1.5 2.5" />
-      {/if}
+          <!-- The break-even sheet of every specification, one even tint; the two ends outlined. -->
+          <g opacity="0.55">
+            {#each g.sheets as points}<polygon {points} fill="#ecdcae" />{/each}
+          </g>
+          {#if g.lowSheet}<polygon points={g.lowSheet} fill="none" stroke="#b8913a" stroke-width="0.8" />{/if}
+          {#if g.highSheet}<polygon points={g.highSheet} fill="none" stroke="#b8913a" stroke-width="0.8" stroke-dasharray="1.5 2.5" />{/if}
 
-      <!-- Where everyone else is better off under every specification. -->
-      {#each solid as f}
-        <polygon points={pts(f.face)} fill="#bbd4ee" fill-opacity={f.front ? 0.42 : 0.22} stroke="#5c97d2" stroke-width="0.7" stroke-linejoin="round" />
-      {/each}
-      {#if solidLabel}
-        <text class="it halo" x={solidLabel[0]} y={solidLabel[1] + 4} text-anchor="middle" font-size="12.5" fill="#2f5f8f">better off</text>
-      {/if}
+          <!-- Where everyone else is better off under every specification. -->
+          {#each g.solid as f}
+            <polygon points={f.points} fill="#bbd4ee" fill-opacity={f.front ? 0.42 : 0.22} stroke="#5c97d2" stroke-width="0.7" stroke-linejoin="round" />
+          {/each}
+          {#if g.label}
+            <text class="it halo" x={g.label[0]} y={g.label[1] + 4} text-anchor="middle" font-size="12.5" style="fill: #2f5f8f">better off</text>
+          {/if}
 
-      <!-- The main case: one point per specification, a drop line to the floor, and the moves to the sheet. -->
-      {#each rays as r}
-        {@const b = P(r.to)}
-        <line x1={m[0]} y1={m[1]} x2={b[0]} y2={b[1]} stroke="#57544c" stroke-width="1" stroke-dasharray="1.5 3" />
-        <circle cx={b[0]} cy={b[1]} r="2.6" fill="#fffff8" stroke="#57544c" stroke-width="1" />
-        <text class="num halo muted" x={b[0] + 6} y={b[1] - 5} font-size="11">{fmt(axes[r.j], r.value)}</text>
-      {/each}
-      {#each tops as t}
-        <line x1={t[0][0]} y1={t[0][1]} x2={t[1][0]} y2={t[1][1]} stroke="#8d897e" stroke-width="0.8" stroke-dasharray="2 2.5" />
-      {/each}
-      <path d="M{tops[0][1][0] - 3},{tops[0][1][1]} h6 M{tops[0][1][0]},{tops[0][1][1] - 2} v4" stroke="#8d897e" stroke-width="0.8" />
-      {#each mains as u}
-        {@const p = P(u)}
-        <circle cx={p[0]} cy={p[1]} r="1.9" fill="#111" />
-      {/each}
-      <text class="halo" x={m[0] + 9} y={m[1] + 16} font-size="12.5">main case</text>
-      <text class="halo muted num" x={m[0] + 9} y={m[1] + 30} font-size="11">{bn(d.main)} worse off</text>
+          <!-- Moves from the main case to the sheet. -->
+          {#each g.moves as r}
+            <line x1={g.m[0]} y1={g.m[1]} x2={r.to[0]} y2={r.to[1]} stroke="#57544c" stroke-width="1" stroke-dasharray="1.5 3" />
+            <circle cx={r.to[0]} cy={r.to[1]} r="2.6" fill="#fffff8" stroke="#57544c" stroke-width="1" />
+            <text class="num halo muted" x={r.lx} y={r.ly} text-anchor={r.anchor} font-size="11">{r.label}</text>
+          {/each}
+          {#if g.diagonal}
+            <line x1={g.m[0]} y1={g.m[1]} x2={g.diagonal.to[0]} y2={g.diagonal.to[1]} stroke="#111" stroke-width="1.1" stroke-dasharray="4 2.5" />
+            <circle cx={g.diagonal.to[0]} cy={g.diagonal.to[1]} r="2.8" fill="#111" />
+            <text class="num halo" x={g.diagonal.lx} y={g.diagonal.ly} text-anchor={g.diagonal.anchor} font-size="11">{g.diagonal.label}</text>
+          {/if}
 
-      <!-- Front edges and axis labels. -->
-      {#each edges.filter((e) => e.front) as e}
-        <line x1={e.a[0]} y1={e.a[1]} x2={e.b[0]} y2={e.b[1]} stroke="#b9b5a8" stroke-width="0.9" />
+          <!-- The main case: a dot per specification and a drop line to the floor. -->
+          <line x1={g.drop[0][0]} y1={g.drop[0][1]} x2={g.drop[1][0]} y2={g.drop[1][1]} stroke="#8d897e" stroke-width="0.8" stroke-dasharray="2 2.5" />
+          <path d="M{g.drop[1][0] - 3},{g.drop[1][1]} h6 M{g.drop[1][0]},{g.drop[1][1] - 2} v4" stroke="#8d897e" stroke-width="0.8" />
+          {#each g.dots as p}<circle cx={p[0]} cy={p[1]} r="1.9" fill="#111" />{/each}
+          <text class="halo" x={g.m[0] + 9} y={g.m[1] + 16} font-size="12.5">main case</text>
+          <text class="halo muted num" x={g.m[0] + 9} y={g.m[1] + 30} font-size="11">{bn(d.main)} worse off</text>
+
+          <!-- Front edges and axis labels. -->
+          {#each g.edges.filter((e) => e.front) as e}
+            <line x1={e.a[0]} y1={e.a[1]} x2={e.b[0]} y2={e.b[1]} stroke="#b9b5a8" stroke-width="0.9" />
+          {/each}
+          {#each g.ticks as t}
+            <text class="faint num halo" x={t.x} y={t.y} text-anchor={t.anchor} font-size="11">{t.text}</text>
+          {/each}
+          {#each g.titles as t}
+            <text class="halo" x={t.x} y={t.y} text-anchor={t.anchor} font-size="12.5">{t.label}</text>
+            <text class="faint it halo" x={t.x} y={t.y + 14} text-anchor={t.anchor} font-size="11">{t.what}</text>
+          {/each}
+        </svg>
+
+        {#if g.id === 'split'}
+          <p class="note">
+            With every service budget frozen, everyone else is <span class="num">{bn(w.frozen)}</span> better off, and
+            general administration alone never undoes that: charged in full it still leaves them
+            <span class="num">{bn(w.adminFull)}</span> better off. The blue wedge ends where:
+          </p>
+          <table class="book wedge">
+            <thead>
+              <tr><th>General administration</th><th>Schools, other services frozen</th><th>Other services, schools frozen</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>frozen</td><td class="num">below {pct(w.floor.schools)}</td><td class="num">below {pct(w.floor.others)}</td></tr>
+              <tr><td>charged in full</td><td class="num">below {pct(w.top.schools)}</td><td class="num">below {pct(w.top.others)}</td></tr>
+            </tbody>
+          </table>
+          <p class="note">
+            The main case charges schools <span class="num">{pct(mainRange('schools'))}</span> of per-pupil cost, every
+            other public service <span class="num">{pct(mainRange('others'))}</span> on this axis and general
+            administration <span class="num">{pct(mainRange('gg'))}</span>: <span class="num">{bn(d.main)}</span> a year
+            worse off. With every budget growing in full it would be <span class="num">{bn(w.full)}</span>.
+          </p>
+        {:else}
+          <p class="note">
+            Taxes and benefits are each larger than the whole cost, so the blue side is large here; the question is how
+            far the records would have to be off. From the main case, taxes alone would have to be
+            <span class="num">{pct([ms.taxes[0] - 1, ms.taxes[1] - 1])}</span> above what records show, benefits alone
+            <span class="num">{pct([1 - ms.benefits[1], 1 - ms.benefits[0]])}</span> below, or every public service would
+            have to grow by less than <span class="num">{pct(d.servicesRoot)}</span> of its average cost. Moved together
+            (the black dashes), taxes and benefits would each have to be <span class="num">{pct(d.together)}</span> off in
+            the group’s favour.
+          </p>
+        {/if}
       {/each}
-      {#each labels.ticks as t}
-        <text class="faint num halo" x={t.x} y={t.y} text-anchor={t.anchor} font-size="11">{t.text}</text>
-      {/each}
-      {#each labels.titles as t}
-        <text class="halo" x={t.x} y={t.y} text-anchor={t.anchor} font-size="12.5">{t.label}</text>
-        <text class="faint it halo" x={t.x} y={t.y + 14} text-anchor={t.anchor} font-size="11">{t.what}</text>
-      {/each}
-    </svg>
     </div>
-
-    <div class="slider">
-      <span>Turn</span>
-      <input type="range" min="-180" max="180" step="1" bind:value={yaw} aria-label="Turn the cube" />
-      <span class="num">{Math.round(yaw)}°</span>
-    </div>
-    <div class="slider">
-      <span>Tilt</span>
-      <input type="range" min="4" max="70" step="1" bind:value={pitch} aria-label="Tilt the cube" />
-      <span class="num">{Math.round(pitch)}°</span>
-    </div>
-
-    <p class="note">
-      {#if !anyGain}
-        Nowhere in this cube is everyone else better off: even with all three at their most favourable settings, and
-        every other assumption at the main case, the sheet lies outside it.
-      {:else if !gainAll.length}
-        Only some of the main case’s specifications have a corner of this cube where everyone else is better off.
-      {/if}
-      From the main case, one at a time:
-      {#each alone as a, i}
-        {a.D.label.toLowerCase()}
-        {#if a.all}reaches the sheet at <span class="num">{rangeOf(a.id, a.roots)}</span>{:else if a.none}never
-          reaches it (at <span class="num">{fmt(a.id, a.end)}</span> everyone else is still
-          <span class="num">{bn(a.atEnd)}</span> worse off){:else}reaches it for some specifications only{/if}{i < 2 ? '; ' : '.'}
-      {/each}
-    </p>
   </div>
 
   <aside class="side">
     <p>
-      Drag the cube or use the sliders to turn it. Choose any three assumptions for the axes; an assumption can
-      appear once, and “every public service” cannot share the cube with one of its parts.
-    </p>
-    <p>
-      The cube spans each assumption’s whole range, not its likely range, so the size of the blue corner is not a
+      Each cube spans every assumption’s whole range, not its likely range, so the size of the blue region is not a
       probability.
     </p>
     <p>
-      On a derived axis the main case sits at the one share that costs the same as its own mix. It charges colleges,
-      police, health and welfare in full and roads not at all, which on “every other public service” comes to
-      <span class="num">{rangeOf('others', span(d.specs.map((s) => mainAt(s, 'others'))))}</span>.
+      The ochre band holds the break-even sheet of each of the main case’s {d.specs.length} specifications, drawn as one
+      even tint: solid edge for the specification most favourable to the group, dotted for the least. Black dots: the
+      main case under each specification. The moves are drawn for the one most favourable to the group
+      (<span class="num">{bn([d.main[0], d.main[0]])}</span>).
     </p>
     <p>
-      The ochre band holds the break-even sheet of every specification, drawn as one even tint: solid edge for the
-      specification most favourable to the group, dotted for the least.
-    </p>
-    <p>
-      Black dots: the main case under each of its {d.specs.length} specifications. The dotted moves and the drop line
-      belong to the one most favourable to the group (<span class="num">${n0(d.main[0])}bn</span>).
+      On a derived axis the main case sits at the one share that costs the same as its own mix: it charges colleges,
+      police, health and welfare in full and roads not at all, which comes to
+      <span class="num">{pct(mainRange('others'))}</span> of “every other public service”.
     </p>
     <p>
       “Every public service” sets schools, colleges, police, health, welfare, housing and roads to one share of their
       average cost, with general administration as in the main case. Here it turns at
-      <span class="num">{rangeOf('services', d.servicesRoot)}</span>; the staircase’s
-      <span class="num">{rangeOf('services', d.publishedBreakEven)}</span> also varies the model of the gain from
-      their work.
+      <span class="num">{pct(d.servicesRoot)}</span>; the staircase’s <span class="num">{pct(d.publishedBreakEven)}</span>
+      also varies the model of the gain from their work.
     </p>
-    <p>proto/cube.cjs; the page’s straight-line formula is gated against the engine at {d.gatePoints.toLocaleString('en-US')} random points.</p>
+    <p>
+      proto/cube.cjs; the drawing’s straight-line formula is gated against the engine at
+      {d.gatePoints.toLocaleString('en-US')} random points, and the table’s thresholds are gated to fall inside the cube
+      for every specification.
+    </p>
   </aside>
 </section>
 
 <style>
-  .cube { width: 100%; height: auto; display: block; touch-action: pan-y; cursor: grab; user-select: none; }
-  .cube:active { cursor: grabbing; }
-  .picks select { font: inherit; font-size: 0.88rem; max-width: 15rem; }
-  .lede .num, .note .num, .side .num { white-space: nowrap; }
+  .cube { width: 100%; height: auto; display: block; }
+  .view { max-width: 40rem; margin: 1.6rem 0 0; font-size: 0.95rem; color: var(--muted); }
+  .view b { color: var(--ink); font-weight: 600; }
+  .wedge { font-size: 0.88rem; margin: 0.4rem 0 0.2rem; }
+  .note .num, .side .num, .wedge .num { white-space: nowrap; }
 </style>

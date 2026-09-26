@@ -123,6 +123,29 @@ function build(A) {
     servicesRoot[1] <= breakEven[1] + 1e-9, `${servicesRoot.map((x) => (100 * x).toFixed(2)).join("–")}% inside ` +
     `${breakEven.map((x) => (100 * x).toFixed(2)).join("–")}%`);
 
+  // The default cube (schools, every other public service, general administration): where the break-even sheet
+  // meets its edges, with the dials not on the edge frozen or at full. The page prints these as its table.
+  const OTHERS = COMPOSITES.find((c) => c.id === "others").members;
+  const at = (s, sch, oth, g) => formula(s, { ...s.mainAt, schools: sch, ...Object.fromEntries(OTHERS.map((k) => [k, oth])), gg: g });
+  const cross = (f) => f(0) / (f(0) - f(1));
+  const wedge = {
+    frozen: span(specs.map((s) => at(s, 0, 0, 0))),
+    adminFull: span(specs.map((s) => at(s, 0, 0, 1))),
+    full: span(specs.map((s) => at(s, 1, 1, 1))),
+    floor: { schools: span(specs.map((s) => cross((x) => at(s, x, 0, 0)))), others: span(specs.map((s) => cross((x) => at(s, 0, x, 0)))) },
+    top: { schools: span(specs.map((s) => cross((x) => at(s, x, 0, 1)))), others: span(specs.map((s) => cross((x) => at(s, 0, x, 1)))) },
+  };
+  gate("every budget frozen leaves everyone else better off, every specification", wedge.frozen[1] < 0,
+    wedge.frozen.map((x) => x.toFixed(1)).join(" to "));
+  gate("general administration alone never turns that into a cost", wedge.adminFull[1] < 0, wedge.adminFull.map((x) => x.toFixed(1)).join(" to "));
+  const inside = [wedge.floor.schools, wedge.floor.others, wedge.top.schools, wedge.top.others].every((r) => r[0] > 0 && r[1] < 1);
+  gate("the sheet meets all four wedge edges inside the cube", inside,
+    [wedge.floor.schools, wedge.floor.others, wedge.top.schools, wedge.top.others].map((r) => r.map((x) => (100 * x).toFixed(1)).join("–") + "%").join(", "));
+  const measured = {
+    taxes: span(specs.map((s) => rootOf(s, "taxes"))).map((x) => round(x)),
+    benefits: span(specs.map((s) => rootOf(s, "benefits"))).map((x) => round(x)),
+  };
+
   const order = specs.map((s, i) => [s.main, i]).sort((a, b) => a[0] - b[0]);
   const describe = (spec) => ({ allocation: spec.allocation, normalization: spec.normalization, schoolShare: round(spec.share, 4),
     schools: spec.school, gg: round(spec.gg, 4), uninsured: spec.uc });
@@ -138,6 +161,12 @@ function build(A) {
     lowEnd: order[0][1], highEnd: order.at(-1)[1], gatePoints: specs.length * 40,
     lowEndSpec: describe(specs[order[0][1]].spec),
     together: together.map((x) => round(x)),
+    measured,
+    wedge: {
+      frozen: wedge.frozen.map((x) => round(x, 2)), adminFull: wedge.adminFull.map((x) => round(x, 2)), full: wedge.full.map((x) => round(x, 2)),
+      floor: { schools: wedge.floor.schools.map((x) => round(x)), others: wedge.floor.others.map((x) => round(x)) },
+      top: { schools: wedge.top.schools.map((x) => round(x)), others: wedge.top.others.map((x) => round(x)) },
+    },
     servicesRoot: servicesRoot.map((x) => round(x)),
     publishedBreakEven: breakEven.map((x) => round(x)),
   };
