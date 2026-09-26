@@ -117,10 +117,11 @@ def test_epsilon_rows_are_sensitivity_only():
         "cbo_category_lag_non_school_full"]["max_welfare_bn"] == pytest.approx(-165.12, abs=0.01)
 
 
-def test_sept26_cases_span_the_adopted_bands_at_the_payload_responses():
-    u = pd.read_csv(OUT / "sept26" / "case_uncertainty.csv")
-    main = json.loads((HERE.parent / "main_case_2026_09_26/derived/summary.json").read_text())
-    for case, band in (("sept26", main["main_case"]),
+@pytest.mark.parametrize("name, lane", json.loads((HERE / "later_cases.json").read_text()).items())
+def test_later_cases_span_the_adopted_bands_at_the_payload_responses(name, lane):
+    u = pd.read_csv(OUT / name / "case_uncertainty.csv")
+    main = json.loads((HERE.parent / lane / "derived/summary.json").read_text())
+    for case, band in ((name, main["main_case"]),
                        ("uncorrected_at_adopted_responses", main["uncorrected_at_adopted_responses"])):
         c = u[u.case == case]
         assert len(c) == 64
