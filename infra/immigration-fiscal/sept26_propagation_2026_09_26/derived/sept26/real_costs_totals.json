@@ -1,0 +1,50 @@
+{
+ "case": "sept26",
+ "columns": [
+  "sept23",
+  "sept24",
+  "sept26"
+ ],
+ "channels": {
+  "victims_equal": 28.9228851746268,
+  "victims_custody": 32.3381,
+  "victims_envelope_low": 15.4099,
+  "victims_envelope_high": 45.3424,
+  "victims_equal_mixed_group": 30.927388,
+  "property_low": 1.2726508536391001,
+  "property_high": 1.3762198638057002,
+  "unreimbursed_low": 3.2435,
+  "unreimbursed_high": 5.5581,
+  "unreimbursed_07_low": 2.4605,
+  "unreimbursed_07_high": 4.2162,
+  "congestion": 19.162711110731056,
+  "congestion_low": 8.047943973203898,
+  "congestion_high": 35.25151421805585,
+  "housing_gain_metro_local": 3.507578587187932,
+  "housing_gain_national": 0.7082298460183115,
+  "housing_gain_max": 9.403795587206028,
+  "housing_gain_min": -0.3792459764252824,
+  "care": 4.1475791436498675,
+  "mobility": 0.6548831113416558,
+  "scale_net": 13.927466764218613,
+  "victims_custody_mixed_scaled": 34.57929455669199
+ },
+ "target_population_m": 40.89657415235185,
+ "care_constant_bn": 4.15,
+ "sources_sha256": {
+  "sept26_propagation_2026_09_26/derived/sept26/band_variants.csv": "b2d986aa9cdf42e21f3beb33a078b715f9beb72983e17d7a3eddecd68524b411",
+  "sept26_propagation_2026_09_26/derived/sept26/band_variants.json": "1edae88fc17afb4f722b31b19bd577ccedd736541905168857c5c162ba5471b5",
+  "main_case_2026_09_24/derived/summary.json": "3887e678c53e93f7f31bf48d5e56e005dcfd3b71f2d76b6dfcf62415489bfb75",
+  "crime_victim_cost_2026_09_23/derived/cost_by_offence_central.csv": "8b5caa0ea78a39a501be80baf2887b1fd8457f0f07b9c0fe9a82d6c1692448a8",
+  "crime_victim_cost_2026_09_23/derived/arms.csv": "dd5c2c6b30841f62712441be76e43babe032ae4bdcc67bc4594098af78aa8ff7",
+  "crime_victim_cost_2026_09_23/derived/property_proxy.csv": "a5b7383e533d90c1de32d825ed565d461f05113a78d54112aed71e072cd8226c",
+  "crime_ratio_direction_2026_09_24/derived/dollar_effects.csv": "203f50a7470026420626304a48ecd54758714e0a3b0e1b71f14b67dab4d30c0d",
+  "uncompensated_care_2026_09_23/derived/added_cost_arms.csv": "b62888cfa3194f724c95ea41bb5da0d4b6c38f499c2207d3814579fcb22592d5",
+  "congestion_2026_09_23/derived/arms_summary.csv": "443bf47724c8aead17cf701ecedb5e8bec38a0caaf3b764efc02a3599ce5f225",
+  "housing_transfer_2026_09_23/derived/arms_summary.csv": "f917742b60e0c6843cfa114ca821d54bf73eab8e12002f754e13e3081de4a2e9",
+  "care_household_services_2026_09_23/derived/summary.csv": "ea351ee9aac908ba97599fdfb59e7b2d642ab5e6acb65e86ce48a9a016a2ceef",
+  "labor_mobility_insurance_2026_09_23/derived/insurance_summary.json": "63ae37b4b8e65f48257bb586d360c8a9673b08f05203c2701b4917424760388b",
+  "scale_spillovers_2026_09_23/derived/summary.csv": "385c45e73ab523c28ef38ff24b0b05704aa32c1a2630c11fb89d8443c56b54c0",
+  "main_case_2026_09_26/derived/summary.json": "1c7d06562ed4598a0e57009fd92350d2bc3209d8d7542ff7364381faba24e1b8"
+ }
+}

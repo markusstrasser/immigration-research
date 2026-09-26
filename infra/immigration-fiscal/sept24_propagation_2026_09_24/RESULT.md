@@ -168,20 +168,20 @@ Run order from the repository root; every step exits nonzero on a failed gate:
 
 ```
 node infra/immigration-fiscal/sept24_propagation_2026_09_24/export_package.cjs
-OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/debt_legacy_2026_09_23/debt_legacy.py
-OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/debt_legacy_2026_09_23/debt_legacy.py --case sept24 --out-dir DIR
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/distribution_weights_2026_09_23/distribute.py --case sept24 --out-dir DIR
 node infra/immigration-fiscal/uncertainty_propagation_2026_09_22/sept24_specs.cjs
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/uncertainty_propagation_2026_09_22/propagate.py --case sept24
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/uncertainty_propagation_2026_09_22/audit.py
-node infra/immigration-fiscal/sept24_propagation_2026_09_24/band_variants.cjs
-OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/real_costs_totals.py
+node infra/immigration-fiscal/sept24_propagation_2026_09_24/band_variants.cjs --case sept24
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/real_costs_totals.py --case sept24
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/inventory.py
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/old_new.py
-OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/constant_choices.py
+OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/constant_choices.py --case sept24
 OPENBLAS_NUM_THREADS=1 uv run --no-project python3 -m pytest infra/immigration-fiscal/debt_legacy_2026_09_23/ infra/immigration-fiscal/distribution_weights_2026_09_23/ -q --import-mode=importlib
 ```
 
-The old results come back with `debt_legacy.py --case sept23 --out-dir DIR` and `distribute.py --case sept23 --out-dir DIR`. The two tests keep that reproduction pinned to the committed Sept 23 files (2 passed, 59 s). `propagate.py` without `--case sept24` still writes only the Sept 20 files.
+The old results come back with `debt_legacy.py --case sept23 --out-dir DIR` and `distribute.py --case sept23 --out-dir DIR`. The two tests keep that reproduction pinned to the committed Sept 23 files (2 passed, 59 s). `propagate.py` without `--case sept24` still writes only the Sept 20 files. [2026-09-26, later: the scripts now default to the schools case, `sept26_schools`, so the block above names `--case sept24`. `band_variants.cjs`, `real_costs_totals.py` and `constant_choices.py` then rewrite this lane's committed files in place. `debt_legacy.py` and `distribute.py` write to their own `derived/` for any case, so their Sept 24 run goes to `--out-dir DIR` and is compared with `git show ed1b623:` and `6e554a3:`. `propagate.py` without `--case` now runs the schools case; `--case sept20` writes only the Sept 20 files. `inventory.py` and `old_new.py` searched and compared the repository as it stood on 2026-09-24; they record that run and do not reproduce it today.]
 
 Uncommitted changes:
 
