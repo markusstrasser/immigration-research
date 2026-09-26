@@ -161,6 +161,78 @@
      "0.66": 0.6813221954785698
     }
    }
+  },
+  "A' payload path, adopted": {
+   "central": [
+    200.8752025157867,
+    246.3184360862005
+   ],
+   "delta_vs_adopted": [
+    0.0000025157866900826775,
+    0.00003608620050954414
+   ],
+   "overrides": {},
+   "payload_path": true,
+   "extra_edits": null
+  },
+  "J' payload path, all finite": {
+   "central": [
+    204.96973920445814,
+    249.7466168146304
+   ],
+   "delta_vs_adopted": [
+    4.09453920445813,
+    3.4282168146304173
+   ],
+   "overrides": {
+    "gg": {
+     "0.59": 0.6000461560720316,
+     "0.84": 0.8503957662020014
+    },
+    "row8": 0.9491629658844111,
+    "school": {
+     "0.63": 0.6521912444554522,
+     "0.66": 0.6813221954785698
+    }
+   },
+   "payload_path": true,
+   "extra_edits": null
+  },
+  "L consumption key alone (ladder 225)": {
+   "central": [
+    196.8234801243996,
+    242.2667136948134
+   ],
+   "delta_vs_adopted": [
+    -4.051719875600412,
+    -4.051686305186593
+   ],
+   "overrides": {},
+   "payload_path": true,
+   "extra_edits": "consumption_key_2026_09_24 both_corridor_net_h2"
+  },
+  "K all finite + consumption key": {
+   "central": [
+    200.91801681307103,
+    245.6948944232433
+   ],
+   "delta_vs_adopted": [
+    0.04281681307102758,
+    -0.6235055767566848
+   ],
+   "overrides": {
+    "gg": {
+     "0.59": 0.6000461560720316,
+     "0.84": 0.8503957662020014
+    },
+    "row8": 0.9491629658844111,
+    "school": {
+     "0.63": 0.6521912444554522,
+     "0.66": 0.6813221954785698
+    }
+   },
+   "payload_path": true,
+   "extra_edits": "consumption_key_2026_09_24 both_corridor_net_h2"
   }
  }
 }

@@ -74,7 +74,9 @@ precision, and the transfer argument against the debt line).
   finite-removal responses. The correction is sized separately and proposed, not adopted; changes
   to the headline stay with the operator. Sized on 2026-09-26 (ladder 227,
   `finite_response_2026_09_26`): $205.0–249.7bn, +$4.1bn / +$3.4bn, mostly because CBO's school
-  coefficients are first-order elasticities too.
+  coefficients are first-order elasticities too. Composed in one engine run with the consumption-key
+  proposal (ladder 225), the two leave the case at $200.9–245.7bn, the published $201–246bn at its
+  rounding (run K); adopting either alone moves it by about $4bn.
 
 ## Evidence
 

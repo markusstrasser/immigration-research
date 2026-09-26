@@ -44,6 +44,31 @@ run("G school finite r, s 0.16", { school: school("_s0.16") });
 run("H school finite r, s 0.18", { school: school("_s0.18") });
 run("I gg + row 8 (general government only)", { gg: gg(nat), row8: R[`row8_factor_${nat}`] });
 run("J all: gg + row 8 + school", { gg: gg(nat), row8: R[`row8_factor_${nat}`], school: school("") });
+
+// K: J composed with the proposed consumption key (ladder 225, both_corridor_net_h2) in one engine
+// run, through the corrections payload as consumption_key_2026_09_24/engine_run.cjs composes it.
+// The payload path must first reproduce the adopted case and run J; the key's edits are receipt-side.
+const CK = JSON.parse(fs.readFileSync(path.join(P.FISCAL, "consumption_key_2026_09_24", "derived", "payloads.json"), "utf8"));
+const CK_SPEC = "both_corridor_net_h2";
+function viaPayload(extra) {
+  const pay = P.correctionsPayload();
+  return P.band(P.Engine.applyCorrections(P.MODEL, { meta: pay.meta, lines: pay.lines, edits: pay.edits.concat(extra) }));
+}
+function runPayload(name, o, extra, check) {
+  setup(o);
+  const c = viaPayload(extra);
+  if (check && !(Math.abs(c[0] - runs[check].central[0]) < 1e-3 && Math.abs(c[1] - runs[check].central[1]) < 1e-3)) {
+    console.error(`[BLOCKED] payload path does not reproduce ${check}: ${c}`); process.exit(1);
+  }
+  runs[name] = { central: c, delta_vs_adopted: [c[0] - pub[0], c[1] - pub[1]], overrides: o, payload_path: true,
+    extra_edits: extra.length ? `consumption_key_2026_09_24 ${CK_SPEC}` : null };
+  console.log(`${name.padEnd(44)} ${c[0].toFixed(4)} – ${c[1].toFixed(4)}   Δ ${(c[0] - pub[0]).toFixed(4)} / ${(c[1] - pub[1]).toFixed(4)}`);
+}
+const allOver = { gg: gg(nat), row8: R[`row8_factor_${nat}`], school: school("") };
+runPayload("A' payload path, adopted", {}, [], A);
+runPayload("J' payload path, all finite", allOver, [], "J all: gg + row 8 + school");
+runPayload("L consumption key alone (ladder 225)", {}, CK.specs[CK_SPEC].edits);
+runPayload("K all finite + consumption key", allOver, CK.specs[CK_SPEC].edits);
 setup({});
 fs.writeFileSync(path.join(__dirname, "derived", "runs.json"), JSON.stringify({ published: pub, runs }, null, 1) + "\n");
 console.log("[written] derived/runs.json");

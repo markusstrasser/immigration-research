@@ -6,8 +6,9 @@ Read that way, the adopted **$200.9–246.3bn becomes $205.0–249.7bn (+$4.1bn 
 carry most of it (+$3.7 / +$3.0bn); general government adds +$0.37 / +$0.39bn net. **Proposed, not
 adopted**: under a fixed-plus-constant-marginal cost r equals b and nothing changes, and one
 standard error on the administration elasticity moves general government by $1.2–1.9bn, more than
-this correction. [CALCULATION: `r_values.py` → `derived/r_values.json`; `runner.cjs` →
-`derived/runs.json`]
+this correction. Composed in one engine run with the consumption-key proposal (ladder 225,
+−$4.1bn), the main case is **$200.9–245.7bn**, which rounds to the published $201–246bn (run K).
+[CALCULATION: `r_values.py` → `derived/r_values.json`; `runner.cjs` → `derived/runs.json`]
 
 # Finite-removal responses in the adopted main case
 
@@ -58,8 +59,18 @@ stays at zero.
 | G: schools, s 0.16 | 204.2571 | 249.0806 | +3.38 | +2.76 |
 | H: schools, s 0.18 | 204.7198 | 249.4578 | +3.84 | +3.14 |
 | **J: all (C + E + F)** | **204.9697** | **249.7466** | **+4.09** | **+3.43** |
+| L: consumption key alone (ladder 225, `both_corridor_net_h2`), payload path | 196.8235 | 242.2667 | −4.05 | −4.05 |
+| **K: J with the consumption key, one engine run** | **200.9180** | **245.6949** | **+0.04** | **−0.62** |
 
 The outer range ($172–276bn) was not recomputed; its ends move by about the central shift.
+
+K and L go through the corrections payload, as `consumption_key_2026_09_24/engine_run.cjs`
+composes it: `package.cjs`'s `correctionsPayload()` with the lane's receipt edits appended. The
+same path first reproduces A and J to 1e-3, and L matches the consumption lane's own
+$196.823–242.267bn. The key's edits are receipt-side and the finite responses act on spending
+lines, so K is the sum of the two changes. **Adopted together, the two proposals leave the main
+case at $200.9–245.7bn, which rounds to the published $201–246bn.** Adopting only one of them moves
+the headline by about $4bn, up for this lane and down for the consumption key.
 
 ## Limits
 
