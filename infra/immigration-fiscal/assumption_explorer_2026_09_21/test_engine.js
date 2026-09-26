@@ -7,9 +7,16 @@ const Engine = require("./engine.js");
 
 const derived = path.join(__dirname, "derived");
 const model = JSON.parse(fs.readFileSync(path.join(derived, "model.json"), "utf8"));
-// The data corrections adopted on 2026-09-24, as the page loads them.
-const CORRECTED = path.join(__dirname, "..", "main_case_2026_09_24", "derived");
-model.corrected = Engine.applyCorrections(model, JSON.parse(fs.readFileSync(path.join(CORRECTED, "corrections.json"), "utf8")));
+// The data corrections adopted on 2026-09-26 (they build on those of 2026-09-24), as the page loads them. Their
+// meta.responses carry the adopted school and general-government responses, which the presets read.
+const CORRECTED = path.join(__dirname, "..", "main_case_2026_09_26", "derived");
+const payload = JSON.parse(fs.readFileSync(path.join(CORRECTED, "corrections.json"), "utf8"));
+const RESPONSES = payload.meta.responses;
+model.corrected = Engine.applyCorrections(model, payload);
+// The September 24 payload stays checkable: the same model with that payload as its corrected copy.
+const CORRECTED24 = path.join(__dirname, "..", "main_case_2026_09_24", "derived");
+const model24 = Object.assign({}, model, {
+  corrected: Engine.applyCorrections(model, JSON.parse(fs.readFileSync(path.join(CORRECTED24, "corrections.json"), "utf8"))) });
 const vectors = JSON.parse(fs.readFileSync(path.join(derived, "test_vectors.json"), "utf8"));
 const TOLERANCE = 1e-6;  // billions; the exports are rounded at 1e-9
 let failures = 0, worst = 0;
@@ -76,22 +83,28 @@ const proportional = span({});
 check("proportional low", proportional[0], headline.proportional_reference.min_welfare_bn);
 check("proportional high", proportional[1], headline.proportional_reference.max_welfare_bn);
 
-// Presets as the page loads them: value_from read from scaling_check.json, dotted paths set in place.
+// Presets as the page loads them: value_from reads a scaling_check.json field or, as responses.<path>, the adopted
+// responses in the payload's meta.responses (build_ui.py resolves them the same way); dotted paths set in place.
 const presets = JSON.parse(fs.readFileSync(path.join(__dirname, "presets.json"), "utf8")).presets;
 const evidence = JSON.parse(fs.readFileSync(path.join(derived, "scaling_check.json"), "utf8"));
+const numbers = Object.assign({}, evidence, { responses: RESPONSES });
+function readValue(name) {
+  const value = name.split(".").reduce((o, k) => (o == null ? undefined : o[k]), numbers);
+  if (typeof value !== "number") throw new Error(`value_from names no number: ${name}`);
+  return value;
+}
 function presetState(id, extra) {
   const state = Engine.defaultState(model);
   for (const s of presets.find((p) => p.id === id).settings || []) {
     if (!s.path) continue;
-    const value = s.value_from === undefined ? s.value
-      : Array.isArray(s.value_from) ? s.value_from.map((k) => evidence[k]) : evidence[s.value_from];
+    const value = s.value_from === undefined ? s.value : Array.isArray(s.value_from) ? s.value_from.map(readValue) : readValue(s.value_from);
     const keys = s.path.split("."), last = keys.pop();
     keys.reduce((o, k) => o[k], state)[last] = JSON.parse(JSON.stringify(value));
   }
   return Object.assign(state, extra || {});
 }
-function costBand(state) {  // welfare sign flipped: the main-case lane reports cost as positive bn
-  const range = Engine.unresolvedRange(model, state, "welfare_bn");
+function costBand(state, m) {  // welfare sign flipped: the main-case lane reports cost as positive bn
+  const range = Engine.unresolvedRange(m || model, state, "welfare_bn");
   return [-range[1], -range[0]];
 }
 
@@ -100,63 +113,86 @@ const sept20 = costBand(presetState("repo_central", { data_corrections: false })
 check("September 20 central low", sept20[0], -headline.cbo_category_lag_non_school_full.max_welfare_bn);
 check("September 20 central high", sept20[1], -headline.cbo_category_lag_non_school_full.min_welfare_bn);
 
-// Adopted conventions reproduce the main-case lane (main_case_2026_09_23). Its CSV prints four decimals, so
-// it is checked to half a unit of the last digit; the full-precision check is the lane's own gate identity,
-// published band + GG response x GG amount + justice change + uncompensated-care change, from its inputs.json.
-const MAIN = path.join(__dirname, "..", "main_case_2026_09_23", "derived");
-const oracle = {};
-fs.readFileSync(path.join(MAIN, "main_case_bands.csv"), "utf8").trim().split("\n").slice(1).forEach((line) => {
-  const [profile, variant, low, high] = line.split(",");
-  oracle[`${profile}/${variant}`] = [Number(low), Number(high)];
-});
-const inputs = JSON.parse(fs.readFileSync(path.join(MAIN, "inputs.json"), "utf8"));
-const PRINTED = 5e-5 + 1e-9;
+// The three profiles each main-case lane reports: the central preset, the same with non-school education fixed,
+// and the proportional preset. Before 2026-09-26 the responses were the marginal rates themselves: general
+// government from scaling_check.json, as the September 23 and 24 lanes read it, and schools CBO's 0.63/0.66, which
+// meta.responses records as the elasticities. The proportional profile holds schools at 1.
+const MARGINAL_GG = { general_government_response: evidence.composite_low, general_government_response_band: [evidence.composite_low, evidence.composite_high] };
+const MARGINAL = Object.assign({ school_response: RESPONSES.school.elasticity[0], school_response_band: RESPONSES.school.elasticity.slice() }, MARGINAL_GG);
+const PROFILES = [
+  { label: "central", profile: "cbo_category_lag_non_school_full", state: (extra, marginal) => presetState("repo_central_gg", Object.assign({}, marginal ? MARGINAL : {}, extra)) },
+  { label: "non-school education fixed", profile: "cbo_category_lag_non_school_fixed",
+    state: (extra, marginal) => presetState("repo_central_gg", Object.assign({ other_education_response: 0 }, marginal ? MARGINAL : {}, extra)) },
+  { label: "proportional", profile: "proportional_reference", state: (extra, marginal) => presetState("proportional", Object.assign({}, marginal ? MARGINAL_GG : {}, extra)) },
+];
+const ON = { data_corrections: true }, OFF = { data_corrections: false };
+const PRINTED = 5e-5 + 1e-9;  // the lanes' CSVs print four decimals: half a unit of the last digit
 let adoptedChecks = 0;
-function checkAdopted(label, band, profile) {
-  const printed = oracle[`${profile}/adopted`], published = headline[profile];
-  const gg = inputs.general_government_response, ggBn = inputs.general_government_target_bn, j = inputs.justice_change_bn.central;
-  const uc = inputs.uncompensated_inside_bn;
-  check(`${label} low vs main_case_bands.csv`, band[0], printed[0], PRINTED);
-  check(`${label} high vs main_case_bands.csv`, band[1], printed[1], PRINTED);
-  check(`${label} low vs lane identity`, band[0], -published.max_welfare_bn + gg.low * ggBn + j + uc.equal_low);
-  check(`${label} high vs lane identity`, band[1], -published.min_welfare_bn + gg.high * ggBn + j + uc.equal_high);
+
+// September 23 (main_case_2026_09_23): the uncorrected data at the marginal rates. Checked to its CSV and to the lane's
+// own identity at full precision: published band + GG response x GG amount + justice change + uncompensated-care
+// change, from its inputs.json.
+const MAIN = path.join(__dirname, "..", "main_case_2026_09_23", "derived");
+function readBands(dir) {
+  const bands = {};
+  fs.readFileSync(path.join(dir, "main_case_bands.csv"), "utf8").trim().split("\n").slice(1).forEach((line) => {
+    const [profile, variant, low, high] = line.split(",");
+    bands[`${profile}/${variant}`] = [Number(low), Number(high)];
+  });
+  return bands;
+}
+const bands23 = readBands(MAIN), bands24 = readBands(CORRECTED24), bands26 = readBands(CORRECTED);
+const inputs = JSON.parse(fs.readFileSync(path.join(MAIN, "inputs.json"), "utf8"));
+function checkBand(label, band, bands, key, lane) {
+  if (!bands[key]) { failures += 1; console.error(`MISMATCH ${label}: ${lane} has no band ${key}`); return; }
+  check(`${label} low vs ${lane} ${key}`, band[0], bands[key][0], PRINTED);
+  check(`${label} high vs ${lane} ${key}`, band[1], bands[key][1], PRINTED);
   adoptedChecks += 1;
 }
-const OFF = { data_corrections: false };
-const sept23 = costBand(presetState("repo_central_gg", OFF));
-checkAdopted("September 23 central", sept23, "cbo_category_lag_non_school_full");
-checkAdopted("September 23, non-school education fixed", costBand(presetState("repo_central_gg", { ...OFF, other_education_response: 0 })), "cbo_category_lag_non_school_fixed");
-checkAdopted("September 23 proportional", costBand(presetState("proportional", OFF)), "proportional_reference");
-
-// With the data corrections the same conventions reproduce main_case_2026_09_24 (printed to four decimals).
-const bands24 = {};
-fs.readFileSync(path.join(CORRECTED, "main_case_bands.csv"), "utf8").trim().split("\n").slice(1).forEach((line) => {
-  const [profile, variant, low, high] = line.split(",");
-  if (variant === "adopted") bands24[profile] = [Number(low), Number(high)];
-});
-const ON = { data_corrections: true };
-function checkCorrected(label, band, profile) {
-  check(`${label} low vs main_case_2026_09_24`, band[0], bands24[profile][0], PRINTED);
-  check(`${label} high vs main_case_2026_09_24`, band[1], bands24[profile][1], PRINTED);
-  adoptedChecks += 1;
+const result = {};
+for (const p of PROFILES) {
+  const band = result[`sept23/${p.profile}`] = costBand(p.state(OFF, true));
+  const published = headline[p.profile], gg = inputs.general_government_response, ggBn = inputs.general_government_target_bn;
+  const j = inputs.justice_change_bn.central, uc = inputs.uncompensated_inside_bn;
+  checkBand(`September 23 ${p.label}`, band, bands23, `${p.profile}/adopted`, "main_case_2026_09_23");
+  check(`September 23 ${p.label} low vs lane identity`, band[0], -published.max_welfare_bn + gg.low * ggBn + j + uc.equal_low);
+  check(`September 23 ${p.label} high vs lane identity`, band[1], -published.min_welfare_bn + gg.high * ggBn + j + uc.equal_high);
 }
-const adopted = costBand(presetState("repo_central_gg", ON));
-checkCorrected("adopted central", adopted, "cbo_category_lag_non_school_full");
-checkCorrected("adopted, non-school education fixed", costBand(presetState("repo_central_gg", { ...ON, other_education_response: 0 })), "cbo_category_lag_non_school_fixed");
-checkCorrected("adopted proportional", costBand(presetState("proportional", ON)), "proportional_reference");
 
-// Presets as loaded, with no override: the page's central case and the proportional benchmark carry the
-// corrections and reproduce main_case_2026_09_24; the September 20 case has them off; every other convention runs
-// on the corrected data.
+// September 24 (main_case_2026_09_24): its payload at the marginal rates, the case adopted that day.
+for (const p of PROFILES) {
+  checkBand(`September 24 ${p.label}`, result[`sept24/${p.profile}`] = costBand(p.state(ON, true), model24), bands24, `${p.profile}/adopted`, "main_case_2026_09_24");
+}
+
+// September 26 (main_case_2026_09_26), with the switch set explicitly: the adopted case, and with the corrections off
+// the uncorrected model at the adopted responses, the gate for the uncorrected model.
+for (const p of PROFILES) {
+  checkBand(`September 26 ${p.label}`, result[`sept26/${p.profile}`] = costBand(p.state(ON)), bands26, `${p.profile}/adopted`, "main_case_2026_09_26");
+  checkBand(`Uncorrected at the adopted responses, ${p.label}`, result[`uncorrected/${p.profile}`] = costBand(p.state(OFF)), bands26,
+    `${p.profile}/uncorrected_at_adopted_responses`, "main_case_2026_09_26");
+}
+
+// Presets as loaded, with no override: the page's central case and the proportional benchmark carry the corrections
+// and the adopted responses, and reproduce main_case_2026_09_26; the September 20 case has the corrections off;
+// every other convention runs on the corrected data.
 function checkSwitch(label, got, want) {
   if (got !== want) { failures += 1; console.error(`MISMATCH ${label}: data_corrections is ${got}, expected ${want}`); }
+}
+function checkSame(label, got, want) {
+  if (JSON.stringify(got) !== JSON.stringify(want)) { failures += 1; console.error(`MISMATCH ${label}: ${JSON.stringify(got)}, expected ${JSON.stringify(want)}`); }
 }
 const central = presets.filter((p) => p.central);
 checkSwitch("exactly one central preset", central.length, 1);
 const loaded = costBand(presetState(central[0].id));
-checkCorrected(`central preset ${central[0].id} as loaded`, loaded, "cbo_category_lag_non_school_full");
-checkCorrected("proportional preset as loaded", costBand(presetState("proportional")), "proportional_reference");
+checkBand(`central preset ${central[0].id} as loaded`, loaded, bands26, "cbo_category_lag_non_school_full/adopted", "main_case_2026_09_26");
+checkBand("proportional preset as loaded", costBand(presetState("proportional")), bands26, "proportional_reference/adopted", "main_case_2026_09_26");
 for (const p of presets) checkSwitch(`preset ${p.id} as loaded`, presetState(p.id).data_corrections, p.id !== "repo_central");
+const GG = [RESPONSES.general_government.low, RESPONSES.general_government.high], SCHOOL = [RESPONSES.school.growth, RESPONSES.school.decline];
+for (const id of [central[0].id, "proportional"]) {
+  const s = presetState(id);
+  checkSame(`${id} general-government responses as loaded`, [s.general_government_response, s.general_government_response_band], [GG[0], GG]);
+  if (id !== "proportional") checkSame(`${id} school responses as loaded`, [s.school_response, s.school_response_band], [SCHOOL[0], SCHOOL]);
+}
 
 // Attribution must be exhaustive: Shapley effects sum to the total difference.
 const from = Engine.defaultState(model);
@@ -191,7 +227,9 @@ if (baseChecks < 400) { failures += 1; console.error(`MISMATCH share-base checks
 
 const counts = `${vectors.grid.length} grid rows, ${vectors.service.length} service cases, ${vectors.accounts.length} accounting cases`;
 if (failures) { console.error(`FAIL: ${failures} mismatches over ${counts}; worst gap ${worst}`); process.exit(1); }
+const bn = (b) => `${b[0].toFixed(4)} to ${b[1].toFixed(4)} bn`, MAIN_PROFILE = "cbo_category_lag_non_school_full";
 console.log(`PASS: ${counts}, 4 headline bounds, September 20 central preset, ${adoptedChecks} adopted bands ` +
-  `(September 23 ${sept23[0].toFixed(4)} to ${sept23[1].toFixed(4)} bn; with the data corrections ${adopted[0].toFixed(4)} to ` +
-  `${adopted[1].toFixed(4)} bn; central preset as loaded ${loaded[0].toFixed(4)} to ${loaded[1].toFixed(4)} bn), ` +
-  `data switch on every preset as loaded (off only for repo_central), attribution closure, ${baseChecks} corrected shares on their base; worst gap ${worst.toExponential(2)} bn`);
+  `(central: September 23 ${bn(result[`sept23/${MAIN_PROFILE}`])}; September 24 ${bn(result[`sept24/${MAIN_PROFILE}`])}; ` +
+  `September 26 ${bn(result[`sept26/${MAIN_PROFILE}`])}, as loaded ${bn(loaded)}; uncorrected at the adopted responses ` +
+  `${bn(result[`uncorrected/${MAIN_PROFILE}`])}), data switch on every preset as loaded (off only for repo_central), adopted responses ` +
+  `as loaded, attribution closure, ${baseChecks} corrected shares on their base; worst gap ${worst.toExponential(2)} bn`);

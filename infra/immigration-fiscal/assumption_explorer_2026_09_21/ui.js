@@ -3,12 +3,17 @@
   "use strict";
   var M = window.MODEL, P = window.PRESETS, PRESETS = P.presets, CONTEXT = window.CONTEXT.items || [], EV = window.EVIDENCE, LAD = window.LADDER, SRC = window.SOURCES;
   var E = window.Engine, $ = function (id) { return document.getElementById(id); };
-  // The data corrections (main_case_2026_09_24/derived/corrections.json), attached once before anything is
-  // evaluated: a state with data_corrections set evaluates this corrected copy of the model.
-  var CX = window.CORRECTIONS, ADOPTED = CX.meta.adopted, CORR = {}, CORR_LINE = {};
+  // The data corrections (main_case_2026_09_26/derived/corrections.json), attached once before anything is
+  // evaluated: a state with data_corrections set evaluates this corrected copy of the model. The payload names
+  // the one it builds on, so ADOPTED lists every adoption date it carries. Its meta.responses are the adopted
+  // school and general-government responses: engine state that the presets set, not cell edits.
+  var CX = window.CORRECTIONS, CORR = {}, CORR_LINE = {}, R = CX.meta.responses, ADOPTED = [];
+  for (var cm = CX.meta; cm; cm = cm.builds_on) ADOPTED.unshift(cm.adopted);
+  ADOPTED = ADOPTED.slice(0, -1).join(", ") + (ADOPTED.length > 1 ? " and " : "") + ADOPTED[ADOPTED.length - 1];
   M.corrected = E.applyCorrections(M, CX);
   CX.lines.forEach(function (l) { CORR[l.response_class] = l.id; CORR_LINE[l.id] = l; });  // line id by response class, as figures_2026_09_22 reads them
   if (!CORR.education_school_part || !CORR.education_other_part || !CORR.correction_constant) throw new Error("corrections.json lacks a correction line class");
+  if (!R || !R.school || !R.general_government) throw new Error("corrections.json lacks meta.responses");
   var state, lens = "welfare_bn", activePreset = null, activeControl = null, history = [];
   var ladder = { q: "", topics: {}, all: false, token: null };
   var SMOOTH = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
@@ -46,23 +51,34 @@
   var gps = EV.general_public_service_2024_bn;
   var GG_HELP = "The account published on September 20 held this at zero by assumption; since 2026-09-23 the central case lets it grow. " + Math.round(EV.state_local_share * 100) + "% of general government outside interest is state and local. Across the 50 states, administration spending rises " +
     (elasticity("Governmental administration") * 10).toFixed(1) + "% for every 10% more residents (police " + (elasticity("Police") * 10).toFixed(1) + "%, schools " + (elasticity("Elementary") * 10).toFixed(1) + "%). Federal tax collection costs $" + gps.federal_tax_financial.toFixed(1) +
-    "bn; the federal executive and legislature $" + gps.federal_executive_legislative.toFixed(1) + "bn. Together that implies a share between " + EV.composite_low + " and " + EV.composite_high + "; the central case enters both. Federal police, courts and prisons, the FBI among them, are charged under police, courts, prisons.";
+    "bn; the federal executive and legislature $" + gps.federal_executive_legislative.toFixed(1) + "bn. Together that implies a marginal rate between " + EV.composite_low + " and " + EV.composite_high + ". " + removalText(R.general_government, [R.general_government.low, R.general_government.high], "population") +
+    " Federal police, courts and prisons, the FBI among them, are charged under police, courts, prisons.";
+  // Why the adopted response exceeds the marginal rate it comes from (finite_response_2026_09_26), from meta.responses.
+  function removalText(r, responses, base) {
+    return "The group is " + (r.s * 100).toFixed(1) + "% of " + (base === "population" ? "residents" : "pupils") + ", and when cost is a power of " + base +
+      ", removing a share that large saves more than the marginal rate: " + responses.map(function (x) { return x.toFixed(3); }).join(" and ") +
+      " of average cost, which the central case enters. Grey ticks mark the marginal rates, dark ticks the responses.";
+  }
 
   var levels = function (d) { return M.production.dims[d]; };
   var CONTROLS = [
     { group: "Input data", id: "data_corrections", label: "Apply the data corrections adopted on " + ADOPTED, type: "levels", levels: [true, false], affects: ["all"],
-      help: "A dataset audit and four outside checks, adopted on " + ADOPTED + ". Tax records by legal status and survey fill-ins, and CBO's income shares, lower the taxes assigned to the group. Treasury's credit shares, program records for benefits and medical care charged by use lower the spending keyed to it. Without them every line is as the account published it." },
+      help: "A dataset audit and four outside checks, adopted on " + CX.meta.builds_on.adopted + ", and the consumption key corrected for saving and remittances, adopted on " + CX.meta.adopted +
+        ". Tax records by legal status and survey fill-ins, and CBO's income shares, lower the taxes assigned to the group, and the consumption key raises its share of consumption taxes. Treasury's credit shares, program records for benefits and medical care charged by use lower the spending keyed to it. Without them every line is as the account published it. The school and general-government responses are settings of their own, so switching the corrections off leaves them where they are." },
     { group: "What counts as a cost", id: "service_response", label: "Public services grow with the population", type: "slider", marks: [0, 0.5, 1],
       help: "How much of schools, police, health and other services would not be needed if the group were absent. 1 charges the average cost per person; 0 treats services as free to add people to. The account was run at 0, 0.5 and 1.", affects: ["service"] },
-    { group: "What counts as a cost", id: "school_response", label: "School spending grows with enrollment", type: "slider", marks: [0.63, 0.66],
-      help: "Derived from CBO's panel of states: spending per pupil grows 0.37 points slower for each point of enrollment growth, and 0.34 points faster for each point of decline, so total spending moves 63-66% as much as enrollment. An association across states; CBO does not present it as a causal long-run estimate. Applies to the school part of education only.", affects: ["education_services"] },
+    { group: "What counts as a cost", id: "school_response", label: "School spending grows with enrollment", type: "slider", marks: R.school.elasticity, adopted: [R.school.growth, R.school.decline],
+      help: "Derived from CBO's panel of states: spending per pupil grows 0.37 points slower for each point of enrollment growth, and 0.34 points faster for each point of decline, so at the margin total spending moves " +
+        R.school.elasticity.map(function (x) { return Math.round(x * 100); }).join("-") + "% as much as enrollment. An association across states; CBO does not present it as a causal long-run estimate. " +
+        removalText(R.school, [R.school.growth, R.school.decline], "enrollment") + " Applies to the school part of education only.", affects: ["education_services"] },
     { group: "What counts as a cost", id: "school_share", label: "School share of education spending", type: "slider", min: E.schoolShareBounds(M)[0], max: E.schoolShareBounds(M)[1],
       help: "Nationally between 71.5% and 86.5%, depending on how college spending is counted. The account assumes the group's mix matches the nation's.", affects: ["education_services"] },
     { group: "What counts as a cost", id: "other_education_response", label: "College and other education spending grows with enrollment", type: "slider", affects: ["education_services"],
       help: "No estimate exists. The account runs both 0 and 1." },
     { group: "What counts as a cost", id: "delayed_response", label: "Roads, economic affairs and parks grow with the population", type: "slider", affects: ["economic_affairs_services", "recreation_culture"],
       help: "These budgets adjust slowly. The central case holds them fixed (0)." },
-    { group: "What counts as a cost", id: "general_government_response", label: "General government grows with the population", type: "slider", marks: [EV.composite_low, EV.composite_high], affects: ["general_public_services"], help: GG_HELP },
+    { group: "What counts as a cost", id: "general_government_response", label: "General government grows with the population", type: "slider", marks: [EV.composite_low, EV.composite_high],
+      adopted: [R.general_government.low, R.general_government.high], affects: ["general_public_services"], help: GG_HELP },
     { group: "What counts as a cost", id: "public_goods_response", label: "Defense grows with the population", type: "slider", affects: ["defense"],
       help: "Held at zero: defense spending follows other countries and operations. Intelligence agencies are funded largely through the defense budget. 1 charges a full per-head share." },
     { group: "What counts as a cost", id: "interest_response", label: "Interest on existing debt grows with the population", type: "slider", affects: ["interest"],
@@ -131,8 +147,13 @@
       medicare_income: "People covered by Medicare, weighted by income", modeled_owner_property: "Property tax modeled for owner-occupied homes", none: "Paid from abroad, none assigned" }
   };
   function keyName(side, k) { return KEY[side][k] || String(k).replace(/_/g, " "); }
+  // Numbers print to three decimals at most; the two ends of a band print to the same number of decimals.
+  function ends(v) {
+    var d = Math.max.apply(null, v.map(function (x) { var t = show(x), i = t.indexOf("."); return i < 0 ? 0 : t.length - i - 1; }));
+    return v.map(function (x) { return x.toFixed(d); });
+  }
   function show(v) {
-    if (Array.isArray(v)) return v.map(show).join(" and ");  // a band: both values enter the range
+    if (Array.isArray(v)) return (v.every(function (x) { return typeof x === "number"; }) ? ends(v) : v.map(show)).join(" and ");  // a band: both values enter the range
     if (v && typeof v === "object") {  // per-line rules (their names say which line) or typed shares, keyed by line
       var ids = Object.keys(v);
       return ids.length ? ids.map(function (id) {
@@ -151,11 +172,16 @@
   SOURCES.forEach(function (s) { (s.supports || []).forEach(function (id) { (BY_SUPPORT[id] = BY_SUPPORT[id] || []).push(s); }); });
   function citation(s) { return s.authors + " (" + s.year + "). " + s.title + (s.venue ? ". " + s.venue : "") + "."; }
   function sourceHref(s) { return s.kind === "repo" ? repoHref(s.path) : s.url; }
+  function sourceLink(s) { return '<a href="' + esc(sourceHref(s)) + '" target="_blank" rel="noopener" title="' + esc(citation(s)) + '">' + esc(s.short) + '</a>'; }
   function citeLinks(ids) {
     var seen = {}, list = [];
     [].concat(ids).forEach(function (id) { (BY_SUPPORT[id] || []).forEach(function (s) { if (!seen[s.key]) { seen[s.key] = 1; list.push(s); } }); });
-    return list.map(function (s) { return '<a href="' + esc(sourceHref(s)) + '" target="_blank" rel="noopener" title="' + esc(citation(s)) + '">' + esc(s.short) + '</a>'; }).join(", ");
+    return list.map(sourceLink).join(", ");
   }
+  // A preset setting's `cite` names sources by key (build_ui.py refuses a key the registry lacks).
+  var BY_KEY = {};
+  SOURCES.forEach(function (s) { BY_KEY[s.key] = s; });
+  function keyLinks(keys) { return keys && keys.length ? ' <span class="cites">Source: ' + keys.map(function (k) { return sourceLink(BY_KEY[k]); }).join(", ") + '</span>' : ""; }
   function cites(ids, lead) { var links = citeLinks(ids); return links ? '<span class="cites">' + (lead || "Sources: ") + links + '</span>' : ""; }
   function repoHref(path) { return SRC.repo_prefix + "/" + path.split("/").map(encodeURIComponent).join("/"); }
   function repoLinks(text) {  // a file named in a reference opens the local copy; only paths the build found on disk are linked
@@ -171,7 +197,7 @@
   var CENTRAL_PRESET = PRESETS.filter(function (p) { return p.central; })[0], CENTRAL_ID = CENTRAL_PRESET.id, CENTRAL = presetState(CENTRAL_PRESET);
   // A control whose central value is a band shows both ends; moving it drops the band, going back restores it.
   var BAND_OF = { school_response: "school_response_band", general_government_response: "general_government_response_band" };
-  function centralText(k) { return BAND_OF[k.id] && CENTRAL[BAND_OF[k.id]] ? CENTRAL[BAND_OF[k.id]].join("–") : show(get(CENTRAL, k.id)); }
+  function centralText(k) { return BAND_OF[k.id] && CENTRAL[BAND_OF[k.id]] ? ends(CENTRAL[BAND_OF[k.id]]).join("–") : show(get(CENTRAL, k.id)); }
   function restoreBand(s, id) { if (BAND_OF[id]) { if (CENTRAL[BAND_OF[id]]) s[BAND_OF[id]] = E.clone(CENTRAL[BAND_OF[id]]); else delete s[BAND_OF[id]]; } }
 
   function outcome(s, key) {
@@ -200,9 +226,10 @@
       .every(function (k) { return s[k] === d[k]; }) && !Object.keys(s.response_override).length && s.count_production;
     if (!contract) return ["own", "Your own assumptions: the account's formula, with settings the account never uses"];
     if (same(s, CENTRAL)) return ["formula", "The central case (" + CENTRAL_PRESET.kind_label + "), computed with the account's formula"];
-    // The account's executed runs predate the data corrections, so with them on no state is one of its rows.
+    // The account's executed runs predate the data corrections, so with them on no state is one of its rows. With
+    // them off the central case keeps its adopted responses, so it is no case a decision adopted.
     if (CENTRAL.data_corrections && same(s, Object.assign(E.clone(CENTRAL), { data_corrections: false })))
-      return ["formula", "The central case without the data corrections, as adopted on 2026-09-23, computed with the account's formula"];
+      return ["formula", "The central case's assumptions on the data as the account published them, computed with the account's formula"];
     if (s.data_corrections) return ["formula", "Computed with the account's formula, on the corrected data"];
     // Every rule in the ledger was executed, but the account ran whole sets of rules, never a mix per line.
     var mixed = Object.keys(s.key_override).length || Object.keys(s.key_band || {}).length;
@@ -363,7 +390,9 @@
         if (k.type === "slider") {
           var min = k.min == null ? 0 : k.min, max = k.max == null ? 1 : k.max, pos = function (val) { return "calc(8px + (100% - 16px) * " + ((val - min) / (max - min || 1)) + ")"; };
           input = '<span class="rng"><input type="range" id="c-' + k.id + '" data-path="' + k.id + '" min="' + min + '" max="' + max + '" step="' + ((max - min) / 100) + '" value="' + v + '">' +
-            (k.marks || []).map(function (m) { return '<i class="xm" style="left:' + pos(m) + '"></i>'; }).join("") + '<i class="cm" title="central value" style="left:' + pos(c) + '"></i></span><output>' + show(v) + '</output>';
+            (k.marks || []).map(function (m) { return '<i class="xm" style="left:' + pos(m) + '"></i>'; }).join("") +
+            (k.adopted || []).map(function (m) { return '<i class="am" title="adopted response ' + show(m) + '" style="left:' + pos(m) + '"></i>'; }).join("") +
+            '<i class="cm" title="central value" style="left:' + pos(c) + '"></i></span><output>' + show(v) + '</output>';
         } else {
           input = '<span class="seg" role="radiogroup" aria-label="' + esc(k.label) + '">' + k.levels.map(function (l) {
             return '<label class="opt"><input type="radio" name="c-' + k.id + '" data-path="' + k.id + "\" data-value='" + JSON.stringify(l) + "'" + (same(l, v) ? " checked" : "") + '><span>' + esc(show(l)) + (same(l, c) ? " <i>(central)</i>" : "") + '</span></label>'; }).join("") + '</span>';
@@ -425,7 +454,7 @@
     $("preset-note").innerHTML = '<h3>' + esc(p.label) + '</h3><p>' + repoLinks(live(p.summary)) + '</p>' + (p.scope_note ? '<p class="scope">' + repoLinks(live(p.scope_note)) + '</p>' : "") +
       '<div class="scroll"><table class="basis"><thead><tr><th>Assumption</th><th>Where it comes from</th><th>Why</th></tr></thead><tbody>' + (p.settings || []).map(function (s) {
         var value = /^key_(override|band)\./.test(s.path || "") ? [].concat(s.value).map(function (k) { return keyName("spending", k); }).join(" and ") : show(s.value);
-        return '<tr><td>' + esc(s.label || s.path) + (s.path ? ": " + esc(value) : "") + '</td><td><span class="tag ' + esc(s.basis) + '">' + esc(BASIS[s.basis] || s.basis) + '</span></td><td>' + esc(live(s.note)) + (s.ref ? ' <span class="path">' + repoLinks(s.ref) + '</span>' : "") + '</td></tr>'; }).join("") + '</tbody></table></div>' +
+        return '<tr><td>' + esc(s.label || s.path) + (s.path ? ": " + esc(value) : "") + '</td><td><span class="tag ' + esc(s.basis) + '">' + esc(BASIS[s.basis] || s.basis) + '</span></td><td>' + esc(live(s.note)) + (s.ref ? ' <span class="path">' + repoLinks(s.ref) + '</span>' : "") + keyLinks(s.cite) + '</td></tr>'; }).join("") + '</tbody></table></div>' +
       (p.misses && p.misses.length ? '<h4>Left out of this set of assumptions</h4><ul>' + p.misses.map(function (m) { return '<li>' + repoLinks(live(m)) + '</li>'; }).join("") + '</ul>' : "") + cites("preset:" + p.id);
   }
 

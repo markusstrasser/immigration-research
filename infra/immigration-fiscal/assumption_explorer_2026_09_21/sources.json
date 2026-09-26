@@ -1965,6 +1965,82 @@
    "supports": [
     "card:e17_survey_errors_nearly_cancel"
    ]
+  },
+  {
+   "key": "repo_decision_2026_09_26_main_case",
+   "short": "Decision, 2026-09-26",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "The main case takes finite-removal responses and the corrected consumption key",
+   "venue": "Decision record",
+   "path": "decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md",
+   "supports": [
+    "control:data_corrections",
+    "control:school_response",
+    "control:general_government_response",
+    "preset:repo_central_gg",
+    "preset:proportional",
+    "card:headline_cbo_informed_net_cost",
+    "card:e2_general_public_services_sensitivity"
+   ]
+  },
+  {
+   "key": "repo_main_case_2026_09_26",
+   "short": "Main-case lane, 2026-09-26",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "Main case with finite-removal responses and the corrected consumption key, in one engine run",
+   "venue": "Analysis lane main_case_2026_09_26",
+   "path": "infra/immigration-fiscal/main_case_2026_09_26/RESULT.md",
+   "supports": [
+    "control:data_corrections",
+    "preset:repo_central_gg",
+    "preset:proportional",
+    "card:headline_cbo_informed_net_cost",
+    "card:e2_fixed_functions_and_cbo_inputs",
+    "card:e2_fixed_service_range_and_breakeven",
+    "card:e2_general_public_services_sensitivity",
+    "card:e4_offset_threshold_is_conditional",
+    "card:e11_not_a_policy_saving",
+    "card:e16_cbo_surge_projection",
+    "card:e17_survey_errors_nearly_cancel",
+    "card:complete_account_assigned_balance"
+   ]
+  },
+  {
+   "key": "repo_finite_response_2026_09_26",
+   "short": "Finite removal, 2026-09-26",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "Finite-removal responses: what removing a whole group saves, against the marginal elasticity",
+   "venue": "Analysis lane finite_response_2026_09_26",
+   "path": "infra/immigration-fiscal/finite_response_2026_09_26/RESULT.md",
+   "supports": [
+    "control:school_response",
+    "control:general_government_response",
+    "preset:repo_central_gg",
+    "preset:repo_central",
+    "preset:proportional",
+    "card:e2_fixed_functions_and_cbo_inputs"
+   ]
+  },
+  {
+   "key": "repo_consumption_key_2026_09_24",
+   "short": "Consumption key, 2026-09-24",
+   "kind": "repo",
+   "authors": "This repo",
+   "year": 2026,
+   "title": "The consumption key corrected for saving and remittances",
+   "venue": "Analysis lane consumption_key_2026_09_24",
+   "path": "infra/immigration-fiscal/consumption_key_2026_09_24/RESULT.md",
+   "supports": [
+    "control:data_corrections",
+    "preset:repo_central_gg",
+    "preset:proportional"
+   ]
   }
  ]
 }

@@ -2,17 +2,19 @@
 
 The page loads nothing from the network and opens from file://. Links out are citations only.
 Build-time checks, so a typo cannot silently do nothing:
-- every preset path exists in the engine's state, a value marked `value_from` is read from
-  derived/scaling_check.json rather than typed, a per-line allocation rule names a line and rule the
+- every preset path exists in the engine's state, a value marked `value_from` is read rather than
+  typed (a name from derived/scaling_check.json, or `responses.<path>` from the adopted responses in
+  the corrections payload's meta.responses), a per-line allocation rule names a line and rule the
   model holds, a band contains its point value, and exactly one preset is the central case;
-- a `{published:<profile>}` token in preset text becomes the September 20 account's published band;
-  an `{assigned:<name>}` token stays in the text and the page fills it from the ledger when it draws,
-  so it must name an amount ui.js defines;
-- the data corrections (main_case_2026_09_24/derived/corrections.json) are inlined for the engine,
-  and the build refuses when the payload is missing or a correction line has a class the engine
-  does not respond to;
+- a `{published:<profile>}` token in preset text becomes the September 20 account's published band and
+  a `{response:<name>}` token the adopted response band; an `{assigned:<name>}` token stays in the text
+  and the page fills it from the ledger when it draws, so it must name an amount ui.js defines;
+- the data corrections (main_case_2026_09_26/derived/corrections.json) are inlined for the engine,
+  and the build refuses when the payload is missing, lacks its responses, or a correction line has a
+  class the engine does not respond to;
 - every id a source claims to support exists on the page (a setting, a card, a convention, an author
   statement), and every source carries a short label and either a link or a file in this checkout;
+- a setting's `cite` names ids in sources.json, each of which lists that convention among its places;
 - a file named in a reference becomes a local link only when it exists in this checkout;
 - every allocation rule in the model has a plain name in ui.js.
 """
@@ -29,10 +31,14 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
 LANES = ROOT/"infra/immigration-fiscal"
 OUT = HERE/"derived"
-CORRECTIONS = LANES/"main_case_2026_09_24/derived/corrections.json"  # written by main_case.cjs when its gates pass
+CORRECTIONS = LANES/"main_case_2026_09_26/derived/corrections.json"  # written by main_case.cjs when its gates pass
 STATE_PATHS = re.compile(r"^((production|key_override|key_band)\.[a-z_]+|[a-z_]+)$")
 BANDS = {"school_response_band": "school_response", "general_government_response_band": "general_government_response"}
 PUBLISHED = re.compile(r"\{published:([a-z_]+)\}")
+RESPONSE = re.compile(r"\{response:([a-z_]+)\}")
+# The adopted responses in meta.responses: the two ends each band enters, and how preset text prints them.
+RESPONSE_ENDS = {"general_government": (("low", "high"), lambda x: f"{x:.2f}", ""),
+                 "school": (("growth", "decline"), lambda x: f"{x*100:.0f}", "%")}
 ASSIGNED = re.compile(r"\{assigned:([a-z_]+)\}")
 FILE_TOKEN = re.compile(r"[A-Za-z0-9_][A-Za-z0-9_./-]*\.(?:md|py|csv|json|js|sql|html)\b")  # same pattern as ui.js repoLinks
 FIXED_PLACES = {"ledger", "production", "standing"}
@@ -94,7 +100,19 @@ def check_sources(sources, presets, context, control_ids):
     return sorted(places-cited-FIXED_PLACES)
 
 
-def check_presets(presets, model, evidence, known):
+def read_value(numbers, name, where="value_from"):
+    """A number `value_from` names: a scaling_check.json field, or a dotted path such as responses.school.growth."""
+    node = numbers
+    for part in name.split("."):
+        if not isinstance(node, dict) or part not in node:
+            raise ValueError(f"{where} names no number: {name}")
+        node = node[part]
+    if isinstance(node, bool) or not isinstance(node, (int, float)):
+        raise ValueError(f"{where} does not name a number: {name}")
+    return node
+
+
+def check_presets(presets, model, numbers, known):
     """Resolve `value_from` in place and refuse a setting the engine or the model cannot honour."""
     lines = {line["id"]: line for line in model["spending"]["lines"]}
     if sum(1 for p in presets["presets"] if p.get("central")) != 1:
@@ -107,7 +125,7 @@ def check_presets(presets, model, evidence, known):
                 continue
             if "value_from" in setting:
                 names = setting.pop("value_from")
-                setting["value"] = [evidence[n] for n in names] if isinstance(names, list) else evidence[names]
+                setting["value"] = [read_value(numbers, n) for n in names] if isinstance(names, list) else read_value(numbers, names)
             head, _, tail = path.partition(".")
             if not STATE_PATHS.match(path) or head not in known:
                 raise ValueError(f"Preset {preset['id']} sets an unknown state path: {path}")
@@ -125,12 +143,14 @@ def check_presets(presets, model, evidence, known):
                 raise ValueError(f"Preset {preset['id']} declares {band} but sets {point} to none of its values")
 
 
-def resolve_published(node, bands):
-    """Replace {published:<profile>} with the September 20 account's cost band for that profile, whole bn."""
+def resolve_tokens(node, bands, responses):
+    """Replace {published:<profile>} with the September 20 account's cost band for that profile, whole bn, and
+    {response:<name>} with the adopted response band in meta.responses (for example 0.60-0.85 for general government
+    and 65-68% for schools)."""
     if isinstance(node, dict):
-        return {k: resolve_published(v, bands) for k, v in node.items()}
+        return {k: resolve_tokens(v, bands, responses) for k, v in node.items()}
     if isinstance(node, list):
-        return [resolve_published(v, bands) for v in node]
+        return [resolve_tokens(v, bands, responses) for v in node]
     if not isinstance(node, str):
         return node
 
@@ -139,10 +159,31 @@ def resolve_published(node, bands):
             raise ValueError(f"No published band for service profile {match.group(1)}")
         b = bands[match.group(1)]
         return f"{-b['max_welfare_bn']:.0f}–{-b['min_welfare_bn']:.0f}"
-    text = PUBLISHED.sub(band, node)
+
+    def response(match):
+        if match.group(1) not in RESPONSE_ENDS:
+            raise ValueError(f"No adopted response named {match.group(1)}")
+        ends, show, unit = RESPONSE_ENDS[match.group(1)]
+        return "-".join(show(responses[match.group(1)][end]) for end in ends)+unit
+    text = RESPONSE.sub(response, PUBLISHED.sub(band, node))
     if re.search(r"\{(?!assigned:)[a-z_]+:[^}]*\}", text):  # {assigned:...} is filled when the page draws
         raise ValueError(f"Unresolved token in preset text: {text[:100]}")
     return text
+
+
+def check_cites(presets, sources):
+    """A setting's `cite` names sources by key; each must be in the registry and list the convention it is cited in."""
+    by_key = {source["key"]: source for source in sources["sources"]}
+    for preset in presets["presets"]:
+        for setting in preset.get("settings", []):
+            keys = setting.get("cite", [])
+            if not isinstance(keys, list) or not all(isinstance(k, str) for k in keys):
+                raise ValueError(f"Preset {preset['id']}: cite must be a list of source keys")
+            for key in keys:
+                if key not in by_key:
+                    raise ValueError(f"Preset {preset['id']} cites {key}, which sources.json does not hold")
+                if f"preset:{preset['id']}" not in by_key[key]["supports"]:
+                    raise ValueError(f"Source {key} is cited in preset {preset['id']} but does not list preset:{preset['id']}")
 
 
 def check_assigned(presets, ui):
@@ -157,14 +198,31 @@ def check_assigned(presets, ui):
             raise ValueError(f"Preset text names amounts the page does not compute: {sorted(unknown)} in {text[:80]}")
 
 
+def adopted_dates(meta):
+    """The adoption dates a payload carries, oldest first: each payload's meta names the one it builds on."""
+    dates = []
+    while meta:
+        dates.insert(0, meta["adopted"])
+        meta = meta.get("builds_on")
+    return dates
+
+
 def check_corrections(payload, engine):
-    """The payload the engine applies: correction lines with a label and a response class engine.js answers."""
+    """The payload the engine applies: correction lines with a label and a response class engine.js answers, and
+    the adopted responses, which are engine state rather than cell edits (meta.responses)."""
     classes = set(re.findall(r'case "([a-z_]+)":', engine))
     if not payload.get("edits") or not payload.get("lines") or not payload.get("meta", {}).get("adopted"):
         raise ValueError(f"{CORRECTIONS} lacks edits, lines or meta.adopted")
     for line in payload["lines"]:
         if not line.get("label") or line.get("response_class") not in classes:
             raise ValueError(f"Correction line {line.get('id')} lacks a label or a response class engine.js answers")
+    responses = payload["meta"].get("responses", {})
+    for name, (ends, _, _) in RESPONSE_ENDS.items():
+        for end in ends+("s",):
+            read_value(responses, f"{name}.{end}", where=f"{CORRECTIONS.name} meta.responses")
+        elasticity = responses[name].get("elasticity")
+        if not isinstance(elasticity, list) or len(elasticity) != 2 or not all(isinstance(x, (int, float)) for x in elasticity):
+            raise ValueError(f"{CORRECTIONS} meta.responses.{name} lacks the two elasticities its ends replace")
 
 
 def check_key_names(model, ui):
@@ -192,14 +250,18 @@ def main():
     engine = (HERE/"engine.js").read_text()
     ui = (HERE/"ui.js").read_text()
     if not CORRECTIONS.is_file():
-        raise ValueError(f"Missing {CORRECTIONS}: run node ../main_case_2026_09_24/main_case.cjs first")
+        raise ValueError(f"Missing {CORRECTIONS}: run node ../main_case_2026_09_26/main_case.cjs first")
     corrections = json.loads(CORRECTIONS.read_text())
     check_corrections(corrections, engine)
+    responses = corrections["meta"]["responses"]
+    if "responses" in evidence:
+        raise ValueError("scaling_check.json has a field named responses, which value_from reserves for meta.responses")
     known = set(re.findall(r"^\s{6}([a-z_]+):", engine, flags=re.M)) | set(BANDS)
     ids = {p["id"] for p in presets["presets"]}
-    check_presets(presets, model, evidence, known)
+    check_presets(presets, model, dict(evidence, responses=responses), known)
+    check_cites(presets, sources)
     published = model["meta"]["headline"]["category_service_response_sensitivity"]
-    presets = {k: v if k == "note" else resolve_published(v, published) for k, v in presets.items()}  # the note documents the token
+    presets = {k: v if k == "note" else resolve_tokens(v, published, responses) for k, v in presets.items()}  # the note documents the tokens
     for author in presets["authors"]:
         if author["closest"]["preset"] not in ids | {None}:
             raise ValueError(f"Author {author['id']} points at an unknown convention")
@@ -234,8 +296,10 @@ def main():
     print(f"explorer.html: {len(page)/1e6:.2f} MB, {len(presets['presets'])} conventions, {len(presets['authors'])} authors, "
           f"{len(context['items'])} objection cards, {len(parsed_ladder['cards'])} ladder entries, "
           f"{len(sources['sources'])-repo_docs} sources ({answered} links answered) and {repo_docs} repo documents, "
-          f"{len(sources_block['paths'])} local file links, data corrections of {corrections['meta']['adopted']} "
-          f"({len(corrections['edits'])} cell edits, {len(corrections['lines'])} lines of their own)")
+          f"{len(sources_block['paths'])} local file links, data corrections of {' and '.join(adopted_dates(corrections['meta']))} "
+          f"({len(corrections['edits'])} cell edits, {len(corrections['lines'])} lines of their own), responses: general government "
+          f"{responses['general_government']['low']:.4f}/{responses['general_government']['high']:.4f}, schools "
+          f"{responses['school']['growth']:.4f}/{responses['school']['decline']:.4f}")
     if uncited:
         print(f"  ! {len(uncited)} places carry no external source: {', '.join(uncited[:12])}{' ...' if len(uncited) > 12 else ''}")
 
