@@ -68,7 +68,11 @@ parents, as the National Academies count them, the Mexico-born cost others **$11
 ($9.4–11.5k per adult), the second generation **$50–53bn** ($5.6–5.9k) and the third-plus
 **$40–59bn** ($4.9–7.2k); counted in their own generation, $54–64bn, $82–95bn and $55–98bn. The
 split is computed on the account itself, with no reference group, and is not the September 19
-ledger's gaps against whites.
+ledger's gaps against whites. [2026-09-26, later: on the schools case, still net costs at every
+specification. Counted with their parents: the Mexico-born **$136–155bn** ($11.6–13.3k per
+adult), the second generation **$66–68bn** ($7.4–7.6k) and the third-plus **$55–71bn**
+($6.7–8.6k). Counted in their own generation: $57–78bn, $105–117bn and $76–118bn. The one-year
+scenario stays within $1bn of the September 25 split (ladder 224).]
 
 The September 23 case, **$203–250bn**, added three changes to the September 20 account:
 - general government responds at 0.59–0.84 instead of zero;
