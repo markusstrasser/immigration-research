@@ -3,8 +3,14 @@
 Date:2026-09-20. [MODEL / FRAMING-SENSITIVE] Evidence and calculations only;
 narrative authorship remains operator-owned.
 
-**Current main case (2026-09-26): $200.9–245.7bn/year.** The operator adopted two corrections
-together. General government and schools respond as finite removals, which saves more than the
+**Current main case (2026-09-26, later): $258.5–292.0bn/year.** Schools are charged at their
+full average cost per pupil (response 1): across districts and states spending rises about 1% per
+1% more pupils. The within-district 0.836 gives the low side, $233.9–269.6bn, and the case below
+stays as the one-year budget scenario. The outer range is $198–324bn
+([main-case lane](../infra/immigration-fiscal/main_case_schools_full_2026_09_26/RESULT.md), [decision](../decisions/2026-09-26-main-case-schools-full-cost.md), ladder 230).
+
+**One-year scenario (adopted as the main case earlier on 2026-09-26): $200.9–245.7bn/year.** The
+operator adopted two corrections together. General government and schools respond as finite removals, which saves more than the
 marginal elasticities (+$4.1 / +$3.4bn), and the consumption key is corrected for saving and
 remittances (−$4.1bn). The outer range is $164–277bn
 ([main-case lane](../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md), [decision](../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md), ladder 229).
@@ -345,6 +351,11 @@ totals, assumptions and disconfirming cases remain separately inspectable.
 Method decision: [complete account and fiscal response](../decisions/2026-09-20-complete-account-and-fiscal-response.md).
 
 ## Revisions
+
+2026-09-26, later, schools at full average cost (ladder 230): the main case moves from
+$200.9–245.7bn to $258.5–292.0bn; the $200.9–245.7bn case stays as the one-year budget scenario and
+the outer range is $198–324bn. Concept affected: the school response of the complete account's main
+case ([decision](../decisions/2026-09-26-main-case-schools-full-cost.md)).
 
 2026-09-26, main case adopted (ladder 229): finite-removal responses (+$4.1 / +$3.4bn) and the
 corrected consumption key (−$4.1bn) move the main case from $200.9–246.3bn to $200.9–245.7bn; the

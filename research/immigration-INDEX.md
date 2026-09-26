@@ -44,19 +44,23 @@ No exact national total is identified by the examined files; this is not a claim
 that such a total is impossible in principle.
 
 Latest complete annual account: [national reconciliation and conditional net effects](immigration-complete-annual-account-2026-09-20.md).
-**Adopted main case (September 26): $201–246bn/year conditional net cost to other US
-residents** ($200.9–245.7bn; [lane](../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md),
-[decision](../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md), ladder 229). It is the
-September 24 case ($200.9–246.3bn; [lane](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md),
-[decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md), ladder 219) with two corrections
-that cancel: general government and schools respond as finite removals (+$4.1 / +$3.4bn), and the
-consumption key is corrected for saving and remittances (−$4.1bn). The September 24 run built in the
-dataset audit, the pooled-MEPS medical figure with long-term care by use, care and household services,
-shelter keying and the four outside checks. The group's taxes were overstated (+$48.7 / +$50.3bn) and
-so was its keyed spending (−$51.0 / −$53.6bn), so the headline barely moved. Every component at its
-extreme in one direction spans $164–277bn (about $187–259bn in quadrature; $172–276bn before the two
-new corrections' own uncertainty entered); no combination changes the sign. With no fill-in
-correction for the CPS it is $193.2–237.0bn.
+**Adopted main case (September 26): $258–292bn/year conditional net cost to other US
+residents** ($258.5–292.0bn; [lane](../infra/immigration-fiscal/main_case_schools_full_2026_09_26/RESULT.md),
+[decision](../decisions/2026-09-26-main-case-schools-full-cost.md), ladder 230). Schools are charged at
+their full average cost per pupil: across districts and states spending rises about 1% per 1% more
+pupils (1.004 pupil-weighted across 2019 districts, 0.973 across states). The within-district 0.836
+gives the low side, $233.9–269.6bn. CBO's year-to-year 0.63–0.66 is kept as the one-year budget
+scenario, $200.9–245.7bn ([lane](../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md),
+[decision](../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md), ladder 229). That
+scenario is the September 24 case ($200.9–246.3bn; [lane](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md),
+[decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md), ladder 219) with its responses
+read as finite removals (+$4.1 / +$3.4bn) and the consumption key corrected for saving and remittances
+(−$4.1bn). The September 24 run built in the dataset audit, the pooled-MEPS medical figure with
+long-term care by use, care and household services, shelter keying and the four outside checks. The
+group's taxes were overstated (+$48.7 / +$50.3bn) and so was its keyed spending (−$51.0 / −$53.6bn).
+Every component at its extreme in one direction spans $198–324bn (about $229–306bn in quadrature);
+the school response alone moves the case down by $26.7 / $24.2bn, and no response above 1 is priced.
+No combination changes the sign. With no fill-in correction for the CPS it is $250.7–283.3bn.
 
 [By generation](immigration-adopted-account-by-generation-2026-09-25.md) (September 25, ladder 224),
 all three Mexican-origin generations are net costs at every specification. Counted with their
@@ -95,7 +99,9 @@ The report now regenerates all category comparisons and composition diagnostics.
 Fixed-service cases can be positive; property-receipt and service-quality effects
 remain unresolved. See the [response decision](../decisions/2026-09-20-category-service-response.md).
 "CBO-informed" covers two inputs only: CBO's tax-incidence rules and its 63–66%
-school-spending response with economic-affairs and recreation budgets fixed. Since September 23
+school-spending response with economic-affairs and recreation budgets fixed. [2026-09-26: schools
+are now charged at their full average cost; CBO's category rule still decides which budgets
+respond, and its 0.63–0.66 is the one-year scenario (ladder 230).] Since September 23
 general public services respond at **0.59–0.84**, from cross-state scale: administration spending
 rises 0.842% per 1% of population. Defense, existing interest and business subsidies stay at
 **zero response by assumption**, not by a CBO estimate
@@ -119,7 +125,8 @@ Beside the fiscal headline, as social costs:
   lifetime earnings (−$2bn to +$36bn), conditional on the account's own school response and on a
   lost instructional dollar costing as much learning as a spending cut (ladder
   222; [adopted 2026-09-25 as priced beside](../decisions/2026-09-25-school-dilution-priced-beside.md));
-  it is not in the totals below.
+  it is not in the totals below. [2026-09-26: at the adopted school response of 1 nothing is left
+  unfunded, so this applies only to the lower-response scenarios (ladder 230).]
 
 Wages move **$66–166bn** from less- to more-educated natives. Fiscal plus social costs come to
 **$248–304bn a year** at central values ($210–337bn full span) on the September 24 case
@@ -263,7 +270,8 @@ plus a constant marginal cost nothing changes
 engine run with the consumption-key proposal (ladder 225), the two leave the main case at
 $200.9–245.7bn, the published $201–246bn at its rounding; adopting one without the other moves
 it by about $4bn. [2026-09-26: adopted together with the consumption key; see the adopted main case
-above.]
+above.] [2026-09-26, later: the school part is superseded by full average cost (ladder 230);
+general government's part stands.]
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): seventeen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,

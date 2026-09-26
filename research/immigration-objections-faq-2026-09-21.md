@@ -6,10 +6,11 @@ year unless stated. Entries marked *(routed)* quote the topic index and must be 
 the linked memo before reuse. Narrative authorship remains operator-owned.
 
 Anchors: [complete annual account](immigration-complete-annual-account-2026-09-20.md)
-($201–246bn conditional net cost to other residents in the
-[main case adopted September 26](../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md),
-the same at rounding on September 24; $203–250bn on September 23 and $165–197bn as published
-September 20; $301–335bn with fully proportional services) and the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
+($258–292bn conditional net cost to other residents in the
+[main case adopted September 26](../infra/immigration-fiscal/main_case_schools_full_2026_09_26/RESULT.md),
+which charges schools at their full average cost; $201–246bn with CBO's one-year school response,
+as on September 24; $203–250bn on September 23 and $165–197bn as published September 20;
+$301–335bn with fully proportional services) and the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
 (same-age gap against third-plus non-Hispanic whites: Mexico-born −$7,584, second generation
 −$7,521, third-plus −$6,195 per person, standard errors 384, 615 and 457).
 
@@ -18,9 +19,10 @@ September 20; $301–335bn with fully proportional services) and the [generation
 **The two anchors are different objects.** The generation gaps and the age structures (entries
 1, 3, 5, 10) come from the generation ledger pinned on September 19: per-person balances against
 a reference group, or the group's own balance re-weighted by age. Entries 7 and 9 rest on
-separate partial accounts. The $201–246bn (entries 2, 4, 11) is the complete account's change
-for all other residents in the main case adopted September 26 (the same at rounding on September
-24; $203–250bn on September 23;
+separate partial accounts. The $258–292bn (entries 2, 4, 11) is the complete account's change
+for all other residents in the main case adopted September 26, which charges schools at their full
+average cost ($201–246bn with CBO's one-year school response, as on September 24; $203–250bn on
+September 23;
 $165–197bn as published September 20), under a stated service-response assumption, with no reference group; it carries later corrections that were not propagated to the ledger (ladder
 161). Since September 25 it has its own generation split, computed on the account with no
 reference group (ladder 224). They agree in direction. One is not a decomposition
@@ -48,7 +50,7 @@ discounted, under a budget rule. Neither refutes the other.
 **California and Texas per-person gaps are the shared all-age ledger.** The −$12,133 /
 −$7,479 (CA/TX vs local third-plus NH whites) and metro figures (Los Angeles −$17,196,
 Houston −$7,493) are from the September 17 stress and metro-match tables (entry 15). They
-are not a split of the $201–246bn complete account and not the generation-ledger −$6k to
+are not a split of the $258–292bn complete account and not the generation-ledger −$6k to
 −$8k. The superseded $8,498 / $5,177 per native-headed household in California and Texas
 is a financing allocation of a later complete-account total; do not mix it with those
 per-person gaps. [SOURCE: [CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md);
@@ -70,8 +72,11 @@ Steel-man: charging every resident an equal share of the national deficit inflat
 group's cost. Finding: the headline holds defense, existing interest and business subsidies
 **fixed at zero response**. That is an assumption, not a CBO estimate. What comes from CBO is
 the tax-incidence rule set (`cbo_collective`: corporate tax 75% to capital income, 25% to
-wages) and the 63–66% school-spending response with economic-affairs and recreation budgets
-held fixed. General public services were also held at zero until September 23. The main case
+wages) and the category rule that holds economic-affairs and recreation budgets fixed. Schools
+are charged at their full average cost per pupil since September 26: across 2019 districts
+spending rises 1.004% per 1% more pupils (pupil-weighted) and across states 0.973%. CBO's
+year-to-year 63–66% is kept as a one-year budget scenario ($201–246bn), and the within-district
+0.836 gives the low side ($234–270bn) ([decision](../decisions/2026-09-26-main-case-schools-full-cost.md)). General public services were also held at zero until September 23. The main case
 now lets them grow at 0.59–0.84 of the population, which adds $27.8–39.5bn on the corrected data
 of September 24 ($28.5–40.6bn before the corrections). That range is the
 cross-state scale of administration spending: 0.842 (SE 0.039) for state administration and
@@ -111,9 +116,10 @@ for the union, $2,653 of lower spending against $9,735 of lower receipts. [SOURC
 Steel-man: cheaper services, complementary labour and capital returns never appear in a
 fiscal ledger. Finding: the account adds production gains and the induced taxes on them:
 $8.8bn (cash scaling) to $13.3bn (GDP scaling), $6–21bn across the parameter grid. Omitted
-benefits would have to reach $201–246bn a year to offset the main case. That threshold is
-conditional on the service-response share, which is assumed and unmeasured: it is $157–211bn
-if non-school education budgets are also held fixed, and it reaches zero
+benefits would have to reach $258–292bn a year to offset the main case. That threshold is
+conditional on the service-response share, which is assumed and unmeasured: it is $201–246bn
+with CBO's one-year school response, $205–266bn if non-school education budgets are also held
+fixed, and it reaches zero
 where 5.8–17.0% of assigned service costs are incremental (entry 2), so the response share moves the result more
 than any offset listed here. Cheaper household services are worth $21.8bn a year to
 consumers, or $11.9bn net of native low-skill wage gains. That is the production gain seen from
@@ -266,11 +272,13 @@ higher covered earnings than the 0.5m second-generation and 1.0m third-plus resi
 before about 1960 whose rates fill the 65+ cells today (ladder 161). The sign of the
 composition effect at today's rates is solid; its size for future cohorts is not measured.
 
-## 11. "So ending this migration would save $201–246bn?"
+## 11. "So ending this migration would save $258–292bn?"
 
 No. The account describes a resident stock in a stationary comparison. It is not the effect
 of an admission rule, a removal policy or one more arrival, it contains no transition costs,
-and most of the people in it are US-born citizens. Lifetime and lineage values need their own
+and most of the people in it are US-born citizens. Budgets would also not shed the full average
+cost of the group's pupils in the first years: with CBO's year-to-year school response the same
+account gives $201–246bn. Lifetime and lineage values need their own
 future profiles; see the [projection back-tests](immigration-projection-backtest-2026-09-19.md).
 
 ## 12. "What about crime?"
@@ -382,7 +390,7 @@ national total because Mexican-origin residents live where the local white bench
 higher. Share catch-up toward 32% is already realized in Texas and does not produce
 Los Angeles–sized dollars. Nominal dollars; no regional price parity. New York is 1.4%
 of US Mexican-origin (0.50m); San Francisco has no published single-metro gap. These
-figures are not the $201–246bn complete account. [SOURCE:
+figures are not the $258–292bn complete account. [SOURCE:
 [CA–TX geography](immigration-california-texas-fiscal-geography-2026-09-21.md);
 [stress RESULT](../infra/immigration-fiscal/ledger_stress_2026_09_17/RESULT.md);
 [metro RESULT](../infra/immigration-fiscal/metro_match_2026_09_17/RESULT.md)]
@@ -436,8 +444,10 @@ where CMS records give it 7.4% of those dollars. Together the corrections moved 
 from $203.2–249.6bn to $200.9–246.3bn. Two corrections adopted September 26 cancel: a finite
 removal saves more than the marginal elasticities (+$4.1 / +$3.4bn), and the consumption key
 had given the group too small a share of consumption taxes, because richer residents save more
-(−$4.1bn). The case is $200.9–245.7bn. Set every correction to its extreme in the same direction
-and the range is $164–277bn; no combination changes the sign.
+(−$4.1bn). With CBO's one-year school response the case is $200.9–245.7bn, and every correction
+at its extreme spans $164–277bn. Charging schools at their full average cost, a response
+assumption rather than a data correction (entry 2), puts it at $258.5–292.0bn with a span of
+$198–324bn. No combination changes the sign.
 
 The hiding story does not show where the group's benefit dollars are. In the states where most
 Hispanics are of Mexican origin, the survey reports Hispanic SNAP receipt and Medicaid coverage
@@ -472,6 +482,13 @@ prior, which is also where errors concentrate; surprising results need more chec
 they get more prominence.
 
 ## Revisions
+
+- 2026-09-26, later (schools at full average cost): the main case is $258–292bn (ladder 230,
+  [decision](../decisions/2026-09-26-main-case-schools-full-cost.md)). The anchors, the combining
+  rules and entries 4, 11 and 17 quote it. Entry 2 now names the school evidence and keeps CBO's
+  63–66% as the one-year scenario ($201–246bn). Entry 11 notes that a removal's first years would
+  not shed the full school cost. Concept affected: the complete account's main case and its
+  school response.
 
 - 2026-09-26 (main case adopted with finite removal and the consumption key): the case is
   $200.9–245.7bn, the same $201–246bn at rounding (ladder 229,

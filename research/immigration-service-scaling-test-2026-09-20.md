@@ -181,6 +181,11 @@ weights and disconfirming prediction scores are retained.
 
 ## Revisions
 
+- 2026-09-26, later: the main case now charges schools at a response of 1 on this memo's
+  cross-sectional estimates (1.004 across districts, pupil-weighted; .973 across states), with the
+  within-district .836 as its low side (ladder 230,
+  [decision](../decisions/2026-09-26-main-case-schools-full-cost.md)).
+
 - 2026-09-26: the adopted main case applies the cross-state elasticities (general government
   0.59–0.84) and CBO's first-order school coefficients (0.63–0.66) as removal responses, where this
   memo's power-law derivation gives r = [1 − (1 − s)^b] / s. Sized in

@@ -102,9 +102,10 @@ set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
   (`core.autocrlf=input`), so CRLF outputs never byte-match on rerun (cd96b04).
 - Before asserting that a line's key biases a result, read how the engine keys it (schools have
   been state-priced since 2026-09-20, not national-average). The adopted case is one engine
-  run: `infra/immigration-fiscal/main_case_2026_09_26/main_case.cjs`. Its general-government and
-  school responses are engine state and travel in `derived/corrections.json` → `meta.responses`;
-  a consumer that applies the payload must set them too.
+  run: `infra/immigration-fiscal/main_case_schools_full_2026_09_26/main_case.cjs`, on the
+  package of `main_case_2026_09_26` (its one-year scenario). The general-government and school
+  responses are engine state and travel in `derived/corrections.json` → `meta.responses`; a
+  consumer that applies the payload must set them too.
 
 - Consumers of `ledger_absolute_2026_09_17` (the `lifetime.py` loaders, `age_normalizations.py`)
   verify stored source hashes, including upstream
@@ -144,16 +145,20 @@ substituting a web summary or declaring a measurement unavailable:
   (ladder 224).
 - Only income-year 2024 is a measured account. Earlier years are a
   [model back-cast](research/immigration-historical-backcast-2026-09-20.md).
-- The headline's "CBO-informed" label covers two inputs only: CBO's tax-incidence rules and
-  its school-spending coefficients (0.63–0.66). Since 2026-09-23 the main case lets general public
-  services respond at 0.59–0.84, from cross-state scale, and charges justice and uncompensated
-  care by use ([decision](decisions/2026-09-23-main-case-general-government-and-use-keys.md)).
-  Since 2026-09-24 it also carries the dataset audit, the pooled medical figure, care, shelter
-  and the outside checks ([decision](decisions/2026-09-24-main-case-audit-and-outside-checks.md)).
-  Since 2026-09-26 both responses are read as finite removals (general government 0.60–0.85,
-  schools 0.65–0.68) and the consumption key is corrected for saving and remittances; the two
-  cancel: **$201–246bn** ($200.9–245.7bn; September 24: $200.9–246.3bn; September 23:
-  $203–250bn; September 20: $165–197bn; [decision](decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md)). Defense,
+- The headline's "CBO-informed" label covers CBO's tax-incidence rules and its category rule for
+  which budgets respond; since 2026-09-26 the school response is no longer CBO's. Since
+  2026-09-23 the main case lets general public services respond at 0.59–0.84, from cross-state
+  scale, and charges justice and uncompensated care by use
+  ([decision](decisions/2026-09-23-main-case-general-government-and-use-keys.md)). Since
+  2026-09-24 it also carries the dataset audit, the pooled medical figure, care, shelter and the
+  outside checks ([decision](decisions/2026-09-24-main-case-audit-and-outside-checks.md)). Since
+  2026-09-26 general government is read as a finite removal (0.60–0.85), the consumption key is
+  corrected for saving and remittances
+  ([decision](decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md)), and schools
+  are charged at their full average cost per pupil: **$258–292bn** ($258.5–292.0bn; low side with
+  the within-district 0.836: $234–270bn; one-year scenario with CBO's 0.63–0.66: $201–246bn;
+  September 24: $201–246bn; September 23: $203–250bn; September 20: $165–197bn;
+  [decision](decisions/2026-09-26-main-case-schools-full-cost.md)). Defense,
   existing interest and business subsidies stay at **zero response by assumption**; see the
   [complete annual account](research/immigration-complete-annual-account-2026-09-20.md)
   and FAQ entry 2 for the sensitivity.
