@@ -38,6 +38,7 @@ diff -rq /tmp/lineage_rerun_ref derived      # must print nothing, rc 0
 | Input | Used for |
 |---|---|
 | `ledger_absolute_2026_09_17/derived/age_profiles.csv` | Net balance per person-year by allocation (personal, shared) x account (partial, expanded) x group x age band. This is the complete account **by age**, which supersedes the flat per-person add-on in the scratch script. |
+| `ledger_absolute_2026_09_17/derived/age_profile_components.csv` | Signed components by age band. Used only by the statutory senior rule (added 2026-09-25) to remove, from 65, the programs federal law closes to an unauthorized founder; gated to reproduce `age_profiles.csv` from its components. |
 | `ledger_absolute_2026_09_17/derived/lifetime/period_profiles.csv` | Oracle. 768 single-person survival-weighted NPVs this lane must reproduce. |
 | `ledger_absolute_2026_09_17/derived/waterfall.csv` | Only to measure how far the scratch script's flat add-on is from the true by-age add-on. |
 | `all_age_ledger_2026_09_17/derived/age_profiles.csv` | Cross-check that `shared`/`partial` equals the brief's `all_age_shared` scenario. |
@@ -56,7 +57,7 @@ diff -rq /tmp/lineage_rerun_ref derived      # must print nothing, rc 0
 | `derived/lineage_table.csv` | 96 rows: allocation x account x founder status x fertility x attribution x discount. |
 | `derived/generation_breakdown.csv` | Central case, both lineages, persons and dollars per generation. |
 | `derived/white_reference.csv` | The reference lineage on its own, across the same grid. |
-| `derived/sensitivities.csv` | 19 named arms including the three disconfirmation arms. |
+| `derived/sensitivities.csv` | 22 named arms including the three disconfirmation arms; the last three (added 2026-09-25) cross senior eligibility with legal status. |
 | `derived/oracle_period_profiles.csv` | 768 stored-vs-recomputed NPVs. |
 | `derived/oracle_pronatal.csv` | 24 stored-vs-located pronatal lifetime balances. |
 | `derived/audit.json` | Input sha256s, every parameter with its source, and the check results. |

@@ -29,6 +29,11 @@
     "shared/partial/total/last100"
    ],
    "max_abs_diff_usd": 9098.758402557403
+  },
+  {
+   "check": "legalised founder is the same under every senior rule",
+   "max_abs_diff_usd": 0.0,
+   "pass": true
   }
  ],
  "crime_line": "reported separately from the fiscal line; the corrections component is already inside the expanded fiscal account, so the incremental crime cost is social minus corrections",
@@ -113,6 +118,7 @@
   "crime_cost_firstgen_2026_09_18/derived/audit.json": "92113524bb788eb7a75267f884cab9974e0f632cb71c5da743b84bc659e5385c",
   "crime_cost_firstgen_2026_09_18/derived/firstgen_cost_weighted.csv": "684cf6ad1b6ec08af251974d7bc9b8d722212c26bbb49c5a8a953ae46f21233a",
   "demo_momentum_2026_09_16/cps_fertility_agestd.csv": "6b7e9902465b1281190ae340a82d39901d8d845d700a1287fd14250d1580dac0",
+  "ledger_absolute_2026_09_17/derived/age_profile_components.csv": "8884b4126e6e4c60b74868ae57dc4b316651a38e3e767d7c25a44f7f63db5d62",
   "ledger_absolute_2026_09_17/derived/age_profiles.csv": "ddac25cc844f7fd72ec48937377ae29deff53bc826202a536725f15513dab12a",
   "ledger_absolute_2026_09_17/derived/lifetime/period_profiles.csv": "3a6e570fada6019c0d655f51f66ac8d9b1b6fc08abb03bcd3d927e967362ec33",
   "ledger_absolute_2026_09_17/derived/waterfall.csv": "e96079cca8dab7cfd528f6de240504c85c83cb1b748d6ddc0f0d1f390c6cd65b",

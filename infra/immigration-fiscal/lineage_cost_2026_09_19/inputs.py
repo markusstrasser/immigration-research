@@ -19,6 +19,7 @@ FISCAL = Path(__file__).resolve().parents[1]
 
 # ---------------------------------------------------------------- file paths
 P_ABS_PROFILES = FISCAL / "ledger_absolute_2026_09_17/derived/age_profiles.csv"
+P_ABS_COMPONENTS = FISCAL / "ledger_absolute_2026_09_17/derived/age_profile_components.csv"
 P_ABS_LIFETIME = FISCAL / "ledger_absolute_2026_09_17/derived/lifetime/period_profiles.csv"
 P_ABS_WATERFALL = FISCAL / "ledger_absolute_2026_09_17/derived/waterfall.csv"
 P_ALLAGE_PROFILES = FISCAL / "all_age_ledger_2026_09_17/derived/age_profiles.csv"
@@ -34,7 +35,7 @@ P_PRONATAL = FISCAL / "pronatal_equivalence_2026_09_18/derived/lifetime_equivale
 
 ALL_PATHS = [P_ABS_PROFILES, P_ABS_LIFETIME, P_ABS_WATERFALL, P_ALLAGE_PROFILES, P_SURVIVAL,
              P_FERT, P_CRIME_STOCK, P_CRIME_FIRSTGEN, P_CRIME_FIRSTGEN_AUDIT, P_STATUS,
-             P_ATTR_BOUNDS, P_ATTR_FISCAL, P_PRONATAL]
+             P_ATTR_BOUNDS, P_ATTR_FISCAL, P_PRONATAL, P_ABS_COMPONENTS]
 
 # Single-age bands, copied from ledger_absolute_2026_09_17/lifetime.py BANDS so the
 # age vector is built exactly as the lane that produced the profiles builds it.
@@ -74,6 +75,45 @@ def age_vector(profiles: pd.DataFrame, group: str, account: str, allocation: str
     out = np.empty(101)
     for (_, row), (lo, hi) in zip(block.iterrows(), BANDS):
         out[lo:hi] = row.net_per_person
+    return out
+
+
+# Programs federal law closes to an unauthorized immigrant who never legalizes, in the
+# absolute lane's own categories (ledger_absolute_2026_09_17/age_normalizations.py):
+# cash transfers including Social Security (cash, U, I), public medical other than
+# state-funded coverage for the undocumented (medical, M; S is kept), institutional
+# care (N) and noncash aid. Emergency Medicaid sits inside `medical` and is removed too.
+STATUTORY_BARRED = ("cash", "U", "I", "medical", "M", "N", "noncash")
+
+
+def age_components() -> pd.DataFrame:
+    """Signed component totals by allocation x account x group x band, 2024$/year."""
+    df = pd.read_csv(P_ABS_COMPONENTS)
+    need = {"allocation", "account", "group", "band", "population", "component", "signed_total"}
+    if not need.issubset(df.columns):
+        raise ValueError("[BLOCKED] absolute-lane component schema changed")
+    return df
+
+
+def component_vector(components: pd.DataFrame, profiles: pd.DataFrame, group: str,
+                     account: str, allocation: str, names) -> np.ndarray:
+    """Per-person sum of the named components by single age, on age_vector's bands.
+    Gate: all components together must reproduce the profile's net_per_person."""
+    block = components[(components.group == group) & (components.account == account)
+                       & (components.allocation == allocation)]
+    missing = set(names) - set(block.component)
+    if missing:
+        raise ValueError(f"[BLOCKED] components {sorted(missing)} missing for {allocation}/{account}/{group}")
+    pop = block.groupby("band").population.first()
+    total = block.groupby("band").signed_total.sum() / pop
+    part = block[block.component.isin(names)].groupby("band").signed_total.sum() / pop
+    net = age_vector(profiles, group, account, allocation)
+    out, whole = np.empty(101), np.empty(101)
+    for band, (lo, hi) in enumerate(BANDS):
+        out[lo:hi] = part.loc[band]
+        whole[lo:hi] = total.loc[band]
+    if float(np.abs(whole - net).max()) > 1e-6:
+        raise ValueError(f"[BLOCKED] components do not sum to the profile for {allocation}/{account}/{group}")
     return out
 
 

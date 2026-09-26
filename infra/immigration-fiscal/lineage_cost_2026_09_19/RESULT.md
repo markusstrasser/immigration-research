@@ -1,6 +1,6 @@
 claude-opus-5[1m]
 
-**Verdict:** On the complete account, one Mexico-born arrival aged 25 who stays unauthorized, plus the 2.05 descendants their lineage generates inside 100 years, runs a fiscal balance of **−$1.20M** undiscounted over that century, against **+$97k** for one third-plus non-Hispanic white of the same age and the 2.15 descendants of that lineage. The gap is **−$1.30M**, or **−$13.0k per year**; at a 3% real discount it is **−$515k**. The founder's own lifetime accounts for only **−$555k** of the gap, so **the descendants carry 57% of it**, and the single most expensive member of the lineage is not the immigrant but the US-born second generation (−$562k, −$664k per person), because that person lives an entire life inside the window while the founder's childhood was paid for abroad. **No tested arm brings the lineage gap inside the founder's own lifetime gap**; across all 115 arms in the grid and the sensitivity set the ratio never falls below 1.16, and it is 2.3× centrally. **The arm that moves the gap most is the attribution rule** (−$0.85M to −$2.71M), followed by real growth and fertility; legalising the founder moves it by 1.9% and correcting for ethnic attrition by 0.4%. The absolute level is account-dependent and the gap is not: switching from the complete to the partial account moves the Mexican lineage by $1.21M but the gap by only $0.23M. [CALCULATION]
+**Verdict:** [2026-09-25: "legalising the founder moves it by 1.9%" is withdrawn as a statement about legal status. The central rule gives an unauthorized founder the pooled Mexico-born profile from 65, so legalising could only remove the working-age difference. With the programs federal law closes to someone never legalised removed from 65, legalising at year ten worsens the lineage gap by $417,886 (−$854,686 to −$1,272,572). See Revisions and the [decision](../../../decisions/2026-09-25-weekly-audit-corrections.md).] On the complete account, one Mexico-born arrival aged 25 who stays unauthorized, plus the 2.05 descendants their lineage generates inside 100 years, runs a fiscal balance of **−$1.20M** undiscounted over that century, against **+$97k** for one third-plus non-Hispanic white of the same age and the 2.15 descendants of that lineage. The gap is **−$1.30M**, or **−$13.0k per year**; at a 3% real discount it is **−$515k**. The founder's own lifetime accounts for only **−$555k** of the gap, so **the descendants carry 57% of it**, and the single most expensive member of the lineage is not the immigrant but the US-born second generation (−$562k, −$664k per person), because that person lives an entire life inside the window while the founder's childhood was paid for abroad. **No tested arm brings the lineage gap inside the founder's own lifetime gap**; across all 115 arms in the grid and the sensitivity set the ratio never falls below 1.16, and it is 2.3× centrally. **The arm that moves the gap most is the attribution rule** (−$0.85M to −$2.71M), followed by real growth and fertility; legalising the founder moves it by 1.9% and correcting for ethnic attrition by 0.4%. The absolute level is account-dependent and the gap is not: switching from the complete to the partial account moves the Mexican lineage by $1.21M but the gap by only $0.23M. [CALCULATION]
 
 Model self-report: **claude-opus-5[1m]** (Opus 5, 1M context).
 
@@ -178,7 +178,7 @@ at a profile that retains 19.95% of the self-ID gap to white. The direction is t
 expected one — real descendants include attriters, so the base case is an upper bound —
 but the magnitude is 0.4%. [CALCULATION]
 
-**(b) moves 1.9%.** Legal status is nearly irrelevant to this account, which is what
+**(b) moves 1.9%.** [2026-09-25: withdrawn as a statement about legal status; see Revisions. Ladder 85 compares adults of working age, and from 65 the central rule gives the unauthorized founder the pooled profile, so the arm cannot show what eligibility does.] Legal status is nearly irrelevant to this account, which is what
 ladder 85 already found at the annual level: the imputed-unauthorized and imputed-legal
 Mexico-born differ by $1,486 per adult-year against a gap to whites of roughly $9,000.
 Running the founder at the Mexico-born average instead of unauthorized moves the gap by
@@ -238,7 +238,13 @@ from this lane that does not name its attribution rule is not interpretable.
 from 65 — the scratch script's convention, on the argument that they draw no Social
 Security or Medicare — improves the gap by 34% and improves the founder's own lifetime
 gap by 80% (−$554,852 to −$108,562). It is a large, favourable, unsourced assumption.
-The central case does not use it. [INFERENCE]
+The central case does not use it. [INFERENCE] [2026-09-25: not unsourced. No Social Security
+benefit is payable to an alien in the US for a month in which they are not lawfully present
+(42 U.S.C. 402(y)), and an alien who is not a qualified alien is ineligible for any federal
+retirement, welfare, health, disability, housing or food benefit except emergency Medicaid
+(8 U.S.C. 1611(a)–(c)). The statutory rule in Revisions, which keeps taxes and services, lands
+$3,825 from this one. SOURCE: https://www.law.cornell.edu/uscode/text/42/402,
+https://www.law.cornell.edu/uscode/text/8/1611]
 
 ---
 
@@ -310,7 +316,7 @@ its ledger, base and gross-or-net status.** [INFERENCE]
 > founder's childhood was paid for by Mexico. Generations three and later are cut
 > mid-life by the horizon and their totals are not lifetime balances.
 >
-> Legal status is close to irrelevant to this account. Legalising the founder at year
+> [2026-09-25: withdrawn; see Revisions.] Legal status is close to irrelevant to this account. Legalising the founder at year
 > ten improves the gap by 1.9%; running the Mexico-born average instead of the
 > unauthorized profile improves it by 2.6%. That is the lineage-level restatement of
 > what the annual ledger already showed, where imputed-unauthorized and imputed-legal
@@ -332,6 +338,33 @@ its ledger, base and gross-or-net status.** [INFERENCE]
 > halving mixed children cuts it to −$848k. The gap is robustly large and robustly
 > negative. Its size is a modelling choice as much as a measurement, and no figure from
 > this exercise should be quoted without the rule that produced it.
+
+## Revisions
+
+- **2026-09-25: the legal-status reading is withdrawn** ([weekly audit §4](../../../research/immigration-weekly-conceptual-audit-2026-09-25.md),
+  [decision](../../../decisions/2026-09-25-weekly-audit-corrections.md)). In `founder_profile()` an
+  unauthorized founder keeps the pooled Mexico-born profile from 65, and a legalised founder takes
+  that profile from the switch age on, so legalising could only remove the working-age
+  difference. Three rows appended to `derived/sensitivities.csv` add the missing mechanism. The
+  statutory rule removes, from 65, the programs federal law closes to someone never legalised, in
+  the absolute lane's own categories: cash transfers including Social Security (`cash`, `U`, `I`),
+  public medical (`medical`, `M`), institutional care (`N`) and noncash aid. Taxes and services
+  stay. At 65–74 those programs are $25,039 of the pooled −$23,168 a year, so the founder's balance
+  becomes +$1,871; at 75+ it becomes −$2,090. [CALCULATION: `lineage.py`, `inputs.py`
+  `component_vector`; its gate reproduces the profile from its components to 1.5e-11 dollars]
+
+  | Senior rule for the never-legalised founder, 0% | Lineage gap | Founder's own gap | Legalising at year 10 moves the gap |
+  |---|---:|---:|---:|
+  | Pooled profile from 65 (central, `senior_full`) | −$1,297,150 | −$554,852 | +$24,578 (1.9% smaller) |
+  | Statutory bars from 65 (`senior_statutory`) | −$854,686 | −$112,387 | −$417,886 (48.9% larger) |
+  | Zero balance from 65 (`senior_zero`) | −$850,861 | −$108,562 | −$421,711 (49.6% larger) |
+
+  The legalised founder runs −$1,272,572 under every rule (`audit.json` check "legalised founder
+  is the same under every senior rule", difference 0). The statutory rule is the favourable edge
+  for the founder who never legalises: emergency Medicaid (inside `medical`), state-funded
+  coverage such as California's and uncompensated care are not added back. Legalising raises the
+  lineage's cost unless those costs come close to the federal entitlements they replace. The
+  other outputs are byte-identical; `audit.json` gains the check and the new input's hash.
 
 ---
 
