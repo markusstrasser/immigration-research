@@ -1,0 +1,214 @@
+{
+ "anchor": {
+  "2018": {
+   "gap_in_pums_se": 0.1819,
+   "gap_share": 0.000915,
+   "published_estimate": 11171893,
+   "pums_estimate": 11182111
+  },
+  "2023": {
+   "gap_in_pums_se": -0.6382,
+   "gap_share": -0.003306,
+   "published_estimate": 10918205,
+   "pums_estimate": 10882105
+  }
+ },
+ "break_2023": {
+  "excess_fraction_2023": 0.401095,
+  "mean_years_grades_1_9_2023": 6.688001,
+  "no_schooling_share_2018": 0.054597,
+  "no_schooling_share_2023": 0.091161,
+  "no_schooling_years_2023": 2.682521
+ },
+ "enadid_gates": [
+  "2018 all lt_lower_secondary estimate and SE",
+  "2018 all lower_secondary estimate and SE",
+  "2018 all upper_secondary estimate and SE",
+  "2018 all tertiary estimate and SE",
+  "2018 all mean_years_schooling estimate and SE",
+  "2023 all lt_lower_secondary estimate and SE",
+  "2023 all lower_secondary estimate and SE",
+  "2023 all upper_secondary estimate and SE",
+  "2023 all tertiary estimate and SE",
+  "2023 all mean_years_schooling estimate and SE",
+  "2018 returnee n and weighted total",
+  "2018 women share",
+  "2023 returnee n and weighted total",
+  "2023 women share",
+  "2018 men n",
+  "2018 women n",
+  "2023 men n",
+  "2023 women n",
+  "2018 age 20-29 n",
+  "2018 age 30-39 n",
+  "2018 age 40-49 n",
+  "2018 age 50-59 n",
+  "2018 age 60-64 n",
+  "2023 age 20-29 n",
+  "2023 age 30-39 n",
+  "2023 age 40-49 n",
+  "2023 age 50-59 n",
+  "2023 age 60-64 n",
+  "2018 linked lt_lower_secondary estimate and SE",
+  "2023 linked lt_lower_secondary estimate and SE",
+  "2018 linked lower_secondary estimate and SE",
+  "2023 linked lower_secondary estimate and SE",
+  "2018 linked upper_secondary estimate and SE",
+  "2023 linked upper_secondary estimate and SE",
+  "2018 linked tertiary estimate and SE",
+  "2023 linked tertiary estimate and SE",
+  "2018 returned departures n and weighted count",
+  "2018 returned departures men share and SE",
+  "2018 still_abroad departures n and weighted count",
+  "2023 returned departures n and weighted count",
+  "2023 returned departures men share and SE",
+  "2023 still_abroad departures n and weighted count",
+  "2018 cells aggregate to every sex, age and pooled slice; band shares sum to one",
+  "2023 cells aggregate to every sex, age and pooled slice; band shares sum to one"
+ ],
+ "enadid_returnees_weighted": {
+  "2018": 270023.0,
+  "2023": 202515.0
+ },
+ "inputs": {
+  "infra/immigration-fiscal/enadid_return_selectivity_2026_09_22/RESULT.md": "2470841255b4374cb990e29d508b57351e99c40374a0a16921586d91e0021a94",
+  "infra/immigration-fiscal/enadid_return_selectivity_2026_09_22/derived/departures_by_schooling.csv": "b255a281dbe24accd829e554a6cec733441aee6b4521549581005cf775176c0d",
+  "infra/immigration-fiscal/enadid_return_selectivity_2026_09_22/derived/return_migrants_by_schooling.csv": "2458b99b642a950997053de12f46abe6877b9e60d323b79a4988cb2373fe02b9",
+  "sources/immigration-fiscal/derived/ipums_usa/usa_00003_census1980-2000+acs2005-2024_mexborn.parquet": "4779fe688d764cb41751afde1ac44f5b2a80d5c19f622b2f34b0ab638f6dfa37"
+ },
+ "pums": {
+  "2018": {
+   "members": [
+    "psam_pusa.csv",
+    "psam_pusb.csv"
+   ],
+   "mexico_born_records": 88120,
+   "person_records": 3214539,
+   "sha256": "73fba8988d84f6425966fa14ab26af6ab40ebc0f0e16156b0dada39322349243",
+   "zip": "sources/immigration-fiscal/data/external/acs_pums_years/csv_pus_2018.zip"
+  },
+  "2023": {
+   "members": [
+    "psam_pusa.csv",
+    "psam_pusb.csv"
+   ],
+   "mexico_born_records": 92321,
+   "person_records": 3405809,
+   "sha256": "98b6ecb14b4830d1f2b54c265a5bd997828415c2dab14e17369c40e98b78d9d4",
+   "zip": "sources/immigration-fiscal/data/census/acs_pums_2023_person.zip"
+  }
+ },
+ "short_stay_context": {
+  "2018": {
+   "acs_recent_arrivals_20_64_weighted": 670761,
+   "acs_recent_arrivals_all_ages_weighted": 1015194,
+   "enadid_linked_20_64_n": 602,
+   "enadid_linked_20_64_share_of_returned_rows": 0.7737789203084833,
+   "enadid_returned_departures_weighted": 220218.0,
+   "enadid_returned_men_share_all_ages": 0.7400666612175208,
+   "enadid_still_abroad_departures_weighted": 419882.0
+  },
+  "2023": {
+   "acs_recent_arrivals_20_64_weighted": 825644,
+   "acs_recent_arrivals_all_ages_weighted": 1220607,
+   "enadid_linked_20_64_n": 528,
+   "enadid_linked_20_64_share_of_returned_rows": 0.7776141384388807,
+   "enadid_returned_departures_weighted": 215021.0,
+   "enadid_returned_men_share_all_ages": 0.8466056803754052,
+   "enadid_still_abroad_departures_weighted": 850752.0
+  }
+ },
+ "spec_n": {
+  "2018 a_schl18_as_tertiary": 67452,
+  "2018 b_half_diploma_as_secundaria": 67452,
+  "2018 c_drop_allocated_schooling": 59022,
+  "2018 d_households_only": 65969,
+  "2018 f_stayers_arrived_as_adults": 38098,
+  "2018 main": 67452,
+  "2018 short_stay_recent_arrivals": 4912,
+  "2018 short_stay_recent_arrivals_a": 4912,
+  "2018 undercount_k1.10": 67452,
+  "2018 undercount_k1.25": 67452,
+  "2018 undercount_k1.75": 67452,
+  "2018 yoep_le_year_minus_6": 66683,
+  "2023 a_schl18_as_tertiary": 67271,
+  "2023 b_half_diploma_as_secundaria": 67271,
+  "2023 c_drop_allocated_schooling": 56539,
+  "2023 d_households_only": 65587,
+  "2023 e_no_schooling_break": 67271,
+  "2023 f_stayers_arrived_as_adults": 37782,
+  "2023 main": 67271,
+  "2023 short_stay_recent_arrivals": 6348,
+  "2023 short_stay_recent_arrivals_a": 6348,
+  "2023 undercount_k1.10": 67271,
+  "2023 undercount_k1.25": 67271,
+  "2023 undercount_k1.75": 67271,
+  "2023 yoep_le_year_minus_6": 66311
+ },
+ "stock_shift": {
+  "2018": {
+   "returnees_per_stayer": 0.029813,
+   "returnees_weighted": 270023.0,
+   "shift_mean_years_schooling": 0.032561,
+   "shift_tertiary": 0.002296,
+   "stayers_weighted": 9057217.0
+  },
+  "2023": {
+   "returnees_per_stayer": 0.023884,
+   "returnees_weighted": 202515.0,
+   "shift_mean_years_schooling": 0.013106,
+   "shift_tertiary": 0.00132,
+   "stayers_weighted": 8479130.0
+  }
+ },
+ "universe_main": {
+  "2018": {
+   "allocated_schooling_n": 8430,
+   "allocated_schooling_share_weighted": 0.121669,
+   "arrived_age_18_plus_share": 0.57199,
+   "arrived_before_age_15_share": 0.292182,
+   "born_abroad_us_parent_share": 0.021865,
+   "gq_n": 1483,
+   "gq_share_weighted": 0.00952,
+   "men_share": 0.523078,
+   "n": 67452,
+   "noncitizen_share": 0.67228,
+   "replicate_weights_negative": 26,
+   "replicate_weights_zero": 3924,
+   "schl_16_17_share": 0.284889,
+   "schl_17_ged_share": 0.034887,
+   "schl_18_share": 0.032543,
+   "schl_1_no_schooling_share": 0.054597,
+   "schl_22_24_graduate_share": 0.017636,
+   "tertiary_share_arrived_18_plus": 0.148989,
+   "tertiary_share_arrived_before_15": 0.308433,
+   "tertiary_share_schooling_allocated": 0.268442,
+   "tertiary_share_schooling_reported": 0.180397,
+   "weighted": 9057217
+  },
+  "2023": {
+   "allocated_schooling_n": 10732,
+   "allocated_schooling_share_weighted": 0.144982,
+   "arrived_age_18_plus_share": 0.568444,
+   "arrived_before_age_15_share": 0.305815,
+   "born_abroad_us_parent_share": 0.024659,
+   "gq_n": 1684,
+   "gq_share_weighted": 0.00981,
+   "men_share": 0.523388,
+   "n": 67271,
+   "noncitizen_share": 0.647533,
+   "replicate_weights_negative": 67,
+   "replicate_weights_zero": 3118,
+   "schl_16_17_share": 0.295438,
+   "schl_17_ged_share": 0.044446,
+   "schl_18_share": 0.039994,
+   "schl_1_no_schooling_share": 0.091161,
+   "schl_22_24_graduate_share": 0.026442,
+   "tertiary_share_arrived_18_plus": 0.169334,
+   "tertiary_share_arrived_before_15": 0.323201,
+   "tertiary_share_schooling_allocated": 0.273141,
+   "tertiary_share_schooling_reported": 0.200917,
+   "weighted": 8479130
+  }
+ }
+}
