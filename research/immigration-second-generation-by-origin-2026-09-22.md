@@ -130,7 +130,9 @@ outcome us_citizen_g1]`. Two measured mechanisms point the same way: arrival coh
 schooled ([ladder 133](immigration-confidence-ladder.md)) and the men who return to Mexico are
 about a year less schooled than those who stay ([ENADID, ladder 174](immigration-confidence-ladder.md)),
 which raises the resident first generation's average without any individual improving. Their
-split is not measured here. `[INFERENCE]` Income levels are nominal and not comparable across
+split is not measured here. [2026-09-25: the second mechanism is withdrawn: ENADID compares
+returnees with adults who never left Mexico, so it does not show that return migration raises the
+US first generation's average; see Revisions.] `[INFERENCE]` Income levels are nominal and not comparable across
 periods; only the same-year gaps are.
 
 ## 4. Other origins: the ratio mostly does not apply
@@ -261,3 +263,8 @@ matched.
 
 - **2026-09-22 (initial).** Written from the lane's RESULT.md after grading; the loader's 2014
   double count was fixed and the lane re-run before any number here was copied.
+- **2026-09-25 (return-selection comparator).** §3's sentence on "the men who return to Mexico"
+  cited ladder 174 as a mechanism raising the US first generation's schooling. Ladder 174 compares
+  returnees with Mexico non-migrants, so its sign against emigrants still in the US is not
+  established and the mechanism is withdrawn; the arrival-cohort mechanism (ladder 133) is
+  unaffected. [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).
