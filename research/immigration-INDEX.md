@@ -146,10 +146,11 @@ follows every priced channel to persons. About one other resident in four or fiv
 23.9% under tax-share financing and 21.4% under per-person cuts, with households pooled; 20.1% and
 19.9% with wages going to the earner alone; 14–30% across all choices [2026-09-25: the substitution
 elasticity alone spans 19–29%; a minority ahead holds throughout, the share is conditional on
-incidence]. Nearly everyone in California
+incidence]. [2026-09-26, later: on the schools case 20.5% and 19.0% pooled, 18.4% and 18.3% to the
+earner, 12–27% across all choices; fiscal channel $275.0bn (fa1bd3a).] Nearly everyone in California
 and Texas, US-born adults with high school or less, and renters come out behind. The top income
 decile and landlords come out ahead most often. Where the state and local cost falls is the largest
-single choice: charged nationally, the share ahead falls to 13%.
+single choice: charged nationally, the share ahead falls to 13%. [2026-09-26, later: 10% on the schools case.]
 
 Benefits are priced to the same standard as the costs (evidence-symmetry rule 5), by four lanes.
 The first, the [care lane](../infra/immigration-fiscal/care_household_services_2026_09_23/RESULT.md)
