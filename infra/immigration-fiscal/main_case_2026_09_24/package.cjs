@@ -146,13 +146,16 @@ if (fs.existsSync(CPS_CACHE)) {
   const src = JSON.parse(raw);
   const subset = { source: path.relative(FISCAL, CPS_CACHE), source_sha256: crypto.createHash("sha256").update(raw).digest("hex"),
     payloads: Object.fromEntries(STACK_KEYS.map((k) => { if (!src[k]) throw new Error("[BLOCKED] missing stack " + k); return [k, src[k]]; })) };
-  if (fs.existsSync(STACK_FILE)) {
-    const old = JSON.parse(fs.readFileSync(STACK_FILE, "utf8"));
-    const drift = JSON.stringify(old.payloads) !== JSON.stringify(subset.payloads);
-    if (drift) console.log("[stack] the CPS lane's cache changed since the vendored copy; rewriting it");
+  // Rewrite only on a change: concurrent importers would otherwise race on a truncated file.
+  const text = JSON.stringify(subset, null, 1) + "\n";
+  const current = fs.existsSync(STACK_FILE) ? fs.readFileSync(STACK_FILE, "utf8") : null;
+  if (current !== text) {
+    if (current !== null) console.log("[stack] the CPS lane's cache changed since the vendored copy; rewriting it");
+    fs.mkdirSync(path.dirname(STACK_FILE), { recursive: true });
+    const tmp = STACK_FILE + ".tmp" + process.pid;
+    fs.writeFileSync(tmp, text);
+    fs.renameSync(tmp, STACK_FILE);
   }
-  fs.mkdirSync(path.dirname(STACK_FILE), { recursive: true });
-  fs.writeFileSync(STACK_FILE, JSON.stringify(subset, null, 1) + "\n");
 } else if (!fs.existsSync(STACK_FILE)) {
   throw new Error("[BLOCKED] no stack line deltas: run cps_imputation_keys_2026_09_23/combine_onbooks_lane.py");
 } else {
