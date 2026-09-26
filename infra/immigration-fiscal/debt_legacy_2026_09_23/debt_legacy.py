@@ -28,16 +28,23 @@ Sensitivities beside the rules: the 2020-2022 refundable-credit excess attribute
 proposed fiscal benefits of the symmetry lanes carried back by group size, and an audit of the
 September 20 grouped-receipt method on the adopted anchor.
 
-Cases (--case). sept24, the default, is the main case adopted 2026-09-24: the explorer model with
+Cases (--case). sept24 is the main case adopted 2026-09-24: the explorer model with
 main_case_2026_09_24/derived/corrections.json applied, on that case's frame (justice on the use key,
 Medicaid on the two uninsured-use keys, general government 0.59/0.84), gated to its bands. Every
 correction is split by the government level of the line it edits, component by component, from
 sept24_propagation_2026_09_24/derived/package_components.json (gate: the parts add to the whole
-account's split). sept23 reproduces this lane's September 23 outputs byte for byte.
+account's split). sept26, the default since 2026-09-26, is the main case adopted that day: the same
+frame with main_case_2026_09_26/derived/corrections.json and the responses in its meta.responses
+(general government 0.6000/0.8504, schools 0.6522/0.6813), gated to its bands and to the uncorrected
+model at those responses. General government's federal fraction at the low end is composed from
+the finite-removal responses of its components, r = [1 - (1 - s)^b] / s (federal tax collection
+b = 0.789, state-local b = 0.842). The two new corrections split like the rest: audit row 8's change
+as row 8 does, the consumption key's edits by the government level of their lines (see
+sept26_components). sept23 and sept24 reproduce this lane's outputs of those dates byte for byte.
 
 Run from the repository root:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/debt_legacy_2026_09_23/debt_legacy.py
-  ... debt_legacy.py --case sept23 --out-dir <dir>      # the September 23 result
+  ... debt_legacy.py --case sept24 --out-dir <dir>      # the September 24 result (sept23 likewise)
 """
 from __future__ import annotations
 
@@ -46,6 +53,7 @@ import copy
 import hashlib
 import io
 import json
+import re
 from itertools import product
 from pathlib import Path
 
@@ -251,6 +259,13 @@ BANDS = pd.read_csv(FISCAL / "main_case_2026_09_23/derived/main_case_bands.csv")
 CORRECTIONS_FILE = FISCAL / "main_case_2026_09_24/derived/corrections.json"
 MAIN24_SUMMARY = FISCAL / "main_case_2026_09_24/derived/summary.json"
 COMPONENTS_FILE = FISCAL / "sept24_propagation_2026_09_24/derived/package_components.json"
+# The September 26 case: its payload (responses in meta.responses), bands, the finite-removal lane's
+# per-component elasticities and the consumption-key lane's edits.
+CORRECTIONS26_FILE = FISCAL / "main_case_2026_09_26/derived/corrections.json"
+MAIN26_SUMMARY = FISCAL / "main_case_2026_09_26/derived/summary.json"
+R_VALUES = FISCAL / "finite_response_2026_09_26/derived/r_values.json"
+CK_PAYLOADS = FISCAL / "consumption_key_2026_09_24/derived/payloads.json"
+COMPONENTS: dict = {}                     # the running case's payload by component (set in main())
 SHELTER_PARTS = FISCAL / "migrant_shelter_costs_2026_09_23/derived/account_keying_parts.csv"
 SHELTER_KEYING = FISCAL / "migrant_shelter_costs_2026_09_23/derived/account_keying.csv"
 CARE_SUMMARY = FISCAL / "care_household_services_2026_09_23/derived/summary.csv"
@@ -400,14 +415,23 @@ def adopted_anchors(profile: str) -> dict[str, dict]:
 MEDICAID = "medicaid_and_chip_other_medical"
 
 
-def frame_corners(profile: str, model: dict) -> list[dict]:
+def frame_corners(profile: str, model: dict, responses: dict | None = None) -> list[dict]:
     """The September 24 frame (package.cjs MAIN_SPECS): 64 specifications for the main profile, justice
     on the use key, Medicaid on the two uninsured-use keys, general government 0.59 or 0.84. The Sept 23
-    changes sit in those keys; `justice` and `uc` record how much, for the federal split."""
+    changes sit in those keys; `justice` and `uc` record how much, for the federal split.
+
+    With responses (a payload's meta.responses) general government takes their low and high values
+    and the CBO school coefficients 0.63 and 0.66 their growth and decline values (September 26); a
+    profile whose schools respond in full keeps 1.0."""
     spec, gg = PROFILES[profile], INPUTS["general_government_response"]
+    schools = spec["school"]
+    if responses is not None:
+        gg = responses["general_government"]
+        swap = {0.63: responses["school"]["growth"], 0.66: responses["school"]["decline"], 1.0: 1.0}
+        schools = tuple(swap[v] for v in schools)
     out = []
     for alloc, norm, share, school, g, uc in product(("personal", "shared"), ("cash", "gdp"), SCHOOL_SHARES,
-                                                    spec["school"], (gg["low"], gg["high"]), tuple(UC_KEYS)):
+                                                    schools, (gg["low"], gg["high"]), tuple(UC_KEYS)):
         out.append(dict(profile=profile, allocation=alloc, normalization=norm, school_share=share,
                         school_response=school, other_edu=spec["other_edu"], delayed=spec["delayed"], gg=g,
                         gg_end="low" if g == gg["low"] else "high", uc_key=uc, uc_arm=UC_KEYS[uc],
@@ -420,6 +444,26 @@ def sept24_anchors(profile: str, corrected: dict, main24: dict) -> dict[str, dic
     """Corners that set the September 24 band. Gates: the uncorrected model on the frame reproduces the
     September 23 band and the corrected model the adopted September 24 band (summary.json, 1e-6); the
     use and uninsured-use keys carry exactly the adopted justice and uncompensated-care changes."""
+    want = {"corrected": main24["main_case"], "uncorrected": main24["adopted_2026_09_23"]}
+    if profile != MAIN:
+        other = main24["other_profiles"][profile]
+        want = {"corrected": other["adopted"], "uncorrected": other["sept23"]}
+    return frame_anchors(profile, corrected, want)
+
+
+def sept26_anchors(profile: str, corrected: dict, main26: dict, responses: dict) -> dict[str, dict]:
+    """Corners that set the September 26 band: the same frame at the adopted responses. Gates: the
+    uncorrected model reproduces main_case_2026_09_26's uncorrected_at_adopted_responses band and the
+    corrected model its adopted band (summary.json, 1e-6)."""
+    want = {"corrected": main26["main_case"], "uncorrected": main26["uncorrected_at_adopted_responses"]}
+    if profile != MAIN:
+        other = main26["other_profiles"][profile]
+        want = {"corrected": other["adopted"], "uncorrected": other["uncorrected_at_adopted_responses"]}
+    return frame_anchors(profile, corrected, want, responses)
+
+
+def frame_anchors(profile: str, corrected: dict, want: dict, responses: dict | None = None) -> dict[str, dict]:
+    """The band's corners on the frame, gated against the published uncorrected and corrected bands."""
     lines = {l["id"]: l for l in MODEL["spending"]["lines"]}
     for a in ("personal", "shared"):
         pos, med = lines["public_order_safety"]["keys"], lines[MEDICAID]["keys"]
@@ -429,13 +473,9 @@ def sept24_anchors(profile: str, corrected: dict, main24: dict) -> dict[str, dic
         for uc, arm in UC_KEYS.items():
             if abs(med[uc][a]["target_bn"] - med["medicaid"][a]["target_bn"] - INPUTS["uncompensated_inside_bn"][arm]) > 1e-9:
                 raise SystemExit(f"[BLOCKED] {uc} does not carry the adopted uncompensated care")
-    want = {"corrected": main24["main_case"], "uncorrected": main24["adopted_2026_09_23"]}
-    if profile != MAIN:
-        other = main24["other_profiles"][profile]
-        want = {"corrected": other["adopted"], "uncorrected": other["sept23"]}
     out = {}
     for name, model in (("uncorrected", MODEL), ("corrected", corrected)):
-        cs = frame_corners(profile, model)
+        cs = frame_corners(profile, model, responses)
         lo, hi = max(cs, key=welfare), min(cs, key=welfare)
         got = [-welfare(lo), -welfare(hi)]
         if max(abs(g - w) for g, w in zip(got, want[name])) > 1e-6:
@@ -446,8 +486,12 @@ def sept24_anchors(profile: str, corrected: dict, main24: dict) -> dict[str, dic
 
 # ---------------------------------------------------------------- federal shares by line and year
 
-def federal_shares(wb: Workbook, grants: Grants) -> dict:
-    """Per convention: line id -> Series of federally funded share, 2005-2024; plus pieces for special lines."""
+def federal_shares(wb: Workbook, grants: Grants, e_tax: float = 0.789, e_sl: float = 0.842) -> dict:
+    """Per convention: line id -> Series of federally funded share, 2005-2024; plus pieces for special lines.
+
+    e_tax and e_sl are the responses of federal tax collection and of state-local general government
+    at the low end of the general-government response: their elasticities (scaling_check.json) through
+    September 24, their finite-removal responses since September 26."""
     t317 = lambda n, label=None: wb.line("T31700-A", n, label)
     t312 = lambda n, label=None: wb.line("T31200-A", n, label)
     functions = {  # consolidated consumption, federal consumption, SL consumption, SL benefits, federal grants
@@ -571,14 +615,14 @@ def federal_shares(wb: Workbook, grants: Grants) -> dict:
         out[conv] = pd.DataFrame(s)
 
     # General government at the low end of the adopted response: federal executive and legislative
-    # budget fixed, federal tax collection at 0.789, state-local at 0.842 (scaling_check.json).
+    # budget fixed, federal tax collection at e_tax, state-local at e_sl (0.789 and 0.842 through
+    # September 24, scaling_check.json).
     t316 = lambda n, label=None: wb.line("T31600-A", n, label)
     fed_tax = t316(45, "Tax collection and financial management")
     fed_exec = t316(44, "Executive and legislative")
     sl_gps = t316(82, "Executive and legislative") + t316(83, "Tax collection and financial management") + \
         t316(85, "Other") - gr["gps"]
     gps_grants_part = pro_rata("gps") * sc["gps"]
-    e_tax, e_sl = 0.789, 0.842
     consumption_low = (fed_tax * e_tax + e_sl * gps_grants_part) / (fed_tax * e_tax + e_sl * sc["gps"])
     composite_low = fed_tax * e_tax / (fed_tax * e_tax + e_sl * sl_gps)
     composite_high = (fed_exec + fed_tax) / (fed_exec + fed_tax + sl_gps)
@@ -696,6 +740,61 @@ def split_corner(corner: dict, shares: pd.DataFrame, extras: dict, conv: str, ye
 
 # ---------------------------------------------------------------- September 24: the corrections by government
 
+def cell_net(edits: list[dict]) -> dict[tuple, dict]:
+    """Edits netted per engine cell: (side, line, scenario or key) -> {personal, shared}."""
+    net = {}
+    for e in edits:
+        cell = (e["side"], e["line"], e["scenario"] if e["side"] == "receipt" else e["key"])
+        cur = net.setdefault(cell, {"personal": 0.0, "shared": 0.0})
+        for a in ("personal", "shared"):
+            cur[a] += e["by"][a]
+    return net
+
+
+def sept26_components(payload24: dict, payload26: dict) -> dict:
+    """The September 26 payload by component.
+
+    The September 24 components (package_components.json) carry over. The two new corrections are the
+    cell differences between the September 26 and September 24 payloads:
+      finite_removal   audit row 8's constant times (row8_factor - 1), on the constant line; it enters
+                       the constant line's parts as row8_finite and splits as row 8 does;
+      consumption_key  every other cell that moved, taken from the consumption-key lane's edits for the
+                       spec the payload names.
+    Gates: the September 24 components sum to the September 24 payload, the constant line moved by
+    exactly the row-8 change, and the consumption-key edits equal the other cell differences (1e-9)."""
+    comp = json.loads(COMPONENTS_FILE.read_text())
+    n24, n26, parts = cell_net(payload24["edits"]), cell_net(payload26["edits"]), cell_net(comp["edits"])
+    gap = max(abs(parts.get(c, {}).get(a, 0.0) - n24.get(c, {}).get(a, 0.0)) for c in set(parts) | set(n24)
+              for a in ("personal", "shared"))
+    if gap > 1e-9:
+        raise SystemExit(f"[BLOCKED] the September 24 components do not sum to its payload ({gap:.2e})")
+    factor = payload26["meta"]["responses"]["row8_factor"]
+    row8 = {a: comp["constants"]["row8"]["by"][a] * (factor - 1) for a in ("personal", "shared")}
+    diff = {c: {a: n26.get(c, {}).get(a, 0.0) - n24.get(c, {}).get(a, 0.0) for a in ("personal", "shared")}
+            for c in set(n24) | set(n26)}
+    constant = ("spending", "lane_constants", "k")
+    if max(abs(diff[constant][a] - row8[a]) for a in row8) > 1e-12:
+        raise SystemExit("[BLOCKED] the constant line did not move by audit row 8's finite-removal change")
+    match = re.fullmatch(r".*; consumption key (\S+)", payload26["meta"]["case"])
+    if match is None:
+        raise SystemExit("[BLOCKED] the September 26 payload names no consumption-key spec")
+    ck = json.loads(CK_PAYLOADS.read_text())
+    if ck["meta"]["composes_with"] != "main_case_2026_09_24/derived/corrections.json":
+        raise SystemExit("[BLOCKED] the consumption-key edits do not compose with the September 24 payload")
+    ck_edits = ck["specs"][match.group(1)]["edits"]
+    ck_net = cell_net(ck_edits)
+    moved = {c for c, v in diff.items() if c != constant and any(abs(x) > 1e-12 for x in v.values())}
+    gap = max(abs(diff[c][a] - ck_net.get(c, {}).get(a, 0.0)) for c in moved | set(ck_net) for a in ("personal", "shared"))
+    if gap > 1e-9 or not moved <= set(ck_net):
+        raise SystemExit(f"[BLOCKED] the consumption-key edits are not the payload's other changes ({gap:.2e})")
+    edits = comp["edits"] + [dict(component="consumption_key", **e) for e in ck_edits] + [
+        dict(component="finite_removal", side="spending", line="lane_constants", key="k", by=row8)]
+    constants = dict(comp["constants"], row8_finite=dict(
+        label="finite removal: audit row 8's increment times (row8_factor - 1)", by=row8))
+    return dict(meta=dict(comp["meta"], consumption_key_spec=match.group(1), row8_factor=factor),
+                constants=constants, edits=edits)
+
+
 def two_tables(path: Path) -> tuple[pd.DataFrame, pd.DataFrame]:
     """account_keying_parts.csv holds two CSV tables separated by a blank line."""
     first, second = path.read_text().strip().split("\n\n")
@@ -717,14 +816,18 @@ def constant_parts(corner: dict, conv: str, shares: dict, extras: dict, base_sha
             package priced them at (shared 0.59, personal 0.84), each at its line's federal share.
     care    hours taxes and the output term's receipts at the labour-tax federal share, the elder-care
             Medicaid saving at Medicaid's; the package's -4.15 in proportion to the lane's channels.
+    row8_finite  (September 26) row 8's increment times (row8_factor - 1): split and carried as row 8.
     """
-    comp = json.loads(COMPONENTS_FILE.read_text())["constants"]
+    comp = COMPONENTS["constants"]
     a, phi = corner["allocation"], shares[conv]
     const = lambda v: pd.Series(float(v), index=phi.index)
     lines = {l["id"]: l for l in MODEL["spending"]["lines"]}
     target = lambda i: lines[i]["keys"][lines[i]["preferred_key"]][a]["target_bn"]
     parts = [dict(part="row8", sub="state_local_general_public_services", amount=comp["row8"]["by"][a],
                   share=const(0.0) if conv == "low" else extras["sl_gps_grant_share"], carry="general_public_services")]
+    if "row8_finite" in comp:
+        parts.append(dict(parts[0], part="row8_finite", component="finite_removal:row8",
+                          amount=comp["row8_finite"]["by"][a]))
     mcr, mcd = 0.030 * target("medicare"), 0.037 * target(MEDICAID)
     for line, w in (("medicare", mcr / (mcr + mcd)), (MEDICAID, mcd / (mcr + mcd))):
         parts.append(dict(part="row9", sub=line, amount=comp["row9"]["by"][a] * w, share=phi[line], carry=line))
@@ -773,7 +876,7 @@ def correction_split(corner: dict, shares: pd.DataFrame, extras: dict, conv: str
     Effect = the line's response at the corner x the edit in the evaluated cell (receipts: the
     reference incidence rule; spending: the key the frame evaluates). The share is the one
     split_corner() applies to that line, so the parts add to the change in the whole split."""
-    comp = json.loads(COMPONENTS_FILE.read_text())
+    comp = COMPONENTS
     t = lines_at(corner).set_index("id")
     model, keys, a = corner["model"], corner["keys"], corner["allocation"]
     phi = shares.loc[year]
@@ -812,8 +915,8 @@ def correction_split(corner: dict, shares: pd.DataFrame, extras: dict, conv: str
                          cell=e["scenario"] if e["side"] == "receipt" else e["key"],
                          effect_bn=effect, federal_bn=effect * share))
     for p in parts:
-        rows.append(dict(component=f"lane_constants:{p['part']}", side="spending", line=p["sub"], cell="k",
-                         effect_bn=p["amount"], federal_bn=p["amount"] * p["share"][year]))
+        rows.append(dict(component=p.get("component", f"lane_constants:{p['part']}"), side="spending", line=p["sub"],
+                         cell="k", effect_bn=p["amount"], federal_bn=p["amount"] * p["share"][year]))
     out = pd.DataFrame(rows)
     out["state_local_bn"] = out.effect_bn - out.federal_bn
     return out
@@ -1081,16 +1184,101 @@ def stock(federal_nominal: pd.Series, rates: pd.Series, start: int, borrowed: fl
 
 # ---------------------------------------------------------------- main
 
+def sept26_bridge(anchors26: dict, shares: dict, extras26: dict, extras24: dict, jf: dict, ucf: dict,
+                  corrections: pd.DataFrame, main26: dict, split26: pd.DataFrame) -> pd.DataFrame:
+    """The 2024 split from the September 24 case to the September 26 one, main profile, each band end.
+
+    Steps: the finite-removal responses on the September 24 model (general government, with its
+    low-end federal fraction recomposed, and schools), then the payload's two new corrections at the
+    adopted responses (audit row 8's change and the consumption key, from `corrections`). Gates: the
+    September 26 corners are the September 24 ones with the responses replaced; the September 24 step
+    reproduces that case's band; the responses step moves the gap by main_case_2026_09_26's own
+    general-government (net of row 8) and school changes (1e-6); the steps add to the September 26
+    split (1e-9)."""
+    corrected24 = apply_corrections(MODEL, json.loads(CORRECTIONS_FILE.read_text()))
+    main24 = json.loads(MAIN24_SUMMARY.read_text())
+    anchors24 = sept24_anchors(MAIN, corrected24, main24)
+    row8 = COMPONENTS["constants"]["row8_finite"]["by"]["shared"]
+    ch = main26["changes"]
+    responses_change = {"low": ch["general_government"][0] - row8 + ch["schools"][0],
+                        "high": ch["general_government"][1] - row8 + ch["schools"][1]}
+    keep = ("allocation", "normalization", "school_share", "uc_key", "gg_end")
+    rows = []
+    for end in ("low", "high"):
+        c24, c26 = anchors24[end], anchors26[end]
+        if any(c24[k] != c26[k] for k in keep):
+            raise SystemExit(f"[BLOCKED] the September 26 {end} corner is not the September 24 one")
+        c24r = dict(c26, model=corrected24)       # September 24 model at the adopted responses
+        for conv in CONVENTIONS:
+            def split_at(corner, extras):
+                before = split_corner(dict(corner, model=MODEL), shares[conv], extras, conv, LAST, jf, ucf, end)
+                parts = [p for p in constant_parts(corner, conv, shares, extras,
+                                                   before.federal_bn.sum() / before.responsive_bn.sum())
+                         if p["part"] != "row8_finite"]
+                t = split_corner(corner, shares[conv], extras, conv, LAST, jf, ucf, end, parts)
+                return t.responsive_bn.sum(), t.federal_bn.sum()
+            g24, f24 = split_at(c24, extras24)
+            p, _ = production(c24["normalization"])
+            if abs(g24 - (main24["main_case"][0 if end == "low" else 1] + p)) > 1e-6:
+                raise SystemExit(f"[BLOCKED] the September 24 {end} split does not reproduce its band")
+            g24r, f24r = split_at(c24r, extras26)
+            if abs(g24r - g24 - responses_change[end]) > 1e-6:
+                raise SystemExit(f"[BLOCKED] {end}/{conv}: the responses move the gap by {g24r - g24:.6f}, "
+                                 f"main_case_2026_09_26 by {responses_change[end]:.6f}")
+            cs = corrections[(corrections.end == end) & (corrections.convention == conv)]
+            steps = [("sept24_case", g24, f24), ("finite_removal_responses", g24r - g24, f24r - f24)]
+            for name in ("finite_removal", "consumption_key"):
+                part = cs[cs.component.str.split(":").str[0] == name]
+                steps.append((f"{name}_row8" if name == "finite_removal" else name,
+                              part.effect_bn.sum(), part.federal_bn.sum()))
+            total = sum(s[1] for s in steps), sum(s[2] for s in steps)
+            got = split26[(split26.profile == MAIN) & (split26.end == end) & (split26.convention == conv)].iloc[0]
+            if abs(total[0] - got.fiscal_gap_bn) > 1e-9 or abs(total[1] - got.federal_bn) > 1e-9:
+                raise SystemExit(f"[BLOCKED] {end}/{conv}: the steps add to {total}, the September 26 split is "
+                                 f"{got.fiscal_gap_bn:.6f} ({got.federal_bn:.6f})")
+            steps.append(("sept26_case", got.fiscal_gap_bn, got.federal_bn))
+            rows += [dict(end=end, convention=conv, step=s, gap_bn=g, federal_bn=f, state_local_bn=g - f)
+                     for s, g, f in steps]
+    return pd.DataFrame(rows)
+
+
+def finite_components(responses: dict) -> tuple[float, float]:
+    """Federal tax collection's and state-local general government's finite-removal responses,
+    r = [1 - (1 - s)^b] / s at the payload's group share s. Gates: their elasticities are the 0.789 and
+    0.842 this lane composes with, and with the finite-removal lane's weights they compose to the
+    adopted low and high general-government responses (1e-12)."""
+    rv = json.loads(R_VALUES.read_text())
+    gg = responses["general_government"]
+    s = gg["s"]
+    r = lambda b: (1 - (1 - s) ** b) / s  # noqa: E731
+    r_tax, r_sl = r(rv["b_fin"]), r(rv["b_admin"])
+    low = (rv["state_local_bn"] * r_sl + rv["federal_tax_bn"] * r_tax) / rv["total_bn"]
+    if (rv["b_fin"], rv["b_admin"]) != (0.789, 0.842) or abs(low - gg["low"]) > 1e-12 or abs(r_sl - gg["high"]) > 1e-12:
+        raise SystemExit("[BLOCKED] the components' finite-removal responses do not compose to the adopted ones")
+    return r_tax, r_sl
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Debt legacy of past federal gaps on an adopted main case.")
-    parser.add_argument("--case", choices=("sept24", "sept23"), default="sept24",
-                        help="sept24: the main case adopted 2026-09-24 (default); sept23: this lane's first result")
+    parser.add_argument("--case", choices=("sept26", "sept24", "sept23"), default="sept26",
+                        help="sept26: the main case adopted 2026-09-26 (default); sept24: the one adopted "
+                             "2026-09-24; sept23: this lane's first result")
     parser.add_argument("--out-dir", type=Path, default=HERE / "derived")
     args = parser.parse_args()
-    sept24 = args.case == "sept24"
+    framed = args.case in ("sept24", "sept26")    # on the September 24 frame, with a corrections payload
+    sept26 = args.case == "sept26"
     pins = check_pins()
     wb = Workbook(BEA / "Section3All_xls.xlsx")
-    shares, extras = federal_shares(wb, Grants())
+    responses, gg_components = None, None
+    if sept26:
+        payload26 = json.loads(CORRECTIONS26_FILE.read_text())
+        responses = payload26["meta"]["responses"]
+        if responses != json.loads(MAIN26_SUMMARY.read_text())["responses"]:
+            raise SystemExit("[BLOCKED] the payload's responses differ from main_case_2026_09_26 summary.json")
+        gg_components = finite_components(responses)
+        shares, extras = federal_shares(wb, Grants(), *gg_components)
+    else:
+        shares, extras = federal_shares(wb, Grants())
     jf = justice_federal(wb)
     ucf = uncompensated_federal(float(shares["central"].loc[LAST, "medicaid_and_chip_other_medical"]))
     hist = History(wb)
@@ -1101,11 +1289,19 @@ def main() -> None:
 
     # 1. The 2024 split of the adopted fiscal gap, at the corners that set each band. On September 24
     # each correction is split by its line's government level too, and the parts must add to the
-    # change in the whole split at the same specification.
-    if sept24:
+    # change in the whole split at the same specification. September 26 does the same at the adopted
+    # responses, with its payload's two new corrections as components of their own.
+    COMPONENTS.clear()
+    if sept26:
+        corrected = apply_corrections(MODEL, payload26)
+        main_summary = json.loads(MAIN26_SUMMARY.read_text())
+        anchors = {prof: sept26_anchors(prof, corrected, main_summary, responses) for prof in PROFILES}
+        COMPONENTS.update(sept26_components(json.loads(CORRECTIONS_FILE.read_text()), payload26))
+    elif framed:
         corrected = apply_corrections(MODEL, json.loads(CORRECTIONS_FILE.read_text()))
-        main24 = json.loads(MAIN24_SUMMARY.read_text())
-        anchors = {prof: sept24_anchors(prof, corrected, main24) for prof in PROFILES}
+        main_summary = json.loads(MAIN24_SUMMARY.read_text())
+        anchors = {prof: sept24_anchors(prof, corrected, main_summary) for prof in PROFILES}
+        COMPONENTS.update(json.loads(COMPONENTS_FILE.read_text()))
     else:
         anchors = {prof: adopted_anchors(prof) for prof in PROFILES}
     parts, correction_rows = {}, []
@@ -1115,7 +1311,7 @@ def main() -> None:
             p, _ = production(corner["normalization"])
             cost = -welfare(corner)
             for conv in CONVENTIONS:
-                if sept24:
+                if framed:
                     before = split_corner(dict(corner, model=MODEL), shares[conv], extras, conv, LAST, jf, ucf, end)
                     parts[(prof, end, conv)] = constant_parts(
                         corner, conv, shares, extras, before.federal_bn.sum() / before.responsive_bn.sum())
@@ -1124,7 +1320,7 @@ def main() -> None:
                 if abs(gap - (cost + p)) > 1e-6:
                     raise SystemExit(f"[BLOCKED] {prof} {end}: fiscal gap {gap} != cost + P {cost + p}")
                 fed = table.federal_bn.sum()
-                if sept24 and prof == MAIN:
+                if framed and prof == MAIN:
                     cs = correction_split(corner, shares[conv], extras, conv, LAST, parts[(prof, end, conv)])
                     if (cs.federal_bn + cs.state_local_bn - cs.effect_bn).abs().max() > 1e-12:
                         raise SystemExit("[BLOCKED] a correction's federal and state-local parts do not add to it")
@@ -1153,13 +1349,17 @@ def main() -> None:
     split = pd.DataFrame(split_rows)
     split.round(6).to_csv(out / "federal_split_2024.csv", index=False)
     pd.DataFrame(line_rows).round(6).to_csv(out / "federal_split_2024_lines.csv", index=False)
-    if sept24:
+    if framed:
         corrections = pd.DataFrame(correction_rows)
         corrections.round(6).to_csv(out / "corrections_federal_split_2024.csv", index=False)
         by_component = corrections.assign(component=corrections.component.str.split(":").str[0]).groupby(
             ["end", "convention", "component"], sort=True)[["effect_bn", "federal_bn", "state_local_bn"]].sum()
         by_component["federal_share"] = by_component.federal_bn / by_component.effect_bn
         by_component.round(6).to_csv(out / "corrections_federal_by_component_2024.csv")
+        if sept26:
+            extras24 = federal_shares(wb, Grants())[1]       # general government at the elasticities
+            bridge = sept26_bridge(anchors[MAIN], shares, extras, extras24, jf, ucf, corrections, main_summary, split)
+            bridge.round(6).to_csv(out / "sept26_bridge_2024.csv", index=False)
 
     # 2. Annual federal gaps by benchmark, rule, anchor and convention (real 2024 $bn and nominal). The
     # every-service-proportional benchmark charges no interest either, so it gets its own legacy line.
@@ -1187,9 +1387,11 @@ def main() -> None:
     s_f = fed_exp * 1e9 * hist.real / residents
     indirect = indirect_receipt_shares(wb)
     n = hist.group
-    benchmarks = ({"main": (MAIN, "net_cost_cbo_informed_corrected"),       # back-cast re-run on Sept 24 (da2b107)
-                   "proportional": ("proportional_reference", "net_cost_full_proportional_corrected")}
-                  if sept24 else BENCHMARKS)
+    # The back-cast's concepts for the case: Sept 24 re-run in da2b107, Sept 26 added on 2026-09-26.
+    family = "sept26" if sept26 else "corrected"
+    benchmarks = ({"main": (MAIN, f"net_cost_cbo_informed_{family}"),
+                   "proportional": ("proportional_reference", f"net_cost_full_proportional_{family}")}
+                  if framed else BENCHMARKS)
     for bench, (prof, column) in benchmarks.items():
         bench_split = split[split.profile == prof].set_index(["end", "convention"])
         for end, corner in anchors[prof].items():
@@ -1250,7 +1452,7 @@ def main() -> None:
     # 3. Stocks and 2024 legacy interest for every specification. The account's interest row (BEA
     # domestic interest, per head, zero response) and the group's per-head share of OMB net interest
     # are the two benchmarks the legacy line is compared with, never added to.
-    interest_row = next(l for l in (corrected if sept24 else MODEL)["spending"]["lines"] if l["id"] == "domestic_interest")
+    interest_row = next(l for l in (corrected if framed else MODEL)["spending"]["lines"] if l["id"] == "domestic_interest")
     row_allocation = interest_row["keys"][interest_row["preferred_key"]]["personal"]["target_bn"]
     per_head_net_interest = rates.loc[LAST, "net_interest_bn"] * TARGET_M / RESIDENTS_M
     # Scale reference only: the group's per-head share of each year's increase in debt held by the public.
@@ -1282,9 +1484,9 @@ def main() -> None:
     # group size in real terms; the stock is linear, so these rows subtract from any rule's stock.
     benefits = proposed_benefits(float(extras["labour_share"][LAST]),
                                  float(shares["central"].loc[LAST, "medicaid_and_chip_other_medical"]),
-                                 include_care=not sept24)   # since September 24 care is inside the account
+                                 include_care=not framed)   # since September 24 care is inside the account
     benefit_rows = []
-    names = ("mobility", "mobility_and_scale") if sept24 else ("care_and_mobility", "care_mobility_and_scale")
+    names = ("mobility", "mobility_and_scale") if framed else ("care_and_mobility", "care_mobility_and_scale")
     for name, fed_2024 in ((names[0], benefits["federal_omitted_bn"]),
                            (names[1], benefits["federal_with_scale_bn"])):
         nominal = hist.nominal(fed_2024 * hist.group / hist.group[LAST])
@@ -1350,14 +1552,22 @@ def main() -> None:
                               "public_securities_interest_over_average_debt":
                                   float(rates.loc[LAST, "gross_public_securities"]),
                               "ladder137": LADDER137_RATE})
-    if sept24:
+    if framed:
+        lanes = (SHELTER_PARTS, SHELTER_KEYING, CARE_SUMMARY) + ((CK_PAYLOADS, R_VALUES) if sept26 else ())
         summary["case"] = dict(
-            name="main case adopted 2026-09-24", bands_source=str(MAIN24_SUMMARY.relative_to(ROOT)),
-            corrections_sha256=sha(CORRECTIONS_FILE), package_components_sha256=sha(COMPONENTS_FILE),
-            lane_sha256={str(p.relative_to(ROOT)): sha(p) for p in (SHELTER_PARTS, SHELTER_KEYING, CARE_SUMMARY)},
-            band=main24["main_case"],
+            name=f"main case adopted 2026-09-{26 if sept26 else 24}",
+            bands_source=str((MAIN26_SUMMARY if sept26 else MAIN24_SUMMARY).relative_to(ROOT)),
+            corrections_sha256=sha(CORRECTIONS26_FILE if sept26 else CORRECTIONS_FILE),
+            package_components_sha256=sha(COMPONENTS_FILE),
+            lane_sha256={str(p.relative_to(ROOT)): sha(p) for p in lanes},
+            band=main_summary["main_case"],
             corrections_2024=plain({f"{e}|{c}": dict(effect_bn=float(g.effect_bn.sum()), federal_bn=float(g.federal_bn.sum()))
                                     for (e, c), g in corrections.groupby(["end", "convention"])}))
+        if sept26:
+            summary["case"].update(
+                responses=plain(responses), consumption_key_spec=COMPONENTS["meta"]["consumption_key_spec"],
+                general_government_low_end_components=dict(zip(("federal_tax_collection", "state_local"),
+                                                               map(float, gg_components))))
     (out / "summary.json").write_text(json.dumps(summary, indent=1, sort_keys=True) + "\n")
     print(split[split.profile == MAIN].round(3).to_string(index=False))
     print(f"programme control max |diff| {control_gap:.6f}bn")
