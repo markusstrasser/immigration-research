@@ -34,6 +34,19 @@ fifth gains $46.0bn (§4). Priced to the same standard, the benefits the account
 $4.8bn a year, or $18.7bn with the proposed scale net (§7b); with all of them the total is
 $237–289bn. [CALCULATION: lanes and commits in "Sources"]
 
+**Update, 2026-09-26 (schools at full average cost, $258.5–292.0bn; [decision](../decisions/2026-09-26-main-case-schools-full-cost.md)).** Fiscal and social
+costs together come to **$305–350bn a year** at central values (full span $268–383bn), or
+$7.5–8.6k per group member, on the pairing below: decision 4's victims figure at the low end and
+the custody footing at the high end. With this memo's $28.9bn the low end is $303bn. Only the fiscal
+row moves, by the main case's change since September 24 (+$57.6bn at the low end, +$45.6bn at the
+high end); the social items do not depend on the case. Costs and benefits together are $310–349bn ($296–335bn
+adding the scale net), and costs alone $315–354bn. In the income split (§4) the fiscal channel is
+$276.7bn and the central total $311.4bn. The one-year scenario keeps CBO's 63–66% school response
+($200.9–245.7bn) and stays within $0.7bn of the September 24 totals: $248–303bn, full span
+$210–336bn. [CALCULATION: `infra/immigration-fiscal/sept24_propagation_2026_09_24/real_costs_totals.py`
+→ `sept26_propagation_2026_09_26/derived/real_costs_totals.csv` (one-year: `derived/sept26/`),
+4e66adb; `distribution_weights_2026_09_23/derived/channel_by_quintile.csv`, 39b854b]
+
 **Update, 2026-09-25 (main case adopted September 24, $200.9–246.3bn).** Fiscal and social costs
 together come to **$248–304bn a year** at central values (full span $210–337bn), or $6.1–7.4k per
 group member, with decision 4's victims figure ($30.9bn) at the low end and the custody footing at
@@ -58,7 +71,8 @@ effect of the 40,896,574 CPS Mexican-origin residents, all generations and all s
 on **all other US residents** in 2024. The comparison is stationary, with and without the group,
 in 2024 dollars a year. The main CBO-informed case ($165.1–197.4bn net cost) has four settings:
 
-- school spending responds at 63–66%;
+- school spending responds at 63–66%; [2026-09-26: the main case now charges the full average cost per pupil (response 1); 63–66% is
+  the one-year scenario.]
 - economic-affairs and recreation budgets, highways included, are fixed;
 - defense, general public services, existing interest and business subsidies are held at zero
   response by assumption;
@@ -429,3 +443,9 @@ case. None changes the sign. [CALCULATION: rows of §7 and the lanes' `summary` 
   The 2026-09-24 note's "about $253–304bn" summed the printed one-decimal social row; the exact
   figure is $252.7–303.4bn. Concept affected: the combined totals' fiscal row
   ([lane](../infra/immigration-fiscal/sept24_propagation_2026_09_24/RESULT.md)).
+- 2026-09-26 (schools at full average cost, [decision](../decisions/2026-09-26-main-case-schools-full-cost.md)):
+  the propagation lane recomputed §7 and §7b on the new main case, $258.5–292.0bn (4e66adb). The
+  fiscal row rises by the case's change since September 24, +$57.6bn and +$45.6bn, and the social
+  rows do not move: $305–350bn at central values and $268–383bn full span; §7b $315–354bn costs
+  only, $310–349bn with care and mobility and $296–335bn adding the scale net. The one-year
+  scenario stays within $0.7bn of September 24. Concept affected: the combined totals' fiscal row.

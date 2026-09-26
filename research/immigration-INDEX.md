@@ -135,7 +135,8 @@ Beside the fiscal headline, as social costs:
 
 Wages move **$66–166bn** from less- to more-educated natives. Fiscal plus social costs come to
 **$248–304bn a year** at central values ($210–337bn full span) on the September 24 case
-(September 23: $248–307bn, $212–340bn). The transfers are not added, but they run from poorer
+(September 23: $248–307bn, $212–340bn). [2026-09-26, later: on the schools case **$305–350bn**
+($268–383bn full span); the one-year scenario stays within $0.7bn of September 24 (4e66adb).] The transfers are not added, but they run from poorer
 to richer residents: outside the budget the bottom four fifths lose $80.7bn a year and the top
 fifth gains $46.0bn. The fiscal cost is progressive if financed by tax shares and regressive if
 by equal cuts per person (ladder 194). [2026-09-26, later: on the schools case the fiscal channel is $276.7bn, and per-person cuts take 9.8% of the bottom fifth's resources; the channels outside the budget do not move (39b854b).]
@@ -163,14 +164,15 @@ term. The third, the
 measures city size and schooling mix in one regression. Bigger cities add $38.6bn to other
 residents' earnings; the group's lower schooling takes back $24.9bn. That leaves **+$13.9bn**
 (95% −$57bn to +$84bn), not yet adopted; adopting it would put the main case at
-$186.9–232.4bn (September 23 case: $189.3–235.7bn). The 1970–2000 college-share studies would make it a $109–677bn cost instead. The
+$186.9–232.4bn (September 23 case: $189.3–235.7bn). [2026-09-26, later: on the schools case $244.6–278.0bn.] The 1970–2000 college-share studies would make it a $109–677bn cost instead. The
 fourth, the [mobility lane](../infra/immigration-fiscal/labor_mobility_insurance_2026_09_23/RESULT.md)
 (ladder 203), is worth $0.65bn a year beside the account: the Mexico-born no longer move more than
 natives within the US. Priced to the same standard, the omitted benefits come to $0.65bn (mobility), or $14.6bn
 with the scale net, since care sits inside the September 24 account. Costs and benefits together
 are **$253–303bn** at central values, or $239–289bn adding the proposed scale net
 ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md) §7b; September 23 case with
-care beside it: $251–303bn and $237–289bn). The ancestry instrument could not measure the congestion or wage
+care beside it: $251–303bn and $237–289bn). [2026-09-26, later: on the schools case $310–349bn and
+$296–335bn (4e66adb).] The ancestry instrument could not measure the congestion or wage
 slopes, so both figures stand (ladder 199).
 
 The [dataset integrity audit](../infra/immigration-fiscal/dataset_integrity_2026_09_23/README.md)
