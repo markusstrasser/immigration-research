@@ -126,7 +126,9 @@ by equal cuts per person (ladder 194).
 [Who wins and who loses](immigration-winners-and-losers-2026-09-25.md) (ladder 226, September 25)
 follows every priced channel to persons. About one other resident in four or five comes out ahead:
 23.9% under tax-share financing and 21.4% under per-person cuts, with households pooled; 20.1% and
-19.9% with wages going to the earner alone; 14–30% across all choices. Nearly everyone in California
+19.9% with wages going to the earner alone; 14–30% across all choices [2026-09-25: the substitution
+elasticity alone spans 19–29%; a minority ahead holds throughout, the share is conditional on
+incidence]. Nearly everyone in California
 and Texas, US-born adults with high school or less, and renters come out behind. The top income
 decile and landlords come out ahead most often. Where the state and local cost falls is the largest
 single choice: charged nationally, the share ahead falls to 13%.
