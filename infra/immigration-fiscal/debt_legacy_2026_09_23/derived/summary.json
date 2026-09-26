@@ -15,8 +15,8 @@
    "normalization": "cash",
    "other_edu": 1.0,
    "profile": "cbo_category_lag_non_school_full",
-   "school_response": 0.6813221954785698,
-   "school_share": 0.7153278156243373,
+   "school_response": 1.0,
+   "school_share": 0.8651608840454027,
    "uc": 5.747597015128038,
    "uc_arm": "equal_high",
    "uc_key": "uninsured_use_high"
@@ -34,8 +34,8 @@
    "normalization": "gdp",
    "other_edu": 1.0,
    "profile": "cbo_category_lag_non_school_full",
-   "school_response": 0.6521912444554522,
-   "school_share": 0.8651608840454027,
+   "school_response": 1.0,
+   "school_share": 0.7153278156243373,
    "uc": 3.6515760054649666,
    "uc_arm": "equal_low",
    "uc_key": "uninsured_use_low"
@@ -43,38 +43,38 @@
  },
  "case": {
   "band": [
-   200.91801681307095,
-   245.69489442324326
+   258.48849537573153,
+   291.9547733238526
   ],
-  "bands_source": "infra/immigration-fiscal/main_case_2026_09_26/derived/summary.json",
+  "bands_source": "infra/immigration-fiscal/main_case_schools_full_2026_09_26/derived/summary.json",
   "consumption_key_spec": "both_corridor_net_h2",
   "corrections_2024": {
    "high|central": {
-    "effect_bn": -7.491001580598883,
-    "federal_bn": -7.180175403247291
+    "effect_bn": -6.724951833333186,
+    "federal_bn": -7.1150415619599245
    },
    "high|high": {
-    "effect_bn": -7.491001580598883,
-    "federal_bn": -6.529326286041416
+    "effect_bn": -6.724951833333186,
+    "federal_bn": -6.468331453620182
    },
    "high|low": {
-    "effect_bn": -7.491001580598883,
-    "federal_bn": -6.7624236115789715
+    "effect_bn": -6.724951833333186,
+    "federal_bn": -6.752917514163857
    },
    "low|central": {
-    "effect_bn": -6.486564764001995,
-    "federal_bn": -7.24981507021307
+    "effect_bn": -7.101789347977951,
+    "federal_bn": -7.297953138031706
    },
    "low|high": {
-    "effect_bn": -6.486564764001995,
-    "federal_bn": -6.436573473751839
+    "effect_bn": -7.101789347977951,
+    "federal_bn": -6.480091887528115
    },
    "low|low": {
-    "effect_bn": -6.486564764001995,
-    "federal_bn": -6.909891170778221
+    "effect_bn": -7.101789347977951,
+    "federal_bn": -6.91436948140053
    }
   },
-  "corrections_sha256": "ad37c1f94cbc43496696a42d7714851bf64e6d4e723bfcfc18c8fd8ccf351f39",
+  "corrections_sha256": "a75e0aa13c7686ece918ba6e8633cb9e400721adbc9805db4a0b9817a17de285",
   "general_government_low_end_components": {
    "federal_tax_collection": 0.7995299623735359,
    "state_local": 0.8503957662020014
@@ -83,10 +83,11 @@
    "infra/immigration-fiscal/care_household_services_2026_09_23/derived/summary.csv": "ea351ee9aac908ba97599fdfb59e7b2d642ab5e6acb65e86ce48a9a016a2ceef",
    "infra/immigration-fiscal/consumption_key_2026_09_24/derived/payloads.json": "80eb474e2c3fb104871acab549706dbbb32a6fe99e7ce4ebe917d313770c1917",
    "infra/immigration-fiscal/finite_response_2026_09_26/derived/r_values.json": "70c90edd6ae4b8ff7d8262756af7d49c3f982ce99de7bbdcff1355ec8251977b",
+   "infra/immigration-fiscal/main_case_2026_09_26/derived/corrections.json": "ad37c1f94cbc43496696a42d7714851bf64e6d4e723bfcfc18c8fd8ccf351f39",
    "infra/immigration-fiscal/migrant_shelter_costs_2026_09_23/derived/account_keying.csv": "5812533042c44c996e4a1f89b5517a99301a5710c77a0b87535dd54411c144ba",
    "infra/immigration-fiscal/migrant_shelter_costs_2026_09_23/derived/account_keying_parts.csv": "311bd255621576dd017d6e93dcfb727826ecbd040e834127e7d93f0a8a58f93c"
   },
-  "name": "main case adopted 2026-09-26",
+  "name": "main case adopted 2026-09-26, schools at full average cost",
   "package_components_sha256": "352200b2273870cece5222885e89d4fb9254b802f666d723da92cdf775653303",
   "responses": {
    "general_government": {
@@ -101,13 +102,12 @@
    "row8_factor": 0.9491629658844111,
    "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
    "school": {
-    "decline": 0.6813221954785698,
-    "elasticity": [
-     0.63,
-     0.66
-    ],
-    "growth": 0.6521912444554522,
-    "s": 0.17480600215120404
+    "decline": 1.0,
+    "elasticity": null,
+    "growth": 1.0,
+    "rule": "full average cost per pupil (response 1): a school system sized for the group's pupils",
+    "s": null,
+    "set_directly": true
    }
   }
  },
