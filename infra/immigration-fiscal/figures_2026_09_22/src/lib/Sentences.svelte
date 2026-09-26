@@ -1,7 +1,6 @@
 <script>
   import fig from '../generated/figures.json'
   import { schooling, fiscalWindows, incomeRatios, kitagawa, hulls, programmes, programmeYears } from '../data.js'
-  import { dollars } from '../format.js'
 
   const tn = (r) => `$${r[0].toFixed(1)}–${r[1].toFixed(1)}tn`
   const w = fig.backcastWindows
@@ -49,8 +48,10 @@
 
   const india = kitagawa[0]
   const recent = kitagawa[2]
-  const bn = (v) => '−$' + Math.abs(Math.round(v)) + 'bn'
-  const usd = (v) => '$' + Math.round(v).toLocaleString('en-US')
+  // Magnitudes; the sentence carries the direction. The hulls are the group's balance, negative
+  // (everyone else worse off); the arrival windows are gaps below whites.
+  const bn = (v) => '$' + Math.abs(Math.round(v)) + 'bn'
+  const usd = (v) => '$' + Math.abs(Math.round(v)).toLocaleString('en-US')
 </script>
 
 <section class="fig" id="sentences">
@@ -59,37 +60,37 @@
     <h2>Where a sentence does the work</h2>
 
     <p>
-      Carried back on national spending per resident, the 2024 account implies
-      <svg class="spark" viewBox="0 0 100 26" aria-label="Back-cast band, 2005 to 2023, and the measured 2024">
-        <polygon points={band} fill="#ecdcae" stroke="#b8913a" stroke-width="0.8" />
+      Carried back on national spending per resident, the 2024 account implies that everyone else was
+      <svg class="spark" viewBox="0 0 100 26" aria-label="Back-cast band, 2005 to 2023, and the measured 2024, everyone else worse off in every year">
+        <polygon points={band} fill="#f2cabc" stroke="#ca7a5e" stroke-width="0.8" />
         <circle cx={bx(2024)} cy={by((last.lo + last.hi) / 2)} r="2.2" fill="#ca7a5e" />
       </svg>
-      {tn(w.ten)} over ten years, {tn(w.fifteen)} over fifteen and {tn(w.twenty)} over twenty, in 2024
-      dollars and before interest. Only 2024 is measured. The pandemic years are probably over-attributed:
-      refundable credits ran {creditsPeak.toFixed(1)} times their 2024 level in 2021.
+      {tn(w.ten)} worse off over ten years, {tn(w.fifteen)} over fifteen and {tn(w.twenty)} over twenty, in
+      2024 dollars and before interest. Only 2024 is measured. The pandemic years are probably
+      over-attributed: refundable credits ran {creditsPeak.toFixed(1)} times their 2024 level in 2021.
     </p>
 
     <p>
       Adults arriving without a high-school diploma fell from {schooling[0].lths.toFixed(1)}% to
       {schooling.at(-1).lths.toFixed(1)}% of recent arrivals
       <svg class="spark" viewBox="0 0 100 26" aria-label="Share without a diploma, 1975–80 to 2018–23">
-        <path d={lths} fill="none" stroke="#ca7a5e" stroke-width="1.7" />
-        <circle cx={sx(schooling[0].year)} cy={sy(schooling[0].lths)} r="2.2" fill="#ca7a5e" />
-        <circle cx={sx(schooling.at(-1).year)} cy={sy(schooling.at(-1).lths)} r="2.2" fill="#ca7a5e" />
+        <path d={lths} fill="none" stroke="#111" stroke-width="1.4" />
+        <circle cx={sx(schooling[0].year)} cy={sy(schooling[0].lths)} r="2.2" fill="#111" />
+        <circle cx={sx(schooling.at(-1).year)} cy={sy(schooling.at(-1).lths)} r="2.2" fill="#111" />
       </svg>
       between {schooling[0].window} and {schooling.at(-1).window}. On the partial account the newest arrivals,
-      2016–2025, still run {dollars(fiscalWindows.recent)} a person against whites, next to
-      {dollars(fiscalWindows.older[1])} to {dollars(fiscalWindows.older[0])} for older windows.
+      2016–2025, still run {usd(fiscalWindows.recent)} a person below whites, next to
+      {usd(fiscalWindows.older[1])} to {usd(fiscalWindows.older[0])} below for older windows.
     </p>
 
     <p>
       Income per person rose from {perCap[0]} to {perCap[1]} of the national figure between 2008 and 2024
       <svg class="spark" viewBox="0 0 100 26" aria-label="Per-capita income as a share of the national figure">
         {#each segments(incomeRatios.perCapita) as d}
-          <path {d} fill="none" stroke="#5c97d2" stroke-width="1.7" />
+          <path {d} fill="none" stroke="#111" stroke-width="1.4" />
         {/each}
-        <circle cx={ix(incomeRatios.years[0])} cy={iy(incomeRatios.perCapita[0])} r="2.2" fill="#5c97d2" />
-        <circle cx={ix(incomeRatios.years.at(-1))} cy={iy(incomeRatios.perCapita.at(-1))} r="2.2" fill="#5c97d2" />
+        <circle cx={ix(incomeRatios.years[0])} cy={iy(incomeRatios.perCapita[0])} r="2.2" fill="#111" />
+        <circle cx={ix(incomeRatios.years.at(-1))} cy={iy(incomeRatios.perCapita.at(-1))} r="2.2" fill="#111" />
       </svg>
       and household income from {household[0]} to {household[1]}; part of the per-person gain is a falling
       share of children.
@@ -102,10 +103,10 @@
     </p>
 
     <p>
-      On the September 19 per-person ledger, a budget modeller’s settings put the group’s balance at
-      {bn(hulls.practitioner.hi)} to {bn(hulls.practitioner.lo)}, and every switch the design allows spans
-      {bn(hulls.design.hi)} to {bn(hulls.design.lo)}. That is a range of conventions, not a confidence
-      interval, and a different object from the complete account.
+      On the September 19 per-person ledger, a budget modeller’s settings leave everyone else
+      {bn(hulls.practitioner.hi)} to {bn(hulls.practitioner.lo)} a year worse off, and every switch the
+      design allows spans {bn(hulls.design.hi)} to {bn(hulls.design.lo)} worse off. That is a range of
+      conventions, not a confidence interval, and a different object from the complete account.
     </p>
   </div>
 
