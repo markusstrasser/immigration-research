@@ -1,0 +1,644 @@
+group,quantity,unit,file,sept24,sept26,sept26_schools,change_sept24_to_schools
+share ahead,"net_account_a, central, spm_unit_pooled",%,derived/net_shares.csv,28.511779,28.535497,24.391646,-4.120133
+share ahead,"net_account_a, least_costly, spm_unit_pooled",%,derived/net_shares.csv,32.394852,32.386280,29.175171,-3.219682
+share ahead,"net_account_a, most_costly, spm_unit_pooled",%,derived/net_shares.csv,21.769005,21.808690,18.610181,-3.158824
+net totals,"net_account_a, central, spm_unit_pooled: total_bn",$bn,derived/net_shares.csv,-212.298341,-212.065914,-262.832599,-50.534258
+net totals,"net_account_a, central, spm_unit_pooled: mean_usd",$,derived/net_shares.csv,-717.633302,-716.847625,-888.454542,-170.821241
+net totals,"net_account_a, central, spm_unit_pooled: median_usd",$,derived/net_shares.csv,-249.718437,-249.289420,-320.768880,-71.050443
+share ahead,"net_account_a, central, person",%,derived/net_shares.csv,22.362679,22.371249,20.207999,-2.154680
+share ahead,"net_account_a, least_costly, person",%,derived/net_shares.csv,24.738932,24.740433,22.713021,-2.025911
+share ahead,"net_account_a, most_costly, person",%,derived/net_shares.csv,18.867633,18.893280,17.160900,-1.706733
+net totals,"net_account_a, central, person: mean_usd",$,derived/net_shares.csv,-717.633302,-716.847625,-888.454542,-170.821241
+net totals,"net_account_a, central, person: median_usd",$,derived/net_shares.csv,-185.021466,-184.691645,-240.217024,-55.195558
+share ahead,"net_account_b, central, spm_unit_pooled",%,derived/net_shares.csv,23.523015,23.541120,20.634343,-2.888672
+share ahead,"net_account_b, least_costly, spm_unit_pooled",%,derived/net_shares.csv,28.241501,28.253176,24.755359,-3.486142
+share ahead,"net_account_b, most_costly, spm_unit_pooled",%,derived/net_shares.csv,18.068461,18.138690,15.647345,-2.421116
+net totals,"net_account_b, central, spm_unit_pooled: total_bn",$bn,derived/net_shares.csv,-212.298341,-212.065914,-262.832599,-50.534258
+net totals,"net_account_b, central, spm_unit_pooled: mean_usd",$,derived/net_shares.csv,-717.633302,-716.847625,-888.454542,-170.821241
+net totals,"net_account_b, central, spm_unit_pooled: median_usd",$,derived/net_shares.csv,-397.704254,-397.051248,-489.484713,-91.780458
+share ahead,"net_account_b, central, person",%,derived/net_shares.csv,21.623879,21.652735,19.661154,-1.962725
+share ahead,"net_account_b, least_costly, person",%,derived/net_shares.csv,24.237863,24.235197,22.120198,-2.117665
+share ahead,"net_account_b, most_costly, person",%,derived/net_shares.csv,18.115244,18.133212,16.402482,-1.712763
+net totals,"net_account_b, central, person: mean_usd",$,derived/net_shares.csv,-717.633302,-716.847625,-888.454542,-170.821241
+net totals,"net_account_b, central, person: median_usd",$,derived/net_shares.csv,-295.318280,-294.707820,-388.637970,-93.319690
+share ahead,"net_social_a, central, spm_unit_pooled",%,derived/net_shares.csv,23.873591,23.888118,20.493951,-3.379640
+share ahead,"net_social_a, least_costly, spm_unit_pooled",%,derived/net_shares.csv,29.961279,29.958079,27.064964,-2.896315
+share ahead,"net_social_a, most_costly, spm_unit_pooled",%,derived/net_shares.csv,13.858913,13.907383,11.870125,-1.988788
+net totals,"net_social_a, central, spm_unit_pooled: total_bn",$bn,derived/net_shares.csv,-263.899430,-263.667002,-314.433687,-50.534258
+net totals,"net_social_a, central, spm_unit_pooled: mean_usd",$,derived/net_shares.csv,-892.060756,-891.275080,-1062.881997,-170.821241
+net totals,"net_social_a, central, spm_unit_pooled: median_usd",$,derived/net_shares.csv,-377.199472,-376.940933,-442.717982,-65.518510
+share ahead,"net_social_a, central, person",%,derived/net_shares.csv,20.059168,20.075577,18.350877,-1.708291
+share ahead,"net_social_a, least_costly, person",%,derived/net_shares.csv,23.961508,23.959122,22.205310,-1.756198
+share ahead,"net_social_a, most_costly, person",%,derived/net_shares.csv,13.983299,14.003027,12.758714,-1.224585
+net totals,"net_social_a, central, person: mean_usd",$,derived/net_shares.csv,-892.060756,-891.275080,-1062.881997,-170.821241
+net totals,"net_social_a, central, person: median_usd",$,derived/net_shares.csv,-283.884946,-283.479748,-339.597566,-55.712620
+share ahead,"net_social_b, central, spm_unit_pooled",%,derived/net_shares.csv,21.391957,21.420242,19.049302,-2.342656
+share ahead,"net_social_b, least_costly, spm_unit_pooled",%,derived/net_shares.csv,26.952810,26.964516,24.173782,-2.779028
+share ahead,"net_social_b, most_costly, spm_unit_pooled",%,derived/net_shares.csv,13.808374,13.830291,12.340252,-1.468121
+net totals,"net_social_b, central, spm_unit_pooled: total_bn",$bn,derived/net_shares.csv,-263.899430,-263.667002,-314.433687,-50.534258
+net totals,"net_social_b, central, spm_unit_pooled: mean_usd",$,derived/net_shares.csv,-892.060756,-891.275080,-1062.881997,-170.821241
+net totals,"net_social_b, central, spm_unit_pooled: median_usd",$,derived/net_shares.csv,-504.806542,-504.099063,-592.541174,-87.734631
+share ahead,"net_social_b, central, person",%,derived/net_shares.csv,19.874550,19.886354,18.260419,-1.614131
+share ahead,"net_social_b, least_costly, person",%,derived/net_shares.csv,23.727601,23.726624,21.995345,-1.732256
+share ahead,"net_social_b, most_costly, person",%,derived/net_shares.csv,14.097435,14.117614,13.051310,-1.046125
+net totals,"net_social_b, central, person: mean_usd",$,derived/net_shares.csv,-892.060756,-891.275080,-1062.881997,-170.821241
+net totals,"net_social_b, central, person: median_usd",$,derived/net_shares.csv,-397.155895,-396.524327,-471.756969,-74.601074
+share ahead,"net_with_proposed_a, central, spm_unit_pooled",%,derived/net_shares.csv,20.784348,20.801814,21.592122,0.807774
+share ahead,"net_with_proposed_a, least_costly, spm_unit_pooled",%,derived/net_shares.csv,36.614852,36.607711,32.314109,-4.300743
+share ahead,"net_with_proposed_a, most_costly, spm_unit_pooled",%,derived/net_shares.csv,6.068402,6.081187,7.591328,1.522926
+net totals,"net_with_proposed_a, central, spm_unit_pooled: total_bn",$bn,derived/net_shares.csv,-270.616163,-270.383735,-301.086221,-30.470058
+net totals,"net_with_proposed_a, central, spm_unit_pooled: mean_usd",$,derived/net_shares.csv,-914.765368,-913.979692,-1017.763478,-102.998110
+net totals,"net_with_proposed_a, central, spm_unit_pooled: median_usd",$,derived/net_shares.csv,-428.138462,-427.660733,-425.837985,2.300477
+share ahead,"net_with_proposed_a, central, person",%,derived/net_shares.csv,20.575848,20.584228,18.988509,-1.587339
+share ahead,"net_with_proposed_a, least_costly, person",%,derived/net_shares.csv,31.629129,31.638560,26.699392,-4.929738
+share ahead,"net_with_proposed_a, most_costly, person",%,derived/net_shares.csv,10.677156,10.699962,9.909063,-0.768093
+net totals,"net_with_proposed_a, central, person: mean_usd",$,derived/net_shares.csv,-914.765368,-913.979692,-1017.763478,-102.998110
+net totals,"net_with_proposed_a, central, person: median_usd",$,derived/net_shares.csv,-385.486777,-385.197493,-323.731649,61.755128
+share ahead,"net_with_proposed_b, central, spm_unit_pooled",%,derived/net_shares.csv,20.286153,20.307119,20.151813,-0.134340
+share ahead,"net_with_proposed_b, least_costly, spm_unit_pooled",%,derived/net_shares.csv,35.722332,35.723930,31.269603,-4.452728
+share ahead,"net_with_proposed_b, most_costly, spm_unit_pooled",%,derived/net_shares.csv,8.214574,8.225209,8.775538,0.560964
+net totals,"net_with_proposed_b, central, spm_unit_pooled: total_bn",$bn,derived/net_shares.csv,-270.616163,-270.383735,-301.086221,-30.470058
+net totals,"net_with_proposed_b, central, spm_unit_pooled: mean_usd",$,derived/net_shares.csv,-914.765368,-913.979692,-1017.763478,-102.998110
+net totals,"net_with_proposed_b, central, spm_unit_pooled: median_usd",$,derived/net_shares.csv,-539.225861,-538.555897,-565.599661,-26.373800
+share ahead,"net_with_proposed_b, central, person",%,derived/net_shares.csv,20.511594,20.524443,18.956586,-1.555008
+share ahead,"net_with_proposed_b, least_costly, person",%,derived/net_shares.csv,30.790782,30.803124,26.896695,-3.894087
+share ahead,"net_with_proposed_b, most_costly, person",%,derived/net_shares.csv,10.761810,10.777907,10.122744,-0.639066
+net totals,"net_with_proposed_b, central, person: mean_usd",$,derived/net_shares.csv,-914.765368,-913.979692,-1017.763478,-102.998110
+net totals,"net_with_proposed_b, central, person: median_usd",$,derived/net_shares.csv,-477.049879,-476.349491,-450.690402,26.359476
+share ahead,"net_social_a_pooled_national_fiscal, central, person",%,derived/net_shares.csv,12.991943,13.007840,10.085270,-2.906673
+net totals,"net_social_a_pooled_national_fiscal, central, person: total_bn",$bn,derived/net_shares.csv,-263.899430,-263.667002,-314.433687,-50.534258
+net totals,"net_social_a_pooled_national_fiscal, central, person: mean_usd",$,derived/net_shares.csv,-892.060756,-891.275080,-1062.881997,-170.821241
+net totals,"net_social_a_pooled_national_fiscal, central, person: median_usd",$,derived/net_shares.csv,-430.689869,-430.094982,-543.514602,-112.824733
+share ahead,"net_social_a_housing_national_uniform, central, person",%,derived/net_shares.csv,18.447805,18.457767,16.918984,-1.528820
+net totals,"net_social_a_housing_national_uniform, central, person: total_bn",$bn,derived/net_shares.csv,-266.698779,-266.466351,-317.233036,-50.534258
+net totals,"net_social_a_housing_national_uniform, central, person: mean_usd",$,derived/net_shares.csv,-901.523411,-900.737734,-1072.344651,-170.821240
+net totals,"net_social_a_housing_national_uniform, central, person: median_usd",$,derived/net_shares.csv,-356.676641,-356.291289,-419.543517,-62.866876
+share ahead,"net_social_a_crime_custody_footing, central, person",%,derived/net_shares.csv,20.006647,20.015030,18.301527,-1.705120
+net totals,"net_social_a_crime_custody_footing, central, person: total_bn",$bn,derived/net_shares.csv,-265.310142,-265.077714,-315.844399,-50.534258
+net totals,"net_social_a_crime_custody_footing, central, person: mean_usd",$,derived/net_shares.csv,-896.829394,-896.043718,-1067.650635,-170.821241
+net totals,"net_social_a_crime_custody_footing, central, person: median_usd",$,derived/net_shares.csv,-286.159237,-285.766145,-341.866804,-55.707567
+share ahead,"net_social_b_pooled_national_fiscal, central, person",%,derived/net_shares.csv,12.667690,12.681782,9.816922,-2.850768
+net totals,"net_social_b_pooled_national_fiscal, central, person: total_bn",$bn,derived/net_shares.csv,-263.899430,-263.667002,-314.433687,-50.534258
+net totals,"net_social_b_pooled_national_fiscal, central, person: mean_usd",$,derived/net_shares.csv,-892.060756,-891.275080,-1062.881997,-170.821241
+net totals,"net_social_b_pooled_national_fiscal, central, person: median_usd",$,derived/net_shares.csv,-758.842091,-758.056414,-929.663331,-170.821241
+share ahead,"net_social_b_housing_national_uniform, central, person",%,derived/net_shares.csv,18.479262,18.489901,17.007378,-1.471884
+net totals,"net_social_b_housing_national_uniform, central, person: total_bn",$bn,derived/net_shares.csv,-266.698779,-266.466351,-317.233036,-50.534258
+net totals,"net_social_b_housing_national_uniform, central, person: mean_usd",$,derived/net_shares.csv,-901.523411,-900.737734,-1072.344651,-170.821240
+net totals,"net_social_b_housing_national_uniform, central, person: median_usd",$,derived/net_shares.csv,-474.281830,-473.648359,-559.433270,-85.151440
+share ahead,"net_social_b_crime_custody_footing, central, person",%,derived/net_shares.csv,19.835073,19.850630,18.236171,-1.598902
+net totals,"net_social_b_crime_custody_footing, central, person: total_bn",$bn,derived/net_shares.csv,-265.310142,-265.077714,-315.844399,-50.534258
+net totals,"net_social_b_crime_custody_footing, central, person: mean_usd",$,derived/net_shares.csv,-896.829394,-896.043718,-1067.650635,-170.821241
+net totals,"net_social_b_crime_custody_footing, central, person: median_usd",$,derived/net_shares.csv,-398.924377,-398.294846,-473.663637,-74.739260
+channel table,"taxpayers today: federal tax share and state-local taxes in the group's states | loss | fiscal cost, tax-share financing (a): bn_per_year",$bn,derived/winners_losers_table.csv,-212.102544,-211.870117,-262.636802,-50.534257
+channel table,"taxpayers today: federal tax share and state-local taxes in the group's states | loss | fiscal cost, tax-share financing (a): persons_m",m,derived/winners_losers_table.csv,293.163909,293.163909,293.163909,0.000000
+channel table,"taxpayers today: federal tax share and state-local taxes in the group's states | loss | fiscal cost, tax-share financing (a): usd_per_person",$,derived/winners_losers_table.csv,-723.494734,-722.701910,-895.870173,-172.375439
+channel table,"every other resident equally (state-local part within the group's states) | loss | fiscal cost, per-person financing (b): bn_per_year",$bn,derived/winners_losers_table.csv,-212.102544,-211.870117,-262.636802,-50.534257
+channel table,"every other resident equally (state-local part within the group's states) | loss | fiscal cost, per-person financing (b): persons_m",m,derived/winners_losers_table.csv,295.831229,295.831229,295.831229,0.000000
+channel table,"every other resident equally (state-local part within the group's states) | loss | fiscal cost, per-person financing (b): usd_per_person",$,derived/winners_losers_table.csv,-716.971448,-716.185771,-887.792689,-170.821241
+channel table,workers with some college or more | gain | wages after tax (account's split): bn_per_year,$bn,derived/winners_losers_table.csv,95.757829,95.757829,95.757829,0.000000
+channel table,workers with some college or more | gain | wages after tax (account's split): persons_m,m,derived/winners_losers_table.csv,106.970289,106.970289,106.970289,0.000000
+channel table,workers with some college or more | gain | wages after tax (account's split): usd_per_person,$,derived/winners_losers_table.csv,895.181550,895.181550,895.181550,0.000000
+channel table,workers with high school or less | loss | wages after tax (account's split): bn_per_year,$bn,derived/winners_losers_table.csv,-95.953626,-95.953626,-95.953626,0.000000
+channel table,workers with high school or less | loss | wages after tax (account's split): persons_m,m,derived/winners_losers_table.csv,47.106458,47.106458,47.106458,0.000000
+channel table,workers with high school or less | loss | wages after tax (account's split): usd_per_person,$,derived/winners_losers_table.csv,-2036.952694,-2036.952694,-2036.952694,0.000000
+channel table,renter households | loss | rent: bn_per_year,$bn,derived/winners_losers_table.csv,-33.858535,-33.858535,-33.858535,0.000000
+channel table,renter households | loss | rent: persons_m,m,derived/winners_losers_table.csv,85.000302,85.000302,85.000302,0.000000
+channel table,renter households | loss | rent: usd_per_person,$,derived/winners_losers_table.csv,-398.334294,-398.334294,-398.334294,0.000000
+channel table,landlords | gain | rent receipts: bn_per_year,$bn,derived/winners_losers_table.csv,37.366114,37.366114,37.366114,0.000000
+channel table,landlords | gain | rent receipts: persons_m,m,derived/winners_losers_table.csv,24.517729,24.517729,24.517729,0.000000
+channel table,landlords | gain | rent receipts: usd_per_person,$,derived/winners_losers_table.csv,1524.044679,1524.044679,1524.044679,0.000000
+channel table,"persons 12+, by victimisation risk, in the states where the group lives | loss | crime victims' harm: bn_per_year",$bn,derived/winners_losers_table.csv,-30.927388,-30.927388,-30.927388,0.000000
+channel table,"persons 12+, by victimisation risk, in the states where the group lives | loss | crime victims' harm: persons_m",m,derived/winners_losers_table.csv,256.648215,256.648215,256.648215,0.000000
+channel table,"persons 12+, by victimisation risk, in the states where the group lives | loss | crime victims' harm: usd_per_person",$,derived/winners_losers_table.csv,-120.504980,-120.504980,-120.504980,0.000000
+channel table,households in the group's states | loss | property crime (proxy): bn_per_year,$bn,derived/winners_losers_table.csv,-1.272651,-1.272651,-1.272651,0.000000
+channel table,households in the group's states | loss | property crime (proxy): persons_m,m,derived/winners_losers_table.csv,295.831229,295.831229,295.831229,0.000000
+channel table,households in the group's states | loss | property crime (proxy): usd_per_person,$,derived/winners_losers_table.csv,-4.301949,-4.301949,-4.301949,0.000000
+channel table,"privately insured (cost shifting), in the states with the group's uninsured | loss | unreimbursed hospital care: bn_per_year",$bn,derived/winners_losers_table.csv,-4.400800,-4.400800,-4.400800,0.000000
+channel table,"privately insured (cost shifting), in the states with the group's uninsured | loss | unreimbursed hospital care: persons_m",m,derived/winners_losers_table.csv,199.457066,199.457066,199.457066,0.000000
+channel table,"privately insured (cost shifting), in the states with the group's uninsured | loss | unreimbursed hospital care: usd_per_person",$,derived/winners_losers_table.csv,-22.063896,-22.063896,-22.063896,0.000000
+channel table,metropolitan commuters in the congested urban areas' states | loss | road congestion: bn_per_year,$bn,derived/winners_losers_table.csv,-19.162711,-19.162711,-19.162711,0.000000
+channel table,metropolitan commuters in the congested urban areas' states | loss | road congestion: persons_m,m,derived/winners_losers_table.csv,133.462084,133.462084,133.462084,0.000000
+channel table,metropolitan commuters in the congested urban areas' states | loss | road congestion: usd_per_person,$,derived/winners_losers_table.csv,-143.581687,-143.581687,-143.581687,0.000000
+channel table,US-born men with high school or less; all workers | gain | mobility insurance and Borjas's gain: bn_per_year,$bn,derived/winners_losers_table.csv,0.654883,0.654883,0.654883,0.000000
+channel table,US-born men with high school or less; all workers | gain | mobility insurance and Borjas's gain: persons_m,m,derived/winners_losers_table.csv,154.076747,154.076747,154.076747,0.000000
+channel table,US-born men with high school or less; all workers | gain | mobility insurance and Borjas's gain: usd_per_person,$,derived/winners_losers_table.csv,4.250370,4.250370,4.250370,0.000000
+channel table,US-born non-Hispanic whites | loss | preferences (Mexican-origin beneficiaries' part): bn_per_year,$bn,derived/winners_losers_table.csv,-0.580000,-0.580000,-0.580000,0.000000
+channel table,US-born non-Hispanic whites | loss | preferences (Mexican-origin beneficiaries' part): persons_m,m,derived/winners_losers_table.csv,182.449270,182.449270,182.449270,0.000000
+channel table,US-born non-Hispanic whites | loss | preferences (Mexican-origin beneficiaries' part): usd_per_person,$,derived/winners_losers_table.csv,-3.178966,-3.178966,-3.178966,0.000000
+channel table,"workers in the group's metros | gain | city size and schooling mix, earnings part: bn_per_year",$bn,derived/winners_losers_table.csv,7.967732,7.967732,7.967732,0.000000
+channel table,"workers in the group's metros | gain | city size and schooling mix, earnings part: persons_m",m,derived/winners_losers_table.csv,154.076747,154.076747,154.076747,0.000000
+channel table,"workers in the group's metros | gain | city size and schooling mix, earnings part: usd_per_person",$,derived/winners_losers_table.csv,51.712747,51.712747,51.712747,0.000000
+channel table,"future federal taxpayers (deficit-financed part) | loss | fiscal cost, federal borrowing: bn_per_year",$bn,derived/winners_losers_table.csv,-11.298470,-11.240534,-12.389028,-1.090558
+channel table,"the group: direct fiscal transfer received: the direct response A, sign flipped | gain | direct fiscal transfer received: the direct response A, sign flipped: bn_per_year",$bn,derived/winners_losers_table.csv,234.653424,234.363061,286.278239,51.624815
+channel table,"the group: direct fiscal transfer received: the direct response A, sign flipped | gain | direct fiscal transfer received: the direct response A, sign flipped: usd_per_person",$,derived/winners_losers_table.csv,5737.728143,5730.628192,7000.054295,1262.326152
+channel table,the group: first generation (born in Mexico): market gain over the same person's earnings in Mexico | gain | first generation (born in Mexico): market gain over the same person's earnings in Mexico: bn_per_year,$bn,derived/winners_losers_table.csv,224.576110,224.576110,224.576110,0.000000
+channel table,the group: first generation (born in Mexico): market gain over the same person's earnings in Mexico | gain | first generation (born in Mexico): market gain over the same person's earnings in Mexico: usd_per_person,$,derived/winners_losers_table.csv,18376.574590,18376.574590,18376.574590,0.000000
+channel table,"the group: wage competition among the group's own workers, high school or less, after tax (epsilon infinite (account)) | loss | wage competition among the group's own workers, high school or less, after tax (epsilon infinite (account)): bn_per_year",$bn,derived/winners_losers_table.csv,-20.821474,-20.821474,-20.821474,0.000000
+channel table,"the group: wage competition among the group's own workers, high school or less, after tax (epsilon infinite (account)) | loss | wage competition among the group's own workers, high school or less, after tax (epsilon infinite (account)): usd_per_person",$,derived/winners_losers_table.csv,-509.125137,-509.125137,-509.125137,0.000000
+channel table,"the group: wage gain of the group's own workers, some college or more, after tax (epsilon infinite (account)) | gain | wage gain of the group's own workers, some college or more, after tax (epsilon infinite (account)): bn_per_year",$bn,derived/winners_losers_table.csv,5.843574,5.843574,5.843574,0.000000
+channel table,"the group: wage gain of the group's own workers, some college or more, after tax (epsilon infinite (account)) | gain | wage gain of the group's own workers, some college or more, after tax (epsilon infinite (account)): usd_per_person",$,derived/winners_losers_table.csv,142.886650,142.886650,142.886650,0.000000
+channel table,"the group: wage competition among the group's own workers, high school or less, after tax (epsilon 3) | loss | wage competition among the group's own workers, high school or less, after tax (epsilon 3): bn_per_year",$bn,derived/winners_losers_table.csv,-37.892123,-37.892123,-37.892123,0.000000
+channel table,"the group: wage competition among the group's own workers, high school or less, after tax (epsilon 3) | loss | wage competition among the group's own workers, high school or less, after tax (epsilon 3): usd_per_person",$,derived/winners_losers_table.csv,-926.535374,-926.535374,-926.535374,0.000000
+channel table,"the group: wage gain of the group's own workers, some college or more, after tax (epsilon 3) | gain | wage gain of the group's own workers, some college or more, after tax (epsilon 3): bn_per_year",$bn,derived/winners_losers_table.csv,5.927221,5.927221,5.927221,0.000000
+channel table,"the group: wage gain of the group's own workers, some college or more, after tax (epsilon 3) | gain | wage gain of the group's own workers, some college or more, after tax (epsilon 3): usd_per_person",$,derived/winners_losers_table.csv,144.931974,144.931974,144.931974,0.000000
+channel table,"the group: victims inside the group (excluded from the victim lane), full cost, equal footing | loss | victims inside the group (excluded from the victim lane), full cost, equal footing: bn_per_year",$bn,derived/winners_losers_table.csv,-20.109261,-20.109261,-20.109261,0.000000
+channel table,"the group: victims inside the group (excluded from the victim lane), full cost, equal footing | loss | victims inside the group (excluded from the victim lane), full cost, equal footing: usd_per_person",$,derived/winners_losers_table.csv,-491.710163,-491.710163,-491.710163,0.000000
+channel table,"the group: remittances received in Mexico from the United States, 2024 (context, not a US resident's gain or loss) | gain | remittances received in Mexico from the United States, 2024 (context, not a US resident's gain or loss): bn_per_year",$bn,derived/winners_losers_table.csv,62.794313,62.794313,62.794313,0.000000
+channel table,other_residents_pupils (school_dilution_2026_09_24) | loss | instruction_dilution_account: bn_per_year,$bn,derived/winners_losers_table.csv,-16.080100,-16.080100,-16.080100,0.000000
+channel table,other_residents_pupils (school_dilution_2026_09_24) | loss | instruction_dilution_account: persons_m,m,derived/winners_losers_table.csv,45.529988,45.529988,,
+channel table,other_residents_pupils (school_dilution_2026_09_24) | loss | instruction_dilution_account: usd_per_person,$,derived/winners_losers_table.csv,-353.176020,-353.176020,,
+channel table,other_residents_pupils (school_dilution_2026_09_24) | loss | instruction_dilution_long_run: bn_per_year,$bn,derived/winners_losers_table.csv,-3.649300,-3.649300,-3.649300,0.000000
+channel table,other_residents_pupils:region=Midwest (school_dilution_2026_09_24) | loss | instruction_dilution_account: bn_per_year,$bn,derived/winners_losers_table.csv,-1.999900,-1.999900,-1.999900,0.000000
+channel table,other_residents_pupils:region=Northeast (school_dilution_2026_09_24) | loss | instruction_dilution_account: bn_per_year,$bn,derived/winners_losers_table.csv,-1.041000,-1.041000,-1.041000,0.000000
+channel table,other_residents_pupils:region=South (school_dilution_2026_09_24) | loss | instruction_dilution_account: bn_per_year,$bn,derived/winners_losers_table.csv,-4.716900,-4.716900,-4.716900,0.000000
+channel table,other_residents_pupils:region=West (school_dilution_2026_09_24) | loss | instruction_dilution_account: bn_per_year,$bn,derived/winners_losers_table.csv,-8.322400,-8.322400,-8.322400,0.000000
+channel table,other_residents_pupils:district child-poverty quintile=Q1 least poor (school_dilution_2026_09_24) | loss | instruction_dilution_account: bn_per_year,$bn,derived/winners_losers_table.csv,-1.356500,-1.356500,-1.356500,0.000000
+channel table,other_residents_pupils:district child-poverty quintile=Q2 (school_dilution_2026_09_24) | loss | instruction_dilution_account: bn_per_year,$bn,derived/winners_losers_table.csv,-2.472700,-2.472700,-2.472700,0.000000
+channel table,other_residents_pupils:district child-poverty quintile=Q3 (school_dilution_2026_09_24) | loss | instruction_dilution_account: bn_per_year,$bn,derived/winners_losers_table.csv,-3.461300,-3.461300,-3.461300,0.000000
+channel table,other_residents_pupils:district child-poverty quintile=Q4 (school_dilution_2026_09_24) | loss | instruction_dilution_account: bn_per_year,$bn,derived/winners_losers_table.csv,-4.184300,-4.184300,-4.184300,0.000000
+channel table,other_residents_pupils:district child-poverty quintile=Q5 poorest (school_dilution_2026_09_24) | loss | instruction_dilution_account: bn_per_year,$bn,derived/winners_losers_table.csv,-4.605300,-4.605300,-4.605300,0.000000
+channel table,other_residents_pupils (school_dilution_2026_09_24) | loss | support_services_dilution_account: bn_per_year,$bn,derived/winners_losers_table.csv,-3.984100,-3.984100,-3.984100,0.000000
+channel table,other_residents_pupils (school_dilution_2026_09_24) | loss | support_services_dilution_account: persons_m,m,derived/winners_losers_table.csv,45.529988,45.529988,,
+channel table,other_residents_pupils (school_dilution_2026_09_24) | loss | support_services_dilution_account: usd_per_person,$,derived/winners_losers_table.csv,-87.504965,-87.504965,,
+channel table,other_residents_pupils (school_dilution_2026_09_24) | loss | instruction_dilution_account_power_law: bn_per_year,$bn,derived/winners_losers_table.csv,-12.611100,-12.611100,-12.611100,0.000000
+person nets by cut,decile=D01: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-558.751456,-558.665058,-592.369926,-33.618470
+person nets by cut,decile=D01: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1125.619975,-1124.841639,-1291.810121,-166.190146
+person nets by cut,decile=D01: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,2.759443,2.759443,2.224131,-0.535312
+person nets by cut,decile=D01: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,0.535744,0.535744,0.439163,-0.096582
+person nets by cut,decile=D01: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,2.873815,2.873815,2.630657,-0.243158
+person nets by cut,decile=D01: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,1.028608,1.028608,0.868530,-0.160078
+person nets by cut,decile=D02: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-627.271963,-627.137473,-676.630174,-49.358211
+person nets by cut,decile=D02: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1080.666029,-1079.908677,-1233.617250,-152.951221
+person nets by cut,decile=D02: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,7.388318,7.388318,5.960037,-1.428282
+person nets by cut,decile=D02: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,0.886044,0.943024,0.725373,-0.160671
+person nets by cut,decile=D02: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,6.713677,6.713677,6.077001,-0.636677
+person nets by cut,decile=D02: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,3.109924,3.122063,2.386668,-0.723256
+person nets by cut,decile=D03: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-704.180665,-703.979154,-764.957862,-60.777197
+person nets by cut,decile=D03: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1134.694839,-1133.926313,-1294.695618,-160.000779
+person nets by cut,decile=D03: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,12.201706,12.201706,10.079078,-2.122628
+person nets by cut,decile=D03: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,2.701084,2.722610,1.874396,-0.826687
+person nets by cut,decile=D03: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,10.678895,10.678895,10.002245,-0.676650
+person nets by cut,decile=D03: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,6.305571,6.305571,5.263466,-1.042105
+person nets by cut,decile=D04: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-789.053475,-788.786598,-866.693326,-77.639851
+person nets by cut,decile=D04: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1143.330372,-1142.564759,-1301.493432,-158.163060
+person nets by cut,decile=D04: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,17.353352,17.371687,14.702163,-2.651189
+person nets by cut,decile=D04: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,6.768435,6.814737,4.842242,-1.926193
+person nets by cut,decile=D04: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,15.226730,15.251036,14.111608,-1.115122
+person nets by cut,decile=D04: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,10.800300,10.811698,9.217058,-1.583241
+person nets by cut,decile=D05: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-825.734694,-825.376806,-923.141158,-97.406463
+person nets by cut,decile=D05: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1113.054321,-1112.282051,-1275.417155,-162.362834
+person nets by cut,decile=D05: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,22.645827,22.704745,19.403482,-3.242345
+person nets by cut,decile=D05: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,12.263773,12.263773,9.138280,-3.125493
+person nets by cut,decile=D05: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,19.464701,19.488289,17.906787,-1.557914
+person nets by cut,decile=D05: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,15.869720,15.872227,13.633076,-2.236644
+person nets by cut,decile=D06: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-838.436581,-837.992046,-955.837013,-117.400432
+person nets by cut,decile=D06: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1039.105792,-1038.334938,-1200.575557,-161.469765
+person nets by cut,decile=D06: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,29.053690,29.060613,25.022017,-4.031672
+person nets by cut,decile=D06: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,20.642502,20.763292,16.406205,-4.236298
+person nets by cut,decile=D06: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,23.557859,23.564782,21.652052,-1.905807
+person nets by cut,decile=D06: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,21.044238,21.089916,19.079245,-1.964993
+person nets by cut,decile=D07: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-908.356550,-907.761158,-1056.744378,-148.387828
+person nets by cut,decile=D07: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1025.628294,-1024.837610,-1199.609027,-173.980733
+person nets by cut,decile=D07: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,30.138746,30.167685,26.570471,-3.568275
+person nets by cut,decile=D07: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,28.088889,28.088889,23.847551,-4.241338
+person nets by cut,decile=D07: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,25.956798,25.985738,23.693440,-2.263358
+person nets by cut,decile=D07: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,25.563601,25.571894,23.419856,-2.143745
+person nets by cut,decile=D08: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-928.087234,-927.321534,-1116.825214,-188.737980
+person nets by cut,decile=D08: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-889.920197,-889.124535,-1067.041296,-177.121099
+person nets by cut,decile=D08: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,36.598458,36.598458,31.392687,-5.205771
+person nets by cut,decile=D08: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,38.154480,38.191728,34.406849,-3.747631
+person nets by cut,decile=D08: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,30.331063,30.384489,27.691443,-2.639620
+person nets by cut,decile=D08: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,31.920118,31.920118,29.681032,-2.239086
+person nets by cut,decile=D09: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-937.035349,-935.932645,-1185.805619,-248.770270
+person nets by cut,decile=D09: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-687.853129,-687.037236,-877.738121,-189.884991
+person nets by cut,decile=D09: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,39.331743,39.331743,34.042136,-5.289607
+person nets by cut,decile=D09: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,44.288783,44.288783,41.739824,-2.548959
+person nets by cut,decile=D09: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,32.659484,32.659484,29.587363,-3.072121
+person nets by cut,decile=D09: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,37.156616,37.182642,34.934324,-2.222292
+person nets by cut,decile=D10: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1803.746290,-1799.844864,-2489.886339,-686.140049
+person nets by cut,decile=D10: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,319.321497,320.163074,113.232404,-206.089093
+person nets by cut,decile=D10: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,41.264994,41.297148,35.543606,-5.721388
+person nets by cut,decile=D10: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,59.590824,59.590824,57.074111,-2.516713
+person nets by cut,decile=D10: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,33.128827,33.155728,30.156357,-2.972470
+person nets by cut,decile=D10: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,45.947416,45.959410,44.121590,-1.825826
+person nets by cut,edu_nativity=ba_plus|other_foreign_born: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1023.648348,-1022.326450,-1336.333853,-312.685505
+person nets by cut,edu_nativity=ba_plus|other_foreign_born: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-679.925991,-679.041853,-912.866111,-232.940120
+person nets by cut,edu_nativity=ba_plus|other_foreign_born: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,37.103642,37.103642,33.269333,-3.834309
+person nets by cut,edu_nativity=ba_plus|other_foreign_born: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,36.026237,36.053579,33.090562,-2.935675
+person nets by cut,edu_nativity=ba_plus|other_foreign_born: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,40.148969,40.168170,37.484883,-2.664087
+person nets by cut,edu_nativity=ba_plus|other_foreign_born: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,40.611209,40.626331,37.903238,-2.707971
+person nets by cut,edu_nativity=ba_plus|us_born: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-708.425502,-707.083803,-974.584835,-266.159334
+person nets by cut,edu_nativity=ba_plus|us_born: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-322.990775,-322.192780,-501.583920,-178.593145
+person nets by cut,edu_nativity=ba_plus|us_born: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,37.430303,37.463949,32.402881,-5.027422
+person nets by cut,edu_nativity=ba_plus|us_born: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,39.376857,39.416952,35.870483,-3.506374
+person nets by cut,edu_nativity=ba_plus|us_born: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,43.290266,43.323864,39.873684,-3.416582
+person nets by cut,edu_nativity=ba_plus|us_born: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,46.041695,46.053772,43.080332,-2.961362
+person nets by cut,edu_nativity=below_high_school|other_foreign_born: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1389.034271,-1388.715961,-1479.524168,-90.489897
+person nets by cut,edu_nativity=below_high_school|other_foreign_born: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1842.214877,-1841.386158,-2040.191679,-197.976802
+person nets by cut,edu_nativity=below_high_school|other_foreign_born: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,3.008313,3.008313,2.346585,-0.661727
+person nets by cut,edu_nativity=below_high_school|other_foreign_born: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,1.658602,1.658602,1.423668,-0.234934
+person nets by cut,edu_nativity=below_high_school|other_foreign_born: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,0.285327,0.285327,0.216142,-0.069185
+person nets by cut,edu_nativity=below_high_school|other_foreign_born: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,0.130151,0.130151,0.130151,0.000000
+person nets by cut,edu_nativity=below_high_school|us_born: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-981.238821,-980.955854,-1046.845895,-65.607074
+person nets by cut,edu_nativity=below_high_school|us_born: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1259.222822,-1258.506129,-1386.522402,-127.299580
+person nets by cut,edu_nativity=below_high_school|us_born: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,2.815446,2.841709,2.405435,-0.410011
+person nets by cut,edu_nativity=below_high_school|us_born: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,1.678707,1.678707,1.475106,-0.203601
+person nets by cut,edu_nativity=below_high_school|us_born: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,0.740539,0.740539,0.647999,-0.092539
+person nets by cut,edu_nativity=below_high_school|us_born: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,0.637637,0.637637,0.628853,-0.008785
+person nets by cut,edu_nativity=high_school|other_foreign_born: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1666.128814,-1665.599049,-1791.772343,-125.643529
+person nets by cut,edu_nativity=high_school|other_foreign_born: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1926.548616,-1925.736058,-2114.328954,-187.780338
+person nets by cut,edu_nativity=high_school|other_foreign_born: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,5.266927,5.266927,4.047143,-1.219784
+person nets by cut,edu_nativity=high_school|other_foreign_born: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,3.352598,3.366123,3.015234,-0.337364
+person nets by cut,edu_nativity=high_school|other_foreign_born: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,0.854720,0.854720,0.778186,-0.076534
+person nets by cut,edu_nativity=high_school|other_foreign_born: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,0.808725,0.808725,0.803523,-0.005202
+person nets by cut,edu_nativity=high_school|us_born: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1460.314493,-1459.791626,-1572.852971,-112.538478
+person nets by cut,edu_nativity=high_school|us_born: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1597.882780,-1597.141313,-1740.812390,-142.929610
+person nets by cut,edu_nativity=high_school|us_born: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,3.192889,3.192889,2.726396,-0.466493
+person nets by cut,edu_nativity=high_school|us_born: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,2.703214,2.706856,2.386409,-0.316805
+person nets by cut,edu_nativity=high_school|us_born: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,1.134729,1.134729,1.038099,-0.096629
+person nets by cut,edu_nativity=high_school|us_born: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,1.037845,1.037845,0.953422,-0.084423
+person nets by cut,edu_nativity=some_college|other_foreign_born: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-832.244271,-831.547409,-1016.305598,-184.061327
+person nets by cut,edu_nativity=some_college|other_foreign_born: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-953.921318,-953.069888,-1166.226364,-212.305046
+person nets by cut,edu_nativity=some_college|other_foreign_born: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,29.282870,29.282870,25.520583,-3.762287
+person nets by cut,edu_nativity=some_college|other_foreign_born: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,21.119207,21.119207,18.554737,-2.564471
+person nets by cut,edu_nativity=some_college|other_foreign_born: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,36.553799,36.574997,33.803459,-2.750340
+person nets by cut,edu_nativity=some_college|other_foreign_born: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,30.785896,30.851656,27.527133,-3.258763
+person nets by cut,edu_nativity=some_college|us_born: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-656.522174,-655.868107,-810.739589,-154.217414
+person nets by cut,edu_nativity=some_college|us_born: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-736.680351,-735.893240,-908.406734,-171.726383
+person nets by cut,edu_nativity=some_college|us_born: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,25.572427,25.588062,21.325219,-4.247208
+person nets by cut,edu_nativity=some_college|us_born: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,21.312430,21.350156,18.355210,-2.957219
+person nets by cut,edu_nativity=some_college|us_born: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,33.672215,33.713533,30.464760,-3.207455
+person nets by cut,edu_nativity=some_college|us_born: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,30.170390,30.206499,26.792419,-3.377971
+person nets by cut,edu_nativity=under_25: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-723.880211,-723.330135,-848.859688,-124.979477
+person nets by cut,edu_nativity=under_25: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-901.181605,-900.403512,-1067.218333,-166.036728
+person nets by cut,edu_nativity=under_25: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,25.428984,25.440151,21.716520,-3.712464
+person nets by cut,edu_nativity=under_25: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,19.037051,19.071924,16.468654,-2.568397
+person nets by cut,edu_nativity=under_25: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,3.993715,3.994783,3.454597,-0.539118
+person nets by cut,edu_nativity=under_25: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,3.387603,3.391283,2.908532,-0.479071
+person nets by cut,tenure=landlord: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,113.572595,115.232127,-226.684583,-340.257178
+person nets by cut,tenure=landlord: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,739.726659,740.552648,543.472174,-196.254486
+person nets by cut,tenure=landlord: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,48.810187,48.823270,42.812348,-5.997839
+person nets by cut,tenure=landlord: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,50.545788,50.545788,46.837491,-3.708297
+person nets by cut,tenure=landlord: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,41.783553,41.818520,38.334187,-3.449365
+person nets by cut,tenure=landlord: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,44.688454,44.688454,41.214586,-3.473867
+person nets by cut,tenure=owner_no_rental_income: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-848.659254,-847.870298,-1014.948087,-166.288833
+person nets by cut,tenure=owner_no_rental_income: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-833.205135,-832.432512,-995.790828,-162.585694
+person nets by cut,tenure=owner_no_rental_income: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,25.510011,25.526076,21.746117,-3.763894
+person nets by cut,tenure=owner_no_rental_income: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,22.618761,22.655094,19.863528,-2.755233
+person nets by cut,tenure=owner_no_rental_income: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,20.424711,20.436851,18.714746,-1.709965
+person nets by cut,tenure=owner_no_rental_income: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,20.370826,20.382930,18.790888,-1.579937
+person nets by cut,tenure=renter: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1268.543257,-1268.011489,-1401.126345,-132.583088
+person nets by cut,tenure=renter: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1478.350178,-1477.548128,-1659.501522,-181.151344
+person nets by cut,tenure=renter: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,13.346457,13.358121,11.523962,-1.822495
+person nets by cut,tenure=renter: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,10.544382,10.563542,9.465172,-1.079210
+person nets by cut,tenure=renter: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,13.142871,13.163114,11.930127,-1.212744
+person nets by cut,tenure=renter: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,11.807162,11.821661,10.645818,-1.161344
+person nets by cut,age3=18_64: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1037.237280,-1036.356184,-1227.477541,-190.240261
+person nets by cut,age3=18_64: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-962.366145,-961.577390,-1135.129937,-172.763792
+person nets by cut,age3=18_64: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,26.620472,26.640722,22.877100,-3.743371
+person nets by cut,age3=18_64: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,25.010245,25.037392,22.447742,-2.562502
+person nets by cut,age3=18_64: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,29.923972,29.950796,27.477422,-2.446550
+person nets by cut,age3=18_64: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,29.469900,29.487659,27.119038,-2.350862
+person nets by cut,age3=65_plus: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-726.565102,-725.828338,-887.014543,-160.449441
+person nets by cut,age3=65_plus: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-768.172646,-767.387833,-938.448996,-170.276350
+person nets by cut,age3=65_plus: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,11.454888,11.454888,9.904961,-1.549927
+person nets by cut,age3=65_plus: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,11.793290,11.818320,10.600960,-1.192329
+person nets by cut,age3=65_plus: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,9.566805,9.568790,8.539018,-1.027788
+person nets by cut,age3=65_plus: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,10.225823,10.231905,9.394418,-0.831404
+person nets by cut,age3=under_18: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-629.254389,-628.698821,-753.645992,-124.391602
+person nets by cut,age3=under_18: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-806.715259,-805.937692,-972.419816,-165.704558
+person nets by cut,age3=under_18: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,27.802504,27.814341,23.725035,-4.077469
+person nets by cut,age3=under_18: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,20.088448,20.123153,17.281445,-2.807002
+person nets by cut,age3=under_18: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,1.479528,1.479528,1.262064,-0.217464
+person nets by cut,age3=under_18: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,1.268513,1.268513,1.042797,-0.225716
+person nets by cut,race5=hispanic_other_origin: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1075.194693,-1074.644549,-1203.031326,-127.836633
+person nets by cut,race5=hispanic_other_origin: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1300.797577,-1299.995119,-1482.205968,-181.408391
+person nets by cut,race5=hispanic_other_origin: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,18.613635,18.614465,16.014905,-2.598730
+person nets by cut,race5=hispanic_other_origin: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,13.464768,13.476081,11.656704,-1.808064
+person nets by cut,race5=hispanic_other_origin: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,14.711396,14.722938,13.660247,-1.051149
+person nets by cut,race5=hispanic_other_origin: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,12.761858,12.791503,11.592117,-1.169741
+person nets by cut,race5=nh_asian: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1286.333336,-1285.201317,-1590.422537,-304.089201
+person nets by cut,race5=nh_asian: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1193.219716,-1192.254367,-1477.396230,-284.176514
+person nets by cut,race5=nh_asian: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,25.940095,25.940095,23.298981,-2.641114
+person nets by cut,race5=nh_asian: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,24.886157,24.914253,22.648997,-2.237160
+person nets by cut,race5=nh_asian: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,19.979022,19.986815,18.420241,-1.558781
+person nets by cut,race5=nh_asian: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,20.779686,20.779686,19.321509,-1.458177
+person nets by cut,race5=nh_black: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-810.235395,-809.777719,-913.318307,-103.082912
+person nets by cut,race5=nh_black: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1004.110435,-1003.363207,-1150.674649,-146.564214
+person nets by cut,race5=nh_black: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,18.317944,18.329153,15.612233,-2.705711
+person nets by cut,race5=nh_black: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,13.742342,13.780624,11.940820,-1.801522
+person nets by cut,race5=nh_black: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,16.737012,16.750985,15.111740,-1.625272
+person nets by cut,race5=nh_black: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,15.228647,15.258305,13.619170,-1.609478
+person nets by cut,race5=nh_white: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-828.271581,-827.417791,-1003.798001,-175.526420
+person nets by cut,race5=nh_white: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-757.743400,-756.976372,-916.799286,-159.055886
+person nets by cut,race5=nh_white: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,25.940347,25.958786,22.177513,-3.762834
+person nets by cut,race5=nh_white: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,24.159641,24.189926,21.586917,-2.572724
+person nets by cut,race5=nh_white: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,22.031954,22.050203,20.175557,-1.856397
+person nets by cut,race5=nh_white: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,22.287036,22.294422,20.567134,-1.719901
+person nets by cut,race5=other: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1031.530248,-1030.793788,-1213.074132,-181.543884
+person nets by cut,race5=other: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1135.445667,-1134.603308,-1342.028096,-206.582429
+person nets by cut,race5=other: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,18.349570,18.373104,15.550633,-2.798937
+person nets by cut,race5=other: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,15.499597,15.499597,13.513808,-1.985789
+person nets by cut,race5=other: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,12.387188,12.410721,10.950726,-1.436462
+person nets by cut,race5=other: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,12.056773,12.056773,10.801495,-1.255278
+person nets by cut,state3=CA: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-2751.463021,-2749.809725,-3344.257271,-592.794250
+person nets by cut,state3=CA: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-2711.506529,-2710.058121,-3300.444075,-588.937546
+person nets by cut,state3=CA: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,3.323325,3.323325,2.716513,-0.606812
+person nets by cut,state3=CA: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,4.652563,4.652563,3.911961,-0.740602
+person nets by cut,state3=CA: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,3.540017,3.556194,2.981651,-0.558366
+person nets by cut,state3=CA: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,4.951125,4.951125,4.286381,-0.664744
+person nets by cut,state3=TX: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-2660.947460,-2659.526962,-3206.832731,-545.885271
+person nets by cut,state3=TX: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-2652.840580,-2651.461653,-3197.943354,-545.102774
+person nets by cut,state3=TX: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,2.240880,2.240880,1.827392,-0.413488
+person nets by cut,state3=TX: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,3.549172,3.549172,3.027450,-0.521722
+person nets by cut,state3=TX: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,2.264361,2.264361,1.925965,-0.338396
+person nets by cut,state3=TX: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,3.919648,3.919648,3.267784,-0.651864
+person nets by cut,state3=rest: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-544.026757,-543.387191,-638.118588,-94.091831
+person nets by cut,state3=rest: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-548.949844,-548.285034,-643.516864,-94.567020
+person nets by cut,state3=rest: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,27.898100,27.915406,23.971397,-3.926703
+person nets by cut,state3=rest: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,24.689100,24.722797,22.021208,-2.667892
+person nets by cut,state3=rest: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,23.328894,23.346729,21.381781,-1.947112
+person nets by cut,state3=rest: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,22.818088,22.832149,21.021204,-1.796883
+person nets by cut,sex=female: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-827.641138,-826.893302,-989.055558,-161.414420
+person nets by cut,sex=female: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-860.435977,-859.652794,-1029.684627,-169.248650
+person nets by cut,sex=female: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,23.745486,23.756505,20.443865,-3.301621
+person nets by cut,sex=female: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,21.060399,21.093676,18.709620,-2.350779
+person nets by cut,sex=female: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,19.146199,19.159509,17.431859,-1.714340
+person nets by cut,sex=female: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,18.601348,18.614313,16.894531,-1.706816
+person nets by cut,sex=male: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-958.953295,-958.128326,-1139.542463,-180.589168
+person nets by cut,sex=male: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-924.899538,-924.111273,-1097.353737,-172.454199
+person nets by cut,sex=male: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,24.006615,24.024784,20.545961,-3.460654
+person nets by cut,sex=male: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,21.736243,21.759344,19.402023,-2.334220
+person nets by cut,sex=male: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,21.007184,21.026811,19.305174,-1.702010
+person nets by cut,sex=male: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,21.196628,21.207225,19.678740,-1.517888
+person nets by cut,industry5=agriculture: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-963.424626,-962.527274,-1113.195084,-149.770458
+person nets by cut,industry5=agriculture: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-880.816356,-880.090719,-1013.759072,-132.942716
+person nets by cut,industry5=agriculture: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,21.545336,21.545336,17.528415,-4.016921
+person nets by cut,industry5=agriculture: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,21.862870,21.862870,19.316091,-2.546779
+person nets by cut,industry5=agriculture: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,26.394252,26.394252,24.821080,-1.573171
+person nets by cut,industry5=agriculture: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,25.779000,25.779000,22.630312,-3.148688
+person nets by cut,industry5=construction: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1503.948554,-1503.143396,-1673.940343,-169.991789
+person nets by cut,industry5=construction: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1459.504450,-1458.737460,-1618.536902,-159.032452
+person nets by cut,industry5=construction: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,19.627978,19.627978,16.287159,-3.340819
+person nets by cut,industry5=construction: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,17.919671,17.950072,16.172708,-1.746963
+person nets by cut,industry5=construction: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,27.099518,27.099518,25.024861,-2.074657
+person nets by cut,industry5=construction: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,26.384846,26.426237,24.553058,-1.831788
+person nets by cut,industry5=landscaping: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1063.946172,-1063.393640,-1186.159149,-122.212977
+person nets by cut,industry5=landscaping: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1181.902509,-1181.153100,-1329.842193,-147.939684
+person nets by cut,industry5=landscaping: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,15.329446,15.329446,13.451169,-1.878277
+person nets by cut,industry5=landscaping: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,12.733465,12.733465,11.724320,-1.009146
+person nets by cut,industry5=landscaping: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,18.463952,18.680745,16.173452,-2.290501
+person nets by cut,industry5=landscaping: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,14.896255,14.896255,13.238029,-1.658226
+person nets by cut,industry5=not_worker: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-651.487504,-650.937107,-778.218145,-126.730641
+person nets by cut,industry5=not_worker: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-839.638216,-838.852968,-1010.188690,-170.550474
+person nets by cut,industry5=not_worker: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,17.874264,17.880918,15.272941,-2.601322
+person nets by cut,industry5=not_worker: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,13.476329,13.502342,11.706102,-1.770227
+person nets by cut,industry5=not_worker: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,2.242548,2.242548,2.015014,-0.227533
+person nets by cut,industry5=not_worker: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,2.195690,2.195690,1.958420,-0.237270
+person nets by cut,industry5=rest: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1092.861123,-1091.806607,-1314.775293,-221.914170
+person nets by cut,industry5=rest: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-882.237578,-881.448526,-1055.188163,-172.950585
+person nets by cut,industry5=rest: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,31.149462,31.174851,26.847730,-4.301732
+person nets by cut,industry5=rest: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,30.741391,30.770025,27.711042,-3.030349
+person nets by cut,industry5=rest: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,38.967352,39.002124,35.719645,-3.247708
+person nets by cut,industry5=rest: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,38.948468,38.971874,35.892846,-3.055622
+person nets by cut,industry5=restaurants: net_social_a_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1072.181329,-1071.625010,-1203.098092,-130.916763
+person nets by cut,industry5=restaurants: net_social_b_spm_pooled_usd_per_person,$ per person,derived/person_nets_by_cut.csv,-1229.896357,-1229.117159,-1396.629974,-166.733617
+person nets by cut,industry5=restaurants: net_social_a_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,18.360009,18.360009,16.073459,-2.286549
+person nets by cut,industry5=restaurants: net_social_b_spm_pooled_winners_share,%,derived/person_nets_by_cut.csv,14.468693,14.536849,12.340192,-2.128500
+person nets by cut,industry5=restaurants: net_social_a_winners_share,%,derived/person_nets_by_cut.csv,16.803526,16.803526,14.592523,-2.211002
+person nets by cut,industry5=restaurants: net_social_b_winners_share,%,derived/person_nets_by_cut.csv,12.934155,12.934155,11.121005,-1.813150
+geography,"state3=CA: net_social_a, central, person: usd_per_person",$ per person,derived/cuts.csv,-2751.463021,-2749.809725,-3344.257271,-592.794250
+geography,"state3=CA: net_social_a, central, person: winners_share",%,derived/cuts.csv,3.540017,3.556194,2.981651,-0.558366
+geography,"state3=CA: net_social_b, central, person: usd_per_person",$ per person,derived/cuts.csv,-2711.506529,-2710.058121,-3300.444075,-588.937546
+geography,"state3=CA: net_social_b, central, person: winners_share",%,derived/cuts.csv,4.951125,4.951125,4.286381,-0.664744
+geography,"state3=CA: net_social_a_pooled_national_fiscal, central, person: usd_per_person",$ per person,derived/cuts.csv,-1359.109083,-1358.057725,-1587.694675,-228.585592
+geography,"state3=CA: net_social_a_pooled_national_fiscal, central, person: winners_share",%,derived/cuts.csv,8.030090,8.030090,6.765181,-1.264909
+geography,"state3=CA: net_social_b_pooled_national_fiscal, central, person: usd_per_person",$ per person,derived/cuts.csv,-1116.660365,-1115.874688,-1287.481605,-170.821240
+geography,"state3=CA: net_social_b_pooled_national_fiscal, central, person: winners_share",%,derived/cuts.csv,10.855522,10.864179,9.855435,-1.000087
+geography,"state3=TX: net_social_a, central, person: usd_per_person",$ per person,derived/cuts.csv,-2660.947460,-2659.526962,-3206.832731,-545.885271
+geography,"state3=TX: net_social_a, central, person: winners_share",%,derived/cuts.csv,2.264361,2.264361,1.925965,-0.338396
+geography,"state3=TX: net_social_b, central, person: usd_per_person",$ per person,derived/cuts.csv,-2652.840580,-2651.461653,-3197.943354,-545.102774
+geography,"state3=TX: net_social_b, central, person: winners_share",%,derived/cuts.csv,3.919648,3.919648,3.267784,-0.651864
+geography,"state3=TX: net_social_a_pooled_national_fiscal, central, person: usd_per_person",$ per person,derived/cuts.csv,-1271.142137,-1270.306112,-1452.910218,-181.768081
+geography,"state3=TX: net_social_a_pooled_national_fiscal, central, person: winners_share",%,derived/cuts.csv,6.630365,6.630365,5.461788,-1.168576
+geography,"state3=TX: net_social_b_pooled_national_fiscal, central, person: usd_per_person",$ per person,derived/cuts.csv,-1225.196023,-1224.410347,-1396.017264,-170.821241
+geography,"state3=TX: net_social_b_pooled_national_fiscal, central, person: winners_share",%,derived/cuts.csv,8.858557,8.895441,7.390534,-1.468023
+geography,"state3=rest: net_social_a, central, person: usd_per_person",$ per person,derived/cuts.csv,-544.026757,-543.387191,-638.118588,-94.091831
+geography,"state3=rest: net_social_a, central, person: winners_share",%,derived/cuts.csv,23.328894,23.346729,21.381781,-1.947112
+geography,"state3=rest: net_social_b, central, person: usd_per_person",$ per person,derived/cuts.csv,-548.949844,-548.285034,-643.516864,-94.567020
+geography,"state3=rest: net_social_b, central, person: winners_share",%,derived/cuts.csv,22.818088,22.832149,21.021204,-1.796883
+geography,"state3=rest: net_social_a_pooled_national_fiscal, central, person: usd_per_person",$ per person,derived/cuts.csv,-810.215834,-809.462588,-973.985934,-163.770100
+geography,"state3=rest: net_social_a_pooled_national_fiscal, central, person: winners_share",%,derived/cuts.csv,14.060949,14.079888,10.831915,-3.229034
+geography,"state3=rest: net_social_b_pooled_national_fiscal, central, person: usd_per_person",$ per person,derived/cuts.csv,-839.810902,-839.025225,-1010.632142,-170.821240
+geography,"state3=rest: net_social_b_pooled_national_fiscal, central, person: winners_share",%,derived/cuts.csv,13.185092,13.197811,10.020215,-3.164877
+geography,"top10_states=AZ: net_social_a, central, person: usd_per_person",$ per person,derived/cuts.csv,-2831.595968,-2830.080930,-3398.878587,-567.282619
+geography,"top10_states=AZ: net_social_a, central, person: winners_share",%,derived/cuts.csv,3.175309,3.175309,2.916366,-0.258943
+geography,"top10_states=AZ: net_social_b, central, person: usd_per_person",$ per person,derived/cuts.csv,-2811.302723,-2809.891744,-3376.626586,-565.323863
+geography,"top10_states=AZ: net_social_b, central, person: winners_share",%,derived/cuts.csv,4.095009,4.095009,3.166592,-0.928416
+geography,"top10_states=AZ: net_social_a_pooled_national_fiscal, central, person: usd_per_person",$ per person,derived/cuts.csv,-1431.298827,-1430.376423,-1631.847286,-200.548459
+geography,"top10_states=AZ: net_social_a_pooled_national_fiscal, central, person: winners_share",%,derived/cuts.csv,7.759561,7.759561,6.088573,-1.670988
+geography,"top10_states=AZ: net_social_b_pooled_national_fiscal, central, person: usd_per_person",$ per person,derived/cuts.csv,-1306.527652,-1305.741976,-1477.348893,-170.821241
+geography,"top10_states=AZ: net_social_b_pooled_national_fiscal, central, person: winners_share",%,derived/cuts.csv,9.297356,9.297356,7.843906,-1.453450
+quintile burden,"quintile=Q1: net_social_a, central: % of SPM resources",%,derived/cuts.csv,-6.183145,-6.181993,-6.615754,-0.432609
+quintile burden,"quintile=Q1: net_social_b, central: % of SPM resources",%,derived/cuts.csv,-11.502367,-11.494361,-13.166240,-1.663873
+quintile burden,"quintile=Q2: net_social_a, central: % of SPM resources",%,derived/cuts.csv,-3.889854,-3.888634,-4.250372,-0.360518
+quintile burden,"quintile=Q2: net_social_b, central: % of SPM resources",%,derived/cuts.csv,-5.933867,-5.929871,-6.762540,-0.828674
+quintile burden,"quintile=Q3: net_social_a, central: % of SPM resources",%,derived/cuts.csv,-2.883690,-2.882299,-3.255948,-0.372258
+quintile burden,"quintile=Q3: net_social_b, central: % of SPM resources",%,derived/cuts.csv,-3.729381,-3.726706,-4.290582,-0.561202
+quintile burden,"quintile=Q4: net_social_a, central: % of SPM resources",%,derived/cuts.csv,-2.143491,-2.141902,-2.536983,-0.393492
+quintile burden,"quintile=Q4: net_social_b, central: % of SPM resources",%,derived/cuts.csv,-2.235821,-2.233969,-2.645625,-0.409805
+quintile burden,"quintile=Q5: net_social_a, central: % of SPM resources",%,derived/cuts.csv,-1.510823,-1.508065,-2.026178,-0.515354
+quintile burden,"quintile=Q5: net_social_b, central: % of SPM resources",%,derived/cuts.csv,-0.203178,-0.202265,-0.421457,-0.218279
+winner cells,"edu_nativity x tenure: ba_plus|us_born & landlord: net_social_a, central, person: winners_share",%,derived/winner_cells.csv,58.389231,58.488011,53.946391,-4.442840
+winner cells,"edu_nativity x tenure: ba_plus|us_born & landlord: net_social_a, central, person: mean_net_usd",$ per person,derived/winner_cells.csv,804.105590,806.449160,356.375665,-447.729925
+winner cells,"edu_nativity x tenure: ba_plus|us_born & landlord: net_social_a, central, person: persons_m",m,derived/winner_cells.csv,8.678895,8.678895,8.678895,0.000000
+winner cells,"edu_nativity x tenure: ba_plus|us_born & landlord: net_social_b, central, person: winners_share",%,derived/winner_cells.csv,66.190289,66.190289,62.248450,-3.941840
+winner cells,"edu_nativity x tenure: ba_plus|us_born & landlord: net_social_b, central, person: mean_net_usd",$ per person,derived/winner_cells.csv,1881.045947,1881.882073,1678.395864,-202.650083
+winner cells,"edu_nativity x tenure: ba_plus|us_born & landlord: net_social_b, central, person: persons_m",m,derived/winner_cells.csv,8.678895,8.678895,8.678895,0.000000
+winner cells,"edu_nativity x state3: high_school|us_born & CA: net_social_a, central, person: winners_share",%,derived/winner_cells.csv,1.982031,1.982031,1.856083,-0.125948
+winner cells,"edu_nativity x state3: high_school|us_born & CA: net_social_a, central, person: mean_net_usd",$ per person,derived/winner_cells.csv,-4079.254721,-4077.997928,-4550.973623,-471.718902
+winner cells,"edu_nativity x state3: high_school|us_born & CA: net_social_a, central, person: persons_m",m,derived/winner_cells.csv,2.433646,2.433646,2.433646,0.000000
+winner cells,"edu_nativity x state3: high_school|us_born & CA: net_social_b, central, person: winners_share",%,derived/winner_cells.csv,1.702773,1.702773,1.416081,-0.286692
+winner cells,"edu_nativity x state3: high_school|us_born & CA: net_social_b, central, person: mean_net_usd",$ per person,derived/winner_cells.csv,-4527.107820,-4525.659412,-5116.045366,-588.937546
+winner cells,"edu_nativity x state3: high_school|us_born & CA: net_social_b, central, person: persons_m",m,derived/winner_cells.csv,2.433646,2.433646,2.433646,0.000000
+winner cells,"edu_nativity x state3: high_school|us_born & TX: net_social_a, central, person: winners_share",%,derived/winner_cells.csv,0.866475,0.866475,0.866475,0.000000
+winner cells,"edu_nativity x state3: high_school|us_born & TX: net_social_a, central, person: mean_net_usd",$ per person,derived/winner_cells.csv,-3808.098856,-3807.073220,-4226.377500,-418.278644
+winner cells,"edu_nativity x state3: high_school|us_born & TX: net_social_a, central, person: persons_m",m,derived/winner_cells.csv,2.917201,2.917201,2.917201,0.000000
+winner cells,"edu_nativity x state3: high_school|us_born & TX: net_social_b, central, person: winners_share",%,derived/winner_cells.csv,1.032762,1.032762,1.032762,0.000000
+winner cells,"edu_nativity x state3: high_school|us_born & TX: net_social_b, central, person: mean_net_usd",$ per person,derived/winner_cells.csv,-4311.190982,-4309.812054,-4856.293756,-545.102774
+winner cells,"edu_nativity x state3: high_school|us_born & TX: net_social_b, central, person: persons_m",m,derived/winner_cells.csv,2.917201,2.917201,2.917201,0.000000
+pooling,"net_social_a, all persons: up_m",m,derived/pooling_moves.csv,28.117009,28.116861,24.213587,-3.903421
+pooling,"net_social_a, all persons: down_m",m,derived/pooling_moves.csv,16.832755,16.838173,17.873705,1.040951
+pooling,"net_social_b, all persons: up_m",m,derived/pooling_moves.csv,21.201870,21.247002,18.743825,-2.458045
+pooling,"net_social_b, all persons: down_m",m,derived/pooling_moves.csv,16.712907,16.709282,16.410065,-0.302842
+registry,main_case: low,$bn,derived/channels.csv,-200.875203,-200.918017,-258.488495,-57.613293
+registry,main_case: central,$bn,derived/channels.csv,-223.596819,-223.306456,-275.221634,-51.624815
+registry,main_case: high,$bn,derived/channels.csv,-246.318436,-245.694894,-291.954773,-45.636337
+registry,account_plus_social: low,$bn,derived/channels.csv,-252.476291,-252.519105,-310.089584,-57.613293
+registry,account_plus_social: central,$bn,derived/channels.csv,-275.197908,-274.907544,-326.822723,-51.624815
+registry,account_plus_social: high,$bn,derived/channels.csv,-297.919524,-297.295983,-343.555862,-45.636337
+registry,account_plus_social_span: low,$bn,derived/channels.csv,-216.983565,-217.026380,-274.596858,-57.613293
+registry,account_plus_social_span: central,$bn,derived/channels.csv,-275.197908,-274.907544,-326.822723,-51.624815
+registry,account_plus_social_span: high,$bn,derived/channels.csv,-334.045127,-333.421585,-379.681464,-45.636337
+registry,published_total_equal_footing: low,$bn,derived/channels.csv,-247.700468,-247.743283,-305.313761,-57.613293
+registry,published_total_equal_footing: central,$bn,derived/channels.csv,-273.030844,-272.740480,-324.655659,-51.624815
+registry,published_total_equal_footing: high,$bn,derived/channels.csv,-298.361220,-297.737678,-343.997557,-45.636337
+registry,published_total_custody_footing: low,$bn,derived/channels.csv,-253.384586,-253.427400,-310.997879,-57.613293
+registry,published_total_custody_footing: central,$bn,derived/channels.csv,-278.714962,-278.424598,-330.339777,-51.624815
+registry,published_total_custody_footing: high,$bn,derived/channels.csv,-304.045337,-303.421796,-349.681674,-45.636337
+registry,fiscal: low,$bn,derived/channels.csv,-200.639229,-200.682043,-258.252522,-57.613293
+registry,fiscal: central,$bn,derived/channels.csv,-223.401015,-223.110651,-275.025830,-51.624815
+registry,fiscal: high,$bn,derived/channels.csv,-246.162800,-245.539259,-291.799137,-45.636337
+registry,fiscal_federal_today: low,$bn,derived/channels.csv,-23.359789,-23.200888,-26.652331,-3.292541
+registry,fiscal_federal_today: central,$bn,derived/channels.csv,-30.620176,-30.463162,-33.575714,-2.955538
+registry,fiscal_federal_today: high,$bn,derived/channels.csv,-37.880562,-37.725437,-40.499098,-2.618535
+registry,fiscal_state_local: low,$bn,derived/channels.csv,-168.659963,-168.920311,-221.765807,-53.105844
+registry,fiscal_state_local: central,$bn,derived/channels.csv,-181.482369,-181.406955,-229.061088,-47.578719
+registry,fiscal_state_local: high,$bn,derived/channels.csv,-194.304774,-193.893598,-236.356369,-42.051594
+registry,future_taxpayers: low,$bn,derived/channels.csv,-8.619477,-8.560844,-9.834384,-1.214908
+registry,future_taxpayers: central,$bn,derived/channels.csv,-11.298470,-11.240534,-12.389028,-1.090558
+registry,future_taxpayers: high,$bn,derived/channels.csv,-13.977464,-13.920224,-14.943671,-0.966208
+registry,wages: low,$bn,derived/channels.csv,-0.235924,-0.235924,-0.235924,0.000000
+registry,wages: central,$bn,derived/channels.csv,-0.195797,-0.195797,-0.195797,0.000000
+registry,wages: high,$bn,derived/channels.csv,-0.155670,-0.155670,-0.155670,0.000000
+registry,wages_eps3: low,$bn,derived/channels.csv,8.038144,8.038144,8.038144,0.000000
+registry,wages_eps3: central,$bn,derived/channels.csv,6.670970,6.670970,6.670970,0.000000
+registry,wages_eps3: high,$bn,derived/channels.csv,5.303795,5.303795,5.303795,0.000000
+registry,wages_below_ba: low,$bn,derived/channels.csv,-1.469097,-1.469097,-1.469097,0.000000
+registry,wages_below_ba: central,$bn,derived/channels.csv,-1.469097,-1.469097,-1.469097,0.000000
+registry,wages_below_ba: high,$bn,derived/channels.csv,-1.469097,-1.469097,-1.469097,0.000000
+registry,care: low,$bn,derived/channels.csv,2.596480,2.596480,2.596480,0.000000
+registry,care: central,$bn,derived/channels.csv,4.147579,4.147579,4.147579,0.000000
+registry,care: high,$bn,derived/channels.csv,13.349582,13.349582,13.349582,0.000000
+registry,care_women_extra_hours: low,$bn,derived/channels.csv,3.622699,3.622699,3.622699,0.000000
+registry,care_women_extra_hours: central,$bn,derived/channels.csv,3.622699,3.622699,3.622699,0.000000
+registry,care_women_extra_hours: high,$bn,derived/channels.csv,3.622699,3.622699,3.622699,0.000000
+registry,care_consumer_surplus: low,$bn,derived/channels.csv,3.938453,3.938453,3.938453,0.000000
+registry,care_consumer_surplus: central,$bn,derived/channels.csv,11.943891,11.943891,11.943891,0.000000
+registry,care_consumer_surplus: high,$bn,derived/channels.csv,12.823325,12.823325,12.823325,0.000000
+registry,consumer_prices: low,$bn,derived/channels.csv,23.763383,23.763383,23.763383,0.000000
+registry,consumer_prices: central,$bn,derived/channels.csv,23.763383,23.763383,23.763383,0.000000
+registry,consumer_prices: high,$bn,derived/channels.csv,23.763383,23.763383,23.763383,0.000000
+registry,renters: low,$bn,derived/channels.csv,-50.473428,-50.473428,-50.473428,0.000000
+registry,renters: central,$bn,derived/channels.csv,-33.858535,-33.858535,-33.858535,0.000000
+registry,renters: high,$bn,derived/channels.csv,-57.760637,-57.760637,-57.760637,0.000000
+registry,landlords: low,$bn,derived/channels.csv,50.094182,50.094182,50.094182,0.000000
+registry,landlords: central,$bn,derived/channels.csv,37.366114,37.366114,37.366114,0.000000
+registry,landlords: high,$bn,derived/channels.csv,67.164433,67.164433,67.164433,0.000000
+registry,housing_net: low,$bn,derived/channels.csv,-0.379246,-0.379246,-0.379246,0.000000
+registry,housing_net: central,$bn,derived/channels.csv,3.507579,3.507579,3.507579,0.000000
+registry,housing_net: high,$bn,derived/channels.csv,9.403796,9.403796,9.403796,0.000000
+registry,housing_net_national_uniform: low,$bn,derived/channels.csv,0.708230,0.708230,0.708230,0.000000
+registry,housing_net_national_uniform: central,$bn,derived/channels.csv,0.708230,0.708230,0.708230,0.000000
+registry,housing_net_national_uniform: high,$bn,derived/channels.csv,0.708230,0.708230,0.708230,0.000000
+registry,owner_value_stock: low,$bn,derived/channels.csv,1263.878523,1263.878523,1263.878523,0.000000
+registry,owner_value_stock: central,$bn,derived/channels.csv,1931.639832,1931.639832,1931.639832,0.000000
+registry,owner_value_stock: high,$bn,derived/channels.csv,2855.411988,2855.411988,2855.411988,0.000000
+registry,crime_victims: low,$bn,derived/channels.csv,-15.409900,-15.409900,-15.409900,0.000000
+registry,crime_victims: central,$bn,derived/channels.csv,-30.927388,-30.927388,-30.927388,0.000000
+registry,crime_victims: high,$bn,derived/channels.csv,-45.342400,-45.342400,-45.342400,0.000000
+registry,crime_victims_equal_footing: low,$bn,derived/channels.csv,-28.922885,-28.922885,-28.922885,0.000000
+registry,crime_victims_equal_footing: central,$bn,derived/channels.csv,-28.922885,-28.922885,-28.922885,0.000000
+registry,crime_victims_equal_footing: high,$bn,derived/channels.csv,-28.922885,-28.922885,-28.922885,0.000000
+registry,crime_victims_custody_footing: low,$bn,derived/channels.csv,-32.338100,-32.338100,-32.338100,0.000000
+registry,crime_victims_custody_footing: central,$bn,derived/channels.csv,-32.338100,-32.338100,-32.338100,0.000000
+registry,crime_victims_custody_footing: high,$bn,derived/channels.csv,-32.338100,-32.338100,-32.338100,0.000000
+registry,crime_victims_national_key: low,$bn,derived/channels.csv,-30.927388,-30.927388,-30.927388,0.000000
+registry,crime_victims_national_key: central,$bn,derived/channels.csv,-30.927388,-30.927388,-30.927388,0.000000
+registry,crime_victims_national_key: high,$bn,derived/channels.csv,-30.927388,-30.927388,-30.927388,0.000000
+registry,crime_victims_nibrs: low,$bn,derived/channels.csv,-28.590700,-28.590700,-28.590700,0.000000
+registry,crime_victims_nibrs: central,$bn,derived/channels.csv,-28.590700,-28.590700,-28.590700,0.000000
+registry,crime_victims_nibrs: high,$bn,derived/channels.csv,-28.590700,-28.590700,-28.590700,0.000000
+registry,property_crime: low,$bn,derived/channels.csv,-1.272651,-1.272651,-1.272651,0.000000
+registry,property_crime: central,$bn,derived/channels.csv,-1.272651,-1.272651,-1.272651,0.000000
+registry,property_crime: high,$bn,derived/channels.csv,-1.376220,-1.376220,-1.376220,0.000000
+registry,unreimbursed_care: low,$bn,derived/channels.csv,-3.243500,-3.243500,-3.243500,0.000000
+registry,unreimbursed_care: central,$bn,derived/channels.csv,-4.400800,-4.400800,-4.400800,0.000000
+registry,unreimbursed_care: high,$bn,derived/channels.csv,-5.558100,-5.558100,-5.558100,0.000000
+registry,congestion: low,$bn,derived/channels.csv,-8.047944,-8.047944,-8.047944,0.000000
+registry,congestion: central,$bn,derived/channels.csv,-19.162711,-19.162711,-19.162711,0.000000
+registry,congestion: high,$bn,derived/channels.csv,-35.251514,-35.251514,-35.251514,0.000000
+registry,mobility: low,$bn,derived/channels.csv,0.180823,0.180823,0.180823,0.000000
+registry,mobility: central,$bn,derived/channels.csv,0.654883,0.654883,0.654883,0.000000
+registry,mobility: high,$bn,derived/channels.csv,2.461787,2.461787,2.461787,0.000000
+registry,preferences: low,$bn,derived/channels.csv,-0.175400,-0.175400,-0.175400,0.000000
+registry,preferences: central,$bn,derived/channels.csv,-3.955100,-3.955100,-3.955100,0.000000
+registry,preferences: high,$bn,derived/channels.csv,-18.698400,-18.698400,-18.698400,0.000000
+registry,preferences_group_part: low,$bn,derived/channels.csv,-0.010000,-0.010000,-0.010000,0.000000
+registry,preferences_group_part: central,$bn,derived/channels.csv,-0.580000,-0.580000,-0.580000,0.000000
+registry,preferences_group_part: high,$bn,derived/channels.csv,-3.760000,-3.760000,-3.760000,0.000000
+registry,scale: low,$bn,derived/channels.csv,-56.568680,-56.568680,-56.568680,0.000000
+registry,scale: central,$bn,derived/channels.csv,13.927467,13.927467,13.927467,0.000000
+registry,scale: high,$bn,derived/channels.csv,84.423613,84.423613,84.423613,0.000000
+registry,debt_legacy: low,$bn,derived/channels.csv,-28.338666,-28.248336,-30.144791,-1.806125
+registry,debt_legacy: central,$bn,derived/channels.csv,-32.384204,-32.298428,-34.008695,-1.624491
+registry,debt_legacy: high,$bn,derived/channels.csv,-36.429742,-36.348520,-37.872599,-1.442857
+registry,consumption_key_proposal: low,$bn,derived/channels.csv,4.051722,,,
+registry,consumption_key_proposal: central,$bn,derived/channels.csv,4.051722,,,
+registry,consumption_key_proposal: high,$bn,derived/channels.csv,4.051722,,,
+registry,school_dilution: low,$bn,derived/channels.csv,2.604500,2.604500,,
+registry,school_dilution: central,$bn,derived/channels.csv,-20.064200,-20.064200,,
+registry,school_dilution: high,$bn,derived/channels.csv,-44.338700,-44.338700,,
+group frame,"direct fiscal transfer received: the direct response A, sign flipped: bn_low",$bn,derived/group_frame.csv,214.197752,214.240566,271.811044,57.613293
+group frame,"direct fiscal transfer received: the direct response A, sign flipped: bn_central",$bn,derived/group_frame.csv,234.653424,234.363061,286.278239,51.624815
+group frame,"direct fiscal transfer received: the direct response A, sign flipped: bn_high",$bn,derived/group_frame.csv,255.109097,254.485556,300.745435,45.636337
+group frame,"the account's net cost to other residents attributed to the first generation (born in Mexico), minors with their parents (NAS 2017): bn_low",$bn,derived/group_frame.csv,110.221760,110.620113,135.564441,25.342681
+group frame,"the account's net cost to other residents attributed to the first generation (born in Mexico), minors with their parents (NAS 2017): bn_central",$bn,derived/group_frame.csv,122.491632,122.759252,145.473072,22.981440
+group frame,"the account's net cost to other residents attributed to the first generation (born in Mexico), minors with their parents (NAS 2017): bn_high",$bn,derived/group_frame.csv,134.761505,134.898392,155.381703,20.620198
+group frame,"the account's net cost to other residents attributed to the second generation (US-born, a parent born in Mexico), minors with their parents (NAS 2017): bn_low",$bn,derived/group_frame.csv,50.182968,50.641229,67.904961,17.721993
+group frame,"the account's net cost to other residents attributed to the second generation (US-born, a parent born in Mexico), minors with their parents (NAS 2017): bn_central",$bn,derived/group_frame.csv,51.572278,51.898927,66.980902,15.408625
+group frame,"the account's net cost to other residents attributed to the second generation (US-born, a parent born in Mexico), minors with their parents (NAS 2017): bn_high",$bn,derived/group_frame.csv,52.961588,53.156624,66.056844,13.095256
+group frame,"the account's net cost to other residents attributed to the third-plus generation (US-born of US-born parents), minors with their parents (NAS 2017): bn_low",$bn,derived/group_frame.csv,40.470475,39.656675,55.019093,14.548618
+group frame,"the account's net cost to other residents attributed to the third-plus generation (US-born of US-born parents), minors with their parents (NAS 2017): bn_central",$bn,derived/group_frame.csv,49.532909,48.648277,62.767660,13.234751
+group frame,"the account's net cost to other residents attributed to the third-plus generation (US-born of US-born parents), minors with their parents (NAS 2017): bn_high",$bn,derived/group_frame.csv,58.595343,57.639879,70.516227,11.920884
+group frame,first generation (born in Mexico): market gain over the same person's earnings in Mexico: bn_low,$bn,derived/group_frame.csv,196.474515,196.474515,196.474515,0.000000
+group frame,first generation (born in Mexico): market gain over the same person's earnings in Mexico: bn_central,$bn,derived/group_frame.csv,224.576110,224.576110,224.576110,0.000000
+group frame,first generation (born in Mexico): market gain over the same person's earnings in Mexico: bn_high,$bn,derived/group_frame.csv,242.769785,242.769785,242.769785,0.000000
+group frame,"wage competition among the group's own workers, high school or less, after tax (epsilon infinite (account)): bn_low",$bn,derived/group_frame.csv,-16.554240,-16.554240,-16.554240,0.000000
+group frame,"wage competition among the group's own workers, high school or less, after tax (epsilon infinite (account)): bn_central",$bn,derived/group_frame.csv,-20.821474,-20.821474,-20.821474,0.000000
+group frame,"wage competition among the group's own workers, high school or less, after tax (epsilon infinite (account)): bn_high",$bn,derived/group_frame.csv,-25.088708,-25.088708,-25.088708,0.000000
+group frame,"wage gain of the group's own workers, some college or more, after tax (epsilon infinite (account)): bn_low",$bn,derived/group_frame.csv,4.645970,4.645970,4.645970,0.000000
+group frame,"wage gain of the group's own workers, some college or more, after tax (epsilon infinite (account)): bn_central",$bn,derived/group_frame.csv,5.843574,5.843574,5.843574,0.000000
+group frame,"wage gain of the group's own workers, some college or more, after tax (epsilon infinite (account)): bn_high",$bn,derived/group_frame.csv,7.041179,7.041179,7.041179,0.000000
+group frame,"wage competition among the group's own workers, high school or less, after tax (epsilon 3): bn_low",$bn,derived/group_frame.csv,-30.126364,-30.126364,-30.126364,0.000000
+group frame,"wage competition among the group's own workers, high school or less, after tax (epsilon 3): bn_central",$bn,derived/group_frame.csv,-37.892123,-37.892123,-37.892123,0.000000
+group frame,"wage competition among the group's own workers, high school or less, after tax (epsilon 3): bn_high",$bn,derived/group_frame.csv,-45.657881,-45.657881,-45.657881,0.000000
+group frame,"wage gain of the group's own workers, some college or more, after tax (epsilon 3): bn_low",$bn,derived/group_frame.csv,4.712474,4.712474,4.712474,0.000000
+group frame,"wage gain of the group's own workers, some college or more, after tax (epsilon 3): bn_central",$bn,derived/group_frame.csv,5.927221,5.927221,5.927221,0.000000
+group frame,"wage gain of the group's own workers, some college or more, after tax (epsilon 3): bn_high",$bn,derived/group_frame.csv,7.141969,7.141969,7.141969,0.000000
+group frame,"victims inside the group (excluded from the victim lane), full cost, equal footing: bn_central",$bn,derived/group_frame.csv,-20.109261,-20.109261,-20.109261,0.000000
+group frame,"remittances received in Mexico from the United States, 2024 (context, not a US resident's gain or loss): bn_central",$bn,derived/group_frame.csv,62.794313,62.794313,62.794313,0.000000
+federal split,"low end, low payer convention: federal_bn",$bn,derived/fiscal_federal_split.csv,10.197705,9.707125,10.272230,0.074525
+federal split,"low end, low payer convention: state_local_bn",$bn,derived/fiscal_federal_split.csv,190.441573,190.974968,247.980341,57.538768
+federal split,"low end, central payer convention: federal_bn",$bn,derived/fiscal_federal_split.csv,31.979266,31.761732,36.486715,4.507449
+federal split,"low end, central payer convention: state_local_bn",$bn,derived/fiscal_federal_split.csv,168.660012,168.920360,221.765856,53.105844
+federal split,"low end, high payer convention: federal_bn",$bn,derived/fiscal_federal_split.csv,42.633158,42.590520,48.692190,6.059032
+federal split,"low end, high payer convention: state_local_bn",$bn,derived/fiscal_federal_split.csv,158.006120,158.091573,209.560381,51.554261
+federal split,"high end, low payer convention: federal_bn",$bn,derived/fiscal_federal_split.csv,29.471470,29.040848,29.495696,0.024226
+federal split,"high end, low payer convention: state_local_bn",$bn,derived/fiscal_federal_split.csv,216.691297,216.498377,262.303408,45.612111
+federal split,"high end, central payer convention: federal_bn",$bn,derived/fiscal_federal_split.csv,51.858026,51.645661,55.442769,3.584743
+federal split,"high end, central payer convention: state_local_bn",$bn,derived/fiscal_federal_split.csv,194.304741,193.893564,236.356335,42.051594
+federal split,"high end, high payer convention: federal_bn",$bn,derived/fiscal_federal_split.csv,66.457928,66.444224,73.778354,7.320426
+federal split,"high end, high payer convention: state_local_bn",$bn,derived/fiscal_federal_split.csv,179.704838,179.095001,218.020750,38.315912
+federal split,central: cost_bn,$bn,derived/fiscal_federal_split.csv,223.401015,223.110651,275.025830,51.624815
+federal split,central: federal_bn,$bn,derived/fiscal_federal_split.csv,41.918646,41.703696,45.964742,4.046096
+federal split,central: state_local_bn,$bn,derived/fiscal_federal_split.csv,181.482369,181.406955,229.061088,47.578719
+federal split,central: federal_share,share,derived/fiscal_federal_split.csv,0.187639,0.186919,0.167129,-0.020510
+federal split,central: future_taxpayers_bn,$bn,derived/fiscal_federal_split.csv,11.298470,11.240534,12.389028,1.090558
+federal split,central: federal_today_bn,$bn,derived/fiscal_federal_split.csv,30.620176,30.463162,33.575714,2.955538
+totals,social_totals.items_central,$bn,derived/inputs.json,-51.601088,-51.601088,-51.601088,0.000000
+totals,social_totals.least_costly,$bn,derived/inputs.json,-216.983565,-217.026380,-274.596858,-57.613293
+totals,social_totals.most_costly,$bn,derived/inputs.json,-334.045127,-333.421585,-379.681464,-45.636337
+totals,published_totals.equal[low],$bn,derived/inputs.json,247.700468,247.743283,305.313761,57.613293
+totals,published_totals.equal[high],$bn,derived/inputs.json,298.361220,297.737678,343.997557,45.636337
+totals,published_totals.custody[low],$bn,derived/inputs.json,253.384586,253.427400,310.997879,57.613293
+totals,published_totals.custody[high],$bn,derived/inputs.json,304.045337,303.421796,349.681674,45.636337
+totals,published_totals.range[low],$bn,derived/inputs.json,247.700468,247.743283,305.313761,57.613293
+totals,published_totals.range[high],$bn,derived/inputs.json,304.045337,303.421796,349.681674,45.636337
+totals,published_totals.span[low],$bn,derived/inputs.json,210.157071,210.199885,267.770364,57.613293
+totals,published_totals.span[high],$bn,derived/inputs.json,336.928396,336.304854,382.564733,45.636337
+totals,published_totals.equal_victims,$bn,derived/inputs.json,30.930000,30.930000,30.930000,0.000000
+totals,published_totals.custody_victims,$bn,derived/inputs.json,32.338100,32.338100,32.338100,0.000000
+totals,debt legacy interest: low,$bn,derived/inputs.json,28.338666,28.248336,30.144791,1.806125
+totals,debt legacy interest: central,$bn,derived/inputs.json,32.384204,32.298428,34.008695,1.624491
+totals,debt legacy interest: high,$bn,derived/inputs.json,36.429742,36.348520,37.872599,1.442857
