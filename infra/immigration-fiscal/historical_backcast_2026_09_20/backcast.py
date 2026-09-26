@@ -15,9 +15,11 @@ Assumed: the group's 2024 per-person position relative to the nation. Three rule
 This is not a measured historical account. No year before 2024 has group taxes,
 benefits or services observed here.
 
-Cases (--case). sept26, the default, adds the main case adopted 2026-09-26 as the `*_sept26_*`
-concepts beside the earlier ones, which do not change value by value. sept24 with --out-dir DIR
-writes the files as they stood on the September 24 case, byte for byte.
+Cases (--case), one entry each in LATER_CASES. sept26_schools, the default, adds the main case with
+schools at full average cost as the `*_schools_full_*` concepts; sept26 (CBO's one-year school
+response, 0.63-0.66) adds the `*_sept26_*` concepts. Each case also writes every earlier case's
+concepts, which do not change value by value. sept26 or sept24 with --out-dir DIR writes the files as
+they stood on that case, byte for byte.
 """
 from __future__ import annotations
 
@@ -38,6 +40,18 @@ PINNED = {"Section1All_xls.xlsx": "238ba851c9a4932d91a0dedb1b3f2e6c6d37574d154a5
 YEARS = list(range(2005, 2025))
 PROFILES = {"net_cost_cbo_informed": "cbo_category_lag_non_school_full",
             "net_cost_full_proportional": "proportional_reference"}
+# Main cases after September 24, in adoption order: case -> (main-case lane, concept tag, the lane's band
+# variant for the case it starts from, that case's tag). Receipts are matched by tag within concept
+# names, so no tag may contain another ("_sept26_" would also match "_sept26_schools_").
+LATER_CASES = {"sept26": ("main_case_2026_09_26", "_sept26_", "adopted_2026_09_24", "_corrected_"),
+               "sept26_schools": ("main_case_schools_full_2026_09_26", "_schools_full_", "adopted_2026_09_26",
+                                  "_sept26_")}
+
+
+def later_cases(case: str) -> list[str]:
+    """The cases after September 24 up to and including `case`, in adoption order."""
+    names = list(LATER_CASES)
+    return names[:names.index(case) + 1] if case in LATER_CASES else []
 
 
 def response_anchors(case: str) -> dict[str, float]:
@@ -46,8 +60,8 @@ def response_anchors(case: str) -> dict[str, float]:
     The September 20 bands, then the main case adopted on 2026-09-23 (general government at
     0.59-0.84, justice and uncompensated care keyed by use; main_case_2026_09_23), then that case
     with the data corrections adopted on 2026-09-24 (main_case_2026_09_24, variant "adopted"), then
-    with case "sept26" the case adopted on 2026-09-26 (finite-removal responses and the consumption
-    key; main_case_2026_09_26, variant "adopted").
+    each later case up to `case` (LATER_CASES, variant "adopted"): September 26 with finite-removal
+    responses and the consumption key, then schools at full average cost.
     """
     summary = pd.read_csv(FISCAL / "full_account_2026_09_20/derived/service_response_summary.csv").set_index("profile")
     adopted = pd.read_csv(FISCAL / "main_case_2026_09_23/derived/main_case_bands.csv")
@@ -64,23 +78,23 @@ def response_anchors(case: str) -> dict[str, float]:
     for name, profile in PROFILES.items():
         out[f"{name}_corrected_low"] = float(corrected.loc[profile, "cost_low_bn"])
         out[f"{name}_corrected_high"] = float(corrected.loc[profile, "cost_high_bn"])
-    if case == "sept24":
-        return out
-    bands26 = pd.read_csv(FISCAL / "main_case_2026_09_26/derived/main_case_bands.csv")
-    summary26 = json.loads((FISCAL / "main_case_2026_09_26/derived/summary.json").read_text())
-    base = bands26[bands26.variant == "adopted_2026_09_24"].set_index("profile")
-    adopted = bands26[bands26.variant == "adopted"].set_index("profile")
-    published = {"cbo_category_lag_non_school_full": summary26["main_case"],
-                 "proportional_reference": summary26["other_profiles"]["proportional_reference"]["adopted"]}
-    for name, profile in PROFILES.items():
-        # The September 26 case starts from the one the *_corrected_* concepts carry.
-        if not np.allclose(base.loc[profile, ["cost_low_bn", "cost_high_bn"]].to_numpy(float),
-                           corrected.loc[profile, ["cost_low_bn", "cost_high_bn"]].to_numpy(float), rtol=0, atol=1e-9):
-            raise ValueError(f"[BLOCKED] main_case_2026_09_26 {profile} does not start from the September 24 band")
-        band = [float(adopted.loc[profile, "cost_low_bn"]), float(adopted.loc[profile, "cost_high_bn"])]
-        if not np.allclose(band, published[profile], rtol=0, atol=1e-4):
-            raise ValueError(f"[BLOCKED] main_case_2026_09_26 {profile} bands differ from its summary.json")
-        out[f"{name}_sept26_low"], out[f"{name}_sept26_high"] = band
+    for later in later_cases(case):
+        lane, tag, base_variant, base_tag = LATER_CASES[later]
+        bands = pd.read_csv(FISCAL / lane / "derived/main_case_bands.csv")
+        summary_c = json.loads((FISCAL / lane / "derived/summary.json").read_text())
+        base = bands[bands.variant == base_variant].set_index("profile")
+        adopted = bands[bands.variant == "adopted"].set_index("profile")
+        published = {"cbo_category_lag_non_school_full": summary_c["main_case"],
+                     "proportional_reference": summary_c["other_profiles"]["proportional_reference"]["adopted"]}
+        for name, profile in PROFILES.items():
+            # Each case starts from the band the previous case's concepts carry.
+            if not np.allclose(base.loc[profile, ["cost_low_bn", "cost_high_bn"]].to_numpy(float),
+                               [out[f"{name}{base_tag}low"], out[f"{name}{base_tag}high"]], rtol=0, atol=1e-9):
+                raise ValueError(f"[BLOCKED] {lane} {profile} does not start from the {base_variant} band")
+            band = [float(adopted.loc[profile, "cost_low_bn"]), float(adopted.loc[profile, "cost_high_bn"])]
+            if not np.allclose(band, published[profile], rtol=0, atol=1e-4):
+                raise ValueError(f"[BLOCKED] {lane} {profile} bands differ from its summary.json")
+            out[f"{name}{tag}low"], out[f"{name}{tag}high"] = band
     return out
 
 
@@ -121,8 +135,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--bea-dir", type=Path,
                         default=ROOT / "sources/immigration-fiscal/data/external/bea_nipa")
-    parser.add_argument("--case", choices=("sept26", "sept24"), default="sept26",
-                        help="sept26: add the main case adopted 2026-09-26 (default); sept24: the files as of 2026-09-24")
+    parser.add_argument("--case", choices=(*reversed(list(LATER_CASES)), "sept24"), default=list(LATER_CASES)[-1],
+                        help="a case after September 24 (default: the last in LATER_CASES, sept26_schools: schools "
+                             "at full average cost; sept26: CBO's one-year school response, 0.63-0.66) or sept24: "
+                             "the files as of 2026-09-24")
     parser.add_argument("--out-dir", type=Path, default=HERE / "derived")
     args = parser.parse_args()
     section3 = workbook(args.bea_dir / "Section3All_xls.xlsx")
@@ -155,13 +171,18 @@ def main() -> None:
     if abs(after["adopted_2026_09_23"]["shared"] - group_receipts) > 1e-6:
         raise ValueError("[BLOCKED] main_case_2026_09_24 receipts do not start from the complete account's")
     receipts_for = {"_corrected_": after["adopted"]["shared"]}
-    if args.case == "sept26":
-        # The consumption key raises them again (the finite-removal responses act on spending only).
-        after26 = json.loads((FISCAL / "main_case_2026_09_26/derived/summary.json").read_text())["group_receipts_bn"]
-        if abs(after26["adopted_2026_09_23"]["shared"] - group_receipts) > 1e-6 or \
-                abs(after26["adopted_2026_09_24"]["shared"] - after["adopted"]["shared"]) > 1e-9:
-            raise ValueError("[BLOCKED] main_case_2026_09_26 receipts do not start from the September 24 case's")
-        receipts_for["_sept26_"] = after26["adopted"]["shared"]
+    tags = ["_adopted_", "_corrected_"] + [v[1] for v in LATER_CASES.values()]
+    if any(a != b and a in b for a in tags for b in tags):
+        raise ValueError("[BLOCKED] one concept tag contains another")
+    for later in later_cases(args.case):
+        # The consumption key raises them on September 26; the finite-removal and school responses act
+        # on spending only.
+        lane, tag, base_variant, base_tag = LATER_CASES[later]
+        after_c = json.loads((FISCAL / lane / "derived/summary.json").read_text())["group_receipts_bn"]
+        if abs(after_c["adopted_2026_09_23"]["shared"] - group_receipts) > 1e-6 or \
+                abs(after_c[base_variant]["shared"] - receipts_for[base_tag]) > 1e-9:
+            raise ValueError(f"[BLOCKED] {lane} receipts do not start from the {base_variant} case's")
+        receipts_for[tag] = after_c["adopted"]["shared"]
     for name, value in concepts.items():
         # cost = spending charged to the group under this response case, less its receipts
         g_receipts = next((v for tag, v in receipts_for.items() if tag in name), group_receipts)

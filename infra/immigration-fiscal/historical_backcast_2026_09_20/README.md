@@ -51,6 +51,12 @@ for byte. The whole-budget rules give $1.7316–2.4271tn over 2015–2024 (Septe
 $1.7317–2.4307tn), still $1.7–2.4tn. `backcast_categories.py` still covers the September 20 anchors
 only.
 
+Since the second decision of 2026-09-26 the default run (`--case sept26_schools`) also carries back the
+main case with schools at full average cost (`*_schools_full_*` concepts, from
+`main_case_schools_full_2026_09_26/`, gated to start from the `*_sept26_*` band and receipts). Each case
+is one entry in `LATER_CASES`. `--case sept26` and `--case sept24` with `--out-dir DIR` reproduce
+f5b4aae and da2b107 byte for byte (`test_backcast.py`). The whole-budget rules give $2.2432–2.8382tn over 2015–2024 on the schools case, against $1.7316–2.4271tn in the one-year scenario.
+
 ## Rules
 
 The ACS self-identified count is scaled by 40.897m / 38.990m to the account's
