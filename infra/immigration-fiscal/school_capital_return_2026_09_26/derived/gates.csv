@@ -1,0 +1,33 @@
+gate,pass,detail
+nipa_cfc_zero_net_return_note,PASS,overnment fixed assets; the use of depreciation assumes a zero net return on these assets.
+reused_sl_cfc_share,PASS,T3.10.5 l51/l47 2024: 312559/2550362 = 0.1226
+pupil_share_matches_brief,PASS,s=0.17480600215120404
+end_specification_shares_agree_across_methods,PASS,"[{0.7153278156243373}, {0.8651608840454027}]"
+school_fraction_bounds,PASS,"(0.7153278156243373, 0.8651608840454027)"
+account_education_line_is_nipa_3_17_line_9,PASS,model 1221.159 vs T3.17 l9 1221.159
+pim_reproduces_bea_stock_2024,PASS,PIM 3942.1 vs BEA 4018.7 (ratio 0.9809) at delta 0.01828
+pim_reproduces_bea_real_growth_1993_2024,PASS,PIM x2.085 vs FAAt702 x2.058
+vip_covers_1993_2024,PASS,1993-2024
+vip_educational_tracks_bea_investment,PASS,"VIP/BEA educational investment 0.830-1.246, 1993-2024"
+nces_method_tracks_vip_in_overlap,PASS,"NCES-implied minus VIP, 15 school years: -0.042 to +0.061"
+k12_key_plausible,PASS,low 0.6586 central 0.6748 high 0.6953
+fa_vs_nipa_structures_cfc_2024,PASS,FA 7.3 l3 327.106 vs NIPA 5.10 l40 327.088
+fa_vs_nipa_ipp_cfc_2024,PASS,FA 7.3 l18 299.606 vs NIPA 5.10 l42 299.641
+fa_vs_nipa_state_local_cfc_2022,PASS,FA 7.3 l55 371.868 vs NIPA 7.5 l24+l27 372.014
+fa_vs_nipa_state_local_cfc_2023,PASS,FA 7.3 l55 395.189 vs NIPA 7.5 l24+l27 395.187
+state_local_2024_cfc_gap_sits_in_equipment,PASS,S&L FA-NIPA 13.009bn; government equipment FA-NIPA 12.911bn
+fa_vs_nipa_gov_closing_stock_2024,PASS,FA 7.1 l1 21272.014 vs NIPA 5.10 l74 closing 21272.014
+education_structures_inside_nipa_education_investment,PASS,FA educational structures 126.286 < NIPA S&L education investment 180.825
+k12_equipment_share_below_education_share,PASS,K-12 0.147-0.161 of S&L equipment+software investment; all education 0.227
+net_stock_over_cfc_structures_plausible,PASS,"S&L educational structures: average stock / depreciation = 54.7 (range (30.0, 80.0))"
+net_stock_over_cfc_k12_total_plausible,PASS,K-12 all assets 42.7
+end_shares_are_the_fraction_bounds,PASS,"(0.7153278156243373, 0.8651608840454027) vs (0.7153278156243373, 0.8651608840454027)"
+school_line_pairs_with_fraction,PASS,"low end 138.7/0.7153 and high end 172.5/0.8652 imply education lines 193.9, 199.4 against group amounts 193.4-199.6"
+interest_row_held_at_zero_in_main_case,PASS,engine default 0: True; interest class routed: True; packages override: False
+debt_legacy_is_federal_only,PASS,debt_legacy RESULT: state-local interest stays in the interest row
+ledger_k_uses_same_f33_totals,PASS,ledger params 113087706+23088280
+pupils_by_state_sum_to_account,PASS,8487011 vs 8487011
+ledger_k_pupil_ratio_read,PASS,item K multiplies children 5-17 by the native ratio 0.8027; Mexico-born ratio 0.9048
+a4_2023_states_2_percent,PASS,A-4 (2023) p.76-77
+a4_2003_states_3_and_7_percent,PASS,"A-4 (2003), Discount Rates, 2. Real Discount Rates of 3 Percent and 7 Percent"
+m25_15_revokes_2023_reinstates_2003,PASS,"OMB M-25-15, 12 Feb 2025"

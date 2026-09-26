@@ -20,6 +20,8 @@ counted?**
   `../school_cost_where_enrolled_2026_09_24/derived/account_embedded_price.json`.
 - School line at full cost: $167.0bn (band low end) / $143.4bn (high end):
   `../main_case_schools_full_2026_09_26/derived/summary.json` → `school.school_line_at_full_cost`.
+  [Corrected in f1e4f5b: $138.7bn at the low end and $172.5bn at the high end, read at fixed
+  specifications. The first figures were differences of band ends from different specifications.]
 - The school fraction of BEA education consumption is bounded at 71.5–86.5%
   (`../../../decisions/2026-09-20-category-service-response.md`).
 - State and local consumption includes CFC of $312.559bn of $2,550.362bn (12.26%)
