@@ -253,7 +253,10 @@ government 0.59–0.84) and CBO's first-order school coefficients (0.63–0.66) 
 cost a removal saves. Read as a power law over a removal of 12% of residents and 17.5% of pupils,
 they give **$205.0–249.7bn** (+$4.1bn / +$3.4bn, mostly schools; proposed). Under a fixed cost
 plus a constant marginal cost nothing changes
-([lane](../infra/immigration-fiscal/finite_response_2026_09_26/RESULT.md)).
+([lane](../infra/immigration-fiscal/finite_response_2026_09_26/RESULT.md)). Composed in one
+engine run with the consumption-key proposal (ladder 225), the two leave the main case at
+$200.9–245.7bn, the published $201–246bn at its rounding; adopting one without the other moves
+it by about $4bn.
 
 [Objections and answers](immigration-objections-faq-2026-09-21.md): seventeen standard
 objections (age, fixed public goods, payroll taxes without benefits, off-budget gains,
