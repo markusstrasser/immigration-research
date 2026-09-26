@@ -1,4 +1,4 @@
-**Verdict:** [Parent ruling 7, 2026-09-25: the count pooled within SPM units is central: 23.9% ahead under (a) and 21.4% under (b), 13.9–30.0% across the stacks. The person count gives wages to the earner but shares taxes and rent within the unit, so it counts children and non-earners in winning units as behind by construction; it stays as the alternative. Memo: [who wins and who loses](../../../research/immigration-winners-and-losers-2026-09-25.md), ladder 226.] About one other resident in five comes out ahead of the Mexican-origin group's presence and
+**Verdict:** [2026-09-26, later: the scripts now default to the main case with schools at full cost (`--case sept26_schools`, $258.5–292.0bn), and `derived/` holds that run. Pooled within SPM units, 20.5% of other residents come out ahead under tax-share financing and 19.0% under per-person cuts (text below: 23.9%, 21.4%), 11.9–27.1% across the stacks under (a); the person count gives 18.4% and 18.3% (below: 20.1%, 19.9%). The fiscal channel is $275.0bn at central values (below: $223.4bn), 83% of it state and local, and the social net on today's residents is −$314.4bn (below: −$263.9bn). School dilution stays in the role table, since nothing is left unfunded at a school response of 1; the consumption key is inside the fiscal channel. `--case sept26` gives the one-year scenario (23.9%, 21.4%). `--case sept24` reproduces the run described below byte for byte. Old → new: `../sept26_propagation_2026_09_26/RESULT_ledger.md`.] [Parent ruling 7, 2026-09-25: the count pooled within SPM units is central: 23.9% ahead under (a) and 21.4% under (b), 13.9–30.0% across the stacks. The person count gives wages to the earner but shares taxes and rent within the unit, so it counts children and non-earners in winning units as behind by construction; it stays as the alternative. Memo: [who wins and who loses](../../../research/immigration-winners-and-losers-2026-09-25.md), ladder 226.] About one other resident in five comes out ahead of the Mexican-origin group's presence and
 four in five come out behind. The person count ("wages to the earner, taxes and rent shared within the
 unit") puts 20.1% ahead with tax-share financing (a) and 19.9% with per-person cuts (b). Pooling every
 amount within each SPM unit raises that to 23.9% under (a) and 21.4% under (b). Under (a), 28m people,
@@ -541,7 +541,15 @@ gates (−21). These gates are new:
   - `node infra/immigration-fiscal/winners_losers_2026_09_24/specs.cjs`
   - `OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/winners_losers_2026_09_24/winners_losers.py`
   - `... -m pytest infra/immigration-fiscal/winners_losers_2026_09_24/ -q`
-- `derived/` holds these files:
+- [2026-09-26] Both scripts take `--case sept26_schools` (the default), `sept26` or `sept24`, and
+  `--out-dir DIR` (default `derived/`); give both the same flags. The regression and quintile files
+  are named by case: the schools run writes `regression_sept26.csv`, `regression_sept26_schools.csv`
+  and `quintiles_vs_base_sept26_schools.csv`. `old_new.py` writes the three cases' old → new table to
+  `../sept26_propagation_2026_09_26/derived/old_new_ledger.csv`.
+- The September 24 run wrote these files. [2026-09-27, parent: `derived/` now holds the schools-case
+  run of the same names plus its three case-named files. The September 24 run's `regression_sept23.csv`,
+  `regression_sept24.csv` and `quintiles_vs_base_sept24.csv` stay, unchanged from 8a762fe, because the
+  regression paragraph above cites them.]
   - `channels.csv`, `winners_losers_table.csv`, `person_nets_by_cut.csv`, `cuts.csv` (every channel at
     every level in every cut) and `cut_reconciliation.csv`;
   - `net_shares.csv` (`unit`: `person` or `spm_unit_pooled`), `pooling_moves.csv`, `winners_tree.csv`,

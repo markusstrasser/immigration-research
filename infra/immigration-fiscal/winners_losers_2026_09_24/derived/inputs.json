@@ -54,25 +54,25 @@
  },
  "fiscal": {
   "low": {
-   "cost": 200.63922923555006,
-   "federal": 31.979266,
-   "state_local": 168.65996323555007,
-   "future": 8.619476509266974,
-   "federal_today": 23.359789490733025
+   "cost": 258.25252209549495,
+   "federal": 36.486715,
+   "state_local": 221.76580709549495,
+   "future": 9.834384030040557,
+   "federal_today": 26.652330969959444
   },
   "central": {
-   "cost": 223.40101472892334,
-   "federal": 41.918646,
-   "state_local": 181.48236872892335,
-   "future": 11.298470218086871,
-   "federal_today": 30.620175781913133
+   "cost": 275.0258297777218,
+   "federal": 45.964742,
+   "state_local": 229.0610877777218,
+   "future": 12.38902775077818,
+   "federal_today": 33.575714249221825
   },
   "high": {
-   "cost": 246.16280022229662,
-   "federal": 51.858026,
-   "state_local": 194.30477422229663,
-   "future": 13.977463926906767,
-   "federal_today": 37.88056207309324
+   "cost": 291.7991374599487,
+   "federal": 55.442769,
+   "state_local": 236.35636845994873,
+   "future": 14.943671471515803,
+   "federal_today": 40.4990975284842
   }
  },
  "wages_eps3_delta_F": {
@@ -331,19 +331,19 @@
   "cps_women_m": 16.44347855181717
  },
  "debt": {
-  "low": 28.338666,
-  "high": 36.429742,
-  "central": 32.384204,
-  "rules_min": 6.279511,
-  "rules_max": 37.25163,
-  "commit": "7ec7144",
-  "sept23": {
-   "low": 30.475908,
-   "high": 38.864631,
-   "central": 34.6702695,
-   "rules_min": 7.65857,
-   "rules_max": 42.822057,
-   "commit": "b42efdc"
+  "low": 30.144791,
+  "high": 37.872599,
+  "central": 34.008695,
+  "rules_min": 8.025461,
+  "rules_max": 38.694487,
+  "commit": "1db19c8",
+  "sept26": {
+   "low": 28.248336,
+   "high": 36.34852,
+   "central": 32.298428,
+   "rules_min": 6.153718,
+   "rules_max": 37.170408,
+   "commit": "e62fccb"
   }
  },
  "deficit": {
@@ -353,75 +353,62 @@
   "share": 0.2695332816352625
  },
  "fiscal_A": {
-  "adopted_2026_09_24": {
+  "adopted_2026_09_26_schools": {
    "A": {
-    "low": -214.19775147955005,
-    "high": -255.10909747529664
+    "low": -271.81104433949497,
+    "high": -300.74543471294874
    },
    "engine_A": {
-    "low": -214.197800434787,
-    "high": -255.109063783201
+    "low": -271.811093294732,
+    "high": -300.745401020853
    },
    "diff": {
-    "low": 4.895523696291093e-05,
-    "high": -3.3692095627202434e-05
+    "low": 4.895523704817606e-05,
+    "high": -3.369209571246756e-05
    },
-   "A_mid": -234.65342447742336
+   "A_mid": -286.27823952622185
   },
-  "adopted_2026_09_23": {
+  "adopted_2026_09_26": {
    "A": {
-    "low": -216.52956608776412,
-    "high": -258.43061711642724
+    "low": -214.2405657768344,
+    "high": -254.48555581233944
    },
    "engine_A": {
-    "low": -216.529615043001,
-    "high": -258.430583424331
+    "low": -214.240614732071,
+    "high": -254.485522120243
    },
    "diff": {
-    "low": 4.89552368776458e-05,
-    "high": -3.369209622405833e-05
+    "low": 4.895523662185042e-05,
+    "high": -3.369209645143201e-05
    },
-   "A_mid": -237.48009160209568
+   "A_mid": -234.36306079458691
   }
- },
- "consumption_proposal": {
-  "change": [
-   -4.051722391387102,
-   -4.051722391387102
-  ],
-  "band": [
-   196.8234801243996,
-   242.2667136948134
-  ],
-  "both_min": -8.433012881446018,
-  "both_max": -2.598755658653033,
-  "survey": -6.661662148713731
  },
  "published_totals": {
   "equal": [
-   247.700468,
-   298.36122
+   305.313761,
+   343.997557
   ],
   "equal_fiscal": [
-   196.601797,
-   242.045031
+   254.21509,
+   287.681368
   ],
   "custody": [
-   253.384586,
-   304.045337
+   310.997879,
+   349.681674
   ],
   "custody_fiscal": [
-   200.875203,
-   246.318436
+   258.488495,
+   291.954773
   ],
   "custody_victims": 32.3381,
   "span": [
-   210.157071,
-   336.928396
+   267.770364,
+   382.564733
   ],
   "range": [
-   247.700468,
-   304.045337
+   305.313761,
+   349.681674
   ],
   "equal_victims": 30.93
  },
@@ -436,28 +423,28 @@
   },
   "plain_mean": {
    "net_account_a": {
-    "winners_share": 0.2890023875647856,
-    "total_drift_bn": 1.2307572633021022
+    "winners_share": 0.24474057516178832,
+    "total_drift_bn": 1.2307572519167918
    },
    "net_account_b": {
-    "winners_share": 0.23749435491371712,
-    "total_drift_bn": 1.2307584124510307
+    "winners_share": 0.20934100227769092,
+    "total_drift_bn": 1.2307584124510318
    },
    "net_social_a": {
-    "winners_share": 0.2428326333055793,
-    "total_drift_bn": 1.0335162333408239
+    "winners_share": 0.20799706793209619,
+    "total_drift_bn": 1.0335162219555143
    },
    "net_social_b": {
-    "winners_share": 0.21715879318363818,
+    "winners_share": 0.19400946781995373,
     "total_drift_bn": 1.0335173824897539
    },
    "net_with_proposed_a": {
-    "winners_share": 0.21215143817853388,
-    "total_drift_bn": 1.384559237209002
+    "winners_share": 0.21909860781222726,
+    "total_drift_bn": 1.1628581617107698
    },
    "net_with_proposed_b": {
-    "winners_share": 0.2060818169492627,
-    "total_drift_bn": 1.3845602100310792
+    "winners_share": 0.20420762911025478,
+    "total_drift_bn": 1.162859145918156
    }
   }
  },
@@ -484,8 +471,8 @@
  },
  "social_totals": {
   "items_central": -51.60108826584057,
-  "least_costly": -216.98356531544945,
-  "most_costly": -334.04512695920084
+  "least_costly": -274.5968581753943,
+  "most_costly": -379.6814641968529
  },
  "notes": {
   "rake_fallbacks": []
@@ -503,71 +490,92 @@
   "NV"
  ],
  "federal_split_info": {
-  "adopted_2026_09_23": {
-   "commit": "b42efdc",
+  "adopted_2026_09_26": {
+   "commit": "e62fccb",
    "induced_receipts_federal_share": 0.8840492611199644,
    "recomputed_vs_lane": {
     "low_low": [
-     16.52223901834978,
-     16.522239
+     9.707124957740614,
+     9.707125
     ],
     "low_central": [
-     38.64301972562478,
-     38.643017
+     31.761731066115747,
+     31.761732
     ],
     "low_high": [
-     48.48420271657352,
-     48.4842
+     42.59051905373936,
+     42.59052
     ],
     "high_low": [
-     35.64670116892087,
-     35.646701
+     29.040847221536215,
+     29.040848
     ],
     "high_central": [
-     58.44936459477451,
-     58.449363
+     51.64565826065343,
+     51.645661
     ],
     "high_high": [
-     72.39680061061435,
-     72.396799
+     66.4442222626257,
+     66.444224
     ]
    }
   },
-  "adopted_2026_09_24": {
-   "commit": "7ec7144",
+  "adopted_2026_09_26_schools": {
+   "commit": "1db19c8",
    "induced_receipts_federal_share": 0.8840492611199644,
    "recomputed_vs_lane": {
     "low_low": [
-     10.19770665901181,
-     10.197705
+     10.272229953479833,
+     10.27223
     ],
     "low_central": [
-     31.97926577254678,
-     31.979266
+     36.486713030270536,
+     36.486715
     ],
     "low_high": [
-     42.6331597594242,
-     42.633158
+     48.69218900549883,
+     48.69219
     ],
     "high_low": [
-     29.471469927847377,
-     29.47147
+     29.49569523037888,
+     29.495696
     ],
     "high_central": [
-     51.85802497680943,
-     51.858026
+     55.44276733456264,
+     55.442769
     ],
     "high_high": [
-     66.45792700249844,
-     66.457928
+     73.77835236794586,
+     73.778354
     ]
    }
   },
   "per_correction_file": {
    "status": "checked",
    "rows": 12,
-   "max_abs_diff_bn": 1.1102230246251565e-16,
-   "sha256": "12421275ae111456b651999723542992dc1985359288c197fde9eae9604caca3"
+   "max_abs_diff_bn": 1.0000000010279564e-06,
+   "sha256": "e366dcac651ea538835263ce3559ccada3c5209398d805e3ce0db9edbab1a84b"
+  }
+ },
+ "case": {
+  "case": "sept26_schools",
+  "model": "adopted_2026_09_26_schools",
+  "lane": "main_case_schools_full_2026_09_26",
+  "previous": "sept26",
+  "base": "39b854b",
+  "debt": "1db19c8",
+  "debt_files": "1db19c8",
+  "generations": "0f22f0c",
+  "generations_split": null,
+  "sisters": {
+   "school_dilution_2026_09_24": "8936938",
+   "vending_restaurants_2026_09_24": "1c9b6fe",
+   "compliance_gap_2026_09_24": "1d14b54",
+   "movers_reasons_2026_09_24": "1c9b6fe"
+  },
+  "published": "sept26_propagation_2026_09_26/derived",
+  "role_only": {
+   "school_dilution_2026_09_24": "applies to the lower-response scenarios only: at this case's school response of 1 no school cost is left unfunded (decisions/2026-09-26-main-case-schools-full-cost.md, bullet 'School dilution'); never in a net under this case"
   }
  }
 }
