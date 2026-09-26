@@ -24,7 +24,6 @@ SEPT23_COMMIT = "96a5c3b"
 SEPT24_COMMIT = "ed1b623"
 SEPT26_COMMIT = "e62fccb"
 DERIVED = "infra/immigration-fiscal/debt_legacy_2026_09_23/derived"
-NEW_FILES = ("sept26_schools_bridge_2024.csv",)     # written by the default run, not yet committed
 
 
 def git(*args: str) -> bytes:
@@ -49,7 +48,6 @@ def test_old_case_rebuilds_committed_files(tmp_path, case, commit, count):
 
 def test_default_rebuilds_derived(tmp_path):
     names = [Path(p).name for p in git("ls-files", DERIVED).decode().split()]
-    names += [n for n in NEW_FILES if n not in names]
     rebuild(tmp_path)
     differ = [n for n in names if (tmp_path / n).read_bytes() != (HERE / "derived" / n).read_bytes()]
     assert not differ, differ
