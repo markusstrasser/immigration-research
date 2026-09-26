@@ -76,3 +76,10 @@ it into a taxpayer gain.
 Partly revises [2026-09-20-school-quality-unpriced](2026-09-20-school-quality-unpriced.md): the
 resource channel gains a conditional price if adopted; its withdrawal of the $0 and its peer-effect
 conclusions stand.
+
+## Updates
+
+- 2026-09-26: limited to school responses below 1 by
+  [2026-09-26-main-case-schools-full-cost](2026-09-26-main-case-schools-full-cost.md). The main case
+  now charges the full average cost, so no school spending follows no one; the price stays for the
+  one-year scenario and the low side.
