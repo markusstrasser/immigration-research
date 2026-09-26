@@ -11,6 +11,20 @@ const path = require("path");
 const HERE = __dirname;
 const FISCAL = path.join(HERE, "..");
 const EXPLORER = path.join(FISCAL, "assumption_explorer_2026_09_21");
+/* Lane files the pages read as they stood on the September 24 case. The research lanes move with each
+ * main case; the pages stay on the September 24 case until the operator asks ("we don't have to update
+ * all the uis", 2026-09-26), and the gates stop a build that would mix cases. */
+const REPO = path.join(HERE, "..", "..", "..");
+const PINS = {
+  presets: "d710a74",       // the explorer's presets before they read "responses.<path>" (September 26 payload)
+  distribution: "6e554a3",  // the who-pays lane's September 24 run; test_distribute.py pins the same commit
+  backcast: "da2b107",      // the back-cast of the September 24 case
+};
+function pinned(pin, file) {
+  if (!PINS[pin]) throw new Error("no pin " + pin);
+  return require("child_process").execFileSync("git", ["-C", HERE, "show", `${PINS[pin]}:${path.relative(REPO, file)}`],
+    { encoding: "utf8", maxBuffer: 1 << 26 });
+}
 const Engine = require(path.join(EXPLORER, "engine.js"));
 const model = JSON.parse(fs.readFileSync(path.join(EXPLORER, "derived", "model.json"), "utf8"));
 const scaling = JSON.parse(fs.readFileSync(path.join(EXPLORER, "derived", "scaling_check.json"), "utf8"));
@@ -39,9 +53,10 @@ const failures = () => failureCount;
 const near = (a, b, tol = 1e-6) => Math.abs(a - b) < tol;
 const round = (x, d = 4) => Math.round(x * 10 ** d) / 10 ** d;
 
-/* RFC 4180 reader: several lane files quote fields that contain commas. */
-function readCsv(file) {
-  const text = fs.readFileSync(file, "utf8");
+/* RFC 4180 reader: several lane files quote fields that contain commas. With a pin, the file as it
+ * stood at that pin's commit. */
+function readCsv(file, pin) {
+  const text = pin ? pinned(pin, file) : fs.readFileSync(file, "utf8");
   const rows = [];
   let row = [], field = "", quoted = false;
   for (let i = 0; i < text.length; i++) {
@@ -166,9 +181,11 @@ const outerSpecs = product({
   uc: UC_KEYS, justice: JUSTICE_KEYS, receipts: RECEIPTS,
 });
 
-/* Explorer presets as its page and test_engine.js load them: value_from read from scaling_check.json,
- * dotted paths set in place. The model carries the corrected data for presets that switch them on. */
-const presets = JSON.parse(fs.readFileSync(path.join(EXPLORER, "presets.json"), "utf8")).presets;
+/* Explorer presets as its page and test_engine.js loaded them at the pin: value_from read from
+ * scaling_check.json, dotted paths set in place. The model carries the corrected data for presets that
+ * switch them on. */
+const presetsFile = JSON.parse(pinned("presets", path.join(EXPLORER, "presets.json")));
+const presets = presetsFile.presets;
 const presetModel = Object.assign(Engine.clone(model), { corrected: MODELS.adopted });
 function presetState(id, extra) {
   const preset = presets.find((p) => p.id === id);
@@ -190,8 +207,8 @@ function presetCost(id, extra) {
 }
 
 module.exports = {
-  fs, path, HERE, FISCAL, EXPLORER, MAIN_CASE, Engine, model, scaling, corrections, MODELS, CORR,
+  fs, path, HERE, FISCAL, EXPLORER, PINS, pinned, MAIN_CASE, Engine, model, scaling, corrections, MODELS, CORR,
   gate, failures, near, round, readCsv, product, span, SHARES, GG, CBO_SCHOOLS, stateFor, cost, band, MAIN,
-  FIXED_COLLEGES, PROPORTIONAL, BEFORE, BY_SIDE, MAIN_DIMS, mainSpecs, presets, presetModel, presetState,
+  FIXED_COLLEGES, PROPORTIONAL, BEFORE, BY_SIDE, MAIN_DIMS, mainSpecs, presetsFile, presets, presetModel, presetState,
   presetCost, saneProduction, saneProductionDims, PROD_SPAN, JUSTICE_KEYS, UC_KEYS, RECEIPTS, outerSpecs,
 };

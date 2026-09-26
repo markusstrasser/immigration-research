@@ -1,10 +1,10 @@
 /* Prototype data: the number line of accounting conventions.
  *
- * Every preset of the assumption explorer (assumption_explorer_2026_09_21/presets.json), evaluated as
- * the explorer and test_engine.js load it: the cost to other US residents over the preset's
- * unresolved dimensions. The presets are conventions, never people; commentators appear only as the
- * explorer's text (presets.json "authors"), which says which convention comes closest to a framing
- * and why it is not the same thing. Beside them, from the figures page's matrix: the span of every
+ * Every preset of the assumption explorer (assumption_explorer_2026_09_21/presets.json, pinned at
+ * d710a74 by account.cjs), evaluated as the explorer and test_engine.js loaded it: the cost to other
+ * US residents over the preset's unresolved dimensions. The presets are conventions, never people;
+ * commentators appear only as the explorer's text (presets.json "authors"), which says which
+ * convention comes closest to a framing and why it is not the same thing. Beside them, from the figures page's matrix: the span of every
  * combination that lets some service budget grow, and of the frozen row.
  */
 "use strict";
@@ -67,8 +67,7 @@ function build(A) {
   gate("the staircase's tally is the uncorrected one", !near(stairTally[0], tally[0], 1e-6), stairTally.map((x) => x.toFixed(2)).join(" to "));
   const staircase = { tally: stairTally.map((x) => round(x, 2)) };
 
-  const authors = A.presets && JSON.parse(A.fs.readFileSync(A.path.join(A.EXPLORER, "presets.json"), "utf8")).authors
-    .map((a) => ({ name: a.name, closest: a.closest && a.closest.preset ? SHORT[a.closest.preset] : null }));
+  const authors = A.presetsFile.authors.map((a) => ({ name: a.name, closest: a.closest && a.closest.preset ? SHORT[a.closest.preset] : null }));
 
   rows.sort((a, b) => a.cost[0] - b.cost[0]);
   return { rows, matrix, staircase, authors };
