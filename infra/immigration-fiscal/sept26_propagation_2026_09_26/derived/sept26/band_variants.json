@@ -1,0 +1,52 @@
+{
+ "profile": "cbo_category_lag_non_school_full",
+ "specifications": 64,
+ "target_population": 40896574.152351856,
+ "care_constant_bn": -4.15,
+ "justice_changes_bn": {
+  "central": 5.943591614299166,
+  "raw_coding": 1.6701860606271026,
+  "grid_low": -1.0282244601027912,
+  "grid_high": 8.646071364387595,
+  "cbp_fixed": 2.8361015467610713
+ },
+ "case": "sept26",
+ "package": "main_case_2026_09_26/package.cjs",
+ "responses": {
+  "rule": "finite removal, r = [1 - (1 - s)^b] / s per component (finite_response_2026_09_26)",
+  "general_government": {
+   "low": 0.6000461560720316,
+   "high": 0.8503957662020014,
+   "elasticity": [
+    0.5939193086359557,
+    0.842
+   ],
+   "s": 0.12024478903339636
+  },
+  "school": {
+   "growth": 0.6521912444554522,
+   "decline": 0.6813221954785698,
+   "elasticity": [
+    0.63,
+    0.66
+   ],
+   "s": 0.17480600215120404
+  },
+  "row8_factor": 0.9491629658844111
+ },
+ "runs": {
+  "sept23": "uncorrected model at 0.59/0.84 and 0.63/0.66 (the September 23 case)",
+  "sept24": "main_case_2026_09_24 corrections at 0.59/0.84 and 0.63/0.66",
+  "sept26_uncorrected": "uncorrected model at the responses in the payload's meta.responses",
+  "sept26": "main_case_2026_09_26 corrections at the responses in the payload's meta.responses"
+ },
+ "sources_sha256": {
+  "main_case_2026_09_24/derived/corrections.json": "6413411e9b39f469e37bb50d81aa3ba1c5f2df2e09358b941dc20783b0328f80",
+  "main_case_2026_09_24/derived/summary.json": "3887e678c53e93f7f31bf48d5e56e005dcfd3b71f2d76b6dfcf62415489bfb75",
+  "main_case_2026_09_23/derived/main_case_bands.csv": "e368e1a3f41dad33b150ce329e89a4d3945285bac41ad842b0d97f2b586cdf95",
+  "cj_use_allocation_2026_09_23/derived/summary.json": "d2c05446bcbe3b7efeae244deb7031105cdd436eb418344fe8402d50abedeba5",
+  "main_case_2026_09_26/derived/corrections.json": "ad37c1f94cbc43496696a42d7714851bf64e6d4e723bfcfc18c8fd8ccf351f39",
+  "main_case_2026_09_26/derived/summary.json": "1c7d06562ed4598a0e57009fd92350d2bc3209d8d7542ff7364381faba24e1b8",
+  "main_case_2026_09_26/derived/main_case_bands.csv": "df7f043296b9599b9887070e3bb46f0b038e3396c597f3bb8045f3aedf88d404"
+ }
+}

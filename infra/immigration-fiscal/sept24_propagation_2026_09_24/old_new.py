@@ -7,6 +7,10 @@ table as Markdown for RESULT.md.
 
 Run from the repository root, after the lanes and real_costs_totals.py have run:
   OPENBLAS_NUM_THREADS=1 uv run --no-project python3 infra/immigration-fiscal/sept24_propagation_2026_09_24/old_new.py
+
+A record of the 2026-09-24 run: git HEAD and the working tree have since moved to later cases, so a
+rerun today does not reproduce derived/old_new.csv. Later cases have their own report,
+sept26_propagation_2026_09_26/old_new_lanes.py.
 """
 from __future__ import annotations
 
