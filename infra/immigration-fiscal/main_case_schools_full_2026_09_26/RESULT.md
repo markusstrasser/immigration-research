@@ -61,9 +61,20 @@ and St. Clair; ESTIMATES: scaling test]
 
 ## The school line
 
-At full cost the school line is $167.0bn at the low end and $143.4bn at the high end. The one-year
-response leaves $57.6bn / $46.3bn of it unfunded, and the low side $24.6bn / $22.4bn. At a response
-of 1 nothing is unfunded. The school-dilution figure
+At full cost the school line is $138.7bn at the case's low end and $172.5bn at its high end. The low end
+is specification 48 (shared allocation, school share of education 0.715); the high end is specification
+11 (personal, 0.865). Both fill-in methods agree.
+
+At a fixed specification the cost is linear in its school response, so a response r leaves (1 − r) of
+the line unfunded. At each scenario's own band ends, the part left unfunded is:
+- one-year scenario (specifications 56/7): $58.4bn at the low end and $45.4bn at the high end;
+- low side (56/3): $25.4bn and $21.6bn;
+- 0.836 taken as the response: $27.5bn and $23.4bn.
+
+The case's reported change from the one-year scenario, +$57.6bn / +$46.3bn, is a move of band ends. It
+includes the switch of end specification (−$0.8bn / +$0.8bn). At a response of 1 nothing is unfunded.
+
+The school-dilution figure
 ([decision 2026-09-25](../../../decisions/2026-09-25-school-dilution-priced-beside.md), $16.1bn beside
 the account) therefore no longer applies to the main case. It belongs to the lower-response scenarios.
 [DATA: `derived/summary.json` → `school`]
@@ -130,3 +141,14 @@ consumer lanes move to this case in the peer session (immigration-research-1c), 
 ```sh
 node infra/immigration-fiscal/main_case_schools_full_2026_09_26/main_case.cjs   # all gates must pass
 ```
+
+## Corrections
+
+- 2026-09-26, 23:50 JST. The first version (3922e68) reported the school line as $167.0bn / $143.4bn
+  and the unfunded parts as $57.6bn / $46.3bn (one year) and $24.6bn / $22.4bn (low side). Each was a
+  difference of band ends, and those ends come from different specifications: at response 1 the ends
+  are specifications 48/11, at response 0 they are 56/3. The figures are now read at fixed
+  specifications, and two gates guard the reading: per-specification costs must reproduce every rule's
+  band, and unfunded must equal (1 − r) × line at every specification. The peer session found the
+  defect; its per-specification check and the generation lane's school line (2441ac8, 138.73 / 172.47)
+  agree with the corrected figures. The case, the range and every other output are unchanged.
