@@ -1,48 +1,85 @@
 /* Step 5: the adopted main case run once per generation through the explorer engine.
  *
- * Reads the adopted package read-only (main_case_2026_09_24/package.cjs: its shift lists, stack factors,
- * specifications and cost function; requiring it rewrites that lane's vendored stack file byte for byte
- * when the CPS cache is unchanged) and this lane's derived inputs:
+ * --case picks the package lane (CASES below):
+ *   sept26_schools  the default since 2026-09-26: main_case_schools_full_2026_09_26 ($258.4885-291.9548bn),
+ *                 schools at their full average cost (response 1/1);
+ *   sept26        main_case_2026_09_26 ($200.9180-245.6949bn), schools at 0.6522/0.6813, the one-year
+ *                 scenario;
+ *   sept24        main_case_2026_09_24, reproducing the September 24 run byte for byte.
+ * Both later cases are the September 24 package with the finite-removal responses (engine state, carried by
+ * the package's MAIN_SPECS and gated against corrections.json meta.responses), audit row 8 at its finite
+ * factor (lane row8_finite, split as the lane splits row 8, by population) and the consumption key (lane
+ * consumption_key, from consumption_split.py); they share one payload and differ only in the school
+ * response. --out-dir DIR writes the outputs to DIR instead of derived/ (the inputs always come from derived/).
+ *
+ * Reads the case's package read-only (<lane>/package.cjs: its shift lists, stack factors,
+ * specifications and cost function; requiring it rewrites main_case_2026_09_24's vendored stack file byte
+ * for byte when the CPS cache is unchanged) and this lane's derived inputs:
  *   model_{G1,G2,G3plus}.json and model_b_*.json  the uncorrected model split by generation (build_models.py,
  *                                                production.py), convention (a) own generation, (b) minors
  *                                                in the parents' generation;
  *   stack_by_generation.json                     the tax-records stack by generation (stack_split.py);
  *   external_by_generation.json                  CBO, Treasury OTA and premium-credit re-keys (external_split.py);
- *   correction_rules.json                        every other lane's split (correction_rules.py).
+ *   correction_rules.json                        every other lane's split (correction_rules.py);
+ *   consumption_key_by_generation.json           the consumption key's saving and corridor parts by
+ *                                                generation (consumption_split.py; cases after sept24).
  * Each lane's union shift list is rebuilt exactly as packageShifts() builds it (gate), then split:
  *   - the stack by the generation payloads (exact);
  *   - ratio-type changes the package multiplies by the union's stack factor (CBO, medical ratios, schools,
  *     benefits) take each generation's own change times its own stack factor, the generation's cell after
  *     the stack over before; the small remainder from that non-additivity (reported) is spread by the
  *     generations' cells after the stack, so the three add to the package's figure exactly;
- *   - the long-term-care carve-out, premium credits, OTA, justice and the lane constants by their rules.
+ *   - the long-term-care carve-out, premium credits, OTA, justice and the lane constants by their rules;
+ *   - the consumption key's four receipt lines as the saving part times the generation's own stack factor
+ *     on the consumption key (or the union's phi) less the corridor's dollars, the remainder spread by the
+ *     cells after the stack as above; its cells with no main-case weight by each generation's share of the
+ *     change in the key share.
  * The generation edits are netted per cell as correctionsPayload() nets the union's (the two fill-in
  * methods averaged), applied with Engine.applyCorrections to each generation's model, and every
  * specification of MAIN_SPECS is evaluated with the package's cost().
  * Gates (exit 1): the lanes rebuild packageShifts for both methods; every split adds to its union shift
  * (1e-9 bn); the netted generation edits add to corrections.json cell by cell (1e-9 bn); the corrected
- * union reproduces the adopted main case ($200.8752-246.3184bn, 1e-4); for every specification and both
- * conventions the three generations' costs add to the union's (linearity, 1e-9 bn; the brief's gate is
- * $0.01bn), corrected and uncorrected. For step 6 (compare_ledger.py) it also splits each generation's cost at
+ * union reproduces the case's main case (1e-4) and the uncorrected union the uncorrected model at the
+ * case's responses (sept26_schools $265.5903-298.6797bn, sept26 $207.4046-253.1859bn, sept24 the September 23
+ * case); for every specification and both conventions the three generations' costs add to the union's
+ * (linearity, 1e-9 bn; the brief's gate is $0.01bn), corrected and uncorrected. Cases after sept24 also
+ * gate that corrections.json is the package's payload, that the specifications carry meta.responses, and
+ * that each generation's move from the September 24 case splits exactly into the general-government and
+ * school responses, the move of the band end to another specification, row 8 and the consumption key
+ * (change_from_sept24).
+ * For step 6 (compare_ledger.py) it also splits each generation's cost at
  * the band ends into direct fiscal lines, production term and corrections, plus the direct lines at the
  * package's proportional reference (summary.ledger_bridge_a).
- * Writes derived/generation_results.csv, derived/generation_summary.json, derived/generation_corrections.json.
- * Run from the repository root: node infra/immigration-fiscal/generation_account_2026_09_24/run_generations.cjs
+ * Writes generation_results.csv, generation_summary.json, generation_corrections.json. After sept24 the
+ * uncorrected model at the same specification is named `uncorrected_*` (under sept24 it was the
+ * September 23 case, `sept23_*`). Run from the repository root:
+ *   node infra/immigration-fiscal/generation_account_2026_09_24/run_generations.cjs [--case sept26_schools|sept26|sept24] [--out-dir DIR]
  */
 "use strict";
 const fs = require("fs");
 const path = require("path");
 
 const HERE = __dirname;
-const P = require(path.join(HERE, "..", "main_case_2026_09_24", "package.cjs"));
+const argv = process.argv.slice(2);
+const arg = (name, dflt) => { const i = argv.indexOf(name); return i < 0 ? dflt : argv[i + 1]; };
+// The case switch: each case's package lane. Repointing the lane is the default below. Every case after
+// sept24 is built on main_case_2026_09_26/package.cjs (row 8's finite factor, the consumption key) and
+// they differ only in their responses, which come from the package's MAIN_SPECS and meta.responses.
+const CASES = { sept26_schools: "main_case_schools_full_2026_09_26", sept26: "main_case_2026_09_26", sept24: "main_case_2026_09_24" };
+const CASE = arg("--case", "sept26_schools");
+if (!CASES[CASE]) throw new Error(`--case must be one of ${Object.keys(CASES).join(", ")}`);
+const ON26 = CASE !== "sept24";
+const MAIN = CASES[CASE];
+const P = require(path.join(HERE, "..", MAIN, "package.cjs"));
 const { Engine, MODEL, ALLOCS, SYN, SYN_LINES, MEDICAID, MAIN_SPECS, METHODS, STACKS, CENTRAL, LTSS_CENTRAL,
   both, scale, cost, expand, stackShifts, stackFactor, cboShifts, otaShifts, row1Shifts, medicalShifts,
   educationShifts, benefitShifts, justiceShifts, constantShifts, packageShifts, csvRows, readJson } = P;
 
 const GENS = ["G1", "G2", "G3plus"];
 const CONVS = ["a", "b"];
-const OUT = path.join(HERE, "derived");
-const load = (f) => JSON.parse(fs.readFileSync(path.join(OUT, f), "utf8"));
+const IN = path.join(HERE, "derived");
+const OUT = path.resolve(arg("--out-dir", IN));
+const load = (f) => JSON.parse(fs.readFileSync(path.join(IN, f), "utf8"));
 const fails = [];
 function gate(label, ok, detail) {
   console.log(`  ${ok ? "✓" : "✗"} ${label}${detail ? " — " + detail : ""}`);
@@ -56,27 +93,61 @@ const rules = load("correction_rules.json").rules;
 const keyMeta = load("generation_key_shares.json").meta;
 const models = Object.fromEntries(CONVS.map((c) => [c, Object.fromEntries(GENS.map((g) =>
   [g, load(`${c === "a" ? "model_" : "model_b_"}${g}.json`)]))]));
-const corrections = readJson("main_case_2026_09_24/derived/corrections.json");
-const adopted = readJson("main_case_2026_09_24/derived/summary.json").main_case;
+const corrections = readJson(`${MAIN}/derived/corrections.json`);
+const mainSummary = readJson(`${MAIN}/derived/summary.json`);
+const adopted = mainSummary.main_case;
+// The uncorrected model at the case's responses: under the September 24 responses, the September 23 case.
+const uncorrectedBand = ON26 ? mainSummary.uncorrected_at_adopted_responses : mainSummary.adopted_2026_09_23;
+const U = ON26 ? "uncorrected" : "sept23";  // name of the uncorrected model at the same specification
+console.log(`[case ${CASE}] ${MAIN}; outputs to ${path.relative(process.cwd(), OUT) || "."}`);
+if (ON26) {
+  gate(`corrections.json is the ${MAIN} package's payload`, JSON.stringify(P.correctionsPayload()) === JSON.stringify(corrections),
+    "deep-equal");
+  const r = corrections.meta.responses;
+  gate("the specifications carry the payload's responses (meta.responses)", MAIN_SPECS.every((s) =>
+    [r.general_government.low, r.general_government.high].includes(s.gg) && [r.school.growth, r.school.decline].includes(s.school)),
+    `general government ${r.general_government.low.toFixed(4)}/${r.general_government.high.toFixed(4)}, `
+    + `schools ${r.school.growth.toFixed(4)}/${r.school.decline.toFixed(4)}`);
+}
 
 // ---------------------------------------------------------------------------------------------------
 // The package's union shifts, lane by lane (packageShifts at CENTRAL).
 function lanes(p) {
   const O = CENTRAL;
   const edu = ["0.77", "0.82"].flatMap((w) => educationShifts(p, w, O.k).map((s) => ({ ...s, by: scale(s.by, both(0.5)) })));
-  return {
+  const out = {
     stack: stackShifts(p), cbo: cboShifts(O.year, p, { scaled: O.scaled }), ota: otaShifts("vs_audit_package_ssn_rule"),
     row1: row1Shifts(), medical: medicalShifts(p, O.medSpec, { mcbs: O.mcbs, ltss: O.ltss }), education: edu,
     benefits: benefitShifts(p, O.benefits), justice: justiceShifts(O.row7, O.booking), constants: constantShifts(O.constants),
   };
+  if (ON26) out.row8_finite = P.row8Shifts(O);
+  return out;
 }
-const LANES = ["stack", "cbo", "ota", "row1", "medical", "education", "benefits", "justice", "constants"];
+const LANES24 = ["stack", "cbo", "ota", "row1", "medical", "education", "benefits", "justice", "constants"];
+const SHIFT_LANES = LANES24.concat(ON26 ? ["row8_finite"] : []);
+// The consumption key enters as cell edits after the shifts (main_case_2026_09_26/package.cjs build).
+const LANES = SHIFT_LANES.concat(ON26 ? ["consumption_key"] : []);
 const unionLanes = {};
 for (const m of METHODS) {
   const p = STACKS[`row4+status_state_aware|central|${m}`];
   unionLanes[m] = lanes(p);
-  const flat = LANES.flatMap((l) => unionLanes[m][l]);
+  const flat = SHIFT_LANES.flatMap((l) => unionLanes[m][l]);
   gate(`lanes rebuild packageShifts (${m})`, JSON.stringify(flat) === JSON.stringify(packageShifts(p, "central", m, CENTRAL)));
+}
+// The consumption key's union edits (the same dollars in all eight receipt scenarios on its four lines)
+// and this lane's generation parts of them.
+const CK_LINES = ["general_sales_tax", "excise_selective_sales", "customs_duties", "personal_current_transfers"];
+const ckGen = ON26 ? load("consumption_key_by_generation.json") : null;
+const ckUnion = ON26 ? P.ckEdits(CENTRAL) : [];
+const ckByLine = {};
+if (ON26) {
+  let same = ckGen.meta.spec === CENTRAL.ck && Math.abs(ckGen.meta.phi - P.CK.meta.phi) < 1e-12;
+  for (const x of ckUnion.filter((y) => y.side === "receipt" && CK_LINES.includes(y.line))) {
+    const first = ckByLine[x.line] || (ckByLine[x.line] = x.by);
+    same = same && ALLOCS.every((a) => x.by[a] === first[a] && Math.abs(x.by[a] - ckGen.union.edit_bn[x.line]) < 1e-9);
+  }
+  gate(`the consumption key's split is of the package's spec ${CENTRAL.ck}: one edit per line in every scenario and allocation, `
+    + "equal to consumption_split.py's union edits", same && Object.keys(ckByLine).length === CK_LINES.length);
 }
 
 // ---------------------------------------------------------------------------------------------------
@@ -140,9 +211,11 @@ const ratioPart = dMed[MEDICAID] * (1 - ltssFrac);
 const LTSS_PARTS = ["NF", "ICF", "MHF", "HCBS", "remainder_key"];
 const CONST_IDS = ["row8", "row9", "row10", "small", "shelter", "care"];
 
-// options: {stackPayloads: {g: payload}, benefits: "central" | "alt_g1" | "alt_usborn", justice, row10}
+let ckResidual = 0;
+// options: {stackPayloads: {g: payload}, benefits: "central" | "alt_g1" | "alt_usborn", justice, row10,
+//   scaling: "own" | "union", ck: "exact" | "old_key_shares"}
 function genLanes(conv, m, opts) {
-  const o = Object.assign({ benefits: "central", justice: "arrest_like_custody", row10: "central", scaling: "own" }, opts || {});
+  const o = Object.assign({ benefits: "central", justice: "arrest_like_custody", row10: "central", scaling: "own", ck: "exact" }, opts || {});
   SCALING = o.scaling;
   const p = STACKS[`row4+status_state_aware|central|${m}`];
   const L = unionLanes[m];
@@ -233,13 +306,61 @@ function genLanes(conv, m, opts) {
     for (const a of ALLOCS) if (!near(total[a], s.by[a], 1e-9)) throw new Error("constants not rebuilt");
     push("constants", s, split);
   }
+  if (!ON26) return G;
+  // Audit row 8 at its finite-removal factor: as the lane splits row 8 (population).
+  for (const s of L.row8_finite) {
+    const r = rules.constants.row8;
+    push("row8_finite", s, Object.fromEntries(GENS.map((g) => [g, Object.fromEntries(ALLOCS.map((a) =>
+      [a, s.by[a] * r[conv][g][a] / r.union[a]]))])));
+  }
+  // The consumption key. On its four lines the saving part R_g takes the generation's own stack factor on
+  // the line (the cell after the stack over before, as scaledSplit) or the union's phi, the corridor part
+  // A_g stays in dollars, and the remainder goes by the cells after the stack. Its other cells (no
+  // main-case weight) go by the generation's share of the change in the adopted-basis key share. The
+  // brief's fallback, every cell by the generations' shares of the old key, is the sensitivity ck.
+  const cg = ckGen[conv];
+  const onLine = {};
+  const residTotal = both(0);
+  for (const line of CK_LINES) {
+    const out = zero();
+    for (const a of ALLOCS) {
+      if (o.ck === "old_key_shares") {
+        for (const g of GENS) out[g][a] = ckByLine[line][a] * cg[g].old_key_share;
+        continue;
+      }
+      const t1 = {}, part = {};
+      let T = 0, sum = 0;
+      for (const g of GENS) {
+        const t0 = cellTarget(gm[g], "receipt", line, null, a);
+        t1[g] = t0 + payloadDelta(gp[g], gm[g], "receipt", line, null, a);
+        T += t1[g];
+        const f = o.scaling === "union" ? ckGen.meta.phi : t1[g] / t0;
+        part[g] = f * cg[g].R_bn[line] - cg[g].A_bn[line];
+        sum += part[g];
+      }
+      const resid = ckByLine[line][a] - sum;
+      residTotal[a] += resid;
+      for (const g of GENS) out[g][a] = part[g] + resid * t1[g] / T;
+    }
+    onLine[line] = out;
+  }
+  for (const a of ALLOCS) ckResidual = Math.max(ckResidual, Math.abs(residTotal[a]));
+  for (const x of ckUnion) {
+    const w = (g) => (o.ck === "old_key_shares" ? cg[g].old_key_share : cg[g].change_fraction);
+    const split = x.side === "receipt" && CK_LINES.includes(x.line) ? onLine[x.line]
+      : Object.fromEntries(GENS.map((g) => [g, scale(x.by, both(w(g)))]));
+    checkSplit(x.by, split);
+    for (const g of GENS) G[g].consumption_key.push({ ...x, by: split[g], cell: true });
+  }
   return G;
 }
 
-// Netted edits per generation, as correctionsPayload() nets the union's.
+// Netted edits per generation, as correctionsPayload() nets the union's; cell edits (the consumption key)
+// are already expanded and follow the shifts, as in main_case_2026_09_26/package.cjs.
 function netEdits(shifts) {
   const net = new Map();
-  for (const x of expand(shifts)) {
+  const cells = shifts.filter((s) => s.cell).map(({ cell, ...x }) => x);
+  for (const x of expand(shifts.filter((s) => !s.cell)).concat(cells)) {
     const id = [x.side, x.line, x.side === "receipt" ? x.scenario : x.key].join("|");
     if (net.has(id)) {
       const n = net.get(id);
@@ -259,6 +380,8 @@ const GL = Object.fromEntries(CONVS.map((c) => [c, Object.fromEntries(METHODS.ma
 gate("every lane split adds to its union shift", worstSplit < 1e-9, `max |diff| ${e(worstSplit)} bn`);
 const mainResidual = worstResidual;
 console.log(`  · non-additive remainder of the stack-factor scaling, spread by cells: max ${mainResidual.toFixed(4)} bn`);
+const ckMainResidual = ckResidual;
+if (ON26) console.log(`  · consumption key: remainder of its own-factor scaling over its four lines, spread by cells: max ${ckMainResidual.toFixed(4)} bn`);
 const payloads = {};
 const cid = (x) => [x.side, x.line, x.side === "receipt" ? x.scenario : x.key].join("|");
 const unionEdits = new Map(corrections.edits.map((x) => [cid(x), x]));
@@ -286,6 +409,9 @@ const lo = uCost.indexOf(Math.min(...uCost)), hi = uCost.indexOf(Math.max(...uCo
 gate("the corrected union reproduces the adopted main case", near(uCost[lo], adopted[0], 1e-4) && near(uCost[hi], adopted[1], 1e-4),
   `${uCost[lo].toFixed(4)}–${uCost[hi].toFixed(4)}`);
 const lo0 = u0Cost.indexOf(Math.min(...u0Cost)), hi0 = u0Cost.indexOf(Math.max(...u0Cost));
+gate(`the uncorrected union reproduces ${ON26 ? "the uncorrected model at the adopted responses" : "the September 23 case"}`,
+  near(u0Cost[lo0], uncorrectedBand[0], 1e-4) && near(u0Cost[hi0], uncorrectedBand[1], 1e-4),
+  `${u0Cost[lo0].toFixed(4)}–${u0Cost[hi0].toFixed(4)}`);
 const res = {};
 for (const conv of CONVS) {
   res[conv] = {};
@@ -306,7 +432,9 @@ for (const conv of CONVS) {
 // Results.
 const pop = keyMeta.population, adults = keyMeta.adults_18plus;
 const rows = [];
-const summary = { adopted_main_case_bn: adopted, low_spec: MAIN_SPECS[lo], high_spec: MAIN_SPECS[hi], conventions: {} };
+const summary = Object.assign(ON26 ? { case: CASE, responses: corrections.meta.responses,
+  uncorrected_at_adopted_responses_bn: uncorrectedBand } : {},
+{ adopted_main_case_bn: adopted, low_spec: MAIN_SPECS[lo], high_spec: MAIN_SPECS[hi], conventions: {} });
 const perHead = (bn, n) => bn * 1e9 / n;
 for (const conv of CONVS) {
   const cs = {};
@@ -318,13 +446,13 @@ for (const conv of CONVS) {
       cost_bn: [r.corrected[lo], r.corrected[hi]], own_span_bn: own,
       per_member_usd: [perHead(r.corrected[lo], pop[conv][j]), perHead(r.corrected[hi], pop[conv][j])],
       per_adult_usd: [perHead(r.corrected[lo], adults[conv][j]), perHead(r.corrected[hi], adults[conv][j])],
-      sept23_cost_bn: [r.uncorrected[lo0], r.uncorrected[hi0]],
+      [`${U}_cost_bn`]: [r.uncorrected[lo0], r.uncorrected[hi0]],
       correction_bn: [r.corrected[lo] - r.uncorrected[lo], r.corrected[hi] - r.uncorrected[hi]],
     };
     cs[g] = out;
     for (const [end, i] of [["low", lo], ["high", hi]]) {
       rows.push({ convention: conv, generation: g, band_end: end, allocation: MAIN_SPECS[i].allocation,
-        cost_bn: r.corrected[i], sept23_same_spec_bn: r.uncorrected[i], correction_bn: r.corrected[i] - r.uncorrected[i],
+        cost_bn: r.corrected[i], [`${U}_same_spec_bn`]: r.uncorrected[i], correction_bn: r.corrected[i] - r.uncorrected[i],
         population: pop[conv][j], adults: adults[conv][j], per_member_usd: perHead(r.corrected[i], pop[conv][j]),
         per_adult_usd: perHead(r.corrected[i], adults[conv][j]) });
     }
@@ -429,6 +557,8 @@ const sens = {
   fill_ins_by_imputed_dollars: variantCosts({ stackPayloads: fillLiteral }),
   stack_scaling_by_union_factor: variantCosts({ scaling: "union" }),
 };
+// The brief's fallback for the consumption key: each line's edit by the generations' shares of the old key.
+if (ON26) sens.consumption_key_by_old_key_shares = variantCosts({ ck: "old_key_shares" });
 // Production attribution alternatives at the two normalizations (the band ends use cash or gdp at the reference).
 const prod = load("production_by_generation.json").reference;
 summary.production_alternatives = {};
@@ -445,6 +575,7 @@ for (const [end, i] of [["low", lo], ["high", hi]]) {
 }
 summary.sensitivities = sens;
 summary.stack_scaling_remainder_max_bn = mainResidual;
+if (ON26) summary.consumption_key_scaling_remainder_max_bn = ckMainResidual;
 
 // Bridge to the September 19 ledger (step 6), convention (a) as the ledger's groups: at each band end the
 // generation's cost split into the direct fiscal lines and the production term, and the direct lines once
@@ -488,7 +619,7 @@ for (const g of GENS) {
       proportional_fiscal_bn: -prop0.direct_fiscal_response_bn,
       adopted_responses_fiscal_bn: -main0.direct_fiscal_response_bn,
       production_bn: -production,
-      sept23_bn: -main0.welfare_bn,
+      [`${U}_bn`]: -main0.welfare_bn,
       corrections_bn: main0.welfare_bn - main1.welfare_bn,
       adopted_bn: -main1.welfare_bn,
     };
@@ -510,13 +641,98 @@ for (const conv of CONVS) {
   }));
 }
 
+// The move from the September 24 case (every case after sept24), exact at each band end:
+//   the responses acting on the September 24 corrected model at the September 24 end's specification
+//   (general government and schools, each with the specification otherwise held; they act on different
+//   lines, so they add), then the move of the band end to another specification at the new responses
+//   (zero when the end stays; schools at 1 flip the school share at both ends), then row 8 and the
+//   consumption key as cell edits at the new end. The engine is linear in cells (gate).
+if (ON26) {
+  console.log("[change from the September 24 case]");
+  const s24 = P.P24.MAIN_SPECS;  // the September 24 specifications; MAIN_SPECS replaces their responses value for value
+  const u24 = Engine.applyCorrections(MODEL, P.SEPT24);
+  const c24 = s24.map((s) => cost(u24, s));
+  const lo24 = c24.indexOf(Math.min(...c24)), hi24 = c24.indexOf(Math.max(...c24));
+  const band24 = readJson("main_case_2026_09_24/derived/summary.json").main_case;
+  gate("the September 24 corrections reproduce the September 24 case", near(c24[lo24], band24[0], 1e-4) && near(c24[hi24], band24[1], 1e-4),
+    `${c24[lo24].toFixed(4)}–${c24[hi24].toFixed(4)}`);
+  const ENDS = [["low", lo24, lo], ["high", hi24, hi]];
+  console.log(`  · band ends: specifications ${lo24} and ${hi24} on September 24, ${lo} and ${hi} in this case`);
+  const edits24 = new Map(P.SEPT24.edits.map((x) => [cid(x), x]));
+  const parts = (m, conv, g, i24, i, end) => {
+    const old = cost(m, s24[i24]);
+    const out = { sept24_bn: old, general_government_response_bn: cost(m, { ...s24[i24], gg: MAIN_SPECS[i24].gg }) - old,
+      school_response_bn: cost(m, { ...s24[i24], school: MAIN_SPECS[i24].school }) - old, responses_bn: cost(m, MAIN_SPECS[i24]) - old,
+      band_end_specification_bn: cost(m, MAIN_SPECS[i]) - cost(m, MAIN_SPECS[i24]) };
+    if (g) {
+      const lane = (l) => laneRows.find((r) => r.convention === conv && r.generation === g && r.lane === l)[`${end}_bn`];
+      Object.assign(out, { row8_bn: lane("row8_finite"), consumption_key_bn: lane("consumption_key") });
+    }
+    return out;
+  };
+  const sum = (x) => x.sept24_bn + x.responses_bn + x.band_end_specification_bn + x.row8_bn + x.consumption_key_bn;
+  // The school line's own split: what the case charges each generation for schools at the band end, the
+  // cost at the case's school response less the cost at a response of 0 (cost is linear in the response).
+  const schoolLine = (m, i) => cost(m, MAIN_SPECS[i]) - cost(m, { ...MAIN_SPECS[i], school: 0 });
+  const change = { union: {} };
+  let worstCells = 0, worstAdd = 0, worstParts = 0;
+  for (const conv of CONVS) {
+    change[conv] = {};
+    const m24 = {};
+    for (const g of GENS) m24[g] = Engine.applyCorrections(models[conv][g], payloadFor(GL[conv], g, LANES24));
+    const p24 = Object.fromEntries(GENS.map((g) => [g, new Map(payloadFor(GL[conv], g, LANES24).edits.map((x) => [cid(x), x]))]));
+    for (const id of new Set([...edits24.keys(), ...GENS.flatMap((g) => [...p24[g].keys()])])) {
+      for (const a of ALLOCS) {
+        const s = GENS.reduce((t, g) => t + (p24[g].has(id) ? p24[g].get(id).by[a] : 0), 0);
+        worstCells = Math.max(worstCells, Math.abs(s - (edits24.has(id) ? edits24.get(id).by[a] : 0)));
+      }
+    }
+    worstAdd = Math.max(worstAdd, ...s24.map((s, i) => Math.abs(GENS.reduce((t, g) => t + cost(m24[g], s), 0) - c24[i])));
+    for (const g of GENS) {
+      change[conv][g] = {};
+      for (const [end, i24, i] of ENDS) {
+        const x = parts(m24[g], conv, g, i24, i, end);
+        x.case_bn = res[conv][g].corrected[i];
+        x.change_bn = x.case_bn - x.sept24_bn;
+        x.school_line_at_case_bn = schoolLine(res[conv][g].model, i);
+        worstParts = Math.max(worstParts, Math.abs(sum(x) - x.case_bn),
+          Math.abs(x.responses_bn - x.general_government_response_bn - x.school_response_bn));
+        change[conv][g][end] = x;
+      }
+    }
+  }
+  for (const [end, i24, i] of ENDS) {
+    const x = parts(u24, null, null, i24, i, end);
+    x.row8_bn = GENS.reduce((t, g) => t + change.a[g][end].row8_bn, 0);
+    x.consumption_key_bn = GENS.reduce((t, g) => t + change.a[g][end].consumption_key_bn, 0);
+    x.case_bn = uCost[i];
+    x.change_bn = x.case_bn - x.sept24_bn;
+    x.school_line_at_case_bn = schoolLine(unionModel, i);
+    worstParts = Math.max(worstParts, Math.abs(sum(x) - x.case_bn),
+      Math.abs(x.responses_bn - x.general_government_response_bn - x.school_response_bn));
+    for (const conv of CONVS) {
+      for (const k of ["school_response_bn", "school_line_at_case_bn"]) {
+        worstParts = Math.max(worstParts, Math.abs(GENS.reduce((t, g) => t + change[conv][g][end][k], 0) - x[k]));
+      }
+    }
+    change.union[end] = x;
+  }
+  gate("the generations' September 24 payloads (nine lanes) add to the September 24 corrections.json cell by cell", worstCells < 1e-9,
+    `max |diff| ${e(worstCells)} bn`);
+  gate("their September 24 costs add to the September 24 case in all 64 specifications", worstAdd < 1e-9, `max |diff| ${e(worstAdd)} bn`);
+  gate("each move from September 24 is general government + schools + band end + row 8 + consumption key, and the "
+    + "generations' school parts add to the union's", worstParts < 1e-9, `max |diff| ${e(worstParts)} bn`);
+  summary.change_from_sept24 = Object.assign({ specifications: { low: { sept24: lo24, case: lo }, high: { sept24: hi24, case: hi } } }, change);
+}
+
 // ---------------------------------------------------------------------------------------------------
 const header = Object.keys(rows[0]);
+fs.mkdirSync(OUT, { recursive: true });
 fs.writeFileSync(path.join(OUT, "generation_results.csv"),
   [header.join(","), ...rows.map((r) => header.map((k) => (typeof r[k] === "number" ? r[k].toFixed(6) : r[k])).join(","))].join("\n") + "\n");
 fs.writeFileSync(path.join(OUT, "generation_summary.json"), JSON.stringify(summary, null, 1) + "\n");
 fs.writeFileSync(path.join(OUT, "generation_corrections.json"), JSON.stringify({
-  meta: { source: "generation_account_2026_09_24/run_generations.cjs", union: "main_case_2026_09_24/derived/corrections.json",
+  meta: { source: "generation_account_2026_09_24/run_generations.cjs", union: `${MAIN}/derived/corrections.json`,
     layout: "convention -> generation -> engine corrections payload (lines, edits); the three add to the union's edits" },
   payloads }) + "\n");
 
@@ -525,9 +741,19 @@ for (const conv of CONVS) {
   console.log(`  convention (${conv})`);
   for (const g of GENS) {
     const c = summary.conventions[conv][g];
-    console.log(`    ${g.padEnd(7)} ${c.cost_bn.map((x) => x.toFixed(2)).join(" – ")}  (Sept 23 case ${c.sept23_cost_bn.map((x) => x.toFixed(2)).join(" – ")}); `
+    console.log(`    ${g.padEnd(7)} ${c.cost_bn.map((x) => x.toFixed(2)).join(" – ")}  (${ON26 ? "uncorrected at the adopted responses" : "Sept 23 case"} `
+      + `${c[`${U}_cost_bn`].map((x) => x.toFixed(2)).join(" – ")}); `
       + `per member $${c.per_member_usd.map((x) => Math.round(x)).join("–$")}, per adult $${c.per_adult_usd.map((x) => Math.round(x)).join("–$")}`);
   }
+}
+if (ON26) {
+  console.log(`[change from the September 24 case to ${CASE}] $bn, low / high`);
+  const f = (x, k) => ["low", "high"].map((end) => (x[end][k] >= 0 ? "+" : "") + x[end][k].toFixed(2)).join(" / ");
+  const show = (label, x) => console.log(`    ${label.padEnd(12)} ${f(x, "sept24_bn")} -> ${f(x, "case_bn")}: `
+    + `general government ${f(x, "general_government_response_bn")}, schools ${f(x, "school_response_bn")}, `
+    + `band end ${f(x, "band_end_specification_bn")}, row 8 ${f(x, "row8_bn")}, consumption key ${f(x, "consumption_key_bn")}`);
+  show("union", summary.change_from_sept24.union);
+  for (const conv of CONVS) for (const g of GENS) show(`(${conv}) ${g}`, summary.change_from_sept24[conv][g]);
 }
 if (fails.length) {
   console.log(`✗ ${fails.length} gate(s) failed: ${fails.join("; ")}`);

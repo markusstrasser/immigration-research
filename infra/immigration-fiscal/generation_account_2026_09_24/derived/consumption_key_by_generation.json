@@ -1,0 +1,317 @@
+{
+ "meta": {
+  "source": "generation_account_2026_09_24/consumption_split.py",
+  "spec": "both_corridor_net_h2",
+  "payload": "consumption_key_2026_09_24/derived/payloads.json",
+  "composes_with": "main_case_2026_09_24/derived/corrections.json",
+  "adopted_in": "main_case_2026_09_26/package.cjs",
+  "rule": "edit_g = phi_g * R_g - A_g on the four consumption lines (R the saving part, scaled by the generation's own stack factor in run_generations.cjs; A the corridor's outflow, fixed in dollars); the other cells take the union's edit times change_fraction",
+  "phi": 0.9496943590430555,
+  "federal_excise_bn": 99.964,
+  "adj": 0.9970588686461329,
+  "national_key": {
+   "old": 12321315318792.13,
+   "saving": 10438321531818.455,
+   "both": 10228737054116.299
+  },
+  "lines": {
+   "general_sales_tax": {
+    "national_bn": 602.43,
+    "adopted_bn": 46.36530663736437
+   },
+   "excise_selective_sales": {
+    "national_bn": 371.262,
+    "adopted_bn": 29.774742716608305
+   },
+   "customs_duties": {
+    "national_bn": 83.587,
+    "adopted_bn": 6.4331737898417565
+   },
+   "personal_current_transfers": {
+    "national_bn": 141.065,
+    "adopted_bn": 10.856899524936598
+   }
+  }
+ },
+ "union": {
+  "key_share": {
+   "old": 0.08104060733729859,
+   "saving": 0.0889377186431963,
+   "both": 0.08598575001754469
+  },
+  "adopted_basis_share": {
+   "old": 0.07696380764165574,
+   "both": 0.08142000842884183
+  },
+  "fed_share_cbo": {
+   "old": 0.09369139409279738,
+   "both": 0.08506310916066352
+  },
+  "edit_bn": {
+   "general_sales_tax": 2.6845490404228087,
+   "excise_selective_sales": 0.36607893218650034,
+   "customs_duties": 0.37248045469984525,
+   "personal_current_transfers": 0.6286139640779744
+  },
+  "rpp_edit_bn": {
+   "personal": 1.3692782883639745,
+   "shared": 1.4130840047471347
+  },
+  "spending_edit_bn": {
+   "economic_affairs_services": {
+    "personal": 1.9938801110370512,
+    "shared": 1.9938801110370512
+   },
+   "housing_community_services": {
+    "personal": 0.06413540705253692,
+    "shared": 0.06413540705253692
+   },
+   "recreation_culture": {
+    "personal": 0.23970150642865184,
+    "shared": 0.23970150642865184
+   },
+   "agricultural_subsidies": {
+    "personal": 0.03632295564214449,
+    "shared": 0.03632295564214449
+   },
+   "housing_subsidies": {
+    "personal": 0.26586391707994356,
+    "shared": 0.26586391707994356
+   },
+   "transport_subsidies": {
+    "personal": 0.0017868088045532417,
+    "shared": 0.0017868088045532417
+   },
+   "other_subsidies": {
+    "personal": 0.11179687788127969,
+    "shared": 0.11179687788127969
+   }
+  }
+ },
+ "a": {
+  "G1": {
+   "R_bn": {
+    "general_sales_tax": 2.706357572210007,
+    "excise_selective_sales": 0.8880067309168314,
+    "customs_duties": 0.3755063831288579,
+    "personal_current_transfers": 0.6337206495755601
+   },
+   "A_bn": {
+    "general_sales_tax": 1.6622097037852142,
+    "excise_selective_sales": 0.748558617959798,
+    "customs_duties": 0.23063114803428567,
+    "personal_current_transfers": 0.3892229999576071
+   },
+   "edit_at_union_phi_bn": {
+    "general_sales_tax": 0.9080028160960885,
+    "excise_selective_sales": 0.09477636518418131,
+    "customs_duties": 0.1259851458078511,
+    "personal_current_transfers": 0.21261792615340325
+   },
+   "change_fraction": 0.3382329033632222,
+   "old_key_share": 0.2719634944769825,
+   "key_share": {
+    "old": 0.022040086765988714,
+    "saving": 0.025999759382359267,
+    "both": 0.023773313644505377
+   },
+   "adopted_basis_share": {
+    "old": 0.020931346074478982,
+    "both": 0.02243857980469841
+   },
+   "fed_share_cbo": {
+    "old": 0.026723854047067,
+    "both": 0.023484003648024884
+   },
+   "saving_part_at_union_phi_bn": 4.372004722978429,
+   "remittance_part_bn": -3.0306224697369046
+  },
+  "G2": {
+   "R_bn": {
+    "general_sales_tax": 1.891826096924276,
+    "excise_selective_sales": 0.46578113159853535,
+    "customs_duties": 0.26249036064540193,
+    "personal_current_transfers": 0.4429899712209269
+   },
+   "A_bn": {
+    "general_sales_tax": 1.0255172062809381,
+    "excise_selective_sales": 0.4618308633859635,
+    "customs_duties": 0.14229023574756366,
+    "personal_current_transfers": 0.24013509404249544
+   },
+   "edit_at_union_phi_bn": {
+    "general_sales_tax": 0.7711393662584876,
+    "excise_selective_sales": -0.01948115015814339,
+    "customs_duties": 0.10699537906055182,
+    "personal_current_transfers": 0.18056998273866437
+   },
+   "change_fraction": 0.2872509887895354,
+   "old_key_share": 0.32753087271763415,
+   "key_share": {
+    "old": 0.026543300846752514,
+    "saving": 0.029087627210313872,
+    "both": 0.027981325000004074
+   },
+   "adopted_basis_share": {
+    "old": 0.02520802308454362,
+    "both": 0.02648807116690753
+   },
+   "fed_share_cbo": {
+    "old": 0.03135659736004375,
+    "both": 0.02757447867990925
+   },
+   "saving_part_at_union_phi_bn": 2.908996977356521,
+   "remittance_part_bn": -1.8697733994569607
+  },
+  "G3plus": {
+   "R_bn": {
+    "general_sales_tax": 1.2570893983182667,
+    "excise_selective_sales": 0.3955455940520179,
+    "customs_duties": 0.17442081492825554,
+    "personal_current_transfers": 0.2943600351472641
+   },
+   "A_bn": {
+    "general_sales_tax": 0.18844385252571905,
+    "excise_selective_sales": 0.0848637025090426,
+    "customs_duties": 0.02614653370693239,
+    "personal_current_transfers": 0.04412600975472762
+   },
+   "edit_at_union_phi_bn": {
+    "general_sales_tax": 1.0054068578699675,
+    "excise_selective_sales": 0.2907837169064932,
+    "customs_duties": 0.13949993033012464,
+    "personal_current_transfers": 0.23542605515234466
+   },
+   "change_fraction": 0.3745161078472556,
+   "old_key_share": 0.40050563280538265,
+   "key_share": {
+    "old": 0.03245721972455731,
+    "saving": 0.03385033205052303,
+    "both": 0.03423111137303522
+   },
+   "adopted_basis_share": {
+    "old": 0.03082443848263307,
+    "both": 0.03249335745723588
+   },
+   "fed_share_cbo": {
+    "old": 0.03561094268568668,
+    "both": 0.03400462683272936
+   },
+   "saving_part_at_union_phi_bn": 2.0146966587553514,
+   "remittance_part_bn": -0.3435800984964217
+  }
+ },
+ "b": {
+  "G1": {
+   "R_bn": {
+    "general_sales_tax": 3.4623289009703884,
+    "excise_selective_sales": 1.0421255141862469,
+    "customs_duties": 0.4803972010779873,
+    "personal_current_transfers": 0.810738884875235
+   },
+   "A_bn": {
+    "general_sales_tax": 2.0752182609011376,
+    "excise_selective_sales": 0.9345526679381119,
+    "customs_duties": 0.28793597392882725,
+    "personal_current_transfers": 0.48593307765884663
+   },
+   "edit_at_union_phi_bn": {
+    "general_sales_tax": 1.2129359655021825,
+    "excise_selective_sales": 0.0551480542994105,
+    "customs_duties": 0.16829453803500977,
+    "personal_current_transfers": 0.28402106796402127
+   },
+   "change_fraction": 0.4518211242662727,
+   "old_key_share": 0.34391869711253376,
+   "key_share": {
+    "old": 0.027871380088652177,
+    "saving": 0.032943644090110594,
+    "both": 0.03017390592579384
+   },
+   "adopted_basis_share": {
+    "old": 0.02646929244893791,
+    "both": 0.028482698098560577
+   },
+   "fed_share_cbo": {
+    "old": 0.03484583460927479,
+    "both": 0.029760523913587272
+   },
+   "saving_part_at_union_phi_bn": 5.504039606227548,
+   "remittance_part_bn": -3.7836399804269236
+  },
+  "G2": {
+   "R_bn": {
+    "general_sales_tax": 1.2258946739705925,
+    "excise_selective_sales": 0.27289651161837153,
+    "customs_duties": 0.1700925553395082,
+    "personal_current_transfers": 0.2870554789496898
+   },
+   "A_bn": {
+    "general_sales_tax": 0.6860018745308246,
+    "excise_selective_sales": 0.3089337127242396,
+    "customs_duties": 0.0951825750484007,
+    "personal_current_transfers": 0.1606341889193612
+   },
+   "edit_at_union_phi_bn": {
+    "general_sales_tax": 0.47822338211997273,
+    "excise_selective_sales": -0.0497654350377445,
+    "customs_duties": 0.066353365272749,
+    "personal_current_transfers": 0.11198078017156177
+   },
+   "change_fraction": 0.17813918649069513,
+   "old_key_share": 0.3094100237887758,
+   "key_share": {
+    "old": 0.025074776244090397,
+    "saving": 0.026565374194531876,
+    "both": 0.02597096799987907
+   },
+   "adopted_basis_share": {
+    "old": 0.023813373553279466,
+    "both": 0.02460719753634799
+   },
+   "fed_share_cbo": {
+    "old": 0.028418738451688727,
+    "both": 0.025701602538107004
+   },
+   "saving_part_at_union_phi_bn": 1.8575444437493651,
+   "remittance_part_bn": -1.2507523512228262
+  },
+  "G3plus": {
+   "R_bn": {
+    "general_sales_tax": 1.1670494925115544,
+    "excise_selective_sales": 0.43431143076276013,
+    "customs_duties": 0.16192780228501785,
+    "personal_current_transfers": 0.2732762921188228
+   },
+   "A_bn": {
+    "general_sales_tax": 0.11495062715989698,
+    "excise_selective_sales": 0.051766803192446816,
+    "customs_duties": 0.015949368511552063,
+    "personal_current_transfers": 0.02691683717661947
+   },
+   "edit_at_union_phi_bn": {
+    "general_sales_tax": 0.9933896926023869,
+    "excise_selective_sales": 0.36069631267086505,
+    "customs_duties": 0.1378325518907686,
+    "personal_current_transfers": 0.2326121159088288
+   },
+   "change_fraction": 0.3700396892430415,
+   "old_key_share": 0.34667127909868983,
+   "key_share": {
+    "old": 0.028094451004555973,
+    "saving": 0.029428700358553682,
+    "both": 0.029840876091871773
+   },
+   "adopted_basis_share": {
+    "old": 0.026681141639438317,
+    "both": 0.028330112793933254
+   },
+   "fed_share_cbo": {
+    "old": 0.030426821031833907,
+    "both": 0.02960098270896921
+   },
+   "saving_part_at_union_phi_bn": 1.9341143091133648,
+   "remittance_part_bn": -0.20958363604051533
+  }
+ }
+}
