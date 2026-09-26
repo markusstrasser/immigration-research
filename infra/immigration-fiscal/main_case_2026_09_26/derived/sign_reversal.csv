@@ -1,0 +1,8 @@
+measure,sept24_low,sept24_high,sept26_low,sept26_high
+service_break_even_personal,0.0476,0.1292,0.0575,0.1387
+service_break_even_personal__corrections_only,0.0476,0.1292,0.0589,0.1401
+service_break_even_personal__responses_only,0.0476,0.1292,0.0462,0.1278
+service_break_even_shared,0.0777,0.1602,0.0876,0.1697
+service_break_even_shared__corrections_only,0.0777,0.1602,0.0890,0.1711
+service_break_even_shared__responses_only,0.0777,0.1602,0.0763,0.1589
+frozen_services_capital_fixed_welfare_bn_cbo_preferred,-25.3004,77.8437,-21.6362,81.5243

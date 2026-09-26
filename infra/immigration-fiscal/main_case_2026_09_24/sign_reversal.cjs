@@ -15,6 +15,7 @@
  * The package enters as the engine's corrections payload (package.cjs correctionsPayload(): the two
  * fill-in methods' shift lists averaged, the engine being linear).
  * Run from anywhere: node sign_reversal.cjs  ->  derived/sign_reversal.csv
+ * Imported (main_case_2026_09_26/sign_reversal.cjs), it exports the definition and runs nothing.
  */
 "use strict";
 const fs = require("fs");
@@ -51,49 +52,52 @@ function welfare(m, allocation, s, pair, production, share) {
   return Engine.evaluate(m, st).welfare_bn;
 }
 
-const baseModel = build([]);
-const pkgModel = Engine.applyCorrections(MODEL, correctionsPayload());
 
-function breakEven(m, allocation) {
+function breakEven(m, allocation, pairs = PAIRS) {
   const roots = { least: [], most: [] };
-  for (const pair of PAIRS) for (const prod of productions(1)) for (const share of SHARES) {
+  for (const pair of pairs) for (const prod of productions(1)) for (const share of SHARES) {
     const w0 = welfare(m, allocation, 0, pair, prod, share), w1 = welfare(m, allocation, 1, pair, prod, share);
     roots[pair.end].push(w0 / (w0 - w1));
   }
   return [Math.min(...roots.most), Math.max(...roots.least)];
 }
-function frozen(m) {
+function frozen(m, pairs = PAIRS) {
   const w = { least: [], most: [] };
-  for (const allocation of ["personal", "shared"]) for (const pair of PAIRS) for (const prod of productions(0)) for (const share of SHARES) {
+  for (const allocation of ["personal", "shared"]) for (const pair of pairs) for (const prod of productions(0)) for (const share of SHARES) {
     w[pair.end].push(welfare(m, allocation, 0, pair, prod, share));
   }
   return [Math.min(...w.most), Math.max(...w.least)];
 }
 
-console.log("[gates]");
-const mainCheck = P.band(pkgModel);
-const want = csvRows("main_case_2026_09_24/derived/main_case_bands.csv").find((r) => r.variant === "adopted");
-gate("the averaged package reproduces the adopted main case", near(mainCheck[0], +want.cost_low_bn, 1e-4)
-  && near(mainCheck[1], +want.cost_high_bn, 1e-4), `${mainCheck[0].toFixed(4)}–${mainCheck[1].toFixed(4)}`);
-const rows = [["measure", "sept23_low", "sept23_high", "sept24_low", "sept24_high"]];
-for (const allocation of ["personal", "shared"]) {
-  const b = breakEven(baseModel, allocation);
-  const pub = published.find((r) => r.measure === `service_break_even_${allocation}`);
-  gate(`break-even, ${allocation}: September 23 reproduces`, near(b[0], +pub.adopted_low, 1e-4) && near(b[1], +pub.adopted_high, 1e-4),
-    `${(100 * b[0]).toFixed(2)}–${(100 * b[1]).toFixed(2)}% vs ${(100 * pub.adopted_low).toFixed(2)}–${(100 * pub.adopted_high).toFixed(2)}%`);
-  const k = breakEven(pkgModel, allocation);
-  rows.push([`service_break_even_${allocation}`, b[0], b[1], k[0], k[1]]);
-}
-const f0 = frozen(baseModel), f1 = frozen(pkgModel);
-rows.push(["frozen_services_capital_fixed_welfare_bn_cbo_preferred", f0[0], f0[1], f1[0], f1[1]]);
-fs.writeFileSync(path.join(HERE, "derived", "sign_reversal.csv"),
-  rows.map((r) => r.map((x) => (typeof x === "number" ? x.toFixed(4) : x)).join(",")).join("\n") + "\n");
+module.exports = { PAIRS, SHARES, productions, welfare, breakEven, frozen };
+if (require.main === module) {
+  const baseModel = build([]);
+  const pkgModel = Engine.applyCorrections(MODEL, correctionsPayload());
+  console.log("[gates]");
+  const mainCheck = P.band(pkgModel);
+  const want = csvRows("main_case_2026_09_24/derived/main_case_bands.csv").find((r) => r.variant === "adopted");
+  gate("the averaged package reproduces the adopted main case", near(mainCheck[0], +want.cost_low_bn, 1e-4)
+    && near(mainCheck[1], +want.cost_high_bn, 1e-4), `${mainCheck[0].toFixed(4)}–${mainCheck[1].toFixed(4)}`);
+  const rows = [["measure", "sept23_low", "sept23_high", "sept24_low", "sept24_high"]];
+  for (const allocation of ["personal", "shared"]) {
+    const b = breakEven(baseModel, allocation);
+    const pub = published.find((r) => r.measure === `service_break_even_${allocation}`);
+    gate(`break-even, ${allocation}: September 23 reproduces`, near(b[0], +pub.adopted_low, 1e-4) && near(b[1], +pub.adopted_high, 1e-4),
+      `${(100 * b[0]).toFixed(2)}–${(100 * b[1]).toFixed(2)}% vs ${(100 * pub.adopted_low).toFixed(2)}–${(100 * pub.adopted_high).toFixed(2)}%`);
+    const k = breakEven(pkgModel, allocation);
+    rows.push([`service_break_even_${allocation}`, b[0], b[1], k[0], k[1]]);
+  }
+  const f0 = frozen(baseModel), f1 = frozen(pkgModel);
+  rows.push(["frozen_services_capital_fixed_welfare_bn_cbo_preferred", f0[0], f0[1], f1[0], f1[1]]);
+  fs.writeFileSync(path.join(HERE, "derived", "sign_reversal.csv"),
+    rows.map((r) => r.map((x) => (typeof x === "number" ? x.toFixed(4) : x)).join(",")).join("\n") + "\n");
 
-console.log("\n[result]");
-for (const r of rows.slice(1)) {
-  const pct = r[0].startsWith("service");
-  const fmt = (x) => (pct ? `${(100 * x).toFixed(1)}%` : x.toFixed(1));
-  console.log(`  ${r[0].padEnd(56)} Sept 23 ${fmt(r[1])} to ${fmt(r[2])}   Sept 24 ${fmt(r[3])} to ${fmt(r[4])}`);
+  console.log("\n[result]");
+  for (const r of rows.slice(1)) {
+    const pct = r[0].startsWith("service");
+    const fmt = (x) => (pct ? `${(100 * x).toFixed(1)}%` : x.toFixed(1));
+    console.log(`  ${r[0].padEnd(56)} Sept 23 ${fmt(r[1])} to ${fmt(r[2])}   Sept 24 ${fmt(r[3])} to ${fmt(r[4])}`);
+  }
+  if (gateState.failures) { console.error(`FAIL: ${gateState.failures} gate(s)`); process.exit(1); }
+  console.log("all gates passed");
 }
-if (gateState.failures) { console.error(`FAIL: ${gateState.failures} gate(s)`); process.exit(1); }
-console.log("all gates passed");
