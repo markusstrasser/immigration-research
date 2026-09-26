@@ -1386,10 +1386,13 @@ EDUCATION_LINES = {"education_services", "school_reprice", "college_rekey"}
 def response_bridge(prev: dict, run: dict, shares: dict, extras: dict, jf: dict, ucf: dict) -> pd.DataFrame:
     """The 2024 split from one later case to the next, main profile, each band end, when they differ by
     responses only (case_payload gates equal edits). Steps: the previous case; the new responses at the
-    previous case's corners (matched specifications); the range ends moving to the new case's corners;
-    the new case. Gates: at matched specifications only the education lines move (1e-9); the two steps
-    move the gap by the new lane's band change plus the change in P (1e-6); the steps add to the new
-    split (1e-9)."""
+    previous case's corners (matched specifications), as the move on the education lines and the move in
+    the constant line's federal part (its small corrections carry the corner's average federal share,
+    which the responses shift); the range ends moving to the new case's corners; the new case. Gates: the
+    previous corner reproduces the previous split (1e-9); at matched specifications only the education
+    lines move (1e-9), and their federal part is their move at the lane's school share (the education
+    share, or the high K-12 share under the high convention; 1e-9); the steps move the gap by the new
+    lane's band change plus the change in P (1e-6) and add to the new split (1e-9)."""
     change = run["main_summary"]["change"]
     old_r, new_r = prev["responses"], run["responses"]
     old_school = (old_r["school"]["growth"], old_r["school"]["decline"])
@@ -1411,15 +1414,31 @@ def response_bridge(prev: dict, run: dict, shares: dict, extras: dict, jf: dict,
             before = split_corner(dict(matched, model=MODEL), shares[conv], extras, conv, LAST, jf, ucf, end)
             parts = constant_parts(matched, conv, shares, extras, before.federal_bn.sum() / before.responsive_bn.sum())
             t = split_corner(matched, shares[conv], extras, conv, LAST, jf, ucf, end, parts)
+            t0 = split_corner(c0, shares[conv], extras, conv, LAST, jf, ucf, end, prev["parts"][(MAIN, end, conv)])
+            d = t0.merge(t, on=["side", "id"], how="outer", suffixes=("_0", "_1"), validate="one_to_one").fillna(0.0)
+            d = d.assign(gap=d.responsive_bn_1 - d.responsive_bn_0, fed=d.federal_bn_1 - d.federal_bn_0)
+            edu, rest = d[d.id.isin(EDUCATION_LINES)], d[~d.id.isin(EDUCATION_LINES)]
+            phi = shares[conv].loc[LAST]
+            school = phi["_school_high"] if conv == "high" else phi["education_services"]
+            want = sum(r.gap * (phi["education_services"] if r.id == "college_rekey" else school) for r in edu.itertuples())
+            if rest.gap.abs().max() > 1e-9 or abs(edu.fed.sum() - want) > 1e-9:
+                raise SystemExit(f"[BLOCKED] {end}/{conv}: the step on the education lines is not at their federal "
+                                 f"share ({edu.fed.sum():.9f} vs {want:.9f}) or another line's amount moved")
+            if set(rest.id[rest.fed.abs() > 1e-12]) - {"lane_constants"}:
+                raise SystemExit(f"[BLOCKED] {end}/{conv}: a federal part moved on "
+                                 f"{sorted(set(rest.id[rest.fed.abs() > 1e-12]))}")
             gm, fm = t.responsive_bn.sum(), t.federal_bn.sum()
             pick = lambda split: split[(split.profile == MAIN) & (split.end == end)  # noqa: E731
                                        & (split.convention == conv)].iloc[0]
             old, new = pick(prev["split"]), pick(run["split"])
+            if abs(t0.responsive_bn.sum() - old.fiscal_gap_bn) > 1e-9 or abs(t0.federal_bn.sum() - old.federal_bn) > 1e-9:
+                raise SystemExit(f"[BLOCKED] {end}/{conv}: the previous corner does not reproduce the previous split")
             if abs(new.fiscal_gap_bn - old.fiscal_gap_bn - (change[i] + p1 - p0)) > 1e-6:
                 raise SystemExit(f"[BLOCKED] {end}/{conv}: the gap moves {new.fiscal_gap_bn - old.fiscal_gap_bn:.6f}, "
                                  f"the lane's band change plus P {change[i] + p1 - p0:.6f}")
             steps = [("previous_case", old.fiscal_gap_bn, old.federal_bn),
-                     ("responses_at_matched_specifications", gm - old.fiscal_gap_bn, fm - old.federal_bn),
+                     ("school_response_on_education_lines", edu.gap.sum(), edu.fed.sum()),
+                     ("constant_line_federal_share", rest.gap.sum(), rest.fed.sum()),
                      ("range_ends_move", new.fiscal_gap_bn - gm, new.federal_bn - fm)]
             total = sum(s[1] for s in steps), sum(s[2] for s in steps)
             if abs(total[0] - new.fiscal_gap_bn) > 1e-9 or abs(total[1] - new.federal_bn) > 1e-9:

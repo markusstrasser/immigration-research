@@ -243,15 +243,16 @@ def debt():
             k = pick(v.csv(comp), convention="central", component=name)
             return None if k.empty else ends(k, "federal_bn")
         add(g, f"per-correction federal part, {name}, central convention", "$bn", comp, component)
-    for conv in ("central", "low", "high"):
-        def school_step(v, conv=conv):
-            if v.case == "sept24" or v.case == next(iter(LATER)):
-                return None
-            b = pick(v.csv(DEBT + f"derived/{v.case}_bridge_2024.csv"), convention=conv,
-                     step="responses_at_matched_specifications")
-            return ends(b, "federal_bn")
-        add(g, f"federal part of the school-response step at matched specifications, {conv} convention", "$bn",
-            DEBT + "derived/<case>_bridge_2024.csv", school_step)
+    for step, label in (("school_response_on_education_lines", "school response on the education lines"),
+                        ("constant_line_federal_share", "constant line's federal share")):
+        for conv in ("central", "low", "high"):
+            def school_step(v, conv=conv, step=step):
+                if v.case == "sept24" or v.case == next(iter(LATER)):
+                    return None
+                b = pick(v.csv(DEBT + f"derived/{v.case}_bridge_2024.csv"), convention=conv, step=step)
+                return ends(b, "federal_bn")
+            add(g, f"bridge from the previous case at matched specifications: federal part, {label}, "
+                   f"{conv} convention", "$bn", DEBT + "derived/<case>_bridge_2024.csv", school_step)
 
 
 def distribution():
