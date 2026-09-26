@@ -8,6 +8,25 @@ wins exactly". [MODEL / FRAMING-SENSITIVE] Three choices shape the result:
 
 Every figure below names the choice it uses.
 
+**Update, 2026-09-26 (schools at full average cost, $258.5–292.0bn; [decision](../decisions/2026-09-26-main-case-schools-full-cost.md)).** About one other
+US resident in five now comes out ahead. Pooled within households, 20.5% are ahead under tax-share
+financing and 19.0% under per-person cuts (below: 23.9% and 21.4%). Every choice at its least
+costly value gives 27%, and at its most costly 12%; with wages going to the earner alone, 18.4% and
+18.3%. The fiscal channel is $275.0bn at central values (below: $223.4bn), 83% of it state and
+local, and the social net on today's residents is −$314.4bn, or −$1,063 per other resident. Who
+comes out where does not change:
+- behind: 96–98% in California and Texas, 97–99% of US-born adults with a high-school education or
+  less, 88–91% of renters, and from 81% to over 99% of each decile in the bottom half;
+- most often ahead: the top decile (36% under tax shares, 57% under per-person cuts) and landlords
+  (43–47%). Landlords' pooled net under tax shares turns negative, −$227 a year (was +$114).
+
+School dilution leaves the nets, since nothing is left unfunded at a school response of 1, and the
+consumption key sits inside the fiscal channel. The one-year scenario stays within 0.1 point of
+the September 24 shares. The sections below keep the September 24 figures. [CALCULATION: ledger
+lane, `--case sept26_schools`, fa1bd3a; every old and new value in
+`infra/immigration-fiscal/sept26_propagation_2026_09_26/derived/old_new_ledger.csv` (643 rows),
+d27dcb1] [FRAMING-SENSITIVE]
+
 **Verdict:** About one other US resident in four or five comes out ahead of the Mexican-origin
 group's presence, and the rest come out behind.
 - Counting each household's gains and costs as shared among its members, 23.9% come out ahead if the
@@ -34,7 +53,8 @@ Who comes out where:
 ## 1. Object and frame
 
 The frame is the [complete annual account](immigration-complete-annual-account-2026-09-20.md) on the
-main case adopted September 24 ($200.9–246.3bn). It measures the effect of the 40.9m Mexican-origin
+main case adopted September 24 ($200.9–246.3bn). [2026-09-26, later: the lane now runs the schools case, $258.5–292.0bn;
+see the update at the top.] It measures the effect of the 40.9m Mexican-origin
 residents, all generations, on all other US residents in 2024. It compares the year with and without
 the group.
 
@@ -279,13 +299,15 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
 - **Pooling.** It treats each household as sharing everything and measures nothing about how families
   actually share. The truth for any family lies between the two counts.
 - **Kept out of every net.**
-  - The debt legacy's interest ($28.3–36.4bn) is a different object.
+  - The debt legacy's interest ($28.3–36.4bn) is a different object. [2026-09-26, later: $30.1–37.9bn on the
+    schools case.]
   - The owners' home-value gain is a stock ($1.3–2.9tn).
   - The consumer-price and care side views overlap the wage channel.
 - **The allocation base is not a total.** The lane's allocation base, the adopted fiscal band plus
   decision 4's victims figure, mixes crime footings. The published fiscal-plus-social range stays
   $248–304bn: $247.7–298.4bn on the equal footing and $253.4–304.0bn on the custody footing
-  ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md)).
+  ([real costs](immigration-real-fiscal-and-social-costs-2026-09-23.md)). [2026-09-26, later: on the
+  schools case $305–350bn: $305.3–344.0bn and $311.0–349.7bn (4e66adb).]
 
 - **Instrument.** The analysis ran through an LLM with known dispositions on charged topics
   ([caveat](../notes/llm-bias-caveat.md)). Every figure here comes from scripts the parent re-ran
@@ -324,3 +346,9 @@ role table (`derived/sister_other_counterfactuals.csv`) and in no net. Applying 
   [audit probe](../infra/immigration-fiscal/conceptual_audit_2026_09_25/README.md#distribution-probe),
   `_cache/sensitivity.csv`, which reproduces the published central exactly]
   [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).
+- 2026-09-26 (schools at full average cost, [decision](../decisions/2026-09-26-main-case-schools-full-cost.md)):
+  the ledger now runs the new main case (fa1bd3a). The pooled share ahead falls to 20.5% / 19.0%
+  (from 23.9% / 21.4%), the person count to 18.4% / 18.3%, and the fiscal channel rises to
+  $275.0bn at central values. School dilution leaves the nets, since nothing is left unfunded at a
+  response of 1. Who comes out ahead and who behind is unchanged. Concept affected: the share of
+  other residents ahead and the nets by cut (ladder 226).
