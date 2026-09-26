@@ -67,10 +67,37 @@ const low = central({ school_rule: "within_district" });
 const lowAsResponse = central({ school_rule: "within_district_as_response" });
 gate("the case rises with the school response (0.836 < 0.8489 < 1)", lowAsResponse[0] < low[0] && low[0] < C[0]
   && lowAsResponse[1] < low[1] && low[1] < C[1], `${f2(lowAsResponse)} < ${f2(low)} < ${f2(C)}`);
-// The school line at full cost, and the part of it each lower response leaves unfunded.
-const noSchools = P26.central({ school_response: [0, 0] });
-const schoolLine = [C[0] - noSchools[0], C[1] - noSchools[1]];
-const unfunded = { one_year: [C[0] - old[0], C[1] - old[1]], within_district: [C[0] - low[0], C[1] - low[1]],
+// The school line at full cost, and the part of it each lower response leaves unfunded, at fixed
+// specifications. A band end is a minimum or maximum over the specifications, so a difference of band
+// ends mixes two of them (the first version reported 167.00/143.42 that way; peer check 2026-09-26).
+// Each end is read at its own specification in each fill-in method and averaged, as central() does.
+// At a fixed specification the cost is linear in its school response: unfunded = (1 − r) × line.
+const models = METHODS.map((m) => P26.build(P26.packageShifts(STACKS[`row4+status_state_aware|central|${m}`], "central", m,
+  P26.CENTRAL), P26.CENTRAL));
+const costsOf = (specs) => models.map((model) => specs.map((s) => P.cost(model, s, P26.CENTRAL.profile)));
+const RULE_SPECS = Object.fromEntries(["average", "one_year", "within_district", "within_district_as_response"]
+  .map((rule) => [rule, P.specsFor({ school_rule: rule })]));
+const specCosts = Object.fromEntries(Object.entries(RULE_SPECS).map(([rule, specs]) => [rule, costsOf(specs)]));
+const zeroCosts = costsOf(P26.specsFor(Object.assign({}, P26.CENTRAL, { school_response: [0, 0] })));
+const ends = (cm) => cm.map((xs) => [xs.indexOf(Math.min(...xs)), xs.indexOf(Math.max(...xs))]);
+const atEnds = (cm, f) => [0, 1].map((e) => ends(cm).reduce((a, idx, m) => a + f(m, idx[e]), 0) / cm.length);
+const ruleBand = { average: C, one_year: old, within_district: low, within_district_as_response: lowAsResponse };
+gate("per-specification costs reproduce each rule's band", Object.entries(ruleBand).every(([rule, b]) => {
+  const own = atEnds(specCosts[rule], (m, i) => specCosts[rule][m][i]);
+  return near(own[0], b[0], 1e-9) && near(own[1], b[1], 1e-9);
+}), Object.keys(ruleBand).join(", "));
+const lineAt = (m, i) => specCosts.average[m][i] - zeroCosts[m][i];
+gate("at a fixed specification, unfunded = (1 − r) × school line", Object.entries(RULE_SPECS).every(([rule, specs]) =>
+  specCosts[rule].every((xs, m) => xs.every((x, i) =>
+    near(specCosts.average[m][i] - x, (1 - specs[i].school) * lineAt(m, i), 1e-9)))), "every rule, method and specification");
+const schoolLine = atEnds(specCosts.average, lineAt);
+const unfunded = Object.fromEntries(["one_year", "within_district", "within_district_as_response"].map((rule) =>
+  [rule, atEnds(specCosts[rule], (m, i) => specCosts.average[m][i] - specCosts[rule][m][i])]));
+const endSpecs = Object.fromEntries(Object.keys(ruleBand).map((rule) => [rule, ends(specCosts[rule]).map((idx, m) => ({
+  method: METHODS[m], low_end: Object.assign({ index: idx[0] }, RULE_SPECS[rule][idx[0]]),
+  high_end: Object.assign({ index: idx[1] }, RULE_SPECS[rule][idx[1]]) }))]));
+// How far each band end moves to full cost: the change the case reports, which includes the switch of end specification.
+const bandMove = { one_year: [C[0] - old[0], C[1] - old[1]], within_district: [C[0] - low[0], C[1] - low[1]],
   within_district_as_response: [C[0] - lowAsResponse[0], C[1] - lowAsResponse[1]] };
 
 // ---------------------------------------------------------------------------------------------------
@@ -183,7 +210,9 @@ const summary = {
   responses: responsesFor({}),
   school: {
     rules: P.RULES, one_year: old, within_district: low, within_district_as_response: lowAsResponse,
-    school_line_at_full_cost: schoolLine, unfunded_by_rule: unfunded,
+    school_line_at_full_cost: schoolLine, unfunded_by_rule: unfunded, band_move_to_full_cost: bandMove,
+    end_specifications: endSpecs,
+    note: "school_line_at_full_cost and unfunded_by_rule are [low end, high end], each read at its own band end's specification in each fill-in method and averaged; unfunded is at the lower rule's own ends. band_move_to_full_cost is the difference of band ends, which includes the switch of end specification.",
     sign_break_even: "unchanged: main_case_2026_09_26/derived/sign_reversal.csv (schools move with the common share)",
   },
   range: { low_end: rangeLowEnd, high_end: rangeHighEnd, overall: [rangeLowEnd[0], rangeHighEnd[1]], quadrature },
@@ -202,7 +231,8 @@ console.log(`  adopted 2026-09-26 (one year)   ${old[0].toFixed(2)}–${old[1].t
 console.log(`  schools at full average cost    ${C[0].toFixed(2)}–${C[1].toFixed(2)}  (change ${(C[0] - old[0]).toFixed(2)} / ${(C[1] - old[1]).toFixed(2)})`);
 console.log(`  low side, within district       ${low[0].toFixed(2)}–${low[1].toFixed(2)}  (0.836 as the response: ${lowAsResponse[0].toFixed(2)}–${lowAsResponse[1].toFixed(2)})`);
 console.log(`  school line at full cost        ${schoolLine[0].toFixed(2)} / ${schoolLine[1].toFixed(2)}`);
-for (const [k, v] of Object.entries(unfunded)) console.log(`    unfunded at ${k.padEnd(28)} ${v[0].toFixed(2)} / ${v[1].toFixed(2)}`);
+for (const [k, v] of Object.entries(unfunded)) console.log(`    unfunded at ${k.padEnd(28)} ${v[0].toFixed(2)} / ${v[1].toFixed(2)}  (band move ${bandMove[k][0].toFixed(2)} / ${bandMove[k][1].toFixed(2)})`);
+for (const [k, v] of Object.entries(endSpecs)) console.log(`    end specifications, ${k.padEnd(28)} ${v.map((x) => `${x.method} ${x.low_end.index}/${x.high_end.index}`).join(", ")}`);
 console.log(`  range, low end                  ${rangeLowEnd[0].toFixed(1)}–${rangeLowEnd[1].toFixed(1)}`);
 console.log(`  range, high end                 ${rangeHighEnd[0].toFixed(1)}–${rangeHighEnd[1].toFixed(1)}`);
 console.log(`  spreads in quadrature           ${quadrature[0].toFixed(1)}–${quadrature[1].toFixed(1)}`);

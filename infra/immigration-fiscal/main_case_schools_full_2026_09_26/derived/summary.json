@@ -63,10 +63,24 @@
    267.7526737053645
   ],
   "school_line_at_full_cost": [
-   167.00118112615354,
-   143.4196146130101
+   138.73066259473217,
+   172.47476041786732
   ],
   "unfunded_by_rule": {
+   "one_year": [
+    58.358582395188336,
+    45.44494729540071
+   ],
+   "within_district": [
+    25.355877798273227,
+    21.55004663556278
+   ],
+   "within_district_as_response": [
+    27.51744273322366,
+    23.38716801327945
+   ]
+  },
+  "band_move_to_full_cost": {
    "one_year": [
     57.57047856266058,
     46.25987890060932
@@ -80,6 +94,201 @@
     24.20209961848809
    ]
   },
+  "end_specifications": {
+   "average": [
+    {
+     "method": "b_hotdeck_union_matched",
+     "low_end": {
+      "index": 48,
+      "allocation": "shared",
+      "normalization": "gdp",
+      "share": 0.7153278156243373,
+      "school": 1,
+      "gg": 0.6000461560720316,
+      "uc": "uninsured_use_low",
+      "justice": "use"
+     },
+     "high_end": {
+      "index": 11,
+      "allocation": "personal",
+      "normalization": "cash",
+      "share": 0.8651608840454027,
+      "school": 1,
+      "gg": 0.8503957662020014,
+      "uc": "uninsured_use_high",
+      "justice": "use"
+     }
+    },
+    {
+     "method": "b_matched_over_pooled",
+     "low_end": {
+      "index": 48,
+      "allocation": "shared",
+      "normalization": "gdp",
+      "share": 0.7153278156243373,
+      "school": 1,
+      "gg": 0.6000461560720316,
+      "uc": "uninsured_use_low",
+      "justice": "use"
+     },
+     "high_end": {
+      "index": 11,
+      "allocation": "personal",
+      "normalization": "cash",
+      "share": 0.8651608840454027,
+      "school": 1,
+      "gg": 0.8503957662020014,
+      "uc": "uninsured_use_high",
+      "justice": "use"
+     }
+    }
+   ],
+   "one_year": [
+    {
+     "method": "b_hotdeck_union_matched",
+     "low_end": {
+      "index": 56,
+      "allocation": "shared",
+      "normalization": "gdp",
+      "share": 0.8651608840454027,
+      "school": 0.6521912444554522,
+      "gg": 0.6000461560720316,
+      "uc": "uninsured_use_low",
+      "justice": "use"
+     },
+     "high_end": {
+      "index": 7,
+      "allocation": "personal",
+      "normalization": "cash",
+      "share": 0.7153278156243373,
+      "school": 0.6813221954785698,
+      "gg": 0.8503957662020014,
+      "uc": "uninsured_use_high",
+      "justice": "use"
+     }
+    },
+    {
+     "method": "b_matched_over_pooled",
+     "low_end": {
+      "index": 56,
+      "allocation": "shared",
+      "normalization": "gdp",
+      "share": 0.8651608840454027,
+      "school": 0.6521912444554522,
+      "gg": 0.6000461560720316,
+      "uc": "uninsured_use_low",
+      "justice": "use"
+     },
+     "high_end": {
+      "index": 7,
+      "allocation": "personal",
+      "normalization": "cash",
+      "share": 0.7153278156243373,
+      "school": 0.6813221954785698,
+      "gg": 0.8503957662020014,
+      "uc": "uninsured_use_high",
+      "justice": "use"
+     }
+    }
+   ],
+   "within_district": [
+    {
+     "method": "b_hotdeck_union_matched",
+     "low_end": {
+      "index": 56,
+      "allocation": "shared",
+      "normalization": "gdp",
+      "share": 0.8651608840454027,
+      "school": 0.8488826160471613,
+      "gg": 0.6000461560720316,
+      "uc": "uninsured_use_low",
+      "justice": "use"
+     },
+     "high_end": {
+      "index": 3,
+      "allocation": "personal",
+      "normalization": "cash",
+      "share": 0.7153278156243373,
+      "school": 0.8488826160471613,
+      "gg": 0.8503957662020014,
+      "uc": "uninsured_use_high",
+      "justice": "use"
+     }
+    },
+    {
+     "method": "b_matched_over_pooled",
+     "low_end": {
+      "index": 56,
+      "allocation": "shared",
+      "normalization": "gdp",
+      "share": 0.8651608840454027,
+      "school": 0.8488826160471613,
+      "gg": 0.6000461560720316,
+      "uc": "uninsured_use_low",
+      "justice": "use"
+     },
+     "high_end": {
+      "index": 3,
+      "allocation": "personal",
+      "normalization": "cash",
+      "share": 0.7153278156243373,
+      "school": 0.8488826160471613,
+      "gg": 0.8503957662020014,
+      "uc": "uninsured_use_high",
+      "justice": "use"
+     }
+    }
+   ],
+   "within_district_as_response": [
+    {
+     "method": "b_hotdeck_union_matched",
+     "low_end": {
+      "index": 56,
+      "allocation": "shared",
+      "normalization": "gdp",
+      "share": 0.8651608840454027,
+      "school": 0.836,
+      "gg": 0.6000461560720316,
+      "uc": "uninsured_use_low",
+      "justice": "use"
+     },
+     "high_end": {
+      "index": 3,
+      "allocation": "personal",
+      "normalization": "cash",
+      "share": 0.7153278156243373,
+      "school": 0.836,
+      "gg": 0.8503957662020014,
+      "uc": "uninsured_use_high",
+      "justice": "use"
+     }
+    },
+    {
+     "method": "b_matched_over_pooled",
+     "low_end": {
+      "index": 56,
+      "allocation": "shared",
+      "normalization": "gdp",
+      "share": 0.8651608840454027,
+      "school": 0.836,
+      "gg": 0.6000461560720316,
+      "uc": "uninsured_use_low",
+      "justice": "use"
+     },
+     "high_end": {
+      "index": 3,
+      "allocation": "personal",
+      "normalization": "cash",
+      "share": 0.7153278156243373,
+      "school": 0.836,
+      "gg": 0.8503957662020014,
+      "uc": "uninsured_use_high",
+      "justice": "use"
+     }
+    }
+   ]
+  },
+  "note": "school_line_at_full_cost and unfunded_by_rule are [low end, high end], each read at its own band end's specification in each fill-in method and averaged; unfunded is at the lower rule's own ends. band_move_to_full_cost is the difference of band ends, which includes the switch of end specification.",
   "sign_break_even": "unchanged: main_case_2026_09_26/derived/sign_reversal.csv (schools move with the common share)"
  },
  "range": {
