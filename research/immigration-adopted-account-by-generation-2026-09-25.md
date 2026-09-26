@@ -1,6 +1,50 @@
 # The adopted account by generation
 
-**Verdict:** Split by generation, the adopted main case ($200.9–246.3bn a year) leaves all three
+**Verdict (2026-09-26, schools at full average cost):** Since the main case charges the group's
+pupils at their full average cost ($258.5–292.0bn a year; [decision](../decisions/2026-09-26-main-case-schools-full-cost.md),
+ladder 230), all three Mexican-origin generations remain net costs to other US residents. That holds
+at every one of its 64 specifications and under both ways of counting children.
+- **Counted with their parents** (NAS): the Mexico-born cost others $136–155bn a year ($11.6–13.3k per
+  adult), the second generation $66–68bn ($7.4–7.6k per adult) and the third-plus $55–71bn ($6.7–8.6k
+  per adult).
+- **Counted in their own generation:** $57–78bn, $105–117bn and $76–118bn.
+
+Schools at full cost add $62.1bn (low end) and $48.5bn (high end) over September 24. Where the
+children are counted decides who carries that cost: under the own-generation count the second and
+third-plus generations carry 76–91% of it, and under the NAS count the Mexico-born carry 43–44%.
+[CALCULATION: [generation lane](../infra/immigration-fiscal/generation_account_2026_09_24/RESULT.md),
+`run_generations.cjs` → `derived/generation_results.csv`, `generation_summary.json`
+`change_from_sept24`; commit 2441ac8] [FRAMING-SENSITIVE]
+
+| $bn a year, low / high end | (a) own generation | (b) minors with parents |
+|---|---|---|
+| G1, born in Mexico | 77.6 / 56.9 | 135.6 / 155.4 |
+| G2, US-born, a parent born in Mexico | 105.0 / 117.5 | 67.9 / 66.1 |
+| G3+, US-born of US-born parents | 75.8 / 117.6 | 55.0 / 70.5 |
+| All three (the main case) | 258.5 / 292.0 | 258.5 / 292.0 |
+
+The two columns are the main case's two ends.
+- The low end is the shared allocation with school share 0.715 (specification 48).
+- The high end is the personal allocation with share 0.865 (specification 11).
+
+At a school response of 1 the school-share bound flips, so these are not September 24's
+specifications 56 and 7. Priced at September 24's specifications first, the move from September 24
+splits into:
+- schools at 1: +$62.1bn / +$48.5bn;
+- general government: +$0.5bn;
+- row 8: −$0.1bn;
+- the consumption key: −$4.1bn;
+- the ends moving to 48 and 11: −$0.8bn / +$0.8bn.
+
+The one-year scenario charges CBO's year-to-year school response ($200.9–245.7bn). It stays within
+$1bn of the September 24 split for every generation:
+- (a): $63.9/53.0bn, $82.1/95.5bn and $55.0/97.2bn;
+- (b): $110.6/134.9bn, $50.6/53.2bn and $39.7/57.6bn.
+
+[CALCULATION: [propagation report](../infra/immigration-fiscal/sept26_propagation_2026_09_26/RESULT_generation.md);
+`run_generations.cjs --case sept26`] Sections 1–4 below are the September 24 record.
+
+**September 24 verdict (record; superseded 2026-09-26):** Split by generation, the adopted main case ($200.9–246.3bn a year) leaves all three
 Mexican-origin generations as net costs to other US residents. That holds at every one of the main
 case's 64 specifications and under both ways of counting children. Counted with their parents, as
 the National Academies count them, the Mexico-born cost others $110–135bn a year ($9.4–11.5k per
@@ -117,4 +161,14 @@ case itself, which moves every generation.
 
 ## Revisions
 
-None yet.
+- 2026-09-26 (schools at full average cost, [decision](../decisions/2026-09-26-main-case-schools-full-cost.md)):
+  the split now runs on the main case of $258.5–292.0bn (commit 2441ac8).
+  - Every generation's cost rises, and all three remain net costs at every specification.
+  - Counted with their parents, the Mexico-born cost $136–155bn, the second generation $66–68bn
+    and the third-plus $55–71bn.
+  - The earlier-in-the-day case (finite-removal responses and the consumption key) is the one-year
+    scenario, within $1bn of September 24 for every generation.
+  - Concept affected: the adopted account's split by generation (ladder 224). The ordering under
+    each convention is unchanged: under (b) the Mexico-born cost most, and under (a) the second
+    generation costs most at the low end and the third-plus at the high end, though only by $0.1bn
+    ($117.6bn against $117.5bn).

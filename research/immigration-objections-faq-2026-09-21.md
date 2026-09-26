@@ -200,7 +200,14 @@ total is $50–53bn and the third-plus's $40–59bn. So the second generation co
 first but is not a net contributor in this year's account; whether today's children pay more as
 adults needs a cohort account, which this one-year split is not. Counted in their own
 generation, children push the second generation's total to $82–95bn, above the first's
-$54–64bn. [CALCULATION: [adopted account by generation](immigration-adopted-account-by-generation-2026-09-25.md),
+$54–64bn. [2026-09-26, later: on the main case with schools at full average cost, every generation
+is still a net cost at all 64 specifications. Counted with their children, a second-generation
+adult costs other residents $7.4–7.6k a year, against $11.6–13.3k per Mexico-born adult and
+$6.7–8.6k per third-plus adult. The totals are $66–68bn and $55–71bn. In their own generation the
+second generation's total is $105–117bn, against the first's $57–78bn. Where children are counted
+decides who carries the added school cost. When they count with their parents, the Mexico-born
+carry 43–44% of it; when they count in their own generation, the second and third-plus
+generations carry 76–91%.] [CALCULATION: [adopted account by generation](immigration-adopted-account-by-generation-2026-09-25.md),
 ladder 224]
 
 ## 6. "Comparing with whites is cherry-picking."
@@ -487,6 +494,11 @@ prior, which is also where errors concentrate; surprising results need more chec
 they get more prominence.
 
 ## Revisions
+
+- 2026-09-26, late (generation split on the schools case): entry 5 quotes the split on the main
+  case with schools at full average cost. Every generation is still a net cost; the per-adult
+  figures rise to $7.4–7.6k (second generation), $11.6–13.3k (Mexico-born) and $6.7–8.6k
+  (third-plus). Concept affected: the account's split by generation (ladder 224).
 
 - 2026-09-26, late (two entries still on earlier cases): entry 2 gives general government at the
   adopted finite-removal responses, 0.60–0.85, adding $28.3–40.0bn instead of $27.8–39.5bn. Entry 16
