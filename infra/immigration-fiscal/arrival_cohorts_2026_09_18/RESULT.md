@@ -7,6 +7,12 @@ same survey went −0.429 → −0.552 → −0.473 → −0.418 → −0.309: d
 sustained recovery. But migrant entry cohorts gained 2.37 years of mean schooling between the 2000
 and 2023 surveys while INEGI puts the Mexican 15+ gain at 2.20 years between 2000 and 2020, so the
 absolute improvement is the Mexican schooling expansion, not a change in who migrates.
+[2026-09-26: the mean-years series dropped every no-schooling report, because its `YRS` map had no
+key for `EDUC` 0. Scored at zero, as INEGI's grado promedio scores it, entry cohorts gained 2.53
+years 2000→2023, and 2.67–2.69 once the ACS 2020 no-schooling reporting step is removed from the
+2023 point. That is 0.33–0.49 years more than INEGI's 2000→2020 gain, or 0.03–0.19 more than its
+trend carried to 2023. The rise is still mostly Mexico's, but the slopes are within half a year
+rather than equal; the census-to-ACS switch may carry part of the difference. See Revisions.]
 
 Model ID of the lane agent: `claude-opus-5[1m]`.
 
@@ -120,3 +126,25 @@ birth years. [DATA: `derived/origin_age_vs_acs.csv`] [CALCULATION: `origin_age.p
 US-side stayers; ACS secundaria coding can shrink migrant LTHS; 2019 vs 2020 census.
 Companion memo: [research/immigration-mexican-origin-age-attainment-2026-09-22.md](../../../research/immigration-mexican-origin-age-attainment-2026-09-22.md).
 Two-source stop: [notes/immigration-two-source-stop-2026-09-22.md](../../../notes/immigration-two-source-stop-2026-09-22.md).
+
+**2026-09-26 (no-schooling scoring; ACS 2020 break).** `origin_relative.py` mapped `EDUC` to years
+with no key for 0 ("N/A or no schooling"), and `dropna` removed those people from every survey's
+mean. At ages 25–54, `EDUC` 0 means no schooling, so the map now scores it at 0, as INEGI does, and
+the lane was rerun. The defect was found by [`acs_schooling_break_2026_09_26`](../acs_schooling_break_2026_09_26/RESULT.md) §4.
+- Entry-cohort means are now 6.47, 7.84, 8.64, 9.63 and 11.17 years in the 1980, 1990, 2000, 2010
+  and 2023 surveys; n is 11,972, 21,193, 46,781, 5,567 and 4,913.
+- The 2000→2023 gain is +2.53 years, against +2.37 before.
+- The 2023 point is the ACS, read after the 2020 step in no-schooling reports. Removing the step
+  puts 2023 at 11.31–11.33 and the gain at +2.67–2.69. On the old dropped scoring the same
+  correction gives +2.22–2.27.
+- Against INEGI's +2.20 for 2000→2020 the migrant gain is 0.33–0.49 years larger; against the
+  memo's extrapolation to 2023, about +2.5, it is 0.03–0.19 years larger.
+[DATA: `derived/origin_relative_mean_years.csv`] [CALCULATION: `acs_schooling_break_2026_09_26/fix_arrival_mean_years.py` →
+`derived/arrival_mean_years_corrected.csv`]
+
+"The absolute improvement is the Mexican schooling expansion" is weakened to "mostly". The
+comparison also crosses the switch from the 2000 census long form to the ACS, which the
+schooling-position lane finds reads 0.02–0.03 higher in rank. That lane (ladder 197) measures
+position directly and finds arrivals since 2010 ranking 0.02–0.07 above the 2000–09 arrivals, a
+modest rise consistent with the larger gain. The other scripts in this lane use banded schooling
+(`EDUC` ≤ 5, `SCHL` ≤ 15, BA+) and are not exposed.

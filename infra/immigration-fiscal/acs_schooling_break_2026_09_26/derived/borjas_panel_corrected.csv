@@ -1,0 +1,13 @@
+year,rule,method,phi_fb,phi_native,hsd_immigrant_share
+1980,as built (EDUC 0 dropped),none,0.00000,0.00000,0.09793
+1980,adjacent: EDUC 0 kept in HSD,none,1.00000,1.00000,0.10238
+1990,as built (EDUC 0 dropped),none,0.00000,0.00000,0.17599
+1990,adjacent: EDUC 0 kept in HSD,none,1.00000,1.00000,0.19533
+2000,as built (EDUC 0 dropped),none,0.00000,0.00000,0.29596
+2000,adjacent: EDUC 0 kept in HSD,none,1.00000,1.00000,0.32318
+2010,as built (EDUC 0 dropped),none,0.00000,0.00000,0.37876
+2010,adjacent: EDUC 0 kept in HSD,none,1.00000,1.00000,0.39269
+2023,as built (EDUC 0 dropped),none,0.00000,0.00000,0.40760
+2023,adjacent: EDUC 0 kept in HSD,none,1.00000,1.00000,0.44095
+2023,as built (EDUC 0 dropped),A,0.31032,0.32745,0.41899
+2023,as built (EDUC 0 dropped),B,0.24647,0.23325,0.41814

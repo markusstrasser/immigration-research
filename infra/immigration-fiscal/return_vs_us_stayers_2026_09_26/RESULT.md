@@ -217,7 +217,7 @@ alone, and the 2020 step below pulls the other way.
 **A 2020 step in ACS no-schooling reports.** Among Mexico-born adults aged 20–64, the share
 reporting no schooling completed jumps between the 2019 and 2020 ACS and stays at the new level.
 The grade-8-or-less total keeps its gradual decline [DATA: derived/acs_no_schooling_break.csv, from
-IPUMS extract 3]:
+IPUMS extract 3] [2026-09-26, later: in raw totals only; see Revisions]:
 
 | ACS year | No schooling | Grade 8 or less, incl. none | Grade 9 | No schooling, 1990–99 arrivals |
 |---|---:|---:|---:|---:|
@@ -354,3 +354,20 @@ On 2026-09-26 both runs of `compare.py` exited 0 and wrote byte-identical `deriv
 compared file by file). All 13 tests passed. The instrument here is arithmetic on public
 microdata. Which comparisons to foreground (all stayers or adult arrivals, per-person gaps or stock
 effect) is a framing choice, flagged above [FRAMING-SENSITIVE; see notes/llm-bias-caveat.md].
+
+## Revisions
+
+- 2026-09-26, later: [`acs_schooling_break_2026_09_26`](../acs_schooling_break_2026_09_26/RESULT.md) measured the step more closely. Three
+  changes follow for this lane.
+  - **The step is not new.** The dataset integrity audit first reported it on 2026-09-23 (F6 in
+    `dataset_integrity_2026_09_23/acs.md`).
+  - **The step reaches further than stated above.**
+    - Once the band's own decline is removed, "grade 8 or less" also steps up, by 0.8–1.0 points.
+    - Grade 9 supplies about a quarter of the lost reports.
+    - Natives aged 20–64 gain 0.20 points of "none".
+    - The Census Bureau documents over-reporting of "No schooling completed" in mail and
+      internet responses. It changed the question for the 2025 ACS, which will be a second break.
+  - **Spec (e) has a preferred alternative.** The flow-rate correction places the moved reports
+    where they came from, including grade 9. It puts the men's 2023 mean-years gap at about
+    −0.92, against spec (e)'s −1.00 and the main −0.75. This is scaled analytically, not re-run
+    in `compare.py`. The negative selection of male returnees stands.

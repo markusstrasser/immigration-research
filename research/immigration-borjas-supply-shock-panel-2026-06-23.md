@@ -18,9 +18,16 @@ The immigrant share of the U.S. working-age (18–64) workforce rose sharply fro
 | College+ | 8.0% | 10.6% | 14.6% | 17.3% | 19.7% |
 | *All workers* | 7.1% | 10.0% | 14.3% | 17.1% | 18.4% |
 
+[2026-09-26: the builder keeps `EDUC BETWEEN 1 AND 11`, so everyone with no schooling (`EDUC` 0) is
+dropped in every year. Kept, the < HS row reads 10.2%, 19.5%, 32.3%, 39.3% and 44.1%. The 2023 ACS
+also carries the 2020 no-schooling reporting step: on the builder's rule it moves 2023 from 40.8% to
+41.8–41.9%. The builder was not rebuilt, because it writes the context warehouse table that
+feeds the release; see `infra/immigration-fiscal/acs_schooling_break_2026_09_26/RESULT.md` §4 and the
+[decision](../decisions/2026-09-26-acs-no-schooling-break.md).]
+
 `[INFERENCE]` Two structural facts:
 1. **Low-skill concentration.** The <HS cell went from ~1-in-10 to ~2-in-5 foreign-born — a **~4.2× increase**, far larger than any other cell. This is the supply shock Borjas argued depresses native low-skill wages.
-2. **U-shape across education.** By 2023 the immigrant share is high at the bottom (40.8%) *and* elevated at the top (19.7% college+), lowest in the middle — the well-documented bimodal immigrant education distribution. High-skill immigration grew too, just less dramatically.
+2. **U-shape across education.** By 2023 the immigrant share is high at the bottom (40.8%; 44.1% with no-schooling records kept, 2026-09-26) *and* elevated at the top (19.7% college+), lowest in the middle — the well-documented bimodal immigrant education distribution. High-skill immigration grew too, just less dramatically.
 
 ## Validation `[SOURCE: panel vs Census published series]`
 

@@ -38,6 +38,11 @@ net cost of $109–677bn.
   95% −1.42 to +1.29. Scaled through their structural aggregate, that is −$24bn (−$518bn to +$470bn). Their wage
   gradient gives +$50bn (−$139bn to +$240bn), but it is a total local wage effect that overlaps
   scale and P.
+  [2026-09-26: 9.7 years is the 2024 ACS, read after the 2020 no-schooling reporting step. Without it
+  the Mexico-born 25+ mean is 9.90–9.96 years, the patent term +$37bn to +$57bn, still inside its
+  ±$490bn interval, and the wage gradient +$100bn to +$116bn. The arm stays not added. The central
+  +$13.9bn uses schooling bands and does not change; the average-schooling specs shrink about 3%.
+  [CALCULATION: `acs_schooling_break_2026_09_26/derived/scale_spillovers_corrected.csv`]]
 
 **Overlap ruling.** The account's production term P is a one-good CES with constant returns, so
 neither the scale gain nor the composition externality is inside P. The substitution part of

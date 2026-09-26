@@ -1,0 +1,11 @@
+label,sub,universe,phi,dest_mean_years,added_years_per_person
+group_other,usborn_hispanic,workers_yrs,0.34756,9.98296,0.05453
+group_other,usborn_hispanic,adults25_yrs,0.22077,9.49310,0.05337
+mexborn,mexico_born,workers_yrs,0.27104,7.05909,0.16518
+mexborn,mexico_born,adults25_yrs,0.24166,6.85472,0.18232
+other,non_hispanic_fb,workers_yrs,0.15713,8.43540,0.03622
+other,non_hispanic_fb,adults25_yrs,0.14839,7.57871,0.04880
+other,other_latam_hispanic_fb,workers_yrs,0.42961,6.33574,0.14488
+other,other_latam_hispanic_fb,adults25_yrs,0.37044,6.18606,0.15835
+other,usborn,workers_yrs,0.30771,9.90793,0.01807
+other,usborn,adults25_yrs,0.20994,9.26128,0.01863

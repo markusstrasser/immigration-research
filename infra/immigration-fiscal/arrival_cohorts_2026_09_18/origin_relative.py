@@ -25,7 +25,10 @@ import pandas as pd
 DB = str(_data_paths.microdata_duckdb_path(require_exists=False))
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "derived")
 
-YRS = {1: 2.5, 2: 6.5, 3: 9, 4: 10, 5: 11, 6: 12, 7: 13, 8: 14, 9: 15, 10: 16, 11: 18}
+# EDUC 0 is "N/A or no schooling"; at ages 25-54 it is no schooling, scored 0 as INEGI's grado
+# promedio scores it. Until 2026-09-26 it had no key and dropna removed it from every mean
+# (acs_schooling_break_2026_09_26/RESULT.md §4; RESULT.md Revisions).
+YRS = {0: 0.0, 1: 2.5, 2: 6.5, 3: 9, 4: 10, 5: 11, 6: 12, 7: 13, 8: 14, 9: 15, 10: 16, 11: 18}
 INEGI = {2000: 7.5, 2005: 8.1, 2010: 8.6, 2015: 9.2, 2020: 9.7}
 
 con = duckdb.connect(DB, read_only=True)
