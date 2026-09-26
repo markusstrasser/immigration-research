@@ -130,7 +130,11 @@ All five are recorded with their diagnostics in `derived/audit.json` under
 
 - **New legal permanent residents only**, admitted in 2003, interviewed on average four
   months after admission. Employment and earnings are measured at the very start of the US
-  career and say nothing about trajectories. Sponsored spouses, refugees and diversity winners
+  career and say nothing about trajectories. [2026-09-25: for new arrivals only. The weighted
+  share adjusting status inside the US is 0.5738, and admission says nothing about years already
+  spent there, so for most of the cohort the interview is not the start of a US career. Separate
+  new arrivals from adjustees before reading current pay against prior-year income. The
+  conditional coefficients are not thereby disproved. See Revisions.] Sponsored spouses, refugees and diversity winners
   enter with different rights to work, which the class-of-admission control absorbs only
   crudely.
 - **2003–2004 dollars**, PPP-adjusted to US current prices by the data producers. Not deflated
@@ -206,3 +210,10 @@ wrote derived/audit.json
 
 The analysis run is trimmed above for width; the full 26-anchor listing and all seven religion
 groups per statistic are in `derived/anchors.csv` and `derived/earnings_gaps.csv`.
+
+## Revisions
+
+- 2026-09-25 (weekly conceptual audit): "the very start of the US career" is narrowed to new
+  arrivals; 57.38% of the weighted cohort adjusted status inside the US. The employment and pay
+  estimates stand as descriptions of new green-card holders; their timing reading needs the
+  arrival/adjustee split. [Decision](../../../decisions/2026-09-25-weekly-audit-corrections.md).
