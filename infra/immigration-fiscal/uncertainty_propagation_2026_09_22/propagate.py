@@ -19,8 +19,11 @@ perfect-positive-correlation envelope alongside.
 
 --case sept24 (added 2026-09-24) also carries these sources to the adopted main
 cases of September 23 and 24, specification by specification, after
-`node sept24_specs.cjs` has written derived/sept24/ (see sept24_cases). The
-September 20 outputs are written as before and do not change.
+`node sept24_specs.cjs` has written derived/sept24/ (see adopted_cases). --case
+sept26 (the default since 2026-09-26) does the same for the main case adopted
+September 26 and the uncorrected model at its responses, from derived/sept26/
+(written by the same script). The September 20 outputs are written as before
+and do not change.
 """
 from __future__ import annotations
 
@@ -220,16 +223,25 @@ def account_inputs():
 
 
 # --------------------------------------------------------------------------
-# The adopted main cases of September 23 and 24 (--case sept24)
+# The adopted main cases of September 23, 24 and 26 (--case sept24, sept26)
 # --------------------------------------------------------------------------
 MAIN_PROFILE = "cbo_category_lag_non_school_full"
 MEDICAID = "medicaid_and_chip_other_medical"
+# Per --case: the main case's summary, then (row label, band in that summary, column tag in
+# derived/<case>/) for the uncorrected frame and for the adopted case.
+ADOPTED = {
+    "sept24": ("main_case_2026_09_24/derived/summary.json",
+               (("sept23", "adopted_2026_09_23", "sept23"), ("sept24", "main_case", "sept24"))),
+    "sept26": ("main_case_2026_09_26/derived/summary.json",
+               (("uncorrected_at_adopted_responses", "uncorrected_at_adopted_responses", "uncorrected"),
+                ("sept26", "main_case", "sept26"))),
+}
 
 
-def sept24_cases(ctx):
+def adopted_cases(ctx, name):
     """The lane's error sources on the adopted main cases, specification by specification.
 
-    Point costs are the engine's (sept24_specs.cjs -> derived/sept24/spec_costs.csv). The September 23
+    Point costs are the engine's (sept24_specs.cjs -> derived/<name>/spec_costs.csv). The September 23
     frame is the September 20 case plus general government at response 0.59 or 0.84 on the per-head
     key, and justice by use and uninsured use as fixed target shifts on the per-head and Medicaid keys
     (gate: every specification rebuilds to 1e-6). Its CPS error adds general government's per-head
@@ -240,28 +252,37 @@ def sept24_cases(ctx):
     lines carry no sampling error here; their spreads are the package's ranges. The benefit keys'
     published SE (admin_benefit_keys_2026_09_24/derived/package_se.csv) is added in separate columns;
     its overlap with the CPS error of the lines it re-keys is unknown.
+
+    September 26 (name "sept26"): the same, at the adopted responses (the payload's meta.responses,
+    written into spec_costs.csv beside the September 24 values they replace). Each specification finds
+    its September 20 case by the September 24 school response; general government enters at the new
+    response, and the education line's response rises by school share x (new - old school response),
+    in the rebuild (gate, 1e-6) and in the CPS and school-correction errors. The consumption key's
+    edits scale the CPS errors of the four receipt lines they touch by the same first-order ratio.
     """
-    sub = OUT / "sept24"
+    summary_file, ((base, base_band, base_tag), (adopted, adopted_band, adopted_tag)) = ADOPTED[name]
+    tag = {base: base_tag, adopted: adopted_tag}
+    sub = OUT / name
     specs = pd.read_csv(sub / "spec_costs.csv")
     lt = pd.read_csv(sub / "line_targets.csv").set_index(["side", "line", "key", "allocation"])
-    main24 = json.loads((FISCAL / "main_case_2026_09_24/derived/summary.json").read_text())
+    main = json.loads((FISCAL / summary_file).read_text())
     ben_se = pd.read_csv(FISCAL / "admin_benefit_keys_2026_09_24/derived/package_se.csv").query(
         "package == 'central'").set_index("allocation").se_bn
-    for case, want in (("sept23", main24["adopted_2026_09_23"]), ("sept24", main24["main_case"])):
-        got = [specs[f"cost_{case}_bn"].min(), specs[f"cost_{case}_bn"].max()]
+    for case, want in ((base, main[base_band]), (adopted, main[adopted_band])):
+        got = [specs[f"cost_{tag[case]}_bn"].min(), specs[f"cost_{tag[case]}_bn"].max()]
         if not np.allclose(got, want, rtol=0, atol=1e-9):
             raise ValueError(f"{case} specifications do not span the published band: {got} vs {want}")
 
     def target(case, side, line, key, a):
-        v = lt.loc[(side, line, key, a), f"target_{case}_bn"]
+        v = lt.loc[(side, line, key, a), f"target_{tag[case]}_bn"]
         return 0.0 if pd.isna(v) else float(v)
 
     def ratio(case, kind, line, a):
-        if case == "sept23":
+        if case == base:
             return 1.0
         side, key = ("receipt", "cbo_collective") if kind == "receipt" else ("spending", ctx["lane_keys"][(a, line)])
-        t0 = target("sept23", side, line, key, a)
-        return target("sept24", side, line, key, a) / t0 if t0 else 1.0
+        t0 = target(base, side, line, key, a)
+        return target(adopted, side, line, key, a) / t0 if t0 else 1.0
 
     sp, hf, skeys, ncell = ctx["spending"], ctx["hf"], ctx["skeys"], ctx["ncell"]
     gps = {}
@@ -274,7 +295,7 @@ def sept24_cases(ctx):
     for (a, kind, line), rep in list(ctx["line_reps"].items()) + [((a, "service", "general_public_services"), gps[a])
                                                                  for a in gps]:
         side, key = ("receipt", "cbo_collective") if kind == "receipt" else ("spending", ctx["lane_keys"][(a, line)])
-        if not np.isclose(rep[0], target("sept23", side, line, key, a), rtol=0, atol=1e-8):
+        if not np.isclose(rep[0], target(base, side, line, key, a), rtol=0, atol=1e-8):
             raise ValueError(f"{line}/{key}/{a} differs from the engine model at replicate 0")
 
     cases = ctx["cases"].query("profile == @MAIN_PROFILE")
@@ -283,31 +304,48 @@ def sept24_cases(ctx):
     rows = []
     for s in specs.itertuples():
         a = s.allocation
+        school_old = getattr(s, "school_sept24", s.school)      # the September 20 case's school response
         pick = ((cases.allocation == a) & (cases.normalization == s.normalization)
                 & np.isclose(cases.school_share, s.share, rtol=0, atol=1e-6)
-                & np.isclose(cases.school_response, s.school, rtol=0, atol=1e-12))
+                & np.isclose(cases.school_response, school_old, rtol=0, atol=1e-12))
         if pick.sum() != 1:
             raise ValueError(f"no unique September 20 case for {s}")
         c = cases[pick].iloc[0]
         ref = lane[(lane.case_id == c.case_id) & (lane.normalization == s.normalization)].iloc[0]
-        rebuilt = (-c.welfare_bn + s.gg * target("sept23", "spending", "general_public_services", "population", a)
-                   + target("sept23", "spending", "public_order_safety", s.justice, a)
-                   - target("sept23", "spending", "public_order_safety", "population", a)
-                   + target("sept23", "spending", MEDICAID, s.uc, a) - target("sept23", "spending", MEDICAID, "medicaid", a))
-        if not np.isclose(rebuilt, s.cost_sept23_bn, rtol=0, atol=1e-6):
-            raise ValueError(f"September 23 specification not rebuilt from case {c.case_id}: {rebuilt} vs {s.cost_sept23_bn}")
+        edu_key = ctx["lane_keys"][(a, "education_services")]
+        rebuilt = (-c.welfare_bn + s.gg * target(base, "spending", "general_public_services", "population", a)
+                   + target(base, "spending", "public_order_safety", s.justice, a)
+                   - target(base, "spending", "public_order_safety", "population", a)
+                   + target(base, "spending", MEDICAID, s.uc, a) - target(base, "spending", MEDICAID, "medicaid", a)
+                   + s.share * (s.school - school_old) * target(base, "spending", "education_services", edu_key, a))
+        base_cost = getattr(s, f"cost_{tag[base]}_bn")
+        if not np.isclose(rebuilt, base_cost, rtol=0, atol=1e-6):
+            raise ValueError(f"{base} specification not rebuilt from case {c.case_id}: {rebuilt} vs {base_cost}")
         cc = comps.query("case_id == @c.case_id")
         edu = cc.query("component in ['school_current', 'other_education_current']")
         resp = {r.component: r.response for r in cc.itertuples() if r.component in SERVICE_CATEGORIES}
         resp["education_services"] = edu.responsive_bn.sum() / edu.assigned_bn.sum()
+        resp20 = dict(resp)                                      # the September 20 case's responses
+        if s.school != school_old:
+            # The main profile's non-school education responds fully: r = share x school + (1 - share).
+            if not np.isclose(resp["education_services"], s.share * school_old + 1 - s.share, rtol=0, atol=1e-12):
+                raise ValueError(f"education response of case {c.case_id} is not share x school + (1 - share)")
+            resp["education_services"] += s.share * (s.school - school_old)
         se_pf = float(pf.loc[s.normalization].private_plus_receipts_se_sampling_bn)
-        for case in ("sept23", "sept24"):
+
+        def cps_dev(case, weights):
             dev = np.zeros(161)
             for (al, kind, line), rep in ctx["line_reps"].items():
                 if al == a:
-                    sign, weight = (1.0, 1.0) if kind == "receipt" else (-1.0, 1.0 if kind == "transfer" else resp[line])
+                    sign, weight = (1.0, 1.0) if kind == "receipt" else (-1.0, 1.0 if kind == "transfer" else weights[line])
                     dev += sign * weight * ratio(case, kind, line, a) * (rep - rep[0])
-            if case == "sept23" and not np.isclose(sdr(dev), ref.se_cps_fiscal_keys_bn, rtol=1e-9, atol=0):
+            return dev
+
+        for case in (base, adopted):
+            dev = cps_dev(case, resp)
+            # Positive control: on the uncorrected frame at the September 20 case's own responses the
+            # CPS, MEPS and school errors of that case reproduce.
+            if case == base and not np.isclose(sdr(cps_dev(case, resp20)), ref.se_cps_fiscal_keys_bn, rtol=1e-9, atol=0):
                 raise ValueError("CPS error of the September 20 case not reproduced")
             dev_gg = -s.gg * ratio(case, "service", "general_public_services", a) * (gps[a] - gps[a][0])
             se_cps = sdr(dev + dev_gg)
@@ -317,19 +355,23 @@ def sept24_cases(ctx):
                 for cat in cats.itertuples():
                     grad[p * ncell:(p + 1) * ncell] += -cat.national_bn * hf[0] * dshare * ratio(case, "transfer", cat.category, a)
             se_m = float(np.sqrt(grad @ ctx["cov"] @ grad))
-            edu_key = ctx["lane_keys"][(a, "education_services")]
-            edu_dollars = (resp["education_services"] * target(case, "spending", "education_services", edu_key, a)
-                           + s.share * s.school * target(case, "spending", "school_reprice", "k", a)
-                           + (1 - s.share) * target(case, "spending", "college_rekey", "k", a))
+
+            def education_dollars(r, school):
+                return (r["education_services"] * target(case, "spending", "education_services", edu_key, a)
+                        + s.share * school * target(case, "spending", "school_reprice", "k", a)
+                        + (1 - s.share) * target(case, "spending", "college_rekey", "k", a))
+            edu_dollars = education_dollars(resp, s.school)
             se_school = edu_dollars * school_rel[a]["indep"]
             se_school_up = edu_dollars * school_rel[a]["upper"]
-            if case == "sept23" and not (np.isclose(se_m, ref.se_meps_donor_bn, rtol=1e-9, atol=0)
-                                         and np.isclose(se_school, ref.se_school_correction_bn, rtol=1e-9, atol=0)):
+            if case == base and not (
+                    np.isclose(se_m, ref.se_meps_donor_bn, rtol=1e-9, atol=0)
+                    and np.isclose(education_dollars(resp20, school_old) * school_rel[a]["indep"],
+                                   ref.se_school_correction_bn, rtol=1e-9, atol=0)):
                 raise ValueError("MEPS or school error of the September 20 case not reproduced")
             indep = np.sqrt(se_cps ** 2 + se_pf ** 2 + se_school ** 2 + se_m ** 2)
             envelope = se_cps + se_pf + se_school_up + se_m
-            ben = float(ben_se[a]) if case == "sept24" else 0.0
-            cost = getattr(s, f"cost_{case}_bn")
+            ben = float(ben_se[a]) if case == adopted else 0.0
+            cost = getattr(s, f"cost_{tag[case]}_bn")
             rows.append(dict(case=case, allocation=a, normalization=s.normalization, school_share=s.share,
                              school_response=s.school, general_government_response=s.gg, medicaid_key=s.uc,
                              justice_key=s.justice, sept20_case_id=c.case_id, net_cost_bn=cost,
@@ -364,7 +406,8 @@ def sept24_cases(ctx):
 
 def main():
     ap = argparse.ArgumentParser(description="Propagate sampling and donor errors onto the account's cases.")
-    ap.add_argument("--case", choices=("sept20", "sept24"), default="sept20")
+    ap.add_argument("--case", choices=("sept26", "sept24", "sept20"), default="sept26",
+                    help="sept26 (default) or sept24: also the adopted case of that date; sept20: its files only")
     args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
     print("[stage] CPS load", flush=True)
@@ -548,10 +591,10 @@ def main():
     (OUT / "propagation_meta.json").write_text(json.dumps(meta, indent=2) + "\n")
     print(case_frame.groupby("profile")[["net_cost_bn", "se_cps_fiscal_keys_bn", "se_combined_independent_bn",
                                          "se_all_positive_correlation_bn"]].agg(["min", "max"]).to_string())
-    if args.case == "sept24":
-        sept24_cases(dict(line_reps=line_reps, lane_keys=lane_keys, meps_parts=meps_parts, cov=cov, ncell=ncell,
-                          hf=hf, spending=spending, skeys=skeys, cases=cases, comps=comps, pf=pf,
-                          school_rel=school_rel, case_frame=case_frame))
+    if args.case in ADOPTED:
+        adopted_cases(dict(line_reps=line_reps, lane_keys=lane_keys, meps_parts=meps_parts, cov=cov, ncell=ncell,
+                           hf=hf, spending=spending, skeys=skeys, cases=cases, comps=comps, pf=pf,
+                           school_rel=school_rel, case_frame=case_frame), args.case)
 
 
 if __name__ == "__main__":
