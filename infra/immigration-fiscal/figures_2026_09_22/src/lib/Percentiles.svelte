@@ -6,9 +6,9 @@
   const b = P.series.b
   const s = P.stats
 
-  // A word joiner keeps a sign on the same line as its amount.
-  const usd = (v) => (v < 0 ? '−' : '+') + '⁠$' + Math.abs(v).toLocaleString('en-US')
+  // A per-person amount as a magnitude with its direction in words.
   const abs = (v) => '$' + Math.abs(v).toLocaleString('en-US')
+  const gl = (v) => (v < 0 ? 'a loss of ' : v > 0 ? 'a gain of ' : '') + abs(v)
   const tens = (v) => '$' + (Math.round(Math.abs(v) / 10) * 10).toLocaleString('en-US')
   const fifty = (v) => '$' + (Math.round(Math.abs(v) / 50) * 50).toLocaleString('en-US')
   const aheadPct = 101 - s.bAheadFrom
@@ -26,7 +26,7 @@
   const hi = 3500
   const x = (p) => x0 + ((p - 1) / 99) * (x1 - x0)
   const y = (v) => top + ((hi - v) / (hi - lo)) * (bottom - top)
-  const k = (v) => (v === 0 ? '0' : (v < 0 ? '−' : '+') + '$' + Math.abs(v / 1000) + 'k')
+  const k = (v) => (v === 0 ? '0' : '$' + Math.abs(v / 1000) + 'k')
 
   const line = (vals, n) => vals.slice(0, n).map((v, i) => `${x(i + 1).toFixed(1)},${y(v).toFixed(1)}`).join(' ')
   const aOff = a[99] < lo
@@ -69,20 +69,21 @@
       <text class="faint it" x={x(100)} y={bottom + 16} text-anchor="end" font-size="11">richest</text>
       <text class="faint it" x={x(50.5)} y={bottom + 34} text-anchor="middle" font-size="11.5">100 equal groups, by income after taxes and benefits, adjusted for household size</text>
 
+      <!-- Two ways of paying are two series, not two signs: taxes in ink, service cuts grey and open. -->
       <!-- Paid through service cuts. -->
-      <polyline points={line(b, 100)} fill="none" stroke="#b8913a" stroke-width="1.4" />
+      <polyline points={line(b, 100)} fill="none" stroke="#8d897e" stroke-width="1.4" />
       {#each b as v, i}
-        <circle cx={x(i + 1)} cy={y(v)} r="1.9" fill="#ecdcae" stroke="#b8913a" stroke-width="0.7" />
+        <circle cx={x(i + 1)} cy={y(v)} r="1.9" fill="#fffff8" stroke="#8d897e" stroke-width="0.8" />
       {/each}
 
       <!-- Paid through taxes; the richest 1% runs off the bottom of the scale. -->
-      <polyline points={line(a, aOff ? 99 : 100)} fill="none" stroke="#57544c" stroke-width="1.4" />
+      <polyline points={line(a, aOff ? 99 : 100)} fill="none" stroke="#111" stroke-width="1.4" />
       {#each a.slice(0, aOff ? 99 : 100) as v, i}
-        <circle cx={x(i + 1)} cy={y(v)} r="1.9" fill="#e4e1d6" stroke="#57544c" stroke-width="0.7" />
+        <circle cx={x(i + 1)} cy={y(v)} r="1.9" fill="#111" />
       {/each}
       {#if aOff}
-        <line x1={x(99)} y1={y(a[98])} x2={x(100)} y2={bottom} stroke="#57544c" stroke-width="1.4" stroke-dasharray="3 2" />
-        <path d="M {x(100) - 4} {bottom - 7} L {x(100)} {bottom} L {x(100) + 4} {bottom - 7}" fill="none" stroke="#57544c" stroke-width="1.2" />
+        <line x1={x(99)} y1={y(a[98])} x2={x(100)} y2={bottom} stroke="#111" stroke-width="1.4" stroke-dasharray="3 2" />
+        <path d="M {x(100) - 4} {bottom - 7} L {x(100)} {bottom} L {x(100) + 4} {bottom - 7}" fill="none" stroke="#111" stroke-width="1.2" />
         <text class="muted num halo" x={x(100) - 8} y={bottom - 10} text-anchor="end" font-size="11.5">richest 1%: {abs(a[99])} worse off, below the chart</text>
       {/if}
       <text class="muted num halo" x={x(100) - 8} y={y(b[99]) + 4} text-anchor="end" font-size="11.5">richest 1%: {abs(b[99])} better off</text>
@@ -104,10 +105,11 @@
       (ladder 226).
     </p>
     <p>
-      The richest 1%, per person a year: their share of the government cost {usd(P.top1.a.fiscal)} through taxes or
-      {usd(P.top1.b.fiscal)} through service cuts; rent collected as landlords less rent paid {usd(P.top1.a.housing_net)};
-      wages {usd(P.top1.a.wages)}; crime {usd(P.top1.a.crime)}; hospital care {usd(P.top1.a.unreimbursed_care)}. They pay
-      27% of federal taxes on 18% of income (CBO, 2022), which is why the tax line drops at the end.
+      The richest 1%, per person a year: from the government cost, {gl(P.top1.a.fiscal)} through taxes or
+      {gl(P.top1.b.fiscal)} through service cuts; from rent collected as landlords less rent paid,
+      {gl(P.top1.a.housing_net)}; from wages, {gl(P.top1.a.wages)}; from crime, {gl(P.top1.a.crime)}; from
+      hospital care, {gl(P.top1.a.unreimbursed_care)}. They pay 27% of federal taxes on 18% of income
+      (CBO, 2022), which is why the tax line drops at the end.
     </p>
     <p>
       Some sources report only broad income bands (tax shares, crime surveys). Each band’s amount is spread

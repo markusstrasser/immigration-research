@@ -1,6 +1,5 @@
 <script>
   import { generations } from '../data.js'
-  import { dollars } from '../format.js'
 
   let alloc = $state('shared')
   let g = $derived(generations[alloc])
@@ -10,13 +9,17 @@
   const hi = 6000
   const top = 40
   const bottom = 262
-  const xs = [190, 400, 610]
+  const xs = [165, 375, 585]
   const y = (v) => top + ((hi - v) / (hi - lo)) * (bottom - top)
+  // A gap against whites as a magnitude and a word; zero is "same as whites".
+  const usd = (v) => '$' + Math.abs(Math.round(v)).toLocaleString('en-US')
+  const side = (v) => (v < 0 ? 'below' : v > 0 ? 'above' : 'level')
 
+  // Series, not signs: the net is the ink line, its two parts grey, told apart by label and dash.
   const series = $derived([
-    { name: 'Taxes paid', stroke: '#5c97d2', fill: '#bbd4ee', values: g.receipts },
-    { name: 'Lower benefit use', stroke: '#b8913a', fill: '#ecdcae', values: g.spending },
-    { name: 'Net', stroke: '#ca7a5e', fill: '#f2cabc', values: g.net, wide: true },
+    { name: 'Taxes paid', stroke: '#8d897e', fill: '#fffff8', values: g.receipts },
+    { name: 'Lower benefit use', stroke: '#8d897e', fill: '#fffff8', dash: '4 3', values: g.spending },
+    { name: 'Net', stroke: '#111', fill: '#111', values: g.net, wide: true },
   ])
 
   function place(list, idx) {
@@ -29,8 +32,16 @@
     return items
   }
   let left = $derived(place(series, 0))
-  let middle = $derived(place(series, 1))
   let right = $derived(place(series, 2))
+  // Middle column: each label sits off the lines that pass through its dot. The benefit gap
+  // (always the top line) above and right, the net above and left, taxes below and right.
+  const midSpot = { 'Lower benefit use': [10, -7, 'start'], Net: [-10, -9, 'end'], 'Taxes paid': [10, 16, 'start'] }
+  let middle = $derived(
+    series.map((s) => {
+      const [dx, dy, anchor] = midSpot[s.name]
+      return { v: s.values[1], x: xs[1] + dx, y: y(s.values[1]) + dy, anchor }
+    }),
+  )
 </script>
 
 <section class="fig" id="generations">
@@ -61,19 +72,20 @@
           fill="none"
           stroke={s.stroke}
           stroke-width={s.wide ? 2.4 : 1.3}
+          stroke-dasharray={s.dash}
         />
         {#each s.values as v, i}
-          <circle cx={xs[i]} cy={y(v)} r={s.wide ? 5 : 4} fill={s.fill} stroke={s.stroke} />
+          <circle cx={xs[i]} cy={y(v)} r={s.wide ? 5 : 4} fill={s.fill} stroke={s.stroke} stroke-width={s.wide ? 1 : 1.2} />
         {/each}
       {/each}
       {#each middle as lab}
-        <text class="num halo" x={xs[1] + 10} y={lab.y + 4} font-size="11.5">{dollars(lab.v)}</text>
+        <text class="halo" x={lab.x} y={lab.y} text-anchor={lab.anchor} font-size="11.5"><tspan class="num">{usd(lab.v)}</tspan>&nbsp;{side(lab.v)}</text>
       {/each}
       {#each left as lab}
-        <text class="num" x={xs[0] - 12} y={lab.y + 4} text-anchor="end" font-size="12">{dollars(lab.v)}</text>
+        <text x={xs[0] - 12} y={lab.y + 4} text-anchor="end" font-size="12"><tspan class="num">{usd(lab.v)}</tspan>&nbsp;{side(lab.v)}</text>
       {/each}
       {#each right as lab}
-        <text x={xs[2] + 12} y={lab.y + 4} font-size="12"><tspan class="num">{dollars(lab.v)}</tspan> <tspan class="muted" font-style="italic">{lab.name.toLowerCase()}</tspan></text>
+        <text x={xs[2] + 12} y={lab.y + 4} font-size="12"><tspan class="muted" font-style="italic">{lab.name.toLowerCase()}</tspan>&nbsp; <tspan class="num">{usd(lab.v)}</tspan>&nbsp;{side(lab.v)}</text>
       {/each}
     </svg>
     </div>
@@ -89,8 +101,8 @@
       national total. On the shared allocation the first and second generations are $82 apart.
     </p>
     <p>
-      Lifetime values at 3%, from birth: second generation −$280k, third-plus −$225k, whites −$96k
-      (FAQ 5).
+      Lifetime values at 3%, from birth: over a life the second generation receives $280k more than it
+      pays in, third-plus $225k and whites $96k (FAQ 5).
     </p>
     <p>age_normalizations.csv, structure white_ages_today.</p>
   </aside>

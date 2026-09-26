@@ -14,20 +14,25 @@
   const gainSpan = [-Math.max(...frozen), -Math.min(...frozen)].map(Math.round)
   const cellCount = m.rows.filter((r) => !r.frozen).length * columns.length
 
-  // Pastel heat: paper to terracotta for cost, paper to blue for gain.
+  // Pastel heat, hue for the sign: paper to terracotta where everyone else is worse off, paper to
+  // blue where better off, ochre where a cell's own range crosses zero.
   const mix = (a, b, t) => a.map((v, i) => Math.round(v + (b[i] - v) * t))
   const hex = (c) => '#' + c.map((v) => v.toString(16).padStart(2, '0')).join('')
   const COST = [[252, 238, 231], [242, 202, 188], [229, 160, 134]]
   const GAIN = [[232, 240, 249], [187, 212, 238]]
-  function heat(v) {
+  function heat(r) {
+    if (r[0] < 0 && r[1] > 0) return '#ecdcae'
+    const v = mid(r)
     if (v < 0) return hex(mix(GAIN[0], GAIN[1], Math.min(1, -v / 100)))
     const t = Math.min(1, v / 360)
     return t < 0.5 ? hex(mix(COST[0], COST[1], t / 0.5)) : hex(mix(COST[1], COST[2], (t - 0.5) / 0.5))
   }
+  // Magnitudes only, smaller first: the cell's colour and the legend carry the direction.
   const fmt = (r) => {
     const [a, b] = r.map(Math.round)
-    const f = (n) => (n < 0 ? '−' + Math.abs(n) : String(n))
-    return a < 0 || b < 0 ? `${f(a)} to ${f(b)}` : `${a}–${b}`
+    if (a < 0 && b > 0) return `${-a} better to ${b} worse`
+    const [p, q] = [Math.abs(a), Math.abs(b)].sort((m, n) => m - n)
+    return p === q ? String(p) : `${p}–${q}`
   }
   const level = (v) => (v === 'cbo' ? '63–66%' : v === 1 ? 'full' : 'fixed')
   const colLabel = (g) => (g === 0 ? '0' : g === 1 ? '1' : g.toFixed(2))
@@ -36,13 +41,13 @@
 <section class="fig" id="matrix">
   <div class="body">
     <p class="kicker">Complete account · every combination</p>
-    <h2>Every combination that charges for services is a cost</h2>
+    <h2>Every combination that charges for services leaves everyone else worse off</h2>
     <p class="lede">
       Four budget choices on the left, general administration across the top. All
-      <span class="num">{cellCount}</span> combinations cost other residents
-      <span class="num">${costSpan[0]}–{costSpan[1]}bn</span> a year, whatever the tax-incidence rule, the
-      justice and hospital-care keys or the production model. Only freezing every service budget turns the result into a
-      gain, of <span class="num">${gainSpan[0]}–{gainSpan[1]}bn</span>.
+      <span class="num">{cellCount}</span> combinations leave everyone else
+      <span class="num">${costSpan[0]}–{costSpan[1]}bn</span> a year worse off, whatever the tax-incidence rule,
+      the justice and hospital-care keys or the production model. Only freezing every service budget leaves
+      them better off, by <span class="num">${gainSpan[0]}–{gainSpan[1]}bn</span>.
     </p>
 
     <div class="scroll">
@@ -70,7 +75,7 @@
               <td class="ind" class:off={r.frozen}>{r.frozen ? 'fixed' : 'full'}</td>
               <td class="ind" class:off={r.delayed === 0}>{level(r.delayed)}</td>
               {#each r.cells as c, j}
-                <td class="cell" class:adopted={isMain(r) && (j === 1 || j === 2)} style="background:{heat(mid(c.inner))}">
+                <td class="cell" class:adopted={isMain(r) && (j === 1 || j === 2)} style="background:{heat(c.inner)}">
                   <span class="v num">{fmt(c.inner)}</span>
                   <span class="o num">{fmt(c.outer)}</span>
                 </td>
@@ -81,9 +86,10 @@
       </table>
     </div>
     <p class="note">
-      $bn a year, positive a cost to other US residents. Large figure: the account’s own open choices.
-      Small figure: every executed alternative as well. Outlined: the main case,
-      <span class="num">${Math.round(fig.account.main[0])}–{Math.round(fig.account.main[1])}bn</span>.
+      $bn a year for everyone else: orange cells worse off by that much, blue cells (every
+      budget fixed) better off. Large figure: the account’s own open choices. Small figure: every
+      executed alternative as well. Outlined: the main case,
+      <span class="num">${Math.round(fig.account.main[0])}–{Math.round(fig.account.main[1])}bn</span> worse off.
     </p>
   </div>
 

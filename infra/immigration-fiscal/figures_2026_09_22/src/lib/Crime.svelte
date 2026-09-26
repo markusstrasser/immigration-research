@@ -46,13 +46,14 @@
       <text class="faint it" x="584" y="20" font-size="11">Hispanic rate as a multiple of</text>
       <text class="faint" x="584" y="34" font-size="11">whites · all residents</text>
 
+      <!-- People are not coloured: Hispanic is the filled ink mark, the two comparisons grey. -->
       {#each rows as r, i}
         {@const yy = y(i)}
         <text x="0" y={yy + 4} font-size="13">{r.offence}</text>
-        <line x1={lx(r.hispanicBounds[0])} x2={lx(r.hispanicBounds[1])} y1={yy} y2={yy} stroke="#ca7a5e" stroke-width="1.2" />
-        <circle cx={lx(r.per100k.white)} cy={yy} r="4.8" fill="#bbd4ee" stroke="#5c97d2" />
-        <line x1={lx(r.per100k.all)} x2={lx(r.per100k.all)} y1={yy - 8} y2={yy + 8} stroke="#111" stroke-width="1.6" />
-        <circle cx={lx(r.per100k.hispanic)} cy={yy} r="4.8" fill="#f2cabc" stroke="#ca7a5e" />
+        <line x1={lx(r.hispanicBounds[0])} x2={lx(r.hispanicBounds[1])} y1={yy} y2={yy} stroke="#111" stroke-width="1" />
+        <circle cx={lx(r.per100k.white)} cy={yy} r="4.8" fill="#fffff8" stroke="#8d897e" stroke-width="1.2" />
+        <line x1={lx(r.per100k.all)} x2={lx(r.per100k.all)} y1={yy - 8} y2={yy + 8} stroke="#8d897e" stroke-width="1.6" />
+        <circle cx={lx(r.per100k.hispanic)} cy={yy} r="4.2" fill="#111" />
         <text class="num" x="584" y={yy + 4} font-size="12.5">{times(r.vsWhite[1])} · {times(r.vsAll[1])}</text>
         {#if i === 0}
           <text class="muted it" x={lx(r.per100k.white)} y={yy - 11} text-anchor="middle" font-size="11">white</text>
@@ -63,16 +64,16 @@
     </div>
 
     <p class="note">
-      Blue: non-Hispanic white. Terracotta: Hispanic, with a line from “every unknown offender
-      non-Hispanic” to “every unknown offender Hispanic”. Black tick: all residents.
+      Open grey circle: non-Hispanic white. Black dot: Hispanic, with a line from “every unknown
+      offender non-Hispanic” to “every unknown offender Hispanic”. Grey tick: all residents.
     </p>
 
     <p class="sentence">
       Custody gives a similar ratio. US-born Mexican-origin men aged 18–39 are in institutions at
       <svg class="spark" viewBox="0 0 100 26" aria-label={said.join(", ")}>
-        <path d={spark} fill="none" stroke="#ca7a5e" stroke-width="1.6" />
+        <path d={spark} fill="none" stroke="#111" stroke-width="1.4" />
         {#each custody.ratio as v, i}
-          <circle cx={sx(custody.years[i])} cy={sy(v)} r="2" fill="#ca7a5e" />
+          <circle cx={sx(custody.years[i])} cy={sy(v)} r="2" fill="#111" />
         {/each}
       </svg>
       {first}, then {said.slice(1, -1).join(', ')} and {said.at(-1)}; {realloc} since 2019 once prison records
