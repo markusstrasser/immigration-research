@@ -526,7 +526,7 @@
      "value": "33.5 → 29.9",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:324"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:338"
     },
     {
      "label": "group's share of construction-trades jobs",
@@ -1221,21 +1221,21 @@
      "value": "1.7-2.5 / 2.5-3.7 / 3.0-4.6",
      "unit": "$tn",
      "se": null,
-     "file_line": "research/immigration-historical-backcast-2026-09-20.md:12"
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:15"
     },
     {
      "label": "whole-budget rules alone on the September 20 anchor, ten / fifteen / twenty years",
      "value": "1.4-2.0 / 2.0-3.1 / 2.4-3.8",
      "unit": "$tn",
      "se": null,
-     "file_line": "research/immigration-historical-backcast-2026-09-20.md:24"
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:27"
     },
     {
      "label": "every rule on the September 20 anchor, ten / fifteen / twenty years",
      "value": "1.3-2.2 / 2.0-3.3 / 2.4-3.9",
      "unit": "$tn",
      "se": null,
-     "file_line": "research/immigration-historical-backcast-2026-09-20.md:20-21"
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:23-24"
     }
    ],
    "relation_to_headline": "different_object",
@@ -1257,35 +1257,35 @@
      "value": 0.58,
      "unit": "real national spending per resident index",
      "se": null,
-     "file_line": "research/immigration-historical-backcast-2026-09-20.md:86"
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:89"
     },
     {
      "label": "Medicare index, 2005",
      "value": 0.53,
      "unit": "index",
      "se": null,
-     "file_line": "research/immigration-historical-backcast-2026-09-20.md:88"
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:91"
     },
     {
      "label": "refundable tax credits index, 2021",
      "value": 4.36,
      "unit": "index",
      "se": null,
-     "file_line": "research/immigration-historical-backcast-2026-09-20.md:91"
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:94"
     },
     {
      "label": "public order and safety index, 2005-2021",
      "value": "0.90 / 0.98 / 0.95 / 1.01 / 0.99",
      "unit": "index",
      "se": null,
-     "file_line": "research/immigration-historical-backcast-2026-09-20.md:90"
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:93"
     },
     {
      "label": "share of the ten-year programme-rule total from the pandemic years (September 20 anchor)",
      "value": "35-38%",
      "unit": "share",
      "se": null,
-     "file_line": "research/immigration-historical-backcast-2026-09-20.md:97"
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:100"
     }
    ],
    "relation_to_headline": "different_object",
@@ -1393,35 +1393,35 @@
      "value": "0.519 → 0.611",
      "unit": "ratio",
      "se": null,
-     "file_line": "research/immigration-historical-backcast-2026-09-20.md:131"
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:134"
     },
     {
      "label": "median household income ratio, 2008 → 2024",
      "value": "0.781 → 0.907",
      "unit": "ratio",
      "se": null,
-     "file_line": "research/immigration-historical-backcast-2026-09-20.md:132"
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:135"
     },
     {
      "label": "median earnings, full-time year-round men, 2008 → 2024",
      "value": "0.641 → 0.754",
      "unit": "ratio",
      "se": null,
-     "file_line": "research/immigration-historical-backcast-2026-09-20.md:133"
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:136"
     },
     {
      "label": "median earnings, full-time year-round women, 2008 → 2024",
      "value": "0.713 → 0.760",
      "unit": "ratio",
      "se": null,
-     "file_line": "research/immigration-historical-backcast-2026-09-20.md:134"
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:137"
     },
     {
      "label": "median-age gap to the nation",
      "value": "11.2 → 9.4 years",
      "unit": "years",
      "se": null,
-     "file_line": "research/immigration-historical-backcast-2026-09-20.md:138"
+     "file_line": "research/immigration-historical-backcast-2026-09-20.md:141"
     }
    ],
    "relation_to_headline": "different_object",
@@ -2494,35 +2494,35 @@
      "value": "248-304",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:38"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:51"
     },
     {
      "label": "full span: every low choice, then every high one",
      "value": "210-337",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:38"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:51"
     },
     {
      "label": "costs and benefits together, with care and mobility / adding the scale net (September 24)",
      "value": "253-303; 239-289",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:42"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:55"
     },
     {
      "label": "omitted benefits beside the account, without / with the scale net (September 24)",
      "value": "0.65 / 14.6",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:41"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:54"
     },
     {
      "label": "September 23 case: custody footing / with care and mobility / adding the scale net",
      "value": "256-307; 251-303; 237-289",
      "unit": "$bn/year",
      "se": null,
-     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:340"
+     "file_line": "research/immigration-real-fiscal-and-social-costs-2026-09-23.md:354"
     }
    ],
    "relation_to_headline": "different_object",
