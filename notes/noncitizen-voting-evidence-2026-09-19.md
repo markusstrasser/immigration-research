@@ -1,4 +1,4 @@
-**Verdict:** Non-citizen voting in US federal and California elections is real, non-zero, overwhelmingly caused by defective registration systems rather than intent, and too small by three to four orders of magnitude to have decided any federal or California contest. Point estimate after the second pass: roughly 300 to 3,000 non-citizen ballots per federal election nationwide. Upper bound: 24,000, the Census Bureau's August 2026 figure taken entirely at face value, which is 0.015% of the 2020 vote and smaller than the margin in every single state that year. The one federal list ever subjected to case-by-case review shrank by 98.8%: DHS told Nevada there "may be as many as" 15,903 non-citizens and confirmed 185. That Census brief reports no false-match rate, no confidence interval and no authors, and its former chief scientist says the false match rate likely exceeds the effect it measures. Where states adjudicate their own flagged lists the numbers collapse: Texas proved 578 of 2,724 SAVE flags were citizens (21.2%) and referred 117; Michigan charged 6 of 38 referrals; Ohio charged 12 of 633. The largest confirmed ballot count anywhere in this file is New Jersey's fewer than 400, produced by a motor-vehicle software defect that registered people who had answered "no" to the citizenship question.
+**Verdict:** [2026-09-25: two claims withdrawn. The 24,000 and ~9,000 figures scale up detected or flagged cases, and detection is incomplete (the steel-man below says so), so they are ceilings on detected voting, not upper bounds. And "too small by three to four orders of magnitude to have decided any federal or California contest" holds for statewide and presidential races only: certified House margins include 6 of 394,625 votes (Iowa 2nd, 2020, 0.0015%, below the 0.006% ceiling), 109 of 319,638 (New York 22nd, 2020, 0.034%) and 187 of 210,921 (California 13th, 2024, 0.089%). No contest is shown to have been decided by non-citizen ballots. See Revisions.] Non-citizen voting in US federal and California elections is real, non-zero, overwhelmingly caused by defective registration systems rather than intent, and too small by three to four orders of magnitude to have decided any federal or California contest. Point estimate after the second pass: roughly 300 to 3,000 non-citizen ballots per federal election nationwide. Upper bound: 24,000, the Census Bureau's August 2026 figure taken entirely at face value, which is 0.015% of the 2020 vote and smaller than the margin in every single state that year. The one federal list ever subjected to case-by-case review shrank by 98.8%: DHS told Nevada there "may be as many as" 15,903 non-citizens and confirmed 185. That Census brief reports no false-match rate, no confidence interval and no authors, and its former chief scientist says the false match rate likely exceeds the effect it measures. Where states adjudicate their own flagged lists the numbers collapse: Texas proved 578 of 2,724 SAVE flags were citizens (21.2%) and referred 117; Michigan charged 6 of 38 referrals; Ohio charged 12 of 633. The largest confirmed ballot count anywhere in this file is New Jersey's fewer than 400, produced by a motor-vehicle software defect that registered people who had answered "no" to the citizenship question.
 
 # Non-citizen voting in US federal and California elections — primary evidence review
 
@@ -375,7 +375,8 @@ nationwide.** At the 1–3 per million that the Brennan, Texas and Ohio-2020 fig
 multi-cycle referral rate as the upper anchor gives about **1,300**.
 
 **Upper bound: ~10,000 ballots per federal election, and that requires stacking every assumption
-against the null.** Derivation: the 2025–26 SAVE bulk checks are the best-powered detection
+against the null.** [2026-09-25: a ceiling on detected cases, not an upper bound: the SAVE checks
+find only non-citizens they can match, so missed cases are not bounded. See Revisions.] Derivation: the 2025–26 SAVE bulk checks are the best-powered detection
 instrument ever pointed at this question. Seven states publishing their own results found ~4,200
 flagged people in ~35 million registrations (0.012%). Scaled to 174 million national registrations
 that is ~21,000 flagged; net of the >5% Texas false-positive rate, ~20,000. The share of flagged
@@ -390,7 +391,10 @@ reasons, in descending strength.
 
 First, the arithmetic does not reach. Even the 0.006% ceiling would require a contest decided by
 under six votes per hundred thousand *and* near-unanimous directional voting by the non-citizens
-involved. No 2024 statewide or presidential contest was within that margin. In California
+involved. No 2024 statewide or presidential contest was within that margin. [2026-09-25: House
+contests were: Iowa's 2nd district in 2020 was decided by 6 of 394,625 votes, 1.5 per hundred
+thousand. A national rate applied to one district also assumes non-citizens are spread evenly;
+Iowa's share is below the national one. See Revisions.] In California
 specifically there is no documented non-citizen ballot count at all: the Brennan survey covered
 California jurisdictions and found zero incidents in 2016, and the California Secretary of State's
 own 2016 complaint file — 948 complaints against 23 million voters — produced 73 items worth
@@ -427,7 +431,8 @@ literally zero is false and was always false. That is correct. The 2025–26 che
 first instrument with enough power to say so. What they do not support is any claim about
 magnitude: the same checks put the rate at 0.01–0.02% of *registrations*, of which a minority ever
 voted, in a country where the smallest federal margins are three to four orders of magnitude
-larger. The honest statement is that non-citizen voting is real, non-zero, overwhelmingly
+larger. [2026-09-25: withdrawn: the closest House margins sit within about one order of magnitude
+of the ceiling, and one sits below it; see Revisions.] The honest statement is that non-citizen voting is real, non-zero, overwhelmingly
 inadvertent, and too small by orders of magnitude to have decided any federal or California
 contest on the record.
 
@@ -1166,3 +1171,31 @@ already measured: counting the unauthorized of all origins where they live moves
 
 [GAP] Reuters' per-state composition of the 30,000, which decides how much of it is Virginia's
 flag-based count. CEIR's tracker is the source to pull if this is reopened.
+
+## Revisions
+
+- **2026-09-25 (weekly conceptual audit §7).** Two claims are withdrawn; the evidence review stands.
+  1. The 24,000 (the Census brief at face value) and ~9,000–10,000 (SAVE flags scaled nationally)
+     figures are ceilings on detected voting. Detection is incomplete, so they do not bound the
+     underlying total, and correcting false positives cannot supply that bound.
+  2. "Too small by orders of magnitude to have decided any federal or California contest" was
+     derived for statewide and presidential races and fails for House races. Certified margins,
+     each from the Clerk of the House's *Statistics of the Presidential and Congressional Election*
+     and matched to the state canvass:
+
+     | Race | Margin | Votes for candidates | Margin, % | Against the 0.006% ceiling |
+     |---|---:|---:|---:|---|
+     | Iowa 2nd, 2020 | 6 | 394,625 | 0.0015% | 4 times below |
+     | New York 22nd, 2020 | 109 | 319,638 | 0.034% | 6 times above |
+     | California 13th, 2024 (closest of 2024) | 187 | 210,921 | 0.089% | 15 times above |
+     | Colorado 3rd, 2022 (closest of 2022) | 546 | 327,285 | 0.167% | 28 times above |
+
+     [SOURCE: https://history.house.gov/Institution/Election-Statistics/2020election/, …/2022election/,
+     …/2024election/; Iowa SoS 2020 canvass summary p. 31; NYS Board of Elections contest 554;
+     California Statement of Vote 2024 pp. 8, 30; Colorado SoS 2022 abstract (post-recount, a
+     write-in differs by one vote)] Deciding such a race would also need non-citizen voters
+     concentrated there and voting nearly all one way, and none of that is shown. The defensible
+     statement: no contest is shown to have been decided by non-citizen ballots, and the closest
+     House races sit within reach of the ceiling. A contest-specific claim needs its own electorate,
+     adjudicated eligibility and net directional margin.
+     [Decision](../decisions/2026-09-25-weekly-audit-corrections.md).
