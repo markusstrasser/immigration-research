@@ -135,7 +135,7 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 
 | Surface | What | Memo · table |
 |---------|------|--------------|
-| Borjas supply-shock cells | <HS immigrant share 9.8% (1980) → 40.8% (2023) [2026-09-26: 10.2% → 44.1% with no-schooling records kept; see the Borjas memo], education×experience | `immigration-borjas-supply-shock-panel-2026-06-23.md` · `borjas_supply_shock_panel` |
+| Borjas supply-shock cells | <HS immigrant share 9.8% (1980) → 40.8% (2023) [2026-09-26: 10.2% → 44.1% with no-schooling records kept; see the Borjas memo. Rebuilt the same day: a fresh `build ipums` gives the kept series; release v2026-09-05 still has 40.8%], education×experience | `immigration-borjas-supply-shock-panel-2026-06-23.md` · `borjas_supply_shock_panel` |
 | Source-incentive re-grade | advocacy discounted on **both** sides; against-interest up-weighted | `immigration-source-incentive-regrade-2026-06-23.md` · `source_incentive_grades` |
 | Fiscal+welfare ledger map | "positive vs negative?" decomposed into 4 coordinates × the full ledger | `immigration-fiscal-welfare-ledger-map.md` |
 
@@ -165,6 +165,7 @@ Query pack: `queries/immigration/`. Each file has a `-- requires:` header and `-
 - IPUMS USA 5% samples 1980–2023, education × work-experience cells
 - The current panel uses the birthplace rule `BPL >= 150` (IPUMS). This is not automatically equivalent to ACS nativity, which includes citizenship-at-birth rules; harmonize definitions before comparing populations.
 - The 44 M-row source microdata is **license-restricted and excluded from the release** — only these aggregated cells ship
+- Since 2026-09-26 the < HS bucket includes people with no schooling (`EDUC` 0). Release v2026-09-05 predates the fix and drops them, so its < HS shares read 0.4–3.3 points lower ([decision](../decisions/2026-09-26-acs-no-schooling-break.md))
 
 **Crime domain** (new 2026-06-24; the project is "fiscal *and* crime"):
 

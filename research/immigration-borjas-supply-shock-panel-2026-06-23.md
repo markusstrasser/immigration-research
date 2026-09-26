@@ -25,6 +25,16 @@ also carries the 2020 no-schooling reporting step: on the builder's rule it move
 feeds the release; see `infra/immigration-fiscal/acs_schooling_break_2026_09_26/RESULT.md` §4 and the
 [decision](../decisions/2026-09-26-acs-no-schooling-break.md).]
 
+[2026-09-26, later: rebuilt. The builder now keeps `EDUC` 0 in the < HS bucket, and the local
+context and unified warehouses were rebuilt. `borjas_supply_shock_panel` now reads 10.2%, 19.5%,
+32.3%, 39.3% and 44.1% below high school, and 7.2%, 10.4%, 14.8%, 17.4% and 19.1% for all
+workers; the other rows are unchanged. The table above is the build before the fix, which the last
+packaged release (v2026-09-05) still carries until it is republished. On the rebuilt bucket the
+no-schooling step moves reports within the bucket. The bucket still loses some reports to 12th
+grade without a diploma, which IPUMS files under grade 12 (HS grad here). Without that net step
+2023 reads 43.7% (43.2% on self-reported schooling only), so the rise from 1980 is 4.2–4.3×
+[CALCULATION: `infra/immigration-fiscal/acs_schooling_break_2026_09_26/kept_bucket_step.py`].]
+
 `[INFERENCE]` Two structural facts:
 1. **Low-skill concentration.** The <HS cell went from ~1-in-10 to ~2-in-5 foreign-born — a **~4.2× increase**, far larger than any other cell. This is the supply shock Borjas argued depresses native low-skill wages.
 2. **U-shape across education.** By 2023 the immigrant share is high at the bottom (40.8%; 44.1% with no-schooling records kept, 2026-09-26) *and* elevated at the top (19.7% college+), lowest in the middle — the well-documented bimodal immigrant education distribution. High-skill immigration grew too, just less dramatically.
