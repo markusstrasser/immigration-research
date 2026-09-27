@@ -37,7 +37,10 @@ scores, NAEP exclusion, graduation and exit exams do not move with the shares. A
 countries, [PISA](../infra/immigration-fiscal/pisa_germany_2026_09_27/RESULT.md) (ladder 243,
 246) puts immigration at about 7–14% of German natives' 2012→2022 fall (0 to about 45%), and
 the 2015–16 asylum wave shows no native effect by 2018. A shift common to every state or
-country is outside both designs.
+country is outside both designs. Within districts, the 2022–2024 newcomer surge in New York City, Chicago and
+Denver ([lane](../infra/immigration-fiscal/newcomer_school_shock_2026_09_28/RESULT.md), ladder 252)
+moved never-English-learner scores by at most a few hundredths of an SD per 10 points of
+newcomer share, while staff and money followed the pupils at about half to 0.6 and late.
 
 Civil custody, criminal offenses and fiscal spending: [detention/crime measurement scope](immigration-detention-crime-and-fiscal-scope-2026-09-20.md). ACS institutional counts cannot separate immigration detention; government custody spending remains a cost, with intergovernmental payments consolidated once.
 
