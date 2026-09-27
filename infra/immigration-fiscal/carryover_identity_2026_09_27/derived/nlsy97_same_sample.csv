@@ -1,0 +1,19 @@
+measure,quantity,value,se,note
+ba_plus,cross-section G3: all minus identifiers (same sample),1.2699999999999996,3.0201254598205027,Table 13
+ba_plus,attrition component of rho G2->G3 in the cross-section (shift over the G2 gap),-0.04996066089693154,0.11880902674352883,lineage G3 minus identifier G3 over the full-sample G2 gap
+ba_plus,full-sample G3: identifiers only: level,18.87909509026101,nan,Tables 2 12 13
+ba_plus,full-sample G3: identifiers only: rho G2->G3,0.8143550318544056,0.1397644545239941,delta method; gaps independent
+ba_plus,full-sample G3: published (13.0% non-identifiers): level,20.22,nan,Tables 2 12 13
+ba_plus,full-sample G3: published (13.0% non-identifiers): rho G2->G3,0.7616050354051928,0.1382819180752331,delta method; gaps independent
+ba_plus,full-sample G3: lineage-complete (20.6% non-identifiers): level,21.00107968264919,nan,Tables 2 12 13
+ba_plus,full-sample G3: lineage-complete (20.6% non-identifiers): rho G2->G3,0.7308780612647839,0.13745723753970518,delta method; gaps independent
+ba_plus,rho G2->G3+ pooled (published),0.7458693941778127,nan,Table 2
+educ_years,cross-section G3: all minus identifiers (same sample),0.11999999999999922,0.24984259397468644,Table 13
+educ_years,attrition component of rho G2->G3 in the cross-section (shift over the G2 gap),-0.08219178082191722,0.1711250643662235,lineage G3 minus identifier G3 over the full-sample G2 gap
+educ_years,full-sample G3: identifiers only: level,13.438121191215362,nan,Tables 2 12 13
+educ_years,full-sample G3: identifiers only: rho G2->G3,0.7067663073867381,0.1696389714545653,delta method; gaps independent
+educ_years,full-sample G3: published (13.0% non-identifiers): level,13.54,nan,Tables 2 12 13
+educ_years,full-sample G3: published (13.0% non-identifiers): rho G2->G3,0.6369863013698637,0.16743346631557698,delta method; gaps independent
+educ_years,full-sample G3: lineage-complete (20.6% non-identifiers): level,13.599344601586754,nan,Tables 2 12 13
+educ_years,full-sample G3: lineage-complete (20.6% non-identifiers): rho G2->G3,0.5963393139816754,0.16624232742333164,delta method; gaps independent
+educ_years,rho G2->G3+ pooled (published),0.993150684931507,nan,Table 2
