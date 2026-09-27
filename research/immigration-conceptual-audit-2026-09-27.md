@@ -608,6 +608,10 @@ of 1.9% does not identify those transitions. [INFERENCE / RECOMMENDATION]
 
 ### E. Survival prices descendants but does not limit their births
 
+[2026-09-28: fixed in 4e9c2e2, with the factors and figures below: the lineage central is now −$1,288,162
+(−$513,398 at 3%). The projection back-test's own copy of the recurrence was fixed the same way. The
+sponsorship probe now loads the lineage code as audited (a72fd62) and also checks the current lane.]
+
 `lineage.py` multiplies each generation's count by TFR/2, then survival-weights
 that generation's fiscal life. It never requires the parent to survive until the
 model's single childbearing age, 29. Halving survival at age 29 in a diagnostic
