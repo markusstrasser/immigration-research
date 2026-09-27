@@ -103,7 +103,7 @@ set -a; . infra/immigration-fiscal/acquire/config.local.env; set +a
 - Before asserting that a line's key biases a result, read how the engine keys it (schools have
   been state-priced since 2026-09-20, not national-average). The adopted case is one engine
   run: `infra/immigration-fiscal/main_case_schools_full_2026_09_26/main_case.cjs`, on the
-  package of `main_case_2026_09_26` (its one-year scenario). The general-government and school
+  package of `main_case_2026_09_26` (now the first-year budget response). The general-government and school
   responses are engine state and travel in `derived/corrections.json` → `meta.responses`; a
   consumer that applies the payload must set them too.
 
@@ -156,7 +156,7 @@ substituting a web summary or declaring a measurement unavailable:
   corrected for saving and remittances
   ([decision](decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md)), and schools
   are charged at their full average cost per pupil: **$258–292bn** ($258.5–292.0bn; low side with
-  the within-district 0.836: $234–270bn; one-year scenario with CBO's 0.63–0.66: $201–246bn;
+  the within-district 0.836: $234–270bn; first-year budget response with CBO's 0.63–0.66: $201–246bn;
   September 24: $201–246bn; September 23: $203–250bn; September 20: $165–197bn;
   [decision](decisions/2026-09-26-main-case-schools-full-cost.md)). Defense,
   existing interest and business subsidies stay at **zero response by assumption**; see the

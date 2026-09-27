@@ -82,4 +82,4 @@ conclusions stand.
 - 2026-09-26: limited to school responses below 1 by
   [2026-09-26-main-case-schools-full-cost](2026-09-26-main-case-schools-full-cost.md). The main case
   now charges the full average cost, so no school spending follows no one; the price stays for the
-  one-year scenario and the low side.
+  first-year budget response and the low side.

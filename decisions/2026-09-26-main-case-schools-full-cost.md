@@ -34,7 +34,7 @@ The repo's evidence, ordered by horizon:
 Asked "what's the most intellectually and realistically honest", the answer was:
 - full average cost at the centre;
 - 0.836 as the low side;
-- CBO's figures only for a one-year budget scenario.
+- CBO's figures only for a first-year budget response.
 
 The operator answered "well if we believe it ... then yes let's change the main case" (22:39 JST).
 He added "but we don't have to update all the uis ... we're still researching .. i guess".
@@ -47,7 +47,7 @@ He added "but we don't have to update all the uis ... we're still researching ..
    - It implies that every pupil in the country gets about 6% less spent on them, permanently.
    - The data show no sign of that where the group's pupils enrol: those districts spend 2.5% more
      per pupil than their state averages.
-   - Kept as the one-year scenario.
+   - Kept as the first-year budget response.
 2. **The within-district 0.836 at the centre.**
    - It is the most direct measured response.
    - Part of its gap to 1 is plausibly lag, since the 2010 wave falls in the post-recession cuts.
@@ -74,14 +74,16 @@ He added "but we don't have to update all the uis ... we're still researching ..
   row 8 and the consumption key stay as adopted earlier today.
 - **Low side: $233.9–269.6bn.** This reads 0.836 over the removal (response 0.8489), the way the
   finite-removal decision reads every elasticity. Taken as the response, 0.836 gives $231.8–267.8bn.
-- **One-year scenario: the September 26 case, $200.9–245.7bn.** It answers how next year's budget
-  would move after a sudden change.
+- **First-year budget response: the September 26 case, $200.9–245.7bn.** It answers how next year's budget
+  would move after a sudden change. [2026-09-27: renamed from "one-year scenario", which read as a realistic alternative
+  world; it is the budget's first-year move, not a steady state. Lane files, code and derived outputs
+  keep the old label and the case key `sept26`.]
 - **The outer range is $198–324bn.** It adds a school-response component (−$26.7bn / −$24.2bn,
   upper side 0). The finite-removal component keeps general government only, because at a response
   of 1 schools save 1 under any functional form.
 - **School dilution** ($16.1bn beside the account, decision 2026-09-25) no longer applies to the main
   case, since nothing is left unfunded. It applies to the lower-response scenarios. The unfunded
-  school cost is $46–58bn a year in the one-year scenario and $22–25bn at the low side. [2026-09-26, later: read at each scenario's own end specifications, it is $45–58bn and $22–25bn; the first figures were band-end moves that include the switch of end specification (f1e4f5b).]
+  school cost is $46–58bn a year in the first-year budget response and $22–25bn at the low side. [2026-09-26, later: read at each scenario's own end specifications, it is $45–58bn and $22–25bn; the first figures were band-end moves that include the switch of end specification (f1e4f5b).]
 - **The sign break-even is unchanged at 5.8–17.0%.** That test moves every service at one common
   share.
 - **The "CBO-informed" label** now covers CBO's tax-incidence rules and its category rule for which

@@ -8,7 +8,7 @@ the linked memo before reuse. Narrative authorship remains operator-owned.
 Anchors: [complete annual account](immigration-complete-annual-account-2026-09-20.md)
 ($258–292bn conditional net cost to other residents in the
 [main case adopted September 26](../infra/immigration-fiscal/main_case_schools_full_2026_09_26/RESULT.md),
-which charges schools at their full average cost; $201–246bn with CBO's one-year school response,
+which charges schools at their full average cost; $201–246bn with CBO's first-year school response,
 as on September 24; $203–250bn on September 23 and $165–197bn as published September 20;
 $301–335bn with fully proportional services) and the [generation ledger](immigration-yearly-lifetime-cost-repair-2026-09-19.md)
 (same-age gap against third-plus non-Hispanic whites: Mexico-born −$7,584, second generation
@@ -21,7 +21,7 @@ $301–335bn with fully proportional services) and the [generation ledger](immig
 a reference group, or the group's own balance re-weighted by age. Entries 7 and 9 rest on
 separate partial accounts. The $258–292bn (entries 2, 4, 11) is the complete account's change
 for all other residents in the main case adopted September 26, which charges schools at their full
-average cost ($201–246bn with CBO's one-year school response, as on September 24; $203–250bn on
+average cost ($201–246bn with CBO's first-year school response, as on September 24; $203–250bn on
 September 23;
 $165–197bn as published September 20), under a stated service-response assumption, with no reference group; it carries later corrections that were not propagated to the ledger (ladder
 161). Since September 25 it has its own generation split, computed on the account with no
@@ -75,7 +75,7 @@ the tax-incidence rule set (`cbo_collective`: corporate tax 75% to capital incom
 wages) and the category rule that holds economic-affairs and recreation budgets fixed. Schools
 are charged at their full average cost per pupil since September 26: across 2019 districts
 spending rises 1.004% per 1% more pupils (pupil-weighted) and across states 0.973%. CBO's
-year-to-year 63–66% is kept as a one-year budget scenario ($201–246bn), and the within-district
+year-to-year 63–66% is kept as a first-year budget response ($201–246bn), and the within-district
 0.836 gives the low side ($234–270bn) ([decision](../decisions/2026-09-26-main-case-schools-full-cost.md)). General public services were also held at zero until September 23. The main case
 now lets them grow at 0.59–0.84 of the population, which adds $27.8–39.5bn on the corrected data
 of September 24 ($28.5–40.6bn before the corrections). [2026-09-26: read as the removal of a group
@@ -121,7 +121,7 @@ fiscal ledger. Finding: the account adds production gains and the induced taxes 
 $8.8bn (cash scaling) to $13.3bn (GDP scaling), $6–21bn across the parameter grid. Omitted
 benefits would have to reach $258–292bn a year to offset the main case. That threshold is
 conditional on the service-response share, which is assumed and unmeasured: it is $201–246bn
-with CBO's one-year school response, $205–266bn if non-school education budgets are also held
+with CBO's first-year school response, $205–266bn if non-school education budgets are also held
 fixed, and it reaches zero
 where 5.8–17.0% of assigned service costs are incremental (entry 2), so the response share moves the result more
 than any offset listed here. Cheaper household services are worth $21.8bn a year to
@@ -251,7 +251,7 @@ Medicare were 42–47% smaller in 2005, refundable credits were 4.4 times their 
 2021, police, courts and prisons were flat. Carrying the 2024 position back on those series
 gives about $1.3–2.2tn over ten years, $2.0–3.3tn over fifteen and $2.4–3.9tn over twenty on
 the September 20 anchor, and $1.7–2.4tn, $2.5–3.6tn and $3.0–4.5tn on the adopted September 24 one
-(whole-budget rules only; September 23: $1.7–2.5tn, $2.5–3.7tn and $3.0–4.6tn) [2026-09-26, later: $2.2–2.8tn, $3.2–4.2tn and $3.9–5.2tn on the main case with schools at full cost, $258–292bn; the one-year scenario matches September 24 at rounding];
+(whole-budget rules only; September 23: $1.7–2.5tn, $2.5–3.7tn and $3.0–4.6tn) [2026-09-26, later: $2.2–2.8tn, $3.2–4.2tn and $3.9–5.2tn on the main case with schools at full cost, $258–292bn; the first-year budget response matches September 24 at rounding];
 2020–2021 supply 29–39% of the ten-year figure where the rules follow the benefit spike, and are probably over-attributed. The
 group's own programme use in earlier years is unmeasured. [SOURCE: [back-cast](immigration-historical-backcast-2026-09-20.md)]
 
@@ -424,7 +424,7 @@ in deficit. Our account is the annual position of the resident Mexican-origin po
 all ages and generations in income-year 2024, state and local services included, −$201 to
 −246bn in the main case adopted September 24 (−$203 to −250bn on September 23 and −$165 to −197bn
 as published September 20; entry 2). [2026-09-26: the main case is now −$258 to −292bn, with schools
-at full average cost per pupil. With CBO's year-to-year school response, the one-year scenario
+at full average cost per pupil. With CBO's year-to-year school response, the first-year budget response
 stays at −$201 to −246bn (entry 2).] Where the two overlap they agree: a young
 recent inflow is net positive on the measured items here too, +$3,495 per person for
 Mexico-born arrivals of 2016–2025 on the partial account and about break-even on the complete
@@ -456,7 +456,7 @@ where CMS records give it 7.4% of those dollars. Together the corrections moved 
 from $203.2–249.6bn to $200.9–246.3bn. Two corrections adopted September 26 cancel: a finite
 removal saves more than the marginal elasticities (+$4.1 / +$3.4bn), and the consumption key
 had given the group too small a share of consumption taxes, because richer residents save more
-(−$4.1bn). With CBO's one-year school response the case is $200.9–245.7bn, and every correction
+(−$4.1bn). With CBO's first-year school response the case is $200.9–245.7bn, and every correction
 at its extreme spans $164–277bn. Charging schools at their full average cost, a response
 assumption rather than a data correction (entry 2), puts it at $258.5–292.0bn with a span of
 $198–324bn. No combination changes the sign.
@@ -504,14 +504,14 @@ they get more prominence.
 
 - 2026-09-26, late (two entries still on earlier cases): entry 2 gives general government at the
   adopted finite-removal responses, 0.60–0.85, adding $28.3–40.0bn instead of $27.8–39.5bn. Entry 16
-  compares CBO with the schools case, −$258 to −292bn, and names the one-year scenario. Concept
+  compares CBO with the schools case, −$258 to −292bn, and names the first-year budget response. Concept
   affected: the main case's general-government response and the CBO comparison; no conclusion
   changes.
 
 - 2026-09-26, later (schools at full average cost): the main case is $258–292bn (ladder 230,
   [decision](../decisions/2026-09-26-main-case-schools-full-cost.md)). The anchors, the combining
   rules and entries 4, 11 and 17 quote it. Entry 2 now names the school evidence and keeps CBO's
-  63–66% as the one-year scenario ($201–246bn). Entry 11 notes that a removal's first years would
+  63–66% as the first-year budget response ($201–246bn). Entry 11 notes that a removal's first years would
   not shed the full school cost. Concept affected: the complete account's main case and its
   school response.
 

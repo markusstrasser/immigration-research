@@ -36,7 +36,7 @@ splits into:
 - the consumption key: −$4.1bn;
 - the ends moving to 48 and 11: −$0.8bn / +$0.8bn.
 
-The one-year scenario charges CBO's year-to-year school response ($200.9–245.7bn). It stays within
+The first-year budget response charges CBO's year-to-year school response ($200.9–245.7bn). It stays within
 $1bn of the September 24 split for every generation:
 - (a): $63.9/53.0bn, $82.1/95.5bn and $55.0/97.2bn;
 - (b): $110.6/134.9bn, $50.6/53.2bn and $39.7/57.6bn.
@@ -166,8 +166,8 @@ case itself, which moves every generation.
   - Every generation's cost rises, and all three remain net costs at every specification.
   - Counted with their parents, the Mexico-born cost $136–155bn, the second generation $66–68bn
     and the third-plus $55–71bn.
-  - The earlier-in-the-day case (finite-removal responses and the consumption key) is the one-year
-    scenario, within $1bn of September 24 for every generation.
+  - The earlier-in-the-day case (finite-removal responses and the consumption key) is the first-year
+    budget response, within $1bn of September 24 for every generation.
   - Concept affected: the adopted account's split by generation (ladder 224). The ordering under
     each convention is unchanged: under (b) the Mexico-born cost most, and under (a) the second
     generation costs most at the low end and the third-plus at the high end, though only by $0.1bn

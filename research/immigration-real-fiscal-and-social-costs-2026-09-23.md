@@ -41,10 +41,10 @@ the custody footing at the high end. With this memo's $28.9bn the low end is $30
 row moves, by the main case's change since September 24 (+$57.6bn at the low end, +$45.6bn at the
 high end); the social items do not depend on the case. Costs and benefits together are $310–349bn ($296–335bn
 adding the scale net), and costs alone $315–354bn. In the income split (§4) the fiscal channel is
-$276.7bn and the central total $311.4bn. The one-year scenario keeps CBO's 63–66% school response
+$276.7bn and the central total $311.4bn. The first-year budget response keeps CBO's 63–66% school response
 ($200.9–245.7bn) and stays within $0.7bn of the September 24 totals: $248–303bn, full span
 $210–336bn. [CALCULATION: `infra/immigration-fiscal/sept24_propagation_2026_09_24/real_costs_totals.py`
-→ `sept26_propagation_2026_09_26/derived/real_costs_totals.csv` (one-year: `derived/sept26/`),
+→ `sept26_propagation_2026_09_26/derived/real_costs_totals.csv` (first-year budget response: `derived/sept26/`),
 4e66adb; `distribution_weights_2026_09_23/derived/channel_by_quintile.csv`, 39b854b]
 
 **Update, 2026-09-25 (main case adopted September 24, $200.9–246.3bn).** Fiscal and social costs
@@ -72,7 +72,7 @@ on **all other US residents** in 2024. The comparison is stationary, with and wi
 in 2024 dollars a year. The main CBO-informed case ($165.1–197.4bn net cost) has four settings:
 
 - school spending responds at 63–66%; [2026-09-26: the main case now charges the full average cost per pupil (response 1); 63–66% is
-  the one-year scenario.]
+  the first-year budget response.]
 - economic-affairs and recreation budgets, highways included, are fixed;
 - defense, general public services, existing interest and business subsidies are held at zero
   response by assumption;
@@ -447,5 +447,5 @@ case. None changes the sign. [CALCULATION: rows of §7 and the lanes' `summary` 
   the propagation lane recomputed §7 and §7b on the new main case, $258.5–292.0bn (4e66adb). The
   fiscal row rises by the case's change since September 24, +$57.6bn and +$45.6bn, and the social
   rows do not move: $305–350bn at central values and $268–383bn full span; §7b $315–354bn costs
-  only, $310–349bn with care and mobility and $296–335bn adding the scale net. The one-year
-  scenario stays within $0.7bn of September 24. Concept affected: the combined totals' fiscal row.
+  only, $310–349bn with care and mobility and $296–335bn adding the scale net. The first-year
+  budget response stays within $0.7bn of September 24. Concept affected: the combined totals' fiscal row.

@@ -49,8 +49,8 @@ residents** ($258.5–292.0bn; [lane](../infra/immigration-fiscal/main_case_scho
 [decision](../decisions/2026-09-26-main-case-schools-full-cost.md), ladder 230). Schools are charged at
 their full average cost per pupil: across districts and states spending rises about 1% per 1% more
 pupils (1.004 pupil-weighted across 2019 districts, 0.973 across states). The within-district 0.836
-gives the low side, $233.9–269.6bn. A return on the capital schools tie up, which BEA's line leaves out (it carries depreciation only), would add $9.5bn a year at a 2% real rate or $14.3bn at 3%, before land: $268.0–301.5bn or $272.8–306.2bn. That is proposed, not adopted ([lane](../infra/immigration-fiscal/school_capital_return_2026_09_26/RESULT.md), ladder 231). CBO's year-to-year 0.63–0.66 is kept as the one-year budget
-scenario, $200.9–245.7bn ([lane](../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md),
+gives the low side, $233.9–269.6bn. A return on the capital schools tie up, which BEA's line leaves out (it carries depreciation only), would add $9.5bn a year at a 2% real rate or $14.3bn at 3%, before land: $268.0–301.5bn or $272.8–306.2bn. That is proposed, not adopted ([lane](../infra/immigration-fiscal/school_capital_return_2026_09_26/RESULT.md), ladder 231). CBO's year-to-year 0.63–0.66 is kept as the first-year budget
+response (named "one-year scenario" until 2026-09-27; lane files keep that name), $200.9–245.7bn ([lane](../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md),
 [decision](../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md), ladder 229). That
 scenario is the September 24 case ($200.9–246.3bn; [lane](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md),
 [decision](../decisions/2026-09-24-main-case-audit-and-outside-checks.md), ladder 219) with its responses
@@ -71,8 +71,8 @@ split is computed on the account itself, with no reference group, and is not the
 ledger's gaps against whites. [2026-09-26, later: on the schools case, still net costs at every
 specification. Counted with their parents: the Mexico-born **$136–155bn** ($11.6–13.3k per
 adult), the second generation **$66–68bn** ($7.4–7.6k) and the third-plus **$55–71bn**
-($6.7–8.6k). Counted in their own generation: $57–78bn, $105–117bn and $76–118bn. The one-year
-scenario stays within $1bn of the September 25 split (ladder 224).]
+($6.7–8.6k). Counted in their own generation: $57–78bn, $105–117bn and $76–118bn. The first-year
+budget response stays within $1bn of the September 25 split (ladder 224).]
 
 The September 23 case, **$203–250bn**, added three changes to the September 20 account:
 - general government responds at 0.59–0.84 instead of zero;
@@ -95,7 +95,7 @@ $157–194bn; the directly estimated low-skill elasticities 8.7–17.9 (ladder 1
 September 20 band; the same production shifts apply to the adopted one.
 Sampling plus donor error is about **±$12bn (1 SE)** per September 20 case and **±$10.8–10.9bn** on the
 adopted September 24 case, whose 64 specifications' 95% intervals run **$180–268bn** together
-(September 20 band: $141–221bn). [2026-09-26, later: ±$10.9–11.0bn on the schools case, whose 95% intervals run **$237–313bn** together; one-year scenario $179–267bn (eab844f).] That SE is a floor: most corrections carry ranges, not SEs. Across
+(September 20 band: $141–221bn). [2026-09-26, later: ±$10.9–11.0bn on the schools case, whose 95% intervals run **$237–313bn** together; first-year budget response $179–267bn (eab844f).] That SE is a floor: most corrections carry ranges, not SEs. Across
 constructions the assumptions dominate (ladder 184,
 [uncertainty lane](../infra/immigration-fiscal/uncertainty_propagation_2026_09_22/RESULT.md)).
 The **$262–357bn** proportional-service grid includes weaker proxy stress tests.
@@ -105,7 +105,7 @@ remain unresolved. See the [response decision](../decisions/2026-09-20-category-
 "CBO-informed" covers two inputs only: CBO's tax-incidence rules and its 63–66%
 school-spending response with economic-affairs and recreation budgets fixed. [2026-09-26: schools
 are now charged at their full average cost; CBO's category rule still decides which budgets
-respond, and its 0.63–0.66 is the one-year scenario (ladder 230).] Since September 23
+respond, and its 0.63–0.66 is the first-year budget response (ladder 230).] Since September 23
 general public services respond at **0.59–0.84**, from cross-state scale: administration spending
 rises 0.842% per 1% of population. [2026-09-26: read as the removal of a group that is 12% of
 residents, those rates save 0.60–0.85 of average cost (ladder 227).] Defense, existing interest and business subsidies stay at
@@ -136,7 +136,7 @@ Beside the fiscal headline, as social costs:
 Wages move **$66–166bn** from less- to more-educated natives. Fiscal plus social costs come to
 **$248–304bn a year** at central values ($210–337bn full span) on the September 24 case
 (September 23: $248–307bn, $212–340bn). [2026-09-26, later: on the schools case **$305–350bn**
-($268–383bn full span); the one-year scenario stays within $0.7bn of September 24 (4e66adb).] The transfers are not added, but they run from poorer
+($268–383bn full span); the first-year budget response stays within $0.7bn of September 24 (4e66adb).] The transfers are not added, but they run from poorer
 to richer residents: outside the budget the bottom four fifths lose $80.7bn a year and the top
 fifth gains $46.0bn. The fiscal cost is progressive if financed by tax shares and regressive if
 by equal cuts per person (ladder 194). [2026-09-26, later: on the schools case the fiscal channel is $276.7bn, and per-person cuts take 9.8% of the bottom fifth's resources; the channels outside the budget do not move (39b854b).]
@@ -199,7 +199,7 @@ replaced by CBO's income-tax gradient and row 5 by the pooled-MEPS figure (ladde
 The [debt legacy lane](../infra/immigration-fiscal/debt_legacy_2026_09_23/RESULT.md) (ladder 207)
 prices interest on the group's past federal gaps. On the September 24 case, borrowed, the 2005–2023
 gaps leave $0.88–1.13tn of debt, on which 2024 taxpayers pay **$28.3–36.4bn** of interest
-($6.3–37.3bn across rules; September 23 case: $0.94–1.20tn and $30.5–38.9bn). [2026-09-26, later: on the schools case, $0.93–1.17tn and **$30.1–37.9bn** ($8.0–38.7bn across rules); the school step is 8.2% federal under the central convention; one-year scenario $28.2–36.3bn (1db19c8).] That
+($6.3–37.3bn across rules; September 23 case: $0.94–1.20tn and $30.5–38.9bn). [2026-09-26, later: on the schools case, $0.93–1.17tn and **$30.1–37.9bn** ($8.0–38.7bn across rules); the school step is 8.2% federal under the central convention; first-year budget response $28.2–36.3bn (1db19c8).] That
 answers a historical question; the main case's static comparison treats existing interest as
 sunk. The line is proposed as the interest row's response, not adopted, and must never be added
 to the assigned balance or the stock to an annual figure. [2026-09-25: if adopted, it enters as its
@@ -321,7 +321,7 @@ case, 2024 dollars, no interest; the whole-budget rules alone give $1.4–2.0tn,
 $2.4–3.8tn. On the adopted $201–246bn anchor (September 24) the whole-budget rules give **$1.7–2.4tn,
 $2.5–3.6tn and $3.0–4.5tn** (September 23, $203–250bn: $1.7–2.5tn, $2.5–3.7tn and $3.0–4.6tn); the
 programme-by-programme version, run in the debt legacy lane, gives $1.95–2.33tn, $2.75–3.30tn and
-$3.27–3.97tn (September 23: $2.02–2.42tn, $2.82–3.39tn, $3.31–4.04tn). [2026-09-26, later: on the schools case, $258–292bn, the whole-budget rules give **$2.2–2.8tn, $3.2–4.2tn and $3.9–5.2tn**, and the programme version $2.47–2.75tn, $3.50–3.89tn and $4.21–4.72tn. The one-year scenario matches September 24 at rounding (c0297e4).] 2020–2021 supply 29–39% of the ten-year total under the rules that follow the benefit spike (over a third in the programme version) and 20% under the flat carry. Measured trend (ACS):
+$3.27–3.97tn (September 23: $2.02–2.42tn, $2.82–3.39tn, $3.31–4.04tn). [2026-09-26, later: on the schools case, $258–292bn, the whole-budget rules give **$2.2–2.8tn, $3.2–4.2tn and $3.9–5.2tn**, and the programme version $2.47–2.75tn, $3.50–3.89tn and $4.21–4.72tn. The first-year budget response matches September 24 at rounding (c0297e4).] 2020–2021 supply 29–39% of the ten-year total under the rules that follow the benefit spike (over a third in the programme version) and 20% under the flat carry. Measured trend (ACS):
 per-capita income 0.52→0.61 of the national figure over 2008–2024, median household
 income 0.78→0.91, full-time men's earnings 0.64→0.75 with the gain in 2016–2019 and
 2021–2023 and none in 2024. Model ranges, not intervals; a measured series needs the
