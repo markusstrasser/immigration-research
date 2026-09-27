@@ -1,0 +1,15 @@
+unplaced after SOAP 2025  MD Sr          446
+unplaced after SOAP 2025  DO Sr          133
+unplaced after SOAP 2025  MD Grad        817
+unplaced after SOAP 2025  DO Grad        287
+unplaced after SOAP 2025  US IMG       1,217
+unplaced after SOAP 2025  Non-US IMG   4,550
+unplaced US-school or US-citizen applicants  2,900
+PGY-1 positions minus all active US MD+DO seniors  11,281  (28.2% of 40,041)
+IM categorical 2025: IMG share of filled 44.6%; non-US IMG 33.8%; US IMG 10.8%
+IM categorical 2024: IMG share of filled 43.0%; non-US IMG 31.8%; US IMG 11.1%
+seniors ranking only IM, unmatched: MD 1.8%, DO 2.5%
+non-US IMG PGY-1 placements still needed if every unplaced American replaced one  4,015 of 6,915
+OPT FICA forgone low    : person-years 251,893; total $1.85bn; employer $0.92bn; employee $0.92bn
+OPT FICA forgone central: person-years 302,452; total $2.95bn; employer $1.48bn; employee $1.48bn
+OPT FICA forgone high   : person-years 353,011; total $4.37bn; employer $2.19bn; employee $2.19bn

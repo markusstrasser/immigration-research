@@ -1,0 +1,9 @@
+exempt wages over 3-yr residency                       111,000.00
+share of residency wages exempt                            0.4847
+employer FICA saved, whole residency                     8,491.50
+employee FICA saved, whole residency                     8,491.50
+combined, whole residency                               16,983.00
+employer FICA saved, per resident-year (3-yr avg)        2,830.50
+employer FICA saved in an exempt PGY-1 year              5,584.50
+employer FUTA saved, max per exempt year                    42.00
+employer saving as % of PGY-1 salary                       0.0765
