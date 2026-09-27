@@ -10,9 +10,9 @@ bounds (165.1-197.4 and 269.8-288.7 bn); worst gap 4e-9 bn. [CALCULATION: test_e
 Since 2026-09-26 the page's central case is the finite-removal case adopted that day (see "Adopted
 2026-09-26" below): **200.9-245.7 bn**, with non-school education fixed 156.5-210.8 bn, and
 proportional 301.3-334.8 bn. Later the same evening the operator charged schools at full average
-cost, which makes the main case 258.5-292.0 bn and this case the one-year scenario
+cost, which makes the main case 258.5-292.0 bn and this case the first-year budget response
 ([decision](../../../decisions/2026-09-26-main-case-schools-full-cost.md)); the page stays on the
-one-year scenario until the operator asks. The presets reproduce these bands as loaded, with no override. With
+first-year budget response (named "one-year scenario" until 2026-09-27) until the operator asks. The presets reproduce these bands as loaded, with no override. With
 the corrections switched off the presets keep the adopted responses, so the page shows the
 uncorrected data at those responses: 207.4-253.2, 162.4-216.7 and 308.4-341.5 bn. The test also
 reproduces the two earlier cases at the marginal rates: September 23 (203.2-249.6 bn, no
@@ -342,7 +342,7 @@ Adopting this changed the analysis protocol, so it waited for the operator; he a
   409.1 bn stress test) are labelled with that date.
 - A fifth pass on 2026-09-26 followed the finite-removal responses and the consumption key
   (inventory `_cache/inventory_2026_09_26.json`, rebuilt from the cards as committed at ba12f3c by
-  `_cache/cards_2026_09_26/build_inventory.py`. It maps each citation's lines from the files at
+  `cards/build_inventory.py`, tracked since 2026-09-27 with its `reanchor.py`. It maps each citation's lines from the files at
   ba12f3c, and its own edits' citations from those at 199582e, to the files as they stand, and it
   finds the FAQ's combining rules by their opening words): 57 cards and 250 values, none
   dropped. Nine cards that quoted a changed September 24 number now lead with the September 26 case,
@@ -351,8 +351,8 @@ Adopting this changed the analysis protocol, so it waited for the operator; he a
   figure stays beside each as such. Values computed only on the September 24 case keep that date: the
   back-cast, the scale net, the real-costs totals, the justice change of 2.03 bn and the 356 bn
   endpoint. After schools were charged at full cost that evening, the cards call it the September 26
-  case, never the adopted main case, and the headline card says the explorer runs it as the one-year
-  scenario while the adopted main case ($258-292 bn) is not yet in the explorer. Every value
+  case, never the adopted main case, and the headline card says the explorer runs it as the first-year
+  budget response while the adopted main case ($258-292 bn) is not yet in the explorer. Every value
   re-verified at its cited line at 20f68c1. Lines added to the documents later move the citations
   again: rerun the two scripts, since `build_ui.py` does not recheck them.
 - The production block is CES; increasing-returns arguments are outside it.
