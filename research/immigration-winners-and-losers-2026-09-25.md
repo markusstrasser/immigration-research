@@ -21,7 +21,7 @@ comes out where does not change:
   (43–47%). Landlords' pooled net under tax shares turns negative, −$227 a year (was +$114).
 
 School dilution leaves the nets, since nothing is left unfunded at a school response of 1, and the
-consumption key sits inside the fiscal channel. The one-year scenario stays within 0.1 point of
+consumption key sits inside the fiscal channel. The first-year budget response stays within 0.1 point of
 the September 24 shares. The sections below keep the September 24 figures. [CALCULATION: ledger
 lane, `--case sept26_schools`, fa1bd3a; every old and new value in
 `infra/immigration-fiscal/sept26_propagation_2026_09_26/derived/old_new_ledger.csv` (643 rows),
