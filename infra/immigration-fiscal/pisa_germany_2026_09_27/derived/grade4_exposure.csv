@@ -1,0 +1,637 @@
+country,study,cycle,definition,share,share_se,source
+"Alberta, Canada",PIRLS,2011,no_test_language_before_school_parent,7.7,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=2760
+"Alberta, Canada",PIRLS,2011,test_language_at_home_sometimes_or_never_student,22.5,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=3733
+"Alberta, Canada",TIMSS,2011,test_language_at_home_sometimes_or_never_student,24.1,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=3613
+"Andalusia, Spain",PIRLS,2016,child_born_abroad_parent,3.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=3834
+"Andalusia, Spain",PIRLS,2011,no_test_language_before_school_parent,3.2,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=4025
+"Andalusia, Spain",PIRLS,2011to2016,no_test_language_before_school_parent,-0.3,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+"Andalusia, Spain",PIRLS,2016,no_test_language_before_school_parent,2.9,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=3703
+"Andalusia, Spain",PIRLS,2011,test_language_at_home_sometimes_or_never_student,15.5,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4272
+"Andalusia, Spain",PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-3.2,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+"Andalusia, Spain",PIRLS,2016,test_language_at_home_sometimes_or_never_student,12.3,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4154
+Australia,TIMSS,2015,both_parents_born_abroad_parent,20.89,2.06,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGAUSM6/ASHAUSM6, TOTWGT, JK2 75 zones; valid n=2688"
+Australia,TIMSS,2015,both_parents_born_abroad_student,20.65,1.62,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGAUSM6/ASHAUSM6, TOTWGT, JK2 75 zones; valid n=5559"
+Australia,PIRLS,2016,child_born_abroad_parent,12.8,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=2803
+Australia,TIMSS,2015,child_born_abroad_parent,12.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=2690
+Australia,TIMSS,2015,child_born_abroad_student,12.4,0.75,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=5987; SE from IDB ASG file JRR (IDB share 12.44)
+Australia,TIMSS,2015,father_born_abroad_parent,30.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=2654
+Australia,TIMSS,2015,mother_born_abroad_parent,30.7,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=2629
+Australia,PIRLS,2011,no_test_language_before_school_parent,5.1,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=3226
+Australia,PIRLS,2011to2016,no_test_language_before_school_parent,3.7,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Australia,PIRLS,2016,no_test_language_before_school_parent,8.8,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=2639
+Australia,TIMSS,2011,no_test_language_before_school_parent,5.1,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3236
+Australia,TIMSS,2011to2015,no_test_language_before_school_parent,3.1,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Australia,TIMSS,2015,no_test_language_before_school_parent,8.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=2422
+Australia,PIRLS,2011,test_language_at_home_sometimes_or_never_student,20.5,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=5984
+Australia,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-5.7,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Australia,PIRLS,2016,test_language_at_home_sometimes_or_never_student,14.8,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=6282
+Australia,TIMSS,2011,test_language_at_home_sometimes_or_never_student,20.5,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=6011
+Australia,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-5.3,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Australia,TIMSS,2015,test_language_at_home_sometimes_or_never_student,15.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=5976
+Austria,PIRLS,2016,child_born_abroad_parent,6.2,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=4148
+Austria,PIRLS,2011,no_test_language_before_school_parent,6.5,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=4387
+Austria,PIRLS,2011to2016,no_test_language_before_school_parent,2.5,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Austria,PIRLS,2016,no_test_language_before_school_parent,9.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=3944
+Austria,TIMSS,2011,no_test_language_before_school_parent,6.5,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4388
+Austria,PIRLS,2011,test_language_at_home_sometimes_or_never_student,23.4,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4616
+Austria,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-4.7,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Austria,PIRLS,2016,test_language_at_home_sometimes_or_never_student,18.7,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4334
+Austria,TIMSS,2011,test_language_at_home_sometimes_or_never_student,23.3,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4611
+Belgium (Flemish),TIMSS,2015,both_parents_born_abroad_parent,12.76,0.91,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGBFLM6/ASHBFLM6, TOTWGT, JK2 75 zones; valid n=4942"
+Belgium (Flemish),TIMSS,2015,both_parents_born_abroad_student,13.73,0.92,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGBFLM6/ASHBFLM6, TOTWGT, JK2 75 zones; valid n=5138"
+Belgium (Flemish),PIRLS,2016,child_born_abroad_parent,6.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=4694
+Belgium (Flemish),TIMSS,2015,child_born_abroad_parent,6.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4984
+Belgium (Flemish),TIMSS,2015,child_born_abroad_student,7.2,0.73,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=5347; SE from IDB ASG file JRR (IDB share 7.23)
+Belgium (Flemish),TIMSS,2015,father_born_abroad_parent,19.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=4932
+Belgium (Flemish),TIMSS,2015,mother_born_abroad_parent,18.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=4934
+Belgium (Flemish),PIRLS,2016,no_test_language_before_school_parent,11.1,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=4371
+Belgium (Flemish),TIMSS,2015,no_test_language_before_school_parent,10.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=4646
+Belgium (Flemish),PIRLS,2016,test_language_at_home_sometimes_or_never_student,23.8,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=5125
+Belgium (Flemish),TIMSS,2011,test_language_at_home_sometimes_or_never_student,25.0,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4811
+Belgium (Flemish),TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-3.6,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Belgium (Flemish),TIMSS,2015,test_language_at_home_sometimes_or_never_student,21.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=5323
+Belgium (French),PIRLS,2016,child_born_abroad_parent,9.1,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=4275
+Belgium (French),PIRLS,2011,no_test_language_before_school_parent,4.9,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=3381
+Belgium (French),PIRLS,2011to2016,no_test_language_before_school_parent,3.8,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Belgium (French),PIRLS,2016,no_test_language_before_school_parent,8.7,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=4133
+Belgium (French),PIRLS,2011,test_language_at_home_sometimes_or_never_student,28.6,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=3693
+Belgium (French),PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-6.5,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Belgium (French),PIRLS,2016,test_language_at_home_sometimes_or_never_student,22.1,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4579
+Bulgaria,TIMSS,2015,both_parents_born_abroad_parent,0.76,0.14,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGBGRM6/ASHBGRM6, TOTWGT, JK2 75 zones; valid n=4156"
+Bulgaria,TIMSS,2015,both_parents_born_abroad_student,1.3,0.19,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGBGRM6/ASHBGRM6, TOTWGT, JK2 75 zones; valid n=4140"
+Bulgaria,PIRLS,2016,child_born_abroad_parent,2.3,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=4220
+Bulgaria,TIMSS,2015,child_born_abroad_parent,2.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4144
+Bulgaria,TIMSS,2015,child_born_abroad_student,3.1,0.3,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4197; SE from IDB ASG file JRR (IDB share 3.13)
+Bulgaria,TIMSS,2015,father_born_abroad_parent,2.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=4102
+Bulgaria,TIMSS,2015,mother_born_abroad_parent,2.0,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=4123
+Bulgaria,PIRLS,2011,no_test_language_before_school_parent,11.6,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=5142
+Bulgaria,PIRLS,2011to2016,no_test_language_before_school_parent,-1.3,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Bulgaria,PIRLS,2016,no_test_language_before_school_parent,10.3,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=4054
+Bulgaria,TIMSS,2015,no_test_language_before_school_parent,14.0,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=4022
+Bulgaria,PIRLS,2011,test_language_at_home_sometimes_or_never_student,25.0,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=5184
+Bulgaria,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-7.7,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Bulgaria,PIRLS,2016,test_language_at_home_sometimes_or_never_student,17.3,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4264
+Bulgaria,TIMSS,2015,test_language_at_home_sometimes_or_never_student,23.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4178
+Canada,TIMSS,2015,both_parents_born_abroad_parent,29.57,1.57,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGCANM6/ASHCANM6, TOTWGT, JK2 75 zones; valid n=9583"
+Canada,TIMSS,2015,both_parents_born_abroad_student,31.81,1.52,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGCANM6/ASHCANM6, TOTWGT, JK2 75 zones; valid n=11080"
+Canada,PIRLS,2016,child_born_abroad_parent,10.9,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=14878
+Canada,TIMSS,2015,child_born_abroad_parent,12.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=9616
+Canada,TIMSS,2015,child_born_abroad_student,13.6,0.9,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=12080; SE from IDB ASG file JRR (IDB share 13.6)
+Canada,TIMSS,2015,father_born_abroad_parent,36.0,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=9577
+Canada,TIMSS,2015,mother_born_abroad_parent,34.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=9563
+Canada,PIRLS,2011,no_test_language_before_school_parent,9.2,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=18860
+Canada,PIRLS,2011to2016,no_test_language_before_school_parent,2.8,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Canada,PIRLS,2016,no_test_language_before_school_parent,12.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=14563
+Canada,TIMSS,2015,no_test_language_before_school_parent,13.6,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=9167
+Canada,PIRLS,2011,test_language_at_home_sometimes_or_never_student,26.3,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=22800
+Canada,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-3.8,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Canada,PIRLS,2016,test_language_at_home_sometimes_or_never_student,22.5,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=18018
+Canada,TIMSS,2015,test_language_at_home_sometimes_or_never_student,24.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=12083
+Chile,TIMSS,2015,both_parents_born_abroad_parent,1.74,0.34,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGCHLM6/ASHCHLM6, TOTWGT, JK2 75 zones; valid n=3868"
+Chile,TIMSS,2015,both_parents_born_abroad_student,2.89,0.45,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGCHLM6/ASHCHLM6, TOTWGT, JK2 75 zones; valid n=4565"
+Chile,PIRLS,2016,child_born_abroad_parent,1.9,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=3822
+Chile,TIMSS,2015,child_born_abroad_parent,2.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3876
+Chile,TIMSS,2015,child_born_abroad_student,3.2,0.37,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4685; SE from IDB ASG file JRR (IDB share 3.18)
+Chile,TIMSS,2015,father_born_abroad_parent,2.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=3845
+Chile,TIMSS,2015,mother_born_abroad_parent,3.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=3848
+Chile,PIRLS,2016,no_test_language_before_school_parent,2.2,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=3489
+Chile,TIMSS,2015,no_test_language_before_school_parent,2.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=3568
+Chile,PIRLS,2016,test_language_at_home_sometimes_or_never_student,13.3,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4206
+Chile,TIMSS,2011,test_language_at_home_sometimes_or_never_student,20.1,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=5437
+Chile,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-9.8,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Chile,TIMSS,2015,test_language_at_home_sometimes_or_never_student,10.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4622
+Colombia,PIRLS,2011,no_test_language_before_school_parent,3.1,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=3807
+Colombia,PIRLS,2011,test_language_at_home_sometimes_or_never_student,11.5,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=3867
+Croatia,TIMSS,2015,both_parents_born_abroad_parent,7.43,0.79,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGHRVM6/ASHHRVM6, TOTWGT, JK2 75 zones; valid n=3925"
+Croatia,TIMSS,2015,both_parents_born_abroad_student,8.48,0.72,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGHRVM6/ASHHRVM6, TOTWGT, JK2 75 zones; valid n=3859"
+Croatia,TIMSS,2015,child_born_abroad_parent,2.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3929
+Croatia,TIMSS,2015,child_born_abroad_student,2.3,0.27,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=3980; SE from IDB ASG file JRR (IDB share 2.34)
+Croatia,TIMSS,2015,father_born_abroad_parent,15.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=3923
+Croatia,TIMSS,2015,mother_born_abroad_parent,16.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=3918
+Croatia,PIRLS,2011,no_test_language_before_school_parent,0.5,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=4525
+Croatia,TIMSS,2011,no_test_language_before_school_parent,0.5,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4522
+Croatia,TIMSS,2011to2015,no_test_language_before_school_parent,0.6,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Croatia,TIMSS,2015,no_test_language_before_school_parent,1.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=3845
+Croatia,PIRLS,2011,test_language_at_home_sometimes_or_never_student,14.5,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4564
+Croatia,TIMSS,2011,test_language_at_home_sometimes_or_never_student,14.6,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4563
+Croatia,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-6.8,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Croatia,TIMSS,2015,test_language_at_home_sometimes_or_never_student,7.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=3969
+Cyprus,TIMSS,2015,both_parents_born_abroad_parent,12.61,0.96,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGCYPM6/ASHCYPM6, TOTWGT, JK2 75 zones; valid n=3863"
+Cyprus,TIMSS,2015,both_parents_born_abroad_student,13.21,1.25,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGCYPM6/ASHCYPM6, TOTWGT, JK2 75 zones; valid n=4002"
+Cyprus,TIMSS,2015,child_born_abroad_parent,9.0,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3854
+Cyprus,TIMSS,2015,child_born_abroad_student,9.5,0.74,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4054; SE from IDB ASG file JRR (IDB share 9.54)
+Cyprus,TIMSS,2015,father_born_abroad_parent,18.6,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=3860
+Cyprus,TIMSS,2015,mother_born_abroad_parent,27.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=3854
+Cyprus,TIMSS,2015,no_test_language_before_school_parent,6.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=3665
+Cyprus,TIMSS,2015,test_language_at_home_sometimes_or_never_student,24.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4046
+Czech Republic,TIMSS,2015,both_parents_born_abroad_parent,3.0,0.35,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGCZEM6/ASHCZEM6, TOTWGT, JK2 75 zones; valid n=4981"
+Czech Republic,TIMSS,2015,both_parents_born_abroad_student,3.47,0.39,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGCZEM6/ASHCZEM6, TOTWGT, JK2 75 zones; valid n=5088"
+Czech Republic,PIRLS,2016,child_born_abroad_parent,2.5,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=5289
+Czech Republic,TIMSS,2015,child_born_abroad_parent,2.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4986
+Czech Republic,TIMSS,2015,child_born_abroad_student,2.7,0.38,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=5184; SE from IDB ASG file JRR (IDB share 2.72)
+Czech Republic,TIMSS,2015,father_born_abroad_parent,6.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=4973
+Czech Republic,TIMSS,2015,mother_born_abroad_parent,5.6,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=4978
+Czech Republic,PIRLS,2011,no_test_language_before_school_parent,1.0,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=4416
+Czech Republic,PIRLS,2011to2016,no_test_language_before_school_parent,0.2,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Czech Republic,PIRLS,2016,no_test_language_before_school_parent,1.2,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=5180
+Czech Republic,TIMSS,2011,no_test_language_before_school_parent,1.0,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4439
+Czech Republic,TIMSS,2011to2015,no_test_language_before_school_parent,0.5,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Czech Republic,TIMSS,2015,no_test_language_before_school_parent,1.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=4836
+Czech Republic,PIRLS,2011,test_language_at_home_sometimes_or_never_student,13.2,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4476
+Czech Republic,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-5.6,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Czech Republic,PIRLS,2016,test_language_at_home_sometimes_or_never_student,7.6,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=5514
+Czech Republic,TIMSS,2011,test_language_at_home_sometimes_or_never_student,13.1,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4502
+Czech Republic,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-4.7,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Czech Republic,TIMSS,2015,test_language_at_home_sometimes_or_never_student,8.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=5172
+Denmark,TIMSS,2015,both_parents_born_abroad_parent,7.27,0.78,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGDNKM6/ASHDNKM6, TOTWGT, JK2 75 zones; valid n=3275"
+Denmark,TIMSS,2015,both_parents_born_abroad_student,7.83,0.84,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGDNKM6/ASHDNKM6, TOTWGT, JK2 75 zones; valid n=3536"
+Denmark,PIRLS,2016,child_born_abroad_parent,5.1,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=3318
+Denmark,TIMSS,2015,child_born_abroad_parent,4.0,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3280
+Denmark,TIMSS,2015,child_born_abroad_student,4.1,0.49,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=3600; SE from IDB ASG file JRR (IDB share 4.08)
+Denmark,TIMSS,2015,father_born_abroad_parent,12.6,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=3272
+Denmark,TIMSS,2015,mother_born_abroad_parent,12.7,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=3272
+Denmark,PIRLS,2011,no_test_language_before_school_parent,2.5,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=4325
+Denmark,PIRLS,2011to2016,no_test_language_before_school_parent,0.3,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Denmark,PIRLS,2016,no_test_language_before_school_parent,2.8,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=3123
+Denmark,TIMSS,2015,no_test_language_before_school_parent,2.6,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=3096
+Denmark,PIRLS,2011,test_language_at_home_sometimes_or_never_student,18.0,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4537
+Denmark,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-7.0,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Denmark,PIRLS,2016,test_language_at_home_sometimes_or_never_student,11.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=3428
+Denmark,TIMSS,2011,test_language_at_home_sometimes_or_never_student,19.0,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=3851
+Denmark,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-7.4,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Denmark,TIMSS,2015,test_language_at_home_sometimes_or_never_student,11.6,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=3605
+England,TIMSS,2015,both_parents_born_abroad_student,19.8,1.9,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGENGM6/ASHENGM6, TOTWGT, JK2 75 zones; valid n=3600"
+England,TIMSS,2015,child_born_abroad_student,11.1,0.91,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=3885; SE from IDB ASG file JRR (IDB share 11.1)
+England,PIRLS,2011,test_language_at_home_sometimes_or_never_student,20.9,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=3903
+England,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-4.9,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+England,PIRLS,2016,test_language_at_home_sometimes_or_never_student,16.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=5046
+England,TIMSS,2011,test_language_at_home_sometimes_or_never_student,19.0,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=3377
+England,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-1.7,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+England,TIMSS,2015,test_language_at_home_sometimes_or_never_student,17.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=3882
+Finland,TIMSS,2015,both_parents_born_abroad_parent,4.9,0.64,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGFINM6/ASHFINM6, TOTWGT, JK2 75 zones; valid n=4748"
+Finland,TIMSS,2015,both_parents_born_abroad_student,5.13,0.67,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGFINM6/ASHFINM6, TOTWGT, JK2 75 zones; valid n=4937"
+Finland,PIRLS,2016,child_born_abroad_parent,3.8,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=4560
+Finland,TIMSS,2015,child_born_abroad_parent,4.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4748
+Finland,TIMSS,2015,child_born_abroad_student,4.4,0.48,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4997; SE from IDB ASG file JRR (IDB share 4.37)
+Finland,TIMSS,2015,father_born_abroad_parent,8.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=4743
+Finland,TIMSS,2015,mother_born_abroad_parent,8.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=4735
+Finland,PIRLS,2011,no_test_language_before_school_parent,1.2,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=4416
+Finland,PIRLS,2011to2016,no_test_language_before_school_parent,1.4,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Finland,PIRLS,2016,no_test_language_before_school_parent,2.6,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=4416
+Finland,TIMSS,2011,no_test_language_before_school_parent,1.2,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4408
+Finland,TIMSS,2011to2015,no_test_language_before_school_parent,1.3,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Finland,TIMSS,2015,no_test_language_before_school_parent,2.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=4617
+Finland,PIRLS,2011,test_language_at_home_sometimes_or_never_student,10.9,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4609
+Finland,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-0.3,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Finland,PIRLS,2016,test_language_at_home_sometimes_or_never_student,10.6,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4873
+Finland,TIMSS,2011,test_language_at_home_sometimes_or_never_student,10.8,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4599
+Finland,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,0.3,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Finland,TIMSS,2015,test_language_at_home_sometimes_or_never_student,11.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4980
+"Florida, US",TIMSS,2015,child_born_abroad_student,9.7,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=2012
+"Florida, US",PIRLS,2011,test_language_at_home_sometimes_or_never_student,15.7,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=2552
+"Florida, US",TIMSS,2011,test_language_at_home_sometimes_or_never_student,15.0,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=2613
+"Florida, US",TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,12.9,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+"Florida, US",TIMSS,2015,test_language_at_home_sometimes_or_never_student,27.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=1982
+France,TIMSS,2015,both_parents_born_abroad_parent,11.25,1.13,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGFRAM6/ASHFRAM6, TOTWGT, JK2 75 zones; valid n=4224"
+France,TIMSS,2015,both_parents_born_abroad_student,12.51,1.08,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGFRAM6/ASHFRAM6, TOTWGT, JK2 75 zones; valid n=4508"
+France,PIRLS,2016,child_born_abroad_parent,3.9,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=4345
+France,TIMSS,2015,child_born_abroad_parent,4.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4250
+France,TIMSS,2015,child_born_abroad_student,5.8,0.71,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4821; SE from IDB ASG file JRR (IDB share 5.8)
+France,TIMSS,2015,father_born_abroad_parent,18.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=4211
+France,TIMSS,2015,mother_born_abroad_parent,16.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=4221
+France,PIRLS,2011,no_test_language_before_school_parent,2.0,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=4107
+France,PIRLS,2011to2016,no_test_language_before_school_parent,1.0,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+France,PIRLS,2016,no_test_language_before_school_parent,3.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=4203
+France,TIMSS,2015,no_test_language_before_school_parent,3.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=4032
+France,PIRLS,2011,test_language_at_home_sometimes_or_never_student,22.4,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4407
+France,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-6.7,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+France,PIRLS,2016,test_language_at_home_sometimes_or_never_student,15.7,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4698
+France,TIMSS,2015,test_language_at_home_sometimes_or_never_student,16.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4814
+Georgia,TIMSS,2015,both_parents_born_abroad_parent,0.35,0.07,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGGEOM6/ASHGEOM6, TOTWGT, JK2 75 zones; valid n=3823"
+Georgia,TIMSS,2015,both_parents_born_abroad_student,3.68,0.39,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGGEOM6/ASHGEOM6, TOTWGT, JK2 75 zones; valid n=3611"
+Georgia,PIRLS,2016,child_born_abroad_parent,3.5,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=5493
+Georgia,TIMSS,2015,child_born_abroad_parent,3.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3755
+Georgia,TIMSS,2015,child_born_abroad_student,3.8,0.46,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=3899; SE from IDB ASG file JRR (IDB share 3.78)
+Georgia,TIMSS,2015,father_born_abroad_parent,1.7,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=3782
+Georgia,TIMSS,2015,mother_born_abroad_parent,1.7,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=3795
+Georgia,PIRLS,2011,no_test_language_before_school_parent,2.4,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=4633
+Georgia,PIRLS,2011to2016,no_test_language_before_school_parent,2.9,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Georgia,PIRLS,2016,no_test_language_before_school_parent,5.3,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=5409
+Georgia,TIMSS,2011,no_test_language_before_school_parent,2.4,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4636
+Georgia,TIMSS,2011to2015,no_test_language_before_school_parent,0.8,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Georgia,TIMSS,2015,no_test_language_before_school_parent,3.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=3706
+Georgia,PIRLS,2011,test_language_at_home_sometimes_or_never_student,18.3,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4620
+Georgia,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-2.0,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Georgia,PIRLS,2016,test_language_at_home_sometimes_or_never_student,16.3,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=5570
+Georgia,TIMSS,2011,test_language_at_home_sometimes_or_never_student,18.3,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4623
+Georgia,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-5.8,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Georgia,TIMSS,2015,test_language_at_home_sometimes_or_never_student,12.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=3792
+Germany,TIMSS,2015,both_parents_born_abroad_parent,12.91,1.01,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGDEUM6/ASHDEUM6, TOTWGT, JK2 75 zones; valid n=2354"
+Germany,TIMSS,2015,both_parents_born_abroad_student,19.24,1.19,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGDEUM6/ASHDEUM6, TOTWGT, JK2 75 zones; valid n=3155"
+Germany,PIRLS,2016,child_born_abroad_parent,3.9,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=2859
+Germany,TIMSS,2015,child_born_abroad_parent,3.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=2454
+Germany,TIMSS,2015,child_born_abroad_student,5.0,0.48,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=3341; SE from IDB ASG file JRR (IDB share 4.98)
+Germany,TIMSS,2015,father_born_abroad_parent,18.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=2338
+Germany,TIMSS,2015,mother_born_abroad_parent,18.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=2321
+Germany,PIRLS,2011,no_test_language_before_school_parent,3.1,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=3187
+Germany,PIRLS,2011to2016,no_test_language_before_school_parent,2.1,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Germany,PIRLS,2016,no_test_language_before_school_parent,5.2,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=2845
+Germany,TIMSS,2011,no_test_language_before_school_parent,3.1,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3189
+Germany,TIMSS,2011to2015,no_test_language_before_school_parent,1.8,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Germany,TIMSS,2015,no_test_language_before_school_parent,4.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=2441
+Germany,PIRLS,2011,test_language_at_home_sometimes_or_never_student,19.7,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=3596
+Germany,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-3.1,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Germany,PIRLS,2016,test_language_at_home_sometimes_or_never_student,16.6,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=3479
+Germany,TIMSS,2011,test_language_at_home_sometimes_or_never_student,19.9,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=3604
+Germany,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-0.5,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Germany,TIMSS,2015,test_language_at_home_sometimes_or_never_student,19.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=3330
+Hungary,TIMSS,2015,both_parents_born_abroad_parent,1.6,0.26,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGHUNM6/ASHHUNM6, TOTWGT, JK2 75 zones; valid n=4801"
+Hungary,TIMSS,2015,both_parents_born_abroad_student,2.06,0.27,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGHUNM6/ASHHUNM6, TOTWGT, JK2 75 zones; valid n=4957"
+Hungary,PIRLS,2016,child_born_abroad_parent,1.7,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=4440
+Hungary,TIMSS,2015,child_born_abroad_parent,1.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4820
+Hungary,TIMSS,2015,child_born_abroad_student,1.5,0.23,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=5028; SE from IDB ASG file JRR (IDB share 1.46)
+Hungary,TIMSS,2015,father_born_abroad_parent,3.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=4792
+Hungary,TIMSS,2015,mother_born_abroad_parent,3.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=4793
+Hungary,PIRLS,2011,no_test_language_before_school_parent,1.0,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=4910
+Hungary,PIRLS,2011to2016,no_test_language_before_school_parent,-0.6,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Hungary,PIRLS,2016,no_test_language_before_school_parent,0.4,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=4224
+Hungary,TIMSS,2011,no_test_language_before_school_parent,1.0,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4910
+Hungary,TIMSS,2011to2015,no_test_language_before_school_parent,-0.8,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Hungary,TIMSS,2015,no_test_language_before_school_parent,0.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=4586
+Hungary,PIRLS,2011,test_language_at_home_sometimes_or_never_student,2.6,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=5120
+Hungary,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-0.2,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Hungary,PIRLS,2016,test_language_at_home_sometimes_or_never_student,2.4,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4613
+Hungary,TIMSS,2011,test_language_at_home_sometimes_or_never_student,2.7,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=5171
+Hungary,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-0.3,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Hungary,TIMSS,2015,test_language_at_home_sometimes_or_never_student,2.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=5025
+Ireland,TIMSS,2015,both_parents_born_abroad_parent,11.55,0.89,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGIRLM6/ASHIRLM6, TOTWGT, JK2 75 zones; valid n=4053"
+Ireland,TIMSS,2015,both_parents_born_abroad_student,11.62,0.86,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGIRLM6/ASHIRLM6, TOTWGT, JK2 75 zones; valid n=4207"
+Ireland,PIRLS,2016,child_born_abroad_parent,8.6,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=4282
+Ireland,TIMSS,2015,child_born_abroad_parent,8.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4058
+Ireland,TIMSS,2015,child_born_abroad_student,9.4,0.65,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4316; SE from IDB ASG file JRR (IDB share 9.45)
+Ireland,TIMSS,2015,father_born_abroad_parent,18.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=4042
+Ireland,TIMSS,2015,mother_born_abroad_parent,18.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=4036
+Ireland,PIRLS,2011,no_test_language_before_school_parent,6.6,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=4270
+Ireland,PIRLS,2011to2016,no_test_language_before_school_parent,0.1,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Ireland,PIRLS,2016,no_test_language_before_school_parent,6.7,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=4093
+Ireland,TIMSS,2011,no_test_language_before_school_parent,6.8,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4303
+Ireland,TIMSS,2011to2015,no_test_language_before_school_parent,-0.2,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Ireland,TIMSS,2015,no_test_language_before_school_parent,6.6,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=3843
+Ireland,PIRLS,2011,test_language_at_home_sometimes_or_never_student,15.5,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4409
+Ireland,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-4.1,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Ireland,PIRLS,2016,test_language_at_home_sometimes_or_never_student,11.4,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4575
+Ireland,TIMSS,2011,test_language_at_home_sometimes_or_never_student,15.8,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4416
+Ireland,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-3.3,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Ireland,TIMSS,2015,test_language_at_home_sometimes_or_never_student,12.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4048
+Israel,PIRLS,2016,child_born_abroad_parent,4.4,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=3515
+Israel,PIRLS,2011,no_test_language_before_school_parent,2.9,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=3263
+Israel,PIRLS,2011to2016,no_test_language_before_school_parent,1.4,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Israel,PIRLS,2016,no_test_language_before_school_parent,4.3,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=3386
+Israel,PIRLS,2011,test_language_at_home_sometimes_or_never_student,25.1,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4100
+Israel,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-7.1,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Israel,PIRLS,2016,test_language_at_home_sometimes_or_never_student,18.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=3975
+Italy,TIMSS,2015,both_parents_born_abroad_parent,9.47,0.73,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGITAM6/ASHITAM6, TOTWGT, JK2 75 zones; valid n=4058"
+Italy,TIMSS,2015,both_parents_born_abroad_student,10.61,0.7,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGITAM6/ASHITAM6, TOTWGT, JK2 75 zones; valid n=4211"
+Italy,PIRLS,2016,child_born_abroad_parent,3.4,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=3647
+Italy,TIMSS,2015,child_born_abroad_parent,3.6,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4077
+Italy,TIMSS,2015,child_born_abroad_student,5.4,0.44,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4341; SE from IDB ASG file JRR (IDB share 5.35)
+Italy,TIMSS,2015,father_born_abroad_parent,12.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=4052
+Italy,TIMSS,2015,mother_born_abroad_parent,15.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=4021
+Italy,PIRLS,2011,no_test_language_before_school_parent,5.9,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=3861
+Italy,PIRLS,2011to2016,no_test_language_before_school_parent,-0.9,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Italy,PIRLS,2016,no_test_language_before_school_parent,5.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=3357
+Italy,TIMSS,2011,no_test_language_before_school_parent,5.9,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3865
+Italy,TIMSS,2011to2015,no_test_language_before_school_parent,-0.6,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Italy,TIMSS,2015,no_test_language_before_school_parent,5.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=3548
+Italy,PIRLS,2011,test_language_at_home_sometimes_or_never_student,20.7,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4121
+Italy,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-4.4,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Italy,PIRLS,2016,test_language_at_home_sometimes_or_never_student,16.3,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=3921
+Italy,TIMSS,2011,test_language_at_home_sometimes_or_never_student,20.7,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4117
+Italy,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-4.6,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Italy,TIMSS,2015,test_language_at_home_sometimes_or_never_student,16.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4327
+Japan,TIMSS,2015,both_parents_born_abroad_parent,0.44,0.1,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGJPNM6/ASHJPNM6, TOTWGT, JK2 75 zones; valid n=4274"
+Japan,TIMSS,2015,both_parents_born_abroad_student,0.61,0.13,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGJPNM6/ASHJPNM6, TOTWGT, JK2 75 zones; valid n=4338"
+Japan,TIMSS,2015,child_born_abroad_parent,0.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4286
+Japan,TIMSS,2015,child_born_abroad_student,0.8,0.13,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4378; SE from IDB ASG file JRR (IDB share 0.83)
+Japan,TIMSS,2015,father_born_abroad_parent,0.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=4254
+Japan,TIMSS,2015,mother_born_abroad_parent,1.7,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=4264
+Japan,TIMSS,2015,no_test_language_before_school_parent,0.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=3660
+Japan,TIMSS,2011,test_language_at_home_sometimes_or_never_student,14.8,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4396
+Japan,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-13.2,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Japan,TIMSS,2015,test_language_at_home_sometimes_or_never_student,1.6,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4377
+"Korea, Rep. of",TIMSS,2015,both_parents_born_abroad_parent,0.31,0.1,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGKORM6/ASHKORM6, TOTWGT, JK2 75 zones; valid n=4641"
+"Korea, Rep. of",TIMSS,2015,both_parents_born_abroad_student,0.67,0.16,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGKORM6/ASHKORM6, TOTWGT, JK2 75 zones; valid n=4627"
+"Korea, Rep. of",TIMSS,2015,child_born_abroad_parent,1.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4617
+"Korea, Rep. of",TIMSS,2015,child_born_abroad_student,1.0,0.18,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4658; SE from IDB ASG file JRR (IDB share 1.01)
+"Korea, Rep. of",TIMSS,2015,father_born_abroad_parent,0.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=4628
+"Korea, Rep. of",TIMSS,2015,mother_born_abroad_parent,1.7,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=4621
+"Korea, Rep. of",TIMSS,2015,no_test_language_before_school_parent,0.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=4421
+"Korea, Rep. of",TIMSS,2011,test_language_at_home_sometimes_or_never_student,24.8,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4322
+"Korea, Rep. of",TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-16.5,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+"Korea, Rep. of",TIMSS,2015,test_language_at_home_sometimes_or_never_student,8.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4666
+Latvia,PIRLS,2016,child_born_abroad_parent,1.4,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=3944
+Latvia,PIRLS,2016,no_test_language_before_school_parent,2.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=3843
+Latvia,PIRLS,2016,test_language_at_home_sometimes_or_never_student,12.5,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4137
+Lithuania,TIMSS,2015,both_parents_born_abroad_parent,0.62,0.08,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGLTUM6/ASHLTUM6, TOTWGT, JK2 75 zones; valid n=3898"
+Lithuania,TIMSS,2015,both_parents_born_abroad_student,0.95,0.12,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGLTUM6/ASHLTUM6, TOTWGT, JK2 75 zones; valid n=4347"
+Lithuania,PIRLS,2016,child_born_abroad_parent,2.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=3724
+Lithuania,TIMSS,2015,child_born_abroad_parent,2.0,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3919
+Lithuania,TIMSS,2015,child_born_abroad_student,2.4,0.32,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4509; SE from IDB ASG file JRR (IDB share 2.36)
+Lithuania,TIMSS,2015,father_born_abroad_parent,4.0,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=3889
+Lithuania,TIMSS,2015,mother_born_abroad_parent,3.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=3894
+Lithuania,PIRLS,2011,no_test_language_before_school_parent,2.0,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=4415
+Lithuania,PIRLS,2011to2016,no_test_language_before_school_parent,-0.9,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Lithuania,PIRLS,2016,no_test_language_before_school_parent,1.1,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=3701
+Lithuania,TIMSS,2011,no_test_language_before_school_parent,1.9,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4435
+Lithuania,TIMSS,2011to2015,no_test_language_before_school_parent,-1.1,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Lithuania,TIMSS,2015,no_test_language_before_school_parent,0.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=3900
+Lithuania,PIRLS,2011,test_language_at_home_sometimes_or_never_student,17.1,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4599
+Lithuania,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-6.2,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Lithuania,PIRLS,2016,test_language_at_home_sometimes_or_never_student,10.9,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4286
+Lithuania,TIMSS,2011,test_language_at_home_sometimes_or_never_student,17.1,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4632
+Lithuania,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-7.9,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Lithuania,TIMSS,2015,test_language_at_home_sometimes_or_never_student,9.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4481
+"Madrid, Spain",PIRLS,2016,child_born_abroad_parent,5.1,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=3522
+"Madrid, Spain",PIRLS,2016,no_test_language_before_school_parent,3.5,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=3415
+"Madrid, Spain",PIRLS,2016,test_language_at_home_sometimes_or_never_student,17.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=3783
+Malta,PIRLS,2016,child_born_abroad_parent,3.8,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=3364
+Malta,PIRLS,2011,no_test_language_before_school_parent,55.5,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=3230
+Malta,PIRLS,2011to2016,no_test_language_before_school_parent,-41.9,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Malta,PIRLS,2016,no_test_language_before_school_parent,13.6,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=3219
+Malta,TIMSS,2011,no_test_language_before_school_parent,55.5,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3241
+Malta,PIRLS,2011,test_language_at_home_sometimes_or_never_student,83.0,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=3494
+Malta,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-52.0,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Malta,PIRLS,2016,test_language_at_home_sometimes_or_never_student,31.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=3611
+Malta,TIMSS,2011,test_language_at_home_sometimes_or_never_student,83.0,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=3494
+Netherlands,TIMSS,2015,both_parents_born_abroad_student,13.83,1.37,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGNLDM6/ASHNLDM6, TOTWGT, JK2 75 zones; valid n=4297"
+Netherlands,PIRLS,2016,child_born_abroad_parent,3.7,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=2271
+Netherlands,TIMSS,2015,child_born_abroad_parent,2.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=1174
+Netherlands,TIMSS,2015,child_born_abroad_student,4.5,0.61,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4334; SE from IDB ASG file JRR (IDB share 4.54)
+Netherlands,PIRLS,2011,no_test_language_before_school_parent,3.3,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=2277
+Netherlands,PIRLS,2011to2016,no_test_language_before_school_parent,1.2,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Netherlands,PIRLS,2016,no_test_language_before_school_parent,4.5,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=2041
+Netherlands,TIMSS,2015,no_test_language_before_school_parent,2.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=1167
+Netherlands,PIRLS,2011,test_language_at_home_sometimes_or_never_student,22.2,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=3963
+Netherlands,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-4.8,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Netherlands,PIRLS,2016,test_language_at_home_sometimes_or_never_student,17.4,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4153
+Netherlands,TIMSS,2011,test_language_at_home_sometimes_or_never_student,19.1,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=3183
+Netherlands,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,0.8,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Netherlands,TIMSS,2015,test_language_at_home_sometimes_or_never_student,19.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4357
+New Zealand,TIMSS,2015,both_parents_born_abroad_parent,21.5,1.49,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGNZLM6/ASHNZLM6, TOTWGT, JK2 75 zones; valid n=3481"
+New Zealand,TIMSS,2015,both_parents_born_abroad_student,22.8,1.33,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGNZLM6/ASHNZLM6, TOTWGT, JK2 75 zones; valid n=5781"
+New Zealand,PIRLS,2016,child_born_abroad_parent,12.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=2732
+New Zealand,TIMSS,2015,child_born_abroad_parent,15.7,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3443
+New Zealand,TIMSS,2015,child_born_abroad_student,16.4,0.76,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=6245; SE from IDB ASG file JRR (IDB share 16.38)
+New Zealand,TIMSS,2015,father_born_abroad_parent,30.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=3475
+New Zealand,TIMSS,2015,mother_born_abroad_parent,31.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=3479
+New Zealand,PIRLS,2011,no_test_language_before_school_parent,5.9,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=3355
+New Zealand,PIRLS,2011to2016,no_test_language_before_school_parent,-0.9,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+New Zealand,PIRLS,2016,no_test_language_before_school_parent,5.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=2706
+New Zealand,TIMSS,2015,no_test_language_before_school_parent,6.7,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=3320
+New Zealand,PIRLS,2011,test_language_at_home_sometimes_or_never_student,25.6,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=5585
+New Zealand,TIMSS,2011,test_language_at_home_sometimes_or_never_student,25.8,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=5485
+New Zealand,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-9.8,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+New Zealand,TIMSS,2015,test_language_at_home_sometimes_or_never_student,16.0,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=6252
+"North Carolina, US",TIMSS,2011,test_language_at_home_sometimes_or_never_student,9.8,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=1733
+Northern Ireland,TIMSS,2015,both_parents_born_abroad_parent,9.43,1.5,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGNIRM6/ASHNIRM6, TOTWGT, JK2 75 zones; valid n=1835"
+Northern Ireland,TIMSS,2015,both_parents_born_abroad_student,8.83,1.28,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGNIRM6/ASHNIRM6, TOTWGT, JK2 75 zones; valid n=2978"
+Northern Ireland,PIRLS,2016,child_born_abroad_parent,7.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=1459
+Northern Ireland,TIMSS,2015,child_born_abroad_parent,9.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=1831
+Northern Ireland,TIMSS,2015,child_born_abroad_student,11.1,1.14,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=3102; SE from IDB ASG file JRR (IDB share 11.1)
+Northern Ireland,TIMSS,2015,father_born_abroad_parent,18.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=1827
+Northern Ireland,TIMSS,2015,mother_born_abroad_parent,18.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=1823
+Northern Ireland,PIRLS,2011,no_test_language_before_school_parent,2.0,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=2106
+Northern Ireland,PIRLS,2011to2016,no_test_language_before_school_parent,-0.2,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Northern Ireland,PIRLS,2016,no_test_language_before_school_parent,1.8,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=1388
+Northern Ireland,TIMSS,2011,no_test_language_before_school_parent,2.0,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=2095
+Northern Ireland,TIMSS,2011to2015,no_test_language_before_school_parent,3.4,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Northern Ireland,TIMSS,2015,no_test_language_before_school_parent,5.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=1750
+Northern Ireland,PIRLS,2011,test_language_at_home_sometimes_or_never_student,8.9,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=3509
+Northern Ireland,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-2.5,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Northern Ireland,PIRLS,2016,test_language_at_home_sometimes_or_never_student,6.4,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=3664
+Northern Ireland,TIMSS,2011,test_language_at_home_sometimes_or_never_student,8.9,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=3505
+Northern Ireland,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-0.7,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Northern Ireland,TIMSS,2015,test_language_at_home_sometimes_or_never_student,8.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=3103
+Norway,TIMSS,2015,both_parents_born_abroad_parent,10.25,1.69,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGNORM6/ASHNORM6, TOTWGT, JK2 75 zones; valid n=1815"
+Norway,TIMSS,2015,both_parents_born_abroad_student,13.27,1.38,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGNORM6/ASHNORM6, TOTWGT, JK2 75 zones; valid n=4199"
+Norway,TIMSS,2015,child_born_abroad_parent,6.7,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=1853
+Norway,TIMSS,2015,child_born_abroad_student,7.9,0.64,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4283; SE from IDB ASG file JRR (IDB share 7.91)
+Norway,TIMSS,2015,father_born_abroad_parent,17.0,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=1815
+Norway,TIMSS,2015,mother_born_abroad_parent,16.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=1816
+Norway,PIRLS,2011,no_test_language_before_school_parent,3.3,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=2902
+Norway,TIMSS,2011,no_test_language_before_school_parent,3.3,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=2850
+Norway,TIMSS,2011to2015,no_test_language_before_school_parent,0.6,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Norway,TIMSS,2015,no_test_language_before_school_parent,3.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=1848
+Norway,PIRLS,2011,test_language_at_home_sometimes_or_never_student,18.5,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=3102
+Norway,TIMSS,2011,test_language_at_home_sometimes_or_never_student,18.5,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=3050
+Norway,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-3.4,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Norway,TIMSS,2015,test_language_at_home_sometimes_or_never_student,15.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4282
+Norway (4),TIMSS,2015,both_parents_born_abroad_parent,10.67,1.17,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGNO4M6/ASHNO4M6, TOTWGT, JK2 75 zones; valid n=1839"
+Norway (4),TIMSS,2015,both_parents_born_abroad_student,14.04,1.17,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGNO4M6/ASHNO4M6, TOTWGT, JK2 75 zones; valid n=3945"
+Norway (4),PIRLS,2016,child_born_abroad_parent,7.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=4114
+Norway (4),TIMSS,2015,child_born_abroad_parent,5.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=1870
+Norway (4),TIMSS,2015,child_born_abroad_student,8.0,0.6,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4133; SE from IDB ASG file JRR (IDB share 8.05)
+Norway (4),TIMSS,2015,father_born_abroad_parent,16.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=1839
+Norway (4),TIMSS,2015,mother_born_abroad_parent,17.6,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=1839
+Norway (4),PIRLS,2016,no_test_language_before_school_parent,4.6,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=3941
+Norway (4),TIMSS,2015,no_test_language_before_school_parent,4.6,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=1858
+Norway (4),PIRLS,2016,test_language_at_home_sometimes_or_never_student,14.4,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4288
+Norway (4),TIMSS,2015,test_language_at_home_sometimes_or_never_student,17.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4095
+Norway (5),PIRLS,2016,child_born_abroad_parent,6.8,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=4046
+Norway (5),PIRLS,2016,no_test_language_before_school_parent,5.2,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=3858
+Norway (5),PIRLS,2016,test_language_at_home_sometimes_or_never_student,11.6,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4178
+"Ontario, Canada",TIMSS,2015,both_parents_born_abroad_parent,36.16,2.2,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGCOTM6/ASHCOTM6, TOTWGT, JK2 75 zones; valid n=3562"
+"Ontario, Canada",TIMSS,2015,both_parents_born_abroad_student,38.22,1.94,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGCOTM6/ASHCOTM6, TOTWGT, JK2 75 zones; valid n=4118"
+"Ontario, Canada",PIRLS,2016,child_born_abroad_parent,10.5,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=3372
+"Ontario, Canada",TIMSS,2015,child_born_abroad_parent,11.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3574
+"Ontario, Canada",TIMSS,2015,child_born_abroad_student,11.9,0.99,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4513; SE from IDB ASG file JRR (IDB share 11.92)
+"Ontario, Canada",TIMSS,2015,father_born_abroad_parent,44.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=3559
+"Ontario, Canada",TIMSS,2015,mother_born_abroad_parent,42.6,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=3557
+"Ontario, Canada",PIRLS,2011,no_test_language_before_school_parent,13.0,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=3636
+"Ontario, Canada",PIRLS,2011to2016,no_test_language_before_school_parent,0.7,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+"Ontario, Canada",PIRLS,2016,no_test_language_before_school_parent,13.7,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=3284
+"Ontario, Canada",TIMSS,2015,no_test_language_before_school_parent,13.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=3406
+"Ontario, Canada",PIRLS,2011,test_language_at_home_sometimes_or_never_student,31.8,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4473
+"Ontario, Canada",PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-8.0,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+"Ontario, Canada",PIRLS,2016,test_language_at_home_sometimes_or_never_student,23.8,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4231
+"Ontario, Canada",TIMSS,2011,test_language_at_home_sometimes_or_never_student,33.6,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4508
+"Ontario, Canada",TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-7.6,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+"Ontario, Canada",TIMSS,2015,test_language_at_home_sometimes_or_never_student,26.0,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4518
+Poland,TIMSS,2015,both_parents_born_abroad_parent,0.24,0.08,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGPOLM6/ASHPOLM6, TOTWGT, JK2 75 zones; valid n=4623"
+Poland,PIRLS,2016,child_born_abroad_parent,1.2,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=4288
+Poland,TIMSS,2015,child_born_abroad_parent,1.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4606
+Poland,TIMSS,2015,father_born_abroad_parent,0.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=4614
+Poland,TIMSS,2015,mother_born_abroad_parent,0.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=4611
+Poland,PIRLS,2011,no_test_language_before_school_parent,0.6,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=4900
+Poland,PIRLS,2011to2016,no_test_language_before_school_parent,-0.1,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Poland,PIRLS,2016,no_test_language_before_school_parent,0.5,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=3845
+Poland,TIMSS,2011,no_test_language_before_school_parent,0.6,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4918
+Poland,TIMSS,2011to2015,no_test_language_before_school_parent,0.0,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Poland,TIMSS,2015,no_test_language_before_school_parent,0.6,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=4155
+Poland,PIRLS,2011,test_language_at_home_sometimes_or_never_student,9.2,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4965
+Poland,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-5.6,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Poland,PIRLS,2016,test_language_at_home_sometimes_or_never_student,3.6,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4398
+Poland,TIMSS,2011,test_language_at_home_sometimes_or_never_student,9.2,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4989
+Poland,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-5.3,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Poland,TIMSS,2015,test_language_at_home_sometimes_or_never_student,3.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4716
+Portugal,TIMSS,2015,both_parents_born_abroad_parent,5.9,0.53,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGPRTM6/ASHPRTM6, TOTWGT, JK2 75 zones; valid n=4581"
+Portugal,TIMSS,2015,both_parents_born_abroad_student,6.77,0.52,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGPRTM6/ASHPRTM6, TOTWGT, JK2 75 zones; valid n=4605"
+Portugal,PIRLS,2016,child_born_abroad_parent,4.3,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=4555
+Portugal,TIMSS,2015,child_born_abroad_parent,3.7,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4569
+Portugal,TIMSS,2015,child_born_abroad_student,4.2,0.35,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4682; SE from IDB ASG file JRR (IDB share 4.16)
+Portugal,TIMSS,2015,father_born_abroad_parent,12.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=4563
+Portugal,TIMSS,2015,mother_born_abroad_parent,13.6,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=4576
+Portugal,PIRLS,2011,no_test_language_before_school_parent,2.0,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=3872
+Portugal,PIRLS,2011to2016,no_test_language_before_school_parent,1.3,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Portugal,PIRLS,2016,no_test_language_before_school_parent,3.3,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=4142
+Portugal,TIMSS,2011,no_test_language_before_school_parent,1.9,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3835
+Portugal,TIMSS,2011to2015,no_test_language_before_school_parent,0.3,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Portugal,TIMSS,2015,no_test_language_before_school_parent,2.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=4143
+Portugal,PIRLS,2011,test_language_at_home_sometimes_or_never_student,10.3,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4034
+Portugal,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-1.8,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Portugal,PIRLS,2016,test_language_at_home_sometimes_or_never_student,8.5,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4633
+Portugal,TIMSS,2011,test_language_at_home_sometimes_or_never_student,10.1,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4001
+Portugal,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-1.3,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Portugal,TIMSS,2015,test_language_at_home_sometimes_or_never_student,8.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4665
+"Quebec, Canada",TIMSS,2015,both_parents_born_abroad_parent,20.28,3.38,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGCQUM6/ASHCQUM6, TOTWGT, JK2 75 zones; valid n=2383"
+"Quebec, Canada",TIMSS,2015,both_parents_born_abroad_student,23.12,3.38,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGCQUM6/ASHCQUM6, TOTWGT, JK2 75 zones; valid n=2563"
+"Quebec, Canada",PIRLS,2016,child_born_abroad_parent,9.9,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=2751
+"Quebec, Canada",TIMSS,2015,child_born_abroad_parent,10.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=2390
+"Quebec, Canada",TIMSS,2015,child_born_abroad_student,13.0,1.88,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=2756; SE from IDB ASG file JRR (IDB share 13.01)
+"Quebec, Canada",TIMSS,2015,father_born_abroad_parent,25.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=2380
+"Quebec, Canada",TIMSS,2015,mother_born_abroad_parent,24.0,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=2379
+"Quebec, Canada",PIRLS,2011,no_test_language_before_school_parent,6.0,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=3733
+"Quebec, Canada",PIRLS,2011to2016,no_test_language_before_school_parent,5.6,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+"Quebec, Canada",PIRLS,2016,no_test_language_before_school_parent,11.6,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=2707
+"Quebec, Canada",TIMSS,2011,no_test_language_before_school_parent,6.0,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3730
+"Quebec, Canada",TIMSS,2011to2015,no_test_language_before_school_parent,2.8,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+"Quebec, Canada",TIMSS,2015,no_test_language_before_school_parent,8.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=2296
+"Quebec, Canada",PIRLS,2011,test_language_at_home_sometimes_or_never_student,26.5,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4147
+"Quebec, Canada",PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-1.2,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+"Quebec, Canada",PIRLS,2016,test_language_at_home_sometimes_or_never_student,25.3,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=3157
+"Quebec, Canada",TIMSS,2011,test_language_at_home_sometimes_or_never_student,26.6,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4142
+"Quebec, Canada",TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-4.2,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+"Quebec, Canada",TIMSS,2015,test_language_at_home_sometimes_or_never_student,22.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=2754
+Romania,PIRLS,2011,no_test_language_before_school_parent,3.5,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=4514
+Romania,TIMSS,2011,no_test_language_before_school_parent,3.5,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4524
+Romania,PIRLS,2011,test_language_at_home_sometimes_or_never_student,10.6,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4590
+Romania,TIMSS,2011,test_language_at_home_sometimes_or_never_student,10.7,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4604
+Russian Federation,TIMSS,2015,both_parents_born_abroad_parent,4.99,0.42,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGRUSM6/ASHRUSM6, TOTWGT, JK2 75 zones; valid n=4866"
+Russian Federation,TIMSS,2015,both_parents_born_abroad_student,4.79,0.39,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGRUSM6/ASHRUSM6, TOTWGT, JK2 75 zones; valid n=4770"
+Russian Federation,PIRLS,2016,child_born_abroad_parent,4.1,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=4533
+Russian Federation,TIMSS,2015,child_born_abroad_parent,3.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4861
+Russian Federation,TIMSS,2015,child_born_abroad_student,2.7,0.31,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4910; SE from IDB ASG file JRR (IDB share 2.69)
+Russian Federation,TIMSS,2015,father_born_abroad_parent,9.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=4847
+Russian Federation,TIMSS,2015,mother_born_abroad_parent,8.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=4866
+Russian Federation,PIRLS,2011,no_test_language_before_school_parent,4.3,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=4414
+Russian Federation,PIRLS,2011to2016,no_test_language_before_school_parent,-0.4,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Russian Federation,PIRLS,2016,no_test_language_before_school_parent,3.9,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=4389
+Russian Federation,TIMSS,2011,no_test_language_before_school_parent,4.4,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4417
+Russian Federation,TIMSS,2011to2015,no_test_language_before_school_parent,-0.6,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Russian Federation,TIMSS,2015,no_test_language_before_school_parent,3.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=4639
+Russian Federation,PIRLS,2011,test_language_at_home_sometimes_or_never_student,15.4,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4446
+Russian Federation,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-5.5,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Russian Federation,PIRLS,2016,test_language_at_home_sometimes_or_never_student,9.9,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4565
+Russian Federation,TIMSS,2011,test_language_at_home_sometimes_or_never_student,15.4,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4453
+Russian Federation,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-6.0,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Russian Federation,TIMSS,2015,test_language_at_home_sometimes_or_never_student,9.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4906
+Serbia,TIMSS,2015,both_parents_born_abroad_parent,3.3,0.36,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGSRBM6/ASHSRBM6, TOTWGT, JK2 75 zones; valid n=3926"
+Serbia,TIMSS,2015,both_parents_born_abroad_student,4.1,0.44,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGSRBM6/ASHSRBM6, TOTWGT, JK2 75 zones; valid n=3955"
+Serbia,TIMSS,2015,child_born_abroad_parent,2.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3925
+Serbia,TIMSS,2015,child_born_abroad_student,2.8,0.35,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4018; SE from IDB ASG file JRR (IDB share 2.83)
+Serbia,TIMSS,2015,father_born_abroad_parent,10.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=3910
+Serbia,TIMSS,2015,mother_born_abroad_parent,10.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=3920
+Serbia,TIMSS,2015,no_test_language_before_school_parent,2.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=3834
+Serbia,TIMSS,2011,test_language_at_home_sometimes_or_never_student,10.0,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4328
+Serbia,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-4.6,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Serbia,TIMSS,2015,test_language_at_home_sometimes_or_never_student,5.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=3991
+Slovak Republic,TIMSS,2015,both_parents_born_abroad_parent,1.13,0.21,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGSVKM6/ASHSVKM6, TOTWGT, JK2 75 zones; valid n=5576"
+Slovak Republic,TIMSS,2015,both_parents_born_abroad_student,2.8,0.28,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGSVKM6/ASHSVKM6, TOTWGT, JK2 75 zones; valid n=5586"
+Slovak Republic,PIRLS,2016,child_born_abroad_parent,1.9,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=5272
+Slovak Republic,TIMSS,2015,child_born_abroad_parent,1.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=5599
+Slovak Republic,TIMSS,2015,child_born_abroad_student,2.5,0.23,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=5754; SE from IDB ASG file JRR (IDB share 2.45)
+Slovak Republic,TIMSS,2015,father_born_abroad_parent,4.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=5565
+Slovak Republic,TIMSS,2015,mother_born_abroad_parent,2.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=5570
+Slovak Republic,PIRLS,2011,no_test_language_before_school_parent,2.4,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=5481
+Slovak Republic,PIRLS,2011to2016,no_test_language_before_school_parent,1.6,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Slovak Republic,PIRLS,2016,no_test_language_before_school_parent,4.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=5160
+Slovak Republic,TIMSS,2011,no_test_language_before_school_parent,2.5,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=5472
+Slovak Republic,TIMSS,2011to2015,no_test_language_before_school_parent,2.4,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Slovak Republic,TIMSS,2015,no_test_language_before_school_parent,4.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=5379
+Slovak Republic,PIRLS,2011,test_language_at_home_sometimes_or_never_student,20.3,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=5566
+Slovak Republic,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-6.7,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Slovak Republic,PIRLS,2016,test_language_at_home_sometimes_or_never_student,13.6,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=5425
+Slovak Republic,TIMSS,2011,test_language_at_home_sometimes_or_never_student,20.3,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=5559
+Slovak Republic,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-4.9,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Slovak Republic,TIMSS,2015,test_language_at_home_sometimes_or_never_student,15.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=5729
+Slovenia,TIMSS,2015,both_parents_born_abroad_parent,4.79,0.62,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGSVNM6/ASHSVNM6, TOTWGT, JK2 75 zones; valid n=2778"
+Slovenia,TIMSS,2015,both_parents_born_abroad_student,7.35,0.75,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGSVNM6/ASHSVNM6, TOTWGT, JK2 75 zones; valid n=4316"
+Slovenia,PIRLS,2016,child_born_abroad_parent,4.9,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=4315
+Slovenia,TIMSS,2015,child_born_abroad_parent,3.0,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=2804
+Slovenia,TIMSS,2015,child_born_abroad_student,4.2,0.41,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4417; SE from IDB ASG file JRR (IDB share 4.22)
+Slovenia,TIMSS,2015,father_born_abroad_parent,10.7,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=2775
+Slovenia,TIMSS,2015,mother_born_abroad_parent,8.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=2778
+Slovenia,PIRLS,2011,no_test_language_before_school_parent,2.8,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=4318
+Slovenia,PIRLS,2011to2016,no_test_language_before_school_parent,1.2,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Slovenia,PIRLS,2016,no_test_language_before_school_parent,4.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=4152
+Slovenia,TIMSS,2011,no_test_language_before_school_parent,2.9,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=4294
+Slovenia,TIMSS,2011to2015,no_test_language_before_school_parent,0.6,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Slovenia,TIMSS,2015,no_test_language_before_school_parent,3.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=2793
+Slovenia,PIRLS,2016,test_language_at_home_sometimes_or_never_student,12.2,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4469
+Slovenia,TIMSS,2015,test_language_at_home_sometimes_or_never_student,13.9,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4394
+Spain,TIMSS,2015,both_parents_born_abroad_parent,10.24,0.96,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGESPM6/ASHESPM6, TOTWGT, JK2 75 zones; valid n=6919"
+Spain,TIMSS,2015,both_parents_born_abroad_student,10.11,0.76,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGESPM6/ASHESPM6, TOTWGT, JK2 75 zones; valid n=7487"
+Spain,PIRLS,2016,child_born_abroad_parent,4.7,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=13563
+Spain,TIMSS,2015,child_born_abroad_parent,4.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=6913
+Spain,TIMSS,2015,child_born_abroad_student,5.0,0.49,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=7709; SE from IDB ASG file JRR (IDB share 5.05)
+Spain,TIMSS,2015,father_born_abroad_parent,13.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=6898
+Spain,TIMSS,2015,mother_born_abroad_parent,15.0,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=6912
+Spain,PIRLS,2011,no_test_language_before_school_parent,12.6,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=7915
+Spain,PIRLS,2011to2016,no_test_language_before_school_parent,-0.6,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Spain,PIRLS,2016,no_test_language_before_school_parent,12.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=13161
+Spain,TIMSS,2011,no_test_language_before_school_parent,3.2,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3700
+Spain,TIMSS,2011to2015,no_test_language_before_school_parent,8.8,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Spain,TIMSS,2015,no_test_language_before_school_parent,12.0,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=6743
+Spain,PIRLS,2011,test_language_at_home_sometimes_or_never_student,31.3,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=8481
+Spain,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-2.1,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Spain,PIRLS,2016,test_language_at_home_sometimes_or_never_student,29.2,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=14536
+Spain,TIMSS,2011,test_language_at_home_sometimes_or_never_student,32.4,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4123
+Spain,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-5.6,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Spain,TIMSS,2015,test_language_at_home_sometimes_or_never_student,26.8,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=7690
+Sweden,TIMSS,2015,both_parents_born_abroad_parent,16.4,1.81,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGSWEM6/ASHSWEM6, TOTWGT, JK2 75 zones; valid n=3583"
+Sweden,TIMSS,2015,both_parents_born_abroad_student,17.39,1.78,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGSWEM6/ASHSWEM6, TOTWGT, JK2 75 zones; valid n=4038"
+Sweden,PIRLS,2016,child_born_abroad_parent,6.4,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH03A valid N=3876
+Sweden,TIMSS,2015,child_born_abroad_parent,7.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3578
+Sweden,TIMSS,2015,child_born_abroad_student,8.8,0.88,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=4096; SE from IDB ASG file JRR (IDB share 8.83)
+Sweden,TIMSS,2015,father_born_abroad_parent,22.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=3582
+Sweden,TIMSS,2015,mother_born_abroad_parent,22.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=3574
+Sweden,PIRLS,2011,no_test_language_before_school_parent,5.0,,IEA almanac P11_Almanacs.zip:P11_HomeAlmanac.pdf ASBH03A valid N=3791
+Sweden,PIRLS,2011to2016,no_test_language_before_school_parent,-2.7,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Sweden,PIRLS,2016,no_test_language_before_school_parent,2.3,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_HomeAlmanac.pdf ASBH04A valid N=3675
+Sweden,TIMSS,2011,no_test_language_before_school_parent,5.0,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=3799
+Sweden,TIMSS,2011to2015,no_test_language_before_school_parent,-0.5,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Sweden,TIMSS,2015,no_test_language_before_school_parent,4.5,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=3272
+Sweden,PIRLS,2011,test_language_at_home_sometimes_or_never_student,20.0,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=4510
+Sweden,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,-6.2,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+Sweden,PIRLS,2016,test_language_at_home_sometimes_or_never_student,13.8,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4414
+Sweden,TIMSS,2011,test_language_at_home_sometimes_or_never_student,20.1,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4518
+Sweden,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-3.7,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Sweden,TIMSS,2015,test_language_at_home_sometimes_or_never_student,16.4,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=4085
+Turkey,TIMSS,2015,both_parents_born_abroad_parent,1.33,0.18,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGTURM6/ASHTURM6, TOTWGT, JK2 75 zones; valid n=6328"
+Turkey,TIMSS,2015,both_parents_born_abroad_student,3.08,0.32,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGTURM6/ASHTURM6, TOTWGT, JK2 75 zones; valid n=6061"
+Turkey,TIMSS,2015,child_born_abroad_parent,1.1,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH03A valid N=6306
+Turkey,TIMSS,2015,child_born_abroad_student,3.6,0.34,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=6423; SE from IDB ASG file JRR (IDB share 3.59)
+Turkey,TIMSS,2015,father_born_abroad_parent,2.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17A valid N=6319
+Turkey,TIMSS,2015,mother_born_abroad_parent,2.7,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH17B valid N=6304
+Turkey,TIMSS,2015,no_test_language_before_school_parent,7.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_HomeAlmanac.pdf ASBH04A valid N=6156
+Turkey,TIMSS,2011,test_language_at_home_sometimes_or_never_student,24.4,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=7279
+Turkey,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,-9.1,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+Turkey,TIMSS,2015,test_language_at_home_sometimes_or_never_student,15.3,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=6124
+United States,TIMSS,2015,both_parents_born_abroad_student,18.68,1.05,"IEA TIMSS 2015 G4 IDB T15_G4_SPSSData ASGUSAM6/ASHUSAM6, TOTWGT, JK2 75 zones; valid n=8405"
+United States,TIMSS,2015,child_born_abroad_student,6.5,0.36,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG07 valid N=9851; SE from IDB ASG file JRR (IDB share 6.5)
+United States,PIRLS,2011,test_language_at_home_sometimes_or_never_student,14.1,,IEA almanac P11_Almanacs.zip:P11_StudentAlmanac.pdf ASBG03 valid N=12486
+United States,PIRLS,2011to2016,test_language_at_home_sometimes_or_never_student,2.9,,difference of rows PIRLS 2016 and PIRLS 2011 (percentage points)
+United States,PIRLS,2016,test_language_at_home_sometimes_or_never_student,17.0,,IEA almanac P16_Almanacs.zip:Context Almanacs/P16_StudentAlmanac.pdf ASBG03 valid N=4306
+United States,TIMSS,2011,test_language_at_home_sometimes_or_never_student,13.9,,IEA almanac T11_G4_Almanacs.zip:MAT/T11_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=12238
+United States,TIMSS,2011to2015,test_language_at_home_sometimes_or_never_student,7.3,,difference of rows TIMSS 2015 and TIMSS 2011 (percentage points)
+United States,TIMSS,2015,test_language_at_home_sometimes_or_never_student,21.2,,IEA almanac T15_G4_Almanacs.zip:MAT/T15_G4_MAT_StudentAlmanac.pdf ASBG03 valid N=9734
