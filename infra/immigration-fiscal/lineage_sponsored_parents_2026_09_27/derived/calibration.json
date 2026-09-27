@@ -1,0 +1,25 @@
+{
+ "E_chosen": {
+  "central": 0.09551344078331536,
+  "high": 0.2801441441441441,
+  "low": 0.07138607344226293
+ },
+ "E_rule": {
+  "central": "central/equal_hazard",
+  "high": "high/age_bound_ceiling",
+  "low": "low/equal_hazard"
+ },
+ "m_living_parents_at_60": 1.8054228389823628,
+ "nat_html_sha256": "d46337f2a96230f1d8c6acd16674466d80dfdc2460c32b7bd322870c4fcb54bb",
+ "nat_mexico": {
+  "2022": 128880,
+  "2023": 111460,
+  "2024": 107670
+ },
+ "nat_source": "https://ohss.dhs.gov/topics/immigration/naturalizations/annual-flow-report/fy-24-naturalizations-flow-report",
+ "naturalisation_rate": 0.619,
+ "resident_share": {
+  "high": 0.7189949748743718,
+  "low": 0.3325
+ }
+}
