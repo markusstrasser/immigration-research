@@ -6,7 +6,9 @@ distance from the white mean: the G1→G2 rank slope is 0.52 on education and 0.
 The Mexican-origin gap stalls after G2 rather than continuing to converge. The Indian G3 cell is
 too thin to say the same (+$11.8k, se 8.2k; [Indian later generations](immigration-indian-later-generation-fiscal-2026-09-21.md)). For Mexican origin the G2 step is large at the bottom and small at the top. Then
 the gap stalls: G2→G3+ carries about 0.9 of the gap on BA, earnings and the partial ledger, and
-no source shows G4+ better than G3 (entry 232). The civic record follows the same shape. Turnout
+no source shows G4+ better than G3 (entry 232). [2026-09-28: with the hidden third generation put
+back, the step is about 0.84 on BA and 0.82 on earnings and the ledger (SE 0.07–0.09): identity loss
+explains about a tenth of the ratio, and age cohort about as much (§1).] The civic record follows the same shape. Turnout
 at equal SES is −10 for G2 and −9 for G3+, and spousal endogamy falls 90 → 72 → 56%. Attachment
 to Mexico itself fades fast: "very connected" drops from 50% to 7% by G3+, and votes cast from
 abroad are under 2% of Mexico-born adults (entries 233–234). The Indian advantage is a shift of
@@ -61,6 +63,27 @@ people who stop identifying look like the measured non-identifiers, the G3→G4+
 0.79–1.10. If they look exactly like whites, it is 0.69–0.87 at 29% attrition and 0.43–0.61 at
 56%. The observed G3/G4+ adults in CPS are young and living with their parents (n 151 and 302 for
 BA at 25+).
+
+[2026-09-28: identity loss tested on the same sample (`carryover_identity_2026_09_27`, entry 232).
+- *The G2 side.* It needs no correction: CPS G2 is defined by a parent's birthplace, and 7.0% of it
+  already does not report Mexican origin.
+- *Third-generation non-identifiers.* In CPS adults living with a parent, G3 is defined by a
+  Mexico-born grandparent. 11% do not report Mexican origin, and they sit near white parity (closing
+  share 0.78, SE 0.64, pooled with NLSY97).
+- *Later leavers.* Adults who drop the identity one generation later are not ahead of identifiers:
+  earnings are $11–12k lower (n 35–44). Losses past G3 therefore move nothing, whether 17.5% or 23%
+  are hidden, and the white-like bounds above lose their best support.
+- *Corrected G2→G3+.* About 0.84 on BA+ and 0.82 on earnings and the ledger (SE 0.07–0.09), against
+  0.92 / 0.90 / 0.90. The gap shrinks by a sixth instead of a tenth. The bounds run from 0.92 (hidden
+  like identifiers) to 0.69–0.76 (all hidden like whites).
+- *Cohort.* It explains more than identity: the identifiers' BA+ ratio is 0.87 at 25–44, 0.83 for the
+  1979–85 birth cohort and 1.06–1.12 at 45–64, where G2 sits unusually close to whites. Of the 0.16
+  between CPS (0.92) and NLSY97 (0.76), about 0.09 is cohort and 0.05 attrition.
+- *The attriters' dollar convention.* The 54–72% dollar closing share used in the bounds above is a
+  years-of-schooling ratio. On the same 669 G2 adults, non-identifiers close 0.17–0.27 of the BA+,
+  years, earnings and ledger gaps alike.
+- *What would settle it.* About 540 adult G3 non-identifiers found by grandparents' birthplace, from
+  IPUMS-CPS with parent pointers or the licensed NLSY97 geocode; 44–55 exist today.]
 
 **Tension with the literature.** Published group-level carry-over is 0.4–0.6 per generation
 (Borjas 1992–94; Card, DiNardo & Estes; Ward 2020 gives 0.57–0.74 for G2→G3). The Mexican G2→G3+
@@ -223,7 +246,9 @@ Settled at the descriptive level:
 
 Not settled:
 - Why the Mexican path stalls: vintage, identity loss, ethnic capital, or discrimination. The
-  sources here do not separate these.
+  sources here do not separate these. [2026-09-28: identity loss is now sized at about a tenth of
+  the G2→G3+ ratio, and cohort at about as much (§1); vintage, ethnic capital and discrimination
+  remain unseparated.]
 - Whether the historical 0.5 carry-over or today's 0.9 will describe the next two generations.
 - The within-India selection step: caste is not recorded in US surveys.
 - What the Indian G2 who marry out marry into, which decides how long the Indian level holds.
@@ -235,3 +260,4 @@ Not settled:
 - 2026-09-27, late: corrected after the conceptual audit (3db388d): selection within origin is measured on adult arrivals, the slope asymmetry is not significant, and identity loss grows with the parent's generation (lineage 0.888 too high for G4+).
 - 2026-09-27, late: §4 gained the IR-5 fraud-versus-cohort test (entry 242).
 - 2026-09-27, late: §4a's lineage figure is narrowed after the conceptual audit's second pass (§D): the 1.9% is a calibrated scenario, not an observed lifetime petition rate, and timing alone moves the channel. Concept affected: the sponsored-parent channel's size.
+- 2026-09-28: §1 gained the identity-loss test of the G2 stall (`carryover_identity_2026_09_27`, entry 232): G2→G3+ is about 0.84 / 0.82 with the hidden third generation put back, cohort matters about as much, and the attriters' 54–72% dollar convention is a years-of-schooling ratio. Concept affected: Mexican-origin carry-over after G2.
