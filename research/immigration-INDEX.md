@@ -44,12 +44,37 @@ No exact national total is identified by the examined files; this is not a claim
 that such a total is impossible in principle.
 
 Latest complete annual account: [national reconciliation and conditional net effects](immigration-complete-annual-account-2026-09-20.md).
-**Adopted main case (September 26): $258–292bn/year conditional net cost to other US
+**Adopted main case (September 27): $322–387bn/year conditional net cost to other US
+residents** ($321.8–387.4bn; [lane](../infra/immigration-fiscal/main_case_long_run_2026_09_27/RESULT.md),
+[decision](../decisions/2026-09-27-main-case-capital-return-and-long-run-responses.md), ladder 237–239). It adds
+four items to the September 26 schools case below. Each had been held at zero by a source classification or a
+short-run budget convention, not by a measurement:
+- long-run road, park and economic-administration responses, +$19.4 / +$29.6bn: across states, highway spending
+  rises 0.73% and park spending 0.95% per 1% more residents;
+- rental assistance at 1, like the account's other capped means-tested transfers, +$4.5bn;
+- the return on public capital, 2% real at the low end and 3% at the high end, +$22.2 / +$38.3bn on the responsive
+  lines, roads and parks. BEA's lines carry depreciation only, so the return had been left out;
+- every government enterprise responding (the operator's option D): their operating loss (+$5.6bn) and the
+  return on their $4.96tn of capital (+$11.6 / +$17.4bn).
+
+Beside the account:
+- capital at 7%: $406–462bn;
+- enterprises out: $305–364bn;
+- land [GAP]: $3.3 / $5.5bn per 10% of land-to-structure value;
+- congestion: $14.0 / $12.0bn, from $19.2bn, now that roads grow.
+
+The low side, with schools at the within-district 0.836, is $296–363bn. The outer range is $259–436bn ($291–408bn
+in quadrature). The sign break-even falls from 5.8–17.0% to 2.8–13.6%. The capital return is an imputed resource
+cost and never enters a debt flow, and rental assistance moves who loses, not the budget
+([audit](immigration-conceptual-audit-2026-09-27.md) §1). Consumer lanes move in
+`sept27_propagation_2026_09_27`; until their notes land, they quote the schools case.
+
+**September 26 schools case (the main case until 2026-09-27): $258–292bn/year conditional net cost to other US
 residents** ($258.5–292.0bn; [lane](../infra/immigration-fiscal/main_case_schools_full_2026_09_26/RESULT.md),
 [decision](../decisions/2026-09-26-main-case-schools-full-cost.md), ladder 230). Schools are charged at
 their full average cost per pupil: across districts and states spending rises about 1% per 1% more
 pupils (1.004 pupil-weighted across 2019 districts, 0.973 across states). The within-district 0.836
-gives the low side, $233.9–269.6bn. A return on the capital schools tie up, which BEA's line leaves out (it carries depreciation only), would add $9.5bn a year at a 2% real rate or $14.3bn at 3%, before land: $268.0–301.5bn or $272.8–306.2bn. That is proposed, not adopted ([lane](../infra/immigration-fiscal/school_capital_return_2026_09_26/RESULT.md), ladder 231). CBO's year-to-year 0.63–0.66 is kept as the first-year budget
+gives the low side, $233.9–269.6bn. A return on the capital schools tie up, which BEA's line leaves out (it carries depreciation only), would add $9.5bn a year at a 2% real rate or $14.3bn at 3%, before land: $268.0–301.5bn or $272.8–306.2bn. That is proposed, not adopted ([lane](../infra/immigration-fiscal/school_capital_return_2026_09_26/RESULT.md), ladder 231). [2026-09-27: adopted across all public capital in the September 27 case above.] CBO's year-to-year 0.63–0.66 is kept as the first-year budget
 response (named "one-year scenario" until 2026-09-27; lane files keep that name), $200.9–245.7bn ([lane](../infra/immigration-fiscal/main_case_2026_09_26/RESULT.md),
 [decision](../decisions/2026-09-26-main-case-finite-removal-and-consumption-key.md), ladder 229). That
 scenario is the September 24 case ($200.9–246.3bn; [lane](../infra/immigration-fiscal/main_case_2026_09_24/RESULT.md),
