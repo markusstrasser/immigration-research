@@ -1,0 +1,107 @@
+{
+ "cases": {
+  "sept26_schools": {
+   "high": {
+    "A_bn": 300.74540102085314,
+    "V_central_bn": 198.55406498294658,
+    "V_high_bn": 217.71183537469133,
+    "V_low_bn": 174.6402401674857
+   },
+   "low": {
+    "A_bn": 271.81109329473185,
+    "V_central_bn": 187.6981513307212,
+    "V_high_bn": 206.5370979954962,
+    "V_low_bn": 164.10315024223007
+   }
+  },
+  "sept27": {
+   "high": {
+    "A_bn": 396.1606826463843,
+    "V_central_bn": 245.121814626143,
+    "V_high_bn": 264.2795850178878,
+    "V_low_bn": 220.18630872957064
+   },
+   "low": {
+    "A_bn": 335.1419549093939,
+    "V_central_bn": 222.10772080572622,
+    "V_high_bn": 240.94666747050132,
+    "V_low_bn": 197.57478193129373
+   }
+  }
+ },
+ "generations": {
+  "sept26_schools": {
+   "high|G1": {
+    "V_central_bn": 73.34456278511371,
+    "net_cost_bn": 62.734704031
+   },
+   "high|G2": {
+    "V_central_bn": 56.98572438898803,
+    "net_cost_bn": 119.06199192299997
+   },
+   "high|G3+": {
+    "V_central_bn": 68.22377780641494,
+    "net_cost_bn": 118.948705064
+   },
+   "low|G1": {
+    "V_central_bn": 71.3332686758337,
+    "net_cost_bn": 86.46929856
+   },
+   "low|G2": {
+    "V_central_bn": 67.44661815466804,
+    "net_cost_bn": 107.428649892
+   },
+   "low|G3+": {
+    "V_central_bn": 48.918264502534925,
+    "net_cost_bn": 77.91314484699997
+   }
+  },
+  "sept27": {
+   "high|G1": {
+    "V_central_bn": 85.54120824615083,
+    "net_cost_bn": 84.13459213700003
+   },
+   "high|G2": {
+    "V_central_bn": 73.25543495955498,
+    "net_cost_bn": 154.555912915
+   },
+   "high|G3+": {
+    "V_central_bn": 86.32517141736938,
+    "net_cost_bn": 157.47017759099998
+   },
+   "low|G1": {
+    "V_central_bn": 80.26422151566668,
+    "net_cost_bn": 102.59611006399999
+   },
+   "low|G2": {
+    "V_central_bn": 79.429469689804,
+    "net_cost_bn": 130.008885032
+   },
+   "low|G3+": {
+    "V_central_bn": 62.41402960302965,
+    "net_cost_bn": 102.53695981699997
+   }
+  }
+ },
+ "medicaid_vg": [
+  0.76,
+  0.92,
+  1.08
+ ],
+ "mexico_budget_bn_known": 157.73824522214267,
+ "pins": {
+  "sept26_schools": {
+   "distribution": "39b854b",
+   "generation": "2441ac8",
+   "model": "adopted_2026_09_26_schools",
+   "winners": "fa1bd3a"
+  },
+  "sept27": {
+   "distribution": "78766c2",
+   "generation": "8654a0c",
+   "model": "adopted_2026_09_27",
+   "winners": "62f1e5a"
+  }
+ },
+ "protection_share": 0.42467763366851674
+}
