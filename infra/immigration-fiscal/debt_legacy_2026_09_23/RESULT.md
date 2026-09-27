@@ -1,4 +1,4 @@
-**Verdict:** [2026-09-26, later: the script now defaults to the main case with schools at full cost (`--case sept26_schools`). The stock is $0.93–1.17tn, 2024 interest **$30.1–37.9bn** ($737–926 per member), and the federal share of the 2024 gap 14.1–19.0%. The school step is 8.2% federal under the central convention (1.0% low, 12.9% high); `derived/sept26_schools_bridge_2024.csv` walks it. `--case sept26` gives the one-year scenario, $28.2–36.3bn.] [2026-09-25: the script now defaults to the main case adopted September 24: stock $0.88–1.13tn, 2024 interest **$28.3–36.4bn** ($693–891 per member), federal share of the 2024 gap 15.9–21.1%; the programme back-cast gives $1.95–2.33tn over 2015–2024. `debt_legacy.py --case sept23 --out-dir DIR` reproduces the September 23 run this text describes, byte for byte (`test_debt_legacy.py`); per-correction federal parts are in `derived/corrections_federal_split_2024.csv`. See `../sept24_propagation_2026_09_24/RESULT.md`.] If the federal part of the group's 2005–2023 fiscal gaps was borrowed, the debt it left
+**Verdict:** [2026-09-27: the script now defaults to the main case of that day (`--case sept27`) and compounds cash flows only. 2024 interest is **$30.9–41.6bn** ($756–1,018 per member) on a stock of $0.96–1.29tn; the federal part of the 2024 cash gap is $37.3–62.2bn (13.2–19.1%). Two columns sit beside it and are never compounded: the return on public capital ($33.8–55.7bn, federal $0.83–1.74bn), an imputed resource cost, and the capped programs ($5.09bn, rental assistance and LIHEAP), which displace eligible households rather than cost a budget. `--case sept26_schools` reproduces 90c4b23. See "The September 27 case" below.] [2026-09-26, later: the script now defaults to the main case with schools at full cost (`--case sept26_schools`). The stock is $0.93–1.17tn, 2024 interest **$30.1–37.9bn** ($737–926 per member), and the federal share of the 2024 gap 14.1–19.0%. The school step is 8.2% federal under the central convention (1.0% low, 12.9% high); `derived/sept26_schools_bridge_2024.csv` walks it. `--case sept26` gives the one-year scenario, $28.2–36.3bn.] [2026-09-25: the script now defaults to the main case adopted September 24: stock $0.88–1.13tn, 2024 interest **$28.3–36.4bn** ($693–891 per member), federal share of the 2024 gap 15.9–21.1%; the programme back-cast gives $1.95–2.33tn over 2015–2024. `debt_legacy.py --case sept23 --out-dir DIR` reproduces the September 23 run this text describes, byte for byte (`test_debt_legacy.py`); per-correction federal parts are in `derived/corrections_federal_split_2024.csv`. See `../sept24_propagation_2026_09_24/RESULT.md`.] If the federal part of the group's 2005–2023 fiscal gaps was borrowed, the debt it left
 entering FY2024 is **$0.94–1.20tn**, 3.6–4.6% of debt held by the public. On that debt, 2024
 taxpayers pay **$30.5–38.9bn** in interest: **$745–950 per member** of the 40.9m Mexican-origin
 union, and $102–130 per other resident. That is 3.5–4.4% of FY2024 federal net interest. These are
@@ -471,6 +471,129 @@ Raw pulls in `_cache/` (ignored) are OMB Tables 3.2, 7.1 and 12.3 (FY2027 editio
 choice. Every alternative is tabulated, and each input is inspectable.
 
 claude-opus-5-5[1m], lane agent, 2026-09-23.
+
+## The September 27 case (2026-09-27)
+
+`debt_legacy.py` defaults to `--case sept27`, the main case of 2026-09-27 (`../main_case_long_run_2026_09_27/`,
+$321.82–387.37bn). `--case sept26_schools`, `sept26`, `sept24` and `sept23` rebuild 90c4b23, e62fccb, ed1b623
+and 96a5c3b byte for byte (`test_debt_legacy.py`, 5 tests pass). Two default runs are byte-identical.
+
+**The engine port.** The case adds four things to the schools case, and the Python port now sets both override
+kinds engine.js has: a line's response (`economic_affairs_services`, `recreation_culture`, `housing_subsidies`)
+and a receipt's (`receipt:enterprise_surplus`), from the payload's `meta.responses`. `capital_rows()` adds the
+return on public capital from `meta.capital_return`, 24 components, each stock × rate × key × response, with keys
+and responses read on the corner's own evaluation, as `main_case.cjs` `independentCosts()` does. The case's
+profiles are its own (`long_run_non_school_full`, `long_run_non_school_fixed`, `proportional_reference`).
+`per_spec_gates()` checks the port at all 64 specifications against the methods' mean of `per_spec.csv`:
+
+| Check | Largest difference | Tolerance |
+|---|---:|---:|
+| cost and engine cost | 2.3e-13 | 1e-6 |
+| capital return in total, by level, by part and by component | 1.4e-14 | 1e-9 |
+| enterprise receipt's response, group amount and cost; the three lines' responses and group amounts | 7.1e-15 | 1e-9 |
+| the receipt alone at 1 (no other override, no capital) moves the cost by `enterprise_surplus_receipt_cost_bn` | 1.9e-14 | 1e-9 |
+| federal plus state and local, over cash, displaced beneficiaries and the capital return, equals cost + P (every specification and payer convention) | 2.3e-13 | 1e-6 |
+| capital's federal and state-local parts equal the by-level columns | 1.4e-14 | 1e-9 |
+| `main_case_bands.csv` `adopted` and `uncorrected_at_adopted_responses`, all three profiles | 4.9e-5 | 1e-4 (the file's rounding) |
+
+The corners reproduce `summary.json`'s `main_case` and `uncorrected_at_adopted_responses` bands for every profile
+(1e-6), and the main profile's corners are the case's end specifications (48 low, 11 high). The payload gate now
+admits the enterprise receipt's 8 re-key edits after the September 26 edits; they are the component
+`enterprise_rekey`. [CALCULATION: `derived/summary.json` `case.per_spec_gates`]
+
+**Three columns (audit §1; brief correction of 2026-09-27).** Only cash is compounded into debt.
+
+| 2024, main profile, central convention, $bn | Low end | High end | Federal part, low / high |
+|---|---:|---:|---:|
+| Cash financing: the engine's lines less the capped programs | 282.69 | 326.43 | 37.26 / 62.21 |
+| of which the enterprise surplus receipt (its own row) | 5.56 | 5.56 | 0.21 / 0.21 |
+| Resource cost: the return on public capital, never compounded | 33.80 | 55.69 | 0.83 / 1.74 |
+| Displaced beneficiaries: rental assistance and LIHEAP, never compounded | 5.09 | 5.09 | 5.05 / 5.05 |
+| Sum: net cost + P | 321.58 | 387.21 | |
+
+Under the low convention the displaced federal part is $4.53bn (LIHEAP's grant counts as state-local), and the
+cash federal part is $10.49 / 35.40bn; under the high convention $49.47 / 80.55bn. [CALCULATION:
+`derived/federal_split_2024.csv`, `derived/federal_split_2024_lines.csv` (column `financing`; the capital
+components are rows with side `capital_return`)]
+
+**Federal shares of the new lines.**
+- *Long-run roads and parks*: each subfunction in `responses.json` takes its level. Federal subfunctions are
+  federal. State-local ones are federal only through grants, at the function's grant share of state-local
+  consumption and benefits (the lines' central rule), and 0 under the low convention. The subfunctions blend
+  to the line's response at every corner (1e-12), and their national amounts are NIPA 3.17's federal and
+  state-local consumption (180.2 and 271.7; 5.4 and 48.9). At the low reading the federal subfunctions are held
+  fixed, so economic affairs is $1.00bn federal of $13.99bn; at the high reading $6.35bn of $23.27bn. A gate
+  checks the levels against NIPA 3.17 (1e-6).
+- *Enterprise surplus*: t32(23) / t31(19), −$1.822bn of −$47.46bn in 2024, 3.84%. The programme rule carries each
+  level with its own series (NIPA 3.2 line 23, 3.3 line 22). The federal enterprises had a surplus in 2005–2009
+  and 2016–2022, so the federal part changes sign in those years. The receipt follows population, so the income
+  rule does not scale it, as in the back-cast.
+- *Rental assistance*: federal (NIPA 3.13 line 4). *LIHEAP*: the existing energy-assistance share (92.1% in
+  2024; 0 under the low convention).
+
+**Bridge from the schools case** (`derived/sept27_bridge_2024.csv`, central convention, $bn, low / high end):
+
+| Step | Cash | Federal cash | Resource cost (federal) | Displaced (federal) |
+|---|---:|---:|---:|---:|
+| Schools case | 258.25 / 291.80 | 36.49 / 55.44 | | |
+| LIHEAP leaves the cash gap | −0.56 / −0.56 | −0.52 / −0.52 | | +0.56 (0.52) |
+| Long-run road and park responses | +19.44 / +29.63 | +1.08 / +7.07 | | |
+| Rental assistance at 1 | | | | +4.53 (4.53) |
+| Capital return, core | | | +15.99 / +25.78 (0.63 / 1.08) | |
+| Capital return, roads and parks | | | +6.18 / +12.47 (0 / 0.36) | |
+| Enterprise surplus receipt at 1 | +5.56 / +5.56 | +0.21 / +0.21 | | |
+| Capital return, enterprises | | | +11.62 / +17.44 (0.20 / 0.30) | |
+| Constant line's federal share | | +0.001 / +0.0002 | | |
+| September 27 case | 282.69 / 326.43 | 37.26 / 62.21 | 33.80 / 55.69 (0.83 / 1.74) | 5.09 (5.05) |
+
+Gates: each step moves only its own lines (1e-9); each step's total is the case lane's
+`change_at_fixed_specifications` part (1e-6); the steps add to the new split in every column (1e-9); the whole
+moves by the lane's `change` (1e-6); the range ends do not move (both cases end at specifications 48 and 11).
+
+**Annual flows.** The programme rules carry the cash lines only. The whole-budget rules take the back-cast's
+concept less its capital return and rental assistance, each by its own series
+(`../historical_backcast_2026_09_20/derived/case_parts_annual.csv`, new), and less LIHEAP, which sits in the base
+and follows it at its 2024 share of the base's fiscal gap; the parts' 2024 values are this split's (1e-3, the
+file's rounding). `summary.json` `case.whole_budget_rules` has the window sums of the two excluded columns.
+
+**One input to flag.** NIPA 3.17 line 61, federal grants for economic affairs, is $160.8bn in 2020 and $258.0bn in
+2021, against $9.7–22.0bn in every other year; probably the pandemic relief grants [INFERENCE]. The state-local
+grant share of economic affairs is therefore 0.75 in 2020 and 1.0 in 2021 (1.12, capped), so the long-run lines'
+state-local part counts as federal in those years. The case raises the 2020 and 2021 federal flows by $7.3bn and
+$10.6bn at the low end (about 0 in 2019 and 2022) and by $14.2bn and $19.0bn at the high end ($4.3bn and $5.0bn in
+2019 and 2022). With those two years at the 2019/2022 average increase, the 2024 interest is $30.3–40.8bn, $0.6 /
+0.8bn lower
+[CALCULATION: scratch, from `derived/federal_gap_annual.csv` and `derived/rates.csv`]. The ex-pandemic rules
+(`programme_income_ex_pandemic`: $22.2–32.8bn) replace both years.
+
+**A pre-existing gap, named and not repaired.** The engine compounds each year's current gap, whose spending
+includes consumption of fixed capital; it does not compound gross investment or capital transfers. The 2024
+federal bridge from current saving (−$1,874.5bn) to net lending (−$2,106.2bn) is −$231.8bn: gross investment
+$450.9bn and capital transfers paid $211.0bn, less consumption of fixed capital $393.4bn, capital transfers
+received $36.4bn and net sales of nonproduced assets $0.4bn (NIPA 3.2 lines 37, 42 and 45–49, gated to add up). It is a national diagnostic, not a group
+correction, and no part of it is charged to the group here. [DATA: `derived/summary.json` `case.pre_existing_gap`]
+
+Old (schools case, 90c4b23) → new; the full table is in `../sept27_propagation_2026_09_27/RESULT_lanes.md`:
+
+| Quantity (central rule, central convention) | Schools case | Sept 27 | File |
+|---|---:|---:|---|
+| legacy interest, 2024, $bn | 30.14 to 37.87 | 30.93 to 41.63 | `derived/stocks.csv` |
+| interest per group member, $ | 737 to 926 | 756 to 1,018 | `derived/stocks.csv` |
+| legacy stock entering 2024, $bn | 932.4 to 1,171.4 | 956.8 to 1,287.7 | `derived/stocks.csv` |
+| federal part of the 2024 (cash) gap, $bn | 36.49 to 55.44 | 37.26 to 62.21 | `derived/federal_split_2024.csv` |
+| federal share of the 2024 (cash) gap, % | 14.1 to 19.0 | 13.2 to 19.1 | `derived/federal_split_2024.csv` |
+| legacy interest across back-cast rules, $bn | 8.03 to 38.69 | 8.20 to 42.45 | `derived/stocks.csv` |
+| legacy interest, every specification, $bn | −4.24 to 61.24 | −4.25 to 66.29 | `derived/stocks.csv` |
+| legacy interest, proportional benchmark, $bn | 38.77 to 46.50 | 38.59 to 46.32 | `derived/stocks.csv` |
+
+The proportional benchmark falls slightly: its roads and parks already responded at 1, and LIHEAP's federal part
+leaving the cash gap outweighs the enterprise receipt's.
+
+Files: `debt_legacy.py`, `test_debt_legacy.py`, 10 changed derived files and `derived/sept27_bridge_2024.csv`
+(new); `rates.csv`, `benefit_sensitivity.csv` and the two earlier bridges are unchanged. For consumers: from
+September 27 `federal_split_2024.csv` names the case's profiles (main `long_run_non_school_full`) and its
+`fiscal_gap_bn` and `federal_bn` are the cash part; four columns hold the resource cost and the displaced
+beneficiaries. The lines and per-correction files add a `financing` column.
 
 ## Revisions
 
