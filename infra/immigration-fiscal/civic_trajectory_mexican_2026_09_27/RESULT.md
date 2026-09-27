@@ -12,8 +12,9 @@ are −24.1, −23.5 and −19.3 points; at equal SES and state they are −12.7
 larger. In-marriage falls steadily. The share with a Mexican-origin spouse is 90.2%, 72.3% and
 55.9% among married people aged 25–54. The excess over random matching within the state is 68, 47
 and 31 points (ρ 0.69 and 0.67 raw; 0.79 and 0.71 at equal schooling and state). Children of
-Mexican-origin × non-Hispanic couples are reported Hispanic 83.6% of the time. That 16% loss does
-not grow with the Mexican parent's generation. Volunteering and giving gaps shrink by 40–60% at
+Mexican-origin × non-Hispanic couples are reported Hispanic 83.6% of the time. Weighted by couple
+type, the loss per generation at birth is 9.0% (Hispanic) or 12.0% (Mexican) for children of G3+
+parents. Identity keeps decaying after G3, so the lineage model's 0.888 at G4+ is too high. Volunteering and giving gaps shrink by 40–60% at
 equal SES and still persist at G3+: volunteering −6.0 and giving −7.6 points, with ρ G2→G3+ about
 0.6–0.7 both raw and adjusted. The veteran gap among men is a first-generation eligibility gap.
 It is gone at equal SES by G2, and US-born women and young US-born men now serving are at parity.
@@ -21,7 +22,7 @@ On the same code, India-born spousal endogamy is 96.3% (Mexico-born 90.2%). It f
 the Indian second generation, against 72.3% in the Mexican second generation.
 [DATA] [CALCULATION] [INFERENCE] [SOURCE]
 
-Brief: [`BRIEF.md`](BRIEF.md). Scripts: `voting.py`, `asec_intermarriage.py`, `carryover.py`,
+Brief: [`BRIEF.md`](BRIEF.md). Scripts: `voting.py`, `asec_intermarriage.py`, `carryover.py`, `identity_loss.py`,
 `verify.py` (all gates pass: Sept volunteering 10.9/15.1/19.7 reproduced; turnout within 0.05
 points of P20 Table 1 each year; spouse linkage 100%; carry-over table reproduces from its source
 CSVs). A full rerun of all three builders wrote byte-identical `derived/` files.
@@ -185,12 +186,39 @@ G1 parent 83.5 (2.6), n 644; G2 parent 82.0 (2.3), n 1,114; G3+ parent **84.4** 
 Mexican parent's generation. With a Mexican-origin father 85.8% of G3+-parent children are reported
 Hispanic, with a Mexican-origin mother 83.2%; with a NH-white other parent 85.1%.
 
-**Link to the lineage model.** `lineage_cost_2026_09_19` uses a fourth-plus identification rate of
-0.888 (attrition 11%). Here the loss is 16% among children of mixed Mexican × non-Hispanic couples;
-combined with the 40% G3+ out-marriage share to non-Hispanics, the implied loss per G3+ birth cohort
-is about 0.40 × 0.16 ≈ 6–7% per generation at the child stage, before any later switching in
-adulthood. [CALCULATION, rough composition] The size is consistent with the lineage model's
-11% at G4+ (two generations of mixed-couple loss), not with larger attrition figures.
+**Loss per generation at the child stage** (revised 2026-09-27; `identity_loss.py` →
+`derived/identity_loss.csv`). Children are the unit. If q is the share of married Mexican-origin
+*people* with a non-Hispanic spouse, then under equal fertility per couple the share of
+Mexican-origin-parented *children* born to mixed couples is 2q/(1+q). That is 0.57 at G3+
+(q = 0.40), not 0.40. With other-Hispanic spouses as a third couple type the shares are
+m/2 : h : q. Loss = Σ (child share × share of that couple type's children not identified).
+Mexican and Hispanic identification differ: children of Mexican × other-Hispanic couples are
+reported Hispanic 97.2% of the time but Mexican only 55.0% of the time.
+
+| Mexican parent's generation | children from Mexican × non-Hispanic couples | not reported Hispanic | not reported Mexican |
+|---|---:|---:|---:|
+| G1 | 10.5% | 2.8 (0.3) | 7.8 (0.6) |
+| G2 | 32.3% | 6.8 (0.8) | 15.1 (1.0) |
+| G3+ | 55.8% | **9.0** (0.8) | **12.0** (0.9) |
+
+These use the three couple types. With the audit's two-type formula 2q/(1+q), G3+ gives 9.1 and
+9.9, and G2 gives 6.9 and 11.0. SEs come from the delta method on independent components. The
+other parent in an endogamous couple is assumed to be of the same generation.
+[CALCULATION: `derived/identity_loss.csv`]
+
+**Against the lineage model: not consistent at G4+.** `lineage_cost_2026_09_19` uses 0.8881 for
+the fourth-plus identification rate. That is the measured *third*-generation rate
+(`mexican_origin_population_total_2026_09_19/derived/arm3_correction_bounds.csv`), and the model
+applies it on the assumption that identification stops decaying after the third generation. The
+table says it does not stop. Children of self-identified G3+ parents lose another 12.0%
+(Mexican) or 9.0% (Hispanic) at birth. Carrying the G3 rate forward one more step gives
+0.888 × (1 − 0.120) ≈ **0.78** for G4 on the Mexican measure, before any adult switching, and
+later generations fall further. That puts the rate between the lineage's central 0.888 and
+Duncan–Trejo's 0.708. The G2-parent step here, 15.1% not Mexican, is also larger than the
+objective third-generation loss of about 11% in the population lane. That lane counts actual
+children, so this lane's equal-fertility synthetic probably overstates the step (mixed couples
+may have fewer children). The central 0.888 is therefore too high for G4+; the 0.708 arm is
+closer. [CALCULATION, INFERENCE]
 
 ## 4. One civic table with carry-over [DATA] [CALCULATION]
 
@@ -274,12 +302,12 @@ side converges faster.
   differs by generation; if it is larger for the foreign-born, the measured G1→G2 ρ is too high.
   [UNVERIFIED]
 - **Ethnic attrition biases G3+ toward the less assimilated.** G3+ is self-identified Mexican.
-  Here 16% of children of Mexican × non-Hispanic couples are not reported Hispanic, and 40% of
-  G3+ marry non-Hispanics, so about 6–7% of each later generation's descendants drop out of
-  identification at birth. They are drawn from the out-married, and out-married households plausibly
-  vote and volunteer more. Measured G3+ civic gaps therefore overstate the gap of all descendants
-  slightly, and measured ρ understates convergence slightly. The magnitude is small at these rates
-  and is consistent with the lineage model's 0.888 identification rate at G4+.
+  The children of G3+ parents lose 9.0% (Hispanic) to 12.0% (Mexican) of identification at birth,
+  because 56% of their Mexican-origin-parented children come from mixed couples (section 3,
+  revised). Those who drop out are drawn from the out-married, and out-married households plausibly
+  vote and volunteer more. Measured G3+ civic gaps therefore overstate the gap of all descendants,
+  and measured ρ understates convergence. The effect is modest per generation but compounds. It is
+  larger than the lineage model's central 0.888 at G4+ assumes (section 3).
   [INFERENCE, CALCULATION]
 - **Cross-sections are not lineages.** Today's G3+ descend from pre-1970 migration cohorts, not
   from today's G1. ρ compares groups alive now; it is not a transmission rate for a family.
@@ -314,3 +342,14 @@ Skipped:
   classified on the same terms.
 - Re-running the lineage model with measured intermarriage. That lies outside this lane's
   directory and its brief.
+
+## Revisions
+
+- **2026-09-27 (audit).** Section 3 and the attrition bullet in section 5 had computed the loss per
+  generation as 0.40 × 0.16 ≈ 6–7% and called it consistent with the lineage model's 0.888. That
+  multiplied a share of married *people* (q) by a share of *children*. The share of children from
+  mixed couples is 2q/(1+q), about 0.57 at G3+. Recomputed by the Mexican parent's generation for
+  both identification measures in `derived/identity_loss.csv` (`identity_loss.py`). G3+ parents lose
+  9.0% (Hispanic) or 12.0% (Mexican) per generation. The comparison now reads **not consistent**:
+  identification keeps decaying after G3, so the lineage's central G4+ rate of 0.888 is too high
+  (≈ 0.78 after one more step). The verdict sentence was updated to match. No other number moved.
