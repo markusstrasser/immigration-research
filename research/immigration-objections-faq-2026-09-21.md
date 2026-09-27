@@ -289,8 +289,8 @@ Medicare were 42–47% smaller in 2005, refundable credits were 4.4 times their 
 gives about $1.3–2.2tn over ten years, $2.0–3.3tn over fifteen and $2.4–3.9tn over twenty on
 the September 20 anchor, and $1.7–2.4tn, $2.5–3.6tn and $3.0–4.5tn on the adopted September 24 one
 (whole-budget rules only; September 23: $1.7–2.5tn, $2.5–3.7tn and $3.0–4.6tn) [2026-09-28: $2.8–3.7tn, $4.0–5.4tn and $4.8–6.8tn on the September 27 case, $322–387bn, of which the return on public capital, an imputed cost rather than cash, is $0.3–0.5tn over ten years] [2026-09-26, later: $2.2–2.8tn, $3.2–4.2tn and $3.9–5.2tn on the main case with schools at full cost, $258–292bn; the first-year budget response matches September 24 at rounding];
-2020–2021 supply 29–39% of the ten-year figure where the rules follow the benefit spike, and are probably over-attributed. The
-group's own programme use in earlier years is unmeasured. [SOURCE: [back-cast](immigration-historical-backcast-2026-09-20.md)]
+2020–2021 supply 29–39% of the ten-year figure where the rules follow the benefit spike, and are probably over-attributed. [2026-09-28: measured, the group got the pandemic payments at about its population share per person (0.87 times other residents in 2020, 1.03 in 2021), not the 2.3 times the programme-by-programme rule charged; that rule's ten years fall by $0.12–0.13tn on the September 20 anchor and $0.04–0.05tn on the September 27 case. The whole-budget figures above charge the spike at 0.62–0.65 of national spending per head, less than the group's share of the payments, and do not move.] The
+group's own programme use in earlier years is unmeasured. [2026-09-28: for the CPS-keyed benefits, 2019–2023 is now measured: SNAP, SSI and Social Security stay within 10% of their 2024 relative use, and using every measured year instead of the 2024 ratio barely moves the totals.] [SOURCE: [back-cast](immigration-historical-backcast-2026-09-20.md)]
 
 ## 9. "You are measuring the low-skilled inflows of 1970–2007. New arrivals are different."
 
