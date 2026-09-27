@@ -141,6 +141,9 @@ and giving. [DATA: `civic_trajectory_mexican_2026_09_27/derived/`]
   Against a same-age white resident's remaining lifetime, the parent costs more at 55 and less at
   65, because white retirees draw earned Social Security and Medicare. One FY2024 cohort carries
   about $16bn at 3%. This is a flow valuation; the annual account already contains these residents.
+  Most Mexican immediate relatives now adjust status inside the US (107k of 149k in FY2024;
+  33% of Mexican IR-5 parents in NIS-2003). For a parent who already lived here, the admission
+  changes eligibility rather than adding a person, so these values are upper bounds for that share.
   The five-year bar and sponsor-income deeming were applied from the lane's recollection of the
   statutes, not a re-read text [UNVERIFIED citation]; the 0.65 Medicare weight is an assumption
   (0.55–0.75 in the low and high cases).
