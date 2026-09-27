@@ -1,0 +1,67 @@
+{
+ "admission_lag_after_naturalisation": 1,
+ "calibration": {
+  "E_chosen": {
+   "central": 0.09551344078331536,
+   "high": 0.2801441441441441,
+   "low": 0.07138607344226293
+  },
+  "E_rule": {
+   "central": "central/equal_hazard",
+   "high": "high/age_bound_ceiling",
+   "low": "low/equal_hazard"
+  },
+  "m_living_parents_at_60": 1.8054228389823628,
+  "nat_html_sha256": "d46337f2a96230f1d8c6acd16674466d80dfdc2460c32b7bd322870c4fcb54bb",
+  "nat_mexico": {
+   "2022": 128880,
+   "2023": 111460,
+   "2024": 107670
+  },
+  "nat_source": "https://ohss.dhs.gov/topics/immigration/naturalizations/annual-flow-report/fy-24-naturalizations-flow-report",
+  "naturalisation_rate": 0.619,
+  "resident_share": {
+   "high": 0.7189949748743718,
+   "low": 0.3325
+  }
+ },
+ "gates": {
+  "founder_rebuild": {
+   "max_abs_diff": 0.0,
+   "n": 3,
+   "pass": true
+  },
+  "late_components": {
+   "max_abs_diff": 0.0,
+   "n": 36,
+   "pass": true
+  },
+  "lineage_row": {
+   "max_abs_diff": 2.3283064365386963e-10,
+   "n": 68,
+   "pass": true
+  },
+  "per_admission_npv": {
+   "max_abs_diff": 0.0457700178376399,
+   "n": 18,
+   "pass": true
+  }
+ },
+ "inputs_sha256": {
+  "late_arrival_tail_2026_09_27/derived/ir5_age_nis2003.csv": "cf95a358e2d2ed070fbf54d883bf6680ea2861fe87164706f163c816299ad556",
+  "late_arrival_tail_2026_09_27/derived/ir5_flow.csv": "4bfdb3336daf89222992210d2206432a166fa8f92432859b520f3b589f4933f6",
+  "late_arrival_tail_2026_09_27/derived/late_arrival_tenure.csv": "85ddfbcfc4aa2fa33b6cb1b11188b541cdae850b26fcbb9bfa0db4677d1b95a7",
+  "late_arrival_tail_2026_09_27/derived/mexico_ir_new_vs_adjust.csv": "e5c147d3b6ca81b8803babf55080d658fefdbce11c624980745bed8a2f1afa2c",
+  "late_arrival_tail_2026_09_27/derived/per_admission.csv": "3d9d6b2e63c7979ddada332f9881fa14dbab63210b2f548c98656877e8f847c0",
+  "late_arrival_tail_2026_09_27/per_admission.py": "ebf9701030296c8b821d5e769d64f4b395fd3c32a61325b632526d88873555a0",
+  "lineage_cost_2026_09_19/derived/audit.json": "b57f283b2b938c6345a532e2f910caaf0bc1d8128edb32c16758b59a4d1b8030",
+  "lineage_cost_2026_09_19/derived/sensitivities.csv": "5a1d3279f8d1595337496418d84f0f410ebdc6b249fa76c4a217ac664f582332",
+  "lineage_cost_2026_09_19/inputs.py": "8876e7c5c25886c5c37c40b2753ede5f4b70cae74b2be1af12839836e8fceed8",
+  "lineage_cost_2026_09_19/lineage.py": "fee50ab166620a9cc4f01a99208e340d600f9005111acabc975ed6a06bd8f670",
+  "origin_attachment_mexico_2026_09_27/derived/naturalization_share_2024.csv": "b40d5358be104d3623e9a7527b312883194ac7010806038309a937ccfe822022"
+ },
+ "lpr_bar_price_central": 7131.5934,
+ "naturalisation_rate": 0.619,
+ "parent_gap": 29,
+ "pre65_scale": 0.29075353565629997
+}
