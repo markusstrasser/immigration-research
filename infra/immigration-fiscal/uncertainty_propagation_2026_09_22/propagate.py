@@ -23,8 +23,15 @@ cases of September 23 and 24, specification by specification, after
 later case in later_cases.json does the same for its main case and the
 uncorrected model at its responses, from derived/<case>/ (written by the same
 script): --case sept26 (CBO's one-year school response, 0.63-0.66) and --case
-sept26_schools (schools at full average cost; the default, as the last entry).
-The September 20 outputs are written as before and do not change.
+sept26_schools (schools at full average cost), then --case sept27 (the return on public capital; the default,
+as the last entry). The September 20 outputs are written as before and do not change.
+
+From sept27 on, the administrative benefit keys' re-keying is recomputed on the same 161 CPS weights and its
+replicate deviation joins the account's before the variance is taken (conceptual audit 2026-09-27, section A):
+the two correlate negatively, so appending the benefit keys' SE independently overstated the CPS error. The
+result is a partial sampling approximation whose net error is unresolved, not a bound in either direction: the
+other omitted covariances (the production term, the school supplement, the pooled medical translator) can go
+either way.
 """
 from __future__ import annotations
 
@@ -228,6 +235,11 @@ def account_inputs():
 # --------------------------------------------------------------------------
 MAIN_PROFILE = "cbo_category_lag_non_school_full"
 MEDICAID = "medicaid_and_chip_other_medical"
+# A case with the return on public capital (sept27): the lines that respond in the long run, and the lines whose
+# group amounts key the return (sept24_specs.cjs writes the derivatives as kcoef_<line>).
+LONG_RUN_LINES = ["economic_affairs_services", "recreation_culture"]
+KCOEF_LINES = ["education_services", "school_reprice", "college_rekey", "public_order_safety", "health_services",
+               "general_public_services", "economic_affairs_services", "recreation_culture", "enterprise_share"]
 # Later cases, case -> main-case lane, one line each; sept24_specs.cjs reads the same file.
 LATER_CASES = json.loads((HERE / "later_cases.json").read_text())
 # Per --case: the main case's summary, then (row label, band in that summary, column tag in
@@ -242,7 +254,59 @@ ADOPTED = {
 }
 
 
-def adopted_cases(ctx, name):
+def benefit_replicates():
+    """The central administrative benefit keys (admin_benefit_keys_2026_09_24/compare.py) on all 161 CPS weights.
+
+    The producer builds its programme table and the account's allocations as locals of main() and then records
+    and writes. A trace stops main() at its first line after the table exists, so the producer writes nothing
+    (share_comparisons, its only earlier writer, is skipped), as the conceptual audit's probe_uncertainty.py does.
+    Each central (BV) factor f = re-keyed union share / key union share is rebuilt with the producer's functions
+    on the CPS ASEC 2025 replicate weights this lane uses; its change now x (f - 1) and that change's replicate SE
+    must equal derived/program_keys.csv (1e-8). Returns {(allocation, line): (f, now_bn, share of the line)}.
+    """
+    ad = load_module(FISCAL / "admin_benefit_keys_2026_09_24/compare.py", "up_admin_keys")
+    ad.share_comparisons = lambda: None
+    local = {}
+
+    class Stop(Exception):
+        pass
+
+    def trace(frame, event, arg):
+        if frame.f_code is not ad.main.__code__:
+            return None
+        if event == "line" and "progs" in frame.f_locals:
+            local.update(frame.f_locals)
+            raise Stop
+        return trace
+    sys.settrace(trace)
+    try:
+        ad.main()
+    except Stop:
+        pass
+    finally:
+        sys.settrace(None)
+    if "progs" not in local or "alloc" not in local:
+        raise ValueError("[BLOCKED] compare.py main() no longer builds its programme table before it records")
+    published = pd.read_csv(ad.D / "program_keys.csv").query("spec == 'BV'").set_index(["programme", "allocation"])
+    out = {}
+    for prog, admin, comp, base, keys, line, share, acs, acs_screen, _ in local["progs"]:
+        invalid, _ = ad.validity(prog, admin, acs_screen)
+        a_states = [x for x in ad.ROUTE_A if not invalid[ad.STATES.index(x)]]
+        spec = ad.specs_for(prog, admin, comp, ad.acs_m(acs), a_states, base=base, invalid=invalid)["BV"]
+        for a, km in keys.items():
+            kp = ad.key_parts(*km)
+            f = np.asarray(ad.rekey(spec, kp) / kp["U"], float)
+            now = float(local["alloc"].loc[(line, a), "target_bn"]) * share
+            p = published.loc[(prog, a)]
+            if abs(now * (f[0] - 1) - p.change_bn) > 1e-8 or abs(ad.rep_se(now * (f - 1)) - p.change_se_bn) > 1e-8:
+                raise ValueError(f"[BLOCKED] {prog}/{a}: the central re-keying differs from program_keys.csv")
+            if (a, line) in out:
+                raise ValueError(f"[BLOCKED] two programmes re-key {line}")
+            out[(a, line)] = (f, now, share)
+    return out
+
+
+def adopted_cases(ctx, name, joint=None):
     """The lane's error sources on the adopted main cases, specification by specification.
 
     Point costs are the engine's (sept24_specs.cjs -> derived/<name>/spec_costs.csv). The September 23
@@ -254,8 +318,8 @@ def adopted_cases(ctx, name):
     group's corrected to uncorrected target on the key this lane rebuilt: ratio-type corrections
     rescale that key, and replacement dollars are treated the same way. The synthetic correction
     lines carry no sampling error here; their spreads are the package's ranges. The benefit keys'
-    published SE (admin_benefit_keys_2026_09_24/derived/package_se.csv) is added in separate columns;
-    its overlap with the CPS error of the lines it re-keys is unknown.
+    published SE (admin_benefit_keys_2026_09_24/derived/package_se.csv) is added in separate columns,
+    as if independent of the CPS error of the lines it re-keys; it is not (same replicates, see joint).
 
     Later cases (later_cases.json; "sept26", then "sept26_schools" with schools at full average cost):
     the same, at the case's responses (the payload's meta.responses, written into spec_costs.csv beside
@@ -264,11 +328,30 @@ def adopted_cases(ctx, name):
     response, and the education line's response rises by school share x (new - old school response),
     in the rebuild (gate, 1e-6) and in the CPS and school-correction errors. The consumption key's
     edits scale the CPS errors of the four receipt lines they touch by the same first-order ratio.
+
+    A case with the return on public capital ("sept27": its spec_costs.csv has capital columns) adds, in the
+    rebuild and in the errors: the long-run responses of economic affairs and recreation (service lines this
+    lane replicates), rental assistance (housing_subsidies on the housing_support key, replicated here), the
+    enterprise receipt (its key is the group's population share, general government's replicated key) and
+    the capital return. The return's derivative with respect to each key line's group amount (kcoef_<line>,
+    from sept24_specs.cjs) adds to that line's weight wherever the line's amount carries an error: the CPS
+    replicates, the MEPS gradient of health services and the school correction of the education lines.
+
+    joint (default: such a case, sept27 on) carries the administrative benefit keys in the CPS block. On each
+    replicate the payload's benefit change on a line, stack factor x now x (f - 1) (derived/<case>/benefit_factors.csv
+    and benefit_replicates()), moves with f; its signed deviation, times the line's response (transfers 1, rental
+    assistance at the specification's), joins the account's before the variance (first order, the change's level
+    fixed at the account's point). se_cps_fiscal_keys_bn and every combined column then use that joint CPS error.
+    Beside it: the account's CPS error alone, the benefit keys' own, their correlation, the two appended as if
+    independent, the joint error with the factor-product term (the change's level on the replicate), and the
+    published append of package_se.csv to the account's combined error.
     """
     summary_file, ((base, base_band, base_tag), (adopted, adopted_band, adopted_tag)) = ADOPTED[name]
     tag = {base: base_tag, adopted: adopted_tag}
     sub = OUT / name
     specs = pd.read_csv(sub / "spec_costs.csv")
+    capital = "capital_uncorrected_bn" in specs.columns
+    joint = capital if joint is None else joint
     lt = pd.read_csv(sub / "line_targets.csv").set_index(["side", "line", "key", "allocation"])
     main = json.loads((FISCAL / summary_file).read_text())
     ben_se = pd.read_csv(FISCAL / "admin_benefit_keys_2026_09_24/derived/package_se.csv").query(
@@ -295,10 +378,39 @@ def adopted_cases(ctx, name):
         g = sp.query("allocation == @a and category == 'general_public_services'").iloc[0]
         gps[a] = g.national_bn * hf * skeys[a][g.allocation_key]
         ctx["lane_keys"][(a, "general_public_services")] = g.allocation_key
+    extra = [((a, "service", "general_public_services"), gps[a]) for a in gps]
+    if capital:
+        # Rental assistance on its account key, and the enterprise receipt: its national amount times the
+        # group's population share, general government's per-head key (target / resident population).
+        es_national = float(main["enterprises"]["receipt_at_end_specifications"]["national_bn"])
+        rent, es_share = {}, {}
+        for a in ["personal", "shared"]:
+            h = sp.query("allocation == @a and category == 'housing_subsidies'").iloc[0]
+            g = sp.query("allocation == @a and category == 'general_public_services'").iloc[0]
+            if h.allocation_key != "housing_support" or g.allocation_key != "population":
+                raise ValueError("rental assistance or general government is not on the key this lane replicates")
+            rent[a] = h.national_bn * hf * skeys[a]["housing_support"]
+            es_share[a] = gps[a] / g.national_bn
+            ctx["lane_keys"][(a, "housing_subsidies")] = "housing_support"
+            extra += [((a, "subsidy", "housing_subsidies"), rent[a]),
+                      ((a, "receipt", "enterprise_surplus"), es_national * es_share[a])]
+    ben_lines = {}
+    if joint:
+        # The benefit keys' factor on the replicates and each line's stack factor in the payload; the payload's
+        # change must be the producer's (1e-9). A line's amount on the replicates: rental assistance's key, or the
+        # transfer line this lane rebuilds.
+        bf = pd.read_csv(sub / "benefit_factors.csv").set_index(["line", "allocation"])
+        reps = benefit_replicates()
+        if set(bf.index) != {(line, a) for a, line in reps}:
+            raise ValueError("[BLOCKED] benefit_factors.csv and the producer re-key different lines")
+        for (a, line), (f, now, share) in reps.items():
+            if not np.isclose(bf.loc[(line, a), "delta_bn"], now * (f[0] - 1), rtol=0, atol=1e-9):
+                raise ValueError(f"[BLOCKED] {line}/{a}: the payload's benefit change is not the producer's")
+            amount = None if line == "housing_subsidies" else ctx["line_reps"][(a, "transfer", line)]
+            ben_lines.setdefault(a, []).append((line, f, now, share, amount, float(bf.loc[(line, a), "stack_factor"])))
     # Every rebuilt line equals the engine model's target on the same key at replicate 0 (model.json
     # stores targets to 1e-8 bn).
-    for (a, kind, line), rep in list(ctx["line_reps"].items()) + [((a, "service", "general_public_services"), gps[a])
-                                                                 for a in gps]:
+    for (a, kind, line), rep in list(ctx["line_reps"].items()) + extra:
         side, key = ("receipt", "cbo_collective") if kind == "receipt" else ("spending", ctx["lane_keys"][(a, line)])
         if not np.isclose(rep[0], target(base, side, line, key, a), rtol=0, atol=1e-8):
             raise ValueError(f"{line}/{key}/{a} differs from the engine model at replicate 0")
@@ -323,10 +435,21 @@ def adopted_cases(ctx, name):
                    - target(base, "spending", "public_order_safety", "population", a)
                    + target(base, "spending", MEDICAID, s.uc, a) - target(base, "spending", MEDICAID, "medicaid", a)
                    + s.share * (s.school - school_old) * target(base, "spending", "education_services", edu_key, a))
+        cc = comps.query("case_id == @c.case_id")
+        kc = {}                                                  # the capital return's derivatives
+        if capital:
+            for line in LONG_RUN_LINES:
+                if cc.query("component == @line").response.iloc[0] != 0:
+                    raise ValueError(f"{line} responds in September 20 case {c.case_id}; the rebuild assumes 0")
+                rebuilt += getattr(s, f"response_{line}") * target(base, "spending", line, ctx["lane_keys"][(a, line)], a)
+            rebuilt += (s.response_housing_subsidies * target(base, "spending", "housing_subsidies", "housing_support", a)
+                        - s.response_receipt_enterprise_surplus * target(base, "receipt", "enterprise_surplus",
+                                                                          "cbo_collective", a)
+                        + s.capital_uncorrected_bn)
+            kc = {line: getattr(s, f"kcoef_{line}") for line in KCOEF_LINES}
         base_cost = getattr(s, f"cost_{tag[base]}_bn")
         if not np.isclose(rebuilt, base_cost, rtol=0, atol=1e-6):
             raise ValueError(f"{base} specification not rebuilt from case {c.case_id}: {rebuilt} vs {base_cost}")
-        cc = comps.query("case_id == @c.case_id")
         edu = cc.query("component in ['school_current', 'other_education_current']")
         resp = {r.component: r.response for r in cc.itertuples() if r.component in SERVICE_CATEGORIES}
         resp["education_services"] = edu.responsive_bn.sum() / edu.assigned_bn.sum()
@@ -336,6 +459,8 @@ def adopted_cases(ctx, name):
             if not np.isclose(resp["education_services"], s.share * school_old + 1 - s.share, rtol=0, atol=1e-12):
                 raise ValueError(f"education response of case {c.case_id} is not share x school + (1 - share)")
             resp["education_services"] += s.share * (s.school - school_old)
+        for line in LONG_RUN_LINES if capital else ():
+            resp[line] = getattr(s, f"response_{line}")
         se_pf = float(pf.loc[s.normalization].private_plus_receipts_se_sampling_bn)
 
         def cps_dev(case, weights):
@@ -346,36 +471,81 @@ def adopted_cases(ctx, name):
                     dev += sign * weight * ratio(case, kind, line, a) * (rep - rep[0])
             return dev
 
-        for case in (base, adopted):
-            dev = cps_dev(case, resp)
-            # Positive control: on the uncorrected frame at the September 20 case's own responses the
-            # CPS, MEPS and school errors of that case reproduce.
-            if case == base and not np.isclose(sdr(cps_dev(case, resp20)), ref.se_cps_fiscal_keys_bn, rtol=1e-9, atol=0):
-                raise ValueError("CPS error of the September 20 case not reproduced")
-            dev_gg = -s.gg * ratio(case, "service", "general_public_services", a) * (gps[a] - gps[a][0])
-            se_cps = sdr(dev + dev_gg)
+        def meps_se(case, kc):
             grad = np.zeros(len(MEDICAL) * ncell)
             for p, key in enumerate(MEDICAL):
                 dshare, cats = ctx["meps_parts"][(a, key)]
                 for cat in cats.itertuples():
-                    grad[p * ncell:(p + 1) * ncell] += -cat.national_bn * hf[0] * dshare * ratio(case, "transfer", cat.category, a)
-            se_m = float(np.sqrt(grad @ ctx["cov"] @ grad))
+                    grad[p * ncell:(p + 1) * ncell] += (-cat.national_bn * hf[0] * dshare * ratio(case, "transfer", cat.category, a)
+                                                        * (1 + kc.get(cat.category, 0.0)))
+            return float(np.sqrt(grad @ ctx["cov"] @ grad))
+
+        for case in (base, adopted):
+            # A key line's amount enters the cost at its response and the capital return at its derivative.
+            dev = cps_dev(case, {k: v + kc.get(k, 0.0) for k, v in resp.items()} if capital else resp)
+            # Positive control: on the uncorrected frame at the September 20 case's own responses the
+            # CPS, MEPS and school errors of that case reproduce.
+            if case == base and not np.isclose(sdr(cps_dev(case, resp20)), ref.se_cps_fiscal_keys_bn, rtol=1e-9, atol=0):
+                raise ValueError("CPS error of the September 20 case not reproduced")
+            gg_dev = ratio(case, "service", "general_public_services", a) * (gps[a] - gps[a][0])
+            if capital:
+                # Gate: the derivatives times this lane's targets rebuild the case's capital return (1e-6).
+                def key_of(line):
+                    return (s.justice if line == "public_order_safety" else "k" if line in ("school_reprice", "college_rekey")
+                            else ctx["lane_keys"][(a, line)])
+                rebuilt_k = (sum(kc[line] * target(case, "spending", line, key_of(line), a)
+                                 for line in KCOEF_LINES if line != "enterprise_share")
+                             + kc["enterprise_share"] * target(case, "receipt", "enterprise_surplus", "cbo_collective", a)
+                             / es_national)
+                if not np.isclose(rebuilt_k, getattr(s, f"capital_{tag[case]}_bn"), rtol=0, atol=1e-6):
+                    raise ValueError(f"{case}: the capital return is not rebuilt from the key lines: {rebuilt_k}")
+                d_share = ratio(case, "receipt", "enterprise_surplus", a) * (es_share[a] - es_share[a][0])
+                dev_gg = -(s.gg + kc["general_public_services"]) * gg_dev
+                dev_other = (-s.response_housing_subsidies * ratio(case, "subsidy", "housing_subsidies", a) * (rent[a] - rent[a][0])
+                             + (s.response_receipt_enterprise_surplus * es_national - kc["enterprise_share"]) * d_share)
+                dev_capital = -(kc["general_public_services"] * gg_dev + kc["enterprise_share"] * d_share
+                                + sum(kc[line] * ratio(case, "service", line, a) * (rep - rep[0])
+                                      for line in KCOEF_LINES if (rep := ctx["line_reps"].get((a, "service", line))) is not None))
+                dev_account = dev + dev_gg + dev_other
+            else:
+                dev_gg = -s.gg * ratio(case, "service", "general_public_services", a) * (gps[a] - gps[a][0])
+                dev_account = dev + dev_gg
+            se_account = sdr(dev_account)
+            # The benefit keys' change on the replicates as a welfare deviation: first order (the change's level at
+            # the account's point) and with the factor product (its level on the replicate).
+            b, b_product = np.zeros(161), np.zeros(161)
+            for line, f, now, share, amount, factor in (ben_lines.get(a, []) if case == adopted else []):
+                w = -factor * (getattr(s, "response_housing_subsidies", 0.0) if line == "housing_subsidies" else 1.0)
+                if w:
+                    amount = rent[a] if amount is None else amount
+                    b += w * now * (f - f[0])
+                    b_product += w * share * amount * (f - f[0])
+            se_cps = sdr(dev_account + b) if joint else se_account
+            se_m = meps_se(case, kc)
 
             def education_dollars(r, school):
                 return (r["education_services"] * target(case, "spending", "education_services", edu_key, a)
                         + s.share * school * target(case, "spending", "school_reprice", "k", a)
                         + (1 - s.share) * target(case, "spending", "college_rekey", "k", a))
             edu_dollars = education_dollars(resp, s.school)
+            if capital:
+                # The K-12 and college returns: their keys are the education lines' amounts.
+                edu_capital = (kc["education_services"] * target(case, "spending", "education_services", edu_key, a)
+                               + kc["school_reprice"] * target(case, "spending", "school_reprice", "k", a)
+                               + kc["college_rekey"] * target(case, "spending", "college_rekey", "k", a))
+                edu_dollars += edu_capital
             se_school = edu_dollars * school_rel[a]["indep"]
             se_school_up = edu_dollars * school_rel[a]["upper"]
             if case == base and not (
-                    np.isclose(se_m, ref.se_meps_donor_bn, rtol=1e-9, atol=0)
+                    np.isclose(meps_se(case, {}), ref.se_meps_donor_bn, rtol=1e-9, atol=0)
                     and np.isclose(education_dollars(resp20, school_old) * school_rel[a]["indep"],
                                    ref.se_school_correction_bn, rtol=1e-9, atol=0)):
                 raise ValueError("MEPS or school error of the September 20 case not reproduced")
             indep = np.sqrt(se_cps ** 2 + se_pf ** 2 + se_school ** 2 + se_m ** 2)
             envelope = se_cps + se_pf + se_school_up + se_m
             ben = float(ben_se[a]) if case == adopted else 0.0
+            # The published append: package_se.csv beside the account's combined error without the benefit keys.
+            indep_account = np.sqrt(se_account ** 2 + se_pf ** 2 + se_school ** 2 + se_m ** 2) if joint else indep
             cost = getattr(s, f"cost_{tag[case]}_bn")
             rows.append(dict(case=case, allocation=a, normalization=s.normalization, school_share=s.share,
                              school_response=s.school, general_government_response=s.gg, medicaid_key=s.uc,
@@ -385,9 +555,20 @@ def adopted_cases(ctx, name):
                              se_combined_independent_bn=indep, se_all_positive_correlation_bn=envelope,
                              ci95_low_bn=cost - 1.96 * indep, ci95_high_bn=cost + 1.96 * indep,
                              ci95_envelope_low_bn=cost - 1.96 * envelope, ci95_envelope_high_bn=cost + 1.96 * envelope,
-                             se_benefit_keys_package_bn=ben, se_with_benefit_keys_bn=np.sqrt(indep ** 2 + ben ** 2),
-                             ci95_with_benefit_keys_low_bn=cost - 1.96 * np.sqrt(indep ** 2 + ben ** 2),
-                             ci95_with_benefit_keys_high_bn=cost + 1.96 * np.sqrt(indep ** 2 + ben ** 2)))
+                             se_benefit_keys_package_bn=ben, se_with_benefit_keys_bn=np.sqrt(indep_account ** 2 + ben ** 2),
+                             ci95_with_benefit_keys_low_bn=cost - 1.96 * np.sqrt(indep_account ** 2 + ben ** 2),
+                             ci95_with_benefit_keys_high_bn=cost + 1.96 * np.sqrt(indep_account ** 2 + ben ** 2)))
+            if capital:
+                rows[-1].update(capital_return_bn=getattr(s, f"capital_{tag[case]}_bn"),
+                                capital_return_education_bn=edu_capital, se_cps_capital_part_bn=sdr(dev_capital),
+                                se_cps_rental_and_enterprise_part_bn=sdr(dev_other))
+            if joint:
+                se_b = sdr(b)
+                cov = 4 / 160 * float(np.dot(dev_account[1:] - dev_account[0], b[1:] - b[0]))
+                rows[-1].update(se_cps_account_keys_bn=se_account, se_benefit_keys_replicate_bn=se_b,
+                                corr_cps_benefit_keys=cov / (se_account * se_b) if se_b else np.nan,
+                                se_cps_independent_append_bn=float(np.hypot(se_account, se_b)),
+                                se_cps_factor_product_bn=sdr(dev_account + b_product))
     frame = pd.DataFrame(rows)
     frame.to_csv(sub / "case_uncertainty.csv", index=False)
     summary = {}
@@ -401,6 +582,14 @@ def adopted_cases(ctx, name):
             ci95_envelope_union_bn=[f.ci95_envelope_low_bn.min(), f.ci95_envelope_high_bn.max()],
             ci95_with_benefit_keys_union_bn=[f.ci95_with_benefit_keys_low_bn.min(), f.ci95_with_benefit_keys_high_bn.max()],
             specifications=int(len(f)))
+        if capital:
+            summary[case].update(capital_return_band_bn=[f.capital_return_bn.min(), f.capital_return_bn.max()],
+                                 se_cps_capital_part_bn=[f.se_cps_capital_part_bn.min(), f.se_cps_capital_part_bn.max()])
+        if joint:
+            cols = ["se_cps_account_keys_bn"] + (["se_benefit_keys_replicate_bn", "corr_cps_benefit_keys",
+                                                  "se_cps_independent_append_bn", "se_cps_factor_product_bn",
+                                                  "se_with_benefit_keys_bn"] if case == adopted else [])
+            summary[case].update({c: [f[c].min(), f[c].max()] for c in cols})
     (sub / "summary.json").write_text(json.dumps(summary, indent=2, default=float) + "\n")
     for case, v in summary.items():
         print(f"[{case}] cost {v['net_cost_band_bn'][0]:.1f}-{v['net_cost_band_bn'][1]:.1f}  "
